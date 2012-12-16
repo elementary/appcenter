@@ -1,0 +1,41 @@
+Source: appcenter
+Section: utils
+Maintainer: Mario Guerriero <mefrio.g@gmail.com>
+Build-Depends: cmake,
+               debhelper (>= 7.0.50~),
+               libgranite-dev,
+               libappstore-dev,
+               libsqlheavy-dev-dev,
+               libgtk-3-dev,
+               valac-0.16 | valac (>= 0.16)
+Standards-Version: 3.9.3
+Homepage: http://launchpad.net/appcenter
+
+Package: appcenter
+Architecture: any
+Priority: extra
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Pre-Depends: dpkg (>= 1.15.6)
+Description: AppCenter
+ A fast application store made with libappstore.
+
+Package: appcenter
+Architecture: any
+Priority: extra
+Depends: appcenter, ${misc:Depends}
+Pre-Depends: dpkg (>= 1.15.6)
+Description: Transitional package for appcenter
+ This is a transitional package for appcenter, and can be safely removed
+ after the installation is complete.
+
+Package: appcenter-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: appcenter (= ${binary:Version}), ${misc:Depends}
+Pre-Depends: dpkg (>= 1.15.6)
+Enhances: appcenter
+Description: AppCenter (debugging symbols)
+ A fast application store made with libappstore.
+ .
+ This package contains debugging symbols for appcenter.
