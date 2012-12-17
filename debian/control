@@ -19,15 +19,6 @@ Pre-Depends: dpkg (>= 1.15.6)
 Description: AppCenter
  A fast application store made with libappstore.
 
-Package: appcenter
-Architecture: any
-Priority: extra
-Depends: appcenter, ${misc:Depends}
-Pre-Depends: dpkg (>= 1.15.6)
-Description: Transitional package for appcenter
- This is a transitional package for appcenter, and can be safely removed
- after the installation is complete.
-
 Package: appcenter-dbg
 Architecture: any
 Section: debug
