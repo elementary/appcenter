@@ -3,6 +3,8 @@ Section: utils
 Maintainer: Mario Guerriero <mefrio.g@gmail.com>
 Build-Depends: cmake,
                debhelper (>= 7.0.50~),
+               app-install-data, 
+               packagekit,
                libgranite-dev,
                libappstore-dev,
                libsqlheavy0.1-dev (>= 0.0) | libsqlheavy-dev,
