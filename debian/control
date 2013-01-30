@@ -1,19 +1,19 @@
 Source: appcenter
 Section: utils
 Maintainer: Mario Guerriero <mefrio.g@gmail.com>
-Build-Depends: cmake,
+Build-Depends: app-install-data,
+               cmake,
                debhelper (>= 7.0.50~),
-               app-install-data, 
-               packagekit,
-               libgranite-dev,
                libappstore-dev,
-               libsqlheavy0.1-dev (>= 0.0) | libsqlheavy-dev,
+               libgranite-dev,
                libgtk-3-dev,
                libpeas-dev,
+               libsqlheavy0.1-dev (>= 0.0) | libsqlheavy-dev,
                libunity-dev,
+               packagekit,
                valac-0.18 | valac (>= 0.18)
 Standards-Version: 3.9.3
-Homepage: http://launchpad.net/appcenter
+Homepage: https://launchpad.net/appcenter
 
 Package: appcenter
 Architecture: any
