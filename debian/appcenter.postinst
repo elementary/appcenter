@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+#DEBHELPER#
+
+if [ "$1" = "triggered" ] || [ "$1" = "configure" ]; then
+
+    # update the application data
+    appcenter -r || true
+    exit 0
+fi
