@@ -6,7 +6,7 @@ set -e
 
 if [ "$1" = "triggered" ] || [ "$1" = "configure" ]; then
 
-    # update the application data
-    appcenter -r || true
+    # update the application database
+    appcenter -r -v || true
     exit 0
 fi
