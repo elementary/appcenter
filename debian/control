@@ -18,7 +18,11 @@ Homepage: https://launchpad.net/appcenter
 Package: appcenter
 Architecture: any
 Priority: extra
-Depends: app-install-data, packagekit, ${misc:Depends}, ${shlibs:Depends}
+Depends: app-install-data,
+         packagekit,
+         software-properties-gtk,
+         ${misc:Depends},
+         ${shlibs:Depends}
 Pre-Depends: dpkg (>= 1.15.6)
 Description: AppCenter
  A fast application store made with libappstore.
