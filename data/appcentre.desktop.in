@@ -1,0 +1,17 @@
+[Desktop Entry]
+Version=@VERSION@
+Name=@APP_NAME@
+Comment=@RELEASE_NAME@
+Exec=@EXEC_NAME@ %U
+Icon=@DESKTOP_ICON@
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=GTK;Utility;System;
+X-GNOME-Gettext-Domain=@GETTEXT_PACKAGE@
+
+X-Ayatana-Desktop-Shortcuts=AboutDialog
+
+[AboutDialog Shortcut Group]
+Name=About @APP_NAME@
+Exec=@EXEC_NAME@ --about
