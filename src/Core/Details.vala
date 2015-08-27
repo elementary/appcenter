@@ -54,6 +54,14 @@ namespace AppCenterCore {
                             int end = detail.package_id.index_of (";", start);
                             display_version = detail.package_id.slice (start, end);
 
+                            // The part of ID about Ubuntu version should be dropped. 
+                            // This way the package will be installed, 
+                            // no matter which Ubuntu version you are on.
+                            // This turns something like: maya-calendar;0.3.1.1+r811+pkg70~daily~ubuntu15.04.1;amd64;vervet
+                            // into something like: maya-calendar;0.3.1.1+r811+pkg70~daily~ubuntu15.04.1;amd64;
+                            package_id =  detail.package_id.slice (0, 
+                                detail.package_id.index_of (";", end + 1) + 1);
+
                             debug ("Loading AppInfo data for '%s' finished.", package_name);
                             loading_finished ();
                         });
