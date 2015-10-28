@@ -14,12 +14,17 @@ vala_precompile(VALA_C ${EXEC_NAME}
     ./Misc/ViewEnum.vala
     ./Views/AppInfoView.vala
     ./Views/BrowseView.vala
-    ./Views/UpdateView.vala
+    ./Views/FeaturedView.vala
+    ./Views/CategoryView.vala
+    ./Views/SearchView.vala
+    ./Views/InstalledView.vala
     ./Views/SettingsView.vala
+    ./Widgets/FeaturedButton.vala
     ./Widgets/ActionButton.vala
     ./Widgets/HeaderBar.vala
     ./Widgets/CategoryItem.vala
     ./Widgets/InfoBar.vala
+    ./Widgets/AppRow.vala
 #TODO: Move these into a separate lib
     ./Core/Client.vala
     ./Core/Info.vala
@@ -34,7 +39,9 @@ PACKAGES
     granite
     packagekit-glib2
 OPTIONS
-    --vapidir=../vapi/
+  --vapidir=${CMAKE_SOURCE_DIR}/vapi
+  --target-glib=2.32
+  --thread
 )
 
 add_definitions (${DEPS_CFLAGS})
@@ -42,7 +49,7 @@ link_libraries (${DEPS_LIBRARIES})
 link_directories (${DEPS_LIBRARY_DIRS})
 
 add_executable (${EXEC_NAME} ${VALA_C})
-target_link_libraries (${CMAKE_PROJECT_NAME} ${DEPS_LIBRARIES}) 
+target_link_libraries (${EXEC_NAME} ${DEPS_LIBRARIES}) 
 
 install (TARGETS ${EXEC_NAME} RUNTIME DESTINATION bin)
 

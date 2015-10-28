@@ -1,2 +1,2 @@
-configure_file(appcentre.desktop.in ${CMAKE_CURRENT_BINARY_DIR}/appcentre.desktop)
-install (FILES ${CMAKE_CURRENT_BINARY_DIR}/appcentre.desktop DESTINATION share/applications)
+configure_file(appcenter.desktop.in ${CMAKE_CURRENT_BINARY_DIR}/appcenter.desktop)
+install (FILES ${CMAKE_CURRENT_BINARY_DIR}/appcenter.desktop DESTINATION share/applications)

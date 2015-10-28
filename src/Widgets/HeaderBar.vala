@@ -61,7 +61,7 @@ namespace AppCenter.Widgets {
 
             update_button = new ActionButton.from_icon_name ("view-refresh", Gtk.IconSize.LARGE_TOOLBAR);
             update_button.set_tooltip_text (_("Refresh cache"));
-            update_button.clicked.connect (() => Client.get_default ().refresh_cache ());
+            update_button.clicked.connect (() => Client.get_default ().refresh_cache.begin ());
             pack_end (update_button);
 
             back_button = new Gtk.Button ();

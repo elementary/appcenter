@@ -29,7 +29,7 @@ namespace AppCenter {
         private Widgets.InfoBar         infobar;
 
         private Views.BrowseView        browse_view;
-        private Views.UpdateView        update_view;
+        private Views.InstalledView        update_view;
         private Views.SettingsView      settings_view;
         private Views.AppInfoView       app_info_view;
 
@@ -52,7 +52,7 @@ namespace AppCenter {
             content_window.add (stack);
 
             browse_view = new Views.BrowseView ();
-            update_view = new Views.UpdateView ();
+            update_view = new Views.InstalledView ();
             settings_view = new Views.SettingsView ();
             app_info_view = new Views.AppInfoView ();
 
@@ -73,7 +73,7 @@ namespace AppCenter {
             stack.set_visible_child (tab1_stack);
 
             browse_view.show_app_info.connect ((app_name) => {
-                app_details = new Details (app_name);
+                app_details = new Details.from_package_name (app_name);
                 app_info_view.reload_for_app (app_details);
                 tab1_stack.set_visible_child (app_info_view);
                 show_button (1);

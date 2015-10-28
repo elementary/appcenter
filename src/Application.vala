@@ -15,12 +15,13 @@
 */
 
 namespace AppCenter {
+    const string appcenter = N_("About App Center");
     public class AppCenter : Granite.Application {
         construct {
-            application_id = "org.embik.appcentre";
+            application_id = "org.pantheon.appcenter";
             flags = ApplicationFlags.FLAGS_NONE;
 
-            program_name = "AppCentre";
+            program_name = _("App Center");
             app_years = "2015";
             app_icon = Build.DESKTOP_ICON;
 
@@ -31,11 +32,12 @@ namespace AppCenter {
             build_version_info = Build.VERSION_INFO;
 
             app_launcher = "appcentre.desktop";
-            //main_url = "https://launchpad.net/appcenter";
-            //bug_url = "https://bugs.launchpad.net/appcenter";
-            //help_url = "https://answers.launchpad.net/appcenter"; 
-            //translate_url = "https://translations.launchpad.net/appcenter";
-            about_authors = { "Marvin Beckers <beckersmarvin@gmail.com>" };
+            main_url = "https://launchpad.net/appcenter";
+            bug_url = "https://bugs.launchpad.net/appcenter";
+            help_url = "https://answers.launchpad.net/appcenter"; 
+            translate_url = "https://translations.launchpad.net/appcenter";
+            about_authors = { "Marvin Beckers <beckersmarvin@gmail.com>",
+                              "Corentin Noël <corentin@elementary.io>" };
             about_comments = "";
             about_license_type = Gtk.License.GPL_3_0;
 

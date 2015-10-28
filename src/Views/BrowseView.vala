@@ -40,13 +40,6 @@ namespace AppCenter.Views {
         }
 
         private void build_ui () {
-            Gtk.Separator sep_left = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
-            sep_left.hexpand = true;
-            attach (sep_left, 0, 1, 1, 1);
-
-            Gtk.Separator sep_right = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
-            sep_right.hexpand = true;
-            attach (sep_right, 2, 1, 1, 1);
 
             tab_stack = new Gtk.Stack ();
             tab_stack.set_transition_type (Gtk.StackTransitionType.SLIDE_LEFT_RIGHT);
@@ -64,22 +57,11 @@ namespace AppCenter.Views {
             tab_stack_switcher = new Gtk.StackSwitcher ();
             tab_stack_switcher.halign = Gtk.Align.CENTER;
             tab_stack_switcher.set_stack (tab_stack);
-            attach (tab_stack_switcher, 1, 1, 1, 1);
+            attach (tab_stack_switcher, 0, 1, 3, 1);
         }
     }
 
     private class CategoryTab : Gtk.Grid {
-        private Widgets.CategoryItem office_item;
-        private Widgets.CategoryItem multimedia_item;
-        private Widgets.CategoryItem internet_item;
-
-        private Widgets.CategoryItem communication_item;
-        private Widgets.CategoryItem games_item;
-        private Widgets.CategoryItem science_item;
-
-        private Widgets.CategoryItem education_item;
-        private Widgets.CategoryItem graphics_item;
-        private Widgets.CategoryItem font_item;
 
         public CategoryTab (BrowseView view) {
             build_ui ();
@@ -87,52 +69,6 @@ namespace AppCenter.Views {
         }
 
         private void build_ui () {
-            // this is example code to populate the category overview
-
-            Category office_category = new Category
-                ("office", _("Office"), "applications-office", _("Be productive!"));
-            office_item = new Widgets.CategoryItem (office_category);
-            attach (office_item, 0, 0, 1, 1);
-
-            Category multimedia_category = new Category
-                ("multimedia", _("Office"), "applications-multimedia", _("Listen to music"));
-            multimedia_item = new Widgets.CategoryItem (multimedia_category);
-            attach (multimedia_item, 1, 0, 1, 1);
-
-            Category internet_category = new Category
-                ("internet", _("Internet"), "applications-internet", _("Explore the web"));
-            internet_item = new Widgets.CategoryItem (internet_category);
-            attach (internet_item, 2, 0, 1, 1);
-
-            Category communication_category = new Category
-                ("communication", _("Communication"), "applications-chat", _("Stay in touch"));
-            communication_item = new Widgets.CategoryItem (communication_category);
-            attach (communication_item, 0, 1, 1, 1);
-
-            Category games_category = new Category
-                ("games", _("Games"), "applications-games", _("Be a hero"));
-            games_item = new Widgets.CategoryItem (games_category);
-            attach (games_item, 1, 1, 1, 1);
-
-            Category science_category = new Category
-                ("science", _("Science"), "applications-science", _("Explore the unknown"));
-            science_item = new Widgets.CategoryItem (science_category);
-            attach (science_item, 2, 1, 1, 1);
-
-            Category education_category = new Category 
-                ("education", _("Education"), "applications-education", _("Lern something new"));
-            education_item = new Widgets.CategoryItem (education_category);
-            attach (education_item, 0, 2, 1, 1);
-
-            Category graphics_category = new Category
-                ("graphics", _("Graphics"), "applications-graphics", _("Draw something!"));
-            graphics_item = new Widgets.CategoryItem (graphics_category);
-            attach (graphics_item, 1, 2, 1, 1);
-
-            Category font_category = new Category
-                ("font", _("Fonts"), "applications-fonts", _("Enhance your docs"));
-            font_item = new Widgets.CategoryItem (font_category);
-            attach (font_item, 2, 2, 1, 1);
         }
     }
 
@@ -160,7 +96,7 @@ namespace AppCenter.Views {
 
         private void build_ui () {
             Gtk.Button button_noise = new Gtk.Button.with_label ("Show App Info for Eidete");
-            button_noise.clicked.connect (() => view.show_app_info ("eidete;0.1~r195-0+pkg16~ubuntu0.3.1;amd64;trusty"));
+            button_noise.clicked.connect (() => view.show_app_info ("eidete;0.1~r197-0+pkg16~daily~ubuntu15.10.1;amd64;wily"));
             attach (button_noise, 0, 0, 1, 1);
 
             Gtk.Button button_audience = new Gtk.Button.with_label ("Show App Info for Audience");

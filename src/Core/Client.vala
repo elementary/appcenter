@@ -21,7 +21,7 @@ namespace AppCenterCore {
 
         public signal void connection_changed ();
 
-        public Gee.ArrayList<Summary>  update_list   { public get; private set; }
+        public Gee.ArrayList<Summary> update_list { public get; private set; }
 
         public bool connected { public get; private set; }
         public bool operation_running { public get; private set; default = false; }
@@ -51,67 +51,82 @@ namespace AppCenterCore {
             task_list.remove (task);
         }
 
-        public void install_package (Info info) {
+        public async void install_package (Info info) {
             Pk.Task install_task = request_task ();
             operation_changed (Operation.PACKAGE_INSTALL, true, info.display_name);
 
-            install_task.install_packages_async.begin ({ info.package_id, null }, null,
-                (prog, type) => operation_progress (Operation.PACKAGE_INSTALL, prog.percentage),
-                (obj, res) => {
-                    try {
-                        install_task.generic_finish (res);
-                    } catch (Error e) { critical (e.message); }
+            try {
+                yield install_task.install_packages_async ({ info.package_id, null }, null,
+                    (prog, type) => operation_progress (Operation.PACKAGE_INSTALL, prog.percentage));
+            } catch (Error e) {
+                critical (e.message);
+            }
 
-                    operation_changed (Operation.PACKAGE_INSTALL, false);
-                    release_task (install_task);
-                });
+            operation_changed (Operation.PACKAGE_INSTALL, false);
+            release_task (install_task);
         }
 
-        public void update_package (Info info) {
+        public async void update_package (Info info) {
             Pk.Task update_task = request_task ();
             operation_changed (Operation.PACKAGE_UPDATE, true, info.display_name);
 
-            update_task.update_packages_async.begin ({ info.package_id, null }, null,
-                (prog, type) => operation_progress (Operation.PACKAGE_UPDATE, prog.percentage),
-                (obj, res) => {
-                    try {
-                        update_task.generic_finish (res);
-                    } catch (Error e) { critical (e.message); }
-                });
+            try {
+                yield update_task.update_packages_async ({ info.package_id, null }, null,
+                    (prog, type) => operation_progress (Operation.PACKAGE_UPDATE, prog.percentage));
+            } catch (Error e) {
+                critical (e.message);
+            }
         }
 
-        public void refresh_updates () {
+        public async void refresh_updates () {
             Pk.Task update_task = request_task ();
             operation_changed (Operation.UPDATE_REFRESH, true);
 
-            update_task.get_updates_async.begin (Pk.Filter.INSTALLED, null, () => { }, (obj, res) => {
-                try {
-                    Pk.Results result = update_task.generic_finish (res);
+            try {
+                Pk.Results result = yield update_task.get_updates_async (Pk.Filter.INSTALLED, null, (t, p) => { });
+                result.get_package_array ().foreach ((package) => {
+                    update_list.add (new Summary (package.package_id));
+                });
+            } catch (Error e) {
+                critical (e.message);
+            }
 
-                    result.get_package_array ().foreach ((package) =>
-                        update_list.add (new Summary (package.package_id)));
-
-                } catch (Error e) { critical (e.message); }
-
-                operation_changed (Operation.UPDATE_REFRESH, false);
-                release_task (update_task);
-            });
+            operation_changed (Operation.UPDATE_REFRESH, false);
+            release_task (update_task);
         }
 
-        public void refresh_cache () {
+        public async void refresh_cache () {
             Pk.Task cache_task = request_task ();
             operation_changed (Operation.CACHE_REFRESH, true);
 
-            cache_task.refresh_cache_async.begin (false, null,
-                (prog, type) => operation_progress (Operation.CACHE_REFRESH, prog.percentage),
-                (obj, res) => {
-                    try {
-                        cache_task.generic_finish (res);
-                    } catch (Error e) { critical (e.message); }
+            try {
+                yield cache_task.refresh_cache_async (false, null,
+                        (prog, type) => operation_progress (Operation.CACHE_REFRESH, prog.percentage));
+            } catch (Error e) {
+                critical (e.message);
+            }
 
-                    operation_changed (Operation.CACHE_REFRESH, false);
-                    release_task (cache_task);
+            operation_changed (Operation.CACHE_REFRESH, false);
+            release_task (cache_task);
+        }
+
+        public async Gee.Collection<Pk.Package> get_applications () {
+            Pk.Task packages_task = request_task ();
+            var packages = new Gee.TreeSet<Pk.Package> ();
+
+            try {
+                Pk.Results result = yield packages_task.get_packages_async (Pk.Filter.NOT_DEVELOPMENT, null,
+                        (prog, type) => {});
+                result.get_package_array ().foreach ((package) => {
+                    packages.add (package);
                 });
+            } catch (Error e) {
+                critical (e.message);
+            }
+            
+
+            release_task (packages_task);
+            return packages;
         }
 
         private static GLib.Once<Client> instance;

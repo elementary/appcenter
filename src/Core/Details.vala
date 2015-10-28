@@ -20,8 +20,9 @@ namespace AppCenterCore {
         public string license       { public get; private set; }
         public uint64 size          { public get; private set; }
         public string url           { public get; private set; }
+        public Pk.Group group       { public get; private set; }
 
-        public Details (string package_name) {
+        public Details.from_package_name (string package_name) {
             this.package_name = package_name;
 
             //make sure properties are initialized
@@ -35,35 +36,12 @@ namespace AppCenterCore {
             Pk.Task task = new Pk.Task ();
             task.get_details_async.begin ({package_name, null}, null, () => { }, (obj, res) => {
                 try {
-                    Pk.Results results = task.generic_finish (res);
+                    Pk.Results results = task.get_details_async.end (res);
                     var details_array = results.get_details_array ();
 
                     if (details_array.length == 1) {
                         results.get_details_array ().foreach ((detail) => {
-                            loaded = true;
-                            description = detail.description;
-                            license = detail.license;
-                            package_id = detail.package_id;
-                            size = detail.size;
-                            url = detail.url;
-
-                            //generating display properties for the AppInfoView
-                            display_name = detail.package_id.slice (0, detail.package_id.index_of (";"));
-
-                            int start = detail.package_id.index_of (";") + 1;
-                            int end = detail.package_id.index_of (";", start);
-                            display_version = detail.package_id.slice (start, end);
-
-                            // The part of ID about Ubuntu version should be dropped. 
-                            // This way the package will be installed, 
-                            // no matter which Ubuntu version you are on.
-                            // This turns something like: maya-calendar;0.3.1.1+r811+pkg70~daily~ubuntu15.04.1;amd64;vervet
-                            // into something like: maya-calendar;0.3.1.1+r811+pkg70~daily~ubuntu15.04.1;amd64;
-                            package_id =  detail.package_id.slice (0, 
-                                detail.package_id.index_of (";", end + 1) + 1);
-
-                            debug ("Loading AppInfo data for '%s' finished.", package_name);
-                            loading_finished ();
+                            parse_detail (detail);
                         });
                     } else
                         warning ("AppInfo did not found one matching package! Data not loaded.");
@@ -71,6 +49,35 @@ namespace AppCenterCore {
                     warning (e.message);
                 }
             });
+        }
+
+        public Details (Pk.Details detail) {
+            parse_detail (detail);
+        }
+        
+        private void parse_detail (Pk.Details detail) {
+            loaded = true;
+            description = detail.description;
+            license = detail.license;
+            package_id = detail.package_id;
+            size = detail.size;
+            url = detail.url;
+            group = detail.group;
+
+            //generating display properties for the AppInfoView
+            display_name = detail.package_id.slice (0, detail.package_id.index_of (";"));
+
+            int start = detail.package_id.index_of (";") + 1;
+            int end = detail.package_id.index_of (";", start);
+            display_version = detail.package_id.slice (start, end);
+
+            // The part of ID about Ubuntu version should be dropped. 
+            // This way the package will be installed, 
+            // no matter which Ubuntu version you are on.
+            // This turns something like: maya-calendar;0.3.1.1+r811+pkg70~daily~ubuntu15.04.1;amd64;vervet
+            // into something like: maya-calendar;0.3.1.1+r811+pkg70~daily~ubuntu15.04.1;amd64;
+            package_id = detail.package_id.slice (0, 
+                detail.package_id.index_of (";", end + 1) + 1);
         }
     }
 }

@@ -18,36 +18,38 @@ using AppCenterCore;
 
 namespace AppCenter.Widgets {
     public class CategoryItem : Gtk.Button {
-        public weak Category app_category { public get; private set; }
-
+        private Category app_category;
         private Gtk.Grid grid;
         private Gtk.Image display_image;
+        private Gtk.Label name_label;
+        private Gtk.Label desc_label;
 
         public CategoryItem (Category app_category) {
             this.app_category = app_category;
-
-            set_relief (Gtk.ReliefStyle.NONE);
-            set_size_request (250, 0);
-
-            build_ui ();
+            name_label.label = app_category.category_name;
+            desc_label.label = app_category.description;
+            display_image.icon_name = app_category.icon_name;
             show_all ();
         }
 
-        private void build_ui () {
-            grid = new Gtk.Grid ();
-            grid.margin = 10;
-            grid.set_column_spacing (10);
+        construct {
+            get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
-            display_image = new Gtk.Image.from_icon_name (app_category.icon_name, Gtk.IconSize.DIALOG);
+            grid = new Gtk.Grid ();
+            grid.margin = 6;
+            grid.column_spacing = 12;
+
+            display_image = new Gtk.Image ();
+            display_image.icon_size = Gtk.IconSize.DIALOG;
             grid.attach (display_image, 0, 0, 1, 2);
 
-            Gtk.Label name_label = new Gtk.Label
-                (@"<span font_weight=\"bold\" size=\"x-large\">%s</span>".printf (app_category.category_name));
+            name_label = new Gtk.Label (null);
+            name_label.get_style_context ().add_class ("h3");
             name_label.use_markup = true;
             name_label.halign = Gtk.Align.START;
             grid.attach (name_label, 1, 0, 1, 1);
 
-            Gtk.Label desc_label = new Gtk.Label (app_category.description);
+            desc_label = new Gtk.Label (null);
             desc_label.halign = Gtk.Align.START;
             grid.attach (desc_label, 1, 1, 1, 1);
 

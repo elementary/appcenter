@@ -16,13 +16,13 @@
 
 namespace AppCenterCore {
     public class Category : Object {
-        public string category_id { public get; private set; }
+        public Pk.Group group { public get; private set; }
         public string category_name { public get; private set; }
         public string icon_name { public get; private set; }
         public string description { public get; private set; }
 
-        public Category (string category_id, string category_name, string icon_name, string description) {
-            this.category_id = category_id;
+        public Category (Pk.Group group, string category_name, string icon_name, string description) {
+            this.group = group;
             this.category_name = category_name;
             this.icon_name = icon_name;
             this.description = description;

@@ -9,9 +9,8 @@ Type=Application
 StartupNotify=true
 Categories=GTK;Utility;System;
 X-GNOME-Gettext-Domain=@GETTEXT_PACKAGE@
+Actions=AboutDialog;
 
-X-Ayatana-Desktop-Shortcuts=AboutDialog
-
-[AboutDialog Shortcut Group]
+[Desktop Action AboutDialog]
 Name=About @APP_NAME@
 Exec=@EXEC_NAME@ --about

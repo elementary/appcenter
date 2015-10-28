@@ -97,7 +97,7 @@ namespace AppCenter.Views {
             action_button.margin_top = 15;
             action_button.halign = Gtk.Align.END;
             action_button.clicked.connect (() => {
-                Client.get_default ().install_package ((Info)app_details);
+                Client.get_default ().install_package.begin (app_details);
             });
             main_grid.attach (action_button, 3, 0, 1, 1);
 

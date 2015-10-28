@@ -1,4 +1,4 @@
-project (appcentre)
+project (appcenter)
 
 cmake_minimum_required (VERSION 2.8)
 
@@ -6,10 +6,10 @@ cmake_minimum_required (VERSION 2.8)
 list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
 
 set (DATADIR "${CMAKE_INSTALL_PREFIX}/share")
-set (PKGDATADIR "${DATADIR}/appcentre")
-set (GETTEXT_PACKAGE "appcentre")
-set (EXEC_NAME "appcentre")
-set (APP_NAME "AppCentre")
+set (PKGDATADIR "${DATADIR}/${CMAKE_PROJECT_NAME}")
+set (GETTEXT_PACKAGE ${CMAKE_PROJECT_NAME})
+set (EXEC_NAME ${CMAKE_PROJECT_NAME})
+set (APP_NAME "App Center")
 set (RELEASE_NAME "An elementary app center.")
 set (DESKTOP_ICON "system-software-installer")
 set (VERSION "0.1")
