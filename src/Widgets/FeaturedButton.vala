@@ -32,6 +32,9 @@ const string FEATURED_STYLE_CSS = """
                     0 1px 3px alpha (#000, 0.12),
                     0 1px 2px alpha (#000, 0.24);
     }
+    .featured:dir(rtl) {
+        background: linear-gradient(to right,rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+    }
     """;
 
 public class AppCenter.Widgets.FeaturedButton : Gtk.EventBox {
@@ -116,15 +119,23 @@ public class AppCenter.Widgets.FeaturedButton : Gtk.EventBox {
         cr.close_path ();
         cr.fill_preserve ();
         cr.restore ();
-        x += MARGIN;
         y += (height - icon.height) / 2;
-
         var style_context = get_style_context ();
+        if (style_context.direction == Gtk.TextDirection.RTL) {
+            x += width - MARGIN - icon.width;
+        } else {
+            x += MARGIN;
+        }
+
         style_context.render_background (cr, 0, 0, width, height);
         style_context.render_frame (cr, 0, 0, width, height);
         style_context.render_icon (cr, icon, x, y);
 
-        x+= icon.width + 2*MARGIN;
+        if (style_context.direction == Gtk.TextDirection.RTL) {
+            x -= 2*MARGIN;
+        } else {
+            x+= icon.width + 2*MARGIN;
+        }
 
         cr.save ();
         style_context.save ();
@@ -132,16 +143,19 @@ public class AppCenter.Widgets.FeaturedButton : Gtk.EventBox {
         title_layout = Pango.cairo_create_layout (cr);
         title_layout.set_text (title, title.length);
         title_layout.set_font_description (style_context.get_font (style_context.get_state ()));
+        int title_width;
+        int title_height;
+        title_layout.get_pixel_size (out title_width, out title_height);
+        if (style_context.direction == Gtk.TextDirection.RTL) {
+            title_layout.set_alignment (Pango.Alignment.RIGHT);
+            x -= title_width;
+        }
         style_context.restore ();
 
         cr.set_source_rgba (text_color.red, text_color.green, text_color.blue, text_color.alpha);
         cr.move_to (x, y);
         Pango.cairo_update_layout (cr, title_layout);
         Pango.cairo_show_layout (cr, title_layout);
-
-        int title_width;
-        int title_height;
-        title_layout.get_pixel_size (out title_width, out title_height);
         y += title_height + MARGIN;
 
         style_context.save ();
@@ -149,7 +163,17 @@ public class AppCenter.Widgets.FeaturedButton : Gtk.EventBox {
         subtitle_layout = Pango.cairo_create_layout (cr);
         subtitle_layout.set_text (subtitle, subtitle.length);
         subtitle_layout.set_font_description (style_context.get_font (style_context.get_state ()));
-        subtitle_layout.set_width ((width - x - MARGIN) * Pango.SCALE);
+        int subtitle_width;
+        int subtitle_height;
+        subtitle_layout.get_pixel_size (out subtitle_width, out subtitle_height);
+        if (style_context.direction == Gtk.TextDirection.RTL) {
+            x += title_width;
+            subtitle_layout.set_width ((x - MARGIN) * Pango.SCALE);
+            subtitle_layout.set_alignment (Pango.Alignment.RIGHT);
+            x = MARGIN;
+        } else {
+            subtitle_layout.set_width ((width - x - MARGIN) * Pango.SCALE);
+        }
         subtitle_layout.set_wrap (Pango.WrapMode.WORD_CHAR);
         style_context.restore ();
         cr.move_to (x, y);

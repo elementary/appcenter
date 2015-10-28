@@ -14,24 +14,20 @@
 * with this program. If not, see http://www.gnu.org/licenses/.
 */
 
-using AppCenterCore;
-
-public class AppCenter.Views.InstalledView : Gtk.ScrolledWindow {
-    AppListView app_list_view;
-    public InstalledView () {
-        get_apps.begin ();
+namespace AppCenterCore.Utils {
+    public static Pk.Bitfield bitfield_from_filter (Pk.Filter filter) {
+        return Pk.Filter.bitfield_from_string (Pk.Filter.enum_to_string (filter));
     }
 
-    construct {
-        app_list_view = new AppListView ();
-        add (app_list_view);
+    public static Pk.Bitfield bitfield_from_group (Pk.Group group) {
+        return Pk.Group.bitfield_from_string (Pk.Group.enum_to_string (group));
     }
 
-    private async void get_apps () {
-        unowned Client client = Client.get_default ();
-        var installed_apps = yield client.get_installed_applications ();
-        foreach (var app in installed_apps) {
-            app_list_view.add_package (app);
-        }
+    public static Pk.Bitfield bitfield_from_transaction_flag (Pk.TransactionFlag transaction_flag) {
+        return Pk.TransactionFlag.bitfield_from_string (Pk.TransactionFlag.enum_to_string (transaction_flag));
+    }
+
+    public static Pk.Bitfield bitfield_from_role (Pk.Role role) {
+        return Pk.Role.bitfield_from_string (Pk.Role.enum_to_string (role));
     }
 }

@@ -12,6 +12,7 @@ vala_precompile(VALA_C ${EXEC_NAME}
     ./MainWindow.vala
     ./MainPanel.vala
     ./Misc/ViewEnum.vala
+    ./Views/AppListView.vala
     ./Views/AppInfoView.vala
     ./Views/BrowseView.vala
     ./Views/FeaturedView.vala
@@ -25,7 +26,9 @@ vala_precompile(VALA_C ${EXEC_NAME}
     ./Widgets/CategoryItem.vala
     ./Widgets/InfoBar.vala
     ./Widgets/AppRow.vala
+    ./Widgets/AppCellRenderer.vala
 #TODO: Move these into a separate lib
+    ./Core/Utils.vala
     ./Core/Client.vala
     ./Core/Info.vala
     ./Core/Details.vala

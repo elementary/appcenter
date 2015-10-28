@@ -39,7 +39,10 @@ public class AppCenter.Widgets.AppRow : Gtk.ListBoxRow {
     }
 
     private void show_app_data () {
-        app_image.icon_name = app_infos.display_icon;
+        if (app_infos.display_icon != null && app_infos.display_icon != "") {
+            app_image.icon_name = app_infos.display_icon;
+        }
+
         name_label.label = app_infos.display_name;
         description_label.label = app_infos.description.split ("\n", 2)[0];
         version_label.label = app_infos.display_version;

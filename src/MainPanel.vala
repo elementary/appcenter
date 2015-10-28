@@ -79,11 +79,6 @@ namespace AppCenter {
                 show_button (1);
             });
 
-            update_view.show_settings.connect (() => {
-                tab2_stack.set_visible_child (settings_view);
-                show_button (2);
-            });
-
             attach (content_window, 0, 1, 1, 1);
         }
 

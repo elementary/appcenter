@@ -34,6 +34,16 @@ namespace AppCenterCore {
             update_list = new Gee.ArrayList<Summary> ();
 
             control = new Pk.Control ();
+            control.get_properties_async.begin (null, (obj, res) => {
+                try {
+                    var result = control.get_properties_async.end (res);
+                    if (result) {
+                        warning ("Achieved");
+                    }
+                } catch (Error e) {
+                    critical (e.message);
+                }
+            });
             //connected = control.connected;
             connected = true;
             connection_changed ();
@@ -110,12 +120,14 @@ namespace AppCenterCore {
             release_task (cache_task);
         }
 
-        public async Gee.Collection<Pk.Package> get_applications () {
+        public async Gee.Collection<Pk.Package> get_installed_applications () {
             Pk.Task packages_task = request_task ();
             var packages = new Gee.TreeSet<Pk.Package> ();
 
             try {
-                Pk.Results result = yield packages_task.get_packages_async (Pk.Filter.NOT_DEVELOPMENT, null,
+                var install_filter = Utils.bitfield_from_filter (Pk.Filter.INSTALLED);
+                var new_filter = Utils.bitfield_from_filter (Pk.Filter.NEWEST);
+                Pk.Results result = yield packages_task.get_packages_async (install_filter|new_filter, null,
                         (prog, type) => {});
                 result.get_package_array ().foreach ((package) => {
                     packages.add (package);
@@ -128,6 +140,42 @@ namespace AppCenterCore {
             release_task (packages_task);
             return packages;
         }
+
+        public async Gee.Collection<Pk.Package> get_applications (Pk.Bitfield filter, Pk.Group group, GLib.Cancellable? cancellable = null) {
+            Pk.Task packages_task = request_task ();
+            var packages = new Gee.TreeSet<Pk.Package> ();
+
+            try {
+                var group_string = Pk.Group.enum_to_string (group);
+                Pk.Results result = yield packages_task.search_groups_async (filter, {group_string, null}, cancellable, () => {});
+                result.get_package_array ().foreach ((package) => {
+                    packages.add (package);
+                });
+            } catch (Error e) {
+                critical (e.message);
+            }
+            
+
+            release_task (packages_task);
+            return packages;
+        }
+
+        public async Gee.Collection<Pk.Details> get_packages_details (string[] packages, GLib.Cancellable? cancellable = null) {
+            Pk.Task details_task = request_task ();
+            var details = new Gee.TreeSet<Pk.Details> ();
+            try {
+                Pk.Results result = yield details_task.get_details_async (packages, cancellable, () => {});
+                result.get_details_array ().foreach ((detail) => {
+                    details.add (detail);
+                });
+            } catch (Error e) {
+                critical (e.message);
+            }
+
+            release_task (details_task);
+            return details;
+        }
+
 
         private static GLib.Once<Client> instance;
         public static unowned Client get_default () {
