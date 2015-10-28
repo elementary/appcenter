@@ -10,23 +10,15 @@ include(ValaPrecompile)
 vala_precompile(VALA_C ${EXEC_NAME}
     ./Application.vala
     ./MainWindow.vala
-    ./MainPanel.vala
-    ./Misc/ViewEnum.vala
-    ./Views/AppListView.vala
     ./Views/AppInfoView.vala
-    ./Views/BrowseView.vala
+    ./Views/AppListView.vala
     ./Views/FeaturedView.vala
     ./Views/CategoryView.vala
     ./Views/SearchView.vala
     ./Views/InstalledView.vala
-    ./Views/SettingsView.vala
-    ./Widgets/FeaturedButton.vala
-    ./Widgets/ActionButton.vala
-    ./Widgets/HeaderBar.vala
-    ./Widgets/CategoryItem.vala
-    ./Widgets/InfoBar.vala
-    ./Widgets/AppRow.vala
     ./Widgets/AppCellRenderer.vala
+    ./Widgets/CategoryItem.vala
+    ./Widgets/FeaturedButton.vala
 #TODO: Move these into a separate lib
     ./Core/Utils.vala
     ./Core/Client.vala
