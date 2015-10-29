@@ -1,22 +1,28 @@
-/* Copyright 2015 Marvin Beckers <beckersmarvin@gmail.com>
-*
-* This program is free software: you can redistribute it
-* and/or modify it under the terms of the GNU General Public License as
-* published by the Free Software Foundation, either version 3 of the
-* License, or (at your option) any later version.
-*
-* This program is distributed in the hope that it will be
-* useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
-* Public License for more details.
-*
-* You should have received a copy of the GNU General Public License along
-* with this program. If not, see http://www.gnu.org/licenses/.
-*/
+// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
+/*-
+ * Copyright (c) 2014-2015 elementary LLC. (https://elementary.io)
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * Authored by: Corentin Noël <corentin@elementary.io>
+ */
 
 using AppCenterCore;
 
 public class AppCenter.Views.AppListView : Gtk.Stack {
+    public signal void show_app (Pk.Package package, Gee.Collection<AppStream.Component> components);
+
     Gtk.TreeView tree_view;
     Gtk.ListStore list_store;
     Gtk.ScrolledWindow scrolled;
@@ -30,14 +36,15 @@ public class AppCenter.Views.AppListView : Gtk.Stack {
         waiting_view = new Gtk.Grid ();
         waiting_view.halign = Gtk.Align.CENTER;
         waiting_view.valign = Gtk.Align.CENTER;
+        waiting_view.expand = true;
         var spinner = new Gtk.Spinner ();
-        spinner.start ();
         waiting_view.add (spinner);
         alert_view = new Granite.Widgets.AlertView (_("No Apps"), _("You haven't found any app here."), "help-info");
-        list_store = new Gtk.ListStore (1, typeof (Pk.Package));
+        list_store = new Gtk.ListStore (3, typeof (Pk.Package), typeof (Gdk.Pixbuf), typeof (Gee.Collection));
         tree_view = new Gtk.TreeView.with_model (list_store);
-        tree_view.insert_column_with_attributes (0, null, new Widgets.AppCellRenderer (), "package", 0);
+        tree_view.insert_column_with_data_func (0, null, new Widgets.AppCellRenderer (), TreeCellDataFunc);
         tree_view.headers_visible = false;
+        tree_view.activate_on_single_click = true;
         list_store.set_sort_func (0, TreeIterCompareFunc);
         list_store.set_sort_column_id (0, Gtk.SortType.ASCENDING);
         scrolled = new Gtk.ScrolledWindow (null, null);
@@ -46,6 +53,23 @@ public class AppCenter.Views.AppListView : Gtk.Stack {
         add (waiting_view);
         add (alert_view);
         set_visible_child (waiting_view);
+        spinner.start ();
+        
+        tree_view.row_activated.connect ((path, column) => {
+            Gtk.TreeIter iter;
+            if (list_store.get_iter (out iter, path)) {
+                Value val;
+                list_store.get_value (iter, 0, out val);
+                var package = (Pk.Package) val.get_object ();
+                list_store.get_value (iter, 2, out val);
+                var components = (Gee.Collection) val.get_object ();
+                if (components == null) {
+                    components = new Gee.TreeSet<AppStream.Component> ();
+                }
+
+                show_app (package, components);
+            }
+        });
     }
 
     /*
@@ -73,6 +97,40 @@ public class AppCenter.Views.AppListView : Gtk.Stack {
     public void clear () {
         set_visible_child (waiting_view);
         list_store.clear ();
+    }
+
+    private static void TreeCellDataFunc (Gtk.TreeViewColumn tree_column, Gtk.CellRenderer cell, Gtk.TreeModel tree_model, Gtk.TreeIter iter) {
+        Value val;
+        tree_model.get_value (iter, 0, out val);
+        var package = (Pk.Package) val.get_object ();
+        ((Widgets.AppCellRenderer) cell).package = package;
+        tree_model.get_value (iter, 1, out val);
+        var icon = (Gdk.Pixbuf) val.get_object ();
+        if (icon == null) {
+            var components = Client.get_default ().get_component_for_app (package.get_name ());
+            foreach (var component in components) {
+                component.get_icon_urls ().foreach ((k, v) => {
+                    icon = new Gdk.Pixbuf.from_file_at_scale (v, 48, 48, true);
+                });
+            }
+
+            if (icon == null) {
+                icon = Gtk.IconTheme.get_default ().load_icon ("application-default-icon", 48, Gtk.IconLookupFlags.GENERIC_FALLBACK);
+            }
+
+            if (components.is_empty == false) {
+                ((Gtk.ListStore) tree_model).set (iter, 2, components);
+                ((Widgets.AppCellRenderer) cell).components = components;
+            } else {
+                ((Widgets.AppCellRenderer) cell).components = null;
+            }
+            ((Gtk.ListStore) tree_model).set (iter, 1, icon);
+        } else {
+            tree_model.get_value (iter, 2, out val);
+            ((Widgets.AppCellRenderer) cell).components = (Gee.Collection) val.get_object ();
+        }
+
+        ((Widgets.AppCellRenderer) cell).icon = icon;
     }
 
     private static int TreeIterCompareFunc (Gtk.TreeModel model, Gtk.TreeIter a, Gtk.TreeIter b) {

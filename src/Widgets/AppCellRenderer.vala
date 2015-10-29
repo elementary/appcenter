@@ -24,7 +24,8 @@ public class AppCenter.Widgets.AppCellRenderer : Gtk.CellRenderer {
 
     /* icon property set by the tree column */
     public Pk.Package package { get; set; }
-    private Gdk.Pixbuf icon;
+    public Gee.Collection<AppStream.Component> components { get; set; }
+    public Gdk.Pixbuf icon { get; set; }
 
     private const int MARGIN = 6;
     private const int ICON_SIZE = 48;
@@ -35,7 +36,6 @@ public class AppCenter.Widgets.AppCellRenderer : Gtk.CellRenderer {
         title_label = new Gtk.Label (null);
         title_label.get_style_context ().add_class ("h3");
         description_label = new Gtk.Label (null);
-        icon = Gtk.IconTheme.get_default ().load_icon ("application-default-icon", ICON_SIZE, Gtk.IconLookupFlags.GENERIC_FALLBACK);
     }
 
     public override void get_size (Gtk.Widget widget, Gdk.Rectangle? cell_area, out int x_offset, out int y_offset, out int width, out int height) {
@@ -49,9 +49,22 @@ public class AppCenter.Widgets.AppCellRenderer : Gtk.CellRenderer {
     public override void render (Cairo.Context cr, Gtk.Widget widget, Gdk.Rectangle background_area, Gdk.Rectangle cell_area, Gtk.CellRendererState flags) {
         var title = package.get_name ();
         var description = package.get_summary ();
+        if (components != null) {
+            foreach (var component in components) {
+                var comp_name = component.get_name ();
+                if (comp_name != null && comp_name != "") {
+                    title = comp_name;
+                }
 
-        double x = background_area.x;
-        double y = background_area.y + MARGIN;
+                var comp_desc = component.get_description ();
+                if (comp_desc != null && comp_desc != "") {
+                    description = comp_desc;
+                }
+            }
+        }
+
+        int x = background_area.x;
+        int y = background_area.y + MARGIN;
         var style_context = widget.get_style_context ();
         if (style_context.direction == Gtk.TextDirection.RTL) {
             x += background_area.width - MARGIN - ICON_SIZE;
@@ -86,7 +99,14 @@ public class AppCenter.Widgets.AppCellRenderer : Gtk.CellRenderer {
         int description_height;
         description_layout.get_pixel_size (out description_width, out description_height);
         if (style_context.direction == Gtk.TextDirection.RTL) {
-            x += title_width - description_width;
+            x += title_width;
+            description_layout.set_width ((x - MARGIN) * Pango.SCALE);
+            description_layout.set_ellipsize (Pango.EllipsizeMode.START);
+            description_layout.set_alignment (Pango.Alignment.RIGHT);
+            x = MARGIN;
+        } else {
+            description_layout.set_width ((background_area.width - x - MARGIN) * Pango.SCALE);
+            description_layout.set_ellipsize (Pango.EllipsizeMode.END);
         }
 
         var description_style_context = description_label.get_style_context ();

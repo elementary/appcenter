@@ -1,6 +1,6 @@
 find_package (PkgConfig)
 
-pkg_check_modules (DEPS REQUIRED gthread-2.0 gee-0.8 gtk+-3.0 granite packagekit-glib2)
+pkg_check_modules (DEPS REQUIRED gthread-2.0 gee-0.8 gtk+-3.0 granite packagekit-glib2 appstream)
 
 find_package (Vala REQUIRED)
 include (ValaVersion)
@@ -29,6 +29,7 @@ vala_precompile(VALA_C ${EXEC_NAME}
     ./Core/OperationEnum.vala
     ${CMAKE_CURRENT_BINARY_DIR}/config.vala
 PACKAGES
+    appstream
     gtk+-3.0>=3.12
     gee-0.8
     granite

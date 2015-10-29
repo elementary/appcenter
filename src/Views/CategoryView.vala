@@ -23,6 +23,7 @@ using AppCenterCore;
 public class AppCenter.Views.CategoryView : Gtk.Stack {
     public signal void category_entered (string category_name);
     private Gtk.Grid categories_grid;
+    private string current_category;
 
     public CategoryView () {
         
@@ -89,7 +90,13 @@ public class AppCenter.Views.CategoryView : Gtk.Stack {
     }
 
     public void return_clicked () {
-        set_visible_child (categories_grid);
+        if (current_category == null) {
+            set_visible_child (categories_grid);
+        } else {
+            category_entered (current_category);
+            set_visible_child_name (current_category);
+            current_category = null;
+        }
     }
 
     private async void show_app_list_for_category (Category category) {
@@ -104,6 +111,20 @@ public class AppCenter.Views.CategoryView : Gtk.Stack {
         app_list_view.show_all ();
         add_named (app_list_view, category.category_name);
         set_visible_child (app_list_view);
+
+        app_list_view.show_app.connect ((package, components) => {
+            current_category = category.category_name;
+            var pk_child = get_child_by_name (package.get_id ());
+            if (pk_child != null) {
+                set_visible_child (pk_child);
+                return;
+            }
+
+            var app_info_view = new Views.AppInfoView (package, components);
+            app_info_view.show_all ();
+            add_named (app_info_view, package.get_id ());
+            set_visible_child (app_info_view);
+        });
 
         unowned Client client = Client.get_default ();
         // Do not show dev packages.

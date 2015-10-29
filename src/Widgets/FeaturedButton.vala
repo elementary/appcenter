@@ -169,12 +169,13 @@ public class AppCenter.Widgets.FeaturedButton : Gtk.EventBox {
         if (style_context.direction == Gtk.TextDirection.RTL) {
             x += title_width;
             subtitle_layout.set_width ((x - MARGIN) * Pango.SCALE);
+            subtitle_layout.set_ellipsize (Pango.EllipsizeMode.START);
             subtitle_layout.set_alignment (Pango.Alignment.RIGHT);
             x = MARGIN;
         } else {
             subtitle_layout.set_width ((width - x - MARGIN) * Pango.SCALE);
         }
-        subtitle_layout.set_wrap (Pango.WrapMode.WORD_CHAR);
+        subtitle_layout.set_ellipsize (Pango.EllipsizeMode.END);
         style_context.restore ();
         cr.move_to (x, y);
         Pango.cairo_update_layout (cr, subtitle_layout);

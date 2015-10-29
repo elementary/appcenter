@@ -28,10 +28,14 @@ namespace AppCenterCore {
 
         private Gee.LinkedList<Pk.Task> task_list;
         private Pk.Control control;
+        private AppStream.Database appstream_database;
 
         private Client () {
             task_list = new Gee.LinkedList<Pk.Task> ();
             update_list = new Gee.ArrayList<Summary> ();
+
+            appstream_database = new AppStream.Database ();
+            appstream_database.open ();
 
             control = new Pk.Control ();
             control.get_properties_async.begin (null, (obj, res) => {
@@ -176,6 +180,15 @@ namespace AppCenterCore {
             return details;
         }
 
+        public Gee.Collection<AppStream.Component> get_component_for_app (string app) {
+            var comps = appstream_database.find_components_by_term (app, null);
+            var components = new Gee.TreeSet<AppStream.Component> ();
+            comps.foreach ((component) => {
+                components.add (component);
+            });
+
+            return components;
+        }
 
         private static GLib.Once<Client> instance;
         public static unowned Client get_default () {
