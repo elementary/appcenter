@@ -26,6 +26,7 @@ vala_precompile(VALA_C ${EXEC_NAME}
     ./Core/Details.vala
     ./Core/Summary.vala
     ./Core/Category.vala
+    ./Core/Package.vala
     ./Core/OperationEnum.vala
     ${CMAKE_CURRENT_BINARY_DIR}/config.vala
 PACKAGES

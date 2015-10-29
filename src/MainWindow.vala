@@ -91,9 +91,9 @@ public class AppCenter.MainWindow : Gtk.Window {
             headerbar.pack_start (return_button);
             view_mode.sensitive = false;
             return_button.clicked.connect (() => {
+                view_mode.sensitive = true;
                 category_view.return_clicked ();
                 return_button.destroy ();
-                view_mode.sensitive = true;
             });
         });
     }

@@ -21,8 +21,7 @@
 using AppCenterCore;
 
 public class AppCenter.Views.AppInfoView : Gtk.Grid {
-    Pk.Package package;
-    Gee.Collection<AppStream.Component> components;
+    AppCenterCore.Package package;
 
     Gtk.Image app_icon;
     Gtk.Image app_screenshot;
@@ -31,11 +30,12 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
     Gtk.Label app_summary;
     Gtk.Label app_description;
 
-    public AppInfoView (Pk.Package package, Gee.Collection<AppStream.Component> components) {
-        app_name.label = package.get_name ();
-        app_version.label = package.get_version ();
-        app_summary.label = package.get_summary ();
-        foreach (var component in components) {
+    public AppInfoView (AppCenterCore.Package package) {
+        this.package = package;
+        app_name.label = package.pk_package.get_name ();
+        app_version.label = package.pk_package.get_version ();
+        app_summary.label = package.pk_package.get_summary ();
+        foreach (var component in package.components) {
             component.get_icon_urls ().foreach ((k, v) => {
                 app_icon.gicon = new FileIcon (File.new_for_path (v));
             });
@@ -43,6 +43,7 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
     }
     
     construct {
+        get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
         app_icon = new Gtk.Image ();
         app_icon.icon_size = Gtk.IconSize.DIALOG;
         app_screenshot = new Gtk.Image ();

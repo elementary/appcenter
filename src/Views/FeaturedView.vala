@@ -23,6 +23,7 @@ using AppCenterCore;
 public class AppCenter.Views.FeaturedView : Gtk.Grid {
     public FeaturedView () {
         halign = Gtk.Align.CENTER;
+        column_homogeneous = true;
         column_spacing = 6;
         row_spacing = 6;
         margin = 12;
@@ -36,10 +37,9 @@ public class AppCenter.Views.FeaturedView : Gtk.Grid {
         latest_label.get_style_context ().add_class ("h4");
         ((Gtk.Misc) latest_label).xalign = 0;
         attach (left_featured, 0, 0, 1, 1);
-        attach (right_featured, 2, 0, 1, 1);
+        attach (right_featured, 1, 0, 1, 1);
         attach (rated_label, 0, 1, 1, 1);
-        attach (new Gtk.Separator (Gtk.Orientation.VERTICAL), 1, 1, 1, 2);
-        attach (latest_label, 2, 1, 1, 1);
+        attach (latest_label, 1, 1, 1, 1);
     }
 
     private Gtk.Widget get_left_placeholder () {

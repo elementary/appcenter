@@ -37,63 +37,97 @@ const string FEATURED_STYLE_CSS = """
     }
     """;
 
-public class AppCenter.Widgets.FeaturedButton : Gtk.EventBox {
+const string COLORED_STYLE_CSS = """
+    .colored {
+        color: %s;
+    }
+    """;
+
+public class AppCenter.Widgets.FeaturedButton : Gtk.Grid {
     public signal void clicked ();
-
     Gdk.RGBA background_color;
-    Gdk.RGBA text_color;
-    string title;
-    string subtitle;
-    Gdk.Pixbuf icon;
 
-    Pango.Layout title_layout;
-    Pango.Layout subtitle_layout;
-
+    Gtk.Label title_label;
+    Gtk.Label summary_label;
+    Gtk.Image icon_image;
     const int MARGIN = 6;
 
-    public FeaturedButton (Gdk.RGBA background_color, Gdk.RGBA text_color, string title, string subtitle, Gdk.Pixbuf icon) {
+    public FeaturedButton (Gdk.RGBA background_color, Gdk.RGBA text_color, string title, string summary, GLib.Icon icon) {
         this.background_color = background_color;
-        this.text_color = text_color;
-        this.title = title;
-        this.subtitle = subtitle;
-        this.icon = icon;
+        title_label.label = title;
+        summary_label.label = summary;
+        icon_image.gicon = icon;
+
+        var provider = new Gtk.CssProvider ();
+        try {
+            var colored_css = COLORED_STYLE_CSS.printf (text_color.to_string ());
+            provider.load_from_data (colored_css, colored_css.length);
+            var context = title_label.get_style_context ();
+            context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            context.add_class ("colored");
+            context = summary_label.get_style_context ();
+            context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            context.add_class ("colored");
+        } catch (GLib.Error e) {
+            critical (e.message);
+        }
     }
 
     construct {
         add_events (Gdk.EventMask.BUTTON_RELEASE_MASK);
-        var provider = new Gtk.CssProvider();
+        valign = Gtk.Align.CENTER;
+        vexpand = false;
+        column_spacing = 12;
+
+        icon_image = new Gtk.Image ();
+        icon_image.icon_size = Gtk.IconSize.DIALOG;
+        icon_image.vexpand = true;
+        icon_image.margin_start = 6;
+
+        title_label = new Gtk.Label (null);
+        title_label.get_style_context ().add_class ("h2");
+        title_label.margin_end = 6;
+        title_label.valign = Gtk.Align.END;
+        ((Gtk.Misc) title_label).xalign = 0;
+
+        summary_label = new Gtk.Label (null);
+        summary_label.get_style_context ().add_class ("h3");
+        summary_label.margin_end = 6;
+        summary_label.set_ellipsize (Pango.EllipsizeMode.END);
+        summary_label.hexpand = true;
+        summary_label.valign = Gtk.Align.START;
+        ((Gtk.Misc) summary_label).xalign = 0;
+
+        attach (icon_image, 0, 0, 1, 2);
+        attach (title_label, 1, 0, 1, 1);
+        attach (summary_label, 1, 1, 1, 1);
+
+        var context = get_style_context ();
+        var provider = new Gtk.CssProvider ();
         try {
             provider.load_from_data (FEATURED_STYLE_CSS, FEATURED_STYLE_CSS.length);
-            var context = get_style_context ();
-            context.add_provider(provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            context.add_provider(provider, Gtk.STYLE_PROVIDER_PRIORITY_FALLBACK);
             context.add_class ("featured");
         } catch (GLib.Error e) {
             critical (e.message);
         }
     }
 
-    public override void get_preferred_width (out int minimum_width, out int natural_width) {
-        minimum_width = 2*MARGIN + icon.width + 50;
-        if (minimum_width > 350) {
-            natural_width = minimum_width;
-        } else {
-            natural_width = 350;
+    public override void get_preferred_height (out int minimum_height, out int natural_height) {
+        base.get_preferred_height (out minimum_height, out natural_height);
+        minimum_height += 2*MARGIN;
+        natural_height += 2*MARGIN;
+        if (natural_height < 100) {
+            natural_height = 100;
         }
     }
 
-    public override void get_preferred_height (out int minimum_height, out int natural_height) {
-        if (title_layout == null || subtitle_layout == null) {
-            minimum_height = 100;
-        } else {
-            var icon_height = 2*MARGIN + icon.height;
-            var text_height = 4*MARGIN + (title_layout.get_height () + subtitle_layout.get_height ())  * Pango.SCALE;
-            minimum_height = int.max (icon_height, text_height);
-        }
-
-        if (minimum_height > 100) {
-            natural_height = minimum_height;
-        } else {
-            natural_height = 100;
+    public override void get_preferred_width (out int minimum_width, out int natural_width) {
+        base.get_preferred_width (out minimum_width, out natural_width);
+        minimum_width += 2*MARGIN;
+        natural_width += 2*MARGIN;
+        if (natural_width < 350) {
+            natural_width = 350;
         }
     }
 
@@ -101,6 +135,7 @@ public class AppCenter.Widgets.FeaturedButton : Gtk.EventBox {
         clicked ();
         return false;
     }
+
 
     public override bool draw (Cairo.Context cr) {
         int width = get_allocated_width ();
@@ -119,69 +154,7 @@ public class AppCenter.Widgets.FeaturedButton : Gtk.EventBox {
         cr.close_path ();
         cr.fill_preserve ();
         cr.restore ();
-        y += (height - icon.height) / 2;
-        var style_context = get_style_context ();
-        if (style_context.direction == Gtk.TextDirection.RTL) {
-            x += width - MARGIN - icon.width;
-        } else {
-            x += MARGIN;
-        }
 
-        style_context.render_background (cr, 0, 0, width, height);
-        style_context.render_frame (cr, 0, 0, width, height);
-        style_context.render_icon (cr, icon, x, y);
-
-        if (style_context.direction == Gtk.TextDirection.RTL) {
-            x -= 2*MARGIN;
-        } else {
-            x+= icon.width + 2*MARGIN;
-        }
-
-        cr.save ();
-        style_context.save ();
-        style_context.add_class ("h2");
-        title_layout = Pango.cairo_create_layout (cr);
-        title_layout.set_text (title, title.length);
-        title_layout.set_font_description (style_context.get_font (style_context.get_state ()));
-        int title_width;
-        int title_height;
-        title_layout.get_pixel_size (out title_width, out title_height);
-        if (style_context.direction == Gtk.TextDirection.RTL) {
-            title_layout.set_alignment (Pango.Alignment.RIGHT);
-            x -= title_width;
-        }
-        style_context.restore ();
-
-        cr.set_source_rgba (text_color.red, text_color.green, text_color.blue, text_color.alpha);
-        cr.move_to (x, y);
-        Pango.cairo_update_layout (cr, title_layout);
-        Pango.cairo_show_layout (cr, title_layout);
-        y += title_height + MARGIN;
-
-        style_context.save ();
-        style_context.add_class ("h3");
-        subtitle_layout = Pango.cairo_create_layout (cr);
-        subtitle_layout.set_text (subtitle, subtitle.length);
-        subtitle_layout.set_font_description (style_context.get_font (style_context.get_state ()));
-        int subtitle_width;
-        int subtitle_height;
-        subtitle_layout.get_pixel_size (out subtitle_width, out subtitle_height);
-        if (style_context.direction == Gtk.TextDirection.RTL) {
-            x += title_width;
-            subtitle_layout.set_width ((x - MARGIN) * Pango.SCALE);
-            subtitle_layout.set_ellipsize (Pango.EllipsizeMode.START);
-            subtitle_layout.set_alignment (Pango.Alignment.RIGHT);
-            x = MARGIN;
-        } else {
-            subtitle_layout.set_width ((width - x - MARGIN) * Pango.SCALE);
-        }
-        subtitle_layout.set_ellipsize (Pango.EllipsizeMode.END);
-        style_context.restore ();
-        cr.move_to (x, y);
-        Pango.cairo_update_layout (cr, subtitle_layout);
-        Pango.cairo_show_layout (cr, subtitle_layout);
-        cr.restore ();
-
-        return false;
+        return base.draw (cr);
     }
 }

@@ -112,32 +112,34 @@ public class AppCenter.Views.CategoryView : Gtk.Stack {
         add_named (app_list_view, category.category_name);
         set_visible_child (app_list_view);
 
-        app_list_view.show_app.connect ((package, components) => {
+        app_list_view.show_app.connect ((package) => {
             current_category = category.category_name;
-            var pk_child = get_child_by_name (package.get_id ());
+            var pk_child = get_child_by_name (package.pk_package.get_id ());
             if (pk_child != null) {
                 set_visible_child (pk_child);
                 return;
             }
 
-            var app_info_view = new Views.AppInfoView (package, components);
+            var app_info_view = new Views.AppInfoView (package);
             app_info_view.show_all ();
-            add_named (app_info_view, package.get_id ());
+            add_named (app_info_view, package.pk_package.get_id ());
             set_visible_child (app_info_view);
         });
 
         unowned Client client = Client.get_default ();
         // Do not show dev packages.
-        var dev_filter = Utils.bitfield_from_filter (Pk.Filter.NOT_DEVELOPMENT);
+        var filter = Utils.bitfield_from_filter (Pk.Filter.NOT_DEVELOPMENT);
         // Only show the latest version.
-        var new_filter = Utils.bitfield_from_filter (Pk.Filter.NEWEST);
+        filter |= Utils.bitfield_from_filter (Pk.Filter.NEWEST);
         // Show apps with .desktop file.
-        var app_filter = Utils.bitfield_from_filter (Pk.Filter.APPLICATION);
+        filter |= Utils.bitfield_from_filter (Pk.Filter.APPLICATION);
         // Only show for the current architecture.
-        var arch_filter = Utils.bitfield_from_filter (Pk.Filter.ARCH);
+        filter |= Utils.bitfield_from_filter (Pk.Filter.ARCH);
         // Show only the main package (ex: 0ad and not 0ad-data).
-        var base_filter = Utils.bitfield_from_filter (Pk.Filter.BASENAME);
-        var apps = yield client.get_applications (dev_filter|new_filter|app_filter|arch_filter|base_filter, category.group, null);
+        filter |= Utils.bitfield_from_filter (Pk.Filter.BASENAME);
+        // Show only the main package (ex: 0ad and not 0ad-data).
+        filter |= Utils.bitfield_from_filter (Pk.Filter.NOT_SOURCE);
+        var apps = yield client.get_applications (filter, category.group, null);
         foreach (var app in apps) {
             app_list_view.add_package (app);
         }

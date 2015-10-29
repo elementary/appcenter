@@ -21,18 +21,20 @@ namespace AppCenterCore {
 
         public signal void connection_changed ();
 
-        public Gee.ArrayList<Summary> update_list { public get; private set; }
+        public signal void updates_available ();
+
 
         public bool connected { public get; private set; }
         public bool operation_running { public get; private set; default = false; }
 
         private Gee.LinkedList<Pk.Task> task_list;
+        private Gee.HashMap<string, AppCenterCore.Package> package_list;
         private Pk.Control control;
         private AppStream.Database appstream_database;
 
         private Client () {
             task_list = new Gee.LinkedList<Pk.Task> ();
-            update_list = new Gee.ArrayList<Summary> ();
+            package_list = new Gee.HashMap<string, AppCenterCore.Package> (null, null);
 
             appstream_database = new AppStream.Database ();
             appstream_database.open ();
@@ -98,8 +100,15 @@ namespace AppCenterCore {
 
             try {
                 Pk.Results result = yield update_task.get_updates_async (Pk.Filter.INSTALLED, null, (t, p) => { });
-                result.get_package_array ().foreach ((package) => {
-                    update_list.add (new Summary (package.package_id));
+                result.get_package_array ().foreach ((pk_package) => {
+                    AppCenterCore.Package package = package_list.get (pk_package.get_name ());
+                    if (package == null) {
+                        warning (pk_package.get_name ());
+                        package = new AppCenterCore.Package (pk_package);
+                        package_list.set (pk_package.get_name (), package);
+                    }
+
+                    package.update_available = true;
                 });
             } catch (Error e) {
                 critical (e.message);
@@ -107,6 +116,7 @@ namespace AppCenterCore {
 
             operation_changed (Operation.UPDATE_REFRESH, false);
             release_task (update_task);
+            updates_available ();
         }
 
         public async void refresh_cache () {
@@ -124,16 +134,21 @@ namespace AppCenterCore {
             release_task (cache_task);
         }
 
-        public async Gee.Collection<Pk.Package> get_installed_applications () {
+        public async Gee.Collection<AppCenterCore.Package> get_installed_applications () {
             Pk.Task packages_task = request_task ();
-            var packages = new Gee.TreeSet<Pk.Package> ();
+            var packages = new Gee.TreeSet<AppCenterCore.Package> ();
 
             try {
                 var install_filter = Utils.bitfield_from_filter (Pk.Filter.INSTALLED);
                 var new_filter = Utils.bitfield_from_filter (Pk.Filter.NEWEST);
                 Pk.Results result = yield packages_task.get_packages_async (install_filter|new_filter, null,
                         (prog, type) => {});
-                result.get_package_array ().foreach ((package) => {
+                result.get_package_array ().foreach ((pk_package) => {
+                    AppCenterCore.Package package = package_list.get (pk_package.get_name ());
+                    if (package == null) {
+                        package = new AppCenterCore.Package (pk_package);
+                        package_list.set (pk_package.get_name (), package);
+                    }
                     packages.add (package);
                 });
             } catch (Error e) {
@@ -145,14 +160,20 @@ namespace AppCenterCore {
             return packages;
         }
 
-        public async Gee.Collection<Pk.Package> get_applications (Pk.Bitfield filter, Pk.Group group, GLib.Cancellable? cancellable = null) {
+        public async Gee.Collection<AppCenterCore.Package> get_applications (Pk.Bitfield filter, Pk.Group group, GLib.Cancellable? cancellable = null) {
             Pk.Task packages_task = request_task ();
-            var packages = new Gee.TreeSet<Pk.Package> ();
+            var packages = new Gee.TreeSet<AppCenterCore.Package> ();
 
             try {
                 var group_string = Pk.Group.enum_to_string (group);
                 Pk.Results result = yield packages_task.search_groups_async (filter, {group_string, null}, cancellable, () => {});
-                result.get_package_array ().foreach ((package) => {
+                result.get_package_array ().foreach ((pk_package) => {
+                    AppCenterCore.Package package = package_list.get (pk_package.get_name ());
+                    if (package == null) {
+                        package = new AppCenterCore.Package (pk_package);
+                        package_list.set (pk_package.get_name (), package);
+                    }
+
                     packages.add (package);
                 });
             } catch (Error e) {
@@ -181,7 +202,7 @@ namespace AppCenterCore {
         }
 
         public Gee.Collection<AppStream.Component> get_component_for_app (string app) {
-            var comps = appstream_database.find_components_by_term (app, null);
+            var comps = appstream_database.find_components_by_term ("pkg:%s".printf (app), null);
             var components = new Gee.TreeSet<AppStream.Component> ();
             comps.foreach ((component) => {
                 components.add (component);

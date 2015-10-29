@@ -18,25 +18,22 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-using AppCenterCore;
+public class AppCenterCore.Package : Object {
+    public signal void changed ();
 
-public class AppCenter.Views.InstalledView : Gtk.Grid {
-    AppListView app_list_view;
-    public InstalledView () {
-        get_apps.begin ();
+    public string package_id { public get; private set; }
+    public Pk.Package pk_package { public get; private set; }
+    public bool update_available { public get; public set; }
+    public Gee.TreeSet<AppStream.Component> components { public get; private set; }
+
+    public Package (Pk.Package package) {
+        pk_package = package;
+        package_id = package.get_id ();
+        components = new Gee.TreeSet<AppStream.Component> ();
     }
 
-    construct {
-        app_list_view = new AppListView ();
-        add (app_list_view);
-    }
-
-    private async void get_apps () {
-        unowned Client client = Client.get_default ();
-        var installed_apps = yield client.get_installed_applications ();
-        client.refresh_updates.begin ();
-        foreach (var app in installed_apps) {
-            app_list_view.add_package (app);
-        }
+    public void find_components () {
+        components.add_all (Client.get_default ().get_component_for_app (pk_package.get_name ()));
+        changed ();
     }
 }

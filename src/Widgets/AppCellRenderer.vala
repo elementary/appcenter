@@ -23,19 +23,25 @@ using AppCenterCore;
 public class AppCenter.Widgets.AppCellRenderer : Gtk.CellRenderer {
 
     /* icon property set by the tree column */
-    public Pk.Package package { get; set; }
-    public Gee.Collection<AppStream.Component> components { get; set; }
+    public AppCenterCore.Package package { get; set; }
     public Gdk.Pixbuf icon { get; set; }
 
+    private Gdk.Pixbuf update_icon;
     private const int MARGIN = 6;
     private const int ICON_SIZE = 48;
+    private const int ACTION_ICON_SIZE = 24;
     private Gtk.Label title_label;
-    private Gtk.Label description_label;
+    private Gtk.Label summary_label;
 
     public AppCellRenderer () {
+        
+    }
+
+    construct {
         title_label = new Gtk.Label (null);
         title_label.get_style_context ().add_class ("h3");
-        description_label = new Gtk.Label (null);
+        summary_label = new Gtk.Label (null);
+        update_icon = Gtk.IconTheme.get_default ().load_icon ("software-update-available-symbolic", ACTION_ICON_SIZE, Gtk.IconLookupFlags.GENERIC_FALLBACK);
     }
 
     public override void get_size (Gtk.Widget widget, Gdk.Rectangle? cell_area, out int x_offset, out int y_offset, out int width, out int height) {
@@ -47,19 +53,12 @@ public class AppCenter.Widgets.AppCellRenderer : Gtk.CellRenderer {
 
     /* render method */
     public override void render (Cairo.Context cr, Gtk.Widget widget, Gdk.Rectangle background_area, Gdk.Rectangle cell_area, Gtk.CellRendererState flags) {
-        var title = package.get_name ();
-        var description = package.get_summary ();
-        if (components != null) {
-            foreach (var component in components) {
-                var comp_name = component.get_name ();
-                if (comp_name != null && comp_name != "") {
-                    title = comp_name;
-                }
-
-                var comp_desc = component.get_description ();
-                if (comp_desc != null && comp_desc != "") {
-                    description = comp_desc;
-                }
+        var title = package.pk_package.get_name ();
+        var summary = package.pk_package.get_summary ();
+        foreach (var component in package.components) {
+            var comp_name = component.get_name ();
+            if (comp_name != null && comp_name != "") {
+                title = comp_name;
             }
         }
 
@@ -72,47 +71,68 @@ public class AppCenter.Widgets.AppCellRenderer : Gtk.CellRenderer {
             x += MARGIN;
         }
 
-        style_context.render_icon (cr, icon, x, y);
-        cr.fill ();
+        draw_icon (cr, widget, x, y, icon, ICON_SIZE);
 
-        cr.save ();
-        var title_layout = title_label.create_pango_layout (title);
-        int title_width;
-        int title_height;
-        title_layout.get_pixel_size (out title_width, out title_height);
+        var label_width = background_area.width - 3 * MARGIN - ICON_SIZE;
+        if (package.update_available) {
+            label_width -= MARGIN + ACTION_ICON_SIZE;
+        }
+
         if (style_context.direction == Gtk.TextDirection.RTL) {
-            x -= MARGIN + title_width;
+            x -= MARGIN + label_width;
         } else {
             x += ICON_SIZE + MARGIN;
         }
 
-        var title_style_context = title_label.get_style_context ();
-        title_style_context.parent = style_context.parent;
-        title_style_context.set_state (style_context.get_state ());
-        title_style_context.render_layout (cr, x, y, title_layout);
-        cr.restore ();
+        int title_height;
+        draw_label (cr, widget, title_label, x, y, title, label_width, out title_height);
 
         y += title_height + MARGIN;
+
+        int summary_height;
+        draw_label (cr, widget, summary_label, x, y, summary, label_width, out summary_height);
+
+        if (package.update_available) {
+            y = background_area.y + (background_area.height - ACTION_ICON_SIZE)/2;
+            if (style_context.direction == Gtk.TextDirection.RTL) {
+                x = background_area.x + MARGIN;
+            } else {
+                x = background_area.x + background_area.width - ACTION_ICON_SIZE - MARGIN;
+            }
+
+            draw_icon (cr, widget, x, y, update_icon, ACTION_ICON_SIZE);
+        }
+    }
+
+    private void draw_label (Cairo.Context cr, Gtk.Widget widget, Gtk.Label label, int x, int y, string title, int width, out int height) {
         cr.save ();
-        var description_layout = description_label.create_pango_layout (description);
-        int description_width;
-        int description_height;
-        description_layout.get_pixel_size (out description_width, out description_height);
+        var style_context = widget.get_style_context ();
+        var label_style_context = label.get_style_context ();
+        label_style_context.parent = style_context.parent;
+        label_style_context.set_state (style_context.get_state ());
+
+        var label_layout = label.create_pango_layout (title);
+        label_layout.set_width (width * Pango.SCALE);
         if (style_context.direction == Gtk.TextDirection.RTL) {
-            x += title_width;
-            description_layout.set_width ((x - MARGIN) * Pango.SCALE);
-            description_layout.set_ellipsize (Pango.EllipsizeMode.START);
-            description_layout.set_alignment (Pango.Alignment.RIGHT);
-            x = MARGIN;
+            label_layout.set_ellipsize (Pango.EllipsizeMode.START);
+            label_layout.set_alignment (Pango.Alignment.RIGHT);
         } else {
-            description_layout.set_width ((background_area.width - x - MARGIN) * Pango.SCALE);
-            description_layout.set_ellipsize (Pango.EllipsizeMode.END);
+            label_layout.set_ellipsize (Pango.EllipsizeMode.END);
+            label_layout.set_alignment (Pango.Alignment.LEFT);
         }
 
-        var description_style_context = description_label.get_style_context ();
-        description_style_context.parent = style_context.parent;
-        description_style_context.set_state (style_context.get_state ());
-        description_style_context.render_layout (cr, x, y, description_layout);
+        int label_width;
+        label_layout.get_pixel_size (out label_width, out height);
+        label_style_context.render_layout (cr, x, y, label_layout);
         cr.restore ();
+    }
+
+    private void draw_summary () {
+        
+    }
+
+    private void draw_icon (Cairo.Context cr, Gtk.Widget widget, int x, int y, Gdk.Pixbuf pixbuf, int size) {
+        widget.get_style_context ().render_icon (cr, pixbuf, x, y);
+        cr.fill ();
     }
 }
