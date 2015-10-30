@@ -45,6 +45,7 @@ public class AppCenter.Views.AppListView : Gtk.Stack {
         tree_view.insert_column_with_data_func (0, null, new Widgets.AppCellRenderer (), TreeCellDataFunc);
         tree_view.headers_visible = false;
         tree_view.activate_on_single_click = true;
+        tree_view.rules_hint = true;
         list_store.set_sort_func (0, TreeIterCompareFunc);
         list_store.set_sort_column_id (0, Gtk.SortType.ASCENDING);
         scrolled = new Gtk.ScrolledWindow (null, null);
@@ -114,7 +115,11 @@ public class AppCenter.Views.AppListView : Gtk.Stack {
             }
 
             if (icon == null) {
-                icon = Gtk.IconTheme.get_default ().load_icon ("application-default-icon", 48, Gtk.IconLookupFlags.GENERIC_FALLBACK);
+                try {
+                    icon = Gtk.IconTheme.get_default ().load_icon ("application-default-icon", 48, Gtk.IconLookupFlags.GENERIC_FALLBACK);
+                } catch (Error e) {
+                    critical (e.message);
+                }
             }
 
             ((Gtk.ListStore) tree_model).set (iter, 1, icon);

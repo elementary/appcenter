@@ -48,7 +48,7 @@ public class AppCenter.Views.FeaturedView : Gtk.Grid {
         Gdk.RGBA text_color = {1, 1, 1, 1};
         string title = "Apport";
         string subtitle = "Crash Reporting Tool";
-        Gdk.Pixbuf icon = Gtk.IconTheme.get_default ().load_icon ("apport", 64, Gtk.IconLookupFlags.GENERIC_FALLBACK);
+        var icon = new ThemedIcon ("apport");
         var left_placeholder = new Widgets.FeaturedButton (background_color, text_color, title, subtitle, icon);
         return left_placeholder;
     }
@@ -59,7 +59,7 @@ public class AppCenter.Views.FeaturedView : Gtk.Grid {
         Gdk.RGBA text_color = {1, 1, 1, 1};
         string title = "Database";
         string subtitle = "It's grown up and professional";
-        Gdk.Pixbuf icon = Gtk.IconTheme.get_default ().load_icon ("office-database", 64, Gtk.IconLookupFlags.GENERIC_FALLBACK);
+        var icon = new ThemedIcon ("office-database");
         var left_placeholder = new Widgets.FeaturedButton (background_color, text_color, title, subtitle, icon);
         return left_placeholder;
     }

@@ -29,11 +29,16 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
     Gtk.Label app_version;
     Gtk.Label app_summary;
     Gtk.Label app_description;
+    // The action button covers Install, Update and Open at once
+    Gtk.Button action_button;
+    Gtk.Button uninstall_button;
 
     public AppInfoView (AppCenterCore.Package package) {
         this.package = package;
         app_name.label = package.pk_package.get_name ();
-        app_version.label = package.pk_package.get_version ();
+        string version = package.pk_package.get_version ();
+        app_version.label = AppCenterCore.Package.get_strict_version (version);
+        app_version.tooltip_text = version;
         app_summary.label = package.pk_package.get_summary ();
         foreach (var component in package.components) {
             component.get_icon_urls ().foreach ((k, v) => {
@@ -43,34 +48,65 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
     }
     
     construct {
+        column_spacing = 12;
+        row_spacing = 6;
         get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
+
         app_icon = new Gtk.Image ();
-        app_icon.icon_size = Gtk.IconSize.DIALOG;
+        app_icon.margin_start = 6;
+        app_icon.icon_name = "application-default-icon";
+        app_icon.pixel_size = 128;
+
         app_screenshot = new Gtk.Image ();
         app_screenshot.pixel_size = 200;
         app_screenshot.icon_name = "image-x-generic";
+
         app_name = new Gtk.Label (null);
         ((Gtk.Misc) app_name).xalign = 0;
+        app_name.get_style_context ().add_class ("h1");
+        app_name.valign = Gtk.Align.CENTER;
+
         app_version = new Gtk.Label (null);
         ((Gtk.Misc) app_version).xalign = 0;
         app_version.hexpand = true;
+        app_version.valign = Gtk.Align.CENTER;
+        app_version.get_style_context ().add_class ("h2");
+
         app_summary = new Gtk.Label (null);
         ((Gtk.Misc) app_summary).xalign = 0;
+        app_summary.valign = Gtk.Align.START;
+
         app_description = new Gtk.Label (null);
         ((Gtk.Misc) app_description).xalign = 0;
-        var content_grid = new Gtk.Grid ();
-        content_grid.orientation = Gtk.Orientation.HORIZONTAL;
-        content_grid.halign = Gtk.Align.CENTER;
-        content_grid.valign = Gtk.Align.CENTER;
+
+        action_button = new Gtk.Button.with_label (_("Install"));
+        action_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        uninstall_button = new Gtk.Button.with_label (_("Uninstall"));
+        uninstall_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+        var button_grid = new Gtk.Grid ();
+        button_grid.margin_end = 6;
+        button_grid.valign = Gtk.Align.CENTER;
+        button_grid.column_spacing = 12;
+        button_grid.orientation = Gtk.Orientation.HORIZONTAL;
+        button_grid.add (uninstall_button);
+        button_grid.add (action_button);
+
         var scrolled = new Gtk.ScrolledWindow (null, null);
         scrolled.expand = true;
         scrolled.add (app_description);
+
+        var content_grid = new Gtk.Grid ();
+        content_grid.orientation = Gtk.Orientation.HORIZONTAL;
+        content_grid.halign = Gtk.Align.END;
+        content_grid.valign = Gtk.Align.CENTER;
         content_grid.add (scrolled);
         content_grid.add (app_screenshot);
+
         attach (app_icon, 0, 0, 1, 2);
         attach (app_name, 1, 0, 1, 1);
         attach (app_version, 2, 0, 1, 1);
-        attach (app_summary, 1, 1, 2, 1);
-        attach (content_grid, 0, 2, 3, 1);
+        attach (button_grid, 3, 0, 1, 1);
+        attach (app_summary, 1, 1, 3, 1);
+        attach (content_grid, 0, 2, 4, 1);
     }
 }

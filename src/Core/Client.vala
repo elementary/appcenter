@@ -36,8 +36,13 @@ namespace AppCenterCore {
             task_list = new Gee.LinkedList<Pk.Task> ();
             package_list = new Gee.HashMap<string, AppCenterCore.Package> (null, null);
 
+            var datapool = new AppStream.DataPool ();
+            datapool.update ();
             appstream_database = new AppStream.Database ();
             appstream_database.open ();
+            appstream_database.get_all_components ().foreach ((comp) => {
+                warning (comp.get_name ());
+            });
 
             control = new Pk.Control ();
             control.get_properties_async.begin (null, (obj, res) => {
@@ -108,7 +113,7 @@ namespace AppCenterCore {
                         package_list.set (pk_package.get_name (), package);
                     }
 
-                    package.update_available = true;
+                    package.update_package = pk_package;
                 });
             } catch (Error e) {
                 critical (e.message);
@@ -183,22 +188,6 @@ namespace AppCenterCore {
 
             release_task (packages_task);
             return packages;
-        }
-
-        public async Gee.Collection<Pk.Details> get_packages_details (string[] packages, GLib.Cancellable? cancellable = null) {
-            Pk.Task details_task = request_task ();
-            var details = new Gee.TreeSet<Pk.Details> ();
-            try {
-                Pk.Results result = yield details_task.get_details_async (packages, cancellable, () => {});
-                result.get_details_array ().foreach ((detail) => {
-                    details.add (detail);
-                });
-            } catch (Error e) {
-                critical (e.message);
-            }
-
-            release_task (details_task);
-            return details;
         }
 
         public Gee.Collection<AppStream.Component> get_component_for_app (string app) {

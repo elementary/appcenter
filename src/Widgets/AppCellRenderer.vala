@@ -41,7 +41,11 @@ public class AppCenter.Widgets.AppCellRenderer : Gtk.CellRenderer {
         title_label = new Gtk.Label (null);
         title_label.get_style_context ().add_class ("h3");
         summary_label = new Gtk.Label (null);
-        update_icon = Gtk.IconTheme.get_default ().load_icon ("software-update-available-symbolic", ACTION_ICON_SIZE, Gtk.IconLookupFlags.GENERIC_FALLBACK);
+        try {
+            update_icon = Gtk.IconTheme.get_default ().load_icon ("software-update-available-symbolic", ACTION_ICON_SIZE, Gtk.IconLookupFlags.GENERIC_FALLBACK);
+        } catch (Error e) {
+            critical (e.message);
+        }
     }
 
     public override void get_size (Gtk.Widget widget, Gdk.Rectangle? cell_area, out int x_offset, out int y_offset, out int width, out int height) {
@@ -125,10 +129,6 @@ public class AppCenter.Widgets.AppCellRenderer : Gtk.CellRenderer {
         label_layout.get_pixel_size (out label_width, out height);
         label_style_context.render_layout (cr, x, y, label_layout);
         cr.restore ();
-    }
-
-    private void draw_summary () {
-        
     }
 
     private void draw_icon (Cairo.Context cr, Gtk.Widget widget, int x, int y, Gdk.Pixbuf pixbuf, int size) {

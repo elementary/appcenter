@@ -23,7 +23,12 @@ public class AppCenterCore.Package : Object {
 
     public string package_id { public get; private set; }
     public Pk.Package pk_package { public get; private set; }
-    public bool update_available { public get; public set; }
+    public Pk.Package? update_package { public get; public set; }
+    public bool update_available {
+        public get {
+            return update_package != null;
+        }
+    }
     public Gee.TreeSet<AppStream.Component> components { public get; private set; }
 
     public Package (Pk.Package package) {
@@ -35,5 +40,16 @@ public class AppCenterCore.Package : Object {
     public void find_components () {
         components.add_all (Client.get_default ().get_component_for_app (pk_package.get_name ()));
         changed ();
+    }
+
+    public static string get_strict_version (string version) {
+        string returned = version;
+        returned = returned.split ("+", 2)[0];
+        returned = returned.split ("-", 2)[0];
+        returned = returned.split ("~", 2)[0];
+        if (":" in returned) {
+            returned = returned.split (":", 2)[1];
+        }
+        return returned;
     }
 }

@@ -80,7 +80,7 @@ public class AppCenter.Widgets.FeaturedButton : Gtk.Grid {
         column_spacing = 12;
 
         icon_image = new Gtk.Image ();
-        icon_image.icon_size = Gtk.IconSize.DIALOG;
+        icon_image.pixel_size = 64;
         icon_image.vexpand = true;
         icon_image.margin_start = 6;
 
