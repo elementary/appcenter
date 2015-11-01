@@ -30,6 +30,7 @@ public class AppCenterCore.Package : Object {
         }
     }
     public Gee.TreeSet<AppStream.Component> components { public get; private set; }
+    public bool installed { public get; public set; }
 
     public Package (Pk.Package package) {
         pk_package = package;

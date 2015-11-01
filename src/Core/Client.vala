@@ -40,17 +40,11 @@ namespace AppCenterCore {
             datapool.update ();
             appstream_database = new AppStream.Database ();
             appstream_database.open ();
-            appstream_database.get_all_components ().foreach ((comp) => {
-                warning (comp.get_name ());
-            });
 
             control = new Pk.Control ();
             control.get_properties_async.begin (null, (obj, res) => {
                 try {
-                    var result = control.get_properties_async.end (res);
-                    if (result) {
-                        warning ("Achieved");
-                    }
+                    control.get_properties_async.end (res);
                 } catch (Error e) {
                     critical (e.message);
                 }
@@ -154,6 +148,8 @@ namespace AppCenterCore {
                         package = new AppCenterCore.Package (pk_package);
                         package_list.set (pk_package.get_name (), package);
                     }
+
+                    package.installed = true;
                     packages.add (package);
                 });
             } catch (Error e) {
@@ -163,6 +159,10 @@ namespace AppCenterCore {
 
             release_task (packages_task);
             return packages;
+        }
+
+        public Gee.Collection<AppCenterCore.Package> get_cached_applications () {
+            return package_list.values;
         }
 
         public async Gee.Collection<AppCenterCore.Package> get_applications (Pk.Bitfield filter, Pk.Group group, GLib.Cancellable? cancellable = null) {

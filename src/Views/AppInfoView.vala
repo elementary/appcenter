@@ -45,8 +45,37 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
                 app_icon.gicon = new FileIcon (File.new_for_path (v));
             });
         }
+
+        if (package.update_available) {
+            action_button.label = _("Update");
+        } else if (package.installed) {
+            action_button.hide ();
+            action_button.no_show_all = true;
+        }
+
+        package.notify["update-available"].connect (() => {
+            if (package.update_available) {
+                action_button.label = _("Update");
+            } else {
+                action_button.hide ();
+                action_button.no_show_all = true;
+            }
+        });
+
+        package.notify["installed"].connect (() => {
+            if (package.installed && package.update_available) {
+                action_button.label = _("Update");
+                action_button.no_show_all = false;
+            } else if (package.installed) {
+                action_button.hide ();
+                action_button.no_show_all = true;
+            } else {
+                action_button.label = _("Install");
+                action_button.no_show_all = false;
+            }
+        });
     }
-    
+
     construct {
         column_spacing = 12;
         row_spacing = 6;
@@ -81,6 +110,7 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
 
         action_button = new Gtk.Button.with_label (_("Install"));
         action_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        action_button.clicked.connect (() => action_clicked ());
         uninstall_button = new Gtk.Button.with_label (_("Uninstall"));
         uninstall_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
         var button_grid = new Gtk.Grid ();
@@ -108,5 +138,13 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         attach (button_grid, 3, 0, 1, 1);
         attach (app_summary, 1, 1, 3, 1);
         attach (content_grid, 0, 2, 4, 1);
+    }
+
+    public void action_clicked () {
+        if (package.installed && package.update_available) {
+            warning ("update");
+        } else {
+            warning ("install");
+        }
     }
 }

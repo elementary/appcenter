@@ -84,17 +84,25 @@ public class AppCenter.MainWindow : Gtk.Window {
         stack.add (search_view);
         add (stack);
 
-        category_view.category_entered.connect ((name) => {
-            var return_button = new Gtk.Button.with_label (name);
-            return_button.get_style_context ().add_class ("back-button");
-            return_button.show_all ();
-            headerbar.pack_start (return_button);
-            view_mode.sensitive = false;
-            return_button.clicked.connect (() => {
-                view_mode.sensitive = true;
-                category_view.return_clicked ();
-                return_button.destroy ();
-            });
+        category_view.subview_entered.connect ((name) => {
+            show_return_button (name, category_view);
+        });
+
+        installed_view.subview_entered.connect ((name) => {
+            show_return_button (name, installed_view);
+        });
+    }
+
+    private void show_return_button (string return_label, View view) {
+        var return_button = new Gtk.Button.with_label (return_label);
+        return_button.get_style_context ().add_class ("back-button");
+        return_button.show_all ();
+        headerbar.pack_start (return_button);
+        view_mode.sensitive = false;
+        return_button.clicked.connect (() => {
+            view_mode.sensitive = true;
+            view.return_clicked ();
+            return_button.destroy ();
         });
     }
 }

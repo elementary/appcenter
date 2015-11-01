@@ -1,10 +1,16 @@
 find_package (PkgConfig)
 
 pkg_check_modules (DEPS REQUIRED gthread-2.0 gee-0.8 gtk+-3.0 granite packagekit-glib2 appstream)
+pkg_check_modules (UNITY unity>=4.0.0)
 
 find_package (Vala REQUIRED)
 include (ValaVersion)
 ensure_vala_version ("0.26" MINIMUM)
+
+if (UNITY_FOUND)
+  set (UNITY_OPTIONS -D HAVE_UNITY)
+  set (UNITY_PACKAGES unity)
+endif ()
 
 include(ValaPrecompile)
 vala_precompile(VALA_C ${EXEC_NAME}
@@ -16,6 +22,7 @@ vala_precompile(VALA_C ${EXEC_NAME}
     ./Views/CategoryView.vala
     ./Views/SearchView.vala
     ./Views/InstalledView.vala
+    ./Views/View.vala
     ./Widgets/AppCellRenderer.vala
     ./Widgets/CategoryItem.vala
     ./Widgets/FeaturedButton.vala
@@ -35,18 +42,19 @@ PACKAGES
     gee-0.8
     granite
     packagekit-glib2
+    ${UNITY_PACKAGES}
 OPTIONS
   --vapidir=${CMAKE_SOURCE_DIR}/vapi
   --target-glib=2.32
   --thread
+  ${UNITY_OPTIONS}
 )
 
-add_definitions (${DEPS_CFLAGS})
-link_libraries (${DEPS_LIBRARIES})
-link_directories (${DEPS_LIBRARY_DIRS})
+add_definitions (${DEPS_CFLAGS} ${UNITY_CFLAGS})
+link_directories (${DEPS_LIBRARY_DIRS} ${UNITY_LIBRARY_DIRS})
 
 add_executable (${EXEC_NAME} ${VALA_C})
-target_link_libraries (${EXEC_NAME} ${DEPS_LIBRARIES}) 
+target_link_libraries (${EXEC_NAME} ${DEPS_LIBRARIES} ${UNITY_LIBRARIES}) 
 
 install (TARGETS ${EXEC_NAME} RUNTIME DESTINATION bin)
 
