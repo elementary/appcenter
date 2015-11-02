@@ -1,21 +1,15 @@
 Source: appcenter
 Section: utils
 Maintainer: Mario Guerriero <mefrio.g@gmail.com>
-Build-Depends: app-install-data,
-               cmake,
+Build-Depends: cmake,
                debhelper (>= 9),
-               libappstore-dev,
-               libgee-dev,
+               libgee-0.8-dev,
                libgranite-dev,
                libgtk-3-dev,
-               libjson-glib-dev,
                libpackagekit-glib2-dev,
-               libpeas-dev,
-               libsqlheavy0.1-dev (>= 0.0) | libsqlheavy-dev,
                libunity-dev,
-               packagekit,
-               valac-0.18 | valac (>= 0.18)
-Standards-Version: 3.9.3
+               valac (>= 0.18)
+Standards-Version: 3.9.6
 Homepage: https://launchpad.net/appcenter
 
 Package: appcenter
@@ -23,12 +17,12 @@ Architecture: any
 Priority: extra
 Depends: app-install-data,
          packagekit,
-         software-properties-gtk,
          ${misc:Depends},
          ${shlibs:Depends}
 Pre-Depends: dpkg (>= 1.15.7.2)
-Description: AppCenter
- A fast application store made with libappstore.
+Description: Fast application store
+ Install, update and remove apps with ease.
+ Helps independent developers.
 
 Package: appcenter-dbg
 Architecture: any
@@ -37,7 +31,8 @@ Priority: extra
 Depends: appcenter (= ${binary:Version}), ${misc:Depends}
 Pre-Depends: dpkg (>= 1.15.6)
 Enhances: appcenter
-Description: AppCenter (debugging symbols)
- A fast application store made with libappstore.
+Description: Fast application store (debugging symbols)
+ Install, update and remove apps with ease.
+ Helps independent developers.
  .
  This package contains debugging symbols for appcenter.
