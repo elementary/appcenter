@@ -33,8 +33,6 @@ public class AppCenter.Views.InstalledView : View {
 
     Gtk.Stack top_stack;
     public InstalledView () {
-        Client.get_default ().updates_available.connect (() => show_update_number ());
-
         get_apps.begin ();
     }
 
@@ -131,6 +129,9 @@ public class AppCenter.Views.InstalledView : View {
         client.refresh_updates.begin ();
         foreach (var app in installed_apps) {
             app_list_view.add_package (app);
+            app.notify["update-available"].connect (() => {
+                show_update_number ();
+            });
         }
     }
 }

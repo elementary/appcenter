@@ -57,7 +57,7 @@ public class AppCenter.Views.AppListView : Gtk.Stack {
         add (alert_view);
         set_visible_child (waiting_view);
         spinner.start ();
-        
+
         tree_view.row_activated.connect ((path, column) => {
             Gtk.TreeIter iter;
             if (list_store.get_iter (out iter, path)) {
@@ -67,10 +67,6 @@ public class AppCenter.Views.AppListView : Gtk.Stack {
 
                 show_app (package);
             }
-        });
-
-        Client.get_default ().updates_available.connect (() => {
-            list_store.set_sort_func (0, (model, a, b) => TreeIterCompareFunc (model, a, b));
         });
     }
 
@@ -90,6 +86,14 @@ public class AppCenter.Views.AppListView : Gtk.Stack {
         if (list_store.iter_n_children (null) == 1) {
             set_visible_child (scrolled);
         }
+
+        package.notify["installed"].connect (() => {
+            list_store.set (iter, 0, package);
+        });
+
+        package.notify["update-available"].connect (() => {
+            list_store.set (iter, 0, package);
+        });
     }
 
     /*

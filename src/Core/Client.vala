@@ -16,8 +16,6 @@
 
 namespace AppCenterCore {
     public class Client : Object {
-        public signal void updates_available ();
-
         public bool connected { public get; private set; }
 
         private Gee.LinkedList<Pk.Task> task_list;
@@ -112,7 +110,6 @@ namespace AppCenterCore {
             }
 
             release_task (update_task);
-            updates_available ();
         }
 
         public async void refresh_cache (Pk.ProgressCallback cb) {

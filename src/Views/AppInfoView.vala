@@ -77,6 +77,12 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
                 action_button.no_show_all = false;
             }
         });
+
+        package.progress_changed.connect ((label, progress) => progress_changed (label, progress));
+        string label;
+        double progress;
+        package.get_latest_progress (out label, out progress);
+        progress_changed (label, progress);
     }
 
     construct {
@@ -116,8 +122,6 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         action_stack.margin_end = 6;
 
         progress_bar = new Gtk.ProgressBar ();
-        progress_bar.no_show_all = true;
-        progress_bar.hexpand = true;
 
         progress_label = new Gtk.Label (null);
 
@@ -130,6 +134,7 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         uninstall_button.clicked.connect (() => uninstall_clicked.begin ());
 
         var button_grid = new Gtk.Grid ();
+        button_grid.halign = Gtk.Align.END;
         button_grid.valign = Gtk.Align.CENTER;
         button_grid.column_spacing = 12;
         button_grid.orientation = Gtk.Orientation.HORIZONTAL;
@@ -165,32 +170,26 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         attach (content_grid, 0, 2, 4, 1);
     }
 
-    private void ProgressCallback (Pk.Progress progress, Pk.ProgressType type) {
-        warning ("%u", progress.status);
-        switch (type) {
-            case Pk.ProgressType.ITEM_PROGRESS:
-                progress_bar.fraction = ((double)progress.percentage)/100;
-                break;
-            case Pk.ProgressType.STATUS:
-                progress_label.label = Pk.Status.enum_to_string ((Pk.Status) progress.status);
-                break;
+    private void progress_changed (string label, double progress) {
+        if (progress < 1.0f) {
+            action_stack.set_visible_child_name ("progress");
+            progress_bar.fraction = progress;
+            progress_label.label = label;
+        } else {
+            action_stack.set_visible_child_name ("buttons");
         }
     }
 
-    public async void action_clicked () {
-        action_stack.set_visible_child_name ("progress");
+    private async void action_clicked () {
         var treeset = new Gee.TreeSet<AppCenterCore.Package> ();
         treeset.add (package);
         try {
             if (package.installed && package.update_available) {
-                yield AppCenterCore.Client.get_default ().update_packages (treeset, (progress, type) => {ProgressCallback (progress, type);});
-                action_stack.set_visible_child_name ("buttons");
+                yield package.update ();
                 action_button.no_show_all = true;
                 action_button.hide ();
-                package.package_updated ();
             } else {
-                yield AppCenterCore.Client.get_default ().install_packages (treeset, (progress, type) => {ProgressCallback (progress, type);});
-                action_stack.set_visible_child_name ("buttons");
+                yield package.install ();
                 action_button.no_show_all = true;
                 action_button.hide ();
                 uninstall_button.no_show_all = false;
@@ -202,14 +201,11 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         }
     }
 
-    public async void uninstall_clicked () {
-        action_stack.set_visible_child_name ("progress");
+    private async void uninstall_clicked () {
         var treeset = new Gee.TreeSet<AppCenterCore.Package> ();
         treeset.add (package);
         try {
-            yield AppCenterCore.Client.get_default ().remove_packages (treeset, (progress, type) => {ProgressCallback (progress, type);});
-            package.package_removed ();
-            action_stack.set_visible_child_name ("buttons");
+            yield package.uninstall ();
             action_button.label = _("Install");
             uninstall_button.no_show_all = true;
             uninstall_button.hide ();
