@@ -23,6 +23,8 @@ using AppCenterCore;
 public class AppCenter.Views.AppListView : Gtk.Stack {
     public signal void show_app (AppCenterCore.Package package);
 
+    public bool updates_on_top = false;
+
     Gtk.TreeView tree_view;
     Gtk.ListStore list_store;
     Gtk.ScrolledWindow scrolled;
@@ -68,7 +70,7 @@ public class AppCenter.Views.AppListView : Gtk.Stack {
         });
 
         Client.get_default ().updates_available.connect (() => {
-            list_store.set_sort_func (0, TreeIterCompareFunc);
+            list_store.set_sort_func (0, (model, a, b) => TreeIterCompareFunc (model, a, b));
         });
     }
 
@@ -128,17 +130,19 @@ public class AppCenter.Views.AppListView : Gtk.Stack {
         ((Widgets.AppCellRenderer) cell).icon = icon;
     }
 
-    private static int TreeIterCompareFunc (Gtk.TreeModel model, Gtk.TreeIter a, Gtk.TreeIter b) {
+    private int TreeIterCompareFunc (Gtk.TreeModel model, Gtk.TreeIter a, Gtk.TreeIter b) {
         Value val_a;
         Value val_b;
         model.get_value (a, 0, out val_a);
         model.get_value (b, 0, out val_b);
         var package_a = (Package) val_a.get_object ();
         var package_b = (Package) val_b.get_object ();
-        if (package_a.update_available && !package_b.update_available) {
-            return -1;
-        } else if (!package_a.update_available && package_b.update_available) {
-            return 1;
+        if (updates_on_top) {
+            if (package_a.update_available && !package_b.update_available) {
+                return -1;
+            } else if (!package_a.update_available && package_b.update_available) {
+                return 1;
+            }
         }
 
         return package_a.pk_package.get_name ().collate (package_b.pk_package.get_name ());

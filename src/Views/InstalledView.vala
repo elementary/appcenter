@@ -43,6 +43,7 @@ public class AppCenter.Views.InstalledView : View {
         main_grid.orientation = Gtk.Orientation.VERTICAL;
 
         app_list_view = new AppListView ();
+        app_list_view.updates_on_top = true;
 
         top_stack = new Gtk.Stack ();
         top_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
