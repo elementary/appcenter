@@ -1,5 +1,197 @@
 msgid ""
 msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-31 01:45+0100\n"
+"PO-Revision-Date: 2013-10-26 21:17+0000\n"
+"Last-Translator: Milan Slovák <Unknown>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2015-11-03 05:13+0000\n"
+"X-Generator: Launchpad (build 17838)\n"
+
+#: ../src/MainWindow.vala:32 ../src/Application.vala:24
+msgid "App Center"
+msgstr ""
+
+#: ../src/MainWindow.vala:47
+msgid "Featured"
+msgstr ""
+
+#: ../src/MainWindow.vala:48
+msgid "Categories"
+msgstr "Kategórie"
+
+#: ../src/MainWindow.vala:49
+msgctxt "view"
+msgid "Installed"
+msgstr ""
+
+#: ../src/MainWindow.vala:52
+msgid "Search App"
+msgstr ""
+
+#: ../src/Views/AppInfoView.vala:82
+msgid "Install"
+msgstr "Inštalácia"
+
+#: ../src/Views/AppInfoView.vala:84
+msgid "Uninstall"
+msgstr ""
+
+#: ../src/Views/FeaturedView.vala:33
+msgid "Best Rated"
+msgstr ""
+
+#: ../src/Views/FeaturedView.vala:36
+msgid "Latest Apps"
+msgstr ""
+
+#: ../src/Views/AppListView.vala:42
+msgid "No Apps"
+msgstr ""
+
+#: ../src/Views/AppListView.vala:42
+msgid "You haven't found any app here."
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:45
+msgid "Office"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:45
+msgid "Be productive!"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:50
+msgid "Multimedia"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:50
+msgid "Listen to music"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:55
+msgid "Internet"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:55
+msgid "Explore the web"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:60
+msgid "Communication"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:60
+msgid "Stay in touch"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:65
+msgid "Games"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:65
+msgid "Be a hero"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:70
+msgid "Science"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:70
+msgid "Explore the unknown"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:75
+msgid "Education"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:75
+msgid "Lern something new"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:80
+msgid "Graphics"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:80
+msgid "Draw something!"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:85
+msgid "Fonts"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:85
+msgid "Enhance your docs"
+msgstr ""
+
+#: ../src/Application.vala:18
+msgid "About App Center"
+msgstr ""
+
+#~ msgid "Remove"
+#~ msgstr "Odstrániť"
+
+#~ msgid "Software Sources"
+#~ msgstr "Zdroje softvéru"
+
+#~ msgid "Home Page"
+#~ msgstr "Domovská stránka"
+
+#~ msgid "Quit"
+#~ msgstr "Ukončiť"
+
+#~ msgid "Search Apps"
+#~ msgstr "Hľadať aplikácie"
+
+#~ msgid "Edit source software"
+#~ msgstr "Uprav softvérové zdroje"
+
+#~ msgid "Apps Info"
+#~ msgstr "Detaily aplikácie"
+
+#~ msgid "Error page"
+#~ msgstr "Chybná stránka"
+
+#~ msgid "Show available updates"
+#~ msgstr "Zobraziť dostupné aktualizácie"
+
+#~ msgid "Updates"
+#~ msgstr "Aktualizácie"
+
+#~ msgid "Load a package from the given id"
+#~ msgstr "Vložte balíček z danej id"
+
+#~ msgid "application download center"
+#~ msgstr "Centrun pre sťahovanie"
+
+#~ msgid "Find and install apps"
+#~ msgstr "Nájsť a nainštalovať aplikácie"
+
+#~ msgid "Apps View"
+#~ msgstr "Zobraziť aplikácie"
+
+#~ msgid "Recreates database files"
+#~ msgstr "Obnoviť databázu"
+
+#~ msgid "Categories View"
+#~ msgstr "Zobraziť kategórie"
+
+#~ msgid "Updates View"
+#~ msgstr "Zobraziť aktualizácie"
+
+#~ msgid "Removing"
+#~ msgstr "Odstraňovanie"
+
+#~ msgid "Installing"
+#~ msgstr "Inštalácia"
+
+#~ msgid "Browser apps in categories"
+#~ msgstr "Prehliadač aplikácií v kategóriách"
+
+#~ msgid "Use debug quiet mode"
+#~ msgstr "Pre ladenie použite tichý režim"

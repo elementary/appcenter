@@ -1,4 +1,197 @@
 msgid ""
 msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-31 01:45+0100\n"
+"PO-Revision-Date: 2013-07-28 07:25+0000\n"
+"Last-Translator: Viko Adi Rahmawan <Unknown>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2015-11-03 05:13+0000\n"
+"X-Generator: Launchpad (build 17838)\n"
+
+#: ../src/MainWindow.vala:32 ../src/Application.vala:24
+msgid "App Center"
+msgstr ""
+
+#: ../src/MainWindow.vala:47
+msgid "Featured"
+msgstr ""
+
+#: ../src/MainWindow.vala:48
+msgid "Categories"
+msgstr "Kategori"
+
+#: ../src/MainWindow.vala:49
+msgctxt "view"
+msgid "Installed"
+msgstr ""
+
+#: ../src/MainWindow.vala:52
+msgid "Search App"
+msgstr ""
+
+#: ../src/Views/AppInfoView.vala:82
+msgid "Install"
+msgstr "Instal"
+
+#: ../src/Views/AppInfoView.vala:84
+msgid "Uninstall"
+msgstr ""
+
+#: ../src/Views/FeaturedView.vala:33
+msgid "Best Rated"
+msgstr ""
+
+#: ../src/Views/FeaturedView.vala:36
+msgid "Latest Apps"
+msgstr ""
+
+#: ../src/Views/AppListView.vala:42
+msgid "No Apps"
+msgstr ""
+
+#: ../src/Views/AppListView.vala:42
+msgid "You haven't found any app here."
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:45
+msgid "Office"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:45
+msgid "Be productive!"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:50
+msgid "Multimedia"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:50
+msgid "Listen to music"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:55
+msgid "Internet"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:55
+msgid "Explore the web"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:60
+msgid "Communication"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:60
+msgid "Stay in touch"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:65
+msgid "Games"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:65
+msgid "Be a hero"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:70
+msgid "Science"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:70
+msgid "Explore the unknown"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:75
+msgid "Education"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:75
+msgid "Lern something new"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:80
+msgid "Graphics"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:80
+msgid "Draw something!"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:85
+msgid "Fonts"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:85
+msgid "Enhance your docs"
+msgstr ""
+
+#: ../src/Application.vala:18
+msgid "About App Center"
+msgstr ""
+
+#~ msgid "Recreates database files"
+#~ msgstr "Cipta ulang berkas basis data"
+
+#~ msgid "Quit"
+#~ msgstr "Keluar"
+
+#~ msgid "Home Page"
+#~ msgstr "Halaman Utama"
+
+#~ msgid "Apps Info"
+#~ msgstr "Info Aplikasi"
+
+#~ msgid "Remove"
+#~ msgstr "Hapus"
+
+#~ msgid "Search Apps"
+#~ msgstr "Cari Aplikasi"
+
+#~ msgid "Error page"
+#~ msgstr "Halaman error"
+
+#~ msgid "Categories View"
+#~ msgstr "Tampilan Kategori"
+
+#~ msgid "Browser apps in categories"
+#~ msgstr "Jelajahi aplikasi dalam tampilan kategori"
+
+#~ msgid "Installing"
+#~ msgstr "Sedang menginstal"
+
+#~ msgid "Removing"
+#~ msgstr "Sedang menghapus"
+
+#~ msgid "Updates View"
+#~ msgstr "Tampilkan Pembaruan"
+
+#~ msgid "Apps View"
+#~ msgstr "Tampilkan Semua Aplikasi"
+
+#~ msgid "Load a package from the given id"
+#~ msgstr "Muat aplikasi dari identitas yang diberi"
+
+#~ msgid "Software Sources"
+#~ msgstr "Sumber Aplikasi"
+
+#~ msgid "Edit source software"
+#~ msgstr "Edit sumber aplikasi"
+
+#~ msgid "Show available updates"
+#~ msgstr "Tampilkan pemutakhiran tersedia"
+
+#~ msgid "Updates"
+#~ msgstr "Pemutakhiran"
+
+#~ msgid "application download center"
+#~ msgstr "pusat perangkat lunak"
+
+#~ msgid "Find and install apps"
+#~ msgstr "Cari dan pasang perangkat lunak"
+
+#~ msgid "Use debug quiet mode"
+#~ msgstr "mode debug tenang"
