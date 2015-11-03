@@ -50,7 +50,8 @@ namespace AppCenter.Widgets {
             grid.attach (name_label, 1, 0, 1, 1);
 
             desc_label = new Gtk.Label (null);
-            desc_label.halign = Gtk.Align.START;
+            ((Gtk.Misc) desc_label).xalign = 0;
+            desc_label.wrap = true;
             grid.attach (desc_label, 1, 1, 1, 1);
 
             child = grid;

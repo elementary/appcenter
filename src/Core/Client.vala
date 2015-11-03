@@ -16,20 +16,12 @@
 
 namespace AppCenterCore {
     public class Client : Object {
-        public signal void operation_progress (Operation operation, int progress);
-        public signal void operation_changed (Operation operation, bool running, string info = "");
-
-        public signal void connection_changed ();
-
         public signal void updates_available ();
 
-
         public bool connected { public get; private set; }
-        public bool operation_running { public get; private set; default = false; }
 
         private Gee.LinkedList<Pk.Task> task_list;
         private Gee.HashMap<string, AppCenterCore.Package> package_list;
-        private Pk.Control control;
         private AppStream.Database appstream_database;
 
         private Client () {
@@ -40,21 +32,11 @@ namespace AppCenterCore {
             datapool.update ();
             appstream_database = new AppStream.Database ();
             appstream_database.open ();
-
-            control = new Pk.Control ();
-            control.get_properties_async.begin (null, (obj, res) => {
-                try {
-                    control.get_properties_async.end (res);
-                } catch (Error e) {
-                    critical (e.message);
-                }
-            });
-            //connected = control.connected;
-            connected = true;
-            connection_changed ();
         }
 
-        public int get_task_count () { return task_list.size; }
+        public int get_task_count () {
+            return task_list.size;
+        }
 
         private Pk.Task request_task () {
             Pk.Task task = new Pk.Task ();
@@ -66,43 +48,59 @@ namespace AppCenterCore {
             task_list.remove (task);
         }
 
-        public async void install_package (Info info) {
+        public async void install_packages (Gee.TreeSet<Package> packages, Pk.ProgressCallback cb) throws GLib.Error {
             Pk.Task install_task = request_task ();
-            operation_changed (Operation.PACKAGE_INSTALL, true, info.display_name);
-
-            try {
-                yield install_task.install_packages_async ({ info.package_id, null }, null,
-                    (prog, type) => operation_progress (Operation.PACKAGE_INSTALL, prog.percentage));
-            } catch (Error e) {
-                critical (e.message);
+            string[] packages_ids = {};
+            foreach (var package in packages) {
+                packages_ids += package.package_id;
             }
 
-            operation_changed (Operation.PACKAGE_INSTALL, false);
+            try {
+                yield install_task.install_packages_async (packages_ids, null, cb);
+            } catch (Error e) {
+                throw e;
+            }
+
             release_task (install_task);
         }
 
-        public async void update_package (Info info) {
+        public async void update_packages (Gee.TreeSet<Package> packages, Pk.ProgressCallback cb) throws GLib.Error {
             Pk.Task update_task = request_task ();
-            operation_changed (Operation.PACKAGE_UPDATE, true, info.display_name);
+            string[] packages_ids = {};
+            foreach (var package in packages) {
+                packages_ids += package.package_id;
+            }
 
             try {
-                yield update_task.update_packages_async ({ info.package_id, null }, null,
-                    (prog, type) => operation_progress (Operation.PACKAGE_UPDATE, prog.percentage));
+                yield update_task.update_packages_async (packages_ids, null, cb);
             } catch (Error e) {
-                critical (e.message);
+                throw e;
             }
+        }
+
+        public async void remove_packages (Gee.TreeSet<Package> packages, Pk.ProgressCallback cb) throws GLib.Error {
+            Pk.Task remove_task = request_task ();
+            string[] packages_ids = {};
+            foreach (var package in packages) {
+                packages_ids += package.package_id;
+            }
+
+            try {
+                yield remove_task.remove_packages_async (packages_ids, true, true, null, cb);
+            } catch (Error e) {
+                throw e;
+            }
+
+            release_task (remove_task);
         }
 
         public async void refresh_updates () {
             Pk.Task update_task = request_task ();
-            operation_changed (Operation.UPDATE_REFRESH, true);
-
             try {
                 Pk.Results result = yield update_task.get_updates_async (Pk.Filter.INSTALLED, null, (t, p) => { });
                 result.get_package_array ().foreach ((pk_package) => {
                     AppCenterCore.Package package = package_list.get (pk_package.get_name ());
                     if (package == null) {
-                        warning (pk_package.get_name ());
                         package = new AppCenterCore.Package (pk_package);
                         package_list.set (pk_package.get_name (), package);
                     }
@@ -113,23 +111,18 @@ namespace AppCenterCore {
                 critical (e.message);
             }
 
-            operation_changed (Operation.UPDATE_REFRESH, false);
             release_task (update_task);
             updates_available ();
         }
 
-        public async void refresh_cache () {
+        public async void refresh_cache (Pk.ProgressCallback cb) {
             Pk.Task cache_task = request_task ();
-            operation_changed (Operation.CACHE_REFRESH, true);
-
             try {
-                yield cache_task.refresh_cache_async (false, null,
-                        (prog, type) => operation_progress (Operation.CACHE_REFRESH, prog.percentage));
+                yield cache_task.refresh_cache_async (false, null, cb);
             } catch (Error e) {
                 critical (e.message);
             }
 
-            operation_changed (Operation.CACHE_REFRESH, false);
             release_task (cache_task);
         }
 
@@ -155,7 +148,6 @@ namespace AppCenterCore {
             } catch (Error e) {
                 critical (e.message);
             }
-            
 
             release_task (packages_task);
             return packages;
@@ -184,7 +176,6 @@ namespace AppCenterCore {
             } catch (Error e) {
                 critical (e.message);
             }
-            
 
             release_task (packages_task);
             return packages;

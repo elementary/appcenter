@@ -32,6 +32,9 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
     // The action button covers Install, Update and Open at once
     Gtk.Button action_button;
     Gtk.Button uninstall_button;
+    Gtk.ProgressBar progress_bar;
+    Gtk.Label progress_label;
+    Gtk.Stack action_stack;
 
     public AppInfoView (AppCenterCore.Package package) {
         this.package = package;
@@ -108,18 +111,37 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         app_description = new Gtk.Label (null);
         ((Gtk.Misc) app_description).xalign = 0;
 
+        action_stack = new Gtk.Stack ();
+        action_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
+        action_stack.margin_end = 6;
+
+        progress_bar = new Gtk.ProgressBar ();
+        progress_bar.no_show_all = true;
+        progress_bar.hexpand = true;
+
+        progress_label = new Gtk.Label (null);
+
         action_button = new Gtk.Button.with_label (_("Install"));
         action_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
-        action_button.clicked.connect (() => action_clicked ());
+        action_button.clicked.connect (() => action_clicked.begin ());
+
         uninstall_button = new Gtk.Button.with_label (_("Uninstall"));
         uninstall_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+        uninstall_button.clicked.connect (() => uninstall_clicked.begin ());
+
         var button_grid = new Gtk.Grid ();
-        button_grid.margin_end = 6;
         button_grid.valign = Gtk.Align.CENTER;
         button_grid.column_spacing = 12;
         button_grid.orientation = Gtk.Orientation.HORIZONTAL;
         button_grid.add (uninstall_button);
         button_grid.add (action_button);
+
+        var progress_grid = new Gtk.Grid ();
+        progress_grid.valign = Gtk.Align.CENTER;
+        progress_grid.row_spacing = 6;
+        progress_grid.orientation = Gtk.Orientation.VERTICAL;
+        progress_grid.add (progress_label);
+        progress_grid.add (progress_bar);
 
         var scrolled = new Gtk.ScrolledWindow (null, null);
         scrolled.expand = true;
@@ -132,19 +154,68 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         content_grid.add (scrolled);
         content_grid.add (app_screenshot);
 
+        action_stack.add_named (button_grid, "buttons");
+        action_stack.add_named (progress_grid, "progress");
+
         attach (app_icon, 0, 0, 1, 2);
         attach (app_name, 1, 0, 1, 1);
         attach (app_version, 2, 0, 1, 1);
-        attach (button_grid, 3, 0, 1, 1);
+        attach (action_stack, 3, 0, 1, 1);
         attach (app_summary, 1, 1, 3, 1);
         attach (content_grid, 0, 2, 4, 1);
     }
 
-    public void action_clicked () {
-        if (package.installed && package.update_available) {
-            warning ("update");
-        } else {
-            warning ("install");
+    private void ProgressCallback (Pk.Progress progress, Pk.ProgressType type) {
+        warning ("%u", progress.status);
+        switch (type) {
+            case Pk.ProgressType.ITEM_PROGRESS:
+                progress_bar.fraction = ((double)progress.percentage)/100;
+                break;
+            case Pk.ProgressType.STATUS:
+                progress_label.label = Pk.Status.enum_to_string ((Pk.Status) progress.status);
+                break;
+        }
+    }
+
+    public async void action_clicked () {
+        action_stack.set_visible_child_name ("progress");
+        var treeset = new Gee.TreeSet<AppCenterCore.Package> ();
+        treeset.add (package);
+        try {
+            if (package.installed && package.update_available) {
+                yield AppCenterCore.Client.get_default ().update_packages (treeset, (progress, type) => {ProgressCallback (progress, type);});
+                action_stack.set_visible_child_name ("buttons");
+                action_button.no_show_all = true;
+                action_button.hide ();
+                package.package_updated ();
+            } else {
+                yield AppCenterCore.Client.get_default ().install_packages (treeset, (progress, type) => {ProgressCallback (progress, type);});
+                action_stack.set_visible_child_name ("buttons");
+                action_button.no_show_all = true;
+                action_button.hide ();
+                uninstall_button.no_show_all = false;
+                uninstall_button.show ();
+            }
+        } catch (Error e) {
+            critical (e.message);
+            action_stack.set_visible_child_name ("buttons");
+        }
+    }
+
+    public async void uninstall_clicked () {
+        action_stack.set_visible_child_name ("progress");
+        var treeset = new Gee.TreeSet<AppCenterCore.Package> ();
+        treeset.add (package);
+        try {
+            yield AppCenterCore.Client.get_default ().remove_packages (treeset, (progress, type) => {ProgressCallback (progress, type);});
+            package.package_removed ();
+            action_stack.set_visible_child_name ("buttons");
+            action_button.label = _("Install");
+            uninstall_button.no_show_all = true;
+            uninstall_button.hide ();
+        } catch (Error e) {
+            critical (e.message);
+            action_stack.set_visible_child_name ("buttons");
         }
     }
 }

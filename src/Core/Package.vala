@@ -20,27 +20,48 @@
 
 public class AppCenterCore.Package : Object {
     public signal void changed ();
-
-    public string package_id { public get; private set; }
     public Pk.Package pk_package { public get; private set; }
-    public Pk.Package? update_package { public get; public set; }
+    public Pk.Package? update_package { public get; public set; default=null; }
+    public Gee.TreeSet<AppStream.Component> components { public get; private set; }
+
+    public bool installed { public get; public set; }
     public bool update_available {
         public get {
             return update_package != null;
         }
     }
-    public Gee.TreeSet<AppStream.Component> components { public get; private set; }
-    public bool installed { public get; public set; }
+
+    public string package_id {
+        public get {
+            if (update_package != null) {
+                return update_package.get_id ();
+            } else {
+                return pk_package.get_id ();
+            }
+        }
+    }
 
     public Package (Pk.Package package) {
         pk_package = package;
-        package_id = package.get_id ();
         components = new Gee.TreeSet<AppStream.Component> ();
     }
 
     public void find_components () {
         components.add_all (Client.get_default ().get_component_for_app (pk_package.get_name ()));
         changed ();
+    }
+
+    public void package_updated () {
+        pk_package = update_package;
+        update_package = null;
+    }
+
+    public void package_removed () {
+        installed = false;
+        if (update_package != null) {
+            pk_package = update_package;
+            update_package = null;
+        }
     }
 
     public static string get_strict_version (string version) {
@@ -51,6 +72,7 @@ public class AppCenterCore.Package : Object {
         if (":" in returned) {
             returned = returned.split (":", 2)[1];
         }
+
         return returned;
     }
 }
