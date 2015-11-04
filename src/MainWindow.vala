@@ -36,7 +36,6 @@ public class AppCenter.MainWindow : Gtk.Window {
 
         view_mode.selected = 0;
         stack.set_visible_child (featured_view);
-        show_all ();
     }
 
     public override bool delete_event (Gdk.EventAny event) {

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-04 01:37+0100\n"
+"POT-Creation-Date: 2015-11-04 15:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,25 +18,25 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: ../src/MainWindow.vala:32 ../src/Application.vala:24
+#: ../src/MainWindow.vala:33 ../src/Application.vala:27
 msgid "App Center"
 msgstr ""
 
-#: ../src/MainWindow.vala:47
+#: ../src/MainWindow.vala:67
 msgid "Featured"
 msgstr ""
 
-#: ../src/MainWindow.vala:48 ../src/Views/CategoryView.vala:93
+#: ../src/MainWindow.vala:68 ../src/Views/CategoryView.vala:93
 #: ../src/Views/CategoryView.vala:100
 msgid "Categories"
 msgstr ""
 
-#: ../src/MainWindow.vala:49 ../src/Views/InstalledView.vala:123
+#: ../src/MainWindow.vala:69 ../src/Views/InstalledView.vala:123
 msgctxt "view"
 msgid "Installed"
 msgstr ""
 
-#: ../src/MainWindow.vala:52
+#: ../src/MainWindow.vala:72
 msgid "Search App"
 msgstr ""
 
@@ -166,6 +166,10 @@ msgstr ""
 
 #: ../src/Application.vala:18
 msgid "About App Center"
+msgstr ""
+
+#: ../src/Application.vala:45
+msgid "translator-credits"
 msgstr ""
 
 #: ../src/Core/Package.vala:122

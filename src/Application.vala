@@ -21,6 +21,8 @@ namespace AppCenter {
         construct {
             application_id = "org.pantheon.appcenter";
             flags = ApplicationFlags.FLAGS_NONE;
+            Intl.setlocale (LocaleCategory.ALL, "");
+            Intl.textdomain (Build.GETTEXT_PACKAGE);
 
             program_name = _("App Center");
             app_years = "2015";
@@ -32,7 +34,7 @@ namespace AppCenter {
             build_version = Build.VERSION;
             build_version_info = Build.VERSION_INFO;
 
-            app_launcher = "appcentre.desktop";
+            app_launcher = "appcenter.desktop";
             main_url = "https://launchpad.net/appcenter";
             bug_url = "https://bugs.launchpad.net/appcenter";
             help_url = "https://answers.launchpad.net/appcenter"; 
@@ -40,14 +42,14 @@ namespace AppCenter {
             about_authors = { "Marvin Beckers <beckersmarvin@gmail.com>",
                               "Corentin Noël <corentin@elementary.io>" };
             about_comments = "";
+            about_translators = _("translator-credits");
             about_license_type = Gtk.License.GPL_3_0;
-
-            Intl.setlocale (LocaleCategory.ALL, "");
         }
 
         public override void activate () {
             if (main_window == null) {
                 main_window = new MainWindow ();
+                main_window.show_all ();
                 main_window.set_application (this);
             }
 
