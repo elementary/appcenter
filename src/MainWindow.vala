@@ -24,6 +24,7 @@ public class AppCenter.MainWindow : Gtk.Window {
     private Views.InstalledView installed_view;
     private Views.SearchView search_view;
     private Gtk.Button current_button;
+    private ulong task_finished_connection = 0U;
 
     public MainWindow () {
         window_position = Gtk.WindowPosition.CENTER;
@@ -36,6 +37,26 @@ public class AppCenter.MainWindow : Gtk.Window {
         view_mode.selected = 0;
         stack.set_visible_child (featured_view);
         show_all ();
+    }
+
+    public override bool delete_event (Gdk.EventAny event) {
+        unowned AppCenterCore.Client client = AppCenterCore.Client.get_default ();
+        if (client.has_tasks ()) {
+            if (task_finished_connection != 0U) {
+                client.disconnect (task_finished_connection);
+            }
+
+            hide ();
+            task_finished_connection = client.tasks_finished.connect (() => {
+                if (!visible) {
+                    delete_event (event);
+                }
+            });
+
+            return true;
+        }
+
+        return false;
     }
 
     private void create_headerbar () {

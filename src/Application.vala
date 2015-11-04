@@ -17,6 +17,7 @@
 namespace AppCenter {
     const string appcenter = N_("About App Center");
     public class AppCenter : Granite.Application {
+        MainWindow main_window;
         construct {
             application_id = "org.pantheon.appcenter";
             flags = ApplicationFlags.FLAGS_NONE;
@@ -45,8 +46,12 @@ namespace AppCenter {
         }
 
         public override void activate () {
-            var window = new MainWindow ();
-            this.add_window (window);
+            if (main_window == null) {
+                main_window = new MainWindow ();
+                main_window.set_application (this);
+            }
+
+            main_window.present ();
         }
     }
 

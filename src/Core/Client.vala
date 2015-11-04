@@ -17,6 +17,7 @@
 namespace AppCenterCore {
     public class Client : Object {
         public signal void updates_available ();
+        public signal void tasks_finished ();
         public bool connected { public get; private set; }
 
         private Gee.LinkedList<Pk.Task> task_list;
@@ -33,8 +34,8 @@ namespace AppCenterCore {
             appstream_database.open ();
         }
 
-        public int get_task_count () {
-            return task_list.size;
+        public bool has_tasks () {
+            return !task_list.is_empty;
         }
 
         private Pk.Task request_task () {
@@ -45,6 +46,9 @@ namespace AppCenterCore {
 
         private void release_task (Pk.Task task) {
             task_list.remove (task);
+            if (task_list.is_empty) {
+                tasks_finished ();
+            }
         }
 
         public async void install_packages (Gee.TreeSet<Package> packages, Pk.ProgressCallback cb) throws GLib.Error {
