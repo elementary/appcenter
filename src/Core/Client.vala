@@ -16,6 +16,7 @@
 
 namespace AppCenterCore {
     public class Client : Object {
+        public signal void updates_available ();
         public bool connected { public get; private set; }
 
         private Gee.LinkedList<Pk.Task> task_list;
@@ -74,6 +75,8 @@ namespace AppCenterCore {
             } catch (Error e) {
                 throw e;
             }
+
+            release_task (update_task);
         }
 
         public async void remove_packages (Gee.TreeSet<Package> packages, Pk.ProgressCallback cb) throws GLib.Error {
@@ -94,22 +97,37 @@ namespace AppCenterCore {
 
         public async void refresh_updates () {
             Pk.Task update_task = request_task ();
+            Pk.Task details_task = request_task ();
             try {
                 Pk.Results result = yield update_task.get_updates_async (Pk.Filter.INSTALLED, null, (t, p) => { });
+                var packages = new Gee.HashMap<string, Pk.Package> (null, null);
                 result.get_package_array ().foreach ((pk_package) => {
+                    packages.set (pk_package.get_id (), pk_package);
+                });
+
+                // We need a null to show to PackageKit that it's then end of the array.
+                string[] packages_array = packages.keys.to_array ();
+                packages_array += null;
+
+                Pk.Results result2 = yield details_task.get_details_async (packages_array , null, (t, p) => { });
+                result2.get_details_array ().foreach ((pk_detail) => {
+                    var pk_package = packages.get (pk_detail.get_package_id ());
                     AppCenterCore.Package package = package_list.get (pk_package.get_name ());
                     if (package == null) {
                         package = new AppCenterCore.Package (pk_package);
                         package_list.set (pk_package.get_name (), package);
                     }
 
+                    pk_package.size = pk_detail.size;
                     package.update_package = pk_package;
                 });
             } catch (Error e) {
                 critical (e.message);
             }
 
+            release_task (details_task);
             release_task (update_task);
+            updates_available ();
         }
 
         public async void refresh_cache (Pk.ProgressCallback cb) {

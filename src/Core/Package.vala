@@ -110,7 +110,13 @@ public class AppCenterCore.Package : Object {
         label = get_localized_status (status);
     }
 
-    private static string get_localized_status (Pk.Status status) {
+    public void set_latest_progress (Pk.Status status, double progress) {
+        this.status = status;
+        this.progress = progress;
+        progress_changed (get_localized_status (status), this.progress);
+    }
+
+    public static string get_localized_status (Pk.Status status) {
         switch (status) {
             case Pk.Status.SETUP:
                 return _("Starting");
@@ -190,7 +196,7 @@ public class AppCenterCore.Package : Object {
     private void ProgressCallback (Pk.Progress progress, Pk.ProgressType type) {
         switch (type) {
             case Pk.ProgressType.ITEM_PROGRESS:
-                this.progress = ((double) progress.percentage)/100;
+                this.progress = ((double) progress.item_progress.percentage)/100;
                 progress_changed (get_localized_status (status), this.progress);
                 break;
             case Pk.ProgressType.STATUS:
