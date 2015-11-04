@@ -22,7 +22,7 @@ public abstract class AppCenter.View : Gtk.Stack {
     public signal void subview_entered (string view_name);
 
     construct {
-        transition_type = Gtk.StackTransitionType.OVER_DOWN_UP;
+        transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
         expand = true;
     }
 
