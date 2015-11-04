@@ -96,6 +96,26 @@ public class AppCenter.Views.AppListView : Gtk.Stack {
         });
     }
 
+    public void remove_package (AppCenterCore.Package package) {
+        Gtk.TreeIter iter;
+        Value val;
+        if (list_store.get_iter_first (out iter)) {
+            list_store.get_value (iter, 0, out val);
+            if (val.get_object () == package) {
+                list_store.remove (iter);
+                return;
+            }
+
+            while (list_store.iter_next (ref iter)) {
+                list_store.get_value (iter, 0, out val);
+                if (val.get_object () == package) {
+                    list_store.remove (iter);
+                    return;
+                }
+            }
+        }
+    }
+
     /*
      * As clearing is the beggining of an action (refill),
      * the user should call package_addition_finished once finished.

@@ -170,6 +170,13 @@ public class AppCenter.Views.InstalledView : View {
             app.notify["update-available"].connect (() => {
                 show_update_number ();
             });
+            app.notify["installed"].connect (() => {
+                if (app.installed) {
+                    app_list_view.add_package (app);
+                } else {
+                    app_list_view.remove_package (app);
+                }
+            });
         }
     }
 
