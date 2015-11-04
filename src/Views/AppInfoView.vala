@@ -52,16 +52,19 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         if (package.update_available) {
             action_button.label = _("Update");
         } else if (package.installed) {
-            action_button.hide ();
             action_button.no_show_all = true;
+            action_button.hide ();
+        } else {
+            uninstall_button.no_show_all = true;
+            uninstall_button.hide ();
         }
 
         package.notify["update-available"].connect (() => {
             if (package.update_available) {
                 action_button.label = _("Update");
             } else {
-                action_button.hide ();
                 action_button.no_show_all = true;
+                action_button.hide ();
             }
         });
 
@@ -75,6 +78,8 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
             } else {
                 action_button.label = _("Install");
                 action_button.no_show_all = false;
+                uninstall_button.no_show_all = true;
+                uninstall_button.hide ();
             }
         });
 
