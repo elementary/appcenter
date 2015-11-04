@@ -23,7 +23,7 @@ public class AppCenter.MainWindow : Gtk.Window {
     private Views.FeaturedView featured_view;
     private Views.InstalledView installed_view;
     private Views.SearchView search_view;
-
+    private Gtk.Button current_button;
 
     public MainWindow () {
         window_position = Gtk.WindowPosition.CENTER;
@@ -97,6 +97,11 @@ public class AppCenter.MainWindow : Gtk.Window {
         var return_button = new Gtk.Button.with_label (return_label);
         return_button.get_style_context ().add_class ("back-button");
         return_button.show_all ();
+        if (current_button != null) {
+            current_button.destroy ();
+        }
+
+        current_button = return_button;
         headerbar.pack_start (return_button);
         view_mode.sensitive = false;
         return_button.clicked.connect (() => {
