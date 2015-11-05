@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <enum id="org.pantheon.appcenter.windowstate">
+    <value value="0" nick="normal"/>
+    <value value="1" nick="maximized"/>
+  </enum>
+  <schema path="/org/pantheon/appcenter/settings/" id="org.pantheon.appcenter.settings">
+    <key type="i" name="window-width">
+      <default>1100</default>
+      <summary>Window width</summary>
+      <description>Window width</description>
+    </key>
+    <key type="i" name="window-height">
+      <default>600</default>
+      <summary>Window height</summary>
+      <description>Window height</description>
+    </key>
+    <key enum="org.pantheon.appcenter.windowstate" name="window-state">
+      <default>'normal'</default>
+      <summary>The saved state of the window</summary>
+      <description>The saved state of the window</description>
+    </key>
+    <key type="b" name="developer-mode">
+      <default>false</default>
+      <summary>The user is a developer</summary>
+      <description>Mode that allows the user to see more packages with development propurses</description>
+    </key>
+  </schema>
+</schemalist>

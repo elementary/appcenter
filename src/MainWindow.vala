@@ -33,12 +33,35 @@ public class AppCenter.MainWindow : Gtk.Window {
         title = _("App Center");
         icon_name = "system-software-installer";
         set_size_request (750, 550);
+        unowned Settings saved_state = Settings.get_default ();
+        set_default_size (saved_state.window_width, saved_state.window_height);
+
+        // Maximize window if necessary
+        switch (saved_state.window_state) {
+            case Settings.WindowState.MAXIMIZED:
+                this.maximize ();
+                break;
+            default:
+                break;
+        }
 
         view_mode.selected = 0;
         stack.set_visible_child (featured_view);
     }
 
     public override bool delete_event (Gdk.EventAny event) {
+        int window_width;
+        int window_height;
+        get_size (out window_width, out window_height);
+        unowned Settings saved_state = Settings.get_default ();
+        saved_state.window_width = window_width;
+        saved_state.window_height = window_height;
+        if (is_maximized) {
+            saved_state.window_state = Settings.WindowState.MAXIMIZED;
+        } else {
+            saved_state.window_state = Settings.WindowState.NORMAL;
+        }
+
         unowned AppCenterCore.Client client = AppCenterCore.Client.get_default ();
         if (client.has_tasks ()) {
             if (task_finished_connection != 0U) {

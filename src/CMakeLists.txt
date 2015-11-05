@@ -14,27 +14,28 @@ endif ()
 
 include(ValaPrecompile)
 vala_precompile(VALA_C ${EXEC_NAME}
-    ./Application.vala
-    ./MainWindow.vala
-    ./Views/AppInfoView.vala
-    ./Views/AppListView.vala
-    ./Views/FeaturedView.vala
-    ./Views/CategoryView.vala
-    ./Views/SearchView.vala
-    ./Views/InstalledView.vala
-    ./Views/View.vala
-    ./Widgets/AppCellRenderer.vala
-    ./Widgets/CategoryItem.vala
-    ./Widgets/FeaturedButton.vala
-#TODO: Move these into a separate lib
-    ./Core/Utils.vala
-    ./Core/Client.vala
-    ./Core/Info.vala
-    ./Core/Details.vala
-    ./Core/Summary.vala
-    ./Core/Category.vala
-    ./Core/Package.vala
-    ./Core/OperationEnum.vala
+    Core/Utils.vala
+    Core/Client.vala
+    Core/Info.vala
+    Core/Details.vala
+    Core/Summary.vala
+    Core/Category.vala
+    Core/Package.vala
+    Core/OperationEnum.vala
+
+    Application.vala
+    MainWindow.vala
+    Settings.vala
+    Views/AppInfoView.vala
+    Views/AppListView.vala
+    Views/FeaturedView.vala
+    Views/CategoryView.vala
+    Views/SearchView.vala
+    Views/InstalledView.vala
+    Views/View.vala
+    Widgets/AppCellRenderer.vala
+    Widgets/CategoryItem.vala
+    Widgets/FeaturedButton.vala
     ${CMAKE_CURRENT_BINARY_DIR}/config.vala
 PACKAGES
     appstream
