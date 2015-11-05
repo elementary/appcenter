@@ -2,36 +2,36 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-04 01:37+0100\n"
-"PO-Revision-Date: 2013-10-26 21:17+0000\n"
-"Last-Translator: Milan Slovák <Unknown>\n"
+"POT-Creation-Date: 2015-11-04 15:16+0100\n"
+"PO-Revision-Date: 2015-11-04 14:21+0000\n"
+"Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
-"X-Launchpad-Export-Date: 2015-11-04 05:36+0000\n"
+"X-Launchpad-Export-Date: 2015-11-05 05:29+0000\n"
 "X-Generator: Launchpad (build 17838)\n"
 
-#: ../src/MainWindow.vala:32 ../src/Application.vala:24
+#: ../src/MainWindow.vala:33 ../src/Application.vala:27
 msgid "App Center"
 msgstr ""
 
-#: ../src/MainWindow.vala:47
+#: ../src/MainWindow.vala:67
 msgid "Featured"
 msgstr ""
 
-#: ../src/MainWindow.vala:48 ../src/Views/CategoryView.vala:93
+#: ../src/MainWindow.vala:68 ../src/Views/CategoryView.vala:93
 #: ../src/Views/CategoryView.vala:100
 msgid "Categories"
 msgstr "Kategórie"
 
-#: ../src/MainWindow.vala:49 ../src/Views/InstalledView.vala:123
+#: ../src/MainWindow.vala:69 ../src/Views/InstalledView.vala:123
 msgctxt "view"
 msgid "Installed"
 msgstr ""
 
-#: ../src/MainWindow.vala:52
+#: ../src/MainWindow.vala:72
 msgid "Search App"
 msgstr ""
 
@@ -162,6 +162,13 @@ msgstr ""
 #: ../src/Application.vala:18
 msgid "About App Center"
 msgstr ""
+
+#: ../src/Application.vala:45
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Milan Slovák https://launchpad.net/~milboys\n"
+"  lupajz https://launchpad.net/~lubos-m"
 
 #: ../src/Core/Package.vala:122
 msgid "Starting"
