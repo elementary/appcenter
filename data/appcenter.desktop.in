@@ -1,5 +1,4 @@
 [Desktop Entry]
-Version=@VERSION@
 Name=@APP_NAME@
 Comment=@RELEASE_NAME@
 Exec=@EXEC_NAME@ %U
