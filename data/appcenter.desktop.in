@@ -6,7 +6,7 @@ Icon=@DESKTOP_ICON@
 Terminal=false
 Type=Application
 StartupNotify=true
-Categories=GTK;Utility;System;
+Categories=GNOME;GTK;System;PackageManager;
 X-GNOME-Gettext-Domain=@GETTEXT_PACKAGE@
 Actions=AboutDialog;
 
