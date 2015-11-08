@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-04 15:16+0100\n"
-"PO-Revision-Date: 2015-11-06 16:07+0000\n"
-"Last-Translator: elementaryart (old) <Unknown>\n"
+"PO-Revision-Date: 2015-11-08 00:00+0000\n"
+"Last-Translator: Daniel Fore <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-11-07 04:39+0000\n"
+"X-Launchpad-Export-Date: 2015-11-08 05:28+0000\n"
 "X-Generator: Launchpad (build 17838)\n"
 
 #: ../src/MainWindow.vala:33 ../src/Application.vala:27
@@ -38,7 +38,7 @@ msgstr ""
 #: ../src/Views/AppInfoView.vala:53 ../src/Views/AppInfoView.vala:64
 #: ../src/Views/AppInfoView.vala:73
 msgid "Update"
-msgstr ""
+msgstr "Actualizar"
 
 #: ../src/Views/AppInfoView.vala:79 ../src/Views/AppInfoView.vala:133
 #: ../src/Views/AppInfoView.vala:214
@@ -47,7 +47,7 @@ msgstr "Instalar"
 
 #: ../src/Views/AppInfoView.vala:137
 msgid "Uninstall"
-msgstr ""
+msgstr "Desinstalar"
 
 #: ../src/Views/FeaturedView.vala:33
 msgid "Best Rated"
@@ -67,7 +67,7 @@ msgstr ""
 
 #: ../src/Views/InstalledView.vala:146
 msgid "Size: %s"
-msgstr ""
+msgstr "Tamaño: %s"
 
 #: ../src/Views/InstalledView.vala:147
 msgid "%d update is available."
@@ -113,7 +113,7 @@ msgstr ""
 
 #: ../src/Views/CategoryView.vala:57
 msgid "Communication"
-msgstr ""
+msgstr "Comunicación"
 
 #: ../src/Views/CategoryView.vala:57
 msgid "Stay in touch"
@@ -121,7 +121,7 @@ msgstr ""
 
 #: ../src/Views/CategoryView.vala:62
 msgid "Games"
-msgstr ""
+msgstr "Juegos"
 
 #: ../src/Views/CategoryView.vala:62
 msgid "Be a hero"
@@ -129,7 +129,7 @@ msgstr ""
 
 #: ../src/Views/CategoryView.vala:67
 msgid "Science"
-msgstr ""
+msgstr "Ciencia"
 
 #: ../src/Views/CategoryView.vala:67
 msgid "Explore the unknown"
@@ -168,6 +168,7 @@ msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
 "  Alfredo Hernández https://launchpad.net/~aldomann\n"
+"  Daniel Fore https://launchpad.net/~danrabbit\n"
 "  Juan Mantilla https://launchpad.net/~judamalo77\n"
 "  Kaito 1412 https://launchpad.net/~keyser1412\n"
 "  elementaryart (old) https://launchpad.net/~elementaryart"
