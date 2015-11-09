@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-04 15:16+0100\n"
-"PO-Revision-Date: 2015-11-06 16:04+0000\n"
-"Last-Translator: elementaryart (old) <Unknown>\n"
+"PO-Revision-Date: 2015-11-08 11:24+0000\n"
+"Last-Translator: Indrit Bashkimi <indrit.bashkimi@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-11-07 04:39+0000\n"
+"X-Launchpad-Export-Date: 2015-11-09 05:12+0000\n"
 "X-Generator: Launchpad (build 17838)\n"
 
 #: ../src/MainWindow.vala:33 ../src/Application.vala:27
@@ -59,25 +59,25 @@ msgstr ""
 
 #: ../src/Views/InstalledView.vala:67
 msgid "Searching for updates…"
-msgstr ""
+msgstr "Duke kërkuar përditësime…"
 
 #: ../src/Views/InstalledView.vala:80
 msgid "Update All"
-msgstr ""
+msgstr "Përditësoji të gjithë"
 
 #: ../src/Views/InstalledView.vala:146
 msgid "Size: %s"
-msgstr ""
+msgstr "Përmasa: %s"
 
 #: ../src/Views/InstalledView.vala:147
 msgid "%d update is available."
 msgid_plural "%d updates are available."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d përditësim të gatshëm."
+msgstr[1] "%d përditësime të gatshme."
 
 #: ../src/Views/InstalledView.vala:151
 msgid "Your System is up-to-date."
-msgstr ""
+msgstr "Sistemi juaj është i përditësuar."
 
 #: ../src/Views/AppListView.vala:44
 msgid "No Apps"
@@ -93,7 +93,7 @@ msgstr "Zyrë"
 
 #: ../src/Views/CategoryView.vala:42
 msgid "Be productive!"
-msgstr ""
+msgstr "Bëhu produktiv!"
 
 #: ../src/Views/CategoryView.vala:47
 msgid "Multimedia"
@@ -105,43 +105,43 @@ msgstr "Dëgjo muzikë"
 
 #: ../src/Views/CategoryView.vala:52
 msgid "Internet"
-msgstr ""
+msgstr "Internet"
 
 #: ../src/Views/CategoryView.vala:52
 msgid "Explore the web"
-msgstr ""
+msgstr "Eksploroni rrjetin"
 
 #: ../src/Views/CategoryView.vala:57
 msgid "Communication"
-msgstr ""
+msgstr "Komunikim"
 
 #: ../src/Views/CategoryView.vala:57
 msgid "Stay in touch"
-msgstr ""
+msgstr "Mbani lidhjet"
 
 #: ../src/Views/CategoryView.vala:62
 msgid "Games"
-msgstr ""
+msgstr "Lojra"
 
 #: ../src/Views/CategoryView.vala:62
 msgid "Be a hero"
-msgstr ""
+msgstr "Bëhu një hero"
 
 #: ../src/Views/CategoryView.vala:67
 msgid "Science"
-msgstr ""
+msgstr "Shkencë"
 
 #: ../src/Views/CategoryView.vala:67
 msgid "Explore the unknown"
-msgstr ""
+msgstr "Eksploro të panjohurën"
 
 #: ../src/Views/CategoryView.vala:72
 msgid "Education"
-msgstr ""
+msgstr "Edukim"
 
 #: ../src/Views/CategoryView.vala:72
 msgid "Lern something new"
-msgstr ""
+msgstr "Mëso diçka të re"
 
 #: ../src/Views/CategoryView.vala:77
 msgid "Graphics"
@@ -149,7 +149,7 @@ msgstr ""
 
 #: ../src/Views/CategoryView.vala:77
 msgid "Draw something!"
-msgstr ""
+msgstr "Vizato diçka!"
 
 #: ../src/Views/CategoryView.vala:82
 msgid "Fonts"
@@ -177,7 +177,7 @@ msgstr ""
 
 #: ../src/Core/Package.vala:124
 msgid "Waiting in queue"
-msgstr ""
+msgstr "Duke pritur në rradhë"
 
 #: ../src/Core/Package.vala:126
 msgid "Running"
@@ -189,19 +189,19 @@ msgstr ""
 
 #: ../src/Core/Package.vala:130
 msgid "Getting information"
-msgstr ""
+msgstr "Duke marrë informata"
 
 #: ../src/Core/Package.vala:132
 msgid "Removing packages"
-msgstr ""
+msgstr "Duke hequr paketat"
 
 #: ../src/Core/Package.vala:134
 msgid "Downloading packages"
-msgstr ""
+msgstr "Duke shkarkuar paketat"
 
 #: ../src/Core/Package.vala:136
 msgid "Installing packages"
-msgstr ""
+msgstr "Duke instaluar paketat"
 
 #: ../src/Core/Package.vala:138
 msgid "Refreshing software list"
@@ -209,11 +209,11 @@ msgstr ""
 
 #: ../src/Core/Package.vala:140
 msgid "Installing updates"
-msgstr ""
+msgstr "Duke instaluar përditësimet"
 
 #: ../src/Core/Package.vala:142
 msgid "Cleaning up packages"
-msgstr ""
+msgstr "Duke pastruar paketat"
 
 #: ../src/Core/Package.vala:144
 msgid "Obsoleting packages"
@@ -221,7 +221,7 @@ msgstr ""
 
 #: ../src/Core/Package.vala:146
 msgid "Resolving dependencies"
-msgstr ""
+msgstr "Duke zgjidhur vartësitë"
 
 #: ../src/Core/Package.vala:148
 msgid "Checking signatures"
@@ -229,7 +229,7 @@ msgstr ""
 
 #: ../src/Core/Package.vala:150
 msgid "Testing changes"
-msgstr ""
+msgstr "Duke testuar ndryshimet"
 
 #: ../src/Core/Package.vala:152
 msgid "Committing changes"
@@ -245,7 +245,7 @@ msgstr ""
 
 #: ../src/Core/Package.vala:158
 msgid "Cancelling"
-msgstr ""
+msgstr "Duke anuluar"
 
 #: ../src/Core/Package.vala:160
 msgid "Downloading repository information"
@@ -253,19 +253,19 @@ msgstr ""
 
 #: ../src/Core/Package.vala:162
 msgid "Downloading list of packages"
-msgstr ""
+msgstr "Duke shkarkuar listën e paketave"
 
 #: ../src/Core/Package.vala:164
 msgid "Downloading file lists"
-msgstr ""
+msgstr "Duke shkarkuar listat e skedarëve"
 
 #: ../src/Core/Package.vala:166
 msgid "Downloading lists of changes"
-msgstr ""
+msgstr "Duke shkarkuar listat e ndryshimeve"
 
 #: ../src/Core/Package.vala:168
 msgid "Downloading groups"
-msgstr ""
+msgstr "Duke shkarkuar grupet"
 
 #: ../src/Core/Package.vala:170
 msgid "Downloading update information"
@@ -285,7 +285,7 @@ msgstr ""
 
 #: ../src/Core/Package.vala:178
 msgid "Generating package lists"
-msgstr ""
+msgstr "Duke gjeneruar listat e paketave"
 
 #: ../src/Core/Package.vala:180
 msgid "Waiting for package manager lock"
@@ -293,7 +293,7 @@ msgstr ""
 
 #: ../src/Core/Package.vala:182
 msgid "Waiting for authentication"
-msgstr ""
+msgstr "Duke pritur identifikimin"
 
 #: ../src/Core/Package.vala:184
 msgid "Updating running applications"
@@ -301,7 +301,7 @@ msgstr ""
 
 #: ../src/Core/Package.vala:186
 msgid "Checking applications in use"
-msgstr ""
+msgstr "Duke kontrolluar programet në përdorim"
 
 #: ../src/Core/Package.vala:188
 msgid "Checking libraries in use"
@@ -309,11 +309,11 @@ msgstr ""
 
 #: ../src/Core/Package.vala:190
 msgid "Copying files"
-msgstr ""
+msgstr "Duke kopjuar skedarët"
 
 #: ../src/Core/Package.vala:192
 msgid "Unknown state"
-msgstr ""
+msgstr "Gjendje e panjohur"
 
 #~ msgid "Apps View"
 #~ msgstr "Shiko Aplikacionet"
