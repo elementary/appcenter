@@ -16,7 +16,10 @@ Homepage: https://launchpad.net/appcenter
 Package: appcenter
 Architecture: any
 Priority: extra
-Depends: app-install-data,
+Depends: appstream,
+         appstream-data,
+         appstream-data-icons,
+         appstream-data-icons-hidpi,
          packagekit,
          ${misc:Depends},
          ${shlibs:Depends}
