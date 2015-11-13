@@ -69,7 +69,7 @@ public class AppCenter.Views.CategoryView : View {
         science_item.clicked.connect (() => show_app_list_for_category.begin (science_category));
         categories_grid.attach (science_item, 2, 1, 1, 1);
 
-        var education_category = new Category (Pk.Group.EDUCATION, _("Education"), "applications-education", _("Lern something new"));
+        var education_category = new Category (Pk.Group.EDUCATION, _("Education"), "applications-education", _("Learn something new"));
         var education_item = new Widgets.CategoryItem (education_category);
         education_item.clicked.connect (() => show_app_list_for_category.begin (education_category));
         categories_grid.attach (education_item, 0, 2, 1, 1);
