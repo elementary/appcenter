@@ -23,13 +23,15 @@ using AppCenterCore;
 const string FEATURED_STYLE_CSS = """
     .featured {
         background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3));
-        border: 1px solid alpha (#000, 0.35);
+        border: 1px solid alpha (#000, 0.15);
         border-radius: 3px;
 
         box-shadow: inset 0 0 0 1px alpha (#fff, 0.05),
                     inset 0 1px 0 0 alpha (#fff, 0.45),
                     inset 0 -1px 0 0 alpha (#fff, 0.15),
                     0 1px 3px alpha (#000, 0.12),
+                    0 1px 2px alpha (#000, 0.24);
+        text-shadow: 0 1px 3px alpha (#000, 0.12),
                     0 1px 2px alpha (#000, 0.24);
     }
     .featured:dir(rtl) {
