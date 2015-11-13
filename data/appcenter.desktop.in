@@ -3,6 +3,7 @@ Name=@APP_NAME@
 Comment=@RELEASE_NAME@
 Exec=@EXEC_NAME@ %U
 Icon=@DESKTOP_ICON@
+Keywords=install;uninstall;remove;catalogue;store;apps;updates;software;
 Terminal=false
 Type=Application
 StartupNotify=true
