@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2015 elementary, LLC <contact@elementary.io> -->
+<application>
+  <id type="desktop">appcenter.desktop.in</id>
+  <metadata_license>CC0</metadata_license>
+  <project_license>GPL-3.0+</project_license>
+  <name>AppCenter</name>
+  <summary>The indie, open, pay-what-you-want app store</summary>
+  <description>
+    <p>
+      AppCenter is a fast and beautiful app store built for indie
+      software developers and elementary OS.
+    </p>
+  </description>
+  <url type="homepage">http://elementary.io/</url>
+  <updatecontact>contact_at_elementary.io</updatecontact>
+</application>
