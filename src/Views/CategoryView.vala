@@ -115,23 +115,17 @@ public class AppCenter.Views.CategoryView : View {
             show_package (package);
         });
 
-        unowned Client client = Client.get_default ();
-        // Do not show dev packages.
-        var filter = Utils.bitfield_from_filter (Pk.Filter.NOT_DEVELOPMENT);
-        // Only show the latest version.
-        filter |= Utils.bitfield_from_filter (Pk.Filter.NEWEST);
-        // Show apps with .desktop file.
-        filter |= Utils.bitfield_from_filter (Pk.Filter.APPLICATION);
-        // Only show for the current architecture.
-        filter |= Utils.bitfield_from_filter (Pk.Filter.ARCH);
-        // Show only the main package (ex: 0ad and not 0ad-data).
-        filter |= Utils.bitfield_from_filter (Pk.Filter.BASENAME);
-        // Show only the main package (ex: 0ad and not 0ad-data).
-        filter |= Utils.bitfield_from_filter (Pk.Filter.NOT_SOURCE);
+        /*unowned Client client = Client.get_default ();
+        var filter = Pk.Bitfield.from_enums (Pk.Filter.NOT_DEVELOPMENT,
+                                             Pk.Filter.NEWEST,
+                                             Pk.Filter.APPLICATION,
+                                             Pk.Filter.ARCH,
+                                             Pk.Filter.BASENAME,
+                                             Pk.Filter.NOT_SOURCE);
         var apps = yield client.get_applications (filter, category.group, null);
         foreach (var app in apps) {
             app_list_view.add_package (app);
-        }
+        }*/
 
         app_list_view.package_addition_finished ();
     }

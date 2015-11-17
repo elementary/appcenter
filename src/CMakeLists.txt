@@ -14,14 +14,9 @@ endif ()
 
 include(ValaPrecompile)
 vala_precompile(VALA_C ${EXEC_NAME}
-    Core/Utils.vala
     Core/Client.vala
-    Core/Info.vala
-    Core/Details.vala
-    Core/Summary.vala
     Core/Category.vala
     Core/Package.vala
-    Core/OperationEnum.vala
 
     Application.vala
     MainWindow.vala

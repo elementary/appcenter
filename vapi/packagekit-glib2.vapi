@@ -796,7 +796,9 @@ namespace Pk {
 	public struct Bitfield : uint64 {
 		public void add (int @enum);
 		public bool contain (int @enum);
+		[CCode (sentinel = "-1")]
 		public int contain_priority (int value, ...);
+		[CCode (sentinel = "-1")]
 		public static Pk.Bitfield from_enums (int value, ...);
 		public void invert (int @enum);
 		public void remove (int @enum);

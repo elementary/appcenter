@@ -21,32 +21,24 @@
 public class AppCenterCore.Package : Object {
     public signal void changed ();
     public signal void progress_changed (string label, double progress);
-    public Pk.Package pk_package { public get; private set; }
-    private Pk.Package? _update_package = null;
-    public Pk.Package? update_package {
-        public get {
-            return _update_package;
-        }
-        public set {
-            _update_package = value;
-            notify_property ("update-available");
-        }
-    }
-    public Gee.TreeSet<AppStream.Component> components { public get; private set; }
 
+    public AppStream.Component component { public get; private set; }
     public bool installed { public get; public set; }
     public bool update_available {
         public get {
-            return update_package != null;
+            return update_size > 0;
         }
     }
 
-    public string package_id {
+    private uint64 _update_size = 0;
+    public uint64 update_size {
         public get {
-            if (update_package != null) {
-                return update_package.get_id ();
-            } else {
-                return pk_package.get_id ();
+            return _update_size;
+        }
+        public set {
+            if (_update_size != value) {
+                _update_size = value;
+                notify_property ("update-available");
             }
         }
     }
@@ -54,14 +46,8 @@ public class AppCenterCore.Package : Object {
     private double progress = 1.0f;
     private Pk.Status status = Pk.Status.FINISHED;
 
-    public Package (Pk.Package package) {
-        pk_package = package;
-        components = new Gee.TreeSet<AppStream.Component> ();
-    }
-
-    public void find_components () {
-        components.add_all (Client.get_default ().get_component_for_app (pk_package.get_name ()));
-        changed ();
+    public Package (AppStream.Component component) {
+        this.component = component;
     }
 
     public async void update () throws GLib.Error {
@@ -70,8 +56,7 @@ public class AppCenterCore.Package : Object {
         this.progress = 0.0f;
         try {
             yield AppCenterCore.Client.get_default ().update_packages (treeset, (progress, type) => {ProgressCallback (progress, type);});
-            pk_package = update_package;
-            update_package = null;
+            update_size = 0;
         } catch (Error e) {
             throw e;
         }
@@ -96,10 +81,6 @@ public class AppCenterCore.Package : Object {
         try {
             yield AppCenterCore.Client.get_default ().remove_packages (treeset, (progress, type) => {ProgressCallback (progress, type);});
             installed = false;
-            if (update_package != null) {
-                pk_package = update_package;
-                update_package = null;
-            }
         } catch (Error e) {
             throw e;
         }
@@ -210,15 +191,62 @@ public class AppCenterCore.Package : Object {
         }
     }
 
-    public static string get_strict_version (string version) {
-        string returned = version;
-        returned = returned.split ("+", 2)[0];
-        returned = returned.split ("-", 2)[0];
-        returned = returned.split ("~", 2)[0];
-        if (":" in returned) {
-            returned = returned.split (":", 2)[1];
+    public string? get_name () {
+        var _name = component.get_name ();
+        if (_name != null) {
+            return _name;
         }
 
-        return returned;
+        var package = find_package ();
+        if (package != null) {
+            return package.get_name ();
+        }
+
+        return null;
+    }
+
+    public string? get_summary () {
+        var summary = component.get_summary ();
+        if (summary != null) {
+            return summary;
+        }
+
+        var package = find_package ();
+        if (package != null) {
+            return package.get_summary ();
+        }
+
+        return null;
+    }
+
+    public string? get_version () {
+        var package = find_package ();
+        if (package != null) {
+            string returned = package.get_version ();
+            returned = returned.split ("+", 2)[0];
+            returned = returned.split ("-", 2)[0];
+            returned = returned.split ("~", 2)[0];
+            if (":" in returned) {
+                returned = returned.split (":", 2)[1];
+            }
+
+            return returned;
+        }
+
+        return null;
+    }
+
+    private Pk.Package? find_package (bool installed = false) {
+        try {
+            Pk.Bitfield filter = 0;
+            if (installed) {
+                filter = Pk.Bitfield.from_enums (Pk.Filter.INSTALLED);
+            }
+
+            return AppCenterCore.Client.get_default ().get_app_package (component.get_pkgnames ()[0], filter);
+        } catch (Error e) {
+            critical (e.message);
+            return null;
+        }
     }
 }

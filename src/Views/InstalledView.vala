@@ -40,7 +40,14 @@ public class AppCenter.Views.InstalledView : View {
     Gee.TreeSet<Package> updates;
     public InstalledView () {
         // We need this line in order to show the No Update view.
-        Client.get_default ().updates_available.connect (() => show_update_number ());
+        Client.get_default ().updates_available.connect (() => {
+            var package = Client.get_default ().os_updates;
+            if (package.update_available) {
+                app_list_view.add_package (package);
+            }
+
+            show_update_number ();
+        });
         get_apps.begin ();
     }
 
@@ -132,14 +139,20 @@ public class AppCenter.Views.InstalledView : View {
     }
 
     private void show_update_number () {
-        var applications = Client.get_default ().get_cached_applications ();
+        var applications = app_list_view.get_packages ();
         int update_numbers = 0;
-        uint64 update_real_size = 0U;
+        uint64 update_real_size = 0ULL;
         foreach (var package in applications) {
             if (package.update_available) {
                 update_numbers++;
-                update_real_size += package.update_package.size;
+                update_real_size += package.update_size;
             }
+        }
+
+        var package = Client.get_default ().os_updates;
+        if (package.update_available) {
+            update_numbers++;
+            update_real_size += package.update_size;
         }
 
         if (update_numbers > 0) {
@@ -164,7 +177,6 @@ public class AppCenter.Views.InstalledView : View {
     private async void get_apps () {
         unowned Client client = Client.get_default ();
         var installed_apps = yield client.get_installed_applications ();
-        client.refresh_updates.begin ();
         foreach (var app in installed_apps) {
             app_list_view.add_package (app);
             app.notify["update-available"].connect (() => {
@@ -178,11 +190,12 @@ public class AppCenter.Views.InstalledView : View {
                 }
             });
         }
+        yield client.refresh_updates ();
     }
 
     private async void update_all_apps () {
         top_right_stack.set_visible_child_name ("progress");
-        updates.clear ();
+        /*updates.clear ();
         unowned Client client = Client.get_default ();
         var applications = client.get_cached_applications ();
         foreach (var package in applications) {
@@ -197,35 +210,6 @@ public class AppCenter.Views.InstalledView : View {
         } catch (Error e) {
             critical (e.message);
             top_right_stack.set_visible_child_name ("buttons");
-        }
-    }
-
-    private void ProgressCallback (Pk.Progress progress, Pk.ProgressType type) {
-        switch (type) {
-            case Pk.ProgressType.ITEM_PROGRESS:
-                progress_bar.fraction = ((double) progress.percentage)/100;
-                foreach (var package in updates) {
-                    if (package.pk_package.get_id () == progress.item_progress.package_id) {
-                        package.set_latest_progress ((Pk.Status) progress.item_progress.status, ((double) progress.item_progress.percentage)/100);
-                        break;
-                    }
-                }
-                break;
-            case Pk.ProgressType.STATUS:
-                progress_label.label = Package.get_localized_status ((Pk.Status) progress.status);
-                if (progress.status == Pk.Status.FINISHED) {
-                    foreach (var package in updates) {
-                        package.set_latest_progress (Pk.Status.FINISHED, 1.0f);
-                    }
-                } else {
-                    foreach (var package in updates) {
-                        if (package.pk_package.get_id () == progress.item_progress.package_id) {
-                            package.set_latest_progress ((Pk.Status) progress.item_progress.status, ((double) progress.item_progress.percentage)/100);
-                        }
-                    }
-                }
-
-                break;
-        }
+        }*/
     }
 }

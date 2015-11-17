@@ -116,6 +116,22 @@ public class AppCenter.Views.AppListView : Gtk.Stack {
         }
     }
 
+    public Gee.Collection<AppCenterCore.Package> get_packages () {
+        var packages = new Gee.TreeSet<AppCenterCore.Package> ();
+        list_store.foreach ((model, path, iter) => {
+            Value value;
+            model.get_value (iter, 0, out value);
+            var package = value.get_object () as AppCenterCore.Package;
+            if (package != null) {
+                packages.add (package);
+            }
+
+            return false;
+        });
+
+        return packages;
+    }
+
     /*
      * As clearing is the beggining of an action (refill),
      * the user should call package_addition_finished once finished.
@@ -133,12 +149,9 @@ public class AppCenter.Views.AppListView : Gtk.Stack {
         tree_model.get_value (iter, 1, out val);
         var icon = (Gdk.Pixbuf) val.get_object ();
         if (icon == null) {
-            package.find_components ();
-            foreach (var component in package.components) {
-                component.get_icon_urls ().foreach ((k, v) => {
-                    icon = new Gdk.Pixbuf.from_file_at_scale (v, 48, 48, true);
-                });
-            }
+            package.component.get_icon_urls ().foreach ((k, v) => {
+                icon = new Gdk.Pixbuf.from_file_at_scale (v, 48, 48, true);
+            });
 
             if (icon == null) {
                 try {
@@ -162,6 +175,12 @@ public class AppCenter.Views.AppListView : Gtk.Stack {
         var package_a = (Package) val_a.get_object ();
         var package_b = (Package) val_b.get_object ();
         if (updates_on_top) {
+            if (package_a.component.id == "xxx-os-updates") {
+                return -1;
+            } else if (package_b.component.id == "xxx-os-updates") {
+                return 1;
+            }
+
             if (package_a.update_available && !package_b.update_available) {
                 return -1;
             } else if (!package_a.update_available && package_b.update_available) {
@@ -169,6 +188,6 @@ public class AppCenter.Views.AppListView : Gtk.Stack {
             }
         }
 
-        return package_a.pk_package.get_name ().collate (package_b.pk_package.get_name ());
+        return package_a.get_name ().collate (package_b.get_name ());
     }
 }

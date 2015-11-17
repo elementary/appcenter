@@ -38,16 +38,17 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
 
     public AppInfoView (AppCenterCore.Package package) {
         this.package = package;
-        app_name.label = package.pk_package.get_name ();
-        string version = package.pk_package.get_version ();
-        app_version.label = AppCenterCore.Package.get_strict_version (version);
-        app_version.tooltip_text = version;
-        app_summary.label = package.pk_package.get_summary ();
-        foreach (var component in package.components) {
-            component.get_icon_urls ().foreach ((k, v) => {
+        app_name.label = package.get_name ();
+        app_version.label = package.get_version ();
+        app_summary.label = package.get_summary ();
+        int size = 0;
+        package.component.get_icon_urls ().foreach ((k, v) => {
+            var current_size = int.parse (k.split ("x", 2)[0]);
+            if (current_size > size) {
+                size = current_size;
                 app_icon.gicon = new FileIcon (File.new_for_path (v));
-            });
-        }
+            }
+        });
 
         if (package.update_available) {
             action_button.label = _("Update");
@@ -96,6 +97,7 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
 
         app_icon = new Gtk.Image ();
+        app_icon.margin_top = 12;
         app_icon.margin_start = 6;
         app_icon.icon_name = "application-default-icon";
         app_icon.pixel_size = 128;
@@ -105,11 +107,13 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         app_screenshot.icon_name = "image-x-generic";
 
         app_name = new Gtk.Label (null);
+        app_name.margin_top = 12;
         ((Gtk.Misc) app_name).xalign = 0;
         app_name.get_style_context ().add_class ("h1");
         app_name.valign = Gtk.Align.CENTER;
 
         app_version = new Gtk.Label (null);
+        app_version.margin_top = 12;
         ((Gtk.Misc) app_version).xalign = 0;
         app_version.hexpand = true;
         app_version.valign = Gtk.Align.CENTER;
