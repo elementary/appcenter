@@ -57,8 +57,7 @@ public class AppCenter.Views.InstalledView : View {
         main_grid = new Gtk.Grid ();
         main_grid.orientation = Gtk.Orientation.VERTICAL;
 
-        app_list_view = new AppListView ();
-        app_list_view.updates_on_top = true;
+        app_list_view = new AppListView (true);
 
         top_stack = new Gtk.Stack ();
         top_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
@@ -179,17 +178,8 @@ public class AppCenter.Views.InstalledView : View {
         var installed_apps = yield client.get_installed_applications ();
         foreach (var app in installed_apps) {
             app_list_view.add_package (app);
-            app.notify["update-available"].connect (() => {
-                show_update_number ();
-            });
-            app.notify["installed"].connect (() => {
-                if (app.installed) {
-                    app_list_view.add_package (app);
-                } else {
-                    app_list_view.remove_package (app);
-                }
-            });
         }
+
         yield client.refresh_updates ();
     }
 

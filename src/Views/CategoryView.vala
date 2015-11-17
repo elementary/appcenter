@@ -127,6 +127,5 @@ public class AppCenter.Views.CategoryView : View {
             app_list_view.add_package (app);
         }*/
 
-        app_list_view.package_addition_finished ();
     }
 }

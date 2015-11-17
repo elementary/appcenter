@@ -19,6 +19,7 @@
  */
 
 public class AppCenterCore.Package : Object {
+    public const string OS_UPDATES_ID = "xxx-os-updates";
     public signal void changed ();
     public signal void progress_changed (string label, double progress);
 
@@ -220,6 +221,7 @@ public class AppCenterCore.Package : Object {
     }
 
     public string? get_version () {
+
         var package = find_package ();
         if (package != null) {
             string returned = package.get_version ();
@@ -237,6 +239,10 @@ public class AppCenterCore.Package : Object {
     }
 
     private Pk.Package? find_package (bool installed = false) {
+        if (component.id == OS_UPDATES_ID) {
+            return null;
+        }
+
         try {
             Pk.Bitfield filter = 0;
             if (installed) {

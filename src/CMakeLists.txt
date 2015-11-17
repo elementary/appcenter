@@ -31,6 +31,7 @@ vala_precompile(VALA_C ${EXEC_NAME}
     Widgets/AppCellRenderer.vala
     Widgets/CategoryItem.vala
     Widgets/FeaturedButton.vala
+    Widgets/PackageRow.vala
     ${CMAKE_CURRENT_BINARY_DIR}/config.vala
 PACKAGES
     appstream

@@ -35,7 +35,7 @@ public class AppCenterCore.Client : Object {
         appstream_database.open ();
 
         var os_updates_component = new AppStream.Component ();
-        os_updates_component.id = "xxx-os-updates";
+        os_updates_component.id = AppCenterCore.Package.OS_UPDATES_ID;
         os_updates_component.name = _("OS Updates");
         os_updates_component.summary = _("Updates to system components");
         os_updates_component.add_icon_url (48, 48, "/usr/share/icons/elementary/places/48/distributor-logo.svg");
