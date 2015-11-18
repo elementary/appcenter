@@ -21,10 +21,9 @@
 public class AppCenterCore.Package : Object {
     public const string OS_UPDATES_ID = "xxx-os-updates";
     public signal void changed ();
-    public signal void progress_changed (string label, double progress);
 
     public AppStream.Component component { public get; private set; }
-    public bool installed { public get; public set; }
+    public bool installed { get; set; }
     public bool update_available {
         public get {
             return update_size > 0;
@@ -44,8 +43,8 @@ public class AppCenterCore.Package : Object {
         }
     }
 
-    private double progress = 1.0f;
-    private Pk.Status status = Pk.Status.FINISHED;
+    public double progress { get; set; default=1.0f; }
+    public Pk.Status status { get; set; default=Pk.Status.SETUP; }
 
     public Package (AppStream.Component component) {
         this.component = component;
@@ -85,17 +84,6 @@ public class AppCenterCore.Package : Object {
         } catch (Error e) {
             throw e;
         }
-    }
-
-    public void get_latest_progress (out string label, out double progress) {
-        progress = this.progress;
-        label = get_localized_status (status);
-    }
-
-    public void set_latest_progress (Pk.Status status, double progress) {
-        this.status = status;
-        this.progress = progress;
-        progress_changed (get_localized_status (status), this.progress);
     }
 
     public static string get_localized_status (Pk.Status status) {
@@ -179,15 +167,14 @@ public class AppCenterCore.Package : Object {
         switch (type) {
             case Pk.ProgressType.ITEM_PROGRESS:
                 this.progress = ((double) progress.item_progress.percentage)/100;
-                progress_changed (get_localized_status (status), this.progress);
                 break;
             case Pk.ProgressType.STATUS:
                 status = (Pk.Status) progress.status;
                 if (status == Pk.Status.FINISHED) {
                     this.progress = 1.0f;
+                    status = Pk.Status.SETUP;
                 }
 
-                progress_changed (get_localized_status (status), this.progress);
                 break;
         }
     }

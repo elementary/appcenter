@@ -23,10 +23,23 @@ using AppCenterCore;
 public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
     public signal void show_app (AppCenterCore.Package package);
 
+    private bool _updating_cache = true;
+    public bool updating_cache {
+        get {
+            return _updating_cache;
+        }
+        set {
+            if (!updates_on_top) {
+                warning ("updating_cache is useless if updates_on_top is false");
+            }
+
+            _updating_cache = value;
+            list_box.invalidate_headers ();
+        }
+    }
+
     private bool updates_on_top;
     private Gtk.ListBox list_box;
-    private Gtk.Grid updated_grid;
-    private Gtk.Grid updates_grid;
 
     public AppListView (bool updates_on_top = false) {
         this.updates_on_top = updates_on_top;
@@ -40,23 +53,15 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
         var alert_view = new Granite.Widgets.AlertView (_("No Apps"), _("You haven't found any app here."), "help-info");
         list_box = new Gtk.ListBox ();
         list_box.expand = true;
+        list_box.activate_on_single_click = true;
         list_box.set_placeholder (alert_view);
         list_box.set_sort_func ((row1, row2) => ListBoxSortFunc (row1, row2));
-        var updated_label = new Gtk.Label (_("Updated packages"));
-        updated_label.margin = 6;
-        updated_label.hexpand = true;
-        ((Gtk.Misc) updated_label).xalign = 0;
-        updated_label.get_style_context ().add_class ("h4");
-        updated_grid = new Gtk.Grid ();
-        updated_grid.add (updated_label);
-        updated_grid.show_all ();
-
-        var updates_label = new Gtk.Label (null);
-        updates_label.get_style_context ().add_class ("h4");
-        updates_label.margin = 6;
-        updates_grid = new Gtk.Grid ();
-        updates_grid.add (updates_label);
-        updates_grid.show_all ();
+        list_box.row_activated.connect ((row) => {
+            var packagerow = row as Widgets.PackageRow;
+            if (packagerow != null) {
+                show_app (packagerow.package);
+            }
+        });
         add (list_box);
     }
 
@@ -96,18 +101,84 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
     }
 
     private void ListBoxUpdateHeaderFunc (Gtk.ListBoxRow row, Gtk.ListBoxRow? before) {
-        if (before == null && ((Widgets.PackageRow) row).package.update_available) {
-            if (updates_grid.get_parent () != null) {
-                updates_grid.get_parent ().remove (updates_grid);
-            }
+        bool update_available = ((Widgets.PackageRow) row).package.update_available;
+        if (before == null && update_available) {
+            var updates_grid = get_updates_grid ();
             row.set_header (updates_grid);
-        } else if ((before == null && ((Widgets.PackageRow) row).package.update_available == false) || ((Widgets.PackageRow) before).package.update_available != ((Widgets.PackageRow) row).package.update_available) {
-            if (updated_grid.get_parent () != null) {
-                updated_grid.get_parent ().remove (updated_grid);
-            }
+        } else if ((before == null && !update_available) || update_available != ((Widgets.PackageRow) before).package.update_available) {
+            var updated_grid = get_updated_grid ();
             row.set_header (updated_grid);
         } else {
             row.set_header (null);
         }
+    }
+
+    private Gtk.Grid get_updated_grid () {
+        var updated_grid = new Gtk.Grid ();
+        updated_grid.orientation = Gtk.Orientation.HORIZONTAL;
+        updated_grid.column_spacing = 12;
+        updated_grid.margin = 6;
+        if (updating_cache) {
+            updated_grid.halign = Gtk.Align.CENTER;
+            var updating_label = new Gtk.Label (_("Searching for updates…"));
+            var spinner = new Gtk.Spinner ();
+            spinner.start ();
+            updated_grid.add (spinner);
+            updated_grid.add (updating_label);
+        } else {
+            var updated_label = new Gtk.Label (_("Up to date"));
+            updated_label.hexpand = true;
+            ((Gtk.Misc) updated_label).xalign = 0;
+            updated_label.get_style_context ().add_class ("h4");
+            updated_grid.add (updated_label);
+        }
+
+        updated_grid.show_all ();
+        return updated_grid;
+    }
+
+    private Gtk.Grid get_updates_grid () {
+        var applications = get_packages ();
+        int update_numbers = 0;
+        uint64 update_real_size = 0ULL;
+        foreach (var package in applications) {
+            if (package.update_available) {
+                update_numbers++;
+                update_real_size += package.update_size;
+            }
+        }
+
+        var package = Client.get_default ().os_updates;
+        if (package.update_available) {
+            update_numbers++;
+            update_real_size += package.update_size;
+        }
+        var updates_label = new Gtk.Label (null);
+        updates_label.label = ngettext ("%d update is available.", "%d updates are available.", update_numbers).printf (update_numbers);
+        ((Gtk.Misc) updates_label).xalign = 0;
+        updates_label.get_style_context ().add_class ("h4");
+        updates_label.hexpand = true;
+
+        var update_size = new Gtk.Label (null);
+        update_size.label = _("Size: %s").printf (GLib.format_size (update_real_size));
+
+        var update_all_button = new Gtk.Button.with_label (_("Update All"));
+        update_all_button.margin_end = 6;
+        update_all_button.valign = Gtk.Align.CENTER;
+        update_all_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        update_all_button.clicked.connect (() => update_all_clicked ());
+        var updates_grid = new Gtk.Grid ();
+        updates_grid.margin = 6;
+        updates_grid.orientation = Gtk.Orientation.HORIZONTAL;
+        updates_grid.column_spacing = 12;
+        updates_grid.add (updates_label);
+        updates_grid.add (update_size);
+        updates_grid.add (update_all_button);
+        updates_grid.show_all ();
+        return updates_grid;
+    }
+
+    private void update_all_clicked () {
+        
     }
 }

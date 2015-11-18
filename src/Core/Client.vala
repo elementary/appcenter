@@ -36,9 +36,9 @@ public class AppCenterCore.Client : Object {
 
         var os_updates_component = new AppStream.Component ();
         os_updates_component.id = AppCenterCore.Package.OS_UPDATES_ID;
-        os_updates_component.name = _("OS Updates");
+        os_updates_component.name = _("Operating System Updates");
         os_updates_component.summary = _("Updates to system components");
-        os_updates_component.add_icon_url (48, 48, "/usr/share/icons/elementary/places/48/distributor-logo.svg");
+        os_updates_component.add_icon (AppStream.IconKind.STOCK, 48, 48, "distributor-logo");
         os_updates = new AppCenterCore.Package (os_updates_component);
 
         appstream_database.get_all_components ().foreach ((comp) => {
@@ -47,6 +47,8 @@ public class AppCenterCore.Client : Object {
                 package_list.set (pkg_name, package);
             }
         });
+
+        refresh_cache.begin ();
     }
 
     public bool has_tasks () {
@@ -78,13 +80,15 @@ public class AppCenterCore.Client : Object {
 
         try {
             var results = yield search_task.search_names_async (Pk.Bitfield.from_enums (Pk.Filter.NEWEST), packages_ids, null, () => {});
-            packages_ids = null;
+            packages_ids = {};
             results.get_package_array ().foreach ((package) => {
                 packages_ids += package.package_id;
             });
 
             yield install_task.install_packages_async (packages_ids, null, cb);
         } catch (Error e) {
+            release_task (search_task);
+            release_task (install_task);
             throw e;
         }
 
@@ -101,16 +105,21 @@ public class AppCenterCore.Client : Object {
                 packages_ids += pkg_name;
             }
         }
+        packages_ids += null;
 
         try {
-            var results = yield search_task.search_names_async (Pk.Bitfield.from_enums (Pk.Filter.NEWEST), packages_ids, null, () => {});
-            packages_ids = null;
+            // We need the installed flag because update_packages take an installed package name as argument.
+            var results = yield search_task.search_names_async (Pk.Bitfield.from_enums (Pk.Filter.INSTALLED), packages_ids, null, () => {});
+            packages_ids = {};
             results.get_package_array ().foreach ((package) => {
                 packages_ids += package.package_id;
             });
+            packages_ids += null;
 
             yield update_task.update_packages_async (packages_ids, null, cb);
         } catch (Error e) {
+            release_task (search_task);
+            release_task (update_task);
             throw e;
         }
 
@@ -131,13 +140,15 @@ public class AppCenterCore.Client : Object {
         try {
             var filter = Pk.Bitfield.from_enums (Pk.Filter.INSTALLED, Pk.Filter.NEWEST);
             var results = yield search_task.search_names_async (filter, packages_ids, null, () => {});
-            packages_ids = null;
+            packages_ids = {};
             results.get_package_array ().foreach ((package) => {
                 packages_ids += package.package_id;
             });
 
             yield remove_task.remove_packages_async (packages_ids, true, true, null, cb);
         } catch (Error e) {
+            release_task (search_task);
+            release_task (remove_task);
             throw e;
         }
 
@@ -145,7 +156,18 @@ public class AppCenterCore.Client : Object {
         release_task (remove_task);
     }
 
-    public async void refresh_updates () {
+    public async void refresh_cache () {
+        Pk.Task refresh_task = request_task ();
+        try {
+            yield refresh_task.refresh_cache_async (false, null, (t, p) => { });
+        } catch (Error e) {
+            critical (e.message);
+        }
+
+        release_task (refresh_task);
+    }
+
+    public async void get_updates () {
         Pk.Task update_task = request_task ();
         Pk.Task details_task = request_task ();
         try {
@@ -181,17 +203,6 @@ public class AppCenterCore.Client : Object {
         updates_available ();
     }
 
-    public async void refresh_cache (Pk.ProgressCallback cb) {
-        Pk.Task cache_task = request_task ();
-        try {
-            yield cache_task.refresh_cache_async (false, null, cb);
-        } catch (Error e) {
-            critical (e.message);
-        }
-
-        release_task (cache_task);
-    }
-
     public async Gee.Collection<AppCenterCore.Package> get_installed_applications () {
         Pk.Task packages_task = request_task ();
         var packages = new Gee.TreeSet<AppCenterCore.Package> ();
@@ -223,8 +234,8 @@ public class AppCenterCore.Client : Object {
             var results = packages_task.search_names_sync (filter, { application, null }, cancellable, () => {});
             package = results.get_package_array ().get (0);
         } catch (Error e) {
+            release_task (packages_task);
             throw e;
-            return null;
         }
 
         release_task (packages_task);

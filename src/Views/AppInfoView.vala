@@ -50,6 +50,17 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
             }
         });
 
+        if (app_icon.gicon == null) {
+            var icon_name = package.component.get_icon (AppStream.IconKind.STOCK, -1, -1);
+            if (icon_name != null) {
+                app_icon.gicon = new ThemedIcon (icon_name);
+            }
+        }
+
+        if (app_icon.gicon == null) {
+            app_icon.gicon = new ThemedIcon ("application-default-icon");
+        }
+
         if (package.update_available) {
             action_button.label = _("Update");
         } else if (package.installed) {
@@ -84,11 +95,10 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
             }
         });
 
-        package.progress_changed.connect ((label, progress) => progress_changed (label, progress));
-        string label;
-        double progress;
-        package.get_latest_progress (out label, out progress);
-        progress_changed (label, progress);
+        package.notify["progress"].connect (() => update_progress ());
+        package.notify["status"].connect (() => update_status ());
+        update_progress ();
+        update_status ();
     }
 
     construct {
@@ -99,7 +109,6 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         app_icon = new Gtk.Image ();
         app_icon.margin_top = 12;
         app_icon.margin_start = 6;
-        app_icon.icon_name = "application-default-icon";
         app_icon.pixel_size = 128;
 
         app_screenshot = new Gtk.Image ();
@@ -179,11 +188,14 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         attach (content_grid, 0, 2, 4, 1);
     }
 
-    private void progress_changed (string label, double progress) {
-        if (progress < 1.0f) {
+    private void update_status () {
+        progress_label.label = Package.get_localized_status (package.status);
+    }
+
+    private void update_progress () {
+        if (package.progress < 1.0f) {
             action_stack.set_visible_child_name ("progress");
-            progress_bar.fraction = progress;
-            progress_label.label = label;
+            progress_bar.fraction = package.progress;
         } else {
             action_stack.set_visible_child_name ("buttons");
         }
