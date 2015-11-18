@@ -67,8 +67,8 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
         image = new Gtk.Image ();
         image.icon_size = Gtk.IconSize.DIALOG;
         update_button = new Gtk.Button.with_label (_("Update"));
-        update_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
         update_button.valign = Gtk.Align.CENTER;
+        update_button.margin_end = 6;
         package_name = new Gtk.Label (null);
         package_name.hexpand = true;
         package_name.valign = Gtk.Align.END;

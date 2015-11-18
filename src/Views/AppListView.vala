@@ -96,9 +96,15 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
     }
 
     private void ListBoxUpdateHeaderFunc (Gtk.ListBoxRow row, Gtk.ListBoxRow? before) {
-        if (before == null) {
+        if (before == null && ((Widgets.PackageRow) row).package.update_available) {
+            if (updates_grid.get_parent () != null) {
+                updates_grid.get_parent ().remove (updates_grid);
+            }
             row.set_header (updates_grid);
-        } else if (((Widgets.PackageRow) before).package.update_available != ((Widgets.PackageRow) row).package.update_available) {
+        } else if ((before == null && ((Widgets.PackageRow) row).package.update_available == false) || ((Widgets.PackageRow) before).package.update_available != ((Widgets.PackageRow) row).package.update_available) {
+            if (updated_grid.get_parent () != null) {
+                updated_grid.get_parent ().remove (updated_grid);
+            }
             row.set_header (updated_grid);
         } else {
             row.set_header (null);
