@@ -10,7 +10,7 @@ namespace AppStream {
 		public void complete ();
 		public static AppStream.Category @construct (GLib.Type object_type);
 		public unowned string get_directory ();
-		public GLib.List<weak string> get_excluded ();
+		public unowned GLib.List<string> get_excluded ();
 		public unowned string get_icon ();
 		public unowned GLib.List<string> get_included ();
 		public int get_level ();
@@ -24,12 +24,12 @@ namespace AppStream {
 		public void set_level (int value);
 		public void set_name (string value);
 		public string directory { get; set; }
-		public void* excluded { get; }
+		public GLib.List<weak string> excluded { get; }
 		public string icon { get; set; }
-		public void* included { get; }
+		public GLib.List<weak string> included { get; }
 		public int level { get; set; }
 		public string name { get; set; }
-		public void* subcategories { get; }
+		public GLib.List<weak string> subcategories { get; }
 		public string summary { get; }
 	}
 	[CCode (cheader_filename = "appstream.h", type_id = "as_component_get_type ()")]
@@ -40,13 +40,13 @@ namespace AppStream {
 		public void add_extends (string cpt_id);
 		public void add_icon (AppStream.IconKind kind, int width, int height, string value);
 		public void add_icon_url (int width, int height, string value);
-		public void add_language (string locale, int percentage);
+		public void add_language (string? locale, int percentage);
 		public void add_provided_item (AppStream.ProvidesKind kind, string value, string? data);
 		public void add_release (AppStream.Release release);
 		public void add_screenshot (AppStream.Screenshot sshot);
 		public void add_url (AppStream.UrlKind url_kind, string url);
 		public string get_active_locale ();
-		public unowned string get_bundle_id (AppStream.BundleKind bundle_kind);
+		public unowned string? get_bundle_id (AppStream.BundleKind bundle_kind);
 		public unowned GLib.HashTable<string,string> get_bundle_ids ();
 		[CCode (array_length = false, array_null_terminated = true)]
 		public unowned string[] get_categories ();
@@ -55,14 +55,14 @@ namespace AppStream {
 		public unowned string get_description ();
 		public unowned string get_developer_name ();
 		public unowned GLib.GenericArray<string> get_extends ();
-		public unowned string get_icon (AppStream.IconKind kind, int width, int height);
-		public unowned string get_icon_url (int width, int height);
+		public unowned string? get_icon (AppStream.IconKind kind, int width, int height);
+		public unowned string? get_icon_url (int width, int height);
 		public unowned GLib.HashTable<string,string> get_icon_urls ();
 		public unowned string get_id ();
 		[CCode (array_length = false, array_null_terminated = true)]
 		public unowned string[] get_keywords ();
 		public AppStream.ComponentKind get_kind ();
-		public int get_language (string locale);
+		public int get_language (string? locale);
 		public GLib.List<weak string> get_languages ();
 		public unowned string get_name ();
 		public unowned string get_origin ();
@@ -75,28 +75,28 @@ namespace AppStream {
 		public unowned GLib.GenericArray<AppStream.Screenshot> get_screenshots ();
 		public unowned string get_source_pkgname ();
 		public unowned string get_summary ();
-		public unowned string get_url (AppStream.UrlKind url_kind);
+		public unowned string? get_url (AppStream.UrlKind url_kind);
 		public unowned GLib.HashTable<string,string> get_urls ();
 		public bool has_category (string category);
 		public bool is_compulsory_for_desktop (string desktop);
 		public bool is_valid ();
 		public bool provides_item (AppStream.ProvidesKind kind, string value);
-		public void set_active_locale (string locale);
+		public void set_active_locale (string? locale);
 		public void set_categories ([CCode (array_length = false, array_null_terminated = true)] string[] value);
 		public void set_categories_from_str (string categories_str);
-		public void set_compulsory_for_desktops (string value);
-		public void set_description (string value, string locale);
-		public void set_developer_name (string value, string locale);
+		public void set_compulsory_for_desktops ([CCode (array_length = false, array_null_terminated = true)] string[] value);
+		public void set_description (string value, string? locale);
+		public void set_developer_name (string value, string? locale);
 		public void set_id (string value);
-		public void set_keywords ([CCode (array_length = false, array_null_terminated = true)] string[] value, string locale);
+		public void set_keywords ([CCode (array_length = false, array_null_terminated = true)] string[] value, string? locale);
 		public void set_kind (AppStream.ComponentKind value);
-		public void set_name (string value, string locale);
+		public void set_name (string value, string? locale);
 		public void set_origin (string origin);
 		public void set_pkgnames ([CCode (array_length = false, array_null_terminated = true)] string[] value);
 		public void set_project_group (string value);
 		public void set_project_license (string value);
 		public void set_source_pkgname (string spkgname);
-		public void set_summary (string value, string locale);
+		public void set_summary (string value, string? locale);
 		public string to_string ();
 		[CCode (array_length = false, array_null_terminated = true)]
 		public string[] categories { get; set; }
@@ -104,7 +104,7 @@ namespace AppStream {
 		public string description { owned get; set; }
 		[NoAccessorMethod]
 		public string developer_name { owned get; set; }
-		public GLib.HashTable<weak void*,weak void*> icon_urls { get; }
+		public GLib.HashTable<weak string,weak string> icon_urls { get; }
 		public string id { get; set; }
 		[CCode (array_length = false, array_null_terminated = true)]
 		[NoAccessorMethod]
@@ -116,10 +116,10 @@ namespace AppStream {
 		public string[] pkgnames { get; set; }
 		public string project_group { get; set; }
 		public string project_license { get; set; }
-		public GLib.GenericArray<weak void*> screenshots { get; }
+		public GLib.GenericArray<weak AppStream.Screenshot> screenshots { get; }
 		[NoAccessorMethod]
 		public string summary { owned get; set; }
-		public GLib.HashTable<weak void*,weak void*> urls { get; }
+		public GLib.HashTable<weak string,weak string> urls { get; }
 	}
 	[CCode (cheader_filename = "appstream.h", type_id = "as_data_pool_get_type ()")]
 	public class DataPool : GLib.Object {
@@ -221,15 +221,17 @@ namespace AppStream {
 		public Release ();
 		public void add_location (string location);
 		public string get_active_locale ();
-		public unowned string get_checksum (AppStream.ChecksumKind cs_kind);
+		public unowned string get_checksum (AppStream.ChecksumKind kind);
 		public unowned string get_description ();
 		public unowned GLib.GenericArray<string> get_locations ();
+		public uint64 get_size (AppStream.SizeKind kind);
 		public uint64 get_timestamp ();
 		public AppStream.UrgencyKind get_urgency ();
 		public unowned string get_version ();
 		public void set_active_locale (string locale);
-		public void set_checksum (string checksum, AppStream.ChecksumKind cs_kind);
+		public void set_checksum (string checksum, AppStream.ChecksumKind kind);
 		public void set_description (string description, string locale);
+		public void set_size (uint64 size, AppStream.SizeKind kind);
 		public void set_timestamp (uint64 timestamp);
 		public void set_urgency (AppStream.UrgencyKind urgency);
 		public void set_version (string version);
@@ -290,6 +292,58 @@ namespace AppStream {
 		public void set_kind (AppStream.IssueKind kind);
 		public void set_location (string location);
 		public void set_message (string message);
+	}
+	[CCode (cheader_filename = "appstream.h")]
+	[SimpleType]
+	public struct Category_autoptr {
+	}
+	[CCode (cheader_filename = "appstream.h")]
+	[SimpleType]
+	public struct Component_autoptr {
+	}
+	[CCode (cheader_filename = "appstream.h")]
+	[SimpleType]
+	public struct DataPool_autoptr {
+	}
+	[CCode (cheader_filename = "appstream.h")]
+	[SimpleType]
+	public struct Database_autoptr {
+	}
+	[CCode (cheader_filename = "appstream.h")]
+	[SimpleType]
+	public struct DistroDetails_autoptr {
+	}
+	[CCode (cheader_filename = "appstream.h")]
+	[SimpleType]
+	public struct Image_autoptr {
+	}
+	[CCode (cheader_filename = "appstream.h")]
+	[SimpleType]
+	public struct MenuParser_autoptr {
+	}
+	[CCode (cheader_filename = "appstream.h")]
+	[SimpleType]
+	public struct Metadata_autoptr {
+	}
+	[CCode (cheader_filename = "appstream.h")]
+	[SimpleType]
+	public struct Release_autoptr {
+	}
+	[CCode (cheader_filename = "appstream.h")]
+	[SimpleType]
+	public struct Screenshot_autoptr {
+	}
+	[CCode (cheader_filename = "appstream.h")]
+	[SimpleType]
+	public struct SearchQuery_autoptr {
+	}
+	[CCode (cheader_filename = "appstream.h")]
+	[SimpleType]
+	public struct ValidatorIssue_autoptr {
+	}
+	[CCode (cheader_filename = "appstream.h")]
+	[SimpleType]
+	public struct Validator_autoptr {
 	}
 	[CCode (cheader_filename = "appstream.h", cprefix = "AS_BUNDLE_KIND_", has_type_id = false)]
 	public enum BundleKind {
@@ -360,10 +414,12 @@ namespace AppStream {
 		TAG_NOT_ALLOWED,
 		PROPERTY_MISSING,
 		PROPERTY_INVALID,
+		VALUE_MISSING,
 		VALUE_WRONG,
 		VALUE_ISSUE,
 		FILE_MISSING,
-		WRONG_NAME
+		WRONG_NAME,
+		READ_ERROR
 	}
 	[CCode (cheader_filename = "appstream.h", cprefix = "AS_METADATA_ERROR_", has_type_id = false)]
 	public enum MetadataError {
@@ -390,6 +446,14 @@ namespace AppStream {
 		UNKNOWN,
 		NORMAL,
 		DEFAULT
+	}
+	[CCode (cheader_filename = "appstream.h", cprefix = "AS_SIZE_KIND_", has_type_id = false)]
+	public enum SizeKind {
+		UNKNOWN,
+		DOWNLOAD,
+		INSTALLED;
+		public static AppStream.SizeKind from_string (string size_kind);
+		public static unowned string to_string (AppStream.SizeKind size_kind);
 	}
 	[CCode (cheader_filename = "appstream.h", cprefix = "AS_URGENCY_KIND_", has_type_id = false)]
 	public enum UrgencyKind {

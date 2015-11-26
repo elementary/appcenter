@@ -19,49 +19,46 @@
  */
 
 public class AppCenterCore.Package : Object {
+    public const string OS_UPDATES_ID = "xxx-os-updates";
     public signal void changed ();
-    public signal void progress_changed (string label, double progress);
-    public Pk.Package pk_package { public get; private set; }
-    private Pk.Package? _update_package = null;
-    public Pk.Package? update_package {
+
+    public AppStream.Component component { public get; private set; }
+    public bool installed {
         public get {
-            return _update_package;
+            return !installed_packages.is_empty;
         }
-        public set {
-            _update_package = value;
-            notify_property ("update-available");
+        private set {
+            
         }
     }
-    public Gee.TreeSet<AppStream.Component> components { public get; private set; }
-
-    public bool installed { public get; public set; }
     public bool update_available {
         public get {
-            return update_package != null;
+            return update_size > 0;
         }
     }
 
-    public string package_id {
+    private uint64 _update_size = 0ULL;
+    public uint64 update_size {
         public get {
-            if (update_package != null) {
-                return update_package.get_id ();
-            } else {
-                return pk_package.get_id ();
+            return _update_size;
+        }
+        public set {
+            if (_update_size != value) {
+                _update_size = value;
             }
         }
     }
 
-    private double progress = 1.0f;
-    private Pk.Status status = Pk.Status.FINISHED;
+    public double progress { get; set; default=1.0f; }
+    public Pk.Status status { get; set; default=Pk.Status.SETUP; }
 
-    public Package (Pk.Package package) {
-        pk_package = package;
-        components = new Gee.TreeSet<AppStream.Component> ();
-    }
+    public Gee.TreeSet<Pk.Package> installed_packages { get; private set; }
+    public Gee.TreeSet<Pk.Package> update_packages { get; private set; }
 
-    public void find_components () {
-        components.add_all (Client.get_default ().get_component_for_app (pk_package.get_name ()));
-        changed ();
+    public Package (AppStream.Component component) {
+        this.component = component;
+        update_packages = new Gee.TreeSet<Pk.Package> ();
+        installed_packages = new Gee.TreeSet<Pk.Package> ();
     }
 
     public async void update () throws GLib.Error {
@@ -70,8 +67,6 @@ public class AppCenterCore.Package : Object {
         this.progress = 0.0f;
         try {
             yield AppCenterCore.Client.get_default ().update_packages (treeset, (progress, type) => {ProgressCallback (progress, type);});
-            pk_package = update_package;
-            update_package = null;
         } catch (Error e) {
             throw e;
         }
@@ -96,24 +91,9 @@ public class AppCenterCore.Package : Object {
         try {
             yield AppCenterCore.Client.get_default ().remove_packages (treeset, (progress, type) => {ProgressCallback (progress, type);});
             installed = false;
-            if (update_package != null) {
-                pk_package = update_package;
-                update_package = null;
-            }
         } catch (Error e) {
             throw e;
         }
-    }
-
-    public void get_latest_progress (out string label, out double progress) {
-        progress = this.progress;
-        label = get_localized_status (status);
-    }
-
-    public void set_latest_progress (Pk.Status status, double progress) {
-        this.status = status;
-        this.progress = progress;
-        progress_changed (get_localized_status (status), this.progress);
     }
 
     public static string get_localized_status (Pk.Status status) {
@@ -193,32 +173,83 @@ public class AppCenterCore.Package : Object {
         }
     }
 
-    private void ProgressCallback (Pk.Progress progress, Pk.ProgressType type) {
+    public void ProgressCallback (Pk.Progress progress, Pk.ProgressType type) {
         switch (type) {
             case Pk.ProgressType.ITEM_PROGRESS:
                 this.progress = ((double) progress.item_progress.percentage)/100;
-                progress_changed (get_localized_status (status), this.progress);
                 break;
             case Pk.ProgressType.STATUS:
                 status = (Pk.Status) progress.status;
                 if (status == Pk.Status.FINISHED) {
                     this.progress = 1.0f;
+                    status = Pk.Status.SETUP;
                 }
 
-                progress_changed (get_localized_status (status), this.progress);
                 break;
         }
     }
 
-    public static string get_strict_version (string version) {
-        string returned = version;
-        returned = returned.split ("+", 2)[0];
-        returned = returned.split ("-", 2)[0];
-        returned = returned.split ("~", 2)[0];
-        if (":" in returned) {
-            returned = returned.split (":", 2)[1];
+    public string? get_name () {
+        var _name = component.get_name ();
+        if (_name != null) {
+            return _name;
         }
 
-        return returned;
+        var package = find_package ();
+        if (package != null) {
+            return package.get_name ();
+        }
+
+        return null;
+    }
+
+    public string? get_summary () {
+        var summary = component.get_summary ();
+        if (summary != null) {
+            return summary;
+        }
+
+        var package = find_package ();
+        if (package != null) {
+            return package.get_summary ();
+        }
+
+        return null;
+    }
+
+    public string? get_version () {
+
+        var package = find_package ();
+        if (package != null) {
+            string returned = package.get_version ();
+            returned = returned.split ("+", 2)[0];
+            returned = returned.split ("-", 2)[0];
+            returned = returned.split ("~", 2)[0];
+            if (":" in returned) {
+                returned = returned.split (":", 2)[1];
+            }
+
+            return returned;
+        }
+
+        return null;
+    }
+
+    private Pk.Package? find_package (bool installed = false) {
+        if (component.id == OS_UPDATES_ID) {
+            return null;
+        }
+
+        try {
+            Pk.Bitfield filter = 0;
+            if (installed) {
+                filter = Pk.Bitfield.from_enums (Pk.Filter.INSTALLED);
+            }
+
+            return AppCenterCore.Client.get_default ().get_app_package (component.get_pkgnames ()[0], filter);
+        } catch (Error e) {
+            critical (e.message);
+            return null;
+        }
     }
 }

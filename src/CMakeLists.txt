@@ -14,14 +14,9 @@ endif ()
 
 include(ValaPrecompile)
 vala_precompile(VALA_C ${EXEC_NAME}
-    Core/Utils.vala
     Core/Client.vala
-    Core/Info.vala
-    Core/Details.vala
-    Core/Summary.vala
     Core/Category.vala
     Core/Package.vala
-    Core/OperationEnum.vala
 
     Application.vala
     MainWindow.vala
@@ -36,6 +31,7 @@ vala_precompile(VALA_C ${EXEC_NAME}
     Widgets/AppCellRenderer.vala
     Widgets/CategoryItem.vala
     Widgets/FeaturedButton.vala
+    Widgets/PackageRow.vala
     ${CMAKE_CURRENT_BINARY_DIR}/config.vala
 PACKAGES
     appstream

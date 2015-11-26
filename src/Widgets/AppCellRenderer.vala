@@ -57,14 +57,8 @@ public class AppCenter.Widgets.AppCellRenderer : Gtk.CellRenderer {
 
     /* render method */
     public override void render (Cairo.Context cr, Gtk.Widget widget, Gdk.Rectangle background_area, Gdk.Rectangle cell_area, Gtk.CellRendererState flags) {
-        var title = package.pk_package.get_name ();
-        var summary = package.pk_package.get_summary ();
-        foreach (var component in package.components) {
-            var comp_name = component.get_name ();
-            if (comp_name != null && comp_name != "") {
-                title = comp_name;
-            }
-        }
+        var title = package.get_name ();
+        var summary = package.get_summary ();
 
         int x = background_area.x;
         int y = background_area.y + MARGIN;

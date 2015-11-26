@@ -14,205 +14,239 @@
 * with this program. If not, see http://www.gnu.org/licenses/.
 */
 
-namespace AppCenterCore {
-    public class Client : Object {
-        public signal void updates_available ();
-        public signal void tasks_finished ();
-        public bool connected { public get; private set; }
+public class AppCenterCore.Client : Object {
+    public signal void updates_available ();
+    public signal void tasks_finished ();
 
-        private Gee.LinkedList<Pk.Task> task_list;
-        private Gee.HashMap<string, AppCenterCore.Package> package_list;
-        private AppStream.Database appstream_database;
+    public bool connected { public get; private set; }
+    public AppCenterCore.Package os_updates { public get; private set; }
 
-        private Client () {
-            task_list = new Gee.LinkedList<Pk.Task> ();
-            package_list = new Gee.HashMap<string, AppCenterCore.Package> (null, null);
+    private Gee.LinkedList<Pk.Task> task_list;
+    private Gee.HashMap<string, AppCenterCore.Package> package_list;
+    private AppStream.Database appstream_database;
 
-            var datapool = new AppStream.DataPool ();
-            datapool.update ();
-            appstream_database = new AppStream.Database ();
-            appstream_database.open ();
-        }
+    private Client () {
+        task_list = new Gee.LinkedList<Pk.Task> ();
+        package_list = new Gee.HashMap<string, AppCenterCore.Package> (null, null);
 
-        public bool has_tasks () {
-            return !task_list.is_empty;
-        }
+        var datapool = new AppStream.DataPool ();
+        datapool.update ();
+        appstream_database = new AppStream.Database ();
+        appstream_database.open ();
 
-        private Pk.Task request_task () {
-            Pk.Task task = new Pk.Task ();
-            task_list.add (task);
-            return task;
-        }
+        var os_updates_component = new AppStream.Component ();
+        os_updates_component.id = AppCenterCore.Package.OS_UPDATES_ID;
+        os_updates_component.name = _("Operating System Updates");
+        os_updates_component.summary = _("Updates to system components");
+        os_updates_component.add_icon (AppStream.IconKind.STOCK, 48, 48, "distributor-logo");
+        os_updates = new AppCenterCore.Package (os_updates_component);
 
-        private void release_task (Pk.Task task) {
-            task_list.remove (task);
-            if (task_list.is_empty) {
-                tasks_finished ();
+        appstream_database.get_all_components ().foreach ((comp) => {
+            var package = new AppCenterCore.Package (comp);
+            foreach (var pkg_name in comp.get_pkgnames ()) {
+                package_list.set (pkg_name, package);
             }
-        }
+        });
 
-        public async void install_packages (Gee.TreeSet<Package> packages, Pk.ProgressCallback cb) throws GLib.Error {
-            Pk.Task install_task = request_task ();
-            string[] packages_ids = {};
-            foreach (var package in packages) {
-                packages_ids += package.package_id;
-            }
+        refresh_cache.begin ();
+    }
 
-            try {
-                yield install_task.install_packages_async (packages_ids, null, cb);
-            } catch (Error e) {
-                throw e;
-            }
+    public bool has_tasks () {
+        return !task_list.is_empty;
+    }
 
-            release_task (install_task);
-        }
+    private Pk.Task request_task () {
+        Pk.Task task = new Pk.Task ();
+        task_list.add (task);
+        return task;
+    }
 
-        public async void update_packages (Gee.TreeSet<Package> packages, Pk.ProgressCallback cb) throws GLib.Error {
-            Pk.Task update_task = request_task ();
-            string[] packages_ids = {};
-            foreach (var package in packages) {
-                packages_ids += package.package_id;
-            }
-
-            try {
-                yield update_task.update_packages_async (packages_ids, null, cb);
-            } catch (Error e) {
-                throw e;
-            }
-
-            release_task (update_task);
-        }
-
-        public async void remove_packages (Gee.TreeSet<Package> packages, Pk.ProgressCallback cb) throws GLib.Error {
-            Pk.Task remove_task = request_task ();
-            string[] packages_ids = {};
-            foreach (var package in packages) {
-                packages_ids += package.package_id;
-            }
-
-            try {
-                yield remove_task.remove_packages_async (packages_ids, true, true, null, cb);
-            } catch (Error e) {
-                throw e;
-            }
-
-            release_task (remove_task);
-        }
-
-        public async void refresh_updates () {
-            Pk.Task update_task = request_task ();
-            Pk.Task details_task = request_task ();
-            try {
-                Pk.Results result = yield update_task.get_updates_async (Pk.Filter.INSTALLED, null, (t, p) => { });
-                var packages = new Gee.HashMap<string, Pk.Package> (null, null);
-                result.get_package_array ().foreach ((pk_package) => {
-                    packages.set (pk_package.get_id (), pk_package);
-                });
-
-                // We need a null to show to PackageKit that it's then end of the array.
-                string[] packages_array = packages.keys.to_array ();
-                packages_array += null;
-
-                Pk.Results result2 = yield details_task.get_details_async (packages_array , null, (t, p) => { });
-                result2.get_details_array ().foreach ((pk_detail) => {
-                    var pk_package = packages.get (pk_detail.get_package_id ());
-                    AppCenterCore.Package package = package_list.get (pk_package.get_name ());
-                    if (package == null) {
-                        package = new AppCenterCore.Package (pk_package);
-                        package_list.set (pk_package.get_name (), package);
-                    }
-
-                    pk_package.size = pk_detail.size;
-                    package.update_package = pk_package;
-                });
-            } catch (Error e) {
-                critical (e.message);
-            }
-
-            release_task (details_task);
-            release_task (update_task);
-            updates_available ();
-        }
-
-        public async void refresh_cache (Pk.ProgressCallback cb) {
-            Pk.Task cache_task = request_task ();
-            try {
-                yield cache_task.refresh_cache_async (false, null, cb);
-            } catch (Error e) {
-                critical (e.message);
-            }
-
-            release_task (cache_task);
-        }
-
-        public async Gee.Collection<AppCenterCore.Package> get_installed_applications () {
-            Pk.Task packages_task = request_task ();
-            var packages = new Gee.TreeSet<AppCenterCore.Package> ();
-
-            try {
-                var install_filter = Utils.bitfield_from_filter (Pk.Filter.INSTALLED);
-                var new_filter = Utils.bitfield_from_filter (Pk.Filter.NEWEST);
-                Pk.Results result = yield packages_task.get_packages_async (install_filter|new_filter, null,
-                        (prog, type) => {});
-                result.get_package_array ().foreach ((pk_package) => {
-                    AppCenterCore.Package package = package_list.get (pk_package.get_name ());
-                    if (package == null) {
-                        package = new AppCenterCore.Package (pk_package);
-                        package_list.set (pk_package.get_name (), package);
-                    }
-
-                    package.installed = true;
-                    packages.add (package);
-                });
-            } catch (Error e) {
-                critical (e.message);
-            }
-
-            release_task (packages_task);
-            return packages;
-        }
-
-        public Gee.Collection<AppCenterCore.Package> get_cached_applications () {
-            return package_list.values;
-        }
-
-        public async Gee.Collection<AppCenterCore.Package> get_applications (Pk.Bitfield filter, Pk.Group group, GLib.Cancellable? cancellable = null) {
-            Pk.Task packages_task = request_task ();
-            var packages = new Gee.TreeSet<AppCenterCore.Package> ();
-
-            try {
-                var group_string = Pk.Group.enum_to_string (group);
-                Pk.Results result = yield packages_task.search_groups_async (filter, {group_string, null}, cancellable, () => {});
-                result.get_package_array ().foreach ((pk_package) => {
-                    AppCenterCore.Package package = package_list.get (pk_package.get_name ());
-                    if (package == null) {
-                        package = new AppCenterCore.Package (pk_package);
-                        package_list.set (pk_package.get_name (), package);
-                    }
-
-                    packages.add (package);
-                });
-            } catch (Error e) {
-                critical (e.message);
-            }
-
-            release_task (packages_task);
-            return packages;
-        }
-
-        public Gee.Collection<AppStream.Component> get_component_for_app (string app) {
-            var comps = appstream_database.find_components_by_term ("pkg:%s".printf (app), null);
-            var components = new Gee.TreeSet<AppStream.Component> ();
-            comps.foreach ((component) => {
-                components.add (component);
-            });
-
-            return components;
-        }
-
-        private static GLib.Once<Client> instance;
-        public static unowned Client get_default () {
-            return instance.once (() => { return new Client (); });
+    private void release_task (Pk.Task task) {
+        task_list.remove (task);
+        if (task_list.is_empty) {
+            tasks_finished ();
         }
     }
+
+    public async void install_packages (Gee.TreeSet<Package> packages, Pk.ProgressCallback cb) throws GLib.Error {
+        Pk.Task install_task = request_task ();
+        Pk.Task search_task = request_task ();
+        string[] packages_ids = {};
+        foreach (var package in packages) {
+            foreach (var pkg_name in package.component.get_pkgnames ()) {
+                packages_ids += pkg_name;
+            }
+        }
+        packages_ids += null;
+
+        try {
+            var results = yield search_task.search_names_async (Pk.Bitfield.from_enums (Pk.Filter.NEWEST, Pk.Filter.ARCH), packages_ids, null, () => {});
+            packages_ids = {};
+            results.get_package_array ().foreach ((package) => {
+                packages_ids += package.package_id;
+            });
+            packages_ids += null;
+
+            yield install_task.install_packages_async (packages_ids, null, cb);
+        } catch (Error e) {
+            release_task (search_task);
+            release_task (install_task);
+            throw e;
+        }
+
+        release_task (search_task);
+        release_task (install_task);
+    }
+
+    public async void update_packages (Gee.TreeSet<Package> packages, Pk.ProgressCallback cb) throws GLib.Error {
+        Pk.Task update_task = request_task ();
+        string[] packages_ids = {};
+        foreach (var package in packages) {
+            foreach (var pk_package in package.update_packages) {
+                packages_ids += pk_package.get_id ();
+            }
+        }
+        packages_ids += null;
+
+        try {
+            yield update_task.update_packages_async (packages_ids, null, cb);
+        } catch (Error e) {
+            release_task (update_task);
+            throw e;
+        }
+
+        foreach (var package in packages) {
+            package.installed_packages.add_all (package.update_packages);
+            package.update_packages.clear ();
+            package.update_size = 0ULL;
+            package.notify_property ("update-available");
+        }
+
+        release_task (update_task);
+    }
+
+    public async void remove_packages (Gee.TreeSet<Package> packages, Pk.ProgressCallback cb) throws GLib.Error {
+        Pk.Task remove_task = request_task ();
+        Pk.Task search_task = request_task ();
+        string[] packages_ids = {};
+        foreach (var package in packages) {
+            foreach (var pkg_name in package.component.get_pkgnames ()) {
+                packages_ids += pkg_name;
+            }
+        }
+        packages_ids += null;
+
+        try {
+            var filter = Pk.Bitfield.from_enums (Pk.Filter.INSTALLED, Pk.Filter.NEWEST);
+            var results = yield search_task.search_names_async (filter, packages_ids, null, () => {});
+            packages_ids = {};
+            results.get_package_array ().foreach ((package) => {
+                packages_ids += package.package_id;
+            });
+
+            yield remove_task.remove_packages_async (packages_ids, true, true, null, cb);
+        } catch (Error e) {
+            release_task (search_task);
+            release_task (remove_task);
+            throw e;
+        }
+
+        release_task (search_task);
+        release_task (remove_task);
+    }
+
+    public async void refresh_cache () {
+        Pk.Task refresh_task = request_task ();
+        try {
+            yield refresh_task.refresh_cache_async (false, null, (t, p) => { });
+        } catch (Error e) {
+            critical (e.message);
+        }
+
+        release_task (refresh_task);
+    }
+
+    public async void get_updates () {
+        Pk.Task update_task = request_task ();
+        Pk.Task details_task = request_task ();
+        try {
+            Pk.Results result = yield update_task.get_updates_async (0, null, (t, p) => { });
+            var packages = new Gee.HashMap<string, Pk.Package> (null, null);
+            result.get_package_array ().foreach ((pk_package) => {
+                packages.set (pk_package.get_id (), pk_package);
+            });
+
+            // We need a null to show to PackageKit that it's then end of the array.
+            string[] packages_array = packages.keys.to_array ();
+            packages_array += null;
+
+            Pk.Results result2 = yield details_task.get_details_async (packages_array , null, (t, p) => { });
+            result2.get_details_array ().foreach ((pk_detail) => {
+                var pk_package = packages.get (pk_detail.get_package_id ());
+                var package = package_list.get (pk_package.get_name ());
+                if (package == null) {
+                    package = os_updates;
+                    var pkgnames = os_updates.component.pkgnames;
+                    pkgnames += pk_package.get_name ();
+                    os_updates.component.pkgnames = pkgnames;
+                }
+
+                package.update_packages.add (pk_package);
+                package.update_size += pk_detail.size;
+                package.notify_property ("update-available");
+            });
+        } catch (Error e) {
+            critical (e.message);
+        }
+
+        release_task (details_task);
+        release_task (update_task);
+        updates_available ();
+    }
+
+    public async Gee.Collection<AppCenterCore.Package> get_installed_applications () {
+        Pk.Task packages_task = request_task ();
+        var packages = new Gee.TreeSet<AppCenterCore.Package> ();
+
+        try {
+            var filter = Pk.Bitfield.from_enums (Pk.Filter.INSTALLED, Pk.Filter.NEWEST);
+            Pk.Results result = yield packages_task.get_packages_async (filter, null, (prog, type) => {});
+            result.get_package_array ().foreach ((pk_package) => {
+                var package = package_list.get (pk_package.get_name ());
+                if (package != null) {
+                    package.installed_packages.add (pk_package);
+                    package.notify_property ("installed");
+                    packages.add (package);
+                }
+            });
+        } catch (Error e) {
+            critical (e.message);
+        }
+
+        release_task (packages_task);
+        return packages;
+    }
+
+    public Pk.Package? get_app_package (string application, Pk.Bitfield additional_filters = 0, GLib.Cancellable? cancellable = null) throws GLib.Error {
+        Pk.Task packages_task = request_task ();
+        Pk.Package? package = null;
+        var filter = Pk.Bitfield.from_enums (Pk.Filter.NEWEST);
+        filter |= additional_filters;
+        try {
+            var results = packages_task.search_names_sync (filter, { application, null }, cancellable, () => {});
+            package = results.get_package_array ().get (0);
+        } catch (Error e) {
+            release_task (packages_task);
+            throw e;
+        }
+
+        release_task (packages_task);
+        return package;
+    }
+
+    private static GLib.Once<Client> instance;
+    public static unowned Client get_default () {
+        return instance.once (() => { return new Client (); });
+    }
 }
+

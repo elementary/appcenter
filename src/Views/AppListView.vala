@@ -20,148 +20,76 @@
 
 using AppCenterCore;
 
-public class AppCenter.Views.AppListView : Gtk.Stack {
+public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
     public signal void show_app (AppCenterCore.Package package);
 
-    public bool updates_on_top = false;
+    private bool _updating_cache = true;
+    public bool updating_cache {
+        get {
+            return _updating_cache;
+        }
+        set {
+            if (!updates_on_top) {
+                warning ("updating_cache is useless if updates_on_top is false");
+            }
 
-    Gtk.TreeView tree_view;
-    Gtk.ListStore list_store;
-    Gtk.ScrolledWindow scrolled;
-    Gtk.Grid waiting_view;
-    Granite.Widgets.AlertView alert_view;
-    public AppListView () {
-        
+            _updating_cache = value;
+            list_box.invalidate_headers ();
+        }
+    }
+
+    private bool updates_on_top;
+    private Gtk.ListBox list_box;
+
+    public AppListView (bool updates_on_top = false) {
+        this.updates_on_top = updates_on_top;
+        if (updates_on_top) {
+            list_box.set_header_func ((row, before) => ListBoxUpdateHeaderFunc (row, before));
+        }
     }
 
     construct {
-        waiting_view = new Gtk.Grid ();
-        waiting_view.halign = Gtk.Align.CENTER;
-        waiting_view.valign = Gtk.Align.CENTER;
-        waiting_view.expand = true;
-        var spinner = new Gtk.Spinner ();
-        waiting_view.add (spinner);
-        alert_view = new Granite.Widgets.AlertView (_("No Apps"), _("You haven't found any app here."), "help-info");
-        list_store = new Gtk.ListStore (2, typeof (AppCenterCore.Package), typeof (Gdk.Pixbuf));
-        tree_view = new Gtk.TreeView.with_model (list_store);
-        tree_view.insert_column_with_data_func (0, null, new Widgets.AppCellRenderer (), TreeCellDataFunc);
-        tree_view.headers_visible = false;
-        tree_view.activate_on_single_click = true;
-        tree_view.rules_hint = true;
-        list_store.set_sort_func (0, TreeIterCompareFunc);
-        list_store.set_sort_column_id (0, Gtk.SortType.ASCENDING);
-        scrolled = new Gtk.ScrolledWindow (null, null);
-        scrolled.add (tree_view);
-        add (scrolled);
-        add (waiting_view);
-        add (alert_view);
-        set_visible_child (waiting_view);
-        spinner.start ();
-
-        tree_view.row_activated.connect ((path, column) => {
-            Gtk.TreeIter iter;
-            if (list_store.get_iter (out iter, path)) {
-                Value val;
-                list_store.get_value (iter, 0, out val);
-                var package = (AppCenterCore.Package) val.get_object ();
-
-                show_app (package);
+        hscrollbar_policy = Gtk.PolicyType.NEVER;
+        var alert_view = new Granite.Widgets.AlertView (_("No Apps"), _("You haven't found any app here."), "help-info");
+        list_box = new Gtk.ListBox ();
+        list_box.expand = true;
+        list_box.activate_on_single_click = true;
+        list_box.set_placeholder (alert_view);
+        list_box.set_sort_func ((row1, row2) => ListBoxSortFunc (row1, row2));
+        list_box.row_activated.connect ((row) => {
+            var packagerow = row as Widgets.PackageRow;
+            if (packagerow != null) {
+                show_app (packagerow.package);
             }
         });
-    }
-
-    /*
-     * Shows the no_app view if there are no apps.
-     */
-    public void package_addition_finished () {
-        if (list_store.iter_n_children (null) <= 0) {
-            set_visible_child (alert_view);
-        }
+        add (list_box);
     }
 
     public void add_package (AppCenterCore.Package package) {
-        Gtk.TreeIter iter;
-        list_store.append (out iter);
-        list_store.set (iter, 0, package);
-        if (list_store.iter_n_children (null) == 1) {
-            set_visible_child (scrolled);
-        }
+        var row = new Widgets.PackageRow (package);
+        row.show_all ();
+        list_box.add (row);
+    }
 
-        package.notify["installed"].connect (() => {
-            list_store.set (iter, 0, package);
+    public Gee.Collection<AppCenterCore.Package> get_packages () {
+        var tree_set = new Gee.TreeSet<AppCenterCore.Package> ();
+        list_box.get_children ().foreach ((child) => {
+            tree_set.add (((Widgets.PackageRow) child).package);
         });
 
-        package.notify["update-available"].connect (() => {
-            list_store.set (iter, 0, package);
-        });
+        return tree_set;
     }
 
-    public void remove_package (AppCenterCore.Package package) {
-        Gtk.TreeIter iter;
-        Value val;
-        if (list_store.get_iter_first (out iter)) {
-            list_store.get_value (iter, 0, out val);
-            if (val.get_object () == package) {
-                list_store.remove (iter);
-                return;
-            }
-
-            while (list_store.iter_next (ref iter)) {
-                list_store.get_value (iter, 0, out val);
-                if (val.get_object () == package) {
-                    list_store.remove (iter);
-                    return;
-                }
-            }
-        }
-    }
-
-    /*
-     * As clearing is the beggining of an action (refill),
-     * the user should call package_addition_finished once finished.
-     */
-    public void clear () {
-        set_visible_child (waiting_view);
-        list_store.clear ();
-    }
-
-    private static void TreeCellDataFunc (Gtk.TreeViewColumn tree_column, Gtk.CellRenderer cell, Gtk.TreeModel tree_model, Gtk.TreeIter iter) {
-        Value val;
-        tree_model.get_value (iter, 0, out val);
-        var package = (AppCenterCore.Package) val.get_object ();
-        ((Widgets.AppCellRenderer) cell).package = package;
-        tree_model.get_value (iter, 1, out val);
-        var icon = (Gdk.Pixbuf) val.get_object ();
-        if (icon == null) {
-            package.find_components ();
-            foreach (var component in package.components) {
-                component.get_icon_urls ().foreach ((k, v) => {
-                    icon = new Gdk.Pixbuf.from_file_at_scale (v, 48, 48, true);
-                });
-            }
-
-            if (icon == null) {
-                try {
-                    icon = Gtk.IconTheme.get_default ().load_icon ("application-default-icon", 48, Gtk.IconLookupFlags.GENERIC_FALLBACK);
-                } catch (Error e) {
-                    critical (e.message);
-                }
-            }
-
-            ((Gtk.ListStore) tree_model).set (iter, 1, icon);
-        }
-
-        ((Widgets.AppCellRenderer) cell).icon = icon;
-    }
-
-    private int TreeIterCompareFunc (Gtk.TreeModel model, Gtk.TreeIter a, Gtk.TreeIter b) {
-        Value val_a;
-        Value val_b;
-        model.get_value (a, 0, out val_a);
-        model.get_value (b, 0, out val_b);
-        var package_a = (Package) val_a.get_object ();
-        var package_b = (Package) val_b.get_object ();
+    private int ListBoxSortFunc (Gtk.ListBoxRow row1, Gtk.ListBoxRow row2) {
+        var package_a = ((Widgets.PackageRow) row1).package;
+        var package_b = ((Widgets.PackageRow) row2).package;
         if (updates_on_top) {
+            if (package_a.component.id == "xxx-os-updates") {
+                return -1;
+            } else if (package_b.component.id == "xxx-os-updates") {
+                return 1;
+            }
+
             if (package_a.update_available && !package_b.update_available) {
                 return -1;
             } else if (!package_a.update_available && package_b.update_available) {
@@ -169,6 +97,112 @@ public class AppCenter.Views.AppListView : Gtk.Stack {
             }
         }
 
-        return package_a.pk_package.get_name ().collate (package_b.pk_package.get_name ());
+        return package_a.get_name ().collate (package_b.get_name ());
+    }
+
+    private void ListBoxUpdateHeaderFunc (Gtk.ListBoxRow row, Gtk.ListBoxRow? before) {
+        bool update_available = ((Widgets.PackageRow) row).package.update_available;
+        if (before == null && update_available) {
+            var updates_grid = get_updates_grid ();
+            row.set_header (updates_grid);
+        } else if ((before == null && !update_available) || update_available != ((Widgets.PackageRow) before).package.update_available) {
+            var updated_grid = get_updated_grid ();
+            row.set_header (updated_grid);
+        } else {
+            row.set_header (null);
+        }
+    }
+
+    private Gtk.Grid get_updated_grid () {
+        var updated_grid = new Gtk.Grid ();
+        updated_grid.orientation = Gtk.Orientation.HORIZONTAL;
+        updated_grid.column_spacing = 12;
+        updated_grid.margin = 6;
+        if (updating_cache) {
+            updated_grid.halign = Gtk.Align.CENTER;
+            var updating_label = new Gtk.Label (_("Searching for updates…"));
+            var spinner = new Gtk.Spinner ();
+            spinner.start ();
+            updated_grid.add (spinner);
+            updated_grid.add (updating_label);
+        } else {
+            var updated_label = new Gtk.Label (_("Up to date"));
+            updated_label.hexpand = true;
+            ((Gtk.Misc) updated_label).xalign = 0;
+            updated_label.get_style_context ().add_class ("h4");
+            updated_grid.add (updated_label);
+        }
+
+        updated_grid.show_all ();
+        return updated_grid;
+    }
+
+    private Gtk.Grid get_updates_grid () {
+        var applications = get_packages ();
+        uint update_numbers = 0U;
+        uint64 update_real_size = 0ULL;
+        foreach (var package in applications) {
+            if (package.update_available) {
+                update_numbers++;
+                update_real_size += package.update_size;
+            }
+        }
+
+        var updates_label = new Gtk.Label (null);
+        updates_label.label = ngettext ("%u update is available.", "%u updates are available.", update_numbers).printf (update_numbers);
+        ((Gtk.Misc) updates_label).xalign = 0;
+        updates_label.get_style_context ().add_class ("h4");
+        updates_label.hexpand = true;
+
+        var update_size = new Gtk.Label (null);
+        update_size.label = _("Size: %s").printf (GLib.format_size (update_real_size));
+
+        var update_all_button = new Gtk.Button.with_label (_("Update All"));
+        update_all_button.margin_end = 6;
+        update_all_button.valign = Gtk.Align.CENTER;
+        update_all_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        update_all_button.clicked.connect (() => update_all_clicked.begin ());
+        var updates_grid = new Gtk.Grid ();
+        updates_grid.margin = 6;
+        updates_grid.orientation = Gtk.Orientation.HORIZONTAL;
+        updates_grid.column_spacing = 12;
+        updates_grid.add (updates_label);
+        updates_grid.add (update_size);
+        updates_grid.add (update_all_button);
+        updates_grid.show_all ();
+        return updates_grid;
+    }
+
+    private async void update_all_clicked () {
+        var applications = get_packages ();
+        var treeset = new Gee.TreeSet<Package> ();
+        foreach (var package in applications) {
+            if (package.update_available) {
+                treeset.add (package);
+                package.progress = 0.0f;
+            }
+        }
+
+        try {
+            yield AppCenterCore.Client.get_default ().update_packages (treeset, (progress, type) => {ProgressCallback (treeset, progress, type);});
+        } catch (Error e) {
+            critical (e.message);
+        }
+        
+    }
+
+    private void ProgressCallback (Gee.TreeSet<Package> packages, Pk.Progress progress, Pk.ProgressType type) {
+        if (progress.package != null) {
+            foreach (var package in packages) {
+                if (progress.package.get_name () in package.component.get_pkgnames ()) {
+                    package.ProgressCallback (progress, type);
+                    return;
+                }
+            }
+        }
+
+        foreach (var package in packages) {
+            package.ProgressCallback (progress, type);
+        }
     }
 }

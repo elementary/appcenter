@@ -27,7 +27,7 @@ public abstract class AppCenter.View : Gtk.Stack {
     }
 
     public void show_package (AppCenterCore.Package package) {
-        var pk_child = get_child_by_name (package.pk_package.get_id ());
+        var pk_child = get_child_by_name (package.component.id);
         if (pk_child != null) {
             set_visible_child (pk_child);
             return;
@@ -35,7 +35,7 @@ public abstract class AppCenter.View : Gtk.Stack {
 
         var app_info_view = new Views.AppInfoView (package);
         app_info_view.show_all ();
-        add_named (app_info_view, package.pk_package.get_id ());
+        add_named (app_info_view, package.component.id);
         set_visible_child (app_info_view);
     }
 

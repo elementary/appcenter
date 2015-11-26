@@ -38,15 +38,27 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
 
     public AppInfoView (AppCenterCore.Package package) {
         this.package = package;
-        app_name.label = package.pk_package.get_name ();
-        string version = package.pk_package.get_version ();
-        app_version.label = AppCenterCore.Package.get_strict_version (version);
-        app_version.tooltip_text = version;
-        app_summary.label = package.pk_package.get_summary ();
-        foreach (var component in package.components) {
-            component.get_icon_urls ().foreach ((k, v) => {
+        app_name.label = package.get_name ();
+        app_version.label = package.get_version ();
+        app_summary.label = package.get_summary ();
+        int size = 0;
+        package.component.get_icon_urls ().foreach ((k, v) => {
+            var current_size = int.parse (k.split ("x", 2)[0]);
+            if (current_size > size) {
+                size = current_size;
                 app_icon.gicon = new FileIcon (File.new_for_path (v));
-            });
+            }
+        });
+
+        if (app_icon.gicon == null) {
+            var icon_name = package.component.get_icon (AppStream.IconKind.STOCK, -1, -1);
+            if (icon_name != null) {
+                app_icon.gicon = new ThemedIcon (icon_name);
+            }
+        }
+
+        if (app_icon.gicon == null) {
+            app_icon.gicon = new ThemedIcon ("application-default-icon");
         }
 
         if (package.update_available) {
@@ -55,6 +67,11 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
             action_button.no_show_all = true;
             action_button.hide ();
         } else {
+            uninstall_button.no_show_all = true;
+            uninstall_button.hide ();
+        }
+
+        if (package.component.id == "xxx-os-updates") {
             uninstall_button.no_show_all = true;
             uninstall_button.hide ();
         }
@@ -83,11 +100,10 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
             }
         });
 
-        package.progress_changed.connect ((label, progress) => progress_changed (label, progress));
-        string label;
-        double progress;
-        package.get_latest_progress (out label, out progress);
-        progress_changed (label, progress);
+        package.notify["progress"].connect (() => update_progress ());
+        package.notify["status"].connect (() => update_status ());
+        update_progress ();
+        update_status ();
     }
 
     construct {
@@ -96,8 +112,8 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
 
         app_icon = new Gtk.Image ();
+        app_icon.margin_top = 12;
         app_icon.margin_start = 6;
-        app_icon.icon_name = "application-default-icon";
         app_icon.pixel_size = 128;
 
         app_screenshot = new Gtk.Image ();
@@ -105,11 +121,13 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         app_screenshot.icon_name = "image-x-generic";
 
         app_name = new Gtk.Label (null);
+        app_name.margin_top = 12;
         ((Gtk.Misc) app_name).xalign = 0;
         app_name.get_style_context ().add_class ("h1");
         app_name.valign = Gtk.Align.CENTER;
 
         app_version = new Gtk.Label (null);
+        app_version.margin_top = 12;
         ((Gtk.Misc) app_version).xalign = 0;
         app_version.hexpand = true;
         app_version.valign = Gtk.Align.CENTER;
@@ -175,11 +193,14 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         attach (content_grid, 0, 2, 4, 1);
     }
 
-    private void progress_changed (string label, double progress) {
-        if (progress < 1.0f) {
+    private void update_status () {
+        progress_label.label = Package.get_localized_status (package.status);
+    }
+
+    private void update_progress () {
+        if (package.progress < 1.0f) {
             action_stack.set_visible_child_name ("progress");
-            progress_bar.fraction = progress;
-            progress_label.label = label;
+            progress_bar.fraction = package.progress;
         } else {
             action_stack.set_visible_child_name ("buttons");
         }
@@ -197,8 +218,10 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
                 yield package.install ();
                 action_button.no_show_all = true;
                 action_button.hide ();
-                uninstall_button.no_show_all = false;
-                uninstall_button.show ();
+                if (package.component.id != "xxx-os-updates") {
+                    uninstall_button.no_show_all = false;
+                    uninstall_button.show ();
+                }
             }
         } catch (Error e) {
             critical (e.message);
