@@ -77,13 +77,15 @@ public class AppCenterCore.Client : Object {
                 packages_ids += pkg_name;
             }
         }
+        packages_ids += null;
 
         try {
-            var results = yield search_task.search_names_async (Pk.Bitfield.from_enums (Pk.Filter.NEWEST), packages_ids, null, () => {});
+            var results = yield search_task.search_names_async (Pk.Bitfield.from_enums (Pk.Filter.NEWEST, Pk.Filter.ARCH), packages_ids, null, () => {});
             packages_ids = {};
             results.get_package_array ().foreach ((package) => {
                 packages_ids += package.package_id;
             });
+            packages_ids += null;
 
             yield install_task.install_packages_async (packages_ids, null, cb);
         } catch (Error e) {
@@ -98,32 +100,28 @@ public class AppCenterCore.Client : Object {
 
     public async void update_packages (Gee.TreeSet<Package> packages, Pk.ProgressCallback cb) throws GLib.Error {
         Pk.Task update_task = request_task ();
-        Pk.Task search_task = request_task ();
         string[] packages_ids = {};
         foreach (var package in packages) {
-            foreach (var pkg_name in package.component.get_pkgnames ()) {
-                packages_ids += pkg_name;
+            foreach (var pk_package in package.update_packages) {
+                packages_ids += pk_package.get_id ();
             }
         }
         packages_ids += null;
 
         try {
-            // We need the installed flag because update_packages take an installed package name as argument.
-            var results = yield search_task.search_names_async (Pk.Bitfield.from_enums (Pk.Filter.INSTALLED), packages_ids, null, () => {});
-            packages_ids = {};
-            results.get_package_array ().foreach ((package) => {
-                packages_ids += package.package_id;
-            });
-            packages_ids += null;
-
             yield update_task.update_packages_async (packages_ids, null, cb);
         } catch (Error e) {
-            release_task (search_task);
             release_task (update_task);
             throw e;
         }
 
-        release_task (search_task);
+        foreach (var package in packages) {
+            package.installed_packages.add_all (package.update_packages);
+            package.update_packages.clear ();
+            package.update_size = 0ULL;
+            package.notify_property ("update-available");
+        }
+
         release_task (update_task);
     }
 
@@ -136,6 +134,7 @@ public class AppCenterCore.Client : Object {
                 packages_ids += pkg_name;
             }
         }
+        packages_ids += null;
 
         try {
             var filter = Pk.Bitfield.from_enums (Pk.Filter.INSTALLED, Pk.Filter.NEWEST);
@@ -192,7 +191,9 @@ public class AppCenterCore.Client : Object {
                     os_updates.component.pkgnames = pkgnames;
                 }
 
+                package.update_packages.add (pk_package);
                 package.update_size += pk_detail.size;
+                package.notify_property ("update-available");
             });
         } catch (Error e) {
             critical (e.message);
@@ -213,7 +214,8 @@ public class AppCenterCore.Client : Object {
             result.get_package_array ().foreach ((pk_package) => {
                 var package = package_list.get (pk_package.get_name ());
                 if (package != null) {
-                    package.installed = true;
+                    package.installed_packages.add (pk_package);
+                    package.notify_property ("installed");
                     packages.add (package);
                 }
             });
@@ -247,3 +249,4 @@ public class AppCenterCore.Client : Object {
         return instance.once (() => { return new Client (); });
     }
 }
+

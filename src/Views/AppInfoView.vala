@@ -71,6 +71,11 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
             uninstall_button.hide ();
         }
 
+        if (package.component.id == "xxx-os-updates") {
+            uninstall_button.no_show_all = true;
+            uninstall_button.hide ();
+        }
+
         package.notify["update-available"].connect (() => {
             if (package.update_available) {
                 action_button.label = _("Update");
@@ -213,8 +218,10 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
                 yield package.install ();
                 action_button.no_show_all = true;
                 action_button.hide ();
-                uninstall_button.no_show_all = false;
-                uninstall_button.show ();
+                if (package.component.id != "xxx-os-updates") {
+                    uninstall_button.no_show_all = false;
+                    uninstall_button.show ();
+                }
             }
         } catch (Error e) {
             critical (e.message);

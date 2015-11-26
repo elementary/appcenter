@@ -139,7 +139,7 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
 
     private Gtk.Grid get_updates_grid () {
         var applications = get_packages ();
-        int update_numbers = 0;
+        uint update_numbers = 0U;
         uint64 update_real_size = 0ULL;
         foreach (var package in applications) {
             if (package.update_available) {
@@ -148,13 +148,8 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
             }
         }
 
-        var package = Client.get_default ().os_updates;
-        if (package.update_available) {
-            update_numbers++;
-            update_real_size += package.update_size;
-        }
         var updates_label = new Gtk.Label (null);
-        updates_label.label = ngettext ("%d update is available.", "%d updates are available.", update_numbers).printf (update_numbers);
+        updates_label.label = ngettext ("%u update is available.", "%u updates are available.", update_numbers).printf (update_numbers);
         ((Gtk.Misc) updates_label).xalign = 0;
         updates_label.get_style_context ().add_class ("h4");
         updates_label.hexpand = true;
@@ -166,7 +161,7 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
         update_all_button.margin_end = 6;
         update_all_button.valign = Gtk.Align.CENTER;
         update_all_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
-        update_all_button.clicked.connect (() => update_all_clicked ());
+        update_all_button.clicked.connect (() => update_all_clicked.begin ());
         var updates_grid = new Gtk.Grid ();
         updates_grid.margin = 6;
         updates_grid.orientation = Gtk.Orientation.HORIZONTAL;
@@ -178,7 +173,36 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
         return updates_grid;
     }
 
-    private void update_all_clicked () {
+    private async void update_all_clicked () {
+        var applications = get_packages ();
+        var treeset = new Gee.TreeSet<Package> ();
+        foreach (var package in applications) {
+            if (package.update_available) {
+                treeset.add (package);
+                package.progress = 0.0f;
+            }
+        }
+
+        try {
+            yield AppCenterCore.Client.get_default ().update_packages (treeset, (progress, type) => {ProgressCallback (treeset, progress, type);});
+        } catch (Error e) {
+            critical (e.message);
+        }
         
+    }
+
+    private void ProgressCallback (Gee.TreeSet<Package> packages, Pk.Progress progress, Pk.ProgressType type) {
+        if (progress.package != null) {
+            foreach (var package in packages) {
+                if (progress.package.get_name () in package.component.get_pkgnames ()) {
+                    package.ProgressCallback (progress, type);
+                    return;
+                }
+            }
+        }
+
+        foreach (var package in packages) {
+            package.ProgressCallback (progress, type);
+        }
     }
 }

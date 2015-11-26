@@ -23,14 +23,21 @@ public class AppCenterCore.Package : Object {
     public signal void changed ();
 
     public AppStream.Component component { public get; private set; }
-    public bool installed { get; set; }
+    public bool installed {
+        public get {
+            return !installed_packages.is_empty;
+        }
+        private set {
+            
+        }
+    }
     public bool update_available {
         public get {
             return update_size > 0;
         }
     }
 
-    private uint64 _update_size = 0;
+    private uint64 _update_size = 0ULL;
     public uint64 update_size {
         public get {
             return _update_size;
@@ -38,7 +45,6 @@ public class AppCenterCore.Package : Object {
         public set {
             if (_update_size != value) {
                 _update_size = value;
-                notify_property ("update-available");
             }
         }
     }
@@ -46,8 +52,13 @@ public class AppCenterCore.Package : Object {
     public double progress { get; set; default=1.0f; }
     public Pk.Status status { get; set; default=Pk.Status.SETUP; }
 
+    public Gee.TreeSet<Pk.Package> installed_packages { get; private set; }
+    public Gee.TreeSet<Pk.Package> update_packages { get; private set; }
+
     public Package (AppStream.Component component) {
         this.component = component;
+        update_packages = new Gee.TreeSet<Pk.Package> ();
+        installed_packages = new Gee.TreeSet<Pk.Package> ();
     }
 
     public async void update () throws GLib.Error {
@@ -56,7 +67,6 @@ public class AppCenterCore.Package : Object {
         this.progress = 0.0f;
         try {
             yield AppCenterCore.Client.get_default ().update_packages (treeset, (progress, type) => {ProgressCallback (progress, type);});
-            update_size = 0;
         } catch (Error e) {
             throw e;
         }
@@ -163,7 +173,7 @@ public class AppCenterCore.Package : Object {
         }
     }
 
-    private void ProgressCallback (Pk.Progress progress, Pk.ProgressType type) {
+    public void ProgressCallback (Pk.Progress progress, Pk.ProgressType type) {
         switch (type) {
             case Pk.ProgressType.ITEM_PROGRESS:
                 this.progress = ((double) progress.item_progress.percentage)/100;
