@@ -16,6 +16,7 @@
 
 namespace AppCenter {
     const string appcenter = N_("About App Center");
+    const string keywords = N_("install;uninstall;remove;catalogue;store;apps;updates;software;");
     public class AppCenter : Granite.Application {
         MainWindow main_window;
         construct {
