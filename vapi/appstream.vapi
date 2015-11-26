@@ -262,7 +262,7 @@ namespace AppStream {
 		public bool get_search_all_categories ();
 		public unowned string get_search_term ();
 		public void sanitize_search_term ();
-		public void set_categories (string value);
+		public void set_categories ([CCode (array_length = false, array_null_terminated = true)] string[] value);
 		public void set_categories_from_string (string categories_str);
 		public void set_search_all_categories ();
 		public void set_search_term (string value);

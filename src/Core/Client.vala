@@ -227,6 +227,18 @@ public class AppCenterCore.Client : Object {
         return packages;
     }
 
+    public Gee.Collection<AppCenterCore.Package> get_applications_for_category (AppStream.Category category) {
+        var apps = new Gee.TreeSet<AppCenterCore.Package> ();
+        var query = new AppStream.SearchQuery ("*");
+        query.set_categories_from_string (category.name);
+        var comps = appstream_database.find_components (query);
+        comps.foreach ((comp) => {
+            apps.add (package_list.get (comp.get_pkgnames ()[0]));
+        });
+
+        return apps;
+    }
+
     public Pk.Package? get_app_package (string application, Pk.Bitfield additional_filters = 0, GLib.Cancellable? cancellable = null) throws GLib.Error {
         Pk.Task packages_task = request_task ();
         Pk.Package? package = null;
