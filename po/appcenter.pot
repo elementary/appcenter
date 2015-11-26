@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-26 14:34+0100\n"
+"POT-Creation-Date: 2015-11-26 15:29+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,8 +26,8 @@ msgstr ""
 msgid "Featured"
 msgstr ""
 
-#: ../src/MainWindow.vala:91 ../src/Views/CategoryView.vala:93
-#: ../src/Views/CategoryView.vala:100
+#: ../src/MainWindow.vala:91 ../src/Views/CategoryView.vala:71
+#: ../src/Views/CategoryView.vala:78
 msgid "Categories"
 msgstr ""
 
@@ -90,78 +90,6 @@ msgstr ""
 
 #: ../src/Views/AppListView.vala:160
 msgid "Update All"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:42
-msgid "Office"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:42
-msgid "Be productive!"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:47
-msgid "Multimedia"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:47
-msgid "Listen to music"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:52
-msgid "Internet"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:52
-msgid "Explore the web"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:57
-msgid "Communication"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:57
-msgid "Stay in touch"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:62
-msgid "Games"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:62
-msgid "Be a hero"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:67
-msgid "Science"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:67
-msgid "Explore the unknown"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:72
-msgid "Education"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:72
-msgid "Learn something new"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:77
-msgid "Graphics"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:77
-msgid "Draw something!"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:82
-msgid "Fonts"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:82
-msgid "Enhance your docs"
 msgstr ""
 
 #: ../src/Application.vala:18
