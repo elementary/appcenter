@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-13 15:15-0600\n"
-"PO-Revision-Date: 2015-11-13 22:51+0000\n"
+"POT-Creation-Date: 2015-11-26 15:29+0100\n"
+"PO-Revision-Date: 2015-11-26 17:44+0000\n"
 "Last-Translator: Maxim Taranov <png2378@protonmail.ch>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -11,295 +11,42 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2015-11-15 05:13+0000\n"
-"X-Generator: Launchpad (build 17845)\n"
+"X-Launchpad-Export-Date: 2015-11-27 05:15+0000\n"
+"X-Generator: Launchpad (build 17850)\n"
 
-#: ../src/Application.vala:18
-msgid "About App Center"
-msgstr "О программе"
-
-#: ../src/Application.vala:27 ../src/MainWindow.vala:33
+#: ../src/MainWindow.vala:33 ../src/Application.vala:28
 msgid "App Center"
 msgstr "Центр приложений"
 
-#: ../src/Application.vala:45
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Leopotam https://launchpad.net/~leopotam\n"
-"  Maxim Taranov https://launchpad.net/~png2378\n"
-"  Mukusev Vladimir https://launchpad.net/~damon95\n"
-"  Yuly Nesterov https://launchpad.net/~inpr1se\n"
-"  elementaryart (old) https://launchpad.net/~elementaryart"
+#: ../src/MainWindow.vala:90
+msgid "Featured"
+msgstr "Рекомендуемые"
 
-#: ../src/Core/Package.vala:122
-msgid "Starting"
-msgstr "Запуск"
-
-#: ../src/Core/Package.vala:124
-msgid "Waiting in queue"
-msgstr "Ожидание в очереди"
-
-#: ../src/Core/Package.vala:126
-msgid "Running"
-msgstr "Запуск"
-
-#: ../src/Core/Package.vala:128
-msgid "Querying"
-msgstr "Запрос"
-
-#: ../src/Core/Package.vala:130
-msgid "Getting information"
-msgstr "Получение информации"
-
-#: ../src/Core/Package.vala:132
-msgid "Removing packages"
-msgstr "Удаление пакетов"
-
-#: ../src/Core/Package.vala:134
-msgid "Downloading packages"
-msgstr "Загрузка пакетов"
-
-#: ../src/Core/Package.vala:136
-msgid "Installing packages"
-msgstr "Установка пакетов"
-
-#: ../src/Core/Package.vala:138
-msgid "Refreshing software list"
-msgstr "Обновление списка программ"
-
-#: ../src/Core/Package.vala:140
-msgid "Installing updates"
-msgstr "Установка обновлений"
-
-#: ../src/Core/Package.vala:142
-msgid "Cleaning up packages"
-msgstr "Очистка пакетов"
-
-#: ../src/Core/Package.vala:144
-msgid "Obsoleting packages"
-msgstr "Замена пакетов"
-
-#: ../src/Core/Package.vala:146
-msgid "Resolving dependencies"
-msgstr "Разрешение зависимостей"
-
-#: ../src/Core/Package.vala:148
-msgid "Checking signatures"
-msgstr "Проверка подписей"
-
-#: ../src/Core/Package.vala:150
-msgid "Testing changes"
-msgstr "Проверка изменений"
-
-#: ../src/Core/Package.vala:152
-msgid "Committing changes"
-msgstr "Применение изменений"
-
-#: ../src/Core/Package.vala:154
-msgid "Requesting data"
-msgstr "Запрос данных"
-
-#: ../src/Core/Package.vala:156
-msgid "Finished"
-msgstr "Завершено"
-
-#: ../src/Core/Package.vala:158
-msgid "Cancelling"
-msgstr "Отмена"
-
-#: ../src/Core/Package.vala:160
-msgid "Downloading repository information"
-msgstr "Загрузка информации из репозитория"
-
-#: ../src/Core/Package.vala:162
-msgid "Downloading list of packages"
-msgstr "Загрузка списка пакетов"
-
-#: ../src/Core/Package.vala:164
-msgid "Downloading file lists"
-msgstr "Загрузка списка файлов"
-
-#: ../src/Core/Package.vala:166
-msgid "Downloading lists of changes"
-msgstr "Загрузка списка изменений"
-
-#: ../src/Core/Package.vala:168
-msgid "Downloading groups"
-msgstr "Загрузка групп"
-
-#: ../src/Core/Package.vala:170
-msgid "Downloading update information"
-msgstr "Загрузка информации об обновлениях"
-
-#: ../src/Core/Package.vala:172
-msgid "Repackaging files"
-msgstr "Перепаковка файлов"
-
-#: ../src/Core/Package.vala:174
-msgid "Loading cache"
-msgstr "Загрузка кэша"
-
-#: ../src/Core/Package.vala:176
-msgid "Scanning applications"
-msgstr "Сканирование приложений"
-
-#: ../src/Core/Package.vala:178
-msgid "Generating package lists"
-msgstr "Создание списка пакетов"
-
-#: ../src/Core/Package.vala:180
-msgid "Waiting for package manager lock"
-msgstr "Ожидание блокировки менеджера пакетов"
-
-#: ../src/Core/Package.vala:182
-msgid "Waiting for authentication"
-msgstr "Ожидание аутентификации"
-
-#: ../src/Core/Package.vala:184
-msgid "Updating running applications"
-msgstr "Обновление запущенных приложений"
-
-#: ../src/Core/Package.vala:186
-msgid "Checking applications in use"
-msgstr "Проверка используемых приложений"
-
-#: ../src/Core/Package.vala:188
-msgid "Checking libraries in use"
-msgstr "Проверка используемых библиотек"
-
-#: ../src/Core/Package.vala:190
-msgid "Copying files"
-msgstr "Копирование файлов"
-
-#: ../src/Core/Package.vala:192
-msgid "Unknown state"
-msgstr "Неизвестное состояние"
-
-#: ../src/Views/CategoryView.vala:42
-msgid "Office"
-msgstr "Офис"
-
-#: ../src/Views/CategoryView.vala:42
-msgid "Be productive!"
-msgstr "Будьте продуктивнее!"
-
-#: ../src/Views/CategoryView.vala:47
-msgid "Multimedia"
-msgstr "Мультимедиа"
-
-#: ../src/Views/CategoryView.vala:47
-msgid "Listen to music"
-msgstr "Слушайте музыку"
-
-#: ../src/Views/CategoryView.vala:52
-msgid "Internet"
-msgstr "Интернет"
-
-#: ../src/Views/CategoryView.vala:52
-msgid "Explore the web"
-msgstr "Исследуйте Интернет"
-
-#: ../src/Views/CategoryView.vala:57
-msgid "Communication"
-msgstr "Общение"
-
-#: ../src/Views/CategoryView.vala:57
-msgid "Stay in touch"
-msgstr "Оставайтесь на связи"
-
-#: ../src/Views/CategoryView.vala:62
-msgid "Games"
-msgstr "Игры"
-
-#: ../src/Views/CategoryView.vala:62
-msgid "Be a hero"
-msgstr "Будьте героем"
-
-#: ../src/Views/CategoryView.vala:67
-msgid "Science"
-msgstr "Наука"
-
-#: ../src/Views/CategoryView.vala:67
-msgid "Explore the unknown"
-msgstr "Исследуйте неизвестное"
-
-#: ../src/Views/CategoryView.vala:72
-msgid "Education"
-msgstr "Образование"
-
-#: ../src/Views/CategoryView.vala:72
-msgid "Learn something new"
-msgstr "Узнать что-то новое"
-
-#: ../src/Views/CategoryView.vala:77
-msgid "Graphics"
-msgstr "Графика"
-
-#: ../src/Views/CategoryView.vala:77
-msgid "Draw something!"
-msgstr "Нарисуйте что-нибудь!"
-
-#: ../src/Views/CategoryView.vala:82
-msgid "Fonts"
-msgstr "Шрифты"
-
-#: ../src/Views/CategoryView.vala:82
-msgid "Enhance your docs"
-msgstr "Улучшайте ваши документы"
-
-#: ../src/Views/CategoryView.vala:93 ../src/Views/CategoryView.vala:100
-#: ../src/MainWindow.vala:91
+#: ../src/MainWindow.vala:91 ../src/Views/CategoryView.vala:71
+#: ../src/Views/CategoryView.vala:78
 msgid "Categories"
 msgstr "Категории"
 
-#: ../src/Views/InstalledView.vala:67
-msgid "Searching for updates…"
-msgstr "Поиск обновлений..."
-
-#: ../src/Views/InstalledView.vala:80
-msgid "Update All"
-msgstr "Обновить всё"
-
-#: ../src/Views/InstalledView.vala:123 ../src/MainWindow.vala:92
+#: ../src/MainWindow.vala:92 ../src/Views/InstalledView.vala:44
 msgctxt "view"
 msgid "Installed"
 msgstr "Установленные"
 
-#: ../src/Views/InstalledView.vala:146
-msgid "Size: %s"
-msgstr "Размер: %s"
+#: ../src/MainWindow.vala:95
+msgid "Search App"
+msgstr "Поиск приложений"
 
-#: ../src/Views/InstalledView.vala:147
-msgid "%d update is available."
-msgid_plural "%d updates are available."
-msgstr[0] "Доступно %d обновление."
-msgstr[1] "Доступно %d обновления."
-msgstr[2] "Доступно %d обновлений."
-
-#: ../src/Views/InstalledView.vala:151
-msgid "Your System is up-to-date."
-msgstr "Нет доступных обновлений."
-
-#: ../src/Views/AppListView.vala:44
-msgid "No Apps"
-msgstr "Нет приложений"
-
-#: ../src/Views/AppListView.vala:44
-msgid "You haven't found any app here."
-msgstr "Приложения не найдены."
-
-#: ../src/Views/AppInfoView.vala:53 ../src/Views/AppInfoView.vala:64
-#: ../src/Views/AppInfoView.vala:73
+#: ../src/Views/AppInfoView.vala:65 ../src/Views/AppInfoView.vala:81
+#: ../src/Views/AppInfoView.vala:90 ../src/Widgets/PackageRow.vala:98
 msgid "Update"
 msgstr "Обновить"
 
-#: ../src/Views/AppInfoView.vala:79 ../src/Views/AppInfoView.vala:133
-#: ../src/Views/AppInfoView.vala:214
+#: ../src/Views/AppInfoView.vala:96 ../src/Views/AppInfoView.vala:151
+#: ../src/Views/AppInfoView.vala:237
 msgid "Install"
 msgstr "Установить"
 
-#: ../src/Views/AppInfoView.vala:137
+#: ../src/Views/AppInfoView.vala:155
 msgid "Uninstall"
 msgstr "Удалить"
 
@@ -311,13 +58,208 @@ msgstr "Самые популярные"
 msgid "Latest Apps"
 msgstr "Новые приложения"
 
-#: ../src/MainWindow.vala:90
-msgid "Featured"
-msgstr "Рекомендуемые"
+#: ../src/Views/AppListView.vala:53
+msgid "No Apps"
+msgstr "Нет приложений"
 
-#: ../src/MainWindow.vala:95
-msgid "Search App"
-msgstr "Поиск приложений"
+#: ../src/Views/AppListView.vala:53
+msgid "You haven't found any app here."
+msgstr "Приложения не найдены."
+
+#: ../src/Views/AppListView.vala:123
+msgid "Searching for updates…"
+msgstr "Поиск обновлений..."
+
+#: ../src/Views/AppListView.vala:129
+msgid "Up to date"
+msgstr "Обновлено"
+
+#: ../src/Views/AppListView.vala:152
+msgid "%u update is available."
+msgid_plural "%u updates are available."
+msgstr[0] "%u обновление доступно."
+msgstr[1] "%u обновления доступно."
+msgstr[2] "%u обновлений доступно."
+
+#: ../src/Views/AppListView.vala:158
+msgid "Size: %s"
+msgstr "Размер: %s"
+
+#: ../src/Views/AppListView.vala:160
+msgid "Update All"
+msgstr "Обновить всё"
+
+#: ../src/Application.vala:18
+msgid "About App Center"
+msgstr "О программе"
+
+#: ../src/Application.vala:19
+msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
+msgstr ""
+"установка;удаление;каталог;магазин;центр;приложения;обновления;программы;inst"
+"all;uninstall;remove;catalogue;store;apps;updates;software;"
+
+#: ../src/Application.vala:46
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Leopotam https://launchpad.net/~leopotam\n"
+"  Maxim Taranov https://launchpad.net/~png2378\n"
+"  Mukusev Vladimir https://launchpad.net/~damon95\n"
+"  Yuly Nesterov https://launchpad.net/~inpr1se\n"
+"  elementaryart (old) https://launchpad.net/~elementaryart"
+
+#: ../src/Core/Package.vala:102
+msgid "Starting"
+msgstr "Запуск"
+
+#: ../src/Core/Package.vala:104
+msgid "Waiting in queue"
+msgstr "Ожидание в очереди"
+
+#: ../src/Core/Package.vala:106
+msgid "Running"
+msgstr "Запуск"
+
+#: ../src/Core/Package.vala:108
+msgid "Querying"
+msgstr "Запрос"
+
+#: ../src/Core/Package.vala:110
+msgid "Getting information"
+msgstr "Получение информации"
+
+#: ../src/Core/Package.vala:112
+msgid "Removing packages"
+msgstr "Удаление пакетов"
+
+#: ../src/Core/Package.vala:114
+msgid "Downloading packages"
+msgstr "Загрузка пакетов"
+
+#: ../src/Core/Package.vala:116
+msgid "Installing packages"
+msgstr "Установка пакетов"
+
+#: ../src/Core/Package.vala:118
+msgid "Refreshing software list"
+msgstr "Обновление списка программ"
+
+#: ../src/Core/Package.vala:120
+msgid "Installing updates"
+msgstr "Установка обновлений"
+
+#: ../src/Core/Package.vala:122
+msgid "Cleaning up packages"
+msgstr "Очистка пакетов"
+
+#: ../src/Core/Package.vala:124
+msgid "Obsoleting packages"
+msgstr "Замена пакетов"
+
+#: ../src/Core/Package.vala:126
+msgid "Resolving dependencies"
+msgstr "Разрешение зависимостей"
+
+#: ../src/Core/Package.vala:128
+msgid "Checking signatures"
+msgstr "Проверка подписей"
+
+#: ../src/Core/Package.vala:130
+msgid "Testing changes"
+msgstr "Проверка изменений"
+
+#: ../src/Core/Package.vala:132
+msgid "Committing changes"
+msgstr "Применение изменений"
+
+#: ../src/Core/Package.vala:134
+msgid "Requesting data"
+msgstr "Запрос данных"
+
+#: ../src/Core/Package.vala:136
+msgid "Finished"
+msgstr "Завершено"
+
+#: ../src/Core/Package.vala:138
+msgid "Cancelling"
+msgstr "Отмена"
+
+#: ../src/Core/Package.vala:140
+msgid "Downloading repository information"
+msgstr "Загрузка информации из репозитория"
+
+#: ../src/Core/Package.vala:142
+msgid "Downloading list of packages"
+msgstr "Загрузка списка пакетов"
+
+#: ../src/Core/Package.vala:144
+msgid "Downloading file lists"
+msgstr "Загрузка списка файлов"
+
+#: ../src/Core/Package.vala:146
+msgid "Downloading lists of changes"
+msgstr "Загрузка списка изменений"
+
+#: ../src/Core/Package.vala:148
+msgid "Downloading groups"
+msgstr "Загрузка групп"
+
+#: ../src/Core/Package.vala:150
+msgid "Downloading update information"
+msgstr "Загрузка информации об обновлениях"
+
+#: ../src/Core/Package.vala:152
+msgid "Repackaging files"
+msgstr "Перепаковка файлов"
+
+#: ../src/Core/Package.vala:154
+msgid "Loading cache"
+msgstr "Загрузка кэша"
+
+#: ../src/Core/Package.vala:156
+msgid "Scanning applications"
+msgstr "Сканирование приложений"
+
+#: ../src/Core/Package.vala:158
+msgid "Generating package lists"
+msgstr "Создание списка пакетов"
+
+#: ../src/Core/Package.vala:160
+msgid "Waiting for package manager lock"
+msgstr "Ожидание блокировки менеджера пакетов"
+
+#: ../src/Core/Package.vala:162
+msgid "Waiting for authentication"
+msgstr "Ожидание аутентификации"
+
+#: ../src/Core/Package.vala:164
+msgid "Updating running applications"
+msgstr "Обновление запущенных приложений"
+
+#: ../src/Core/Package.vala:166
+msgid "Checking applications in use"
+msgstr "Проверка используемых приложений"
+
+#: ../src/Core/Package.vala:168
+msgid "Checking libraries in use"
+msgstr "Проверка используемых библиотек"
+
+#: ../src/Core/Package.vala:170
+msgid "Copying files"
+msgstr "Копирование файлов"
+
+#: ../src/Core/Package.vala:172
+msgid "Unknown state"
+msgstr "Неизвестное состояние"
+
+#: ../src/Core/Client.vala:39
+msgid "Operating System Updates"
+msgstr "Обновления операционной системы"
+
+#: ../src/Core/Client.vala:40
+msgid "Updates to system components"
+msgstr "Обновления компонентов"
 
 #~ msgid "Home Page"
 #~ msgstr "Домашняя страница"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-13 15:15-0600\n"
+"POT-Creation-Date: 2015-11-26 15:29+0100\n"
 "PO-Revision-Date: 2015-11-16 13:04+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -10,292 +10,42 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2015-11-17 05:19+0000\n"
-"X-Generator: Launchpad (build 17847)\n"
+"X-Launchpad-Export-Date: 2015-11-27 05:15+0000\n"
+"X-Generator: Launchpad (build 17850)\n"
 
-#: ../src/Application.vala:18
-msgid "About App Center"
-msgstr "앱 센터 정보"
-
-#: ../src/Application.vala:27 ../src/MainWindow.vala:33
+#: ../src/MainWindow.vala:33 ../src/Application.vala:28
 msgid "App Center"
 msgstr "앱 센터"
 
-#: ../src/Application.vala:45
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Jung-Kyu Park https://launchpad.net/~bagjunggyu\n"
-"  Kyu-Seok Yang https://launchpad.net/~lklk9110-3\n"
-"  MinSik CHO https://launchpad.net/~mscho527\n"
-"  elementaryart (old) https://launchpad.net/~elementaryart"
+#: ../src/MainWindow.vala:90
+msgid "Featured"
+msgstr "추천 앱"
 
-#: ../src/Core/Package.vala:122
-msgid "Starting"
-msgstr "시작하는 중"
-
-#: ../src/Core/Package.vala:124
-msgid "Waiting in queue"
-msgstr "큐 대기 중"
-
-#: ../src/Core/Package.vala:126
-msgid "Running"
-msgstr "실행 중"
-
-#: ../src/Core/Package.vala:128
-msgid "Querying"
-msgstr "조회 중"
-
-#: ../src/Core/Package.vala:130
-msgid "Getting information"
-msgstr "정보를 가져오는 중"
-
-#: ../src/Core/Package.vala:132
-msgid "Removing packages"
-msgstr "패키지 제거 중"
-
-#: ../src/Core/Package.vala:134
-msgid "Downloading packages"
-msgstr "패키지 다운로드 중"
-
-#: ../src/Core/Package.vala:136
-msgid "Installing packages"
-msgstr "패키지 설치 중"
-
-#: ../src/Core/Package.vala:138
-msgid "Refreshing software list"
-msgstr "소프트웨어  목록 새로 고치는 중"
-
-#: ../src/Core/Package.vala:140
-msgid "Installing updates"
-msgstr "업데이트 설치 중"
-
-#: ../src/Core/Package.vala:142
-msgid "Cleaning up packages"
-msgstr "패키지 청소 중"
-
-#: ../src/Core/Package.vala:144
-msgid "Obsoleting packages"
-msgstr "패키지 정리 중"
-
-#: ../src/Core/Package.vala:146
-msgid "Resolving dependencies"
-msgstr "의존성 문제 해결 중"
-
-#: ../src/Core/Package.vala:148
-msgid "Checking signatures"
-msgstr "서명 확인 중"
-
-#: ../src/Core/Package.vala:150
-msgid "Testing changes"
-msgstr "변경 사항 시험 중"
-
-#: ../src/Core/Package.vala:152
-msgid "Committing changes"
-msgstr "변경 사항 적용 중"
-
-#: ../src/Core/Package.vala:154
-msgid "Requesting data"
-msgstr "데이터 요청 중"
-
-#: ../src/Core/Package.vala:156
-msgid "Finished"
-msgstr "완료 됨"
-
-#: ../src/Core/Package.vala:158
-msgid "Cancelling"
-msgstr "취소 중"
-
-#: ../src/Core/Package.vala:160
-msgid "Downloading repository information"
-msgstr "저장소 정보 다운로드 중"
-
-#: ../src/Core/Package.vala:162
-msgid "Downloading list of packages"
-msgstr "패키지 목록 다운로드 중"
-
-#: ../src/Core/Package.vala:164
-msgid "Downloading file lists"
-msgstr "파일 목록 다운로드 중"
-
-#: ../src/Core/Package.vala:166
-msgid "Downloading lists of changes"
-msgstr "변경된 목록 다운로드 중"
-
-#: ../src/Core/Package.vala:168
-msgid "Downloading groups"
-msgstr "그룹 다운로드 중"
-
-#: ../src/Core/Package.vala:170
-msgid "Downloading update information"
-msgstr "업데이트 정보 다운로드 중"
-
-#: ../src/Core/Package.vala:172
-msgid "Repackaging files"
-msgstr "파일을 다시 패키징 하는 중"
-
-#: ../src/Core/Package.vala:174
-msgid "Loading cache"
-msgstr "캐시 불러오는 중"
-
-#: ../src/Core/Package.vala:176
-msgid "Scanning applications"
-msgstr "프로그램 확인 중"
-
-#: ../src/Core/Package.vala:178
-msgid "Generating package lists"
-msgstr "패키지 목록 생성 중"
-
-#: ../src/Core/Package.vala:180
-msgid "Waiting for package manager lock"
-msgstr "패키지 매니저 잠금 대기 중"
-
-#: ../src/Core/Package.vala:182
-msgid "Waiting for authentication"
-msgstr "인증 대기 중"
-
-#: ../src/Core/Package.vala:184
-msgid "Updating running applications"
-msgstr "사용 중인 어플리케이션 업데이트 중"
-
-#: ../src/Core/Package.vala:186
-msgid "Checking applications in use"
-msgstr "사용 중인 어플리케이션 확인 중"
-
-#: ../src/Core/Package.vala:188
-msgid "Checking libraries in use"
-msgstr "사용 중인 라이브러리 확인 중"
-
-#: ../src/Core/Package.vala:190
-msgid "Copying files"
-msgstr "파일 복사 중"
-
-#: ../src/Core/Package.vala:192
-msgid "Unknown state"
-msgstr "알 수 없는 상태"
-
-#: ../src/Views/CategoryView.vala:42
-msgid "Office"
-msgstr "오피스"
-
-#: ../src/Views/CategoryView.vala:42
-msgid "Be productive!"
-msgstr "생산적이자!"
-
-#: ../src/Views/CategoryView.vala:47
-msgid "Multimedia"
-msgstr "멀티미디어"
-
-#: ../src/Views/CategoryView.vala:47
-msgid "Listen to music"
-msgstr "음악 듣기"
-
-#: ../src/Views/CategoryView.vala:52
-msgid "Internet"
-msgstr "인터넷"
-
-#: ../src/Views/CategoryView.vala:52
-msgid "Explore the web"
-msgstr "웹 검색"
-
-#: ../src/Views/CategoryView.vala:57
-msgid "Communication"
-msgstr "통신"
-
-#: ../src/Views/CategoryView.vala:57
-msgid "Stay in touch"
-msgstr "연락을 하고 사는"
-
-#: ../src/Views/CategoryView.vala:62
-msgid "Games"
-msgstr "게임"
-
-#: ../src/Views/CategoryView.vala:62
-msgid "Be a hero"
-msgstr "영웅이 되자"
-
-#: ../src/Views/CategoryView.vala:67
-msgid "Science"
-msgstr "과학"
-
-#: ../src/Views/CategoryView.vala:67
-msgid "Explore the unknown"
-msgstr "미지에 대한 탐험"
-
-#: ../src/Views/CategoryView.vala:72
-msgid "Education"
-msgstr "교육"
-
-#: ../src/Views/CategoryView.vala:72
-msgid "Learn something new"
-msgstr "새로운 것을 배우자"
-
-#: ../src/Views/CategoryView.vala:77
-msgid "Graphics"
-msgstr "그래픽"
-
-#: ../src/Views/CategoryView.vala:77
-msgid "Draw something!"
-msgstr "뭔가를 그리자!"
-
-#: ../src/Views/CategoryView.vala:82
-msgid "Fonts"
-msgstr "글꼴"
-
-#: ../src/Views/CategoryView.vala:82
-msgid "Enhance your docs"
-msgstr "문서를 낫게 만들자"
-
-#: ../src/Views/CategoryView.vala:93 ../src/Views/CategoryView.vala:100
-#: ../src/MainWindow.vala:91
+#: ../src/MainWindow.vala:91 ../src/Views/CategoryView.vala:71
+#: ../src/Views/CategoryView.vala:78
 msgid "Categories"
 msgstr "범주"
 
-#: ../src/Views/InstalledView.vala:67
-msgid "Searching for updates…"
-msgstr "업데이트 검색 중..."
-
-#: ../src/Views/InstalledView.vala:80
-msgid "Update All"
-msgstr "모두 업데이트하기"
-
-#: ../src/Views/InstalledView.vala:123 ../src/MainWindow.vala:92
+#: ../src/MainWindow.vala:92 ../src/Views/InstalledView.vala:44
 msgctxt "view"
 msgid "Installed"
 msgstr "설치 됨"
 
-#: ../src/Views/InstalledView.vala:146
-msgid "Size: %s"
-msgstr "크기: %s"
+#: ../src/MainWindow.vala:95
+msgid "Search App"
+msgstr "앱 검색"
 
-#: ../src/Views/InstalledView.vala:147
-msgid "%d update is available."
-msgid_plural "%d updates are available."
-msgstr[0] "%d 개의 업데이트 가능함."
-
-#: ../src/Views/InstalledView.vala:151
-msgid "Your System is up-to-date."
-msgstr "시스템이 업데이트 되어있습니다."
-
-#: ../src/Views/AppListView.vala:44
-msgid "No Apps"
-msgstr "어플 없음"
-
-#: ../src/Views/AppListView.vala:44
-msgid "You haven't found any app here."
-msgstr "이곳에서 아무런 어플도 찾지 않았습니다."
-
-#: ../src/Views/AppInfoView.vala:53 ../src/Views/AppInfoView.vala:64
-#: ../src/Views/AppInfoView.vala:73
+#: ../src/Views/AppInfoView.vala:65 ../src/Views/AppInfoView.vala:81
+#: ../src/Views/AppInfoView.vala:90 ../src/Widgets/PackageRow.vala:98
 msgid "Update"
 msgstr "업데이트"
 
-#: ../src/Views/AppInfoView.vala:79 ../src/Views/AppInfoView.vala:133
-#: ../src/Views/AppInfoView.vala:214
+#: ../src/Views/AppInfoView.vala:96 ../src/Views/AppInfoView.vala:151
+#: ../src/Views/AppInfoView.vala:237
 msgid "Install"
 msgstr "설치"
 
-#: ../src/Views/AppInfoView.vala:137
+#: ../src/Views/AppInfoView.vala:155
 msgid "Uninstall"
 msgstr "재거하기"
 
@@ -307,13 +57,204 @@ msgstr "가장 평가를 많이 받은 앱"
 msgid "Latest Apps"
 msgstr "최신 앱"
 
-#: ../src/MainWindow.vala:90
-msgid "Featured"
-msgstr "추천 앱"
+#: ../src/Views/AppListView.vala:53
+msgid "No Apps"
+msgstr "어플 없음"
 
-#: ../src/MainWindow.vala:95
-msgid "Search App"
-msgstr "앱 검색"
+#: ../src/Views/AppListView.vala:53
+msgid "You haven't found any app here."
+msgstr "이곳에서 아무런 어플도 찾지 않았습니다."
+
+#: ../src/Views/AppListView.vala:123
+msgid "Searching for updates…"
+msgstr "업데이트 검색 중..."
+
+#: ../src/Views/AppListView.vala:129
+msgid "Up to date"
+msgstr ""
+
+#: ../src/Views/AppListView.vala:152
+msgid "%u update is available."
+msgid_plural "%u updates are available."
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/Views/AppListView.vala:158
+msgid "Size: %s"
+msgstr "크기: %s"
+
+#: ../src/Views/AppListView.vala:160
+msgid "Update All"
+msgstr "모두 업데이트하기"
+
+#: ../src/Application.vala:18
+msgid "About App Center"
+msgstr "앱 센터 정보"
+
+#: ../src/Application.vala:19
+msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
+msgstr ""
+
+#: ../src/Application.vala:46
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Jung-Kyu Park https://launchpad.net/~bagjunggyu\n"
+"  Kyu-Seok Yang https://launchpad.net/~lklk9110-3\n"
+"  MinSik CHO https://launchpad.net/~mscho527\n"
+"  elementaryart (old) https://launchpad.net/~elementaryart"
+
+#: ../src/Core/Package.vala:102
+msgid "Starting"
+msgstr "시작하는 중"
+
+#: ../src/Core/Package.vala:104
+msgid "Waiting in queue"
+msgstr "큐 대기 중"
+
+#: ../src/Core/Package.vala:106
+msgid "Running"
+msgstr "실행 중"
+
+#: ../src/Core/Package.vala:108
+msgid "Querying"
+msgstr "조회 중"
+
+#: ../src/Core/Package.vala:110
+msgid "Getting information"
+msgstr "정보를 가져오는 중"
+
+#: ../src/Core/Package.vala:112
+msgid "Removing packages"
+msgstr "패키지 제거 중"
+
+#: ../src/Core/Package.vala:114
+msgid "Downloading packages"
+msgstr "패키지 다운로드 중"
+
+#: ../src/Core/Package.vala:116
+msgid "Installing packages"
+msgstr "패키지 설치 중"
+
+#: ../src/Core/Package.vala:118
+msgid "Refreshing software list"
+msgstr "소프트웨어  목록 새로 고치는 중"
+
+#: ../src/Core/Package.vala:120
+msgid "Installing updates"
+msgstr "업데이트 설치 중"
+
+#: ../src/Core/Package.vala:122
+msgid "Cleaning up packages"
+msgstr "패키지 청소 중"
+
+#: ../src/Core/Package.vala:124
+msgid "Obsoleting packages"
+msgstr "패키지 정리 중"
+
+#: ../src/Core/Package.vala:126
+msgid "Resolving dependencies"
+msgstr "의존성 문제 해결 중"
+
+#: ../src/Core/Package.vala:128
+msgid "Checking signatures"
+msgstr "서명 확인 중"
+
+#: ../src/Core/Package.vala:130
+msgid "Testing changes"
+msgstr "변경 사항 시험 중"
+
+#: ../src/Core/Package.vala:132
+msgid "Committing changes"
+msgstr "변경 사항 적용 중"
+
+#: ../src/Core/Package.vala:134
+msgid "Requesting data"
+msgstr "데이터 요청 중"
+
+#: ../src/Core/Package.vala:136
+msgid "Finished"
+msgstr "완료 됨"
+
+#: ../src/Core/Package.vala:138
+msgid "Cancelling"
+msgstr "취소 중"
+
+#: ../src/Core/Package.vala:140
+msgid "Downloading repository information"
+msgstr "저장소 정보 다운로드 중"
+
+#: ../src/Core/Package.vala:142
+msgid "Downloading list of packages"
+msgstr "패키지 목록 다운로드 중"
+
+#: ../src/Core/Package.vala:144
+msgid "Downloading file lists"
+msgstr "파일 목록 다운로드 중"
+
+#: ../src/Core/Package.vala:146
+msgid "Downloading lists of changes"
+msgstr "변경된 목록 다운로드 중"
+
+#: ../src/Core/Package.vala:148
+msgid "Downloading groups"
+msgstr "그룹 다운로드 중"
+
+#: ../src/Core/Package.vala:150
+msgid "Downloading update information"
+msgstr "업데이트 정보 다운로드 중"
+
+#: ../src/Core/Package.vala:152
+msgid "Repackaging files"
+msgstr "파일을 다시 패키징 하는 중"
+
+#: ../src/Core/Package.vala:154
+msgid "Loading cache"
+msgstr "캐시 불러오는 중"
+
+#: ../src/Core/Package.vala:156
+msgid "Scanning applications"
+msgstr "프로그램 확인 중"
+
+#: ../src/Core/Package.vala:158
+msgid "Generating package lists"
+msgstr "패키지 목록 생성 중"
+
+#: ../src/Core/Package.vala:160
+msgid "Waiting for package manager lock"
+msgstr "패키지 매니저 잠금 대기 중"
+
+#: ../src/Core/Package.vala:162
+msgid "Waiting for authentication"
+msgstr "인증 대기 중"
+
+#: ../src/Core/Package.vala:164
+msgid "Updating running applications"
+msgstr "사용 중인 어플리케이션 업데이트 중"
+
+#: ../src/Core/Package.vala:166
+msgid "Checking applications in use"
+msgstr "사용 중인 어플리케이션 확인 중"
+
+#: ../src/Core/Package.vala:168
+msgid "Checking libraries in use"
+msgstr "사용 중인 라이브러리 확인 중"
+
+#: ../src/Core/Package.vala:170
+msgid "Copying files"
+msgstr "파일 복사 중"
+
+#: ../src/Core/Package.vala:172
+msgid "Unknown state"
+msgstr "알 수 없는 상태"
+
+#: ../src/Core/Client.vala:39
+msgid "Operating System Updates"
+msgstr ""
+
+#: ../src/Core/Client.vala:40
+msgid "Updates to system components"
+msgstr ""
 
 #~ msgid "Home Page"
 #~ msgstr "홈 페이지"

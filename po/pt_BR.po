@@ -2,303 +2,50 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-13 15:15-0600\n"
-"PO-Revision-Date: 2015-11-14 06:58+0000\n"
-"Last-Translator: Cleiton Floss <cleitonfloss@gmail.com>\n"
+"POT-Creation-Date: 2015-11-26 15:29+0100\n"
+"PO-Revision-Date: 2015-11-26 15:21+0000\n"
+"Last-Translator: Leonardo Lemos <leonardolemos@live.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Launchpad-Export-Date: 2015-11-15 05:13+0000\n"
-"X-Generator: Launchpad (build 17845)\n"
+"X-Launchpad-Export-Date: 2015-11-27 05:15+0000\n"
+"X-Generator: Launchpad (build 17850)\n"
 
-#: ../src/Application.vala:18
-msgid "About App Center"
-msgstr "Sobre a central de aplicativos"
-
-#: ../src/Application.vala:27 ../src/MainWindow.vala:33
+#: ../src/MainWindow.vala:33 ../src/Application.vala:28
 msgid "App Center"
 msgstr "Central de aplicativos"
 
-#: ../src/Application.vala:45
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Cleiton Floss https://launchpad.net/~cleitonfloss\n"
-"  John Doe https://launchpad.net/~johndoe456-deactivatedaccount\n"
-"  Leonardo Lemos https://launchpad.net/~leonardolemos\n"
-"  Rafael Leandro https://launchpad.net/~crf-rafa\n"
-"  Thiago Abreu https://launchpad.net/~thiagojedi\n"
-"  elementaryart (old) https://launchpad.net/~elementaryart"
+#: ../src/MainWindow.vala:90
+msgid "Featured"
+msgstr "Em destaque"
 
-#: ../src/Core/Package.vala:122
-msgid "Starting"
-msgstr "Iniciando"
-
-#: ../src/Core/Package.vala:124
-msgid "Waiting in queue"
-msgstr "Aguardando na fila"
-
-#: ../src/Core/Package.vala:126
-msgid "Running"
-msgstr "Executando"
-
-#: ../src/Core/Package.vala:128
-msgid "Querying"
-msgstr "Consultando"
-
-#: ../src/Core/Package.vala:130
-msgid "Getting information"
-msgstr "Obtendo informações"
-
-#: ../src/Core/Package.vala:132
-msgid "Removing packages"
-msgstr "Removendo pacotes"
-
-#: ../src/Core/Package.vala:134
-msgid "Downloading packages"
-msgstr "Baixando pacotes"
-
-#: ../src/Core/Package.vala:136
-msgid "Installing packages"
-msgstr "Instalando pacotes"
-
-#: ../src/Core/Package.vala:138
-msgid "Refreshing software list"
-msgstr "Atualizando lista de programas"
-
-#: ../src/Core/Package.vala:140
-msgid "Installing updates"
-msgstr "Instalando atualizações"
-
-#: ../src/Core/Package.vala:142
-msgid "Cleaning up packages"
-msgstr "Limpando pacotes"
-
-#: ../src/Core/Package.vala:144
-msgid "Obsoleting packages"
-msgstr "Tornando pacotes obsoletos"
-
-#: ../src/Core/Package.vala:146
-msgid "Resolving dependencies"
-msgstr "Resolvendo dependências"
-
-#: ../src/Core/Package.vala:148
-msgid "Checking signatures"
-msgstr "Verificando assinaturas"
-
-#: ../src/Core/Package.vala:150
-msgid "Testing changes"
-msgstr "Testando as alterações"
-
-#: ../src/Core/Package.vala:152
-msgid "Committing changes"
-msgstr "Aplicando alterações"
-
-#: ../src/Core/Package.vala:154
-msgid "Requesting data"
-msgstr "Solicitando dados"
-
-#: ../src/Core/Package.vala:156
-msgid "Finished"
-msgstr "Concluído"
-
-#: ../src/Core/Package.vala:158
-msgid "Cancelling"
-msgstr "Cancelando"
-
-#: ../src/Core/Package.vala:160
-msgid "Downloading repository information"
-msgstr "Baixando informações do repositório"
-
-#: ../src/Core/Package.vala:162
-msgid "Downloading list of packages"
-msgstr "Baixando a lista de pacotes"
-
-#: ../src/Core/Package.vala:164
-msgid "Downloading file lists"
-msgstr "Baixando lista de arquivos"
-
-#: ../src/Core/Package.vala:166
-msgid "Downloading lists of changes"
-msgstr "Baixando lista de alterações"
-
-#: ../src/Core/Package.vala:168
-msgid "Downloading groups"
-msgstr "Baixando grupos"
-
-#: ../src/Core/Package.vala:170
-msgid "Downloading update information"
-msgstr "Baixando informações da atualização"
-
-#: ../src/Core/Package.vala:172
-msgid "Repackaging files"
-msgstr "Reempacotando arquivos"
-
-#: ../src/Core/Package.vala:174
-msgid "Loading cache"
-msgstr "Carregando cache"
-
-#: ../src/Core/Package.vala:176
-msgid "Scanning applications"
-msgstr "Analisando aplicativos"
-
-#: ../src/Core/Package.vala:178
-msgid "Generating package lists"
-msgstr "Gerando listas de pacotes"
-
-#: ../src/Core/Package.vala:180
-msgid "Waiting for package manager lock"
-msgstr "Aguardando o bloqueio do gerenciador de pacotes"
-
-#: ../src/Core/Package.vala:182
-msgid "Waiting for authentication"
-msgstr "Aguardando pela autenticação"
-
-#: ../src/Core/Package.vala:184
-msgid "Updating running applications"
-msgstr "Atualizando aplicativos em execução"
-
-#: ../src/Core/Package.vala:186
-msgid "Checking applications in use"
-msgstr "Verificando aplicativos em uso"
-
-#: ../src/Core/Package.vala:188
-msgid "Checking libraries in use"
-msgstr "Verificando bibliotecas em uso"
-
-#: ../src/Core/Package.vala:190
-msgid "Copying files"
-msgstr "Copiando arquivos"
-
-#: ../src/Core/Package.vala:192
-msgid "Unknown state"
-msgstr "Estado desconhecido"
-
-#: ../src/Views/CategoryView.vala:42
-msgid "Office"
-msgstr "Escritório"
-
-#: ../src/Views/CategoryView.vala:42
-msgid "Be productive!"
-msgstr "Seja produtivo!"
-
-#: ../src/Views/CategoryView.vala:47
-msgid "Multimedia"
-msgstr "Multimídia"
-
-#: ../src/Views/CategoryView.vala:47
-msgid "Listen to music"
-msgstr "Ouça música"
-
-#: ../src/Views/CategoryView.vala:52
-msgid "Internet"
-msgstr "Internet"
-
-#: ../src/Views/CategoryView.vala:52
-msgid "Explore the web"
-msgstr "Explore a Internet"
-
-#: ../src/Views/CategoryView.vala:57
-msgid "Communication"
-msgstr "Comunicação"
-
-#: ../src/Views/CategoryView.vala:57
-msgid "Stay in touch"
-msgstr "Mantenha contato"
-
-#: ../src/Views/CategoryView.vala:62
-msgid "Games"
-msgstr "Jogos"
-
-#: ../src/Views/CategoryView.vala:62
-msgid "Be a hero"
-msgstr "Seja um herói"
-
-#: ../src/Views/CategoryView.vala:67
-msgid "Science"
-msgstr "Ciência"
-
-#: ../src/Views/CategoryView.vala:67
-msgid "Explore the unknown"
-msgstr "Explore o desconhecido"
-
-#: ../src/Views/CategoryView.vala:72
-msgid "Education"
-msgstr "Educação"
-
-#: ../src/Views/CategoryView.vala:72
-msgid "Learn something new"
-msgstr "Aprenda algo novo"
-
-#: ../src/Views/CategoryView.vala:77
-msgid "Graphics"
-msgstr "Gráficos"
-
-#: ../src/Views/CategoryView.vala:77
-msgid "Draw something!"
-msgstr "Desenhe algo!"
-
-#: ../src/Views/CategoryView.vala:82
-msgid "Fonts"
-msgstr "Fontes"
-
-#: ../src/Views/CategoryView.vala:82
-msgid "Enhance your docs"
-msgstr "Melhore seus documentos"
-
-#: ../src/Views/CategoryView.vala:93 ../src/Views/CategoryView.vala:100
-#: ../src/MainWindow.vala:91
+#: ../src/MainWindow.vala:91 ../src/Views/CategoryView.vala:71
+#: ../src/Views/CategoryView.vala:78
 msgid "Categories"
 msgstr "Categorias"
 
-#: ../src/Views/InstalledView.vala:67
-msgid "Searching for updates…"
-msgstr "Procurando atualizações..."
-
-#: ../src/Views/InstalledView.vala:80
-msgid "Update All"
-msgstr "Atualizar todos"
-
-#: ../src/Views/InstalledView.vala:123 ../src/MainWindow.vala:92
+#: ../src/MainWindow.vala:92 ../src/Views/InstalledView.vala:44
 msgctxt "view"
 msgid "Installed"
 msgstr "Instalados"
 
-#: ../src/Views/InstalledView.vala:146
-msgid "Size: %s"
-msgstr "Tamanho: %s"
+#: ../src/MainWindow.vala:95
+msgid "Search App"
+msgstr "Procurar aplicativos"
 
-#: ../src/Views/InstalledView.vala:147
-msgid "%d update is available."
-msgid_plural "%d updates are available."
-msgstr[0] "%d atualização disponível."
-msgstr[1] "%d atualizações disponíveis."
-
-#: ../src/Views/InstalledView.vala:151
-msgid "Your System is up-to-date."
-msgstr "Seu sistema está atualizado."
-
-#: ../src/Views/AppListView.vala:44
-msgid "No Apps"
-msgstr "Nenhum aplicativo"
-
-#: ../src/Views/AppListView.vala:44
-msgid "You haven't found any app here."
-msgstr "Você encontrou nenhum aplicativo aqui."
-
-#: ../src/Views/AppInfoView.vala:53 ../src/Views/AppInfoView.vala:64
-#: ../src/Views/AppInfoView.vala:73
+#: ../src/Views/AppInfoView.vala:65 ../src/Views/AppInfoView.vala:81
+#: ../src/Views/AppInfoView.vala:90 ../src/Widgets/PackageRow.vala:98
 msgid "Update"
 msgstr "Atualizar"
 
-#: ../src/Views/AppInfoView.vala:79 ../src/Views/AppInfoView.vala:133
-#: ../src/Views/AppInfoView.vala:214
+#: ../src/Views/AppInfoView.vala:96 ../src/Views/AppInfoView.vala:151
+#: ../src/Views/AppInfoView.vala:237
 msgid "Install"
 msgstr "Instalar"
 
-#: ../src/Views/AppInfoView.vala:137
+#: ../src/Views/AppInfoView.vala:155
 msgid "Uninstall"
 msgstr "Desinstalar"
 
@@ -310,13 +57,207 @@ msgstr "Melhor avaliados"
 msgid "Latest Apps"
 msgstr "Últimos aplicativos"
 
-#: ../src/MainWindow.vala:90
-msgid "Featured"
-msgstr "Em destaque"
+#: ../src/Views/AppListView.vala:53
+msgid "No Apps"
+msgstr "Nenhum aplicativo"
 
-#: ../src/MainWindow.vala:95
-msgid "Search App"
-msgstr "Procurar aplicativos"
+#: ../src/Views/AppListView.vala:53
+msgid "You haven't found any app here."
+msgstr "Você encontrou nenhum aplicativo aqui."
+
+#: ../src/Views/AppListView.vala:123
+msgid "Searching for updates…"
+msgstr "Procurando atualizações..."
+
+#: ../src/Views/AppListView.vala:129
+msgid "Up to date"
+msgstr "Atualizado"
+
+#: ../src/Views/AppListView.vala:152
+msgid "%u update is available."
+msgid_plural "%u updates are available."
+msgstr[0] "%u atualização está disponível."
+msgstr[1] "%u atualizações estão disponíveis."
+
+#: ../src/Views/AppListView.vala:158
+msgid "Size: %s"
+msgstr "Tamanho: %s"
+
+#: ../src/Views/AppListView.vala:160
+msgid "Update All"
+msgstr "Atualizar todos"
+
+#: ../src/Application.vala:18
+msgid "About App Center"
+msgstr "Sobre a central de aplicativos"
+
+#: ../src/Application.vala:19
+msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
+msgstr ""
+"instalar;desinstalar;remover;catálogo;loja;aplicativos;atualizações;software;"
+
+#: ../src/Application.vala:46
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Cleiton Floss https://launchpad.net/~cleitonfloss\n"
+"  John Doe https://launchpad.net/~johndoe456-deactivatedaccount\n"
+"  Leonardo Lemos https://launchpad.net/~leonardolemos\n"
+"  Rafael Leandro https://launchpad.net/~crf-rafa\n"
+"  Thiago Abreu https://launchpad.net/~thiagojedi\n"
+"  elementaryart (old) https://launchpad.net/~elementaryart"
+
+#: ../src/Core/Package.vala:102
+msgid "Starting"
+msgstr "Iniciando"
+
+#: ../src/Core/Package.vala:104
+msgid "Waiting in queue"
+msgstr "Aguardando na fila"
+
+#: ../src/Core/Package.vala:106
+msgid "Running"
+msgstr "Executando"
+
+#: ../src/Core/Package.vala:108
+msgid "Querying"
+msgstr "Consultando"
+
+#: ../src/Core/Package.vala:110
+msgid "Getting information"
+msgstr "Obtendo informações"
+
+#: ../src/Core/Package.vala:112
+msgid "Removing packages"
+msgstr "Removendo pacotes"
+
+#: ../src/Core/Package.vala:114
+msgid "Downloading packages"
+msgstr "Baixando pacotes"
+
+#: ../src/Core/Package.vala:116
+msgid "Installing packages"
+msgstr "Instalando pacotes"
+
+#: ../src/Core/Package.vala:118
+msgid "Refreshing software list"
+msgstr "Atualizando lista de programas"
+
+#: ../src/Core/Package.vala:120
+msgid "Installing updates"
+msgstr "Instalando atualizações"
+
+#: ../src/Core/Package.vala:122
+msgid "Cleaning up packages"
+msgstr "Limpando pacotes"
+
+#: ../src/Core/Package.vala:124
+msgid "Obsoleting packages"
+msgstr "Tornando pacotes obsoletos"
+
+#: ../src/Core/Package.vala:126
+msgid "Resolving dependencies"
+msgstr "Resolvendo dependências"
+
+#: ../src/Core/Package.vala:128
+msgid "Checking signatures"
+msgstr "Verificando assinaturas"
+
+#: ../src/Core/Package.vala:130
+msgid "Testing changes"
+msgstr "Testando as alterações"
+
+#: ../src/Core/Package.vala:132
+msgid "Committing changes"
+msgstr "Aplicando alterações"
+
+#: ../src/Core/Package.vala:134
+msgid "Requesting data"
+msgstr "Solicitando dados"
+
+#: ../src/Core/Package.vala:136
+msgid "Finished"
+msgstr "Concluído"
+
+#: ../src/Core/Package.vala:138
+msgid "Cancelling"
+msgstr "Cancelando"
+
+#: ../src/Core/Package.vala:140
+msgid "Downloading repository information"
+msgstr "Baixando informações do repositório"
+
+#: ../src/Core/Package.vala:142
+msgid "Downloading list of packages"
+msgstr "Baixando a lista de pacotes"
+
+#: ../src/Core/Package.vala:144
+msgid "Downloading file lists"
+msgstr "Baixando lista de arquivos"
+
+#: ../src/Core/Package.vala:146
+msgid "Downloading lists of changes"
+msgstr "Baixando lista de alterações"
+
+#: ../src/Core/Package.vala:148
+msgid "Downloading groups"
+msgstr "Baixando grupos"
+
+#: ../src/Core/Package.vala:150
+msgid "Downloading update information"
+msgstr "Baixando informações da atualização"
+
+#: ../src/Core/Package.vala:152
+msgid "Repackaging files"
+msgstr "Reempacotando arquivos"
+
+#: ../src/Core/Package.vala:154
+msgid "Loading cache"
+msgstr "Carregando cache"
+
+#: ../src/Core/Package.vala:156
+msgid "Scanning applications"
+msgstr "Analisando aplicativos"
+
+#: ../src/Core/Package.vala:158
+msgid "Generating package lists"
+msgstr "Gerando listas de pacotes"
+
+#: ../src/Core/Package.vala:160
+msgid "Waiting for package manager lock"
+msgstr "Aguardando o bloqueio do gerenciador de pacotes"
+
+#: ../src/Core/Package.vala:162
+msgid "Waiting for authentication"
+msgstr "Aguardando pela autenticação"
+
+#: ../src/Core/Package.vala:164
+msgid "Updating running applications"
+msgstr "Atualizando aplicativos em execução"
+
+#: ../src/Core/Package.vala:166
+msgid "Checking applications in use"
+msgstr "Verificando aplicativos em uso"
+
+#: ../src/Core/Package.vala:168
+msgid "Checking libraries in use"
+msgstr "Verificando bibliotecas em uso"
+
+#: ../src/Core/Package.vala:170
+msgid "Copying files"
+msgstr "Copiando arquivos"
+
+#: ../src/Core/Package.vala:172
+msgid "Unknown state"
+msgstr "Estado desconhecido"
+
+#: ../src/Core/Client.vala:39
+msgid "Operating System Updates"
+msgstr "Atualizações do sistema operacional"
+
+#: ../src/Core/Client.vala:40
+msgid "Updates to system components"
+msgstr "Atualizações para os componentes do sistema"
 
 #~ msgid "Home Page"
 #~ msgstr "Página inicial"
