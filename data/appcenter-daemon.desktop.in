@@ -1,7 +1,7 @@
 [Desktop Entry]
-Name=@APP_NAME@
+Name=@APP_NAME@ Daemon
 Comment=@RELEASE_NAME@
-Exec=@EXEC_NAME@ %U
+Exec=@DAEMON_EXEC_NAME@
 Icon=@DESKTOP_ICON@
 Terminal=false
 Type=Application

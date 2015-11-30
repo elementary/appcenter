@@ -7,9 +7,7 @@ if (UNITY_FOUND)
   link_directories(${UNITY_LIBRARY_DIRS})
 endif ()
 
-set(DAEMON_EXEC_NAME ${CMAKE_PROJECT_NAME}-daemon)
-
-vala_precompile(DAEMON_VALA_C ${DAEMON_EXEC_NAME}
+vala_precompile (DAEMON_VALA_C ${DAEMON_EXEC_NAME}
     Daemon.vala
     ${CMAKE_BINARY_DIR}/src/config.vala
 PACKAGES
@@ -26,7 +24,7 @@ OPTIONS
   ${UNITY_OPTIONS}
 )
 
-add_executable(${DAEMON_EXEC_NAME} ${DAEMON_VALA_C})
-target_link_libraries(${DAEMON_EXEC_NAME} ${DEPS_LIBRARIES} ${UNITY_LIBRARIES} -lm)
+add_executable (${DAEMON_EXEC_NAME} ${DAEMON_VALA_C})
+target_link_libraries (${DAEMON_EXEC_NAME} ${DEPS_LIBRARIES} ${UNITY_LIBRARIES} -lm)
 
-install(TARGETS ${DAEMON_EXEC_NAME} RUNTIME DESTINATION bin)
+install (TARGETS ${DAEMON_EXEC_NAME} RUNTIME DESTINATION bin)
