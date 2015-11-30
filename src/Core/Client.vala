@@ -47,8 +47,6 @@ public class AppCenterCore.Client : Object {
                 package_list.set (pkg_name, package);
             }
         });
-
-        refresh_cache.begin ();
     }
 
     public bool has_tasks () {
@@ -153,17 +151,6 @@ public class AppCenterCore.Client : Object {
 
         release_task (search_task);
         release_task (remove_task);
-    }
-
-    public async void refresh_cache () {
-        Pk.Task refresh_task = request_task ();
-        try {
-            yield refresh_task.refresh_cache_async (false, null, (t, p) => { });
-        } catch (Error e) {
-            critical (e.message);
-        }
-
-        release_task (refresh_task);
     }
 
     public async void get_updates () {

@@ -21,7 +21,20 @@ add_definitions (-DGETTEXT_PACKAGE=\"${GETTEXT_PACKAGE}\")
 add_definitions (-w)
 add_definitions (-DI_KNOW_THE_PACKAGEKIT_GLIB2_API_IS_SUBJECT_TO_CHANGE)
 
+find_package (PkgConfig)
+pkg_check_modules (DEPS REQUIRED gthread-2.0 gee-0.8 gtk+-3.0 granite packagekit-glib2 appstream)
+
+add_definitions (${DEPS_CFLAGS})
+link_directories (${DEPS_LIBRARY_DIRS})
+
+find_package (Vala REQUIRED)
+include (ValaVersion)
+ensure_vala_version ("0.26" MINIMUM)
+
+include (ValaPrecompile)
+
 add_subdirectory (src)
+add_subdirectory (daemon)
 add_subdirectory (data)
 add_subdirectory (po)
 add_subdirectory (schemas)
