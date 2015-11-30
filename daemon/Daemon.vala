@@ -27,6 +27,8 @@ namespace AppCenterDaemon {
     private static bool has_debug;
     private static bool has_version;
     private static Application app;
+    private static GLib.DateTime last_cache_update;
+    private static uint updates_number;
 
     private static void on_exit (int signum) {
         debug ("Exiting");
@@ -77,74 +79,71 @@ namespace AppCenterDaemon {
             critical (e.message);
         }
 
-        var control = new AppCenterControl ();
+        updates_number = 0U;
+
+        var control = new Pk.Control ();
         try {
             control.get_properties ();
         } catch (Error e) {
             critical (e.message);
         }
 
-        control.update_cache ();
+        control.notify["connected"].connect (() => {
+            if (control.connected) {
+                update_cache ();
+            }
+        });
+
+        update_cache ();
 
         return app.run (args);
     }
 
-    public class AppCenterControl : Pk.Control {
-        public GLib.DateTime last_cache_update;
-        private uint updates_number = 0U;
-
-        public new void connection_changed (bool connected) {
-            base.connection_changed (connected);
-            if (connected) {
-                update_cache ();
+    public static void updates_changed () {
+        var update_task = new Pk.Task ();
+        try {
+            Pk.Results result = update_task.get_updates_sync (0, null, (t, p) => { });
+            bool was_empty = updates_number == 0U;
+            updates_number = result.get_package_array ().length;
+            if (was_empty) {
+                string title = ngettext ("Update available", "Updates availables", updates_number);
+                var notification = new Notification (title);
+                notification.set_body (ngettext ("%u update is available for your system", "%u updates are available for your system", updates_number).printf (updates_number));
+                notification.set_icon (new ThemedIcon ("software-update-available"));
+                notification.set_default_action ("app.open-application");
+                Application.get_default ().send_notification ("updates", notification);
             }
-        }
 
-        public new void updates_changed () {
-            var update_task = new Pk.Task ();
-            try {
-                Pk.Results result = update_task.get_updates_sync (0, null, (t, p) => { });
-                bool was_empty = updates_number == 0U;
-                updates_number = result.get_package_array ().length;
-                if (was_empty) {
-                    string title = ngettext ("Update available", "Updates availables", updates_number);
-                    var notification = new Notification (title);
-                    notification.set_body (ngettext ("%u update is available for your system", "%u updates are available for your system", updates_number).printf (updates_number));
-                    notification.set_icon (new ThemedIcon ("software-update-available"));
-                    notification.set_default_action ("app.open-application");
-                    Application.get_default ().send_notification ("updates", notification);
-                }
-
-                if (updates_number == 0U) {
-                    Application.get_default ().withdraw_notification ("updates");
-                }
+            if (updates_number == 0U) {
+                Application.get_default ().withdraw_notification ("updates");
+            }
 #if HAVE_UNITY
-                var launcher_entry = Unity.LauncherEntry.get_for_desktop_file ("appcenter.desktop");
-                launcher_entry.count = updates_number;
-                launcher_entry.count_visible = updates_number != 0U;
+            var launcher_entry = Unity.LauncherEntry.get_for_desktop_file ("appcenter.desktop");
+            launcher_entry.count = updates_number;
+            launcher_entry.count_visible = updates_number != 0U;
 #endif
+        } catch (Error e) {
+            critical (e.message);
+        }
+    }
+
+    public static void update_cache () {
+        // One cache update a day, keeps the doctor away!
+        if (last_cache_update == null || (new DateTime.now_local ()).difference (last_cache_update) >= GLib.TimeSpan.DAY) {
+            var refresh_task = new Pk.Task ();
+            try {
+                refresh_task.refresh_cache_sync (false, null, (t, p) => { });
+                last_cache_update = new DateTime.now_local ();
             } catch (Error e) {
                 critical (e.message);
             }
+
+            updates_changed ();
         }
 
-        public void update_cache () {
-            // One cache update a day, keeps the doctor away!
-            if (last_cache_update == null || (new DateTime.now_local ()).difference (last_cache_update) >= GLib.TimeSpan.DAY) {
-                var refresh_task = new Pk.Task ();
-                try {
-                    refresh_task.refresh_cache_sync (false, null, (t, p) => { });
-                    last_cache_update = new DateTime.now_local ();
-                    updates_changed ();
-                } catch (Error e) {
-                    critical (e.message);
-                }
-            }
-
-            GLib.Timeout.add_seconds (60*60*24, () => {
-                update_cache ();
-                return GLib.Source.REMOVE;
-            });
-        }
+        GLib.Timeout.add_seconds (60*60*24, () => {
+            update_cache ();
+            return GLib.Source.REMOVE;
+        });
     }
 }
