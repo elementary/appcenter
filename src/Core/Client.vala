@@ -127,7 +127,12 @@ public class AppCenterCore.Client : Object {
             package.notify_property ("update-available");
         }
 
-        update_daemon.refresh_updates ();
+        try {
+            update_daemon.refresh_updates ();
+        } catch (Error e) {
+            critical (e.message);
+        }
+
         release_task (update_task);
     }
 
@@ -157,7 +162,12 @@ public class AppCenterCore.Client : Object {
             throw e;
         }
 
-        update_daemon.refresh_updates ();
+        try {
+            update_daemon.refresh_updates ();
+        } catch (Error e) {
+            critical (e.message);
+        }
+
         release_task (search_task);
         release_task (remove_task);
     }
@@ -260,6 +270,6 @@ public class AppCenterCore.Client : Object {
 
 [DBus (name = "org.pantheon.AppCenter")]
 interface AppCenterCore.UpdateSignals : Object {
-    public signal void refresh_cache ();
-    public signal void refresh_updates ();
+    public abstract void refresh_cache () throws IOError;
+    public abstract void refresh_updates () throws IOError;
 }

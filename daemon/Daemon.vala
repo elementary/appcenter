@@ -186,21 +186,18 @@ namespace AppCenterDaemon {
 
     [DBus (name = "org.pantheon.AppCenter")]
     public class UpdateSignals : Object {
-        public signal void refresh_cache ();
-        public signal void refresh_updates ();
+        public void refresh_cache () {
+            update_cache ();
+        }
+
+        public void refresh_updates () {
+            updates_changed ();
+        }
     }
 
     public static void on_bus_aquired (DBusConnection conn) {
         try {
-            var signals = new UpdateSignals ();
-            conn.register_object ("/org/pantheon/appcenter", signals);
-            signals.refresh_cache.connect (() => {
-                update_cache ();
-            });
-
-            signals.refresh_updates.connect (() => {
-                updates_changed ();
-            });
+            conn.register_object ("/org/pantheon/appcenter", new UpdateSignals ());
         } catch (IOError e) {
             critical ("Could not register service");
         }
