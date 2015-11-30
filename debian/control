@@ -28,6 +28,17 @@ Description: Fast application store
  Install, update and remove apps with ease.
  Helps independent developers.
 
+Package: appcenter-daemon
+Architecture: any
+Enhances: appcenter
+Depends: ${misc:Depends},
+         ${shlibs:Depends}
+Description: Fast application store (notification daemon)
+ Install, update and remove apps with ease.
+ Helps independent developers.
+ .
+ This package provides the daemon to notify available updates.
+
 Package: appcenter-dbg
 Architecture: any
 Section: debug
