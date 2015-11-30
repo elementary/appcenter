@@ -24,6 +24,7 @@ public class AppCenterCore.Client : Object {
     private Gee.LinkedList<Pk.Task> task_list;
     private Gee.HashMap<string, AppCenterCore.Package> package_list;
     private AppStream.Database appstream_database;
+    private UpdateSignals update_daemon;
 
     private Client () {
         task_list = new Gee.LinkedList<Pk.Task> ();
@@ -40,6 +41,12 @@ public class AppCenterCore.Client : Object {
         os_updates_component.summary = _("Updates to system components");
         os_updates_component.add_icon (AppStream.IconKind.STOCK, 48, 48, "distributor-logo");
         os_updates = new AppCenterCore.Package (os_updates_component);
+
+        try {
+            update_daemon = Bus.get_proxy_sync (BusType.SESSION, "org.pantheon.AppCenter", "/org/pantheon/appcenter");
+        } catch (Error e) {
+            critical (e.message);
+        }
 
         appstream_database.get_all_components ().foreach ((comp) => {
             var package = new AppCenterCore.Package (comp);
@@ -120,6 +127,7 @@ public class AppCenterCore.Client : Object {
             package.notify_property ("update-available");
         }
 
+        update_daemon.refresh_updates ();
         release_task (update_task);
     }
 
@@ -149,6 +157,7 @@ public class AppCenterCore.Client : Object {
             throw e;
         }
 
+        update_daemon.refresh_updates ();
         release_task (search_task);
         release_task (remove_task);
     }
@@ -249,3 +258,8 @@ public class AppCenterCore.Client : Object {
     }
 }
 
+[DBus (name = "org.pantheon.AppCenter")]
+interface AppCenterCore.UpdateSignals : Object {
+    public signal void refresh_cache ();
+    public signal void refresh_updates ();
+}

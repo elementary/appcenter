@@ -59,7 +59,7 @@ namespace AppCenterDaemon {
         var notification_action = new SimpleAction ("open-application", null);
         notification_action.activate.connect (() => {
             try {
-                string[] spawn_args = {"appcenter"};
+                string[] spawn_args = {"appcenter", "--show-updates"};
                 string[] spawn_env = Environ.get ();
                 Pid child_pid;
 
@@ -88,11 +88,19 @@ namespace AppCenterDaemon {
             critical (e.message);
         }
 
+        control.updates_changed.connect (() => {
+            updates_changed ();
+        });
+
         control.notify["connected"].connect (() => {
             if (control.connected) {
                 update_cache ();
             }
         });
+
+        Bus.own_name (BusType.SESSION, "org.pantheon.AppCenter", BusNameOwnerFlags.NONE, on_bus_aquired,
+                  () => {},
+                  () => critical ("Could not aquire name"));
 
         update_cache ();
 
@@ -104,9 +112,9 @@ namespace AppCenterDaemon {
         try {
             Pk.Results result = update_task.get_updates_sync (0, null, (t, p) => { });
             bool was_empty = updates_number == 0U;
-            updates_number = result.get_package_array ().length;
+            updates_number = get_package_count (result.get_package_array ());
             if (was_empty) {
-                string title = ngettext ("Update available", "Updates availables", updates_number);
+                string title = ngettext ("Update Available", "Updates Available", updates_number);
                 var notification = new Notification (title);
                 notification.set_body (ngettext ("%u update is available for your system", "%u updates are available for your system", updates_number).printf (updates_number));
                 notification.set_icon (new ThemedIcon ("software-update-available"));
@@ -127,6 +135,35 @@ namespace AppCenterDaemon {
         }
     }
 
+    public static uint get_package_count (GLib.GenericArray<weak Pk.Package> package_array) {
+        var appstream_database = new AppStream.Database ();
+        appstream_database.open ();
+        var comp_map = new Gee.HashMap<string, AppStream.Component> ();
+        appstream_database.get_all_components ().foreach ((comp) => {
+            foreach (var pkg_name in comp.get_pkgnames ()) {
+                comp_map.set (pkg_name, comp);
+            }
+        });
+
+        bool os_update_found = false;
+        var result_comp = new Gee.TreeSet<AppStream.Component> ();
+        package_array.foreach ((pk_package) => {
+            var comp = comp_map.get (pk_package.get_name ());
+            if (comp != null) {
+                result_comp.add (comp);
+            } else {
+                os_update_found = true;
+            }
+        });
+
+        uint size = result_comp.size;
+        if (os_update_found) {
+            size++;
+        }
+
+        return size;
+    }
+
     public static void update_cache () {
         // One cache update a day, keeps the doctor away!
         if (last_cache_update == null || (new DateTime.now_local ()).difference (last_cache_update) >= GLib.TimeSpan.DAY) {
@@ -145,5 +182,27 @@ namespace AppCenterDaemon {
             update_cache ();
             return GLib.Source.REMOVE;
         });
+    }
+
+    [DBus (name = "org.pantheon.AppCenter")]
+    public class UpdateSignals : Object {
+        public signal void refresh_cache ();
+        public signal void refresh_updates ();
+    }
+
+    public static void on_bus_aquired (DBusConnection conn) {
+        try {
+            var signals = new UpdateSignals ();
+            conn.register_object ("/org/pantheon/appcenter", signals);
+            signals.refresh_cache.connect (() => {
+                update_cache ();
+            });
+
+            signals.refresh_updates.connect (() => {
+                updates_changed ();
+            });
+        } catch (IOError e) {
+            critical ("Could not register service");
+        }
     }
 }

@@ -18,6 +18,13 @@ namespace AppCenter {
     const string appcenter = N_("About App Center");
     const string keywords = N_("install;uninstall;remove;catalogue;store;apps;updates;software;");
     public class AppCenter : Granite.Application {
+        const OptionEntry[] options =  {
+            { "show-updates", 'u', 0, OptionArg.NONE, out show_updates,
+            "Display the Installed Panel", null},
+            { null }
+        };
+
+        public static bool show_updates;
         MainWindow main_window;
         construct {
             application_id = "org.pantheon.appcenter";
@@ -45,6 +52,7 @@ namespace AppCenter {
             about_comments = "";
             about_translators = _("translator-credits");
             about_license_type = Gtk.License.GPL_3_0;
+            add_main_option_entries (options);
         }
 
         public override void activate () {
@@ -52,6 +60,9 @@ namespace AppCenter {
                 main_window = new MainWindow ();
                 main_window.show_all ();
                 main_window.set_application (this);
+                if (show_updates) {
+                    main_window.go_to_installed ();
+                }
             }
 
             main_window.present ();
