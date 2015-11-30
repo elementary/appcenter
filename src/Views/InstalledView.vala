@@ -32,7 +32,6 @@ public class AppCenter.Views.InstalledView : View {
             }
 
             app_list_view.updating_cache = false;
-            show_update_number ();
         });
         get_apps.begin ();
     }
@@ -48,23 +47,6 @@ public class AppCenter.Views.InstalledView : View {
 
     public override void return_clicked () {
         set_visible_child (app_list_view);
-    }
-
-    private void show_update_number () {
-        var applications = app_list_view.get_packages ();
-        uint update_numbers = 0U;
-        uint64 update_real_size = 0ULL;
-        foreach (var package in applications) {
-            if (package.update_available) {
-                update_numbers++;
-                update_real_size += package.update_size;
-            }
-        }
-#if HAVE_UNITY
-        var launcher_entry = Unity.LauncherEntry.get_for_desktop_file ("appcenter.desktop");
-        launcher_entry.count = update_numbers;
-        launcher_entry.count_visible = update_numbers != 0U;
-#endif
     }
 
     private async void get_apps () {

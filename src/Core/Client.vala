@@ -24,6 +24,7 @@ public class AppCenterCore.Client : Object {
     private Gee.LinkedList<Pk.Task> task_list;
     private Gee.HashMap<string, AppCenterCore.Package> package_list;
     private AppStream.Database appstream_database;
+    private UpdateSignals update_daemon;
 
     private Client () {
         task_list = new Gee.LinkedList<Pk.Task> ();
@@ -41,14 +42,18 @@ public class AppCenterCore.Client : Object {
         os_updates_component.add_icon (AppStream.IconKind.STOCK, 48, 48, "distributor-logo");
         os_updates = new AppCenterCore.Package (os_updates_component);
 
+        try {
+            update_daemon = Bus.get_proxy_sync (BusType.SESSION, "org.pantheon.AppCenter", "/org/pantheon/appcenter");
+        } catch (Error e) {
+            critical (e.message);
+        }
+
         appstream_database.get_all_components ().foreach ((comp) => {
             var package = new AppCenterCore.Package (comp);
             foreach (var pkg_name in comp.get_pkgnames ()) {
                 package_list.set (pkg_name, package);
             }
         });
-
-        refresh_cache.begin ();
     }
 
     public bool has_tasks () {
@@ -122,6 +127,12 @@ public class AppCenterCore.Client : Object {
             package.notify_property ("update-available");
         }
 
+        try {
+            update_daemon.refresh_updates ();
+        } catch (Error e) {
+            critical (e.message);
+        }
+
         release_task (update_task);
     }
 
@@ -151,19 +162,14 @@ public class AppCenterCore.Client : Object {
             throw e;
         }
 
-        release_task (search_task);
-        release_task (remove_task);
-    }
-
-    public async void refresh_cache () {
-        Pk.Task refresh_task = request_task ();
         try {
-            yield refresh_task.refresh_cache_async (false, null, (t, p) => { });
+            update_daemon.refresh_updates ();
         } catch (Error e) {
             critical (e.message);
         }
 
-        release_task (refresh_task);
+        release_task (search_task);
+        release_task (remove_task);
     }
 
     public async void get_updates () {
@@ -262,3 +268,8 @@ public class AppCenterCore.Client : Object {
     }
 }
 
+[DBus (name = "org.pantheon.AppCenter")]
+interface AppCenterCore.UpdateSignals : Object {
+    public abstract void refresh_cache () throws IOError;
+    public abstract void refresh_updates () throws IOError;
+}

@@ -81,6 +81,12 @@ public class AppCenter.MainWindow : Gtk.Window {
         return false;
     }
 
+    public void go_to_installed () {
+        if (view_mode.sensitive) {
+            view_mode.selected = 2;
+        }
+    }
+
     private void create_headerbar () {
         headerbar = new Gtk.HeaderBar ();
         headerbar.show_close_button = true;
