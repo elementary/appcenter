@@ -31,8 +31,7 @@ Description: Fast application store
 Package: appcenter-daemon
 Architecture: any
 Enhances: appcenter
-Depends: ${misc:Depends},
-         ${shlibs:Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: Fast application store (notification daemon)
  Install, update and remove apps with ease.
  Helps independent developers.
