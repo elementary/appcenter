@@ -1,2 +1,3 @@
 usr/bin/*-daemon
 usr/share/applications/*-daemon.desktop
+usr/share/dbus-1/
