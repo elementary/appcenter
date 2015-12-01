@@ -2,36 +2,37 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-26 15:29+0100\n"
-"PO-Revision-Date: 2015-11-06 16:05+0000\n"
-"Last-Translator: elementaryart (old) <Unknown>\n"
+"POT-Creation-Date: 2015-11-30 23:25+0100\n"
+"PO-Revision-Date: 2015-11-30 22:29+0000\n"
+"Last-Translator: Corentin Noël <corentin@elementaryos.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Launchpad-Export-Date: 2015-11-27 05:15+0000\n"
+"X-Launchpad-Export-Date: 2015-12-01 05:14+0000\n"
 "X-Generator: Launchpad (build 17850)\n"
 
-#: ../src/MainWindow.vala:33 ../src/Application.vala:28
+#: ../src/MainWindow.vala:33 ../src/Application.vala:35
+#: ../daemon/Daemon.vala:45 ../daemon/Daemon.vala:53
 msgid "App Center"
 msgstr "Centre d'applications"
 
-#: ../src/MainWindow.vala:90
+#: ../src/MainWindow.vala:96
 msgid "Featured"
 msgstr "Sélection"
 
-#: ../src/MainWindow.vala:91 ../src/Views/CategoryView.vala:71
+#: ../src/MainWindow.vala:97 ../src/Views/CategoryView.vala:71
 #: ../src/Views/CategoryView.vala:78
 msgid "Categories"
 msgstr "Catégories"
 
-#: ../src/MainWindow.vala:92 ../src/Views/InstalledView.vala:44
+#: ../src/MainWindow.vala:98 ../src/Views/InstalledView.vala:43
 msgctxt "view"
 msgid "Installed"
 msgstr "Installées"
 
-#: ../src/MainWindow.vala:95
+#: ../src/MainWindow.vala:101
 msgid "Search App"
 msgstr "Rechercher une application"
 
@@ -71,13 +72,13 @@ msgstr "Recherche de mises à jour…"
 
 #: ../src/Views/AppListView.vala:129
 msgid "Up to date"
-msgstr ""
+msgstr "À jour"
 
 #: ../src/Views/AppListView.vala:152
 msgid "%u update is available."
 msgid_plural "%u updates are available."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u mise à jour disponible."
+msgstr[1] "%u mises à jour disponibles."
 
 #: ../src/Views/AppListView.vala:158
 msgid "Size: %s"
@@ -94,8 +95,10 @@ msgstr "À propos du Centre d'Applications"
 #: ../src/Application.vala:19
 msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
 msgstr ""
+"installer;désinstaller;supprimer;catalogue;store;applications;mises;jour;logi"
+"ciel;logithèque;"
 
-#: ../src/Application.vala:46
+#: ../src/Application.vala:53
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
@@ -248,13 +251,25 @@ msgstr "Copie des fichiers"
 msgid "Unknown state"
 msgstr "État inconnu"
 
-#: ../src/Core/Client.vala:39
-msgid "Operating System Updates"
-msgstr ""
-
 #: ../src/Core/Client.vala:40
+msgid "Operating System Updates"
+msgstr "Mises à jour du système d'exploitation"
+
+#: ../src/Core/Client.vala:41
 msgid "Updates to system components"
-msgstr ""
+msgstr "Mise à jour des composants système"
+
+#: ../daemon/Daemon.vala:117
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../daemon/Daemon.vala:119
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] ""
+msgstr[1] ""
 
 #~ msgid "Apps View"
 #~ msgstr "Vue des applications"

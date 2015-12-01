@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-26 15:29+0100\n"
+"POT-Creation-Date: 2015-11-30 23:25+0100\n"
 "PO-Revision-Date: 2015-11-06 16:02+0000\n"
 "Last-Translator: elementaryart (old) <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -11,28 +11,29 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2015-11-27 05:15+0000\n"
+"X-Launchpad-Export-Date: 2015-12-01 05:15+0000\n"
 "X-Generator: Launchpad (build 17850)\n"
 
-#: ../src/MainWindow.vala:33 ../src/Application.vala:28
+#: ../src/MainWindow.vala:33 ../src/Application.vala:35
+#: ../daemon/Daemon.vala:45 ../daemon/Daemon.vala:53
 msgid "App Center"
 msgstr ""
 
-#: ../src/MainWindow.vala:90
+#: ../src/MainWindow.vala:96
 msgid "Featured"
 msgstr ""
 
-#: ../src/MainWindow.vala:91 ../src/Views/CategoryView.vala:71
+#: ../src/MainWindow.vala:97 ../src/Views/CategoryView.vala:71
 #: ../src/Views/CategoryView.vala:78
 msgid "Categories"
 msgstr "Категорије"
 
-#: ../src/MainWindow.vala:92 ../src/Views/InstalledView.vala:44
+#: ../src/MainWindow.vala:98 ../src/Views/InstalledView.vala:43
 msgctxt "view"
 msgid "Installed"
 msgstr ""
 
-#: ../src/MainWindow.vala:95
+#: ../src/MainWindow.vala:101
 msgid "Search App"
 msgstr ""
 
@@ -96,7 +97,7 @@ msgstr ""
 msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
 msgstr ""
 
-#: ../src/Application.vala:46
+#: ../src/Application.vala:53
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
@@ -247,13 +248,25 @@ msgstr ""
 msgid "Unknown state"
 msgstr ""
 
-#: ../src/Core/Client.vala:39
+#: ../src/Core/Client.vala:40
 msgid "Operating System Updates"
 msgstr ""
 
-#: ../src/Core/Client.vala:40
+#: ../src/Core/Client.vala:41
 msgid "Updates to system components"
 msgstr ""
+
+#: ../daemon/Daemon.vala:117
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../daemon/Daemon.vala:119
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] ""
+msgstr[1] ""
 
 #~ msgid "Recreates database files"
 #~ msgstr "Скорашње датотеке из базе података"

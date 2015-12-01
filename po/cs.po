@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-26 15:29+0100\n"
+"POT-Creation-Date: 2015-11-30 23:25+0100\n"
 "PO-Revision-Date: 2015-11-27 15:33+0000\n"
 "Last-Translator: Petr Dombek <dombek@oblati.cz>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -10,28 +10,29 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2015-11-28 04:43+0000\n"
+"X-Launchpad-Export-Date: 2015-12-01 05:14+0000\n"
 "X-Generator: Launchpad (build 17850)\n"
 
-#: ../src/MainWindow.vala:33 ../src/Application.vala:28
+#: ../src/MainWindow.vala:33 ../src/Application.vala:35
+#: ../daemon/Daemon.vala:45 ../daemon/Daemon.vala:53
 msgid "App Center"
 msgstr "Centrum aplikací"
 
-#: ../src/MainWindow.vala:90
+#: ../src/MainWindow.vala:96
 msgid "Featured"
 msgstr "Doporučené"
 
-#: ../src/MainWindow.vala:91 ../src/Views/CategoryView.vala:71
+#: ../src/MainWindow.vala:97 ../src/Views/CategoryView.vala:71
 #: ../src/Views/CategoryView.vala:78
 msgid "Categories"
 msgstr "Skupiny"
 
-#: ../src/MainWindow.vala:92 ../src/Views/InstalledView.vala:44
+#: ../src/MainWindow.vala:98 ../src/Views/InstalledView.vala:43
 msgctxt "view"
 msgid "Installed"
 msgstr "Nainstalováno"
 
-#: ../src/MainWindow.vala:95
+#: ../src/MainWindow.vala:101
 msgid "Search App"
 msgstr "Vyhledat aplikaci"
 
@@ -97,7 +98,7 @@ msgstr ""
 "instalovat;odinstalovat;odstranit;katalog;obchod;aplikace;aktualizace;softwar"
 "e;"
 
-#: ../src/Application.vala:46
+#: ../src/Application.vala:53
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
@@ -251,13 +252,25 @@ msgstr "Kopírují se soubory"
 msgid "Unknown state"
 msgstr "Neznámý stav"
 
-#: ../src/Core/Client.vala:39
+#: ../src/Core/Client.vala:40
 msgid "Operating System Updates"
 msgstr "Aktualizace operačního systému"
 
-#: ../src/Core/Client.vala:40
+#: ../src/Core/Client.vala:41
 msgid "Updates to system components"
 msgstr "Aktualizace systémových částí"
+
+#: ../daemon/Daemon.vala:117
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../daemon/Daemon.vala:119
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] ""
+msgstr[1] ""
 
 #~ msgid "Home Page"
 #~ msgstr "Domovská stránka"
