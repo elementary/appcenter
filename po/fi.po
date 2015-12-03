@@ -3,15 +3,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-30 23:25+0100\n"
-"PO-Revision-Date: 2015-11-26 15:39+0000\n"
+"PO-Revision-Date: 2015-12-02 08:25+0000\n"
 "Last-Translator: Jiri Grönroos <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-12-01 05:14+0000\n"
-"X-Generator: Launchpad (build 17850)\n"
+"X-Launchpad-Export-Date: 2015-12-03 05:48+0000\n"
+"X-Generator: Launchpad (build 17856)\n"
 
 #: ../src/MainWindow.vala:33 ../src/Application.vala:35
 #: ../daemon/Daemon.vala:45 ../daemon/Daemon.vala:53
@@ -261,14 +261,14 @@ msgstr "Päivitykset järjestelmän osiin"
 #: ../daemon/Daemon.vala:117
 msgid "Update Available"
 msgid_plural "Updates Available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Päivitys saatavilla"
+msgstr[1] "Päivityksiä saatavilla"
 
 #: ../daemon/Daemon.vala:119
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Järjestelmälle on saatavilla %u päivitys"
+msgstr[1] "Järjestelmälle on saatavilla %u päivitystä"
 
 #~ msgid "Apps View"
 #~ msgstr "Sovellusnäkymä"
