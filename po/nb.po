@@ -3,15 +3,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-30 23:25+0100\n"
-"PO-Revision-Date: 2015-11-06 16:06+0000\n"
-"Last-Translator: elementaryart (old) <Unknown>\n"
+"PO-Revision-Date: 2015-12-04 10:11+0000\n"
+"Last-Translator: Harald Eilertsen <haraldei@anduin.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-12-01 05:15+0000\n"
-"X-Generator: Launchpad (build 17850)\n"
+"X-Launchpad-Export-Date: 2015-12-05 05:18+0000\n"
+"X-Generator: Launchpad (build 17862)\n"
 
 #: ../src/MainWindow.vala:33 ../src/Application.vala:35
 #: ../daemon/Daemon.vala:45 ../daemon/Daemon.vala:53
@@ -64,7 +64,7 @@ msgstr "Ingen applikasjoner"
 
 #: ../src/Views/AppListView.vala:53
 msgid "You haven't found any app here."
-msgstr ""
+msgstr "Du har ikke funnet noen programmer her."
 
 #: ../src/Views/AppListView.vala:123
 msgid "Searching for updates…"
@@ -72,13 +72,13 @@ msgstr "Søker etter oppdateringer..."
 
 #: ../src/Views/AppListView.vala:129
 msgid "Up to date"
-msgstr ""
+msgstr "Oppdatert"
 
 #: ../src/Views/AppListView.vala:152
 msgid "%u update is available."
 msgid_plural "%u updates are available."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u oppdatering tilgjengelig"
+msgstr[1] "%u oppdateringer tilgjengelig"
 
 #: ../src/Views/AppListView.vala:158
 msgid "Size: %s"
@@ -90,16 +90,19 @@ msgstr "Oppdater alt"
 
 #: ../src/Application.vala:18
 msgid "About App Center"
-msgstr ""
+msgstr "Om App Senter"
 
 #: ../src/Application.vala:19
 msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
 msgstr ""
+"installér;avinstallér;slett;katalog;lagre;programmer;oppdateringer;programvar"
+"e;"
 
 #: ../src/Application.vala:53
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
+"  Harald Eilertsen https://launchpad.net/~haraldei\n"
 "  Niklas Fjeldberg https://launchpad.net/~niklasolai\n"
 "  ProsjektX https://launchpad.net/~prosjektx\n"
 "  elementaryart (old) https://launchpad.net/~elementaryart\n"
@@ -167,11 +170,11 @@ msgstr "Tester endringer"
 
 #: ../src/Core/Package.vala:132
 msgid "Committing changes"
-msgstr ""
+msgstr "Lagrer endringer"
 
 #: ../src/Core/Package.vala:134
 msgid "Requesting data"
-msgstr ""
+msgstr "Spør etter data"
 
 #: ../src/Core/Package.vala:136
 msgid "Finished"
@@ -183,91 +186,91 @@ msgstr "Avbryter"
 
 #: ../src/Core/Package.vala:140
 msgid "Downloading repository information"
-msgstr ""
+msgstr "Laster ned informasjon om fillager"
 
 #: ../src/Core/Package.vala:142
 msgid "Downloading list of packages"
-msgstr ""
+msgstr "Laster ned pakkeliste"
 
 #: ../src/Core/Package.vala:144
 msgid "Downloading file lists"
-msgstr ""
+msgstr "Laster ned fillister"
 
 #: ../src/Core/Package.vala:146
 msgid "Downloading lists of changes"
-msgstr ""
+msgstr "laster ned liste over endringer"
 
 #: ../src/Core/Package.vala:148
 msgid "Downloading groups"
-msgstr ""
+msgstr "Laster ned grupper"
 
 #: ../src/Core/Package.vala:150
 msgid "Downloading update information"
-msgstr ""
+msgstr "Laster ned oppdateringsinformasjon"
 
 #: ../src/Core/Package.vala:152
 msgid "Repackaging files"
-msgstr ""
+msgstr "Pakker om filer"
 
 #: ../src/Core/Package.vala:154
 msgid "Loading cache"
-msgstr ""
+msgstr "Laster mellomlageret"
 
 #: ../src/Core/Package.vala:156
 msgid "Scanning applications"
-msgstr ""
+msgstr "Skanner programmer"
 
 #: ../src/Core/Package.vala:158
 msgid "Generating package lists"
-msgstr ""
+msgstr "Lager pakkelister"
 
 #: ../src/Core/Package.vala:160
 msgid "Waiting for package manager lock"
-msgstr ""
+msgstr "Venter på lås for pakkehåndterer"
 
 #: ../src/Core/Package.vala:162
 msgid "Waiting for authentication"
-msgstr ""
+msgstr "Venter på autentisering"
 
 #: ../src/Core/Package.vala:164
 msgid "Updating running applications"
-msgstr ""
+msgstr "Oppdaterer kjørende programmer"
 
 #: ../src/Core/Package.vala:166
 msgid "Checking applications in use"
-msgstr ""
+msgstr "Sjekker programmer som er i bruk"
 
 #: ../src/Core/Package.vala:168
 msgid "Checking libraries in use"
-msgstr ""
+msgstr "Sjekker biblioteker som er i bruk"
 
 #: ../src/Core/Package.vala:170
 msgid "Copying files"
-msgstr ""
+msgstr "Kopierer filer"
 
 #: ../src/Core/Package.vala:172
 msgid "Unknown state"
-msgstr ""
+msgstr "Ukjent tilstand"
 
 #: ../src/Core/Client.vala:40
 msgid "Operating System Updates"
-msgstr ""
+msgstr "Operativsystemoppdateringer"
 
 #: ../src/Core/Client.vala:41
 msgid "Updates to system components"
-msgstr ""
+msgstr "Oppdaterineg av systemkomponenter"
 
 #: ../daemon/Daemon.vala:117
 msgid "Update Available"
 msgid_plural "Updates Available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Oppdatering tilgjengelig"
+msgstr[1] "Oppdateringer tilgjengelige"
 
 #: ../daemon/Daemon.vala:119
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u oppdatering er tilgjengelig for ditt system"
+msgstr[1] "%u oppdateringer er tilgjengelige for ditt system"
 
 #~ msgid "Edit source software"
 #~ msgstr "Rediger programvarekilder"
