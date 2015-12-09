@@ -28,7 +28,7 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
     Gtk.Label app_name;
     Gtk.Label app_version;
     Gtk.Label app_summary;
-    Gtk.Label app_description;
+    Gtk.TextView app_description;
     // The action button covers Install, Update and Open at once
     Gtk.Button action_button;
     Gtk.Button uninstall_button;
@@ -41,6 +41,7 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         app_name.label = package.get_name ();
         app_version.label = package.get_version ();
         app_summary.label = package.get_summary ();
+        app_description.buffer.text = package.component.get_description ().replace ("</p><p>", "\n").replace ("</p>", "").replace ("<p>", "");
         int size = 0;
         package.component.get_icon_urls ().foreach ((k, v) => {
             var current_size = int.parse (k.split ("x", 2)[0]);
@@ -59,6 +60,24 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
 
         if (app_icon.gicon == null) {
             app_icon.gicon = new ThemedIcon ("application-default-icon");
+        }
+
+        string url = null;
+        uint max_size = 0U;
+        package.component.get_screenshots ().foreach ((screenshot) => {
+            screenshot.get_images ().foreach ((image) => {
+                if (max_size < image.get_width ()) {
+                    url = image.get_url ();
+                    max_size = image.get_width ();
+                }
+            });
+        });
+
+        if (url != null) {
+            set_screenshot.begin (url);
+        } else {
+            app_screenshot.hide ();
+            app_screenshot.no_show_all = true;
         }
 
         if (package.update_available) {
@@ -119,6 +138,8 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         app_screenshot = new Gtk.Image ();
         app_screenshot.pixel_size = 200;
         app_screenshot.icon_name = "image-x-generic";
+        app_screenshot.halign = Gtk.Align.END;
+        app_screenshot.valign = Gtk.Align.CENTER;
 
         app_name = new Gtk.Label (null);
         app_name.margin_top = 12;
@@ -137,8 +158,11 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         ((Gtk.Misc) app_summary).xalign = 0;
         app_summary.valign = Gtk.Align.START;
 
-        app_description = new Gtk.Label (null);
-        ((Gtk.Misc) app_description).xalign = 0;
+        app_description = new Gtk.TextView ();
+        app_description.expand = true;
+        app_description.editable = false;
+        app_description.cursor_visible = false;
+        app_description.wrap_mode = Gtk.WrapMode.WORD_CHAR;
 
         action_stack = new Gtk.Stack ();
         action_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
@@ -172,13 +196,13 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         progress_grid.add (progress_bar);
 
         var scrolled = new Gtk.ScrolledWindow (null, null);
+        scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
         scrolled.expand = true;
         scrolled.add (app_description);
 
         var content_grid = new Gtk.Grid ();
+        content_grid.margin = 12;
         content_grid.orientation = Gtk.Orientation.HORIZONTAL;
-        content_grid.halign = Gtk.Align.END;
-        content_grid.valign = Gtk.Align.CENTER;
         content_grid.add (scrolled);
         content_grid.add (app_screenshot);
 
@@ -241,5 +265,14 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
             critical (e.message);
             action_stack.set_visible_child_name ("buttons");
         }
+    }
+
+    private async void set_screenshot (string url) {
+        var fileimage = File.new_for_uri (url);
+        var icon = new FileIcon (fileimage);
+        Idle.add (() => {
+            app_screenshot.gicon = icon;
+            return false;
+        });
     }
 }
