@@ -53,11 +53,11 @@ public class AppCenterCore.Package : Object {
     public Pk.Status status { get; set; default=Pk.Status.SETUP; }
 
     public Gee.TreeSet<Pk.Package> installed_packages { get; private set; }
-    public Gee.TreeSet<Pk.Package> update_packages { get; private set; }
+    public Gee.HashMap<Pk.Package, double?> update_packages { get; private set; }
 
     public Package (AppStream.Component component) {
         this.component = component;
-        update_packages = new Gee.TreeSet<Pk.Package> ();
+        update_packages = new Gee.HashMap<Pk.Package, double?> ();
         installed_packages = new Gee.TreeSet<Pk.Package> ();
     }
 
@@ -176,7 +176,20 @@ public class AppCenterCore.Package : Object {
     public void ProgressCallback (Pk.Progress progress, Pk.ProgressType type) {
         switch (type) {
             case Pk.ProgressType.ITEM_PROGRESS:
-                this.progress = ((double) progress.item_progress.percentage)/100;
+                foreach (var update_package in update_packages.keys) {
+                    if (update_package.get_id () == progress.package_id) {
+                        update_packages.unset (update_package);
+                        update_packages.set (update_package, (double)progress.percentage);
+                        break;
+                    }
+                }
+
+                double progress_sum = 0.0f;
+                foreach (var update_package_progress in update_packages.values) {
+                    progress_sum += update_package_progress;
+                }
+
+                this.progress = ((double) progress_sum / (double)update_packages.size)/((double)100);
                 break;
             case Pk.ProgressType.STATUS:
                 status = (Pk.Status) progress.status;

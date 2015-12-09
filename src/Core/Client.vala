@@ -107,7 +107,7 @@ public class AppCenterCore.Client : Object {
         Pk.Task update_task = request_task ();
         string[] packages_ids = {};
         foreach (var package in packages) {
-            foreach (var pk_package in package.update_packages) {
+            foreach (var pk_package in package.update_packages.keys) {
                 packages_ids += pk_package.get_id ();
             }
         }
@@ -121,7 +121,7 @@ public class AppCenterCore.Client : Object {
         }
 
         foreach (var package in packages) {
-            package.installed_packages.add_all (package.update_packages);
+            package.installed_packages.add_all (package.update_packages.keys);
             package.update_packages.clear ();
             package.update_size = 0ULL;
             package.notify_property ("update-available");
@@ -197,7 +197,7 @@ public class AppCenterCore.Client : Object {
                     os_updates.component.pkgnames = pkgnames;
                 }
 
-                package.update_packages.add (pk_package);
+                package.update_packages.set (pk_package, 0.0f);
                 package.update_size += pk_detail.size;
                 package.notify_property ("update-available");
             });

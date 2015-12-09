@@ -139,6 +139,7 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
             update_progressbar.fraction = package.progress;
         } else {
             action_stack.set_visible_child (update_button);
+            update_button.hide ();
         }
     }
 }
