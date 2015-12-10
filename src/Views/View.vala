@@ -22,6 +22,7 @@ public abstract class AppCenter.View : Gtk.Stack {
     public signal void subview_entered (string view_name);
 
     construct {
+        get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
         transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
         expand = true;
     }

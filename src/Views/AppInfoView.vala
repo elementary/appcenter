@@ -126,6 +126,10 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
     }
 
     construct {
+        halign = Gtk.Align.CENTER;
+        margin = 24;
+        width_request = 800;
+
         column_spacing = 12;
         row_spacing = 6;
         get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
@@ -153,6 +157,7 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         app_version.hexpand = true;
         app_version.valign = Gtk.Align.CENTER;
         app_version.get_style_context ().add_class ("dim-label");
+        app_version.get_style_context ().add_class ("h3");
 
         app_summary = new Gtk.Label (null);
         ((Gtk.Misc) app_summary).xalign = 0;
