@@ -152,11 +152,12 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         ((Gtk.Misc) app_version).xalign = 0;
         app_version.hexpand = true;
         app_version.valign = Gtk.Align.CENTER;
-        app_version.get_style_context ().add_class ("h2");
+        app_version.get_style_context ().add_class ("dim-label");
 
         app_summary = new Gtk.Label (null);
         ((Gtk.Misc) app_summary).xalign = 0;
         app_summary.valign = Gtk.Align.START;
+        app_summary.get_style_context ().add_class ("h3");
 
         app_description = new Gtk.TextView ();
         app_description.expand = true;
@@ -174,10 +175,12 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
 
         action_button = new Gtk.Button.with_label (_("Install"));
         action_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        action_button.get_style_context ().add_class ("h3");
         action_button.clicked.connect (() => action_clicked.begin ());
 
         uninstall_button = new Gtk.Button.with_label (_("Uninstall"));
         uninstall_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+        uninstall_button.get_style_context ().add_class ("h3");
         uninstall_button.clicked.connect (() => uninstall_clicked.begin ());
 
         var button_grid = new Gtk.Grid ();
