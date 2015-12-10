@@ -41,7 +41,7 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         app_name.label = package.get_name ();
         app_version.label = package.get_version ();
         app_summary.label = package.get_summary ();
-        app_description.buffer.text = package.component.get_description ().replace ("</p><p>", "\n").replace ("</p>", "").replace ("<p>", "");
+        parse_description (package.component.get_description ());
         int size = 0;
         package.component.get_icon_urls ().foreach ((k, v) => {
             var current_size = int.parse (k.split ("x", 2)[0]);
@@ -278,5 +278,39 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
 
             return null;
         });
+    }
+
+    private void parse_description (string description) {
+        var doc_desc = "<root>%s</root>".printf (description);
+        unowned Xml.Doc* doc = Xml.Parser.read_memory (doc_desc, doc_desc.length);
+        if (doc == null) {
+            return;
+        }
+
+        unowned Xml.Node* root = doc->get_root_element ();
+        if (root == null) {
+            return;
+        }
+
+        for (unowned Xml.Node* iter = root->children; iter != null; iter = iter->next) {
+            if (iter->type == Xml.ElementType.ELEMENT_NODE) {
+                switch (iter->name) {
+                    case "p":
+                        app_description.buffer.text += iter->get_content () + "\n";
+                        continue;
+                    case "ul":
+                        for (unowned Xml.Node* iter2 = iter->children; iter2 != null; iter2 = iter2->next) {
+                            if (iter2->type == Xml.ElementType.ELEMENT_NODE) {
+                                app_description.buffer.text += "\t⦁ " + iter2->get_content () + "\n";
+                            }
+                        }
+
+                        continue;
+                    default:
+                        warning ("Unexpected element %s", iter->name);
+                        continue;
+                }
+            }
+        }
     }
 }

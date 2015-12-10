@@ -193,9 +193,9 @@ public class AppCenter.MainWindow : Gtk.Window {
         return_button.clicked.connect (() => {
             view_mode.sensitive = true;
             search_entry.sensitive = true;
+            current_button = null;
             view.return_clicked ();
             return_button.destroy ();
-            current_button = null;
         });
     }
 }

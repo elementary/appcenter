@@ -260,7 +260,10 @@ public class AppCenterCore.Client : Object {
         filter |= additional_filters;
         try {
             var results = packages_task.search_names_sync (filter, { application, null }, cancellable, () => {});
-            package = results.get_package_array ().get (0);
+            var array = results.get_package_array ();
+            if (array.length > 0) {
+                package = array.get (0);
+            }
         } catch (Error e) {
             release_task (packages_task);
             throw e;

@@ -23,6 +23,7 @@ PACKAGES
     gee-0.8
     granite
     packagekit-glib2
+    libxml-2.0
 OPTIONS
   --vapidir=${CMAKE_SOURCE_DIR}/vapi
   --target-glib=2.32
