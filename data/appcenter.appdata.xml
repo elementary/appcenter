@@ -6,7 +6,7 @@
   <project_group>elementary</project_group>
   <project_license>GPL-3.0+</project_license>
   <name>AppCenter</name>
-  <icon type="stock">system-software-installer</icon>
+  <icon type="stock">system-software-install</icon>
   <summary>The indie, open, pay-what-you-want app store</summary>
   <description>
     <p>
