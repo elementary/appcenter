@@ -9,6 +9,7 @@ Build-Depends: cmake,
                libgtk-3-dev,
                libpackagekit-glib2-dev,
                libunity-dev,
+               libxml2-dev,
                valac (>= 0.18)
 Standards-Version: 3.9.6
 Homepage: https://launchpad.net/appcenter
