@@ -197,7 +197,7 @@ public class AppCenterCore.Client : Object {
                     os_updates.component.pkgnames = pkgnames;
                 }
 
-                package.update_packages.set (pk_package, 0.0f);
+                package.update_packages.set (pk_package, null);
                 package.update_size += pk_detail.size;
                 package.notify_property ("update-available");
             });

@@ -184,12 +184,22 @@ public class AppCenterCore.Package : Object {
                     }
                 }
 
-                double progress_sum = 0.0f;
+                double? progress_sum = null;
                 foreach (var update_package_progress in update_packages.values) {
-                    progress_sum += update_package_progress;
+                    if (update_package_progress != null) {
+                        if (progress_sum == null) {
+                            progress_sum = 0.0f;
+                        }
+
+                        progress_sum += update_package_progress;
+                    }
                 }
 
-                this.progress = ((double) progress_sum / (double)update_packages.size)/((double)100);
+                if (progress_sum == null) {
+                    this.progress = 1.0f;
+                } else {
+                    this.progress = ((double) progress_sum / (double)update_packages.size)/((double)100);
+                }
                 break;
             case Pk.ProgressType.STATUS:
                 status = (Pk.Status) progress.status;
@@ -231,7 +241,6 @@ public class AppCenterCore.Package : Object {
     }
 
     public string? get_version () {
-
         var package = find_package ();
         if (package != null) {
             string returned = package.get_version ();
