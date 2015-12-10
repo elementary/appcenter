@@ -80,6 +80,12 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
         return tree_set;
     }
 
+    public void clear () {
+        list_box.get_children ().foreach ((child) => {
+            child.destroy ();
+        });
+    }
+
     private int ListBoxSortFunc (Gtk.ListBoxRow row1, Gtk.ListBoxRow row2) {
         var package_a = ((Widgets.PackageRow) row1).package;
         var package_b = ((Widgets.PackageRow) row2).package;

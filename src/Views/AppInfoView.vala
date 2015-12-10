@@ -74,7 +74,7 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         });
 
         if (url != null) {
-            set_screenshot.begin (url);
+            set_screenshot (url);
         } else {
             app_screenshot.hide ();
             app_screenshot.no_show_all = true;
@@ -267,12 +267,16 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         }
     }
 
-    private async void set_screenshot (string url) {
-        var fileimage = File.new_for_uri (url);
-        var icon = new FileIcon (fileimage);
-        Idle.add (() => {
-            app_screenshot.gicon = icon;
-            return false;
+    private void set_screenshot (string url) {
+        new Thread<void*> ("screenshot", () => {
+            var fileimage = File.new_for_uri (url);
+            var icon = new FileIcon (fileimage);
+            Idle.add (() => {
+                app_screenshot.gicon = icon;
+                return GLib.Source.REMOVE;
+            });
+
+            return null;
         });
     }
 }

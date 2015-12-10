@@ -20,8 +20,33 @@
 
 using AppCenterCore;
 
-public class AppCenter.Views.SearchView : Gtk.Grid {
+public class AppCenter.Views.SearchView : View {
+    AppListView app_list_view;
+
     public SearchView () {
         
+    }
+
+    construct {
+        app_list_view = new AppListView ();
+        add (app_list_view);
+        app_list_view.show_app.connect ((package) => {
+            /// TRANSLATORS: the name of the Search view
+            subview_entered (C_("view", "Search"));
+            show_package (package);
+        });
+    }
+
+    public override void return_clicked () {
+        set_visible_child (app_list_view);
+    }
+
+    public void search (string search_term) {
+        unowned Client client = Client.get_default ();
+        var found_apps = client.search_applications (search_term);
+        app_list_view.clear ();
+        foreach (var app in found_apps) {
+            app_list_view.add_package (app);
+        }
     }
 }

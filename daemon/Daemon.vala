@@ -164,9 +164,9 @@ namespace AppCenterDaemon {
         return size;
     }
 
-    public static void update_cache () {
+    public static void update_cache (bool force = false) {
         // One cache update a day, keeps the doctor away!
-        if (last_cache_update == null || (new DateTime.now_local ()).difference (last_cache_update) >= GLib.TimeSpan.DAY) {
+        if (last_cache_update == null || (new DateTime.now_local ()).difference (last_cache_update) >= GLib.TimeSpan.DAY || force) {
             var refresh_task = new Pk.Task ();
             try {
                 refresh_task.refresh_cache_sync (false, null, (t, p) => { });
@@ -186,8 +186,8 @@ namespace AppCenterDaemon {
 
     [DBus (name = "org.pantheon.AppCenter")]
     public class UpdateSignals : Object {
-        public void refresh_cache () {
-            update_cache ();
+        public void refresh_cache (bool force) {
+            update_cache (force);
         }
 
         public void refresh_updates () {
