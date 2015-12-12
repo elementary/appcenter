@@ -140,9 +140,9 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         app_icon.pixel_size = 128;
 
         app_screenshot = new Gtk.Image ();
-        app_screenshot.pixel_size = 200;
+        app_screenshot.pixel_size = 256;
         app_screenshot.icon_name = "image-x-generic";
-        app_screenshot.halign = Gtk.Align.END;
+        app_screenshot.halign = Gtk.Align.CENTER;
         app_screenshot.valign = Gtk.Align.CENTER;
 
         app_name = new Gtk.Label (null);
@@ -162,12 +162,18 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         app_summary = new Gtk.Label (null);
         ((Gtk.Misc) app_summary).xalign = 0;
         app_summary.valign = Gtk.Align.START;
-        app_summary.get_style_context ().add_class ("h3");
+        app_summary.get_style_context ().add_class ("dim-label");
+        app_summary.get_style_context ().add_class ("h2");
+        app_summary.wrap = true;
+        app_summary.wrap_mode = Pango.WrapMode.WORD_CHAR;
 
         app_description = new Gtk.TextView ();
         app_description.expand = true;
         app_description.editable = false;
+        app_description.get_style_context ().add_class ("h3");
         app_description.cursor_visible = false;
+        app_description.pixels_below_lines = 16;
+        app_description.pixels_inside_wrap = 3;
         app_description.wrap_mode = Gtk.WrapMode.WORD_CHAR;
 
         action_stack = new Gtk.Stack ();
@@ -203,16 +209,16 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         progress_grid.add (progress_label);
         progress_grid.add (progress_bar);
 
+        var content_grid = new Gtk.Grid ();
+        content_grid.margin = 12;
+        content_grid.orientation = Gtk.Orientation.VERTICAL;
+        content_grid.add (app_screenshot);
+        content_grid.add (app_description);
+
         var scrolled = new Gtk.ScrolledWindow (null, null);
         scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
         scrolled.expand = true;
-        scrolled.add (app_description);
-
-        var content_grid = new Gtk.Grid ();
-        content_grid.margin = 12;
-        content_grid.orientation = Gtk.Orientation.HORIZONTAL;
-        content_grid.add (scrolled);
-        content_grid.add (app_screenshot);
+        scrolled.add (content_grid);
 
         action_stack.add_named (button_grid, "buttons");
         action_stack.add_named (progress_grid, "progress");
@@ -222,7 +228,7 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         attach (app_version, 2, 0, 1, 1);
         attach (action_stack, 3, 0, 1, 1);
         attach (app_summary, 1, 1, 3, 1);
-        attach (content_grid, 0, 2, 4, 1);
+        attach (scrolled, 0, 2, 4, 1);
     }
 
     private void update_status () {
@@ -309,7 +315,7 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
                     case "ul":
                         for (unowned Xml.Node* iter2 = iter->children; iter2 != null; iter2 = iter2->next) {
                             if (iter2->type == Xml.ElementType.ELEMENT_NODE) {
-                                app_description.buffer.text += "\t⦁ " + iter2->get_content () + "\n";
+                                app_description.buffer.text += "  ⦁  " + iter2->get_content () + "\n";
                             }
                         }
 
