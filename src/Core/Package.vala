@@ -25,6 +25,7 @@ public class AppCenterCore.Package : Object {
     public AppStream.Component component { public get; private set; }
     public ChangeInformation change_information { public get; private set; }
     public Gee.TreeSet<Pk.Package> installed_packages { public get; private set; }
+    public GLib.Cancellable action_cancellable { public get; private set; }
     public bool installed {
         public get {
             return !installed_packages.is_empty;
@@ -44,19 +45,22 @@ public class AppCenterCore.Package : Object {
         this.component = component;
         installed_packages = new Gee.TreeSet<Pk.Package> ();
         change_information = new ChangeInformation ();
+        action_cancellable = new GLib.Cancellable ();
     }
 
     public async void update () throws GLib.Error {
+        action_cancellable.reset ();
         try {
-            yield AppCenterCore.Client.get_default ().update_package (this, (progress, type) => {change_information.ProgressCallback (progress, type);});
+            yield AppCenterCore.Client.get_default ().update_package (this, (progress, type) => {change_information.ProgressCallback (progress, type);}, action_cancellable);
         } catch (Error e) {
             throw e;
         }
     }
 
     public async void install () throws GLib.Error {
+        action_cancellable.reset ();
         try {
-            yield AppCenterCore.Client.get_default ().install_package (this, (progress, type) => {change_information.ProgressCallback (progress, type);});
+            yield AppCenterCore.Client.get_default ().install_package (this, (progress, type) => {change_information.ProgressCallback (progress, type);}, action_cancellable);
             installed = true;
         } catch (Error e) {
             throw e;
@@ -64,8 +68,9 @@ public class AppCenterCore.Package : Object {
     }
 
     public async void uninstall () throws GLib.Error {
+        action_cancellable.reset ();
         try {
-            yield AppCenterCore.Client.get_default ().remove_package (this, (progress, type) => {});
+            yield AppCenterCore.Client.get_default ().remove_package (this, (progress, type) => {}, action_cancellable);
             installed = false;
         } catch (Error e) {
             throw e;

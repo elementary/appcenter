@@ -19,7 +19,7 @@
  */
 
 public class AppCenterCore.ChangeInformation : Object {
-    public signal void state_changed ();
+    public signal void status_changed ();
     public signal void progress_changed ();
 
     public Gee.TreeSet<Pk.Package> changes { public get; private set; }
@@ -164,7 +164,7 @@ public class AppCenterCore.ChangeInformation : Object {
                 break;
             case Pk.ProgressType.STATUS:
                 status = (Pk.Status) progress.status;
-                state_changed ();
+                status_changed ();
                 break;
         }
     }

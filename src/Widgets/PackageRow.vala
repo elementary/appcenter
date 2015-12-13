@@ -67,8 +67,8 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
             changed ();
         });
 
-        package.notify["progress"].connect (() => update_progress ());
-        package.notify["status"].connect (() => update_status ());
+        package.change_information.progress_changed.connect (() => update_progress ());
+        package.change_information.status_changed.connect (() => update_status ());
         update_progress ();
         update_status ();
     }
@@ -119,6 +119,10 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
         grid.attach (package_summary, 1, 1, 1, 1);
         grid.attach (action_stack, 2, 0, 1, 2);
         add (grid);
+
+        cancel_button.clicked.connect (() => {
+            package.action_cancellable.cancel ();
+        });
     }
 
     private async void update_package () {

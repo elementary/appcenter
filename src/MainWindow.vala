@@ -138,10 +138,11 @@ public class AppCenter.MainWindow : Gtk.Window {
             hide ();
             task_finished_connection = client.tasks_finished.connect (() => {
                 if (!visible) {
-                    delete_event (event);
+                    destroy ();
                 }
             });
 
+            client.interface_cancellable.cancel ();
             return true;
         }
 
@@ -156,7 +157,7 @@ public class AppCenter.MainWindow : Gtk.Window {
 
     private void trigger_search () {
         unowned string research = search_entry.text;
-        if (research.size () < 2) {
+        if (research.length < 2) {
             view_revealer.set_reveal_child (true);
             switch (view_mode.selected) {
                 /*case 0:
