@@ -1,4 +1,5 @@
 vala_precompile(VALA_C ${EXEC_NAME}
+    Core/ChangeInformation.vala
     Core/Client.vala
     Core/Package.vala
 

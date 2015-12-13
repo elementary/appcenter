@@ -156,7 +156,7 @@ public class AppCenter.MainWindow : Gtk.Window {
 
     private void trigger_search () {
         unowned string research = search_entry.text;
-        if (research == "") {
+        if (research.size () < 2) {
             view_revealer.set_reveal_child (true);
             switch (view_mode.selected) {
                 /*case 0:

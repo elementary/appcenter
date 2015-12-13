@@ -23,6 +23,8 @@ public class AppCenterCore.Package : Object {
     public signal void changed ();
 
     public AppStream.Component component { public get; private set; }
+    public ChangeInformation change_information { public get; private set; }
+    public Gee.TreeSet<Pk.Package> installed_packages { public get; private set; }
     public bool installed {
         public get {
             return !installed_packages.is_empty;
@@ -31,53 +33,30 @@ public class AppCenterCore.Package : Object {
             
         }
     }
+
     public bool update_available {
         public get {
-            return update_size > 0;
+            return installed && change_information.has_changes ();
         }
     }
-
-    private uint64 _update_size = 0ULL;
-    public uint64 update_size {
-        public get {
-            return _update_size;
-        }
-        public set {
-            if (_update_size != value) {
-                _update_size = value;
-            }
-        }
-    }
-
-    public double progress { get; set; default=1.0f; }
-    public Pk.Status status { get; set; default=Pk.Status.SETUP; }
-
-    public Gee.TreeSet<Pk.Package> installed_packages { get; private set; }
-    public Gee.HashMap<Pk.Package, double?> update_packages { get; private set; }
 
     public Package (AppStream.Component component) {
         this.component = component;
-        update_packages = new Gee.HashMap<Pk.Package, double?> ();
         installed_packages = new Gee.TreeSet<Pk.Package> ();
+        change_information = new ChangeInformation ();
     }
 
     public async void update () throws GLib.Error {
-        var treeset = new Gee.TreeSet<AppCenterCore.Package> ();
-        treeset.add (this);
-        this.progress = 0.0f;
         try {
-            yield AppCenterCore.Client.get_default ().update_packages (treeset, (progress, type) => {ProgressCallback (progress, type);});
+            yield AppCenterCore.Client.get_default ().update_package (this, (progress, type) => {change_information.ProgressCallback (progress, type);});
         } catch (Error e) {
             throw e;
         }
     }
 
     public async void install () throws GLib.Error {
-        var treeset = new Gee.TreeSet<AppCenterCore.Package> ();
-        treeset.add (this);
-        this.progress = 0.0f;
         try {
-            yield AppCenterCore.Client.get_default ().install_packages (treeset, (progress, type) => {ProgressCallback (progress, type);});
+            yield AppCenterCore.Client.get_default ().install_package (this, (progress, type) => {change_information.ProgressCallback (progress, type);});
             installed = true;
         } catch (Error e) {
             throw e;
@@ -85,130 +64,11 @@ public class AppCenterCore.Package : Object {
     }
 
     public async void uninstall () throws GLib.Error {
-        var treeset = new Gee.TreeSet<AppCenterCore.Package> ();
-        treeset.add (this);
-        this.progress = 0.0f;
         try {
-            yield AppCenterCore.Client.get_default ().remove_packages (treeset, (progress, type) => {ProgressCallback (progress, type);});
+            yield AppCenterCore.Client.get_default ().remove_package (this, (progress, type) => {});
             installed = false;
         } catch (Error e) {
             throw e;
-        }
-    }
-
-    public static string get_localized_status (Pk.Status status) {
-        switch (status) {
-            case Pk.Status.SETUP:
-                return _("Starting");
-            case Pk.Status.WAIT:
-                return _("Waiting in queue");
-            case Pk.Status.RUNNING:
-                return _("Running");
-            case Pk.Status.QUERY:
-                return _("Querying");
-            case Pk.Status.INFO:
-                return _("Getting information");
-            case Pk.Status.REMOVE:
-                return _("Removing packages");
-            case Pk.Status.DOWNLOAD:
-                return _("Downloading packages");
-            case Pk.Status.INSTALL:
-                return _("Installing packages");
-            case Pk.Status.REFRESH_CACHE:
-                return _("Refreshing software list");
-            case Pk.Status.UPDATE:
-                return _("Installing updates");
-            case Pk.Status.CLEANUP:
-                return _("Cleaning up packages");
-            case Pk.Status.OBSOLETE:
-                return _("Obsoleting packages");
-            case Pk.Status.DEP_RESOLVE:
-                return _("Resolving dependencies");
-            case Pk.Status.SIG_CHECK:
-                return _("Checking signatures");
-            case Pk.Status.TEST_COMMIT:
-                return _("Testing changes");
-            case Pk.Status.COMMIT:
-                return _("Committing changes");
-            case Pk.Status.REQUEST:
-                return _("Requesting data");
-            case Pk.Status.FINISHED:
-                return _("Finished");
-            case Pk.Status.CANCEL:
-                return _("Cancelling");
-            case Pk.Status.DOWNLOAD_REPOSITORY:
-                return _("Downloading repository information");
-            case Pk.Status.DOWNLOAD_PACKAGELIST:
-                return _("Downloading list of packages");
-            case Pk.Status.DOWNLOAD_FILELIST:
-                return _("Downloading file lists");
-            case Pk.Status.DOWNLOAD_CHANGELOG:
-                return _("Downloading lists of changes");
-            case Pk.Status.DOWNLOAD_GROUP:
-                return _("Downloading groups");
-            case Pk.Status.DOWNLOAD_UPDATEINFO:
-                return _("Downloading update information");
-            case Pk.Status.REPACKAGING:
-                return _("Repackaging files");
-            case Pk.Status.LOADING_CACHE:
-                return _("Loading cache");
-            case Pk.Status.SCAN_APPLICATIONS:
-                return _("Scanning applications");
-            case Pk.Status.GENERATE_PACKAGE_LIST:
-                return _("Generating package lists");
-            case Pk.Status.WAITING_FOR_LOCK:
-                return _("Waiting for package manager lock");
-            case Pk.Status.WAITING_FOR_AUTH:
-                return _("Waiting for authentication");
-            case Pk.Status.SCAN_PROCESS_LIST:
-                return _("Updating running applications");
-            case Pk.Status.CHECK_EXECUTABLE_FILES:
-                return _("Checking applications in use");
-            case Pk.Status.CHECK_LIBRARIES:
-                return _("Checking libraries in use");
-            case Pk.Status.COPY_FILES:
-                return _("Copying files");
-            default:
-                return _("Unknown state");
-        }
-    }
-
-    public void ProgressCallback (Pk.Progress progress, Pk.ProgressType type) {
-        switch (type) {
-            case Pk.ProgressType.ITEM_PROGRESS:
-                foreach (var update_package in update_packages.keys) {
-                    if (update_package.get_id () == progress.package_id) {
-                        update_packages.unset (update_package);
-                        update_packages.set (update_package, (double)progress.percentage);
-                        break;
-                    }
-                }
-
-                double? progress_sum = null;
-                foreach (var update_package_progress in update_packages.values) {
-                    if (update_package_progress != null) {
-                        if (progress_sum == null) {
-                            progress_sum = 0.0f;
-                        }
-
-                        progress_sum += update_package_progress;
-                    }
-                }
-
-                if (progress_sum == null) {
-                    this.progress = 1.0f;
-                } else {
-                    this.progress = ((double) progress_sum / (double)update_packages.size)/((double)100);
-                }
-                break;
-            case Pk.ProgressType.STATUS:
-                status = (Pk.Status) progress.status;
-                if (status == Pk.Status.FINISHED) {
-                    this.progress = 1.0f;
-                    status = Pk.Status.SETUP;
-                }
-
-                break;
         }
     }
 

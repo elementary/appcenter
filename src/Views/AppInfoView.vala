@@ -62,24 +62,6 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
             app_icon.gicon = new ThemedIcon ("application-default-icon");
         }
 
-        string url = null;
-        uint max_size = 0U;
-        package.component.get_screenshots ().foreach ((screenshot) => {
-            screenshot.get_images ().foreach ((image) => {
-                if (max_size < image.get_width ()) {
-                    url = image.get_url ();
-                    max_size = image.get_width ();
-                }
-            });
-        });
-
-        if (url != null) {
-            set_screenshot (url);
-        } else {
-            app_screenshot.hide ();
-            app_screenshot.no_show_all = true;
-        }
-
         if (package.update_available) {
             action_button.label = _("Update");
         } else if (package.installed) {
@@ -126,10 +108,6 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
     }
 
     construct {
-        halign = Gtk.Align.CENTER;
-        margin = 24;
-        width_request = 800;
-
         column_spacing = 12;
         row_spacing = 6;
         get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
@@ -210,7 +188,9 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         progress_grid.add (progress_bar);
 
         var content_grid = new Gtk.Grid ();
-        content_grid.margin = 12;
+        content_grid.width_request = 800;
+        content_grid.halign = Gtk.Align.CENTER;
+        content_grid.margin = 24;
         content_grid.orientation = Gtk.Orientation.VERTICAL;
         content_grid.add (app_screenshot);
         content_grid.add (app_description);
@@ -231,14 +211,35 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         attach (scrolled, 0, 2, 4, 1);
     }
 
+    public void load_more_content () {
+        string url = null;
+        uint max_size = 0U;
+        package.component.get_screenshots ().foreach ((screenshot) => {
+            screenshot.get_images ().foreach ((image) => {
+                if (max_size < image.get_width ()) {
+                    url = image.get_url ();
+                    max_size = image.get_width ();
+                }
+            });
+        });
+
+        if (url != null) {
+            set_screenshot (url);
+        } else {
+            app_screenshot.hide ();
+            app_screenshot.no_show_all = true;
+        }
+    }
+
     private void update_status () {
-        progress_label.label = Package.get_localized_status (package.status);
+        progress_label.label = package.change_information.get_status ();
     }
 
     private void update_progress () {
-        if (package.progress < 1.0f) {
+        var progress = package.change_information.get_progress ();
+        if (progress < 1.0f) {
             action_stack.set_visible_child_name ("progress");
-            progress_bar.fraction = package.progress;
+            progress_bar.fraction = progress;
         } else {
             action_stack.set_visible_child_name ("buttons");
         }
@@ -248,7 +249,7 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         var treeset = new Gee.TreeSet<AppCenterCore.Package> ();
         treeset.add (package);
         try {
-            if (package.installed && package.update_available) {
+            if (package.update_available) {
                 yield package.update ();
                 action_button.no_show_all = true;
                 action_button.hide ();

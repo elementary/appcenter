@@ -130,13 +130,14 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
     }
 
     private void update_status () {
-        update_label.label = Package.get_localized_status (package.status);
+        update_label.label = package.change_information.get_status ();
     }
 
     private void update_progress () {
-        if (package.progress < 1.0f) {
+        var progress = package.change_information.get_progress ();
+        if (progress < 1.0f) {
             action_stack.set_visible_child (update_grid);
-            update_progressbar.fraction = package.progress;
+            update_progressbar.fraction = progress;
         } else {
             action_stack.set_visible_child (update_button);
             update_button.hide ();

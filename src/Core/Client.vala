@@ -22,26 +22,12 @@ public class AppCenterCore.Client : Object {
     public AppCenterCore.Package os_updates { public get; private set; }
 
     private Gee.LinkedList<Pk.Task> task_list;
+    private Gee.LinkedList<Pk.Task> task_with_agreement_list;
     private Gee.HashMap<string, AppCenterCore.Package> package_list;
     private AppStream.Database appstream_database;
     private UpdateSignals update_daemon;
 
     private Client () {
-        task_list = new Gee.LinkedList<Pk.Task> ();
-        package_list = new Gee.HashMap<string, AppCenterCore.Package> (null, null);
-
-        var datapool = new AppStream.DataPool ();
-        datapool.update ();
-        appstream_database = new AppStream.Database ();
-        appstream_database.open ();
-
-        var os_updates_component = new AppStream.Component ();
-        os_updates_component.id = AppCenterCore.Package.OS_UPDATES_ID;
-        os_updates_component.name = _("Operating System Updates");
-        os_updates_component.summary = _("Updates to system components");
-        os_updates_component.add_icon (AppStream.IconKind.STOCK, 48, 48, "distributor-logo");
-        os_updates = new AppCenterCore.Package (os_updates_component);
-
         try {
             update_daemon = Bus.get_proxy_sync (BusType.SESSION, "org.pantheon.AppCenter", "/org/pantheon/appcenter");
         } catch (Error e) {
@@ -56,13 +42,36 @@ public class AppCenterCore.Client : Object {
         });
     }
 
+    construct {
+        task_list = new Gee.LinkedList<Pk.Task> ();
+        task_with_agreement_list = new Gee.LinkedList<Pk.Task> ();
+        package_list = new Gee.HashMap<string, AppCenterCore.Package> (null, null);
+
+        appstream_database = new AppStream.Database ();
+        appstream_database.open ();
+
+        var os_updates_component = new AppStream.Component ();
+        os_updates_component.id = AppCenterCore.Package.OS_UPDATES_ID;
+        os_updates_component.name = _("Operating System Updates");
+        os_updates_component.summary = _("Updates to system components");
+        os_updates_component.add_icon (AppStream.IconKind.STOCK, 48, 48, "distributor-logo");
+        os_updates = new AppCenterCore.Package (os_updates_component);
+    }
+
     public bool has_tasks () {
         return !task_list.is_empty;
     }
 
-    private Pk.Task request_task () {
+    private Pk.Task request_task (bool requires_user_agreement = true) {
         Pk.Task task = new Pk.Task ();
+        task.simulate = true;
         task_list.add (task);
+        if (requires_user_agreement) {
+            if (task_with_agreement_list.size == 0) {
+                Pk.polkit_agent_open ();
+            }
+            task_with_agreement_list.add (task);
+        }
         return task;
     }
 
@@ -70,17 +79,21 @@ public class AppCenterCore.Client : Object {
         task_list.remove (task);
         if (task_list.is_empty) {
             tasks_finished ();
+            if (task in task_with_agreement_list) {
+                task_with_agreement_list.remove (task);
+                if (task_with_agreement_list.size == 0) {
+                    Pk.polkit_agent_close ();
+                }
+            }
         }
     }
 
-    public async void install_packages (Gee.TreeSet<Package> packages, Pk.ProgressCallback cb) throws GLib.Error {
+    public async void install_package (Package package, Pk.ProgressCallback cb) throws GLib.Error {
         Pk.Task install_task = request_task ();
         Pk.Task search_task = request_task ();
         string[] packages_ids = {};
-        foreach (var package in packages) {
-            foreach (var pkg_name in package.component.get_pkgnames ()) {
-                packages_ids += pkg_name;
-            }
+        foreach (var pkg_name in package.component.get_pkgnames ()) {
+            packages_ids += pkg_name;
         }
         packages_ids += null;
 
@@ -103,13 +116,11 @@ public class AppCenterCore.Client : Object {
         release_task (install_task);
     }
 
-    public async void update_packages (Gee.TreeSet<Package> packages, Pk.ProgressCallback cb) throws GLib.Error {
+    public async void update_package (Package package, Pk.ProgressCallback cb) throws GLib.Error {
         Pk.Task update_task = request_task ();
         string[] packages_ids = {};
-        foreach (var package in packages) {
-            foreach (var pk_package in package.update_packages.keys) {
-                packages_ids += pk_package.get_id ();
-            }
+        foreach (var pk_package in package.change_information.changes) {
+            packages_ids += pk_package.get_id ();
         }
         packages_ids += null;
 
@@ -120,12 +131,9 @@ public class AppCenterCore.Client : Object {
             throw e;
         }
 
-        foreach (var package in packages) {
-            package.installed_packages.add_all (package.update_packages.keys);
-            package.update_packages.clear ();
-            package.update_size = 0ULL;
-            package.notify_property ("update-available");
-        }
+        package.installed_packages.add_all (package.change_information.changes);
+        package.change_information.clear ();
+        package.notify_property ("update-available");
 
         try {
             update_daemon.refresh_updates ();
@@ -136,14 +144,12 @@ public class AppCenterCore.Client : Object {
         release_task (update_task);
     }
 
-    public async void remove_packages (Gee.TreeSet<Package> packages, Pk.ProgressCallback cb) throws GLib.Error {
+    public async void remove_package (Package package, Pk.ProgressCallback cb) throws GLib.Error {
         Pk.Task remove_task = request_task ();
         Pk.Task search_task = request_task ();
         string[] packages_ids = {};
-        foreach (var package in packages) {
-            foreach (var pkg_name in package.component.get_pkgnames ()) {
-                packages_ids += pkg_name;
-            }
+        foreach (var pkg_name in package.component.get_pkgnames ()) {
+            packages_ids += pkg_name;
         }
         packages_ids += null;
 
@@ -173,8 +179,8 @@ public class AppCenterCore.Client : Object {
     }
 
     public async void get_updates () {
-        Pk.Task update_task = request_task ();
-        Pk.Task details_task = request_task ();
+        Pk.Task update_task = request_task (false);
+        Pk.Task details_task = request_task (false);
         try {
             Pk.Results result = yield update_task.get_updates_async (0, null, (t, p) => { });
             var packages = new Gee.HashMap<string, Pk.Package> (null, null);
@@ -197,8 +203,8 @@ public class AppCenterCore.Client : Object {
                     os_updates.component.pkgnames = pkgnames;
                 }
 
-                package.update_packages.set (pk_package, null);
-                package.update_size += pk_detail.size;
+                package.change_information.changes.add (pk_package);
+                package.change_information.details.add (pk_detail);
                 package.notify_property ("update-available");
             });
         } catch (Error e) {
@@ -211,7 +217,7 @@ public class AppCenterCore.Client : Object {
     }
 
     public async Gee.Collection<AppCenterCore.Package> get_installed_applications () {
-        Pk.Task packages_task = request_task ();
+        Pk.Task packages_task = request_task (false);
         var packages = new Gee.TreeSet<AppCenterCore.Package> ();
 
         try {
@@ -254,7 +260,7 @@ public class AppCenterCore.Client : Object {
     }
 
     public Pk.Package? get_app_package (string application, Pk.Bitfield additional_filters = 0, GLib.Cancellable? cancellable = null) throws GLib.Error {
-        Pk.Task packages_task = request_task ();
+        Pk.Task packages_task = request_task (false);
         Pk.Package? package = null;
         var filter = Pk.Bitfield.from_enums (Pk.Filter.NEWEST);
         filter |= additional_filters;

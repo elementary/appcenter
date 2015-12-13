@@ -150,7 +150,7 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
         foreach (var package in applications) {
             if (package.update_available) {
                 update_numbers++;
-                update_real_size += package.update_size;
+                update_real_size += package.change_information.get_size ();
             }
         }
 
@@ -181,34 +181,14 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
 
     private async void update_all_clicked () {
         var applications = get_packages ();
-        var treeset = new Gee.TreeSet<Package> ();
         foreach (var package in applications) {
             if (package.update_available) {
-                treeset.add (package);
-                package.progress = 0.0f;
-            }
-        }
-
-        try {
-            yield AppCenterCore.Client.get_default ().update_packages (treeset, (progress, type) => {ProgressCallback (treeset, progress, type);});
-        } catch (Error e) {
-            critical (e.message);
-        }
-        
-    }
-
-    private void ProgressCallback (Gee.TreeSet<Package> packages, Pk.Progress progress, Pk.ProgressType type) {
-        if (progress.package != null) {
-            foreach (var package in packages) {
-                if (progress.package.get_name () in package.component.get_pkgnames ()) {
-                    package.ProgressCallback (progress, type);
-                    return;
+                try {
+                    yield package.update ();
+                } catch (Error e) {
+                    critical (e.message);
                 }
             }
-        }
-
-        foreach (var package in packages) {
-            package.ProgressCallback (progress, type);
         }
     }
 }
