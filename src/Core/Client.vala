@@ -111,7 +111,12 @@ public class AppCenterCore.Client : Object {
             });
             packages_ids += null;
 
-            yield install_task.install_packages_async (packages_ids, null, cb);
+            results = yield install_task.install_packages_async (packages_ids, null, cb);
+            if (results.get_exit_code () != Pk.Exit.SUCCESS) {
+                release_task (search_task);
+                release_task (install_task);
+                throw new GLib.IOError.FAILED (Pk.Exit.enum_to_string (results.get_exit_code ()));
+            }
         } catch (Error e) {
             release_task (search_task);
             release_task (install_task);
@@ -131,15 +136,15 @@ public class AppCenterCore.Client : Object {
         packages_ids += null;
 
         try {
-            yield update_task.update_packages_async (packages_ids, cancellable, cb);
+            var results = yield update_task.update_packages_async (packages_ids, cancellable, cb);
+            if (results.get_exit_code () != Pk.Exit.SUCCESS) {
+                release_task (update_task);
+                throw new GLib.IOError.FAILED (Pk.Exit.enum_to_string (results.get_exit_code ()));
+            }
         } catch (Error e) {
             release_task (update_task);
             throw e;
         }
-
-        package.installed_packages.add_all (package.change_information.changes);
-        package.change_information.clear ();
-        package.notify_property ("update-available");
 
         try {
             update_daemon.refresh_updates ();
@@ -189,29 +194,34 @@ public class AppCenterCore.Client : Object {
         Pk.Task details_task = request_task (false);
         try {
             Pk.Results result = yield update_task.get_updates_async (0, interface_cancellable, (t, p) => { });
-            var packages = new Gee.HashMap<string, Pk.Package> (null, null);
+            string[] packages_array = {};
             result.get_package_array ().foreach ((pk_package) => {
-                packages.set (pk_package.get_id (), pk_package);
+                packages_array += pk_package.get_id ();
             });
 
             // We need a null to show to PackageKit that it's then end of the array.
-            string[] packages_array = packages.keys.to_array ();
             packages_array += null;
 
             Pk.Results result2 = yield details_task.get_details_async (packages_array , interface_cancellable, (t, p) => { });
             result2.get_details_array ().foreach ((pk_detail) => {
-                var pk_package = packages.get (pk_detail.get_package_id ());
-                var package = package_list.get (pk_package.get_name ());
-                if (package == null) {
-                    package = os_updates;
-                    var pkgnames = os_updates.component.pkgnames;
-                    pkgnames += pk_package.get_name ();
-                    os_updates.component.pkgnames = pkgnames;
-                }
+                var pk_package = new Pk.Package ();
+                try {
+                    pk_package.set_id (pk_detail.get_package_id ());
+                    unowned string pkg_name = pk_package.get_name ();
+                    var package = package_list.get (pkg_name);
+                    if (package == null) {
+                        package = os_updates;
+                        var pkgnames = os_updates.component.pkgnames;
+                        pkgnames += pkg_name;
+                        os_updates.component.pkgnames = pkgnames;
+                    }
 
-                package.change_information.changes.add (pk_package);
-                package.change_information.details.add (pk_detail);
-                package.notify_property ("update-available");
+                    package.change_information.changes.add (pk_package);
+                    package.change_information.details.add (pk_detail);
+                    package.notify_property ("update-available");
+                } catch (Error e) {
+                    critical (e.message);
+                }
             });
         } catch (Error e) {
             // Error code 19 is for operation canceled.

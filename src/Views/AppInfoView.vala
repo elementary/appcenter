@@ -102,6 +102,7 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
             }
         });
 
+        package.change_information.bind_property ("can-cancel", cancel_button, "sensitive", GLib.BindingFlags.SYNC_CREATE);
         package.change_information.progress_changed.connect (() => update_progress ());
         package.change_information.status_changed.connect (() => update_status ());
         update_progress ();

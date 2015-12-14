@@ -87,8 +87,8 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
     }
 
     private int ListBoxSortFunc (Gtk.ListBoxRow row1, Gtk.ListBoxRow row2) {
-        var package_a = ((Widgets.PackageRow) row1).package;
-        var package_b = ((Widgets.PackageRow) row2).package;
+        unowned Package package_a = ((Widgets.PackageRow) row1).package;
+        unowned Package package_b = ((Widgets.PackageRow) row2).package;
         if (updates_on_top) {
             if (package_a.component.id == "xxx-os-updates") {
                 return -1;
@@ -168,6 +168,25 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
         update_all_button.valign = Gtk.Align.CENTER;
         update_all_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
         update_all_button.clicked.connect (() => update_all_clicked.begin ());
+
+        uint current_update_number = update_numbers;
+        list_box.get_children ().foreach ((child) => {
+            var package = ((Widgets.PackageRow) child).package;
+            if (package.update_available) {
+                package.notify["changing"].connect (() => {
+                    if (package.changing) {
+                        current_update_number--;
+                    } else {
+                        if (package.update_available) {
+                            current_update_number++;
+                        }
+                    }
+
+                    update_all_button.sensitive = current_update_number != 0;
+                });
+            }
+        });
+
         var updates_grid = new Gtk.Grid ();
         updates_grid.margin = 6;
         updates_grid.orientation = Gtk.Orientation.HORIZONTAL;

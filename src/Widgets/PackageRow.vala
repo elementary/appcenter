@@ -67,6 +67,7 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
             changed ();
         });
 
+        package.change_information.bind_property ("can-cancel", cancel_button, "sensitive", GLib.BindingFlags.SYNC_CREATE);
         package.change_information.progress_changed.connect (() => update_progress ());
         package.change_information.status_changed.connect (() => update_status ());
         update_progress ();
@@ -127,10 +128,13 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
 
     private async void update_package () {
         try {
+            update_button.sensitive = false;
             yield package.update ();
         } catch (Error e) {
             critical (e.message);
         }
+
+        update_button.sensitive = true;
     }
 
     private void update_status () {
@@ -144,7 +148,6 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
             update_progressbar.fraction = progress;
         } else {
             action_stack.set_visible_child (update_button);
-            update_button.hide ();
         }
     }
 }
