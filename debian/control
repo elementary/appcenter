@@ -24,7 +24,7 @@ Depends: appstream,
          packagekit,
          ${misc:Depends},
          ${shlibs:Depends}
-Recommends: appcenter-daemon (= ${binary:Version})
+Recommends: appcenter-daemon (= ${binary:Version}), appstream-data-pantheon
 Pre-Depends: dpkg (>= 1.15.7.2)
 Description: Fast application store
  Install, update and remove apps with ease.
