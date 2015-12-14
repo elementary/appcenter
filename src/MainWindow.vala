@@ -42,6 +42,7 @@ public class AppCenter.MainWindow : Gtk.Window {
 
         view_mode.selected = 0;
         stack.set_visible_child (category_view);
+        search_entry.grab_focus_without_selecting ();
     }
 
     construct {
@@ -194,6 +195,7 @@ public class AppCenter.MainWindow : Gtk.Window {
         return_button.clicked.connect (() => {
             view_mode.sensitive = true;
             search_entry.sensitive = true;
+            search_entry.grab_focus_without_selecting ();
             current_button = null;
             view.return_clicked ();
             return_button.destroy ();
