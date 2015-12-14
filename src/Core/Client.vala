@@ -61,10 +61,10 @@ public class AppCenterCore.Client : Object {
         os_updates_component.id = AppCenterCore.Package.OS_UPDATES_ID;
         os_updates_component.name = _("Operating System Updates");
         os_updates_component.summary = _("Updates to system components");
-	var icon = new AppStream.Icon();
-	icon.set_name("distributor-logo");
-	icon.set_kind(AppStream.IconKind.STOCK);
-	os_updates_component.add_icon (icon);
+        var icon = new AppStream.Icon ();
+        icon.set_name ("distributor-logo");
+        icon.set_kind (AppStream.IconKind.STOCK);
+        os_updates_component.add_icon (icon);
         os_updates = new AppCenterCore.Package (os_updates_component);
     }
 

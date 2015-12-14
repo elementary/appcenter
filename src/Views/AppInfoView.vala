@@ -241,7 +241,6 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
 
     public void load_more_content () {
         new Thread<void*> ("content loading", () => {
-            app_version.label = package.get_version ();
             string url = null;
             uint max_size = 0U;
             package.component.get_screenshots ().foreach ((screenshot) => {
@@ -255,16 +254,9 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
 
             if (url != null) {
                 set_screenshot (url);
-                Idle.add (() => {
-                    screenshot_revealer.set_reveal_child (true);
-                    return Source.REMOVE;
-                });
-            } else {
-                Idle.add (() => {
-                    screenshot_revealer.set_reveal_child (false);
-                    return Source.REMOVE;
-                });
             }
+
+            app_version.label = package.get_version ();
 
             return null;
         });
@@ -323,7 +315,12 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
 
     // We need to first download the screenshot locally so that it doesn't freeze the interface.
     private void set_screenshot (string url) {
-        string path = "/tmp/.appcenter/XXXXXX";
+        var ret = GLib.DirUtils.create_with_parents (GLib.Environment.get_tmp_dir () + Path.DIR_SEPARATOR_S + ".appcenter", 0755);
+        if (ret == -1) {
+            critical ("Error creating the temporary folder: GFileError #%d", GLib.FileUtils.error_from_errno (GLib.errno));
+        }
+
+        string path = Path.build_path (Path.DIR_SEPARATOR_S, GLib.Environment.get_tmp_dir (), ".appcenter", "XXXXXX");
         File fileimage;
         var fd = GLib.FileUtils.mkstemp (path);
         if (fd != -1) {
@@ -333,17 +330,28 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
                 source.copy (fileimage, GLib.FileCopyFlags.OVERWRITE);
             } catch (Error e) {
                 critical (e.message);
-                fileimage = File.new_for_uri (url);
+                // The file is likely to not being found.
+                return;
             }
 
             GLib.FileUtils.close (fd);
         } else {
+            critical ("Error create the temporary file: GFileError #%d", GLib.FileUtils.error_from_errno (GLib.errno));
             fileimage = File.new_for_uri (url);
+            try {
+                if (fileimage.query_exists () == false) {
+                    return;
+                }
+            } catch (Error e) {
+                critical (e.message);
+                return;
+            }
         }
 
         var icon = new FileIcon (fileimage);
         Idle.add (() => {
             app_screenshot.gicon = icon;
+            screenshot_revealer.set_reveal_child (true);
             return GLib.Source.REMOVE;
         });
     }
