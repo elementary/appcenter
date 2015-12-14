@@ -3,15 +3,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-30 23:25+0100\n"
-"PO-Revision-Date: 2015-11-08 12:15+0000\n"
-"Last-Translator: elementaryart (old) <Unknown>\n"
+"PO-Revision-Date: 2015-12-14 02:07+0000\n"
+"Last-Translator: davidu0 <david.usero@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-12-01 05:15+0000\n"
-"X-Generator: Launchpad (build 17850)\n"
+"X-Launchpad-Export-Date: 2015-12-14 05:14+0000\n"
+"X-Generator: Launchpad (build 17865)\n"
 
 #: ../src/MainWindow.vala:33 ../src/Application.vala:35
 #: ../daemon/Daemon.vala:45 ../daemon/Daemon.vala:53
@@ -72,13 +72,13 @@ msgstr ""
 
 #: ../src/Views/AppListView.vala:129
 msgid "Up to date"
-msgstr ""
+msgstr "Actualizado"
 
 #: ../src/Views/AppListView.vala:152
 msgid "%u update is available."
 msgid_plural "%u updates are available."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u actualización disponible."
+msgstr[1] "%u actualizaciones disponibles."
 
 #: ../src/Views/AppListView.vala:158
 msgid "Size: %s"
@@ -86,7 +86,7 @@ msgstr "Tamaño: %s"
 
 #: ../src/Views/AppListView.vala:160
 msgid "Update All"
-msgstr ""
+msgstr "Actualizar Todo"
 
 #: ../src/Application.vala:18
 msgid "About App Center"
@@ -95,6 +95,8 @@ msgstr ""
 #: ../src/Application.vala:19
 msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
 msgstr ""
+"instalar;desinstalar;remover;catalogar;tienda;aplicaciones;actualizar;softwar"
+"e;"
 
 #: ../src/Application.vala:53
 msgid "translator-credits"
@@ -102,8 +104,11 @@ msgstr ""
 "Launchpad Contributions:\n"
 "  Alfredo Hernández https://launchpad.net/~aldomann\n"
 "  Daniel Fore https://launchpad.net/~danrabbit\n"
+"  Franco https://launchpad.net/~francomcas\n"
 "  Juan Mantilla https://launchpad.net/~judamalo77\n"
 "  Kaito 1412 https://launchpad.net/~keyser1412\n"
+"  Ricardo R Rodriguez https://launchpad.net/~rickrodz90-rr\n"
+"  davidu0 https://launchpad.net/~david-usero\n"
 "  elementaryart (old) https://launchpad.net/~elementaryart"
 
 #: ../src/Core/Package.vala:102
@@ -116,7 +121,7 @@ msgstr ""
 
 #: ../src/Core/Package.vala:106
 msgid "Running"
-msgstr ""
+msgstr "En Proceso"
 
 #: ../src/Core/Package.vala:108
 msgid "Querying"
@@ -252,23 +257,23 @@ msgstr ""
 
 #: ../src/Core/Client.vala:40
 msgid "Operating System Updates"
-msgstr ""
+msgstr "Actualizaciones del Sistema Operativo"
 
 #: ../src/Core/Client.vala:41
 msgid "Updates to system components"
-msgstr ""
+msgstr "Actualizaciones de los componentes del sistema"
 
 #: ../daemon/Daemon.vala:117
 msgid "Update Available"
 msgid_plural "Updates Available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Actualización Disponible"
+msgstr[1] "Actualizaciones Disponibles"
 
 #: ../daemon/Daemon.vala:119
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u actualización disponible para tu sistema"
+msgstr[1] "%u actualizaciones disponibles para tu sistema"
 
 #~ msgid "Apps Info"
 #~ msgstr "Información de aplicaciones"
