@@ -25,6 +25,7 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
 
     Gtk.Image app_icon;
     Gtk.Image app_screenshot;
+    Gtk.Revealer screenshot_revealer;
     Gtk.Label app_name;
     Gtk.Label app_version;
     Gtk.Label app_summary;
@@ -125,6 +126,11 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         app_screenshot.halign = Gtk.Align.CENTER;
         app_screenshot.valign = Gtk.Align.CENTER;
 
+        screenshot_revealer = new Gtk.Revealer ();
+        screenshot_revealer.set_reveal_child (false);
+        screenshot_revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_DOWN;
+        screenshot_revealer.add (app_screenshot);
+
         app_name = new Gtk.Label (null);
         app_name.margin_top = 12;
         ((Gtk.Misc) app_name).xalign = 0;
@@ -198,7 +204,7 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         content_grid.halign = Gtk.Align.CENTER;
         content_grid.margin = 24;
         content_grid.orientation = Gtk.Orientation.VERTICAL;
-        content_grid.add (app_screenshot);
+        content_grid.add (screenshot_revealer);
         content_grid.add (app_description);
 
         var scrolled = new Gtk.ScrolledWindow (null, null);
@@ -235,9 +241,9 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
 
         if (url != null) {
             set_screenshot (url);
+            screenshot_revealer.set_reveal_child (true);
         } else {
-            app_screenshot.hide ();
-            app_screenshot.no_show_all = true;
+            screenshot_revealer.set_reveal_child (false);
         }
     }
 
