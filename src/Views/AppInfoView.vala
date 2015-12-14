@@ -44,20 +44,22 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         app_version.label = package.get_version ();
         app_summary.label = package.get_summary ();
         parse_description (package.component.get_description ());
-        int size = 0;
-        package.component.get_icon_urls ().foreach ((k, v) => {
-            var current_size = int.parse (k.split ("x", 2)[0]);
-            if (current_size > size) {
-                size = current_size;
-                app_icon.gicon = new FileIcon (File.new_for_path (v));
+        uint size = 0;
+        string? icon_name = null;
+        package.component.get_icons ().foreach ((icon) => {
+            if (icon.get_kind() == AppStream.IconKind.STOCK)
+                icon_name = icon.get_name();
+            if (icon.get_filename() != null) {
+                var current_size = icon.get_width ();
+                if (current_size > size) {
+                    size = current_size;
+                    app_icon.gicon = new FileIcon (File.new_for_path (icon.get_filename ()));
+                }
             }
         });
 
-        if (app_icon.gicon == null) {
-            var icon_name = package.component.get_icon (AppStream.IconKind.STOCK, -1, -1);
-            if (icon_name != null) {
+        if ((app_icon.gicon == null) && (icon_name != null)) {
                 app_icon.gicon = new ThemedIcon (icon_name);
-            }
         }
 
         if (app_icon.gicon == null) {
@@ -312,36 +314,6 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
     }
 
     private void parse_description (string description) {
-        var doc_desc = "<root>%s</root>".printf (description);
-        unowned Xml.Doc* doc = Xml.Parser.read_memory (doc_desc, doc_desc.length);
-        if (doc == null) {
-            return;
-        }
-
-        unowned Xml.Node* root = doc->get_root_element ();
-        if (root == null) {
-            return;
-        }
-
-        for (unowned Xml.Node* iter = root->children; iter != null; iter = iter->next) {
-            if (iter->type == Xml.ElementType.ELEMENT_NODE) {
-                switch (iter->name) {
-                    case "p":
-                        app_description.buffer.text += iter->get_content () + "\n";
-                        continue;
-                    case "ul":
-                        for (unowned Xml.Node* iter2 = iter->children; iter2 != null; iter2 = iter2->next) {
-                            if (iter2->type == Xml.ElementType.ELEMENT_NODE) {
-                                app_description.buffer.text += "  ⦁  " + iter2->get_content () + "\n";
-                            }
-                        }
-
-                        continue;
-                    default:
-                        warning ("Unexpected element %s", iter->name);
-                        continue;
-                }
-            }
-        }
+        app_description.buffer.text = AppStream.description_markup_convert_simple (description);
     }
 }

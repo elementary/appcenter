@@ -61,7 +61,10 @@ public class AppCenterCore.Client : Object {
         os_updates_component.id = AppCenterCore.Package.OS_UPDATES_ID;
         os_updates_component.name = _("Operating System Updates");
         os_updates_component.summary = _("Updates to system components");
-        os_updates_component.add_icon (AppStream.IconKind.STOCK, 48, 48, "distributor-logo");
+	var icon = new AppStream.Icon();
+	icon.set_name("distributor-logo");
+	icon.set_kind(AppStream.IconKind.STOCK);
+	os_updates_component.add_icon (icon);
         os_updates = new AppCenterCore.Package (os_updates_component);
     }
 
@@ -260,7 +263,7 @@ public class AppCenterCore.Client : Object {
 
     public Gee.Collection<AppCenterCore.Package> get_applications_for_category (AppStream.Category category) {
         var apps = new Gee.TreeSet<AppCenterCore.Package> ();
-        var comps = appstream_database.find_components_by_term ("*", category.name);
+        var comps = appstream_database.find_components ("*", category.name);
         comps.foreach ((comp) => {
             apps.add (package_list.get (comp.get_pkgnames ()[0]));
         });
@@ -270,7 +273,7 @@ public class AppCenterCore.Client : Object {
 
     public Gee.Collection<AppCenterCore.Package> search_applications (string query) {
         var apps = new Gee.TreeSet<AppCenterCore.Package> ();
-        var comps = appstream_database.find_components_by_term (query, null);
+        var comps = appstream_database.find_components (query, null);
         comps.foreach ((comp) => {
             apps.add (package_list.get (comp.get_pkgnames ()[0]));
         });

@@ -39,16 +39,19 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
         package_name.label = package.get_name ();
         package_summary.label = package.get_summary ();
         package_summary.ellipsize = Pango.EllipsizeMode.END;
-        package.component.get_icon_urls ().foreach ((k, v) => {
-            var file = File.new_for_path (v);
-            image.gicon = new FileIcon (file);
+
+        string? icon_name = null;
+        package.component.get_icons ().foreach ((icon) => {
+            if (icon.get_kind() == AppStream.IconKind.STOCK)
+                icon_name = icon.get_name();
+            if (icon.get_filename() != null) {
+                var file = File.new_for_path (icon.get_filename());
+                image.gicon = new FileIcon (file);
+            }
         });
 
-        if (image.gicon == null) {
-            var icon_name = package.component.get_icon (AppStream.IconKind.STOCK, -1, -1);
-            if (icon_name != null) {
+        if ((image.gicon == null) && (icon_name != null)) {
                 image.gicon = new ThemedIcon (icon_name);
-            }
         }
 
         if (image.gicon == null) {
