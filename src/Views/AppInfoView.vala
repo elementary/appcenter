@@ -41,29 +41,39 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
     public AppInfoView (AppCenterCore.Package package) {
         this.package = package;
         app_name.label = package.get_name ();
-        app_version.label = package.get_version ();
         app_summary.label = package.get_summary ();
         parse_description (package.component.get_description ());
         uint size = 0;
-        string? icon_name = null;
+        string icon_name = "application-default-icon";
         package.component.get_icons ().foreach ((icon) => {
-            if (icon.get_kind() == AppStream.IconKind.STOCK)
-                icon_name = icon.get_name();
-            if (icon.get_filename() != null) {
-                var current_size = icon.get_width ();
-                if (current_size > size) {
-                    size = current_size;
-                    app_icon.gicon = new FileIcon (File.new_for_path (icon.get_filename ()));
-                }
+            switch (icon.get_kind ()) {
+                case AppStream.IconKind.STOCK:
+                    icon_name = icon.get_name ();
+                    break;
+                case AppStream.IconKind.CACHED:
+                case AppStream.IconKind.LOCAL:
+                    var current_size = icon.get_width ();
+                    if (current_size > size) {
+                        size = current_size;
+                        var file = File.new_for_path (icon.get_filename ());
+                        app_icon.gicon = new FileIcon (file);
+                    }
+
+                    break;
+                case AppStream.IconKind.REMOTE:
+                    var current_size = icon.get_width ();
+                    if (current_size > size) {
+                        size = current_size;
+                        var file = File.new_for_uri (icon.get_url ());
+                        app_icon.gicon = new FileIcon (file);
+                    }
+
+                    break;
             }
         });
 
-        if ((app_icon.gicon == null) && (icon_name != null)) {
-                app_icon.gicon = new ThemedIcon (icon_name);
-        }
-
         if (app_icon.gicon == null) {
-            app_icon.gicon = new ThemedIcon ("application-default-icon");
+            app_icon.gicon = new ThemedIcon (icon_name);
         }
 
         if (package.update_available) {
@@ -230,23 +240,34 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
     }
 
     public void load_more_content () {
-        string url = null;
-        uint max_size = 0U;
-        package.component.get_screenshots ().foreach ((screenshot) => {
-            screenshot.get_images ().foreach ((image) => {
-                if (max_size < image.get_width ()) {
-                    url = image.get_url ();
-                    max_size = image.get_width ();
-                }
+        new Thread<void*> ("content loading", () => {
+            app_version.label = package.get_version ();
+            string url = null;
+            uint max_size = 0U;
+            package.component.get_screenshots ().foreach ((screenshot) => {
+                screenshot.get_images ().foreach ((image) => {
+                    if (max_size < image.get_width ()) {
+                        url = image.get_url ();
+                        max_size = image.get_width ();
+                    }
+                });
             });
-        });
 
-        if (url != null) {
-            set_screenshot (url);
-            screenshot_revealer.set_reveal_child (true);
-        } else {
-            screenshot_revealer.set_reveal_child (false);
-        }
+            if (url != null) {
+                set_screenshot (url);
+                Idle.add (() => {
+                    screenshot_revealer.set_reveal_child (true);
+                    return Source.REMOVE;
+                });
+            } else {
+                Idle.add (() => {
+                    screenshot_revealer.set_reveal_child (false);
+                    return Source.REMOVE;
+                });
+            }
+
+            return null;
+        });
     }
 
     private void update_status () {
@@ -300,16 +321,30 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         }
     }
 
+    // We need to first download the screenshot locally so that it doesn't freeze the interface.
     private void set_screenshot (string url) {
-        new Thread<void*> ("screenshot", () => {
-            var fileimage = File.new_for_uri (url);
-            var icon = new FileIcon (fileimage);
-            Idle.add (() => {
-                app_screenshot.gicon = icon;
-                return GLib.Source.REMOVE;
-            });
+        string path = "/tmp/.appcenter/XXXXXX";
+        File fileimage;
+        var fd = GLib.FileUtils.mkstemp (path);
+        if (fd != -1) {
+            var source = File.new_for_uri (url);
+            fileimage = File.new_for_path (path);
+            try {
+                source.copy (fileimage, GLib.FileCopyFlags.OVERWRITE);
+            } catch (Error e) {
+                critical (e.message);
+                fileimage = File.new_for_uri (url);
+            }
 
-            return null;
+            GLib.FileUtils.close (fd);
+        } else {
+            fileimage = File.new_for_uri (url);
+        }
+
+        var icon = new FileIcon (fileimage);
+        Idle.add (() => {
+            app_screenshot.gicon = icon;
+            return GLib.Source.REMOVE;
         });
     }
 

@@ -40,22 +40,26 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
         package_summary.label = package.get_summary ();
         package_summary.ellipsize = Pango.EllipsizeMode.END;
 
-        string? icon_name = null;
+        string icon_name = "application-default-icon";
         package.component.get_icons ().foreach ((icon) => {
-            if (icon.get_kind() == AppStream.IconKind.STOCK)
-                icon_name = icon.get_name();
-            if (icon.get_filename() != null) {
-                var file = File.new_for_path (icon.get_filename());
-                image.gicon = new FileIcon (file);
+            switch (icon.get_kind ()) {
+                case AppStream.IconKind.STOCK:
+                    icon_name = icon.get_name ();
+                    break;
+                case AppStream.IconKind.CACHED:
+                case AppStream.IconKind.LOCAL:
+                    var file = File.new_for_path (icon.get_filename ());
+                    image.gicon = new FileIcon (file);
+                    break;
+                case AppStream.IconKind.REMOTE:
+                    var file = File.new_for_uri (icon.get_url ());
+                    image.gicon = new FileIcon (file);
+                    break;
             }
         });
 
-        if ((image.gicon == null) && (icon_name != null)) {
-                image.gicon = new ThemedIcon (icon_name);
-        }
-
         if (image.gicon == null) {
-            image.gicon = new ThemedIcon ("application-default-icon");
+            image.gicon = new ThemedIcon (icon_name);
         }
 
         package.notify["installed"].connect (() => {

@@ -263,12 +263,24 @@ public class AppCenterCore.Client : Object {
 
     public Gee.Collection<AppCenterCore.Package> get_applications_for_category (AppStream.Category category) {
         var apps = new Gee.TreeSet<AppCenterCore.Package> ();
-        var comps = appstream_database.find_components ("*", category.name);
+        string categories = get_string_from_categories (category).down ();
+        var comps = appstream_database.find_components (null, categories);
         comps.foreach ((comp) => {
             apps.add (package_list.get (comp.get_pkgnames ()[0]));
         });
 
         return apps;
+    }
+
+    private string get_string_from_categories (AppStream.Category category) {
+        string categories = category.name;
+        category.get_subcategories ().foreach ((cat) => {
+            if (!(cat.name in categories)) {
+                categories += ";"+get_string_from_categories (cat);
+            }
+        });
+
+        return categories;
     }
 
     public Gee.Collection<AppCenterCore.Package> search_applications (string query) {
