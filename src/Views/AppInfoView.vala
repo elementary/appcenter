@@ -34,6 +34,7 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
     Gtk.Button uninstall_button;
     Gtk.ProgressBar progress_bar;
     Gtk.Label progress_label;
+    Gtk.Button cancel_button;
     Gtk.Stack action_stack;
 
     public AppInfoView (AppCenterCore.Package package) {
@@ -101,8 +102,9 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
             }
         });
 
-        package.notify["progress"].connect (() => update_progress ());
-        package.notify["status"].connect (() => update_status ());
+        package.change_information.bind_property ("can-cancel", cancel_button, "sensitive", GLib.BindingFlags.SYNC_CREATE);
+        package.change_information.progress_changed.connect (() => update_progress ());
+        package.change_information.status_changed.connect (() => update_status ());
         update_progress ();
         update_status ();
     }
@@ -162,6 +164,10 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
 
         progress_label = new Gtk.Label (null);
 
+        cancel_button = new Gtk.Button.from_icon_name ("process-stop-symbolic", Gtk.IconSize.MENU);
+        cancel_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        cancel_button.valign = Gtk.Align.CENTER;
+
         action_button = new Gtk.Button.with_label (_("Install"));
         action_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
         action_button.get_style_context ().add_class ("h3");
@@ -183,9 +189,9 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         var progress_grid = new Gtk.Grid ();
         progress_grid.valign = Gtk.Align.CENTER;
         progress_grid.row_spacing = 6;
-        progress_grid.orientation = Gtk.Orientation.VERTICAL;
-        progress_grid.add (progress_label);
-        progress_grid.add (progress_bar);
+        progress_grid.attach (progress_label, 0, 0, 1, 1);
+        progress_grid.attach (progress_bar, 0, 1, 1, 1);
+        progress_grid.attach (cancel_button, 1, 0, 1, 2);
 
         var content_grid = new Gtk.Grid ();
         content_grid.width_request = 800;
@@ -209,6 +215,10 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         attach (action_stack, 3, 0, 1, 1);
         attach (app_summary, 1, 1, 3, 1);
         attach (scrolled, 0, 2, 4, 1);
+
+        cancel_button.clicked.connect (() => {
+            package.action_cancellable.cancel ();
+        });
     }
 
     public void load_more_content () {

@@ -19,11 +19,12 @@
  */
 
 public class AppCenterCore.ChangeInformation : Object {
-    public signal void state_changed ();
+    public signal void status_changed ();
     public signal void progress_changed ();
 
     public Gee.TreeSet<Pk.Package> changes { public get; private set; }
     public Gee.TreeSet<Pk.Details> details { public get; private set; }
+    public bool can_cancel { public get; private set; default=true; }
     private Gee.HashMap<string, double?> change_progress;
     private Pk.Status status;
     private double progress;
@@ -136,22 +137,28 @@ public class AppCenterCore.ChangeInformation : Object {
     public void clear () {
         changes.clear ();
         details.clear ();
+        reset ();
+    }
+
+    public void reset () {
         change_progress.clear ();
         status = Pk.Status.SETUP;
+        status_changed ();
         progress = 1.0f;
+        progress_changed ();
     }
 
     public void ProgressCallback (Pk.Progress progress, Pk.ProgressType type) {
         switch (type) {
+            case Pk.ProgressType.ALLOW_CANCEL:
+                can_cancel = progress.allow_cancel;
+                break;
             case Pk.ProgressType.ITEM_PROGRESS:
-                foreach (var change_package in change_progress.keys) {
-                    if (change_package == progress.package_id) {
-                        change_progress.unset (change_package);
-                        change_progress.set (change_package, (double)progress.percentage);
-                        break;
-                    }
+                if (progress.package_id in change_progress.keys) {
+                    change_progress.unset (progress.package_id);
                 }
 
+                change_progress.set (progress.package_id, (double)progress.percentage);
                 double progress_sum = 0.0f;
                 foreach (var change_package_progress in change_progress.values) {
                     if (change_package_progress != null) {
@@ -164,7 +171,7 @@ public class AppCenterCore.ChangeInformation : Object {
                 break;
             case Pk.ProgressType.STATUS:
                 status = (Pk.Status) progress.status;
-                state_changed ();
+                status_changed ();
                 break;
         }
     }

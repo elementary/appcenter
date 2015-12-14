@@ -26,13 +26,19 @@ public class AppCenterCore.Client : Object {
     private Gee.HashMap<string, AppCenterCore.Package> package_list;
     private AppStream.Database appstream_database;
     private UpdateSignals update_daemon;
+    public GLib.Cancellable interface_cancellable;
 
     private Client () {
-        try {
-            update_daemon = Bus.get_proxy_sync (BusType.SESSION, "org.pantheon.AppCenter", "/org/pantheon/appcenter");
-        } catch (Error e) {
-            critical (e.message);
-        }
+        Bus.get_proxy.begin<UpdateSignals> (BusType.SESSION, "org.pantheon.AppCenter", "/org/pantheon/appcenter", GLib.DBusProxyFlags.NONE, interface_cancellable, (obj, res) => {
+            try {
+                update_daemon = Bus.get_proxy.end (res);
+            } catch (Error e) {
+                // Error code 19 is for operation canceled.
+                if (e.code != 19) {
+                    critical (e.message);
+                }
+            }
+        });
 
         appstream_database.get_all_components ().foreach ((comp) => {
             var package = new AppCenterCore.Package (comp);
@@ -46,6 +52,7 @@ public class AppCenterCore.Client : Object {
         task_list = new Gee.LinkedList<Pk.Task> ();
         task_with_agreement_list = new Gee.LinkedList<Pk.Task> ();
         package_list = new Gee.HashMap<string, AppCenterCore.Package> (null, null);
+        interface_cancellable = new GLib.Cancellable ();
 
         appstream_database = new AppStream.Database ();
         appstream_database.open ();
@@ -64,7 +71,6 @@ public class AppCenterCore.Client : Object {
 
     private Pk.Task request_task (bool requires_user_agreement = true) {
         Pk.Task task = new Pk.Task ();
-        task.simulate = true;
         task_list.add (task);
         if (requires_user_agreement) {
             if (task_with_agreement_list.size == 0) {
@@ -88,7 +94,7 @@ public class AppCenterCore.Client : Object {
         }
     }
 
-    public async void install_package (Package package, Pk.ProgressCallback cb) throws GLib.Error {
+    public async void install_package (Package package, Pk.ProgressCallback cb, GLib.Cancellable cancellable) throws GLib.Error {
         Pk.Task install_task = request_task ();
         Pk.Task search_task = request_task ();
         string[] packages_ids = {};
@@ -98,14 +104,19 @@ public class AppCenterCore.Client : Object {
         packages_ids += null;
 
         try {
-            var results = yield search_task.search_names_async (Pk.Bitfield.from_enums (Pk.Filter.NEWEST, Pk.Filter.ARCH), packages_ids, null, () => {});
+            var results = yield search_task.search_names_async (Pk.Bitfield.from_enums (Pk.Filter.NEWEST, Pk.Filter.ARCH), packages_ids, cancellable, () => {});
             packages_ids = {};
             results.get_package_array ().foreach ((package) => {
                 packages_ids += package.package_id;
             });
             packages_ids += null;
 
-            yield install_task.install_packages_async (packages_ids, null, cb);
+            results = yield install_task.install_packages_async (packages_ids, null, cb);
+            if (results.get_exit_code () != Pk.Exit.SUCCESS) {
+                release_task (search_task);
+                release_task (install_task);
+                throw new GLib.IOError.FAILED (Pk.Exit.enum_to_string (results.get_exit_code ()));
+            }
         } catch (Error e) {
             release_task (search_task);
             release_task (install_task);
@@ -116,7 +127,7 @@ public class AppCenterCore.Client : Object {
         release_task (install_task);
     }
 
-    public async void update_package (Package package, Pk.ProgressCallback cb) throws GLib.Error {
+    public async void update_package (Package package, Pk.ProgressCallback cb, GLib.Cancellable cancellable) throws GLib.Error {
         Pk.Task update_task = request_task ();
         string[] packages_ids = {};
         foreach (var pk_package in package.change_information.changes) {
@@ -125,15 +136,15 @@ public class AppCenterCore.Client : Object {
         packages_ids += null;
 
         try {
-            yield update_task.update_packages_async (packages_ids, null, cb);
+            var results = yield update_task.update_packages_async (packages_ids, cancellable, cb);
+            if (results.get_exit_code () != Pk.Exit.SUCCESS) {
+                release_task (update_task);
+                throw new GLib.IOError.FAILED (Pk.Exit.enum_to_string (results.get_exit_code ()));
+            }
         } catch (Error e) {
             release_task (update_task);
             throw e;
         }
-
-        package.installed_packages.add_all (package.change_information.changes);
-        package.change_information.clear ();
-        package.notify_property ("update-available");
 
         try {
             update_daemon.refresh_updates ();
@@ -144,7 +155,7 @@ public class AppCenterCore.Client : Object {
         release_task (update_task);
     }
 
-    public async void remove_package (Package package, Pk.ProgressCallback cb) throws GLib.Error {
+    public async void remove_package (Package package, Pk.ProgressCallback cb, GLib.Cancellable cancellable) throws GLib.Error {
         Pk.Task remove_task = request_task ();
         Pk.Task search_task = request_task ();
         string[] packages_ids = {};
@@ -155,13 +166,13 @@ public class AppCenterCore.Client : Object {
 
         try {
             var filter = Pk.Bitfield.from_enums (Pk.Filter.INSTALLED, Pk.Filter.NEWEST);
-            var results = yield search_task.search_names_async (filter, packages_ids, null, () => {});
+            var results = yield search_task.search_names_async (filter, packages_ids, cancellable, () => {});
             packages_ids = {};
             results.get_package_array ().foreach ((package) => {
                 packages_ids += package.package_id;
             });
 
-            yield remove_task.remove_packages_async (packages_ids, true, true, null, cb);
+            yield remove_task.remove_packages_async (packages_ids, true, true, cancellable, cb);
         } catch (Error e) {
             release_task (search_task);
             release_task (remove_task);
@@ -182,33 +193,41 @@ public class AppCenterCore.Client : Object {
         Pk.Task update_task = request_task (false);
         Pk.Task details_task = request_task (false);
         try {
-            Pk.Results result = yield update_task.get_updates_async (0, null, (t, p) => { });
-            var packages = new Gee.HashMap<string, Pk.Package> (null, null);
+            Pk.Results result = yield update_task.get_updates_async (0, interface_cancellable, (t, p) => { });
+            string[] packages_array = {};
             result.get_package_array ().foreach ((pk_package) => {
-                packages.set (pk_package.get_id (), pk_package);
+                packages_array += pk_package.get_id ();
             });
 
             // We need a null to show to PackageKit that it's then end of the array.
-            string[] packages_array = packages.keys.to_array ();
             packages_array += null;
 
-            Pk.Results result2 = yield details_task.get_details_async (packages_array , null, (t, p) => { });
+            Pk.Results result2 = yield details_task.get_details_async (packages_array , interface_cancellable, (t, p) => { });
             result2.get_details_array ().foreach ((pk_detail) => {
-                var pk_package = packages.get (pk_detail.get_package_id ());
-                var package = package_list.get (pk_package.get_name ());
-                if (package == null) {
-                    package = os_updates;
-                    var pkgnames = os_updates.component.pkgnames;
-                    pkgnames += pk_package.get_name ();
-                    os_updates.component.pkgnames = pkgnames;
-                }
+                var pk_package = new Pk.Package ();
+                try {
+                    pk_package.set_id (pk_detail.get_package_id ());
+                    unowned string pkg_name = pk_package.get_name ();
+                    var package = package_list.get (pkg_name);
+                    if (package == null) {
+                        package = os_updates;
+                        var pkgnames = os_updates.component.pkgnames;
+                        pkgnames += pkg_name;
+                        os_updates.component.pkgnames = pkgnames;
+                    }
 
-                package.change_information.changes.add (pk_package);
-                package.change_information.details.add (pk_detail);
-                package.notify_property ("update-available");
+                    package.change_information.changes.add (pk_package);
+                    package.change_information.details.add (pk_detail);
+                    package.notify_property ("update-available");
+                } catch (Error e) {
+                    critical (e.message);
+                }
             });
         } catch (Error e) {
-            critical (e.message);
+            // Error code 19 is for operation canceled.
+            if (e.code != 19) {
+                critical (e.message);
+            }
         }
 
         release_task (details_task);
@@ -222,7 +241,7 @@ public class AppCenterCore.Client : Object {
 
         try {
             var filter = Pk.Bitfield.from_enums (Pk.Filter.INSTALLED, Pk.Filter.NEWEST);
-            Pk.Results result = yield packages_task.get_packages_async (filter, null, (prog, type) => {});
+            Pk.Results result = yield packages_task.get_packages_async (filter, interface_cancellable, (prog, type) => {});
             result.get_package_array ().foreach ((pk_package) => {
                 var package = package_list.get (pk_package.get_name ());
                 if (package != null) {
@@ -259,13 +278,13 @@ public class AppCenterCore.Client : Object {
         return apps;
     }
 
-    public Pk.Package? get_app_package (string application, Pk.Bitfield additional_filters = 0, GLib.Cancellable? cancellable = null) throws GLib.Error {
+    public Pk.Package? get_app_package (string application, Pk.Bitfield additional_filters = 0) throws GLib.Error {
         Pk.Task packages_task = request_task (false);
         Pk.Package? package = null;
         var filter = Pk.Bitfield.from_enums (Pk.Filter.NEWEST);
         filter |= additional_filters;
         try {
-            var results = packages_task.search_names_sync (filter, { application, null }, cancellable, () => {});
+            var results = packages_task.search_names_sync (filter, { application, null }, interface_cancellable, () => {});
             var array = results.get_package_array ();
             if (array.length > 0) {
                 package = array.get (0);
@@ -287,6 +306,6 @@ public class AppCenterCore.Client : Object {
 
 [DBus (name = "org.pantheon.AppCenter")]
 interface AppCenterCore.UpdateSignals : Object {
-    public abstract void refresh_cache () throws IOError;
+    public abstract void refresh_cache (bool force) throws IOError;
     public abstract void refresh_updates () throws IOError;
 }
