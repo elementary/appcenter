@@ -3,6 +3,7 @@ Section: utils
 Maintainer: Mario Guerriero <mefrio.g@gmail.com>
 Build-Depends: cmake,
                debhelper (>= 9),
+               intltool,
                libappstream-dev,
                libgee-0.8-dev,
                libgranite-dev,
