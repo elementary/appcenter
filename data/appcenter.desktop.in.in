@@ -8,7 +8,6 @@ Terminal=false
 Type=Application
 StartupNotify=true
 Categories=GNOME;GTK;System;PackageManager;
-X-GNOME-Gettext-Domain=@GETTEXT_PACKAGE@
 Actions=AboutDialog;
 
 [Desktop Action AboutDialog]
