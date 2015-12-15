@@ -33,7 +33,6 @@ public class AppCenter.Views.InstalledView : View {
 
             app_list_view.updating_cache = false;
         });
-        get_apps.begin ();
     }
 
     construct {
@@ -49,7 +48,7 @@ public class AppCenter.Views.InstalledView : View {
         set_visible_child (app_list_view);
     }
 
-    private async void get_apps () {
+    public async void get_apps () {
         unowned Client client = Client.get_default ();
         var installed_apps = yield client.get_installed_applications ();
         foreach (var app in installed_apps) {
