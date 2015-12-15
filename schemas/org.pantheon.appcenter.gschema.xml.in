@@ -7,23 +7,23 @@
   <schema path="/org/pantheon/appcenter/settings/" id="org.pantheon.appcenter.settings">
     <key type="i" name="window-width">
       <default>1100</default>
-      <summary>Window width</summary>
-      <description>Window width</description>
+      <_summary>Window width</_summary>
+      <_description>Window width</_description>
     </key>
     <key type="i" name="window-height">
       <default>600</default>
-      <summary>Window height</summary>
-      <description>Window height</description>
+      <_summary>Window height</_summary>
+      <_description>Window height</_description>
     </key>
     <key enum="org.pantheon.appcenter.windowstate" name="window-state">
       <default>'normal'</default>
-      <summary>The saved state of the window</summary>
-      <description>The saved state of the window</description>
+      <_summary>The saved state of the window</_summary>
+      <_description>The saved state of the window</_description>
     </key>
     <key type="b" name="developer-mode">
       <default>false</default>
-      <summary>The user is a developer</summary>
-      <description>Mode that allows the user to see more packages with development propurses</description>
+      <_summary>The user is a developer</_summary>
+      <_description>Mode that allows the user to see more packages with development propurses</_description>
     </key>
   </schema>
 </schemalist>

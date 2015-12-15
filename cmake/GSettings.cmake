@@ -25,7 +25,11 @@ macro(add_schema SCHEMA_NAME)
 
     # Run the validator and error if it fails
     execute_process (COMMAND ${PKG_CONFIG_EXECUTABLE} gio-2.0 --variable glib_compile_schemas  OUTPUT_VARIABLE _glib_comple_schemas OUTPUT_STRIP_TRAILING_WHITESPACE)
-    execute_process (COMMAND ${_glib_comple_schemas} --dry-run --schema-file=${CMAKE_CURRENT_SOURCE_DIR}/${SCHEMA_NAME} ERROR_VARIABLE _schemas_invalid OUTPUT_STRIP_TRAILING_WHITESPACE)
+    if((${SCHEMA_NAME} MATCHES ${CMAKE_SOURCE_DIR}) OR (${SCHEMA_NAME} MATCHES ${CMAKE_BINARY_DIR}))
+        execute_process (COMMAND ${_glib_comple_schemas} --dry-run --schema-file=${SCHEMA_NAME} ERROR_VARIABLE _schemas_invalid OUTPUT_STRIP_TRAILING_WHITESPACE)
+    else ()
+        execute_process (COMMAND ${_glib_comple_schemas} --dry-run --schema-file=${CMAKE_CURRENT_SOURCE_DIR}/${SCHEMA_NAME} ERROR_VARIABLE _schemas_invalid OUTPUT_STRIP_TRAILING_WHITESPACE)
+    endif ()
 
     if (_schemas_invalid)
       message (SEND_ERROR "Schema validation error: ${_schemas_invalid}")

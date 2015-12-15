@@ -34,8 +34,7 @@ ensure_vala_version ("0.26" MINIMUM)
 
 include (ValaPrecompile)
 
-add_subdirectory (src)
-add_subdirectory (daemon)
 add_subdirectory (data)
 add_subdirectory (po)
-add_subdirectory (schemas)
+add_subdirectory (src)
+add_subdirectory (daemon)

@@ -1,9 +1,9 @@
 [Desktop Entry]
-Name=@APP_NAME@
-Comment=@RELEASE_NAME@
+_Name=@APP_NAME@
+_Comment=@RELEASE_NAME@
 Exec=@EXEC_NAME@ %U
 Icon=@DESKTOP_ICON@
-Keywords=install;uninstall;remove;catalogue;store;apps;updates;software;
+_Keywords=install;uninstall;remove;catalogue;store;apps;updates;software;
 Terminal=false
 Type=Application
 StartupNotify=true
@@ -12,5 +12,5 @@ X-GNOME-Gettext-Domain=@GETTEXT_PACKAGE@
 Actions=AboutDialog;
 
 [Desktop Action AboutDialog]
-Name=About @APP_NAME@
+_Name=About @APP_NAME@
 Exec=@EXEC_NAME@ --about
