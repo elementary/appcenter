@@ -5,4 +5,4 @@ configure_file(org.pantheon.AppCenter.service.in ${CMAKE_CURRENT_BINARY_DIR}/org
 install (FILES ${CMAKE_CURRENT_BINARY_DIR}/appcenter.desktop DESTINATION share/applications)
 install (FILES ${CMAKE_CURRENT_BINARY_DIR}/appcenter-daemon.desktop DESTINATION share/applications)
 install (FILES ${CMAKE_CURRENT_BINARY_DIR}/org.pantheon.AppCenter.service DESTINATION share/dbus-1/services)
-#install (FILES appcenter.appdata.xml DESTINATION share/appdata)
+install (FILES ${CMAKE_CURRENT_BINARY_DIR}/appcenter.appdata.xml DESTINATION share/appdata)
