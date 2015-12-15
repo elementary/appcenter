@@ -148,7 +148,7 @@ macro (add_translations_catalog NLS_PACKAGE)
         # Intltool can't create a new directory.
         get_filename_component(DESKTOP_FILE_OUT_DIRECTORY ${DESKTOP_FILE_OUT} DIRECTORY)
         file(MAKE_DIRECTORY ${DESKTOP_FILE_OUT_DIRECTORY})
-        execute_process(WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} COMMAND ${INTLTOOL_MERGE_EXECUTABLE} --desktop-style ${EXTRA_PO_DIR} ${DESKTOP_FILE} ${DESKTOP_FILE_OUT})
+        execute_process(WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} COMMAND ${INTLTOOL_MERGE_EXECUTABLE} --quiet --desktop-style ${EXTRA_PO_DIR} ${DESKTOP_FILE} ${DESKTOP_FILE_OUT})
     endforeach (DESKTOP_FILE ${ARGS_DESKTOP_FILES})
 
     foreach (APPDATA_FILE ${ARGS_APPDATA_FILES})
@@ -170,10 +170,10 @@ macro (add_translations_catalog NLS_PACKAGE)
         file(MAKE_DIRECTORY ${GSETTINGS_FILE_OUT_DIRECTORY})
         execute_process(WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} COMMAND ${INTLTOOL_MERGE_EXECUTABLE} --quiet --schemas-style ${EXTRA_PO_DIR} ${GSETTINGS_FILE} ${GSETTINGS_FILE_OUT} OUTPUT_VARIABLE GSETTINGS_FINE)
         # We need to do this here otherwise there are some racing error.
-        if (GSETTINGS_FINE)
+        if (NOT (GSETTINGS_FINE))
             include (GSettings)
             add_schema (${GSETTINGS_FILE_OUT})
-        endif (GSETTINGS_FINE)
+        endif (NOT (GSETTINGS_FINE))
     endforeach (GSETTINGS_FILE ${ARGS_SCHEMA_FILES})
 
     set(BASE_XGETTEXT_COMMAND

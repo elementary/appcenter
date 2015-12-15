@@ -7,6 +7,4 @@ add_translations_catalog (${GETTEXT_PACKAGE}
         ${CMAKE_BINARY_DIR}/data/appcenter.desktop.in
     APPDATA_FILES
         ../data/appcenter.appdata.xml.in
-    SCHEMA_FILES
-        ../schemas/org.pantheon.appcenter.gschema.xml.in
 )

@@ -14,65 +14,61 @@
 * with this program. If not, see http://www.gnu.org/licenses/.
 */
 
-namespace AppCenter {
-    const string appcenter = N_("About App Center");
-    const string keywords = N_("install;uninstall;remove;catalogue;store;apps;updates;software;");
-    public class AppCenter : Granite.Application {
-        const OptionEntry[] appcenter_options =  {
-            { "show-updates", 'u', 0, OptionArg.NONE, out show_updates,
-            "Display the Installed Panel", null},
-            { null }
-        };
+public class AppCenter.App : Granite.Application {
+    const OptionEntry[] appcenter_options =  {
+        { "show-updates", 'u', 0, OptionArg.NONE, out show_updates,
+        "Display the Installed Panel", null},
+        { null }
+    };
 
-        public static bool show_updates;
-        MainWindow main_window;
-        construct {
-            application_id = "org.pantheon.appcenter";
-            flags = ApplicationFlags.FLAGS_NONE;
-            Intl.setlocale (LocaleCategory.ALL, "");
-            Intl.textdomain (Build.GETTEXT_PACKAGE);
+    public static bool show_updates;
+    MainWindow main_window;
+    construct {
+        application_id = "org.pantheon.appcenter";
+        flags = ApplicationFlags.FLAGS_NONE;
+        Intl.setlocale (LocaleCategory.ALL, "");
+        Intl.textdomain (Build.GETTEXT_PACKAGE);
 
-            program_name = _("App Center");
-            app_years = "2015";
-            app_icon = Build.DESKTOP_ICON;
+        program_name = _("App Center");
+        app_years = "2015";
+        app_icon = Build.DESKTOP_ICON;
 
-            build_data_dir = Build.DATADIR;
-            build_pkg_data_dir = Build.PKGDATADIR;
-            build_release_name = Build.RELEASE_NAME;
-            build_version = Build.VERSION;
-            build_version_info = Build.VERSION_INFO;
+        build_data_dir = Build.DATADIR;
+        build_pkg_data_dir = Build.PKGDATADIR;
+        build_release_name = Build.RELEASE_NAME;
+        build_version = Build.VERSION;
+        build_version_info = Build.VERSION_INFO;
 
-            app_launcher = "appcenter.desktop";
-            main_url = "https://launchpad.net/appcenter";
-            bug_url = "https://bugs.launchpad.net/appcenter";
-            help_url = "https://answers.launchpad.net/appcenter"; 
-            translate_url = "https://translations.launchpad.net/appcenter";
-            about_authors = { "Marvin Beckers <beckersmarvin@gmail.com>",
-                              "Corentin Noël <corentin@elementary.io>" };
-            about_comments = "";
-            about_translators = _("translator-credits");
-            about_license_type = Gtk.License.GPL_3_0;
-            add_main_option_entries (appcenter_options);
-        }
+        app_launcher = "appcenter.desktop";
+        main_url = "https://launchpad.net/appcenter";
+        bug_url = "https://bugs.launchpad.net/appcenter";
+        help_url = "https://answers.launchpad.net/appcenter"; 
+        translate_url = "https://translations.launchpad.net/appcenter";
+        about_authors = { "Marvin Beckers <beckersmarvin@gmail.com>",
+                          "Corentin Noël <corentin@elementary.io>" };
+        about_comments = "";
+        about_translators = _("translator-credits");
+        about_license_type = Gtk.License.GPL_3_0;
+        add_main_option_entries (appcenter_options);
+    }
 
-        public override void activate () {
-            if (main_window == null) {
-                main_window = new MainWindow ();
-                main_window.show_all ();
-                main_window.set_application (this);
-                if (show_updates) {
-                    main_window.go_to_installed ();
-                }
-            } else {
-                AppCenterCore.Client.get_default ().interface_cancellable.reset ();
+    public override void activate () {
+        if (main_window == null) {
+            main_window = new MainWindow ();
+            main_window.show_all ();
+            main_window.set_application (this);
+            if (show_updates) {
+                main_window.go_to_installed ();
             }
-
-            main_window.present ();
+        } else {
+            AppCenterCore.Client.get_default ().interface_cancellable.reset ();
         }
-    }
 
-    public static int main (string[] args) {
-        var application = new AppCenter ();
-        return application.run (args);
+        main_window.present ();
     }
+}
+
+public static int main (string[] args) {
+    var application = new AppCenter.App ();
+    return application.run (args);
 }
