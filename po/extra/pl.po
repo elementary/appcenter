@@ -1,0 +1,342 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-30 23:25+0100\n"
+"PO-Revision-Date: 2015-12-08 14:07+0000\n"
+"Last-Translator: Piotr Strębski <strebski@o2.pl>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2;\n"
+"X-Launchpad-Export-Date: 2015-12-09 05:22+0000\n"
+"X-Generator: Launchpad (build 17862)\n"
+
+#: ../src/MainWindow.vala:33 ../src/Application.vala:35
+#: ../daemon/Daemon.vala:45 ../daemon/Daemon.vala:53
+msgid "App Center"
+msgstr "Centrum oprogramowania"
+
+#: ../src/MainWindow.vala:96
+msgid "Featured"
+msgstr "Wyróżnione"
+
+#: ../src/MainWindow.vala:97 ../src/Views/CategoryView.vala:71
+#: ../src/Views/CategoryView.vala:78
+msgid "Categories"
+msgstr "Kategorie"
+
+#: ../src/MainWindow.vala:98 ../src/Views/InstalledView.vala:43
+msgctxt "view"
+msgid "Installed"
+msgstr "Zainstalowane"
+
+#: ../src/MainWindow.vala:101
+msgid "Search App"
+msgstr "Szukaj programu"
+
+#: ../src/Views/AppInfoView.vala:65 ../src/Views/AppInfoView.vala:81
+#: ../src/Views/AppInfoView.vala:90 ../src/Widgets/PackageRow.vala:98
+msgid "Update"
+msgstr "Aktualizuj"
+
+#: ../src/Views/AppInfoView.vala:96 ../src/Views/AppInfoView.vala:151
+#: ../src/Views/AppInfoView.vala:237
+msgid "Install"
+msgstr "Zainstaluj"
+
+#: ../src/Views/AppInfoView.vala:155
+msgid "Uninstall"
+msgstr "Odinstaluj"
+
+#: ../src/Views/FeaturedView.vala:33
+msgid "Best Rated"
+msgstr "Najlepiej oceniane"
+
+#: ../src/Views/FeaturedView.vala:36
+msgid "Latest Apps"
+msgstr "Najnowsze programy"
+
+#: ../src/Views/AppListView.vala:53
+msgid "No Apps"
+msgstr "Brak programów"
+
+#: ../src/Views/AppListView.vala:53
+msgid "You haven't found any app here."
+msgstr "Nie znaleziono tutaj żadnych programów."
+
+#: ../src/Views/AppListView.vala:123
+msgid "Searching for updates…"
+msgstr "Szukanie aktualizacji..."
+
+#: ../src/Views/AppListView.vala:129
+msgid "Up to date"
+msgstr "Aktualne"
+
+#: ../src/Views/AppListView.vala:152
+msgid "%u update is available."
+msgid_plural "%u updates are available."
+msgstr[0] "Dostępna jest %u aktualizacja"
+msgstr[1] "Dostępne są %u aktualizacje"
+msgstr[2] "Dostępnych jest %u aktualizacji"
+
+#: ../src/Views/AppListView.vala:158
+msgid "Size: %s"
+msgstr "Rozmiar: %s"
+
+#: ../src/Views/AppListView.vala:160
+msgid "Update All"
+msgstr "Aktualizuj wszystko"
+
+#: ../src/Application.vala:18
+msgid "About App Center"
+msgstr "O centrum oprogramowania"
+
+#: ../src/Application.vala:19
+msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
+msgstr ""
+"zainstaluj;odinstaluj;usuń;katalog;sklep;programy;aktualizacje;oprogramowanie"
+";"
+
+#: ../src/Application.vala:53
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Adrian Widerski https://launchpad.net/~adrian-widerski\n"
+"  Jonasz https://launchpad.net/~joni99\n"
+"  Mateusz K https://launchpad.net/~mattykom\n"
+"  Oskar M. https://launchpad.net/~oskare3\n"
+"  Pinwheel https://launchpad.net/~pinwheelgm\n"
+"  Piotr Strębski https://launchpad.net/~strebski\n"
+"  elementaryart (old) https://launchpad.net/~elementaryart"
+
+#: ../src/Core/Package.vala:102
+msgid "Starting"
+msgstr "Rozpoczynanie"
+
+#: ../src/Core/Package.vala:104
+msgid "Waiting in queue"
+msgstr "Oczekujące w kolejce"
+
+#: ../src/Core/Package.vala:106
+msgid "Running"
+msgstr "Uruchomione"
+
+#: ../src/Core/Package.vala:108
+msgid "Querying"
+msgstr "Odpytywanie"
+
+#: ../src/Core/Package.vala:110
+msgid "Getting information"
+msgstr "Pobieranie informacji"
+
+#: ../src/Core/Package.vala:112
+msgid "Removing packages"
+msgstr "Usuwanie pakietów"
+
+#: ../src/Core/Package.vala:114
+msgid "Downloading packages"
+msgstr "Pobieranie pakietów"
+
+#: ../src/Core/Package.vala:116
+msgid "Installing packages"
+msgstr "Instalowanie pakietów"
+
+#: ../src/Core/Package.vala:118
+msgid "Refreshing software list"
+msgstr "Odświeżanie listy oprogramowania"
+
+#: ../src/Core/Package.vala:120
+msgid "Installing updates"
+msgstr "Instalowanie aktualizacji"
+
+#: ../src/Core/Package.vala:122
+msgid "Cleaning up packages"
+msgstr "Porządkowanie pakietów"
+
+#: ../src/Core/Package.vala:124
+msgid "Obsoleting packages"
+msgstr "Określanie zbędności pakietów"
+
+#: ../src/Core/Package.vala:126
+msgid "Resolving dependencies"
+msgstr "Rozwiązywanie zależności"
+
+#: ../src/Core/Package.vala:128
+msgid "Checking signatures"
+msgstr "Sprawdzanie podpisów"
+
+#: ../src/Core/Package.vala:130
+msgid "Testing changes"
+msgstr "Testowanie zmian"
+
+#: ../src/Core/Package.vala:132
+msgid "Committing changes"
+msgstr "Zatwierdzanie zmian"
+
+#: ../src/Core/Package.vala:134
+msgid "Requesting data"
+msgstr "Pozyskiwanie danych"
+
+#: ../src/Core/Package.vala:136
+msgid "Finished"
+msgstr "Zakończono"
+
+#: ../src/Core/Package.vala:138
+msgid "Cancelling"
+msgstr "Anulowanie"
+
+#: ../src/Core/Package.vala:140
+msgid "Downloading repository information"
+msgstr "Pobieranie informacji o repozytorium"
+
+#: ../src/Core/Package.vala:142
+msgid "Downloading list of packages"
+msgstr "Pobieranie listy pakietów"
+
+#: ../src/Core/Package.vala:144
+msgid "Downloading file lists"
+msgstr "Pobieranie list plików"
+
+#: ../src/Core/Package.vala:146
+msgid "Downloading lists of changes"
+msgstr "Pobieranie list zmian"
+
+#: ../src/Core/Package.vala:148
+msgid "Downloading groups"
+msgstr "Pobieranie grup"
+
+#: ../src/Core/Package.vala:150
+msgid "Downloading update information"
+msgstr "Pobieranie informacji o aktualizacji"
+
+#: ../src/Core/Package.vala:152
+msgid "Repackaging files"
+msgstr "Ponowne umieszczanie plików w pakietach"
+
+#: ../src/Core/Package.vala:154
+msgid "Loading cache"
+msgstr "Wczytywanie pamięci podręcznej"
+
+#: ../src/Core/Package.vala:156
+msgid "Scanning applications"
+msgstr "Skanowanie programów"
+
+#: ../src/Core/Package.vala:158
+msgid "Generating package lists"
+msgstr "Tworzenie list pakietów"
+
+#: ../src/Core/Package.vala:160
+msgid "Waiting for package manager lock"
+msgstr "Oczekiwanie na blokadę menedżera pakietów"
+
+#: ../src/Core/Package.vala:162
+msgid "Waiting for authentication"
+msgstr "Oczekiwanie na uwierzytelnienie"
+
+#: ../src/Core/Package.vala:164
+msgid "Updating running applications"
+msgstr "Aktualizowanie uruchomionych programów"
+
+#: ../src/Core/Package.vala:166
+msgid "Checking applications in use"
+msgstr "Sprawdzanie używanych programów"
+
+#: ../src/Core/Package.vala:168
+msgid "Checking libraries in use"
+msgstr "Sprawdzanie używanych bibliotek"
+
+#: ../src/Core/Package.vala:170
+msgid "Copying files"
+msgstr "Kopiowanie plików"
+
+#: ../src/Core/Package.vala:172
+msgid "Unknown state"
+msgstr "Nieznany stan"
+
+#: ../src/Core/Client.vala:40
+msgid "Operating System Updates"
+msgstr "Aktualizacje systemu operacyjnego"
+
+#: ../src/Core/Client.vala:41
+msgid "Updates to system components"
+msgstr "Aktualizacje elementów systemu"
+
+#: ../daemon/Daemon.vala:117
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "Dostępna aktualizacja"
+msgstr[1] "Dostępne aktualizacje"
+msgstr[2] "Dostępne aktualizacje"
+
+#: ../daemon/Daemon.vala:119
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "Dostępna jest %u aktualizacja dla Twojego systemu"
+msgstr[1] "Dostępne są %u aktualizacje dla Twojego systemu"
+msgstr[2] "Dostępnych jest %u aktualizacji dla Twojego systemu"
+
+#~ msgid "Home Page"
+#~ msgstr "Strona główna"
+
+#~ msgid "Remove"
+#~ msgstr "Usuń"
+
+#~ msgid "Recreates database files"
+#~ msgstr "Odtwarza pliki bazy danych"
+
+#~ msgid "Quit"
+#~ msgstr "Zakończ"
+
+#~ msgid "Error page"
+#~ msgstr "Strona błędu"
+
+#~ msgid "Software Sources"
+#~ msgstr "Zasoby oprogramowania"
+
+#~ msgid "Categories View"
+#~ msgstr "Widok kategorii"
+
+#~ msgid "Updates View"
+#~ msgstr "Widok aktualizacji"
+
+#~ msgid "Show available updates"
+#~ msgstr "Pokaż dostępne aktualizacje"
+
+#~ msgid "Apps View"
+#~ msgstr "Widok programów"
+
+#~ msgid "Apps Info"
+#~ msgstr "Informacje o programach"
+
+#~ msgid "Installing"
+#~ msgstr "Instalowanie"
+
+#~ msgid "Removing"
+#~ msgstr "Usuwanie"
+
+#~ msgid "Browser apps in categories"
+#~ msgstr "Wyświetla programy w kategoriach"
+
+#~ msgid "application download center"
+#~ msgstr "centrum pobierania aplikacji"
+
+#~ msgid "Updates"
+#~ msgstr "Aktualizacje"
+
+#~ msgid "Find and install apps"
+#~ msgstr "Znajdź i zainstaluj aplikacje"
+
+#~ msgid "Use debug quiet mode"
+#~ msgstr "Ukryj informacje debugowania"
+
+#~ msgid "Load a package from the given id"
+#~ msgstr "Załaduj pakiet z określonego ID"
+
+#~ msgid "Edit source software"
+#~ msgstr "Edycja źródeł oprogramowania"
+
+#~ msgid "Search Apps"
+#~ msgstr "Wyszukaj programów"

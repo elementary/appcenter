@@ -1,0 +1,283 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-12-15 21:07+0100\n"
+"PO-Revision-Date: 2015-12-15 21:07+0100\n"
+"Last-Translator: Corentin Noël <corentin@elementaryos.org>\n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Launchpad-Export-Date: 2015-12-02 05:21+0000\n"
+"X-Generator: Poedit 1.8.6\n"
+
+#: ../build/data/appcenter.desktop.in:3
+msgid "App Center"
+msgstr "Centre d'applications"
+
+#: ../build/data/appcenter.desktop.in:4
+msgid "An elementary app center."
+msgstr ""
+
+#: ../build/data/appcenter.desktop.in:6
+msgid "system-software-install"
+msgstr ""
+
+#: ../build/data/appcenter.desktop.in:7
+msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
+msgstr ""
+"installer;désinstaller;supprimer;catalogue;store;applications;mises;"
+"jour;logiciel;logithèque;"
+
+#: ../build/data/appcenter.desktop.in:16
+msgid "About App Center"
+msgstr "À propos du Centre d'Applications"
+
+#~ msgid "Featured"
+#~ msgstr "Sélection"
+
+#~ msgid "Categories"
+#~ msgstr "Catégories"
+
+#~ msgctxt "view"
+#~ msgid "Installed"
+#~ msgstr "Installées"
+
+#~ msgid "Search App"
+#~ msgstr "Rechercher une application"
+
+#~ msgid "Update"
+#~ msgstr "Mettre à jour"
+
+#~ msgid "Install"
+#~ msgstr "Installer"
+
+#~ msgid "Uninstall"
+#~ msgstr "Désinstaller"
+
+#~ msgid "Best Rated"
+#~ msgstr "Mieux notés"
+
+#~ msgid "Latest Apps"
+#~ msgstr "Dernières applications"
+
+#~ msgid "No Apps"
+#~ msgstr "Aucune application"
+
+#~ msgid "You haven't found any app here."
+#~ msgstr "Vous n'avez trouvé aucune application ici."
+
+#~ msgid "Searching for updates…"
+#~ msgstr "Recherche de mises à jour…"
+
+#~ msgid "Up to date"
+#~ msgstr "À jour"
+
+#~ msgid "%u update is available."
+#~ msgid_plural "%u updates are available."
+#~ msgstr[0] "%u mise à jour disponible."
+#~ msgstr[1] "%u mises à jour disponibles."
+
+#~ msgid "Size: %s"
+#~ msgstr "Taille : %s"
+
+#~ msgid "Update All"
+#~ msgstr "Tout mettre à jour"
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Launchpad Contributions:\n"
+#~ "  Corentin Noël https://launchpad.net/~tintou\n"
+#~ "  Devil505 https://launchpad.net/~devil505\n"
+#~ "  Florie Depuiset https://launchpad.net/~florie-depuiset\n"
+#~ "  elementaryart (old) https://launchpad.net/~elementaryart"
+
+#~ msgid "Starting"
+#~ msgstr "Démarrage"
+
+#~ msgid "Waiting in queue"
+#~ msgstr "Attente dans la file"
+
+#~ msgid "Running"
+#~ msgstr "Exécution"
+
+#~ msgid "Querying"
+#~ msgstr "Recherche"
+
+#~ msgid "Getting information"
+#~ msgstr "Obtention d'informations"
+
+#~ msgid "Removing packages"
+#~ msgstr "Suppression des paquets"
+
+#~ msgid "Downloading packages"
+#~ msgstr "Téléchargement des paquets"
+
+#~ msgid "Installing packages"
+#~ msgstr "Installation des paquets"
+
+#~ msgid "Refreshing software list"
+#~ msgstr "Mise à jour de la liste des logiciels"
+
+#~ msgid "Installing updates"
+#~ msgstr "Installation des mises à jour"
+
+#~ msgid "Cleaning up packages"
+#~ msgstr "Nettoyage des paquets"
+
+#~ msgid "Obsoleting packages"
+#~ msgstr "Marquage des paquets comme obsolètes"
+
+#~ msgid "Resolving dependencies"
+#~ msgstr "Résolution des dépendances"
+
+#~ msgid "Checking signatures"
+#~ msgstr "Vérification des signatures"
+
+#~ msgid "Testing changes"
+#~ msgstr "Test des changements"
+
+#~ msgid "Committing changes"
+#~ msgstr "Inscription des changements"
+
+#~ msgid "Requesting data"
+#~ msgstr "Demande de données"
+
+#~ msgid "Finished"
+#~ msgstr "Terminé"
+
+#~ msgid "Cancelling"
+#~ msgstr "Annulation"
+
+#~ msgid "Downloading repository information"
+#~ msgstr "Téléchargement des informations sur les dépôts"
+
+#~ msgid "Downloading list of packages"
+#~ msgstr "Téléchargement de la liste des paquets"
+
+#~ msgid "Downloading file lists"
+#~ msgstr "Téléchargement des listes de fichiers"
+
+#~ msgid "Downloading lists of changes"
+#~ msgstr "Téléchargement des listes de changements"
+
+#~ msgid "Downloading groups"
+#~ msgstr "Téléchargement des groupes"
+
+#~ msgid "Downloading update information"
+#~ msgstr "Téléchargement des informations de mise à jour"
+
+#~ msgid "Repackaging files"
+#~ msgstr "Ré-empaquetage des fichiers"
+
+#~ msgid "Loading cache"
+#~ msgstr "Chargement du cache"
+
+#~ msgid "Scanning applications"
+#~ msgstr "Analyse des applications"
+
+#~ msgid "Generating package lists"
+#~ msgstr "Génération des listes de paquets"
+
+#~ msgid "Waiting for package manager lock"
+#~ msgstr "Attente du verrou du gestionnaire de paquets"
+
+#~ msgid "Waiting for authentication"
+#~ msgstr "En attente d'authentification"
+
+#~ msgid "Updating running applications"
+#~ msgstr "Mise à jour des applications en cours d'exécution"
+
+#~ msgid "Checking applications in use"
+#~ msgstr "Vérification des applications en cours d'exécution"
+
+#~ msgid "Checking libraries in use"
+#~ msgstr "Vérification des bibliothèques en cours d'utilisation"
+
+#~ msgid "Copying files"
+#~ msgstr "Copie des fichiers"
+
+#~ msgid "Unknown state"
+#~ msgstr "État inconnu"
+
+#~ msgid "Operating System Updates"
+#~ msgstr "Mises à jour du système d'exploitation"
+
+#~ msgid "Updates to system components"
+#~ msgstr "Mise à jour des composants système"
+
+#~ msgid "Update Available"
+#~ msgid_plural "Updates Available"
+#~ msgstr[0] "Mise à jour disponible"
+#~ msgstr[1] "Mises à jour disponibles"
+
+#~ msgid "%u update is available for your system"
+#~ msgid_plural "%u updates are available for your system"
+#~ msgstr[0] "%u mise à jour est disponible pour votre système"
+#~ msgstr[1] "%u mises à jour sont disponibles pour votre système"
+
+#~ msgid "Apps View"
+#~ msgstr "Vue des applications"
+
+#~ msgid "Apps Info"
+#~ msgstr "Information des applications"
+
+#~ msgid "Home Page"
+#~ msgstr "Accueil"
+
+#~ msgid "Remove"
+#~ msgstr "Supprimer"
+
+#~ msgid "Search Apps"
+#~ msgstr "Rechercher des Applications"
+
+#~ msgid "Error page"
+#~ msgstr "Page d'erreur"
+
+#~ msgid "Quit"
+#~ msgstr "Quitter"
+
+#~ msgid "Edit source software"
+#~ msgstr "Éditer les sources de logiciels"
+
+#~ msgid "Software Sources"
+#~ msgstr "Sources de logiciels"
+
+#~ msgid "Recreates database files"
+#~ msgstr "Régénère la base de données"
+
+#~ msgid "Load a package from the given id"
+#~ msgstr "Charger un paquet à partir de l'identifiant donné"
+
+#~ msgid "Browser apps in categories"
+#~ msgstr "Naviguer dans les applications par catégories"
+
+#~ msgid "Removing"
+#~ msgstr "En cours de suppression"
+
+#~ msgid "Installing"
+#~ msgstr "En cours d'installation"
+
+#~ msgid "Categories View"
+#~ msgstr "Vue des catégories"
+
+#~ msgid "Updates View"
+#~ msgstr "Actualiser la vue"
+
+#~ msgid "Show available updates"
+#~ msgstr "Afficher les mises à jour disponibles"
+
+#~ msgid "Use debug quiet mode"
+#~ msgstr "Utiliser le débugueur en mode silencieux"
+
+#~ msgid "application download center"
+#~ msgstr "Logithèque"
+
+#~ msgid "Find and install apps"
+#~ msgstr "Chercher et installer des applications"
+
+#~ msgid "Updates"
+#~ msgstr "Mises à jours"
