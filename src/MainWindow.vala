@@ -56,13 +56,9 @@ public class AppCenter.MainWindow : Gtk.Window {
         set_titlebar (headerbar);
 
         view_mode = new Granite.Widgets.ModeButton ();
-        //TODO: uncomment it once we get some information to display
-        //view_mode.append_text (_("Featured"));
-        view_mode.append_text (_("Categories"));
-        view_mode.append_text (C_("view", "Installed"));
 
         view_revealer = new Gtk.Revealer ();
-        view_revealer.set_reveal_child (true);
+        view_revealer.set_reveal_child (false);
         view_revealer.transition_type = Gtk.RevealerTransitionType.CROSSFADE;
         view_revealer.add (view_mode);
 
@@ -101,6 +97,23 @@ public class AppCenter.MainWindow : Gtk.Window {
         stack.add (installed_view);
         stack.add (search_view);
         add (stack);
+
+        //TODO: uncomment it once we get some information to display
+        //view_mode.append_text (_("Featured"));
+        view_mode.append_text (_("Categories"));
+
+        unowned AppCenterCore.Client client = AppCenterCore.Client.get_default ();
+        if (client.connected_to_daemon) {
+            view_mode.append_text (C_("view", "Installed"));
+            view_revealer.set_reveal_child (true);
+            installed_view.get_apps.begin ();
+        } else {
+            client.notify["connected-to-daemon"].connect (() => {
+                view_mode.append_text (C_("view", "Installed"));
+                view_revealer.set_reveal_child (true);
+                installed_view.get_apps.begin ();
+            });
+        }
 
         category_view.subview_entered.connect ((name) => {
             show_return_button (name, category_view);
@@ -152,7 +165,7 @@ public class AppCenter.MainWindow : Gtk.Window {
 
     public void go_to_installed () {
         if (view_mode.sensitive) {
-            view_mode.selected = 2;
+            view_mode.selected = 1;
         }
     }
 

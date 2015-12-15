@@ -19,6 +19,7 @@ public class AppCenterCore.Client : Object {
     public signal void tasks_finished ();
 
     public bool connected { public get; private set; }
+    public bool connected_to_daemon { public get; private set; default=false; }
     public AppCenterCore.Package os_updates { public get; private set; }
 
     private Gee.LinkedList<Pk.Task> task_list;
@@ -32,6 +33,7 @@ public class AppCenterCore.Client : Object {
         Bus.get_proxy.begin<UpdateSignals> (BusType.SESSION, "org.pantheon.AppCenter", "/org/pantheon/appcenter", GLib.DBusProxyFlags.NONE, interface_cancellable, (obj, res) => {
             try {
                 update_daemon = Bus.get_proxy.end (res);
+                connected_to_daemon = true;
             } catch (Error e) {
                 // Error code 19 is for operation canceled.
                 if (e.code != 19) {
@@ -239,25 +241,23 @@ public class AppCenterCore.Client : Object {
     }
 
     public async Gee.Collection<AppCenterCore.Package> get_installed_applications () {
-        Pk.Task packages_task = request_task (false);
         var packages = new Gee.TreeSet<AppCenterCore.Package> ();
-
         try {
-            var filter = Pk.Bitfield.from_enums (Pk.Filter.INSTALLED, Pk.Filter.NEWEST);
-            Pk.Results result = yield packages_task.get_packages_async (filter, interface_cancellable, (prog, type) => {});
-            result.get_package_array ().foreach ((pk_package) => {
+            var packages_strv = update_daemon.get_installed_packages ();
+            foreach (var pkg_id in packages_strv) {
+                var pk_package = new Pk.Package ();
+                pk_package.set_id (pkg_id);
                 var package = package_list.get (pk_package.get_name ());
                 if (package != null) {
                     package.installed_packages.add (pk_package);
                     package.notify_property ("installed");
                     packages.add (package);
                 }
-            });
+            }
         } catch (Error e) {
             critical (e.message);
         }
 
-        release_task (packages_task);
         return packages;
     }
 
@@ -323,4 +323,5 @@ public class AppCenterCore.Client : Object {
 interface AppCenterCore.UpdateSignals : Object {
     public abstract void refresh_cache (bool force) throws IOError;
     public abstract void refresh_updates () throws IOError;
+    public abstract string[] get_installed_packages () throws IOError;
 }

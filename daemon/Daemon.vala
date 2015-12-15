@@ -102,9 +102,27 @@ namespace AppCenterDaemon {
                   () => {},
                   () => critical ("Could not aquire name"));
 
+        update_installed_cache ();
         update_cache ();
 
         return app.run (args);
+    }
+
+    public static void update_installed_cache () {
+        var packages_task = new Pk.Task ();
+        var filter = Pk.Bitfield.from_enums (Pk.Filter.INSTALLED, Pk.Filter.NEWEST);
+        try {
+            var keyfile = new KeyFile ();
+            var db_path = get_db ();
+            keyfile.load_from_file (db_path, GLib.KeyFileFlags.NONE);
+            Pk.Results result = packages_task.get_packages_sync (filter, null, (prog, type) => {});
+            result.get_package_array ().foreach ((pk_package) => {
+                db_add_installed (keyfile, pk_package.get_id ());
+            });
+            keyfile.save_to_file (db_path);
+        } catch (Error e) {
+            critical (e.message);
+        }
     }
 
     public static void updates_changed () {
@@ -168,14 +186,16 @@ namespace AppCenterDaemon {
         // One cache update a day, keeps the doctor away!
         if (last_cache_update == null || (new DateTime.now_local ()).difference (last_cache_update) >= GLib.TimeSpan.DAY || force) {
             var refresh_task = new Pk.Task ();
-            try {
-                refresh_task.refresh_cache_sync (false, null, (t, p) => { });
-                last_cache_update = new DateTime.now_local ();
-            } catch (Error e) {
-                critical (e.message);
-            }
+                refresh_task.refresh_cache_async.begin (false, null, (t, p) => { }, (obj, res) => {
+                    try {
+                        refresh_task.refresh_cache_async.end (res);
+                        last_cache_update = new DateTime.now_local ();
+                    } catch (Error e) {
+                        critical (e.message);
+                    }
 
-            updates_changed ();
+                    updates_changed ();
+                });
         }
 
         GLib.Timeout.add_seconds (60*60*24, () => {
@@ -193,6 +213,10 @@ namespace AppCenterDaemon {
         public void refresh_updates () {
             updates_changed ();
         }
+
+        public string[] get_installed_packages () {
+            return db_get_installed ();
+        }
     }
 
     public static void on_bus_aquired (DBusConnection conn) {
@@ -201,5 +225,62 @@ namespace AppCenterDaemon {
         } catch (IOError e) {
             critical ("Could not register service");
         }
+    }
+
+    /*
+     * basic savedstate management.
+     * Everything is refreshed at session start.
+     */
+
+    public static void db_add_installed (KeyFile keyfile, string pkg_name) {
+        try {
+            var strings = keyfile.get_string_list ("SavedState", "installed");
+            if (pkg_name in strings) {
+                return;
+            } else {
+                strings += pkg_name;
+                keyfile.set_string_list ("SavedState", "installed", strings);
+            }
+        } catch (Error e) {
+            try {
+                keyfile.set_string_list ("SavedState", "installed", {pkg_name});
+            } catch (Error e) {
+                critical (e.message);
+            }
+        }
+    }
+
+    public static string[] db_get_installed () {
+        var keyfile = new KeyFile ();
+        try {
+            keyfile.load_from_file (get_db (), GLib.KeyFileFlags.NONE);
+            return keyfile.get_string_list ("SavedState", "installed");
+        } catch (Error e) {
+            critical (e.message);
+            return {};
+        }
+    }
+
+    public static string db_file;
+    public static string get_db () {
+        if (db_file != null) {
+            return db_file;
+        }
+
+        var ret = GLib.DirUtils.create_with_parents (GLib.Environment.get_tmp_dir () + Path.DIR_SEPARATOR_S + ".appcenter", 0755);
+        if (ret == -1) {
+            error ("Error creating the temporary folder: GFileError #%d", GLib.FileUtils.error_from_errno (GLib.errno));
+        }
+
+        db_file = Path.build_path (Path.DIR_SEPARATOR_S, GLib.Environment.get_tmp_dir (), ".appcenter", "db-XXXXXX");
+        var fd = GLib.FileUtils.mkstemp (db_file);
+        if (fd != -1) {
+            GLib.FileUtils.close (fd);
+        } else {
+            db_file = null;
+            error ("Error create the temporary file: GFileError #%d", GLib.FileUtils.error_from_errno (GLib.errno));
+        }
+
+        return db_file;
     }
 }
