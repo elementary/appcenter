@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-30 23:25+0100\n"
+"POT-Creation-Date: 2015-12-15 22:34+0100\n"
 "PO-Revision-Date: 2015-11-04 14:21+0000\n"
 "Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -10,44 +10,47 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n!=1;\n"
-"X-Launchpad-Export-Date: 2015-12-01 05:15+0000\n"
-"X-Generator: Launchpad (build 17850)\n"
+"X-Launchpad-Export-Date: 2015-12-16 05:17+0000\n"
+"X-Generator: Launchpad (build 17865)\n"
 
-#: ../src/MainWindow.vala:33 ../src/Application.vala:35
+#: ../src/MainWindow.vala:50 ../src/Application.vala:32
 #: ../daemon/Daemon.vala:45 ../daemon/Daemon.vala:53
 msgid "App Center"
 msgstr ""
 
-#: ../src/MainWindow.vala:96
-msgid "Featured"
+#: ../src/MainWindow.vala:66
+msgid "Search App"
 msgstr ""
 
-#: ../src/MainWindow.vala:97 ../src/Views/CategoryView.vala:71
+#: ../src/MainWindow.vala:103 ../src/Views/CategoryView.vala:71
 #: ../src/Views/CategoryView.vala:78
 msgid "Categories"
 msgstr ""
 
-#: ../src/MainWindow.vala:98 ../src/Views/InstalledView.vala:43
+#: ../src/MainWindow.vala:107 ../src/MainWindow.vala:112
+#: ../src/Views/InstalledView.vala:42
 msgctxt "view"
 msgid "Installed"
 msgstr ""
 
-#: ../src/MainWindow.vala:101
-msgid "Search App"
-msgstr ""
-
-#: ../src/Views/AppInfoView.vala:65 ../src/Views/AppInfoView.vala:81
-#: ../src/Views/AppInfoView.vala:90 ../src/Widgets/PackageRow.vala:98
+#: ../src/Views/AppInfoView.vala:80 ../src/Views/AppInfoView.vala:96
+#: ../src/Views/AppInfoView.vala:105 ../src/Widgets/PackageRow.vala:106
 msgid "Update"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:96 ../src/Views/AppInfoView.vala:151
-#: ../src/Views/AppInfoView.vala:237
+#: ../src/Views/AppInfoView.vala:111 ../src/Views/AppInfoView.vala:189
+#: ../src/Views/AppInfoView.vala:307
 msgid "Install"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:155
+#: ../src/Views/AppInfoView.vala:194
 msgid "Uninstall"
+msgstr ""
+
+#. / TRANSLATORS: the name of the Search view
+#: ../src/Views/SearchView.vala:35
+msgctxt "view"
+msgid "Search"
 msgstr ""
 
 #: ../src/Views/FeaturedView.vala:33
@@ -66,199 +69,191 @@ msgstr ""
 msgid "You haven't found any app here."
 msgstr ""
 
-#: ../src/Views/AppListView.vala:123
+#: ../src/Views/AppListView.vala:129
 msgid "Searching for updates…"
 msgstr ""
 
-#: ../src/Views/AppListView.vala:129
+#: ../src/Views/AppListView.vala:135
 msgid "Up to date"
 msgstr ""
 
-#: ../src/Views/AppListView.vala:152
+#: ../src/Views/AppListView.vala:158
 msgid "%u update is available."
 msgid_plural "%u updates are available."
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/Views/AppListView.vala:158
+#: ../src/Views/AppListView.vala:164
 msgid "Size: %s"
 msgstr ""
 
-#: ../src/Views/AppListView.vala:160
+#: ../src/Views/AppListView.vala:166
 msgid "Update All"
 msgstr ""
 
-#: ../src/Application.vala:18
-msgid "About App Center"
-msgstr ""
-
-#: ../src/Application.vala:19
-msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
-msgstr ""
-
-#: ../src/Application.vala:53
+#: ../src/Application.vala:50
 msgid "translator-credits"
 msgstr ""
 
-#: ../src/Core/Package.vala:102
+#: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
 msgstr ""
 
-#: ../src/Core/Package.vala:104
+#: ../src/Core/ChangeInformation.vala:56
 msgid "Waiting in queue"
 msgstr ""
 
-#: ../src/Core/Package.vala:106
+#: ../src/Core/ChangeInformation.vala:58
 msgid "Running"
 msgstr ""
 
-#: ../src/Core/Package.vala:108
+#: ../src/Core/ChangeInformation.vala:60
 msgid "Querying"
 msgstr ""
 
-#: ../src/Core/Package.vala:110
+#: ../src/Core/ChangeInformation.vala:62
 msgid "Getting information"
 msgstr ""
 
-#: ../src/Core/Package.vala:112
+#: ../src/Core/ChangeInformation.vala:64
 msgid "Removing packages"
 msgstr ""
 
-#: ../src/Core/Package.vala:114
+#: ../src/Core/ChangeInformation.vala:66
 msgid "Downloading packages"
 msgstr ""
 
-#: ../src/Core/Package.vala:116
+#: ../src/Core/ChangeInformation.vala:68
 msgid "Installing packages"
 msgstr ""
 
-#: ../src/Core/Package.vala:118
+#: ../src/Core/ChangeInformation.vala:70
 msgid "Refreshing software list"
 msgstr ""
 
-#: ../src/Core/Package.vala:120
+#: ../src/Core/ChangeInformation.vala:72
 msgid "Installing updates"
 msgstr ""
 
-#: ../src/Core/Package.vala:122
+#: ../src/Core/ChangeInformation.vala:74
 msgid "Cleaning up packages"
 msgstr ""
 
-#: ../src/Core/Package.vala:124
+#: ../src/Core/ChangeInformation.vala:76
 msgid "Obsoleting packages"
 msgstr ""
 
-#: ../src/Core/Package.vala:126
+#: ../src/Core/ChangeInformation.vala:78
 msgid "Resolving dependencies"
 msgstr ""
 
-#: ../src/Core/Package.vala:128
+#: ../src/Core/ChangeInformation.vala:80
 msgid "Checking signatures"
 msgstr ""
 
-#: ../src/Core/Package.vala:130
+#: ../src/Core/ChangeInformation.vala:82
 msgid "Testing changes"
 msgstr ""
 
-#: ../src/Core/Package.vala:132
+#: ../src/Core/ChangeInformation.vala:84
 msgid "Committing changes"
 msgstr ""
 
-#: ../src/Core/Package.vala:134
+#: ../src/Core/ChangeInformation.vala:86
 msgid "Requesting data"
 msgstr ""
 
-#: ../src/Core/Package.vala:136
+#: ../src/Core/ChangeInformation.vala:88
 msgid "Finished"
 msgstr ""
 
-#: ../src/Core/Package.vala:138
+#: ../src/Core/ChangeInformation.vala:90
 msgid "Cancelling"
 msgstr ""
 
-#: ../src/Core/Package.vala:140
+#: ../src/Core/ChangeInformation.vala:92
 msgid "Downloading repository information"
 msgstr ""
 
-#: ../src/Core/Package.vala:142
+#: ../src/Core/ChangeInformation.vala:94
 msgid "Downloading list of packages"
 msgstr ""
 
-#: ../src/Core/Package.vala:144
+#: ../src/Core/ChangeInformation.vala:96
 msgid "Downloading file lists"
 msgstr ""
 
-#: ../src/Core/Package.vala:146
+#: ../src/Core/ChangeInformation.vala:98
 msgid "Downloading lists of changes"
 msgstr ""
 
-#: ../src/Core/Package.vala:148
+#: ../src/Core/ChangeInformation.vala:100
 msgid "Downloading groups"
 msgstr ""
 
-#: ../src/Core/Package.vala:150
+#: ../src/Core/ChangeInformation.vala:102
 msgid "Downloading update information"
 msgstr ""
 
-#: ../src/Core/Package.vala:152
+#: ../src/Core/ChangeInformation.vala:104
 msgid "Repackaging files"
 msgstr ""
 
-#: ../src/Core/Package.vala:154
+#: ../src/Core/ChangeInformation.vala:106
 msgid "Loading cache"
 msgstr ""
 
-#: ../src/Core/Package.vala:156
+#: ../src/Core/ChangeInformation.vala:108
 msgid "Scanning applications"
 msgstr ""
 
-#: ../src/Core/Package.vala:158
+#: ../src/Core/ChangeInformation.vala:110
 msgid "Generating package lists"
 msgstr ""
 
-#: ../src/Core/Package.vala:160
+#: ../src/Core/ChangeInformation.vala:112
 msgid "Waiting for package manager lock"
 msgstr ""
 
-#: ../src/Core/Package.vala:162
+#: ../src/Core/ChangeInformation.vala:114
 msgid "Waiting for authentication"
 msgstr ""
 
-#: ../src/Core/Package.vala:164
+#: ../src/Core/ChangeInformation.vala:116
 msgid "Updating running applications"
 msgstr ""
 
-#: ../src/Core/Package.vala:166
+#: ../src/Core/ChangeInformation.vala:118
 msgid "Checking applications in use"
 msgstr ""
 
-#: ../src/Core/Package.vala:168
+#: ../src/Core/ChangeInformation.vala:120
 msgid "Checking libraries in use"
 msgstr ""
 
-#: ../src/Core/Package.vala:170
+#: ../src/Core/ChangeInformation.vala:122
 msgid "Copying files"
 msgstr ""
 
-#: ../src/Core/Package.vala:172
+#: ../src/Core/ChangeInformation.vala:124
 msgid "Unknown state"
 msgstr ""
 
-#: ../src/Core/Client.vala:40
+#: ../src/Core/Client.vala:64
 msgid "Operating System Updates"
 msgstr ""
 
-#: ../src/Core/Client.vala:41
+#: ../src/Core/Client.vala:65
 msgid "Updates to system components"
 msgstr ""
 
-#: ../daemon/Daemon.vala:117
+#: ../daemon/Daemon.vala:135
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../daemon/Daemon.vala:119
+#: ../daemon/Daemon.vala:137
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] ""
