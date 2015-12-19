@@ -85,30 +85,32 @@ macro (create_po_file LANGUAGE_NEEDED)
     endif ()
 endmacro (create_po_file)
 
-function(get_binary_folder_for_file BINARY_RESULT SOURCE)
-    if(NOT DEFINED ${BINARY_RESULT})
-      message (SEND_ERROR "Error, the variable ${BINARY_RESULT} is not defined!")
-    endif()
+macro (configure_file_translation SOURCE RESULT PO_DIR)
+    find_program (INTLTOOL_MERGE_EXECUTABLE intltool-merge)
+    set(EXTRA_PO_DIR ${PO_DIR}/extra/)
+    get_filename_component(EXTRA_PO_DIR ${EXTRA_PO_DIR} ABSOLUTE)
 
-    if (NOT ((${SOURCE} MATCHES ${CMAKE_SOURCE_DIR}) OR (${SOURCE} MATCHES ${CMAKE_BINARY_DIR})))
-        set (SOURCE ${CMAKE_CURRENT_SOURCE_DIR}/${SOURCE})
-    endif()
+    # Intltool can't create a new directory.
+    get_filename_component(SOURCE_DIRECTORY ${SOURCE} DIRECTORY)
+    file(MAKE_DIRECTORY ${SOURCE_DIRECTORY})
 
-    get_filename_component (SOURCE ${SOURCE} ABSOLUTE)
-    if (NOT(${SOURCE} MATCHES ${CMAKE_BINARY_DIR}))
-        string (REPLACE ${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR} SOURCE ${SOURCE})
-    endif()
-    set (${BINARY_RESULT} ${SOURCE} PARENT_SCOPE)
-endfunction()
-
+    set (INTLTOOL_FLAG "")
+    if (${SOURCE} MATCHES ".desktop")
+        set (INTLTOOL_FLAG "--desktop-style")
+    elseif (${SOURCE} MATCHES ".gschema")
+        set (INTLTOOL_FLAG "--schemas-style")
+    elseif (${SOURCE} MATCHES ".xml")
+        set (INTLTOOL_FLAG "--xml-style")
+    endif ()
+    execute_process (WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} COMMAND ${INTLTOOL_MERGE_EXECUTABLE} --quiet ${INTLTOOL_FLAG} ${EXTRA_PO_DIR} ${SOURCE} ${RESULT})
+endmacro ()
 
 macro (add_translations_catalog NLS_PACKAGE)
     parse_arguments(ARGS "DESKTOP_FILES;APPDATA_FILES;SCHEMA_FILES" "" ${ARGN})
     add_custom_target (pot COMMENT “Building translation catalog.”)
     find_program (XGETTEXT_EXECUTABLE xgettext)
-    find_program (INTLTOOL_MERGE_EXECUTABLE intltool-merge)
 
-    set(EXTRA_PO_DIR ${CMAKE_CURRENT_SOURCE_DIR}/extra/)
+    set(EXTRA_PO_DIR ${CMAKE_CURRENT_SOURCE_DIR}/extra)
 
     set(C_SOURCE "")
     set(VALA_SOURCE "")
@@ -116,7 +118,7 @@ macro (add_translations_catalog NLS_PACKAGE)
 
     set(APPDATA_SOURCE "")
     set(DESKTOP_SOURCE "")
-    set(GSETTINGS_SOURCE "")
+    set(SCHEMA_SOURCE "")
 
     foreach(FILES_INPUT ${ARGN})
         if((${FILES_INPUT} MATCHES ${CMAKE_SOURCE_DIR}) OR (${FILES_INPUT} MATCHES ${CMAKE_BINARY_DIR}))
@@ -141,40 +143,17 @@ macro (add_translations_catalog NLS_PACKAGE)
         endforeach()
     endforeach()
 
-    foreach (DESKTOP_FILE ${ARGS_DESKTOP_FILES})
-        set(DESKTOP_SOURCE ${DESKTOP_SOURCE} ${DESKTOP_FILE})
-        string(REGEX REPLACE "([^ ]*).in" "\\1" DESKTOP_FILE_OUT ${DESKTOP_FILE})
-        get_binary_folder_for_file (DESKTOP_FILE_OUT ${DESKTOP_FILE_OUT})
-        # Intltool can't create a new directory.
-        get_filename_component(DESKTOP_FILE_OUT_DIRECTORY ${DESKTOP_FILE_OUT} DIRECTORY)
-        file(MAKE_DIRECTORY ${DESKTOP_FILE_OUT_DIRECTORY})
-        execute_process(WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} COMMAND ${INTLTOOL_MERGE_EXECUTABLE} --quiet --desktop-style ${EXTRA_PO_DIR} ${DESKTOP_FILE} ${DESKTOP_FILE_OUT})
-    endforeach (DESKTOP_FILE ${ARGS_DESKTOP_FILES})
+    foreach(FILES_INPUT ${ARGS_DESKTOP_FILES})
+        set(DESKTOP_SOURCE ${DESKTOP_SOURCE} ${FILES_INPUT})
+    endforeach()
 
-    foreach (APPDATA_FILE ${ARGS_APPDATA_FILES})
-        set(APPDATA_SOURCE ${APPDATA_SOURCE} ${APPDATA_FILE})
-        string(REGEX REPLACE "([^ ]*).in" "\\1" APPDATA_FILE_OUT ${APPDATA_FILE})
-        get_binary_folder_for_file (APPDATA_FILE_OUT ${APPDATA_FILE_OUT})
-        # Intltool can't create a new directory.
-        get_filename_component(APPDATA_FILE_OUT_DIRECTORY ${APPDATA_FILE_OUT} DIRECTORY)
-        file(MAKE_DIRECTORY ${APPDATA_FILE_OUT_DIRECTORY})
-        execute_process(WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} COMMAND ${INTLTOOL_MERGE_EXECUTABLE} --quiet --xml-style ${EXTRA_PO_DIR} ${APPDATA_FILE} ${APPDATA_FILE_OUT})
-    endforeach (APPDATA_FILE ${ARGS_APPDATA_FILES})
+    foreach(FILES_INPUT ${ARGS_APPDATA_FILES})
+        set(APPDATA_SOURCE ${APPDATA_SOURCE} ${FILES_INPUT})
+    endforeach()
 
-    foreach (GSETTINGS_FILE ${ARGS_SCHEMA_FILES})
-        set(GSETTINGS_SOURCE ${GSETTINGS_SOURCE} ${GSETTINGS_FILE})
-        string(REGEX REPLACE "([^ ]*).in" "\\1" GSETTINGS_FILE_OUT ${GSETTINGS_FILE})
-        get_binary_folder_for_file (GSETTINGS_FILE_OUT ${GSETTINGS_FILE_OUT})
-        # Intltool can't create a new directory.
-        get_filename_component(GSETTINGS_FILE_OUT_DIRECTORY ${GSETTINGS_FILE_OUT} DIRECTORY)
-        file(MAKE_DIRECTORY ${GSETTINGS_FILE_OUT_DIRECTORY})
-        execute_process(WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} COMMAND ${INTLTOOL_MERGE_EXECUTABLE} --quiet --schemas-style ${EXTRA_PO_DIR} ${GSETTINGS_FILE} ${GSETTINGS_FILE_OUT} OUTPUT_VARIABLE GSETTINGS_FINE)
-        # We need to do this here otherwise there are some racing error.
-        if (NOT (GSETTINGS_FINE))
-            include (GSettings)
-            add_schema (${GSETTINGS_FILE_OUT})
-        endif (NOT (GSETTINGS_FINE))
-    endforeach (GSETTINGS_FILE ${ARGS_SCHEMA_FILES})
+    foreach(FILES_INPUT ${ARGS_SCHEMA_FILES})
+        set(SCHEMA_SOURCE ${SCHEMA_SOURCE} ${FILES_INPUT})
+    endforeach()
 
     set(BASE_XGETTEXT_COMMAND
         ${XGETTEXT_EXECUTABLE} -d ${NLS_PACKAGE}
@@ -183,8 +162,7 @@ macro (add_translations_catalog NLS_PACKAGE)
 
     set(EXTRA_XGETTEXT_COMMAND
         ${XGETTEXT_EXECUTABLE} -d extra
-        -o ${EXTRA_PO_DIR}/extra.pot
-        --add-comments="/" --keyword="_" --keyword="N_" --keyword="C_:1c,2" --keyword="NC_:1c,2" --keyword="ngettext:1,2" --keyword="Q_:1g" --from-code=UTF-8)
+        -o ${EXTRA_PO_DIR}/extra.pot --from-code=UTF-8)
 
     set(CONTINUE_FLAG "")
 
@@ -203,7 +181,7 @@ macro (add_translations_catalog NLS_PACKAGE)
     ENDIF()
 
     # We need to create the directory if one extra content exists.
-    IF((NOT "${APPDATA_SOURCE}" STREQUAL "") OR (NOT "${DESKTOP_SOURCE}" STREQUAL "") OR (NOT "${GSETTINGS_SOURCE}" STREQUAL ""))
+    IF((NOT "${DESKTOP_SOURCE}" STREQUAL "") OR (NOT "${APPDATA_SOURCE}" STREQUAL "") OR (NOT "${SCHEMA_SOURCE}" STREQUAL ""))
         file(MAKE_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/extra/)
     ENDIF()
 
@@ -215,11 +193,11 @@ macro (add_translations_catalog NLS_PACKAGE)
     ENDIF()
 
     IF(NOT "${APPDATA_SOURCE}" STREQUAL "")
-        #add_custom_command(TARGET pot WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} COMMAND ${EXTRA_XGETTEXT_COMMAND} ${CONTINUE_FLAG} -LAppData ${APPDATA_SOURCE})
-        #set(CONTINUE_FLAG "-j")
+        add_custom_command(TARGET pot WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} COMMAND ${EXTRA_XGETTEXT_COMMAND} ${CONTINUE_FLAG} -LAppData ${APPDATA_SOURCE})
+        set(CONTINUE_FLAG "${CONTINUE_FLAG}")
     ENDIF()
 
-    IF(NOT "${GSETTINGS_SOURCE}" STREQUAL "")
-        add_custom_command(TARGET pot WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} COMMAND ${EXTRA_XGETTEXT_COMMAND} ${CONTINUE_FLAG} -LGSettings ${GSETTINGS_SOURCE})
+    IF(NOT "${SCHEMA_SOURCE}" STREQUAL "")
+        add_custom_command(TARGET pot WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} COMMAND ${EXTRA_XGETTEXT_COMMAND} ${CONTINUE_FLAG} -LGSettings ${SCHEMA_SOURCE})
     ENDIF()
 endmacro ()
