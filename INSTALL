@@ -1,5 +1,8 @@
+In order to build this software, you need the latest version of cmake-elementary
+(https://code.launchpad.net/~elementary-os/+junk/cmake-modules)
+
 ---------------------------------
-BUILD AppCentre
+BUILD AppCenter
 ---------------------------------
 
 mkdir build
