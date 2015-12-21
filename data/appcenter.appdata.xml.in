@@ -8,12 +8,12 @@
   <_name>AppCenter</_name>
   <icon type="stock">system-software-install</icon>
   <_summary>The indie, open, pay-what-you-want app store</_summary>
-  <description>
-    <_p>
+  <_description>
+    <p>
       AppCenter is a fast and beautiful app store built for indie
       software developers and elementary OS.
-    </_p>
-  </description>
+    </p>
+  </_description>
   <url type="homepage">http://elementary.io/</url>
   <updatecontact>contact_at_elementary.io</updatecontact>
 </component>
