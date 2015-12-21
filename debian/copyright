@@ -3,7 +3,7 @@ Upstream-Name: appcenter
 Source: https://code.launchpad.net/~elementary-apps/appcenter/appcenter
 
 Files: src/* debian/*
-Copyright: 2013 Mario Guerriero <mefrio.g@gmail.com>
+Copyright: 2015 Corentin Noël <corentin@elementary.io>
 License: GPL-3.0+
 
 License: GPL-3.0+

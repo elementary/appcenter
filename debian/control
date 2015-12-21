@@ -1,7 +1,8 @@
 Source: appcenter
 Section: utils
-Maintainer: Mario Guerriero <mefrio.g@gmail.com>
+Maintainer: Corentin Noël <corentin@elementary.io>
 Build-Depends: cmake,
+               cmake-elementary,
                debhelper (>= 9),
                intltool,
                libappstream-dev,
