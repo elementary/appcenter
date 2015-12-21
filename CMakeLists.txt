@@ -2,9 +2,6 @@ project (appcenter)
 
 cmake_minimum_required (VERSION 2.8)
 
-# tell cmake where its modules can be found in our project directory
-list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
-
 set (DATADIR "${CMAKE_INSTALL_PREFIX}/share")
 set (PKGDATADIR "${DATADIR}/${CMAKE_PROJECT_NAME}")
 set (GETTEXT_PACKAGE ${CMAKE_PROJECT_NAME})
