@@ -109,6 +109,7 @@ macro (add_translations_catalog NLS_PACKAGE)
     parse_arguments(ARGS "DESKTOP_FILES;APPDATA_FILES;SCHEMA_FILES" "" ${ARGN})
     add_custom_target (pot COMMENT “Building translation catalog.”)
     find_program (XGETTEXT_EXECUTABLE xgettext)
+    find_program (INTLTOOL_EXTRACT_EXECUTABLE intltool-extract)
 
     set(EXTRA_PO_DIR ${CMAKE_CURRENT_SOURCE_DIR}/extra)
 
@@ -155,14 +156,18 @@ macro (add_translations_catalog NLS_PACKAGE)
         set(SCHEMA_SOURCE ${SCHEMA_SOURCE} ${FILES_INPUT})
     endforeach()
 
+    set (XGETTEXT_C_ARGS --add-comments="/" --keyword="_" --keyword="N_" --keyword="C_:1c,2" --keyword="NC_:1c,2" --keyword="ngettext:1,2" --keyword="Q_:1g")
     set(BASE_XGETTEXT_COMMAND
         ${XGETTEXT_EXECUTABLE} -d ${NLS_PACKAGE}
         -o ${CMAKE_CURRENT_SOURCE_DIR}/${NLS_PACKAGE}.pot
-        --add-comments="/" --keyword="_" --keyword="N_" --keyword="C_:1c,2" --keyword="NC_:1c,2" --keyword="ngettext:1,2" --keyword="Q_:1g" --from-code=UTF-8)
+        ${XGETTEXT_C_ARGS} --from-code=UTF-8)
 
     set(EXTRA_XGETTEXT_COMMAND
         ${XGETTEXT_EXECUTABLE} -d extra
-        -o ${EXTRA_PO_DIR}/extra.pot --from-code=UTF-8)
+        -o ${EXTRA_PO_DIR}/extra.pot --no-location --from-code=UTF-8)
+
+    set (INTLTOOL_EXTRACT_COMMAND
+        ${INTLTOOL_EXTRACT_EXECUTABLE} --local --srcdir=/)
 
     set(CONTINUE_FLAG "")
 
@@ -188,16 +193,25 @@ macro (add_translations_catalog NLS_PACKAGE)
     set(CONTINUE_FLAG "")
 
     IF(NOT "${DESKTOP_SOURCE}" STREQUAL "")
-        add_custom_command(TARGET pot WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} COMMAND ${EXTRA_XGETTEXT_COMMAND} -LDesktop ${DESKTOP_SOURCE})
+        get_filename_component(DESKTOP_SOURCE ${DESKTOP_SOURCE} ABSOLUTE)
+        add_custom_command(TARGET pot WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR} COMMAND ${INTLTOOL_EXTRACT_COMMAND} --type=gettext/keys ${DESKTOP_SOURCE})
+        get_filename_component(DESKTOP_SOURCE_NAME ${DESKTOP_SOURCE} NAME)
+        add_custom_command(TARGET pot WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} COMMAND ${EXTRA_XGETTEXT_COMMAND} ${XGETTEXT_C_ARGS} ${CMAKE_CURRENT_BINARY_DIR}/tmp/${DESKTOP_SOURCE_NAME}.h)
         set(CONTINUE_FLAG "-j")
     ENDIF()
 
     IF(NOT "${APPDATA_SOURCE}" STREQUAL "")
-        add_custom_command(TARGET pot WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} COMMAND ${EXTRA_XGETTEXT_COMMAND} ${CONTINUE_FLAG} -LAppData ${APPDATA_SOURCE})
-        set(CONTINUE_FLAG "${CONTINUE_FLAG}")
+        get_filename_component(APPDATA_SOURCE ${APPDATA_SOURCE} ABSOLUTE)
+        add_custom_command(TARGET pot WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR} COMMAND ${INTLTOOL_EXTRACT_COMMAND} --type=gettext/xml ${APPDATA_SOURCE})
+        get_filename_component(APPDATA_SOURCE_NAME ${APPDATA_SOURCE} NAME)
+        add_custom_command(TARGET pot WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} COMMAND ${EXTRA_XGETTEXT_COMMAND} ${CONTINUE_FLAG} ${XGETTEXT_C_ARGS} ${CMAKE_CURRENT_BINARY_DIR}/tmp/${APPDATA_SOURCE_NAME}.h)
+        set(CONTINUE_FLAG "-j")
     ENDIF()
 
     IF(NOT "${SCHEMA_SOURCE}" STREQUAL "")
-        add_custom_command(TARGET pot WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} COMMAND ${EXTRA_XGETTEXT_COMMAND} ${CONTINUE_FLAG} -LGSettings ${SCHEMA_SOURCE})
+        get_filename_component(SCHEMA_SOURCE ${SCHEMA_SOURCE} ABSOLUTE)
+        add_custom_command(TARGET pot WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR} COMMAND ${INTLTOOL_EXTRACT_COMMAND} --type=gettext/schemas ${SCHEMA_SOURCE})
+        get_filename_component(SCHEMA_SOURCE_NAME ${SCHEMA_SOURCE} NAME)
+        add_custom_command(TARGET pot WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} COMMAND ${EXTRA_XGETTEXT_COMMAND} ${CONTINUE_FLAG} ${XGETTEXT_C_ARGS} ${CMAKE_CURRENT_BINARY_DIR}/tmp/${SCHEMA_SOURCE_NAME}.h)
     ENDIF()
 endmacro ()

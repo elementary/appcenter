@@ -5,14 +5,14 @@
   <metadata_license>CC0</metadata_license>
   <project_group>elementary</project_group>
   <project_license>GPL-3.0+</project_license>
-  <name>AppCenter</name>
+  <_name>AppCenter</_name>
   <icon type="stock">system-software-install</icon>
-  <summary>The indie, open, pay-what-you-want app store</summary>
+  <_summary>The indie, open, pay-what-you-want app store</_summary>
   <description>
-    <p>
+    <_p>
       AppCenter is a fast and beautiful app store built for indie
       software developers and elementary OS.
-    </p>
+    </_p>
   </description>
   <url type="homepage">http://elementary.io/</url>
   <updatecontact>contact_at_elementary.io</updatecontact>
