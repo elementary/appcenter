@@ -6,11 +6,12 @@
   <project_group>elementary</project_group>
   <project_license>GPL-3.0+</project_license>
   <_name>AppCenter</_name>
-  <_summary>The indie, open, pay-what-you-want app store</_summary>
+  <_summary>Browse and manage apps</_summary>
   <description>
     <_p>
-      AppCenter is a fast and beautiful app store built for indie
-      software developers and elementary OS.
+      An app store for indie and open source developers. Browse by categories or
+      search and discover new apps. AppCenter is also used for updating your
+      system to the latest and greatest version for new features and fixes.
     </_p>
   </description>
   <releases>
