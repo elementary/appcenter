@@ -125,7 +125,6 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
     construct {
         column_spacing = 12;
         row_spacing = 6;
-        get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
 
         app_icon = new Gtk.Image ();
         app_icon.margin_top = 12;
@@ -154,13 +153,13 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         ((Gtk.Misc) app_version).xalign = 0;
         app_version.hexpand = true;
         app_version.valign = Gtk.Align.CENTER;
-        app_version.get_style_context ().add_class ("dim-label");
+        app_version.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
         app_version.get_style_context ().add_class ("h3");
 
         app_summary = new Gtk.Label (null);
         ((Gtk.Misc) app_summary).xalign = 0;
         app_summary.valign = Gtk.Align.START;
-        app_summary.get_style_context ().add_class ("dim-label");
+        app_summary.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
         app_summary.get_style_context ().add_class ("h2");
         app_summary.wrap = true;
         app_summary.wrap_mode = Pango.WrapMode.WORD_CHAR;
@@ -170,7 +169,7 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         app_description.editable = false;
         app_description.get_style_context ().add_class ("h3");
         app_description.cursor_visible = false;
-        app_description.pixels_below_lines = 16;
+        app_description.pixels_below_lines = 3;
         app_description.pixels_inside_wrap = 3;
         app_description.wrap_mode = Gtk.WrapMode.WORD_CHAR;
 
