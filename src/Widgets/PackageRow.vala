@@ -92,11 +92,13 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
         image.icon_size = Gtk.IconSize.DIALOG;
 
         package_name = new Gtk.Label (null);
+        package_name.get_style_context ().add_class ("h3");
         package_name.hexpand = true;
         package_name.valign = Gtk.Align.END;
         ((Gtk.Misc) package_name).xalign = 0;
 
         package_summary = new Gtk.Label (null);
+        package_summary.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
         package_summary.hexpand = true;
         package_summary.valign = Gtk.Align.START;
         ((Gtk.Misc) package_summary).xalign = 0;
@@ -104,6 +106,7 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
         action_stack = new Gtk.Stack ();
 
         update_button = new Gtk.Button.with_label (_("Update"));
+        update_button.halign = Gtk.Align.END;
         update_button.valign = Gtk.Align.CENTER;
         update_button.margin_end = 6;
         update_button.clicked.connect (() => update_package.begin ());
