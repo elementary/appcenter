@@ -15,13 +15,13 @@
     </_p>
   </description>
   <releases>
-​    <release version="0.1" timestamp="1318750600" />
-​  </releases>
+    <release timestamp="1318750600" version="0.1"/>
+  </releases>
   <provides>
     <binary>appcenter</binary>
     <binary>appcenter-daemon</binary>
     <dbus type="user">org.pantheon.AppCenter</dbus>
-  ​</provides>
+  </provides>
   <developer_name>elementary LLC.</developer_name>
   <url type="homepage">http://elementary.io/</url>
   <url type="bugtracker">https://bugs.launchpad.net/appcenter</url>
