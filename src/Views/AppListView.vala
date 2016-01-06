@@ -44,7 +44,7 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
     public AppListView (bool updates_on_top = false) {
         this.updates_on_top = updates_on_top;
         if (updates_on_top) {
-            list_box.set_header_func ((row, before) => ListBoxUpdateHeaderFunc (row, before));
+            list_box.set_header_func ((Gtk.ListBoxUpdateHeaderFunc) package_row_update_header);
         }
     }
 
@@ -55,7 +55,7 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
         list_box.expand = true;
         list_box.activate_on_single_click = true;
         list_box.set_placeholder (alert_view);
-        list_box.set_sort_func ((row1, row2) => ListBoxSortFunc (row1, row2));
+        list_box.set_sort_func ((Gtk.ListBoxSortFunc) package_row_compare);
         list_box.row_activated.connect ((row) => {
             var packagerow = row as Widgets.PackageRow;
             if (packagerow != null) {
@@ -86,9 +86,10 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
         });
     }
 
-    private int ListBoxSortFunc (Gtk.ListBoxRow row1, Gtk.ListBoxRow row2) {
-        unowned Package package_a = ((Widgets.PackageRow) row1).package;
-        unowned Package package_b = ((Widgets.PackageRow) row2).package;
+    [CCode (instance_pos = -1)]
+    private int package_row_compare (Widgets.PackageRow row1, Widgets.PackageRow row2) {
+        unowned Package package_a = row1.package;
+        unowned Package package_b = row2.package;
         if (updates_on_top) {
             if (package_a.component.id == "xxx-os-updates") {
                 return -1;
@@ -106,12 +107,13 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
         return package_a.get_name ().collate (package_b.get_name ());
     }
 
-    private void ListBoxUpdateHeaderFunc (Gtk.ListBoxRow row, Gtk.ListBoxRow? before) {
-        bool update_available = ((Widgets.PackageRow) row).package.update_available;
+    [CCode (instance_pos = -1)]
+    private void package_row_update_header (Widgets.PackageRow row, Widgets.PackageRow? before) {
+        bool update_available = row.package.update_available;
         if (before == null && update_available) {
             var updates_grid = get_updates_grid ();
             row.set_header (updates_grid);
-        } else if ((before == null && !update_available) || update_available != ((Widgets.PackageRow) before).package.update_available) {
+        } else if ((before == null && !update_available) || update_available != before.package.update_available) {
             var updated_grid = get_updated_grid ();
             row.set_header (updated_grid);
         } else {
