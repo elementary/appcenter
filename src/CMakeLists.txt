@@ -6,6 +6,7 @@ vala_precompile(VALA_C ${EXEC_NAME}
     Application.vala
     MainWindow.vala
     Settings.vala
+    SuspendControl.vala
     Views/AppInfoView.vala
     Views/AppListView.vala
     Views/FeaturedView.vala
