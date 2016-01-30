@@ -202,6 +202,8 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
 
     private async void update_all_clicked () {
         var applications = get_packages ();
+        SuspendControl sc = new SuspendControl ();
+        sc.inhibit ();
         foreach (var package in applications) {
             if (package.update_available) {
                 try {
@@ -211,5 +213,7 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
                 }
             }
         }
+
+        sc.uninhibit ();
     }
 }

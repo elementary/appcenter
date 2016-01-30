@@ -133,6 +133,7 @@ public class AppCenterCore.Client : Object {
     }
 
     public async void update_package (Package package, Pk.ProgressCallback cb, GLib.Cancellable cancellable) throws GLib.Error {
+        SuspendControl sc = new SuspendControl ();
         Pk.Task update_task = request_task ();
         string[] packages_ids = {};
         foreach (var pk_package in package.change_information.changes) {
@@ -141,6 +142,7 @@ public class AppCenterCore.Client : Object {
         packages_ids += null;
 
         try {
+            sc.inhibit ();
             var results = yield update_task.update_packages_async (packages_ids, cancellable, cb);
             if (results.get_exit_code () != Pk.Exit.SUCCESS) {
                 release_task (update_task);
@@ -149,6 +151,8 @@ public class AppCenterCore.Client : Object {
         } catch (Error e) {
             release_task (update_task);
             throw e;
+        } finally {
+            sc.uninhibit ();
         }
 
         try {
