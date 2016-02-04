@@ -131,18 +131,17 @@ namespace AppCenterDaemon {
             Pk.Results result = update_task.get_updates_sync (0, null, (t, p) => { });
             bool was_empty = updates_number == 0U;
             updates_number = get_package_count (result.get_package_array ());
-            if (was_empty) {
+            if (was_empty && updates_number != 0U) {
                 string title = ngettext ("Update Available", "Updates Available", updates_number);
                 var notification = new Notification (title);
                 notification.set_body (ngettext ("%u update is available for your system", "%u updates are available for your system", updates_number).printf (updates_number));
                 notification.set_icon (new ThemedIcon ("software-update-available"));
                 notification.set_default_action ("app.open-application");
                 Application.get_default ().send_notification ("updates", notification);
-            }
-
-            if (updates_number == 0U) {
+            } else {
                 Application.get_default ().withdraw_notification ("updates");
             }
+
 #if HAVE_UNITY
             var launcher_entry = Unity.LauncherEntry.get_for_desktop_file ("appcenter.desktop");
             launcher_entry.count = updates_number;
