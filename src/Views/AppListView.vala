@@ -6,12 +6,12 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -50,7 +50,8 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
 
     construct {
         hscrollbar_policy = Gtk.PolicyType.NEVER;
-        var alert_view = new Granite.Widgets.AlertView (_("No Apps"), _("You haven't found any app here."), "help-info");
+        var alert_view = new Granite.Widgets.AlertView (_("No Results"), _("No apps could be found."), "dialog-information");
+        alert_view.show_all ();
         list_box = new Gtk.ListBox ();
         list_box.expand = true;
         list_box.activate_on_single_click = true;
