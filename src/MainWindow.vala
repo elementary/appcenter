@@ -14,7 +14,7 @@
 * with this program. If not, see http://www.gnu.org/licenses/.
 */
 
-public class AppCenter.MainWindow : Gtk.Window {
+public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     private Gtk.Revealer view_revealer;
     private Granite.Widgets.ModeButton view_mode;
     private Gtk.HeaderBar headerbar;
@@ -24,10 +24,11 @@ public class AppCenter.MainWindow : Gtk.Window {
     private Views.FeaturedView featured_view;
     private Views.InstalledView installed_view;
     private Views.SearchView search_view;
-    private Gtk.Button current_button;
+    private Gtk.Button return_button;
     private ulong task_finished_connection = 0U;
 
-    public MainWindow () {
+    public MainWindow (Gtk.Application app) {
+        Object (application: app);
         unowned Settings saved_state = Settings.get_default ();
         set_default_size (saved_state.window_width, saved_state.window_height);
 
@@ -43,6 +44,11 @@ public class AppCenter.MainWindow : Gtk.Window {
         view_mode.selected = 0;
         stack.set_visible_child (category_view);
         search_entry.grab_focus_without_selecting ();
+
+        var go_back = new SimpleAction ("go_back", null);
+        go_back.activate.connect (view_return);
+        add_action (go_back);
+        app.set_accels_for_action ("win.go_back", {"<Alt>Left"});
     }
 
     construct {
@@ -54,6 +60,12 @@ public class AppCenter.MainWindow : Gtk.Window {
         headerbar = new Gtk.HeaderBar ();
         headerbar.show_close_button = true;
         set_titlebar (headerbar);
+
+        return_button = new Gtk.Button ();
+        return_button.no_show_all = true;
+        return_button.get_style_context ().add_class ("back-button");
+        return_button.clicked.connect (view_return);
+        headerbar.pack_start (return_button);
 
         view_mode = new Granite.Widgets.ModeButton ();
 
@@ -115,17 +127,9 @@ public class AppCenter.MainWindow : Gtk.Window {
             });
         }
 
-        category_view.subview_entered.connect ((name) => {
-            show_return_button (name, category_view);
-        });
-
-        installed_view.subview_entered.connect ((name) => {
-            show_return_button (name, installed_view);
-        });
-
-        search_view.subview_entered.connect ((name) => {
-            show_return_button (name, search_view);
-        });
+        category_view.subview_entered.connect (view_opened);
+        installed_view.subview_entered.connect (view_opened);
+        search_view.subview_entered.connect (view_opened);
 
         set_size_request (750, 550);
     }
@@ -186,32 +190,30 @@ public class AppCenter.MainWindow : Gtk.Window {
             }
         } else {
             search_view.search (research);
-            if (current_button == null) {
+            if (!return_button.visible) {
                 view_revealer.set_reveal_child (false);
                 stack.set_visible_child (search_view);
             }
         }
     }
 
-    private void show_return_button (string return_label, View view) {
-        var return_button = new Gtk.Button.with_label (return_label);
-        return_button.get_style_context ().add_class ("back-button");
+    private void view_opened (string name) {
+        return_button.label = name;
+        return_button.no_show_all = false;
         return_button.show_all ();
-        if (current_button != null) {
-            current_button.destroy ();
-        }
 
-        current_button = return_button;
-        headerbar.pack_start (return_button);
         view_mode.sensitive = false;
         search_entry.sensitive = false;
-        return_button.clicked.connect (() => {
-            view_mode.sensitive = true;
-            search_entry.sensitive = true;
-            search_entry.grab_focus_without_selecting ();
-            current_button = null;
-            view.return_clicked ();
-            return_button.destroy ();
-        });
+    }
+
+    private void view_return () {
+        view_mode.sensitive = true;
+        search_entry.sensitive = true;
+        search_entry.grab_focus_without_selecting ();
+        return_button.no_show_all = true;
+        return_button.hide ();
+
+        View view = stack.visible_child as View;
+        view.return_clicked ();
     }
 }

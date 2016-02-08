@@ -42,7 +42,7 @@ public class AppCenter.App : Granite.Application {
         app_launcher = "appcenter.desktop";
         main_url = "https://launchpad.net/appcenter";
         bug_url = "https://bugs.launchpad.net/appcenter";
-        help_url = "https://answers.launchpad.net/appcenter"; 
+        help_url = "https://answers.launchpad.net/appcenter";
         translate_url = "https://translations.launchpad.net/appcenter";
         about_authors = { "Marvin Beckers <beckersmarvin@gmail.com>",
                           "Corentin Noël <corentin@elementary.io>" };
@@ -54,9 +54,8 @@ public class AppCenter.App : Granite.Application {
 
     public override void activate () {
         if (main_window == null) {
-            main_window = new MainWindow ();
+            main_window = new MainWindow (this);
             main_window.show_all ();
-            main_window.set_application (this);
             if (show_updates) {
                 main_window.go_to_installed ();
             }
