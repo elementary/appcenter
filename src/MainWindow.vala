@@ -126,6 +126,15 @@ public class AppCenter.MainWindow : Gtk.Window {
         search_view.subview_entered.connect ((name) => {
             show_return_button (name, search_view);
         });
+        
+        search_entry.key_press_event.connect ((event) => {
+            if (event.keyval == Gdk.Key.Escape) {
+                search_entry.set_text ("");
+                return true;
+            }
+            
+            return false;
+        });
 
         set_size_request (750, 550);
     }
