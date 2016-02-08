@@ -45,10 +45,10 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         stack.set_visible_child (category_view);
         search_entry.grab_focus_without_selecting ();
 
-        var go_back = new SimpleAction ("go_back", null);
+        var go_back = new SimpleAction ("go-back", null);
         go_back.activate.connect (view_return);
         add_action (go_back);
-        app.set_accels_for_action ("win.go_back", {"<Alt>Left"});
+        app.set_accels_for_action ("win.go-back", {"<Alt>Left"});
     }
 
     construct {
