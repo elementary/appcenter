@@ -213,7 +213,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         return_button.no_show_all = true;
         return_button.hide ();
 
-        View view = stack.visible_child as View;
+        View view = (View) stack.visible_child;
         view.return_clicked ();
     }
 }
