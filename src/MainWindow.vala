@@ -129,10 +129,9 @@ public class AppCenter.MainWindow : Gtk.Window {
         
         search_entry.key_press_event.connect ((event) => {
             if (event.keyval == Gdk.Key.Escape) {
-                search_entry.set_text ("");
+                search_entry.text = "";
                 return true;
             }
-            
             return false;
         });
 
