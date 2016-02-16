@@ -202,6 +202,7 @@ public class AppCenterCore.Client : Object {
         Pk.Task update_task = request_task (false);
         Pk.Task details_task = request_task (false);
         try {
+            yield update_task.refresh_cache_async (false, interface_cancellable, (t, p) => { });
             Pk.Results result = yield update_task.get_updates_async (0, interface_cancellable, (t, p) => { });
             string[] packages_array = {};
             result.get_package_array ().foreach ((pk_package) => {
