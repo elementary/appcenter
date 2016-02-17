@@ -130,6 +130,15 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         category_view.subview_entered.connect (view_opened);
         installed_view.subview_entered.connect (view_opened);
         search_view.subview_entered.connect (view_opened);
+        
+        search_entry.key_press_event.connect ((event) => {
+            if (event.keyval == Gdk.Key.Escape) {
+                search_entry.text = "";
+                return true;
+            }
+            
+            return false;
+        });
 
         set_size_request (750, 550);
     }
