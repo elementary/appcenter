@@ -10,8 +10,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2015-12-24 05:16+0000\n"
-"X-Generator: Launchpad (build 17865)\n"
+"X-Launchpad-Export-Date: 2016-02-24 05:23+0000\n"
+"X-Generator: Launchpad (build 17925)\n"
 
 #: ../src/MainWindow.vala:50
 msgid "AppCenter"
@@ -99,6 +99,7 @@ msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
 "  Bence Lukács https://launchpad.net/~lukacs-bence1\n"
+"  Török Bálint https://launchpad.net/~balint-torok-2001\n"
 "  elementaryart (old) https://launchpad.net/~elementaryart\n"
 "  schmate https://launchpad.net/~schnellbach-mate"
 
