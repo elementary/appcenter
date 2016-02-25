@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-23 01:05+0100\n"
-"PO-Revision-Date: 2016-02-23 10:19+0000\n"
-"Last-Translator: Andi Chandler <Unknown>\n"
+"PO-Revision-Date: 2016-02-24 16:18+0000\n"
+"Last-Translator: elementaryart (old) <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-02-24 05:23+0000\n"
+"X-Launchpad-Export-Date: 2016-02-25 04:41+0000\n"
 "X-Generator: Launchpad (build 17925)\n"
 
 #: ../src/MainWindow.vala:50
@@ -54,7 +54,7 @@ msgstr "Search"
 
 #: ../src/Views/FeaturedView.vala:33
 msgid "Best Rated"
-msgstr ""
+msgstr "Best Rated"
 
 #: ../src/Views/FeaturedView.vala:36
 msgid "Latest Apps"
@@ -70,29 +70,29 @@ msgstr "You haven't found any app here."
 
 #: ../src/Views/AppListView.vala:129
 msgid "Searching for updates…"
-msgstr ""
+msgstr "Searching for updates…"
 
 #: ../src/Views/AppListView.vala:135
 msgid "Up to date"
-msgstr ""
+msgstr "Up to date"
 
 #: ../src/Views/AppListView.vala:158
 msgid "%u update is available."
 msgid_plural "%u updates are available."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u update is available."
+msgstr[1] "%u updates are available."
 
 #: ../src/Views/AppListView.vala:164
 msgid "Size: %s"
-msgstr ""
+msgstr "Size: %s"
 
 #: ../src/Views/AppListView.vala:166
 msgid "Update All"
-msgstr ""
+msgstr "Update All"
 
 #: ../src/Application.vala:32 ../daemon/Daemon.vala:45 ../daemon/Daemon.vala:53
 msgid "App Center"
-msgstr ""
+msgstr "App Centre"
 
 #: ../src/Application.vala:50
 msgid "translator-credits"
@@ -105,167 +105,167 @@ msgstr ""
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
-msgstr ""
+msgstr "Starting"
 
 #: ../src/Core/ChangeInformation.vala:56
 msgid "Waiting in queue"
-msgstr ""
+msgstr "Waiting in queue"
 
 #: ../src/Core/ChangeInformation.vala:58
 msgid "Running"
-msgstr ""
+msgstr "Running"
 
 #: ../src/Core/ChangeInformation.vala:60
 msgid "Querying"
-msgstr ""
+msgstr "Querying"
 
 #: ../src/Core/ChangeInformation.vala:62
 msgid "Getting information"
-msgstr ""
+msgstr "Getting information"
 
 #: ../src/Core/ChangeInformation.vala:64
 msgid "Removing packages"
-msgstr ""
+msgstr "Removing packages"
 
 #: ../src/Core/ChangeInformation.vala:66
 msgid "Downloading packages"
-msgstr ""
+msgstr "Downloading packages"
 
 #: ../src/Core/ChangeInformation.vala:68
 msgid "Installing packages"
-msgstr ""
+msgstr "Installing packages"
 
 #: ../src/Core/ChangeInformation.vala:70
 msgid "Refreshing software list"
-msgstr ""
+msgstr "Refreshing software list"
 
 #: ../src/Core/ChangeInformation.vala:72
 msgid "Installing updates"
-msgstr ""
+msgstr "Installing updates"
 
 #: ../src/Core/ChangeInformation.vala:74
 msgid "Cleaning up packages"
-msgstr ""
+msgstr "Cleaning up packages"
 
 #: ../src/Core/ChangeInformation.vala:76
 msgid "Obsoleting packages"
-msgstr ""
+msgstr "Obsoleting packages"
 
 #: ../src/Core/ChangeInformation.vala:78
 msgid "Resolving dependencies"
-msgstr ""
+msgstr "Resolving dependencies"
 
 #: ../src/Core/ChangeInformation.vala:80
 msgid "Checking signatures"
-msgstr ""
+msgstr "Checking signatures"
 
 #: ../src/Core/ChangeInformation.vala:82
 msgid "Testing changes"
-msgstr ""
+msgstr "Testing changes"
 
 #: ../src/Core/ChangeInformation.vala:84
 msgid "Committing changes"
-msgstr ""
+msgstr "Committing changes"
 
 #: ../src/Core/ChangeInformation.vala:86
 msgid "Requesting data"
-msgstr ""
+msgstr "Requesting data"
 
 #: ../src/Core/ChangeInformation.vala:88
 msgid "Finished"
-msgstr ""
+msgstr "Finished"
 
 #: ../src/Core/ChangeInformation.vala:90
 msgid "Cancelling"
-msgstr ""
+msgstr "Cancelling"
 
 #: ../src/Core/ChangeInformation.vala:92
 msgid "Downloading repository information"
-msgstr ""
+msgstr "Downloading repository information"
 
 #: ../src/Core/ChangeInformation.vala:94
 msgid "Downloading list of packages"
-msgstr ""
+msgstr "Downloading list of packages"
 
 #: ../src/Core/ChangeInformation.vala:96
 msgid "Downloading file lists"
-msgstr ""
+msgstr "Downloading file lists"
 
 #: ../src/Core/ChangeInformation.vala:98
 msgid "Downloading lists of changes"
-msgstr ""
+msgstr "Downloading lists of changes"
 
 #: ../src/Core/ChangeInformation.vala:100
 msgid "Downloading groups"
-msgstr ""
+msgstr "Downloading groups"
 
 #: ../src/Core/ChangeInformation.vala:102
 msgid "Downloading update information"
-msgstr ""
+msgstr "Downloading update information"
 
 #: ../src/Core/ChangeInformation.vala:104
 msgid "Repackaging files"
-msgstr ""
+msgstr "Repackaging files"
 
 #: ../src/Core/ChangeInformation.vala:106
 msgid "Loading cache"
-msgstr ""
+msgstr "Loading cache"
 
 #: ../src/Core/ChangeInformation.vala:108
 msgid "Scanning applications"
-msgstr ""
+msgstr "Scanning applications"
 
 #: ../src/Core/ChangeInformation.vala:110
 msgid "Generating package lists"
-msgstr ""
+msgstr "Generating package lists"
 
 #: ../src/Core/ChangeInformation.vala:112
 msgid "Waiting for package manager lock"
-msgstr ""
+msgstr "Waiting for package manager lock"
 
 #: ../src/Core/ChangeInformation.vala:114
 msgid "Waiting for authentication"
-msgstr ""
+msgstr "Waiting for authentication"
 
 #: ../src/Core/ChangeInformation.vala:116
 msgid "Updating running applications"
-msgstr ""
+msgstr "Updating running applications"
 
 #: ../src/Core/ChangeInformation.vala:118
 msgid "Checking applications in use"
-msgstr ""
+msgstr "Checking applications in use"
 
 #: ../src/Core/ChangeInformation.vala:120
 msgid "Checking libraries in use"
-msgstr ""
+msgstr "Checking libraries in use"
 
 #: ../src/Core/ChangeInformation.vala:122
 msgid "Copying files"
-msgstr ""
+msgstr "Copying files"
 
 #: ../src/Core/ChangeInformation.vala:124
 msgid "Unknown state"
-msgstr ""
+msgstr "Unknown state"
 
 #: ../src/Core/Client.vala:64
 msgid "Operating System Updates"
-msgstr ""
+msgstr "Operating System Updates"
 
 #: ../src/Core/Client.vala:65
 msgid "Updates to system components"
-msgstr ""
+msgstr "Updates to system components"
 
 #: ../daemon/Daemon.vala:135
 msgid "Update Available"
 msgid_plural "Updates Available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Update Available"
+msgstr[1] "Updates Available"
 
 #: ../daemon/Daemon.vala:137
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u update is available for your system"
+msgstr[1] "%u updates are available for your system"
 
 #~ msgid "Remove"
 #~ msgstr "Remove"
