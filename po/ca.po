@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-23 01:05+0100\n"
-"PO-Revision-Date: 2016-02-25 01:25+0000\n"
+"PO-Revision-Date: 2016-02-25 14:28+0000\n"
 "Last-Translator: Adolfo Jayme <fitoschido@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-02-25 04:41+0000\n"
+"X-Launchpad-Export-Date: 2016-02-26 04:43+0000\n"
 "X-Generator: Launchpad (build 17925)\n"
 
 #: ../src/MainWindow.vala:50
@@ -244,27 +244,27 @@ msgstr ""
 
 #: ../src/Core/ChangeInformation.vala:124
 msgid "Unknown state"
-msgstr ""
+msgstr "Estat desconegut"
 
 #: ../src/Core/Client.vala:64
 msgid "Operating System Updates"
-msgstr ""
+msgstr "Actualitzacions del sistema operatiu"
 
 #: ../src/Core/Client.vala:65
 msgid "Updates to system components"
-msgstr ""
+msgstr "Actualitzacions als components del sistema"
 
 #: ../daemon/Daemon.vala:135
 msgid "Update Available"
 msgid_plural "Updates Available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Hi ha una actualització disponible"
+msgstr[1] "Hi ha actualitzacions disponibles"
 
 #: ../daemon/Daemon.vala:137
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Hi ha %u actualització disponible per al sistema"
+msgstr[1] "Hi ha %u actualitzacions disponibles per al sistema"
 
 #~ msgid "Quit"
 #~ msgstr "Surt"
