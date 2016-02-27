@@ -3,19 +3,19 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-23 01:05+0100\n"
-"PO-Revision-Date: 2016-02-24 16:16+0000\n"
-"Last-Translator: Corentin Noël <corentin@elementaryos.org>\n"
+"PO-Revision-Date: 2016-02-26 22:07+0000\n"
+"Last-Translator: Rico Tzschichholz <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-02-25 04:41+0000\n"
+"X-Launchpad-Export-Date: 2016-02-27 04:41+0000\n"
 "X-Generator: Launchpad (build 17925)\n"
 
 #: ../src/MainWindow.vala:50
 msgid "AppCenter"
-msgstr ""
+msgstr "AppCenter"
 
 #: ../src/MainWindow.vala:66
 msgid "Search App"
@@ -50,7 +50,7 @@ msgstr "Deinstallieren"
 #: ../src/Views/SearchView.vala:35
 msgctxt "view"
 msgid "Search"
-msgstr ""
+msgstr "Suchen"
 
 #: ../src/Views/FeaturedView.vala:33
 msgid "Best Rated"
@@ -79,8 +79,8 @@ msgstr "Aktuell"
 #: ../src/Views/AppListView.vala:158
 msgid "%u update is available."
 msgid_plural "%u updates are available."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u Aktualisierung verfügbar."
+msgstr[1] "%u Aktualisierungen verfügbar."
 
 #: ../src/Views/AppListView.vala:164
 msgid "Size: %s"
@@ -101,8 +101,10 @@ msgstr ""
 "  Alexander Wilms https://launchpad.net/~alexander-wilms\n"
 "  Corentin Noël https://launchpad.net/~tintou\n"
 "  Domar https://launchpad.net/~domar\n"
+"  JayNutZ https://launchpad.net/~thejaynutz\n"
 "  Nico Du https://launchpad.net/~nico-d-8\n"
 "  Phillip Sz https://launchpad.net/~phillip-sz\n"
+"  Rico Tzschichholz https://launchpad.net/~ricotz\n"
 "  Tobias Bannert https://launchpad.net/~toba\n"
 "  elementaryart (old) https://launchpad.net/~elementaryart\n"
 "  mporten https://launchpad.net/~mathias-porten"
@@ -141,7 +143,7 @@ msgstr "Pakete werden installiert"
 
 #: ../src/Core/ChangeInformation.vala:70
 msgid "Refreshing software list"
-msgstr "Software-Liste wird aktualisiert"
+msgstr "Softwareliste wird aktualisiert"
 
 #: ../src/Core/ChangeInformation.vala:72
 msgid "Installing updates"
@@ -213,7 +215,7 @@ msgstr "Dateien werden neu gepackt"
 
 #: ../src/Core/ChangeInformation.vala:106
 msgid "Loading cache"
-msgstr "Cache wird geladen"
+msgstr "Zwischenspeicher wird geladen"
 
 #: ../src/Core/ChangeInformation.vala:108
 msgid "Scanning applications"
@@ -225,7 +227,7 @@ msgstr "Paketliste wird erzeugt"
 
 #: ../src/Core/ChangeInformation.vala:112
 msgid "Waiting for package manager lock"
-msgstr "Warten auf Sperre der Paketverwaltung …"
+msgstr "Warten auf Sperre des Paketmanagers"
 
 #: ../src/Core/ChangeInformation.vala:114
 msgid "Waiting for authentication"
@@ -253,22 +255,23 @@ msgstr "Unbekannter Zustand"
 
 #: ../src/Core/Client.vala:64
 msgid "Operating System Updates"
-msgstr ""
+msgstr "Betriebssystemaktualisierungen"
 
 #: ../src/Core/Client.vala:65
 msgid "Updates to system components"
-msgstr ""
+msgstr "Aktualisierungen für Systemkomponenten"
 
 #: ../daemon/Daemon.vala:135
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Aktualisierung verfügbar"
+msgstr[1] "Aktualisierungen verfügbar"
 
 #: ../daemon/Daemon.vala:137
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Für Ihr System ist %u Aktualisierung verfügbar"
+msgstr[1] "Für Ihr System sind %u Aktualisierungen verfügbar"
 
 #~ msgid "Error page"
 #~ msgstr "Fehlerseite"
