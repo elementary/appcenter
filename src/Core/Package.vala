@@ -72,7 +72,20 @@ public class AppCenterCore.Package : Object {
         changing = true;
         changed ();
         try {
-            yield AppCenterCore.Client.get_default ().install_package (this, (progress, type) => {change_information.ProgressCallback (progress, type);}, action_cancellable);
+            yield AppCenterCore.Client.get_default ().install_package (this, (progress, type) => { 
+                if (type == Pk.ProgressType.STATUS && progress.status == Pk.Status.FINISHED
+                    && ((AppCenter.App.get_window ().get_window ().get_state () & Gdk.WindowState.FOCUSED) == 0)) {
+                    var notification = new Notification (_("Application installed"));
+                    notification.set_body (_("%s has been successfully installed").printf (get_name ()));
+                    notification.set_icon (new ThemedIcon ("system-software-install"));
+                    notification.set_default_action ("app.open-application");
+
+                    Application.get_default ().send_notification ("installed", notification);
+                }
+
+                change_information.ProgressCallback (progress, type);
+            }, action_cancellable);
+
             installed_packages.add_all (change_information.changes);
             change_information.clear ();
             installed = true;
