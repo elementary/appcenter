@@ -22,7 +22,7 @@ public class AppCenter.App : Granite.Application {
     };
 
     public static bool show_updates;
-    static MainWindow main_window;
+    MainWindow main_window;
     construct {
         application_id = "org.pantheon.appcenter";
         flags = ApplicationFlags.FLAGS_NONE;
@@ -52,13 +52,10 @@ public class AppCenter.App : Granite.Application {
         add_main_option_entries (appcenter_options);
     }
 
-    public static Gtk.Window get_window () {
-        return main_window;
-    }
-
     public override void activate () {
         if (main_window == null) {
             main_window = new MainWindow (this);
+            add_window (main_window);
             main_window.show_all ();
             if (show_updates) {
                 main_window.go_to_installed ();
