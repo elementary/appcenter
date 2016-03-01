@@ -20,9 +20,6 @@ Package: appcenter
 Architecture: any
 Priority: extra
 Depends: appstream,
-         appstream-data,
-         appstream-data-icons,
-         appstream-data-icons-hidpi,
          packagekit,
          ${misc:Depends},
          ${shlibs:Depends}
