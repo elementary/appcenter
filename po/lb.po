@@ -3,15 +3,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-23 01:05+0100\n"
-"PO-Revision-Date: 2016-03-01 12:26+0000\n"
+"PO-Revision-Date: 2016-03-04 17:19+0000\n"
 "Last-Translator: Yvo Marques <macghivo@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-03-02 05:23+0000\n"
-"X-Generator: Launchpad (build 17925)\n"
+"X-Launchpad-Export-Date: 2016-03-05 05:46+0000\n"
+"X-Generator: Launchpad (build 17936)\n"
 
 #: ../src/MainWindow.vala:50
 msgid "AppCenter"
@@ -66,11 +66,11 @@ msgstr "Keng Apps"
 
 #: ../src/Views/AppListView.vala:53
 msgid "You haven't found any app here."
-msgstr ""
+msgstr "Keng App ze fannen"
 
 #: ../src/Views/AppListView.vala:129
 msgid "Searching for updates…"
-msgstr "No Aktualiséierungen sichen...."
+msgstr "Sichen fir Aktualiséierungen......"
 
 #: ../src/Views/AppListView.vala:135
 msgid "Up to date"
@@ -84,11 +84,11 @@ msgstr[1] ""
 
 #: ../src/Views/AppListView.vala:164
 msgid "Size: %s"
-msgstr ""
+msgstr "Gréisst: %s"
 
 #: ../src/Views/AppListView.vala:166
 msgid "Update All"
-msgstr ""
+msgstr "All Aktualiséieren"
 
 #: ../src/Application.vala:32 ../daemon/Daemon.vala:45 ../daemon/Daemon.vala:53
 msgid "App Center"
@@ -103,7 +103,7 @@ msgstr ""
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
-msgstr ""
+msgstr "Gett gestart"
 
 #: ../src/Core/ChangeInformation.vala:56
 msgid "Waiting in queue"
