@@ -3,15 +3,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-23 01:05+0100\n"
-"PO-Revision-Date: 2015-12-16 07:13+0000\n"
-"Last-Translator: Harald Eilertsen <haraldei@anduin.net>\n"
+"PO-Revision-Date: 2016-03-12 15:53+0000\n"
+"Last-Translator: ProsjektX <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-02-24 05:23+0000\n"
-"X-Generator: Launchpad (build 17925)\n"
+"X-Launchpad-Export-Date: 2016-03-13 05:26+0000\n"
+"X-Generator: Launchpad (build 17939)\n"
 
 #: ../src/MainWindow.vala:50
 msgid "AppCenter"
@@ -50,7 +50,7 @@ msgstr "Avinstaller"
 #: ../src/Views/SearchView.vala:35
 msgctxt "view"
 msgid "Search"
-msgstr ""
+msgstr "Søk"
 
 #: ../src/Views/FeaturedView.vala:33
 msgid "Best Rated"
@@ -146,11 +146,11 @@ msgstr "Installerer oppdateringer"
 
 #: ../src/Core/ChangeInformation.vala:74
 msgid "Cleaning up packages"
-msgstr ""
+msgstr "Rydder opp pakker"
 
 #: ../src/Core/ChangeInformation.vala:76
 msgid "Obsoleting packages"
-msgstr ""
+msgstr "Setter pakker som foreldet"
 
 #: ../src/Core/ChangeInformation.vala:78
 msgid "Resolving dependencies"
