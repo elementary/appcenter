@@ -40,6 +40,7 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
 
     private bool updates_on_top;
     private Gtk.ListBox list_box;
+    private Gtk.SizeGroup update_button_group;
 
     public AppListView (bool updates_on_top = false) {
         this.updates_on_top = updates_on_top;
@@ -64,10 +65,13 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
             }
         });
         add (list_box);
+
+        update_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
     }
 
     public void add_package (AppCenterCore.Package package) {
         var row = new Widgets.PackageRow (package);
+        update_button_group.add_widget (row.update_button);
         row.show_all ();
         list_box.add (row);
     }
@@ -171,6 +175,8 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
         update_all_button.valign = Gtk.Align.CENTER;
         update_all_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
         update_all_button.clicked.connect (() => update_all_clicked.begin ());
+
+        update_button_group.add_widget (update_all_button);
 
         uint current_update_number = update_numbers;
         list_box.get_children ().foreach ((child) => {
