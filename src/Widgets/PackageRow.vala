@@ -28,11 +28,11 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
     Gtk.Label package_summary;
 
     public Gtk.Button update_button;
+    public Gtk.Button cancel_button;
     Gtk.Stack action_stack;
     Gtk.Grid update_grid;
     Gtk.ProgressBar update_progressbar;
     Gtk.Label update_label;
-    Gtk.Button cancel_button;
 
     public PackageRow (Package package) {
         this.package = package;
@@ -113,9 +113,11 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
 
         update_label = new Gtk.Label (null);
         update_progressbar = new Gtk.ProgressBar ();
-        cancel_button = new Gtk.Button.from_icon_name ("process-stop-symbolic", Gtk.IconSize.MENU);
-        cancel_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        update_progressbar.margin_end = 12;
+
+        cancel_button = new Gtk.Button.with_label (_("Cancel"));
         cancel_button.valign = Gtk.Align.CENTER;
+        cancel_button.margin_end = 6;
 
         update_grid = new Gtk.Grid ();
         update_grid.attach (update_label, 0, 0, 1, 1);
