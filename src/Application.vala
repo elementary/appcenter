@@ -55,6 +55,7 @@ public class AppCenter.App : Granite.Application {
     public override void activate () {
         if (main_window == null) {
             main_window = new MainWindow (this);
+            add_window (main_window);
             main_window.show_all ();
             if (show_updates) {
                 main_window.go_to_installed ();
