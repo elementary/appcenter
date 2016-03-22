@@ -3,15 +3,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-03-20 07:06-0500\n"
-"PO-Revision-Date: 2015-12-23 08:15+0000\n"
-"Last-Translator: Jiri Grönroos <Unknown>\n"
+"PO-Revision-Date: 2016-03-21 17:07+0000\n"
+"Last-Translator: elementaryart (old) <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-03-21 05:23+0000\n"
-"X-Generator: Launchpad (build 17947)\n"
+"X-Launchpad-Export-Date: 2016-03-22 05:33+0000\n"
+"X-Generator: Launchpad (build 17958)\n"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -203,11 +203,11 @@ msgstr "Haku"
 
 #: ../src/Views/AppListView.vala:54
 msgid "No Results"
-msgstr ""
+msgstr "Ei tuloksia"
 
 #: ../src/Views/AppListView.vala:54
 msgid "No apps could be found."
-msgstr ""
+msgstr "Sovelluksia ei löytynyt"
 
 #: ../src/Views/AppListView.vala:137
 msgid "Searching for updates…"
@@ -215,13 +215,13 @@ msgstr "Etsitään päivityksiä…"
 
 #: ../src/Views/AppListView.vala:143
 msgid "Up to Date"
-msgstr ""
+msgstr "Ajan tasalla"
 
 #: ../src/Views/AppListView.vala:166
 msgid "%u Update Available."
 msgid_plural "%u Updates Available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u päivitys saatavilla."
+msgstr[1] "%u päivitystä saatavilla."
 
 #: ../src/Views/AppListView.vala:172
 msgid "Size: %s"
@@ -255,7 +255,7 @@ msgstr "Poista asennus"
 
 #: ../src/Widgets/PackageRow.vala:118
 msgid "Cancel"
-msgstr ""
+msgstr "Peru"
 
 #: ../daemon/Daemon.vala:135
 msgid "Update Available"
