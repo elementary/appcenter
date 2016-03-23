@@ -3,15 +3,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-03-20 07:06-0500\n"
-"PO-Revision-Date: 2016-02-27 17:03+0000\n"
-"Last-Translator: elementaryart (old) <Unknown>\n"
+"PO-Revision-Date: 2016-03-22 12:27+0000\n"
+"Last-Translator: Artem Anufrij <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-03-21 05:23+0000\n"
-"X-Generator: Launchpad (build 17947)\n"
+"X-Launchpad-Export-Date: 2016-03-23 05:23+0000\n"
+"X-Generator: Launchpad (build 17958)\n"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -174,6 +174,7 @@ msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
 "  Alexander Wilms https://launchpad.net/~alexander-wilms\n"
+"  Artem Anufrij https://launchpad.net/~artem-anufrij\n"
 "  Corentin Noël https://launchpad.net/~tintou\n"
 "  Domar https://launchpad.net/~domar\n"
 "  JayNutZ https://launchpad.net/~thejaynutz\n"
@@ -211,11 +212,11 @@ msgstr "Suchen"
 
 #: ../src/Views/AppListView.vala:54
 msgid "No Results"
-msgstr ""
+msgstr "Keine Treffer"
 
 #: ../src/Views/AppListView.vala:54
 msgid "No apps could be found."
-msgstr ""
+msgstr "Es konnten keine Anwendungen gefunden werden."
 
 #: ../src/Views/AppListView.vala:137
 msgid "Searching for updates…"
@@ -223,13 +224,13 @@ msgstr "Suche nach Aktualisierungen …"
 
 #: ../src/Views/AppListView.vala:143
 msgid "Up to Date"
-msgstr ""
+msgstr "Aktuell"
 
 #: ../src/Views/AppListView.vala:166
 msgid "%u Update Available."
 msgid_plural "%u Updates Available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u Update verfügbar."
+msgstr[1] "%u Updates verfügbar."
 
 #: ../src/Views/AppListView.vala:172
 msgid "Size: %s"
@@ -263,7 +264,7 @@ msgstr "Deinstallieren"
 
 #: ../src/Widgets/PackageRow.vala:118
 msgid "Cancel"
-msgstr ""
+msgstr "Abbrechen"
 
 #: ../daemon/Daemon.vala:135
 msgid "Update Available"

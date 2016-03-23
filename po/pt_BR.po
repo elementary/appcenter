@@ -3,15 +3,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-03-20 07:06-0500\n"
-"PO-Revision-Date: 2016-02-24 16:26+0000\n"
-"Last-Translator: Gustavo <goolinx@gmail.com>\n"
+"PO-Revision-Date: 2016-03-22 17:31+0000\n"
+"Last-Translator: Leonardo Lemos <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Launchpad-Export-Date: 2016-03-21 05:24+0000\n"
-"X-Generator: Launchpad (build 17947)\n"
+"X-Launchpad-Export-Date: 2016-03-23 05:23+0000\n"
+"X-Generator: Launchpad (build 17958)\n"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -208,11 +208,11 @@ msgstr "Pesquisa"
 
 #: ../src/Views/AppListView.vala:54
 msgid "No Results"
-msgstr ""
+msgstr "Sem resultados"
 
 #: ../src/Views/AppListView.vala:54
 msgid "No apps could be found."
-msgstr ""
+msgstr "Nenhum aplicativo pôde ser encontrado."
 
 #: ../src/Views/AppListView.vala:137
 msgid "Searching for updates…"
@@ -220,13 +220,13 @@ msgstr "Procurando atualizações..."
 
 #: ../src/Views/AppListView.vala:143
 msgid "Up to Date"
-msgstr ""
+msgstr "Atualizado"
 
 #: ../src/Views/AppListView.vala:166
 msgid "%u Update Available."
 msgid_plural "%u Updates Available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u atualização disponível."
+msgstr[1] "%u Atualizações disponíveis."
 
 #: ../src/Views/AppListView.vala:172
 msgid "Size: %s"
@@ -260,7 +260,7 @@ msgstr "Desinstalar"
 
 #: ../src/Widgets/PackageRow.vala:118
 msgid "Cancel"
-msgstr ""
+msgstr "Cancelar"
 
 #: ../daemon/Daemon.vala:135
 msgid "Update Available"
