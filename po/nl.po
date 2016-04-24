@@ -3,15 +3,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-03-20 07:06-0500\n"
-"PO-Revision-Date: 2015-12-16 11:36+0000\n"
-"Last-Translator: elementaryart (old) <Unknown>\n"
+"PO-Revision-Date: 2016-04-23 22:12+0000\n"
+"Last-Translator: kay van der Zander <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-03-21 05:23+0000\n"
-"X-Generator: Launchpad (build 17947)\n"
+"X-Launchpad-Export-Date: 2016-04-24 05:54+0000\n"
+"X-Generator: Launchpad (build 17995)\n"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -19,11 +19,11 @@ msgstr ""
 
 #: ../src/Core/ChangeInformation.vala:56
 msgid "Waiting in queue"
-msgstr ""
+msgstr "In wachtrij"
 
 #: ../src/Core/ChangeInformation.vala:58
 msgid "Running"
-msgstr ""
+msgstr "In behandeling"
 
 #: ../src/Core/ChangeInformation.vala:60
 msgid "Querying"
@@ -31,31 +31,31 @@ msgstr ""
 
 #: ../src/Core/ChangeInformation.vala:62
 msgid "Getting information"
-msgstr ""
+msgstr "Informatie ophalen"
 
 #: ../src/Core/ChangeInformation.vala:64
 msgid "Removing packages"
-msgstr ""
+msgstr "Pakketten aan het verwijderen"
 
 #: ../src/Core/ChangeInformation.vala:66
 msgid "Downloading packages"
-msgstr ""
+msgstr "Pakketten aan het downloaden"
 
 #: ../src/Core/ChangeInformation.vala:68
 msgid "Installing packages"
-msgstr ""
+msgstr "Pakketten aan het installeren"
 
 #: ../src/Core/ChangeInformation.vala:70
 msgid "Refreshing software list"
-msgstr ""
+msgstr "Softwarelijst aan het vernieuwen"
 
 #: ../src/Core/ChangeInformation.vala:72
 msgid "Installing updates"
-msgstr ""
+msgstr "Updates aan het installeren"
 
 #: ../src/Core/ChangeInformation.vala:74
 msgid "Cleaning up packages"
-msgstr ""
+msgstr "Pakketten aan het opschonen"
 
 #: ../src/Core/ChangeInformation.vala:76
 msgid "Obsoleting packages"
@@ -63,35 +63,35 @@ msgstr ""
 
 #: ../src/Core/ChangeInformation.vala:78
 msgid "Resolving dependencies"
-msgstr ""
+msgstr "Afhankelijkheden aan het oplossen"
 
 #: ../src/Core/ChangeInformation.vala:80
 msgid "Checking signatures"
-msgstr ""
+msgstr "Ondertekening aan het controleren"
 
 #: ../src/Core/ChangeInformation.vala:82
 msgid "Testing changes"
-msgstr ""
+msgstr "Wijzigingen aan het testen"
 
 #: ../src/Core/ChangeInformation.vala:84
 msgid "Committing changes"
-msgstr ""
+msgstr "Wijzigingen aan het vastleggen"
 
 #: ../src/Core/ChangeInformation.vala:86
 msgid "Requesting data"
-msgstr ""
+msgstr "Gegevens aan het opvragen"
 
 #: ../src/Core/ChangeInformation.vala:88
 msgid "Finished"
-msgstr ""
+msgstr "Klaar"
 
 #: ../src/Core/ChangeInformation.vala:90
 msgid "Cancelling"
-msgstr ""
+msgstr "Annuleren"
 
 #: ../src/Core/ChangeInformation.vala:92
 msgid "Downloading repository information"
-msgstr ""
+msgstr "Downloaden van installatiebron-informatie"
 
 #: ../src/Core/ChangeInformation.vala:94
 msgid "Downloading list of packages"
@@ -103,7 +103,7 @@ msgstr ""
 
 #: ../src/Core/ChangeInformation.vala:98
 msgid "Downloading lists of changes"
-msgstr ""
+msgstr "Lijst van veranderingen downloaden."
 
 #: ../src/Core/ChangeInformation.vala:100
 msgid "Downloading groups"
@@ -111,7 +111,7 @@ msgstr ""
 
 #: ../src/Core/ChangeInformation.vala:102
 msgid "Downloading update information"
-msgstr ""
+msgstr "Pakket informatie downloaden"
 
 #: ../src/Core/ChangeInformation.vala:104
 msgid "Repackaging files"
@@ -119,7 +119,7 @@ msgstr ""
 
 #: ../src/Core/ChangeInformation.vala:106
 msgid "Loading cache"
-msgstr ""
+msgstr "Laden van cache"
 
 #: ../src/Core/ChangeInformation.vala:108
 msgid "Scanning applications"
@@ -127,11 +127,11 @@ msgstr ""
 
 #: ../src/Core/ChangeInformation.vala:110
 msgid "Generating package lists"
-msgstr ""
+msgstr "Genereren van pakketlijsten"
 
 #: ../src/Core/ChangeInformation.vala:112
 msgid "Waiting for package manager lock"
-msgstr ""
+msgstr "Wachten op  vergrendeling van pakketbeheerder"
 
 #: ../src/Core/ChangeInformation.vala:114
 msgid "Waiting for authentication"
@@ -176,7 +176,8 @@ msgstr ""
 "  Barend https://launchpad.net/~b-vanrijn\n"
 "  Sebasst https://launchpad.net/~sebasst-f\n"
 "  Thomas Berends https://launchpad.net/~thomasberends\n"
-"  elementaryart (old) https://launchpad.net/~elementaryart"
+"  elementaryart (old) https://launchpad.net/~elementaryart\n"
+"  kay van der Zander https://launchpad.net/~kay20"
 
 #: ../src/MainWindow.vala:56
 msgid "AppCenter"

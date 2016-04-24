@@ -3,15 +3,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-03-20 07:06-0500\n"
-"PO-Revision-Date: 2015-12-21 13:50+0000\n"
+"PO-Revision-Date: 2016-04-23 23:25+0000\n"
 "Last-Translator: Corentin Noël <corentin@elementaryos.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Launchpad-Export-Date: 2016-03-21 05:23+0000\n"
-"X-Generator: Launchpad (build 17947)\n"
+"X-Launchpad-Export-Date: 2016-04-24 05:54+0000\n"
+"X-Generator: Launchpad (build 17995)\n"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -173,7 +173,9 @@ msgstr "Centre d'applications"
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
+"  Colin https://launchpad.net/~colin-boni\n"
 "  Corentin Noël https://launchpad.net/~tintou\n"
+"  Célian https://launchpad.net/~cece46\n"
 "  Devil505 https://launchpad.net/~devil505\n"
 "  Florie Depuiset https://launchpad.net/~florie-depuiset\n"
 "  elementaryart (old) https://launchpad.net/~elementaryart"
@@ -205,11 +207,11 @@ msgstr "Recherche"
 
 #: ../src/Views/AppListView.vala:54
 msgid "No Results"
-msgstr ""
+msgstr "Aucun résultat"
 
 #: ../src/Views/AppListView.vala:54
 msgid "No apps could be found."
-msgstr ""
+msgstr "Aucune application correspondante n'a été trouvée."
 
 #: ../src/Views/AppListView.vala:137
 msgid "Searching for updates…"
@@ -217,13 +219,13 @@ msgstr "Recherche de mises à jour…"
 
 #: ../src/Views/AppListView.vala:143
 msgid "Up to Date"
-msgstr ""
+msgstr "À jour"
 
 #: ../src/Views/AppListView.vala:166
 msgid "%u Update Available."
 msgid_plural "%u Updates Available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u mise à jour disponible"
+msgstr[1] "%u mises à jour disponibles"
 
 #: ../src/Views/AppListView.vala:172
 msgid "Size: %s"
@@ -257,7 +259,7 @@ msgstr "Désinstaller"
 
 #: ../src/Widgets/PackageRow.vala:118
 msgid "Cancel"
-msgstr ""
+msgstr "Annuler"
 
 #: ../daemon/Daemon.vala:135
 msgid "Update Available"
