@@ -163,7 +163,7 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
         }
 
         var updates_label = new Gtk.Label (null);
-        updates_label.label = ngettext ("%u Update Available.", "%u Updates Available", update_numbers).printf (update_numbers);
+        updates_label.label = ngettext ("%u Update Available", "%u Updates Available", update_numbers).printf (update_numbers);
         ((Gtk.Misc) updates_label).xalign = 0;
         updates_label.get_style_context ().add_class ("h4");
         updates_label.hexpand = true;
