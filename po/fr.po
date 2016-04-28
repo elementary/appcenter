@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-20 07:06-0500\n"
+"POT-Creation-Date: 2016-04-24 18:17-0300\n"
 "PO-Revision-Date: 2016-04-24 14:13+0000\n"
 "Last-Translator: Corentin Noël <corentin@elementaryos.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -10,8 +10,120 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Launchpad-Export-Date: 2016-04-25 05:18+0000\n"
+"X-Launchpad-Export-Date: 2016-04-28 05:25+0000\n"
 "X-Generator: Launchpad (build 17995)\n"
+
+#: ../src/Widgets/PackageRow.vala:108 ../src/Views/AppInfoView.vala:80
+#: ../src/Views/AppInfoView.vala:96 ../src/Views/AppInfoView.vala:105
+msgid "Update"
+msgstr "Mettre à jour"
+
+#: ../src/Widgets/PackageRow.vala:118
+msgid "Cancel"
+msgstr "Annuler"
+
+#: ../src/Views/AppInfoView.vala:111 ../src/Views/AppInfoView.vala:188
+#: ../src/Views/AppInfoView.vala:306
+msgid "Install"
+msgstr "Installer"
+
+#: ../src/Views/AppInfoView.vala:193
+msgid "Uninstall"
+msgstr "Désinstaller"
+
+#: ../src/Views/CategoryView.vala:71 ../src/Views/CategoryView.vala:78
+#: ../src/MainWindow.vala:115
+msgid "Categories"
+msgstr "Catégories"
+
+#. / TRANSLATORS: the name of the Search view
+#: ../src/Views/SearchView.vala:35
+msgctxt "view"
+msgid "Search"
+msgstr "Recherche"
+
+#: ../src/Views/FeaturedView.vala:33
+msgid "Best Rated"
+msgstr "Mieux notés"
+
+#: ../src/Views/FeaturedView.vala:36
+msgid "Latest Apps"
+msgstr "Dernières applications"
+
+#: ../src/Views/InstalledView.vala:42 ../src/MainWindow.vala:119
+#: ../src/MainWindow.vala:124
+msgctxt "view"
+msgid "Installed"
+msgstr "Installées"
+
+#: ../src/Views/AppListView.vala:54
+msgid "No Results"
+msgstr "Aucun résultat"
+
+#: ../src/Views/AppListView.vala:54
+msgid "No apps could be found."
+msgstr "Aucune application correspondante n'a été trouvée."
+
+#: ../src/Views/AppListView.vala:137
+msgid "Searching for updates…"
+msgstr "Recherche de mises à jour…"
+
+#: ../src/Views/AppListView.vala:143
+msgid "Up to Date"
+msgstr "À jour"
+
+#: ../src/Views/AppListView.vala:166
+msgid "%u Update Available"
+msgid_plural "%u Updates Available"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/Views/AppListView.vala:172
+msgid "Size: %s"
+msgstr "Taille : %s"
+
+#: ../src/Views/AppListView.vala:174
+msgid "Update All"
+msgstr "Tout mettre à jour"
+
+#: ../src/MainWindow.vala:56
+msgid "AppCenter"
+msgstr "Centre d'Applications"
+
+#: ../src/MainWindow.vala:78
+msgid "Search App"
+msgstr "Rechercher une application"
+
+#: ../src/Application.vala:32 ../daemon/Daemon.vala:45 ../daemon/Daemon.vala:53
+msgid "App Center"
+msgstr "Centre d'applications"
+
+#: ../src/Application.vala:50
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Colin https://launchpad.net/~colin-boni\n"
+"  Corentin Noël https://launchpad.net/~tintou\n"
+"  Célian https://launchpad.net/~cece46\n"
+"  Devil505 https://launchpad.net/~devil505\n"
+"  Florie Depuiset https://launchpad.net/~florie-depuiset\n"
+"  elementaryart (old) https://launchpad.net/~elementaryart"
+
+#: ../src/Core/Client.vala:64
+msgid "Operating System Updates"
+msgstr "Mises à jour du système d'exploitation"
+
+#: ../src/Core/Client.vala:65
+msgid "Updates to system components"
+msgstr "Mise à jour des composants système"
+
+#: ../src/Core/Package.vala:80
+msgid "Application installed"
+msgstr ""
+
+#: ../src/Core/Package.vala:81
+msgid "%s has been successfully installed"
+msgstr ""
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -157,110 +269,6 @@ msgstr "Copie des fichiers"
 msgid "Unknown state"
 msgstr "État inconnu"
 
-#: ../src/Core/Client.vala:64
-msgid "Operating System Updates"
-msgstr "Mises à jour du système d'exploitation"
-
-#: ../src/Core/Client.vala:65
-msgid "Updates to system components"
-msgstr "Mise à jour des composants système"
-
-#: ../src/Application.vala:32 ../daemon/Daemon.vala:45 ../daemon/Daemon.vala:53
-msgid "App Center"
-msgstr "Centre d'applications"
-
-#: ../src/Application.vala:50
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Colin https://launchpad.net/~colin-boni\n"
-"  Corentin Noël https://launchpad.net/~tintou\n"
-"  Célian https://launchpad.net/~cece46\n"
-"  Devil505 https://launchpad.net/~devil505\n"
-"  Florie Depuiset https://launchpad.net/~florie-depuiset\n"
-"  elementaryart (old) https://launchpad.net/~elementaryart"
-
-#: ../src/MainWindow.vala:56
-msgid "AppCenter"
-msgstr "Centre d'Applications"
-
-#: ../src/MainWindow.vala:78
-msgid "Search App"
-msgstr "Rechercher une application"
-
-#: ../src/MainWindow.vala:115 ../src/Views/CategoryView.vala:71
-#: ../src/Views/CategoryView.vala:78
-msgid "Categories"
-msgstr "Catégories"
-
-#: ../src/MainWindow.vala:119 ../src/MainWindow.vala:124
-#: ../src/Views/InstalledView.vala:42
-msgctxt "view"
-msgid "Installed"
-msgstr "Installées"
-
-#. / TRANSLATORS: the name of the Search view
-#: ../src/Views/SearchView.vala:35
-msgctxt "view"
-msgid "Search"
-msgstr "Recherche"
-
-#: ../src/Views/AppListView.vala:54
-msgid "No Results"
-msgstr "Aucun résultat"
-
-#: ../src/Views/AppListView.vala:54
-msgid "No apps could be found."
-msgstr "Aucune application correspondante n'a été trouvée."
-
-#: ../src/Views/AppListView.vala:137
-msgid "Searching for updates…"
-msgstr "Recherche de mises à jour…"
-
-#: ../src/Views/AppListView.vala:143
-msgid "Up to Date"
-msgstr "À jour"
-
-#: ../src/Views/AppListView.vala:166
-msgid "%u Update Available."
-msgid_plural "%u Updates Available"
-msgstr[0] "%u mise à jour disponible"
-msgstr[1] "%u mises à jour disponibles"
-
-#: ../src/Views/AppListView.vala:172
-msgid "Size: %s"
-msgstr "Taille : %s"
-
-#: ../src/Views/AppListView.vala:174
-msgid "Update All"
-msgstr "Tout mettre à jour"
-
-#: ../src/Views/FeaturedView.vala:33
-msgid "Best Rated"
-msgstr "Mieux notés"
-
-#: ../src/Views/FeaturedView.vala:36
-msgid "Latest Apps"
-msgstr "Dernières applications"
-
-#: ../src/Views/AppInfoView.vala:80 ../src/Views/AppInfoView.vala:96
-#: ../src/Views/AppInfoView.vala:105 ../src/Widgets/PackageRow.vala:108
-msgid "Update"
-msgstr "Mettre à jour"
-
-#: ../src/Views/AppInfoView.vala:111 ../src/Views/AppInfoView.vala:188
-#: ../src/Views/AppInfoView.vala:306
-msgid "Install"
-msgstr "Installer"
-
-#: ../src/Views/AppInfoView.vala:193
-msgid "Uninstall"
-msgstr "Désinstaller"
-
-#: ../src/Widgets/PackageRow.vala:118
-msgid "Cancel"
-msgstr "Annuler"
-
 #: ../daemon/Daemon.vala:135
 msgid "Update Available"
 msgid_plural "Updates Available"
@@ -349,3 +357,8 @@ msgstr[1] "%u mises à jour sont disponibles pour votre système"
 
 #~ msgid "Up to date"
 #~ msgstr "À jour"
+
+#~ msgid "%u Update Available."
+#~ msgid_plural "%u Updates Available"
+#~ msgstr[0] "%u mise à jour disponible"
+#~ msgstr[1] "%u mises à jour disponibles"
