@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-04-28 05:25+0000\n"
+"X-Launchpad-Export-Date: 2016-04-29 05:24+0000\n"
 "X-Generator: Launchpad (build 17995)\n"
 
 #: ../src/Widgets/PackageRow.vala:108 ../src/Views/AppInfoView.vala:80
@@ -112,6 +112,7 @@ msgstr ""
 "  Rico Tzschichholz https://launchpad.net/~ricotz\n"
 "  Tobias Bannert https://launchpad.net/~toba\n"
 "  elementaryart (old) https://launchpad.net/~elementaryart\n"
+"  lb https://launchpad.net/~qlblb12-lb45\n"
 "  mporten https://launchpad.net/~mathias-porten"
 
 #: ../src/Core/Client.vala:64
@@ -362,8 +363,3 @@ msgstr[1] "Für Ihr System sind %u Aktualisierungen verfügbar"
 #~ msgid_plural "%u updates are available."
 #~ msgstr[0] "%u Aktualisierung verfügbar."
 #~ msgstr[1] "%u Aktualisierungen verfügbar."
-
-#~ msgid "%u Update Available."
-#~ msgid_plural "%u Updates Available"
-#~ msgstr[0] "%u Update verfügbar."
-#~ msgstr[1] "%u Updates verfügbar."

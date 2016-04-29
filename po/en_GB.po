@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-04-28 05:26+0000\n"
+"X-Launchpad-Export-Date: 2016-04-29 05:25+0000\n"
 "X-Generator: Launchpad (build 17995)\n"
 
 #: ../src/Widgets/PackageRow.vala:108 ../src/Views/AppInfoView.vala:80
@@ -355,8 +355,3 @@ msgstr[1] "%u updates are available for your system"
 
 #~ msgid "Up to date"
 #~ msgstr "Up to date"
-
-#~ msgid "%u Update Available."
-#~ msgid_plural "%u Updates Available"
-#~ msgstr[0] "%u Update Available."
-#~ msgstr[1] "%u Updates Available"

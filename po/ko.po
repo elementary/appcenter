@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-04-24 18:17-0300\n"
-"PO-Revision-Date: 2016-04-27 17:45+0000\n"
+"PO-Revision-Date: 2016-04-28 10:46+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2016-04-28 05:25+0000\n"
+"X-Launchpad-Export-Date: 2016-04-29 05:24+0000\n"
 "X-Generator: Launchpad (build 17995)\n"
 
 #: ../src/Widgets/PackageRow.vala:108 ../src/Views/AppInfoView.vala:80
@@ -44,7 +44,7 @@ msgstr "검색"
 
 #: ../src/Views/FeaturedView.vala:33
 msgid "Best Rated"
-msgstr "가장 평가를 많이 받은 앱"
+msgstr "평이 좋은 앱"
 
 #: ../src/Views/FeaturedView.vala:36
 msgid "Latest Apps"
@@ -75,8 +75,7 @@ msgstr "모두 최신 버전입니다"
 #: ../src/Views/AppListView.vala:166
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u개의 업데이트할 항목 있음"
 
 #: ../src/Views/AppListView.vala:172
 msgid "Size: %s"
@@ -88,7 +87,7 @@ msgstr "모두 업데이트하기"
 
 #: ../src/MainWindow.vala:56
 msgid "AppCenter"
-msgstr "앱 센터"
+msgstr "앱센터"
 
 #: ../src/MainWindow.vala:78
 msgid "Search App"
@@ -117,11 +116,11 @@ msgstr "시스템 구성 요소에 대한 업데이트입니다"
 
 #: ../src/Core/Package.vala:80
 msgid "Application installed"
-msgstr ""
+msgstr "설치한 애플리케이션"
 
 #: ../src/Core/Package.vala:81
 msgid "%s has been successfully installed"
-msgstr ""
+msgstr "%s의 설치를 마쳤습니다"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -352,7 +351,3 @@ msgstr[0] "시스템에 %u개의 업데이트 가능 항목이 있습니다"
 
 #~ msgid "Up to date"
 #~ msgstr "현재 시스템이 최신 버전입니다"
-
-#~ msgid "%u Update Available."
-#~ msgid_plural "%u Updates Available"
-#~ msgstr[0] "%u개의 업데이트 가능 항목이 있습니다."
