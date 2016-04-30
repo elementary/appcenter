@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-04-24 18:17-0300\n"
-"PO-Revision-Date: 2016-03-21 21:01+0000\n"
+"PO-Revision-Date: 2016-04-29 08:08+0000\n"
 "Last-Translator: Piotr Strębski <strebski@o2.pl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2016-04-29 05:24+0000\n"
+"X-Launchpad-Export-Date: 2016-04-30 05:18+0000\n"
 "X-Generator: Launchpad (build 17995)\n"
 
 #: ../src/Widgets/PackageRow.vala:108 ../src/Views/AppInfoView.vala:80
@@ -76,8 +76,9 @@ msgstr "Aktualne"
 #: ../src/Views/AppListView.vala:166
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u dostępna aktualizacja"
+msgstr[1] "%u dostępne aktualizacje"
+msgstr[2] "%u dostępnych aktualizacji"
 
 #: ../src/Views/AppListView.vala:172
 msgid "Size: %s"
@@ -122,11 +123,11 @@ msgstr "Aktualizacje elementów systemu"
 
 #: ../src/Core/Package.vala:80
 msgid "Application installed"
-msgstr ""
+msgstr "Program zainstalowany"
 
 #: ../src/Core/Package.vala:81
 msgid "%s has been successfully installed"
-msgstr ""
+msgstr "%s zostało pomyślnie zainstalowane"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
