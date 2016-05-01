@@ -34,11 +34,10 @@ public class AppCenter.Views.CategoryView : View {
         category_flow.margin = 12;
         category_flow.column_spacing = 12;
         category_flow.row_spacing = 6;
-        category_flow.max_children_per_line = 4;
+        category_flow.homogeneous = true;
         category_flow.valign = Gtk.Align.CENTER;
         category_flow.activate_on_single_click = true;
-        AppStream.get_system_categories ().foreach ((category) => {
-            var item = new Widgets.CategoryItem (category);
+        AppCenter.get_app_categories ().foreach ((item) => {
             category_flow.add (item);
         });
 

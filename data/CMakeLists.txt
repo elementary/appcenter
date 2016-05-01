@@ -9,3 +9,4 @@ install (FILES ${CMAKE_CURRENT_BINARY_DIR}/appcenter.desktop DESTINATION share/a
 install (FILES ${CMAKE_CURRENT_BINARY_DIR}/appcenter-daemon.desktop DESTINATION share/applications)
 install (FILES ${CMAKE_CURRENT_BINARY_DIR}/org.pantheon.AppCenter.service DESTINATION share/dbus-1/services)
 install (FILES ${CMAKE_CURRENT_BINARY_DIR}/appcenter.appdata.xml DESTINATION share/appdata)
+

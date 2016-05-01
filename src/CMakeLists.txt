@@ -2,6 +2,7 @@ vala_precompile(VALA_C ${EXEC_NAME}
     Core/ChangeInformation.vala
     Core/Client.vala
     Core/Package.vala
+    Core/AppCategories.vala
 
     Application.vala
     MainWindow.vala
@@ -32,7 +33,10 @@ OPTIONS
   --thread
 )
 
-add_executable (${EXEC_NAME} ${VALA_C})
+include (GResource)
+glib_compile_resources (GLIB_RESOURCES_CATEGORIES SOURCE ../data/icons/categories.gresource.xml)
+
+add_executable (${EXEC_NAME} ${VALA_C} ${GLIB_RESOURCES_CATEGORIES})
 target_link_libraries (${EXEC_NAME} ${DEPS_LIBRARIES}) 
 
 install (TARGETS ${EXEC_NAME} RUNTIME DESTINATION bin)
