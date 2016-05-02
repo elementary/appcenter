@@ -99,7 +99,7 @@ const string CATEGORIES_STYLE_CSS = """
                                   #dd5248,
                                   #c92b31
                                   );
-	    background-size: 100% 150%;
+        background-size: auto 150%;
         border-color: alpha (#8c201d, 0.8);
         box-shadow: inset 0 0 0 1px alpha (#fff, 0.05),
                     inset 0 1px 0 0 alpha (#fff, 0.25),
@@ -208,6 +208,7 @@ public class AppCenter.Widgets.CategoryItem : Gtk.FlowBoxChild {
     private Gtk.Grid grid;
     private Gtk.Image display_image;
     private Gtk.Label name_label;
+    private Gtk.Grid themed_grid;
 
     public CategoryItem (AppStream.Category app_category) {
         this.app_category = app_category;
@@ -241,6 +242,7 @@ public class AppCenter.Widgets.CategoryItem : Gtk.FlowBoxChild {
         grid.column_spacing = 6;
         grid.halign = Gtk.Align.CENTER;
         grid.valign = Gtk.Align.CENTER;
+        grid.margin = 12;
 
         display_image = new Gtk.Image ();
         display_image.icon_size = Gtk.IconSize.DIALOG;
@@ -252,13 +254,20 @@ public class AppCenter.Widgets.CategoryItem : Gtk.FlowBoxChild {
         name_label.wrap = true;
         grid.add (name_label);
 
-        child = grid;
-        get_style_context ().add_class ("category");
+        var expanded_grid = new Gtk.Grid ();
+        expanded_grid.expand = true;
+        expanded_grid.margin = 12;
+
+        themed_grid = new Gtk.Grid ();
+        themed_grid.get_style_context ().add_class ("category");
+        themed_grid.attach (grid, 0, 0, 1, 1);
+        themed_grid.attach (expanded_grid, 0, 0, 1, 1);
+        themed_grid.margin = 12;
+
+        child = themed_grid;
     }
 
-    public override bool draw (Cairo.Context cr) {
-        base.draw (cr);
-        
-        return false;
+    public void add_category_class (string theme_name) {
+        themed_grid.get_style_context ().add_class (theme_name);
     }
 }

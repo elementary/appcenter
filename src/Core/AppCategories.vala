@@ -43,7 +43,7 @@ namespace AppCenter {
         category.set_icon ("applications-audio-symbolic");
         category.get_included ().append ("Audio");
         var item = new Widgets.CategoryItem (category);
-        item.get_style_context ().add_class ("audio");
+        item.add_category_class ("audio");
 
         return item;
     }
@@ -54,7 +54,7 @@ namespace AppCenter {
         category.get_included ().append ("Development");
         category.get_included ().append ("IDE");
         var item = new Widgets.CategoryItem (category);
-        item.get_style_context ().add_class ("development");
+        item.add_category_class ("development");
 
         return item;
     }
@@ -65,7 +65,7 @@ namespace AppCenter {
         category.set_icon ("applications-accessories");
         category.get_included ().append ("Utility");
         var item = new Widgets.CategoryItem (category);
-        item.get_style_context ().add_class ("accessories");
+        item.add_category_class ("accessories");
 
         return item;
     }
@@ -76,7 +76,7 @@ namespace AppCenter {
         category.set_icon ("applications-office-symbolic");
         category.get_included ().append ("Office");
         var item = new Widgets.CategoryItem (category);
-        item.get_style_context ().add_class ("office");
+        item.add_category_class ("office");
 
         return item;
     }
@@ -87,7 +87,7 @@ namespace AppCenter {
         category.set_icon ("applications-system");
         category.get_included ().append ("System");
         var item = new Widgets.CategoryItem (category);
-        item.get_style_context ().add_class ("system");
+        item.add_category_class ("system");
 
         return item;
     }
@@ -98,7 +98,7 @@ namespace AppCenter {
         category.set_icon ("applications-video-symbolic");
         category.get_included ().append ("Video");
         var item = new Widgets.CategoryItem (category);
-        item.get_style_context ().add_class ("video");
+        item.add_category_class ("video");
 
         return item;
     }
@@ -108,7 +108,7 @@ namespace AppCenter {
         category.set_name (_("Graphics"));
         category.get_included ().append ("Graphics");
         var item = new Widgets.CategoryItem (category);
-        item.get_style_context ().add_class ("graphics");
+        item.add_category_class ("graphics");
 
         return item;
     }
@@ -119,7 +119,7 @@ namespace AppCenter {
         category.get_included ().append ("Game");
         category.set_icon ("applications-games-symbolic");
         var item = new Widgets.CategoryItem (category);
-        item.get_style_context ().add_class ("games");
+        item.add_category_class ("games");
 
         return item;
     }
@@ -129,7 +129,7 @@ namespace AppCenter {
         category.set_name (_("Education"));
         category.get_included ().append ("Education");
         var item = new Widgets.CategoryItem (category);
-        item.get_style_context ().add_class ("education");
+        item.add_category_class ("education");
 
         return item;
     }
@@ -140,28 +140,30 @@ namespace AppCenter {
         category.set_icon ("applications-internet");
         category.get_included ().append ("Network");
         var item = new Widgets.CategoryItem (category);
-        item.get_style_context ().add_class ("internet");
+        item.add_category_class ("internet");
 
         return item;
     }
 
     public static Widgets.CategoryItem get_science_category () {
         var category = new AppStream.Category ();
+        // TRANSLATORS: We need to force the newline so that the buttons get a decent size
         category.set_name (_("Science &\nEngineering"));
         category.get_included ().append ("Science");
         var item = new Widgets.CategoryItem (category);
-        item.get_style_context ().add_class ("science");
+        item.add_category_class ("science");
 
         return item;
     }
 
     public static Widgets.CategoryItem get_a11y_category () {
         var category = new AppStream.Category ();
+        // TRANSLATORS: We need to force the newline so that the buttons get a decent size
         category.set_name (_("UNIVERSAL\nACCESS"));
         category.set_icon ("applications-accessibility-symbolic");
         category.get_included ().append ("Accessibility");
         var item = new Widgets.CategoryItem (category);
-        item.get_style_context ().add_class ("accessibility");
+        item.add_category_class ("accessibility");
 
         return item;
     }
