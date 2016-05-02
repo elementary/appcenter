@@ -22,54 +22,89 @@
 const string CATEGORIES_STYLE_CSS = """
     .category {
         background-image: linear-gradient(to bottom,
-                                  shade (#FFFFFF, 1),
-                                  shade (#f2f2f2, 1)
+                                  #fafafa,
+                                  #f2f2f2
                                   );
+        border: 1px solid alpha (#000, 0.15);
+        border-radius: 3px;
+
+        box-shadow: inset 0 0 0 1px alpha (#fff, 0.05),
+                    inset 0 1px 0 0 alpha (#fff, 0.45),
+                    inset 0 -1px 0 0 alpha (#fff, 0.15),
+                    0 1px 3px alpha (#000, 0.12),
+                    0 1px 2px alpha (#000, 0.24);
         color: #4d4d4d;
-        padding: 24px;
         font-size: 32px;
-        font-family: open-sans;
-        font-weight: lighter;
+        font-weight: 300;
+        padding: 42px 16px;
     }
     .category.audio {
         background-image: linear-gradient(to bottom,
-                                  shade (#FC8F36, 1),
-                                  shade (#EF6522, 1)
+                                  #FC8F36,
+                                  #EF6522
                                   );
-        text-shadow: 0 0 3px alpha (black, 0.8);
-        icon-shadow: 0 0 3px alpha (black, 0.6);
-        color: white;
+        border-color: alpha (#a25812, 0.8);
+        color: #fff8ef;
+        icon-shadow: 0 1px 1px alpha (#6c1900, 0.5),
+                     0 2px 3px alpha (#6c1900, 0.5);
+        text-shadow: 0 1px 1px alpha (#6c1900, 0.5),
+                     0 2px 3px alpha (#6c1900, 0.5);
     }
     .category.development {
         background-image: linear-gradient(to bottom,
-                                  shade (#7D6DA5, 1),
-                                  shade (#7C709C, 1)
+                                  #816fa9,
+                                  #6a5c8e
                                   );
+        border-color: alpha (#352d48, 0.8);
         font-family: lobster;
-        text-shadow: 0 0 3px alpha (black, 0.8);
-        color: white;
+        text-shadow: 0 2px 0 alpha (#000, 0.3);
+        color: #fff;
     }
     .category.accessories {
+        box-shadow: inset 0 0 0 1px alpha (#fff, 0.10),
+                    inset 0 1px 0 0 alpha (#fff, 0.90),
+                    inset 0 -1px 0 0 alpha (#fff, 0.30),
+                    0 1px 3px alpha (#000, 0.12),
+                    0 1px 2px alpha (#000, 0.24);
         font-size: 24px;
     }
     .category.office {
+        box-shadow: inset 0 0 0 1px alpha (#fff, 0.10),
+                    inset 0 1px 0 0 alpha (#fff, 0.90),
+                    inset 0 -1px 0 0 alpha (#fff, 0.30),
+                    0 1px 3px alpha (#000, 0.12),
+                    0 1px 2px alpha (#000, 0.24);
         color: #ff750c;
     }
     .category.system {
         background-image: linear-gradient(to bottom,
-                                  shade (#6B7891, 1),
-                                  shade (#5A697F, 1)
+                                  #69768f,
+                                  #59687e
                                   );
+        border-color: alpha (#454951, 0.8);
+        box-shadow: inset 0 0 0 1px alpha (#fff, 0.05),
+                    inset 0 1px 0 0 alpha (#fff, 0.25),
+                    inset 0 -1px 0 0 alpha (#fff, 0.10),
+                    0 1px 3px alpha (#000, 0.12),
+                    0 1px 2px alpha (#000, 0.24);
         color: white;
+        text-shadow: 0 1px 1px alpha (#000, 0.3),
+                     0 2px 3px alpha (#000, 0.3);
     }
     .category.video {
         background-image: linear-gradient(to bottom,
-                                  shade (#D74742, 1),
-                                  shade (#9A3731, 1)
+                                  #dd5248,
+                                  #c92b31
                                   );
-        text-shadow: 0 0 3px alpha (black, 0.8);
-        icon-shadow: 0 0 3px alpha (black, 0.6);
-        color: white;
+        border-color: alpha (#8c201d, 0.8);
+        box-shadow: inset 0 0 0 1px alpha (#fff, 0.05),
+                    inset 0 1px 0 0 alpha (#fff, 0.25),
+                    inset 0 -1px 0 0 alpha (#fff, 0.10),
+                    0 1px 3px alpha (#000, 0.12),
+                    0 1px 2px alpha (#000, 0.24);
+        text-shadow: 0 1px 2px alpha (#000, 0.3);
+        icon-shadow: 0 1px 2px alpha (#000, 0.3);
+        color: #fff;
     }
 """;
 

@@ -33,12 +33,9 @@ public class AppCenter.Widgets.CategoryItem : Gtk.FlowBoxChild {
     }
 
     construct {
-        get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-
         grid = new Gtk.Grid ();
         grid.orientation = Gtk.Orientation.HORIZONTAL;
-        grid.margin = 6;
-        grid.column_spacing = 12;
+        grid.column_spacing = 6;
         grid.valign = Gtk.Align.CENTER;
         grid.halign = Gtk.Align.CENTER;
 
