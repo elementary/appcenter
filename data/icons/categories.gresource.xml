@@ -12,4 +12,8 @@
     <file alias="applications-video-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-video-symbolic.svg</file>
     <file alias="applications-system.svg" compressed="true" preprocess="xml-stripblanks">applications-system.svg</file>
   </gresource>
+  <gresource prefix="/org/pantheon/appcenter/backgrounds">
+    <file alias="audio.svg" compressed="true" preprocess="xml-stripblanks">audio.svg</file>
+    <file alias="science.svg" compressed="true" preprocess="xml-stripblanks">science.svg</file>
+  </gresource>
 </gresources>

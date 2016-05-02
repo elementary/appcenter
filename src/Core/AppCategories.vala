@@ -19,95 +19,6 @@
  */
 
 
-const string CATEGORIES_STYLE_CSS = """
-    .category {
-        background-image: linear-gradient(to bottom,
-                                  #fafafa,
-                                  #f2f2f2
-                                  );
-        border: 1px solid alpha (#000, 0.15);
-        border-radius: 3px;
-
-        box-shadow: inset 0 0 0 1px alpha (#fff, 0.05),
-                    inset 0 1px 0 0 alpha (#fff, 0.45),
-                    inset 0 -1px 0 0 alpha (#fff, 0.15),
-                    0 1px 3px alpha (#000, 0.12),
-                    0 1px 2px alpha (#000, 0.24);
-        color: #4d4d4d;
-        font-size: 32px;
-        font-weight: 300;
-        padding: 42px 16px;
-    }
-    .category.audio {
-        background-image: linear-gradient(to bottom,
-                                  #FC8F36,
-                                  #EF6522
-                                  );
-        border-color: alpha (#a25812, 0.8);
-        color: #fff8ef;
-        icon-shadow: 0 1px 1px alpha (#6c1900, 0.5),
-                     0 2px 3px alpha (#6c1900, 0.5);
-        text-shadow: 0 1px 1px alpha (#6c1900, 0.5),
-                     0 2px 3px alpha (#6c1900, 0.5);
-    }
-    .category.development {
-        background-image: linear-gradient(to bottom,
-                                  #816fa9,
-                                  #6a5c8e
-                                  );
-        border-color: alpha (#352d48, 0.8);
-        font-family: lobster;
-        text-shadow: 0 2px 0 alpha (#000, 0.3);
-        color: #fff;
-    }
-    .category.accessories {
-        box-shadow: inset 0 0 0 1px alpha (#fff, 0.10),
-                    inset 0 1px 0 0 alpha (#fff, 0.90),
-                    inset 0 -1px 0 0 alpha (#fff, 0.30),
-                    0 1px 3px alpha (#000, 0.12),
-                    0 1px 2px alpha (#000, 0.24);
-        font-size: 24px;
-    }
-    .category.office {
-        box-shadow: inset 0 0 0 1px alpha (#fff, 0.10),
-                    inset 0 1px 0 0 alpha (#fff, 0.90),
-                    inset 0 -1px 0 0 alpha (#fff, 0.30),
-                    0 1px 3px alpha (#000, 0.12),
-                    0 1px 2px alpha (#000, 0.24);
-        color: #ff750c;
-    }
-    .category.system {
-        background-image: linear-gradient(to bottom,
-                                  #69768f,
-                                  #59687e
-                                  );
-        border-color: alpha (#454951, 0.8);
-        box-shadow: inset 0 0 0 1px alpha (#fff, 0.05),
-                    inset 0 1px 0 0 alpha (#fff, 0.25),
-                    inset 0 -1px 0 0 alpha (#fff, 0.10),
-                    0 1px 3px alpha (#000, 0.12),
-                    0 1px 2px alpha (#000, 0.24);
-        color: white;
-        text-shadow: 0 1px 1px alpha (#000, 0.3),
-                     0 2px 3px alpha (#000, 0.3);
-    }
-    .category.video {
-        background-image: linear-gradient(to bottom,
-                                  #dd5248,
-                                  #c92b31
-                                  );
-        border-color: alpha (#8c201d, 0.8);
-        box-shadow: inset 0 0 0 1px alpha (#fff, 0.05),
-                    inset 0 1px 0 0 alpha (#fff, 0.25),
-                    inset 0 -1px 0 0 alpha (#fff, 0.10),
-                    0 1px 3px alpha (#000, 0.12),
-                    0 1px 2px alpha (#000, 0.24);
-        text-shadow: 0 1px 2px alpha (#000, 0.3);
-        icon-shadow: 0 1px 2px alpha (#000, 0.3);
-        color: #fff;
-    }
-""";
-
 namespace AppCenter {
     public static Gee.TreeSet<Widgets.CategoryItem> get_app_categories () {
         var items = new Gee.TreeSet<Widgets.CategoryItem> ();
@@ -117,6 +28,12 @@ namespace AppCenter {
         items.add (get_office_category ());
         items.add (get_system_category ());
         items.add (get_video_category ());
+        items.add (get_graphics_category ());
+        items.add (get_games_category ());
+        items.add (get_education_category ());
+        items.add (get_internet_category ());
+        items.add (get_science_category ());
+        items.add (get_a11y_category ());
         return items;
     }
     
@@ -126,17 +43,7 @@ namespace AppCenter {
         category.set_icon ("applications-audio-symbolic");
         category.get_included ().append ("Audio");
         var item = new Widgets.CategoryItem (category);
-        item.get_style_context ().add_class ("category");
         item.get_style_context ().add_class ("audio");
-
-        var provider = new Gtk.CssProvider ();
-        try {
-            provider.load_from_data (CATEGORIES_STYLE_CSS, CATEGORIES_STYLE_CSS.length);
-            var context = item.get_style_context ();
-            context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        } catch (Error e) {
-            critical (e.message);
-        }
 
         return item;
     }
@@ -147,17 +54,7 @@ namespace AppCenter {
         category.get_included ().append ("Development");
         category.get_included ().append ("IDE");
         var item = new Widgets.CategoryItem (category);
-        item.get_style_context ().add_class ("category");
         item.get_style_context ().add_class ("development");
-
-        var provider = new Gtk.CssProvider ();
-        try {
-            provider.load_from_data (CATEGORIES_STYLE_CSS, CATEGORIES_STYLE_CSS.length);
-            var context = item.get_style_context ();
-            context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        } catch (Error e) {
-            critical (e.message);
-        }
 
         return item;
     }
@@ -168,17 +65,7 @@ namespace AppCenter {
         category.set_icon ("applications-accessories");
         category.get_included ().append ("Utility");
         var item = new Widgets.CategoryItem (category);
-        item.get_style_context ().add_class ("category");
         item.get_style_context ().add_class ("accessories");
-
-        var provider = new Gtk.CssProvider ();
-        try {
-            provider.load_from_data (CATEGORIES_STYLE_CSS, CATEGORIES_STYLE_CSS.length);
-            var context = item.get_style_context ();
-            context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        } catch (Error e) {
-            critical (e.message);
-        }
 
         return item;
     }
@@ -189,17 +76,7 @@ namespace AppCenter {
         category.set_icon ("applications-office-symbolic");
         category.get_included ().append ("Office");
         var item = new Widgets.CategoryItem (category);
-        item.get_style_context ().add_class ("category");
         item.get_style_context ().add_class ("office");
-
-        var provider = new Gtk.CssProvider ();
-        try {
-            provider.load_from_data (CATEGORIES_STYLE_CSS, CATEGORIES_STYLE_CSS.length);
-            var context = item.get_style_context ();
-            context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        } catch (Error e) {
-            critical (e.message);
-        }
 
         return item;
     }
@@ -210,17 +87,7 @@ namespace AppCenter {
         category.set_icon ("applications-system");
         category.get_included ().append ("System");
         var item = new Widgets.CategoryItem (category);
-        item.get_style_context ().add_class ("category");
         item.get_style_context ().add_class ("system");
-
-        var provider = new Gtk.CssProvider ();
-        try {
-            provider.load_from_data (CATEGORIES_STYLE_CSS, CATEGORIES_STYLE_CSS.length);
-            var context = item.get_style_context ();
-            context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        } catch (Error e) {
-            critical (e.message);
-        }
 
         return item;
     }
@@ -231,17 +98,70 @@ namespace AppCenter {
         category.set_icon ("applications-video-symbolic");
         category.get_included ().append ("Video");
         var item = new Widgets.CategoryItem (category);
-        item.get_style_context ().add_class ("category");
         item.get_style_context ().add_class ("video");
 
-        var provider = new Gtk.CssProvider ();
-        try {
-            provider.load_from_data (CATEGORIES_STYLE_CSS, CATEGORIES_STYLE_CSS.length);
-            var context = item.get_style_context ();
-            context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-        } catch (Error e) {
-            critical (e.message);
-        }
+        return item;
+    }
+
+    public static Widgets.CategoryItem get_graphics_category () {
+        var category = new AppStream.Category ();
+        category.set_name (_("Graphics"));
+        category.get_included ().append ("Graphics");
+        var item = new Widgets.CategoryItem (category);
+        item.get_style_context ().add_class ("graphics");
+
+        return item;
+    }
+
+    public static Widgets.CategoryItem get_games_category () {
+        var category = new AppStream.Category ();
+        category.set_name (_("Games"));
+        category.get_included ().append ("Game");
+        category.set_icon ("applications-games-symbolic");
+        var item = new Widgets.CategoryItem (category);
+        item.get_style_context ().add_class ("games");
+
+        return item;
+    }
+
+    public static Widgets.CategoryItem get_education_category () {
+        var category = new AppStream.Category ();
+        category.set_name (_("Education"));
+        category.get_included ().append ("Education");
+        var item = new Widgets.CategoryItem (category);
+        item.get_style_context ().add_class ("education");
+
+        return item;
+    }
+
+    public static Widgets.CategoryItem get_internet_category () {
+        var category = new AppStream.Category ();
+        category.set_name (_("Internet"));
+        category.set_icon ("applications-internet");
+        category.get_included ().append ("Network");
+        var item = new Widgets.CategoryItem (category);
+        item.get_style_context ().add_class ("internet");
+
+        return item;
+    }
+
+    public static Widgets.CategoryItem get_science_category () {
+        var category = new AppStream.Category ();
+        category.set_name (_("Science & Engineering"));
+        category.get_included ().append ("Science");
+        var item = new Widgets.CategoryItem (category);
+        item.get_style_context ().add_class ("science");
+
+        return item;
+    }
+
+    public static Widgets.CategoryItem get_a11y_category () {
+        var category = new AppStream.Category ();
+        category.set_name (_("Universal Access"));
+        category.set_icon ("applications-accessibility-symbolic");
+        category.get_included ().append ("Accessibility");
+        var item = new Widgets.CategoryItem (category);
+        item.get_style_context ().add_class ("accessibility");
 
         return item;
     }

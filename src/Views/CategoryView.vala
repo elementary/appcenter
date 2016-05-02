@@ -35,7 +35,8 @@ public class AppCenter.Views.CategoryView : View {
         category_flow.column_spacing = 12;
         category_flow.row_spacing = 6;
         category_flow.homogeneous = true;
-        category_flow.valign = Gtk.Align.CENTER;
+        category_flow.halign = Gtk.Align.CENTER;
+        category_flow.min_children_per_line = 2;
         category_flow.activate_on_single_click = true;
         AppCenter.get_app_categories ().foreach ((item) => {
             category_flow.add (item);
