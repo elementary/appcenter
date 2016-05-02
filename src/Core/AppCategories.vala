@@ -115,7 +115,7 @@ namespace AppCenter {
 
     public static Widgets.CategoryItem get_games_category () {
         var category = new AppStream.Category ();
-        category.set_name (_("Games"));
+        category.set_name (_("GAMES"));
         category.get_included ().append ("Game");
         category.set_icon ("applications-games-symbolic");
         var item = new Widgets.CategoryItem (category);
@@ -147,7 +147,7 @@ namespace AppCenter {
 
     public static Widgets.CategoryItem get_science_category () {
         var category = new AppStream.Category ();
-        category.set_name (_("Science & Engineering"));
+        category.set_name (_("Science &\nEngineering"));
         category.get_included ().append ("Science");
         var item = new Widgets.CategoryItem (category);
         item.get_style_context ().add_class ("science");
@@ -157,7 +157,7 @@ namespace AppCenter {
 
     public static Widgets.CategoryItem get_a11y_category () {
         var category = new AppStream.Category ();
-        category.set_name (_("Universal Access"));
+        category.set_name (_("UNIVERSAL\nACCESS"));
         category.set_icon ("applications-accessibility-symbolic");
         category.get_included ().append ("Accessibility");
         var item = new Widgets.CategoryItem (category);

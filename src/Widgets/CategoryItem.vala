@@ -24,6 +24,8 @@ const string CATEGORIES_STYLE_CSS = """
                                   #fafafa,
                                   #f2f2f2
                                   );
+        background-position: center center;
+        background-repeat: no-repeat;
         border: 1px solid alpha (#000, 0.15);
         border-radius: 3px;
 
@@ -35,7 +37,7 @@ const string CATEGORIES_STYLE_CSS = """
         color: #4d4d4d;
         font-size: 32px;
         font-weight: 300;
-        padding: 42px 16px;
+        padding: 24px 16px;
     }
     .category.audio {
         background-image: url("resource:///org/pantheon/appcenter/backgrounds/audio.svg"),
@@ -43,8 +45,6 @@ const string CATEGORIES_STYLE_CSS = """
                                   #FC8F36,
                                   #EF6522
                                   );
-        background-position: center center;
-        background-repeat: no-repeat;
         border-color: alpha (#a25812, 0.8);
         color: #fff8ef;
         icon-shadow: 0 1px 1px alpha (#6c1900, 0.5),
@@ -94,10 +94,12 @@ const string CATEGORIES_STYLE_CSS = """
                      0 2px 3px alpha (#000, 0.3);
     }
     .category.video {
-        background-image: linear-gradient(to bottom,
+        background-image: -gtk-gradient(radial, center center, 0.42, center center, 0.47, from(transparent), to(alpha(#000,0.3))),
+                          linear-gradient(to bottom,
                                   #dd5248,
                                   #c92b31
                                   );
+	    background-size: 100% 150%;
         border-color: alpha (#8c201d, 0.8);
         box-shadow: inset 0 0 0 1px alpha (#fff, 0.05),
                     inset 0 1px 0 0 alpha (#fff, 0.25),
@@ -116,20 +118,26 @@ const string CATEGORIES_STYLE_CSS = """
                     0 1px 2px alpha (#000, 0.24);
         color: #fe5498;
     }
+    .category.graphics .label {
+        border-image: url("resource:///org/pantheon/appcenter/backgrounds/graphics.svg") 10 10 10 10 / 10px 10px 10px 10px repeat;
+	    padding: 12px;
+    }
     .category.games {
         background-image: linear-gradient(to bottom,
                                   #374044,
                                   #374044
                                   );
         border-color: alpha (#1B2022, 0.8);
-        box-shadow: inset 0 0 0 1px alpha (#fff, 0.05),
-                    inset 0 1px 0 0 alpha (#fff, 0.25),
-                    inset 0 -1px 0 0 alpha (#fff, 0.10),
+        box-shadow: inset 0 0 0 1px alpha (#fff, 0.02),
+                    inset 0 1px 0 0 alpha (#fff, 0.23),
+                    inset 0 -1px 0 0 alpha (#fff, 0.07),
                     0 1px 3px alpha (#000, 0.12),
                     0 1px 2px alpha (#000, 0.24);
         text-shadow: 0 1px 2px alpha (#000, 0.3);
         icon-shadow: 0 1px 2px alpha (#000, 0.3);
         color: #fff;
+        font-size: 26px;
+        font-weight: 700;
     }
     .category.education {
         background-image: linear-gradient(to bottom,
@@ -159,8 +167,8 @@ const string CATEGORIES_STYLE_CSS = """
                     inset 0 -1px 0 0 alpha (#fff, 0.10),
                     0 1px 3px alpha (#000, 0.12),
                     0 1px 2px alpha (#000, 0.24);
-        text-shadow: 0 1px 2px alpha (#000, 0.3);
-        icon-shadow: 0 1px 2px alpha (#000, 0.3);
+        text-shadow: 0 1px 1px alpha (#000, 0.3),
+                     0 2px 3px alpha (#000, 0.3);
         color: #fff;
     }
     .category.science {
@@ -169,17 +177,16 @@ const string CATEGORIES_STYLE_CSS = """
                                   #374044,
                                   #374044
                                   );
-        background-position: center center;
-        background-repeat: no-repeat;
         border-color: alpha (#1B2022, 0.8);
-        box-shadow: inset 0 0 0 1px alpha (#fff, 0.05),
-                    inset 0 1px 0 0 alpha (#fff, 0.25),
-                    inset 0 -1px 0 0 alpha (#fff, 0.10),
+        box-shadow: inset 0 0 0 1px alpha (#fff, 0.02),
+                    inset 0 1px 0 0 alpha (#fff, 0.23),
+                    inset 0 -1px 0 0 alpha (#fff, 0.07),
                     0 1px 3px alpha (#000, 0.12),
                     0 1px 2px alpha (#000, 0.24);
         text-shadow: 0 1px 2px alpha (#000, 0.3);
         icon-shadow: 0 1px 2px alpha (#000, 0.3);
         font-family: Limelight;
+        font-size: 24px;
         color: #fff;
     }
     .category.accessibility {
@@ -189,10 +196,10 @@ const string CATEGORIES_STYLE_CSS = """
                                   );
         border-color: alpha (#2980D1, 0.8);
         color: #fff8ef;
-        icon-shadow: 0 1px 1px alpha (#6c1900, 0.5),
-                     0 2px 3px alpha (#6c1900, 0.5);
-        text-shadow: 0 1px 1px alpha (#6c1900, 0.5),
-                     0 2px 3px alpha (#6c1900, 0.5);
+        font-size: 24px;
+        font-weight: 600;
+        icon-shadow: 0 1px 0 alpha (#000, 0.3);
+        text-shadow: 0 1px 0 alpha (#000, 0.3);
     }
 """;
 
