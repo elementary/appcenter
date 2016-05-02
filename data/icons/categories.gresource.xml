@@ -15,6 +15,9 @@
   <gresource prefix="/org/pantheon/appcenter/backgrounds">
     <file alias="audio.svg" compressed="true" preprocess="xml-stripblanks">audio.svg</file>
     <file alias="graphics.svg" compressed="true" preprocess="xml-stripblanks">graphics.svg</file>
+    <file alias="graphics-rtl.svg" compressed="true" preprocess="xml-stripblanks">graphics-rtl.svg</file>
+    <file alias="graphics@2x.svg" compressed="true" preprocess="xml-stripblanks">graphics@2x.svg</file>
+    <file alias="graphics-rtl@2x.svg" compressed="true" preprocess="xml-stripblanks">graphics-rtl@2x.svg</file>
     <file alias="science.svg" compressed="true" preprocess="xml-stripblanks">science.svg</file>
   </gresource>
 </gresources>

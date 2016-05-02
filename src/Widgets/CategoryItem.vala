@@ -124,8 +124,11 @@ const string CATEGORIES_STYLE_CSS = """
         color: #fe5498;
     }
     .category.graphics .label {
-        border-image: url("resource:///org/pantheon/appcenter/backgrounds/graphics.svg") 10 10 10 10 / 10px 10px 10px 10px repeat;
+        border-image: -gtk-scaled(url("resource:///org/pantheon/appcenter/backgrounds/graphics.svg"),url("resource:///org/pantheon/appcenter/backgrounds/graphics@2x.svg")) 10 10 10 10 / 10px 10px 10px 10px repeat;
         padding: 12px;
+    }
+    .category.graphics .label:dir(rtl) {
+        border-image: -gtk-scaled(url("resource:///org/pantheon/appcenter/backgrounds/graphics-rtl.svg"),url("resource:///org/pantheon/appcenter/backgrounds/graphics-rtl@2x.svg")) 10 10 10 10 / 10px 10px 10px 10px repeat;
     }
     .category.games {
         background-image: linear-gradient(to bottom,
