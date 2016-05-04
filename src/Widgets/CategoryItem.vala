@@ -39,7 +39,7 @@ const string CATEGORIES_STYLE_CSS = """
         font-weight: 300;
     }
     .category.audio {
-        background-image: url("resource:///org/pantheon/appcenter/backgrounds/audio.svg"),
+        background-image: -gtk-scaled(url("resource:///org/pantheon/appcenter/backgrounds/audio.svg"), url("resource:///org/pantheon/appcenter/backgrounds/audio@2x.svg")),
                           linear-gradient(to bottom,
                                   #FC8F36,
                                   #EF6522
