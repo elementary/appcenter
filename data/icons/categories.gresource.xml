@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/org/pantheon/appcenter/icons">
+    <file alias="applications-accessibility-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-accessibility-symbolic.svg</file>
+    <file alias="applications-accessories.svg" compressed="true" preprocess="xml-stripblanks">applications-accessories.svg</file>
+    <file alias="applications-audio-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-audio-symbolic.svg</file>
+    <file alias="applications-games-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-games-symbolic.svg</file>
+    <file alias="applications-internet.svg" compressed="true" preprocess="xml-stripblanks">applications-internet.svg</file>
+    <file alias="applications-office-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-office-symbolic.svg</file>
+    <file alias="applications-video-rtl-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-video-rtl-symbolic.svg</file>
+    <file alias="applications-video-symbolic-rtl.svg" compressed="true" preprocess="xml-stripblanks">applications-video-rtl-symbolic.svg</file>
+    <file alias="applications-video-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-video-symbolic.svg</file>
+    <file alias="applications-system.svg" compressed="true" preprocess="xml-stripblanks">applications-system.svg</file>
+  </gresource>
+  <gresource prefix="/org/pantheon/appcenter/backgrounds">
+    <file alias="audio.svg" compressed="true" preprocess="xml-stripblanks">audio.svg</file>
+    <file alias="audio@2x.svg" compressed="true" preprocess="xml-stripblanks">audio@2x.svg</file>
+    <file alias="graphics.svg" compressed="true" preprocess="xml-stripblanks">graphics.svg</file>
+    <file alias="graphics-rtl.svg" compressed="true" preprocess="xml-stripblanks">graphics-rtl.svg</file>
+    <file alias="graphics@2x.svg" compressed="true" preprocess="xml-stripblanks">graphics@2x.svg</file>
+    <file alias="graphics-rtl@2x.svg" compressed="true" preprocess="xml-stripblanks">graphics-rtl@2x.svg</file>
+    <file alias="science.svg" compressed="true" preprocess="xml-stripblanks">science.svg</file>
+  </gresource>
+</gresources>
