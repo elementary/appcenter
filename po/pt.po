@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-04-29 05:24+0000\n"
+"X-Launchpad-Export-Date: 2016-05-06 04:38+0000\n"
 "X-Generator: Launchpad (build 17995)\n"
 
 #: ../src/Widgets/PackageRow.vala:108 ../src/Views/AppInfoView.vala:80
@@ -105,6 +105,7 @@ msgstr ""
 "  Pedro Monteiro https://launchpad.net/~pedro.monteiro\n"
 "  RDRR https://launchpad.net/~rubendrr\n"
 "  Sérgio Marques https://launchpad.net/~sergio+marques\n"
+"  Yvo Marques https://launchpad.net/~macghivo\n"
 "  elementaryart (old) https://launchpad.net/~elementaryart"
 
 #: ../src/Core/Client.vala:64

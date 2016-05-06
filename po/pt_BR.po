@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Launchpad-Export-Date: 2016-04-29 05:25+0000\n"
+"X-Launchpad-Export-Date: 2016-05-06 04:39+0000\n"
 "X-Generator: Launchpad (build 17995)\n"
 
 #: ../src/Widgets/PackageRow.vala:108 ../src/Views/AppInfoView.vala:80
@@ -102,12 +102,14 @@ msgstr "Central de aplicativos"
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
+"  Alison Bento https://launchpad.net/~alisonbnt\n"
 "  Cleiton Floss https://launchpad.net/~cleitonfloss\n"
 "  Gustavo https://launchpad.net/~goolinx\n"
 "  Leonardo Lemos https://launchpad.net/~leonardolemos\n"
 "  Matheus Macabu https://launchpad.net/~mkbu\n"
 "  Rafael Leandro https://launchpad.net/~crf-rafa\n"
 "  Thiago Abreu https://launchpad.net/~thiagojedi\n"
+"  daniel https://launchpad.net/~darksplaybr\n"
 "  elementaryart (old) https://launchpad.net/~elementaryart"
 
 #: ../src/Core/Client.vala:64
