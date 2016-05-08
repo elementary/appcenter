@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-04-24 18:17-0300\n"
-"PO-Revision-Date: 2016-03-21 16:52+0000\n"
-"Last-Translator: cannoneer <gjinflkzcgfve@gmail.com>\n"
+"PO-Revision-Date: 2016-05-07 19:23+0000\n"
+"Last-Translator: Taras <hashevskyi@yandex.ua>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2016-05-06 04:39+0000\n"
-"X-Generator: Launchpad (build 17995)\n"
+"X-Launchpad-Export-Date: 2016-05-08 04:37+0000\n"
+"X-Generator: Launchpad (build 18025)\n"
 
 #: ../src/Widgets/PackageRow.vala:108 ../src/Views/AppInfoView.vala:80
 #: ../src/Views/AppInfoView.vala:96 ../src/Views/AppInfoView.vala:105
@@ -41,7 +41,7 @@ msgstr "Розділи"
 #: ../src/Views/SearchView.vala:35
 msgctxt "view"
 msgid "Search"
-msgstr ""
+msgstr "Знайти"
 
 #: ../src/Views/FeaturedView.vala:33
 msgid "Best Rated"
@@ -89,7 +89,7 @@ msgstr "Оновити все"
 
 #: ../src/MainWindow.vala:56
 msgid "AppCenter"
-msgstr ""
+msgstr "Центр програм"
 
 #: ../src/MainWindow.vala:78
 msgid "Search App"
@@ -105,6 +105,7 @@ msgstr ""
 "Launchpad Contributions:\n"
 "  Alexander Grechko https://launchpad.net/~alexxxander1111\n"
 "  Arthur https://launchpad.net/~arthedza\n"
+"  Igor Peschak https://launchpad.net/~ziaccot\n"
 "  Max_ym https://launchpad.net/~kontact-cat\n"
 "  Orest https://launchpad.net/~falchuko\n"
 "  Sergii Cynailo https://launchpad.net/~funeral20\n"
@@ -130,23 +131,23 @@ msgstr ""
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
-msgstr ""
+msgstr "Запускається"
 
 #: ../src/Core/ChangeInformation.vala:56
 msgid "Waiting in queue"
-msgstr ""
+msgstr "Очікування у черзі"
 
 #: ../src/Core/ChangeInformation.vala:58
 msgid "Running"
-msgstr ""
+msgstr "Працює"
 
 #: ../src/Core/ChangeInformation.vala:60
 msgid "Querying"
-msgstr ""
+msgstr "Виконання запиту"
 
 #: ../src/Core/ChangeInformation.vala:62
 msgid "Getting information"
-msgstr ""
+msgstr "Отримання інформації"
 
 #: ../src/Core/ChangeInformation.vala:64
 msgid "Removing packages"
@@ -166,7 +167,7 @@ msgstr "Оновлення списку програм"
 
 #: ../src/Core/ChangeInformation.vala:72
 msgid "Installing updates"
-msgstr ""
+msgstr "Встановлення оновлень"
 
 #: ../src/Core/ChangeInformation.vala:74
 msgid "Cleaning up packages"
@@ -178,35 +179,35 @@ msgstr "Вилучення застарілих пакетів"
 
 #: ../src/Core/ChangeInformation.vala:78
 msgid "Resolving dependencies"
-msgstr ""
+msgstr "Визначення залежностей"
 
 #: ../src/Core/ChangeInformation.vala:80
 msgid "Checking signatures"
-msgstr ""
+msgstr "Перевірка підписів"
 
 #: ../src/Core/ChangeInformation.vala:82
 msgid "Testing changes"
-msgstr ""
+msgstr "Випробування змін"
 
 #: ../src/Core/ChangeInformation.vala:84
 msgid "Committing changes"
-msgstr ""
+msgstr "Застосування змін"
 
 #: ../src/Core/ChangeInformation.vala:86
 msgid "Requesting data"
-msgstr ""
+msgstr "Запит данних"
 
 #: ../src/Core/ChangeInformation.vala:88
 msgid "Finished"
-msgstr ""
+msgstr "Завершено"
 
 #: ../src/Core/ChangeInformation.vala:90
 msgid "Cancelling"
-msgstr ""
+msgstr "Скасування"
 
 #: ../src/Core/ChangeInformation.vala:92
 msgid "Downloading repository information"
-msgstr ""
+msgstr "Звантаження інформації про сховище"
 
 #: ../src/Core/ChangeInformation.vala:94
 msgid "Downloading list of packages"
@@ -214,11 +215,11 @@ msgstr "Завантаження списку пакетів"
 
 #: ../src/Core/ChangeInformation.vala:96
 msgid "Downloading file lists"
-msgstr ""
+msgstr "Звантаження списків файлів"
 
 #: ../src/Core/ChangeInformation.vala:98
 msgid "Downloading lists of changes"
-msgstr ""
+msgstr "Звантаження списків змін"
 
 #: ../src/Core/ChangeInformation.vala:100
 msgid "Downloading groups"
