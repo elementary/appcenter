@@ -22,8 +22,8 @@ public class AppCenterCore.Client : Object {
     public bool connected_to_daemon { public get; private set; default=false; }
     public AppCenterCore.Package os_updates { public get; private set; }
 
-    private Gee.LinkedList<Pk.Task> task_list;
-    private Gee.LinkedList<Pk.Task> task_with_agreement_list;
+    private Gee.LinkedList<AppCenter.Task> task_list;
+    private Gee.LinkedList<AppCenter.Task> task_with_agreement_list;
     private Gee.HashMap<string, AppCenterCore.Package> package_list;
     private AppStream.Database appstream_database;
     private UpdateSignals update_daemon;
@@ -51,8 +51,8 @@ public class AppCenterCore.Client : Object {
     }
 
     construct {
-        task_list = new Gee.LinkedList<Pk.Task> ();
-        task_with_agreement_list = new Gee.LinkedList<Pk.Task> ();
+        task_list = new Gee.LinkedList<AppCenter.Task> ();
+        task_with_agreement_list = new Gee.LinkedList<AppCenter.Task> ();
         package_list = new Gee.HashMap<string, AppCenterCore.Package> (null, null);
         interface_cancellable = new GLib.Cancellable ();
 
@@ -74,8 +74,8 @@ public class AppCenterCore.Client : Object {
         return !task_list.is_empty;
     }
 
-    private Pk.Task request_task (bool requires_user_agreement = true) {
-        Pk.Task task = new Pk.Task ();
+    private AppCenter.Task request_task (bool requires_user_agreement = true) {
+        AppCenter.Task task = new AppCenter.Task ();
         task_list.add (task);
         if (requires_user_agreement) {
             if (task_with_agreement_list.size == 0) {
@@ -86,7 +86,7 @@ public class AppCenterCore.Client : Object {
         return task;
     }
 
-    private void release_task (Pk.Task task) {
+    private void release_task (AppCenter.Task task) {
         task_list.remove (task);
         if (task_list.is_empty) {
             tasks_finished ();
@@ -100,8 +100,8 @@ public class AppCenterCore.Client : Object {
     }
 
     public async void install_package (Package package, Pk.ProgressCallback cb, GLib.Cancellable cancellable) throws GLib.Error {
-        Pk.Task install_task = request_task ();
-        Pk.Task search_task = request_task ();
+        AppCenter.Task install_task = request_task ();
+        AppCenter.Task search_task = request_task ();
         string[] packages_ids = {};
         foreach (var pkg_name in package.component.get_pkgnames ()) {
             packages_ids += pkg_name;
@@ -134,7 +134,7 @@ public class AppCenterCore.Client : Object {
 
     public async void update_package (Package package, Pk.ProgressCallback cb, GLib.Cancellable cancellable) throws GLib.Error {
         SuspendControl sc = new SuspendControl ();
-        Pk.Task update_task = request_task ();
+        AppCenter.Task update_task = request_task ();
         string[] packages_ids = {};
         foreach (var pk_package in package.change_information.changes) {
             packages_ids += pk_package.get_id ();
@@ -165,8 +165,8 @@ public class AppCenterCore.Client : Object {
     }
 
     public async void remove_package (Package package, Pk.ProgressCallback cb, GLib.Cancellable cancellable) throws GLib.Error {
-        Pk.Task remove_task = request_task ();
-        Pk.Task search_task = request_task ();
+        AppCenter.Task remove_task = request_task ();
+        AppCenter.Task search_task = request_task ();
         string[] packages_ids = {};
         foreach (var pkg_name in package.component.get_pkgnames ()) {
             packages_ids += pkg_name;
@@ -199,10 +199,9 @@ public class AppCenterCore.Client : Object {
     }
 
     public async void get_updates () {
-        Pk.Task update_task = request_task (false);
-        Pk.Task details_task = request_task (false);
+        AppCenter.Task update_task = request_task (false);
+        AppCenter.Task details_task = request_task (false);
         try {
-            yield update_task.refresh_cache_async (false, interface_cancellable, (t, p) => { });
             Pk.Results result = yield update_task.get_updates_async (0, interface_cancellable, (t, p) => { });
             string[] packages_array = {};
             result.get_package_array ().foreach ((pk_package) => {
@@ -299,7 +298,7 @@ public class AppCenterCore.Client : Object {
     }
 
     public Pk.Package? get_app_package (string application, Pk.Bitfield additional_filters = 0) throws GLib.Error {
-        Pk.Task packages_task = request_task (false);
+        AppCenter.Task packages_task = request_task (false);
         Pk.Package? package = null;
         var filter = Pk.Bitfield.from_enums (Pk.Filter.NEWEST);
         filter |= additional_filters;

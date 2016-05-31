@@ -109,7 +109,7 @@ namespace AppCenterDaemon {
     }
 
     public static void update_installed_cache () {
-        var packages_task = new Pk.Task ();
+        var packages_task = new AppCenter.Task ();
         var filter = Pk.Bitfield.from_enums (Pk.Filter.INSTALLED, Pk.Filter.NEWEST);
         try {
             var keyfile = new KeyFile ();
@@ -126,7 +126,7 @@ namespace AppCenterDaemon {
     }
 
     public static void updates_changed () {
-        var update_task = new Pk.Task ();
+        var update_task = new AppCenter.Task ();
         try {
             Pk.Results result = update_task.get_updates_sync (0, null, (t, p) => { });
             bool was_empty = updates_number == 0U;
@@ -184,7 +184,7 @@ namespace AppCenterDaemon {
     public static void update_cache (bool force = false) {
         // One cache update a day, keeps the doctor away!
         if (last_cache_update == null || (new DateTime.now_local ()).difference (last_cache_update) >= GLib.TimeSpan.DAY || force) {
-            var refresh_task = new Pk.Task ();
+            var refresh_task = new AppCenter.Task ();
                 refresh_task.refresh_cache_async.begin (false, null, (t, p) => { }, (obj, res) => {
                     try {
                         refresh_task.refresh_cache_async.end (res);
@@ -281,5 +281,15 @@ namespace AppCenterDaemon {
         }
 
         return db_file;
+    }
+}
+
+public class AppCenter.Task : Pk.Task {
+    public Task () {
+        
+    }
+
+    public override void untrusted_question (uint request, Pk.Results results) {
+        user_accepted (request);
     }
 }
