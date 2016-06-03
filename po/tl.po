@@ -3,15 +3,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-04-24 18:17-0300\n"
-"PO-Revision-Date: 2016-06-01 18:22+0000\n"
+"PO-Revision-Date: 2016-06-02 17:48+0000\n"
 "Last-Translator: yavinfour <anjelo.passionist@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Launchpad-Export-Date: 2016-06-02 06:03+0000\n"
-"X-Generator: Launchpad (build 18053)\n"
+"X-Launchpad-Export-Date: 2016-06-03 05:58+0000\n"
+"X-Generator: Launchpad (build 18086)\n"
 
 #: ../src/Widgets/PackageRow.vala:108 ../src/Views/AppInfoView.vala:80
 #: ../src/Views/AppInfoView.vala:96 ../src/Views/AppInfoView.vala:105
@@ -44,7 +44,7 @@ msgstr "Maghanap"
 
 #: ../src/Views/FeaturedView.vala:33
 msgid "Best Rated"
-msgstr ""
+msgstr "Pinakamaganda ang Rating"
 
 #: ../src/Views/FeaturedView.vala:36
 msgid "Latest Apps"
@@ -84,7 +84,7 @@ msgstr "Laki: %s"
 
 #: ../src/Views/AppListView.vala:174
 msgid "Update All"
-msgstr ""
+msgstr "I-update lahat"
 
 #: ../src/MainWindow.vala:56
 msgid "AppCenter"
@@ -106,11 +106,11 @@ msgstr ""
 
 #: ../src/Core/Client.vala:64
 msgid "Operating System Updates"
-msgstr ""
+msgstr "Mga Update para sa Operating System"
 
 #: ../src/Core/Client.vala:65
 msgid "Updates to system components"
-msgstr ""
+msgstr "Mga update para sa system components"
 
 #: ../src/Core/Package.vala:80
 msgid "Application installed"
@@ -118,11 +118,11 @@ msgstr ""
 
 #: ../src/Core/Package.vala:81
 msgid "%s has been successfully installed"
-msgstr ""
+msgstr "% ay matagumpay na naiinstall"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
-msgstr ""
+msgstr "Nagsisimula"
 
 #: ../src/Core/ChangeInformation.vala:56
 msgid "Waiting in queue"
@@ -130,7 +130,7 @@ msgstr ""
 
 #: ../src/Core/ChangeInformation.vala:58
 msgid "Running"
-msgstr ""
+msgstr "Tumatakbo"
 
 #: ../src/Core/ChangeInformation.vala:60
 msgid "Querying"
@@ -138,31 +138,31 @@ msgstr ""
 
 #: ../src/Core/ChangeInformation.vala:62
 msgid "Getting information"
-msgstr ""
+msgstr "Kumukuha ng impormasyon"
 
 #: ../src/Core/ChangeInformation.vala:64
 msgid "Removing packages"
-msgstr ""
+msgstr "Nagtatangal ng mga package"
 
 #: ../src/Core/ChangeInformation.vala:66
 msgid "Downloading packages"
-msgstr ""
+msgstr "Nagddownload ng mga package"
 
 #: ../src/Core/ChangeInformation.vala:68
 msgid "Installing packages"
-msgstr ""
+msgstr "Iniinstall ang mga package"
 
 #: ../src/Core/ChangeInformation.vala:70
 msgid "Refreshing software list"
-msgstr ""
+msgstr "Nirerefresh ang listahan ng mga software"
 
 #: ../src/Core/ChangeInformation.vala:72
 msgid "Installing updates"
-msgstr ""
+msgstr "Ini-install ang mga updates"
 
 #: ../src/Core/ChangeInformation.vala:74
 msgid "Cleaning up packages"
-msgstr ""
+msgstr "Nililinis ang mga package"
 
 #: ../src/Core/ChangeInformation.vala:76
 msgid "Obsoleting packages"
@@ -170,7 +170,7 @@ msgstr ""
 
 #: ../src/Core/ChangeInformation.vala:78
 msgid "Resolving dependencies"
-msgstr ""
+msgstr "Nireresolba ang mga dependency"
 
 #: ../src/Core/ChangeInformation.vala:80
 msgid "Checking signatures"
@@ -178,11 +178,11 @@ msgstr ""
 
 #: ../src/Core/ChangeInformation.vala:82
 msgid "Testing changes"
-msgstr ""
+msgstr "Sinusubukang paganahin ang mga pagbabago"
 
 #: ../src/Core/ChangeInformation.vala:84
 msgid "Committing changes"
-msgstr ""
+msgstr "Kinokomit ang mga pagbabago"
 
 #: ../src/Core/ChangeInformation.vala:86
 msgid "Requesting data"
@@ -190,11 +190,11 @@ msgstr ""
 
 #: ../src/Core/ChangeInformation.vala:88
 msgid "Finished"
-msgstr ""
+msgstr "Tapos na"
 
 #: ../src/Core/ChangeInformation.vala:90
 msgid "Cancelling"
-msgstr ""
+msgstr "Kinakansela"
 
 #: ../src/Core/ChangeInformation.vala:92
 msgid "Downloading repository information"
@@ -202,55 +202,55 @@ msgstr ""
 
 #: ../src/Core/ChangeInformation.vala:94
 msgid "Downloading list of packages"
-msgstr ""
+msgstr "Dinadownload ang listahan ng mga package"
 
 #: ../src/Core/ChangeInformation.vala:96
 msgid "Downloading file lists"
-msgstr ""
+msgstr "Dinadownload ang listahan ng mga file"
 
 #: ../src/Core/ChangeInformation.vala:98
 msgid "Downloading lists of changes"
-msgstr ""
+msgstr "Dinadownload ang listahan ng mga pagbabago"
 
 #: ../src/Core/ChangeInformation.vala:100
 msgid "Downloading groups"
-msgstr ""
+msgstr "Dinadownload ang mga grupo"
 
 #: ../src/Core/ChangeInformation.vala:102
 msgid "Downloading update information"
-msgstr ""
+msgstr "Dinadownload ang impormasyon ng update"
 
 #: ../src/Core/ChangeInformation.vala:104
 msgid "Repackaging files"
-msgstr ""
+msgstr "Iniimpake muli ang mga file"
 
 #: ../src/Core/ChangeInformation.vala:106
 msgid "Loading cache"
-msgstr ""
+msgstr "Niloload ang cache"
 
 #: ../src/Core/ChangeInformation.vala:108
 msgid "Scanning applications"
-msgstr ""
+msgstr "Iniiscan ang mga aplikasyon"
 
 #: ../src/Core/ChangeInformation.vala:110
 msgid "Generating package lists"
-msgstr ""
+msgstr "Gumagawa ng mga listahan ng package"
 
 #: ../src/Core/ChangeInformation.vala:112
 msgid "Waiting for package manager lock"
-msgstr ""
+msgstr "Naghihintay sa package manager lock"
 
 #: ../src/Core/ChangeInformation.vala:114
 msgid "Waiting for authentication"
-msgstr ""
+msgstr "Naghihintay sa authentication"
 
 #: ../src/Core/ChangeInformation.vala:116
 msgid "Updating running applications"
-msgstr ""
+msgstr "Inuupdate ang mga kasalukuyang tumatakbong mga aplikason"
 
 #: ../src/Core/ChangeInformation.vala:118
 msgid "Checking applications in use"
-msgstr ""
+msgstr "Tinitignan ang mga kasalukuyan aplikasyon na ginagamit"
 
 #: ../src/Core/ChangeInformation.vala:120
 msgid "Checking libraries in use"
@@ -258,20 +258,20 @@ msgstr ""
 
 #: ../src/Core/ChangeInformation.vala:122
 msgid "Copying files"
-msgstr ""
+msgstr "Kinokopya ang mga file"
 
 #: ../src/Core/ChangeInformation.vala:124
 msgid "Unknown state"
-msgstr ""
+msgstr "Hindi matukoy ang estado"
 
 #: ../daemon/Daemon.vala:135
 msgid "Update Available"
 msgid_plural "Updates Available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "May update na pwedeng kunin"
+msgstr[1] "May mga update na pwedeng kunin"
 
 #: ../daemon/Daemon.vala:137
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "May %u update na pwedeng kunin para sa iyong sistema"
+msgstr[1] "May mga %u na update na pwedeng kunin para sa iyong sistema"
