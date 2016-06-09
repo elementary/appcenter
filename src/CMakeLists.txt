@@ -2,7 +2,6 @@ vala_precompile(VALA_C ${EXEC_NAME}
     Core/ChangeInformation.vala
     Core/Client.vala
     Core/Package.vala
-    Core/AppCategories.vala
     Core/Task.vala
 
     Application.vala

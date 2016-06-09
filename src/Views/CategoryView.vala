@@ -37,9 +37,7 @@ public class AppCenter.Views.CategoryView : View {
         category_flow.valign = Gtk.Align.CENTER;
         category_flow.min_children_per_line = 2;
         category_flow.activate_on_single_click = true;
-        AppCenter.get_app_categories ().foreach ((item) => {
-            category_flow.add (item);
-        });
+        get_app_categories ();
 
         category_flow.child_activated.connect ((child) => {
             var item = child as Widgets.CategoryItem;
@@ -98,5 +96,151 @@ public class AppCenter.Views.CategoryView : View {
             app_list_view.add_package (app);
         }
 
+    }
+
+    private void get_app_categories () {
+        category_flow.add (get_audio_category ());
+        category_flow.add (get_development_category ());
+        category_flow.add (get_accessories_category ());
+        category_flow.add (get_office_category ());
+        category_flow.add (get_system_category ());
+        category_flow.add (get_video_category ());
+        category_flow.add (get_graphics_category ());
+        category_flow.add (get_games_category ());
+        category_flow.add (get_education_category ());
+        category_flow.add (get_internet_category ());
+        category_flow.add (get_science_category ());
+        category_flow.add (get_a11y_category ());
+    }
+
+    private Widgets.CategoryItem get_audio_category () {
+        var category = new AppStream.Category ();
+        category.set_name (_("Audio"));
+        category.set_icon ("applications-audio-symbolic");
+        category.get_included ().append ("Audio");
+        var item = new Widgets.CategoryItem (category);
+        item.add_category_class ("audio");
+
+        return item;
+    }
+
+    private Widgets.CategoryItem get_development_category () {
+        var category = new AppStream.Category ();
+        category.set_name (_("Development"));
+        category.get_included ().append ("Development");
+        category.get_included ().append ("IDE");
+        var item = new Widgets.CategoryItem (category);
+        item.add_category_class ("development");
+
+        return item;
+    }
+
+    private Widgets.CategoryItem get_accessories_category () {
+        var category = new AppStream.Category ();
+        category.set_name (_("Accessories"));
+        category.set_icon ("applications-accessories");
+        category.get_included ().append ("Utility");
+        var item = new Widgets.CategoryItem (category);
+        item.add_category_class ("accessories");
+
+        return item;
+    }
+
+    private Widgets.CategoryItem get_office_category () {
+        var category = new AppStream.Category ();
+        category.set_name (_("Office"));
+        category.set_icon ("applications-office-symbolic");
+        category.get_included ().append ("Office");
+        var item = new Widgets.CategoryItem (category);
+        item.add_category_class ("office");
+
+        return item;
+    }
+
+    private Widgets.CategoryItem get_system_category () {
+        var category = new AppStream.Category ();
+        category.set_name (_("System"));
+        category.set_icon ("applications-system");
+        category.get_included ().append ("System");
+        var item = new Widgets.CategoryItem (category);
+        item.add_category_class ("system");
+
+        return item;
+    }
+
+    private Widgets.CategoryItem get_video_category () {
+        var category = new AppStream.Category ();
+        category.set_name (_("Video"));
+        category.set_icon ("applications-video-symbolic");
+        category.get_included ().append ("Video");
+        var item = new Widgets.CategoryItem (category);
+        item.add_category_class ("video");
+
+        return item;
+    }
+
+    private Widgets.CategoryItem get_graphics_category () {
+        var category = new AppStream.Category ();
+        category.set_name (_("Graphics"));
+        category.get_included ().append ("Graphics");
+        var item = new Widgets.CategoryItem (category);
+        item.add_category_class ("graphics");
+
+        return item;
+    }
+
+    private Widgets.CategoryItem get_games_category () {
+        var category = new AppStream.Category ();
+        category.set_name (_("GAMES"));
+        category.get_included ().append ("Game");
+        category.set_icon ("applications-games-symbolic");
+        var item = new Widgets.CategoryItem (category);
+        item.add_category_class ("games");
+
+        return item;
+    }
+
+    private Widgets.CategoryItem get_education_category () {
+        var category = new AppStream.Category ();
+        category.set_name (_("Education"));
+        category.get_included ().append ("Education");
+        var item = new Widgets.CategoryItem (category);
+        item.add_category_class ("education");
+
+        return item;
+    }
+
+    private Widgets.CategoryItem get_internet_category () {
+        var category = new AppStream.Category ();
+        category.set_name (_("Internet"));
+        category.set_icon ("applications-internet");
+        category.get_included ().append ("Network");
+        var item = new Widgets.CategoryItem (category);
+        item.add_category_class ("internet");
+
+        return item;
+    }
+
+    private Widgets.CategoryItem get_science_category () {
+        var category = new AppStream.Category ();
+        // TRANSLATORS: We need to force the newline so that the buttons get a decent size
+        category.set_name (_("Science &\nEngineering"));
+        category.get_included ().append ("Science");
+        var item = new Widgets.CategoryItem (category);
+        item.add_category_class ("science");
+
+        return item;
+    }
+
+    private Widgets.CategoryItem get_a11y_category () {
+        var category = new AppStream.Category ();
+        // TRANSLATORS: We need to force the newline so that the buttons get a decent size
+        category.set_name (_("UNIVERSAL\nACCESS"));
+        category.set_icon ("applications-accessibility-symbolic");
+        category.get_included ().append ("Accessibility");
+        var item = new Widgets.CategoryItem (category);
+        item.add_category_class ("accessibility");
+
+        return item;
     }
 }
