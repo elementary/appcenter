@@ -117,7 +117,9 @@ public class AppCenter.Views.CategoryView : View {
         var category = new AppStream.Category ();
         category.set_name (_("Audio"));
         category.set_icon ("applications-audio-symbolic");
-        category.get_included ().append ("Audio");
+        var categories = new Gee.LinkedList<string> ();
+        categories.add ("Audio");
+        category.set_data<Gee.LinkedList> ("categories", categories);
         var item = new Widgets.CategoryItem (category);
         item.add_category_class ("audio");
 
@@ -127,8 +129,10 @@ public class AppCenter.Views.CategoryView : View {
     private Widgets.CategoryItem get_development_category () {
         var category = new AppStream.Category ();
         category.set_name (_("Development"));
-        category.get_included ().append ("Development");
-        category.get_included ().append ("IDE");
+        var categories = new Gee.LinkedList<string> ();
+        categories.add ("Development");
+        categories.add ("IDE");
+        category.set_data<Gee.LinkedList> ("categories", categories);
         var item = new Widgets.CategoryItem (category);
         item.add_category_class ("development");
 
@@ -139,7 +143,9 @@ public class AppCenter.Views.CategoryView : View {
         var category = new AppStream.Category ();
         category.set_name (_("Accessories"));
         category.set_icon ("applications-accessories");
-        category.get_included ().append ("Utility");
+        var categories = new Gee.LinkedList<string> ();
+        categories.add ("Utility");
+        category.set_data<Gee.LinkedList> ("categories", categories);
         var item = new Widgets.CategoryItem (category);
         item.add_category_class ("accessories");
 
@@ -150,7 +156,9 @@ public class AppCenter.Views.CategoryView : View {
         var category = new AppStream.Category ();
         category.set_name (_("Office"));
         category.set_icon ("applications-office-symbolic");
-        category.get_included ().append ("Office");
+        var categories = new Gee.LinkedList<string> ();
+        categories.add ("Office");
+        category.set_data<Gee.LinkedList> ("categories", categories);
         var item = new Widgets.CategoryItem (category);
         item.add_category_class ("office");
 
@@ -161,7 +169,9 @@ public class AppCenter.Views.CategoryView : View {
         var category = new AppStream.Category ();
         category.set_name (_("System"));
         category.set_icon ("applications-system");
-        category.get_included ().append ("System");
+        var categories = new Gee.LinkedList<string> ();
+        categories.add ("System");
+        category.set_data<Gee.LinkedList> ("categories", categories);
         var item = new Widgets.CategoryItem (category);
         item.add_category_class ("system");
 
@@ -172,7 +182,9 @@ public class AppCenter.Views.CategoryView : View {
         var category = new AppStream.Category ();
         category.set_name (_("Video"));
         category.set_icon ("applications-video-symbolic");
-        category.get_included ().append ("Video");
+        var categories = new Gee.LinkedList<string> ();
+        categories.add ("Video");
+        category.set_data<Gee.LinkedList> ("categories", categories);
         var item = new Widgets.CategoryItem (category);
         item.add_category_class ("video");
 
@@ -182,7 +194,9 @@ public class AppCenter.Views.CategoryView : View {
     private Widgets.CategoryItem get_graphics_category () {
         var category = new AppStream.Category ();
         category.set_name (_("Graphics"));
-        category.get_included ().append ("Graphics");
+        var categories = new Gee.LinkedList<string> ();
+        categories.add ("Graphics");
+        category.set_data<Gee.LinkedList> ("categories", categories);
         var item = new Widgets.CategoryItem (category);
         item.add_category_class ("graphics");
 
@@ -192,7 +206,9 @@ public class AppCenter.Views.CategoryView : View {
     private Widgets.CategoryItem get_games_category () {
         var category = new AppStream.Category ();
         category.set_name (_("GAMES"));
-        category.get_included ().append ("Game");
+        var categories = new Gee.LinkedList<string> ();
+        categories.add ("Game");
+        category.set_data<Gee.LinkedList> ("categories", categories);
         category.set_icon ("applications-games-symbolic");
         var item = new Widgets.CategoryItem (category);
         item.add_category_class ("games");
@@ -203,7 +219,9 @@ public class AppCenter.Views.CategoryView : View {
     private Widgets.CategoryItem get_education_category () {
         var category = new AppStream.Category ();
         category.set_name (_("Education"));
-        category.get_included ().append ("Education");
+        var categories = new Gee.LinkedList<string> ();
+        categories.add ("Education");
+        category.set_data<Gee.LinkedList> ("categories", categories);
         var item = new Widgets.CategoryItem (category);
         item.add_category_class ("education");
 
@@ -214,7 +232,9 @@ public class AppCenter.Views.CategoryView : View {
         var category = new AppStream.Category ();
         category.set_name (_("Internet"));
         category.set_icon ("applications-internet");
-        category.get_included ().append ("Network");
+        var categories = new Gee.LinkedList<string> ();
+        categories.add ("Network");
+        category.set_data<Gee.LinkedList> ("categories", categories);
         var item = new Widgets.CategoryItem (category);
         item.add_category_class ("internet");
 
@@ -225,7 +245,9 @@ public class AppCenter.Views.CategoryView : View {
         var category = new AppStream.Category ();
         // TRANSLATORS: We need to force the newline so that the buttons get a decent size
         category.set_name (_("Science &\nEngineering"));
-        category.get_included ().append ("Science");
+        var categories = new Gee.LinkedList<string> ();
+        categories.add ("Science");
+        category.set_data<Gee.LinkedList> ("categories", categories);
         var item = new Widgets.CategoryItem (category);
         item.add_category_class ("science");
 
@@ -237,7 +259,9 @@ public class AppCenter.Views.CategoryView : View {
         // TRANSLATORS: We need to force the newline so that the buttons get a decent size
         category.set_name (_("UNIVERSAL\nACCESS"));
         category.set_icon ("applications-accessibility-symbolic");
-        category.get_included ().append ("Accessibility");
+        var categories = new Gee.LinkedList<string> ();
+        categories.add ("Accessibility");
+        category.set_data<Gee.LinkedList> ("categories", categories);
         var item = new Widgets.CategoryItem (category);
         item.add_category_class ("accessibility");
 

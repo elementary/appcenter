@@ -42,12 +42,16 @@ public class AppCenterCore.Client : Object {
             }
         });
 
-        appstream_database.get_all_components ().foreach ((comp) => {
-            var package = new AppCenterCore.Package (comp);
-            foreach (var pkg_name in comp.get_pkgnames ()) {
-                package_list.set (pkg_name, package);
-            }
-        });
+        try {
+            appstream_database.get_all_components ().foreach ((comp) => {
+                var package = new AppCenterCore.Package (comp);
+                foreach (var pkg_name in comp.get_pkgnames ()) {
+                    package_list.set (pkg_name, package);
+                }
+            });
+        } catch (Error e) {
+            error (e.message);
+        }
     }
 
     construct {
@@ -57,7 +61,11 @@ public class AppCenterCore.Client : Object {
         interface_cancellable = new GLib.Cancellable ();
 
         appstream_database = new AppStream.Database ();
-        appstream_database.open ();
+        try {
+            appstream_database.open ();
+        } catch (Error e) {
+            error (e.message);
+        }
 
         var os_updates_component = new AppStream.Component ();
         os_updates_component.id = AppCenterCore.Package.OS_UPDATES_ID;
@@ -267,20 +275,33 @@ public class AppCenterCore.Client : Object {
 
     public Gee.Collection<AppCenterCore.Package> get_applications_for_category (AppStream.Category category) {
         var apps = new Gee.TreeSet<AppCenterCore.Package> ();
-        string categories = get_string_from_categories (category).down ();
-        var comps = appstream_database.find_components (null, categories);
-        comps.foreach ((comp) => {
-            apps.add (package_list.get (comp.get_pkgnames ()[0]));
-        });
+        string categories = get_string_from_categories (category);
+        try {
+            var comps = appstream_database.find_components (null, categories);
+            comps.foreach ((comp) => {
+                apps.add (package_list.get (comp.get_pkgnames ()[0]));
+            });
+        } catch (Error e) {
+            critical (e.message);
+        }
 
         return apps;
     }
 
     private string get_string_from_categories (AppStream.Category category) {
-        string categories = category.name;
+        string categories = "";
+        unowned Gee.LinkedList<string> categories_list = category.get_data<Gee.LinkedList> ("categories");
+        foreach (var cat in categories_list) {
+            if (categories != "") {
+                categories += ";" + cat.down ();
+            } else {
+                categories = cat.down ();
+            }
+        }
+
         category.get_subcategories ().foreach ((cat) => {
             if (!(cat.name in categories)) {
-                categories += ";"+get_string_from_categories (cat);
+                categories += ";" + get_string_from_categories (cat);
             }
         });
 
@@ -289,10 +310,14 @@ public class AppCenterCore.Client : Object {
 
     public Gee.Collection<AppCenterCore.Package> search_applications (string query) {
         var apps = new Gee.TreeSet<AppCenterCore.Package> ();
-        var comps = appstream_database.find_components (query, null);
-        comps.foreach ((comp) => {
-            apps.add (package_list.get (comp.get_pkgnames ()[0]));
-        });
+        try {
+            var comps = appstream_database.find_components (query, null);
+            comps.foreach ((comp) => {
+                apps.add (package_list.get (comp.get_pkgnames ()[0]));
+            });
+        } catch (Error e) {
+            critical (e.message);
+        }
 
         return apps;
     }

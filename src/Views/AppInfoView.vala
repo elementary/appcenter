@@ -337,12 +337,7 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         } else {
             critical ("Error create the temporary file: GFileError #%d", GLib.FileUtils.error_from_errno (GLib.errno));
             fileimage = File.new_for_uri (url);
-            try {
-                if (fileimage.query_exists () == false) {
-                    return;
-                }
-            } catch (Error e) {
-                critical (e.message);
+            if (fileimage.query_exists () == false) {
                 return;
             }
         }
