@@ -120,12 +120,12 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         unowned AppCenterCore.Client client = AppCenterCore.Client.get_default ();
         if (client.connected_to_daemon) {
-            view_mode.append_text (C_("view", "Installed"));
+            view_mode.append_text (C_("view", "Updates"));
             view_revealer.set_reveal_child (true);
             installed_view.get_apps.begin ();
         } else {
             client.notify["connected-to-daemon"].connect (() => {
-                view_mode.append_text (C_("view", "Installed"));
+                view_mode.append_text (C_("view", "Updates"));
                 view_revealer.set_reveal_child (true);
                 installed_view.get_apps.begin ();
             });
