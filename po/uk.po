@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-04-24 18:17-0300\n"
-"PO-Revision-Date: 2016-06-13 20:08+0000\n"
+"PO-Revision-Date: 2016-06-14 22:22+0000\n"
 "Last-Translator: Roman Sytnyk <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2016-06-14 06:05+0000\n"
+"X-Launchpad-Export-Date: 2016-06-15 06:01+0000\n"
 "X-Generator: Launchpad (build 18097)\n"
 
 #: ../src/Widgets/PackageRow.vala:108 ../src/Views/AppInfoView.vala:80
@@ -124,11 +124,11 @@ msgstr "Оновлення системних компонетів"
 
 #: ../src/Core/Package.vala:80
 msgid "Application installed"
-msgstr ""
+msgstr "Додаток встановлено"
 
 #: ../src/Core/Package.vala:81
 msgid "%s has been successfully installed"
-msgstr ""
+msgstr "%s був успішно встановлений"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -248,7 +248,7 @@ msgstr "Сворення списків пакетів"
 
 #: ../src/Core/ChangeInformation.vala:112
 msgid "Waiting for package manager lock"
-msgstr ""
+msgstr "Очікування на блокування менеджера пакетів"
 
 #: ../src/Core/ChangeInformation.vala:114
 msgid "Waiting for authentication"
