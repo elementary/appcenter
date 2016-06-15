@@ -51,7 +51,7 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
 
     construct {
         hscrollbar_policy = Gtk.PolicyType.NEVER;
-        var alert_view = new Granite.Widgets.AlertView (_("No Results"), _("No apps could be found."), "dialog-information");
+        var alert_view = new Granite.Widgets.AlertView (_("No Results"), _("No apps could be found. Try changing search terms."), "edit-find-symbolic");
         alert_view.show_all ();
         list_box = new Gtk.ListBox ();
         list_box.expand = true;
