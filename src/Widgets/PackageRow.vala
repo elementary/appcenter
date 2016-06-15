@@ -29,7 +29,7 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
 
     public Gtk.Button update_button;
     public Gtk.Button cancel_button;
-    Gtk.Stack action_stack;
+    public Gtk.Stack action_stack;
     Gtk.Grid update_grid;
     Gtk.ProgressBar update_progressbar;
     Gtk.Label update_label;
@@ -66,11 +66,7 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
             changed ();
         });
 
-        action_stack.no_show_all = !package.update_available;
-        action_stack.show_all ();
         package.notify["update-available"].connect (() => {
-            action_stack.no_show_all = !package.update_available;
-            action_stack.show_all ();
             changed ();
         });
 
