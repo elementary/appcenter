@@ -30,7 +30,7 @@ public class AppCenter.App : Granite.Application {
         Intl.textdomain (Build.GETTEXT_PACKAGE);
 
         program_name = _("App Center");
-        app_years = "2015";
+        app_years = "2015-2016";
         app_icon = Build.DESKTOP_ICON;
 
         build_data_dir = Build.DATADIR;
