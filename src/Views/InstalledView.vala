@@ -39,7 +39,7 @@ public class AppCenter.Views.InstalledView : View {
         app_list_view = new AppListView (true);
         add (app_list_view);
         app_list_view.show_app.connect ((package) => {
-            subview_entered (C_("view", "Installed"));
+            subview_entered (C_("view", "Updates"));
             show_package (package);
         });
     }
