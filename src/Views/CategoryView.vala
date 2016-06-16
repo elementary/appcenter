@@ -243,8 +243,7 @@ public class AppCenter.Views.CategoryView : View {
 
     private Widgets.CategoryItem get_science_category () {
         var category = new AppStream.Category ();
-        // TRANSLATORS: We need to force the newline so that the buttons get a decent size
-        category.set_name (_("Science &\nEngineering"));
+        category.set_name (_("Science & Engineering"));
         var categories = new Gee.LinkedList<string> ();
         categories.add ("Science");
         category.set_data<Gee.LinkedList> ("categories", categories);
