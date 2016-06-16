@@ -220,7 +220,6 @@ public class AppCenter.Widgets.CategoryItem : Gtk.FlowBoxChild {
 
     public CategoryItem (AppStream.Category app_category) {
         this.app_category = app_category;
-        name_label.label = app_category.name;
         tooltip_text = app_category.summary ?? "";
         if (app_category.icon != null) {
             display_image.icon_name = app_category.icon;
@@ -263,6 +262,7 @@ public class AppCenter.Widgets.CategoryItem : Gtk.FlowBoxChild {
 
         name_label = new Gtk.Label (null);
         name_label.wrap = true;
+        name_label.max_width_chars = 15;
         grid.add (name_label);
 
         var expanded_grid = new Gtk.Grid ();
@@ -280,5 +280,10 @@ public class AppCenter.Widgets.CategoryItem : Gtk.FlowBoxChild {
 
     public void add_category_class (string theme_name) {
         themed_grid.get_style_context ().add_class (theme_name);
+        if (theme_name == "games" || theme_name == "accessibility") {
+            name_label.label = app_category.name.up ();
+        } else {
+            name_label.label = app_category.name;
+        }
     }
 }
