@@ -205,7 +205,7 @@ public class AppCenter.Views.CategoryView : View {
 
     private Widgets.CategoryItem get_games_category () {
         var category = new AppStream.Category ();
-        category.set_name (_("GAMES"));
+        category.set_name (_("Games"));
         var categories = new Gee.LinkedList<string> ();
         categories.add ("Game");
         category.set_data<Gee.LinkedList> ("categories", categories);
@@ -243,8 +243,7 @@ public class AppCenter.Views.CategoryView : View {
 
     private Widgets.CategoryItem get_science_category () {
         var category = new AppStream.Category ();
-        // TRANSLATORS: We need to force the newline so that the buttons get a decent size
-        category.set_name (_("Science &\nEngineering"));
+        category.set_name (_("Science & Engineering"));
         var categories = new Gee.LinkedList<string> ();
         categories.add ("Science");
         category.set_data<Gee.LinkedList> ("categories", categories);
@@ -256,8 +255,7 @@ public class AppCenter.Views.CategoryView : View {
 
     private Widgets.CategoryItem get_a11y_category () {
         var category = new AppStream.Category ();
-        // TRANSLATORS: We need to force the newline so that the buttons get a decent size
-        category.set_name (_("UNIVERSAL\nACCESS"));
+        category.set_name (_("Universal Access"));
         category.set_icon ("applications-accessibility-symbolic");
         var categories = new Gee.LinkedList<string> ();
         categories.add ("Accessibility");
