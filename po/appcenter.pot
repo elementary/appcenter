@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-15 12:37-0500\n"
+"POT-Creation-Date: 2016-06-15 19:56-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -216,28 +216,28 @@ msgid "No Results"
 msgstr ""
 
 #: ../src/Views/AppListView.vala:54
-msgid "No apps could be found."
+msgid "No apps could be found. Try changing search terms."
 msgstr ""
 
-#: ../src/Views/AppListView.vala:137
+#: ../src/Views/AppListView.vala:138
 msgid "Searching for updates…"
 msgstr ""
 
-#: ../src/Views/AppListView.vala:143
+#: ../src/Views/AppListView.vala:144
 msgid "Up to Date"
 msgstr ""
 
-#: ../src/Views/AppListView.vala:166
+#: ../src/Views/AppListView.vala:167
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/Views/AppListView.vala:172
+#: ../src/Views/AppListView.vala:173
 msgid "Size: %s"
 msgstr ""
 
-#: ../src/Views/AppListView.vala:174
+#: ../src/Views/AppListView.vala:175
 msgid "Update All"
 msgstr ""
 
@@ -278,7 +278,7 @@ msgid "Graphics"
 msgstr ""
 
 #: ../src/Views/CategoryView.vala:208
-msgid "GAMES"
+msgid "Games"
 msgstr ""
 
 #: ../src/Views/CategoryView.vala:221
@@ -289,20 +289,16 @@ msgstr ""
 msgid "Internet"
 msgstr ""
 
-#: ../src/Views/CategoryView.vala:247
-msgid ""
-"Science &\n"
-"Engineering"
+#: ../src/Views/CategoryView.vala:246
+msgid "Science & Engineering"
 msgstr ""
 
-#: ../src/Views/CategoryView.vala:260
-msgid ""
-"UNIVERSAL\n"
-"ACCESS"
+#: ../src/Views/CategoryView.vala:258
+msgid "Universal Access"
 msgstr ""
 
 #: ../src/Views/AppInfoView.vala:80 ../src/Views/AppInfoView.vala:96
-#: ../src/Views/AppInfoView.vala:105 ../src/Widgets/PackageRow.vala:108
+#: ../src/Views/AppInfoView.vala:105 ../src/Widgets/PackageRow.vala:104
 msgid "Update"
 msgstr ""
 
@@ -315,7 +311,7 @@ msgstr ""
 msgid "Uninstall"
 msgstr ""
 
-#: ../src/Widgets/PackageRow.vala:118
+#: ../src/Widgets/PackageRow.vala:114
 msgid "Cancel"
 msgstr ""
 
