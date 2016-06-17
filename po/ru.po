@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-06-15 19:56-0500\n"
-"PO-Revision-Date: 2016-06-16 01:22+0000\n"
+"PO-Revision-Date: 2016-06-16 15:19+0000\n"
 "Last-Translator: Yuly Nesterov <crow@rikka.io>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2016-06-16 04:41+0000\n"
+"X-Launchpad-Export-Date: 2016-06-17 05:24+0000\n"
 "X-Generator: Launchpad (build 18097)\n"
 
 #: ../src/Core/ChangeInformation.vala:54
@@ -415,23 +415,3 @@ msgstr[2] "%u обновлений доступно для вашей систе
 
 #~ msgid "Up to date"
 #~ msgstr "Обновлено"
-
-#~ msgid "No apps could be found."
-#~ msgstr "Приложения не найдены."
-
-#~ msgid ""
-#~ "Science &\n"
-#~ "Engineering"
-#~ msgstr ""
-#~ "Наука и\n"
-#~ "Инженерия"
-
-#~ msgid "GAMES"
-#~ msgstr "ИГРЫ"
-
-#~ msgid ""
-#~ "UNIVERSAL\n"
-#~ "ACCESS"
-#~ msgstr ""
-#~ "ВСЕОБЩИЙ\n"
-#~ "ДОСТУП"

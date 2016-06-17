@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2016-06-16 04:41+0000\n"
+"X-Launchpad-Export-Date: 2016-06-17 05:24+0000\n"
 "X-Generator: Launchpad (build 18097)\n"
 
 #: ../src/Core/ChangeInformation.vala:54
@@ -416,6 +416,3 @@ msgstr[2] "Dostępnych jest %u aktualizacji dla Twojego systemu"
 
 #~ msgid "Up to date"
 #~ msgstr "Aktualne"
-
-#~ msgid "No apps could be found."
-#~ msgstr "Nie można odnaleźć programów."
