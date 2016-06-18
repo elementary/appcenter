@@ -39,7 +39,7 @@ public class AppCenter.App : Granite.Application {
         build_version = Build.VERSION;
         build_version_info = Build.VERSION_INFO;
 
-        app_launcher = "appcenter.desktop";
+        app_launcher = "org.pantheon.appcenter.desktop";
         main_url = "https://launchpad.net/appcenter";
         bug_url = "https://bugs.launchpad.net/appcenter";
         help_url = "https://answers.launchpad.net/appcenter";
