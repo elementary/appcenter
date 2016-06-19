@@ -1,5 +1,5 @@
 usr/bin/appcenter
-usr/share/applications/appcenter.desktop
+usr/share/applications/org.pantheon.appcenter.desktop
 usr/share/locale/
 usr/share/appdata/
 usr/share/glib-2.0/
