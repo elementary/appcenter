@@ -18,10 +18,13 @@ public class AppCenter.App : Granite.Application {
     const OptionEntry[] appcenter_options =  {
         { "show-updates", 'u', 0, OptionArg.NONE, out show_updates,
         "Display the Installed Panel", null},
+        { "silent", 's', 0, OptionArg.NONE, out silent,
+        "Run the Application in background", null},
         { null }
     };
 
     public static bool show_updates;
+    public static bool silent;
     MainWindow main_window;
     construct {
         application_id = "org.pantheon.appcenter";
@@ -53,8 +56,19 @@ public class AppCenter.App : Granite.Application {
     }
 
     public override void activate () {
+        if (silent) {
+            silent = false;
+            AppCenterCore.Client.get_default ();
+            hold ();
+            return;
+        }
+
         if (main_window == null) {
             main_window = new MainWindow (this);
+            main_window.destroy.connect (() => {
+                main_window = null;
+            });
+
             add_window (main_window);
             main_window.show_all ();
             if (show_updates) {
