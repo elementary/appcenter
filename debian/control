@@ -19,10 +19,7 @@ Homepage: https://launchpad.net/appcenter
 Package: appcenter
 Architecture: any
 Priority: extra
-Depends: appstream,
-         packagekit,
-         ${misc:Depends},
-         ${shlibs:Depends}
+Depends: appstream, packagekit, ${misc:Depends}, ${shlibs:Depends}
 Recommends: appstream-data-pantheon
 Pre-Depends: dpkg (>= 1.15.7.2)
 Description: Fast application store
