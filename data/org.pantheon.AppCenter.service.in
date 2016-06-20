@@ -1,3 +1,0 @@
-[D-BUS Service]
-Name=org.pantheon.AppCenter
-Exec=/usr/bin/@DAEMON_EXEC_NAME@

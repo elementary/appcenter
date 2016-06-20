@@ -19,29 +19,17 @@ public class AppCenterCore.Client : Object {
     public signal void tasks_finished ();
 
     public bool connected { public get; private set; }
-    public bool connected_to_daemon { public get; private set; default=false; }
     public AppCenterCore.Package os_updates { public get; private set; }
 
     private Gee.LinkedList<AppCenter.Task> task_list;
     private Gee.LinkedList<AppCenter.Task> task_with_agreement_list;
     private Gee.HashMap<string, AppCenterCore.Package> package_list;
     private AppStream.Database appstream_database;
-    private UpdateSignals update_daemon;
     public GLib.Cancellable interface_cancellable;
+    private GLib.DateTime last_cache_update;
+    private uint updates_number = 0U;
 
     private Client () {
-        Bus.get_proxy.begin<UpdateSignals> (BusType.SESSION, "org.pantheon.AppCenter", "/org/pantheon/appcenter", GLib.DBusProxyFlags.NONE, interface_cancellable, (obj, res) => {
-            try {
-                update_daemon = Bus.get_proxy.end (res);
-                connected_to_daemon = true;
-            } catch (Error e) {
-                // Error code 19 is for operation canceled.
-                if (e.code != 19) {
-                    critical (e.message);
-                }
-            }
-        });
-
         try {
             appstream_database.get_all_components ().foreach ((comp) => {
                 var package = new AppCenterCore.Package (comp);
@@ -52,6 +40,8 @@ public class AppCenterCore.Client : Object {
         } catch (Error e) {
             error (e.message);
         }
+
+        update_cache.begin ();
     }
 
     construct {
@@ -163,12 +153,7 @@ public class AppCenterCore.Client : Object {
             sc.uninhibit ();
         }
 
-        try {
-            update_daemon.refresh_updates ();
-        } catch (Error e) {
-            critical (e.message);
-        }
-
+        yield refresh_updates ();
         release_task (update_task);
     }
 
@@ -196,12 +181,7 @@ public class AppCenterCore.Client : Object {
             throw e;
         }
 
-        try {
-            update_daemon.refresh_updates ();
-        } catch (Error e) {
-            critical (e.message);
-        }
-
+        yield refresh_updates ();
         release_task (search_task);
         release_task (remove_task);
     }
@@ -254,20 +234,14 @@ public class AppCenterCore.Client : Object {
 
     public async Gee.Collection<AppCenterCore.Package> get_installed_applications () {
         var packages = new Gee.TreeSet<AppCenterCore.Package> ();
-        try {
-            var packages_strv = update_daemon.get_installed_packages ();
-            foreach (var pkg_id in packages_strv) {
-                var pk_package = new Pk.Package ();
-                pk_package.set_id (pkg_id);
-                var package = package_list.get (pk_package.get_name ());
-                if (package != null) {
-                    package.installed_packages.add (pk_package);
-                    package.notify_property ("installed");
-                    packages.add (package);
-                }
+        var packages_list = yield get_installed_packages ();
+        foreach (var pk_package in packages_list) {
+            var package = package_list.get (pk_package.get_name ());
+            if (package != null) {
+                package.installed_packages.add (pk_package);
+                package.notify_property ("installed");
+                packages.add (package);
             }
-        } catch (Error e) {
-            critical (e.message);
         }
 
         return packages;
@@ -342,15 +316,95 @@ public class AppCenterCore.Client : Object {
         return package;
     }
 
+
+    public async void refresh_updates () {
+        var update_task = new AppCenter.Task ();
+        try {
+            Pk.Results result = update_task.get_updates_sync (0, null, (t, p) => { });
+            bool was_empty = updates_number == 0U;
+            updates_number = get_package_count (result.get_package_array ());
+            if (was_empty && updates_number != 0U) {
+                string title = ngettext ("Update Available", "Updates Available", updates_number);
+                string body = ngettext ("%u update is available for your system", "%u updates are available for your system", updates_number).printf (updates_number);
+                var notification = new Notification (title);
+                notification.set_body (body);
+                notification.set_icon (new ThemedIcon ("software-update-available"));
+                notification.set_default_action ("app.open-application");
+                Application.get_default ().send_notification ("updates", notification);
+            } else {
+                Application.get_default ().withdraw_notification ("updates");
+            }
+
+#if HAVE_UNITY
+            var launcher_entry = Unity.LauncherEntry.get_for_desktop_file ("org.pantheon.appcenter.desktop");
+            launcher_entry.count = updates_number;
+            launcher_entry.count_visible = updates_number != 0U;
+#endif
+        } catch (Error e) {
+            critical (e.message);
+        }
+    }
+
+    public uint get_package_count (GLib.GenericArray<weak Pk.Package> package_array) {
+        bool os_update_found = false;
+        var result_comp = new Gee.TreeSet<AppStream.Component> ();
+        package_array.foreach ((pk_package) => {
+            var comp = package_list.get (pk_package.get_name ());
+            if (comp != null) {
+                result_comp.add (comp.component);
+            } else {
+                os_update_found = true;
+            }
+        });
+
+        uint size = result_comp.size;
+        if (os_update_found) {
+            size++;
+        }
+
+        return size;
+    }
+
+    public async void update_cache () {
+        // One cache update a day, keeps the doctor away!
+        if (last_cache_update == null || (new DateTime.now_local ()).difference (last_cache_update) >= GLib.TimeSpan.DAY) {
+            var refresh_task = new AppCenter.Task ();
+            try {
+                yield refresh_task.refresh_cache_async (false, null, (t, p) => { });
+                last_cache_update = new DateTime.now_local ();
+                refresh_updates.begin ();
+            } catch (Error e) {
+                critical (e.message);
+            }
+        }
+
+        GLib.Timeout.add_seconds (60*60*24, () => {
+            update_cache.begin ();
+            return GLib.Source.REMOVE;
+        });
+    }
+
+    public async Gee.TreeSet<Pk.Package> get_installed_packages () {
+        var packages_task = request_task ();
+        var filter = Pk.Bitfield.from_enums (Pk.Filter.INSTALLED, Pk.Filter.NEWEST);
+        var installed = new Gee.TreeSet<Pk.Package> ();
+        try {
+            Pk.Results result = yield packages_task.get_packages_async (filter, null, (prog, type) => {});
+            result.get_package_array ().foreach ((pk_package) => {
+                installed.add (pk_package);
+            });
+
+            release_task (packages_task);
+        } catch (Error e) {
+            critical (e.message);
+            release_task (packages_task);
+        }
+
+        return installed;
+    }
+
     private static GLib.Once<Client> instance;
     public static unowned Client get_default () {
         return instance.once (() => { return new Client (); });
     }
-}
-
-[DBus (name = "org.pantheon.AppCenter")]
-interface AppCenterCore.UpdateSignals : Object {
-    public abstract void refresh_cache (bool force) throws IOError;
-    public abstract void refresh_updates () throws IOError;
-    public abstract string[] get_installed_packages () throws IOError;
 }
