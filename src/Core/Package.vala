@@ -142,7 +142,7 @@ public class AppCenterCore.Package : Object {
     }
 
     public GLib.Icon get_icon (uint size = 32) {
-        GLib.Icon icon = new ThemedIcon ("application-default-icon");
+        GLib.Icon? icon = null;
         uint current_size = 0;
 
         bool is_stock = false;
@@ -178,6 +178,10 @@ public class AppCenterCore.Package : Object {
                     break;
             }
         });
+
+        if (icon == null) {
+            icon = new ThemedIcon ("application-default-icon");
+        }
 
         return icon;
     }
