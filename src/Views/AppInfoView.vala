@@ -43,38 +43,7 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         app_name.label = package.get_name ();
         app_summary.label = package.get_summary ();
         parse_description (package.component.get_description ());
-        uint size = 0;
-        string icon_name = "application-default-icon";
-        package.component.get_icons ().foreach ((icon) => {
-            switch (icon.get_kind ()) {
-                case AppStream.IconKind.STOCK:
-                    icon_name = icon.get_name ();
-                    break;
-                case AppStream.IconKind.CACHED:
-                case AppStream.IconKind.LOCAL:
-                    var current_size = icon.get_width ();
-                    if (current_size > size) {
-                        size = current_size;
-                        var file = File.new_for_path (icon.get_filename ());
-                        app_icon.gicon = new FileIcon (file);
-                    }
-
-                    break;
-                case AppStream.IconKind.REMOTE:
-                    var current_size = icon.get_width ();
-                    if (current_size > size) {
-                        size = current_size;
-                        var file = File.new_for_uri (icon.get_url ());
-                        app_icon.gicon = new FileIcon (file);
-                    }
-
-                    break;
-            }
-        });
-
-        if (app_icon.gicon == null) {
-            app_icon.gicon = new ThemedIcon (icon_name);
-        }
+        app_icon.gicon = package.get_icon (128);
 
         if (package.update_available) {
             action_button.label = _("Update");
