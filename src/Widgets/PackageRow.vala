@@ -86,6 +86,7 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
 
         image = new Gtk.Image ();
         image.icon_size = Gtk.IconSize.DIALOG;
+        image.pixel_size = 48; //Needed to enforce size on icons from Filesystem/Remote
 
         package_name = new Gtk.Label (null);
         package_name.get_style_context ().add_class ("h3");
