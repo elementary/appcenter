@@ -72,6 +72,11 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
             uninstall_button.no_show_all = true;
             uninstall_button.hide ();
         }
+    
+        if (package.component.id == "xxx-os-updates") {
+            uninstall_button.no_show_all = true;
+            uninstall_button.hide ();
+        }
 
         package.notify["installed"].connect (() => {
             if (package.installed && package.update_available) {
