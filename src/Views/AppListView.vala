@@ -72,8 +72,6 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
     public void add_package (AppCenterCore.Package package) {
         var row = new Widgets.PackageRow (package);
         update_button_group.add_widget (row.action_button);
-        update_button_group.add_widget (row.uninstall_button);
-        update_button_group.add_widget (row.cancel_button);
         row.show_all ();
         list_box.add (row);
     }

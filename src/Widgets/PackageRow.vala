@@ -29,7 +29,6 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
 
     // The action button covers Install and Update
     public Gtk.Button action_button;
-    public Gtk.Button uninstall_button;
     Gtk.ProgressBar progress_bar;
     Gtk.Label progress_label;
     public Gtk.Button cancel_button;
@@ -66,30 +65,22 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
         if (package.update_available) {
             action_button.label = _("Update");
         } else if (package.installed) {
-            action_button.no_show_all = true;
-            action_button.hide ();
-        } else {
-            uninstall_button.no_show_all = true;
-            uninstall_button.hide ();
-        }
-    
-        if (package.component.id == "xxx-os-updates") {
-            uninstall_button.no_show_all = true;
-            uninstall_button.hide ();
+            action_stack.no_show_all = true;
+            action_stack.hide ();
         }
 
         package.notify["installed"].connect (() => {
             if (package.installed && package.update_available) {
                 action_button.label = _("Update");
-                action_button.no_show_all = false;
+                action_stack.no_show_all = false;
+                action_stack.show ();
             } else if (package.installed) {
-                action_button.hide ();
-                action_button.no_show_all = true;
+                action_stack.no_show_all = true;
+                action_stack.hide ();
             } else {
                 action_button.label = _("Install");
-                action_button.no_show_all = false;
-                uninstall_button.no_show_all = true;
-                uninstall_button.hide ();
+                action_stack.no_show_all = false;
+                action_stack.show ();
             }
             changed ();
         });
@@ -97,11 +88,11 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
         package.notify["update-available"].connect (() => {
             if (package.update_available) {
                 action_button.label = _("Update");
-                action_button.no_show_all = false;
-                action_button.show ();
+                action_stack.no_show_all = false;
+                action_stack.show_all ();
             } else {
-                action_button.no_show_all = true;
-                action_button.hide ();
+                action_stack.no_show_all = true;
+                action_stack.hide ();
             }
             changed ();
         });
@@ -138,6 +129,7 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
         action_stack = new Gtk.Stack ();
         action_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
         action_stack.margin_end = 6;
+        action_stack.hhomogeneous = false;
 
         progress_bar = new Gtk.ProgressBar ();
 
@@ -148,22 +140,10 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
         cancel_button.valign = Gtk.Align.CENTER;
 
         action_button = new Gtk.Button.with_label (_("Install"));
+        action_button.valign = Gtk.Align.CENTER;
         action_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
         action_button.get_style_context ().add_class ("h3");
         action_button.clicked.connect (() => action_clicked.begin ());
-
-        uninstall_button = new Gtk.Button.with_label (_("Uninstall"));
-        uninstall_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
-        uninstall_button.get_style_context ().add_class ("h3");
-        uninstall_button.clicked.connect (() => uninstall_clicked.begin ());
-
-        var button_grid = new Gtk.Grid ();
-        button_grid.halign = Gtk.Align.END;
-        button_grid.valign = Gtk.Align.CENTER;
-        button_grid.column_spacing = 12;
-        button_grid.orientation = Gtk.Orientation.HORIZONTAL;
-        button_grid.add (uninstall_button);
-        button_grid.add (action_button);
 
         var progress_grid = new Gtk.Grid ();
         progress_grid.valign = Gtk.Align.CENTER;
@@ -172,7 +152,7 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
         progress_grid.attach (progress_bar, 0, 1, 1, 1);
         progress_grid.attach (cancel_button, 1, 0, 1, 2);
 
-        action_stack.add_named (button_grid, "buttons");
+        action_stack.add_named (action_button, "buttons");
         action_stack.add_named (progress_grid, "progress");
 
         grid.attach (image, 0, 0, 1, 2);
@@ -204,31 +184,9 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
         try {
             if (package.update_available) {
                 yield package.update ();
-                action_button.no_show_all = true;
-                action_button.hide ();
             } else {
                 yield package.install ();
-                action_button.no_show_all = true;
-                action_button.hide ();
-                if (package.component.id != "xxx-os-updates") {
-                    uninstall_button.no_show_all = false;
-                    uninstall_button.show ();
-                }
             }
-        } catch (Error e) {
-            critical (e.message);
-            action_stack.set_visible_child_name ("buttons");
-        }
-    }
-
-    private async void uninstall_clicked () {
-        try {
-            yield package.uninstall ();
-            action_button.label = _("Install");
-            uninstall_button.no_show_all = true;
-            uninstall_button.hide ();
-            action_button.no_show_all = false;
-            action_button.show ();
         } catch (Error e) {
             critical (e.message);
             action_stack.set_visible_child_name ("buttons");
