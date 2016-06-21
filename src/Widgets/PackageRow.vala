@@ -128,7 +128,6 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
 
         action_stack = new Gtk.Stack ();
         action_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
-        action_stack.margin_end = 6;
         action_stack.hhomogeneous = false;
 
         progress_bar = new Gtk.ProgressBar ();
@@ -140,10 +139,12 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
         cancel_button.valign = Gtk.Align.CENTER;
 
         action_button = new Gtk.Button.with_label (_("Install"));
+        action_button.margin_end = 6;
         action_button.valign = Gtk.Align.CENTER;
         action_button.clicked.connect (() => action_clicked.begin ());
 
         var progress_grid = new Gtk.Grid ();
+        progress_grid.margin_end = 6;
         progress_grid.valign = Gtk.Align.CENTER;
         progress_grid.row_spacing = 6;
         progress_grid.attach (progress_label, 0, 0, 1, 1);
