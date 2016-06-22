@@ -3,19 +3,19 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-06-15 19:56-0500\n"
-"PO-Revision-Date: 2016-04-24 14:13+0000\n"
-"Last-Translator: elementaryart (old) <Unknown>\n"
+"PO-Revision-Date: 2016-06-21 13:45+0000\n"
+"Last-Translator: kay van der Zander <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-06-17 05:24+0000\n"
-"X-Generator: Launchpad (build 18097)\n"
+"X-Launchpad-Export-Date: 2016-06-22 05:44+0000\n"
+"X-Generator: Launchpad (build 18111)\n"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
-msgstr ""
+msgstr "Starten"
 
 #: ../src/Core/ChangeInformation.vala:56
 msgid "Waiting in queue"
@@ -27,7 +27,7 @@ msgstr "In behandeling"
 
 #: ../src/Core/ChangeInformation.vala:60
 msgid "Querying"
-msgstr ""
+msgstr "Informatie ophalen"
 
 #: ../src/Core/ChangeInformation.vala:62
 msgid "Getting information"
@@ -59,7 +59,7 @@ msgstr "Pakketten aan het opschonen"
 
 #: ../src/Core/ChangeInformation.vala:76
 msgid "Obsoleting packages"
-msgstr ""
+msgstr "Oude pakketten vervangen"
 
 #: ../src/Core/ChangeInformation.vala:78
 msgid "Resolving dependencies"
@@ -95,11 +95,11 @@ msgstr "Downloaden van installatiebron-informatie"
 
 #: ../src/Core/ChangeInformation.vala:94
 msgid "Downloading list of packages"
-msgstr ""
+msgstr "Lijst van pakketten downloaden"
 
 #: ../src/Core/ChangeInformation.vala:96
 msgid "Downloading file lists"
-msgstr ""
+msgstr "Bestand lijsten downloaden"
 
 #: ../src/Core/ChangeInformation.vala:98
 msgid "Downloading lists of changes"
@@ -107,7 +107,7 @@ msgstr "Lijst van veranderingen downloaden."
 
 #: ../src/Core/ChangeInformation.vala:100
 msgid "Downloading groups"
-msgstr ""
+msgstr "Groepen downloaden"
 
 #: ../src/Core/ChangeInformation.vala:102
 msgid "Downloading update information"
@@ -115,7 +115,7 @@ msgstr "Pakket informatie downloaden"
 
 #: ../src/Core/ChangeInformation.vala:104
 msgid "Repackaging files"
-msgstr ""
+msgstr "Bestanden opnieuw inpakken"
 
 #: ../src/Core/ChangeInformation.vala:106
 msgid "Loading cache"
@@ -123,7 +123,7 @@ msgstr "Laden van cache"
 
 #: ../src/Core/ChangeInformation.vala:108
 msgid "Scanning applications"
-msgstr ""
+msgstr "Toepassingen doorzoeken"
 
 #: ../src/Core/ChangeInformation.vala:110
 msgid "Generating package lists"
@@ -135,47 +135,47 @@ msgstr "Wachten op  vergrendeling van pakketbeheerder"
 
 #: ../src/Core/ChangeInformation.vala:114
 msgid "Waiting for authentication"
-msgstr ""
+msgstr "Wachten op autorisatie"
 
 #: ../src/Core/ChangeInformation.vala:116
 msgid "Updating running applications"
-msgstr ""
+msgstr "Draaiende toepassingen vernieuwen"
 
 #: ../src/Core/ChangeInformation.vala:118
 msgid "Checking applications in use"
-msgstr ""
+msgstr "Contoleren of applicatie wordt gebruikt"
 
 #: ../src/Core/ChangeInformation.vala:120
 msgid "Checking libraries in use"
-msgstr ""
+msgstr "Contoleren of software bibliotheek wordt gebruikt"
 
 #: ../src/Core/ChangeInformation.vala:122
 msgid "Copying files"
-msgstr ""
+msgstr "Bestanden kopiëren"
 
 #: ../src/Core/ChangeInformation.vala:124
 msgid "Unknown state"
-msgstr ""
+msgstr "Onbekende toestand"
 
 #: ../src/Core/Client.vala:72
 msgid "Operating System Updates"
-msgstr ""
+msgstr "Updates voor het besturingssysteem"
 
 #: ../src/Core/Client.vala:73
 msgid "Updates to system components"
-msgstr ""
+msgstr "Updates voor systeemcomponenten"
 
 #: ../src/Core/Package.vala:80
 msgid "Application installed"
-msgstr ""
+msgstr "Toepassing geinstalleerd"
 
 #: ../src/Core/Package.vala:81
 msgid "%s has been successfully installed"
-msgstr ""
+msgstr "%s is met succes geinstalleerd"
 
 #: ../src/Application.vala:32 ../daemon/Daemon.vala:45 ../daemon/Daemon.vala:53
 msgid "App Center"
-msgstr ""
+msgstr "Applicatie centrum"
 
 #: ../src/Application.vala:50
 msgid "translator-credits"
@@ -189,11 +189,11 @@ msgstr ""
 
 #: ../src/MainWindow.vala:60
 msgid "AppCenter"
-msgstr ""
+msgstr "Applicatie centrum"
 
 #: ../src/MainWindow.vala:82
 msgid "Search App"
-msgstr ""
+msgstr "Applicatie zoeken"
 
 #: ../src/MainWindow.vala:119 ../src/Views/CategoryView.vala:68
 #: ../src/Views/CategoryView.vala:75
@@ -204,7 +204,7 @@ msgstr "Categorieën"
 #: ../src/Views/InstalledView.vala:42
 msgctxt "view"
 msgid "Updates"
-msgstr ""
+msgstr "Wijzigingen"
 
 #. / TRANSLATORS: the name of the Search view
 #: ../src/Views/SearchView.vala:35
@@ -214,94 +214,93 @@ msgstr ""
 
 #: ../src/Views/AppListView.vala:54
 msgid "No Results"
-msgstr ""
+msgstr "Geen resultaten"
 
 #: ../src/Views/AppListView.vala:54
 msgid "No apps could be found. Try changing search terms."
-msgstr ""
+msgstr "Kan geen applicatie vinden, probeer je zoek woord te veranderen."
 
 #: ../src/Views/AppListView.vala:138
 msgid "Searching for updates…"
-msgstr ""
+msgstr "Updates zoeken..."
 
 #: ../src/Views/AppListView.vala:144
 msgid "Up to Date"
-msgstr ""
+msgstr "Actueel"
 
 #: ../src/Views/AppListView.vala:167
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u updates beschikbaar"
 
 #: ../src/Views/AppListView.vala:173
 msgid "Size: %s"
-msgstr ""
+msgstr "Grootte: %s"
 
 #: ../src/Views/AppListView.vala:175
 msgid "Update All"
-msgstr ""
+msgstr "Alles bijwerken"
 
 #: ../src/Views/FeaturedView.vala:33
 msgid "Best Rated"
-msgstr ""
+msgstr "Best beoordeeld"
 
 #: ../src/Views/FeaturedView.vala:36
 msgid "Latest Apps"
-msgstr ""
+msgstr "Nieuwste Applicaties"
 
 #: ../src/Views/CategoryView.vala:118
 msgid "Audio"
-msgstr ""
+msgstr "Geluid"
 
 #: ../src/Views/CategoryView.vala:131
 msgid "Development"
-msgstr ""
+msgstr "Ontwikkeling"
 
 #: ../src/Views/CategoryView.vala:144
 msgid "Accessories"
-msgstr ""
+msgstr "Hulpmiddelen"
 
 #: ../src/Views/CategoryView.vala:157
 msgid "Office"
-msgstr ""
+msgstr "Kantoor"
 
 #: ../src/Views/CategoryView.vala:170
 msgid "System"
-msgstr ""
+msgstr "Systeem"
 
 #: ../src/Views/CategoryView.vala:183
 msgid "Video"
-msgstr ""
+msgstr "Video"
 
 #: ../src/Views/CategoryView.vala:196
 msgid "Graphics"
-msgstr ""
+msgstr "Beeld"
 
 #: ../src/Views/CategoryView.vala:208
 msgid "Games"
-msgstr ""
+msgstr "Spelletjes"
 
 #: ../src/Views/CategoryView.vala:221
 msgid "Education"
-msgstr ""
+msgstr "Onderwijs"
 
 #: ../src/Views/CategoryView.vala:233
 msgid "Internet"
-msgstr ""
+msgstr "Internet"
 
 #: ../src/Views/CategoryView.vala:246
 msgid "Science & Engineering"
-msgstr ""
+msgstr "Wetenschap & Techniek"
 
 #: ../src/Views/CategoryView.vala:258
 msgid "Universal Access"
-msgstr ""
+msgstr "Toegankelijkheid"
 
 #: ../src/Views/AppInfoView.vala:80 ../src/Views/AppInfoView.vala:96
 #: ../src/Views/AppInfoView.vala:105 ../src/Widgets/PackageRow.vala:104
 msgid "Update"
-msgstr ""
+msgstr "Bijwerken"
 
 #: ../src/Views/AppInfoView.vala:111 ../src/Views/AppInfoView.vala:188
 #: ../src/Views/AppInfoView.vala:306
@@ -310,23 +309,23 @@ msgstr "Installeer"
 
 #: ../src/Views/AppInfoView.vala:193
 msgid "Uninstall"
-msgstr ""
+msgstr "verwijderen"
 
 #: ../src/Widgets/PackageRow.vala:114
 msgid "Cancel"
-msgstr ""
+msgstr "Annuleren"
 
 #: ../daemon/Daemon.vala:135
 msgid "Update Available"
 msgid_plural "Updates Available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Update Beschikbaar"
+msgstr[1] "Updates Beschikbaar"
 
 #: ../daemon/Daemon.vala:137
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u update beschikbaar"
+msgstr[1] "%u updates beschikbaar"
 
 #~ msgid "Quit"
 #~ msgstr "Afsluiten"
