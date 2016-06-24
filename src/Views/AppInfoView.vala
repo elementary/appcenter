@@ -34,7 +34,10 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
     Gtk.Button action_button;
     Gtk.Button uninstall_button;
     Gtk.ProgressBar progress_bar;
+    Gtk.Grid content_grid;
+    Gtk.ListBox extension_box;
     Gtk.Label progress_label;
+    Gtk.Label extension_label;
     Gtk.Button cancel_button;
     Gtk.Stack action_stack;
 
@@ -44,6 +47,21 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         app_summary.label = package.get_summary ();
         parse_description (package.component.get_description ());
         app_icon.gicon = package.get_icon (128);
+
+        if (package.component.get_extensions ().length > 0) {
+            extension_box = new Gtk.ListBox ();
+            extension_box.selection_mode = Gtk.SelectionMode.NONE;
+
+            extension_label = new Gtk.Label ("<b>" + _("Extensions:") + "</b>");
+            extension_label.margin_top = 12;
+            extension_label.use_markup = true;
+            extension_label.get_style_context ().add_class ("h3");
+            extension_label.halign = Gtk.Align.START;
+            
+            content_grid.add (extension_label);
+            content_grid.add (extension_box);
+            load_extensions.begin ();
+        }
 
         if (package.update_available) {
             action_button.label = _("Update");
@@ -179,7 +197,7 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         progress_grid.attach (progress_bar, 0, 1, 1, 1);
         progress_grid.attach (cancel_button, 1, 0, 1, 2);
 
-        var content_grid = new Gtk.Grid ();
+        content_grid = new Gtk.Grid ();
         content_grid.width_request = 800;
         content_grid.halign = Gtk.Align.CENTER;
         content_grid.margin = 24;
@@ -205,6 +223,22 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         cancel_button.clicked.connect (() => {
             package.action_cancellable.cancel ();
         });
+    }
+
+    private async void load_extensions () {
+        package.component.get_extensions ().@foreach ((cid) => {
+            try {
+                var extension = Client.get_default ().get_extension (cid);
+                if (extension != null) {
+                    var row = new Widgets.PackageRow (new Package (extension));
+                    if (extension_box != null) {
+                        extension_box.add (row);
+                    }
+                }                
+            } catch (Error e) {
+                warning ("%s\n", e.message);
+            }
+        });            
     }
 
     public void load_more_content () {
