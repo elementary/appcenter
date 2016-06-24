@@ -180,7 +180,11 @@ public class AppCenterCore.Package : Object {
         });
 
         if (icon == null) {
-            icon = new ThemedIcon ("application-default-icon");
+            if (component.get_kind () == AppStream.ComponentKind.ADDON) {
+                icon = new ThemedIcon ("extension");
+            } else {
+                icon = new ThemedIcon ("application-default-icon");
+            }
         }
 
         return icon;

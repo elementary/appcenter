@@ -97,6 +97,16 @@ public class AppCenterCore.Client : Object {
         }
     }
 
+    public AppStream.Component? get_extension (string extension) throws GLib.Error {
+        try {
+            return appstream_database.get_component_by_id (extension); 
+        } catch (Error e) {
+            warning ("%s\n", e.message);
+        }
+        
+        return null;
+    }
+
     public async void install_package (Package package, Pk.ProgressCallback cb, GLib.Cancellable cancellable) throws GLib.Error {
         AppCenter.Task install_task = request_task ();
         AppCenter.Task search_task = request_task ();
