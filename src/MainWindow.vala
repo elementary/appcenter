@@ -22,10 +22,14 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     private Gtk.SearchEntry search_entry;
     private Views.CategoryView category_view;
     private Views.FeaturedView featured_view;
-    private Views.InstalledView installed_view;
+    private Views.InstalledView _installed_view;
     private Views.SearchView search_view;
     private Gtk.Button return_button;
     private ulong task_finished_connection = 0U;
+    
+    public Views.InstalledView installed_view { 
+        get { return _installed_view; } 
+    }
 
     public MainWindow (Gtk.Application app) {
         Object (application: app);
@@ -94,7 +98,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
                     stack.set_visible_child (category_view);
                     break;
                 default:
-                    stack.set_visible_child (installed_view);
+                    stack.set_visible_child (_installed_view);
                     break;
             }
         });
@@ -106,11 +110,11 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         featured_view = new Views.FeaturedView ();
         category_view = new Views.CategoryView ();
-        installed_view = new Views.InstalledView ();
+        _installed_view = new Views.InstalledView ();
         search_view = new Views.SearchView ();
         //stack.add (featured_view);
         stack.add (category_view);
-        stack.add (installed_view);
+        stack.add (_installed_view);
         stack.add (search_view);
         add (stack);
 
@@ -119,10 +123,10 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         view_mode.append_text (_("Categories"));
         view_mode.append_text (C_("view", "Updates"));
         view_revealer.set_reveal_child (true);
-        installed_view.get_apps.begin ();
+        _installed_view.get_apps.begin ();
 
         category_view.subview_entered.connect (view_opened);
-        installed_view.subview_entered.connect (view_opened);
+        _installed_view.subview_entered.connect (view_opened);
         search_view.subview_entered.connect (view_opened);
         
         search_entry.key_press_event.connect ((event) => {
@@ -188,7 +192,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
                     stack.set_visible_child (category_view);
                     break;
                 default:
-                    stack.set_visible_child (installed_view);
+                    stack.set_visible_child (_installed_view);
                     break;
             }
         } else {
