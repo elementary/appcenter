@@ -127,6 +127,7 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
         progress_grid.margin_end = 6;
         progress_grid.valign = Gtk.Align.CENTER;
         progress_grid.row_spacing = 6;
+        progress_grid.column_spacing = 6;
         progress_grid.attach (progress_label, 0, 0, 1, 1);
         progress_grid.attach (progress_bar, 0, 1, 1, 1);
         progress_grid.attach (cancel_button, 1, 0, 1, 2);
