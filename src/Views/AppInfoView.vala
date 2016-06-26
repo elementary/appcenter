@@ -279,8 +279,6 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
     }
 
     private async void action_clicked () {
-        var mainWindow = (MainWindow)get_toplevel ();
-
         try {
             if (package.update_available) {
                 yield package.update ();
@@ -296,7 +294,7 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
                 }
                 
                 // Add this app to the Installed Apps View
-                mainWindow.installed_view.add_app.begin (package);
+                MainWindow.installed_view.add_app.begin (package);
             }
         } catch (Error e) {
             critical (e.message);
@@ -305,8 +303,6 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
     }
 
     private async void uninstall_clicked () {
-        var mainWindow = (MainWindow)get_toplevel ();
-
         try {
             yield package.uninstall ();
             action_button.label = _("Install");
@@ -314,7 +310,7 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
             uninstall_button.hide ();
 
             // Remove this app from the Installed Apps View
-            mainWindow.installed_view.remove_app.begin (package);
+            MainWindow.installed_view.remove_app.begin (package);
         } catch (Error e) {
             critical (e.message);
             action_stack.set_visible_child_name ("buttons");
