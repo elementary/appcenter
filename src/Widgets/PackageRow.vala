@@ -115,8 +115,7 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
 
         progress_label = new Gtk.Label (null);
 
-        cancel_button = new Gtk.Button.from_icon_name ("process-stop-symbolic", Gtk.IconSize.MENU);
-        cancel_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        cancel_button = new Gtk.Button.with_label (_("Cancel"));
         cancel_button.valign = Gtk.Align.CENTER;
 
         action_button = new Gtk.Button.with_label (_("Install"));
@@ -167,6 +166,8 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
             } else {
                 yield package.install ();
             }
+            action_stack.no_show_all = true;
+            action_stack.hide ();
         } catch (Error e) {
             critical (e.message);
             action_stack.set_visible_child_name ("buttons");
