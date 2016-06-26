@@ -25,7 +25,8 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
 
     Gtk.Image app_icon;
     Gtk.Image app_screenshot;
-    Gtk.Revealer screenshot_revealer;
+    Gtk.Stack screenshot_stack;
+    Gtk.Label app_screenshot_not_found;
     Gtk.Label app_name;
     Gtk.Label app_version;
     Gtk.Label app_summary;
@@ -119,15 +120,26 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         app_icon.pixel_size = 128;
 
         app_screenshot = new Gtk.Image ();
-        app_screenshot.pixel_size = 256;
+        app_screenshot.pixel_size = 512;
         app_screenshot.icon_name = "image-x-generic";
         app_screenshot.halign = Gtk.Align.CENTER;
-        app_screenshot.valign = Gtk.Align.CENTER;
 
-        screenshot_revealer = new Gtk.Revealer ();
-        screenshot_revealer.set_reveal_child (false);
-        screenshot_revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_DOWN;
-        screenshot_revealer.add (app_screenshot);
+        var app_screenshot_spinner = new Gtk.Spinner ();
+        app_screenshot_spinner.halign = Gtk.Align.CENTER;
+        app_screenshot_spinner.valign = Gtk.Align.CENTER;
+        app_screenshot_spinner.active = true;
+
+        app_screenshot_not_found = new Gtk.Label (_("Screenshot Not Found"));
+        app_screenshot_not_found.get_style_context ().add_class (Gtk.STYLE_CLASS_BACKGROUND);
+        app_screenshot_not_found.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+        app_screenshot_not_found.get_style_context ().add_class ("h2");
+
+        screenshot_stack = new Gtk.Stack ();
+        screenshot_stack.margin_bottom = 24;
+        screenshot_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
+        screenshot_stack.add (app_screenshot_spinner);
+        screenshot_stack.add (app_screenshot);
+        screenshot_stack.add (app_screenshot_not_found);
 
         app_name = new Gtk.Label (null);
         app_name.margin_top = 12;
@@ -202,7 +214,7 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         content_grid.halign = Gtk.Align.CENTER;
         content_grid.margin = 24;
         content_grid.orientation = Gtk.Orientation.VERTICAL;
-        content_grid.add (screenshot_revealer);
+        content_grid.add (screenshot_stack);
         content_grid.add (app_description);
 
         var scrolled = new Gtk.ScrolledWindow (null, null);
@@ -340,6 +352,7 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
             } catch (Error e) {
                 critical (e.message);
                 // The file is likely to not being found.
+                screenshot_stack.visible_child = app_screenshot_not_found;
                 return;
             }
 
@@ -348,6 +361,7 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
             critical ("Error create the temporary file: GFileError #%d", GLib.FileUtils.error_from_errno (GLib.errno));
             fileimage = File.new_for_uri (url);
             if (fileimage.query_exists () == false) {
+                screenshot_stack.visible_child = app_screenshot_not_found;
                 return;
             }
         }
@@ -355,7 +369,7 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         var icon = new FileIcon (fileimage);
         Idle.add (() => {
             app_screenshot.gicon = icon;
-            screenshot_revealer.set_reveal_child (true);
+            screenshot_stack.visible_child = app_screenshot;
             return GLib.Source.REMOVE;
         });
     }
