@@ -27,12 +27,12 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
     Gtk.Label package_name;
     Gtk.Label package_summary;
 
-    public Gtk.Button update_button;
+    // The action button covers Install and Update
+    public Gtk.Button action_button;
+    Gtk.ProgressBar progress_bar;
+    Gtk.Label progress_label;
     public Gtk.Button cancel_button;
-    public Gtk.Stack action_stack;
-    Gtk.Grid update_grid;
-    Gtk.ProgressBar update_progressbar;
-    Gtk.Label update_label;
+    Gtk.Stack action_stack;
 
     public PackageRow (Package package) {
         this.package = package;
@@ -41,11 +41,38 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
         package_summary.ellipsize = Pango.EllipsizeMode.END;
         image.gicon = package.get_icon ();
 
+        if (package.update_available) {
+            action_button.label = _("Update");
+        } else if (package.installed) {
+            action_stack.no_show_all = true;
+            action_stack.hide ();
+        }
+
         package.notify["installed"].connect (() => {
+            if (package.installed && package.update_available) {
+                action_button.label = _("Update");
+                action_stack.no_show_all = false;
+                action_stack.show ();
+            } else if (package.installed) {
+                action_stack.no_show_all = true;
+                action_stack.hide ();
+            } else {
+                action_button.label = _("Install");
+                action_stack.no_show_all = false;
+                action_stack.show ();
+            }
             changed ();
         });
 
         package.notify["update-available"].connect (() => {
+            if (package.update_available) {
+                action_button.label = _("Update");
+                action_stack.no_show_all = false;
+                action_stack.show_all ();
+            } else {
+                action_stack.no_show_all = true;
+                action_stack.hide ();
+            }
             changed ();
         });
 
@@ -81,28 +108,32 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
         ((Gtk.Misc) package_summary).xalign = 0;
 
         action_stack = new Gtk.Stack ();
+        action_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
+        action_stack.hhomogeneous = false;
 
-        update_button = new Gtk.Button.with_label (_("Update"));
-        update_button.halign = Gtk.Align.END;
-        update_button.valign = Gtk.Align.CENTER;
-        update_button.margin_end = 6;
-        update_button.clicked.connect (() => update_package.begin ());
+        progress_bar = new Gtk.ProgressBar ();
 
-        update_label = new Gtk.Label (null);
-        update_progressbar = new Gtk.ProgressBar ();
-        update_progressbar.margin_end = 12;
+        progress_label = new Gtk.Label (null);
 
         cancel_button = new Gtk.Button.with_label (_("Cancel"));
-        cancel_button.valign = Gtk.Align.CENTER;
         cancel_button.margin_end = 6;
+        cancel_button.valign = Gtk.Align.CENTER;
 
-        update_grid = new Gtk.Grid ();
-        update_grid.attach (update_label, 0, 0, 1, 1);
-        update_grid.attach (update_progressbar, 0, 1, 1, 1);
-        update_grid.attach (cancel_button, 1, 0, 1, 2);
+        action_button = new Gtk.Button.with_label (_("Install"));
+        action_button.margin_end = 6;
+        action_button.valign = Gtk.Align.CENTER;
+        action_button.clicked.connect (() => action_clicked.begin ());
 
-        action_stack.add (update_button);
-        action_stack.add (update_grid);
+        var progress_grid = new Gtk.Grid ();
+        progress_grid.valign = Gtk.Align.CENTER;
+        progress_grid.row_spacing = 6;
+        progress_grid.column_spacing = 6;
+        progress_grid.attach (progress_label, 0, 0, 1, 1);
+        progress_grid.attach (progress_bar, 0, 1, 1, 1);
+        progress_grid.attach (cancel_button, 1, 0, 1, 2);
+
+        action_stack.add_named (action_button, "buttons");
+        action_stack.add_named (progress_grid, "progress");
 
         grid.attach (image, 0, 0, 1, 2);
         grid.attach (package_name, 1, 0, 1, 1);
@@ -115,28 +146,32 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
         });
     }
 
-    private async void update_package () {
-        try {
-            update_button.sensitive = false;
-            yield package.update ();
-        } catch (Error e) {
-            critical (e.message);
-        }
-
-        update_button.sensitive = true;
-    }
-
     private void update_status () {
-        update_label.label = package.change_information.get_status ();
+        progress_label.label = package.change_information.get_status ();
     }
 
     private void update_progress () {
         var progress = package.change_information.get_progress ();
         if (progress < 1.0f) {
-            action_stack.set_visible_child (update_grid);
-            update_progressbar.fraction = progress;
+            action_stack.set_visible_child_name ("progress");
+            progress_bar.fraction = progress;
         } else {
-            action_stack.set_visible_child (update_button);
+            action_stack.set_visible_child_name ("buttons");
+        }
+    }
+
+    private async void action_clicked () {
+        try {
+            if (package.update_available) {
+                yield package.update ();
+            } else {
+                yield package.install ();
+            }
+            action_stack.no_show_all = true;
+            action_stack.hide ();
+        } catch (Error e) {
+            critical (e.message);
+            action_stack.set_visible_child_name ("buttons");
         }
     }
 }

@@ -71,7 +71,7 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
 
     public void add_package (AppCenterCore.Package package) {
         var row = new Widgets.PackageRow (package);
-        update_button_group.add_widget (row.update_button);
+        update_button_group.add_widget (row.action_button);
         update_button_group.add_widget (row.cancel_button);
         row.show_all ();
         list_box.add (row);
@@ -126,7 +126,6 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
     [CCode (instance_pos = -1)]
     private void package_row_update_header (Widgets.PackageRow row, Widgets.PackageRow? before) {
         bool update_available = row.package.update_available;
-        row.action_stack.visible = row.package.update_available;
         if (before == null && update_available) {
             var updates_grid = get_updates_grid ();
             row.set_header (updates_grid);
@@ -142,7 +141,6 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
         var updated_grid = new Gtk.Grid ();
         updated_grid.orientation = Gtk.Orientation.HORIZONTAL;
         updated_grid.column_spacing = 12;
-        updated_grid.margin = 6;
         if (updating_cache) {
             updated_grid.halign = Gtk.Align.CENTER;
             var updating_label = new Gtk.Label (_("Searching for updates…"));
