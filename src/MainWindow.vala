@@ -22,10 +22,11 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     private Gtk.SearchEntry search_entry;
     private Views.CategoryView category_view;
     private Views.FeaturedView featured_view;
-    private Views.InstalledView installed_view;
     private Views.SearchView search_view;
     private Gtk.Button return_button;
     private ulong task_finished_connection = 0U;
+    
+    public static Views.InstalledView installed_view { get; private set; }
 
     public MainWindow (Gtk.Application app) {
         Object (application: app);

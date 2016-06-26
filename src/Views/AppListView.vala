@@ -76,6 +76,16 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
         row.show_all ();
         list_box.add (row);
     }
+    
+    public void remove_package (AppCenterCore.Package package) {
+        var pkg_rows = list_box.get_children ();
+        foreach (var row in pkg_rows) {
+            if (((Widgets.PackageRow) row).package == package) {
+                row.destroy ();
+                break;
+            }
+        }
+    }
 
     public Gee.Collection<AppCenterCore.Package> get_packages () {
         var tree_set = new Gee.TreeSet<AppCenterCore.Package> ();
