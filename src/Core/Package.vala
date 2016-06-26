@@ -141,6 +141,55 @@ public class AppCenterCore.Package : Object {
         return null;
     }
 
+    public GLib.Icon get_icon (uint size = 32) {
+        GLib.Icon? icon = null;
+        uint current_size = 0;
+
+        bool is_stock = false;
+        component.get_icons ().foreach ((_icon) => {
+            if (is_stock) {
+                return;
+            }            
+
+            switch (_icon.get_kind ()) {
+                case AppStream.IconKind.STOCK:
+                    if (Gtk.IconTheme.get_default ().has_icon (_icon.get_name ())) {
+                        is_stock = true;
+                        icon = new ThemedIcon (_icon.get_name ());
+                    }
+                    
+                    break;
+                case AppStream.IconKind.CACHED:
+                case AppStream.IconKind.LOCAL:
+                    if (_icon.get_width () > current_size && current_size < size) {
+                        var file = File.new_for_path (_icon.get_filename ());
+                        icon = new FileIcon (file);
+                        current_size = _icon.get_width ();
+                    }
+
+                    break;
+                case AppStream.IconKind.REMOTE:
+                    if (_icon.get_width () > current_size && current_size < size) {
+                        var file = File.new_for_uri (_icon.get_url ());
+                        icon = new FileIcon (file);
+                        current_size = _icon.get_width ();
+                    }
+
+                    break;
+            }
+        });
+
+        if (icon == null) {
+            if (component.get_kind () == AppStream.ComponentKind.ADDON) {
+                icon = new ThemedIcon ("extension");
+            } else {
+                icon = new ThemedIcon ("application-default-icon");
+            }
+        }
+
+        return icon;
+    }
+
     public string? get_version () {
         var package = find_package ();
         if (package != null) {
