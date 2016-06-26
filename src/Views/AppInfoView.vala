@@ -131,20 +131,20 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
 
         app_name = new Gtk.Label (null);
         app_name.margin_top = 12;
-        ((Gtk.Misc) app_name).xalign = 0;
+        app_name.xalign = 0;
         app_name.get_style_context ().add_class ("h1");
         app_name.valign = Gtk.Align.CENTER;
 
         app_version = new Gtk.Label (null);
         app_version.margin_top = 12;
-        ((Gtk.Misc) app_version).xalign = 0;
+        app_version.xalign = 0;
         app_version.hexpand = true;
         app_version.valign = Gtk.Align.CENTER;
         app_version.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
         app_version.get_style_context ().add_class ("h3");
 
         app_summary = new Gtk.Label (null);
-        ((Gtk.Misc) app_summary).xalign = 0;
+        app_summary.xalign = 0;
         app_summary.valign = Gtk.Align.START;
         app_summary.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
         app_summary.get_style_context ().add_class ("h2");
