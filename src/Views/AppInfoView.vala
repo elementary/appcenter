@@ -213,12 +213,17 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         action_stack.add_named (button_grid, "buttons");
         action_stack.add_named (progress_grid, "progress");
 
-        attach (app_icon, 0, 0, 1, 2);
-        attach (app_name, 1, 0, 1, 1);
-        attach (app_version, 2, 0, 1, 1);
-        attach (action_stack, 3, 0, 1, 1);
-        attach (app_summary, 1, 1, 3, 1);
-        attach (scrolled, 0, 2, 4, 1);
+        var header_grid = new Gtk.Grid ();
+        header_grid.column_spacing = 12;
+        header_grid.margin = 12;
+        header_grid.attach (app_icon, 0, 0, 1, 2);
+        header_grid.attach (app_name, 1, 0, 1, 1);
+        header_grid.attach (app_version, 2, 0, 1, 1);
+        header_grid.attach (action_stack, 3, 0, 1, 1);
+        header_grid.attach (app_summary, 1, 1, 3, 1);
+
+        attach (header_grid, 0, 0, 1, 1);
+        attach (scrolled, 0, 1, 1, 1);
 
         cancel_button.clicked.connect (() => {
             package.action_cancellable.cancel ();
