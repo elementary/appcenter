@@ -129,7 +129,7 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         app_screenshot_spinner.valign = Gtk.Align.CENTER;
         app_screenshot_spinner.active = true;
 
-        app_screenshot_not_found = new Gtk.Label (_("Screenshot Not Found"));
+        app_screenshot_not_found = new Gtk.Label (_("Screenshot Not Available"));
         app_screenshot_not_found.get_style_context ().add_class (Gtk.STYLE_CLASS_BACKGROUND);
         app_screenshot_not_found.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
         app_screenshot_not_found.get_style_context ().add_class ("h2");
