@@ -330,7 +330,7 @@ public class AppCenterCore.Client : Object {
     public async void refresh_updates () {
         var update_task = new AppCenter.Task ();
         try {
-            Pk.Results result = update_task.get_updates_sync (0, null, (t, p) => { });
+            Pk.Results result = yield update_task.get_updates_async (0, null, (t, p) => {});
             bool was_empty = updates_number == 0U;
             updates_number = get_package_count (result.get_package_array ());
             if (was_empty && updates_number != 0U) {
