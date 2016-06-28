@@ -141,9 +141,7 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
         grid.attach (action_stack, 2, 0, 1, 2);
         add (grid);
 
-        cancel_button.clicked.connect (() => {
-            package.action_cancellable.cancel ();
-        });
+        cancel_button.clicked.connect (() => action_cancelled ());
     }
 
     private void update_status () {
@@ -158,6 +156,11 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
         } else {
             action_stack.set_visible_child_name ("buttons");
         }
+    }
+
+    private void action_cancelled () {
+        message ("Cancel clicked");
+        package.action_cancellable.cancel ();
     }
 
     private async void action_clicked () {
