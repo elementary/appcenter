@@ -124,7 +124,7 @@ public class AppCenterCore.Client : Object {
             });
             packages_ids += null;
 
-            results = yield install_task.install_packages_async (packages_ids, null, cb);
+            results = yield install_task.install_packages_async (packages_ids, cancellable, cb);
             if (results.get_exit_code () != Pk.Exit.SUCCESS) {
                 release_task (search_task);
                 release_task (install_task);

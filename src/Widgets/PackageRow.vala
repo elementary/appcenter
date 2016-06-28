@@ -118,6 +118,7 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
         cancel_button = new Gtk.Button.with_label (_("Cancel"));
         cancel_button.margin_end = 6;
         cancel_button.valign = Gtk.Align.CENTER;
+        cancel_button.clicked.connect (() => action_cancelled ());
 
         action_button = new Gtk.Button.with_label (_("Install"));
         action_button.margin_end = 6;
@@ -140,8 +141,6 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
         grid.attach (package_summary, 1, 1, 1, 1);
         grid.attach (action_stack, 2, 0, 1, 2);
         add (grid);
-
-        cancel_button.clicked.connect (() => action_cancelled ());
     }
 
     private void update_status () {

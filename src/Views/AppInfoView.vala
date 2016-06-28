@@ -183,6 +183,7 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         cancel_button = new Gtk.Button.from_icon_name ("process-stop-symbolic", Gtk.IconSize.MENU);
         cancel_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
         cancel_button.valign = Gtk.Align.CENTER;
+        cancel_button.clicked.connect (() => action_cancelled ());
 
         action_button = new Gtk.Button.with_label (_("Install"));
         action_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
@@ -236,8 +237,6 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
 
         attach (header_grid, 0, 0, 1, 1);
         attach (scrolled, 0, 1, 1, 1);
-
-        cancel_button.clicked.connect (() => action_cancelled ());
     }
 
     private async void load_extensions () {
