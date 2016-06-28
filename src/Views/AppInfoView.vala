@@ -186,10 +186,12 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         action_button = new Gtk.Button.with_label (_("Install"));
         action_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
         action_button.get_style_context ().add_class ("h3");
+        action_button.clicked.connect (() => action_clicked.begin ());
 
         uninstall_button = new Gtk.Button.with_label (_("Uninstall"));
         uninstall_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
         uninstall_button.get_style_context ().add_class ("h3");
+        uninstall_button.clicked.connect (() => uninstall_clicked.begin ());
 
         var button_grid = new Gtk.Grid ();
         button_grid.halign = Gtk.Align.END;
@@ -232,10 +234,6 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
 
         attach (header_grid, 0, 0, 1, 1);
         attach (scrolled, 0, 1, 1, 1);
-
-        action_button.clicked.connect (() => action_clicked.begin ());
-
-        uninstall_button.clicked.connect (() => uninstall_clicked.begin ());
 
         cancel_button.clicked.connect (() => {
             package.action_cancellable.cancel ();
