@@ -159,7 +159,6 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
     }
 
     private void action_cancelled () {
-        message ("Cancel clicked");
         package.action_cancellable.cancel ();
     }
 
