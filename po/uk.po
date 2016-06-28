@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-15 19:56-0500\n"
+"POT-Creation-Date: 2016-06-27 12:29-0500\n"
 "PO-Revision-Date: 2016-06-19 19:51+0000\n"
 "Last-Translator: Roman Sytnyk <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -11,8 +11,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2016-06-20 05:41+0000\n"
-"X-Generator: Launchpad (build 18097)\n"
+"X-Launchpad-Export-Date: 2016-06-28 05:22+0000\n"
+"X-Generator: Launchpad (build 18115)\n"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -158,13 +158,26 @@ msgstr "Копіювання файлів"
 msgid "Unknown state"
 msgstr "Невідомий стан"
 
-#: ../src/Core/Client.vala:72
+#: ../src/Core/Client.vala:62
 msgid "Operating System Updates"
 msgstr "Оновлення Операційної Системи"
 
-#: ../src/Core/Client.vala:73
+#: ../src/Core/Client.vala:63
 msgid "Updates to system components"
 msgstr "Оновлення системних компонетів"
+
+#: ../src/Core/Client.vala:337
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "Оновлення доступно"
+msgstr[1] ""
+msgstr[2] "Доступні оновлення"
+
+#: ../src/Core/Client.vala:338
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "%u оновлення доступне для вашої системи"
+msgstr[1] "%u оновлення доступні для вашої системи"
 
 #: ../src/Core/Package.vala:80
 msgid "Application installed"
@@ -174,11 +187,11 @@ msgstr "Додаток встановлено"
 msgid "%s has been successfully installed"
 msgstr "%s був успішно встановлений"
 
-#: ../src/Application.vala:32 ../daemon/Daemon.vala:45 ../daemon/Daemon.vala:53
+#: ../src/Application.vala:35
 msgid "App Center"
 msgstr "Центр програмного забезпечення"
 
-#: ../src/Application.vala:50
+#: ../src/Application.vala:53
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
@@ -193,21 +206,20 @@ msgstr ""
 "  cannoneer https://launchpad.net/~gjinflkzcgfve\n"
 "  elementaryart (old) https://launchpad.net/~elementaryart"
 
-#: ../src/MainWindow.vala:60
+#: ../src/MainWindow.vala:61
 msgid "AppCenter"
 msgstr "Центр програм"
 
-#: ../src/MainWindow.vala:82
+#: ../src/MainWindow.vala:83
 msgid "Search App"
 msgstr "Шукати додаток"
 
-#: ../src/MainWindow.vala:119 ../src/Views/CategoryView.vala:68
+#: ../src/MainWindow.vala:120 ../src/Views/CategoryView.vala:68
 #: ../src/Views/CategoryView.vala:75
 msgid "Categories"
 msgstr "Розділи"
 
-#: ../src/MainWindow.vala:123 ../src/MainWindow.vala:128
-#: ../src/Views/InstalledView.vala:42
+#: ../src/MainWindow.vala:121 ../src/Views/InstalledView.vala:42
 msgctxt "view"
 msgid "Updates"
 msgstr "Оновленння"
@@ -226,25 +238,25 @@ msgstr "Немає результатів"
 msgid "No apps could be found. Try changing search terms."
 msgstr "Додатки не знайдені. Спробуйте змінити умови пошуку."
 
-#: ../src/Views/AppListView.vala:138
+#: ../src/Views/AppListView.vala:146
 msgid "Searching for updates…"
 msgstr "Пошук оновлень"
 
-#: ../src/Views/AppListView.vala:144
+#: ../src/Views/AppListView.vala:152
 msgid "Up to Date"
 msgstr "Найновіший"
 
-#: ../src/Views/AppListView.vala:167
+#: ../src/Views/AppListView.vala:175
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "%u оновлення доступно"
 msgstr[1] "%u оновлень доступно"
 
-#: ../src/Views/AppListView.vala:173
+#: ../src/Views/AppListView.vala:181
 msgid "Size: %s"
 msgstr "Розмір: %s"
 
-#: ../src/Views/AppListView.vala:175
+#: ../src/Views/AppListView.vala:183
 msgid "Update All"
 msgstr "Оновити все"
 
@@ -304,36 +316,33 @@ msgstr "Наука та інженерна справа"
 msgid "Universal Access"
 msgstr "Універсальний доступ"
 
-#: ../src/Views/AppInfoView.vala:80 ../src/Views/AppInfoView.vala:96
-#: ../src/Views/AppInfoView.vala:105 ../src/Widgets/PackageRow.vala:104
+#: ../src/Views/AppInfoView.vala:56
+msgid "Extensions:"
+msgstr ""
+
+#: ../src/Views/AppInfoView.vala:68 ../src/Views/AppInfoView.vala:84
+#: ../src/Views/AppInfoView.vala:93 ../src/Widgets/PackageRow.vala:45
+#: ../src/Widgets/PackageRow.vala:53 ../src/Widgets/PackageRow.vala:69
 msgid "Update"
 msgstr "Оновлення"
 
-#: ../src/Views/AppInfoView.vala:111 ../src/Views/AppInfoView.vala:188
-#: ../src/Views/AppInfoView.vala:306
+#: ../src/Views/AppInfoView.vala:99 ../src/Views/AppInfoView.vala:187
+#: ../src/Views/AppInfoView.vala:325 ../src/Widgets/PackageRow.vala:60
+#: ../src/Widgets/PackageRow.vala:122
 msgid "Install"
 msgstr "Установка"
 
-#: ../src/Views/AppInfoView.vala:193
+#: ../src/Views/AppInfoView.vala:132
+msgid "Screenshot Not Available"
+msgstr ""
+
+#: ../src/Views/AppInfoView.vala:192
 msgid "Uninstall"
 msgstr "Видалення"
 
-#: ../src/Widgets/PackageRow.vala:114
+#: ../src/Widgets/PackageRow.vala:118
 msgid "Cancel"
 msgstr "Скасувати"
-
-#: ../daemon/Daemon.vala:135
-msgid "Update Available"
-msgid_plural "Updates Available"
-msgstr[0] "Оновлення доступно"
-msgstr[1] ""
-msgstr[2] "Доступні оновлення"
-
-#: ../daemon/Daemon.vala:137
-msgid "%u update is available for your system"
-msgid_plural "%u updates are available for your system"
-msgstr[0] "%u оновлення доступне для вашої системи"
-msgstr[1] "%u оновлення доступні для вашої системи"
 
 #~ msgid "Home Page"
 #~ msgstr "Домашня сторінка"
