@@ -176,8 +176,12 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         action_stack.margin_end = 6;
 
         progress_bar = new Gtk.ProgressBar ();
+        progress_bar.show_text = true;
+        progress_bar.valign = Gtk.Align.CENTER;
 
         cancel_button = new Gtk.Button.with_label (_("Cancel"));
+        cancel_button.get_style_context ().add_class ("h3");
+        cancel_button.valign = Gtk.Align.CENTER;
 
         action_button = new Gtk.Button.with_label (_("Install"));
         action_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
@@ -198,9 +202,8 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         var progress_grid = new Gtk.Grid ();
         progress_grid.valign = Gtk.Align.CENTER;
         progress_grid.column_spacing = 12;
-        progress_grid.row_spacing = 6;
-        progress_grid.attach (progress_bar, 0, 1, 1, 1);
-        progress_grid.attach (cancel_button, 1, 0, 1, 2);
+        progress_grid.attach (progress_bar, 0, 0, 1, 1);
+        progress_grid.attach (cancel_button, 1, 0, 1, 1);
 
         content_grid = new Gtk.Grid ();
         content_grid.width_request = 800;

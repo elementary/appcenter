@@ -111,6 +111,8 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
         action_stack.hhomogeneous = false;
 
         progress_bar = new Gtk.ProgressBar ();
+        progress_bar.show_text = true;
+        progress_bar.valign = Gtk.Align.CENTER;
 
         cancel_button = new Gtk.Button.with_label (_("Cancel"));
         cancel_button.margin_end = 6;
@@ -124,8 +126,8 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
         var progress_grid = new Gtk.Grid ();
         progress_grid.valign = Gtk.Align.CENTER;
         progress_grid.column_spacing = 12;
-        progress_grid.attach (progress_bar, 0, 1, 1, 1);
-        progress_grid.attach (cancel_button, 1, 0, 1, 2);
+        progress_grid.attach (progress_bar, 0, 0, 1, 1);
+        progress_grid.attach (cancel_button, 1, 0, 1, 1);
 
         action_stack.add_named (action_button, "buttons");
         action_stack.add_named (progress_grid, "progress");
