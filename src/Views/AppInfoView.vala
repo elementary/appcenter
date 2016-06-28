@@ -37,7 +37,6 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
     Gtk.ProgressBar progress_bar;
     Gtk.Grid content_grid;
     Gtk.ListBox extension_box;
-    Gtk.Label progress_label;
     Gtk.Label extension_label;
     Gtk.Button cancel_button;
     Gtk.Stack action_stack;
@@ -177,11 +176,11 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         action_stack.margin_end = 6;
 
         progress_bar = new Gtk.ProgressBar ();
+        progress_bar.show_text = true;
+        progress_bar.valign = Gtk.Align.CENTER;
 
-        progress_label = new Gtk.Label (null);
-
-        cancel_button = new Gtk.Button.from_icon_name ("process-stop-symbolic", Gtk.IconSize.MENU);
-        cancel_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        cancel_button = new Gtk.Button.with_label (_("Cancel"));
+        cancel_button.get_style_context ().add_class ("h3");
         cancel_button.valign = Gtk.Align.CENTER;
         cancel_button.clicked.connect (() => action_cancelled ());
 
@@ -205,10 +204,9 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
 
         var progress_grid = new Gtk.Grid ();
         progress_grid.valign = Gtk.Align.CENTER;
-        progress_grid.row_spacing = 6;
-        progress_grid.attach (progress_label, 0, 0, 1, 1);
-        progress_grid.attach (progress_bar, 0, 1, 1, 1);
-        progress_grid.attach (cancel_button, 1, 0, 1, 2);
+        progress_grid.column_spacing = 12;
+        progress_grid.attach (progress_bar, 0, 0, 1, 1);
+        progress_grid.attach (cancel_button, 1, 0, 1, 1);
 
         content_grid = new Gtk.Grid ();
         content_grid.width_request = 800;
@@ -279,7 +277,7 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
     }
 
     private void update_status () {
-        progress_label.label = package.change_information.get_status ();
+        progress_bar.text = package.change_information.get_status ();
     }
 
     private void update_progress () {
