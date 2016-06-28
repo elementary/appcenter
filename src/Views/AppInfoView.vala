@@ -37,7 +37,6 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
     Gtk.ProgressBar progress_bar;
     Gtk.Grid content_grid;
     Gtk.ListBox extension_box;
-    Gtk.Label progress_label;
     Gtk.Label extension_label;
     Gtk.Button cancel_button;
     Gtk.Stack action_stack;
@@ -178,21 +177,15 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
 
         progress_bar = new Gtk.ProgressBar ();
 
-        progress_label = new Gtk.Label (null);
-
-        cancel_button = new Gtk.Button.from_icon_name ("process-stop-symbolic", Gtk.IconSize.MENU);
-        cancel_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-        cancel_button.valign = Gtk.Align.CENTER;
+        cancel_button = new Gtk.Button.with_label (_("Cancel"));
 
         action_button = new Gtk.Button.with_label (_("Install"));
         action_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
         action_button.get_style_context ().add_class ("h3");
-        action_button.clicked.connect (() => action_clicked.begin ());
 
         uninstall_button = new Gtk.Button.with_label (_("Uninstall"));
         uninstall_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
         uninstall_button.get_style_context ().add_class ("h3");
-        uninstall_button.clicked.connect (() => uninstall_clicked.begin ());
 
         var button_grid = new Gtk.Grid ();
         button_grid.halign = Gtk.Align.END;
@@ -204,8 +197,8 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
 
         var progress_grid = new Gtk.Grid ();
         progress_grid.valign = Gtk.Align.CENTER;
+        progress_grid.column_spacing = 12;
         progress_grid.row_spacing = 6;
-        progress_grid.attach (progress_label, 0, 0, 1, 1);
         progress_grid.attach (progress_bar, 0, 1, 1, 1);
         progress_grid.attach (cancel_button, 1, 0, 1, 2);
 
@@ -236,6 +229,10 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
 
         attach (header_grid, 0, 0, 1, 1);
         attach (scrolled, 0, 1, 1, 1);
+
+        action_button.clicked.connect (() => action_clicked.begin ());
+
+        uninstall_button.clicked.connect (() => uninstall_clicked.begin ());
 
         cancel_button.clicked.connect (() => {
             package.action_cancellable.cancel ();
@@ -282,7 +279,7 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
     }
 
     private void update_status () {
-        progress_label.label = package.change_information.get_status ();
+        progress_bar.text = package.change_information.get_status ();
     }
 
     private void update_progress () {

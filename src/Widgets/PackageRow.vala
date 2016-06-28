@@ -30,7 +30,6 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
     // The action button covers Install and Update
     public Gtk.Button action_button;
     Gtk.ProgressBar progress_bar;
-    Gtk.Label progress_label;
     public Gtk.Button cancel_button;
     Gtk.Stack action_stack;
 
@@ -113,8 +112,6 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
 
         progress_bar = new Gtk.ProgressBar ();
 
-        progress_label = new Gtk.Label (null);
-
         cancel_button = new Gtk.Button.with_label (_("Cancel"));
         cancel_button.margin_end = 6;
         cancel_button.valign = Gtk.Align.CENTER;
@@ -126,9 +123,7 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
 
         var progress_grid = new Gtk.Grid ();
         progress_grid.valign = Gtk.Align.CENTER;
-        progress_grid.row_spacing = 6;
-        progress_grid.column_spacing = 6;
-        progress_grid.attach (progress_label, 0, 0, 1, 1);
+        progress_grid.column_spacing = 12;
         progress_grid.attach (progress_bar, 0, 1, 1, 1);
         progress_grid.attach (cancel_button, 1, 0, 1, 2);
 
@@ -147,7 +142,7 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
     }
 
     private void update_status () {
-        progress_label.label = package.change_information.get_status ();
+        progress_bar.text = package.change_information.get_status ();
     }
 
     private void update_progress () {
