@@ -87,7 +87,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
     construct {
         icon_name = "system-software-installer";
-        set_size_request (750, 550);
         title = _("AppCenter");
         window_position = Gtk.WindowPosition.CENTER;
 
