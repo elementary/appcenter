@@ -46,7 +46,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         }
 
         view_mode.selected = 0;
-        stack.visible_child = category_view;
         search_entry.grab_focus_without_selecting ();
 
         var go_back = new SimpleAction ("go-back", null);
@@ -121,7 +120,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         stack = new Gtk.Stack ();
         stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
-        stack.expand = true;
         stack.add (category_view);
         stack.add (installed_view);
         stack.add (search_view);
@@ -163,9 +161,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     }
 
     public void go_to_installed () {
-        if (view_mode.sensitive) {
-            view_mode.selected = 1;
-        }
+        view_mode.selected = 1;
     }
 
     private void trigger_search () {
