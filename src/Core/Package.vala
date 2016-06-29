@@ -104,10 +104,13 @@ public class AppCenterCore.Package : Object {
         changing = true;
         changed ();
         try {
-            yield AppCenterCore.Client.get_default ().remove_package (this, (progress, type) => {}, action_cancellable);
-            changing = false;
+            yield AppCenterCore.Client.get_default ().remove_package (this, (progress, type) => {change_information.ProgressCallback (progress, type);}, action_cancellable);
+            installed_packages.clear ();
+            change_information.clear ();
             installed = false;
+            changing = false;
         } catch (Error e) {
+            change_information.reset ();
             changing = false;
             throw e;
         }
