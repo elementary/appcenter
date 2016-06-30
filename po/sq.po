@@ -4,14 +4,14 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-06-27 12:29-0500\n"
-"PO-Revision-Date: 2016-05-01 01:51+0000\n"
+"PO-Revision-Date: 2016-06-29 14:28+0000\n"
 "Last-Translator: Indrit Bashkimi <indrit.bashkimi@gmail.com>\n"
 "Language-Team: sq\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-06-28 05:20+0000\n"
+"X-Launchpad-Export-Date: 2016-06-30 05:29+0000\n"
 "X-Generator: Launchpad (build 18115)\n"
 "Language: sq\n"
 
@@ -69,7 +69,7 @@ msgstr "Duke zgjidhur vartësitë"
 
 #: ../src/Core/ChangeInformation.vala:80
 msgid "Checking signatures"
-msgstr ""
+msgstr "Duke kontrolluar nënshkrimet"
 
 #: ../src/Core/ChangeInformation.vala:82
 msgid "Testing changes"
@@ -113,7 +113,7 @@ msgstr "Duke shkarkuar grupet"
 
 #: ../src/Core/ChangeInformation.vala:102
 msgid "Downloading update information"
-msgstr ""
+msgstr "Duke shkarkuar informacione mbi përditësimin"
 
 #: ../src/Core/ChangeInformation.vala:104
 msgid "Repackaging files"
@@ -125,7 +125,7 @@ msgstr ""
 
 #: ../src/Core/ChangeInformation.vala:108
 msgid "Scanning applications"
-msgstr ""
+msgstr "Duke skanuar programet"
 
 #: ../src/Core/ChangeInformation.vala:110
 msgid "Generating package lists"
@@ -181,7 +181,7 @@ msgstr[1] ""
 
 #: ../src/Core/Package.vala:80
 msgid "Application installed"
-msgstr ""
+msgstr "Programi u instalua"
 
 #: ../src/Core/Package.vala:81
 msgid "%s has been successfully installed"
@@ -205,7 +205,7 @@ msgstr ""
 
 #: ../src/MainWindow.vala:83
 msgid "Search App"
-msgstr ""
+msgstr "Kërko program"
 
 #: ../src/MainWindow.vala:120 ../src/Views/CategoryView.vala:68
 #: ../src/Views/CategoryView.vala:75
@@ -215,7 +215,7 @@ msgstr "Kategoritë"
 #: ../src/MainWindow.vala:121 ../src/Views/InstalledView.vala:42
 msgctxt "view"
 msgid "Updates"
-msgstr ""
+msgstr "Përditësime"
 
 #. / TRANSLATORS: the name of the Search view
 #: ../src/Views/SearchView.vala:35
@@ -229,7 +229,7 @@ msgstr "Pa rezultate"
 
 #: ../src/Views/AppListView.vala:54
 msgid "No apps could be found. Try changing search terms."
-msgstr ""
+msgstr "Nuk u gjetën programe. Provo të ndryshosh termat e kërkimit."
 
 #: ../src/Views/AppListView.vala:146
 msgid "Searching for updates…"
@@ -237,7 +237,7 @@ msgstr "Duke kërkuar përditësime…"
 
 #: ../src/Views/AppListView.vala:152
 msgid "Up to Date"
-msgstr ""
+msgstr "Përditësuar"
 
 #: ../src/Views/AppListView.vala:175
 msgid "%u Update Available"
@@ -259,11 +259,11 @@ msgstr "Më të vlerësuarit"
 
 #: ../src/Views/FeaturedView.vala:36
 msgid "Latest Apps"
-msgstr ""
+msgstr "Programet e fundit"
 
 #: ../src/Views/CategoryView.vala:118
 msgid "Audio"
-msgstr ""
+msgstr "Audio"
 
 #: ../src/Views/CategoryView.vala:131
 msgid "Development"
@@ -275,35 +275,35 @@ msgstr ""
 
 #: ../src/Views/CategoryView.vala:157
 msgid "Office"
-msgstr ""
+msgstr "Zyrë"
 
 #: ../src/Views/CategoryView.vala:170
 msgid "System"
-msgstr ""
+msgstr "Sistem"
 
 #: ../src/Views/CategoryView.vala:183
 msgid "Video"
-msgstr ""
+msgstr "Video"
 
 #: ../src/Views/CategoryView.vala:196
 msgid "Graphics"
-msgstr ""
+msgstr "Grafikë"
 
 #: ../src/Views/CategoryView.vala:208
 msgid "Games"
-msgstr ""
+msgstr "Lojra"
 
 #: ../src/Views/CategoryView.vala:221
 msgid "Education"
-msgstr ""
+msgstr "Edukim"
 
 #: ../src/Views/CategoryView.vala:233
 msgid "Internet"
-msgstr ""
+msgstr "Internet"
 
 #: ../src/Views/CategoryView.vala:246
 msgid "Science & Engineering"
-msgstr ""
+msgstr "Shkencë dhe Inxhinieri"
 
 #: ../src/Views/CategoryView.vala:258
 msgid "Universal Access"
