@@ -78,29 +78,8 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
             uninstall_button.hide ();
         }
 
-        package.notify["update-available"].connect (() => {
-            if (package.update_available) {
-                action_button.label = _("Update");
-            } else {
-                action_button.no_show_all = true;
-                action_button.hide ();
-            }
-        });
-
-        package.notify["installed"].connect (() => {
-            if (package.installed && package.update_available) {
-                action_button.label = _("Update");
-                action_button.no_show_all = false;
-            } else if (package.installed) {
-                action_button.hide ();
-                action_button.no_show_all = true;
-            } else {
-                action_button.label = _("Install");
-                action_button.no_show_all = false;
-                uninstall_button.no_show_all = true;
-                uninstall_button.hide ();
-            }
-        });
+        package.notify["installed"].connect (() => update_buttons ());
+        package.notify["update-available"].connect (() => update_buttons ());
 
         package.change_information.bind_property ("can-cancel", cancel_button, "sensitive", GLib.BindingFlags.SYNC_CREATE);
         package.change_information.progress_changed.connect (() => update_progress ());
@@ -278,6 +257,11 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
 
     private void update_status () {
         progress_bar.text = package.change_information.get_status ();
+        if (package.change_information.status == Pk.Status.FINISHED) {
+            action_stack.set_visible_child_name ("buttons");
+        } else {
+            action_stack.set_visible_child_name ("progress");
+        }         
     }
 
     private void update_progress () {
@@ -287,6 +271,25 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
             progress_bar.fraction = progress;
         } else {
             action_stack.set_visible_child_name ("buttons");
+        }
+    }
+
+    private void update_buttons () {
+        if (package.installed) {
+            if (package.update_available) {
+                action_button.label = _("Update");
+                action_button.no_show_all = false;
+                action_button.show_all ();                
+            } else {
+                action_button.no_show_all = true;
+                action_button.hide ();                   
+                uninstall_button.no_show_all = false;
+                uninstall_button.show_all ();                
+            }
+        } else {
+            action_button.label = _("Install");
+            action_button.no_show_all = false;
+            action_button.show_all ();
         }
     }
 
@@ -306,7 +309,7 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
                 action_button.hide ();
                 if (package.component.id != "xxx-os-updates") {
                     uninstall_button.no_show_all = false;
-                    uninstall_button.show ();
+                    uninstall_button.show_all ();
                 }
                 
                 // Add this app to the Installed Apps View

@@ -47,33 +47,8 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
             action_stack.hide ();
         }
 
-        package.notify["installed"].connect (() => {
-            if (package.installed && package.update_available) {
-                action_button.label = _("Update");
-                action_stack.no_show_all = false;
-                action_stack.show ();
-            } else if (package.installed) {
-                action_stack.no_show_all = true;
-                action_stack.hide ();
-            } else {
-                action_button.label = _("Install");
-                action_stack.no_show_all = false;
-                action_stack.show ();
-            }
-            changed ();
-        });
-
-        package.notify["update-available"].connect (() => {
-            if (package.update_available) {
-                action_button.label = _("Update");
-                action_stack.no_show_all = false;
-                action_stack.show_all ();
-            } else {
-                action_stack.no_show_all = true;
-                action_stack.hide ();
-            }
-            changed ();
-        });
+        package.notify["installed"].connect (() => update_buttons ());
+        package.notify["update-available"].connect (() => update_buttons ());
 
         package.change_information.bind_property ("can-cancel", cancel_button, "sensitive", GLib.BindingFlags.SYNC_CREATE);
         package.change_information.progress_changed.connect (() => update_progress ());
@@ -142,6 +117,13 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
 
     private void update_status () {
         progress_bar.text = package.change_information.get_status ();
+        if (package.change_information.status == Pk.Status.FINISHED) {
+            action_stack.set_visible_child_name ("buttons");
+        } else {
+            action_stack.set_visible_child_name ("progress");   
+            action_stack.no_show_all = false;
+            action_stack.show_all ();   
+        }        
     }
 
     private void update_progress () {
@@ -149,9 +131,36 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
         if (progress < 1.0f) {
             action_stack.set_visible_child_name ("progress");
             progress_bar.fraction = progress;
+            action_stack.no_show_all = false;
+            action_stack.show_all ();               
         } else {
             action_stack.set_visible_child_name ("buttons");
         }
+    }
+
+    private void update_buttons () {
+        if (package.installed) {
+            if (package.update_available) {
+                action_button.label = _("Update");
+                action_button.no_show_all = false;
+                action_button.show_all ();    
+
+                action_stack.no_show_all = false;
+                action_stack.show_all ();
+            } else {
+                action_stack.no_show_all = true;
+                action_stack.hide ();
+            }
+        } else {
+            action_button.label = _("Install");
+            action_button.no_show_all = false;
+            action_button.show_all ();
+
+            action_stack.no_show_all = false;
+            action_stack.show_all ();                
+        }
+
+        changed ();        
     }
 
     private void action_cancelled () {
