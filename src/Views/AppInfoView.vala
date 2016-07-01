@@ -111,7 +111,6 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
 
     construct {
         column_spacing = 12;
-        row_spacing = 6;
 
         app_icon = new Gtk.Image ();
         app_icon.margin_top = 12;
@@ -119,7 +118,8 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         app_icon.pixel_size = 128;
 
         app_screenshot = new Gtk.Image ();
-        app_screenshot.pixel_size = 512;
+        app_screenshot.width_request = 800;
+        app_screenshot.height_request = 600;
         app_screenshot.icon_name = "image-x-generic";
         app_screenshot.halign = Gtk.Align.CENTER;
 
@@ -234,7 +234,8 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         header_grid.attach (app_summary, 1, 1, 3, 1);
 
         attach (header_grid, 0, 0, 1, 1);
-        attach (scrolled, 0, 1, 1, 1);
+        attach (new Gtk.Separator (Gtk.Orientation.HORIZONTAL), 0, 1, 1, 1);
+        attach (scrolled, 0, 2, 1, 1);
     }
 
     private async void load_extensions () {
@@ -365,10 +366,14 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
             }
         }
 
-        var icon = new FileIcon (fileimage);
         Idle.add (() => {
-            app_screenshot.gicon = icon;
-            screenshot_stack.visible_child = app_screenshot;
+            try {
+                app_screenshot.pixbuf = new Gdk.Pixbuf.from_file_at_scale (fileimage.get_path (), 800, 600, true);
+                screenshot_stack.visible_child = app_screenshot;
+            } catch (Error e) {
+                critical (e.message);
+            }
+        
             return GLib.Source.REMOVE;
         });
     }
