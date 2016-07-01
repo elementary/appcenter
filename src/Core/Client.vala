@@ -107,7 +107,8 @@ public class AppCenterCore.Client : Object {
         return null;
     }
 
-    public async void install_package (Package package, Pk.ProgressCallback cb, GLib.Cancellable cancellable) throws GLib.Error {
+    public async Pk.Exit install_package (Package package, Pk.ProgressCallback cb, GLib.Cancellable cancellable) throws GLib.Error {
+        Pk.Exit exit_status = Pk.Exit.UNKNOWN;
         AppCenter.Task install_task = request_task ();
         AppCenter.Task search_task = request_task ();
         string[] packages_ids = {};
@@ -125,7 +126,8 @@ public class AppCenterCore.Client : Object {
             packages_ids += null;
 
             results = yield install_task.install_packages_async (packages_ids, cancellable, cb);
-            if (results.get_exit_code () != Pk.Exit.SUCCESS) {
+            exit_status = results.get_exit_code ();
+            if (exit_status != Pk.Exit.SUCCESS) {
                 release_task (search_task);
                 release_task (install_task);
                 throw new GLib.IOError.FAILED (Pk.Exit.enum_to_string (results.get_exit_code ()));
@@ -138,6 +140,7 @@ public class AppCenterCore.Client : Object {
 
         release_task (search_task);
         release_task (install_task);
+        return exit_status;
     }
 
     public async void update_package (Package package, Pk.ProgressCallback cb, GLib.Cancellable cancellable) throws GLib.Error {
