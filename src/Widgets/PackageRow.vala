@@ -40,21 +40,15 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
         package_summary.ellipsize = Pango.EllipsizeMode.END;
         image.gicon = package.get_icon ();
 
-        if (package.update_available) {
-            action_button.label = _("Update");
-        } else if (package.installed) {
-            action_stack.no_show_all = true;
-            action_stack.hide ();
-        }
-
-        package.notify["installed"].connect (() => update_buttons ());
-        package.notify["update-available"].connect (() => update_buttons ());
+        package.notify["state"].connect (update_state);
 
         package.change_information.bind_property ("can-cancel", cancel_button, "sensitive", GLib.BindingFlags.SYNC_CREATE);
-        package.change_information.progress_changed.connect (() => update_progress ());
-        package.change_information.status_changed.connect (() => update_status ());
+        package.change_information.progress_changed.connect (update_progress);
+        package.change_information.status_changed.connect (update_progress_status);
+
+        update_progress_status (); 
         update_progress ();
-        update_status ();
+        update_state ();
     }
 
     construct {
@@ -115,49 +109,53 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
         add (grid);
     }
 
-    private void update_status () {
+    private void update_progress_status () {
         progress_bar.text = package.change_information.get_status ();
-        if (package.change_information.status == Pk.Status.FINISHED) {
-            action_stack.set_visible_child_name ("buttons");
-        } else {
-            action_stack.set_visible_child_name ("progress");   
-            action_stack.no_show_all = false;
-            action_stack.show_all ();   
-        }        
     }
 
     private void update_progress () {
-        var progress = package.change_information.get_progress ();
+        double progress = package.change_information.get_progress ();
         if (progress < 1.0f) {
-            action_stack.set_visible_child_name ("progress");
             progress_bar.fraction = progress;
-            action_stack.no_show_all = false;
-            action_stack.show_all ();               
-        } else {
-            action_stack.set_visible_child_name ("buttons");
         }
     }
 
-    private void update_buttons () {
-        if (package.installed) {
-            if (package.update_available) {
+    private void update_state () {
+        switch (package.state) {
+            case Package.State.NOT_INSTALLED:
+                action_button.label = _("Install");
+                action_button.no_show_all = false;
+                action_button.show_all ();
+
+                action_stack.no_show_all = false;
+                action_stack.show_all ();
+
+                action_stack.set_visible_child_name ("buttons");
+                break;
+            case Package.State.INSTALLED:
+                action_stack.no_show_all = true;
+                action_stack.hide ();                
+
+                action_stack.set_visible_child_name ("buttons");
+                break;
+            case Package.State.UPDATE_AVAILABLE:
                 action_button.label = _("Update");
                 action_button.no_show_all = false;
                 action_button.show_all ();    
 
                 action_stack.no_show_all = false;
                 action_stack.show_all ();
-            } else {
-                action_stack.no_show_all = true;
-                action_stack.hide ();
-            }
-        } else {
-            action_button.label = _("Install");
-            action_button.no_show_all = false;
-            action_button.show_all ();
 
-            action_stack.no_show_all = false;
-            action_stack.show_all ();                
+                action_stack.set_visible_child_name ("buttons");
+                break;
+            case Package.State.INSTALLING:
+            case Package.State.UPDATING:
+            case Package.State.REMOVING:
+                action_stack.no_show_all = false;
+                action_stack.show_all ();
+
+                action_stack.set_visible_child_name ("progress");
+                break;
         }
 
         changed ();        
@@ -174,11 +172,8 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
             } else {
                 yield package.install ();
             }
-            action_stack.no_show_all = true;
-            action_stack.hide ();
         } catch (Error e) {
             critical (e.message);
-            action_stack.set_visible_child_name ("buttons");
         }
     }
 }

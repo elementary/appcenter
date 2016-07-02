@@ -19,6 +19,15 @@
  */
 
 public class AppCenterCore.Package : Object {
+    public enum State {
+        NOT_INSTALLED,
+        INSTALLED,
+        INSTALLING,
+        UPDATE_AVAILABLE,
+        UPDATING,
+        REMOVING
+    }
+
     public const string OS_UPDATES_ID = "xxx-os-updates";
     public signal void changed ();
 
@@ -26,19 +35,17 @@ public class AppCenterCore.Package : Object {
     public ChangeInformation change_information { public get; private set; }
     public Gee.TreeSet<Pk.Package> installed_packages { public get; private set; }
     public GLib.Cancellable action_cancellable { public get; private set; }
-    public bool changing { public get; private set; default= false; }
+    public bool changing { public get; private set; default = false; }
+    public State state { public get; private set; default = State.NOT_INSTALLED; }
 
     public bool installed {
-        public get {
+        get {
             return !installed_packages.is_empty || component.get_id () == OS_UPDATES_ID;
-        }
-        private set {
-            
         }
     }
 
     public bool update_available {
-        public get {
+        get {
             return installed && change_information.has_changes ();
         }
     }
@@ -50,19 +57,40 @@ public class AppCenterCore.Package : Object {
         action_cancellable = new GLib.Cancellable ();
     }
 
+    public void update_state () {
+        if (installed) {
+            if (update_available) {
+                state = State.UPDATE_AVAILABLE;
+            } else {
+                state = State.INSTALLED;
+            }
+        } else {
+            state = State.NOT_INSTALLED;
+        }        
+    }
+
     public async void update () throws GLib.Error {
         action_cancellable.reset ();
         changing = true;
         changed ();
+
+        var previous_state = state;
+        state = State.UPDATING;
         try {
-            yield AppCenterCore.Client.get_default ().update_package (this, (progress, type) => {change_information.ProgressCallback (progress, type);}, action_cancellable);
+            var exit_status = yield AppCenterCore.Client.get_default ().update_package (this, (progress, type) => {change_information.ProgressCallback (progress, type);}, action_cancellable);
+            if (exit_status == Pk.Exit.SUCCESS) {
+                state = State.INSTALLED;
+            } else {
+                state = previous_state;
+            }
+
             installed_packages.add_all (change_information.changes);
             change_information.clear ();
-            notify_property ("update-available");
             changing = false;
         } catch (Error e) {
             change_information.reset ();
             changing = false;
+            state = previous_state;
             throw e;
         }
     }
@@ -71,27 +99,34 @@ public class AppCenterCore.Package : Object {
         action_cancellable.reset ();
         changing = true;
         changed ();
+
+        var previous_state = state;
+        state = State.INSTALLING;
         try {
             var application = (Gtk.Application)Application.get_default ();
             var window = application.get_active_window ().get_window ();
 
             var exit_status = yield AppCenterCore.Client.get_default ().install_package (this, (progress, type) => {change_information.ProgressCallback (progress, type);}, action_cancellable);
             if (exit_status == Pk.Exit.SUCCESS && (window.get_state () & Gdk.WindowState.FOCUSED) == 0) {
+                state = State.INSTALLED;
+
                 var notification = new Notification (_("Application installed"));
                 notification.set_body (_("%s has been successfully installed").printf (get_name ()));
                 notification.set_icon (new ThemedIcon ("system-software-install"));
                 notification.set_default_action ("app.open-application");
 
                 application.send_notification ("installed", notification);
+            } else {
+                state = previous_state;
             }
 
             installed_packages.add_all (change_information.changes);
             change_information.clear ();
-            installed = true;
             changing = false;
         } catch (Error e) {
             change_information.reset ();
             changing = false;
+            state = previous_state;
             throw e;
         }
     }
@@ -100,15 +135,24 @@ public class AppCenterCore.Package : Object {
         action_cancellable.reset ();
         changing = true;
         changed ();
+
+        var previous_state = state;
+        state = State.REMOVING;
         try {
-            yield AppCenterCore.Client.get_default ().remove_package (this, (progress, type) => {change_information.ProgressCallback (progress, type);}, action_cancellable);
+            var exit_status = yield AppCenterCore.Client.get_default ().remove_package (this, (progress, type) => {change_information.ProgressCallback (progress, type);}, action_cancellable);
+            if (exit_status == Pk.Exit.SUCCESS) {
+                state = State.NOT_INSTALLED;
+            } else {
+                state = previous_state;
+            }
+
             installed_packages.clear ();
             change_information.clear ();
-            installed = false;
             changing = false;
         } catch (Error e) {
             change_information.reset ();
             changing = false;
+            state = previous_state;
             throw e;
         }
     }

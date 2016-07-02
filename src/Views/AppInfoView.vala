@@ -21,7 +21,7 @@
 using AppCenterCore;
 
 public class AppCenter.Views.AppInfoView : Gtk.Grid {
-    AppCenterCore.Package package;
+    Package package;
 
     Gtk.Image app_icon;
     Gtk.Image app_screenshot;
@@ -41,12 +41,15 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
     Gtk.Button cancel_button;
     Gtk.Stack action_stack;
 
-    public AppInfoView (AppCenterCore.Package package) {
+    bool is_os_updates = false;
+
+    public AppInfoView (Package package) {
         this.package = package;
         app_name.label = package.get_name ();
         app_summary.label = package.get_summary ();
         parse_description (package.component.get_description ());
         app_icon.gicon = package.get_icon (128);
+        is_os_updates = package.component.id == "xxx-os-updates";
 
         if (package.component.get_extensions ().length > 0) {
             extension_box = new Gtk.ListBox ();
@@ -63,29 +66,15 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
             load_extensions.begin ();
         }
 
-        if (package.update_available) {
-            action_button.label = _("Update");
-        } else if (package.installed) {
-            action_button.no_show_all = true;
-            action_button.hide ();
-        } else {
-            uninstall_button.no_show_all = true;
-            uninstall_button.hide ();
-        }
-
-        if (package.component.id == "xxx-os-updates") {
-            uninstall_button.no_show_all = true;
-            uninstall_button.hide ();
-        }
-
-        package.notify["installed"].connect (() => update_buttons ());
-        package.notify["update-available"].connect (() => update_buttons ());
+        package.notify["state"].connect (update_state);
 
         package.change_information.bind_property ("can-cancel", cancel_button, "sensitive", GLib.BindingFlags.SYNC_CREATE);
-        package.change_information.progress_changed.connect (() => update_progress ());
-        package.change_information.status_changed.connect (() => update_status ());
+        package.change_information.progress_changed.connect (update_progress);
+        package.change_information.status_changed.connect (update_progress_status);
+
+        update_progress_status (); 
         update_progress ();
-        update_status ();
+        update_state ();
     }
 
     construct {
@@ -234,7 +223,7 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
     }
 
     public void load_more_content () {
-        new Thread<void*> ("content loading", () => {
+        new Thread<void*> ("content-loading", () => {
             string url = null;
             uint max_size = 0U;
             package.component.get_screenshots ().foreach ((screenshot) => {
@@ -256,42 +245,62 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         });
     }
 
-    private void update_status () {
-        progress_bar.text = package.change_information.get_status ();
-        if (package.change_information.status == Pk.Status.FINISHED) {
-            action_stack.set_visible_child_name ("buttons");
-        } else {
-            action_stack.set_visible_child_name ("progress");
-        }         
+    private void update_progress_status () {
+        progress_bar.text = package.change_information.get_status ();      
     }
 
     private void update_progress () {
-        var progress = package.change_information.get_progress ();
+        double progress = package.change_information.get_progress ();
         if (progress < 1.0f) {
-            action_stack.set_visible_child_name ("progress");
             progress_bar.fraction = progress;
-        } else {
-            action_stack.set_visible_child_name ("buttons");
         }
     }
 
-    private void update_buttons () {
-        if (package.installed) {
-            if (package.update_available) {
+    private void update_state () {
+        if (package.state != Package.State.NOT_INSTALLED) {
+            uninstall_button.no_show_all = false;
+            uninstall_button.show_all ();               
+        } else {
+            uninstall_button.no_show_all = true;
+            uninstall_button.hide ();
+        }
+
+        switch (package.state) {
+            case Package.State.NOT_INSTALLED:
+                action_button.label = _("Install");
+                action_button.no_show_all = false;
+                action_button.show_all ();
+
+                action_stack.no_show_all = false;
+                action_stack.show_all ();
+
+                action_stack.set_visible_child_name ("buttons");
+                break;
+            case Package.State.INSTALLED:
+                action_button.no_show_all = true;
+                action_button.hide ();
+
+                action_stack.set_visible_child_name ("buttons");
+                break;
+            case Package.State.UPDATE_AVAILABLE:
                 action_button.label = _("Update");
                 action_button.no_show_all = false;
-                action_button.show_all ();                
-            } else {
-                action_button.no_show_all = true;
-                action_button.hide ();                   
-                uninstall_button.no_show_all = false;
-                uninstall_button.show_all ();                
-            }
-        } else {
-            action_button.label = _("Install");
-            action_button.no_show_all = false;
-            action_button.show_all ();
-        }
+                action_button.show_all ();    
+
+                action_stack.no_show_all = false;
+                action_stack.show_all ();
+
+                action_stack.set_visible_child_name ("buttons");
+                break;
+            case Package.State.INSTALLING:
+            case Package.State.UPDATING:
+            case Package.State.REMOVING:
+                action_stack.no_show_all = false;
+                action_stack.show_all ();
+
+                action_stack.set_visible_child_name ("progress");
+                break;
+        }        
     }
 
     private void action_cancelled () {
@@ -302,38 +311,25 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
         try {
             if (package.update_available) {
                 yield package.update ();
-                action_button.no_show_all = true;
-                action_button.hide ();
             } else {
                 yield package.install ();
-                action_button.no_show_all = true;
-                action_button.hide ();
-                if (package.component.id != "xxx-os-updates") {
-                    uninstall_button.no_show_all = false;
-                    uninstall_button.show_all ();
-                }
-                
+
                 // Add this app to the Installed Apps View
                 MainWindow.installed_view.add_app.begin (package);
             }
         } catch (Error e) {
             critical (e.message);
-            action_stack.set_visible_child_name ("buttons");
         }
     }
 
     private async void uninstall_clicked () {
         try {
             yield package.uninstall ();
-            action_button.label = _("Install");
-            uninstall_button.no_show_all = true;
-            uninstall_button.hide ();
 
             // Remove this app from the Installed Apps View
             MainWindow.installed_view.remove_app.begin (package);
         } catch (Error e) {
             critical (e.message);
-            action_stack.set_visible_child_name ("buttons");
         }
     }
 
@@ -382,7 +378,8 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
     }
 
     private void parse_description (string? description) {
-        if (description != null)
+        if (description != null) {
             app_description.buffer.text = AppStream.description_markup_convert_simple (description);
+        }
     }
 }
