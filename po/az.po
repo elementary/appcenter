@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-27 12:29-0500\n"
+"POT-Creation-Date: 2016-07-01 17:59-0500\n"
 "PO-Revision-Date: 2016-03-21 17:04+0000\n"
 "Last-Translator: Fuad <fuad.mammadovf@mail.ru>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-06-28 05:20+0000\n"
+"X-Launchpad-Export-Date: 2016-07-02 05:21+0000\n"
 "X-Generator: Launchpad (build 18115)\n"
 
 #: ../src/Core/ChangeInformation.vala:54
@@ -165,13 +165,13 @@ msgstr ""
 msgid "Updates to system components"
 msgstr ""
 
-#: ../src/Core/Client.vala:337
+#: ../src/Core/Client.vala:340
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/Core/Client.vala:338
+#: ../src/Core/Client.vala:341
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] ""
@@ -196,22 +196,22 @@ msgstr ""
 "  Fuad https://launchpad.net/~fuad-mammadovf\n"
 "  Nicat Məmmədov https://launchpad.net/~nicat455"
 
-#: ../src/MainWindow.vala:61
+#: ../src/MainWindow.vala:89
 msgid "AppCenter"
 msgstr ""
 
-#: ../src/MainWindow.vala:83
-msgid "Search App"
-msgstr ""
-
-#: ../src/MainWindow.vala:120 ../src/Views/CategoryView.vala:68
+#: ../src/MainWindow.vala:97 ../src/Views/CategoryView.vala:68
 #: ../src/Views/CategoryView.vala:75
 msgid "Categories"
 msgstr "Kateqoriyalar"
 
-#: ../src/MainWindow.vala:121 ../src/Views/InstalledView.vala:42
+#: ../src/MainWindow.vala:98 ../src/Views/InstalledView.vala:42
 msgctxt "view"
 msgid "Updates"
+msgstr ""
+
+#: ../src/MainWindow.vala:106
+msgid "Search Apps"
 msgstr ""
 
 #. / TRANSLATORS: the name of the Search view
@@ -306,33 +306,32 @@ msgstr ""
 msgid "Universal Access"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:56
+#: ../src/Views/AppInfoView.vala:55
 msgid "Extensions:"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:68 ../src/Views/AppInfoView.vala:84
-#: ../src/Views/AppInfoView.vala:93 ../src/Widgets/PackageRow.vala:45
-#: ../src/Widgets/PackageRow.vala:53 ../src/Widgets/PackageRow.vala:69
+#: ../src/Views/AppInfoView.vala:67 ../src/Views/AppInfoView.vala:281
+#: ../src/Widgets/PackageRow.vala:44 ../src/Widgets/PackageRow.vala:144
 msgid "Update"
 msgstr "Yenilə"
 
-#: ../src/Views/AppInfoView.vala:99 ../src/Views/AppInfoView.vala:187
-#: ../src/Views/AppInfoView.vala:325 ../src/Widgets/PackageRow.vala:60
-#: ../src/Widgets/PackageRow.vala:122
-msgid "Install"
-msgstr "Quraşdır"
-
-#: ../src/Views/AppInfoView.vala:132
+#: ../src/Views/AppInfoView.vala:110
 msgid "Screenshot Not Available"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:192
-msgid "Uninstall"
-msgstr "Sil"
-
-#: ../src/Widgets/PackageRow.vala:118
+#: ../src/Views/AppInfoView.vala:161 ../src/Widgets/PackageRow.vala:92
 msgid "Cancel"
 msgstr ""
+
+#: ../src/Views/AppInfoView.vala:166 ../src/Views/AppInfoView.vala:291
+#: ../src/Views/AppInfoView.vala:328 ../src/Widgets/PackageRow.vala:97
+#: ../src/Widgets/PackageRow.vala:155
+msgid "Install"
+msgstr "Quraşdır"
+
+#: ../src/Views/AppInfoView.vala:171
+msgid "Uninstall"
+msgstr "Sil"
 
 #~ msgctxt "view"
 #~ msgid "Installed"

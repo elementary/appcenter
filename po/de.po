@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-27 12:29-0500\n"
+"POT-Creation-Date: 2016-07-01 17:59-0500\n"
 "PO-Revision-Date: 2016-06-22 12:38+0000\n"
 "Last-Translator: Tobias Bannert <tobannert@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-06-28 05:21+0000\n"
+"X-Launchpad-Export-Date: 2016-07-02 05:22+0000\n"
 "X-Generator: Launchpad (build 18115)\n"
 
 #: ../src/Core/ChangeInformation.vala:54
@@ -165,13 +165,13 @@ msgstr "Betriebssystemaktualisierungen"
 msgid "Updates to system components"
 msgstr "Aktualisierungen für Systemkomponenten"
 
-#: ../src/Core/Client.vala:337
+#: ../src/Core/Client.vala:340
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Aktualisierung verfügbar"
 msgstr[1] "Aktualisierungen verfügbar"
 
-#: ../src/Core/Client.vala:338
+#: ../src/Core/Client.vala:341
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "%u Aktualisierung ist für Ihr System verfügbar"
@@ -207,23 +207,23 @@ msgstr ""
 "  lb https://launchpad.net/~qlblb12-lb45\n"
 "  mporten https://launchpad.net/~mathias-porten"
 
-#: ../src/MainWindow.vala:61
+#: ../src/MainWindow.vala:89
 msgid "AppCenter"
 msgstr "AppCenter"
 
-#: ../src/MainWindow.vala:83
-msgid "Search App"
-msgstr "Anwendung suchen"
-
-#: ../src/MainWindow.vala:120 ../src/Views/CategoryView.vala:68
+#: ../src/MainWindow.vala:97 ../src/Views/CategoryView.vala:68
 #: ../src/Views/CategoryView.vala:75
 msgid "Categories"
 msgstr "Kategorien"
 
-#: ../src/MainWindow.vala:121 ../src/Views/InstalledView.vala:42
+#: ../src/MainWindow.vala:98 ../src/Views/InstalledView.vala:42
 msgctxt "view"
 msgid "Updates"
 msgstr ""
+
+#: ../src/MainWindow.vala:106
+msgid "Search Apps"
+msgstr "Anwendungen suchen"
 
 #. / TRANSLATORS: the name of the Search view
 #: ../src/Views/SearchView.vala:35
@@ -317,33 +317,32 @@ msgstr ""
 msgid "Universal Access"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:56
+#: ../src/Views/AppInfoView.vala:55
 msgid "Extensions:"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:68 ../src/Views/AppInfoView.vala:84
-#: ../src/Views/AppInfoView.vala:93 ../src/Widgets/PackageRow.vala:45
-#: ../src/Widgets/PackageRow.vala:53 ../src/Widgets/PackageRow.vala:69
+#: ../src/Views/AppInfoView.vala:67 ../src/Views/AppInfoView.vala:281
+#: ../src/Widgets/PackageRow.vala:44 ../src/Widgets/PackageRow.vala:144
 msgid "Update"
 msgstr "Aktualisieren"
 
-#: ../src/Views/AppInfoView.vala:99 ../src/Views/AppInfoView.vala:187
-#: ../src/Views/AppInfoView.vala:325 ../src/Widgets/PackageRow.vala:60
-#: ../src/Widgets/PackageRow.vala:122
-msgid "Install"
-msgstr "Installieren"
-
-#: ../src/Views/AppInfoView.vala:132
+#: ../src/Views/AppInfoView.vala:110
 msgid "Screenshot Not Available"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:192
-msgid "Uninstall"
-msgstr "Deinstallieren"
-
-#: ../src/Widgets/PackageRow.vala:118
+#: ../src/Views/AppInfoView.vala:161 ../src/Widgets/PackageRow.vala:92
 msgid "Cancel"
 msgstr "Abbrechen"
+
+#: ../src/Views/AppInfoView.vala:166 ../src/Views/AppInfoView.vala:291
+#: ../src/Views/AppInfoView.vala:328 ../src/Widgets/PackageRow.vala:97
+#: ../src/Widgets/PackageRow.vala:155
+msgid "Install"
+msgstr "Installieren"
+
+#: ../src/Views/AppInfoView.vala:171
+msgid "Uninstall"
+msgstr "Deinstallieren"
 
 #~ msgid "Error page"
 #~ msgstr "Fehlerseite"
@@ -399,9 +398,6 @@ msgstr "Abbrechen"
 #~ msgid "Browser apps in categories"
 #~ msgstr "Anwendungen nach Kategorien durchstöbern"
 
-#~ msgid "Search Apps"
-#~ msgstr "Anwendungen suchen"
-
 #~ msgid "Software Sources"
 #~ msgstr "Paketquellen"
 
@@ -413,6 +409,9 @@ msgstr "Abbrechen"
 
 #~ msgid "No Apps"
 #~ msgstr "Keine Anwendungen"
+
+#~ msgid "Search App"
+#~ msgstr "Anwendung suchen"
 
 #~ msgctxt "view"
 #~ msgid "Installed"
