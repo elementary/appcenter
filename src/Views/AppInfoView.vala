@@ -257,7 +257,7 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
     }
 
     private void update_state () {
-        if (package.state != Package.State.NOT_INSTALLED) {
+        if (package.state != Package.State.NOT_INSTALLED && !is_os_updates) {
             uninstall_button.no_show_all = false;
             uninstall_button.show_all ();               
         } else {
