@@ -133,6 +133,9 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
                 action_stack.set_visible_child_name ("buttons");
                 break;
             case Package.State.INSTALLED:
+                action_button.no_show_all = true;
+                action_button.hide ();
+
                 action_stack.no_show_all = true;
                 action_stack.hide ();                
 
@@ -151,9 +154,6 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
             case Package.State.INSTALLING:
             case Package.State.UPDATING:
             case Package.State.REMOVING:
-                action_stack.no_show_all = false;
-                action_stack.show_all ();
-
                 action_stack.set_visible_child_name ("progress");
                 break;
         }
@@ -171,6 +171,9 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
                 yield package.update ();
             } else {
                 yield package.install ();
+
+                // Add this app to the Installed Apps View
+                MainWindow.installed_view.add_app.begin (package);
             }
         } catch (Error e) {
             critical (e.message);
