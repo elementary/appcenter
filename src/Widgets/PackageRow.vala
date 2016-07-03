@@ -133,9 +133,6 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
                 action_stack.set_visible_child_name ("buttons");
                 break;
             case Package.State.INSTALLED:
-                action_button.no_show_all = true;
-                action_button.hide ();
-
                 action_stack.no_show_all = true;
                 action_stack.hide ();                
 
