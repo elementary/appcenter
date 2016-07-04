@@ -271,9 +271,6 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
                 action_button.no_show_all = false;
                 action_button.show_all ();
 
-                action_stack.no_show_all = false;
-                action_stack.show_all ();
-
                 action_stack.set_visible_child_name ("buttons");
                 break;
             case Package.State.INSTALLED:
@@ -286,9 +283,6 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
                 action_button.label = _("Update");
                 action_button.no_show_all = false;
                 action_button.show_all ();    
-
-                action_stack.no_show_all = false;
-                action_stack.show_all ();
 
                 action_stack.set_visible_child_name ("buttons");
                 break;

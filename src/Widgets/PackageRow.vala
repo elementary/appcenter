@@ -151,6 +151,9 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
             case Package.State.INSTALLING:
             case Package.State.UPDATING:
             case Package.State.REMOVING:
+                action_stack.no_show_all = false;
+                action_stack.show_all ();
+
                 action_stack.set_visible_child_name ("progress");
                 break;
         }
