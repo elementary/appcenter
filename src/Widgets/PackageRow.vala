@@ -156,9 +156,9 @@ public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
 
                 action_stack.set_visible_child_name ("progress");
                 break;
-        }
+        }  
 
-        changed ();        
+        changed ();
     }
 
     private void action_cancelled () {

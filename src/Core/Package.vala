@@ -78,15 +78,16 @@ public class AppCenterCore.Package : Object {
         state = State.UPDATING;
         try {
             var exit_status = yield AppCenterCore.Client.get_default ().update_package (this, (progress, type) => {change_information.ProgressCallback (progress, type);}, action_cancellable);
+            installed_packages.add_all (change_information.changes);
+            change_information.clear ();
+
             if (exit_status == Pk.Exit.SUCCESS) {
                 state = State.INSTALLED;
             } else {
                 state = previous_state;
-            }
+            }      
 
-            installed_packages.add_all (change_information.changes);
-            change_information.clear ();
-            changing = false;
+            changing = false;      
         } catch (Error e) {
             change_information.reset ();
             changing = false;
@@ -107,6 +108,9 @@ public class AppCenterCore.Package : Object {
             var window = application.get_active_window ().get_window ();
 
             var exit_status = yield AppCenterCore.Client.get_default ().install_package (this, (progress, type) => {change_information.ProgressCallback (progress, type);}, action_cancellable);
+            installed_packages.add_all (change_information.changes);
+            change_information.clear ();
+
             if (exit_status == Pk.Exit.SUCCESS && (window.get_state () & Gdk.WindowState.FOCUSED) == 0) {
                 state = State.INSTALLED;
 
@@ -120,8 +124,6 @@ public class AppCenterCore.Package : Object {
                 state = previous_state;
             }
 
-            installed_packages.add_all (change_information.changes);
-            change_information.clear ();
             changing = false;
         } catch (Error e) {
             change_information.reset ();
@@ -140,14 +142,15 @@ public class AppCenterCore.Package : Object {
         state = State.REMOVING;
         try {
             var exit_status = yield AppCenterCore.Client.get_default ().remove_package (this, (progress, type) => {change_information.ProgressCallback (progress, type);}, action_cancellable);
+            installed_packages.clear ();
+            change_information.clear ();
+
             if (exit_status == Pk.Exit.SUCCESS) {
                 state = State.NOT_INSTALLED;
             } else {
                 state = previous_state;
             }
 
-            installed_packages.clear ();
-            change_information.clear ();
             changing = false;
         } catch (Error e) {
             change_information.reset ();
