@@ -29,7 +29,6 @@ public class AppCenterCore.Package : Object {
     }
 
     public const string OS_UPDATES_ID = "xxx-os-updates";
-    public signal void changed ();
 
     public AppStream.Component component { public get; private set; }
     public ChangeInformation change_information { public get; private set; }
@@ -72,7 +71,6 @@ public class AppCenterCore.Package : Object {
     public async void update () throws GLib.Error {
         action_cancellable.reset ();
         changing = true;
-        changed ();
 
         var previous_state = state;
         state = State.UPDATING;
@@ -99,7 +97,6 @@ public class AppCenterCore.Package : Object {
     public async void install () throws GLib.Error {
         action_cancellable.reset ();
         changing = true;
-        changed ();
 
         var previous_state = state;
         state = State.INSTALLING;
@@ -111,15 +108,17 @@ public class AppCenterCore.Package : Object {
             installed_packages.add_all (change_information.changes);
             change_information.clear ();
 
-            if (exit_status == Pk.Exit.SUCCESS && (window.get_state () & Gdk.WindowState.FOCUSED) == 0) {
+            if (exit_status == Pk.Exit.SUCCESS) {
                 state = State.INSTALLED;
 
-                var notification = new Notification (_("Application installed"));
-                notification.set_body (_("%s has been successfully installed").printf (get_name ()));
-                notification.set_icon (new ThemedIcon ("system-software-install"));
-                notification.set_default_action ("app.open-application");
+                if ((window.get_state () & Gdk.WindowState.FOCUSED) == 0) {
+                    var notification = new Notification (_("Application installed"));
+                    notification.set_body (_("%s has been successfully installed").printf (get_name ()));
+                    notification.set_icon (new ThemedIcon ("system-software-install"));
+                    notification.set_default_action ("app.open-application");
 
-                application.send_notification ("installed", notification);
+                    application.send_notification ("installed", notification);
+                }
             } else {
                 state = previous_state;
             }
@@ -136,7 +135,6 @@ public class AppCenterCore.Package : Object {
     public async void uninstall () throws GLib.Error {
         action_cancellable.reset ();
         changing = true;
-        changed ();
 
         var previous_state = state;
         state = State.REMOVING;
