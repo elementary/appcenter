@@ -143,7 +143,8 @@ public class AppCenterCore.Client : Object {
         return exit_status;
     }
 
-    public async void update_package (Package package, Pk.ProgressCallback cb, GLib.Cancellable cancellable) throws GLib.Error {
+    public async Pk.Exit update_package (Package package, Pk.ProgressCallback cb, GLib.Cancellable cancellable) throws GLib.Error {
+        Pk.Exit exit_status = Pk.Exit.UNKNOWN;
         SuspendControl sc = new SuspendControl ();
         AppCenter.Task update_task = request_task ();
         string[] packages_ids = {};
@@ -155,7 +156,8 @@ public class AppCenterCore.Client : Object {
         try {
             sc.inhibit ();
             var results = yield update_task.update_packages_async (packages_ids, cancellable, cb);
-            if (results.get_exit_code () != Pk.Exit.SUCCESS) {
+            exit_status = results.get_exit_code ();
+            if (exit_status != Pk.Exit.SUCCESS) {
                 release_task (update_task);
                 throw new GLib.IOError.FAILED (Pk.Exit.enum_to_string (results.get_exit_code ()));
             }
@@ -168,9 +170,11 @@ public class AppCenterCore.Client : Object {
 
         yield refresh_updates ();
         release_task (update_task);
+        return exit_status;
     }
 
-    public async void remove_package (Package package, Pk.ProgressCallback cb, GLib.Cancellable cancellable) throws GLib.Error {
+    public async Pk.Exit remove_package (Package package, Pk.ProgressCallback cb, GLib.Cancellable cancellable) throws GLib.Error {
+        Pk.Exit exit_status = Pk.Exit.UNKNOWN;
         AppCenter.Task remove_task = request_task ();
         AppCenter.Task search_task = request_task ();
         string[] packages_ids = {};
@@ -187,7 +191,8 @@ public class AppCenterCore.Client : Object {
                 packages_ids += package.package_id;
             });
 
-            yield remove_task.remove_packages_async (packages_ids, true, true, cancellable, cb);
+            results = yield remove_task.remove_packages_async (packages_ids, true, true, cancellable, cb);
+            exit_status = results.get_exit_code ();
         } catch (Error e) {
             release_task (search_task);
             release_task (remove_task);
@@ -197,6 +202,7 @@ public class AppCenterCore.Client : Object {
         yield refresh_updates ();
         release_task (search_task);
         release_task (remove_task);
+        return exit_status;
     }
 
     public async void get_updates () {
@@ -228,7 +234,7 @@ public class AppCenterCore.Client : Object {
 
                     package.change_information.changes.add (pk_package);
                     package.change_information.details.add (pk_detail);
-                    package.notify_property ("update-available");
+                    package.update_state ();
                 } catch (Error e) {
                     critical (e.message);
                 }
@@ -252,7 +258,7 @@ public class AppCenterCore.Client : Object {
             var package = package_list.get (pk_package.get_name ());
             if (package != null) {
                 package.installed_packages.add (pk_package);
-                package.notify_property ("installed");
+                package.update_state ();
                 packages.add (package);
             }
         }
