@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-01 17:59-0500\n"
-"PO-Revision-Date: 2016-07-02 19:42+0000\n"
+"PO-Revision-Date: 2016-07-11 23:32+0000\n"
 "Last-Translator: Maxim Taranov <png2378@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2016-07-03 05:19+0000\n"
+"X-Launchpad-Export-Date: 2016-07-12 06:00+0000\n"
 "X-Generator: Launchpad (build 18115)\n"
 
 #: ../src/Core/ChangeInformation.vala:54
@@ -186,7 +186,7 @@ msgstr "Приложение установлено"
 
 #: ../src/Core/Package.vala:81
 msgid "%s has been successfully installed"
-msgstr "%s успешно установлено"
+msgstr "Приложение «%s» успешно установлено"
 
 #: ../src/Application.vala:35
 msgid "App Center"
@@ -201,7 +201,7 @@ msgstr ""
 "  Leopotam https://launchpad.net/~leopotam\n"
 "  Maxim Taranov https://launchpad.net/~png2378\n"
 "  Mukusev Vladimir https://launchpad.net/~damon95\n"
-"  Yuly Nesterov https://launchpad.net/~inpr1se\n"
+"  Petr Nesterov https://launchpad.net/~inpr1se\n"
 "  elementaryart (old) https://launchpad.net/~elementaryart\n"
 "  михаил https://launchpad.net/~ded-mixei"
 
