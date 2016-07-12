@@ -193,7 +193,7 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
         uint current_update_number = update_numbers;
         list_box.get_children ().foreach ((child) => {
             var package = ((Widgets.PackageRow) child).package;
-            if (package.update_available) {
+            if (package != null && package.update_available) {
                 package.notify["changing"].connect (() => {
                     if (package.changing) {
                         current_update_number--;
