@@ -41,6 +41,7 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
     private bool updates_on_top;
     private Gtk.ListBox list_box;
     private Gtk.SizeGroup update_button_group;
+    private bool updating_all_apps;
 
     public AppListView (bool updates_on_top = false) {
         this.updates_on_top = updates_on_top;
@@ -67,6 +68,7 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
         add (list_box);
 
         update_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
+        updating_all_apps = false;
     }
 
     public void add_package (AppCenterCore.Package package) {
@@ -184,7 +186,7 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
         update_all_button.margin_end = 6;
         update_all_button.valign = Gtk.Align.CENTER;
         update_all_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
-        update_all_button.clicked.connect (() => update_all_clicked.begin ());
+        update_all_button.clicked.connect ((update_all_button) => update_all_clicked.begin (update_all_button));
 
         update_button_group.add_widget (update_all_button);
 
@@ -201,7 +203,9 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
                         }
                     }
 
-                    update_all_button.sensitive = current_update_number != 0;
+                    if (!updating_all_apps) {
+                        update_all_button.sensitive = current_update_number != 0;
+                    }
                 });
             }
         });
@@ -217,20 +221,30 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
         return updates_grid;
     }
 
-    private async void update_all_clicked () {
+    private async void update_all_clicked (Gtk.Button button) {
         var applications = get_packages ();
+        var updated_apps = 0;
+        var apps_to_update = 0;
+        updating_all_apps = true;
+        button.sensitive = false;
+
+        // Prevent computer from sleeping while updating apps
         SuspendControl sc = new SuspendControl ();
         sc.inhibit ();
+        
+        // Update all ready to update apps
         foreach (var package in applications) {
             if (package.update_available) {
-                try {
-                    yield package.update ();
-                } catch (Error e) {
-                    critical (e.message);
-                }
+                apps_to_update++;
+                package.update.begin (() => {
+                    updated_apps++;
+                    if (updated_apps >= apps_to_update) {
+                        updating_all_apps = false;
+                        button.sensitive = true;
+                        sc.uninhibit ();
+                    }
+                });
             }
         }
-
-        sc.uninhibit ();
     }
 }
