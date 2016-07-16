@@ -158,10 +158,10 @@ const string CATEGORIES_STYLE_CSS = """
                     inset 0 -1px 0 0 alpha (#fff, 0.10),
                     0 3px 2px -1px alpha (#000, 0.15),
                     0 3px 5px alpha (#000, 0.10);
-        text-shadow: 0 1px 2px alpha (#000, 0.3);
-        icon-shadow: 0 1px 2px alpha (#000, 0.3);
-        font-family: Operating Instructions;
-        font-size: 40px;
+        text-shadow: 0 0 24px alpha (#fff, 0.6);
+        font-family: HVD Bodedo;
+        font-size: 24px;
+        font-weight: 400;
         color: #fff;
     }
     .category.internet {
