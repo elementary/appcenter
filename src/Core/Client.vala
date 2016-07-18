@@ -115,14 +115,17 @@ public class AppCenterCore.Client : Object {
         foreach (var pkg_name in package.component.get_pkgnames ()) {
             packages_ids += pkg_name;
         }
+
         packages_ids += null;
 
         try {
-            var results = yield search_task.search_names_async (Pk.Bitfield.from_enums (Pk.Filter.NEWEST, Pk.Filter.ARCH), packages_ids, cancellable, () => {});
+            var results = yield search_task.resolve_async (Pk.Bitfield.from_enums (Pk.Filter.NEWEST, Pk.Filter.ARCH), packages_ids, cancellable, () => {});
             packages_ids = {};
+
             results.get_package_array ().foreach ((package) => {
                 packages_ids += package.package_id;
             });
+
             packages_ids += null;
 
             results = yield install_task.install_packages_async (packages_ids, cancellable, cb);
@@ -151,6 +154,7 @@ public class AppCenterCore.Client : Object {
         foreach (var pk_package in package.change_information.changes) {
             packages_ids += pk_package.get_id ();
         }
+        
         packages_ids += null;
 
         try {
@@ -184,8 +188,7 @@ public class AppCenterCore.Client : Object {
         packages_ids += null;
 
         try {
-            var filter = Pk.Bitfield.from_enums (Pk.Filter.INSTALLED, Pk.Filter.NEWEST);
-            var results = yield search_task.search_names_async (filter, packages_ids, cancellable, () => {});
+            var results = yield search_task.resolve_async (Pk.Bitfield.from_enums (Pk.Filter.INSTALLED, Pk.Filter.NEWEST), packages_ids, cancellable, () => {});
             packages_ids = {};
             results.get_package_array ().foreach ((package) => {
                 packages_ids += package.package_id;

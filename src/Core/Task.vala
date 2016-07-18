@@ -19,10 +19,6 @@
  */
 
 public class AppCenter.Task : Pk.Task {
-    public Task () {
-        
-    }
-
     public override void untrusted_question (uint request, Pk.Results results) {
         user_accepted (request);
     }
