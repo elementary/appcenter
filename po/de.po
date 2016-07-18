@@ -3,15 +3,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-01 17:59-0500\n"
-"PO-Revision-Date: 2016-06-22 12:38+0000\n"
+"PO-Revision-Date: 2016-07-17 10:05+0000\n"
 "Last-Translator: Tobias Bannert <tobannert@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-07-02 05:22+0000\n"
-"X-Generator: Launchpad (build 18115)\n"
+"X-Launchpad-Export-Date: 2016-07-18 05:21+0000\n"
+"X-Generator: Launchpad (build 18140)\n"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -198,11 +198,13 @@ msgstr ""
 "  Corentin Noël https://launchpad.net/~tintou\n"
 "  Domar https://launchpad.net/~domar\n"
 "  JayNutZ https://launchpad.net/~thejaynutz\n"
+"  Mathias Heuer https://launchpad.net/~heuer-mathias\n"
 "  Nico Du https://launchpad.net/~nico-d-8\n"
 "  Pascal Grzybek https://launchpad.net/~pascal-grzybek\n"
 "  Phillip Sz https://launchpad.net/~phillip-sz\n"
 "  Rico Tzschichholz https://launchpad.net/~ricotz\n"
 "  Tobias Bannert https://launchpad.net/~toba\n"
+"  Tom Gießmann https://launchpad.net/~tomgiessmann\n"
 "  elementaryart (old) https://launchpad.net/~elementaryart\n"
 "  lb https://launchpad.net/~qlblb12-lb45\n"
 "  mporten https://launchpad.net/~mathias-porten"
@@ -219,7 +221,7 @@ msgstr "Kategorien"
 #: ../src/MainWindow.vala:98 ../src/Views/InstalledView.vala:42
 msgctxt "view"
 msgid "Updates"
-msgstr ""
+msgstr "Aktualisierungen"
 
 #: ../src/MainWindow.vala:106
 msgid "Search Apps"
@@ -238,6 +240,7 @@ msgstr "Keine Treffer"
 #: ../src/Views/AppListView.vala:54
 msgid "No apps could be found. Try changing search terms."
 msgstr ""
+"Keine Anwendungen gefunden. Bitte versuchen Sie einen anderen Suchbegriff."
 
 #: ../src/Views/AppListView.vala:146
 msgid "Searching for updates…"
@@ -279,11 +282,11 @@ msgstr ""
 
 #: ../src/Views/CategoryView.vala:144
 msgid "Accessories"
-msgstr ""
+msgstr "Zubehör"
 
 #: ../src/Views/CategoryView.vala:157
 msgid "Office"
-msgstr ""
+msgstr "Büroanwendungen"
 
 #: ../src/Views/CategoryView.vala:170
 msgid "System"
@@ -299,27 +302,27 @@ msgstr ""
 
 #: ../src/Views/CategoryView.vala:208
 msgid "Games"
-msgstr ""
+msgstr "Spiele"
 
 #: ../src/Views/CategoryView.vala:221
 msgid "Education"
-msgstr ""
+msgstr "Bildung"
 
 #: ../src/Views/CategoryView.vala:233
 msgid "Internet"
-msgstr ""
+msgstr "Internet"
 
 #: ../src/Views/CategoryView.vala:246
 msgid "Science & Engineering"
-msgstr ""
+msgstr "Wissenschaft & Technik"
 
 #: ../src/Views/CategoryView.vala:258
 msgid "Universal Access"
-msgstr ""
+msgstr "Barrierefreiheit"
 
 #: ../src/Views/AppInfoView.vala:55
 msgid "Extensions:"
-msgstr ""
+msgstr "Erweiterungen:"
 
 #: ../src/Views/AppInfoView.vala:67 ../src/Views/AppInfoView.vala:281
 #: ../src/Widgets/PackageRow.vala:44 ../src/Widgets/PackageRow.vala:144
@@ -328,7 +331,7 @@ msgstr "Aktualisieren"
 
 #: ../src/Views/AppInfoView.vala:110
 msgid "Screenshot Not Available"
-msgstr ""
+msgstr "Screenshot nicht vorhanden"
 
 #: ../src/Views/AppInfoView.vala:161 ../src/Widgets/PackageRow.vala:92
 msgid "Cancel"
