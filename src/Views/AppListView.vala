@@ -252,7 +252,6 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
             first_package.update.begin ();
             signal_id = first_package.change_information.status_changed.connect (() => {
                 if (first_package.change_information.get_status () == _("Running") && !apps_remaining_started) {
-                    print ("First update started...\n");
                     // Update remaining apps. User has already granted superuser permissions
                     for (int i = 1; i < apps_to_update.size; i++) {
                         apps_to_update[i].update.begin (() => {
@@ -267,7 +266,6 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
                                 sc.uninhibit ();
                                 
                                 if (signal_id != -1) {
-                                    print ("Disconnecting from signal " + signal_id.to_string () + "\n");
                                     first_package.change_information.disconnect (signal_id);
                                 }
                             }
@@ -275,7 +273,6 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
                     }
                     apps_remaining_started = true;
                 } else if (first_package.change_information.get_status () == _("Finished")) {
-                    print ("First update finished\n");
                     // First app was updated or cancelled
                     apps_done++;
                     
@@ -288,7 +285,6 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
                         sc.uninhibit ();
                         
                         if (signal_id != -1) {
-                            print ("Disconnecting from signal " + signal_id.to_string () + "\n");
                             first_package.change_information.disconnect (signal_id);
                         }
                     }
