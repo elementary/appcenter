@@ -224,7 +224,7 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
 
     private async void update_all_clicked () {
         var applications = get_packages ();
-        var apps_to_update = new Gee.LinkedList<AppCenterCore.Package>();
+        var apps_to_update = new Gee.LinkedList<AppCenterCore.Package> ();
         var apps_done = 0; // Cancelled or updated apps
         var apps_remaining_started = false;
         ulong signal_id = -1;
@@ -251,45 +251,42 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
             var first_package = apps_to_update[0];
             first_package.update.begin ();
             signal_id = first_package.change_information.status_changed.connect (() => {
-                if (first_package.change_information.get_status () == _("Running") && !apps_remaining_started) {
+                if (first_package.change_information.status == Pk.Status.RUNNING && !apps_remaining_started) {
                     // Update remaining apps. User has already granted superuser permissions
                     for (int i = 1; i < apps_to_update.size; i++) {
                         apps_to_update[i].update.begin (() => {
                             apps_done++;
                             
                             if (apps_done >= apps_to_update.size) {
-                                updating_all_apps = false;
-                                Idle.add (() => { 
-                                    update_all_button.sensitive = true;
-                                    return GLib.Source.REMOVE;
-                                });
-                                sc.uninhibit ();
-                                
-                                if (signal_id != -1) {
-                                    first_package.change_information.disconnect (signal_id);
-                                }
+                                finish_updating_all_apps (update_all_button, sc, first_package, signal_id);
                             }
                         });
                     }
+                    
                     apps_remaining_started = true;
-                } else if (first_package.change_information.get_status () == _("Finished")) {
+                } else if (first_package.change_information.status == Pk.Status.FINISHED) {
                     // First app was updated or cancelled
                     apps_done++;
                     
                     if (apps_done >= apps_to_update.size) {
-                        updating_all_apps = false;
-                        Idle.add (() => { 
-                            update_all_button.sensitive = true; 
-                            return GLib.Source.REMOVE;
-                        });
-                        sc.uninhibit ();
-                        
-                        if (signal_id != -1) {
-                            first_package.change_information.disconnect (signal_id);
-                        }
+                        finish_updating_all_apps (update_all_button, sc, first_package, signal_id);
                     }
                 }
             });
+        }
+    }
+    
+    private void finish_updating_all_apps (Gtk.Button update_all_button, SuspendControl sc, AppCenterCore.Package first_package, ulong signal_id) {
+        updating_all_apps = false;
+        Idle.add (() => { 
+            update_all_button.sensitive = true;
+            return GLib.Source.REMOVE;
+        });
+        
+        sc.uninhibit ();
+        
+        if (signal_id != -1) {
+            first_package.change_information.disconnect (signal_id);
         }
     }
 }
