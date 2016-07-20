@@ -25,8 +25,8 @@ public class AppCenterCore.ChangeInformation : Object {
     public Gee.TreeSet<Pk.Package> changes { public get; private set; }
     public Gee.TreeSet<Pk.Details> details { public get; private set; }
     public bool can_cancel { public get; private set; default=true; }
+    public Pk.Status status;
     private Gee.HashMap<string, double?> change_progress;
-    private Pk.Status status;
     private double progress;
 
     construct {
