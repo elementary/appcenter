@@ -69,6 +69,7 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
         });
         add (list_box);
 
+        sc = new SuspendControl ();
         update_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
         updating_all_apps = false;
     }
@@ -240,7 +241,6 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
         // Update all updateable apps
         if (apps_to_update.size > 0) {
             // Prevent computer from sleeping while updating apps
-            sc = new SuspendControl ();
             sc.inhibit ();
         
             updating_all_apps = true; 
