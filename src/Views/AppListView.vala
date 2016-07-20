@@ -43,6 +43,7 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
     private Gtk.SizeGroup update_button_group;
     private Gtk.Button update_all_button;
     private bool updating_all_apps;
+    private SuspendControl sc;
 
     public AppListView (bool updates_on_top = false) {
         this.updates_on_top = updates_on_top;
@@ -232,14 +233,14 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
         // Collect all ready to update apps
         foreach (var package in applications) {
             if (package.update_available) {
-                apps_to_update.add(package);
+                apps_to_update.add (package);
             }
         }
         
         // Update all updateable apps
         if (apps_to_update.size > 0) {
             // Prevent computer from sleeping while updating apps
-            SuspendControl sc = new SuspendControl ();
+            sc = new SuspendControl ();
             sc.inhibit ();
         
             updating_all_apps = true; 
@@ -258,7 +259,7 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
                             apps_done++;
                             
                             if (apps_done >= apps_to_update.size) {
-                                finish_updating_all_apps (update_all_button, sc, first_package, signal_id);
+                                finish_updating_all_apps (first_package, signal_id);
                             }
                         });
                     }
@@ -269,14 +270,14 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
                     apps_done++;
                     
                     if (apps_done >= apps_to_update.size) {
-                        finish_updating_all_apps (update_all_button, sc, first_package, signal_id);
+                        finish_updating_all_apps (first_package, signal_id);
                     }
                 }
             });
         }
     }
     
-    private void finish_updating_all_apps (Gtk.Button update_all_button, SuspendControl sc, AppCenterCore.Package first_package, ulong signal_id) {
+    private void finish_updating_all_apps (AppCenterCore.Package first_package, ulong signal_id) {
         updating_all_apps = false;
         Idle.add (() => { 
             update_all_button.sensitive = true;
