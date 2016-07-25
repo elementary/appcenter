@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-01 17:59-0500\n"
-"PO-Revision-Date: 2016-07-23 16:07+0000\n"
+"PO-Revision-Date: 2016-07-24 15:02+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2016-07-24 05:19+0000\n"
+"X-Launchpad-Export-Date: 2016-07-25 05:20+0000\n"
 "X-Generator: Launchpad (build 18147)\n"
 
 #: ../src/Core/ChangeInformation.vala:54
@@ -31,19 +31,19 @@ msgstr "조회 중입니다"
 
 #: ../src/Core/ChangeInformation.vala:62
 msgid "Getting information"
-msgstr "정보를 가져오는 중입니다"
+msgstr "정보를 가져오고 있습니다"
 
 #: ../src/Core/ChangeInformation.vala:64
 msgid "Removing packages"
-msgstr "패키지를 제거하는 중입니다"
+msgstr "패키지를 제거하고 있습니다"
 
 #: ../src/Core/ChangeInformation.vala:66
 msgid "Downloading packages"
-msgstr "패키지 다운로드 중입니다"
+msgstr "패키지를 다운로드하고 있습니다"
 
 #: ../src/Core/ChangeInformation.vala:68
 msgid "Installing packages"
-msgstr "패키지 설치 중입니다"
+msgstr "패키지를 설치하고 있습니다"
 
 #: ../src/Core/ChangeInformation.vala:70
 msgid "Refreshing software list"
@@ -59,7 +59,7 @@ msgstr "패키지 청소 중입니다"
 
 #: ../src/Core/ChangeInformation.vala:76
 msgid "Obsoleting packages"
-msgstr "패키지 정리 중입니다"
+msgstr "패키지를 정리하고 있습니다"
 
 #: ../src/Core/ChangeInformation.vala:78
 msgid "Resolving dependencies"
@@ -115,7 +115,7 @@ msgstr "업데이트 정보 다운로드 중입니다"
 
 #: ../src/Core/ChangeInformation.vala:104
 msgid "Repackaging files"
-msgstr "파일을 다시 패키징 하는 중입니다"
+msgstr "파일을 다시 패키징 하고 있습니다"
 
 #: ../src/Core/ChangeInformation.vala:106
 msgid "Loading cache"
@@ -139,7 +139,7 @@ msgstr "인증 대기 중입니다"
 
 #: ../src/Core/ChangeInformation.vala:116
 msgid "Updating running applications"
-msgstr "사용 중인 애플리케이션 업데이트 중입니다"
+msgstr "사용 중인 애플리케이션을 업데이트 하고 있습니다"
 
 #: ../src/Core/ChangeInformation.vala:118
 msgid "Checking applications in use"
@@ -151,7 +151,7 @@ msgstr "사용 중인 라이브러리 확인 중입니다"
 
 #: ../src/Core/ChangeInformation.vala:122
 msgid "Copying files"
-msgstr "파일 복사 중입니다"
+msgstr "파일을 복사하고 있습니다"
 
 #: ../src/Core/ChangeInformation.vala:124
 msgid "Unknown state"
