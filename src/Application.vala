@@ -57,13 +57,15 @@ public class AppCenter.App : Granite.Application {
 
     public override void activate () {
         if (silent) {
+            AppCenterCore.Client.get_default ().update_cache.begin ();
             silent = false;
-            AppCenterCore.Client.get_default ();
             hold ();
             return;
         }
 
         if (main_window == null) {
+            AppCenterCore.Client.get_default ().update_cache.begin (true);
+
             main_window = new MainWindow (this);
             main_window.destroy.connect (() => {
                 main_window = null;
