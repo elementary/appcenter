@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-01 17:59-0500\n"
-"PO-Revision-Date: 2016-08-02 15:04+0000\n"
+"PO-Revision-Date: 2016-08-03 21:27+0000\n"
 "Last-Translator: Jun Takeda <takeda.jun@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2016-08-03 05:21+0000\n"
+"X-Launchpad-Export-Date: 2016-08-04 05:26+0000\n"
 "X-Generator: Launchpad (build 18169)\n"
 
 #: ../src/Core/ChangeInformation.vala:54
@@ -298,7 +298,7 @@ msgstr "インターネット"
 
 #: ../src/Views/CategoryView.vala:246
 msgid "Science & Engineering"
-msgstr "科学・技術"
+msgstr "科学と技術"
 
 #: ../src/Views/CategoryView.vala:258
 msgid "Universal Access"

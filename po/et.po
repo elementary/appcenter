@@ -3,15 +3,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-01 17:59-0500\n"
-"PO-Revision-Date: 2016-06-20 22:39+0000\n"
+"PO-Revision-Date: 2016-08-04 00:06+0000\n"
 "Last-Translator: Kristjan Vool <tictac7x@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-07-02 05:21+0000\n"
-"X-Generator: Launchpad (build 18115)\n"
+"X-Launchpad-Export-Date: 2016-08-04 05:26+0000\n"
+"X-Generator: Launchpad (build 18169)\n"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -308,7 +308,7 @@ msgstr "Kasutaja abivahendid"
 
 #: ../src/Views/AppInfoView.vala:55
 msgid "Extensions:"
-msgstr ""
+msgstr "Laiendused:"
 
 #: ../src/Views/AppInfoView.vala:67 ../src/Views/AppInfoView.vala:281
 #: ../src/Widgets/PackageRow.vala:44 ../src/Widgets/PackageRow.vala:144
@@ -317,7 +317,7 @@ msgstr "Uuenda"
 
 #: ../src/Views/AppInfoView.vala:110
 msgid "Screenshot Not Available"
-msgstr ""
+msgstr "Pilt puudub"
 
 #: ../src/Views/AppInfoView.vala:161 ../src/Widgets/PackageRow.vala:92
 msgid "Cancel"
