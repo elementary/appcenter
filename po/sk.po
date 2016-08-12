@@ -3,15 +3,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-01 17:59-0500\n"
-"PO-Revision-Date: 2016-01-11 18:42+0000\n"
-"Last-Translator: Lukáš Papík <stereo839@gmail.com>\n"
+"PO-Revision-Date: 2016-08-11 13:06+0000\n"
+"Last-Translator: bj <teapack97@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
-"X-Launchpad-Export-Date: 2016-07-02 05:22+0000\n"
-"X-Generator: Launchpad (build 18115)\n"
+"X-Launchpad-Export-Date: 2016-08-12 05:26+0000\n"
+"X-Generator: Launchpad (build 18169)\n"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -185,7 +185,7 @@ msgstr ""
 
 #: ../src/Core/Package.vala:81
 msgid "%s has been successfully installed"
-msgstr ""
+msgstr "%s sa úspešne nainštaloval"
 
 #: ../src/Application.vala:35
 msgid "App Center"
@@ -197,6 +197,7 @@ msgstr ""
 "Launchpad Contributions:\n"
 "  Lukáš Papík https://launchpad.net/~stereo839\n"
 "  Milan Slovák https://launchpad.net/~milboys\n"
+"  bj https://launchpad.net/~teapack97\n"
 "  elementaryart (old) https://launchpad.net/~elementaryart\n"
 "  lupajz https://launchpad.net/~lubos-m"
 
@@ -212,7 +213,7 @@ msgstr "Kategórie"
 #: ../src/MainWindow.vala:98 ../src/Views/InstalledView.vala:42
 msgctxt "view"
 msgid "Updates"
-msgstr ""
+msgstr "Aktualizácie"
 
 #: ../src/MainWindow.vala:106
 msgid "Search Apps"
@@ -226,11 +227,11 @@ msgstr "Hľadať"
 
 #: ../src/Views/AppListView.vala:54
 msgid "No Results"
-msgstr ""
+msgstr "Žiadne výsledky"
 
 #: ../src/Views/AppListView.vala:54
 msgid "No apps could be found. Try changing search terms."
-msgstr ""
+msgstr "Nenašli sa žiadne aplikácie. Skúste zmeniť výraz vyhľadávanie."
 
 #: ../src/Views/AppListView.vala:146
 msgid "Searching for updates…"
@@ -238,7 +239,7 @@ msgstr "Hľadanie aktualizácií"
 
 #: ../src/Views/AppListView.vala:152
 msgid "Up to Date"
-msgstr ""
+msgstr "Aktuálne"
 
 #: ../src/Views/AppListView.vala:175
 msgid "%u Update Available"
@@ -264,15 +265,15 @@ msgstr "Posledné aplikácie"
 
 #: ../src/Views/CategoryView.vala:118
 msgid "Audio"
-msgstr ""
+msgstr "Zvuk"
 
 #: ../src/Views/CategoryView.vala:131
 msgid "Development"
-msgstr ""
+msgstr "Vývoj"
 
 #: ../src/Views/CategoryView.vala:144
 msgid "Accessories"
-msgstr ""
+msgstr "Príslušenstvo"
 
 #: ../src/Views/CategoryView.vala:157
 msgid "Office"
