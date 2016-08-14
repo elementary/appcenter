@@ -23,7 +23,7 @@
     <key type="b" name="developer-mode">
       <default>false</default>
       <summary>The user is a developer</summary>
-      <description>Mode that allows the user to see more packages with development propurses</description>
+      <description>Mode that allows the user to see more packages with development purposes</description>
     </key>
   </schema>
 </schemalist>
