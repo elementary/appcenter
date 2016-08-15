@@ -1,5 +1,5 @@
-appcenter (0.1) UNRELEASED; urgency=low
+appcenter (0.1) xenial; urgency=low
 
   * Initial Release
 
- -- Mario Guerriero <mefrio.g@gmail.com>  Sun, 16 Oct 2011 09:36:00 +0200
+ -- Cody Garver <cody@elementary.io>  Mon, 15 Aug 2016 13:24:24 -0500
