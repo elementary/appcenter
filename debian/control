@@ -22,7 +22,7 @@ Priority: extra
 Conflicts: appcenter-daemon
 Replaces: appcenter-daemon
 Depends: appstream, packagekit, ${misc:Depends}, ${shlibs:Depends}
-Recommends: appstream-data-pantheon
+Recommends: appstream-data-pantheon-loki-stable
 Pre-Depends: dpkg (>= 1.15.7.2)
 Description: Fast application store
  Install, update and remove apps with ease.
