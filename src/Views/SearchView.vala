@@ -21,6 +21,7 @@
 using AppCenterCore;
 
 public class AppCenter.Views.SearchView : View {
+    const int MAX_NUMBER_OF_SEARCH_RESULTS = 100;
     AppListView app_list_view;
 
     public SearchView () {
@@ -40,13 +41,20 @@ public class AppCenter.Views.SearchView : View {
     public override void return_clicked () {
         set_visible_child (app_list_view);
     }
-
-    public void search (string search_term) {
+    
+    public async void search (string search_term) {
+        app_list_view.clear ();
         unowned Client client = Client.get_default ();
         var found_apps = client.search_applications (search_term);
-        app_list_view.clear ();
-        foreach (var app in found_apps) {
-            app_list_view.add_package (app);
+        
+        if (found_apps.size > 0) {
+            var apps_array = found_apps.to_array ();
+            int i = 0;
+            while (i < apps_array.length && i < MAX_NUMBER_OF_SEARCH_RESULTS) {
+                var app = apps_array[i];
+                app_list_view.add_package (app);
+                i++;   
+            }
         }
     }
 }
