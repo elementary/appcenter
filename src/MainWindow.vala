@@ -177,7 +177,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
                     break;
             }
         } else {
-            search_view.search (research);
+            search_view.search.begin (research);
             if (!return_button.visible) {
                 view_mode_revealer.reveal_child = false;
                 stack.visible_child = search_view;
