@@ -34,6 +34,8 @@ namespace AppCenter {
         }
 
         construct {
+            image = new Gtk.Image ();
+
             margin = 6;
             margin_start = 12;
             row_spacing = 6;
@@ -85,11 +87,11 @@ namespace AppCenter {
             action_stack.add_named (progress_grid, "progress");
         }
 
-        protected virtual void set_up_package () {
+        protected virtual void set_up_package (uint icon_size = 48) {
             package_name.label = package.get_name ();
             package_summary.label = package.get_summary ();
             package_summary.ellipsize = Pango.EllipsizeMode.END;
-            image.gicon = package.get_icon ();
+            image.gicon = package.get_icon (icon_size);
 
             package.notify["state"].connect (update_state);
 

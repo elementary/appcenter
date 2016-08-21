@@ -30,31 +30,7 @@ namespace AppCenter.Views {
         Gtk.Label extension_label;
         Gtk.Grid content_grid;
 
-        public AppInfoView (AppCenterCore.Package package) {
-            this.package = package;
-            set_up_package ();
-            image.gicon = package.get_icon (128);
-
-            parse_description (package.component.get_description ());
-
-            if (package.component.get_extensions ().length > 0) {
-                extension_box = new Gtk.ListBox ();
-                extension_box.selection_mode = Gtk.SelectionMode.NONE;
-
-                extension_label = new Gtk.Label ("<b>" + _("Extensions:") + "</b>");
-                extension_label.margin_top = 12;
-                extension_label.use_markup = true;
-                extension_label.get_style_context ().add_class ("h3");
-                extension_label.halign = Gtk.Align.START;
-                
-                content_grid.add (extension_label);
-                content_grid.add (extension_box);
-                load_extensions.begin ();
-            }
-        }
-
         construct {
-            image = new Gtk.Image ();
             image.margin_top = 12;
             image.margin_start = 6;
             image.pixel_size = 128;
@@ -138,6 +114,28 @@ namespace AppCenter.Views {
             attach (header_grid, 0, 0, 1, 1);
             attach (new Gtk.Separator (Gtk.Orientation.HORIZONTAL), 0, 1, 1, 1);
             attach (scrolled, 0, 2, 1, 1);
+        }
+
+        public AppInfoView (AppCenterCore.Package package) {
+            this.package = package;
+            set_up_package (128);
+
+            parse_description (package.component.get_description ());
+
+            if (package.component.get_extensions ().length > 0) {
+                extension_box = new Gtk.ListBox ();
+                extension_box.selection_mode = Gtk.SelectionMode.NONE;
+
+                extension_label = new Gtk.Label ("<b>" + _("Extensions:") + "</b>");
+                extension_label.margin_top = 12;
+                extension_label.use_markup = true;
+                extension_label.get_style_context ().add_class ("h3");
+                extension_label.halign = Gtk.Align.START;
+                
+                content_grid.add (extension_label);
+                content_grid.add (extension_box);
+                load_extensions.begin ();
+            }
         }
 
         private async void load_extensions () {

@@ -9,6 +9,7 @@ vala_precompile(VALA_C ${EXEC_NAME}
     Settings.vala
     SuspendControl.vala
     AbstractAppContainer.vala
+    AbstractAppList.vala
     Views/AppInfoView.vala
     Views/AppListView.vala
     Views/FeaturedView.vala
@@ -20,6 +21,9 @@ vala_precompile(VALA_C ${EXEC_NAME}
     Widgets/CategoryItem.vala
     Widgets/FeaturedButton.vala
     Widgets/PackageRow.vala
+    Widgets/AppListRow.vala
+    Widgets/AppActionButton.vala
+    Widgets/UpdateHeaderRow.vala
     ${CMAKE_CURRENT_BINARY_DIR}/config.vala
 PACKAGES
     appstream

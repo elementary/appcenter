@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2014-2015 elementary LLC. (https://elementary.io)
+ * Copyright (c) 2014-2016 elementary LLC. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@
 using AppCenterCore;
 
 public class AppCenter.Views.InstalledView : View {
-    AppListView app_list_view;
+    AppListUpdateView app_list_view;
 
     public InstalledView () {
         // We need this line in order to show the No Update view.
@@ -36,7 +36,7 @@ public class AppCenter.Views.InstalledView : View {
     }
 
     construct {
-        app_list_view = new AppListView (true);
+        app_list_view = new AppListUpdateView ();
         add (app_list_view);
         app_list_view.show_app.connect ((package) => {
             subview_entered (C_("view", "Updates"));
