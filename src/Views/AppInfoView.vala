@@ -246,14 +246,11 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
     }
 
     private void update_progress_status () {
-        progress_bar.text = package.change_information.get_status ();      
+        progress_bar.text = package.get_progress_description ();      
     }
 
     private void update_progress () {
-        double progress = package.change_information.get_progress ();
-        if (progress < 1.0f) {
-            progress_bar.fraction = progress;
-        }
+        progress_bar.fraction = package.progress;
     }
 
     private void update_state () {
@@ -299,28 +296,18 @@ public class AppCenter.Views.AppInfoView : Gtk.Grid {
     }
 
     private async void action_clicked () {
-        try {
-            if (package.update_available) {
-                yield package.update ();
-            } else {
-                yield package.install ();
-
-                // Add this app to the Installed Apps View
-                MainWindow.installed_view.add_app.begin (package);
-            }
-        } catch (Error e) {
-            critical (e.message);
+        if (package.update_available) {
+            yield package.update ();
+        } else if (yield package.install ()) {
+            // Add this app to the Installed Apps View
+            MainWindow.installed_view.add_app.begin (package);
         }
     }
 
     private async void uninstall_clicked () {
-        try {
-            yield package.uninstall ();
-
+        if (yield package.uninstall ()) {
             // Remove this app from the Installed Apps View
             MainWindow.installed_view.remove_app.begin (package);
-        } catch (Error e) {
-            critical (e.message);
         }
     }
 
