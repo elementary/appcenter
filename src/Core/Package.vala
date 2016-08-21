@@ -62,6 +62,12 @@ public class AppCenterCore.Package : Object {
         }
     }
 
+    public bool changes_finished {
+        get {
+            return change_information.status == Pk.Status.FINISHED;
+        }
+    }
+
     public bool is_os_updates {
         get {
             return component.id == "xxx-os-updates";

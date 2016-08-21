@@ -64,7 +64,7 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
         list_box.row_activated.connect ((row) => {
             var packagerow = row as Widgets.PackageRow;
             if (packagerow != null) {
-                show_app (packagerow.package);
+                show_app (packagerow.get_package ());
             }
         });
         add (list_box);
@@ -75,9 +75,7 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
     }
 
     public void add_package (AppCenterCore.Package package) {
-        var row = new Widgets.PackageRow (package);
-        update_button_group.add_widget (row.action_button);
-        update_button_group.add_widget (row.cancel_button);
+        var row = new Widgets.PackageRow (package, update_button_group, !updates_on_top);
         row.show_all ();
         list_box.add (row);
     }
@@ -85,7 +83,7 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
     public void remove_package (AppCenterCore.Package package) {
         var pkg_rows = list_box.get_children ();
         foreach (var row in pkg_rows) {
-            if (((Widgets.PackageRow) row).package == package) {
+            if (((Widgets.PackageRow) row).get_package () == package) {
                 row.destroy ();
                 break;
             }
@@ -95,7 +93,7 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
     public Gee.Collection<AppCenterCore.Package> get_packages () {
         var tree_set = new Gee.TreeSet<AppCenterCore.Package> ();
         list_box.get_children ().foreach ((child) => {
-            tree_set.add (((Widgets.PackageRow) child).package);
+            tree_set.add (((Widgets.PackageRow) child).get_package ());
         });
 
         return tree_set;
@@ -109,8 +107,8 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
 
     [CCode (instance_pos = -1)]
     private int package_row_compare (Widgets.PackageRow row1, Widgets.PackageRow row2) {
-        unowned Package package_a = row1.package;
-        unowned Package package_b = row2.package;
+        var package_a = row1.get_package ();
+        var package_b = row2.get_package ();
         if (updates_on_top) {
             if (package_a.component.id == "xxx-os-updates") {
                 return -1;
@@ -130,11 +128,11 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
 
     [CCode (instance_pos = -1)]
     private void package_row_update_header (Widgets.PackageRow row, Widgets.PackageRow? before) {
-        bool update_available = row.package.update_available;
+        bool update_available = row.get_update_available ();
         if (before == null && update_available) {
             var updates_grid = get_updates_grid ();
             row.set_header (updates_grid);
-        } else if ((before == null && !update_available) || update_available != before.package.update_available) {
+        } else if ((before == null && !update_available) || update_available != before.get_update_available ()) {
             var updated_grid = get_updated_grid ();
             row.set_header (updated_grid);
         } else {
@@ -195,7 +193,7 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
 
         uint current_update_number = update_numbers;
         list_box.get_children ().foreach ((child) => {
-            var package = ((Widgets.PackageRow) child).package;
+            var package = ((Widgets.PackageRow) child).get_package ();
             if (package != null && package.update_available) {
                 package.notify["changing"].connect (() => {
                     if (package.changing) {

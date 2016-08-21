@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2014-2015 elementary LLC. (https://elementary.io)
+ * Copyright (c) 2014-2016 elementary LLC. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,156 +18,82 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-using AppCenterCore;
+namespace AppCenter.Widgets {
+    public class PackageRow : Gtk.ListBoxRow {
+        PackageRowGrid grid;
 
-public class AppCenter.Widgets.PackageRow : Gtk.ListBoxRow {
-    public Package package;
+        public PackageRow (AppCenterCore.Package package, Gtk.SizeGroup? size_group, bool show_uninstall = true) {
+            grid = new PackageRowGrid (package, size_group, show_uninstall);
+            add (grid);
+            grid.changed.connect (() => {
+                changed ();
+            });
+        }
 
-    Gtk.Image image;
-    Gtk.Label package_name;
-    Gtk.Label package_summary;
+        public bool get_update_available () {
+            return grid.update_available;
+        }
 
-    // The action button covers Install and Update
-    public Gtk.Button action_button;
-    Gtk.ProgressBar progress_bar;
-    public Gtk.Button cancel_button;
-    Gtk.Stack action_stack;
+        public bool get_is_os_updates () {
+            return grid.is_os_updates;
+        }
 
-    public PackageRow (Package package) {
-        this.package = package;
-        package_name.label = package.get_name ();
-        package_summary.label = package.get_summary ();
-        package_summary.ellipsize = Pango.EllipsizeMode.END;
-        image.gicon = package.get_icon ();
+        public string get_name_label () {
+            return grid.name_label;
+        }
 
-        package.notify["state"].connect (update_state);
+        public AppCenterCore.Package? get_package () {
+            return grid.package;
+        }
 
-        package.change_information.bind_property ("can-cancel", cancel_button, "sensitive", GLib.BindingFlags.SYNC_CREATE);
-        package.change_information.progress_changed.connect (update_progress);
-        package.change_information.status_changed.connect (update_progress_status);
+        public void set_action_sensitive (bool is_sensitive) {
+            grid.action_button.sensitive = is_sensitive;
+        }
 
-        update_progress_status (); 
-        update_progress ();
-        update_state ();
-    }
+        private class PackageRowGrid : AbstractAppContainer {
+            public signal void changed ();
 
-    construct {
-        var grid = new Gtk.Grid ();
-        grid.margin = 6;
-        grid.margin_start = 12;
-        grid.row_spacing = 6;
-        grid.column_spacing = 12;
+            public PackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? size_group, bool show_uninstall = true) {
+                this.package = package;
+                this.show_uninstall = show_uninstall;
+                set_up_package ();
 
-        image = new Gtk.Image ();
-        image.icon_size = Gtk.IconSize.DIALOG;
-        /* Needed to enforce size on icons from Filesystem/Remote */
-        image.pixel_size = 48;
+                if (size_group != null) {
+                    size_group.add_widget (action_button);
+                    size_group.add_widget (cancel_button);
+                    size_group.add_widget (uninstall_button);
+                }
+            }
 
-        package_name = new Gtk.Label (null);
-        package_name.get_style_context ().add_class ("h3");
-        package_name.hexpand = true;
-        package_name.valign = Gtk.Align.END;
-        ((Gtk.Misc) package_name).xalign = 0;
+            construct {
+                image = new Gtk.Image ();
+                image.icon_size = Gtk.IconSize.DIALOG;
+                /* Needed to enforce size on icons from Filesystem/Remote */
+                image.pixel_size = 48;
 
-        package_summary = new Gtk.Label (null);
-        package_summary.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-        package_summary.hexpand = true;
-        package_summary.valign = Gtk.Align.START;
-        ((Gtk.Misc) package_summary).xalign = 0;
+                package_name = new Gtk.Label (null);
+                package_name.get_style_context ().add_class ("h3");
+                package_name.hexpand = true;
+                package_name.valign = Gtk.Align.END;
+                ((Gtk.Misc) package_name).xalign = 0;
 
-        action_stack = new Gtk.Stack ();
-        action_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
-        action_stack.hhomogeneous = false;
+                package_summary = new Gtk.Label (null);
+                package_summary.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+                package_summary.hexpand = true;
+                package_summary.valign = Gtk.Align.START;
+                ((Gtk.Misc) package_summary).xalign = 0;
 
-        progress_bar = new Gtk.ProgressBar ();
-        progress_bar.show_text = true;
-        progress_bar.valign = Gtk.Align.CENTER;
 
-        cancel_button = new Gtk.Button.with_label (_("Cancel"));
-        cancel_button.margin_end = 6;
-        cancel_button.valign = Gtk.Align.CENTER;
-        cancel_button.clicked.connect (() => action_cancelled ());
+                attach (image, 0, 0, 1, 2);
+                attach (package_name, 1, 0, 1, 1);
+                attach (package_summary, 1, 1, 1, 1);
+                attach (action_stack, 2, 0, 1, 2);
+            }
 
-        action_button = new Gtk.Button.with_label (_("Install"));
-        action_button.margin_end = 6;
-        action_button.valign = Gtk.Align.CENTER;
-        action_button.clicked.connect (() => action_clicked.begin ());
-
-        var progress_grid = new Gtk.Grid ();
-        progress_grid.valign = Gtk.Align.CENTER;
-        progress_grid.column_spacing = 12;
-        progress_grid.attach (progress_bar, 0, 0, 1, 1);
-        progress_grid.attach (cancel_button, 1, 0, 1, 1);
-
-        action_stack.add_named (action_button, "buttons");
-        action_stack.add_named (progress_grid, "progress");
-
-        grid.attach (image, 0, 0, 1, 2);
-        grid.attach (package_name, 1, 0, 1, 1);
-        grid.attach (package_summary, 1, 1, 1, 1);
-        grid.attach (action_stack, 2, 0, 1, 2);
-        add (grid);
-    }
-
-    private void update_progress_status () {
-        progress_bar.text = package.get_progress_description ();
-    }
-
-    private void update_progress () {
-        progress_bar.fraction = package.progress;
-    }
-
-    private void update_state () {
-        switch (package.state) {
-            case Package.State.NOT_INSTALLED:
-                action_button.label = _("Install");
-                action_button.no_show_all = false;
-                action_button.show_all ();
-
-                action_stack.no_show_all = false;
-                action_stack.show_all ();
-
-                action_stack.set_visible_child_name ("buttons");
-                break;
-            case Package.State.INSTALLED:
-                action_stack.no_show_all = true;
-                action_stack.hide ();                
-
-                action_stack.set_visible_child_name ("buttons");
-                break;
-            case Package.State.UPDATE_AVAILABLE:
-                action_button.label = _("Update");
-                action_button.no_show_all = false;
-                action_button.show_all ();    
-
-                action_stack.no_show_all = false;
-                action_stack.show_all ();
-
-                action_stack.set_visible_child_name ("buttons");
-                break;
-            case Package.State.INSTALLING:
-            case Package.State.UPDATING:
-            case Package.State.REMOVING:
-                action_stack.no_show_all = false;
-                action_stack.show_all ();
-
-                action_stack.set_visible_child_name ("progress");
-                break;
-        }  
-
-        changed ();
-    }
-
-    private void action_cancelled () {
-        package.action_cancellable.cancel ();
-    }
-
-    private async void action_clicked () {
-        if (package.update_available) {
-            yield package.update ();
-        } else if (yield package.install ()) {
-            // Add this app to the Installed Apps View
-            MainWindow.installed_view.add_app.begin (package);
+            protected override void update_state () {
+                update_action (show_uninstall);
+                changed ();
+            }
         }
     }
 }
