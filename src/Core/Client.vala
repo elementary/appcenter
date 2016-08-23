@@ -391,10 +391,11 @@ public class AppCenterCore.Client : Object {
             try {
                 yield refresh_task.refresh_cache_async (false, null, (t, p) => { });
                 last_cache_update = new DateTime.now_local ();
-                refresh_updates.begin ();
             } catch (Error e) {
                 critical (e.message);
             }
+
+            refresh_updates.begin ();
         }
 
         GLib.Timeout.add_seconds (60*60*24, () => {
