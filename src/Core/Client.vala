@@ -40,8 +40,6 @@ public class AppCenterCore.Client : Object {
         } catch (Error e) {
             error (e.message);
         }
-
-        update_cache.begin ();
     }
 
     construct {
@@ -338,7 +336,6 @@ public class AppCenterCore.Client : Object {
         return package;
     }
 
-
     public async void refresh_updates () {
         var update_task = new AppCenter.Task ();
         try {
@@ -387,9 +384,9 @@ public class AppCenterCore.Client : Object {
         return size;
     }
 
-    public async void update_cache () {
+    public async void update_cache (bool force = false) {
         // One cache update a day, keeps the doctor away!
-        if (last_cache_update == null || (new DateTime.now_local ()).difference (last_cache_update) >= GLib.TimeSpan.DAY) {
+        if (force || last_cache_update == null || (new DateTime.now_local ()).difference (last_cache_update) >= GLib.TimeSpan.DAY) {
             var refresh_task = new AppCenter.Task ();
             try {
                 yield refresh_task.refresh_cache_async (false, null, (t, p) => { });
