@@ -6,12 +6,12 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -94,21 +94,21 @@ public class AppCenterCore.Package : Object {
             }
         } else {
             state = State.NOT_INSTALLED;
-        }        
+        }
     }
 
     public async bool update () {
         if (state != State.UPDATE_AVAILABLE) {
             return false;
         }
-        return yield operation (State.UPDATING, State.INSTALLED, State.UPDATE_AVAILABLE);
+        return yield perform_operation (State.UPDATING, State.INSTALLED, State.UPDATE_AVAILABLE);
     }
 
     public async bool install () {
         if (state != State.NOT_INSTALLED) {
             return false;
         }
-        if (yield operation (State.INSTALLING, State.INSTALLED, State.NOT_INSTALLED)) {
+        if (yield perform_operation (State.INSTALLING, State.INSTALLED, State.NOT_INSTALLED)) {
             /* TODO: Move this to a higher level */
             var application = (Gtk.Application)Application.get_default ();
             var window = application.get_active_window ().get_window ();
@@ -121,18 +121,19 @@ public class AppCenterCore.Package : Object {
                 application.send_notification ("installed", notification);
             }
             return true;
-        } else {
-            return false;
         }
+
+        return false;
     }
+
     public async bool uninstall () {
         if (state != State.INSTALLED) {
             return false;
         }
-        return yield operation (State.REMOVING, State.NOT_INSTALLED, State.INSTALLED);
+        return yield perform_operation (State.REMOVING, State.NOT_INSTALLED, State.INSTALLED);
     }
 
-    private async bool operation (State performing, State after_success, State after_fail) {
+    private async bool perform_operation (State performing, State after_success, State after_fail) {
         var exit_status = Pk.Exit.UNKNOWN;
         prepare_package_operation (performing);
         try {
@@ -178,7 +179,7 @@ public class AppCenterCore.Package : Object {
         } else {
             state = fail_state;
             change_information.cancel ();
-         }
+        }
      }
 
     public string? get_name () {
@@ -221,7 +222,7 @@ public class AppCenterCore.Package : Object {
         component.get_icons ().foreach ((_icon) => {
             if (is_stock) {
                 return;
-            }            
+            }
 
             switch (_icon.get_kind ()) {
                 case AppStream.IconKind.STOCK:
@@ -229,7 +230,7 @@ public class AppCenterCore.Package : Object {
                         is_stock = true;
                         icon = new ThemedIcon (_icon.get_name ());
                     }
-                    
+
                     break;
                 case AppStream.IconKind.CACHED:
                 case AppStream.IconKind.LOCAL:

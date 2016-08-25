@@ -27,6 +27,12 @@ namespace AppCenter {
             }
         }
 
+        public bool is_updating {
+            get {
+                return package.is_updating;
+            }
+        }
+
         public string name_label {
             get {
                 return package_name.label;
@@ -99,7 +105,7 @@ namespace AppCenter {
             package.change_information.progress_changed.connect (update_progress);
             package.change_information.status_changed.connect (update_progress_status);
 
-            update_progress_status (); 
+            update_progress_status ();
             update_progress ();
             update_state ();
         }

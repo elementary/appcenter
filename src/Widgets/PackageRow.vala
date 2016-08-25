@@ -34,6 +34,10 @@ namespace AppCenter.Widgets {
             return grid.update_available;
         }
 
+        public bool get_is_updating () {
+            return grid.is_updating;
+        }
+
         public bool get_is_os_updates () {
             return grid.is_os_updates;
         }

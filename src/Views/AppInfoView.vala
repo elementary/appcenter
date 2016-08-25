@@ -131,7 +131,7 @@ namespace AppCenter.Views {
                 extension_label.use_markup = true;
                 extension_label.get_style_context ().add_class ("h3");
                 extension_label.halign = Gtk.Align.START;
-                
+
                 content_grid.add (extension_label);
                 content_grid.add (extension_box);
                 load_extensions.begin ();
@@ -147,11 +147,11 @@ namespace AppCenter.Views {
                         if (extension_box != null) {
                             extension_box.add (row);
                         }
-                    }                
+                    }
                 } catch (Error e) {
                     warning ("%s\n", e.message);
                 }
-            });            
+            });
         }
 
         public void load_more_content () {
@@ -216,7 +216,7 @@ namespace AppCenter.Views {
                 } catch (Error e) {
                     critical (e.message);
                 }
-            
+
                 return GLib.Source.REMOVE;
             });
         }

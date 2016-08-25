@@ -58,7 +58,7 @@ public class AppCenter.Views.InstalledView : View {
 
         yield client.get_updates ();
     }
-    
+
     public async void add_app (AppCenterCore.Package package) {
         unowned Client client = Client.get_default ();
         var installed_apps = yield client.get_installed_applications ();
@@ -69,7 +69,7 @@ public class AppCenter.Views.InstalledView : View {
             }
         }
     }
-    
+
     public async void remove_app (AppCenterCore.Package package) {
         app_list_view.remove_package (package);
     }

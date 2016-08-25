@@ -42,7 +42,7 @@ namespace AppCenter.Widgets {
 
         /** AppListRow Interface methods **/
         /** Updates header row reports it has updates and is os_update in order
-          * to sort first in list **/ 
+          * to sort first in list **/
         public bool get_update_available () {
             return is_updates_header;
         }
