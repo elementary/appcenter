@@ -79,7 +79,7 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
         row.show_all ();
         list_box.add (row);
     }
-    
+
     public void remove_package (AppCenterCore.Package package) {
         var pkg_rows = list_box.get_children ();
         foreach (var row in pkg_rows) {
@@ -107,36 +107,43 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
 
     [CCode (instance_pos = -1)]
     private int package_row_compare (Widgets.PackageRow row1, Widgets.PackageRow row2) {
-        var package_a = row1.get_package ();
-        var package_b = row2.get_package ();
+        /* "update_available" also true while package is updating */
+        bool a_update = row1.get_update_available ();
+        bool b_update = row2.get_update_available ();
+
+        bool a_is_os = row1.get_is_os_updates ();
+        bool b_is_os = row2.get_is_os_updates ();
+
         if (updates_on_top) {
-            if (package_a.component.id == "xxx-os-updates") {
+            if (a_is_os) {
                 return -1;
-            } else if (package_b.component.id == "xxx-os-updates") {
+            } else if (b_is_os) {
                 return 1;
             }
 
-            if (package_a.update_available && !package_b.update_available) {
+            if (a_update && !b_update) {
                 return -1;
-            } else if (!package_a.update_available && package_b.update_available) {
+            } else if (!a_update && b_update) {
                 return 1;
             }
         }
 
-        return package_a.get_name ().collate (package_b.get_name ());
+        return row1.get_name_label ().collate (row2.get_name_label ());
     }
 
     [CCode (instance_pos = -1)]
     private void package_row_update_header (Widgets.PackageRow row, Widgets.PackageRow? before) {
-        bool update_available = row.get_update_available ();
-        if (before == null && update_available) {
-            var updates_grid = get_updates_grid ();
-            row.set_header (updates_grid);
-        } else if ((before == null && !update_available) || update_available != before.get_update_available ()) {
-            var updated_grid = get_updated_grid ();
-            row.set_header (updated_grid);
-        } else {
-            row.set_header (null);
+        if (!row.get_is_updating () && (before == null || !before.get_is_updating ())) {
+            bool update_available = row.get_update_available ();
+            if (before == null && update_available) {
+                var updates_grid = get_updates_grid ();
+                row.set_header (updates_grid);
+            } else if ((before == null && !update_available) || update_available != before.get_update_available ()) {
+                var updated_grid = get_updated_grid ();
+                row.set_header (updated_grid);
+            } else {
+                row.set_header (null);
+            }
         }
     }
 
@@ -173,7 +180,6 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
                 update_real_size += package.change_information.get_size ();
             }
         }
-
         var updates_label = new Gtk.Label (null);
         updates_label.label = ngettext ("%u Update Available", "%u Updates Available", update_numbers).printf (update_numbers);
         ((Gtk.Misc) updates_label).xalign = 0;
@@ -228,25 +234,25 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
         var apps_done = 0; // Cancelled or updated apps
         var apps_remaining_started = false;
         ulong signal_id = -1;
-        
+
         // Collect all ready to update apps
         foreach (var package in applications) {
             if (package.update_available) {
                 apps_to_update.add (package);
             }
         }
-        
+
         // Update all updateable apps
         if (apps_to_update.size > 0) {
             // Prevent computer from sleeping while updating apps
             sc.inhibit ();
-        
-            updating_all_apps = true; 
-            Idle.add (() => { 
-                update_all_button.sensitive = false; 
+
+            updating_all_apps = true;
+            Idle.add (() => {
+                update_all_button.sensitive = false;
                 return GLib.Source.REMOVE;
             });
-              
+
             var first_package = apps_to_update[0];
             first_package.update.begin ();
             signal_id = first_package.change_information.status_changed.connect (() => {
@@ -255,18 +261,18 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
                     for (int i = 1; i < apps_to_update.size; i++) {
                         apps_to_update[i].update.begin (() => {
                             apps_done++;
-                            
+
                             if (apps_done >= apps_to_update.size) {
                                 finish_updating_all_apps (first_package, signal_id);
                             }
                         });
                     }
-                    
+
                     apps_remaining_started = true;
                 } else if (first_package.change_information.status == Pk.Status.FINISHED) {
                     // First app was updated or cancelled
                     apps_done++;
-                    
+
                     if (apps_done >= apps_to_update.size) {
                         finish_updating_all_apps (first_package, signal_id);
                     }
@@ -274,16 +280,16 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
             });
         }
     }
-    
+
     private void finish_updating_all_apps (AppCenterCore.Package first_package, ulong signal_id) {
         updating_all_apps = false;
-        Idle.add (() => { 
+        Idle.add (() => {
             update_all_button.sensitive = true;
             return GLib.Source.REMOVE;
         });
-        
+
         sc.uninhibit ();
-        
+
         if (signal_id != -1) {
             first_package.change_information.disconnect (signal_id);
         }

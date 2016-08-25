@@ -27,6 +27,12 @@ namespace AppCenter {
             }
         }
 
+        public bool is_updating {
+            get {
+                return package.is_updating;
+            }
+        }
+
         public string name_label {
             get {
                 return package_name.label;
