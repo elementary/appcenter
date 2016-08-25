@@ -111,16 +111,20 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
     private int package_row_compare (Widgets.PackageRow row1, Widgets.PackageRow row2) {
         unowned Package package_a = row1.package;
         unowned Package package_b = row2.package;
-        if (updates_on_top) {
+
+        bool a_update = package_a.update_available || package_a.is_updating;
+        bool b_update = package_b.update_available || package_b.is_updating;
+
+        if (updates_on_top) {    
             if (package_a.component.id == "xxx-os-updates") {
                 return -1;
             } else if (package_b.component.id == "xxx-os-updates") {
                 return 1;
             }
 
-            if (package_a.update_available && !package_b.update_available) {
+            if (a_update && !b_update) {
                 return -1;
-            } else if (!package_a.update_available && package_b.update_available) {
+            } else if (!a_update && b_update) {
                 return 1;
             }
         }
@@ -130,15 +134,17 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
 
     [CCode (instance_pos = -1)]
     private void package_row_update_header (Widgets.PackageRow row, Widgets.PackageRow? before) {
-        bool update_available = row.package.update_available;
-        if (before == null && update_available) {
-            var updates_grid = get_updates_grid ();
-            row.set_header (updates_grid);
-        } else if ((before == null && !update_available) || update_available != before.package.update_available) {
-            var updated_grid = get_updated_grid ();
-            row.set_header (updated_grid);
-        } else {
-            row.set_header (null);
+        if (!row.package.is_updating && (before == null || !before.package.is_updating)) {
+            bool update_available = row.package.update_available;
+            if (before == null && update_available) {
+                var updates_grid = get_updates_grid ();
+                row.set_header (updates_grid);
+            } else if ((before == null && !update_available) || update_available != before.package.update_available) {
+                var updated_grid = get_updated_grid ();
+                row.set_header (updated_grid);
+            } else {
+                row.set_header (null);
+            }
         }
     }
 

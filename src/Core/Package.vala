@@ -6,12 +6,12 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -19,6 +19,7 @@
  */
 
 public class AppCenterCore.Package : Object {
+
     public enum State {
         NOT_INSTALLED,
         INSTALLED,
@@ -37,6 +38,12 @@ public class AppCenterCore.Package : Object {
     public bool changing { public get; private set; default = false; }
     public State state { public get; private set; default = State.NOT_INSTALLED; }
 
+    public double progress {
+        get {
+            return change_information.progress;
+        }
+    }
+
     public bool installed {
         get {
             return !installed_packages.is_empty || component.get_id () == OS_UPDATES_ID;
@@ -45,9 +52,21 @@ public class AppCenterCore.Package : Object {
 
     public bool update_available {
         get {
-            return installed && change_information.has_changes ();
+            return state == State.UPDATE_AVAILABLE;
         }
     }
+
+    public bool is_updating {
+        get {
+            return state == State.UPDATING;
+        }
+    }
+
+    public bool is_os_updates {
+        get {
+            return component.id == "xxx-os-updates";
+         }
+     }
 
     public Package (AppStream.Component component) {
         this.component = component;
@@ -58,105 +77,99 @@ public class AppCenterCore.Package : Object {
 
     public void update_state () {
         if (installed) {
-            if (update_available) {
+            if (change_information.has_changes ()) {
                 state = State.UPDATE_AVAILABLE;
             } else {
                 state = State.INSTALLED;
             }
         } else {
             state = State.NOT_INSTALLED;
-        }        
-    }
-
-    public async void update () throws GLib.Error {
-        action_cancellable.reset ();
-        changing = true;
-
-        var previous_state = state;
-        state = State.UPDATING;
-        try {
-            var exit_status = yield AppCenterCore.Client.get_default ().update_package (this, (progress, type) => {change_information.ProgressCallback (progress, type);}, action_cancellable);
-            installed_packages.add_all (change_information.changes);
-            change_information.clear ();
-
-            if (exit_status == Pk.Exit.SUCCESS) {
-                state = State.INSTALLED;
-            } else {
-                state = previous_state;
-            }      
-
-            changing = false;      
-        } catch (Error e) {
-            change_information.reset ();
-            changing = false;
-            state = previous_state;
-            throw e;
         }
     }
 
-    public async void install () throws GLib.Error {
-        action_cancellable.reset ();
-        changing = true;
+    public async bool update () {
+        if (state != State.UPDATE_AVAILABLE) {
+            return false;
+        }
+        return yield perform_operation (State.UPDATING, State.INSTALLED, State.UPDATE_AVAILABLE);
+    }
 
-        var previous_state = state;
-        state = State.INSTALLING;
-        try {
+    public async bool install () {
+        if (state != State.UPDATE_AVAILABLE) {
+            return false;
+        }
+        if (yield perform_operation (State.INSTALLING, State.INSTALLED, State.NOT_INSTALLED)) {
+            /* TODO: Move this to a higher level */
             var application = (Gtk.Application)Application.get_default ();
             var window = application.get_active_window ().get_window ();
+            if ((window.get_state () & Gdk.WindowState.FOCUSED) == 0) {
+                var notification = new Notification (_("Application installed"));
+                notification.set_body (_("%s has been successfully installed").printf (get_name ()));
+                notification.set_icon (new ThemedIcon ("system-software-install"));
+                notification.set_default_action ("app.open-application");
 
-            var exit_status = yield AppCenterCore.Client.get_default ().install_package (this, (progress, type) => {change_information.ProgressCallback (progress, type);}, action_cancellable);
-            installed_packages.add_all (change_information.changes);
-            change_information.clear ();
-
-            if (exit_status == Pk.Exit.SUCCESS) {
-                state = State.INSTALLED;
-
-                if ((window.get_state () & Gdk.WindowState.FOCUSED) == 0) {
-                    var notification = new Notification (_("Application installed"));
-                    notification.set_body (_("%s has been successfully installed").printf (get_name ()));
-                    notification.set_icon (new ThemedIcon ("system-software-install"));
-                    notification.set_default_action ("app.open-application");
-
-                    application.send_notification ("installed", notification);
-                }
-            } else {
-                state = previous_state;
+                application.send_notification ("installed", notification);
             }
-
-            changing = false;
-        } catch (Error e) {
-            change_information.reset ();
-            changing = false;
-            state = previous_state;
-            throw e;
+            return true;
         }
+
+        return false;
+    }
+    public async bool uninstall () {
+        if (state != State.INSTALLED) {
+            return false;
+        }
+        return yield perform_operation (State.REMOVING, State.NOT_INSTALLED, State.INSTALLED);
     }
 
-    public async void uninstall () throws GLib.Error {
-        action_cancellable.reset ();
+    private async bool perform_operation (State performing, State after_success, State after_fail) {
+        var exit_status = Pk.Exit.UNKNOWN;
+        prepare_package_operation (performing);
+        try {
+            exit_status = yield perform_package_operation ();
+        } catch (GLib.Error e) {
+            critical ("Operation failed for package %s - %s", get_name (), e.message);
+        } finally {
+            clean_up_package_operation (exit_status, after_success, after_fail);
+        }
+        return (exit_status == Pk.Exit.SUCCESS);
+    }
+
+    private void prepare_package_operation (State initial_state) {
         changing = true;
 
-        var previous_state = state;
-        state = State.REMOVING;
-        try {
-            var exit_status = yield AppCenterCore.Client.get_default ().remove_package (this, (progress, type) => {change_information.ProgressCallback (progress, type);}, action_cancellable);
-            installed_packages.clear ();
-            change_information.clear ();
+        action_cancellable.reset ();
+        change_information.start ();
+        state = initial_state;
+    }
 
-            if (exit_status == Pk.Exit.SUCCESS) {
-                state = State.NOT_INSTALLED;
-            } else {
-                state = previous_state;
-            }
-
-            changing = false;
-        } catch (Error e) {
-            change_information.reset ();
-            changing = false;
-            state = previous_state;
-            throw e;
+    private async Pk.Exit perform_package_operation () throws GLib.Error {
+        Pk.ProgressCallback cb = change_information.ProgressCallback;
+        var client = AppCenterCore.Client.get_default ();
+        switch (state) {
+            case State.UPDATING:
+                return yield client.update_package (this, cb, action_cancellable);
+            case State.INSTALLING:
+                return yield client.install_package (this, cb, action_cancellable);
+            case State.REMOVING:
+                return yield client.remove_package (this, cb, action_cancellable);
+            default:
+                return Pk.Exit.UNKNOWN;
         }
     }
+
+    private void clean_up_package_operation (Pk.Exit exit_status, State success_state, State fail_state) {
+        changing = false;
+
+        installed_packages.add_all (change_information.changes);
+        if (exit_status == Pk.Exit.SUCCESS) {
+            change_information.complete ();
+            state = success_state;
+        } else {
+            state = fail_state;
+            change_information.cancel ();
+         }
+     }
 
     public string? get_name () {
         var _name = component.get_name ();
@@ -186,6 +199,10 @@ public class AppCenterCore.Package : Object {
         return null;
     }
 
+    public string get_progress_description () {
+        return change_information.get_status_string ();
+    }
+
     public GLib.Icon get_icon (uint size = 32) {
         GLib.Icon? icon = null;
         uint current_size = 0;
@@ -194,7 +211,7 @@ public class AppCenterCore.Package : Object {
         component.get_icons ().foreach ((_icon) => {
             if (is_stock) {
                 return;
-            }            
+            }
 
             switch (_icon.get_kind ()) {
                 case AppStream.IconKind.STOCK:
@@ -202,7 +219,7 @@ public class AppCenterCore.Package : Object {
                         is_stock = true;
                         icon = new ThemedIcon (_icon.get_name ());
                     }
-                    
+
                     break;
                 case AppStream.IconKind.CACHED:
                 case AppStream.IconKind.LOCAL:

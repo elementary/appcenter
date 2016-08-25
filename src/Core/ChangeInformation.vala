@@ -25,27 +25,23 @@ public class AppCenterCore.ChangeInformation : Object {
     public Gee.TreeSet<Pk.Package> changes { public get; private set; }
     public Gee.TreeSet<Pk.Details> details { public get; private set; }
     public bool can_cancel { public get; private set; default=true; }
-    public Pk.Status status;
+    public Pk.Status status { public get; private set; }
     private Gee.HashMap<string, double?> change_progress;
-    private double progress;
+    public double progress { public get; private set; }
 
     construct {
         changes = new Gee.TreeSet<Pk.Package> ();
         details = new Gee.TreeSet<Pk.Details> ();
         change_progress = new Gee.HashMap<string, double?> ();
         status = Pk.Status.SETUP;
-        progress = 1.0f;
+        progress = 0.0f;
     }
 
     public bool has_changes () {
         return changes.size > 0;
     }
 
-    public double get_progress () {
-        return progress;
-    }
-
-    public string get_status () {
+    public string get_status_string () {
         switch (status) {
             case Pk.Status.SETUP:
                 return _("Starting");
@@ -131,18 +127,36 @@ public class AppCenterCore.ChangeInformation : Object {
         return size;
     }
 
-    public void clear () {
-        changes.clear ();
-        details.clear ();
-        reset ();
+    public void start () {
+        progress = 0.0f;
+        progress_changed ();
+        status = Pk.Status.WAIT;
+        status_changed ();
     }
 
-    public void reset () {
+    public void complete () {
+        status = Pk.Status.FINISHED;
+        status_changed ();
+        reset_progress ();
+    }
+
+    public void cancel () {
+        progress = 0.0f;
+        progress_changed ();
+        status = Pk.Status.CANCEL;
+        status_changed ();
+        reset_progress ();
+    }
+
+    public void clear_update_info () {
+         changes.clear ();
+         details.clear ();
+     }
+
+    public void reset_progress () {
         change_progress.clear ();
         status = Pk.Status.SETUP;
-        status_changed ();
-        progress = 1.0f;
-        progress_changed ();
+        progress = 0.0f;
     }
 
     public void ProgressCallback (Pk.Progress progress, Pk.ProgressType type) {
