@@ -190,7 +190,7 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
         update_size.label = _("Size: %s").printf (GLib.format_size (update_real_size));
 
         update_all_button = new Gtk.Button.with_label (_("Update All"));
-        update_all_button.margin_end = 6;
+        update_all_button.get_style_context ().add_class ("h3");
         update_all_button.valign = Gtk.Align.CENTER;
         update_all_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
         update_all_button.clicked.connect (() => update_all_clicked.begin ());
