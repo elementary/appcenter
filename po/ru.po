@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-01 17:59-0500\n"
-"PO-Revision-Date: 2016-07-12 20:44+0000\n"
+"PO-Revision-Date: 2016-08-23 17:30+0000\n"
 "Last-Translator: Maxim Taranov <png2378@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -11,8 +11,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2016-07-13 05:22+0000\n"
-"X-Generator: Launchpad (build 18115)\n"
+"X-Launchpad-Export-Date: 2016-08-24 05:23+0000\n"
+"X-Generator: Launchpad (build 18179)\n"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -160,11 +160,11 @@ msgstr "Неизвестное состояние"
 
 #: ../src/Core/Client.vala:62
 msgid "Operating System Updates"
-msgstr "Обновление операционной системы"
+msgstr "Обновления операционной системы"
 
 #: ../src/Core/Client.vala:63
 msgid "Updates to system components"
-msgstr "Обновления компонентов"
+msgstr "Обновление компонентов системы"
 
 #: ../src/Core/Client.vala:340
 msgid "Update Available"
@@ -177,8 +177,8 @@ msgstr[2] "Доступны обновления"
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "%u обновление доступно для вашей системы"
-msgstr[1] "%u обновления доступно для вашей системы"
-msgstr[2] "%u обновлений доступно для вашей системы"
+msgstr[1] "%u обновления доступны для вашей системы"
+msgstr[2] "%u обновлений доступны для вашей системы"
 
 #: ../src/Core/Package.vala:80
 msgid "Application installed"
@@ -201,7 +201,7 @@ msgstr ""
 "  Leopotam https://launchpad.net/~leopotam\n"
 "  Maxim Taranov https://launchpad.net/~png2378\n"
 "  Mukusev Vladimir https://launchpad.net/~damon95\n"
-"  Petr Nesterov https://launchpad.net/~inpr1se\n"
+"  Yuly Nesterov https://launchpad.net/~inpr1se\n"
 "  elementaryart (old) https://launchpad.net/~elementaryart\n"
 "  михаил https://launchpad.net/~ded-mixei"
 
@@ -249,8 +249,8 @@ msgstr "Обновления не требуются"
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "Доступно %u обновление"
-msgstr[1] "Доступно %u обновления"
-msgstr[2] "Доступно %u обновлений"
+msgstr[1] "Доступны %u обновления"
+msgstr[2] "Доступны %u обновлений"
 
 #: ../src/Views/AppListView.vala:181
 msgid "Size: %s"
