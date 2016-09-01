@@ -62,6 +62,12 @@ public class AppCenterCore.Package : Object {
         }
     }
 
+    public bool changes_finished {
+        get {
+            return change_information.status == Pk.Status.FINISHED;
+        }
+    }
+
     public bool is_os_updates {
         get {
             return component.id == "xxx-os-updates";
@@ -95,7 +101,7 @@ public class AppCenterCore.Package : Object {
     }
 
     public async bool install () {
-        if (state != State.UPDATE_AVAILABLE) {
+        if (state != State.NOT_INSTALLED) {
             return false;
         }
         if (yield perform_operation (State.INSTALLING, State.INSTALLED, State.NOT_INSTALLED)) {
@@ -159,8 +165,6 @@ public class AppCenterCore.Package : Object {
     }
 
     private void clean_up_package_operation (Pk.Exit exit_status, State success_state, State fail_state) {
-        changing = false;
-
         installed_packages.add_all (change_information.changes);
         if (exit_status == Pk.Exit.SUCCESS) {
             change_information.complete ();
@@ -168,7 +172,9 @@ public class AppCenterCore.Package : Object {
         } else {
             state = fail_state;
             change_information.cancel ();
-         }
+        }
+
+        changing = false;
      }
 
     public string? get_name () {
