@@ -7,8 +7,8 @@ namespace AppCenter {
         protected Gtk.Label package_summary;
 
         // The action button covers Install and Update
-        public Gtk.Button action_button {get; private set;}
-        protected Gtk.Button uninstall_button;
+        protected Widgets.AppActionButton action_button;
+        protected Widgets.AppActionButton uninstall_button;
         protected Gtk.ProgressBar progress_bar;
         protected Gtk.Button cancel_button;
         protected Gtk.SizeGroup action_button_group;
@@ -39,6 +39,12 @@ namespace AppCenter {
             }
         }
 
+        public bool action_sensitive {
+            set {
+                action_button.sensitive = value;
+            }
+        }
+
         construct {
             image = new Gtk.Image ();
 
@@ -58,13 +64,13 @@ namespace AppCenter {
 
             action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
 
-            cancel_button = new AppActionButton (_("Cancel"));
+            cancel_button = new Widgets.AppActionButton (_("Cancel"));
             cancel_button.clicked.connect (() => action_cancelled ());
 
-            action_button = new AppActionButton (_("Install"), Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+            action_button = new Widgets.AppActionButton (_("Install"));
             action_button.clicked.connect (() => action_clicked.begin ());
 
-            uninstall_button = new AppActionButton (_("Uninstall"), Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+            uninstall_button = new Widgets.AppActionButton (_("Uninstall"));
             uninstall_button.clicked.connect (() => uninstall_clicked.begin ());
 
             var button_grid = new Gtk.Grid ();
@@ -202,17 +208,6 @@ namespace AppCenter {
                 update_state ();
             }
         }
-
-        private class AppActionButton : Gtk.Button {
-            public AppActionButton (string? _label, string? action_style_class = null) {
-                get_style_context ().add_class ("h3");
-                if (action_style_class != null) {
-                    get_style_context ().add_class (action_style_class);
-                }
-                valign = Gtk.Align.CENTER;
-                label = _label;
-             }
-         }
     }
 }
 

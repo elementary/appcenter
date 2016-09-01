@@ -20,13 +20,21 @@
 
 namespace AppCenter.Widgets {
     public class AppActionButton : Gtk.Button {
-        public AppActionButton (string? _label, string? action_style_class = null) {
-            get_style_context ().add_class ("h3");
-            if (action_style_class != null) {
-                get_style_context ().add_class (action_style_class);
-            }
+        public AppActionButton (string? _label) {
             valign = Gtk.Align.CENTER;
             label = _label;
          }
+
+        public void set_suggested_action_header () {
+            var style_ctx = get_style_context ();
+            style_ctx.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+            style_ctx.add_class ("h3");
+        }
+
+        public void set_destructive_action_header () {
+            var style_ctx = get_style_context ();
+            style_ctx.add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+            style_ctx.add_class ("h3");
+        }
      }
 }

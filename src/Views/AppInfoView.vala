@@ -136,6 +136,9 @@ namespace AppCenter.Views {
                 content_grid.add (extension_box);
                 load_extensions.begin ();
             }
+
+            action_button.set_suggested_action_header ();
+            uninstall_button.set_destructive_action_header ();
         }
 
         private async void load_extensions () {
