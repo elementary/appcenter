@@ -161,9 +161,17 @@ namespace AppCenter.Views {
 
         public void load_more_content () {
             new Thread<void*> ("content-loading", () => {
+                app_version.label = package.get_version ();
+
                 string url = null;
                 uint max_size = 0U;
-                package.component.get_screenshots ().foreach ((screenshot) => {
+                var screenshots = package.component.get_screenshots ();
+                if (screenshots.length == 0) {
+                    screenshot_stack.visible_child = app_screenshot_not_found;
+                    return null;
+                }
+
+                screenshots.foreach ((screenshot) => {
                     screenshot.get_images ().foreach ((image) => {
                         if (max_size < image.get_width ()) {
                             url = image.get_url ();
@@ -175,8 +183,6 @@ namespace AppCenter.Views {
                 if (url != null) {
                     set_screenshot (url);
                 }
-
-                app_version.label = package.get_version ();
 
                 return null;
             });
