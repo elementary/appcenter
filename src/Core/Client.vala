@@ -40,8 +40,6 @@ public class AppCenterCore.Client : Object {
         } catch (Error e) {
             error (e.message);
         }
-
-        update_cache.begin ();
     }
 
     construct {
@@ -338,7 +336,6 @@ public class AppCenterCore.Client : Object {
         return package;
     }
 
-
     public async void refresh_updates () {
         var update_task = new AppCenter.Task ();
         try {
@@ -350,7 +347,7 @@ public class AppCenterCore.Client : Object {
                 string body = ngettext ("%u update is available for your system", "%u updates are available for your system", updates_number).printf (updates_number);
                 var notification = new Notification (title);
                 notification.set_body (body);
-                notification.set_icon (new ThemedIcon ("software-update-available"));
+                notification.set_icon (new ThemedIcon ("system-software-install"));
                 notification.set_default_action ("app.open-application");
                 Application.get_default ().send_notification ("updates", notification);
             } else {
@@ -387,17 +384,18 @@ public class AppCenterCore.Client : Object {
         return size;
     }
 
-    public async void update_cache () {
+    public async void update_cache (bool force = false) {
         // One cache update a day, keeps the doctor away!
-        if (last_cache_update == null || (new DateTime.now_local ()).difference (last_cache_update) >= GLib.TimeSpan.DAY) {
+        if (force || last_cache_update == null || (new DateTime.now_local ()).difference (last_cache_update) >= GLib.TimeSpan.DAY) {
             var refresh_task = new AppCenter.Task ();
             try {
                 yield refresh_task.refresh_cache_async (false, null, (t, p) => { });
                 last_cache_update = new DateTime.now_local ();
-                refresh_updates.begin ();
             } catch (Error e) {
                 critical (e.message);
             }
+
+            refresh_updates.begin ();
         }
 
         GLib.Timeout.add_seconds (60*60*24, () => {

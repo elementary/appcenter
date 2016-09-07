@@ -56,14 +56,24 @@ public class AppCenter.App : Granite.Application {
     }
 
     public override void activate () {
+        var client = AppCenterCore.Client.get_default ();
         if (silent) {
+            NetworkMonitor.get_default ().network_changed.connect ((available) => {
+                if (available) {
+                    client.update_cache.begin (true);
+                }
+            });
+
+            client.update_cache.begin ();
+        
             silent = false;
-            AppCenterCore.Client.get_default ();
             hold ();
             return;
         }
 
         if (main_window == null) {
+            client.update_cache.begin (true);
+
             main_window = new MainWindow (this);
             main_window.destroy.connect (() => {
                 main_window = null;
@@ -75,7 +85,7 @@ public class AppCenter.App : Granite.Application {
                 main_window.go_to_installed ();
             }
         } else {
-            AppCenterCore.Client.get_default ().interface_cancellable.reset ();
+            client.interface_cancellable.reset ();
         }
 
         main_window.present ();

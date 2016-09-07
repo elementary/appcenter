@@ -123,10 +123,8 @@ namespace AppCenter {
         protected void update_action (bool show_uninstall = true) {
             uninstall_button.no_show_all = true;
             uninstall_button.hide ();
-
             progress_bar.no_show_all = true;
             progress_bar.hide ();
-
             action_stack.no_show_all = false;
             action_stack.show_all ();
             action_stack.set_visible_child_name ("buttons");
@@ -202,12 +200,34 @@ namespace AppCenter {
         }
 
         private async void uninstall_clicked () {
-            if (yield package.uninstall () ) {
+            if (yield package.uninstall ()) {
                 // Remove this app from the Installed Apps View
                 MainWindow.installed_view.remove_app.begin (package);
                 update_state ();
             }
         }
+//~ <<<<<<< TREE
+//~ =======
+
+//~         protected class AppActionButton : Gtk.Button {
+//~             public AppActionButton (string? _label) {
+//~                 valign = Gtk.Align.CENTER;
+//~                 label = _label;
+//~             }
+
+//~             public void set_suggested_action_header () {
+//~                 var style_ctx = get_style_context ();
+//~                 style_ctx.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+//~                 style_ctx.add_class ("h3");
+//~             }
+
+//~             public void set_destructive_action_header () {
+//~                 var style_ctx = get_style_context ();
+//~                 style_ctx.add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+//~                 style_ctx.add_class ("h3");
+//~             }
+//~          }
+//~ >>>>>>> MERGE-SOURCE
     }
 }
 
