@@ -347,7 +347,7 @@ public class AppCenterCore.Client : Object {
                 string body = ngettext ("%u update is available for your system", "%u updates are available for your system", updates_number).printf (updates_number);
                 var notification = new Notification (title);
                 notification.set_body (body);
-                notification.set_icon (new ThemedIcon ("software-update-available"));
+                notification.set_icon (new ThemedIcon ("system-software-install"));
                 notification.set_default_action ("app.open-application");
                 Application.get_default ().send_notification ("updates", notification);
             } else {

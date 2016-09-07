@@ -151,6 +151,7 @@ public class AppCenter.Views.AppListView : Gtk.ScrolledWindow {
         var updated_grid = new Gtk.Grid ();
         updated_grid.orientation = Gtk.Orientation.HORIZONTAL;
         updated_grid.column_spacing = 12;
+        updated_grid.margin = 6;
         if (updating_cache) {
             updated_grid.halign = Gtk.Align.CENTER;
             var updating_label = new Gtk.Label (_("Searching for updates…"));
