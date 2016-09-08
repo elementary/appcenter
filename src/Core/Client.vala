@@ -384,7 +384,13 @@ public class AppCenterCore.Client : Object {
         return size;
     }
 
+    private uint update_cache_timeout_id = 0;
     public async void update_cache (bool force = false) {
+        /* Make sure there are not multiple timeouts for updating the cache, caused by calling with force = true */
+        if (update_cache_timeout_id > 0) {
+            warning ("update_cache called when there is an on-going timeout");
+            Source.remove (update_cache_timeout_id);
+        }
         // One cache update a day, keeps the doctor away!
         if (force || last_cache_update == null || (new DateTime.now_local ()).difference (last_cache_update) >= GLib.TimeSpan.DAY) {
             var refresh_task = new AppCenter.Task ();
@@ -398,7 +404,8 @@ public class AppCenterCore.Client : Object {
             refresh_updates.begin ();
         }
 
-        GLib.Timeout.add_seconds (60*60*24, () => {
+        update_cache_timeout_id = GLib.Timeout.add_seconds (60*60*24, () => {
+            update_cache_timeout_id = 0;
             update_cache.begin ();
             return GLib.Source.REMOVE;
         });
