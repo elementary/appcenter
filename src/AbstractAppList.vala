@@ -30,7 +30,6 @@ namespace AppCenter {
             var alert_view = new Granite.Widgets.AlertView (_("No Results"), _("No apps could be found. Try changing search terms."), "edit-find-symbolic");
             alert_view.show_all ();
             list_box = new Gtk.ListBox ();
-            list_box.margin = 6;
             list_box.expand = true;
             list_box.activate_on_single_click = true;
             list_box.set_placeholder (alert_view);

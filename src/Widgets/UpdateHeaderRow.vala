@@ -74,9 +74,7 @@ namespace AppCenter.Widgets {
             public bool is_updating {get; protected set; default = false;}
 
             construct {
-                margin = 6;
-                margin_start = 12;
-                row_spacing = 6;
+                margin = 12;
                 column_spacing = 12;
             }
 
@@ -95,6 +93,7 @@ namespace AppCenter.Widgets {
             private Gtk.Label updates_label;
 
             construct {
+                margin_top = 18;
                 updates_label = new Gtk.Label (null);
                 ((Gtk.Misc) updates_label).xalign = 0;
                 updates_label.get_style_context ().add_class ("h4");

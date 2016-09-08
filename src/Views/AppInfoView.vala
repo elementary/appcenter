@@ -18,7 +18,6 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-//~ using AppCenterCore;
 namespace AppCenter.Views {
     public class AppInfoView : AppCenter.AbstractAppContainer {
         Gtk.Image app_screenshot;

@@ -48,11 +48,6 @@ namespace AppCenter {
         construct {
             image = new Gtk.Image ();
 
-            margin = 6;
-            margin_start = 12;
-            row_spacing = 6;
-            column_spacing = 12;
-
             progress_bar = new Gtk.ProgressBar ();
             progress_bar.show_text = true;
             progress_bar.valign = Gtk.Align.CENTER;
@@ -206,28 +201,6 @@ namespace AppCenter {
                 update_state ();
             }
         }
-//~ <<<<<<< TREE
-//~ =======
-
-//~         protected class AppActionButton : Gtk.Button {
-//~             public AppActionButton (string? _label) {
-//~                 valign = Gtk.Align.CENTER;
-//~                 label = _label;
-//~             }
-
-//~             public void set_suggested_action_header () {
-//~                 var style_ctx = get_style_context ();
-//~                 style_ctx.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
-//~                 style_ctx.add_class ("h3");
-//~             }
-
-//~             public void set_destructive_action_header () {
-//~                 var style_ctx = get_style_context ();
-//~                 style_ctx.add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
-//~                 style_ctx.add_class ("h3");
-//~             }
-//~          }
-//~ >>>>>>> MERGE-SOURCE
     }
 }
 
