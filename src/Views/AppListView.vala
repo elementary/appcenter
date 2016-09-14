@@ -94,28 +94,27 @@ namespace AppCenter.Views {
 
         [CCode (instance_pos = -1)]
         protected override int package_row_compare (Widgets.AppListRow row1, Widgets.AppListRow row2) {
-            int res = row1.get_name_label ().collate (row2.get_name_label ());
+            bool a_is_header = !row1.has_package ();
+            bool b_is_header = !row2.has_package ();
+            bool a_has_updates = row1.get_update_available ();
+            bool b_has_updates = row2.get_update_available ();
 
-            bool a_updates = row1.get_update_available ();
-            bool b_updates = row2.get_update_available ();
+            if (a_is_header) {
+                return (a_has_updates || !b_has_updates) ? -1 : 1;
+            } else if (b_is_header) {
+                return (b_has_updates || !a_has_updates) ? 1 : -1;
+            }
+
             bool a_is_os = row1.get_is_os_updates ();
             bool b_is_os = row2.get_is_os_updates ();
 
-            if (a_is_os && b_is_os) { /* If both os then one is header */
-                if (row1.has_package ()) { /* row1 is not a header */
-                    res = 1;
-                } else {
-                    res = -1;
-                }
-            } else {
-                if (a_updates && (a_is_os || !b_updates)) {
-                    res = -1;
-                } else if (b_updates && (b_is_os || !a_updates)) {
-                    res = 1;
-                }
+            if (a_is_os || b_is_os) { /* OS update row sorts ahead of other update rows */
+                return a_is_os ? -1 : 1;
+            } else if ((a_has_updates && !b_has_updates) || (!a_has_updates && b_has_updates)) { /* Updates rows sort ahead of updated rows */
+                return a_has_updates ? -1 : 1;
             }
 
-            return res;
+            return row1.get_name_label ().collate (row2.get_name_label ()); /* Else sort in name order */
         }
 
         private void on_update_all () {

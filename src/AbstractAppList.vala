@@ -85,7 +85,6 @@ namespace AppCenter {
 
         protected virtual void after_add_remove_change_row () {}
 
-
         protected Gee.Collection<AppCenterCore.Package> get_packages () {
             var tree_set = new Gee.TreeSet<AppCenterCore.Package> ();
             foreach (var r in list_box.get_children ()) {
@@ -100,8 +99,7 @@ namespace AppCenter {
 
         [CCode (instance_pos = -1)]
         protected virtual int package_row_compare (Widgets.AppListRow row1, Widgets.AppListRow row2) {
-            int res = row1.get_name_label ().collate (row2.get_name_label ());
-            return res;
+            return row1.get_name_label ().collate (row2.get_name_label ());
         }
 
         protected virtual void on_package_changing (AppCenterCore.Package package, bool is_changing) {
