@@ -19,7 +19,9 @@
  */
 
 public class AppCenterCore.Package : Object {
-
+    public signal void changing (bool is_changing);
+    public signal void info_changed (Pk.Status status);
+    
     public enum State {
         NOT_INSTALLED,
         INSTALLED,
@@ -35,7 +37,6 @@ public class AppCenterCore.Package : Object {
     public ChangeInformation change_information { public get; private set; }
     public Gee.TreeSet<Pk.Package> installed_packages { public get; private set; }
     public GLib.Cancellable action_cancellable { public get; private set; }
-    public bool changing { public get; private set; default = false; }
     public State state { public get; private set; default = State.NOT_INSTALLED; }
 
     public double progress {
@@ -78,6 +79,10 @@ public class AppCenterCore.Package : Object {
         this.component = component;
         installed_packages = new Gee.TreeSet<Pk.Package> ();
         change_information = new ChangeInformation ();
+        change_information.status_changed.connect (() => {
+            info_changed (change_information.status);
+        });
+
         action_cancellable = new GLib.Cancellable ();
     }
 
@@ -121,6 +126,7 @@ public class AppCenterCore.Package : Object {
 
         return false;
     }
+
     public async bool uninstall () {
         if (state != State.INSTALLED) {
             return false;
@@ -142,7 +148,7 @@ public class AppCenterCore.Package : Object {
     }
 
     private void prepare_package_operation (State initial_state) {
-        changing = true;
+        changing (true);
 
         action_cancellable.reset ();
         change_information.start ();
@@ -165,6 +171,8 @@ public class AppCenterCore.Package : Object {
     }
 
     private void clean_up_package_operation (Pk.Exit exit_status, State success_state, State fail_state) {
+        changing (false);
+
         installed_packages.add_all (change_information.changes);
         if (exit_status == Pk.Exit.SUCCESS) {
             change_information.complete ();
@@ -173,8 +181,6 @@ public class AppCenterCore.Package : Object {
             state = fail_state;
             change_information.cancel ();
         }
-
-        changing = false;
      }
 
     public string? get_name () {

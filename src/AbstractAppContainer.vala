@@ -7,8 +7,8 @@ namespace AppCenter {
         protected Gtk.Label package_summary;
 
         // The action button covers Install and Update
-        protected AppActionButton action_button;
-        protected AppActionButton uninstall_button;
+        protected Widgets.AppActionButton action_button;
+        protected Widgets.AppActionButton uninstall_button;
         protected Gtk.ProgressBar progress_bar;
         protected Gtk.Button cancel_button;
         protected Gtk.SizeGroup action_button_group;
@@ -46,10 +46,7 @@ namespace AppCenter {
         }
 
         construct {
-            margin = 6;
-            margin_start = 12;
-            row_spacing = 6;
-            column_spacing = 12;
+            image = new Gtk.Image ();
 
             progress_bar = new Gtk.ProgressBar ();
             progress_bar.show_text = true;
@@ -62,13 +59,13 @@ namespace AppCenter {
 
             action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
 
-            cancel_button = new AppActionButton (_("Cancel"));
+            cancel_button = new Widgets.AppActionButton (_("Cancel"));
             cancel_button.clicked.connect (() => action_cancelled ());
 
-            action_button = new AppActionButton (_("Install"));
+            action_button = new Widgets.AppActionButton (_("Install"));
             action_button.clicked.connect (() => action_clicked.begin ());
 
-            uninstall_button = new AppActionButton (_("Uninstall"));
+            uninstall_button = new Widgets.AppActionButton (_("Uninstall"));
             uninstall_button.clicked.connect (() => uninstall_clicked.begin ());
 
             var button_grid = new Gtk.Grid ();
@@ -97,11 +94,11 @@ namespace AppCenter {
             action_stack.add_named (progress_grid, "progress");
         }
 
-        protected virtual void set_up_package () {
+        protected virtual void set_up_package (uint icon_size = 48) {
             package_name.label = package.get_name ();
             package_summary.label = package.get_summary ();
             package_summary.ellipsize = Pango.EllipsizeMode.END;
-            image.gicon = package.get_icon ();
+            image.gicon = package.get_icon (icon_size);
 
             package.notify["state"].connect (update_state);
 
@@ -109,7 +106,7 @@ namespace AppCenter {
             package.change_information.progress_changed.connect (update_progress);
             package.change_information.status_changed.connect (update_progress_status);
 
-            update_progress_status (); 
+            update_progress_status ();
             update_progress ();
             update_state ();
         }
@@ -204,25 +201,6 @@ namespace AppCenter {
                 update_state ();
             }
         }
-
-        protected class AppActionButton : Gtk.Button {
-            public AppActionButton (string? _label) {
-                valign = Gtk.Align.CENTER;
-                label = _label;
-            }
-
-            public void set_suggested_action_header () {
-                var style_ctx = get_style_context ();
-                style_ctx.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
-                style_ctx.add_class ("h3");
-            }
-
-            public void set_destructive_action_header () {
-                var style_ctx = get_style_context ();
-                style_ctx.add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
-                style_ctx.add_class ("h3");
-            }
-         }
     }
 }
 
