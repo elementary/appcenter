@@ -19,6 +19,8 @@ public class AppCenterCore.Client : Object {
     public signal void tasks_finished ();
 
     public bool connected { public get; private set; }
+    public bool updating_cache { public get; private set; }
+
     public AppCenterCore.Package os_updates { public get; private set; }
 
     private Gee.LinkedList<AppCenter.Task> task_list;
@@ -342,6 +344,8 @@ public class AppCenterCore.Client : Object {
 
     public async void refresh_updates () {
         var update_task = new AppCenter.Task ();
+        updating_cache = true;
+
         try {
             Pk.Results result = yield update_task.get_updates_async (0, null, (t, p) => {});
             bool was_empty = updates_number == 0U;
@@ -366,6 +370,7 @@ public class AppCenterCore.Client : Object {
         } catch (Error e) {
             critical (e.message);
         }
+        updating_cache = false;
     }
 
     public uint get_package_count (GLib.GenericArray<weak Pk.Package> package_array) {

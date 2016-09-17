@@ -24,8 +24,9 @@ public class AppCenter.Views.InstalledView : View {
     AppListUpdateView app_list_view;
 
     public InstalledView () {
+        var client = Client.get_default ();
         // We need this line in order to show the No Update view.
-        Client.get_default ().updates_available.connect (() => {
+        client.updates_available.connect (() => {
             var package = Client.get_default ().os_updates;
             if (package.update_available) {
                 app_list_view.add_package (package);
@@ -33,6 +34,8 @@ public class AppCenter.Views.InstalledView : View {
 
             app_list_view.updating_cache = false;
         });
+
+        client.bind_property ("updating-cache", app_list_view, "updating-cache", GLib.BindingFlags.DEFAULT);
     }
 
     construct {
