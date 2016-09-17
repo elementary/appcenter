@@ -160,19 +160,21 @@ public class AppCenterCore.Client : Object {
             sc.inhibit ();
             var results = yield update_task.update_packages_async (packages_ids, cancellable, cb);
             exit_status = results.get_exit_code ();
-            if (exit_status != Pk.Exit.SUCCESS) {
-                release_task (update_task);
-                throw new GLib.IOError.FAILED (Pk.Exit.enum_to_string (results.get_exit_code ()));
-            }
         } catch (Error e) {
-            release_task (update_task);
             throw e;
         } finally {
             sc.uninhibit ();
+            release_task (update_task);
+        }
+
+        if (exit_status != Pk.Exit.SUCCESS) {
+            throw new GLib.IOError.FAILED (Pk.Exit.enum_to_string (exit_status));
+        } else {
+            package.change_information.clear_update_info ();
         }
 
         yield refresh_updates ();
-        release_task (update_task);
+
         return exit_status;
     }
 
