@@ -3,35 +3,35 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-01 17:59-0500\n"
-"PO-Revision-Date: 2016-03-21 16:57+0000\n"
-"Last-Translator: brigazvi <brigazvi148@gmail.com>\n"
+"PO-Revision-Date: 2016-09-15 07:04+0000\n"
+"Last-Translator: elementaryart (old) <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-07-02 05:22+0000\n"
-"X-Generator: Launchpad (build 18115)\n"
+"X-Launchpad-Export-Date: 2016-09-16 06:41+0000\n"
+"X-Generator: Launchpad (build 18186)\n"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
-msgstr ""
+msgstr "מתחיל"
 
 #: ../src/Core/ChangeInformation.vala:56
 msgid "Waiting in queue"
-msgstr ""
+msgstr "ממתין בתור"
 
 #: ../src/Core/ChangeInformation.vala:58
 msgid "Running"
-msgstr ""
+msgstr "בריצה"
 
 #: ../src/Core/ChangeInformation.vala:60
 msgid "Querying"
-msgstr ""
+msgstr "בחקירה"
 
 #: ../src/Core/ChangeInformation.vala:62
 msgid "Getting information"
-msgstr ""
+msgstr "משיג מידע"
 
 #: ../src/Core/ChangeInformation.vala:64
 msgid "Removing packages"
@@ -55,139 +55,139 @@ msgstr "מתקין עדכונים"
 
 #: ../src/Core/ChangeInformation.vala:74
 msgid "Cleaning up packages"
-msgstr ""
+msgstr "מנקה חבילות"
 
 #: ../src/Core/ChangeInformation.vala:76
 msgid "Obsoleting packages"
-msgstr ""
+msgstr "מיישן חבילות"
 
 #: ../src/Core/ChangeInformation.vala:78
 msgid "Resolving dependencies"
-msgstr ""
+msgstr "פותר תלויות"
 
 #: ../src/Core/ChangeInformation.vala:80
 msgid "Checking signatures"
-msgstr ""
+msgstr "בודק חתימות"
 
 #: ../src/Core/ChangeInformation.vala:82
 msgid "Testing changes"
-msgstr ""
+msgstr "שינויים בבדיקה"
 
 #: ../src/Core/ChangeInformation.vala:84
 msgid "Committing changes"
-msgstr ""
+msgstr "מבצע שינויים"
 
 #: ../src/Core/ChangeInformation.vala:86
 msgid "Requesting data"
-msgstr ""
+msgstr "מבקש נתונים"
 
 #: ../src/Core/ChangeInformation.vala:88
 msgid "Finished"
-msgstr ""
+msgstr "הסתיים"
 
 #: ../src/Core/ChangeInformation.vala:90
 msgid "Cancelling"
-msgstr ""
+msgstr "מבטל"
 
 #: ../src/Core/ChangeInformation.vala:92
 msgid "Downloading repository information"
-msgstr ""
+msgstr "מוריד נתוני מאגר"
 
 #: ../src/Core/ChangeInformation.vala:94
 msgid "Downloading list of packages"
-msgstr ""
+msgstr "מוריד רשימת חבילות"
 
 #: ../src/Core/ChangeInformation.vala:96
 msgid "Downloading file lists"
-msgstr ""
+msgstr "מוריד רשימות קבצים"
 
 #: ../src/Core/ChangeInformation.vala:98
 msgid "Downloading lists of changes"
-msgstr ""
+msgstr "מוריד רשימת שינויים"
 
 #: ../src/Core/ChangeInformation.vala:100
 msgid "Downloading groups"
-msgstr ""
+msgstr "מוריד קבוצות"
 
 #: ../src/Core/ChangeInformation.vala:102
 msgid "Downloading update information"
-msgstr ""
+msgstr "מוריד מידע עדכון"
 
 #: ../src/Core/ChangeInformation.vala:104
 msgid "Repackaging files"
-msgstr ""
+msgstr "אורז קבצים מחדש"
 
 #: ../src/Core/ChangeInformation.vala:106
 msgid "Loading cache"
-msgstr ""
+msgstr "טוען מטמון"
 
 #: ../src/Core/ChangeInformation.vala:108
 msgid "Scanning applications"
-msgstr ""
+msgstr "סורק יישומים מותקנים"
 
 #: ../src/Core/ChangeInformation.vala:110
 msgid "Generating package lists"
-msgstr ""
+msgstr "מייצר רשימת חבילות"
 
 #: ../src/Core/ChangeInformation.vala:112
 msgid "Waiting for package manager lock"
-msgstr ""
+msgstr "ממתין לנעילת מנהל החבילות"
 
 #: ../src/Core/ChangeInformation.vala:114
 msgid "Waiting for authentication"
-msgstr ""
+msgstr "ממתין לאימות"
 
 #: ../src/Core/ChangeInformation.vala:116
 msgid "Updating running applications"
-msgstr ""
+msgstr "מעדכן את רשימת היישומים הפעילים"
 
 #: ../src/Core/ChangeInformation.vala:118
 msgid "Checking applications in use"
-msgstr ""
+msgstr "בודק יישומים בשימוש"
 
 #: ../src/Core/ChangeInformation.vala:120
 msgid "Checking libraries in use"
-msgstr ""
+msgstr "בודק ספריות בשימוש"
 
 #: ../src/Core/ChangeInformation.vala:122
 msgid "Copying files"
-msgstr ""
+msgstr "מעתיק קבצים"
 
 #: ../src/Core/ChangeInformation.vala:124
 msgid "Unknown state"
-msgstr ""
+msgstr "מצב לא ידוע"
 
 #: ../src/Core/Client.vala:62
 msgid "Operating System Updates"
-msgstr ""
+msgstr "עדכוני מערכת הפעלה"
 
 #: ../src/Core/Client.vala:63
 msgid "Updates to system components"
-msgstr ""
+msgstr "עדכונים לרכיבי המערכת"
 
 #: ../src/Core/Client.vala:340
 msgid "Update Available"
 msgid_plural "Updates Available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "עדכון זמין"
+msgstr[1] "עדכונים זמינים"
 
 #: ../src/Core/Client.vala:341
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "עדכון אחד זמין עבור המערכת"
+msgstr[1] "%u עדכונים זמינים עבור המערכת"
 
 #: ../src/Core/Package.vala:80
 msgid "Application installed"
-msgstr ""
+msgstr "יישום הותקן"
 
 #: ../src/Core/Package.vala:81
 msgid "%s has been successfully installed"
-msgstr ""
+msgstr "% הותקן בהצלחה"
 
 #: ../src/Application.vala:35
 msgid "App Center"
-msgstr ""
+msgstr "מרכז היישומים"
 
 #: ../src/Application.vala:53
 msgid "translator-credits"
@@ -195,23 +195,24 @@ msgstr ""
 "Launchpad Contributions:\n"
 "  Danny Damsky https://launchpad.net/~dannydamsky99\n"
 "  Megolas https://launchpad.net/~ofeklavie\n"
+"  Niv Baehr https://launchpad.net/~rzil\n"
 "  Uri Damsker  אורי דמסקר https://launchpad.net/~ud1955\n"
 "  brigazvi https://launchpad.net/~brigazvi148\n"
 "  elementaryart (old) https://launchpad.net/~elementaryart"
 
 #: ../src/MainWindow.vala:89
 msgid "AppCenter"
-msgstr ""
+msgstr "AppCenter"
 
 #: ../src/MainWindow.vala:97 ../src/Views/CategoryView.vala:68
 #: ../src/Views/CategoryView.vala:75
 msgid "Categories"
-msgstr "תחומים"
+msgstr "קטגוריות"
 
 #: ../src/MainWindow.vala:98 ../src/Views/InstalledView.vala:42
 msgctxt "view"
 msgid "Updates"
-msgstr ""
+msgstr "עדכונים"
 
 #: ../src/MainWindow.vala:106
 msgid "Search Apps"
@@ -221,110 +222,110 @@ msgstr "חיפוש יישומים"
 #: ../src/Views/SearchView.vala:35
 msgctxt "view"
 msgid "Search"
-msgstr ""
+msgstr "חיפוש"
 
 #: ../src/Views/AppListView.vala:54
 msgid "No Results"
-msgstr ""
+msgstr "אין תוצאות"
 
 #: ../src/Views/AppListView.vala:54
 msgid "No apps could be found. Try changing search terms."
-msgstr ""
+msgstr "לא נמצאו יישומים. כדאי לשנות את מונחי החיפוש"
 
 #: ../src/Views/AppListView.vala:146
 msgid "Searching for updates…"
-msgstr ""
+msgstr "מחפש עדכונים..."
 
 #: ../src/Views/AppListView.vala:152
 msgid "Up to Date"
-msgstr ""
+msgstr "עדכני"
 
 #: ../src/Views/AppListView.vala:175
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "עדכון זמין"
+msgstr[1] "%u עדכונים זמינים"
 
 #: ../src/Views/AppListView.vala:181
 msgid "Size: %s"
-msgstr ""
+msgstr "גודל: %s"
 
 #: ../src/Views/AppListView.vala:183
 msgid "Update All"
-msgstr ""
+msgstr "עדכון הכול"
 
 #: ../src/Views/FeaturedView.vala:33
 msgid "Best Rated"
-msgstr ""
+msgstr "המדורגים ביותר"
 
 #: ../src/Views/FeaturedView.vala:36
 msgid "Latest Apps"
-msgstr ""
+msgstr "החדשים ביותר"
 
 #: ../src/Views/CategoryView.vala:118
 msgid "Audio"
-msgstr ""
+msgstr "שמע"
 
 #: ../src/Views/CategoryView.vala:131
 msgid "Development"
-msgstr ""
+msgstr "פיתוח"
 
 #: ../src/Views/CategoryView.vala:144
 msgid "Accessories"
-msgstr ""
+msgstr "עזרים"
 
 #: ../src/Views/CategoryView.vala:157
 msgid "Office"
-msgstr ""
+msgstr "משרד"
 
 #: ../src/Views/CategoryView.vala:170
 msgid "System"
-msgstr ""
+msgstr "מערכת"
 
 #: ../src/Views/CategoryView.vala:183
 msgid "Video"
-msgstr ""
+msgstr "וידאו"
 
 #: ../src/Views/CategoryView.vala:196
 msgid "Graphics"
-msgstr ""
+msgstr "גרפיקה"
 
 #: ../src/Views/CategoryView.vala:208
 msgid "Games"
-msgstr ""
+msgstr "משחקים"
 
 #: ../src/Views/CategoryView.vala:221
 msgid "Education"
-msgstr ""
+msgstr "השכלה"
 
 #: ../src/Views/CategoryView.vala:233
 msgid "Internet"
-msgstr ""
+msgstr "אינטרנט"
 
 #: ../src/Views/CategoryView.vala:246
 msgid "Science & Engineering"
-msgstr ""
+msgstr "מדע והנדסה"
 
 #: ../src/Views/CategoryView.vala:258
 msgid "Universal Access"
-msgstr ""
+msgstr "גישה אוניברסלית"
 
 #: ../src/Views/AppInfoView.vala:55
 msgid "Extensions:"
-msgstr ""
+msgstr "הרחבות:"
 
 #: ../src/Views/AppInfoView.vala:67 ../src/Views/AppInfoView.vala:281
 #: ../src/Widgets/PackageRow.vala:44 ../src/Widgets/PackageRow.vala:144
 msgid "Update"
-msgstr ""
+msgstr "עדכון"
 
 #: ../src/Views/AppInfoView.vala:110
 msgid "Screenshot Not Available"
-msgstr ""
+msgstr "תצלום מסך אינו זמין"
 
 #: ../src/Views/AppInfoView.vala:161 ../src/Widgets/PackageRow.vala:92
 msgid "Cancel"
-msgstr ""
+msgstr "ביטול"
 
 #: ../src/Views/AppInfoView.vala:166 ../src/Views/AppInfoView.vala:291
 #: ../src/Views/AppInfoView.vala:328 ../src/Widgets/PackageRow.vala:97
@@ -334,7 +335,7 @@ msgstr "התקנה"
 
 #: ../src/Views/AppInfoView.vala:171
 msgid "Uninstall"
-msgstr ""
+msgstr "הסרה"
 
 #~ msgid "Quit"
 #~ msgstr "יציאה"

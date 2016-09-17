@@ -48,11 +48,6 @@ namespace AppCenter {
         construct {
             image = new Gtk.Image ();
 
-            margin = 6;
-            margin_start = 12;
-            row_spacing = 6;
-            column_spacing = 12;
-
             progress_bar = new Gtk.ProgressBar ();
             progress_bar.show_text = true;
             progress_bar.valign = Gtk.Align.CENTER;

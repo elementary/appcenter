@@ -57,19 +57,13 @@ namespace AppCenter.Widgets {
         private class PackageRowGrid : AbstractAppContainer {
             public signal void changed ();
 
-            public PackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? size_group, bool show_uninstall = true) {
-                this.package = package;
-                this.show_uninstall = show_uninstall;
-                set_up_package ();
-
-                if (size_group != null) {
-                    size_group.add_widget (action_button);
-                    size_group.add_widget (cancel_button);
-                    size_group.add_widget (uninstall_button);
-                }
-            }
-
             construct {
+                margin = 6;
+                margin_start = 12;
+                margin_end = 12;
+                column_spacing = 12;
+                row_spacing = 6;
+
                 image = new Gtk.Image ();
                 image.icon_size = Gtk.IconSize.DIALOG;
                 /* Needed to enforce size on icons from Filesystem/Remote */
@@ -92,6 +86,18 @@ namespace AppCenter.Widgets {
                 attach (package_name, 1, 0, 1, 1);
                 attach (package_summary, 1, 1, 1, 1);
                 attach (action_stack, 2, 0, 1, 2);
+            }
+
+            public PackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? size_group, bool show_uninstall = true) {
+                this.package = package;
+                this.show_uninstall = show_uninstall;
+                set_up_package ();
+
+                if (size_group != null) {
+                    size_group.add_widget (action_button);
+                    size_group.add_widget (cancel_button);
+                    size_group.add_widget (uninstall_button);
+                }
             }
 
             protected override void update_state () {

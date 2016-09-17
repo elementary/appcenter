@@ -41,22 +41,30 @@ namespace AppCenter.Widgets {
         }
 
         /** AppListRow Interface methods **/
-        /** Updates header row reports it has updates and is os_update in order
-          * to sort first in list **/
+
+        /** Updates header row reports it has updates in order to sort first in list **/
+        /** Updated header reports it has updates when updating in order to sort first in list **/
         public bool get_update_available () {
-            return is_updates_header;
+            return is_updates_header || grid.is_updating && !is_updates_header;
         }
 
         public bool get_is_os_updates () {
-            return is_updates_header;
+            critical ("Must not attempt to get is_os_update from header row");
+            assert_not_reached ();
         }
 
+        /* This indicates it is a header row, not a package row */
         public bool has_package () {return false;}
 
-        public AppCenterCore.Package? get_package () {return null;}
+        public AppCenterCore.Package? get_package () {
+            critical ("Must not attempt to get package from header row");
+            assert_not_reached ();
+        }
 
-        /** Must sort ahead of any package name **/
-        public string get_name_label () {return "AAAAAAAAAAA";}
+        public string get_name_label () {
+            critical ("Must not attempt to get package name from header row");
+            assert_not_reached ();
+        }
 
         public void add_widget (Gtk.Widget widget) {
             grid.add (widget);
@@ -74,9 +82,7 @@ namespace AppCenter.Widgets {
             public bool is_updating {get; protected set; default = false;}
 
             construct {
-                margin = 6;
-                margin_start = 12;
-                row_spacing = 6;
+                margin = 12;
                 column_spacing = 12;
             }
 
@@ -95,6 +101,7 @@ namespace AppCenter.Widgets {
             private Gtk.Label updates_label;
 
             construct {
+                margin_top = 18;
                 updates_label = new Gtk.Label (null);
                 ((Gtk.Misc) updates_label).xalign = 0;
                 updates_label.get_style_context ().add_class ("h4");
@@ -105,8 +112,6 @@ namespace AppCenter.Widgets {
                 add (updates_label);
                 add (update_size_label);
             }
-
-            public UpdatesGrid () {}
 
             public override void update (uint _update_numbers, uint64 _update_real_size, bool _is_updating) {
                 store_data (_update_numbers,  _update_real_size, _is_updating);
@@ -119,10 +124,8 @@ namespace AppCenter.Widgets {
                     } else {
                         hide ();
                     }
-                } else { /* Should not happen */
-                    hide ();
-                    updates_label.label = _("Searching for updates…");
-                    update_size_label.label = "";
+                } else {
+                    hide (); /* Updated header shows updating spinner and message */
                 }
             }
         }
@@ -142,8 +145,6 @@ namespace AppCenter.Widgets {
                 add (label);
                 add (spinner);
             }
-
-            public UpdatedGrid () {}
 
             public override void update (uint _update_numbers, uint64 _update_real_size, bool _is_updating) {
                 store_data (_update_numbers,  _update_real_size, _is_updating);
