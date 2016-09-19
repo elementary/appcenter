@@ -65,14 +65,14 @@ public class AppCenter.Views.CategoryView : View {
         if (current_category == null) {
             set_visible_child (category_scrolled);
         } else {
-            subview_entered (_("Categories"));
+            subview_entered (_("Categories"), current_category);
             set_visible_child_name (current_category);
             current_category = null;
         }
     }
 
     private void show_app_list_for_category (AppStream.Category category) {
-        subview_entered (_("Categories"));
+        subview_entered (_("Categories"), category.name);
         var child = get_child_by_name (category.name);
         if (child != null) {
             set_visible_child (child);
@@ -85,8 +85,8 @@ public class AppCenter.Views.CategoryView : View {
         set_visible_child (app_list_view);
 
         app_list_view.show_app.connect ((package) => {
-            subview_entered (category.name);
             current_category = category.name;
+            subview_entered (category.name, "");
             show_package (package);
         });
 

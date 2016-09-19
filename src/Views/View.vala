@@ -19,7 +19,7 @@
  */
 
 public abstract class AppCenter.View : Gtk.Stack {
-    public signal void subview_entered (string view_name);
+    public signal void subview_entered (string view_name, string? custom_title = null);
 
     construct {
         get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);

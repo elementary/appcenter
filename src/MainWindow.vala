@@ -16,6 +16,8 @@
 
 public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     private Gtk.Revealer view_mode_revealer;
+    private Gtk.Stack custom_title_stack;
+    private Gtk.Label category_header;
     private Granite.Widgets.ModeButton view_mode;
     private Gtk.HeaderBar headerbar;
     private Gtk.Stack stack;
@@ -102,13 +104,21 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         view_mode_revealer.transition_type = Gtk.RevealerTransitionType.CROSSFADE;
         view_mode_revealer.add (view_mode);
 
+        category_header = new Gtk.Label ("Category Header");
+        category_header.get_style_context ().add_class (Gtk.STYLE_CLASS_TITLE);
+
+        custom_title_stack = new Gtk.Stack ();
+        custom_title_stack.add (view_mode_revealer);
+        custom_title_stack.add (category_header);
+        custom_title_stack.set_visible_child (view_mode_revealer);
+
         search_entry = new Gtk.SearchEntry ();
         search_entry.placeholder_text = _("Search Apps");
 
         /* HeaderBar */
         headerbar = new Gtk.HeaderBar ();
         headerbar.show_close_button = true;
-        headerbar.set_custom_title (view_mode_revealer);
+        headerbar.set_custom_title (custom_title_stack);
         headerbar.pack_start (return_button);
         headerbar.pack_end (search_entry);
 
@@ -185,17 +195,24 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         }
     }
 
-    private void view_opened (string name) {
-        return_button.label = name;
+    private void view_opened (string return_name, string? custom_header = null) {
+        return_button.label = return_name;
         return_button.no_show_all = false;
         return_button.show_all ();
 
         view_mode_revealer.reveal_child = false;
+        if (custom_header != null) {
+            category_header.label = custom_header;
+            custom_title_stack.set_visible_child (category_header);
+        }
         search_entry.sensitive = false;
     }
 
     private void view_return () {
         view_mode_revealer.reveal_child = true;
+        custom_title_stack.set_visible_child (view_mode_revealer);
+        category_header.label = "";
+
         search_entry.sensitive = true;
         search_entry.grab_focus_without_selecting ();
         return_button.no_show_all = true;
