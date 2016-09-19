@@ -54,6 +54,10 @@ namespace AppCenter.Widgets {
             grid.action_sensitive = is_sensitive;
         }
 
+        public bool has_package () {
+            return true;
+        }
+
         private class PackageRowGrid : AbstractAppContainer {
             public signal void changed ();
 

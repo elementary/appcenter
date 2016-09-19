@@ -45,14 +45,16 @@ namespace AppCenter.Views {
         private AppCenterCore.Package first_package;
         private SuspendControl sc;
 
-        private bool _updating_cache = true;
+        private bool _updating_cache;
         public bool updating_cache {
             get {
                 return _updating_cache;
             }
             set {
-                _updating_cache = value;
-                update_headers ();
+                if (_updating_cache != value) {
+                    _updating_cache = value;
+                    update_headers ();
+                }
             }
         }
 
@@ -79,7 +81,9 @@ namespace AppCenter.Views {
             sc = new SuspendControl ();
         }
 
-        public AppListUpdateView () {}
+        public AppListUpdateView () {
+            _updating_cache = true;
+        }
 
         protected override void after_add_remove_change_row () {update_headers ();}
 

@@ -21,7 +21,7 @@
 namespace AppCenter.Widgets {
     public class UpdateHeaderRow : Gtk.ListBoxRow, AppListRow {
         AbstractHeaderGrid grid;
-        bool is_updates_header;
+        public bool is_updates_header {get; private set;}
 
         construct {
             set_activatable (false);
@@ -45,7 +45,7 @@ namespace AppCenter.Widgets {
         /** Updates header row reports it has updates in order to sort first in list **/
         /** Updated header reports it has updates when updating in order to sort first in list **/
         public bool get_update_available () {
-            return is_updates_header || grid.is_updating && !is_updates_header;
+            return is_updates_header || grid.is_updating;
         }
 
         public bool get_is_os_updates () {
@@ -72,6 +72,7 @@ namespace AppCenter.Widgets {
 
         public void update (uint _update_numbers, uint64 _update_real_size, bool _is_updating) {
             grid.update (_update_numbers, _update_real_size, _is_updating);
+            changed (); /* Triggers resort */
         }
         /** ---------------- **/
 
