@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-01 17:59-0500\n"
+"POT-Creation-Date: 2016-09-19 10:19-0700\n"
 "PO-Revision-Date: 2016-08-29 23:35+0000\n"
 "Last-Translator: Indrit Bashkimi <indrit.bashkimi@gmail.com>\n"
 "Language-Team: sq\n"
@@ -11,255 +11,87 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-08-31 05:57+0000\n"
-"X-Generator: Launchpad (build 18179)\n"
+"X-Launchpad-Export-Date: 2016-09-20 07:26+0000\n"
+"X-Generator: Launchpad (build 18200)\n"
 "Language: sq\n"
 
-#: ../src/Core/ChangeInformation.vala:54
-msgid "Starting"
-msgstr ""
-
-#: ../src/Core/ChangeInformation.vala:56
-msgid "Waiting in queue"
-msgstr "Duke pritur në radhë"
-
-#: ../src/Core/ChangeInformation.vala:58
-msgid "Running"
-msgstr ""
-
-#: ../src/Core/ChangeInformation.vala:60
-msgid "Querying"
-msgstr ""
-
-#: ../src/Core/ChangeInformation.vala:62
-msgid "Getting information"
-msgstr "Duke marrë informata"
-
-#: ../src/Core/ChangeInformation.vala:64
-msgid "Removing packages"
-msgstr "Duke hequr paketat"
-
-#: ../src/Core/ChangeInformation.vala:66
-msgid "Downloading packages"
-msgstr "Duke shkarkuar paketat"
-
-#: ../src/Core/ChangeInformation.vala:68
-msgid "Installing packages"
-msgstr "Duke instaluar paketat"
-
-#: ../src/Core/ChangeInformation.vala:70
-msgid "Refreshing software list"
-msgstr ""
-
-#: ../src/Core/ChangeInformation.vala:72
-msgid "Installing updates"
-msgstr "Duke instaluar përditësimet"
-
-#: ../src/Core/ChangeInformation.vala:74
-msgid "Cleaning up packages"
-msgstr "Duke pastruar paketat"
-
-#: ../src/Core/ChangeInformation.vala:76
-msgid "Obsoleting packages"
-msgstr ""
-
-#: ../src/Core/ChangeInformation.vala:78
-msgid "Resolving dependencies"
-msgstr "Duke zgjidhur vartësitë"
-
-#: ../src/Core/ChangeInformation.vala:80
-msgid "Checking signatures"
-msgstr "Duke kontrolluar nënshkrimet"
-
-#: ../src/Core/ChangeInformation.vala:82
-msgid "Testing changes"
-msgstr "Duke testuar ndryshimet"
-
-#: ../src/Core/ChangeInformation.vala:84
-msgid "Committing changes"
-msgstr "Duke bërë ndryshimet"
-
-#: ../src/Core/ChangeInformation.vala:86
-msgid "Requesting data"
-msgstr "Duke kërkuar të dhënat"
-
-#: ../src/Core/ChangeInformation.vala:88
-msgid "Finished"
-msgstr "Përfundoi"
-
-#: ../src/Core/ChangeInformation.vala:90
-msgid "Cancelling"
-msgstr "Duke anuluar"
-
-#: ../src/Core/ChangeInformation.vala:92
-msgid "Downloading repository information"
-msgstr ""
-
-#: ../src/Core/ChangeInformation.vala:94
-msgid "Downloading list of packages"
-msgstr "Duke shkarkuar listën e paketave"
-
-#: ../src/Core/ChangeInformation.vala:96
-msgid "Downloading file lists"
-msgstr "Duke shkarkuar listat e skedarëve"
-
-#: ../src/Core/ChangeInformation.vala:98
-msgid "Downloading lists of changes"
-msgstr "Duke shkarkuar listat e ndryshimeve"
-
-#: ../src/Core/ChangeInformation.vala:100
-msgid "Downloading groups"
-msgstr "Duke shkarkuar grupet"
-
-#: ../src/Core/ChangeInformation.vala:102
-msgid "Downloading update information"
-msgstr "Duke shkarkuar informacione mbi përditësimin"
-
-#: ../src/Core/ChangeInformation.vala:104
-msgid "Repackaging files"
-msgstr "Duke ripaketuar skedarët"
-
-#: ../src/Core/ChangeInformation.vala:106
-msgid "Loading cache"
-msgstr ""
-
-#: ../src/Core/ChangeInformation.vala:108
-msgid "Scanning applications"
-msgstr "Duke skanuar programet"
-
-#: ../src/Core/ChangeInformation.vala:110
-msgid "Generating package lists"
-msgstr "Duke gjeneruar listat e paketave"
-
-#: ../src/Core/ChangeInformation.vala:112
-msgid "Waiting for package manager lock"
-msgstr ""
-
-#: ../src/Core/ChangeInformation.vala:114
-msgid "Waiting for authentication"
-msgstr "Duke pritur identifikimin"
-
-#: ../src/Core/ChangeInformation.vala:116
-msgid "Updating running applications"
-msgstr ""
-
-#: ../src/Core/ChangeInformation.vala:118
-msgid "Checking applications in use"
-msgstr "Duke kontrolluar programet në përdorim"
-
-#: ../src/Core/ChangeInformation.vala:120
-msgid "Checking libraries in use"
-msgstr ""
-
-#: ../src/Core/ChangeInformation.vala:122
-msgid "Copying files"
-msgstr "Duke kopjuar skedarët"
-
-#: ../src/Core/ChangeInformation.vala:124
-msgid "Unknown state"
-msgstr "Gjendje e panjohur"
-
-#: ../src/Core/Client.vala:62
-msgid "Operating System Updates"
-msgstr "Përditësime të Sistemit Operativ"
-
-#: ../src/Core/Client.vala:63
-msgid "Updates to system components"
-msgstr "Përditësime të komponentëve të sistemit"
-
-#: ../src/Core/Client.vala:340
-msgid "Update Available"
-msgid_plural "Updates Available"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../src/Core/Client.vala:341
-msgid "%u update is available for your system"
-msgid_plural "%u updates are available for your system"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../src/Core/Package.vala:80
-msgid "Application installed"
-msgstr "Programi u instalua"
-
-#: ../src/Core/Package.vala:81
-msgid "%s has been successfully installed"
-msgstr "%s është instaluar me sukses"
-
-#: ../src/Application.vala:35
-msgid "App Center"
-msgstr ""
-
-#: ../src/Application.vala:53
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Gim  https://launchpad.net/~g1m\n"
-"  Indrit Bashkimi https://launchpad.net/~indritbsh\n"
-"  elementaryart (old) https://launchpad.net/~elementaryart"
-
-#: ../src/MainWindow.vala:89
-msgid "AppCenter"
-msgstr ""
-
-#: ../src/MainWindow.vala:97 ../src/Views/CategoryView.vala:68
-#: ../src/Views/CategoryView.vala:75
-msgid "Categories"
-msgstr "Kategoritë"
-
-#: ../src/MainWindow.vala:98 ../src/Views/InstalledView.vala:42
-msgctxt "view"
-msgid "Updates"
-msgstr "Përditësimet"
-
-#: ../src/MainWindow.vala:106
-msgid "Search Apps"
-msgstr "Kërko aplikacione"
-
-#. / TRANSLATORS: the name of the Search view
-#: ../src/Views/SearchView.vala:35
-msgctxt "view"
-msgid "Search"
-msgstr "Kërko"
-
-#: ../src/Views/AppListView.vala:54
-msgid "No Results"
-msgstr "Pa rezultate"
-
-#: ../src/Views/AppListView.vala:54
-msgid "No apps could be found. Try changing search terms."
-msgstr "Nuk u gjetën programe. Provo të ndryshosh termat e kërkimit."
-
-#: ../src/Views/AppListView.vala:146
-msgid "Searching for updates…"
-msgstr "Duke kërkuar përditësime…"
-
-#: ../src/Views/AppListView.vala:152
-msgid "Up to Date"
-msgstr "Përditësuar"
-
-#: ../src/Views/AppListView.vala:175
+#: ../src/Widgets/UpdateHeaderRow.vala:121
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/Views/AppListView.vala:181
+#: ../src/Widgets/UpdateHeaderRow.vala:122
 msgid "Size: %s"
 msgstr "Përmasa: %s"
 
-#: ../src/Views/AppListView.vala:183
+#: ../src/Widgets/UpdateHeaderRow.vala:158
+msgid "Searching for updates…"
+msgstr "Duke kërkuar përditësime…"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:165
+msgid "Up to Date"
+msgstr "Përditësuar"
+
+#: ../src/AbstractAppContainer.vala:62
+msgid "Cancel"
+msgstr "Anulo"
+
+#: ../src/AbstractAppContainer.vala:65 ../src/AbstractAppContainer.vala:129
+msgid "Install"
+msgstr "Instalo"
+
+#: ../src/AbstractAppContainer.vala:68
+msgid "Uninstall"
+msgstr "Hiq"
+
+#: ../src/AbstractAppContainer.vala:154
+msgid "Update"
+msgstr "Përditëso"
+
+#: ../src/MainWindow.vala:91
+msgid "AppCenter"
+msgstr ""
+
+#: ../src/MainWindow.vala:99 ../src/Views/CategoryView.vala:68
+#: ../src/Views/CategoryView.vala:75
+msgid "Categories"
+msgstr "Kategoritë"
+
+#: ../src/MainWindow.vala:100 ../src/Views/InstalledView.vala:45
+msgctxt "view"
+msgid "Updates"
+msgstr "Përditësimet"
+
+#: ../src/MainWindow.vala:116
+msgid "Search Apps"
+msgstr "Kërko aplikacione"
+
+#: ../src/AbstractAppList.vala:30
+msgid "No Results"
+msgstr "Pa rezultate"
+
+#: ../src/AbstractAppList.vala:30
+msgid "No apps could be found. Try changing search terms."
+msgstr "Nuk u gjetën programe. Provo të ndryshosh termat e kërkimit."
+
+#: ../src/Views/AppListView.vala:64
 msgid "Update All"
 msgstr "Përditësoji të gjithë"
 
-#: ../src/Views/FeaturedView.vala:33
-msgid "Best Rated"
-msgstr "Më të vlerësuarit"
+#. / TRANSLATORS: the name of the Search view
+#: ../src/Views/SearchView.vala:36
+msgctxt "view"
+msgid "Search"
+msgstr "Kërko"
 
-#: ../src/Views/FeaturedView.vala:36
-msgid "Latest Apps"
-msgstr "Programet e fundit"
+#: ../src/Views/AppInfoView.vala:48
+msgid "Screenshot Not Available"
+msgstr ""
+
+#: ../src/Views/AppInfoView.vala:128
+msgid "Extensions:"
+msgstr ""
 
 #: ../src/Views/CategoryView.vala:118
 msgid "Audio"
@@ -309,32 +141,197 @@ msgstr "Shkencë dhe Inxhinieri"
 msgid "Universal Access"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:55
-msgid "Extensions:"
+#: ../src/Views/FeaturedView.vala:33
+msgid "Best Rated"
+msgstr "Më të vlerësuarit"
+
+#: ../src/Views/FeaturedView.vala:36
+msgid "Latest Apps"
+msgstr "Programet e fundit"
+
+#: ../src/Core/Client.vala:62
+msgid "Operating System Updates"
+msgstr "Përditësime të Sistemit Operativ"
+
+#: ../src/Core/Client.vala:63
+msgid "Updates to system components"
+msgstr "Përditësime të komponentëve të sistemit"
+
+#: ../src/Core/Client.vala:356
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/Core/Client.vala:357
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/Core/Package.vala:117
+msgid "Application installed"
+msgstr "Programi u instalua"
+
+#: ../src/Core/Package.vala:118
+msgid "%s has been successfully installed"
+msgstr "%s është instaluar me sukses"
+
+#: ../src/Core/ChangeInformation.vala:47
+msgid "Starting"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:67 ../src/Views/AppInfoView.vala:281
-#: ../src/Widgets/PackageRow.vala:44 ../src/Widgets/PackageRow.vala:144
-msgid "Update"
-msgstr "Përditëso"
+#: ../src/Core/ChangeInformation.vala:49
+msgid "Waiting in queue"
+msgstr "Duke pritur në radhë"
 
-#: ../src/Views/AppInfoView.vala:110
-msgid "Screenshot Not Available"
+#: ../src/Core/ChangeInformation.vala:51
+msgid "Running"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:161 ../src/Widgets/PackageRow.vala:92
-msgid "Cancel"
-msgstr "Anulo"
+#: ../src/Core/ChangeInformation.vala:53
+msgid "Querying"
+msgstr ""
 
-#: ../src/Views/AppInfoView.vala:166 ../src/Views/AppInfoView.vala:291
-#: ../src/Views/AppInfoView.vala:328 ../src/Widgets/PackageRow.vala:97
-#: ../src/Widgets/PackageRow.vala:155
-msgid "Install"
-msgstr "Instalo"
+#: ../src/Core/ChangeInformation.vala:55
+msgid "Getting information"
+msgstr "Duke marrë informata"
 
-#: ../src/Views/AppInfoView.vala:171
-msgid "Uninstall"
-msgstr "Hiq"
+#: ../src/Core/ChangeInformation.vala:57
+msgid "Removing packages"
+msgstr "Duke hequr paketat"
+
+#: ../src/Core/ChangeInformation.vala:59
+msgid "Downloading packages"
+msgstr "Duke shkarkuar paketat"
+
+#: ../src/Core/ChangeInformation.vala:61
+msgid "Installing packages"
+msgstr "Duke instaluar paketat"
+
+#: ../src/Core/ChangeInformation.vala:63
+msgid "Refreshing software list"
+msgstr ""
+
+#: ../src/Core/ChangeInformation.vala:65
+msgid "Installing updates"
+msgstr "Duke instaluar përditësimet"
+
+#: ../src/Core/ChangeInformation.vala:67
+msgid "Cleaning up packages"
+msgstr "Duke pastruar paketat"
+
+#: ../src/Core/ChangeInformation.vala:69
+msgid "Obsoleting packages"
+msgstr ""
+
+#: ../src/Core/ChangeInformation.vala:71
+msgid "Resolving dependencies"
+msgstr "Duke zgjidhur vartësitë"
+
+#: ../src/Core/ChangeInformation.vala:73
+msgid "Checking signatures"
+msgstr "Duke kontrolluar nënshkrimet"
+
+#: ../src/Core/ChangeInformation.vala:75
+msgid "Testing changes"
+msgstr "Duke testuar ndryshimet"
+
+#: ../src/Core/ChangeInformation.vala:77
+msgid "Committing changes"
+msgstr "Duke bërë ndryshimet"
+
+#: ../src/Core/ChangeInformation.vala:79
+msgid "Requesting data"
+msgstr "Duke kërkuar të dhënat"
+
+#: ../src/Core/ChangeInformation.vala:81
+msgid "Finished"
+msgstr "Përfundoi"
+
+#: ../src/Core/ChangeInformation.vala:83
+msgid "Cancelling"
+msgstr "Duke anuluar"
+
+#: ../src/Core/ChangeInformation.vala:85
+msgid "Downloading repository information"
+msgstr ""
+
+#: ../src/Core/ChangeInformation.vala:87
+msgid "Downloading list of packages"
+msgstr "Duke shkarkuar listën e paketave"
+
+#: ../src/Core/ChangeInformation.vala:89
+msgid "Downloading file lists"
+msgstr "Duke shkarkuar listat e skedarëve"
+
+#: ../src/Core/ChangeInformation.vala:91
+msgid "Downloading lists of changes"
+msgstr "Duke shkarkuar listat e ndryshimeve"
+
+#: ../src/Core/ChangeInformation.vala:93
+msgid "Downloading groups"
+msgstr "Duke shkarkuar grupet"
+
+#: ../src/Core/ChangeInformation.vala:95
+msgid "Downloading update information"
+msgstr "Duke shkarkuar informacione mbi përditësimin"
+
+#: ../src/Core/ChangeInformation.vala:97
+msgid "Repackaging files"
+msgstr "Duke ripaketuar skedarët"
+
+#: ../src/Core/ChangeInformation.vala:99
+msgid "Loading cache"
+msgstr ""
+
+#: ../src/Core/ChangeInformation.vala:101
+msgid "Scanning applications"
+msgstr "Duke skanuar programet"
+
+#: ../src/Core/ChangeInformation.vala:103
+msgid "Generating package lists"
+msgstr "Duke gjeneruar listat e paketave"
+
+#: ../src/Core/ChangeInformation.vala:105
+msgid "Waiting for package manager lock"
+msgstr ""
+
+#: ../src/Core/ChangeInformation.vala:107
+msgid "Waiting for authentication"
+msgstr "Duke pritur identifikimin"
+
+#: ../src/Core/ChangeInformation.vala:109
+msgid "Updating running applications"
+msgstr ""
+
+#: ../src/Core/ChangeInformation.vala:111
+msgid "Checking applications in use"
+msgstr "Duke kontrolluar programet në përdorim"
+
+#: ../src/Core/ChangeInformation.vala:113
+msgid "Checking libraries in use"
+msgstr ""
+
+#: ../src/Core/ChangeInformation.vala:115
+msgid "Copying files"
+msgstr "Duke kopjuar skedarët"
+
+#: ../src/Core/ChangeInformation.vala:117
+msgid "Unknown state"
+msgstr "Gjendje e panjohur"
+
+#: ../src/Application.vala:35
+msgid "App Center"
+msgstr ""
+
+#: ../src/Application.vala:53
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Gim  https://launchpad.net/~g1m\n"
+"  Indrit Bashkimi https://launchpad.net/~indritbsh\n"
+"  elementaryart (old) https://launchpad.net/~elementaryart"
 
 #~ msgid "Apps View"
 #~ msgstr "Shiko Aplikacionet"
