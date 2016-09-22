@@ -42,10 +42,10 @@ public class AppCenter.Views.SearchView : View {
         set_visible_child (app_list_view);
     }
     
-    public async void search (string search_term) {
+    public async void search (string search_term, AppStream.Category? category) {
         app_list_view.clear ();
         unowned Client client = Client.get_default ();
-        var found_apps = client.search_applications (search_term, null);
+        var found_apps = client.search_applications (search_term, category);
         
         if (found_apps.size > 0) {
             var apps_array = found_apps.to_array ();

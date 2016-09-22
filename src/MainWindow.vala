@@ -187,11 +187,10 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
                     break;
             }
         } else {
-            search_view.search.begin (research);
-            if (!return_button.visible) {
-                view_mode_revealer.reveal_child = false;
-                stack.visible_child = search_view;
-            }
+            search_view.search.begin (research, category_view.currently_viewed_category);
+            view_mode_revealer.reveal_child = false;
+            stack.visible_child = search_view;
+
         }
     }
 
@@ -205,7 +204,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             category_header.label = custom_header;
             custom_title_stack.set_visible_child (category_header);
         }
-        search_entry.sensitive = false;
     }
 
     private void view_return () {
@@ -213,7 +211,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         custom_title_stack.set_visible_child (view_mode_revealer);
         category_header.label = "";
 
-        search_entry.sensitive = true;
         search_entry.grab_focus_without_selecting ();
         return_button.no_show_all = true;
         return_button.hide ();
