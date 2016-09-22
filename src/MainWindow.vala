@@ -26,6 +26,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     private Views.SearchView search_view;
     private Gtk.Button return_button;
     private ulong task_finished_connection = 0U;
+    private Gee.Deque<string> return_button_history;
     
     public static Views.InstalledView installed_view { get; private set; }
 
@@ -94,6 +95,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         return_button = new Gtk.Button ();
         return_button.no_show_all = true;
         return_button.get_style_context ().add_class ("back-button");
+        return_button_history = new Gee.LinkedList<string> ();
 
         view_mode = new Granite.Widgets.ModeButton ();
         view_mode.append_text (_("Categories"));
@@ -186,15 +188,23 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
                     stack.visible_child = installed_view;
                     break;
             }
+            if (!return_button_history.is_empty) {
+                return_button.no_show_all = false;
+                return_button.show_all ();
+            }
         } else {
             search_view.search.begin (research, category_view.currently_viewed_category);
             view_mode_revealer.reveal_child = false;
             stack.visible_child = search_view;
-
+            return_button.no_show_all = true;
+            return_button.hide ();
         }
     }
 
     private void view_opened (string return_name, bool allow_search, string? custom_header = null) {
+        if (return_button_history.is_empty || return_button_history.peek_head () != return_name) {
+            return_button_history.offer_head (return_name);
+        }
         return_button.label = return_name;
         return_button.no_show_all = false;
         return_button.show_all ();
@@ -210,14 +220,26 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     }
 
     private void view_return () {
-        view_mode_revealer.reveal_child = true;
-        custom_title_stack.set_visible_child (view_mode_revealer);
-        category_header.label = "";
+        if (stack.visible_child != search_view) {
+            view_mode_revealer.reveal_child = true;
+            custom_title_stack.set_visible_child (view_mode_revealer);
+            category_header.label = "";
+        }
 
         search_entry.sensitive = true;
         search_entry.grab_focus_without_selecting ();
-        return_button.no_show_all = true;
-        return_button.hide ();
+
+        return_button_history.poll_head ();
+        if (!return_button_history.is_empty && stack.visible_child == search_view) {
+            return_button.label = return_button_history.peek_head ();
+            if (stack.visible_child == search_view) {
+                return_button.no_show_all = true;
+                return_button.hide ();
+            }
+        } else {
+            return_button.no_show_all = true;
+            return_button.hide ();
+        }
 
         View view = (View) stack.visible_child;
         view.return_clicked ();

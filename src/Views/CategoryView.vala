@@ -90,7 +90,7 @@ public class AppCenter.Views.CategoryView : View {
 
         app_list_view.show_app.connect ((package) => {
             current_category = category.name;
-            subview_entered (category.name, false);
+            subview_entered (category.name, false, "");
             show_package (package);
         });
 
