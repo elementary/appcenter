@@ -33,7 +33,7 @@ public class AppCenter.Views.SearchView : View {
         add (app_list_view);
         app_list_view.show_app.connect ((package) => {
             /// TRANSLATORS: the name of the Search view
-            subview_entered (C_("view", "Search"));
+            subview_entered (C_("view", "Search"), false);
             show_package (package);
         });
     }

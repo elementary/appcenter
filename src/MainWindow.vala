@@ -194,7 +194,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         }
     }
 
-    private void view_opened (string return_name, string? custom_header = null) {
+    private void view_opened (string return_name, bool allow_search, string? custom_header = null) {
         return_button.label = return_name;
         return_button.no_show_all = false;
         return_button.show_all ();
@@ -204,6 +204,9 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             category_header.label = custom_header;
             custom_title_stack.set_visible_child (category_header);
         }
+
+        search_entry.sensitive = allow_search;
+        search_entry.grab_focus_without_selecting ();
     }
 
     private void view_return () {
@@ -211,6 +214,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         custom_title_stack.set_visible_child (view_mode_revealer);
         category_header.label = "";
 
+        search_entry.sensitive = true;
         search_entry.grab_focus_without_selecting ();
         return_button.no_show_all = true;
         return_button.hide ();
