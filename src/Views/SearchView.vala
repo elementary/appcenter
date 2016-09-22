@@ -45,7 +45,7 @@ public class AppCenter.Views.SearchView : View {
     public async void search (string search_term) {
         app_list_view.clear ();
         unowned Client client = Client.get_default ();
-        var found_apps = client.search_applications (search_term);
+        var found_apps = client.search_applications (search_term, null);
         
         if (found_apps.size > 0) {
             var apps_array = found_apps.to_array ();

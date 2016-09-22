@@ -275,11 +275,11 @@ public class AppCenterCore.Client : Object {
         return packages;
     }
 
-    public Gee.Collection<AppCenterCore.Package> get_applications_for_category (AppStream.Category category) {
+    public Gee.Collection<AppCenterCore.Package> search_applications (string? query, AppStream.Category? category) {
         var apps = new Gee.TreeSet<AppCenterCore.Package> ();
-        string categories = get_string_from_categories (category);
+        string categories = category == null ? null : get_string_from_categories (category);
         try {
-            var comps = appstream_database.find_components (null, categories);
+            var comps = appstream_database.find_components (query, categories);
             comps.foreach ((comp) => {
                 apps.add (package_list.get (comp.get_pkgnames ()[0]));
             });
@@ -308,20 +308,6 @@ public class AppCenterCore.Client : Object {
         });
 
         return categories;
-    }
-
-    public Gee.Collection<AppCenterCore.Package> search_applications (string query) {
-        var apps = new Gee.TreeSet<AppCenterCore.Package> ();
-        try {
-            var comps = appstream_database.find_components (query, null);
-            comps.foreach ((comp) => {
-                apps.add (package_list.get (comp.get_pkgnames ()[0]));
-            });
-        } catch (Error e) {
-            critical (e.message);
-        }
-
-        return apps;
     }
 
     public Pk.Package? get_app_package (string application, Pk.Bitfield additional_filters = 0) throws GLib.Error {
