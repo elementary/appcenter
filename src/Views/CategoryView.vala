@@ -25,6 +25,8 @@ public class AppCenter.Views.CategoryView : View {
     private Gtk.ScrolledWindow category_scrolled;
     private string current_category;
 
+    public AppStream.Category currently_viewed_category;
+
     public CategoryView () {
         
     }
@@ -43,6 +45,7 @@ public class AppCenter.Views.CategoryView : View {
             var item = child as Widgets.CategoryItem;
             if (item != null) {
                 show_app_list_for_category (item.app_category);
+                currently_viewed_category = item.app_category;
             }
         });
 
@@ -64,6 +67,7 @@ public class AppCenter.Views.CategoryView : View {
     public override void return_clicked () {
         if (current_category == null) {
             set_visible_child (category_scrolled);
+            currently_viewed_category = null;
         } else {
             subview_entered (_("Categories"), current_category);
             set_visible_child_name (current_category);
