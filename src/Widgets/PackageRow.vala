@@ -123,7 +123,10 @@ namespace AppCenter.Widgets {
             public InstalledPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? size_group, bool show_uninstall = true) {         
                 base (package, size_group, show_uninstall);
                 
-                app_version.label = package.get_version ();
+                new Thread<void*> (null, () => {
+                    app_version.label = package.get_version ();
+                    return null;
+                });
             }
         }
 
