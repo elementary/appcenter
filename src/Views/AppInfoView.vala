@@ -145,7 +145,7 @@ namespace AppCenter.Views {
                 try {
                     var extension = AppCenterCore.Client.get_default ().get_extension (cid);
                     if (extension != null) {
-                        var row = new Widgets.PackageRow (new AppCenterCore.Package (extension), null, false, false);
+                        var row = new Widgets.PackageRow.list (new AppCenterCore.Package (extension), null, false);
                         if (extension_box != null) {
                             extension_box.add (row);
                         }
