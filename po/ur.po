@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-09-19 10:19-0700\n"
-"PO-Revision-Date: 2016-09-22 10:15+0000\n"
+"PO-Revision-Date: 2016-09-23 09:03+0000\n"
 "Last-Translator: Waqar Ahmed <waqar.17a@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-09-23 06:02+0000\n"
+"X-Launchpad-Export-Date: 2016-09-24 05:59+0000\n"
 "X-Generator: Launchpad (build 18204)\n"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:121
@@ -97,7 +97,7 @@ msgstr "آڈیو"
 
 #: ../src/Views/CategoryView.vala:131
 msgid "Development"
-msgstr ""
+msgstr "ڈیولپمنٹ"
 
 #: ../src/Views/CategoryView.vala:144
 msgid "Accessories"
@@ -164,16 +164,16 @@ msgstr[1] "اپ ڈیٹس دستیاب ہیں"
 #: ../src/Core/Client.vala:357
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u تازہ کاری آپ کے سسٹم کے لیے دستیاب ہے"
+msgstr[1] "%u تازہ کاریاں آپ کے سسٹم کے لیے دستیاب ہے"
 
 #: ../src/Core/Package.vala:117
 msgid "Application installed"
-msgstr ""
+msgstr "ایپ نصب کر دی گئی"
 
 #: ../src/Core/Package.vala:118
 msgid "%s has been successfully installed"
-msgstr ""
+msgstr "پیکج %s کامیابی کے ساتھ انسٹال کر دیا گیا ہے"
 
 #: ../src/Core/ChangeInformation.vala:47
 msgid "Starting"
@@ -281,15 +281,15 @@ msgstr ""
 
 #: ../src/Core/ChangeInformation.vala:99
 msgid "Loading cache"
-msgstr ""
+msgstr "کیشے لوڈ کر رہا ہے"
 
 #: ../src/Core/ChangeInformation.vala:101
 msgid "Scanning applications"
-msgstr ""
+msgstr "ایپلیکیشن سکین کر رہا ہے"
 
 #: ../src/Core/ChangeInformation.vala:103
 msgid "Generating package lists"
-msgstr ""
+msgstr "پیکج کی فہرستیں بنا رہا ہے"
 
 #: ../src/Core/ChangeInformation.vala:105
 msgid "Waiting for package manager lock"
@@ -297,7 +297,7 @@ msgstr ""
 
 #: ../src/Core/ChangeInformation.vala:107
 msgid "Waiting for authentication"
-msgstr ""
+msgstr "تصدیق کا انتظار کر رہا ہے"
 
 #: ../src/Core/ChangeInformation.vala:109
 msgid "Updating running applications"
@@ -305,11 +305,11 @@ msgstr ""
 
 #: ../src/Core/ChangeInformation.vala:111
 msgid "Checking applications in use"
-msgstr ""
+msgstr "چیک کر رہا ہے کہ کونسی ایپ استعمال میں ہیں"
 
 #: ../src/Core/ChangeInformation.vala:113
 msgid "Checking libraries in use"
-msgstr ""
+msgstr "چیک کر رہا ہے کہ کونسی لائیبریری استعمال میں ہیں"
 
 #: ../src/Core/ChangeInformation.vala:115
 msgid "Copying files"
