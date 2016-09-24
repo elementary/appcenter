@@ -44,8 +44,8 @@ public class AppCenter.Views.CategoryView : View {
         category_flow.child_activated.connect ((child) => {
             var item = child as Widgets.CategoryItem;
             if (item != null) {
-                show_app_list_for_category (item.app_category);
                 currently_viewed_category = item.app_category;
+                show_app_list_for_category (item.app_category);
             }
         });
 

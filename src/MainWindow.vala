@@ -217,6 +217,9 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         search_entry.sensitive = allow_search;
         search_entry.grab_focus_without_selecting ();
+        if (stack.visible_child == category_view && category_view.currently_viewed_category != null) {
+            search_entry.placeholder_text = _("Search") + " " + category_view.currently_viewed_category.get_name ();
+        }
     }
 
     private void view_return () {
@@ -226,6 +229,9 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             category_header.label = "";
         }
 
+        if (stack.visible_child == category_view) {
+            search_entry.placeholder_text = _("Search Apps");
+        }
         search_entry.sensitive = true;
         search_entry.grab_focus_without_selecting ();
 
