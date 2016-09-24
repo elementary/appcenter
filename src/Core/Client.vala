@@ -119,13 +119,12 @@ public class AppCenterCore.Client : Object {
         packages_ids += null;
 
         try {
-            var results = yield search_task.search_names_async (Pk.Bitfield.from_enums (Pk.Filter.NEWEST, Pk.Filter.ARCH), packages_ids, cancellable, () => {});
+            var results = yield search_task.resolve_async (Pk.Bitfield.from_enums (Pk.Filter.NEWEST, Pk.Filter.ARCH), packages_ids, cancellable, () => {});
             packages_ids = {};
 
-            var package_array = results.get_package_array ();
-            if (package_array.length > 0) {
-                packages_ids += package_array[0].package_id;
-            }
+            results.get_package_array ().foreach ((package) => {
+                packages_ids += package.package_id;
+            });
 
             packages_ids += null;
 
@@ -188,17 +187,14 @@ public class AppCenterCore.Client : Object {
         foreach (var pkg_name in package.component.get_pkgnames ()) {
             packages_ids += pkg_name;
         }
-
         packages_ids += null;
 
         try {
-            var results = yield search_task.search_names_async (Pk.Bitfield.from_enums (Pk.Filter.INSTALLED, Pk.Filter.NEWEST), packages_ids, cancellable, () => {});
+            var results = yield search_task.resolve_async (Pk.Bitfield.from_enums (Pk.Filter.INSTALLED, Pk.Filter.NEWEST), packages_ids, cancellable, () => {});
             packages_ids = {};
-
-            var package_array = results.get_package_array ();
-            if (package_array.length > 0) {
-                packages_ids += package_array[0].package_id;
-            }
+            results.get_package_array ().foreach ((package) => {
+                packages_ids += package.package_id;
+            });
 
             results = yield remove_task.remove_packages_async (packages_ids, true, true, cancellable, cb);
             exit_status = results.get_exit_code ();
