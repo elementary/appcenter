@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-24 23:34+0200\n"
+"POT-Creation-Date: 2016-09-25 14:11+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -62,13 +62,13 @@ msgstr ""
 msgid "Update All"
 msgstr ""
 
-#: ../src/Views/InstalledView.vala:45 ../src/MainWindow.vala:102
+#: ../src/Views/InstalledView.vala:45 ../src/MainWindow.vala:114
 msgctxt "view"
 msgid "Updates"
 msgstr ""
 
 #: ../src/Views/CategoryView.vala:72 ../src/Views/CategoryView.vala:79
-#: ../src/MainWindow.vala:101
+#: ../src/MainWindow.vala:113
 msgid "Categories"
 msgstr ""
 
@@ -292,15 +292,20 @@ msgstr ""
 msgid "Unknown state"
 msgstr ""
 
-#: ../src/MainWindow.vala:92
+#: ../src/MainWindow.vala:95
 msgid "AppCenter"
 msgstr ""
 
-#: ../src/MainWindow.vala:118 ../src/MainWindow.vala:233
+#: ../src/MainWindow.vala:103
+msgid "Search All Apps"
+msgstr ""
+
+#: ../src/MainWindow.vala:130 ../src/MainWindow.vala:256
+#: ../src/MainWindow.vala:281
 msgid "Search Apps"
 msgstr ""
 
-#: ../src/MainWindow.vala:221
+#: ../src/MainWindow.vala:244
 msgid "Search"
 msgstr ""
 
