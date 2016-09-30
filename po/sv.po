@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-01 17:59-0500\n"
+"POT-Creation-Date: 2016-09-19 10:19-0700\n"
 "PO-Revision-Date: 2016-08-02 11:14+0000\n"
 "Last-Translator: Mikael Nyberg <mikanybe@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -10,256 +10,86 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-08-03 05:21+0000\n"
-"X-Generator: Launchpad (build 18169)\n"
+"X-Launchpad-Export-Date: 2016-09-20 07:28+0000\n"
+"X-Generator: Launchpad (build 18200)\n"
 
-#: ../src/Core/ChangeInformation.vala:54
-msgid "Starting"
-msgstr "Startar"
-
-#: ../src/Core/ChangeInformation.vala:56
-msgid "Waiting in queue"
-msgstr "Väntar i kö"
-
-#: ../src/Core/ChangeInformation.vala:58
-msgid "Running"
-msgstr "Kör"
-
-#: ../src/Core/ChangeInformation.vala:60
-msgid "Querying"
-msgstr "Frågar"
-
-#: ../src/Core/ChangeInformation.vala:62
-msgid "Getting information"
-msgstr "Hämtar information"
-
-#: ../src/Core/ChangeInformation.vala:64
-msgid "Removing packages"
-msgstr "Tar bort paket"
-
-#: ../src/Core/ChangeInformation.vala:66
-msgid "Downloading packages"
-msgstr "Hämtar paket"
-
-#: ../src/Core/ChangeInformation.vala:68
-msgid "Installing packages"
-msgstr "Installerar paket"
-
-#: ../src/Core/ChangeInformation.vala:70
-msgid "Refreshing software list"
-msgstr "Uppdaterar programlista"
-
-#: ../src/Core/ChangeInformation.vala:72
-msgid "Installing updates"
-msgstr "Installerar uppdateringar"
-
-#: ../src/Core/ChangeInformation.vala:74
-msgid "Cleaning up packages"
-msgstr "Rensar upp paket"
-
-#: ../src/Core/ChangeInformation.vala:76
-msgid "Obsoleting packages"
-msgstr "Markerar paket som föråldrade"
-
-#: ../src/Core/ChangeInformation.vala:78
-msgid "Resolving dependencies"
-msgstr "Löser beroenden"
-
-#: ../src/Core/ChangeInformation.vala:80
-msgid "Checking signatures"
-msgstr "Kontrollerar signaturer"
-
-#: ../src/Core/ChangeInformation.vala:82
-msgid "Testing changes"
-msgstr "Testar ändringar"
-
-#: ../src/Core/ChangeInformation.vala:84
-msgid "Committing changes"
-msgstr "Verkställer ändringar"
-
-#: ../src/Core/ChangeInformation.vala:86
-msgid "Requesting data"
-msgstr "Begär data"
-
-#: ../src/Core/ChangeInformation.vala:88
-msgid "Finished"
-msgstr "Klart"
-
-#: ../src/Core/ChangeInformation.vala:90
-msgid "Cancelling"
-msgstr "Avbryter"
-
-#: ../src/Core/ChangeInformation.vala:92
-msgid "Downloading repository information"
-msgstr "Hämtar förrådsinformation"
-
-#: ../src/Core/ChangeInformation.vala:94
-msgid "Downloading list of packages"
-msgstr "Hämtar lista över paket"
-
-#: ../src/Core/ChangeInformation.vala:96
-msgid "Downloading file lists"
-msgstr "Hämtar fillistor"
-
-#: ../src/Core/ChangeInformation.vala:98
-msgid "Downloading lists of changes"
-msgstr "Hämtar listor över ändringar"
-
-#: ../src/Core/ChangeInformation.vala:100
-msgid "Downloading groups"
-msgstr "Hämtar grupper"
-
-#: ../src/Core/ChangeInformation.vala:102
-msgid "Downloading update information"
-msgstr "Hämtar uppdateringsinformation"
-
-#: ../src/Core/ChangeInformation.vala:104
-msgid "Repackaging files"
-msgstr "Packar om filer"
-
-#: ../src/Core/ChangeInformation.vala:106
-msgid "Loading cache"
-msgstr "Läser in cache"
-
-#: ../src/Core/ChangeInformation.vala:108
-msgid "Scanning applications"
-msgstr "Söker igenom program"
-
-#: ../src/Core/ChangeInformation.vala:110
-msgid "Generating package lists"
-msgstr "Skapar paketlistor"
-
-#: ../src/Core/ChangeInformation.vala:112
-msgid "Waiting for package manager lock"
-msgstr "Väntar på pakethanterarens lås"
-
-#: ../src/Core/ChangeInformation.vala:114
-msgid "Waiting for authentication"
-msgstr "Väntar på autentisering"
-
-#: ../src/Core/ChangeInformation.vala:116
-msgid "Updating running applications"
-msgstr "Uppdaterar program som körs"
-
-#: ../src/Core/ChangeInformation.vala:118
-msgid "Checking applications in use"
-msgstr "Kontrollerar program som körs"
-
-#: ../src/Core/ChangeInformation.vala:120
-msgid "Checking libraries in use"
-msgstr "Kontrollerar använda bibliotek"
-
-#: ../src/Core/ChangeInformation.vala:122
-msgid "Copying files"
-msgstr "Kopierar filer"
-
-#: ../src/Core/ChangeInformation.vala:124
-msgid "Unknown state"
-msgstr "Okänt tillstånd"
-
-#: ../src/Core/Client.vala:62
-msgid "Operating System Updates"
-msgstr "Operativsystemuppdateringar"
-
-#: ../src/Core/Client.vala:63
-msgid "Updates to system components"
-msgstr "Uppdateringar till systemkomponenter"
-
-#: ../src/Core/Client.vala:340
-msgid "Update Available"
-msgid_plural "Updates Available"
-msgstr[0] "Uppdatering tillgänglig"
-msgstr[1] "Uppdateringar tillgängliga"
-
-#: ../src/Core/Client.vala:341
-msgid "%u update is available for your system"
-msgid_plural "%u updates are available for your system"
-msgstr[0] "En uppdatering finns tillgänglig för ditt system"
-msgstr[1] "Flera uppdateringar finns tillgängliga för ditt system"
-
-#: ../src/Core/Package.vala:80
-msgid "Application installed"
-msgstr "Program installerat"
-
-#: ../src/Core/Package.vala:81
-msgid "%s has been successfully installed"
-msgstr "%s har installerats"
-
-#: ../src/Application.vala:35
-msgid "App Center"
-msgstr "Programcentral"
-
-#: ../src/Application.vala:53
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Gustav Andersson https://launchpad.net/~gustav-l\n"
-"  Joachim Johansson https://launchpad.net/~joachim-j\n"
-"  Larsson https://launchpad.net/~larsson\n"
-"  Mikael Nyberg https://launchpad.net/~miknyb\n"
-"  elementaryart (old) https://launchpad.net/~elementaryart"
-
-#: ../src/MainWindow.vala:89
-msgid "AppCenter"
-msgstr "Programcentral"
-
-#: ../src/MainWindow.vala:97 ../src/Views/CategoryView.vala:68
-#: ../src/Views/CategoryView.vala:75
-msgid "Categories"
-msgstr "Kategorier"
-
-#: ../src/MainWindow.vala:98 ../src/Views/InstalledView.vala:42
-msgctxt "view"
-msgid "Updates"
-msgstr "Uppdateringar"
-
-#: ../src/MainWindow.vala:106
-msgid "Search Apps"
-msgstr "Sök efter program"
-
-#. / TRANSLATORS: the name of the Search view
-#: ../src/Views/SearchView.vala:35
-msgctxt "view"
-msgid "Search"
-msgstr "Sök"
-
-#: ../src/Views/AppListView.vala:54
-msgid "No Results"
-msgstr "Inga resultat"
-
-#: ../src/Views/AppListView.vala:54
-msgid "No apps could be found. Try changing search terms."
-msgstr "Inga program hittades. Försök med att ändra söktermer."
-
-#: ../src/Views/AppListView.vala:146
-msgid "Searching for updates…"
-msgstr "Söker efter uppdateringar…"
-
-#: ../src/Views/AppListView.vala:152
-msgid "Up to Date"
-msgstr "Uppdaterad"
-
-#: ../src/Views/AppListView.vala:175
+#: ../src/Widgets/UpdateHeaderRow.vala:121
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "%u uppdatering tillgänglig"
 msgstr[1] "%u uppdateringar tillgängliga"
 
-#: ../src/Views/AppListView.vala:181
+#: ../src/Widgets/UpdateHeaderRow.vala:122
 msgid "Size: %s"
 msgstr "Storlek: %s"
 
-#: ../src/Views/AppListView.vala:183
+#: ../src/Widgets/UpdateHeaderRow.vala:158
+msgid "Searching for updates…"
+msgstr "Söker efter uppdateringar…"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:165
+msgid "Up to Date"
+msgstr "Uppdaterad"
+
+#: ../src/AbstractAppContainer.vala:62
+msgid "Cancel"
+msgstr "Avbryt"
+
+#: ../src/AbstractAppContainer.vala:65 ../src/AbstractAppContainer.vala:129
+msgid "Install"
+msgstr "Installera"
+
+#: ../src/AbstractAppContainer.vala:68
+msgid "Uninstall"
+msgstr "Avinstallera"
+
+#: ../src/AbstractAppContainer.vala:154
+msgid "Update"
+msgstr "Uppdatera"
+
+#: ../src/MainWindow.vala:91
+msgid "AppCenter"
+msgstr "Programcentral"
+
+#: ../src/MainWindow.vala:99 ../src/Views/CategoryView.vala:68
+#: ../src/Views/CategoryView.vala:75
+msgid "Categories"
+msgstr "Kategorier"
+
+#: ../src/MainWindow.vala:100 ../src/Views/InstalledView.vala:45
+msgctxt "view"
+msgid "Updates"
+msgstr "Uppdateringar"
+
+#: ../src/MainWindow.vala:116
+msgid "Search Apps"
+msgstr "Sök efter program"
+
+#: ../src/AbstractAppList.vala:30
+msgid "No Results"
+msgstr "Inga resultat"
+
+#: ../src/AbstractAppList.vala:30
+msgid "No apps could be found. Try changing search terms."
+msgstr "Inga program hittades. Försök med att ändra söktermer."
+
+#: ../src/Views/AppListView.vala:64
 msgid "Update All"
 msgstr "Uppdatera alla"
 
-#: ../src/Views/FeaturedView.vala:33
-msgid "Best Rated"
-msgstr "Högsta betygen"
+#. / TRANSLATORS: the name of the Search view
+#: ../src/Views/SearchView.vala:36
+msgctxt "view"
+msgid "Search"
+msgstr "Sök"
 
-#: ../src/Views/FeaturedView.vala:36
-msgid "Latest Apps"
-msgstr "Senaste programmen"
+#: ../src/Views/AppInfoView.vala:48
+msgid "Screenshot Not Available"
+msgstr "Ingen bild tillgänglig"
+
+#: ../src/Views/AppInfoView.vala:128
+msgid "Extensions:"
+msgstr "Tillägg:"
 
 #: ../src/Views/CategoryView.vala:118
 msgid "Audio"
@@ -309,32 +139,199 @@ msgstr "Vetenskap och ingenjörskonst"
 msgid "Universal Access"
 msgstr "Hjälpmedel"
 
-#: ../src/Views/AppInfoView.vala:55
-msgid "Extensions:"
-msgstr "Tillägg:"
+#: ../src/Views/FeaturedView.vala:33
+msgid "Best Rated"
+msgstr "Högsta betygen"
 
-#: ../src/Views/AppInfoView.vala:67 ../src/Views/AppInfoView.vala:281
-#: ../src/Widgets/PackageRow.vala:44 ../src/Widgets/PackageRow.vala:144
-msgid "Update"
-msgstr "Uppdatera"
+#: ../src/Views/FeaturedView.vala:36
+msgid "Latest Apps"
+msgstr "Senaste programmen"
 
-#: ../src/Views/AppInfoView.vala:110
-msgid "Screenshot Not Available"
-msgstr "Ingen bild tillgänglig"
+#: ../src/Core/Client.vala:62
+msgid "Operating System Updates"
+msgstr "Operativsystemuppdateringar"
 
-#: ../src/Views/AppInfoView.vala:161 ../src/Widgets/PackageRow.vala:92
-msgid "Cancel"
-msgstr "Avbryt"
+#: ../src/Core/Client.vala:63
+msgid "Updates to system components"
+msgstr "Uppdateringar till systemkomponenter"
 
-#: ../src/Views/AppInfoView.vala:166 ../src/Views/AppInfoView.vala:291
-#: ../src/Views/AppInfoView.vala:328 ../src/Widgets/PackageRow.vala:97
-#: ../src/Widgets/PackageRow.vala:155
-msgid "Install"
-msgstr "Installera"
+#: ../src/Core/Client.vala:356
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "Uppdatering tillgänglig"
+msgstr[1] "Uppdateringar tillgängliga"
 
-#: ../src/Views/AppInfoView.vala:171
-msgid "Uninstall"
-msgstr "Avinstallera"
+#: ../src/Core/Client.vala:357
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "En uppdatering finns tillgänglig för ditt system"
+msgstr[1] "Flera uppdateringar finns tillgängliga för ditt system"
+
+#: ../src/Core/Package.vala:117
+msgid "Application installed"
+msgstr "Program installerat"
+
+#: ../src/Core/Package.vala:118
+msgid "%s has been successfully installed"
+msgstr "%s har installerats"
+
+#: ../src/Core/ChangeInformation.vala:47
+msgid "Starting"
+msgstr "Startar"
+
+#: ../src/Core/ChangeInformation.vala:49
+msgid "Waiting in queue"
+msgstr "Väntar i kö"
+
+#: ../src/Core/ChangeInformation.vala:51
+msgid "Running"
+msgstr "Kör"
+
+#: ../src/Core/ChangeInformation.vala:53
+msgid "Querying"
+msgstr "Frågar"
+
+#: ../src/Core/ChangeInformation.vala:55
+msgid "Getting information"
+msgstr "Hämtar information"
+
+#: ../src/Core/ChangeInformation.vala:57
+msgid "Removing packages"
+msgstr "Tar bort paket"
+
+#: ../src/Core/ChangeInformation.vala:59
+msgid "Downloading packages"
+msgstr "Hämtar paket"
+
+#: ../src/Core/ChangeInformation.vala:61
+msgid "Installing packages"
+msgstr "Installerar paket"
+
+#: ../src/Core/ChangeInformation.vala:63
+msgid "Refreshing software list"
+msgstr "Uppdaterar programlista"
+
+#: ../src/Core/ChangeInformation.vala:65
+msgid "Installing updates"
+msgstr "Installerar uppdateringar"
+
+#: ../src/Core/ChangeInformation.vala:67
+msgid "Cleaning up packages"
+msgstr "Rensar upp paket"
+
+#: ../src/Core/ChangeInformation.vala:69
+msgid "Obsoleting packages"
+msgstr "Markerar paket som föråldrade"
+
+#: ../src/Core/ChangeInformation.vala:71
+msgid "Resolving dependencies"
+msgstr "Löser beroenden"
+
+#: ../src/Core/ChangeInformation.vala:73
+msgid "Checking signatures"
+msgstr "Kontrollerar signaturer"
+
+#: ../src/Core/ChangeInformation.vala:75
+msgid "Testing changes"
+msgstr "Testar ändringar"
+
+#: ../src/Core/ChangeInformation.vala:77
+msgid "Committing changes"
+msgstr "Verkställer ändringar"
+
+#: ../src/Core/ChangeInformation.vala:79
+msgid "Requesting data"
+msgstr "Begär data"
+
+#: ../src/Core/ChangeInformation.vala:81
+msgid "Finished"
+msgstr "Klart"
+
+#: ../src/Core/ChangeInformation.vala:83
+msgid "Cancelling"
+msgstr "Avbryter"
+
+#: ../src/Core/ChangeInformation.vala:85
+msgid "Downloading repository information"
+msgstr "Hämtar förrådsinformation"
+
+#: ../src/Core/ChangeInformation.vala:87
+msgid "Downloading list of packages"
+msgstr "Hämtar lista över paket"
+
+#: ../src/Core/ChangeInformation.vala:89
+msgid "Downloading file lists"
+msgstr "Hämtar fillistor"
+
+#: ../src/Core/ChangeInformation.vala:91
+msgid "Downloading lists of changes"
+msgstr "Hämtar listor över ändringar"
+
+#: ../src/Core/ChangeInformation.vala:93
+msgid "Downloading groups"
+msgstr "Hämtar grupper"
+
+#: ../src/Core/ChangeInformation.vala:95
+msgid "Downloading update information"
+msgstr "Hämtar uppdateringsinformation"
+
+#: ../src/Core/ChangeInformation.vala:97
+msgid "Repackaging files"
+msgstr "Packar om filer"
+
+#: ../src/Core/ChangeInformation.vala:99
+msgid "Loading cache"
+msgstr "Läser in cache"
+
+#: ../src/Core/ChangeInformation.vala:101
+msgid "Scanning applications"
+msgstr "Söker igenom program"
+
+#: ../src/Core/ChangeInformation.vala:103
+msgid "Generating package lists"
+msgstr "Skapar paketlistor"
+
+#: ../src/Core/ChangeInformation.vala:105
+msgid "Waiting for package manager lock"
+msgstr "Väntar på pakethanterarens lås"
+
+#: ../src/Core/ChangeInformation.vala:107
+msgid "Waiting for authentication"
+msgstr "Väntar på autentisering"
+
+#: ../src/Core/ChangeInformation.vala:109
+msgid "Updating running applications"
+msgstr "Uppdaterar program som körs"
+
+#: ../src/Core/ChangeInformation.vala:111
+msgid "Checking applications in use"
+msgstr "Kontrollerar program som körs"
+
+#: ../src/Core/ChangeInformation.vala:113
+msgid "Checking libraries in use"
+msgstr "Kontrollerar använda bibliotek"
+
+#: ../src/Core/ChangeInformation.vala:115
+msgid "Copying files"
+msgstr "Kopierar filer"
+
+#: ../src/Core/ChangeInformation.vala:117
+msgid "Unknown state"
+msgstr "Okänt tillstånd"
+
+#: ../src/Application.vala:35
+msgid "App Center"
+msgstr "Programcentral"
+
+#: ../src/Application.vala:53
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Gustav Andersson https://launchpad.net/~gustav-l\n"
+"  Joachim Johansson https://launchpad.net/~joachim-j\n"
+"  Larsson https://launchpad.net/~larsson\n"
+"  Mikael Nyberg https://launchpad.net/~miknyb\n"
+"  elementaryart (old) https://launchpad.net/~elementaryart"
 
 #~ msgid "Updates View"
 #~ msgstr "Uppdateringsvy"

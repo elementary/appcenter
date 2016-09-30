@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2014-2015 elementary LLC. (https://elementary.io)
+ * Copyright (c) 2014-2016 elementary LLC. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,11 +21,12 @@
 using AppCenterCore;
 
 public class AppCenter.Views.InstalledView : View {
-    AppListView app_list_view;
+    AppListUpdateView app_list_view;
 
     public InstalledView () {
+        var client = Client.get_default ();
         // We need this line in order to show the No Update view.
-        Client.get_default ().updates_available.connect (() => {
+        client.updates_available.connect (() => {
             var package = Client.get_default ().os_updates;
             if (package.update_available) {
                 app_list_view.add_package (package);
@@ -33,10 +34,12 @@ public class AppCenter.Views.InstalledView : View {
 
             app_list_view.updating_cache = false;
         });
+
+        client.bind_property ("updating-cache", app_list_view, "updating-cache", GLib.BindingFlags.DEFAULT);
     }
 
     construct {
-        app_list_view = new AppListView (true);
+        app_list_view = new AppListUpdateView ();
         add (app_list_view);
         app_list_view.show_app.connect ((package) => {
             subview_entered (C_("view", "Updates"));
@@ -58,7 +61,7 @@ public class AppCenter.Views.InstalledView : View {
 
         yield client.get_updates ();
     }
-    
+
     public async void add_app (AppCenterCore.Package package) {
         unowned Client client = Client.get_default ();
         var installed_apps = yield client.get_installed_applications ();
@@ -69,7 +72,7 @@ public class AppCenter.Views.InstalledView : View {
             }
         }
     }
-    
+
     public async void remove_app (AppCenterCore.Package package) {
         app_list_view.remove_package (package);
     }

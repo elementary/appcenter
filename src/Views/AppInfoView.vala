@@ -18,7 +18,6 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-//~ using AppCenterCore;
 namespace AppCenter.Views {
     public class AppInfoView : AppCenter.AbstractAppContainer {
         Gtk.Image app_screenshot;
@@ -30,34 +29,7 @@ namespace AppCenter.Views {
         Gtk.Label extension_label;
         Gtk.Grid content_grid;
 
-        public AppInfoView (AppCenterCore.Package package) {
-            this.package = package;
-            set_up_package ();
-            image.gicon = package.get_icon (128);
-
-            parse_description (package.component.get_description ());
-
-            if (package.component.get_extensions ().length > 0) {
-                extension_box = new Gtk.ListBox ();
-                extension_box.selection_mode = Gtk.SelectionMode.NONE;
-
-                extension_label = new Gtk.Label ("<b>" + _("Extensions:") + "</b>");
-                extension_label.margin_top = 12;
-                extension_label.use_markup = true;
-                extension_label.get_style_context ().add_class ("h3");
-                extension_label.halign = Gtk.Align.START;
-                
-                content_grid.add (extension_label);
-                content_grid.add (extension_box);
-                load_extensions.begin ();
-            }
-
-            action_button.set_suggested_action_header ();
-            uninstall_button.set_destructive_action_header ();
-        }
-
         construct {
-            image = new Gtk.Image ();
             image.margin_top = 12;
             image.margin_start = 6;
             image.pixel_size = 128;
@@ -143,6 +115,31 @@ namespace AppCenter.Views {
             attach (scrolled, 0, 2, 1, 1);
         }
 
+        public AppInfoView (AppCenterCore.Package package) {
+            this.package = package;
+            set_up_package (128);
+
+            parse_description (package.component.get_description ());
+
+            if (package.component.get_extensions ().length > 0) {
+                extension_box = new Gtk.ListBox ();
+                extension_box.selection_mode = Gtk.SelectionMode.NONE;
+
+                extension_label = new Gtk.Label ("<b>" + _("Extensions:") + "</b>");
+                extension_label.margin_top = 12;
+                extension_label.use_markup = true;
+                extension_label.get_style_context ().add_class ("h3");
+                extension_label.halign = Gtk.Align.START;
+
+                content_grid.add (extension_label);
+                content_grid.add (extension_box);
+                load_extensions.begin ();
+            }
+
+            action_button.set_suggested_action_header ();
+            uninstall_button.set_destructive_action_header ();
+        }
+
         private async void load_extensions () {
             package.component.get_extensions ().@foreach ((cid) => {
                 try {
@@ -152,11 +149,11 @@ namespace AppCenter.Views {
                         if (extension_box != null) {
                             extension_box.add (row);
                         }
-                    }                
+                    }
                 } catch (Error e) {
                     warning ("%s\n", e.message);
                 }
-            });            
+            });
         }
 
         public void load_more_content () {
@@ -227,7 +224,7 @@ namespace AppCenter.Views {
                 } catch (Error e) {
                     critical (e.message);
                 }
-            
+
                 return GLib.Source.REMOVE;
             });
         }
