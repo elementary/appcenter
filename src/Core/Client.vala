@@ -30,6 +30,10 @@ public class AppCenterCore.Client : Object {
     public GLib.Cancellable interface_cancellable;
     private GLib.DateTime last_cache_update;
     private uint updates_number = 0U;
+    private uint update_cache_timeout_id = 0;
+    private bool refresh_in_progress = false;
+
+    private const int SECONDS_BETWEEN_REFRESHES = 60*60*24;
 
     private Client () {
         try {
@@ -391,16 +395,33 @@ public class AppCenterCore.Client : Object {
         return size;
     }
 
-    private uint update_cache_timeout_id = 0;
     public async void update_cache (bool force = false) {
-        /* Make sure there are not multiple timeouts for updating the cache, caused by calling with force = true */
+        debug ("update cache called %s", force.to_string ());
+        /* Make sure only one update cache can run at a time */
         if (update_cache_timeout_id > 0) {
-            warning ("update_cache called when there is an on-going timeout");
-            Source.remove (update_cache_timeout_id);
+            if (force) {
+                warning ("Forced update_cache called when there is an on-going timeout - cancelling timeout");
+                Source.remove (update_cache_timeout_id);
+                update_cache_timeout_id = 0;
+            } else {
+                warning ("Refresh timeout running and not forced - returning");
+                return;
+            }
         }
+
+        if (refresh_in_progress) {
+            warning ("Refresh cache already in progress - returning");
+            return;
+        }
+
         // One cache update a day, keeps the doctor away!
-        if (force || last_cache_update == null || (new DateTime.now_local ()).difference (last_cache_update) >= GLib.TimeSpan.DAY) {
+        if (force || last_cache_update == null ||
+            (new DateTime.now_local ()).difference (last_cache_update) / GLib.TimeSpan.SECOND >= SECONDS_BETWEEN_REFRESHES) {
+
+            debug ("New refresh task");
+            refresh_in_progress = true;
             var refresh_task = new AppCenter.Task ();
+
             try {
                 yield refresh_task.refresh_cache_async (false, null, (t, p) => { });
                 last_cache_update = new DateTime.now_local ();
@@ -409,11 +430,15 @@ public class AppCenterCore.Client : Object {
             }
 
             refresh_updates.begin ();
+            refresh_in_progress = false;
+        } else {
+            debug ("Too soon to refresh and not forced");
         }
 
-        update_cache_timeout_id = GLib.Timeout.add_seconds (60*60*24, () => {
+        update_cache_timeout_id = GLib.Timeout.add_seconds (SECONDS_BETWEEN_REFRESHES, () => {
+            debug ("Timeout triggering new update");
             update_cache_timeout_id = 0;
-            update_cache.begin ();
+            update_cache.begin (true);
             return GLib.Source.REMOVE;
         });
     }
