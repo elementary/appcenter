@@ -29,7 +29,7 @@ public class AppCenterCore.ChangeInformation : Object {
     public double progress { public get; private set; }
     private int current_progress;
     private int last_progress;
-    private uint current_status;
+    private Pk.Status current_status;
     private double progress_denom;
 
     construct {
@@ -39,8 +39,8 @@ public class AppCenterCore.ChangeInformation : Object {
         progress = 0.0f;
         current_progress = 0;
         last_progress = 0;
-        current_status = 0;
-        // usually we have 2 transactions, each with 100% progress
+        current_status = Pk.Status.SETUP;
+        /* usually we have 2 transactions, each with 100% progress */
         progress_denom = 200.0f;
     }
 
@@ -175,18 +175,19 @@ public class AppCenterCore.ChangeInformation : Object {
                 can_cancel = progress.allow_cancel;
                 break;
             case Pk.ProgressType.ITEM_PROGRESS:
-                if (current_status == 0) {
-                    current_status = progress.status;
-                    // skipping package download, we have cached packages
-                    if (current_status != 8) {
+                if (current_status == Pk.Status.SETUP) {
+                    current_status = (Pk.Status) progress.status;
+                    /* skipping package download, we have cached packages */
+                    if (current_status != Pk.Status.DOWNLOAD) {
                         progress_denom = 100.0f;
                     }
                 }
-                // transaction changed so progress count is starting over
-                else if (progress.status != current_status) {
-                    current_status = progress.status;
+                /* transaction changed so progress count is starting over */
+                else if ((Pk.Status) progress.status != current_status) {
+                    current_status = (Pk.Status) progress.status;
                     current_progress = last_progress;
                 }
+
                 last_progress = progress.percentage;
                 double progress_sum = current_progress + last_progress;
                 this.progress = progress_sum / progress_denom;
