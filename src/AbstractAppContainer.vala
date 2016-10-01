@@ -150,6 +150,8 @@ namespace AppCenter {
 
                 case AppCenterCore.Package.State.UPDATE_AVAILABLE:
                     action_button.label = _("Update");
+                    action_button.no_show_all = false;
+                    action_button.show_all ();
                     break;
 
                 case AppCenterCore.Package.State.INSTALLING:
