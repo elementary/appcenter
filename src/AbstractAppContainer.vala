@@ -96,8 +96,8 @@ namespace AppCenter {
 
         protected virtual void set_up_package (uint icon_size = 48) {
             package_name.label = package.get_name ();
-            package_summary.label = package.get_summary ();
-            package_summary.ellipsize = Pango.EllipsizeMode.END;
+            //package_summary.label = package.get_summary ();
+            //package_summary.ellipsize = Pango.EllipsizeMode.END;
             image.gicon = package.get_icon (icon_size);
 
             package.notify["state"].connect (update_state);

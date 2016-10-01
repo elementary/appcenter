@@ -140,6 +140,12 @@ namespace AppCenter.Views {
             uninstall_button.set_destructive_action_header ();
         }
 
+        protected override void set_up_package (uint icon_size = 48) {                
+            package_summary.label = package.get_summary ();
+            package_summary.ellipsize = Pango.EllipsizeMode.END;
+            base.set_up_package (icon_size);
+        }
+
         private async void load_extensions () {
             package.component.get_extensions ().@foreach ((cid) => {
                 try {

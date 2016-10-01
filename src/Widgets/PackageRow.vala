@@ -95,7 +95,7 @@ namespace AppCenter.Widgets {
             public AbstractPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? size_group, bool show_uninstall = true) {
                 this.package = package;
                 this.show_uninstall = show_uninstall;
-                set_up_package ();
+                //set_up_package ();
 
                 if (size_group != null) {
                     size_group.add_widget (action_button);
@@ -125,12 +125,16 @@ namespace AppCenter.Widgets {
             }
 
             public InstalledPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? size_group, bool show_uninstall = true) {         
-                base (package, size_group, show_uninstall);
-                
+                base (package, size_group, show_uninstall);                
+                set_up_package ();
+            }
+            
+            protected override void set_up_package (uint icon_size = 48) {
                 new Thread<void*> (null, () => {
                     app_version.label = package.get_version ();
                     return null;
                 });
+                base.set_up_package (icon_size);
             }
         }
 
@@ -148,6 +152,13 @@ namespace AppCenter.Widgets {
 
             public ListPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? size_group, bool show_uninstall = true) {
                 base (package, size_group, show_uninstall);
+                set_up_package ();
+            }
+            
+            protected override void set_up_package (uint icon_size = 48) {                
+                package_summary.label = package.get_summary ();
+                package_summary.ellipsize = Pango.EllipsizeMode.END;
+                base.set_up_package (icon_size);
             }
         }
     }
