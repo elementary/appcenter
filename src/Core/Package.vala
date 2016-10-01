@@ -33,6 +33,12 @@ public class AppCenterCore.Package : Object {
 
     public const string OS_UPDATES_ID = "xxx-os-updates";
 
+    private string _latest_version;
+    public string latest_version {
+        private get { return _latest_version; }
+        internal set { _latest_version = convert_version (value); }
+    }
+
     public AppStream.Component component { public get; private set; }
     public ChangeInformation change_information { public get; private set; }
     public Gee.TreeSet<Pk.Package> installed_packages { public get; private set; }
@@ -265,20 +271,28 @@ public class AppCenterCore.Package : Object {
     }
 
     public string? get_version () {
+        if (latest_version != null) {
+            return latest_version;
+        }
+        
         var package = find_package ();
         if (package != null) {
-            string returned = package.get_version ();
-            returned = returned.split ("+", 2)[0];
-            returned = returned.split ("-", 2)[0];
-            returned = returned.split ("~", 2)[0];
-            if (":" in returned) {
-                returned = returned.split (":", 2)[1];
-            }
-
-            return returned;
+            return convert_version (package.get_version ());
         }
 
         return null;
+    }
+    
+    private string convert_version (string version) {
+        string returned = version;
+        returned = returned.split ("+", 2)[0];
+        returned = returned.split ("-", 2)[0];
+        returned = returned.split ("~", 2)[0];
+        if (":" in returned) {
+            returned = returned.split (":", 2)[1];
+        }
+
+        return returned;
     }
 
     private Pk.Package? find_package (bool installed = false) {
