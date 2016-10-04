@@ -145,6 +145,12 @@ namespace AppCenter.Views {
             package_summary.ellipsize = Pango.EllipsizeMode.END;
             base.set_up_package (icon_size);
         }
+        
+        protected override void update_state () {
+            app_version.label = package.get_version ();
+            app_version.ellipsize = Pango.EllipsizeMode.END;
+            update_action ();
+        }
 
         private async void load_extensions () {
             package.component.get_extensions ().@foreach ((cid) => {
