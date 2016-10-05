@@ -163,7 +163,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
                 }
             });
 
-            client.interface_cancellable.cancel ();
+            client.cancel_updates (false); //Timeouts keep running
             return true;
         }
 

@@ -27,7 +27,7 @@ public class AppCenterCore.Client : Object {
     private Gee.LinkedList<AppCenter.Task> task_with_agreement_list;
     private Gee.HashMap<string, AppCenterCore.Package> package_list;
     private AppStream.Database appstream_database;
-    public GLib.Cancellable interface_cancellable;
+    private GLib.Cancellable interface_cancellable;
     private GLib.DateTime last_cache_update;
     private uint updates_number = 0U;
     private uint update_cache_timeout_id = 0;
@@ -53,6 +53,7 @@ public class AppCenterCore.Client : Object {
         task_with_agreement_list = new Gee.LinkedList<AppCenter.Task> ();
         package_list = new Gee.HashMap<string, AppCenterCore.Package> (null, null);
         interface_cancellable = new GLib.Cancellable ();
+        last_cache_update = null;
 
         appstream_database = new AppStream.Database ();
         try {
@@ -344,12 +345,12 @@ public class AppCenterCore.Client : Object {
         return package;
     }
 
-    public async void refresh_updates () {
+    private async void refresh_updates () {
         var update_task = new AppCenter.Task ();
         updating_cache = true;
 
         try {
-            Pk.Results result = yield update_task.get_updates_async (0, null, (t, p) => {});
+            Pk.Results result = yield update_task.get_updates_async (0, interface_cancellable, (t, p) => {});
             bool was_empty = updates_number == 0U;
             updates_number = get_package_count (result.get_package_array ());
             if (was_empty && updates_number != 0U) {
@@ -372,7 +373,9 @@ public class AppCenterCore.Client : Object {
         } catch (Error e) {
             critical (e.message);
         }
+
         updating_cache = false;
+        refresh_in_progress = false;
     }
 
     public uint get_package_count (GLib.GenericArray<weak Pk.Package> package_array) {
@@ -395,52 +398,85 @@ public class AppCenterCore.Client : Object {
         return size;
     }
 
+    public void cancel_updates (bool cancel_timeout) {
+        interface_cancellable.cancel ();
+
+        if (update_cache_timeout_id > 0 && cancel_timeout) {
+            Source.remove (update_cache_timeout_id);
+            update_cache_timeout_id = 0;
+            last_cache_update = null;
+        }
+
+        interface_cancellable = new GLib.Cancellable ();
+        refresh_in_progress = false;
+    }
+
     public async void update_cache (bool force = false) {
         debug ("update cache called %s", force.to_string ());
+        bool success = false;
+
         /* Make sure only one update cache can run at a time */
+        if (refresh_in_progress) {
+            debug ("Update cache already in progress - returning");
+            return;
+        } else {
+            refresh_in_progress = true;
+        }
+
+
         if (update_cache_timeout_id > 0) {
             if (force) {
-                warning ("Forced update_cache called when there is an on-going timeout - cancelling timeout");
+                debug ("Forced update_cache called when there is an on-going timeout - cancelling timeout");
                 Source.remove (update_cache_timeout_id);
                 update_cache_timeout_id = 0;
             } else {
-                warning ("Refresh timeout running and not forced - returning");
+                debug ("Refresh timeout running and not forced - returning");
+                refresh_in_progress = false;
                 return;
             }
         }
 
-        if (refresh_in_progress) {
-            warning ("Refresh cache already in progress - returning");
-            return;
-        }
-
-        // One cache update a day, keeps the doctor away!
+        /* One cache update a day, keeps the doctor away! */
         if (force || last_cache_update == null ||
             (new DateTime.now_local ()).difference (last_cache_update) / GLib.TimeSpan.SECOND >= SECONDS_BETWEEN_REFRESHES) {
 
-            debug ("New refresh task");
-            refresh_in_progress = true;
-            var refresh_task = new AppCenter.Task ();
+            var nm = NetworkMonitor.get_default ();
 
-            try {
-                yield refresh_task.refresh_cache_async (false, null, (t, p) => { });
-                last_cache_update = new DateTime.now_local ();
-            } catch (Error e) {
-                critical (e.message);
+            if (nm.get_network_available()) {
+                debug ("New refresh task");
+                var refresh_task = new AppCenter.Task ();
+
+
+                try {
+                    Pk.Results result = yield refresh_task.refresh_cache_async (false, interface_cancellable, (t, p) => { });
+                    success = result.get_exit_code () == Pk.Exit.SUCCESS;
+                    last_cache_update = new DateTime.now_local ();
+                } catch (Error e) {
+                    critical ("Update_cache: Refesh cache async failed - %s", e.message);
+
+                }
+
+                if (success) {
+                    refresh_updates.begin ();
+                }
+
+            } else {
+                refresh_in_progress = false; //Stops new timeout while no network.
             }
-
-            refresh_updates.begin ();
-            refresh_in_progress = false;
         } else {
             debug ("Too soon to refresh and not forced");
         }
 
-        update_cache_timeout_id = GLib.Timeout.add_seconds (SECONDS_BETWEEN_REFRESHES, () => {
-            debug ("Timeout triggering new update");
-            update_cache_timeout_id = 0;
-            update_cache.begin (true);
-            return GLib.Source.REMOVE;
-        });
+
+        if (refresh_in_progress) {
+            update_cache_timeout_id = GLib.Timeout.add_seconds (SECONDS_BETWEEN_REFRESHES, () => {
+                update_cache_timeout_id = 0;
+                update_cache.begin (true);
+                return GLib.Source.REMOVE;
+            });
+
+            refresh_in_progress = success;
+        } // Otherwise updates and timeout were cancelled during refresh, or no network present.
     }
 
     public async Gee.TreeSet<Pk.Package> get_installed_packages () {

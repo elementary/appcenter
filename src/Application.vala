@@ -23,6 +23,8 @@ public class AppCenter.App : Granite.Application {
         { null }
     };
 
+    private const int SECONDS_AFTER_NETWORK_UP = 60;
+
     public static bool show_updates;
     public static bool silent;
     MainWindow main_window;
@@ -59,13 +61,10 @@ public class AppCenter.App : Granite.Application {
         var client = AppCenterCore.Client.get_default ();
         if (silent) {
             NetworkMonitor.get_default ().network_changed.connect ((available) => {
-                if (available) {
-                    client.update_cache.begin (true);
-                }
+                schedule_cache_update (!available);
             });
 
-            client.update_cache.begin ();
-        
+            client.update_cache.begin (true);
             silent = false;
             hold ();
             return;
@@ -84,11 +83,30 @@ public class AppCenter.App : Granite.Application {
             if (show_updates) {
                 main_window.go_to_installed ();
             }
-        } else {
-            client.interface_cancellable.reset ();
         }
 
         main_window.present ();
+    }
+
+    private uint cache_update_timeout_id = 0;
+    private void schedule_cache_update (bool cancel = false) {
+        var client = AppCenterCore.Client.get_default ();
+
+        if (cache_update_timeout_id > 0) {
+            Source.remove (cache_update_timeout_id);
+            cache_update_timeout_id = 0;
+        }
+
+        if (cancel) {
+            client.cancel_updates (true); // Also stops timeouts.
+            return;
+        } else {
+            cache_update_timeout_id = Timeout.add_seconds (SECONDS_AFTER_NETWORK_UP, () => {
+                client.update_cache.begin ();
+                cache_update_timeout_id = 0;
+                return false;
+            });
+        }
     }
 }
 
