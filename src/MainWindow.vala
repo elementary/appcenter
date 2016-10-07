@@ -204,10 +204,12 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
                 return_button.no_show_all = false;
                 return_button.show_all ();
             }
+            button_stack.visible_child = return_button;
+            search_all_button.no_show_all = true;
+            search_all_button.hide ();
         } else {
-            search_view.search.begin (research, category_view.currently_viewed_category, (obj, res) => {
-                int results = search_view.search.end (res);
-                if (results == 0 && category_view.currently_viewed_category != null) {
+            search_view.search.begin (research, category_view.currently_viewed_category, () => {
+                if (category_view.currently_viewed_category != null) {
                     button_stack.visible_child = search_all_button;
                     search_all_button.no_show_all = false;
                     search_all_button.show_all ();
@@ -225,6 +227,12 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     }
 
     private void view_opened (string return_name, bool allow_search, string? custom_header = null) {
+        if (stack.visible_child == search_view && category_view.currently_viewed_category != null) {
+            button_stack.visible_child = return_button;
+            search_all_button.no_show_all = true;
+            search_all_button.hide ();
+        }
+    
         if (return_button_history.is_empty || return_button_history.peek_head () != return_name) {
             return_button_history.offer_head (return_name);
         }
@@ -250,6 +258,12 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             view_mode_revealer.reveal_child = true;
             custom_title_stack.set_visible_child (view_mode_revealer);
             category_header.label = "";
+        }
+        
+        if (stack.visible_child == search_view && category_view.currently_viewed_category != null) {
+            button_stack.visible_child = search_all_button;
+            search_all_button.no_show_all = false;
+            search_all_button.show_all ();
         }
 
         if (stack.visible_child == category_view) {
