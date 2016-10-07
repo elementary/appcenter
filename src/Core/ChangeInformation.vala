@@ -53,7 +53,7 @@ public class AppCenterCore.ChangeInformation : Object {
             case Pk.Status.SETUP:
                 return _("Starting");
             case Pk.Status.WAIT:
-                return _("Waiting in queue");
+                return _("Waiting");
             case Pk.Status.RUNNING:
                 return _("Running");
             case Pk.Status.QUERY:
@@ -63,9 +63,9 @@ public class AppCenterCore.ChangeInformation : Object {
             case Pk.Status.REMOVE:
                 return _("Removing packages");
             case Pk.Status.DOWNLOAD:
-                return _("Downloading packages");
+                return _("Downloading");
             case Pk.Status.INSTALL:
-                return _("Installing packages");
+                return _("Installing");
             case Pk.Status.REFRESH_CACHE:
                 return _("Refreshing software list");
             case Pk.Status.UPDATE:
