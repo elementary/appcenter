@@ -192,6 +192,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         unowned string research = search_entry.text;
         if (research.length < 2) {
             view_mode_revealer.reveal_child = true;
+            custom_title_stack.set_visible_child (view_mode_revealer);
             switch (view_mode.selected) {
                 case 0:
                     stack.visible_child = category_view;
@@ -258,14 +259,14 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             view_mode_revealer.reveal_child = true;
             custom_title_stack.set_visible_child (view_mode_revealer);
             category_header.label = "";
+        } else {
+            if (category_view.currently_viewed_category != null) {
+                button_stack.visible_child = search_all_button;
+                search_all_button.no_show_all = false;
+                search_all_button.show_all ();
+            }
         }
         
-        if (stack.visible_child == search_view && category_view.currently_viewed_category != null) {
-            button_stack.visible_child = search_all_button;
-            search_all_button.no_show_all = false;
-            search_all_button.show_all ();
-        }
-
         if (stack.visible_child == category_view) {
             search_entry.placeholder_text = _("Search Apps");
         }
@@ -275,10 +276,8 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         return_button_history.poll_head ();
         if (!return_button_history.is_empty && stack.visible_child == search_view) {
             return_button.label = return_button_history.peek_head ();
-            if (stack.visible_child == search_view) {
-                return_button.no_show_all = true;
-                return_button.hide ();
-            }
+            return_button.no_show_all = true;
+            return_button.hide ();
         } else {
             return_button.no_show_all = true;
             return_button.hide ();
@@ -289,7 +288,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     }
     
     private void search_all_apps () {
-        custom_title_stack.set_visible_child (view_mode_revealer);
         category_header.label = "";
         
         search_entry.placeholder_text = _("Search Apps");
