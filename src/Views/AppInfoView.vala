@@ -146,9 +146,10 @@ namespace AppCenter.Views {
             base.set_up_package (icon_size);
         }
         
-        protected override void update_state () {
-            app_version.label = package.get_version ();
-            app_version.ellipsize = Pango.EllipsizeMode.END;
+        protected override void update_state (bool first_update = false) {
+            if (!first_update) {
+                app_version.label = package.get_version ();
+            }
             update_action ();
         }
 
