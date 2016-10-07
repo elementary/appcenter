@@ -100,7 +100,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         return_button.get_style_context ().add_class ("back-button");
         return_button_history = new Gee.LinkedList<string> ();
         
-        search_all_button = new Gtk.Button.with_label (_("Search All Apps"));
+        search_all_button = new Gtk.Button.with_label (_("Search Apps"));
         search_all_button.no_show_all = true;
         search_all_button.get_style_context ().add_class ("back-button");
         
@@ -249,7 +249,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         search_entry.sensitive = allow_search;
         search_entry.grab_focus_without_selecting ();
         if (stack.visible_child == category_view && category_view.currently_viewed_category != null) {
-            search_entry.placeholder_text = _("Search") + " " + category_view.currently_viewed_category.get_name ();
+            search_entry.placeholder_text = _("Search %s").printf (category_view.currently_viewed_category.get_name ());
         }
     }
 
