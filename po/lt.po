@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-19 10:19-0700\n"
+"POT-Creation-Date: 2016-10-07 11:00-0700\n"
 "PO-Revision-Date: 2016-09-08 18:34+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -11,74 +11,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "(n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2016-09-20 07:28+0000\n"
-"X-Generator: Launchpad (build 18200)\n"
+"X-Launchpad-Export-Date: 2016-10-08 05:54+0000\n"
+"X-Generator: Launchpad (build 18227)\n"
 
-#: ../src/Widgets/UpdateHeaderRow.vala:121
-msgid "%u Update Available"
-msgid_plural "%u Updates Available"
-msgstr[0] "Yra prieinamas %u atnaujinimas"
-msgstr[1] "Yra prieinami %u atnaujinimai"
-msgstr[2] "Yra prieinama %u atnaujinimų"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:122
-msgid "Size: %s"
-msgstr "Dydis: %s"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:158
-msgid "Searching for updates…"
-msgstr "Ieškoma atnaujinimų..."
-
-#: ../src/Widgets/UpdateHeaderRow.vala:165
-msgid "Up to Date"
-msgstr "Atnaujintos"
-
-#: ../src/AbstractAppContainer.vala:62
-msgid "Cancel"
-msgstr "Atsisakyti"
-
-#: ../src/AbstractAppContainer.vala:65 ../src/AbstractAppContainer.vala:129
-msgid "Install"
-msgstr "Įdiegti"
-
-#: ../src/AbstractAppContainer.vala:68
-msgid "Uninstall"
-msgstr "Šalinti"
-
-#: ../src/AbstractAppContainer.vala:154
-msgid "Update"
-msgstr "Atnaujinti"
-
-#: ../src/MainWindow.vala:91
-msgid "AppCenter"
+#: ../src/Application.vala:35
+msgid "App Center"
 msgstr "Programų centras"
 
-#: ../src/MainWindow.vala:99 ../src/Views/CategoryView.vala:68
-#: ../src/Views/CategoryView.vala:75
-msgid "Categories"
-msgstr "Kategorijos"
+#: ../src/Application.vala:53
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Erikas https://launchpad.net/~erikasras\n"
+"  Mantas Kriaučiūnas https://launchpad.net/~mantas\n"
+"  Moo https://launchpad.net/~mooo\n"
+"  Simonas Gudjonis https://launchpad.net/~simonas-8\n"
+"  elementaryart (old) https://launchpad.net/~elementaryart"
 
-#: ../src/MainWindow.vala:100 ../src/Views/InstalledView.vala:45
+#: ../src/Views/InstalledView.vala:45 ../src/MainWindow.vala:100
 msgctxt "view"
 msgid "Updates"
 msgstr "Atnaujinimai"
-
-#: ../src/MainWindow.vala:116
-msgid "Search Apps"
-msgstr "Ieškoti programų"
-
-#: ../src/AbstractAppList.vala:30
-msgid "No Results"
-msgstr "Rezultatų nėra"
-
-#: ../src/AbstractAppList.vala:30
-msgid "No apps could be found. Try changing search terms."
-msgstr ""
-"Nepavyko rasti jokių programų. Pabandykite pakeisti paieškos žodžius."
-
-#: ../src/Views/AppListView.vala:64
-msgid "Update All"
-msgstr "Atnaujinti viską"
 
 #. / TRANSLATORS: the name of the Search view
 #: ../src/Views/SearchView.vala:36
@@ -86,13 +39,10 @@ msgctxt "view"
 msgid "Search"
 msgstr "Ieškoti"
 
-#: ../src/Views/AppInfoView.vala:48
-msgid "Screenshot Not Available"
-msgstr "Ekrano kopija neprieinama"
-
-#: ../src/Views/AppInfoView.vala:128
-msgid "Extensions:"
-msgstr "Plėtiniai:"
+#: ../src/Views/CategoryView.vala:68 ../src/Views/CategoryView.vala:75
+#: ../src/MainWindow.vala:99
+msgid "Categories"
+msgstr "Kategorijos"
 
 #: ../src/Views/CategoryView.vala:118
 msgid "Audio"
@@ -142,6 +92,10 @@ msgstr "Mokslas ir inžinerija"
 msgid "Universal Access"
 msgstr "Universalioji prieiga"
 
+#: ../src/Views/AppListView.vala:64
+msgid "Update All"
+msgstr "Atnaujinti viską"
+
 #: ../src/Views/FeaturedView.vala:33
 msgid "Best Rated"
 msgstr "Geriausiai įvertintos"
@@ -150,27 +104,56 @@ msgstr "Geriausiai įvertintos"
 msgid "Latest Apps"
 msgstr "Naujausios programos"
 
-#: ../src/Core/Client.vala:62
-msgid "Operating System Updates"
-msgstr "Operacinės sistemos atnaujinimai"
+#: ../src/Views/AppInfoView.vala:48
+msgid "Screenshot Not Available"
+msgstr "Ekrano kopija neprieinama"
 
-#: ../src/Core/Client.vala:63
-msgid "Updates to system components"
-msgstr "Atnaujinimai sistemos komponentams"
+#: ../src/Views/AppInfoView.vala:128
+msgid "Extensions:"
+msgstr "Plėtiniai:"
 
-#: ../src/Core/Client.vala:356
-msgid "Update Available"
-msgid_plural "Updates Available"
-msgstr[0] "Prieinamas atnaujinimas"
-msgstr[1] "Prieinami atnaujinimai"
-msgstr[2] "Prieinami atnaujinimai"
+#: ../src/Widgets/UpdateHeaderRow.vala:121
+msgid "%u Update Available"
+msgid_plural "%u Updates Available"
+msgstr[0] "Yra prieinamas %u atnaujinimas"
+msgstr[1] "Yra prieinami %u atnaujinimai"
+msgstr[2] "Yra prieinama %u atnaujinimų"
 
-#: ../src/Core/Client.vala:357
-msgid "%u update is available for your system"
-msgid_plural "%u updates are available for your system"
-msgstr[0] "Jūsų sistemai prieinamas %u atnaujinimas"
-msgstr[1] "Jūsų sistemai prieinami %u atnaujinimai"
-msgstr[2] "Jūsų sistemai prieinama %u atnaujinimų"
+#: ../src/Widgets/UpdateHeaderRow.vala:122
+msgid "Size: %s"
+msgstr "Dydis: %s"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:158
+msgid "Searching for updates…"
+msgstr "Ieškoma atnaujinimų..."
+
+#: ../src/Widgets/UpdateHeaderRow.vala:165
+msgid "Up to Date"
+msgstr "Atnaujintos"
+
+#: ../src/MainWindow.vala:91
+msgid "AppCenter"
+msgstr "Programų centras"
+
+#: ../src/MainWindow.vala:116
+msgid "Search Apps"
+msgstr "Ieškoti programų"
+
+#: ../src/AbstractAppContainer.vala:62
+msgid "Cancel"
+msgstr "Atsisakyti"
+
+#: ../src/AbstractAppContainer.vala:65 ../src/AbstractAppContainer.vala:129
+msgid "Install"
+msgstr "Įdiegti"
+
+#: ../src/AbstractAppContainer.vala:68
+msgid "Uninstall"
+msgstr "Šalinti"
+
+#: ../src/AbstractAppContainer.vala:154
+msgid "Update"
+msgstr "Atnaujinti"
 
 #: ../src/Core/Package.vala:117
 msgid "Application installed"
@@ -180,163 +163,180 @@ msgstr "Programa įdiegta"
 msgid "%s has been successfully installed"
 msgstr "%s buvo sėkmingai įdiegta"
 
-#: ../src/Core/ChangeInformation.vala:47
+#: ../src/Core/Client.vala:62
+msgid "Operating System Updates"
+msgstr "Operacinės sistemos atnaujinimai"
+
+#: ../src/Core/Client.vala:63
+msgid "Updates to system components"
+msgstr "Atnaujinimai sistemos komponentams"
+
+#: ../src/Core/Client.vala:352
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "Prieinamas atnaujinimas"
+msgstr[1] "Prieinami atnaujinimai"
+msgstr[2] "Prieinami atnaujinimai"
+
+#: ../src/Core/Client.vala:353
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "Jūsų sistemai prieinamas %u atnaujinimas"
+msgstr[1] "Jūsų sistemai prieinami %u atnaujinimai"
+msgstr[2] "Jūsų sistemai prieinama %u atnaujinimų"
+
+#: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
 msgstr "Pradedama"
 
-#: ../src/Core/ChangeInformation.vala:49
-msgid "Waiting in queue"
-msgstr "Laukiama eilėje"
+#: ../src/Core/ChangeInformation.vala:56
+msgid "Waiting"
+msgstr ""
 
-#: ../src/Core/ChangeInformation.vala:51
+#: ../src/Core/ChangeInformation.vala:58
 msgid "Running"
 msgstr "Vykdoma"
 
-#: ../src/Core/ChangeInformation.vala:53
+#: ../src/Core/ChangeInformation.vala:60
 msgid "Querying"
 msgstr "Užklausiama"
 
-#: ../src/Core/ChangeInformation.vala:55
+#: ../src/Core/ChangeInformation.vala:62
 msgid "Getting information"
 msgstr "Gaunama informacija"
 
-#: ../src/Core/ChangeInformation.vala:57
+#: ../src/Core/ChangeInformation.vala:64
 msgid "Removing packages"
 msgstr "Šalinami paketai"
 
-#: ../src/Core/ChangeInformation.vala:59
-msgid "Downloading packages"
-msgstr "Atsiunčiami paketai"
+#: ../src/Core/ChangeInformation.vala:66
+msgid "Downloading"
+msgstr ""
 
-#: ../src/Core/ChangeInformation.vala:61
-msgid "Installing packages"
-msgstr "Įdiegiami paketai"
+#: ../src/Core/ChangeInformation.vala:68
+msgid "Installing"
+msgstr "Diegiama"
 
-#: ../src/Core/ChangeInformation.vala:63
+#: ../src/Core/ChangeInformation.vala:70
 msgid "Refreshing software list"
 msgstr "Iš naujo įkeliamas programinės įrangos sąrašas"
 
-#: ../src/Core/ChangeInformation.vala:65
+#: ../src/Core/ChangeInformation.vala:72
 msgid "Installing updates"
 msgstr "Įdiegiami atnaujinimai"
 
-#: ../src/Core/ChangeInformation.vala:67
+#: ../src/Core/ChangeInformation.vala:74
 msgid "Cleaning up packages"
 msgstr "Išvalomi paketai"
 
-#: ../src/Core/ChangeInformation.vala:69
+#: ../src/Core/ChangeInformation.vala:76
 msgid "Obsoleting packages"
 msgstr "Žymimi pasenę paketai"
 
-#: ../src/Core/ChangeInformation.vala:71
+#: ../src/Core/ChangeInformation.vala:78
 msgid "Resolving dependencies"
 msgstr "Tikrinamos priklausomybės"
 
-#: ../src/Core/ChangeInformation.vala:73
+#: ../src/Core/ChangeInformation.vala:80
 msgid "Checking signatures"
 msgstr "Tikrinami parašai"
 
-#: ../src/Core/ChangeInformation.vala:75
+#: ../src/Core/ChangeInformation.vala:82
 msgid "Testing changes"
 msgstr "Išbandomi pakeitimai"
 
-#: ../src/Core/ChangeInformation.vala:77
+#: ../src/Core/ChangeInformation.vala:84
 msgid "Committing changes"
 msgstr "Patvirtinami pakeitimai"
 
-#: ../src/Core/ChangeInformation.vala:79
+#: ../src/Core/ChangeInformation.vala:86
 msgid "Requesting data"
 msgstr "Užklausiami duomenys"
 
-#: ../src/Core/ChangeInformation.vala:81
+#: ../src/Core/ChangeInformation.vala:88
 msgid "Finished"
 msgstr "Užbaigta"
 
-#: ../src/Core/ChangeInformation.vala:83
+#: ../src/Core/ChangeInformation.vala:90
 msgid "Cancelling"
 msgstr "Atšaukiama"
 
-#: ../src/Core/ChangeInformation.vala:85
+#: ../src/Core/ChangeInformation.vala:92
 msgid "Downloading repository information"
 msgstr "Atsiunčiama saugyklos informacija"
 
-#: ../src/Core/ChangeInformation.vala:87
+#: ../src/Core/ChangeInformation.vala:94
 msgid "Downloading list of packages"
 msgstr "Atsiunčiamas paketų sąrašas"
 
-#: ../src/Core/ChangeInformation.vala:89
+#: ../src/Core/ChangeInformation.vala:96
 msgid "Downloading file lists"
 msgstr "Atsiunčiami failų sąrašai"
 
-#: ../src/Core/ChangeInformation.vala:91
+#: ../src/Core/ChangeInformation.vala:98
 msgid "Downloading lists of changes"
 msgstr "Atsiunčiami pakeitimų sąrašai"
 
-#: ../src/Core/ChangeInformation.vala:93
+#: ../src/Core/ChangeInformation.vala:100
 msgid "Downloading groups"
 msgstr "Atsiunčiamos grupės"
 
-#: ../src/Core/ChangeInformation.vala:95
+#: ../src/Core/ChangeInformation.vala:102
 msgid "Downloading update information"
 msgstr "Atsiunčiama atnaujinimo informacija"
 
-#: ../src/Core/ChangeInformation.vala:97
+#: ../src/Core/ChangeInformation.vala:104
 msgid "Repackaging files"
 msgstr "Iš naujo pakuojami failai"
 
-#: ../src/Core/ChangeInformation.vala:99
+#: ../src/Core/ChangeInformation.vala:106
 msgid "Loading cache"
 msgstr "Įkeliamas podėlis"
 
-#: ../src/Core/ChangeInformation.vala:101
+#: ../src/Core/ChangeInformation.vala:108
 msgid "Scanning applications"
 msgstr "Peržvelgiamos programos"
 
-#: ../src/Core/ChangeInformation.vala:103
+#: ../src/Core/ChangeInformation.vala:110
 msgid "Generating package lists"
 msgstr "Kuriami paketų sąrašai"
 
-#: ../src/Core/ChangeInformation.vala:105
+#: ../src/Core/ChangeInformation.vala:112
 msgid "Waiting for package manager lock"
 msgstr "Laukiama paketų tvarkytuvės užrakto"
 
-#: ../src/Core/ChangeInformation.vala:107
+#: ../src/Core/ChangeInformation.vala:114
 msgid "Waiting for authentication"
 msgstr "Laukiama tapatybės nustatymo"
 
-#: ../src/Core/ChangeInformation.vala:109
+#: ../src/Core/ChangeInformation.vala:116
 msgid "Updating running applications"
 msgstr "Atnaujinamos vykdomos programos"
 
-#: ../src/Core/ChangeInformation.vala:111
+#: ../src/Core/ChangeInformation.vala:118
 msgid "Checking applications in use"
 msgstr "Tikrinamos naudojamos programos"
 
-#: ../src/Core/ChangeInformation.vala:113
+#: ../src/Core/ChangeInformation.vala:120
 msgid "Checking libraries in use"
 msgstr "Tikrinamos naudojamos bibliotekos"
 
-#: ../src/Core/ChangeInformation.vala:115
+#: ../src/Core/ChangeInformation.vala:122
 msgid "Copying files"
 msgstr "Kopijuojami failai"
 
-#: ../src/Core/ChangeInformation.vala:117
+#: ../src/Core/ChangeInformation.vala:124
 msgid "Unknown state"
 msgstr "Nežinoma būsena"
 
-#: ../src/Application.vala:35
-msgid "App Center"
-msgstr "Programų centras"
+#: ../src/AbstractAppList.vala:30
+msgid "No Results"
+msgstr "Rezultatų nėra"
 
-#: ../src/Application.vala:53
-msgid "translator-credits"
+#: ../src/AbstractAppList.vala:30
+msgid "No apps could be found. Try changing search terms."
 msgstr ""
-"Launchpad Contributions:\n"
-"  Erikas https://launchpad.net/~erikasras\n"
-"  Mantas Kriaučiūnas https://launchpad.net/~mantas\n"
-"  Moo https://launchpad.net/~mooo\n"
-"  Simonas Gudjonis https://launchpad.net/~simonas-8\n"
-"  elementaryart (old) https://launchpad.net/~elementaryart"
+"Nepavyko rasti jokių programų. Pabandykite pakeisti paieškos žodžius."
 
 #~ msgid "Show available updates"
 #~ msgstr "Rodyti galimus atnaujinimus"
@@ -380,5 +380,11 @@ msgstr ""
 #~ msgid "Removing"
 #~ msgstr "Šalinama"
 
-#~ msgid "Installing"
-#~ msgstr "Diegiama"
+#~ msgid "Installing packages"
+#~ msgstr "Įdiegiami paketai"
+
+#~ msgid "Downloading packages"
+#~ msgstr "Atsiunčiami paketai"
+
+#~ msgid "Waiting in queue"
+#~ msgstr "Laukiama eilėje"
