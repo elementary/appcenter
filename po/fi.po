@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-07 11:00-0700\n"
+"POT-Creation-Date: 2016-10-09 08:15-0700\n"
 "PO-Revision-Date: 2016-06-28 08:20+0000\n"
 "Last-Translator: Jiri Grönroos <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-10-08 05:53+0000\n"
+"X-Launchpad-Export-Date: 2016-10-10 06:46+0000\n"
 "X-Generator: Launchpad (build 18227)\n"
 
 #: ../src/Application.vala:35
@@ -24,7 +24,7 @@ msgstr ""
 "  Jiri Grönroos https://launchpad.net/~jiri-gronroos\n"
 "  elementaryart (old) https://launchpad.net/~elementaryart"
 
-#: ../src/Views/InstalledView.vala:45 ../src/MainWindow.vala:100
+#: ../src/Views/InstalledView.vala:45 ../src/MainWindow.vala:114
 msgctxt "view"
 msgid "Updates"
 msgstr "Päivitykset"
@@ -35,56 +35,56 @@ msgctxt "view"
 msgid "Search"
 msgstr "Haku"
 
-#: ../src/Views/CategoryView.vala:68 ../src/Views/CategoryView.vala:75
-#: ../src/MainWindow.vala:99
+#: ../src/Views/CategoryView.vala:72 ../src/Views/CategoryView.vala:79
+#: ../src/MainWindow.vala:113
 msgid "Categories"
 msgstr "Luokat"
 
-#: ../src/Views/CategoryView.vala:118
+#: ../src/Views/CategoryView.vala:122
 msgid "Audio"
 msgstr "Ääni"
 
-#: ../src/Views/CategoryView.vala:131
+#: ../src/Views/CategoryView.vala:135
 msgid "Development"
 msgstr "Kehitys"
 
-#: ../src/Views/CategoryView.vala:144
+#: ../src/Views/CategoryView.vala:148
 msgid "Accessories"
 msgstr "Apuohjelmat"
 
-#: ../src/Views/CategoryView.vala:157
+#: ../src/Views/CategoryView.vala:161
 msgid "Office"
 msgstr "Toimisto"
 
-#: ../src/Views/CategoryView.vala:170
+#: ../src/Views/CategoryView.vala:174
 msgid "System"
 msgstr "Järjestelmä"
 
-#: ../src/Views/CategoryView.vala:183
+#: ../src/Views/CategoryView.vala:187
 msgid "Video"
 msgstr "Video"
 
-#: ../src/Views/CategoryView.vala:196
+#: ../src/Views/CategoryView.vala:200
 msgid "Graphics"
 msgstr "Grafiikka"
 
-#: ../src/Views/CategoryView.vala:208
+#: ../src/Views/CategoryView.vala:212
 msgid "Games"
 msgstr "Pelit"
 
-#: ../src/Views/CategoryView.vala:221
+#: ../src/Views/CategoryView.vala:225
 msgid "Education"
 msgstr "Koulutus"
 
-#: ../src/Views/CategoryView.vala:233
+#: ../src/Views/CategoryView.vala:237
 msgid "Internet"
 msgstr "Internet"
 
-#: ../src/Views/CategoryView.vala:246
+#: ../src/Views/CategoryView.vala:250
 msgid "Science & Engineering"
 msgstr "Tiede ja suunnittelu"
 
-#: ../src/Views/CategoryView.vala:258
+#: ../src/Views/CategoryView.vala:262
 msgid "Universal Access"
 msgstr "Esteettömyys"
 
@@ -126,13 +126,18 @@ msgstr "Etsitään päivityksiä…"
 msgid "Up to Date"
 msgstr "Ajan tasalla"
 
-#: ../src/MainWindow.vala:91
+#: ../src/MainWindow.vala:95
 msgid "AppCenter"
 msgstr "Sovelluskeskus"
 
-#: ../src/MainWindow.vala:116
+#: ../src/MainWindow.vala:103 ../src/MainWindow.vala:130
+#: ../src/MainWindow.vala:271 ../src/MainWindow.vala:293
 msgid "Search Apps"
 msgstr "Etsi sovelluksia"
+
+#: ../src/MainWindow.vala:253
+msgid "Search %s"
+msgstr ""
 
 #: ../src/AbstractAppContainer.vala:62
 msgid "Cancel"
@@ -166,13 +171,13 @@ msgstr "Käyttöjärjestelmäpäivitykset"
 msgid "Updates to system components"
 msgstr "Päivitykset järjestelmän osiin"
 
-#: ../src/Core/Client.vala:352
+#: ../src/Core/Client.vala:338
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Päivitys saatavilla"
 msgstr[1] "Päivityksiä saatavilla"
 
-#: ../src/Core/Client.vala:353
+#: ../src/Core/Client.vala:339
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "Järjestelmälle on saatavilla %u päivitys"

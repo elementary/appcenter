@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-07 11:00-0700\n"
+"POT-Creation-Date: 2016-10-09 08:15-0700\n"
 "PO-Revision-Date: 2016-10-08 22:30+0000\n"
 "Last-Translator: Waqar Ahmed <waqar.17a@gmail.com>\n"
 "Language-Team: \n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-10-09 06:38+0000\n"
+"X-Launchpad-Export-Date: 2016-10-10 06:48+0000\n"
 "X-Generator: Launchpad (build 18227)\n"
 "Language: ur\n"
 
@@ -26,7 +26,7 @@ msgstr ""
 "  Waqas Ahmad https://launchpad.net/~waqqas-ahmad\n"
 "  elementaryart (old) https://launchpad.net/~elementaryart"
 
-#: ../src/Views/InstalledView.vala:45 ../src/MainWindow.vala:100
+#: ../src/Views/InstalledView.vala:45 ../src/MainWindow.vala:114
 msgctxt "view"
 msgid "Updates"
 msgstr "اپ ڈیٹس"
@@ -37,56 +37,56 @@ msgctxt "view"
 msgid "Search"
 msgstr "تلاش کریں"
 
-#: ../src/Views/CategoryView.vala:68 ../src/Views/CategoryView.vala:75
-#: ../src/MainWindow.vala:99
+#: ../src/Views/CategoryView.vala:72 ../src/Views/CategoryView.vala:79
+#: ../src/MainWindow.vala:113
 msgid "Categories"
 msgstr "اقسام"
 
-#: ../src/Views/CategoryView.vala:118
+#: ../src/Views/CategoryView.vala:122
 msgid "Audio"
 msgstr "آڈیو"
 
-#: ../src/Views/CategoryView.vala:131
+#: ../src/Views/CategoryView.vala:135
 msgid "Development"
 msgstr "ڈیولپمنٹ"
 
-#: ../src/Views/CategoryView.vala:144
+#: ../src/Views/CategoryView.vala:148
 msgid "Accessories"
 msgstr "لوازمات"
 
-#: ../src/Views/CategoryView.vala:157
+#: ../src/Views/CategoryView.vala:161
 msgid "Office"
 msgstr "آفس"
 
-#: ../src/Views/CategoryView.vala:170
+#: ../src/Views/CategoryView.vala:174
 msgid "System"
 msgstr "سسٹم"
 
-#: ../src/Views/CategoryView.vala:183
+#: ../src/Views/CategoryView.vala:187
 msgid "Video"
 msgstr "ویڈیو"
 
-#: ../src/Views/CategoryView.vala:196
+#: ../src/Views/CategoryView.vala:200
 msgid "Graphics"
 msgstr "گرافکس"
 
-#: ../src/Views/CategoryView.vala:208
+#: ../src/Views/CategoryView.vala:212
 msgid "Games"
 msgstr "گیمز"
 
-#: ../src/Views/CategoryView.vala:221
+#: ../src/Views/CategoryView.vala:225
 msgid "Education"
 msgstr "تعلیم"
 
-#: ../src/Views/CategoryView.vala:233
+#: ../src/Views/CategoryView.vala:237
 msgid "Internet"
 msgstr "انٹرنیٹ"
 
-#: ../src/Views/CategoryView.vala:246
+#: ../src/Views/CategoryView.vala:250
 msgid "Science & Engineering"
 msgstr "سائنس اور انجینئرنگ"
 
-#: ../src/Views/CategoryView.vala:258
+#: ../src/Views/CategoryView.vala:262
 msgid "Universal Access"
 msgstr "وسیع رسائی"
 
@@ -128,13 +128,18 @@ msgstr "تاذہ شمارے تلاش کئے جارہے ہیں"
 msgid "Up to Date"
 msgstr "بلکل جدید ہے"
 
-#: ../src/MainWindow.vala:91
+#: ../src/MainWindow.vala:95
 msgid "AppCenter"
 msgstr "مرکزِ اپلی کیشن"
 
-#: ../src/MainWindow.vala:116
+#: ../src/MainWindow.vala:103 ../src/MainWindow.vala:130
+#: ../src/MainWindow.vala:271 ../src/MainWindow.vala:293
 msgid "Search Apps"
 msgstr "اطلاقیےتلاش کریں"
+
+#: ../src/MainWindow.vala:253
+msgid "Search %s"
+msgstr ""
 
 #: ../src/AbstractAppContainer.vala:62
 msgid "Cancel"
@@ -168,13 +173,13 @@ msgstr "آپریٹنگ سسٹم کی اپ ڈیٹس"
 msgid "Updates to system components"
 msgstr "سسٹم کے حصوں کی اپ ڈیٹس"
 
-#: ../src/Core/Client.vala:352
+#: ../src/Core/Client.vala:338
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "اپ ڈیٹ دستیاب ہے"
 msgstr[1] "اپ ڈیٹس دستیاب ہیں"
 
-#: ../src/Core/Client.vala:353
+#: ../src/Core/Client.vala:339
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "%u تازہ کاری آپ کے سسٹم کے لیے دستیاب ہے"
