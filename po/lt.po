@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-10-09 08:15-0700\n"
-"PO-Revision-Date: 2016-09-08 18:34+0000\n"
+"PO-Revision-Date: 2016-10-11 08:43+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "(n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2016-10-10 06:47+0000\n"
+"X-Launchpad-Export-Date: 2016-10-12 06:07+0000\n"
 "X-Generator: Launchpad (build 18227)\n"
 
 #: ../src/Application.vala:35
@@ -142,7 +142,7 @@ msgstr "Ieškoti programų"
 
 #: ../src/MainWindow.vala:253
 msgid "Search %s"
-msgstr ""
+msgstr "Ieškoti %s"
 
 #: ../src/AbstractAppContainer.vala:62
 msgid "Cancel"
@@ -196,7 +196,7 @@ msgstr "Pradedama"
 
 #: ../src/Core/ChangeInformation.vala:56
 msgid "Waiting"
-msgstr ""
+msgstr "Laukiama"
 
 #: ../src/Core/ChangeInformation.vala:58
 msgid "Running"
@@ -216,7 +216,7 @@ msgstr "Šalinami paketai"
 
 #: ../src/Core/ChangeInformation.vala:66
 msgid "Downloading"
-msgstr ""
+msgstr "Atsiunčiama"
 
 #: ../src/Core/ChangeInformation.vala:68
 msgid "Installing"
