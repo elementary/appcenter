@@ -70,8 +70,8 @@ namespace AppCenter.Widgets {
             grid.add (widget);
         }
 
-        public void update (uint _update_numbers, uint64 _update_real_size, bool _is_updating) {
-            grid.update (_update_numbers, _update_real_size, _is_updating);
+        public void update (uint _update_numbers, uint64 _update_real_size, bool _is_updating, bool _restart_required) {
+            grid.update (_update_numbers, _update_real_size, _is_updating, _restart_required);
             changed (); /* Triggers resort */
         }
         /** ---------------- **/
@@ -81,19 +81,21 @@ namespace AppCenter.Widgets {
             public uint update_numbers {get; protected set; default = 0;}
             public uint64 update_real_size {get; protected set; default = 0;}
             public bool is_updating {get; protected set; default = false;}
+            public bool restart_required {get; protected set; default = false;}
 
             construct {
                 margin = 12;
                 column_spacing = 12;
             }
 
-            protected void store_data (uint _update_numbers, uint64 _update_real_size, bool _is_updating) {
+            protected void store_data (uint _update_numbers, uint64 _update_real_size, bool _is_updating, bool _restart_required) {
                 update_numbers = _update_numbers;
                 update_real_size = _update_real_size;
                 is_updating = _is_updating;
+                restart_required = _restart_required;
             }
 
-            public abstract void update (uint _update_numbers, uint64 _update_real_size, bool _is_updating);
+            public abstract void update (uint _update_numbers, uint64 _update_real_size, bool _is_updating, bool _restart_required);
         }
 
         /** Header to show at top of list if there are updates available **/
@@ -114,8 +116,8 @@ namespace AppCenter.Widgets {
                 add (update_size_label);
             }
 
-            public override void update (uint _update_numbers, uint64 _update_real_size, bool _is_updating) {
-                store_data (_update_numbers,  _update_real_size, _is_updating);
+            public override void update (uint _update_numbers, uint64 _update_real_size, bool _is_updating, bool _restart_required) {
+                store_data (_update_numbers,  _update_real_size, _is_updating, _restart_required);
 
                 if (!is_updating) {
                     updates_label.label = ngettext ("%u Update Available", "%u Updates Available", update_numbers).printf (update_numbers);
@@ -147,8 +149,8 @@ namespace AppCenter.Widgets {
                 add (spinner);
             }
 
-            public override void update (uint _update_numbers, uint64 _update_real_size, bool _is_updating) {
-                store_data (_update_numbers,  _update_real_size, _is_updating);
+            public override void update (uint _update_numbers, uint64 _update_real_size, bool _is_updating, bool _restart_required) {
+                store_data (_update_numbers,  _update_real_size, _is_updating, _restart_required);
 
                 if (is_updating) {
                     halign = Gtk.Align.CENTER;
@@ -158,11 +160,15 @@ namespace AppCenter.Widgets {
                     label.label = _("Searching for updates…");
                     label.get_style_context ().remove_class ("h4");
                 } else {
-                    halign = Gtk.Align.START;
+                    halign = Gtk.Align.FILL;
                     spinner.stop ();
                     spinner.no_show_all = true;
                     spinner.hide ();
-                    label.label = _("Up to Date");
+                    if (restart_required) {
+                        label.label = _("Restart required");
+                    } else {
+                        label.label = _("Up to Date");
+                    }
                     label.get_style_context ().add_class ("h4");
                 }
             }

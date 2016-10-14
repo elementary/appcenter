@@ -18,6 +18,8 @@ public class AppCenterCore.Client : Object {
     public signal void updates_available ();
     public signal void tasks_finished ();
 
+    private const string RESTART_REQUIRED_FILE = "/var/run/reboot-required";
+
     public bool connected { public get; private set; }
     public bool updating_cache { public get; private set; }
 
@@ -370,6 +372,24 @@ public class AppCenterCore.Client : Object {
         }
         updating_cache = false;
     }
+    
+   public async bool check_restart (bool notify) {
+        if (FileUtils.test (RESTART_REQUIRED_FILE, FileTest.EXISTS)) {
+            if (notify) {
+                string title = _("Restart Required");
+                string body = _("Please restart your system to finalize updates");
+                var notification = new Notification (title);
+                notification.set_body (body);
+                notification.set_icon (new ThemedIcon ("system-software-install"));
+                notification.set_default_action ("app.open-application");
+                Application.get_default ().send_notification ("restart", notification);
+            }
+            
+            return true;
+        }
+        
+        return false;
+    }
 
     public uint get_package_count (GLib.GenericArray<weak Pk.Package> package_array) {
         bool os_update_found = false;
@@ -403,6 +423,7 @@ public class AppCenterCore.Client : Object {
             }
 
             refresh_updates.begin ();
+            check_restart.begin (true);
         }
 
         GLib.Timeout.add_seconds (60*60*24, () => {
