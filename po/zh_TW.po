@@ -3,15 +3,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-10-09 08:15-0700\n"
-"PO-Revision-Date: 2016-08-06 15:51+0000\n"
+"PO-Revision-Date: 2016-10-14 15:26+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2016-10-10 06:48+0000\n"
-"X-Generator: Launchpad (build 18227)\n"
+"X-Launchpad-Export-Date: 2016-10-15 05:55+0000\n"
+"X-Generator: Launchpad (build 18232)\n"
 
 #: ../src/Application.vala:35
 msgid "App Center"
@@ -137,7 +137,7 @@ msgstr "搜尋 App"
 
 #: ../src/MainWindow.vala:253
 msgid "Search %s"
-msgstr ""
+msgstr "搜尋 %s"
 
 #: ../src/AbstractAppContainer.vala:62
 msgid "Cancel"
@@ -187,7 +187,7 @@ msgstr "起始中"
 
 #: ../src/Core/ChangeInformation.vala:56
 msgid "Waiting"
-msgstr ""
+msgstr "等候中"
 
 #: ../src/Core/ChangeInformation.vala:58
 msgid "Running"
@@ -207,7 +207,7 @@ msgstr "正在移除軟體包"
 
 #: ../src/Core/ChangeInformation.vala:66
 msgid "Downloading"
-msgstr ""
+msgstr "下載中"
 
 #: ../src/Core/ChangeInformation.vala:68
 msgid "Installing"
