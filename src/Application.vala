@@ -85,7 +85,7 @@ public class AppCenter.App : Granite.Application {
                 main_window.go_to_installed ();
             }
         } else {
-            client.interface_cancellable.reset ();
+            client.cancellable.reset ();
         }
 
         main_window.present ();

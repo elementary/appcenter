@@ -165,19 +165,19 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         }
 
         unowned AppCenterCore.Client client = AppCenterCore.Client.get_default ();
-        if (client.has_tasks ()) {
+        if (client.task_in_progress) {
             if (task_finished_connection != 0U) {
                 client.disconnect (task_finished_connection);
             }
 
             hide ();
-            task_finished_connection = client.tasks_finished.connect (() => {
-                if (!visible) {
+            task_finished_connection = client.notify["task-in-progress"].connect (() => {
+                if (!visible && !client.task_in_progress) {
                     destroy ();
                 }
             });
 
-            client.interface_cancellable.cancel ();
+            client.cancellable.cancel ();
             return true;
         }
 
