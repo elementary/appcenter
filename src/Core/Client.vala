@@ -19,7 +19,7 @@ public class AppCenterCore.Client : Object {
 
     public bool connected { public get; private set; }
     public bool updating_cache { public get; private set; }
-    public bool task_in_progress { public get; private set; }
+    public uint task_count { public get; private set; default = 0; }
 
     public AppCenterCore.Package os_updates { public get; private set; }
     public GLib.Cancellable cancellable { public get; private set; }
@@ -70,6 +70,10 @@ public class AppCenterCore.Client : Object {
         os_updates = new AppCenterCore.Package (os_updates_component);
     }
 
+    public bool has_tasks () {
+        return task_count > 0;
+    }
+
     public AppStream.Component? get_extension (string extension) throws GLib.Error {
         try {
             return appstream_database.get_component_by_id (extension); 
@@ -81,7 +85,7 @@ public class AppCenterCore.Client : Object {
     }
 
     public async Pk.Exit install_package (Package package, Pk.ProgressCallback cb, GLib.Cancellable cancellable) throws GLib.Error {
-        task_in_progress = true;
+        task_count++;
 
         Pk.Exit exit_status = Pk.Exit.UNKNOWN;
         string[] packages_ids = {};
@@ -107,16 +111,16 @@ public class AppCenterCore.Client : Object {
                 throw new GLib.IOError.FAILED (Pk.Exit.enum_to_string (results.get_exit_code ()));
             }
         } catch (Error e) {
-            task_in_progress = false;
+            task_count--;
             throw e;
         }
 
-        task_in_progress = false;
+        task_count--;
         return exit_status;
     }
 
     public async Pk.Exit update_package (Package package, Pk.ProgressCallback cb, GLib.Cancellable cancellable) throws GLib.Error {
-        task_in_progress = true;
+        task_count++;
 
         Pk.Exit exit_status = Pk.Exit.UNKNOWN;
         string[] packages_ids = {};
@@ -132,7 +136,7 @@ public class AppCenterCore.Client : Object {
             var results = yield client.update_packages_async (packages_ids, cancellable, cb);
             exit_status = results.get_exit_code ();
         } catch (Error e) {
-            task_in_progress = false;
+            task_count--;
             throw e;
         } finally {
             sc.uninhibit ();
@@ -144,13 +148,13 @@ public class AppCenterCore.Client : Object {
             package.change_information.clear_update_info ();
         }
 
-        task_in_progress = false;
+        task_count--;
         yield refresh_updates ();
         return exit_status;
     }
 
     public async Pk.Exit remove_package (Package package, Pk.ProgressCallback cb, GLib.Cancellable cancellable) throws GLib.Error {
-        task_in_progress = true;
+        task_count++;
 
         Pk.Exit exit_status = Pk.Exit.UNKNOWN;
         string[] packages_ids = {};
@@ -170,17 +174,17 @@ public class AppCenterCore.Client : Object {
             results = yield client.remove_packages_async (packages_ids, true, true, cancellable, cb);
             exit_status = results.get_exit_code ();
         } catch (Error e) {
-            task_in_progress = false;
+            task_count--;
             throw e;
         }
 
-        task_in_progress = false;
+        task_count--;
         yield refresh_updates ();
         return exit_status;
     }
 
     public async void get_updates () {
-        task_in_progress = true;
+        task_count++;
 
         try {
             Pk.Results results = yield client.get_updates_async (0, cancellable, (t, p) => { });
@@ -221,11 +225,11 @@ public class AppCenterCore.Client : Object {
                 critical (e.message);
             }
 
-            task_in_progress = false;
+            task_count--;
             return;
         }
 
-        task_in_progress = false;
+        task_count--;
         updates_available ();
     }
 
@@ -280,7 +284,7 @@ public class AppCenterCore.Client : Object {
     }
 
     public Pk.Package? get_app_package (string application, Pk.Bitfield additional_filters = 0) throws GLib.Error {
-        task_in_progress = true;
+        task_count++;
 
         Pk.Package? package = null;
         var filter = Pk.Bitfield.from_enums (Pk.Filter.NEWEST);
@@ -292,17 +296,17 @@ public class AppCenterCore.Client : Object {
                 package = array.get (0);
             }
         } catch (Error e) {
-            task_in_progress = false;
+            task_count--;
             throw e;
         }
 
-        task_in_progress = false;
+        task_count--;
         return package;
     }
 
     public async void refresh_updates () {
         updating_cache = true;
-        task_in_progress = true;
+        task_count++;
 
         try {
             Pk.Results results = yield client.get_updates_async (0, null, (t, p) => {});
@@ -334,7 +338,7 @@ public class AppCenterCore.Client : Object {
         }
 
         updating_cache = false;
-        task_in_progress = false;
+        task_count--;
     }
 
     public uint get_package_count (GLib.GenericArray<weak Pk.Package> package_array) {
@@ -361,7 +365,7 @@ public class AppCenterCore.Client : Object {
     public async void update_cache (bool force = false) {
         // One cache update a day, keeps the doctor away!
         if (force || last_cache_update == null || (new DateTime.now_local ()).difference (last_cache_update) >= GLib.TimeSpan.DAY) {
-            task_in_progress = true;
+            task_count++;
 
             try {
                 yield client.refresh_cache_async (false, null, (t, p) => { });
@@ -370,7 +374,7 @@ public class AppCenterCore.Client : Object {
                 critical (e.message);
             }
 
-            task_in_progress = false;
+            task_count--;
             refresh_updates.begin ();
         }
 
@@ -381,7 +385,7 @@ public class AppCenterCore.Client : Object {
     }
 
     public async Gee.TreeSet<Pk.Package> get_installed_packages () {
-        task_in_progress = true;
+        task_count++;
 
         Pk.Bitfield filter = Pk.Bitfield.from_enums (Pk.Filter.INSTALLED, Pk.Filter.NEWEST);
         var installed = new Gee.TreeSet<Pk.Package> ();
@@ -396,7 +400,7 @@ public class AppCenterCore.Client : Object {
             critical (e.message);
         }
 
-        task_in_progress = false;
+        task_count--;
         return installed;
     }
 
