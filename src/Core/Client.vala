@@ -57,7 +57,7 @@ public class AppCenterCore.Client : Object {
             error (e.message);
         }
 
-		var icon = new AppStream.Icon ();
+        var icon = new AppStream.Icon ();
         icon.set_name ("distributor-logo");
         icon.set_kind (AppStream.IconKind.STOCK);
 
@@ -81,7 +81,7 @@ public class AppCenterCore.Client : Object {
     }
 
     public async Pk.Exit install_package (Package package, Pk.ProgressCallback cb, GLib.Cancellable cancellable) throws GLib.Error {
-    	task_in_progress = true;
+        task_in_progress = true;
 
         Pk.Exit exit_status = Pk.Exit.UNKNOWN;
         string[] packages_ids = {};
@@ -107,7 +107,7 @@ public class AppCenterCore.Client : Object {
                 throw new GLib.IOError.FAILED (Pk.Exit.enum_to_string (results.get_exit_code ()));
             }
         } catch (Error e) {
-        	task_in_progress = false;
+            task_in_progress = false;
             throw e;
         }
 
@@ -116,7 +116,7 @@ public class AppCenterCore.Client : Object {
     }
 
     public async Pk.Exit update_package (Package package, Pk.ProgressCallback cb, GLib.Cancellable cancellable) throws GLib.Error {
-    	task_in_progress = true;
+        task_in_progress = true;
 
         Pk.Exit exit_status = Pk.Exit.UNKNOWN;
         string[] packages_ids = {};
@@ -132,7 +132,7 @@ public class AppCenterCore.Client : Object {
             var results = yield client.update_packages_async (packages_ids, cancellable, cb);
             exit_status = results.get_exit_code ();
         } catch (Error e) {
-        	task_in_progress = false;
+            task_in_progress = false;
             throw e;
         } finally {
             sc.uninhibit ();
@@ -150,7 +150,7 @@ public class AppCenterCore.Client : Object {
     }
 
     public async Pk.Exit remove_package (Package package, Pk.ProgressCallback cb, GLib.Cancellable cancellable) throws GLib.Error {
-    	task_in_progress = true;
+        task_in_progress = true;
 
         Pk.Exit exit_status = Pk.Exit.UNKNOWN;
         string[] packages_ids = {};
@@ -170,7 +170,7 @@ public class AppCenterCore.Client : Object {
             results = yield client.remove_packages_async (packages_ids, true, true, cancellable, cb);
             exit_status = results.get_exit_code ();
         } catch (Error e) {
-        	task_in_progress = false;
+            task_in_progress = false;
             throw e;
         }
 
@@ -180,20 +180,20 @@ public class AppCenterCore.Client : Object {
     }
 
     public async void get_updates () {
-    	task_in_progress = true;
+        task_in_progress = true;
 
         try {
-            Pk.Results result = yield client.get_updates_async (0, cancellable, (t, p) => { });
+            Pk.Results results = yield client.get_updates_async (0, cancellable, (t, p) => { });
             string[] packages_array = {};
-            result.get_package_array ().foreach ((pk_package) => {
+            results.get_package_array ().foreach ((pk_package) => {
                 packages_array += pk_package.get_id ();
             });
 
             // We need a null to show to PackageKit that it's then end of the array.
             packages_array += null;
 
-            Pk.Results result2 = yield client.get_details_async (packages_array , cancellable, (t, p) => { });
-            result2.get_details_array ().foreach ((pk_detail) => {
+            results = yield client.get_details_async (packages_array , cancellable, (t, p) => { });
+            results.get_details_array ().foreach ((pk_detail) => {
                 var pk_package = new Pk.Package ();
                 try {
                     pk_package.set_id (pk_detail.get_package_id ());
@@ -280,7 +280,7 @@ public class AppCenterCore.Client : Object {
     }
 
     public Pk.Package? get_app_package (string application, Pk.Bitfield additional_filters = 0) throws GLib.Error {
-    	task_in_progress = true;
+        task_in_progress = true;
 
         Pk.Package? package = null;
         var filter = Pk.Bitfield.from_enums (Pk.Filter.NEWEST);
@@ -292,7 +292,7 @@ public class AppCenterCore.Client : Object {
                 package = array.get (0);
             }
         } catch (Error e) {
-        	task_in_progress = false;
+            task_in_progress = false;
             throw e;
         }
 
@@ -305,9 +305,9 @@ public class AppCenterCore.Client : Object {
         task_in_progress = true;
 
         try {
-            Pk.Results result = yield client.get_updates_async (0, null, (t, p) => {});
+            Pk.Results results = yield client.get_updates_async (0, null, (t, p) => {});
             bool was_empty = updates_number == 0U;
-            updates_number = get_package_count (result.get_package_array ());
+            updates_number = get_package_count (results.get_package_array ());
 
             var application = Application.get_default ();
             if (was_empty && updates_number != 0U) {
@@ -361,7 +361,7 @@ public class AppCenterCore.Client : Object {
     public async void update_cache (bool force = false) {
         // One cache update a day, keeps the doctor away!
         if (force || last_cache_update == null || (new DateTime.now_local ()).difference (last_cache_update) >= GLib.TimeSpan.DAY) {
-        	task_in_progress = true;
+            task_in_progress = true;
 
             try {
                 yield client.refresh_cache_async (false, null, (t, p) => { });
@@ -381,14 +381,14 @@ public class AppCenterCore.Client : Object {
     }
 
     public async Gee.TreeSet<Pk.Package> get_installed_packages () {
-    	task_in_progress = true;
+        task_in_progress = true;
 
         Pk.Bitfield filter = Pk.Bitfield.from_enums (Pk.Filter.INSTALLED, Pk.Filter.NEWEST);
         var installed = new Gee.TreeSet<Pk.Package> ();
 
         try {
-            Pk.Results result = yield client.get_packages_async (filter, null, (prog, type) => {});
-            result.get_package_array ().foreach ((pk_package) => {
+            Pk.Results results = yield client.get_packages_async (filter, null, (prog, type) => {});
+            results.get_package_array ().foreach ((pk_package) => {
                 installed.add (pk_package);
             });
 
