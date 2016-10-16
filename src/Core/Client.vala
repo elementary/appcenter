@@ -29,7 +29,7 @@ public class AppCenterCore.Client : Object {
     private GLib.DateTime last_cache_update;
     private uint updates_number = 0U;
 
-    private AppCenter.Task client;
+    private Task client;
     private SuspendControl sc;
 
     private Client () {
@@ -40,7 +40,7 @@ public class AppCenterCore.Client : Object {
         package_list = new Gee.HashMap<string, AppCenterCore.Package> (null, null);
         cancellable = new GLib.Cancellable ();
 
-        client = new AppCenter.Task ();
+        client = new Task ();
         sc = new SuspendControl ();
 
         appstream_database = new AppStream.Database ();

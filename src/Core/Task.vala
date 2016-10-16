@@ -18,7 +18,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class AppCenter.Task : Pk.Task {
+public class AppCenterCore.Task : Pk.Task {
     public Task () {
         
     }
