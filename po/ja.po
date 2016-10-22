@@ -3,15 +3,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-10-09 08:15-0700\n"
-"PO-Revision-Date: 2016-08-10 10:17+0000\n"
-"Last-Translator: Jun Takeda <takeda.jun@gmail.com>\n"
+"PO-Revision-Date: 2016-10-21 14:09+0000\n"
+"Last-Translator: BALLOON a.k.a. Fu-sen. (Keiichi SHIGA) <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2016-10-10 06:47+0000\n"
-"X-Generator: Launchpad (build 18227)\n"
+"X-Launchpad-Export-Date: 2016-10-22 05:51+0000\n"
+"X-Generator: Launchpad (build 18246)\n"
 
 #: ../src/Application.vala:35
 msgid "App Center"
@@ -212,7 +212,7 @@ msgstr ""
 
 #: ../src/Core/ChangeInformation.vala:68
 msgid "Installing"
-msgstr ""
+msgstr "インストール中"
 
 #: ../src/Core/ChangeInformation.vala:70
 msgid "Refreshing software list"

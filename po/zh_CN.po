@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2016-10-21 05:53+0000\n"
+"X-Launchpad-Export-Date: 2016-10-22 05:51+0000\n"
 "X-Generator: Launchpad (build 18246)\n"
 
 #: ../src/Application.vala:35
