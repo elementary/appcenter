@@ -5,14 +5,14 @@ Build-Depends: cmake,
                cmake-elementary,
                debhelper (>= 9),
                intltool,
-               libappstream-dev,
+               libappstream-dev (>= 0.10),
                libgee-0.8-dev,
                libgranite-dev,
                libgtk-3-dev,
                libpackagekit-glib2-dev,
                libunity-dev,
                libxml2-dev,
-               valac (>= 0.18)
+               valac (>= 0.26)
 Standards-Version: 3.9.6
 Homepage: https://launchpad.net/appcenter
 
