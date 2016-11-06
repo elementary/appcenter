@@ -171,8 +171,8 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             }
 
             hide ();
-            task_finished_connection = client.tasks_finished.connect (() => {
-                if (!visible) {
+            task_finished_connection = client.notify["task-count"].connect (() => {
+                if (!visible && client.task_count == 0) {
                     destroy ();
                 }
             });
