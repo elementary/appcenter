@@ -3,15 +3,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-10-09 08:15-0700\n"
-"PO-Revision-Date: 2016-07-28 02:24+0000\n"
-"Last-Translator: elementaryart (old) <Unknown>\n"
+"PO-Revision-Date: 2016-10-27 12:08+0000\n"
+"Last-Translator: Адмирал АнимЕ <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-10-10 06:46+0000\n"
-"X-Generator: Launchpad (build 18227)\n"
+"X-Launchpad-Export-Date: 2016-10-28 05:27+0000\n"
+"X-Generator: Launchpad (build 18246)\n"
 
 #: ../src/Application.vala:35
 msgid "App Center"
@@ -140,7 +140,7 @@ msgstr "Търсене из приложения"
 
 #: ../src/MainWindow.vala:253
 msgid "Search %s"
-msgstr ""
+msgstr "Търсене на %s"
 
 #: ../src/AbstractAppContainer.vala:62
 msgid "Cancel"
@@ -192,7 +192,7 @@ msgstr "Пускане"
 
 #: ../src/Core/ChangeInformation.vala:56
 msgid "Waiting"
-msgstr ""
+msgstr "Изчакване"
 
 #: ../src/Core/ChangeInformation.vala:58
 msgid "Running"
@@ -212,7 +212,7 @@ msgstr "Премахване на пакeти"
 
 #: ../src/Core/ChangeInformation.vala:66
 msgid "Downloading"
-msgstr ""
+msgstr "Изтегляне"
 
 #: ../src/Core/ChangeInformation.vala:68
 msgid "Installing"

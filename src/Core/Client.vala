@@ -22,18 +22,21 @@ public class AppCenterCore.Client : Object {
     public uint task_count { public get; private set; default = 0; }
 
     public AppCenterCore.Package os_updates { public get; private set; }
-    public GLib.Cancellable cancellable { public get; private set; }
 
     private Gee.HashMap<string, AppCenterCore.Package> package_list;
-    private AppStream.Database appstream_database;
+    private AppStream.Pool appstream_pool;
+    private GLib.Cancellable cancellable;
     private GLib.DateTime last_cache_update;
     private uint updates_number = 0U;
+    private uint update_cache_timeout_id = 0;
+    private bool refresh_in_progress = false;
+
+    private const int SECONDS_BETWEEN_REFRESHES = 60*60*24;
 
     private Task client;
     private SuspendControl sc;
 
     private Client () {
-
     }
 
     construct {
@@ -43,16 +46,19 @@ public class AppCenterCore.Client : Object {
         client = new Task ();
         sc = new SuspendControl ();
 
-        appstream_database = new AppStream.Database ();
+        cancellable = new GLib.Cancellable ();
+        last_cache_update = null;
 
+        appstream_pool = new AppStream.Pool ();
+        
         try {
-            appstream_database.open ();
-            appstream_database.get_all_components ().foreach ((comp) => {
+            appstream_pool.load ();
+            appstream_pool.get_components ().foreach ((comp) => {
                 var package = new AppCenterCore.Package (comp);
                 foreach (var pkg_name in comp.get_pkgnames ()) {
                     package_list.set (pkg_name, package);
                 }
-            });            
+            });
         } catch (Error e) {
             error (e.message);
         }
@@ -72,16 +78,6 @@ public class AppCenterCore.Client : Object {
 
     public bool has_tasks () {
         return task_count > 0;
-    }
-
-    public AppStream.Component? get_extension (string extension) throws GLib.Error {
-        try {
-            return appstream_database.get_component_by_id (extension); 
-        } catch (Error e) {
-            warning ("%s\n", e.message);
-        }
-        
-        return null;
     }
 
     public async Pk.Exit install_package (Package package, Pk.ProgressCallback cb, GLib.Cancellable cancellable) throws GLib.Error {
@@ -248,39 +244,41 @@ public class AppCenterCore.Client : Object {
         return packages;
     }
 
-    public Gee.Collection<AppCenterCore.Package> search_applications (string? query, AppStream.Category? category) {
-        var apps = new Gee.TreeSet<AppCenterCore.Package> ();
-        string categories = category == null ? null : get_string_from_categories (category);
-        try {
-            var comps = appstream_database.find_components (query, categories);
-            comps.foreach ((comp) => {
-                apps.add (package_list.get (comp.get_pkgnames ()[0]));
-            });
-        } catch (Error e) {
-            critical (e.message);
+    public Gee.Collection<AppCenterCore.Package> get_applications_for_category (AppStream.Category category) {
+        unowned GLib.GenericArray<AppStream.Component> components = category.get_components ();
+        if (components.length == 0) {
+            var category_array = new GLib.GenericArray<AppStream.Category> ();
+            category_array.add (category);
+            AppStream.utils_sort_components_into_categories (appstream_pool.get_components (), category_array, true);
+            components = category.get_components ();
         }
+
+        var apps = new Gee.TreeSet<AppCenterCore.Package> ();
+        components.foreach ((comp) => {
+            apps.add (package_list.get (comp.get_pkgnames ()[0]));
+        });
 
         return apps;
     }
 
-    private string get_string_from_categories (AppStream.Category category) {
-        string categories = "";
-        unowned Gee.LinkedList<string> categories_list = category.get_data<Gee.LinkedList> ("categories");
-        foreach (var cat in categories_list) {
-            if (categories != "") {
-                categories += ";" + cat.down ();
-            } else {
-                categories = cat.down ();
-            }
+    public Gee.Collection<AppCenterCore.Package> search_applications (string query, AppStream.Category? category) {
+        var apps = new Gee.TreeSet<AppCenterCore.Package> ();
+        GLib.GenericArray<weak AppStream.Component> comps = appstream_pool.search (query);
+        if (category == null) {
+            comps.foreach ((comp) => {
+                apps.add (package_list.get (comp.get_pkgnames ()[0]));
+            });
+        } else {
+            var cat_packages = get_applications_for_category (category);
+            comps.foreach ((comp) => {
+                var package = package_list.get (comp.get_pkgnames ()[0]);
+                if (package in cat_packages) {
+                    apps.add (package);
+                }
+            });
         }
 
-        category.get_subcategories ().foreach ((cat) => {
-            if (!(cat.name in categories)) {
-                categories += ";" + get_string_from_categories (cat);
-            }
-        });
-
-        return categories;
+        return apps;
     }
 
     public Pk.Package? get_app_package (string application, Pk.Bitfield additional_filters = 0) throws GLib.Error {
@@ -304,12 +302,13 @@ public class AppCenterCore.Client : Object {
         return package;
     }
 
-    public async void refresh_updates () {
+    private async void refresh_updates () {
         updating_cache = true;
         task_count++;
 
         try {
             Pk.Results results = yield client.get_updates_async (0, null, (t, p) => {});
+
             bool was_empty = updates_number == 0U;
             updates_number = get_package_count (results.get_package_array ());
 
@@ -339,6 +338,7 @@ public class AppCenterCore.Client : Object {
 
         updating_cache = false;
         task_count--;
+        refresh_in_progress = false;
     }
 
     public uint get_package_count (GLib.GenericArray<weak Pk.Package> package_array) {
@@ -362,26 +362,80 @@ public class AppCenterCore.Client : Object {
         return size;
     }
 
-    public async void update_cache (bool force = false) {
-        // One cache update a day, keeps the doctor away!
-        if (force || last_cache_update == null || (new DateTime.now_local ()).difference (last_cache_update) >= GLib.TimeSpan.DAY) {
-            task_count++;
+    public void cancel_updates (bool cancel_timeout) {
+        cancellable.cancel ();
 
-            try {
-                yield client.refresh_cache_async (false, null, (t, p) => { });
-                last_cache_update = new DateTime.now_local ();
-            } catch (Error e) {
-                critical (e.message);
-            }
-
-            task_count--;
-            refresh_updates.begin ();
+        if (update_cache_timeout_id > 0 && cancel_timeout) {
+            Source.remove (update_cache_timeout_id);
+            update_cache_timeout_id = 0;
+            last_cache_update = null;
         }
 
-        GLib.Timeout.add_seconds (60*60*24, () => {
-            update_cache.begin ();
-            return GLib.Source.REMOVE;
-        });
+        cancellable = new GLib.Cancellable ();
+        refresh_in_progress = false;
+    }
+
+    public async void update_cache (bool force = false) {
+        debug ("update cache called %s", force.to_string ());
+        bool success = false;
+
+        /* Make sure only one update cache can run at a time */
+        if (refresh_in_progress) {
+            debug ("Update cache already in progress - returning");
+            return;
+        } else {
+            refresh_in_progress = true;
+        }
+
+
+        if (update_cache_timeout_id > 0) {
+            if (force) {
+                debug ("Forced update_cache called when there is an on-going timeout - cancelling timeout");
+                Source.remove (update_cache_timeout_id);
+                update_cache_timeout_id = 0;
+            } else {
+                debug ("Refresh timeout running and not forced - returning");
+                refresh_in_progress = false;
+                return;
+            }
+        }
+
+        /* One cache update a day, keeps the doctor away! */
+        if (force || last_cache_update == null ||
+            (new DateTime.now_local ()).difference (last_cache_update) / GLib.TimeSpan.SECOND >= SECONDS_BETWEEN_REFRESHES) {
+            var nm = NetworkMonitor.get_default ();
+            if (nm.get_network_available ()) {
+                debug ("New refresh task");
+
+                try {
+                    Pk.Results results = yield client.refresh_cache_async (false, cancellable, (t, p) => { });
+                    success = results.get_exit_code () == Pk.Exit.SUCCESS;
+                    last_cache_update = new DateTime.now_local ();
+                } catch (Error e) {
+                    critical ("Update_cache: Refesh cache async failed - %s", e.message);
+                }
+
+                if (success) {
+                    refresh_updates.begin ();
+                }
+
+            } else {
+                refresh_in_progress = false; //Stops new timeout while no network.
+            }
+        } else {
+            debug ("Too soon to refresh and not forced");
+        }
+
+
+        if (refresh_in_progress) {
+            update_cache_timeout_id = GLib.Timeout.add_seconds (SECONDS_BETWEEN_REFRESHES, () => {
+                update_cache_timeout_id = 0;
+                update_cache.begin (true);
+                return GLib.Source.REMOVE;
+            });
+
+            refresh_in_progress = success;
+        } // Otherwise updates and timeout were cancelled during refresh, or no network present.
     }
 
     public async Gee.TreeSet<Pk.Package> get_installed_packages () {
