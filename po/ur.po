@@ -3,20 +3,20 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-10-09 08:15-0700\n"
-"PO-Revision-Date: 2016-10-08 22:30+0000\n"
+"PO-Revision-Date: 2016-11-24 12:37+0000\n"
 "Last-Translator: Waqar Ahmed <waqar.17a@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-10-10 06:48+0000\n"
-"X-Generator: Launchpad (build 18227)\n"
+"X-Launchpad-Export-Date: 2016-11-25 06:16+0000\n"
+"X-Generator: Launchpad (build 18282)\n"
 "Language: ur\n"
 
 #: ../src/Application.vala:35
 msgid "App Center"
-msgstr "مرکزِ ایپلی کیشن"
+msgstr "ایپ مرکز"
 
 #: ../src/Application.vala:53
 msgid "translator-credits"
@@ -139,7 +139,7 @@ msgstr "اطلاقیےتلاش کریں"
 
 #: ../src/MainWindow.vala:253
 msgid "Search %s"
-msgstr ""
+msgstr "تلاش کریں %s"
 
 #: ../src/AbstractAppContainer.vala:62
 msgid "Cancel"
@@ -231,7 +231,7 @@ msgstr "پیکج صاف کر رہا ہے"
 
 #: ../src/Core/ChangeInformation.vala:76
 msgid "Obsoleting packages"
-msgstr ""
+msgstr "پیکج فرسودہ کر رہا ہے"
 
 #: ../src/Core/ChangeInformation.vala:78
 msgid "Resolving dependencies"
@@ -271,7 +271,7 @@ msgstr "پیکیج کی فہرست ڈاؤن لوڈ کررہا ہے"
 
 #: ../src/Core/ChangeInformation.vala:96
 msgid "Downloading file lists"
-msgstr ""
+msgstr "فائلوں کی فہرستیں اتار رہا ہے"
 
 #: ../src/Core/ChangeInformation.vala:98
 msgid "Downloading lists of changes"
@@ -287,7 +287,7 @@ msgstr "تازہ کاری معلومات کی ڈاؤن لوڈنگ"
 
 #: ../src/Core/ChangeInformation.vala:104
 msgid "Repackaging files"
-msgstr ""
+msgstr "فائلیں ری پیکج کر رہا ہے"
 
 #: ../src/Core/ChangeInformation.vala:106
 msgid "Loading cache"
