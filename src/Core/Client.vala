@@ -50,6 +50,8 @@ public class AppCenterCore.Client : Object {
         last_cache_update = null;
 
         appstream_pool = new AppStream.Pool ();
+        // We don't want to show installed desktop files here
+        appstream_pool.set_flags (appstream_pool.get_flags () & ~AppStream.PoolFlags.READ_DESKTOP_FILES);
         
         try {
             appstream_pool.load ();
