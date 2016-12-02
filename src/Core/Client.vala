@@ -50,6 +50,8 @@ public class AppCenterCore.Client : Object {
         last_cache_update = null;
 
         appstream_pool = new AppStream.Pool ();
+        // We don't want to show installed desktop files here
+        appstream_pool.set_flags (appstream_pool.get_flags () & ~AppStream.PoolFlags.READ_DESKTOP_FILES);
         
         try {
             appstream_pool.load ();
@@ -266,14 +268,20 @@ public class AppCenterCore.Client : Object {
         GLib.GenericArray<weak AppStream.Component> comps = appstream_pool.search (query);
         if (category == null) {
             comps.foreach ((comp) => {
-                apps.add (package_list.get (comp.get_pkgnames ()[0]));
+                unowned string[] comp_pkgnames = comp.get_pkgnames ();
+                if (comp_pkgnames.length > 0) {
+                    apps.add (package_list.get (comp_pkgnames[0]));
+                }
             });
         } else {
             var cat_packages = get_applications_for_category (category);
             comps.foreach ((comp) => {
-                var package = package_list.get (comp.get_pkgnames ()[0]);
-                if (package in cat_packages) {
-                    apps.add (package);
+                unowned string[] comp_pkgnames = comp.get_pkgnames ();
+                if (comp_pkgnames.length > 0) {
+                    var package = package_list.get (comp_pkgnames[0]);
+                    if (package in cat_packages) {
+                        apps.add (package);
+                    }
                 }
             });
         }
