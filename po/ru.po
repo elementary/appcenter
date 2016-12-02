@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-10-09 08:15-0700\n"
-"PO-Revision-Date: 2016-10-10 18:34+0000\n"
+"PO-Revision-Date: 2016-12-02 00:53+0000\n"
 "Last-Translator: Maxim Taranov <png2378@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -11,12 +11,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2016-10-11 06:33+0000\n"
-"X-Generator: Launchpad (build 18227)\n"
+"X-Launchpad-Export-Date: 2016-12-02 05:06+0000\n"
+"X-Generator: Launchpad (build 18282)\n"
 
 #: ../src/Application.vala:35
 msgid "App Center"
-msgstr "Центр приложений"
+msgstr "AppCenter"
 
 #: ../src/Application.vala:53
 msgid "translator-credits"
@@ -129,7 +129,7 @@ msgstr "Размер: %s"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:158
 msgid "Searching for updates…"
-msgstr "Поиск обновлений..."
+msgstr "Поиск обновлений…"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:165
 msgid "Up to Date"
@@ -137,7 +137,7 @@ msgstr "Обновления не требуются"
 
 #: ../src/MainWindow.vala:95
 msgid "AppCenter"
-msgstr "Центр приложений"
+msgstr "AppCenter"
 
 #: ../src/MainWindow.vala:103 ../src/MainWindow.vala:130
 #: ../src/MainWindow.vala:271 ../src/MainWindow.vala:293
@@ -190,9 +190,9 @@ msgstr[2] "Доступны обновления"
 #: ../src/Core/Client.vala:339
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
-msgstr[0] "%u обновление доступно для вашей системы"
-msgstr[1] "%u обновления доступны для вашей системы"
-msgstr[2] "%u обновлений доступны для вашей системы"
+msgstr[0] "Для системы доступно %u обновление"
+msgstr[1] "Для системы доступны %u обновления"
+msgstr[2] "Для системы доступны %u обновлений"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -204,7 +204,7 @@ msgstr "Ожидание"
 
 #: ../src/Core/ChangeInformation.vala:58
 msgid "Running"
-msgstr "Запуск"
+msgstr "Выполнение"
 
 #: ../src/Core/ChangeInformation.vala:60
 msgid "Querying"
