@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-09 08:15-0700\n"
+"POT-Creation-Date: 2016-12-05 06:28-0600\n"
 "PO-Revision-Date: 2016-01-09 14:46+0000\n"
 "Last-Translator: nrao <nagamalli.s@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -10,177 +10,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-10-10 06:48+0000\n"
-"X-Generator: Launchpad (build 18227)\n"
-
-#: ../src/Application.vala:35
-msgid "App Center"
-msgstr "వినియోగ కేంద్రం"
-
-#: ../src/Application.vala:53
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  nrao https://launchpad.net/~nagamalli-s"
-
-#: ../src/Views/InstalledView.vala:45 ../src/MainWindow.vala:114
-msgctxt "view"
-msgid "Updates"
-msgstr ""
-
-#. / TRANSLATORS: the name of the Search view
-#: ../src/Views/SearchView.vala:36
-msgctxt "view"
-msgid "Search"
-msgstr "వెతుకు"
-
-#: ../src/Views/CategoryView.vala:72 ../src/Views/CategoryView.vala:79
-#: ../src/MainWindow.vala:113
-msgid "Categories"
-msgstr "వర్గములు"
-
-#: ../src/Views/CategoryView.vala:122
-msgid "Audio"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:135
-msgid "Development"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:148
-msgid "Accessories"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:161
-msgid "Office"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:174
-msgid "System"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:187
-msgid "Video"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:200
-msgid "Graphics"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:212
-msgid "Games"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:225
-msgid "Education"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:237
-msgid "Internet"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:250
-msgid "Science & Engineering"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:262
-msgid "Universal Access"
-msgstr ""
-
-#: ../src/Views/AppListView.vala:64
-msgid "Update All"
-msgstr "అన్నీ సవరణ చెయ్యి"
-
-#: ../src/Views/FeaturedView.vala:33
-msgid "Best Rated"
-msgstr "సర్వోత్తమముగా నిర్ధారించబడినది"
-
-#: ../src/Views/FeaturedView.vala:36
-msgid "Latest Apps"
-msgstr "నవీన వినియోగము"
-
-#: ../src/Views/AppInfoView.vala:48
-msgid "Screenshot Not Available"
-msgstr ""
-
-#: ../src/Views/AppInfoView.vala:128
-msgid "Extensions:"
-msgstr ""
-
-#: ../src/Widgets/UpdateHeaderRow.vala:121
-msgid "%u Update Available"
-msgid_plural "%u Updates Available"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../src/Widgets/UpdateHeaderRow.vala:122
-msgid "Size: %s"
-msgstr "పరిమాణం: %s"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:158
-msgid "Searching for updates…"
-msgstr "నవీకరణల కొరకు వెతుకుతుంది"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:165
-msgid "Up to Date"
-msgstr ""
-
-#: ../src/MainWindow.vala:95
-msgid "AppCenter"
-msgstr "వినియోగకేంద్రం"
-
-#: ../src/MainWindow.vala:103 ../src/MainWindow.vala:130
-#: ../src/MainWindow.vala:271 ../src/MainWindow.vala:293
-msgid "Search Apps"
-msgstr ""
-
-#: ../src/MainWindow.vala:253
-msgid "Search %s"
-msgstr ""
-
-#: ../src/AbstractAppContainer.vala:62
-msgid "Cancel"
-msgstr ""
-
-#: ../src/AbstractAppContainer.vala:65 ../src/AbstractAppContainer.vala:129
-msgid "Install"
-msgstr "స్థాపించు"
-
-#: ../src/AbstractAppContainer.vala:68
-msgid "Uninstall"
-msgstr "వ్యవస్థాపనను తీసివెయ్యి"
-
-#: ../src/AbstractAppContainer.vala:154
-msgid "Update"
-msgstr "నవీకరించుము"
-
-#: ../src/Core/Package.vala:117
-msgid "Application installed"
-msgstr ""
-
-#: ../src/Core/Package.vala:118
-msgid "%s has been successfully installed"
-msgstr ""
-
-#: ../src/Core/Client.vala:62
-msgid "Operating System Updates"
-msgstr "నిర్వహణ పద్ధతి నవీకరణలు"
-
-#: ../src/Core/Client.vala:63
-msgid "Updates to system components"
-msgstr "నిర్వహణ పద్ధతి భాగములకు సవరణలు"
-
-#: ../src/Core/Client.vala:338
-msgid "Update Available"
-msgid_plural "Updates Available"
-msgstr[0] "నవీకరణలు లభ్యం"
-msgstr[1] "నవీకరణలు లభ్యం"
-
-#: ../src/Core/Client.vala:339
-msgid "%u update is available for your system"
-msgid_plural "%u updates are available for your system"
-msgstr[0] "%u నిర్వహణ పద్ధతి భాగములకు సవరణ లభ్యం"
-msgstr[1] "%u నిర్వహణ పద్ధతి భాగములకు సవరణలు లభ్యం"
+"X-Launchpad-Export-Date: 2016-12-06 05:07+0000\n"
+"X-Generator: Launchpad (build 18282)\n"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -326,12 +157,181 @@ msgstr "దస్త్రములను నకలుతీయుచున్�
 msgid "Unknown state"
 msgstr "అజ్ఞాత స్థితి"
 
+#: ../src/Core/Client.vala:74
+msgid "Operating System Updates"
+msgstr "నిర్వహణ పద్ధతి నవీకరణలు"
+
+#: ../src/Core/Client.vala:75
+msgid "Updates to system components"
+msgstr "నిర్వహణ పద్ధతి భాగములకు సవరణలు"
+
+#: ../src/Core/Client.vala:325
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "నవీకరణలు లభ్యం"
+msgstr[1] "నవీకరణలు లభ్యం"
+
+#: ../src/Core/Client.vala:326
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "%u నిర్వహణ పద్ధతి భాగములకు సవరణ లభ్యం"
+msgstr[1] "%u నిర్వహణ పద్ధతి భాగములకు సవరణలు లభ్యం"
+
+#: ../src/Core/Package.vala:117
+msgid "Application installed"
+msgstr ""
+
+#: ../src/Core/Package.vala:118
+msgid "%s has been successfully installed"
+msgstr ""
+
+#: ../src/AbstractAppContainer.vala:62
+msgid "Cancel"
+msgstr ""
+
+#: ../src/AbstractAppContainer.vala:65 ../src/AbstractAppContainer.vala:129
+msgid "Install"
+msgstr "స్థాపించు"
+
+#: ../src/AbstractAppContainer.vala:68
+msgid "Uninstall"
+msgstr "వ్యవస్థాపనను తీసివెయ్యి"
+
+#: ../src/AbstractAppContainer.vala:154
+msgid "Update"
+msgstr "నవీకరించుము"
+
+#: ../src/Application.vala:37
+msgid "App Center"
+msgstr "వినియోగ కేంద్రం"
+
+#: ../src/Application.vala:55
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  nrao https://launchpad.net/~nagamalli-s"
+
+#: ../src/MainWindow.vala:95
+msgid "AppCenter"
+msgstr "వినియోగకేంద్రం"
+
+#: ../src/MainWindow.vala:103 ../src/MainWindow.vala:130
+#: ../src/MainWindow.vala:271 ../src/MainWindow.vala:293
+msgid "Search Apps"
+msgstr ""
+
+#: ../src/MainWindow.vala:113 ../src/Views/CategoryView.vala:72
+#: ../src/Views/CategoryView.vala:79
+msgid "Categories"
+msgstr "వర్గములు"
+
+#: ../src/MainWindow.vala:114 ../src/Views/InstalledView.vala:45
+msgctxt "view"
+msgid "Updates"
+msgstr ""
+
+#: ../src/MainWindow.vala:253
+msgid "Search %s"
+msgstr ""
+
+#. / TRANSLATORS: the name of the Search view
+#: ../src/Views/SearchView.vala:36
+msgctxt "view"
+msgid "Search"
+msgstr "వెతుకు"
+
+#: ../src/Views/AppListView.vala:64
+msgid "Update All"
+msgstr "అన్నీ సవరణ చెయ్యి"
+
+#: ../src/Views/FeaturedView.vala:33
+msgid "Best Rated"
+msgstr "సర్వోత్తమముగా నిర్ధారించబడినది"
+
+#: ../src/Views/FeaturedView.vala:36
+msgid "Latest Apps"
+msgstr "నవీన వినియోగము"
+
+#: ../src/Views/CategoryView.vala:122
+msgid "Audio"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:133
+msgid "Development"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:144
+msgid "Accessories"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:155
+msgid "Office"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:166
+msgid "System"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:177
+msgid "Video"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:188
+msgid "Graphics"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:198
+msgid "Games"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:209
+msgid "Education"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:219
+msgid "Internet"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:230
+msgid "Science & Engineering"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:240
+msgid "Universal Access"
+msgstr ""
+
+#: ../src/Views/AppInfoView.vala:48
+msgid "Screenshot Not Available"
+msgstr ""
+
+#: ../src/Views/AppInfoView.vala:128
+msgid "Extensions:"
+msgstr ""
+
 #: ../src/AbstractAppList.vala:30
 msgid "No Results"
 msgstr ""
 
 #: ../src/AbstractAppList.vala:30
 msgid "No apps could be found. Try changing search terms."
+msgstr ""
+
+#: ../src/Widgets/UpdateHeaderRow.vala:121
+msgid "%u Update Available"
+msgid_plural "%u Updates Available"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/Widgets/UpdateHeaderRow.vala:122
+msgid "Size: %s"
+msgstr "పరిమాణం: %s"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:158
+msgid "Searching for updates…"
+msgstr "నవీకరణల కొరకు వెతుకుతుంది"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:165
+msgid "Up to Date"
 msgstr ""
 
 #~ msgid "Search App"

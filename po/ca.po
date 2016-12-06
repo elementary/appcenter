@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-09 08:15-0700\n"
+"POT-Creation-Date: 2016-12-05 06:28-0600\n"
 "PO-Revision-Date: 2016-11-16 08:45+0000\n"
 "Last-Translator: Davidmp <rbndavid@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -10,181 +10,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-11-18 05:54+0000\n"
-"X-Generator: Launchpad (build 18269)\n"
-
-#: ../src/Application.vala:35
-msgid "App Center"
-msgstr "Centre d’aplicacions"
-
-#: ../src/Application.vala:53
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Adolfo Jayme https://launchpad.net/~fitojb\n"
-"  Alfredo Hernández https://launchpad.net/~aldomann\n"
-"  Davidmp https://launchpad.net/~davidmp\n"
-"  Mario Rodrigo https://launchpad.net/~capitantrueno\n"
-"  elementaryart (old) https://launchpad.net/~elementaryart"
-
-#: ../src/Views/InstalledView.vala:45 ../src/MainWindow.vala:114
-msgctxt "view"
-msgid "Updates"
-msgstr "Actualitzacions"
-
-#. / TRANSLATORS: the name of the Search view
-#: ../src/Views/SearchView.vala:36
-msgctxt "view"
-msgid "Search"
-msgstr "Cerca"
-
-#: ../src/Views/CategoryView.vala:72 ../src/Views/CategoryView.vala:79
-#: ../src/MainWindow.vala:113
-msgid "Categories"
-msgstr "Categories"
-
-#: ../src/Views/CategoryView.vala:122
-msgid "Audio"
-msgstr "Àudio"
-
-#: ../src/Views/CategoryView.vala:135
-msgid "Development"
-msgstr "Desenvolupament"
-
-#: ../src/Views/CategoryView.vala:148
-msgid "Accessories"
-msgstr "Accessoris"
-
-#: ../src/Views/CategoryView.vala:161
-msgid "Office"
-msgstr "Oficina"
-
-#: ../src/Views/CategoryView.vala:174
-msgid "System"
-msgstr "Sistema"
-
-#: ../src/Views/CategoryView.vala:187
-msgid "Video"
-msgstr "Vídeo"
-
-#: ../src/Views/CategoryView.vala:200
-msgid "Graphics"
-msgstr "Gràfics"
-
-#: ../src/Views/CategoryView.vala:212
-msgid "Games"
-msgstr "Jocs"
-
-#: ../src/Views/CategoryView.vala:225
-msgid "Education"
-msgstr "Educació"
-
-#: ../src/Views/CategoryView.vala:237
-msgid "Internet"
-msgstr "Internet"
-
-#: ../src/Views/CategoryView.vala:250
-msgid "Science & Engineering"
-msgstr "Ciència i enginyeria"
-
-#: ../src/Views/CategoryView.vala:262
-msgid "Universal Access"
-msgstr "Accés universal"
-
-#: ../src/Views/AppListView.vala:64
-msgid "Update All"
-msgstr "Actualitza-ho tot"
-
-#: ../src/Views/FeaturedView.vala:33
-msgid "Best Rated"
-msgstr "Les millor valorades"
-
-#: ../src/Views/FeaturedView.vala:36
-msgid "Latest Apps"
-msgstr "Últimes aplicacions"
-
-#: ../src/Views/AppInfoView.vala:48
-msgid "Screenshot Not Available"
-msgstr "Captura no disponible"
-
-#: ../src/Views/AppInfoView.vala:128
-msgid "Extensions:"
-msgstr "Extensions:"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:121
-msgid "%u Update Available"
-msgid_plural "%u Updates Available"
-msgstr[0] "%u actualització disponible"
-msgstr[1] "%u actualitzacions disponibles"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:122
-msgid "Size: %s"
-msgstr "Mida: %s"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:158
-msgid "Searching for updates…"
-msgstr "S’està comprovant si hi ha actualitzacions…"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:165
-msgid "Up to Date"
-msgstr "Al dia"
-
-#: ../src/MainWindow.vala:95
-msgid "AppCenter"
-msgstr "AppCenter"
-
-#: ../src/MainWindow.vala:103 ../src/MainWindow.vala:130
-#: ../src/MainWindow.vala:271 ../src/MainWindow.vala:293
-msgid "Search Apps"
-msgstr "Cerca aplicacions"
-
-#: ../src/MainWindow.vala:253
-msgid "Search %s"
-msgstr "Cerca %s"
-
-#: ../src/AbstractAppContainer.vala:62
-msgid "Cancel"
-msgstr "Cancel·la"
-
-#: ../src/AbstractAppContainer.vala:65 ../src/AbstractAppContainer.vala:129
-msgid "Install"
-msgstr "Instal·la"
-
-#: ../src/AbstractAppContainer.vala:68
-msgid "Uninstall"
-msgstr "Desinstal·la"
-
-#: ../src/AbstractAppContainer.vala:154
-msgid "Update"
-msgstr "Actualitza"
-
-#: ../src/Core/Package.vala:117
-msgid "Application installed"
-msgstr "Aplicació instal·lada"
-
-#: ../src/Core/Package.vala:118
-msgid "%s has been successfully installed"
-msgstr "%s s'ha instal·lat correctament"
-
-#: ../src/Core/Client.vala:62
-msgid "Operating System Updates"
-msgstr "Actualitzacions del sistema operatiu"
-
-#: ../src/Core/Client.vala:63
-msgid "Updates to system components"
-msgstr "Actualitzacions als components del sistema"
-
-#: ../src/Core/Client.vala:338
-msgid "Update Available"
-msgid_plural "Updates Available"
-msgstr[0] "Hi ha una actualització disponible"
-msgstr[1] "Hi ha actualitzacions disponibles"
-
-#: ../src/Core/Client.vala:339
-msgid "%u update is available for your system"
-msgid_plural "%u updates are available for your system"
-msgstr[0] "Hi ha %u actualització disponible per al sistema"
-msgstr[1] "Hi ha %u actualitzacions disponibles per al sistema"
+"X-Launchpad-Export-Date: 2016-12-06 05:06+0000\n"
+"X-Generator: Launchpad (build 18282)\n"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -330,6 +157,161 @@ msgstr "Es copien fitxers"
 msgid "Unknown state"
 msgstr "Estat desconegut"
 
+#: ../src/Core/Client.vala:74
+msgid "Operating System Updates"
+msgstr "Actualitzacions del sistema operatiu"
+
+#: ../src/Core/Client.vala:75
+msgid "Updates to system components"
+msgstr "Actualitzacions als components del sistema"
+
+#: ../src/Core/Client.vala:325
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "Hi ha una actualització disponible"
+msgstr[1] "Hi ha actualitzacions disponibles"
+
+#: ../src/Core/Client.vala:326
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "Hi ha %u actualització disponible per al sistema"
+msgstr[1] "Hi ha %u actualitzacions disponibles per al sistema"
+
+#: ../src/Core/Package.vala:117
+msgid "Application installed"
+msgstr "Aplicació instal·lada"
+
+#: ../src/Core/Package.vala:118
+msgid "%s has been successfully installed"
+msgstr "%s s'ha instal·lat correctament"
+
+#: ../src/AbstractAppContainer.vala:62
+msgid "Cancel"
+msgstr "Cancel·la"
+
+#: ../src/AbstractAppContainer.vala:65 ../src/AbstractAppContainer.vala:129
+msgid "Install"
+msgstr "Instal·la"
+
+#: ../src/AbstractAppContainer.vala:68
+msgid "Uninstall"
+msgstr "Desinstal·la"
+
+#: ../src/AbstractAppContainer.vala:154
+msgid "Update"
+msgstr "Actualitza"
+
+#: ../src/Application.vala:37
+msgid "App Center"
+msgstr "Centre d’aplicacions"
+
+#: ../src/Application.vala:55
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Adolfo Jayme https://launchpad.net/~fitojb\n"
+"  Alfredo Hernández https://launchpad.net/~aldomann\n"
+"  Davidmp https://launchpad.net/~davidmp\n"
+"  Mario Rodrigo https://launchpad.net/~capitantrueno\n"
+"  elementaryart (old) https://launchpad.net/~elementaryart"
+
+#: ../src/MainWindow.vala:95
+msgid "AppCenter"
+msgstr "AppCenter"
+
+#: ../src/MainWindow.vala:103 ../src/MainWindow.vala:130
+#: ../src/MainWindow.vala:271 ../src/MainWindow.vala:293
+msgid "Search Apps"
+msgstr "Cerca aplicacions"
+
+#: ../src/MainWindow.vala:113 ../src/Views/CategoryView.vala:72
+#: ../src/Views/CategoryView.vala:79
+msgid "Categories"
+msgstr "Categories"
+
+#: ../src/MainWindow.vala:114 ../src/Views/InstalledView.vala:45
+msgctxt "view"
+msgid "Updates"
+msgstr "Actualitzacions"
+
+#: ../src/MainWindow.vala:253
+msgid "Search %s"
+msgstr "Cerca %s"
+
+#. / TRANSLATORS: the name of the Search view
+#: ../src/Views/SearchView.vala:36
+msgctxt "view"
+msgid "Search"
+msgstr "Cerca"
+
+#: ../src/Views/AppListView.vala:64
+msgid "Update All"
+msgstr "Actualitza-ho tot"
+
+#: ../src/Views/FeaturedView.vala:33
+msgid "Best Rated"
+msgstr "Les millor valorades"
+
+#: ../src/Views/FeaturedView.vala:36
+msgid "Latest Apps"
+msgstr "Últimes aplicacions"
+
+#: ../src/Views/CategoryView.vala:122
+msgid "Audio"
+msgstr "Àudio"
+
+#: ../src/Views/CategoryView.vala:133
+msgid "Development"
+msgstr "Desenvolupament"
+
+#: ../src/Views/CategoryView.vala:144
+msgid "Accessories"
+msgstr "Accessoris"
+
+#: ../src/Views/CategoryView.vala:155
+msgid "Office"
+msgstr "Oficina"
+
+#: ../src/Views/CategoryView.vala:166
+msgid "System"
+msgstr "Sistema"
+
+#: ../src/Views/CategoryView.vala:177
+msgid "Video"
+msgstr "Vídeo"
+
+#: ../src/Views/CategoryView.vala:188
+msgid "Graphics"
+msgstr "Gràfics"
+
+#: ../src/Views/CategoryView.vala:198
+msgid "Games"
+msgstr "Jocs"
+
+#: ../src/Views/CategoryView.vala:209
+msgid "Education"
+msgstr "Educació"
+
+#: ../src/Views/CategoryView.vala:219
+msgid "Internet"
+msgstr "Internet"
+
+#: ../src/Views/CategoryView.vala:230
+msgid "Science & Engineering"
+msgstr "Ciència i enginyeria"
+
+#: ../src/Views/CategoryView.vala:240
+msgid "Universal Access"
+msgstr "Accés universal"
+
+#: ../src/Views/AppInfoView.vala:48
+msgid "Screenshot Not Available"
+msgstr "Captura no disponible"
+
+#: ../src/Views/AppInfoView.vala:128
+msgid "Extensions:"
+msgstr "Extensions:"
+
 #: ../src/AbstractAppList.vala:30
 msgid "No Results"
 msgstr "Sense resultats"
@@ -338,6 +320,24 @@ msgstr "Sense resultats"
 msgid "No apps could be found. Try changing search terms."
 msgstr ""
 "No s'han pogut trobar resultats. Proveu de canvia els termes de la cerca."
+
+#: ../src/Widgets/UpdateHeaderRow.vala:121
+msgid "%u Update Available"
+msgid_plural "%u Updates Available"
+msgstr[0] "%u actualització disponible"
+msgstr[1] "%u actualitzacions disponibles"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:122
+msgid "Size: %s"
+msgstr "Mida: %s"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:158
+msgid "Searching for updates…"
+msgstr "S’està comprovant si hi ha actualitzacions…"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:165
+msgid "Up to Date"
+msgstr "Al dia"
 
 #~ msgid "Quit"
 #~ msgstr "Surt"

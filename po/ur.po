@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-09 08:15-0700\n"
+"POT-Creation-Date: 2016-12-05 06:28-0600\n"
 "PO-Revision-Date: 2016-11-24 12:37+0000\n"
 "Last-Translator: Waqar Ahmed <waqar.17a@gmail.com>\n"
 "Language-Team: \n"
@@ -10,180 +10,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-11-25 06:16+0000\n"
+"X-Launchpad-Export-Date: 2016-12-06 05:07+0000\n"
 "X-Generator: Launchpad (build 18282)\n"
 "Language: ur\n"
-
-#: ../src/Application.vala:35
-msgid "App Center"
-msgstr "ایپ مرکز"
-
-#: ../src/Application.vala:53
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Waqar Ahmed https://launchpad.net/~waqar-17a\n"
-"  Waqas Ahmad https://launchpad.net/~waqqas-ahmad\n"
-"  elementaryart (old) https://launchpad.net/~elementaryart"
-
-#: ../src/Views/InstalledView.vala:45 ../src/MainWindow.vala:114
-msgctxt "view"
-msgid "Updates"
-msgstr "اپ ڈیٹس"
-
-#. / TRANSLATORS: the name of the Search view
-#: ../src/Views/SearchView.vala:36
-msgctxt "view"
-msgid "Search"
-msgstr "تلاش کریں"
-
-#: ../src/Views/CategoryView.vala:72 ../src/Views/CategoryView.vala:79
-#: ../src/MainWindow.vala:113
-msgid "Categories"
-msgstr "اقسام"
-
-#: ../src/Views/CategoryView.vala:122
-msgid "Audio"
-msgstr "آڈیو"
-
-#: ../src/Views/CategoryView.vala:135
-msgid "Development"
-msgstr "ڈیولپمنٹ"
-
-#: ../src/Views/CategoryView.vala:148
-msgid "Accessories"
-msgstr "لوازمات"
-
-#: ../src/Views/CategoryView.vala:161
-msgid "Office"
-msgstr "آفس"
-
-#: ../src/Views/CategoryView.vala:174
-msgid "System"
-msgstr "سسٹم"
-
-#: ../src/Views/CategoryView.vala:187
-msgid "Video"
-msgstr "ویڈیو"
-
-#: ../src/Views/CategoryView.vala:200
-msgid "Graphics"
-msgstr "گرافکس"
-
-#: ../src/Views/CategoryView.vala:212
-msgid "Games"
-msgstr "گیمز"
-
-#: ../src/Views/CategoryView.vala:225
-msgid "Education"
-msgstr "تعلیم"
-
-#: ../src/Views/CategoryView.vala:237
-msgid "Internet"
-msgstr "انٹرنیٹ"
-
-#: ../src/Views/CategoryView.vala:250
-msgid "Science & Engineering"
-msgstr "سائنس اور انجینئرنگ"
-
-#: ../src/Views/CategoryView.vala:262
-msgid "Universal Access"
-msgstr "وسیع رسائی"
-
-#: ../src/Views/AppListView.vala:64
-msgid "Update All"
-msgstr "سب کو تاذہ کریں"
-
-#: ../src/Views/FeaturedView.vala:33
-msgid "Best Rated"
-msgstr "بہترین درزا دیا گیا"
-
-#: ../src/Views/FeaturedView.vala:36
-msgid "Latest Apps"
-msgstr "تاذہترین ایپلی کیشن"
-
-#: ../src/Views/AppInfoView.vala:48
-msgid "Screenshot Not Available"
-msgstr "سکرین شاٹ دستیاب نہیں"
-
-#: ../src/Views/AppInfoView.vala:128
-msgid "Extensions:"
-msgstr "ایکس ٹینشن:"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:121
-msgid "%u Update Available"
-msgid_plural "%u Updates Available"
-msgstr[0] "%u اپ ڈیٹس دستیاب"
-msgstr[1] "%u اپ ڈیٹس دستیاب"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:122
-msgid "Size: %s"
-msgstr "سائز: %s"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:158
-msgid "Searching for updates…"
-msgstr "تاذہ شمارے تلاش کئے جارہے ہیں"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:165
-msgid "Up to Date"
-msgstr "بلکل جدید ہے"
-
-#: ../src/MainWindow.vala:95
-msgid "AppCenter"
-msgstr "مرکزِ اپلی کیشن"
-
-#: ../src/MainWindow.vala:103 ../src/MainWindow.vala:130
-#: ../src/MainWindow.vala:271 ../src/MainWindow.vala:293
-msgid "Search Apps"
-msgstr "اطلاقیےتلاش کریں"
-
-#: ../src/MainWindow.vala:253
-msgid "Search %s"
-msgstr "تلاش کریں %s"
-
-#: ../src/AbstractAppContainer.vala:62
-msgid "Cancel"
-msgstr "منسوخ کریں"
-
-#: ../src/AbstractAppContainer.vala:65 ../src/AbstractAppContainer.vala:129
-msgid "Install"
-msgstr "نصب کریں"
-
-#: ../src/AbstractAppContainer.vala:68
-msgid "Uninstall"
-msgstr "غیر تنصیب"
-
-#: ../src/AbstractAppContainer.vala:154
-msgid "Update"
-msgstr "تجدید-"
-
-#: ../src/Core/Package.vala:117
-msgid "Application installed"
-msgstr "ایپ نصب کر دی گئی"
-
-#: ../src/Core/Package.vala:118
-msgid "%s has been successfully installed"
-msgstr "پیکج %s کامیابی کے ساتھ انسٹال کر دیا گیا ہے"
-
-#: ../src/Core/Client.vala:62
-msgid "Operating System Updates"
-msgstr "آپریٹنگ سسٹم کی اپ ڈیٹس"
-
-#: ../src/Core/Client.vala:63
-msgid "Updates to system components"
-msgstr "سسٹم کے حصوں کی اپ ڈیٹس"
-
-#: ../src/Core/Client.vala:338
-msgid "Update Available"
-msgid_plural "Updates Available"
-msgstr[0] "اپ ڈیٹ دستیاب ہے"
-msgstr[1] "اپ ڈیٹس دستیاب ہیں"
-
-#: ../src/Core/Client.vala:339
-msgid "%u update is available for your system"
-msgid_plural "%u updates are available for your system"
-msgstr[0] "%u تازہ کاری آپ کے سسٹم کے لیے دستیاب ہے"
-msgstr[1] "%u تازہ کاریاں آپ کے سسٹم کے لیے دستیاب ہے"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -329,6 +158,159 @@ msgstr "فائلیں کاپی کی جارہی ہیں"
 msgid "Unknown state"
 msgstr "نامعلوم حالت"
 
+#: ../src/Core/Client.vala:74
+msgid "Operating System Updates"
+msgstr "آپریٹنگ سسٹم کی اپ ڈیٹس"
+
+#: ../src/Core/Client.vala:75
+msgid "Updates to system components"
+msgstr "سسٹم کے حصوں کی اپ ڈیٹس"
+
+#: ../src/Core/Client.vala:325
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "اپ ڈیٹ دستیاب ہے"
+msgstr[1] "اپ ڈیٹس دستیاب ہیں"
+
+#: ../src/Core/Client.vala:326
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "%u تازہ کاری آپ کے سسٹم کے لیے دستیاب ہے"
+msgstr[1] "%u تازہ کاریاں آپ کے سسٹم کے لیے دستیاب ہے"
+
+#: ../src/Core/Package.vala:117
+msgid "Application installed"
+msgstr "ایپ نصب کر دی گئی"
+
+#: ../src/Core/Package.vala:118
+msgid "%s has been successfully installed"
+msgstr "پیکج %s کامیابی کے ساتھ انسٹال کر دیا گیا ہے"
+
+#: ../src/AbstractAppContainer.vala:62
+msgid "Cancel"
+msgstr "منسوخ کریں"
+
+#: ../src/AbstractAppContainer.vala:65 ../src/AbstractAppContainer.vala:129
+msgid "Install"
+msgstr "نصب کریں"
+
+#: ../src/AbstractAppContainer.vala:68
+msgid "Uninstall"
+msgstr "غیر تنصیب"
+
+#: ../src/AbstractAppContainer.vala:154
+msgid "Update"
+msgstr "تجدید-"
+
+#: ../src/Application.vala:37
+msgid "App Center"
+msgstr "ایپ مرکز"
+
+#: ../src/Application.vala:55
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Waqar Ahmed https://launchpad.net/~waqar-17a\n"
+"  Waqas Ahmad https://launchpad.net/~waqqas-ahmad\n"
+"  elementaryart (old) https://launchpad.net/~elementaryart"
+
+#: ../src/MainWindow.vala:95
+msgid "AppCenter"
+msgstr "مرکزِ اپلی کیشن"
+
+#: ../src/MainWindow.vala:103 ../src/MainWindow.vala:130
+#: ../src/MainWindow.vala:271 ../src/MainWindow.vala:293
+msgid "Search Apps"
+msgstr "اطلاقیےتلاش کریں"
+
+#: ../src/MainWindow.vala:113 ../src/Views/CategoryView.vala:72
+#: ../src/Views/CategoryView.vala:79
+msgid "Categories"
+msgstr "اقسام"
+
+#: ../src/MainWindow.vala:114 ../src/Views/InstalledView.vala:45
+msgctxt "view"
+msgid "Updates"
+msgstr "اپ ڈیٹس"
+
+#: ../src/MainWindow.vala:253
+msgid "Search %s"
+msgstr "تلاش کریں %s"
+
+#. / TRANSLATORS: the name of the Search view
+#: ../src/Views/SearchView.vala:36
+msgctxt "view"
+msgid "Search"
+msgstr "تلاش کریں"
+
+#: ../src/Views/AppListView.vala:64
+msgid "Update All"
+msgstr "سب کو تاذہ کریں"
+
+#: ../src/Views/FeaturedView.vala:33
+msgid "Best Rated"
+msgstr "بہترین درزا دیا گیا"
+
+#: ../src/Views/FeaturedView.vala:36
+msgid "Latest Apps"
+msgstr "تاذہترین ایپلی کیشن"
+
+#: ../src/Views/CategoryView.vala:122
+msgid "Audio"
+msgstr "آڈیو"
+
+#: ../src/Views/CategoryView.vala:133
+msgid "Development"
+msgstr "ڈیولپمنٹ"
+
+#: ../src/Views/CategoryView.vala:144
+msgid "Accessories"
+msgstr "لوازمات"
+
+#: ../src/Views/CategoryView.vala:155
+msgid "Office"
+msgstr "آفس"
+
+#: ../src/Views/CategoryView.vala:166
+msgid "System"
+msgstr "سسٹم"
+
+#: ../src/Views/CategoryView.vala:177
+msgid "Video"
+msgstr "ویڈیو"
+
+#: ../src/Views/CategoryView.vala:188
+msgid "Graphics"
+msgstr "گرافکس"
+
+#: ../src/Views/CategoryView.vala:198
+msgid "Games"
+msgstr "گیمز"
+
+#: ../src/Views/CategoryView.vala:209
+msgid "Education"
+msgstr "تعلیم"
+
+#: ../src/Views/CategoryView.vala:219
+msgid "Internet"
+msgstr "انٹرنیٹ"
+
+#: ../src/Views/CategoryView.vala:230
+msgid "Science & Engineering"
+msgstr "سائنس اور انجینئرنگ"
+
+#: ../src/Views/CategoryView.vala:240
+msgid "Universal Access"
+msgstr "وسیع رسائی"
+
+#: ../src/Views/AppInfoView.vala:48
+msgid "Screenshot Not Available"
+msgstr "سکرین شاٹ دستیاب نہیں"
+
+#: ../src/Views/AppInfoView.vala:128
+msgid "Extensions:"
+msgstr "ایکس ٹینشن:"
+
 #: ../src/AbstractAppList.vala:30
 msgid "No Results"
 msgstr "کو نتائج نہیں"
@@ -336,6 +318,24 @@ msgstr "کو نتائج نہیں"
 #: ../src/AbstractAppList.vala:30
 msgid "No apps could be found. Try changing search terms."
 msgstr "کو اطلاقیہ نہیں ملا۔ کسی اور لفظ سے تلاش کریں۔"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:121
+msgid "%u Update Available"
+msgid_plural "%u Updates Available"
+msgstr[0] "%u اپ ڈیٹس دستیاب"
+msgstr[1] "%u اپ ڈیٹس دستیاب"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:122
+msgid "Size: %s"
+msgstr "سائز: %s"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:158
+msgid "Searching for updates…"
+msgstr "تاذہ شمارے تلاش کئے جارہے ہیں"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:165
+msgid "Up to Date"
+msgstr "بلکل جدید ہے"
 
 #~ msgctxt "view"
 #~ msgid "Installed"

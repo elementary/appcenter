@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-09 08:15-0700\n"
+"POT-Creation-Date: 2016-12-05 06:28-0600\n"
 "PO-Revision-Date: 2016-10-21 02:12+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -10,177 +10,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2016-10-22 05:51+0000\n"
-"X-Generator: Launchpad (build 18246)\n"
-
-#: ../src/Application.vala:35
-msgid "App Center"
-msgstr "软件中心"
-
-#: ../src/Application.vala:53
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Cirno https://launchpad.net/~cirno-mainasuk\n"
-"  Wang Dianjin https://launchpad.net/~tuhaihe\n"
-"  colindemian https://launchpad.net/~colindemian\n"
-"  elementaryart (old) https://launchpad.net/~elementaryart"
-
-#: ../src/Views/InstalledView.vala:45 ../src/MainWindow.vala:114
-msgctxt "view"
-msgid "Updates"
-msgstr "更新"
-
-#. / TRANSLATORS: the name of the Search view
-#: ../src/Views/SearchView.vala:36
-msgctxt "view"
-msgid "Search"
-msgstr "搜索"
-
-#: ../src/Views/CategoryView.vala:72 ../src/Views/CategoryView.vala:79
-#: ../src/MainWindow.vala:113
-msgid "Categories"
-msgstr "分类"
-
-#: ../src/Views/CategoryView.vala:122
-msgid "Audio"
-msgstr "音频"
-
-#: ../src/Views/CategoryView.vala:135
-msgid "Development"
-msgstr "开发"
-
-#: ../src/Views/CategoryView.vala:148
-msgid "Accessories"
-msgstr "附件"
-
-#: ../src/Views/CategoryView.vala:161
-msgid "Office"
-msgstr "办公"
-
-#: ../src/Views/CategoryView.vala:174
-msgid "System"
-msgstr "系统"
-
-#: ../src/Views/CategoryView.vala:187
-msgid "Video"
-msgstr "视频"
-
-#: ../src/Views/CategoryView.vala:200
-msgid "Graphics"
-msgstr "图像"
-
-#: ../src/Views/CategoryView.vala:212
-msgid "Games"
-msgstr "游戏"
-
-#: ../src/Views/CategoryView.vala:225
-msgid "Education"
-msgstr "教育"
-
-#: ../src/Views/CategoryView.vala:237
-msgid "Internet"
-msgstr "网络"
-
-#: ../src/Views/CategoryView.vala:250
-msgid "Science & Engineering"
-msgstr "科学 & 工程"
-
-#: ../src/Views/CategoryView.vala:262
-msgid "Universal Access"
-msgstr "通用辅助"
-
-#: ../src/Views/AppListView.vala:64
-msgid "Update All"
-msgstr "全部更新"
-
-#: ../src/Views/FeaturedView.vala:33
-msgid "Best Rated"
-msgstr "最高评分"
-
-#: ../src/Views/FeaturedView.vala:36
-msgid "Latest Apps"
-msgstr "最新上架"
-
-#: ../src/Views/AppInfoView.vala:48
-msgid "Screenshot Not Available"
-msgstr "截图不可用"
-
-#: ../src/Views/AppInfoView.vala:128
-msgid "Extensions:"
-msgstr "扩展："
-
-#: ../src/Widgets/UpdateHeaderRow.vala:121
-msgid "%u Update Available"
-msgid_plural "%u Updates Available"
-msgstr[0] "%u 个可用更新"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:122
-msgid "Size: %s"
-msgstr "大小： %s"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:158
-msgid "Searching for updates…"
-msgstr "正在查找更新..."
-
-#: ../src/Widgets/UpdateHeaderRow.vala:165
-msgid "Up to Date"
-msgstr "已是最新"
-
-#: ../src/MainWindow.vala:95
-msgid "AppCenter"
-msgstr "应用中心"
-
-#: ../src/MainWindow.vala:103 ../src/MainWindow.vala:130
-#: ../src/MainWindow.vala:271 ../src/MainWindow.vala:293
-msgid "Search Apps"
-msgstr "搜索应用"
-
-#: ../src/MainWindow.vala:253
-msgid "Search %s"
-msgstr "搜索 %s"
-
-#: ../src/AbstractAppContainer.vala:62
-msgid "Cancel"
-msgstr "取消"
-
-#: ../src/AbstractAppContainer.vala:65 ../src/AbstractAppContainer.vala:129
-msgid "Install"
-msgstr "安装"
-
-#: ../src/AbstractAppContainer.vala:68
-msgid "Uninstall"
-msgstr "卸载"
-
-#: ../src/AbstractAppContainer.vala:154
-msgid "Update"
-msgstr "更新"
-
-#: ../src/Core/Package.vala:117
-msgid "Application installed"
-msgstr "应用已安装"
-
-#: ../src/Core/Package.vala:118
-msgid "%s has been successfully installed"
-msgstr "%s 安装成功"
-
-#: ../src/Core/Client.vala:62
-msgid "Operating System Updates"
-msgstr "系统更新"
-
-#: ../src/Core/Client.vala:63
-msgid "Updates to system components"
-msgstr "组件更新"
-
-#: ../src/Core/Client.vala:338
-msgid "Update Available"
-msgid_plural "Updates Available"
-msgstr[0] "有可用更新"
-
-#: ../src/Core/Client.vala:339
-msgid "%u update is available for your system"
-msgid_plural "%u updates are available for your system"
-msgstr[0] "您的系统有 %u 个可用更新"
+"X-Launchpad-Export-Date: 2016-12-06 05:07+0000\n"
+"X-Generator: Launchpad (build 18282)\n"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -326,6 +157,158 @@ msgstr "正在复制文件"
 msgid "Unknown state"
 msgstr "未知状态"
 
+#: ../src/Core/Client.vala:74
+msgid "Operating System Updates"
+msgstr "系统更新"
+
+#: ../src/Core/Client.vala:75
+msgid "Updates to system components"
+msgstr "组件更新"
+
+#: ../src/Core/Client.vala:325
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "有可用更新"
+
+#: ../src/Core/Client.vala:326
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "您的系统有 %u 个可用更新"
+
+#: ../src/Core/Package.vala:117
+msgid "Application installed"
+msgstr "应用已安装"
+
+#: ../src/Core/Package.vala:118
+msgid "%s has been successfully installed"
+msgstr "%s 安装成功"
+
+#: ../src/AbstractAppContainer.vala:62
+msgid "Cancel"
+msgstr "取消"
+
+#: ../src/AbstractAppContainer.vala:65 ../src/AbstractAppContainer.vala:129
+msgid "Install"
+msgstr "安装"
+
+#: ../src/AbstractAppContainer.vala:68
+msgid "Uninstall"
+msgstr "卸载"
+
+#: ../src/AbstractAppContainer.vala:154
+msgid "Update"
+msgstr "更新"
+
+#: ../src/Application.vala:37
+msgid "App Center"
+msgstr "软件中心"
+
+#: ../src/Application.vala:55
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Cirno https://launchpad.net/~cirno-mainasuk\n"
+"  Wang Dianjin https://launchpad.net/~tuhaihe\n"
+"  colindemian https://launchpad.net/~colindemian\n"
+"  elementaryart (old) https://launchpad.net/~elementaryart"
+
+#: ../src/MainWindow.vala:95
+msgid "AppCenter"
+msgstr "应用中心"
+
+#: ../src/MainWindow.vala:103 ../src/MainWindow.vala:130
+#: ../src/MainWindow.vala:271 ../src/MainWindow.vala:293
+msgid "Search Apps"
+msgstr "搜索应用"
+
+#: ../src/MainWindow.vala:113 ../src/Views/CategoryView.vala:72
+#: ../src/Views/CategoryView.vala:79
+msgid "Categories"
+msgstr "分类"
+
+#: ../src/MainWindow.vala:114 ../src/Views/InstalledView.vala:45
+msgctxt "view"
+msgid "Updates"
+msgstr "更新"
+
+#: ../src/MainWindow.vala:253
+msgid "Search %s"
+msgstr "搜索 %s"
+
+#. / TRANSLATORS: the name of the Search view
+#: ../src/Views/SearchView.vala:36
+msgctxt "view"
+msgid "Search"
+msgstr "搜索"
+
+#: ../src/Views/AppListView.vala:64
+msgid "Update All"
+msgstr "全部更新"
+
+#: ../src/Views/FeaturedView.vala:33
+msgid "Best Rated"
+msgstr "最高评分"
+
+#: ../src/Views/FeaturedView.vala:36
+msgid "Latest Apps"
+msgstr "最新上架"
+
+#: ../src/Views/CategoryView.vala:122
+msgid "Audio"
+msgstr "音频"
+
+#: ../src/Views/CategoryView.vala:133
+msgid "Development"
+msgstr "开发"
+
+#: ../src/Views/CategoryView.vala:144
+msgid "Accessories"
+msgstr "附件"
+
+#: ../src/Views/CategoryView.vala:155
+msgid "Office"
+msgstr "办公"
+
+#: ../src/Views/CategoryView.vala:166
+msgid "System"
+msgstr "系统"
+
+#: ../src/Views/CategoryView.vala:177
+msgid "Video"
+msgstr "视频"
+
+#: ../src/Views/CategoryView.vala:188
+msgid "Graphics"
+msgstr "图像"
+
+#: ../src/Views/CategoryView.vala:198
+msgid "Games"
+msgstr "游戏"
+
+#: ../src/Views/CategoryView.vala:209
+msgid "Education"
+msgstr "教育"
+
+#: ../src/Views/CategoryView.vala:219
+msgid "Internet"
+msgstr "网络"
+
+#: ../src/Views/CategoryView.vala:230
+msgid "Science & Engineering"
+msgstr "科学 & 工程"
+
+#: ../src/Views/CategoryView.vala:240
+msgid "Universal Access"
+msgstr "通用辅助"
+
+#: ../src/Views/AppInfoView.vala:48
+msgid "Screenshot Not Available"
+msgstr "截图不可用"
+
+#: ../src/Views/AppInfoView.vala:128
+msgid "Extensions:"
+msgstr "扩展："
+
 #: ../src/AbstractAppList.vala:30
 msgid "No Results"
 msgstr "没有结果"
@@ -333,6 +316,23 @@ msgstr "没有结果"
 #: ../src/AbstractAppList.vala:30
 msgid "No apps could be found. Try changing search terms."
 msgstr "未找到任何应用，请尝试更改关键词。"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:121
+msgid "%u Update Available"
+msgid_plural "%u Updates Available"
+msgstr[0] "%u 个可用更新"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:122
+msgid "Size: %s"
+msgstr "大小： %s"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:158
+msgid "Searching for updates…"
+msgstr "正在查找更新..."
+
+#: ../src/Widgets/UpdateHeaderRow.vala:165
+msgid "Up to Date"
+msgstr "已是最新"
 
 #~ msgid "Home Page"
 #~ msgstr "首页"

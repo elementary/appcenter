@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-09 08:15-0700\n"
+"POT-Creation-Date: 2016-12-05 06:28-0600\n"
 "PO-Revision-Date: 2016-12-02 00:53+0000\n"
 "Last-Translator: Maxim Taranov <png2378@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -11,188 +11,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2016-12-03 05:00+0000\n"
+"X-Launchpad-Export-Date: 2016-12-06 05:07+0000\n"
 "X-Generator: Launchpad (build 18282)\n"
-
-#: ../src/Application.vala:35
-msgid "App Center"
-msgstr "AppCenter"
-
-#: ../src/Application.vala:53
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Dmitriy Nogay https://launchpad.net/~imcatwhocode\n"
-"  Kirill Romanov https://launchpad.net/~djaler1\n"
-"  Leopotam https://launchpad.net/~leopotam\n"
-"  Maxim Taranov https://launchpad.net/~png2378\n"
-"  Mukusev Vladimir https://launchpad.net/~damon95\n"
-"  Yuly Nesterov https://launchpad.net/~inpr1se\n"
-"  elementaryart (old) https://launchpad.net/~elementaryart\n"
-"  Павел https://launchpad.net/~pashazubenko\n"
-"  михаил https://launchpad.net/~ded-mixei"
-
-#: ../src/Views/InstalledView.vala:45 ../src/MainWindow.vala:114
-msgctxt "view"
-msgid "Updates"
-msgstr "Обновления"
-
-#. / TRANSLATORS: the name of the Search view
-#: ../src/Views/SearchView.vala:36
-msgctxt "view"
-msgid "Search"
-msgstr "Поиск"
-
-#: ../src/Views/CategoryView.vala:72 ../src/Views/CategoryView.vala:79
-#: ../src/MainWindow.vala:113
-msgid "Categories"
-msgstr "Категории"
-
-#: ../src/Views/CategoryView.vala:122
-msgid "Audio"
-msgstr "Аудио"
-
-#: ../src/Views/CategoryView.vala:135
-msgid "Development"
-msgstr "Разработка"
-
-#: ../src/Views/CategoryView.vala:148
-msgid "Accessories"
-msgstr "Утилиты"
-
-#: ../src/Views/CategoryView.vala:161
-msgid "Office"
-msgstr "Офис"
-
-#: ../src/Views/CategoryView.vala:174
-msgid "System"
-msgstr "Система"
-
-#: ../src/Views/CategoryView.vala:187
-msgid "Video"
-msgstr "Видео"
-
-#: ../src/Views/CategoryView.vala:200
-msgid "Graphics"
-msgstr "Графика"
-
-#: ../src/Views/CategoryView.vala:212
-msgid "Games"
-msgstr "Игры"
-
-#: ../src/Views/CategoryView.vala:225
-msgid "Education"
-msgstr "Образование"
-
-#: ../src/Views/CategoryView.vala:237
-msgid "Internet"
-msgstr "Интернет"
-
-#: ../src/Views/CategoryView.vala:250
-msgid "Science & Engineering"
-msgstr "Наука и инженерия"
-
-#: ../src/Views/CategoryView.vala:262
-msgid "Universal Access"
-msgstr "Специальные возможности"
-
-#: ../src/Views/AppListView.vala:64
-msgid "Update All"
-msgstr "Обновить всё"
-
-#: ../src/Views/FeaturedView.vala:33
-msgid "Best Rated"
-msgstr "Самые популярные"
-
-#: ../src/Views/FeaturedView.vala:36
-msgid "Latest Apps"
-msgstr "Новые приложения"
-
-#: ../src/Views/AppInfoView.vala:48
-msgid "Screenshot Not Available"
-msgstr "Скриншот недоступен"
-
-#: ../src/Views/AppInfoView.vala:128
-msgid "Extensions:"
-msgstr "Расширения:"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:121
-msgid "%u Update Available"
-msgid_plural "%u Updates Available"
-msgstr[0] "Доступно %u обновление"
-msgstr[1] "Доступны %u обновления"
-msgstr[2] "Доступны %u обновлений"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:122
-msgid "Size: %s"
-msgstr "Размер: %s"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:158
-msgid "Searching for updates…"
-msgstr "Поиск обновлений…"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:165
-msgid "Up to Date"
-msgstr "Обновления не требуются"
-
-#: ../src/MainWindow.vala:95
-msgid "AppCenter"
-msgstr "AppCenter"
-
-#: ../src/MainWindow.vala:103 ../src/MainWindow.vala:130
-#: ../src/MainWindow.vala:271 ../src/MainWindow.vala:293
-msgid "Search Apps"
-msgstr "Поиск приложений"
-
-#: ../src/MainWindow.vala:253
-msgid "Search %s"
-msgstr "Поиск %s"
-
-#: ../src/AbstractAppContainer.vala:62
-msgid "Cancel"
-msgstr "Отменить"
-
-#: ../src/AbstractAppContainer.vala:65 ../src/AbstractAppContainer.vala:129
-msgid "Install"
-msgstr "Установить"
-
-#: ../src/AbstractAppContainer.vala:68
-msgid "Uninstall"
-msgstr "Удалить"
-
-#: ../src/AbstractAppContainer.vala:154
-msgid "Update"
-msgstr "Обновить"
-
-#: ../src/Core/Package.vala:117
-msgid "Application installed"
-msgstr "Приложение установлено"
-
-#: ../src/Core/Package.vala:118
-msgid "%s has been successfully installed"
-msgstr "Приложение «%s» успешно установлено"
-
-#: ../src/Core/Client.vala:62
-msgid "Operating System Updates"
-msgstr "Обновления операционной системы"
-
-#: ../src/Core/Client.vala:63
-msgid "Updates to system components"
-msgstr "Обновление компонентов системы"
-
-#: ../src/Core/Client.vala:338
-msgid "Update Available"
-msgid_plural "Updates Available"
-msgstr[0] "Доступно обновление"
-msgstr[1] "Доступны обновления"
-msgstr[2] "Доступны обновления"
-
-#: ../src/Core/Client.vala:339
-msgid "%u update is available for your system"
-msgid_plural "%u updates are available for your system"
-msgstr[0] "Для системы доступно %u обновление"
-msgstr[1] "Для системы доступны %u обновления"
-msgstr[2] "Для системы доступны %u обновлений"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -338,6 +158,167 @@ msgstr "Копирование файлов"
 msgid "Unknown state"
 msgstr "Неизвестное состояние"
 
+#: ../src/Core/Client.vala:74
+msgid "Operating System Updates"
+msgstr "Обновления операционной системы"
+
+#: ../src/Core/Client.vala:75
+msgid "Updates to system components"
+msgstr "Обновление компонентов системы"
+
+#: ../src/Core/Client.vala:325
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "Доступно обновление"
+msgstr[1] "Доступны обновления"
+msgstr[2] "Доступны обновления"
+
+#: ../src/Core/Client.vala:326
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "Для системы доступно %u обновление"
+msgstr[1] "Для системы доступны %u обновления"
+msgstr[2] "Для системы доступны %u обновлений"
+
+#: ../src/Core/Package.vala:117
+msgid "Application installed"
+msgstr "Приложение установлено"
+
+#: ../src/Core/Package.vala:118
+msgid "%s has been successfully installed"
+msgstr "Приложение «%s» успешно установлено"
+
+#: ../src/AbstractAppContainer.vala:62
+msgid "Cancel"
+msgstr "Отменить"
+
+#: ../src/AbstractAppContainer.vala:65 ../src/AbstractAppContainer.vala:129
+msgid "Install"
+msgstr "Установить"
+
+#: ../src/AbstractAppContainer.vala:68
+msgid "Uninstall"
+msgstr "Удалить"
+
+#: ../src/AbstractAppContainer.vala:154
+msgid "Update"
+msgstr "Обновить"
+
+#: ../src/Application.vala:37
+msgid "App Center"
+msgstr "AppCenter"
+
+#: ../src/Application.vala:55
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Dmitriy Nogay https://launchpad.net/~imcatwhocode\n"
+"  Kirill Romanov https://launchpad.net/~djaler1\n"
+"  Leopotam https://launchpad.net/~leopotam\n"
+"  Maxim Taranov https://launchpad.net/~png2378\n"
+"  Mukusev Vladimir https://launchpad.net/~damon95\n"
+"  Yuly Nesterov https://launchpad.net/~inpr1se\n"
+"  elementaryart (old) https://launchpad.net/~elementaryart\n"
+"  Павел https://launchpad.net/~pashazubenko\n"
+"  михаил https://launchpad.net/~ded-mixei"
+
+#: ../src/MainWindow.vala:95
+msgid "AppCenter"
+msgstr "AppCenter"
+
+#: ../src/MainWindow.vala:103 ../src/MainWindow.vala:130
+#: ../src/MainWindow.vala:271 ../src/MainWindow.vala:293
+msgid "Search Apps"
+msgstr "Поиск приложений"
+
+#: ../src/MainWindow.vala:113 ../src/Views/CategoryView.vala:72
+#: ../src/Views/CategoryView.vala:79
+msgid "Categories"
+msgstr "Категории"
+
+#: ../src/MainWindow.vala:114 ../src/Views/InstalledView.vala:45
+msgctxt "view"
+msgid "Updates"
+msgstr "Обновления"
+
+#: ../src/MainWindow.vala:253
+msgid "Search %s"
+msgstr "Поиск %s"
+
+#. / TRANSLATORS: the name of the Search view
+#: ../src/Views/SearchView.vala:36
+msgctxt "view"
+msgid "Search"
+msgstr "Поиск"
+
+#: ../src/Views/AppListView.vala:64
+msgid "Update All"
+msgstr "Обновить всё"
+
+#: ../src/Views/FeaturedView.vala:33
+msgid "Best Rated"
+msgstr "Самые популярные"
+
+#: ../src/Views/FeaturedView.vala:36
+msgid "Latest Apps"
+msgstr "Новые приложения"
+
+#: ../src/Views/CategoryView.vala:122
+msgid "Audio"
+msgstr "Аудио"
+
+#: ../src/Views/CategoryView.vala:133
+msgid "Development"
+msgstr "Разработка"
+
+#: ../src/Views/CategoryView.vala:144
+msgid "Accessories"
+msgstr "Утилиты"
+
+#: ../src/Views/CategoryView.vala:155
+msgid "Office"
+msgstr "Офис"
+
+#: ../src/Views/CategoryView.vala:166
+msgid "System"
+msgstr "Система"
+
+#: ../src/Views/CategoryView.vala:177
+msgid "Video"
+msgstr "Видео"
+
+#: ../src/Views/CategoryView.vala:188
+msgid "Graphics"
+msgstr "Графика"
+
+#: ../src/Views/CategoryView.vala:198
+msgid "Games"
+msgstr "Игры"
+
+#: ../src/Views/CategoryView.vala:209
+msgid "Education"
+msgstr "Образование"
+
+#: ../src/Views/CategoryView.vala:219
+msgid "Internet"
+msgstr "Интернет"
+
+#: ../src/Views/CategoryView.vala:230
+msgid "Science & Engineering"
+msgstr "Наука и инженерия"
+
+#: ../src/Views/CategoryView.vala:240
+msgid "Universal Access"
+msgstr "Специальные возможности"
+
+#: ../src/Views/AppInfoView.vala:48
+msgid "Screenshot Not Available"
+msgstr "Скриншот недоступен"
+
+#: ../src/Views/AppInfoView.vala:128
+msgid "Extensions:"
+msgstr "Расширения:"
+
 #: ../src/AbstractAppList.vala:30
 msgid "No Results"
 msgstr "Нет результатов"
@@ -345,6 +326,25 @@ msgstr "Нет результатов"
 #: ../src/AbstractAppList.vala:30
 msgid "No apps could be found. Try changing search terms."
 msgstr "Приложения не найдены. Попробуйте изменить поисковый запрос."
+
+#: ../src/Widgets/UpdateHeaderRow.vala:121
+msgid "%u Update Available"
+msgid_plural "%u Updates Available"
+msgstr[0] "Доступно %u обновление"
+msgstr[1] "Доступны %u обновления"
+msgstr[2] "Доступны %u обновлений"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:122
+msgid "Size: %s"
+msgstr "Размер: %s"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:158
+msgid "Searching for updates…"
+msgstr "Поиск обновлений…"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:165
+msgid "Up to Date"
+msgstr "Обновления не требуются"
 
 #~ msgid "Home Page"
 #~ msgstr "Домашняя страница"
