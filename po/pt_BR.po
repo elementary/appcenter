@@ -3,15 +3,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-12-05 06:28-0600\n"
-"PO-Revision-Date: 2016-12-06 08:52+0000\n"
-"Last-Translator: elementaryart (old) <Unknown>\n"
+"PO-Revision-Date: 2016-12-16 10:48+0000\n"
+"Last-Translator: Cleiton Floss <cleitonfloss@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Launchpad-Export-Date: 2016-12-07 04:37+0000\n"
-"X-Generator: Launchpad (build 18292)\n"
+"X-Launchpad-Export-Date: 2016-12-17 05:10+0000\n"
+"X-Generator: Launchpad (build 18298)\n"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -19,7 +19,7 @@ msgstr "Iniciando"
 
 #: ../src/Core/ChangeInformation.vala:56
 msgid "Waiting"
-msgstr ""
+msgstr "Aguardando"
 
 #: ../src/Core/ChangeInformation.vala:58
 msgid "Running"
@@ -39,7 +39,7 @@ msgstr "Removendo pacotes"
 
 #: ../src/Core/ChangeInformation.vala:66
 msgid "Downloading"
-msgstr ""
+msgstr "Transferindo"
 
 #: ../src/Core/ChangeInformation.vala:68
 msgid "Installing"
@@ -216,6 +216,7 @@ msgstr ""
 "  Matheus Macabu https://launchpad.net/~mkbu\n"
 "  MrSad https://launchpad.net/~sadness\n"
 "  Rafael Leandro https://launchpad.net/~crf-rafa\n"
+"  Renan Gonçalves https://launchpad.net/~amigosrenan\n"
 "  Saulo De Baco https://launchpad.net/~saulodebaco\n"
 "  Thiago Abreu https://launchpad.net/~thiagojedi\n"
 "  daniel https://launchpad.net/~darksplaybr\n"
@@ -242,7 +243,7 @@ msgstr "Atualizações"
 
 #: ../src/MainWindow.vala:253
 msgid "Search %s"
-msgstr ""
+msgstr "Procurar %s"
 
 #. / TRANSLATORS: the name of the Search view
 #: ../src/Views/SearchView.vala:36
