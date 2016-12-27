@@ -184,6 +184,11 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         return false;
     }
 
+    public void show_package (AppCenterCore.Package package) {
+        category_view.show_package (package);
+        view_opened (_("Categories"), false, null);    
+    }
+
     public void go_to_installed () {
         view_mode.selected = 1;
     }

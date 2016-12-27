@@ -466,6 +466,10 @@ public class AppCenterCore.Client : Object {
         return installed;
     }
 
+    public AppCenterCore.Package? get_package_for_name (string name) {
+        return package_list[name];
+    }
+
     private static GLib.Once<Client> instance;
     public static unowned Client get_default () {
         return instance.once (() => { return new Client (); });
