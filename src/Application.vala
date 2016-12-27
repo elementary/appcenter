@@ -65,10 +65,10 @@ public class AppCenter.App : Granite.Application {
             }
         });
 
-        if (AppInfo.get_default_for_uri_scheme ("apt") == null) {
+        if (AppInfo.get_default_for_uri_scheme ("appstream") == null) {
             var appinfo = new DesktopAppInfo (app_launcher);
             try {
-                appinfo.set_as_default_for_type ("x-scheme-handler/apt");
+                appinfo.set_as_default_for_type ("x-scheme-handler/appstream");
             } catch (Error e) {
                 critical ("Unable to set default for the settings scheme: %s", e.message);
             }
@@ -84,8 +84,8 @@ public class AppCenter.App : Granite.Application {
             return;
         }
 
-        if (file.has_uri_scheme ("apt")) {
-            link = file.get_uri ().replace ("apt://", "");
+        if (file.has_uri_scheme ("appstream")) {
+            link = file.get_uri ().replace ("appstream://", "");
             if (link.has_suffix ("/")) {
                 link = link.substring (0, link.last_index_of_char ('/'));
             }
@@ -116,7 +116,7 @@ public class AppCenter.App : Granite.Application {
             });
 
             if (link != null) {
-                var package = client.get_package_for_name (link);
+                var package = client.get_package_for_id (link);
                 if (package != null) {
                     main_window.show_package (package);
                 } else {

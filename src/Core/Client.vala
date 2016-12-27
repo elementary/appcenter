@@ -466,8 +466,15 @@ public class AppCenterCore.Client : Object {
         return installed;
     }
 
-    public AppCenterCore.Package? get_package_for_name (string name) {
-        return package_list[name];
+    public AppCenterCore.Package? get_package_for_id (string id) {
+        foreach (var entry in package_list.entries) {
+            var package = entry.value;
+            if (package.component.id == id) {
+                return package;
+            }
+        }
+
+        return null;
     }
 
     private static GLib.Once<Client> instance;
