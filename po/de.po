@@ -3,15 +3,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-12-05 06:28-0600\n"
-"PO-Revision-Date: 2016-12-06 08:47+0000\n"
-"Last-Translator: Mathias Heuer <heuer.mathias@t-online.de>\n"
+"PO-Revision-Date: 2016-12-26 20:11+0000\n"
+"Last-Translator: Tobias Bannert <tobannert@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-12-07 04:37+0000\n"
-"X-Generator: Launchpad (build 18292)\n"
+"X-Launchpad-Export-Date: 2016-12-27 04:43+0000\n"
+"X-Generator: Launchpad (build 18298)\n"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -19,7 +19,7 @@ msgstr "Wird gestartet …"
 
 #: ../src/Core/ChangeInformation.vala:56
 msgid "Waiting"
-msgstr ""
+msgstr "Warten"
 
 #: ../src/Core/ChangeInformation.vala:58
 msgid "Running"
@@ -39,7 +39,7 @@ msgstr "Pakete werden entfernt"
 
 #: ../src/Core/ChangeInformation.vala:66
 msgid "Downloading"
-msgstr ""
+msgstr "Herunterladen"
 
 #: ../src/Core/ChangeInformation.vala:68
 msgid "Installing"
@@ -47,7 +47,7 @@ msgstr "Wird installiert"
 
 #: ../src/Core/ChangeInformation.vala:70
 msgid "Refreshing software list"
-msgstr "Softwareliste wird aktualisiert"
+msgstr "Software-Liste wird aktualisiert"
 
 #: ../src/Core/ChangeInformation.vala:72
 msgid "Installing updates"
@@ -224,6 +224,7 @@ msgstr ""
 "  Rico Tzschichholz https://launchpad.net/~ricotz\n"
 "  Tobias Bannert https://launchpad.net/~toba\n"
 "  Tom Gießmann https://launchpad.net/~tomgiessmann\n"
+"  UweS https://launchpad.net/~uwes\n"
 "  elementaryart (old) https://launchpad.net/~elementaryart\n"
 "  lb https://launchpad.net/~qlblb12-lb45\n"
 "  mporten https://launchpad.net/~mathias-porten"
@@ -249,7 +250,7 @@ msgstr "Aktualisierungen"
 
 #: ../src/MainWindow.vala:253
 msgid "Search %s"
-msgstr ""
+msgstr "%s durchsuchen"
 
 #. / TRANSLATORS: the name of the Search view
 #: ../src/Views/SearchView.vala:36
@@ -319,7 +320,7 @@ msgstr "Barrierefreiheit"
 
 #: ../src/Views/AppInfoView.vala:48
 msgid "Screenshot Not Available"
-msgstr "Screenshot nicht vorhanden"
+msgstr "Bildschirmfoto nicht vorhanden"
 
 #: ../src/Views/AppInfoView.vala:128
 msgid "Extensions:"
