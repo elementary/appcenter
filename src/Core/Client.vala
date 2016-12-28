@@ -467,8 +467,7 @@ public class AppCenterCore.Client : Object {
     }
 
     public AppCenterCore.Package? get_package_for_id (string id) {
-        foreach (var entry in package_list.entries) {
-            var package = entry.value;
+        foreach (var package in package_list.values) {
             if (package.component.id == id) {
                 return package;
             }

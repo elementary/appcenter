@@ -115,19 +115,19 @@ public class AppCenter.App : Granite.Application {
                 main_window = null;
             });
 
-            if (link != null) {
-                var package = client.get_package_for_id (link);
-                if (package != null) {
-                    main_window.show_package (package);
-                } else {
-                    warning (_("Specified link '%s' could not be found, going back to the main panel").printf (link));
-                }
-            }
-
             add_window (main_window);
             main_window.show_all ();
             if (show_updates) {
                 main_window.go_to_installed ();
+            }
+        }
+
+        if (link != null) {
+            var package = client.get_package_for_id (link);
+            if (package != null) {
+                main_window.show_package (package);
+            } else {
+                warning (_("Specified link '%s' could not be found, going back to the main panel").printf (link));
             }
         }
 
