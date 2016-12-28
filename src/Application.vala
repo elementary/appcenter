@@ -25,12 +25,14 @@ public class AppCenter.App : Granite.Application {
 
     private const int SECONDS_AFTER_NETWORK_UP = 60;
 
+    private static string? link = null;
+
     public static bool show_updates;
     public static bool silent;
     MainWindow main_window;
     construct {
         application_id = "org.pantheon.appcenter";
-        flags = ApplicationFlags.FLAGS_NONE;
+        flags |= ApplicationFlags.HANDLES_OPEN;
         Intl.setlocale (LocaleCategory.ALL, "");
         Intl.textdomain (Build.GETTEXT_PACKAGE);
 
@@ -63,8 +65,33 @@ public class AppCenter.App : Granite.Application {
             }
         });
 
+        if (AppInfo.get_default_for_uri_scheme ("appstream") == null) {
+            var appinfo = new DesktopAppInfo (app_launcher);
+            try {
+                appinfo.set_as_default_for_type ("x-scheme-handler/appstream");
+            } catch (Error e) {
+                critical ("Unable to set default for the settings scheme: %s", e.message);
+            }
+        }
+
         add_action (quit_action);
         add_accelerator ("<Control>q", "app.quit", null);
+    }
+
+    public override void open (File[] files, string hint) {
+        var file = files[0];
+        if (file == null) {
+            return;
+        }
+
+        if (file.has_uri_scheme ("appstream")) {
+            link = file.get_uri ().replace ("appstream://", "");
+            if (link.has_suffix ("/")) {
+                link = link.substring (0, link.last_index_of_char ('/'));
+            }
+        }
+
+        activate ();
     }
 
     public override void activate () {
@@ -87,6 +114,15 @@ public class AppCenter.App : Granite.Application {
             main_window.destroy.connect (() => {
                 main_window = null;
             });
+
+            if (link != null) {
+                var package = client.get_package_for_id (link);
+                if (package != null) {
+                    main_window.show_package (package);
+                } else {
+                    warning (_("Specified link '%s' could not be found, going back to the main panel").printf (link));
+                }
+            }
 
             add_window (main_window);
             main_window.show_all ();
