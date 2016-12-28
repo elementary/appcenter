@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-05 06:28-0600\n"
+"POT-Creation-Date: 2016-12-27 21:02-0600\n"
 "PO-Revision-Date: 2016-01-09 14:46+0000\n"
 "Last-Translator: nrao <nagamalli.s@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -10,8 +10,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-12-06 05:07+0000\n"
-"X-Generator: Launchpad (build 18282)\n"
+"X-Launchpad-Export-Date: 2016-12-28 04:40+0000\n"
+"X-Generator: Launchpad (build 18298)\n"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -201,27 +201,31 @@ msgstr "వ్యవస్థాపనను తీసివెయ్యి"
 msgid "Update"
 msgstr "నవీకరించుము"
 
-#: ../src/Application.vala:37
+#: ../src/Application.vala:39
 msgid "App Center"
 msgstr "వినియోగ కేంద్రం"
 
-#: ../src/Application.vala:55
+#: ../src/Application.vala:57
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
 "  nrao https://launchpad.net/~nagamalli-s"
+
+#: ../src/Application.vala:123
+msgid "Specified link '%s' could not be found, going back to the main panel"
+msgstr ""
 
 #: ../src/MainWindow.vala:95
 msgid "AppCenter"
 msgstr "వినియోగకేంద్రం"
 
 #: ../src/MainWindow.vala:103 ../src/MainWindow.vala:130
-#: ../src/MainWindow.vala:271 ../src/MainWindow.vala:293
+#: ../src/MainWindow.vala:276 ../src/MainWindow.vala:298
 msgid "Search Apps"
 msgstr ""
 
-#: ../src/MainWindow.vala:113 ../src/Views/CategoryView.vala:72
-#: ../src/Views/CategoryView.vala:79
+#: ../src/MainWindow.vala:113 ../src/MainWindow.vala:189
+#: ../src/Views/CategoryView.vala:72 ../src/Views/CategoryView.vala:79
 msgid "Categories"
 msgstr "వర్గములు"
 
@@ -230,7 +234,7 @@ msgctxt "view"
 msgid "Updates"
 msgstr ""
 
-#: ../src/MainWindow.vala:253
+#: ../src/MainWindow.vala:258
 msgid "Search %s"
 msgstr ""
 

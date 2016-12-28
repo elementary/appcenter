@@ -2,16 +2,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-05 06:28-0600\n"
+"POT-Creation-Date: 2016-12-27 21:02-0600\n"
 "PO-Revision-Date: 2016-12-06 08:47+0000\n"
-"Last-Translator: John Pocock <john_pocock@me.com>\n"
+"Last-Translator: John Pocock <johnathan.pocock@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-12-07 04:37+0000\n"
-"X-Generator: Launchpad (build 18292)\n"
+"X-Launchpad-Export-Date: 2016-12-28 04:40+0000\n"
+"X-Generator: Launchpad (build 18298)\n"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -201,11 +201,11 @@ msgstr "Uninstall"
 msgid "Update"
 msgstr "Update"
 
-#: ../src/Application.vala:37
+#: ../src/Application.vala:39
 msgid "App Center"
 msgstr "App Centre"
 
-#: ../src/Application.vala:55
+#: ../src/Application.vala:57
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
@@ -216,17 +216,21 @@ msgstr ""
 "  John Pocock https://launchpad.net/~john-pocock\n"
 "  elementaryart (old) https://launchpad.net/~elementaryart"
 
+#: ../src/Application.vala:123
+msgid "Specified link '%s' could not be found, going back to the main panel"
+msgstr ""
+
 #: ../src/MainWindow.vala:95
 msgid "AppCenter"
 msgstr "AppCentre"
 
 #: ../src/MainWindow.vala:103 ../src/MainWindow.vala:130
-#: ../src/MainWindow.vala:271 ../src/MainWindow.vala:293
+#: ../src/MainWindow.vala:276 ../src/MainWindow.vala:298
 msgid "Search Apps"
 msgstr "Search Apps"
 
-#: ../src/MainWindow.vala:113 ../src/Views/CategoryView.vala:72
-#: ../src/Views/CategoryView.vala:79
+#: ../src/MainWindow.vala:113 ../src/MainWindow.vala:189
+#: ../src/Views/CategoryView.vala:72 ../src/Views/CategoryView.vala:79
 msgid "Categories"
 msgstr "Categories"
 
@@ -235,7 +239,7 @@ msgctxt "view"
 msgid "Updates"
 msgstr "Updates"
 
-#: ../src/MainWindow.vala:253
+#: ../src/MainWindow.vala:258
 msgid "Search %s"
 msgstr ""
 
