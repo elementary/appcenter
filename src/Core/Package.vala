@@ -20,7 +20,7 @@
 
 public errordomain PackageLaunchError {
     DESKTOP_ID_NOT_FOUND,
-    APP_INFO_NULL
+    APP_INFO_NOT_FOUND
 }
 
 public class AppCenterCore.Package : Object {
@@ -157,7 +157,7 @@ public class AppCenterCore.Package : Object {
 
         var app_info = new DesktopAppInfo (desktop_id);
         if (app_info == null) {
-            throw new PackageLaunchError.APP_INFO_NULL ("AppInfo not found for %s desktop ID".printf (desktop_id));
+            throw new PackageLaunchError.APP_INFO_NOT_FOUND ("AppInfo not found for %s desktop ID".printf (desktop_id));
         }
 
         try {
