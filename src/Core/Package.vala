@@ -18,6 +18,11 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
+public errordomain PackageLaunchError {
+    DESKTOP_ID_NOT_FOUND,
+    APP_INFO_NULL
+}
+
 public class AppCenterCore.Package : Object {
     public signal void changing (bool is_changing);
     public signal void info_changed (Pk.Status status);
@@ -142,6 +147,24 @@ public class AppCenterCore.Package : Object {
         }
 
         return yield perform_operation (State.REMOVING, State.NOT_INSTALLED, State.INSTALLED);
+    }
+
+    public void launch () throws Error {
+        string desktop_id = component.get_desktop_id ();
+        if (desktop_id == null) {
+            throw new PackageLaunchError.DESKTOP_ID_NOT_FOUND ("desktop ID not found");
+        }
+
+        var app_info = new DesktopAppInfo (desktop_id);
+        if (app_info == null) {
+            throw new PackageLaunchError.APP_INFO_NULL ("AppInfo not found for %s desktop ID".printf (desktop_id));
+        }
+
+        try {
+            app_info.launch (null, null);
+        } catch (Error e) {
+            throw e;
+        }
     }
 
     private async bool perform_operation (State performing, State after_success, State after_fail) {
@@ -298,6 +321,10 @@ public class AppCenterCore.Package : Object {
         }
 
         return version;
+    }
+
+    public bool get_can_launch () {
+        return component.get_desktop_id () != null;
     }
 
     private Pk.Package? find_package () {
