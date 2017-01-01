@@ -143,7 +143,7 @@ namespace AppCenter.Views {
 
         private async void load_extensions () {
             package.component.get_addons ().@foreach ((extension) => {
-                var row = new Widgets.PackageRow (new AppCenterCore.Package (extension), null, false);
+                var row = new Widgets.PackageRow (new AppCenterCore.Package (extension), null);
                 if (extension_box != null) {
                     extension_box.add (row);
                 }

@@ -14,7 +14,8 @@ namespace AppCenter {
         protected Gtk.Button cancel_button;
         protected Gtk.SizeGroup action_button_group;
         protected Gtk.Stack action_stack;
-        protected bool show_uninstall;
+        protected bool show_uninstall = true;
+        protected bool show_open = true;
 
         public bool is_os_updates {
             get {
@@ -122,7 +123,7 @@ namespace AppCenter {
             update_action ();
         }
 
-        protected void update_action (bool show_uninstall = true) {
+        protected void update_action () {
             uninstall_button.no_show_all = true;
             uninstall_button.hide ();
             progress_bar.no_show_all = true;
@@ -157,7 +158,7 @@ namespace AppCenter {
                         action_stack.hide ();
                     }
 
-                    if (package.get_can_launch ()) {
+                    if (show_open && package.get_can_launch ()) {
                         open_button.no_show_all = false;
                         open_button.show ();
                     } else {
@@ -170,7 +171,7 @@ namespace AppCenter {
                 case AppCenterCore.Package.State.UPDATE_AVAILABLE:
                     action_button.label = _("Update");
 
-                    if (package.get_can_launch ()) {
+                    if (show_open && package.get_can_launch ()) {
                         open_button.no_show_all = false;
                         open_button.show ();
                     } else {
