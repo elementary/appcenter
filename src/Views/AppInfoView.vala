@@ -138,11 +138,12 @@ namespace AppCenter.Views {
 
             action_button.set_suggested_action_header ();
             uninstall_button.set_destructive_action_header ();
+            open_button.get_style_context ().add_class ("h3");
         }
 
         private async void load_extensions () {
             package.component.get_addons ().@foreach ((extension) => {
-                var row = new Widgets.PackageRow (new AppCenterCore.Package (extension), null, false);
+                var row = new Widgets.PackageRow (new AppCenterCore.Package (extension), null);
                 if (extension_box != null) {
                     extension_box.add (row);
                 }

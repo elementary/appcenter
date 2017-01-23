@@ -22,8 +22,8 @@ namespace AppCenter.Widgets {
     public class PackageRow : Gtk.ListBoxRow, AppListRow {
         PackageRowGrid grid;
 
-        public PackageRow (AppCenterCore.Package package, Gtk.SizeGroup? size_group, bool show_uninstall = true) {
-            grid = new PackageRowGrid (package, size_group, show_uninstall);
+        public PackageRow (AppCenterCore.Package package, Gtk.SizeGroup? size_group) {
+            grid = new PackageRowGrid (package, size_group);
             add (grid);
             grid.changed.connect (() => {
                 changed ();
@@ -92,9 +92,10 @@ namespace AppCenter.Widgets {
                 attach (action_stack, 2, 0, 1, 2);
             }
 
-            public PackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? size_group, bool show_uninstall = true) {
+            public PackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? size_group) {
                 this.package = package;
-                this.show_uninstall = show_uninstall;
+                this.show_uninstall = false;
+                this.show_open = false;
                 set_up_package ();
 
                 if (size_group != null) {
@@ -105,7 +106,7 @@ namespace AppCenter.Widgets {
             }
 
             protected override void update_state () {
-                update_action (show_uninstall);
+                update_action ();
                 changed ();
             }
         }
