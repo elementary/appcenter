@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-27 21:02-0600\n"
+"POT-Creation-Date: 2017-01-23 22:57-0600\n"
 "PO-Revision-Date: 2016-09-13 07:28+0000\n"
 "Last-Translator: elementaryart (old) <Unknown>\n"
 "Language-Team: \n"
@@ -10,8 +10,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-12-29 04:39+0000\n"
-"X-Generator: Launchpad (build 18298)\n"
+"X-Launchpad-Export-Date: 2017-01-24 05:39+0000\n"
+"X-Generator: Launchpad (build 18312)\n"
 "Language: ckb\n"
 
 #: ../src/Core/ChangeInformation.vala:54
@@ -178,27 +178,31 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "بەڕۆژکردنی %u بەردەستە بۆ سیستەمەکەت"
 msgstr[1] "بەڕۆژکردنەکانی %u بەردەستە بۆ سیستەمەکەت"
 
-#: ../src/Core/Package.vala:117
+#: ../src/Core/Package.vala:130
 msgid "Application installed"
 msgstr "نەرمەواڵەکە دامەزرا"
 
-#: ../src/Core/Package.vala:118
+#: ../src/Core/Package.vala:131
 msgid "%s has been successfully installed"
 msgstr "%s بەسەرکەوتوویی دامەزرا"
 
-#: ../src/AbstractAppContainer.vala:62
+#: ../src/AbstractAppContainer.vala:64
 msgid "Cancel"
 msgstr "هەڵوەشاندنەوە"
 
-#: ../src/AbstractAppContainer.vala:65 ../src/AbstractAppContainer.vala:129
+#: ../src/AbstractAppContainer.vala:67 ../src/AbstractAppContainer.vala:137
 msgid "Install"
 msgstr "دامەزراندن"
 
-#: ../src/AbstractAppContainer.vala:68
+#: ../src/AbstractAppContainer.vala:70
 msgid "Uninstall"
 msgstr ""
 
-#: ../src/AbstractAppContainer.vala:154
+#: ../src/AbstractAppContainer.vala:73
+msgid "Open"
+msgstr ""
+
+#: ../src/AbstractAppContainer.vala:172
 msgid "Update"
 msgstr "بەڕۆژکردن"
 
@@ -214,7 +218,7 @@ msgstr ""
 "  qezwan https://launchpad.net/~qezwan\n"
 "  rasti https://launchpad.net/~rasti"
 
-#: ../src/Application.vala:123
+#: ../src/Application.vala:130
 msgid "Specified link '%s' could not be found, going back to the main panel"
 msgstr ""
 

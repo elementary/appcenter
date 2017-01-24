@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-27 21:02-0600\n"
+"POT-Creation-Date: 2017-01-23 22:57-0600\n"
 "PO-Revision-Date: 2017-01-19 09:21+0000\n"
 "Last-Translator: Panan <panan25444@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -10,8 +10,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2017-01-21 06:07+0000\n"
-"X-Generator: Launchpad (build 18302)\n"
+"X-Launchpad-Export-Date: 2017-01-24 05:38+0000\n"
+"X-Generator: Launchpad (build 18312)\n"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -175,27 +175,31 @@ msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "การอัปเดต %u รายการพร้อมใช้งานสำหรับระบบของคุณแล้ว"
 
-#: ../src/Core/Package.vala:117
+#: ../src/Core/Package.vala:130
 msgid "Application installed"
 msgstr "ติดตั้งโปรแกรมแล้ว"
 
-#: ../src/Core/Package.vala:118
+#: ../src/Core/Package.vala:131
 msgid "%s has been successfully installed"
 msgstr "%s ได้ถูกติดตั้งอย่างสมบูรณ์แล้ว"
 
-#: ../src/AbstractAppContainer.vala:62
+#: ../src/AbstractAppContainer.vala:64
 msgid "Cancel"
 msgstr "ยกเลิก"
 
-#: ../src/AbstractAppContainer.vala:65 ../src/AbstractAppContainer.vala:129
+#: ../src/AbstractAppContainer.vala:67 ../src/AbstractAppContainer.vala:137
 msgid "Install"
 msgstr "ติดตั้ง"
 
-#: ../src/AbstractAppContainer.vala:68
+#: ../src/AbstractAppContainer.vala:70
 msgid "Uninstall"
 msgstr "ถอนการติดตั้ง"
 
-#: ../src/AbstractAppContainer.vala:154
+#: ../src/AbstractAppContainer.vala:73
+msgid "Open"
+msgstr ""
+
+#: ../src/AbstractAppContainer.vala:172
 msgid "Update"
 msgstr "การอัปเดต"
 
@@ -210,7 +214,7 @@ msgstr ""
 "  Panan https://launchpad.net/~panan25444\n"
 "  Rockworld https://launchpad.net/~rockrock2222222"
 
-#: ../src/Application.vala:123
+#: ../src/Application.vala:130
 msgid "Specified link '%s' could not be found, going back to the main panel"
 msgstr "การเชื่อมโยงที่ระบุ '%s' ไม่สามารถหาพบ กลับไปที่หน้าหลัก"
 

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-27 21:02-0600\n"
+"POT-Creation-Date: 2017-01-23 22:57-0600\n"
 "PO-Revision-Date: 2016-12-27 08:21+0000\n"
 "Last-Translator: Tobias Bannert <tobannert@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -10,8 +10,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-12-29 04:38+0000\n"
-"X-Generator: Launchpad (build 18298)\n"
+"X-Launchpad-Export-Date: 2017-01-24 05:38+0000\n"
+"X-Generator: Launchpad (build 18312)\n"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -177,27 +177,31 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "%u Aktualisierung ist für Ihr System verfügbar"
 msgstr[1] "%u Aktualisierungen sind für Ihr System verfügbar"
 
-#: ../src/Core/Package.vala:117
+#: ../src/Core/Package.vala:130
 msgid "Application installed"
 msgstr "Anwendung installiert"
 
-#: ../src/Core/Package.vala:118
+#: ../src/Core/Package.vala:131
 msgid "%s has been successfully installed"
 msgstr "%s wurde erfolgreich installiert"
 
-#: ../src/AbstractAppContainer.vala:62
+#: ../src/AbstractAppContainer.vala:64
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: ../src/AbstractAppContainer.vala:65 ../src/AbstractAppContainer.vala:129
+#: ../src/AbstractAppContainer.vala:67 ../src/AbstractAppContainer.vala:137
 msgid "Install"
 msgstr "Installieren"
 
-#: ../src/AbstractAppContainer.vala:68
+#: ../src/AbstractAppContainer.vala:70
 msgid "Uninstall"
 msgstr "Deinstallieren"
 
-#: ../src/AbstractAppContainer.vala:154
+#: ../src/AbstractAppContainer.vala:73
+msgid "Open"
+msgstr ""
+
+#: ../src/AbstractAppContainer.vala:172
 msgid "Update"
 msgstr "Aktualisieren"
 
@@ -211,6 +215,7 @@ msgstr ""
 "Launchpad Contributions:\n"
 "  Alexander Wilms https://launchpad.net/~alexander-wilms\n"
 "  Artem Anufrij https://launchpad.net/~artem-anufrij\n"
+"  Christian Pauly https://launchpad.net/~krillechritzel\n"
 "  Corentin Noël https://launchpad.net/~tintou\n"
 "  Domar https://launchpad.net/~domar\n"
 "  JayNutZ https://launchpad.net/~thejaynutz\n"
@@ -219,6 +224,7 @@ msgstr ""
 "  Martin https://launchpad.net/~hrspam\n"
 "  Mathias Heuer https://launchpad.net/~heuer-mathias\n"
 "  Nico Du https://launchpad.net/~nico-d-8\n"
+"  Noah Mehling https://launchpad.net/~noahmehling\n"
 "  Pascal Grzybek https://launchpad.net/~pascal-grzybek\n"
 "  Phillip Sz https://launchpad.net/~phillip-sz\n"
 "  Rico Tzschichholz https://launchpad.net/~ricotz\n"
@@ -229,7 +235,7 @@ msgstr ""
 "  lb https://launchpad.net/~qlblb12-lb45\n"
 "  mporten https://launchpad.net/~mathias-porten"
 
-#: ../src/Application.vala:123
+#: ../src/Application.vala:130
 msgid "Specified link '%s' could not be found, going back to the main panel"
 msgstr ""
 

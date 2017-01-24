@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-27 21:02-0600\n"
+"POT-Creation-Date: 2017-01-23 22:57-0600\n"
 "PO-Revision-Date: 2017-01-10 13:05+0000\n"
 "Last-Translator: Piotr Strębski <strebski@o2.pl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -11,8 +11,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2017-01-11 05:36+0000\n"
-"X-Generator: Launchpad (build 18302)\n"
+"X-Launchpad-Export-Date: 2017-01-24 05:38+0000\n"
+"X-Generator: Launchpad (build 18312)\n"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -180,27 +180,31 @@ msgstr[0] "Dostępna jest %u aktualizacja dla Twojego systemu"
 msgstr[1] "Dostępne są %u aktualizacje dla Twojego systemu"
 msgstr[2] "Dostępnych jest %u aktualizacji dla Twojego systemu"
 
-#: ../src/Core/Package.vala:117
+#: ../src/Core/Package.vala:130
 msgid "Application installed"
 msgstr "Program zainstalowany"
 
-#: ../src/Core/Package.vala:118
+#: ../src/Core/Package.vala:131
 msgid "%s has been successfully installed"
 msgstr "%s zostało pomyślnie zainstalowane"
 
-#: ../src/AbstractAppContainer.vala:62
+#: ../src/AbstractAppContainer.vala:64
 msgid "Cancel"
 msgstr "Anuluj"
 
-#: ../src/AbstractAppContainer.vala:65 ../src/AbstractAppContainer.vala:129
+#: ../src/AbstractAppContainer.vala:67 ../src/AbstractAppContainer.vala:137
 msgid "Install"
 msgstr "Zainstaluj"
 
-#: ../src/AbstractAppContainer.vala:68
+#: ../src/AbstractAppContainer.vala:70
 msgid "Uninstall"
 msgstr "Odinstaluj"
 
-#: ../src/AbstractAppContainer.vala:154
+#: ../src/AbstractAppContainer.vala:73
+msgid "Open"
+msgstr ""
+
+#: ../src/AbstractAppContainer.vala:172
 msgid "Update"
 msgstr "Aktualizuj"
 
@@ -223,7 +227,7 @@ msgstr ""
 "  Piotr Strębski https://launchpad.net/~strebski\n"
 "  elementaryart (old) https://launchpad.net/~elementaryart"
 
-#: ../src/Application.vala:123
+#: ../src/Application.vala:130
 msgid "Specified link '%s' could not be found, going back to the main panel"
 msgstr ""
 "Określony odnośnik '%s' nie został odnaleziony, powrót do głównego panelu."

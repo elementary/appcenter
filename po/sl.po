@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-27 21:02-0600\n"
+"POT-Creation-Date: 2017-01-23 22:57-0600\n"
 "PO-Revision-Date: 2016-12-28 12:04+0000\n"
 "Last-Translator: Jernej Virag <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -11,8 +11,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || "
 "n%100==4 ? 3 : 0);\n"
-"X-Launchpad-Export-Date: 2016-12-29 04:38+0000\n"
-"X-Generator: Launchpad (build 18298)\n"
+"X-Launchpad-Export-Date: 2017-01-24 05:38+0000\n"
+"X-Generator: Launchpad (build 18312)\n"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -182,27 +182,31 @@ msgstr[1] "%u posodobitev je na voljo za vaš sistem"
 msgstr[2] "%u posodobitvi sta na voljo za vaš sistem"
 msgstr[3] "%u posodobitve so na voljo za vaš sistem"
 
-#: ../src/Core/Package.vala:117
+#: ../src/Core/Package.vala:130
 msgid "Application installed"
 msgstr "Program nameščen"
 
-#: ../src/Core/Package.vala:118
+#: ../src/Core/Package.vala:131
 msgid "%s has been successfully installed"
 msgstr "%s je bila uspešno nameščena"
 
-#: ../src/AbstractAppContainer.vala:62
+#: ../src/AbstractAppContainer.vala:64
 msgid "Cancel"
 msgstr "Prekliči"
 
-#: ../src/AbstractAppContainer.vala:65 ../src/AbstractAppContainer.vala:129
+#: ../src/AbstractAppContainer.vala:67 ../src/AbstractAppContainer.vala:137
 msgid "Install"
 msgstr "Namesti"
 
-#: ../src/AbstractAppContainer.vala:68
+#: ../src/AbstractAppContainer.vala:70
 msgid "Uninstall"
 msgstr "Odstrani"
 
-#: ../src/AbstractAppContainer.vala:154
+#: ../src/AbstractAppContainer.vala:73
+msgid "Open"
+msgstr ""
+
+#: ../src/AbstractAppContainer.vala:172
 msgid "Update"
 msgstr "Posodobi"
 
@@ -219,7 +223,7 @@ msgstr ""
 "  MarkoD https://launchpad.net/~markodolar\n"
 "  elementaryart (old) https://launchpad.net/~elementaryart"
 
-#: ../src/Application.vala:123
+#: ../src/Application.vala:130
 msgid "Specified link '%s' could not be found, going back to the main panel"
 msgstr ""
 
