@@ -3,44 +3,44 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-23 22:57-0600\n"
-"PO-Revision-Date: 2016-12-28 08:16+0000\n"
-"Last-Translator: elementaryart (old) <Unknown>\n"
+"PO-Revision-Date: 2017-01-26 15:57+0000\n"
+"Last-Translator: Marius Albina <marius.albina@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n == 1 ? 0: (((n % 100 > 19) || ((n % 100 "
 "== 0) && (n != 0))) ? 2: 1));\n"
-"X-Launchpad-Export-Date: 2017-01-25 05:35+0000\n"
-"X-Generator: Launchpad (build 18312)\n"
+"X-Launchpad-Export-Date: 2017-01-27 05:33+0000\n"
+"X-Generator: Launchpad (build 18315)\n"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
-msgstr ""
+msgstr "Se începe"
 
 #: ../src/Core/ChangeInformation.vala:56
 msgid "Waiting"
-msgstr ""
+msgstr "În așteptare"
 
 #: ../src/Core/ChangeInformation.vala:58
 msgid "Running"
-msgstr ""
+msgstr "Se rulează"
 
 #: ../src/Core/ChangeInformation.vala:60
 msgid "Querying"
-msgstr ""
+msgstr "Se interoghează"
 
 #: ../src/Core/ChangeInformation.vala:62
 msgid "Getting information"
-msgstr ""
+msgstr "Se obțin informațiile"
 
 #: ../src/Core/ChangeInformation.vala:64
 msgid "Removing packages"
-msgstr ""
+msgstr "Se elimină pachetele"
 
 #: ../src/Core/ChangeInformation.vala:66
 msgid "Downloading"
-msgstr ""
+msgstr "Se descarcă"
 
 #: ../src/Core/ChangeInformation.vala:68
 msgid "Installing"
@@ -48,147 +48,149 @@ msgstr "Se instalează"
 
 #: ../src/Core/ChangeInformation.vala:70
 msgid "Refreshing software list"
-msgstr ""
+msgstr "Se reîmprospătează lista aplicaţiilor"
 
 #: ../src/Core/ChangeInformation.vala:72
 msgid "Installing updates"
-msgstr ""
+msgstr "Se instalează actualizările"
 
 #: ../src/Core/ChangeInformation.vala:74
 msgid "Cleaning up packages"
-msgstr ""
+msgstr "Se şterg pachete"
 
 #: ../src/Core/ChangeInformation.vala:76
 msgid "Obsoleting packages"
-msgstr ""
+msgstr "Pachete ieşite din uz"
 
 #: ../src/Core/ChangeInformation.vala:78
 msgid "Resolving dependencies"
-msgstr ""
+msgstr "Se rezolvă dependențele"
 
 #: ../src/Core/ChangeInformation.vala:80
 msgid "Checking signatures"
-msgstr ""
+msgstr "Se verifică semnături"
 
 #: ../src/Core/ChangeInformation.vala:82
 msgid "Testing changes"
-msgstr ""
+msgstr "Se testează modificările"
 
 #: ../src/Core/ChangeInformation.vala:84
 msgid "Committing changes"
-msgstr ""
+msgstr "Se aplică modificările"
 
 #: ../src/Core/ChangeInformation.vala:86
 msgid "Requesting data"
-msgstr ""
+msgstr "Se cer date"
 
 #: ../src/Core/ChangeInformation.vala:88
 msgid "Finished"
-msgstr ""
+msgstr "Finalizat"
 
 #: ../src/Core/ChangeInformation.vala:90
 msgid "Cancelling"
-msgstr ""
+msgstr "În curs de anulare"
 
 #: ../src/Core/ChangeInformation.vala:92
 msgid "Downloading repository information"
-msgstr ""
+msgstr "Se descarcă informaţia stocată"
 
 #: ../src/Core/ChangeInformation.vala:94
 msgid "Downloading list of packages"
-msgstr ""
+msgstr "Se descărcă lista de pachete"
 
 #: ../src/Core/ChangeInformation.vala:96
 msgid "Downloading file lists"
-msgstr ""
+msgstr "Se descarcă lista cu fişiere"
 
 #: ../src/Core/ChangeInformation.vala:98
 msgid "Downloading lists of changes"
-msgstr ""
+msgstr "Se descărcă lista cu modificări"
 
 #: ../src/Core/ChangeInformation.vala:100
 msgid "Downloading groups"
-msgstr ""
+msgstr "Se descarcă grupurile"
 
 #: ../src/Core/ChangeInformation.vala:102
 msgid "Downloading update information"
-msgstr ""
+msgstr "Se descarcă informaţiile de actualizare"
 
 #: ../src/Core/ChangeInformation.vala:104
 msgid "Repackaging files"
-msgstr ""
+msgstr "Se reasamblează fișierele"
 
 #: ../src/Core/ChangeInformation.vala:106
 msgid "Loading cache"
-msgstr ""
+msgstr "Se încărca cache-ul"
 
 #: ../src/Core/ChangeInformation.vala:108
 msgid "Scanning applications"
-msgstr ""
+msgstr "Se scanează aplicaţiile"
 
 #: ../src/Core/ChangeInformation.vala:110
 msgid "Generating package lists"
-msgstr ""
+msgstr "Se generează lista pachetelor"
 
 #: ../src/Core/ChangeInformation.vala:112
 msgid "Waiting for package manager lock"
-msgstr ""
+msgstr "Se așteaptă blocajul gestionarului de pachete"
 
 #: ../src/Core/ChangeInformation.vala:114
 msgid "Waiting for authentication"
-msgstr ""
+msgstr "Se aşteaptă autentificarea"
 
 #: ../src/Core/ChangeInformation.vala:116
 msgid "Updating running applications"
-msgstr ""
+msgstr "Se actualizează aplicaţiile în derulare"
 
 #: ../src/Core/ChangeInformation.vala:118
 msgid "Checking applications in use"
-msgstr ""
+msgstr "Se verifică aplicaţiile în uz"
 
 #: ../src/Core/ChangeInformation.vala:120
 msgid "Checking libraries in use"
-msgstr ""
+msgstr "Se verifică bibliotecile în uz"
 
 #: ../src/Core/ChangeInformation.vala:122
 msgid "Copying files"
-msgstr ""
+msgstr "Se copiază fișierele"
 
 #: ../src/Core/ChangeInformation.vala:124
 msgid "Unknown state"
-msgstr ""
+msgstr "Stare necunoscută"
 
 #: ../src/Core/Client.vala:74
 msgid "Operating System Updates"
-msgstr ""
+msgstr "Actualizări ale sistemului de operare"
 
 #: ../src/Core/Client.vala:75
 msgid "Updates to system components"
-msgstr ""
+msgstr "Actualizări ale componentelor sistemului"
 
 #: ../src/Core/Client.vala:325
 msgid "Update Available"
 msgid_plural "Updates Available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Actualizare disponibilă"
+msgstr[1] "Actualizări disponibile"
+msgstr[2] "Actualizări disponibile"
 
 #: ../src/Core/Client.vala:326
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "o actualizare este disponibilă pentru sistem"
+msgstr[1] "%u actualizări sunt disponibile pentru sistem"
+msgstr[2] "%u actualizări sunt disponibile pentru sistem"
 
 #: ../src/Core/Package.vala:130
 msgid "Application installed"
-msgstr ""
+msgstr "Aplicaţie instalată"
 
 #: ../src/Core/Package.vala:131
 msgid "%s has been successfully installed"
-msgstr ""
+msgstr "%s a fost instalată cu succes"
 
 #: ../src/AbstractAppContainer.vala:64
 msgid "Cancel"
-msgstr ""
+msgstr "Anulare"
 
 #: ../src/AbstractAppContainer.vala:67 ../src/AbstractAppContainer.vala:137
 msgid "Install"
@@ -196,19 +198,19 @@ msgstr "Instalează"
 
 #: ../src/AbstractAppContainer.vala:70
 msgid "Uninstall"
-msgstr ""
+msgstr "Dezinstalează"
 
 #: ../src/AbstractAppContainer.vala:73
 msgid "Open"
-msgstr ""
+msgstr "Deschide"
 
 #: ../src/AbstractAppContainer.vala:172
 msgid "Update"
-msgstr ""
+msgstr "Actualizează"
 
 #: ../src/Application.vala:39
 msgid "App Center"
-msgstr ""
+msgstr "App Center"
 
 #: ../src/Application.vala:57
 msgid "translator-credits"
@@ -221,10 +223,12 @@ msgstr ""
 #: ../src/Application.vala:130
 msgid "Specified link '%s' could not be found, going back to the main panel"
 msgstr ""
+"Legătura specificată '%s' nu a putut fi găsită, se întoarce la panoul "
+"principal"
 
 #: ../src/MainWindow.vala:95
 msgid "AppCenter"
-msgstr ""
+msgstr "AppCenter"
 
 #: ../src/MainWindow.vala:103 ../src/MainWindow.vala:130
 #: ../src/MainWindow.vala:276 ../src/MainWindow.vala:298
@@ -239,111 +243,113 @@ msgstr "Categorii"
 #: ../src/MainWindow.vala:114 ../src/Views/InstalledView.vala:45
 msgctxt "view"
 msgid "Updates"
-msgstr ""
+msgstr "Actualizări"
 
 #: ../src/MainWindow.vala:258
 msgid "Search %s"
-msgstr ""
+msgstr "Caută %s"
 
 #. / TRANSLATORS: the name of the Search view
 #: ../src/Views/SearchView.vala:36
 msgctxt "view"
 msgid "Search"
-msgstr ""
+msgstr "Căutare"
 
 #: ../src/Views/AppListView.vala:64
 msgid "Update All"
-msgstr ""
+msgstr "Actualizează toate"
 
 #: ../src/Views/FeaturedView.vala:33
 msgid "Best Rated"
-msgstr ""
+msgstr "Cel mai bun evaluat"
 
 #: ../src/Views/FeaturedView.vala:36
 msgid "Latest Apps"
-msgstr ""
+msgstr "Ultimele aplicaţii"
 
 #: ../src/Views/CategoryView.vala:122
 msgid "Audio"
-msgstr ""
+msgstr "Audio"
 
 #: ../src/Views/CategoryView.vala:133
 msgid "Development"
-msgstr ""
+msgstr "Dezvoltare"
 
 #: ../src/Views/CategoryView.vala:144
 msgid "Accessories"
-msgstr ""
+msgstr "Accesorii"
 
 #: ../src/Views/CategoryView.vala:155
 msgid "Office"
-msgstr ""
+msgstr "Birou"
 
 #: ../src/Views/CategoryView.vala:166
 msgid "System"
-msgstr ""
+msgstr "Sistem"
 
 #: ../src/Views/CategoryView.vala:177
 msgid "Video"
-msgstr ""
+msgstr "Video"
 
 #: ../src/Views/CategoryView.vala:188
 msgid "Graphics"
-msgstr ""
+msgstr "Grafică"
 
 #: ../src/Views/CategoryView.vala:198
 msgid "Games"
-msgstr ""
+msgstr "Jocuri"
 
 #: ../src/Views/CategoryView.vala:209
 msgid "Education"
-msgstr ""
+msgstr "Educație"
 
 #: ../src/Views/CategoryView.vala:219
 msgid "Internet"
-msgstr ""
+msgstr "Internet"
 
 #: ../src/Views/CategoryView.vala:230
 msgid "Science & Engineering"
-msgstr ""
+msgstr "Știință și inginerie"
 
 #: ../src/Views/CategoryView.vala:240
 msgid "Universal Access"
-msgstr ""
+msgstr "Accesibilitate"
 
 #: ../src/Views/AppInfoView.vala:48
 msgid "Screenshot Not Available"
-msgstr ""
+msgstr "Captura de ecran nu este disponibilă"
 
 #: ../src/Views/AppInfoView.vala:128
 msgid "Extensions:"
-msgstr ""
+msgstr "Extensii:"
 
 #: ../src/AbstractAppList.vala:30
 msgid "No Results"
-msgstr ""
+msgstr "Nici un rezultat"
 
 #: ../src/AbstractAppList.vala:30
 msgid "No apps could be found. Try changing search terms."
 msgstr ""
+"Nici o aplicaţie nu a putut fi găsită. Încearcă să schimbi termenii căutării."
 
 #: ../src/Widgets/UpdateHeaderRow.vala:121
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "o actualizare disponibilă"
+msgstr[1] "%u actualizări disponibile"
+msgstr[2] "%u actualizări disponibile"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:122
 msgid "Size: %s"
-msgstr ""
+msgstr "Dimensiune: %s"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:158
 msgid "Searching for updates…"
-msgstr ""
+msgstr "Căutare actualizări..."
 
 #: ../src/Widgets/UpdateHeaderRow.vala:165
 msgid "Up to Date"
-msgstr ""
+msgstr "La zi"
 
 #~ msgid "Categories View"
 #~ msgstr "Vizualizare pe categorii"
