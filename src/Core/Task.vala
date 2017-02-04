@@ -18,11 +18,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class AppCenter.Task : Pk.Task {
-    public Task () {
-        
-    }
-
+public class AppCenterCore.Task : Pk.Task {
     public override void untrusted_question (uint request, Pk.Results results) {
         user_accepted (request);
     }

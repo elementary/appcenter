@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-19 10:19-0700\n"
+"POT-Creation-Date: 2017-02-03 17:52-0600\n"
 "PO-Revision-Date: 2016-09-20 09:34+0000\n"
 "Last-Translator: elementaryart (old) <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -10,8 +10,326 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
-"X-Launchpad-Export-Date: 2016-09-21 06:13+0000\n"
-"X-Generator: Launchpad (build 18204)\n"
+"X-Launchpad-Export-Date: 2017-02-04 05:34+0000\n"
+"X-Generator: Launchpad (build 18322)\n"
+
+#: ../src/Core/ChangeInformation.vala:54
+msgid "Starting"
+msgstr "Spúšťanie"
+
+#: ../src/Core/ChangeInformation.vala:56
+msgid "Waiting"
+msgstr ""
+
+#: ../src/Core/ChangeInformation.vala:58
+msgid "Running"
+msgstr "Spustené"
+
+#: ../src/Core/ChangeInformation.vala:60
+msgid "Querying"
+msgstr "Dotazovanie"
+
+#: ../src/Core/ChangeInformation.vala:62
+msgid "Getting information"
+msgstr "Získavajú sa informácie"
+
+#: ../src/Core/ChangeInformation.vala:64
+msgid "Removing packages"
+msgstr "Odobranie balíkov"
+
+#: ../src/Core/ChangeInformation.vala:66
+msgid "Downloading"
+msgstr ""
+
+#: ../src/Core/ChangeInformation.vala:68
+msgid "Installing"
+msgstr "Inštalácia"
+
+#: ../src/Core/ChangeInformation.vala:70
+msgid "Refreshing software list"
+msgstr "Obnovavanie zoznamu softwaru"
+
+#: ../src/Core/ChangeInformation.vala:72
+msgid "Installing updates"
+msgstr "Inštalujú sa aktualizácie"
+
+#: ../src/Core/ChangeInformation.vala:74
+msgid "Cleaning up packages"
+msgstr "Čistia sa balíky"
+
+#: ../src/Core/ChangeInformation.vala:76
+msgid "Obsoleting packages"
+msgstr "Zastaralé balíky"
+
+#: ../src/Core/ChangeInformation.vala:78
+msgid "Resolving dependencies"
+msgstr "Riešia sa závislosti"
+
+#: ../src/Core/ChangeInformation.vala:80
+msgid "Checking signatures"
+msgstr "Kontrolujú sa podpisy"
+
+#: ../src/Core/ChangeInformation.vala:82
+msgid "Testing changes"
+msgstr "Testujú sa zmeny"
+
+#: ../src/Core/ChangeInformation.vala:84
+msgid "Committing changes"
+msgstr "Vykonávajú sa zmeny"
+
+#: ../src/Core/ChangeInformation.vala:86
+msgid "Requesting data"
+msgstr "Vyžadovanie dát"
+
+#: ../src/Core/ChangeInformation.vala:88
+msgid "Finished"
+msgstr "Dokončené"
+
+#: ../src/Core/ChangeInformation.vala:90
+msgid "Cancelling"
+msgstr "Rušenie"
+
+#: ../src/Core/ChangeInformation.vala:92
+msgid "Downloading repository information"
+msgstr "Sťahujú sa informácie o repozitároch"
+
+#: ../src/Core/ChangeInformation.vala:94
+msgid "Downloading list of packages"
+msgstr "Sťahuje sa zoznam balíkov"
+
+#: ../src/Core/ChangeInformation.vala:96
+msgid "Downloading file lists"
+msgstr "Sťahujú sa zoznamy súborov"
+
+#: ../src/Core/ChangeInformation.vala:98
+msgid "Downloading lists of changes"
+msgstr "Sťahujú sa záznamy zmien"
+
+#: ../src/Core/ChangeInformation.vala:100
+msgid "Downloading groups"
+msgstr "Sťahujú sa skupiny"
+
+#: ../src/Core/ChangeInformation.vala:102
+msgid "Downloading update information"
+msgstr "Sťahujú sa aktualizačné informácie"
+
+#: ../src/Core/ChangeInformation.vala:104
+msgid "Repackaging files"
+msgstr "Prebaľujú sa súbory"
+
+#: ../src/Core/ChangeInformation.vala:106
+msgid "Loading cache"
+msgstr "Načítava sa vyrovnávacia pamäť"
+
+#: ../src/Core/ChangeInformation.vala:108
+msgid "Scanning applications"
+msgstr "Hľadajú sa aplikácie"
+
+#: ../src/Core/ChangeInformation.vala:110
+msgid "Generating package lists"
+msgstr "Vytvárajú sa zoznamy balíkov"
+
+#: ../src/Core/ChangeInformation.vala:112
+msgid "Waiting for package manager lock"
+msgstr "Čaká sa na zámok správcu balíkov"
+
+#: ../src/Core/ChangeInformation.vala:114
+msgid "Waiting for authentication"
+msgstr "Čaká sa na overenie totožnosti"
+
+#: ../src/Core/ChangeInformation.vala:116
+msgid "Updating running applications"
+msgstr "Aktualizujú sa bežiace aplikácie"
+
+#: ../src/Core/ChangeInformation.vala:118
+msgid "Checking applications in use"
+msgstr "Kontrolujú sa používané aplikácie"
+
+#: ../src/Core/ChangeInformation.vala:120
+msgid "Checking libraries in use"
+msgstr "Kontrolujú sa používané knižnice"
+
+#: ../src/Core/ChangeInformation.vala:122
+msgid "Copying files"
+msgstr "Kopírujú sa súbory"
+
+#: ../src/Core/ChangeInformation.vala:124
+msgid "Unknown state"
+msgstr "Neznámy stav"
+
+#: ../src/Core/Client.vala:74
+msgid "Operating System Updates"
+msgstr "Aktualizácie operačného systému"
+
+#: ../src/Core/Client.vala:75
+msgid "Updates to system components"
+msgstr "Aktualizácie systémových komponent"
+
+#: ../src/Core/Client.vala:325
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "Aktualizácií je dostupných"
+msgstr[1] "Aktualizácia je dostupná"
+msgstr[2] "Aktualizácie sú dostupné"
+
+#: ../src/Core/Client.vala:326
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "%u aktualizácií je dostupných pre váš systém"
+msgstr[1] "%u aktualizácia je dostupná pre váš systém"
+msgstr[2] "%u aktualizácie sú dostupné pre váš systém"
+
+#: ../src/Core/Package.vala:130
+msgid "Application installed"
+msgstr "Aplikácia nainštalovaná"
+
+#: ../src/Core/Package.vala:131
+msgid "%s has been successfully installed"
+msgstr "%s sa úspešne nainštaloval"
+
+#: ../src/AbstractAppContainer.vala:64
+msgid "Cancel"
+msgstr "Zrušiť"
+
+#: ../src/AbstractAppContainer.vala:67 ../src/AbstractAppContainer.vala:137
+msgid "Install"
+msgstr "Inštalácia"
+
+#: ../src/AbstractAppContainer.vala:70
+msgid "Uninstall"
+msgstr "Odinštalovať"
+
+#: ../src/AbstractAppContainer.vala:73
+msgid "Open"
+msgstr ""
+
+#: ../src/AbstractAppContainer.vala:172
+msgid "Update"
+msgstr "Aktualizácie"
+
+#: ../src/Application.vala:39
+msgid "App Center"
+msgstr "App Centrum"
+
+#: ../src/Application.vala:57
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Lukáš Papík https://launchpad.net/~stereo839\n"
+"  Milan Slovák https://launchpad.net/~milboys\n"
+"  Samuel Kristev https://launchpad.net/~samuelkristev\n"
+"  bj https://launchpad.net/~teapack97\n"
+"  elementaryart (old) https://launchpad.net/~elementaryart\n"
+"  lupajz https://launchpad.net/~lubos-m"
+
+#: ../src/Application.vala:130
+msgid "Specified link '%s' could not be found, going back to the main panel"
+msgstr ""
+
+#: ../src/MainWindow.vala:95
+msgid "AppCenter"
+msgstr "AppCentrum"
+
+#: ../src/MainWindow.vala:103 ../src/MainWindow.vala:130
+#: ../src/MainWindow.vala:276 ../src/MainWindow.vala:298
+msgid "Search Apps"
+msgstr "Hľadať aplikácie"
+
+#: ../src/MainWindow.vala:113 ../src/MainWindow.vala:189
+#: ../src/Views/CategoryView.vala:72 ../src/Views/CategoryView.vala:79
+msgid "Categories"
+msgstr "Kategórie"
+
+#: ../src/MainWindow.vala:114 ../src/Views/InstalledView.vala:45
+msgctxt "view"
+msgid "Updates"
+msgstr "Aktualizácie"
+
+#: ../src/MainWindow.vala:258
+msgid "Search %s"
+msgstr ""
+
+#. / TRANSLATORS: the name of the Search view
+#: ../src/Views/SearchView.vala:36
+msgctxt "view"
+msgid "Search"
+msgstr "Hľadať"
+
+#: ../src/Views/AppListView.vala:64
+msgid "Update All"
+msgstr "Aktualizovať všetko"
+
+#: ../src/Views/FeaturedView.vala:33
+msgid "Best Rated"
+msgstr "Najlepšie hodnotené"
+
+#: ../src/Views/FeaturedView.vala:36
+msgid "Latest Apps"
+msgstr "Posledné aplikácie"
+
+#: ../src/Views/CategoryView.vala:122
+msgid "Audio"
+msgstr "Zvuk"
+
+#: ../src/Views/CategoryView.vala:133
+msgid "Development"
+msgstr "Vývoj"
+
+#: ../src/Views/CategoryView.vala:144
+msgid "Accessories"
+msgstr "Príslušenstvo"
+
+#: ../src/Views/CategoryView.vala:155
+msgid "Office"
+msgstr "Kancelária"
+
+#: ../src/Views/CategoryView.vala:166
+msgid "System"
+msgstr "Systém"
+
+#: ../src/Views/CategoryView.vala:177
+msgid "Video"
+msgstr "Video"
+
+#: ../src/Views/CategoryView.vala:188
+msgid "Graphics"
+msgstr "Grafika"
+
+#: ../src/Views/CategoryView.vala:198
+msgid "Games"
+msgstr "Hry"
+
+#: ../src/Views/CategoryView.vala:209
+msgid "Education"
+msgstr "Vzdelávanie"
+
+#: ../src/Views/CategoryView.vala:219
+msgid "Internet"
+msgstr "Internet"
+
+#: ../src/Views/CategoryView.vala:230
+msgid "Science & Engineering"
+msgstr "Veda a výskum"
+
+#: ../src/Views/CategoryView.vala:240
+msgid "Universal Access"
+msgstr "Univerzálny prístup"
+
+#: ../src/Views/AppInfoView.vala:48
+msgid "Screenshot Not Available"
+msgstr "Nie je možné spraviť fotku obrazovky"
+
+#: ../src/Views/AppInfoView.vala:128
+msgid "Extensions:"
+msgstr "Rozšírenia:"
+
+#: ../src/AbstractAppList.vala:30
+msgid "No Results"
+msgstr "Žiadne výsledky"
+
+#: ../src/AbstractAppList.vala:30
+msgid "No apps could be found. Try changing search terms."
+msgstr "Nenašli sa žiadne aplikácie. Skúste zmeniť výraz vyhľadávanie."
 
 #: ../src/Widgets/UpdateHeaderRow.vala:121
 msgid "%u Update Available"
@@ -31,311 +349,6 @@ msgstr "Hľadanie aktualizácií"
 #: ../src/Widgets/UpdateHeaderRow.vala:165
 msgid "Up to Date"
 msgstr "Aktuálne"
-
-#: ../src/AbstractAppContainer.vala:62
-msgid "Cancel"
-msgstr "Zrušiť"
-
-#: ../src/AbstractAppContainer.vala:65 ../src/AbstractAppContainer.vala:129
-msgid "Install"
-msgstr "Inštalácia"
-
-#: ../src/AbstractAppContainer.vala:68
-msgid "Uninstall"
-msgstr "Odinštalovať"
-
-#: ../src/AbstractAppContainer.vala:154
-msgid "Update"
-msgstr "Aktualizácie"
-
-#: ../src/MainWindow.vala:91
-msgid "AppCenter"
-msgstr "AppCentrum"
-
-#: ../src/MainWindow.vala:99 ../src/Views/CategoryView.vala:68
-#: ../src/Views/CategoryView.vala:75
-msgid "Categories"
-msgstr "Kategórie"
-
-#: ../src/MainWindow.vala:100 ../src/Views/InstalledView.vala:45
-msgctxt "view"
-msgid "Updates"
-msgstr "Aktualizácie"
-
-#: ../src/MainWindow.vala:116
-msgid "Search Apps"
-msgstr "Hľadať aplikácie"
-
-#: ../src/AbstractAppList.vala:30
-msgid "No Results"
-msgstr "Žiadne výsledky"
-
-#: ../src/AbstractAppList.vala:30
-msgid "No apps could be found. Try changing search terms."
-msgstr "Nenašli sa žiadne aplikácie. Skúste zmeniť výraz vyhľadávanie."
-
-#: ../src/Views/AppListView.vala:64
-msgid "Update All"
-msgstr "Aktualizovať všetko"
-
-#. / TRANSLATORS: the name of the Search view
-#: ../src/Views/SearchView.vala:36
-msgctxt "view"
-msgid "Search"
-msgstr "Hľadať"
-
-#: ../src/Views/AppInfoView.vala:48
-msgid "Screenshot Not Available"
-msgstr "Nie je možné spraviť fotku obrazovky"
-
-#: ../src/Views/AppInfoView.vala:128
-msgid "Extensions:"
-msgstr "Rozšírenia:"
-
-#: ../src/Views/CategoryView.vala:118
-msgid "Audio"
-msgstr "Zvuk"
-
-#: ../src/Views/CategoryView.vala:131
-msgid "Development"
-msgstr "Vývoj"
-
-#: ../src/Views/CategoryView.vala:144
-msgid "Accessories"
-msgstr "Príslušenstvo"
-
-#: ../src/Views/CategoryView.vala:157
-msgid "Office"
-msgstr "Kancelária"
-
-#: ../src/Views/CategoryView.vala:170
-msgid "System"
-msgstr "Systém"
-
-#: ../src/Views/CategoryView.vala:183
-msgid "Video"
-msgstr "Video"
-
-#: ../src/Views/CategoryView.vala:196
-msgid "Graphics"
-msgstr "Grafika"
-
-#: ../src/Views/CategoryView.vala:208
-msgid "Games"
-msgstr "Hry"
-
-#: ../src/Views/CategoryView.vala:221
-msgid "Education"
-msgstr "Vzdelávanie"
-
-#: ../src/Views/CategoryView.vala:233
-msgid "Internet"
-msgstr "Internet"
-
-#: ../src/Views/CategoryView.vala:246
-msgid "Science & Engineering"
-msgstr "Veda a výskum"
-
-#: ../src/Views/CategoryView.vala:258
-msgid "Universal Access"
-msgstr "Univerzálny prístup"
-
-#: ../src/Views/FeaturedView.vala:33
-msgid "Best Rated"
-msgstr "Najlepšie hodnotené"
-
-#: ../src/Views/FeaturedView.vala:36
-msgid "Latest Apps"
-msgstr "Posledné aplikácie"
-
-#: ../src/Core/Client.vala:62
-msgid "Operating System Updates"
-msgstr "Aktualizácie operačného systému"
-
-#: ../src/Core/Client.vala:63
-msgid "Updates to system components"
-msgstr "Aktualizácie systémových komponent"
-
-#: ../src/Core/Client.vala:356
-msgid "Update Available"
-msgid_plural "Updates Available"
-msgstr[0] "Aktualizácií je dostupných"
-msgstr[1] "Aktualizácia je dostupná"
-msgstr[2] "Aktualizácie sú dostupné"
-
-#: ../src/Core/Client.vala:357
-msgid "%u update is available for your system"
-msgid_plural "%u updates are available for your system"
-msgstr[0] "%u aktualizácií je dostupných pre váš systém"
-msgstr[1] "%u aktualizácia je dostupná pre váš systém"
-msgstr[2] "%u aktualizácie sú dostupné pre váš systém"
-
-#: ../src/Core/Package.vala:117
-msgid "Application installed"
-msgstr "Aplikácia nainštalovaná"
-
-#: ../src/Core/Package.vala:118
-msgid "%s has been successfully installed"
-msgstr "%s sa úspešne nainštaloval"
-
-#: ../src/Core/ChangeInformation.vala:47
-msgid "Starting"
-msgstr "Spúšťanie"
-
-#: ../src/Core/ChangeInformation.vala:49
-msgid "Waiting in queue"
-msgstr "Čaká v rade"
-
-#: ../src/Core/ChangeInformation.vala:51
-msgid "Running"
-msgstr "Spustené"
-
-#: ../src/Core/ChangeInformation.vala:53
-msgid "Querying"
-msgstr "Dotazovanie"
-
-#: ../src/Core/ChangeInformation.vala:55
-msgid "Getting information"
-msgstr "Získavajú sa informácie"
-
-#: ../src/Core/ChangeInformation.vala:57
-msgid "Removing packages"
-msgstr "Odobranie balíkov"
-
-#: ../src/Core/ChangeInformation.vala:59
-msgid "Downloading packages"
-msgstr "Sťahujú sa balíky"
-
-#: ../src/Core/ChangeInformation.vala:61
-msgid "Installing packages"
-msgstr "Inštalovanie balíkov"
-
-#: ../src/Core/ChangeInformation.vala:63
-msgid "Refreshing software list"
-msgstr "Obnovavanie zoznamu softwaru"
-
-#: ../src/Core/ChangeInformation.vala:65
-msgid "Installing updates"
-msgstr "Inštalujú sa aktualizácie"
-
-#: ../src/Core/ChangeInformation.vala:67
-msgid "Cleaning up packages"
-msgstr "Čistia sa balíky"
-
-#: ../src/Core/ChangeInformation.vala:69
-msgid "Obsoleting packages"
-msgstr "Zastaralé balíky"
-
-#: ../src/Core/ChangeInformation.vala:71
-msgid "Resolving dependencies"
-msgstr "Riešia sa závislosti"
-
-#: ../src/Core/ChangeInformation.vala:73
-msgid "Checking signatures"
-msgstr "Kontrolujú sa podpisy"
-
-#: ../src/Core/ChangeInformation.vala:75
-msgid "Testing changes"
-msgstr "Testujú sa zmeny"
-
-#: ../src/Core/ChangeInformation.vala:77
-msgid "Committing changes"
-msgstr "Vykonávajú sa zmeny"
-
-#: ../src/Core/ChangeInformation.vala:79
-msgid "Requesting data"
-msgstr "Vyžadovanie dát"
-
-#: ../src/Core/ChangeInformation.vala:81
-msgid "Finished"
-msgstr "Dokončené"
-
-#: ../src/Core/ChangeInformation.vala:83
-msgid "Cancelling"
-msgstr "Rušenie"
-
-#: ../src/Core/ChangeInformation.vala:85
-msgid "Downloading repository information"
-msgstr "Sťahujú sa informácie o repozitároch"
-
-#: ../src/Core/ChangeInformation.vala:87
-msgid "Downloading list of packages"
-msgstr "Sťahuje sa zoznam balíkov"
-
-#: ../src/Core/ChangeInformation.vala:89
-msgid "Downloading file lists"
-msgstr "Sťahujú sa zoznamy súborov"
-
-#: ../src/Core/ChangeInformation.vala:91
-msgid "Downloading lists of changes"
-msgstr "Sťahujú sa záznamy zmien"
-
-#: ../src/Core/ChangeInformation.vala:93
-msgid "Downloading groups"
-msgstr "Sťahujú sa skupiny"
-
-#: ../src/Core/ChangeInformation.vala:95
-msgid "Downloading update information"
-msgstr "Sťahujú sa aktualizačné informácie"
-
-#: ../src/Core/ChangeInformation.vala:97
-msgid "Repackaging files"
-msgstr "Prebaľujú sa súbory"
-
-#: ../src/Core/ChangeInformation.vala:99
-msgid "Loading cache"
-msgstr "Načítava sa vyrovnávacia pamäť"
-
-#: ../src/Core/ChangeInformation.vala:101
-msgid "Scanning applications"
-msgstr "Hľadajú sa aplikácie"
-
-#: ../src/Core/ChangeInformation.vala:103
-msgid "Generating package lists"
-msgstr "Vytvárajú sa zoznamy balíkov"
-
-#: ../src/Core/ChangeInformation.vala:105
-msgid "Waiting for package manager lock"
-msgstr "Čaká sa na zámok správcu balíkov"
-
-#: ../src/Core/ChangeInformation.vala:107
-msgid "Waiting for authentication"
-msgstr "Čaká sa na overenie totožnosti"
-
-#: ../src/Core/ChangeInformation.vala:109
-msgid "Updating running applications"
-msgstr "Aktualizujú sa bežiace aplikácie"
-
-#: ../src/Core/ChangeInformation.vala:111
-msgid "Checking applications in use"
-msgstr "Kontrolujú sa používané aplikácie"
-
-#: ../src/Core/ChangeInformation.vala:113
-msgid "Checking libraries in use"
-msgstr "Kontrolujú sa používané knižnice"
-
-#: ../src/Core/ChangeInformation.vala:115
-msgid "Copying files"
-msgstr "Kopírujú sa súbory"
-
-#: ../src/Core/ChangeInformation.vala:117
-msgid "Unknown state"
-msgstr "Neznámy stav"
-
-#: ../src/Application.vala:35
-msgid "App Center"
-msgstr "App Centrum"
-
-#: ../src/Application.vala:53
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Lukáš Papík https://launchpad.net/~stereo839\n"
-"  Milan Slovák https://launchpad.net/~milboys\n"
-"  Samuel Kristev https://launchpad.net/~samuelkristev\n"
-"  bj https://launchpad.net/~teapack97\n"
-"  elementaryart (old) https://launchpad.net/~elementaryart\n"
-"  lupajz https://launchpad.net/~lubos-m"
 
 #~ msgid "Remove"
 #~ msgstr "Odstrániť"
@@ -388,9 +401,6 @@ msgstr ""
 #~ msgid "Removing"
 #~ msgstr "Odstraňovanie"
 
-#~ msgid "Installing"
-#~ msgstr "Inštalácia"
-
 #~ msgid "Browser apps in categories"
 #~ msgstr "Prehliadač aplikácií v kategóriách"
 
@@ -412,6 +422,15 @@ msgstr ""
 
 #~ msgid "No Apps"
 #~ msgstr "Žiadne aplikácie"
+
+#~ msgid "Installing packages"
+#~ msgstr "Inštalovanie balíkov"
+
+#~ msgid "Waiting in queue"
+#~ msgstr "Čaká v rade"
+
+#~ msgid "Downloading packages"
+#~ msgstr "Sťahujú sa balíky"
 
 #~ msgid "%u update is available."
 #~ msgid_plural "%u updates are available."

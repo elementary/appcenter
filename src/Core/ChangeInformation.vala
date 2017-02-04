@@ -26,15 +26,22 @@ public class AppCenterCore.ChangeInformation : Object {
     public Gee.TreeSet<Pk.Details> details { public get; private set; }
     public bool can_cancel { public get; private set; default=true; }
     public Pk.Status status { public get; private set; }
-    private Gee.HashMap<string, double?> change_progress;
     public double progress { public get; private set; }
+    private int current_progress;
+    private int last_progress;
+    private Pk.Status current_status;
+    private double progress_denom;
 
     construct {
         changes = new Gee.TreeSet<Pk.Package> ();
         details = new Gee.TreeSet<Pk.Details> ();
-        change_progress = new Gee.HashMap<string, double?> ();
         status = Pk.Status.SETUP;
         progress = 0.0f;
+        current_progress = 0;
+        last_progress = 0;
+        current_status = Pk.Status.SETUP;
+        /* usually we have 2 transactions, each with 100% progress */
+        progress_denom = 200.0f;
     }
 
     public bool has_changes () {
@@ -46,7 +53,7 @@ public class AppCenterCore.ChangeInformation : Object {
             case Pk.Status.SETUP:
                 return _("Starting");
             case Pk.Status.WAIT:
-                return _("Waiting in queue");
+                return _("Waiting");
             case Pk.Status.RUNNING:
                 return _("Running");
             case Pk.Status.QUERY:
@@ -56,9 +63,9 @@ public class AppCenterCore.ChangeInformation : Object {
             case Pk.Status.REMOVE:
                 return _("Removing packages");
             case Pk.Status.DOWNLOAD:
-                return _("Downloading packages");
+                return _("Downloading");
             case Pk.Status.INSTALL:
-                return _("Installing packages");
+                return _("Installing");
             case Pk.Status.REFRESH_CACHE:
                 return _("Refreshing software list");
             case Pk.Status.UPDATE:
@@ -154,9 +161,12 @@ public class AppCenterCore.ChangeInformation : Object {
      }
 
     public void reset_progress () {
-        change_progress.clear ();
         status = Pk.Status.SETUP;
         progress = 0.0f;
+        last_progress = 0;
+        current_progress = 0;
+        current_status = 0;
+        progress_denom = 200.0f;
     }
 
     public void ProgressCallback (Pk.Progress progress, Pk.ProgressType type) {
@@ -165,19 +175,22 @@ public class AppCenterCore.ChangeInformation : Object {
                 can_cancel = progress.allow_cancel;
                 break;
             case Pk.ProgressType.ITEM_PROGRESS:
-                if (progress.package_id in change_progress.keys) {
-                    change_progress.unset (progress.package_id);
-                }
-
-                change_progress.set (progress.package_id, (double)progress.percentage);
-                double progress_sum = 0.0f;
-                foreach (var change_package_progress in change_progress.values) {
-                    if (change_package_progress != null) {
-                        progress_sum += change_package_progress;
+                if (current_status == Pk.Status.SETUP) {
+                    current_status = (Pk.Status) progress.status;
+                    /* skipping package download, we have cached packages */
+                    if (current_status != Pk.Status.DOWNLOAD) {
+                        progress_denom = 100.0f;
                     }
                 }
+                /* transaction changed so progress count is starting over */
+                else if ((Pk.Status) progress.status != current_status) {
+                    current_status = (Pk.Status) progress.status;
+                    current_progress = last_progress;
+                }
 
-                this.progress = ((double) progress_sum / (double)change_progress.size)/((double)100);
+                last_progress = progress.percentage;
+                double progress_sum = current_progress + last_progress;
+                this.progress = progress_sum / progress_denom;
                 progress_changed ();
                 break;
             case Pk.ProgressType.STATUS:

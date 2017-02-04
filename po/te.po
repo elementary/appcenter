@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-19 10:19-0700\n"
+"POT-Creation-Date: 2017-02-03 17:52-0600\n"
 "PO-Revision-Date: 2016-01-09 14:46+0000\n"
 "Last-Translator: nrao <nagamalli.s@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -10,8 +10,319 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-09-20 07:29+0000\n"
-"X-Generator: Launchpad (build 18200)\n"
+"X-Launchpad-Export-Date: 2017-02-04 05:34+0000\n"
+"X-Generator: Launchpad (build 18322)\n"
+
+#: ../src/Core/ChangeInformation.vala:54
+msgid "Starting"
+msgstr "మొదలవుతూంది"
+
+#: ../src/Core/ChangeInformation.vala:56
+msgid "Waiting"
+msgstr ""
+
+#: ../src/Core/ChangeInformation.vala:58
+msgid "Running"
+msgstr "నడుస్తోంది"
+
+#: ../src/Core/ChangeInformation.vala:60
+msgid "Querying"
+msgstr "అన్వేషిస్తున్నది"
+
+#: ../src/Core/ChangeInformation.vala:62
+msgid "Getting information"
+msgstr "సమాచారమును పొందుచున్నది"
+
+#: ../src/Core/ChangeInformation.vala:64
+msgid "Removing packages"
+msgstr "ప్యాకేజీలు తొలగించబడుతున్నాయి"
+
+#: ../src/Core/ChangeInformation.vala:66
+msgid "Downloading"
+msgstr ""
+
+#: ../src/Core/ChangeInformation.vala:68
+msgid "Installing"
+msgstr ""
+
+#: ../src/Core/ChangeInformation.vala:70
+msgid "Refreshing software list"
+msgstr "సాఫ్టువేరు జాబితాను తాజాపర్చుచున్నది"
+
+#: ../src/Core/ChangeInformation.vala:72
+msgid "Installing updates"
+msgstr "నవీకరణలు స్థాపించబడుతున్నాయి"
+
+#: ../src/Core/ChangeInformation.vala:74
+msgid "Cleaning up packages"
+msgstr "సంకలనాలను శుభ్రపరచుచున్నది చేయుచున్నది"
+
+#: ../src/Core/ChangeInformation.vala:76
+msgid "Obsoleting packages"
+msgstr "సంకలనాలను తీసివేయుచున్నది"
+
+#: ../src/Core/ChangeInformation.vala:78
+msgid "Resolving dependencies"
+msgstr "ఆధారాలను పరిష్కరించుచున్నది"
+
+#: ../src/Core/ChangeInformation.vala:80
+msgid "Checking signatures"
+msgstr "సంతకాలను పరిశీలించుచున్నది"
+
+#: ../src/Core/ChangeInformation.vala:82
+msgid "Testing changes"
+msgstr "మార్పులను పరిశీలించుచున్నది"
+
+#: ../src/Core/ChangeInformation.vala:84
+msgid "Committing changes"
+msgstr "మార్పులను అప్పగించుతోంది"
+
+#: ../src/Core/ChangeInformation.vala:86
+msgid "Requesting data"
+msgstr "సమాచరమును కోరుతున్నది"
+
+#: ../src/Core/ChangeInformation.vala:88
+msgid "Finished"
+msgstr "పూర్తయింది"
+
+#: ../src/Core/ChangeInformation.vala:90
+msgid "Cancelling"
+msgstr "రద్దుచేస్తోంది"
+
+#: ../src/Core/ChangeInformation.vala:92
+msgid "Downloading repository information"
+msgstr "రిపోజిటరీ సమాచారమును డౌనులోడుచేయుచున్నది"
+
+#: ../src/Core/ChangeInformation.vala:94
+msgid "Downloading list of packages"
+msgstr "సంకలనాల జాబితాను డౌనులోడుచేస్తోంది"
+
+#: ../src/Core/ChangeInformation.vala:96
+msgid "Downloading file lists"
+msgstr "దస్త్రముల జాబితాను డౌనులోడుచేయుచున్నది"
+
+#: ../src/Core/ChangeInformation.vala:98
+msgid "Downloading lists of changes"
+msgstr "మార్పుల జాబితాను డౌనులోడుచేయుచున్నది"
+
+#: ../src/Core/ChangeInformation.vala:100
+msgid "Downloading groups"
+msgstr "సమూహాలను డౌనులోడు చేయుచున్నది"
+
+#: ../src/Core/ChangeInformation.vala:102
+msgid "Downloading update information"
+msgstr "నవీకరణ సమాచారమును డౌనులోడుచేస్తున్నది"
+
+#: ../src/Core/ChangeInformation.vala:104
+msgid "Repackaging files"
+msgstr "దస్త్రములు పునఃసంకలనము చేయుచున్నది"
+
+#: ../src/Core/ChangeInformation.vala:106
+msgid "Loading cache"
+msgstr "క్యాచీను లోడుచేయుచున్నది"
+
+#: ../src/Core/ChangeInformation.vala:108
+msgid "Scanning applications"
+msgstr "అనువర్తనములను స్కానుచేయుచున్నది"
+
+#: ../src/Core/ChangeInformation.vala:110
+msgid "Generating package lists"
+msgstr "సంకలన జాబితాలను జనియింపచేయుచున్నది"
+
+#: ../src/Core/ChangeInformation.vala:112
+msgid "Waiting for package manager lock"
+msgstr "ప్యాకేజి నిర్వాహకుని అనుమతి కోసం వేచియున్నది"
+
+#: ../src/Core/ChangeInformation.vala:114
+msgid "Waiting for authentication"
+msgstr "దృవీకరణము కొరకు వేచివుంది"
+
+#: ../src/Core/ChangeInformation.vala:116
+msgid "Updating running applications"
+msgstr "నడుస్తున్న అనువర్తనములను నవీకరించుచున్నది"
+
+#: ../src/Core/ChangeInformation.vala:118
+msgid "Checking applications in use"
+msgstr "ఉపయోగంలోవున్న అనువర్తనములను పరిశీలించుచున్నది"
+
+#: ../src/Core/ChangeInformation.vala:120
+msgid "Checking libraries in use"
+msgstr "ఉపయోగంలో వున్న లైబ్రరీలను పరిశీలించుచున్నది"
+
+#: ../src/Core/ChangeInformation.vala:122
+msgid "Copying files"
+msgstr "దస్త్రములను నకలుతీయుచున్నది"
+
+#: ../src/Core/ChangeInformation.vala:124
+msgid "Unknown state"
+msgstr "అజ్ఞాత స్థితి"
+
+#: ../src/Core/Client.vala:74
+msgid "Operating System Updates"
+msgstr "నిర్వహణ పద్ధతి నవీకరణలు"
+
+#: ../src/Core/Client.vala:75
+msgid "Updates to system components"
+msgstr "నిర్వహణ పద్ధతి భాగములకు సవరణలు"
+
+#: ../src/Core/Client.vala:325
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "నవీకరణలు లభ్యం"
+msgstr[1] "నవీకరణలు లభ్యం"
+
+#: ../src/Core/Client.vala:326
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "%u నిర్వహణ పద్ధతి భాగములకు సవరణ లభ్యం"
+msgstr[1] "%u నిర్వహణ పద్ధతి భాగములకు సవరణలు లభ్యం"
+
+#: ../src/Core/Package.vala:130
+msgid "Application installed"
+msgstr ""
+
+#: ../src/Core/Package.vala:131
+msgid "%s has been successfully installed"
+msgstr ""
+
+#: ../src/AbstractAppContainer.vala:64
+msgid "Cancel"
+msgstr ""
+
+#: ../src/AbstractAppContainer.vala:67 ../src/AbstractAppContainer.vala:137
+msgid "Install"
+msgstr "స్థాపించు"
+
+#: ../src/AbstractAppContainer.vala:70
+msgid "Uninstall"
+msgstr "వ్యవస్థాపనను తీసివెయ్యి"
+
+#: ../src/AbstractAppContainer.vala:73
+msgid "Open"
+msgstr ""
+
+#: ../src/AbstractAppContainer.vala:172
+msgid "Update"
+msgstr "నవీకరించుము"
+
+#: ../src/Application.vala:39
+msgid "App Center"
+msgstr "వినియోగ కేంద్రం"
+
+#: ../src/Application.vala:57
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  nrao https://launchpad.net/~nagamalli-s"
+
+#: ../src/Application.vala:130
+msgid "Specified link '%s' could not be found, going back to the main panel"
+msgstr ""
+
+#: ../src/MainWindow.vala:95
+msgid "AppCenter"
+msgstr "వినియోగకేంద్రం"
+
+#: ../src/MainWindow.vala:103 ../src/MainWindow.vala:130
+#: ../src/MainWindow.vala:276 ../src/MainWindow.vala:298
+msgid "Search Apps"
+msgstr ""
+
+#: ../src/MainWindow.vala:113 ../src/MainWindow.vala:189
+#: ../src/Views/CategoryView.vala:72 ../src/Views/CategoryView.vala:79
+msgid "Categories"
+msgstr "వర్గములు"
+
+#: ../src/MainWindow.vala:114 ../src/Views/InstalledView.vala:45
+msgctxt "view"
+msgid "Updates"
+msgstr ""
+
+#: ../src/MainWindow.vala:258
+msgid "Search %s"
+msgstr ""
+
+#. / TRANSLATORS: the name of the Search view
+#: ../src/Views/SearchView.vala:36
+msgctxt "view"
+msgid "Search"
+msgstr "వెతుకు"
+
+#: ../src/Views/AppListView.vala:64
+msgid "Update All"
+msgstr "అన్నీ సవరణ చెయ్యి"
+
+#: ../src/Views/FeaturedView.vala:33
+msgid "Best Rated"
+msgstr "సర్వోత్తమముగా నిర్ధారించబడినది"
+
+#: ../src/Views/FeaturedView.vala:36
+msgid "Latest Apps"
+msgstr "నవీన వినియోగము"
+
+#: ../src/Views/CategoryView.vala:122
+msgid "Audio"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:133
+msgid "Development"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:144
+msgid "Accessories"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:155
+msgid "Office"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:166
+msgid "System"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:177
+msgid "Video"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:188
+msgid "Graphics"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:198
+msgid "Games"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:209
+msgid "Education"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:219
+msgid "Internet"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:230
+msgid "Science & Engineering"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:240
+msgid "Universal Access"
+msgstr ""
+
+#: ../src/Views/AppInfoView.vala:48
+msgid "Screenshot Not Available"
+msgstr ""
+
+#: ../src/Views/AppInfoView.vala:128
+msgid "Extensions:"
+msgstr ""
+
+#: ../src/AbstractAppList.vala:30
+msgid "No Results"
+msgstr ""
+
+#: ../src/AbstractAppList.vala:30
+msgid "No apps could be found. Try changing search terms."
+msgstr ""
 
 #: ../src/Widgets/UpdateHeaderRow.vala:121
 msgid "%u Update Available"
@@ -30,304 +341,6 @@ msgstr "నవీకరణల కొరకు వెతుకుతుంది"
 #: ../src/Widgets/UpdateHeaderRow.vala:165
 msgid "Up to Date"
 msgstr ""
-
-#: ../src/AbstractAppContainer.vala:62
-msgid "Cancel"
-msgstr ""
-
-#: ../src/AbstractAppContainer.vala:65 ../src/AbstractAppContainer.vala:129
-msgid "Install"
-msgstr "స్థాపించు"
-
-#: ../src/AbstractAppContainer.vala:68
-msgid "Uninstall"
-msgstr "వ్యవస్థాపనను తీసివెయ్యి"
-
-#: ../src/AbstractAppContainer.vala:154
-msgid "Update"
-msgstr "నవీకరించుము"
-
-#: ../src/MainWindow.vala:91
-msgid "AppCenter"
-msgstr "వినియోగకేంద్రం"
-
-#: ../src/MainWindow.vala:99 ../src/Views/CategoryView.vala:68
-#: ../src/Views/CategoryView.vala:75
-msgid "Categories"
-msgstr "వర్గములు"
-
-#: ../src/MainWindow.vala:100 ../src/Views/InstalledView.vala:45
-msgctxt "view"
-msgid "Updates"
-msgstr ""
-
-#: ../src/MainWindow.vala:116
-msgid "Search Apps"
-msgstr ""
-
-#: ../src/AbstractAppList.vala:30
-msgid "No Results"
-msgstr ""
-
-#: ../src/AbstractAppList.vala:30
-msgid "No apps could be found. Try changing search terms."
-msgstr ""
-
-#: ../src/Views/AppListView.vala:64
-msgid "Update All"
-msgstr "అన్నీ సవరణ చెయ్యి"
-
-#. / TRANSLATORS: the name of the Search view
-#: ../src/Views/SearchView.vala:36
-msgctxt "view"
-msgid "Search"
-msgstr "వెతుకు"
-
-#: ../src/Views/AppInfoView.vala:48
-msgid "Screenshot Not Available"
-msgstr ""
-
-#: ../src/Views/AppInfoView.vala:128
-msgid "Extensions:"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:118
-msgid "Audio"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:131
-msgid "Development"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:144
-msgid "Accessories"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:157
-msgid "Office"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:170
-msgid "System"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:183
-msgid "Video"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:196
-msgid "Graphics"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:208
-msgid "Games"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:221
-msgid "Education"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:233
-msgid "Internet"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:246
-msgid "Science & Engineering"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:258
-msgid "Universal Access"
-msgstr ""
-
-#: ../src/Views/FeaturedView.vala:33
-msgid "Best Rated"
-msgstr "సర్వోత్తమముగా నిర్ధారించబడినది"
-
-#: ../src/Views/FeaturedView.vala:36
-msgid "Latest Apps"
-msgstr "నవీన వినియోగము"
-
-#: ../src/Core/Client.vala:62
-msgid "Operating System Updates"
-msgstr "నిర్వహణ పద్ధతి నవీకరణలు"
-
-#: ../src/Core/Client.vala:63
-msgid "Updates to system components"
-msgstr "నిర్వహణ పద్ధతి భాగములకు సవరణలు"
-
-#: ../src/Core/Client.vala:356
-msgid "Update Available"
-msgid_plural "Updates Available"
-msgstr[0] "నవీకరణలు లభ్యం"
-msgstr[1] "నవీకరణలు లభ్యం"
-
-#: ../src/Core/Client.vala:357
-msgid "%u update is available for your system"
-msgid_plural "%u updates are available for your system"
-msgstr[0] "%u నిర్వహణ పద్ధతి భాగములకు సవరణ లభ్యం"
-msgstr[1] "%u నిర్వహణ పద్ధతి భాగములకు సవరణలు లభ్యం"
-
-#: ../src/Core/Package.vala:117
-msgid "Application installed"
-msgstr ""
-
-#: ../src/Core/Package.vala:118
-msgid "%s has been successfully installed"
-msgstr ""
-
-#: ../src/Core/ChangeInformation.vala:47
-msgid "Starting"
-msgstr "మొదలవుతూంది"
-
-#: ../src/Core/ChangeInformation.vala:49
-msgid "Waiting in queue"
-msgstr "క్యూనందు వేచివుంది"
-
-#: ../src/Core/ChangeInformation.vala:51
-msgid "Running"
-msgstr "నడుస్తోంది"
-
-#: ../src/Core/ChangeInformation.vala:53
-msgid "Querying"
-msgstr "అన్వేషిస్తున్నది"
-
-#: ../src/Core/ChangeInformation.vala:55
-msgid "Getting information"
-msgstr "సమాచారమును పొందుచున్నది"
-
-#: ../src/Core/ChangeInformation.vala:57
-msgid "Removing packages"
-msgstr "ప్యాకేజీలు తొలగించబడుతున్నాయి"
-
-#: ../src/Core/ChangeInformation.vala:59
-msgid "Downloading packages"
-msgstr "సంకలనాలను డౌనులోడు చేయుచున్నది"
-
-#: ../src/Core/ChangeInformation.vala:61
-msgid "Installing packages"
-msgstr "ప్యాకేజీలు స్థాపించబడుతున్నాయి"
-
-#: ../src/Core/ChangeInformation.vala:63
-msgid "Refreshing software list"
-msgstr "సాఫ్టువేరు జాబితాను తాజాపర్చుచున్నది"
-
-#: ../src/Core/ChangeInformation.vala:65
-msgid "Installing updates"
-msgstr "నవీకరణలు స్థాపించబడుతున్నాయి"
-
-#: ../src/Core/ChangeInformation.vala:67
-msgid "Cleaning up packages"
-msgstr "సంకలనాలను శుభ్రపరచుచున్నది చేయుచున్నది"
-
-#: ../src/Core/ChangeInformation.vala:69
-msgid "Obsoleting packages"
-msgstr "సంకలనాలను తీసివేయుచున్నది"
-
-#: ../src/Core/ChangeInformation.vala:71
-msgid "Resolving dependencies"
-msgstr "ఆధారాలను పరిష్కరించుచున్నది"
-
-#: ../src/Core/ChangeInformation.vala:73
-msgid "Checking signatures"
-msgstr "సంతకాలను పరిశీలించుచున్నది"
-
-#: ../src/Core/ChangeInformation.vala:75
-msgid "Testing changes"
-msgstr "మార్పులను పరిశీలించుచున్నది"
-
-#: ../src/Core/ChangeInformation.vala:77
-msgid "Committing changes"
-msgstr "మార్పులను అప్పగించుతోంది"
-
-#: ../src/Core/ChangeInformation.vala:79
-msgid "Requesting data"
-msgstr "సమాచరమును కోరుతున్నది"
-
-#: ../src/Core/ChangeInformation.vala:81
-msgid "Finished"
-msgstr "పూర్తయింది"
-
-#: ../src/Core/ChangeInformation.vala:83
-msgid "Cancelling"
-msgstr "రద్దుచేస్తోంది"
-
-#: ../src/Core/ChangeInformation.vala:85
-msgid "Downloading repository information"
-msgstr "రిపోజిటరీ సమాచారమును డౌనులోడుచేయుచున్నది"
-
-#: ../src/Core/ChangeInformation.vala:87
-msgid "Downloading list of packages"
-msgstr "సంకలనాల జాబితాను డౌనులోడుచేస్తోంది"
-
-#: ../src/Core/ChangeInformation.vala:89
-msgid "Downloading file lists"
-msgstr "దస్త్రముల జాబితాను డౌనులోడుచేయుచున్నది"
-
-#: ../src/Core/ChangeInformation.vala:91
-msgid "Downloading lists of changes"
-msgstr "మార్పుల జాబితాను డౌనులోడుచేయుచున్నది"
-
-#: ../src/Core/ChangeInformation.vala:93
-msgid "Downloading groups"
-msgstr "సమూహాలను డౌనులోడు చేయుచున్నది"
-
-#: ../src/Core/ChangeInformation.vala:95
-msgid "Downloading update information"
-msgstr "నవీకరణ సమాచారమును డౌనులోడుచేస్తున్నది"
-
-#: ../src/Core/ChangeInformation.vala:97
-msgid "Repackaging files"
-msgstr "దస్త్రములు పునఃసంకలనము చేయుచున్నది"
-
-#: ../src/Core/ChangeInformation.vala:99
-msgid "Loading cache"
-msgstr "క్యాచీను లోడుచేయుచున్నది"
-
-#: ../src/Core/ChangeInformation.vala:101
-msgid "Scanning applications"
-msgstr "అనువర్తనములను స్కానుచేయుచున్నది"
-
-#: ../src/Core/ChangeInformation.vala:103
-msgid "Generating package lists"
-msgstr "సంకలన జాబితాలను జనియింపచేయుచున్నది"
-
-#: ../src/Core/ChangeInformation.vala:105
-msgid "Waiting for package manager lock"
-msgstr "ప్యాకేజి నిర్వాహకుని అనుమతి కోసం వేచియున్నది"
-
-#: ../src/Core/ChangeInformation.vala:107
-msgid "Waiting for authentication"
-msgstr "దృవీకరణము కొరకు వేచివుంది"
-
-#: ../src/Core/ChangeInformation.vala:109
-msgid "Updating running applications"
-msgstr "నడుస్తున్న అనువర్తనములను నవీకరించుచున్నది"
-
-#: ../src/Core/ChangeInformation.vala:111
-msgid "Checking applications in use"
-msgstr "ఉపయోగంలోవున్న అనువర్తనములను పరిశీలించుచున్నది"
-
-#: ../src/Core/ChangeInformation.vala:113
-msgid "Checking libraries in use"
-msgstr "ఉపయోగంలో వున్న లైబ్రరీలను పరిశీలించుచున్నది"
-
-#: ../src/Core/ChangeInformation.vala:115
-msgid "Copying files"
-msgstr "దస్త్రములను నకలుతీయుచున్నది"
-
-#: ../src/Core/ChangeInformation.vala:117
-msgid "Unknown state"
-msgstr "అజ్ఞాత స్థితి"
-
-#: ../src/Application.vala:35
-msgid "App Center"
-msgstr "వినియోగ కేంద్రం"
-
-#: ../src/Application.vala:53
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  nrao https://launchpad.net/~nagamalli-s"
 
 #~ msgid "Search App"
 #~ msgstr "వినియోగము కొరకు అన్వేషించు"
@@ -349,3 +362,12 @@ msgstr ""
 #~ msgctxt "view"
 #~ msgid "Installed"
 #~ msgstr "స్థాపించబడింది"
+
+#~ msgid "Waiting in queue"
+#~ msgstr "క్యూనందు వేచివుంది"
+
+#~ msgid "Installing packages"
+#~ msgstr "ప్యాకేజీలు స్థాపించబడుతున్నాయి"
+
+#~ msgid "Downloading packages"
+#~ msgstr "సంకలనాలను డౌనులోడు చేయుచున్నది"

@@ -1,17 +1,331 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-19 10:19-0700\n"
-"PO-Revision-Date: 2016-09-21 19:45+0000\n"
+"POT-Creation-Date: 2017-02-03 17:52-0600\n"
+"PO-Revision-Date: 2016-11-24 12:37+0000\n"
 "Last-Translator: Waqar Ahmed <waqar.17a@gmail.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2016-09-22 08:16+0000\n"
-"X-Generator: Launchpad (build 18204)\n"
+"X-Launchpad-Export-Date: 2017-02-04 05:34+0000\n"
+"X-Generator: Launchpad (build 18322)\n"
+"Language: ur\n"
+
+#: ../src/Core/ChangeInformation.vala:54
+msgid "Starting"
+msgstr "شروع ھو رھا ھے"
+
+#: ../src/Core/ChangeInformation.vala:56
+msgid "Waiting"
+msgstr "انتظار کر رہا ہے"
+
+#: ../src/Core/ChangeInformation.vala:58
+msgid "Running"
+msgstr "چل رہا ہے"
+
+#: ../src/Core/ChangeInformation.vala:60
+msgid "Querying"
+msgstr "طلب جاری"
+
+#: ../src/Core/ChangeInformation.vala:62
+msgid "Getting information"
+msgstr "معلومات حاصِل کی جارہی ہے"
+
+#: ../src/Core/ChangeInformation.vala:64
+msgid "Removing packages"
+msgstr "بنڈل ہٹاءے جا رہے ہیں"
+
+#: ../src/Core/ChangeInformation.vala:66
+msgid "Downloading"
+msgstr "اتارا جارہا ہے"
+
+#: ../src/Core/ChangeInformation.vala:68
+msgid "Installing"
+msgstr "انسٹال کیا جارہا ہے"
+
+#: ../src/Core/ChangeInformation.vala:70
+msgid "Refreshing software list"
+msgstr "تازہ سافٹ ویئر کی فہرست"
+
+#: ../src/Core/ChangeInformation.vala:72
+msgid "Installing updates"
+msgstr "تجدید نصب کی جا رہی ہیں"
+
+#: ../src/Core/ChangeInformation.vala:74
+msgid "Cleaning up packages"
+msgstr "پیکج صاف کر رہا ہے"
+
+#: ../src/Core/ChangeInformation.vala:76
+msgid "Obsoleting packages"
+msgstr "پیکج فرسودہ کر رہا ہے"
+
+#: ../src/Core/ChangeInformation.vala:78
+msgid "Resolving dependencies"
+msgstr "انحصاریوں کا اندازہ کررہا ہے"
+
+#: ../src/Core/ChangeInformation.vala:80
+msgid "Checking signatures"
+msgstr "دستخط کی جانچ ہو رہی ہے"
+
+#: ../src/Core/ChangeInformation.vala:82
+msgid "Testing changes"
+msgstr "تبدیلیاں آذمائ جا رہی ہیں"
+
+#: ../src/Core/ChangeInformation.vala:84
+msgid "Committing changes"
+msgstr "تبدیلیوں کا ارتکاب کیا جارھا ھے"
+
+#: ../src/Core/ChangeInformation.vala:86
+msgid "Requesting data"
+msgstr "اعدادوشمار کی درخواست کی جا رھی ھے"
+
+#: ../src/Core/ChangeInformation.vala:88
+msgid "Finished"
+msgstr "ختم شد"
+
+#: ../src/Core/ChangeInformation.vala:90
+msgid "Cancelling"
+msgstr "منسوخ کیا جا رھا ھے"
+
+#: ../src/Core/ChangeInformation.vala:92
+msgid "Downloading repository information"
+msgstr "مخزن سے معلومات ڈاؤن لوڈ کی جارھی ھے"
+
+#: ../src/Core/ChangeInformation.vala:94
+msgid "Downloading list of packages"
+msgstr "پیکیج کی فہرست ڈاؤن لوڈ کررہا ہے"
+
+#: ../src/Core/ChangeInformation.vala:96
+msgid "Downloading file lists"
+msgstr "فائلوں کی فہرستیں اتار رہا ہے"
+
+#: ../src/Core/ChangeInformation.vala:98
+msgid "Downloading lists of changes"
+msgstr "تبدیلیوں کی فہرست ڈاؤن لوڈ کررہا ہے"
+
+#: ../src/Core/ChangeInformation.vala:100
+msgid "Downloading groups"
+msgstr "گروپ ڈاؤن لوڈ کررہا ہے"
+
+#: ../src/Core/ChangeInformation.vala:102
+msgid "Downloading update information"
+msgstr "تازہ کاری معلومات کی ڈاؤن لوڈنگ"
+
+#: ../src/Core/ChangeInformation.vala:104
+msgid "Repackaging files"
+msgstr "فائلیں ری پیکج کر رہا ہے"
+
+#: ../src/Core/ChangeInformation.vala:106
+msgid "Loading cache"
+msgstr "کیشے لوڈ کر رہا ہے"
+
+#: ../src/Core/ChangeInformation.vala:108
+msgid "Scanning applications"
+msgstr "ایپلیکیشن سکین کر رہا ہے"
+
+#: ../src/Core/ChangeInformation.vala:110
+msgid "Generating package lists"
+msgstr "پیکج کی فہرستیں بنا رہا ہے"
+
+#: ../src/Core/ChangeInformation.vala:112
+msgid "Waiting for package manager lock"
+msgstr "پیکج مینجر لاک کا انتظار کر رہا ہے"
+
+#: ../src/Core/ChangeInformation.vala:114
+msgid "Waiting for authentication"
+msgstr "تصدیق کا انتظار کر رہا ہے"
+
+#: ../src/Core/ChangeInformation.vala:116
+msgid "Updating running applications"
+msgstr "اپ ڈیٹ کر رہا ہے چلتی ہوئی ایپلی کیشنز"
+
+#: ../src/Core/ChangeInformation.vala:118
+msgid "Checking applications in use"
+msgstr "چیک کر رہا ہے کہ کونسی ایپ استعمال میں ہیں"
+
+#: ../src/Core/ChangeInformation.vala:120
+msgid "Checking libraries in use"
+msgstr "چیک کر رہا ہے کہ کونسی لائیبریری استعمال میں ہیں"
+
+#: ../src/Core/ChangeInformation.vala:122
+msgid "Copying files"
+msgstr "فائلیں کاپی کی جارہی ہیں"
+
+#: ../src/Core/ChangeInformation.vala:124
+msgid "Unknown state"
+msgstr "نامعلوم حالت"
+
+#: ../src/Core/Client.vala:74
+msgid "Operating System Updates"
+msgstr "آپریٹنگ سسٹم کی اپ ڈیٹس"
+
+#: ../src/Core/Client.vala:75
+msgid "Updates to system components"
+msgstr "سسٹم کے حصوں کی اپ ڈیٹس"
+
+#: ../src/Core/Client.vala:325
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "اپ ڈیٹ دستیاب ہے"
+msgstr[1] "اپ ڈیٹس دستیاب ہیں"
+
+#: ../src/Core/Client.vala:326
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "%u تازہ کاری آپ کے سسٹم کے لیے دستیاب ہے"
+msgstr[1] "%u تازہ کاریاں آپ کے سسٹم کے لیے دستیاب ہے"
+
+#: ../src/Core/Package.vala:130
+msgid "Application installed"
+msgstr "ایپ نصب کر دی گئی"
+
+#: ../src/Core/Package.vala:131
+msgid "%s has been successfully installed"
+msgstr "پیکج %s کامیابی کے ساتھ انسٹال کر دیا گیا ہے"
+
+#: ../src/AbstractAppContainer.vala:64
+msgid "Cancel"
+msgstr "منسوخ کریں"
+
+#: ../src/AbstractAppContainer.vala:67 ../src/AbstractAppContainer.vala:137
+msgid "Install"
+msgstr "نصب کریں"
+
+#: ../src/AbstractAppContainer.vala:70
+msgid "Uninstall"
+msgstr "غیر تنصیب"
+
+#: ../src/AbstractAppContainer.vala:73
+msgid "Open"
+msgstr ""
+
+#: ../src/AbstractAppContainer.vala:172
+msgid "Update"
+msgstr "تجدید-"
+
+#: ../src/Application.vala:39
+msgid "App Center"
+msgstr "ایپ مرکز"
+
+#: ../src/Application.vala:57
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Waqar Ahmed https://launchpad.net/~waqar-17a\n"
+"  Waqas Ahmad https://launchpad.net/~waqqas-ahmad\n"
+"  elementaryart (old) https://launchpad.net/~elementaryart"
+
+#: ../src/Application.vala:130
+msgid "Specified link '%s' could not be found, going back to the main panel"
+msgstr ""
+
+#: ../src/MainWindow.vala:95
+msgid "AppCenter"
+msgstr "مرکزِ اپلی کیشن"
+
+#: ../src/MainWindow.vala:103 ../src/MainWindow.vala:130
+#: ../src/MainWindow.vala:276 ../src/MainWindow.vala:298
+msgid "Search Apps"
+msgstr "اطلاقیےتلاش کریں"
+
+#: ../src/MainWindow.vala:113 ../src/MainWindow.vala:189
+#: ../src/Views/CategoryView.vala:72 ../src/Views/CategoryView.vala:79
+msgid "Categories"
+msgstr "اقسام"
+
+#: ../src/MainWindow.vala:114 ../src/Views/InstalledView.vala:45
+msgctxt "view"
+msgid "Updates"
+msgstr "اپ ڈیٹس"
+
+#: ../src/MainWindow.vala:258
+msgid "Search %s"
+msgstr "تلاش کریں %s"
+
+#. / TRANSLATORS: the name of the Search view
+#: ../src/Views/SearchView.vala:36
+msgctxt "view"
+msgid "Search"
+msgstr "تلاش کریں"
+
+#: ../src/Views/AppListView.vala:64
+msgid "Update All"
+msgstr "سب کو تاذہ کریں"
+
+#: ../src/Views/FeaturedView.vala:33
+msgid "Best Rated"
+msgstr "بہترین درزا دیا گیا"
+
+#: ../src/Views/FeaturedView.vala:36
+msgid "Latest Apps"
+msgstr "تاذہترین ایپلی کیشن"
+
+#: ../src/Views/CategoryView.vala:122
+msgid "Audio"
+msgstr "آڈیو"
+
+#: ../src/Views/CategoryView.vala:133
+msgid "Development"
+msgstr "ڈیولپمنٹ"
+
+#: ../src/Views/CategoryView.vala:144
+msgid "Accessories"
+msgstr "لوازمات"
+
+#: ../src/Views/CategoryView.vala:155
+msgid "Office"
+msgstr "آفس"
+
+#: ../src/Views/CategoryView.vala:166
+msgid "System"
+msgstr "سسٹم"
+
+#: ../src/Views/CategoryView.vala:177
+msgid "Video"
+msgstr "ویڈیو"
+
+#: ../src/Views/CategoryView.vala:188
+msgid "Graphics"
+msgstr "گرافکس"
+
+#: ../src/Views/CategoryView.vala:198
+msgid "Games"
+msgstr "گیمز"
+
+#: ../src/Views/CategoryView.vala:209
+msgid "Education"
+msgstr "تعلیم"
+
+#: ../src/Views/CategoryView.vala:219
+msgid "Internet"
+msgstr "انٹرنیٹ"
+
+#: ../src/Views/CategoryView.vala:230
+msgid "Science & Engineering"
+msgstr "سائنس اور انجینئرنگ"
+
+#: ../src/Views/CategoryView.vala:240
+msgid "Universal Access"
+msgstr "وسیع رسائی"
+
+#: ../src/Views/AppInfoView.vala:48
+msgid "Screenshot Not Available"
+msgstr "سکرین شاٹ دستیاب نہیں"
+
+#: ../src/Views/AppInfoView.vala:128
+msgid "Extensions:"
+msgstr "ایکس ٹینشن:"
+
+#: ../src/AbstractAppList.vala:30
+msgid "No Results"
+msgstr "کو نتائج نہیں"
+
+#: ../src/AbstractAppList.vala:30
+msgid "No apps could be found. Try changing search terms."
+msgstr "کو اطلاقیہ نہیں ملا۔ کسی اور لفظ سے تلاش کریں۔"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:121
 msgid "%u Update Available"
@@ -31,306 +345,6 @@ msgstr "تاذہ شمارے تلاش کئے جارہے ہیں"
 msgid "Up to Date"
 msgstr "بلکل جدید ہے"
 
-#: ../src/AbstractAppContainer.vala:62
-msgid "Cancel"
-msgstr "منسوخ کریں"
-
-#: ../src/AbstractAppContainer.vala:65 ../src/AbstractAppContainer.vala:129
-msgid "Install"
-msgstr "نصب کریں"
-
-#: ../src/AbstractAppContainer.vala:68
-msgid "Uninstall"
-msgstr "غیر تنصیب"
-
-#: ../src/AbstractAppContainer.vala:154
-msgid "Update"
-msgstr "تجدید-"
-
-#: ../src/MainWindow.vala:91
-msgid "AppCenter"
-msgstr "مرکزِ اپلی کیشن"
-
-#: ../src/MainWindow.vala:99 ../src/Views/CategoryView.vala:68
-#: ../src/Views/CategoryView.vala:75
-msgid "Categories"
-msgstr "اقسام"
-
-#: ../src/MainWindow.vala:100 ../src/Views/InstalledView.vala:45
-msgctxt "view"
-msgid "Updates"
-msgstr "اپ ڈیٹس"
-
-#: ../src/MainWindow.vala:116
-msgid "Search Apps"
-msgstr "اطلاقیےتلاش کریں"
-
-#: ../src/AbstractAppList.vala:30
-msgid "No Results"
-msgstr "کو نتائج نہیں"
-
-#: ../src/AbstractAppList.vala:30
-msgid "No apps could be found. Try changing search terms."
-msgstr "کو اطلاقیہ نہیں ملا۔ کسی اور لفظ سے تلاش کریں۔"
-
-#: ../src/Views/AppListView.vala:64
-msgid "Update All"
-msgstr "سب کو تاذہ کریں"
-
-#. / TRANSLATORS: the name of the Search view
-#: ../src/Views/SearchView.vala:36
-msgctxt "view"
-msgid "Search"
-msgstr "تلاش کریں"
-
-#: ../src/Views/AppInfoView.vala:48
-msgid "Screenshot Not Available"
-msgstr "سکرین شاٹ دستیاب نہیں"
-
-#: ../src/Views/AppInfoView.vala:128
-msgid "Extensions:"
-msgstr "ایکس ٹینشن:"
-
-#: ../src/Views/CategoryView.vala:118
-msgid "Audio"
-msgstr "آڈیو"
-
-#: ../src/Views/CategoryView.vala:131
-msgid "Development"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:144
-msgid "Accessories"
-msgstr "لوازمات"
-
-#: ../src/Views/CategoryView.vala:157
-msgid "Office"
-msgstr "آفس"
-
-#: ../src/Views/CategoryView.vala:170
-msgid "System"
-msgstr "سسٹم"
-
-#: ../src/Views/CategoryView.vala:183
-msgid "Video"
-msgstr "ویڈیو"
-
-#: ../src/Views/CategoryView.vala:196
-msgid "Graphics"
-msgstr "گرافکس"
-
-#: ../src/Views/CategoryView.vala:208
-msgid "Games"
-msgstr "گیمز"
-
-#: ../src/Views/CategoryView.vala:221
-msgid "Education"
-msgstr "تعلیم"
-
-#: ../src/Views/CategoryView.vala:233
-msgid "Internet"
-msgstr "انٹرنیٹ"
-
-#: ../src/Views/CategoryView.vala:246
-msgid "Science & Engineering"
-msgstr "سائنس اور انجینئرنگ"
-
-#: ../src/Views/CategoryView.vala:258
-msgid "Universal Access"
-msgstr "وسیع رسائی"
-
-#: ../src/Views/FeaturedView.vala:33
-msgid "Best Rated"
-msgstr "بہترین درزا دیا گیا"
-
-#: ../src/Views/FeaturedView.vala:36
-msgid "Latest Apps"
-msgstr "تاذہترین ایپلی کیشن"
-
-#: ../src/Core/Client.vala:62
-msgid "Operating System Updates"
-msgstr "آپریٹنگ سسٹم کی اپ ڈیٹس"
-
-#: ../src/Core/Client.vala:63
-msgid "Updates to system components"
-msgstr "سسٹم کے حصوں کی اپ ڈیٹس"
-
-#: ../src/Core/Client.vala:356
-msgid "Update Available"
-msgid_plural "Updates Available"
-msgstr[0] "اپ ڈیٹ دستیاب ہے"
-msgstr[1] "اپ ڈیٹس دستیاب ہیں"
-
-#: ../src/Core/Client.vala:357
-msgid "%u update is available for your system"
-msgid_plural "%u updates are available for your system"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../src/Core/Package.vala:117
-msgid "Application installed"
-msgstr ""
-
-#: ../src/Core/Package.vala:118
-msgid "%s has been successfully installed"
-msgstr ""
-
-#: ../src/Core/ChangeInformation.vala:47
-msgid "Starting"
-msgstr "شروع ھو رھا ھے"
-
-#: ../src/Core/ChangeInformation.vala:49
-msgid "Waiting in queue"
-msgstr "قطار میں انتظار کر رہا ہے"
-
-#: ../src/Core/ChangeInformation.vala:51
-msgid "Running"
-msgstr "چل رہا ہے"
-
-#: ../src/Core/ChangeInformation.vala:53
-msgid "Querying"
-msgstr "طلب جاری"
-
-#: ../src/Core/ChangeInformation.vala:55
-msgid "Getting information"
-msgstr "معلومات حاصِل کی جارہی ہے"
-
-#: ../src/Core/ChangeInformation.vala:57
-msgid "Removing packages"
-msgstr "بنڈل ہٹاءے جا رہے ہیں"
-
-#: ../src/Core/ChangeInformation.vala:59
-msgid "Downloading packages"
-msgstr "بنڈل ڈاؤن لوڈ کئے جارہے ہیں"
-
-#: ../src/Core/ChangeInformation.vala:61
-msgid "Installing packages"
-msgstr "بنڈل نصب کئے جا رہے ہیں"
-
-#: ../src/Core/ChangeInformation.vala:63
-msgid "Refreshing software list"
-msgstr "تازہ سافٹ ویئر کی فہرست"
-
-#: ../src/Core/ChangeInformation.vala:65
-msgid "Installing updates"
-msgstr "تجدید نصب کی جا رہی ہیں"
-
-#: ../src/Core/ChangeInformation.vala:67
-msgid "Cleaning up packages"
-msgstr ""
-
-#: ../src/Core/ChangeInformation.vala:69
-msgid "Obsoleting packages"
-msgstr ""
-
-#: ../src/Core/ChangeInformation.vala:71
-msgid "Resolving dependencies"
-msgstr "انحصاریوں کا اندازہ کررہا ہے"
-
-#: ../src/Core/ChangeInformation.vala:73
-msgid "Checking signatures"
-msgstr "دستخط کی جانچ ہو رہی ہے"
-
-#: ../src/Core/ChangeInformation.vala:75
-msgid "Testing changes"
-msgstr "تبدیلیاں آذمائ جا رہی ہیں"
-
-#: ../src/Core/ChangeInformation.vala:77
-msgid "Committing changes"
-msgstr "تبدیلیوں کا ارتکاب کیا جارھا ھے"
-
-#: ../src/Core/ChangeInformation.vala:79
-msgid "Requesting data"
-msgstr "اعدادوشمار کی درخواست کی جا رھی ھے"
-
-#: ../src/Core/ChangeInformation.vala:81
-msgid "Finished"
-msgstr "ختم شد"
-
-#: ../src/Core/ChangeInformation.vala:83
-msgid "Cancelling"
-msgstr "منسوخ کیا جا رھا ھے"
-
-#: ../src/Core/ChangeInformation.vala:85
-msgid "Downloading repository information"
-msgstr "مخزن سے معلومات ڈاؤن لوڈ کی جارھی ھے"
-
-#: ../src/Core/ChangeInformation.vala:87
-msgid "Downloading list of packages"
-msgstr ""
-
-#: ../src/Core/ChangeInformation.vala:89
-msgid "Downloading file lists"
-msgstr ""
-
-#: ../src/Core/ChangeInformation.vala:91
-msgid "Downloading lists of changes"
-msgstr ""
-
-#: ../src/Core/ChangeInformation.vala:93
-msgid "Downloading groups"
-msgstr ""
-
-#: ../src/Core/ChangeInformation.vala:95
-msgid "Downloading update information"
-msgstr ""
-
-#: ../src/Core/ChangeInformation.vala:97
-msgid "Repackaging files"
-msgstr ""
-
-#: ../src/Core/ChangeInformation.vala:99
-msgid "Loading cache"
-msgstr ""
-
-#: ../src/Core/ChangeInformation.vala:101
-msgid "Scanning applications"
-msgstr ""
-
-#: ../src/Core/ChangeInformation.vala:103
-msgid "Generating package lists"
-msgstr ""
-
-#: ../src/Core/ChangeInformation.vala:105
-msgid "Waiting for package manager lock"
-msgstr ""
-
-#: ../src/Core/ChangeInformation.vala:107
-msgid "Waiting for authentication"
-msgstr ""
-
-#: ../src/Core/ChangeInformation.vala:109
-msgid "Updating running applications"
-msgstr ""
-
-#: ../src/Core/ChangeInformation.vala:111
-msgid "Checking applications in use"
-msgstr ""
-
-#: ../src/Core/ChangeInformation.vala:113
-msgid "Checking libraries in use"
-msgstr ""
-
-#: ../src/Core/ChangeInformation.vala:115
-msgid "Copying files"
-msgstr ""
-
-#: ../src/Core/ChangeInformation.vala:117
-msgid "Unknown state"
-msgstr ""
-
-#: ../src/Application.vala:35
-msgid "App Center"
-msgstr "مرکزِ ایپلی کیشن"
-
-#: ../src/Application.vala:53
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Waqar Ahmed https://launchpad.net/~waqar-17a\n"
-"  Waqas Ahmad https://launchpad.net/~waqqas-ahmad\n"
-"  elementaryart (old) https://launchpad.net/~elementaryart"
-
 #~ msgctxt "view"
 #~ msgid "Installed"
 #~ msgstr "نصب شُدہ"
@@ -346,3 +360,12 @@ msgstr ""
 
 #~ msgid "No Apps"
 #~ msgstr "کوءی ایپلِی کیشن نہیں"
+
+#~ msgid "Waiting in queue"
+#~ msgstr "قطار میں انتظار کر رہا ہے"
+
+#~ msgid "Installing packages"
+#~ msgstr "بنڈل نصب کئے جا رہے ہیں"
+
+#~ msgid "Downloading packages"
+#~ msgstr "بنڈل ڈاؤن لوڈ کئے جارہے ہیں"

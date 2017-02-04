@@ -121,7 +121,7 @@ namespace AppCenter.Views {
 
             parse_description (package.component.get_description ());
 
-            if (package.component.get_extensions ().length > 0) {
+            if (package.component.get_addons ().length > 0) {
                 extension_box = new Gtk.ListBox ();
                 extension_box.selection_mode = Gtk.SelectionMode.NONE;
 
@@ -138,6 +138,7 @@ namespace AppCenter.Views {
 
             action_button.set_suggested_action_header ();
             uninstall_button.set_destructive_action_header ();
+            open_button.get_style_context ().add_class ("h3");
         }
 
         protected override void set_up_package (uint icon_size = 48) {                
@@ -154,17 +155,10 @@ namespace AppCenter.Views {
         }
 
         private async void load_extensions () {
-            package.component.get_extensions ().@foreach ((cid) => {
-                try {
-                    var extension = AppCenterCore.Client.get_default ().get_extension (cid);
-                    if (extension != null) {
-                        var row = new Widgets.PackageRow.list (new AppCenterCore.Package (extension), null, false);
-                        if (extension_box != null) {
-                            extension_box.add (row);
-                        }
-                    }
-                } catch (Error e) {
-                    warning ("%s\n", e.message);
+            package.component.get_addons ().@foreach ((extension) => {
+                var row = new Widgets.PackageRow.list (new AppCenterCore.Package (extension), null, false);
+                if (extension_box != null) {
+                    extension_box.add (row);
                 }
             });
         }
@@ -244,7 +238,11 @@ namespace AppCenter.Views {
 
         private void parse_description (string? description) {
             if (description != null) {
-                app_description.buffer.text = AppStream.description_markup_convert_simple (description);
+                try {
+                    app_description.buffer.text = AppStream.markup_convert_simple (description);
+                } catch (Error e) {
+                    critical (e.message);
+                }
             }
         }
     }

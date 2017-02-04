@@ -9,11 +9,13 @@ namespace AppCenter {
         // The action button covers Install and Update
         protected Widgets.AppActionButton action_button;
         protected Widgets.AppActionButton uninstall_button;
+        protected Widgets.AppActionButton open_button;
         protected Gtk.ProgressBar progress_bar;
         protected Gtk.Button cancel_button;
         protected Gtk.SizeGroup action_button_group;
         protected Gtk.Stack action_stack;
-        protected bool show_uninstall;
+        protected bool show_uninstall = true;
+        protected bool show_open = true;
 
         public bool is_os_updates {
             get {
@@ -68,12 +70,17 @@ namespace AppCenter {
             uninstall_button = new Widgets.AppActionButton (_("Uninstall"));
             uninstall_button.clicked.connect (() => uninstall_clicked.begin ());
 
+            open_button = new Widgets.AppActionButton (_("Open"));
+            open_button.clicked.connect (launch_package_app);
+
             var button_grid = new Gtk.Grid ();
+            button_grid.column_spacing = 6;
             button_grid.halign = Gtk.Align.END;
             button_grid.valign = Gtk.Align.CENTER;
             button_grid.orientation = Gtk.Orientation.HORIZONTAL;
             button_grid.add (uninstall_button);
             button_grid.add (action_button);
+            button_grid.add (open_button);
 
             var progress_grid = new Gtk.Grid ();
             progress_grid.valign = Gtk.Align.CENTER;
@@ -89,6 +96,7 @@ namespace AppCenter {
             action_button_group.add_widget (action_button);
             action_button_group.add_widget (uninstall_button);
             action_button_group.add_widget (cancel_button);
+            action_button_group.add_widget (open_button);
 
             action_stack.add_named (button_grid, "buttons");
             action_stack.add_named (progress_grid, "progress");
@@ -113,7 +121,7 @@ namespace AppCenter {
             update_action ();
         }
 
-        protected void update_action (bool show_uninstall = true) {
+        protected void update_action () {
             uninstall_button.no_show_all = true;
             uninstall_button.hide ();
             progress_bar.no_show_all = true;
@@ -127,8 +135,10 @@ namespace AppCenter {
                     action_button.label = _("Install");
                     action_button.no_show_all = false;
                     action_button.show ();
-                    break;
 
+                    open_button.no_show_all = true;
+                    open_button.hide ();
+                    break;
                 case AppCenterCore.Package.State.INSTALLED:
                     if (show_uninstall) {
                         /* Uninstall button will show */
@@ -146,12 +156,30 @@ namespace AppCenter {
                         action_stack.hide ();
                     }
 
+                    if (show_open && package.get_can_launch ()) {
+                        open_button.no_show_all = false;
+                        open_button.show ();
+                    } else {
+                        open_button.no_show_all = true;
+                        open_button.hide ();
+                    }
+
                     break;
 
                 case AppCenterCore.Package.State.UPDATE_AVAILABLE:
                     action_button.label = _("Update");
+
                     action_button.no_show_all = false;
                     action_button.show_all ();
+
+                    if (show_open && package.get_can_launch ()) {
+                        open_button.no_show_all = false;
+                        open_button.show ();
+                    } else {
+                        open_button.no_show_all = true;
+                        open_button.hide ();
+                    }
+
                     break;
 
                 case AppCenterCore.Package.State.INSTALLING:
@@ -160,6 +188,9 @@ namespace AppCenter {
                     progress_bar.no_show_all = false;
                     progress_bar.show ();
                     action_stack.set_visible_child_name ("progress");
+
+                    open_button.no_show_all = true;
+                    open_button.hide ();                    
                     break;
 
                 default:
@@ -182,6 +213,14 @@ namespace AppCenter {
 
         private void action_cancelled () {
             package.action_cancellable.cancel ();
+        }
+
+        private void launch_package_app () {
+            try {
+                package.launch ();
+            } catch (Error e) {
+                warning ("Failed to launch %s: %s".printf (package.get_name (), e.message));
+            }
         }
 
         private async void action_clicked () {
