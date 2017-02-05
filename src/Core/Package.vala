@@ -18,6 +18,11 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
+public errordomain PackageLaunchError {
+    DESKTOP_ID_NOT_FOUND,
+    APP_INFO_NOT_FOUND
+}
+
 public class AppCenterCore.Package : Object {
     public signal void changing (bool is_changing);
     public signal void info_changed (Pk.Status status);
@@ -33,7 +38,7 @@ public class AppCenterCore.Package : Object {
 
     public const string OS_UPDATES_ID = "xxx-os-updates";
 
-    public AppStream.Component component { public get; private set; }
+    public AppStream.Component component { get; construct; }
     public ChangeInformation change_information { public get; private set; }
     public Gee.TreeSet<Pk.Package> installed_packages { public get; private set; }
     public GLib.Cancellable action_cancellable { public get; private set; }
@@ -72,18 +77,24 @@ public class AppCenterCore.Package : Object {
     public bool is_os_updates {
         get {
             return component.id == "xxx-os-updates";
-         }
-     }
+        }
+    }
 
-    public Package (AppStream.Component component) {
-        this.component = component;
+    private string? name = null;
+    private string? summary = null;
+    private string? version = null;
+    private Pk.Package? pk_package = null;
+
+    construct {
         installed_packages = new Gee.TreeSet<Pk.Package> ();
         change_information = new ChangeInformation ();
-        change_information.status_changed.connect (() => {
-            info_changed (change_information.status);
-        });
+        change_information.status_changed.connect (() => info_changed (change_information.status));
 
         action_cancellable = new GLib.Cancellable ();
+    }
+
+    public Package (AppStream.Component component) {
+        Object (component: component);
     }
 
     public void update_state () {
@@ -102,6 +113,7 @@ public class AppCenterCore.Package : Object {
         if (state != State.UPDATE_AVAILABLE) {
             return false;
         }
+
         return yield perform_operation (State.UPDATING, State.INSTALLED, State.UPDATE_AVAILABLE);
     }
 
@@ -109,6 +121,7 @@ public class AppCenterCore.Package : Object {
         if (state != State.NOT_INSTALLED) {
             return false;
         }
+
         if (yield perform_operation (State.INSTALLING, State.INSTALLED, State.NOT_INSTALLED)) {
             /* TODO: Move this to a higher level */
             var application = (Gtk.Application)Application.get_default ();
@@ -121,6 +134,7 @@ public class AppCenterCore.Package : Object {
 
                 application.send_notification ("installed", notification);
             }
+
             return true;
         }
 
@@ -131,7 +145,26 @@ public class AppCenterCore.Package : Object {
         if (state != State.INSTALLED) {
             return false;
         }
+
         return yield perform_operation (State.REMOVING, State.NOT_INSTALLED, State.INSTALLED);
+    }
+
+    public void launch () throws Error {
+        string desktop_id = component.get_desktop_id ();
+        if (desktop_id == null) {
+            throw new PackageLaunchError.DESKTOP_ID_NOT_FOUND ("desktop ID not found");
+        }
+
+        var app_info = new DesktopAppInfo (desktop_id);
+        if (app_info == null) {
+            throw new PackageLaunchError.APP_INFO_NOT_FOUND ("AppInfo not found for %s ID".printf (desktop_id));
+        }
+
+        try {
+            app_info.launch (null, null);
+        } catch (Error e) {
+            throw e;
+        }
     }
 
     private async bool perform_operation (State performing, State after_success, State after_fail) {
@@ -144,6 +177,7 @@ public class AppCenterCore.Package : Object {
         } finally {
             clean_up_package_operation (exit_status, after_success, after_fail);
         }
+
         return (exit_status == Pk.Exit.SUCCESS);
     }
 
@@ -184,31 +218,35 @@ public class AppCenterCore.Package : Object {
      }
 
     public string? get_name () {
-        var _name = component.get_name ();
-        if (_name != null) {
-            return _name;
+        if (name != null) {
+            return name;
         }
 
-        var package = find_package ();
-        if (package != null) {
-            return package.get_name ();
+        name = component.get_name ();
+        if (name == null) {
+            var package = find_package ();
+            if (package != null) {
+                name = package.get_name ();
+            }
         }
 
-        return null;
+        return name;
     }
 
     public string? get_summary () {
-        var summary = component.get_summary ();
         if (summary != null) {
             return summary;
         }
 
-        var package = find_package ();
-        if (package != null) {
-            return package.get_summary ();
+        summary = component.get_summary ();
+        if (summary == null) {
+            var package = find_package ();
+            if (package != null) {
+                summary = package.get_summary ();
+            }
         }
 
-        return null;
+        return summary;
     }
 
     public string get_progress_description () {
@@ -265,6 +303,10 @@ public class AppCenterCore.Package : Object {
     }
 
     public string? get_version () {
+        if (version != null) {
+            return version;
+        }
+
         var package = find_package ();
         if (package != null) {
             string returned = package.get_version ();
@@ -275,27 +317,32 @@ public class AppCenterCore.Package : Object {
                 returned = returned.split (":", 2)[1];
             }
 
-            return returned;
+            version = returned;
         }
 
-        return null;
+        return version;
     }
 
-    private Pk.Package? find_package (bool installed = false) {
+    public bool get_can_launch () {
+        return component.get_desktop_id () != null;
+    }
+
+    private Pk.Package? find_package () {
         if (component.id == OS_UPDATES_ID) {
             return null;
         }
 
-        try {
-            Pk.Bitfield filter = 0;
-            if (installed) {
-                filter = Pk.Bitfield.from_enums (Pk.Filter.INSTALLED);
-            }
+        if (pk_package != null) {
+            return pk_package;
+        }
 
-            return AppCenterCore.Client.get_default ().get_app_package (component.get_pkgnames ()[0], filter);
+        try {
+            pk_package = AppCenterCore.Client.get_default ().get_app_package (component.get_pkgnames ()[0], 0);
         } catch (Error e) {
-            critical (e.message);
+            warning (e.message);
             return null;
         }
+
+        return pk_package;
     }
 }

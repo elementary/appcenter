@@ -23,12 +23,16 @@ public class AppCenter.App : Granite.Application {
         { null }
     };
 
+    private const int SECONDS_AFTER_NETWORK_UP = 60;
+
+    private static string? link = null;
+
     public static bool show_updates;
     public static bool silent;
     MainWindow main_window;
     construct {
         application_id = "org.pantheon.appcenter";
-        flags = ApplicationFlags.FLAGS_NONE;
+        flags |= ApplicationFlags.HANDLES_OPEN;
         Intl.setlocale (LocaleCategory.ALL, "");
         Intl.textdomain (Build.GETTEXT_PACKAGE);
 
@@ -53,19 +57,51 @@ public class AppCenter.App : Granite.Application {
         about_translators = _("translator-credits");
         about_license_type = Gtk.License.GPL_3_0;
         add_main_option_entries (appcenter_options);
+
+        var quit_action = new SimpleAction ("quit", null);
+        quit_action.activate.connect (() => {
+            if (main_window != null) {
+                main_window.destroy ();
+            }
+        });
+
+        if (AppInfo.get_default_for_uri_scheme ("appstream") == null) {
+            var appinfo = new DesktopAppInfo (app_launcher);
+            try {
+                appinfo.set_as_default_for_type ("x-scheme-handler/appstream");
+            } catch (Error e) {
+                critical ("Unable to set default for the settings scheme: %s", e.message);
+            }
+        }
+
+        add_action (quit_action);
+        add_accelerator ("<Control>q", "app.quit", null);
+    }
+
+    public override void open (File[] files, string hint) {
+        var file = files[0];
+        if (file == null) {
+            return;
+        }
+
+        if (file.has_uri_scheme ("appstream")) {
+            link = file.get_uri ().replace ("appstream://", "");
+            if (link.has_suffix ("/")) {
+                link = link.substring (0, link.last_index_of_char ('/'));
+            }
+        }
+
+        activate ();
     }
 
     public override void activate () {
         var client = AppCenterCore.Client.get_default ();
         if (silent) {
             NetworkMonitor.get_default ().network_changed.connect ((available) => {
-                if (available) {
-                    client.update_cache.begin (true);
-                }
+                schedule_cache_update (!available);
             });
 
-            client.update_cache.begin ();
-        
+            client.update_cache.begin (true);
             silent = false;
             hold ();
             return;
@@ -84,11 +120,39 @@ public class AppCenter.App : Granite.Application {
             if (show_updates) {
                 main_window.go_to_installed ();
             }
-        } else {
-            client.interface_cancellable.reset ();
+        }
+
+        if (link != null) {
+            var package = client.get_package_for_id (link);
+            if (package != null) {
+                main_window.show_package (package);
+            } else {
+                warning (_("Specified link '%s' could not be found, going back to the main panel").printf (link));
+            }
         }
 
         main_window.present ();
+    }
+
+    private uint cache_update_timeout_id = 0;
+    private void schedule_cache_update (bool cancel = false) {
+        var client = AppCenterCore.Client.get_default ();
+
+        if (cache_update_timeout_id > 0) {
+            Source.remove (cache_update_timeout_id);
+            cache_update_timeout_id = 0;
+        }
+
+        if (cancel) {
+            client.cancel_updates (true); // Also stops timeouts.
+            return;
+        } else {
+            cache_update_timeout_id = Timeout.add_seconds (SECONDS_AFTER_NETWORK_UP, () => {
+                client.update_cache.begin ();
+                cache_update_timeout_id = 0;
+                return false;
+            });
+        }
     }
 }
 

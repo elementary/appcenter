@@ -26,7 +26,7 @@ namespace AppCenter.Views {
         public AppListView () {}
 
         protected override Widgets.AppListRow make_row (AppCenterCore.Package package)  {
-            return (Widgets.AppListRow)(new Widgets.PackageRow (package, action_button_group, false));
+            return (Widgets.AppListRow)(new Widgets.PackageRow (package, action_button_group));
         }
     }
 
@@ -96,7 +96,7 @@ namespace AppCenter.Views {
         protected override void after_add_remove_change_row () {update_headers ();}
 
         protected override Widgets.AppListRow make_row (AppCenterCore.Package package) {
-            return (Widgets.AppListRow)(new Widgets.PackageRow (package, action_button_group, false));
+            return (Widgets.AppListRow)(new Widgets.PackageRow (package, action_button_group));
         }
 
         protected override void on_package_changing (AppCenterCore.Package package, bool is_changing) {
@@ -258,7 +258,7 @@ namespace AppCenter.Views {
             uint update_numbers = 0U;
             uint64 update_real_size = 0ULL;
             foreach (var package in get_packages ()) {
-                if (package.state == AppCenterCore.Package.State.UPDATE_AVAILABLE) {
+                if (package.update_available) {
                     update_numbers++;
                     update_real_size += package.change_information.get_size ();
                 }
@@ -271,7 +271,7 @@ namespace AppCenter.Views {
         private void update_updated_grid () {
             if (!updating_all_apps && !updating_cache) {
                 var client = AppCenterCore.Client.get_default ();
-                client.check_restart.begin (false, (obj, res) => {
+                client.check_restart.begin ((obj, res) => {
                     var restart = client.check_restart.end (res);
                     
                     updated_header.update (0, 0, updating_cache, restart);

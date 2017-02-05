@@ -25,7 +25,10 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     private Views.CategoryView category_view;
     private Views.SearchView search_view;
     private Gtk.Button return_button;
+    private Gtk.Button search_all_button;
+    private Gtk.Stack button_stack;
     private ulong task_finished_connection = 0U;
+    private Gee.Deque<string> return_button_history;
     
     public static Views.InstalledView installed_view { get; private set; }
 
@@ -78,6 +81,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         });
 
         return_button.clicked.connect (view_return);
+        search_all_button.clicked.connect (search_all_apps);
 
         installed_view.get_apps.begin ();
 
@@ -94,6 +98,16 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         return_button = new Gtk.Button ();
         return_button.no_show_all = true;
         return_button.get_style_context ().add_class ("back-button");
+        return_button_history = new Gee.LinkedList<string> ();
+        
+        search_all_button = new Gtk.Button.with_label (_("Search Apps"));
+        search_all_button.no_show_all = true;
+        search_all_button.get_style_context ().add_class ("back-button");
+        
+        button_stack = new Gtk.Stack ();
+        button_stack.add (return_button);
+        button_stack.add (search_all_button);
+        button_stack.set_visible_child (return_button);
 
         view_mode = new Granite.Widgets.ModeButton ();
         view_mode.append_text (_("Categories"));
@@ -119,7 +133,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         headerbar = new Gtk.HeaderBar ();
         headerbar.show_close_button = true;
         headerbar.set_custom_title (custom_title_stack);
-        headerbar.pack_start (return_button);
+        headerbar.pack_start (button_stack);
         headerbar.pack_end (search_entry);
 
         set_titlebar (headerbar);
@@ -157,17 +171,22 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             }
 
             hide ();
-            task_finished_connection = client.tasks_finished.connect (() => {
-                if (!visible) {
+            task_finished_connection = client.notify["task-count"].connect (() => {
+                if (!visible && client.task_count == 0) {
                     destroy ();
                 }
             });
 
-            client.interface_cancellable.cancel ();
+            client.cancel_updates (false); //Timeouts keep running
             return true;
         }
 
         return false;
+    }
+
+    public void show_package (AppCenterCore.Package package) {
+        category_view.show_package (package);
+        view_opened (_("Categories"), false, null);    
     }
 
     public void go_to_installed () {
@@ -178,6 +197,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         unowned string research = search_entry.text;
         if (research.length < 2) {
             view_mode_revealer.reveal_child = true;
+            custom_title_stack.set_visible_child (view_mode_revealer);
             switch (view_mode.selected) {
                 case 0:
                     stack.visible_child = category_view;
@@ -186,16 +206,42 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
                     stack.visible_child = installed_view;
                     break;
             }
-        } else {
-            search_view.search.begin (research);
-            if (!return_button.visible) {
-                view_mode_revealer.reveal_child = false;
-                stack.visible_child = search_view;
+            if (!return_button_history.is_empty) {
+                return_button.no_show_all = false;
+                return_button.show_all ();
             }
+            button_stack.visible_child = return_button;
+            search_all_button.no_show_all = true;
+            search_all_button.hide ();
+        } else {
+            search_view.search.begin (research, category_view.currently_viewed_category, () => {
+                if (category_view.currently_viewed_category != null) {
+                    button_stack.visible_child = search_all_button;
+                    search_all_button.no_show_all = false;
+                    search_all_button.show_all ();
+                } else {
+                    button_stack.visible_child = return_button;
+                    search_all_button.no_show_all = true;
+                    search_all_button.hide ();
+                }
+            });
+            view_mode_revealer.reveal_child = false;
+            stack.visible_child = search_view;
+            return_button.no_show_all = true;
+            return_button.hide ();
         }
     }
 
-    private void view_opened (string return_name, string? custom_header = null) {
+    private void view_opened (string return_name, bool allow_search, string? custom_header = null) {
+        if (stack.visible_child == search_view && category_view.currently_viewed_category != null) {
+            button_stack.visible_child = return_button;
+            search_all_button.no_show_all = true;
+            search_all_button.hide ();
+        }
+    
+        if (return_button_history.is_empty || return_button_history.peek_head () != return_name) {
+            return_button_history.offer_head (return_name);
+        }
         return_button.label = return_name;
         return_button.no_show_all = false;
         return_button.show_all ();
@@ -205,20 +251,58 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             category_header.label = custom_header;
             custom_title_stack.set_visible_child (category_header);
         }
-        search_entry.sensitive = false;
+
+        search_entry.sensitive = allow_search;
+        search_entry.grab_focus_without_selecting ();
+        if (stack.visible_child == category_view && category_view.currently_viewed_category != null) {
+            search_entry.placeholder_text = _("Search %s").printf (category_view.currently_viewed_category.get_name ());
+        }
     }
 
     private void view_return () {
-        view_mode_revealer.reveal_child = true;
-        custom_title_stack.set_visible_child (view_mode_revealer);
-        category_header.label = "";
-
+        if (stack.visible_child != search_view) {
+            view_mode_revealer.reveal_child = true;
+            custom_title_stack.set_visible_child (view_mode_revealer);
+            category_header.label = "";
+        } else {
+            if (category_view.currently_viewed_category != null) {
+                button_stack.visible_child = search_all_button;
+                search_all_button.no_show_all = false;
+                search_all_button.show_all ();
+            }
+        }
+        
+        if (stack.visible_child == category_view) {
+            search_entry.placeholder_text = _("Search Apps");
+        }
         search_entry.sensitive = true;
         search_entry.grab_focus_without_selecting ();
-        return_button.no_show_all = true;
-        return_button.hide ();
+
+        return_button_history.poll_head ();
+        if (!return_button_history.is_empty && stack.visible_child == search_view) {
+            return_button.label = return_button_history.peek_head ();
+            return_button.no_show_all = true;
+            return_button.hide ();
+        } else {
+            return_button.no_show_all = true;
+            return_button.hide ();
+        }
 
         View view = (View) stack.visible_child;
         view.return_clicked ();
+    }
+    
+    private void search_all_apps () {
+        category_header.label = "";
+        
+        search_entry.placeholder_text = _("Search Apps");
+        search_entry.grab_focus_without_selecting ();
+        
+        return_button_history.poll_head ();
+        return_button.no_show_all = true;
+        return_button.hide ();
+    
+        category_view.return_clicked ();
+        trigger_search ();
     }
 }

@@ -2,17 +2,335 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-19 10:19-0700\n"
-"PO-Revision-Date: 2016-07-25 22:24+0000\n"
-"Last-Translator: elementaryart (old) <Unknown>\n"
+"POT-Creation-Date: 2017-02-03 17:52-0600\n"
+"PO-Revision-Date: 2016-12-28 12:04+0000\n"
+"Last-Translator: Jernej Virag <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || "
 "n%100==4 ? 3 : 0);\n"
-"X-Launchpad-Export-Date: 2016-09-20 07:28+0000\n"
-"X-Generator: Launchpad (build 18200)\n"
+"X-Launchpad-Export-Date: 2017-02-04 05:34+0000\n"
+"X-Generator: Launchpad (build 18322)\n"
+
+#: ../src/Core/ChangeInformation.vala:54
+msgid "Starting"
+msgstr "Zaganjanje"
+
+#: ../src/Core/ChangeInformation.vala:56
+msgid "Waiting"
+msgstr "Čakanje"
+
+#: ../src/Core/ChangeInformation.vala:58
+msgid "Running"
+msgstr "Se izvaja"
+
+#: ../src/Core/ChangeInformation.vala:60
+msgid "Querying"
+msgstr "Poizvedovanje"
+
+#: ../src/Core/ChangeInformation.vala:62
+msgid "Getting information"
+msgstr "Pridobivanje podatkov"
+
+#: ../src/Core/ChangeInformation.vala:64
+msgid "Removing packages"
+msgstr "Odstranjevanje paketov"
+
+#: ../src/Core/ChangeInformation.vala:66
+msgid "Downloading"
+msgstr "Prenašanje"
+
+#: ../src/Core/ChangeInformation.vala:68
+msgid "Installing"
+msgstr "Nameščanje"
+
+#: ../src/Core/ChangeInformation.vala:70
+msgid "Refreshing software list"
+msgstr "Osveževanje seznama programske opreme"
+
+#: ../src/Core/ChangeInformation.vala:72
+msgid "Installing updates"
+msgstr "Nameščanje posodobitev"
+
+#: ../src/Core/ChangeInformation.vala:74
+msgid "Cleaning up packages"
+msgstr "Čiščenje paketov"
+
+#: ../src/Core/ChangeInformation.vala:76
+msgid "Obsoleting packages"
+msgstr "Nadomeščanje paketov"
+
+#: ../src/Core/ChangeInformation.vala:78
+msgid "Resolving dependencies"
+msgstr "Razreševanje odvisnosti"
+
+#: ../src/Core/ChangeInformation.vala:80
+msgid "Checking signatures"
+msgstr "Preverjanje podpisov"
+
+#: ../src/Core/ChangeInformation.vala:82
+msgid "Testing changes"
+msgstr "Preizkušanje sprememb"
+
+#: ../src/Core/ChangeInformation.vala:84
+msgid "Committing changes"
+msgstr "Uveljavljanje sprememb"
+
+#: ../src/Core/ChangeInformation.vala:86
+msgid "Requesting data"
+msgstr "Zahtevanje podatkov"
+
+#: ../src/Core/ChangeInformation.vala:88
+msgid "Finished"
+msgstr "Dokončano"
+
+#: ../src/Core/ChangeInformation.vala:90
+msgid "Cancelling"
+msgstr "Preklicevanje"
+
+#: ../src/Core/ChangeInformation.vala:92
+msgid "Downloading repository information"
+msgstr "Prejemanje podatkov o skladiščih"
+
+#: ../src/Core/ChangeInformation.vala:94
+msgid "Downloading list of packages"
+msgstr "Prejemanje seznama paketov"
+
+#: ../src/Core/ChangeInformation.vala:96
+msgid "Downloading file lists"
+msgstr "Prejemanje seznamov datotek"
+
+#: ../src/Core/ChangeInformation.vala:98
+msgid "Downloading lists of changes"
+msgstr "Prejemanje seznamov sprememb"
+
+#: ../src/Core/ChangeInformation.vala:100
+msgid "Downloading groups"
+msgstr "Prejemanje skupin"
+
+#: ../src/Core/ChangeInformation.vala:102
+msgid "Downloading update information"
+msgstr "Prejemanje podatkov o posodobitvi"
+
+#: ../src/Core/ChangeInformation.vala:104
+msgid "Repackaging files"
+msgstr "Prepakiranje datotek"
+
+#: ../src/Core/ChangeInformation.vala:106
+msgid "Loading cache"
+msgstr "Nalaganje predpomnilnika"
+
+#: ../src/Core/ChangeInformation.vala:108
+msgid "Scanning applications"
+msgstr "Preiskovanje programov"
+
+#: ../src/Core/ChangeInformation.vala:110
+msgid "Generating package lists"
+msgstr "Ustvarjanje seznamov paketov"
+
+#: ../src/Core/ChangeInformation.vala:112
+msgid "Waiting for package manager lock"
+msgstr "Čakanje na zaklep upravljalnika paketov"
+
+#: ../src/Core/ChangeInformation.vala:114
+msgid "Waiting for authentication"
+msgstr "Čakanje na overitev"
+
+#: ../src/Core/ChangeInformation.vala:116
+msgid "Updating running applications"
+msgstr "Posodabljanje izvajajočih programov"
+
+#: ../src/Core/ChangeInformation.vala:118
+msgid "Checking applications in use"
+msgstr "Preverjanje programov, ki se uporabljajo"
+
+#: ../src/Core/ChangeInformation.vala:120
+msgid "Checking libraries in use"
+msgstr "Preverjanje knjižnic, ki so v uporabi"
+
+#: ../src/Core/ChangeInformation.vala:122
+msgid "Copying files"
+msgstr "Kopiranje datotek"
+
+#: ../src/Core/ChangeInformation.vala:124
+msgid "Unknown state"
+msgstr "Neznano stanje"
+
+#: ../src/Core/Client.vala:74
+msgid "Operating System Updates"
+msgstr "Posodobitve operacijskega sistema"
+
+#: ../src/Core/Client.vala:75
+msgid "Updates to system components"
+msgstr "Posodobitve sistemskih komponent"
+
+#: ../src/Core/Client.vala:325
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "Posodobitve so na voljo"
+msgstr[1] "Posodobitev je na voljo"
+msgstr[2] "Posodobitvi sta na voljo"
+msgstr[3] "Posodobitve so na voljo"
+
+#: ../src/Core/Client.vala:326
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "%u posodobitev je na voljo za vaš sistem"
+msgstr[1] "%u posodobitev je na voljo za vaš sistem"
+msgstr[2] "%u posodobitvi sta na voljo za vaš sistem"
+msgstr[3] "%u posodobitve so na voljo za vaš sistem"
+
+#: ../src/Core/Package.vala:130
+msgid "Application installed"
+msgstr "Program nameščen"
+
+#: ../src/Core/Package.vala:131
+msgid "%s has been successfully installed"
+msgstr "%s je bila uspešno nameščena"
+
+#: ../src/AbstractAppContainer.vala:64
+msgid "Cancel"
+msgstr "Prekliči"
+
+#: ../src/AbstractAppContainer.vala:67 ../src/AbstractAppContainer.vala:137
+msgid "Install"
+msgstr "Namesti"
+
+#: ../src/AbstractAppContainer.vala:70
+msgid "Uninstall"
+msgstr "Odstrani"
+
+#: ../src/AbstractAppContainer.vala:73
+msgid "Open"
+msgstr ""
+
+#: ../src/AbstractAppContainer.vala:172
+msgid "Update"
+msgstr "Posodobi"
+
+#: ../src/Application.vala:39
+msgid "App Center"
+msgstr "Center za programsko opremo"
+
+#: ../src/Application.vala:57
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Damir Jerovšek https://launchpad.net/~jierro\n"
+"  Jernej Virag https://launchpad.net/~jernej\n"
+"  MarkoD https://launchpad.net/~markodolar\n"
+"  elementaryart (old) https://launchpad.net/~elementaryart"
+
+#: ../src/Application.vala:130
+msgid "Specified link '%s' could not be found, going back to the main panel"
+msgstr ""
+
+#: ../src/MainWindow.vala:95
+msgid "AppCenter"
+msgstr "Center za programsko opremo"
+
+#: ../src/MainWindow.vala:103 ../src/MainWindow.vala:130
+#: ../src/MainWindow.vala:276 ../src/MainWindow.vala:298
+msgid "Search Apps"
+msgstr "Iskanje programov"
+
+#: ../src/MainWindow.vala:113 ../src/MainWindow.vala:189
+#: ../src/Views/CategoryView.vala:72 ../src/Views/CategoryView.vala:79
+msgid "Categories"
+msgstr "Kategorije"
+
+#: ../src/MainWindow.vala:114 ../src/Views/InstalledView.vala:45
+msgctxt "view"
+msgid "Updates"
+msgstr "Posodobitve"
+
+#: ../src/MainWindow.vala:258
+msgid "Search %s"
+msgstr "Išči %s"
+
+#. / TRANSLATORS: the name of the Search view
+#: ../src/Views/SearchView.vala:36
+msgctxt "view"
+msgid "Search"
+msgstr "Iskanje"
+
+#: ../src/Views/AppListView.vala:64
+msgid "Update All"
+msgstr "Posodobi vse"
+
+#: ../src/Views/FeaturedView.vala:33
+msgid "Best Rated"
+msgstr "Najboljše ocenjene"
+
+#: ../src/Views/FeaturedView.vala:36
+msgid "Latest Apps"
+msgstr "Najnovejši programi"
+
+#: ../src/Views/CategoryView.vala:122
+msgid "Audio"
+msgstr "Zvok"
+
+#: ../src/Views/CategoryView.vala:133
+msgid "Development"
+msgstr "Razvoj"
+
+#: ../src/Views/CategoryView.vala:144
+msgid "Accessories"
+msgstr "Pripomočki"
+
+#: ../src/Views/CategoryView.vala:155
+msgid "Office"
+msgstr "Pisarna"
+
+#: ../src/Views/CategoryView.vala:166
+msgid "System"
+msgstr "Sistem"
+
+#: ../src/Views/CategoryView.vala:177
+msgid "Video"
+msgstr "Video"
+
+#: ../src/Views/CategoryView.vala:188
+msgid "Graphics"
+msgstr "Grafika"
+
+#: ../src/Views/CategoryView.vala:198
+msgid "Games"
+msgstr "Igre"
+
+#: ../src/Views/CategoryView.vala:209
+msgid "Education"
+msgstr "Izobraževanje"
+
+#: ../src/Views/CategoryView.vala:219
+msgid "Internet"
+msgstr "Splet"
+
+#: ../src/Views/CategoryView.vala:230
+msgid "Science & Engineering"
+msgstr "Znanost in inženirstvo"
+
+#: ../src/Views/CategoryView.vala:240
+msgid "Universal Access"
+msgstr "Univerzalni dostop"
+
+#: ../src/Views/AppInfoView.vala:48
+msgid "Screenshot Not Available"
+msgstr "Slika ni na voljo."
+
+#: ../src/Views/AppInfoView.vala:128
+msgid "Extensions:"
+msgstr "Razširitve:"
+
+#: ../src/AbstractAppList.vala:30
+msgid "No Results"
+msgstr "Ni rezultatov"
+
+#: ../src/AbstractAppList.vala:30
+msgid "No apps could be found. Try changing search terms."
+msgstr "Noben program ni bil najden. Poiskusite z drugim iskalnim nizom."
 
 #: ../src/Widgets/UpdateHeaderRow.vala:121
 msgid "%u Update Available"
@@ -33,311 +351,6 @@ msgstr "Iskanje posodobitev..."
 #: ../src/Widgets/UpdateHeaderRow.vala:165
 msgid "Up to Date"
 msgstr "Posodobljeno"
-
-#: ../src/AbstractAppContainer.vala:62
-msgid "Cancel"
-msgstr "Prekliči"
-
-#: ../src/AbstractAppContainer.vala:65 ../src/AbstractAppContainer.vala:129
-msgid "Install"
-msgstr "Namesti"
-
-#: ../src/AbstractAppContainer.vala:68
-msgid "Uninstall"
-msgstr "Odstrani"
-
-#: ../src/AbstractAppContainer.vala:154
-msgid "Update"
-msgstr "Posodobi"
-
-#: ../src/MainWindow.vala:91
-msgid "AppCenter"
-msgstr "Center za programsko opremo"
-
-#: ../src/MainWindow.vala:99 ../src/Views/CategoryView.vala:68
-#: ../src/Views/CategoryView.vala:75
-msgid "Categories"
-msgstr "Kategorije"
-
-#: ../src/MainWindow.vala:100 ../src/Views/InstalledView.vala:45
-msgctxt "view"
-msgid "Updates"
-msgstr "Posodobitve"
-
-#: ../src/MainWindow.vala:116
-msgid "Search Apps"
-msgstr "Iskanje programov"
-
-#: ../src/AbstractAppList.vala:30
-msgid "No Results"
-msgstr "Ni rezultatov"
-
-#: ../src/AbstractAppList.vala:30
-msgid "No apps could be found. Try changing search terms."
-msgstr "Noben program ni bil najden. Poiskusite z drugim iskalnim nizom."
-
-#: ../src/Views/AppListView.vala:64
-msgid "Update All"
-msgstr "Posodobi vse"
-
-#. / TRANSLATORS: the name of the Search view
-#: ../src/Views/SearchView.vala:36
-msgctxt "view"
-msgid "Search"
-msgstr "Iskanje"
-
-#: ../src/Views/AppInfoView.vala:48
-msgid "Screenshot Not Available"
-msgstr "Slika ni na voljo."
-
-#: ../src/Views/AppInfoView.vala:128
-msgid "Extensions:"
-msgstr "Razširitve:"
-
-#: ../src/Views/CategoryView.vala:118
-msgid "Audio"
-msgstr "Zvok"
-
-#: ../src/Views/CategoryView.vala:131
-msgid "Development"
-msgstr "Razvoj"
-
-#: ../src/Views/CategoryView.vala:144
-msgid "Accessories"
-msgstr "Pripomočki"
-
-#: ../src/Views/CategoryView.vala:157
-msgid "Office"
-msgstr "Pisarna"
-
-#: ../src/Views/CategoryView.vala:170
-msgid "System"
-msgstr "Sistem"
-
-#: ../src/Views/CategoryView.vala:183
-msgid "Video"
-msgstr "Video"
-
-#: ../src/Views/CategoryView.vala:196
-msgid "Graphics"
-msgstr "Grafika"
-
-#: ../src/Views/CategoryView.vala:208
-msgid "Games"
-msgstr "Igre"
-
-#: ../src/Views/CategoryView.vala:221
-msgid "Education"
-msgstr "Izobraževanje"
-
-#: ../src/Views/CategoryView.vala:233
-msgid "Internet"
-msgstr "Splet"
-
-#: ../src/Views/CategoryView.vala:246
-msgid "Science & Engineering"
-msgstr "Znanost in inženirstvo"
-
-#: ../src/Views/CategoryView.vala:258
-msgid "Universal Access"
-msgstr "Univerzalni dostop"
-
-#: ../src/Views/FeaturedView.vala:33
-msgid "Best Rated"
-msgstr "Najboljše ocenjene"
-
-#: ../src/Views/FeaturedView.vala:36
-msgid "Latest Apps"
-msgstr "Najnovejši programi"
-
-#: ../src/Core/Client.vala:62
-msgid "Operating System Updates"
-msgstr "Posodobitve operacijskega sistema"
-
-#: ../src/Core/Client.vala:63
-msgid "Updates to system components"
-msgstr "Posodobitve sistemskih komponent"
-
-#: ../src/Core/Client.vala:356
-msgid "Update Available"
-msgid_plural "Updates Available"
-msgstr[0] "Posodobitve so na voljo"
-msgstr[1] "Posodobitev je na voljo"
-msgstr[2] "Posodobitvi sta na voljo"
-msgstr[3] "Posodobitve so na voljo"
-
-#: ../src/Core/Client.vala:357
-msgid "%u update is available for your system"
-msgid_plural "%u updates are available for your system"
-msgstr[0] "%u posodobitev je na voljo za vaš sistem"
-msgstr[1] "%u posodobitev je na voljo za vaš sistem"
-msgstr[2] "%u posodobitvi sta na voljo za vaš sistem"
-msgstr[3] "%u posodobitve so na voljo za vaš sistem"
-
-#: ../src/Core/Package.vala:117
-msgid "Application installed"
-msgstr "Program nameščen"
-
-#: ../src/Core/Package.vala:118
-msgid "%s has been successfully installed"
-msgstr "%s je bila uspešno nameščena"
-
-#: ../src/Core/ChangeInformation.vala:47
-msgid "Starting"
-msgstr "Zaganjanje"
-
-#: ../src/Core/ChangeInformation.vala:49
-msgid "Waiting in queue"
-msgstr "Čakanje v vrsti"
-
-#: ../src/Core/ChangeInformation.vala:51
-msgid "Running"
-msgstr "Se izvaja"
-
-#: ../src/Core/ChangeInformation.vala:53
-msgid "Querying"
-msgstr "Poizvedovanje"
-
-#: ../src/Core/ChangeInformation.vala:55
-msgid "Getting information"
-msgstr "Pridobivanje podatkov"
-
-#: ../src/Core/ChangeInformation.vala:57
-msgid "Removing packages"
-msgstr "Odstranjevanje paketov"
-
-#: ../src/Core/ChangeInformation.vala:59
-msgid "Downloading packages"
-msgstr "Prejemanje paketov"
-
-#: ../src/Core/ChangeInformation.vala:61
-msgid "Installing packages"
-msgstr "Nameščanje paketov"
-
-#: ../src/Core/ChangeInformation.vala:63
-msgid "Refreshing software list"
-msgstr "Osveževanje seznama programske opreme"
-
-#: ../src/Core/ChangeInformation.vala:65
-msgid "Installing updates"
-msgstr "Nameščanje posodobitev"
-
-#: ../src/Core/ChangeInformation.vala:67
-msgid "Cleaning up packages"
-msgstr "Čiščenje paketov"
-
-#: ../src/Core/ChangeInformation.vala:69
-msgid "Obsoleting packages"
-msgstr "Nadomeščanje paketov"
-
-#: ../src/Core/ChangeInformation.vala:71
-msgid "Resolving dependencies"
-msgstr "Razreševanje odvisnosti"
-
-#: ../src/Core/ChangeInformation.vala:73
-msgid "Checking signatures"
-msgstr "Preverjanje podpisov"
-
-#: ../src/Core/ChangeInformation.vala:75
-msgid "Testing changes"
-msgstr "Preizkušanje sprememb"
-
-#: ../src/Core/ChangeInformation.vala:77
-msgid "Committing changes"
-msgstr "Uveljavljanje sprememb"
-
-#: ../src/Core/ChangeInformation.vala:79
-msgid "Requesting data"
-msgstr "Zahtevanje podatkov"
-
-#: ../src/Core/ChangeInformation.vala:81
-msgid "Finished"
-msgstr "Dokončano"
-
-#: ../src/Core/ChangeInformation.vala:83
-msgid "Cancelling"
-msgstr "Preklicevanje"
-
-#: ../src/Core/ChangeInformation.vala:85
-msgid "Downloading repository information"
-msgstr "Prejemanje podatkov o skladiščih"
-
-#: ../src/Core/ChangeInformation.vala:87
-msgid "Downloading list of packages"
-msgstr "Prejemanje seznama paketov"
-
-#: ../src/Core/ChangeInformation.vala:89
-msgid "Downloading file lists"
-msgstr "Prejemanje seznamov datotek"
-
-#: ../src/Core/ChangeInformation.vala:91
-msgid "Downloading lists of changes"
-msgstr "Prejemanje seznamov sprememb"
-
-#: ../src/Core/ChangeInformation.vala:93
-msgid "Downloading groups"
-msgstr "Prejemanje skupin"
-
-#: ../src/Core/ChangeInformation.vala:95
-msgid "Downloading update information"
-msgstr "Prejemanje podatkov o posodobitvi"
-
-#: ../src/Core/ChangeInformation.vala:97
-msgid "Repackaging files"
-msgstr "Prepakiranje datotek"
-
-#: ../src/Core/ChangeInformation.vala:99
-msgid "Loading cache"
-msgstr "Nalaganje predpomnilnika"
-
-#: ../src/Core/ChangeInformation.vala:101
-msgid "Scanning applications"
-msgstr "Preiskovanje programov"
-
-#: ../src/Core/ChangeInformation.vala:103
-msgid "Generating package lists"
-msgstr "Ustvarjanje seznamov paketov"
-
-#: ../src/Core/ChangeInformation.vala:105
-msgid "Waiting for package manager lock"
-msgstr "Čakanje na zaklep upravljalnika paketov"
-
-#: ../src/Core/ChangeInformation.vala:107
-msgid "Waiting for authentication"
-msgstr "Čakanje na overitev"
-
-#: ../src/Core/ChangeInformation.vala:109
-msgid "Updating running applications"
-msgstr "Posodabljanje izvajajočih programov"
-
-#: ../src/Core/ChangeInformation.vala:111
-msgid "Checking applications in use"
-msgstr "Preverjanje programov, ki se uporabljajo"
-
-#: ../src/Core/ChangeInformation.vala:113
-msgid "Checking libraries in use"
-msgstr "Preverjanje knjižnic, ki so v uporabi"
-
-#: ../src/Core/ChangeInformation.vala:115
-msgid "Copying files"
-msgstr "Kopiranje datotek"
-
-#: ../src/Core/ChangeInformation.vala:117
-msgid "Unknown state"
-msgstr "Neznano stanje"
-
-#: ../src/Application.vala:35
-msgid "App Center"
-msgstr "Center za programsko opremo"
-
-#: ../src/Application.vala:53
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Damir Jerovšek https://launchpad.net/~jierro\n"
-"  Jernej Virag https://launchpad.net/~jernej\n"
-"  MarkoD https://launchpad.net/~markodolar\n"
-"  elementaryart (old) https://launchpad.net/~elementaryart"
 
 #~ msgid "Home Page"
 #~ msgstr "Domača stran"
@@ -384,9 +397,6 @@ msgstr ""
 #~ msgid "Removing"
 #~ msgstr "Odstranjevanje"
 
-#~ msgid "Installing"
-#~ msgstr "Nameščanje"
-
 #~ msgid "Updates"
 #~ msgstr "Posodobitve"
 
@@ -398,3 +408,12 @@ msgstr ""
 
 #~ msgid "Browser apps in categories"
 #~ msgstr "Programi brskalnika po kategorijah"
+
+#~ msgid "Installing packages"
+#~ msgstr "Nameščanje paketov"
+
+#~ msgid "Downloading packages"
+#~ msgstr "Prejemanje paketov"
+
+#~ msgid "Waiting in queue"
+#~ msgstr "Čakanje v vrsti"
