@@ -66,7 +66,7 @@ namespace AppCenter.Widgets {
             return true;
         }
 
-        private class AbstractPackageRowGrid : AbstractAppContainer {
+        private abstract class AbstractPackageRowGrid : AbstractAppContainer {
             public signal void changed ();
 
             construct {
@@ -103,11 +103,6 @@ namespace AppCenter.Widgets {
                     size_group.add_widget (uninstall_button);
                 }
             }
-
-            protected override void update_state (bool first_update = false) {
-                update_action ();
-                changed ();
-            }
         }
 
         private class InstalledPackageRowGrid : AbstractPackageRowGrid {        
@@ -139,6 +134,7 @@ namespace AppCenter.Widgets {
                 if (!first_update) {
                     app_version.label = package.get_version ();
                 }
+
                 update_action ();
                 changed ();
             }

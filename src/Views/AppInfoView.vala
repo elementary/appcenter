@@ -151,6 +151,7 @@ namespace AppCenter.Views {
             if (!first_update) {
                 app_version.label = package.get_version ();
             }
+
             update_action ();
         }
 
