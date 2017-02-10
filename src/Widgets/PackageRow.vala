@@ -20,10 +20,18 @@
 
 namespace AppCenter.Widgets {
     public class PackageRow : Gtk.ListBoxRow, AppListRow {
-        PackageRowGrid grid;
+        AbstractPackageRowGrid grid;
 
-        public PackageRow (AppCenterCore.Package package, Gtk.SizeGroup? size_group) {
-            grid = new PackageRowGrid (package, size_group);
+        public PackageRow.installed (AppCenterCore.Package package, Gtk.SizeGroup? size_group, bool show_uninstall = true) {
+            grid = new InstalledPackageRowGrid (package, size_group, show_uninstall);
+            add (grid);
+            grid.changed.connect (() => {
+                changed ();
+            });
+        }
+        
+        public PackageRow.list (AppCenterCore.Package package, Gtk.SizeGroup? size_group, bool show_uninstall = true) {
+            grid = new ListPackageRowGrid (package, size_group, show_uninstall);
             add (grid);
             grid.changed.connect (() => {
                 changed ();
@@ -58,7 +66,7 @@ namespace AppCenter.Widgets {
             return true;
         }
 
-        private class PackageRowGrid : AbstractAppContainer {
+        private abstract class AbstractPackageRowGrid : AbstractAppContainer {
             public signal void changed ();
 
             construct {
@@ -79,24 +87,15 @@ namespace AppCenter.Widgets {
                 package_name.valign = Gtk.Align.END;
                 ((Gtk.Misc) package_name).xalign = 0;
 
-                package_summary = new Gtk.Label (null);
-                package_summary.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-                package_summary.hexpand = true;
-                package_summary.valign = Gtk.Align.START;
-                ((Gtk.Misc) package_summary).xalign = 0;
-
-
                 attach (image, 0, 0, 1, 2);
                 attach (package_name, 1, 0, 1, 1);
-                attach (package_summary, 1, 1, 1, 1);
                 attach (action_stack, 2, 0, 1, 2);
             }
 
-            public PackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? size_group) {
+            public AbstractPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? size_group, bool show_uninstall = true) {
                 this.package = package;
-                this.show_uninstall = false;
+                this.show_uninstall = show_uninstall;
                 this.show_open = false;
-                set_up_package ();
 
                 if (size_group != null) {
                     size_group.add_widget (action_button);
@@ -104,10 +103,64 @@ namespace AppCenter.Widgets {
                     size_group.add_widget (uninstall_button);
                 }
             }
+        }
 
-            protected override void update_state () {
+        private class InstalledPackageRowGrid : AbstractPackageRowGrid {        
+            Gtk.Label app_version;
+
+            construct {
+                app_version = new Gtk.Label (null);
+                app_version.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+                app_version.hexpand = true;
+                app_version.valign = Gtk.Align.START;
+                ((Gtk.Misc) app_version).xalign = 0;
+
+                attach (app_version, 1, 1, 1, 1);
+            }
+
+            public InstalledPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? size_group, bool show_uninstall = true) {         
+                base (package, size_group, show_uninstall);                
+                set_up_package ();
+            }
+            
+            protected override void set_up_package (uint icon_size = 48) {
+                app_version.label = package.get_version ();
+                app_version.ellipsize = Pango.EllipsizeMode.END;
+
+                base.set_up_package (icon_size);
+            }
+            
+            protected override void update_state (bool first_update = false) {
+                if (!first_update) {
+                    app_version.label = package.get_version ();
+                }
+
                 update_action ();
                 changed ();
+            }
+        }
+
+        private class ListPackageRowGrid : AbstractPackageRowGrid {
+
+            construct {
+                package_summary = new Gtk.Label (null);
+                package_summary.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+                package_summary.hexpand = true;
+                package_summary.valign = Gtk.Align.START;
+                ((Gtk.Misc) package_summary).xalign = 0;
+
+                attach (package_summary, 1, 1, 1, 1);
+            }
+
+            public ListPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? size_group, bool show_uninstall = true) {
+                base (package, size_group, show_uninstall);
+                set_up_package ();
+            }
+            
+            protected override void set_up_package (uint icon_size = 48) {                
+                package_summary.label = package.get_summary ();
+                package_summary.ellipsize = Pango.EllipsizeMode.END;
+                base.set_up_package (icon_size);
             }
         }
     }

@@ -141,9 +141,23 @@ namespace AppCenter.Views {
             open_button.get_style_context ().add_class ("h3");
         }
 
+        protected override void set_up_package (uint icon_size = 48) {                
+            package_summary.label = package.get_summary ();
+            package_summary.ellipsize = Pango.EllipsizeMode.END;
+            base.set_up_package (icon_size);
+        }
+        
+        protected override void update_state (bool first_update = false) {
+            if (!first_update) {
+                app_version.label = package.get_version ();
+            }
+
+            update_action ();
+        }
+
         private async void load_extensions () {
             package.component.get_addons ().@foreach ((extension) => {
-                var row = new Widgets.PackageRow (new AppCenterCore.Package (extension), null);
+                var row = new Widgets.PackageRow.list (new AppCenterCore.Package (extension), null, false);
                 if (extension_box != null) {
                     extension_box.add (row);
                 }
