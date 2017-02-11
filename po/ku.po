@@ -3,15 +3,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-02-03 17:52-0600\n"
-"PO-Revision-Date: 2017-01-29 08:28+0000\n"
-"Last-Translator: elementaryart (old) <Unknown>\n"
+"PO-Revision-Date: 2017-02-10 19:51+0000\n"
+"Last-Translator: Rokar <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2017-02-05 05:30+0000\n"
-"X-Generator: Launchpad (build 18322)\n"
+"X-Launchpad-Export-Date: 2017-02-11 05:28+0000\n"
+"X-Generator: Launchpad (build 18326)\n"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -47,7 +47,7 @@ msgstr "Saz dike"
 
 #: ../src/Core/ChangeInformation.vala:70
 msgid "Refreshing software list"
-msgstr ""
+msgstr "Lîsteya nivîsbariyê tê tezekirin"
 
 #: ../src/Core/ChangeInformation.vala:72
 msgid "Installing updates"
@@ -71,23 +71,23 @@ msgstr ""
 
 #: ../src/Core/ChangeInformation.vala:82
 msgid "Testing changes"
-msgstr ""
+msgstr "Guhartin tên kontrolkirin"
 
 #: ../src/Core/ChangeInformation.vala:84
 msgid "Committing changes"
-msgstr ""
+msgstr "Guhartin tên şandin"
 
 #: ../src/Core/ChangeInformation.vala:86
 msgid "Requesting data"
-msgstr ""
+msgstr "Dane tê xwestin"
 
 #: ../src/Core/ChangeInformation.vala:88
 msgid "Finished"
-msgstr ""
+msgstr "Bi dawî bû"
 
 #: ../src/Core/ChangeInformation.vala:90
 msgid "Cancelling"
-msgstr ""
+msgstr "Tê betalkirin"
 
 #: ../src/Core/ChangeInformation.vala:92
 msgid "Downloading repository information"
@@ -95,11 +95,11 @@ msgstr ""
 
 #: ../src/Core/ChangeInformation.vala:94
 msgid "Downloading list of packages"
-msgstr ""
+msgstr "Lîsteya pakêtan tê daxistin"
 
 #: ../src/Core/ChangeInformation.vala:96
 msgid "Downloading file lists"
-msgstr ""
+msgstr "Lîsteyên pelan tên daxistin"
 
 #: ../src/Core/ChangeInformation.vala:98
 msgid "Downloading lists of changes"
@@ -107,7 +107,7 @@ msgstr ""
 
 #: ../src/Core/ChangeInformation.vala:100
 msgid "Downloading groups"
-msgstr ""
+msgstr "Kom tên daxistin"
 
 #: ../src/Core/ChangeInformation.vala:102
 msgid "Downloading update information"
@@ -119,7 +119,7 @@ msgstr ""
 
 #: ../src/Core/ChangeInformation.vala:106
 msgid "Loading cache"
-msgstr ""
+msgstr "Pêşbîr tê barkirin"
 
 #: ../src/Core/ChangeInformation.vala:108
 msgid "Scanning applications"
@@ -151,7 +151,7 @@ msgstr ""
 
 #: ../src/Core/ChangeInformation.vala:122
 msgid "Copying files"
-msgstr ""
+msgstr "Pelan ji ber digire"
 
 #: ../src/Core/ChangeInformation.vala:124
 msgid "Unknown state"
@@ -168,8 +168,8 @@ msgstr ""
 #: ../src/Core/Client.vala:325
 msgid "Update Available"
 msgid_plural "Updates Available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Rojanekirin Amade ye"
+msgstr[1] "Rojanekirin Amade ye"
 
 #: ../src/Core/Client.vala:326
 msgid "%u update is available for your system"
@@ -187,27 +187,27 @@ msgstr ""
 
 #: ../src/AbstractAppContainer.vala:64
 msgid "Cancel"
-msgstr ""
+msgstr "Betal bike"
 
 #: ../src/AbstractAppContainer.vala:67 ../src/AbstractAppContainer.vala:137
 msgid "Install"
-msgstr ""
+msgstr "Saz Bike"
 
 #: ../src/AbstractAppContainer.vala:70
 msgid "Uninstall"
-msgstr ""
+msgstr "Jêrake"
 
 #: ../src/AbstractAppContainer.vala:73
 msgid "Open"
-msgstr ""
+msgstr "Veke"
 
 #: ../src/AbstractAppContainer.vala:172
 msgid "Update"
-msgstr ""
+msgstr "Rojanekirin"
 
 #: ../src/Application.vala:39
 msgid "App Center"
-msgstr ""
+msgstr "dikanê bername"
 
 #: ../src/Application.vala:57
 msgid "translator-credits"
@@ -222,32 +222,32 @@ msgstr ""
 
 #: ../src/MainWindow.vala:95
 msgid "AppCenter"
-msgstr ""
+msgstr "dikanê bername"
 
 #: ../src/MainWindow.vala:103 ../src/MainWindow.vala:130
 #: ../src/MainWindow.vala:276 ../src/MainWindow.vala:298
 msgid "Search Apps"
-msgstr ""
+msgstr "bername lê bigere"
 
 #: ../src/MainWindow.vala:113 ../src/MainWindow.vala:189
 #: ../src/Views/CategoryView.vala:72 ../src/Views/CategoryView.vala:79
 msgid "Categories"
-msgstr ""
+msgstr "Beş"
 
 #: ../src/MainWindow.vala:114 ../src/Views/InstalledView.vala:45
 msgctxt "view"
 msgid "Updates"
-msgstr ""
+msgstr "rojanekirin"
 
 #: ../src/MainWindow.vala:258
 msgid "Search %s"
-msgstr ""
+msgstr "Li %s Bigere"
 
 #. / TRANSLATORS: the name of the Search view
 #: ../src/Views/SearchView.vala:36
 msgctxt "view"
 msgid "Search"
-msgstr ""
+msgstr "Lê bigere :"
 
 #: ../src/Views/AppListView.vala:64
 msgid "Update All"
@@ -263,51 +263,51 @@ msgstr ""
 
 #: ../src/Views/CategoryView.vala:122
 msgid "Audio"
-msgstr ""
+msgstr "Deng"
 
 #: ../src/Views/CategoryView.vala:133
 msgid "Development"
-msgstr ""
+msgstr "Pêşxistin"
 
 #: ../src/Views/CategoryView.vala:144
 msgid "Accessories"
-msgstr ""
+msgstr "Bernameyên alîkar"
 
 #: ../src/Views/CategoryView.vala:155
 msgid "Office"
-msgstr ""
+msgstr "Nivîsgeh"
 
 #: ../src/Views/CategoryView.vala:166
 msgid "System"
-msgstr ""
+msgstr "Pergêl"
 
 #: ../src/Views/CategoryView.vala:177
 msgid "Video"
-msgstr ""
+msgstr "Vîdyo"
 
 #: ../src/Views/CategoryView.vala:188
 msgid "Graphics"
-msgstr ""
+msgstr "Grafîk"
 
 #: ../src/Views/CategoryView.vala:198
 msgid "Games"
-msgstr ""
+msgstr "Lîstik"
 
 #: ../src/Views/CategoryView.vala:209
 msgid "Education"
-msgstr ""
+msgstr "Perwerdehî"
 
 #: ../src/Views/CategoryView.vala:219
 msgid "Internet"
-msgstr ""
+msgstr "Tor"
 
 #: ../src/Views/CategoryView.vala:230
 msgid "Science & Engineering"
-msgstr ""
+msgstr "Zanist & endezyarî"
 
 #: ../src/Views/CategoryView.vala:240
 msgid "Universal Access"
-msgstr ""
+msgstr "Gihîştina gerdûnî"
 
 #: ../src/Views/AppInfoView.vala:48
 msgid "Screenshot Not Available"
