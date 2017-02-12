@@ -26,7 +26,6 @@ public class AppCenter.App : Granite.Application {
     private const int SECONDS_AFTER_NETWORK_UP = 60;
 
     private static string? link = null;
-    private static string? search_term = null;
 
     public static bool show_updates;
     public static bool silent;
@@ -90,12 +89,6 @@ public class AppCenter.App : Granite.Application {
             if (link.has_suffix ("/")) {
                 link = link.substring (0, link.last_index_of_char ('/'));
             }
-        } else if (file.has_uri_scheme("search")) {
-            search_term = file.get_uri ().replace ("search://", "");
-            search_term = Uri.unescape_string (search_term);
-            if (search_term.has_suffix ("/")) {
-                search_term = search_term.substring (0, search_term.last_index_of_char ('/'));
-            }
         }
 
         activate ();
@@ -134,12 +127,9 @@ public class AppCenter.App : Granite.Application {
             if (package != null) {
                 main_window.show_package (package);
             } else {
-                warning (_("Specified link '%s' could not be found, going back to the main panel").printf (link));
+                info (_("Specified link '%s' could not be found, searching instead").printf (link));
+                main_window.search (Uri.unescape_string (link));
             }
-        }
-
-        if (search_term != null) {
-            main_window.search (search_term);
         }
 
         main_window.present ();
