@@ -128,7 +128,10 @@ public class AppCenter.App : Granite.Application {
                 main_window.show_package (package);
             } else {
                 info (_("Specified link '%s' could not be found, searching instead").printf (link));
-                main_window.search (Uri.unescape_string (link));
+                string? search_term = Uri.unescape_string (link);
+                if (search_term != null) {
+                    main_window.search (Uri.unescape_string (link));
+                }
             }
         }
 
