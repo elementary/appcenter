@@ -130,7 +130,7 @@ public class AppCenter.App : Granite.Application {
                 info (_("Specified link '%s' could not be found, searching instead").printf (link));
                 string? search_term = Uri.unescape_string (link);
                 if (search_term != null) {
-                    main_window.search (Uri.unescape_string (link));
+                    main_window.search (search_term);
                 }
             }
         }
