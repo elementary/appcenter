@@ -192,6 +192,11 @@ public class AppCenterCore.Client : Object {
             string[] packages_array = {};
             results.get_package_array ().foreach ((pk_package) => {
                 packages_array += pk_package.get_id ();
+                unowned string pkg_name = pk_package.get_name ();
+                var package = package_list.get (pkg_name);
+                if (package != null) {
+                    package.latest_version = pk_package.get_version ();
+                }
             });
 
             // We need a null to show to PackageKit that it's then end of the array.
@@ -241,6 +246,7 @@ public class AppCenterCore.Client : Object {
             var package = package_list.get (pk_package.get_name ());
             if (package != null) {
                 package.installed_packages.add (pk_package);
+                package.latest_version = pk_package.get_version ();
                 package.update_state ();
                 packages.add (package);
             }

@@ -82,7 +82,11 @@ public class AppCenterCore.Package : Object {
 
     private string? name = null;
     private string? summary = null;
-    private string? version = null;
+    private string? _latest_version = null;
+    public string? latest_version {
+        private get { return _latest_version; }
+        internal set { _latest_version = convert_version (value); }
+    }
     private Pk.Package? pk_package = null;
 
     construct {
@@ -303,24 +307,28 @@ public class AppCenterCore.Package : Object {
     }
 
     public string? get_version () {
-        if (version != null) {
-            return version;
+        if (latest_version != null) {
+            return latest_version;
         }
 
         var package = find_package ();
         if (package != null) {
-            string returned = package.get_version ();
-            returned = returned.split ("+", 2)[0];
-            returned = returned.split ("-", 2)[0];
-            returned = returned.split ("~", 2)[0];
-            if (":" in returned) {
-                returned = returned.split (":", 2)[1];
-            }
-
-            version = returned;
+            latest_version = package.get_version ();
         }
 
-        return version;
+        return latest_version;
+    }
+
+    private string convert_version (string version) {
+        string returned = version;
+        returned = returned.split ("+", 2)[0];
+        returned = returned.split ("-", 2)[0];
+        returned = returned.split ("~", 2)[0];
+        if (":" in returned) {
+            returned = returned.split (":", 2)[1];
+        }
+
+        return returned;
     }
 
     public bool get_can_launch () {

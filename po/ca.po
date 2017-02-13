@@ -3,15 +3,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-02-03 17:52-0600\n"
-"PO-Revision-Date: 2017-01-20 13:37+0000\n"
+"PO-Revision-Date: 2017-02-08 16:21+0000\n"
 "Last-Translator: Davidmp <rbndavid@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2017-02-04 05:33+0000\n"
-"X-Generator: Launchpad (build 18322)\n"
+"X-Launchpad-Export-Date: 2017-02-09 05:32+0000\n"
+"X-Generator: Launchpad (build 18326)\n"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -199,7 +199,7 @@ msgstr "Desinstal·la"
 
 #: ../src/AbstractAppContainer.vala:73
 msgid "Open"
-msgstr ""
+msgstr "Obre"
 
 #: ../src/AbstractAppContainer.vala:172
 msgid "Update"

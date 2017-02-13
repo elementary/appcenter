@@ -17,7 +17,6 @@ vala_precompile(VALA_C ${EXEC_NAME}
     Views/SearchView.vala
     Views/InstalledView.vala
     Views/View.vala
-    Widgets/AppCellRenderer.vala
     Widgets/CategoryItem.vala
     Widgets/FeaturedButton.vala
     Widgets/PackageRow.vala

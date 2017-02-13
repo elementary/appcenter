@@ -104,11 +104,9 @@ namespace AppCenter {
 
         protected virtual void set_up_package (uint icon_size = 48) {
             package_name.label = package.get_name ();
-            package_summary.label = package.get_summary ();
-            package_summary.ellipsize = Pango.EllipsizeMode.END;
             image.gicon = package.get_icon (icon_size);
 
-            package.notify["state"].connect (update_state);
+            package.notify["state"].connect (() => update_state ());
 
             package.change_information.bind_property ("can-cancel", cancel_button, "sensitive", GLib.BindingFlags.SYNC_CREATE);
             package.change_information.progress_changed.connect (update_progress);
@@ -116,10 +114,10 @@ namespace AppCenter {
 
             update_progress_status ();
             update_progress ();
-            update_state ();
+            update_state (true);
         }
 
-        protected virtual void update_state () {
+        protected virtual void update_state (bool first_update = false) {
             update_action ();
         }
 
@@ -170,6 +168,9 @@ namespace AppCenter {
 
                 case AppCenterCore.Package.State.UPDATE_AVAILABLE:
                     action_button.label = _("Update");
+
+                    action_button.no_show_all = false;
+                    action_button.show_all ();
 
                     if (show_open && package.get_can_launch ()) {
                         open_button.no_show_all = false;

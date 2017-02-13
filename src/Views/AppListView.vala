@@ -26,7 +26,7 @@ namespace AppCenter.Views {
         public AppListView () {}
 
         protected override Widgets.AppListRow make_row (AppCenterCore.Package package)  {
-            return (Widgets.AppListRow)(new Widgets.PackageRow (package, action_button_group));
+            return (Widgets.AppListRow)(new Widgets.PackageRow.list (package, action_button_group, false));
         }
     }
 
@@ -99,7 +99,7 @@ namespace AppCenter.Views {
         protected override void after_add_remove_change_row () {update_headers ();}
 
         protected override Widgets.AppListRow make_row (AppCenterCore.Package package) {
-            return (Widgets.AppListRow)(new Widgets.PackageRow (package, action_button_group));
+            return (Widgets.AppListRow)(new Widgets.PackageRow.installed (package, action_button_group, false));
         }
 
         protected override void on_package_changing (AppCenterCore.Package package, bool is_changing) {
