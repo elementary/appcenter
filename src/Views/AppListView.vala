@@ -70,7 +70,10 @@ namespace AppCenter.Views {
             
             restart_button = new Widgets.AppActionButton (_("Restart Now"));
             restart_button.set_suggested_action_header ();
-            //restart_button.clicked.connect ();
+            restart_button.clicked.connect (() => {
+                var dialog = new Widgets.RestartDialog ();
+                dialog.show_all ();
+            });
             restart_button.no_show_all = true;
             action_button_group.add_widget (restart_button);
 
@@ -272,10 +275,10 @@ namespace AppCenter.Views {
             if (!updating_all_apps && !updating_cache) {
                 var client = AppCenterCore.Client.get_default ();
                 client.check_restart.begin ((obj, res) => {
-                    var restart = client.check_restart.end (res);
+                    var restart_required = client.check_restart.end (res);
                     
-                    updated_header.update (0, 0, updating_cache, restart);
-                    restart_button.visible = restart;
+                    updated_header.update (0, 0, updating_cache, restart_required);
+                    restart_button.visible = restart_required;
                 });
             } else {        
                 updated_header.update (0, 0, updating_cache, false);
