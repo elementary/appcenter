@@ -22,11 +22,63 @@
 namespace AppCenter.Views {
     /** AppList for Category and Search Views.  Sorts by name and does not show Uninstall Button **/
     public class AppListView : AbstractAppList {
+        private uint current_visible_index = 0U;
+        private GLib.ListStore list_store;
 
         public AppListView () {}
 
+        construct {
+            list_store = new GLib.ListStore (typeof (AppCenterCore.Package));
+            edge_reached.connect ((position) => {
+                if (position == Gtk.PositionType.BOTTOM) {
+                    show_more_apps ();
+                }
+            });
+        }
+
+        public override void add_packages (Gee.Collection<AppCenterCore.Package> packages) {
+            list_store.splice (0, 0, (GLib.Object[]) packages.to_array ());
+            list_store.sort ((GLib.CompareDataFunc<AppCenterCore.Package>) compare_packages);
+            if (current_visible_index < 20) {
+                show_more_apps ();
+            }
+        }
+
+        public override void add_package (AppCenterCore.Package package) {
+            list_store.insert_sorted (package, (GLib.CompareDataFunc<AppCenterCore.Package>) compare_packages);
+            if (current_visible_index < 20) {
+                show_more_apps ();
+            }
+        }
+
+        public override void clear () {
+            base.clear ();
+            list_store.remove_all ();
+            current_visible_index = 0U;
+        }
+
         protected override Widgets.AppListRow make_row (AppCenterCore.Package package)  {
             return (Widgets.AppListRow)(new Widgets.PackageRow.list (package, action_button_group, false));
+        }
+
+        // Show 20 more apps on the listbox
+        private void show_more_apps () {
+            uint old_index = current_visible_index;
+            while (current_visible_index < list_store.get_n_items ()) {
+                var package = (AppCenterCore.Package?) list_store.get_object (current_visible_index);
+                var row = make_row (package);
+                set_up_row (row);
+                current_visible_index++;
+                if (old_index + 20 < current_visible_index) {
+                    break;
+                }
+            }
+
+            after_add_remove_change_row ();
+        }
+
+        private static int compare_packages (AppCenterCore.Package p1, AppCenterCore.Package p2) {
+            return p1.get_name ().collate (p2.get_name ());
         }
     }
 

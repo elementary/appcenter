@@ -55,9 +55,7 @@ public class AppCenter.Views.InstalledView : View {
         unowned Client client = Client.get_default ();
 
         var installed_apps = yield client.get_installed_applications ();
-        foreach (var app in installed_apps) {
-            app_list_view.add_package (app);
-        }
+        app_list_view.add_packages (installed_apps);
 
         yield client.get_updates ();
     }
