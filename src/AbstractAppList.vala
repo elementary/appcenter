@@ -43,6 +43,15 @@ namespace AppCenter {
             action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
         }
 
+        public virtual void add_packages (Gee.Collection<AppCenterCore.Package> packages) {
+            foreach (var package in packages) {
+                var row = make_row (package);
+                set_up_row (row);
+            }
+
+            after_add_remove_change_row ();
+        }
+
         public virtual void add_package (AppCenterCore.Package package) {
             var row = make_row (package);
             set_up_row (row);
@@ -64,7 +73,7 @@ namespace AppCenter {
             after_add_remove_change_row ();
         }
 
-        public void clear () {
+        public virtual void clear () {
             foreach (var r in list_box.get_children ()) {
                 var row = (Widgets.AppListRow)r;
                 if (row.has_package ()) {
@@ -85,7 +94,7 @@ namespace AppCenter {
 
         protected virtual void after_add_remove_change_row () {}
 
-        protected Gee.Collection<AppCenterCore.Package> get_packages () {
+        protected virtual Gee.Collection<AppCenterCore.Package> get_packages () {
             var tree_set = new Gee.TreeSet<AppCenterCore.Package> ();
             foreach (var r in list_box.get_children ()) {
                 var row = (Widgets.AppListRow)r;

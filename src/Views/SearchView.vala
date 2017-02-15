@@ -21,7 +21,6 @@
 using AppCenterCore;
 
 public class AppCenter.Views.SearchView : View {
-    const int MAX_NUMBER_OF_SEARCH_RESULTS = 100;
     AppListView app_list_view;
 
     public SearchView () {
@@ -46,15 +45,6 @@ public class AppCenter.Views.SearchView : View {
         app_list_view.clear ();
         unowned Client client = Client.get_default ();
         var found_apps = client.search_applications (search_term, category);
-        
-        if (found_apps.size > 0) {
-            var apps_array = found_apps.to_array ();
-            int i = 0;
-            while (i < apps_array.length && i < MAX_NUMBER_OF_SEARCH_RESULTS) {
-                var app = apps_array[i];
-                app_list_view.add_package (app);
-                i++;   
-            }
-        }
+        app_list_view.add_packages (found_apps);
     }
 }

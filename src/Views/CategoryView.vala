@@ -96,9 +96,7 @@ public class AppCenter.Views.CategoryView : View {
 
         unowned Client client = Client.get_default ();
         var apps = client.get_applications_for_category (category);
-        foreach (var app in apps) {
-            app_list_view.add_package (app);
-        }
+        app_list_view.add_packages (apps);
 
     }
 
