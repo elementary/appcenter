@@ -193,9 +193,9 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         view_mode.selected = 1;
     }
 
-    public void search(string term) {
+    public void search (string term) {
         search_entry.text = term;
-        trigger_search();
+        trigger_search ();
     }
 
     private void trigger_search () {
