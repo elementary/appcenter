@@ -194,6 +194,11 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         view_mode.selected = 1;
     }
 
+    public void search (string term) {
+        search_entry.text = term;
+        trigger_search ();
+    }
+
     private void trigger_search () {
         unowned string research = search_entry.text;
         if (research.length < 2) {

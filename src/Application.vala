@@ -127,7 +127,11 @@ public class AppCenter.App : Granite.Application {
             if (package != null) {
                 main_window.show_package (package);
             } else {
-                warning (_("Specified link '%s' could not be found, going back to the main panel").printf (link));
+                info (_("Specified link '%s' could not be found, searching instead").printf (link));
+                string? search_term = Uri.unescape_string (link);
+                if (search_term != null) {
+                    main_window.search (search_term);
+                }
             }
         }
 
