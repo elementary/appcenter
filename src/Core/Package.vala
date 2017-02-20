@@ -87,7 +87,10 @@ public class AppCenterCore.Package : Object {
         private get { return _latest_version; }
         internal set { _latest_version = convert_version (value); }
     }
+
     private Pk.Package? pk_package = null;
+    private AppInfo? app_info;
+    private bool app_info_retrieved = false;
 
     construct {
         installed_packages = new Gee.TreeSet<Pk.Package> ();
@@ -154,14 +157,8 @@ public class AppCenterCore.Package : Object {
     }
 
     public void launch () throws Error {
-        string desktop_id = component.get_desktop_id ();
-        if (desktop_id == null) {
-            throw new PackageLaunchError.DESKTOP_ID_NOT_FOUND ("desktop ID not found");
-        }
-
-        var app_info = new DesktopAppInfo (desktop_id);
         if (app_info == null) {
-            throw new PackageLaunchError.APP_INFO_NOT_FOUND ("AppInfo not found for %s ID".printf (desktop_id));
+            throw new PackageLaunchError.APP_INFO_NOT_FOUND ("AppInfo not found for package: %s".printf (get_name ()));
         }
 
         try {
@@ -332,7 +329,17 @@ public class AppCenterCore.Package : Object {
     }
 
     public bool get_can_launch () {
-        return component.get_desktop_id () != null;
+        if (app_info_retrieved) {
+            return app_info != null;
+        }
+
+        string? desktop_id = component.get_desktop_id ();
+        if (desktop_id != null) {
+            app_info = new DesktopAppInfo (desktop_id);
+        }
+
+        app_info_retrieved = true;
+        return app_info != null;
     }
 
     private Pk.Package? find_package () {
