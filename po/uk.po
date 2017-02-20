@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-02-03 17:52-0600\n"
-"PO-Revision-Date: 2016-10-22 12:32+0000\n"
+"PO-Revision-Date: 2017-02-19 15:04+0000\n"
 "Last-Translator: neiron13 <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -11,8 +11,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2017-02-05 05:30+0000\n"
-"X-Generator: Launchpad (build 18322)\n"
+"X-Launchpad-Export-Date: 2017-02-20 05:32+0000\n"
+"X-Generator: Launchpad (build 18326)\n"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -170,14 +170,15 @@ msgstr "Оновлення системних компонетів"
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Оновлення доступне"
-msgstr[1] ""
-msgstr[2] "Доступні оновлення"
+msgstr[1] "Оновлення доступне"
+msgstr[2] "Оновлення доступне"
 
 #: ../src/Core/Client.vala:326
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "%u оновлення доступне для вашої системи"
 msgstr[1] "%u оновлення доступні для вашої системи"
+msgstr[2] "%u оновлення доступні для вашої системи"
 
 #: ../src/Core/Package.vala:130
 msgid "Application installed"
@@ -201,7 +202,7 @@ msgstr "Вилучити"
 
 #: ../src/AbstractAppContainer.vala:73
 msgid "Open"
-msgstr ""
+msgstr "Відкрити"
 
 #: ../src/AbstractAppContainer.vala:172
 msgid "Update"
@@ -341,7 +342,8 @@ msgstr "Додатки не знайдені. Спробуйте змінити 
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "%u оновлення доступне"
-msgstr[1] "%u оновлень доступне"
+msgstr[1] "%u оновлення доступні"
+msgstr[2] "%u оновлення доступні"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:122
 msgid "Size: %s"
