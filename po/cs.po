@@ -3,15 +3,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-02-03 17:52-0600\n"
-"PO-Revision-Date: 2017-01-24 08:38+0000\n"
-"Last-Translator: Petr Dombek <dombek@oblati.cz>\n"
+"PO-Revision-Date: 2017-02-24 12:22+0000\n"
+"Last-Translator: Sandra <sandra@esperas.eu>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2017-02-05 05:29+0000\n"
-"X-Generator: Launchpad (build 18322)\n"
+"X-Launchpad-Export-Date: 2017-02-25 05:40+0000\n"
+"X-Generator: Launchpad (build 18328)\n"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -27,7 +27,7 @@ msgstr "Běží"
 
 #: ../src/Core/ChangeInformation.vala:60
 msgid "Querying"
-msgstr ""
+msgstr "Dotazování"
 
 #: ../src/Core/ChangeInformation.vala:62
 msgid "Getting information"
@@ -174,8 +174,9 @@ msgstr[1] ""
 #: ../src/Core/Client.vala:326
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u aktualizace je pro váš systém k dispozici"
+msgstr[1] "%u aktualizace jsou pro váš systém k dispozici"
+msgstr[2] "%u aktualizací je pro váš systém k dispozici"
 
 #: ../src/Core/Package.vala:130
 msgid "Application installed"
@@ -216,6 +217,7 @@ msgstr ""
 "  Ales Ulehla https://launchpad.net/~ales-ulehla-k\n"
 "  David https://launchpad.net/~devercz\n"
 "  Honza Lafek https://launchpad.net/~hlafek99\n"
+"  Jan Marek https://launchpad.net/~janmarek28\n"
 "  Jaroslav Staněk https://launchpad.net/~fleury08\n"
 "  Kwogate https://launchpad.net/~danielman\n"
 "  Marek Suchánek https://launchpad.net/~suchm\n"
@@ -247,7 +249,7 @@ msgstr "Skupiny"
 #: ../src/MainWindow.vala:114 ../src/Views/InstalledView.vala:45
 msgctxt "view"
 msgid "Updates"
-msgstr ""
+msgstr "Aktualizace"
 
 #: ../src/MainWindow.vala:258
 msgid "Search %s"
@@ -351,7 +353,7 @@ msgstr "Hledají se aktualizace…"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:165
 msgid "Up to Date"
-msgstr ""
+msgstr "Aktuální"
 
 #~ msgid "Home Page"
 #~ msgstr "Domovská stránka"
