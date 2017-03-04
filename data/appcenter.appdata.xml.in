@@ -28,7 +28,7 @@
             <description>
                 <ul>
                     <_li>It is now possible to search apps inside a category</_li>
-                    <_li>MPrevent multiple authentication dialogs when resuming from suspend</_li>
+                    <_li>Prevent multiple authentication dialogs when resuming from suspend</_li>
                     <_li>Minor Bug Fixes</_li>
                     <_li>Translations Updates</_li>
                 </ul>
@@ -38,7 +38,7 @@
             <description>
                 <ul>
                     <_li>Show category name on the headbar</_li>
-                    <_li>Fix Steam instalation</_li>
+                    <_li>Fix Steam installation</_li>
                     <_li>Make search asynchronous</_li>
                     <_li>Minor Bug Fixes</_li>
                     <_li>Translations Updates</_li>
