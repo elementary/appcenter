@@ -1,31 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2015 elementary, LLC <contact@elementary.io> -->
-<component type="desktop">
-  <id>org.pantheon.appcenter.desktop</id>
-  <metadata_license>CC0-1.0</metadata_license>
-  <project_group>elementary</project_group>
-  <project_license>GPL-3.0+</project_license>
-  <_name>AppCenter</_name>
-  <_summary>Browse and manage apps</_summary>
-  <description>
-    <_p>
-      An app store for indie and open source developers. Browse by categories or
-      search and discover new apps. AppCenter is also used for updating your
-      system to the latest and greatest version for new features and fixes.
-    </_p>
-  </description>
-  <releases>
-    <release timestamp="1318750600" version="0.1"/>
-  </releases>
-  <provides>
-    <binary>appcenter</binary>
-    <binary>appcenter-daemon</binary>
-    <dbus type="user">org.pantheon.AppCenter</dbus>
-  </provides>
-  <developer_name>elementary LLC.</developer_name>
-  <url type="homepage">http://elementary.io/</url>
-  <url type="bugtracker">https://bugs.launchpad.net/appcenter</url>
-  <url type="donation">https://elementary.io/get-involved#funding</url>
-  <url type="help">https://elementaryos.stackexchange.com/questions/tagged/appcenter</url>
-  <update_contact>contact_at_elementary.io</update_contact>
+<component type="desktop-application">
+    <id>org.pantheon.appcenter.desktop</id>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_group>elementary</project_group>
+    <project_license>GPL-3.0+</project_license>
+    <_name>AppCenter</_name>
+    <_summary>Browse and manage apps</_summary>
+    <description>
+        <_p>
+        An app store for indie and open source developers. Browse by categories or
+        search and discover new apps. AppCenter is also used for updating your
+        system to the latest and greatest version for new features and fixes.
+        </_p>
+    </description>
+    <releases>
+        <release version="0.1.3" date="2016-12-05" urgency="medium">
+            <description>
+                <_p>Bug fixes and improve perfomance.</_p>
+                <ul>
+                    <_li>Fix crash caused by entries with missing packages</_li>
+                    <_li>Translations Updates</_li>
+                </ul>
+            </description>
+        </release>
+        <release version="0.1.2" date="2016-10-29" urgency="medium">
+            <description>
+                <_p>Add capability to search by category and apply minor bug fixes.</_p>
+                <ul>
+                    <_li>It is now possible to search apps inside a category</_li>
+                    <_li>Prevent multiple authentication dialogs when resuming from suspend</_li>
+                    <_li>Translations Updates</_li>
+                </ul>
+            </description>
+        </release>
+        <release version="0.1.1" date="2016-09-26" urgency="medium">
+            <description>
+                <_p>Search perfomance has beeen improved, the category name is now shown on the headbar and minor bugs have been fixed.</_p>
+                <ul>
+                    <_li>Fix Steam installation</_li>
+                    <_li>Make search asynchronous</_li>
+                    <_li>Translations Updates</_li>
+                </ul>
+            </description>
+        </release>
+        <release version="0.1.0" date="2016-08-15"/>
+    </releases>
+    <provides>
+        <binary>appcenter</binary>
+        <binary>appcenter-daemon</binary>
+        <dbus type="user">org.pantheon.AppCenter</dbus>
+    </provides>
+    <developer_name>elementary LLC.</developer_name>
+    <url type="homepage">http://elementary.io/</url>
+    <url type="bugtracker">https://bugs.launchpad.net/appcenter</url>
+    <url type="donation">https://elementary.io/get-involved#funding</url>
+    <url type="help">https://elementaryos.stackexchange.com/questions/tagged/appcenter</url>
+    <update_contact>contact_at_elementary.io</update_contact>
 </component>
