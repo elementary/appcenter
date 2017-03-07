@@ -6,5 +6,5 @@ configure_file_translation(${CMAKE_CURRENT_SOURCE_DIR}/appcenter.appdata.xml.in 
 
 install (FILES ${CMAKE_CURRENT_BINARY_DIR}/org.pantheon.appcenter.desktop DESTINATION share/applications)
 install (FILES ${CMAKE_CURRENT_BINARY_DIR}/org.pantheon.appcenter-daemon.desktop DESTINATION share/applications)
-install (FILES ${CMAKE_CURRENT_BINARY_DIR}/appcenter.appdata.xml DESTINATION share/appdata)
+install (FILES ${CMAKE_CURRENT_BINARY_DIR}/appcenter.appdata.xml DESTINATION share/metainfo)
 
