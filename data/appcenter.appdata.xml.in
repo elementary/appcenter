@@ -20,7 +20,7 @@
                 <_p>Bug fixes and improve perfomance.</_p>
                 <ul>
                     <_li>Fix crash caused by entries with missing packages</_li>
-                    <_li>Translations Updates</_li>
+                    <_li>New translations</_li>
                 </ul>
             </description>
         </release>
@@ -30,7 +30,7 @@
                 <ul>
                     <_li>It is now possible to search apps inside a category</_li>
                     <_li>Prevent multiple authentication dialogs when resuming from suspend</_li>
-                    <_li>Translations Updates</_li>
+                    <_li>New translations</_li>
                 </ul>
             </description>
         </release>
@@ -40,7 +40,7 @@
                 <ul>
                     <_li>Fix Steam installation</_li>
                     <_li>Make search asynchronous</_li>
-                    <_li>Translations Updates</_li>
+                    <_li>New translations</_li>
                 </ul>
             </description>
         </release>
