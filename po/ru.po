@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-03 17:52-0600\n"
+"POT-Creation-Date: 2017-03-09 00:06-0600\n"
 "PO-Revision-Date: 2017-01-24 07:29+0000\n"
 "Last-Translator: Maxim Taranov <png2378@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -11,8 +11,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2017-02-05 05:30+0000\n"
-"X-Generator: Launchpad (build 18322)\n"
+"X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
+"X-Generator: Launchpad (build 18331)\n"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -166,25 +166,25 @@ msgstr "Обновления операционной системы"
 msgid "Updates to system components"
 msgstr "Обновление компонентов системы"
 
-#: ../src/Core/Client.vala:325
+#: ../src/Core/Client.vala:331
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Доступно обновление"
 msgstr[1] "Доступны обновления"
 msgstr[2] "Доступны обновления"
 
-#: ../src/Core/Client.vala:326
+#: ../src/Core/Client.vala:332
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "Для системы доступно %u обновление"
 msgstr[1] "Для системы доступны %u обновления"
 msgstr[2] "Для системы доступны %u обновлений"
 
-#: ../src/Core/Package.vala:130
+#: ../src/Core/Package.vala:137
 msgid "Application installed"
 msgstr "Приложение установлено"
 
-#: ../src/Core/Package.vala:131
+#: ../src/Core/Package.vala:138
 msgid "%s has been successfully installed"
 msgstr "Приложение «%s» успешно установлено"
 
@@ -192,7 +192,7 @@ msgstr "Приложение «%s» успешно установлено"
 msgid "Cancel"
 msgstr "Отменить"
 
-#: ../src/AbstractAppContainer.vala:67 ../src/AbstractAppContainer.vala:137
+#: ../src/AbstractAppContainer.vala:67 ../src/AbstractAppContainer.vala:135
 msgid "Install"
 msgstr "Установить"
 
@@ -204,7 +204,7 @@ msgstr "Удалить"
 msgid "Open"
 msgstr "Открыть"
 
-#: ../src/AbstractAppContainer.vala:172
+#: ../src/AbstractAppContainer.vala:170
 msgid "Update"
 msgstr "Обновить"
 
@@ -221,47 +221,45 @@ msgstr ""
 "  Leopotam https://launchpad.net/~leopotam\n"
 "  Maxim Taranov https://launchpad.net/~png2378\n"
 "  Mukusev Vladimir https://launchpad.net/~damon95\n"
-"  Ramiz Demiurge https://launchpad.net/~ramiz.demiurge\n"
 "  Yuly Nesterov https://launchpad.net/~inpr1se\n"
 "  elementaryart (old) https://launchpad.net/~elementaryart\n"
 "  Павел https://launchpad.net/~pashazubenko\n"
 "  михаил https://launchpad.net/~ded-mixei"
 
 #: ../src/Application.vala:130
-msgid "Specified link '%s' could not be found, going back to the main panel"
+msgid "Specified link '%s' could not be found, searching instead"
 msgstr ""
-"Указанная ссылка '%s' не может быть найдена, возвращение к главной панели"
 
-#: ../src/MainWindow.vala:95
+#: ../src/MainWindow.vala:96
 msgid "AppCenter"
 msgstr "AppCenter"
 
-#: ../src/MainWindow.vala:103 ../src/MainWindow.vala:130
-#: ../src/MainWindow.vala:276 ../src/MainWindow.vala:298
+#: ../src/MainWindow.vala:104 ../src/MainWindow.vala:131
+#: ../src/MainWindow.vala:282 ../src/MainWindow.vala:304
 msgid "Search Apps"
 msgstr "Поиск приложений"
 
-#: ../src/MainWindow.vala:113 ../src/MainWindow.vala:189
+#: ../src/MainWindow.vala:114 ../src/MainWindow.vala:190
 #: ../src/Views/CategoryView.vala:72 ../src/Views/CategoryView.vala:79
 msgid "Categories"
 msgstr "Категории"
 
-#: ../src/MainWindow.vala:114 ../src/Views/InstalledView.vala:45
+#: ../src/MainWindow.vala:115 ../src/Views/InstalledView.vala:45
 msgctxt "view"
 msgid "Updates"
 msgstr "Обновления"
 
-#: ../src/MainWindow.vala:258
+#: ../src/MainWindow.vala:264
 msgid "Search %s"
 msgstr "Поиск %s"
 
 #. / TRANSLATORS: the name of the Search view
-#: ../src/Views/SearchView.vala:36
+#: ../src/Views/SearchView.vala:35
 msgctxt "view"
 msgid "Search"
 msgstr "Поиск"
 
-#: ../src/Views/AppListView.vala:64
+#: ../src/Views/AppListView.vala:116
 msgid "Update All"
 msgstr "Обновить всё"
 
@@ -273,51 +271,51 @@ msgstr "Самые популярные"
 msgid "Latest Apps"
 msgstr "Новые приложения"
 
-#: ../src/Views/CategoryView.vala:122
+#: ../src/Views/CategoryView.vala:120
 msgid "Audio"
 msgstr "Аудио"
 
-#: ../src/Views/CategoryView.vala:133
+#: ../src/Views/CategoryView.vala:131
 msgid "Development"
 msgstr "Разработка"
 
-#: ../src/Views/CategoryView.vala:144
+#: ../src/Views/CategoryView.vala:142
 msgid "Accessories"
 msgstr "Утилиты"
 
-#: ../src/Views/CategoryView.vala:155
+#: ../src/Views/CategoryView.vala:153
 msgid "Office"
 msgstr "Офис"
 
-#: ../src/Views/CategoryView.vala:166
+#: ../src/Views/CategoryView.vala:164
 msgid "System"
 msgstr "Система"
 
-#: ../src/Views/CategoryView.vala:177
+#: ../src/Views/CategoryView.vala:175
 msgid "Video"
 msgstr "Видео"
 
-#: ../src/Views/CategoryView.vala:188
+#: ../src/Views/CategoryView.vala:186
 msgid "Graphics"
 msgstr "Графика"
 
-#: ../src/Views/CategoryView.vala:198
+#: ../src/Views/CategoryView.vala:196
 msgid "Games"
 msgstr "Игры"
 
-#: ../src/Views/CategoryView.vala:209
+#: ../src/Views/CategoryView.vala:207
 msgid "Education"
 msgstr "Образование"
 
-#: ../src/Views/CategoryView.vala:219
+#: ../src/Views/CategoryView.vala:217
 msgid "Internet"
 msgstr "Интернет"
 
-#: ../src/Views/CategoryView.vala:230
+#: ../src/Views/CategoryView.vala:228
 msgid "Science & Engineering"
 msgstr "Наука и инженерия"
 
-#: ../src/Views/CategoryView.vala:240
+#: ../src/Views/CategoryView.vala:238
 msgid "Universal Access"
 msgstr "Специальные возможности"
 

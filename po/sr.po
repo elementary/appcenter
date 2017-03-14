@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-03 17:52-0600\n"
+"POT-Creation-Date: 2017-03-09 00:06-0600\n"
 "PO-Revision-Date: 2017-01-08 07:33+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <(nothing)>\n"
@@ -12,8 +12,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2017-02-05 05:30+0000\n"
-"X-Generator: Launchpad (build 18322)\n"
+"X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
+"X-Generator: Launchpad (build 18331)\n"
 "Language: sr\n"
 
 #: ../src/Core/ChangeInformation.vala:54
@@ -168,25 +168,25 @@ msgstr "Освежења оперативног система"
 msgid "Updates to system components"
 msgstr "Освежења компонентама система"
 
-#: ../src/Core/Client.vala:325
+#: ../src/Core/Client.vala:331
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Доступно је освежење"
 msgstr[1] "Доступна су освежења"
 msgstr[2] "Доступна су освежења"
 
-#: ../src/Core/Client.vala:326
+#: ../src/Core/Client.vala:332
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "%u освежење је доступно за ваш систем"
 msgstr[1] "%u освежења су доступна за ваш систем"
 msgstr[2] "%u освежења је доступно за ваш систем"
 
-#: ../src/Core/Package.vala:130
+#: ../src/Core/Package.vala:137
 msgid "Application installed"
 msgstr "Програм је инсталиран"
 
-#: ../src/Core/Package.vala:131
+#: ../src/Core/Package.vala:138
 msgid "%s has been successfully installed"
 msgstr "„%s“ је успешно инсталиран"
 
@@ -194,7 +194,7 @@ msgstr "„%s“ је успешно инсталиран"
 msgid "Cancel"
 msgstr "Откажи"
 
-#: ../src/AbstractAppContainer.vala:67 ../src/AbstractAppContainer.vala:137
+#: ../src/AbstractAppContainer.vala:67 ../src/AbstractAppContainer.vala:135
 msgid "Install"
 msgstr "Инсталирај"
 
@@ -206,7 +206,7 @@ msgstr "Уклони"
 msgid "Open"
 msgstr ""
 
-#: ../src/AbstractAppContainer.vala:172
+#: ../src/AbstractAppContainer.vala:170
 msgid "Update"
 msgstr "Освежи"
 
@@ -223,39 +223,39 @@ msgstr ""
 "  Мирослав Николић https://launchpad.net/~lipek"
 
 #: ../src/Application.vala:130
-msgid "Specified link '%s' could not be found, going back to the main panel"
-msgstr "Не могу да нађем наведену везу „%s“, враћам се на главни панел"
+msgid "Specified link '%s' could not be found, searching instead"
+msgstr ""
 
-#: ../src/MainWindow.vala:95
+#: ../src/MainWindow.vala:96
 msgid "AppCenter"
 msgstr "Програмски центар"
 
-#: ../src/MainWindow.vala:103 ../src/MainWindow.vala:130
-#: ../src/MainWindow.vala:276 ../src/MainWindow.vala:298
+#: ../src/MainWindow.vala:104 ../src/MainWindow.vala:131
+#: ../src/MainWindow.vala:282 ../src/MainWindow.vala:304
 msgid "Search Apps"
 msgstr "Тражи програме"
 
-#: ../src/MainWindow.vala:113 ../src/MainWindow.vala:189
+#: ../src/MainWindow.vala:114 ../src/MainWindow.vala:190
 #: ../src/Views/CategoryView.vala:72 ../src/Views/CategoryView.vala:79
 msgid "Categories"
 msgstr "Категорије"
 
-#: ../src/MainWindow.vala:114 ../src/Views/InstalledView.vala:45
+#: ../src/MainWindow.vala:115 ../src/Views/InstalledView.vala:45
 msgctxt "view"
 msgid "Updates"
 msgstr "Освежења"
 
-#: ../src/MainWindow.vala:258
+#: ../src/MainWindow.vala:264
 msgid "Search %s"
 msgstr "Тражи „%s“"
 
 #. / TRANSLATORS: the name of the Search view
-#: ../src/Views/SearchView.vala:36
+#: ../src/Views/SearchView.vala:35
 msgctxt "view"
 msgid "Search"
 msgstr "Тражи"
 
-#: ../src/Views/AppListView.vala:64
+#: ../src/Views/AppListView.vala:116
 msgid "Update All"
 msgstr "Освежи све"
 
@@ -267,51 +267,51 @@ msgstr "Најбоље оцењене"
 msgid "Latest Apps"
 msgstr "Најновији програми"
 
-#: ../src/Views/CategoryView.vala:122
+#: ../src/Views/CategoryView.vala:120
 msgid "Audio"
 msgstr "Звук"
 
-#: ../src/Views/CategoryView.vala:133
+#: ../src/Views/CategoryView.vala:131
 msgid "Development"
 msgstr "Програмирање"
 
-#: ../src/Views/CategoryView.vala:144
+#: ../src/Views/CategoryView.vala:142
 msgid "Accessories"
 msgstr "Алатке"
 
-#: ../src/Views/CategoryView.vala:155
+#: ../src/Views/CategoryView.vala:153
 msgid "Office"
 msgstr "Канцеларија"
 
-#: ../src/Views/CategoryView.vala:166
+#: ../src/Views/CategoryView.vala:164
 msgid "System"
 msgstr "Систем"
 
-#: ../src/Views/CategoryView.vala:177
+#: ../src/Views/CategoryView.vala:175
 msgid "Video"
 msgstr "Видео"
 
-#: ../src/Views/CategoryView.vala:188
+#: ../src/Views/CategoryView.vala:186
 msgid "Graphics"
 msgstr "Графика"
 
-#: ../src/Views/CategoryView.vala:198
+#: ../src/Views/CategoryView.vala:196
 msgid "Games"
 msgstr "Игре"
 
-#: ../src/Views/CategoryView.vala:209
+#: ../src/Views/CategoryView.vala:207
 msgid "Education"
 msgstr "Образовање"
 
-#: ../src/Views/CategoryView.vala:219
+#: ../src/Views/CategoryView.vala:217
 msgid "Internet"
 msgstr "Интернет"
 
-#: ../src/Views/CategoryView.vala:230
+#: ../src/Views/CategoryView.vala:228
 msgid "Science & Engineering"
 msgstr "Наука и инжењерство"
 
-#: ../src/Views/CategoryView.vala:240
+#: ../src/Views/CategoryView.vala:238
 msgid "Universal Access"
 msgstr "Универзални приступ"
 

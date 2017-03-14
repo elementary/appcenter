@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-03 17:52-0600\n"
+"POT-Creation-Date: 2017-03-09 00:06-0600\n"
 "PO-Revision-Date: 2016-09-30 19:08+0000\n"
 "Last-Translator: Адмирал АнимЕ <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2017-02-05 05:31+0000\n"
-"X-Generator: Launchpad (build 18322)\n"
+"X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
+"X-Generator: Launchpad (build 18331)\n"
 
 msgid "AppCenter"
 msgstr "Център за приложения"
@@ -35,3 +35,32 @@ msgstr ""
 "отворен код. Разглеждайте по категория или търсете за нови приложения. "
 "Програмата също така се използва и за обновяване на системата ви до най-"
 "новата версия."
+
+msgid "Bug fixes and improve perfomance."
+msgstr ""
+
+msgid "Fix crash caused by entries with missing packages"
+msgstr ""
+
+msgid "New translations"
+msgstr ""
+
+msgid "Add capability to search by category and apply minor bug fixes."
+msgstr ""
+
+msgid "It is now possible to search apps inside a category"
+msgstr ""
+
+msgid "Prevent multiple authentication dialogs when resuming from suspend"
+msgstr ""
+
+msgid ""
+"Search perfomance has beeen improved, the category name is now shown on the "
+"headbar and minor bugs have been fixed."
+msgstr ""
+
+msgid "Fix Steam installation"
+msgstr ""
+
+msgid "Make search asynchronous"
+msgstr ""

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-03 17:52-0600\n"
+"POT-Creation-Date: 2017-03-09 00:06-0600\n"
 "PO-Revision-Date: 2017-02-27 16:21+0000\n"
 "Last-Translator: Christos Iatropoulos <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -10,8 +10,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2017-02-28 04:51+0000\n"
-"X-Generator: Launchpad (build 18329)\n"
+"X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
+"X-Generator: Launchpad (build 18331)\n"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -165,23 +165,23 @@ msgstr "Ενημερώσεις λειτουργικού συστήματος"
 msgid "Updates to system components"
 msgstr "Ενημερώσεις σε μέρη του συστήματος"
 
-#: ../src/Core/Client.vala:325
+#: ../src/Core/Client.vala:331
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Διαθέσιμη ενημέρωση"
 msgstr[1] "Διαθέσιμες ενημερώσεις"
 
-#: ../src/Core/Client.vala:326
+#: ../src/Core/Client.vala:332
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "%u ενημέρωση είναι διαθέσιμη για το σύστημα σας"
 msgstr[1] "%u ενημερώσεις είναι διαθέσιμες για το σύστημα σας"
 
-#: ../src/Core/Package.vala:130
+#: ../src/Core/Package.vala:137
 msgid "Application installed"
 msgstr "Η εφαρμογή εγκαταστάθηκε"
 
-#: ../src/Core/Package.vala:131
+#: ../src/Core/Package.vala:138
 msgid "%s has been successfully installed"
 msgstr "%s έχει εγκατασταθεί επιτυχώς"
 
@@ -189,7 +189,7 @@ msgstr "%s έχει εγκατασταθεί επιτυχώς"
 msgid "Cancel"
 msgstr "Ακύρωση"
 
-#: ../src/AbstractAppContainer.vala:67 ../src/AbstractAppContainer.vala:137
+#: ../src/AbstractAppContainer.vala:67 ../src/AbstractAppContainer.vala:135
 msgid "Install"
 msgstr "Εγκατάσταση"
 
@@ -201,7 +201,7 @@ msgstr "Απεγκατάσταση"
 msgid "Open"
 msgstr "Άνοιγμα"
 
-#: ../src/AbstractAppContainer.vala:172
+#: ../src/AbstractAppContainer.vala:170
 msgid "Update"
 msgstr "Ενημέρωση"
 
@@ -222,41 +222,39 @@ msgstr ""
 "  onIaom https://launchpad.net/~onlaom"
 
 #: ../src/Application.vala:130
-msgid "Specified link '%s' could not be found, going back to the main panel"
+msgid "Specified link '%s' could not be found, searching instead"
 msgstr ""
-"O συγκεκριμένος σύνδεσμος '%s' δεν μπόρεσε να βρεθεί, επιστροφή πίσω στο "
-"κυρίως παράθυρο"
 
-#: ../src/MainWindow.vala:95
+#: ../src/MainWindow.vala:96
 msgid "AppCenter"
 msgstr "Κέντρο εφαρμογών"
 
-#: ../src/MainWindow.vala:103 ../src/MainWindow.vala:130
-#: ../src/MainWindow.vala:276 ../src/MainWindow.vala:298
+#: ../src/MainWindow.vala:104 ../src/MainWindow.vala:131
+#: ../src/MainWindow.vala:282 ../src/MainWindow.vala:304
 msgid "Search Apps"
 msgstr "Αναζήτηση εφαρμογών"
 
-#: ../src/MainWindow.vala:113 ../src/MainWindow.vala:189
+#: ../src/MainWindow.vala:114 ../src/MainWindow.vala:190
 #: ../src/Views/CategoryView.vala:72 ../src/Views/CategoryView.vala:79
 msgid "Categories"
 msgstr "Κατηγορίες"
 
-#: ../src/MainWindow.vala:114 ../src/Views/InstalledView.vala:45
+#: ../src/MainWindow.vala:115 ../src/Views/InstalledView.vala:45
 msgctxt "view"
 msgid "Updates"
 msgstr "Ενημερώσεις"
 
-#: ../src/MainWindow.vala:258
+#: ../src/MainWindow.vala:264
 msgid "Search %s"
 msgstr "Αναζήτηση %s"
 
 #. / TRANSLATORS: the name of the Search view
-#: ../src/Views/SearchView.vala:36
+#: ../src/Views/SearchView.vala:35
 msgctxt "view"
 msgid "Search"
 msgstr "Αναζήτηση"
 
-#: ../src/Views/AppListView.vala:64
+#: ../src/Views/AppListView.vala:116
 msgid "Update All"
 msgstr "Ενημέρωση όλων"
 
@@ -268,51 +266,51 @@ msgstr "Καλύτερα αξιολογημένες"
 msgid "Latest Apps"
 msgstr "Νέες εφαρμογές"
 
-#: ../src/Views/CategoryView.vala:122
+#: ../src/Views/CategoryView.vala:120
 msgid "Audio"
 msgstr "Ήχος"
 
-#: ../src/Views/CategoryView.vala:133
+#: ../src/Views/CategoryView.vala:131
 msgid "Development"
 msgstr "Ανάπτυξη λογισμικού"
 
-#: ../src/Views/CategoryView.vala:144
+#: ../src/Views/CategoryView.vala:142
 msgid "Accessories"
 msgstr "Βοηθήματα"
 
-#: ../src/Views/CategoryView.vala:155
+#: ../src/Views/CategoryView.vala:153
 msgid "Office"
 msgstr "Γραφείο"
 
-#: ../src/Views/CategoryView.vala:166
+#: ../src/Views/CategoryView.vala:164
 msgid "System"
 msgstr "Σύστημα"
 
-#: ../src/Views/CategoryView.vala:177
+#: ../src/Views/CategoryView.vala:175
 msgid "Video"
 msgstr "Βίντεο"
 
-#: ../src/Views/CategoryView.vala:188
+#: ../src/Views/CategoryView.vala:186
 msgid "Graphics"
 msgstr "Γραφικά"
 
-#: ../src/Views/CategoryView.vala:198
+#: ../src/Views/CategoryView.vala:196
 msgid "Games"
 msgstr "ΠΑΙΧΝΙΔΙΑ"
 
-#: ../src/Views/CategoryView.vala:209
+#: ../src/Views/CategoryView.vala:207
 msgid "Education"
 msgstr "Εκπαίδευση"
 
-#: ../src/Views/CategoryView.vala:219
+#: ../src/Views/CategoryView.vala:217
 msgid "Internet"
 msgstr "Διαδίκτυο"
 
-#: ../src/Views/CategoryView.vala:230
+#: ../src/Views/CategoryView.vala:228
 msgid "Science & Engineering"
 msgstr "Επιστήμη & μηχανική"
 
-#: ../src/Views/CategoryView.vala:240
+#: ../src/Views/CategoryView.vala:238
 msgid "Universal Access"
 msgstr "ΓΕΝΙΚΗ ΠΡΟΣΒΑΣΗ"
 

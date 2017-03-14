@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-03 17:52-0600\n"
+"POT-Creation-Date: 2017-03-09 00:06-0600\n"
 "PO-Revision-Date: 2017-01-19 09:21+0000\n"
 "Last-Translator: Panan <panan25444@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -10,8 +10,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Launchpad-Export-Date: 2017-02-05 05:30+0000\n"
-"X-Generator: Launchpad (build 18322)\n"
+"X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
+"X-Generator: Launchpad (build 18331)\n"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -165,21 +165,21 @@ msgstr "การอัปเดตระบบปฏิบัติการ"
 msgid "Updates to system components"
 msgstr "การอัปเดตคอมโพเนนต์ของระบบ"
 
-#: ../src/Core/Client.vala:325
+#: ../src/Core/Client.vala:331
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "อัปเดตที่พร้อมใช้งานแล้ว"
 
-#: ../src/Core/Client.vala:326
+#: ../src/Core/Client.vala:332
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "การอัปเดต %u รายการพร้อมใช้งานสำหรับระบบของคุณแล้ว"
 
-#: ../src/Core/Package.vala:130
+#: ../src/Core/Package.vala:137
 msgid "Application installed"
 msgstr "ติดตั้งโปรแกรมแล้ว"
 
-#: ../src/Core/Package.vala:131
+#: ../src/Core/Package.vala:138
 msgid "%s has been successfully installed"
 msgstr "%s ได้ถูกติดตั้งอย่างสมบูรณ์แล้ว"
 
@@ -187,7 +187,7 @@ msgstr "%s ได้ถูกติดตั้งอย่างสมบูร
 msgid "Cancel"
 msgstr "ยกเลิก"
 
-#: ../src/AbstractAppContainer.vala:67 ../src/AbstractAppContainer.vala:137
+#: ../src/AbstractAppContainer.vala:67 ../src/AbstractAppContainer.vala:135
 msgid "Install"
 msgstr "ติดตั้ง"
 
@@ -199,7 +199,7 @@ msgstr "ถอนการติดตั้ง"
 msgid "Open"
 msgstr ""
 
-#: ../src/AbstractAppContainer.vala:172
+#: ../src/AbstractAppContainer.vala:170
 msgid "Update"
 msgstr "การอัปเดต"
 
@@ -215,39 +215,39 @@ msgstr ""
 "  Rockworld https://launchpad.net/~rockrock2222222"
 
 #: ../src/Application.vala:130
-msgid "Specified link '%s' could not be found, going back to the main panel"
-msgstr "การเชื่อมโยงที่ระบุ '%s' ไม่สามารถหาพบ กลับไปที่หน้าหลัก"
+msgid "Specified link '%s' could not be found, searching instead"
+msgstr ""
 
-#: ../src/MainWindow.vala:95
+#: ../src/MainWindow.vala:96
 msgid "AppCenter"
 msgstr "ศูนย์รวมแอพ"
 
-#: ../src/MainWindow.vala:103 ../src/MainWindow.vala:130
-#: ../src/MainWindow.vala:276 ../src/MainWindow.vala:298
+#: ../src/MainWindow.vala:104 ../src/MainWindow.vala:131
+#: ../src/MainWindow.vala:282 ../src/MainWindow.vala:304
 msgid "Search Apps"
 msgstr "ค้นหาแอป"
 
-#: ../src/MainWindow.vala:113 ../src/MainWindow.vala:189
+#: ../src/MainWindow.vala:114 ../src/MainWindow.vala:190
 #: ../src/Views/CategoryView.vala:72 ../src/Views/CategoryView.vala:79
 msgid "Categories"
 msgstr "หมวดหมู่"
 
-#: ../src/MainWindow.vala:114 ../src/Views/InstalledView.vala:45
+#: ../src/MainWindow.vala:115 ../src/Views/InstalledView.vala:45
 msgctxt "view"
 msgid "Updates"
 msgstr "อัปเดต"
 
-#: ../src/MainWindow.vala:258
+#: ../src/MainWindow.vala:264
 msgid "Search %s"
 msgstr "ค้นหา %s"
 
 #. / TRANSLATORS: the name of the Search view
-#: ../src/Views/SearchView.vala:36
+#: ../src/Views/SearchView.vala:35
 msgctxt "view"
 msgid "Search"
 msgstr "ค้นหา"
 
-#: ../src/Views/AppListView.vala:64
+#: ../src/Views/AppListView.vala:116
 msgid "Update All"
 msgstr "อัปเดตทั้งหมด"
 
@@ -259,51 +259,51 @@ msgstr "เรตติ้งดี"
 msgid "Latest Apps"
 msgstr "โปรแกรมล่าสุด"
 
-#: ../src/Views/CategoryView.vala:122
+#: ../src/Views/CategoryView.vala:120
 msgid "Audio"
 msgstr "เสียง"
 
-#: ../src/Views/CategoryView.vala:133
+#: ../src/Views/CategoryView.vala:131
 msgid "Development"
 msgstr "การพัฒนาโปรแกรม"
 
-#: ../src/Views/CategoryView.vala:144
+#: ../src/Views/CategoryView.vala:142
 msgid "Accessories"
 msgstr "เครื่องใช้ไม้สอย"
 
-#: ../src/Views/CategoryView.vala:155
+#: ../src/Views/CategoryView.vala:153
 msgid "Office"
 msgstr "สำนักงาน"
 
-#: ../src/Views/CategoryView.vala:166
+#: ../src/Views/CategoryView.vala:164
 msgid "System"
 msgstr "ระบบ"
 
-#: ../src/Views/CategoryView.vala:177
+#: ../src/Views/CategoryView.vala:175
 msgid "Video"
 msgstr "วิดีทัศน์"
 
-#: ../src/Views/CategoryView.vala:188
+#: ../src/Views/CategoryView.vala:186
 msgid "Graphics"
 msgstr "กราฟิก"
 
-#: ../src/Views/CategoryView.vala:198
+#: ../src/Views/CategoryView.vala:196
 msgid "Games"
 msgstr "เกม"
 
-#: ../src/Views/CategoryView.vala:209
+#: ../src/Views/CategoryView.vala:207
 msgid "Education"
 msgstr "การศึกษา"
 
-#: ../src/Views/CategoryView.vala:219
+#: ../src/Views/CategoryView.vala:217
 msgid "Internet"
 msgstr "อินเทอร์เน็ต"
 
-#: ../src/Views/CategoryView.vala:230
+#: ../src/Views/CategoryView.vala:228
 msgid "Science & Engineering"
 msgstr "วิทยาศาสตร์และวิศวกรรมศาสตร์"
 
-#: ../src/Views/CategoryView.vala:240
+#: ../src/Views/CategoryView.vala:238
 msgid "Universal Access"
 msgstr "การเข้าใช้งานสำหรับผู้ทุพพลภาพ"
 
