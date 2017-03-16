@@ -1,3 +1,9 @@
+appcenter (0.1.4) xenial; urgency=medium
+
+  * New upstream release.
+
+ -- Cody Garver <cody@elementary.io>  Thu, 16 Mar 2017 12:31:22 -0600
+
 appcenter (0.1.3) xenial; urgency=medium
 
   * New upstream release.
