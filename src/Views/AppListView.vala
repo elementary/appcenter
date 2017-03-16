@@ -89,6 +89,7 @@ namespace AppCenter.Views {
         private Widgets.UpdateHeaderRow updates_header;
         private Widgets.UpdateHeaderRow updated_header;
         private Widgets.AppActionButton update_all_button;
+        private Widgets.AppActionButton restart_button;
         private bool updating_all_apps = false;
         private bool apps_remaining_started = false;
         private GLib.Mutex update_mutex;
@@ -118,11 +119,21 @@ namespace AppCenter.Views {
             update_all_button.clicked.connect (on_update_all);
             update_all_button.no_show_all = true;
             action_button_group.add_widget (update_all_button);
+            
+            restart_button = new Widgets.AppActionButton (_("Restart Now"));
+            restart_button.set_suggested_action_header ();
+            restart_button.clicked.connect (() => {
+                var dialog = new Widgets.RestartDialog ();
+                dialog.show_all ();
+            });
+            restart_button.no_show_all = true;
+            action_button_group.add_widget (restart_button);
 
             updates_header = new Widgets.UpdateHeaderRow.updates ();
             updates_header.add_widget (update_all_button);
 
             updated_header = new Widgets.UpdateHeaderRow.updated ();
+            updated_header.add_widget (restart_button);
 
             list_box.add (updates_header);
             list_box.add (updated_header);
@@ -308,12 +319,22 @@ namespace AppCenter.Views {
                 }
             }
 
-            updates_header.update (update_numbers, update_real_size, updating_cache);
+            updates_header.update (update_numbers, update_real_size, updating_cache, false);
             update_all_button.visible = !updating_cache && update_numbers > 0;
         }
 
         private void update_updated_grid () {
-            updated_header.update (0, 0, updating_cache);
+            if (!updating_all_apps && !updating_cache) {
+                var client = AppCenterCore.Client.get_default ();
+                client.check_restart.begin ((obj, res) => {
+                    var restart_required = client.check_restart.end (res);
+                    
+                    updated_header.update (0, 0, updating_cache, restart_required);
+                    restart_button.visible = restart_required;
+                });
+            } else {        
+                updated_header.update (0, 0, updating_cache, false);
+            }
         }
     }
 }

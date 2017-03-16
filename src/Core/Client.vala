@@ -17,6 +17,8 @@
 public class AppCenterCore.Client : Object {
     public signal void updates_available ();
 
+    private const string RESTART_REQUIRED_FILE = "/var/run/reboot-required";
+
     public bool connected { public get; private set; }
     public bool updating_cache { public get; private set; }
     public uint task_count { public get; private set; default = 0; }
@@ -29,6 +31,7 @@ public class AppCenterCore.Client : Object {
     private GLib.DateTime last_cache_update;
     private uint updates_number = 0U;
     private uint update_cache_timeout_id = 0;
+    private bool restart_required = false;
     private bool refresh_in_progress = false;
 
     private const int SECONDS_BETWEEN_REFRESHES = 60*60*24;
@@ -354,6 +357,26 @@ public class AppCenterCore.Client : Object {
         task_count--;
         refresh_in_progress = false;
     }
+    
+   public async bool check_restart () {
+        if (FileUtils.test (RESTART_REQUIRED_FILE, FileTest.EXISTS)) {
+            if (!restart_required) {
+                string title = _("Restart Required");
+                string body = _("Please restart your system to finalize updates");
+                var notification = new Notification (title);
+                notification.set_body (body);
+                notification.set_icon (new ThemedIcon ("system-software-install"));
+                notification.set_priority (NotificationPriority.URGENT);
+                notification.set_default_action ("app.open-application");
+                Application.get_default ().send_notification ("restart", notification);
+            }
+
+            restart_required = true;            
+            return true;
+        }
+        
+        return false;
+    }
 
     public uint get_package_count (GLib.GenericArray<weak Pk.Package> package_array) {
         bool os_update_found = false;
@@ -436,6 +459,8 @@ public class AppCenterCore.Client : Object {
             } else {
                 refresh_in_progress = false; //Stops new timeout while no network.
             }
+
+            check_restart.begin ();
         } else {
             debug ("Too soon to refresh and not forced");
         }

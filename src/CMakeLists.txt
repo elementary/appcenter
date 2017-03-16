@@ -23,6 +23,8 @@ vala_precompile(VALA_C ${EXEC_NAME}
     Widgets/AppListRow.vala
     Widgets/AppActionButton.vala
     Widgets/UpdateHeaderRow.vala
+    Widgets/RestartDialog.vala
+    Services/DbusInterfaces.vala
     ${CMAKE_CURRENT_BINARY_DIR}/config.vala
 PACKAGES
     appstream
