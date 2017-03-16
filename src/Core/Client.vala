@@ -366,6 +366,7 @@ public class AppCenterCore.Client : Object {
                 var notification = new Notification (title);
                 notification.set_body (body);
                 notification.set_icon (new ThemedIcon ("system-software-install"));
+                notification.set_priority (NotificationPriority.URGENT);
                 notification.set_default_action ("app.open-application");
                 Application.get_default ().send_notification ("restart", notification);
             }
