@@ -3,15 +3,17 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-09 00:06-0600\n"
-"PO-Revision-Date: 2017-03-14 16:41+0000\n"
-"Last-Translator: elementaryart (old) <Unknown>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2017-03-16 23:36+0000\n"
+"Last-Translator: Leonardo <leonardo@elementary.io>\n"
+"Language-Team: Portuguese (Brazil) "
+"<http://weblate.elementary.io/projects/desktop/appcenter/pt_BR/>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 2.12\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
-"X-Generator: Launchpad (build 18331)\n"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -229,7 +231,7 @@ msgstr ""
 
 #: ../src/Application.vala:130
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr ""
+msgstr "O link '%s' especificado não pôde ser encontrado, procure ao invés"
 
 #: ../src/MainWindow.vala:96
 msgid "AppCenter"
@@ -348,7 +350,7 @@ msgstr "Tamanho: %s"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:158
 msgid "Searching for updates…"
-msgstr "Procurando atualizações..."
+msgstr "Procurando atualizações…"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:165
 msgid "Up to Date"
