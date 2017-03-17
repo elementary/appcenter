@@ -20,7 +20,7 @@
 
 namespace AppCenter.Views {
     public class AppInfoView : AppCenter.AbstractAppContainer {
-        Gtk.FlowBox links_flowbox;
+        Gtk.Grid links_flowbox;
         Gtk.Image app_screenshot;
         Gtk.Stack screenshot_stack;
         Gtk.Label app_screenshot_not_found;
@@ -90,7 +90,8 @@ namespace AppCenter.Views {
             app_description.pixels_inside_wrap = 3;
             app_description.wrap_mode = Gtk.WrapMode.WORD_CHAR;
 
-            links_flowbox = new Gtk.FlowBox ();
+            links_flowbox = new Gtk.Grid ();
+            links_flowbox.column_spacing = 24;
 
             content_grid = new Gtk.Grid ();
             content_grid.width_request = 800;
@@ -143,25 +144,17 @@ namespace AppCenter.Views {
                 load_extensions.begin ();
             }
 
-            var hompage_url = package.component.get_url (AppStream.UrlKind.HOMEPAGE);
+            var homepage_url = package.component.get_url (AppStream.UrlKind.HOMEPAGE);
 
-            if (hompage_url != null) {
-                var website_button = new Gtk.LinkButton (hompage_url);
-                website_button.always_show_image = true;
-                website_button.image = new Gtk.Image.from_icon_name ("web-browser-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
-                website_button.get_style_context ().add_class ("dim-label");
-
+            if (homepage_url != null) {
+                var website_button = new UrlButton (_("Homepage"), homepage_url, "web-browser-symbolic");
                 links_flowbox.add (website_button);
             }
 
             var bugtracker_url = package.component.get_url (AppStream.UrlKind.BUGTRACKER);
 
             if (bugtracker_url != null) {
-                var bugtracker_button = new Gtk.LinkButton (bugtracker_url);
-                bugtracker_button.always_show_image = true;
-                bugtracker_button.image = new Gtk.Image.from_icon_name ("bug-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
-                bugtracker_button.get_style_context ().add_class ("dim-label");
-
+                var bugtracker_button = new UrlButton (_("Report a Problem"), bugtracker_url, "bug-symbolic");
                 links_flowbox.add (bugtracker_button);
             }
 
@@ -273,6 +266,26 @@ namespace AppCenter.Views {
                 } catch (Error e) {
                     critical (e.message);
                 }
+            }
+        }
+
+        class UrlButton : Gtk.LinkButton {
+            public UrlButton (string label, string uri, string icon_name) {
+                Object (uri: uri);
+                get_style_context ().add_class ("dim-label");
+                tooltip_text = uri;
+                
+                var icon = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.LARGE_TOOLBAR);
+
+                var title = new Gtk.Label (label);
+
+                var grid = new Gtk.Grid ();
+                grid.row_spacing = 6;
+                grid.orientation = Gtk.Orientation.VERTICAL;
+                grid.add (icon);
+                grid.add (title);
+
+                add (grid);
             }
         }
     }
