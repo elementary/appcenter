@@ -20,6 +20,7 @@
 
 namespace AppCenter.Views {
     public class AppInfoView : AppCenter.AbstractAppContainer {
+        Gtk.FlowBox links_flowbox;
         Gtk.Image app_screenshot;
         Gtk.Stack screenshot_stack;
         Gtk.Label app_screenshot_not_found;
@@ -89,12 +90,18 @@ namespace AppCenter.Views {
             app_description.pixels_inside_wrap = 3;
             app_description.wrap_mode = Gtk.WrapMode.WORD_CHAR;
 
+            links_flowbox = new Gtk.FlowBox ();
+
             content_grid = new Gtk.Grid ();
             content_grid.width_request = 800;
             content_grid.halign = Gtk.Align.CENTER;
+            content_grid.margin_bottom = 48;
+            content_grid.margin_top = 48;
+            content_grid.row_spacing = 24;
             content_grid.orientation = Gtk.Orientation.VERTICAL;
             content_grid.add (screenshot_stack);
             content_grid.add (app_description);
+            content_grid.add (links_flowbox);
 
             var scrolled = new Gtk.ScrolledWindow (null, null);
             scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
@@ -134,6 +141,28 @@ namespace AppCenter.Views {
                 content_grid.add (extension_label);
                 content_grid.add (extension_box);
                 load_extensions.begin ();
+            }
+
+            var hompage_url = package.component.get_url (AppStream.UrlKind.HOMEPAGE);
+
+            if (hompage_url != null) {
+                var website_button = new Gtk.LinkButton (hompage_url);
+                website_button.always_show_image = true;
+                website_button.image = new Gtk.Image.from_icon_name ("web-browser-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+                website_button.get_style_context ().add_class ("dim-label");
+
+                links_flowbox.add (website_button);
+            }
+
+            var bugtracker_url = package.component.get_url (AppStream.UrlKind.BUGTRACKER);
+
+            if (bugtracker_url != null) {
+                var bugtracker_button = new Gtk.LinkButton (bugtracker_url);
+                bugtracker_button.always_show_image = true;
+                bugtracker_button.image = new Gtk.Image.from_icon_name ("bug-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+                bugtracker_button.get_style_context ().add_class ("dim-label");
+
+                links_flowbox.add (bugtracker_button);
             }
 
             action_button.set_suggested_action_header ();
