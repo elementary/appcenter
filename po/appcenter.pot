@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-09 00:06-0600\n"
+"POT-Creation-Date: 2017-03-17 13:55-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,127 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: ../src/AbstractAppContainer.vala:64 ../src/Widgets/RestartDialog.vala:62
+msgid "Cancel"
+msgstr ""
+
+#: ../src/AbstractAppContainer.vala:67 ../src/AbstractAppContainer.vala:135
+msgid "Install"
+msgstr ""
+
+#: ../src/AbstractAppContainer.vala:70
+msgid "Uninstall"
+msgstr ""
+
+#: ../src/AbstractAppContainer.vala:73
+msgid "Open"
+msgstr ""
+
+#: ../src/AbstractAppContainer.vala:170
+msgid "Update"
+msgstr ""
+
+#: ../src/Views/InstalledView.vala:45 ../src/MainWindow.vala:115
+msgctxt "view"
+msgid "Updates"
+msgstr ""
+
+#: ../src/Views/AppInfoView.vala:48
+msgid "Screenshot Not Available"
+msgstr ""
+
+#: ../src/Views/AppInfoView.vala:128
+msgid "Extensions:"
+msgstr ""
+
+#: ../src/Views/FeaturedView.vala:33
+msgid "Best Rated"
+msgstr ""
+
+#: ../src/Views/FeaturedView.vala:36
+msgid "Latest Apps"
+msgstr ""
+
+#: ../src/Views/AppListView.vala:117
+msgid "Update All"
+msgstr ""
+
+#: ../src/Views/AppListView.vala:123
+msgid "Restart Now"
+msgstr ""
+
+#. / TRANSLATORS: the name of the Search view
+#: ../src/Views/SearchView.vala:35
+msgctxt "view"
+msgid "Search"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:72 ../src/Views/CategoryView.vala:79
+#: ../src/MainWindow.vala:114 ../src/MainWindow.vala:190
+msgid "Categories"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:120
+msgid "Audio"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:131
+msgid "Development"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:142
+msgid "Accessories"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:153
+msgid "Office"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:164
+msgid "System"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:175
+msgid "Video"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:186
+msgid "Graphics"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:196
+msgid "Games"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:207
+msgid "Education"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:217
+msgid "Internet"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:228
+msgid "Science & Engineering"
+msgstr ""
+
+#: ../src/Views/CategoryView.vala:238
+msgid "Universal Access"
+msgstr ""
+
+#: ../src/MainWindow.vala:96
+msgid "AppCenter"
+msgstr ""
+
+#: ../src/MainWindow.vala:104 ../src/MainWindow.vala:131
+#: ../src/MainWindow.vala:282 ../src/MainWindow.vala:304
+msgid "Search Apps"
+msgstr ""
+
+#: ../src/MainWindow.vala:264
+msgid "Search %s"
+msgstr ""
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -162,26 +283,6 @@ msgstr ""
 msgid "Unknown state"
 msgstr ""
 
-#: ../src/Core/Client.vala:74
-msgid "Operating System Updates"
-msgstr ""
-
-#: ../src/Core/Client.vala:75
-msgid "Updates to system components"
-msgstr ""
-
-#: ../src/Core/Client.vala:331
-msgid "Update Available"
-msgid_plural "Updates Available"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../src/Core/Client.vala:332
-msgid "%u update is available for your system"
-msgid_plural "%u updates are available for your system"
-msgstr[0] ""
-msgstr[1] ""
-
 #: ../src/Core/Package.vala:137
 msgid "Application installed"
 msgstr ""
@@ -190,24 +291,66 @@ msgstr ""
 msgid "%s has been successfully installed"
 msgstr ""
 
-#: ../src/AbstractAppContainer.vala:64
-msgid "Cancel"
+#: ../src/Core/Client.vala:77
+msgid "Operating System Updates"
 msgstr ""
 
-#: ../src/AbstractAppContainer.vala:67 ../src/AbstractAppContainer.vala:135
-msgid "Install"
+#: ../src/Core/Client.vala:78
+msgid "Updates to system components"
 msgstr ""
 
-#: ../src/AbstractAppContainer.vala:70
-msgid "Uninstall"
+#: ../src/Core/Client.vala:334
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/Core/Client.vala:335
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/Core/Client.vala:364
+msgid "Restart Required"
 msgstr ""
 
-#: ../src/AbstractAppContainer.vala:73
-msgid "Open"
+#: ../src/Core/Client.vala:365
+msgid "Please restart your system to finalize updates"
 msgstr ""
 
-#: ../src/AbstractAppContainer.vala:170
-msgid "Update"
+#: ../src/Widgets/UpdateHeaderRow.vala:123
+msgid "%u Update Available"
+msgid_plural "%u Updates Available"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/Widgets/UpdateHeaderRow.vala:124
+msgid "Size: %s"
+msgstr ""
+
+#: ../src/Widgets/UpdateHeaderRow.vala:160
+msgid "Searching for updates…"
+msgstr ""
+
+#: ../src/Widgets/UpdateHeaderRow.vala:168
+msgid "Restart required"
+msgstr ""
+
+#: ../src/Widgets/UpdateHeaderRow.vala:170
+msgid "Up to Date"
+msgstr ""
+
+#: ../src/Widgets/RestartDialog.vala:40
+msgid "Are you sure you want to Restart?"
+msgstr ""
+
+#: ../src/Widgets/RestartDialog.vala:41
+msgid "This will close all open applications and restart this device."
+msgstr ""
+
+#: ../src/Widgets/RestartDialog.vala:42
+msgid "Restart"
 msgstr ""
 
 #: ../src/Application.vala:39
@@ -222,125 +365,10 @@ msgstr ""
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr ""
 
-#: ../src/MainWindow.vala:96
-msgid "AppCenter"
-msgstr ""
-
-#: ../src/MainWindow.vala:104 ../src/MainWindow.vala:131
-#: ../src/MainWindow.vala:282 ../src/MainWindow.vala:304
-msgid "Search Apps"
-msgstr ""
-
-#: ../src/MainWindow.vala:114 ../src/MainWindow.vala:190
-#: ../src/Views/CategoryView.vala:72 ../src/Views/CategoryView.vala:79
-msgid "Categories"
-msgstr ""
-
-#: ../src/MainWindow.vala:115 ../src/Views/InstalledView.vala:45
-msgctxt "view"
-msgid "Updates"
-msgstr ""
-
-#: ../src/MainWindow.vala:264
-msgid "Search %s"
-msgstr ""
-
-#. / TRANSLATORS: the name of the Search view
-#: ../src/Views/SearchView.vala:35
-msgctxt "view"
-msgid "Search"
-msgstr ""
-
-#: ../src/Views/AppListView.vala:116
-msgid "Update All"
-msgstr ""
-
-#: ../src/Views/FeaturedView.vala:33
-msgid "Best Rated"
-msgstr ""
-
-#: ../src/Views/FeaturedView.vala:36
-msgid "Latest Apps"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:120
-msgid "Audio"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:131
-msgid "Development"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:142
-msgid "Accessories"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:153
-msgid "Office"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:164
-msgid "System"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:175
-msgid "Video"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:186
-msgid "Graphics"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:196
-msgid "Games"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:207
-msgid "Education"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:217
-msgid "Internet"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:228
-msgid "Science & Engineering"
-msgstr ""
-
-#: ../src/Views/CategoryView.vala:238
-msgid "Universal Access"
-msgstr ""
-
-#: ../src/Views/AppInfoView.vala:48
-msgid "Screenshot Not Available"
-msgstr ""
-
-#: ../src/Views/AppInfoView.vala:128
-msgid "Extensions:"
-msgstr ""
-
 #: ../src/AbstractAppList.vala:30
 msgid "No Results"
 msgstr ""
 
 #: ../src/AbstractAppList.vala:30
 msgid "No apps could be found. Try changing search terms."
-msgstr ""
-
-#: ../src/Widgets/UpdateHeaderRow.vala:121
-msgid "%u Update Available"
-msgid_plural "%u Updates Available"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../src/Widgets/UpdateHeaderRow.vala:122
-msgid "Size: %s"
-msgstr ""
-
-#: ../src/Widgets/UpdateHeaderRow.vala:158
-msgid "Searching for updates…"
-msgstr ""
-
-#: ../src/Widgets/UpdateHeaderRow.vala:165
-msgid "Up to Date"
 msgstr ""
