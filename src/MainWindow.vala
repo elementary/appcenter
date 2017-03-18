@@ -96,6 +96,9 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         title = _("AppCenter");
         window_position = Gtk.WindowPosition.CENTER;
 
+        var client = AppCenterCore.Client.get_default ();
+        client.operation_finished.connect (on_operation_finished);
+
         return_button = new Gtk.Button ();
         return_button.no_show_all = true;
         return_button.get_style_context ().add_class ("back-button");
@@ -310,5 +313,48 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     
         category_view.return_clicked ();
         trigger_search ();
+    }
+
+    private void on_operation_finished (AppCenterCore.Package package, AppCenterCore.Package.State operation, Error? error) {
+        switch (operation) {
+            case AppCenterCore.Package.State.INSTALLING:
+                string title, body, icon_name, id;
+                if (error == null) {
+                    // Check if window is focused
+                    var win = get_window ();
+                    if (win != null && (win.get_state () & Gdk.WindowState.FOCUSED) != 0) {
+                        break;
+                    }
+
+                    title = _("Application installed");
+                    body = _("%s has been successfully installed").printf (package.get_name ());
+                    icon_name = "system-software-install";
+                    id = "installed";
+                } else {
+                    // Check if permission was denied
+                    if (error.matches (Pk.ClientError.quark (), 303)) {
+                        return;
+                    }
+
+                    title = _("Application installation failed");
+                    body = _("There was an error installing %s:\n%s").printf (package.get_name (), error.message);
+                    icon_name = "dialog-error";
+                    id = "error-installing";
+                }
+
+                var notification = new Notification (title);
+                notification.set_body (body);
+                notification.set_icon (new ThemedIcon (icon_name));
+                notification.set_default_action ("app.open-application");
+
+                var app = get_application ();
+                if (app != null) {
+                    app.send_notification (id, notification);
+                }
+
+                break;
+            default:
+                break;
+        }
     }
 }
