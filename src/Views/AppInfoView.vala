@@ -20,6 +20,7 @@
 
 namespace AppCenter.Views {
     public class AppInfoView : AppCenter.AbstractAppContainer {
+        Gtk.Grid links_grid;
         Gtk.Image app_screenshot;
         Gtk.Stack screenshot_stack;
         Gtk.Label app_screenshot_not_found;
@@ -89,12 +90,19 @@ namespace AppCenter.Views {
             app_description.pixels_inside_wrap = 3;
             app_description.wrap_mode = Gtk.WrapMode.WORD_CHAR;
 
+            links_grid = new Gtk.Grid ();
+            links_grid.column_spacing = 24;
+
             content_grid = new Gtk.Grid ();
             content_grid.width_request = 800;
             content_grid.halign = Gtk.Align.CENTER;
+            content_grid.margin_bottom = 48;
+            content_grid.margin_top = 48;
+            content_grid.row_spacing = 24;
             content_grid.orientation = Gtk.Orientation.VERTICAL;
             content_grid.add (screenshot_stack);
             content_grid.add (app_description);
+            content_grid.add (links_grid);
 
             var scrolled = new Gtk.ScrolledWindow (null, null);
             scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
@@ -134,6 +142,34 @@ namespace AppCenter.Views {
                 content_grid.add (extension_label);
                 content_grid.add (extension_box);
                 load_extensions.begin ();
+            }
+
+            var homepage_url = package.component.get_url (AppStream.UrlKind.HOMEPAGE);
+
+            if (homepage_url != null) {
+                var website_button = new UrlButton (_("Homepage"), homepage_url, "web-browser-symbolic");
+                links_grid.add (website_button);
+            }
+
+            var translate_url = package.component.get_url (AppStream.UrlKind.TRANSLATE);
+
+            if (translate_url != null) {
+                var translate_button = new UrlButton (_("Suggest Translations"), translate_url, "preferences-desktop-locale-symbolic");
+                links_grid.add (translate_button);
+            }
+
+            var bugtracker_url = package.component.get_url (AppStream.UrlKind.BUGTRACKER);
+
+            if (bugtracker_url != null) {
+                var bugtracker_button = new UrlButton (_("Report a Problem"), bugtracker_url, "bug-symbolic");
+                links_grid.add (bugtracker_button);
+            }
+
+            var help_url = package.component.get_url (AppStream.UrlKind.HELP);
+
+            if (help_url != null) {
+                var help_button = new UrlButton (_("Help"), help_url, "dialog-question-symbolic");
+                links_grid.add (help_button);
             }
 
             action_button.set_suggested_action_header ();
@@ -244,6 +280,27 @@ namespace AppCenter.Views {
                 } catch (Error e) {
                     critical (e.message);
                 }
+            }
+        }
+
+        class UrlButton : Gtk.LinkButton {
+            public UrlButton (string label, string uri, string icon_name) {
+                Object (uri: uri);
+                get_style_context ().add_class ("dim-label");
+                tooltip_text = uri;
+                
+                var icon = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.LARGE_TOOLBAR);
+
+                var title = new Gtk.Label (label);
+
+                var grid = new Gtk.Grid ();
+                grid.row_spacing = 6;
+                grid.margin = 3;
+                grid.orientation = Gtk.Orientation.VERTICAL;
+                grid.add (icon);
+                grid.add (title);
+
+                add (grid);
             }
         }
     }
