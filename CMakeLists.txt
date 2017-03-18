@@ -13,6 +13,14 @@ set (VERSION "0.1.4")
 set (VERSION_INFO "Alpha")
 set (DOLLAR "$")
 
+# CTest
+include (CTest)
+if (BUILD_TESTING)
+    add_test (NAME validate-desktop-file COMMAND desktop-file-validate ${CMAKE_BINARY_DIR}/data/org.pantheon.appcenter.desktop)
+    add_test (NAME validate-daemon-desktop-file COMMAND desktop-file-validate ${CMAKE_BINARY_DIR}/data/org.pantheon.appcenter-daemon.desktop)
+    add_test (NAME validate-appdata COMMAND appstreamcli validate ${CMAKE_BINARY_DIR}/data/appcenter.appdata.xml)
+endif ()
+
 configure_file (${CMAKE_SOURCE_DIR}/config.vala.cmake ${CMAKE_BINARY_DIR}/src/config.vala)
 add_definitions (-DGETTEXT_PACKAGE=\"${GETTEXT_PACKAGE}\")
 add_definitions (-w)
