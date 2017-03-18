@@ -88,8 +88,8 @@ namespace AppCenter.Views {
         private bool updates_on_top;
         private Widgets.UpdateHeaderRow updates_header;
         private Widgets.UpdateHeaderRow updated_header;
-        private Widgets.AppActionButton update_all_button;
-        private Widgets.AppActionButton restart_button;
+        private Gtk.Button update_all_button;
+        private Gtk.Button restart_button;
         private bool updating_all_apps = false;
         private bool apps_remaining_started = false;
         private GLib.Mutex update_mutex;
@@ -114,19 +114,17 @@ namespace AppCenter.Views {
         construct {
             updates_on_top = true;
 
-            update_all_button = new Widgets.AppActionButton (_("Update All"));
-            update_all_button.set_suggested_action_header ();
-            update_all_button.clicked.connect (on_update_all);
+            update_all_button = new Gtk.Button.with_label (_("Update All"));
+            update_all_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
             update_all_button.no_show_all = true;
-            action_button_group.add_widget (update_all_button);
+            update_all_button.valign = Gtk.Align.CENTER;
             
-            restart_button = new Widgets.AppActionButton (_("Restart Now"));
-            restart_button.set_suggested_action_header ();
-            restart_button.clicked.connect (() => {
-                var dialog = new Widgets.RestartDialog ();
-                dialog.show_all ();
-            });
+            restart_button = new Gtk.Button.with_label (_("Restart Now"));
+            restart_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
             restart_button.no_show_all = true;
+            restart_button.valign = Gtk.Align.CENTER;
+
+            action_button_group.add_widget (update_all_button);
             action_button_group.add_widget (restart_button);
 
             updates_header = new Widgets.UpdateHeaderRow.updates ();
@@ -142,6 +140,13 @@ namespace AppCenter.Views {
             apps_to_update = new Gee.LinkedList<AppCenterCore.Package> ();
 
             sc = new SuspendControl ();
+
+            update_all_button.clicked.connect (on_update_all);
+
+            restart_button.clicked.connect (() => {
+                var dialog = new Widgets.RestartDialog ();
+                dialog.show_all ();
+            });
         }
 
         public AppListUpdateView () {

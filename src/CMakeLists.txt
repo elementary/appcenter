@@ -21,7 +21,6 @@ vala_precompile(VALA_C ${EXEC_NAME}
     Widgets/FeaturedButton.vala
     Widgets/PackageRow.vala
     Widgets/AppListRow.vala
-    Widgets/AppActionButton.vala
     Widgets/UpdateHeaderRow.vala
     Widgets/RestartDialog.vala
     Services/DbusInterfaces.vala
