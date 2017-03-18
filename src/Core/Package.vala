@@ -321,23 +321,20 @@ public class AppCenterCore.Package : Object {
     public string? get_color_primary () {
         if (color_primary != null) {
             return color_primary;
+        } else {
+            color_primary = component.get_custom_value ("x-appcenter-color-primary");
+            return color_primary;
         }
-
-        color_primary = component.get_custom_value ("x-appcenter-color-primary");
-
-        return color_primary;
     }
 
     public string? get_color_primary_text () {
         if (color_primary_text != null) {
             return color_primary_text;
+        } else {
+            color_primary_text = component.get_custom_value ("x-appcenter-color-primary-text");
+            return color_primary_text;
         }
-
-        color_primary_text = component.get_custom_value ("x-appcenter-color-primary-text");
-
-        return color_primary_text;
     }
-
 
     private string convert_version (string version) {
         string returned = version;

@@ -23,6 +23,9 @@ const string BANNER_STYLE_CSS = """
         background-color: %s;
         color: %s;
     }
+    .banner .button {
+        background-color: @base_color;
+    }
     """;
 
 namespace AppCenter.Views {
@@ -137,7 +140,6 @@ namespace AppCenter.Views {
             header_box.add (header_grid);
 
             attach (header_box, 0, 0, 1, 1);
-            attach (new Gtk.Separator (Gtk.Orientation.HORIZONTAL), 0, 1, 1, 1);
             attach (scrolled, 0, 2, 1, 1);
             reload_css ();
         }
@@ -231,7 +233,7 @@ namespace AppCenter.Views {
             try {
                 string color_primary = package.get_color_primary ();
                 if (color_primary == null) {
-                    color_primary = "rgba(66,83,129,255)";
+                    color_primary = "#68758e";
                 }
                 string color_primary_text = package.get_color_primary_text ();
                 if (color_primary_text == null) {
