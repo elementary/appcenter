@@ -241,7 +241,6 @@ namespace AppCenter.Views {
                 if (package != null) {
                     color_primary = package.get_color_primary ();
                     color_primary_text = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
-
                 } else {
                     color_primary = null;
                     color_primary_text = null;
