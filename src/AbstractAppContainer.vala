@@ -60,6 +60,10 @@ namespace AppCenter {
             progress_bar.no_show_all = true;
             progress_bar.hide ();
 
+            package_author = new Gtk.Label ("");
+            package_name = new Gtk.Label ("");
+            image = new Gtk.Image ();
+
             action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
 
             cancel_button = new Widgets.AppActionButton (_("Cancel"));
@@ -200,7 +204,7 @@ namespace AppCenter {
                     action_stack.set_visible_child_name ("progress");
 
                     open_button.no_show_all = true;
-                    open_button.hide ();                    
+                    open_button.hide ();
                     break;
 
                 default:
