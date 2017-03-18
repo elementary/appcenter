@@ -72,10 +72,14 @@ namespace AppCenter.Views {
             app_version.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
             app_version.get_style_context ().add_class ("h3");
 
+            package_author = new Gtk.Label (null);
+            package_author.xalign = 0;
+            package_author.valign = Gtk.Align.START;
+            package_author.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+            package_author.get_style_context ().add_class ("h2");
+
             package_summary = new Gtk.Label (null);
             package_summary.xalign = 0;
-            package_summary.valign = Gtk.Align.START;
-            package_summary.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
             package_summary.get_style_context ().add_class ("h2");
             package_summary.wrap = true;
             package_summary.set_lines (3);
@@ -101,6 +105,7 @@ namespace AppCenter.Views {
             content_grid.row_spacing = 24;
             content_grid.orientation = Gtk.Orientation.VERTICAL;
             content_grid.add (screenshot_stack);
+            content_grid.add (package_summary);
             content_grid.add (app_description);
             content_grid.add (links_grid);
 
@@ -114,9 +119,9 @@ namespace AppCenter.Views {
             header_grid.margin = 12;
             header_grid.attach (image, 0, 0, 1, 2);
             header_grid.attach (package_name, 1, 0, 1, 1);
+            header_grid.attach (package_author, 1, 1, 3, 1);
             header_grid.attach (app_version, 2, 0, 1, 1);
             header_grid.attach (action_stack, 3, 0, 1, 1);
-            header_grid.attach (package_summary, 1, 1, 3, 1);
 
             attach (header_grid, 0, 0, 1, 1);
             attach (new Gtk.Separator (Gtk.Orientation.HORIZONTAL), 0, 1, 1, 1);
