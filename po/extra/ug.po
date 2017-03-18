@@ -21,7 +21,7 @@ msgstr "ئەپلەرنى كۆرۈش ۋە باشقۇرۇش"
 msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
 msgstr ""
 "ئورنىتىش؛ يۇيۇش؛ ئۆچۈرۈش؛ تۈرگە ئايرىش؛ ساقلاش؛ ئەپلەر؛ يىڭىلاش؛ يۇمشاق "
-"دىتاللار؛"
+"دىتاللار؛;"
 
 msgid "About AppCenter"
 msgstr "ئەپ مەركىزى ھەققىدە"
