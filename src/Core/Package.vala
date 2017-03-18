@@ -124,7 +124,6 @@ public class AppCenterCore.Package : Object {
         try {
             return yield perform_operation (State.UPDATING, State.INSTALLED, State.UPDATE_AVAILABLE);
         } catch (Error e) {
-            warning (e.message);
             return false;
         }
     }
@@ -157,7 +156,6 @@ public class AppCenterCore.Package : Object {
         try {
             return yield perform_operation (State.REMOVING, State.NOT_INSTALLED, State.INSTALLED);
         } catch (Error e) {
-            warning (e.message);
             return false;
         }
     }
@@ -180,6 +178,7 @@ public class AppCenterCore.Package : Object {
         try {
             exit_status = yield perform_package_operation ();
         } catch (GLib.Error e) {
+            warning ("Operation failed for package %s - %s", get_name (), e.message);
             throw e;
         } finally {
             clean_up_package_operation (exit_status, after_success, after_fail);
