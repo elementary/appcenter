@@ -9,7 +9,6 @@ namespace AppCenter {
 
         // The action button covers Install and Update
         protected Widgets.HumbleButton action_button;
-        protected Gtk.Button action_button;
         protected Gtk.Button uninstall_button;
         protected Gtk.Button open_button;
 
