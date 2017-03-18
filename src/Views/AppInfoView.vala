@@ -18,9 +18,17 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
+const string BANNER_STYLE_CSS = """
+    .banner {
+        background-color: %s;
+        color: %s;
+    }
+    """;
+
 namespace AppCenter.Views {
     public class AppInfoView : AppCenter.AbstractAppContainer {
         Gtk.Grid links_grid;
+        Gtk.Box header_box;
         Gtk.Image app_screenshot;
         Gtk.Stack screenshot_stack;
         Gtk.Label app_screenshot_not_found;
@@ -58,6 +66,7 @@ namespace AppCenter.Views {
             screenshot_stack.add (app_screenshot);
             screenshot_stack.add (app_screenshot_not_found);
 
+            package_name = new Gtk.Label (null);
             package_name.margin_top = 12;
             package_name.xalign = 0;
             package_name.get_style_context ().add_class ("h1");
@@ -71,6 +80,7 @@ namespace AppCenter.Views {
             app_version.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
             app_version.get_style_context ().add_class ("h3");
 
+            package_author = new Gtk.Label (null);
             package_author.xalign = 0;
             package_author.valign = Gtk.Align.START;
             package_author.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
@@ -112,6 +122,8 @@ namespace AppCenter.Views {
             scrolled.expand = true;
             scrolled.add (content_grid);
 
+            header_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
+            header_box.hexpand = true;
             var header_grid = new Gtk.Grid ();
             header_grid.column_spacing = 12;
             header_grid.halign = Gtk.Align.CENTER;
@@ -122,10 +134,12 @@ namespace AppCenter.Views {
             header_grid.attach (package_author, 1, 1, 3, 1);
             header_grid.attach (app_version, 2, 0, 1, 1);
             header_grid.attach (action_stack, 3, 0, 1, 1);
+            header_box.add (header_grid);
 
-            attach (header_grid, 0, 0, 1, 1);
+            attach (header_box, 0, 0, 1, 1);
             attach (new Gtk.Separator (Gtk.Orientation.HORIZONTAL), 0, 1, 1, 1);
             attach (scrolled, 0, 2, 1, 1);
+            reload_css ();
         }
 
         public AppInfoView (AppCenterCore.Package package) {
@@ -186,6 +200,7 @@ namespace AppCenter.Views {
             uninstall_button_context.add_class ("h3");
 
             open_button.get_style_context ().add_class ("h3");
+            reload_css ();
         }
 
         protected override void set_up_package (uint icon_size = 48) {                
@@ -209,6 +224,27 @@ namespace AppCenter.Views {
                     extension_box.add (row);
                 }
             });
+        }
+
+        private void reload_css () {
+            var provider = new Gtk.CssProvider ();
+            try {
+                string color_primary = package.get_color_primary ();
+                if (color_primary == null) {
+                    color_primary = "rgba(66,83,129,255)";
+                }
+                string color_primary_text = package.get_color_primary_text ();
+                if (color_primary_text == null) {
+                    color_primary_text = "white";
+                }
+                var colored_css = BANNER_STYLE_CSS.printf (color_primary, color_primary_text);
+                provider.load_from_data (colored_css, colored_css.length);
+                var context = header_box.get_style_context ();
+                context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+                context.add_class ("banner");
+            } catch (GLib.Error e) {
+                critical (e.message);
+            }
         }
 
         public void load_more_content () {
