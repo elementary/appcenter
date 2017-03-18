@@ -21,7 +21,7 @@ msgstr ""
 msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
 msgstr ""
 "نصب کرنا;ناتنصیب;ہٹانا;ھٹانا؛انسٹال؛ان انسٹال؛کیٹالاگ؛فہرست;سٹور؛ایپلی "
-"کیشن;ایپ؛اپڈیٹ؛تجدید;سافٹ ویئر"
+"کیشن;ایپ؛اپڈیٹ؛تجدید;سافٹ ویئر;"
 
 msgid "About AppCenter"
 msgstr "ایپ مرکز کے متعلق"
