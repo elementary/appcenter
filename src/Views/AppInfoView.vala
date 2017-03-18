@@ -58,7 +58,6 @@ namespace AppCenter.Views {
             screenshot_stack.add (app_screenshot);
             screenshot_stack.add (app_screenshot_not_found);
 
-            package_name = new Gtk.Label (null);
             package_name.margin_top = 12;
             package_name.xalign = 0;
             package_name.get_style_context ().add_class ("h1");
@@ -72,7 +71,6 @@ namespace AppCenter.Views {
             app_version.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
             app_version.get_style_context ().add_class ("h3");
 
-            package_author = new Gtk.Label (null);
             package_author.xalign = 0;
             package_author.valign = Gtk.Align.START;
             package_author.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
@@ -179,8 +177,14 @@ namespace AppCenter.Views {
                 links_grid.add (help_button);
             }
 
-            action_button.set_suggested_action_header ();
-            uninstall_button.set_destructive_action_header ();
+            var action_button_context = action_button.get_style_context ();
+            action_button_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+            action_button_context.add_class ("h3");
+
+            var uninstall_button_context = uninstall_button.get_style_context ();
+            uninstall_button_context.add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+            uninstall_button_context.add_class ("h3");
+
             open_button.get_style_context ().add_class ("h3");
         }
 

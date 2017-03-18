@@ -76,12 +76,10 @@ namespace AppCenter.Widgets {
                 column_spacing = 12;
                 row_spacing = 6;
 
-                image = new Gtk.Image ();
                 image.icon_size = Gtk.IconSize.DIALOG;
                 /* Needed to enforce size on icons from Filesystem/Remote */
                 image.pixel_size = 48;
 
-                package_name = new Gtk.Label (null);
                 package_name.get_style_context ().add_class ("h3");
                 package_name.hexpand = true;
                 package_name.valign = Gtk.Align.END;

@@ -212,25 +212,12 @@ const string CATEGORIES_STYLE_CSS = """
 """;
 
 public class AppCenter.Widgets.CategoryItem : Gtk.FlowBoxChild {
-    public AppStream.Category app_category;
-    private Gtk.Grid grid;
-    private Gtk.Image display_image;
+    public AppStream.Category app_category { get; construct; }
     private Gtk.Label name_label;
     private Gtk.Grid themed_grid;
 
     public CategoryItem (AppStream.Category app_category) {
-        this.app_category = app_category;
-        tooltip_text = app_category.summary ?? "";
-        if (app_category.icon != null) {
-            display_image.icon_name = app_category.icon;
-            ((Gtk.Misc) name_label).xalign = 0;
-            name_label.halign = Gtk.Align.START;
-        } else {
-            display_image.destroy ();
-            name_label.justify = Gtk.Justification.CENTER;
-        }
-
-        show_all ();
+        Object (app_category: app_category);
     }
 
     static construct {
@@ -244,7 +231,16 @@ public class AppCenter.Widgets.CategoryItem : Gtk.FlowBoxChild {
     }
 
     construct {
-        grid = new Gtk.Grid ();
+        var display_image = new Gtk.Image ();
+        display_image.icon_size = Gtk.IconSize.DIALOG;
+        display_image.valign = Gtk.Align.CENTER;
+        display_image.halign = Gtk.Align.END;
+
+        name_label = new Gtk.Label (null);
+        name_label.wrap = true;
+        name_label.max_width_chars = 15;
+
+        var grid = new Gtk.Grid ();
         grid.orientation = Gtk.Orientation.HORIZONTAL;
         grid.column_spacing = 6;
         grid.halign = Gtk.Align.CENTER;
@@ -253,16 +249,7 @@ public class AppCenter.Widgets.CategoryItem : Gtk.FlowBoxChild {
         grid.margin_end = 16;
         grid.margin_bottom = 32;
         grid.margin_start = 16;
-
-        display_image = new Gtk.Image ();
-        display_image.icon_size = Gtk.IconSize.DIALOG;
-        display_image.valign = Gtk.Align.CENTER;
-        display_image.halign = Gtk.Align.END;
         grid.add (display_image);
-
-        name_label = new Gtk.Label (null);
-        name_label.wrap = true;
-        name_label.max_width_chars = 15;
         grid.add (name_label);
 
         var expanded_grid = new Gtk.Grid ();
@@ -276,10 +263,24 @@ public class AppCenter.Widgets.CategoryItem : Gtk.FlowBoxChild {
         themed_grid.margin = 12;
 
         child = themed_grid;
+
+        tooltip_text = app_category.summary ?? "";
+
+        if (app_category.icon != null) {
+            display_image.icon_name = app_category.icon;
+            ((Gtk.Misc) name_label).xalign = 0;
+            name_label.halign = Gtk.Align.START;
+        } else {
+            display_image.destroy ();
+            name_label.justify = Gtk.Justification.CENTER;
+        }
+
+        show_all ();
     }
 
     public void add_category_class (string theme_name) {
         themed_grid.get_style_context ().add_class (theme_name);
+
         if (theme_name == "games" || theme_name == "accessibility") {
             name_label.label = app_category.name.up ();
         } else {
