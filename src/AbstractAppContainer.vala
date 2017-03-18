@@ -4,6 +4,7 @@ namespace AppCenter {
 
         protected Gtk.Image image;
         protected Gtk.Label package_name;
+        protected Gtk.Label package_author;
         protected Gtk.Label package_summary;
 
         // The action button covers Install and Update
@@ -104,6 +105,15 @@ namespace AppCenter {
 
         protected virtual void set_up_package (uint icon_size = 48) {
             package_name.label = package.get_name ();
+
+            var author = package.component.get_developer_name ();
+
+            if (author != null) {
+                package_author.label = _("by") + " " + author;
+            } else {
+                package_author.label = _("by") + " " + _("The %s Developers").printf (package.get_name ());
+            }
+
             image.gicon = package.get_icon (icon_size);
 
             package.notify["state"].connect (() => update_state ());
