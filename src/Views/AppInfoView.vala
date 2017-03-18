@@ -178,7 +178,11 @@ namespace AppCenter.Views {
             }
 
             action_button.sugested_action = true;
-            uninstall_button.set_destructive_action_header ();
+            
+            var uninstall_button_context = uninstall_button.get_style_context ();
+            uninstall_button_context.add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+            uninstall_button_context.add_class ("h3");
+
             open_button.get_style_context ().add_class ("h3");
         }
 

@@ -9,8 +9,9 @@ namespace AppCenter {
 
         // The action button covers Install and Update
         protected Widgets.HumbleButton action_button;
-        protected Widgets.AppActionButton uninstall_button;
-        protected Widgets.AppActionButton open_button;
+        protected Gtk.Button action_button;
+        protected Gtk.Button uninstall_button;
+        protected Gtk.Button open_button;
 
         protected Gtk.ProgressBar progress_bar;
         protected Gtk.Button cancel_button;
@@ -80,7 +81,7 @@ namespace AppCenter {
 
             action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
 
-            cancel_button = new Widgets.AppActionButton (_("Cancel"));
+            cancel_button = new Gtk.Button.with_label (_("Cancel"));
             cancel_button.clicked.connect (() => action_cancelled ());
 
             action_button = new Widgets.HumbleButton ();
@@ -93,10 +94,11 @@ namespace AppCenter {
                 stripe.show();
             });
 
-            uninstall_button = new Widgets.AppActionButton (_("Uninstall"));
+
+            uninstall_button = new Gtk.Button.with_label (_("Uninstall"));
             uninstall_button.clicked.connect (() => uninstall_clicked.begin ());
 
-            open_button = new Widgets.AppActionButton (_("Open"));
+            open_button = new Gtk.Button.with_label (_("Open"));
             open_button.clicked.connect (launch_package_app);
 
             var button_grid = new Gtk.Grid ();
