@@ -28,8 +28,8 @@ const string BANNER_STYLE_CSS = """
     }
     """;
 
-const string default_banner_color_primary = "#68758e";
-const string default_banner_color_primary_text = "white";
+const string DEFAULT_BANNER_COLOR_PRIMARY = "#68758e";
+const string DEFAULT_BANNER_COOR_PRIMARY_TEXT = "white";
 
 namespace AppCenter.Views {
     public class AppInfoView : AppCenter.AbstractAppContainer {
@@ -238,11 +238,11 @@ namespace AppCenter.Views {
             try {
                 string color_primary = package.get_color_primary ();
                 if (color_primary == null) {
-                    color_primary = default_banner_color_primary;
+                    color_primary = DEFAULT_BANNER_COLOR_PRIMARY;
                 }
                 string color_primary_text = package.get_color_primary_text ();
                 if (color_primary_text == null) {
-                    color_primary_text = default_banner_color_primary_text;
+                    color_primary_text = DEFAULT_BANNER_COOR_PRIMARY_TEXT;
                 }
                 var colored_css = BANNER_STYLE_CSS.printf (color_primary, color_primary_text);
                 provider.load_from_data (colored_css, colored_css.length);
