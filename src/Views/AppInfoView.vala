@@ -126,7 +126,9 @@ namespace AppCenter.Views {
             scrolled.add (content_grid);
 
             header_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
+            header_box.get_style_context ().add_class ("banner");
             header_box.hexpand = true;
+
             var header_grid = new Gtk.Grid ();
             header_grid.column_spacing = 12;
             header_grid.halign = Gtk.Align.CENTER;
@@ -241,9 +243,7 @@ namespace AppCenter.Views {
                 }
                 var colored_css = BANNER_STYLE_CSS.printf (color_primary, color_primary_text);
                 provider.load_from_data (colored_css, colored_css.length);
-                var context = header_box.get_style_context ();
-                context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-                context.add_class ("banner");
+                Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
             } catch (GLib.Error e) {
                 critical (e.message);
             }
