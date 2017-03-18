@@ -179,8 +179,14 @@ namespace AppCenter.Views {
                 links_grid.add (help_button);
             }
 
-            action_button.set_suggested_action_header ();
-            uninstall_button.set_destructive_action_header ();
+            var action_button_context = action_button.get_style_context ();
+            action_button_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+            action_button_context.add_class ("h3");
+
+            var uninstall_button_context = uninstall_button.get_style_context ();
+            uninstall_button_context.add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+            uninstall_button_context.add_class ("h3");
+
             open_button.get_style_context ().add_class ("h3");
         }
 
