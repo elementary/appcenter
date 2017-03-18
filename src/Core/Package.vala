@@ -121,7 +121,12 @@ public class AppCenterCore.Package : Object {
             return false;
         }
 
-        return yield perform_operation (State.UPDATING, State.INSTALLED, State.UPDATE_AVAILABLE);
+        try {
+            return yield perform_operation (State.UPDATING, State.INSTALLED, State.UPDATE_AVAILABLE);
+        } catch (Error e) {
+            warning (e.message);
+            return false;
+        }
     }
 
     public async bool install () {
@@ -130,17 +135,18 @@ public class AppCenterCore.Package : Object {
         }
 
         try {
-            if (yield perform_operation (State.INSTALLING, State.INSTALLED, State.NOT_INSTALLED)) {
+            bool success = yield perform_operation (State.INSTALLING, State.INSTALLED, State.NOT_INSTALLED);
+            if (success) {
                 var client = AppCenterCore.Client.get_default ();
                 client.operation_finished (this, State.INSTALLING, null);
-                return true;
             }
+            
+            return success;
         } catch (Error e) {
             var client = AppCenterCore.Client.get_default ();
             client.operation_finished (this, State.INSTALLING, e);
+            return false;
         }
-
-        return false;
     }
 
     public async bool uninstall () {
@@ -148,7 +154,12 @@ public class AppCenterCore.Package : Object {
             return false;
         }
 
-        return yield perform_operation (State.REMOVING, State.NOT_INSTALLED, State.INSTALLED);
+        try {
+            return yield perform_operation (State.REMOVING, State.NOT_INSTALLED, State.INSTALLED);
+        } catch (Error e) {
+            warning (e.message);
+            return false;
+        }
     }
 
     public void launch () throws Error {

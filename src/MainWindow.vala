@@ -331,8 +331,8 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
                     icon_name = "system-software-install";
                     id = "installed";
                 } else {
-                    // Check if permission was denied
-                    if (error.matches (Pk.ClientError.quark (), 303)) {
+                    // Check if permission was denied or the operation was cancelled
+                    if (error.matches (IOError.quark (), 19) || error.matches (Pk.ClientError.quark (), 303)) {
                         return;
                     }
 

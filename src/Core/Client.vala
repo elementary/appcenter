@@ -224,7 +224,7 @@ public class AppCenterCore.Client : Object {
                 }
             });
         } catch (Error e) {
-            if (e.code != Pk.Status.CANCEL) {
+            if (e.code != 19) {
                 critical (e.message);
             }
 
