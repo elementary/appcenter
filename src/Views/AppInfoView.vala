@@ -190,13 +190,13 @@ namespace AppCenter.Views {
             base.set_up_package (icon_size);
         }
 
-        /*protected override void update_state (bool first_update = false) {
+        protected override void update_state (bool first_update = false) {
             if (!first_update) {
                 app_version.label = package.get_version ();
             }
 
             update_action ();
-        }*/
+        }
 
         private async void load_extensions () {
             package.component.get_addons ().@foreach ((extension) => {

@@ -18,23 +18,25 @@
  *
  */
 
-public class AppCenter.Widgets.HumbleButton : Gtk.Grid { 
+public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
     public signal void download_requested ();
     public signal void payment_requested (int amount);
-  
+
     private Gtk.Popover selection;
     private Gtk.Button amount_button;
     private Gtk.SpinButton custom_amount;
+
+    private Gtk.ToggleButton arrow_button;
 
     private int amount_;
     public int amount {
         get {
             return amount_;
         } set {
-            amount_ = value; 
+            amount_ = value;
             amount_button.label = get_amount_formated (value, true);
             custom_amount.value = value;
-          
+
             if (amount != 0) {
               amount_button.label = get_amount_formated (amount, true);
             } else {
@@ -42,20 +44,39 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
             }
         }
     }
-  
+
+    public bool can_purchase {
+        set {
+            if (!value) {
+                amount = 0;
+            }
+
+            arrow_button.visible = value;
+            arrow_button.no_show_all = !value;
+        }
+    }
+    
+    public bool sugested_action {
+        set {
+            if (value) {
+                amount_button.get_style_context ().add_class ("h3");
+                amount_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+                arrow_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+            }
+        }
+    }
+
     public HumbleButton () {
         Object (amount: 1);
     }
 
     construct {
         amount_button = new Gtk.Button ();
-        amount_button.get_style_context ().add_class ("h3");
-        amount_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
         var one_dollar = get_amount_button (1);
         var five_dollar = get_amount_button (5);
         var ten_dollar = get_amount_button (10);
-      
+
         var custom_label = new Gtk.Label ("$");
         custom_label.margin_start = 12;
 
@@ -70,8 +91,7 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
         selection_list.add (custom_label);
         selection_list.add (custom_amount);
 
-        var arrow_button = new Gtk.ToggleButton ();
-        arrow_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        arrow_button = new Gtk.ToggleButton ();
         arrow_button.image = new Gtk.Image.from_icon_name ("pan-down-symbolic", Gtk.IconSize.MENU);
 
         selection = new Gtk.Popover (arrow_button);
@@ -108,7 +128,7 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
         add (amount_button);
         add (arrow_button);
     }
-  
+
     private string get_amount_formated (int _amount, bool with_short_part = true) {
         if (with_short_part) {
             /// This amount will be US Dollars. Some languages might need a "$%dUSD"
@@ -118,16 +138,17 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
             return _("$%d").printf (_amount);
         }
     }
-  
+
     private Gtk.Button get_amount_button (int amount) {
-        var button = new Gtk.Button.with_label (get_amount_formated (amount, false));
-      
+        var button = new Gtk.Button.with_label (get_amount_formated (amount, false));;
+
         button.clicked.connect (() => {
             this.amount = amount;
             selection.hide ();
             payment_requested (this.amount);
         });
-      
+
         return button;
     }
 }
+

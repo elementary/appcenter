@@ -1,4 +1,7 @@
 namespace AppCenter {
+
+    
+
     public abstract class AbstractAppContainer : Gtk.Grid {
         public AppCenterCore.Package package;
 
@@ -94,6 +97,7 @@ namespace AppCenter {
             button_grid.add (purchase_button);
             button_grid.add (action_button);
             button_grid.add (open_button);
+            
 
             var progress_grid = new Gtk.Grid ();
             progress_grid.valign = Gtk.Align.CENTER;
@@ -107,6 +111,7 @@ namespace AppCenter {
 
             action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
             action_button_group.add_widget (action_button);
+            action_button_group.add_widget (purchase_button);
             action_button_group.add_widget (cancel_button);
             action_button_group.add_widget (open_button);
 
@@ -143,8 +148,6 @@ namespace AppCenter {
         }
 
         protected void update_action () {
-            stderr.printf ("Update action\n");
-
             purchase_button.no_show_all = true;
             purchase_button.hide ();
             uninstall_button.no_show_all = true;
@@ -261,7 +264,7 @@ namespace AppCenter {
             } else if (yield package.install ()) {
                  // Add this app to the Installed Apps View
                  MainWindow.installed_view.add_app.begin (package);
-                update_state ();
+                 update_state ();
             }
         }
 
