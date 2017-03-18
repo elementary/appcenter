@@ -333,7 +333,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
                 } else {
                     // Check if permission was denied or the operation was cancelled
                     if (error.matches (IOError.quark (), 19) || error.matches (Pk.ClientError.quark (), 303)) {
-                        return;
+                        break;
                     }
 
                     title = _("Application installation failed");
