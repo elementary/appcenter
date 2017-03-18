@@ -116,7 +116,9 @@ namespace AppCenter.Views {
 
             var header_grid = new Gtk.Grid ();
             header_grid.column_spacing = 12;
+            header_grid.halign = Gtk.Align.CENTER;
             header_grid.margin = 12;
+            header_grid.width_request = 800;
             header_grid.attach (image, 0, 0, 1, 2);
             header_grid.attach (package_name, 1, 0, 1, 1);
             header_grid.attach (package_author, 1, 1, 3, 1);
