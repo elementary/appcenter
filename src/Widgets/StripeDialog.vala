@@ -48,11 +48,10 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
     private bool expiration_valid = true;
     private bool cvc_valid = true;
 
-    public StripeDialog (Gtk.Window window, int amount_, string app_name_, string app_id_, string stripe_key_) {
+    public StripeDialog (int amount_, string app_name_, string app_id_, string stripe_key_) {
         Object (amount: amount_, app_name: app_name_, app_id: app_id_, stripe_key: stripe_key_);
         deletable = false;
         resizable = false;
-        transient_for = window;
 
         var primary_label = new Gtk.Label ("AppCenter");
         primary_label.get_style_context ().add_class ("primary");
@@ -224,12 +223,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         case 1:
             card_valid = is_card_valid (new_text);
             break;
-        case 2:
-            break;
         }
-
-        email_valid = true;
-        card_valid = true;
 
         is_payment_sensitive ();
     }
@@ -283,12 +277,12 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
     }
 
     private async void on_pay_clicked () {
-
         SourceFunc callback = on_pay_clicked.callback;
         ThreadFunc<void*> run = () => {
-            //var data = get_stripe_data (stripe_key, email_entry.text, (amount * 100).to_string (), card_number_entry.text, card_expiration_entry.text[0:2], card_expiration_entry.text[2:4], card_cvc_entry.text);
-            
-            var data = get_stripe_data ("pk_test_oBReJdwjFAOVT9f05VtEy70F", "mail@nathandyer.me", "400", "4242424242424242", "12", "2018", "123"); //Mockup
+            var year = (int.parse (card_expiration_entry.text[2:4]) + 2000).to_string ();
+
+            var data = get_stripe_data (stripe_key, email_entry.text, (amount * 100).to_string (), card_number_entry.text, card_expiration_entry.text[0:2], year, card_cvc_entry.text);
+            // var data = get_stripe_data ("pk_test_oBReJdwjFAOVT9f05VtEy70F", "mail@nathandyer.me", "400", "4242424242424242", "12", "2018", "123"); //Mockup
 
             Json.Parser parser = new Json.Parser ();
             bool error = false;

@@ -45,6 +45,12 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
         }
     }
 
+    public string label {
+        set {
+            amount_button.label = value;
+        }
+    }
+
     public bool can_purchase {
         set {
             if (!value) {
@@ -55,7 +61,7 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
             arrow_button.no_show_all = !value;
         }
     }
-    
+
     public bool sugested_action {
         set {
             if (value) {
@@ -99,7 +105,7 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
         selection.add (selection_list);
 
         amount_button.clicked.connect (() => {
-            if (this.amount >= 1) {
+            if (this.amount != 0) {
                 payment_requested (this.amount);
             } else {
                 download_requested ();
@@ -116,7 +122,12 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
 
         custom_amount.activate.connect (() => {
             selection.hide ();
-            payment_requested (this.amount);
+
+            if (this.amount != 0) {
+                payment_requested (this.amount);
+            } else {
+                download_requested ();
+            }
         });
 
         selection.closed.connect (() => {
