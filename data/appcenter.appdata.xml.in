@@ -65,5 +65,6 @@
     <url type="bugtracker">https://bugs.launchpad.net/appcenter</url>
     <url type="donation">https://elementary.io/get-involved#funding</url>
     <url type="help">https://elementaryos.stackexchange.com/questions/tagged/appcenter</url>
+    <url type="translate">https://l10n.elementary.io/projects/desktop/appcenter</url>
     <update_contact>contact_at_elementary.io</update_contact>
 </component>
