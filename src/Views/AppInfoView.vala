@@ -236,11 +236,21 @@ namespace AppCenter.Views {
         private void reload_css () {
             var provider = new Gtk.CssProvider ();
             try {
-                string color_primary = package.get_color_primary ();
+                string color_primary;
+                string color_primary_text;
+                if (package != null) {
+                    color_primary = package.get_color_primary ();
+                    color_primary_text = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
+
+                } else {
+                    color_primary = null;
+                    color_primary_text = null;
+                }
+
                 if (color_primary == null) {
                     color_primary = DEFAULT_BANNER_COLOR_PRIMARY;
                 }
-                string color_primary_text = package.get_color_primary_text ();
+
                 if (color_primary_text == null) {
                     color_primary_text = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
                 }
