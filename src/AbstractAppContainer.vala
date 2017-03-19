@@ -152,12 +152,11 @@ namespace AppCenter {
             update_state (true);
         }
 
-        protected void update_state (bool first_update = false) {
+        protected virtual void update_state (bool first_update = false) {
             update_action ();
         }
 
         protected void update_action () {
-            stderr.printf ("Update action: %s\n", package_name.label);
             uninstall_button.no_show_all = true;
             uninstall_button.hide ();
             progress_bar.no_show_all = true;
@@ -211,7 +210,7 @@ namespace AppCenter {
                     action_button.can_purchase = false;
                     action_button.label = _("Update");
 
-                    action_button.no_show_all = false;//update_state
+                    action_button.no_show_all = false;
                     action_button.show_all ();
 
                     if (show_open && package.get_can_launch ()) {

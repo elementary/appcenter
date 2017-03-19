@@ -38,9 +38,9 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
             custom_amount.value = value;
 
             if (amount != 0) {
-              amount_button.label = get_amount_formated (amount, true);
+                amount_button.label = get_amount_formated (amount, true);
             } else {
-              amount_button.label = _("Free");
+                amount_button.label = _("Free");
             }
         }
     }
@@ -78,7 +78,7 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
 
     construct {
         amount_button = new Gtk.Button ();
-        amount_button.expand = true;
+        amount_button.hexpand = true;
 
         var one_dollar = get_amount_button (1);
         var five_dollar = get_amount_button (5);
@@ -152,7 +152,7 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
     }
 
     private Gtk.Button get_amount_button (int amount) {
-        var button = new Gtk.Button.with_label (get_amount_formated (amount, false));;
+        var button = new Gtk.Button.with_label (get_amount_formated (amount, false));
 
         button.clicked.connect (() => {
             this.amount = amount;

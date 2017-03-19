@@ -199,7 +199,7 @@ namespace AppCenter.Views {
             }
 
             action_button.sugested_action = true;
-            
+
             var uninstall_button_context = uninstall_button.get_style_context ();
             uninstall_button_context.add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
             uninstall_button_context.add_class ("h3");
@@ -213,8 +213,8 @@ namespace AppCenter.Views {
             package_summary.ellipsize = Pango.EllipsizeMode.END;
             base.set_up_package (icon_size);
         }
- 
-        private void update_state (bool first_update = false) {
+
+        protected override void update_state (bool first_update = false) {
             if (!first_update) {
                 app_version.label = package.get_version ();
             }

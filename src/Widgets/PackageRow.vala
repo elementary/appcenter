@@ -69,7 +69,7 @@ namespace AppCenter.Widgets {
         private abstract class AbstractPackageRowGrid : AbstractAppContainer {
             public signal void changed ();
 
-            construct {;
+            construct {
                 margin = 6;
                 margin_start = 12;
                 margin_end = 12;
@@ -129,7 +129,7 @@ namespace AppCenter.Widgets {
                 base.set_up_package (icon_size);
             }
 
-            protected void update_state (bool first_update = false) {
+            protected override void update_state (bool first_update = false) {
                 if (!first_update) {
                     app_version.label = package.get_version ();
                 }

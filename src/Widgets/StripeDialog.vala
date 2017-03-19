@@ -45,8 +45,8 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
 
     private bool email_valid = false;
     private bool card_valid = false;
-    private bool expiration_valid = true;
-    private bool cvc_valid = true;
+    private bool expiration_valid = false;
+    private bool cvc_valid = false;
 
     public StripeDialog (int amount_, string app_name_, string app_id_, string stripe_key_) {
         Object (amount: amount_, app_name: app_name_, app_id: app_id_, stripe_key: stripe_key_);
@@ -83,12 +83,22 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         card_expiration_entry.max_length = 4;
         card_expiration_entry.placeholder_text = "MM / YY";
         card_expiration_entry.primary_icon_name = "office-calendar-symbolic";
+        
+        card_expiration_entry.changed.connect (() => {
+            card_expiration_entry.text = card_expiration_entry.text.replace (" ", "");
+            validate (2, card_expiration_entry.text);
+        });
 
         card_cvc_entry = new Gtk.Entry ();
         card_cvc_entry.input_purpose = Gtk.InputPurpose.DIGITS;
         card_cvc_entry.max_length = 4;
         card_cvc_entry.placeholder_text = "CVC";
         card_cvc_entry.primary_icon_name = "channel-secure-symbolic";
+        
+        card_cvc_entry.changed.connect (() => {
+            card_cvc_entry.text = card_cvc_entry.text.replace (" ", "");
+            validate (3, card_cvc_entry.text);
+        });
 
         var card_grid_bottom = new Gtk.Grid ();
         card_grid_bottom.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
@@ -101,8 +111,6 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         card_grid.add (card_number_entry);
         card_grid.add (card_grid_bottom);
 
-        var remember_button = new Gtk.CheckButton.with_label ("Remember me");
-
         card_layout = new Gtk.Grid ();
         card_layout.get_style_context ().add_class ("login");
         card_layout.row_spacing = 12;
@@ -111,14 +119,13 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         card_layout.add (secondary_label);
         card_layout.add (email_entry);
         card_layout.add (card_grid);
-        // card_layout.add (remember_button);
 
         layouts = new Gtk.Stack ();
         layouts.add_named (card_layout, "card");
         layouts.set_visible_child_name ("card");
         layouts.homogeneous = false;
 
-        var content = get_content_area () as Gtk.Box;
+        var content = (Gtk.Box) get_content_area ();
         content.add (layouts);
         content.margin = 12;
 
@@ -126,11 +133,11 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         action_area.margin_top = 14;
         action_area.margin_left = 6;
 
-        cancel_button = add_button (_("Cancel"), Gtk.ResponseType.CLOSE) as Gtk.Button;
+        cancel_button = (Gtk.Button) add_button (_("Cancel"), Gtk.ResponseType.CLOSE);
 
-        pay_button = add_button (_("Pay $%s.00").printf (amount.to_string ()), Gtk.ResponseType.APPLY) as Gtk.Button;
+        pay_button = (Gtk.Button) add_button (_("Pay $%s.00").printf (amount.to_string ()), Gtk.ResponseType.APPLY);
         pay_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
-        pay_button.set_sensitive (false);
+        pay_button.sensitive = false;
 
         show_all ();
 
@@ -165,8 +172,8 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         }
 
         layouts.set_visible_child_name ("processing");
-        cancel_button.set_sensitive (false);
-        pay_button.set_sensitive (false);
+        cancel_button.sensitive = false;
+        pay_button.sensitive = false;
     }
 
     private void show_error_view () {
@@ -215,14 +222,30 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
     }
 
     private void validate (int entry, string new_text) {
-        switch (entry) {
-        case 0:
-            var regex = new Regex ("""[a-z|0-9]+@[a-z|0-9]+\.[a-z]+""");
-            email_valid = regex.match (new_text);
-            break;
-        case 1:
-            card_valid = is_card_valid (new_text);
-            break;
+        try {
+            switch (entry) {
+            case 0:
+                var regex = new Regex ("""[a-z|0-9]+@[a-z|0-9]+\.[a-z]+""");
+                email_valid = regex.match (new_text);
+                break;
+            case 1:
+                card_valid = is_card_valid (new_text);
+                break;
+            case 2:
+                if (new_text.length != 4) {
+                    expiration_valid = false;
+                } else {
+                    var regex = new Regex ("""[0-9]{4}""");
+                    expiration_valid = regex.match (new_text);
+                }
+                break;
+            case 3:
+                var regex = new Regex ("""[0-9]{3,4}""");
+                cvc_valid = regex.match (new_text);
+                break;
+            }
+        } catch (Error e) {
+            warning (e.message);
         }
 
         is_payment_sensitive ();
@@ -262,17 +285,17 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
 
     private void on_response (Gtk.Dialog source, int response_id) {
         switch (response_id) {
-            case Gtk.ResponseType.APPLY:
-                if (layouts.visible_child_name == "card") {
-                    show_spinner_view ();
-                    on_pay_clicked ();
-                } else {
-                    show_card_view ();
-                }
-                break;
-            case Gtk.ResponseType.CLOSE:
-                destroy ();
-                break;
+        case Gtk.ResponseType.APPLY:
+            if (layouts.visible_child_name == "card") {
+                show_spinner_view ();
+                on_pay_clicked ();
+            } else {
+                show_card_view ();
+            }
+            break;
+        case Gtk.ResponseType.CLOSE:
+            destroy ();
+            break;
         }
     }
 
@@ -281,16 +304,14 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         ThreadFunc<void*> run = () => {
             var year = (int.parse (card_expiration_entry.text[2:4]) + 2000).to_string ();
 
-            //var data = get_stripe_data (stripe_key, email_entry.text, (amount * 100).to_string (), card_number_entry.text, card_expiration_entry.text[0:2], year, card_cvc_entry.text);
-            var data = get_stripe_data ("pk_test_oBReJdwjFAOVT9f05VtEy70F", "mail@nathandyer.me", "400", "4242424242424242", "12", "2018", "123"); //Mockup
+            var data = get_stripe_data (stripe_key, email_entry.text, (amount * 100).to_string (), card_number_entry.text, card_expiration_entry.text[0:2], year, card_cvc_entry.text);
+            // var data = get_stripe_data ("pk_test_oBReJdwjFAOVT9f05VtEy70F", "mail@something.that", "100", "4242424242424242", "12", "2018", "123"); // Mockup
 
             Json.Parser parser = new Json.Parser ();
             bool error = false;
-            
-            stderr.printf (data);
-        	try {
-        		parser.load_from_data (data);
-        		var root_object = parser.get_root ().get_object ();
+            try {
+                parser.load_from_data (data);
+                var root_object = parser.get_root ().get_object ();
                 var token_id = root_object.get_string_member ("id");
 
                 var houston_data = post_to_houston (stripe_key, app_id, token_id, (amount * 100).to_string ());
@@ -305,22 +326,22 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
                 } else {
                     error = true;
                 }
-        	} catch (Error e) {
-        		error = true;
-        	}
+            } catch (Error e) {
+                error = true;
+            }
 
-	    	if (error) {
-        	    show_error_view ();
-        	} else {
-        	    destroy ();
-        	}
+            if (error) {
+                show_error_view ();
+            } else {
+                destroy ();
+            }
 
-        	Idle.add ((owned) callback);
-        	return null;
-    	};
-    	Thread.create<void*> (run, false);
+            Idle.add ((owned) callback);
+            return null;
+        };
+        Thread.create<void*> (run, false);
 
-    	yield;
+        yield;
     }
 
     private string get_stripe_data (string key_, string email_, string amount_, string cc_num_, string cc_exp_month_, string cc_exp_year_, string cc_cvc_) {
@@ -339,7 +360,6 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
 
     private string post_to_houston (string app_key_, string app_id_, string purchase_token_, string amount_) {
         var uri = HOUSTON_URI.printf (app_id_, app_key_, purchase_token_, amount_);
-        stderr.printf ("Uri: %s\n", uri);
         var session = new Soup.Session ();
         var message = new Soup.Message ("POST", uri);
         session.send_message (message);
