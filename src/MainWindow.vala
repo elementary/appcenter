@@ -340,13 +340,14 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
                         break;
                     }
 
-                    if (!error.message.has_suffix (".") {
-                        error.message += ".";
+                    string body = error.message;
+                    if (!body.has_suffix (".")) {
+                        body += ".";
                     }
 
                     var close_button = new Gtk.Button.with_label (_("Close"));
 
-                    var dialog = new MessageDialog (_("There Was An Error Installing %s").printf (package.get_name ()), error.message, "dialog-error");
+                    var dialog = new MessageDialog (_("There Was An Error Installing %s").printf (package.get_name ()), body, "dialog-error");
                     dialog.add_action_widget (close_button, 0);
                     dialog.show_all ();
                     dialog.run ();
