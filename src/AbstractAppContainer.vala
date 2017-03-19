@@ -51,23 +51,9 @@ namespace AppCenter {
         construct {
             image = new Gtk.Image ();
 
-            progress_bar = new Gtk.ProgressBar ();
-            progress_bar.show_text = true;
-            progress_bar.valign = Gtk.Align.CENTER;
-            /* Request a width large enough for the longest text to stop width of
-             * progress bar jumping around */
-            progress_bar.width_request = 350;
-            progress_bar.no_show_all = true;
-            progress_bar.hide ();
-
             package_author = new Gtk.Label ("");
             package_name = new Gtk.Label ("");
             image = new Gtk.Image ();
-
-            action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
-
-            cancel_button = new Gtk.Button.with_label (_("Cancel"));
-            cancel_button.clicked.connect (() => action_cancelled ());
 
             action_button = new Gtk.Button.with_label (_("Install"));
             action_button.clicked.connect (() => action_clicked.begin ());
@@ -82,10 +68,21 @@ namespace AppCenter {
             button_grid.column_spacing = 6;
             button_grid.halign = Gtk.Align.END;
             button_grid.valign = Gtk.Align.CENTER;
-            button_grid.orientation = Gtk.Orientation.HORIZONTAL;
             button_grid.add (uninstall_button);
             button_grid.add (action_button);
             button_grid.add (open_button);
+
+            progress_bar = new Gtk.ProgressBar ();
+            progress_bar.show_text = true;
+            progress_bar.valign = Gtk.Align.CENTER;
+            /* Request a width large enough for the longest text to stop width of
+             * progress bar jumping around */
+            progress_bar.width_request = 350;
+            progress_bar.no_show_all = true;
+            progress_bar.hide ();
+
+            cancel_button = new Gtk.Button.with_label (_("Cancel"));
+            cancel_button.clicked.connect (() => action_cancelled ());
 
             var progress_grid = new Gtk.Grid ();
             progress_grid.valign = Gtk.Align.CENTER;
@@ -93,18 +90,17 @@ namespace AppCenter {
             progress_grid.attach (progress_bar, 0, 0, 1, 1);
             progress_grid.attach (cancel_button, 1, 0, 1, 1);
 
-            action_stack = new Gtk.Stack ();
-            action_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
-            action_stack.show_all ();
-
             action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
             action_button_group.add_widget (action_button);
             action_button_group.add_widget (uninstall_button);
             action_button_group.add_widget (cancel_button);
             action_button_group.add_widget (open_button);
 
+            action_stack = new Gtk.Stack ();
+            action_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
             action_stack.add_named (button_grid, "buttons");
             action_stack.add_named (progress_grid, "progress");
+            action_stack.show_all ();
         }
 
         protected virtual void set_up_package (uint icon_size = 48) {
