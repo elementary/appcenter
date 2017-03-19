@@ -209,8 +209,8 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         cancel_button.label = _("Pay Later");
         pay_button.label = _("Retry");
 
-        cancel_button.set_sensitive (true);
-        pay_button.set_sensitive (true);
+        cancel_button.sensitive = true;
+        pay_button.sensitive = true;
     }
 
     private void show_card_view () {
