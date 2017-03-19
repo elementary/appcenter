@@ -66,7 +66,6 @@ namespace AppCenter.Widgets {
         private Gtk.Label name_label;
         private Gtk.Label summary_label;
         private Gtk.Label description_label;
-        private Gtk.Label read_more_button;
         private Gtk.Image icon;
 
         public AppCenterCore.Package? current_package;
@@ -96,7 +95,7 @@ namespace AppCenter.Widgets {
             description_label.margin_top = 25;
             description_label.wrap = true;
             description_label.max_width_chars = 50;
-            
+
             icon = new Gtk.Image ();
             icon.icon_name = "system-software-install";
             icon.pixel_size = 128;
@@ -105,13 +104,9 @@ namespace AppCenter.Widgets {
             content_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 12);
             var vertical_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
 
-            read_more_button = new Gtk.Label (_("Read More›"));
-            read_more_button.get_style_context ().add_class ("dim-label");
-            read_more_button.halign = Gtk.Align.START;
             vertical_box.pack_start (name_label, false, false, 0);
             vertical_box.pack_start (summary_label, false, false, 0);
             vertical_box.pack_start (description_label, false, false, 0);
-            vertical_box.pack_start (read_more_button, false, false, 0);
             vertical_box.valign = Gtk.Align.CENTER;
 
             content_box.pack_start (icon, true, true, 0);
@@ -136,8 +131,6 @@ namespace AppCenter.Widgets {
             foreground_color = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
 
             current_package = null;
-            read_more_button.no_show_all = true;
-            read_more_button.hide ();
         }
 
         public void set_package (AppCenterCore.Package package) {
@@ -160,9 +153,6 @@ namespace AppCenter.Widgets {
             if (color_primary_text != null) {
                 foreground_color = color_primary_text;
             }
-
-            read_more_button.no_show_all = false;
-            read_more_button.show ();
 
             current_package = package;
         }
