@@ -121,17 +121,17 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         card_layout.add (card_grid);
 
         layouts = new Gtk.Stack ();
+        layouts.homogeneous = false;
+        layouts.margin_left = layouts.margin_right = 12;
         layouts.add_named (card_layout, "card");
         layouts.set_visible_child_name ("card");
-        layouts.homogeneous = false;
 
-        var content = (Gtk.Box) get_content_area ();
-        content.add (layouts);
-        content.margin = 12;
+        get_content_area ().add (layouts);
 
         var action_area = get_action_area ();
+        action_area.margin_right = 5;
+        action_area.margin_bottom = 5;
         action_area.margin_top = 14;
-        action_area.margin_left = 6;
 
         cancel_button = (Gtk.Button) add_button (_("Cancel"), Gtk.ResponseType.CLOSE);
 
@@ -180,22 +180,29 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         if (error_layout == null) {
             error_layout = new Gtk.Grid ();
 
-            var primary_label = new Gtk.Label (_("There was a problem processing your payment"));
+            var primary_label = new Gtk.Label (_("There Was a Problem Processing Your Payment"));
             primary_label.get_style_context ().add_class ("primary");
             primary_label.max_width_chars = 60;
             primary_label.xalign = 0;
 
-            var secondary_label = new Gtk.Label (_("Please review your payment info and try again"));
+            var secondary_label = new Gtk.Label (_("Please review your payment info and try again."));
             secondary_label.max_width_chars = 60;
             secondary_label.xalign = 0;
 
             var icon = new Gtk.Image.from_icon_name ("system-software-install", Gtk.IconSize.DIALOG);
 
+            var overlay_icon = new Gtk.Image.from_icon_name ("dialog-warning", Gtk.IconSize.LARGE_TOOLBAR);
+            overlay_icon.halign = Gtk.Align.END;
+            overlay_icon.valign = Gtk.Align.END;
+
+            var overlay = new Gtk.Overlay ();
+            overlay.add (icon);
+            overlay.add_overlay (overlay_icon);
+
             var grid = new Gtk.Grid ();
             grid.column_spacing = 12;
             grid.row_spacing = 6;
-            grid.margin_bottom = 24;
-            grid.attach (icon, 0, 0, 1, 2);
+            grid.attach (overlay, 0, 0, 1, 2);
             grid.attach (primary_label, 1, 0, 1, 1);
             grid.attach (secondary_label, 1, 1, 1, 1);
 
