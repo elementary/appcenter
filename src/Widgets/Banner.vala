@@ -98,7 +98,7 @@ namespace AppCenter.Widgets {
             content_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 12);
             var vertical_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
 
-            read_more_button = new Gtk.Label (_("Read More"));
+            read_more_button = new Gtk.Label (_("Read More›"));
             read_more_button.get_style_context ().add_class ("dim-label");
             read_more_button.halign = Gtk.Align.START;
             vertical_box.pack_start (name_label, false, false, 0);
