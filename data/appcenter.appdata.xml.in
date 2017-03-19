@@ -67,4 +67,8 @@
     <url type="help">https://elementaryos.stackexchange.com/questions/tagged/appcenter</url>
     <url type="translate">https://l10n.elementary.io/projects/desktop/appcenter</url>
     <update_contact>contact_at_elementary.io</update_contact>
+    
+    <custom>
+        <value key="x-appcenter-color-primary">#665888</value>
+    </custom>
 </component>
