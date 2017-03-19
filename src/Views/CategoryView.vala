@@ -21,8 +21,10 @@
 using AppCenterCore;
 
 public class AppCenter.Views.CategoryView : View {
-    private Gtk.FlowBox category_flow;
-    private Gtk.ScrolledWindow category_scrolled;
+
+    public signal void category_child_activated ();
+    public signal void show_home ();
+    public Gtk.FlowBox category_flow;
     private string current_category;
 
     public AppStream.Category currently_viewed_category;
@@ -35,7 +37,7 @@ public class AppCenter.Views.CategoryView : View {
         category_flow = new Gtk.FlowBox ();
         category_flow.margin = 12;
         category_flow.homogeneous = true;
-        category_flow.halign = Gtk.Align.CENTER;
+        category_flow.halign = Gtk.Align.FILL;
         category_flow.valign = Gtk.Align.CENTER;
         category_flow.min_children_per_line = 2;
         category_flow.activate_on_single_click = true;
@@ -47,6 +49,7 @@ public class AppCenter.Views.CategoryView : View {
                 currently_viewed_category = item.app_category;
                 show_app_list_for_category (item.app_category);
             }
+            category_child_activated ();
         });
 
         category_flow.set_sort_func ((child1, child2) => {
@@ -58,15 +61,11 @@ public class AppCenter.Views.CategoryView : View {
 
             return 0;
         });
-
-        category_scrolled = new Gtk.ScrolledWindow (null, null);
-        category_scrolled.add (category_flow);
-        add (category_scrolled);
     }
 
     public override void return_clicked () {
         if (current_category == null) {
-            set_visible_child (category_scrolled);
+            show_home ();
             currently_viewed_category = null;
         } else {
             subview_entered (_("Categories"), true, current_category);
