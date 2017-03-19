@@ -26,7 +26,7 @@ public errordomain PackageLaunchError {
 public class AppCenterCore.Package : Object {
     public signal void changing (bool is_changing);
     public signal void info_changed (Pk.Status status);
-    
+
     public enum State {
         NOT_INSTALLED,
         INSTALLED,
@@ -81,6 +81,7 @@ public class AppCenterCore.Package : Object {
     }
 
     private string? name = null;
+    private string? description = null;
     private string? summary = null;
     private string? color_primary = null;
     private string? color_primary_text = null;
@@ -234,6 +235,22 @@ public class AppCenterCore.Package : Object {
         }
 
         return name;
+    }
+
+    public string? get_description () {
+        if (description != null) {
+            return description;
+        }
+
+        description = component.get_description ();
+        if (description == null) {
+            var package = find_package ();
+            if (package != null) {
+                description = package.description;
+            }
+        }
+
+        return description;
     }
 
     public string? get_summary () {

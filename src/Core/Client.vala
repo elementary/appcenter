@@ -55,7 +55,7 @@ public class AppCenterCore.Client : Object {
         appstream_pool = new AppStream.Pool ();
         // We don't want to show installed desktop files here
         appstream_pool.set_flags (appstream_pool.get_flags () & ~AppStream.PoolFlags.READ_DESKTOP_FILES);
-        
+
         try {
             appstream_pool.load ();
             appstream_pool.get_components ().foreach ((comp) => {
@@ -128,7 +128,7 @@ public class AppCenterCore.Client : Object {
         foreach (var pk_package in package.change_information.changes) {
             packages_ids += pk_package.get_id ();
         }
-        
+
         packages_ids += null;
 
         try {
@@ -357,7 +357,7 @@ public class AppCenterCore.Client : Object {
         task_count--;
         refresh_in_progress = false;
     }
-    
+
    public async bool check_restart () {
         if (FileUtils.test (RESTART_REQUIRED_FILE, FileTest.EXISTS)) {
             if (!restart_required) {
@@ -371,10 +371,10 @@ public class AppCenterCore.Client : Object {
                 Application.get_default ().send_notification ("restart", notification);
             }
 
-            restart_required = true;            
+            restart_required = true;
             return true;
         }
-        
+
         return false;
     }
 
