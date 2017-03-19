@@ -29,7 +29,7 @@ public class AppCenterCore.Houston : Object {
 
         var root = parser.get_root ().get_object ();
 
-        if (root.get_array_member ("errors").get_length () > 0) {
+        if (root.has_member ("errors") && root.get_array_member ("errors").get_length () > 0) {
             var err = root.get_array_member ("errors").get_object_element (0).get_string_member ("title");
 
             if (err != null) {
@@ -52,10 +52,14 @@ public class AppCenterCore.Houston : Object {
 
         string[] app_ids = {};
         try {
-            var data = process_response ((string) message.response_body.data).get_array_member ("data");
+            var res = process_response ((string) message.response_body.data);
 
-            foreach (var id in data.get_elements ()) {
-                app_ids += ((string) id.get_value ());
+            if (res.has_member ("data")) {
+                var data = res.get_array_member ("data");
+
+                foreach (var id in data.get_elements ()) {
+                    app_ids += ((string) id.get_value ());
+                }
             }
         } catch (Error e) {
             stderr.printf ("Houston: %s\n", e.message);
