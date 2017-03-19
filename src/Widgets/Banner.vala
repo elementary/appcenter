@@ -43,7 +43,7 @@ const string DEFAULT_BANNER_COLOR_PRIMARY_TEXT = "white";
 namespace AppCenter.Widgets {
     public class Banner : Gtk.Button {
 
-        private string _background_color;
+        private string _background_color = "#68758e";
         public string background_color {
             get {
                 return _background_color;
@@ -52,7 +52,7 @@ namespace AppCenter.Widgets {
                 on_any_color_change ();
             }
         }
-        private string _foreground_color;
+        private string _foreground_color = "white";
         public string foreground_color {
             get {
                 return _foreground_color;
