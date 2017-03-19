@@ -253,9 +253,9 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
 
     private void is_payment_sensitive () {
         if (email_valid && card_valid && expiration_valid && cvc_valid) {
-            pay_button.set_sensitive (true);
+            pay_button.sensitive = true;
         } else {
-            pay_button.set_sensitive (false);
+            pay_button.sensitive = false;
         }
     }
 

@@ -57,7 +57,7 @@ namespace AppCenter {
                 } else if (payments_key_ == null) {
                     payments_key_ = this.package.component.get_custom_value ("x-appcenter-stripe");
                 }
-                
+
                 return payments_key_ != null;
             }
         }
@@ -90,7 +90,7 @@ namespace AppCenter {
 
             action_button.payment_requested.connect ((amount) => {
                 var stripe = new Widgets.StripeDialog (amount, this.package_name.label, this.package.component.get_desktop_id ().replace (".desktop", ""), payments_key_);
-                stripe.show();
+                stripe.show ();
             });
 
             uninstall_button = new Gtk.Button.with_label (_("Uninstall"));
@@ -175,10 +175,10 @@ namespace AppCenter {
 
                     action_button.no_show_all = false;
                     action_button.show ();
-                    
+
                     open_button.no_show_all = true;
                     open_button.hide ();
-                    
+
                     break;
                 case AppCenterCore.Package.State.INSTALLED:
                     if (show_uninstall) {
