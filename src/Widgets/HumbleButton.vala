@@ -28,17 +28,18 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
 
     private Gtk.ToggleButton arrow_button;
 
-    private int amount_;
+    private int _amount;
     public int amount {
         get {
-            return amount_;
-        } set {
-            amount_ = value;
-            amount_button.label = get_amount_formated (value, true);
+            return _amount;
+        }
+        set {
+            _amount = value;
+            amount_button.label = get_amount_formatted (value, true);
             custom_amount.value = value;
 
-            if (amount != 0) {
-                amount_button.label = get_amount_formated (amount, true);
+            if (_amount != 0) {
+                amount_button.label = get_amount_formatted (_amount, true);
             } else {
                 amount_button.label = _("Free");
             }
@@ -62,7 +63,7 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
         }
     }
 
-    public bool sugested_action {
+    public bool suggested_action {
         set {
             if (value) {
                 amount_button.get_style_context ().add_class ("h3");
@@ -141,7 +142,7 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
         add (arrow_button);
     }
 
-    private string get_amount_formated (int _amount, bool with_short_part = true) {
+    private string get_amount_formatted (int _amount, bool with_short_part = true) {
         if (with_short_part) {
             /// This amount will be US Dollars. Some languages might need a "$%dUSD"
             return _("$%d.00").printf (_amount);
@@ -152,7 +153,7 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
     }
 
     private Gtk.Button get_amount_button (int amount) {
-        var button = new Gtk.Button.with_label (get_amount_formated (amount, false));
+        var button = new Gtk.Button.with_label (get_amount_formatted (amount, false));
 
         button.clicked.connect (() => {
             this.amount = amount;
