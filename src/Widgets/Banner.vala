@@ -22,11 +22,14 @@
 const string BANNER_STYLE_CSS = """
     .banner {
         background-color: %s;
+        color: %s;
+    }
+
+    .banner.home {
         border-radius: 3px;
         box-shadow:
             0 3px 2px -1px alpha (#000, 0.15),
             0 3px 5px alpha (#000, 0.10);
-        color: %s;
     }
 
     .banner .button {

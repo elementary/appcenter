@@ -36,6 +36,7 @@ namespace AppCenter {
             var banner_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 12);
 
             newest_banner = new Widgets.Banner ();
+            newest_banner.get_style_context ().add_class ("home");
             newest_banner.margin = 24;
 
             var newest_ids = houston.get_newest ();
