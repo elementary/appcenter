@@ -15,6 +15,7 @@
 */
 
 public class AppCenterCore.Client : Object {
+    public signal void operation_finished (Package package, Package.State operation, Error? error);
     public signal void updates_available ();
 
     private const string RESTART_REQUIRED_FILE = "/var/run/reboot-required";
@@ -108,9 +109,6 @@ public class AppCenterCore.Client : Object {
 
             results = yield client.install_packages_async (packages_ids, cancellable, cb);
             exit_status = results.get_exit_code ();
-            if (exit_status != Pk.Exit.SUCCESS) {
-                throw new GLib.IOError.FAILED (Pk.Exit.enum_to_string (results.get_exit_code ()));
-            }
         } catch (Error e) {
             task_count--;
             throw e;
@@ -226,7 +224,6 @@ public class AppCenterCore.Client : Object {
                 }
             });
         } catch (Error e) {
-            // Error code 19 is for operation canceled.
             if (e.code != 19) {
                 critical (e.message);
             }

@@ -24,6 +24,7 @@ vala_precompile(VALA_C ${EXEC_NAME}
     Widgets/AppListRow.vala
     Widgets/UpdateHeaderRow.vala
     Widgets/RestartDialog.vala
+    Widgets/MessageDialog.vala
     Widgets/HumbleButton.vala
     Widgets/StripeDialog.vala
     Services/DbusInterfaces.vala
