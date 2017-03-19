@@ -305,7 +305,6 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
             var year = (int.parse (card_expiration_entry.text[2:4]) + 2000).to_string ();
 
             var data = get_stripe_data (stripe_key, email_entry.text, (amount * 100).to_string (), card_number_entry.text, card_expiration_entry.text[0:2], year, card_cvc_entry.text);
-            // var data = get_stripe_data ("pk_test_oBReJdwjFAOVT9f05VtEy70F", "mail@something.that", "100", "4242424242424242", "12", "2018", "123"); // Mockup
 
             Json.Parser parser = new Json.Parser ();
             bool error = false;
