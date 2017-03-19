@@ -18,19 +18,6 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-const string BANNER_STYLE_CSS = """
-    .banner {
-        background-color: %s;
-        color: %s;
-    }
-    .banner .button {
-        background-color: @base_color;
-    }
-    """;
-
-const string DEFAULT_BANNER_COLOR_PRIMARY = "#68758e";
-const string DEFAULT_BANNER_COLOR_PRIMARY_TEXT = "white";
-
 namespace AppCenter.Views {
     public class AppInfoView : AppCenter.AbstractAppContainer {
         Gtk.Grid links_grid;
