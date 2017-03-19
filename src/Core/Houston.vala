@@ -45,7 +45,7 @@ public class AppCenterCore.Houston : Object {
     public string[] get_newest () {
         var uri = HOUSTON_API_URL + "/newest";
 
-        stdout.printf ("%s\n", uri);
+        debug ("Requesting newest applications from %s", uri);
 
         var message = new Soup.Message ("GET", uri);
         session.send_message (message);
