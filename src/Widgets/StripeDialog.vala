@@ -19,7 +19,7 @@
 */
 
 public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
-    private const string HOUSTON_URI =  "http://192.168.1.7:3000/api/payment/%s?key=%s&token=%s&amount=%s&currency=USD";
+    private const string HOUSTON_URI =  "https://developer.elementary.io/api/payment/%s?key=%s&token=%s&amount=%s&currency=USD";
     private const string USER_AGENT = "Stripe checkout";
     private const string STRIPE_URI = "https://api.stripe.com/v1/tokens?email=%s"
                             + "&payment_user_agent=%s&amount=%s&card[number]=%s"
