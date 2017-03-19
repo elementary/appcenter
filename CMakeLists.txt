@@ -27,7 +27,7 @@ add_definitions (-w)
 add_definitions (-DI_KNOW_THE_PACKAGEKIT_GLIB2_API_IS_SUBJECT_TO_CHANGE)
 
 find_package (PkgConfig)
-pkg_check_modules (DEPS REQUIRED gthread-2.0 gee-0.8 gtk+-3.0>=3.10 granite packagekit-glib2 appstream>=0.10.0)
+pkg_check_modules (DEPS REQUIRED gthread-2.0 gee-0.8 gtk+-3.0>=3.10 granite packagekit-glib2 appstream>=0.10.0 libsoup-2.4 json-glib-1.0)
 
 add_definitions (${DEPS_CFLAGS})
 link_directories (${DEPS_LIBRARY_DIRS})

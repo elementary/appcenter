@@ -4,7 +4,7 @@ services:
  - docker
 
 env:
- - DEPENDENCY_PACKAGES="appstream cmake cmake-elementary desktop-file-utils intltool libappstream-dev libgee-0.8-dev libgranite-dev libgtk-3-dev libpackagekit-glib2-dev libunity-dev libxml2-dev libxml2-utils valac"
+ - DEPENDENCY_PACKAGES="appstream cmake cmake-elementary desktop-file-utils intltool libappstream-dev libgee-0.8-dev libgranite-dev libgtk-3-dev libjson-glib-dev libpackagekit-glib2-dev libsoup2.4-dev libunity-dev libxml2-dev libxml2-utils valac"
 
 install:
  - docker pull elementary/docker:loki
