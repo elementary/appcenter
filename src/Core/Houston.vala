@@ -15,7 +15,7 @@
 */
 
 public class AppCenterCore.Houston : Object {
-    private const string HOUSTON_API_URL = "http://localhost:3000/api";
+    private const string HOUSTON_API_URL = "https://developer.elementary.io/api";
 
     private Soup.Session session;
 
