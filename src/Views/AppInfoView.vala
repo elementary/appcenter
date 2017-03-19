@@ -198,9 +198,7 @@ namespace AppCenter.Views {
                 links_grid.add (help_button);
             }
 
-            var action_button_context = action_button.get_style_context ();
-            action_button_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
-            action_button_context.add_class ("h3");
+            action_button.suggested_action = true;
 
             var uninstall_button_context = uninstall_button.get_style_context ();
             uninstall_button_context.add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
@@ -210,12 +208,12 @@ namespace AppCenter.Views {
             reload_css ();
         }
 
-        protected override void set_up_package (uint icon_size = 48) {                
+        protected override void set_up_package (uint icon_size = 48) {
             package_summary.label = package.get_summary ();
             package_summary.ellipsize = Pango.EllipsizeMode.END;
             base.set_up_package (icon_size);
         }
-        
+
         protected override void update_state (bool first_update = false) {
             if (!first_update) {
                 app_version.label = package.get_version ();
@@ -349,7 +347,7 @@ namespace AppCenter.Views {
                 Object (uri: uri);
                 get_style_context ().add_class ("dim-label");
                 tooltip_text = uri;
-                
+
                 var icon = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.LARGE_TOOLBAR);
 
                 var title = new Gtk.Label (label);
