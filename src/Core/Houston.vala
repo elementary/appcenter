@@ -15,7 +15,7 @@
 */
 
 public class AppCenterCore.Houston : Object {
-    private const string HOUSTON_API_URL = "http://10.17.75.173:3000/api";
+    private const string HOUSTON_API_URL = "http://localhost:3000/api";
 
     private Soup.Session session;
 
@@ -29,7 +29,7 @@ public class AppCenterCore.Houston : Object {
 
         var root = parser.get_root ().get_object ();
 
-        if (root.has_member ("errors") && root.get_array_member ("errors").get_length () > 0) {
+        if (root.get_array_member ("errors").get_length () > 0) {
             var err = root.get_array_member ("errors").get_object_element (0).get_string_member ("title");
 
             if (err != null) {

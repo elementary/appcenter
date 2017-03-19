@@ -29,7 +29,6 @@ namespace AppCenter {
         private Gtk.ScrolledWindow scrolled_window;
 
         public Homepage () {
-
             var houston = AppCenterCore.Houston.get_default ();
 
             scrolled_window = new Gtk.ScrolledWindow (null, null);
