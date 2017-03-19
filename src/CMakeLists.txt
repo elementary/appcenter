@@ -21,6 +21,8 @@ vala_precompile(VALA_C ${EXEC_NAME}
     Widgets/AppListRow.vala
     Widgets/UpdateHeaderRow.vala
     Widgets/RestartDialog.vala
+    Widgets/HumbleButton.vala
+    Widgets/StripeDialog.vala
     Services/DbusInterfaces.vala
     ${CMAKE_CURRENT_BINARY_DIR}/config.vala
 PACKAGES
@@ -29,6 +31,8 @@ PACKAGES
     gee-0.8
     granite
     packagekit-glib2
+    libsoup-2.4 
+    json-glib-1.0
     libxml-2.0
     ${UNITY_PACKAGES}
 OPTIONS
