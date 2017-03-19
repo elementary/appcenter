@@ -73,15 +73,23 @@ namespace AppCenter.Widgets {
             // Default AppCenter banner
             name_label = new Gtk.Label ("Name");
             name_label.get_style_context ().add_class ("h1");
+            name_label.xalign = 0;
+            name_label.wrap = true;
+            name_label.max_width_chars = 40;
+
             summary_label = new Gtk.Label ("Summary");
             summary_label.get_style_context ().add_class ("h2");
+            summary_label.xalign = 0;
+            summary_label.wrap = true;
+            summary_label.max_width_chars = 50;
+
             description_label = new Gtk.Label ("Description");
             description_label.get_style_context ().add_class ("h3");
-            name_label.xalign = 0;
-            summary_label.xalign = 0;
             description_label.xalign = 0;
             description_label.margin_top = 25;
-
+            description_label.wrap = true;
+            description_label.max_width_chars = 50;
+            
             icon = new Gtk.Image ();
             icon.icon_name = "system-software-install";
             icon.pixel_size = 128;
