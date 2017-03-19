@@ -49,13 +49,13 @@ namespace AppCenter {
             }
         }
 
-        public bool payments_enabled { get; set; }
+        public bool payments_enabled { get; private set; }
 
         construct {
             if (this.package == null || this.package.component == null) {
-                payments_enabled_ = false;
+                payments_enabled = false;
             } else {
-                payments_enabled_ = (this.package.component.get_custom_value ("x-appcenter-stripe") != null);
+                payments_enabled = (this.package.component.get_custom_value ("x-appcenter-stripe") != null);
             }
         
             image = new Gtk.Image ();
