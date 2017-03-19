@@ -12,16 +12,13 @@ vala_precompile(VALA_C ${EXEC_NAME}
     AbstractAppList.vala
     Views/AppInfoView.vala
     Views/AppListView.vala
-    Views/FeaturedView.vala
     Views/CategoryView.vala
     Views/SearchView.vala
     Views/InstalledView.vala
     Views/View.vala
     Widgets/CategoryItem.vala
-    Widgets/FeaturedButton.vala
     Widgets/PackageRow.vala
     Widgets/AppListRow.vala
-    Widgets/AppActionButton.vala
     Widgets/UpdateHeaderRow.vala
     Widgets/RestartDialog.vala
     Widgets/MessageDialog.vala

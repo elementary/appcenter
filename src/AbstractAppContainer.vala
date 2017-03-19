@@ -8,9 +8,9 @@ namespace AppCenter {
         protected Gtk.Label package_summary;
 
         // The action button covers Install and Update
-        protected Widgets.AppActionButton action_button;
-        protected Widgets.AppActionButton uninstall_button;
-        protected Widgets.AppActionButton open_button;
+        protected Gtk.Button action_button;
+        protected Gtk.Button uninstall_button;
+        protected Gtk.Button open_button;
         protected Gtk.ProgressBar progress_bar;
         protected Gtk.Button cancel_button;
         protected Gtk.SizeGroup action_button_group;
@@ -60,18 +60,22 @@ namespace AppCenter {
             progress_bar.no_show_all = true;
             progress_bar.hide ();
 
+            package_author = new Gtk.Label ("");
+            package_name = new Gtk.Label ("");
+            image = new Gtk.Image ();
+
             action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
 
-            cancel_button = new Widgets.AppActionButton (_("Cancel"));
+            cancel_button = new Gtk.Button.with_label (_("Cancel"));
             cancel_button.clicked.connect (() => action_cancelled ());
 
-            action_button = new Widgets.AppActionButton (_("Install"));
+            action_button = new Gtk.Button.with_label (_("Install"));
             action_button.clicked.connect (() => action_clicked.begin ());
 
-            uninstall_button = new Widgets.AppActionButton (_("Uninstall"));
+            uninstall_button = new Gtk.Button.with_label (_("Uninstall"));
             uninstall_button.clicked.connect (() => uninstall_clicked.begin ());
 
-            open_button = new Widgets.AppActionButton (_("Open"));
+            open_button = new Gtk.Button.with_label (_("Open"));
             open_button.clicked.connect (launch_package_app);
 
             var button_grid = new Gtk.Grid ();
@@ -200,7 +204,7 @@ namespace AppCenter {
                     action_stack.set_visible_child_name ("progress");
 
                     open_button.no_show_all = true;
-                    open_button.hide ();                    
+                    open_button.hide ();
                     break;
 
                 default:
