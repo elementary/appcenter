@@ -49,20 +49,15 @@ namespace AppCenter {
             }
         }
 
-        private bool? payments_enabled_ = null;
-        public bool payments_enabled {
-            get {
-                if (this.package == null || this.package.component == null) return false;
-
-                if (payments_enabled_ == null) {
-                    payments_enabled_ = (this.package.component.get_custom_value ("x-appcenter-stripe") != null);
-                }
-
-                return payments_enabled_;
-            }
-        }
+        public bool payments_enabled { get; set; }
 
         construct {
+            if (this.package == null || this.package.component == null) {
+                payments_enabled_ = false;
+            } else {
+                payments_enabled_ = (this.package.component.get_custom_value ("x-appcenter-stripe") != null);
+            }
+        
             image = new Gtk.Image ();
 
             progress_bar = new Gtk.ProgressBar ();
@@ -167,11 +162,11 @@ namespace AppCenter {
 
             switch (package.state) {
                 case AppCenterCore.Package.State.NOT_INSTALLED:
-                    if (!payments_enabled) {
+                    /*if (!payments_enabled) {
                         action_button.can_purchase = false;
                     } else {
                         action_button.can_purchase = true;
-                    }
+                    }*/
 
                     action_button.no_show_all = false;
                     action_button.show ();
