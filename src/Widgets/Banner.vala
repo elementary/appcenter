@@ -101,7 +101,7 @@ namespace AppCenter.Widgets {
             icon.icon_name = "system-software-install";
             icon.pixel_size = 128;
             icon.xalign = 1;
-            icon.margin = 25;
+            icon.margin_right = 24;
             content_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 12);
             var vertical_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
 
