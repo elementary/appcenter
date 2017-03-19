@@ -318,7 +318,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     private void on_operation_finished (AppCenterCore.Package package, AppCenterCore.Package.State operation, Error? error) {
         switch (operation) {
             case AppCenterCore.Package.State.INSTALLING:
-                string title, body, icon_name, id;
                 if (error == null) {
                     // Check if window is focused
                     var win = get_window ();
@@ -326,30 +325,28 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
                         break;
                     }
 
-                    title = _("Application installed");
-                    body = _("%s has been successfully installed").printf (package.get_name ());
-                    icon_name = "system-software-install";
-                    id = "installed";
+                    var notification = new Notification (_("Application installed"));
+                    notification.set_body (_("%s has been successfully installed").printf (package.get_name ()));
+                    notification.set_icon (new ThemedIcon ("system-software-install"));
+                    notification.set_default_action ("app.open-application");
+
+                    var app = get_application ();
+                    if (app != null) {
+                        app.send_notification ("installed", notification);
+                    }                    
                 } else {
                     // Check if permission was denied or the operation was cancelled
                     if (error.matches (IOError.quark (), 19) || error.matches (Pk.ClientError.quark (), 303)) {
                         break;
                     }
 
-                    title = _("Application installation failed");
-                    body = _("There was an error installing %s:\n%s").printf (package.get_name (), error.message);
-                    icon_name = "dialog-error";
-                    id = "error-installing";
-                }
+                    var close_button = new Gtk.Button.with_label (_("Close"));
 
-                var notification = new Notification (title);
-                notification.set_body (body);
-                notification.set_icon (new ThemedIcon (icon_name));
-                notification.set_default_action ("app.open-application");
-
-                var app = get_application ();
-                if (app != null) {
-                    app.send_notification (id, notification);
+                    var dialog = new MessageDialog (_("Application installation failed"), _("There was an error installing %s:\n%s").printf (package.get_name (), error.message), "dialog-error");
+                    dialog.add_action_widget (close_button, 0);
+                    dialog.show_all ();
+                    dialog.run ();
+                    dialog.destroy ();
                 }
 
                 break;
