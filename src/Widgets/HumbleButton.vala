@@ -78,6 +78,7 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
 
     construct {
         amount_button = new Gtk.Button ();
+        amount_button.expand = true;
 
         var one_dollar = get_amount_button (1);
         var five_dollar = get_amount_button (5);

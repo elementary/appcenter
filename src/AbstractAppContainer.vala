@@ -49,15 +49,22 @@ namespace AppCenter {
             }
         }
 
-        public bool payments_enabled { get; private set; }
+        private string? payments_key_ = null;
+        public bool payments_enabled {
+            get {
+                if (this.package == null || this.package.component == null || updates_view) {
+                    return false;
+                } else if (payments_key_ == null) {
+                    payments_key_ = this.package.component.get_custom_value ("x-appcenter-stripe");
+                }
+                
+                return payments_key_ != null;
+            }
+        }
+
+        public bool updates_view = false;
 
         construct {
-            if (this.package == null || this.package.component == null) {
-                payments_enabled = false;
-            } else {
-                payments_enabled = (this.package.component.get_custom_value ("x-appcenter-stripe") != null);
-            }
-        
             image = new Gtk.Image ();
 
             progress_bar = new Gtk.ProgressBar ();
@@ -82,12 +89,9 @@ namespace AppCenter {
             action_button.download_requested.connect (() => action_clicked.begin ());
 
             action_button.payment_requested.connect ((amount) => {
-                var stripe_key = this.package.component.get_custom_value ("x-appcenter-stripe");
-
-                var stripe = new Widgets.StripeDialog (amount, this.package_name.label, this.package.component.get_desktop_id (), stripe_key);
+                var stripe = new Widgets.StripeDialog (amount, this.package_name.label, this.package.component.get_desktop_id ().replace (".desktop", ""), payments_key_);
                 stripe.show();
             });
-
 
             uninstall_button = new Gtk.Button.with_label (_("Uninstall"));
             uninstall_button.clicked.connect (() => uninstall_clicked.begin ());
@@ -116,6 +120,7 @@ namespace AppCenter {
 
             action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
             action_button_group.add_widget (action_button);
+            action_button_group.add_widget (uninstall_button);
             action_button_group.add_widget (cancel_button);
             action_button_group.add_widget (open_button);
 
@@ -147,11 +152,12 @@ namespace AppCenter {
             update_state (true);
         }
 
-        protected virtual void update_state (bool first_update = false) {
+        protected void update_state (bool first_update = false) {
             update_action ();
         }
 
         protected void update_action () {
+            stderr.printf ("Update action: %s\n", package_name.label);
             uninstall_button.no_show_all = true;
             uninstall_button.hide ();
             progress_bar.no_show_all = true;
@@ -162,16 +168,18 @@ namespace AppCenter {
 
             switch (package.state) {
                 case AppCenterCore.Package.State.NOT_INSTALLED:
-                    /*if (!payments_enabled) {
+                    if (!payments_enabled) {
                         action_button.can_purchase = false;
                     } else {
                         action_button.can_purchase = true;
-                    }*/
+                    }
 
                     action_button.no_show_all = false;
                     action_button.show ();
+                    
                     open_button.no_show_all = true;
                     open_button.hide ();
+                    
                     break;
                 case AppCenterCore.Package.State.INSTALLED:
                     if (show_uninstall) {
@@ -203,7 +211,7 @@ namespace AppCenter {
                     action_button.can_purchase = false;
                     action_button.label = _("Update");
 
-                    action_button.no_show_all = false;
+                    action_button.no_show_all = false;//update_state
                     action_button.show_all ();
 
                     if (show_open && package.get_can_launch ()) {
@@ -263,7 +271,6 @@ namespace AppCenter {
             } else if (yield package.install ()) {
                  // Add this app to the Installed Apps View
                  MainWindow.installed_view.add_app.begin (package);
-                 update_state ();
             }
         }
 
@@ -271,7 +278,6 @@ namespace AppCenter {
             if (yield package.uninstall ()) {
                 // Remove this app from the Installed Apps View
                 MainWindow.installed_view.remove_app.begin (package);
-                update_state ();
             }
         }
     }
