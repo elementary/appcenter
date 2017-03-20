@@ -49,16 +49,22 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
     private bool cvc_valid = false;
 
     public StripeDialog (int _amount, string _app_name, string _app_id, string _stripe_key) {
-        Object (amount: _amount, app_name: _app_name, app_id: _app_id, stripe_key: _stripe_key);
-        deletable = false;
-        resizable = false;
+        Object (amount: _amount,
+                app_name: _app_name,
+                app_id: _app_id,
+                deletable: false,
+                resizable: false,
+                stripe_key: _stripe_key);
+    }
 
+    construct {
         var primary_label = new Gtk.Label ("AppCenter");
         primary_label.get_style_context ().add_class ("primary");
 
         var secondary_label = new Gtk.Label (app_name);
 
         email_entry = new Gtk.Entry ();
+        email_entry.hexpand = true;
         email_entry.input_purpose = Gtk.InputPurpose.EMAIL;
         email_entry.placeholder_text = "Email";
         email_entry.primary_icon_name = "internet-mail-symbolic";
@@ -69,6 +75,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         });
 
         card_number_entry = new Gtk.Entry ();
+        card_number_entry.hexpand = true;
         card_number_entry.input_purpose = Gtk.InputPurpose.DIGITS;
         card_number_entry.max_length = 20;
         card_number_entry.placeholder_text = "Card Number";
@@ -80,6 +87,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         });
 
         card_expiration_entry = new Gtk.Entry ();
+        card_expiration_entry.hexpand = true;
         card_expiration_entry.max_length = 4;
         card_expiration_entry.placeholder_text = "MM / YY";
         card_expiration_entry.primary_icon_name = "office-calendar-symbolic";
@@ -90,6 +98,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         });
 
         card_cvc_entry = new Gtk.Entry ();
+        card_cvc_entry.hexpand = true;
         card_cvc_entry.input_purpose = Gtk.InputPurpose.DIGITS;
         card_cvc_entry.max_length = 4;
         card_cvc_entry.placeholder_text = "CVC";
@@ -121,8 +130,9 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         card_layout.add (card_grid);
 
         layouts = new Gtk.Stack ();
-        layouts.homogeneous = false;
+        layouts.vhomogeneous = false;
         layouts.margin_left = layouts.margin_right = 12;
+        layouts.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
         layouts.add_named (card_layout, "card");
         layouts.set_visible_child_name ("card");
 
@@ -137,11 +147,36 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
 
         pay_button = (Gtk.Button) add_button (_("Pay $%s.00").printf (amount.to_string ()), Gtk.ResponseType.APPLY);
         pay_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+        pay_button.has_default = true;
         pay_button.sensitive = false;
 
         show_all ();
 
         response.connect (on_response);
+
+        email_entry.activate.connect (() => {
+            if (pay_button.sensitive) {
+                pay_button.activate ();
+            }
+        });
+
+        card_number_entry.activate.connect (() => {
+            if (pay_button.sensitive) {
+                pay_button.activate ();
+            }
+        });
+
+        card_expiration_entry.activate.connect (() => {
+            if (pay_button.sensitive) {
+                pay_button.activate ();
+            }
+        });
+
+        card_cvc_entry.activate.connect (() => {
+            if (pay_button.sensitive) {
+                pay_button.activate ();
+            }
+        });
     }
 
     private void show_spinner_view () {
@@ -182,11 +217,13 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
 
             var primary_label = new Gtk.Label (_("There Was a Problem Processing Your Payment"));
             primary_label.get_style_context ().add_class ("primary");
-            primary_label.max_width_chars = 60;
+            primary_label.max_width_chars = 35;
+            primary_label.wrap = true;
             primary_label.xalign = 0;
 
             var secondary_label = new Gtk.Label (_("Please review your payment info and try again."));
-            secondary_label.max_width_chars = 60;
+            secondary_label.max_width_chars = 35;
+            secondary_label.wrap = true;
             secondary_label.xalign = 0;
 
             var icon = new Gtk.Image.from_icon_name ("system-software-install", Gtk.IconSize.DIALOG);
@@ -196,6 +233,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
             overlay_icon.valign = Gtk.Align.END;
 
             var overlay = new Gtk.Overlay ();
+            overlay.valign = Gtk.Align.START;
             overlay.add (icon);
             overlay.add_overlay (overlay_icon);
 
