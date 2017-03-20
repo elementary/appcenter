@@ -1,9 +1,11 @@
 Source: appcenter
 Section: utils
 Maintainer: Corentin Noël <corentin@elementary.io>
-Build-Depends: cmake,
+Build-Depends: appstream,
+               cmake,
                cmake-elementary,
                debhelper (>= 9),
+               desktop-file-utils,
                intltool,
                libappstream-dev (>= 0.10),
                libgee-0.8-dev,
