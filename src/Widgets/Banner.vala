@@ -20,20 +20,48 @@
 
 
 const string BANNER_STYLE_CSS = """
+    @define-color banner_bg_color %s;
+    @define-color banner_fg_color %s;
+
     .banner {
-        background-color: %s;
-        color: %s;
+        background-color: @banner_bg_color;
+        color: @banner_fg_color;
     }
 
     .banner.home {
         border-radius: 3px;
         box-shadow:
-            0 3px 2px -1px alpha (#000, 0.15),
-            0 3px 5px alpha (#000, 0.10);
+            0 3px 2px -1px alpha (shade (@banner_bg_color, 0.5), 0.15),
+            0 3px 5px alpha (shade (@banner_bg_color, 0.5), 0.10);
     }
 
     .banner .button {
-        background-color: @base_color;
+        background-color: alpha (@banner_fg_color, 0.6);
+        background-image: none;
+        border-color: alpha (@banner_fg_color, 0.7);
+        box-shadow: none;
+        font-weight: 600;
+    }
+
+    .banner .button:focus {
+        background-color: alpha (@banner_fg_color, 0.8);
+        border-color: alpha (@banner_fg_color, 0.9);
+    }
+
+    .banner .button:active,
+    .banner .button:checked {
+        background-color: alpha (@banner_fg_color, 0.5);
+        border-color: alpha (@banner_fg_color, 0.6);
+    }
+
+    .banner .button GtkImage {
+        color: @banner_bg_color;
+        icon-shadow: 0 1px 1px alpha (@banner_fg_color, 0.1);
+    }
+
+    .banner .button .label {
+        color: @banner_bg_color;
+        text-shadow: 0 1px 1px alpha (@banner_fg_color, 0.1);
     }
 """;
 
