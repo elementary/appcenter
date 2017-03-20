@@ -43,9 +43,15 @@ const string BANNER_STYLE_CSS = """
         font-weight: 600;
     }
 
-    .banner .button:focus {
+    .banner .button.destructive-action,
+    .banner .button.suggested-action {
         background-color: alpha (@banner_fg_color, 0.8);
         border-color: alpha (@banner_fg_color, 0.9);
+    }
+
+    .banner .button:focus {
+        background-color: alpha (@banner_fg_color, 0.9);
+        border-color: @banner_fg_color;
     }
 
     .banner .button:active,
