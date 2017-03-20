@@ -22,7 +22,7 @@ msgstr "گەڕان و بەڕێوەبردنی نەرمەواڵەکان"
 msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
 msgstr ""
 ";دامەزراندن;دامەزرێنسڕینەوە;سڕینەوە;ڕێبەر;کۆگا;نەرمەواڵەکان;بەڕۆژکردنەکان;نەر"
-"مەکاڵاکان"
+"مەکاڵاکان;"
 
 msgid "About AppCenter"
 msgstr "دەربارەی ناوەندی نەرمەواڵەکان"

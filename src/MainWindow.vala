@@ -17,19 +17,19 @@
 public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     private Gtk.Revealer view_mode_revealer;
     private Gtk.Stack custom_title_stack;
-    private Gtk.Label category_header;
+    private Gtk.Label homepage_header;
     private Granite.Widgets.ModeButton view_mode;
     private Gtk.HeaderBar headerbar;
     private Gtk.Stack stack;
     private Gtk.SearchEntry search_entry;
-    private Views.CategoryView category_view;
+    private Homepage homepage;
     private Views.SearchView search_view;
     private Gtk.Button return_button;
     private Gtk.Button search_all_button;
     private Gtk.Stack button_stack;
     private ulong task_finished_connection = 0U;
     private Gee.Deque<string> return_button_history;
-    
+
     public static Views.InstalledView installed_view { get; private set; }
 
     public MainWindow (Gtk.Application app) {
@@ -40,6 +40,11 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         unowned Settings saved_state = Settings.get_default ();
         set_default_size (saved_state.window_width, saved_state.window_height);
+
+        Gdk.Geometry hints = Gdk.Geometry ();
+        hints.max_width = 1500;
+        hints.max_height = 1080;
+        set_geometry_hints (null, hints, Gdk.WindowHints.MAX_SIZE);
 
         // Maximize window if necessary
         switch (saved_state.window_state) {
@@ -63,7 +68,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         view_mode.notify["selected"].connect (() => {
             switch (view_mode.selected) {
                 case 0:
-                    stack.set_visible_child (category_view);
+                    stack.set_visible_child (homepage);
                     break;
                 default:
                     stack.set_visible_child (installed_view);
@@ -76,7 +81,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
                 search_entry.text = "";
                 return true;
             }
-            
+
             return false;
         });
 
@@ -85,33 +90,36 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         installed_view.get_apps.begin ();
 
-        category_view.subview_entered.connect (view_opened);
+        homepage.category_view.subview_entered.connect (view_opened);
         installed_view.subview_entered.connect (view_opened);
         search_view.subview_entered.connect (view_opened);
     }
 
     construct {
         icon_name = "system-software-install";
-        set_size_request (910, 640);        
+        set_size_request (910, 640);
         title = _("AppCenter");
         window_position = Gtk.WindowPosition.CENTER;
+
+        var client = AppCenterCore.Client.get_default ();
+        client.operation_finished.connect (on_operation_finished);
 
         return_button = new Gtk.Button ();
         return_button.no_show_all = true;
         return_button.get_style_context ().add_class ("back-button");
         return_button_history = new Gee.LinkedList<string> ();
-        
+
         search_all_button = new Gtk.Button.with_label (_("Search Apps"));
         search_all_button.no_show_all = true;
         search_all_button.get_style_context ().add_class ("back-button");
-        
+
         button_stack = new Gtk.Stack ();
         button_stack.add (return_button);
         button_stack.add (search_all_button);
         button_stack.set_visible_child (return_button);
 
         view_mode = new Granite.Widgets.ModeButton ();
-        view_mode.append_text (_("Categories"));
+        view_mode.append_text (_("Home"));
         view_mode.append_text (C_("view", "Updates"));
 
         view_mode_revealer = new Gtk.Revealer ();
@@ -119,12 +127,12 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         view_mode_revealer.transition_type = Gtk.RevealerTransitionType.CROSSFADE;
         view_mode_revealer.add (view_mode);
 
-        category_header = new Gtk.Label ("Category Header");
-        category_header.get_style_context ().add_class (Gtk.STYLE_CLASS_TITLE);
+        homepage_header = new Gtk.Label ("Homepage Header");
+        homepage_header.get_style_context ().add_class (Gtk.STYLE_CLASS_TITLE);
 
         custom_title_stack = new Gtk.Stack ();
         custom_title_stack.add (view_mode_revealer);
-        custom_title_stack.add (category_header);
+        custom_title_stack.add (homepage_header);
         custom_title_stack.set_visible_child (view_mode_revealer);
 
         search_entry = new Gtk.SearchEntry ();
@@ -139,15 +147,29 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         set_titlebar (headerbar);
 
-        category_view = new Views.CategoryView ();
+        homepage = new Homepage ();
+        homepage.package_selected.connect ((package) => {
+            stack.set_visible_child (homepage.category_view);
+            show_package (package);
+            return_button.label = (_("Home"));
+        }); 
         installed_view = new Views.InstalledView ();
         search_view = new Views.SearchView ();
 
         stack = new Gtk.Stack ();
         stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
-        stack.add (category_view);
+        stack.add (homepage);
+        stack.add (homepage.category_view);
         stack.add (installed_view);
         stack.add (search_view);
+
+        homepage.category_view.category_child_activated.connect (() => {
+            stack.set_visible_child (homepage.category_view);
+        });
+
+        homepage.category_view.show_home.connect (() => {
+            stack.set_visible_child (homepage);
+        });
 
         add (stack);
     }
@@ -186,8 +208,8 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     }
 
     public void show_package (AppCenterCore.Package package) {
-        category_view.show_package (package);
-        view_opened (_("Categories"), false, null);    
+        homepage.category_view.show_package (package);
+        view_opened (_("Categories"), false, null);
     }
 
     public void go_to_installed () {
@@ -206,7 +228,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             custom_title_stack.set_visible_child (view_mode_revealer);
             switch (view_mode.selected) {
                 case 0:
-                    stack.visible_child = category_view;
+                    stack.visible_child = homepage;
                     break;
                 default:
                     stack.visible_child = installed_view;
@@ -220,8 +242,8 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             search_all_button.no_show_all = true;
             search_all_button.hide ();
         } else {
-            search_view.search.begin (research, category_view.currently_viewed_category, () => {
-                if (category_view.currently_viewed_category != null) {
+            search_view.search.begin (research, homepage.category_view.currently_viewed_category, () => {
+                if (homepage.category_view.currently_viewed_category != null) {
                     button_stack.visible_child = search_all_button;
                     search_all_button.no_show_all = false;
                     search_all_button.show_all ();
@@ -239,12 +261,12 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     }
 
     private void view_opened (string return_name, bool allow_search, string? custom_header = null) {
-        if (stack.visible_child == search_view && category_view.currently_viewed_category != null) {
+        if (stack.visible_child == search_view && homepage.category_view.currently_viewed_category != null) {
             button_stack.visible_child = return_button;
             search_all_button.no_show_all = true;
             search_all_button.hide ();
         }
-    
+
         if (return_button_history.is_empty || return_button_history.peek_head () != return_name) {
             return_button_history.offer_head (return_name);
         }
@@ -254,14 +276,14 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         view_mode_revealer.reveal_child = false;
         if (custom_header != null) {
-            category_header.label = custom_header;
-            custom_title_stack.set_visible_child (category_header);
+            homepage_header.label = custom_header;
+            custom_title_stack.set_visible_child (homepage_header);
         }
 
         search_entry.sensitive = allow_search;
         search_entry.grab_focus_without_selecting ();
-        if (stack.visible_child == category_view && category_view.currently_viewed_category != null) {
-            search_entry.placeholder_text = _("Search %s").printf (category_view.currently_viewed_category.get_name ());
+        if (stack.visible_child == homepage && homepage.category_view.currently_viewed_category != null) {
+            search_entry.placeholder_text = _("Search %s").printf (homepage.category_view.currently_viewed_category.get_name ());
         }
     }
 
@@ -269,16 +291,16 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         if (stack.visible_child != search_view) {
             view_mode_revealer.reveal_child = true;
             custom_title_stack.set_visible_child (view_mode_revealer);
-            category_header.label = "";
+            homepage_header.label = "";
         } else {
-            if (category_view.currently_viewed_category != null) {
+            if (homepage.category_view.currently_viewed_category != null) {
                 button_stack.visible_child = search_all_button;
                 search_all_button.no_show_all = false;
                 search_all_button.show_all ();
             }
         }
-        
-        if (stack.visible_child == category_view) {
+
+        if (stack.visible_child == homepage.category_view) {
             search_entry.placeholder_text = _("Search Apps");
         }
         search_entry.sensitive = true;
@@ -297,18 +319,63 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         View view = (View) stack.visible_child;
         view.return_clicked ();
     }
-    
+
     private void search_all_apps () {
-        category_header.label = "";
-        
+        homepage_header.label = "";
+
         search_entry.placeholder_text = _("Search Apps");
         search_entry.grab_focus_without_selecting ();
-        
+
         return_button_history.poll_head ();
         return_button.no_show_all = true;
         return_button.hide ();
-    
-        category_view.return_clicked ();
+
+        homepage.category_view.return_clicked ();
         trigger_search ();
+    }
+
+    private void on_operation_finished (AppCenterCore.Package package, AppCenterCore.Package.State operation, Error? error) {
+        switch (operation) {
+            case AppCenterCore.Package.State.INSTALLING:
+                if (error == null) {
+                    // Check if window is focused
+                    var win = get_window ();
+                    if (win != null && (win.get_state () & Gdk.WindowState.FOCUSED) != 0) {
+                        break;
+                    }
+
+                    var notification = new Notification (_("Application installed"));
+                    notification.set_body (_("%s has been successfully installed").printf (package.get_name ()));
+                    notification.set_icon (new ThemedIcon ("system-software-install"));
+                    notification.set_default_action ("app.open-application");
+
+                    var app = get_application ();
+                    if (app != null) {
+                        app.send_notification ("installed", notification);
+                    }                    
+                } else {
+                    // Check if permission was denied or the operation was cancelled
+                    if (error.matches (IOError.quark (), 19) || error.matches (Pk.ClientError.quark (), 303)) {
+                        break;
+                    }
+
+                    string body = error.message;
+                    if (!body.has_suffix (".")) {
+                        body += ".";
+                    }
+
+                    var close_button = new Gtk.Button.with_label (_("Close"));
+
+                    var dialog = new MessageDialog (_("There Was An Error Installing %s").printf (package.get_name ()), body, "dialog-error");
+                    dialog.add_action_widget (close_button, 0);
+                    dialog.show_all ();
+                    dialog.run ();
+                    dialog.destroy ();
+                }
+
+                break;
+            default:
+                break;
+        }
     }
 }

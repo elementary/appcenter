@@ -1,29 +1,32 @@
 vala_precompile(VALA_C ${EXEC_NAME}
     Core/ChangeInformation.vala
     Core/Client.vala
+    Core/Houston.vala
     Core/Package.vala
     Core/Task.vala
 
     Application.vala
     MainWindow.vala
+    Homepage.vala
     Settings.vala
     SuspendControl.vala
     AbstractAppContainer.vala
     AbstractAppList.vala
     Views/AppInfoView.vala
     Views/AppListView.vala
-    Views/FeaturedView.vala
     Views/CategoryView.vala
     Views/SearchView.vala
     Views/InstalledView.vala
     Views/View.vala
+    Widgets/Banner.vala
     Widgets/CategoryItem.vala
-    Widgets/FeaturedButton.vala
     Widgets/PackageRow.vala
     Widgets/AppListRow.vala
-    Widgets/AppActionButton.vala
     Widgets/UpdateHeaderRow.vala
     Widgets/RestartDialog.vala
+    Widgets/MessageDialog.vala
+    Widgets/HumbleButton.vala
+    Widgets/StripeDialog.vala
     Services/DbusInterfaces.vala
     ${CMAKE_CURRENT_BINARY_DIR}/config.vala
 PACKAGES
@@ -32,6 +35,8 @@ PACKAGES
     gee-0.8
     granite
     packagekit-glib2
+    libsoup-2.4 
+    json-glib-1.0
     libxml-2.0
     ${UNITY_PACKAGES}
 OPTIONS

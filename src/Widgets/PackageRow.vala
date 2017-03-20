@@ -29,7 +29,7 @@ namespace AppCenter.Widgets {
                 changed ();
             });
         }
-        
+
         public PackageRow.list (AppCenterCore.Package package, Gtk.SizeGroup? size_group, bool show_uninstall = true) {
             grid = new ListPackageRowGrid (package, size_group, show_uninstall);
             add (grid);
@@ -76,12 +76,10 @@ namespace AppCenter.Widgets {
                 column_spacing = 12;
                 row_spacing = 6;
 
-                image = new Gtk.Image ();
                 image.icon_size = Gtk.IconSize.DIALOG;
                 /* Needed to enforce size on icons from Filesystem/Remote */
                 image.pixel_size = 48;
 
-                package_name = new Gtk.Label (null);
                 package_name.get_style_context ().add_class ("h3");
                 package_name.hexpand = true;
                 package_name.valign = Gtk.Align.END;
@@ -105,10 +103,11 @@ namespace AppCenter.Widgets {
             }
         }
 
-        private class InstalledPackageRowGrid : AbstractPackageRowGrid {        
+        private class InstalledPackageRowGrid : AbstractPackageRowGrid {
             Gtk.Label app_version;
 
             construct {
+                updates_view = true;
                 app_version = new Gtk.Label (null);
                 app_version.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
                 app_version.hexpand = true;
@@ -118,18 +117,18 @@ namespace AppCenter.Widgets {
                 attach (app_version, 1, 1, 1, 1);
             }
 
-            public InstalledPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? size_group, bool show_uninstall = true) {         
-                base (package, size_group, show_uninstall);                
+            public InstalledPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? size_group, bool show_uninstall = true) {
+                base (package, size_group, show_uninstall);
                 set_up_package ();
             }
-            
+
             protected override void set_up_package (uint icon_size = 48) {
                 app_version.label = package.get_version ();
                 app_version.ellipsize = Pango.EllipsizeMode.END;
 
                 base.set_up_package (icon_size);
             }
-            
+
             protected override void update_state (bool first_update = false) {
                 if (!first_update) {
                     app_version.label = package.get_version ();
@@ -156,8 +155,8 @@ namespace AppCenter.Widgets {
                 base (package, size_group, show_uninstall);
                 set_up_package ();
             }
-            
-            protected override void set_up_package (uint icon_size = 48) {                
+
+            protected override void set_up_package (uint icon_size = 48) {
                 package_summary.label = package.get_summary ();
                 package_summary.ellipsize = Pango.EllipsizeMode.END;
                 base.set_up_package (icon_size);

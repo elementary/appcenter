@@ -15,6 +15,7 @@
 */
 
 public class AppCenterCore.Client : Object {
+    public signal void operation_finished (Package package, Package.State operation, Error? error);
     public signal void updates_available ();
 
     private const string RESTART_REQUIRED_FILE = "/var/run/reboot-required";
@@ -55,7 +56,7 @@ public class AppCenterCore.Client : Object {
         appstream_pool = new AppStream.Pool ();
         // We don't want to show installed desktop files here
         appstream_pool.set_flags (appstream_pool.get_flags () & ~AppStream.PoolFlags.READ_DESKTOP_FILES);
-        
+
         try {
             appstream_pool.load ();
             appstream_pool.get_components ().foreach ((comp) => {
@@ -108,9 +109,6 @@ public class AppCenterCore.Client : Object {
 
             results = yield client.install_packages_async (packages_ids, cancellable, cb);
             exit_status = results.get_exit_code ();
-            if (exit_status != Pk.Exit.SUCCESS) {
-                throw new GLib.IOError.FAILED (Pk.Exit.enum_to_string (results.get_exit_code ()));
-            }
         } catch (Error e) {
             task_count--;
             throw e;
@@ -128,7 +126,7 @@ public class AppCenterCore.Client : Object {
         foreach (var pk_package in package.change_information.changes) {
             packages_ids += pk_package.get_id ();
         }
-        
+
         packages_ids += null;
 
         try {
@@ -226,7 +224,6 @@ public class AppCenterCore.Client : Object {
                 }
             });
         } catch (Error e) {
-            // Error code 19 is for operation canceled.
             if (e.code != 19) {
                 critical (e.message);
             }
@@ -357,7 +354,7 @@ public class AppCenterCore.Client : Object {
         task_count--;
         refresh_in_progress = false;
     }
-    
+
    public async bool check_restart () {
         if (FileUtils.test (RESTART_REQUIRED_FILE, FileTest.EXISTS)) {
             if (!restart_required) {
@@ -371,10 +368,10 @@ public class AppCenterCore.Client : Object {
                 Application.get_default ().send_notification ("restart", notification);
             }
 
-            restart_required = true;            
+            restart_required = true;
             return true;
         }
-        
+
         return false;
     }
 

@@ -21,6 +21,7 @@
 namespace AppCenter.Views {
     public class AppInfoView : AppCenter.AbstractAppContainer {
         Gtk.Grid links_grid;
+        Gtk.Box header_box;
         Gtk.Image app_screenshot;
         Gtk.Stack screenshot_stack;
         Gtk.Label app_screenshot_not_found;
@@ -114,6 +115,10 @@ namespace AppCenter.Views {
             scrolled.expand = true;
             scrolled.add (content_grid);
 
+            header_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
+            header_box.get_style_context ().add_class ("banner");
+            header_box.hexpand = true;
+
             var header_grid = new Gtk.Grid ();
             header_grid.column_spacing = 12;
             header_grid.halign = Gtk.Align.CENTER;
@@ -124,10 +129,11 @@ namespace AppCenter.Views {
             header_grid.attach (package_author, 1, 1, 3, 1);
             header_grid.attach (app_version, 2, 0, 1, 1);
             header_grid.attach (action_stack, 3, 0, 1, 1);
+            header_box.add (header_grid);
 
-            attach (header_grid, 0, 0, 1, 1);
-            attach (new Gtk.Separator (Gtk.Orientation.HORIZONTAL), 0, 1, 1, 1);
+            attach (header_box, 0, 0, 1, 1);
             attach (scrolled, 0, 2, 1, 1);
+            reload_css ();
         }
 
         public AppInfoView (AppCenterCore.Package package) {
@@ -179,17 +185,22 @@ namespace AppCenter.Views {
                 links_grid.add (help_button);
             }
 
-            action_button.set_suggested_action_header ();
-            uninstall_button.set_destructive_action_header ();
+            action_button.suggested_action = true;
+
+            var uninstall_button_context = uninstall_button.get_style_context ();
+            uninstall_button_context.add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+            uninstall_button_context.add_class ("h3");
+
             open_button.get_style_context ().add_class ("h3");
+            reload_css ();
         }
 
-        protected override void set_up_package (uint icon_size = 48) {                
+        protected override void set_up_package (uint icon_size = 48) {
             package_summary.label = package.get_summary ();
             package_summary.ellipsize = Pango.EllipsizeMode.END;
             base.set_up_package (icon_size);
         }
-        
+
         protected override void update_state (bool first_update = false) {
             if (!first_update) {
                 app_version.label = package.get_version ();
@@ -205,6 +216,34 @@ namespace AppCenter.Views {
                     extension_box.add (row);
                 }
             });
+        }
+
+        private void reload_css () {
+            var provider = new Gtk.CssProvider ();
+            try {
+                string color_primary;
+                string color_primary_text;
+                if (package != null) {
+                    color_primary = package.get_color_primary ();
+                    color_primary_text = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
+                } else {
+                    color_primary = null;
+                    color_primary_text = null;
+                }
+
+                if (color_primary == null) {
+                    color_primary = DEFAULT_BANNER_COLOR_PRIMARY;
+                }
+
+                if (color_primary_text == null) {
+                    color_primary_text = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
+                }
+                var colored_css = BANNER_STYLE_CSS.printf (color_primary, color_primary_text);
+                provider.load_from_data (colored_css, colored_css.length);
+                Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            } catch (GLib.Error e) {
+                critical (e.message);
+            }
         }
 
         public void load_more_content () {
@@ -295,7 +334,7 @@ namespace AppCenter.Views {
                 Object (uri: uri);
                 get_style_context ().add_class ("dim-label");
                 tooltip_text = uri;
-                
+
                 var icon = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.LARGE_TOOLBAR);
 
                 var title = new Gtk.Label (label);

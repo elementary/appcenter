@@ -26,7 +26,7 @@ public errordomain PackageLaunchError {
 public class AppCenterCore.Package : Object {
     public signal void changing (bool is_changing);
     public signal void info_changed (Pk.Status status);
-    
+
     public enum State {
         NOT_INSTALLED,
         INSTALLED,
@@ -81,7 +81,10 @@ public class AppCenterCore.Package : Object {
     }
 
     private string? name = null;
+    private string? description = null;
     private string? summary = null;
+    private string? color_primary = null;
+    private string? color_primary_text = null;
     private string? _latest_version = null;
     public string? latest_version {
         private get { return _latest_version; }
@@ -121,7 +124,11 @@ public class AppCenterCore.Package : Object {
             return false;
         }
 
-        return yield perform_operation (State.UPDATING, State.INSTALLED, State.UPDATE_AVAILABLE);
+        try {
+            return yield perform_operation (State.UPDATING, State.INSTALLED, State.UPDATE_AVAILABLE);
+        } catch (Error e) {
+            return false;
+        }
     }
 
     public async bool install () {
@@ -129,23 +136,19 @@ public class AppCenterCore.Package : Object {
             return false;
         }
 
-        if (yield perform_operation (State.INSTALLING, State.INSTALLED, State.NOT_INSTALLED)) {
-            /* TODO: Move this to a higher level */
-            var application = (Gtk.Application)Application.get_default ();
-            var window = application.get_active_window ().get_window ();
-            if ((window.get_state () & Gdk.WindowState.FOCUSED) == 0) {
-                var notification = new Notification (_("Application installed"));
-                notification.set_body (_("%s has been successfully installed").printf (get_name ()));
-                notification.set_icon (new ThemedIcon ("system-software-install"));
-                notification.set_default_action ("app.open-application");
-
-                application.send_notification ("installed", notification);
+        try {
+            bool success = yield perform_operation (State.INSTALLING, State.INSTALLED, State.NOT_INSTALLED);
+            if (success) {
+                var client = AppCenterCore.Client.get_default ();
+                client.operation_finished (this, State.INSTALLING, null);
             }
-
-            return true;
+            
+            return success;
+        } catch (Error e) {
+            var client = AppCenterCore.Client.get_default ();
+            client.operation_finished (this, State.INSTALLING, e);
+            return false;
         }
-
-        return false;
     }
 
     public async bool uninstall () {
@@ -153,7 +156,11 @@ public class AppCenterCore.Package : Object {
             return false;
         }
 
-        return yield perform_operation (State.REMOVING, State.NOT_INSTALLED, State.INSTALLED);
+        try {
+            return yield perform_operation (State.REMOVING, State.NOT_INSTALLED, State.INSTALLED);
+        } catch (Error e) {
+            return false;
+        }
     }
 
     public void launch () throws Error {
@@ -168,13 +175,14 @@ public class AppCenterCore.Package : Object {
         }
     }
 
-    private async bool perform_operation (State performing, State after_success, State after_fail) {
+    private async bool perform_operation (State performing, State after_success, State after_fail) throws GLib.Error {
         var exit_status = Pk.Exit.UNKNOWN;
         prepare_package_operation (performing);
         try {
             exit_status = yield perform_package_operation ();
         } catch (GLib.Error e) {
-            critical ("Operation failed for package %s - %s", get_name (), e.message);
+            warning ("Operation failed for package %s - %s", get_name (), e.message);
+            throw e;
         } finally {
             clean_up_package_operation (exit_status, after_success, after_fail);
         }
@@ -232,6 +240,22 @@ public class AppCenterCore.Package : Object {
         }
 
         return name;
+    }
+
+    public string? get_description () {
+        if (description != null) {
+            return description;
+        }
+
+        description = component.get_description ();
+        if (description == null) {
+            var package = find_package ();
+            if (package != null) {
+                description = package.description;
+            }
+        }
+
+        return description;
     }
 
     public string? get_summary () {
@@ -314,6 +338,24 @@ public class AppCenterCore.Package : Object {
         }
 
         return latest_version;
+    }
+
+    public string? get_color_primary () {
+        if (color_primary != null) {
+            return color_primary;
+        } else {
+            color_primary = component.get_custom_value ("x-appcenter-color-primary");
+            return color_primary;
+        }
+    }
+
+    public string? get_color_primary_text () {
+        if (color_primary_text != null) {
+            return color_primary_text;
+        } else {
+            color_primary_text = component.get_custom_value ("x-appcenter-color-primary-text");
+            return color_primary_text;
+        }
     }
 
     private string convert_version (string version) {
