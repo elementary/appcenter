@@ -110,7 +110,6 @@ namespace AppCenter.Widgets {
             reload_css ();
             this.height_request = 300;
 
-            // Default AppCenter banner
             name_label = new Gtk.Label ("Name");
             name_label.get_style_context ().add_class ("h1");
             name_label.xalign = 0;
@@ -128,7 +127,7 @@ namespace AppCenter.Widgets {
             description_label.xalign = 0;
             description_label.margin_top = 25;
             description_label.wrap = true;
-            description_label.max_width_chars = 50;
+            description_label.max_width_chars = 60;
 
             icon = new Gtk.Image ();
             icon.icon_name = "system-software-install";
@@ -146,6 +145,7 @@ namespace AppCenter.Widgets {
             content_box.pack_start (icon, true, true, 0);
             content_box.pack_start (vertical_box, true, true, 0);
             content_box.expand = true;
+            content_box.halign = Gtk.Align.CENTER;
             content_box.valign = Gtk.Align.CENTER;
 
             var main_container = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);

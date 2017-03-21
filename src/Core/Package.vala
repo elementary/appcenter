@@ -142,7 +142,7 @@ public class AppCenterCore.Package : Object {
                 var client = AppCenterCore.Client.get_default ();
                 client.operation_finished (this, State.INSTALLING, null);
             }
-            
+
             return success;
         } catch (Error e) {
             var client = AppCenterCore.Client.get_default ();
