@@ -109,6 +109,7 @@ namespace AppCenter {
             cancel_button.clicked.connect (() => action_cancelled ());
 
             var progress_grid = new Gtk.Grid ();
+            progress_grid.halign = Gtk.Align.END;
             progress_grid.valign = Gtk.Align.CENTER;
             progress_grid.column_spacing = 12;
             progress_grid.attach (progress_bar, 0, 0, 1, 1);
