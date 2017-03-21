@@ -44,14 +44,20 @@ namespace AppCenter {
             while (newest_ids.length > 0 && i < newest_ids.length) {
                 var candidate = newest_ids[i] + ".desktop";
                 var candidate_package = AppCenterCore.Client.get_default ().get_package_for_id (candidate);
-                if (candidate_package != null && candidate_package.state != AppCenterCore.Package.State.INSTALLED) {
-                    newest_banner.set_package (candidate_package);
-                    newest_banner.clicked.connect (() => {
-                        package_selected (candidate_package);
-                    });
-                    i = newest_ids.length;
-                } else {
-                    i++;
+
+                if (candidate_package != null) {
+                    candidate_package.update_state ();
+
+                    if (candidate_package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
+                        newest_banner.set_package (candidate_package);
+                        newest_banner.clicked.connect (() => {
+                            package_selected (candidate_package);
+                        });
+
+                        i = newest_ids.length;
+                    } else {
+                        i++;
+                    }
                 }
             }
             if (newest_banner.current_package == null) {
