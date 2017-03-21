@@ -3,15 +3,17 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-09 00:06-0600\n"
-"PO-Revision-Date: 2017-01-29 01:14+0000\n"
-"Last-Translator: Corentin Noël <corentin@elementaryos.org>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2017-03-21 19:01+0000\n"
+"Last-Translator: Corentin Noël <corentin@elementary.io>\n"
+"Language-Team: French "
+"<http://weblate.elementary.io/projects/desktop/appcenter/fr/>\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 2.12\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
-"X-Generator: Launchpad (build 18331)\n"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -222,7 +224,7 @@ msgstr ""
 
 #: ../src/Application.vala:130
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr ""
+msgstr "Le lien '%s' spécifié n'a pas été trouvé, recherche effectuée"
 
 #: ../src/MainWindow.vala:96
 msgid "AppCenter"
