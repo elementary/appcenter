@@ -70,25 +70,28 @@ namespace AppCenter.Widgets {
         public AppCenterCore.Package? current_package;
 
         public Banner () {
-            foreground_color = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
-            background_color = DEFAULT_BANNER_COLOR_PRIMARY;
+            Object (background_color: DEFAULT_BANNER_COLOR_PRIMARY,
+                    foreground_color: DEFAULT_BANNER_COLOR_PRIMARY_TEXT);
+        }
+
+        construct {
             reload_css ();
-            this.height_request = 300;
+            height_request = 300;
 
             // Default AppCenter banner
-            name_label = new Gtk.Label ("Name");
+            name_label = new Gtk.Label (_("AppCenter"));
             name_label.get_style_context ().add_class ("h1");
             name_label.xalign = 0;
             name_label.wrap = true;
             name_label.max_width_chars = 50;
 
-            summary_label = new Gtk.Label ("Summary");
+            summary_label = new Gtk.Label (_("An open, pay-what-you-want app store"));
             summary_label.get_style_context ().add_class ("h2");
             summary_label.xalign = 0;
             summary_label.wrap = true;
             summary_label.max_width_chars = 50;
 
-            description_label = new Gtk.Label ("Description");
+            description_label = new Gtk.Label (_("Get the apps that you need at a price you can afford."));
             description_label.get_style_context ().add_class ("h3");
             description_label.xalign = 0;
             description_label.margin_top = 12;
@@ -109,15 +112,9 @@ namespace AppCenter.Widgets {
             grid.attach (description_label, 1, 2, 1, 1);
 
             add (grid);
-
-            set_brand ();
         }
 
         public void set_brand () {
-            name_label.label = "AppCenter";
-            summary_label.label = "An open, pay-what-you-want app store";
-            description_label.label = "Get the apps that you need at a price you can afford.";
-
             background_color = "#665888";
             foreground_color = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
 
