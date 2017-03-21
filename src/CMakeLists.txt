@@ -7,26 +7,26 @@ vala_precompile(VALA_C ${EXEC_NAME}
 
     Application.vala
     MainWindow.vala
-    Homepage.vala
     Settings.vala
     SuspendControl.vala
-    AbstractAppContainer.vala
-    AbstractAppList.vala
+    Dialogs/MessageDialog.vala
+    Dialogs/RestartDialog.vala
+    Dialogs/StripeDialog.vala
     Views/AppInfoView.vala
     Views/AppListView.vala
     Views/CategoryView.vala
-    Views/SearchView.vala
+    Views/Homepage.vala
     Views/InstalledView.vala
+    Views/SearchView.vala
     Views/View.vala
+    Widgets/AbstractAppContainer.vala
+    Widgets/AbstractAppList.vala
     Widgets/Banner.vala
     Widgets/CategoryItem.vala
     Widgets/PackageRow.vala
     Widgets/AppListRow.vala
     Widgets/UpdateHeaderRow.vala
-    Widgets/RestartDialog.vala
-    Widgets/MessageDialog.vala
     Widgets/HumbleButton.vala
-    Widgets/StripeDialog.vala
     Services/DbusInterfaces.vala
     ${CMAKE_CURRENT_BINARY_DIR}/config.vala
 PACKAGES
