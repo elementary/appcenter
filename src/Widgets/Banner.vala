@@ -62,7 +62,6 @@ namespace AppCenter.Widgets {
             }
         }
 
-        private Gtk.Box content_box;
         private Gtk.Label name_label;
         private Gtk.Label summary_label;
         private Gtk.Label description_label;
@@ -81,7 +80,7 @@ namespace AppCenter.Widgets {
             name_label.get_style_context ().add_class ("h1");
             name_label.xalign = 0;
             name_label.wrap = true;
-            name_label.max_width_chars = 40;
+            name_label.max_width_chars = 50;
 
             summary_label = new Gtk.Label ("Summary");
             summary_label.get_style_context ().add_class ("h2");
@@ -92,32 +91,24 @@ namespace AppCenter.Widgets {
             description_label = new Gtk.Label ("Description");
             description_label.get_style_context ().add_class ("h3");
             description_label.xalign = 0;
-            description_label.margin_top = 25;
+            description_label.margin_top = 12;
             description_label.wrap = true;
             description_label.max_width_chars = 50;
 
             icon = new Gtk.Image ();
             icon.icon_name = "system-software-install";
             icon.pixel_size = 128;
-            icon.xalign = 1;
-            icon.margin_right = 24;
-            content_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 12);
-            var vertical_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
 
-            vertical_box.pack_start (name_label, false, false, 0);
-            vertical_box.pack_start (summary_label, false, false, 0);
-            vertical_box.pack_start (description_label, false, false, 0);
-            vertical_box.valign = Gtk.Align.CENTER;
+            var grid = new Gtk.Grid ();
+            grid.column_spacing = 12;
+            grid.halign = Gtk.Align.CENTER;
+            grid.valign = Gtk.Align.CENTER;
+            grid.attach (icon, 0, 0, 1, 3);
+            grid.attach (name_label, 1, 0, 1, 1);
+            grid.attach (summary_label, 1, 1, 1, 1);
+            grid.attach (description_label, 1, 2, 1, 1);
 
-            content_box.pack_start (icon, true, true, 0);
-            content_box.pack_start (vertical_box, true, true, 0);
-            content_box.expand = true;
-            content_box.valign = Gtk.Align.CENTER;
-
-            var main_container = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-            main_container.add (content_box);
-
-            this.add (main_container);
+            add (grid);
 
             set_brand ();
         }
@@ -125,9 +116,9 @@ namespace AppCenter.Widgets {
         public void set_brand () {
             name_label.label = "AppCenter";
             summary_label.label = "An open, pay-what-you-want app store";
-            description_label.label = "Try first, then pay what you want. Get the apps that you need, for a price you can afford.";
+            description_label.label = "Get the apps that you need at a price you can afford.";
 
-            background_color = DEFAULT_BANNER_COLOR_PRIMARY;
+            background_color = "#665888";
             foreground_color = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
 
             current_package = null;
