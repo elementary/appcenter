@@ -52,7 +52,20 @@ public class AppCenterCore.Package : Object {
 
     public bool installed {
         get {
-            return !installed_packages.is_empty || component.get_id () == OS_UPDATES_ID;
+            if (!installed_packages.is_empty) {
+                return true;
+            }
+
+            if (component.get_id () == OS_UPDATES_ID) {
+                return true;
+            }
+
+            Pk.Package? package = find_package ();
+            if (package != null && package.info == Pk.Info.INSTALLED) {
+                return true;
+            }
+
+            return false;
         }
     }
 
@@ -142,7 +155,7 @@ public class AppCenterCore.Package : Object {
                 var client = AppCenterCore.Client.get_default ();
                 client.operation_finished (this, State.INSTALLING, null);
             }
-            
+
             return success;
         } catch (Error e) {
             var client = AppCenterCore.Client.get_default ();
