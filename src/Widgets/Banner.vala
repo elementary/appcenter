@@ -112,20 +112,19 @@ namespace AppCenter.Widgets {
             reload_css ();
             height_request = 300;
 
-            // Default AppCenter banner
-            name_label = new Gtk.Label (_("AppCenter"));
+            name_label = new Gtk.Label ("");
             name_label.get_style_context ().add_class ("h1");
             name_label.xalign = 0;
             name_label.wrap = true;
             name_label.max_width_chars = 50;
 
-            summary_label = new Gtk.Label (_("An open, pay-what-you-want app store"));
+            summary_label = new Gtk.Label ("");
             summary_label.get_style_context ().add_class ("h2");
             summary_label.xalign = 0;
             summary_label.wrap = true;
             summary_label.max_width_chars = 50;
 
-            description_label = new Gtk.Label (_("Get the apps that you need at a price you can afford."));
+            description_label = new Gtk.Label ("");
             description_label.get_style_context ().add_class ("h3");
             description_label.xalign = 0;
             description_label.margin_top = 12;
@@ -133,7 +132,6 @@ namespace AppCenter.Widgets {
             description_label.max_width_chars = 50;
 
             icon = new Gtk.Image ();
-            icon.icon_name = "system-software-install";
             icon.pixel_size = 128;
 
             var grid = new Gtk.Grid ();
@@ -149,8 +147,13 @@ namespace AppCenter.Widgets {
         }
 
         public void set_brand () {
+            name_label.label = _("AppCenter");
+            summary_label.label = _("An open, pay-what-you-want app store");
+            description_label.label = _("Get the apps that you need at a price you can afford.");
+
             background_color = "#665888";
             foreground_color = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
+            icon.icon_name = "system-software-install";
 
             current_package = null;
         }
