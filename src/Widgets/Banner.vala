@@ -126,10 +126,12 @@ namespace AppCenter.Widgets {
 
             description_label = new Gtk.Label ("");
             description_label.get_style_context ().add_class ("h3");
-            description_label.xalign = 0;
+            description_label.ellipsize = Pango.EllipsizeMode.END;
+            description_label.lines = 2;
             description_label.margin_top = 12;
-            description_label.wrap = true;
             description_label.max_width_chars = 50;
+            description_label.wrap = true;
+            description_label.xalign = 0;
 
             icon = new Gtk.Image ();
             icon.pixel_size = 128;
