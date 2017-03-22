@@ -29,10 +29,14 @@ const string BANNER_STYLE_CSS = """
     }
 
     .banner.home {
+        border: 1px solid shade (@banner_bg_color, 0.8);
         border-radius: 3px;
         box-shadow:
-            0 3px 2px -1px alpha (shade (@banner_bg_color, 0.5), 0.15),
-            0 3px 5px alpha (shade (@banner_bg_color, 0.5), 0.10);
+            inset 0 0 0 1px alpha (shade (@banner_bg_color, 1.7), 0.05),
+            inset 0 1px 0 0 alpha (shade (@banner_bg_color, 1.7), 0.45),
+            inset 0 -1px 0 0 alpha (shade (@banner_bg_color, 1.7), 0.15),
+            0 3px 2px -1px alpha (shade (@banner_bg_color, 0.5), 0.2),
+            0 3px 5px alpha (shade (@banner_bg_color, 0.5), 0.15);
     }
 
     .banner .button {
