@@ -4,10 +4,12 @@ Thanks again to all of the backers of our [March 2017 IndieGoGo campaign](https:
     Adam Slavík
     Aidan Stewart
     Alex Gorshkov
+    Alexander Nekrasov
     Alexander Schäfer
     Alexandr Jeliuc
     Allan Stromfeldt Christensen
     Anastas Dancha
+    Andre Mohr
     Andy Byers
     Ansel Taft
     Aymeric Sorek
@@ -16,10 +18,13 @@ Thanks again to all of the backers of our [March 2017 IndieGoGo campaign](https:
     Bryce Call
     Carlos Ceja Espinosa
     Carmelito Andrade
+    Cato Gaustad
     Chironjit Das
     Chris Cowan
+    Christian Ander
     Christopher Horton
     Ciprian Tepes
+    Darshak Parikh
     Cody Still
     Daniel Germán Cosenza
     David Krawiec
@@ -29,13 +34,18 @@ Thanks again to all of the backers of our [March 2017 IndieGoGo campaign](https:
     Dez Blanchfield
     Dimitar Sirakov
     Eric Nicholls
+    Felix Schröter
     Fredrik Ekelund
     Fulvi Igor
     Gabriele Lippi
     Gamunu Balagalla
+    graeter
     Grisel Yarinda Morales Ortiz
     Guillaume Bouchard
+    Henry Pagan
     Herbert Scheffknecht
+    indiegogo
+    ivan
     Ivo Karadzhov
     Jakub Hlusička
     Jeremy Garcia
@@ -46,8 +56,15 @@ Thanks again to all of the backers of our [March 2017 IndieGoGo campaign](https:
     joke7p
     Jonathan Reisdorf
     Jose Martinez
+    Joshua Garrett
     Jung-Kyu Park
+    Kevin Kleinman
     Kevin Rodríguez
+    Magnus Teekivi
+    mail
+    Manuel del Valle
+    Marc Demierre
+    Marcelo Dornelles Hosannah
     Marco Carrizales
     Martin Hammerschmied
     Matthew Morek
@@ -58,6 +75,7 @@ Thanks again to all of the backers of our [March 2017 IndieGoGo campaign](https:
     Michael Devenish
     Michael Juan Robayo
     Muhammad Fikri
+    Nathan Caza
     Neylson de Oliveira Gularte
     Nicholas La Roux
     Niklas Liechti
@@ -74,10 +92,15 @@ Thanks again to all of the backers of our [March 2017 IndieGoGo campaign](https:
     Robert Gorbul
     Romain De Filippi
     Sasan Cooper
+    Swaroop C H
     Thomas Lundquist
+    Tonnis Oosterhoff
     Tuan Anh Nguyen
     ukulucas
     Valentin BONNEAUD
+    Victoria Laux
+    villanueva.giancarlo
     Vyacheslav Dzyba
     William Dierkes
+    William Fernando Merlotto
     Yasen Tzvetkov
