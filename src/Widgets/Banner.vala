@@ -20,20 +20,58 @@
 
 
 const string BANNER_STYLE_CSS = """
+    @define-color banner_bg_color %s;
+    @define-color banner_fg_color %s;
+
     .banner {
-        background-color: %s;
-        color: %s;
+        background-color: @banner_bg_color;
+        color: @banner_fg_color;
     }
 
     .banner.home {
+        border: 1px solid shade (@banner_bg_color, 0.8);
         border-radius: 3px;
         box-shadow:
-            0 3px 2px -1px alpha (#000, 0.15),
-            0 3px 5px alpha (#000, 0.10);
+            inset 0 0 0 1px alpha (shade (@banner_bg_color, 1.7), 0.05),
+            inset 0 1px 0 0 alpha (shade (@banner_bg_color, 1.7), 0.45),
+            inset 0 -1px 0 0 alpha (shade (@banner_bg_color, 1.7), 0.15),
+            0 3px 2px -1px alpha (shade (@banner_bg_color, 0.5), 0.2),
+            0 3px 5px alpha (shade (@banner_bg_color, 0.5), 0.15);
     }
 
     .banner .button {
-        background-color: @base_color;
+        background-color: alpha (@banner_fg_color, 0.6);
+        background-image: none;
+        border-color: alpha (@banner_fg_color, 0.7);
+        box-shadow: none;
+        font-weight: 600;
+    }
+
+    .banner .button.destructive-action,
+    .banner .button.suggested-action {
+        background-color: alpha (@banner_fg_color, 0.8);
+        border-color: alpha (@banner_fg_color, 0.9);
+    }
+
+    .banner .button:focus {
+        background-color: alpha (@banner_fg_color, 0.9);
+        border-color: @banner_fg_color;
+    }
+
+    .banner .button:active,
+    .banner .button:checked {
+        background-color: alpha (@banner_fg_color, 0.5);
+        border-color: alpha (@banner_fg_color, 0.6);
+    }
+
+    .banner .button GtkImage {
+        color: @banner_bg_color;
+        icon-shadow: 0 1px 1px alpha (@banner_fg_color, 0.1);
+    }
+
+    .banner .button .label {
+        color: @banner_bg_color;
+        text-shadow: 0 1px 1px alpha (@banner_fg_color, 0.1);
     }
 """;
 
@@ -62,7 +100,6 @@ namespace AppCenter.Widgets {
             }
         }
 
-        private Gtk.Box content_box;
         private Gtk.Label name_label;
         private Gtk.Label summary_label;
         private Gtk.Label description_label;
@@ -71,64 +108,58 @@ namespace AppCenter.Widgets {
         public AppCenterCore.Package? current_package;
 
         public Banner () {
-            foreground_color = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
-            background_color = DEFAULT_BANNER_COLOR_PRIMARY;
-            reload_css ();
-            this.height_request = 300;
+            Object (background_color: DEFAULT_BANNER_COLOR_PRIMARY,
+                    foreground_color: DEFAULT_BANNER_COLOR_PRIMARY_TEXT);
+        }
 
-            // Default AppCenter banner
-            name_label = new Gtk.Label ("Name");
+        construct {
+            reload_css ();
+            height_request = 300;
+
+            name_label = new Gtk.Label ("");
             name_label.get_style_context ().add_class ("h1");
             name_label.xalign = 0;
             name_label.wrap = true;
-            name_label.max_width_chars = 40;
+            name_label.max_width_chars = 50;
 
-            summary_label = new Gtk.Label ("Summary");
+            summary_label = new Gtk.Label ("");
             summary_label.get_style_context ().add_class ("h2");
             summary_label.xalign = 0;
             summary_label.wrap = true;
             summary_label.max_width_chars = 50;
 
-            description_label = new Gtk.Label ("Description");
+            description_label = new Gtk.Label ("");
             description_label.get_style_context ().add_class ("h3");
-            description_label.xalign = 0;
-            description_label.margin_top = 25;
-            description_label.wrap = true;
+            description_label.ellipsize = Pango.EllipsizeMode.END;
+            description_label.lines = 2;
+            description_label.margin_top = 12;
             description_label.max_width_chars = 50;
+            description_label.wrap = true;
+            description_label.xalign = 0;
 
             icon = new Gtk.Image ();
-            icon.icon_name = "system-software-install";
             icon.pixel_size = 128;
-            icon.xalign = 1;
-            icon.margin_right = 24;
-            content_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 12);
-            var vertical_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
 
-            vertical_box.pack_start (name_label, false, false, 0);
-            vertical_box.pack_start (summary_label, false, false, 0);
-            vertical_box.pack_start (description_label, false, false, 0);
-            vertical_box.valign = Gtk.Align.CENTER;
+            var grid = new Gtk.Grid ();
+            grid.column_spacing = 12;
+            grid.halign = Gtk.Align.CENTER;
+            grid.valign = Gtk.Align.CENTER;
+            grid.attach (icon, 0, 0, 1, 3);
+            grid.attach (name_label, 1, 0, 1, 1);
+            grid.attach (summary_label, 1, 1, 1, 1);
+            grid.attach (description_label, 1, 2, 1, 1);
 
-            content_box.pack_start (icon, true, true, 0);
-            content_box.pack_start (vertical_box, true, true, 0);
-            content_box.expand = true;
-            content_box.valign = Gtk.Align.CENTER;
-
-            var main_container = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-            main_container.add (content_box);
-
-            this.add (main_container);
-
-            set_brand ();
+            add (grid);
         }
 
         public void set_brand () {
-            name_label.label = "AppCenter";
-            summary_label.label = "An open, pay-what-you-want app store";
-            description_label.label = "Try first, then pay what you want. Get the apps that you need, for a price you can afford.";
+            name_label.label = _("AppCenter");
+            summary_label.label = _("An open, pay-what-you-want app store");
+            description_label.label = _("Get the apps that you need at a price you can afford.");
 
-            background_color = DEFAULT_BANNER_COLOR_PRIMARY;
+            background_color = "#665888";
             foreground_color = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
+            icon.icon_name = "system-software-install";
 
             current_package = null;
         }

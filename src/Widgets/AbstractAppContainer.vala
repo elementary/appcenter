@@ -109,6 +109,7 @@ namespace AppCenter {
             cancel_button.clicked.connect (() => action_cancelled ());
 
             var progress_grid = new Gtk.Grid ();
+            progress_grid.halign = Gtk.Align.END;
             progress_grid.valign = Gtk.Align.CENTER;
             progress_grid.column_spacing = 12;
             progress_grid.attach (progress_bar, 0, 0, 1, 1);
@@ -130,13 +131,19 @@ namespace AppCenter {
         protected virtual void set_up_package (uint icon_size = 48) {
             package_name.label = package.get_name ();
 
-            var author = package.component.get_developer_name ();
+            var author = package.component.developer_name;
 
-            if (author != null) {
-                package_author.label = _("by") + " " + author;
-            } else {
-                package_author.label = _("by") + " " + _("The %s Developers").printf (package.get_name ());
+            if (author == null) {
+                var project_group = package.component.project_group;
+
+                if (project_group != null) {
+                    author = project_group;
+                } else {
+                    author = _("The %s Developers").printf (package.get_name ());
+                }
             }
+
+            package_author.label = _("by %s").printf (author);
 
             image.gicon = package.get_icon (icon_size);
 
