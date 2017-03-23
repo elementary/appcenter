@@ -1,4 +1,6 @@
 # AppCenter
+[![l10n](https://l10n.elementary.io/widgets/desktop/appcenter/svg-badge.svg)](https://l10n.elementary.io/projects/desktop/appcenter)
+[![Bountysource](https://www.bountysource.com/badge/tracker?tracker_id=57667267)](https://www.bountysource.com/teams/elementary/issues?tracker_ids=57667267)
 
 ## Building, Testing, and Installation
 
