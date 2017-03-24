@@ -356,7 +356,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
             var year = (int.parse (card_expiration_entry.text[2:4]) + 2000).to_string ();
 
             var data = get_stripe_data (stripe_key, email_entry.text, (amount * 100).to_string (), card_number_entry.text, card_expiration_entry.text[0:2], year, card_cvc_entry.text);
-
+            debug ("Stripe data:%s", data);
             var error = false;
             try {
                 var parser = new Json.Parser ();
@@ -367,6 +367,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
                 string? houston_data = null;
                 if (token_id != null) {
                     houston_data = post_to_houston (stripe_key, app_id, token_id, (amount * 100).to_string ());
+                    debug ("Houston data:%s", houston_data);
                 } else {
                     error = true;
                 }
