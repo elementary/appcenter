@@ -500,7 +500,7 @@ public class AppCenterCore.Client : Object {
                 return package;
             }
         }
-     
+
         return null;
     }
 
