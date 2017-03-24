@@ -126,7 +126,7 @@ namespace AppCenter.Widgets {
             summary_label = new Gtk.Label ("");
             summary_label.get_style_context ().add_class ("h2");
             summary_label.xalign = 0;
-            sumary_label.use_markup = true;
+            summary_label.use_markup = true;
             summary_label.wrap = true;
             summary_label.max_width_chars = 50;
 
