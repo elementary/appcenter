@@ -52,6 +52,7 @@ namespace AppCenter {
                         newest_banner.clicked.connect (() => {
                             package_selected (candidate_package);
                         });
+                        break;
                     }
                 }
             }
