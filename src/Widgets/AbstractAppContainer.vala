@@ -198,14 +198,9 @@ namespace AppCenter {
             }
         }
 
-        private void set_button_state (Gtk.Widget widget, bool show) {
+        private static void set_button_state (Gtk.Widget widget, bool show) {
             widget.no_show_all = !show;
-
-            if (show) {
-                widget.show ();
-            } else {
-                widget.hide ();
-            }
+            widget.visible = show;
         }
 
         protected void update_progress () {
