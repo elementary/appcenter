@@ -141,7 +141,7 @@ namespace AppCenter.Widgets {
             icon.pixel_size = 128;
 
             var grid = new Gtk.Grid ();
-            grid.column_spacing = 12;
+            grid.column_spacing = 24;
             grid.halign = Gtk.Align.CENTER;
             grid.valign = Gtk.Align.CENTER;
             grid.attach (icon, 0, 0, 1, 3);
