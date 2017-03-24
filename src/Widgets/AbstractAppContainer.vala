@@ -164,31 +164,31 @@ namespace AppCenter {
                 case AppCenterCore.Package.State.NOT_INSTALLED:
                     action_button.label = _("Free");
 
-                    set_button_state (uninstall_button, false);
-                    set_button_state (action_button, true);
-                    set_button_state (open_button, false);
+                    set_widget_visibility (uninstall_button, false);
+                    set_widget_visibility (action_button, true);
+                    set_widget_visibility (open_button, false);
 
                     break;
                 case AppCenterCore.Package.State.INSTALLED:
-                    set_button_state (uninstall_button, show_uninstall && !is_os_updates);
-                    set_button_state (action_button, false);
-                    set_button_state (open_button, show_open && package.get_can_launch ());
+                    set_widget_visibility (uninstall_button, show_uninstall && !is_os_updates);
+                    set_widget_visibility (action_button, false);
+                    set_widget_visibility (open_button, show_open && package.get_can_launch ());
 
                     break;
                 case AppCenterCore.Package.State.UPDATE_AVAILABLE:
                     action_button.label = _("Update");
 
-                    set_button_state (uninstall_button, show_uninstall && !is_os_updates);
-                    set_button_state (action_button, true);
-                    set_button_state (open_button, false);
+                    set_widget_visibility (uninstall_button, show_uninstall && !is_os_updates);
+                    set_widget_visibility (action_button, true);
+                    set_widget_visibility (open_button, false);
 
                     break;
                 case AppCenterCore.Package.State.INSTALLING:
                 case AppCenterCore.Package.State.UPDATING:
                 case AppCenterCore.Package.State.REMOVING:
-                    set_button_state (uninstall_button, false);
-                    set_button_state (action_button, false);
-                    set_button_state (open_button, false);
+                    set_widget_visibility (uninstall_button, false);
+                    set_widget_visibility (action_button, false);
+                    set_widget_visibility (open_button, false);
 
                     action_stack.set_visible_child_name ("progress");
                     break;
@@ -198,7 +198,7 @@ namespace AppCenter {
             }
         }
 
-        private static void set_button_state (Gtk.Widget widget, bool show) {
+        private static void set_widget_visibility (Gtk.Widget widget, bool show) {
             widget.no_show_all = !show;
             widget.visible = show;
         }
