@@ -119,12 +119,14 @@ namespace AppCenter.Widgets {
             name_label = new Gtk.Label ("");
             name_label.get_style_context ().add_class ("h1");
             name_label.xalign = 0;
+            name_label.use_markup = true;
             name_label.wrap = true;
             name_label.max_width_chars = 50;
 
             summary_label = new Gtk.Label ("");
             summary_label.get_style_context ().add_class ("h2");
             summary_label.xalign = 0;
+            summary_label.use_markup = true;
             summary_label.wrap = true;
             summary_label.max_width_chars = 50;
 
@@ -134,6 +136,7 @@ namespace AppCenter.Widgets {
             description_label.lines = 2;
             description_label.margin_top = 12;
             description_label.max_width_chars = 50;
+            description_label.use_markup = true;
             description_label.wrap = true;
             description_label.xalign = 0;
 
