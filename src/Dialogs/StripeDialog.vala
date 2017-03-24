@@ -350,9 +350,8 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         }
     }
 
-    private async void on_pay_clicked () {
-        SourceFunc callback = on_pay_clicked.callback;
-        ThreadFunc<void*> run = () => {
+    private void on_pay_clicked () {
+        new Thread<void*> (null, () => {
             var year = (int.parse (card_expiration_entry.text[2:4]) + 2000).to_string ();
 
             var data = get_stripe_data (stripe_key, email_entry.text, (amount * 100).to_string (), card_number_entry.text, card_expiration_entry.text[0:2], year, card_cvc_entry.text);
@@ -393,12 +392,8 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
                 destroy ();
             }
 
-            Idle.add ((owned) callback);
             return null;
-        };
-        Thread.create<void*> (run, false);
-
-        yield;
+        });
     }
 
     private string get_stripe_data (string _key, string _email, string _amount, string _cc_num, string _cc_exp_month, string _cc_exp_year, string _cc_cvc) {
