@@ -79,6 +79,8 @@ namespace AppCenter {
 
             action_button.payment_requested.connect ((amount) => {
                 var stripe = new Widgets.StripeDialog (amount, this.package_name.label, this.package.component.get_desktop_id ().replace (".desktop", ""), payments_key_);
+
+                stripe.download_requested.connect (() => action_clicked.begin ());
                 stripe.show ();
             });
 
