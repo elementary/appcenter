@@ -32,3 +32,7 @@ To install, use `make install`, then execute with `appcenter`
 
     sudo make install
     appcenter
+
+To see the debug messages:
+    
+    appcenter -d
