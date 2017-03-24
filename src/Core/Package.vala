@@ -165,7 +165,7 @@ public class AppCenterCore.Package : Object {
     }
 
     public async bool uninstall () {
-        if (state != State.INSTALLED) {
+        if (state != State.INSTALLED && state != State.UPDATE_AVAILABLE) {
             return false;
         }
 
