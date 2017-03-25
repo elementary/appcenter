@@ -50,7 +50,7 @@ public class AppCenter.App : Granite.Application {
         main_url = "https://elementary.io";
         bug_url = "https://github.com/elementary/appcenter/issues";
         help_url = "https://answers.launchpad.net/appcenter";
-        translate_url = "https://translations.launchpad.net/appcenter";
+        translate_url = "https://l10n.elementary.io/projects/desktop/appcenter/";
         about_authors = { "Marvin Beckers <beckersmarvin@gmail.com>",
                           "Corentin Noël <corentin@elementary.io>" };
         about_comments = "";
