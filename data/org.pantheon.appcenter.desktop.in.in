@@ -9,5 +9,4 @@ Type=Application
 StartupNotify=true
 Categories=GNOME;GTK;System;PackageManager;
 MimeType=x-scheme-handler/appstream;
-Actions=AboutDialog;
 X-GNOME-UsesNotifications=true
