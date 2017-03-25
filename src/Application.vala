@@ -49,7 +49,7 @@ public class AppCenter.App : Granite.Application {
         app_launcher = "org.pantheon.appcenter.desktop";
         main_url = "https://elementary.io";
         bug_url = "https://github.com/elementary/appcenter/issues";
-        help_url = "https://answers.launchpad.net/appcenter";
+        help_url = "https://elementary.io/support";
         translate_url = "https://l10n.elementary.io/projects/desktop/appcenter/";
         about_authors = { "Marvin Beckers <beckersmarvin@gmail.com>",
                           "Corentin Noël <corentin@elementary.io>" };
