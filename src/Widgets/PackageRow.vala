@@ -137,6 +137,19 @@ namespace AppCenter.Widgets {
                 update_action ();
                 changed ();
             }
+
+             protected override void update_progress_status () {
+                 base.update_progress_status ();
+                 var status = package.change_information.status;
+                 if (status == Pk.Status.WAIT || status == Pk.Status.FINISHED) {
+                     progress_bar.no_show_all = true;
+                     progress_bar.hide ();
+                 } else {
+                     progress_bar.no_show_all = false;
+                     progress_bar.show_all ();
+                 }
+             }
+
         }
 
         private class ListPackageRowGrid : AbstractPackageRowGrid {
