@@ -25,15 +25,15 @@ namespace AppCenter.Views {
         private uint current_visible_index = 0U;
         private GLib.ListStore list_store;
 
-        public AppListView () {}
-
         construct {
             list_store = new GLib.ListStore (typeof (AppCenterCore.Package));
-            edge_reached.connect ((position) => {
+            scrolled.edge_reached.connect ((position) => {
                 if (position == Gtk.PositionType.BOTTOM) {
                     show_more_apps ();
                 }
             });
+
+            add (scrolled);
         }
 
         public override void add_packages (Gee.Collection<AppCenterCore.Package> packages) {
@@ -86,10 +86,7 @@ namespace AppCenter.Views {
       * Does not show Uninstall Button **/
     public class AppListUpdateView : AbstractAppList {
         private bool updates_on_top;
-        private Widgets.UpdateHeaderRow updates_header;
-        private Widgets.UpdateHeaderRow updated_header;
-        private Gtk.Button update_all_button;
-        private Gtk.Button restart_button;
+        private Gtk.Button? update_all_button;
         private bool updating_all_apps = false;
         private bool apps_remaining_started = false;
         private GLib.Mutex update_mutex;
@@ -106,7 +103,7 @@ namespace AppCenter.Views {
             set {
                 if (_updating_cache != value) {
                     _updating_cache = value;
-                    update_headers ();
+                    list_box.invalidate_headers ();
                 }
             }
         }
@@ -114,46 +111,37 @@ namespace AppCenter.Views {
         construct {
             updates_on_top = true;
 
-            update_all_button = new Gtk.Button.with_label (_("Update All"));
-            update_all_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
-            update_all_button.no_show_all = true;
-            update_all_button.valign = Gtk.Align.CENTER;
-            
-            restart_button = new Gtk.Button.with_label (_("Restart Now"));
-            restart_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
-            restart_button.no_show_all = true;
-            restart_button.valign = Gtk.Align.CENTER;
-
-            action_button_group.add_widget (update_all_button);
-            action_button_group.add_widget (restart_button);
-
-            updates_header = new Widgets.UpdateHeaderRow.updates ();
-            updates_header.add_widget (update_all_button);
-
-            updated_header = new Widgets.UpdateHeaderRow.updated ();
-            updated_header.add_widget (restart_button);
-
-            list_box.add (updates_header);
-            list_box.add (updated_header);
+            list_box.set_header_func ((Gtk.ListBoxUpdateHeaderFunc) row_update_header);
 
             update_mutex = GLib.Mutex ();
             apps_to_update = new Gee.LinkedList<AppCenterCore.Package> ();
 
             sc = new SuspendControl ();
 
-            update_all_button.clicked.connect (on_update_all);
-
-            restart_button.clicked.connect (() => {
-                var dialog = new Widgets.RestartDialog ();
-                dialog.show_all ();
+            var infobar = new Gtk.InfoBar ();
+            infobar.message_type = Gtk.MessageType.INFO;
+            infobar.get_content_area ().add (new Gtk.Label (_("Restart required")));
+            infobar.add_button (_("Restart Now"), 0);
+            infobar.response.connect ((response) => {
+                if (response == 0) {
+                    var dialog = new Widgets.RestartDialog ();
+                    dialog.show_all ();
+                }
             });
+
+            var client = AppCenterCore.Client.get_default ();
+            client.bind_property ("restart-required", infobar, "visible", BindingFlags.SYNC_CREATE);
+            client.bind_property ("restart-required", infobar, "no-show-all", BindingFlags.INVERT_BOOLEAN | BindingFlags.SYNC_CREATE);
+
+            add (infobar);
+            add (scrolled);
         }
 
         public AppListUpdateView () {
             _updating_cache = true;
         }
 
-        protected override void after_add_remove_change_row () {update_headers ();}
+        protected override void after_add_remove_change_row () { list_box.invalidate_headers (); }
 
         protected override Widgets.AppListRow make_row (AppCenterCore.Package package) {
             return (Widgets.AppListRow)(new Widgets.PackageRow.installed (package, action_button_group, false));
@@ -161,32 +149,71 @@ namespace AppCenter.Views {
 
         protected override void on_package_changing (AppCenterCore.Package package, bool is_changing) {
             base.on_package_changing (package, is_changing);
-            update_all_button.sensitive = packages_changing == 0;
+            if (update_all_button != null) {
+                update_all_button.sensitive = packages_changing == 0;
+            }
         }
 
         [CCode (instance_pos = -1)]
         protected override int package_row_compare (Widgets.AppListRow row1, Widgets.AppListRow row2) {
-            bool a_is_header = !row1.has_package ();
-            bool b_is_header = !row2.has_package ();
-            bool a_has_updates = row1.get_update_available ();
-            bool b_has_updates = row2.get_update_available ();
-
-            if (a_is_header) {
-                return (a_has_updates || !b_has_updates) ? -1 : 1;
-            } else if (b_is_header) {
-                return (b_has_updates || !a_has_updates) ? 1 : -1;
-            }
-
             bool a_is_os = row1.get_is_os_updates ();
             bool b_is_os = row2.get_is_os_updates ();
 
             if (a_is_os || b_is_os) { /* OS update row sorts ahead of other update rows */
                 return a_is_os ? -1 : 1;
-            } else if ((a_has_updates && !b_has_updates) || (!a_has_updates && b_has_updates)) { /* Updates rows sort ahead of updated rows */
+            }
+
+            bool a_has_updates = row1.get_update_available ();
+            bool b_has_updates = row2.get_update_available ();
+
+            if ((a_has_updates && !b_has_updates) || (!a_has_updates && b_has_updates)) { /* Updates rows sort ahead of updated rows */
                 return a_has_updates ? -1 : 1;
             }
 
             return row1.get_name_label ().collate (row2.get_name_label ()); /* Else sort in name order */
+        }
+
+        [CCode (instance_pos = -1)]
+        private void row_update_header (Widgets.AppListRow row, Widgets.AppListRow? before) {
+            bool update_available = row.get_update_available ();            
+            if (before != null && update_available == before.get_update_available ()) {
+                row.set_header (null);
+                return;
+            }
+
+            if (update_available) {
+                var header = new Widgets.UpdatesGrid ();
+
+                uint update_numbers = 0U;
+                uint64 update_real_size = 0ULL;
+                foreach (var package in get_packages ()) {
+                    if (package.update_available) {
+                        update_numbers++;
+                        update_real_size += package.change_information.get_size ();
+                    }
+                }
+
+                header.update (update_numbers, update_real_size, updating_cache);
+
+                // Unfortunately the update all button needs to be recreated everytime the header needs to be updated
+                if (!updating_cache && update_numbers > 0) {
+                    update_all_button = new Gtk.Button.with_label (_("Update All"));
+                    update_all_button.valign = Gtk.Align.CENTER;
+                    update_all_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+                    update_all_button.clicked.connect (on_update_all);
+                    action_button_group.add_widget (update_all_button);
+
+                    header.add_widget (update_all_button);   
+                }
+
+                header.show_all ();
+                row.set_header (header);                
+            } else {
+                var header = new Widgets.UpdatedGrid ();
+                header.update (0, 0, updating_cache);
+                header.show_all ();
+                row.set_header (header);              
+            }
         }
 
         private void on_update_all () {
@@ -293,53 +320,6 @@ namespace AppCenter.Views {
                 }
                 return GLib.Source.REMOVE;
             });
-        }
-
-        private void update_headers () {
-            /* Do not repeatedly update headers while rapidly adding packages to list */
-            schedule_header_update ();
-        }
-
-        uint grid_timeout_id = 0;
-        private void schedule_header_update () {
-            if (grid_timeout_id > 0) {
-                return;
-            }
-
-            grid_timeout_id = GLib.Timeout.add (20, () => {
-                update_updates_grid ();
-                update_updated_grid ();
-                grid_timeout_id = 0;
-                return false;
-            });
-        }
-
-        private void update_updates_grid () {
-            uint update_numbers = 0U;
-            uint64 update_real_size = 0ULL;
-            foreach (var package in get_packages ()) {
-                if (package.update_available) {
-                    update_numbers++;
-                    update_real_size += package.change_information.get_size ();
-                }
-            }
-
-            updates_header.update (update_numbers, update_real_size, updating_cache, false);
-            update_all_button.visible = !updating_cache && update_numbers > 0;
-        }
-
-        private void update_updated_grid () {
-            if (!updating_all_apps && !updating_cache) {
-                var client = AppCenterCore.Client.get_default ();
-                client.check_restart.begin ((obj, res) => {
-                    var restart_required = client.check_restart.end (res);
-                    
-                    updated_header.update (0, 0, updating_cache, restart_required);
-                    restart_button.visible = restart_required;
-                });
-            } else {        
-                updated_header.update (0, 0, updating_cache, false);
-            }
         }
     }
 }
