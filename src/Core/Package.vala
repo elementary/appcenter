@@ -165,15 +165,15 @@ public class AppCenterCore.Package : Object {
     }
 
     public async bool uninstall () {
-        if (state != State.INSTALLED) {
-            return false;
+        if (state == State.INSTALLED || state == State.UPDATE_AVAILABLE) {
+            try {
+                return yield perform_operation (State.REMOVING, State.NOT_INSTALLED, state);
+            } catch (Error e) {
+                return false;
+            }
         }
 
-        try {
-            return yield perform_operation (State.REMOVING, State.NOT_INSTALLED, State.INSTALLED);
-        } catch (Error e) {
-            return false;
-        }
+        return false;
     }
 
     public void launch () throws Error {
