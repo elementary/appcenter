@@ -26,7 +26,6 @@ namespace AppCenter {
         protected Gtk.Label package_author;
         protected Gtk.Label package_summary;
 
-        // The action button covers Install and Update
         protected Widgets.HumbleButton action_button;
         protected Gtk.Button uninstall_button;
         protected Gtk.Button open_button;
@@ -90,9 +89,6 @@ namespace AppCenter {
             package_name = new Gtk.Label ("");
             image = new Gtk.Image ();
 
-            cancel_button = new Gtk.Button.with_label (_("Cancel"));
-            cancel_button.clicked.connect (() => action_cancelled ());
-
             action_button = new Widgets.HumbleButton ();
             action_button.download_requested.connect (() => action_clicked.begin ());
 
@@ -123,8 +119,6 @@ namespace AppCenter {
             /* Request a width large enough for the longest text to stop width of
              * progress bar jumping around */
             progress_bar.width_request = 350;
-            progress_bar.no_show_all = true;
-            progress_bar.hide ();
 
             cancel_button = new Gtk.Button.with_label (_("Cancel"));
             cancel_button.clicked.connect (() => action_cancelled ());
@@ -184,86 +178,50 @@ namespace AppCenter {
         }
 
         protected void update_action () {
-            uninstall_button.no_show_all = true;
-            uninstall_button.hide ();
-            progress_bar.no_show_all = true;
-            progress_bar.hide ();
-            action_stack.no_show_all = false;
-            action_stack.show_all ();
+            action_button.can_purchase = payments_enabled;
             action_stack.set_visible_child_name ("buttons");
 
             switch (package.state) {
                 case AppCenterCore.Package.State.NOT_INSTALLED:
-                    if (!payments_enabled) {
-                        action_button.can_purchase = false;
-                    } else {
-                        action_button.can_purchase = true;
-                    }
+                    action_button.label = _("Free");
 
-                    action_button.no_show_all = false;
-                    action_button.show ();
-
-                    open_button.no_show_all = true;
-                    open_button.hide ();
+                    set_widget_visibility (uninstall_button, false);
+                    set_widget_visibility (action_button, true);
+                    set_widget_visibility (open_button, false);
 
                     break;
                 case AppCenterCore.Package.State.INSTALLED:
-                    if (show_uninstall) {
-                        /* Uninstall button will show */
-                        action_button.no_show_all = true;
-                        action_button.hide ();
-
-                        if (!is_os_updates) {
-                            uninstall_button.no_show_all = false;
-                            uninstall_button.show_all ();
-                        }
-                    } else {
-                        /* No Uninstall action in list view */
-                        action_stack.no_show_all = true;
-                        action_stack.hide ();
-                    }
-
-                    if (show_open && package.get_can_launch ()) {
-                        open_button.no_show_all = false;
-                        open_button.show ();
-                    } else {
-                        open_button.no_show_all = true;
-                        open_button.hide ();
-                    }
+                    set_widget_visibility (uninstall_button, show_uninstall && !is_os_updates);
+                    set_widget_visibility (action_button, false);
+                    set_widget_visibility (open_button, show_open && package.get_can_launch ());
 
                     break;
-
                 case AppCenterCore.Package.State.UPDATE_AVAILABLE:
-                    action_button.can_purchase = false;
                     action_button.label = _("Update");
 
-                    action_button.no_show_all = false;
-                    action_button.show_all ();
-
-                    if (show_open && package.get_can_launch ()) {
-                        open_button.no_show_all = false;
-                        open_button.show ();
-                    } else {
-                        open_button.no_show_all = true;
-                        open_button.hide ();
-                    }
+                    set_widget_visibility (uninstall_button, show_uninstall && !is_os_updates);
+                    set_widget_visibility (action_button, true);
+                    set_widget_visibility (open_button, false);
 
                     break;
-
                 case AppCenterCore.Package.State.INSTALLING:
                 case AppCenterCore.Package.State.UPDATING:
                 case AppCenterCore.Package.State.REMOVING:
-                    progress_bar.no_show_all = false;
-                    progress_bar.show ();
-                    action_stack.set_visible_child_name ("progress");
+                    set_widget_visibility (uninstall_button, false);
+                    set_widget_visibility (action_button, false);
+                    set_widget_visibility (open_button, false);
 
-                    open_button.no_show_all = true;
-                    open_button.hide ();
+                    action_stack.set_visible_child_name ("progress");
                     break;
 
                 default:
                     assert_not_reached ();
             }
+        }
+
+        private static void set_widget_visibility (Gtk.Widget widget, bool show) {
+            widget.no_show_all = !show;
+            widget.visible = show;
         }
 
         protected void update_progress () {
