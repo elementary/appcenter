@@ -326,7 +326,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
             sum += number;
         }
 
-        return 10 - (sum % 10) == hash;
+        return (10 - (sum % 10)) % 10 == hash;
     }
 
     private void on_response (Gtk.Dialog source, int response_id) {
