@@ -40,9 +40,8 @@ namespace AppCenter {
             newest_banner.margin = 24;
 
             var newest_ids = houston.get_newest ();
-            int i = 0;
-            while (newest_ids.length > 0 && i < newest_ids.length) {
-                var candidate = newest_ids[i] + ".desktop";
+            foreach (var package in newest_ids) {
+                var candidate = package + ".desktop";
                 var candidate_package = AppCenterCore.Client.get_default ().get_package_for_id (candidate);
 
                 if (candidate_package != null) {
@@ -53,10 +52,7 @@ namespace AppCenter {
                         newest_banner.clicked.connect (() => {
                             package_selected (candidate_package);
                         });
-
-                        i = newest_ids.length;
-                    } else {
-                        i++;
+                        break;
                     }
                 }
             }
