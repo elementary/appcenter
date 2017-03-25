@@ -11,7 +11,3 @@ Categories=GNOME;GTK;System;PackageManager;
 MimeType=x-scheme-handler/appstream;
 Actions=AboutDialog;
 X-GNOME-UsesNotifications=true
-
-[Desktop Action AboutDialog]
-_Name=About @APP_NAME@
-Exec=@EXEC_NAME@ --about
