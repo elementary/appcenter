@@ -119,9 +119,12 @@ namespace AppCenter.Views {
             sc = new SuspendControl ();
 
             var infobar = new Gtk.InfoBar ();
-            infobar.message_type = Gtk.MessageType.INFO;
-            infobar.get_content_area ().add (new Gtk.Label (_("Restart required")));
-            infobar.add_button (_("Restart Now"), 0);
+            infobar.message_type = Gtk.MessageType.WARNING;
+            infobar.get_content_area ().add (new Gtk.Label (_("A restart is required to complete the installation of updates")));
+            
+            var restart_button = infobar.add_button (_("Restart Now"), 0);
+            action_button_group.add_widget (restart_button);
+
             infobar.response.connect ((response) => {
                 if (response == 0) {
                     var dialog = new Widgets.RestartDialog ();
