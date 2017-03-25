@@ -48,7 +48,7 @@ public class AppCenter.App : Granite.Application {
 
         app_launcher = "org.pantheon.appcenter.desktop";
         main_url = "https://launchpad.net/appcenter";
-        bug_url = "https://bugs.launchpad.net/appcenter";
+        bug_url = "https://github.com/elementary/appcenter/issues";
         help_url = "https://answers.launchpad.net/appcenter";
         translate_url = "https://translations.launchpad.net/appcenter";
         about_authors = { "Marvin Beckers <beckersmarvin@gmail.com>",
