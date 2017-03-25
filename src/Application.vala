@@ -37,7 +37,7 @@ public class AppCenter.App : Granite.Application {
         Intl.textdomain (Build.GETTEXT_PACKAGE);
 
         program_name = _("App Center");
-        app_years = "2015-2016";
+        app_years = "2015-2017";
         app_icon = Build.DESKTOP_ICON;
 
         build_data_dir = Build.DATADIR;
@@ -47,10 +47,10 @@ public class AppCenter.App : Granite.Application {
         build_version_info = Build.VERSION_INFO;
 
         app_launcher = "org.pantheon.appcenter.desktop";
-        main_url = "https://launchpad.net/appcenter";
-        bug_url = "https://bugs.launchpad.net/appcenter";
-        help_url = "https://answers.launchpad.net/appcenter";
-        translate_url = "https://translations.launchpad.net/appcenter";
+        main_url = "https://elementary.io";
+        bug_url = "https://github.com/elementary/appcenter/issues";
+        help_url = "https://elementary.io/support";
+        translate_url = "https://l10n.elementary.io/projects/desktop/appcenter/";
         about_authors = { "Marvin Beckers <beckersmarvin@gmail.com>",
                           "Corentin Noël <corentin@elementary.io>" };
         about_comments = "";
