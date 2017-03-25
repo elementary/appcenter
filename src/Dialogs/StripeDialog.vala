@@ -310,23 +310,29 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
 
         if (char_count < 14) return false;
 
-        int hash = int.parse (numbers[char_count-1:char_count]);
+        // FIXME: This appears to be incorrect according to the Luhn test. We
+        // should fix it, but in the meantime, it's getting commented out.
+        // https://github.com/elementary/appcenter/issues/162
 
-        int j = 1;
-        int sum = 0;
-        for (int i = char_count -1; i > 0; i--) {
-            var number = int.parse (numbers[i-1:i]);
-            if (j++ % 2 == 1) {
-                number = number * 2;
-                if (number > 9) {
-                    number = number - 9;
-                }
-            }
+        // int hash = int.parse (numbers[char_count-1:char_count]);
+        //
+        // int j = 1;
+        // int sum = 0;
+        // for (int i = char_count -1; i > 0; i--) {
+        //     var number = int.parse (numbers[i-1:i]);
+        //     if (j++ % 2 == 1) {
+        //         number = number * 2;
+        //         if (number > 9) {
+        //             number = number - 9;
+        //         }
+        //     }
+        //
+        //     sum += number;
+        // }
+        //
+        // return 10 - (sum % 10) == hash;
 
-            sum += number;
-        }
-
-        return 10 - (sum % 10) == hash;
+        return true;
     }
 
     private void on_response (Gtk.Dialog source, int response_id) {
@@ -423,4 +429,3 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         return data.str;
     }
 }
-
