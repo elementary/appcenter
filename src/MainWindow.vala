@@ -209,6 +209,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     }
 
     public void show_package (AppCenterCore.Package package) {
+        stack.set_visible_child (homepage.category_view);
         homepage.category_view.show_package (package);
         view_opened (_("Categories"), false, null);
     }
