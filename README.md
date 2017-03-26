@@ -35,10 +35,14 @@ To install, use `make install`, then execute with `appcenter`
 
 ## Debugging
 
-To see debug messages:
+See debug messages:
     
     appcenter -d
 
-To force restart required messaging:
+Show restart required messaging:
 
     sudo touch /var/run/reboot-required
+    
+Hide restart required messaging:
+
+    sudo rm /var/run/reboot-required
