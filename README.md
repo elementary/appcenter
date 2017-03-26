@@ -33,6 +33,16 @@ To install, use `make install`, then execute with `appcenter`
     sudo make install
     appcenter
 
-To see the debug messages:
+## Debugging
+
+See debug messages:
     
     appcenter -d
+
+Show restart required messaging:
+
+    sudo touch /var/run/reboot-required
+    
+Hide restart required messaging:
+
+    sudo rm /var/run/reboot-required
