@@ -53,7 +53,7 @@ public class DBusServer : Object {
     /**
      * Uninstalls a package that's id is component_id
      *
-     * @param compontent_id  the component ID to install
+     * @param compontent_id  the component ID to uninstall
      */
     public void uninstall (string component_id) throws Error {
         var client = AppCenterCore.Client.get_default ();
@@ -68,7 +68,7 @@ public class DBusServer : Object {
     /**
      * Updates a package that's id is component_id
      *
-     * @param compontent_id  the component ID to install
+     * @param compontent_id  the component ID to update
      */
     public void update (string component_id) throws Error {
         var client = AppCenterCore.Client.get_default ();
