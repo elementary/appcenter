@@ -16,8 +16,8 @@ set (DOLLAR "$")
 # CTest
 include (CTest)
 if (BUILD_TESTING)
-    add_test (NAME validate-desktop-file COMMAND desktop-file-validate ${CMAKE_BINARY_DIR}/data/org.pantheon.appcenter.desktop)
-    add_test (NAME validate-daemon-desktop-file COMMAND desktop-file-validate ${CMAKE_BINARY_DIR}/data/org.pantheon.appcenter-daemon.desktop)
+    add_test (NAME validate-desktop-file COMMAND desktop-file-validate ${CMAKE_BINARY_DIR}/data/io.elementary.appcenter.desktop)
+    add_test (NAME validate-daemon-desktop-file COMMAND desktop-file-validate ${CMAKE_BINARY_DIR}/data/io.elementary.appcenter-daemon.desktop)
     add_test (NAME validate-appdata COMMAND appstreamcli validate ${CMAKE_BINARY_DIR}/data/appcenter.appdata.xml)
 endif ()
 

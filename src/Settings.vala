@@ -40,6 +40,6 @@ public class AppCenter.Settings : Granite.Services.Settings {
     }
 
     private Settings ()  {
-        base ("org.pantheon.appcenter.settings");
+        base ("io.elementary.appcenter.settings");
     }
 }
