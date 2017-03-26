@@ -42,7 +42,7 @@ namespace AppCenter {
             var newest_ids = houston.get_newest ();
             foreach (var package in newest_ids) {
                 var candidate = package + ".desktop";
-                var candidate_package = AppCenterCore.Client.get_default ().get_package_for_id (candidate);
+                var candidate_package = AppCenterCore.Client.get_default ().get_package_for_component_id (candidate);
 
                 if (candidate_package != null) {
                     candidate_package.update_state ();

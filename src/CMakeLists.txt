@@ -28,6 +28,7 @@ vala_precompile(VALA_C ${EXEC_NAME}
     Widgets/UpdateHeaderRow.vala
     Widgets/HumbleButton.vala
     Services/DbusInterfaces.vala
+    Services/DBusServer.vala
     ${CMAKE_CURRENT_BINARY_DIR}/config.vala
 PACKAGES
     appstream
