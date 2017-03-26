@@ -119,6 +119,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         button_stack.set_visible_child (return_button);
 
         view_mode = new Granite.Widgets.ModeButton ();
+        view_mode.margin = 1;
         view_mode.append_text (_("Home"));
         view_mode.append_text (C_("view", "Updates"));
 
