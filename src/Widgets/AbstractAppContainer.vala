@@ -228,7 +228,7 @@ namespace AppCenter {
              progress_bar.fraction = package.progress;
          }
 
-        protected void update_progress_status () {
+        protected virtual void update_progress_status () {
             progress_bar.text = package.get_progress_description ();
             /* Ensure progress bar shows complete to match status (lp:1606902) */
             if (package.changes_finished) {

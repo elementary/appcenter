@@ -159,6 +159,13 @@ namespace AppCenter.Views {
 
         [CCode (instance_pos = -1)]
         protected override int package_row_compare (Widgets.AppListRow row1, Widgets.AppListRow row2) {
+            bool a_is_updating = row1.get_is_updating ();
+            bool b_is_updating = row2.get_is_updating ();
+
+            if (a_is_updating || b_is_updating) {
+                return a_is_updating ? -1 : 1;
+            }
+
             bool a_is_os = row1.get_is_os_updates ();
             bool b_is_os = row2.get_is_os_updates ();
 
