@@ -25,6 +25,10 @@ const string BANNER_STYLE_CSS = """
 
     .banner {
         background-color: @banner_bg_color;
+        background-image: linear-gradient(to bottom right,
+                                  shade (@banner_bg_color, 1.05),
+                                  shade (@banner_bg_color, 0.95)
+                                  );
         color: @banner_fg_color;
     }
 
