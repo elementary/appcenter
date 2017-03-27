@@ -34,7 +34,7 @@ public class AppCenter.App : Granite.Application {
     private uint registration_id = 0;
 
     construct {
-        application_id = "org.pantheon.appcenter";
+        application_id = "io.elementary.appcenter";
         flags |= ApplicationFlags.HANDLES_OPEN;
         Intl.setlocale (LocaleCategory.ALL, "");
         Intl.textdomain (Build.GETTEXT_PACKAGE);
@@ -49,7 +49,7 @@ public class AppCenter.App : Granite.Application {
         build_version = Build.VERSION;
         build_version_info = Build.VERSION_INFO;
 
-        app_launcher = "org.pantheon.appcenter.desktop";
+        app_launcher = "io.elementary.appcenter.desktop";
         main_url = "https://elementary.io";
         bug_url = "https://github.com/elementary/appcenter/issues";
         help_url = "https://elementary.io/support";

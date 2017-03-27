@@ -1,3 +1,3 @@
 
 include (GSettings)
-add_schema (org.pantheon.appcenter.gschema.xml)
+add_schema (io.elementary.appcenter.gschema.xml)

@@ -36,7 +36,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         Object (application: app);
 
         weak Gtk.IconTheme default_theme = Gtk.IconTheme.get_default ();
-        default_theme.add_resource_path ("/org/pantheon/appcenter/icons");
+        default_theme.add_resource_path ("/io/elementary/appcenter/icons");
 
         unowned Settings saved_state = Settings.get_default ();
         set_default_size (saved_state.window_width, saved_state.window_height);
