@@ -32,6 +32,8 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
     public static Views.InstalledView installed_view { get; private set; }
 
+    public signal void homepage_loaded ();
+
     public MainWindow (Gtk.Application app) {
         Object (application: app);
 
@@ -148,7 +150,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         set_titlebar (headerbar);
 
-        homepage = new Homepage ();
+        homepage = new Homepage (this);
         homepage.package_selected.connect ((package) => {
             stack.set_visible_child (homepage.category_view);
             show_package (package);
