@@ -18,7 +18,7 @@
  * Authored by: Adam Bieńkowski <donadigos159@gmail.com>
  */
 
-[DBus (name="org.pantheon.appcenter")]
+[DBus (name="io.elementary.appcenter")]
 public class DBusServer : Object {
     private static DBusServer? instance;
     public static unowned DBusServer get_default () {
