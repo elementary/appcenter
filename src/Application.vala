@@ -108,9 +108,11 @@ public class AppCenter.App : Granite.Application {
         }
 
         if (main_window == null) {
-            client.update_cache.begin (true);
-
             main_window = new MainWindow (this);
+            // Start updating the cache 5 seconds after starting the main window
+            // If we do it instantly, we slow down the loading of the banner on the
+            // homepage considerably
+            schedule_cache_update (false, 5);
             main_window.destroy.connect (() => {
                 main_window = null;
             });
@@ -139,7 +141,7 @@ public class AppCenter.App : Granite.Application {
     }
 
     private uint cache_update_timeout_id = 0;
-    private void schedule_cache_update (bool cancel = false) {
+    private void schedule_cache_update (bool cancel = false, int time = SECONDS_AFTER_NETWORK_UP) {
         var client = AppCenterCore.Client.get_default ();
 
         if (cache_update_timeout_id > 0) {
@@ -151,7 +153,7 @@ public class AppCenter.App : Granite.Application {
             client.cancel_updates (true); // Also stops timeouts.
             return;
         } else {
-            cache_update_timeout_id = Timeout.add_seconds (SECONDS_AFTER_NETWORK_UP, () => {
+            cache_update_timeout_id = Timeout.add_seconds (time, () => {
                 client.update_cache.begin ();
                 cache_update_timeout_id = 0;
                 return false;
