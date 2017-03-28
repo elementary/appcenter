@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
-* Copyright (c) 2016 elementary LLC. (https://elementary.io)
+* Copyright (c) 2016-2017 elementary LLC. (https://elementary.io)
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -20,24 +20,19 @@
 */
 
 namespace AppCenter {
-    public class Homepage: Gtk.Box {
+    public class Homepage: Gtk.ScrolledWindow {
 
         public signal void package_selected (AppCenterCore.Package package);
 
         public Widgets.Banner newest_banner;
         public AppCenter.Views.CategoryView category_view;
-        private Gtk.ScrolledWindow scrolled_window;
 
         public Homepage () {
             var houston = AppCenterCore.Houston.get_default ();
 
-            scrolled_window = new Gtk.ScrolledWindow (null, null);
-            var scrolled_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 12);
-            var banner_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 12);
-
             newest_banner = new Widgets.Banner ();
             newest_banner.get_style_context ().add_class ("home");
-            newest_banner.margin = 24;
+            newest_banner.margin = 12;
 
             var newest_ids = houston.get_newest ();
             foreach (var package in newest_ids) {
@@ -56,24 +51,27 @@ namespace AppCenter {
                     }
                 }
             }
+
             if (newest_banner.current_package == null) {
                 newest_banner.set_brand ();
             }
-            banner_box.add (newest_banner);
 
-            var categories_label = new Gtk.Label ("Categories");
+            var categories_label = new Gtk.Label (_("Categories"));
             categories_label.get_style_context ().add_class ("h4");
             categories_label.xalign = 0;
-            categories_label.margin_left = 24;
+            categories_label.margin_left = 12;
+            categories_label.margin_top = 12;
 
             category_view = new Views.CategoryView ();
 
-            scrolled_box.add (banner_box);
-            scrolled_box.add (categories_label);
-            scrolled_box.add (category_view.category_flow);
+            var grid = new Gtk.Grid ();
+            grid.margin = 12;
+            grid.orientation = Gtk.Orientation.VERTICAL;
+            grid.add (newest_banner);
+            grid.add (categories_label);
+            grid.add (category_view.category_flow);
 
-            scrolled_window.add (scrolled_box);
-            this.add (scrolled_window);
+            add (grid);
         }
     }
 }
