@@ -66,10 +66,9 @@ namespace AppCenter {
 
             var grid = new Gtk.Grid ();
             grid.margin = 12;
-            grid.orientation = Gtk.Orientation.VERTICAL;
-            grid.add (newest_banner);
-            grid.add (categories_label);
-            grid.add (category_view.category_flow);
+            grid.attach (newest_banner, 0, 0, 1, 1);
+            grid.attach (categories_label, 0, 1, 1, 1);
+            grid.attach (category_view.category_flow, 0, 2, 1, 1);
 
             add (grid);
         }
