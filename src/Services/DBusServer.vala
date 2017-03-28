@@ -20,17 +20,14 @@
 
 [DBus (name="io.elementary.appcenter")]
 public class DBusServer : Object {
-    private static DBusServer? instance;
+    private static GLib.Once<DBusServer> instance;
     public static unowned DBusServer get_default () {
-        if (instance == null) {
-            instance = new DBusServer ();
-        }
-
-        return instance;
+        return instance.once (() => { return new DBusServer (); });
     }
 
     private DBusServer () {
-
+        var client = AppCenterCore.Client.get_default ();
+        client.get_installed_applications.begin ();
     }
 
     /**
@@ -47,7 +44,6 @@ public class DBusServer : Object {
             throw new IOError.FAILED ("Failed to find package for '%s' component ID".printf (component_id));
         }
 
-        package.update_state ();
         package.install.begin ();
     }
 
@@ -63,7 +59,6 @@ public class DBusServer : Object {
             throw new IOError.FAILED ("Failed to find package for '%s' component ID".printf (component_id));
         }
 
-        package.update_state ();
         package.uninstall.begin ();
     }
 
@@ -79,7 +74,6 @@ public class DBusServer : Object {
             throw new IOError.FAILED ("Failed to find package for '%s' component ID".printf (component_id));
         }
 
-        package.update_state ();
         package.update.begin ();
     }
 
