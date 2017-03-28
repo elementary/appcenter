@@ -137,4 +137,6 @@ Thanks again to all of the backers of our [March 2017 IndieGoGo campaign](https:
     William Dierkes
     William Fernando Merlotto
     Yasen Tzvetkov
+    Zhou Fang
     Zoltan Kochan
+    
