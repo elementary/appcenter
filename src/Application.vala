@@ -148,7 +148,7 @@ public class AppCenter.App : Granite.Application {
         base.dbus_register (connection, object_path);
 
         if (silent) {
-            connection.register_object ("/io/elementary/appcenter", DBusServer.get_default ());
+            registration_id = connection.register_object ("/io/elementary/appcenter", DBusServer.get_default ());
         }
 
         return true;
