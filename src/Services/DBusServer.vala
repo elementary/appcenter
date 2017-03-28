@@ -47,6 +47,7 @@ public class DBusServer : Object {
             throw new IOError.FAILED ("Failed to find package for '%s' component ID".printf (component_id));
         }
 
+        package.update_state ();
         package.install.begin ();
     }
 
@@ -62,6 +63,7 @@ public class DBusServer : Object {
             throw new IOError.FAILED ("Failed to find package for '%s' component ID".printf (component_id));
         }
 
+        package.update_state ();
         package.uninstall.begin ();
     }
 
@@ -77,6 +79,7 @@ public class DBusServer : Object {
             throw new IOError.FAILED ("Failed to find package for '%s' component ID".printf (component_id));
         }
 
+        package.update_state ();
         package.update.begin ();
     }
 
