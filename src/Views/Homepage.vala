@@ -59,7 +59,7 @@ namespace AppCenter {
             var categories_label = new Gtk.Label (_("Categories"));
             categories_label.get_style_context ().add_class ("h4");
             categories_label.xalign = 0;
-            categories_label.margin_left = 12;
+            categories_label.margin_start = 12;
             categories_label.margin_top = 12;
 
             category_view = new Views.CategoryView ();
