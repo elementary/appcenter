@@ -35,7 +35,6 @@ public class AppCenter.Views.CategoryView : View {
 
     construct {
         category_flow = new Gtk.FlowBox ();
-        category_flow.margin = 12;
         category_flow.homogeneous = true;
         category_flow.halign = Gtk.Align.FILL;
         category_flow.valign = Gtk.Align.CENTER;
