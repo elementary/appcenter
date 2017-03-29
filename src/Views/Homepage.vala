@@ -44,26 +44,6 @@ namespace AppCenter {
             newest_banner.get_style_context ().add_class ("home");
             newest_banner.margin = 12;
 
-            var categories_label = new Gtk.Label (_("Categories"));
-            categories_label.get_style_context ().add_class ("h4");
-            categories_label.xalign = 0;
-            categories_label.margin_start = 12;
-            categories_label.margin_top = 12;
-
-            category_flow = new Widgets.CategoryFlowBox ();
-            category_flow.valign = Gtk.Align.START;
-
-            var grid = new Gtk.Grid ();
-            grid.margin = 12;
-            grid.attach (newest_banner, 0, 0, 1, 1);
-            grid.attach (categories_label, 0, 1, 1, 1);
-            grid.attach (category_flow, 0, 2, 1, 1);
-
-            category_scrolled = new Gtk.ScrolledWindow (null, null);
-            category_scrolled.add (grid);
-
-            add (category_scrolled);
-
             newest_banner.clicked.connect (() => {
                 if (newest_banner.current_package != null) {
                     package_selected (newest_banner.current_package);
@@ -94,6 +74,26 @@ namespace AppCenter {
                 };
                 new Thread<void*> ("update-banner", run);
             });
+
+            var categories_label = new Gtk.Label (_("Categories"));
+            categories_label.get_style_context ().add_class ("h4");
+            categories_label.xalign = 0;
+            categories_label.margin_start = 12;
+            categories_label.margin_top = 12;
+
+            category_flow = new Widgets.CategoryFlowBox ();
+            category_flow.valign = Gtk.Align.START;
+
+            var grid = new Gtk.Grid ();
+            grid.margin = 12;
+            grid.attach (newest_banner, 0, 0, 1, 1);
+            grid.attach (categories_label, 0, 1, 1, 1);
+            grid.attach (category_flow, 0, 2, 1, 1);
+
+            category_scrolled = new Gtk.ScrolledWindow (null, null);
+            category_scrolled.add (grid);
+
+            add (category_scrolled);
 
             category_flow.child_activated.connect ((child) => {
                 var item = child as Widgets.CategoryItem;
