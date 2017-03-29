@@ -205,7 +205,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     public void show_package (AppCenterCore.Package package) {
         stack.set_visible_child (homepage);
         homepage.show_package (package);
-        view_opened (_("Categories"), false, null);
+        view_opened (_("Home"), false, null);
     }
 
     public void go_to_installed () {
