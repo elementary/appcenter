@@ -22,7 +22,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     private Gtk.HeaderBar headerbar;
     private Gtk.Stack stack;
     private Gtk.SearchEntry search_entry;
-    private Views.Homepage homepage;
+    private Homepage homepage;
     private Views.SearchView search_view;
     private Gtk.Button return_button;
     private Gtk.Button search_all_button;
@@ -150,7 +150,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         set_titlebar (headerbar);
 
-        homepage = new Views.Homepage (this);
+        homepage = new Homepage (this);
         installed_view = new Views.InstalledView ();
         search_view = new Views.SearchView ();
 

@@ -21,7 +21,7 @@
 
 using AppCenterCore;
 
-namespace AppCenter.Views {
+namespace AppCenter {
     public class Homepage : View {
         private Gtk.FlowBox category_flow;
         private Gtk.ScrolledWindow category_scrolled;
