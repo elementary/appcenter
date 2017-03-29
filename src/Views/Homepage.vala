@@ -27,34 +27,43 @@ namespace AppCenter {
         public Widgets.Banner newest_banner;
         public AppCenter.Views.CategoryView category_view;
 
-        public Homepage () {
+        public Homepage (MainWindow main_window) {
             var houston = AppCenterCore.Houston.get_default ();
 
             newest_banner = new Widgets.Banner ();
             newest_banner.get_style_context ().add_class ("home");
             newest_banner.margin = 12;
 
-            var newest_ids = houston.get_newest ();
-            foreach (var package in newest_ids) {
-                var candidate = package + ".desktop";
-                var candidate_package = AppCenterCore.Client.get_default ().get_package_for_id (candidate);
-
-                if (candidate_package != null) {
-                    candidate_package.update_state ();
-
-                    if (candidate_package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
-                        newest_banner.set_package (candidate_package);
-                        newest_banner.clicked.connect (() => {
-                            package_selected (candidate_package);
-                        });
-                        break;
-                    }
+            newest_banner.clicked.connect (() => {
+                if (newest_banner.current_package != null) {
+                    package_selected (newest_banner.current_package);
                 }
-            }
+            });
+            newest_banner.set_brand ();
 
-            if (newest_banner.current_package == null) {
-                newest_banner.set_brand ();
-            }
+            houston.get_newest.begin ((obj, res) => {
+                var newest_ids = houston.get_newest.end (res);
+                ThreadFunc<void*> run = () => {
+                    foreach (var package in newest_ids) {
+                        var candidate = package + ".desktop";
+                        var candidate_package = AppCenterCore.Client.get_default ().get_package_for_id (candidate);
+
+                        if (candidate_package != null) {
+                            candidate_package.update_state ();
+                            if (candidate_package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
+                                Idle.add (() => {
+                                    newest_banner.set_package (candidate_package);
+                                    return false;
+                                });
+                                break;
+                            }
+                        }
+                    }
+                    main_window.homepage_loaded ();
+                    return null;
+                };
+                new Thread<void*> ("update-banner", run);
+            });
 
             var categories_label = new Gtk.Label (_("Categories"));
             categories_label.get_style_context ().add_class ("h4");
