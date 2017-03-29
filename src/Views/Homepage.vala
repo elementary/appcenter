@@ -15,8 +15,7 @@
 * You should have received a copy of the GNU General Public License
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *
-* Authored by: Corentin Noël <corentin@elementaryos.org>
-*              Nathan Dyer <mail@nathandyer.me>
+* Authored by: Nathan Dyer <mail@nathandyer.me>
 *              Dane Henson <thegreatdane@gmail.com>
 */
 
