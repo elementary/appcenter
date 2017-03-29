@@ -25,13 +25,13 @@ namespace AppCenter {
     public class Homepage : View {
         private Gtk.FlowBox category_flow;
         private Gtk.ScrolledWindow category_scrolled;
-        public MainWindow main_window { get; construct; }
-
         private string current_category;
 
-        public AppStream.Category currently_viewed_category;
-        public Widgets.Banner newest_banner;
         public signal void package_selected (AppCenterCore.Package package);
+
+        public AppStream.Category currently_viewed_category;
+        public MainWindow main_window { get; construct; }
+        public Widgets.Banner newest_banner;
 
         public Homepage (MainWindow main_window) {
             Object (main_window: main_window);
