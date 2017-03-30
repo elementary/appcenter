@@ -101,7 +101,7 @@ namespace AppCenter {
 
             action_button.link_requested.connect (() => {
                 var clipboard = Gtk.Clipboard.get_for_display (get_display (), Gdk.SELECTION_CLIPBOARD);
-                clipboard.set_text ("appstream://" + this.package.component.get_desktop_id (), -1);
+                clipboard.set_text ("appstream://" + this.package.component.get_id (), -1);
             });
 
             uninstall_button = new Gtk.Button.with_label (_("Uninstall"));
