@@ -26,145 +26,31 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
     }
 
     construct {
-        add (get_audio_category ());
-        add (get_development_category ());
-        add (get_accessories_category ());
-        add (get_office_category ());
-        add (get_system_category ());
-        add (get_video_category ());
-        add (get_graphics_category ());
-        add (get_games_category ());
-        add (get_education_category ());
-        add (get_internet_category ());
-        add (get_science_category ());
-        add (get_a11y_category ());
+        add (get_category (_("Audio"), "applications-audio-symbolic", {"Audio"}, "audio"));
+        add (get_category (_("Development"), "", {"IDE", "Development"}, "development"));
+        add (get_category (_("Accessories"), "applications-accessories", {"Utility"}, "accessories"));
+        add (get_category (_("Office"), "applications-office-symbolic", {"Office"}, "office"));
+        add (get_category (_("System"), "applications-system", {"System"}, "system"));
+        add (get_category (_("Video"), "applications-video-symbolic", {"Video"}, "video"));
+        add (get_category (_("Graphics"), "", {"Graphics"}, "graphics"));
+        add (get_category (_("Games"), "applications-games-symbolic", {"Game"}, "games"));
+        add (get_category (_("Education"), "", {"Education"}, "education"));
+        add (get_category (_("Internet"), "applications-internet", {"Network"}, "internet"));
+        add (get_category (_("Science & Engineering"), "", {"Science"}, "science"));
+        add (get_category (_("Universal Access"), "applications-accessibility-symbolic", {"Accessibility"}, "accessibility"));
     }
 
-    private Widgets.CategoryItem get_audio_category () {
+    private Widgets.CategoryItem get_category (string name, string icon, string[] groups, string style) {
         var category = new AppStream.Category ();
-        category.set_name (_("Audio"));
-        category.set_icon ("applications-audio-symbolic");
-        category.add_desktop_group ("Audio");
+        category.set_name (name);
+        category.set_icon (icon);
+
+        foreach (var group in groups) {
+            category.add_desktop_group (group);
+        }
+
         var item = new Widgets.CategoryItem (category);
-        item.add_category_class ("audio");
-
-        return item;
-    }
-
-    private Widgets.CategoryItem get_development_category () {
-        var category = new AppStream.Category ();
-        category.set_name (_("Development"));
-        category.add_desktop_group ("Development");
-        category.add_desktop_group ("IDE");
-        var item = new Widgets.CategoryItem (category);
-        item.add_category_class ("development");
-
-        return item;
-    }
-
-    private Widgets.CategoryItem get_accessories_category () {
-        var category = new AppStream.Category ();
-        category.set_name (_("Accessories"));
-        category.set_icon ("applications-accessories");
-        category.add_desktop_group ("Utility");
-        var item = new Widgets.CategoryItem (category);
-        item.add_category_class ("accessories");
-
-        return item;
-    }
-
-    private Widgets.CategoryItem get_office_category () {
-        var category = new AppStream.Category ();
-        category.set_name (_("Office"));
-        category.set_icon ("applications-office-symbolic");
-        category.add_desktop_group ("Office");
-        var item = new Widgets.CategoryItem (category);
-        item.add_category_class ("office");
-
-        return item;
-    }
-
-    private Widgets.CategoryItem get_system_category () {
-        var category = new AppStream.Category ();
-        category.set_name (_("System"));
-        category.set_icon ("applications-system");
-        category.add_desktop_group ("System");
-        var item = new Widgets.CategoryItem (category);
-        item.add_category_class ("system");
-
-        return item;
-    }
-
-    private Widgets.CategoryItem get_video_category () {
-        var category = new AppStream.Category ();
-        category.set_name (_("Video"));
-        category.set_icon ("applications-video-symbolic");
-        category.add_desktop_group ("Video");
-        var item = new Widgets.CategoryItem (category);
-        item.add_category_class ("video");
-
-        return item;
-    }
-
-    private Widgets.CategoryItem get_graphics_category () {
-        var category = new AppStream.Category ();
-        category.set_name (_("Graphics"));
-        category.add_desktop_group ("Graphics");
-        var item = new Widgets.CategoryItem (category);
-        item.add_category_class ("graphics");
-
-        return item;
-    }
-
-    private Widgets.CategoryItem get_games_category () {
-        var category = new AppStream.Category ();
-        category.set_name (_("Games"));
-        category.add_desktop_group ("Game");
-        category.set_icon ("applications-games-symbolic");
-        var item = new Widgets.CategoryItem (category);
-        item.add_category_class ("games");
-
-        return item;
-    }
-
-    private Widgets.CategoryItem get_education_category () {
-        var category = new AppStream.Category ();
-        category.set_name (_("Education"));
-        category.add_desktop_group ("Education");
-        var item = new Widgets.CategoryItem (category);
-        item.add_category_class ("education");
-
-        return item;
-    }
-
-    private Widgets.CategoryItem get_internet_category () {
-        var category = new AppStream.Category ();
-        category.set_name (_("Internet"));
-        category.set_icon ("applications-internet");
-        category.add_desktop_group ("Network");
-        var item = new Widgets.CategoryItem (category);
-        item.add_category_class ("internet");
-
-        return item;
-    }
-
-    private Widgets.CategoryItem get_science_category () {
-        var category = new AppStream.Category ();
-        category.set_name (_("Science & Engineering"));
-        category.add_desktop_group ("Science");
-        var item = new Widgets.CategoryItem (category);
-        item.add_category_class ("science");
-
-        return item;
-    }
-
-    private Widgets.CategoryItem get_a11y_category () {
-        var category = new AppStream.Category ();
-        category.set_name (_("Universal Access"));
-        category.set_icon ("applications-accessibility-symbolic");
-        category.add_desktop_group ("Accessibility");
-        var item = new Widgets.CategoryItem (category);
-        item.add_category_class ("accessibility");
+        item.add_category_class (style);
 
         return item;
     }
