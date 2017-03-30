@@ -19,6 +19,7 @@
 
 public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
     public signal void download_requested ();
+    public signal void link_requested ();
     public signal void payment_requested (int amount);
 
     private Gtk.Popover selection;
@@ -103,12 +104,31 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
         selection_list.add (custom_label);
         selection_list.add (custom_amount);
 
+        var copy_link_label = new Gtk.Label (_("Copy Link"));
+        copy_link_label.margin_start = 3;
+        copy_link_label.xalign = 0;
+
+        var copy_link_button = new Gtk.Button ();
+        copy_link_button.add (copy_link_label);
+
+        var style_context = copy_link_button.get_style_context ();
+        style_context.add_class (Gtk.STYLE_CLASS_MENUITEM);
+        style_context.remove_class (Gtk.STYLE_CLASS_BUTTON);
+
+        var selection_grid = new Gtk.Grid ();
+        selection_grid.margin_bottom = 3;
+        selection_grid.row_spacing = 3;
+        selection_grid.orientation = Gtk.Orientation.VERTICAL;
+        selection_grid.add (selection_list);
+        selection_grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
+        selection_grid.add (copy_link_button);
+
         arrow_button = new Gtk.ToggleButton ();
         arrow_button.image = new Gtk.Image.from_icon_name ("pan-down-symbolic", Gtk.IconSize.MENU);
 
         selection = new Gtk.Popover (arrow_button);
         selection.position = Gtk.PositionType.BOTTOM;
-        selection.add (selection_list);
+        selection.add (selection_grid);
 
         amount_button.clicked.connect (() => {
             if (this.amount != 0) {
@@ -120,6 +140,11 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
 
         arrow_button.toggled.connect (() => {
             selection.show_all ();
+        });
+
+        copy_link_button.clicked.connect (() => {
+            link_requested ();
+            selection.hide ();
         });
 
         custom_amount.value_changed.connect (() => {
