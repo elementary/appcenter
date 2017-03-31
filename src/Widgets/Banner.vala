@@ -193,7 +193,7 @@ namespace AppCenter.Widgets {
                 return current.package;
             }
 
-            return null;            
+            return null;
         }
 
         public void set_package (AppCenterCore.Package? package) {
