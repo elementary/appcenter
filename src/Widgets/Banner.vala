@@ -184,7 +184,7 @@ namespace AppCenter.Widgets {
         public void set_default_brand () {
             set_package (null);
             background_color = "#665888";
-            foreground_color = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;            
+            foreground_color = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
         }
 
         public AppCenterCore.Package? get_package () {
@@ -228,7 +228,7 @@ namespace AppCenter.Widgets {
                 foreground_color = color_primary_text;
             } else {
                 foreground_color = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
-            }                         
+            }
         }
 
         private void on_any_color_change () {
