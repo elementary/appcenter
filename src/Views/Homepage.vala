@@ -49,7 +49,7 @@ namespace AppCenter {
                     package_selected (newest_banner.current_package);
                 }
             });
-            newest_banner.set_brand ();
+            newest_banner.set_default_brand ();
 
             houston.get_newest.begin ((obj, res) => {
                 var newest_ids = houston.get_newest.end (res);
