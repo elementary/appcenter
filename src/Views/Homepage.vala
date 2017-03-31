@@ -45,8 +45,9 @@ namespace AppCenter {
             newest_banner.margin = 12;
 
             newest_banner.clicked.connect (() => {
-                if (newest_banner.current_package != null) {
-                    package_selected (newest_banner.current_package);
+                var package = newest_banner.get_package ();
+                if (package != null) {
+                    package_selected (package);
                 }
             });
             newest_banner.set_default_brand ();

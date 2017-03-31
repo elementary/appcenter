@@ -77,7 +77,7 @@ const string BANNER_STYLE_CSS = """
     .banner .button .label {
         color: @banner_bg_color;
         text-shadow: 0 1px 1px alpha (@banner_fg_color, 0.1);
-    }  
+    }
 """;
 
 const string DEFAULT_BANNER_COLOR_PRIMARY = "#68758e";
@@ -169,16 +169,6 @@ namespace AppCenter.Widgets {
         }
 
         private Gtk.Stack stack;
-        public AppCenterCore.Package? current_package {
-            get {
-                var current = stack.visible_child as BannerWidget;
-                if (current != null) {
-                    return current.package;
-                }
-
-                return null;
-            }
-        }
 
         construct {
             height_request = 300;
@@ -195,6 +185,15 @@ namespace AppCenter.Widgets {
             set_package (null);
             background_color = "#665888";
             foreground_color = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;            
+        }
+
+        public AppCenterCore.Package? get_package () {
+            var current = stack.visible_child as BannerWidget;
+            if (current != null) {
+                return current.package;
+            }
+
+            return null;            
         }
 
         public void set_package (AppCenterCore.Package? package) {
