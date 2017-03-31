@@ -175,6 +175,7 @@ namespace AppCenter.Widgets {
 
             stack = new Gtk.Stack ();
             stack.valign = Gtk.Align.CENTER;
+            stack.transition_duration = 500;
             stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT;
             add (stack);
 
