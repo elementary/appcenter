@@ -65,6 +65,13 @@ public class AppCenter.App : Granite.Application {
             }
         });
 
+        var show_updates_action = new SimpleAction ("show-updates", null);
+        show_updates_action.activate.connect(() => {
+            silent = false;
+            show_updates = true;
+            activate ();
+        });
+
         if (AppInfo.get_default_for_uri_scheme ("appstream") == null) {
             var appinfo = new DesktopAppInfo (app_launcher);
             try {
@@ -75,6 +82,7 @@ public class AppCenter.App : Granite.Application {
         }
 
         add_action (quit_action);
+        add_action (show_updates_action);
         add_accelerator ("<Control>q", "app.quit", null);
     }
 
