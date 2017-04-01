@@ -45,11 +45,12 @@ namespace AppCenter {
             newest_banner.margin = 12;
 
             newest_banner.clicked.connect (() => {
-                if (newest_banner.current_package != null) {
-                    package_selected (newest_banner.current_package);
+                var package = newest_banner.get_package ();
+                if (package != null) {
+                    package_selected (package);
                 }
             });
-            newest_banner.set_brand ();
+            newest_banner.set_default_brand ();
 
             houston.get_newest.begin ((obj, res) => {
                 var newest_ids = houston.get_newest.end (res);
