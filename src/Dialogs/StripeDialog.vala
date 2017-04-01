@@ -39,7 +39,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
     private Gtk.Button pay_button;
     private Gtk.Button cancel_button;
 
-    public int amount { get; construct set; }
+    public uint amount { get; construct set; }
     public string app_name { get; construct set; }
     public string app_id { get; construct set; }
     public string stripe_key { get; construct set; }
@@ -49,7 +49,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
     private bool expiration_valid = false;
     private bool cvc_valid = false;
 
-    public StripeDialog (int _amount, string _app_name, string _app_id, string _stripe_key) {
+    public StripeDialog (uint _amount, string _app_name, string _app_id, string _stripe_key) {
         Object (amount: _amount,
                 app_name: _app_name,
                 app_id: _app_id,
@@ -146,7 +146,9 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
 
         cancel_button = (Gtk.Button) add_button (_("Cancel"), Gtk.ResponseType.CLOSE);
 
-        pay_button = (Gtk.Button) add_button (_("Pay $%s.00").printf (amount.to_string ()), Gtk.ResponseType.APPLY);
+        uint dollars = amount / 100;
+        uint cents = amount % 100;
+        pay_button = (Gtk.Button) add_button (_("Pay $%u.%02u").printf (dollars, cents), Gtk.ResponseType.APPLY);
         pay_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
         pay_button.has_default = true;
         pay_button.sensitive = false;
@@ -260,7 +262,9 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
     }
 
     private void show_card_view () {
-        pay_button.label = _("Pay $%s.00").printf (amount.to_string ());
+        uint dollars = amount / 100;
+        uint cents = amount % 100;
+        pay_button.label = _("Pay $%u.%02u").printf (dollars, cents);
         cancel_button.label = _("Cancel");
 
         layouts.set_visible_child_name ("card");
@@ -353,7 +357,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         new Thread<void*> (null, () => {
             var year = (int.parse (card_expiration_entry.text[2:4]) + 2000).to_string ();
 
-            var data = get_stripe_data (stripe_key, email_entry.text, (amount * 100).to_string (), card_number_entry.text, card_expiration_entry.text[0:2], year, card_cvc_entry.text);
+            var data = get_stripe_data (stripe_key, email_entry.text, amount.to_string (), card_number_entry.text, card_expiration_entry.text[0:2], year, card_cvc_entry.text);
             debug ("Stripe data:%s", data);
             var error = false;
             try {
@@ -364,7 +368,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
 
                 string? houston_data = null;
                 if (token_id != null) {
-                    houston_data = post_to_houston (stripe_key, app_id, token_id, (amount * 100).to_string ());
+                    houston_data = post_to_houston (stripe_key, app_id, token_id, amount.to_string ());
                     debug ("Houston data:%s", houston_data);
                 } else {
                     error = true;
