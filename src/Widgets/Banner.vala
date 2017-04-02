@@ -170,6 +170,7 @@ namespace AppCenter.Widgets {
         }
 
         private Gtk.Stack stack;
+        private Switcher switcher;
         private int current_package_index;
         private int next_free_package_index = 1;
 
@@ -188,6 +189,11 @@ namespace AppCenter.Widgets {
                 next_package ();
                 return true;
             });
+        }
+
+        public Banner (Switcher switcher) {
+            this.switcher = switcher;
+            this.switcher.set_stack (stack);
         }
 
         public void set_default_brand () {
@@ -228,16 +234,9 @@ namespace AppCenter.Widgets {
                 current_package_index = 1;
             }
 
-            set_visible_package_index (current_package_index);
-        }
-
-        public void set_visible_package_index (uint index) {
-            if (index >= next_free_package_index) {
-                return;
-            }
-
-            stack.set_visible_child_name (index.to_string ());
+            stack.set_visible_child_name (current_package_index.to_string ());
             set_background ((stack.visible_child as BannerWidget).package);
+            switcher.update_selected ();
         }
 
         public void set_background (AppCenterCore.Package? package) {

@@ -42,7 +42,9 @@ namespace AppCenter {
         construct {
             var houston = AppCenterCore.Houston.get_default ();
 
-            newest_banner = new Widgets.Banner ();
+            var switcher = new Widgets.Switcher ();
+
+            newest_banner = new Widgets.Banner (switcher);
             newest_banner.get_style_context ().add_class ("home");
             newest_banner.margin = 12;
 
@@ -94,8 +96,9 @@ namespace AppCenter {
             var grid = new Gtk.Grid ();
             grid.margin = 12;
             grid.attach (newest_banner, 0, 0, 1, 1);
-            grid.attach (categories_label, 0, 1, 1, 1);
-            grid.attach (category_flow, 0, 2, 1, 1);
+            grid.attach (switcher, 0, 1, 1, 1);
+            grid.attach (categories_label, 0, 2, 1, 1);
+            grid.attach (category_flow, 0, 3, 1, 1);
 
             category_scrolled = new Gtk.ScrolledWindow (null, null);
             category_scrolled.add (grid);
