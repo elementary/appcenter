@@ -43,6 +43,7 @@ namespace AppCenter {
             var houston = AppCenterCore.Houston.get_default ();
 
             var switcher = new Widgets.Switcher ();
+            switcher.halign = Gtk.Align.CENTER;
 
             newest_banner = new Widgets.Banner (switcher);
             newest_banner.get_style_context ().add_class ("home");
