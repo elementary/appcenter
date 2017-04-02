@@ -21,6 +21,8 @@
 
 using AppCenterCore;
 
+const int NUM_PACKAGES_IN_BANNER = 5;
+
 namespace AppCenter {
     public class Homepage : View {
         private Gtk.FlowBox category_flow;
@@ -50,18 +52,23 @@ namespace AppCenter {
                     package_selected (package);
                 }
             });
-            newest_banner.set_default_brand ();
 
             houston.get_newest.begin ((obj, res) => {
                 var newest_ids = houston.get_newest.end (res);
                 ThreadFunc<void*> run = () => {
+                    uint packages_added = 0;
                     foreach (var package in newest_ids) {
+                        if (packages_added >= NUM_PACKAGES_IN_BANNER) {
+                            break;
+                        }
+
                         var candidate = package + ".desktop";
                         var candidate_package = AppCenterCore.Client.get_default ().get_package_for_id (candidate);
 
                         if (candidate_package != null) {
                             candidate_package.update_state ();
                             if (candidate_package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
+                                packages_added++;
                                 Idle.add (() => {
                                     newest_banner.add_package (candidate_package);
                                     return false;
