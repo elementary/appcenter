@@ -103,9 +103,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         title = _("AppCenter");
         window_position = Gtk.WindowPosition.CENTER;
 
-        var client = AppCenterCore.Client.get_default ();
-        client.operation_finished.connect (on_operation_finished);
-
         return_button = new Gtk.Button ();
         return_button.no_show_all = true;
         return_button.get_style_context ().add_class ("back-button");
@@ -328,50 +325,5 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         homepage.return_clicked ();
         trigger_search ();
-    }
-
-    private void on_operation_finished (AppCenterCore.Package package, AppCenterCore.Package.State operation, Error? error) {
-        switch (operation) {
-            case AppCenterCore.Package.State.INSTALLING:
-                if (error == null) {
-                    // Check if window is focused
-                    var win = get_window ();
-                    if (win != null && (win.get_state () & Gdk.WindowState.FOCUSED) != 0) {
-                        break;
-                    }
-
-                    var notification = new Notification (_("Application installed"));
-                    notification.set_body (_("%s has been successfully installed").printf (package.get_name ()));
-                    notification.set_icon (new ThemedIcon ("system-software-install"));
-                    notification.set_default_action ("app.open-application");
-
-                    var app = get_application ();
-                    if (app != null) {
-                        app.send_notification ("installed", notification);
-                    }                    
-                } else {
-                    // Check if permission was denied or the operation was cancelled
-                    if (error.matches (IOError.quark (), 19) || error.matches (Pk.ClientError.quark (), 303)) {
-                        break;
-                    }
-
-                    string body = error.message;
-                    if (!body.has_suffix (".")) {
-                        body += ".";
-                    }
-
-                    var close_button = new Gtk.Button.with_label (_("Close"));
-
-                    var dialog = new MessageDialog (_("There Was An Error Installing %s").printf (package.get_name ()), body, "dialog-error");
-                    dialog.add_action_widget (close_button, 0);
-                    dialog.show_all ();
-                    dialog.run ();
-                    dialog.destroy ();
-                }
-
-                break;
-            default:
-                break;
-        }
     }
 }

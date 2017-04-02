@@ -2,16 +2,320 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-09 00:06-0600\n"
+"POT-Creation-Date: 2017-03-29 16:53-0700\n"
 "PO-Revision-Date: 2017-02-26 23:12+0000\n"
 "Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 "X-Generator: Launchpad (build 18331)\n"
+
+#: ../src/Application.vala:39
+msgid "App Center"
+msgstr "Centrum aplikací"
+
+#: ../src/Application.vala:57
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Ales Ulehla https://launchpad.net/~ales-ulehla-k\n"
+"  David https://launchpad.net/~devercz\n"
+"  Honza Lafek https://launchpad.net/~hlafek99\n"
+"  Jan Marek https://launchpad.net/~janmarek28\n"
+"  Jaroslav Staněk https://launchpad.net/~fleury08\n"
+"  Kwogate https://launchpad.net/~danielman\n"
+"  Marek Suchánek https://launchpad.net/~suchm\n"
+"  Petr Dombek https://launchpad.net/~dombek\n"
+"  Sandra https://launchpad.net/~sandra-a\n"
+"  TV https://launchpad.net/~tadashicz\n"
+"  Wannabe Gangsta https://launchpad.net/~frodobezprstenu\n"
+"  bašoun https://launchpad.net/~hanslik-david\n"
+"  elementaryart (old) https://launchpad.net/~elementaryart"
+
+#: ../src/Application.vala:132
+msgid "Specified link '%s' could not be found, searching instead"
+msgstr ""
+
+#: ../src/Dialogs/RestartDialog.vala:40
+msgid "Are you sure you want to Restart?"
+msgstr ""
+
+#: ../src/Dialogs/RestartDialog.vala:41
+msgid "This will close all open applications and restart this device."
+msgstr ""
+
+#: ../src/Dialogs/RestartDialog.vala:42
+msgid "Restart"
+msgstr ""
+
+#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:147
+#: ../src/Dialogs/StripeDialog.vala:264
+#: ../src/Widgets/AbstractAppContainer.vala:123
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: ../src/Dialogs/StripeDialog.vala:149 ../src/Dialogs/StripeDialog.vala:263
+msgid "Pay $%s.00"
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:194
+msgid "Processing"
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:219
+msgid "There Was a Problem Processing Your Payment"
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:225
+msgid "Please review your payment info and try again."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:255
+msgid "Pay Later"
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:256
+msgid "Retry"
+msgstr ""
+
+#: ../src/Views/InstalledView.vala:45 ../src/MainWindow.vala:126
+msgctxt "view"
+msgid "Updates"
+msgstr "Aktualizace"
+
+#. / TRANSLATORS: the name of the Search view
+#: ../src/Views/SearchView.vala:35
+msgctxt "view"
+msgid "Search"
+msgstr "Vyhledávání"
+
+#: ../src/Views/CategoryView.vala:70 ../src/Views/CategoryView.vala:77
+#: ../src/Views/Homepage.vala:68 ../src/MainWindow.vala:216
+msgid "Categories"
+msgstr "Skupiny"
+
+#: ../src/Views/CategoryView.vala:118
+msgid "Audio"
+msgstr "Audio"
+
+#: ../src/Views/CategoryView.vala:129
+msgid "Development"
+msgstr "Vývojové nástroje"
+
+#: ../src/Views/CategoryView.vala:140
+msgid "Accessories"
+msgstr "Příslušenství"
+
+#: ../src/Views/CategoryView.vala:151
+msgid "Office"
+msgstr "Kancelář"
+
+#: ../src/Views/CategoryView.vala:162
+msgid "System"
+msgstr "Systém"
+
+#: ../src/Views/CategoryView.vala:173
+msgid "Video"
+msgstr "Video"
+
+#: ../src/Views/CategoryView.vala:184
+msgid "Graphics"
+msgstr "Grafika"
+
+#: ../src/Views/CategoryView.vala:194
+msgid "Games"
+msgstr "Hry"
+
+#: ../src/Views/CategoryView.vala:205
+msgid "Education"
+msgstr "Vzdělávání"
+
+#: ../src/Views/CategoryView.vala:215
+msgid "Internet"
+msgstr "Internet"
+
+#: ../src/Views/CategoryView.vala:226
+msgid "Science & Engineering"
+msgstr "Věda a inženýrství"
+
+#: ../src/Views/CategoryView.vala:236
+msgid "Universal Access"
+msgstr "Univerzální přístup"
+
+#: ../src/Views/AppListView.vala:123
+msgid "A restart is required to complete the installation of updates"
+msgstr ""
+
+#: ../src/Views/AppListView.vala:125
+msgid "Restart Now"
+msgstr ""
+
+#: ../src/Views/AppListView.vala:210
+msgid "Update All"
+msgstr "Aktualizovat vše"
+
+#: ../src/Views/AppInfoView.vala:50
+msgid "Screenshot Not Available"
+msgstr "Screenshot není k dispozici."
+
+#: ../src/Views/AppInfoView.vala:150
+msgid "Extensions:"
+msgstr "Rozšíření:"
+
+#: ../src/Views/AppInfoView.vala:164
+#, fuzzy
+msgid "Homepage"
+msgstr "Domovská stránka"
+
+#: ../src/Views/AppInfoView.vala:171
+msgid "Suggest Translations"
+msgstr ""
+
+#: ../src/Views/AppInfoView.vala:178
+msgid "Report a Problem"
+msgstr ""
+
+#: ../src/Views/AppInfoView.vala:185
+msgid "Help"
+msgstr ""
+
+#: ../src/Widgets/Banner.vala:163 ../src/MainWindow.vala:103
+msgid "AppCenter"
+msgstr "AppCentrum"
+
+#: ../src/Widgets/Banner.vala:164
+msgid "An open, pay-what-you-want app store"
+msgstr ""
+
+#: ../src/Widgets/Banner.vala:165
+msgid "Get the apps that you need at a price you can afford."
+msgstr ""
+
+#: ../src/Widgets/HumbleButton.vala:85
+#: ../src/Widgets/AbstractAppContainer.vala:186
+msgid "Free"
+msgstr ""
+
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
+#: ../src/Widgets/HumbleButton.vala:152
+msgid "$%d.00"
+msgstr ""
+
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
+#: ../src/Widgets/HumbleButton.vala:155
+msgid "$%d"
+msgstr ""
+
+#: ../src/Widgets/AbstractAppContainer.vala:102
+msgid "Uninstall"
+msgstr "Odebrat"
+
+#: ../src/Widgets/AbstractAppContainer.vala:105
+msgid "Open"
+msgstr "Otevřít"
+
+#: ../src/Widgets/AbstractAppContainer.vala:157
+msgid "The %s Developers"
+msgstr ""
+
+#: ../src/Widgets/AbstractAppContainer.vala:161
+msgid "by %s"
+msgstr ""
+
+#: ../src/Widgets/AbstractAppContainer.vala:200
+msgid "Update"
+msgstr "Aktualizovat"
+
+#: ../src/Widgets/AbstractAppList.vala:35
+msgid "No Results"
+msgstr "Žádné výsledky"
+
+#: ../src/Widgets/AbstractAppList.vala:35
+msgid "No apps could be found. Try changing search terms."
+msgstr "Nebyly nalezeny žádné aplikace. Zkuste změnit klíčová slova."
+
+#: ../src/Widgets/UpdateHeaderRow.vala:68
+msgid "%u Update Available"
+msgid_plural "%u Updates Available"
+msgstr[0] "%u dostupná aktualizace"
+msgstr[1] "%u dostupné aktualizace"
+msgstr[2] "%u dostupných aktualizací"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:69
+msgid "Size: %s"
+msgstr "Velikost: %s"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:105
+msgid "Searching for updates…"
+msgstr "Hledají se aktualizace…"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:112
+msgid "Up to Date"
+msgstr "Aktuální"
+
+#: ../src/MainWindow.vala:114 ../src/MainWindow.vala:142
+#: ../src/MainWindow.vala:308 ../src/MainWindow.vala:330
+msgid "Search Apps"
+msgstr "Hledat aplikace"
+
+#: ../src/MainWindow.vala:125 ../src/MainWindow.vala:157
+#, fuzzy
+msgid "Home"
+msgstr "Domovská stránka"
+
+#: ../src/MainWindow.vala:290
+msgid "Search %s"
+msgstr "Hledat %s"
+
+#: ../src/MainWindow.vala:351
+msgid "Application installed"
+msgstr "Aplikace nainstalována"
+
+#: ../src/MainWindow.vala:352
+msgid "%s has been successfully installed"
+msgstr "%s byl(a) uspěšně nainstalován(a)"
+
+#: ../src/MainWindow.vala:371
+msgid "Close"
+msgstr ""
+
+#: ../src/MainWindow.vala:373
+msgid "There Was An Error Installing %s"
+msgstr ""
+
+#: ../src/Core/Client.vala:90
+msgid "Operating System Updates"
+msgstr "Aktualizace operačního systému"
+
+#: ../src/Core/Client.vala:91
+msgid "Updates to system components"
+msgstr "Aktualizace systémových částí"
+
+#: ../src/Core/Client.vala:343
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "Dostupná aktualizace"
+msgstr[1] "Dostupné aktualizace"
+msgstr[2] "Dostupné aktualizace"
+
+#: ../src/Core/Client.vala:344
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "%u aktualizace je pro váš systém k dispozici"
+msgstr[1] "%u aktualizace jsou pro váš systém k dispozici"
+msgstr[2] "%u aktualizací je pro váš systém k dispozici"
+
+#: ../src/Core/Client.vala:373
+msgid "Restart Required"
+msgstr ""
+
+#: ../src/Core/Client.vala:374
+msgid "Please restart your system to finalize updates"
+msgstr ""
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -157,208 +461,14 @@ msgstr "Kopírují se soubory"
 msgid "Unknown state"
 msgstr "Neznámý stav"
 
-#: ../src/Core/Client.vala:74
-msgid "Operating System Updates"
-msgstr "Aktualizace operačního systému"
+#~ msgid "Install"
+#~ msgstr "Instalovat"
 
-#: ../src/Core/Client.vala:75
-msgid "Updates to system components"
-msgstr "Aktualizace systémových částí"
+#~ msgid "Best Rated"
+#~ msgstr "Nejlépe hodnocené"
 
-#: ../src/Core/Client.vala:331
-msgid "Update Available"
-msgid_plural "Updates Available"
-msgstr[0] "Dostupná aktualizace"
-msgstr[1] "Dostupné aktualizace"
-msgstr[2] "Dostupné aktualizace"
-
-#: ../src/Core/Client.vala:332
-msgid "%u update is available for your system"
-msgid_plural "%u updates are available for your system"
-msgstr[0] "%u aktualizace je pro váš systém k dispozici"
-msgstr[1] "%u aktualizace jsou pro váš systém k dispozici"
-msgstr[2] "%u aktualizací je pro váš systém k dispozici"
-
-#: ../src/Core/Package.vala:137
-msgid "Application installed"
-msgstr "Aplikace nainstalována"
-
-#: ../src/Core/Package.vala:138
-msgid "%s has been successfully installed"
-msgstr "%s byl(a) uspěšně nainstalován(a)"
-
-#: ../src/AbstractAppContainer.vala:64
-msgid "Cancel"
-msgstr "Zrušit"
-
-#: ../src/AbstractAppContainer.vala:67 ../src/AbstractAppContainer.vala:135
-msgid "Install"
-msgstr "Instalovat"
-
-#: ../src/AbstractAppContainer.vala:70
-msgid "Uninstall"
-msgstr "Odebrat"
-
-#: ../src/AbstractAppContainer.vala:73
-msgid "Open"
-msgstr "Otevřít"
-
-#: ../src/AbstractAppContainer.vala:170
-msgid "Update"
-msgstr "Aktualizovat"
-
-#: ../src/Application.vala:39
-msgid "App Center"
-msgstr "Centrum aplikací"
-
-#: ../src/Application.vala:57
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Ales Ulehla https://launchpad.net/~ales-ulehla-k\n"
-"  David https://launchpad.net/~devercz\n"
-"  Honza Lafek https://launchpad.net/~hlafek99\n"
-"  Jan Marek https://launchpad.net/~janmarek28\n"
-"  Jaroslav Staněk https://launchpad.net/~fleury08\n"
-"  Kwogate https://launchpad.net/~danielman\n"
-"  Marek Suchánek https://launchpad.net/~suchm\n"
-"  Petr Dombek https://launchpad.net/~dombek\n"
-"  Sandra https://launchpad.net/~sandra-a\n"
-"  TV https://launchpad.net/~tadashicz\n"
-"  Wannabe Gangsta https://launchpad.net/~frodobezprstenu\n"
-"  bašoun https://launchpad.net/~hanslik-david\n"
-"  elementaryart (old) https://launchpad.net/~elementaryart"
-
-#: ../src/Application.vala:130
-msgid "Specified link '%s' could not be found, searching instead"
-msgstr ""
-
-#: ../src/MainWindow.vala:96
-msgid "AppCenter"
-msgstr "AppCentrum"
-
-#: ../src/MainWindow.vala:104 ../src/MainWindow.vala:131
-#: ../src/MainWindow.vala:282 ../src/MainWindow.vala:304
-msgid "Search Apps"
-msgstr "Hledat aplikace"
-
-#: ../src/MainWindow.vala:114 ../src/MainWindow.vala:190
-#: ../src/Views/CategoryView.vala:72 ../src/Views/CategoryView.vala:79
-msgid "Categories"
-msgstr "Skupiny"
-
-#: ../src/MainWindow.vala:115 ../src/Views/InstalledView.vala:45
-msgctxt "view"
-msgid "Updates"
-msgstr "Aktualizace"
-
-#: ../src/MainWindow.vala:264
-msgid "Search %s"
-msgstr "Hledat %s"
-
-#. / TRANSLATORS: the name of the Search view
-#: ../src/Views/SearchView.vala:35
-msgctxt "view"
-msgid "Search"
-msgstr "Vyhledávání"
-
-#: ../src/Views/AppListView.vala:116
-msgid "Update All"
-msgstr "Aktualizovat vše"
-
-#: ../src/Views/FeaturedView.vala:33
-msgid "Best Rated"
-msgstr "Nejlépe hodnocené"
-
-#: ../src/Views/FeaturedView.vala:36
-msgid "Latest Apps"
-msgstr "Nejnovější aplikace"
-
-#: ../src/Views/CategoryView.vala:120
-msgid "Audio"
-msgstr "Audio"
-
-#: ../src/Views/CategoryView.vala:131
-msgid "Development"
-msgstr "Vývojové nástroje"
-
-#: ../src/Views/CategoryView.vala:142
-msgid "Accessories"
-msgstr "Příslušenství"
-
-#: ../src/Views/CategoryView.vala:153
-msgid "Office"
-msgstr "Kancelář"
-
-#: ../src/Views/CategoryView.vala:164
-msgid "System"
-msgstr "Systém"
-
-#: ../src/Views/CategoryView.vala:175
-msgid "Video"
-msgstr "Video"
-
-#: ../src/Views/CategoryView.vala:186
-msgid "Graphics"
-msgstr "Grafika"
-
-#: ../src/Views/CategoryView.vala:196
-msgid "Games"
-msgstr "Hry"
-
-#: ../src/Views/CategoryView.vala:207
-msgid "Education"
-msgstr "Vzdělávání"
-
-#: ../src/Views/CategoryView.vala:217
-msgid "Internet"
-msgstr "Internet"
-
-#: ../src/Views/CategoryView.vala:228
-msgid "Science & Engineering"
-msgstr "Věda a inženýrství"
-
-#: ../src/Views/CategoryView.vala:238
-msgid "Universal Access"
-msgstr "Univerzální přístup"
-
-#: ../src/Views/AppInfoView.vala:48
-msgid "Screenshot Not Available"
-msgstr "Screenshot není k dispozici."
-
-#: ../src/Views/AppInfoView.vala:128
-msgid "Extensions:"
-msgstr "Rozšíření:"
-
-#: ../src/AbstractAppList.vala:30
-msgid "No Results"
-msgstr "Žádné výsledky"
-
-#: ../src/AbstractAppList.vala:30
-msgid "No apps could be found. Try changing search terms."
-msgstr "Nebyly nalezeny žádné aplikace. Zkuste změnit klíčová slova."
-
-#: ../src/Widgets/UpdateHeaderRow.vala:121
-msgid "%u Update Available"
-msgid_plural "%u Updates Available"
-msgstr[0] "%u dostupná aktualizace"
-msgstr[1] "%u dostupné aktualizace"
-msgstr[2] "%u dostupných aktualizací"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:122
-msgid "Size: %s"
-msgstr "Velikost: %s"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:158
-msgid "Searching for updates…"
-msgstr "Hledají se aktualizace…"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:165
-msgid "Up to Date"
-msgstr "Aktuální"
-
-#~ msgid "Home Page"
-#~ msgstr "Domovská stránka"
+#~ msgid "Latest Apps"
+#~ msgstr "Nejnovější aplikace"
 
 #~ msgid "Apps Info"
 #~ msgstr "Informace o aplikaci"
