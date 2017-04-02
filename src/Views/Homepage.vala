@@ -63,10 +63,9 @@ namespace AppCenter {
                             candidate_package.update_state ();
                             if (candidate_package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
                                 Idle.add (() => {
-                                    newest_banner.set_package (candidate_package);
+                                    newest_banner.add_package (candidate_package);
                                     return false;
                                 });
-                                break;
                             }
                         }
                     }
