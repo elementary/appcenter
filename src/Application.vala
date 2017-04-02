@@ -114,9 +114,11 @@ public class AppCenter.App : Granite.Application {
         }
 
         if (main_window == null) {
-            client.update_cache.begin (true);
-
             main_window = new MainWindow (this);
+
+            main_window.homepage_loaded.connect (() => {
+                client.update_cache.begin (true);
+            });
             main_window.destroy.connect (() => {
                 main_window = null;
             });
