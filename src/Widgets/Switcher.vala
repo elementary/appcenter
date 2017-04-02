@@ -18,7 +18,7 @@
 //
 
 namespace AppCenter.Widgets {
-    public class Switcher : Gtk.Box {
+    public class Switcher : Gtk.Grid {
 
         const string SWITCHER_STYLE_CSS = """
             .switcher {
@@ -44,12 +44,9 @@ namespace AppCenter.Widgets {
         public signal void on_stack_changed ();
         
         public Switcher () {
-            orientation = Gtk.Orientation.HORIZONTAL;
-            spacing = 2;
+            column_spacing = 3;
             can_focus = false;
             buttons = new Gee.HashMap<Gtk.Widget, Gtk.ToggleButton> (null, null);
-            pack_start (new Gtk.Grid (), true, true, 0);
-            pack_end (new Gtk.Grid (), true, true, 0);
         }
 
         construct {
