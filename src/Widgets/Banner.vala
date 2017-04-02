@@ -18,7 +18,6 @@
  * Authored by: Nathan Dyer <mail@nathandyer.me>
  */
 
-
 const string BANNER_STYLE_CSS = """
     @define-color banner_bg_color %s;
     @define-color banner_fg_color %s;
@@ -29,7 +28,9 @@ const string BANNER_STYLE_CSS = """
                                   shade (@banner_bg_color, 1.05),
                                   shade (@banner_bg_color, 0.95)
                                   );
-        color: @banner_fg_color;
+        color: @banner_fg_color;    
+        transition-property: background-image;
+        transition-duration: %ums;            
     }
 
     .banner.home {
@@ -85,6 +86,69 @@ const string DEFAULT_BANNER_COLOR_PRIMARY_TEXT = "white";
 namespace AppCenter.Widgets {
     public class Banner : Gtk.Button {
 
+        private class BannerWidget : Gtk.Grid {
+            public AppCenterCore.Package? package { get; construct; }
+
+            construct {
+                column_spacing = 24;
+                halign = Gtk.Align.CENTER;
+                valign = Gtk.Align.CENTER;
+
+                bool has_package = package != null;
+
+                var name_label = new Gtk.Label (has_package ? package.get_name () : _("AppCenter"));
+                name_label.get_style_context ().add_class ("h1");
+                name_label.xalign = 0;
+                name_label.use_markup = true;
+                name_label.wrap = true;
+                name_label.max_width_chars = 50;
+
+                var summary_label = new Gtk.Label (has_package ? package.get_summary () : _("An open, pay-what-you-want app store"));
+                summary_label.get_style_context ().add_class ("h2");
+                summary_label.xalign = 0;
+                summary_label.use_markup = true;
+                summary_label.wrap = true;
+                summary_label.max_width_chars = 50;
+
+                string description;
+                if (has_package) {
+                    description = package.get_description ();
+                    int close_paragraph_index = description.index_of ("</p>", 0);
+                    description = description.slice (3, close_paragraph_index);
+                } else {
+                    description = _("Get the apps that you need at a price you can afford.");
+                }
+
+                var description_label = new Gtk.Label (description);
+                description_label.get_style_context ().add_class ("h3");
+                description_label.ellipsize = Pango.EllipsizeMode.END;
+                description_label.lines = 2;
+                description_label.margin_top = 12;
+                description_label.max_width_chars = 50;
+                description_label.use_markup = true;
+                description_label.wrap = true;
+                description_label.xalign = 0;
+
+                var icon = new Gtk.Image ();
+                icon.pixel_size = 128;
+                if (has_package) {
+                    icon.gicon = package.get_icon (128);
+                } else {
+                    icon.icon_name = "system-software-install";
+                }
+
+                attach (icon, 0, 0, 1, 3);
+                attach (name_label, 1, 0, 1, 1);
+                attach (summary_label, 1, 1, 1, 1);
+                attach (description_label, 1, 2, 1, 1);
+                show_all ();
+            }
+
+            public BannerWidget (AppCenterCore.Package? package) {
+                Object (package: package);
+            }
+        }
+
         private string _background_color = "#68758e";
         public string background_color {
             get {
@@ -104,95 +168,68 @@ namespace AppCenter.Widgets {
             }
         }
 
-        private Gtk.Label name_label;
-        private Gtk.Label summary_label;
-        private Gtk.Label description_label;
-        private Gtk.Image icon;
-
-        public AppCenterCore.Package? current_package;
-
-        public Banner () {
-            Object (background_color: DEFAULT_BANNER_COLOR_PRIMARY,
-                    foreground_color: DEFAULT_BANNER_COLOR_PRIMARY_TEXT);
-        }
+        private Gtk.Stack stack;
 
         construct {
-            reload_css ();
             height_request = 300;
 
-            name_label = new Gtk.Label ("");
-            name_label.get_style_context ().add_class ("h1");
-            name_label.xalign = 0;
-            name_label.use_markup = true;
-            name_label.wrap = true;
-            name_label.max_width_chars = 50;
+            stack = new Gtk.Stack ();
+            stack.valign = Gtk.Align.CENTER;
+            stack.transition_duration = 500;
+            stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT;
+            add (stack);
 
-            summary_label = new Gtk.Label ("");
-            summary_label.get_style_context ().add_class ("h2");
-            summary_label.xalign = 0;
-            summary_label.use_markup = true;
-            summary_label.wrap = true;
-            summary_label.max_width_chars = 50;
-
-            description_label = new Gtk.Label ("");
-            description_label.get_style_context ().add_class ("h3");
-            description_label.ellipsize = Pango.EllipsizeMode.END;
-            description_label.lines = 2;
-            description_label.margin_top = 12;
-            description_label.max_width_chars = 50;
-            description_label.use_markup = true;
-            description_label.wrap = true;
-            description_label.xalign = 0;
-
-            icon = new Gtk.Image ();
-            icon.pixel_size = 128;
-
-            var grid = new Gtk.Grid ();
-            grid.column_spacing = 24;
-            grid.halign = Gtk.Align.CENTER;
-            grid.valign = Gtk.Align.CENTER;
-            grid.attach (icon, 0, 0, 1, 3);
-            grid.attach (name_label, 1, 0, 1, 1);
-            grid.attach (summary_label, 1, 1, 1, 1);
-            grid.attach (description_label, 1, 2, 1, 1);
-
-            add (grid);
+            set_default_brand ();
         }
 
-        public void set_brand () {
-            name_label.label = _("AppCenter");
-            summary_label.label = _("An open, pay-what-you-want app store");
-            description_label.label = _("Get the apps that you need at a price you can afford.");
-
+        public void set_default_brand () {
+            set_package (null);
             background_color = "#665888";
             foreground_color = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
-            icon.icon_name = "system-software-install";
-
-            current_package = null;
         }
 
-        public void set_package (AppCenterCore.Package package) {
-            name_label.label = package.get_name ();
-            summary_label.label = package.get_summary ();
+        public AppCenterCore.Package? get_package () {
+            var current = stack.visible_child as BannerWidget;
+            if (current != null) {
+                return current.package;
+            }
 
-            string description = package.get_description ();
-            int close_paragraph_index = description.index_of ("</p>", 0);
-            string opening_paragraph = description.slice(3, close_paragraph_index);
-            description_label.label = opening_paragraph;
+            return null;
+        }
 
-            icon.gicon = package.get_icon (128);
+        public void set_package (AppCenterCore.Package? package) {
+            var previous = stack.visible_child;
+
+            var widget = new BannerWidget (package);
+            stack.add (widget);
+            stack.visible_child = widget;
+
+            // Destroy the previous BannerWidget
+            Timeout.add (stack.transition_duration, () => {
+                if (previous != null) {
+                    previous.destroy ();
+                }
+
+                return false;
+            });
+
+            if (package == null) {
+                return;
+            }
 
             var color_primary = package.get_color_primary ();
             if (color_primary != null) {
                 background_color = color_primary;
+            } else {
+                background_color = DEFAULT_BANNER_COLOR_PRIMARY;
             }
 
             var color_primary_text = package.get_color_primary_text ();
             if (color_primary_text != null) {
                 foreground_color = color_primary_text;
+            } else {
+                foreground_color = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
             }
-
-            current_package = package;
         }
 
         private void on_any_color_change () {
@@ -202,8 +239,9 @@ namespace AppCenter.Widgets {
         private void reload_css () {
             var provider = new Gtk.CssProvider ();
             try {
-                var colored_css = BANNER_STYLE_CSS.printf (background_color, foreground_color);
+                var colored_css = BANNER_STYLE_CSS.printf (background_color, foreground_color, stack.transition_duration);
                 provider.load_from_data (colored_css, colored_css.length);
+
                 var context = get_style_context ();
                 context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
                 context.add_class ("banner");

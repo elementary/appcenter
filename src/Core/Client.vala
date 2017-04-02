@@ -503,9 +503,19 @@ public class AppCenterCore.Client : Object {
         return installed;
     }
 
-    public AppCenterCore.Package? get_package_for_id (string id) {
+    public AppCenterCore.Package? get_package_for_component_id (string id) {
         foreach (var package in package_list.values) {
             if (package.component.id == id) {
+                return package;
+            }
+        }
+
+        return null;
+    }
+
+    public AppCenterCore.Package? get_package_for_desktop_id (string desktop_id) {
+        foreach (var package in package_list.values) {
+            if (package.component.get_desktop_id () == desktop_id) {
                 return package;
             }
         }

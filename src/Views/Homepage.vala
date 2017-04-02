@@ -43,20 +43,21 @@ namespace AppCenter {
             newest_banner = new Widgets.Banner ();
             newest_banner.get_style_context ().add_class ("home");
             newest_banner.margin = 12;
-
             newest_banner.clicked.connect (() => {
-                if (newest_banner.current_package != null) {
-                    package_selected (newest_banner.current_package);
+                var package = newest_banner.get_package ();
+                if (package != null) {
+                    package_selected (package);
                 }
             });
-            newest_banner.set_brand ();
+            
+            newest_banner.set_default_brand ();
 
             houston.get_newest.begin ((obj, res) => {
                 var newest_ids = houston.get_newest.end (res);
                 ThreadFunc<void*> run = () => {
                     foreach (var package in newest_ids) {
                         var candidate = package + ".desktop";
-                        var candidate_package = AppCenterCore.Client.get_default ().get_package_for_id (candidate);
+                        var candidate_package = AppCenterCore.Client.get_default ().get_package_for_component_id (candidate);
 
                         if (candidate_package != null) {
                             candidate_package.update_state ();
