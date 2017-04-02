@@ -169,6 +169,7 @@ namespace AppCenter.Widgets {
             }
         }
 
+        private BannerWidget brand_widget;
         private Gtk.Stack stack;
         private Switcher switcher;
         private int current_package_index;
@@ -200,8 +201,8 @@ namespace AppCenter.Widgets {
             background_color = "#665888";
             foreground_color = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
 
-            var widget = new BannerWidget (null);
-            stack.add_named (widget, "brand");
+            brand_widget = new BannerWidget (null);
+            stack.add_named (brand_widget, "brand");
         }
 
         public AppCenterCore.Package? get_package () {
@@ -221,6 +222,7 @@ namespace AppCenter.Widgets {
             var current = stack.visible_child as BannerWidget;
             if (current.package == null) {
                 stack.set_visible_child (widget);
+                stack.remove (brand_widget);
                 set_background (package);
             }
         }
