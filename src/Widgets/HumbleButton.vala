@@ -19,7 +19,7 @@
 
 public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
     public signal void download_requested ();
-    public signal void payment_requested (uint amount);
+    public signal void payment_requested (int amount);
 
     private Gtk.Popover selection;
     private Gtk.Button amount_button;
@@ -27,15 +27,15 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
 
     private Gtk.ToggleButton arrow_button;
 
-    private uint _amount;
-    public uint amount {
+    private int _amount;
+    public int amount {
         get {
             return _amount;
         }
         set {
             _amount = value;
             amount_button.label = get_amount_formatted (value, true);
-            custom_amount.value = (double)value / 100;
+            custom_amount.value = value;
 
             if (_amount != 0) {
                 amount_button.label = get_amount_formatted (_amount, true);
@@ -78,22 +78,21 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
     }
 
     public HumbleButton () {
-        Object (amount: 100);
+        Object (amount: 1);
     }
 
     construct {
         amount_button = new Gtk.Button.with_label (_("Free"));
         amount_button.hexpand = true;
 
-        var one_dollar = get_amount_button (100);
-        var five_dollar = get_amount_button (500);
-        var ten_dollar = get_amount_button (1000);
+        var one_dollar = get_amount_button (1);
+        var five_dollar = get_amount_button (5);
+        var ten_dollar = get_amount_button (10);
 
         var custom_label = new Gtk.Label ("$");
         custom_label.margin_start = 12;
 
-        custom_amount = new Gtk.SpinButton.with_range (1, 100, 1);
-        custom_amount.set_digits (2);
+        custom_amount = new Gtk.SpinButton.with_range (0, 100, 1);
 
         var selection_list = new Gtk.Grid ();
         selection_list.column_spacing = 6;
@@ -124,7 +123,7 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
         });
 
         custom_amount.value_changed.connect (() => {
-            amount = (uint)(custom_amount.value * 100);
+            amount = (int) custom_amount.value;
         });
 
         custom_amount.activate.connect (() => {
@@ -147,19 +146,17 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
         add (arrow_button);
     }
 
-    private string get_amount_formatted (uint _amount, bool with_short_part = true) {
+    private string get_amount_formatted (int _amount, bool with_short_part = true) {
         if (with_short_part) {
-            uint dollars = _amount / 100;
-            uint cents = _amount % 100;
             /// This amount will be US Dollars. Some languages might need a "$%dUSD"
-            return _("$%u.%02u").printf (dollars, cents);
+            return _("$%d.00").printf (_amount);
         } else {
             /// This amount will be US Dollars. Some languages might need a "$%dUSD"
-            return _("$%u").printf (_amount / 100);
+            return _("$%d").printf (_amount);
         }
     }
 
-    private Gtk.Button get_amount_button (uint amount) {
+    private Gtk.Button get_amount_button (int amount) {
         var button = new Gtk.Button.with_label (get_amount_formatted (amount, false));
 
         button.clicked.connect (() => {

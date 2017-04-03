@@ -19,7 +19,7 @@
 
 namespace AppCenter {
     public abstract class AbstractAppContainer : Gtk.Grid {
-        private const string DEFAULT_PRICE_CENTS = "100";
+        private const string DEFAULT_PRICE_DOLLARS = "1";
 
         public AppCenterCore.Package package;
 
@@ -86,12 +86,12 @@ namespace AppCenter {
         public string suggested_amount {
             get {
                 if (this.package == null || this.package.component == null || updates_view) {
-                    return DEFAULT_PRICE_CENTS;
+                    return DEFAULT_PRICE_DOLLARS;
                 } else if (suggested_amount_ == null) {
                     suggested_amount_ = this.package.component.get_custom_value ("x-appcenter-suggested-price");
                 }
 
-                return suggested_amount_ != null ? suggested_amount_ : DEFAULT_PRICE_CENTS;
+                return suggested_amount_ != null ? suggested_amount_ : DEFAULT_PRICE_DOLLARS;
             }
         }
 
