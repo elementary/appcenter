@@ -92,7 +92,7 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
         var custom_label = new Gtk.Label ("$");
         custom_label.margin_start = 12;
 
-        custom_amount = new Gtk.SpinButton.with_range (0, 100, 1);
+        custom_amount = new Gtk.SpinButton.with_range (1, 100, 1);
         custom_amount.set_digits (2);
 
         var selection_list = new Gtk.Grid ();
