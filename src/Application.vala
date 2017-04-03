@@ -136,6 +136,11 @@ public class AppCenter.App : Granite.Application {
             if (show_updates) {
                 main_window.go_to_installed ();
             }
+        } else {
+            if (show_updates) {
+                main_window.go_to_installed ();
+                main_window.present ();
+            }
         }
 
         if (link != null) {
