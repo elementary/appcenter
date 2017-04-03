@@ -124,7 +124,7 @@ public class AppCenterCore.Client : Object {
             }
 
             packages_ids = {};
-            results.get_package_array ().foreach ((package) => {
+            package_array.foreach ((package) => {
                 packages_ids += package.package_id;
             });
 
