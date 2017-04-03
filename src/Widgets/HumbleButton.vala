@@ -124,7 +124,7 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
         });
 
         custom_amount.value_changed.connect (() => {
-            amount = (int)(custom_amount.value * 100);
+            amount = (uint)(custom_amount.value * 100);
         });
 
         custom_amount.activate.connect (() => {
