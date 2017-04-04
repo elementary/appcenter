@@ -4,6 +4,7 @@ Thanks again to all of the backers of our [March 2017 IndieGoGo campaign](https:
     Aaron Dickey
     Adam Slavík
     Aidan Stewart
+    Alex Gleason
     Alex Gorshkov
     Alexander Nekrasov
     Alexander Schäfer
@@ -143,4 +144,3 @@ Thanks again to all of the backers of our [March 2017 IndieGoGo campaign](https:
     Yasen Tzvetkov
     Zhou Fang
     Zoltan Kochan
-    
