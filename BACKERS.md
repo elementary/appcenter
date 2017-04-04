@@ -31,6 +31,7 @@ Thanks again to all of the backers of our [March 2017 IndieGoGo campaign](https:
     Christopher Horton
     Ciprian Tepes
     Darshak Parikh
+    davidak (https://davidak.de/)
     Cody Still
     conrad sykes
     Daniel Germán Cosenza
@@ -46,11 +47,13 @@ Thanks again to all of the backers of our [March 2017 IndieGoGo campaign](https:
     Fab Trillaud
     falface
     Felix Schröter
+    Fery Wardiyanto
     Fredrik Ekelund
     Fulvi Igor
     Gabriel Diosan
     Gabriele Lippi
     Gamunu Balagalla
+    Giovanni Casisa
     Goutham D
     graeter
     Grant Bourque
@@ -102,6 +105,7 @@ Thanks again to all of the backers of our [March 2017 IndieGoGo campaign](https:
     Miguel Fontoura
     Muhammad Fikri
     Nathan Caza
+    Nerbiz Dijkstra
     Neylson de Oliveira Gularte
     Nicholas La Roux
     Niklas Liechti
