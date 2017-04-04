@@ -2,23 +2,24 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-29 16:53-0700\n"
-"PO-Revision-Date: 2017-01-27 21:16+0000\n"
-"Last-Translator: Fabio Zaramella <FFabio.96.X@Gmail.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2017-04-02 13:03-0700\n"
+"PO-Revision-Date: 2017-04-04 19:02+0000\n"
+"Last-Translator: Elias Secchi <elias.secchi@gmail.com>\n"
+"Language-Team: Italian "
+"<http://weblate.elementary.io/projects/desktop/appcenter/it/>\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
-"X-Generator: Launchpad (build 18331)\n"
 
-#: ../src/Application.vala:39
+#: ../src/Application.vala:42
 msgid "App Center"
 msgstr "Centro applicazioni"
 
-#: ../src/Application.vala:57
+#: ../src/Application.vala:60
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
@@ -34,21 +35,38 @@ msgstr ""
 "  elementaryart (old) https://launchpad.net/~elementaryart\n"
 "  nathan https://launchpad.net/~nathan95-b"
 
-#: ../src/Application.vala:132
+#: ../src/Application.vala:138
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr ""
 
+#: ../src/Application.vala:207
+msgid "Application installed"
+msgstr "Applicazione installata"
+
+#: ../src/Application.vala:208
+msgid "%s has been successfully installed"
+msgstr "%s è stata installata con successo"
+
+#: ../src/Application.vala:224
+msgid "Close"
+msgstr "Chiudi"
+
+#: ../src/Application.vala:226
+msgid "There Was An Error Installing %s"
+msgstr "C'è stato un errore installando %s"
+
 #: ../src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
-msgstr ""
+msgstr "Sei sicuro di voler riavviare?"
 
 #: ../src/Dialogs/RestartDialog.vala:41
 msgid "This will close all open applications and restart this device."
 msgstr ""
+"Questo chiuderà tutte le applicazioni aperte e riavvierà il dispositivo."
 
 #: ../src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
-msgstr ""
+msgstr "Riavvia"
 
 #: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:147
 #: ../src/Dialogs/StripeDialog.vala:264
@@ -58,7 +76,7 @@ msgstr "Annulla"
 
 #: ../src/Dialogs/StripeDialog.vala:149 ../src/Dialogs/StripeDialog.vala:263
 msgid "Pay $%s.00"
-msgstr ""
+msgstr "Paga $%s.00"
 
 #: ../src/Dialogs/StripeDialog.vala:194
 msgid "Processing"
@@ -66,21 +84,21 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:219
 msgid "There Was a Problem Processing Your Payment"
-msgstr ""
+msgstr "C'è stato un problema col tuo pagamento"
 
 #: ../src/Dialogs/StripeDialog.vala:225
 msgid "Please review your payment info and try again."
-msgstr ""
+msgstr "Per favore, ricontrolla le tue informazioni di pagamento e riprova."
 
 #: ../src/Dialogs/StripeDialog.vala:255
 msgid "Pay Later"
-msgstr ""
+msgstr "Paga dopo"
 
 #: ../src/Dialogs/StripeDialog.vala:256
 msgid "Retry"
-msgstr ""
+msgstr "Riprova"
 
-#: ../src/Views/InstalledView.vala:45 ../src/MainWindow.vala:126
+#: ../src/Views/InstalledView.vala:45 ../src/MainWindow.vala:123
 msgctxt "view"
 msgid "Updates"
 msgstr "Aggiornamenti"
@@ -91,66 +109,14 @@ msgctxt "view"
 msgid "Search"
 msgstr "Cerca"
 
-#: ../src/Views/CategoryView.vala:70 ../src/Views/CategoryView.vala:77
-#: ../src/Views/Homepage.vala:68 ../src/MainWindow.vala:216
-msgid "Categories"
-msgstr "Categorie"
-
-#: ../src/Views/CategoryView.vala:118
-msgid "Audio"
-msgstr "Audio"
-
-#: ../src/Views/CategoryView.vala:129
-msgid "Development"
-msgstr "Sviluppo"
-
-#: ../src/Views/CategoryView.vala:140
-msgid "Accessories"
-msgstr "Accessori"
-
-#: ../src/Views/CategoryView.vala:151
-msgid "Office"
-msgstr "Ufficio"
-
-#: ../src/Views/CategoryView.vala:162
-msgid "System"
-msgstr "Sistema"
-
-#: ../src/Views/CategoryView.vala:173
-msgid "Video"
-msgstr "Video"
-
-#: ../src/Views/CategoryView.vala:184
-msgid "Graphics"
-msgstr "Grafica"
-
-#: ../src/Views/CategoryView.vala:194
-msgid "Games"
-msgstr "Giochi"
-
-#: ../src/Views/CategoryView.vala:205
-msgid "Education"
-msgstr "Istruzione"
-
-#: ../src/Views/CategoryView.vala:215
-msgid "Internet"
-msgstr "Internet"
-
-#: ../src/Views/CategoryView.vala:226
-msgid "Science & Engineering"
-msgstr "Scienza e Ingegneria"
-
-#: ../src/Views/CategoryView.vala:236
-msgid "Universal Access"
-msgstr "Accesso universale"
-
 #: ../src/Views/AppListView.vala:123
 msgid "A restart is required to complete the installation of updates"
 msgstr ""
+"Il riavvio è necessario per completare l'installazione degli aggiornamenti"
 
 #: ../src/Views/AppListView.vala:125
 msgid "Restart Now"
-msgstr ""
+msgstr "Riavvia ora"
 
 #: ../src/Views/AppListView.vala:210
 msgid "Update All"
@@ -165,33 +131,91 @@ msgid "Extensions:"
 msgstr "Estensioni:"
 
 #: ../src/Views/AppInfoView.vala:164
-#, fuzzy
 msgid "Homepage"
 msgstr "Pagina principale"
 
 #: ../src/Views/AppInfoView.vala:171
 msgid "Suggest Translations"
-msgstr ""
+msgstr "Suggerisci traduzione"
 
 #: ../src/Views/AppInfoView.vala:178
 msgid "Report a Problem"
-msgstr ""
+msgstr "Segnala un problema"
 
 #: ../src/Views/AppInfoView.vala:185
 msgid "Help"
-msgstr ""
+msgstr "Aiuto"
 
-#: ../src/Widgets/Banner.vala:163 ../src/MainWindow.vala:103
+#: ../src/Views/Homepage.vala:79
+msgid "Categories"
+msgstr "Categorie"
+
+#: ../src/Views/Homepage.vala:123 ../src/Views/Homepage.vala:130
+#: ../src/MainWindow.vala:122 ../src/MainWindow.vala:163
+#: ../src/MainWindow.vala:205
+msgid "Home"
+msgstr "Pagina principale"
+
+#: ../src/Widgets/Banner.vala:99 ../src/MainWindow.vala:103
 msgid "AppCenter"
 msgstr "Centro applicazioni"
 
-#: ../src/Widgets/Banner.vala:164
+#: ../src/Widgets/Banner.vala:106
 msgid "An open, pay-what-you-want app store"
 msgstr ""
 
-#: ../src/Widgets/Banner.vala:165
+#: ../src/Widgets/Banner.vala:119
 msgid "Get the apps that you need at a price you can afford."
 msgstr ""
+"Ottieni le applicazioni di cui hai bisogno al prezzo che ti puoi permettere."
+
+#: ../src/Widgets/CategoryFlowBox.vala:29
+msgid "Audio"
+msgstr "Audio"
+
+#: ../src/Widgets/CategoryFlowBox.vala:30
+msgid "Development"
+msgstr "Sviluppo"
+
+#: ../src/Widgets/CategoryFlowBox.vala:31
+msgid "Accessories"
+msgstr "Accessori"
+
+#: ../src/Widgets/CategoryFlowBox.vala:32
+msgid "Office"
+msgstr "Ufficio"
+
+#: ../src/Widgets/CategoryFlowBox.vala:33
+msgid "System"
+msgstr "Sistema"
+
+#: ../src/Widgets/CategoryFlowBox.vala:34
+msgid "Video"
+msgstr "Video"
+
+#: ../src/Widgets/CategoryFlowBox.vala:35
+msgid "Graphics"
+msgstr "Grafica"
+
+#: ../src/Widgets/CategoryFlowBox.vala:36
+msgid "Games"
+msgstr "Giochi"
+
+#: ../src/Widgets/CategoryFlowBox.vala:37
+msgid "Education"
+msgstr "Istruzione"
+
+#: ../src/Widgets/CategoryFlowBox.vala:38
+msgid "Internet"
+msgstr "Internet"
+
+#: ../src/Widgets/CategoryFlowBox.vala:39
+msgid "Science & Engineering"
+msgstr "Scienza e Ingegneria"
+
+#: ../src/Widgets/CategoryFlowBox.vala:40
+msgid "Universal Access"
+msgstr "Accesso universale"
 
 #: ../src/Widgets/HumbleButton.vala:85
 #: ../src/Widgets/AbstractAppContainer.vala:186
@@ -218,11 +242,11 @@ msgstr "Apri"
 
 #: ../src/Widgets/AbstractAppContainer.vala:157
 msgid "The %s Developers"
-msgstr ""
+msgstr "Gli sviluppatori %s"
 
 #: ../src/Widgets/AbstractAppContainer.vala:161
 msgid "by %s"
-msgstr ""
+msgstr "da %s"
 
 #: ../src/Widgets/AbstractAppContainer.vala:200
 msgid "Update"
@@ -256,35 +280,14 @@ msgstr "Ricerca di aggiornamenti..."
 msgid "Up to Date"
 msgstr "Aggiornato"
 
-#: ../src/MainWindow.vala:114 ../src/MainWindow.vala:142
-#: ../src/MainWindow.vala:308 ../src/MainWindow.vala:330
+#: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
+#: ../src/MainWindow.vala:297 ../src/MainWindow.vala:319
 msgid "Search Apps"
 msgstr "Cerca applicazioni"
 
-#: ../src/MainWindow.vala:125 ../src/MainWindow.vala:157
-#, fuzzy
-msgid "Home"
-msgstr "Pagina principale"
-
-#: ../src/MainWindow.vala:290
+#: ../src/MainWindow.vala:279
 msgid "Search %s"
 msgstr "Cerca %s"
-
-#: ../src/MainWindow.vala:351
-msgid "Application installed"
-msgstr "Applicazione installata"
-
-#: ../src/MainWindow.vala:352
-msgid "%s has been successfully installed"
-msgstr "%s è stata installata con successo"
-
-#: ../src/MainWindow.vala:371
-msgid "Close"
-msgstr ""
-
-#: ../src/MainWindow.vala:373
-msgid "There Was An Error Installing %s"
-msgstr ""
 
 #: ../src/Core/Client.vala:90
 msgid "Operating System Updates"
@@ -308,11 +311,11 @@ msgstr[1] "%u aggiornamenti sono disponibili per il tuo sistema"
 
 #: ../src/Core/Client.vala:373
 msgid "Restart Required"
-msgstr ""
+msgstr "Riavvio necessario"
 
 #: ../src/Core/Client.vala:374
 msgid "Please restart your system to finalize updates"
-msgstr ""
+msgstr "Per favore, Riavvia il sistema per completare gli aggiornamenti"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
