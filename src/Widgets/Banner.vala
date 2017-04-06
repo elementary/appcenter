@@ -29,8 +29,7 @@ const string BANNER_STYLE_CSS = """
                                   shade (@banner_bg_color, 0.95)
                                   );
         color: @banner_fg_color;    
-        transition-property: background-image;
-        transition-duration: %ums;            
+        transition: all %ums ease-in-out;
     }
 
     .banner.home {
