@@ -195,6 +195,9 @@ namespace AppCenter.Widgets {
         public Banner (Switcher switcher) {
             this.switcher = switcher;
             this.switcher.set_stack (stack);
+            this.switcher.on_stack_changed.connect (() => {
+                set_background ((stack.visible_child as BannerWidget).package);
+            });
         }
 
         public void set_default_brand () {
@@ -222,6 +225,7 @@ namespace AppCenter.Widgets {
             var current = stack.visible_child as BannerWidget;
             if (current.package == null) {
                 stack.set_visible_child (widget);
+                switcher.update_selected ();
                 stack.remove (brand_widget);
                 set_background (package);
             }
