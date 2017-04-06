@@ -67,6 +67,13 @@ public class AppCenter.App : Granite.Application {
                 main_window.destroy ();
             }
         });
+        
+        var show_updates_action = new SimpleAction ("show-updates", null);
+        show_updates_action.activate.connect(() => {
+            silent = false;
+            show_updates = true;
+            activate ();
+        });
 
         var client = AppCenterCore.Client.get_default ();
         client.operation_finished.connect (on_operation_finished);
@@ -81,6 +88,7 @@ public class AppCenter.App : Granite.Application {
         }
 
         add_action (quit_action);
+        add_action (show_updates_action);
         add_accelerator ("<Control>q", "app.quit", null);
     }
 
@@ -127,6 +135,11 @@ public class AppCenter.App : Granite.Application {
             main_window.show_all ();
             if (show_updates) {
                 main_window.go_to_installed ();
+            }
+        } else {
+            if (show_updates) {
+                main_window.go_to_installed ();
+                main_window.present ();
             }
         }
 
