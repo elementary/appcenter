@@ -86,6 +86,7 @@ const int MILLISECONDS_BETWEEN_BANNER_ITEMS = 5000;
 
 namespace AppCenter.Widgets {
     public class Banner : Gtk.Button {
+        public const int TRANSITION_DURATION_MILLISECONDS = 500;
 
         private class BannerWidget : Gtk.Grid {
             public AppCenterCore.Package? package { get; construct; }
@@ -181,7 +182,7 @@ namespace AppCenter.Widgets {
 
             stack = new Gtk.Stack ();
             stack.valign = Gtk.Align.CENTER;
-            stack.transition_duration = 500;
+            stack.transition_duration = TRANSITION_DURATION_MILLISECONDS;
             stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT;
             add (stack);
 
