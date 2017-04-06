@@ -241,7 +241,7 @@ namespace AppCenter.Views {
                 }
                 var colored_css = BANNER_STYLE_CSS.printf (color_primary, color_primary_text);
                 provider.load_from_data (colored_css, colored_css.length);
-                Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+                header_box.get_style_context ().add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
             } catch (GLib.Error e) {
                 critical (e.message);
             }
