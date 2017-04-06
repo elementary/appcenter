@@ -29,8 +29,7 @@ const string BANNER_STYLE_CSS = """
                                   shade (@banner_bg_color, 0.95)
                                   );
         color: @banner_fg_color;    
-        transition-property: background-image;
-        transition-duration: %ums;            
+        transition: all %ums ease-in-out;
     }
 
     .banner.home {
@@ -82,9 +81,11 @@ const string BANNER_STYLE_CSS = """
 
 const string DEFAULT_BANNER_COLOR_PRIMARY = "#68758e";
 const string DEFAULT_BANNER_COLOR_PRIMARY_TEXT = "white";
+const int MILLISECONDS_BETWEEN_BANNER_ITEMS = 5000;
 
 namespace AppCenter.Widgets {
     public class Banner : Gtk.Button {
+        public const int TRANSITION_DURATION_MILLISECONDS = 500;
 
         private class BannerWidget : Gtk.Grid {
             public AppCenterCore.Package? package { get; construct; }
@@ -168,24 +169,43 @@ namespace AppCenter.Widgets {
             }
         }
 
+        private BannerWidget? brand_widget;
         private Gtk.Stack stack;
+        private Switcher switcher;
+        private int current_package_index;
+        private int next_free_package_index = 1;
+        private uint timer_id;
 
         construct {
             height_request = 300;
 
             stack = new Gtk.Stack ();
             stack.valign = Gtk.Align.CENTER;
-            stack.transition_duration = 500;
+            stack.transition_duration = TRANSITION_DURATION_MILLISECONDS;
             stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT;
             add (stack);
 
             set_default_brand ();
         }
 
+        public Banner (Switcher switcher) {
+            this.switcher = switcher;
+            this.switcher.set_stack (stack);
+            this.switcher.on_stack_changed.connect (() => {
+                set_background ((stack.visible_child as BannerWidget).package);
+                if (timer_id > 0) {
+                    Source.remove (timer_id);
+                    timer_id = 0;
+                }
+            });
+        }
+
         public void set_default_brand () {
-            set_package (null);
             background_color = "#665888";
             foreground_color = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
+
+            brand_widget = new BannerWidget (null);
+            stack.add_named (brand_widget, "brand");
         }
 
         public AppCenterCore.Package? get_package () {
@@ -197,23 +217,58 @@ namespace AppCenter.Widgets {
             return null;
         }
 
-        public void set_package (AppCenterCore.Package? package) {
-            var previous = stack.visible_child;
-
+        public void add_package (AppCenterCore.Package? package) {
             var widget = new BannerWidget (package);
-            stack.add (widget);
-            stack.visible_child = widget;
+            stack.add_named (widget, next_free_package_index.to_string ());
+            next_free_package_index++;
+            stack.set_visible_child (widget);
+            switcher.update_selected ();
+            set_background (package);
 
-            // Destroy the previous BannerWidget
-            Timeout.add (stack.transition_duration, () => {
-                if (previous != null) {
-                    previous.destroy ();
-                }
+            if (brand_widget != null) {
+                stack.remove (brand_widget);
+                brand_widget = null;
+            }
+        }
 
-                return false;
+        public void next_package () {
+            if (next_free_package_index <= 1) {
+                return;
+            }
+
+            if (++current_package_index >= next_free_package_index) {
+                current_package_index = 1;
+            }
+
+            stack.set_visible_child_name (current_package_index.to_string ());
+            set_background ((stack.visible_child as BannerWidget).package);
+            switcher.update_selected ();
+        }
+
+        public void go_to_first () {
+            if (next_free_package_index <= 1) {
+                return;
+            }
+
+            current_package_index = 1;
+            stack.set_visible_child_name (current_package_index.to_string ());
+            set_background ((stack.visible_child as BannerWidget).package);
+            switcher.update_selected ();
+
+            if (timer_id > 0) {
+                Source.remove (timer_id);
+                timer_id = 0;
+            }
+            timer_id = Timeout.add (MILLISECONDS_BETWEEN_BANNER_ITEMS, () => {
+                next_package ();
+                return true;
             });
+        }
 
+        public void set_background (AppCenterCore.Package? package) {
             if (package == null) {
+                background_color = DEFAULT_BANNER_COLOR_PRIMARY;
+                foreground_color = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
                 return;
             }
 
