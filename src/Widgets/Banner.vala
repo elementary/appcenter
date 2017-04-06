@@ -174,6 +174,7 @@ namespace AppCenter.Widgets {
         private Switcher switcher;
         private int current_package_index;
         private int next_free_package_index = 1;
+        private uint timer_id;
 
         construct {
             height_request = 300;
@@ -186,7 +187,7 @@ namespace AppCenter.Widgets {
 
             set_default_brand ();
 
-            Timeout.add (MILLISECONDS_BETWEEN_BANNER_ITEMS, () => {
+            timer_id = Timeout.add (MILLISECONDS_BETWEEN_BANNER_ITEMS, () => {
                 next_package ();
                 return true;
             });
@@ -197,6 +198,10 @@ namespace AppCenter.Widgets {
             this.switcher.set_stack (stack);
             this.switcher.on_stack_changed.connect (() => {
                 set_background ((stack.visible_child as BannerWidget).package);
+                if (timer_id > 0) {
+                    Source.remove (timer_id);
+                    timer_id = 0;
+                }
             });
         }
 
