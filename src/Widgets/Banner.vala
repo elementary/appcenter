@@ -187,11 +187,6 @@ namespace AppCenter.Widgets {
             add (stack);
 
             set_default_brand ();
-
-            timer_id = Timeout.add (MILLISECONDS_BETWEEN_BANNER_ITEMS, () => {
-                next_package ();
-                return true;
-            });
         }
 
         public Banner (Switcher switcher) {
@@ -260,6 +255,15 @@ namespace AppCenter.Widgets {
             stack.set_visible_child_name (current_package_index.to_string ());
             set_background ((stack.visible_child as BannerWidget).package);
             switcher.update_selected ();
+
+            if (timer_id > 0) {
+                Source.remove (timer_id);
+                timer_id = 0;
+            }
+            timer_id = Timeout.add (MILLISECONDS_BETWEEN_BANNER_ITEMS, () => {
+                next_package ();
+                return true;
+            });
         }
 
         public void set_background (AppCenterCore.Package? package) {
