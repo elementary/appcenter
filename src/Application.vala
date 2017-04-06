@@ -29,7 +29,10 @@ public class AppCenter.App : Granite.Application {
 
     public static bool show_updates;
     public static bool silent;
-    MainWindow main_window;
+    private MainWindow? main_window;
+
+    private uint registration_id = 0;
+
     construct {
         application_id = "io.elementary.appcenter";
         flags |= ApplicationFlags.HANDLES_OPEN;
@@ -64,6 +67,16 @@ public class AppCenter.App : Granite.Application {
                 main_window.destroy ();
             }
         });
+        
+        var show_updates_action = new SimpleAction ("show-updates", null);
+        show_updates_action.activate.connect(() => {
+            silent = false;
+            show_updates = true;
+            activate ();
+        });
+
+        var client = AppCenterCore.Client.get_default ();
+        client.operation_finished.connect (on_operation_finished);
 
         if (AppInfo.get_default_for_uri_scheme ("appstream") == null) {
             var appinfo = new DesktopAppInfo (app_launcher);
@@ -75,6 +88,7 @@ public class AppCenter.App : Granite.Application {
         }
 
         add_action (quit_action);
+        add_action (show_updates_action);
         add_accelerator ("<Control>q", "app.quit", null);
     }
 
@@ -122,10 +136,15 @@ public class AppCenter.App : Granite.Application {
             if (show_updates) {
                 main_window.go_to_installed ();
             }
+        } else {
+            if (show_updates) {
+                main_window.go_to_installed ();
+                main_window.present ();
+            }
         }
 
         if (link != null) {
-            var package = client.get_package_for_id (link);
+            var package = client.get_package_for_component_id (link);
             if (package != null) {
                 main_window.show_package (package);
             } else {
@@ -138,6 +157,31 @@ public class AppCenter.App : Granite.Application {
         }
 
         main_window.present ();
+    }
+
+    public override bool dbus_register (DBusConnection connection, string object_path) throws Error {
+        base.dbus_register (connection, object_path);
+
+        if (silent) {
+            DBusServer.initialize.begin ((obj, res) => {
+                DBusServer.initialize.end (res);
+                try {
+                    registration_id = connection.register_object ("/io/elementary/appcenter", DBusServer.get_default ());    
+                } catch (Error e) {
+                    warning (e.message);
+                }
+            });
+        }
+
+        return true;
+    }
+
+    public override void dbus_unregister (DBusConnection connection, string object_path) {
+        if (registration_id != 0) {
+            connection.unregister_object (registration_id);
+        }
+
+        base.dbus_unregister (connection, object_path);
     }
 
     private uint cache_update_timeout_id = 0;
@@ -160,6 +204,50 @@ public class AppCenter.App : Granite.Application {
             });
         }
     }
+
+    private void on_operation_finished (AppCenterCore.Package package, AppCenterCore.Package.State operation, Error? error) {
+        switch (operation) {
+            case AppCenterCore.Package.State.INSTALLING:
+                if (error == null) {
+                    // Check if window is focused
+                    if (main_window != null) {
+                        var win = main_window.get_window ();
+                        if (win != null && (win.get_state () & Gdk.WindowState.FOCUSED) != 0) {
+                            break;
+                        }
+                    }
+
+                    var notification = new Notification (_("Application installed"));
+                    notification.set_body (_("%s has been successfully installed").printf (package.get_name ()));
+                    notification.set_icon (new ThemedIcon ("system-software-install"));
+                    notification.set_default_action ("app.open-application");
+
+                    send_notification ("installed", notification);                 
+                } else {
+                    // Check if permission was denied or the operation was cancelled
+                    if (error.matches (IOError.quark (), 19) || error.matches (Pk.ClientError.quark (), 303)) {
+                        break;
+                    }
+
+                    string body = error.message;
+                    if (!body.has_suffix (".")) {
+                        body += ".";
+                    }
+
+                    var close_button = new Gtk.Button.with_label (_("Close"));
+
+                    var dialog = new MessageDialog (_("There Was An Error Installing %s").printf (package.get_name ()), body, "dialog-error");
+                    dialog.add_action_widget (close_button, 0);
+                    dialog.show_all ();
+                    dialog.run ();
+                    dialog.destroy ();
+                }
+
+                break;
+            default:
+                break;
+        }
+    }    
 }
 
 public static int main (string[] args) {

@@ -48,7 +48,6 @@ namespace AppCenter {
             newest_banner = new Widgets.Banner (switcher);
             newest_banner.get_style_context ().add_class ("home");
             newest_banner.margin = 12;
-
             newest_banner.clicked.connect (() => {
                 var package = newest_banner.get_package ();
                 if (package != null) {
@@ -66,7 +65,7 @@ namespace AppCenter {
                         }
 
                         var candidate = package + ".desktop";
-                        var candidate_package = AppCenterCore.Client.get_default ().get_package_for_id (candidate);
+                        var candidate_package = AppCenterCore.Client.get_default ().get_package_for_component_id (candidate);
 
                         if (candidate_package != null) {
                             candidate_package.update_state ();

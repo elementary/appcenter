@@ -118,9 +118,13 @@ namespace AppCenter.Views {
 
             sc = new SuspendControl ();
 
+            var info_label = new Gtk.Label (_("A restart is required to complete the installation of updates"));
+            info_label.show ();
+
             var infobar = new Gtk.InfoBar ();
             infobar.message_type = Gtk.MessageType.WARNING;
-            infobar.get_content_area ().add (new Gtk.Label (_("A restart is required to complete the installation of updates")));
+            infobar.no_show_all = true;
+            infobar.get_content_area ().add (info_label);
             
             var restart_button = infobar.add_button (_("Restart Now"), 0);
             action_button_group.add_widget (restart_button);
@@ -134,7 +138,6 @@ namespace AppCenter.Views {
 
             var client = AppCenterCore.Client.get_default ();
             client.bind_property ("restart-required", infobar, "visible", BindingFlags.SYNC_CREATE);
-            client.bind_property ("restart-required", infobar, "no-show-all", BindingFlags.INVERT_BOOLEAN | BindingFlags.SYNC_CREATE);
 
             add (infobar);
             add (scrolled);
