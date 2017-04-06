@@ -57,6 +57,7 @@ namespace AppCenter {
 
             houston.get_newest.begin ((obj, res) => {
                 var newest_ids = houston.get_newest.end (res);
+                List<AppCenterCore.Package> packages_for_banner = new List<AppCenterCore.Package> ();
                 ThreadFunc<void*> run = () => {
                     uint packages_added = 0;
                     foreach (var package in newest_ids) {
@@ -71,13 +72,17 @@ namespace AppCenter {
                             candidate_package.update_state ();
                             if (candidate_package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
                                 packages_added++;
-                                Idle.add (() => {
-                                    newest_banner.add_package (candidate_package);
-                                    return false;
-                                });
+                                packages_for_banner.append (candidate_package);
                             }
                         }
                     }
+                    Idle.add (() => {
+                        foreach (var banner_package in packages_for_banner) {
+                            newest_banner.add_package (banner_package);
+                        }
+                        newest_banner.go_to_first ();
+                        return false;
+                    });
                     main_window.homepage_loaded ();
                     return null;
                 };

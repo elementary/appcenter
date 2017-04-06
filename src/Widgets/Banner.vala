@@ -169,7 +169,7 @@ namespace AppCenter.Widgets {
             }
         }
 
-        private BannerWidget brand_widget;
+        private BannerWidget? brand_widget;
         private Gtk.Stack stack;
         private Switcher switcher;
         private int current_package_index;
@@ -221,13 +221,13 @@ namespace AppCenter.Widgets {
             var widget = new BannerWidget (package);
             stack.add_named (widget, next_free_package_index.to_string ());
             next_free_package_index++;
+            stack.set_visible_child (widget);
+            switcher.update_selected ();
+            set_background (package);
 
-            var current = stack.visible_child as BannerWidget;
-            if (current.package == null) {
-                stack.set_visible_child (widget);
-                switcher.update_selected ();
+            if (brand_widget != null) {
                 stack.remove (brand_widget);
-                set_background (package);
+                brand_widget = null;
             }
         }
 
@@ -240,6 +240,17 @@ namespace AppCenter.Widgets {
                 current_package_index = 1;
             }
 
+            stack.set_visible_child_name (current_package_index.to_string ());
+            set_background ((stack.visible_child as BannerWidget).package);
+            switcher.update_selected ();
+        }
+
+        public void go_to_first () {
+            if (next_free_package_index <= 1) {
+                return;
+            }
+
+            current_package_index = 1;
             stack.set_visible_child_name (current_package_index.to_string ());
             set_background ((stack.visible_child as BannerWidget).package);
             switcher.update_selected ();
