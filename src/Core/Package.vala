@@ -98,6 +98,7 @@ public class AppCenterCore.Package : Object {
     private string? summary = null;
     private string? color_primary = null;
     private string? color_primary_text = null;
+    private string? payments_key = null;
     private string? _latest_version = null;
     public string? latest_version {
         private get { return _latest_version; }
@@ -368,6 +369,15 @@ public class AppCenterCore.Package : Object {
         } else {
             color_primary_text = component.get_custom_value ("x-appcenter-color-primary-text");
             return color_primary_text;
+        }
+    }
+
+    public string? get_payments_key () {
+        if (payments_key != null) {
+            return payments_key;
+        } else {
+            payments_key = component.get_custom_value ("x-appcenter-stripe");
+            return payments_key;
         }
     }
 
