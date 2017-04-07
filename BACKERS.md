@@ -203,7 +203,7 @@ Thanks again to all of the backers of our [March 2017 IndieGoGo campaign](https:
     Richard Burleigh
     Rob White
     Robert Gorbul
-    robinsoncollado
+    Robinson Collado
     Rodolfo Baeza
     Rolly Fordham
     Romain De Filippi
