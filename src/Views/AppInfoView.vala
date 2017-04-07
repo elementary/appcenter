@@ -38,7 +38,7 @@ namespace AppCenter.Views {
 
             app_screenshot = new Gtk.Image ();
             app_screenshot.width_request = 800;
-            app_screenshot.height_request = 600;
+            app_screenshot.height_request = 500;
             app_screenshot.icon_name = "image-x-generic";
             app_screenshot.halign = Gtk.Align.CENTER;
 
@@ -48,12 +48,11 @@ namespace AppCenter.Views {
             app_screenshot_spinner.active = true;
 
             app_screenshot_not_found = new Gtk.Label (_("Screenshot Not Available"));
-            app_screenshot_not_found.get_style_context ().add_class (Gtk.STYLE_CLASS_BACKGROUND);
             app_screenshot_not_found.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
             app_screenshot_not_found.get_style_context ().add_class ("h2");
 
             screenshot_stack = new Gtk.Stack ();
-            screenshot_stack.margin_bottom = 24;
+            screenshot_stack.get_style_context ().add_class (Gtk.STYLE_CLASS_BACKGROUND);
             screenshot_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
             screenshot_stack.add (app_screenshot_spinner);
             screenshot_stack.add (app_screenshot);
