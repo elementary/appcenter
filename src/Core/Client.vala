@@ -34,8 +34,11 @@ public class AppCenterCore.Client : Object {
     private uint updates_number = 0U;
     private uint update_cache_timeout_id = 0;
     private bool refresh_in_progress = false;
+    private uint refresh_timeout_id = 0;
+    private bool updates_changed_connected = false;
 
     private const int SECONDS_BETWEEN_REFRESHES = 60*60*24;
+    private const int PACKAGEKIT_ACTIVITY_TIMEOUT_MS = 2000;
 
     private Task client;
     private SuspendControl sc;
@@ -92,6 +95,38 @@ public class AppCenterCore.Client : Object {
         os_updates_component.add_icon (icon);
 
         os_updates = new AppCenterCore.Package (os_updates_component);
+
+        var control = new Pk.Control ();
+        control.transaction_list_changed.connect (() => {
+            try {
+                if (control.get_transaction_list ().length == 0) {
+                    refresh_timeout_id = Timeout.add (PACKAGEKIT_ACTIVITY_TIMEOUT_MS, () => {
+                        if (!updates_changed_connected) {
+                            control.updates_changed.connect (updates_changed_callback);
+                            updates_changed_connected = true;
+                        }
+                        refresh_timeout_id = 0;
+                        return false;
+                    });
+                } else {
+                    if (updates_changed_connected) {
+                        control.updates_changed.disconnect (updates_changed_callback);
+                        updates_changed_connected = false;
+                    }
+                    if (refresh_timeout_id > 0) {
+                        Source.remove (refresh_timeout_id);
+                        refresh_timeout_id = 0;
+                    }
+                }
+            } catch (Error e) {
+                warning (e.message);
+            }
+        });
+    }
+
+    private void updates_changed_callback () {
+        info ("packages possibly changed by external program, refreshing cache");
+        update_cache.begin (true);
     }
 
     public bool has_tasks () {
