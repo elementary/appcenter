@@ -115,6 +115,7 @@ Thanks again to all of the backers of our [March 2017 IndieGoGo campaign](https:
     Jindrich S.
     Jod Mangel
     Joe Petrus
+    Joel Wallis Jucá
     John Kennedy
     John Pangalos
     joke7p
