@@ -12,7 +12,9 @@ You'll need the following dependencies:
 * libgee-0.8-dev
 * libgranite-dev
 * libgtk-3-dev
+* libjson-glib-dev
 * libpackagekit-glib2-dev
+* libsoup2.4-dev
 * libunity-dev
 * libxml2-dev
 * libxml2-utils
