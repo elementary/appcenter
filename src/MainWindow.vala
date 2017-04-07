@@ -32,11 +32,13 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
     public static Views.InstalledView installed_view { get; private set; }
 
+    public signal void homepage_loaded ();
+
     public MainWindow (Gtk.Application app) {
         Object (application: app);
 
         weak Gtk.IconTheme default_theme = Gtk.IconTheme.get_default ();
-        default_theme.add_resource_path ("/org/pantheon/appcenter/icons");
+        default_theme.add_resource_path ("/io/elementary/appcenter/icons");
 
         unowned Settings saved_state = Settings.get_default ();
         set_default_size (saved_state.window_width, saved_state.window_height);
@@ -90,7 +92,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         installed_view.get_apps.begin ();
 
-        homepage.category_view.subview_entered.connect (view_opened);
+        homepage.subview_entered.connect (view_opened);
         installed_view.subview_entered.connect (view_opened);
         search_view.subview_entered.connect (view_opened);
     }
@@ -100,9 +102,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         set_size_request (910, 640);
         title = _("AppCenter");
         window_position = Gtk.WindowPosition.CENTER;
-
-        var client = AppCenterCore.Client.get_default ();
-        client.operation_finished.connect (on_operation_finished);
 
         return_button = new Gtk.Button ();
         return_button.no_show_all = true;
@@ -119,6 +118,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         button_stack.set_visible_child (return_button);
 
         view_mode = new Granite.Widgets.ModeButton ();
+        view_mode.margin = 1;
         view_mode.append_text (_("Home"));
         view_mode.append_text (C_("view", "Updates"));
 
@@ -147,28 +147,20 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         set_titlebar (headerbar);
 
-        homepage = new Homepage ();
-        homepage.package_selected.connect ((package) => {
-            stack.set_visible_child (homepage.category_view);
-            show_package (package);
-            return_button.label = (_("Home"));
-        }); 
+        homepage = new Homepage (this);
         installed_view = new Views.InstalledView ();
         search_view = new Views.SearchView ();
 
         stack = new Gtk.Stack ();
         stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
         stack.add (homepage);
-        stack.add (homepage.category_view);
         stack.add (installed_view);
         stack.add (search_view);
 
-        homepage.category_view.category_child_activated.connect (() => {
-            stack.set_visible_child (homepage.category_view);
-        });
-
-        homepage.category_view.show_home.connect (() => {
+        homepage.package_selected.connect ((package) => {
             stack.set_visible_child (homepage);
+            show_package (package);
+            return_button.label = (_("Home"));
         });
 
         add (stack);
@@ -208,8 +200,9 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     }
 
     public void show_package (AppCenterCore.Package package) {
-        homepage.category_view.show_package (package);
-        view_opened (_("Categories"), false, null);
+        stack.set_visible_child (homepage);
+        homepage.show_package (package);
+        view_opened (_("Home"), false, null);
     }
 
     public void go_to_installed () {
@@ -242,8 +235,8 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             search_all_button.no_show_all = true;
             search_all_button.hide ();
         } else {
-            search_view.search.begin (research, homepage.category_view.currently_viewed_category, () => {
-                if (homepage.category_view.currently_viewed_category != null) {
+            search_view.search.begin (research, homepage.currently_viewed_category, () => {
+                if (homepage.currently_viewed_category != null) {
                     button_stack.visible_child = search_all_button;
                     search_all_button.no_show_all = false;
                     search_all_button.show_all ();
@@ -261,7 +254,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     }
 
     private void view_opened (string return_name, bool allow_search, string? custom_header = null) {
-        if (stack.visible_child == search_view && homepage.category_view.currently_viewed_category != null) {
+        if (stack.visible_child == search_view && homepage.currently_viewed_category != null) {
             button_stack.visible_child = return_button;
             search_all_button.no_show_all = true;
             search_all_button.hide ();
@@ -282,8 +275,8 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         search_entry.sensitive = allow_search;
         search_entry.grab_focus_without_selecting ();
-        if (stack.visible_child == homepage && homepage.category_view.currently_viewed_category != null) {
-            search_entry.placeholder_text = _("Search %s").printf (homepage.category_view.currently_viewed_category.get_name ());
+        if (stack.visible_child == homepage && homepage.currently_viewed_category != null) {
+            search_entry.placeholder_text = _("Search %s").printf (homepage.currently_viewed_category.get_name ());
         }
     }
 
@@ -293,14 +286,14 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             custom_title_stack.set_visible_child (view_mode_revealer);
             homepage_header.label = "";
         } else {
-            if (homepage.category_view.currently_viewed_category != null) {
+            if (homepage.currently_viewed_category != null) {
                 button_stack.visible_child = search_all_button;
                 search_all_button.no_show_all = false;
                 search_all_button.show_all ();
             }
         }
 
-        if (stack.visible_child == homepage.category_view) {
+        if (stack.visible_child == homepage) {
             search_entry.placeholder_text = _("Search Apps");
         }
         search_entry.sensitive = true;
@@ -330,52 +323,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         return_button.no_show_all = true;
         return_button.hide ();
 
-        homepage.category_view.return_clicked ();
+        homepage.return_clicked ();
         trigger_search ();
-    }
-
-    private void on_operation_finished (AppCenterCore.Package package, AppCenterCore.Package.State operation, Error? error) {
-        switch (operation) {
-            case AppCenterCore.Package.State.INSTALLING:
-                if (error == null) {
-                    // Check if window is focused
-                    var win = get_window ();
-                    if (win != null && (win.get_state () & Gdk.WindowState.FOCUSED) != 0) {
-                        break;
-                    }
-
-                    var notification = new Notification (_("Application installed"));
-                    notification.set_body (_("%s has been successfully installed").printf (package.get_name ()));
-                    notification.set_icon (new ThemedIcon ("system-software-install"));
-                    notification.set_default_action ("app.open-application");
-
-                    var app = get_application ();
-                    if (app != null) {
-                        app.send_notification ("installed", notification);
-                    }                    
-                } else {
-                    // Check if permission was denied or the operation was cancelled
-                    if (error.matches (IOError.quark (), 19) || error.matches (Pk.ClientError.quark (), 303)) {
-                        break;
-                    }
-
-                    string body = error.message;
-                    if (!body.has_suffix (".")) {
-                        body += ".";
-                    }
-
-                    var close_button = new Gtk.Button.with_label (_("Close"));
-
-                    var dialog = new MessageDialog (_("There Was An Error Installing %s").printf (package.get_name ()), body, "dialog-error");
-                    dialog.add_action_widget (close_button, 0);
-                    dialog.show_all ();
-                    dialog.run ();
-                    dialog.destroy ();
-                }
-
-                break;
-            default:
-                break;
-        }
     }
 }

@@ -19,14 +19,19 @@
  */
 
 namespace AppCenter {
-    public abstract class AbstractAppList : Gtk.ScrolledWindow {
+    public abstract class AbstractAppList : Gtk.Box {
         public signal void show_app (AppCenterCore.Package package);
+        protected Gtk.ScrolledWindow scrolled;
         protected Gtk.ListBox list_box;
         protected Gtk.SizeGroup action_button_group;
         protected uint packages_changing = 0;
 
         construct {
-            hscrollbar_policy = Gtk.PolicyType.NEVER;
+            orientation = Gtk.Orientation.VERTICAL;
+
+            scrolled = new Gtk.ScrolledWindow (null, null);
+            scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
+
             var alert_view = new Granite.Widgets.AlertView (_("No Results"), _("No apps could be found. Try changing search terms."), "edit-find-symbolic");
             alert_view.show_all ();
             list_box = new Gtk.ListBox ();
@@ -38,7 +43,8 @@ namespace AppCenter {
                 var row = (Widgets.AppListRow)r;
                 show_app (row.get_package ());
             });
-            add (list_box);
+
+            scrolled.add (list_box);
 
             action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
         }

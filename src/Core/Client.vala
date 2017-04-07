@@ -23,6 +23,7 @@ public class AppCenterCore.Client : Object {
     public bool connected { public get; private set; }
     public bool updating_cache { public get; private set; }
     public uint task_count { public get; private set; default = 0; }
+    public bool restart_required { public get; private set; default = false; }
 
     public AppCenterCore.Package os_updates { public get; private set; }
 
@@ -32,13 +33,14 @@ public class AppCenterCore.Client : Object {
     private GLib.DateTime last_cache_update;
     private uint updates_number = 0U;
     private uint update_cache_timeout_id = 0;
-    private bool restart_required = false;
     private bool refresh_in_progress = false;
 
     private const int SECONDS_BETWEEN_REFRESHES = 60*60*24;
 
     private Task client;
     private SuspendControl sc;
+
+    private FileMonitor restart_monitor;
 
     private Client () {
     }
@@ -49,6 +51,16 @@ public class AppCenterCore.Client : Object {
 
         client = new Task ();
         sc = new SuspendControl ();
+
+        var restart_file = File.new_for_path (RESTART_REQUIRED_FILE);
+        try {
+            restart_monitor = restart_file.monitor (FileMonitorFlags.NONE);
+            restart_monitor.changed.connect ((file) => update_restart_state (file));
+        } catch (Error e) {
+            warning (e.message);
+        }
+
+        update_restart_state (restart_file);
 
         cancellable = new GLib.Cancellable ();
         last_cache_update = null;
@@ -334,7 +346,7 @@ public class AppCenterCore.Client : Object {
                 var notification = new Notification (title);
                 notification.set_body (body);
                 notification.set_icon (new ThemedIcon ("system-software-install"));
-                notification.set_default_action ("app.open-application");
+                notification.set_default_action ("app.show-updates");
 
                 application.send_notification ("updates", notification);
             } else {
@@ -342,7 +354,7 @@ public class AppCenterCore.Client : Object {
             }
 
 #if HAVE_UNITY
-            var launcher_entry = Unity.LauncherEntry.get_for_desktop_file ("org.pantheon.appcenter.desktop");
+            var launcher_entry = Unity.LauncherEntry.get_for_desktop_file ("io.elementary.appcenter.desktop");
             launcher_entry.count = updates_number;
             launcher_entry.count_visible = updates_number != 0U;
 #endif
@@ -355,8 +367,8 @@ public class AppCenterCore.Client : Object {
         refresh_in_progress = false;
     }
 
-   public async bool check_restart () {
-        if (FileUtils.test (RESTART_REQUIRED_FILE, FileTest.EXISTS)) {
+    private void update_restart_state (File restart_file) {
+        if (restart_file.query_exists ()) {
             if (!restart_required) {
                 string title = _("Restart Required");
                 string body = _("Please restart your system to finalize updates");
@@ -368,11 +380,10 @@ public class AppCenterCore.Client : Object {
                 Application.get_default ().send_notification ("restart", notification);
             }
 
-            restart_required = true;
-            return true;
+            restart_required = true;     
+        } else if (restart_required) {
+            restart_required = false;
         }
-
-        return false;
     }
 
     public uint get_package_count (GLib.GenericArray<weak Pk.Package> package_array) {
@@ -456,8 +467,6 @@ public class AppCenterCore.Client : Object {
             } else {
                 refresh_in_progress = false; //Stops new timeout while no network.
             }
-
-            check_restart.begin ();
         } else {
             debug ("Too soon to refresh and not forced");
         }
@@ -494,9 +503,19 @@ public class AppCenterCore.Client : Object {
         return installed;
     }
 
-    public AppCenterCore.Package? get_package_for_id (string id) {
+    public AppCenterCore.Package? get_package_for_component_id (string id) {
         foreach (var package in package_list.values) {
             if (package.component.id == id) {
+                return package;
+            }
+        }
+
+        return null;
+    }
+
+    public AppCenterCore.Package? get_package_for_desktop_id (string desktop_id) {
+        foreach (var package in package_list.values) {
+            if (package.component.get_desktop_id () == desktop_id) {
                 return package;
             }
         }

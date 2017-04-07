@@ -1,22 +1,21 @@
 /*
- * Copyright (c) 2016 elementary LLC (https://launchpad.net/granite)
- *
- * This program is free software; you can redistribute it and/or
- * modify it under the terms of the GNU General Public
- * License as published by the Free Software Foundation; either
- * version 2 of the License, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * General Public License for more details.
- *
- * You should have received a copy of the GNU General Public
- * License along with this program; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
- * Boston, MA 02111-1307, USA.
- *
- */
+* Copyright (c) 2016-2017 elementary LLC (https://elementary.io)
+*
+* This program is free software; you can redistribute it and/or
+* modify it under the terms of the GNU General Public
+* License as published by the Free Software Foundation; either
+* version 2 of the License, or (at your option) any later version.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* General Public License for more details.
+*
+* You should have received a copy of the GNU General Public
+* License along with this program; if not, write to the
+* Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+* Boston, MA 02110-1301 USA
+*/
 
 public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
     public signal void download_requested ();
@@ -41,14 +40,19 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
             if (_amount != 0) {
                 amount_button.label = get_amount_formatted (_amount, true);
             } else {
-                amount_button.label = _("Free");
+                amount_button.label = free_string;
             }
         }
     }
 
+    private string free_string;
     public string label {
         set {
-            amount_button.label = value;
+            free_string = value;
+
+            if (amount == 0) {
+               amount_button.label = free_string;
+            }
         }
     }
 
@@ -78,7 +82,7 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
     }
 
     construct {
-        amount_button = new Gtk.Button ();
+        amount_button = new Gtk.Button.with_label (_("Free"));
         amount_button.hexpand = true;
 
         var one_dollar = get_amount_button (1);

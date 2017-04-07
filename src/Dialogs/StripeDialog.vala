@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2016 elementary LLC (https://launchpad.net/granite)
+* Copyright (c) 2016-2017 elementary LLC (https://elementary.io)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public
@@ -13,12 +13,13 @@
 *
 * You should have received a copy of the GNU General Public
 * License along with this program; if not, write to the
-* Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-* Boston, MA 02111-1307, USA.
-*
+* Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+* Boston, MA 02110-1301 USA
 */
 
 public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
+    public signal void download_requested ();
+
     private const string HOUSTON_URI =  "https://developer.elementary.io/api/payment/%s?key=%s&token=%s&amount=%s&currency=USD";
     private const string USER_AGENT = "Stripe checkout";
     private const string STRIPE_URI = "https://api.stripe.com/v1/tokens?email=%s"
@@ -91,7 +92,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         card_expiration_entry.max_length = 4;
         card_expiration_entry.placeholder_text = "MM / YY";
         card_expiration_entry.primary_icon_name = "office-calendar-symbolic";
-        
+
         card_expiration_entry.changed.connect (() => {
             card_expiration_entry.text = card_expiration_entry.text.replace (" ", "");
             validate (2, card_expiration_entry.text);
@@ -103,7 +104,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         card_cvc_entry.max_length = 4;
         card_cvc_entry.placeholder_text = "CVC";
         card_cvc_entry.primary_icon_name = "channel-secure-symbolic";
-        
+
         card_cvc_entry.changed.connect (() => {
             card_cvc_entry.text = card_cvc_entry.text.replace (" ", "");
             validate (3, card_cvc_entry.text);
@@ -325,7 +326,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
             sum += number;
         }
 
-        return 10 - (sum % 10) == hash;
+        return (10 - (sum % 10)) % 10 == hash;
     }
 
     private void on_response (Gtk.Dialog source, int response_id) {
@@ -339,26 +340,35 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
                 }
                 break;
             case Gtk.ResponseType.CLOSE:
+                if (layouts.visible_child_name == "error") {
+                    download_requested ();
+                }
+
                 destroy ();
                 break;
         }
     }
 
-    private async void on_pay_clicked () {
-        SourceFunc callback = on_pay_clicked.callback;
-        ThreadFunc<void*> run = () => {
+    private void on_pay_clicked () {
+        new Thread<void*> (null, () => {
             var year = (int.parse (card_expiration_entry.text[2:4]) + 2000).to_string ();
 
             var data = get_stripe_data (stripe_key, email_entry.text, (amount * 100).to_string (), card_number_entry.text, card_expiration_entry.text[0:2], year, card_cvc_entry.text);
-
-            var parser = new Json.Parser ();
+            debug ("Stripe data:%s", data);
             var error = false;
             try {
+                var parser = new Json.Parser ();
                 parser.load_from_data (data);
                 var root_object = parser.get_root ().get_object ();
                 var token_id = root_object.get_string_member ("id");
 
-                var houston_data = post_to_houston (stripe_key, app_id, token_id, (amount * 100).to_string ());
+                string? houston_data = null;
+                if (token_id != null) {
+                    houston_data = post_to_houston (stripe_key, app_id, token_id, (amount * 100).to_string ());
+                    debug ("Houston data:%s", houston_data);
+                } else {
+                    error = true;
+                }
 
                 if (houston_data != null) {
                     parser.load_from_data (houston_data);
@@ -377,15 +387,12 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
             if (error) {
                 show_error_view ();
             } else {
+                download_requested ();
                 destroy ();
             }
 
-            Idle.add ((owned) callback);
             return null;
-        };
-        Thread.create<void*> (run, false);
-
-        yield;
+        });
     }
 
     private string get_stripe_data (string _key, string _email, string _amount, string _cc_num, string _cc_exp_month, string _cc_exp_year, string _cc_cvc) {

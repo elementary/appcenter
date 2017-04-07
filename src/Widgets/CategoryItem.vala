@@ -39,7 +39,7 @@ const string CATEGORIES_STYLE_CSS = """
         font-weight: 300;
     }
     .category.audio {
-        background-image: -gtk-scaled(url("resource:///org/pantheon/appcenter/backgrounds/audio.svg"), url("resource:///org/pantheon/appcenter/backgrounds/audio@2x.svg")),
+        background-image: -gtk-scaled(url("resource:///io/elementary/appcenter/backgrounds/audio.svg"), url("resource:///io/elementary/appcenter/backgrounds/audio@2x.svg")),
                           linear-gradient(to bottom,
                                   #FC8F36,
                                   #EF6522
@@ -124,11 +124,11 @@ const string CATEGORIES_STYLE_CSS = """
         color: #fe5498;
     }
     .category.graphics .label {
-        border-image: -gtk-scaled(url("resource:///org/pantheon/appcenter/backgrounds/graphics.svg"),url("resource:///org/pantheon/appcenter/backgrounds/graphics@2x.svg")) 10 10 10 10 / 10px 10px 10px 10px repeat;
+        border-image: -gtk-scaled(url("resource:///io/elementary/appcenter/backgrounds/graphics.svg"),url("resource:///io/elementary/appcenter/backgrounds/graphics@2x.svg")) 10 10 10 10 / 10px 10px 10px 10px repeat;
         padding: 12px;
     }
     .category.graphics .label:dir(rtl) {
-        border-image: -gtk-scaled(url("resource:///org/pantheon/appcenter/backgrounds/graphics-rtl.svg"),url("resource:///org/pantheon/appcenter/backgrounds/graphics-rtl@2x.svg")) 10 10 10 10 / 10px 10px 10px 10px repeat;
+        border-image: -gtk-scaled(url("resource:///io/elementary/appcenter/backgrounds/graphics-rtl.svg"),url("resource:///io/elementary/appcenter/backgrounds/graphics-rtl@2x.svg")) 10 10 10 10 / 10px 10px 10px 10px repeat;
     }
     .category.games {
         background-image: linear-gradient(to bottom,
@@ -180,7 +180,7 @@ const string CATEGORIES_STYLE_CSS = """
         color: #fff;
     }
     .category.science {
-        background-image: url("resource:///org/pantheon/appcenter/backgrounds/science.svg"),
+        background-image: url("resource:///io/elementary/appcenter/backgrounds/science.svg"),
                           linear-gradient(to bottom,
                                   #374044,
                                   #374044
@@ -285,6 +285,10 @@ public class AppCenter.Widgets.CategoryItem : Gtk.FlowBoxChild {
             name_label.label = app_category.name.up ();
         } else {
             name_label.label = app_category.name;
+        }
+
+        if (theme_name == "science") {
+            name_label.justify = Gtk.Justification.CENTER;
         }
     }
 }

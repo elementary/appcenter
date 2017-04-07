@@ -1,3 +1,22 @@
+/*
+* Copyright (c) 2016-2017 elementary LLC (https://elementary.io)
+*
+* This program is free software; you can redistribute it and/or
+* modify it under the terms of the GNU General Public
+* License as published by the Free Software Foundation; either
+* version 2 of the License, or (at your option) any later version.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* General Public License for more details.
+*
+* You should have received a copy of the GNU General Public
+* License along with this program; if not, write to the
+* Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+* Boston, MA 02110-1301 USA
+*/
+
 namespace AppCenter {
     public abstract class AbstractAppContainer : Gtk.Grid {
         public AppCenterCore.Package package;
@@ -7,7 +26,6 @@ namespace AppCenter {
         protected Gtk.Label package_author;
         protected Gtk.Label package_summary;
 
-        // The action button covers Install and Update
         protected Widgets.HumbleButton action_button;
         protected Gtk.Button uninstall_button;
         protected Gtk.Button open_button;
@@ -71,14 +89,13 @@ namespace AppCenter {
             package_name = new Gtk.Label ("");
             image = new Gtk.Image ();
 
-            cancel_button = new Gtk.Button.with_label (_("Cancel"));
-            cancel_button.clicked.connect (() => action_cancelled ());
-
             action_button = new Widgets.HumbleButton ();
             action_button.download_requested.connect (() => action_clicked.begin ());
 
             action_button.payment_requested.connect ((amount) => {
                 var stripe = new Widgets.StripeDialog (amount, this.package_name.label, this.package.component.get_desktop_id ().replace (".desktop", ""), payments_key_);
+
+                stripe.download_requested.connect (() => action_clicked.begin ());
                 stripe.show ();
             });
 
@@ -102,8 +119,6 @@ namespace AppCenter {
             /* Request a width large enough for the longest text to stop width of
              * progress bar jumping around */
             progress_bar.width_request = 350;
-            progress_bar.no_show_all = true;
-            progress_bar.hide ();
 
             cancel_button = new Gtk.Button.with_label (_("Cancel"));
             cancel_button.clicked.connect (() => action_cancelled ());
@@ -163,81 +178,40 @@ namespace AppCenter {
         }
 
         protected void update_action () {
-            uninstall_button.no_show_all = true;
-            uninstall_button.hide ();
-            progress_bar.no_show_all = true;
-            progress_bar.hide ();
-            action_stack.no_show_all = false;
-            action_stack.show_all ();
+            action_button.can_purchase = payments_enabled;
             action_stack.set_visible_child_name ("buttons");
 
             switch (package.state) {
                 case AppCenterCore.Package.State.NOT_INSTALLED:
-                    if (!payments_enabled) {
-                        action_button.can_purchase = false;
-                    } else {
-                        action_button.can_purchase = true;
-                    }
+                    action_button.label = _("Free");
 
-                    action_button.no_show_all = false;
-                    action_button.show ();
-
-                    open_button.no_show_all = true;
-                    open_button.hide ();
+                    set_widget_visibility (uninstall_button, false);
+                    set_widget_visibility (action_button, true);
+                    set_widget_visibility (open_button, false);
 
                     break;
                 case AppCenterCore.Package.State.INSTALLED:
-                    if (show_uninstall) {
-                        /* Uninstall button will show */
-                        action_button.no_show_all = true;
-                        action_button.hide ();
-
-                        if (!is_os_updates) {
-                            uninstall_button.no_show_all = false;
-                            uninstall_button.show_all ();
-                        }
-                    } else {
-                        /* No Uninstall action in list view */
-                        action_stack.no_show_all = true;
-                        action_stack.hide ();
-                    }
-
-                    if (show_open && package.get_can_launch ()) {
-                        open_button.no_show_all = false;
-                        open_button.show ();
-                    } else {
-                        open_button.no_show_all = true;
-                        open_button.hide ();
-                    }
+                    set_widget_visibility (uninstall_button, show_uninstall && !is_os_updates);
+                    set_widget_visibility (action_button, false);
+                    set_widget_visibility (open_button, show_open && package.get_can_launch ());
 
                     break;
-
                 case AppCenterCore.Package.State.UPDATE_AVAILABLE:
-                    action_button.can_purchase = false;
                     action_button.label = _("Update");
 
-                    action_button.no_show_all = false;
-                    action_button.show_all ();
-
-                    if (show_open && package.get_can_launch ()) {
-                        open_button.no_show_all = false;
-                        open_button.show ();
-                    } else {
-                        open_button.no_show_all = true;
-                        open_button.hide ();
-                    }
+                    set_widget_visibility (uninstall_button, show_uninstall && !is_os_updates);
+                    set_widget_visibility (action_button, true);
+                    set_widget_visibility (open_button, false);
 
                     break;
-
                 case AppCenterCore.Package.State.INSTALLING:
                 case AppCenterCore.Package.State.UPDATING:
                 case AppCenterCore.Package.State.REMOVING:
-                    progress_bar.no_show_all = false;
-                    progress_bar.show ();
-                    action_stack.set_visible_child_name ("progress");
+                    set_widget_visibility (uninstall_button, false);
+                    set_widget_visibility (action_button, false);
+                    set_widget_visibility (open_button, false);
 
-                    open_button.no_show_all = true;
-                    open_button.hide ();
+                    action_stack.set_visible_child_name ("progress");
                     break;
 
                 default:
@@ -245,11 +219,16 @@ namespace AppCenter {
             }
         }
 
+        private static void set_widget_visibility (Gtk.Widget widget, bool show) {
+            widget.no_show_all = !show;
+            widget.visible = show;
+        }
+
         protected void update_progress () {
              progress_bar.fraction = package.progress;
          }
 
-        protected void update_progress_status () {
+        protected virtual void update_progress_status () {
             progress_bar.text = package.get_progress_description ();
             /* Ensure progress bar shows complete to match status (lp:1606902) */
             if (package.changes_finished) {
