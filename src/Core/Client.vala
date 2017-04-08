@@ -27,7 +27,7 @@ public class AppCenterCore.Client : Object {
 
     public AppCenterCore.Package os_updates { public get; private set; }
 
-    private Gee.HashMap<string, unowned AppCenterCore.Package> package_list;
+    private Gee.HashMap<string, AppCenterCore.Package> package_list;
     private AppStream.Pool appstream_pool;
     private GLib.Cancellable cancellable;
     private GLib.DateTime last_cache_update;
