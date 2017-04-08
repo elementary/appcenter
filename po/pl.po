@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
 "PO-Revision-Date: 2017-04-08 06:00+0000\n"
-"Last-Translator: Łukasz <l.dudzic@gmail.com>\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Polish "
 "<http://weblate.elementary.io/projects/desktop/appcenter/pl/>\n"
 "Language: pl\n"
@@ -111,6 +111,7 @@ msgstr "Szukaj"
 #: ../src/Views/AppListView.vala:123
 msgid "A restart is required to complete the installation of updates"
 msgstr ""
+"Ponowne uruchomienie jest wymagane, aby dokończyć instalację aktualizacji"
 
 #: ../src/Views/AppListView.vala:125
 msgid "Restart Now"
