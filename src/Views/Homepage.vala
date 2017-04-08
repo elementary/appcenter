@@ -21,6 +21,8 @@
 
 using AppCenterCore;
 
+const int NUM_PACKAGES_IN_BANNER = 5;
+
 namespace AppCenter {
     public class Homepage : View {
         private Gtk.FlowBox category_flow;
@@ -32,6 +34,7 @@ namespace AppCenter {
         public AppStream.Category currently_viewed_category;
         public MainWindow main_window { get; construct; }
         public Widgets.Banner newest_banner;
+        public Gtk.Revealer switcher_revealer;
 
         public Homepage (MainWindow main_window) {
             Object (main_window: main_window);
@@ -40,7 +43,15 @@ namespace AppCenter {
         construct {
             var houston = AppCenterCore.Houston.get_default ();
 
-            newest_banner = new Widgets.Banner ();
+            var switcher = new Widgets.Switcher ();
+            switcher.halign = Gtk.Align.CENTER;
+
+            switcher_revealer = new Gtk.Revealer ();
+            switcher_revealer.set_transition_type (Gtk.RevealerTransitionType.SLIDE_DOWN);
+            switcher_revealer.set_transition_duration (Widgets.Banner.TRANSITION_DURATION_MILLISECONDS);
+            switcher_revealer.add (switcher);
+
+            newest_banner = new Widgets.Banner (switcher);
             newest_banner.get_style_context ().add_class ("home");
             newest_banner.margin = 12;
             newest_banner.clicked.connect (() => {
@@ -50,32 +61,37 @@ namespace AppCenter {
                 }
             });
 
-            newest_banner.set_default_brand ();
-
             houston.get_newest.begin ((obj, res) => {
                 var newest_ids = houston.get_newest.end (res);
+                List<AppCenterCore.Package> packages_for_banner = new List<AppCenterCore.Package> ();
                 ThreadFunc<void*> run = () => {
+                    uint packages_added = 0;
                     foreach (var package in newest_ids) {
+                        if (packages_added >= NUM_PACKAGES_IN_BANNER) {
+                            break;
+                        }
+
                         var candidate = package + ".desktop";
                         var candidate_package = AppCenterCore.Client.get_default ().get_package_for_component_id (candidate);
 
                         if (candidate_package != null) {
                             candidate_package.update_state ();
                             if (candidate_package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
-                                Idle.add (() => {
-                                    newest_banner.set_package (candidate_package);
-                                    return false;
-                                });
-                                break;
+                                packages_added++;
+                                packages_for_banner.append (candidate_package);
                             }
                         }
                     }
-
+                    
                     Idle.add (() => {
+                        foreach (var banner_package in packages_for_banner) {
+                            newest_banner.add_package (banner_package);
+                        }
+                        newest_banner.go_to_first ();
+                        switcher_revealer.set_reveal_child (true);
                         main_window.homepage_loaded ();
                         return false;
                     });
-
                     return null;
                 };
                 new Thread<void*> ("update-banner", run);
@@ -93,8 +109,9 @@ namespace AppCenter {
             var grid = new Gtk.Grid ();
             grid.margin = 12;
             grid.attach (newest_banner, 0, 0, 1, 1);
-            grid.attach (categories_label, 0, 1, 1, 1);
-            grid.attach (category_flow, 0, 2, 1, 1);
+            grid.attach (switcher_revealer, 0, 1, 1, 1);
+            grid.attach (categories_label, 0, 2, 1, 1);
+            grid.attach (category_flow, 0, 3, 1, 1);
 
             category_scrolled = new Gtk.ScrolledWindow (null, null);
             category_scrolled.add (grid);
