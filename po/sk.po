@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
 "PO-Revision-Date: 2017-04-08 09:51+0000\n"
-"Last-Translator: Martin Kolenič <kolenic.martin@gmail.com>\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Slovak "
 "<http://weblate.elementary.io/projects/desktop/appcenter/sk/>\n"
 "Language: sk\n"
@@ -74,11 +74,11 @@ msgstr "Zaplatiť  $%s,00"
 
 #: ../src/Dialogs/StripeDialog.vala:194
 msgid "Processing"
-msgstr ""
+msgstr "Spracováva sa"
 
 #: ../src/Dialogs/StripeDialog.vala:219
 msgid "There Was a Problem Processing Your Payment"
-msgstr ""
+msgstr "Pri spracovávaní vašej platby sa vyskytla chyba"
 
 #: ../src/Dialogs/StripeDialog.vala:225
 msgid "Please review your payment info and try again."
