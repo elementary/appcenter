@@ -2,24 +2,25 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-29 16:53-0700\n"
-"PO-Revision-Date: 2017-01-27 09:56+0000\n"
-"Last-Translator: Damian Woźniak <fiszet@gmail.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2017-04-02 13:03-0700\n"
+"PO-Revision-Date: 2017-04-08 06:00+0000\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
+"Language-Team: Polish "
+"<http://weblate.elementary.io/projects/desktop/appcenter/pl/>\n"
+"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
-"X-Generator: Launchpad (build 18331)\n"
 
-#: ../src/Application.vala:39
+#: ../src/Application.vala:42
 msgid "App Center"
 msgstr "Centrum oprogramowania"
 
-#: ../src/Application.vala:57
+#: ../src/Application.vala:60
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
@@ -34,8 +35,24 @@ msgstr ""
 "  Piotr Strębski https://launchpad.net/~strebski\n"
 "  elementaryart (old) https://launchpad.net/~elementaryart"
 
-#: ../src/Application.vala:132
+#: ../src/Application.vala:138
 msgid "Specified link '%s' could not be found, searching instead"
+msgstr ""
+
+#: ../src/Application.vala:207
+msgid "Application installed"
+msgstr "Program zainstalowany"
+
+#: ../src/Application.vala:208
+msgid "%s has been successfully installed"
+msgstr "%s zostało pomyślnie zainstalowane"
+
+#: ../src/Application.vala:224
+msgid "Close"
+msgstr ""
+
+#: ../src/Application.vala:226
+msgid "There Was An Error Installing %s"
 msgstr ""
 
 #: ../src/Dialogs/RestartDialog.vala:40
@@ -80,7 +97,7 @@ msgstr ""
 msgid "Retry"
 msgstr ""
 
-#: ../src/Views/InstalledView.vala:45 ../src/MainWindow.vala:126
+#: ../src/Views/InstalledView.vala:45 ../src/MainWindow.vala:123
 msgctxt "view"
 msgid "Updates"
 msgstr "Aktualizacje"
@@ -91,66 +108,14 @@ msgctxt "view"
 msgid "Search"
 msgstr "Szukaj"
 
-#: ../src/Views/CategoryView.vala:70 ../src/Views/CategoryView.vala:77
-#: ../src/Views/Homepage.vala:68 ../src/MainWindow.vala:216
-msgid "Categories"
-msgstr "Kategorie"
-
-#: ../src/Views/CategoryView.vala:118
-msgid "Audio"
-msgstr "Dźwięk"
-
-#: ../src/Views/CategoryView.vala:129
-msgid "Development"
-msgstr "Rozwój oprogramowania"
-
-#: ../src/Views/CategoryView.vala:140
-msgid "Accessories"
-msgstr "Akcesoria"
-
-#: ../src/Views/CategoryView.vala:151
-msgid "Office"
-msgstr "Biuro"
-
-#: ../src/Views/CategoryView.vala:162
-msgid "System"
-msgstr "System"
-
-#: ../src/Views/CategoryView.vala:173
-msgid "Video"
-msgstr "Wideo"
-
-#: ../src/Views/CategoryView.vala:184
-msgid "Graphics"
-msgstr "Grafika"
-
-#: ../src/Views/CategoryView.vala:194
-msgid "Games"
-msgstr "Gry"
-
-#: ../src/Views/CategoryView.vala:205
-msgid "Education"
-msgstr "Edukacja"
-
-#: ../src/Views/CategoryView.vala:215
-msgid "Internet"
-msgstr "Internet"
-
-#: ../src/Views/CategoryView.vala:226
-msgid "Science & Engineering"
-msgstr "Nauka i inżynieria"
-
-#: ../src/Views/CategoryView.vala:236
-msgid "Universal Access"
-msgstr "Dostęp uniwersalny"
-
 #: ../src/Views/AppListView.vala:123
 msgid "A restart is required to complete the installation of updates"
 msgstr ""
+"Ponowne uruchomienie jest wymagane, aby dokończyć instalację aktualizacji"
 
 #: ../src/Views/AppListView.vala:125
 msgid "Restart Now"
-msgstr ""
+msgstr "Uruchom ponownie teraz"
 
 #: ../src/Views/AppListView.vala:210
 msgid "Update All"
@@ -181,17 +146,76 @@ msgstr ""
 msgid "Help"
 msgstr ""
 
-#: ../src/Widgets/Banner.vala:163 ../src/MainWindow.vala:103
+#: ../src/Views/Homepage.vala:79
+msgid "Categories"
+msgstr "Kategorie"
+
+#: ../src/Views/Homepage.vala:123 ../src/Views/Homepage.vala:130
+#: ../src/MainWindow.vala:122 ../src/MainWindow.vala:163
+#: ../src/MainWindow.vala:205
+#, fuzzy
+msgid "Home"
+msgstr "Strona główna"
+
+#: ../src/Widgets/Banner.vala:99 ../src/MainWindow.vala:103
 msgid "AppCenter"
 msgstr "Centrum programów"
 
-#: ../src/Widgets/Banner.vala:164
+#: ../src/Widgets/Banner.vala:106
 msgid "An open, pay-what-you-want app store"
 msgstr ""
 
-#: ../src/Widgets/Banner.vala:165
+#: ../src/Widgets/Banner.vala:119
 msgid "Get the apps that you need at a price you can afford."
 msgstr ""
+
+#: ../src/Widgets/CategoryFlowBox.vala:29
+msgid "Audio"
+msgstr "Dźwięk"
+
+#: ../src/Widgets/CategoryFlowBox.vala:30
+msgid "Development"
+msgstr "Rozwój oprogramowania"
+
+#: ../src/Widgets/CategoryFlowBox.vala:31
+msgid "Accessories"
+msgstr "Akcesoria"
+
+#: ../src/Widgets/CategoryFlowBox.vala:32
+msgid "Office"
+msgstr "Biuro"
+
+#: ../src/Widgets/CategoryFlowBox.vala:33
+msgid "System"
+msgstr "System"
+
+#: ../src/Widgets/CategoryFlowBox.vala:34
+msgid "Video"
+msgstr "Wideo"
+
+#: ../src/Widgets/CategoryFlowBox.vala:35
+msgid "Graphics"
+msgstr "Grafika"
+
+#: ../src/Widgets/CategoryFlowBox.vala:36
+msgid "Games"
+msgstr "Gry"
+
+#: ../src/Widgets/CategoryFlowBox.vala:37
+msgid "Education"
+msgstr "Edukacja"
+
+#: ../src/Widgets/CategoryFlowBox.vala:38
+msgid "Internet"
+msgstr "Internet"
+
+#: ../src/Widgets/CategoryFlowBox.vala:39
+msgid "Science & Engineering"
+msgstr "Nauka i inżynieria"
+
+#: ../src/Widgets/CategoryFlowBox.vala:40
+msgid "Universal Access"
+msgstr "Dostęp uniwersalny"
 
 #: ../src/Widgets/HumbleButton.vala:85
 #: ../src/Widgets/AbstractAppContainer.vala:186
@@ -256,35 +280,14 @@ msgstr "Szukanie aktualizacji..."
 msgid "Up to Date"
 msgstr "Aktualne"
 
-#: ../src/MainWindow.vala:114 ../src/MainWindow.vala:142
-#: ../src/MainWindow.vala:308 ../src/MainWindow.vala:330
+#: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
+#: ../src/MainWindow.vala:297 ../src/MainWindow.vala:319
 msgid "Search Apps"
 msgstr "Wyszukaj programów"
 
-#: ../src/MainWindow.vala:125 ../src/MainWindow.vala:157
-#, fuzzy
-msgid "Home"
-msgstr "Strona główna"
-
-#: ../src/MainWindow.vala:290
+#: ../src/MainWindow.vala:279
 msgid "Search %s"
 msgstr "Wyszukaj %s"
-
-#: ../src/MainWindow.vala:351
-msgid "Application installed"
-msgstr "Program zainstalowany"
-
-#: ../src/MainWindow.vala:352
-msgid "%s has been successfully installed"
-msgstr "%s zostało pomyślnie zainstalowane"
-
-#: ../src/MainWindow.vala:371
-msgid "Close"
-msgstr ""
-
-#: ../src/MainWindow.vala:373
-msgid "There Was An Error Installing %s"
-msgstr ""
 
 #: ../src/Core/Client.vala:90
 msgid "Operating System Updates"
