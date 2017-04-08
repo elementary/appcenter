@@ -19,8 +19,6 @@
 
 namespace AppCenter {
     public abstract class AbstractAppContainer : Gtk.Grid {
-        private const string DEFAULT_PRICE_DOLLARS = "1";
-
         public AppCenterCore.Package package;
 
         protected Gtk.Image image;
@@ -75,20 +73,18 @@ namespace AppCenter {
                     return false;
                 }
 
-                return this.package.get_payments_key() != null;
+                return this.package.get_payments_key () != null;
             }
         }
 
-        private string? suggested_amount_ = null;
+        private string suggested_amount_;
         public string suggested_amount {
             get {
                 if (this.package == null || this.package.component == null || updates_view) {
-                    return DEFAULT_PRICE_DOLLARS;
-                } else if (suggested_amount_ == null) {
-                    suggested_amount_ = this.package.component.get_custom_value ("x-appcenter-suggested-price");
+                    return AppCenterCore.Package.DEFAULT_PRICE_DOLLARS;
                 }
-
-                return suggested_amount_ != null ? suggested_amount_ : DEFAULT_PRICE_DOLLARS;
+                suggested_amount_ = this.package.get_suggested_amount ();
+                return suggested_amount_;
             }
         }
 
