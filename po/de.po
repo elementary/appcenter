@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2017-04-08 07:54+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2017-04-08 07:55+0000\n"
+"Last-Translator: Max Mustermann <mustermann_23@posteo.eu>\n"
 "Language-Team: German "
 "<http://weblate.elementary.io/projects/desktop/appcenter/de/>\n"
 "Language: de\n"
@@ -85,7 +85,7 @@ msgstr "Abbrechen"
 
 #: ../src/Dialogs/StripeDialog.vala:149 ../src/Dialogs/StripeDialog.vala:263
 msgid "Pay $%s.00"
-msgstr "Bezahle $%s.00"
+msgstr "Zahle $%s.00"
 
 #: ../src/Dialogs/StripeDialog.vala:194
 msgid "Processing"
