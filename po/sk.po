@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
 "PO-Revision-Date: 2017-04-08 09:50+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"Last-Translator: Martin Kolenič <kolenic.martin@gmail.com>\n"
 "Language-Team: Slovak "
 "<http://weblate.elementary.io/projects/desktop/appcenter/sk/>\n"
 "Language: sk\n"
@@ -32,7 +32,7 @@ msgstr ""
 
 #: ../src/Application.vala:138
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr "Zadaný odkaz '%s' sa nenašiel, spustené hľadanie"
+msgstr "Zadaný odkaz '%s' sa nenašiel, vyhľadáva sa ďalej"
 
 #: ../src/Application.vala:207
 msgid "Application installed"
@@ -44,7 +44,7 @@ msgstr "%s sa úspešne nainštaloval"
 
 #: ../src/Application.vala:224
 msgid "Close"
-msgstr ""
+msgstr "Zatvoriť"
 
 #: ../src/Application.vala:226
 msgid "There Was An Error Installing %s"
