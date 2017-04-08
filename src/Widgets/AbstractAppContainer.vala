@@ -69,16 +69,13 @@ namespace AppCenter {
             }
         }
 
-        private string? payments_key_ = null;
         public bool payments_enabled {
             get {
                 if (this.package == null || this.package.component == null || updates_view) {
                     return false;
-                } else if (payments_key_ == null) {
-                    payments_key_ = this.package.component.get_custom_value ("x-appcenter-stripe");
                 }
 
-                return payments_key_ != null;
+                return this.package.get_payments_key() != null;
             }
         }
 
@@ -108,7 +105,7 @@ namespace AppCenter {
             action_button.download_requested.connect (() => action_clicked.begin ());
 
             action_button.payment_requested.connect ((amount) => {
-                var stripe = new Widgets.StripeDialog (amount, this.package_name.label, this.package.component.get_desktop_id ().replace (".desktop", ""), payments_key_);
+                var stripe = new Widgets.StripeDialog (amount, this.package_name.label, this.package.component.get_desktop_id ().replace (".desktop", ""), this.package.get_payments_key());
 
                 stripe.download_requested.connect (() => action_clicked.begin ());
                 stripe.show ();
