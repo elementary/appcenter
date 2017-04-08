@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2017-04-01 22:13+0000\n"
+"PO-Revision-Date: 2017-04-08 04:12+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
-"Language-Team: Spanish <http://weblate.elementary.io/projects/desktop/"
-"appcenter/es/>\n"
+"Language-Team: Spanish "
+"<http://weblate.elementary.io/projects/desktop/appcenter/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -58,7 +58,7 @@ msgstr "%s se ha instalado correctamente"
 
 #: ../src/Application.vala:224
 msgid "Close"
-msgstr ""
+msgstr "Cerrar"
 
 #: ../src/Application.vala:226
 msgid "There Was An Error Installing %s"
