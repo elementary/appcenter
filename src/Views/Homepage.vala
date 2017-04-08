@@ -49,7 +49,7 @@ namespace AppCenter {
                     package_selected (package);
                 }
             });
-            
+
             newest_banner.set_default_brand ();
 
             houston.get_newest.begin ((obj, res) => {
@@ -70,7 +70,12 @@ namespace AppCenter {
                             }
                         }
                     }
-                    main_window.homepage_loaded ();
+
+                    Idle.add (() => {
+                        main_window.homepage_loaded ();
+                        return false;
+                    });
+
                     return null;
                 };
                 new Thread<void*> ("update-banner", run);
