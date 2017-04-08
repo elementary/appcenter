@@ -85,7 +85,6 @@ namespace AppCenter.Views {
     /** AppList for the Updates View.  Sorts update_available first and shows headers.
       * Does not show Uninstall Button **/
     public class AppListUpdateView : AbstractAppList {
-        private bool updates_on_top;
         private Gtk.Button? update_all_button;
         private bool updating_all_apps = false;
         private bool apps_remaining_started = false;
@@ -98,6 +97,9 @@ namespace AppCenter.Views {
         private bool _updating_cache;
         public bool updating_cache {
             get {
+                if (packages_changing > 0) {
+                    return false;
+                }
                 return _updating_cache;
             }
             set {
@@ -109,8 +111,6 @@ namespace AppCenter.Views {
         }
 
         construct {
-            updates_on_top = true;
-
             list_box.set_header_func ((Gtk.ListBoxUpdateHeaderFunc) row_update_header);
 
             update_mutex = GLib.Mutex ();
