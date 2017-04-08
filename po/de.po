@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2017-04-08 15:30+0000\n"
-"Last-Translator: quassy <quassy.github.io@gmail.com>\n"
+"PO-Revision-Date: 2017-04-08 15:37+0000\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: German "
 "<http://weblate.elementary.io/projects/desktop/appcenter/de/>\n"
 "Language: de\n"
@@ -88,7 +88,7 @@ msgstr "Zahle $%s.00"
 
 #: ../src/Dialogs/StripeDialog.vala:194
 msgid "Processing"
-msgstr ""
+msgstr "In Bearbeitung"
 
 #: ../src/Dialogs/StripeDialog.vala:219
 msgid "There Was a Problem Processing Your Payment"
@@ -100,11 +100,11 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:255
 msgid "Pay Later"
-msgstr ""
+msgstr "Später bezahlen"
 
 #: ../src/Dialogs/StripeDialog.vala:256
 msgid "Retry"
-msgstr ""
+msgstr "Erneut versuchen"
 
 #: ../src/Views/InstalledView.vala:45 ../src/MainWindow.vala:123
 msgctxt "view"
@@ -120,10 +120,12 @@ msgstr "Suchen"
 #: ../src/Views/AppListView.vala:123
 msgid "A restart is required to complete the installation of updates"
 msgstr ""
+"Es ist ein Neustart erforderlich, um die Installation der Aktualisierungen "
+"abzuschließen"
 
 #: ../src/Views/AppListView.vala:125
 msgid "Restart Now"
-msgstr ""
+msgstr "Jetzt neustarten"
 
 #: ../src/Views/AppListView.vala:210
 msgid "Update All"
@@ -138,21 +140,20 @@ msgid "Extensions:"
 msgstr "Erweiterungen:"
 
 #: ../src/Views/AppInfoView.vala:164
-#, fuzzy
 msgid "Homepage"
 msgstr "Startseite"
 
 #: ../src/Views/AppInfoView.vala:171
 msgid "Suggest Translations"
-msgstr ""
+msgstr "Übersetzungen vorschlagen"
 
 #: ../src/Views/AppInfoView.vala:178
 msgid "Report a Problem"
-msgstr ""
+msgstr "Ein Problem melden"
 
 #: ../src/Views/AppInfoView.vala:185
 msgid "Help"
-msgstr ""
+msgstr "Hilfe"
 
 #: ../src/Views/Homepage.vala:79
 msgid "Categories"
@@ -161,7 +162,6 @@ msgstr "Kategorien"
 #: ../src/Views/Homepage.vala:123 ../src/Views/Homepage.vala:130
 #: ../src/MainWindow.vala:122 ../src/MainWindow.vala:163
 #: ../src/MainWindow.vala:205
-#, fuzzy
 msgid "Home"
 msgstr "Startseite"
 
@@ -326,7 +326,7 @@ msgstr ""
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
-msgstr "Wird gestartet …"
+msgstr "Wird gestartet"
 
 #: ../src/Core/ChangeInformation.vala:56
 msgid "Waiting"
