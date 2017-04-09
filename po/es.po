@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2017-04-08 18:46+0000\n"
-"Last-Translator: Leopoldo Cendejas Pedraza <dev.leopold@gmail.com>\n"
+"PO-Revision-Date: 2017-04-09 00:06+0000\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Spanish "
 "<http://weblate.elementary.io/projects/desktop/appcenter/es/>\n"
 "Language: es\n"
@@ -71,6 +71,7 @@ msgstr "¿Estas seguro de querer Reiniciar?"
 #: ../src/Dialogs/RestartDialog.vala:41
 msgid "This will close all open applications and restart this device."
 msgstr ""
+"Esto cerrará todas las aplicaciones abiertas y reiniciará el dispositivo."
 
 #: ../src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
@@ -92,7 +93,7 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:219
 msgid "There Was a Problem Processing Your Payment"
-msgstr ""
+msgstr "Ocurrió un problema al procesar su pago. "
 
 #: ../src/Dialogs/StripeDialog.vala:225
 msgid "Please review your payment info and try again."
