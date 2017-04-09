@@ -77,17 +77,6 @@ namespace AppCenter {
             }
         }
 
-        private string suggested_amount_;
-        public string suggested_amount {
-            get {
-                if (this.package == null || this.package.component == null || updates_view) {
-                    return AppCenterCore.Package.DEFAULT_PRICE_DOLLARS;
-                }
-                suggested_amount_ = this.package.get_suggested_amount ();
-                return suggested_amount_;
-            }
-        }
-
         public bool updates_view = false;
 
         construct {
@@ -188,7 +177,7 @@ namespace AppCenter {
         protected void update_action () {
             action_button.can_purchase = payments_enabled;
             if (payments_enabled) {
-                action_button.amount = int.parse (suggested_amount);
+                action_button.amount = int.parse (this.package.get_suggested_amount ());
             }
 
             action_stack.set_visible_child_name ("buttons");
