@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2017-04-09 10:42+0000\n"
-"Last-Translator: Elias Secchi <elias.secchi@gmail.com>\n"
+"PO-Revision-Date: 2017-04-09 10:45+0000\n"
+"Last-Translator: afit5 <afit5@gmx.com>\n"
 "Language-Team: Italian "
 "<http://weblate.elementary.io/projects/desktop/appcenter/it/>\n"
 "Language: it\n"
@@ -81,7 +81,7 @@ msgstr "Paga $%s.00"
 
 #: ../src/Dialogs/StripeDialog.vala:194
 msgid "Processing"
-msgstr ""
+msgstr "Elaborazione in corso"
 
 #: ../src/Dialogs/StripeDialog.vala:219
 msgid "There Was a Problem Processing Your Payment"
