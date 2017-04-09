@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2017-04-09 00:11+0000\n"
-"Last-Translator: Daniel Foré <daniel@elementary.io>\n"
+"PO-Revision-Date: 2017-04-09 00:13+0000\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Spanish "
 "<http://weblate.elementary.io/projects/desktop/appcenter/es/>\n"
 "Language: es\n"
@@ -62,7 +62,7 @@ msgstr "Cerrar"
 
 #: ../src/Application.vala:226
 msgid "There Was An Error Installing %s"
-msgstr ""
+msgstr "Ocurrió un error al instalar %s"
 
 #: ../src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -89,7 +89,7 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:194
 msgid "Processing"
-msgstr ""
+msgstr "Procesando"
 
 #: ../src/Dialogs/StripeDialog.vala:219
 msgid "There Was a Problem Processing Your Payment"
@@ -97,7 +97,7 @@ msgstr "Ocurrió un problema al procesar su pago"
 
 #: ../src/Dialogs/StripeDialog.vala:225
 msgid "Please review your payment info and try again."
-msgstr ""
+msgstr "Por favor, revise la información de su pago e inténtelo nuevamente."
 
 #: ../src/Dialogs/StripeDialog.vala:255
 msgid "Pay Later"
@@ -105,7 +105,7 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:256
 msgid "Retry"
-msgstr ""
+msgstr "Re-intentar"
 
 #: ../src/Views/InstalledView.vala:45 ../src/MainWindow.vala:123
 msgctxt "view"
