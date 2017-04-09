@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2017-04-09 22:34+0000\n"
-"Last-Translator: Kseniia Shimanska <kshimanska@gmail.com>\n"
+"PO-Revision-Date: 2017-04-09 22:36+0000\n"
+"Last-Translator: Maxim Taranov <png2378@gmail.com>\n"
 "Language-Team: Russian "
 "<http://weblate.elementary.io/projects/desktop/appcenter/ru/>\n"
 "Language: ru\n"
@@ -50,7 +50,7 @@ msgstr ""
 
 #: ../src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
-msgstr ""
+msgstr "Перезагрузить систему?"
 
 #: ../src/Dialogs/RestartDialog.vala:41
 msgid "This will close all open applications and restart this device."
