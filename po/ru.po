@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2017-04-09 22:36+0000\n"
-"Last-Translator: Maxim Taranov <png2378@gmail.com>\n"
+"PO-Revision-Date: 2017-04-09 22:37+0000\n"
+"Last-Translator: Kseniia Shimanska <kshimanska@gmail.com>\n"
 "Language-Team: Russian "
 "<http://weblate.elementary.io/projects/desktop/appcenter/ru/>\n"
 "Language: ru\n"
@@ -54,11 +54,11 @@ msgstr "Перезагрузить систему?"
 
 #: ../src/Dialogs/RestartDialog.vala:41
 msgid "This will close all open applications and restart this device."
-msgstr ""
+msgstr "Все открытые приложения будут закрыты, а устройство перезагружено."
 
 #: ../src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
-msgstr ""
+msgstr "Перезагрузка"
 
 #: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:147
 #: ../src/Dialogs/StripeDialog.vala:264
@@ -80,7 +80,7 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:225
 msgid "Please review your payment info and try again."
-msgstr ""
+msgstr "Пожалуйста, проверьте информацию о платеже и повторите снова."
 
 #: ../src/Dialogs/StripeDialog.vala:255
 msgid "Pay Later"
