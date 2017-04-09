@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2017-04-09 16:38+0000\n"
+"PO-Revision-Date: 2017-04-09 17:48+0000\n"
 "Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
 "Language-Team: Dutch "
 "<http://weblate.elementary.io/projects/desktop/appcenter/nl/>\n"
@@ -215,7 +215,7 @@ msgstr "Wetenschap & Techniek"
 
 #: ../src/Widgets/CategoryFlowBox.vala:40
 msgid "Universal Access"
-msgstr "Universele Toegang"
+msgstr "Universele toegang"
 
 #: ../src/Widgets/HumbleButton.vala:85
 #: ../src/Widgets/AbstractAppContainer.vala:186
