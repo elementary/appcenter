@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2017-04-08 18:39+0000\n"
-"Last-Translator: Jonathan Moerman <jonathanmoerman@gmail.com>\n"
+"PO-Revision-Date: 2017-04-09 16:38+0000\n"
+"Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
 "Language-Team: Dutch "
 "<http://weblate.elementary.io/projects/desktop/appcenter/nl/>\n"
 "Language: nl\n"
@@ -33,14 +33,16 @@ msgstr ""
 #: ../src/Application.vala:138
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr ""
+"Opgegeven koppeling '%s' kon niet gevonden worden, in plaats daarvan als "
+"zoekterm gebruiken"
 
 #: ../src/Application.vala:207
 msgid "Application installed"
-msgstr "Toepassing geinstalleerd"
+msgstr "Toepassing geïnstalleerd"
 
 #: ../src/Application.vala:208
 msgid "%s has been successfully installed"
-msgstr "%s is met succes geinstalleerd"
+msgstr "%s is met succes geïnstalleerd"
 
 #: ../src/Application.vala:224
 msgid "Close"
@@ -48,7 +50,7 @@ msgstr "Sluiten"
 
 #: ../src/Application.vala:226
 msgid "There Was An Error Installing %s"
-msgstr "Er Is Een Fout Opgetreden Bij Het Installeren Van %s"
+msgstr "Er is een fout opgetreden bij het installeren van %s"
 
 #: ../src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -62,7 +64,7 @@ msgstr ""
 
 #: ../src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
-msgstr "Herstarten"
+msgstr "Opnieuw opstarten"
 
 #: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:147
 #: ../src/Dialogs/StripeDialog.vala:264
@@ -71,21 +73,20 @@ msgid "Cancel"
 msgstr "Annuleren"
 
 #: ../src/Dialogs/StripeDialog.vala:149 ../src/Dialogs/StripeDialog.vala:263
-#, fuzzy
 msgid "Pay $%s.00"
-msgstr "Betaal $%s.00"
+msgstr "Betaal $ %s.00"
 
 #: ../src/Dialogs/StripeDialog.vala:194
 msgid "Processing"
-msgstr "Aan het verwerken"
+msgstr "Verwerken"
 
 #: ../src/Dialogs/StripeDialog.vala:219
 msgid "There Was a Problem Processing Your Payment"
-msgstr "Er Was Een Probleem Met Het verwerken Van Uw Betaling"
+msgstr "Er was een probleem met het verwerken van uw betaling"
 
 #: ../src/Dialogs/StripeDialog.vala:225
 msgid "Please review your payment info and try again."
-msgstr "Controleer alstublieft uw betalingsinformatie in probeer opnieuw."
+msgstr "Controleer alstublieft uw betalingsinformatie en probeer opnieuw."
 
 #: ../src/Dialogs/StripeDialog.vala:255
 msgid "Pay Later"
@@ -98,14 +99,13 @@ msgstr "Probeer opnieuw"
 #: ../src/Views/InstalledView.vala:45 ../src/MainWindow.vala:123
 msgctxt "view"
 msgid "Updates"
-msgstr "Wijzigingen"
+msgstr "Updates"
 
 #. / TRANSLATORS: the name of the Search view
 #: ../src/Views/SearchView.vala:35
-#, fuzzy
 msgctxt "view"
 msgid "Search"
-msgstr "Zoek"
+msgstr "Zoeken"
 
 #: ../src/Views/AppListView.vala:123
 msgid "A restart is required to complete the installation of updates"
@@ -123,21 +123,19 @@ msgstr "Alles bijwerken"
 
 #: ../src/Views/AppInfoView.vala:50
 msgid "Screenshot Not Available"
-msgstr "Geen Screenshot Beschikbaar"
+msgstr "Geen schermafbeelding beschikbaar"
 
 #: ../src/Views/AppInfoView.vala:150
 msgid "Extensions:"
 msgstr "Uitbreidingen:"
 
 #: ../src/Views/AppInfoView.vala:164
-#, fuzzy
 msgid "Homepage"
-msgstr "Overzicht"
+msgstr "Startpagina"
 
 #: ../src/Views/AppInfoView.vala:171
-#, fuzzy
 msgid "Suggest Translations"
-msgstr "Suggereer Vertalingen"
+msgstr "Suggereer vertalingen"
 
 #: ../src/Views/AppInfoView.vala:178
 msgid "Report a Problem"
@@ -154,9 +152,8 @@ msgstr "Categorieën"
 #: ../src/Views/Homepage.vala:123 ../src/Views/Homepage.vala:130
 #: ../src/MainWindow.vala:122 ../src/MainWindow.vala:163
 #: ../src/MainWindow.vala:205
-#, fuzzy
 msgid "Home"
-msgstr "Overzicht"
+msgstr "Startpagina"
 
 #: ../src/Widgets/Banner.vala:99 ../src/MainWindow.vala:103
 msgid "AppCenter"
@@ -164,11 +161,13 @@ msgstr "Applicatie centrum"
 
 #: ../src/Widgets/Banner.vala:106
 msgid "An open, pay-what-you-want app store"
-msgstr ""
+msgstr "Een open, betaal-wat-u-wilt applicatiewinkel"
 
 #: ../src/Widgets/Banner.vala:119
 msgid "Get the apps that you need at a price you can afford."
 msgstr ""
+"Krijg de applicaties die u nodig heeft aan de prijs die u zich kunt "
+"veroorloven."
 
 #: ../src/Widgets/CategoryFlowBox.vala:29
 msgid "Audio"
@@ -200,7 +199,7 @@ msgstr "Beeld"
 
 #: ../src/Widgets/CategoryFlowBox.vala:36
 msgid "Games"
-msgstr "Spelletjes"
+msgstr "Spellen"
 
 #: ../src/Widgets/CategoryFlowBox.vala:37
 msgid "Education"
@@ -220,19 +219,18 @@ msgstr "Universele Toegang"
 
 #: ../src/Widgets/HumbleButton.vala:85
 #: ../src/Widgets/AbstractAppContainer.vala:186
-#, fuzzy
 msgid "Free"
 msgstr "Gratis"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: ../src/Widgets/HumbleButton.vala:152
 msgid "$%d.00"
-msgstr ""
+msgstr "$ %d.00"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: ../src/Widgets/HumbleButton.vala:155
 msgid "$%d"
-msgstr ""
+msgstr "$ %d"
 
 #: ../src/Widgets/AbstractAppContainer.vala:102
 msgid "Uninstall"
@@ -240,14 +238,13 @@ msgstr "Verwijderen"
 
 #: ../src/Widgets/AbstractAppContainer.vala:105
 msgid "Open"
-msgstr "Openen"
+msgstr "Open"
 
 #: ../src/Widgets/AbstractAppContainer.vala:157
 msgid "The %s Developers"
-msgstr "De %s Ontwikkelaars"
+msgstr "De %s ontwikkelaars"
 
 #: ../src/Widgets/AbstractAppContainer.vala:161
-#, fuzzy
 msgid "by %s"
 msgstr "door %s"
 
@@ -261,7 +258,7 @@ msgstr "Geen resultaten"
 
 #: ../src/Widgets/AbstractAppList.vala:35
 msgid "No apps could be found. Try changing search terms."
-msgstr "Kan geen applicatie vinden, probeer je zoek woord te veranderen."
+msgstr "Kan geen applicaties vinden, probeer uw zoektermen te veranderen."
 
 #: ../src/Widgets/UpdateHeaderRow.vala:68
 msgid "%u Update Available"
@@ -288,7 +285,7 @@ msgstr "Zoek Apps"
 
 #: ../src/MainWindow.vala:279
 msgid "Search %s"
-msgstr ""
+msgstr "Zoek %s"
 
 #: ../src/Core/Client.vala:90
 msgid "Operating System Updates"
@@ -301,8 +298,8 @@ msgstr "Updates voor systeemcomponenten"
 #: ../src/Core/Client.vala:343
 msgid "Update Available"
 msgid_plural "Updates Available"
-msgstr[0] "Update Beschikbaar"
-msgstr[1] "Updates Beschikbaar"
+msgstr[0] "Update beschikbaar"
+msgstr[1] "Updates beschikbaar"
 
 #: ../src/Core/Client.vala:344
 msgid "%u update is available for your system"
@@ -312,20 +309,19 @@ msgstr[1] "%u updates zijn beschikbaar voor uw systeem"
 
 #: ../src/Core/Client.vala:373
 msgid "Restart Required"
-msgstr "Opnieuw Opstarten Nodig"
+msgstr "Opnieuw opstarten vereist"
 
 #: ../src/Core/Client.vala:374
 msgid "Please restart your system to finalize updates"
-msgstr "Start uw systeem alstublieft opnieuw op om de updates te voltooien"
+msgstr "Gelieve uw systeem opnieuw op te starten om de updates te voltooien"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
 msgstr "Starten"
 
 #: ../src/Core/ChangeInformation.vala:56
-#, fuzzy
 msgid "Waiting"
-msgstr "Aan het wachten"
+msgstr "Wachten"
 
 #: ../src/Core/ChangeInformation.vala:58
 msgid "Running"
@@ -341,7 +337,7 @@ msgstr "Informatie ophalen"
 
 #: ../src/Core/ChangeInformation.vala:64
 msgid "Removing packages"
-msgstr "Pakketten aan het verwijderen"
+msgstr "Pakketten verwijderen"
 
 #: ../src/Core/ChangeInformation.vala:66
 msgid "Downloading"
@@ -353,15 +349,15 @@ msgstr "Installeren"
 
 #: ../src/Core/ChangeInformation.vala:70
 msgid "Refreshing software list"
-msgstr "Softwarelijst aan het vernieuwen"
+msgstr "Softwarelijst vernieuwen"
 
 #: ../src/Core/ChangeInformation.vala:72
 msgid "Installing updates"
-msgstr "Updates aan het installeren"
+msgstr "Updates installeren"
 
 #: ../src/Core/ChangeInformation.vala:74
 msgid "Cleaning up packages"
-msgstr "Pakketten aan het opschonen"
+msgstr "Pakketten opschonen"
 
 #: ../src/Core/ChangeInformation.vala:76
 msgid "Obsoleting packages"
@@ -369,23 +365,23 @@ msgstr "Oude pakketten vervangen"
 
 #: ../src/Core/ChangeInformation.vala:78
 msgid "Resolving dependencies"
-msgstr "Afhankelijkheden aan het oplossen"
+msgstr "Afhankelijkheden oplossen"
 
 #: ../src/Core/ChangeInformation.vala:80
 msgid "Checking signatures"
-msgstr "Ondertekening aan het controleren"
+msgstr "Ondertekeningen controleren"
 
 #: ../src/Core/ChangeInformation.vala:82
 msgid "Testing changes"
-msgstr "Wijzigingen aan het testen"
+msgstr "Wijzigingen testen"
 
 #: ../src/Core/ChangeInformation.vala:84
 msgid "Committing changes"
-msgstr "Wijzigingen aan het vastleggen"
+msgstr "Wijzigingen vastleggen"
 
 #: ../src/Core/ChangeInformation.vala:86
 msgid "Requesting data"
-msgstr "Gegevens aan het opvragen"
+msgstr "Gegevens opvragen"
 
 #: ../src/Core/ChangeInformation.vala:88
 msgid "Finished"
@@ -397,7 +393,7 @@ msgstr "Annuleren"
 
 #: ../src/Core/ChangeInformation.vala:92
 msgid "Downloading repository information"
-msgstr "Downloaden van installatiebron-informatie"
+msgstr "Informatie van installatiebron downloaden"
 
 #: ../src/Core/ChangeInformation.vala:94
 msgid "Downloading list of packages"
@@ -405,7 +401,7 @@ msgstr "Lijst van pakketten downloaden"
 
 #: ../src/Core/ChangeInformation.vala:96
 msgid "Downloading file lists"
-msgstr "Bestand lijsten downloaden"
+msgstr "Bestandslijsten downloaden"
 
 #: ../src/Core/ChangeInformation.vala:98
 msgid "Downloading lists of changes"
@@ -417,7 +413,7 @@ msgstr "Groepen downloaden"
 
 #: ../src/Core/ChangeInformation.vala:102
 msgid "Downloading update information"
-msgstr "Pakket informatie downloaden"
+msgstr "Update-informatie downloaden"
 
 #: ../src/Core/ChangeInformation.vala:104
 msgid "Repackaging files"
@@ -437,7 +433,7 @@ msgstr "Genereren van pakketlijsten"
 
 #: ../src/Core/ChangeInformation.vala:112
 msgid "Waiting for package manager lock"
-msgstr "Wachten op  vergrendeling van pakketbeheerder"
+msgstr "Wachten op vergrendeling van pakketbeheerder"
 
 #: ../src/Core/ChangeInformation.vala:114
 msgid "Waiting for authentication"
@@ -449,11 +445,11 @@ msgstr "Draaiende toepassingen vernieuwen"
 
 #: ../src/Core/ChangeInformation.vala:118
 msgid "Checking applications in use"
-msgstr "Contoleren of applicatie wordt gebruikt"
+msgstr "Applicaties in gebruik controleren"
 
 #: ../src/Core/ChangeInformation.vala:120
 msgid "Checking libraries in use"
-msgstr "Contoleren of software bibliotheek wordt gebruikt"
+msgstr "Softwarebibliotheken in gebruik controleren"
 
 #: ../src/Core/ChangeInformation.vala:122
 msgid "Copying files"
