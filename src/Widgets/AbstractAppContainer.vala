@@ -73,7 +73,7 @@ namespace AppCenter {
                     return false;
                 }
 
-                return this.package.get_payments_key() != null;
+                return this.package.get_payments_key () != null;
             }
         }
 
@@ -176,6 +176,10 @@ namespace AppCenter {
 
         protected void update_action () {
             action_button.can_purchase = payments_enabled;
+            if (payments_enabled) {
+                action_button.amount = int.parse (this.package.get_suggested_amount ());
+            }
+
             action_stack.set_visible_child_name ("buttons");
 
             switch (package.state) {
