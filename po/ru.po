@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
 "PO-Revision-Date: 2017-04-09 22:42+0000\n"
-"Last-Translator: Kseniia Shimanska <kshimanska@gmail.com>\n"
+"Last-Translator: Maxim Taranov <png2378@gmail.com>\n"
 "Language-Team: Russian "
 "<http://weblate.elementary.io/projects/desktop/appcenter/ru/>\n"
 "Language: ru\n"
@@ -308,7 +308,7 @@ msgstr ""
 
 #: ../src/Core/Client.vala:374
 msgid "Please restart your system to finalize updates"
-msgstr "Пожалуйста, перезагрузите систему чтобы завершить обновление"
+msgstr "Перезагрузите систему чтобы завершить обновление"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
