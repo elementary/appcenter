@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
 "PO-Revision-Date: 2017-04-09 22:42+0000\n"
-"Last-Translator: Maxim Taranov <png2378@gmail.com>\n"
+"Last-Translator: Kseniia Shimanska <kshimanska@gmail.com>\n"
 "Language-Team: Russian "
 "<http://weblate.elementary.io/projects/desktop/appcenter/ru/>\n"
 "Language: ru\n"
@@ -46,7 +46,7 @@ msgstr "Закрыть"
 
 #: ../src/Application.vala:226
 msgid "There Was An Error Installing %s"
-msgstr ""
+msgstr "Ошибка установки %"
 
 #: ../src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
