@@ -187,7 +187,10 @@ namespace AppCenter {
 
         protected void update_action () {
             action_button.can_purchase = payments_enabled;
-            action_button.amount = int.parse (suggested_amount);
+            if (payments_enabled) {
+                action_button.amount = int.parse (suggested_amount);
+            }
+
             action_stack.set_visible_child_name ("buttons");
 
             switch (package.state) {
