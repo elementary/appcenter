@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
 "PO-Revision-Date: 2017-04-09 22:41+0000\n"
-"Last-Translator: Kseniia Shimanska <kshimanska@gmail.com>\n"
+"Last-Translator: Maxim Taranov <png2378@gmail.com>\n"
 "Language-Team: Russian "
 "<http://weblate.elementary.io/projects/desktop/appcenter/ru/>\n"
 "Language: ru\n"
@@ -158,7 +158,7 @@ msgstr ""
 #: ../src/Widgets/Banner.vala:119
 msgid "Get the apps that you need at a price you can afford."
 msgstr ""
-"Получите приложения которые вам необходимы за ту цену, которую вы можете "
+"Получите приложения, которые вам нужны, за ту цену, которую вы готовы "
 "предложить."
 
 #: ../src/Widgets/CategoryFlowBox.vala:29
