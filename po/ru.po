@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2017-04-09 22:41+0000\n"
-"Last-Translator: Maxim Taranov <png2378@gmail.com>\n"
+"PO-Revision-Date: 2017-04-09 22:42+0000\n"
+"Last-Translator: Kseniia Shimanska <kshimanska@gmail.com>\n"
 "Language-Team: Russian "
 "<http://weblate.elementary.io/projects/desktop/appcenter/ru/>\n"
 "Language: ru\n"
@@ -212,7 +212,7 @@ msgstr "Универсальный доступ"
 #: ../src/Widgets/HumbleButton.vala:85
 #: ../src/Widgets/AbstractAppContainer.vala:186
 msgid "Free"
-msgstr ""
+msgstr "Бесплатно"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: ../src/Widgets/HumbleButton.vala:152
@@ -308,7 +308,7 @@ msgstr ""
 
 #: ../src/Core/Client.vala:374
 msgid "Please restart your system to finalize updates"
-msgstr ""
+msgstr "Пожалуйста, перезагрузите систему чтобы завершить обновление"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
