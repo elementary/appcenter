@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2017-04-08 04:50+0000\n"
+"PO-Revision-Date: 2017-04-08 04:54+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean "
 "<http://weblate.elementary.io/projects/desktop/appcenter/ko/>\n"
@@ -211,7 +211,7 @@ msgstr "편리한 기능"
 #: ../src/Widgets/HumbleButton.vala:85
 #: ../src/Widgets/AbstractAppContainer.vala:186
 msgid "Free"
-msgstr "자율"
+msgstr "무료"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: ../src/Widgets/HumbleButton.vala:152
