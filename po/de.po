@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
 "PO-Revision-Date: 2017-04-09 07:33+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"Last-Translator: Max Mustermann <mustermann_23@posteo.eu>\n"
 "Language-Team: German "
 "<http://weblate.elementary.io/projects/desktop/appcenter/de/>\n"
 "Language: de\n"
@@ -96,8 +96,7 @@ msgstr "Beim Bearbeiten deiner Zahlung trat ein Fehler auf"
 
 #: ../src/Dialogs/StripeDialog.vala:225
 msgid "Please review your payment info and try again."
-msgstr ""
-"Bitte überprüfen Sie Ihre Zahlungsinformationen und versuchen Sie es erneut"
+msgstr "Bitte überprüfe deine Zahlungsinformationen und versuche es erneut."
 
 #: ../src/Dialogs/StripeDialog.vala:255
 msgid "Pay Later"
