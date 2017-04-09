@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2017-04-08 06:00+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2017-04-08 06:12+0000\n"
+"Last-Translator: Łukasz <l.dudzic@gmail.com>\n"
 "Language-Team: Polish "
 "<http://weblate.elementary.io/projects/desktop/appcenter/pl/>\n"
 "Language: pl\n"
@@ -36,8 +36,9 @@ msgstr ""
 "  elementaryart (old) https://launchpad.net/~elementaryart"
 
 #: ../src/Application.vala:138
+#, fuzzy
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr ""
+msgstr "Określony link '%s' nie został odnaleziony, wyszukiwanie"
 
 #: ../src/Application.vala:207
 msgid "Application installed"
@@ -49,23 +50,25 @@ msgstr "%s zostało pomyślnie zainstalowane"
 
 #: ../src/Application.vala:224
 msgid "Close"
-msgstr ""
+msgstr "Zakmnij"
 
 #: ../src/Application.vala:226
 msgid "There Was An Error Installing %s"
-msgstr ""
+msgstr "Wystąpił błąd podczas instalacji %s"
 
 #: ../src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
-msgstr ""
+msgstr "Na pewno uruchomić ponownie?"
 
 #: ../src/Dialogs/RestartDialog.vala:41
 msgid "This will close all open applications and restart this device."
 msgstr ""
+"Wszystkie otwarte aplikacje zostaną zamknięte, a urządzenie uruchomione "
+"ponownie."
 
 #: ../src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
-msgstr ""
+msgstr "Uruchom ponownie"
 
 #: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:147
 #: ../src/Dialogs/StripeDialog.vala:264
@@ -75,27 +78,27 @@ msgstr "Anuluj"
 
 #: ../src/Dialogs/StripeDialog.vala:149 ../src/Dialogs/StripeDialog.vala:263
 msgid "Pay $%s.00"
-msgstr ""
+msgstr "Zapłać $%s.00"
 
 #: ../src/Dialogs/StripeDialog.vala:194
 msgid "Processing"
-msgstr ""
+msgstr "Przetwarzanie"
 
 #: ../src/Dialogs/StripeDialog.vala:219
 msgid "There Was a Problem Processing Your Payment"
-msgstr ""
+msgstr "Wystąpił problem podczas przetwarzania twojej płatności"
 
 #: ../src/Dialogs/StripeDialog.vala:225
 msgid "Please review your payment info and try again."
-msgstr ""
+msgstr "Proszę przejrzyj informacje dotyczące płatności i spróbuj ponownie."
 
 #: ../src/Dialogs/StripeDialog.vala:255
 msgid "Pay Later"
-msgstr ""
+msgstr "Zapłać później"
 
 #: ../src/Dialogs/StripeDialog.vala:256
 msgid "Retry"
-msgstr ""
+msgstr "Ponów"
 
 #: ../src/Views/InstalledView.vala:45 ../src/MainWindow.vala:123
 msgctxt "view"
@@ -130,21 +133,20 @@ msgid "Extensions:"
 msgstr "Rozszerzenia:"
 
 #: ../src/Views/AppInfoView.vala:164
-#, fuzzy
 msgid "Homepage"
 msgstr "Strona główna"
 
 #: ../src/Views/AppInfoView.vala:171
 msgid "Suggest Translations"
-msgstr ""
+msgstr "Zaproponuj tłumaczenie"
 
 #: ../src/Views/AppInfoView.vala:178
 msgid "Report a Problem"
-msgstr ""
+msgstr "Zgłoś problem"
 
 #: ../src/Views/AppInfoView.vala:185
 msgid "Help"
-msgstr ""
+msgstr "Pomoc"
 
 #: ../src/Views/Homepage.vala:79
 msgid "Categories"
@@ -153,7 +155,6 @@ msgstr "Kategorie"
 #: ../src/Views/Homepage.vala:123 ../src/Views/Homepage.vala:130
 #: ../src/MainWindow.vala:122 ../src/MainWindow.vala:163
 #: ../src/MainWindow.vala:205
-#, fuzzy
 msgid "Home"
 msgstr "Strona główna"
 
@@ -163,11 +164,13 @@ msgstr "Centrum programów"
 
 #: ../src/Widgets/Banner.vala:106
 msgid "An open, pay-what-you-want app store"
-msgstr ""
+msgstr "Otwarty, płać-ile-chcesz sklep z aplikacjami"
 
 #: ../src/Widgets/Banner.vala:119
 msgid "Get the apps that you need at a price you can afford."
 msgstr ""
+"Pobierz aplikacje, których potrzebujesz, za cenę, na którą możesz sobie "
+"pozwolić."
 
 #: ../src/Widgets/CategoryFlowBox.vala:29
 msgid "Audio"
@@ -220,7 +223,7 @@ msgstr "Dostęp uniwersalny"
 #: ../src/Widgets/HumbleButton.vala:85
 #: ../src/Widgets/AbstractAppContainer.vala:186
 msgid "Free"
-msgstr ""
+msgstr "Darmowe"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: ../src/Widgets/HumbleButton.vala:152
@@ -274,7 +277,7 @@ msgstr "Rozmiar: %s"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:105
 msgid "Searching for updates…"
-msgstr "Szukanie aktualizacji..."
+msgstr "Szukanie aktualizacji…"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:112
 msgid "Up to Date"
@@ -313,11 +316,11 @@ msgstr[2] "Dostępnych jest %u aktualizacji dla Twojego systemu"
 
 #: ../src/Core/Client.vala:373
 msgid "Restart Required"
-msgstr ""
+msgstr "Wymagane ponowne uruchomienie"
 
 #: ../src/Core/Client.vala:374
 msgid "Please restart your system to finalize updates"
-msgstr ""
+msgstr "Uruchom ponownie system, aby dokończyć aktualizacje"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
