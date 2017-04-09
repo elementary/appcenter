@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2017-04-08 15:57+0000\n"
-"Last-Translator: quassy <quassy.github.io@gmail.com>\n"
+"PO-Revision-Date: 2017-04-09 07:32+0000\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: German "
 "<http://weblate.elementary.io/projects/desktop/appcenter/de/>\n"
 "Language: de\n"
@@ -92,7 +92,7 @@ msgstr "In Bearbeitung"
 
 #: ../src/Dialogs/StripeDialog.vala:219
 msgid "There Was a Problem Processing Your Payment"
-msgstr ""
+msgstr "Beim Bearbeiten Ihrer Zahlung trat ein Fehler auf"
 
 #: ../src/Dialogs/StripeDialog.vala:225
 msgid "Please review your payment info and try again."
