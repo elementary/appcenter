@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2017-04-10 21:05+0000\n"
-"Last-Translator: Max Mustermann <mustermann_23@posteo.eu>\n"
+"PO-Revision-Date: 2017-04-10 21:06+0000\n"
+"Last-Translator: Felix Schröter <felschr@gmail.com>\n"
 "Language-Team: German "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/de/>\n"
 "Language: de\n"
@@ -234,13 +234,15 @@ msgstr "Gratis"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: ../src/Widgets/HumbleButton.vala:152
+#, fuzzy
 msgid "$%d.00"
-msgstr ""
+msgstr "$%d,00"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: ../src/Widgets/HumbleButton.vala:155
+#, fuzzy
 msgid "$%d"
-msgstr ""
+msgstr "$%d"
 
 #: ../src/Widgets/AbstractAppContainer.vala:102
 msgid "Uninstall"
