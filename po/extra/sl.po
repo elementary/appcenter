@@ -3,15 +3,18 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2016-07-24 15:34+0000\n"
-"Last-Translator: Jernej Virag <Unknown>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2017-04-10 19:34+0000\n"
+"Last-Translator: Rok Fajfar <snewix7@gmail.com>\n"
+"Language-Team: Slovenian "
+"<https://l10n.elementary.io/projects/appcenter/extra/sl/>\n"
+"Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
+"n%100==4 ? 2 : 3;\n"
+"X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
-"X-Generator: Launchpad (build 18331)\n"
 
 msgid "AppCenter"
 msgstr "Center za programsko opremo"
@@ -41,22 +44,25 @@ msgid "Bug fixes and improve perfomance."
 msgstr ""
 
 msgid "Various bug fixes and performance improvements"
-msgstr ""
+msgstr "Raznovrstni popravki in izboljšanje odzivnosti"
 
 msgid "New translations"
-msgstr ""
+msgstr "Novi prevodi"
 
 msgid "Fix crash caused by entries with missing packages"
 msgstr ""
+"Popravi sesutje do katerega je prišlo zaradi vnosov z manjkajočimi paketi"
 
 msgid "Add capability to search by category and apply minor bug fixes."
 msgstr ""
 
 msgid "It is now possible to search apps inside a category"
-msgstr ""
+msgstr "Aplikacije je sedaj mogoče iskati znotraj kategorij"
 
 msgid "Prevent multiple authentication dialogs when resuming from suspend"
 msgstr ""
+"Prepreči prikaz večih dialogov za preverjanje pristnosti ob vrnitvi iz "
+"suspenza"
 
 msgid ""
 "Search perfomance has beeen improved, the category name is now shown on the "
@@ -64,10 +70,11 @@ msgid ""
 msgstr ""
 
 msgid "Fix Steam installation"
-msgstr ""
+msgstr "Popravi namestitev Steama"
 
+#, fuzzy
 msgid "Make search asynchronous"
-msgstr ""
+msgstr "Spremeni iskanje v asinhrono operacijo"
 
 #, fuzzy
 #~ msgid "App Center"
