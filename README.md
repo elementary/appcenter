@@ -1,5 +1,5 @@
 # AppCenter
-[![l10n](https://l10n.elementary.io/widgets/desktop/appcenter/svg-badge.svg)](https://l10n.elementary.io/projects/desktop/appcenter)
+[![Translation status](http://weblate.elementary.io/widgets/appcenter/-/svg-badge.svg)](http://weblate.elementary.io/engage/appcenter/?utm_source=widget)
 [![Bountysource](https://www.bountysource.com/badge/tracker?tracker_id=57667267)](https://www.bountysource.com/teams/elementary/issues?tracker_ids=57667267)
 
 ## Building, Testing, and Installation
