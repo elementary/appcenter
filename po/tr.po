@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-29 16:53-0700\n"
+"POT-Creation-Date: 2017-04-02 13:03-0700\n"
 "PO-Revision-Date: 2017-02-10 16:31+0000\n"
 "Last-Translator: İbrahim Ethem Göl <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,11 +14,11 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 "X-Generator: Launchpad (build 18331)\n"
 
-#: ../src/Application.vala:39
+#: ../src/Application.vala:42
 msgid "App Center"
 msgstr "Uygulama Merkezi"
 
-#: ../src/Application.vala:57
+#: ../src/Application.vala:60
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
@@ -38,8 +38,24 @@ msgstr ""
 "  Özgür BASKIN https://launchpad.net/~ozgur-baskin\n"
 "  İbrahim Ethem Göl https://launchpad.net/~ethem578"
 
-#: ../src/Application.vala:132
+#: ../src/Application.vala:138
 msgid "Specified link '%s' could not be found, searching instead"
+msgstr ""
+
+#: ../src/Application.vala:207
+msgid "Application installed"
+msgstr "Uygulama yüklendi"
+
+#: ../src/Application.vala:208
+msgid "%s has been successfully installed"
+msgstr "%s başarı ile yüklendi"
+
+#: ../src/Application.vala:224
+msgid "Close"
+msgstr ""
+
+#: ../src/Application.vala:226
+msgid "There Was An Error Installing %s"
 msgstr ""
 
 #: ../src/Dialogs/RestartDialog.vala:40
@@ -84,7 +100,7 @@ msgstr ""
 msgid "Retry"
 msgstr ""
 
-#: ../src/Views/InstalledView.vala:45 ../src/MainWindow.vala:126
+#: ../src/Views/InstalledView.vala:45 ../src/MainWindow.vala:123
 msgctxt "view"
 msgid "Updates"
 msgstr "Güncelleştirmeler"
@@ -94,59 +110,6 @@ msgstr "Güncelleştirmeler"
 msgctxt "view"
 msgid "Search"
 msgstr "Ara"
-
-#: ../src/Views/CategoryView.vala:70 ../src/Views/CategoryView.vala:77
-#: ../src/Views/Homepage.vala:68 ../src/MainWindow.vala:216
-msgid "Categories"
-msgstr "Kategoriler"
-
-#: ../src/Views/CategoryView.vala:118
-msgid "Audio"
-msgstr "Ses"
-
-#: ../src/Views/CategoryView.vala:129
-msgid "Development"
-msgstr "Geliştirme"
-
-#: ../src/Views/CategoryView.vala:140
-msgid "Accessories"
-msgstr "Aksesuarlar"
-
-#: ../src/Views/CategoryView.vala:151
-msgid "Office"
-msgstr "Ofis"
-
-#: ../src/Views/CategoryView.vala:162
-msgid "System"
-msgstr "Sistem"
-
-#: ../src/Views/CategoryView.vala:173
-msgid "Video"
-msgstr "Video"
-
-#: ../src/Views/CategoryView.vala:184
-msgid "Graphics"
-msgstr "Grafik"
-
-#: ../src/Views/CategoryView.vala:194
-msgid "Games"
-msgstr "Oyunlar"
-
-#: ../src/Views/CategoryView.vala:205
-msgid "Education"
-msgstr "Eğitim"
-
-#: ../src/Views/CategoryView.vala:215
-msgid "Internet"
-msgstr "İnternet"
-
-#: ../src/Views/CategoryView.vala:226
-msgid "Science & Engineering"
-msgstr "Bilim & Mühendislik"
-
-#: ../src/Views/CategoryView.vala:236
-msgid "Universal Access"
-msgstr "Evrensel Erişim"
 
 #: ../src/Views/AppListView.vala:123
 msgid "A restart is required to complete the installation of updates"
@@ -185,17 +148,76 @@ msgstr ""
 msgid "Help"
 msgstr ""
 
-#: ../src/Widgets/Banner.vala:163 ../src/MainWindow.vala:103
+#: ../src/Views/Homepage.vala:79
+msgid "Categories"
+msgstr "Kategoriler"
+
+#: ../src/Views/Homepage.vala:123 ../src/Views/Homepage.vala:130
+#: ../src/MainWindow.vala:122 ../src/MainWindow.vala:163
+#: ../src/MainWindow.vala:205
+#, fuzzy
+msgid "Home"
+msgstr "Ana Sayfa"
+
+#: ../src/Widgets/Banner.vala:99 ../src/MainWindow.vala:103
 msgid "AppCenter"
 msgstr "Uygulama Dünyası"
 
-#: ../src/Widgets/Banner.vala:164
+#: ../src/Widgets/Banner.vala:106
 msgid "An open, pay-what-you-want app store"
 msgstr ""
 
-#: ../src/Widgets/Banner.vala:165
+#: ../src/Widgets/Banner.vala:119
 msgid "Get the apps that you need at a price you can afford."
 msgstr ""
+
+#: ../src/Widgets/CategoryFlowBox.vala:29
+msgid "Audio"
+msgstr "Ses"
+
+#: ../src/Widgets/CategoryFlowBox.vala:30
+msgid "Development"
+msgstr "Geliştirme"
+
+#: ../src/Widgets/CategoryFlowBox.vala:31
+msgid "Accessories"
+msgstr "Aksesuarlar"
+
+#: ../src/Widgets/CategoryFlowBox.vala:32
+msgid "Office"
+msgstr "Ofis"
+
+#: ../src/Widgets/CategoryFlowBox.vala:33
+msgid "System"
+msgstr "Sistem"
+
+#: ../src/Widgets/CategoryFlowBox.vala:34
+msgid "Video"
+msgstr "Video"
+
+#: ../src/Widgets/CategoryFlowBox.vala:35
+msgid "Graphics"
+msgstr "Grafik"
+
+#: ../src/Widgets/CategoryFlowBox.vala:36
+msgid "Games"
+msgstr "Oyunlar"
+
+#: ../src/Widgets/CategoryFlowBox.vala:37
+msgid "Education"
+msgstr "Eğitim"
+
+#: ../src/Widgets/CategoryFlowBox.vala:38
+msgid "Internet"
+msgstr "İnternet"
+
+#: ../src/Widgets/CategoryFlowBox.vala:39
+msgid "Science & Engineering"
+msgstr "Bilim & Mühendislik"
+
+#: ../src/Widgets/CategoryFlowBox.vala:40
+msgid "Universal Access"
+msgstr "Evrensel Erişim"
 
 #: ../src/Widgets/HumbleButton.vala:85
 #: ../src/Widgets/AbstractAppContainer.vala:186
@@ -258,35 +280,14 @@ msgstr "Güncellemeler aranıyor..."
 msgid "Up to Date"
 msgstr "Güncel"
 
-#: ../src/MainWindow.vala:114 ../src/MainWindow.vala:142
-#: ../src/MainWindow.vala:308 ../src/MainWindow.vala:330
+#: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
+#: ../src/MainWindow.vala:297 ../src/MainWindow.vala:319
 msgid "Search Apps"
 msgstr "Uygulama Ara"
 
-#: ../src/MainWindow.vala:125 ../src/MainWindow.vala:157
-#, fuzzy
-msgid "Home"
-msgstr "Ana Sayfa"
-
-#: ../src/MainWindow.vala:290
+#: ../src/MainWindow.vala:279
 msgid "Search %s"
 msgstr "%s içinde ara"
-
-#: ../src/MainWindow.vala:351
-msgid "Application installed"
-msgstr "Uygulama yüklendi"
-
-#: ../src/MainWindow.vala:352
-msgid "%s has been successfully installed"
-msgstr "%s başarı ile yüklendi"
-
-#: ../src/MainWindow.vala:371
-msgid "Close"
-msgstr ""
-
-#: ../src/MainWindow.vala:373
-msgid "There Was An Error Installing %s"
-msgstr ""
 
 #: ../src/Core/Client.vala:90
 msgid "Operating System Updates"
