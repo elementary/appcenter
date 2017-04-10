@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2017-04-09 07:36+0000\n"
-"Last-Translator: quassy <quassy.github.io@gmail.com>\n"
+"PO-Revision-Date: 2017-04-10 21:01+0000\n"
+"Last-Translator: Felix Schröter <felschr@gmail.com>\n"
 "Language-Team: German "
-"<http://weblate.elementary.io/projects/desktop/appcenter/de/>\n"
+"<https://l10n.elementary.io/projects/appcenter/appcenter/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -47,6 +47,7 @@ msgstr ""
 #: ../src/Application.vala:138
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr ""
+"Der angegebene Link '%s' konnte nicht gefunden werden, suche stattdessen"
 
 #: ../src/Application.vala:207
 msgid "Application installed"
@@ -171,7 +172,7 @@ msgstr "AppCenter"
 
 #: ../src/Widgets/Banner.vala:106
 msgid "An open, pay-what-you-want app store"
-msgstr ""
+msgstr "Ein offener, bezahl-was-du-willst App Store"
 
 #: ../src/Widgets/Banner.vala:119
 msgid "Get the apps that you need at a price you can afford."
