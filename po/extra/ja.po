@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2017-04-11 08:48+0000\n"
+"PO-Revision-Date: 2017-04-11 08:49+0000\n"
 "Last-Translator: Ryo Nakano <nscnskichiro0911@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://l10n.elementary.io/projects/appcenter/extra/ja/>\n"
@@ -71,8 +71,9 @@ msgstr "検索能力が向上し、カテゴリーの名前がヘッドバーに
 msgid "Fix Steam installation"
 msgstr ""
 
+#, fuzzy
 msgid "Make search asynchronous"
-msgstr ""
+msgstr "検索を非同期にする"
 
 #, fuzzy
 #~ msgid "App Center"
