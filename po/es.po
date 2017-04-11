@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2017-04-11 06:48+0000\n"
+"PO-Revision-Date: 2017-04-11 06:49+0000\n"
 "Last-Translator: Damian Rguez <damian@randombrains.com>\n"
 "Language-Team: Spanish "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/es/>\n"
@@ -101,7 +101,7 @@ msgstr "Por favor, revise la información de su pago e inténtelo de nuevo."
 
 #: ../src/Dialogs/StripeDialog.vala:255
 msgid "Pay Later"
-msgstr "Pagar Después"
+msgstr "Pagar más tarde"
 
 #: ../src/Dialogs/StripeDialog.vala:256
 msgid "Retry"
