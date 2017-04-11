@@ -3,442 +3,460 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2015-11-04 14:21+0000\n"
-"Last-Translator: Launchpad Translations Administrators <Unknown>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2017-04-11 17:42+0000\n"
+"Last-Translator: Juan Gómez Carrillo <gomezcarrillojuan@gmail.com>\n"
+"Language-Team: kv (generated) "
+"<https://l10n.elementary.io/projects/appcenter/appcenter/kv/>\n"
+"Language: kv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
-"X-Generator: Launchpad (build 18331)\n"
 
 #: ../src/Application.vala:42
 msgid "App Center"
-msgstr ""
+msgstr "App Center"
 
 #: ../src/Application.vala:60
 msgid "translator-credits"
-msgstr ""
+msgstr "Créditos del traductor"
 
 #: ../src/Application.vala:138
+#, fuzzy
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr ""
+"No se pudo encontrar el link especificado '%s', buscando link alternativo"
 
 #: ../src/Application.vala:207
 msgid "Application installed"
-msgstr ""
+msgstr "Aplicación instalada"
 
 #: ../src/Application.vala:208
 msgid "%s has been successfully installed"
-msgstr ""
+msgstr "%s ha sido instalado correctamente"
 
 #: ../src/Application.vala:224
 msgid "Close"
-msgstr ""
+msgstr "Cerrar"
 
 #: ../src/Application.vala:226
 msgid "There Was An Error Installing %s"
-msgstr ""
+msgstr "Hubo un error al instalar %s"
 
 #: ../src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
-msgstr ""
+msgstr "¿Está seguro de que quiere reiniciar?"
 
 #: ../src/Dialogs/RestartDialog.vala:41
 msgid "This will close all open applications and restart this device."
 msgstr ""
+"Esto cerrará todas las aplicaciones abiertas y reiniciará el dispositivo."
 
 #: ../src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
-msgstr ""
+msgstr "Reiniciar"
 
 #: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:147
 #: ../src/Dialogs/StripeDialog.vala:264
 #: ../src/Widgets/AbstractAppContainer.vala:123
 msgid "Cancel"
-msgstr ""
+msgstr "Cancelar"
 
 #: ../src/Dialogs/StripeDialog.vala:149 ../src/Dialogs/StripeDialog.vala:263
 msgid "Pay $%s.00"
-msgstr ""
+msgstr "Pagar %s.00$"
 
 #: ../src/Dialogs/StripeDialog.vala:194
 msgid "Processing"
-msgstr ""
+msgstr "Procesando"
 
 #: ../src/Dialogs/StripeDialog.vala:219
 msgid "There Was a Problem Processing Your Payment"
-msgstr ""
+msgstr "Hubo un problema al procesar el pago"
 
 #: ../src/Dialogs/StripeDialog.vala:225
 msgid "Please review your payment info and try again."
-msgstr ""
+msgstr "Por favor, compruebe la información del pago e inténtelo de nuevo"
 
 #: ../src/Dialogs/StripeDialog.vala:255
 msgid "Pay Later"
-msgstr ""
+msgstr "Pagar más tarde"
 
 #: ../src/Dialogs/StripeDialog.vala:256
 msgid "Retry"
-msgstr ""
+msgstr "Reintentar"
 
 #: ../src/Views/InstalledView.vala:45 ../src/MainWindow.vala:123
 msgctxt "view"
 msgid "Updates"
-msgstr ""
+msgstr "Actualizaciones"
 
 #. / TRANSLATORS: the name of the Search view
 #: ../src/Views/SearchView.vala:35
 msgctxt "view"
 msgid "Search"
-msgstr ""
+msgstr "Buscar"
 
 #: ../src/Views/AppListView.vala:123
 msgid "A restart is required to complete the installation of updates"
 msgstr ""
+"Se requiere reiniciar para completar la instalación de las actualizaciones"
 
 #: ../src/Views/AppListView.vala:125
 msgid "Restart Now"
-msgstr ""
+msgstr "Reiniciar ahora"
 
 #: ../src/Views/AppListView.vala:210
 msgid "Update All"
-msgstr ""
+msgstr "Actualizar todo"
 
 #: ../src/Views/AppInfoView.vala:50
 msgid "Screenshot Not Available"
-msgstr ""
+msgstr "Captura de pantalla no disponible"
 
 #: ../src/Views/AppInfoView.vala:150
 msgid "Extensions:"
-msgstr ""
+msgstr "Extensiones:"
 
 #: ../src/Views/AppInfoView.vala:164
 msgid "Homepage"
-msgstr ""
+msgstr "Página principal"
 
 #: ../src/Views/AppInfoView.vala:171
 msgid "Suggest Translations"
-msgstr ""
+msgstr "Sugerir traducciones"
 
 #: ../src/Views/AppInfoView.vala:178
 msgid "Report a Problem"
-msgstr ""
+msgstr "Reportar un problema"
 
 #: ../src/Views/AppInfoView.vala:185
 msgid "Help"
-msgstr ""
+msgstr "Ayuda"
 
 #: ../src/Views/Homepage.vala:79
 msgid "Categories"
-msgstr ""
+msgstr "Categorías"
 
 #: ../src/Views/Homepage.vala:123 ../src/Views/Homepage.vala:130
 #: ../src/MainWindow.vala:122 ../src/MainWindow.vala:163
 #: ../src/MainWindow.vala:205
 msgid "Home"
-msgstr ""
+msgstr "Inicio"
 
 #: ../src/Widgets/Banner.vala:99 ../src/MainWindow.vala:103
 msgid "AppCenter"
-msgstr ""
+msgstr "AppCenter"
 
 #: ../src/Widgets/Banner.vala:106
 msgid "An open, pay-what-you-want app store"
-msgstr ""
+msgstr "Una app store libre en la que tú decides lo que pagar"
 
 #: ../src/Widgets/Banner.vala:119
 msgid "Get the apps that you need at a price you can afford."
-msgstr ""
+msgstr "Las aplicaciones que necesitas al precio que te puedas permitir"
 
 #: ../src/Widgets/CategoryFlowBox.vala:29
 msgid "Audio"
-msgstr ""
+msgstr "Audio"
 
 #: ../src/Widgets/CategoryFlowBox.vala:30
 msgid "Development"
-msgstr ""
+msgstr "Programación"
 
 #: ../src/Widgets/CategoryFlowBox.vala:31
 msgid "Accessories"
-msgstr ""
+msgstr "Accesorios"
 
 #: ../src/Widgets/CategoryFlowBox.vala:32
 msgid "Office"
-msgstr ""
+msgstr "Ofimática"
 
 #: ../src/Widgets/CategoryFlowBox.vala:33
 msgid "System"
-msgstr ""
+msgstr "Sistema"
 
 #: ../src/Widgets/CategoryFlowBox.vala:34
 msgid "Video"
-msgstr ""
+msgstr "Vídeo"
 
 #: ../src/Widgets/CategoryFlowBox.vala:35
 msgid "Graphics"
-msgstr ""
+msgstr "Gráficos"
 
 #: ../src/Widgets/CategoryFlowBox.vala:36
 msgid "Games"
-msgstr ""
+msgstr "Juegos"
 
 #: ../src/Widgets/CategoryFlowBox.vala:37
 msgid "Education"
-msgstr ""
+msgstr "Educación"
 
 #: ../src/Widgets/CategoryFlowBox.vala:38
 msgid "Internet"
-msgstr ""
+msgstr "Internet"
 
 #: ../src/Widgets/CategoryFlowBox.vala:39
 msgid "Science & Engineering"
-msgstr ""
+msgstr "Ciencia e ingeniería"
 
 #: ../src/Widgets/CategoryFlowBox.vala:40
 msgid "Universal Access"
-msgstr ""
+msgstr "Acceso universal"
 
 #: ../src/Widgets/HumbleButton.vala:85
 #: ../src/Widgets/AbstractAppContainer.vala:186
 msgid "Free"
-msgstr ""
+msgstr "Gratis"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: ../src/Widgets/HumbleButton.vala:152
 msgid "$%d.00"
-msgstr ""
+msgstr "%d.00$"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: ../src/Widgets/HumbleButton.vala:155
 msgid "$%d"
-msgstr ""
+msgstr "%d$"
 
 #: ../src/Widgets/AbstractAppContainer.vala:102
 msgid "Uninstall"
-msgstr ""
+msgstr "Desinstalar"
 
 #: ../src/Widgets/AbstractAppContainer.vala:105
 msgid "Open"
-msgstr ""
+msgstr "Abrir"
 
 #: ../src/Widgets/AbstractAppContainer.vala:157
 msgid "The %s Developers"
-msgstr ""
+msgstr "Los desarrolladores de %s"
 
 #: ../src/Widgets/AbstractAppContainer.vala:161
 msgid "by %s"
-msgstr ""
+msgstr "por %s"
 
 #: ../src/Widgets/AbstractAppContainer.vala:200
+#, fuzzy
 msgid "Update"
-msgstr ""
+msgstr "Actualizar"
 
 #: ../src/Widgets/AbstractAppList.vala:35
 msgid "No Results"
-msgstr ""
+msgstr "Sin resultados"
 
 #: ../src/Widgets/AbstractAppList.vala:35
 msgid "No apps could be found. Try changing search terms."
 msgstr ""
+"Ninguna aplicación encontrada. Pruebe cambiando los criterios de búsqueda."
 
 #: ../src/Widgets/UpdateHeaderRow.vala:68
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u actualización disponible"
+msgstr[1] "%u actualizaciones disponibles"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:69
 msgid "Size: %s"
-msgstr ""
+msgstr "Tamaño: %s"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:105
 msgid "Searching for updates…"
-msgstr ""
+msgstr "Buscando actualizaciones…"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:112
 msgid "Up to Date"
-msgstr ""
+msgstr "Sistema actualizado"
 
 #: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
 #: ../src/MainWindow.vala:297 ../src/MainWindow.vala:319
 msgid "Search Apps"
-msgstr ""
+msgstr "Buscar aplicaciones"
 
 #: ../src/MainWindow.vala:279
 msgid "Search %s"
-msgstr ""
+msgstr "Buscar %s"
 
 #: ../src/Core/Client.vala:90
 msgid "Operating System Updates"
-msgstr ""
+msgstr "Actualizaciones del sistema"
 
 #: ../src/Core/Client.vala:91
 msgid "Updates to system components"
-msgstr ""
+msgstr "Actualizaciones de componentes del sistema"
 
 #: ../src/Core/Client.vala:343
 msgid "Update Available"
 msgid_plural "Updates Available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Actualización disponible"
+msgstr[1] "Actualizaciones disponibles"
 
 #: ../src/Core/Client.vala:344
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u actualización disponible para el sistema"
+msgstr[1] "%u actualizaciones disponibles para el sistema"
 
 #: ../src/Core/Client.vala:373
 msgid "Restart Required"
-msgstr ""
+msgstr "Se requiere reiniciar"
 
 #: ../src/Core/Client.vala:374
 msgid "Please restart your system to finalize updates"
-msgstr ""
+msgstr "Reinicie el sistema para completar las actualizaciones"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
-msgstr ""
+msgstr "Iniciando"
 
 #: ../src/Core/ChangeInformation.vala:56
+#, fuzzy
 msgid "Waiting"
-msgstr ""
+msgstr "Espere"
 
 #: ../src/Core/ChangeInformation.vala:58
 msgid "Running"
-msgstr ""
+msgstr "Iniciado"
 
 #: ../src/Core/ChangeInformation.vala:60
+#, fuzzy
 msgid "Querying"
-msgstr ""
+msgstr "Consultando"
 
 #: ../src/Core/ChangeInformation.vala:62
 msgid "Getting information"
-msgstr ""
+msgstr "Obteniendo información"
 
 #: ../src/Core/ChangeInformation.vala:64
 msgid "Removing packages"
-msgstr ""
+msgstr "Eliminando paquetes"
 
 #: ../src/Core/ChangeInformation.vala:66
 msgid "Downloading"
-msgstr ""
+msgstr "Descargando"
 
 #: ../src/Core/ChangeInformation.vala:68
 msgid "Installing"
-msgstr ""
+msgstr "Instalando"
 
 #: ../src/Core/ChangeInformation.vala:70
 msgid "Refreshing software list"
-msgstr ""
+msgstr "Actualizando la lista de software"
 
 #: ../src/Core/ChangeInformation.vala:72
 msgid "Installing updates"
-msgstr ""
+msgstr "Instalando actualizaciones"
 
 #: ../src/Core/ChangeInformation.vala:74
 msgid "Cleaning up packages"
-msgstr ""
+msgstr "Limpiando paquetes"
 
 #: ../src/Core/ChangeInformation.vala:76
 msgid "Obsoleting packages"
-msgstr ""
+msgstr "Paquetes obsoletos"
 
 #: ../src/Core/ChangeInformation.vala:78
 msgid "Resolving dependencies"
-msgstr ""
+msgstr "Resolviendo dependencias"
 
 #: ../src/Core/ChangeInformation.vala:80
+#, fuzzy
 msgid "Checking signatures"
-msgstr ""
+msgstr "Comprobando firmas"
 
 #: ../src/Core/ChangeInformation.vala:82
 msgid "Testing changes"
-msgstr ""
+msgstr "Probando los cambios"
 
 #: ../src/Core/ChangeInformation.vala:84
+#, fuzzy
 msgid "Committing changes"
-msgstr ""
+msgstr "Realizando los cambios"
 
 #: ../src/Core/ChangeInformation.vala:86
+#, fuzzy
 msgid "Requesting data"
-msgstr ""
+msgstr "Solicitando datos"
 
 #: ../src/Core/ChangeInformation.vala:88
 msgid "Finished"
-msgstr ""
+msgstr "Terminado"
 
 #: ../src/Core/ChangeInformation.vala:90
 msgid "Cancelling"
-msgstr ""
+msgstr "Cancelando"
 
 #: ../src/Core/ChangeInformation.vala:92
 msgid "Downloading repository information"
-msgstr ""
+msgstr "Descargando información del repositorio"
 
 #: ../src/Core/ChangeInformation.vala:94
 msgid "Downloading list of packages"
-msgstr ""
+msgstr "Descargando lista de paquetes"
 
 #: ../src/Core/ChangeInformation.vala:96
 msgid "Downloading file lists"
-msgstr ""
+msgstr "Descargando listas de archivos"
 
 #: ../src/Core/ChangeInformation.vala:98
 msgid "Downloading lists of changes"
-msgstr ""
+msgstr "Descargando listas de cambios"
 
 #: ../src/Core/ChangeInformation.vala:100
+#, fuzzy
 msgid "Downloading groups"
-msgstr ""
+msgstr "Descargando grupos"
 
 #: ../src/Core/ChangeInformation.vala:102
+#, fuzzy
 msgid "Downloading update information"
-msgstr ""
+msgstr "Descargando información de actualización"
 
 #: ../src/Core/ChangeInformation.vala:104
+#, fuzzy
 msgid "Repackaging files"
-msgstr ""
+msgstr "Reempaquetando archivos"
 
 #: ../src/Core/ChangeInformation.vala:106
 msgid "Loading cache"
-msgstr ""
+msgstr "Cargando caché"
 
 #: ../src/Core/ChangeInformation.vala:108
+#, fuzzy
 msgid "Scanning applications"
-msgstr ""
+msgstr "Escaneando aplicaciones"
 
 #: ../src/Core/ChangeInformation.vala:110
 msgid "Generating package lists"
-msgstr ""
+msgstr "Generando listas de paquetes"
 
 #: ../src/Core/ChangeInformation.vala:112
+#, fuzzy
 msgid "Waiting for package manager lock"
-msgstr ""
+msgstr "Esperando al bloqueo del gestor de paquetes"
 
 #: ../src/Core/ChangeInformation.vala:114
+#, fuzzy
 msgid "Waiting for authentication"
-msgstr ""
+msgstr "Esperando autenticación"
 
 #: ../src/Core/ChangeInformation.vala:116
 msgid "Updating running applications"
-msgstr ""
+msgstr "Actualizando aplicaciones en ejecución"
 
 #: ../src/Core/ChangeInformation.vala:118
 msgid "Checking applications in use"
-msgstr ""
+msgstr "Comprobando aplicaciones en uso"
 
 #: ../src/Core/ChangeInformation.vala:120
 msgid "Checking libraries in use"
-msgstr ""
+msgstr "Comprobando librerías en uso"
 
 #: ../src/Core/ChangeInformation.vala:122
 msgid "Copying files"
-msgstr ""
+msgstr "Copiando archivos"
 
 #: ../src/Core/ChangeInformation.vala:124
 msgid "Unknown state"
-msgstr ""
+msgstr "Estado desconocido"
