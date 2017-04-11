@@ -3,16 +3,17 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2016-10-14 15:26+0000\n"
+"PO-Revision-Date: 2017-04-11 05:12+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language-Team: Chinese (Traditional) "
+"<https://l10n.elementary.io/projects/appcenter/appcenter/zh_TW/>\n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
-"X-Generator: Launchpad (build 18331)\n"
 
 #: ../src/Application.vala:42
 msgid "App Center"
@@ -40,7 +41,7 @@ msgstr "%s 已成功安裝"
 
 #: ../src/Application.vala:224
 msgid "Close"
-msgstr ""
+msgstr "關閉"
 
 #: ../src/Application.vala:226
 msgid "There Was An Error Installing %s"
