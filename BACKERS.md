@@ -4,6 +4,7 @@ Thanks again to all of the backers of our [March 2017 IndieGoGo campaign](https:
     Aaron Dickey
     Adam Slavík
     adammakarucha
+    Adarsh Barik
     Aidan Stewart
     Alan Salisbury
     Alex Boutros
@@ -115,6 +116,7 @@ Thanks again to all of the backers of our [March 2017 IndieGoGo campaign](https:
     Jindrich S.
     Jod Mangel
     Joe Petrus
+    Joel Wallis Jucá
     John Kennedy
     John Pangalos
     joke7p
@@ -171,6 +173,7 @@ Thanks again to all of the backers of our [March 2017 IndieGoGo campaign](https:
     Michael Rampl
     Michael Terry
     Miguel Fontoura
+    Mike Wild
     Muhammad Fikri
     Nathan Caza
     Neal Gompa
@@ -202,7 +205,7 @@ Thanks again to all of the backers of our [March 2017 IndieGoGo campaign](https:
     Richard Burleigh
     Rob White
     Robert Gorbul
-    robinsoncollado
+    Robinson Collado
     Rodolfo Baeza
     Rolly Fordham
     Romain De Filippi

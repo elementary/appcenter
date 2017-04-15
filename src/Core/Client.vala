@@ -111,9 +111,20 @@ public class AppCenterCore.Client : Object {
 
         try {
             var results = yield client.resolve_async (Pk.Bitfield.from_enums (Pk.Filter.NEWEST, Pk.Filter.ARCH), packages_ids, cancellable, () => {});
-            packages_ids = {};
 
-            results.get_package_array ().foreach ((package) => {
+            /*
+             * If there were no packages found for the requested architecture,
+             * try to resolve IDs by not searching for this architecture
+             * e.g: filtering 32 bit only package on a 64 bit system
+             */ 
+            GenericArray<weak Pk.Package> package_array = results.get_package_array ();
+            if (package_array.length == 0) {
+                results = yield client.resolve_async (Pk.Bitfield.from_enums (Pk.Filter.NEWEST, Pk.Filter.NOT_ARCH), packages_ids, cancellable, () => {});
+                package_array = results.get_package_array ();
+            }
+
+            packages_ids = {};
+            package_array.foreach ((package) => {
                 packages_ids += package.package_id;
             });
 
@@ -206,7 +217,12 @@ public class AppCenterCore.Client : Object {
                 var package = package_list.get (pkg_name);
                 if (package != null) {
                     package.latest_version = pk_package.get_version ();
+                    package.change_information.changes.clear ();
+                    package.change_information.details.clear ();
                 }
+
+                os_updates.change_information.changes.clear ();
+                os_updates.change_information.details.clear ();
             });
 
             // We need a null to show to PackageKit that it's then end of the array.
