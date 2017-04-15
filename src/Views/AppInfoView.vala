@@ -20,6 +20,8 @@
 
 namespace AppCenter.Views {
     public class AppInfoView : AppCenter.AbstractAppContainer {
+        static Gtk.CssProvider? previous_css_provider = null;
+
         Gtk.Grid links_grid;
         Gtk.Box header_box;
         Gtk.Image app_screenshot;
@@ -219,7 +221,7 @@ namespace AppCenter.Views {
             });
         }
 
-        private void reload_css () {
+        public void reload_css () {
             var provider = new Gtk.CssProvider ();
             try {
                 string color_primary;
@@ -241,7 +243,13 @@ namespace AppCenter.Views {
                 }
                 var colored_css = BANNER_STYLE_CSS.printf (color_primary, color_primary_text);
                 provider.load_from_data (colored_css, colored_css.length);
-                header_box.get_style_context ().add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+                if (previous_css_provider != null) {
+                    Gtk.StyleContext.remove_provider_for_screen (Gdk.Screen.get_default (), previous_css_provider);
+                }
+
+                previous_css_provider = provider;
+                Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
             } catch (GLib.Error e) {
                 critical (e.message);
             }
