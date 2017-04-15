@@ -3,15 +3,17 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2016-08-10 10:30+0000\n"
-"Last-Translator: Ryo Nakano <Unknown>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2017-04-11 08:49+0000\n"
+"Last-Translator: Ryo Nakano <nscnskichiro0911@gmail.com>\n"
+"Language-Team: Japanese "
+"<https://l10n.elementary.io/projects/appcenter/extra/ja/>\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
-"X-Generator: Launchpad (build 18331)\n"
 
 msgid "AppCenter"
 msgstr "AppCenter"
@@ -35,36 +37,43 @@ msgstr ""
 "へのシステムアップデートでも使われます。"
 
 msgid "Bug fixes and improve perfomance."
-msgstr ""
+msgstr "バグ修正とパフォーマンスの向上。"
 
+#, fuzzy
 msgid "Various bug fixes and performance improvements"
-msgstr ""
+msgstr "様々なバグ修正とパフォーマンスの向上"
 
 msgid "New translations"
-msgstr ""
+msgstr "新しい翻訳"
 
+#, fuzzy
 msgid "Fix crash caused by entries with missing packages"
-msgstr ""
+msgstr "不足しているパッケージの登録によるクラッシュを修正"
 
+#, fuzzy
 msgid "Add capability to search by category and apply minor bug fixes."
-msgstr ""
+msgstr "カテゴリー別で検索できるようにし、マイナーなバグ修正を適用。"
 
+#, fuzzy
 msgid "It is now possible to search apps inside a category"
-msgstr ""
+msgstr "今やカテゴリー内でアプリを検索することができます"
 
+#, fuzzy
 msgid "Prevent multiple authentication dialogs when resuming from suspend"
-msgstr ""
+msgstr "サスペンドからの復帰時に複数の認証ダイアログが出るのを防ぐ"
 
+#, fuzzy
 msgid ""
 "Search perfomance has beeen improved, the category name is now shown on the "
 "headbar and minor bugs have been fixed."
-msgstr ""
+msgstr "検索能力が向上し、カテゴリーの名前がヘッドバーに表示されます。また、マイナーなバグも修正しました。"
 
 msgid "Fix Steam installation"
 msgstr ""
 
+#, fuzzy
 msgid "Make search asynchronous"
-msgstr ""
+msgstr "検索を非同期にする"
 
 #, fuzzy
 #~ msgid "App Center"
