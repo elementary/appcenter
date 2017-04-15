@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-29 16:53-0700\n"
+"POT-Creation-Date: 2017-04-02 13:03-0700\n"
 "PO-Revision-Date: 2017-01-19 09:21+0000\n"
 "Last-Translator: Panan <panan25444@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,19 +14,35 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 "X-Generator: Launchpad (build 18331)\n"
 
-#: ../src/Application.vala:39
+#: ../src/Application.vala:42
 msgid "App Center"
 msgstr "App Center"
 
-#: ../src/Application.vala:57
+#: ../src/Application.vala:60
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
 "  Panan https://launchpad.net/~panan25444\n"
 "  Rockworld https://launchpad.net/~rockrock2222222"
 
-#: ../src/Application.vala:132
+#: ../src/Application.vala:138
 msgid "Specified link '%s' could not be found, searching instead"
+msgstr ""
+
+#: ../src/Application.vala:207
+msgid "Application installed"
+msgstr "ติดตั้งโปรแกรมแล้ว"
+
+#: ../src/Application.vala:208
+msgid "%s has been successfully installed"
+msgstr "%s ได้ถูกติดตั้งอย่างสมบูรณ์แล้ว"
+
+#: ../src/Application.vala:224
+msgid "Close"
+msgstr ""
+
+#: ../src/Application.vala:226
+msgid "There Was An Error Installing %s"
 msgstr ""
 
 #: ../src/Dialogs/RestartDialog.vala:40
@@ -71,7 +87,7 @@ msgstr ""
 msgid "Retry"
 msgstr ""
 
-#: ../src/Views/InstalledView.vala:45 ../src/MainWindow.vala:126
+#: ../src/Views/InstalledView.vala:45 ../src/MainWindow.vala:123
 msgctxt "view"
 msgid "Updates"
 msgstr "อัปเดต"
@@ -81,59 +97,6 @@ msgstr "อัปเดต"
 msgctxt "view"
 msgid "Search"
 msgstr "ค้นหา"
-
-#: ../src/Views/CategoryView.vala:70 ../src/Views/CategoryView.vala:77
-#: ../src/Views/Homepage.vala:68 ../src/MainWindow.vala:216
-msgid "Categories"
-msgstr "หมวดหมู่"
-
-#: ../src/Views/CategoryView.vala:118
-msgid "Audio"
-msgstr "เสียง"
-
-#: ../src/Views/CategoryView.vala:129
-msgid "Development"
-msgstr "การพัฒนาโปรแกรม"
-
-#: ../src/Views/CategoryView.vala:140
-msgid "Accessories"
-msgstr "เครื่องใช้ไม้สอย"
-
-#: ../src/Views/CategoryView.vala:151
-msgid "Office"
-msgstr "สำนักงาน"
-
-#: ../src/Views/CategoryView.vala:162
-msgid "System"
-msgstr "ระบบ"
-
-#: ../src/Views/CategoryView.vala:173
-msgid "Video"
-msgstr "วิดีทัศน์"
-
-#: ../src/Views/CategoryView.vala:184
-msgid "Graphics"
-msgstr "กราฟิก"
-
-#: ../src/Views/CategoryView.vala:194
-msgid "Games"
-msgstr "เกม"
-
-#: ../src/Views/CategoryView.vala:205
-msgid "Education"
-msgstr "การศึกษา"
-
-#: ../src/Views/CategoryView.vala:215
-msgid "Internet"
-msgstr "อินเทอร์เน็ต"
-
-#: ../src/Views/CategoryView.vala:226
-msgid "Science & Engineering"
-msgstr "วิทยาศาสตร์และวิศวกรรมศาสตร์"
-
-#: ../src/Views/CategoryView.vala:236
-msgid "Universal Access"
-msgstr "การเข้าใช้งานสำหรับผู้ทุพพลภาพ"
 
 #: ../src/Views/AppListView.vala:123
 msgid "A restart is required to complete the installation of updates"
@@ -171,17 +134,75 @@ msgstr ""
 msgid "Help"
 msgstr ""
 
-#: ../src/Widgets/Banner.vala:163 ../src/MainWindow.vala:103
+#: ../src/Views/Homepage.vala:79
+msgid "Categories"
+msgstr "หมวดหมู่"
+
+#: ../src/Views/Homepage.vala:123 ../src/Views/Homepage.vala:130
+#: ../src/MainWindow.vala:122 ../src/MainWindow.vala:163
+#: ../src/MainWindow.vala:205
+msgid "Home"
+msgstr ""
+
+#: ../src/Widgets/Banner.vala:99 ../src/MainWindow.vala:103
 msgid "AppCenter"
 msgstr "ศูนย์รวมแอพ"
 
-#: ../src/Widgets/Banner.vala:164
+#: ../src/Widgets/Banner.vala:106
 msgid "An open, pay-what-you-want app store"
 msgstr ""
 
-#: ../src/Widgets/Banner.vala:165
+#: ../src/Widgets/Banner.vala:119
 msgid "Get the apps that you need at a price you can afford."
 msgstr ""
+
+#: ../src/Widgets/CategoryFlowBox.vala:29
+msgid "Audio"
+msgstr "เสียง"
+
+#: ../src/Widgets/CategoryFlowBox.vala:30
+msgid "Development"
+msgstr "การพัฒนาโปรแกรม"
+
+#: ../src/Widgets/CategoryFlowBox.vala:31
+msgid "Accessories"
+msgstr "เครื่องใช้ไม้สอย"
+
+#: ../src/Widgets/CategoryFlowBox.vala:32
+msgid "Office"
+msgstr "สำนักงาน"
+
+#: ../src/Widgets/CategoryFlowBox.vala:33
+msgid "System"
+msgstr "ระบบ"
+
+#: ../src/Widgets/CategoryFlowBox.vala:34
+msgid "Video"
+msgstr "วิดีทัศน์"
+
+#: ../src/Widgets/CategoryFlowBox.vala:35
+msgid "Graphics"
+msgstr "กราฟิก"
+
+#: ../src/Widgets/CategoryFlowBox.vala:36
+msgid "Games"
+msgstr "เกม"
+
+#: ../src/Widgets/CategoryFlowBox.vala:37
+msgid "Education"
+msgstr "การศึกษา"
+
+#: ../src/Widgets/CategoryFlowBox.vala:38
+msgid "Internet"
+msgstr "อินเทอร์เน็ต"
+
+#: ../src/Widgets/CategoryFlowBox.vala:39
+msgid "Science & Engineering"
+msgstr "วิทยาศาสตร์และวิศวกรรมศาสตร์"
+
+#: ../src/Widgets/CategoryFlowBox.vala:40
+msgid "Universal Access"
+msgstr "การเข้าใช้งานสำหรับผู้ทุพพลภาพ"
 
 #: ../src/Widgets/HumbleButton.vala:85
 #: ../src/Widgets/AbstractAppContainer.vala:186
@@ -243,34 +264,14 @@ msgstr "กำลังค้นหาอัปเดต..."
 msgid "Up to Date"
 msgstr "ล่าสุดแล้ว"
 
-#: ../src/MainWindow.vala:114 ../src/MainWindow.vala:142
-#: ../src/MainWindow.vala:308 ../src/MainWindow.vala:330
+#: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
+#: ../src/MainWindow.vala:297 ../src/MainWindow.vala:319
 msgid "Search Apps"
 msgstr "ค้นหาแอป"
 
-#: ../src/MainWindow.vala:125 ../src/MainWindow.vala:157
-msgid "Home"
-msgstr ""
-
-#: ../src/MainWindow.vala:290
+#: ../src/MainWindow.vala:279
 msgid "Search %s"
 msgstr "ค้นหา %s"
-
-#: ../src/MainWindow.vala:351
-msgid "Application installed"
-msgstr "ติดตั้งโปรแกรมแล้ว"
-
-#: ../src/MainWindow.vala:352
-msgid "%s has been successfully installed"
-msgstr "%s ได้ถูกติดตั้งอย่างสมบูรณ์แล้ว"
-
-#: ../src/MainWindow.vala:371
-msgid "Close"
-msgstr ""
-
-#: ../src/MainWindow.vala:373
-msgid "There Was An Error Installing %s"
-msgstr ""
 
 #: ../src/Core/Client.vala:90
 msgid "Operating System Updates"

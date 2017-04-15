@@ -1,5 +1,5 @@
 # AppCenter
-[![l10n](https://l10n.elementary.io/widgets/desktop/appcenter/svg-badge.svg)](https://l10n.elementary.io/projects/desktop/appcenter)
+[![Translation status](https://l10n.elementary.io/widgets/appcenter/-/svg-badge.svg)](https://l10n.elementary.io/projects/appcenter/?utm_source=widget)
 [![Bountysource](https://www.bountysource.com/badge/tracker?tracker_id=57667267)](https://www.bountysource.com/teams/elementary/issues?tracker_ids=57667267)
 
 ## Building, Testing, and Installation
@@ -12,7 +12,9 @@ You'll need the following dependencies:
 * libgee-0.8-dev
 * libgranite-dev
 * libgtk-3-dev
+* libjson-glib-dev
 * libpackagekit-glib2-dev
+* libsoup2.4-dev
 * libunity-dev
 * libxml2-dev
 * libxml2-utils

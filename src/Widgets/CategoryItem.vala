@@ -286,5 +286,9 @@ public class AppCenter.Widgets.CategoryItem : Gtk.FlowBoxChild {
         } else {
             name_label.label = app_category.name;
         }
+
+        if (theme_name == "science") {
+            name_label.justify = Gtk.Justification.CENTER;
+        }
     }
 }

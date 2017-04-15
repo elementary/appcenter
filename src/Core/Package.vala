@@ -37,6 +37,7 @@ public class AppCenterCore.Package : Object {
     }
 
     public const string OS_UPDATES_ID = "xxx-os-updates";
+    public const string DEFAULT_PRICE_DOLLARS = "1";
 
     public AppStream.Component component { get; construct; }
     public ChangeInformation change_information { public get; private set; }
@@ -98,6 +99,8 @@ public class AppCenterCore.Package : Object {
     private string? summary = null;
     private string? color_primary = null;
     private string? color_primary_text = null;
+    private string? payments_key = null;
+    private string? suggested_amount = null;
     private string? _latest_version = null;
     public string? latest_version {
         private get { return _latest_version; }
@@ -368,6 +371,24 @@ public class AppCenterCore.Package : Object {
         } else {
             color_primary_text = component.get_custom_value ("x-appcenter-color-primary-text");
             return color_primary_text;
+        }
+    }
+
+    public string? get_payments_key () {
+        if (payments_key != null) {
+            return payments_key;
+        } else {
+            payments_key = component.get_custom_value ("x-appcenter-stripe");
+            return payments_key;
+        }
+    }
+
+    public string get_suggested_amount () {
+        if (suggested_amount != null) {
+            return suggested_amount;
+        } else {
+            suggested_amount = component.get_custom_value ("x-appcenter-suggested-price");
+            return suggested_amount == null ? DEFAULT_PRICE_DOLLARS : suggested_amount;
         }
     }
 
