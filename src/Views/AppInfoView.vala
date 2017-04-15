@@ -20,6 +20,8 @@
 
 namespace AppCenter.Views {
     public class AppInfoView : AppCenter.AbstractAppContainer {
+        GenericArray<AppStream.Screenshot> screenshots;
+
         Gtk.Grid links_grid;
         Gtk.Box header_box;
         Gtk.Image app_screenshot;
@@ -36,28 +38,32 @@ namespace AppCenter.Views {
             image.margin_start = 6;
             image.pixel_size = 128;
 
-            app_screenshot = new Gtk.Image ();
-            app_screenshot.width_request = 800;
-            app_screenshot.height_request = 600;
-            app_screenshot.icon_name = "image-x-generic";
-            app_screenshot.halign = Gtk.Align.CENTER;
+            screenshots = package.component.get_screenshots ();
 
-            var app_screenshot_spinner = new Gtk.Spinner ();
-            app_screenshot_spinner.halign = Gtk.Align.CENTER;
-            app_screenshot_spinner.valign = Gtk.Align.CENTER;
-            app_screenshot_spinner.active = true;
+            if (screenshots.length > 0) {
+                app_screenshot = new Gtk.Image ();
+                app_screenshot.width_request = 800;
+                app_screenshot.height_request = 600;
+                app_screenshot.icon_name = "image-x-generic";
+                app_screenshot.halign = Gtk.Align.CENTER;
 
-            app_screenshot_not_found = new Gtk.Label (_("Screenshot Not Available"));
-            app_screenshot_not_found.get_style_context ().add_class (Gtk.STYLE_CLASS_BACKGROUND);
-            app_screenshot_not_found.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-            app_screenshot_not_found.get_style_context ().add_class ("h2");
+                var app_screenshot_spinner = new Gtk.Spinner ();
+                app_screenshot_spinner.halign = Gtk.Align.CENTER;
+                app_screenshot_spinner.valign = Gtk.Align.CENTER;
+                app_screenshot_spinner.active = true;
 
-            screenshot_stack = new Gtk.Stack ();
-            screenshot_stack.margin_bottom = 24;
-            screenshot_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
-            screenshot_stack.add (app_screenshot_spinner);
-            screenshot_stack.add (app_screenshot);
-            screenshot_stack.add (app_screenshot_not_found);
+                app_screenshot_not_found = new Gtk.Label (_("Screenshot Not Available"));
+                app_screenshot_not_found.get_style_context ().add_class (Gtk.STYLE_CLASS_BACKGROUND);
+                app_screenshot_not_found.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+                app_screenshot_not_found.get_style_context ().add_class ("h2");
+
+                screenshot_stack = new Gtk.Stack ();
+                screenshot_stack.margin_bottom = 24;
+                screenshot_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
+                screenshot_stack.add (app_screenshot_spinner);
+                screenshot_stack.add (app_screenshot);
+                screenshot_stack.add (app_screenshot_not_found);
+            }
 
             package_name = new Gtk.Label (null);
             package_name.margin_top = 12;
@@ -105,7 +111,11 @@ namespace AppCenter.Views {
             content_grid.margin_top = 48;
             content_grid.row_spacing = 24;
             content_grid.orientation = Gtk.Orientation.VERTICAL;
-            content_grid.add (screenshot_stack);
+
+            if (screenshots.length > 0) {
+                content_grid.add (screenshot_stack);
+            }
+
             content_grid.add (package_summary);
             content_grid.add (app_description);
             content_grid.add (links_grid);
@@ -138,7 +148,8 @@ namespace AppCenter.Views {
         }
 
         public AppInfoView (AppCenterCore.Package package) {
-            this.package = package;
+            Object (package: package);
+
             set_up_package (128);
 
             parse_description (package.component.get_description ());
@@ -253,9 +264,8 @@ namespace AppCenter.Views {
 
                 string url = null;
                 uint max_size = 0U;
-                var screenshots = package.component.get_screenshots ();
+
                 if (screenshots.length == 0) {
-                    screenshot_stack.visible_child = app_screenshot_not_found;
                     return null;
                 }
 

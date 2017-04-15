@@ -19,7 +19,7 @@
 
 namespace AppCenter {
     public abstract class AbstractAppContainer : Gtk.Grid {
-        public AppCenterCore.Package package;
+        public AppCenterCore.Package package { get; construct set; }
 
         protected Gtk.Image image;
         protected Gtk.Label package_name;
