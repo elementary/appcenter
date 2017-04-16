@@ -2,24 +2,25 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-29 16:53-0700\n"
-"PO-Revision-Date: 2017-02-19 15:04+0000\n"
-"Last-Translator: neiron13 <Unknown>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2017-04-02 13:03-0700\n"
+"PO-Revision-Date: 2017-04-09 09:37+0000\n"
+"Last-Translator: Kseniia Shimanska <kshimanska@gmail.com>\n"
+"Language-Team: Ukrainian "
+"<http://weblate.elementary.io/projects/desktop/appcenter/uk/>\n"
+"Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
-"X-Generator: Launchpad (build 18331)\n"
 
-#: ../src/Application.vala:39
+#: ../src/Application.vala:42
 msgid "App Center"
 msgstr "Центр програмного забезпечення"
 
-#: ../src/Application.vala:57
+#: ../src/Application.vala:60
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
@@ -36,21 +37,38 @@ msgstr ""
 "  elementaryart (old) https://launchpad.net/~elementaryart\n"
 "  neiron13 https://launchpad.net/~heneral"
 
-#: ../src/Application.vala:132
+#: ../src/Application.vala:138
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr ""
+msgstr "Вказане посилання «%s» не знайдено, пошук заміни"
+
+#: ../src/Application.vala:207
+msgid "Application installed"
+msgstr "Додаток встановлено"
+
+#: ../src/Application.vala:208
+msgid "%s has been successfully installed"
+msgstr "%s був успішно встановлений"
+
+#: ../src/Application.vala:224
+msgid "Close"
+msgstr "Закрити"
+
+#: ../src/Application.vala:226
+msgid "There Was An Error Installing %s"
+msgstr "Помилка встановлення %s"
 
 #: ../src/Dialogs/RestartDialog.vala:40
+#, fuzzy
 msgid "Are you sure you want to Restart?"
-msgstr ""
+msgstr "Ви впевнені що хочете перезапустити?"
 
 #: ../src/Dialogs/RestartDialog.vala:41
 msgid "This will close all open applications and restart this device."
-msgstr ""
+msgstr "Всі програми буде закрито, а пристрій перезавантажено."
 
 #: ../src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
-msgstr ""
+msgstr "Перезавантажити"
 
 #: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:147
 #: ../src/Dialogs/StripeDialog.vala:264
@@ -60,29 +78,29 @@ msgstr "Скасувати"
 
 #: ../src/Dialogs/StripeDialog.vala:149 ../src/Dialogs/StripeDialog.vala:263
 msgid "Pay $%s.00"
-msgstr ""
+msgstr "Оплатити $%s.00"
 
 #: ../src/Dialogs/StripeDialog.vala:194
 msgid "Processing"
-msgstr ""
+msgstr "Обробка"
 
 #: ../src/Dialogs/StripeDialog.vala:219
 msgid "There Was a Problem Processing Your Payment"
-msgstr ""
+msgstr "Проблема в обробці вашого платежу"
 
 #: ../src/Dialogs/StripeDialog.vala:225
 msgid "Please review your payment info and try again."
-msgstr ""
+msgstr "Будь-ласка перегляньте інформацію вашого платежу та спробуйте ще раз."
 
 #: ../src/Dialogs/StripeDialog.vala:255
 msgid "Pay Later"
-msgstr ""
+msgstr "Оплатити пізніше"
 
 #: ../src/Dialogs/StripeDialog.vala:256
 msgid "Retry"
-msgstr ""
+msgstr "Спробувати ще раз"
 
-#: ../src/Views/InstalledView.vala:45 ../src/MainWindow.vala:126
+#: ../src/Views/InstalledView.vala:45 ../src/MainWindow.vala:123
 msgctxt "view"
 msgid "Updates"
 msgstr "Оновленння"
@@ -93,66 +111,13 @@ msgctxt "view"
 msgid "Search"
 msgstr "Знайти"
 
-#: ../src/Views/CategoryView.vala:70 ../src/Views/CategoryView.vala:77
-#: ../src/Views/Homepage.vala:68 ../src/MainWindow.vala:216
-msgid "Categories"
-msgstr "Категорії"
-
-#: ../src/Views/CategoryView.vala:118
-msgid "Audio"
-msgstr "Аудіо"
-
-#: ../src/Views/CategoryView.vala:129
-msgid "Development"
-msgstr "Розробка"
-
-#: ../src/Views/CategoryView.vala:140
-msgid "Accessories"
-msgstr "Приладдя"
-
-#: ../src/Views/CategoryView.vala:151
-msgid "Office"
-msgstr "Офіс"
-
-#: ../src/Views/CategoryView.vala:162
-msgid "System"
-msgstr "Система"
-
-#: ../src/Views/CategoryView.vala:173
-msgid "Video"
-msgstr "Відео"
-
-#: ../src/Views/CategoryView.vala:184
-msgid "Graphics"
-msgstr "Графіка"
-
-#: ../src/Views/CategoryView.vala:194
-msgid "Games"
-msgstr "Ігри"
-
-#: ../src/Views/CategoryView.vala:205
-msgid "Education"
-msgstr "Освіта"
-
-#: ../src/Views/CategoryView.vala:215
-msgid "Internet"
-msgstr "Інтернет"
-
-#: ../src/Views/CategoryView.vala:226
-msgid "Science & Engineering"
-msgstr "Наука та інженерна справа"
-
-#: ../src/Views/CategoryView.vala:236
-msgid "Universal Access"
-msgstr "Універсальний доступ"
-
 #: ../src/Views/AppListView.vala:123
 msgid "A restart is required to complete the installation of updates"
-msgstr ""
+msgstr "Перезавантаження необхідне для завершення встановлення оновлень"
 
 #: ../src/Views/AppListView.vala:125
 msgid "Restart Now"
-msgstr ""
+msgstr "Перезавантажити зараз"
 
 #: ../src/Views/AppListView.vala:210
 msgid "Update All"
@@ -167,38 +132,97 @@ msgid "Extensions:"
 msgstr "Розширення:"
 
 #: ../src/Views/AppInfoView.vala:164
-#, fuzzy
 msgid "Homepage"
 msgstr "Домашня сторінка"
 
 #: ../src/Views/AppInfoView.vala:171
 msgid "Suggest Translations"
-msgstr ""
+msgstr "Запропонувати переклад"
 
 #: ../src/Views/AppInfoView.vala:178
 msgid "Report a Problem"
-msgstr ""
+msgstr "Повідомити про проблему"
 
 #: ../src/Views/AppInfoView.vala:185
 msgid "Help"
-msgstr ""
+msgstr "Допомога"
 
-#: ../src/Widgets/Banner.vala:163 ../src/MainWindow.vala:103
+#: ../src/Views/Homepage.vala:79
+msgid "Categories"
+msgstr "Категорії"
+
+#: ../src/Views/Homepage.vala:123 ../src/Views/Homepage.vala:130
+#: ../src/MainWindow.vala:122 ../src/MainWindow.vala:163
+#: ../src/MainWindow.vala:205
+msgid "Home"
+msgstr "Домашня сторінка"
+
+#: ../src/Widgets/Banner.vala:99 ../src/MainWindow.vala:103
 msgid "AppCenter"
 msgstr "Центр програм"
 
-#: ../src/Widgets/Banner.vala:164
+#: ../src/Widgets/Banner.vala:106
+#, fuzzy
 msgid "An open, pay-what-you-want app store"
-msgstr ""
+msgstr "Відкритий \"Плати що хочеш\" магазин"
 
-#: ../src/Widgets/Banner.vala:165
+#: ../src/Widgets/Banner.vala:119
+#, fuzzy
 msgid "Get the apps that you need at a price you can afford."
-msgstr ""
+msgstr "Отримуй додатки які тобі необхідно за ціну, яку ти можеш запропонувати"
+
+#: ../src/Widgets/CategoryFlowBox.vala:29
+msgid "Audio"
+msgstr "Аудіо"
+
+#: ../src/Widgets/CategoryFlowBox.vala:30
+msgid "Development"
+msgstr "Розробка"
+
+#: ../src/Widgets/CategoryFlowBox.vala:31
+msgid "Accessories"
+msgstr "Приладдя"
+
+#: ../src/Widgets/CategoryFlowBox.vala:32
+msgid "Office"
+msgstr "Офіс"
+
+#: ../src/Widgets/CategoryFlowBox.vala:33
+msgid "System"
+msgstr "Система"
+
+#: ../src/Widgets/CategoryFlowBox.vala:34
+msgid "Video"
+msgstr "Відео"
+
+#: ../src/Widgets/CategoryFlowBox.vala:35
+msgid "Graphics"
+msgstr "Графіка"
+
+#: ../src/Widgets/CategoryFlowBox.vala:36
+msgid "Games"
+msgstr "Ігри"
+
+#: ../src/Widgets/CategoryFlowBox.vala:37
+msgid "Education"
+msgstr "Освіта"
+
+#: ../src/Widgets/CategoryFlowBox.vala:38
+msgid "Internet"
+msgstr "Інтернет"
+
+#: ../src/Widgets/CategoryFlowBox.vala:39
+msgid "Science & Engineering"
+msgstr "Наука та інженерна справа"
+
+#: ../src/Widgets/CategoryFlowBox.vala:40
+msgid "Universal Access"
+msgstr "Універсальний доступ"
 
 #: ../src/Widgets/HumbleButton.vala:85
 #: ../src/Widgets/AbstractAppContainer.vala:186
 msgid "Free"
-msgstr ""
+msgstr "Безкоштовно"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: ../src/Widgets/HumbleButton.vala:152
@@ -257,35 +281,14 @@ msgstr "Пошук оновлень"
 msgid "Up to Date"
 msgstr "Найновіші"
 
-#: ../src/MainWindow.vala:114 ../src/MainWindow.vala:142
-#: ../src/MainWindow.vala:308 ../src/MainWindow.vala:330
+#: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
+#: ../src/MainWindow.vala:297 ../src/MainWindow.vala:319
 msgid "Search Apps"
 msgstr "Шукати додатки"
 
-#: ../src/MainWindow.vala:125 ../src/MainWindow.vala:157
-#, fuzzy
-msgid "Home"
-msgstr "Домашня сторінка"
-
-#: ../src/MainWindow.vala:290
+#: ../src/MainWindow.vala:279
 msgid "Search %s"
 msgstr "Пошук %s"
-
-#: ../src/MainWindow.vala:351
-msgid "Application installed"
-msgstr "Додаток встановлено"
-
-#: ../src/MainWindow.vala:352
-msgid "%s has been successfully installed"
-msgstr "%s був успішно встановлений"
-
-#: ../src/MainWindow.vala:371
-msgid "Close"
-msgstr ""
-
-#: ../src/MainWindow.vala:373
-msgid "There Was An Error Installing %s"
-msgstr ""
 
 #: ../src/Core/Client.vala:90
 msgid "Operating System Updates"
@@ -315,7 +318,7 @@ msgstr ""
 
 #: ../src/Core/Client.vala:374
 msgid "Please restart your system to finalize updates"
-msgstr ""
+msgstr "Будь-ласка, перезавантажте систему для завершення оновлення"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"

@@ -2,31 +2,48 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-29 16:53-0700\n"
-"PO-Revision-Date: 2017-01-26 20:10+0000\n"
-"Last-Translator: Jiri Grönroos <Unknown>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2017-04-02 13:03-0700\n"
+"PO-Revision-Date: 2017-04-08 19:55+0000\n"
+"Last-Translator: Isak Westerlund <isak1096@gmail.com>\n"
+"Language-Team: Finnish "
+"<http://weblate.elementary.io/projects/desktop/appcenter/fi/>\n"
+"Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
-"X-Generator: Launchpad (build 18331)\n"
 
-#: ../src/Application.vala:39
+#: ../src/Application.vala:42
 msgid "App Center"
 msgstr "Sovelluskeskus"
 
-#: ../src/Application.vala:57
+#: ../src/Application.vala:60
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
 "  Jiri Grönroos https://launchpad.net/~jiri-gronroos\n"
 "  elementaryart (old) https://launchpad.net/~elementaryart"
 
-#: ../src/Application.vala:132
+#: ../src/Application.vala:138
 msgid "Specified link '%s' could not be found, searching instead"
+msgstr ""
+
+#: ../src/Application.vala:207
+msgid "Application installed"
+msgstr "Sovellus asennettu"
+
+#: ../src/Application.vala:208
+msgid "%s has been successfully installed"
+msgstr "%s on asennettu onnistuneesti"
+
+#: ../src/Application.vala:224
+msgid "Close"
+msgstr ""
+
+#: ../src/Application.vala:226
+msgid "There Was An Error Installing %s"
 msgstr ""
 
 #: ../src/Dialogs/RestartDialog.vala:40
@@ -71,7 +88,7 @@ msgstr ""
 msgid "Retry"
 msgstr ""
 
-#: ../src/Views/InstalledView.vala:45 ../src/MainWindow.vala:126
+#: ../src/Views/InstalledView.vala:45 ../src/MainWindow.vala:123
 msgctxt "view"
 msgid "Updates"
 msgstr "Päivitykset"
@@ -82,66 +99,13 @@ msgctxt "view"
 msgid "Search"
 msgstr "Haku"
 
-#: ../src/Views/CategoryView.vala:70 ../src/Views/CategoryView.vala:77
-#: ../src/Views/Homepage.vala:68 ../src/MainWindow.vala:216
-msgid "Categories"
-msgstr "Luokat"
-
-#: ../src/Views/CategoryView.vala:118
-msgid "Audio"
-msgstr "Ääni"
-
-#: ../src/Views/CategoryView.vala:129
-msgid "Development"
-msgstr "Kehitys"
-
-#: ../src/Views/CategoryView.vala:140
-msgid "Accessories"
-msgstr "Apuohjelmat"
-
-#: ../src/Views/CategoryView.vala:151
-msgid "Office"
-msgstr "Toimisto"
-
-#: ../src/Views/CategoryView.vala:162
-msgid "System"
-msgstr "Järjestelmä"
-
-#: ../src/Views/CategoryView.vala:173
-msgid "Video"
-msgstr "Video"
-
-#: ../src/Views/CategoryView.vala:184
-msgid "Graphics"
-msgstr "Grafiikka"
-
-#: ../src/Views/CategoryView.vala:194
-msgid "Games"
-msgstr "Pelit"
-
-#: ../src/Views/CategoryView.vala:205
-msgid "Education"
-msgstr "Koulutus"
-
-#: ../src/Views/CategoryView.vala:215
-msgid "Internet"
-msgstr "Internet"
-
-#: ../src/Views/CategoryView.vala:226
-msgid "Science & Engineering"
-msgstr "Tiede ja suunnittelu"
-
-#: ../src/Views/CategoryView.vala:236
-msgid "Universal Access"
-msgstr "Esteettömyys"
-
 #: ../src/Views/AppListView.vala:123
 msgid "A restart is required to complete the installation of updates"
 msgstr ""
 
 #: ../src/Views/AppListView.vala:125
 msgid "Restart Now"
-msgstr ""
+msgstr "Käynnistä uudelleen nyt"
 
 #: ../src/Views/AppListView.vala:210
 msgid "Update All"
@@ -172,17 +136,76 @@ msgstr ""
 msgid "Help"
 msgstr ""
 
-#: ../src/Widgets/Banner.vala:163 ../src/MainWindow.vala:103
+#: ../src/Views/Homepage.vala:79
+msgid "Categories"
+msgstr "Luokat"
+
+#: ../src/Views/Homepage.vala:123 ../src/Views/Homepage.vala:130
+#: ../src/MainWindow.vala:122 ../src/MainWindow.vala:163
+#: ../src/MainWindow.vala:205
+#, fuzzy
+msgid "Home"
+msgstr "Etusivu"
+
+#: ../src/Widgets/Banner.vala:99 ../src/MainWindow.vala:103
 msgid "AppCenter"
 msgstr "Sovelluskeskus"
 
-#: ../src/Widgets/Banner.vala:164
+#: ../src/Widgets/Banner.vala:106
 msgid "An open, pay-what-you-want app store"
 msgstr ""
 
-#: ../src/Widgets/Banner.vala:165
+#: ../src/Widgets/Banner.vala:119
 msgid "Get the apps that you need at a price you can afford."
-msgstr ""
+msgstr "Tarvitsemasi ohjelmat hinnalla joka sopii sinulle."
+
+#: ../src/Widgets/CategoryFlowBox.vala:29
+msgid "Audio"
+msgstr "Ääni"
+
+#: ../src/Widgets/CategoryFlowBox.vala:30
+msgid "Development"
+msgstr "Kehitys"
+
+#: ../src/Widgets/CategoryFlowBox.vala:31
+msgid "Accessories"
+msgstr "Apuohjelmat"
+
+#: ../src/Widgets/CategoryFlowBox.vala:32
+msgid "Office"
+msgstr "Toimisto"
+
+#: ../src/Widgets/CategoryFlowBox.vala:33
+msgid "System"
+msgstr "Järjestelmä"
+
+#: ../src/Widgets/CategoryFlowBox.vala:34
+msgid "Video"
+msgstr "Video"
+
+#: ../src/Widgets/CategoryFlowBox.vala:35
+msgid "Graphics"
+msgstr "Grafiikka"
+
+#: ../src/Widgets/CategoryFlowBox.vala:36
+msgid "Games"
+msgstr "Pelit"
+
+#: ../src/Widgets/CategoryFlowBox.vala:37
+msgid "Education"
+msgstr "Koulutus"
+
+#: ../src/Widgets/CategoryFlowBox.vala:38
+msgid "Internet"
+msgstr "Internet"
+
+#: ../src/Widgets/CategoryFlowBox.vala:39
+msgid "Science & Engineering"
+msgstr "Tiede ja suunnittelu"
+
+#: ../src/Widgets/CategoryFlowBox.vala:40
+msgid "Universal Access"
+msgstr "Esteettömyys"
 
 #: ../src/Widgets/HumbleButton.vala:85
 #: ../src/Widgets/AbstractAppContainer.vala:186
@@ -209,7 +232,7 @@ msgstr "Avaa"
 
 #: ../src/Widgets/AbstractAppContainer.vala:157
 msgid "The %s Developers"
-msgstr ""
+msgstr "%s Kehittäjät"
 
 #: ../src/Widgets/AbstractAppContainer.vala:161
 msgid "by %s"
@@ -245,35 +268,14 @@ msgstr "Etsitään päivityksiä…"
 msgid "Up to Date"
 msgstr "Ajan tasalla"
 
-#: ../src/MainWindow.vala:114 ../src/MainWindow.vala:142
-#: ../src/MainWindow.vala:308 ../src/MainWindow.vala:330
+#: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
+#: ../src/MainWindow.vala:297 ../src/MainWindow.vala:319
 msgid "Search Apps"
 msgstr "Etsi sovelluksia"
 
-#: ../src/MainWindow.vala:125 ../src/MainWindow.vala:157
-#, fuzzy
-msgid "Home"
-msgstr "Etusivu"
-
-#: ../src/MainWindow.vala:290
+#: ../src/MainWindow.vala:279
 msgid "Search %s"
 msgstr "Etsi %s"
-
-#: ../src/MainWindow.vala:351
-msgid "Application installed"
-msgstr "Sovellus asennettu"
-
-#: ../src/MainWindow.vala:352
-msgid "%s has been successfully installed"
-msgstr "%s on asennettu onnistuneesti"
-
-#: ../src/MainWindow.vala:371
-msgid "Close"
-msgstr ""
-
-#: ../src/MainWindow.vala:373
-msgid "There Was An Error Installing %s"
-msgstr ""
 
 #: ../src/Core/Client.vala:90
 msgid "Operating System Updates"

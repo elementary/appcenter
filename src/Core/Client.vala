@@ -217,7 +217,12 @@ public class AppCenterCore.Client : Object {
                 var package = package_list.get (pkg_name);
                 if (package != null) {
                     package.latest_version = pk_package.get_version ();
+                    package.change_information.changes.clear ();
+                    package.change_information.details.clear ();
                 }
+
+                os_updates.change_information.changes.clear ();
+                os_updates.change_information.details.clear ();
             });
 
             // We need a null to show to PackageKit that it's then end of the array.
