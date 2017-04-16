@@ -74,7 +74,7 @@ public class AppCenterCore.Client : Object {
             appstream_pool.get_components ().foreach ((comp) => {
                 var package = new AppCenterCore.Package (comp);
                 foreach (var pkg_name in comp.get_pkgnames ()) {
-                    package_list.set (pkg_name, package);
+                    package_list[pkg_name] = package;
                 }
             });
         } catch (Error e) {
