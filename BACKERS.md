@@ -4,6 +4,7 @@ Thanks again to all of the backers of our [March 2017 IndieGoGo campaign](https:
     Aaron Dickey
     Adam Slavík
     adammakarucha
+    Adarsh Barik
     Aidan Stewart
     Alan Salisbury
     Alex Boutros
@@ -172,6 +173,7 @@ Thanks again to all of the backers of our [March 2017 IndieGoGo campaign](https:
     Michael Rampl
     Michael Terry
     Miguel Fontoura
+    Mike Wild
     Muhammad Fikri
     Nathan Caza
     Neal Gompa

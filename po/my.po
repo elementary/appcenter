@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-29 16:53-0700\n"
+"POT-Creation-Date: 2017-04-02 13:03-0700\n"
 "PO-Revision-Date: 2016-06-26 17:02+0000\n"
 "Last-Translator: Bone Pyae Sone <bone.burma@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,18 +14,34 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 "X-Generator: Launchpad (build 18331)\n"
 
-#: ../src/Application.vala:39
+#: ../src/Application.vala:42
 msgid "App Center"
 msgstr "App စင်တာ"
 
-#: ../src/Application.vala:57
+#: ../src/Application.vala:60
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
 "  Bone Pyae Sone https://launchpad.net/~bonepyaesone"
 
-#: ../src/Application.vala:132
+#: ../src/Application.vala:138
 msgid "Specified link '%s' could not be found, searching instead"
+msgstr ""
+
+#: ../src/Application.vala:207
+msgid "Application installed"
+msgstr "ထည့်သွင်းပြီး အပ္ပလီကေးရှင်းများ"
+
+#: ../src/Application.vala:208
+msgid "%s has been successfully installed"
+msgstr "%s အားအောင်မြင်စွာ ထည့်သွင်းပြီးပါပြီ"
+
+#: ../src/Application.vala:224
+msgid "Close"
+msgstr ""
+
+#: ../src/Application.vala:226
+msgid "There Was An Error Installing %s"
 msgstr ""
 
 #: ../src/Dialogs/RestartDialog.vala:40
@@ -70,7 +86,7 @@ msgstr ""
 msgid "Retry"
 msgstr ""
 
-#: ../src/Views/InstalledView.vala:45 ../src/MainWindow.vala:126
+#: ../src/Views/InstalledView.vala:45 ../src/MainWindow.vala:123
 msgctxt "view"
 msgid "Updates"
 msgstr "အသစ်ထွက်ရှိမှု့"
@@ -80,59 +96,6 @@ msgstr "အသစ်ထွက်ရှိမှု့"
 msgctxt "view"
 msgid "Search"
 msgstr "ရှာရန်"
-
-#: ../src/Views/CategoryView.vala:70 ../src/Views/CategoryView.vala:77
-#: ../src/Views/Homepage.vala:68 ../src/MainWindow.vala:216
-msgid "Categories"
-msgstr "အမျိုးအစားများ"
-
-#: ../src/Views/CategoryView.vala:118
-msgid "Audio"
-msgstr "အသံပိုင်း"
-
-#: ../src/Views/CategoryView.vala:129
-msgid "Development"
-msgstr "တီထွင်ဖန်တီး"
-
-#: ../src/Views/CategoryView.vala:140
-msgid "Accessories"
-msgstr "ထောက်ပံ့ပစ္စည်းများ"
-
-#: ../src/Views/CategoryView.vala:151
-msgid "Office"
-msgstr "ရုံးလုပ်ငန်းသုံး"
-
-#: ../src/Views/CategoryView.vala:162
-msgid "System"
-msgstr "စနစ်"
-
-#: ../src/Views/CategoryView.vala:173
-msgid "Video"
-msgstr "ဗီဒီယို"
-
-#: ../src/Views/CategoryView.vala:184
-msgid "Graphics"
-msgstr "ရုပ်ထွက်"
-
-#: ../src/Views/CategoryView.vala:194
-msgid "Games"
-msgstr "ဂိမ်းများ"
-
-#: ../src/Views/CategoryView.vala:205
-msgid "Education"
-msgstr "ပညာရေး"
-
-#: ../src/Views/CategoryView.vala:215
-msgid "Internet"
-msgstr "အင်တာနက်"
-
-#: ../src/Views/CategoryView.vala:226
-msgid "Science & Engineering"
-msgstr "သိပ္ပံနှင့် အင်ဂျင်နီယာပညာ"
-
-#: ../src/Views/CategoryView.vala:236
-msgid "Universal Access"
-msgstr "အားလုံးသုံးခွင့်"
 
 #: ../src/Views/AppListView.vala:123
 msgid "A restart is required to complete the installation of updates"
@@ -170,17 +133,75 @@ msgstr ""
 msgid "Help"
 msgstr ""
 
-#: ../src/Widgets/Banner.vala:163 ../src/MainWindow.vala:103
+#: ../src/Views/Homepage.vala:79
+msgid "Categories"
+msgstr "အမျိုးအစားများ"
+
+#: ../src/Views/Homepage.vala:123 ../src/Views/Homepage.vala:130
+#: ../src/MainWindow.vala:122 ../src/MainWindow.vala:163
+#: ../src/MainWindow.vala:205
+msgid "Home"
+msgstr ""
+
+#: ../src/Widgets/Banner.vala:99 ../src/MainWindow.vala:103
 msgid "AppCenter"
 msgstr "Appစင်တာ"
 
-#: ../src/Widgets/Banner.vala:164
+#: ../src/Widgets/Banner.vala:106
 msgid "An open, pay-what-you-want app store"
 msgstr ""
 
-#: ../src/Widgets/Banner.vala:165
+#: ../src/Widgets/Banner.vala:119
 msgid "Get the apps that you need at a price you can afford."
 msgstr ""
+
+#: ../src/Widgets/CategoryFlowBox.vala:29
+msgid "Audio"
+msgstr "အသံပိုင်း"
+
+#: ../src/Widgets/CategoryFlowBox.vala:30
+msgid "Development"
+msgstr "တီထွင်ဖန်တီး"
+
+#: ../src/Widgets/CategoryFlowBox.vala:31
+msgid "Accessories"
+msgstr "ထောက်ပံ့ပစ္စည်းများ"
+
+#: ../src/Widgets/CategoryFlowBox.vala:32
+msgid "Office"
+msgstr "ရုံးလုပ်ငန်းသုံး"
+
+#: ../src/Widgets/CategoryFlowBox.vala:33
+msgid "System"
+msgstr "စနစ်"
+
+#: ../src/Widgets/CategoryFlowBox.vala:34
+msgid "Video"
+msgstr "ဗီဒီယို"
+
+#: ../src/Widgets/CategoryFlowBox.vala:35
+msgid "Graphics"
+msgstr "ရုပ်ထွက်"
+
+#: ../src/Widgets/CategoryFlowBox.vala:36
+msgid "Games"
+msgstr "ဂိမ်းများ"
+
+#: ../src/Widgets/CategoryFlowBox.vala:37
+msgid "Education"
+msgstr "ပညာရေး"
+
+#: ../src/Widgets/CategoryFlowBox.vala:38
+msgid "Internet"
+msgstr "အင်တာနက်"
+
+#: ../src/Widgets/CategoryFlowBox.vala:39
+msgid "Science & Engineering"
+msgstr "သိပ္ပံနှင့် အင်ဂျင်နီယာပညာ"
+
+#: ../src/Widgets/CategoryFlowBox.vala:40
+msgid "Universal Access"
+msgstr "အားလုံးသုံးခွင့်"
 
 #: ../src/Widgets/HumbleButton.vala:85
 #: ../src/Widgets/AbstractAppContainer.vala:186
@@ -242,33 +263,13 @@ msgstr "ထပ်တိုးမြှင့်တင်မှုများအ
 msgid "Up to Date"
 msgstr "နောက်ဆုံးပေါ် ခေတ်မီ ပြင်ဆင်ပြီး"
 
-#: ../src/MainWindow.vala:114 ../src/MainWindow.vala:142
-#: ../src/MainWindow.vala:308 ../src/MainWindow.vala:330
+#: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
+#: ../src/MainWindow.vala:297 ../src/MainWindow.vala:319
 msgid "Search Apps"
 msgstr ""
 
-#: ../src/MainWindow.vala:125 ../src/MainWindow.vala:157
-msgid "Home"
-msgstr ""
-
-#: ../src/MainWindow.vala:290
+#: ../src/MainWindow.vala:279
 msgid "Search %s"
-msgstr ""
-
-#: ../src/MainWindow.vala:351
-msgid "Application installed"
-msgstr "ထည့်သွင်းပြီး အပ္ပလီကေးရှင်းများ"
-
-#: ../src/MainWindow.vala:352
-msgid "%s has been successfully installed"
-msgstr "%s အားအောင်မြင်စွာ ထည့်သွင်းပြီးပါပြီ"
-
-#: ../src/MainWindow.vala:371
-msgid "Close"
-msgstr ""
-
-#: ../src/MainWindow.vala:373
-msgid "There Was An Error Installing %s"
 msgstr ""
 
 #: ../src/Core/Client.vala:90

@@ -88,6 +88,7 @@ namespace AppCenter {
                             newest_banner.add_package (banner_package);
                         }
                         newest_banner.go_to_first ();
+                        switcher.show_all ();
                         switcher_revealer.set_reveal_child (true);
                         main_window.homepage_loaded ();
                         return false;

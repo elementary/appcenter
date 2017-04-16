@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2017-04-04 19:02+0000\n"
-"Last-Translator: Elias Secchi <elias.secchi@gmail.com>\n"
+"PO-Revision-Date: 2017-04-09 11:05+0000\n"
+"Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian "
 "<http://weblate.elementary.io/projects/desktop/appcenter/it/>\n"
 "Language: it\n"
@@ -23,21 +23,13 @@ msgstr "Centro applicazioni"
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
-"  Andrea https://launchpad.net/~guaccio2209\n"
-"  Bennici Piercarlo https://launchpad.net/~piercarlo-bennici-"
-"deactivatedaccount-deactivatedaccount\n"
 "  Fabio Zaramella https://launchpad.net/~fabiozaramella\n"
-"  Giuseppe Calabrese https://launchpad.net/~giuseppecal4\n"
-"  Jean Louis Salbego https://launchpad.net/~jlsalbego\n"
-"  Mario Guerriero https://launchpad.net/~mefrio-g\n"
-"  Vincenzo Celano https://launchpad.net/~v-celano\n"
-"  ekido https://launchpad.net/~ekido\n"
-"  elementaryart (old) https://launchpad.net/~elementaryart\n"
-"  nathan https://launchpad.net/~nathan95-b"
+"  Maxwell Barvian https://launchpad.net/~mbarvian-deactivatedaccount"
 
 #: ../src/Application.vala:138
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr ""
+"Il link specificato '%s' potrebbe non essere disponibile, prova a cercare"
 
 #: ../src/Application.vala:207
 msgid "Application installed"
@@ -62,7 +54,8 @@ msgstr "Sei sicuro di voler riavviare?"
 #: ../src/Dialogs/RestartDialog.vala:41
 msgid "This will close all open applications and restart this device."
 msgstr ""
-"Questo chiuderà tutte le applicazioni aperte e riavvierà il dispositivo."
+"Ciò comporterà la chiusura di tutte le applicazioni aperte e il riavvio del "
+"dispositivo."
 
 #: ../src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
@@ -80,15 +73,15 @@ msgstr "Paga $%s.00"
 
 #: ../src/Dialogs/StripeDialog.vala:194
 msgid "Processing"
-msgstr ""
+msgstr "Elaborazione in corso"
 
 #: ../src/Dialogs/StripeDialog.vala:219
 msgid "There Was a Problem Processing Your Payment"
-msgstr "C'è stato un problema col tuo pagamento"
+msgstr "C'è stato un problema nell'elaborazione del pagamento"
 
 #: ../src/Dialogs/StripeDialog.vala:225
 msgid "Please review your payment info and try again."
-msgstr "Per favore, ricontrolla le tue informazioni di pagamento e riprova."
+msgstr "Controlla le tue informazioni di pagamento e riprova."
 
 #: ../src/Dialogs/StripeDialog.vala:255
 msgid "Pay Later"
@@ -136,7 +129,7 @@ msgstr "Pagina principale"
 
 #: ../src/Views/AppInfoView.vala:171
 msgid "Suggest Translations"
-msgstr "Suggerisci traduzione"
+msgstr "Suggerisci traduzioni"
 
 #: ../src/Views/AppInfoView.vala:178
 msgid "Report a Problem"
@@ -162,7 +155,7 @@ msgstr "Centro applicazioni"
 
 #: ../src/Widgets/Banner.vala:106
 msgid "An open, pay-what-you-want app store"
-msgstr ""
+msgstr "Un negozio di applicazioni libero, dove decidi tu quanto pagare"
 
 #: ../src/Widgets/Banner.vala:119
 msgid "Get the apps that you need at a price you can afford."
@@ -225,12 +218,12 @@ msgstr ""
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: ../src/Widgets/HumbleButton.vala:152
 msgid "$%d.00"
-msgstr ""
+msgstr "$%d.00 USD"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: ../src/Widgets/HumbleButton.vala:155
 msgid "$%d"
-msgstr ""
+msgstr "$%d USD"
 
 #: ../src/Widgets/AbstractAppContainer.vala:102
 msgid "Uninstall"
@@ -242,7 +235,7 @@ msgstr "Apri"
 
 #: ../src/Widgets/AbstractAppContainer.vala:157
 msgid "The %s Developers"
-msgstr "Gli sviluppatori %s"
+msgstr "Gli sviluppatori di %s"
 
 #: ../src/Widgets/AbstractAppContainer.vala:161
 msgid "by %s"
@@ -274,7 +267,7 @@ msgstr "Dimensione: %s"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:105
 msgid "Searching for updates…"
-msgstr "Ricerca di aggiornamenti..."
+msgstr "Ricerca di aggiornamenti…"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:112
 msgid "Up to Date"
@@ -291,7 +284,7 @@ msgstr "Cerca %s"
 
 #: ../src/Core/Client.vala:90
 msgid "Operating System Updates"
-msgstr "Aggiornamenti del Sistema Operativo"
+msgstr "Aggiornamenti del sistema operativo"
 
 #: ../src/Core/Client.vala:91
 msgid "Updates to system components"
@@ -315,7 +308,7 @@ msgstr "Riavvio necessario"
 
 #: ../src/Core/Client.vala:374
 msgid "Please restart your system to finalize updates"
-msgstr "Per favore, Riavvia il sistema per completare gli aggiornamenti"
+msgstr "Riavvia il sistema per completare gli aggiornamenti"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"

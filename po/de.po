@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2017-04-08 15:38+0000\n"
-"Last-Translator: Max Mustermann <mustermann_23@posteo.eu>\n"
+"PO-Revision-Date: 2017-04-09 07:36+0000\n"
+"Last-Translator: quassy <quassy.github.io@gmail.com>\n"
 "Language-Team: German "
 "<http://weblate.elementary.io/projects/desktop/appcenter/de/>\n"
 "Language: de\n"
@@ -92,11 +92,11 @@ msgstr "In Bearbeitung"
 
 #: ../src/Dialogs/StripeDialog.vala:219
 msgid "There Was a Problem Processing Your Payment"
-msgstr ""
+msgstr "Beim Bearbeiten deiner Zahlung trat ein Fehler auf"
 
 #: ../src/Dialogs/StripeDialog.vala:225
 msgid "Please review your payment info and try again."
-msgstr ""
+msgstr "Bitte überprüfe deine Zahlungsinformationen und versuche es erneut."
 
 #: ../src/Dialogs/StripeDialog.vala:255
 msgid "Pay Later"
@@ -251,11 +251,11 @@ msgstr ""
 
 #: ../src/Widgets/AbstractAppContainer.vala:157
 msgid "The %s Developers"
-msgstr ""
+msgstr "Die Entwickler von %s"
 
 #: ../src/Widgets/AbstractAppContainer.vala:161
 msgid "by %s"
-msgstr ""
+msgstr "von %s"
 
 #: ../src/Widgets/AbstractAppContainer.vala:200
 msgid "Update"
@@ -319,11 +319,11 @@ msgstr[1] "%u Aktualisierungen sind für Ihr System verfügbar"
 
 #: ../src/Core/Client.vala:373
 msgid "Restart Required"
-msgstr ""
+msgstr "Neustart erforderlich"
 
 #: ../src/Core/Client.vala:374
 msgid "Please restart your system to finalize updates"
-msgstr ""
+msgstr "Bitte starten Sie Ihr Gerät neu, um die Aktualisierungen abzuschließen"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
