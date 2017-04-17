@@ -200,7 +200,7 @@ namespace AppCenter.Views {
                 uint update_numbers = 0U;
                 uint64 update_real_size = 0ULL;
                 foreach (var package in get_packages ()) {
-                    if (package.update_available) {
+                    if (package.update_available || package.is_updating) {
                         update_numbers++;
                         update_real_size += package.change_information.get_size ();
                     }
