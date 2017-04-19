@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2017-04-08 06:12+0000\n"
-"Last-Translator: Łukasz <l.dudzic@gmail.com>\n"
+"PO-Revision-Date: 2017-04-19 10:03+0000\n"
+"Last-Translator: Piotr Strebski <strebski@o2.pl>\n"
 "Language-Team: Polish "
-"<http://weblate.elementary.io/projects/desktop/appcenter/pl/>\n"
+"<https://l10n.elementary.io/projects/appcenter/appcenter/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -36,9 +36,8 @@ msgstr ""
 "  elementaryart (old) https://launchpad.net/~elementaryart"
 
 #: ../src/Application.vala:138
-#, fuzzy
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr "Określony link '%s' nie został odnaleziony, wyszukiwanie"
+msgstr "Określony odnośnik '%s' nie został odnaleziony, wyszukiwanie"
 
 #: ../src/Application.vala:207
 msgid "Application installed"
@@ -228,12 +227,12 @@ msgstr "Darmowe"
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: ../src/Widgets/HumbleButton.vala:152
 msgid "$%d.00"
-msgstr ""
+msgstr "$%d,00"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: ../src/Widgets/HumbleButton.vala:155
 msgid "$%d"
-msgstr ""
+msgstr "$%d"
 
 #: ../src/Widgets/AbstractAppContainer.vala:102
 msgid "Uninstall"
@@ -245,11 +244,11 @@ msgstr "Otwórz"
 
 #: ../src/Widgets/AbstractAppContainer.vala:157
 msgid "The %s Developers"
-msgstr ""
+msgstr "Programiści %s"
 
 #: ../src/Widgets/AbstractAppContainer.vala:161
 msgid "by %s"
-msgstr ""
+msgstr "od %s"
 
 #: ../src/Widgets/AbstractAppContainer.vala:200
 msgid "Update"
