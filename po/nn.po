@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2017-04-19 21:49+0000\n"
+"PO-Revision-Date: 2017-04-19 21:52+0000\n"
 "Last-Translator: Martin Myrvold <myrvold.martin@gmail.com>\n"
 "Language-Team: nn (generated) "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/nn/>\n"
@@ -226,7 +226,7 @@ msgstr "Avinstaller"
 
 #: ../src/Widgets/AbstractAppContainer.vala:105
 msgid "Open"
-msgstr "Open"
+msgstr "Opne"
 
 #: ../src/Widgets/AbstractAppContainer.vala:157
 msgid "The %s Developers"
