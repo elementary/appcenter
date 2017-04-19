@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2017-04-19 10:03+0000\n"
+"PO-Revision-Date: 2017-04-19 10:42+0000\n"
 "Last-Translator: Piotr Strebski <strebski@o2.pl>\n"
 "Language-Team: Polish "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/pl/>\n"
@@ -49,7 +49,7 @@ msgstr "%s zostało pomyślnie zainstalowane"
 
 #: ../src/Application.vala:224
 msgid "Close"
-msgstr "Zakmnij"
+msgstr "Zamknij"
 
 #: ../src/Application.vala:226
 msgid "There Was An Error Installing %s"
