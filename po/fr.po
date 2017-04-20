@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2017-04-16 01:13+0000\n"
+"PO-Revision-Date: 2017-04-20 17:21+0000\n"
 "Last-Translator: Corentin Noël <corentin@elementary.io>\n"
 "Language-Team: French "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/fr/>\n"
@@ -134,7 +134,7 @@ msgstr "Suggérer des traductions"
 
 #: ../src/Views/AppInfoView.vala:178
 msgid "Report a Problem"
-msgstr "Rapporter un problème"
+msgstr "Signaler un problème"
 
 #: ../src/Views/AppInfoView.vala:185
 msgid "Help"
