@@ -39,7 +39,7 @@ namespace AppCenter.Views {
             image.margin_top = 12;
             image.margin_start = 6;
             image.pixel_size = 128;
-            
+
             screenshots = package.component.get_screenshots ();
 
             if (screenshots.length > 0) {
@@ -65,7 +65,7 @@ namespace AppCenter.Views {
                 screenshot_stack.add (app_screenshot);
                 screenshot_stack.add (app_screenshot_not_found);
             }
-            
+
             package_name = new Gtk.Label (null);
             package_name.margin_top = 12;
             package_name.xalign = 0;
