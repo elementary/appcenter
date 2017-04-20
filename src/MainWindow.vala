@@ -29,6 +29,8 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     private Gtk.Stack button_stack;
     private ulong task_finished_connection = 0U;
     private Gee.Deque<string> return_button_history;
+    private Granite.Widgets.AlertView network_alert_view;
+    private Gtk.Grid network_view;
 
     public static Views.InstalledView installed_view { get; private set; }
 
@@ -95,6 +97,26 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         homepage.subview_entered.connect (view_opened);
         installed_view.subview_entered.connect (view_opened);
         search_view.subview_entered.connect (view_opened);
+
+        NetworkMonitor.get_default ().network_changed.connect (() => {
+            if (is_connected ()) {
+                
+            } else {
+                
+            }
+        });
+
+        network_alert_view.action_activated.connect (() => {
+            var list = new List<string> ();
+            list.append ("network");
+
+            try {
+                var appinfo = AppInfo.create_from_commandline ("switchboard", null, AppInfoCreateFlags.SUPPORTS_URIS);
+                appinfo.launch_uris (list, null);
+            } catch (Error e) {
+                warning (e.message);
+            }
+        });
     }
 
     construct {
@@ -151,11 +173,22 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         installed_view = new Views.InstalledView ();
         search_view = new Views.SearchView ();
 
+        network_alert_view = new Granite.Widgets.AlertView (_("Network is Not Available"),
+                                                            _("While disconnected from the network, installing and updating apps is impossible."),
+                                                            "network-error");
+        network_alert_view.get_style_context ().remove_class (Gtk.STYLE_CLASS_VIEW);
+        network_alert_view.show_action (_("Network settings…"));
+
+        network_view = new Gtk.Grid ();
+        network_view.margin = 24;
+        network_view.attach (network_alert_view, 0, 0, 1, 1);
+
         stack = new Gtk.Stack ();
         stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
         stack.add (homepage);
         stack.add (installed_view);
         stack.add (search_view);
+        stack.add (network_view);
 
         homepage.package_selected.connect ((package) => {
             stack.set_visible_child (homepage);
@@ -325,5 +358,13 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         homepage.return_clicked ();
         trigger_search ();
+    }
+
+    private bool is_connection_available () {
+        if (NetworkMonitor.get_default ().get_network_available ()) {
+            return true;
+        }
+
+        return false;
     }
 }
