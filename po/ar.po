@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2017-04-10 18:35+0000\n"
+"PO-Revision-Date: 2017-04-21 09:28+0000\n"
 "Last-Translator: HAYDER <albasimy16@gmail.com>\n"
 "Language-Team: Arabic "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/ar/>\n"
@@ -22,9 +22,10 @@ msgstr "متجر البرامج"
 
 #: ../src/Application.vala:60
 msgid "translator-credits"
-msgstr ""
+msgstr "ترجمة-بواسطة"
 
 #: ../src/Application.vala:138
+#, fuzzy
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr ""
 
@@ -34,7 +35,7 @@ msgstr "تم التثبيت"
 
 #: ../src/Application.vala:208
 msgid "%s has been successfully installed"
-msgstr "تم التثبيت بنجاح!"
+msgstr "%s تم التثبيت بنجاح!"
 
 #: ../src/Application.vala:224
 msgid "Close"
@@ -95,7 +96,7 @@ msgstr "تحديثات"
 #: ../src/Views/SearchView.vala:35
 msgctxt "view"
 msgid "Search"
-msgstr ""
+msgstr "نتائج البحث"
 
 #: ../src/Views/AppListView.vala:123
 msgid "A restart is required to complete the installation of updates"
@@ -111,14 +112,13 @@ msgstr "تحديث الكل"
 
 #: ../src/Views/AppInfoView.vala:50
 msgid "Screenshot Not Available"
-msgstr ""
+msgstr "لقطات الشاشة غير متوفرة"
 
 #: ../src/Views/AppInfoView.vala:150
 msgid "Extensions:"
 msgstr "الإضافات:"
 
 #: ../src/Views/AppInfoView.vala:164
-#, fuzzy
 msgid "Homepage"
 msgstr "الرئيسية"
 
