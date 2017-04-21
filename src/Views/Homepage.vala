@@ -82,6 +82,7 @@ namespace AppCenter {
                             }
                         }
                     }
+                    
                     Idle.add (() => {
                         foreach (var banner_package in packages_for_banner) {
                             newest_banner.add_package (banner_package);
@@ -89,9 +90,9 @@ namespace AppCenter {
                         newest_banner.go_to_first ();
                         switcher.show_all ();
                         switcher_revealer.set_reveal_child (true);
+                        main_window.homepage_loaded ();
                         return false;
                     });
-                    main_window.homepage_loaded ();
                     return null;
                 };
                 new Thread<void*> ("update-banner", run);
