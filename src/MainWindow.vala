@@ -370,6 +370,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         }
 
         button_stack.sensitive = connection_available;
-        search_entry.sensitive = connection_available;
+        search_entry.sensitive = connection_available && !search_view.viewing_package && !homepage.viewing_package;
     }
 }

@@ -31,6 +31,8 @@ namespace AppCenter {
 
         public signal void package_selected (AppCenterCore.Package package);
 
+        public bool viewing_package { get; private set; default = false; }
+
         public AppStream.Category currently_viewed_category;
         public MainWindow main_window { get; construct; }
         public Widgets.Banner newest_banner;
@@ -144,6 +146,7 @@ namespace AppCenter {
                 currently_viewed_category = null;
             } else {
                 subview_entered (_("Home"), true, current_category);
+                viewing_package = false;
                 set_visible_child_name (current_category);
                 current_category = null;
             }
@@ -165,6 +168,7 @@ namespace AppCenter {
             app_list_view.show_app.connect ((package) => {
                 current_category = category.name;
                 subview_entered (category.name, false, "");
+                viewing_package = true;
                 show_package (package);
             });
 
