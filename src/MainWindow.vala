@@ -217,8 +217,11 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     private void trigger_search () {
         unowned string research = search_entry.text;
         if (research.length < 2) {
+            if (homepage.currently_viewed_category == null) {
+                custom_title_stack.set_visible_child (view_mode_revealer);
+            }
+
             view_mode_revealer.reveal_child = true;
-            custom_title_stack.set_visible_child (view_mode_revealer);
             switch (view_mode.selected) {
                 case 0:
                     stack.visible_child = homepage;
