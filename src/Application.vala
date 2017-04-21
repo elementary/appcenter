@@ -54,8 +54,7 @@ public class AppCenter.App : Granite.Application {
         bug_url = "https://github.com/elementary/appcenter/issues";
         help_url = "https://elementary.io/support";
         translate_url = "https://l10n.elementary.io/projects/desktop/appcenter/";
-        about_authors = { "Marvin Beckers <beckersmarvin@gmail.com>",
-                          "Corentin Noël <corentin@elementary.io>" };
+        about_authors = { "Corentin Noël <corentin@elementary.io>" };
         about_comments = "";
         about_translators = _("translator-credits");
         about_license_type = Gtk.License.GPL_3_0;
