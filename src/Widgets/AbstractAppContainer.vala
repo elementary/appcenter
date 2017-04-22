@@ -96,6 +96,11 @@ namespace AppCenter {
                 stripe.show ();
             });
 
+            action_button.link_requested.connect (() => {
+                var clipboard = Gtk.Clipboard.get_for_display (get_display (), Gdk.SELECTION_CLIPBOARD);
+                clipboard.set_text ("appstream://" + this.package.component.get_id (), -1);
+            });
+
             uninstall_button = new Gtk.Button.with_label (_("Uninstall"));
             uninstall_button.clicked.connect (() => uninstall_clicked.begin ());
 
