@@ -22,8 +22,17 @@ public class AppCenterCore.Client : Object {
 
     public bool connected { public get; private set; }
     public bool updating_cache { public get; private set; }
-    public uint task_count { public get; private set; default = 0; }
     public bool restart_required { public get; private set; default = false; }
+    private uint _task_count = 0;
+    public uint task_count {
+        public get {
+            return _task_count;
+        }
+        private set {
+            _task_count = value;
+            last_action = new DateTime.now_local ();
+        }
+    }
 
     public AppCenterCore.Package os_updates { public get; private set; }
 
@@ -31,11 +40,10 @@ public class AppCenterCore.Client : Object {
     private AppStream.Pool appstream_pool;
     private GLib.Cancellable cancellable;
     private GLib.DateTime last_cache_update;
+    private GLib.DateTime last_action;
     private uint updates_number = 0U;
     private uint update_cache_timeout_id = 0;
     private bool refresh_in_progress = false;
-    private uint refresh_timeout_id = 0;
-    private bool updates_changed_connected = false;
 
     private const int SECONDS_BETWEEN_REFRESHES = 60*60*24;
     private const int PACKAGEKIT_ACTIVITY_TIMEOUT_MS = 2000;
@@ -97,36 +105,15 @@ public class AppCenterCore.Client : Object {
         os_updates = new AppCenterCore.Package (os_updates_component);
 
         var control = new Pk.Control ();
-        control.transaction_list_changed.connect (() => {
-            try {
-                if (control.get_transaction_list ().length == 0) {
-                    refresh_timeout_id = Timeout.add (PACKAGEKIT_ACTIVITY_TIMEOUT_MS, () => {
-                        if (!updates_changed_connected) {
-                            control.updates_changed.connect (updates_changed_callback);
-                            updates_changed_connected = true;
-                        }
-                        refresh_timeout_id = 0;
-                        return false;
-                    });
-                } else {
-                    if (updates_changed_connected) {
-                        control.updates_changed.disconnect (updates_changed_callback);
-                        updates_changed_connected = false;
-                    }
-                    if (refresh_timeout_id > 0) {
-                        Source.remove (refresh_timeout_id);
-                        refresh_timeout_id = 0;
-                    }
-                }
-            } catch (Error e) {
-                warning (e.message);
-            }
-        });
+        control.updates_changed.connect (updates_changed_callback);
     }
 
     private void updates_changed_callback () {
-        info ("packages possibly changed by external program, refreshing cache");
-        update_cache.begin (true);
+        var time_since_last_action = (new DateTime.now_local ()).difference (last_action) / GLib.TimeSpan.MILLISECOND;
+        if (!has_tasks () && time_since_last_action >= PACKAGEKIT_ACTIVITY_TIMEOUT_MS) {
+            info ("packages possibly changed by external program, refreshing cache");
+            update_cache.begin (true);
+        }
     }
 
     public bool has_tasks () {
