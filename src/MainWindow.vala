@@ -217,8 +217,11 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     private void trigger_search () {
         unowned string research = search_entry.text;
         if (research.length < 2) {
+            if (homepage.currently_viewed_category == null) {
+                custom_title_stack.set_visible_child (view_mode_revealer);
+            }
+
             view_mode_revealer.reveal_child = true;
-            custom_title_stack.set_visible_child (view_mode_revealer);
             switch (view_mode.selected) {
                 case 0:
                     stack.visible_child = homepage;
@@ -235,17 +238,17 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             search_all_button.no_show_all = true;
             search_all_button.hide ();
         } else {
-            search_view.search.begin (research, homepage.currently_viewed_category, () => {
-                if (homepage.currently_viewed_category != null) {
-                    button_stack.visible_child = search_all_button;
-                    search_all_button.no_show_all = false;
-                    search_all_button.show_all ();
-                } else {
-                    button_stack.visible_child = return_button;
-                    search_all_button.no_show_all = true;
-                    search_all_button.hide ();
-                }
-            });
+            search_view.search (research, homepage.currently_viewed_category);
+            if (homepage.currently_viewed_category != null) {
+                button_stack.visible_child = search_all_button;
+                search_all_button.no_show_all = false;
+                search_all_button.show_all ();
+            } else {
+                button_stack.visible_child = return_button;
+                search_all_button.no_show_all = true;
+                search_all_button.hide ();
+            }
+
             view_mode_revealer.reveal_child = false;
             stack.visible_child = search_view;
             return_button.no_show_all = true;

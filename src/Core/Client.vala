@@ -77,7 +77,7 @@ public class AppCenterCore.Client : Object {
             appstream_pool.get_components ().foreach ((comp) => {
                 var package = new AppCenterCore.Package (comp);
                 foreach (var pkg_name in comp.get_pkgnames ()) {
-                    package_list.set (pkg_name, package);
+                    package_list[pkg_name] = package;
                 }
             });
         } catch (Error e) {
@@ -146,9 +146,20 @@ public class AppCenterCore.Client : Object {
 
         try {
             var results = yield client.resolve_async (Pk.Bitfield.from_enums (Pk.Filter.NEWEST, Pk.Filter.ARCH), packages_ids, cancellable, () => {});
-            packages_ids = {};
 
-            results.get_package_array ().foreach ((package) => {
+            /*
+             * If there were no packages found for the requested architecture,
+             * try to resolve IDs by not searching for this architecture
+             * e.g: filtering 32 bit only package on a 64 bit system
+             */ 
+            GenericArray<weak Pk.Package> package_array = results.get_package_array ();
+            if (package_array.length == 0) {
+                results = yield client.resolve_async (Pk.Bitfield.from_enums (Pk.Filter.NEWEST, Pk.Filter.NOT_ARCH), packages_ids, cancellable, () => {});
+                package_array = results.get_package_array ();
+            }
+
+            packages_ids = {};
+            package_array.foreach ((package) => {
                 packages_ids += package.package_id;
             });
 
@@ -238,10 +249,15 @@ public class AppCenterCore.Client : Object {
             results.get_package_array ().foreach ((pk_package) => {
                 packages_array += pk_package.get_id ();
                 unowned string pkg_name = pk_package.get_name ();
-                var package = package_list.get (pkg_name);
+                var package = package_list[pkg_name];
                 if (package != null) {
                     package.latest_version = pk_package.get_version ();
+                    package.change_information.changes.clear ();
+                    package.change_information.details.clear ();
                 }
+
+                os_updates.change_information.changes.clear ();
+                os_updates.change_information.details.clear ();
             });
 
             // We need a null to show to PackageKit that it's then end of the array.
@@ -254,7 +270,7 @@ public class AppCenterCore.Client : Object {
                     pk_package.set_id (pk_detail.get_package_id ());
 
                     unowned string pkg_name = pk_package.get_name ();
-                    var package = package_list.get (pkg_name);
+                    var package = package_list[pkg_name];
                     if (package == null) {
                         package = os_updates;
 
@@ -287,7 +303,7 @@ public class AppCenterCore.Client : Object {
         var packages = new Gee.TreeSet<AppCenterCore.Package> ();
         var installed = yield get_installed_packages ();
         foreach (var pk_package in installed) {
-            var package = package_list.get (pk_package.get_name ());
+            var package = package_list[pk_package.get_name ()];
             if (package != null) {
                 package.installed_packages.add (pk_package);
                 package.latest_version = pk_package.get_version ();
@@ -310,7 +326,10 @@ public class AppCenterCore.Client : Object {
 
         var apps = new Gee.TreeSet<AppCenterCore.Package> ();
         components.foreach ((comp) => {
-            apps.add (package_list.get (comp.get_pkgnames ()[0]));
+            var package = get_package_for_component_id (comp.get_id ());
+            if (package != null) {
+                apps.add (package);
+            }
         });
 
         return apps;
@@ -321,20 +340,17 @@ public class AppCenterCore.Client : Object {
         GLib.GenericArray<weak AppStream.Component> comps = appstream_pool.search (query);
         if (category == null) {
             comps.foreach ((comp) => {
-                unowned string[] comp_pkgnames = comp.get_pkgnames ();
-                if (comp_pkgnames.length > 0) {
-                    apps.add (package_list.get (comp_pkgnames[0]));
+                var package = get_package_for_component_id (comp.get_id ());
+                if (package != null) {
+                    apps.add (package);
                 }
             });
         } else {
             var cat_packages = get_applications_for_category (category);
             comps.foreach ((comp) => {
-                unowned string[] comp_pkgnames = comp.get_pkgnames ();
-                if (comp_pkgnames.length > 0) {
-                    var package = package_list.get (comp_pkgnames[0]);
-                    if (package in cat_packages) {
-                        apps.add (package);
-                    }
+                var package = get_package_for_component_id (comp.get_id ());
+                if (package != null && package in cat_packages) {
+                    apps.add (package);
                 }
             });
         }
@@ -426,9 +442,9 @@ public class AppCenterCore.Client : Object {
         var result_comp = new Gee.TreeSet<AppStream.Component> ();
 
         package_array.foreach ((pk_package) => {
-            var comp = package_list.get (pk_package.get_name ());
-            if (comp != null) {
-                result_comp.add (comp.component);
+            var package = package_list[pk_package.get_name ()];
+            if (package != null) {
+                result_comp.add (package.component);
             } else {
                 os_update_found = true;
             }
