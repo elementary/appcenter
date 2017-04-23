@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2017-04-11 08:49+0000\n"
+"PO-Revision-Date: 2017-04-23 03:01+0000\n"
 "Last-Translator: Ryo Nakano <nscnskichiro0911@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://l10n.elementary.io/projects/appcenter/extra/ja/>\n"
@@ -39,7 +39,6 @@ msgstr ""
 msgid "Bug fixes and improve perfomance."
 msgstr "バグ修正とパフォーマンスの向上。"
 
-#, fuzzy
 msgid "Various bug fixes and performance improvements"
 msgstr "様々なバグ修正とパフォーマンスの向上"
 
@@ -58,9 +57,8 @@ msgstr "カテゴリー別で検索できるようにし、マイナーなバグ
 msgid "It is now possible to search apps inside a category"
 msgstr "今やカテゴリー内でアプリを検索することができます"
 
-#, fuzzy
 msgid "Prevent multiple authentication dialogs when resuming from suspend"
-msgstr "サスペンドからの復帰時に複数の認証ダイアログが出るのを防ぐ"
+msgstr "サスペンドからの復帰時に複数の認証ダイアログが出るのを防止"
 
 #, fuzzy
 msgid ""
