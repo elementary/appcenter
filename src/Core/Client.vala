@@ -29,6 +29,7 @@ public class AppCenterCore.Client : Object {
 
     private Gee.HashMap<string, AppCenterCore.Package> package_list;
     private AppStream.Pool appstream_pool;
+    private Gee.TreeSet<AppStream.Component> drivers;
     private GLib.Cancellable cancellable;
     private GLib.DateTime last_cache_update;
     private uint updates_number = 0U;
@@ -69,9 +70,16 @@ public class AppCenterCore.Client : Object {
         // We don't want to show installed desktop files here
         appstream_pool.set_flags (appstream_pool.get_flags () & ~AppStream.PoolFlags.READ_DESKTOP_FILES);
 
+        drivers = new Gee.TreeSet<AppStream.Component> ();
         try {
             appstream_pool.load ();
             appstream_pool.get_components ().foreach ((comp) => {
+                var kind = comp.get_kind ();
+                if (kind == AppStream.ComponentKind.DRIVER || kind == AppStream.ComponentKind.FIRMWARE) {
+                    drivers.add (comp);
+                    return;
+                }
+
                 var package = new AppCenterCore.Package (comp);
                 foreach (var pkg_name in comp.get_pkgnames ()) {
                     package_list[pkg_name] = package;
@@ -262,6 +270,31 @@ public class AppCenterCore.Client : Object {
 
         task_count--;
         updates_available ();
+    }
+
+    /**
+     * Filters and checks if previously added driver components 
+     * match a system modalias, are suitable for this system
+     *
+     * This could be done in get_components () block but since
+     * scanning all modaliases takes some time , it is done here separately
+     * to not interrupt populating UI lists with other applications
+     */ 
+    public async void get_drivers () {
+        string[] aliases = yield scan_modaliases (null);
+        foreach (var comp in drivers) {
+            var provided = comp.get_provided_for_kind (AppStream.ProvidedKind.MODALIAS);
+            if (provided != null) {
+                foreach (string alias in aliases) {
+                    if (provided.has_item (alias)) {
+                        var package = new AppCenterCore.Package (comp);
+                        foreach (var pkg_name in comp.get_pkgnames ()) {
+                            package_list[pkg_name] = package;
+                        }                        
+                    }
+                }
+            }
+        }
     }
 
     public async Gee.Collection<AppCenterCore.Package> get_installed_applications () {
@@ -537,6 +570,67 @@ public class AppCenterCore.Client : Object {
         }
 
         return null;
+    }
+
+    /**
+     * Scans for system modaliases
+     *
+     * This is mostly just a Vala version of UbuntuDrivers system_modaliases () function:
+     * http://bazaar.launchpad.net/~ubuntu-branches/ubuntu/vivid/ubuntu-drivers-common/vivid/view/head:/UbuntuDrivers/detect.py#L23
+     */
+    private async static string[] scan_modaliases (owned File? root) {
+        if (root == null) {
+            root = File.new_for_path ("/sys/devices");
+        }
+
+        string[] aliases = {};
+        var enumerator = yield root.enumerate_children_async ("standard::*", FileQueryInfoFlags.NOFOLLOW_SYMLINKS);
+        FileInfo? info = null;
+        while ((info = enumerator.next_file (null)) != null) {
+            string? alias = null;
+
+            if (info.get_file_type () == FileType.DIRECTORY) {
+                var subdir = root.resolve_relative_path (info.get_name ());
+                string[] subaliases = yield scan_modaliases (subdir);
+                foreach (string subalias in subaliases) {
+                    aliases += subalias;
+                }
+            } else if (info.get_name () == "modalias") {
+                var subfile = root.resolve_relative_path (info.get_name ());
+                uint8[] contents;
+                yield subfile.load_contents_async (null, out contents, null);
+
+                alias = ((string)contents).strip ();
+            } else if ("ssb" in root.get_path () && info.get_name () == "uevent") {
+                var subfile = root.resolve_relative_path (info.get_name ());
+                uint8[] contents;
+                yield subfile.load_contents_async (null, out contents, null);
+
+                string[] lines = ((string)contents).split ("\n");
+                foreach (string line in lines) {
+                    string[] tokens = line.split ("=");
+                    if (tokens.length == 2 && tokens[0] == "MODALIAS") {
+                        alias = tokens[1].strip ();
+                        break;
+                    }
+                }
+            }
+
+            if (alias == null) {
+                continue;
+            }
+
+            string driver_link = Path.build_filename (root.get_path (), "driver");
+            string modlink = Path.build_filename (driver_link, "module");
+
+            if (FileUtils.test (driver_link, FileTest.IS_SYMLINK) && !FileUtils.test (modlink, FileTest.IS_SYMLINK)) {
+                continue;
+            }
+
+            aliases += alias;
+        }
+
+        return aliases;
     }
 
     private static GLib.Once<Client> instance;

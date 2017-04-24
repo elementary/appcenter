@@ -50,6 +50,10 @@ namespace AppCenter.Widgets {
             return grid.is_os_updates;
         }
 
+        public bool get_is_driver () {
+            return grid.is_driver;
+        }
+
         public string get_name_label () {
             return grid.name_label;
         }

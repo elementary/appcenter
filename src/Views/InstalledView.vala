@@ -54,6 +54,8 @@ public class AppCenter.Views.InstalledView : View {
     public async void get_apps () {
         unowned Client client = Client.get_default ();
 
+        yield client.get_drivers ();
+        
         var installed_apps = yield client.get_installed_applications ();
         app_list_view.add_packages (installed_apps);
 
