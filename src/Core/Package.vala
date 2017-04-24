@@ -37,6 +37,7 @@ public class AppCenterCore.Package : Object {
     }
 
     public const string OS_UPDATES_ID = "xxx-os-updates";
+    public const string DRIVERS_ID = "xxx-os-drivers";
     public const string DEFAULT_PRICE_DOLLARS = "1";
 
     public AppStream.Component component { get; construct; }
@@ -92,6 +93,12 @@ public class AppCenterCore.Package : Object {
         get {
             return component.id == "xxx-os-updates";
         }
+    }
+
+    public bool is_driver {
+       get {
+           return component.id.has_prefix (DRIVERS_ID);
+       }
     }
 
     private string? name = null;
@@ -418,7 +425,7 @@ public class AppCenterCore.Package : Object {
         return app_info != null;
     }
 
-    private Pk.Package? find_package () {
+    public Pk.Package? find_package () {
         if (component.id == OS_UPDATES_ID) {
             return null;
         }
