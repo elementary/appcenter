@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2017-04-24 13:37+0000\n"
-"Last-Translator: Leonardo Moraes de Oliveira <leoliveira_@outlook.com>\n"
+"PO-Revision-Date: 2017-04-24 13:39+0000\n"
+"Last-Translator: Willian Buarque <willian.buarque@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) "
 "<https://l10n.elementary.io/projects/appcenter/extra/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -47,27 +47,31 @@ msgid "New translations"
 msgstr "Novas traduções"
 
 msgid "Fix crash caused by entries with missing packages"
-msgstr ""
+msgstr "Corrigida falha causada por entradas com pacotes não existentes"
 
 msgid "Add capability to search by category and apply minor bug fixes."
 msgstr ""
+"Adicionada capacidade de buscar por categoria e aplicadas pequenas correções "
+"de bugs."
 
 msgid "It is now possible to search apps inside a category"
-msgstr ""
+msgstr "Agora é possível buscar aplicativos dentro de uma categoria"
 
 msgid "Prevent multiple authentication dialogs when resuming from suspend"
-msgstr ""
+msgstr "Evita mútiplas janelas de autenticação quando volta do modo suspensão"
 
 msgid ""
 "Search perfomance has beeen improved, the category name is now shown on the "
 "headbar and minor bugs have been fixed."
 msgstr ""
+"Performance da busca melhorada, o nome da categoria agora é exibido na barra "
+"superior e pequenos erros foram corrigidos."
 
 msgid "Fix Steam installation"
-msgstr ""
+msgstr "Corrigida a instalação do Steam"
 
 msgid "Make search asynchronous"
-msgstr ""
+msgstr "Torna a busca assíncrona"
 
 #, fuzzy
 #~ msgid "App Center"
