@@ -584,50 +584,54 @@ public class AppCenterCore.Client : Object {
         }
 
         string[] aliases = {};
-        var enumerator = yield root.enumerate_children_async ("standard::*", FileQueryInfoFlags.NOFOLLOW_SYMLINKS);
-        FileInfo? info = null;
-        while ((info = enumerator.next_file (null)) != null) {
-            string? alias = null;
+        try {
+            var enumerator = yield root.enumerate_children_async ("standard::*", FileQueryInfoFlags.NOFOLLOW_SYMLINKS);
+            FileInfo? info = null;
+            while ((info = enumerator.next_file (null)) != null) {
+                string? alias = null;
 
-            if (info.get_file_type () == FileType.DIRECTORY) {
-                var subdir = root.resolve_relative_path (info.get_name ());
-                string[] subaliases = yield scan_modaliases (subdir);
-                foreach (string subalias in subaliases) {
-                    aliases += subalias;
-                }
-            } else if (info.get_name () == "modalias") {
-                var subfile = root.resolve_relative_path (info.get_name ());
-                uint8[] contents;
-                yield subfile.load_contents_async (null, out contents, null);
+                if (info.get_file_type () == FileType.DIRECTORY) {
+                    var subdir = root.resolve_relative_path (info.get_name ());
+                    string[] subaliases = yield scan_modaliases (subdir);
+                    foreach (string subalias in subaliases) {
+                        aliases += subalias;
+                    }
+                } else if (info.get_name () == "modalias") {
+                    var subfile = root.resolve_relative_path (info.get_name ());
+                    uint8[] contents;
+                    yield subfile.load_contents_async (null, out contents, null);
 
-                alias = ((string)contents).strip ();
-            } else if ("ssb" in root.get_path () && info.get_name () == "uevent") {
-                var subfile = root.resolve_relative_path (info.get_name ());
-                uint8[] contents;
-                yield subfile.load_contents_async (null, out contents, null);
+                    alias = ((string)contents).strip ();
+                } else if ("ssb" in root.get_path () && info.get_name () == "uevent") {
+                    var subfile = root.resolve_relative_path (info.get_name ());
+                    uint8[] contents;
+                    yield subfile.load_contents_async (null, out contents, null);
 
-                string[] lines = ((string)contents).split ("\n");
-                foreach (string line in lines) {
-                    string[] tokens = line.split ("=");
-                    if (tokens.length == 2 && tokens[0] == "MODALIAS") {
-                        alias = tokens[1].strip ();
-                        break;
+                    string[] lines = ((string)contents).split ("\n");
+                    foreach (string line in lines) {
+                        string[] tokens = line.split ("=");
+                        if (tokens.length == 2 && tokens[0] == "MODALIAS") {
+                            alias = tokens[1].strip ();
+                            break;
+                        }
                     }
                 }
+
+                if (alias == null) {
+                    continue;
+                }
+
+                string driver_link = Path.build_filename (root.get_path (), "driver");
+                string modlink = Path.build_filename (driver_link, "module");
+
+                if (FileUtils.test (driver_link, FileTest.IS_SYMLINK) && !FileUtils.test (modlink, FileTest.IS_SYMLINK)) {
+                    continue;
+                }
+
+                aliases += alias;
             }
-
-            if (alias == null) {
-                continue;
-            }
-
-            string driver_link = Path.build_filename (root.get_path (), "driver");
-            string modlink = Path.build_filename (driver_link, "module");
-
-            if (FileUtils.test (driver_link, FileTest.IS_SYMLINK) && !FileUtils.test (modlink, FileTest.IS_SYMLINK)) {
-                continue;
-            }
-
-            aliases += alias;
+        } catch (Error e) {
+            warning (e.message);
         }
 
         return aliases;

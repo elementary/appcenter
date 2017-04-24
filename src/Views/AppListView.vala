@@ -197,7 +197,6 @@ namespace AppCenter.Views {
         private void row_update_header (Widgets.AppListRow row, Widgets.AppListRow? before) {
             bool update_available = row.get_update_available ();            
             bool is_driver = row.get_is_driver ();
-            bool different = before == null || (update_available != before.get_update_available () || is_driver != before.get_is_driver ());
 
             if (update_available) {
                 if (before != null && update_available == before.get_update_available ()) {
