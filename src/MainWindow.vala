@@ -105,7 +105,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             }
         });
 
-        update_view ();
+        this.show.connect (update_view);
     }
 
     construct {
@@ -362,11 +362,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
                 }
             }
         } else {
-            if (view_mode.selected == 0) {
-                stack.set_visible_child (network_view);
-            } else {
-                stack.set_visible_child (installed_view);
-            }
+            stack.set_visible_child (network_view);
         }
 
         button_stack.sensitive = connection_available;
