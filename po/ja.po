@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2017-04-11 08:52+0000\n"
+"PO-Revision-Date: 2017-04-25 13:20+0000\n"
 "Last-Translator: Ryo Nakano <nscnskichiro0911@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/ja/>\n"
@@ -35,7 +35,7 @@ msgstr "指定されたリンク '%s' は見つかりませんでした。代わ
 
 #: ../src/Application.vala:207
 msgid "Application installed"
-msgstr "アプリケーションインストール完了"
+msgstr "アプリケーションがインストールされました"
 
 #: ../src/Application.vala:208
 msgid "%s has been successfully installed"
@@ -46,17 +46,14 @@ msgid "Close"
 msgstr "閉じる"
 
 #: ../src/Application.vala:226
-#, fuzzy
 msgid "There Was An Error Installing %s"
 msgstr "%s のインストール中にエラーが発生しました"
 
 #: ../src/Dialogs/RestartDialog.vala:40
-#, fuzzy
 msgid "Are you sure you want to Restart?"
-msgstr "本当に再起動しますか？"
+msgstr "本当に再起動しますか?"
 
 #: ../src/Dialogs/RestartDialog.vala:41
-#, fuzzy
 msgid "This will close all open applications and restart this device."
 msgstr "これは開いているすべてのアプリケーションを閉じてこのデバイスを再起動します。"
 
@@ -75,17 +72,14 @@ msgid "Pay $%s.00"
 msgstr "%s.00 ドル払う"
 
 #: ../src/Dialogs/StripeDialog.vala:194
-#, fuzzy
 msgid "Processing"
 msgstr "処理中"
 
 #: ../src/Dialogs/StripeDialog.vala:219
-#, fuzzy
 msgid "There Was a Problem Processing Your Payment"
 msgstr "支払の処理中に問題が発生しました"
 
 #: ../src/Dialogs/StripeDialog.vala:225
-#, fuzzy
 msgid "Please review your payment info and try again."
 msgstr "支払い情報を見直してもう一度お試しください。"
 
@@ -94,7 +88,6 @@ msgid "Pay Later"
 msgstr "後で支払う"
 
 #: ../src/Dialogs/StripeDialog.vala:256
-#, fuzzy
 msgid "Retry"
 msgstr "もう一度試す"
 
@@ -110,12 +103,10 @@ msgid "Search"
 msgstr "検索"
 
 #: ../src/Views/AppListView.vala:123
-#, fuzzy
 msgid "A restart is required to complete the installation of updates"
 msgstr "このアップデートのインストールを完了するには再起動が必要です"
 
 #: ../src/Views/AppListView.vala:125
-#, fuzzy
 msgid "Restart Now"
 msgstr "今すぐ再起動する"
 
@@ -290,7 +281,7 @@ msgstr "%s を検索"
 
 #: ../src/Core/Client.vala:90
 msgid "Operating System Updates"
-msgstr "オペレーニングシステムの更新"
+msgstr "オペレーティングシステムの更新"
 
 #: ../src/Core/Client.vala:91
 msgid "Updates to system components"
@@ -307,9 +298,8 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "システムに %u 件の更新が利用可能です"
 
 #: ../src/Core/Client.vala:373
-#, fuzzy
 msgid "Restart Required"
-msgstr "リスタートをしなければいけません"
+msgstr "再起動が要求されます"
 
 #: ../src/Core/Client.vala:374
 msgid "Please restart your system to finalize updates"
