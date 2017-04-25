@@ -163,7 +163,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         search_view = new Views.SearchView ();
 
         network_alert_view = new Granite.Widgets.AlertView (_("Network is Not Available"),
-                                                            _("While disconnected from the network, installing and updating apps is impossible."),
+                                                            _("Connect to the internet to install or update apps."),
                                                             "network-error");
         network_alert_view.get_style_context ().remove_class (Gtk.STYLE_CLASS_VIEW);
         network_alert_view.show_action (_("Network settings…"));
