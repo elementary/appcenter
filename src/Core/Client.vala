@@ -19,6 +19,7 @@ public class AppCenterCore.Client : Object {
     public signal void updates_available ();
 
     private const string RESTART_REQUIRED_FILE = "/var/run/reboot-required";
+    private const string LAST_UPDATES_FILE = "/var/run/last-apt-updates";
 
     public bool connected { public get; private set; }
     public bool updating_cache { public get; private set; }
@@ -52,6 +53,7 @@ public class AppCenterCore.Client : Object {
     private SuspendControl sc;
 
     private FileMonitor restart_monitor;
+    private FileMonitor update_monitor;
 
     private Client () {
     }
@@ -72,6 +74,14 @@ public class AppCenterCore.Client : Object {
         }
 
         update_restart_state (restart_file);
+
+        var update_file = File.new_for_path (LAST_UPDATES_FILE);
+        try {
+            update_monitor = update_file.monitor (FileMonitorFlags.NONE);
+            update_monitor.changed.connect (() => update_cache.begin (true));
+        } catch (Error e) {
+            warning (e.message);
+        }
 
         cancellable = new GLib.Cancellable ();
         last_cache_update = null;
