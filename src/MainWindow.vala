@@ -162,7 +162,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         installed_view = new Views.InstalledView ();
         search_view = new Views.SearchView ();
 
-        network_alert_view = new Granite.Widgets.AlertView (_("Network is Not Available"),
+        network_alert_view = new Granite.Widgets.AlertView (_("Network Is Not Available"),
                                                             _("Connect to the internet to install or update apps."),
                                                             "network-error");
         network_alert_view.get_style_context ().remove_class (Gtk.STYLE_CLASS_VIEW);
