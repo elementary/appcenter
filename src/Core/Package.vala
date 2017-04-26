@@ -37,7 +37,6 @@ public class AppCenterCore.Package : Object {
     }
 
     public const string OS_UPDATES_ID = "xxx-os-updates";
-    public const string DRIVERS_ID = "xxx-os-drivers";
     public const string DEFAULT_PRICE_DOLLARS = "1";
 
     public AppStream.Component component { get; construct; }
