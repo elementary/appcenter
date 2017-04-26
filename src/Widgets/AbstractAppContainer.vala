@@ -43,6 +43,12 @@ namespace AppCenter {
             }
         }
 
+        public bool is_driver {
+            get {
+                return package.is_driver;
+            }
+        }
+
         public bool update_available {
             get {
                 return package.update_available || package.is_updating;

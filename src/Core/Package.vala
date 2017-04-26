@@ -94,6 +94,13 @@ public class AppCenterCore.Package : Object {
         }
     }
 
+    public bool is_driver {
+        get {
+            var kind = component.get_kind ();
+            return kind == AppStream.ComponentKind.DRIVER || kind == AppStream.ComponentKind.FIRMWARE;
+        }
+    }
+
     private string? name = null;
     private string? description = null;
     private string? summary = null;
