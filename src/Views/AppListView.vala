@@ -179,14 +179,14 @@ namespace AppCenter.Views {
             bool a_has_updates = row1.get_update_available ();
             bool b_has_updates = row2.get_update_available ();
 
-            if ((a_has_updates && !b_has_updates) || (!a_has_updates && b_has_updates)) { /* Updates rows sort ahead of updated rows */
+            if (a_has_updates != b_has_updates) { /* Updates rows sort ahead of updated rows */
                 return a_has_updates ? -1 : 1;
             }
 
             bool a_is_driver = row1.get_is_driver ();
             bool b_is_driver = row2.get_is_driver ();
 
-            if ((a_is_driver && !b_is_driver) || (!a_is_driver && b_is_driver)) {
+            if (a_is_driver != b_is_driver) {
                 return a_is_driver ? - 1 : 1;
             }
 

@@ -317,8 +317,9 @@ public class AppCenterCore.Client : Object {
                 }
 
                 var driver_component = new AppStream.Component ();
+                driver_component.set_kind (AppStream.ComponentKind.DRIVER);
                 driver_component.set_pkgnames ({ package_name });
-                driver_component.id =  "%s-%i".printf (Package.DRIVERS_ID, i);
+                driver_component.set_id (package_name);
 
                 var icon = new AppStream.Icon ();
                 icon.set_name ("application-x-firmware");

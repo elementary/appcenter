@@ -97,7 +97,7 @@ public class AppCenterCore.Package : Object {
 
     public bool is_driver {
        get {
-           return component.id.has_prefix (DRIVERS_ID);
+           return component.get_kind () == AppStream.ComponentKind.DRIVER;
        }
     }
 
