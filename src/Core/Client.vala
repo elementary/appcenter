@@ -17,25 +17,38 @@
 public class AppCenterCore.Client : Object {
     public signal void operation_finished (Package package, Package.State operation, Error? error);
     public signal void updates_available ();
+    public signal void drivers_detected ();
 
     private const string RESTART_REQUIRED_FILE = "/var/run/reboot-required";
 
     public bool connected { public get; private set; }
     public bool updating_cache { public get; private set; }
-    public uint task_count { public get; private set; default = 0; }
     public bool restart_required { public get; private set; default = false; }
+    private uint _task_count = 0;
+    public uint task_count {
+        public get {
+            return _task_count;
+        }
+        private set {
+            _task_count = value;
+            last_action = new DateTime.now_local ();
+        }
+    }
 
     public AppCenterCore.Package os_updates { public get; private set; }
+    public Gee.TreeSet<AppCenterCore.Package> driver_list { get; construct; }
 
     private Gee.HashMap<string, AppCenterCore.Package> package_list;
     private AppStream.Pool appstream_pool;
     private GLib.Cancellable cancellable;
     private GLib.DateTime last_cache_update;
+    private GLib.DateTime last_action;
     private uint updates_number = 0U;
     private uint update_cache_timeout_id = 0;
     private bool refresh_in_progress = false;
 
     private const int SECONDS_BETWEEN_REFRESHES = 60*60*24;
+    private const int PACKAGEKIT_ACTIVITY_TIMEOUT_MS = 2000;
 
     private Task client;
     private SuspendControl sc;
@@ -47,6 +60,7 @@ public class AppCenterCore.Client : Object {
 
     construct {
         package_list = new Gee.HashMap<string, AppCenterCore.Package> (null, null);
+        driver_list = new Gee.TreeSet<AppCenterCore.Package> ();
         cancellable = new GLib.Cancellable ();
 
         client = new Task ();
@@ -74,7 +88,7 @@ public class AppCenterCore.Client : Object {
             appstream_pool.get_components ().foreach ((comp) => {
                 var package = new AppCenterCore.Package (comp);
                 foreach (var pkg_name in comp.get_pkgnames ()) {
-                    package_list.set (pkg_name, package);
+                    package_list[pkg_name] = package;
                 }
             });
         } catch (Error e) {
@@ -92,6 +106,17 @@ public class AppCenterCore.Client : Object {
         os_updates_component.add_icon (icon);
 
         os_updates = new AppCenterCore.Package (os_updates_component);
+
+        var control = new Pk.Control ();
+        control.updates_changed.connect (updates_changed_callback);
+    }
+
+    private void updates_changed_callback () {
+        var time_since_last_action = (new DateTime.now_local ()).difference (last_action) / GLib.TimeSpan.MILLISECOND;
+        if (!has_tasks () && time_since_last_action >= PACKAGEKIT_ACTIVITY_TIMEOUT_MS) {
+            info ("packages possibly changed by external program, refreshing cache");
+            update_cache.begin (true);
+        }
     }
 
     public bool has_tasks () {
@@ -214,7 +239,7 @@ public class AppCenterCore.Client : Object {
             results.get_package_array ().foreach ((pk_package) => {
                 packages_array += pk_package.get_id ();
                 unowned string pkg_name = pk_package.get_name ();
-                var package = package_list.get (pkg_name);
+                var package = package_list[pkg_name];
                 if (package != null) {
                     package.latest_version = pk_package.get_version ();
                     package.change_information.changes.clear ();
@@ -235,7 +260,7 @@ public class AppCenterCore.Client : Object {
                     pk_package.set_id (pk_detail.get_package_id ());
 
                     unowned string pkg_name = pk_package.get_name ();
-                    var package = package_list.get (pkg_name);
+                    var package = package_list[pkg_name];
                     if (package == null) {
                         package = os_updates;
 
@@ -264,11 +289,68 @@ public class AppCenterCore.Client : Object {
         updates_available ();
     }
 
+    public void get_drivers () {
+        task_count++;
+        if (driver_list.size > 0) {
+            drivers_detected ();
+            task_count--;
+            return;
+        }
+
+        var command = new Granite.Services.SimpleCommand ("/usr/bin", "ubuntu-drivers list");
+        command.done.connect ((command, status) => parse_drivers_output (command.standard_output_str, status));
+        command.run ();
+    }
+
+    private void parse_drivers_output (string output, int status) {
+        if (status != 0) {
+            task_count--;
+            return;
+        }
+
+        new Thread<void*> ("parse-drivers-output", () => {
+            string[] tokens = output.split ("\n");
+            for (int i = 0; i < tokens.length; i++) {
+                string package_name = tokens[i];
+                if (package_name.strip () == "") {
+                    continue;
+                }
+
+                var driver_component = new AppStream.Component ();
+                driver_component.set_kind (AppStream.ComponentKind.DRIVER);
+                driver_component.set_pkgnames ({ package_name });
+                driver_component.set_id (package_name);
+
+                var icon = new AppStream.Icon ();
+                icon.set_name ("application-x-firmware");
+                icon.set_kind (AppStream.IconKind.STOCK);
+                driver_component.add_icon (icon);
+
+                var package = new Package (driver_component);
+                var pk_package = package.find_package ();
+                if (pk_package != null && pk_package.get_info () == Pk.Info.INSTALLED) {
+                    package.installed_packages.add (pk_package);
+                    package.update_state ();
+                }
+
+                driver_list.add (package);
+            }
+
+            Idle.add (() => {
+                drivers_detected ();
+                return false;
+            });
+
+            task_count--;
+            return null;
+        });
+    }
+
     public async Gee.Collection<AppCenterCore.Package> get_installed_applications () {
         var packages = new Gee.TreeSet<AppCenterCore.Package> ();
         var installed = yield get_installed_packages ();
         foreach (var pk_package in installed) {
-            var package = package_list.get (pk_package.get_name ());
+            var package = package_list[pk_package.get_name ()];
             if (package != null) {
                 package.installed_packages.add (pk_package);
                 package.latest_version = pk_package.get_version ();
@@ -291,7 +373,10 @@ public class AppCenterCore.Client : Object {
 
         var apps = new Gee.TreeSet<AppCenterCore.Package> ();
         components.foreach ((comp) => {
-            apps.add (package_list.get (comp.get_pkgnames ()[0]));
+            var package = get_package_for_component_id (comp.get_id ());
+            if (package != null) {
+                apps.add (package);
+            }
         });
 
         return apps;
@@ -302,20 +387,17 @@ public class AppCenterCore.Client : Object {
         GLib.GenericArray<weak AppStream.Component> comps = appstream_pool.search (query);
         if (category == null) {
             comps.foreach ((comp) => {
-                unowned string[] comp_pkgnames = comp.get_pkgnames ();
-                if (comp_pkgnames.length > 0) {
-                    apps.add (package_list.get (comp_pkgnames[0]));
+                var package = get_package_for_component_id (comp.get_id ());
+                if (package != null) {
+                    apps.add (package);
                 }
             });
         } else {
             var cat_packages = get_applications_for_category (category);
             comps.foreach ((comp) => {
-                unowned string[] comp_pkgnames = comp.get_pkgnames ();
-                if (comp_pkgnames.length > 0) {
-                    var package = package_list.get (comp_pkgnames[0]);
-                    if (package in cat_packages) {
-                        apps.add (package);
-                    }
+                var package = get_package_for_component_id (comp.get_id ());
+                if (package != null && package in cat_packages) {
+                    apps.add (package);
                 }
             });
         }
@@ -407,9 +489,9 @@ public class AppCenterCore.Client : Object {
         var result_comp = new Gee.TreeSet<AppStream.Component> ();
 
         package_array.foreach ((pk_package) => {
-            var comp = package_list.get (pk_package.get_name ());
-            if (comp != null) {
-                result_comp.add (comp.component);
+            var package = package_list[pk_package.get_name ()];
+            if (package != null) {
+                result_comp.add (package.component);
             } else {
                 os_update_found = true;
             }
