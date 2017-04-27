@@ -23,19 +23,6 @@ using AppCenterCore;
 public class AppCenter.Views.InstalledView : View {
     AppListUpdateView app_list_view;
 
-    public InstalledView () {
-        var client = Client.get_default ();
-        // We need this line in order to show the No Update view.
-        client.updates_available.connect (() => {
-            var package = Client.get_default ().os_updates;
-            if (package.update_available) {
-                app_list_view.add_package (package);
-            }
-        });
-
-        client.bind_property ("updating-cache", app_list_view, "updating-cache", GLib.BindingFlags.SYNC_CREATE);
-    }
-
     construct {
         app_list_view = new AppListUpdateView ();
         add (app_list_view);
@@ -43,6 +30,11 @@ public class AppCenter.Views.InstalledView : View {
             subview_entered (C_("view", "Updates"), false);
             show_package (package);
         });
+
+        var client = Client.get_default ();
+        client.updates_available.connect (update_os_package_visibility);
+        client.bind_property ("updating-cache", app_list_view, "updating-cache", GLib.BindingFlags.DEFAULT);
+        update_os_package_visibility ();
     }
 
     public override void return_clicked () {
@@ -69,5 +61,12 @@ public class AppCenter.Views.InstalledView : View {
 
     public async void remove_app (AppCenterCore.Package package) {
         app_list_view.remove_package (package);
+    }
+
+    private void update_os_package_visibility () {
+        var package = Client.get_default ().os_updates;
+        if (package.update_available) {
+            app_list_view.add_package (package);
+        }        
     }
 }

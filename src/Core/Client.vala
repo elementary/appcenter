@@ -304,8 +304,7 @@ public class AppCenterCore.Client : Object {
 
     private async void refresh_updates () {
         task_count++;
-        updating_cache = true;
-
+        
         try {
             Pk.Results results = yield UpdateManager.get_updates (null);
 
@@ -372,7 +371,6 @@ public class AppCenterCore.Client : Object {
         }
 
         task_count--;
-        updating_cache = false;
         updates_available ();
     }
 
@@ -418,10 +416,7 @@ public class AppCenterCore.Client : Object {
         if (refresh_in_progress) {
             debug ("Update cache already in progress - returning");
             return;
-        } else {
-            refresh_in_progress = true;
         }
-
 
         if (update_cache_timeout_id > 0) {
             if (force) {
@@ -442,6 +437,9 @@ public class AppCenterCore.Client : Object {
             if (nm.get_network_available ()) {
                 debug ("New refresh task");
 
+                refresh_in_progress = true;
+                updating_cache = true;
+
                 try {
                     Pk.Results results = yield client.refresh_cache_async (false, cancellable, (t, p) => { });
                     success = results.get_exit_code () == Pk.Exit.SUCCESS;
@@ -456,6 +454,7 @@ public class AppCenterCore.Client : Object {
             }
 
             refresh_in_progress = false; //Stops new timeout while no network.
+            updating_cache = false;
         } else {
             debug ("Too soon to refresh and not forced");
         }
