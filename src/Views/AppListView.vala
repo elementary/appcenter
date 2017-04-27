@@ -179,8 +179,15 @@ namespace AppCenter.Views {
             bool a_has_updates = row1.get_update_available ();
             bool b_has_updates = row2.get_update_available ();
 
-            if ((a_has_updates && !b_has_updates) || (!a_has_updates && b_has_updates)) { /* Updates rows sort ahead of updated rows */
+            if (a_has_updates != b_has_updates) { /* Updates rows sort ahead of updated rows */
                 return a_has_updates ? -1 : 1;
+            }
+
+            bool a_is_driver = row1.get_is_driver ();
+            bool b_is_driver = row2.get_is_driver ();
+
+            if (a_is_driver != b_is_driver) {
+                return a_is_driver ? - 1 : 1;
             }
 
             return row1.get_name_label ().collate (row2.get_name_label ()); /* Else sort in name order */
@@ -189,12 +196,14 @@ namespace AppCenter.Views {
         [CCode (instance_pos = -1)]
         private void row_update_header (Widgets.AppListRow row, Widgets.AppListRow? before) {
             bool update_available = row.get_update_available ();            
-            if (before != null && update_available == before.get_update_available ()) {
-                row.set_header (null);
-                return;
-            }
+            bool is_driver = row.get_is_driver ();
 
             if (update_available) {
+                if (before != null && update_available == before.get_update_available ()) {
+                    row.set_header (null);
+                    return;
+                }
+
                 var header = new Widgets.UpdatesGrid ();
 
                 uint update_numbers = 0U;
@@ -220,15 +229,29 @@ namespace AppCenter.Views {
                 }
 
                 header.show_all ();
-                row.set_header (header);                
+                row.set_header (header);
+            } else if (is_driver) {
+                if (before != null && is_driver == before.get_is_driver ()) {
+                    row.set_header (null);
+                    return;
+                }
+
+                var header = new Widgets.DriverGrid ();
+                header.show_all ();
+                row.set_header (header);
             } else {
+                if (before != null && is_driver == before.get_is_driver () && update_available == before.get_update_available ()) {
+                    row.set_header (null);
+                    return;
+                }
+
                 var header = new Widgets.UpdatedGrid ();
                 header.update (0, 0, updating_cache);
                 header.show_all ();
                 row.set_header (header);              
             }
         }
-
+        
         private void on_update_all () {
             perform_all_updates.begin ();
         }
