@@ -31,11 +31,9 @@ public class AppCenter.Views.InstalledView : View {
             if (package.update_available) {
                 app_list_view.add_package (package);
             }
-
-            app_list_view.updating_cache = false;
         });
 
-        client.bind_property ("updating-cache", app_list_view, "updating-cache", GLib.BindingFlags.DEFAULT);
+        client.bind_property ("updating-cache", app_list_view, "updating-cache", GLib.BindingFlags.SYNC_CREATE);
     }
 
     construct {
@@ -56,8 +54,6 @@ public class AppCenter.Views.InstalledView : View {
 
         var installed_apps = yield client.get_installed_applications ();
         app_list_view.add_packages (installed_apps);
-
-        yield client.get_updates ();
     }
 
     public async void add_app (AppCenterCore.Package package) {
