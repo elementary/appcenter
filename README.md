@@ -6,7 +6,7 @@
 
 You'll need the following dependencies:
 * cmake
-* [cmake-elementary](https://code.launchpad.net/~elementary-os/+junk/cmake-modules)
+* [cmake-elementary](https://github.com/elementary/cmake-modules)
 * intltool
 * libappstream-dev (>= 0.10)
 * libgee-0.8-dev

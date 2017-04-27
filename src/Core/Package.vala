@@ -94,6 +94,12 @@ public class AppCenterCore.Package : Object {
         }
     }
 
+    public bool is_driver {
+       get {
+           return component.get_kind () == AppStream.ComponentKind.DRIVER;
+       }
+    }
+
     private string? name = null;
     private string? description = null;
     private string? summary = null;
@@ -418,7 +424,7 @@ public class AppCenterCore.Package : Object {
         return app_info != null;
     }
 
-    private Pk.Package? find_package () {
+    public Pk.Package? find_package () {
         if (component.id == OS_UPDATES_ID) {
             return null;
         }

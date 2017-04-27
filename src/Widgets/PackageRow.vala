@@ -42,6 +42,10 @@ namespace AppCenter.Widgets {
             return grid.update_available;
         }
 
+        public bool get_is_driver () {
+            return grid.is_driver;
+        }
+
         public bool get_is_updating () {
             return grid.is_updating;
         }

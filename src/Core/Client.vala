@@ -17,6 +17,7 @@
 public class AppCenterCore.Client : Object {
     public signal void operation_finished (Package package, Package.State operation, Error? error);
     public signal void updates_available ();
+    public signal void drivers_detected ();
 
     public static Task client { public get; private set; }
     public static Task get_pk_client () {
@@ -38,6 +39,7 @@ public class AppCenterCore.Client : Object {
     public bool updating_cache { public get; private set; default = false; }
 
     public AppCenterCore.Package os_updates { public get; private set; }
+    public Gee.TreeSet<AppCenterCore.Package> driver_list { get; construct; }
 
     private Gee.HashMap<string, AppCenterCore.Package> package_list;
     private AppStream.Pool appstream_pool;
@@ -65,6 +67,7 @@ public class AppCenterCore.Client : Object {
 
     construct {
         package_list = new Gee.HashMap<string, AppCenterCore.Package> (null, null);
+        driver_list = new Gee.TreeSet<AppCenterCore.Package> ();
         cancellable = new GLib.Cancellable ();
 
         sc = new SuspendControl ();
@@ -220,6 +223,63 @@ public class AppCenterCore.Client : Object {
         task_count--;
         yield refresh_updates ();
         return exit_status;
+    }
+
+    public void get_drivers () {
+        task_count++;
+        if (driver_list.size > 0) {
+            drivers_detected ();
+            task_count--;
+            return;
+        }
+
+        var command = new Granite.Services.SimpleCommand ("/usr/bin", "ubuntu-drivers list");
+        command.done.connect ((command, status) => parse_drivers_output (command.standard_output_str, status));
+        command.run ();
+    }
+
+    private void parse_drivers_output (string output, int status) {
+        if (status != 0) {
+            task_count--;
+            return;
+        }
+
+        new Thread<void*> ("parse-drivers-output", () => {
+            string[] tokens = output.split ("\n");
+            for (int i = 0; i < tokens.length; i++) {
+                string package_name = tokens[i];
+                if (package_name.strip () == "") {
+                    continue;
+                }
+
+                var driver_component = new AppStream.Component ();
+                driver_component.set_kind (AppStream.ComponentKind.DRIVER);
+                driver_component.set_pkgnames ({ package_name });
+                driver_component.set_id (package_name);
+
+                var icon = new AppStream.Icon ();
+                icon.set_name ("application-x-firmware");
+                icon.set_kind (AppStream.IconKind.STOCK);
+                driver_component.add_icon (icon);
+
+                var package = new Package (driver_component);
+                var pk_package = package.find_package ();
+                if (pk_package != null && pk_package.get_info () == Pk.Info.INSTALLED) {
+                    package.installed_packages.add (pk_package);
+                    package.update_state ();
+                }
+
+                driver_list.add (package);
+            }
+
+            Idle.add (() => {
+                drivers_detected ();
+                return false;
+            });
+
+            task_count--;
+            return null;
+        });
     }
 
     public async Gee.Collection<AppCenterCore.Package> get_installed_applications () {
