@@ -35,6 +35,12 @@ public class AppCenter.Views.InstalledView : View {
             app_list_view.updating_cache = false;
         });
 
+        client.drivers_detected.connect (() => {
+            foreach (var driver in client.driver_list) {
+                app_list_view.add_package (driver);
+            }
+        });
+
         client.bind_property ("updating-cache", app_list_view, "updating-cache", GLib.BindingFlags.DEFAULT);
     }
 
@@ -57,6 +63,7 @@ public class AppCenter.Views.InstalledView : View {
         var installed_apps = yield client.get_installed_applications ();
         app_list_view.add_packages (installed_apps);
 
+        client.get_drivers ();
         yield client.get_updates ();
     }
 
