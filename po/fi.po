@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2017-04-20 17:35+0000\n"
+"PO-Revision-Date: 2017-04-27 14:39+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/fi/>\n"
@@ -47,12 +47,10 @@ msgid "There Was An Error Installing %s"
 msgstr "Virhe asentaessa %s"
 
 #: ../src/Dialogs/RestartDialog.vala:40
-#, fuzzy
 msgid "Are you sure you want to Restart?"
-msgstr "Oletko varma että haluat käynnistää uudelleen?"
+msgstr "Haluatko varmasti käynnistää uudelleen?"
 
 #: ../src/Dialogs/RestartDialog.vala:41
-#, fuzzy
 msgid "This will close all open applications and restart this device."
 msgstr ""
 "Tämä sulkee kaikki avoimet sovellukset ja käynnistää laitteen uudelleen."
@@ -153,9 +151,8 @@ msgid "AppCenter"
 msgstr "Sovelluskeskus"
 
 #: ../src/Widgets/Banner.vala:106
-#, fuzzy
 msgid "An open, pay-what-you-want app store"
-msgstr "Avoin, maksa-mitä-haluat sovelluskauppa"
+msgstr "Avoin sovelluskauppa, jossa päätät itse mitä haluat maksaa"
 
 #: ../src/Widgets/Banner.vala:119
 msgid "Get the apps that you need at a price you can afford."
@@ -300,7 +297,6 @@ msgstr[0] "Järjestelmälle on saatavilla %u päivitys"
 msgstr[1] "Järjestelmälle on saatavilla %u päivitystä"
 
 #: ../src/Core/Client.vala:373
-#, fuzzy
 msgid "Restart Required"
 msgstr "Uudelleenkäynnistys vaaditaan"
 
