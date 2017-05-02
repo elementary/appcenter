@@ -94,12 +94,8 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         NetworkMonitor.get_default ().network_changed.connect (update_view);
 
         network_alert_view.action_activated.connect (() => {
-            var list = new List<string> ();
-            list.append ("network");
-
             try {
-                var appinfo = AppInfo.create_from_commandline ("switchboard", null, AppInfoCreateFlags.SUPPORTS_URIS);
-                appinfo.launch_uris (list, null);
+                AppInfo.launch_default_for_uri ("settings://network", null);
             } catch (Error e) {
                 warning (e.message);
             }
