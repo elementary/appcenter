@@ -166,7 +166,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
                                                             _("Connect to the internet to install or update apps."),
                                                             "network-error");
         network_alert_view.get_style_context ().remove_class (Gtk.STYLE_CLASS_VIEW);
-        network_alert_view.show_action (_("Network settings…"));
+        network_alert_view.show_action (_("Network Settings…"));
 
         network_view = new Gtk.Grid ();
         network_view.margin = 24;
