@@ -2,314 +2,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2017-03-11 17:17+0000\n"
+"POT-Creation-Date: 2017-04-27 12:30-0500\n"
+"PO-Revision-Date: 2017-04-10 21:43+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language-Team: Lithuanian <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/lt/>\n"
+"Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
 "%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
-"X-Generator: Launchpad (build 18331)\n"
-
-#: ../src/Application.vala:42
-msgid "App Center"
-msgstr "Programų centras"
-
-#: ../src/Application.vala:60
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Erikas https://launchpad.net/~erikasras\n"
-"  Mantas Kriaučiūnas https://launchpad.net/~mantas\n"
-"  Moo https://launchpad.net/~mooo\n"
-"  Simonas Gudjonis https://launchpad.net/~simonas-8\n"
-"  elementaryart (old) https://launchpad.net/~elementaryart"
-
-#: ../src/Application.vala:138
-msgid "Specified link '%s' could not be found, searching instead"
-msgstr "Nurodytos nuorodos \"%s\" rasti nepavyko, vietoj to, atliekama paieška"
-
-#: ../src/Application.vala:207
-msgid "Application installed"
-msgstr "Programa įdiegta"
-
-#: ../src/Application.vala:208
-msgid "%s has been successfully installed"
-msgstr "%s buvo sėkmingai įdiegta"
-
-#: ../src/Application.vala:224
-msgid "Close"
-msgstr ""
-
-#: ../src/Application.vala:226
-msgid "There Was An Error Installing %s"
-msgstr ""
-
-#: ../src/Dialogs/RestartDialog.vala:40
-msgid "Are you sure you want to Restart?"
-msgstr ""
-
-#: ../src/Dialogs/RestartDialog.vala:41
-msgid "This will close all open applications and restart this device."
-msgstr ""
-
-#: ../src/Dialogs/RestartDialog.vala:42
-msgid "Restart"
-msgstr ""
-
-#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:147
-#: ../src/Dialogs/StripeDialog.vala:264
-#: ../src/Widgets/AbstractAppContainer.vala:123
-msgid "Cancel"
-msgstr "Atsisakyti"
-
-#: ../src/Dialogs/StripeDialog.vala:149 ../src/Dialogs/StripeDialog.vala:263
-msgid "Pay $%s.00"
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:194
-msgid "Processing"
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:219
-msgid "There Was a Problem Processing Your Payment"
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:225
-msgid "Please review your payment info and try again."
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:255
-msgid "Pay Later"
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:256
-msgid "Retry"
-msgstr ""
-
-#: ../src/Views/InstalledView.vala:45 ../src/MainWindow.vala:123
-msgctxt "view"
-msgid "Updates"
-msgstr "Atnaujinimai"
-
-#. / TRANSLATORS: the name of the Search view
-#: ../src/Views/SearchView.vala:35
-msgctxt "view"
-msgid "Search"
-msgstr "Ieškoti"
-
-#: ../src/Views/AppListView.vala:123
-msgid "A restart is required to complete the installation of updates"
-msgstr ""
-
-#: ../src/Views/AppListView.vala:125
-msgid "Restart Now"
-msgstr ""
-
-#: ../src/Views/AppListView.vala:210
-msgid "Update All"
-msgstr "Atnaujinti viską"
-
-#: ../src/Views/AppInfoView.vala:50
-msgid "Screenshot Not Available"
-msgstr "Ekrano kopija neprieinama"
-
-#: ../src/Views/AppInfoView.vala:150
-msgid "Extensions:"
-msgstr "Plėtiniai:"
-
-#: ../src/Views/AppInfoView.vala:164
-#, fuzzy
-msgid "Homepage"
-msgstr "Tinklalapis"
-
-#: ../src/Views/AppInfoView.vala:171
-msgid "Suggest Translations"
-msgstr ""
-
-#: ../src/Views/AppInfoView.vala:178
-msgid "Report a Problem"
-msgstr ""
-
-#: ../src/Views/AppInfoView.vala:185
-msgid "Help"
-msgstr ""
-
-#: ../src/Views/Homepage.vala:79
-msgid "Categories"
-msgstr "Kategorijos"
-
-#: ../src/Views/Homepage.vala:123 ../src/Views/Homepage.vala:130
-#: ../src/MainWindow.vala:122 ../src/MainWindow.vala:163
-#: ../src/MainWindow.vala:205
-#, fuzzy
-msgid "Home"
-msgstr "Tinklalapis"
-
-#: ../src/Widgets/Banner.vala:99 ../src/MainWindow.vala:103
-msgid "AppCenter"
-msgstr "Programų centras"
-
-#: ../src/Widgets/Banner.vala:106
-msgid "An open, pay-what-you-want app store"
-msgstr ""
-
-#: ../src/Widgets/Banner.vala:119
-msgid "Get the apps that you need at a price you can afford."
-msgstr ""
-
-#: ../src/Widgets/CategoryFlowBox.vala:29
-msgid "Audio"
-msgstr "Garsas"
-
-#: ../src/Widgets/CategoryFlowBox.vala:30
-msgid "Development"
-msgstr "Programavimas"
-
-#: ../src/Widgets/CategoryFlowBox.vala:31
-msgid "Accessories"
-msgstr "Reikmenys"
-
-#: ../src/Widgets/CategoryFlowBox.vala:32
-msgid "Office"
-msgstr "Biuras"
-
-#: ../src/Widgets/CategoryFlowBox.vala:33
-msgid "System"
-msgstr "Sistema"
-
-#: ../src/Widgets/CategoryFlowBox.vala:34
-msgid "Video"
-msgstr "Vaizdas"
-
-#: ../src/Widgets/CategoryFlowBox.vala:35
-msgid "Graphics"
-msgstr "Grafika"
-
-#: ../src/Widgets/CategoryFlowBox.vala:36
-msgid "Games"
-msgstr "Žaidimai"
-
-#: ../src/Widgets/CategoryFlowBox.vala:37
-msgid "Education"
-msgstr "Švietimas"
-
-#: ../src/Widgets/CategoryFlowBox.vala:38
-msgid "Internet"
-msgstr "Internetas"
-
-#: ../src/Widgets/CategoryFlowBox.vala:39
-msgid "Science & Engineering"
-msgstr "Mokslas ir inžinerija"
-
-#: ../src/Widgets/CategoryFlowBox.vala:40
-msgid "Universal Access"
-msgstr "Universalioji prieiga"
-
-#: ../src/Widgets/HumbleButton.vala:85
-#: ../src/Widgets/AbstractAppContainer.vala:186
-msgid "Free"
-msgstr ""
-
-#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: ../src/Widgets/HumbleButton.vala:152
-msgid "$%d.00"
-msgstr ""
-
-#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: ../src/Widgets/HumbleButton.vala:155
-msgid "$%d"
-msgstr ""
-
-#: ../src/Widgets/AbstractAppContainer.vala:102
-msgid "Uninstall"
-msgstr "Šalinti"
-
-#: ../src/Widgets/AbstractAppContainer.vala:105
-msgid "Open"
-msgstr "Atverti"
-
-#: ../src/Widgets/AbstractAppContainer.vala:157
-msgid "The %s Developers"
-msgstr ""
-
-#: ../src/Widgets/AbstractAppContainer.vala:161
-msgid "by %s"
-msgstr ""
-
-#: ../src/Widgets/AbstractAppContainer.vala:200
-msgid "Update"
-msgstr "Atnaujinti"
-
-#: ../src/Widgets/AbstractAppList.vala:35
-msgid "No Results"
-msgstr "Rezultatų nėra"
-
-#: ../src/Widgets/AbstractAppList.vala:35
-msgid "No apps could be found. Try changing search terms."
-msgstr "Nepavyko rasti jokių programų. Pabandykite pakeisti paieškos žodžius."
-
-#: ../src/Widgets/UpdateHeaderRow.vala:68
-msgid "%u Update Available"
-msgid_plural "%u Updates Available"
-msgstr[0] "Yra prieinamas %u atnaujinimas"
-msgstr[1] "Yra prieinami %u atnaujinimai"
-msgstr[2] "Yra prieinama %u atnaujinimų"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:69
-msgid "Size: %s"
-msgstr "Dydis: %s"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:105
-msgid "Searching for updates…"
-msgstr "Ieškoma atnaujinimų..."
-
-#: ../src/Widgets/UpdateHeaderRow.vala:112
-msgid "Up to Date"
-msgstr "Atnaujintos"
-
-#: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
-#: ../src/MainWindow.vala:297 ../src/MainWindow.vala:319
-msgid "Search Apps"
-msgstr "Ieškoti programų"
-
-#: ../src/MainWindow.vala:279
-msgid "Search %s"
-msgstr "Ieškoti %s"
-
-#: ../src/Core/Client.vala:90
-msgid "Operating System Updates"
-msgstr "Operacinės sistemos atnaujinimai"
-
-#: ../src/Core/Client.vala:91
-msgid "Updates to system components"
-msgstr "Atnaujinimai sistemos komponentams"
-
-#: ../src/Core/Client.vala:343
-msgid "Update Available"
-msgid_plural "Updates Available"
-msgstr[0] "Prieinamas atnaujinimas"
-msgstr[1] "Prieinami atnaujinimai"
-msgstr[2] "Prieinami atnaujinimai"
-
-#: ../src/Core/Client.vala:344
-msgid "%u update is available for your system"
-msgid_plural "%u updates are available for your system"
-msgstr[0] "Jūsų sistemai prieinamas %u atnaujinimas"
-msgstr[1] "Jūsų sistemai prieinami %u atnaujinimai"
-msgstr[2] "Jūsų sistemai prieinama %u atnaujinimų"
-
-#: ../src/Core/Client.vala:373
-msgid "Restart Required"
-msgstr ""
-
-#: ../src/Core/Client.vala:374
-msgid "Please restart your system to finalize updates"
-msgstr ""
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -454,6 +159,306 @@ msgstr "Kopijuojami failai"
 #: ../src/Core/ChangeInformation.vala:124
 msgid "Unknown state"
 msgstr "Nežinoma būsena"
+
+#: ../src/Core/Client.vala:104
+msgid "Operating System Updates"
+msgstr "Operacinės sistemos atnaujinimai"
+
+#: ../src/Core/Client.vala:105
+msgid "Updates to system components"
+msgstr "Atnaujinimai sistemos komponentams"
+
+#: ../src/Core/Client.vala:441
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "Prieinamas atnaujinimas"
+msgstr[1] "Prieinami atnaujinimai"
+msgstr[2] "Prieinami atnaujinimai"
+
+#: ../src/Core/Client.vala:442
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "Jūsų sistemai prieinamas %u atnaujinimas"
+msgstr[1] "Jūsų sistemai prieinami %u atnaujinimai"
+msgstr[2] "Jūsų sistemai prieinama %u atnaujinimų"
+
+#: ../src/Core/Client.vala:471
+msgid "Restart Required"
+msgstr "Reikalingas paleidimas iš naujo"
+
+#: ../src/Core/Client.vala:472
+msgid "Please restart your system to finalize updates"
+msgstr "Norėdami užbaigti atnaujinimus, paleiskite savo sistemą iš naujo"
+
+#: ../src/Application.vala:42
+msgid "App Center"
+msgstr "Programų centras"
+
+#: ../src/Application.vala:59
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Erikas https://launchpad.net/~erikasras\n"
+"  Mantas Kriaučiūnas https://launchpad.net/~mantas\n"
+"  Moo https://launchpad.net/~mooo\n"
+"  Simonas Gudjonis https://launchpad.net/~simonas-8\n"
+"  elementaryart (old) https://launchpad.net/~elementaryart"
+
+#: ../src/Application.vala:150
+msgid "Specified link '%s' could not be found, searching instead"
+msgstr "Nurodytos nuorodos \"%s\" rasti nepavyko, vietoj to, atliekama paieška"
+
+#: ../src/Application.vala:219
+msgid "Application installed"
+msgstr "Programa įdiegta"
+
+#: ../src/Application.vala:220
+msgid "%s has been successfully installed"
+msgstr "%s buvo sėkmingai įdiegta"
+
+#: ../src/Application.vala:236
+msgid "Close"
+msgstr "Užverti"
+
+#: ../src/Application.vala:238
+msgid "There Was An Error Installing %s"
+msgstr "Įdiegiant %s, įvyko klaida"
+
+#: ../src/MainWindow.vala:103 ../src/Widgets/Banner.vala:100
+msgid "AppCenter"
+msgstr "Programų centras"
+
+#: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
+#: ../src/MainWindow.vala:300 ../src/MainWindow.vala:322
+msgid "Search Apps"
+msgstr "Ieškoti programų"
+
+#: ../src/MainWindow.vala:122 ../src/MainWindow.vala:163
+#: ../src/MainWindow.vala:205 ../src/Views/Homepage.vala:146
+#: ../src/Views/Homepage.vala:153
+msgid "Home"
+msgstr "Pradžia"
+
+#: ../src/MainWindow.vala:123 ../src/Views/InstalledView.vala:51
+msgctxt "view"
+msgid "Updates"
+msgstr "Atnaujinimai"
+
+#: ../src/MainWindow.vala:282
+msgid "Search %s"
+msgstr "Ieškoti %s"
+
+#. / TRANSLATORS: the name of the Search view
+#: ../src/Views/SearchView.vala:35
+msgctxt "view"
+msgid "Search"
+msgstr "Ieškoti"
+
+#: ../src/Views/AppListView.vala:121
+msgid "A restart is required to complete the installation of updates"
+msgstr ""
+"Norint užbaigti įdiegti atnaujinimus, reikia paleisti kompiuterį iš naujo"
+
+#: ../src/Views/AppListView.vala:129
+msgid "Restart Now"
+msgstr "Paleisti iš naujo dabar"
+
+#: ../src/Views/AppListView.vala:222
+msgid "Update All"
+msgstr "Atnaujinti viską"
+
+#: ../src/Views/Homepage.vala:101
+msgid "Categories"
+msgstr "Kategorijos"
+
+#: ../src/Views/AppInfoView.vala:57
+msgid "Screenshot Not Available"
+msgstr "Ekrano kopija neprieinama"
+
+#: ../src/Views/AppInfoView.vala:163
+msgid "Extensions:"
+msgstr "Plėtiniai:"
+
+#: ../src/Views/AppInfoView.vala:177
+msgid "Homepage"
+msgstr "Tinklalapis"
+
+#: ../src/Views/AppInfoView.vala:184
+msgid "Suggest Translations"
+msgstr "Siūlyti vertimus"
+
+#: ../src/Views/AppInfoView.vala:191
+msgid "Report a Problem"
+msgstr "Pranešti apie problemą"
+
+#: ../src/Views/AppInfoView.vala:198
+msgid "Help"
+msgstr "Žinynas"
+
+#: ../src/Widgets/HumbleButton.vala:85
+#: ../src/Widgets/AbstractAppContainer.vala:193
+msgid "Free"
+msgstr "Nemokamai"
+
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
+#: ../src/Widgets/HumbleButton.vala:152
+msgid "$%d.00"
+msgstr "%d,00$"
+
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
+#: ../src/Widgets/HumbleButton.vala:155
+msgid "$%d"
+msgstr "%d$"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:68
+msgid "%u Update Available"
+msgid_plural "%u Updates Available"
+msgstr[0] "Yra prieinamas %u atnaujinimas"
+msgstr[1] "Yra prieinami %u atnaujinimai"
+msgstr[2] "Yra prieinama %u atnaujinimų"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:69
+msgid "Size: %s"
+msgstr "Dydis: %s"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:105
+msgid "Searching for updates…"
+msgstr "Ieškoma atnaujinimų…"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:112
+msgid "Up to Date"
+msgstr "Atnaujintos"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:120
+msgid "Drivers"
+msgstr ""
+
+#: ../src/Widgets/AbstractAppContainer.vala:105
+msgid "Uninstall"
+msgstr "Šalinti"
+
+#: ../src/Widgets/AbstractAppContainer.vala:108
+msgid "Open"
+msgstr "Atverti"
+
+#: ../src/Widgets/AbstractAppContainer.vala:126
+#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:147
+#: ../src/Dialogs/StripeDialog.vala:264
+msgid "Cancel"
+msgstr "Atsisakyti"
+
+#: ../src/Widgets/AbstractAppContainer.vala:160
+msgid "The %s Developers"
+msgstr "%s kūrėjai"
+
+#: ../src/Widgets/AbstractAppContainer.vala:164
+msgid "by %s"
+msgstr "pagal %s"
+
+#: ../src/Widgets/AbstractAppContainer.vala:207
+msgid "Update"
+msgstr "Atnaujinti"
+
+#: ../src/Widgets/Banner.vala:107
+msgid "An open, pay-what-you-want app store"
+msgstr ""
+"Atvira programų parduotuvė, besivadovaujanti principu \"mokėk, kiek nori\""
+
+#: ../src/Widgets/Banner.vala:120
+msgid "Get the apps that you need at a price you can afford."
+msgstr "Gaukite reikiamas programas už prieinamą kainą."
+
+#: ../src/Widgets/CategoryFlowBox.vala:29
+msgid "Audio"
+msgstr "Garsas"
+
+#: ../src/Widgets/CategoryFlowBox.vala:30
+msgid "Development"
+msgstr "Programavimas"
+
+#: ../src/Widgets/CategoryFlowBox.vala:31
+msgid "Accessories"
+msgstr "Reikmenys"
+
+#: ../src/Widgets/CategoryFlowBox.vala:32
+msgid "Office"
+msgstr "Biuras"
+
+#: ../src/Widgets/CategoryFlowBox.vala:33
+msgid "System"
+msgstr "Sistema"
+
+#: ../src/Widgets/CategoryFlowBox.vala:34
+msgid "Video"
+msgstr "Vaizdas"
+
+#: ../src/Widgets/CategoryFlowBox.vala:35
+msgid "Graphics"
+msgstr "Grafika"
+
+#: ../src/Widgets/CategoryFlowBox.vala:36
+msgid "Games"
+msgstr "Žaidimai"
+
+#: ../src/Widgets/CategoryFlowBox.vala:37
+msgid "Education"
+msgstr "Švietimas"
+
+#: ../src/Widgets/CategoryFlowBox.vala:38
+msgid "Internet"
+msgstr "Internetas"
+
+#: ../src/Widgets/CategoryFlowBox.vala:39
+msgid "Science & Engineering"
+msgstr "Mokslas ir inžinerija"
+
+#: ../src/Widgets/CategoryFlowBox.vala:40
+msgid "Universal Access"
+msgstr "Universalioji prieiga"
+
+#: ../src/Widgets/AbstractAppList.vala:35
+msgid "No Results"
+msgstr "Rezultatų nėra"
+
+#: ../src/Widgets/AbstractAppList.vala:35
+msgid "No apps could be found. Try changing search terms."
+msgstr "Nepavyko rasti jokių programų. Pabandykite pakeisti paieškos žodžius."
+
+#: ../src/Dialogs/RestartDialog.vala:40
+msgid "Are you sure you want to Restart?"
+msgstr "Ar tikrai norite paleisti iš naujo?"
+
+#: ../src/Dialogs/RestartDialog.vala:41
+msgid "This will close all open applications and restart this device."
+msgstr "Tai užvers visas atvertas programas ir paleis šį įrenginį iš naujo."
+
+#: ../src/Dialogs/RestartDialog.vala:42
+msgid "Restart"
+msgstr "Paleisti iš naujo"
+
+#: ../src/Dialogs/StripeDialog.vala:149 ../src/Dialogs/StripeDialog.vala:263
+msgid "Pay $%s.00"
+msgstr "Mokėti $%s,00"
+
+#: ../src/Dialogs/StripeDialog.vala:194
+msgid "Processing"
+msgstr "Apdorojama"
+
+#: ../src/Dialogs/StripeDialog.vala:219
+msgid "There Was a Problem Processing Your Payment"
+msgstr "Apdorojant jūsų apmokėjimą, įvyko klaida"
+
+#: ../src/Dialogs/StripeDialog.vala:225
+msgid "Please review your payment info and try again."
+msgstr "Prašome peržiūrėti savo apmokėjimo informaciją ir bandyti dar kartą."
+
+#: ../src/Dialogs/StripeDialog.vala:255
+msgid "Pay Later"
+msgstr "Mokėti vėliau"
+
+#: ../src/Dialogs/StripeDialog.vala:256
+msgid "Retry"
+msgstr "Bandyti dar kartą"
 
 #~ msgid "Install"
 #~ msgstr "Įdiegti"

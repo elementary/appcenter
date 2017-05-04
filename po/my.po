@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-02 13:03-0700\n"
+"POT-Creation-Date: 2017-04-27 12:30-0500\n"
 "PO-Revision-Date: 2016-06-26 17:02+0000\n"
 "Last-Translator: Bone Pyae Sone <bone.burma@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,290 +13,6 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 "X-Generator: Launchpad (build 18331)\n"
-
-#: ../src/Application.vala:42
-msgid "App Center"
-msgstr "App စင်တာ"
-
-#: ../src/Application.vala:60
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Bone Pyae Sone https://launchpad.net/~bonepyaesone"
-
-#: ../src/Application.vala:138
-msgid "Specified link '%s' could not be found, searching instead"
-msgstr ""
-
-#: ../src/Application.vala:207
-msgid "Application installed"
-msgstr "ထည့်သွင်းပြီး အပ္ပလီကေးရှင်းများ"
-
-#: ../src/Application.vala:208
-msgid "%s has been successfully installed"
-msgstr "%s အားအောင်မြင်စွာ ထည့်သွင်းပြီးပါပြီ"
-
-#: ../src/Application.vala:224
-msgid "Close"
-msgstr ""
-
-#: ../src/Application.vala:226
-msgid "There Was An Error Installing %s"
-msgstr ""
-
-#: ../src/Dialogs/RestartDialog.vala:40
-msgid "Are you sure you want to Restart?"
-msgstr ""
-
-#: ../src/Dialogs/RestartDialog.vala:41
-msgid "This will close all open applications and restart this device."
-msgstr ""
-
-#: ../src/Dialogs/RestartDialog.vala:42
-msgid "Restart"
-msgstr ""
-
-#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:147
-#: ../src/Dialogs/StripeDialog.vala:264
-#: ../src/Widgets/AbstractAppContainer.vala:123
-msgid "Cancel"
-msgstr "မလုပ်တော့"
-
-#: ../src/Dialogs/StripeDialog.vala:149 ../src/Dialogs/StripeDialog.vala:263
-msgid "Pay $%s.00"
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:194
-msgid "Processing"
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:219
-msgid "There Was a Problem Processing Your Payment"
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:225
-msgid "Please review your payment info and try again."
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:255
-msgid "Pay Later"
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:256
-msgid "Retry"
-msgstr ""
-
-#: ../src/Views/InstalledView.vala:45 ../src/MainWindow.vala:123
-msgctxt "view"
-msgid "Updates"
-msgstr "အသစ်ထွက်ရှိမှု့"
-
-#. / TRANSLATORS: the name of the Search view
-#: ../src/Views/SearchView.vala:35
-msgctxt "view"
-msgid "Search"
-msgstr "ရှာရန်"
-
-#: ../src/Views/AppListView.vala:123
-msgid "A restart is required to complete the installation of updates"
-msgstr ""
-
-#: ../src/Views/AppListView.vala:125
-msgid "Restart Now"
-msgstr ""
-
-#: ../src/Views/AppListView.vala:210
-msgid "Update All"
-msgstr "အားလုံးကို မြှင့်တင်လုပ်ဆောင်မည်။"
-
-#: ../src/Views/AppInfoView.vala:50
-msgid "Screenshot Not Available"
-msgstr ""
-
-#: ../src/Views/AppInfoView.vala:150
-msgid "Extensions:"
-msgstr ""
-
-#: ../src/Views/AppInfoView.vala:164
-msgid "Homepage"
-msgstr ""
-
-#: ../src/Views/AppInfoView.vala:171
-msgid "Suggest Translations"
-msgstr ""
-
-#: ../src/Views/AppInfoView.vala:178
-msgid "Report a Problem"
-msgstr ""
-
-#: ../src/Views/AppInfoView.vala:185
-msgid "Help"
-msgstr ""
-
-#: ../src/Views/Homepage.vala:79
-msgid "Categories"
-msgstr "အမျိုးအစားများ"
-
-#: ../src/Views/Homepage.vala:123 ../src/Views/Homepage.vala:130
-#: ../src/MainWindow.vala:122 ../src/MainWindow.vala:163
-#: ../src/MainWindow.vala:205
-msgid "Home"
-msgstr ""
-
-#: ../src/Widgets/Banner.vala:99 ../src/MainWindow.vala:103
-msgid "AppCenter"
-msgstr "Appစင်တာ"
-
-#: ../src/Widgets/Banner.vala:106
-msgid "An open, pay-what-you-want app store"
-msgstr ""
-
-#: ../src/Widgets/Banner.vala:119
-msgid "Get the apps that you need at a price you can afford."
-msgstr ""
-
-#: ../src/Widgets/CategoryFlowBox.vala:29
-msgid "Audio"
-msgstr "အသံပိုင်း"
-
-#: ../src/Widgets/CategoryFlowBox.vala:30
-msgid "Development"
-msgstr "တီထွင်ဖန်တီး"
-
-#: ../src/Widgets/CategoryFlowBox.vala:31
-msgid "Accessories"
-msgstr "ထောက်ပံ့ပစ္စည်းများ"
-
-#: ../src/Widgets/CategoryFlowBox.vala:32
-msgid "Office"
-msgstr "ရုံးလုပ်ငန်းသုံး"
-
-#: ../src/Widgets/CategoryFlowBox.vala:33
-msgid "System"
-msgstr "စနစ်"
-
-#: ../src/Widgets/CategoryFlowBox.vala:34
-msgid "Video"
-msgstr "ဗီဒီယို"
-
-#: ../src/Widgets/CategoryFlowBox.vala:35
-msgid "Graphics"
-msgstr "ရုပ်ထွက်"
-
-#: ../src/Widgets/CategoryFlowBox.vala:36
-msgid "Games"
-msgstr "ဂိမ်းများ"
-
-#: ../src/Widgets/CategoryFlowBox.vala:37
-msgid "Education"
-msgstr "ပညာရေး"
-
-#: ../src/Widgets/CategoryFlowBox.vala:38
-msgid "Internet"
-msgstr "အင်တာနက်"
-
-#: ../src/Widgets/CategoryFlowBox.vala:39
-msgid "Science & Engineering"
-msgstr "သိပ္ပံနှင့် အင်ဂျင်နီယာပညာ"
-
-#: ../src/Widgets/CategoryFlowBox.vala:40
-msgid "Universal Access"
-msgstr "အားလုံးသုံးခွင့်"
-
-#: ../src/Widgets/HumbleButton.vala:85
-#: ../src/Widgets/AbstractAppContainer.vala:186
-msgid "Free"
-msgstr ""
-
-#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: ../src/Widgets/HumbleButton.vala:152
-msgid "$%d.00"
-msgstr ""
-
-#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: ../src/Widgets/HumbleButton.vala:155
-msgid "$%d"
-msgstr ""
-
-#: ../src/Widgets/AbstractAppContainer.vala:102
-msgid "Uninstall"
-msgstr "ဖယ်ထုတ်မယ်"
-
-#: ../src/Widgets/AbstractAppContainer.vala:105
-msgid "Open"
-msgstr ""
-
-#: ../src/Widgets/AbstractAppContainer.vala:157
-msgid "The %s Developers"
-msgstr ""
-
-#: ../src/Widgets/AbstractAppContainer.vala:161
-msgid "by %s"
-msgstr ""
-
-#: ../src/Widgets/AbstractAppContainer.vala:200
-msgid "Update"
-msgstr "မြှင့်တင်မွမ်းမံမှု"
-
-#: ../src/Widgets/AbstractAppList.vala:35
-msgid "No Results"
-msgstr "မရှိပါ"
-
-#: ../src/Widgets/AbstractAppList.vala:35
-msgid "No apps could be found. Try changing search terms."
-msgstr "App များမရှိပါ။ အခြားစာလုံးဖြင့် ပြောင်းရှာပါ။"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:68
-msgid "%u Update Available"
-msgid_plural "%u Updates Available"
-msgstr[0] "မြှင့်တင်မှု %u ခု ပြုလုပ်နိုင်ပါသည်။"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:69
-msgid "Size: %s"
-msgstr "ဖိုင်ပမာဏ - %s"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:105
-msgid "Searching for updates…"
-msgstr "ထပ်တိုးမြှင့်တင်မှုများအား ရှာဖွေနေသည်..."
-
-#: ../src/Widgets/UpdateHeaderRow.vala:112
-msgid "Up to Date"
-msgstr "နောက်ဆုံးပေါ် ခေတ်မီ ပြင်ဆင်ပြီး"
-
-#: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
-#: ../src/MainWindow.vala:297 ../src/MainWindow.vala:319
-msgid "Search Apps"
-msgstr ""
-
-#: ../src/MainWindow.vala:279
-msgid "Search %s"
-msgstr ""
-
-#: ../src/Core/Client.vala:90
-msgid "Operating System Updates"
-msgstr "လုပ်ဆောင်မှုစနစ် မြှင့်တင်မှုများ"
-
-#: ../src/Core/Client.vala:91
-msgid "Updates to system components"
-msgstr "စနစ်၏ အစိတ်အပိုင်းများကို မြှင့်တင်မှုများ"
-
-#: ../src/Core/Client.vala:343
-msgid "Update Available"
-msgid_plural "Updates Available"
-msgstr[0] "မြှင့်တင်မှုမံရန်"
-
-#: ../src/Core/Client.vala:344
-msgid "%u update is available for your system"
-msgid_plural "%u updates are available for your system"
-msgstr[0] "သင့်စနစ်အတွက် မြှင့်တင်မွမ်းမံမှု %u ခု လုပ်ဆောင်နိုင်ပါတယ်"
-
-#: ../src/Core/Client.vala:373
-msgid "Restart Required"
-msgstr ""
-
-#: ../src/Core/Client.vala:374
-msgid "Please restart your system to finalize updates"
-msgstr ""
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -441,6 +157,294 @@ msgstr "ဖိုင်များကိုကူးယူနေသည်။"
 #: ../src/Core/ChangeInformation.vala:124
 msgid "Unknown state"
 msgstr "အခြေအနေမသိရှိရသေး"
+
+#: ../src/Core/Client.vala:104
+msgid "Operating System Updates"
+msgstr "လုပ်ဆောင်မှုစနစ် မြှင့်တင်မှုများ"
+
+#: ../src/Core/Client.vala:105
+msgid "Updates to system components"
+msgstr "စနစ်၏ အစိတ်အပိုင်းများကို မြှင့်တင်မှုများ"
+
+#: ../src/Core/Client.vala:441
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "မြှင့်တင်မှုမံရန်"
+
+#: ../src/Core/Client.vala:442
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "သင့်စနစ်အတွက် မြှင့်တင်မွမ်းမံမှု %u ခု လုပ်ဆောင်နိုင်ပါတယ်"
+
+#: ../src/Core/Client.vala:471
+msgid "Restart Required"
+msgstr ""
+
+#: ../src/Core/Client.vala:472
+msgid "Please restart your system to finalize updates"
+msgstr ""
+
+#: ../src/Application.vala:42
+msgid "App Center"
+msgstr "App စင်တာ"
+
+#: ../src/Application.vala:59
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Bone Pyae Sone https://launchpad.net/~bonepyaesone"
+
+#: ../src/Application.vala:150
+msgid "Specified link '%s' could not be found, searching instead"
+msgstr ""
+
+#: ../src/Application.vala:219
+msgid "Application installed"
+msgstr "ထည့်သွင်းပြီး အပ္ပလီကေးရှင်းများ"
+
+#: ../src/Application.vala:220
+msgid "%s has been successfully installed"
+msgstr "%s အားအောင်မြင်စွာ ထည့်သွင်းပြီးပါပြီ"
+
+#: ../src/Application.vala:236
+msgid "Close"
+msgstr ""
+
+#: ../src/Application.vala:238
+msgid "There Was An Error Installing %s"
+msgstr ""
+
+#: ../src/MainWindow.vala:103 ../src/Widgets/Banner.vala:100
+msgid "AppCenter"
+msgstr "Appစင်တာ"
+
+#: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
+#: ../src/MainWindow.vala:300 ../src/MainWindow.vala:322
+msgid "Search Apps"
+msgstr ""
+
+#: ../src/MainWindow.vala:122 ../src/MainWindow.vala:163
+#: ../src/MainWindow.vala:205 ../src/Views/Homepage.vala:146
+#: ../src/Views/Homepage.vala:153
+msgid "Home"
+msgstr ""
+
+#: ../src/MainWindow.vala:123 ../src/Views/InstalledView.vala:51
+msgctxt "view"
+msgid "Updates"
+msgstr "အသစ်ထွက်ရှိမှု့"
+
+#: ../src/MainWindow.vala:282
+msgid "Search %s"
+msgstr ""
+
+#. / TRANSLATORS: the name of the Search view
+#: ../src/Views/SearchView.vala:35
+msgctxt "view"
+msgid "Search"
+msgstr "ရှာရန်"
+
+#: ../src/Views/AppListView.vala:121
+msgid "A restart is required to complete the installation of updates"
+msgstr ""
+
+#: ../src/Views/AppListView.vala:129
+msgid "Restart Now"
+msgstr ""
+
+#: ../src/Views/AppListView.vala:222
+msgid "Update All"
+msgstr "အားလုံးကို မြှင့်တင်လုပ်ဆောင်မည်။"
+
+#: ../src/Views/Homepage.vala:101
+msgid "Categories"
+msgstr "အမျိုးအစားများ"
+
+#: ../src/Views/AppInfoView.vala:57
+msgid "Screenshot Not Available"
+msgstr ""
+
+#: ../src/Views/AppInfoView.vala:163
+msgid "Extensions:"
+msgstr ""
+
+#: ../src/Views/AppInfoView.vala:177
+msgid "Homepage"
+msgstr ""
+
+#: ../src/Views/AppInfoView.vala:184
+msgid "Suggest Translations"
+msgstr ""
+
+#: ../src/Views/AppInfoView.vala:191
+msgid "Report a Problem"
+msgstr ""
+
+#: ../src/Views/AppInfoView.vala:198
+msgid "Help"
+msgstr ""
+
+#: ../src/Widgets/HumbleButton.vala:85
+#: ../src/Widgets/AbstractAppContainer.vala:193
+msgid "Free"
+msgstr ""
+
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
+#: ../src/Widgets/HumbleButton.vala:152
+msgid "$%d.00"
+msgstr ""
+
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
+#: ../src/Widgets/HumbleButton.vala:155
+msgid "$%d"
+msgstr ""
+
+#: ../src/Widgets/UpdateHeaderRow.vala:68
+msgid "%u Update Available"
+msgid_plural "%u Updates Available"
+msgstr[0] "မြှင့်တင်မှု %u ခု ပြုလုပ်နိုင်ပါသည်။"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:69
+msgid "Size: %s"
+msgstr "ဖိုင်ပမာဏ - %s"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:105
+msgid "Searching for updates…"
+msgstr "ထပ်တိုးမြှင့်တင်မှုများအား ရှာဖွေနေသည်..."
+
+#: ../src/Widgets/UpdateHeaderRow.vala:112
+msgid "Up to Date"
+msgstr "နောက်ဆုံးပေါ် ခေတ်မီ ပြင်ဆင်ပြီး"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:120
+msgid "Drivers"
+msgstr ""
+
+#: ../src/Widgets/AbstractAppContainer.vala:105
+msgid "Uninstall"
+msgstr "ဖယ်ထုတ်မယ်"
+
+#: ../src/Widgets/AbstractAppContainer.vala:108
+msgid "Open"
+msgstr ""
+
+#: ../src/Widgets/AbstractAppContainer.vala:126
+#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:147
+#: ../src/Dialogs/StripeDialog.vala:264
+msgid "Cancel"
+msgstr "မလုပ်တော့"
+
+#: ../src/Widgets/AbstractAppContainer.vala:160
+msgid "The %s Developers"
+msgstr ""
+
+#: ../src/Widgets/AbstractAppContainer.vala:164
+msgid "by %s"
+msgstr ""
+
+#: ../src/Widgets/AbstractAppContainer.vala:207
+msgid "Update"
+msgstr "မြှင့်တင်မွမ်းမံမှု"
+
+#: ../src/Widgets/Banner.vala:107
+msgid "An open, pay-what-you-want app store"
+msgstr ""
+
+#: ../src/Widgets/Banner.vala:120
+msgid "Get the apps that you need at a price you can afford."
+msgstr ""
+
+#: ../src/Widgets/CategoryFlowBox.vala:29
+msgid "Audio"
+msgstr "အသံပိုင်း"
+
+#: ../src/Widgets/CategoryFlowBox.vala:30
+msgid "Development"
+msgstr "တီထွင်ဖန်တီး"
+
+#: ../src/Widgets/CategoryFlowBox.vala:31
+msgid "Accessories"
+msgstr "ထောက်ပံ့ပစ္စည်းများ"
+
+#: ../src/Widgets/CategoryFlowBox.vala:32
+msgid "Office"
+msgstr "ရုံးလုပ်ငန်းသုံး"
+
+#: ../src/Widgets/CategoryFlowBox.vala:33
+msgid "System"
+msgstr "စနစ်"
+
+#: ../src/Widgets/CategoryFlowBox.vala:34
+msgid "Video"
+msgstr "ဗီဒီယို"
+
+#: ../src/Widgets/CategoryFlowBox.vala:35
+msgid "Graphics"
+msgstr "ရုပ်ထွက်"
+
+#: ../src/Widgets/CategoryFlowBox.vala:36
+msgid "Games"
+msgstr "ဂိမ်းများ"
+
+#: ../src/Widgets/CategoryFlowBox.vala:37
+msgid "Education"
+msgstr "ပညာရေး"
+
+#: ../src/Widgets/CategoryFlowBox.vala:38
+msgid "Internet"
+msgstr "အင်တာနက်"
+
+#: ../src/Widgets/CategoryFlowBox.vala:39
+msgid "Science & Engineering"
+msgstr "သိပ္ပံနှင့် အင်ဂျင်နီယာပညာ"
+
+#: ../src/Widgets/CategoryFlowBox.vala:40
+msgid "Universal Access"
+msgstr "အားလုံးသုံးခွင့်"
+
+#: ../src/Widgets/AbstractAppList.vala:35
+msgid "No Results"
+msgstr "မရှိပါ"
+
+#: ../src/Widgets/AbstractAppList.vala:35
+msgid "No apps could be found. Try changing search terms."
+msgstr "App များမရှိပါ။ အခြားစာလုံးဖြင့် ပြောင်းရှာပါ။"
+
+#: ../src/Dialogs/RestartDialog.vala:40
+msgid "Are you sure you want to Restart?"
+msgstr ""
+
+#: ../src/Dialogs/RestartDialog.vala:41
+msgid "This will close all open applications and restart this device."
+msgstr ""
+
+#: ../src/Dialogs/RestartDialog.vala:42
+msgid "Restart"
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:149 ../src/Dialogs/StripeDialog.vala:263
+msgid "Pay $%s.00"
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:194
+msgid "Processing"
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:219
+msgid "There Was a Problem Processing Your Payment"
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:225
+msgid "Please review your payment info and try again."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:255
+msgid "Pay Later"
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:256
+msgid "Retry"
+msgstr ""
 
 #~ msgid "Install"
 #~ msgstr "သွင်းမယ်"
