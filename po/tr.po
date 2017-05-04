@@ -3,16 +3,17 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-27 12:30-0500\n"
-"PO-Revision-Date: 2017-02-10 16:31+0000\n"
-"Last-Translator: İbrahim Ethem Göl <Unknown>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2017-05-04 03:35+0000\n"
+"Last-Translator: Seyit Ali Doğan <seyit822@yandex.com>\n"
+"Language-Team: Turkish "
+"<https://l10n.elementary.io/projects/appcenter/appcenter/tr/>\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
-"X-Generator: Launchpad (build 18331)\n"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -179,12 +180,13 @@ msgstr[0] "Sisteminiz için %u adet güncelleme var"
 msgstr[1] "Sisteminiz için %u adet güncelleme var"
 
 #: ../src/Core/Client.vala:471
+#, fuzzy
 msgid "Restart Required"
-msgstr ""
+msgstr "Yeniden Başlatma Gereksinimi"
 
 #: ../src/Core/Client.vala:472
 msgid "Please restart your system to finalize updates"
-msgstr ""
+msgstr "Lütfen güncellemeler bittikten sonra sisteminizi yeniden başlatın"
 
 #: ../src/Application.vala:42
 msgid "App Center"
@@ -232,7 +234,7 @@ msgstr ""
 
 #: ../src/MainWindow.vala:103 ../src/Widgets/Banner.vala:100
 msgid "AppCenter"
-msgstr "Uygulama Dünyası"
+msgstr "Uygulama Merkezi"
 
 #: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
 #: ../src/MainWindow.vala:300 ../src/MainWindow.vala:322
