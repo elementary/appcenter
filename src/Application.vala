@@ -162,6 +162,8 @@ public class AppCenter.App : Granite.Application {
         base.dbus_register (connection, object_path);
 
         if (silent) {
+            var loop = new MainLoop ();
+            
             DBusServer.initialize.begin ((obj, res) => {
                 DBusServer.initialize.end (res);
                 try {
@@ -169,7 +171,11 @@ public class AppCenter.App : Granite.Application {
                 } catch (Error e) {
                     warning (e.message);
                 }
+
+                loop.quit ();
             });
+
+            loop.run ();
         }
 
         return true;
