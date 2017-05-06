@@ -45,7 +45,5 @@ public class AppCenter.Widgets.CarouselItem : Gtk.Grid {
         attach (icon, 0, 0, 1, 2);
         attach (name_label, 1, 0, 1, 1);
         attach (category_label, 1, 1, 1, 1);
-
-        
     }
 }
