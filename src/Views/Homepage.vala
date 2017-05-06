@@ -22,6 +22,7 @@
 using AppCenterCore;
 
 const int NUM_PACKAGES_IN_BANNER = 5;
+const int NUM_PACKAGES_IN_CAROUSEL = 5;
 
 namespace AppCenter {
     public class Homepage : View {
@@ -98,6 +99,57 @@ namespace AppCenter {
                 new Thread<void*> ("update-banner", run);
             });
 
+            var recently_updated_label = new Gtk.Label (_("Recently Updated"));
+            recently_updated_label.get_style_context ().add_class ("h4");
+            recently_updated_label.xalign = 0;
+            recently_updated_label.margin_start = 10;
+
+            var recently_updated_carousel = new Widgets.Carousel ();
+
+            var recently_updated_grid = new Gtk.Grid ();
+            recently_updated_grid.margin = 2;
+            recently_updated_grid.margin_top = 12;
+            recently_updated_grid.attach (recently_updated_label, 0, 0, 1, 1);
+            recently_updated_grid.attach (recently_updated_carousel, 0, 1, 1, 1);
+
+            var recently_updated_revealer = new Gtk.Revealer ();
+            recently_updated_revealer.add (recently_updated_grid );
+
+            houston.get_updated.begin ((obj, res) => {
+                var newest_ids = houston.get_updated.end (res);
+                List<AppCenterCore.Package> packages_for_banner = new List<AppCenterCore.Package> ();
+                ThreadFunc<void*> run = () => {
+                    uint packages_added = 0;
+                    foreach (var package in newest_ids) {
+                        if (packages_added >= NUM_PACKAGES_IN_CAROUSEL) {
+                            break;
+                        }
+
+                        var candidate = package + ".desktop";
+                        var candidate_package = AppCenterCore.Client.get_default ().get_package_for_component_id (candidate);
+
+                        if (candidate_package != null) {
+                            candidate_package.update_state ();
+                            if (candidate_package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
+                                packages_added++;
+                                packages_for_banner.append (candidate_package);
+                            }
+                        }
+                    }
+                    
+                    Idle.add (() => {
+                        foreach (var banner_package in packages_for_banner) {
+                            recently_updated_carousel.add_package (banner_package);
+                        }
+                        recently_updated_revealer.reveal_child = true;
+                        main_window.homepage_loaded ();
+                        return false;
+                    });
+                    return null;
+                };
+                new Thread<void*> ("update-banner", run);
+            });
+
             var categories_label = new Gtk.Label (_("Categories"));
             categories_label.get_style_context ().add_class ("h4");
             categories_label.xalign = 0;
@@ -111,8 +163,9 @@ namespace AppCenter {
             grid.margin = 12;
             grid.attach (newest_banner, 0, 0, 1, 1);
             grid.attach (switcher_revealer, 0, 1, 1, 1);
-            grid.attach (categories_label, 0, 2, 1, 1);
-            grid.attach (category_flow, 0, 3, 1, 1);
+            grid.attach (recently_updated_revealer, 0, 2, 1, 1);
+            grid.attach (categories_label, 0, 3, 1, 1);
+            grid.attach (category_flow, 0, 4, 1, 1);
 
             category_scrolled = new Gtk.ScrolledWindow (null, null);
             category_scrolled.add (grid);
@@ -135,6 +188,21 @@ namespace AppCenter {
                 }
 
                 return 0;
+            });
+
+            recently_updated_carousel.child_activated.connect ((child) => {
+                var item = child as Widgets.CarouselItem;
+
+                if (item != null) {
+                    var package = item.package;
+
+                    if (package != null) {
+                        warning ("%s".printf (package.get_name()));
+                        package_selected (package);
+                    }
+                } else {
+                    warning ("Item is null :(");
+                }
             });
         }
 
