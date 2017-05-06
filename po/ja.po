@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-27 12:30-0500\n"
-"PO-Revision-Date: 2017-04-30 01:11+0000\n"
+"PO-Revision-Date: 2017-05-06 09:22+0000\n"
 "Last-Translator: Ryo Nakano <nscnskichiro0911@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/ja/>\n"
@@ -346,7 +346,7 @@ msgstr "%s の開発者"
 #: ../src/Widgets/AbstractAppContainer.vala:164
 #, fuzzy
 msgid "by %s"
-msgstr "%s から"
+msgstr "%s により作成"
 
 #: ../src/Widgets/AbstractAppContainer.vala:207
 msgid "Update"
