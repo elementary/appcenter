@@ -116,11 +116,11 @@ namespace AppCenter {
             recently_updated_revealer.add (recently_updated_grid );
 
             houston.get_updated.begin ((obj, res) => {
-                var newest_ids = houston.get_updated.end (res);
-                List<AppCenterCore.Package> packages_for_banner = new List<AppCenterCore.Package> ();
+                var updated_ids = houston.get_updated.end (res);
+                List<AppCenterCore.Package> packages_for_carousel = new List<AppCenterCore.Package> ();
                 ThreadFunc<void*> run = () => {
                     uint packages_added = 0;
-                    foreach (var package in newest_ids) {
+                    foreach (var package in updated_ids) {
                         if (packages_added >= NUM_PACKAGES_IN_CAROUSEL) {
                             break;
                         }
@@ -132,13 +132,13 @@ namespace AppCenter {
                             candidate_package.update_state ();
                             if (candidate_package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
                                 packages_added++;
-                                packages_for_banner.append (candidate_package);
+                                packages_for_carousel.append (candidate_package);
                             }
                         }
                     }
                     
                     Idle.add (() => {
-                        foreach (var banner_package in packages_for_banner) {
+                        foreach (var banner_package in packages_for_carousel) {
                             recently_updated_carousel.add_package (banner_package);
                         }
                         recently_updated_revealer.reveal_child = true;
@@ -191,17 +191,11 @@ namespace AppCenter {
             });
 
             recently_updated_carousel.child_activated.connect ((child) => {
-                var item = child as Widgets.CarouselItem;
+                var item = (Widgets.CarouselItem) child;
+                var package = item.package;
 
-                if (item != null) {
-                    var package = item.package;
-
-                    if (package != null) {
-                        warning ("%s".printf (package.get_name()));
-                        package_selected (package);
-                    }
-                } else {
-                    warning ("Item is null :(");
+                if (package != null) {
+                    package_selected (package);
                 }
             });
         }

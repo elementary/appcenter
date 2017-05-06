@@ -17,7 +17,7 @@
 * Boston, MA 02110-1301 USA
 */
 
-public class AppCenter.Widgets.CarouselItem : Gtk.Grid {
+public class AppCenter.Widgets.CarouselItem : Gtk.FlowBoxChild {
     public AppCenterCore.Package package { get; construct; }
 
     public CarouselItem (AppCenterCore.Package package) {
@@ -39,11 +39,14 @@ public class AppCenter.Widgets.CarouselItem : Gtk.Grid {
         category_label.xalign = 0;
         category_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
-        column_spacing = 12;
-        row_spacing = 3;
-        margin = 6;
-        attach (icon, 0, 0, 1, 2);
-        attach (name_label, 1, 0, 1, 1);
-        attach (category_label, 1, 1, 1, 1);
+        var grid = new Gtk.Grid ();
+        grid.column_spacing = 12;
+        grid.row_spacing = 3;
+        grid.margin = 6;
+        grid.attach (icon, 0, 0, 1, 2);
+        grid.attach (name_label, 1, 0, 1, 1);
+        grid.attach (category_label, 1, 1, 1, 1);
+
+        add (grid);
     }
 }
