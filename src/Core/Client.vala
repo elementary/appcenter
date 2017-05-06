@@ -53,8 +53,6 @@ public class AppCenterCore.Client : Object {
     private Task client;
     private SuspendControl sc;
 
-    private FileMonitor restart_monitor;
-
     private Client () {
     }
 
@@ -65,16 +63,6 @@ public class AppCenterCore.Client : Object {
 
         client = new Task ();
         sc = new SuspendControl ();
-
-        var restart_file = File.new_for_path (RESTART_REQUIRED_FILE);
-        try {
-            restart_monitor = restart_file.monitor (FileMonitorFlags.NONE);
-            restart_monitor.changed.connect ((file) => update_restart_state (file));
-        } catch (Error e) {
-            warning (e.message);
-        }
-
-        update_restart_state (restart_file);
 
         cancellable = new GLib.Cancellable ();
         last_cache_update = null;
@@ -112,6 +100,9 @@ public class AppCenterCore.Client : Object {
     }
 
     private void updates_changed_callback () {
+        var restart_file = File.new_for_path (RESTART_REQUIRED_FILE);
+        update_restart_state (restart_file);
+
         var time_since_last_action = (new DateTime.now_local ()).difference (last_action) / GLib.TimeSpan.MILLISECOND;
         if (!has_tasks () && time_since_last_action >= PACKAGEKIT_ACTIVITY_TIMEOUT_MS) {
             info ("packages possibly changed by external program, refreshing cache");
