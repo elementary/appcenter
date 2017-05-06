@@ -154,7 +154,7 @@ namespace AppCenter {
             categories_label.get_style_context ().add_class ("h4");
             categories_label.xalign = 0;
             categories_label.margin_start = 12;
-            categories_label.margin_top = 12;
+            categories_label.margin_top = 24;
 
             category_flow = new Widgets.CategoryFlowBox ();
             category_flow.valign = Gtk.Align.START;
