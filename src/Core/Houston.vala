@@ -43,7 +43,7 @@ public class AppCenterCore.Houston : Object {
     }
 
     public async string[] get_newest () {
-        var uri = HOUSTON_API_URL + "/newest";
+        var uri = HOUSTON_API_URL + "/newest/project";
         string[] app_ids = {};
 
         debug ("Requesting newest applications from %s", uri);
