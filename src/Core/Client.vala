@@ -24,6 +24,7 @@ public class AppCenterCore.Client : Object {
     public bool connected { public get; private set; }
     public bool updating_cache { public get; private set; }
     public bool restart_required { public get; private set; default = false; }
+    private File restart_file;
     private uint _task_count = 0;
     public uint task_count {
         public get {
@@ -57,6 +58,7 @@ public class AppCenterCore.Client : Object {
     }
 
     construct {
+        restart_file = File.new_for_path (RESTART_REQUIRED_FILE);
         package_list = new Gee.HashMap<string, AppCenterCore.Package> (null, null);
         driver_list = new Gee.TreeSet<AppCenterCore.Package> ();
         cancellable = new GLib.Cancellable ();
@@ -100,8 +102,9 @@ public class AppCenterCore.Client : Object {
     }
 
     private void updates_changed_callback () {
-        var restart_file = File.new_for_path (RESTART_REQUIRED_FILE);
-        update_restart_state (restart_file);
+        if (!has_tasks ()) {
+            update_restart_state ();
+        }
 
         var time_since_last_action = (new DateTime.now_local ()).difference (last_action) / GLib.TimeSpan.MILLISECOND;
         if (!has_tasks () && time_since_last_action >= PACKAGEKIT_ACTIVITY_TIMEOUT_MS) {
@@ -456,7 +459,7 @@ public class AppCenterCore.Client : Object {
         refresh_in_progress = false;
     }
 
-    private void update_restart_state (File restart_file) {
+    private void update_restart_state () {
         if (restart_file.query_exists ()) {
             if (!restart_required) {
                 string title = _("Restart Required");
