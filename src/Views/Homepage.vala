@@ -142,12 +142,11 @@ namespace AppCenter {
                             recently_updated_carousel.add_package (banner_package);
                         }
                         recently_updated_revealer.reveal_child = true;
-                        main_window.homepage_loaded ();
                         return false;
                     });
                     return null;
                 };
-                new Thread<void*> ("update-banner", run);
+                new Thread<void*> ("update-recent-carousel", run);
             });
 
             var categories_label = new Gtk.Label (_("Categories"));
