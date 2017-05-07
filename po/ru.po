@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-07 08:55-0700\n"
-"PO-Revision-Date: 2017-05-02 07:32+0000\n"
-"Last-Translator: Kirill Romanov <djaler1@gmail.com>\n"
-"Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/ru/>\n"
+"PO-Revision-Date: 2017-05-07 17:23+0000\n"
+"Last-Translator: Yuly <crow@rikka.io>\n"
+"Language-Team: Russian "
+"<https://l10n.elementary.io/projects/appcenter/appcenter/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
@@ -139,7 +139,7 @@ msgstr "Помощь"
 
 #: ../src/Views/Homepage.vala:102
 msgid "Recently Updated"
-msgstr ""
+msgstr "Недавно обновлённые"
 
 #: ../src/Views/Homepage.vala:152
 msgid "Categories"
@@ -278,7 +278,7 @@ msgstr "Обновления не требуются"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:120
 msgid "Drivers"
-msgstr ""
+msgstr "Драйвера"
 
 #: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
 #: ../src/MainWindow.vala:300 ../src/MainWindow.vala:322
