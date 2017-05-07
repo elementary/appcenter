@@ -24,6 +24,7 @@ public class AppCenterCore.Client : Object {
     public bool connected { public get; private set; }
     public bool updating_cache { public get; private set; }
     public bool restart_required { public get; private set; default = false; }
+    private File restart_file;
     private uint _task_count = 0;
     public uint task_count {
         public get {
@@ -53,28 +54,17 @@ public class AppCenterCore.Client : Object {
     private Task client;
     private SuspendControl sc;
 
-    private FileMonitor restart_monitor;
-
     private Client () {
     }
 
     construct {
+        restart_file = File.new_for_path (RESTART_REQUIRED_FILE);
         package_list = new Gee.HashMap<string, AppCenterCore.Package> (null, null);
         driver_list = new Gee.TreeSet<AppCenterCore.Package> ();
         cancellable = new GLib.Cancellable ();
 
         client = new Task ();
         sc = new SuspendControl ();
-
-        var restart_file = File.new_for_path (RESTART_REQUIRED_FILE);
-        try {
-            restart_monitor = restart_file.monitor (FileMonitorFlags.NONE);
-            restart_monitor.changed.connect ((file) => update_restart_state (file));
-        } catch (Error e) {
-            warning (e.message);
-        }
-
-        update_restart_state (restart_file);
 
         cancellable = new GLib.Cancellable ();
         last_cache_update = null;
@@ -112,10 +102,14 @@ public class AppCenterCore.Client : Object {
     }
 
     private void updates_changed_callback () {
-        var time_since_last_action = (new DateTime.now_local ()).difference (last_action) / GLib.TimeSpan.MILLISECOND;
-        if (!has_tasks () && time_since_last_action >= PACKAGEKIT_ACTIVITY_TIMEOUT_MS) {
-            info ("packages possibly changed by external program, refreshing cache");
-            update_cache.begin (true);
+        if (!has_tasks ()) {
+            update_restart_state ();
+
+            var time_since_last_action = (new DateTime.now_local ()).difference (last_action) / GLib.TimeSpan.MILLISECOND;
+            if (time_since_last_action >= PACKAGEKIT_ACTIVITY_TIMEOUT_MS) {
+                info ("packages possibly changed by external program, refreshing cache");
+                update_cache.begin (true);
+            }
         }
     }
 
@@ -465,7 +459,7 @@ public class AppCenterCore.Client : Object {
         refresh_in_progress = false;
     }
 
-    private void update_restart_state (File restart_file) {
+    private void update_restart_state () {
         if (restart_file.query_exists ()) {
             if (!restart_required) {
                 string title = _("Restart Required");
