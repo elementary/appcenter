@@ -104,12 +104,12 @@ public class AppCenterCore.Client : Object {
     private void updates_changed_callback () {
         if (!has_tasks ()) {
             update_restart_state ();
-        }
 
-        var time_since_last_action = (new DateTime.now_local ()).difference (last_action) / GLib.TimeSpan.MILLISECOND;
-        if (!has_tasks () && time_since_last_action >= PACKAGEKIT_ACTIVITY_TIMEOUT_MS) {
-            info ("packages possibly changed by external program, refreshing cache");
-            update_cache.begin (true);
+            var time_since_last_action = (new DateTime.now_local ()).difference (last_action) / GLib.TimeSpan.MILLISECOND;
+            if (time_since_last_action >= PACKAGEKIT_ACTIVITY_TIMEOUT_MS) {
+                info ("packages possibly changed by external program, refreshing cache");
+                update_cache.begin (true);
+            }
         }
     }
 
