@@ -5,7 +5,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-07 08:55-0700\n"
 "PO-Revision-Date: 2017-05-08 06:10+0000\n"
-"Last-Translator: Stefan Ric <stfric369@gmail.com>\n"
+"Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/sr/>\n"
 "Language: sr\n"
@@ -47,7 +47,7 @@ msgstr "Затвори"
 
 #: ../src/Application.vala:238
 msgid "There Was An Error Installing %s"
-msgstr "Десила се грешка током инсталације „%s“"
+msgstr "Дошло је до грешке током инсталације „%s“"
 
 #: ../src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
