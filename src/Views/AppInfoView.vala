@@ -117,7 +117,9 @@ namespace AppCenter.Views {
                 content_grid.add (screenshot_stack);
             }
 
-            content_grid.add (package_summary);
+            if (!package.is_os_updates) {
+                content_grid.add (package_summary);
+            }
             content_grid.add (app_description);
             content_grid.add (links_grid);
 
@@ -138,8 +140,14 @@ namespace AppCenter.Views {
             header_grid.width_request = 800;
             header_grid.attach (image, 0, 0, 1, 2);
             header_grid.attach (package_name, 1, 0, 1, 1);
-            header_grid.attach (package_author, 1, 1, 3, 1);
-            header_grid.attach (app_version, 2, 0, 1, 1);
+            if (!package.is_os_updates) {
+                header_grid.attach (package_author, 1, 1, 3, 1);
+                header_grid.attach (app_version, 2, 0, 1, 1);
+            } else {
+                package_summary.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+                package_summary.valign = Gtk.Align.START;
+                header_grid.attach (package_summary, 1, 1, 3, 1);
+            }
             header_grid.attach (action_stack, 3, 0, 1, 1);
             header_box.add (header_grid);
 
