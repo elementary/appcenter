@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-07 08:55-0700\n"
-"PO-Revision-Date: 2017-04-20 17:21+0000\n"
+"PO-Revision-Date: 2017-05-08 21:00+0000\n"
 "Last-Translator: Corentin Noël <corentin@elementary.io>\n"
-"Language-Team: French <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/fr/>\n"
+"Language-Team: French "
+"<https://l10n.elementary.io/projects/appcenter/appcenter/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -142,7 +142,7 @@ msgstr "Aide"
 
 #: ../src/Views/Homepage.vala:102
 msgid "Recently Updated"
-msgstr ""
+msgstr "Mises à jour récentes"
 
 #: ../src/Views/Homepage.vala:152
 msgid "Categories"
@@ -281,7 +281,7 @@ msgstr "À jour"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:120
 msgid "Drivers"
-msgstr ""
+msgstr "Pilotes"
 
 #: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
 #: ../src/MainWindow.vala:300 ../src/MainWindow.vala:322
