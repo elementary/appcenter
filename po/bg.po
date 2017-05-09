@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-07 08:55-0700\n"
-"PO-Revision-Date: 2017-05-09 21:47+0000\n"
+"PO-Revision-Date: 2017-05-09 21:50+0000\n"
 "Last-Translator: Martin Tomov <martin.tomov@boomer.digital>\n"
 "Language-Team: Bulgarian "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/bg/>\n"
@@ -31,7 +31,8 @@ msgstr ""
 
 #: ../src/Application.vala:150
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr "Указаната връзка '%s' не може да бъде намерена, преминаване към търсене"
+msgstr ""
+"Зададената връзка '%s' не може може да бъде намерена, преминаване към търсене"
 
 #: ../src/Application.vala:219
 msgid "Application installed"
