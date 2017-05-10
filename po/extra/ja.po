@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2017-04-11 08:49+0000\n"
+"PO-Revision-Date: 2017-05-05 10:40+0000\n"
 "Last-Translator: Ryo Nakano <nscnskichiro0911@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://l10n.elementary.io/projects/appcenter/extra/ja/>\n"
@@ -32,44 +32,37 @@ msgid ""
 "search and discover new apps. AppCenter is also used for updating your "
 "system to the latest and greatest version for new features and fixes."
 msgstr ""
-"インディーズやオープンソース開発者のためのアプリストア。カテゴリーや検索で新"
-"しいアプリを見つけてください。 AppCenter は新機能や修正のための最新バージョン"
-"へのシステムアップデートでも使われます。"
+"独立会社やオープンソース開発者のためのアプリストアです。カテゴリー別で閲覧したり検索したりして新しいアプリを見つけてください。 AppCenter "
+"は新機能や修正のためにシステムを最新で最高のバージョンへアップデートする際にも使われます。"
 
 msgid "Bug fixes and improve perfomance."
 msgstr "バグ修正とパフォーマンスの向上。"
 
-#, fuzzy
 msgid "Various bug fixes and performance improvements"
 msgstr "様々なバグ修正とパフォーマンスの向上"
 
 msgid "New translations"
 msgstr "新しい翻訳"
 
-#, fuzzy
 msgid "Fix crash caused by entries with missing packages"
 msgstr "不足しているパッケージの登録によるクラッシュを修正"
 
-#, fuzzy
 msgid "Add capability to search by category and apply minor bug fixes."
 msgstr "カテゴリー別で検索できるようにし、マイナーなバグ修正を適用。"
 
-#, fuzzy
 msgid "It is now possible to search apps inside a category"
 msgstr "今やカテゴリー内でアプリを検索することができます"
 
-#, fuzzy
 msgid "Prevent multiple authentication dialogs when resuming from suspend"
-msgstr "サスペンドからの復帰時に複数の認証ダイアログが出るのを防ぐ"
+msgstr "サスペンドからの復帰時に複数の認証ダイアログが出るのを防止"
 
-#, fuzzy
 msgid ""
 "Search perfomance has beeen improved, the category name is now shown on the "
 "headbar and minor bugs have been fixed."
 msgstr "検索能力が向上し、カテゴリーの名前がヘッドバーに表示されます。また、マイナーなバグも修正しました。"
 
 msgid "Fix Steam installation"
-msgstr ""
+msgstr "Steam のインストールを修正"
 
 #, fuzzy
 msgid "Make search asynchronous"
