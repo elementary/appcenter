@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-07 08:55-0700\n"
-"PO-Revision-Date: 2017-05-06 09:22+0000\n"
+"PO-Revision-Date: 2017-05-12 11:47+0000\n"
 "Last-Translator: Ryo Nakano <nscnskichiro0911@gmail.com>\n"
-"Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/ja/>\n"
+"Language-Team: Japanese "
+"<https://l10n.elementary.io/projects/appcenter/appcenter/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -162,7 +162,7 @@ msgstr "オープンで価格はあなた次第のアプリストア"
 
 #: ../src/Widgets/Banner.vala:120
 msgid "Get the apps that you need at a price you can afford."
-msgstr "必要なアプリケーションをゆとりのある価格で入手してください。"
+msgstr "必要なアプリケーションを購入可能な価格で入手してください。"
 
 #: ../src/Widgets/CategoryFlowBox.vala:29
 msgid "Audio"
