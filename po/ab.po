@@ -3,24 +3,27 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-07 08:55-0700\n"
-"PO-Revision-Date: 2015-11-04 14:21+0000\n"
-"Last-Translator: Launchpad Translations Administrators <Unknown>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2017-05-12 21:25+0000\n"
+"Last-Translator: Lawrence Aberba <karabutaworld@gmail.com>\n"
+"Language-Team: ab (generated) "
+"<https://l10n.elementary.io/projects/appcenter/appcenter/ab/>\n"
+"Language: ab\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:24+0000\n"
-"X-Generator: Launchpad (build 18331)\n"
 
 #: ../src/Application.vala:42
+#, fuzzy
 msgid "App Center"
-msgstr ""
+msgstr "App Center"
 
 #: ../src/Application.vala:59
+#, fuzzy
 msgid "translator-credits"
-msgstr ""
+msgstr "translator-credits"
 
 #: ../src/Application.vala:150
 msgid "Specified link '%s' could not be found, searching instead"
