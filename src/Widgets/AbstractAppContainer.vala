@@ -149,19 +149,21 @@ namespace AppCenter {
         protected virtual void set_up_package (uint icon_size = 48) {
             package_name.label = package.get_name ();
 
-            var author = package.component.developer_name;
+            if (package.component.get_id () != AppCenterCore.Package.OS_UPDATES_ID) {
+                var author = package.component.developer_name;
 
-            if (author == null) {
-                var project_group = package.component.project_group;
+                if (author == null) {
+                    var project_group = package.component.project_group;
 
-                if (project_group != null) {
-                    author = project_group;
-                } else {
-                    author = _("The %s Developers").printf (package.get_name ());
+                    if (project_group != null) {
+                        author = project_group;
+                    } else {
+                        author = _("The %s Developers").printf (package.get_name ());
+                    }
                 }
-            }
 
-            package_author.label = _("by %s").printf (author);
+                package_author.label = _("by %s").printf (author);
+            }
 
             image.gicon = package.get_icon (icon_size);
 
