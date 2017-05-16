@@ -360,18 +360,18 @@ public class AppCenterCore.Client : Object {
         foreach (var pk_package in installed) {
             var package = package_list[pk_package.get_name ()];
             if (package != null) {
-            	populate_package (package, pk_package);
+                populate_package (package, pk_package);
                 packages.add (package);
             }
         }
 
-        return packages;    	
+        return packages;        
     }
 
     private static void populate_package (AppCenterCore.Package package, Pk.Package pk_package) {
         package.installed_packages.add (pk_package);
         package.latest_version = pk_package.get_version ();
-        package.update_state ();    	
+        package.update_state ();        
     }
 
     public Gee.Collection<AppCenterCore.Package> get_applications_for_category (AppStream.Category category) {
@@ -614,7 +614,7 @@ public class AppCenterCore.Client : Object {
     }
 
     public Gee.TreeSet<Pk.Package> get_installed_packages_sync () {
-    	task_count++;
+        task_count++;
 
         Pk.Bitfield filter = Pk.Bitfield.from_enums (Pk.Filter.INSTALLED, Pk.Filter.NEWEST);
         var installed = new Gee.TreeSet<Pk.Package> ();
@@ -630,7 +630,7 @@ public class AppCenterCore.Client : Object {
         }
 
         task_count--;
-        return installed;	
+        return installed;   
     }
 
     public AppCenterCore.Package? get_package_for_component_id (string id) {
