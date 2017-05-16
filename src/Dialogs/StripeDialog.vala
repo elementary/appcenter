@@ -69,7 +69,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         email_entry.input_purpose = Gtk.InputPurpose.EMAIL;
         email_entry.placeholder_text = "Email";
         email_entry.primary_icon_name = "internet-mail-symbolic";
-        email_entry.tooltip_text = _("Your Email address is used to send a receipt. It is never stored and you will not be subscribed to a mailing list.");
+        email_entry.tooltip_text = _("Your email address is used to send a receipt. It is never stored and you will not be subscribed to a mailing list.");
 
         email_entry.changed.connect (() => {
            email_entry.text = email_entry.text.replace (" ", "").down ();
