@@ -25,9 +25,9 @@ public class DBusServer : Object {
         return instance.once (() => { return new DBusServer (); });
     }
 
-    public static async void initialize () {
+    public static void init () {
         var client = AppCenterCore.Client.get_default ();
-        yield client.get_installed_applications ();        
+        client.get_installed_applications_sync ();        
     }
 
     private DBusServer () {
