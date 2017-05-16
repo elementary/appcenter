@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-07 08:55-0700\n"
+"POT-Creation-Date: 2017-05-16 15:03-0700\n"
 "PO-Revision-Date: 2016-01-09 14:46+0000\n"
 "Last-Translator: nrao <nagamalli.s@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,19 +28,19 @@ msgstr ""
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr ""
 
-#: ../src/Application.vala:219
+#: ../src/Application.vala:217
 msgid "Application installed"
 msgstr ""
 
-#: ../src/Application.vala:220
+#: ../src/Application.vala:218
 msgid "%s has been successfully installed"
 msgstr ""
 
-#: ../src/Application.vala:236
+#: ../src/Application.vala:234
 msgid "Close"
 msgstr ""
 
-#: ../src/Application.vala:238
+#: ../src/Application.vala:236
 msgid "There Was An Error Installing %s"
 msgstr ""
 
@@ -56,33 +56,43 @@ msgstr ""
 msgid "Restart"
 msgstr ""
 
-#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:147
-#: ../src/Dialogs/StripeDialog.vala:264
+#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:152
+#: ../src/Dialogs/StripeDialog.vala:269
 #: ../src/Widgets/AbstractAppContainer.vala:126
 msgid "Cancel"
 msgstr ""
 
-#: ../src/Dialogs/StripeDialog.vala:149 ../src/Dialogs/StripeDialog.vala:263
+#: ../src/Dialogs/StripeDialog.vala:72
+msgid ""
+"Your email address is used to send a receipt. It is never stored and you "
+"will not be subscribed to a mailing list."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:143
+msgid "Privacy Policy"
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:154 ../src/Dialogs/StripeDialog.vala:268
 msgid "Pay $%s.00"
 msgstr ""
 
-#: ../src/Dialogs/StripeDialog.vala:194
+#: ../src/Dialogs/StripeDialog.vala:199
 msgid "Processing"
 msgstr ""
 
-#: ../src/Dialogs/StripeDialog.vala:219
+#: ../src/Dialogs/StripeDialog.vala:224
 msgid "There Was a Problem Processing Your Payment"
 msgstr ""
 
-#: ../src/Dialogs/StripeDialog.vala:225
+#: ../src/Dialogs/StripeDialog.vala:230
 msgid "Please review your payment info and try again."
 msgstr ""
 
-#: ../src/Dialogs/StripeDialog.vala:255
+#: ../src/Dialogs/StripeDialog.vala:260
 msgid "Pay Later"
 msgstr ""
 
-#: ../src/Dialogs/StripeDialog.vala:256
+#: ../src/Dialogs/StripeDialog.vala:261
 msgid "Retry"
 msgstr ""
 
@@ -113,23 +123,23 @@ msgstr "అన్నీ సవరణ చెయ్యి"
 msgid "Screenshot Not Available"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:162
+#: ../src/Views/AppInfoView.vala:170
 msgid "Extensions:"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:176
+#: ../src/Views/AppInfoView.vala:184
 msgid "Homepage"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:183
+#: ../src/Views/AppInfoView.vala:191
 msgid "Suggest Translations"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:190
+#: ../src/Views/AppInfoView.vala:198
 msgid "Report a Problem"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:197
+#: ../src/Views/AppInfoView.vala:205
 msgid "Help"
 msgstr ""
 
@@ -208,7 +218,7 @@ msgid "Universal Access"
 msgstr ""
 
 #: ../src/Widgets/HumbleButton.vala:85
-#: ../src/Widgets/AbstractAppContainer.vala:193
+#: ../src/Widgets/AbstractAppContainer.vala:195
 msgid "Free"
 msgstr ""
 
@@ -230,15 +240,15 @@ msgstr "వ్యవస్థాపనను తీసివెయ్యి"
 msgid "Open"
 msgstr ""
 
-#: ../src/Widgets/AbstractAppContainer.vala:160
+#: ../src/Widgets/AbstractAppContainer.vala:161
 msgid "The %s Developers"
 msgstr ""
 
-#: ../src/Widgets/AbstractAppContainer.vala:164
+#: ../src/Widgets/AbstractAppContainer.vala:165
 msgid "by %s"
 msgstr ""
 
-#: ../src/Widgets/AbstractAppContainer.vala:207
+#: ../src/Widgets/AbstractAppContainer.vala:209
 msgid "Update"
 msgstr "నవీకరించుము"
 
@@ -289,23 +299,23 @@ msgstr "నిర్వహణ పద్ధతి నవీకరణలు"
 msgid "Updates to system components"
 msgstr "నిర్వహణ పద్ధతి భాగములకు సవరణలు"
 
-#: ../src/Core/Client.vala:435
+#: ../src/Core/Client.vala:453
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "నవీకరణలు లభ్యం"
 msgstr[1] "నవీకరణలు లభ్యం"
 
-#: ../src/Core/Client.vala:436
+#: ../src/Core/Client.vala:454
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "%u నిర్వహణ పద్ధతి భాగములకు సవరణ లభ్యం"
 msgstr[1] "%u నిర్వహణ పద్ధతి భాగములకు సవరణలు లభ్యం"
 
-#: ../src/Core/Client.vala:465
+#: ../src/Core/Client.vala:483
 msgid "Restart Required"
 msgstr ""
 
-#: ../src/Core/Client.vala:466
+#: ../src/Core/Client.vala:484
 msgid "Please restart your system to finalize updates"
 msgstr ""
 

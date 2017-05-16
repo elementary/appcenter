@@ -2,11 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-07 08:55-0700\n"
+"POT-Creation-Date: 2017-05-16 15:03-0700\n"
 "PO-Revision-Date: 2017-05-09 21:50+0000\n"
 "Last-Translator: Martin Tomov <martin.tomov@boomer.digital>\n"
-"Language-Team: Bulgarian "
-"<https://l10n.elementary.io/projects/appcenter/appcenter/bg/>\n"
+"Language-Team: Bulgarian <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/bg/>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,19 +34,19 @@ msgid "Specified link '%s' could not be found, searching instead"
 msgstr ""
 "Зададената връзка '%s' не може може да бъде намерена, преминаване към търсене"
 
-#: ../src/Application.vala:219
+#: ../src/Application.vala:217
 msgid "Application installed"
 msgstr "Програмата е инсталирана"
 
-#: ../src/Application.vala:220
+#: ../src/Application.vala:218
 msgid "%s has been successfully installed"
 msgstr "%s беше успешно инсталирана"
 
-#: ../src/Application.vala:236
+#: ../src/Application.vala:234
 msgid "Close"
 msgstr "Затвори"
 
-#: ../src/Application.vala:238
+#: ../src/Application.vala:236
 msgid "There Was An Error Installing %s"
 msgstr "Възникна грешка при инсталирането на %s"
 
@@ -63,33 +63,43 @@ msgstr ""
 msgid "Restart"
 msgstr "Рестартиране"
 
-#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:147
-#: ../src/Dialogs/StripeDialog.vala:264
+#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:152
+#: ../src/Dialogs/StripeDialog.vala:269
 #: ../src/Widgets/AbstractAppContainer.vala:126
 msgid "Cancel"
 msgstr "Отказ"
 
-#: ../src/Dialogs/StripeDialog.vala:149 ../src/Dialogs/StripeDialog.vala:263
+#: ../src/Dialogs/StripeDialog.vala:72
+msgid ""
+"Your email address is used to send a receipt. It is never stored and you "
+"will not be subscribed to a mailing list."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:143
+msgid "Privacy Policy"
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:154 ../src/Dialogs/StripeDialog.vala:268
 msgid "Pay $%s.00"
 msgstr "Плати $%s.00"
 
-#: ../src/Dialogs/StripeDialog.vala:194
+#: ../src/Dialogs/StripeDialog.vala:199
 msgid "Processing"
 msgstr "Обработване"
 
-#: ../src/Dialogs/StripeDialog.vala:219
+#: ../src/Dialogs/StripeDialog.vala:224
 msgid "There Was a Problem Processing Your Payment"
 msgstr "Възникна проблем при обработката на плащането"
 
-#: ../src/Dialogs/StripeDialog.vala:225
+#: ../src/Dialogs/StripeDialog.vala:230
 msgid "Please review your payment info and try again."
 msgstr "Моля прегледай данните за плащането и опитай отново."
 
-#: ../src/Dialogs/StripeDialog.vala:255
+#: ../src/Dialogs/StripeDialog.vala:260
 msgid "Pay Later"
 msgstr "Плати по-късно"
 
-#: ../src/Dialogs/StripeDialog.vala:256
+#: ../src/Dialogs/StripeDialog.vala:261
 msgid "Retry"
 msgstr "Пробвай пак"
 
@@ -120,23 +130,23 @@ msgstr "Обновяване на всичко"
 msgid "Screenshot Not Available"
 msgstr "Не е налична снимка"
 
-#: ../src/Views/AppInfoView.vala:162
+#: ../src/Views/AppInfoView.vala:170
 msgid "Extensions:"
 msgstr "Разширения:"
 
-#: ../src/Views/AppInfoView.vala:176
+#: ../src/Views/AppInfoView.vala:184
 msgid "Homepage"
 msgstr "Начална страница"
 
-#: ../src/Views/AppInfoView.vala:183
+#: ../src/Views/AppInfoView.vala:191
 msgid "Suggest Translations"
 msgstr "Предложи превод"
 
-#: ../src/Views/AppInfoView.vala:190
+#: ../src/Views/AppInfoView.vala:198
 msgid "Report a Problem"
 msgstr "Съобщи за проблем"
 
-#: ../src/Views/AppInfoView.vala:197
+#: ../src/Views/AppInfoView.vala:205
 msgid "Help"
 msgstr "Помощ"
 
@@ -216,7 +226,7 @@ msgid "Universal Access"
 msgstr "Улеснен достъп"
 
 #: ../src/Widgets/HumbleButton.vala:85
-#: ../src/Widgets/AbstractAppContainer.vala:193
+#: ../src/Widgets/AbstractAppContainer.vala:195
 msgid "Free"
 msgstr "Безплатен"
 
@@ -238,15 +248,15 @@ msgstr "Деинсталиране"
 msgid "Open"
 msgstr "Отворен"
 
-#: ../src/Widgets/AbstractAppContainer.vala:160
+#: ../src/Widgets/AbstractAppContainer.vala:161
 msgid "The %s Developers"
 msgstr "Програмистите %s"
 
-#: ../src/Widgets/AbstractAppContainer.vala:164
+#: ../src/Widgets/AbstractAppContainer.vala:165
 msgid "by %s"
 msgstr "от %s"
 
-#: ../src/Widgets/AbstractAppContainer.vala:207
+#: ../src/Widgets/AbstractAppContainer.vala:209
 msgid "Update"
 msgstr "Обновяване"
 
@@ -297,23 +307,23 @@ msgstr "Обновления за операционната система"
 msgid "Updates to system components"
 msgstr "Обновления за елементи на системата"
 
-#: ../src/Core/Client.vala:435
+#: ../src/Core/Client.vala:453
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Налично е обновление"
 msgstr[1] "Налични са обновления"
 
-#: ../src/Core/Client.vala:436
+#: ../src/Core/Client.vala:454
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "Налично е %u обновление за системата ви"
 msgstr[1] "Налични са %u обновления за системата ви"
 
-#: ../src/Core/Client.vala:465
+#: ../src/Core/Client.vala:483
 msgid "Restart Required"
 msgstr "Необходим е рестарт"
 
-#: ../src/Core/Client.vala:466
+#: ../src/Core/Client.vala:484
 msgid "Please restart your system to finalize updates"
 msgstr "Моля рестартирай машината, за да приключиш обновленията"
 
