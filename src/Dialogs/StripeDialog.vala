@@ -69,6 +69,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         email_entry.input_purpose = Gtk.InputPurpose.EMAIL;
         email_entry.placeholder_text = "Email";
         email_entry.primary_icon_name = "internet-mail-symbolic";
+        email_entry.tooltip_text = _("Your Email address is used to send a receipt. It is never stored and you will not be subscribed to a mailing list.");
 
         email_entry.changed.connect (() => {
            email_entry.text = email_entry.text.replace (" ", "").down ();
@@ -139,10 +140,14 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
 
         get_content_area ().add (layouts);
 
-        var action_area = get_action_area ();
+        var privacy_policy_link = new Gtk.LinkButton.with_label ("https://stripe.com/us/privacy", _("Privacy Policy"));
+
+        var action_area = (Gtk.ButtonBox) get_action_area ();
         action_area.margin_right = 5;
         action_area.margin_bottom = 5;
         action_area.margin_top = 14;
+        action_area.add (privacy_policy_link);
+        action_area.set_child_secondary (privacy_policy_link, true);
 
         cancel_button = (Gtk.Button) add_button (_("Cancel"), Gtk.ResponseType.CLOSE);
 
