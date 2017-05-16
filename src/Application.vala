@@ -162,14 +162,12 @@ public class AppCenter.App : Granite.Application {
         base.dbus_register (connection, object_path);
 
         if (silent) {
-            DBusServer.initialize.begin ((obj, res) => {
-                DBusServer.initialize.end (res);
-                try {
-                    registration_id = connection.register_object ("/io/elementary/appcenter", DBusServer.get_default ());    
-                } catch (Error e) {
-                    warning (e.message);
-                }
-            });
+            DBusServer.init ();
+            try {
+                registration_id = connection.register_object ("/io/elementary/appcenter", DBusServer.get_default ());    
+            } catch (Error e) {
+                warning (e.message);
+            }
         }
 
         return true;
