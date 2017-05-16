@@ -142,13 +142,10 @@ namespace AppCenter {
                             foreach (var banner_package in packages_for_carousel) {
                                 recently_updated_carousel.add_package (banner_package);
                             }
-
                             recently_updated_revealer.reveal_child = true;
-
                             return false;
                         });
                     }
-
                     return null;
                 };
                 new Thread<void*> ("update-recent-carousel", run);
