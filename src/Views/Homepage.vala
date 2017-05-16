@@ -138,10 +138,15 @@ namespace AppCenter {
                     }
                     
                     Idle.add (() => {
+                        var packages_in_carousel = false;
+
                         foreach (var banner_package in packages_for_carousel) {
                             recently_updated_carousel.add_package (banner_package);
+                            packages_in_carousel = true;
                         }
-                        recently_updated_revealer.reveal_child = true;
+                        if (packages_in_carousel) {
+                            recently_updated_revealer.reveal_child = true;
+                        }
                         return false;
                     });
                     return null;
