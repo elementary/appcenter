@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-16 15:03-0700\n"
 "PO-Revision-Date: 2017-05-17 17:22+0000\n"
-"Last-Translator: Fernando da Silva Sousa <wild.nando@gmail.com>\n"
+"Last-Translator: Robert San <robertsanseries@hotmail.com>\n"
 "Language-Team: Portuguese (Brazil) "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -257,7 +257,7 @@ msgstr "Abrir"
 
 #: ../src/Widgets/AbstractAppContainer.vala:161
 msgid "The %s Developers"
-msgstr "Os Desenvolvedores do %s"
+msgstr "Os desenvolvedores de %s"
 
 #: ../src/Widgets/AbstractAppContainer.vala:165
 msgid "by %s"
