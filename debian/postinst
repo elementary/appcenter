@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# Notify user that the system needs to reboot
+touch /var/run/reboot-required

@@ -1,3 +1,4 @@
+debian/appcenter.list /etc/apt/sources.list.d/
 debian/60appcenter /etc/apt/apt.conf.d/
 usr/bin/
 usr/share/metainfo/
