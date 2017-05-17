@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-16 15:03-0700\n"
-"PO-Revision-Date: 2017-05-12 11:47+0000\n"
+"PO-Revision-Date: 2017-05-17 12:37+0000\n"
 "Last-Translator: Ryo Nakano <nscnskichiro0911@gmail.com>\n"
-"Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/ja/>\n"
+"Language-Team: Japanese "
+"<https://l10n.elementary.io/projects/appcenter/appcenter/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -68,14 +68,16 @@ msgid "Cancel"
 msgstr "キャンセル"
 
 #: ../src/Dialogs/StripeDialog.vala:72
+#, fuzzy
 msgid ""
 "Your email address is used to send a receipt. It is never stored and you "
 "will not be subscribed to a mailing list."
-msgstr ""
+msgstr "あなたのメールアドレスは領収書を送信するのに使用されます。メールアドレスは保存されず、メーリングリストには加入されません。"
 
 #: ../src/Dialogs/StripeDialog.vala:143
+#, fuzzy
 msgid "Privacy Policy"
-msgstr ""
+msgstr "プライバシーポリシー"
 
 #: ../src/Dialogs/StripeDialog.vala:154 ../src/Dialogs/StripeDialog.vala:268
 msgid "Pay $%s.00"
@@ -149,8 +151,9 @@ msgid "Help"
 msgstr "ヘルプ"
 
 #: ../src/Views/Homepage.vala:102
+#, fuzzy
 msgid "Recently Updated"
-msgstr ""
+msgstr "最近アップデートしたもの"
 
 #: ../src/Views/Homepage.vala:152
 msgid "Categories"
@@ -224,7 +227,6 @@ msgstr "ユニバーサルアクセス"
 
 #: ../src/Widgets/HumbleButton.vala:85
 #: ../src/Widgets/AbstractAppContainer.vala:195
-#, fuzzy
 msgid "Free"
 msgstr "無料"
 
@@ -285,8 +287,9 @@ msgid "Up to Date"
 msgstr "最新"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:120
+#, fuzzy
 msgid "Drivers"
-msgstr ""
+msgstr "ドライバー"
 
 #: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
 #: ../src/MainWindow.vala:300 ../src/MainWindow.vala:322
