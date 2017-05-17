@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-16 15:03-0700\n"
-"PO-Revision-Date: 2017-04-14 17:22+0000\n"
-"Last-Translator: Jan Hrdina <jan.hrdka@gmail.com>\n"
-"Language-Team: Czech <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/cs/>\n"
+"PO-Revision-Date: 2017-05-17 22:04+0000\n"
+"Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
+"Language-Team: Czech "
+"<https://l10n.elementary.io/projects/appcenter/appcenter/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -80,10 +80,12 @@ msgid ""
 "Your email address is used to send a receipt. It is never stored and you "
 "will not be subscribed to a mailing list."
 msgstr ""
+"Vaše emailová adresa se používá pro zaslání účtenky. Nikdy nebude trvale "
+"uložena ani zapsána k pravidelnému odběru emailů."
 
 #: ../src/Dialogs/StripeDialog.vala:143
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Ochrana osobních údajů"
 
 #: ../src/Dialogs/StripeDialog.vala:154 ../src/Dialogs/StripeDialog.vala:268
 msgid "Pay $%s.00"
@@ -158,7 +160,7 @@ msgstr "Pomoc"
 
 #: ../src/Views/Homepage.vala:102
 msgid "Recently Updated"
-msgstr ""
+msgstr "Nedávno změněné"
 
 #: ../src/Views/Homepage.vala:152
 msgid "Categories"
@@ -294,7 +296,7 @@ msgstr "Aktuální"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:120
 msgid "Drivers"
-msgstr ""
+msgstr "Ovladače"
 
 #: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
 #: ../src/MainWindow.vala:300 ../src/MainWindow.vala:322
