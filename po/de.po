@@ -255,7 +255,7 @@ msgstr "Deinstallieren"
 
 #: ../src/Widgets/AbstractAppContainer.vala:108
 msgid "Open"
-msgstr "frei"
+msgstr "Öffnen"
 
 #: ../src/Widgets/AbstractAppContainer.vala:160
 msgid "The %s Developers"
