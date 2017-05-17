@@ -39,6 +39,8 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
     private Gtk.Button pay_button;
     private Gtk.Button cancel_button;
 
+    private Gtk.Label secondary_error_label;
+
     public int amount { get; construct set; }
     public string app_name { get; construct set; }
     public string app_id { get; construct set; }
@@ -217,7 +219,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         pay_button.sensitive = false;
     }
 
-    private void show_error_view () {
+    private void show_error_view (string error_reason) {
         if (error_layout == null) {
             error_layout = new Gtk.Grid ();
 
@@ -227,10 +229,10 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
             primary_label.wrap = true;
             primary_label.xalign = 0;
 
-            var secondary_label = new Gtk.Label (_("Please review your payment info and try again."));
-            secondary_label.max_width_chars = 35;
-            secondary_label.wrap = true;
-            secondary_label.xalign = 0;
+            secondary_error_label = new Gtk.Label (error_reason);
+            secondary_error_label.max_width_chars = 35;
+            secondary_error_label.wrap = true;
+            secondary_error_label.xalign = 0;
 
             var icon = new Gtk.Image.from_icon_name ("system-software-install", Gtk.IconSize.DIALOG);
 
@@ -248,12 +250,14 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
             grid.row_spacing = 6;
             grid.attach (overlay, 0, 0, 1, 2);
             grid.attach (primary_label, 1, 0, 1, 1);
-            grid.attach (secondary_label, 1, 1, 1, 1);
+            grid.attach (secondary_error_label, 1, 1, 1, 1);
 
             error_layout.add (grid);
 
             layouts.add_named (error_layout, "error");
             layouts.show_all ();
+        } else {
+            secondary_error_label.label = error_reason;
         }
 
         layouts.set_visible_child_name ("error");
@@ -360,37 +364,36 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
 
             var data = get_stripe_data (stripe_key, email_entry.text, (amount * 100).to_string (), card_number_entry.text, card_expiration_entry.text[0:2], year, card_cvc_entry.text);
             debug ("Stripe data:%s", data);
-            var error = false;
+            string error = null;
             try {
                 var parser = new Json.Parser ();
                 parser.load_from_data (data);
                 var root_object = parser.get_root ().get_object ();
-                var token_id = root_object.get_string_member ("id");
-
-                string? houston_data = null;
-                if (token_id != null) {
-                    houston_data = post_to_houston (stripe_key, app_id, token_id, email_entry.text, (amount * 100).to_string ());
-                    debug ("Houston data:%s", houston_data);
-                } else {
-                    error = true;
-                }
-
-                if (houston_data != null) {
-                    parser.load_from_data (houston_data);
-                    root_object = parser.get_root ().get_object ();
-
-                    if (root_object.has_member ("errors")) {
-                        error = true;
+                if (root_object != null && root_object.has_member ("id")) {
+                    var token_id = root_object.get_string_member ("id");
+                    string? houston_data = post_to_houston (stripe_key, app_id, token_id, email_entry.text, (amount * 100).to_string ());
+                    if (houston_data != null) {
+                        debug ("Houston data:%s", houston_data);
+                        parser.load_from_data (houston_data);
+                        root_object = parser.get_root ().get_object ();
+                        if (root_object.has_member ("errors")) {
+                            error = _("Please review your payment info and try again.");
+                        }
+                    } else {
+                        error = _("Please review your payment info and try again.");
                     }
+                } else if (root_object != null && root_object.has_member ("error")) {
+                    error = get_stripe_error (root_object.get_object_member ("error"));
                 } else {
-                    error = true;
+                    error = _("Please review your payment info and try again.");
                 }
             } catch (Error e) {
-                error = true;
+                error = _("Please review your payment info and try again.");
+                debug (e.message);
             }
 
-            if (error) {
-                show_error_view ();
+            if (error != null) {
+                show_error_view (error);
             } else {
                 download_requested ();
                 destroy ();
@@ -426,6 +429,43 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         }
 
         return data.str;
+    }
+
+    private string get_stripe_error (Json.Object error_object) {
+        unowned string error_type = error_object.get_string_member ("type");
+        debug ("Stripe error type: %s", error_type);
+        switch (error_type) {
+            case "card_error":
+                unowned string error_code = error_object.get_string_member ("code");
+                debug ("Stripe error code: %s", error_code);
+                switch (error_code) {
+                    case "incorrect_number":
+                    case "invalid_number":
+                        return _("Please review your payment info number and try again.");
+                    case "invalid_expiry_month":
+                    case "invalid_expiry_year":
+                        return _("Please review your payment info expiry and try again.");
+                    case "incorrect_cvc":
+                    case "invalid_cvc":
+                        return _("Please review your payment info CVC and try again.");
+                    case "expired_card":
+                        return _("The provided payment info has expired.");
+                    case "processing_error":
+                        return _("An payment processing error occurred, please retry later. We apologize for any inconvenience caused.");
+                    default:
+                        return _("Please review your payment info and try again.");
+                }
+            case "validation_error":
+                return _("Please review your payment info and try again.");
+            case "rate_limit_error":
+                return _("There are too many payment requests at the moment, please retry later.");
+            case "api_connection_error":
+            case "api_error":
+            case "authentication_error":
+            case "invalid_request_error":
+            default:
+                return _("An payment processing error occurred, please retry later. We apologize for any inconvenience caused.");
+        }
     }
 }
 
