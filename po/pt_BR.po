@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-16 15:03-0700\n"
-"PO-Revision-Date: 2017-05-17 16:45+0000\n"
-"Last-Translator: Fernando Bueno Dansi <fernandobuenodansi@gmail.com>\n"
+"PO-Revision-Date: 2017-05-17 17:15+0000\n"
+"Last-Translator: Fernando da Silva Sousa <wild.nando@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -96,9 +96,7 @@ msgstr "Processando"
 
 #: ../src/Dialogs/StripeDialog.vala:224
 msgid "There Was a Problem Processing Your Payment"
-msgstr ""
-"\n"
-"Ocorreu um problema ao processar seu pagamento"
+msgstr "Ocorreu um problema ao processar seu pagamento"
 
 #: ../src/Dialogs/StripeDialog.vala:230
 msgid "Please review your payment info and try again."
