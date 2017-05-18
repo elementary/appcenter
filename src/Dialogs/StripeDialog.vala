@@ -27,6 +27,9 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
                             + "&card[cvc]=%s&card[exp_month]=%s&card[exp_year]=%s"
                             + "&key=%s";
 
+    private const string INTERNAL_ERROR_MESSAGE = N_("An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused.")
+    private const string DEFAULT_ERROR_MESSAGE = N_("Please review your payment info and try again.");
+
     private Gtk.Grid card_layout;
     private Gtk.Grid? processing_layout = null;
     private Gtk.Grid? error_layout = null;
@@ -377,18 +380,18 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
                         parser.load_from_data (houston_data);
                         root_object = parser.get_root ().get_object ();
                         if (root_object.has_member ("errors")) {
-                            error = _("Please review your payment info and try again.");
+                            error = _(DEFAULT_ERROR_MESSAGE);
                         }
                     } else {
-                        error = _("Please review your payment info and try again.");
+                        error = _(DEFAULT_ERROR_MESSAGE);
                     }
                 } else if (root_object != null && root_object.has_member ("error")) {
                     error = get_stripe_error (root_object.get_object_member ("error"));
                 } else {
-                    error = _("Please review your payment info and try again.");
+                    error = _(DEFAULT_ERROR_MESSAGE);
                 }
             } catch (Error e) {
-                error = _("Please review your payment info and try again.");
+                error = _(DEFAULT_ERROR_MESSAGE);
                 debug (e.message);
             }
 
@@ -441,22 +444,23 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
                 switch (error_code) {
                     case "incorrect_number":
                     case "invalid_number":
-                        return _("Please review your payment info number and try again.");
+                        return _("The card number is incorrect. Please try again using the correct card number.");
                     case "invalid_expiry_month":
+                        return _("The expiration month is invalid. Please try again using the correct expiration date.");
                     case "invalid_expiry_year":
-                        return _("Please review your payment info expiry and try again.");
+                        return _("The expiration year is invalid. Please try again using the correct expiration date.");
                     case "incorrect_cvc":
                     case "invalid_cvc":
-                        return _("Please review your payment info CVC and try again.");
+                        return _("The CVC number is incorrect. Please try again using the correct CVC.");
                     case "expired_card":
-                        return _("The provided payment info has expired.");
+                        return _("The card has expired. Please try again with a different card.");
                     case "processing_error":
-                        return _("An payment processing error occurred, please retry later. We apologize for any inconvenience caused.");
+                        return _(INTERNAL_ERROR_MESSAGE);
                     default:
-                        return _("Please review your payment info and try again.");
+                        return _(DEFAULT_ERROR_MESSAGE);
                 }
             case "validation_error":
-                return _("Please review your payment info and try again.");
+                return _(DEFAULT_ERROR_MESSAGE);
             case "rate_limit_error":
                 return _("There are too many payment requests at the moment, please retry later.");
             case "api_connection_error":
@@ -464,7 +468,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
             case "authentication_error":
             case "invalid_request_error":
             default:
-                return _("An payment processing error occurred, please retry later. We apologize for any inconvenience caused.");
+                return _(INTERNAL_ERROR_MESSAGE);
         }
     }
 }
