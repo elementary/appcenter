@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-16 15:03-0700\n"
-"PO-Revision-Date: 2017-05-17 12:37+0000\n"
-"Last-Translator: Ryo Nakano <nscnskichiro0911@gmail.com>\n"
+"PO-Revision-Date: 2017-05-18 13:55+0000\n"
+"Last-Translator: Jun Takeda <takeda.jun@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/ja/>\n"
 "Language: ja\n"
@@ -68,14 +68,12 @@ msgid "Cancel"
 msgstr "キャンセル"
 
 #: ../src/Dialogs/StripeDialog.vala:72
-#, fuzzy
 msgid ""
 "Your email address is used to send a receipt. It is never stored and you "
 "will not be subscribed to a mailing list."
 msgstr "あなたのメールアドレスは領収書を送信するのに使用されます。メールアドレスは保存されず、メーリングリストには加入されません。"
 
 #: ../src/Dialogs/StripeDialog.vala:143
-#, fuzzy
 msgid "Privacy Policy"
 msgstr "プライバシーポリシー"
 
@@ -287,7 +285,6 @@ msgid "Up to Date"
 msgstr "最新"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:120
-#, fuzzy
 msgid "Drivers"
 msgstr "ドライバー"
 
