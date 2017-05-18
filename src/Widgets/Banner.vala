@@ -182,7 +182,7 @@ namespace AppCenter.Widgets {
             stack = new Gtk.Stack ();
             stack.valign = Gtk.Align.CENTER;
             stack.transition_duration = TRANSITION_DURATION_MILLISECONDS;
-            stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT;
+            stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
             add (stack);
 
             set_default_brand ();
