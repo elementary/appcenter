@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-16 15:03-0700\n"
-"PO-Revision-Date: 2017-05-18 14:19+0000\n"
+"PO-Revision-Date: 2017-05-18 14:24+0000\n"
 "Last-Translator: Bálint Máhonfai <mbalint314@gmail.com>\n"
 "Language-Team: Hungarian "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/hu/>\n"
@@ -220,11 +220,11 @@ msgstr "Internet"
 
 #: ../src/Widgets/CategoryFlowBox.vala:39
 msgid "Science & Engineering"
-msgstr ""
+msgstr "Tudomány & műszaki"
 
 #: ../src/Widgets/CategoryFlowBox.vala:40
 msgid "Universal Access"
-msgstr ""
+msgstr "Kisegítő"
 
 #: ../src/Widgets/HumbleButton.vala:85
 #: ../src/Widgets/AbstractAppContainer.vala:195
@@ -289,7 +289,7 @@ msgstr "Naprakész"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:120
 msgid "Drivers"
-msgstr ""
+msgstr "Illesztőprogramok"
 
 #: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
 #: ../src/MainWindow.vala:300 ../src/MainWindow.vala:322
@@ -382,15 +382,15 @@ msgstr "Függőségek feloldása"
 
 #: ../src/Core/ChangeInformation.vala:80
 msgid "Checking signatures"
-msgstr ""
+msgstr "Aláírások ellenőrzése"
 
 #: ../src/Core/ChangeInformation.vala:82
 msgid "Testing changes"
-msgstr ""
+msgstr "Változtatások tesztelése"
 
 #: ../src/Core/ChangeInformation.vala:84
 msgid "Committing changes"
-msgstr ""
+msgstr "Változtatások végrehajtása"
 
 #: ../src/Core/ChangeInformation.vala:86
 msgid "Requesting data"
