@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-16 15:03-0700\n"
-"PO-Revision-Date: 2017-04-08 09:34+0000\n"
-"Last-Translator: Pedro Monteiro <pmem@outlook.pt>\n"
-"Language-Team: Portuguese <http://weblate.elementary.io/projects/desktop/"
-"appcenter/pt/>\n"
+"PO-Revision-Date: 2017-05-18 14:21+0000\n"
+"Last-Translator: Luis Filipe <lousosad@gmail.com>\n"
+"Language-Team: Portuguese "
+"<https://l10n.elementary.io/projects/appcenter/appcenter/pt/>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,7 +22,7 @@ msgstr "Centro de Aplicações"
 #: ../src/Application.vala:59
 msgid "translator-credits"
 msgstr ""
-"Launchpad Contributions:\n"
+"Contribuições:\n"
 "  Pedro Monteiro https://launchpad.net/~pedro.monteiro\n"
 "  RDRR https://launchpad.net/~rubendrr\n"
 "  Sérgio Marques https://launchpad.net/~sergio+marques\n"
@@ -31,7 +31,7 @@ msgstr ""
 
 #: ../src/Application.vala:150
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr "A ligação '%s' não foi encontrada; a pesquisar, em alternativa"
+msgstr "Endereço não encontrado; a pesquisar em alternativa"
 
 #: ../src/Application.vala:217
 msgid "Application installed"
@@ -54,10 +54,9 @@ msgid "Are you sure you want to Restart?"
 msgstr "Tem certeza que deseja reiniciar?"
 
 #: ../src/Dialogs/RestartDialog.vala:41
-#, fuzzy
 msgid "This will close all open applications and restart this device."
 msgstr ""
-"Isto irá fechar todas as aplicações abertas, e reiniciar este dispositivo."
+"Isto irá fechar todas as aplicações abertas e reiniciar este dispositivo."
 
 #: ../src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
@@ -74,10 +73,12 @@ msgid ""
 "Your email address is used to send a receipt. It is never stored and you "
 "will not be subscribed to a mailing list."
 msgstr ""
+"O endereço de email será apenas utilizado para envio do recibo. Nunca será "
+"gravado e usado para qualquer tipo de subscrições."
 
 #: ../src/Dialogs/StripeDialog.vala:143
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Politica de Privacidade"
 
 #: ../src/Dialogs/StripeDialog.vala:154 ../src/Dialogs/StripeDialog.vala:268
 #, fuzzy
@@ -107,7 +108,7 @@ msgstr "Tentar novamente"
 #: ../src/Views/InstalledView.vala:51 ../src/MainWindow.vala:123
 msgctxt "view"
 msgid "Updates"
-msgstr "Atualizações"
+msgstr "Actualizações"
 
 #. / TRANSLATORS: the name of the Search view
 #: ../src/Views/SearchView.vala:35
@@ -117,7 +118,7 @@ msgstr "Procurar"
 
 #: ../src/Views/AppListView.vala:121
 msgid "A restart is required to complete the installation of updates"
-msgstr "É necessário reiniciar para completar a instalação de atualizações"
+msgstr "Necessário reiniciar para completar a actualização"
 
 #: ../src/Views/AppListView.vala:129
 msgid "Restart Now"
@@ -141,7 +142,7 @@ msgstr "Página Inicial"
 
 #: ../src/Views/AppInfoView.vala:191
 msgid "Suggest Translations"
-msgstr "Sugira Traduções"
+msgstr "Sugerir Traduções"
 
 #: ../src/Views/AppInfoView.vala:198
 msgid "Report a Problem"
@@ -153,7 +154,7 @@ msgstr "Ajuda"
 
 #: ../src/Views/Homepage.vala:102
 msgid "Recently Updated"
-msgstr ""
+msgstr "Actualizado recentemente"
 
 #: ../src/Views/Homepage.vala:152
 msgid "Categories"
