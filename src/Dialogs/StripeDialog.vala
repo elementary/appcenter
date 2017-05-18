@@ -367,7 +367,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
 
             var data = get_stripe_data (stripe_key, email_entry.text, (amount * 100).to_string (), card_number_entry.text, card_expiration_entry.text[0:2], year, card_cvc_entry.text);
             debug ("Stripe data:%s", data);
-            string error = null;
+            string? error = null;
             try {
                 var parser = new Json.Parser ();
                 parser.load_from_data (data);
@@ -438,7 +438,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         return data.str;
     }
 
-    private string get_stripe_error (Json.Object error_object) {
+    private static unowned string get_stripe_error (Json.Object error_object) {
         unowned string error_type = error_object.get_string_member ("type");
         debug ("Stripe error type: %s", error_type);
         switch (error_type) {
