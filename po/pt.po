@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-16 15:03-0700\n"
-"PO-Revision-Date: 2017-05-18 14:21+0000\n"
+"PO-Revision-Date: 2017-05-18 14:24+0000\n"
 "Last-Translator: Luis Filipe <lousosad@gmail.com>\n"
 "Language-Team: Portuguese "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/pt/>\n"
@@ -168,7 +168,7 @@ msgstr "Página Inicial"
 
 #: ../src/Widgets/Banner.vala:100 ../src/MainWindow.vala:103
 msgid "AppCenter"
-msgstr "AppCenter"
+msgstr "Centro de Aplicações"
 
 #: ../src/Widgets/Banner.vala:107
 msgid "An open, pay-what-you-want app store"
@@ -233,15 +233,13 @@ msgstr "Gratuito"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: ../src/Widgets/HumbleButton.vala:152
-#, fuzzy
 msgid "$%d.00"
-msgstr "$%d.00"
+msgstr "$%dUSD"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: ../src/Widgets/HumbleButton.vala:155
-#, fuzzy
 msgid "$%d"
-msgstr "$%d"
+msgstr "$%dUSD"
 
 #: ../src/Widgets/AbstractAppContainer.vala:105
 msgid "Uninstall"
