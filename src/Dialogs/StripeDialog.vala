@@ -461,71 +461,14 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
                             return _("The card has expired. Please try again with a different card.");
                         case "processing_error":
                             return _(INTERNAL_ERROR_MESSAGE);
-                        default:
-                            return _(DEFAULT_ERROR_MESSAGE);
-                    }
-                } else if (error_object.has_member ("decline_code")) {
-                    unowned string error_code = error_object.get_string_member ("decline_code");
-                    debug ("Stripe decline error code: %s", error_code);
-                    switch (error_code) {
-                        case "card_not_supported":
-                            return _("This card does not support this kind of transaction. Please try again with a different card.");
-                        case "currency_not_supported":
-                            return _("The currency is not supported by this card. Please try again with a different card.");
-                        case "duplicate_transaction":
-                            return _("The transaction has already been processed.");
-                        case "expired_card":
-                            return _("The card has expired. Please try again with a different card.");
-                        case "incorrect_zip":
-                            return _("The ZIP/Postal code is incorrect. Please try again using the correct ZIP/Postal code.");
-                        case "insufficient_funds":
-                            return _("You don't have enough funds. Please use an alternative payment method.");
-                        case "invalid_amount":
-                            return _("The amount is incorrect. Please try again using a valid amount.");
-                        case "incorrect_cvc":
-                        case "invalid_cvc":
-                            return _("The CVC number is incorrect. Please try again using the correct CVC.");
-                        case "invalid_expiry_year":
-                            return _("The expiration year is invalid. Please try again using the correct expiration date.");
-                        case "incorrect_number":
-                        case "invalid_number":
-                            return _("The card number is incorrect. Please try again using the correct card number.");
-                        case "incorrect_pin":
-                        case "invalid_pin":
-                            return _("The pin number is incorrect. Please try again using the correct pin.");
-                        case "pin_try_exceeded":
-                            return _("There has been too many pin attempts. Please try again with a different card.");
-                        case "call_issuer":
-                        case "do_not_honor":
-                        case "do_not_try_again":
-                        case "fraudulent":
-                        case "generic_decline":
-                        case "invalid_account":
-                        case "lost_card":
-                        case "new_account_information_available":
-                        case "no_action_taken":
-                        case "not_permitted":
-                        case "pickup_card":
-                        case "restricted_card":
-                        case "revocation_of_all_authorizations":
-                        case "revocation_of_authorization":
-                        case "security_violation":
-                        case "service_not_allowed":
-                        case "stolen_card":
-                        case "stop_payment_order":
-                        case "transaction_not_allowed":
-                            return _("Unable to complete the transaction. Please contact your bank for further information.");
-                        case "card_velocity_exceeded":
-                        case "withdrawal_count_limit_exceeded":
-                            return _("The balance or credit limit on the card has been reached.");
-                        case "testmode_decline":
-                            return _("The given card is a test card. Please use a real card to proceed.");
-                        case "approve_with_id":
-                        case "issuer_not_available":
-                        case "processing_error":
-                        case "reenter_transaction":
-                        case "try_again_later":
-                            return _(INTERNAL_ERROR_MESSAGE);
+                        case "card_declined":
+                            if (error_object.has_member ("decline_code")) {
+                                unowned string decline_code = error_object.get_string_member ("decline_code");
+                                debug ("Stripe decline error code: %s", decline_code);
+                                return get_stripe_decline_reason (decline_code);
+                            } else {
+                                return _(DEFAULT_ERROR_MESSAGE);
+                            }
                         default:
                             return _(DEFAULT_ERROR_MESSAGE);
                     }
@@ -542,6 +485,72 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
             case "invalid_request_error":
             default:
                 return _(INTERNAL_ERROR_MESSAGE);
+        }
+    }
+
+    private static unowned string get_stripe_decline_reason (string decline_code) {
+        switch (decline_code) {
+            case "card_not_supported":
+                return _("This card does not support this kind of transaction. Please try again with a different card.");
+            case "currency_not_supported":
+                return _("The currency is not supported by this card. Please try again with a different card.");
+            case "duplicate_transaction":
+                return _("The transaction has already been processed.");
+            case "expired_card":
+                return _("The card has expired. Please try again with a different card.");
+            case "incorrect_zip":
+                return _("The ZIP/Postal code is incorrect. Please try again using the correct ZIP/Postal code.");
+            case "insufficient_funds":
+                return _("You don't have enough funds. Please use an alternative payment method.");
+            case "invalid_amount":
+                return _("The amount is incorrect. Please try again using a valid amount.");
+            case "incorrect_cvc":
+            case "invalid_cvc":
+                return _("The CVC number is incorrect. Please try again using the correct CVC.");
+            case "invalid_expiry_year":
+                return _("The expiration year is invalid. Please try again using the correct expiration date.");
+            case "incorrect_number":
+            case "invalid_number":
+                return _("The card number is incorrect. Please try again using the correct card number.");
+            case "incorrect_pin":
+            case "invalid_pin":
+                return _("The pin number is incorrect. Please try again using the correct pin.");
+            case "pin_try_exceeded":
+                return _("There has been too many pin attempts. Please try again with a different card.");
+            case "call_issuer":
+            case "do_not_honor":
+            case "do_not_try_again":
+            case "fraudulent":
+            case "generic_decline":
+            case "invalid_account":
+            case "lost_card":
+            case "new_account_information_available":
+            case "no_action_taken":
+            case "not_permitted":
+            case "pickup_card":
+            case "restricted_card":
+            case "revocation_of_all_authorizations":
+            case "revocation_of_authorization":
+            case "security_violation":
+            case "service_not_allowed":
+            case "stolen_card":
+            case "stop_payment_order":
+            case "transaction_not_allowed":
+                return _("Unable to complete the transaction. Please contact your bank for further information.");
+            case "card_velocity_exceeded":
+            case "withdrawal_count_limit_exceeded":
+                return _("The balance or credit limit on the card has been reached.");
+            case "live_mode_test_card":
+            case "testmode_decline":
+                return _("The given card is a test card. Please use a real card to proceed.");
+            case "approve_with_id":
+            case "issuer_not_available":
+            case "processing_error":
+            case "reenter_transaction":
+            case "try_again_later":
+                return _(INTERNAL_ERROR_MESSAGE);
+            default:
+                return _(DEFAULT_ERROR_MESSAGE);
         }
     }
 }
