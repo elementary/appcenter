@@ -1,8 +1,14 @@
-appcenter (0.1.5) UNRELEASED; urgency=medium
+appcenter (0.2.1) xenial; urgency=medium
+
+  * New upstream release.
+
+ -- Cody Garver <cody@elementary.io>  Fri, 19 May 2017 14:40:46 -0500
+
+appcenter (0.2) xenial; urgency=medium
 
   * New upstream release
 
- -- Cody Garver <cody@elementary.io>  Mon, 20 Mar 2017 13:05:46 -0600
+ -- Cody Garver <cody@elementary.io>  Sat, 13 May 2017 04:50:30 -0500
 
 appcenter (0.1.4) xenial; urgency=medium
 
