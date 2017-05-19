@@ -27,6 +27,9 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
                             + "&card[cvc]=%s&card[exp_month]=%s&card[exp_year]=%s"
                             + "&key=%s";
 
+    private const string INTERNAL_ERROR_MESSAGE = N_("An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused.");
+    private const string DEFAULT_ERROR_MESSAGE = N_("Please review your payment info and try again.");
+
     private Gtk.Grid card_layout;
     private Gtk.Grid? processing_layout = null;
     private Gtk.Grid? error_layout = null;
@@ -38,6 +41,8 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
     private Gtk.Entry card_cvc_entry;
     private Gtk.Button pay_button;
     private Gtk.Button cancel_button;
+
+    private Gtk.Label secondary_error_label;
 
     public int amount { get; construct set; }
     public string app_name { get; construct set; }
@@ -217,7 +222,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         pay_button.sensitive = false;
     }
 
-    private void show_error_view () {
+    private void show_error_view (string error_reason) {
         if (error_layout == null) {
             error_layout = new Gtk.Grid ();
 
@@ -227,10 +232,10 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
             primary_label.wrap = true;
             primary_label.xalign = 0;
 
-            var secondary_label = new Gtk.Label (_("Please review your payment info and try again."));
-            secondary_label.max_width_chars = 35;
-            secondary_label.wrap = true;
-            secondary_label.xalign = 0;
+            secondary_error_label = new Gtk.Label (error_reason);
+            secondary_error_label.max_width_chars = 35;
+            secondary_error_label.wrap = true;
+            secondary_error_label.xalign = 0;
 
             var icon = new Gtk.Image.from_icon_name ("system-software-install", Gtk.IconSize.DIALOG);
 
@@ -248,12 +253,14 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
             grid.row_spacing = 6;
             grid.attach (overlay, 0, 0, 1, 2);
             grid.attach (primary_label, 1, 0, 1, 1);
-            grid.attach (secondary_label, 1, 1, 1, 1);
+            grid.attach (secondary_error_label, 1, 1, 1, 1);
 
             error_layout.add (grid);
 
             layouts.add_named (error_layout, "error");
             layouts.show_all ();
+        } else {
+            secondary_error_label.label = error_reason;
         }
 
         layouts.set_visible_child_name ("error");
@@ -360,41 +367,44 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
 
             var data = get_stripe_data (stripe_key, email_entry.text, (amount * 100).to_string (), card_number_entry.text, card_expiration_entry.text[0:2], year, card_cvc_entry.text);
             debug ("Stripe data:%s", data);
-            var error = false;
+            string? error = null;
             try {
                 var parser = new Json.Parser ();
                 parser.load_from_data (data);
                 var root_object = parser.get_root ().get_object ();
-                var token_id = root_object.get_string_member ("id");
-
-                string? houston_data = null;
-                if (token_id != null) {
-                    houston_data = post_to_houston (stripe_key, app_id, token_id, email_entry.text, (amount * 100).to_string ());
-                    debug ("Houston data:%s", houston_data);
-                } else {
-                    error = true;
-                }
-
-                if (houston_data != null) {
-                    parser.load_from_data (houston_data);
-                    root_object = parser.get_root ().get_object ();
-
-                    if (root_object.has_member ("errors")) {
-                        error = true;
+                if (root_object != null && root_object.has_member ("id")) {
+                    var token_id = root_object.get_string_member ("id");
+                    string? houston_data = post_to_houston (stripe_key, app_id, token_id, email_entry.text, (amount * 100).to_string ());
+                    if (houston_data != null) {
+                        debug ("Houston data:%s", houston_data);
+                        parser.load_from_data (houston_data);
+                        root_object = parser.get_root ().get_object ();
+                        if (root_object.has_member ("errors")) {
+                            error = _(DEFAULT_ERROR_MESSAGE);
+                        }
+                    } else {
+                        error = _(DEFAULT_ERROR_MESSAGE);
                     }
+                } else if (root_object != null && root_object.has_member ("error")) {
+                    error = get_stripe_error (root_object.get_object_member ("error"));
                 } else {
-                    error = true;
+                    error = _(DEFAULT_ERROR_MESSAGE);
                 }
             } catch (Error e) {
-                error = true;
+                error = _(DEFAULT_ERROR_MESSAGE);
+                debug (e.message);
             }
 
-            if (error) {
-                show_error_view ();
-            } else {
-                download_requested ();
-                destroy ();
-            }
+            Idle.add (() => {
+                if (error != null) {
+                    show_error_view (error);
+                } else {
+                    download_requested ();
+                    destroy ();
+                }
+
+                return GLib.Source.REMOVE;
+            });
 
             return null;
         });
@@ -426,6 +436,126 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         }
 
         return data.str;
+    }
+
+    private static unowned string get_stripe_error (Json.Object error_object) {
+        if (error_object.has_member ("type")) {
+            unowned string error_type = error_object.get_string_member ("type");
+            debug ("Stripe error type: %s", error_type);
+            switch (error_type) {
+                case "card_error":
+                    if (error_object.has_member ("code")) {
+                        unowned string error_code = error_object.get_string_member ("code");
+                        debug ("Stripe error code: %s", error_code);
+                        switch (error_code) {
+                            case "incorrect_number":
+                            case "invalid_number":
+                                return _("The card number is incorrect. Please try again using the correct card number.");
+                            case "invalid_expiry_month":
+                                return _("The expiration month is invalid. Please try again using the correct expiration date.");
+                            case "invalid_expiry_year":
+                                return _("The expiration year is invalid. Please try again using the correct expiration date.");
+                            case "incorrect_cvc":
+                            case "invalid_cvc":
+                                return _("The CVC number is incorrect. Please try again using the correct CVC.");
+                            case "expired_card":
+                                return _("The card has expired. Please try again with a different card.");
+                            case "processing_error":
+                                return _(INTERNAL_ERROR_MESSAGE);
+                            case "card_declined":
+                                if (error_object.has_member ("decline_code")) {
+                                    unowned string decline_code = error_object.get_string_member ("decline_code");
+                                    debug ("Stripe decline error code: %s", decline_code);
+                                    return get_stripe_decline_reason (decline_code);
+                                } else {
+                                    return _(DEFAULT_ERROR_MESSAGE);
+                                }
+                            default:
+                                return _(DEFAULT_ERROR_MESSAGE);
+                        }
+                    } else {
+                        return _(DEFAULT_ERROR_MESSAGE);
+                    }
+                case "validation_error":
+                    return _(DEFAULT_ERROR_MESSAGE);
+                case "rate_limit_error":
+                    return _("There are too many payment requests at the moment, please retry later.");
+                case "api_connection_error":
+                case "api_error":
+                case "authentication_error":
+                case "invalid_request_error":
+                default:
+                    return _(INTERNAL_ERROR_MESSAGE);
+            }
+        } else {
+            return _(DEFAULT_ERROR_MESSAGE);
+        }
+    }
+
+    private static unowned string get_stripe_decline_reason (string decline_code) {
+        switch (decline_code) {
+            case "card_not_supported":
+                return _("This card does not support this kind of transaction. Please try again with a different card.");
+            case "currency_not_supported":
+                return _("The currency is not supported by this card. Please try again with a different card.");
+            case "duplicate_transaction":
+                return _("The transaction has already been processed.");
+            case "expired_card":
+                return _("The card has expired. Please try again with a different card.");
+            case "incorrect_zip":
+                return _("The ZIP/Postal code is incorrect. Please try again using the correct ZIP/Postal code.");
+            case "insufficient_funds":
+                return _("You don't have enough funds. Please use an alternative payment method.");
+            case "invalid_amount":
+                return _("The amount is incorrect. Please try again using a valid amount.");
+            case "incorrect_cvc":
+            case "invalid_cvc":
+                return _("The CVC number is incorrect. Please try again using the correct CVC.");
+            case "invalid_expiry_year":
+                return _("The expiration year is invalid. Please try again using the correct expiration date.");
+            case "incorrect_number":
+            case "invalid_number":
+                return _("The card number is incorrect. Please try again using the correct card number.");
+            case "incorrect_pin":
+            case "invalid_pin":
+                return _("The pin number is incorrect. Please try again using the correct pin.");
+            case "pin_try_exceeded":
+                return _("There has been too many pin attempts. Please try again with a different card.");
+            case "call_issuer":
+            case "do_not_honor":
+            case "do_not_try_again":
+            case "fraudulent":
+            case "generic_decline":
+            case "invalid_account":
+            case "lost_card":
+            case "new_account_information_available":
+            case "no_action_taken":
+            case "not_permitted":
+            case "pickup_card":
+            case "restricted_card":
+            case "revocation_of_all_authorizations":
+            case "revocation_of_authorization":
+            case "security_violation":
+            case "service_not_allowed":
+            case "stolen_card":
+            case "stop_payment_order":
+            case "transaction_not_allowed":
+                return _("Unable to complete the transaction. Please contact your bank for further information.");
+            case "card_velocity_exceeded":
+            case "withdrawal_count_limit_exceeded":
+                return _("The balance or credit limit on the card has been reached.");
+            case "live_mode_test_card":
+            case "testmode_decline":
+                return _("The given card is a test card. Please use a real card to proceed.");
+            case "approve_with_id":
+            case "issuer_not_available":
+            case "processing_error":
+            case "reenter_transaction":
+            case "try_again_later":
+                return _(INTERNAL_ERROR_MESSAGE);
+            default:
+                return _(DEFAULT_ERROR_MESSAGE);
+        }
     }
 }
 
