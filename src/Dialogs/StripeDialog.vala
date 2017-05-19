@@ -439,52 +439,56 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
     }
 
     private static unowned string get_stripe_error (Json.Object error_object) {
-        unowned string error_type = error_object.get_string_member ("type");
-        debug ("Stripe error type: %s", error_type);
-        switch (error_type) {
-            case "card_error":
-                if (error_object.has_member ("code")) {
-                    unowned string error_code = error_object.get_string_member ("code");
-                    debug ("Stripe error code: %s", error_code);
-                    switch (error_code) {
-                        case "incorrect_number":
-                        case "invalid_number":
-                            return _("The card number is incorrect. Please try again using the correct card number.");
-                        case "invalid_expiry_month":
-                            return _("The expiration month is invalid. Please try again using the correct expiration date.");
-                        case "invalid_expiry_year":
-                            return _("The expiration year is invalid. Please try again using the correct expiration date.");
-                        case "incorrect_cvc":
-                        case "invalid_cvc":
-                            return _("The CVC number is incorrect. Please try again using the correct CVC.");
-                        case "expired_card":
-                            return _("The card has expired. Please try again with a different card.");
-                        case "processing_error":
-                            return _(INTERNAL_ERROR_MESSAGE);
-                        case "card_declined":
-                            if (error_object.has_member ("decline_code")) {
-                                unowned string decline_code = error_object.get_string_member ("decline_code");
-                                debug ("Stripe decline error code: %s", decline_code);
-                                return get_stripe_decline_reason (decline_code);
-                            } else {
+        if (error_object.has_member ("type")) {
+            unowned string error_type = error_object.get_string_member ("type");
+            debug ("Stripe error type: %s", error_type);
+            switch (error_type) {
+                case "card_error":
+                    if (error_object.has_member ("code")) {
+                        unowned string error_code = error_object.get_string_member ("code");
+                        debug ("Stripe error code: %s", error_code);
+                        switch (error_code) {
+                            case "incorrect_number":
+                            case "invalid_number":
+                                return _("The card number is incorrect. Please try again using the correct card number.");
+                            case "invalid_expiry_month":
+                                return _("The expiration month is invalid. Please try again using the correct expiration date.");
+                            case "invalid_expiry_year":
+                                return _("The expiration year is invalid. Please try again using the correct expiration date.");
+                            case "incorrect_cvc":
+                            case "invalid_cvc":
+                                return _("The CVC number is incorrect. Please try again using the correct CVC.");
+                            case "expired_card":
+                                return _("The card has expired. Please try again with a different card.");
+                            case "processing_error":
+                                return _(INTERNAL_ERROR_MESSAGE);
+                            case "card_declined":
+                                if (error_object.has_member ("decline_code")) {
+                                    unowned string decline_code = error_object.get_string_member ("decline_code");
+                                    debug ("Stripe decline error code: %s", decline_code);
+                                    return get_stripe_decline_reason (decline_code);
+                                } else {
+                                    return _(DEFAULT_ERROR_MESSAGE);
+                                }
+                            default:
                                 return _(DEFAULT_ERROR_MESSAGE);
-                            }
-                        default:
-                            return _(DEFAULT_ERROR_MESSAGE);
+                        }
+                    } else {
+                        return _(DEFAULT_ERROR_MESSAGE);
                     }
-                } else {
+                case "validation_error":
                     return _(DEFAULT_ERROR_MESSAGE);
-                }
-            case "validation_error":
-                return _(DEFAULT_ERROR_MESSAGE);
-            case "rate_limit_error":
-                return _("There are too many payment requests at the moment, please retry later.");
-            case "api_connection_error":
-            case "api_error":
-            case "authentication_error":
-            case "invalid_request_error":
-            default:
-                return _(INTERNAL_ERROR_MESSAGE);
+                case "rate_limit_error":
+                    return _("There are too many payment requests at the moment, please retry later.");
+                case "api_connection_error":
+                case "api_error":
+                case "authentication_error":
+                case "invalid_request_error":
+                default:
+                    return _(INTERNAL_ERROR_MESSAGE);
+            }
+        } else {
+            return _(DEFAULT_ERROR_MESSAGE);
         }
     }
 
