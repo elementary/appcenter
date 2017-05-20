@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-07 08:55-0700\n"
+"POT-Creation-Date: 2017-05-20 10:34+0200\n"
 "PO-Revision-Date: 2017-04-11 00:44+0000\n"
 "Last-Translator: volbil <volbilnexus@gmail.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/"
@@ -16,153 +16,29 @@ msgstr ""
 "X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
-#: ../src/Application.vala:42
-msgid "App Center"
-msgstr "Центр програмного забезпечення"
+#: ../src/MainWindow.vala:103 ../src/Widgets/Banner.vala:100
+msgid "AppCenter"
+msgstr "Центр програм"
 
-#: ../src/Application.vala:59
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Alexander Grechko https://launchpad.net/~alexxxander1111\n"
-"  Arthur https://launchpad.net/~arthedza\n"
-"  Bogdan Lisnenko https://launchpad.net/~lem8r\n"
-"  Igor Peschak https://launchpad.net/~ziaccot\n"
-"  Max_ym https://launchpad.net/~kontact-cat\n"
-"  Orest https://launchpad.net/~falchuko\n"
-"  Roman Sytnyk https://launchpad.net/~roman-sytnyk\n"
-"  Sergii Cynailo https://launchpad.net/~funeral20\n"
-"  Taras https://launchpad.net/~hashevskyi\n"
-"  cannoneer https://launchpad.net/~gjinflkzcgfve\n"
-"  elementaryart (old) https://launchpad.net/~elementaryart\n"
-"  neiron13 https://launchpad.net/~heneral"
+#: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
+#: ../src/MainWindow.vala:300 ../src/MainWindow.vala:322
+msgid "Search Apps"
+msgstr "Шукати додатки"
 
-#: ../src/Application.vala:150
-msgid "Specified link '%s' could not be found, searching instead"
-msgstr "Вказане посилання «%s» не знайдено, пошук заміни"
+#: ../src/MainWindow.vala:122 ../src/MainWindow.vala:163
+#: ../src/MainWindow.vala:205 ../src/Views/Homepage.vala:209
+#: ../src/Views/Homepage.vala:216
+msgid "Home"
+msgstr "Домашня сторінка"
 
-#: ../src/Application.vala:219
-msgid "Application installed"
-msgstr "Додаток встановлено"
-
-#: ../src/Application.vala:220
-msgid "%s has been successfully installed"
-msgstr "%s був успішно встановлений"
-
-#: ../src/Application.vala:236
-msgid "Close"
-msgstr "Закрити"
-
-#: ../src/Application.vala:238
-msgid "There Was An Error Installing %s"
-msgstr "Помилка встановлення %s"
-
-#: ../src/Dialogs/RestartDialog.vala:40
-msgid "Are you sure you want to Restart?"
-msgstr "Ви впевнені що хочете перезапустити?"
-
-#: ../src/Dialogs/RestartDialog.vala:41
-msgid "This will close all open applications and restart this device."
-msgstr "Всі програми буде закрито, а пристрій перезавантажено."
-
-#: ../src/Dialogs/RestartDialog.vala:42
-msgid "Restart"
-msgstr "Перезавантажити"
-
-#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:147
-#: ../src/Dialogs/StripeDialog.vala:264
-#: ../src/Widgets/AbstractAppContainer.vala:126
-msgid "Cancel"
-msgstr "Скасувати"
-
-#: ../src/Dialogs/StripeDialog.vala:149 ../src/Dialogs/StripeDialog.vala:263
-msgid "Pay $%s.00"
-msgstr "Оплатити $%s.00"
-
-#: ../src/Dialogs/StripeDialog.vala:194
-msgid "Processing"
-msgstr "Обробка"
-
-#: ../src/Dialogs/StripeDialog.vala:219
-msgid "There Was a Problem Processing Your Payment"
-msgstr "Проблема в обробці вашого платежу"
-
-#: ../src/Dialogs/StripeDialog.vala:225
-msgid "Please review your payment info and try again."
-msgstr "Будь-ласка перегляньте інформацію вашого платежу та спробуйте ще раз."
-
-#: ../src/Dialogs/StripeDialog.vala:255
-msgid "Pay Later"
-msgstr "Оплатити пізніше"
-
-#: ../src/Dialogs/StripeDialog.vala:256
-msgid "Retry"
-msgstr "Спробувати ще раз"
-
-#: ../src/Views/InstalledView.vala:51 ../src/MainWindow.vala:123
+#: ../src/MainWindow.vala:123 ../src/Views/InstalledView.vala:51
 msgctxt "view"
 msgid "Updates"
 msgstr "Оновленння"
 
-#. / TRANSLATORS: the name of the Search view
-#: ../src/Views/SearchView.vala:35
-msgctxt "view"
-msgid "Search"
-msgstr "Знайти"
-
-#: ../src/Views/AppListView.vala:121
-msgid "A restart is required to complete the installation of updates"
-msgstr "Перезавантаження необхідне для завершення встановлення оновлень"
-
-#: ../src/Views/AppListView.vala:129
-msgid "Restart Now"
-msgstr "Перезавантажити зараз"
-
-#: ../src/Views/AppListView.vala:222
-msgid "Update All"
-msgstr "Оновити все"
-
-#: ../src/Views/AppInfoView.vala:57
-msgid "Screenshot Not Available"
-msgstr "Скріншот недоступний"
-
-#: ../src/Views/AppInfoView.vala:162
-msgid "Extensions:"
-msgstr "Розширення:"
-
-#: ../src/Views/AppInfoView.vala:176
-msgid "Homepage"
-msgstr "Домашня сторінка"
-
-#: ../src/Views/AppInfoView.vala:183
-msgid "Suggest Translations"
-msgstr "Запропонувати переклад"
-
-#: ../src/Views/AppInfoView.vala:190
-msgid "Report a Problem"
-msgstr "Повідомити про проблему"
-
-#: ../src/Views/AppInfoView.vala:197
-msgid "Help"
-msgstr "Допомога"
-
-#: ../src/Views/Homepage.vala:102
-msgid "Recently Updated"
-msgstr ""
-
-#: ../src/Views/Homepage.vala:152
-msgid "Categories"
-msgstr "Категорії"
-
-#: ../src/Views/Homepage.vala:207 ../src/Views/Homepage.vala:214
-#: ../src/MainWindow.vala:122 ../src/MainWindow.vala:163
-#: ../src/MainWindow.vala:205
-msgid "Home"
-msgstr "Домашня сторінка"
-
-#: ../src/Widgets/Banner.vala:100 ../src/MainWindow.vala:103
-msgid "AppCenter"
-msgstr "Центр програм"
+#: ../src/MainWindow.vala:282
+msgid "Search %s"
+msgstr "Пошук %s"
 
 #: ../src/Widgets/Banner.vala:107
 msgid "An open, pay-what-you-want app store"
@@ -172,6 +48,37 @@ msgstr "Вільний \"Плати за що хочеш\" магазин"
 msgid "Get the apps that you need at a price you can afford."
 msgstr ""
 "Отримуй додатки які тобі необхідно, за ціну, яку ти можеш запропонувати."
+
+#: ../src/Widgets/AbstractAppContainer.vala:105
+msgid "Uninstall"
+msgstr "Вилучити"
+
+#: ../src/Widgets/AbstractAppContainer.vala:108
+msgid "Open"
+msgstr "Відкрити"
+
+#: ../src/Widgets/AbstractAppContainer.vala:126
+#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:158
+#: ../src/Dialogs/StripeDialog.vala:277
+msgid "Cancel"
+msgstr "Скасувати"
+
+#: ../src/Widgets/AbstractAppContainer.vala:161
+msgid "The %s Developers"
+msgstr "Розробники %s"
+
+#: ../src/Widgets/AbstractAppContainer.vala:165
+msgid "by %s"
+msgstr "від %s"
+
+#: ../src/Widgets/AbstractAppContainer.vala:195
+#: ../src/Widgets/HumbleButton.vala:85
+msgid "Free"
+msgstr "Безкоштовно"
+
+#: ../src/Widgets/AbstractAppContainer.vala:209
+msgid "Update"
+msgstr "Оновлення"
 
 #: ../src/Widgets/CategoryFlowBox.vala:29
 msgid "Audio"
@@ -221,49 +128,6 @@ msgstr "Наука та інженерна справа"
 msgid "Universal Access"
 msgstr "Універсальний доступ"
 
-#: ../src/Widgets/HumbleButton.vala:85
-#: ../src/Widgets/AbstractAppContainer.vala:193
-msgid "Free"
-msgstr "Безкоштовно"
-
-#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: ../src/Widgets/HumbleButton.vala:152
-msgid "$%d.00"
-msgstr "%d.00$"
-
-#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: ../src/Widgets/HumbleButton.vala:155
-msgid "$%d"
-msgstr "%d$"
-
-#: ../src/Widgets/AbstractAppContainer.vala:105
-msgid "Uninstall"
-msgstr "Вилучити"
-
-#: ../src/Widgets/AbstractAppContainer.vala:108
-msgid "Open"
-msgstr "Відкрити"
-
-#: ../src/Widgets/AbstractAppContainer.vala:160
-msgid "The %s Developers"
-msgstr "Розробники %s"
-
-#: ../src/Widgets/AbstractAppContainer.vala:164
-msgid "by %s"
-msgstr "від %s"
-
-#: ../src/Widgets/AbstractAppContainer.vala:207
-msgid "Update"
-msgstr "Оновлення"
-
-#: ../src/Widgets/AbstractAppList.vala:35
-msgid "No Results"
-msgstr "Немає результатів"
-
-#: ../src/Widgets/AbstractAppList.vala:35
-msgid "No apps could be found. Try changing search terms."
-msgstr "Додатки не знайдені. Спробуйте змінити умови пошуку."
-
 #: ../src/Widgets/UpdateHeaderRow.vala:68
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
@@ -287,44 +151,266 @@ msgstr "Найновіші"
 msgid "Drivers"
 msgstr ""
 
-#: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
-#: ../src/MainWindow.vala:300 ../src/MainWindow.vala:322
-msgid "Search Apps"
-msgstr "Шукати додатки"
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
+#: ../src/Widgets/HumbleButton.vala:152
+msgid "$%d.00"
+msgstr "%d.00$"
 
-#: ../src/MainWindow.vala:282
-msgid "Search %s"
-msgstr "Пошук %s"
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
+#: ../src/Widgets/HumbleButton.vala:155
+msgid "$%d"
+msgstr "%d$"
 
-#: ../src/Core/Client.vala:94
-msgid "Operating System Updates"
-msgstr "Оновлення Операційної Системи"
+#: ../src/Widgets/AbstractAppList.vala:35
+msgid "No Results"
+msgstr "Немає результатів"
 
-#: ../src/Core/Client.vala:95
-msgid "Updates to system components"
-msgstr "Оновлення системних компонетів"
+#: ../src/Widgets/AbstractAppList.vala:35
+msgid "No apps could be found. Try changing search terms."
+msgstr "Додатки не знайдені. Спробуйте змінити умови пошуку."
 
-#: ../src/Core/Client.vala:435
-msgid "Update Available"
-msgid_plural "Updates Available"
-msgstr[0] "Оновлення доступне"
-msgstr[1] "Оновлення доступні"
-msgstr[2] "Оновлень доступно"
+#: ../src/Dialogs/RestartDialog.vala:40
+msgid "Are you sure you want to Restart?"
+msgstr "Ви впевнені що хочете перезапустити?"
 
-#: ../src/Core/Client.vala:436
-msgid "%u update is available for your system"
-msgid_plural "%u updates are available for your system"
-msgstr[0] "%u оновлення доступне для вашої системи"
-msgstr[1] "%u оновлення доступні для вашої системи"
-msgstr[2] "%u оновлень доступно для вашої системи"
+#: ../src/Dialogs/RestartDialog.vala:41
+msgid "This will close all open applications and restart this device."
+msgstr "Всі програми буде закрито, а пристрій перезавантажено."
 
-#: ../src/Core/Client.vala:465
-msgid "Restart Required"
-msgstr "Потрібно перезапуск"
+#: ../src/Dialogs/RestartDialog.vala:42
+msgid "Restart"
+msgstr "Перезавантажити"
 
-#: ../src/Core/Client.vala:466
-msgid "Please restart your system to finalize updates"
-msgstr "Будь-ласка, перезавантажте систему для завершення оновлення"
+#: ../src/Dialogs/StripeDialog.vala:30
+msgid ""
+"An error occurred while processing the card. Please try again later. We "
+"apologize for any inconvenience caused."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:31
+msgid "Please review your payment info and try again."
+msgstr "Будь-ласка перегляньте інформацію вашого платежу та спробуйте ще раз."
+
+#: ../src/Dialogs/StripeDialog.vala:75
+msgid "Email"
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:77
+msgid ""
+"Your email address is used to send a receipt. It is never stored and you "
+"will not be subscribed to a mailing list."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:88
+msgid "Card Number"
+msgstr ""
+
+#. / TRANSLATORS: Don't change the order, only transliterate
+#: ../src/Dialogs/StripeDialog.vala:100
+msgid "MM / YY"
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:112
+msgid "CVC"
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:149
+msgid "Privacy Policy"
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:160 ../src/Dialogs/StripeDialog.vala:276
+#, fuzzy
+msgid "Pay $%d.00"
+msgstr "Оплатити $%s.00"
+
+#: ../src/Dialogs/StripeDialog.vala:205
+msgid "Processing"
+msgstr "Обробка"
+
+#: ../src/Dialogs/StripeDialog.vala:230
+msgid "There Was a Problem Processing Your Payment"
+msgstr "Проблема в обробці вашого платежу"
+
+#: ../src/Dialogs/StripeDialog.vala:268
+msgid "Pay Later"
+msgstr "Оплатити пізніше"
+
+#: ../src/Dialogs/StripeDialog.vala:269
+msgid "Retry"
+msgstr "Спробувати ще раз"
+
+#: ../src/Dialogs/StripeDialog.vala:454 ../src/Dialogs/StripeDialog.vala:519
+msgid ""
+"The card number is incorrect. Please try again using the correct card number."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:456
+msgid ""
+"The expiration month is invalid. Please try again using the correct "
+"expiration date."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:458 ../src/Dialogs/StripeDialog.vala:516
+msgid ""
+"The expiration year is invalid. Please try again using the correct "
+"expiration date."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:461 ../src/Dialogs/StripeDialog.vala:514
+msgid "The CVC number is incorrect. Please try again using the correct CVC."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:463 ../src/Dialogs/StripeDialog.vala:505
+msgid "The card has expired. Please try again with a different card."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:483
+msgid "There are too many payment requests at the moment, please retry later."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:499
+msgid ""
+"This card does not support this kind of transaction. Please try again with a "
+"different card."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:501
+msgid ""
+"The currency is not supported by this card. Please try again with a "
+"different card."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:503
+msgid "The transaction has already been processed."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:507
+msgid ""
+"The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
+"Postal code."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:509
+msgid "You don't have enough funds. Please use an alternative payment method."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:511
+msgid "The amount is incorrect. Please try again using a valid amount."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:522
+msgid "The pin number is incorrect. Please try again using the correct pin."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:524
+msgid ""
+"There has been too many pin attempts. Please try again with a different card."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:544
+msgid ""
+"Unable to complete the transaction. Please contact your bank for further "
+"information."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:547
+msgid "The balance or credit limit on the card has been reached."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:550
+msgid "The given card is a test card. Please use a real card to proceed."
+msgstr ""
+
+#: ../src/Views/Homepage.vala:102
+msgid "Recently Updated"
+msgstr ""
+
+#: ../src/Views/Homepage.vala:154
+msgid "Categories"
+msgstr "Категорії"
+
+#. / TRANSLATORS: the name of the Search view
+#: ../src/Views/SearchView.vala:35
+msgctxt "view"
+msgid "Search"
+msgstr "Знайти"
+
+#: ../src/Views/AppListView.vala:121
+msgid "A restart is required to complete the installation of updates"
+msgstr "Перезавантаження необхідне для завершення встановлення оновлень"
+
+#: ../src/Views/AppListView.vala:129
+msgid "Restart Now"
+msgstr "Перезавантажити зараз"
+
+#: ../src/Views/AppListView.vala:222
+msgid "Update All"
+msgstr "Оновити все"
+
+#: ../src/Views/AppInfoView.vala:57
+msgid "Screenshot Not Available"
+msgstr "Скріншот недоступний"
+
+#: ../src/Views/AppInfoView.vala:170
+msgid "Extensions:"
+msgstr "Розширення:"
+
+#: ../src/Views/AppInfoView.vala:184
+msgid "Homepage"
+msgstr "Домашня сторінка"
+
+#: ../src/Views/AppInfoView.vala:191
+msgid "Suggest Translations"
+msgstr "Запропонувати переклад"
+
+#: ../src/Views/AppInfoView.vala:198
+msgid "Report a Problem"
+msgstr "Повідомити про проблему"
+
+#: ../src/Views/AppInfoView.vala:205
+msgid "Help"
+msgstr "Допомога"
+
+#: ../src/Application.vala:42
+msgid "App Center"
+msgstr "Центр програмного забезпечення"
+
+#: ../src/Application.vala:59
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Alexander Grechko https://launchpad.net/~alexxxander1111\n"
+"  Arthur https://launchpad.net/~arthedza\n"
+"  Bogdan Lisnenko https://launchpad.net/~lem8r\n"
+"  Igor Peschak https://launchpad.net/~ziaccot\n"
+"  Max_ym https://launchpad.net/~kontact-cat\n"
+"  Orest https://launchpad.net/~falchuko\n"
+"  Roman Sytnyk https://launchpad.net/~roman-sytnyk\n"
+"  Sergii Cynailo https://launchpad.net/~funeral20\n"
+"  Taras https://launchpad.net/~hashevskyi\n"
+"  cannoneer https://launchpad.net/~gjinflkzcgfve\n"
+"  elementaryart (old) https://launchpad.net/~elementaryart\n"
+"  neiron13 https://launchpad.net/~heneral"
+
+#: ../src/Application.vala:150
+msgid "Specified link '%s' could not be found, searching instead"
+msgstr "Вказане посилання «%s» не знайдено, пошук заміни"
+
+#: ../src/Application.vala:217
+msgid "Application installed"
+msgstr "Додаток встановлено"
+
+#: ../src/Application.vala:218
+msgid "%s has been successfully installed"
+msgstr "%s був успішно встановлений"
+
+#: ../src/Application.vala:234
+msgid "Close"
+msgstr "Закрити"
+
+#: ../src/Application.vala:236
+msgid "There Was An Error Installing %s"
+msgstr "Помилка встановлення %s"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -469,6 +555,36 @@ msgstr "Копіювання файлів"
 #: ../src/Core/ChangeInformation.vala:124
 msgid "Unknown state"
 msgstr "Невідомий стан"
+
+#: ../src/Core/Client.vala:94
+msgid "Operating System Updates"
+msgstr "Оновлення Операційної Системи"
+
+#: ../src/Core/Client.vala:95
+msgid "Updates to system components"
+msgstr "Оновлення системних компонетів"
+
+#: ../src/Core/Client.vala:453
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "Оновлення доступне"
+msgstr[1] "Оновлення доступні"
+msgstr[2] "Оновлень доступно"
+
+#: ../src/Core/Client.vala:454
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "%u оновлення доступне для вашої системи"
+msgstr[1] "%u оновлення доступні для вашої системи"
+msgstr[2] "%u оновлень доступно для вашої системи"
+
+#: ../src/Core/Client.vala:483
+msgid "Restart Required"
+msgstr "Потрібно перезапуск"
+
+#: ../src/Core/Client.vala:484
+msgid "Please restart your system to finalize updates"
+msgstr "Будь-ласка, перезавантажте систему для завершення оновлення"
 
 #~ msgid "Install"
 #~ msgstr "Встановити"
