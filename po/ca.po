@@ -358,13 +358,14 @@ msgstr "per %s"
 msgid "Update"
 msgstr "Actualitza"
 
-#: ../src/Widgets/Banner.vala:107
-msgid "An open, pay-what-you-want app store"
-msgstr "Una botiga d'aplicacions oberta, que permet pagar el que vulgueu"
+#: ../src/Widgets/AbstractAppContainer.vala:195
+#: ../src/Widgets/HumbleButton.vala:85
+msgid "Free"
+msgstr "Lliure"
 
-#: ../src/Widgets/Banner.vala:120
-msgid "Get the apps that you need at a price you can afford."
-msgstr "Obtingueu les aplicacions que necessiteu al preu que podeu pagar."
+#: ../src/Widgets/AbstractAppContainer.vala:209
+msgid "Update"
+msgstr "Actualitza"
 
 #: ../src/Widgets/CategoryFlowBox.vala:29
 msgid "Audio"
@@ -557,6 +558,34 @@ msgstr ""
 #: ../src/Dialogs/StripeDialog.vala:549
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
+
+#: ../src/Core/Client.vala:94
+msgid "Operating System Updates"
+msgstr "Actualitzacions del sistema operatiu"
+
+#: ../src/Core/Client.vala:95
+msgid "Updates to system components"
+msgstr "Actualitzacions als components del sistema"
+
+#: ../src/Core/Client.vala:453
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "Hi ha una actualització disponible"
+msgstr[1] "Hi ha actualitzacions disponibles"
+
+#: ../src/Core/Client.vala:454
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "Hi ha %u actualització disponible per al sistema"
+msgstr[1] "Hi ha %u actualitzacions disponibles per al sistema"
+
+#: ../src/Core/Client.vala:483
+msgid "Restart Required"
+msgstr "Cal reiniciar"
+
+#: ../src/Core/Client.vala:484
+msgid "Please restart your system to finalize updates"
+msgstr "Si us plau, reinicieu el sistema per acabar les actualizacions"
 
 #~ msgid "Install"
 #~ msgstr "Instal·la"

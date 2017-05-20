@@ -366,6 +366,37 @@ msgid "Get the apps that you need at a price you can afford."
 msgstr ""
 "Ottieni le applicazioni di cui hai bisogno al prezzo che ti puoi permettere."
 
+#: ../src/Widgets/AbstractAppContainer.vala:105
+msgid "Uninstall"
+msgstr "Rimuovi"
+
+#: ../src/Widgets/AbstractAppContainer.vala:108
+msgid "Open"
+msgstr "Apri"
+
+#: ../src/Widgets/AbstractAppContainer.vala:126
+#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:158
+#: ../src/Dialogs/StripeDialog.vala:277
+msgid "Cancel"
+msgstr "Annulla"
+
+#: ../src/Widgets/AbstractAppContainer.vala:161
+msgid "The %s Developers"
+msgstr "Gli sviluppatori di %s"
+
+#: ../src/Widgets/AbstractAppContainer.vala:165
+msgid "by %s"
+msgstr "da %s"
+
+#: ../src/Widgets/AbstractAppContainer.vala:195
+#: ../src/Widgets/HumbleButton.vala:85
+msgid "Free"
+msgstr "Gratuito"
+
+#: ../src/Widgets/AbstractAppContainer.vala:209
+msgid "Update"
+msgstr "Aggiorna"
+
 #: ../src/Widgets/CategoryFlowBox.vala:29
 msgid "Audio"
 msgstr "Audio"
@@ -559,6 +590,34 @@ msgstr ""
 #: ../src/Dialogs/StripeDialog.vala:549
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
+
+#: ../src/Core/Client.vala:94
+msgid "Operating System Updates"
+msgstr "Aggiornamenti del sistema operativo"
+
+#: ../src/Core/Client.vala:95
+msgid "Updates to system components"
+msgstr "Aggiornamenti ai componenti del sistema"
+
+#: ../src/Core/Client.vala:453
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "Aggiornamento disponibile"
+msgstr[1] "Aggiornamenti disponibili"
+
+#: ../src/Core/Client.vala:454
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "%u aggiornamento è disponibile per il tuo sistema"
+msgstr[1] "%u aggiornamenti sono disponibili per il tuo sistema"
+
+#: ../src/Core/Client.vala:483
+msgid "Restart Required"
+msgstr "Riavvio necessario"
+
+#: ../src/Core/Client.vala:484
+msgid "Please restart your system to finalize updates"
+msgstr "Riavvia il sistema per completare gli aggiornamenti"
 
 #~ msgid "Install"
 #~ msgstr "Installa"

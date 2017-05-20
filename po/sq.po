@@ -362,9 +362,9 @@ msgstr "Përditëso"
 msgid "An open, pay-what-you-want app store"
 msgstr ""
 
-#: ../src/Widgets/Banner.vala:120
-msgid "Get the apps that you need at a price you can afford."
-msgstr ""
+#: ../src/Widgets/AbstractAppContainer.vala:209
+msgid "Update"
+msgstr "Përditëso"
 
 #: ../src/Widgets/CategoryFlowBox.vala:29
 msgid "Audio"
@@ -418,9 +418,9 @@ msgstr ""
 msgid "No Results"
 msgstr "Pa rezultate"
 
-#: ../src/Widgets/AbstractAppList.vala:35
-msgid "No apps could be found. Try changing search terms."
-msgstr "Nuk u gjetën programe. Provo të ndryshosh termat e kërkimit."
+#: ../src/Dialogs/StripeDialog.vala:75
+msgid "Email"
+msgstr ""
 
 #: ../src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -554,6 +554,34 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:549
 msgid "The given card is a test card. Please use a real card to proceed."
+msgstr ""
+
+#: ../src/Core/Client.vala:94
+msgid "Operating System Updates"
+msgstr "Përditësime të Sistemit Operativ"
+
+#: ../src/Core/Client.vala:95
+msgid "Updates to system components"
+msgstr "Përditësime të komponentëve të sistemit"
+
+#: ../src/Core/Client.vala:453
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/Core/Client.vala:454
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/Core/Client.vala:483
+msgid "Restart Required"
+msgstr ""
+
+#: ../src/Core/Client.vala:484
+msgid "Please restart your system to finalize updates"
 msgstr ""
 
 #~ msgid "Install"

@@ -356,9 +356,11 @@ msgstr "%s により作成"
 msgid "Update"
 msgstr "アップデート"
 
-#: ../src/Widgets/Banner.vala:107
-msgid "An open, pay-what-you-want app store"
-msgstr "オープンで価格はあなた次第のアプリストア"
+#: ../src/Widgets/AbstractAppContainer.vala:195
+#: ../src/Widgets/HumbleButton.vala:85
+#, fuzzy
+msgid "Free"
+msgstr "無料"
 
 #: ../src/Widgets/Banner.vala:120
 msgid "Get the apps that you need at a price you can afford."
@@ -556,6 +558,32 @@ msgstr ""
 #: ../src/Dialogs/StripeDialog.vala:549
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
+
+#: ../src/Core/Client.vala:94
+msgid "Operating System Updates"
+msgstr "オペレーティングシステムの更新"
+
+#: ../src/Core/Client.vala:95
+msgid "Updates to system components"
+msgstr "システムコンポーネントの更新"
+
+#: ../src/Core/Client.vala:453
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "アップデートできます"
+
+#: ../src/Core/Client.vala:454
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "システムに %u 件の更新が利用可能です"
+
+#: ../src/Core/Client.vala:483
+msgid "Restart Required"
+msgstr "再起動が要求されます"
+
+#: ../src/Core/Client.vala:484
+msgid "Please restart your system to finalize updates"
+msgstr "更新を完了するには再起動してください"
 
 #~ msgid "Install"
 #~ msgstr "インストール"

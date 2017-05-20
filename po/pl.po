@@ -378,6 +378,37 @@ msgstr ""
 "Pobierz aplikacje, których potrzebujesz, za cenę, na którą możesz sobie "
 "pozwolić."
 
+#: ../src/Widgets/AbstractAppContainer.vala:105
+msgid "Uninstall"
+msgstr "Odinstaluj"
+
+#: ../src/Widgets/AbstractAppContainer.vala:108
+msgid "Open"
+msgstr "Otwórz"
+
+#: ../src/Widgets/AbstractAppContainer.vala:126
+#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:158
+#: ../src/Dialogs/StripeDialog.vala:277
+msgid "Cancel"
+msgstr "Anuluj"
+
+#: ../src/Widgets/AbstractAppContainer.vala:161
+msgid "The %s Developers"
+msgstr "Programiści %s"
+
+#: ../src/Widgets/AbstractAppContainer.vala:165
+msgid "by %s"
+msgstr "od %s"
+
+#: ../src/Widgets/AbstractAppContainer.vala:195
+#: ../src/Widgets/HumbleButton.vala:85
+msgid "Free"
+msgstr "Darmowe"
+
+#: ../src/Widgets/AbstractAppContainer.vala:209
+msgid "Update"
+msgstr "Aktualizuj"
+
 #: ../src/Widgets/CategoryFlowBox.vala:29
 msgid "Audio"
 msgstr "Dźwięk"
@@ -572,6 +603,36 @@ msgstr ""
 #: ../src/Dialogs/StripeDialog.vala:549
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
+
+#: ../src/Core/Client.vala:94
+msgid "Operating System Updates"
+msgstr "Aktualizacje systemu operacyjnego"
+
+#: ../src/Core/Client.vala:95
+msgid "Updates to system components"
+msgstr "Aktualizacje elementów systemu"
+
+#: ../src/Core/Client.vala:453
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "Dostępna aktualizacja"
+msgstr[1] "Dostępne aktualizacje"
+msgstr[2] "Dostępne aktualizacje"
+
+#: ../src/Core/Client.vala:454
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "Dostępna jest %u aktualizacja dla Twojego systemu"
+msgstr[1] "Dostępne są %u aktualizacje dla Twojego systemu"
+msgstr[2] "Dostępnych jest %u aktualizacji dla Twojego systemu"
+
+#: ../src/Core/Client.vala:483
+msgid "Restart Required"
+msgstr "Wymagane ponowne uruchomienie"
+
+#: ../src/Core/Client.vala:484
+msgid "Please restart your system to finalize updates"
+msgstr "Uruchom ponownie system, aby dokończyć aktualizacje"
 
 #~ msgid "Install"
 #~ msgstr "Zainstaluj"

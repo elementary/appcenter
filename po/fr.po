@@ -370,6 +370,37 @@ msgstr ""
 "Obtenez les applications dont vous avez besoin au prix que vous pouvez vous "
 "permettre."
 
+#: ../src/Widgets/AbstractAppContainer.vala:105
+msgid "Uninstall"
+msgstr "Désinstaller"
+
+#: ../src/Widgets/AbstractAppContainer.vala:108
+msgid "Open"
+msgstr "Ouvrir"
+
+#: ../src/Widgets/AbstractAppContainer.vala:126
+#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:158
+#: ../src/Dialogs/StripeDialog.vala:277
+msgid "Cancel"
+msgstr "Annuler"
+
+#: ../src/Widgets/AbstractAppContainer.vala:161
+msgid "The %s Developers"
+msgstr "les développeurs de %s"
+
+#: ../src/Widgets/AbstractAppContainer.vala:165
+msgid "by %s"
+msgstr "par %s"
+
+#: ../src/Widgets/AbstractAppContainer.vala:195
+#: ../src/Widgets/HumbleButton.vala:85
+msgid "Free"
+msgstr "Gratuit"
+
+#: ../src/Widgets/AbstractAppContainer.vala:209
+msgid "Update"
+msgstr "Mettre à jour"
+
 #: ../src/Widgets/CategoryFlowBox.vala:29
 msgid "Audio"
 msgstr "Audio"
@@ -587,6 +618,34 @@ msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
 "La carte spécifiée est une carte de test. Veuillez utiliser une vraie carte "
 "pour continuer."
+
+#: ../src/Core/Client.vala:94
+msgid "Operating System Updates"
+msgstr "Mises à jour du système d'exploitation"
+
+#: ../src/Core/Client.vala:95
+msgid "Updates to system components"
+msgstr "Mise à jour des composants système"
+
+#: ../src/Core/Client.vala:453
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "Mise à jour disponible"
+msgstr[1] "Mises à jour disponibles"
+
+#: ../src/Core/Client.vala:454
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "%u mise à jour est disponible pour votre système"
+msgstr[1] "%u mises à jour sont disponibles pour votre système"
+
+#: ../src/Core/Client.vala:483
+msgid "Restart Required"
+msgstr "Redémarrage requis"
+
+#: ../src/Core/Client.vala:484
+msgid "Please restart your system to finalize updates"
+msgstr "Veuillez redémarrer votre système pour terminer les mises-à-jour"
 
 #~ msgid "Install"
 #~ msgstr "Installer"

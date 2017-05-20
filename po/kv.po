@@ -367,13 +367,15 @@ msgstr "por %s"
 msgid "Update"
 msgstr "Actualizar"
 
-#: ../src/Widgets/Banner.vala:107
-msgid "An open, pay-what-you-want app store"
-msgstr "Una app store libre en la que tú decides lo que pagar"
+#: ../src/Widgets/AbstractAppContainer.vala:195
+#: ../src/Widgets/HumbleButton.vala:85
+msgid "Free"
+msgstr "Gratis"
 
-#: ../src/Widgets/Banner.vala:120
-msgid "Get the apps that you need at a price you can afford."
-msgstr "Las aplicaciones que necesitas al precio que te puedas permitir"
+#: ../src/Widgets/AbstractAppContainer.vala:209
+#, fuzzy
+msgid "Update"
+msgstr "Actualizar"
 
 #: ../src/Widgets/CategoryFlowBox.vala:29
 msgid "Audio"

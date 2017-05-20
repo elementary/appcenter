@@ -371,6 +371,37 @@ msgstr ""
 "Получите приложения, которые вам нужны, за ту цену, которую вы готовы "
 "предложить."
 
+#: ../src/Widgets/AbstractAppContainer.vala:105
+msgid "Uninstall"
+msgstr "Удалить"
+
+#: ../src/Widgets/AbstractAppContainer.vala:108
+msgid "Open"
+msgstr "Открыть"
+
+#: ../src/Widgets/AbstractAppContainer.vala:126
+#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:158
+#: ../src/Dialogs/StripeDialog.vala:277
+msgid "Cancel"
+msgstr "Отменить"
+
+#: ../src/Widgets/AbstractAppContainer.vala:161
+msgid "The %s Developers"
+msgstr "разработчиков %s"
+
+#: ../src/Widgets/AbstractAppContainer.vala:165
+msgid "by %s"
+msgstr "от %s"
+
+#: ../src/Widgets/AbstractAppContainer.vala:195
+#: ../src/Widgets/HumbleButton.vala:85
+msgid "Free"
+msgstr "Бесплатно"
+
+#: ../src/Widgets/AbstractAppContainer.vala:209
+msgid "Update"
+msgstr "Обновить"
+
 #: ../src/Widgets/CategoryFlowBox.vala:29
 msgid "Audio"
 msgstr "Аудио"
@@ -560,6 +591,36 @@ msgstr ""
 #: ../src/Dialogs/StripeDialog.vala:549
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
+
+#: ../src/Core/Client.vala:94
+msgid "Operating System Updates"
+msgstr "Обновления операционной системы"
+
+#: ../src/Core/Client.vala:95
+msgid "Updates to system components"
+msgstr "Обновление компонентов системы"
+
+#: ../src/Core/Client.vala:453
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "Доступно обновление"
+msgstr[1] "Доступны обновления"
+msgstr[2] "Доступны обновления"
+
+#: ../src/Core/Client.vala:454
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "Для системы доступно %u обновление"
+msgstr[1] "Для системы доступны %u обновления"
+msgstr[2] "Для системы доступны %u обновлений"
+
+#: ../src/Core/Client.vala:483
+msgid "Restart Required"
+msgstr "Требуется перезагрузка"
+
+#: ../src/Core/Client.vala:484
+msgid "Please restart your system to finalize updates"
+msgstr "Перезагрузите систему чтобы завершить обновление"
 
 #~ msgid "Install"
 #~ msgstr "Установить"

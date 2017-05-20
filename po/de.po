@@ -387,6 +387,37 @@ msgid "Get the apps that you need at a price you can afford."
 msgstr ""
 "Erhalte die Apps, die du brauchst, zu einem Preis, den du dir leisten kannst."
 
+#: ../src/Widgets/AbstractAppContainer.vala:105
+msgid "Uninstall"
+msgstr "Deinstallieren"
+
+#: ../src/Widgets/AbstractAppContainer.vala:108
+msgid "Open"
+msgstr "frei"
+
+#: ../src/Widgets/AbstractAppContainer.vala:126
+#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:158
+#: ../src/Dialogs/StripeDialog.vala:277
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: ../src/Widgets/AbstractAppContainer.vala:161
+msgid "The %s Developers"
+msgstr "Die Entwickler von %s"
+
+#: ../src/Widgets/AbstractAppContainer.vala:165
+msgid "by %s"
+msgstr "von %s"
+
+#: ../src/Widgets/AbstractAppContainer.vala:195
+#: ../src/Widgets/HumbleButton.vala:85
+msgid "Free"
+msgstr "Gratis"
+
+#: ../src/Widgets/AbstractAppContainer.vala:209
+msgid "Update"
+msgstr "Aktualisieren"
+
 #: ../src/Widgets/CategoryFlowBox.vala:29
 msgid "Audio"
 msgstr "Audio"
@@ -578,6 +609,34 @@ msgstr ""
 #: ../src/Dialogs/StripeDialog.vala:549
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
+
+#: ../src/Core/Client.vala:94
+msgid "Operating System Updates"
+msgstr "Betriebssystemaktualisierungen"
+
+#: ../src/Core/Client.vala:95
+msgid "Updates to system components"
+msgstr "Aktualisierungen für Systemkomponenten"
+
+#: ../src/Core/Client.vala:453
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "Aktualisierung verfügbar"
+msgstr[1] "Aktualisierungen verfügbar"
+
+#: ../src/Core/Client.vala:454
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "%u Aktualisierung ist für Ihr System verfügbar"
+msgstr[1] "%u Aktualisierungen sind für Ihr System verfügbar"
+
+#: ../src/Core/Client.vala:483
+msgid "Restart Required"
+msgstr "Neustart erforderlich"
+
+#: ../src/Core/Client.vala:484
+msgid "Please restart your system to finalize updates"
+msgstr "Bitte starten Sie Ihr Gerät neu, um die Aktualisierungen abzuschließen"
 
 #~ msgid "Install"
 #~ msgstr "Installieren"

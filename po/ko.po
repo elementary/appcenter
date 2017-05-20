@@ -199,9 +199,10 @@ msgstr ""
 "  MinSik CHO https://launchpad.net/~mscho527\n"
 "  elementaryart (old) https://launchpad.net/~elementaryart"
 
-#: ../src/Application.vala:150
-msgid "Specified link '%s' could not be found, searching instead"
-msgstr "'%s' 를 찾을 수 없네요, 검색으로 대신하겠습니다"
+#: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
+#: ../src/MainWindow.vala:300 ../src/MainWindow.vala:322
+msgid "Search Apps"
+msgstr "앱 검색"
 
 #: ../src/Application.vala:217
 msgid "Application installed"
@@ -554,6 +555,32 @@ msgstr "사용 한도 금액에 다다랐습니다."
 #: ../src/Dialogs/StripeDialog.vala:549
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "본 카드는 테스트용 카드입니다. 실제 사용 가능한 카드로 다시 시도해 주세요."
+
+#: ../src/Core/Client.vala:94
+msgid "Operating System Updates"
+msgstr "운영 체제 업데이트"
+
+#: ../src/Core/Client.vala:95
+msgid "Updates to system components"
+msgstr "시스템 구성 요소를 업데이트합니다"
+
+#: ../src/Core/Client.vala:453
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "업데이트할 항목 있음"
+
+#: ../src/Core/Client.vala:454
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "시스템에 %u개의 업데이트할 항목이 있습니다"
+
+#: ../src/Core/Client.vala:483
+msgid "Restart Required"
+msgstr "다시 시작해야 합니다"
+
+#: ../src/Core/Client.vala:484
+msgid "Please restart your system to finalize updates"
+msgstr "업데이트를 마무리하시려면 컴퓨터를 다시 시작해주세요"
 
 #~ msgid "Install"
 #~ msgstr "설치"

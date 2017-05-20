@@ -249,16 +249,16 @@ msgctxt "view"
 msgid "Search"
 msgstr ""
 
-#: ../src/Views/AppListView.vala:121
-msgid "A restart is required to complete the installation of updates"
+#: ../src/Widgets/CategoryFlowBox.vala:36
+msgid "Games"
 msgstr ""
 
-#: ../src/Views/AppListView.vala:129
-msgid "Restart Now"
+#: ../src/Widgets/CategoryFlowBox.vala:37
+msgid "Education"
 msgstr ""
 
-#: ../src/Views/AppListView.vala:222
-msgid "Update All"
+#: ../src/Widgets/CategoryFlowBox.vala:38
+msgid "Internet"
 msgstr ""
 
 #: ../src/Views/Homepage.vala:102
@@ -357,60 +357,65 @@ msgstr ""
 msgid "Update"
 msgstr ""
 
-#: ../src/Widgets/Banner.vala:107
-msgid "An open, pay-what-you-want app store"
+#: ../src/Widgets/AbstractAppList.vala:35
+msgid "No apps could be found. Try changing search terms."
 msgstr ""
 
-#: ../src/Widgets/Banner.vala:120
-msgid "Get the apps that you need at a price you can afford."
+#: ../src/Dialogs/RestartDialog.vala:40
+msgid "Are you sure you want to Restart?"
 msgstr ""
 
-#: ../src/Widgets/CategoryFlowBox.vala:29
-msgid "Audio"
+#: ../src/Dialogs/RestartDialog.vala:41
+msgid "This will close all open applications and restart this device."
 msgstr ""
 
-#: ../src/Widgets/CategoryFlowBox.vala:30
-msgid "Development"
+#: ../src/Dialogs/RestartDialog.vala:42
+msgid "Restart"
 msgstr ""
 
-#: ../src/Widgets/CategoryFlowBox.vala:31
-msgid "Accessories"
+#: ../src/Dialogs/StripeDialog.vala:30
+msgid ""
+"An error occurred while processing the card. Please try again later. We "
+"apologize for any inconvenience caused."
 msgstr ""
 
-#: ../src/Widgets/CategoryFlowBox.vala:32
-msgid "Office"
+#: ../src/Dialogs/StripeDialog.vala:31
+msgid "Please review your payment info and try again."
 msgstr ""
 
-#: ../src/Widgets/CategoryFlowBox.vala:33
-msgid "System"
+#: ../src/Dialogs/StripeDialog.vala:75
+msgid "Email"
 msgstr ""
 
-#: ../src/Widgets/CategoryFlowBox.vala:34
-msgid "Video"
+#: ../src/Dialogs/StripeDialog.vala:77
+msgid ""
+"Your email address is used to send a receipt. It is never stored and you "
+"will not be subscribed to a mailing list."
 msgstr ""
 
-#: ../src/Widgets/CategoryFlowBox.vala:35
-msgid "Graphics"
+#: ../src/Dialogs/StripeDialog.vala:88
+msgid "Card Number"
 msgstr ""
 
-#: ../src/Widgets/CategoryFlowBox.vala:36
-msgid "Games"
+#. / TRANSLATORS: Don't change the order, only transliterate
+#: ../src/Dialogs/StripeDialog.vala:100
+msgid "MM / YY"
 msgstr ""
 
-#: ../src/Widgets/CategoryFlowBox.vala:37
-msgid "Education"
+#: ../src/Dialogs/StripeDialog.vala:112
+msgid "CVC"
 msgstr ""
 
-#: ../src/Widgets/CategoryFlowBox.vala:38
-msgid "Internet"
+#: ../src/Dialogs/StripeDialog.vala:149
+msgid "Privacy Policy"
 msgstr ""
 
-#: ../src/Widgets/CategoryFlowBox.vala:39
-msgid "Science & Engineering"
+#: ../src/Dialogs/StripeDialog.vala:160 ../src/Dialogs/StripeDialog.vala:276
+msgid "Pay $%d.00"
 msgstr ""
 
-#: ../src/Widgets/CategoryFlowBox.vala:40
-msgid "Universal Access"
+#: ../src/Dialogs/StripeDialog.vala:205
+msgid "Processing"
 msgstr ""
 
 #: ../src/Widgets/AbstractAppList.vala:35
@@ -553,6 +558,34 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:549
 msgid "The given card is a test card. Please use a real card to proceed."
+msgstr ""
+
+#: ../src/Core/Client.vala:94
+msgid "Operating System Updates"
+msgstr ""
+
+#: ../src/Core/Client.vala:95
+msgid "Updates to system components"
+msgstr ""
+
+#: ../src/Core/Client.vala:453
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/Core/Client.vala:454
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/Core/Client.vala:483
+msgid "Restart Required"
+msgstr ""
+
+#: ../src/Core/Client.vala:484
+msgid "Please restart your system to finalize updates"
 msgstr ""
 
 #~ msgid "Install"

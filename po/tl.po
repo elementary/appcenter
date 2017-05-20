@@ -250,8 +250,8 @@ msgstr "Maghanap"
 msgid "A restart is required to complete the installation of updates"
 msgstr ""
 
-#: ../src/Views/AppListView.vala:129
-msgid "Restart Now"
+#: ../src/Widgets/Banner.vala:107
+msgid "An open, pay-what-you-want app store"
 msgstr ""
 
 #: ../src/Views/AppListView.vala:222
@@ -357,9 +357,9 @@ msgstr "I-update"
 msgid "An open, pay-what-you-want app store"
 msgstr ""
 
-#: ../src/Widgets/Banner.vala:120
-msgid "Get the apps that you need at a price you can afford."
-msgstr ""
+#: ../src/Widgets/AbstractAppContainer.vala:209
+msgid "Update"
+msgstr "I-update"
 
 #: ../src/Widgets/CategoryFlowBox.vala:29
 msgid "Audio"
@@ -413,9 +413,9 @@ msgstr ""
 msgid "No Results"
 msgstr "Walang mga Resulta"
 
-#: ../src/Widgets/AbstractAppList.vala:35
-msgid "No apps could be found. Try changing search terms."
-msgstr "Walang makitang mga app. Subukan mong baguhin yung mga search term."
+#: ../src/Dialogs/StripeDialog.vala:75
+msgid "Email"
+msgstr ""
 
 #: ../src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -549,6 +549,34 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:549
 msgid "The given card is a test card. Please use a real card to proceed."
+msgstr ""
+
+#: ../src/Core/Client.vala:94
+msgid "Operating System Updates"
+msgstr "Mga Update para sa Operating System"
+
+#: ../src/Core/Client.vala:95
+msgid "Updates to system components"
+msgstr "Mga update para sa system components"
+
+#: ../src/Core/Client.vala:453
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "May update na pwedeng kunin"
+msgstr[1] "May mga update na pwedeng kunin"
+
+#: ../src/Core/Client.vala:454
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "May %u update na pwedeng kunin para sa iyong sistema"
+msgstr[1] "May mga %u na update na pwedeng kunin para sa iyong sistema"
+
+#: ../src/Core/Client.vala:483
+msgid "Restart Required"
+msgstr ""
+
+#: ../src/Core/Client.vala:484
+msgid "Please restart your system to finalize updates"
 msgstr ""
 
 #~ msgid "Install"

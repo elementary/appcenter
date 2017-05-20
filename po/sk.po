@@ -204,9 +204,10 @@ msgstr ""
 "  elementaryart (old) https://launchpad.net/~elementaryart\n"
 "  lupajz https://launchpad.net/~lubos-m"
 
-#: ../src/Application.vala:150
-msgid "Specified link '%s' could not be found, searching instead"
-msgstr "Zadaný odkaz '%s' sa nenašiel, vyhľadáva sa ďalej"
+#: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
+#: ../src/MainWindow.vala:300 ../src/MainWindow.vala:322
+msgid "Search Apps"
+msgstr "Hľadať aplikácie"
 
 #: ../src/Application.vala:217
 msgid "Application installed"
@@ -559,6 +560,36 @@ msgstr ""
 #: ../src/Dialogs/StripeDialog.vala:549
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
+
+#: ../src/Core/Client.vala:94
+msgid "Operating System Updates"
+msgstr "Aktualizácie operačného systému"
+
+#: ../src/Core/Client.vala:95
+msgid "Updates to system components"
+msgstr "Aktualizácie systémových komponent"
+
+#: ../src/Core/Client.vala:453
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "Aktualizácií je dostupných"
+msgstr[1] "Aktualizácia je dostupná"
+msgstr[2] "Aktualizácie sú dostupné"
+
+#: ../src/Core/Client.vala:454
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "%u aktualizácií je dostupných pre váš systém"
+msgstr[1] "%u aktualizácia je dostupná pre váš systém"
+msgstr[2] "%u aktualizácie sú dostupné pre váš systém"
+
+#: ../src/Core/Client.vala:483
+msgid "Restart Required"
+msgstr "Je potrebný reštart"
+
+#: ../src/Core/Client.vala:484
+msgid "Please restart your system to finalize updates"
+msgstr "Prosím, dokončite aktualizáciu reštartovaním systému"
 
 #~ msgid "Install"
 #~ msgstr "Inštalácia"

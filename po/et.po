@@ -190,16 +190,10 @@ msgstr ""
 msgid "App Center"
 msgstr "Tarkvarakeskus"
 
-#: ../src/Application.vala:59
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Kristjan Vool https://launchpad.net/~tictac7x\n"
-"  elementaryart (old) https://launchpad.net/~elementaryart"
-
-#: ../src/Application.vala:150
-msgid "Specified link '%s' could not be found, searching instead"
-msgstr ""
+#: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
+#: ../src/MainWindow.vala:300 ../src/MainWindow.vala:322
+msgid "Search Apps"
+msgstr "Otsi rakendusi..."
 
 #: ../src/Application.vala:217
 msgid "Application installed"
@@ -360,9 +354,9 @@ msgstr "Uuenda"
 msgid "An open, pay-what-you-want app store"
 msgstr ""
 
-#: ../src/Widgets/Banner.vala:120
-msgid "Get the apps that you need at a price you can afford."
-msgstr ""
+#: ../src/Widgets/AbstractAppContainer.vala:209
+msgid "Update"
+msgstr "Uuenda"
 
 #: ../src/Widgets/CategoryFlowBox.vala:29
 msgid "Audio"
@@ -416,9 +410,9 @@ msgstr "Kasutaja abivahendid"
 msgid "No Results"
 msgstr "Tulemused puuduvad"
 
-#: ../src/Widgets/AbstractAppList.vala:35
-msgid "No apps could be found. Try changing search terms."
-msgstr "Rakendusi ei leitud. Proovi muuta otsingusõnu."
+#: ../src/Dialogs/StripeDialog.vala:75
+msgid "Email"
+msgstr ""
 
 #: ../src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -552,6 +546,34 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:549
 msgid "The given card is a test card. Please use a real card to proceed."
+msgstr ""
+
+#: ../src/Core/Client.vala:94
+msgid "Operating System Updates"
+msgstr "Operatsioonsüsteemi uuendused"
+
+#: ../src/Core/Client.vala:95
+msgid "Updates to system components"
+msgstr "Uuendused süsteemikomponentidele"
+
+#: ../src/Core/Client.vala:453
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "Uuendus on saadaval"
+msgstr[1] "Uuendused on saadaval"
+
+#: ../src/Core/Client.vala:454
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "%u süsteemiuuendus on saadaval"
+msgstr[1] "%u süsteemiuuendust on saadaval"
+
+#: ../src/Core/Client.vala:483
+msgid "Restart Required"
+msgstr ""
+
+#: ../src/Core/Client.vala:484
+msgid "Please restart your system to finalize updates"
 msgstr ""
 
 #~ msgid "Install"

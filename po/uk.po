@@ -378,6 +378,37 @@ msgid "Get the apps that you need at a price you can afford."
 msgstr ""
 "Отримуй додатки які тобі необхідно, за ціну, яку ти можеш запропонувати."
 
+#: ../src/Widgets/AbstractAppContainer.vala:105
+msgid "Uninstall"
+msgstr "Вилучити"
+
+#: ../src/Widgets/AbstractAppContainer.vala:108
+msgid "Open"
+msgstr "Відкрити"
+
+#: ../src/Widgets/AbstractAppContainer.vala:126
+#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:158
+#: ../src/Dialogs/StripeDialog.vala:277
+msgid "Cancel"
+msgstr "Скасувати"
+
+#: ../src/Widgets/AbstractAppContainer.vala:161
+msgid "The %s Developers"
+msgstr "Розробники %s"
+
+#: ../src/Widgets/AbstractAppContainer.vala:165
+msgid "by %s"
+msgstr "від %s"
+
+#: ../src/Widgets/AbstractAppContainer.vala:195
+#: ../src/Widgets/HumbleButton.vala:85
+msgid "Free"
+msgstr "Безкоштовно"
+
+#: ../src/Widgets/AbstractAppContainer.vala:209
+msgid "Update"
+msgstr "Оновлення"
+
 #: ../src/Widgets/CategoryFlowBox.vala:29
 msgid "Audio"
 msgstr "Аудіо"
@@ -567,6 +598,36 @@ msgstr ""
 #: ../src/Dialogs/StripeDialog.vala:549
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
+
+#: ../src/Core/Client.vala:94
+msgid "Operating System Updates"
+msgstr "Оновлення Операційної Системи"
+
+#: ../src/Core/Client.vala:95
+msgid "Updates to system components"
+msgstr "Оновлення системних компонетів"
+
+#: ../src/Core/Client.vala:453
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "Оновлення доступне"
+msgstr[1] "Оновлення доступні"
+msgstr[2] "Оновлень доступно"
+
+#: ../src/Core/Client.vala:454
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "%u оновлення доступне для вашої системи"
+msgstr[1] "%u оновлення доступні для вашої системи"
+msgstr[2] "%u оновлень доступно для вашої системи"
+
+#: ../src/Core/Client.vala:483
+msgid "Restart Required"
+msgstr "Потрібно перезапуск"
+
+#: ../src/Core/Client.vala:484
+msgid "Please restart your system to finalize updates"
+msgstr "Будь-ласка, перезавантажте систему для завершення оновлення"
 
 #~ msgid "Install"
 #~ msgstr "Встановити"

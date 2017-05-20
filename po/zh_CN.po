@@ -198,9 +198,10 @@ msgstr ""
 "  colindemian https://launchpad.net/~colindemian\n"
 "  elementaryart (old) https://launchpad.net/~elementaryart"
 
-#: ../src/Application.vala:150
-msgid "Specified link '%s' could not be found, searching instead"
-msgstr "无法找到定向连接 '%s' ，改为搜索"
+#: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
+#: ../src/MainWindow.vala:300 ../src/MainWindow.vala:322
+msgid "Search Apps"
+msgstr "搜索应用"
 
 #: ../src/Application.vala:217
 msgid "Application installed"
@@ -551,6 +552,32 @@ msgstr ""
 #: ../src/Dialogs/StripeDialog.vala:549
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
+
+#: ../src/Core/Client.vala:94
+msgid "Operating System Updates"
+msgstr "系统更新"
+
+#: ../src/Core/Client.vala:95
+msgid "Updates to system components"
+msgstr "组件更新"
+
+#: ../src/Core/Client.vala:453
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "有可用更新"
+
+#: ../src/Core/Client.vala:454
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "您的系统有 %u 个可用更新"
+
+#: ../src/Core/Client.vala:483
+msgid "Restart Required"
+msgstr "需要重启"
+
+#: ../src/Core/Client.vala:484
+msgid "Please restart your system to finalize updates"
+msgstr "请重启您的系统来完成更新"
 
 #~ msgid "Install"
 #~ msgstr "安装"

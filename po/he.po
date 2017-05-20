@@ -359,13 +359,14 @@ msgstr "מאת %s"
 msgid "Update"
 msgstr "עדכון"
 
-#: ../src/Widgets/Banner.vala:107
-msgid "An open, pay-what-you-want app store"
-msgstr "חנות יישומים פתוחה עם תשלום לפי ראות עיניך"
+#: ../src/Widgets/AbstractAppContainer.vala:195
+#: ../src/Widgets/HumbleButton.vala:85
+msgid "Free"
+msgstr "חינם"
 
-#: ../src/Widgets/Banner.vala:120
-msgid "Get the apps that you need at a price you can afford."
-msgstr "קבלת היישומים שמעניינים אותך במחיר שמתאים לך."
+#: ../src/Widgets/AbstractAppContainer.vala:209
+msgid "Update"
+msgstr "עדכון"
 
 #: ../src/Widgets/CategoryFlowBox.vala:29
 msgid "Audio"
@@ -556,6 +557,34 @@ msgstr ""
 #: ../src/Dialogs/StripeDialog.vala:549
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
+
+#: ../src/Core/Client.vala:94
+msgid "Operating System Updates"
+msgstr "עדכוני מערכת הפעלה"
+
+#: ../src/Core/Client.vala:95
+msgid "Updates to system components"
+msgstr "עדכונים לרכיבי המערכת"
+
+#: ../src/Core/Client.vala:453
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "עדכון זמין"
+msgstr[1] "עדכונים זמינים"
+
+#: ../src/Core/Client.vala:454
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "עדכון אחד זמין עבור המערכת"
+msgstr[1] "%u עדכונים זמינים עבור המערכת"
+
+#: ../src/Core/Client.vala:483
+msgid "Restart Required"
+msgstr "נדרשת הפעלה מחדש"
+
+#: ../src/Core/Client.vala:484
+msgid "Please restart your system to finalize updates"
+msgstr "נא להפעיל את המערכת מחדש כדי לסיים את התקנת העדכונים"
 
 #~ msgid "Install"
 #~ msgstr "התקנה"

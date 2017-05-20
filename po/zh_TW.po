@@ -197,9 +197,10 @@ msgstr ""
 "  Yung Shen https://launchpad.net/~kaxing\n"
 "  elementaryart (old) https://launchpad.net/~elementaryart"
 
-#: ../src/Application.vala:150
-msgid "Specified link '%s' could not be found, searching instead"
-msgstr ""
+#: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
+#: ../src/MainWindow.vala:300 ../src/MainWindow.vala:322
+msgid "Search Apps"
+msgstr "搜尋 App"
 
 #: ../src/Application.vala:217
 msgid "Application installed"
@@ -415,9 +416,9 @@ msgstr "無障礙功能"
 msgid "No Results"
 msgstr "沒有結果"
 
-#: ../src/Widgets/AbstractAppList.vala:35
-msgid "No apps could be found. Try changing search terms."
-msgstr "找不到相關程式。請嘗試更改搜尋字詞。"
+#: ../src/Dialogs/StripeDialog.vala:75
+msgid "Email"
+msgstr ""
 
 #: ../src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -551,6 +552,32 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:549
 msgid "The given card is a test card. Please use a real card to proceed."
+msgstr ""
+
+#: ../src/Core/Client.vala:94
+msgid "Operating System Updates"
+msgstr "作業系統更新"
+
+#: ../src/Core/Client.vala:95
+msgid "Updates to system components"
+msgstr "系統組件的更新"
+
+#: ../src/Core/Client.vala:453
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "有更新"
+
+#: ../src/Core/Client.vala:454
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "您的系統有 %u 項更新可套用"
+
+#: ../src/Core/Client.vala:483
+msgid "Restart Required"
+msgstr ""
+
+#: ../src/Core/Client.vala:484
+msgid "Please restart your system to finalize updates"
 msgstr ""
 
 #~ msgid "Install"

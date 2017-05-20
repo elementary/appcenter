@@ -308,26 +308,27 @@ msgstr ""
 msgid "$%d"
 msgstr ""
 
-#: ../src/Widgets/UpdateHeaderRow.vala:68
-msgid "%u Update Available"
-msgid_plural "%u Updates Available"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../src/Widgets/UpdateHeaderRow.vala:69
-msgid "Size: %s"
-msgstr "Gréisst: %s"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:105
-msgid "Searching for updates…"
-msgstr "Sichen fir Aktualiséierungen......"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:112
-msgid "Up to Date"
+#: ../src/Dialogs/StripeDialog.vala:522
+msgid "The pin number is incorrect. Please try again using the correct pin."
 msgstr ""
 
-#: ../src/Widgets/UpdateHeaderRow.vala:120
-msgid "Drivers"
+#: ../src/Dialogs/StripeDialog.vala:524
+msgid ""
+"There has been too many pin attempts. Please try again with a different card."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:544
+msgid ""
+"Unable to complete the transaction. Please contact your bank for further "
+"information."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:547
+msgid "The balance or credit limit on the card has been reached."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:550
+msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
 
 #: ../src/Widgets/AbstractAppContainer.vala:105
@@ -552,6 +553,34 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:549
 msgid "The given card is a test card. Please use a real card to proceed."
+msgstr ""
+
+#: ../src/Core/Client.vala:94
+msgid "Operating System Updates"
+msgstr ""
+
+#: ../src/Core/Client.vala:95
+msgid "Updates to system components"
+msgstr ""
+
+#: ../src/Core/Client.vala:453
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/Core/Client.vala:454
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/Core/Client.vala:483
+msgid "Restart Required"
+msgstr ""
+
+#: ../src/Core/Client.vala:484
+msgid "Please restart your system to finalize updates"
 msgstr ""
 
 #~ msgid "Install"

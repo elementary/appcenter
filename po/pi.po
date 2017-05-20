@@ -294,26 +294,30 @@ msgstr ""
 msgid "$%d"
 msgstr ""
 
-#: ../src/Widgets/UpdateHeaderRow.vala:68
-msgid "%u Update Available"
-msgid_plural "%u Updates Available"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../src/Widgets/UpdateHeaderRow.vala:69
-msgid "Size: %s"
+#: ../src/Dialogs/StripeDialog.vala:483
+msgid "There are too many payment requests at the moment, please retry later."
 msgstr ""
 
-#: ../src/Widgets/UpdateHeaderRow.vala:105
-msgid "Searching for updates…"
+#: ../src/Dialogs/StripeDialog.vala:499
+msgid ""
+"This card does not support this kind of transaction. Please try again with a "
+"different card."
 msgstr ""
 
-#: ../src/Widgets/UpdateHeaderRow.vala:112
-msgid "Up to Date"
+#: ../src/Dialogs/StripeDialog.vala:501
+msgid ""
+"The currency is not supported by this card. Please try again with a "
+"different card."
 msgstr ""
 
-#: ../src/Widgets/UpdateHeaderRow.vala:120
-msgid "Drivers"
+#: ../src/Dialogs/StripeDialog.vala:503
+msgid "The transaction has already been processed."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:507
+msgid ""
+"The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
+"Postal code."
 msgstr ""
 
 #: ../src/Widgets/AbstractAppContainer.vala:105
@@ -538,4 +542,32 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:549
 msgid "The given card is a test card. Please use a real card to proceed."
+msgstr ""
+
+#: ../src/Core/Client.vala:94
+msgid "Operating System Updates"
+msgstr ""
+
+#: ../src/Core/Client.vala:95
+msgid "Updates to system components"
+msgstr ""
+
+#: ../src/Core/Client.vala:453
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/Core/Client.vala:454
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/Core/Client.vala:483
+msgid "Restart Required"
+msgstr ""
+
+#: ../src/Core/Client.vala:484
+msgid "Please restart your system to finalize updates"
 msgstr ""

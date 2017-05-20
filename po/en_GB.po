@@ -363,13 +363,14 @@ msgstr "by %s"
 msgid "Update"
 msgstr "Update"
 
-#: ../src/Widgets/Banner.vala:107
-msgid "An open, pay-what-you-want app store"
-msgstr ""
+#: ../src/Widgets/AbstractAppContainer.vala:195
+#: ../src/Widgets/HumbleButton.vala:85
+msgid "Free"
+msgstr "Free"
 
-#: ../src/Widgets/Banner.vala:120
-msgid "Get the apps that you need at a price you can afford."
-msgstr "Get the apps that you need at a price you can afford."
+#: ../src/Widgets/AbstractAppContainer.vala:209
+msgid "Update"
+msgstr "Update"
 
 #: ../src/Widgets/CategoryFlowBox.vala:29
 msgid "Audio"
@@ -559,6 +560,34 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:549
 msgid "The given card is a test card. Please use a real card to proceed."
+msgstr ""
+
+#: ../src/Core/Client.vala:94
+msgid "Operating System Updates"
+msgstr "Operating System Updates"
+
+#: ../src/Core/Client.vala:95
+msgid "Updates to system components"
+msgstr "Updates to system components"
+
+#: ../src/Core/Client.vala:453
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "Update Available"
+msgstr[1] "Updates Available"
+
+#: ../src/Core/Client.vala:454
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "%u update is available for your system"
+msgstr[1] "%u updates are available for your system"
+
+#: ../src/Core/Client.vala:483
+msgid "Restart Required"
+msgstr "Restart Required"
+
+#: ../src/Core/Client.vala:484
+msgid "Please restart your system to finalize updates"
 msgstr ""
 
 #~ msgid "Install"

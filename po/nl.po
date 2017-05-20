@@ -373,6 +373,37 @@ msgstr ""
 "Krijg de applicaties die u nodig heeft aan de prijs die u zich kunt "
 "veroorloven."
 
+#: ../src/Widgets/AbstractAppContainer.vala:105
+msgid "Uninstall"
+msgstr "Verwijderen"
+
+#: ../src/Widgets/AbstractAppContainer.vala:108
+msgid "Open"
+msgstr "Open"
+
+#: ../src/Widgets/AbstractAppContainer.vala:126
+#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:158
+#: ../src/Dialogs/StripeDialog.vala:277
+msgid "Cancel"
+msgstr "Annuleren"
+
+#: ../src/Widgets/AbstractAppContainer.vala:161
+msgid "The %s Developers"
+msgstr "De %s ontwikkelaars"
+
+#: ../src/Widgets/AbstractAppContainer.vala:165
+msgid "by %s"
+msgstr "door %s"
+
+#: ../src/Widgets/AbstractAppContainer.vala:195
+#: ../src/Widgets/HumbleButton.vala:85
+msgid "Free"
+msgstr "Gratis"
+
+#: ../src/Widgets/AbstractAppContainer.vala:209
+msgid "Update"
+msgstr "Bijwerken"
+
 #: ../src/Widgets/CategoryFlowBox.vala:29
 msgid "Audio"
 msgstr "Geluid"
@@ -564,6 +595,34 @@ msgstr ""
 #: ../src/Dialogs/StripeDialog.vala:549
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
+
+#: ../src/Core/Client.vala:94
+msgid "Operating System Updates"
+msgstr "Updates voor het besturingssysteem"
+
+#: ../src/Core/Client.vala:95
+msgid "Updates to system components"
+msgstr "Updates voor systeemcomponenten"
+
+#: ../src/Core/Client.vala:453
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "Update beschikbaar"
+msgstr[1] "Updates beschikbaar"
+
+#: ../src/Core/Client.vala:454
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "%u update is beschikbaar voor uw systeem"
+msgstr[1] "%u updates zijn beschikbaar voor uw systeem"
+
+#: ../src/Core/Client.vala:483
+msgid "Restart Required"
+msgstr "Opnieuw opstarten vereist"
+
+#: ../src/Core/Client.vala:484
+msgid "Please restart your system to finalize updates"
+msgstr "Gelieve uw systeem opnieuw op te starten om de updates te voltooien"
 
 #~ msgid "Install"
 #~ msgstr "Installeer"

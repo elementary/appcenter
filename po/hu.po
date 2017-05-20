@@ -566,6 +566,34 @@ msgstr "Elérte a kártya hitelkeretét."
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "Ez egy tesztkártya. Használjon valódi kártyát a folytatáshoz."
 
+#: ../src/Core/Client.vala:94
+msgid "Operating System Updates"
+msgstr "Operációs rendszer frissítések"
+
+#: ../src/Core/Client.vala:95
+msgid "Updates to system components"
+msgstr "Rendszerkomponensek frissítése"
+
+#: ../src/Core/Client.vala:453
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "Frissítés elérhető"
+msgstr[1] "Frissítések elérhetők"
+
+#: ../src/Core/Client.vala:454
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "%u frissítés érhető el a rendszerhez"
+msgstr[1] "%u frissítés érhető el a rendszerhez"
+
+#: ../src/Core/Client.vala:483
+msgid "Restart Required"
+msgstr "Újraindítás szükséges"
+
+#: ../src/Core/Client.vala:484
+msgid "Please restart your system to finalize updates"
+msgstr "Indítsa újra a rendszert a frissítések befejezéséhez"
+
 #~ msgid "Install"
 #~ msgstr "Telepítés"
 
