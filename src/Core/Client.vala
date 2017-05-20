@@ -67,7 +67,6 @@ public class AppCenterCore.Client : Object {
     }
 
     construct {
-        restart_file = File.new_for_path (RESTART_REQUIRED_FILE);
         package_list = new Gee.HashMap<string, AppCenterCore.Package> (null, null);
         driver_list = new Gee.TreeSet<AppCenterCore.Package> ();
         cancellable = new GLib.Cancellable ();
