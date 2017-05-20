@@ -161,7 +161,7 @@ namespace AppCenter.Views {
 
             set_up_package (128);
 
-            parse_description (package.component.get_description ());
+            parse_description (package.get_description ());
 
             if (package.component.get_addons ().length > 0) {
                 extension_box = new Gtk.ListBox ();
