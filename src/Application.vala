@@ -25,8 +25,6 @@ public class AppCenter.App : Granite.Application {
 
     private const int SECONDS_AFTER_NETWORK_UP = 60;
 
-    private static string? link = null;
-
     public static bool show_updates;
     public static bool silent;
     private MainWindow? main_window;
@@ -92,19 +90,33 @@ public class AppCenter.App : Granite.Application {
     }
 
     public override void open (File[] files, string hint) {
+        activate ();
+
         var file = files[0];
         if (file == null) {
             return;
         }
 
-        if (file.has_uri_scheme ("appstream")) {
-            link = file.get_uri ().replace ("appstream://", "");
-            if (link.has_suffix ("/")) {
-                link = link.substring (0, link.last_index_of_char ('/'));
-            }
+        if (!file.has_uri_scheme ("appstream")) {
+            return;
         }
 
-        activate ();
+        string link = file.get_uri ().replace ("appstream://", "");
+        if (link.has_suffix ("/")) {
+            link = link.substring (0, link.last_index_of_char ('/'));
+        }
+
+        var client = AppCenterCore.Client.get_default ();
+        var package = client.get_package_for_component_id (link);
+        if (package != null) {
+            main_window.show_package (package);
+        } else {
+            info (_("Specified link '%s' could not be found, searching instead").printf (link));
+            string? search_term = Uri.unescape_string (link);
+            if (search_term != null) {
+                main_window.search (search_term);
+            }
+        }
     }
 
     public override void activate () {
@@ -139,19 +151,6 @@ public class AppCenter.App : Granite.Application {
             if (show_updates) {
                 main_window.go_to_installed ();
                 main_window.present ();
-            }
-        }
-
-        if (link != null) {
-            var package = client.get_package_for_component_id (link);
-            if (package != null) {
-                main_window.show_package (package);
-            } else {
-                info (_("Specified link '%s' could not be found, searching instead").printf (link));
-                string? search_term = Uri.unescape_string (link);
-                if (search_term != null) {
-                    main_window.search (search_term);
-                }
             }
         }
 
