@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-19 14:33-0500\n"
-"PO-Revision-Date: 2017-04-15 08:37+0000\n"
+"PO-Revision-Date: 2017-05-20 22:45+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
-"Language-Team: he (generated) <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/he/>\n"
+"Language-Team: Hebrew "
+"<https://l10n.elementary.io/projects/appcenter/appcenter/he/>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #: ../src/Core/ChangeInformation.vala:54
@@ -266,7 +266,7 @@ msgstr "עדכון הכול"
 
 #: ../src/Views/Homepage.vala:102
 msgid "Recently Updated"
-msgstr ""
+msgstr "עודכנו לאחרונה"
 
 #: ../src/Views/Homepage.vala:152
 msgid "Categories"
@@ -331,7 +331,7 @@ msgstr "עדכני"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:120
 msgid "Drivers"
-msgstr ""
+msgstr "מנהלי התקנים"
 
 #: ../src/Widgets/AbstractAppContainer.vala:105
 msgid "Uninstall"
@@ -441,6 +441,8 @@ msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
+"אירעה שגיאה בעת עיבוד הכרטיס. נא לנסות שוב. אנו מתנצלים על כל חוסר נעימות "
+"שנגרם."
 
 #: ../src/Dialogs/StripeDialog.vala:31
 msgid "Please review your payment info and try again."
@@ -451,10 +453,12 @@ msgid ""
 "Your email address is used to send a receipt. It is never stored and you "
 "will not be subscribed to a mailing list."
 msgstr ""
+"כתובת הדוא״ל שלך משמשת לשליחת קבלה. היא לעולם לא תאוחסן ולא נרשום אותך ללא "
+"הסכמתך לרשימת הדיוור שלנו."
 
 #: ../src/Dialogs/StripeDialog.vala:148
 msgid "Privacy Policy"
-msgstr ""
+msgstr "מדיניות פרטיות"
 
 #: ../src/Dialogs/StripeDialog.vala:159 ../src/Dialogs/StripeDialog.vala:275
 msgid "Pay $%s.00"
@@ -479,84 +483,85 @@ msgstr "ניסיון חוזר"
 #: ../src/Dialogs/StripeDialog.vala:453 ../src/Dialogs/StripeDialog.vala:518
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
-msgstr ""
+msgstr "מספר הכרטיס שגוי. נא לנסות שוב עם מספר הכרטיס הנכון."
 
 #: ../src/Dialogs/StripeDialog.vala:455
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
-msgstr ""
+msgstr "חודש התפוגה שגוי. נא לנסות שוב עם תאריך תפוגה נכון."
 
 #: ../src/Dialogs/StripeDialog.vala:457 ../src/Dialogs/StripeDialog.vala:515
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
-msgstr ""
+msgstr "שנת התפוגה שגויה. נא לנסות שוב עם תאריך תפוגה נכון."
 
 #: ../src/Dialogs/StripeDialog.vala:460 ../src/Dialogs/StripeDialog.vala:513
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr ""
+msgstr "מספר האימות (CVC) שגוי. נא לנסות שוב עם מספר האימות הנכון."
 
 #: ../src/Dialogs/StripeDialog.vala:462 ../src/Dialogs/StripeDialog.vala:504
 msgid "The card has expired. Please try again with a different card."
-msgstr ""
+msgstr "תוקף הכרטיס פג. נא לנסות שוב עם כרטיס אחר."
 
 #: ../src/Dialogs/StripeDialog.vala:482
 msgid "There are too many payment requests at the moment, please retry later."
-msgstr ""
+msgstr "מתבצעות יותר מדי בקשות תשלום כרגע, נא לנסות שוב מאוחר יותר."
 
 #: ../src/Dialogs/StripeDialog.vala:498
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
-msgstr ""
+msgstr "כרטיס זה אינו תומך בהעברה מהסוג הזה. נא לנסות שוב עם כרטיס אחר."
 
 #: ../src/Dialogs/StripeDialog.vala:500
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
-msgstr ""
+msgstr "המטבע אינו נתמך בכרטיס זה. נא לנסות שוב עם כרטיס אחר."
 
 #: ../src/Dialogs/StripeDialog.vala:502
 msgid "The transaction has already been processed."
-msgstr ""
+msgstr "ההעברה כבר בוצעה."
 
 #: ../src/Dialogs/StripeDialog.vala:506
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "Postal code."
-msgstr ""
+msgstr "המיקוד שגוי. נא לנסות שוב עם המיקוד הנכון."
 
 #: ../src/Dialogs/StripeDialog.vala:508
 msgid "You don't have enough funds. Please use an alternative payment method."
-msgstr ""
+msgstr "היתרה שלך אינה מספקת. נא להשתמש בשיטת תשלום חלופית."
 
 #: ../src/Dialogs/StripeDialog.vala:510
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr ""
+msgstr "הסכום שגוי. נא לנסות שוב עם סכום נכון."
 
 #: ../src/Dialogs/StripeDialog.vala:521
 msgid "The pin number is incorrect. Please try again using the correct pin."
-msgstr ""
+msgstr "מספר הזיהוי (pin) שגוי. נא לנסות שוב עם מספר הזיהוי הנכון."
 
 #: ../src/Dialogs/StripeDialog.vala:523
 msgid ""
 "There has been too many pin attempts. Please try again with a different card."
 msgstr ""
+"התבצעו יותר מדי ניסיונות להזנת מספר הזיהוי (pin). נא לנסות שוב עם כרטיס אחר."
 
 #: ../src/Dialogs/StripeDialog.vala:543
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
-msgstr ""
+msgstr "לא ניתן להשלים את ההעברה. נא ליצור קשר עם הבנק שלך לקבלת מידע נוסף."
 
 #: ../src/Dialogs/StripeDialog.vala:546
 msgid "The balance or credit limit on the card has been reached."
-msgstr ""
+msgstr "הגעת לתקרת המשיכה בכרטיס הזה."
 
 #: ../src/Dialogs/StripeDialog.vala:549
 msgid "The given card is a test card. Please use a real card to proceed."
-msgstr ""
+msgstr "הכרטיס שסופק הוא כרטיס בדיקה. נא להשתמש בכרטיס אמתי כדי להמשיך."
 
 #: ../src/Core/Client.vala:94
 msgid "Operating System Updates"
