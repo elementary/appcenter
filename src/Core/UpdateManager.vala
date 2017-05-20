@@ -23,16 +23,10 @@ public class AppCenterCore.UpdateManager : Object {
 
     private const string RESTART_REQUIRED_FILE = "/var/run/reboot-required";
 
-    private FileMonitor restart_monitor;
+    private File restart_file;
 
     construct {
-        var restart_file = File.new_for_path (RESTART_REQUIRED_FILE);
-        try {
-            restart_monitor = restart_file.monitor (FileMonitorFlags.NONE);
-            restart_monitor.changed.connect ((file) => update_restart_state (file));
-        } catch (Error e) {
-            warning (e.message);
-        }
+        restart_file = File.new_for_path (RESTART_REQUIRED_FILE);
     }
 
     private UpdateManager () {
@@ -64,8 +58,8 @@ public class AppCenterCore.UpdateManager : Object {
         }
     }
 
-    private void update_restart_state (File file) {
-        if (file.query_exists ()) {
+    public void update_restart_state () {
+        if (restart_file.query_exists ()) {
             if (!restart_required) {
                 string title = _("Restart Required");
                 string body = _("Please restart your system to finalize updates");
