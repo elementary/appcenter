@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-19 14:33-0500\n"
-"PO-Revision-Date: 2017-05-20 16:01+0000\n"
+"PO-Revision-Date: 2017-05-20 16:06+0000\n"
 "Last-Translator: Bálint Máhonfai <mbalint314@gmail.com>\n"
 "Language-Team: Hungarian "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/hu/>\n"
@@ -61,7 +61,7 @@ msgstr "Csomagok tisztítása"
 
 #: ../src/Core/ChangeInformation.vala:76
 msgid "Obsoleting packages"
-msgstr ""
+msgstr "Csomagok elavulttá tétele"
 
 #: ../src/Core/ChangeInformation.vala:78
 msgid "Resolving dependencies"
@@ -555,14 +555,16 @@ msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
 msgstr ""
+"A tranzakció végrehajtása sikertelen. További információért lépjen "
+"kapcsolatba bankjával."
 
 #: ../src/Dialogs/StripeDialog.vala:546
 msgid "The balance or credit limit on the card has been reached."
-msgstr ""
+msgstr "Elérte a kártya hitelkeretét."
 
 #: ../src/Dialogs/StripeDialog.vala:549
 msgid "The given card is a test card. Please use a real card to proceed."
-msgstr ""
+msgstr "Ez egy tesztkártya. Használjon valódi kártyát a folytatáshoz."
 
 #~ msgid "Install"
 #~ msgstr "Telepítés"
