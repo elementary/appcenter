@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2017-04-10 19:30+0000\n"
-"Last-Translator: Robert Reimus <partisan@o2.pl>\n"
+"PO-Revision-Date: 2017-04-19 10:34+0000\n"
+"Last-Translator: Piotr Strebski <strebski@o2.pl>\n"
 "Language-Team: Polish "
 "<https://l10n.elementary.io/projects/appcenter/extra/pl/>\n"
 "Language: pl\n"
@@ -40,38 +40,42 @@ msgstr ""
 "celem uzyskiwania nowych wspaniałych funkcji i niezbędnych poprawek."
 
 msgid "Bug fixes and improve perfomance."
-msgstr ""
+msgstr "Poprawki błędów i ulepszenie funkcjonowania."
 
 msgid "Various bug fixes and performance improvements"
-msgstr ""
+msgstr "Poprawki różnych błędów i ulepszenie działania"
 
 msgid "New translations"
 msgstr "Nowe tłumaczenia"
 
-#, fuzzy
 msgid "Fix crash caused by entries with missing packages"
-msgstr "Napraw awarię spowodowaną wpisami z brakującymi pakietami"
+msgstr "Naprawiono awarię spowodowaną wpisami z brakującymi pakietami"
 
 msgid "Add capability to search by category and apply minor bug fixes."
 msgstr ""
+"Dodana możliwość wyszukiwania poprzez kategorie oraz zastosowanie drobnych "
+"poprawek błędów."
 
-#, fuzzy
 msgid "It is now possible to search apps inside a category"
-msgstr "Teraz istnieje możliwość wyszukiwania aplikacji wewnątrz kategorii"
+msgstr "Istnieje teraz możliwość wyszukiwania programu wewnątrz kategorii"
 
 msgid "Prevent multiple authentication dialogs when resuming from suspend"
 msgstr ""
+"Zapobieżenie wielokrotnym oknom dialogowym uwierzytelniania przy wychodzeniu "
+"ze stanu uśpienia"
 
 msgid ""
 "Search perfomance has beeen improved, the category name is now shown on the "
 "headbar and minor bugs have been fixed."
 msgstr ""
+"Poprawiono skuteczność wyszukiwania, nazwa kategorii jest teraz widoczna na "
+"pasku oraz poprawiono drobne błędy."
 
 msgid "Fix Steam installation"
-msgstr ""
+msgstr "Poprawiono instalację Steam"
 
 msgid "Make search asynchronous"
-msgstr ""
+msgstr "Dodano wyszukiwanie asynchroniczne"
 
 #, fuzzy
 #~ msgid "App Center"

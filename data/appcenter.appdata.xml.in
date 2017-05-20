@@ -15,6 +15,24 @@
         </_p>
     </description>
     <releases>
+        <release version="0.2.1" date="2017-05-19" urgency="medium">
+            <description>
+                <_p>Bug fixes and improve perfomance.</_p>
+                <ul>
+                    <_li>Various bug fixes and performance improvements</_li>
+                    <_li>New translations</_li>
+                </ul>
+            </description>
+        </release>
+        <release version="0.2" date="2017-05-17" urgency="medium">
+            <description>
+                <_p>Bug fixes and improve perfomance.</_p>
+                <ul>
+                    <_li>Various bug fixes and performance improvements</_li>
+                    <_li>New translations</_li>
+                </ul>
+            </description>
+        </release>
         <release version="0.1.4" date="2017-03-16" urgency="medium">
             <description>
                 <_p>Bug fixes and improve perfomance.</_p>

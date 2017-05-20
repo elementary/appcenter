@@ -3,15 +3,17 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2016-04-30 13:05+0000\n"
-"Last-Translator: Melih Güçlü <melihguclu@hotmail.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2017-05-04 03:35+0000\n"
+"Last-Translator: Seyit Ali Doğan <seyit822@yandex.com>\n"
+"Language-Team: Turkish "
+"<https://l10n.elementary.io/projects/appcenter/extra/tr/>\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
-"X-Generator: Launchpad (build 18331)\n"
 
 msgid "AppCenter"
 msgstr "Uygulama Merkezi"
@@ -36,25 +38,25 @@ msgstr ""
 "özelliklere ve hatasız sürümlere ulaşmanızı da sağlar."
 
 msgid "Bug fixes and improve perfomance."
-msgstr ""
+msgstr "Bug düzeltmeleri ve performans iyileştirmeleri."
 
 msgid "Various bug fixes and performance improvements"
-msgstr ""
+msgstr "Çeşitli bug düzeltmeleri ve performans iyileştirmeleri"
 
 msgid "New translations"
-msgstr ""
+msgstr "Yeni çeviriler"
 
 msgid "Fix crash caused by entries with missing packages"
-msgstr ""
+msgstr "Eksik paketlerden kaynaklanan çökmeler düzeltildi"
 
 msgid "Add capability to search by category and apply minor bug fixes."
-msgstr ""
+msgstr "Kategoriye göre arama yapma ve küçük hata düzeltmeleri uygulandı."
 
 msgid "It is now possible to search apps inside a category"
-msgstr ""
+msgstr "Artık bir kategori içindeki uygulamaları aramak mümkün"
 
 msgid "Prevent multiple authentication dialogs when resuming from suspend"
-msgstr ""
+msgstr "Askıya aldıktan sonra birden çok kimlik doğrulama kutusunu engelleme"
 
 msgid ""
 "Search perfomance has beeen improved, the category name is now shown on the "
@@ -62,10 +64,10 @@ msgid ""
 msgstr ""
 
 msgid "Fix Steam installation"
-msgstr ""
+msgstr "Steam kurulumu düzeltildi"
 
 msgid "Make search asynchronous"
-msgstr ""
+msgstr "Eş zamanlı olmayan arama yapmak"
 
 #, fuzzy
 #~ msgid "App Center"

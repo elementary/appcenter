@@ -22,6 +22,8 @@ vala_precompile(VALA_C ${EXEC_NAME}
     Widgets/AbstractAppContainer.vala
     Widgets/AbstractAppList.vala
     Widgets/Banner.vala
+    Widgets/Carousel/Carousel.vala
+    Widgets/Carousel/CarouselItem.vala
     Widgets/CategoryFlowBox.vala
     Widgets/CategoryItem.vala
     Widgets/PackageRow.vala

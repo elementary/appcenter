@@ -53,7 +53,7 @@ public class AppCenter.App : Granite.Application {
         main_url = "https://elementary.io";
         bug_url = "https://github.com/elementary/appcenter/issues";
         help_url = "https://elementary.io/support";
-        translate_url = "https://l10n.elementary.io/projects/desktop/appcenter/";
+        translate_url = "https://l10n.elementary.io/projects/appcenter";
         about_authors = { "Corentin Noël <corentin@elementary.io>" };
         about_comments = "";
         about_translators = _("translator-credits");
@@ -163,14 +163,12 @@ public class AppCenter.App : Granite.Application {
         base.dbus_register (connection, object_path);
 
         if (silent) {
-            DBusServer.initialize.begin ((obj, res) => {
-                DBusServer.initialize.end (res);
-                try {
-                    registration_id = connection.register_object ("/io/elementary/appcenter", DBusServer.get_default ());    
-                } catch (Error e) {
-                    warning (e.message);
-                }
-            });
+            DBusServer.init ();
+            try {
+                registration_id = connection.register_object ("/io/elementary/appcenter", DBusServer.get_default ());    
+            } catch (Error e) {
+                warning (e.message);
+            }
         }
 
         return true;
