@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-19 14:33-0500\n"
-"PO-Revision-Date: 2017-05-18 14:24+0000\n"
+"PO-Revision-Date: 2017-05-20 16:01+0000\n"
 "Last-Translator: Bálint Máhonfai <mbalint314@gmail.com>\n"
-"Language-Team: Hungarian <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/hu/>\n"
+"Language-Team: Hungarian "
+"<https://l10n.elementary.io/projects/appcenter/appcenter/hu/>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #: ../src/Core/ChangeInformation.vala:54
@@ -441,6 +441,8 @@ msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
+"Hiba történt a kártya feldolgozása közben. Próbálja újra később. Elnézést a "
+"kellemetlenségekért."
 
 #: ../src/Dialogs/StripeDialog.vala:31
 msgid "Please review your payment info and try again."
@@ -481,70 +483,72 @@ msgstr "Újra"
 #: ../src/Dialogs/StripeDialog.vala:453 ../src/Dialogs/StripeDialog.vala:518
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
-msgstr ""
+msgstr "A kártyaszám helytelen. Próbálja újra a helyes kártyaszámmal."
 
 #: ../src/Dialogs/StripeDialog.vala:455
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
-msgstr ""
+msgstr "A lejárati hónap érvénytelen. Próbálja újra a helyes lejárati dátummal."
 
 #: ../src/Dialogs/StripeDialog.vala:457 ../src/Dialogs/StripeDialog.vala:515
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
-msgstr ""
+msgstr "A lejárati év érvénytelen. Próbálja újra a helyes lejárati dátummal."
 
 #: ../src/Dialogs/StripeDialog.vala:460 ../src/Dialogs/StripeDialog.vala:513
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr ""
+msgstr "A CVC kód helytelen. Próbálja újra a helyes CVC kóddal."
 
 #: ../src/Dialogs/StripeDialog.vala:462 ../src/Dialogs/StripeDialog.vala:504
 msgid "The card has expired. Please try again with a different card."
-msgstr ""
+msgstr "A kártya lejárt. Próbálja újra másik kártyával."
 
 #: ../src/Dialogs/StripeDialog.vala:482
 msgid "There are too many payment requests at the moment, please retry later."
-msgstr ""
+msgstr "Túl sok fizetési kérés van jelenleg, próbálja újra később."
 
 #: ../src/Dialogs/StripeDialog.vala:498
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
 msgstr ""
+"Ez a kártya nem támogatja ezt a fajta tranzakciót. Próbálja újra másik "
+"kártyával."
 
 #: ../src/Dialogs/StripeDialog.vala:500
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
-msgstr ""
+msgstr "Ez a kártya nem támogatja ezt a valutát. Próbálja újra másik kártyával."
 
 #: ../src/Dialogs/StripeDialog.vala:502
 msgid "The transaction has already been processed."
-msgstr ""
+msgstr "A tranzakció már feldolgozásra került."
 
 #: ../src/Dialogs/StripeDialog.vala:506
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "Postal code."
-msgstr ""
+msgstr "Az irányítószám helytelen. Próbálja újra a helyes irányítószámmal."
 
 #: ../src/Dialogs/StripeDialog.vala:508
 msgid "You don't have enough funds. Please use an alternative payment method."
-msgstr ""
+msgstr "Nincs elég keret. Válasszon másik fizetési módot."
 
 #: ../src/Dialogs/StripeDialog.vala:510
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr ""
+msgstr "Az összeg helytelen. Próbálja újra érvényes összeggel."
 
 #: ../src/Dialogs/StripeDialog.vala:521
 msgid "The pin number is incorrect. Please try again using the correct pin."
-msgstr ""
+msgstr "A PIN-kód helytelen. Próbálja újra a helyes PIN-kóddal."
 
 #: ../src/Dialogs/StripeDialog.vala:523
 msgid ""
 "There has been too many pin attempts. Please try again with a different card."
-msgstr ""
+msgstr "Túl sok PIN-kód kísérlet történt. Próbálja újra másik kártyával."
 
 #: ../src/Dialogs/StripeDialog.vala:543
 msgid ""
