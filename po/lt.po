@@ -3,17 +3,17 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-19 14:33-0500\n"
-"PO-Revision-Date: 2017-05-17 19:57+0000\n"
+"PO-Revision-Date: 2017-05-20 08:57+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
-"Language-Team: Lithuanian <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/lt/>\n"
+"Language-Team: Lithuanian "
+"<https://l10n.elementary.io/projects/appcenter/appcenter/lt/>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
-"%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"(n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #: ../src/Core/ChangeInformation.vala:54
@@ -446,6 +446,8 @@ msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
+"Apdorojant kortelę, įvyko klaida. Prašome bandyti dar kartą. Atsiprašome už "
+"sukeltus nepatogumus."
 
 #: ../src/Dialogs/StripeDialog.vala:31
 msgid "Please review your payment info and try again."
@@ -456,6 +458,8 @@ msgid ""
 "Your email address is used to send a receipt. It is never stored and you "
 "will not be subscribed to a mailing list."
 msgstr ""
+"Jūsų el. pašto adresas yra naudojamas išsiųsti jums kvitą. Jis niekada nėra "
+"kaupiamas ir nebus įtrauktas į pašto prenumeratos sąrašą."
 
 #: ../src/Dialogs/StripeDialog.vala:148
 msgid "Privacy Policy"
@@ -485,83 +489,109 @@ msgstr "Bandyti dar kartą"
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr ""
+"Kortelės numeris yra neteisingas. Prašome bandyti dar kartą, naudojant "
+"teisingą kortelės numerį."
 
 #: ../src/Dialogs/StripeDialog.vala:455
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"Galiojimo datos mėnuo yra neteisingas. Prašome bandyti dar kartą, naudojant "
+"teisingą galiojimo datą."
 
 #: ../src/Dialogs/StripeDialog.vala:457 ../src/Dialogs/StripeDialog.vala:515
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"Galiojimo datos metai yra neteisingi. Prašome bandyti dar kartą, naudojant "
+"teisingą galiojimo datą."
 
 #: ../src/Dialogs/StripeDialog.vala:460 ../src/Dialogs/StripeDialog.vala:513
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr ""
+"CVC saugos kodas yra neteisingas. Prašome bandyti dar kartą, naudojant "
+"teisingą CVC saugos kodą."
 
 #: ../src/Dialogs/StripeDialog.vala:462 ../src/Dialogs/StripeDialog.vala:504
 msgid "The card has expired. Please try again with a different card."
 msgstr ""
+"Kortelės galiojimo laikas yra pasibaigęs. Prašome bandyti dar kartą, "
+"naudojant kitą kortelę."
 
 #: ../src/Dialogs/StripeDialog.vala:482
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr ""
+"Šiuo metu yra per daug apmokėjimo užklausų, prašome vėliau bandyti dar kartą."
 
 #: ../src/Dialogs/StripeDialog.vala:498
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
 msgstr ""
+"Ši kortelė nepalaiko tokio tipo operacijos. Prašome bandyti dar kartą, "
+"naudojant kitą kortelę."
 
 #: ../src/Dialogs/StripeDialog.vala:500
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
 msgstr ""
+"Ši valiuta nėra palaikoma šios kortelės. Prašome bandyti dar kartą, "
+"naudojant kitą kortelę."
 
 #: ../src/Dialogs/StripeDialog.vala:502
 msgid "The transaction has already been processed."
-msgstr ""
+msgstr "Operacija jau buvo apdorota."
 
 #: ../src/Dialogs/StripeDialog.vala:506
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "Postal code."
 msgstr ""
+"Pašto kodas yra neteisingas. Prašome bandyti dar kartą, naudojant teisingą "
+"pašto kodą."
 
 #: ../src/Dialogs/StripeDialog.vala:508
 msgid "You don't have enough funds. Please use an alternative payment method."
-msgstr ""
+msgstr "Jūs neturite pakankamai lėšų. Prašome naudoti kitą apmokėjimo metodą."
 
 #: ../src/Dialogs/StripeDialog.vala:510
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr ""
+"Suma yra neteisinga. Prašome bandyti dar kartą, naudojant teisingą sumą."
 
 #: ../src/Dialogs/StripeDialog.vala:521
 msgid "The pin number is incorrect. Please try again using the correct pin."
 msgstr ""
+"Pin numeris yra neteisingas. Prašome bandyti dar kartą, naudojant teisingą "
+"pin."
 
 #: ../src/Dialogs/StripeDialog.vala:523
 msgid ""
 "There has been too many pin attempts. Please try again with a different card."
 msgstr ""
+"Buvo pernelyg daug pin bandymų. Prašome bandyti dar kartą, naudojant kitą "
+"kortelę."
 
 #: ../src/Dialogs/StripeDialog.vala:543
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
 msgstr ""
+"Nepavyko užbaigti operacijos. Dėl tolimesnės informacijos, prašome "
+"susisiekti su banku."
 
 #: ../src/Dialogs/StripeDialog.vala:546
 msgid "The balance or credit limit on the card has been reached."
-msgstr ""
+msgstr "Yra pasiekta kortelės balanso ar kredito riba."
 
 #: ../src/Dialogs/StripeDialog.vala:549
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
+"Nurodyta kortelė yra bandomoji kortelė. Norėdami tęsti, naudokite tikrą "
+"kortelę."
 
 #~ msgid "Install"
 #~ msgstr "Įdiegti"
