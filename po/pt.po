@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-19 14:33-0500\n"
-"PO-Revision-Date: 2017-05-21 17:57+0000\n"
+"PO-Revision-Date: 2017-05-21 18:31+0000\n"
 "Last-Translator: Luís Lima <geral@liqensoft.com>\n"
 "Language-Team: Portuguese "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/pt/>\n"
@@ -532,47 +532,60 @@ msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
 msgstr ""
+"O tipo de moeda não é suportado por este cartão. Por favor tente novamente "
+"com um cartão diferente."
 
 #: ../src/Dialogs/StripeDialog.vala:502
 msgid "The transaction has already been processed."
-msgstr ""
+msgstr "A transação já foi processada."
 
 #: ../src/Dialogs/StripeDialog.vala:506
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "Postal code."
 msgstr ""
+"O código postal está incorreto. Por favor tente novamente inserindo um "
+"código postal válido."
 
 #: ../src/Dialogs/StripeDialog.vala:508
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr ""
+"Não tem fundos suficientes. Por favor use um método de pagamento alternativo."
 
 #: ../src/Dialogs/StripeDialog.vala:510
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr ""
+"O montante está incorreto. Por favor tente novamente inserindo um montante "
+"válido."
 
 #: ../src/Dialogs/StripeDialog.vala:521
 msgid "The pin number is incorrect. Please try again using the correct pin."
-msgstr ""
+msgstr "O pin está incorreto. Por favor tente novamente usando o pin certo."
 
 #: ../src/Dialogs/StripeDialog.vala:523
 msgid ""
 "There has been too many pin attempts. Please try again with a different card."
 msgstr ""
+"Tentou inserir o pin demasiadas vezes. Por favor tente novamente com um "
+"cartão diferente."
 
 #: ../src/Dialogs/StripeDialog.vala:543
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
 msgstr ""
+"Impossível completar a transação. Por favor contacte o banco para mais "
+"informações."
 
 #: ../src/Dialogs/StripeDialog.vala:546
 msgid "The balance or credit limit on the card has been reached."
-msgstr ""
+msgstr "Balanço negativo ou limite de crédito antigidos neste cartão."
 
 #: ../src/Dialogs/StripeDialog.vala:549
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
+"O cartão inserido é um cartão de testes. Por favor use um cartão real para "
+"continuar."
 
 #: ../src/Core/Client.vala:94
 msgid "Operating System Updates"
