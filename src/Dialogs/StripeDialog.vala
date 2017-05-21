@@ -302,7 +302,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
                     if (new_text.length < 4) {
                         expiration_valid = false;
                     } else {
-                        var regex = new Regex ("""[0-9]{2}\/?[0-9]{2}""");
+                        var regex = new Regex ("""^[0-9]{2}\/?[0-9]{2}$""");
                         expiration_valid = regex.match (new_text);
                     }
                     break;
