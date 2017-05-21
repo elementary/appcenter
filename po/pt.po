@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-19 14:33-0500\n"
-"PO-Revision-Date: 2017-05-18 14:24+0000\n"
-"Last-Translator: Luis Filipe <lousosad@gmail.com>\n"
-"Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/pt/>\n"
+"PO-Revision-Date: 2017-05-21 17:57+0000\n"
+"Last-Translator: Luís Lima <geral@liqensoft.com>\n"
+"Language-Team: Portuguese "
+"<https://l10n.elementary.io/projects/appcenter/appcenter/pt/>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #: ../src/Core/ChangeInformation.vala:54
@@ -330,7 +330,7 @@ msgstr "Atualizado"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:120
 msgid "Drivers"
-msgstr ""
+msgstr "Controladores"
 
 #: ../src/Widgets/AbstractAppContainer.vala:105
 msgid "Uninstall"
@@ -441,6 +441,8 @@ msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
+"Ocorreu um erro enquanto processava o cartão. Por favor tente mais tarde. "
+"Pedimos desculpa pelo inconveniente causado."
 
 #: ../src/Dialogs/StripeDialog.vala:31
 msgid "Please review your payment info and try again."
@@ -459,7 +461,6 @@ msgid "Privacy Policy"
 msgstr "Politica de Privacidade"
 
 #: ../src/Dialogs/StripeDialog.vala:159 ../src/Dialogs/StripeDialog.vala:275
-#, fuzzy
 msgid "Pay $%s.00"
 msgstr "Pagar $%s.00"
 
@@ -483,36 +484,48 @@ msgstr "Tentar novamente"
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr ""
+"O número do cartão está incorreto. Por favor tente novamente usando um "
+"número válido."
 
 #: ../src/Dialogs/StripeDialog.vala:455
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"O mês de expiração é inválido. Por favor tente novamente inserindo a data de "
+"expiração correta."
 
 #: ../src/Dialogs/StripeDialog.vala:457 ../src/Dialogs/StripeDialog.vala:515
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"O ano de expiração é inválido. Por favor tente novamente inserindo a data de "
+"expiração correta."
 
 #: ../src/Dialogs/StripeDialog.vala:460 ../src/Dialogs/StripeDialog.vala:513
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr ""
+"O número CVC é inválido. Por favor tente novamente inserindo o CVC correto."
 
 #: ../src/Dialogs/StripeDialog.vala:462 ../src/Dialogs/StripeDialog.vala:504
 msgid "The card has expired. Please try again with a different card."
 msgstr ""
+"O cartão está expirado. Por favor tente novamente com um cartão diferente."
 
 #: ../src/Dialogs/StripeDialog.vala:482
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr ""
+"Existem muitos pedidos para pagamento neste momento, por favor tente mais "
+"tarde."
 
 #: ../src/Dialogs/StripeDialog.vala:498
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
 msgstr ""
+"Este cartão não suporta este tipo de transações. Por favor tente novamente "
+"com um cartão diferente."
 
 #: ../src/Dialogs/StripeDialog.vala:500
 msgid ""
