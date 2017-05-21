@@ -9,7 +9,7 @@ set (EXEC_NAME ${CMAKE_PROJECT_NAME})
 set (APP_NAME "AppCenter")
 set (RELEASE_NAME "Browse and manage apps")
 set (DESKTOP_ICON "system-software-install")
-set (VERSION "0.2.1")
+set (VERSION "0.2.2")
 set (VERSION_INFO "Alpha")
 set (DOLLAR "$")
 
