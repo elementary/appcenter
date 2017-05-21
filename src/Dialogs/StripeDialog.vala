@@ -347,7 +347,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
             case Gtk.ResponseType.APPLY:
                 if (layouts.visible_child_name == "card") {
                     show_spinner_view ();
-                    on_pay_clicked ();
+                    on_pay_clicked.begin ();
                 } else {
                     show_card_view ();
                 }
@@ -362,138 +362,154 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         }
     }
 
-    private void on_pay_clicked () {
-        new Thread<void*> (null, () => {
-            var year = (int.parse (card_expiration_entry.text[2:4]) + 2000).to_string ();
+    private async void on_pay_clicked () {
+        var year = (int.parse (card_expiration_entry.text[2:4]) + 2000).to_string ();
+        var amount_string = (amount * 100).to_string ();
+        var expiration = card_expiration_entry.text[0:2];
 
-            var data = get_stripe_data (stripe_key, email_entry.text, (amount * 100).to_string (), card_number_entry.text, card_expiration_entry.text[0:2], year, card_cvc_entry.text);
-            debug ("Stripe data:%s", data);
-            string? error = null;
-            try {
-                var parser = new Json.Parser ();
-                parser.load_from_data (data);
-                var root_object = parser.get_root ().get_object ();
-                if (root_object != null && root_object.has_member ("id")) {
-                    var token_id = root_object.get_string_member ("id");
-                    string? houston_data = post_to_houston (stripe_key, app_id, token_id, email_entry.text, (amount * 100).to_string ());
-                    if (houston_data != null) {
-                        debug ("Houston data:%s", houston_data);
-                        parser.load_from_data (houston_data);
-                        root_object = parser.get_root ().get_object ();
-                        if (root_object.has_member ("errors")) {
-                            error = _(DEFAULT_ERROR_MESSAGE);
-                        }
-                    } else {
-                        error = _(DEFAULT_ERROR_MESSAGE);
-                    }
-                } else if (root_object != null && root_object.has_member ("error")) {
-                    error = get_stripe_error (root_object.get_object_member ("error"));
-                } else {
-                    error = _(DEFAULT_ERROR_MESSAGE);
-                }
-            } catch (Error e) {
-                error = _(DEFAULT_ERROR_MESSAGE);
-                debug (e.message);
-            }
-
+        try {
+            var token_id = yield get_stripe_data (stripe_key, email_entry.text, amount_string, card_number_entry.text, expiration, year, card_cvc_entry.text);
+            yield post_to_houston (stripe_key, app_id, token_id, email_entry.text, amount_string);
+            download_requested ();
+            destroy ();
+        } catch (Error e) {
+            string message = e.message;
             Idle.add (() => {
-                if (error != null) {
-                    show_error_view (error);
-                } else {
-                    download_requested ();
-                    destroy ();
-                }
-
+                show_error_view (message);
                 return GLib.Source.REMOVE;
             });
-
-            return null;
-        });
+        }
     }
 
-    private string get_stripe_data (string _key, string _email, string _amount, string _cc_num, string _cc_exp_month, string _cc_exp_year, string _cc_cvc) {
+    private async string get_stripe_data (string _key, string _email, string _amount, string _cc_num, string _cc_exp_month, string _cc_exp_year, string _cc_cvc) throws GLib.Error {
         var uri = STRIPE_URI.printf (_email, USER_AGENT, _amount, _cc_num, _cc_cvc, _cc_exp_month, _cc_exp_year, _key);
         var session = new Soup.Session ();
         var message = new Soup.Message ("POST", uri);
-        session.send_message (message);
-
-        var data = new StringBuilder ();
-        foreach (var c in message.response_body.data) {
-            data.append ("%c".printf (c));
+        InputStream message_stream;
+        try {
+            message_stream = yield session.send_async (message);
+        } catch (Error e) {
+            critical (e.message);
+            throw new GLib.IOError.FAILED (_(DEFAULT_ERROR_MESSAGE));
         }
 
-        return data.str;
+        var parser = new Json.Parser ();
+        try {
+            yield parser.load_from_stream_async (message_stream);
+        } catch (Error e) {
+            debug (e.message);
+            throw new GLib.IOError.FAILED (_(DEFAULT_ERROR_MESSAGE));
+        }
+
+        unowned Json.Node? root = parser.get_root ();
+        if (root.get_node_type () != Json.NodeType.OBJECT) {
+            throw new GLib.IOError.FAILED (_(DEFAULT_ERROR_MESSAGE));
+        }
+
+        unowned Json.Object root_object = root.get_object ();
+        if (root_object.has_member ("id")) {
+            return root_object.get_string_member ("id");
+        } else if (root_object.has_member ("error")) {
+            unowned Json.Object error_object = root_object.get_object_member ("error");
+            if (error_object.has_member ("type")) {
+                string error_type = error_object.get_string_member ("type");
+                string? error_code = null;
+                string? decline_code = null;
+                if (error_object.has_member ("code")) {
+                    error_code = error_object.get_string_member ("code");
+                }
+
+                if (error_object.has_member ("decline_code")) {
+                    decline_code = error_object.get_string_member ("decline_code");
+                }
+
+                throw new GLib.IOError.FAILED (get_stripe_error (error_type, error_code, decline_code));
+            } else {
+                throw new GLib.IOError.FAILED (_(DEFAULT_ERROR_MESSAGE));
+            }
+        } else {
+            throw new GLib.IOError.FAILED (_(DEFAULT_ERROR_MESSAGE));
+        }
     }
 
-    private string post_to_houston (string _app_key, string _app_id, string _purchase_token, string _email, string _amount) {
+    private async void post_to_houston (string _app_key, string _app_id, string _purchase_token, string _email, string _amount) throws GLib.Error {
         var uri = HOUSTON_URI.printf (_app_id, _app_key, _purchase_token, _email, _amount);
         var session = new Soup.Session ();
         var message = new Soup.Message ("POST", uri);
-        session.send_message (message);
-
-        var data = new StringBuilder ();
-        foreach (var c in message.response_body.data) {
-            data.append ("%c".printf (c));
+        InputStream message_stream;
+        try {
+            message_stream = yield session.send_async (message);
+        } catch (Error e) {
+            critical (e.message);
+            throw new GLib.IOError.FAILED (_(DEFAULT_ERROR_MESSAGE));
         }
 
-        return data.str;
+        var parser = new Json.Parser ();
+        try {
+            yield parser.load_from_stream_async (message_stream);
+        } catch (Error e) {
+            debug (e.message);
+            throw new GLib.IOError.FAILED (_(DEFAULT_ERROR_MESSAGE));
+        }
+
+        unowned Json.Node? root = parser.get_root ();
+        if (root.get_node_type () != Json.NodeType.OBJECT) {
+            throw new GLib.IOError.FAILED (_(DEFAULT_ERROR_MESSAGE));
+        }
+
+        unowned Json.Object root_object = root.get_object ();
+        if (root_object.has_member ("errors")) {
+            throw new GLib.IOError.FAILED (_(DEFAULT_ERROR_MESSAGE));
+        }
     }
 
-    private static unowned string get_stripe_error (Json.Object error_object) {
-        if (error_object.has_member ("type")) {
-            unowned string error_type = error_object.get_string_member ("type");
-            debug ("Stripe error type: %s", error_type);
-            switch (error_type) {
-                case "card_error":
-                    if (error_object.has_member ("code")) {
-                        unowned string error_code = error_object.get_string_member ("code");
-                        debug ("Stripe error code: %s", error_code);
-                        switch (error_code) {
-                            case "incorrect_number":
-                            case "invalid_number":
-                                return _("The card number is incorrect. Please try again using the correct card number.");
-                            case "invalid_expiry_month":
-                                return _("The expiration month is invalid. Please try again using the correct expiration date.");
-                            case "invalid_expiry_year":
-                                return _("The expiration year is invalid. Please try again using the correct expiration date.");
-                            case "incorrect_cvc":
-                            case "invalid_cvc":
-                                return _("The CVC number is incorrect. Please try again using the correct CVC.");
-                            case "expired_card":
-                                return _("The card has expired. Please try again with a different card.");
-                            case "processing_error":
-                                return _(INTERNAL_ERROR_MESSAGE);
-                            case "card_declined":
-                                if (error_object.has_member ("decline_code")) {
-                                    unowned string decline_code = error_object.get_string_member ("decline_code");
-                                    debug ("Stripe decline error code: %s", decline_code);
-                                    return get_stripe_decline_reason (decline_code);
-                                } else {
-                                    return _(DEFAULT_ERROR_MESSAGE);
-                                }
-                            default:
-                                return _(DEFAULT_ERROR_MESSAGE);
-                        }
-                    } else {
-                        return _(DEFAULT_ERROR_MESSAGE);
-                    }
-                case "validation_error":
+    private static unowned string get_stripe_error (string error_type, string? error_code, string? decline_code) {
+        debug ("Stripe error type: %s", error_type);
+        switch (error_type) {
+            case "card_error":
+                if (error_code == null) {
                     return _(DEFAULT_ERROR_MESSAGE);
-                case "rate_limit_error":
-                    return _("There are too many payment requests at the moment, please retry later.");
-                case "api_connection_error":
-                case "api_error":
-                case "authentication_error":
-                case "invalid_request_error":
-                default:
-                    return _(INTERNAL_ERROR_MESSAGE);
-            }
-        } else {
+                }
+
+                debug ("Stripe error code: %s", error_code);
+                switch (error_code) {
+                    case "incorrect_number":
+                    case "invalid_number":
+                        return _("The card number is incorrect. Please try again using the correct card number.");
+                    case "invalid_expiry_month":
+                        return _("The expiration month is invalid. Please try again using the correct expiration date.");
+                    case "invalid_expiry_year":
+                        return _("The expiration year is invalid. Please try again using the correct expiration date.");
+                    case "incorrect_cvc":
+                    case "invalid_cvc":
+                        return _("The CVC number is incorrect. Please try again using the correct CVC.");
+                    case "expired_card":
+                        return _("The card has expired. Please try again with a different card.");
+                    case "processing_error":
+                        return _(INTERNAL_ERROR_MESSAGE);
+                    case "card_declined":
+                        return get_stripe_decline_reason (decline_code);
+                    default:
+                        return _(DEFAULT_ERROR_MESSAGE);
+                }
+            case "validation_error":
+                return _(DEFAULT_ERROR_MESSAGE);
+            case "rate_limit_error":
+                return _("There are too many payment requests at the moment, please retry later.");
+            case "api_connection_error":
+            case "api_error":
+            case "authentication_error":
+            case "invalid_request_error":
+            default:
+                return _(INTERNAL_ERROR_MESSAGE);
+        }
+    }
+
+    private static unowned string get_stripe_decline_reason (string? decline_code) {
+        if (decline_code == null) {
             return _(DEFAULT_ERROR_MESSAGE);
         }
-    }
 
-    private static unowned string get_stripe_decline_reason (string decline_code) {
         switch (decline_code) {
             case "card_not_supported":
                 return _("This card does not support this kind of transaction. Please try again with a different card.");
