@@ -72,7 +72,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         email_entry = new Gtk.Entry ();
         email_entry.hexpand = true;
         email_entry.input_purpose = Gtk.InputPurpose.EMAIL;
-        email_entry.placeholder_text = "Email";
+        email_entry.placeholder_text = _("Email");
         email_entry.primary_icon_name = "internet-mail-symbolic";
         email_entry.tooltip_text = _("Your email address is used to send a receipt. It is never stored and you will not be subscribed to a mailing list.");
 
@@ -85,7 +85,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         card_number_entry.hexpand = true;
         card_number_entry.input_purpose = Gtk.InputPurpose.DIGITS;
         card_number_entry.max_length = 20;
-        card_number_entry.placeholder_text = "Card Number";
+        card_number_entry.placeholder_text = _("Card Number");
         card_number_entry.primary_icon_name = "credit-card-symbolic";
 
         card_number_entry.changed.connect (() => {
@@ -96,7 +96,8 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         card_expiration_entry = new Gtk.Entry ();
         card_expiration_entry.hexpand = true;
         card_expiration_entry.max_length = 5;
-        card_expiration_entry.placeholder_text = "MM / YY";
+        /// TRANSLATORS: Don't change the order, only transliterate
+        card_expiration_entry.placeholder_text = _("MM / YY");
         card_expiration_entry.primary_icon_name = "office-calendar-symbolic";
 
         card_expiration_entry.changed.connect (() => {
@@ -116,7 +117,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         card_cvc_entry.hexpand = true;
         card_cvc_entry.input_purpose = Gtk.InputPurpose.DIGITS;
         card_cvc_entry.max_length = 4;
-        card_cvc_entry.placeholder_text = "CVC";
+        card_cvc_entry.placeholder_text = _("CVC");
         card_cvc_entry.primary_icon_name = "channel-secure-symbolic";
 
         card_cvc_entry.changed.connect (() => {
@@ -164,7 +165,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
 
         cancel_button = (Gtk.Button) add_button (_("Cancel"), Gtk.ResponseType.CLOSE);
 
-        pay_button = (Gtk.Button) add_button (_("Pay $%s.00").printf (amount.to_string ()), Gtk.ResponseType.APPLY);
+        pay_button = (Gtk.Button) add_button (_("Pay $%d.00").printf (amount), Gtk.ResponseType.APPLY);
         pay_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
         pay_button.has_default = true;
         pay_button.sensitive = false;
@@ -280,7 +281,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
     }
 
     private void show_card_view () {
-        pay_button.label = _("Pay $%s.00").printf (amount.to_string ());
+        pay_button.label = _("Pay $%d.00").printf (amount);
         cancel_button.label = _("Cancel");
 
         layouts.set_visible_child_name ("card");
