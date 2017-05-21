@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-19 14:33-0500\n"
-"PO-Revision-Date: 2017-04-27 14:39+0000\n"
+"PO-Revision-Date: 2017-05-21 07:18+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
-"Language-Team: Finnish <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/fi/>\n"
+"Language-Team: Finnish "
+"<https://l10n.elementary.io/projects/appcenter/appcenter/fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #: ../src/Core/ChangeInformation.vala:54
@@ -263,7 +263,7 @@ msgstr "Päivitä kaikki"
 
 #: ../src/Views/Homepage.vala:102
 msgid "Recently Updated"
-msgstr ""
+msgstr "Äskettäin päivitetty"
 
 #: ../src/Views/Homepage.vala:152
 msgid "Categories"
@@ -328,7 +328,7 @@ msgstr "Ajan tasalla"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:120
 msgid "Drivers"
-msgstr ""
+msgstr "Ajurit"
 
 #: ../src/Widgets/AbstractAppContainer.vala:105
 msgid "Uninstall"
@@ -437,7 +437,7 @@ msgstr "Käynnistä uudelleen"
 msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
-msgstr ""
+msgstr "Korttiasi käsitellessä tapahtui virhe. Yritä myöhemmin uudelleen."
 
 #: ../src/Dialogs/StripeDialog.vala:31
 msgid "Please review your payment info and try again."
@@ -448,10 +448,12 @@ msgid ""
 "Your email address is used to send a receipt. It is never stored and you "
 "will not be subscribed to a mailing list."
 msgstr ""
+"Sähköpostiosoitettasi käytetään kuitin lähettämiseen. Sitä ei tallenneta "
+"mihinkään, etkä päädy millekään postituslistalle."
 
 #: ../src/Dialogs/StripeDialog.vala:148
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Yksityisyyskäytäntö"
 
 #: ../src/Dialogs/StripeDialog.vala:159 ../src/Dialogs/StripeDialog.vala:275
 msgid "Pay $%s.00"
@@ -477,83 +479,91 @@ msgstr "Yritä uudelleen"
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr ""
+"Kortin numero on väärin. Yritä uudelleen käyttäen oikeaa kortin numeroa."
 
 #: ../src/Dialogs/StripeDialog.vala:455
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"Päättymiskuukausi on väärin. Yritä uudelleen käyttäen oikeaa "
+"päättymiskuukautta."
 
 #: ../src/Dialogs/StripeDialog.vala:457 ../src/Dialogs/StripeDialog.vala:515
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"Päättymisvuosi on väärin. Yritä uudelleen käyttäen oikeaa päättymisvuotta."
 
 #: ../src/Dialogs/StripeDialog.vala:460 ../src/Dialogs/StripeDialog.vala:513
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr ""
+msgstr "CVC-numero on väärin. Yritä uudelleen käyttäen oikeaa CVC-numeroa."
 
 #: ../src/Dialogs/StripeDialog.vala:462 ../src/Dialogs/StripeDialog.vala:504
 msgid "The card has expired. Please try again with a different card."
-msgstr ""
+msgstr "Kortti on vanhentunut. Yritä uudelleen käyttäen toista korttia."
 
 #: ../src/Dialogs/StripeDialog.vala:482
 msgid "There are too many payment requests at the moment, please retry later."
-msgstr ""
+msgstr "Liian monta maksupyyntöä tällä hetkellä, yritä myöhemmin uudelleen."
 
 #: ../src/Dialogs/StripeDialog.vala:498
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
 msgstr ""
+"Tämä kortti ei tue tämänkaltaista maksua. Yritä uudelleen käyttäen toista "
+"korttia."
 
 #: ../src/Dialogs/StripeDialog.vala:500
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
 msgstr ""
+"Valuutta ei ole tuettu tämän kortin toimesta. Yritä uudelleen käyttäen "
+"toista korttia."
 
 #: ../src/Dialogs/StripeDialog.vala:502
 msgid "The transaction has already been processed."
-msgstr ""
+msgstr "Maksu on jo käsitelty."
 
 #: ../src/Dialogs/StripeDialog.vala:506
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "Postal code."
-msgstr ""
+msgstr "Postinumero on väärin. Yritä uudelleen käyttäen oikeaa postinumeroa."
 
 #: ../src/Dialogs/StripeDialog.vala:508
 msgid "You don't have enough funds. Please use an alternative payment method."
-msgstr ""
+msgstr "Tililläsi ei ole riittävästi rahaa. Käytä jotain toista maksutapaa."
 
 #: ../src/Dialogs/StripeDialog.vala:510
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr ""
+msgstr "Summa on virheellinen. Yritä uudelleen käyttäen kelvollista summaa."
 
 #: ../src/Dialogs/StripeDialog.vala:521
 msgid "The pin number is incorrect. Please try again using the correct pin."
-msgstr ""
+msgstr "PIN-numero on väärin. Yritä uudelleen käyttäen oikeaa PIN-numeroa."
 
 #: ../src/Dialogs/StripeDialog.vala:523
 msgid ""
 "There has been too many pin attempts. Please try again with a different card."
-msgstr ""
+msgstr "Liian monta PIN-yritystä. Yritä uudelleen käyttäen toista korttia."
 
 #: ../src/Dialogs/StripeDialog.vala:543
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
-msgstr ""
+msgstr "Maksun suorittaminen ei onnistu. Pyydä lisätietoja omasta pankistasi."
 
 #: ../src/Dialogs/StripeDialog.vala:546
 msgid "The balance or credit limit on the card has been reached."
-msgstr ""
+msgstr "Kortin luottoraja on ylittynyt."
 
 #: ../src/Dialogs/StripeDialog.vala:549
 msgid "The given card is a test card. Please use a real card to proceed."
-msgstr ""
+msgstr "Annettu kortti on testikortti. Käytä oikeaa korttia jatkaaksesi."
 
 #: ../src/Core/Client.vala:94
 msgid "Operating System Updates"
