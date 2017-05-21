@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-19 14:33-0500\n"
-"PO-Revision-Date: 2017-05-21 18:31+0000\n"
+"PO-Revision-Date: 2017-05-21 18:33+0000\n"
 "Last-Translator: Luís Lima <geral@liqensoft.com>\n"
 "Language-Team: Portuguese "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/pt/>\n"
@@ -223,7 +223,7 @@ msgstr "Ocorreu um erro ao instalar %s"
 
 #: ../src/MainWindow.vala:103 ../src/Widgets/Banner.vala:100
 msgid "AppCenter"
-msgstr "Centro de Aplicações"
+msgstr "AppCenter"
 
 #: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
 #: ../src/MainWindow.vala:300 ../src/MainWindow.vala:322
