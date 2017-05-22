@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-20 10:34+0200\n"
+"POT-Creation-Date: 2017-05-21 09:09-0700\n"
 "PO-Revision-Date: 2017-04-15 08:37+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: he (generated) <https://l10n.elementary.io/projects/appcenter/"
@@ -15,156 +15,40 @@ msgstr ""
 "X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
-#: ../src/MainWindow.vala:103 ../src/Widgets/Banner.vala:100
-msgid "AppCenter"
+#: ../src/Application.vala:42
+msgid "App Center"
 msgstr "מרכז היישומים"
 
-#: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
-#: ../src/MainWindow.vala:300 ../src/MainWindow.vala:322
-msgid "Search Apps"
-msgstr "חיפוש יישומים"
-
-#: ../src/MainWindow.vala:122 ../src/MainWindow.vala:163
-#: ../src/MainWindow.vala:205 ../src/Views/Homepage.vala:209
-#: ../src/Views/Homepage.vala:216
-msgid "Home"
-msgstr "בית"
-
-#: ../src/MainWindow.vala:123 ../src/Views/InstalledView.vala:51
-msgctxt "view"
-msgid "Updates"
-msgstr "עדכונים"
-
-#: ../src/MainWindow.vala:282
-msgid "Search %s"
-msgstr "חיפוש %s"
-
-#: ../src/Widgets/Banner.vala:107
-msgid "An open, pay-what-you-want app store"
-msgstr "חנות יישומים פתוחה עם תשלום לפי ראות עיניך"
-
-#: ../src/Widgets/Banner.vala:120
-msgid "Get the apps that you need at a price you can afford."
-msgstr "קבלת היישומים שמעניינים אותך במחיר שמתאים לך."
-
-#: ../src/Widgets/AbstractAppContainer.vala:105
-msgid "Uninstall"
-msgstr "הסרה"
-
-#: ../src/Widgets/AbstractAppContainer.vala:108
-msgid "Open"
-msgstr "פתיחה"
-
-#: ../src/Widgets/AbstractAppContainer.vala:126
-#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:158
-#: ../src/Dialogs/StripeDialog.vala:277
-msgid "Cancel"
-msgstr "ביטול"
-
-#: ../src/Widgets/AbstractAppContainer.vala:161
-msgid "The %s Developers"
-msgstr "המפתחים שמאחורי %s"
-
-#: ../src/Widgets/AbstractAppContainer.vala:165
-msgid "by %s"
-msgstr "מאת %s"
-
-#: ../src/Widgets/AbstractAppContainer.vala:195
-#: ../src/Widgets/HumbleButton.vala:85
-msgid "Free"
-msgstr "חינם"
-
-#: ../src/Widgets/AbstractAppContainer.vala:209
-msgid "Update"
-msgstr "עדכון"
-
-#: ../src/Widgets/CategoryFlowBox.vala:29
-msgid "Audio"
-msgstr "שמע"
-
-#: ../src/Widgets/CategoryFlowBox.vala:30
-msgid "Development"
-msgstr "פיתוח"
-
-#: ../src/Widgets/CategoryFlowBox.vala:31
-msgid "Accessories"
-msgstr "עזרים"
-
-#: ../src/Widgets/CategoryFlowBox.vala:32
-msgid "Office"
-msgstr "כלי משרד"
-
-#: ../src/Widgets/CategoryFlowBox.vala:33
-msgid "System"
-msgstr "מערכת"
-
-#: ../src/Widgets/CategoryFlowBox.vala:34
-msgid "Video"
-msgstr "וידאו"
-
-#: ../src/Widgets/CategoryFlowBox.vala:35
-msgid "Graphics"
-msgstr "גרפיקה"
-
-#: ../src/Widgets/CategoryFlowBox.vala:36
-msgid "Games"
-msgstr "משחקים"
-
-#: ../src/Widgets/CategoryFlowBox.vala:37
-msgid "Education"
-msgstr "חינוך"
-
-#: ../src/Widgets/CategoryFlowBox.vala:38
-msgid "Internet"
-msgstr "אינטרנט"
-
-#: ../src/Widgets/CategoryFlowBox.vala:39
-msgid "Science & Engineering"
-msgstr "מדע והנדסה"
-
-#: ../src/Widgets/CategoryFlowBox.vala:40
-msgid "Universal Access"
-msgstr "גישה אוניברסלית"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:68
-msgid "%u Update Available"
-msgid_plural "%u Updates Available"
-msgstr[0] "עדכון זמין"
-msgstr[1] "%u עדכונים זמינים"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:69
-msgid "Size: %s"
-msgstr "גודל: %s"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:105
-msgid "Searching for updates…"
-msgstr "בחיפוש אחר עדכונים…"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:112
-msgid "Up to Date"
-msgstr "עדכני"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:120
-msgid "Drivers"
+#: ../src/Application.vala:59
+msgid "translator-credits"
 msgstr ""
+"Launchpad Contributions:\n"
+"  Danny Damsky https://launchpad.net/~dannydamsky99\n"
+"  Megolas https://launchpad.net/~ofeklavie\n"
+"  Niv Baehr https://launchpad.net/~rzil\n"
+"  Uri Damsker  אורי דמסקר https://launchpad.net/~ud1955\n"
+"  brigazvi https://launchpad.net/~brigazvi148\n"
+"  elementaryart (old) https://launchpad.net/~elementaryart"
 
-#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: ../src/Widgets/HumbleButton.vala:152
-msgid "$%d.00"
-msgstr "$%d.00USD"
+#: ../src/Application.vala:150
+msgid "Specified link '%s' could not be found, searching instead"
+msgstr "לא ניתן למצוא את הקישור שצוין ‚%s׳ מתבצע חיפוש במקום"
 
-#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: ../src/Widgets/HumbleButton.vala:155
-msgid "$%d"
-msgstr "$%d USD"
+#: ../src/Application.vala:217
+msgid "Application installed"
+msgstr "יישום הותקן"
 
-#: ../src/Widgets/AbstractAppList.vala:35
-msgid "No Results"
-msgstr "אין תוצאות"
+#: ../src/Application.vala:218
+msgid "%s has been successfully installed"
+msgstr "%s הותקן בהצלחה"
 
-#: ../src/Widgets/AbstractAppList.vala:35
-msgid "No apps could be found. Try changing search terms."
-msgstr "לא נמצאו יישומים. כדאי לשנות את ביטוי החיפוש."
+#: ../src/Application.vala:234
+msgid "Close"
+msgstr "סגירה"
+
+#: ../src/Application.vala:236
+msgid "There Was An Error Installing %s"
+msgstr "אירעה שגיאה בהתקנת %s"
 
 #: ../src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -177,6 +61,12 @@ msgstr "פעולה זו תסגור את כל היישומים ותפעיל את 
 #: ../src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
 msgstr "הפעלה מחדש"
+
+#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:158
+#: ../src/Dialogs/StripeDialog.vala:277
+#: ../src/Widgets/AbstractAppContainer.vala:126
+msgid "Cancel"
+msgstr "ביטול"
 
 #: ../src/Dialogs/StripeDialog.vala:30
 msgid ""
@@ -318,13 +208,10 @@ msgstr ""
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
 
-#: ../src/Views/Homepage.vala:102
-msgid "Recently Updated"
-msgstr ""
-
-#: ../src/Views/Homepage.vala:154
-msgid "Categories"
-msgstr "קטגוריות"
+#: ../src/Views/InstalledView.vala:51 ../src/MainWindow.vala:123
+msgctxt "view"
+msgid "Updates"
+msgstr "עדכונים"
 
 #. / TRANSLATORS: the name of the Search view
 #: ../src/Views/SearchView.vala:35
@@ -368,40 +255,181 @@ msgstr "דיווח על תקלה"
 msgid "Help"
 msgstr "עזרה"
 
-#: ../src/Application.vala:42
-msgid "App Center"
+#: ../src/Views/Homepage.vala:102
+msgid "Recently Updated"
+msgstr ""
+
+#: ../src/Views/Homepage.vala:154
+msgid "Categories"
+msgstr "קטגוריות"
+
+#: ../src/Views/Homepage.vala:209 ../src/Views/Homepage.vala:216
+#: ../src/MainWindow.vala:122 ../src/MainWindow.vala:163
+#: ../src/MainWindow.vala:205
+msgid "Home"
+msgstr "בית"
+
+#: ../src/Widgets/Banner.vala:100 ../src/MainWindow.vala:103
+msgid "AppCenter"
 msgstr "מרכז היישומים"
 
-#: ../src/Application.vala:59
-msgid "translator-credits"
+#: ../src/Widgets/Banner.vala:107
+msgid "An open, pay-what-you-want app store"
+msgstr "חנות יישומים פתוחה עם תשלום לפי ראות עיניך"
+
+#: ../src/Widgets/Banner.vala:120
+msgid "Get the apps that you need at a price you can afford."
+msgstr "קבלת היישומים שמעניינים אותך במחיר שמתאים לך."
+
+#: ../src/Widgets/CategoryFlowBox.vala:29
+msgid "Audio"
+msgstr "שמע"
+
+#: ../src/Widgets/CategoryFlowBox.vala:30
+msgid "Development"
+msgstr "פיתוח"
+
+#: ../src/Widgets/CategoryFlowBox.vala:31
+msgid "Accessories"
+msgstr "עזרים"
+
+#: ../src/Widgets/CategoryFlowBox.vala:32
+msgid "Office"
+msgstr "כלי משרד"
+
+#: ../src/Widgets/CategoryFlowBox.vala:33
+msgid "System"
+msgstr "מערכת"
+
+#: ../src/Widgets/CategoryFlowBox.vala:34
+msgid "Video"
+msgstr "וידאו"
+
+#: ../src/Widgets/CategoryFlowBox.vala:35
+msgid "Graphics"
+msgstr "גרפיקה"
+
+#: ../src/Widgets/CategoryFlowBox.vala:36
+msgid "Games"
+msgstr "משחקים"
+
+#: ../src/Widgets/CategoryFlowBox.vala:37
+msgid "Education"
+msgstr "חינוך"
+
+#: ../src/Widgets/CategoryFlowBox.vala:38
+msgid "Internet"
+msgstr "אינטרנט"
+
+#: ../src/Widgets/CategoryFlowBox.vala:39
+msgid "Science & Engineering"
+msgstr "מדע והנדסה"
+
+#: ../src/Widgets/CategoryFlowBox.vala:40
+msgid "Universal Access"
+msgstr "גישה אוניברסלית"
+
+#: ../src/Widgets/HumbleButton.vala:85
+#: ../src/Widgets/AbstractAppContainer.vala:195
+msgid "Free"
+msgstr "חינם"
+
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
+#: ../src/Widgets/HumbleButton.vala:152
+msgid "$%d.00"
+msgstr "$%d.00USD"
+
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
+#: ../src/Widgets/HumbleButton.vala:155
+msgid "$%d"
+msgstr "$%d USD"
+
+#: ../src/Widgets/AbstractAppContainer.vala:105
+msgid "Uninstall"
+msgstr "הסרה"
+
+#: ../src/Widgets/AbstractAppContainer.vala:108
+msgid "Open"
+msgstr "פתיחה"
+
+#: ../src/Widgets/AbstractAppContainer.vala:161
+msgid "The %s Developers"
+msgstr "המפתחים שמאחורי %s"
+
+#: ../src/Widgets/AbstractAppContainer.vala:165
+msgid "by %s"
+msgstr "מאת %s"
+
+#: ../src/Widgets/AbstractAppContainer.vala:209
+msgid "Update"
+msgstr "עדכון"
+
+#: ../src/Widgets/AbstractAppList.vala:35
+msgid "No Results"
+msgstr "אין תוצאות"
+
+#: ../src/Widgets/AbstractAppList.vala:35
+msgid "No apps could be found. Try changing search terms."
+msgstr "לא נמצאו יישומים. כדאי לשנות את ביטוי החיפוש."
+
+#: ../src/Widgets/UpdateHeaderRow.vala:68
+msgid "%u Update Available"
+msgid_plural "%u Updates Available"
+msgstr[0] "עדכון זמין"
+msgstr[1] "%u עדכונים זמינים"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:69
+msgid "Size: %s"
+msgstr "גודל: %s"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:105
+msgid "Searching for updates…"
+msgstr "בחיפוש אחר עדכונים…"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:112
+msgid "Up to Date"
+msgstr "עדכני"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:120
+msgid "Drivers"
 msgstr ""
-"Launchpad Contributions:\n"
-"  Danny Damsky https://launchpad.net/~dannydamsky99\n"
-"  Megolas https://launchpad.net/~ofeklavie\n"
-"  Niv Baehr https://launchpad.net/~rzil\n"
-"  Uri Damsker  אורי דמסקר https://launchpad.net/~ud1955\n"
-"  brigazvi https://launchpad.net/~brigazvi148\n"
-"  elementaryart (old) https://launchpad.net/~elementaryart"
 
-#: ../src/Application.vala:150
-msgid "Specified link '%s' could not be found, searching instead"
-msgstr "לא ניתן למצוא את הקישור שצוין ‚%s׳ מתבצע חיפוש במקום"
+#: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
+#: ../src/MainWindow.vala:300 ../src/MainWindow.vala:322
+msgid "Search Apps"
+msgstr "חיפוש יישומים"
 
-#: ../src/Application.vala:217
-msgid "Application installed"
-msgstr "יישום הותקן"
+#: ../src/MainWindow.vala:282
+msgid "Search %s"
+msgstr "חיפוש %s"
 
-#: ../src/Application.vala:218
-msgid "%s has been successfully installed"
-msgstr "%s הותקן בהצלחה"
+#: ../src/Core/Client.vala:94
+msgid "Operating System Updates"
+msgstr "עדכוני מערכת הפעלה"
 
-#: ../src/Application.vala:234
-msgid "Close"
-msgstr "סגירה"
+#: ../src/Core/Client.vala:95
+msgid "Updates to system components"
+msgstr "עדכונים לרכיבי המערכת"
 
-#: ../src/Application.vala:236
-msgid "There Was An Error Installing %s"
-msgstr "אירעה שגיאה בהתקנת %s"
+#: ../src/Core/Client.vala:453
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "עדכון זמין"
+msgstr[1] "עדכונים זמינים"
+
+#: ../src/Core/Client.vala:454
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "עדכון אחד זמין עבור המערכת"
+msgstr[1] "%u עדכונים זמינים עבור המערכת"
+
+#: ../src/Core/Client.vala:483
+msgid "Restart Required"
+msgstr "נדרשת הפעלה מחדש"
+
+#: ../src/Core/Client.vala:484
+msgid "Please restart your system to finalize updates"
+msgstr "נא להפעיל את המערכת מחדש כדי לסיים את התקנת העדכונים"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -546,34 +574,6 @@ msgstr "קבצים מועתקים"
 #: ../src/Core/ChangeInformation.vala:124
 msgid "Unknown state"
 msgstr "מצב לא ידוע"
-
-#: ../src/Core/Client.vala:94
-msgid "Operating System Updates"
-msgstr "עדכוני מערכת הפעלה"
-
-#: ../src/Core/Client.vala:95
-msgid "Updates to system components"
-msgstr "עדכונים לרכיבי המערכת"
-
-#: ../src/Core/Client.vala:453
-msgid "Update Available"
-msgid_plural "Updates Available"
-msgstr[0] "עדכון זמין"
-msgstr[1] "עדכונים זמינים"
-
-#: ../src/Core/Client.vala:454
-msgid "%u update is available for your system"
-msgid_plural "%u updates are available for your system"
-msgstr[0] "עדכון אחד זמין עבור המערכת"
-msgstr[1] "%u עדכונים זמינים עבור המערכת"
-
-#: ../src/Core/Client.vala:483
-msgid "Restart Required"
-msgstr "נדרשת הפעלה מחדש"
-
-#: ../src/Core/Client.vala:484
-msgid "Please restart your system to finalize updates"
-msgstr "נא להפעיל את המערכת מחדש כדי לסיים את התקנת העדכונים"
 
 #~ msgid "Install"
 #~ msgstr "התקנה"
