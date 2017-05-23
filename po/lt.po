@@ -3,17 +3,17 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-21 09:09-0700\n"
-"PO-Revision-Date: 2017-04-10 21:43+0000\n"
+"PO-Revision-Date: 2017-05-23 19:43+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
-"Language-Team: Lithuanian <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/lt/>\n"
+"Language-Team: Lithuanian "
+"<https://l10n.elementary.io/projects/appcenter/appcenter/lt/>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
-"%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"(n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #: ../src/Application.vala:42
@@ -73,6 +73,8 @@ msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
+"Apdorojant kortelę, įvyko klaida. Prašome vėliau bandyti dar kartą. "
+"Atsiprašome už sukeltus nepatogumus."
 
 #: ../src/Dialogs/StripeDialog.vala:31
 msgid "Please review your payment info and try again."
@@ -80,7 +82,7 @@ msgstr "Prašome peržiūrėti savo apmokėjimo informaciją ir bandyti dar kart
 
 #: ../src/Dialogs/StripeDialog.vala:75
 msgid "Email"
-msgstr ""
+msgstr "El. paštas"
 
 #: ../src/Dialogs/StripeDialog.vala:77
 msgid ""
