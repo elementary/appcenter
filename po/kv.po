@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-20 10:34+0200\n"
+"POT-Creation-Date: 2017-05-21 09:09-0700\n"
 "PO-Revision-Date: 2017-04-11 17:42+0000\n"
 "Last-Translator: Juan Gómez Carrillo <gomezcarrillojuan@gmail.com>\n"
 "Language-Team: kv (generated) <https://l10n.elementary.io/projects/appcenter/"
@@ -15,158 +15,35 @@ msgstr ""
 "X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
-#: ../src/MainWindow.vala:103 ../src/Widgets/Banner.vala:100
-msgid "AppCenter"
-msgstr "AppCenter"
+#: ../src/Application.vala:42
+msgid "App Center"
+msgstr "App Center"
 
-#: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
-#: ../src/MainWindow.vala:300 ../src/MainWindow.vala:322
-msgid "Search Apps"
-msgstr "Buscar aplicaciones"
+#: ../src/Application.vala:59
+msgid "translator-credits"
+msgstr "Créditos del traductor"
 
-#: ../src/MainWindow.vala:122 ../src/MainWindow.vala:163
-#: ../src/MainWindow.vala:205 ../src/Views/Homepage.vala:209
-#: ../src/Views/Homepage.vala:216
-msgid "Home"
-msgstr "Inicio"
-
-#: ../src/MainWindow.vala:123 ../src/Views/InstalledView.vala:51
-msgctxt "view"
-msgid "Updates"
-msgstr "Actualizaciones"
-
-#: ../src/MainWindow.vala:282
-msgid "Search %s"
-msgstr "Buscar %s"
-
-#: ../src/Widgets/Banner.vala:107
-msgid "An open, pay-what-you-want app store"
-msgstr "Una app store libre en la que tú decides lo que pagar"
-
-#: ../src/Widgets/Banner.vala:120
-msgid "Get the apps that you need at a price you can afford."
-msgstr "Las aplicaciones que necesitas al precio que te puedas permitir"
-
-#: ../src/Widgets/AbstractAppContainer.vala:105
-msgid "Uninstall"
-msgstr "Desinstalar"
-
-#: ../src/Widgets/AbstractAppContainer.vala:108
-msgid "Open"
-msgstr "Abrir"
-
-#: ../src/Widgets/AbstractAppContainer.vala:126
-#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:158
-#: ../src/Dialogs/StripeDialog.vala:277
-msgid "Cancel"
-msgstr "Cancelar"
-
-#: ../src/Widgets/AbstractAppContainer.vala:161
-msgid "The %s Developers"
-msgstr "Los desarrolladores de %s"
-
-#: ../src/Widgets/AbstractAppContainer.vala:165
-msgid "by %s"
-msgstr "por %s"
-
-#: ../src/Widgets/AbstractAppContainer.vala:195
-#: ../src/Widgets/HumbleButton.vala:85
-msgid "Free"
-msgstr "Gratis"
-
-#: ../src/Widgets/AbstractAppContainer.vala:209
+#: ../src/Application.vala:150
 #, fuzzy
-msgid "Update"
-msgstr "Actualizar"
-
-#: ../src/Widgets/CategoryFlowBox.vala:29
-msgid "Audio"
-msgstr "Audio"
-
-#: ../src/Widgets/CategoryFlowBox.vala:30
-msgid "Development"
-msgstr "Programación"
-
-#: ../src/Widgets/CategoryFlowBox.vala:31
-msgid "Accessories"
-msgstr "Accesorios"
-
-#: ../src/Widgets/CategoryFlowBox.vala:32
-msgid "Office"
-msgstr "Ofimática"
-
-#: ../src/Widgets/CategoryFlowBox.vala:33
-msgid "System"
-msgstr "Sistema"
-
-#: ../src/Widgets/CategoryFlowBox.vala:34
-msgid "Video"
-msgstr "Vídeo"
-
-#: ../src/Widgets/CategoryFlowBox.vala:35
-msgid "Graphics"
-msgstr "Gráficos"
-
-#: ../src/Widgets/CategoryFlowBox.vala:36
-msgid "Games"
-msgstr "Juegos"
-
-#: ../src/Widgets/CategoryFlowBox.vala:37
-msgid "Education"
-msgstr "Educación"
-
-#: ../src/Widgets/CategoryFlowBox.vala:38
-msgid "Internet"
-msgstr "Internet"
-
-#: ../src/Widgets/CategoryFlowBox.vala:39
-msgid "Science & Engineering"
-msgstr "Ciencia e ingeniería"
-
-#: ../src/Widgets/CategoryFlowBox.vala:40
-msgid "Universal Access"
-msgstr "Acceso universal"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:68
-msgid "%u Update Available"
-msgid_plural "%u Updates Available"
-msgstr[0] "%u actualización disponible"
-msgstr[1] "%u actualizaciones disponibles"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:69
-msgid "Size: %s"
-msgstr "Tamaño: %s"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:105
-msgid "Searching for updates…"
-msgstr "Buscando actualizaciones…"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:112
-msgid "Up to Date"
-msgstr "Sistema actualizado"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:120
-msgid "Drivers"
+msgid "Specified link '%s' could not be found, searching instead"
 msgstr ""
+"No se pudo encontrar el link especificado '%s', buscando link alternativo"
 
-#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: ../src/Widgets/HumbleButton.vala:152
-msgid "$%d.00"
-msgstr "%d.00$"
+#: ../src/Application.vala:217
+msgid "Application installed"
+msgstr "Aplicación instalada"
 
-#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: ../src/Widgets/HumbleButton.vala:155
-msgid "$%d"
-msgstr "%d$"
+#: ../src/Application.vala:218
+msgid "%s has been successfully installed"
+msgstr "%s ha sido instalado correctamente"
 
-#: ../src/Widgets/AbstractAppList.vala:35
-msgid "No Results"
-msgstr "Sin resultados"
+#: ../src/Application.vala:234
+msgid "Close"
+msgstr "Cerrar"
 
-#: ../src/Widgets/AbstractAppList.vala:35
-msgid "No apps could be found. Try changing search terms."
-msgstr ""
-"Ninguna aplicación encontrada. Pruebe cambiando los criterios de búsqueda."
+#: ../src/Application.vala:236
+msgid "There Was An Error Installing %s"
+msgstr "Hubo un error al instalar %s"
 
 #: ../src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -180,6 +57,12 @@ msgstr ""
 #: ../src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
 msgstr "Reiniciar"
+
+#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:158
+#: ../src/Dialogs/StripeDialog.vala:277
+#: ../src/Widgets/AbstractAppContainer.vala:126
+msgid "Cancel"
+msgstr "Cancelar"
 
 #: ../src/Dialogs/StripeDialog.vala:30
 msgid ""
@@ -321,13 +204,10 @@ msgstr ""
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
 
-#: ../src/Views/Homepage.vala:102
-msgid "Recently Updated"
-msgstr ""
-
-#: ../src/Views/Homepage.vala:154
-msgid "Categories"
-msgstr "Categorías"
+#: ../src/Views/InstalledView.vala:51 ../src/MainWindow.vala:123
+msgctxt "view"
+msgid "Updates"
+msgstr "Actualizaciones"
 
 #. / TRANSLATORS: the name of the Search view
 #: ../src/Views/SearchView.vala:35
@@ -372,35 +252,183 @@ msgstr "Reportar un problema"
 msgid "Help"
 msgstr "Ayuda"
 
-#: ../src/Application.vala:42
-msgid "App Center"
-msgstr "App Center"
-
-#: ../src/Application.vala:59
-msgid "translator-credits"
-msgstr "Créditos del traductor"
-
-#: ../src/Application.vala:150
-#, fuzzy
-msgid "Specified link '%s' could not be found, searching instead"
+#: ../src/Views/Homepage.vala:102
+msgid "Recently Updated"
 msgstr ""
-"No se pudo encontrar el link especificado '%s', buscando link alternativo"
 
-#: ../src/Application.vala:217
-msgid "Application installed"
-msgstr "Aplicación instalada"
+#: ../src/Views/Homepage.vala:154
+msgid "Categories"
+msgstr "Categorías"
 
-#: ../src/Application.vala:218
-msgid "%s has been successfully installed"
-msgstr "%s ha sido instalado correctamente"
+#: ../src/Views/Homepage.vala:209 ../src/Views/Homepage.vala:216
+#: ../src/MainWindow.vala:122 ../src/MainWindow.vala:163
+#: ../src/MainWindow.vala:205
+msgid "Home"
+msgstr "Inicio"
 
-#: ../src/Application.vala:234
-msgid "Close"
-msgstr "Cerrar"
+#: ../src/Widgets/Banner.vala:100 ../src/MainWindow.vala:103
+msgid "AppCenter"
+msgstr "AppCenter"
 
-#: ../src/Application.vala:236
-msgid "There Was An Error Installing %s"
-msgstr "Hubo un error al instalar %s"
+#: ../src/Widgets/Banner.vala:107
+msgid "An open, pay-what-you-want app store"
+msgstr "Una app store libre en la que tú decides lo que pagar"
+
+#: ../src/Widgets/Banner.vala:120
+msgid "Get the apps that you need at a price you can afford."
+msgstr "Las aplicaciones que necesitas al precio que te puedas permitir"
+
+#: ../src/Widgets/CategoryFlowBox.vala:29
+msgid "Audio"
+msgstr "Audio"
+
+#: ../src/Widgets/CategoryFlowBox.vala:30
+msgid "Development"
+msgstr "Programación"
+
+#: ../src/Widgets/CategoryFlowBox.vala:31
+msgid "Accessories"
+msgstr "Accesorios"
+
+#: ../src/Widgets/CategoryFlowBox.vala:32
+msgid "Office"
+msgstr "Ofimática"
+
+#: ../src/Widgets/CategoryFlowBox.vala:33
+msgid "System"
+msgstr "Sistema"
+
+#: ../src/Widgets/CategoryFlowBox.vala:34
+msgid "Video"
+msgstr "Vídeo"
+
+#: ../src/Widgets/CategoryFlowBox.vala:35
+msgid "Graphics"
+msgstr "Gráficos"
+
+#: ../src/Widgets/CategoryFlowBox.vala:36
+msgid "Games"
+msgstr "Juegos"
+
+#: ../src/Widgets/CategoryFlowBox.vala:37
+msgid "Education"
+msgstr "Educación"
+
+#: ../src/Widgets/CategoryFlowBox.vala:38
+msgid "Internet"
+msgstr "Internet"
+
+#: ../src/Widgets/CategoryFlowBox.vala:39
+msgid "Science & Engineering"
+msgstr "Ciencia e ingeniería"
+
+#: ../src/Widgets/CategoryFlowBox.vala:40
+msgid "Universal Access"
+msgstr "Acceso universal"
+
+#: ../src/Widgets/HumbleButton.vala:85
+#: ../src/Widgets/AbstractAppContainer.vala:195
+msgid "Free"
+msgstr "Gratis"
+
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
+#: ../src/Widgets/HumbleButton.vala:152
+msgid "$%d.00"
+msgstr "%d.00$"
+
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
+#: ../src/Widgets/HumbleButton.vala:155
+msgid "$%d"
+msgstr "%d$"
+
+#: ../src/Widgets/AbstractAppContainer.vala:105
+msgid "Uninstall"
+msgstr "Desinstalar"
+
+#: ../src/Widgets/AbstractAppContainer.vala:108
+msgid "Open"
+msgstr "Abrir"
+
+#: ../src/Widgets/AbstractAppContainer.vala:161
+msgid "The %s Developers"
+msgstr "Los desarrolladores de %s"
+
+#: ../src/Widgets/AbstractAppContainer.vala:165
+msgid "by %s"
+msgstr "por %s"
+
+#: ../src/Widgets/AbstractAppContainer.vala:209
+#, fuzzy
+msgid "Update"
+msgstr "Actualizar"
+
+#: ../src/Widgets/AbstractAppList.vala:35
+msgid "No Results"
+msgstr "Sin resultados"
+
+#: ../src/Widgets/AbstractAppList.vala:35
+msgid "No apps could be found. Try changing search terms."
+msgstr ""
+"Ninguna aplicación encontrada. Pruebe cambiando los criterios de búsqueda."
+
+#: ../src/Widgets/UpdateHeaderRow.vala:68
+msgid "%u Update Available"
+msgid_plural "%u Updates Available"
+msgstr[0] "%u actualización disponible"
+msgstr[1] "%u actualizaciones disponibles"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:69
+msgid "Size: %s"
+msgstr "Tamaño: %s"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:105
+msgid "Searching for updates…"
+msgstr "Buscando actualizaciones…"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:112
+msgid "Up to Date"
+msgstr "Sistema actualizado"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:120
+msgid "Drivers"
+msgstr ""
+
+#: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
+#: ../src/MainWindow.vala:300 ../src/MainWindow.vala:322
+msgid "Search Apps"
+msgstr "Buscar aplicaciones"
+
+#: ../src/MainWindow.vala:282
+msgid "Search %s"
+msgstr "Buscar %s"
+
+#: ../src/Core/Client.vala:94
+msgid "Operating System Updates"
+msgstr "Actualizaciones del sistema"
+
+#: ../src/Core/Client.vala:95
+msgid "Updates to system components"
+msgstr "Actualizaciones de componentes del sistema"
+
+#: ../src/Core/Client.vala:453
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "Actualización disponible"
+msgstr[1] "Actualizaciones disponibles"
+
+#: ../src/Core/Client.vala:454
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "%u actualización disponible para el sistema"
+msgstr[1] "%u actualizaciones disponibles para el sistema"
+
+#: ../src/Core/Client.vala:483
+msgid "Restart Required"
+msgstr "Se requiere reiniciar"
+
+#: ../src/Core/Client.vala:484
+msgid "Please restart your system to finalize updates"
+msgstr "Reinicie el sistema para completar las actualizaciones"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -556,31 +584,3 @@ msgstr "Copiando archivos"
 #: ../src/Core/ChangeInformation.vala:124
 msgid "Unknown state"
 msgstr "Estado desconocido"
-
-#: ../src/Core/Client.vala:94
-msgid "Operating System Updates"
-msgstr "Actualizaciones del sistema"
-
-#: ../src/Core/Client.vala:95
-msgid "Updates to system components"
-msgstr "Actualizaciones de componentes del sistema"
-
-#: ../src/Core/Client.vala:453
-msgid "Update Available"
-msgid_plural "Updates Available"
-msgstr[0] "Actualización disponible"
-msgstr[1] "Actualizaciones disponibles"
-
-#: ../src/Core/Client.vala:454
-msgid "%u update is available for your system"
-msgid_plural "%u updates are available for your system"
-msgstr[0] "%u actualización disponible para el sistema"
-msgstr[1] "%u actualizaciones disponibles para el sistema"
-
-#: ../src/Core/Client.vala:483
-msgid "Restart Required"
-msgstr "Se requiere reiniciar"
-
-#: ../src/Core/Client.vala:484
-msgid "Please restart your system to finalize updates"
-msgstr "Reinicie el sistema para completar las actualizaciones"

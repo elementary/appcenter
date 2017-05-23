@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-20 10:34+0200\n"
+"POT-Creation-Date: 2017-05-21 09:09-0700\n"
 "PO-Revision-Date: 2017-05-06 09:22+0000\n"
 "Last-Translator: Ryo Nakano <nscnskichiro0911@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
@@ -15,157 +15,38 @@ msgstr ""
 "X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
-#: ../src/MainWindow.vala:103 ../src/Widgets/Banner.vala:100
-msgid "AppCenter"
-msgstr "AppCenter"
+#: ../src/Application.vala:42
+msgid "App Center"
+msgstr "App Center"
 
-#: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
-#: ../src/MainWindow.vala:300 ../src/MainWindow.vala:322
-msgid "Search Apps"
-msgstr "アプリの検索"
-
-#: ../src/MainWindow.vala:122 ../src/MainWindow.vala:163
-#: ../src/MainWindow.vala:205 ../src/Views/Homepage.vala:209
-#: ../src/Views/Homepage.vala:216
-msgid "Home"
-msgstr "ホーム"
-
-#: ../src/MainWindow.vala:123 ../src/Views/InstalledView.vala:51
-msgctxt "view"
-msgid "Updates"
-msgstr "更新"
-
-#: ../src/MainWindow.vala:282
-msgid "Search %s"
-msgstr "%s を検索"
-
-#: ../src/Widgets/Banner.vala:107
-msgid "An open, pay-what-you-want app store"
-msgstr "オープンで価格はあなた次第のアプリストア"
-
-#: ../src/Widgets/Banner.vala:120
-msgid "Get the apps that you need at a price you can afford."
-msgstr "必要なアプリケーションをゆとりのある価格で入手してください。"
-
-#: ../src/Widgets/AbstractAppContainer.vala:105
-msgid "Uninstall"
-msgstr "アンインストール"
-
-#: ../src/Widgets/AbstractAppContainer.vala:108
-msgid "Open"
-msgstr "開く"
-
-#: ../src/Widgets/AbstractAppContainer.vala:126
-#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:158
-#: ../src/Dialogs/StripeDialog.vala:277
-msgid "Cancel"
-msgstr "キャンセル"
-
-#: ../src/Widgets/AbstractAppContainer.vala:161
-msgid "The %s Developers"
-msgstr "%s の開発者"
-
-#: ../src/Widgets/AbstractAppContainer.vala:165
-#, fuzzy
-msgid "by %s"
-msgstr "%s により作成"
-
-#: ../src/Widgets/AbstractAppContainer.vala:195
-#: ../src/Widgets/HumbleButton.vala:85
-#, fuzzy
-msgid "Free"
-msgstr "無料"
-
-#: ../src/Widgets/AbstractAppContainer.vala:209
-msgid "Update"
-msgstr "アップデート"
-
-#: ../src/Widgets/CategoryFlowBox.vala:29
-msgid "Audio"
-msgstr "オーディオ"
-
-#: ../src/Widgets/CategoryFlowBox.vala:30
-msgid "Development"
-msgstr "開発"
-
-#: ../src/Widgets/CategoryFlowBox.vala:31
-msgid "Accessories"
-msgstr "アクセサリー"
-
-#: ../src/Widgets/CategoryFlowBox.vala:32
-msgid "Office"
-msgstr "オフィス"
-
-#: ../src/Widgets/CategoryFlowBox.vala:33
-msgid "System"
-msgstr "システム"
-
-#: ../src/Widgets/CategoryFlowBox.vala:34
-msgid "Video"
-msgstr "ビデオ"
-
-#: ../src/Widgets/CategoryFlowBox.vala:35
-msgid "Graphics"
-msgstr "グラフィック"
-
-#: ../src/Widgets/CategoryFlowBox.vala:36
-msgid "Games"
-msgstr "ゲーム"
-
-#: ../src/Widgets/CategoryFlowBox.vala:37
-msgid "Education"
-msgstr "教育"
-
-#: ../src/Widgets/CategoryFlowBox.vala:38
-msgid "Internet"
-msgstr "インターネット"
-
-#: ../src/Widgets/CategoryFlowBox.vala:39
-msgid "Science & Engineering"
-msgstr "科学と技術"
-
-#: ../src/Widgets/CategoryFlowBox.vala:40
-msgid "Universal Access"
-msgstr "ユニバーサルアクセス"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:68
-msgid "%u Update Available"
-msgid_plural "%u Updates Available"
-msgstr[0] "%u 件更新が有効"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:69
-msgid "Size: %s"
-msgstr "サイズ: %s"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:105
-msgid "Searching for updates…"
-msgstr "更新を確認しています…"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:112
-msgid "Up to Date"
-msgstr "最新"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:120
-msgid "Drivers"
+#: ../src/Application.vala:59
+msgid "translator-credits"
 msgstr ""
+"Launchpad Contributions:\n"
+"  BALLOON a.k.a. Fu-sen. (Keiichi SHIGA) https://launchpad.net/~balloon\n"
+"  Jun Takeda https://launchpad.net/~takeda-jun\n"
+"  Ryo Nakano https://launchpad.net/~uq3-him13de-9spzka7\n"
+"  elementaryart (old) https://launchpad.net/~elementaryart"
 
-#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: ../src/Widgets/HumbleButton.vala:152
-msgid "$%d.00"
-msgstr "%d.00 ドル"
+#: ../src/Application.vala:150
+msgid "Specified link '%s' could not be found, searching instead"
+msgstr "指定されたリンク '%s' は見つかりませんでした。代わりを検索します"
 
-#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: ../src/Widgets/HumbleButton.vala:155
-msgid "$%d"
-msgstr "%d ドル"
+#: ../src/Application.vala:217
+msgid "Application installed"
+msgstr "アプリケーションがインストールされました"
 
-#: ../src/Widgets/AbstractAppList.vala:35
-msgid "No Results"
-msgstr "結果なし"
+#: ../src/Application.vala:218
+msgid "%s has been successfully installed"
+msgstr "%s をインストールしました"
 
-#: ../src/Widgets/AbstractAppList.vala:35
-msgid "No apps could be found. Try changing search terms."
-msgstr "アプリが見つかりません。検索用語を変えてみてください。"
+#: ../src/Application.vala:234
+msgid "Close"
+msgstr "閉じる"
+
+#: ../src/Application.vala:236
+msgid "There Was An Error Installing %s"
+msgstr "%s のインストール中にエラーが発生しました"
 
 #: ../src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -179,6 +60,12 @@ msgstr ""
 #: ../src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
 msgstr "再起動"
+
+#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:158
+#: ../src/Dialogs/StripeDialog.vala:277
+#: ../src/Widgets/AbstractAppContainer.vala:126
+msgid "Cancel"
+msgstr "キャンセル"
 
 #: ../src/Dialogs/StripeDialog.vala:30
 msgid ""
@@ -320,13 +207,10 @@ msgstr ""
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
 
-#: ../src/Views/Homepage.vala:102
-msgid "Recently Updated"
-msgstr ""
-
-#: ../src/Views/Homepage.vala:154
-msgid "Categories"
-msgstr "カテゴリー"
+#: ../src/Views/InstalledView.vala:51 ../src/MainWindow.vala:123
+msgctxt "view"
+msgid "Updates"
+msgstr "更新"
 
 #. / TRANSLATORS: the name of the Search view
 #: ../src/Views/SearchView.vala:35
@@ -370,38 +254,180 @@ msgstr "問題点を報告する"
 msgid "Help"
 msgstr "ヘルプ"
 
-#: ../src/Application.vala:42
-msgid "App Center"
-msgstr "App Center"
-
-#: ../src/Application.vala:59
-msgid "translator-credits"
+#: ../src/Views/Homepage.vala:102
+msgid "Recently Updated"
 msgstr ""
-"Launchpad Contributions:\n"
-"  BALLOON a.k.a. Fu-sen. (Keiichi SHIGA) https://launchpad.net/~balloon\n"
-"  Jun Takeda https://launchpad.net/~takeda-jun\n"
-"  Ryo Nakano https://launchpad.net/~uq3-him13de-9spzka7\n"
-"  elementaryart (old) https://launchpad.net/~elementaryart"
 
-#: ../src/Application.vala:150
-msgid "Specified link '%s' could not be found, searching instead"
-msgstr "指定されたリンク '%s' は見つかりませんでした。代わりを検索します"
+#: ../src/Views/Homepage.vala:154
+msgid "Categories"
+msgstr "カテゴリー"
 
-#: ../src/Application.vala:217
-msgid "Application installed"
-msgstr "アプリケーションがインストールされました"
+#: ../src/Views/Homepage.vala:209 ../src/Views/Homepage.vala:216
+#: ../src/MainWindow.vala:122 ../src/MainWindow.vala:163
+#: ../src/MainWindow.vala:205
+msgid "Home"
+msgstr "ホーム"
 
-#: ../src/Application.vala:218
-msgid "%s has been successfully installed"
-msgstr "%s をインストールしました"
+#: ../src/Widgets/Banner.vala:100 ../src/MainWindow.vala:103
+msgid "AppCenter"
+msgstr "AppCenter"
 
-#: ../src/Application.vala:234
-msgid "Close"
-msgstr "閉じる"
+#: ../src/Widgets/Banner.vala:107
+msgid "An open, pay-what-you-want app store"
+msgstr "オープンで価格はあなた次第のアプリストア"
 
-#: ../src/Application.vala:236
-msgid "There Was An Error Installing %s"
-msgstr "%s のインストール中にエラーが発生しました"
+#: ../src/Widgets/Banner.vala:120
+msgid "Get the apps that you need at a price you can afford."
+msgstr "必要なアプリケーションをゆとりのある価格で入手してください。"
+
+#: ../src/Widgets/CategoryFlowBox.vala:29
+msgid "Audio"
+msgstr "オーディオ"
+
+#: ../src/Widgets/CategoryFlowBox.vala:30
+msgid "Development"
+msgstr "開発"
+
+#: ../src/Widgets/CategoryFlowBox.vala:31
+msgid "Accessories"
+msgstr "アクセサリー"
+
+#: ../src/Widgets/CategoryFlowBox.vala:32
+msgid "Office"
+msgstr "オフィス"
+
+#: ../src/Widgets/CategoryFlowBox.vala:33
+msgid "System"
+msgstr "システム"
+
+#: ../src/Widgets/CategoryFlowBox.vala:34
+msgid "Video"
+msgstr "ビデオ"
+
+#: ../src/Widgets/CategoryFlowBox.vala:35
+msgid "Graphics"
+msgstr "グラフィック"
+
+#: ../src/Widgets/CategoryFlowBox.vala:36
+msgid "Games"
+msgstr "ゲーム"
+
+#: ../src/Widgets/CategoryFlowBox.vala:37
+msgid "Education"
+msgstr "教育"
+
+#: ../src/Widgets/CategoryFlowBox.vala:38
+msgid "Internet"
+msgstr "インターネット"
+
+#: ../src/Widgets/CategoryFlowBox.vala:39
+msgid "Science & Engineering"
+msgstr "科学と技術"
+
+#: ../src/Widgets/CategoryFlowBox.vala:40
+msgid "Universal Access"
+msgstr "ユニバーサルアクセス"
+
+#: ../src/Widgets/HumbleButton.vala:85
+#: ../src/Widgets/AbstractAppContainer.vala:195
+#, fuzzy
+msgid "Free"
+msgstr "無料"
+
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
+#: ../src/Widgets/HumbleButton.vala:152
+msgid "$%d.00"
+msgstr "%d.00 ドル"
+
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
+#: ../src/Widgets/HumbleButton.vala:155
+msgid "$%d"
+msgstr "%d ドル"
+
+#: ../src/Widgets/AbstractAppContainer.vala:105
+msgid "Uninstall"
+msgstr "アンインストール"
+
+#: ../src/Widgets/AbstractAppContainer.vala:108
+msgid "Open"
+msgstr "開く"
+
+#: ../src/Widgets/AbstractAppContainer.vala:161
+msgid "The %s Developers"
+msgstr "%s の開発者"
+
+#: ../src/Widgets/AbstractAppContainer.vala:165
+#, fuzzy
+msgid "by %s"
+msgstr "%s により作成"
+
+#: ../src/Widgets/AbstractAppContainer.vala:209
+msgid "Update"
+msgstr "アップデート"
+
+#: ../src/Widgets/AbstractAppList.vala:35
+msgid "No Results"
+msgstr "結果なし"
+
+#: ../src/Widgets/AbstractAppList.vala:35
+msgid "No apps could be found. Try changing search terms."
+msgstr "アプリが見つかりません。検索用語を変えてみてください。"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:68
+msgid "%u Update Available"
+msgid_plural "%u Updates Available"
+msgstr[0] "%u 件更新が有効"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:69
+msgid "Size: %s"
+msgstr "サイズ: %s"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:105
+msgid "Searching for updates…"
+msgstr "更新を確認しています…"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:112
+msgid "Up to Date"
+msgstr "最新"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:120
+msgid "Drivers"
+msgstr ""
+
+#: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
+#: ../src/MainWindow.vala:300 ../src/MainWindow.vala:322
+msgid "Search Apps"
+msgstr "アプリの検索"
+
+#: ../src/MainWindow.vala:282
+msgid "Search %s"
+msgstr "%s を検索"
+
+#: ../src/Core/Client.vala:94
+msgid "Operating System Updates"
+msgstr "オペレーティングシステムの更新"
+
+#: ../src/Core/Client.vala:95
+msgid "Updates to system components"
+msgstr "システムコンポーネントの更新"
+
+#: ../src/Core/Client.vala:453
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "アップデートできます"
+
+#: ../src/Core/Client.vala:454
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "システムに %u 件の更新が利用可能です"
+
+#: ../src/Core/Client.vala:483
+msgid "Restart Required"
+msgstr "再起動が要求されます"
+
+#: ../src/Core/Client.vala:484
+msgid "Please restart your system to finalize updates"
+msgstr "更新を完了するには再起動してください"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -546,32 +572,6 @@ msgstr "ファイルをコピーしています"
 #: ../src/Core/ChangeInformation.vala:124
 msgid "Unknown state"
 msgstr "不明な状態"
-
-#: ../src/Core/Client.vala:94
-msgid "Operating System Updates"
-msgstr "オペレーティングシステムの更新"
-
-#: ../src/Core/Client.vala:95
-msgid "Updates to system components"
-msgstr "システムコンポーネントの更新"
-
-#: ../src/Core/Client.vala:453
-msgid "Update Available"
-msgid_plural "Updates Available"
-msgstr[0] "アップデートできます"
-
-#: ../src/Core/Client.vala:454
-msgid "%u update is available for your system"
-msgid_plural "%u updates are available for your system"
-msgstr[0] "システムに %u 件の更新が利用可能です"
-
-#: ../src/Core/Client.vala:483
-msgid "Restart Required"
-msgstr "再起動が要求されます"
-
-#: ../src/Core/Client.vala:484
-msgid "Please restart your system to finalize updates"
-msgstr "更新を完了するには再起動してください"
 
 #~ msgid "Install"
 #~ msgstr "インストール"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-20 10:34+0200\n"
+"POT-Creation-Date: 2017-05-21 09:09-0700\n"
 "PO-Revision-Date: 2017-04-11 00:44+0000\n"
 "Last-Translator: volbil <volbilnexus@gmail.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/"
@@ -16,158 +16,46 @@ msgstr ""
 "X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
-#: ../src/MainWindow.vala:103 ../src/Widgets/Banner.vala:100
-msgid "AppCenter"
-msgstr "Центр програм"
+#: ../src/Application.vala:42
+msgid "App Center"
+msgstr "Центр програмного забезпечення"
 
-#: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
-#: ../src/MainWindow.vala:300 ../src/MainWindow.vala:322
-msgid "Search Apps"
-msgstr "Шукати додатки"
-
-#: ../src/MainWindow.vala:122 ../src/MainWindow.vala:163
-#: ../src/MainWindow.vala:205 ../src/Views/Homepage.vala:209
-#: ../src/Views/Homepage.vala:216
-msgid "Home"
-msgstr "Домашня сторінка"
-
-#: ../src/MainWindow.vala:123 ../src/Views/InstalledView.vala:51
-msgctxt "view"
-msgid "Updates"
-msgstr "Оновленння"
-
-#: ../src/MainWindow.vala:282
-msgid "Search %s"
-msgstr "Пошук %s"
-
-#: ../src/Widgets/Banner.vala:107
-msgid "An open, pay-what-you-want app store"
-msgstr "Вільний \"Плати за що хочеш\" магазин"
-
-#: ../src/Widgets/Banner.vala:120
-msgid "Get the apps that you need at a price you can afford."
+#: ../src/Application.vala:59
+msgid "translator-credits"
 msgstr ""
-"Отримуй додатки які тобі необхідно, за ціну, яку ти можеш запропонувати."
+"Launchpad Contributions:\n"
+"  Alexander Grechko https://launchpad.net/~alexxxander1111\n"
+"  Arthur https://launchpad.net/~arthedza\n"
+"  Bogdan Lisnenko https://launchpad.net/~lem8r\n"
+"  Igor Peschak https://launchpad.net/~ziaccot\n"
+"  Max_ym https://launchpad.net/~kontact-cat\n"
+"  Orest https://launchpad.net/~falchuko\n"
+"  Roman Sytnyk https://launchpad.net/~roman-sytnyk\n"
+"  Sergii Cynailo https://launchpad.net/~funeral20\n"
+"  Taras https://launchpad.net/~hashevskyi\n"
+"  cannoneer https://launchpad.net/~gjinflkzcgfve\n"
+"  elementaryart (old) https://launchpad.net/~elementaryart\n"
+"  neiron13 https://launchpad.net/~heneral"
 
-#: ../src/Widgets/AbstractAppContainer.vala:105
-msgid "Uninstall"
-msgstr "Вилучити"
+#: ../src/Application.vala:150
+msgid "Specified link '%s' could not be found, searching instead"
+msgstr "Вказане посилання «%s» не знайдено, пошук заміни"
 
-#: ../src/Widgets/AbstractAppContainer.vala:108
-msgid "Open"
-msgstr "Відкрити"
+#: ../src/Application.vala:217
+msgid "Application installed"
+msgstr "Додаток встановлено"
 
-#: ../src/Widgets/AbstractAppContainer.vala:126
-#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:158
-#: ../src/Dialogs/StripeDialog.vala:277
-msgid "Cancel"
-msgstr "Скасувати"
+#: ../src/Application.vala:218
+msgid "%s has been successfully installed"
+msgstr "%s був успішно встановлений"
 
-#: ../src/Widgets/AbstractAppContainer.vala:161
-msgid "The %s Developers"
-msgstr "Розробники %s"
+#: ../src/Application.vala:234
+msgid "Close"
+msgstr "Закрити"
 
-#: ../src/Widgets/AbstractAppContainer.vala:165
-msgid "by %s"
-msgstr "від %s"
-
-#: ../src/Widgets/AbstractAppContainer.vala:195
-#: ../src/Widgets/HumbleButton.vala:85
-msgid "Free"
-msgstr "Безкоштовно"
-
-#: ../src/Widgets/AbstractAppContainer.vala:209
-msgid "Update"
-msgstr "Оновлення"
-
-#: ../src/Widgets/CategoryFlowBox.vala:29
-msgid "Audio"
-msgstr "Аудіо"
-
-#: ../src/Widgets/CategoryFlowBox.vala:30
-msgid "Development"
-msgstr "Розробка"
-
-#: ../src/Widgets/CategoryFlowBox.vala:31
-msgid "Accessories"
-msgstr "Приладдя"
-
-#: ../src/Widgets/CategoryFlowBox.vala:32
-msgid "Office"
-msgstr "Офіс"
-
-#: ../src/Widgets/CategoryFlowBox.vala:33
-msgid "System"
-msgstr "Система"
-
-#: ../src/Widgets/CategoryFlowBox.vala:34
-msgid "Video"
-msgstr "Відео"
-
-#: ../src/Widgets/CategoryFlowBox.vala:35
-msgid "Graphics"
-msgstr "Графіка"
-
-#: ../src/Widgets/CategoryFlowBox.vala:36
-msgid "Games"
-msgstr "Ігри"
-
-#: ../src/Widgets/CategoryFlowBox.vala:37
-msgid "Education"
-msgstr "Освіта"
-
-#: ../src/Widgets/CategoryFlowBox.vala:38
-msgid "Internet"
-msgstr "Інтернет"
-
-#: ../src/Widgets/CategoryFlowBox.vala:39
-msgid "Science & Engineering"
-msgstr "Наука та інженерна справа"
-
-#: ../src/Widgets/CategoryFlowBox.vala:40
-msgid "Universal Access"
-msgstr "Універсальний доступ"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:68
-msgid "%u Update Available"
-msgid_plural "%u Updates Available"
-msgstr[0] "%u оновлення доступне"
-msgstr[1] "%u оновлення доступні"
-msgstr[2] "%u оновлень доступно"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:69
-msgid "Size: %s"
-msgstr "Розмір: %s"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:105
-msgid "Searching for updates…"
-msgstr "Пошук оновлень…"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:112
-msgid "Up to Date"
-msgstr "Найновіші"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:120
-msgid "Drivers"
-msgstr ""
-
-#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: ../src/Widgets/HumbleButton.vala:152
-msgid "$%d.00"
-msgstr "%d.00$"
-
-#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: ../src/Widgets/HumbleButton.vala:155
-msgid "$%d"
-msgstr "%d$"
-
-#: ../src/Widgets/AbstractAppList.vala:35
-msgid "No Results"
-msgstr "Немає результатів"
-
-#: ../src/Widgets/AbstractAppList.vala:35
-msgid "No apps could be found. Try changing search terms."
-msgstr "Додатки не знайдені. Спробуйте змінити умови пошуку."
+#: ../src/Application.vala:236
+msgid "There Was An Error Installing %s"
+msgstr "Помилка встановлення %s"
 
 #: ../src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -180,6 +68,12 @@ msgstr "Всі програми буде закрито, а пристрій п�
 #: ../src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
 msgstr "Перезавантажити"
+
+#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:158
+#: ../src/Dialogs/StripeDialog.vala:277
+#: ../src/Widgets/AbstractAppContainer.vala:126
+msgid "Cancel"
+msgstr "Скасувати"
 
 #: ../src/Dialogs/StripeDialog.vala:30
 msgid ""
@@ -321,13 +215,10 @@ msgstr ""
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
 
-#: ../src/Views/Homepage.vala:102
-msgid "Recently Updated"
-msgstr ""
-
-#: ../src/Views/Homepage.vala:154
-msgid "Categories"
-msgstr "Категорії"
+#: ../src/Views/InstalledView.vala:51 ../src/MainWindow.vala:123
+msgctxt "view"
+msgid "Updates"
+msgstr "Оновленння"
 
 #. / TRANSLATORS: the name of the Search view
 #: ../src/Views/SearchView.vala:35
@@ -371,46 +262,185 @@ msgstr "Повідомити про проблему"
 msgid "Help"
 msgstr "Допомога"
 
-#: ../src/Application.vala:42
-msgid "App Center"
-msgstr "Центр програмного забезпечення"
-
-#: ../src/Application.vala:59
-msgid "translator-credits"
+#: ../src/Views/Homepage.vala:102
+msgid "Recently Updated"
 msgstr ""
-"Launchpad Contributions:\n"
-"  Alexander Grechko https://launchpad.net/~alexxxander1111\n"
-"  Arthur https://launchpad.net/~arthedza\n"
-"  Bogdan Lisnenko https://launchpad.net/~lem8r\n"
-"  Igor Peschak https://launchpad.net/~ziaccot\n"
-"  Max_ym https://launchpad.net/~kontact-cat\n"
-"  Orest https://launchpad.net/~falchuko\n"
-"  Roman Sytnyk https://launchpad.net/~roman-sytnyk\n"
-"  Sergii Cynailo https://launchpad.net/~funeral20\n"
-"  Taras https://launchpad.net/~hashevskyi\n"
-"  cannoneer https://launchpad.net/~gjinflkzcgfve\n"
-"  elementaryart (old) https://launchpad.net/~elementaryart\n"
-"  neiron13 https://launchpad.net/~heneral"
 
-#: ../src/Application.vala:150
-msgid "Specified link '%s' could not be found, searching instead"
-msgstr "Вказане посилання «%s» не знайдено, пошук заміни"
+#: ../src/Views/Homepage.vala:154
+msgid "Categories"
+msgstr "Категорії"
 
-#: ../src/Application.vala:217
-msgid "Application installed"
-msgstr "Додаток встановлено"
+#: ../src/Views/Homepage.vala:209 ../src/Views/Homepage.vala:216
+#: ../src/MainWindow.vala:122 ../src/MainWindow.vala:163
+#: ../src/MainWindow.vala:205
+msgid "Home"
+msgstr "Домашня сторінка"
 
-#: ../src/Application.vala:218
-msgid "%s has been successfully installed"
-msgstr "%s був успішно встановлений"
+#: ../src/Widgets/Banner.vala:100 ../src/MainWindow.vala:103
+msgid "AppCenter"
+msgstr "Центр програм"
 
-#: ../src/Application.vala:234
-msgid "Close"
-msgstr "Закрити"
+#: ../src/Widgets/Banner.vala:107
+msgid "An open, pay-what-you-want app store"
+msgstr "Вільний \"Плати за що хочеш\" магазин"
 
-#: ../src/Application.vala:236
-msgid "There Was An Error Installing %s"
-msgstr "Помилка встановлення %s"
+#: ../src/Widgets/Banner.vala:120
+msgid "Get the apps that you need at a price you can afford."
+msgstr ""
+"Отримуй додатки які тобі необхідно, за ціну, яку ти можеш запропонувати."
+
+#: ../src/Widgets/CategoryFlowBox.vala:29
+msgid "Audio"
+msgstr "Аудіо"
+
+#: ../src/Widgets/CategoryFlowBox.vala:30
+msgid "Development"
+msgstr "Розробка"
+
+#: ../src/Widgets/CategoryFlowBox.vala:31
+msgid "Accessories"
+msgstr "Приладдя"
+
+#: ../src/Widgets/CategoryFlowBox.vala:32
+msgid "Office"
+msgstr "Офіс"
+
+#: ../src/Widgets/CategoryFlowBox.vala:33
+msgid "System"
+msgstr "Система"
+
+#: ../src/Widgets/CategoryFlowBox.vala:34
+msgid "Video"
+msgstr "Відео"
+
+#: ../src/Widgets/CategoryFlowBox.vala:35
+msgid "Graphics"
+msgstr "Графіка"
+
+#: ../src/Widgets/CategoryFlowBox.vala:36
+msgid "Games"
+msgstr "Ігри"
+
+#: ../src/Widgets/CategoryFlowBox.vala:37
+msgid "Education"
+msgstr "Освіта"
+
+#: ../src/Widgets/CategoryFlowBox.vala:38
+msgid "Internet"
+msgstr "Інтернет"
+
+#: ../src/Widgets/CategoryFlowBox.vala:39
+msgid "Science & Engineering"
+msgstr "Наука та інженерна справа"
+
+#: ../src/Widgets/CategoryFlowBox.vala:40
+msgid "Universal Access"
+msgstr "Універсальний доступ"
+
+#: ../src/Widgets/HumbleButton.vala:85
+#: ../src/Widgets/AbstractAppContainer.vala:195
+msgid "Free"
+msgstr "Безкоштовно"
+
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
+#: ../src/Widgets/HumbleButton.vala:152
+msgid "$%d.00"
+msgstr "%d.00$"
+
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
+#: ../src/Widgets/HumbleButton.vala:155
+msgid "$%d"
+msgstr "%d$"
+
+#: ../src/Widgets/AbstractAppContainer.vala:105
+msgid "Uninstall"
+msgstr "Вилучити"
+
+#: ../src/Widgets/AbstractAppContainer.vala:108
+msgid "Open"
+msgstr "Відкрити"
+
+#: ../src/Widgets/AbstractAppContainer.vala:161
+msgid "The %s Developers"
+msgstr "Розробники %s"
+
+#: ../src/Widgets/AbstractAppContainer.vala:165
+msgid "by %s"
+msgstr "від %s"
+
+#: ../src/Widgets/AbstractAppContainer.vala:209
+msgid "Update"
+msgstr "Оновлення"
+
+#: ../src/Widgets/AbstractAppList.vala:35
+msgid "No Results"
+msgstr "Немає результатів"
+
+#: ../src/Widgets/AbstractAppList.vala:35
+msgid "No apps could be found. Try changing search terms."
+msgstr "Додатки не знайдені. Спробуйте змінити умови пошуку."
+
+#: ../src/Widgets/UpdateHeaderRow.vala:68
+msgid "%u Update Available"
+msgid_plural "%u Updates Available"
+msgstr[0] "%u оновлення доступне"
+msgstr[1] "%u оновлення доступні"
+msgstr[2] "%u оновлень доступно"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:69
+msgid "Size: %s"
+msgstr "Розмір: %s"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:105
+msgid "Searching for updates…"
+msgstr "Пошук оновлень…"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:112
+msgid "Up to Date"
+msgstr "Найновіші"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:120
+msgid "Drivers"
+msgstr ""
+
+#: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
+#: ../src/MainWindow.vala:300 ../src/MainWindow.vala:322
+msgid "Search Apps"
+msgstr "Шукати додатки"
+
+#: ../src/MainWindow.vala:282
+msgid "Search %s"
+msgstr "Пошук %s"
+
+#: ../src/Core/Client.vala:94
+msgid "Operating System Updates"
+msgstr "Оновлення Операційної Системи"
+
+#: ../src/Core/Client.vala:95
+msgid "Updates to system components"
+msgstr "Оновлення системних компонетів"
+
+#: ../src/Core/Client.vala:453
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "Оновлення доступне"
+msgstr[1] "Оновлення доступні"
+msgstr[2] "Оновлень доступно"
+
+#: ../src/Core/Client.vala:454
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "%u оновлення доступне для вашої системи"
+msgstr[1] "%u оновлення доступні для вашої системи"
+msgstr[2] "%u оновлень доступно для вашої системи"
+
+#: ../src/Core/Client.vala:483
+msgid "Restart Required"
+msgstr "Потрібно перезапуск"
+
+#: ../src/Core/Client.vala:484
+msgid "Please restart your system to finalize updates"
+msgstr "Будь-ласка, перезавантажте систему для завершення оновлення"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -555,36 +585,6 @@ msgstr "Копіювання файлів"
 #: ../src/Core/ChangeInformation.vala:124
 msgid "Unknown state"
 msgstr "Невідомий стан"
-
-#: ../src/Core/Client.vala:94
-msgid "Operating System Updates"
-msgstr "Оновлення Операційної Системи"
-
-#: ../src/Core/Client.vala:95
-msgid "Updates to system components"
-msgstr "Оновлення системних компонетів"
-
-#: ../src/Core/Client.vala:453
-msgid "Update Available"
-msgid_plural "Updates Available"
-msgstr[0] "Оновлення доступне"
-msgstr[1] "Оновлення доступні"
-msgstr[2] "Оновлень доступно"
-
-#: ../src/Core/Client.vala:454
-msgid "%u update is available for your system"
-msgid_plural "%u updates are available for your system"
-msgstr[0] "%u оновлення доступне для вашої системи"
-msgstr[1] "%u оновлення доступні для вашої системи"
-msgstr[2] "%u оновлень доступно для вашої системи"
-
-#: ../src/Core/Client.vala:483
-msgid "Restart Required"
-msgstr "Потрібно перезапуск"
-
-#: ../src/Core/Client.vala:484
-msgid "Please restart your system to finalize updates"
-msgstr "Будь-ласка, перезавантажте систему для завершення оновлення"
 
 #~ msgid "Install"
 #~ msgstr "Встановити"

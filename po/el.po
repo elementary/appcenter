@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-20 10:34+0200\n"
+"POT-Creation-Date: 2017-05-21 09:09-0700\n"
 "PO-Revision-Date: 2017-02-27 16:21+0000\n"
 "Last-Translator: Christos Iatropoulos <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,157 +14,41 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 "X-Generator: Launchpad (build 18331)\n"
 
-#: ../src/MainWindow.vala:103 ../src/Widgets/Banner.vala:100
-msgid "AppCenter"
+#: ../src/Application.vala:42
+msgid "App Center"
 msgstr "Κέντρο εφαρμογών"
 
-#: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
-#: ../src/MainWindow.vala:300 ../src/MainWindow.vala:322
-msgid "Search Apps"
-msgstr "Αναζήτηση εφαρμογών"
+#: ../src/Application.vala:59
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Apazoglou Theodoros https://launchpad.net/~apazoglouthodoris\n"
+"  Christos Iatropoulos https://launchpad.net/~ci4\n"
+"  Filippos Kolyvas https://launchpad.net/~fkol-k4\n"
+"  Kostas Fragkopoulos https://launchpad.net/~fragkopoulos\n"
+"  Nikos Tourvas https://launchpad.net/~nikostourvas\n"
+"  elementaryart (old) https://launchpad.net/~elementaryart\n"
+"  onIaom https://launchpad.net/~onlaom"
 
-#: ../src/MainWindow.vala:122 ../src/MainWindow.vala:163
-#: ../src/MainWindow.vala:205 ../src/Views/Homepage.vala:209
-#: ../src/Views/Homepage.vala:216
-#, fuzzy
-msgid "Home"
-msgstr "Αρχική Σελίδα"
-
-#: ../src/MainWindow.vala:123 ../src/Views/InstalledView.vala:51
-msgctxt "view"
-msgid "Updates"
-msgstr "Ενημερώσεις"
-
-#: ../src/MainWindow.vala:282
-msgid "Search %s"
-msgstr "Αναζήτηση %s"
-
-#: ../src/Widgets/Banner.vala:107
-msgid "An open, pay-what-you-want app store"
+#: ../src/Application.vala:150
+msgid "Specified link '%s' could not be found, searching instead"
 msgstr ""
 
-#: ../src/Widgets/Banner.vala:120
-msgid "Get the apps that you need at a price you can afford."
+#: ../src/Application.vala:217
+msgid "Application installed"
+msgstr "Η εφαρμογή εγκαταστάθηκε"
+
+#: ../src/Application.vala:218
+msgid "%s has been successfully installed"
+msgstr "%s έχει εγκατασταθεί επιτυχώς"
+
+#: ../src/Application.vala:234
+msgid "Close"
 msgstr ""
 
-#: ../src/Widgets/AbstractAppContainer.vala:105
-msgid "Uninstall"
-msgstr "Απεγκατάσταση"
-
-#: ../src/Widgets/AbstractAppContainer.vala:108
-msgid "Open"
-msgstr "Άνοιγμα"
-
-#: ../src/Widgets/AbstractAppContainer.vala:126
-#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:158
-#: ../src/Dialogs/StripeDialog.vala:277
-msgid "Cancel"
-msgstr "Ακύρωση"
-
-#: ../src/Widgets/AbstractAppContainer.vala:161
-msgid "The %s Developers"
+#: ../src/Application.vala:236
+msgid "There Was An Error Installing %s"
 msgstr ""
-
-#: ../src/Widgets/AbstractAppContainer.vala:165
-msgid "by %s"
-msgstr ""
-
-#: ../src/Widgets/AbstractAppContainer.vala:195
-#: ../src/Widgets/HumbleButton.vala:85
-msgid "Free"
-msgstr ""
-
-#: ../src/Widgets/AbstractAppContainer.vala:209
-msgid "Update"
-msgstr "Ενημέρωση"
-
-#: ../src/Widgets/CategoryFlowBox.vala:29
-msgid "Audio"
-msgstr "Ήχος"
-
-#: ../src/Widgets/CategoryFlowBox.vala:30
-msgid "Development"
-msgstr "Ανάπτυξη λογισμικού"
-
-#: ../src/Widgets/CategoryFlowBox.vala:31
-msgid "Accessories"
-msgstr "Βοηθήματα"
-
-#: ../src/Widgets/CategoryFlowBox.vala:32
-msgid "Office"
-msgstr "Γραφείο"
-
-#: ../src/Widgets/CategoryFlowBox.vala:33
-msgid "System"
-msgstr "Σύστημα"
-
-#: ../src/Widgets/CategoryFlowBox.vala:34
-msgid "Video"
-msgstr "Βίντεο"
-
-#: ../src/Widgets/CategoryFlowBox.vala:35
-msgid "Graphics"
-msgstr "Γραφικά"
-
-#: ../src/Widgets/CategoryFlowBox.vala:36
-msgid "Games"
-msgstr "ΠΑΙΧΝΙΔΙΑ"
-
-#: ../src/Widgets/CategoryFlowBox.vala:37
-msgid "Education"
-msgstr "Εκπαίδευση"
-
-#: ../src/Widgets/CategoryFlowBox.vala:38
-msgid "Internet"
-msgstr "Διαδίκτυο"
-
-#: ../src/Widgets/CategoryFlowBox.vala:39
-msgid "Science & Engineering"
-msgstr "Επιστήμη & μηχανική"
-
-#: ../src/Widgets/CategoryFlowBox.vala:40
-msgid "Universal Access"
-msgstr "ΓΕΝΙΚΗ ΠΡΟΣΒΑΣΗ"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:68
-msgid "%u Update Available"
-msgid_plural "%u Updates Available"
-msgstr[0] "%u  Διαθέσιμη ενημέρωση"
-msgstr[1] "%u Διαθέσιμες ενημερώσεις"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:69
-msgid "Size: %s"
-msgstr "Mέγεθος: %s"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:105
-msgid "Searching for updates…"
-msgstr "Γίνεται αναζήτηση για ενημερώσεις..."
-
-#: ../src/Widgets/UpdateHeaderRow.vala:112
-msgid "Up to Date"
-msgstr "Ενημερωμένες"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:120
-msgid "Drivers"
-msgstr ""
-
-#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: ../src/Widgets/HumbleButton.vala:152
-msgid "$%d.00"
-msgstr ""
-
-#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: ../src/Widgets/HumbleButton.vala:155
-msgid "$%d"
-msgstr ""
-
-#: ../src/Widgets/AbstractAppList.vala:35
-msgid "No Results"
-msgstr "Δεν υπάρχουν αποτελέσματα"
-
-#: ../src/Widgets/AbstractAppList.vala:35
-msgid "No apps could be found. Try changing search terms."
-msgstr "Δε βρέθηκαν εφαρμογές. Δοκιμάστε διαφορετικούς όρους αναζήτησης."
 
 #: ../src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -177,6 +61,12 @@ msgstr ""
 #: ../src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
 msgstr ""
+
+#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:158
+#: ../src/Dialogs/StripeDialog.vala:277
+#: ../src/Widgets/AbstractAppContainer.vala:126
+msgid "Cancel"
+msgstr "Ακύρωση"
 
 #: ../src/Dialogs/StripeDialog.vala:30
 msgid ""
@@ -317,13 +207,10 @@ msgstr ""
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
 
-#: ../src/Views/Homepage.vala:102
-msgid "Recently Updated"
-msgstr ""
-
-#: ../src/Views/Homepage.vala:154
-msgid "Categories"
-msgstr "Κατηγορίες"
+#: ../src/Views/InstalledView.vala:51 ../src/MainWindow.vala:123
+msgctxt "view"
+msgid "Updates"
+msgstr "Ενημερώσεις"
 
 #. / TRANSLATORS: the name of the Search view
 #: ../src/Views/SearchView.vala:35
@@ -368,40 +255,181 @@ msgstr ""
 msgid "Help"
 msgstr ""
 
-#: ../src/Application.vala:42
-msgid "App Center"
+#: ../src/Views/Homepage.vala:102
+msgid "Recently Updated"
+msgstr ""
+
+#: ../src/Views/Homepage.vala:154
+msgid "Categories"
+msgstr "Κατηγορίες"
+
+#: ../src/Views/Homepage.vala:209 ../src/Views/Homepage.vala:216
+#: ../src/MainWindow.vala:122 ../src/MainWindow.vala:163
+#: ../src/MainWindow.vala:205
+#, fuzzy
+msgid "Home"
+msgstr "Αρχική Σελίδα"
+
+#: ../src/Widgets/Banner.vala:100 ../src/MainWindow.vala:103
+msgid "AppCenter"
 msgstr "Κέντρο εφαρμογών"
 
-#: ../src/Application.vala:59
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Apazoglou Theodoros https://launchpad.net/~apazoglouthodoris\n"
-"  Christos Iatropoulos https://launchpad.net/~ci4\n"
-"  Filippos Kolyvas https://launchpad.net/~fkol-k4\n"
-"  Kostas Fragkopoulos https://launchpad.net/~fragkopoulos\n"
-"  Nikos Tourvas https://launchpad.net/~nikostourvas\n"
-"  elementaryart (old) https://launchpad.net/~elementaryart\n"
-"  onIaom https://launchpad.net/~onlaom"
-
-#: ../src/Application.vala:150
-msgid "Specified link '%s' could not be found, searching instead"
+#: ../src/Widgets/Banner.vala:107
+msgid "An open, pay-what-you-want app store"
 msgstr ""
 
-#: ../src/Application.vala:217
-msgid "Application installed"
-msgstr "Η εφαρμογή εγκαταστάθηκε"
-
-#: ../src/Application.vala:218
-msgid "%s has been successfully installed"
-msgstr "%s έχει εγκατασταθεί επιτυχώς"
-
-#: ../src/Application.vala:234
-msgid "Close"
+#: ../src/Widgets/Banner.vala:120
+msgid "Get the apps that you need at a price you can afford."
 msgstr ""
 
-#: ../src/Application.vala:236
-msgid "There Was An Error Installing %s"
+#: ../src/Widgets/CategoryFlowBox.vala:29
+msgid "Audio"
+msgstr "Ήχος"
+
+#: ../src/Widgets/CategoryFlowBox.vala:30
+msgid "Development"
+msgstr "Ανάπτυξη λογισμικού"
+
+#: ../src/Widgets/CategoryFlowBox.vala:31
+msgid "Accessories"
+msgstr "Βοηθήματα"
+
+#: ../src/Widgets/CategoryFlowBox.vala:32
+msgid "Office"
+msgstr "Γραφείο"
+
+#: ../src/Widgets/CategoryFlowBox.vala:33
+msgid "System"
+msgstr "Σύστημα"
+
+#: ../src/Widgets/CategoryFlowBox.vala:34
+msgid "Video"
+msgstr "Βίντεο"
+
+#: ../src/Widgets/CategoryFlowBox.vala:35
+msgid "Graphics"
+msgstr "Γραφικά"
+
+#: ../src/Widgets/CategoryFlowBox.vala:36
+msgid "Games"
+msgstr "ΠΑΙΧΝΙΔΙΑ"
+
+#: ../src/Widgets/CategoryFlowBox.vala:37
+msgid "Education"
+msgstr "Εκπαίδευση"
+
+#: ../src/Widgets/CategoryFlowBox.vala:38
+msgid "Internet"
+msgstr "Διαδίκτυο"
+
+#: ../src/Widgets/CategoryFlowBox.vala:39
+msgid "Science & Engineering"
+msgstr "Επιστήμη & μηχανική"
+
+#: ../src/Widgets/CategoryFlowBox.vala:40
+msgid "Universal Access"
+msgstr "ΓΕΝΙΚΗ ΠΡΟΣΒΑΣΗ"
+
+#: ../src/Widgets/HumbleButton.vala:85
+#: ../src/Widgets/AbstractAppContainer.vala:195
+msgid "Free"
+msgstr ""
+
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
+#: ../src/Widgets/HumbleButton.vala:152
+msgid "$%d.00"
+msgstr ""
+
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
+#: ../src/Widgets/HumbleButton.vala:155
+msgid "$%d"
+msgstr ""
+
+#: ../src/Widgets/AbstractAppContainer.vala:105
+msgid "Uninstall"
+msgstr "Απεγκατάσταση"
+
+#: ../src/Widgets/AbstractAppContainer.vala:108
+msgid "Open"
+msgstr "Άνοιγμα"
+
+#: ../src/Widgets/AbstractAppContainer.vala:161
+msgid "The %s Developers"
+msgstr ""
+
+#: ../src/Widgets/AbstractAppContainer.vala:165
+msgid "by %s"
+msgstr ""
+
+#: ../src/Widgets/AbstractAppContainer.vala:209
+msgid "Update"
+msgstr "Ενημέρωση"
+
+#: ../src/Widgets/AbstractAppList.vala:35
+msgid "No Results"
+msgstr "Δεν υπάρχουν αποτελέσματα"
+
+#: ../src/Widgets/AbstractAppList.vala:35
+msgid "No apps could be found. Try changing search terms."
+msgstr "Δε βρέθηκαν εφαρμογές. Δοκιμάστε διαφορετικούς όρους αναζήτησης."
+
+#: ../src/Widgets/UpdateHeaderRow.vala:68
+msgid "%u Update Available"
+msgid_plural "%u Updates Available"
+msgstr[0] "%u  Διαθέσιμη ενημέρωση"
+msgstr[1] "%u Διαθέσιμες ενημερώσεις"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:69
+msgid "Size: %s"
+msgstr "Mέγεθος: %s"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:105
+msgid "Searching for updates…"
+msgstr "Γίνεται αναζήτηση για ενημερώσεις..."
+
+#: ../src/Widgets/UpdateHeaderRow.vala:112
+msgid "Up to Date"
+msgstr "Ενημερωμένες"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:120
+msgid "Drivers"
+msgstr ""
+
+#: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
+#: ../src/MainWindow.vala:300 ../src/MainWindow.vala:322
+msgid "Search Apps"
+msgstr "Αναζήτηση εφαρμογών"
+
+#: ../src/MainWindow.vala:282
+msgid "Search %s"
+msgstr "Αναζήτηση %s"
+
+#: ../src/Core/Client.vala:94
+msgid "Operating System Updates"
+msgstr "Ενημερώσεις λειτουργικού συστήματος"
+
+#: ../src/Core/Client.vala:95
+msgid "Updates to system components"
+msgstr "Ενημερώσεις σε μέρη του συστήματος"
+
+#: ../src/Core/Client.vala:453
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "Διαθέσιμη ενημέρωση"
+msgstr[1] "Διαθέσιμες ενημερώσεις"
+
+#: ../src/Core/Client.vala:454
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "%u ενημέρωση είναι διαθέσιμη για το σύστημα σας"
+msgstr[1] "%u ενημερώσεις είναι διαθέσιμες για το σύστημα σας"
+
+#: ../src/Core/Client.vala:483
+msgid "Restart Required"
+msgstr ""
+
+#: ../src/Core/Client.vala:484
+msgid "Please restart your system to finalize updates"
 msgstr ""
 
 #: ../src/Core/ChangeInformation.vala:54
@@ -547,34 +575,6 @@ msgstr "Πραγματοποείται αντιγραφή αρχείων"
 #: ../src/Core/ChangeInformation.vala:124
 msgid "Unknown state"
 msgstr "Άγνωστη κατάσταση"
-
-#: ../src/Core/Client.vala:94
-msgid "Operating System Updates"
-msgstr "Ενημερώσεις λειτουργικού συστήματος"
-
-#: ../src/Core/Client.vala:95
-msgid "Updates to system components"
-msgstr "Ενημερώσεις σε μέρη του συστήματος"
-
-#: ../src/Core/Client.vala:453
-msgid "Update Available"
-msgid_plural "Updates Available"
-msgstr[0] "Διαθέσιμη ενημέρωση"
-msgstr[1] "Διαθέσιμες ενημερώσεις"
-
-#: ../src/Core/Client.vala:454
-msgid "%u update is available for your system"
-msgid_plural "%u updates are available for your system"
-msgstr[0] "%u ενημέρωση είναι διαθέσιμη για το σύστημα σας"
-msgstr[1] "%u ενημερώσεις είναι διαθέσιμες για το σύστημα σας"
-
-#: ../src/Core/Client.vala:483
-msgid "Restart Required"
-msgstr ""
-
-#: ../src/Core/Client.vala:484
-msgid "Please restart your system to finalize updates"
-msgstr ""
 
 #~ msgid "Install"
 #~ msgstr "Εγκατάσταση"

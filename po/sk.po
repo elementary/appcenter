@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-20 10:34+0200\n"
+"POT-Creation-Date: 2017-05-21 09:09-0700\n"
 "PO-Revision-Date: 2017-04-08 09:58+0000\n"
 "Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Slovak <http://weblate.elementary.io/projects/desktop/"
@@ -15,157 +15,40 @@ msgstr ""
 "X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
-#: ../src/MainWindow.vala:103 ../src/Widgets/Banner.vala:100
-msgid "AppCenter"
-msgstr "AppCentrum"
+#: ../src/Application.vala:42
+msgid "App Center"
+msgstr "App Centrum"
 
-#: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
-#: ../src/MainWindow.vala:300 ../src/MainWindow.vala:322
-msgid "Search Apps"
-msgstr "Hľadať aplikácie"
-
-#: ../src/MainWindow.vala:122 ../src/MainWindow.vala:163
-#: ../src/MainWindow.vala:205 ../src/Views/Homepage.vala:209
-#: ../src/Views/Homepage.vala:216
-msgid "Home"
-msgstr "Úvodná stránka"
-
-#: ../src/MainWindow.vala:123 ../src/Views/InstalledView.vala:51
-msgctxt "view"
-msgid "Updates"
-msgstr "Aktualizácie"
-
-#: ../src/MainWindow.vala:282
-msgid "Search %s"
-msgstr "Prehľadávať %s"
-
-#: ../src/Widgets/Banner.vala:107
-msgid "An open, pay-what-you-want app store"
-msgstr "Otvorený obchod s aplikáciami, kde platíte, koľko uznáte za vhodné"
-
-#: ../src/Widgets/Banner.vala:120
-msgid "Get the apps that you need at a price you can afford."
-msgstr "Získajte aplikácie, ktoré potrebujete. Za cenu, akú si môžete dovoliť."
-
-#: ../src/Widgets/AbstractAppContainer.vala:105
-msgid "Uninstall"
-msgstr "Odinštalovať"
-
-#: ../src/Widgets/AbstractAppContainer.vala:108
-msgid "Open"
-msgstr "Otvoriť"
-
-#: ../src/Widgets/AbstractAppContainer.vala:126
-#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:158
-#: ../src/Dialogs/StripeDialog.vala:277
-msgid "Cancel"
-msgstr "Zrušiť"
-
-#: ../src/Widgets/AbstractAppContainer.vala:161
-msgid "The %s Developers"
-msgstr "Vývojári projektu %s"
-
-#: ../src/Widgets/AbstractAppContainer.vala:165
-msgid "by %s"
-msgstr "Autor: %s"
-
-#: ../src/Widgets/AbstractAppContainer.vala:195
-#: ../src/Widgets/HumbleButton.vala:85
-msgid "Free"
-msgstr "Zadarmo"
-
-#: ../src/Widgets/AbstractAppContainer.vala:209
-msgid "Update"
-msgstr "Aktualizácie"
-
-#: ../src/Widgets/CategoryFlowBox.vala:29
-msgid "Audio"
-msgstr "Zvuk"
-
-#: ../src/Widgets/CategoryFlowBox.vala:30
-msgid "Development"
-msgstr "Vývoj"
-
-#: ../src/Widgets/CategoryFlowBox.vala:31
-msgid "Accessories"
-msgstr "Príslušenstvo"
-
-#: ../src/Widgets/CategoryFlowBox.vala:32
-msgid "Office"
-msgstr "Kancelária"
-
-#: ../src/Widgets/CategoryFlowBox.vala:33
-msgid "System"
-msgstr "Systém"
-
-#: ../src/Widgets/CategoryFlowBox.vala:34
-msgid "Video"
-msgstr "Video"
-
-#: ../src/Widgets/CategoryFlowBox.vala:35
-msgid "Graphics"
-msgstr "Grafika"
-
-#: ../src/Widgets/CategoryFlowBox.vala:36
-msgid "Games"
-msgstr "Hry"
-
-#: ../src/Widgets/CategoryFlowBox.vala:37
-msgid "Education"
-msgstr "Vzdelávanie"
-
-#: ../src/Widgets/CategoryFlowBox.vala:38
-msgid "Internet"
-msgstr "Internet"
-
-#: ../src/Widgets/CategoryFlowBox.vala:39
-msgid "Science & Engineering"
-msgstr "Veda a výskum"
-
-#: ../src/Widgets/CategoryFlowBox.vala:40
-msgid "Universal Access"
-msgstr "Univerzálny prístup"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:68
-msgid "%u Update Available"
-msgid_plural "%u Updates Available"
-msgstr[0] "Je dostupná %u aktualizácia"
-msgstr[1] "Sú dostupné %u aktualizácie"
-msgstr[2] "Je dostupných %u aktualizácií"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:69
-msgid "Size: %s"
-msgstr "Veľkosť: %s"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:105
-msgid "Searching for updates…"
-msgstr "Vyhľadávajú sa aktualizácie…"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:112
-msgid "Up to Date"
-msgstr "Aktuálne"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:120
-msgid "Drivers"
+#: ../src/Application.vala:59
+msgid "translator-credits"
 msgstr ""
+"Launchpad Contributions:\n"
+"  Lukáš Papík https://launchpad.net/~stereo839\n"
+"  Milan Slovák https://launchpad.net/~milboys\n"
+"  Samuel Kristev https://launchpad.net/~samuelkristev\n"
+"  bj https://launchpad.net/~teapack97\n"
+"  elementaryart (old) https://launchpad.net/~elementaryart\n"
+"  lupajz https://launchpad.net/~lubos-m"
 
-#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: ../src/Widgets/HumbleButton.vala:152
-msgid "$%d.00"
-msgstr "$%d.00"
+#: ../src/Application.vala:150
+msgid "Specified link '%s' could not be found, searching instead"
+msgstr "Zadaný odkaz '%s' sa nenašiel, vyhľadáva sa ďalej"
 
-#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: ../src/Widgets/HumbleButton.vala:155
-msgid "$%d"
-msgstr "$%d"
+#: ../src/Application.vala:217
+msgid "Application installed"
+msgstr "Aplikácia nainštalovaná"
 
-#: ../src/Widgets/AbstractAppList.vala:35
-msgid "No Results"
-msgstr "Žiadne výsledky"
+#: ../src/Application.vala:218
+msgid "%s has been successfully installed"
+msgstr "%s sa úspešne nainštaloval"
 
-#: ../src/Widgets/AbstractAppList.vala:35
-msgid "No apps could be found. Try changing search terms."
-msgstr "Nenašli sa žiadne aplikácie. Skúste zmeniť výraz vyhľadávanie."
+#: ../src/Application.vala:234
+msgid "Close"
+msgstr "Zatvoriť"
+
+#: ../src/Application.vala:236
+msgid "There Was An Error Installing %s"
+msgstr "Pri inštalácii balíka %s sa vyskytla chyba"
 
 #: ../src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -178,6 +61,12 @@ msgstr "Všetky aplikácie sa zatvoria a zariadenie sa reštartuje."
 #: ../src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
 msgstr "Reštartovať"
+
+#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:158
+#: ../src/Dialogs/StripeDialog.vala:277
+#: ../src/Widgets/AbstractAppContainer.vala:126
+msgid "Cancel"
+msgstr "Zrušiť"
 
 #: ../src/Dialogs/StripeDialog.vala:30
 msgid ""
@@ -319,13 +208,10 @@ msgstr ""
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
 
-#: ../src/Views/Homepage.vala:102
-msgid "Recently Updated"
-msgstr ""
-
-#: ../src/Views/Homepage.vala:154
-msgid "Categories"
-msgstr "Kategórie"
+#: ../src/Views/InstalledView.vala:51 ../src/MainWindow.vala:123
+msgctxt "view"
+msgid "Updates"
+msgstr "Aktualizácie"
 
 #. / TRANSLATORS: the name of the Search view
 #: ../src/Views/SearchView.vala:35
@@ -369,40 +255,184 @@ msgstr "Nahlásiť problém"
 msgid "Help"
 msgstr "Pomocník"
 
-#: ../src/Application.vala:42
-msgid "App Center"
-msgstr "App Centrum"
-
-#: ../src/Application.vala:59
-msgid "translator-credits"
+#: ../src/Views/Homepage.vala:102
+msgid "Recently Updated"
 msgstr ""
-"Launchpad Contributions:\n"
-"  Lukáš Papík https://launchpad.net/~stereo839\n"
-"  Milan Slovák https://launchpad.net/~milboys\n"
-"  Samuel Kristev https://launchpad.net/~samuelkristev\n"
-"  bj https://launchpad.net/~teapack97\n"
-"  elementaryart (old) https://launchpad.net/~elementaryart\n"
-"  lupajz https://launchpad.net/~lubos-m"
 
-#: ../src/Application.vala:150
-msgid "Specified link '%s' could not be found, searching instead"
-msgstr "Zadaný odkaz '%s' sa nenašiel, vyhľadáva sa ďalej"
+#: ../src/Views/Homepage.vala:154
+msgid "Categories"
+msgstr "Kategórie"
 
-#: ../src/Application.vala:217
-msgid "Application installed"
-msgstr "Aplikácia nainštalovaná"
+#: ../src/Views/Homepage.vala:209 ../src/Views/Homepage.vala:216
+#: ../src/MainWindow.vala:122 ../src/MainWindow.vala:163
+#: ../src/MainWindow.vala:205
+msgid "Home"
+msgstr "Úvodná stránka"
 
-#: ../src/Application.vala:218
-msgid "%s has been successfully installed"
-msgstr "%s sa úspešne nainštaloval"
+#: ../src/Widgets/Banner.vala:100 ../src/MainWindow.vala:103
+msgid "AppCenter"
+msgstr "AppCentrum"
 
-#: ../src/Application.vala:234
-msgid "Close"
-msgstr "Zatvoriť"
+#: ../src/Widgets/Banner.vala:107
+msgid "An open, pay-what-you-want app store"
+msgstr "Otvorený obchod s aplikáciami, kde platíte, koľko uznáte za vhodné"
 
-#: ../src/Application.vala:236
-msgid "There Was An Error Installing %s"
-msgstr "Pri inštalácii balíka %s sa vyskytla chyba"
+#: ../src/Widgets/Banner.vala:120
+msgid "Get the apps that you need at a price you can afford."
+msgstr "Získajte aplikácie, ktoré potrebujete. Za cenu, akú si môžete dovoliť."
+
+#: ../src/Widgets/CategoryFlowBox.vala:29
+msgid "Audio"
+msgstr "Zvuk"
+
+#: ../src/Widgets/CategoryFlowBox.vala:30
+msgid "Development"
+msgstr "Vývoj"
+
+#: ../src/Widgets/CategoryFlowBox.vala:31
+msgid "Accessories"
+msgstr "Príslušenstvo"
+
+#: ../src/Widgets/CategoryFlowBox.vala:32
+msgid "Office"
+msgstr "Kancelária"
+
+#: ../src/Widgets/CategoryFlowBox.vala:33
+msgid "System"
+msgstr "Systém"
+
+#: ../src/Widgets/CategoryFlowBox.vala:34
+msgid "Video"
+msgstr "Video"
+
+#: ../src/Widgets/CategoryFlowBox.vala:35
+msgid "Graphics"
+msgstr "Grafika"
+
+#: ../src/Widgets/CategoryFlowBox.vala:36
+msgid "Games"
+msgstr "Hry"
+
+#: ../src/Widgets/CategoryFlowBox.vala:37
+msgid "Education"
+msgstr "Vzdelávanie"
+
+#: ../src/Widgets/CategoryFlowBox.vala:38
+msgid "Internet"
+msgstr "Internet"
+
+#: ../src/Widgets/CategoryFlowBox.vala:39
+msgid "Science & Engineering"
+msgstr "Veda a výskum"
+
+#: ../src/Widgets/CategoryFlowBox.vala:40
+msgid "Universal Access"
+msgstr "Univerzálny prístup"
+
+#: ../src/Widgets/HumbleButton.vala:85
+#: ../src/Widgets/AbstractAppContainer.vala:195
+msgid "Free"
+msgstr "Zadarmo"
+
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
+#: ../src/Widgets/HumbleButton.vala:152
+msgid "$%d.00"
+msgstr "$%d.00"
+
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
+#: ../src/Widgets/HumbleButton.vala:155
+msgid "$%d"
+msgstr "$%d"
+
+#: ../src/Widgets/AbstractAppContainer.vala:105
+msgid "Uninstall"
+msgstr "Odinštalovať"
+
+#: ../src/Widgets/AbstractAppContainer.vala:108
+msgid "Open"
+msgstr "Otvoriť"
+
+#: ../src/Widgets/AbstractAppContainer.vala:161
+msgid "The %s Developers"
+msgstr "Vývojári projektu %s"
+
+#: ../src/Widgets/AbstractAppContainer.vala:165
+msgid "by %s"
+msgstr "Autor: %s"
+
+#: ../src/Widgets/AbstractAppContainer.vala:209
+msgid "Update"
+msgstr "Aktualizácie"
+
+#: ../src/Widgets/AbstractAppList.vala:35
+msgid "No Results"
+msgstr "Žiadne výsledky"
+
+#: ../src/Widgets/AbstractAppList.vala:35
+msgid "No apps could be found. Try changing search terms."
+msgstr "Nenašli sa žiadne aplikácie. Skúste zmeniť výraz vyhľadávanie."
+
+#: ../src/Widgets/UpdateHeaderRow.vala:68
+msgid "%u Update Available"
+msgid_plural "%u Updates Available"
+msgstr[0] "Je dostupná %u aktualizácia"
+msgstr[1] "Sú dostupné %u aktualizácie"
+msgstr[2] "Je dostupných %u aktualizácií"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:69
+msgid "Size: %s"
+msgstr "Veľkosť: %s"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:105
+msgid "Searching for updates…"
+msgstr "Vyhľadávajú sa aktualizácie…"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:112
+msgid "Up to Date"
+msgstr "Aktuálne"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:120
+msgid "Drivers"
+msgstr ""
+
+#: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
+#: ../src/MainWindow.vala:300 ../src/MainWindow.vala:322
+msgid "Search Apps"
+msgstr "Hľadať aplikácie"
+
+#: ../src/MainWindow.vala:282
+msgid "Search %s"
+msgstr "Prehľadávať %s"
+
+#: ../src/Core/Client.vala:94
+msgid "Operating System Updates"
+msgstr "Aktualizácie operačného systému"
+
+#: ../src/Core/Client.vala:95
+msgid "Updates to system components"
+msgstr "Aktualizácie systémových komponent"
+
+#: ../src/Core/Client.vala:453
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "Aktualizácií je dostupných"
+msgstr[1] "Aktualizácia je dostupná"
+msgstr[2] "Aktualizácie sú dostupné"
+
+#: ../src/Core/Client.vala:454
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "%u aktualizácií je dostupných pre váš systém"
+msgstr[1] "%u aktualizácia je dostupná pre váš systém"
+msgstr[2] "%u aktualizácie sú dostupné pre váš systém"
+
+#: ../src/Core/Client.vala:483
+msgid "Restart Required"
+msgstr "Je potrebný reštart"
+
+#: ../src/Core/Client.vala:484
+msgid "Please restart your system to finalize updates"
+msgstr "Prosím, dokončite aktualizáciu reštartovaním systému"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -547,36 +577,6 @@ msgstr "Kopírujú sa súbory"
 #: ../src/Core/ChangeInformation.vala:124
 msgid "Unknown state"
 msgstr "Neznámy stav"
-
-#: ../src/Core/Client.vala:94
-msgid "Operating System Updates"
-msgstr "Aktualizácie operačného systému"
-
-#: ../src/Core/Client.vala:95
-msgid "Updates to system components"
-msgstr "Aktualizácie systémových komponent"
-
-#: ../src/Core/Client.vala:453
-msgid "Update Available"
-msgid_plural "Updates Available"
-msgstr[0] "Aktualizácií je dostupných"
-msgstr[1] "Aktualizácia je dostupná"
-msgstr[2] "Aktualizácie sú dostupné"
-
-#: ../src/Core/Client.vala:454
-msgid "%u update is available for your system"
-msgid_plural "%u updates are available for your system"
-msgstr[0] "%u aktualizácií je dostupných pre váš systém"
-msgstr[1] "%u aktualizácia je dostupná pre váš systém"
-msgstr[2] "%u aktualizácie sú dostupné pre váš systém"
-
-#: ../src/Core/Client.vala:483
-msgid "Restart Required"
-msgstr "Je potrebný reštart"
-
-#: ../src/Core/Client.vala:484
-msgid "Please restart your system to finalize updates"
-msgstr "Prosím, dokončite aktualizáciu reštartovaním systému"
 
 #~ msgid "Install"
 #~ msgstr "Inštalácia"

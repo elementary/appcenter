@@ -2,11 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-20 10:34+0200\n"
+"POT-Creation-Date: 2017-05-21 09:09-0700\n"
 "PO-Revision-Date: 2017-05-23 07:26+0000\n"
 "Last-Translator: Fernando da Silva Sousa <wild.nando@gmail.com>\n"
-"Language-Team: Portuguese (Brazil) "
-"<https://l10n.elementary.io/projects/appcenter/appcenter/pt_BR/>\n"
+"Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
+"appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,157 +15,47 @@ msgstr ""
 "X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
-#: ../src/MainWindow.vala:103 ../src/Widgets/Banner.vala:100
-msgid "AppCenter"
+#: ../src/Application.vala:42
+msgid "App Center"
 msgstr "Central de aplicativos"
 
-#: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
-#: ../src/MainWindow.vala:300 ../src/MainWindow.vala:322
-msgid "Search Apps"
-msgstr "Procurar aplicativos"
-
-#: ../src/MainWindow.vala:122 ../src/MainWindow.vala:163
-#: ../src/MainWindow.vala:205 ../src/Views/Homepage.vala:209
-#: ../src/Views/Homepage.vala:216
-msgid "Home"
-msgstr "Página inicial"
-
-#: ../src/MainWindow.vala:123 ../src/Views/InstalledView.vala:51
-msgctxt "view"
-msgid "Updates"
-msgstr "Atualizações"
-
-#: ../src/MainWindow.vala:282
-msgid "Search %s"
-msgstr "Procurar %s"
-
-#: ../src/Widgets/Banner.vala:107
-msgid "An open, pay-what-you-want app store"
-msgstr "Uma loja aberta pague-o-que-desejar"
-
-#: ../src/Widgets/Banner.vala:120
-msgid "Get the apps that you need at a price you can afford."
+#: ../src/Application.vala:59
+msgid "translator-credits"
 msgstr ""
-"Tenha todos os aplicativos que você precisa por um preço que você pode pagar."
+"Launchpad Contributions:\n"
+"  Alison Bento https://launchpad.net/~alisonbnt\n"
+"  Cleiton Floss https://launchpad.net/~cleitonfloss\n"
+"  Ewerton Wandalen https://launchpad.net/~ewandalen-9\n"
+"  Leonardo Lemos https://launchpad.net/~leonardolemos\n"
+"  Marcio https://launchpad.net/~marciorcgomes\n"
+"  Matheus Macabu https://launchpad.net/~mkbu\n"
+"  Rafael Leandro https://launchpad.net/~crf-rafa\n"
+"  Renan Gonçalves https://launchpad.net/~amigosrenan\n"
+"  Saulo De Baco https://launchpad.net/~saulodebaco\n"
+"  Thiago Abreu https://launchpad.net/~thiagojedi\n"
+"  daniel https://launchpad.net/~darksplaybr\n"
+"  elementaryart (old) https://launchpad.net/~elementaryart\n"
+"  マルケス https://launchpad.net/~mrmarukesu"
 
-#: ../src/Widgets/AbstractAppContainer.vala:105
-msgid "Uninstall"
-msgstr "Desinstalar"
+#: ../src/Application.vala:150
+msgid "Specified link '%s' could not be found, searching instead"
+msgstr "O link '%s' especificado não pôde ser encontrado, procure ao invés"
 
-#: ../src/Widgets/AbstractAppContainer.vala:108
-msgid "Open"
-msgstr "Abrir"
+#: ../src/Application.vala:217
+msgid "Application installed"
+msgstr "Aplicação instalada"
 
-#: ../src/Widgets/AbstractAppContainer.vala:126
-#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:158
-#: ../src/Dialogs/StripeDialog.vala:277
-msgid "Cancel"
-msgstr "Cancelar"
+#: ../src/Application.vala:218
+msgid "%s has been successfully installed"
+msgstr "%s foi instalado(a) com sucesso"
 
-#: ../src/Widgets/AbstractAppContainer.vala:161
-msgid "The %s Developers"
-msgstr "Os Desenvolvedores do %s"
+#: ../src/Application.vala:234
+msgid "Close"
+msgstr "Fechar"
 
-#: ../src/Widgets/AbstractAppContainer.vala:165
-msgid "by %s"
-msgstr "por %s"
-
-#: ../src/Widgets/AbstractAppContainer.vala:195
-#: ../src/Widgets/HumbleButton.vala:85
-msgid "Free"
-msgstr "Gratuito"
-
-#: ../src/Widgets/AbstractAppContainer.vala:209
-msgid "Update"
-msgstr "Atualizar"
-
-#: ../src/Widgets/CategoryFlowBox.vala:29
-msgid "Audio"
-msgstr "Áudio"
-
-#: ../src/Widgets/CategoryFlowBox.vala:30
-msgid "Development"
-msgstr "Desenvolvimento"
-
-#: ../src/Widgets/CategoryFlowBox.vala:31
-msgid "Accessories"
-msgstr "Acessórios"
-
-#: ../src/Widgets/CategoryFlowBox.vala:32
-msgid "Office"
-msgstr "Escritório"
-
-#: ../src/Widgets/CategoryFlowBox.vala:33
-msgid "System"
-msgstr "Sistema"
-
-#: ../src/Widgets/CategoryFlowBox.vala:34
-msgid "Video"
-msgstr "Vídeo"
-
-#: ../src/Widgets/CategoryFlowBox.vala:35
-msgid "Graphics"
-msgstr "Gráficos"
-
-#: ../src/Widgets/CategoryFlowBox.vala:36
-msgid "Games"
-msgstr "Jogos"
-
-#: ../src/Widgets/CategoryFlowBox.vala:37
-msgid "Education"
-msgstr "Educação"
-
-#: ../src/Widgets/CategoryFlowBox.vala:38
-msgid "Internet"
-msgstr "Internet"
-
-#: ../src/Widgets/CategoryFlowBox.vala:39
-msgid "Science & Engineering"
-msgstr "Ciência e Engenharia"
-
-#: ../src/Widgets/CategoryFlowBox.vala:40
-msgid "Universal Access"
-msgstr "Acessibilidade"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:68
-msgid "%u Update Available"
-msgid_plural "%u Updates Available"
-msgstr[0] "%u Atualização disponível"
-msgstr[1] "%u Atualizações disponíveis"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:69
-msgid "Size: %s"
-msgstr "Tamanho: %s"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:105
-msgid "Searching for updates…"
-msgstr "Procurando atualizações…"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:112
-msgid "Up to Date"
-msgstr "Atualizado"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:120
-msgid "Drivers"
-msgstr "Drivers"
-
-#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: ../src/Widgets/HumbleButton.vala:152
-msgid "$%d.00"
-msgstr "$%d.00"
-
-#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: ../src/Widgets/HumbleButton.vala:155
-msgid "$%d"
-msgstr "$%d"
-
-#: ../src/Widgets/AbstractAppList.vala:35
-msgid "No Results"
-msgstr "Sem resultados"
-
-#: ../src/Widgets/AbstractAppList.vala:35
-msgid "No apps could be found. Try changing search terms."
-msgstr "Nenhum aplicativo foi localizado. Tente mudar os termos da busca."
+#: ../src/Application.vala:236
+msgid "There Was An Error Installing %s"
+msgstr "Houve um erro ao instalar %s"
 
 #: ../src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -179,6 +69,12 @@ msgstr ""
 #: ../src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
 msgstr "Reiniciar"
+
+#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:158
+#: ../src/Dialogs/StripeDialog.vala:277
+#: ../src/Widgets/AbstractAppContainer.vala:126
+msgid "Cancel"
+msgstr "Cancelar"
 
 #: ../src/Dialogs/StripeDialog.vala:30
 msgid ""
@@ -345,13 +241,10 @@ msgstr "O balanço ou limite de créditos no cartão já foi alcançado."
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
 
-#: ../src/Views/Homepage.vala:102
-msgid "Recently Updated"
-msgstr ""
-
-#: ../src/Views/Homepage.vala:154
-msgid "Categories"
-msgstr "Categorias"
+#: ../src/Views/InstalledView.vala:51 ../src/MainWindow.vala:123
+msgctxt "view"
+msgid "Updates"
+msgstr "Atualizações"
 
 #. / TRANSLATORS: the name of the Search view
 #: ../src/Views/SearchView.vala:35
@@ -395,47 +288,182 @@ msgstr "Reportar um problema"
 msgid "Help"
 msgstr "Ajuda"
 
-#: ../src/Application.vala:42
-msgid "App Center"
+#: ../src/Views/Homepage.vala:102
+msgid "Recently Updated"
+msgstr ""
+
+#: ../src/Views/Homepage.vala:154
+msgid "Categories"
+msgstr "Categorias"
+
+#: ../src/Views/Homepage.vala:209 ../src/Views/Homepage.vala:216
+#: ../src/MainWindow.vala:122 ../src/MainWindow.vala:163
+#: ../src/MainWindow.vala:205
+msgid "Home"
+msgstr "Página inicial"
+
+#: ../src/Widgets/Banner.vala:100 ../src/MainWindow.vala:103
+msgid "AppCenter"
 msgstr "Central de aplicativos"
 
-#: ../src/Application.vala:59
-msgid "translator-credits"
+#: ../src/Widgets/Banner.vala:107
+msgid "An open, pay-what-you-want app store"
+msgstr "Uma loja aberta pague-o-que-desejar"
+
+#: ../src/Widgets/Banner.vala:120
+msgid "Get the apps that you need at a price you can afford."
 msgstr ""
-"Launchpad Contributions:\n"
-"  Alison Bento https://launchpad.net/~alisonbnt\n"
-"  Cleiton Floss https://launchpad.net/~cleitonfloss\n"
-"  Ewerton Wandalen https://launchpad.net/~ewandalen-9\n"
-"  Leonardo Lemos https://launchpad.net/~leonardolemos\n"
-"  Marcio https://launchpad.net/~marciorcgomes\n"
-"  Matheus Macabu https://launchpad.net/~mkbu\n"
-"  Rafael Leandro https://launchpad.net/~crf-rafa\n"
-"  Renan Gonçalves https://launchpad.net/~amigosrenan\n"
-"  Saulo De Baco https://launchpad.net/~saulodebaco\n"
-"  Thiago Abreu https://launchpad.net/~thiagojedi\n"
-"  daniel https://launchpad.net/~darksplaybr\n"
-"  elementaryart (old) https://launchpad.net/~elementaryart\n"
-"  マルケス https://launchpad.net/~mrmarukesu"
+"Tenha todos os aplicativos que você precisa por um preço que você pode pagar."
 
-#: ../src/Application.vala:150
-msgid "Specified link '%s' could not be found, searching instead"
-msgstr "O link '%s' especificado não pôde ser encontrado, procure ao invés"
+#: ../src/Widgets/CategoryFlowBox.vala:29
+msgid "Audio"
+msgstr "Áudio"
 
-#: ../src/Application.vala:217
-msgid "Application installed"
-msgstr "Aplicação instalada"
+#: ../src/Widgets/CategoryFlowBox.vala:30
+msgid "Development"
+msgstr "Desenvolvimento"
 
-#: ../src/Application.vala:218
-msgid "%s has been successfully installed"
-msgstr "%s foi instalado(a) com sucesso"
+#: ../src/Widgets/CategoryFlowBox.vala:31
+msgid "Accessories"
+msgstr "Acessórios"
 
-#: ../src/Application.vala:234
-msgid "Close"
-msgstr "Fechar"
+#: ../src/Widgets/CategoryFlowBox.vala:32
+msgid "Office"
+msgstr "Escritório"
 
-#: ../src/Application.vala:236
-msgid "There Was An Error Installing %s"
-msgstr "Houve um erro ao instalar %s"
+#: ../src/Widgets/CategoryFlowBox.vala:33
+msgid "System"
+msgstr "Sistema"
+
+#: ../src/Widgets/CategoryFlowBox.vala:34
+msgid "Video"
+msgstr "Vídeo"
+
+#: ../src/Widgets/CategoryFlowBox.vala:35
+msgid "Graphics"
+msgstr "Gráficos"
+
+#: ../src/Widgets/CategoryFlowBox.vala:36
+msgid "Games"
+msgstr "Jogos"
+
+#: ../src/Widgets/CategoryFlowBox.vala:37
+msgid "Education"
+msgstr "Educação"
+
+#: ../src/Widgets/CategoryFlowBox.vala:38
+msgid "Internet"
+msgstr "Internet"
+
+#: ../src/Widgets/CategoryFlowBox.vala:39
+msgid "Science & Engineering"
+msgstr "Ciência e Engenharia"
+
+#: ../src/Widgets/CategoryFlowBox.vala:40
+msgid "Universal Access"
+msgstr "Acessibilidade"
+
+#: ../src/Widgets/HumbleButton.vala:85
+#: ../src/Widgets/AbstractAppContainer.vala:195
+msgid "Free"
+msgstr "Gratuito"
+
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
+#: ../src/Widgets/HumbleButton.vala:152
+msgid "$%d.00"
+msgstr "$%d.00"
+
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
+#: ../src/Widgets/HumbleButton.vala:155
+msgid "$%d"
+msgstr "$%d"
+
+#: ../src/Widgets/AbstractAppContainer.vala:105
+msgid "Uninstall"
+msgstr "Desinstalar"
+
+#: ../src/Widgets/AbstractAppContainer.vala:108
+msgid "Open"
+msgstr "Abrir"
+
+#: ../src/Widgets/AbstractAppContainer.vala:161
+msgid "The %s Developers"
+msgstr "Os Desenvolvedores do %s"
+
+#: ../src/Widgets/AbstractAppContainer.vala:165
+msgid "by %s"
+msgstr "por %s"
+
+#: ../src/Widgets/AbstractAppContainer.vala:209
+msgid "Update"
+msgstr "Atualizar"
+
+#: ../src/Widgets/AbstractAppList.vala:35
+msgid "No Results"
+msgstr "Sem resultados"
+
+#: ../src/Widgets/AbstractAppList.vala:35
+msgid "No apps could be found. Try changing search terms."
+msgstr "Nenhum aplicativo foi localizado. Tente mudar os termos da busca."
+
+#: ../src/Widgets/UpdateHeaderRow.vala:68
+msgid "%u Update Available"
+msgid_plural "%u Updates Available"
+msgstr[0] "%u Atualização disponível"
+msgstr[1] "%u Atualizações disponíveis"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:69
+msgid "Size: %s"
+msgstr "Tamanho: %s"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:105
+msgid "Searching for updates…"
+msgstr "Procurando atualizações…"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:112
+msgid "Up to Date"
+msgstr "Atualizado"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:120
+msgid "Drivers"
+msgstr "Drivers"
+
+#: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
+#: ../src/MainWindow.vala:300 ../src/MainWindow.vala:322
+msgid "Search Apps"
+msgstr "Procurar aplicativos"
+
+#: ../src/MainWindow.vala:282
+msgid "Search %s"
+msgstr "Procurar %s"
+
+#: ../src/Core/Client.vala:94
+msgid "Operating System Updates"
+msgstr "Atualizações do sistema operacional"
+
+#: ../src/Core/Client.vala:95
+msgid "Updates to system components"
+msgstr "Atualizações para os componentes do sistema"
+
+#: ../src/Core/Client.vala:453
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "Atualização disponível"
+msgstr[1] "Atualizações disponíveis"
+
+#: ../src/Core/Client.vala:454
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "%u atualização está disponível para seu sistema"
+msgstr[1] "%u atualizações estão disponíveis para seu sistema"
+
+#: ../src/Core/Client.vala:483
+msgid "Restart Required"
+msgstr "Reinicialização necessária"
+
+#: ../src/Core/Client.vala:484
+msgid "Please restart your system to finalize updates"
+msgstr "Por favor, reinicie seu sistema para finalizar as traduções"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -580,34 +608,6 @@ msgstr "Copiando arquivos"
 #: ../src/Core/ChangeInformation.vala:124
 msgid "Unknown state"
 msgstr "Estado desconhecido"
-
-#: ../src/Core/Client.vala:94
-msgid "Operating System Updates"
-msgstr "Atualizações do sistema operacional"
-
-#: ../src/Core/Client.vala:95
-msgid "Updates to system components"
-msgstr "Atualizações para os componentes do sistema"
-
-#: ../src/Core/Client.vala:453
-msgid "Update Available"
-msgid_plural "Updates Available"
-msgstr[0] "Atualização disponível"
-msgstr[1] "Atualizações disponíveis"
-
-#: ../src/Core/Client.vala:454
-msgid "%u update is available for your system"
-msgid_plural "%u updates are available for your system"
-msgstr[0] "%u atualização está disponível para seu sistema"
-msgstr[1] "%u atualizações estão disponíveis para seu sistema"
-
-#: ../src/Core/Client.vala:483
-msgid "Restart Required"
-msgstr "Reinicialização necessária"
-
-#: ../src/Core/Client.vala:484
-msgid "Please restart your system to finalize updates"
-msgstr "Por favor, reinicie seu sistema para finalizar as traduções"
 
 #~ msgid "Install"
 #~ msgstr "Instalar"

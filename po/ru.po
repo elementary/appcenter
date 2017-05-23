@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-20 10:34+0200\n"
+"POT-Creation-Date: 2017-05-21 09:09-0700\n"
 "PO-Revision-Date: 2017-05-07 17:23+0000\n"
 "Last-Translator: Yuly <crow@rikka.io>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/"
@@ -16,160 +16,37 @@ msgstr ""
 "X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
-#: ../src/MainWindow.vala:103 ../src/Widgets/Banner.vala:100
-msgid "AppCenter"
+#: ../src/Application.vala:42
+msgid "App Center"
 msgstr "AppCenter"
 
-#: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
-#: ../src/MainWindow.vala:300 ../src/MainWindow.vala:322
-msgid "Search Apps"
-msgstr "Поиск приложений"
-
-#: ../src/MainWindow.vala:122 ../src/MainWindow.vala:163
-#: ../src/MainWindow.vala:205 ../src/Views/Homepage.vala:209
-#: ../src/Views/Homepage.vala:216
-msgid "Home"
-msgstr "Домашняя страница"
-
-#: ../src/MainWindow.vala:123 ../src/Views/InstalledView.vala:51
-msgctxt "view"
-msgid "Updates"
-msgstr "Обновления"
-
-#: ../src/MainWindow.vala:282
-msgid "Search %s"
-msgstr "Поиск %s"
-
-#: ../src/Widgets/Banner.vala:107
-msgid "An open, pay-what-you-want app store"
+#: ../src/Application.vala:59
+msgid "translator-credits"
 msgstr ""
-"Открытый магазин приложений, использующий модель «плати, сколько хочешь»"
+"Maxim Taranov <png2378@gmail.com>, 2015, 2016, 2017.\n"
+"Yuly Nesterov <crow@rikka.io >, 2015, 2016.\n"
+"Dmitriy Nogay <imcatwhocode@protonmail.ch>, 2016.\n"
+"Kirill Romanov <djaler1@gmail.com>, 2016."
 
-#: ../src/Widgets/Banner.vala:120
-msgid "Get the apps that you need at a price you can afford."
-msgstr ""
-"Получите приложения, которые вам нужны, за ту цену, которую вы готовы "
-"предложить."
+#: ../src/Application.vala:150
+msgid "Specified link '%s' could not be found, searching instead"
+msgstr "Указанная ссылка «%s» не найдена, поиск замены"
 
-#: ../src/Widgets/AbstractAppContainer.vala:105
-msgid "Uninstall"
-msgstr "Удалить"
+#: ../src/Application.vala:217
+msgid "Application installed"
+msgstr "Приложение установлено"
 
-#: ../src/Widgets/AbstractAppContainer.vala:108
-msgid "Open"
-msgstr "Открыть"
+#: ../src/Application.vala:218
+msgid "%s has been successfully installed"
+msgstr "Приложение «%s» успешно установлено"
 
-#: ../src/Widgets/AbstractAppContainer.vala:126
-#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:158
-#: ../src/Dialogs/StripeDialog.vala:277
-msgid "Cancel"
-msgstr "Отменить"
+#: ../src/Application.vala:234
+msgid "Close"
+msgstr "Закрыть"
 
-#: ../src/Widgets/AbstractAppContainer.vala:161
-msgid "The %s Developers"
-msgstr "разработчиков %s"
-
-#: ../src/Widgets/AbstractAppContainer.vala:165
-msgid "by %s"
-msgstr "от %s"
-
-#: ../src/Widgets/AbstractAppContainer.vala:195
-#: ../src/Widgets/HumbleButton.vala:85
-msgid "Free"
-msgstr "Бесплатно"
-
-#: ../src/Widgets/AbstractAppContainer.vala:209
-msgid "Update"
-msgstr "Обновить"
-
-#: ../src/Widgets/CategoryFlowBox.vala:29
-msgid "Audio"
-msgstr "Аудио"
-
-#: ../src/Widgets/CategoryFlowBox.vala:30
-msgid "Development"
-msgstr "Разработка"
-
-#: ../src/Widgets/CategoryFlowBox.vala:31
-msgid "Accessories"
-msgstr "Утилиты"
-
-#: ../src/Widgets/CategoryFlowBox.vala:32
-msgid "Office"
-msgstr "Офис"
-
-#: ../src/Widgets/CategoryFlowBox.vala:33
-msgid "System"
-msgstr "Система"
-
-#: ../src/Widgets/CategoryFlowBox.vala:34
-msgid "Video"
-msgstr "Видео"
-
-#: ../src/Widgets/CategoryFlowBox.vala:35
-msgid "Graphics"
-msgstr "Графика"
-
-#: ../src/Widgets/CategoryFlowBox.vala:36
-msgid "Games"
-msgstr "Игры"
-
-#: ../src/Widgets/CategoryFlowBox.vala:37
-msgid "Education"
-msgstr "Образование"
-
-#: ../src/Widgets/CategoryFlowBox.vala:38
-msgid "Internet"
-msgstr "Интернет"
-
-#: ../src/Widgets/CategoryFlowBox.vala:39
-msgid "Science & Engineering"
-msgstr "Наука и инженерия"
-
-#: ../src/Widgets/CategoryFlowBox.vala:40
-msgid "Universal Access"
-msgstr "Универсальный доступ"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:68
-msgid "%u Update Available"
-msgid_plural "%u Updates Available"
-msgstr[0] "Доступно %u обновление"
-msgstr[1] "Доступны %u обновления"
-msgstr[2] "Доступны %u обновлений"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:69
-msgid "Size: %s"
-msgstr "Размер: %s"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:105
-msgid "Searching for updates…"
-msgstr "Поиск обновлений…"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:112
-msgid "Up to Date"
-msgstr "Обновления не требуются"
-
-#: ../src/Widgets/UpdateHeaderRow.vala:120
-msgid "Drivers"
-msgstr "Драйвера"
-
-#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: ../src/Widgets/HumbleButton.vala:152
-msgid "$%d.00"
-msgstr "$%d,00"
-
-#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: ../src/Widgets/HumbleButton.vala:155
-msgid "$%d"
-msgstr "$%d"
-
-#: ../src/Widgets/AbstractAppList.vala:35
-msgid "No Results"
-msgstr "Нет результатов"
-
-#: ../src/Widgets/AbstractAppList.vala:35
-msgid "No apps could be found. Try changing search terms."
-msgstr "Приложения не найдены. Попробуйте изменить поисковый запрос."
+#: ../src/Application.vala:236
+msgid "There Was An Error Installing %s"
+msgstr "Ошибка установки %"
 
 #: ../src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -182,6 +59,12 @@ msgstr "Все открытые приложения будут закрыты, 
 #: ../src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
 msgstr "Перезагрузка"
+
+#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:158
+#: ../src/Dialogs/StripeDialog.vala:277
+#: ../src/Widgets/AbstractAppContainer.vala:126
+msgid "Cancel"
+msgstr "Отменить"
 
 #: ../src/Dialogs/StripeDialog.vala:30
 msgid ""
@@ -323,13 +206,10 @@ msgstr ""
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
 
-#: ../src/Views/Homepage.vala:102
-msgid "Recently Updated"
-msgstr "Недавно обновлённые"
-
-#: ../src/Views/Homepage.vala:154
-msgid "Categories"
-msgstr "Категории"
+#: ../src/Views/InstalledView.vala:51 ../src/MainWindow.vala:123
+msgctxt "view"
+msgid "Updates"
+msgstr "Обновления"
 
 #. / TRANSLATORS: the name of the Search view
 #: ../src/Views/SearchView.vala:35
@@ -373,37 +253,187 @@ msgstr "Сообщить о проблеме"
 msgid "Help"
 msgstr "Помощь"
 
-#: ../src/Application.vala:42
-msgid "App Center"
+#: ../src/Views/Homepage.vala:102
+msgid "Recently Updated"
+msgstr "Недавно обновлённые"
+
+#: ../src/Views/Homepage.vala:154
+msgid "Categories"
+msgstr "Категории"
+
+#: ../src/Views/Homepage.vala:209 ../src/Views/Homepage.vala:216
+#: ../src/MainWindow.vala:122 ../src/MainWindow.vala:163
+#: ../src/MainWindow.vala:205
+msgid "Home"
+msgstr "Домашняя страница"
+
+#: ../src/Widgets/Banner.vala:100 ../src/MainWindow.vala:103
+msgid "AppCenter"
 msgstr "AppCenter"
 
-#: ../src/Application.vala:59
-msgid "translator-credits"
+#: ../src/Widgets/Banner.vala:107
+msgid "An open, pay-what-you-want app store"
 msgstr ""
-"Maxim Taranov <png2378@gmail.com>, 2015, 2016, 2017.\n"
-"Yuly Nesterov <crow@rikka.io >, 2015, 2016.\n"
-"Dmitriy Nogay <imcatwhocode@protonmail.ch>, 2016.\n"
-"Kirill Romanov <djaler1@gmail.com>, 2016."
+"Открытый магазин приложений, использующий модель «плати, сколько хочешь»"
 
-#: ../src/Application.vala:150
-msgid "Specified link '%s' could not be found, searching instead"
-msgstr "Указанная ссылка «%s» не найдена, поиск замены"
+#: ../src/Widgets/Banner.vala:120
+msgid "Get the apps that you need at a price you can afford."
+msgstr ""
+"Получите приложения, которые вам нужны, за ту цену, которую вы готовы "
+"предложить."
 
-#: ../src/Application.vala:217
-msgid "Application installed"
-msgstr "Приложение установлено"
+#: ../src/Widgets/CategoryFlowBox.vala:29
+msgid "Audio"
+msgstr "Аудио"
 
-#: ../src/Application.vala:218
-msgid "%s has been successfully installed"
-msgstr "Приложение «%s» успешно установлено"
+#: ../src/Widgets/CategoryFlowBox.vala:30
+msgid "Development"
+msgstr "Разработка"
 
-#: ../src/Application.vala:234
-msgid "Close"
-msgstr "Закрыть"
+#: ../src/Widgets/CategoryFlowBox.vala:31
+msgid "Accessories"
+msgstr "Утилиты"
 
-#: ../src/Application.vala:236
-msgid "There Was An Error Installing %s"
-msgstr "Ошибка установки %"
+#: ../src/Widgets/CategoryFlowBox.vala:32
+msgid "Office"
+msgstr "Офис"
+
+#: ../src/Widgets/CategoryFlowBox.vala:33
+msgid "System"
+msgstr "Система"
+
+#: ../src/Widgets/CategoryFlowBox.vala:34
+msgid "Video"
+msgstr "Видео"
+
+#: ../src/Widgets/CategoryFlowBox.vala:35
+msgid "Graphics"
+msgstr "Графика"
+
+#: ../src/Widgets/CategoryFlowBox.vala:36
+msgid "Games"
+msgstr "Игры"
+
+#: ../src/Widgets/CategoryFlowBox.vala:37
+msgid "Education"
+msgstr "Образование"
+
+#: ../src/Widgets/CategoryFlowBox.vala:38
+msgid "Internet"
+msgstr "Интернет"
+
+#: ../src/Widgets/CategoryFlowBox.vala:39
+msgid "Science & Engineering"
+msgstr "Наука и инженерия"
+
+#: ../src/Widgets/CategoryFlowBox.vala:40
+msgid "Universal Access"
+msgstr "Универсальный доступ"
+
+#: ../src/Widgets/HumbleButton.vala:85
+#: ../src/Widgets/AbstractAppContainer.vala:195
+msgid "Free"
+msgstr "Бесплатно"
+
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
+#: ../src/Widgets/HumbleButton.vala:152
+msgid "$%d.00"
+msgstr "$%d,00"
+
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
+#: ../src/Widgets/HumbleButton.vala:155
+msgid "$%d"
+msgstr "$%d"
+
+#: ../src/Widgets/AbstractAppContainer.vala:105
+msgid "Uninstall"
+msgstr "Удалить"
+
+#: ../src/Widgets/AbstractAppContainer.vala:108
+msgid "Open"
+msgstr "Открыть"
+
+#: ../src/Widgets/AbstractAppContainer.vala:161
+msgid "The %s Developers"
+msgstr "разработчиков %s"
+
+#: ../src/Widgets/AbstractAppContainer.vala:165
+msgid "by %s"
+msgstr "от %s"
+
+#: ../src/Widgets/AbstractAppContainer.vala:209
+msgid "Update"
+msgstr "Обновить"
+
+#: ../src/Widgets/AbstractAppList.vala:35
+msgid "No Results"
+msgstr "Нет результатов"
+
+#: ../src/Widgets/AbstractAppList.vala:35
+msgid "No apps could be found. Try changing search terms."
+msgstr "Приложения не найдены. Попробуйте изменить поисковый запрос."
+
+#: ../src/Widgets/UpdateHeaderRow.vala:68
+msgid "%u Update Available"
+msgid_plural "%u Updates Available"
+msgstr[0] "Доступно %u обновление"
+msgstr[1] "Доступны %u обновления"
+msgstr[2] "Доступны %u обновлений"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:69
+msgid "Size: %s"
+msgstr "Размер: %s"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:105
+msgid "Searching for updates…"
+msgstr "Поиск обновлений…"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:112
+msgid "Up to Date"
+msgstr "Обновления не требуются"
+
+#: ../src/Widgets/UpdateHeaderRow.vala:120
+msgid "Drivers"
+msgstr "Драйвера"
+
+#: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
+#: ../src/MainWindow.vala:300 ../src/MainWindow.vala:322
+msgid "Search Apps"
+msgstr "Поиск приложений"
+
+#: ../src/MainWindow.vala:282
+msgid "Search %s"
+msgstr "Поиск %s"
+
+#: ../src/Core/Client.vala:94
+msgid "Operating System Updates"
+msgstr "Обновления операционной системы"
+
+#: ../src/Core/Client.vala:95
+msgid "Updates to system components"
+msgstr "Обновление компонентов системы"
+
+#: ../src/Core/Client.vala:453
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "Доступно обновление"
+msgstr[1] "Доступны обновления"
+msgstr[2] "Доступны обновления"
+
+#: ../src/Core/Client.vala:454
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "Для системы доступно %u обновление"
+msgstr[1] "Для системы доступны %u обновления"
+msgstr[2] "Для системы доступны %u обновлений"
+
+#: ../src/Core/Client.vala:483
+msgid "Restart Required"
+msgstr "Требуется перезагрузка"
+
+#: ../src/Core/Client.vala:484
+msgid "Please restart your system to finalize updates"
+msgstr "Перезагрузите систему чтобы завершить обновление"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -548,36 +578,6 @@ msgstr "Копирование файлов"
 #: ../src/Core/ChangeInformation.vala:124
 msgid "Unknown state"
 msgstr "Неизвестное состояние"
-
-#: ../src/Core/Client.vala:94
-msgid "Operating System Updates"
-msgstr "Обновления операционной системы"
-
-#: ../src/Core/Client.vala:95
-msgid "Updates to system components"
-msgstr "Обновление компонентов системы"
-
-#: ../src/Core/Client.vala:453
-msgid "Update Available"
-msgid_plural "Updates Available"
-msgstr[0] "Доступно обновление"
-msgstr[1] "Доступны обновления"
-msgstr[2] "Доступны обновления"
-
-#: ../src/Core/Client.vala:454
-msgid "%u update is available for your system"
-msgid_plural "%u updates are available for your system"
-msgstr[0] "Для системы доступно %u обновление"
-msgstr[1] "Для системы доступны %u обновления"
-msgstr[2] "Для системы доступны %u обновлений"
-
-#: ../src/Core/Client.vala:483
-msgid "Restart Required"
-msgstr "Требуется перезагрузка"
-
-#: ../src/Core/Client.vala:484
-msgid "Please restart your system to finalize updates"
-msgstr "Перезагрузите систему чтобы завершить обновление"
 
 #~ msgid "Install"
 #~ msgstr "Установить"
