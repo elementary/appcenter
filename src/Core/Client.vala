@@ -291,7 +291,13 @@ public class AppCenterCore.Client : Object {
             return;
         }
 
-        var command = new Granite.Services.SimpleCommand ("/usr/bin", "ubuntu-drivers list");
+        string? drivers_exec_path = Environment.find_program_in_path ("ubuntu-drivers");
+        if (drivers_exec_path == null) {
+            task_count--;
+            return;
+        }
+
+        var command = new Granite.Services.SimpleCommand ("/", "%s list".printf (drivers_exec_path));
         command.done.connect ((command, status) => parse_drivers_output (command.standard_output_str, status));
         command.run ();
     }
@@ -346,14 +352,32 @@ public class AppCenterCore.Client : Object {
         foreach (var pk_package in installed) {
             var package = package_list[pk_package.get_name ()];
             if (package != null) {
-                package.installed_packages.add (pk_package);
-                package.latest_version = pk_package.get_version ();
-                package.update_state ();
+                populate_package (package, pk_package);
                 packages.add (package);
             }
         }
 
         return packages;
+    }
+
+    public Gee.Collection<AppCenterCore.Package> get_installed_applications_sync () {
+        var packages = new Gee.TreeSet<AppCenterCore.Package> ();
+        var installed = get_installed_packages_sync ();
+        foreach (var pk_package in installed) {
+            var package = package_list[pk_package.get_name ()];
+            if (package != null) {
+                populate_package (package, pk_package);
+                packages.add (package);
+            }
+        }
+
+        return packages;        
+    }
+
+    private static void populate_package (AppCenterCore.Package package, Pk.Package pk_package) {
+        package.installed_packages.add (pk_package);
+        package.latest_version = pk_package.get_version ();
+        package.update_state ();        
     }
 
     public Gee.Collection<AppCenterCore.Package> get_applications_for_category (AppStream.Category category) {
@@ -593,6 +617,26 @@ public class AppCenterCore.Client : Object {
 
         task_count--;
         return installed;
+    }
+
+    public Gee.TreeSet<Pk.Package> get_installed_packages_sync () {
+        task_count++;
+
+        Pk.Bitfield filter = Pk.Bitfield.from_enums (Pk.Filter.INSTALLED, Pk.Filter.NEWEST);
+        var installed = new Gee.TreeSet<Pk.Package> ();
+
+        try {
+            Pk.Results results = client.get_packages_sync (filter, null, (prog, type) => {});
+            results.get_package_array ().foreach ((pk_package) => {
+                installed.add (pk_package);
+            });
+
+        } catch (Error e) {
+            critical (e.message);
+        }
+
+        task_count--;
+        return installed;   
     }
 
     public AppCenterCore.Package? get_package_for_component_id (string id) {
