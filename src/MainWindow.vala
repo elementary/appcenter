@@ -221,6 +221,8 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         stack.set_visible_child (homepage);
         homepage.show_package (package);
         view_opened (_("Home"), false, null);
+
+        update_view ();
     }
 
     public void go_to_installed () {
@@ -266,6 +268,8 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             return_button.no_show_all = true;
             return_button.hide ();
         }
+
+        update_view ();
     }
 
     private void view_opened (string return_name, bool allow_search, string? custom_header = null) {
