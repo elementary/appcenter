@@ -23,6 +23,8 @@ using AppCenterCore;
 public class AppCenter.Views.SearchView : View {
     AppListView app_list_view;
 
+    public bool viewing_package { get; private set; default = false; }
+
     public SearchView () {
         
     }
@@ -33,11 +35,13 @@ public class AppCenter.Views.SearchView : View {
         app_list_view.show_app.connect ((package) => {
             /// TRANSLATORS: the name of the Search view
             subview_entered (C_("view", "Search"), false);
+            viewing_package = true;
             show_package (package);
         });
     }
 
     public override void return_clicked () {
+        viewing_package = false;
         set_visible_child (app_list_view);
     }
     
