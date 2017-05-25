@@ -78,7 +78,26 @@ namespace AppCenter.Views {
         }
 
         private static int compare_packages (AppCenterCore.Package p1, AppCenterCore.Package p2) {
+            bool p1_is_elementary_native = p1.component.get_origin () == "appcenter-xenial-main";
+            bool p2_is_elementary_native = p2.component.get_origin () == "appcenter-xenial-main";
+
+            if (p1_is_elementary_native || p2_is_elementary_native) {
+                return p1_is_elementary_native ? -1 : 1;
+            }
+
             return p1.get_name ().collate (p2.get_name ());
+        }
+
+        [CCode (instance_pos = -1)]
+        protected override int package_row_compare (Widgets.AppListRow row1, Widgets.AppListRow row2) {
+            bool p1_is_elementary_native = row1.get_package ().component.get_origin () == "appcenter-xenial-main";
+            bool p2_is_elementary_native = row1.get_package ().component.get_origin () == "appcenter-xenial-main";
+
+            if (p1_is_elementary_native || p2_is_elementary_native) {
+                return p1_is_elementary_native ? -1 : 1;
+            }
+
+            return row1.get_name ().collate (row1.get_name ());
         }
     }
 
