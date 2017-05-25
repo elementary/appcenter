@@ -440,6 +440,18 @@ public class AppCenterCore.Client : Object {
             throw e;
         }
 
+        if (package != null) {
+            Pk.Results details = client.get_details_sync ({ package.package_id, null }, null, (t, p) => {});
+            details.get_details_array ().foreach ((details) => {
+                package.license = details.license;
+                package.description = details.description;
+                package.summary = details.summary;
+                package.group = details.group;
+                package.size = details.size;
+                package.url = details.url;
+            });
+        }   
+
         task_count--;
         return package;
     }
