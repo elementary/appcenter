@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-21 09:09-0700\n"
-"PO-Revision-Date: 2017-05-25 13:16+0000\n"
+"PO-Revision-Date: 2017-05-25 13:20+0000\n"
 "Last-Translator: Luís Lima <geral@liqensoft.com>\n"
 "Language-Team: Portuguese "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/pt/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 
 #: ../src/Application.vala:42
 msgid "App Center"
-msgstr "Centro de Aplicações"
+msgstr "App Center"
 
 #: ../src/Application.vala:59
 msgid "translator-credits"
