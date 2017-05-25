@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-05-02 11:59+0000\n"
-"Last-Translator: danny <neum.danny@gmail.com>\n"
-"Language-Team: German <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/de/>\n"
+"PO-Revision-Date: 2017-05-25 20:45+0000\n"
+"Last-Translator: Jörg Habekost <joebeam@t-online.de>\n"
+"Language-Team: German "
+"<https://l10n.elementary.io/projects/appcenter/appcenter/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
 #: ../src/Application.vala:40
@@ -96,22 +96,24 @@ msgstr "Bitte überprüfe deine Zahlungsinformationen und versuche es erneut."
 
 #: ../src/Dialogs/StripeDialog.vala:75
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: ../src/Dialogs/StripeDialog.vala:77
 msgid ""
 "Your email address is used to send a receipt. It is never stored and you "
 "will not be subscribed to a mailing list."
 msgstr ""
+"Deine Email-Adresse wird benutzt, um die Rechnung zu versenden. Sie wird "
+"nicht gespeichert und keiner Email-Nachrichtenliste hinzugefügt."
 
 #: ../src/Dialogs/StripeDialog.vala:88
 msgid "Card Number"
-msgstr ""
+msgstr "Kartennummer"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: ../src/Dialogs/StripeDialog.vala:100
 msgid "MM / YY"
-msgstr ""
+msgstr "MM / JJ"
 
 #: ../src/Dialogs/StripeDialog.vala:120
 msgid "CVC"
@@ -146,18 +148,24 @@ msgstr "Erneut versuchen"
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr ""
+"Die Kartennummer ist nicht korrekt. Versuche bitte die richtige Kartennummer "
+"einzugeben."
 
 #: ../src/Dialogs/StripeDialog.vala:465
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"Der Monat des Ablaufs ist falsch. Bitte versuche das korrekte Ablaufdatum "
+"einzugeben."
 
 #: ../src/Dialogs/StripeDialog.vala:467 ../src/Dialogs/StripeDialog.vala:525
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"Das Jahr des Ablaufs ist falsch. Bitte versuche das korrekte Ablaufdatum "
+"einzugeben."
 
 #: ../src/Dialogs/StripeDialog.vala:470 ../src/Dialogs/StripeDialog.vala:523
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
@@ -165,7 +173,7 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:472 ../src/Dialogs/StripeDialog.vala:514
 msgid "The card has expired. Please try again with a different card."
-msgstr ""
+msgstr "Die Karte ist abgelaufen. Versuche es mit einer anderen Karte."
 
 #: ../src/Dialogs/StripeDialog.vala:492
 msgid "There are too many payment requests at the moment, please retry later."
@@ -176,12 +184,16 @@ msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
 msgstr ""
+"Diese Karte unterstützt nicht diese Art der Transaktion. Versuche es bitte "
+"mit einer anderen Karte."
 
 #: ../src/Dialogs/StripeDialog.vala:510
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
 msgstr ""
+"Die Währung wird nicht von dieser Karte unterstützt. Bitte versuche es noch "
+"einmal mit einer anderen Karte."
 
 #: ../src/Dialogs/StripeDialog.vala:512
 msgid "The transaction has already been processed."
@@ -192,6 +204,8 @@ msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "Postal code."
 msgstr ""
+"Die Postleitzahl ist nicht korrekt. Bitte versuche es noch einmal mit der "
+"korrekten Postleitzahl."
 
 #: ../src/Dialogs/StripeDialog.vala:518
 msgid "You don't have enough funds. Please use an alternative payment method."
@@ -200,21 +214,29 @@ msgstr ""
 #: ../src/Dialogs/StripeDialog.vala:520
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr ""
+"Der Betrag ist nicht korrekt. Bitte versuche es noch einmal mit einem "
+"gültigen Betrag."
 
 #: ../src/Dialogs/StripeDialog.vala:531
 msgid "The pin number is incorrect. Please try again using the correct pin."
 msgstr ""
+"Die PIN-Nummer ist nicht korrekt. Bitte versuche es nich einmal mit der "
+"korrekten PIN."
 
 #: ../src/Dialogs/StripeDialog.vala:533
 msgid ""
 "There has been too many pin attempts. Please try again with a different card."
 msgstr ""
+"Es gab zu viele PIN-Versuche. Bitte versuche es noch einmal mit einer "
+"anderen Karte."
 
 #: ../src/Dialogs/StripeDialog.vala:553
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
 msgstr ""
+"Es ist nicht möglich, die Transaktion abzuschließen. Bitte kontaktiere Deine "
+"Bank für weiterführende Informationen."
 
 #: ../src/Dialogs/StripeDialog.vala:556
 msgid "The balance or credit limit on the card has been reached."
@@ -414,7 +436,7 @@ msgstr "Aktuell"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:120
 msgid "Drivers"
-msgstr ""
+msgstr "Treiber"
 
 #: ../src/MainWindow.vala:118 ../src/MainWindow.vala:146
 #: ../src/MainWindow.vala:316 ../src/MainWindow.vala:338
@@ -422,17 +444,18 @@ msgid "Search Apps"
 msgstr "Anwendungen suchen"
 
 #: ../src/MainWindow.vala:161
-#, fuzzy
 msgid "Network Is Not Available"
-msgstr "Bildschirmfoto nicht vorhanden"
+msgstr "Netzwerk ist nicht erreichbar"
 
 #: ../src/MainWindow.vala:162
 msgid "Connect to the internet to install or update apps."
 msgstr ""
+"Verbindung mit dem Internet herstellen, um Apps zu installieren oder zu "
+"aktualisieren."
 
 #: ../src/MainWindow.vala:165
 msgid "Network Settings…"
-msgstr ""
+msgstr "Netzwerkeinstellungen…"
 
 #: ../src/MainWindow.vala:298
 msgid "Search %s"
@@ -576,7 +599,7 @@ msgstr "Zwischenspeicher wird geladen"
 
 #: ../src/Core/ChangeInformation.vala:108
 msgid "Scanning applications"
-msgstr "Anwenungen werden überprüft"
+msgstr "Anwendungen werden überprüft"
 
 #: ../src/Core/ChangeInformation.vala:110
 msgid "Generating package lists"
