@@ -118,7 +118,7 @@ namespace AppCenter.Views {
         }
 
         private void make_header (Widgets.AppListRow row) {
-            var header = new Gtk.Label (_("Other apps"));
+            var header = new Gtk.Label (_("Non-Curated Apps"));
             header.margin = 12;
             header.margin_top = 18;
             header.get_style_context ().add_class ("h4");
