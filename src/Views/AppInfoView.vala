@@ -123,11 +123,6 @@ namespace AppCenter.Views {
             content_grid.add (app_description);
             content_grid.add (links_grid);
 
-            var scrolled = new Gtk.ScrolledWindow (null, null);
-            scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
-            scrolled.expand = true;
-            scrolled.add (content_grid);
-
             header_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
             header_box.get_style_context ().add_class ("banner");
             header_box.hexpand = true;
@@ -151,8 +146,17 @@ namespace AppCenter.Views {
             header_grid.attach (action_stack, 3, 0, 1, 1);
             header_box.add (header_grid);
 
-            attach (header_box, 0, 0, 1, 1);
-            attach (scrolled, 0, 2, 1, 1);
+            var grid = new Gtk.Grid ();
+            grid.attach (header_box, 0, 0, 1, 1);
+            grid.attach (content_grid, 0, 1, 1, 1);
+
+            var scrolled = new Gtk.ScrolledWindow (null, null);
+            scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
+            scrolled.expand = true;
+            scrolled.add (grid);
+
+            add (scrolled);
+
             reload_css ();
         }
 
