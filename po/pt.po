@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-05-25 13:20+0000\n"
+"PO-Revision-Date: 2017-05-25 17:58+0000\n"
 "Last-Translator: Luís Lima <geral@liqensoft.com>\n"
-"Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/pt/>\n"
+"Language-Team: Portuguese "
+"<https://l10n.elementary.io/projects/appcenter/appcenter/pt/>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -426,17 +426,16 @@ msgid "Search Apps"
 msgstr "Procurar"
 
 #: ../src/MainWindow.vala:161
-#, fuzzy
 msgid "Network Is Not Available"
-msgstr "Captura de Ecrã Não Disponível"
+msgstr "Sem Ligação à Rede"
 
 #: ../src/MainWindow.vala:162
 msgid "Connect to the internet to install or update apps."
-msgstr ""
+msgstr "Ligue-se à rede para instalar ou atualizar as aplicações."
 
 #: ../src/MainWindow.vala:165
 msgid "Network Settings…"
-msgstr ""
+msgstr "Definições de Rede…"
 
 #: ../src/MainWindow.vala:298
 msgid "Search %s"
