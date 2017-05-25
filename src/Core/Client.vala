@@ -291,7 +291,13 @@ public class AppCenterCore.Client : Object {
             return;
         }
 
-        var command = new Granite.Services.SimpleCommand ("/usr/bin", "ubuntu-drivers list");
+        string? drivers_exec_path = Environment.find_program_in_path ("ubuntu-drivers");
+        if (drivers_exec_path == null) {
+            task_count--;
+            return;
+        }
+
+        var command = new Granite.Services.SimpleCommand ("/", "%s list".printf (drivers_exec_path));
         command.done.connect ((command, status) => parse_drivers_output (command.standard_output_str, status));
         command.run ();
     }
