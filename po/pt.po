@@ -2,11 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-21 09:09-0700\n"
+"POT-Creation-Date: 2017-05-25 08:30-0700\n"
 "PO-Revision-Date: 2017-05-25 13:20+0000\n"
 "Last-Translator: Luís Lima <geral@liqensoft.com>\n"
-"Language-Team: Portuguese "
-"<https://l10n.elementary.io/projects/appcenter/appcenter/pt/>\n"
+"Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/pt/>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,11 +15,11 @@ msgstr ""
 "X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
-#: ../src/Application.vala:42
+#: ../src/Application.vala:40
 msgid "App Center"
 msgstr "App Center"
 
-#: ../src/Application.vala:59
+#: ../src/Application.vala:57
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
@@ -29,23 +29,23 @@ msgstr ""
 "  Yvo Marques https://launchpad.net/~macghivo\n"
 "  elementaryart (old) https://launchpad.net/~elementaryart"
 
-#: ../src/Application.vala:150
+#: ../src/Application.vala:114
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "A ligação '%s' não foi encontrada; a pesquisar, em alternativa"
 
-#: ../src/Application.vala:217
+#: ../src/Application.vala:216
 msgid "Application installed"
 msgstr "Aplicações instaladas"
 
-#: ../src/Application.vala:218
+#: ../src/Application.vala:217
 msgid "%s has been successfully installed"
 msgstr "%u foi instalado com sucesso"
 
-#: ../src/Application.vala:234
+#: ../src/Application.vala:233
 msgid "Close"
 msgstr "Fechar"
 
-#: ../src/Application.vala:236
+#: ../src/Application.vala:235
 msgid "There Was An Error Installing %s"
 msgstr "Ocorreu um erro ao instalar %s"
 
@@ -62,8 +62,8 @@ msgstr ""
 msgid "Restart"
 msgstr "Reiniciar"
 
-#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:158
-#: ../src/Dialogs/StripeDialog.vala:277
+#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:166
+#: ../src/Dialogs/StripeDialog.vala:285
 #: ../src/Widgets/AbstractAppContainer.vala:126
 msgid "Cancel"
 msgstr "Cancelar"
@@ -101,42 +101,42 @@ msgstr "Número do Cartão"
 msgid "MM / YY"
 msgstr "MM / AA"
 
-#: ../src/Dialogs/StripeDialog.vala:112
+#: ../src/Dialogs/StripeDialog.vala:120
 msgid "CVC"
 msgstr "CVC"
 
-#: ../src/Dialogs/StripeDialog.vala:149
+#: ../src/Dialogs/StripeDialog.vala:157
 msgid "Privacy Policy"
 msgstr "Política de Privacidade"
 
-#: ../src/Dialogs/StripeDialog.vala:160 ../src/Dialogs/StripeDialog.vala:276
+#: ../src/Dialogs/StripeDialog.vala:168 ../src/Dialogs/StripeDialog.vala:284
 msgid "Pay $%d.00"
 msgstr "Pagar $%d.00"
 
-#: ../src/Dialogs/StripeDialog.vala:205
+#: ../src/Dialogs/StripeDialog.vala:213
 msgid "Processing"
 msgstr "A processar"
 
-#: ../src/Dialogs/StripeDialog.vala:230
+#: ../src/Dialogs/StripeDialog.vala:238
 msgid "There Was a Problem Processing Your Payment"
 msgstr "Houve um problema a processar o seu pagamento"
 
-#: ../src/Dialogs/StripeDialog.vala:268
+#: ../src/Dialogs/StripeDialog.vala:276
 msgid "Pay Later"
 msgstr "Pagar depois"
 
-#: ../src/Dialogs/StripeDialog.vala:269
+#: ../src/Dialogs/StripeDialog.vala:277
 msgid "Retry"
 msgstr "Tentar novamente"
 
-#: ../src/Dialogs/StripeDialog.vala:454 ../src/Dialogs/StripeDialog.vala:519
+#: ../src/Dialogs/StripeDialog.vala:463 ../src/Dialogs/StripeDialog.vala:528
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr ""
 "O número do cartão está incorreto. Por favor tente novamente com um número "
 "de cartão válido."
 
-#: ../src/Dialogs/StripeDialog.vala:456
+#: ../src/Dialogs/StripeDialog.vala:465
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
@@ -144,7 +144,7 @@ msgstr ""
 "O mês de expiração é inválido. Por favor tente novamente com a data de "
 "expiração correta."
 
-#: ../src/Dialogs/StripeDialog.vala:458 ../src/Dialogs/StripeDialog.vala:516
+#: ../src/Dialogs/StripeDialog.vala:467 ../src/Dialogs/StripeDialog.vala:525
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
@@ -152,23 +152,23 @@ msgstr ""
 "O ano de expiração é inválido. Por favor tente novamente com a data de "
 "expiração correta."
 
-#: ../src/Dialogs/StripeDialog.vala:461 ../src/Dialogs/StripeDialog.vala:514
+#: ../src/Dialogs/StripeDialog.vala:470 ../src/Dialogs/StripeDialog.vala:523
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr ""
 "O número CVC está incorreto. Por favor tente novamente com o CVC correto."
 
-#: ../src/Dialogs/StripeDialog.vala:463 ../src/Dialogs/StripeDialog.vala:505
+#: ../src/Dialogs/StripeDialog.vala:472 ../src/Dialogs/StripeDialog.vala:514
 msgid "The card has expired. Please try again with a different card."
 msgstr ""
 "O cartão está expirado. Por favor tente novamente com um cartão diferente."
 
-#: ../src/Dialogs/StripeDialog.vala:483
+#: ../src/Dialogs/StripeDialog.vala:492
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr ""
 "Existem muitos pedidos para pagamento neste momento, por favor tente "
 "novamente mais tarde."
 
-#: ../src/Dialogs/StripeDialog.vala:499
+#: ../src/Dialogs/StripeDialog.vala:508
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
@@ -176,7 +176,7 @@ msgstr ""
 "O cartão não suporta este tipo de transação. Por favor tente novamente com "
 "um cartão diferente."
 
-#: ../src/Dialogs/StripeDialog.vala:501
+#: ../src/Dialogs/StripeDialog.vala:510
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
@@ -184,11 +184,11 @@ msgstr ""
 "Esta moeda não é suportada pelo cartão. Por favor tente novamente com um "
 "cartão diferente."
 
-#: ../src/Dialogs/StripeDialog.vala:503
+#: ../src/Dialogs/StripeDialog.vala:512
 msgid "The transaction has already been processed."
 msgstr "A transação já foi processada."
 
-#: ../src/Dialogs/StripeDialog.vala:507
+#: ../src/Dialogs/StripeDialog.vala:516
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "Postal code."
@@ -196,28 +196,28 @@ msgstr ""
 "O código postal está incorreto. Por favor tente novamente usando um código "
 "postal válido."
 
-#: ../src/Dialogs/StripeDialog.vala:509
+#: ../src/Dialogs/StripeDialog.vala:518
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr ""
 "Não tem fundos suficientes. Por favor use um método de pagamento alternativo."
 
-#: ../src/Dialogs/StripeDialog.vala:511
+#: ../src/Dialogs/StripeDialog.vala:520
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr ""
 "O montante está incorreto. Por favor tente de novo com um montante válido."
 
-#: ../src/Dialogs/StripeDialog.vala:522
+#: ../src/Dialogs/StripeDialog.vala:531
 msgid "The pin number is incorrect. Please try again using the correct pin."
 msgstr "O pin está incorreto. Por favor tente novamente usando o pin certo."
 
-#: ../src/Dialogs/StripeDialog.vala:524
+#: ../src/Dialogs/StripeDialog.vala:533
 msgid ""
 "There has been too many pin attempts. Please try again with a different card."
 msgstr ""
 "Foram usadas demasiadas tentativas para inserir o pin. Por favor tente "
 "novamente com um cartão diferente."
 
-#: ../src/Dialogs/StripeDialog.vala:544
+#: ../src/Dialogs/StripeDialog.vala:553
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
@@ -225,22 +225,22 @@ msgstr ""
 "Impossível completar a transação. Por favor contacte o seu banco para mais "
 "informações."
 
-#: ../src/Dialogs/StripeDialog.vala:547
+#: ../src/Dialogs/StripeDialog.vala:556
 msgid "The balance or credit limit on the card has been reached."
 msgstr "Atingido limite de crédito ou balanço negativo."
 
-#: ../src/Dialogs/StripeDialog.vala:550
+#: ../src/Dialogs/StripeDialog.vala:559
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
 "O cartão fornecido é de testes. Por favor use um cartão real para continuar."
 
-#: ../src/Views/InstalledView.vala:51 ../src/MainWindow.vala:123
+#: ../src/Views/InstalledView.vala:51 ../src/MainWindow.vala:130
 msgctxt "view"
 msgid "Updates"
 msgstr "Atualizações"
 
 #. / TRANSLATORS: the name of the Search view
-#: ../src/Views/SearchView.vala:35
+#: ../src/Views/SearchView.vala:37
 msgctxt "view"
 msgid "Search"
 msgstr "Procurar"
@@ -281,21 +281,21 @@ msgstr "Comunicar um problema"
 msgid "Help"
 msgstr "Ajuda"
 
-#: ../src/Views/Homepage.vala:102
+#: ../src/Views/Homepage.vala:104
 msgid "Recently Updated"
 msgstr "Atualizado Recentemente"
 
-#: ../src/Views/Homepage.vala:154
+#: ../src/Views/Homepage.vala:156
 msgid "Categories"
 msgstr "Categorias"
 
-#: ../src/Views/Homepage.vala:209 ../src/Views/Homepage.vala:216
-#: ../src/MainWindow.vala:122 ../src/MainWindow.vala:163
-#: ../src/MainWindow.vala:205
+#: ../src/Views/Homepage.vala:211 ../src/Views/Homepage.vala:219
+#: ../src/MainWindow.vala:129 ../src/MainWindow.vala:181
+#: ../src/MainWindow.vala:223
 msgid "Home"
 msgstr "Página Inicial"
 
-#: ../src/Widgets/Banner.vala:100 ../src/MainWindow.vala:103
+#: ../src/Widgets/Banner.vala:100 ../src/MainWindow.vala:110
 msgid "AppCenter"
 msgstr "AppCenter"
 
@@ -420,12 +420,25 @@ msgstr "Atualizado"
 msgid "Drivers"
 msgstr "Controladores"
 
-#: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
-#: ../src/MainWindow.vala:300 ../src/MainWindow.vala:322
+#: ../src/MainWindow.vala:118 ../src/MainWindow.vala:146
+#: ../src/MainWindow.vala:316 ../src/MainWindow.vala:338
 msgid "Search Apps"
 msgstr "Procurar"
 
-#: ../src/MainWindow.vala:282
+#: ../src/MainWindow.vala:161
+#, fuzzy
+msgid "Network Is Not Available"
+msgstr "Captura de Ecrã Não Disponível"
+
+#: ../src/MainWindow.vala:162
+msgid "Connect to the internet to install or update apps."
+msgstr ""
+
+#: ../src/MainWindow.vala:165
+msgid "Network Settings…"
+msgstr ""
+
+#: ../src/MainWindow.vala:298
 msgid "Search %s"
 msgstr "Pesquisar %s"
 
@@ -437,23 +450,23 @@ msgstr "Atualizações do Sistema Operativo"
 msgid "Updates to system components"
 msgstr "Atualizações aos componentes do sistema"
 
-#: ../src/Core/Client.vala:453
+#: ../src/Core/Client.vala:459
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Atualização disponível"
 msgstr[1] "Atualizações disponíveis"
 
-#: ../src/Core/Client.vala:454
+#: ../src/Core/Client.vala:460
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "%u atualização disponível para o seu sistema"
 msgstr[1] "%u atualizações disponíveis para o seu sistema"
 
-#: ../src/Core/Client.vala:483
+#: ../src/Core/Client.vala:489
 msgid "Restart Required"
 msgstr "Necessário Reiniciar"
 
-#: ../src/Core/Client.vala:484
+#: ../src/Core/Client.vala:490
 msgid "Please restart your system to finalize updates"
 msgstr "Por favor reinicie o seu sistema para finalizar as atualizações"
 
