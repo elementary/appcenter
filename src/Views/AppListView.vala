@@ -100,7 +100,7 @@ namespace AppCenter.Views {
                 return p1_is_elementary_native ? -1 : 1;
             }
 
-            return row1.get_name ().collate (row1.get_name ());
+            return row1.get_name_label ().collate (row1.get_name_label ());
         }
 
         [CCode (instance_pos = -1)]
