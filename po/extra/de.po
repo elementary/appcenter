@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2017-05-25 20:54+0000\n"
-"Last-Translator: Jörg Habekost <joebeam@t-online.de>\n"
+"PO-Revision-Date: 2017-05-26 02:49+0000\n"
+"Last-Translator: SteffenL <steffenl@protonmail.com>\n"
 "Language-Team: German "
 "<https://l10n.elementary.io/projects/appcenter/extra/de/>\n"
 "Language: de\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Aktualisierungen;Software;"
 
 msgid "About AppCenter"
-msgstr "Info zu AppCenter"
+msgstr "Info zum AppCenter"
 
 msgid ""
 "An app store for indie and open source developers. Browse by categories or "
@@ -40,38 +40,44 @@ msgstr ""
 "Hinzufügen von neuen Funktionen und Verbesserungen genutzt."
 
 msgid "Bug fixes and improve perfomance."
-msgstr "Fehlerbehebung und Performance Verbesserung."
+msgstr "Fehlerbehebungen und Performance-Verbesserung."
 
 msgid "Various bug fixes and performance improvements"
-msgstr "Verschiedene Fehlerbehebungen und Geschwindigkeitssteigerungen"
+msgstr "Verschiedene Fehlerbehebungen und Performance-Verbesserungen"
 
 msgid "New translations"
 msgstr "Neue Übersetzungen"
 
 msgid "Fix crash caused by entries with missing packages"
 msgstr ""
+"Folgender Fehler wurde behoben: Absturz nach Aufrufen von Einträgen mit "
+"fehlenden Paketen"
 
 msgid "Add capability to search by category and apply minor bug fixes."
 msgstr ""
+"Möglichkeit der Suche nach Kategorien hinzugefügt plus einige kleine "
+"Fehlerbehebungen."
 
 msgid "It is now possible to search apps inside a category"
 msgstr "Jetzt ist es möglich, innerhalb einer Kategorie nach Apps zu suchen"
 
 msgid "Prevent multiple authentication dialogs when resuming from suspend"
 msgstr ""
+"Authentifizierung nach Aufwecken aus dem Wartezustand wird nun nicht mehr "
+"dupliziert angezeigt"
 
 msgid ""
 "Search perfomance has beeen improved, the category name is now shown on the "
 "headbar and minor bugs have been fixed."
 msgstr ""
-"Die Suchgeschwindigkeit wurde verbessert, der Name der Kategorie wird nun in "
-"der Kopfzeile angezeigt und einige Fehler wurden behoben."
+"Die Suchfunktion wurde verbessert, der Name der Kategorie wird nun in der "
+"Kopfzeile angezeigt und einige kleinere Fehler wurden behoben."
 
 msgid "Fix Steam installation"
-msgstr ""
+msgstr "Fehler bei der Steam-Installation wurde behoben"
 
 msgid "Make search asynchronous"
-msgstr ""
+msgstr "Asynchrone Suche aktivieren"
 
 #, fuzzy
 #~ msgid "App Center"
