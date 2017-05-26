@@ -82,7 +82,7 @@ public class AppCenterCore.Client : Object {
                 }
             });
         } catch (Error e) {
-            error (e.message);
+            critical (e.message);
         }
 
         var icon = new AppStream.Icon ();
