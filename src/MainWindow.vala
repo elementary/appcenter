@@ -29,6 +29,8 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     private Gtk.Stack button_stack;
     private ulong task_finished_connection = 0U;
     private Gee.Deque<string> return_button_history;
+    private Granite.Widgets.AlertView network_alert_view;
+    private Gtk.Grid network_view;
 
     public static Views.InstalledView installed_view { get; private set; }
 
@@ -68,14 +70,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         search_entry.search_changed.connect (() => trigger_search ());
 
         view_mode.notify["selected"].connect (() => {
-            switch (view_mode.selected) {
-                case 0:
-                    stack.set_visible_child (homepage);
-                    break;
-                default:
-                    stack.set_visible_child (installed_view);
-                    break;
-            }
+            update_view ();
         });
 
         search_entry.key_press_event.connect ((event) => {
@@ -95,6 +90,18 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         homepage.subview_entered.connect (view_opened);
         installed_view.subview_entered.connect (view_opened);
         search_view.subview_entered.connect (view_opened);
+
+        NetworkMonitor.get_default ().network_changed.connect (update_view);
+
+        network_alert_view.action_activated.connect (() => {
+            try {
+                AppInfo.launch_default_for_uri ("settings://network", null);
+            } catch (Error e) {
+                warning (e.message);
+            }
+        });
+
+        this.show.connect (update_view);
     }
 
     construct {
@@ -151,11 +158,22 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         installed_view = new Views.InstalledView ();
         search_view = new Views.SearchView ();
 
+        network_alert_view = new Granite.Widgets.AlertView (_("Network Is Not Available"),
+                                                            _("Connect to the internet to install or update apps."),
+                                                            "network-error");
+        network_alert_view.get_style_context ().remove_class (Gtk.STYLE_CLASS_VIEW);
+        network_alert_view.show_action (_("Network Settings…"));
+
+        network_view = new Gtk.Grid ();
+        network_view.margin = 24;
+        network_view.attach (network_alert_view, 0, 0, 1, 1);
+
         stack = new Gtk.Stack ();
         stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
         stack.add (homepage);
         stack.add (installed_view);
         stack.add (search_view);
+        stack.add (network_view);
 
         homepage.package_selected.connect ((package) => {
             stack.set_visible_child (homepage);
@@ -203,6 +221,8 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         stack.set_visible_child (homepage);
         homepage.show_package (package);
         view_opened (_("Home"), false, null);
+
+        update_view ();
     }
 
     public void go_to_installed () {
@@ -222,18 +242,12 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             }
 
             view_mode_revealer.reveal_child = true;
-            switch (view_mode.selected) {
-                case 0:
-                    stack.visible_child = homepage;
-                    break;
-                default:
-                    stack.visible_child = installed_view;
-                    break;
-            }
+            update_view ();
             if (!return_button_history.is_empty) {
                 return_button.no_show_all = false;
                 return_button.show_all ();
             }
+
             button_stack.visible_child = return_button;
             search_all_button.no_show_all = true;
             search_all_button.hide ();
@@ -254,6 +268,8 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             return_button.no_show_all = true;
             return_button.hide ();
         }
+
+        update_view ();
     }
 
     private void view_opened (string return_name, bool allow_search, string? custom_header = null) {
@@ -328,5 +344,28 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         homepage.return_clicked ();
         trigger_search ();
+    }
+
+    private void update_view () {
+        var connection_available = NetworkMonitor.get_default ().get_network_available ();
+        if (connection_available) {
+            if (search_entry.text.length >= 2) {
+                stack.visible_child = search_view;
+            } else {
+                switch (view_mode.selected) {
+                    case 0:
+                        stack.visible_child = homepage;
+                        break;
+                    default:
+                        stack.visible_child = installed_view;
+                        break;
+                }
+            }
+        } else {
+            stack.set_visible_child (network_view);
+        }
+
+        button_stack.sensitive = connection_available;
+        search_entry.sensitive = connection_available && !search_view.viewing_package && !homepage.viewing_package;
     }
 }
