@@ -25,6 +25,7 @@ namespace AppCenter {
         protected Gtk.Label package_name;
         protected Gtk.Label package_author;
         protected Gtk.Label package_summary;
+        protected Gtk.Label package_timestamp;
 
         protected Widgets.HumbleButton action_button;
         protected Gtk.Button uninstall_button;
@@ -67,6 +68,12 @@ namespace AppCenter {
             }
         }
 
+        public string timestamp {
+            get {
+                return package_timestamp.label;
+            }
+        }
+
         public bool action_sensitive {
             set {
                 action_button.sensitive = value;
@@ -90,6 +97,7 @@ namespace AppCenter {
 
             package_author = new Gtk.Label ("");
             package_name = new Gtk.Label ("");
+            package_timestamp = new Gtk.Label ("");
             image = new Gtk.Image ();
 
             action_button = new Widgets.HumbleButton ();
@@ -148,6 +156,7 @@ namespace AppCenter {
 
         protected virtual void set_up_package (uint icon_size = 48) {
             package_name.label = package.get_name ();
+            package_timestamp.label = package.timestamp;
 
             if (package.component.get_id () != AppCenterCore.Package.OS_UPDATES_ID) {
                 var author = package.component.developer_name;
