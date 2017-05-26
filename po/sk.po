@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-20 10:34+0200\n"
+"POT-Creation-Date: 2017-05-25 08:30-0700\n"
 "PO-Revision-Date: 2017-04-08 09:58+0000\n"
 "Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Slovak <http://weblate.elementary.io/projects/desktop/"
@@ -15,29 +15,263 @@ msgstr ""
 "X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
-#: ../src/MainWindow.vala:103 ../src/Widgets/Banner.vala:100
-msgid "AppCenter"
-msgstr "AppCentrum"
+#: ../src/Application.vala:40
+msgid "App Center"
+msgstr "App Centrum"
 
-#: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
-#: ../src/MainWindow.vala:300 ../src/MainWindow.vala:322
-msgid "Search Apps"
-msgstr "Hľadať aplikácie"
+#: ../src/Application.vala:57
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Lukáš Papík https://launchpad.net/~stereo839\n"
+"  Milan Slovák https://launchpad.net/~milboys\n"
+"  Samuel Kristev https://launchpad.net/~samuelkristev\n"
+"  bj https://launchpad.net/~teapack97\n"
+"  elementaryart (old) https://launchpad.net/~elementaryart\n"
+"  lupajz https://launchpad.net/~lubos-m"
 
-#: ../src/MainWindow.vala:122 ../src/MainWindow.vala:163
-#: ../src/MainWindow.vala:205 ../src/Views/Homepage.vala:209
-#: ../src/Views/Homepage.vala:216
-msgid "Home"
-msgstr "Úvodná stránka"
+#: ../src/Application.vala:114
+msgid "Specified link '%s' could not be found, searching instead"
+msgstr "Zadaný odkaz '%s' sa nenašiel, vyhľadáva sa ďalej"
 
-#: ../src/MainWindow.vala:123 ../src/Views/InstalledView.vala:51
+#: ../src/Application.vala:216
+msgid "Application installed"
+msgstr "Aplikácia nainštalovaná"
+
+#: ../src/Application.vala:217
+msgid "%s has been successfully installed"
+msgstr "%s sa úspešne nainštaloval"
+
+#: ../src/Application.vala:233
+msgid "Close"
+msgstr "Zatvoriť"
+
+#: ../src/Application.vala:235
+msgid "There Was An Error Installing %s"
+msgstr "Pri inštalácii balíka %s sa vyskytla chyba"
+
+#: ../src/Dialogs/RestartDialog.vala:40
+msgid "Are you sure you want to Restart?"
+msgstr "Naozaj chcete vykonať reštart?"
+
+#: ../src/Dialogs/RestartDialog.vala:41
+msgid "This will close all open applications and restart this device."
+msgstr "Všetky aplikácie sa zatvoria a zariadenie sa reštartuje."
+
+#: ../src/Dialogs/RestartDialog.vala:42
+msgid "Restart"
+msgstr "Reštartovať"
+
+#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:166
+#: ../src/Dialogs/StripeDialog.vala:285
+#: ../src/Widgets/AbstractAppContainer.vala:126
+msgid "Cancel"
+msgstr "Zrušiť"
+
+#: ../src/Dialogs/StripeDialog.vala:30
+msgid ""
+"An error occurred while processing the card. Please try again later. We "
+"apologize for any inconvenience caused."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:31
+msgid "Please review your payment info and try again."
+msgstr "Prosím, skontrolujte platobné údaje a svoj pokus zopakujte."
+
+#: ../src/Dialogs/StripeDialog.vala:75
+msgid "Email"
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:77
+msgid ""
+"Your email address is used to send a receipt. It is never stored and you "
+"will not be subscribed to a mailing list."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:88
+msgid "Card Number"
+msgstr ""
+
+#. / TRANSLATORS: Don't change the order, only transliterate
+#: ../src/Dialogs/StripeDialog.vala:100
+msgid "MM / YY"
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:120
+msgid "CVC"
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:157
+msgid "Privacy Policy"
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:168 ../src/Dialogs/StripeDialog.vala:284
+#, fuzzy
+msgid "Pay $%d.00"
+msgstr "Zaplatiť  $%s,00"
+
+#: ../src/Dialogs/StripeDialog.vala:213
+msgid "Processing"
+msgstr "Spracováva sa"
+
+#: ../src/Dialogs/StripeDialog.vala:238
+msgid "There Was a Problem Processing Your Payment"
+msgstr "Pri spracovávaní platby sa vyskytla chyba"
+
+#: ../src/Dialogs/StripeDialog.vala:276
+msgid "Pay Later"
+msgstr "Zaplatiť neskôr"
+
+#: ../src/Dialogs/StripeDialog.vala:277
+msgid "Retry"
+msgstr "Skúsiť znova"
+
+#: ../src/Dialogs/StripeDialog.vala:463 ../src/Dialogs/StripeDialog.vala:528
+msgid ""
+"The card number is incorrect. Please try again using the correct card number."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:465
+msgid ""
+"The expiration month is invalid. Please try again using the correct "
+"expiration date."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:467 ../src/Dialogs/StripeDialog.vala:525
+msgid ""
+"The expiration year is invalid. Please try again using the correct "
+"expiration date."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:470 ../src/Dialogs/StripeDialog.vala:523
+msgid "The CVC number is incorrect. Please try again using the correct CVC."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:472 ../src/Dialogs/StripeDialog.vala:514
+msgid "The card has expired. Please try again with a different card."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:492
+msgid "There are too many payment requests at the moment, please retry later."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:508
+msgid ""
+"This card does not support this kind of transaction. Please try again with a "
+"different card."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:510
+msgid ""
+"The currency is not supported by this card. Please try again with a "
+"different card."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:512
+msgid "The transaction has already been processed."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:516
+msgid ""
+"The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
+"Postal code."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:518
+msgid "You don't have enough funds. Please use an alternative payment method."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:520
+msgid "The amount is incorrect. Please try again using a valid amount."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:531
+msgid "The pin number is incorrect. Please try again using the correct pin."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:533
+msgid ""
+"There has been too many pin attempts. Please try again with a different card."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:553
+msgid ""
+"Unable to complete the transaction. Please contact your bank for further "
+"information."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:556
+msgid "The balance or credit limit on the card has been reached."
+msgstr ""
+
+#: ../src/Dialogs/StripeDialog.vala:559
+msgid "The given card is a test card. Please use a real card to proceed."
+msgstr ""
+
+#: ../src/Views/InstalledView.vala:51 ../src/MainWindow.vala:130
 msgctxt "view"
 msgid "Updates"
 msgstr "Aktualizácie"
 
-#: ../src/MainWindow.vala:282
-msgid "Search %s"
-msgstr "Prehľadávať %s"
+#. / TRANSLATORS: the name of the Search view
+#: ../src/Views/SearchView.vala:37
+msgctxt "view"
+msgid "Search"
+msgstr "Hľadať"
+
+#: ../src/Views/AppListView.vala:121
+msgid "A restart is required to complete the installation of updates"
+msgstr "Na dokončenie inštalácie aktualizácií je potrebný reštart"
+
+#: ../src/Views/AppListView.vala:129
+msgid "Restart Now"
+msgstr "Reštartovať teraz"
+
+#: ../src/Views/AppListView.vala:222
+msgid "Update All"
+msgstr "Aktualizovať všetko"
+
+#: ../src/Views/AppInfoView.vala:57
+msgid "Screenshot Not Available"
+msgstr "Nie je možné spraviť fotku obrazovky"
+
+#: ../src/Views/AppInfoView.vala:170
+msgid "Extensions:"
+msgstr "Rozšírenia:"
+
+#: ../src/Views/AppInfoView.vala:184
+msgid "Homepage"
+msgstr "Úvodná stránka"
+
+#: ../src/Views/AppInfoView.vala:191
+msgid "Suggest Translations"
+msgstr "Navrhnúť preklady"
+
+#: ../src/Views/AppInfoView.vala:198
+msgid "Report a Problem"
+msgstr "Nahlásiť problém"
+
+#: ../src/Views/AppInfoView.vala:205
+msgid "Help"
+msgstr "Pomocník"
+
+#: ../src/Views/Homepage.vala:104
+msgid "Recently Updated"
+msgstr ""
+
+#: ../src/Views/Homepage.vala:156
+msgid "Categories"
+msgstr "Kategórie"
+
+#: ../src/Views/Homepage.vala:211 ../src/Views/Homepage.vala:219
+#: ../src/MainWindow.vala:129 ../src/MainWindow.vala:181
+#: ../src/MainWindow.vala:223
+msgid "Home"
+msgstr "Úvodná stránka"
+
+#: ../src/Widgets/Banner.vala:100 ../src/MainWindow.vala:110
+msgid "AppCenter"
+msgstr "AppCentrum"
 
 #: ../src/Widgets/Banner.vala:107
 msgid "An open, pay-what-you-want app store"
@@ -46,37 +280,6 @@ msgstr "Otvorený obchod s aplikáciami, kde platíte, koľko uznáte za vhodné
 #: ../src/Widgets/Banner.vala:120
 msgid "Get the apps that you need at a price you can afford."
 msgstr "Získajte aplikácie, ktoré potrebujete. Za cenu, akú si môžete dovoliť."
-
-#: ../src/Widgets/AbstractAppContainer.vala:105
-msgid "Uninstall"
-msgstr "Odinštalovať"
-
-#: ../src/Widgets/AbstractAppContainer.vala:108
-msgid "Open"
-msgstr "Otvoriť"
-
-#: ../src/Widgets/AbstractAppContainer.vala:126
-#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:158
-#: ../src/Dialogs/StripeDialog.vala:277
-msgid "Cancel"
-msgstr "Zrušiť"
-
-#: ../src/Widgets/AbstractAppContainer.vala:161
-msgid "The %s Developers"
-msgstr "Vývojári projektu %s"
-
-#: ../src/Widgets/AbstractAppContainer.vala:165
-msgid "by %s"
-msgstr "Autor: %s"
-
-#: ../src/Widgets/AbstractAppContainer.vala:195
-#: ../src/Widgets/HumbleButton.vala:85
-msgid "Free"
-msgstr "Zadarmo"
-
-#: ../src/Widgets/AbstractAppContainer.vala:209
-msgid "Update"
-msgstr "Aktualizácie"
 
 #: ../src/Widgets/CategoryFlowBox.vala:29
 msgid "Audio"
@@ -126,6 +329,49 @@ msgstr "Veda a výskum"
 msgid "Universal Access"
 msgstr "Univerzálny prístup"
 
+#: ../src/Widgets/HumbleButton.vala:85
+#: ../src/Widgets/AbstractAppContainer.vala:195
+msgid "Free"
+msgstr "Zadarmo"
+
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
+#: ../src/Widgets/HumbleButton.vala:152
+msgid "$%d.00"
+msgstr "$%d.00"
+
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
+#: ../src/Widgets/HumbleButton.vala:155
+msgid "$%d"
+msgstr "$%d"
+
+#: ../src/Widgets/AbstractAppContainer.vala:105
+msgid "Uninstall"
+msgstr "Odinštalovať"
+
+#: ../src/Widgets/AbstractAppContainer.vala:108
+msgid "Open"
+msgstr "Otvoriť"
+
+#: ../src/Widgets/AbstractAppContainer.vala:161
+msgid "The %s Developers"
+msgstr "Vývojári projektu %s"
+
+#: ../src/Widgets/AbstractAppContainer.vala:165
+msgid "by %s"
+msgstr "Autor: %s"
+
+#: ../src/Widgets/AbstractAppContainer.vala:209
+msgid "Update"
+msgstr "Aktualizácie"
+
+#: ../src/Widgets/AbstractAppList.vala:35
+msgid "No Results"
+msgstr "Žiadne výsledky"
+
+#: ../src/Widgets/AbstractAppList.vala:35
+msgid "No apps could be found. Try changing search terms."
+msgstr "Nenašli sa žiadne aplikácie. Skúste zmeniť výraz vyhľadávanie."
+
 #: ../src/Widgets/UpdateHeaderRow.vala:68
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
@@ -149,260 +395,57 @@ msgstr "Aktuálne"
 msgid "Drivers"
 msgstr ""
 
-#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: ../src/Widgets/HumbleButton.vala:152
-msgid "$%d.00"
-msgstr "$%d.00"
+#: ../src/MainWindow.vala:118 ../src/MainWindow.vala:146
+#: ../src/MainWindow.vala:316 ../src/MainWindow.vala:338
+msgid "Search Apps"
+msgstr "Hľadať aplikácie"
 
-#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: ../src/Widgets/HumbleButton.vala:155
-msgid "$%d"
-msgstr "$%d"
-
-#: ../src/Widgets/AbstractAppList.vala:35
-msgid "No Results"
-msgstr "Žiadne výsledky"
-
-#: ../src/Widgets/AbstractAppList.vala:35
-msgid "No apps could be found. Try changing search terms."
-msgstr "Nenašli sa žiadne aplikácie. Skúste zmeniť výraz vyhľadávanie."
-
-#: ../src/Dialogs/RestartDialog.vala:40
-msgid "Are you sure you want to Restart?"
-msgstr "Naozaj chcete vykonať reštart?"
-
-#: ../src/Dialogs/RestartDialog.vala:41
-msgid "This will close all open applications and restart this device."
-msgstr "Všetky aplikácie sa zatvoria a zariadenie sa reštartuje."
-
-#: ../src/Dialogs/RestartDialog.vala:42
-msgid "Restart"
-msgstr "Reštartovať"
-
-#: ../src/Dialogs/StripeDialog.vala:30
-msgid ""
-"An error occurred while processing the card. Please try again later. We "
-"apologize for any inconvenience caused."
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:31
-msgid "Please review your payment info and try again."
-msgstr "Prosím, skontrolujte platobné údaje a svoj pokus zopakujte."
-
-#: ../src/Dialogs/StripeDialog.vala:75
-msgid "Email"
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:77
-msgid ""
-"Your email address is used to send a receipt. It is never stored and you "
-"will not be subscribed to a mailing list."
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:88
-msgid "Card Number"
-msgstr ""
-
-#. / TRANSLATORS: Don't change the order, only transliterate
-#: ../src/Dialogs/StripeDialog.vala:100
-msgid "MM / YY"
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:112
-msgid "CVC"
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:149
-msgid "Privacy Policy"
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:160 ../src/Dialogs/StripeDialog.vala:276
+#: ../src/MainWindow.vala:161
 #, fuzzy
-msgid "Pay $%d.00"
-msgstr "Zaplatiť  $%s,00"
-
-#: ../src/Dialogs/StripeDialog.vala:205
-msgid "Processing"
-msgstr "Spracováva sa"
-
-#: ../src/Dialogs/StripeDialog.vala:230
-msgid "There Was a Problem Processing Your Payment"
-msgstr "Pri spracovávaní platby sa vyskytla chyba"
-
-#: ../src/Dialogs/StripeDialog.vala:268
-msgid "Pay Later"
-msgstr "Zaplatiť neskôr"
-
-#: ../src/Dialogs/StripeDialog.vala:269
-msgid "Retry"
-msgstr "Skúsiť znova"
-
-#: ../src/Dialogs/StripeDialog.vala:454 ../src/Dialogs/StripeDialog.vala:519
-msgid ""
-"The card number is incorrect. Please try again using the correct card number."
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:456
-msgid ""
-"The expiration month is invalid. Please try again using the correct "
-"expiration date."
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:458 ../src/Dialogs/StripeDialog.vala:516
-msgid ""
-"The expiration year is invalid. Please try again using the correct "
-"expiration date."
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:461 ../src/Dialogs/StripeDialog.vala:514
-msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:463 ../src/Dialogs/StripeDialog.vala:505
-msgid "The card has expired. Please try again with a different card."
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:483
-msgid "There are too many payment requests at the moment, please retry later."
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:499
-msgid ""
-"This card does not support this kind of transaction. Please try again with a "
-"different card."
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:501
-msgid ""
-"The currency is not supported by this card. Please try again with a "
-"different card."
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:503
-msgid "The transaction has already been processed."
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:507
-msgid ""
-"The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
-"Postal code."
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:509
-msgid "You don't have enough funds. Please use an alternative payment method."
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:511
-msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:522
-msgid "The pin number is incorrect. Please try again using the correct pin."
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:524
-msgid ""
-"There has been too many pin attempts. Please try again with a different card."
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:544
-msgid ""
-"Unable to complete the transaction. Please contact your bank for further "
-"information."
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:547
-msgid "The balance or credit limit on the card has been reached."
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:550
-msgid "The given card is a test card. Please use a real card to proceed."
-msgstr ""
-
-#: ../src/Views/Homepage.vala:102
-msgid "Recently Updated"
-msgstr ""
-
-#: ../src/Views/Homepage.vala:154
-msgid "Categories"
-msgstr "Kategórie"
-
-#. / TRANSLATORS: the name of the Search view
-#: ../src/Views/SearchView.vala:35
-msgctxt "view"
-msgid "Search"
-msgstr "Hľadať"
-
-#: ../src/Views/AppListView.vala:121
-msgid "A restart is required to complete the installation of updates"
-msgstr "Na dokončenie inštalácie aktualizácií je potrebný reštart"
-
-#: ../src/Views/AppListView.vala:129
-msgid "Restart Now"
-msgstr "Reštartovať teraz"
-
-#: ../src/Views/AppListView.vala:222
-msgid "Update All"
-msgstr "Aktualizovať všetko"
-
-#: ../src/Views/AppInfoView.vala:57
-msgid "Screenshot Not Available"
+msgid "Network Is Not Available"
 msgstr "Nie je možné spraviť fotku obrazovky"
 
-#: ../src/Views/AppInfoView.vala:170
-msgid "Extensions:"
-msgstr "Rozšírenia:"
-
-#: ../src/Views/AppInfoView.vala:184
-msgid "Homepage"
-msgstr "Úvodná stránka"
-
-#: ../src/Views/AppInfoView.vala:191
-msgid "Suggest Translations"
-msgstr "Navrhnúť preklady"
-
-#: ../src/Views/AppInfoView.vala:198
-msgid "Report a Problem"
-msgstr "Nahlásiť problém"
-
-#: ../src/Views/AppInfoView.vala:205
-msgid "Help"
-msgstr "Pomocník"
-
-#: ../src/Application.vala:42
-msgid "App Center"
-msgstr "App Centrum"
-
-#: ../src/Application.vala:59
-msgid "translator-credits"
+#: ../src/MainWindow.vala:162
+msgid "Connect to the internet to install or update apps."
 msgstr ""
-"Launchpad Contributions:\n"
-"  Lukáš Papík https://launchpad.net/~stereo839\n"
-"  Milan Slovák https://launchpad.net/~milboys\n"
-"  Samuel Kristev https://launchpad.net/~samuelkristev\n"
-"  bj https://launchpad.net/~teapack97\n"
-"  elementaryart (old) https://launchpad.net/~elementaryart\n"
-"  lupajz https://launchpad.net/~lubos-m"
 
-#: ../src/Application.vala:150
-msgid "Specified link '%s' could not be found, searching instead"
-msgstr "Zadaný odkaz '%s' sa nenašiel, vyhľadáva sa ďalej"
+#: ../src/MainWindow.vala:165
+msgid "Network Settings…"
+msgstr ""
 
-#: ../src/Application.vala:217
-msgid "Application installed"
-msgstr "Aplikácia nainštalovaná"
+#: ../src/MainWindow.vala:298
+msgid "Search %s"
+msgstr "Prehľadávať %s"
 
-#: ../src/Application.vala:218
-msgid "%s has been successfully installed"
-msgstr "%s sa úspešne nainštaloval"
+#: ../src/Core/Client.vala:94
+msgid "Operating System Updates"
+msgstr "Aktualizácie operačného systému"
 
-#: ../src/Application.vala:234
-msgid "Close"
-msgstr "Zatvoriť"
+#: ../src/Core/Client.vala:95
+msgid "Updates to system components"
+msgstr "Aktualizácie systémových komponent"
 
-#: ../src/Application.vala:236
-msgid "There Was An Error Installing %s"
-msgstr "Pri inštalácii balíka %s sa vyskytla chyba"
+#: ../src/Core/Client.vala:459
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "Aktualizácií je dostupných"
+msgstr[1] "Aktualizácia je dostupná"
+msgstr[2] "Aktualizácie sú dostupné"
+
+#: ../src/Core/Client.vala:460
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "%u aktualizácií je dostupných pre váš systém"
+msgstr[1] "%u aktualizácia je dostupná pre váš systém"
+msgstr[2] "%u aktualizácie sú dostupné pre váš systém"
+
+#: ../src/Core/Client.vala:489
+msgid "Restart Required"
+msgstr "Je potrebný reštart"
+
+#: ../src/Core/Client.vala:490
+msgid "Please restart your system to finalize updates"
+msgstr "Prosím, dokončite aktualizáciu reštartovaním systému"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -547,36 +590,6 @@ msgstr "Kopírujú sa súbory"
 #: ../src/Core/ChangeInformation.vala:124
 msgid "Unknown state"
 msgstr "Neznámy stav"
-
-#: ../src/Core/Client.vala:94
-msgid "Operating System Updates"
-msgstr "Aktualizácie operačného systému"
-
-#: ../src/Core/Client.vala:95
-msgid "Updates to system components"
-msgstr "Aktualizácie systémových komponent"
-
-#: ../src/Core/Client.vala:453
-msgid "Update Available"
-msgid_plural "Updates Available"
-msgstr[0] "Aktualizácií je dostupných"
-msgstr[1] "Aktualizácia je dostupná"
-msgstr[2] "Aktualizácie sú dostupné"
-
-#: ../src/Core/Client.vala:454
-msgid "%u update is available for your system"
-msgid_plural "%u updates are available for your system"
-msgstr[0] "%u aktualizácií je dostupných pre váš systém"
-msgstr[1] "%u aktualizácia je dostupná pre váš systém"
-msgstr[2] "%u aktualizácie sú dostupné pre váš systém"
-
-#: ../src/Core/Client.vala:483
-msgid "Restart Required"
-msgstr "Je potrebný reštart"
-
-#: ../src/Core/Client.vala:484
-msgid "Please restart your system to finalize updates"
-msgstr "Prosím, dokončite aktualizáciu reštartovaním systému"
 
 #~ msgid "Install"
 #~ msgstr "Inštalácia"
