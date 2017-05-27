@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-04-11 05:12+0000\n"
-"Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
-"Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
-"appcenter/appcenter/zh_TW/>\n"
+"PO-Revision-Date: 2017-05-27 00:49+0000\n"
+"Last-Translator: J Winnie <weblate@stormdesign.us>\n"
+"Language-Team: Chinese (Traditional) "
+"<https://l10n.elementary.io/projects/appcenter/appcenter/zh_TW/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: ../src/Application.vala:40
@@ -29,7 +29,7 @@ msgstr ""
 
 #: ../src/Application.vala:114
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr ""
+msgstr "找不到「%s」，而在尋找中"
 
 #: ../src/Application.vala:216
 msgid "Application installed"
@@ -37,7 +37,7 @@ msgstr "應用程式已安裝"
 
 #: ../src/Application.vala:217
 msgid "%s has been successfully installed"
-msgstr "%s 已成功安裝"
+msgstr "已成功安裝 ％s"
 
 #: ../src/Application.vala:233
 msgid "Close"
@@ -45,19 +45,19 @@ msgstr "關閉"
 
 #: ../src/Application.vala:235
 msgid "There Was An Error Installing %s"
-msgstr ""
+msgstr "無法安裝 %s"
 
 #: ../src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
-msgstr ""
+msgstr "確定要重新啟動嗎？"
 
 #: ../src/Dialogs/RestartDialog.vala:41
 msgid "This will close all open applications and restart this device."
-msgstr ""
+msgstr "這會使全部的應用程式關閉和使電腦重新啟動。"
 
 #: ../src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
-msgstr ""
+msgstr "重新啟動"
 
 #: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:166
 #: ../src/Dialogs/StripeDialog.vala:285
@@ -69,30 +69,30 @@ msgstr "取消"
 msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
-msgstr ""
+msgstr "處理卡片時出了問題，請等下再試一次。我們為任何不方便而道歉。"
 
 #: ../src/Dialogs/StripeDialog.vala:31
 msgid "Please review your payment info and try again."
-msgstr ""
+msgstr "檢查付款資訊後請再試一次。"
 
 #: ../src/Dialogs/StripeDialog.vala:75
 msgid "Email"
-msgstr ""
+msgstr "電子郵件"
 
 #: ../src/Dialogs/StripeDialog.vala:77
 msgid ""
 "Your email address is used to send a receipt. It is never stored and you "
 "will not be subscribed to a mailing list."
-msgstr ""
+msgstr "您的電子郵件只用與送收據，我們不會存下來。"
 
 #: ../src/Dialogs/StripeDialog.vala:88
 msgid "Card Number"
-msgstr ""
+msgstr "號碼"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: ../src/Dialogs/StripeDialog.vala:100
 msgid "MM / YY"
-msgstr ""
+msgstr "月／年"
 
 #: ../src/Dialogs/StripeDialog.vala:120
 msgid "CVC"
@@ -100,7 +100,7 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:157
 msgid "Privacy Policy"
-msgstr ""
+msgstr "隱私權政策"
 
 #: ../src/Dialogs/StripeDialog.vala:168 ../src/Dialogs/StripeDialog.vala:284
 msgid "Pay $%d.00"
@@ -108,7 +108,7 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:213
 msgid "Processing"
-msgstr ""
+msgstr "處理中"
 
 #: ../src/Dialogs/StripeDialog.vala:238
 msgid "There Was a Problem Processing Your Payment"
