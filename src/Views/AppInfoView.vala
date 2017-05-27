@@ -285,7 +285,7 @@ namespace AppCenter.Views {
                     return null;
                 }
 
-                Gtk.Widget default_widget = null;
+                Gee.Deque<Gtk.Widget> screenshot_widgets = new Gee.LinkedList<Gtk.Widget> ();
 
                 screenshots.foreach ((screenshot) => {
                     Gtk.Widget screenshot_widget = null;
@@ -302,16 +302,19 @@ namespace AppCenter.Views {
                         ++index;
                     }
 
-                    app_screenshots.add (screenshot_widget);
-
-                    if (default_widget == null || screenshot.get_kind () == AppStream.ScreenshotKind.DEFAULT) {
-                        default_widget = screenshot_widget;
+                    if (screenshot.get_kind () == AppStream.ScreenshotKind.DEFAULT) {
+                        screenshot_widgets.offer_head (screenshot_widget);
+                    } else {
+                        screenshot_widgets.offer_tail (screenshot_widget);
                     }
                 });
 
-                app_screenshots.visible_child = default_widget;
-                screenshot_stack.visible_child = app_screenshots;
+                foreach (var widget in screenshot_widgets) {
+                    app_screenshots.add (widget);
+                }
+
                 screenshot_stack.show_all ();
+                screenshot_stack.visible_child = app_screenshots;
                 screenshot_switcher.update_selected ();
 
                 return null;
