@@ -26,8 +26,9 @@ namespace AppCenter.Views {
 
         Gtk.Grid links_grid;
         Gtk.Box header_box;
-        Gtk.Image app_screenshot;
+        Gtk.Stack app_screenshots;
         Gtk.Stack screenshot_stack;
+        Widgets.Switcher screenshot_switcher;
         Gtk.Label app_screenshot_not_found;
         Gtk.Label app_version;
         Gtk.TextView app_description;
@@ -43,11 +44,15 @@ namespace AppCenter.Views {
             screenshots = package.component.get_screenshots ();
 
             if (screenshots.length > 0) {
-                app_screenshot = new Gtk.Image ();
-                app_screenshot.width_request = 800;
-                app_screenshot.height_request = 500;
-                app_screenshot.icon_name = "image-x-generic";
-                app_screenshot.halign = Gtk.Align.CENTER;
+                app_screenshots = new Gtk.Stack ();
+                app_screenshots.width_request = 800;
+                app_screenshots.height_request = 500;
+                app_screenshots.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
+                app_screenshots.halign = Gtk.Align.CENTER;
+
+                screenshot_switcher = new Widgets.Switcher ();
+                screenshot_switcher.halign = Gtk.Align.CENTER;
+                screenshot_switcher.set_stack (app_screenshots);
 
                 var app_screenshot_spinner = new Gtk.Spinner ();
                 app_screenshot_spinner.halign = Gtk.Align.CENTER;
@@ -62,7 +67,7 @@ namespace AppCenter.Views {
                 screenshot_stack.get_style_context ().add_class (Gtk.STYLE_CLASS_BACKGROUND);
                 screenshot_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
                 screenshot_stack.add (app_screenshot_spinner);
-                screenshot_stack.add (app_screenshot);
+                screenshot_stack.add (app_screenshots);
                 screenshot_stack.add (app_screenshot_not_found);
             }
 
@@ -115,6 +120,7 @@ namespace AppCenter.Views {
 
             if (screenshots.length > 0) {
                 content_grid.add (screenshot_stack);
+                content_grid.add (screenshot_switcher);
             }
 
             if (!package.is_os_updates) {
@@ -339,8 +345,18 @@ namespace AppCenter.Views {
 
             Idle.add (() => {
                 try {
-                    app_screenshot.pixbuf = new Gdk.Pixbuf.from_file_at_scale (fileimage.get_path (), 800, 600, true);
-                    screenshot_stack.visible_child = app_screenshot;
+                    var image = new Gtk.Image ();
+                    image.width_request = 800;
+                    image.height_request = 500;
+                    image.icon_name = "image-x-generic";
+                    image.halign = Gtk.Align.CENTER;
+                    image.pixbuf = new Gdk.Pixbuf.from_file_at_scale (fileimage.get_path (), 800, 600, true);
+                    image.show ();
+
+                    app_screenshots.add (image);
+                    app_screenshots.visible_child = image;
+                    screenshot_stack.visible_child = app_screenshots;
+                    screenshot_switcher.update_selected ();
                 } catch (Error e) {
                     critical (e.message);
                 }
