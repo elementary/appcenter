@@ -287,32 +287,47 @@ namespace AppCenter.Views {
             new Thread<void*> ("content-loading", () => {
                 app_version.label = package.get_version ();
 
-                string url = null;
-                uint max_size = 0U;
-
                 if (screenshots.length == 0) {
                     return null;
                 }
 
+                List<string> urls = new List<string> ();
+
                 screenshots.foreach ((screenshot) => {
                     screenshot.get_images ().foreach ((image) => {
-                        if (max_size < image.get_width ()) {
-                            url = image.get_url ();
-                            max_size = image.get_width ();
+                        if (image.get_kind () == AppStream.ImageKind.SOURCE) {
+                            if (screenshot.get_kind () == AppStream.ScreenshotKind.DEFAULT) {
+                                urls.prepend (image.get_url ());
+                            } else {
+                                urls.append (image.get_url ());
+                            }
+
+                            return;
                         }
                     });
                 });
 
-                if (url != null) {
-                    set_screenshot (url);
+                foreach (var url in urls) {
+                    load_screenshot (url);
                 }
+
+                Idle.add (() => {
+                    if (app_screenshots.get_children ().length () > 0) {
+                        screenshot_stack.visible_child = app_screenshots;
+                        screenshot_switcher.update_selected ();
+                    } else {
+                        screenshot_stack.visible_child = app_screenshot_not_found;
+                    }
+
+                    return GLib.Source.REMOVE;
+                });
 
                 return null;
             });
         }
 
         // We need to first download the screenshot locally so that it doesn't freeze the interface.
-        private void set_screenshot (string url) {
+        private void load_screenshot (string url) {
             var ret = GLib.DirUtils.create_with_parents (GLib.Environment.get_tmp_dir () + Path.DIR_SEPARATOR_S + ".appcenter", 0755);
             if (ret == -1) {
                 critical ("Error creating the temporary folder: GFileError #%d", GLib.FileUtils.error_from_errno (GLib.errno));
@@ -328,8 +343,6 @@ namespace AppCenter.Views {
                     source.copy (fileimage, GLib.FileCopyFlags.OVERWRITE);
                 } catch (Error e) {
                     debug (e.message);
-                    // The file is likely to not being found.
-                    screenshot_stack.visible_child = app_screenshot_not_found;
                     return;
                 }
 
@@ -338,7 +351,6 @@ namespace AppCenter.Views {
                 critical ("Error create the temporary file: GFileError #%d", GLib.FileUtils.error_from_errno (GLib.errno));
                 fileimage = File.new_for_uri (url);
                 if (fileimage.query_exists () == false) {
-                    screenshot_stack.visible_child = app_screenshot_not_found;
                     return;
                 }
             }
@@ -354,9 +366,6 @@ namespace AppCenter.Views {
                     image.show ();
 
                     app_screenshots.add (image);
-                    app_screenshots.visible_child = image;
-                    screenshot_stack.visible_child = app_screenshots;
-                    screenshot_switcher.update_selected ();
                 } catch (Error e) {
                     critical (e.message);
                 }
