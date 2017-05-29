@@ -27,8 +27,9 @@ namespace AppCenter.Views {
         Gtk.Grid links_grid;
         Gtk.Box header_box;
         Gtk.Stack app_screenshots;
-        Widgets.Switcher screenshot_switcher;
         Gtk.Stack screenshot_stack;
+        Widgets.Switcher screenshot_switcher;
+        Gtk.Label app_screenshot_not_found;
         Gtk.Label app_version;
         Gtk.TextView app_description;
         Gtk.ListBox extension_box;
@@ -58,11 +59,16 @@ namespace AppCenter.Views {
                 app_screenshot_spinner.valign = Gtk.Align.CENTER;
                 app_screenshot_spinner.active = true;
 
+                app_screenshot_not_found = new Gtk.Label (_("Screenshot Not Available"));
+                app_screenshot_not_found.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+                app_screenshot_not_found.get_style_context ().add_class ("h2");
+
                 screenshot_stack = new Gtk.Stack ();
                 screenshot_stack.get_style_context ().add_class (Gtk.STYLE_CLASS_BACKGROUND);
                 screenshot_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
                 screenshot_stack.add (app_screenshot_spinner);
                 screenshot_stack.add (app_screenshots);
+                screenshot_stack.add (app_screenshot_not_found);
             }
 
             package_name = new Gtk.Label (null);
@@ -281,48 +287,32 @@ namespace AppCenter.Views {
             new Thread<void*> ("content-loading", () => {
                 app_version.label = package.get_version ();
 
+                string url = null;
+                uint max_size = 0U;
+
                 if (screenshots.length == 0) {
                     return null;
                 }
 
-                Gee.Deque<Gtk.Widget> screenshot_widgets = new Gee.LinkedList<Gtk.Widget> ();
-
                 screenshots.foreach ((screenshot) => {
-                    Gtk.Widget screenshot_widget = null;
-                    var index = 0;
-                    var images = screenshot.get_images ();
-
-                    while (screenshot_widget == null && index < images.length) {
-                        var image = images.get (index);
-
-                        if (image.get_kind () == AppStream.ImageKind.SOURCE) {
-                            screenshot_widget = load_screenshot (image.get_url ());
+                    screenshot.get_images ().foreach ((image) => {
+                        if (max_size < image.get_width ()) {
+                            url = image.get_url ();
+                            max_size = image.get_width ();
                         }
-
-                        ++index;
-                    }
-
-                    if (screenshot.get_kind () == AppStream.ScreenshotKind.DEFAULT) {
-                        screenshot_widgets.offer_head (screenshot_widget);
-                    } else {
-                        screenshot_widgets.offer_tail (screenshot_widget);
-                    }
+                    });
                 });
 
-                foreach (var widget in screenshot_widgets) {
-                    app_screenshots.add (widget);
+                if (url != null) {
+                    set_screenshot (url);
                 }
-
-                screenshot_stack.show_all ();
-                screenshot_stack.visible_child = app_screenshots;
-                screenshot_switcher.update_selected ();
 
                 return null;
             });
         }
 
         // We need to first download the screenshot locally so that it doesn't freeze the interface.
-        private Gtk.Widget load_screenshot (string url) {
+        private void set_screenshot (string url) {
             var ret = GLib.DirUtils.create_with_parents (GLib.Environment.get_tmp_dir () + Path.DIR_SEPARATOR_S + ".appcenter", 0755);
             if (ret == -1) {
                 critical ("Error creating the temporary folder: GFileError #%d", GLib.FileUtils.error_from_errno (GLib.errno));
@@ -339,7 +329,8 @@ namespace AppCenter.Views {
                 } catch (Error e) {
                     debug (e.message);
                     // The file is likely to not being found.
-                    return screenshot_load_error_label ();
+                    screenshot_stack.visible_child = app_screenshot_not_found;
+                    return;
                 }
 
                 GLib.FileUtils.close (fd);
@@ -347,31 +338,31 @@ namespace AppCenter.Views {
                 critical ("Error create the temporary file: GFileError #%d", GLib.FileUtils.error_from_errno (GLib.errno));
                 fileimage = File.new_for_uri (url);
                 if (fileimage.query_exists () == false) {
-                    return screenshot_load_error_label ();
+                    screenshot_stack.visible_child = app_screenshot_not_found;
+                    return;
                 }
             }
 
-            try {
-                var image = new Gtk.Image ();
-                image.width_request = 800;
-                image.height_request = 500;
-                image.icon_name = "image-x-generic";
-                image.halign = Gtk.Align.CENTER;
-                image.pixbuf = new Gdk.Pixbuf.from_file_at_scale (fileimage.get_path (), 800, 600, true);
+            Idle.add (() => {
+                try {
+                    var image = new Gtk.Image ();
+                    image.width_request = 800;
+                    image.height_request = 500;
+                    image.icon_name = "image-x-generic";
+                    image.halign = Gtk.Align.CENTER;
+                    image.pixbuf = new Gdk.Pixbuf.from_file_at_scale (fileimage.get_path (), 800, 600, true);
+                    image.show ();
 
-                return image;
-            } catch (Error e) {
-                critical (e.message);
-                return screenshot_load_error_label ();
-            }
-        }
+                    app_screenshots.add (image);
+                    app_screenshots.visible_child = image;
+                    screenshot_stack.visible_child = app_screenshots;
+                    screenshot_switcher.update_selected ();
+                } catch (Error e) {
+                    critical (e.message);
+                }
 
-        private Gtk.Label screenshot_load_error_label () {
-            var app_screenshot_not_found = new Gtk.Label (_("Screenshot Not Available"));
-            app_screenshot_not_found.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-            app_screenshot_not_found.get_style_context ().add_class ("h2");
-
-            return app_screenshot_not_found;
+                return GLib.Source.REMOVE;
+            });
         }
 
         private void parse_description (string? description) {
