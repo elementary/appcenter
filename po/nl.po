@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
 "PO-Revision-Date: 2017-05-29 22:00+0000\n"
-"Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
+"Last-Translator: Lieven Hanssen <lhanssen@freedommail.co>\n"
 "Language-Team: Dutch "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/nl/>\n"
 "Language: nl\n"
@@ -204,22 +204,26 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:520
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr ""
+msgstr "Het bedrag is onjuist. Probeert u het nogmaals met een geldig bedrag."
 
 #: ../src/Dialogs/StripeDialog.vala:531
 msgid "The pin number is incorrect. Please try again using the correct pin."
-msgstr ""
+msgstr "De pincode is onjuist. Probeert u het nogmaals met de juiste pincode."
 
 #: ../src/Dialogs/StripeDialog.vala:533
 msgid ""
 "There has been too many pin attempts. Please try again with a different card."
 msgstr ""
+"U heeft te veel pogingen gedaan om uw pincode in te voeren. Probeert u het "
+"nogmaals met een andere kaart."
 
 #: ../src/Dialogs/StripeDialog.vala:553
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
 msgstr ""
+"Het is niet mogelijk om de transactie af te ronden. Contacteert uw bank voor "
+"aanvullende informatie."
 
 #: ../src/Dialogs/StripeDialog.vala:556
 msgid "The balance or credit limit on the card has been reached."
