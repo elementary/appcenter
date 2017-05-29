@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
 "PO-Revision-Date: 2017-05-29 21:58+0000\n"
-"Last-Translator: Lieven Hanssen <lhanssen@freedommail.co>\n"
+"Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
 "Language-Team: Dutch "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/nl/>\n"
 "Language: nl\n"
@@ -189,7 +189,7 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:512
 msgid "The transaction has already been processed."
-msgstr "De transactie is al verwerkt."
+msgstr "De transactie is reeds verwerkt."
 
 #: ../src/Dialogs/StripeDialog.vala:516
 msgid ""
