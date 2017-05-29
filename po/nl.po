@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-05-29 21:56+0000\n"
-"Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
+"PO-Revision-Date: 2017-05-29 21:58+0000\n"
+"Last-Translator: Lieven Hanssen <lhanssen@freedommail.co>\n"
 "Language-Team: Dutch "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/nl/>\n"
 "Language: nl\n"
@@ -93,6 +93,8 @@ msgid ""
 "Your email address is used to send a receipt. It is never stored and you "
 "will not be subscribed to a mailing list."
 msgstr ""
+"Uw e-mailadres wordt gebruikt om een factuur te sturen. Het wordt nooit "
+"opgeslagen en u zal nooit geabonneerd worden op een maillijst."
 
 #: ../src/Dialogs/StripeDialog.vala:88
 msgid "Card Number"
@@ -109,7 +111,7 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:157
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Privacybeleid"
 
 #: ../src/Dialogs/StripeDialog.vala:168 ../src/Dialogs/StripeDialog.vala:284
 msgid "Pay $%d.00"
@@ -135,42 +137,55 @@ msgstr "Probeer opnieuw"
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr ""
+"Het kaartnummer is onjuist. Probeert u het nogmaals met het juiste "
+"kaartnummer."
 
 #: ../src/Dialogs/StripeDialog.vala:465
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"De maand van de uiterste geldigheidsdatum is onjuist. Probeert u het later "
+"nogmaals met de juiste vervaldatum."
 
 #: ../src/Dialogs/StripeDialog.vala:467 ../src/Dialogs/StripeDialog.vala:525
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"Het jaar van de uiterste geldigheidsdatum is onjuist. Probeert u het later "
+"nogmaals met de juiste vervaldatum."
 
 #: ../src/Dialogs/StripeDialog.vala:470 ../src/Dialogs/StripeDialog.vala:523
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr ""
+"Het CVC-nummer is onjuist. Probeert u het later nogmaals met het juiste CVC-"
+"nummer."
 
 #: ../src/Dialogs/StripeDialog.vala:472 ../src/Dialogs/StripeDialog.vala:514
 msgid "The card has expired. Please try again with a different card."
-msgstr ""
+msgstr "De kaart is vervallen. Probeert u het nogmaals met een andere kaart."
 
 #: ../src/Dialogs/StripeDialog.vala:492
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr ""
+"Er zijn momenteel te veel betaalverzoeken, probeert u het later nogmaals."
 
 #: ../src/Dialogs/StripeDialog.vala:508
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
 msgstr ""
+"Deze kaart ondersteunt dergelijke transacties niet. Probeert u het nogmaals "
+"met een andere kaart."
 
 #: ../src/Dialogs/StripeDialog.vala:510
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
 msgstr ""
+"De valuta wordt niet ondersteunt door deze kaart. Probeert u het met een "
+"andere kaart."
 
 #: ../src/Dialogs/StripeDialog.vala:512
 msgid "The transaction has already been processed."
