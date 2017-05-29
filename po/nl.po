@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-05-29 22:01+0000\n"
-"Last-Translator: Lieven Hanssen <lhanssen@freedommail.co>\n"
+"PO-Revision-Date: 2017-05-29 22:02+0000\n"
+"Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
 "Language-Team: Dutch "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/nl/>\n"
 "Language: nl\n"
@@ -86,7 +86,7 @@ msgstr "Controleer alstublieft uw betalingsinformatie en probeer opnieuw."
 
 #: ../src/Dialogs/StripeDialog.vala:75
 msgid "Email"
-msgstr ""
+msgstr "E-mail"
 
 #: ../src/Dialogs/StripeDialog.vala:77
 msgid ""
@@ -98,16 +98,16 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:88
 msgid "Card Number"
-msgstr ""
+msgstr "Kaartnummer"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: ../src/Dialogs/StripeDialog.vala:100
 msgid "MM / YY"
-msgstr ""
+msgstr "MM / YY"
 
 #: ../src/Dialogs/StripeDialog.vala:120
 msgid "CVC"
-msgstr ""
+msgstr "CVC"
 
 #: ../src/Dialogs/StripeDialog.vala:157
 msgid "Privacy Policy"
@@ -437,10 +437,11 @@ msgstr "Geen netwerkverbinding"
 #: ../src/MainWindow.vala:162
 msgid "Connect to the internet to install or update apps."
 msgstr ""
+"Connecteer met het internet om toepassingen te updaten of te installeren."
 
 #: ../src/MainWindow.vala:165
 msgid "Network Settings…"
-msgstr ""
+msgstr "Netwerkinstellingen…"
 
 #: ../src/MainWindow.vala:298
 msgid "Search %s"
