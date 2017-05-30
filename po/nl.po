@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-05-27 13:42+0000\n"
+"PO-Revision-Date: 2017-05-29 22:02+0000\n"
 "Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
 "Language-Team: Dutch "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/nl/>\n"
@@ -77,6 +77,8 @@ msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
+"Bij het verwerken van de kaart is er een fout opgetreden. Probeer het later "
+"nogmaals. Onze excuses voor het ongemak."
 
 #: ../src/Dialogs/StripeDialog.vala:31
 msgid "Please review your payment info and try again."
@@ -84,30 +86,32 @@ msgstr "Controleer alstublieft uw betalingsinformatie en probeer opnieuw."
 
 #: ../src/Dialogs/StripeDialog.vala:75
 msgid "Email"
-msgstr ""
+msgstr "E-mail"
 
 #: ../src/Dialogs/StripeDialog.vala:77
 msgid ""
 "Your email address is used to send a receipt. It is never stored and you "
 "will not be subscribed to a mailing list."
 msgstr ""
+"Uw e-mailadres wordt gebruikt om een factuur te sturen. Het wordt nooit "
+"opgeslagen en u zal nooit geabonneerd worden op een maillijst."
 
 #: ../src/Dialogs/StripeDialog.vala:88
 msgid "Card Number"
-msgstr ""
+msgstr "Kaartnummer"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: ../src/Dialogs/StripeDialog.vala:100
 msgid "MM / YY"
-msgstr ""
+msgstr "MM / YY"
 
 #: ../src/Dialogs/StripeDialog.vala:120
 msgid "CVC"
-msgstr ""
+msgstr "CVC"
 
 #: ../src/Dialogs/StripeDialog.vala:157
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Privacybeleid"
 
 #: ../src/Dialogs/StripeDialog.vala:168 ../src/Dialogs/StripeDialog.vala:284
 msgid "Pay $%d.00"
@@ -133,83 +137,103 @@ msgstr "Probeer opnieuw"
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr ""
+"Het kaartnummer is onjuist. Probeert u het nogmaals met het juiste "
+"kaartnummer."
 
 #: ../src/Dialogs/StripeDialog.vala:465
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"De maand van de uiterste geldigheidsdatum is onjuist. Probeert u het later "
+"nogmaals met de juiste vervaldatum."
 
 #: ../src/Dialogs/StripeDialog.vala:467 ../src/Dialogs/StripeDialog.vala:525
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"Het jaar van de uiterste geldigheidsdatum is onjuist. Probeert u het later "
+"nogmaals met de juiste vervaldatum."
 
 #: ../src/Dialogs/StripeDialog.vala:470 ../src/Dialogs/StripeDialog.vala:523
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr ""
+"Het CVC-nummer is onjuist. Probeert u het later nogmaals met het juiste CVC-"
+"nummer."
 
 #: ../src/Dialogs/StripeDialog.vala:472 ../src/Dialogs/StripeDialog.vala:514
 msgid "The card has expired. Please try again with a different card."
-msgstr ""
+msgstr "De kaart is vervallen. Probeert u het nogmaals met een andere kaart."
 
 #: ../src/Dialogs/StripeDialog.vala:492
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr ""
+"Er zijn momenteel te veel betaalverzoeken, probeert u het later nogmaals."
 
 #: ../src/Dialogs/StripeDialog.vala:508
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
 msgstr ""
+"Deze kaart ondersteunt dergelijke transacties niet. Probeert u het nogmaals "
+"met een andere kaart."
 
 #: ../src/Dialogs/StripeDialog.vala:510
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
 msgstr ""
+"De valuta wordt niet ondersteunt door deze kaart. Probeert u het nogmaals "
+"met een andere kaart."
 
 #: ../src/Dialogs/StripeDialog.vala:512
 msgid "The transaction has already been processed."
-msgstr ""
+msgstr "De transactie is reeds verwerkt."
 
 #: ../src/Dialogs/StripeDialog.vala:516
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "Postal code."
-msgstr ""
+msgstr "De postcode is onjuist. Probeert u het nogmaals met de juiste postcode."
 
 #: ../src/Dialogs/StripeDialog.vala:518
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr ""
+"U heeft onvoldoende krediet. Gelieve een andere betaalmethode te gebruiken."
 
 #: ../src/Dialogs/StripeDialog.vala:520
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr ""
+msgstr "Het bedrag is onjuist. Probeert u het nogmaals met een geldig bedrag."
 
 #: ../src/Dialogs/StripeDialog.vala:531
 msgid "The pin number is incorrect. Please try again using the correct pin."
-msgstr ""
+msgstr "De pincode is onjuist. Probeert u het nogmaals met de juiste pincode."
 
 #: ../src/Dialogs/StripeDialog.vala:533
 msgid ""
 "There has been too many pin attempts. Please try again with a different card."
 msgstr ""
+"U heeft te veel pogingen gedaan om uw pincode in te voeren. Probeert u het "
+"nogmaals met een andere kaart."
 
 #: ../src/Dialogs/StripeDialog.vala:553
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
 msgstr ""
+"Het is niet mogelijk om de transactie af te ronden. Contacteer uw bank voor "
+"aanvullende informatie."
 
 #: ../src/Dialogs/StripeDialog.vala:556
 msgid "The balance or credit limit on the card has been reached."
-msgstr ""
+msgstr "Onvoldoende saldo of het limiet van uw kaart werd bereikt."
 
 #: ../src/Dialogs/StripeDialog.vala:559
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
+"De ingevoerde kaart is een proefkaart. Gebruik alstublieft een geldige kaart "
+"om verder te gaan."
 
 #: ../src/Views/InstalledView.vala:51 ../src/MainWindow.vala:130
 msgctxt "view"
@@ -262,7 +286,7 @@ msgstr "Hulp"
 
 #: ../src/Views/Homepage.vala:104
 msgid "Recently Updated"
-msgstr ""
+msgstr "Onlangs bijgewerkt"
 
 #: ../src/Views/Homepage.vala:156
 msgid "Categories"
@@ -399,7 +423,7 @@ msgstr "Actueel"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:120
 msgid "Drivers"
-msgstr ""
+msgstr "Stuurprogramma's"
 
 #: ../src/MainWindow.vala:118 ../src/MainWindow.vala:146
 #: ../src/MainWindow.vala:316 ../src/MainWindow.vala:338
@@ -413,10 +437,11 @@ msgstr "Geen netwerkverbinding"
 #: ../src/MainWindow.vala:162
 msgid "Connect to the internet to install or update apps."
 msgstr ""
+"Connecteer met het internet om toepassingen te updaten of te installeren."
 
 #: ../src/MainWindow.vala:165
 msgid "Network Settings…"
-msgstr ""
+msgstr "Netwerkinstellingen…"
 
 #: ../src/MainWindow.vala:298
 msgid "Search %s"

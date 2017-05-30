@@ -3,17 +3,17 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-04-27 14:17+0000\n"
-"Last-Translator: marius.a <marius.albina@gmail.com>\n"
-"Language-Team: Romanian <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/ro/>\n"
+"PO-Revision-Date: 2017-05-29 10:31+0000\n"
+"Last-Translator: Nicolae Crefelean <kneekoo@yahoo.com>\n"
+"Language-Team: Romanian "
+"<https://l10n.elementary.io/projects/appcenter/appcenter/ro/>\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #: ../src/Application.vala:40
@@ -73,6 +73,8 @@ msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
+"Eroare la procesarea cardului. Ne cerem scuze pentru inconvenient și vă "
+"rugăm să încercați din nou mai târziu."
 
 #: ../src/Dialogs/StripeDialog.vala:31
 msgid "Please review your payment info and try again."
@@ -80,39 +82,40 @@ msgstr "Revizuiți informația de plată și reveniți."
 
 #: ../src/Dialogs/StripeDialog.vala:75
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: ../src/Dialogs/StripeDialog.vala:77
 msgid ""
 "Your email address is used to send a receipt. It is never stored and you "
 "will not be subscribed to a mailing list."
 msgstr ""
+"La adresa dvs. de email se trimite chitanța. Aceasta nu este stocată și nu "
+"este folosită pentru abonarea la o listă de mesaje."
 
 #: ../src/Dialogs/StripeDialog.vala:88
 msgid "Card Number"
-msgstr ""
+msgstr "Numărul cardului"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: ../src/Dialogs/StripeDialog.vala:100
 msgid "MM / YY"
-msgstr ""
+msgstr "LL / AA"
 
 #: ../src/Dialogs/StripeDialog.vala:120
 msgid "CVC"
-msgstr ""
+msgstr "CVC"
 
 #: ../src/Dialogs/StripeDialog.vala:157
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Politica de intimitate"
 
 #: ../src/Dialogs/StripeDialog.vala:168 ../src/Dialogs/StripeDialog.vala:284
-#, fuzzy
 msgid "Pay $%d.00"
-msgstr "Plătește $%s.00"
+msgstr "Plătește $%d.00"
 
 #: ../src/Dialogs/StripeDialog.vala:213
 msgid "Processing"
-msgstr "Prelucrare"
+msgstr "În procesare"
 
 #: ../src/Dialogs/StripeDialog.vala:238
 msgid "There Was a Problem Processing Your Payment"
@@ -120,7 +123,7 @@ msgstr "A apărut o problemă la procesarea plății"
 
 #: ../src/Dialogs/StripeDialog.vala:276
 msgid "Pay Later"
-msgstr "Plătiți mai târziu"
+msgstr "Plătesc mai târziu"
 
 #: ../src/Dialogs/StripeDialog.vala:277
 msgid "Retry"
@@ -130,83 +133,106 @@ msgstr "Reîncearcă"
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr ""
+"Numărul cardului nu este corect. Vă rugăm încercați din nou, folosind "
+"numărul corect."
 
 #: ../src/Dialogs/StripeDialog.vala:465
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"Luna expirării nu este validă. Vă rugăm încercați din nou, folosind data "
+"corectă."
 
 #: ../src/Dialogs/StripeDialog.vala:467 ../src/Dialogs/StripeDialog.vala:525
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"Anul expirării nu este valid. Vă rugăm încercați din nou, folosind anul "
+"corect."
 
 #: ../src/Dialogs/StripeDialog.vala:470 ../src/Dialogs/StripeDialog.vala:523
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr ""
+"Codul CVC nu este corect. Vă rugăm încercați din nou, folosind codul corect."
 
 #: ../src/Dialogs/StripeDialog.vala:472 ../src/Dialogs/StripeDialog.vala:514
 msgid "The card has expired. Please try again with a different card."
-msgstr ""
+msgstr "Acest card a expirat. Vă rugăm încercați cu un alt card."
 
 #: ../src/Dialogs/StripeDialog.vala:492
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr ""
+"Sistemul de plată este suprasolicitat momentan. Vă rugăm încercați mai "
+"târziu."
 
 #: ../src/Dialogs/StripeDialog.vala:508
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
 msgstr ""
+"Cardul specificat nu poate fi folosit pentru acest tip de tranzacție. Vă "
+"rugăm încercați un alt card."
 
 #: ../src/Dialogs/StripeDialog.vala:510
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
 msgstr ""
+"Moneda nu poate fi tranzacționată cu cardul specificat. Vă rugăm încercați "
+"un alt card."
 
 #: ../src/Dialogs/StripeDialog.vala:512
 msgid "The transaction has already been processed."
-msgstr ""
+msgstr "Tranzacția a fost deja procesată."
 
 #: ../src/Dialogs/StripeDialog.vala:516
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "Postal code."
 msgstr ""
+"Codul poștal este incorect. Vă rugăm încercați din nou, folosind un cod "
+"corect."
 
 #: ../src/Dialogs/StripeDialog.vala:518
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr ""
+"Fonduri insuficiente pe card. Vă rugăm încercați o altă metodă de plată."
 
 #: ../src/Dialogs/StripeDialog.vala:520
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr ""
+"Suma nu este corectă. Vă rugăm încercați din nou, specificând o sumă corectă."
 
 #: ../src/Dialogs/StripeDialog.vala:531
 msgid "The pin number is incorrect. Please try again using the correct pin."
 msgstr ""
+"Codul pin nu este corect. Vă rugăm încercați din nou, folosind codul corect."
 
 #: ../src/Dialogs/StripeDialog.vala:533
 msgid ""
 "There has been too many pin attempts. Please try again with a different card."
 msgstr ""
+"Prea multe încercări cu codul pin. Vă rugăm încercați din nou, cu un alt "
+"card."
 
 #: ../src/Dialogs/StripeDialog.vala:553
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
 msgstr ""
+"Tranzacția nu poate fi efectuată. Vă rugăm contactați banca pentru detalii."
 
 #: ../src/Dialogs/StripeDialog.vala:556
 msgid "The balance or credit limit on the card has been reached."
-msgstr ""
+msgstr "Limita de sold sau credit ale acestui card au fost atinse."
 
 #: ../src/Dialogs/StripeDialog.vala:559
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
+"Acesta este un card de test. Vă rugăm folosiți un card real pentru "
+"continuare."
 
 #: ../src/Views/InstalledView.vala:51 ../src/MainWindow.vala:130
 msgctxt "view"
@@ -221,15 +247,17 @@ msgstr "Căutare"
 
 #: ../src/Views/AppListView.vala:121
 msgid "A restart is required to complete the installation of updates"
-msgstr "Este nevoie de un restart pentru a finaliza instalarea update-urilor"
+msgstr ""
+"Trebuie să reporniți calculatorul pentru finalizarea instalării "
+"actualizărilor"
 
 #: ../src/Views/AppListView.vala:129
 msgid "Restart Now"
-msgstr "Restart acum"
+msgstr "Repornește acum"
 
 #: ../src/Views/AppListView.vala:222
 msgid "Update All"
-msgstr "Actualizează toate"
+msgstr "Actualizează totul"
 
 #: ../src/Views/AppInfoView.vala:57
 msgid "Screenshot Not Available"
@@ -245,7 +273,7 @@ msgstr "Pagină de pornire"
 
 #: ../src/Views/AppInfoView.vala:191
 msgid "Suggest Translations"
-msgstr "Sugerați traducere"
+msgstr "Sugerați traduceri"
 
 #: ../src/Views/AppInfoView.vala:198
 msgid "Report a Problem"
@@ -257,7 +285,7 @@ msgstr "Ajutor"
 
 #: ../src/Views/Homepage.vala:104
 msgid "Recently Updated"
-msgstr ""
+msgstr "Actualizate recent"
 
 #: ../src/Views/Homepage.vala:156
 msgid "Categories"
@@ -275,11 +303,11 @@ msgstr "AppCenter"
 
 #: ../src/Widgets/Banner.vala:107
 msgid "An open, pay-what-you-want app store"
-msgstr "Un app store în care plătești cât vrei, dacă vrei"
+msgstr "Un magazin de aplicații în care plătești cât vrei"
 
 #: ../src/Widgets/Banner.vala:120
 msgid "Get the apps that you need at a price you can afford."
-msgstr "Aplicațiile de care ai nevoie la un preț accesibil."
+msgstr "Obține aplicațiile de care ai nevoie, la un preț accesibil."
 
 #: ../src/Widgets/CategoryFlowBox.vala:29
 msgid "Audio"
@@ -366,7 +394,7 @@ msgstr "Actualizează"
 
 #: ../src/Widgets/AbstractAppList.vala:35
 msgid "No Results"
-msgstr "Nici un rezultat"
+msgstr "Niciun rezultat"
 
 #: ../src/Widgets/AbstractAppList.vala:35
 msgid "No apps could be found. Try changing search terms."
