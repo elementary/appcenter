@@ -3,20 +3,21 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-01-24 08:39+0000\n"
-"Last-Translator: elementaryart (old) <Unknown>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2017-05-30 15:12+0000\n"
+"Last-Translator: Cecep Khaerudin <ckhaerudin@gmail.com>\n"
+"Language-Team: Indonesian "
+"<https://l10n.elementary.io/projects/appcenter/appcenter/id/>\n"
+"Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
-"X-Generator: Launchpad (build 18331)\n"
 
 #: ../src/Application.vala:40
 msgid "App Center"
-msgstr ""
+msgstr "App Center"
 
 #: ../src/Application.vala:57
 msgid "translator-credits"
@@ -24,7 +25,8 @@ msgstr ""
 "Launchpad Contributions:\n"
 "  Afrizal Yusren https://launchpad.net/~yusrenz\n"
 "  Dani Pratomo https://launchpad.net/~daneepee\n"
-"  elementaryart (old) https://launchpad.net/~elementaryart"
+"  elementaryart (old) https://launchpad.net/~elementaryart\n"
+"  Cecep Khaerudin https://launchpad.net/~ckhaerudin"
 
 #: ../src/Application.vala:114
 msgid "Specified link '%s' could not be found, searching instead"
@@ -32,168 +34,189 @@ msgstr ""
 
 #: ../src/Application.vala:216
 msgid "Application installed"
-msgstr ""
+msgstr "Aplikasi terpasang"
 
 #: ../src/Application.vala:217
 msgid "%s has been successfully installed"
-msgstr ""
+msgstr "%s telah berhasil terpasang"
 
 #: ../src/Application.vala:233
 msgid "Close"
-msgstr ""
+msgstr "Tutup"
 
 #: ../src/Application.vala:235
 msgid "There Was An Error Installing %s"
-msgstr ""
+msgstr "Terjadi kesalahan saat memasang %s"
 
 #: ../src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
-msgstr ""
+msgstr "Apakah Anda yakin untuk Restart?"
 
 #: ../src/Dialogs/RestartDialog.vala:41
 msgid "This will close all open applications and restart this device."
 msgstr ""
+"Semua aplikasi yang sedang terbuka akan ditutup dan sistem akan melakukan "
+"restart"
 
 #: ../src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
-msgstr ""
+msgstr "Restart"
 
 #: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:166
 #: ../src/Dialogs/StripeDialog.vala:285
 #: ../src/Widgets/AbstractAppContainer.vala:126
 msgid "Cancel"
-msgstr ""
+msgstr "Batal"
 
 #: ../src/Dialogs/StripeDialog.vala:30
 msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
+"Terjadi kesalahan saat memproses. Silahkan ulangi kembali. Kami minta maaf "
+"atas ketidaknyamanan yang terjadi."
 
 #: ../src/Dialogs/StripeDialog.vala:31
 msgid "Please review your payment info and try again."
-msgstr ""
+msgstr "Silahkan periksa informasi pembayaran Anda dan ulangi lagi."
 
 #: ../src/Dialogs/StripeDialog.vala:75
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: ../src/Dialogs/StripeDialog.vala:77
 msgid ""
 "Your email address is used to send a receipt. It is never stored and you "
 "will not be subscribed to a mailing list."
 msgstr ""
+"Alamat email anda akan digunakan untuk mengirim tanda terima. Email ini "
+"tidak akan pernah di simpan di database kami dan anda tidak akan didaftarkan "
+"di mailing list."
 
 #: ../src/Dialogs/StripeDialog.vala:88
 msgid "Card Number"
-msgstr ""
+msgstr "Nomor Kartu"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: ../src/Dialogs/StripeDialog.vala:100
 msgid "MM / YY"
-msgstr ""
+msgstr "MM/YY"
 
 #: ../src/Dialogs/StripeDialog.vala:120
 msgid "CVC"
-msgstr ""
+msgstr "CVC"
 
 #: ../src/Dialogs/StripeDialog.vala:157
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Kebijakan Privasi"
 
 #: ../src/Dialogs/StripeDialog.vala:168 ../src/Dialogs/StripeDialog.vala:284
 msgid "Pay $%d.00"
-msgstr ""
+msgstr "Bayar $%d.00"
 
 #: ../src/Dialogs/StripeDialog.vala:213
 msgid "Processing"
-msgstr ""
+msgstr "Memproses"
 
 #: ../src/Dialogs/StripeDialog.vala:238
 msgid "There Was a Problem Processing Your Payment"
-msgstr ""
+msgstr "Ada masalah saat memproses pembayaran"
 
 #: ../src/Dialogs/StripeDialog.vala:276
 msgid "Pay Later"
-msgstr ""
+msgstr "Bayar Nanti"
 
 #: ../src/Dialogs/StripeDialog.vala:277
 msgid "Retry"
-msgstr ""
+msgstr "Ulangi"
 
 #: ../src/Dialogs/StripeDialog.vala:463 ../src/Dialogs/StripeDialog.vala:528
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr ""
+"Nomor kartu salah. Silahkan ulangi kembali  menggunakan nomor kartu yang "
+"sesuai."
 
 #: ../src/Dialogs/StripeDialog.vala:465
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"Bulan kedaluwarsa tidak berlaku. Silakan coba lagi menggunakan tanggal "
+"kedaluwarsa yang benar."
 
 #: ../src/Dialogs/StripeDialog.vala:467 ../src/Dialogs/StripeDialog.vala:525
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"Tahun kedaluwarsa tidak berlaku. Silakan coba lagi menggunakan tanggal "
+"kedaluwarsa yang benar."
 
 #: ../src/Dialogs/StripeDialog.vala:470 ../src/Dialogs/StripeDialog.vala:523
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr ""
+"Nomor CVC salah. Silahkan ulangi kembali menggunakan nomor CVC yang sesuai."
 
 #: ../src/Dialogs/StripeDialog.vala:472 ../src/Dialogs/StripeDialog.vala:514
 msgid "The card has expired. Please try again with a different card."
-msgstr ""
+msgstr "Kartu telah kadaluarsa. Silakan coba lagi dengan kartu yang berbeda."
 
 #: ../src/Dialogs/StripeDialog.vala:492
 msgid "There are too many payment requests at the moment, please retry later."
-msgstr ""
+msgstr "Ada terlalu banyak permintaan pembayaran saat ini, coba lagi nanti."
 
 #: ../src/Dialogs/StripeDialog.vala:508
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
 msgstr ""
+"Kartu ini tidak mendukung transaksi semacam ini. Silakan coba lagi dengan "
+"kartu yang berbeda."
 
 #: ../src/Dialogs/StripeDialog.vala:510
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
 msgstr ""
+"Mata uang tidak didukung oleh kartu ini. Silakan coba lagi dengan kartu yang "
+"berbeda."
 
 #: ../src/Dialogs/StripeDialog.vala:512
 msgid "The transaction has already been processed."
-msgstr ""
+msgstr "Transaksi sudah di proses."
 
 #: ../src/Dialogs/StripeDialog.vala:516
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "Postal code."
-msgstr ""
+msgstr "Kode Pos salah. Silakan coba lagi menggunakan kode pos yang benar."
 
 #: ../src/Dialogs/StripeDialog.vala:518
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr ""
+"Anda tidak punya cukup dana. Harap gunakan metode pembayaran alternatif."
 
 #: ../src/Dialogs/StripeDialog.vala:520
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr ""
+msgstr "Jumlahnya tidak benar. Coba lagi menggunakan jumlah yang valid."
 
 #: ../src/Dialogs/StripeDialog.vala:531
 msgid "The pin number is incorrect. Please try again using the correct pin."
-msgstr ""
+msgstr "Nomor pin salah. Coba lagi menggunakan pin yang benar."
 
 #: ../src/Dialogs/StripeDialog.vala:533
 msgid ""
 "There has been too many pin attempts. Please try again with a different card."
-msgstr ""
+msgstr "Ada banyak usaha pin. Silakan coba lagi dengan kartu yang berbeda."
 
 #: ../src/Dialogs/StripeDialog.vala:553
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
 msgstr ""
+"Tidak dapat menyelesaikan transaksi. Hubungi bank Anda untuk informasi lebih "
+"lanjut."
 
 #: ../src/Dialogs/StripeDialog.vala:556
 msgid "The balance or credit limit on the card has been reached."
