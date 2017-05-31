@@ -2,42 +2,305 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-20 10:34+0200\n"
-"PO-Revision-Date: 2017-04-09 17:48+0000\n"
+"POT-Creation-Date: 2017-05-25 08:30-0700\n"
+"PO-Revision-Date: 2017-05-29 22:02+0000\n"
 "Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
-"Language-Team: Dutch <http://weblate.elementary.io/projects/desktop/"
-"appcenter/nl/>\n"
+"Language-Team: Dutch "
+"<https://l10n.elementary.io/projects/appcenter/appcenter/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
-#: ../src/MainWindow.vala:103 ../src/Widgets/Banner.vala:100
-msgid "AppCenter"
+#: ../src/Application.vala:40
+msgid "App Center"
 msgstr "Applicatie centrum"
 
-#: ../src/MainWindow.vala:111 ../src/MainWindow.vala:139
-#: ../src/MainWindow.vala:300 ../src/MainWindow.vala:322
-msgid "Search Apps"
-msgstr "Zoek Apps"
+#: ../src/Application.vala:57
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Barend https://launchpad.net/~b-vanrijn\n"
+"  Maarten van Druten https://launchpad.net/~maartenvdruten\n"
+"  Sebasst https://launchpad.net/~sebasst-f\n"
+"  Thomas Berends https://launchpad.net/~thomasberends\n"
+"  elementaryart (old) https://launchpad.net/~elementaryart\n"
+"  kay van der Zander https://launchpad.net/~kay20"
 
-#: ../src/MainWindow.vala:122 ../src/MainWindow.vala:163
-#: ../src/MainWindow.vala:205 ../src/Views/Homepage.vala:209
-#: ../src/Views/Homepage.vala:216
-msgid "Home"
-msgstr "Startpagina"
+#: ../src/Application.vala:114
+msgid "Specified link '%s' could not be found, searching instead"
+msgstr ""
+"Opgegeven koppeling '%s' kon niet gevonden worden, in plaats daarvan als "
+"zoekterm gebruiken"
 
-#: ../src/MainWindow.vala:123 ../src/Views/InstalledView.vala:51
+#: ../src/Application.vala:216
+msgid "Application installed"
+msgstr "Toepassing geïnstalleerd"
+
+#: ../src/Application.vala:217
+msgid "%s has been successfully installed"
+msgstr "%s is met succes geïnstalleerd"
+
+#: ../src/Application.vala:233
+msgid "Close"
+msgstr "Sluiten"
+
+#: ../src/Application.vala:235
+msgid "There Was An Error Installing %s"
+msgstr "Er is een fout opgetreden bij het installeren van %s"
+
+#: ../src/Dialogs/RestartDialog.vala:40
+msgid "Are you sure you want to Restart?"
+msgstr "Weet u zeker dat u opnieuw op wilt starten?"
+
+#: ../src/Dialogs/RestartDialog.vala:41
+msgid "This will close all open applications and restart this device."
+msgstr ""
+"Dit zal alle openstaande toepassingen sluiten en dit apparaat opnieuw "
+"opstarten."
+
+#: ../src/Dialogs/RestartDialog.vala:42
+msgid "Restart"
+msgstr "Opnieuw opstarten"
+
+#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:166
+#: ../src/Dialogs/StripeDialog.vala:285
+#: ../src/Widgets/AbstractAppContainer.vala:126
+msgid "Cancel"
+msgstr "Annuleren"
+
+#: ../src/Dialogs/StripeDialog.vala:30
+msgid ""
+"An error occurred while processing the card. Please try again later. We "
+"apologize for any inconvenience caused."
+msgstr ""
+"Bij het verwerken van de kaart is er een fout opgetreden. Probeer het later "
+"nogmaals. Onze excuses voor het ongemak."
+
+#: ../src/Dialogs/StripeDialog.vala:31
+msgid "Please review your payment info and try again."
+msgstr "Controleer alstublieft uw betalingsinformatie en probeer opnieuw."
+
+#: ../src/Dialogs/StripeDialog.vala:75
+msgid "Email"
+msgstr "E-mail"
+
+#: ../src/Dialogs/StripeDialog.vala:77
+msgid ""
+"Your email address is used to send a receipt. It is never stored and you "
+"will not be subscribed to a mailing list."
+msgstr ""
+"Uw e-mailadres wordt gebruikt om een factuur te sturen. Het wordt nooit "
+"opgeslagen en u zal nooit geabonneerd worden op een maillijst."
+
+#: ../src/Dialogs/StripeDialog.vala:88
+msgid "Card Number"
+msgstr "Kaartnummer"
+
+#. / TRANSLATORS: Don't change the order, only transliterate
+#: ../src/Dialogs/StripeDialog.vala:100
+msgid "MM / YY"
+msgstr "MM / YY"
+
+#: ../src/Dialogs/StripeDialog.vala:120
+msgid "CVC"
+msgstr "CVC"
+
+#: ../src/Dialogs/StripeDialog.vala:157
+msgid "Privacy Policy"
+msgstr "Privacybeleid"
+
+#: ../src/Dialogs/StripeDialog.vala:168 ../src/Dialogs/StripeDialog.vala:284
+msgid "Pay $%d.00"
+msgstr "Betaal $ %s.00"
+
+#: ../src/Dialogs/StripeDialog.vala:213
+msgid "Processing"
+msgstr "Verwerken"
+
+#: ../src/Dialogs/StripeDialog.vala:238
+msgid "There Was a Problem Processing Your Payment"
+msgstr "Er was een probleem met het verwerken van uw betaling"
+
+#: ../src/Dialogs/StripeDialog.vala:276
+msgid "Pay Later"
+msgstr "Betaal later"
+
+#: ../src/Dialogs/StripeDialog.vala:277
+msgid "Retry"
+msgstr "Probeer opnieuw"
+
+#: ../src/Dialogs/StripeDialog.vala:463 ../src/Dialogs/StripeDialog.vala:528
+msgid ""
+"The card number is incorrect. Please try again using the correct card number."
+msgstr ""
+"Het kaartnummer is onjuist. Probeert u het nogmaals met het juiste "
+"kaartnummer."
+
+#: ../src/Dialogs/StripeDialog.vala:465
+msgid ""
+"The expiration month is invalid. Please try again using the correct "
+"expiration date."
+msgstr ""
+"De maand van de uiterste geldigheidsdatum is onjuist. Probeert u het later "
+"nogmaals met de juiste vervaldatum."
+
+#: ../src/Dialogs/StripeDialog.vala:467 ../src/Dialogs/StripeDialog.vala:525
+msgid ""
+"The expiration year is invalid. Please try again using the correct "
+"expiration date."
+msgstr ""
+"Het jaar van de uiterste geldigheidsdatum is onjuist. Probeert u het later "
+"nogmaals met de juiste vervaldatum."
+
+#: ../src/Dialogs/StripeDialog.vala:470 ../src/Dialogs/StripeDialog.vala:523
+msgid "The CVC number is incorrect. Please try again using the correct CVC."
+msgstr ""
+"Het CVC-nummer is onjuist. Probeert u het later nogmaals met het juiste CVC-"
+"nummer."
+
+#: ../src/Dialogs/StripeDialog.vala:472 ../src/Dialogs/StripeDialog.vala:514
+msgid "The card has expired. Please try again with a different card."
+msgstr "De kaart is vervallen. Probeert u het nogmaals met een andere kaart."
+
+#: ../src/Dialogs/StripeDialog.vala:492
+msgid "There are too many payment requests at the moment, please retry later."
+msgstr ""
+"Er zijn momenteel te veel betaalverzoeken, probeert u het later nogmaals."
+
+#: ../src/Dialogs/StripeDialog.vala:508
+msgid ""
+"This card does not support this kind of transaction. Please try again with a "
+"different card."
+msgstr ""
+"Deze kaart ondersteunt dergelijke transacties niet. Probeert u het nogmaals "
+"met een andere kaart."
+
+#: ../src/Dialogs/StripeDialog.vala:510
+msgid ""
+"The currency is not supported by this card. Please try again with a "
+"different card."
+msgstr ""
+"De valuta wordt niet ondersteunt door deze kaart. Probeert u het nogmaals "
+"met een andere kaart."
+
+#: ../src/Dialogs/StripeDialog.vala:512
+msgid "The transaction has already been processed."
+msgstr "De transactie is reeds verwerkt."
+
+#: ../src/Dialogs/StripeDialog.vala:516
+msgid ""
+"The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
+"Postal code."
+msgstr "De postcode is onjuist. Probeert u het nogmaals met de juiste postcode."
+
+#: ../src/Dialogs/StripeDialog.vala:518
+msgid "You don't have enough funds. Please use an alternative payment method."
+msgstr ""
+"U heeft onvoldoende krediet. Gelieve een andere betaalmethode te gebruiken."
+
+#: ../src/Dialogs/StripeDialog.vala:520
+msgid "The amount is incorrect. Please try again using a valid amount."
+msgstr "Het bedrag is onjuist. Probeert u het nogmaals met een geldig bedrag."
+
+#: ../src/Dialogs/StripeDialog.vala:531
+msgid "The pin number is incorrect. Please try again using the correct pin."
+msgstr "De pincode is onjuist. Probeert u het nogmaals met de juiste pincode."
+
+#: ../src/Dialogs/StripeDialog.vala:533
+msgid ""
+"There has been too many pin attempts. Please try again with a different card."
+msgstr ""
+"U heeft te veel pogingen gedaan om uw pincode in te voeren. Probeert u het "
+"nogmaals met een andere kaart."
+
+#: ../src/Dialogs/StripeDialog.vala:553
+msgid ""
+"Unable to complete the transaction. Please contact your bank for further "
+"information."
+msgstr ""
+"Het is niet mogelijk om de transactie af te ronden. Contacteer uw bank voor "
+"aanvullende informatie."
+
+#: ../src/Dialogs/StripeDialog.vala:556
+msgid "The balance or credit limit on the card has been reached."
+msgstr "Onvoldoende saldo of het limiet van uw kaart werd bereikt."
+
+#: ../src/Dialogs/StripeDialog.vala:559
+msgid "The given card is a test card. Please use a real card to proceed."
+msgstr ""
+"De ingevoerde kaart is een proefkaart. Gebruik alstublieft een geldige kaart "
+"om verder te gaan."
+
+#: ../src/Views/InstalledView.vala:51 ../src/MainWindow.vala:130
 msgctxt "view"
 msgid "Updates"
 msgstr "Updates"
 
-#: ../src/MainWindow.vala:282
-msgid "Search %s"
-msgstr "Zoek %s"
+#. / TRANSLATORS: the name of the Search view
+#: ../src/Views/SearchView.vala:37
+msgctxt "view"
+msgid "Search"
+msgstr "Zoeken"
+
+#: ../src/Views/AppListView.vala:121
+msgid "A restart is required to complete the installation of updates"
+msgstr ""
+"Het is nodig om opnieuw op te starten om de installatie van de updates te "
+"voltooien"
+
+#: ../src/Views/AppListView.vala:129
+msgid "Restart Now"
+msgstr "Start nu opnieuw op"
+
+#: ../src/Views/AppListView.vala:222
+msgid "Update All"
+msgstr "Alles bijwerken"
+
+#: ../src/Views/AppInfoView.vala:57
+msgid "Screenshot Not Available"
+msgstr "Geen schermafbeelding beschikbaar"
+
+#: ../src/Views/AppInfoView.vala:170
+msgid "Extensions:"
+msgstr "Uitbreidingen:"
+
+#: ../src/Views/AppInfoView.vala:184
+msgid "Homepage"
+msgstr "Startpagina"
+
+#: ../src/Views/AppInfoView.vala:191
+msgid "Suggest Translations"
+msgstr "Suggereer vertalingen"
+
+#: ../src/Views/AppInfoView.vala:198
+msgid "Report a Problem"
+msgstr "Rapporteer een probleem"
+
+#: ../src/Views/AppInfoView.vala:205
+msgid "Help"
+msgstr "Hulp"
+
+#: ../src/Views/Homepage.vala:104
+msgid "Recently Updated"
+msgstr "Onlangs bijgewerkt"
+
+#: ../src/Views/Homepage.vala:156
+msgid "Categories"
+msgstr "Categorieën"
+
+#: ../src/Views/Homepage.vala:211 ../src/Views/Homepage.vala:219
+#: ../src/MainWindow.vala:129 ../src/MainWindow.vala:181
+#: ../src/MainWindow.vala:223
+msgid "Home"
+msgstr "Startpagina"
+
+#: ../src/Widgets/Banner.vala:100 ../src/MainWindow.vala:110
+msgid "AppCenter"
+msgstr "Applicatie centrum"
 
 #: ../src/Widgets/Banner.vala:107
 msgid "An open, pay-what-you-want app store"
@@ -48,37 +311,6 @@ msgid "Get the apps that you need at a price you can afford."
 msgstr ""
 "Krijg de applicaties die u nodig heeft aan de prijs die u zich kunt "
 "veroorloven."
-
-#: ../src/Widgets/AbstractAppContainer.vala:105
-msgid "Uninstall"
-msgstr "Verwijderen"
-
-#: ../src/Widgets/AbstractAppContainer.vala:108
-msgid "Open"
-msgstr "Open"
-
-#: ../src/Widgets/AbstractAppContainer.vala:126
-#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:158
-#: ../src/Dialogs/StripeDialog.vala:277
-msgid "Cancel"
-msgstr "Annuleren"
-
-#: ../src/Widgets/AbstractAppContainer.vala:161
-msgid "The %s Developers"
-msgstr "De %s ontwikkelaars"
-
-#: ../src/Widgets/AbstractAppContainer.vala:165
-msgid "by %s"
-msgstr "door %s"
-
-#: ../src/Widgets/AbstractAppContainer.vala:195
-#: ../src/Widgets/HumbleButton.vala:85
-msgid "Free"
-msgstr "Gratis"
-
-#: ../src/Widgets/AbstractAppContainer.vala:209
-msgid "Update"
-msgstr "Bijwerken"
 
 #: ../src/Widgets/CategoryFlowBox.vala:29
 msgid "Audio"
@@ -128,6 +360,49 @@ msgstr "Wetenschap & Techniek"
 msgid "Universal Access"
 msgstr "Universele toegang"
 
+#: ../src/Widgets/HumbleButton.vala:85
+#: ../src/Widgets/AbstractAppContainer.vala:195
+msgid "Free"
+msgstr "Gratis"
+
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
+#: ../src/Widgets/HumbleButton.vala:152
+msgid "$%d.00"
+msgstr "$ %d.00"
+
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
+#: ../src/Widgets/HumbleButton.vala:155
+msgid "$%d"
+msgstr "$ %d"
+
+#: ../src/Widgets/AbstractAppContainer.vala:105
+msgid "Uninstall"
+msgstr "Verwijderen"
+
+#: ../src/Widgets/AbstractAppContainer.vala:108
+msgid "Open"
+msgstr "Open"
+
+#: ../src/Widgets/AbstractAppContainer.vala:161
+msgid "The %s Developers"
+msgstr "De %s ontwikkelaars"
+
+#: ../src/Widgets/AbstractAppContainer.vala:165
+msgid "by %s"
+msgstr "door %s"
+
+#: ../src/Widgets/AbstractAppContainer.vala:209
+msgid "Update"
+msgstr "Bijwerken"
+
+#: ../src/Widgets/AbstractAppList.vala:35
+msgid "No Results"
+msgstr "Geen resultaten"
+
+#: ../src/Widgets/AbstractAppList.vala:35
+msgid "No apps could be found. Try changing search terms."
+msgstr "Kan geen applicaties vinden, probeer uw zoektermen te veranderen."
+
 #: ../src/Widgets/UpdateHeaderRow.vala:68
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
@@ -148,268 +423,57 @@ msgstr "Actueel"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:120
 msgid "Drivers"
+msgstr "Stuurprogramma's"
+
+#: ../src/MainWindow.vala:118 ../src/MainWindow.vala:146
+#: ../src/MainWindow.vala:316 ../src/MainWindow.vala:338
+msgid "Search Apps"
+msgstr "Zoek Apps"
+
+#: ../src/MainWindow.vala:161
+msgid "Network Is Not Available"
+msgstr "Geen netwerkverbinding"
+
+#: ../src/MainWindow.vala:162
+msgid "Connect to the internet to install or update apps."
 msgstr ""
+"Connecteer met het internet om toepassingen te updaten of te installeren."
 
-#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: ../src/Widgets/HumbleButton.vala:152
-msgid "$%d.00"
-msgstr "$ %d.00"
+#: ../src/MainWindow.vala:165
+msgid "Network Settings…"
+msgstr "Netwerkinstellingen…"
 
-#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: ../src/Widgets/HumbleButton.vala:155
-msgid "$%d"
-msgstr "$ %d"
+#: ../src/MainWindow.vala:298
+msgid "Search %s"
+msgstr "Zoek %s"
 
-#: ../src/Widgets/AbstractAppList.vala:35
-msgid "No Results"
-msgstr "Geen resultaten"
+#: ../src/Core/Client.vala:94
+msgid "Operating System Updates"
+msgstr "Updates voor het besturingssysteem"
 
-#: ../src/Widgets/AbstractAppList.vala:35
-msgid "No apps could be found. Try changing search terms."
-msgstr "Kan geen applicaties vinden, probeer uw zoektermen te veranderen."
+#: ../src/Core/Client.vala:95
+msgid "Updates to system components"
+msgstr "Updates voor systeemcomponenten"
 
-#: ../src/Dialogs/RestartDialog.vala:40
-msgid "Are you sure you want to Restart?"
-msgstr "Weet u zeker dat u opnieuw op wilt starten?"
+#: ../src/Core/Client.vala:459
+msgid "Update Available"
+msgid_plural "Updates Available"
+msgstr[0] "Update beschikbaar"
+msgstr[1] "Updates beschikbaar"
 
-#: ../src/Dialogs/RestartDialog.vala:41
-msgid "This will close all open applications and restart this device."
-msgstr ""
-"Dit zal alle openstaande toepassingen sluiten en dit apparaat opnieuw "
-"opstarten."
+#: ../src/Core/Client.vala:460
+msgid "%u update is available for your system"
+msgid_plural "%u updates are available for your system"
+msgstr[0] "%u update is beschikbaar voor uw systeem"
+msgstr[1] "%u updates zijn beschikbaar voor uw systeem"
 
-#: ../src/Dialogs/RestartDialog.vala:42
-msgid "Restart"
-msgstr "Opnieuw opstarten"
+#: ../src/Core/Client.vala:489
+msgid "Restart Required"
+msgstr "Opnieuw opstarten vereist"
 
-#: ../src/Dialogs/StripeDialog.vala:30
-msgid ""
-"An error occurred while processing the card. Please try again later. We "
-"apologize for any inconvenience caused."
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:31
-msgid "Please review your payment info and try again."
-msgstr "Controleer alstublieft uw betalingsinformatie en probeer opnieuw."
-
-#: ../src/Dialogs/StripeDialog.vala:75
-msgid "Email"
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:77
-msgid ""
-"Your email address is used to send a receipt. It is never stored and you "
-"will not be subscribed to a mailing list."
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:88
-msgid "Card Number"
-msgstr ""
-
-#. / TRANSLATORS: Don't change the order, only transliterate
-#: ../src/Dialogs/StripeDialog.vala:100
-msgid "MM / YY"
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:112
-msgid "CVC"
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:149
-msgid "Privacy Policy"
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:160 ../src/Dialogs/StripeDialog.vala:276
-#, fuzzy
-msgid "Pay $%d.00"
-msgstr "Betaal $ %s.00"
-
-#: ../src/Dialogs/StripeDialog.vala:205
-msgid "Processing"
-msgstr "Verwerken"
-
-#: ../src/Dialogs/StripeDialog.vala:230
-msgid "There Was a Problem Processing Your Payment"
-msgstr "Er was een probleem met het verwerken van uw betaling"
-
-#: ../src/Dialogs/StripeDialog.vala:268
-msgid "Pay Later"
-msgstr "Betaal later"
-
-#: ../src/Dialogs/StripeDialog.vala:269
-msgid "Retry"
-msgstr "Probeer opnieuw"
-
-#: ../src/Dialogs/StripeDialog.vala:454 ../src/Dialogs/StripeDialog.vala:519
-msgid ""
-"The card number is incorrect. Please try again using the correct card number."
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:456
-msgid ""
-"The expiration month is invalid. Please try again using the correct "
-"expiration date."
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:458 ../src/Dialogs/StripeDialog.vala:516
-msgid ""
-"The expiration year is invalid. Please try again using the correct "
-"expiration date."
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:461 ../src/Dialogs/StripeDialog.vala:514
-msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:463 ../src/Dialogs/StripeDialog.vala:505
-msgid "The card has expired. Please try again with a different card."
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:483
-msgid "There are too many payment requests at the moment, please retry later."
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:499
-msgid ""
-"This card does not support this kind of transaction. Please try again with a "
-"different card."
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:501
-msgid ""
-"The currency is not supported by this card. Please try again with a "
-"different card."
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:503
-msgid "The transaction has already been processed."
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:507
-msgid ""
-"The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
-"Postal code."
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:509
-msgid "You don't have enough funds. Please use an alternative payment method."
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:511
-msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:522
-msgid "The pin number is incorrect. Please try again using the correct pin."
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:524
-msgid ""
-"There has been too many pin attempts. Please try again with a different card."
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:544
-msgid ""
-"Unable to complete the transaction. Please contact your bank for further "
-"information."
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:547
-msgid "The balance or credit limit on the card has been reached."
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:550
-msgid "The given card is a test card. Please use a real card to proceed."
-msgstr ""
-
-#: ../src/Views/Homepage.vala:102
-msgid "Recently Updated"
-msgstr ""
-
-#: ../src/Views/Homepage.vala:154
-msgid "Categories"
-msgstr "Categorieën"
-
-#. / TRANSLATORS: the name of the Search view
-#: ../src/Views/SearchView.vala:35
-msgctxt "view"
-msgid "Search"
-msgstr "Zoeken"
-
-#: ../src/Views/AppListView.vala:121
-msgid "A restart is required to complete the installation of updates"
-msgstr ""
-"Het is nodig om opnieuw op te starten om de installatie van de updates te "
-"voltooien"
-
-#: ../src/Views/AppListView.vala:129
-msgid "Restart Now"
-msgstr "Start nu opnieuw op"
-
-#: ../src/Views/AppListView.vala:222
-msgid "Update All"
-msgstr "Alles bijwerken"
-
-#: ../src/Views/AppInfoView.vala:57
-msgid "Screenshot Not Available"
-msgstr "Geen schermafbeelding beschikbaar"
-
-#: ../src/Views/AppInfoView.vala:170
-msgid "Extensions:"
-msgstr "Uitbreidingen:"
-
-#: ../src/Views/AppInfoView.vala:184
-msgid "Homepage"
-msgstr "Startpagina"
-
-#: ../src/Views/AppInfoView.vala:191
-msgid "Suggest Translations"
-msgstr "Suggereer vertalingen"
-
-#: ../src/Views/AppInfoView.vala:198
-msgid "Report a Problem"
-msgstr "Rapporteer een probleem"
-
-#: ../src/Views/AppInfoView.vala:205
-msgid "Help"
-msgstr "Hulp"
-
-#: ../src/Application.vala:42
-msgid "App Center"
-msgstr "Applicatie centrum"
-
-#: ../src/Application.vala:59
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Barend https://launchpad.net/~b-vanrijn\n"
-"  Maarten van Druten https://launchpad.net/~maartenvdruten\n"
-"  Sebasst https://launchpad.net/~sebasst-f\n"
-"  Thomas Berends https://launchpad.net/~thomasberends\n"
-"  elementaryart (old) https://launchpad.net/~elementaryart\n"
-"  kay van der Zander https://launchpad.net/~kay20"
-
-#: ../src/Application.vala:150
-msgid "Specified link '%s' could not be found, searching instead"
-msgstr ""
-"Opgegeven koppeling '%s' kon niet gevonden worden, in plaats daarvan als "
-"zoekterm gebruiken"
-
-#: ../src/Application.vala:217
-msgid "Application installed"
-msgstr "Toepassing geïnstalleerd"
-
-#: ../src/Application.vala:218
-msgid "%s has been successfully installed"
-msgstr "%s is met succes geïnstalleerd"
-
-#: ../src/Application.vala:234
-msgid "Close"
-msgstr "Sluiten"
-
-#: ../src/Application.vala:236
-msgid "There Was An Error Installing %s"
-msgstr "Er is een fout opgetreden bij het installeren van %s"
+#: ../src/Core/Client.vala:490
+msgid "Please restart your system to finalize updates"
+msgstr "Gelieve uw systeem opnieuw op te starten om de updates te voltooien"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -554,34 +618,6 @@ msgstr "Bestanden kopiëren"
 #: ../src/Core/ChangeInformation.vala:124
 msgid "Unknown state"
 msgstr "Onbekende toestand"
-
-#: ../src/Core/Client.vala:94
-msgid "Operating System Updates"
-msgstr "Updates voor het besturingssysteem"
-
-#: ../src/Core/Client.vala:95
-msgid "Updates to system components"
-msgstr "Updates voor systeemcomponenten"
-
-#: ../src/Core/Client.vala:453
-msgid "Update Available"
-msgid_plural "Updates Available"
-msgstr[0] "Update beschikbaar"
-msgstr[1] "Updates beschikbaar"
-
-#: ../src/Core/Client.vala:454
-msgid "%u update is available for your system"
-msgid_plural "%u updates are available for your system"
-msgstr[0] "%u update is beschikbaar voor uw systeem"
-msgstr[1] "%u updates zijn beschikbaar voor uw systeem"
-
-#: ../src/Core/Client.vala:483
-msgid "Restart Required"
-msgstr "Opnieuw opstarten vereist"
-
-#: ../src/Core/Client.vala:484
-msgid "Please restart your system to finalize updates"
-msgstr "Gelieve uw systeem opnieuw op te starten om de updates te voltooien"
 
 #~ msgid "Install"
 #~ msgstr "Installeer"

@@ -95,7 +95,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
 
         card_expiration_entry = new Gtk.Entry ();
         card_expiration_entry.hexpand = true;
-        card_expiration_entry.max_length = 4;
+        card_expiration_entry.max_length = 5;
         /// TRANSLATORS: Don't change the order, only transliterate
         card_expiration_entry.placeholder_text = _("MM / YY");
         card_expiration_entry.primary_icon_name = "office-calendar-symbolic";
@@ -103,6 +103,14 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         card_expiration_entry.changed.connect (() => {
             card_expiration_entry.text = card_expiration_entry.text.replace (" ", "");
             validate (2, card_expiration_entry.text);
+        });
+
+        card_expiration_entry.focus_out_event.connect (() => {
+            var expiration_text = card_expiration_entry.text;
+            if (!("/" in expiration_text) && expiration_text.char_count () > 2) {
+                int position = 2;
+                card_expiration_entry.insert_text ("/", 1, ref position);
+            }
         });
 
         card_cvc_entry = new Gtk.Entry ();
@@ -291,10 +299,10 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
                     card_valid = is_card_valid (new_text);
                     break;
                 case 2:
-                    if (new_text.length != 4) {
+                    if (new_text.length < 4) {
                         expiration_valid = false;
                     } else {
-                        var regex = new Regex ("""[0-9]{4}""");
+                        var regex = new Regex ("""^[0-9]{2}\/?[0-9]{2}$""");
                         expiration_valid = regex.match (new_text);
                     }
                     break;
@@ -364,9 +372,10 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
 
     private void on_pay_clicked () {
         new Thread<void*> (null, () => {
-            var year = (int.parse (card_expiration_entry.text[2:4]) + 2000).to_string ();
+            string expiration_dateyear = card_expiration_entry.text.replace("/", "");
+            var year = (int.parse (expiration_dateyear[2:4]) + 2000).to_string ();
 
-            var data = get_stripe_data (stripe_key, email_entry.text, (amount * 100).to_string (), card_number_entry.text, card_expiration_entry.text[0:2], year, card_cvc_entry.text);
+            var data = get_stripe_data (stripe_key, email_entry.text, (amount * 100).to_string (), card_number_entry.text, expiration_dateyear[0:2], year, card_cvc_entry.text);
             debug ("Stripe data:%s", data);
             string? error = null;
             try {

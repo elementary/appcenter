@@ -88,7 +88,7 @@ public class AppCenterCore.Client : Object {
                 }
             });
         } catch (Error e) {
-            error (e.message);
+            critical (e.message);
         }
 
         var icon = new AppStream.Icon ();
@@ -238,7 +238,13 @@ public class AppCenterCore.Client : Object {
             return;
         }
 
-        var command = new Granite.Services.SimpleCommand ("/usr/bin", "ubuntu-drivers list");
+        string? drivers_exec_path = Environment.find_program_in_path ("ubuntu-drivers");
+        if (drivers_exec_path == null) {
+            task_count--;
+            return;
+        }
+
+        var command = new Granite.Services.SimpleCommand ("/", "%s list".printf (drivers_exec_path));
         command.done.connect ((command, status) => parse_drivers_output (command.standard_output_str, status));
         command.run ();
     }
@@ -380,6 +386,18 @@ public class AppCenterCore.Client : Object {
             task_count--;
             throw e;
         }
+
+        if (package != null) {
+            Pk.Results details = client.get_details_sync ({ package.package_id, null }, null, (t, p) => {});
+            details.get_details_array ().foreach ((details) => {
+                package.license = details.license;
+                package.description = details.description;
+                package.summary = details.summary;
+                package.group = details.group;
+                package.size = details.size;
+                package.url = details.url;
+            });
+        }   
 
         task_count--;
         return package;

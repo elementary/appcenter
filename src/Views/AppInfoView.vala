@@ -26,8 +26,9 @@ namespace AppCenter.Views {
 
         Gtk.Grid links_grid;
         Gtk.Box header_box;
-        Gtk.Image app_screenshot;
+        Gtk.Stack app_screenshots;
         Gtk.Stack screenshot_stack;
+        Widgets.Switcher screenshot_switcher;
         Gtk.Label app_screenshot_not_found;
         Gtk.Label app_version;
         Gtk.TextView app_description;
@@ -43,11 +44,15 @@ namespace AppCenter.Views {
             screenshots = package.component.get_screenshots ();
 
             if (screenshots.length > 0) {
-                app_screenshot = new Gtk.Image ();
-                app_screenshot.width_request = 800;
-                app_screenshot.height_request = 500;
-                app_screenshot.icon_name = "image-x-generic";
-                app_screenshot.halign = Gtk.Align.CENTER;
+                app_screenshots = new Gtk.Stack ();
+                app_screenshots.width_request = 800;
+                app_screenshots.height_request = 500;
+                app_screenshots.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
+                app_screenshots.halign = Gtk.Align.CENTER;
+
+                screenshot_switcher = new Widgets.Switcher ();
+                screenshot_switcher.halign = Gtk.Align.CENTER;
+                screenshot_switcher.set_stack (app_screenshots);
 
                 var app_screenshot_spinner = new Gtk.Spinner ();
                 app_screenshot_spinner.halign = Gtk.Align.CENTER;
@@ -62,7 +67,7 @@ namespace AppCenter.Views {
                 screenshot_stack.get_style_context ().add_class (Gtk.STYLE_CLASS_BACKGROUND);
                 screenshot_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
                 screenshot_stack.add (app_screenshot_spinner);
-                screenshot_stack.add (app_screenshot);
+                screenshot_stack.add (app_screenshots);
                 screenshot_stack.add (app_screenshot_not_found);
             }
 
@@ -115,6 +120,7 @@ namespace AppCenter.Views {
 
             if (screenshots.length > 0) {
                 content_grid.add (screenshot_stack);
+                content_grid.add (screenshot_switcher);
             }
 
             if (!package.is_os_updates) {
@@ -122,11 +128,6 @@ namespace AppCenter.Views {
             }
             content_grid.add (app_description);
             content_grid.add (links_grid);
-
-            var scrolled = new Gtk.ScrolledWindow (null, null);
-            scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
-            scrolled.expand = true;
-            scrolled.add (content_grid);
 
             header_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
             header_box.get_style_context ().add_class ("banner");
@@ -151,8 +152,17 @@ namespace AppCenter.Views {
             header_grid.attach (action_stack, 3, 0, 1, 1);
             header_box.add (header_grid);
 
-            attach (header_box, 0, 0, 1, 1);
-            attach (scrolled, 0, 2, 1, 1);
+            var grid = new Gtk.Grid ();
+            grid.attach (header_box, 0, 0, 1, 1);
+            grid.attach (content_grid, 0, 1, 1, 1);
+
+            var scrolled = new Gtk.ScrolledWindow (null, null);
+            scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
+            scrolled.expand = true;
+            scrolled.add (grid);
+
+            add (scrolled);
+
             reload_css ();
         }
 
@@ -161,7 +171,7 @@ namespace AppCenter.Views {
 
             set_up_package (128);
 
-            parse_description (package.component.get_description ());
+            parse_description (package.get_description ());
 
             if (package.component.get_addons ().length > 0) {
                 extension_box = new Gtk.ListBox ();
@@ -277,32 +287,47 @@ namespace AppCenter.Views {
             new Thread<void*> ("content-loading", () => {
                 app_version.label = package.get_version ();
 
-                string url = null;
-                uint max_size = 0U;
-
                 if (screenshots.length == 0) {
                     return null;
                 }
 
+                List<string> urls = new List<string> ();
+
                 screenshots.foreach ((screenshot) => {
                     screenshot.get_images ().foreach ((image) => {
-                        if (max_size < image.get_width ()) {
-                            url = image.get_url ();
-                            max_size = image.get_width ();
+                        if (image.get_kind () == AppStream.ImageKind.SOURCE) {
+                            if (screenshot.get_kind () == AppStream.ScreenshotKind.DEFAULT) {
+                                urls.prepend (image.get_url ());
+                            } else {
+                                urls.append (image.get_url ());
+                            }
+
+                            return;
                         }
                     });
                 });
 
-                if (url != null) {
-                    set_screenshot (url);
+                foreach (var url in urls) {
+                    load_screenshot (url);
                 }
+
+                Idle.add (() => {
+                    if (app_screenshots.get_children ().length () > 0) {
+                        screenshot_stack.visible_child = app_screenshots;
+                        screenshot_switcher.update_selected ();
+                    } else {
+                        screenshot_stack.visible_child = app_screenshot_not_found;
+                    }
+
+                    return GLib.Source.REMOVE;
+                });
 
                 return null;
             });
         }
 
         // We need to first download the screenshot locally so that it doesn't freeze the interface.
-        private void set_screenshot (string url) {
+        private void load_screenshot (string url) {
             var ret = GLib.DirUtils.create_with_parents (GLib.Environment.get_tmp_dir () + Path.DIR_SEPARATOR_S + ".appcenter", 0755);
             if (ret == -1) {
                 critical ("Error creating the temporary folder: GFileError #%d", GLib.FileUtils.error_from_errno (GLib.errno));
@@ -318,8 +343,6 @@ namespace AppCenter.Views {
                     source.copy (fileimage, GLib.FileCopyFlags.OVERWRITE);
                 } catch (Error e) {
                     debug (e.message);
-                    // The file is likely to not being found.
-                    screenshot_stack.visible_child = app_screenshot_not_found;
                     return;
                 }
 
@@ -328,15 +351,21 @@ namespace AppCenter.Views {
                 critical ("Error create the temporary file: GFileError #%d", GLib.FileUtils.error_from_errno (GLib.errno));
                 fileimage = File.new_for_uri (url);
                 if (fileimage.query_exists () == false) {
-                    screenshot_stack.visible_child = app_screenshot_not_found;
                     return;
                 }
             }
 
             Idle.add (() => {
                 try {
-                    app_screenshot.pixbuf = new Gdk.Pixbuf.from_file_at_scale (fileimage.get_path (), 800, 600, true);
-                    screenshot_stack.visible_child = app_screenshot;
+                    var image = new Gtk.Image ();
+                    image.width_request = 800;
+                    image.height_request = 500;
+                    image.icon_name = "image-x-generic";
+                    image.halign = Gtk.Align.CENTER;
+                    image.pixbuf = new Gdk.Pixbuf.from_file_at_scale (fileimage.get_path (), 800, 600, true);
+                    image.show ();
+
+                    app_screenshots.add (image);
                 } catch (Error e) {
                     critical (e.message);
                 }
