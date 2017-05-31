@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-05-31 21:51+0000\n"
+"PO-Revision-Date: 2017-05-31 21:53+0000\n"
 "Last-Translator: Jernej Virag <jernej@virag.si>\n"
 "Language-Team: Slovenian "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/sl/>\n"
@@ -390,9 +390,9 @@ msgstr "Noben program ni bil najden. Poiskusite z drugim iskalnim nizom."
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "%u posodobitev je na voljo"
-msgstr[1] "%u posodobitev je na voljo"
-msgstr[2] "%u posodobitvi sta na voljo"
-msgstr[3] "%u posodobitve so na voljo"
+msgstr[1] "%u posodobitvi sta na voljo"
+msgstr[2] "%u posodobitev so na voljo"
+msgstr[3] "%u posodobitev je na voljo"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:69
 msgid "Size: %s"
@@ -400,7 +400,7 @@ msgstr "Velikost: %s"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:105
 msgid "Searching for updates…"
-msgstr "Iskanje posodobitev..."
+msgstr "Iskanje posodobitev…"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:112
 msgid "Up to Date"
@@ -442,18 +442,18 @@ msgstr "Posodobitve sistemskih komponent"
 #: ../src/Core/Client.vala:459
 msgid "Update Available"
 msgid_plural "Updates Available"
-msgstr[0] "Posodobitve so na voljo"
-msgstr[1] "Posodobitev je na voljo"
-msgstr[2] "Posodobitvi sta na voljo"
+msgstr[0] "Posodobitev je na voljo"
+msgstr[1] "Posodobitvi sta na voljo"
+msgstr[2] "Posodobitve so na voljo"
 msgstr[3] "Posodobitve so na voljo"
 
 #: ../src/Core/Client.vala:460
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "%u posodobitev je na voljo za vaš sistem"
-msgstr[1] "%u posodobitev je na voljo za vaš sistem"
-msgstr[2] "%u posodobitvi sta na voljo za vaš sistem"
-msgstr[3] "%u posodobitve so na voljo za vaš sistem"
+msgstr[1] "%u posodobitvi sta na voljo za vaš sistem"
+msgstr[2] "%u posodobitve so na voljo za vaš sistem"
+msgstr[3] "%u posodobitev je na voljo za vaš sistem"
 
 #: ../src/Core/Client.vala:489
 msgid "Restart Required"
