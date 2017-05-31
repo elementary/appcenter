@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-04-30 21:49+0000\n"
-"Last-Translator: ezeveliz <ezequiel_veliz@hotmail.com>\n"
-"Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/es/>\n"
+"PO-Revision-Date: 2017-05-31 22:07+0000\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
+"Language-Team: Spanish "
+"<https://l10n.elementary.io/projects/appcenter/appcenter/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
 #: ../src/Application.vala:40
@@ -88,6 +88,8 @@ msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
+"Se produjo un error al procesar la tarjeta. Por favor, inténtelo de nuevo "
+"más tarde. Nos disculpamos por cualquier inconveniente causado."
 
 #: ../src/Dialogs/StripeDialog.vala:31
 msgid "Please review your payment info and try again."
@@ -95,35 +97,36 @@ msgstr "Por favor, revise la información de su pago e inténtelo de nuevo."
 
 #: ../src/Dialogs/StripeDialog.vala:75
 msgid "Email"
-msgstr ""
+msgstr "Correo"
 
 #: ../src/Dialogs/StripeDialog.vala:77
 msgid ""
 "Your email address is used to send a receipt. It is never stored and you "
 "will not be subscribed to a mailing list."
 msgstr ""
+"Su dirección de correo electrónico es usado para enviar un recibo. Nunca se "
+"almacena y no se le suscribirá a una lista de correo."
 
 #: ../src/Dialogs/StripeDialog.vala:88
 msgid "Card Number"
-msgstr ""
+msgstr "Número de tarjeta"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: ../src/Dialogs/StripeDialog.vala:100
 msgid "MM / YY"
-msgstr ""
+msgstr "MM / AA"
 
 #: ../src/Dialogs/StripeDialog.vala:120
 msgid "CVC"
-msgstr ""
+msgstr "CVC"
 
 #: ../src/Dialogs/StripeDialog.vala:157
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Política de privacidad"
 
 #: ../src/Dialogs/StripeDialog.vala:168 ../src/Dialogs/StripeDialog.vala:284
-#, fuzzy
 msgid "Pay $%d.00"
-msgstr "Pagar $%s.00"
+msgstr "Pagar $%d.00"
 
 #: ../src/Dialogs/StripeDialog.vala:213
 msgid "Processing"
@@ -145,46 +148,59 @@ msgstr "Re-intentar"
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr ""
+"El número de tarjeta es incorrecto. Inténtalo de nuevo con el número de "
+"tarjeta correcto."
 
 #: ../src/Dialogs/StripeDialog.vala:465
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"El mes de caducidad no es válido. Inténtalo de nuevo utilizando la fecha de "
+"caducidad correcta."
 
 #: ../src/Dialogs/StripeDialog.vala:467 ../src/Dialogs/StripeDialog.vala:525
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"El año de caducidad no es válido. Inténtalo de nuevo utilizando la fecha de "
+"caducidad correcta."
 
 #: ../src/Dialogs/StripeDialog.vala:470 ../src/Dialogs/StripeDialog.vala:523
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr ""
+"El número CVC es incorrecto. Vuelva a intentarlo utilizando el CVC correcto."
 
 #: ../src/Dialogs/StripeDialog.vala:472 ../src/Dialogs/StripeDialog.vala:514
 msgid "The card has expired. Please try again with a different card."
-msgstr ""
+msgstr "La tarjeta ha caducado. Inténtalo de nuevo con una tarjeta diferente."
 
 #: ../src/Dialogs/StripeDialog.vala:492
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr ""
+"Hay demasiadas solicitudes de pago en este momento. Vuelve a intentarlo más "
+"tarde."
 
 #: ../src/Dialogs/StripeDialog.vala:508
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
 msgstr ""
+"Esta tarjeta no admite este tipo de transacción. Inténtelo de nuevo con una "
+"tarjeta diferente."
 
 #: ../src/Dialogs/StripeDialog.vala:510
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
 msgstr ""
+"La moneda no es compatible con esta tarjeta. Inténtelo de nuevo con una "
+"tarjeta diferente."
 
 #: ../src/Dialogs/StripeDialog.vala:512
 msgid "The transaction has already been processed."
-msgstr ""
+msgstr "La transacción ya ha sido procesada."
 
 #: ../src/Dialogs/StripeDialog.vala:516
 msgid ""
@@ -408,7 +424,7 @@ msgstr "Actualizado"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:120
 msgid "Drivers"
-msgstr ""
+msgstr "Controladores"
 
 #: ../src/MainWindow.vala:118 ../src/MainWindow.vala:146
 #: ../src/MainWindow.vala:316 ../src/MainWindow.vala:338
@@ -416,9 +432,8 @@ msgid "Search Apps"
 msgstr "Buscar aplicaciones"
 
 #: ../src/MainWindow.vala:161
-#, fuzzy
 msgid "Network Is Not Available"
-msgstr "Captura de pantalla no disponible"
+msgstr "Red no disponible"
 
 #: ../src/MainWindow.vala:162
 msgid "Connect to the internet to install or update apps."
