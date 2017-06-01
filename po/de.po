@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-05-25 20:45+0000\n"
-"Last-Translator: Jörg Habekost <joebeam@t-online.de>\n"
+"PO-Revision-Date: 2017-05-27 08:58+0000\n"
+"Last-Translator: Marco Dahms <dahmsdahmsdahms@gmail.com>\n"
 "Language-Team: German "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/de/>\n"
 "Language: de\n"
@@ -89,6 +89,8 @@ msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
+"Bei der Bearbeitung der Karte ist ein Fehler aufgetreten. Wir entschuldigen "
+"uns für die Unannehmlichkeiten."
 
 #: ../src/Dialogs/StripeDialog.vala:31
 msgid "Please review your payment info and try again."
@@ -117,11 +119,11 @@ msgstr "MM / JJ"
 
 #: ../src/Dialogs/StripeDialog.vala:120
 msgid "CVC"
-msgstr ""
+msgstr "CVC-Prüfnummer"
 
 #: ../src/Dialogs/StripeDialog.vala:157
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Datenschutz"
 
 #: ../src/Dialogs/StripeDialog.vala:168 ../src/Dialogs/StripeDialog.vala:284
 #, fuzzy
@@ -170,6 +172,8 @@ msgstr ""
 #: ../src/Dialogs/StripeDialog.vala:470 ../src/Dialogs/StripeDialog.vala:523
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr ""
+"Die CVC-Prüfnummer ist falsch. Bitte versuche es mit der richtigen CVC-"
+"Prüfnummer erneut."
 
 #: ../src/Dialogs/StripeDialog.vala:472 ../src/Dialogs/StripeDialog.vala:514
 msgid "The card has expired. Please try again with a different card."
@@ -178,6 +182,8 @@ msgstr "Die Karte ist abgelaufen. Versuche es mit einer anderen Karte."
 #: ../src/Dialogs/StripeDialog.vala:492
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr ""
+"Der sind derzeit zu viele Zahlungsanfragen in Bearbeitung. Bitte versuche es "
+"später erneut."
 
 #: ../src/Dialogs/StripeDialog.vala:508
 msgid ""
@@ -197,7 +203,7 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:512
 msgid "The transaction has already been processed."
-msgstr ""
+msgstr "Diese Transaktion wurde bereits bearbeitet."
 
 #: ../src/Dialogs/StripeDialog.vala:516
 msgid ""
@@ -210,6 +216,8 @@ msgstr ""
 #: ../src/Dialogs/StripeDialog.vala:518
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr ""
+"Dein Guthaben ist nicht ausreichend. Verwende bitte eine andere "
+"Zahlungsweise."
 
 #: ../src/Dialogs/StripeDialog.vala:520
 msgid "The amount is incorrect. Please try again using a valid amount."
@@ -240,11 +248,13 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:556
 msgid "The balance or credit limit on the card has been reached."
-msgstr ""
+msgstr "Das Limit der Karte ist erreicht."
 
 #: ../src/Dialogs/StripeDialog.vala:559
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
+"Die angegebene Karte ist eine Testkarte. Verwende bitte eine echte Karte, um "
+"fortzufahren."
 
 #: ../src/Views/InstalledView.vala:51 ../src/MainWindow.vala:130
 msgctxt "view"
@@ -297,7 +307,7 @@ msgstr "Hilfe"
 
 #: ../src/Views/Homepage.vala:104
 msgid "Recently Updated"
-msgstr ""
+msgstr "Kürzlich Aktualisiert"
 
 #: ../src/Views/Homepage.vala:156
 msgid "Categories"
@@ -377,15 +387,13 @@ msgstr "Gratis"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: ../src/Widgets/HumbleButton.vala:152
-#, fuzzy
 msgid "$%d.00"
-msgstr "$%d,00"
+msgstr "$%d,00 USD"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: ../src/Widgets/HumbleButton.vala:155
-#, fuzzy
 msgid "$%d"
-msgstr "$%d"
+msgstr "$%d USD"
 
 #: ../src/Widgets/AbstractAppContainer.vala:105
 msgid "Uninstall"
@@ -393,7 +401,7 @@ msgstr "Deinstallieren"
 
 #: ../src/Widgets/AbstractAppContainer.vala:108
 msgid "Open"
-msgstr "frei"
+msgstr "Öffnen"
 
 #: ../src/Widgets/AbstractAppContainer.vala:161
 msgid "The %s Developers"
