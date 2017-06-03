@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
 "PO-Revision-Date: 2017-06-03 15:53+0000\n"
-"Last-Translator: Pedro Carvalho <inceptus.p@live.com>\n"
+"Last-Translator: André Luís de Andrade Mendes <andreluis.mendes@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -444,7 +444,7 @@ msgstr "Conecte-se a internet para instalar ou atualizar aplicativos."
 
 #: ../src/MainWindow.vala:165
 msgid "Network Settings…"
-msgstr ""
+msgstr "Configurções de rede..."
 
 #: ../src/MainWindow.vala:298
 msgid "Search %s"
