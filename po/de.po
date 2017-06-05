@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-06-05 09:37+0000\n"
+"PO-Revision-Date: 2017-06-05 10:05+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/de/>\n"
@@ -62,7 +62,7 @@ msgstr "Schließen"
 
 #: ../src/Application.vala:235
 msgid "There Was An Error Installing %s"
-msgstr "Während der Installation von %s trat ein Fehler auf"
+msgstr "Während der Installation von %s ist ein Fehler aufgetreten"
 
 #: ../src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -93,7 +93,8 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:31
 msgid "Please review your payment info and try again."
-msgstr "Bitte überprüfe deine Zahlungsinformationen und versuche es erneut."
+msgstr ""
+"Bitte überprüfen Sie die Zahlungsdaten und versuchen Sie es noch einmal."
 
 #: ../src/Dialogs/StripeDialog.vala:75
 msgid "Email"
@@ -104,8 +105,8 @@ msgid ""
 "Your email address is used to send a receipt. It is never stored and you "
 "will not be subscribed to a mailing list."
 msgstr ""
-"Deine Email-Adresse wird benutzt, um die Rechnung zu versenden. Sie wird "
-"nicht gespeichert und keiner Email-Nachrichtenliste hinzugefügt."
+"Die E-Mail-Adresse wird benötigt, um eine Bestätigung zu versenden. Sie wird "
+"weder gespeichert noch einer E-Mail-Nachrichtenliste hinzugefügt."
 
 #: ../src/Dialogs/StripeDialog.vala:88
 msgid "Card Number"
@@ -134,7 +135,7 @@ msgstr "In Bearbeitung"
 
 #: ../src/Dialogs/StripeDialog.vala:238
 msgid "There Was a Problem Processing Your Payment"
-msgstr "Beim Bearbeiten deiner Zahlung trat ein Fehler auf"
+msgstr "Beim Bearbeiten der Zahlung ist ein Fehler aufgetreten"
 
 #: ../src/Dialogs/StripeDialog.vala:276
 msgid "Pay Later"
@@ -148,56 +149,51 @@ msgstr "Erneut versuchen"
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr ""
-"Die Kartennummer ist nicht korrekt. Versuche bitte die richtige Kartennummer "
-"einzugeben."
+"Die Kartennummer ist nicht korrekt. Bitte geben Sie die richtige "
+"Kartennummer ein."
 
 #: ../src/Dialogs/StripeDialog.vala:465
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
-"Der Monat des Ablaufs ist falsch. Bitte versuche das korrekte Ablaufdatum "
-"einzugeben."
+"Der angegebene Ablaufmonat ist ungültig. Geben Sie den korrekten Wert an."
 
 #: ../src/Dialogs/StripeDialog.vala:467 ../src/Dialogs/StripeDialog.vala:525
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
-msgstr ""
-"Das Jahr des Ablaufs ist falsch. Bitte versuche das korrekte Ablaufdatum "
-"einzugeben."
+msgstr "Das Ablaufjahr ist ungültig. Bitte geben Sie den korrekten Wert ein."
 
 #: ../src/Dialogs/StripeDialog.vala:470 ../src/Dialogs/StripeDialog.vala:523
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr ""
-"Die CVC-Prüfnummer ist falsch. Bitte versuche es mit der richtigen CVC-"
-"Prüfnummer erneut."
+msgstr "Die CVC-Prüfnummer ist falsch. Bitte geben Sie den korrekten Wert ein."
 
 #: ../src/Dialogs/StripeDialog.vala:472 ../src/Dialogs/StripeDialog.vala:514
 msgid "The card has expired. Please try again with a different card."
-msgstr "Die Karte ist abgelaufen. Versuche es mit einer anderen Karte."
+msgstr "Die Karte ist abgelaufen. Verwenden Sie eine andere Karte."
 
 #: ../src/Dialogs/StripeDialog.vala:492
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr ""
-"Der sind derzeit zu viele Zahlungsanfragen in Bearbeitung. Bitte versuche es "
-"später erneut."
+"Im Augenblick sind zu viele Zahlungsanfragen in Bearbeitung. Bitte versuchen "
+"Sie es später erneut."
 
 #: ../src/Dialogs/StripeDialog.vala:508
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
 msgstr ""
-"Diese Karte unterstützt nicht diese Art der Transaktion. Versuche es bitte "
-"mit einer anderen Karte."
+"Die Karte unterstützt diese Transaktionsart nicht. Vewenden Sie eine andere "
+"Karte."
 
 #: ../src/Dialogs/StripeDialog.vala:510
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
 msgstr ""
-"Die Währung wird nicht von dieser Karte unterstützt. Bitte versuche es noch "
-"einmal mit einer anderen Karte."
+"Zahlungen in dieser Währung sind mit dieser Karte nicht möglich. Verwenden "
+"Sie eine andere Karte."
 
 #: ../src/Dialogs/StripeDialog.vala:512
 msgid "The transaction has already been processed."
@@ -208,51 +204,45 @@ msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "Postal code."
 msgstr ""
-"Die Postleitzahl ist nicht korrekt. Bitte versuche es noch einmal mit der "
-"korrekten Postleitzahl."
+"Die Postleitzahl ist nicht korrekt. Geben Sie die korrekte Postleitzahl ein."
 
 #: ../src/Dialogs/StripeDialog.vala:518
 msgid "You don't have enough funds. Please use an alternative payment method."
-msgstr ""
-"Dein Guthaben ist nicht ausreichend. Verwende bitte eine andere "
-"Zahlungsweise."
+msgstr "Ihr Guthaben reicht nicht aus. Nutzen Sie eine andere Zahlungsweise."
 
 #: ../src/Dialogs/StripeDialog.vala:520
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr ""
-"Der Betrag ist nicht korrekt. Bitte versuche es noch einmal mit einem "
-"gültigen Betrag."
+msgstr "Der Betrag ist ungültig. Bitte geben Sie einen korrekten Wert ein."
 
 #: ../src/Dialogs/StripeDialog.vala:531
 msgid "The pin number is incorrect. Please try again using the correct pin."
 msgstr ""
-"Die PIN-Nummer ist nicht korrekt. Bitte versuche es nich einmal mit der "
-"korrekten PIN."
+"Die PIN-Nummer ist nicht korrekt. Bitte geben Sie den richtigen Wert ein."
 
 #: ../src/Dialogs/StripeDialog.vala:533
 msgid ""
 "There has been too many pin attempts. Please try again with a different card."
 msgstr ""
-"Es gab zu viele PIN-Versuche. Bitte versuche es noch einmal mit einer "
-"anderen Karte."
+"Die PIN wurde zu oft falsch eingegeben. Versuchen Sie es mit einer anderen "
+"Karte."
 
 #: ../src/Dialogs/StripeDialog.vala:553
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
 msgstr ""
-"Es ist nicht möglich, die Transaktion abzuschließen. Bitte kontaktiere Deine "
-"Bank für weiterführende Informationen."
+"Die Transaktion konnte nicht abgeschlossen werden. Weitere Informationen "
+"erhalten Sie von Ihrer Bank."
 
 #: ../src/Dialogs/StripeDialog.vala:556
 msgid "The balance or credit limit on the card has been reached."
-msgstr "Das Limit der Karte ist erreicht."
+msgstr "Das Kartenlimit ist erreicht."
 
 #: ../src/Dialogs/StripeDialog.vala:559
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
-"Die angegebene Karte ist eine Testkarte. Verwende bitte eine echte Karte, um "
-"fortzufahren."
+"Die angegebene Karte ist eine Testkarte. Verwenden Sie zum Fortfahren eine "
+"echte Karte."
 
 #: ../src/Views/InstalledView.vala:51 ../src/MainWindow.vala:130
 msgctxt "view"
@@ -268,12 +258,12 @@ msgstr "Suchen"
 #: ../src/Views/AppListView.vala:121
 msgid "A restart is required to complete the installation of updates"
 msgstr ""
-"Es ist ein Neustart erforderlich, um die Installation der Aktualisierungen "
-"abzuschließen"
+"Um die Installation der Aktualisierungen abzuschließen, ist ein Neustart "
+"erforderlich"
 
 #: ../src/Views/AppListView.vala:129
 msgid "Restart Now"
-msgstr "Jetzt neustarten"
+msgstr "Jetzt neu starten"
 
 #: ../src/Views/AppListView.vala:222
 msgid "Update All"
@@ -281,7 +271,7 @@ msgstr "Alle aktualisieren"
 
 #: ../src/Views/AppInfoView.vala:57
 msgid "Screenshot Not Available"
-msgstr "Bildschirmfoto nicht vorhanden"
+msgstr "Kein Bildschirmfoto vorhanden"
 
 #: ../src/Views/AppInfoView.vala:170
 msgid "Extensions:"
@@ -297,7 +287,7 @@ msgstr "Übersetzungen vorschlagen"
 
 #: ../src/Views/AppInfoView.vala:198
 msgid "Report a Problem"
-msgstr "Ein Problem melden"
+msgstr "Problem melden"
 
 #: ../src/Views/AppInfoView.vala:205
 msgid "Help"
@@ -305,7 +295,7 @@ msgstr "Hilfe"
 
 #: ../src/Views/Homepage.vala:104
 msgid "Recently Updated"
-msgstr "Kürzlich Aktualisiert"
+msgstr "Kürzlich aktualisiert"
 
 #: ../src/Views/Homepage.vala:156
 msgid "Categories"
@@ -323,9 +313,10 @@ msgstr "AppCenter"
 
 #: ../src/Widgets/Banner.vala:107
 msgid "An open, pay-what-you-want app store"
-msgstr "Ein offener, bezahl-was-du-willst App Store"
+msgstr "Ein offener, Bezahl-was-du-willst-App-Store"
 
 #: ../src/Widgets/Banner.vala:120
+#, fuzzy
 msgid "Get the apps that you need at a price you can afford."
 msgstr ""
 "Erhalte die Apps, die du brauchst, zu einem Preis, den du dir leisten kannst."
@@ -336,7 +327,7 @@ msgstr "Audio"
 
 #: ../src/Widgets/CategoryFlowBox.vala:30
 msgid "Development"
-msgstr "Softwareentwicklung"
+msgstr "Software-Entwicklung"
 
 #: ../src/Widgets/CategoryFlowBox.vala:31
 msgid "Accessories"
@@ -456,12 +447,12 @@ msgstr "Netzwerk ist nicht erreichbar"
 #: ../src/MainWindow.vala:162
 msgid "Connect to the internet to install or update apps."
 msgstr ""
-"Verbindung mit dem Internet herstellen, um Apps zu installieren oder zu "
-"aktualisieren."
+"Verbindung mit dem Internet herstellen, um Anwendungen zu installieren oder "
+"zu aktualisieren."
 
 #: ../src/MainWindow.vala:165
 msgid "Network Settings…"
-msgstr "Netzwerkeinstellungen…"
+msgstr "Netzwerkeinstellungen …"
 
 #: ../src/MainWindow.vala:298
 msgid "Search %s"
@@ -525,7 +516,7 @@ msgstr "Herunterladen"
 
 #: ../src/Core/ChangeInformation.vala:68
 msgid "Installing"
-msgstr "Wird installiert"
+msgstr "Installieren"
 
 #: ../src/Core/ChangeInformation.vala:70
 msgid "Refreshing software list"
@@ -593,7 +584,7 @@ msgstr "Gruppen werden heruntergeladen"
 
 #: ../src/Core/ChangeInformation.vala:102
 msgid "Downloading update information"
-msgstr "Aktualisierungs-Informationen werden heruntergeladen"
+msgstr "Aktualisierungsinformationen werden heruntergeladen"
 
 #: ../src/Core/ChangeInformation.vala:104
 msgid "Repackaging files"
@@ -613,11 +604,11 @@ msgstr "Paketliste wird erzeugt"
 
 #: ../src/Core/ChangeInformation.vala:112
 msgid "Waiting for package manager lock"
-msgstr "Warten auf Sperre des Paketmanagers"
+msgstr "Warten auf die Aufhebung der Paketmanagersperre"
 
 #: ../src/Core/ChangeInformation.vala:114
 msgid "Waiting for authentication"
-msgstr "Auf die Legitimierung wird gewartet"
+msgstr "Warten auf die Legitimierung"
 
 #: ../src/Core/ChangeInformation.vala:116
 msgid "Updating running applications"
@@ -625,7 +616,7 @@ msgstr "Liste der laufenden Anwendungen wird aktualisiert"
 
 #: ../src/Core/ChangeInformation.vala:118
 msgid "Checking applications in use"
-msgstr "Es wird geprüft, welche Anwendungen aktuell laufen"
+msgstr "Es wird geprüft, welche Anwendungen aktuell ausgeführt werden"
 
 #: ../src/Core/ChangeInformation.vala:120
 msgid "Checking libraries in use"
