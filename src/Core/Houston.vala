@@ -25,7 +25,7 @@ public class AppCenterCore.Houston : Object {
     private const string APPS_KEY = "apps";
 
     private Soup.Session session;
-    private GLib.KeyFile cache_file = null;
+    private GLib.KeyFile? cache_file = null;
 
     construct {
         session = new Soup.Session ();
@@ -164,7 +164,7 @@ public class AppCenterCore.Houston : Object {
     }
 
     private static string get_cache_file_path () {
-        return GLib.Path.build_filename (GLib.Environment.get_user_cache_dir (), "io.elementary.appcenter", "houston.conf");
+        return GLib.Path.build_filename (GLib.Environment.get_user_cache_dir (), "io.elementary.appcenter", "houston");
     }
 
     private static GLib.Once<Houston> instance;
