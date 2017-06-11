@@ -19,7 +19,7 @@ public class AppCenterCore.Client : Object {
     public signal void updates_available ();
     public signal void drivers_detected ();
 
-    public static Task client { public get; private set; }
+    protected static Task client { public get; private set; }
     public static Task get_pk_client () {
         return client;
     }
@@ -405,7 +405,7 @@ public class AppCenterCore.Client : Object {
 
     private async void refresh_updates () {
         task_count++;
-        
+
         try {
             Pk.Results results = yield UpdateManager.get_updates (null);
 
