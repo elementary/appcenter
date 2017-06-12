@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-06-08 18:31+0000\n"
-"Last-Translator: popvladaurel <popvladaurel@gmail.com>\n"
+"PO-Revision-Date: 2017-06-12 16:29+0000\n"
+"Last-Translator: Nicolae Crefelean <kneekoo@yahoo.com>\n"
 "Language-Team: Romanian "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/ro/>\n"
 "Language: ro\n"
@@ -414,7 +414,7 @@ msgstr "Dimensiune: %s"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:105
 msgid "Searching for updates…"
-msgstr "Verificare actualizări disponibile…"
+msgstr "Căutare actualizări…"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:112
 msgid "Up to Date"
@@ -431,11 +431,12 @@ msgstr "Caută aplicații"
 
 #: ../src/MainWindow.vala:161
 msgid "Network Is Not Available"
-msgstr "Fără conexiune la Internet"
+msgstr "Lipsă conexiune la internet"
 
 #: ../src/MainWindow.vala:162
 msgid "Connect to the internet to install or update apps."
-msgstr "Conectează-te la Internet pentru a instala sau actualiza aplicații."
+msgstr ""
+"Conectați-vă la Internet pentru instalarea sau actualizarea aplicațiilor."
 
 #: ../src/MainWindow.vala:165
 msgid "Network Settings…"
@@ -469,7 +470,7 @@ msgstr[2] "%u de actualizări de sistem sunt disponibile"
 
 #: ../src/Core/Client.vala:489
 msgid "Restart Required"
-msgstr "Restart necesar"
+msgstr "Sistemul trebuie repornit"
 
 #: ../src/Core/Client.vala:490
 msgid "Please restart your system to finalize updates"
@@ -517,11 +518,11 @@ msgstr "Se instalează actualizările"
 
 #: ../src/Core/ChangeInformation.vala:74
 msgid "Cleaning up packages"
-msgstr "Se şterg pachete"
+msgstr "Se șterg pachete"
 
 #: ../src/Core/ChangeInformation.vala:76
 msgid "Obsoleting packages"
-msgstr "Pachete ieşite din uz"
+msgstr "Pachete ieșite din uz"
 
 #: ../src/Core/ChangeInformation.vala:78
 msgid "Resolving dependencies"
@@ -529,7 +530,7 @@ msgstr "Se rezolvă dependențele"
 
 #: ../src/Core/ChangeInformation.vala:80
 msgid "Checking signatures"
-msgstr "Se verifică semnături"
+msgstr "Se verifică semnăturile"
 
 #: ../src/Core/ChangeInformation.vala:82
 msgid "Testing changes"
@@ -553,19 +554,19 @@ msgstr "În curs de anulare"
 
 #: ../src/Core/ChangeInformation.vala:92
 msgid "Downloading repository information"
-msgstr "Se descarcă informaţia stocată"
+msgstr "Se descarcă informațiile din depozit"
 
 #: ../src/Core/ChangeInformation.vala:94
 msgid "Downloading list of packages"
-msgstr "Se descărcă lista de pachete"
+msgstr "Se descarcă lista de pachete"
 
 #: ../src/Core/ChangeInformation.vala:96
 msgid "Downloading file lists"
-msgstr "Se descarcă lista cu fişiere"
+msgstr "Se descarcă listele de fișiere"
 
 #: ../src/Core/ChangeInformation.vala:98
 msgid "Downloading lists of changes"
-msgstr "Se descărcă lista cu modificări"
+msgstr "Se descarcă listele de modificări"
 
 #: ../src/Core/ChangeInformation.vala:100
 msgid "Downloading groups"
@@ -573,7 +574,7 @@ msgstr "Se descarcă grupurile"
 
 #: ../src/Core/ChangeInformation.vala:102
 msgid "Downloading update information"
-msgstr "Se descarcă informaţiile de actualizare"
+msgstr "Se descarcă informațiile de actualizare"
 
 #: ../src/Core/ChangeInformation.vala:104
 msgid "Repackaging files"
@@ -581,15 +582,15 @@ msgstr "Se reasamblează fișierele"
 
 #: ../src/Core/ChangeInformation.vala:106
 msgid "Loading cache"
-msgstr "Se încărca cache-ul"
+msgstr "Se încarcă datele din cache"
 
 #: ../src/Core/ChangeInformation.vala:108
 msgid "Scanning applications"
-msgstr "Se scanează aplicaţiile"
+msgstr "Se scanează aplicațiile"
 
 #: ../src/Core/ChangeInformation.vala:110
 msgid "Generating package lists"
-msgstr "Se generează lista pachetelor"
+msgstr "Se generează listele pachetelor"
 
 #: ../src/Core/ChangeInformation.vala:112
 msgid "Waiting for package manager lock"
