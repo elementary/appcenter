@@ -182,15 +182,10 @@ namespace AppCenter.Views {
                 }
             });
 
-            var client = AppCenterCore.Client.get_default ();
-            client.bind_property ("restart-required", infobar, "visible", BindingFlags.SYNC_CREATE);
+            AppCenterCore.UpdateManager.get_default ().bind_property ("restart-required", infobar, "visible", BindingFlags.SYNC_CREATE);
 
             add (infobar);
             add (scrolled);
-        }
-
-        public AppListUpdateView () {
-            _updating_cache = true;
         }
 
         protected override void after_add_remove_change_row () { list_box.invalidate_headers (); }
