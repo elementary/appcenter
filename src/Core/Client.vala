@@ -334,11 +334,13 @@ public class AppCenterCore.Client : Object {
     }
 
     private static void populate_timestamp (AppCenterCore.Package package, Pk.Package pk_package, Gee.Collection<Pk.TransactionPast> transactions) {
+        unowned string package_name = pk_package.get_name ();
+
         foreach (var pk_transaction in transactions) {
             var lines = pk_transaction.get_data ().split ("\n");
 
             for (var i = 0; i < lines.length; i++) {
-                if (lines[i].has_prefix ("installing") && lines[i].contains(pk_package.get_name ())) {
+                if (lines[i].has_prefix ("installing") && lines[i].contains(package_name)) {
                     if (package.timestamp == null || package.timestamp < pk_transaction.get_timespec ()) {
                         package.timestamp = pk_transaction.get_timespec ();
                     }

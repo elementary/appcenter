@@ -231,8 +231,8 @@ namespace AppCenter.Views {
                 return a_is_driver ? - 1 : 1;
             }
 
-            string? a_timestamp = row1.get_timestamp ();
-            string? b_timestamp = row2.get_timestamp ();
+            string a_timestamp = row1.get_timestamp () ?? "";
+            string b_timestamp = row2.get_timestamp () ?? "";
 
             if (a_timestamp != b_timestamp) {
                 if (a_timestamp == null) {
