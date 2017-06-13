@@ -3,18 +3,20 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2016-11-04 07:42+0000\n"
-"Last-Translator: wec <tungsten314@gmail.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2017-06-09 12:38+0000\n"
+"Last-Translator: Augusto Lopez <augusto.bet4@gmail.com>\n"
+"Language-Team: English (Canada) "
+"<https://l10n.elementary.io/projects/appcenter/appcenter/en_CA/>\n"
+"Language: en_CA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
-"X-Generator: Launchpad (build 18331)\n"
 
 #: ../src/Application.vala:40
+#, fuzzy
 msgid "App Center"
 msgstr "App Centre"
 
@@ -29,7 +31,7 @@ msgstr ""
 
 #: ../src/Application.vala:114
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr ""
+msgstr "Specified link '%s' could not be found, searching instead"
 
 #: ../src/Application.vala:216
 msgid "Application installed"
@@ -41,23 +43,23 @@ msgstr "%s has been successfully installed"
 
 #: ../src/Application.vala:233
 msgid "Close"
-msgstr ""
+msgstr "Close"
 
 #: ../src/Application.vala:235
 msgid "There Was An Error Installing %s"
-msgstr ""
+msgstr "There Was An Error Installing %s"
 
 #: ../src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
-msgstr ""
+msgstr "Are you sure you want to Restart?"
 
 #: ../src/Dialogs/RestartDialog.vala:41
 msgid "This will close all open applications and restart this device."
-msgstr ""
+msgstr "This will close all open applications and restart this device."
 
 #: ../src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
-msgstr ""
+msgstr "Restart"
 
 #: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:166
 #: ../src/Dialogs/StripeDialog.vala:285
@@ -70,14 +72,16 @@ msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
+"An error occurred while processing the card. Please try again later. We "
+"apologize for any inconvenience caused."
 
 #: ../src/Dialogs/StripeDialog.vala:31
 msgid "Please review your payment info and try again."
-msgstr ""
+msgstr "Please review your payment info and try again."
 
 #: ../src/Dialogs/StripeDialog.vala:75
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: ../src/Dialogs/StripeDialog.vala:77
 msgid ""

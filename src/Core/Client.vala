@@ -19,12 +19,13 @@ public class AppCenterCore.Client : Object {
     public signal void updates_available ();
     public signal void drivers_detected ();
 
-    private const string RESTART_REQUIRED_FILE = "/var/run/reboot-required";
+    protected static Task client { public get; private set; }
+    public static Task get_pk_client () {
+        return client;
+    }
 
     public bool connected { public get; private set; }
-    public bool updating_cache { public get; private set; }
-    public bool restart_required { public get; private set; default = false; }
-    private File restart_file;
+
     private uint _task_count = 0;
     public uint task_count {
         public get {
@@ -36,38 +37,43 @@ public class AppCenterCore.Client : Object {
         }
     }
 
+    public bool updating_cache { public get; private set; default = false; }
+
     public AppCenterCore.Package os_updates { public get; private set; }
     public Gee.TreeSet<AppCenterCore.Package> driver_list { get; construct; }
 
     private Gee.HashMap<string, AppCenterCore.Package> package_list;
     private AppStream.Pool appstream_pool;
     private GLib.Cancellable cancellable;
-    private GLib.DateTime last_cache_update;
-    private GLib.DateTime last_action;
+
+    private GLib.DateTime last_cache_update = null;
+    private GLib.DateTime last_action = null;
+
     private uint updates_number = 0U;
     private uint update_cache_timeout_id = 0;
     private bool refresh_in_progress = false;
 
-    private const int SECONDS_BETWEEN_REFRESHES = 60*60*24;
+    private const int SECONDS_BETWEEN_REFRESHES = 60 * 60 * 24;
     private const int PACKAGEKIT_ACTIVITY_TIMEOUT_MS = 2000;
 
-    private Task client;
     private SuspendControl sc;
 
     private Client () {
+
+    }
+
+    static construct {
+        client = new Task ();
     }
 
     construct {
-        restart_file = File.new_for_path (RESTART_REQUIRED_FILE);
         package_list = new Gee.HashMap<string, AppCenterCore.Package> (null, null);
         driver_list = new Gee.TreeSet<AppCenterCore.Package> ();
         cancellable = new GLib.Cancellable ();
 
-        client = new Task ();
         sc = new SuspendControl ();
 
         cancellable = new GLib.Cancellable ();
-        last_cache_update = null;
 
         appstream_pool = new AppStream.Pool ();
         // We don't want to show installed desktop files here
@@ -103,7 +109,7 @@ public class AppCenterCore.Client : Object {
 
     private void updates_changed_callback () {
         if (!has_tasks ()) {
-            update_restart_state ();
+            UpdateManager.get_default ().update_restart_state ();
 
             var time_since_last_action = (new DateTime.now_local ()).difference (last_action) / GLib.TimeSpan.MILLISECOND;
             if (time_since_last_action >= PACKAGEKIT_ACTIVITY_TIMEOUT_MS) {
@@ -222,65 +228,6 @@ public class AppCenterCore.Client : Object {
         task_count--;
         yield refresh_updates ();
         return exit_status;
-    }
-
-    public async void get_updates () {
-        task_count++;
-
-        try {
-            Pk.Results results = yield client.get_updates_async (0, cancellable, (t, p) => { });
-            string[] packages_array = {};
-            results.get_package_array ().foreach ((pk_package) => {
-                packages_array += pk_package.get_id ();
-                unowned string pkg_name = pk_package.get_name ();
-                var package = package_list[pkg_name];
-                if (package != null) {
-                    package.latest_version = pk_package.get_version ();
-                    package.change_information.changes.clear ();
-                    package.change_information.details.clear ();
-                }
-
-                os_updates.change_information.changes.clear ();
-                os_updates.change_information.details.clear ();
-            });
-
-            // We need a null to show to PackageKit that it's then end of the array.
-            packages_array += null;
-
-            results = yield client.get_details_async (packages_array , cancellable, (t, p) => { });
-            results.get_details_array ().foreach ((pk_detail) => {
-                var pk_package = new Pk.Package ();
-                try {
-                    pk_package.set_id (pk_detail.get_package_id ());
-
-                    unowned string pkg_name = pk_package.get_name ();
-                    var package = package_list[pkg_name];
-                    if (package == null) {
-                        package = os_updates;
-
-                        var pkgnames = os_updates.component.pkgnames;
-                        pkgnames += pkg_name;
-                        os_updates.component.pkgnames = pkgnames;
-                    }
-
-                    package.change_information.changes.add (pk_package);
-                    package.change_information.details.add (pk_detail);
-                    package.update_state ();
-                } catch (Error e) {
-                    critical (e.message);
-                }
-            });
-        } catch (Error e) {
-            if (e.code != 19) {
-                critical (e.message);
-            }
-
-            task_count--;
-            return;
-        }
-
-        task_count--;
-        updates_available ();
     }
 
     public void get_drivers () {
@@ -477,14 +424,13 @@ public class AppCenterCore.Client : Object {
     }
 
     private async void refresh_updates () {
-        updating_cache = true;
         task_count++;
 
         try {
-            Pk.Results results = yield client.get_updates_async (0, null, (t, p) => {});
+            Pk.Results results = yield UpdateManager.get_updates (null);
 
             bool was_empty = updates_number == 0U;
-            updates_number = get_package_count (results.get_package_array ());
+            updates_number = get_real_packages_length (results.get_package_array ());
 
             var application = Application.get_default ();
             if (was_empty && updates_number != 0U) {
@@ -506,35 +452,50 @@ public class AppCenterCore.Client : Object {
             launcher_entry.count = updates_number;
             launcher_entry.count_visible = updates_number != 0U;
 #endif
+            results.get_package_array ().foreach ((pk_package) => {
+                unowned string pkg_name = pk_package.get_name ();
+                var package = package_list[pkg_name];
+                if (package != null) {
+                    package.latest_version = pk_package.get_version ();
+                    package.change_information.changes.clear ();
+                    package.change_information.details.clear ();
+                }
+
+                os_updates.change_information.changes.clear ();
+                os_updates.change_information.details.clear ();
+            });
+
+            results.get_details_array ().foreach ((pk_detail) => {
+                var pk_package = new Pk.Package ();
+                try {
+                    pk_package.set_id (pk_detail.get_package_id ());
+
+                    unowned string pkg_name = pk_package.get_name ();
+                    var package = package_list[pkg_name];
+                    if (package == null) {
+                        package = os_updates;
+
+                        var pkgnames = os_updates.component.pkgnames;
+                        pkgnames += pkg_name;
+                        os_updates.component.pkgnames = pkgnames;
+                    }
+
+                    package.change_information.changes.add (pk_package);
+                    package.change_information.details.add (pk_detail);
+                    package.update_state ();
+                } catch (Error e) {
+                    critical (e.message);
+                }
+            });
         } catch (Error e) {
             critical (e.message);
         }
 
-        updating_cache = false;
         task_count--;
-        refresh_in_progress = false;
+        updates_available ();
     }
 
-    private void update_restart_state () {
-        if (restart_file.query_exists ()) {
-            if (!restart_required) {
-                string title = _("Restart Required");
-                string body = _("Please restart your system to finalize updates");
-                var notification = new Notification (title);
-                notification.set_body (body);
-                notification.set_icon (new ThemedIcon ("system-software-install"));
-                notification.set_priority (NotificationPriority.URGENT);
-                notification.set_default_action ("app.open-application");
-                Application.get_default ().send_notification ("restart", notification);
-            }
-
-            restart_required = true;     
-        } else if (restart_required) {
-            restart_required = false;
-        }
-    }
-
-    public uint get_package_count (GLib.GenericArray<weak Pk.Package> package_array) {
+    private uint get_real_packages_length (GLib.GenericArray<weak Pk.Package> package_array) {
         bool os_update_found = false;
         var result_comp = new Gee.TreeSet<AppStream.Component> ();
 
@@ -576,10 +537,7 @@ public class AppCenterCore.Client : Object {
         if (refresh_in_progress) {
             debug ("Update cache already in progress - returning");
             return;
-        } else {
-            refresh_in_progress = true;
         }
-
 
         if (update_cache_timeout_id > 0) {
             if (force) {
@@ -600,6 +558,9 @@ public class AppCenterCore.Client : Object {
             if (nm.get_network_available ()) {
                 debug ("New refresh task");
 
+                refresh_in_progress = true;
+                updating_cache = true;
+
                 try {
                     Pk.Results results = yield client.refresh_cache_async (false, cancellable, (t, p) => { });
                     success = results.get_exit_code () == Pk.Exit.SUCCESS;
@@ -611,14 +572,13 @@ public class AppCenterCore.Client : Object {
                 if (success) {
                     refresh_updates.begin ();
                 }
-
-            } else {
-                refresh_in_progress = false; //Stops new timeout while no network.
             }
+
+            refresh_in_progress = false; //Stops new timeout while no network.
+            updating_cache = false;
         } else {
             debug ("Too soon to refresh and not forced");
         }
-
 
         if (refresh_in_progress) {
             update_cache_timeout_id = GLib.Timeout.add_seconds (SECONDS_BETWEEN_REFRESHES, () => {

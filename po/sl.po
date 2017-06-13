@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-05-31 21:53+0000\n"
+"PO-Revision-Date: 2017-06-01 20:59+0000\n"
 "Last-Translator: Jernej Virag <jernej@virag.si>\n"
 "Language-Team: Slovenian "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/sl/>\n"
@@ -35,7 +35,7 @@ msgstr "Povezave '%s' ni bilo mogoče najti, iščem"
 
 #: ../src/Application.vala:216
 msgid "Application installed"
-msgstr "Program nameščen"
+msgstr "Aplikacija nameščena"
 
 #: ../src/Application.vala:217
 msgid "%s has been successfully installed"
