@@ -30,7 +30,13 @@ public class AppCenter.Widgets.Carousel : Gtk.FlowBox {
 
         public void add_package (AppCenterCore.Package? package) {
             var carousel_item = new CarouselItem (package);
-            add (carousel_item);    
+            add (carousel_item);
             show_all ();
+        }
+
+        public void clear () {
+            get_children ().foreach ((child) => {
+                child.destroy ();
+            });
         }
 }
