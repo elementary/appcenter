@@ -62,7 +62,7 @@ public class AppCenterCore.Houston : Object {
                     }
                 }
             } catch (Error e) {
-                stderr.printf ("Houston: %s\n", e.message);
+                warning ("Houston: %s\n".printf (e.message));
             }
             Idle.add (get_newest.callback);
         });
@@ -89,7 +89,7 @@ public class AppCenterCore.Houston : Object {
                     }
                 }
             } catch (Error e) {
-                stderr.printf ("Houston: %s\n", e.message);
+                warning ("Houston: %s\n".printf (e.message));
             }
             Idle.add (get_updated.callback);
         });
@@ -117,7 +117,7 @@ public class AppCenterCore.Houston : Object {
                     }
                 }
             } catch (Error e) {
-                stderr.printf ("Houston: %s\n", e.message);
+                warning ("Houston: %s\n".printf (e.message));
             }
             Idle.add (get_trending.callback);
         });

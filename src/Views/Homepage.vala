@@ -66,7 +66,7 @@ namespace AppCenter {
 
             houston.get_newest.begin ((obj, res) => {
                 var newest_ids = houston.get_newest.end (res);
-                List<AppCenterCore.Package> packages_for_banner = new List<AppCenterCore.Package> ();
+                var packages_for_banner = new GLib.List<AppCenterCore.Package> ();
                 ThreadFunc<void*> run = () => {
                     uint packages_added = 0;
                     foreach (var package in newest_ids) {
@@ -119,7 +119,7 @@ namespace AppCenter {
 
             houston.get_updated.begin ((obj, res) => {
                 var updated_ids = houston.get_updated.end (res);
-                List<AppCenterCore.Package> packages_for_carousel = new List<AppCenterCore.Package> ();
+                var packages_for_carousel = new GLib.List<AppCenterCore.Package> ();
                 ThreadFunc<void*> run = () => {
                     uint packages_added = 0;
                     foreach (var package in updated_ids) {
@@ -171,7 +171,7 @@ namespace AppCenter {
 
             houston.get_trending.begin ((obj, res) => {
                 var updated_ids = houston.get_updated.end (res);
-                List<AppCenterCore.Package> packages_for_carousel = new List<AppCenterCore.Package> ();
+                var packages_for_carousel = new GLib.List<AppCenterCore.Package> ();
                 ThreadFunc<void*> run = () => {
                     uint packages_added = 0;
                     foreach (var package in updated_ids) {
