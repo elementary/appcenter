@@ -66,7 +66,7 @@ namespace AppCenter {
 
             houston.get_newest.begin ((obj, res) => {
                 var newest_ids = houston.get_newest.end (res);
-                List<AppCenterCore.Package> packages_for_banner = new List<AppCenterCore.Package> ();
+                var packages_for_banner = new GLib.List<AppCenterCore.Package> ();
                 ThreadFunc<void*> run = () => {
                     uint packages_added = 0;
                     foreach (var package in newest_ids) {
@@ -119,7 +119,7 @@ namespace AppCenter {
 
             houston.get_updated.begin ((obj, res) => {
                 var updated_ids = houston.get_updated.end (res);
-                List<AppCenterCore.Package> packages_for_carousel = new List<AppCenterCore.Package> ();
+                var packages_for_carousel = new GLib.List<AppCenterCore.Package> ();
                 ThreadFunc<void*> run = () => {
                     uint packages_added = 0;
                     foreach (var package in updated_ids) {
@@ -153,6 +153,58 @@ namespace AppCenter {
                 new Thread<void*> ("update-recent-carousel", run);
             });
 
+            var trending_label = new Gtk.Label (_("Trending"));
+            trending_label.get_style_context ().add_class ("h4");
+            trending_label.xalign = 0;
+            trending_label.margin_start = 10;
+
+            var trending_carousel = new Widgets.Carousel ();
+
+            var trending_grid = new Gtk.Grid ();
+            trending_grid.margin = 2;
+            trending_grid.margin_top = 12;
+            trending_grid.attach (trending_label, 0, 0, 1, 1);
+            trending_grid.attach (trending_carousel, 0, 1, 1, 1);
+
+            var trending_revealer = new Gtk.Revealer ();
+            trending_revealer.add (trending_grid );
+
+            houston.get_trending.begin ((obj, res) => {
+                var trending_ids = houston.get_trending.end (res);
+                var packages_for_carousel = new GLib.List<AppCenterCore.Package> ();
+                ThreadFunc<void*> run = () => {
+                    uint packages_added = 0;
+                    foreach (var package in trending_ids) {
+                        if (packages_added >= NUM_PACKAGES_IN_CAROUSEL) {
+                            break;
+                        }
+
+                        var candidate = package + ".desktop";
+                        var candidate_package = AppCenterCore.Client.get_default ().get_package_for_component_id (candidate);
+
+                        if (candidate_package != null) {
+                            candidate_package.update_state ();
+                            if (candidate_package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
+                                packages_added++;
+                                packages_for_carousel.append (candidate_package);
+                            }
+                        }
+                    }
+
+                    if (packages_added > 0) {
+                        Idle.add (() => {
+                            foreach (var trending_package in packages_for_carousel) {
+                                trending_carousel.add_package (trending_package);
+                            }
+                            trending_revealer.reveal_child = true;
+                            return false;
+                        });
+                    }
+                    return null;
+                };
+                new Thread<void*> ("update-trending-carousel", run);
+            });
+
             var categories_label = new Gtk.Label (_("Categories"));
             categories_label.get_style_context ().add_class ("h4");
             categories_label.xalign = 0;
@@ -166,9 +218,10 @@ namespace AppCenter {
             grid.margin = 12;
             grid.attach (newest_banner, 0, 0, 1, 1);
             grid.attach (switcher_revealer, 0, 1, 1, 1);
-            grid.attach (recently_updated_revealer, 0, 2, 1, 1);
-            grid.attach (categories_label, 0, 3, 1, 1);
-            grid.attach (category_flow, 0, 4, 1, 1);
+            grid.attach (trending_revealer, 0, 2, 1, 1);
+            grid.attach (recently_updated_revealer, 0, 3, 1, 1);
+            grid.attach (categories_label, 0, 4, 1, 1);
+            grid.attach (category_flow, 0, 5, 1, 1);
 
             category_scrolled = new Gtk.ScrolledWindow (null, null);
             category_scrolled.add (grid);
@@ -194,6 +247,15 @@ namespace AppCenter {
             });
 
             recently_updated_carousel.child_activated.connect ((child) => {
+                var item = (Widgets.CarouselItem) child;
+                var package = item.package;
+
+                if (package != null) {
+                    package_selected (package);
+                }
+            });
+
+            trending_carousel.child_activated.connect ((child) => {
                 var item = (Widgets.CarouselItem) child;
                 var package = item.package;
 
