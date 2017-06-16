@@ -62,7 +62,7 @@ public class AppCenterCore.Houston : Object {
                     }
                 }
             } catch (Error e) {
-                stderr.printf ("Houston: %s\n", e.message);
+                warning ("Houston: %s\n".printf (e.message));
             }
             Idle.add (get_newest.callback);
         });
@@ -89,9 +89,37 @@ public class AppCenterCore.Houston : Object {
                     }
                 }
             } catch (Error e) {
-                stderr.printf ("Houston: %s\n", e.message);
+                warning ("Houston: %s\n".printf (e.message));
             }
             Idle.add (get_updated.callback);
+        });
+
+        yield;
+        return app_ids;
+    }
+
+
+    public async string[] get_trending () {
+        var uri = HOUSTON_API_URL + "/newest/downloads";
+        string[] app_ids = {};
+
+        debug ("Requesting trending applications from %s", uri);
+
+        var message = new Soup.Message ("GET", uri);
+        session.queue_message (message, (sess, mess) => {
+            try {
+                var res = process_response ((string) mess.response_body.data);
+                if (res.has_member ("data")) {
+                    var data = res.get_array_member ("data");
+
+                    foreach (var id in data.get_elements ()) {
+                        app_ids += ((string) id.get_value ());
+                    }
+                }
+            } catch (Error e) {
+                warning ("Houston: %s\n".printf (e.message));
+            }
+            Idle.add (get_trending.callback);
         });
 
         yield;
