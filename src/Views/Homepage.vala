@@ -170,11 +170,11 @@ namespace AppCenter {
             trending_revealer.add (trending_grid );
 
             houston.get_trending.begin ((obj, res) => {
-                var updated_ids = houston.get_updated.end (res);
+                var trending_ids = houston.get_trending.end (res);
                 var packages_for_carousel = new GLib.List<AppCenterCore.Package> ();
                 ThreadFunc<void*> run = () => {
                     uint packages_added = 0;
-                    foreach (var package in updated_ids) {
+                    foreach (var package in trending_ids) {
                         if (packages_added >= NUM_PACKAGES_IN_CAROUSEL) {
                             break;
                         }
@@ -247,6 +247,15 @@ namespace AppCenter {
             });
 
             recently_updated_carousel.child_activated.connect ((child) => {
+                var item = (Widgets.CarouselItem) child;
+                var package = item.package;
+
+                if (package != null) {
+                    package_selected (package);
+                }
+            });
+
+            trending_carousel.child_activated.connect ((child) => {
                 var item = (Widgets.CarouselItem) child;
                 var package = item.package;
 
