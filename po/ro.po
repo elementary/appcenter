@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-06-12 16:29+0000\n"
+"PO-Revision-Date: 2017-06-12 20:23+0000\n"
 "Last-Translator: Nicolae Crefelean <kneekoo@yahoo.com>\n"
 "Language-Team: Romanian "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/ro/>\n"
@@ -18,27 +18,28 @@ msgstr ""
 
 #: ../src/Application.vala:40
 msgid "App Center"
-msgstr "App Center"
+msgstr "Centru de aplicații"
 
 #: ../src/Application.vala:57
 msgid "translator-credits"
 msgstr ""
-"Launchpad Contributions:\n"
+"Contribuții Launchpad:\n"
 "  Marius Albina https://launchpad.net/~marius-albina\n"
 "  Richard B. https://launchpad.net/~dx-richard\n"
-"  elementaryart (old) https://launchpad.net/~elementaryart"
+"  elementaryart (old) https://launchpad.net/~elementaryart\n"
+"  Nicolae Crefelean https://launchpad.net/~kneekoo"
 
 #: ../src/Application.vala:114
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr "Linkul '%s' nu este disponibil, cautare in curs"
+msgstr "Legătura '%s' nu este disponibilă. Se inițiază o căutare"
 
 #: ../src/Application.vala:216
 msgid "Application installed"
-msgstr "Aplicaţie instalată"
+msgstr "Aplicație instalată"
 
 #: ../src/Application.vala:217
 msgid "%s has been successfully installed"
-msgstr "%s a fost instalată cu succes"
+msgstr "%s s-a instalat cu succes"
 
 #: ../src/Application.vala:233
 msgid "Close"
@@ -46,27 +47,26 @@ msgstr "Închide"
 
 #: ../src/Application.vala:235
 msgid "There Was An Error Installing %s"
-msgstr "%s a întâmpinat o eroare la instalare"
+msgstr "S-a produs o eroare la instalarea %s"
 
 #: ../src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
-msgstr "Sunteți sigur că doriți să reporniți?"
+msgstr "Sigur doriți să reporniți?"
 
 #: ../src/Dialogs/RestartDialog.vala:41
 msgid "This will close all open applications and restart this device."
 msgstr ""
-"Acest lucru vă va închide toate aplicațiile deschise și va reporni acest "
-"dispozitiv."
+"Asta va închide toate aplicațiile deschise și va reporni acest dispozitiv."
 
 #: ../src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
-msgstr "Repornire"
+msgstr "Repornește"
 
 #: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:166
 #: ../src/Dialogs/StripeDialog.vala:285
 #: ../src/Widgets/AbstractAppContainer.vala:126
 msgid "Cancel"
-msgstr "Anulați"
+msgstr "Anulează"
 
 #: ../src/Dialogs/StripeDialog.vala:30
 msgid ""
@@ -78,7 +78,7 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:31
 msgid "Please review your payment info and try again."
-msgstr "Revizuiți informația de plată și reveniți."
+msgstr "Revizuiți informațiile de plată și reveniți."
 
 #: ../src/Dialogs/StripeDialog.vala:75
 msgid "Email"
@@ -89,8 +89,8 @@ msgid ""
 "Your email address is used to send a receipt. It is never stored and you "
 "will not be subscribed to a mailing list."
 msgstr ""
-"La adresa dvs. de email se trimite chitanța. Aceasta nu este stocată și nu "
-"este folosită pentru abonarea la o listă de mesaje."
+"Chitanța va fi trimisă la adresa dvs. de email. Adresa nu este stocată și "
+"nici folosită pentru abonarea la o listă de mesaje."
 
 #: ../src/Dialogs/StripeDialog.vala:88
 msgid "Card Number"
@@ -248,8 +248,7 @@ msgstr "Căutare"
 #: ../src/Views/AppListView.vala:121
 msgid "A restart is required to complete the installation of updates"
 msgstr ""
-"Trebuie să reporniți calculatorul pentru finalizarea instalării "
-"actualizărilor"
+"Trebuie să reporniți sistemul pentru finalizarea instalării actualizărilor"
 
 #: ../src/Views/AppListView.vala:129
 msgid "Restart Now"
@@ -295,7 +294,7 @@ msgstr "Categorii"
 #: ../src/MainWindow.vala:129 ../src/MainWindow.vala:181
 #: ../src/MainWindow.vala:223
 msgid "Home"
-msgstr "Pagină principala"
+msgstr "Pagina principală"
 
 #: ../src/Widgets/Banner.vala:100 ../src/MainWindow.vala:110
 msgid "AppCenter"
@@ -398,8 +397,7 @@ msgstr "Niciun rezultat"
 
 #: ../src/Widgets/AbstractAppList.vala:35
 msgid "No apps could be found. Try changing search terms."
-msgstr ""
-"Nici o aplicație nu a putut fi găsită. Încearcă să schimbi termenii căutării."
+msgstr "Nu s-au găsit aplicații. Încercați alți termeni de căutare."
 
 #: ../src/Widgets/UpdateHeaderRow.vala:68
 msgid "%u Update Available"
@@ -418,7 +416,7 @@ msgstr "Căutare actualizări…"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:112
 msgid "Up to Date"
-msgstr "La zi"
+msgstr "Aplicații la zi"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:120
 msgid "Drivers"
@@ -448,18 +446,18 @@ msgstr "Caută %s"
 
 #: ../src/Core/Client.vala:94
 msgid "Operating System Updates"
-msgstr "Actualizări ale sistemului de operare"
+msgstr "Actualizări pentru sistemul de operare"
 
 #: ../src/Core/Client.vala:95
 msgid "Updates to system components"
-msgstr "Actualizări ale componentelor sistemului"
+msgstr "Actualizări pentru componentele sistemului"
 
 #: ../src/Core/Client.vala:459
 msgid "Update Available"
 msgid_plural "Updates Available"
-msgstr[0] "Actualizare disponibilă"
-msgstr[1] "Actualizări disponibile"
-msgstr[2] "Actualizări disponibile"
+msgstr[0] "actualizare disponibilă"
+msgstr[1] "actualizări disponibile"
+msgstr[2] "de actualizări disponibile"
 
 #: ../src/Core/Client.vala:460
 msgid "%u update is available for your system"
@@ -510,7 +508,7 @@ msgstr "Se instalează"
 
 #: ../src/Core/ChangeInformation.vala:70
 msgid "Refreshing software list"
-msgstr "Se reîmprospătează lista aplicaţiilor"
+msgstr "Se reîmprospătează lista aplicațiilor"
 
 #: ../src/Core/ChangeInformation.vala:72
 msgid "Installing updates"
@@ -518,11 +516,11 @@ msgstr "Se instalează actualizările"
 
 #: ../src/Core/ChangeInformation.vala:74
 msgid "Cleaning up packages"
-msgstr "Se șterg pachete"
+msgstr "Se curăță pachetele"
 
 #: ../src/Core/ChangeInformation.vala:76
 msgid "Obsoleting packages"
-msgstr "Pachete ieșite din uz"
+msgstr "Se marchează pachetele învechite"
 
 #: ../src/Core/ChangeInformation.vala:78
 msgid "Resolving dependencies"
@@ -594,19 +592,19 @@ msgstr "Se generează listele pachetelor"
 
 #: ../src/Core/ChangeInformation.vala:112
 msgid "Waiting for package manager lock"
-msgstr "Se așteaptă blocajul gestionarului de pachete"
+msgstr "Se așteaptă disponibilitatea managerului de pachete"
 
 #: ../src/Core/ChangeInformation.vala:114
 msgid "Waiting for authentication"
-msgstr "Se aşteaptă autentificarea"
+msgstr "Se așteaptă autentificarea"
 
 #: ../src/Core/ChangeInformation.vala:116
 msgid "Updating running applications"
-msgstr "Se actualizează aplicaţiile în derulare"
+msgstr "Se actualizează aplicațiile pornite"
 
 #: ../src/Core/ChangeInformation.vala:118
 msgid "Checking applications in use"
-msgstr "Se verifică aplicaţiile în uz"
+msgstr "Se verifică aplicațiile în uz"
 
 #: ../src/Core/ChangeInformation.vala:120
 msgid "Checking libraries in use"
