@@ -44,8 +44,8 @@ public class AppCenterCore.Houston : Object {
         return root;
     }
 
-    public async string[] get_newest () {
-        var uri = HOUSTON_API_URL + "/newest/project";
+    public async string[] get_app_ids (string endpoint) {
+        var uri = HOUSTON_API_URL + endpoint;
         string[] app_ids = {};
 
         debug ("Requesting newest applications from %s", uri);
@@ -64,62 +64,8 @@ public class AppCenterCore.Houston : Object {
             } catch (Error e) {
                 warning ("Houston: %s", e.message);
             }
-            Idle.add (get_newest.callback);
-        });
-
-        yield;
-        return app_ids;
-    }
-
-    public async string[] get_updated () {
-        var uri = HOUSTON_API_URL + "/newest/release";
-        string[] app_ids = {};
-
-        debug ("Requesting recently updated applications from %s", uri);
-
-        var message = new Soup.Message ("GET", uri);
-        session.queue_message (message, (sess, mess) => {
-            try {
-                var res = process_response ((string) mess.response_body.data);
-                if (res.has_member ("data")) {
-                    var data = res.get_array_member ("data");
-
-                    foreach (var id in data.get_elements ()) {
-                        app_ids += ((string) id.get_value ());
-                    }
-                }
-            } catch (Error e) {
-                warning ("Houston: %s", e.message);
-            }
-            Idle.add (get_updated.callback);
-        });
-
-        yield;
-        return app_ids;
-    }
-
-
-    public async string[] get_trending () {
-        var uri = HOUSTON_API_URL + "/newest/downloads";
-        string[] app_ids = {};
-
-        debug ("Requesting trending applications from %s", uri);
-
-        var message = new Soup.Message ("GET", uri);
-        session.queue_message (message, (sess, mess) => {
-            try {
-                var res = process_response ((string) mess.response_body.data);
-                if (res.has_member ("data")) {
-                    var data = res.get_array_member ("data");
-
-                    foreach (var id in data.get_elements ()) {
-                        app_ids += ((string) id.get_value ());
-                    }
-                }
-            } catch (Error e) {
-                warning ("Houston: %s", e.message);
-            }
-            Idle.add (get_trending.callback);
+            
+            Idle.add (get_app_ids.callback);
         });
 
         yield;

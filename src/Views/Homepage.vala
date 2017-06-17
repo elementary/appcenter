@@ -64,8 +64,8 @@ namespace AppCenter {
                 }
             });
 
-            houston.get_newest.begin ((obj, res) => {
-                var newest_ids = houston.get_newest.end (res);
+            houston.get_app_ids.begin ("/newest/project", (obj, res) => {
+                var newest_ids = houston.get_app_ids.end (res);
                 var packages_for_banner = new GLib.List<AppCenterCore.Package> ();
                 ThreadFunc<void*> run = () => {
                     uint packages_added = 0;
@@ -117,8 +117,8 @@ namespace AppCenter {
             var recently_updated_revealer = new Gtk.Revealer ();
             recently_updated_revealer.add (recently_updated_grid );
 
-            houston.get_updated.begin ((obj, res) => {
-                var updated_ids = houston.get_updated.end (res);
+            houston.get_app_ids.begin ("/newest/release", (obj, res) => {
+                var updated_ids = houston.get_app_ids.end (res);
                 var packages_for_carousel = new GLib.List<AppCenterCore.Package> ();
                 ThreadFunc<void*> run = () => {
                     uint packages_added = 0;
@@ -169,8 +169,8 @@ namespace AppCenter {
             var trending_revealer = new Gtk.Revealer ();
             trending_revealer.add (trending_grid );
 
-            houston.get_trending.begin ((obj, res) => {
-                var trending_ids = houston.get_trending.end (res);
+            houston.get_app_ids.begin ("/newest/downloads", (obj, res) => {
+                var trending_ids = houston.get_app_ids.end (res);
                 var packages_for_carousel = new GLib.List<AppCenterCore.Package> ();
                 ThreadFunc<void*> run = () => {
                     uint packages_added = 0;
