@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2014-2016 elementary LLC. (https://elementary.io)
+ * Copyright (c) 2014-2017 elementary LLC. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,22 +24,32 @@ namespace AppCenter.Views {
 
         GenericArray<AppStream.Screenshot> screenshots;
 
-        Gtk.Grid links_grid;
-        Gtk.Box header_box;
-        Gtk.Stack app_screenshots;
-        Gtk.Stack screenshot_stack;
-        Widgets.Switcher screenshot_switcher;
-        Gtk.Label app_screenshot_not_found;
-        Gtk.Label app_version;
-        Gtk.TextView app_description;
-        Gtk.ListBox extension_box;
-        Gtk.Label extension_label;
-        Gtk.Grid content_grid;
+        private Gtk.Label app_screenshot_not_found;
+        private Gtk.Stack app_screenshots;
+        private Gtk.Label app_version;
+        private Gtk.ListBox extension_box;
+        private Gtk.Stack screenshot_stack;
+        private Gtk.TextView app_description;
+        private Widgets.Switcher screenshot_switcher;
+
+        public AppInfoView (AppCenterCore.Package package) {
+            Object (package: package);
+
+            set_up_package (128);
+
+            parse_description (package.get_description ());
+        }
 
         construct {
             image.margin_top = 12;
             image.margin_start = 6;
             image.pixel_size = 128;
+
+            action_button.suggested_action = true;
+
+            var uninstall_button_context = uninstall_button.get_style_context ();
+            uninstall_button_context.add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+            uninstall_button_context.add_class ("h3");
 
             screenshots = package.component.get_screenshots ();
 
@@ -107,10 +117,38 @@ namespace AppCenter.Views {
             app_description.pixels_inside_wrap = 3;
             app_description.wrap_mode = Gtk.WrapMode.WORD_CHAR;
 
-            links_grid = new Gtk.Grid ();
+            var links_grid = new Gtk.Grid ();
             links_grid.column_spacing = 24;
 
-            content_grid = new Gtk.Grid ();
+            var homepage_url = package.component.get_url (AppStream.UrlKind.HOMEPAGE);
+
+            if (homepage_url != null) {
+                var website_button = new UrlButton (_("Homepage"), homepage_url, "web-browser-symbolic");
+                links_grid.add (website_button);
+            }
+
+            var translate_url = package.component.get_url (AppStream.UrlKind.TRANSLATE);
+
+            if (translate_url != null) {
+                var translate_button = new UrlButton (_("Suggest Translations"), translate_url, "preferences-desktop-locale-symbolic");
+                links_grid.add (translate_button);
+            }
+
+            var bugtracker_url = package.component.get_url (AppStream.UrlKind.BUGTRACKER);
+
+            if (bugtracker_url != null) {
+                var bugtracker_button = new UrlButton (_("Report a Problem"), bugtracker_url, "bug-symbolic");
+                links_grid.add (bugtracker_button);
+            }
+
+            var help_url = package.component.get_url (AppStream.UrlKind.HELP);
+
+            if (help_url != null) {
+                var help_button = new UrlButton (_("Help"), help_url, "dialog-question-symbolic");
+                links_grid.add (help_button);
+            }
+
+            var content_grid = new Gtk.Grid ();
             content_grid.width_request = 800;
             content_grid.halign = Gtk.Align.CENTER;
             content_grid.margin_bottom = 48;
@@ -126,10 +164,27 @@ namespace AppCenter.Views {
             if (!package.is_os_updates) {
                 content_grid.add (package_summary);
             }
+
             content_grid.add (app_description);
+
+            if (package.component.get_addons ().length > 0) {
+                extension_box = new Gtk.ListBox ();
+                extension_box.selection_mode = Gtk.SelectionMode.NONE;
+
+                var extension_label = new Gtk.Label ("<b>" + _("Extensions:") + "</b>");
+                extension_label.margin_top = 12;
+                extension_label.use_markup = true;
+                extension_label.get_style_context ().add_class ("h3");
+                extension_label.halign = Gtk.Align.START;
+
+                content_grid.add (extension_label);
+                content_grid.add (extension_box);
+                load_extensions.begin ();
+            }
+
             content_grid.add (links_grid);
 
-            header_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
+            var header_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
             header_box.get_style_context ().add_class ("banner");
             header_box.hexpand = true;
 
@@ -162,65 +217,6 @@ namespace AppCenter.Views {
             scrolled.add (grid);
 
             add (scrolled);
-
-            reload_css ();
-        }
-
-        public AppInfoView (AppCenterCore.Package package) {
-            Object (package: package);
-
-            set_up_package (128);
-
-            parse_description (package.get_description ());
-
-            if (package.component.get_addons ().length > 0) {
-                extension_box = new Gtk.ListBox ();
-                extension_box.selection_mode = Gtk.SelectionMode.NONE;
-
-                extension_label = new Gtk.Label ("<b>" + _("Extensions:") + "</b>");
-                extension_label.margin_top = 12;
-                extension_label.use_markup = true;
-                extension_label.get_style_context ().add_class ("h3");
-                extension_label.halign = Gtk.Align.START;
-
-                content_grid.add (extension_label);
-                content_grid.add (extension_box);
-                load_extensions.begin ();
-            }
-
-            var homepage_url = package.component.get_url (AppStream.UrlKind.HOMEPAGE);
-
-            if (homepage_url != null) {
-                var website_button = new UrlButton (_("Homepage"), homepage_url, "web-browser-symbolic");
-                links_grid.add (website_button);
-            }
-
-            var translate_url = package.component.get_url (AppStream.UrlKind.TRANSLATE);
-
-            if (translate_url != null) {
-                var translate_button = new UrlButton (_("Suggest Translations"), translate_url, "preferences-desktop-locale-symbolic");
-                links_grid.add (translate_button);
-            }
-
-            var bugtracker_url = package.component.get_url (AppStream.UrlKind.BUGTRACKER);
-
-            if (bugtracker_url != null) {
-                var bugtracker_button = new UrlButton (_("Report a Problem"), bugtracker_url, "bug-symbolic");
-                links_grid.add (bugtracker_button);
-            }
-
-            var help_url = package.component.get_url (AppStream.UrlKind.HELP);
-
-            if (help_url != null) {
-                var help_button = new UrlButton (_("Help"), help_url, "dialog-question-symbolic");
-                links_grid.add (help_button);
-            }
-
-            action_button.suggested_action = true;
-
-            var uninstall_button_context = uninstall_button.get_style_context ();
-            uninstall_button_context.add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
-            uninstall_button_context.add_class ("h3");
 
             open_button.get_style_context ().add_class ("h3");
             reload_css ();
