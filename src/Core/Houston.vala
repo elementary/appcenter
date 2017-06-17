@@ -62,8 +62,9 @@ public class AppCenterCore.Houston : Object {
                     }
                 }
             } catch (Error e) {
-                warning ("Houston: %s\n".printf (e.message));
+                warning ("Houston: %s", e.message);
             }
+            
             Idle.add (get_app_ids.callback);
         });
 
