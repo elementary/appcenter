@@ -4,15 +4,16 @@ msgstr ""
 "Project-Id-Version: Akan (AppCenter)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-06-12 16:01+0000\n"
-"PO-Revision-Date: 2017-06-15 20:57+0000\n"
+"PO-Revision-Date: 2017-06-19 12:38+0000\n"
 "Last-Translator: Lawrence Aberba <karabutaworld@gmail.com>\n"
-"Language-Team: Akan <karabutaworld@gmail.com>\n"
+"Language-Team: Akan "
+"<https://l10n.elementary.io/projects/appcenter/appcenter/ak/>\n"
 "Language: ak\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Gtranslator 2.91.7\n"
+"X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:24+0000\n"
 
 #: ../src/Application.vala:40
@@ -105,7 +106,6 @@ msgid "Privacy Policy"
 msgstr "Nneɛmakora Ho Nhyehyɛe"
 
 #: ../src/Dialogs/StripeDialog.vala:168 ../src/Dialogs/StripeDialog.vala:284
-#, fuzzy
 msgid "Pay $%d.00"
 msgstr "Tua $%s.00"
 
