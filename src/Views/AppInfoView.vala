@@ -213,7 +213,7 @@ namespace AppCenter.Views {
 
             open_button.get_style_context ().add_class ("h3");
 
-            base.set_up_package (48);
+            base.set_up_package (128);
             parse_description (package.get_description ());
 
             reload_css ();
