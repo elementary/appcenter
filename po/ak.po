@@ -4,31 +4,28 @@ msgstr ""
 "Project-Id-Version: Akan (AppCenter)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-06-12 16:01+0000\n"
-"PO-Revision-Date: 2017-06-19 12:38+0000\n"
+"PO-Revision-Date: 2017-06-21 22:08+0000\n"
 "Last-Translator: Lawrence Aberba <karabutaworld@gmail.com>\n"
-"Language-Team: Akan "
-"<https://l10n.elementary.io/projects/appcenter/appcenter/ak/>\n"
+"Language-Team: Akan <karabutaworld@gmail.com>\n"
 "Language: ak\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2.14\n"
+"X-Generator: Gtranslator 2.91.7\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:24+0000\n"
 
 #: ../src/Application.vala:40
 msgid "App Center"
-msgstr "Dwumadie Ahoroɔ Twebea"
+msgstr "Dwumadie Twebea"
 
 #: ../src/Application.vala:57
 msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  aberba https://launchpad.net/~aberba"
+msgstr "wɔn a wɔkyerɛase"
 
 #: ../src/Application.vala:114
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr "Antumi anhu Link ko a wode mae no, wo ara hwɛhwe"
+msgstr "Antumi anhu Link ko a wode mae no, wo ara hwehwɛ"
 
 #: ../src/Application.vala:216
 msgid "Application installed"
