@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-04-25 20:11+0000\n"
-"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
-"Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
-"appcenter/appcenter/en_GB/>\n"
+"PO-Revision-Date: 2017-06-22 17:31+0000\n"
+"Last-Translator: Harry Oxantoriza <reez.aza@gmail.com>\n"
+"Language-Team: English (United Kingdom) "
+"<https://l10n.elementary.io/projects/appcenter/appcenter/en_GB/>\n"
 "Language: en_GB\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: ../src/Application.vala:40
@@ -73,6 +73,8 @@ msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
+"An error occurred while processing the card. Please try again later. We "
+"apologize for any inconvenience caused."
 
 #: ../src/Dialogs/StripeDialog.vala:31
 msgid "Please review your payment info and try again."
@@ -80,13 +82,15 @@ msgstr "Please review your payment info and try again."
 
 #: ../src/Dialogs/StripeDialog.vala:75
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: ../src/Dialogs/StripeDialog.vala:77
 msgid ""
 "Your email address is used to send a receipt. It is never stored and you "
 "will not be subscribed to a mailing list."
 msgstr ""
+"Your email address is used to send a receipt. It is never stored and you "
+"will not be subscribed to a mailing list."
 
 #: ../src/Dialogs/StripeDialog.vala:88
 msgid "Card Number"
@@ -99,32 +103,31 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:120
 msgid "CVC"
-msgstr ""
+msgstr "CVC"
 
 #: ../src/Dialogs/StripeDialog.vala:157
 msgid "Privacy Policy"
 msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:168 ../src/Dialogs/StripeDialog.vala:284
-#, fuzzy
 msgid "Pay $%d.00"
-msgstr "Pay $%s.00"
+msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:213
 msgid "Processing"
-msgstr "Processing"
+msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:238
 msgid "There Was a Problem Processing Your Payment"
-msgstr "There Was a Problem Processing Your Payment"
+msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:276
 msgid "Pay Later"
-msgstr "Pay Later"
+msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:277
 msgid "Retry"
-msgstr "Retry"
+msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:463 ../src/Dialogs/StripeDialog.vala:528
 msgid ""
@@ -206,7 +209,7 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:559
 msgid "The given card is a test card. Please use a real card to proceed."
-msgstr ""
+msgstr "The given card is a test card. Please use a real card to proceed."
 
 #: ../src/Views/InstalledView.vala:51 ../src/MainWindow.vala:130
 msgctxt "view"
