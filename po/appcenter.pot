@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-25 08:30-0700\n"
+"POT-Creation-Date: 2017-06-23 12:53-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,19 +30,19 @@ msgstr ""
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr ""
 
-#: ../src/Application.vala:216
+#: ../src/Application.vala:217
 msgid "Application installed"
 msgstr ""
 
-#: ../src/Application.vala:217
+#: ../src/Application.vala:218
 msgid "%s has been successfully installed"
 msgstr ""
 
-#: ../src/Application.vala:233
+#: ../src/Application.vala:234
 msgid "Close"
 msgstr ""
 
-#: ../src/Application.vala:235
+#: ../src/Application.vala:236
 msgid "There Was An Error Installing %s"
 msgstr ""
 
@@ -203,7 +203,7 @@ msgstr ""
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
 
-#: ../src/Views/InstalledView.vala:51 ../src/MainWindow.vala:130
+#: ../src/Views/InstalledView.vala:30 ../src/MainWindow.vala:130
 msgctxt "view"
 msgid "Updates"
 msgstr ""
@@ -215,39 +215,51 @@ msgid "Search"
 msgstr ""
 
 #: ../src/Views/AppListView.vala:121
+msgid "Non-Curated Apps"
+msgstr ""
+
+#: ../src/Views/AppListView.vala:167
 msgid "A restart is required to complete the installation of updates"
 msgstr ""
 
-#: ../src/Views/AppListView.vala:129
+#: ../src/Views/AppListView.vala:175
 msgid "Restart Now"
 msgstr ""
 
-#: ../src/Views/AppListView.vala:222
+#: ../src/Views/AppListView.vala:263
 msgid "Update All"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:57
+#: ../src/Views/AppInfoView.vala:72
 msgid "Screenshot Not Available"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:170
-msgid "Extensions:"
-msgstr ""
-
-#: ../src/Views/AppInfoView.vala:184
+#: ../src/Views/AppInfoView.vala:129
 msgid "Homepage"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:191
+#: ../src/Views/AppInfoView.vala:136
 msgid "Suggest Translations"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:198
+#: ../src/Views/AppInfoView.vala:143
 msgid "Report a Problem"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:205
+#: ../src/Views/AppInfoView.vala:150
 msgid "Help"
+msgstr ""
+
+#: ../src/Views/AppInfoView.vala:157
+msgid "Share"
+msgstr ""
+
+#: ../src/Views/AppInfoView.vala:196
+msgid "Extensions:"
+msgstr ""
+
+#: ../src/Views/AppInfoView.vala:240
+msgid "Link copied to clipboard"
 msgstr ""
 
 #: ../src/Views/Homepage.vala:104
@@ -255,10 +267,14 @@ msgid "Recently Updated"
 msgstr ""
 
 #: ../src/Views/Homepage.vala:156
+msgid "Trending"
+msgstr ""
+
+#: ../src/Views/Homepage.vala:208
 msgid "Categories"
 msgstr ""
 
-#: ../src/Views/Homepage.vala:211 ../src/Views/Homepage.vala:219
+#: ../src/Views/Homepage.vala:273 ../src/Views/Homepage.vala:281
 #: ../src/MainWindow.vala:129 ../src/MainWindow.vala:181
 #: ../src/MainWindow.vala:223
 msgid "Home"
@@ -410,33 +426,33 @@ msgstr ""
 msgid "Search %s"
 msgstr ""
 
-#: ../src/Core/Client.vala:94
+#: ../src/Core/UpdateManager.vala:64
+msgid "Restart Required"
+msgstr ""
+
+#: ../src/Core/UpdateManager.vala:65
+msgid "Please restart your system to finalize updates"
+msgstr ""
+
+#: ../src/Core/Client.vala:100
 msgid "Operating System Updates"
 msgstr ""
 
-#: ../src/Core/Client.vala:95
+#: ../src/Core/Client.vala:101
 msgid "Updates to system components"
 msgstr ""
 
-#: ../src/Core/Client.vala:459
+#: ../src/Core/Client.vala:417
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/Core/Client.vala:460
+#: ../src/Core/Client.vala:418
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] ""
 msgstr[1] ""
-
-#: ../src/Core/Client.vala:489
-msgid "Restart Required"
-msgstr ""
-
-#: ../src/Core/Client.vala:490
-msgid "Please restart your system to finalize updates"
-msgstr ""
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
