@@ -117,47 +117,58 @@ namespace AppCenter.Views {
             app_description.pixels_inside_wrap = 3;
             app_description.wrap_mode = Gtk.WrapMode.WORD_CHAR;
 
-            var links_box = new Gtk.ButtonBox (Gtk.Orientation.HORIZONTAL);
-            links_box.margin = 12;
-            links_box.halign = Gtk.Align.CENTER;
+            var links_grid = new Gtk.Grid ();
+            links_grid.column_spacing = 12;
+            links_grid.halign = Gtk.Align.CENTER;
+            links_grid.margin = 12;
+            links_grid.width_request = 800;
 
             var homepage_url = package.component.get_url (AppStream.UrlKind.HOMEPAGE);
 
             if (homepage_url != null) {
                 var website_button = new UrlButton (_("Homepage"), homepage_url, "web-browser-symbolic");
-                links_box.add (website_button);
+                links_grid.add (website_button);
             }
 
             var translate_url = package.component.get_url (AppStream.UrlKind.TRANSLATE);
 
             if (translate_url != null) {
                 var translate_button = new UrlButton (_("Suggest Translations"), translate_url, "preferences-desktop-locale-symbolic");
-                links_box.add (translate_button);
+                links_grid.add (translate_button);
             }
 
             var bugtracker_url = package.component.get_url (AppStream.UrlKind.BUGTRACKER);
 
             if (bugtracker_url != null) {
                 var bugtracker_button = new UrlButton (_("Report a Problem"), bugtracker_url, "bug-symbolic");
-                links_box.add (bugtracker_button);
+                links_grid.add (bugtracker_button);
             }
 
             var help_url = package.component.get_url (AppStream.UrlKind.HELP);
 
             if (help_url != null) {
                 var help_button = new UrlButton (_("Help"), help_url, "dialog-question-symbolic");
-                links_box.add (help_button);
+                links_grid.add (help_button);
             }
 
-            var share_button = new Gtk.Button.from_icon_name ("folder-publicshare-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
-            share_button.tooltip_text = _("Share");
+            var share_icon = new Gtk.Image.from_icon_name ("folder-publicshare-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+            share_icon.valign = Gtk.Align.CENTER;
+
+            var share_label = new Gtk.Label (_("Share"));
+
+            var share_grid = new Gtk.Grid ();
+            share_grid.column_spacing = 6;
+            share_grid.add (share_icon);
+            share_grid.add (share_label);
+
+            var share_button = new Gtk.Button ();
+            share_button.add (share_grid);
 
             var share_button_context = share_button.get_style_context ();
             share_button_context.add_class (Gtk.STYLE_CLASS_DIM_LABEL);
             share_button_context.add_class (Gtk.STYLE_CLASS_FLAT);
-            share_button_context.add_class ("h4");
 
-            links_box.add (share_button);
+            links_grid.add (share_button);
 
             var content_grid = new Gtk.Grid ();
             content_grid.width_request = 800;
@@ -219,7 +230,7 @@ namespace AppCenter.Views {
             grid.row_spacing = 12;
             grid.attach (header_box, 0, 0, 1, 1);
             grid.attach (content_grid, 0, 1, 1, 1);
-            grid.attach (links_box, 0, 2, 1, 1);
+            grid.attach (links_grid, 0, 2, 1, 1);
 
             var scrolled = new Gtk.ScrolledWindow (null, null);
             scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
@@ -403,15 +414,31 @@ namespace AppCenter.Views {
             }
         }
 
-        class UrlButton : Gtk.LinkButton {
+        class UrlButton : Gtk.Button {
             public UrlButton (string label, string uri, string icon_name) {
-                Object (uri: uri);
                 get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-                get_style_context ().add_class ("h4");
-                tooltip_text = label;
+                get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+                tooltip_text = uri;
 
-                var icon = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.LARGE_TOOLBAR);
-                add (icon);
+                var icon = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.SMALL_TOOLBAR);
+                icon.valign = Gtk.Align.CENTER;
+
+                var title = new Gtk.Label (label);
+
+                var grid = new Gtk.Grid ();
+                grid.column_spacing = 6;
+                grid.add (icon);
+                grid.add (title);
+
+                add (grid);
+
+                clicked.connect (() => {
+                    try {
+                        AppInfo.launch_default_for_uri (uri, null);
+                    } catch (Error e) {
+                        warning ("%s\n", e.message);
+                    }
+                });
             }
         }
     }
