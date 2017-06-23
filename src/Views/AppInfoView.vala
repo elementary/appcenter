@@ -117,36 +117,47 @@ namespace AppCenter.Views {
             app_description.pixels_inside_wrap = 3;
             app_description.wrap_mode = Gtk.WrapMode.WORD_CHAR;
 
-            var links_grid = new Gtk.Grid ();
-            links_grid.column_spacing = 24;
+            var links_box = new Gtk.ButtonBox (Gtk.Orientation.HORIZONTAL);
+            links_box.margin = 12;
+            links_box.halign = Gtk.Align.CENTER;
 
             var homepage_url = package.component.get_url (AppStream.UrlKind.HOMEPAGE);
 
             if (homepage_url != null) {
                 var website_button = new UrlButton (_("Homepage"), homepage_url, "web-browser-symbolic");
-                links_grid.add (website_button);
+                links_box.add (website_button);
             }
 
             var translate_url = package.component.get_url (AppStream.UrlKind.TRANSLATE);
 
             if (translate_url != null) {
                 var translate_button = new UrlButton (_("Suggest Translations"), translate_url, "preferences-desktop-locale-symbolic");
-                links_grid.add (translate_button);
+                links_box.add (translate_button);
             }
 
             var bugtracker_url = package.component.get_url (AppStream.UrlKind.BUGTRACKER);
 
             if (bugtracker_url != null) {
                 var bugtracker_button = new UrlButton (_("Report a Problem"), bugtracker_url, "bug-symbolic");
-                links_grid.add (bugtracker_button);
+                links_box.add (bugtracker_button);
             }
 
             var help_url = package.component.get_url (AppStream.UrlKind.HELP);
 
             if (help_url != null) {
                 var help_button = new UrlButton (_("Help"), help_url, "dialog-question-symbolic");
-                links_grid.add (help_button);
+                links_box.add (help_button);
             }
+
+            var share_button = new Gtk.Button.from_icon_name ("folder-publicshare-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+            share_button.tooltip_text = _("Share");
+
+            var share_button_context = share_button.get_style_context ();
+            share_button_context.add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+            share_button_context.add_class (Gtk.STYLE_CLASS_FLAT);
+            share_button_context.add_class ("h4");
+
+            links_box.add (share_button);
 
             var content_grid = new Gtk.Grid ();
             content_grid.width_request = 800;
@@ -182,8 +193,6 @@ namespace AppCenter.Views {
                 load_extensions.begin ();
             }
 
-            content_grid.add (links_grid);
-
             var header_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
             header_box.get_style_context ().add_class ("banner");
             header_box.hexpand = true;
@@ -192,7 +201,6 @@ namespace AppCenter.Views {
             header_grid.column_spacing = 12;
             header_grid.halign = Gtk.Align.CENTER;
             header_grid.margin = 12;
-            header_grid.margin_bottom = 24;
             header_grid.width_request = 800;
             header_grid.attach (image, 0, 0, 1, 2);
             header_grid.attach (package_name, 1, 0, 1, 1);
@@ -208,18 +216,33 @@ namespace AppCenter.Views {
             header_box.add (header_grid);
 
             var grid = new Gtk.Grid ();
+            grid.row_spacing = 12;
             grid.attach (header_box, 0, 0, 1, 1);
             grid.attach (content_grid, 0, 1, 1, 1);
+            grid.attach (links_box, 0, 2, 1, 1);
 
             var scrolled = new Gtk.ScrolledWindow (null, null);
             scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
             scrolled.expand = true;
             scrolled.add (grid);
 
-            add (scrolled);
+            var toast = new Granite.Widgets.Toast (_("Link copied to clipboard"));
+
+            var overlay = new Gtk.Overlay ();
+            overlay.add (scrolled);
+            overlay.add_overlay (toast);
+
+            add (overlay);
 
             open_button.get_style_context ().add_class ("h3");
             reload_css ();
+
+            share_button.clicked.connect (() => {
+                var clipboard = Gtk.Clipboard.get_for_display (get_display (), Gdk.SELECTION_CLIPBOARD);
+                clipboard.set_text ("https://appcenter.elementary.io/" + this.package.component.get_id (), -1);
+
+                toast.send_notification ();
+            });
         }
 
         protected override void set_up_package (uint icon_size = 48) {
@@ -383,21 +406,12 @@ namespace AppCenter.Views {
         class UrlButton : Gtk.LinkButton {
             public UrlButton (string label, string uri, string icon_name) {
                 Object (uri: uri);
-                get_style_context ().add_class ("dim-label");
-                tooltip_text = uri;
+                get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+                get_style_context ().add_class ("h4");
+                tooltip_text = label;
 
                 var icon = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.LARGE_TOOLBAR);
-
-                var title = new Gtk.Label (label);
-
-                var grid = new Gtk.Grid ();
-                grid.row_spacing = 6;
-                grid.margin = 3;
-                grid.orientation = Gtk.Orientation.VERTICAL;
-                grid.add (icon);
-                grid.add (title);
-
-                add (grid);
+                add (icon);
             }
         }
     }
