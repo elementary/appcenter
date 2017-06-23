@@ -1344,4 +1344,3 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog    {
 
     }
 }
-
