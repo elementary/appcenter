@@ -22,6 +22,11 @@ You'll need the following dependencies:
 * libunity-dev
 * libxml2-dev
 * libxml2-utils
+* libsecret-1-dev (new)
+* aescrypt (new) -> https://www.aescrypt.com/download/
+* libgirepository1.0-dev
+* AccountsService-1.0 
+* libaccountsservice-dev 
 * valac (>= 0.26)
 
 It's recommended to create a clean build environment
