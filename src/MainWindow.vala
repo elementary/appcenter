@@ -31,8 +31,17 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     private Gee.Deque<string> return_button_history;
     private Granite.Widgets.AlertView network_alert_view;
     private Gtk.Grid network_view;
+    
+    public GLib.Menu menu; 
 
     public static Views.InstalledView installed_view { get; private set; }
+    
+    public string?               real_name { public get; private set; }
+
+    public weak Act.User ActiveUser { get; set; }
+    public weak Act.UserManager UsrManagment { get; construct; }
+    
+    AppCenter.Services.XmlParser internal_xml; 
 
     public signal void homepage_loaded ();
 
@@ -58,6 +67,10 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             default:
                 break;
         }
+        
+        
+        
+        
 
         view_mode.selected = 0;
         search_entry.grab_focus_without_selecting ();
@@ -66,6 +79,8 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         go_back.activate.connect (view_return);
         add_action (go_back);
         app.set_accels_for_action ("win.go-back", {"<Alt>Left"});
+        
+        
 
         search_entry.search_changed.connect (() => trigger_search ());
 
@@ -109,6 +124,13 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         set_size_request (910, 640);
         title = _("AppCenter");
         window_position = Gtk.WindowPosition.CENTER;
+
+        ActiveUser = get_usermanager ().get_user (GLib.Environment.get_user_name ()); 
+        // ActiveUser.changed.connect(menu_add); 
+        ActiveUser.changed.connect(file_check);
+        internal_xml = new AppCenter.Services.XmlParser (); 
+         
+
 
         return_button = new Gtk.Button ();
         return_button.no_show_all = true;
@@ -367,5 +389,150 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         button_stack.sensitive = connection_available;
         search_entry.sensitive = connection_available && !search_view.viewing_package && !homepage.viewing_package;
+    }   
+
+    private void init_user() {
+        user(); 
     }
-}
+
+ 
+
+    public void set (GLib.SimpleAction load) {
+        add_action(load);
+    }
+
+    private void file_check () {
+        string userN = user();          
+
+        var file = File.new_for_path (@"/home/$userN/appcenter/cc.xml.aes");
+        if(!file.query_exists ()) { 
+            stderr.printf ("File '%s' doesn't exist. Attempting to recreate..\n", file.get_path ());
+            file = file.new_for_path(@"/home/$userN/appcenter/cc.xml");
+
+            cc_create(file,userN); 
+        }
+
+        var file2 = File.new_for_path (@"/home/$userN/appcenter/meta_cc.xml");
+        if(!file2.query_exists()) { 
+            stderr.printf ("File '%s' doesnt't exist. Attempting to recreate. \n", file2.get_path ()); 
+            
+            meta_create(file2); 
+        }
+        stdout.printf("[File Check Complete] \n");
+        
+    }
+
+    private void cc_create (File file, string userN) {
+        // Creates xml templete for cc.xml
+            create_directory("appcenter", userN);  
+	    try {
+		    FileOutputStream os = file.create (FileCreateFlags.PRIVATE);
+            os.write ("<cards>\n".data);
+            os.write (" <card>\n".data);
+            os.write (@"     <cNum></cNum>\n".data);
+            os.write (@"     <expo></expo>\n".data);
+            os.write (@"     <cvc></cvc>\n".data); 
+            os.write (" </card>\n".data);
+            os.write ("</cards>\n".data);
+            stdout.printf ("-- cc.xml [Created]\n");
+	        } 
+        catch (Error e) {
+		    stdout.printf ("Error: %s\n", e.message);
+	        }
+        }
+
+    private void meta_create (File file) {
+        // Creates xml templete for meta_cc.xml 
+        try {
+            FileOutputStream os = file.create  (FileCreateFlags.PRIVATE); 
+            os.write ("<cards>\n".data);
+            os.write (" <card>\n".data);
+            os.write (@"     <cNum></cNum>\n".data);
+            os.write (" </card>\n".data);
+            os.write ("</cards>\n".data);
+            stdout.printf ("-- meta_cc.xml [Created]\n");
+	        } 
+        catch (Error e) {
+		    stdout.printf ("Error: %s\n", e.message);
+	        }
+        }
+
+    private void create_directory(string dir, string userN) {
+        // Creates base directory for appcenter files in user home
+        try { 
+            string[] spawn_args = {"mkdir",@"/home/$userN/$dir"};
+            string[] spawn_env = Environ.get ();
+		    string ls_stdout;
+		    string ls_stderr;
+		    int ls_status;
+            Process.spawn_sync("/",
+            spawn_args,
+            spawn_env,
+            SpawnFlags.SEARCH_PATH,
+			null,
+			out ls_stdout,
+			out ls_stderr,
+			out ls_status);
+        } catch (SpawnError e) {
+		    stdout.printf ("Error: %s\n", e.message);
+            }
+            stdout.printf("[Base directory created] \n"); 
+        }
+
+    private static Act.UserManager? usermanager = null;
+
+    public static unowned Act.UserManager? get_usermanager () {
+        if (usermanager != null && usermanager.is_loaded)
+            return usermanager;
+
+        usermanager = Act.UserManager.get_default ();
+        return usermanager;
+    }
+
+   private string user() {
+        // Get user name 
+        return real_name =ActiveUser.get_user_name (); 
+    }
+
+     private void loadMetaData() {   
+        stdout.printf(@"$real_name"); 
+        stdout.printf("[Loading cc meta-data]\n"); 
+        string parent = null; 
+        // string localuser = user();
+        stdout.printf(@"$real_name"); 
+        string path = (@"/home/$real_name/appcenter/meta_cc.xml");
+        internal_xml.xml_parse_filepath(path);
+        stdout.printf("[cc meta-data loaded]\n");
+
+    } 
+
+    public void menu_add () {
+        real_name = user(); 
+        loadMetaData(); 
+        var nodes = new Gee.ArrayList<string> (); 
+        nodes = internal_xml.node_content_list;
+        int i = 0; 
+
+        foreach (string element in nodes) {
+            if (element.length > 3){
+
+             var Add_Card = new SimpleAction (@"menu_item_1", null);
+                Add_Card.activate.connect(() => {
+                stdout.printf(@"testworks"); 
+                activate ();
+            });
+             add_action(Add_Card); 
+                i++; 
+            }
+            else {
+                
+             }
+        } 
+    }
+
+
+
+    
+
+    
+} 
