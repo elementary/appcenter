@@ -1,10 +1,10 @@
+
 vala_precompile(VALA_C ${EXEC_NAME}
     Core/ChangeInformation.vala
     Core/Client.vala
     Core/Houston.vala
     Core/Package.vala
     Core/Task.vala
-    Core/UpdateManager.vala
 
     Application.vala
     MainWindow.vala
@@ -31,6 +31,7 @@ vala_precompile(VALA_C ${EXEC_NAME}
     Widgets/UpdateHeaderRow.vala
     Widgets/HumbleButton.vala
     Widgets/Switcher.vala
+    Services/XmlParser.vala
     Services/DbusInterfaces.vala
     Services/DBusServer.vala
     ${CMAKE_CURRENT_BINARY_DIR}/config.vala
@@ -38,11 +39,13 @@ PACKAGES
     appstream
     gtk+-3.0>=3.12
     gee-0.8
+    libxml-2.0
     granite
     packagekit-glib2
     libsoup-2.4 
     json-glib-1.0
-    libxml-2.0
+    libsecret-1
+    AccountsService-1.0
     ${UNITY_PACKAGES}
 OPTIONS
   --vapidir=${CMAKE_SOURCE_DIR}/vapi
@@ -51,6 +54,9 @@ OPTIONS
   ${UNITY_OPTIONS}
 )
 
+include_directories(/usr/include/libsecret-1/libsecret/)
+set(SOURCES /usr/include/libsecret-1/libsecret/secret.h)
+
 include (GResource)
 glib_compile_resources (GLIB_RESOURCES_CATEGORIES SOURCE ../data/icons/categories.gresource.xml)
 
@@ -58,4 +64,3 @@ add_executable (${EXEC_NAME} ${VALA_C} ${GLIB_RESOURCES_CATEGORIES})
 target_link_libraries (${EXEC_NAME} ${DEPS_LIBRARIES} ${UNITY_LIBRARIES})
 
 install (TARGETS ${EXEC_NAME} RUNTIME DESTINATION bin)
-
