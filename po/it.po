@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-06-24 10:14+0000\n"
-"Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
+"PO-Revision-Date: 2017-06-24 10:15+0000\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Italian "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/it/>\n"
 "Language: it\n"
@@ -425,9 +425,8 @@ msgid "Search Apps"
 msgstr "Cerca applicazioni"
 
 #: ../src/MainWindow.vala:161
-#, fuzzy
 msgid "Network Is Not Available"
-msgstr "Schermata non disponibile"
+msgstr "Rete non disponibile."
 
 #: ../src/MainWindow.vala:162
 msgid "Connect to the internet to install or update apps."
