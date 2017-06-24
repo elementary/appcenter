@@ -131,7 +131,6 @@ namespace AppCenter.Views {
             links_grid.add (license_grid);
 
             var project_license = package.component.project_license;
-
             if (project_license != null) {
                 var license_icon = new Gtk.Image.from_icon_name ("text-x-copying-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
                 license_icon.valign = Gtk.Align.CENTER;
