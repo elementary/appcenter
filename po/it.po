@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
 "PO-Revision-Date: 2017-06-24 10:14+0000\n"
-"Last-Translator: Giuseppe Ceccarino <hazerlighter@gmail.com>\n"
+"Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/it/>\n"
 "Language: it\n"
@@ -226,8 +226,8 @@ msgstr "Il saldo o il limite della carta è stato raggiunto."
 #: ../src/Dialogs/StripeDialog.vala:559
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
-"La carta fornita è una carta di prova. Per favore utilizza una carta reale "
-"per procedere."
+"La carta fornita è una carta di prova. Utilizza una carta reale per "
+"procedere."
 
 #: ../src/Views/InstalledView.vala:51 ../src/MainWindow.vala:130
 msgctxt "view"
@@ -279,7 +279,7 @@ msgstr "Aiuto"
 
 #: ../src/Views/Homepage.vala:104
 msgid "Recently Updated"
-msgstr ""
+msgstr "Aggiornate di recente"
 
 #: ../src/Views/Homepage.vala:156
 msgid "Categories"
@@ -417,7 +417,7 @@ msgstr "Aggiornato"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:120
 msgid "Drivers"
-msgstr ""
+msgstr "Driver"
 
 #: ../src/MainWindow.vala:118 ../src/MainWindow.vala:146
 #: ../src/MainWindow.vala:316 ../src/MainWindow.vala:338
