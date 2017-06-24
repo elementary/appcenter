@@ -151,7 +151,7 @@ namespace AppCenter.Views {
                 links_grid.add (help_button);
             }
 
-            var share_icon = new Gtk.Image.from_icon_name ("folder-publicshare-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+            var share_icon = new Gtk.Image.from_icon_name ("send-to-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
             share_icon.valign = Gtk.Align.CENTER;
 
             var share_label = new Gtk.Label (_("Share"));
