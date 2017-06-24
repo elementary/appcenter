@@ -123,6 +123,26 @@ namespace AppCenter.Views {
             links_grid.margin = 12;
             links_grid.width_request = 800;
 
+            var license_grid = new Gtk.Grid ();
+            license_grid.column_spacing = 6;
+            license_grid.halign = Gtk.Align.START;
+            license_grid.hexpand = true;
+
+            links_grid.add (license_grid);
+
+            var project_license = package.component.project_license;
+
+            if (project_license != null) {
+                var license_icon = new Gtk.Image.from_icon_name ("text-x-copying-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+                license_icon.valign = Gtk.Align.CENTER;
+
+                var license_label = new Gtk.Label (project_license);
+
+                license_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+                license_grid.add (license_icon);
+                license_grid.add (license_label);
+            }
+
             var homepage_url = package.component.get_url (AppStream.UrlKind.HOMEPAGE);
 
             if (homepage_url != null) {
