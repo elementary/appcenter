@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-06-24 17:56+0000\n"
+"PO-Revision-Date: 2017-06-24 17:57+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Traditional) "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/zh_TW/>\n"
@@ -217,7 +217,7 @@ msgstr "搜尋"
 
 #: ../src/Views/AppListView.vala:121
 msgid "A restart is required to complete the installation of updates"
-msgstr "必須重新啟動才能完成更新的安裝"
+msgstr "需要重新啟動才能完成更新的安裝"
 
 #: ../src/Views/AppListView.vala:129
 msgid "Restart Now"
