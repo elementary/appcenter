@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
 "PO-Revision-Date: 2017-06-24 10:15+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"Last-Translator: Giuseppe Ceccarino <hazerlighter@gmail.com>\n"
 "Language-Team: Italian "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/it/>\n"
 "Language: it\n"
@@ -430,11 +430,11 @@ msgstr "Rete non disponibile."
 
 #: ../src/MainWindow.vala:162
 msgid "Connect to the internet to install or update apps."
-msgstr ""
+msgstr "Connettiti ad internet per installare o aggiornare le applicazioni."
 
 #: ../src/MainWindow.vala:165
 msgid "Network Settings…"
-msgstr ""
+msgstr "Impostazioni di rete.."
 
 #: ../src/MainWindow.vala:298
 msgid "Search %s"
