@@ -280,7 +280,7 @@ namespace AppCenter.Views {
                 share_popover.hide ();
             });
 
-            var canned_message = "Check out %s on AppCenter https://appcenter.elementary.io/%s".printf (package.get_name (), this.package.component.get_id ());
+            var canned_message = _("Check out %s on AppCenter: https://appcenter.elementary.io/%s").printf (package.get_name (), this.package.component.get_id ());
 
             email_button.clicked.connect (() => {
                 try {
