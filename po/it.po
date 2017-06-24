@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-06-24 10:15+0000\n"
-"Last-Translator: Giuseppe Ceccarino <hazerlighter@gmail.com>\n"
+"PO-Revision-Date: 2017-06-24 10:18+0000\n"
+"Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/it/>\n"
 "Language: it\n"
@@ -184,14 +184,15 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:512
 msgid "The transaction has already been processed."
-msgstr "La transazione è già stata processata. "
+msgstr "La transazione è già stata processata."
 
 #: ../src/Dialogs/StripeDialog.vala:516
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "Postal code."
 msgstr ""
-"Il codice postale è incorretto. Riprova usando un codice postale corretto."
+"Il codice postale è incorretto. Riprova utilizzando un codice postale "
+"corretto."
 
 #: ../src/Dialogs/StripeDialog.vala:518
 msgid "You don't have enough funds. Please use an alternative payment method."
@@ -199,11 +200,11 @@ msgstr "Non hai abbastanza fondi. Utilizza un metodo di pagamento alternativo."
 
 #: ../src/Dialogs/StripeDialog.vala:520
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr "L'importo è incorretto. Riprova usando un importo corretto."
+msgstr "L'importo è incorretto. Riprova utilizzando un importo valdo."
 
 #: ../src/Dialogs/StripeDialog.vala:531
 msgid "The pin number is incorrect. Please try again using the correct pin."
-msgstr "Il codice pin è incorretto. Riprova usando un pin corretto."
+msgstr "Il codice pin è incorretto. Riprova utilizzando un pin corretto."
 
 #: ../src/Dialogs/StripeDialog.vala:533
 msgid ""
@@ -426,7 +427,7 @@ msgstr "Cerca applicazioni"
 
 #: ../src/MainWindow.vala:161
 msgid "Network Is Not Available"
-msgstr "Rete non disponibile."
+msgstr "Rete non disponibile"
 
 #: ../src/MainWindow.vala:162
 msgid "Connect to the internet to install or update apps."
@@ -434,7 +435,7 @@ msgstr "Connettiti ad internet per installare o aggiornare le applicazioni."
 
 #: ../src/MainWindow.vala:165
 msgid "Network Settings…"
-msgstr "Impostazioni di rete.."
+msgstr "Impostazioni di rete…"
 
 #: ../src/MainWindow.vala:298
 msgid "Search %s"
