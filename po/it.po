@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-06-24 10:01+0000\n"
-"Last-Translator: Giuseppe Ceccarino <hazerlighter@gmail.com>\n"
+"PO-Revision-Date: 2017-06-24 10:02+0000\n"
+"Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/it/>\n"
 "Language: it\n"
@@ -199,8 +199,7 @@ msgstr "Non hai abbastanza fondi. Utilizza un metodo di pagamento alternativo."
 
 #: ../src/Dialogs/StripeDialog.vala:520
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr ""
-"L'importo è incorretto. Per favore riprova utilizzo un importo corretto."
+msgstr "L'importo è incorretto. Riprova usando un importo corretto."
 
 #: ../src/Dialogs/StripeDialog.vala:531
 msgid "The pin number is incorrect. Please try again using the correct pin."
