@@ -55,6 +55,10 @@ public class SharePopover : Gtk.Popover {
         tumblr_button.tooltip_text = _("Tumblr");
         tumblr_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
+        var pocket_button = new Gtk.Button.from_icon_name ("online-account-pocket", Gtk.IconSize.DND);
+        pocket_button.tooltip_text = _("Save to Pocket");
+        pocket_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+
         var copy_link_button = new Gtk.Button.from_icon_name ("edit-copy-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
         copy_link_button.tooltip_text = _("Copy link");
         copy_link_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
@@ -71,6 +75,7 @@ public class SharePopover : Gtk.Popover {
         service_grid.add (twitter_button);
         service_grid.add (reddit_button);
         service_grid.add (tumblr_button);
+        service_grid.add (pocket_button);
 
         var system_grid = new Gtk.Grid ();
         system_grid.margin = 6;
@@ -142,6 +147,15 @@ public class SharePopover : Gtk.Popover {
         tumblr_button.clicked.connect (() => {
             try {
                 AppInfo.launch_default_for_uri ("https://www.tumblr.com/share/link?url=%s".printf (uri), null);
+            } catch (Error e) {
+                warning ("%s", e.message);
+            }
+            hide ();
+        });
+
+        pocket_button.clicked.connect (() => {
+            try {
+                AppInfo.launch_default_for_uri ("https://getpocket.com/edit?url=%s".printf (uri), null);
             } catch (Error e) {
                 warning ("%s", e.message);
             }
