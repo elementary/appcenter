@@ -159,4 +159,5 @@ public class SharePopover : Gtk.Popover {
             }
             hide ();
         });
+    }
 }
