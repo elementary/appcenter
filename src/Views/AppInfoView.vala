@@ -151,6 +151,28 @@ namespace AppCenter.Views {
                 links_grid.add (help_button);
             }
 
+            var copy_link_button = new Gtk.Button.from_icon_name ("edit-copy", Gtk.IconSize.DND);
+            copy_link_button.tooltip_text = _("Copy Link");
+            copy_link_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+
+            var email_button = new Gtk.Button.from_icon_name ("internet-mail", Gtk.IconSize.DND);
+            email_button.tooltip_text = _("Send Email");
+            email_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+
+            var twitter_button = new Gtk.Button.from_icon_name ("online-account-twitter", Gtk.IconSize.DND);
+            twitter_button.tooltip_text = _("Compose Tweet");
+            twitter_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+
+            var share_popover_grid = new Gtk.Grid ();
+            share_popover_grid.margin = 6;
+            share_popover_grid.add (copy_link_button);
+            share_popover_grid.add (email_button);
+            share_popover_grid.add (twitter_button);
+
+            var share_popover = new Gtk.Popover (null);
+            share_popover.add (share_popover_grid);
+            share_popover.show_all ();
+
             var share_icon = new Gtk.Image.from_icon_name ("send-to-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
             share_icon.valign = Gtk.Align.CENTER;
 
@@ -161,7 +183,9 @@ namespace AppCenter.Views {
             share_grid.add (share_icon);
             share_grid.add (share_label);
 
-            var share_button = new Gtk.Button ();
+            var share_button = new Gtk.MenuButton ();
+            share_button.direction = Gtk.ArrowType.UP;
+            share_button.popover = share_popover;
             share_button.add (share_grid);
 
             var share_button_context = share_button.get_style_context ();
@@ -248,11 +272,32 @@ namespace AppCenter.Views {
             open_button.get_style_context ().add_class ("h3");
             reload_css ();
 
-            share_button.clicked.connect (() => {
+            copy_link_button.clicked.connect (() => {
                 var clipboard = Gtk.Clipboard.get_for_display (get_display (), Gdk.SELECTION_CLIPBOARD);
                 clipboard.set_text ("https://appcenter.elementary.io/" + this.package.component.get_id (), -1);
 
                 toast.send_notification ();
+                share_popover.hide ();
+            });
+
+            var canned_message = _("Check out %s on AppCenter: https://appcenter.elementary.io/%s").printf (package.get_name (), this.package.component.get_id ());
+
+            email_button.clicked.connect (() => {
+                try {
+                    AppInfo.launch_default_for_uri ("mailto:?body=%s".printf (canned_message), null);
+                } catch (Error e) {
+                    warning ("%s\n", e.message);
+                }
+                share_popover.hide ();
+            });
+
+            twitter_button.clicked.connect (() => {
+                try {
+                    AppInfo.launch_default_for_uri ("http://twitter.com/home/?status=%s".printf (canned_message), null);
+                } catch (Error e) {
+                    warning ("%s\n", e.message);
+                }
+                share_popover.hide ();
             });
         }
 
