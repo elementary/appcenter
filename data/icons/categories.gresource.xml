@@ -13,10 +13,11 @@
     <file alias="applications-system.svg" compressed="true" preprocess="xml-stripblanks">applications-system.svg</file>
     <file alias="online-account-facebook.svg" compressed="true" preprocess="xml-stripblanks">online-account-facebook.svg</file>
     <file alias="online-account-google-plus.svg" compressed="true" preprocess="xml-stripblanks">online-account-google-plus.svg</file>
-    <file alias="online-account-twitter.svg" compressed="true" preprocess="xml-stripblanks">online-account-twitter.svg</file>
+    <file alias="online-account-pocket.svg" compressed="true" preprocess="xml-stripblanks">online-account-pocket.svg</file>
     <file alias="online-account-reddit.svg" compressed="true" preprocess="xml-stripblanks">online-account-reddit.svg</file>
     <file alias="online-account-tumblr.svg" compressed="true" preprocess="xml-stripblanks">online-account-tumblr.svg</file>
-    <file alias="online-account-pocket.svg" compressed="true" preprocess="xml-stripblanks">online-account-pocket.svg</file>
+    <file alias="online-account-twitter.svg" compressed="true" preprocess="xml-stripblanks">online-account-twitter.svg</file>
+    <file alias="text-x-copying-symbolic.svg" compressed="true" preprocess="xml-stripblanks">text-x-copying-symbolic.svg</file>
   </gresource>
   <gresource prefix="/io/elementary/appcenter/backgrounds">
     <file alias="audio.svg" compressed="true" preprocess="xml-stripblanks">audio.svg</file>
