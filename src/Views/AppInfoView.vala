@@ -34,10 +34,6 @@ namespace AppCenter.Views {
 
         public AppInfoView (AppCenterCore.Package package) {
             Object (package: package);
-
-            set_up_package (128);
-
-            parse_description (package.get_description ());
         }
 
         construct {
@@ -51,7 +47,9 @@ namespace AppCenter.Views {
             uninstall_button_context.add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
             uninstall_button_context.add_class ("h3");
 
-            screenshots = package.component.get_screenshots ();
+            var package_component = package.component;
+
+            screenshots = package_component.get_screenshots ();
 
             if (screenshots.length > 0) {
                 app_screenshots = new Gtk.Stack ();
@@ -101,11 +99,10 @@ namespace AppCenter.Views {
             package_author.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
             package_author.get_style_context ().add_class ("h2");
 
-            package_summary = new Gtk.Label (null);
+            package_summary = new Gtk.Label (package.get_summary ());
             package_summary.xalign = 0;
             package_summary.get_style_context ().add_class ("h2");
             package_summary.wrap = true;
-            package_summary.set_lines (3);
             package_summary.wrap_mode = Pango.WrapMode.WORD_CHAR;
 
             app_description = new Gtk.TextView ();
@@ -122,29 +119,25 @@ namespace AppCenter.Views {
             links_grid.halign = Gtk.Align.END;
             links_grid.hexpand = true;
 
-            var homepage_url = package.component.get_url (AppStream.UrlKind.HOMEPAGE);
-
+            var homepage_url = package_component.get_url (AppStream.UrlKind.HOMEPAGE);
             if (homepage_url != null) {
                 var website_button = new UrlButton (_("Homepage"), homepage_url, "web-browser-symbolic");
                 links_grid.add (website_button);
             }
 
-            var translate_url = package.component.get_url (AppStream.UrlKind.TRANSLATE);
-
+            var translate_url = package_component.get_url (AppStream.UrlKind.TRANSLATE);
             if (translate_url != null) {
                 var translate_button = new UrlButton (_("Suggest Translations"), translate_url, "preferences-desktop-locale-symbolic");
                 links_grid.add (translate_button);
             }
 
-            var bugtracker_url = package.component.get_url (AppStream.UrlKind.BUGTRACKER);
-
+            var bugtracker_url = package_component.get_url (AppStream.UrlKind.BUGTRACKER);
             if (bugtracker_url != null) {
                 var bugtracker_button = new UrlButton (_("Report a Problem"), bugtracker_url, "bug-symbolic");
                 links_grid.add (bugtracker_button);
             }
 
-            var help_url = package.component.get_url (AppStream.UrlKind.HELP);
-
+            var help_url = package_component.get_url (AppStream.UrlKind.HELP);
             if (help_url != null) {
                 var help_button = new UrlButton (_("Help"), help_url, "dialog-question-symbolic");
                 links_grid.add (help_button);
@@ -212,7 +205,7 @@ namespace AppCenter.Views {
 
             content_grid.add (app_description);
 
-            if (package.component.get_addons ().length > 0) {
+            if (package_component.get_addons ().length > 0) {
                 extension_box = new Gtk.ListBox ();
                 extension_box.selection_mode = Gtk.SelectionMode.NONE;
 
@@ -290,9 +283,8 @@ namespace AppCenter.Views {
             add (overlay);
 
             open_button.get_style_context ().add_class ("h3");
-            reload_css ();
-
-            copy_link_button.clicked.connect (() => {
+            
+            share_button.clicked.connect (() => {
                 var clipboard = Gtk.Clipboard.get_for_display (get_display (), Gdk.SELECTION_CLIPBOARD);
                 clipboard.set_text ("https://appcenter.elementary.io/" + this.package.component.get_id (), -1);
 
@@ -319,12 +311,10 @@ namespace AppCenter.Views {
                 }
                 share_popover.hide ();
             });
-        }
 
-        protected override void set_up_package (uint icon_size = 48) {
-            package_summary.label = package.get_summary ();
-            package_summary.ellipsize = Pango.EllipsizeMode.END;
-            base.set_up_package (icon_size);
+            reload_css ();
+            set_up_package (128);
+            parse_description (package.get_description ());
         }
 
         protected override void update_state (bool first_update = false) {
