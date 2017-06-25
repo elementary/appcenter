@@ -293,7 +293,7 @@ namespace AppCenter.Views {
                 }
                 share_popover.hide ();
             });
-        }
+
             set_up_package (128);
             parse_description (package.get_description ());
         }
