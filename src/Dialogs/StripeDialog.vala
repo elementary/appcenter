@@ -1220,10 +1220,9 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog    {
         var appCenterS = new Secret.Schema ("org.appcenter.Password", Secret.SchemaFlags.NONE,
                                             "size", Secret.SchemaAttributeType.INTEGER,
                                             "type", Secret.SchemaAttributeType.STRING); 
-         stdout.printf("Faling before\n");
+					    
          Secret.password_lookupv.begin(appCenterS,attributes,null,(obj,async_res) => {
-            string token = Secret.password_lookup.end (async_res);
-         stdout.printf("Faling After\n");   
+            string token = Secret.password_lookup.end (async_res);  
         if (token.length < 3 ) {
             token = (string) keyGen(); 
         }
