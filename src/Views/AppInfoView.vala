@@ -119,9 +119,8 @@ namespace AppCenter.Views {
 
             var links_grid = new Gtk.Grid ();
             links_grid.column_spacing = 12;
-            links-grid.hexpand = true;
+            links_grid.hexpand = true;
             links_grid.halign = Gtk.Align.END;
-            links_grid.margin = 12;
 
             var homepage_url = package.component.get_url (AppStream.UrlKind.HOMEPAGE);
 
@@ -252,6 +251,7 @@ namespace AppCenter.Views {
 
             var footer_grid = new Gtk.Grid ();
             footer_grid.halign = Gtk.Align.CENTER;
+            footer_grid.margin = 12;
             footer_grid.width_request = 800;
             footer_grid.add (links_grid);
 
