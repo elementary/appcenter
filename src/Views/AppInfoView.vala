@@ -116,9 +116,8 @@ namespace AppCenter.Views {
 
             var links_grid = new Gtk.Grid ();
             links_grid.column_spacing = 12;
-            links_grid.halign = Gtk.Align.CENTER;
-            links_grid.margin = 12;
-            links_grid.width_request = 800;
+            links_grid.hexpand = true;
+            links_grid.halign = Gtk.Align.END;
 
             var homepage_url = package_component.get_url (AppStream.UrlKind.HOMEPAGE);
             if (homepage_url != null) {
@@ -243,11 +242,17 @@ namespace AppCenter.Views {
             header_grid.attach (action_stack, 3, 0, 1, 1);
             header_box.add (header_grid);
 
+            var footer_grid = new Gtk.Grid ();
+            footer_grid.halign = Gtk.Align.CENTER;
+            footer_grid.margin = 12;
+            footer_grid.width_request = 800;
+            footer_grid.add (links_grid);
+
             var grid = new Gtk.Grid ();
             grid.row_spacing = 12;
             grid.attach (header_box, 0, 0, 1, 1);
             grid.attach (content_grid, 0, 1, 1, 1);
-            grid.attach (links_grid, 0, 2, 1, 1);
+            grid.attach (footer_grid, 0, 2, 1, 1);
 
             var scrolled = new Gtk.ScrolledWindow (null, null);
             scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
