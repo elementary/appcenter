@@ -12,6 +12,7 @@
     <file alias="applications-video-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-video-symbolic.svg</file>
     <file alias="applications-system.svg" compressed="true" preprocess="xml-stripblanks">applications-system.svg</file>
     <file alias="online-account-twitter.svg" compressed="true" preprocess="xml-stripblanks">online-account-twitter.svg</file>
+    <file alias="text-x-copying-symbolic.svg" compressed="true" preprocess="xml-stripblanks">text-x-copying-symbolic.svg</file>
   </gresource>
   <gresource prefix="/io/elementary/appcenter/backgrounds">
     <file alias="audio.svg" compressed="true" preprocess="xml-stripblanks">audio.svg</file>

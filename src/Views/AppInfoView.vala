@@ -119,8 +119,8 @@ namespace AppCenter.Views {
 
             var links_grid = new Gtk.Grid ();
             links_grid.column_spacing = 12;
-            links_grid.hexpand = true;
             links_grid.halign = Gtk.Align.END;
+            links_grid.hexpand = true;
 
             var homepage_url = package.component.get_url (AppStream.UrlKind.HOMEPAGE);
 
@@ -253,6 +253,21 @@ namespace AppCenter.Views {
             footer_grid.halign = Gtk.Align.CENTER;
             footer_grid.margin = 12;
             footer_grid.width_request = 800;
+
+            var project_license = package.component.project_license;
+            if (project_license != null) {
+                var license_icon = new Gtk.Image.from_icon_name ("text-x-copying-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+                license_icon.valign = Gtk.Align.CENTER;
+
+                var license_grid = new Gtk.Grid ();
+                license_grid.column_spacing = 6;
+                license_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+                license_grid.add (license_icon);
+                license_grid.add (new Gtk.Label (project_license));
+
+                footer_grid.add (license_grid);
+            }
+
             footer_grid.add (links_grid);
 
             var grid = new Gtk.Grid ();
