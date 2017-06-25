@@ -132,7 +132,7 @@ public class SharePopover : Gtk.Popover {
 
         reddit_button.clicked.connect (() => {
             try {
-                AppInfo.launch_default_for_uri ("http://www.reddit.com/submit?title=%s?&url=%s".printf (body, uri), null);
+                AppInfo.launch_default_for_uri ("http://www.reddit.com/submit?title=%s&url=%s".printf (body, uri), null);
             } catch (Error e) {
                 warning ("%s", e.message);
             }
