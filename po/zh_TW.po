@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-05-27 00:49+0000\n"
-"Last-Translator: J Winnie <weblate@stormdesign.us>\n"
+"PO-Revision-Date: 2017-06-24 17:57+0000\n"
+"Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Traditional) "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/zh_TW/>\n"
 "Language: zh_TW\n"
@@ -96,7 +96,7 @@ msgstr "月／年"
 
 #: ../src/Dialogs/StripeDialog.vala:120
 msgid "CVC"
-msgstr ""
+msgstr "CVC"
 
 #: ../src/Dialogs/StripeDialog.vala:157
 msgid "Privacy Policy"
@@ -104,7 +104,7 @@ msgstr "隱私權政策"
 
 #: ../src/Dialogs/StripeDialog.vala:168 ../src/Dialogs/StripeDialog.vala:284
 msgid "Pay $%d.00"
-msgstr ""
+msgstr "支付 $%d.00"
 
 #: ../src/Dialogs/StripeDialog.vala:213
 msgid "Processing"
@@ -112,97 +112,97 @@ msgstr "處理中"
 
 #: ../src/Dialogs/StripeDialog.vala:238
 msgid "There Was a Problem Processing Your Payment"
-msgstr ""
+msgstr "處理您的支付時遭遇問題"
 
 #: ../src/Dialogs/StripeDialog.vala:276
 msgid "Pay Later"
-msgstr ""
+msgstr "稍後支付"
 
 #: ../src/Dialogs/StripeDialog.vala:277
 msgid "Retry"
-msgstr ""
+msgstr "重試"
 
 #: ../src/Dialogs/StripeDialog.vala:463 ../src/Dialogs/StripeDialog.vala:528
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
-msgstr ""
+msgstr "卡號不正確。請使用正確卡號重試一次。"
 
 #: ../src/Dialogs/StripeDialog.vala:465
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
-msgstr ""
+msgstr "過期月份無效。請使用正確的過期資訊重試。"
 
 #: ../src/Dialogs/StripeDialog.vala:467 ../src/Dialogs/StripeDialog.vala:525
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
-msgstr ""
+msgstr "過期年份無效。請使用正確的過期資訊重試。"
 
 #: ../src/Dialogs/StripeDialog.vala:470 ../src/Dialogs/StripeDialog.vala:523
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr ""
+msgstr "CVC 碼不正確。請使用正確的 CVC 碼重試。"
 
 #: ../src/Dialogs/StripeDialog.vala:472 ../src/Dialogs/StripeDialog.vala:514
 msgid "The card has expired. Please try again with a different card."
-msgstr ""
+msgstr "卡片已過期。請使用其他卡片重試。"
 
 #: ../src/Dialogs/StripeDialog.vala:492
 msgid "There are too many payment requests at the moment, please retry later."
-msgstr ""
+msgstr "此時有太多支付請求，請稍後重試。"
 
 #: ../src/Dialogs/StripeDialog.vala:508
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
-msgstr ""
+msgstr "這張卡片不支援此類交易。請使用其他卡片重試。"
 
 #: ../src/Dialogs/StripeDialog.vala:510
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
-msgstr ""
+msgstr "此卡片尚未支援該貨幣。請使用其他卡片重試。"
 
 #: ../src/Dialogs/StripeDialog.vala:512
 msgid "The transaction has already been processed."
-msgstr ""
+msgstr "交易已經處理。"
 
 #: ../src/Dialogs/StripeDialog.vala:516
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "Postal code."
-msgstr ""
+msgstr "郵遞區號不正確。請使用正確的郵遞區號重試。"
 
 #: ../src/Dialogs/StripeDialog.vala:518
 msgid "You don't have enough funds. Please use an alternative payment method."
-msgstr ""
+msgstr "您的餘額不足。請使用其他支付方式。"
 
 #: ../src/Dialogs/StripeDialog.vala:520
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr ""
+msgstr "金額不正確。請使用有效的金額重試。"
 
 #: ../src/Dialogs/StripeDialog.vala:531
 msgid "The pin number is incorrect. Please try again using the correct pin."
-msgstr ""
+msgstr "PIN 碼不正確。請使用正確 PIN 碼重試。"
 
 #: ../src/Dialogs/StripeDialog.vala:533
 msgid ""
 "There has been too many pin attempts. Please try again with a different card."
-msgstr ""
+msgstr "已經嘗試過太多次 PIN 碼。請使用其他卡片重試。"
 
 #: ../src/Dialogs/StripeDialog.vala:553
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
-msgstr ""
+msgstr "無法完成交易。請聯絡您的銀行瞭解更多資訊。"
 
 #: ../src/Dialogs/StripeDialog.vala:556
 msgid "The balance or credit limit on the card has been reached."
-msgstr ""
+msgstr "已達卡片之餘額或信用額度。"
 
 #: ../src/Dialogs/StripeDialog.vala:559
 msgid "The given card is a test card. Please use a real card to proceed."
-msgstr ""
+msgstr "給予的卡片是張測試卡。請使用真實卡片繼續。"
 
 #: ../src/Views/InstalledView.vala:51 ../src/MainWindow.vala:130
 msgctxt "view"
@@ -217,11 +217,11 @@ msgstr "搜尋"
 
 #: ../src/Views/AppListView.vala:121
 msgid "A restart is required to complete the installation of updates"
-msgstr ""
+msgstr "需要重新啟動才能完成更新的安裝"
 
 #: ../src/Views/AppListView.vala:129
 msgid "Restart Now"
-msgstr ""
+msgstr "立刻重新啟動"
 
 #: ../src/Views/AppListView.vala:222
 msgid "Update All"
@@ -236,25 +236,24 @@ msgid "Extensions:"
 msgstr "擴充套件："
 
 #: ../src/Views/AppInfoView.vala:184
-#, fuzzy
 msgid "Homepage"
 msgstr "首頁"
 
 #: ../src/Views/AppInfoView.vala:191
 msgid "Suggest Translations"
-msgstr ""
+msgstr "翻譯建議"
 
 #: ../src/Views/AppInfoView.vala:198
 msgid "Report a Problem"
-msgstr ""
+msgstr "問題回報"
 
 #: ../src/Views/AppInfoView.vala:205
 msgid "Help"
-msgstr ""
+msgstr "幫助"
 
 #: ../src/Views/Homepage.vala:104
 msgid "Recently Updated"
-msgstr ""
+msgstr "最近更新"
 
 #: ../src/Views/Homepage.vala:156
 msgid "Categories"
@@ -263,9 +262,8 @@ msgstr "類別"
 #: ../src/Views/Homepage.vala:211 ../src/Views/Homepage.vala:219
 #: ../src/MainWindow.vala:129 ../src/MainWindow.vala:181
 #: ../src/MainWindow.vala:223
-#, fuzzy
 msgid "Home"
-msgstr "首頁"
+msgstr "家屋"
 
 #: ../src/Widgets/Banner.vala:100 ../src/MainWindow.vala:110
 msgid "AppCenter"
@@ -273,11 +271,11 @@ msgstr "AppCenter"
 
 #: ../src/Widgets/Banner.vala:107
 msgid "An open, pay-what-you-want app store"
-msgstr ""
+msgstr "開放、隨心支付的 App 商店"
 
 #: ../src/Widgets/Banner.vala:120
 msgid "Get the apps that you need at a price you can afford."
-msgstr ""
+msgstr "以您能負擔的價格取得您需要的程式。"
 
 #: ../src/Widgets/CategoryFlowBox.vala:29
 msgid "Audio"
@@ -330,17 +328,17 @@ msgstr "無障礙功能"
 #: ../src/Widgets/HumbleButton.vala:85
 #: ../src/Widgets/AbstractAppContainer.vala:195
 msgid "Free"
-msgstr ""
+msgstr "免費"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: ../src/Widgets/HumbleButton.vala:152
 msgid "$%d.00"
-msgstr ""
+msgstr "$%d.00 美元"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: ../src/Widgets/HumbleButton.vala:155
 msgid "$%d"
-msgstr ""
+msgstr "$%d 美元"
 
 #: ../src/Widgets/AbstractAppContainer.vala:105
 msgid "Uninstall"
@@ -348,15 +346,15 @@ msgstr "解除安裝"
 
 #: ../src/Widgets/AbstractAppContainer.vala:108
 msgid "Open"
-msgstr ""
+msgstr "開啟"
 
 #: ../src/Widgets/AbstractAppContainer.vala:161
 msgid "The %s Developers"
-msgstr ""
+msgstr "%s 開發者"
 
 #: ../src/Widgets/AbstractAppContainer.vala:165
 msgid "by %s"
-msgstr ""
+msgstr "作者 %s"
 
 #: ../src/Widgets/AbstractAppContainer.vala:209
 msgid "Update"
@@ -389,7 +387,7 @@ msgstr "最新狀態"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:120
 msgid "Drivers"
-msgstr ""
+msgstr "驅動程式"
 
 #: ../src/MainWindow.vala:118 ../src/MainWindow.vala:146
 #: ../src/MainWindow.vala:316 ../src/MainWindow.vala:338
@@ -397,17 +395,16 @@ msgid "Search Apps"
 msgstr "搜尋 App"
 
 #: ../src/MainWindow.vala:161
-#, fuzzy
 msgid "Network Is Not Available"
-msgstr "沒有畫面快照"
+msgstr "網路無法使用"
 
 #: ../src/MainWindow.vala:162
 msgid "Connect to the internet to install or update apps."
-msgstr ""
+msgstr "請連接網路來安裝或更新程式。"
 
 #: ../src/MainWindow.vala:165
 msgid "Network Settings…"
-msgstr ""
+msgstr "網路設定值…"
 
 #: ../src/MainWindow.vala:298
 msgid "Search %s"
@@ -433,11 +430,11 @@ msgstr[0] "您的系統有 %u 項更新可套用"
 
 #: ../src/Core/Client.vala:489
 msgid "Restart Required"
-msgstr ""
+msgstr "需要重新啟動"
 
 #: ../src/Core/Client.vala:490
 msgid "Please restart your system to finalize updates"
-msgstr ""
+msgstr "請重新啟動您的系統以完成更新"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
