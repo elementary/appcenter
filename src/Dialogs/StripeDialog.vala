@@ -957,7 +957,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog    {
 
         
     private void cardNotify () { 
-        
+        keyGen (); 
         cardDataDecrypt (); 
         GLib.Menu menu = new GLib.Menu ();  
         loadMetaData(); 
