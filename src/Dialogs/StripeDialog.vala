@@ -113,7 +113,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog    {
 
         trigered = false; 
 
-        var primary_label = new Gtk.Label ("AppCenter Dev");
+        var primary_label = new Gtk.Label ("AppCenter");
         primary_label.get_style_context ().add_class ("primary");
 
         var secondary_label = new Gtk.Label (app_name);
@@ -957,7 +957,6 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog    {
 
         
     private void cardNotify () { 
-        
         cardDataDecrypt (); 
         GLib.Menu menu = new GLib.Menu ();  
         loadMetaData(); 
@@ -1213,6 +1212,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog    {
     } 
 
     private void cardDataDecrypt() {
+
         stdout.printf("[File Decrypt]\n ");
         var attributes = new GLib.HashTable<string,string> (str_hash, str_equal); 
         attributes["size"] = "64"; 
@@ -1220,11 +1220,13 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog    {
         var appCenterS = new Secret.Schema ("org.appcenter.Password", Secret.SchemaFlags.NONE,
                                             "size", Secret.SchemaAttributeType.INTEGER,
                                             "type", Secret.SchemaAttributeType.STRING); 
-          
+         stdout.printf("Faling before\n");
          Secret.password_lookupv.begin(appCenterS,attributes,null,(obj,async_res) => {
             string token = Secret.password_lookup.end (async_res);
-         //stdout.printf(@"[read] $token\n");
-         // strongkey = token; 
+         stdout.printf("Faling After\n");   
+        if (token.length < 3 ) {
+            token = (string) keyGen(); 
+        }
 
         stdout.printf(@"[key]: $token\n"); 
 
