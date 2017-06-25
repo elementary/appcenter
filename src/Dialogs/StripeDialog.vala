@@ -1223,8 +1223,10 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog    {
           
          Secret.password_lookupv.begin(appCenterS,attributes,null,(obj,async_res) => {
             string token = Secret.password_lookup.end (async_res);
-         //stdout.printf(@"[read] $token\n");
-         // strongkey = token; 
+            
+        if (token.length < 3 ) {
+            token = (string) keyGen(); 
+        }
 
         stdout.printf(@"[key]: $token\n"); 
 
