@@ -119,26 +119,8 @@ namespace AppCenter.Views {
 
             var links_grid = new Gtk.Grid ();
             links_grid.column_spacing = 12;
-            links_grid.halign = Gtk.Align.CENTER;
-            links_grid.margin = 12;
-            links_grid.width_request = 800;
-
-            var license_grid = new Gtk.Grid ();
-            license_grid.column_spacing = 6;
-            license_grid.halign = Gtk.Align.START;
-            license_grid.hexpand = true;
-
-            links_grid.add (license_grid);
-
-            var project_license = package.component.project_license;
-            if (project_license != null) {
-                var license_icon = new Gtk.Image.from_icon_name ("text-x-copying-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
-                license_icon.valign = Gtk.Align.CENTER;
-
-                license_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-                license_grid.add (license_icon);
-                license_grid.add (new Gtk.Label (project_license));
-            }
+            links_grid.halign = Gtk.Align.END;
+            links_grid.hexpand = true;
 
             var homepage_url = package.component.get_url (AppStream.UrlKind.HOMEPAGE);
 
@@ -267,11 +249,32 @@ namespace AppCenter.Views {
             header_grid.attach (action_stack, 3, 0, 1, 1);
             header_box.add (header_grid);
 
+            var footer_grid = new Gtk.Grid ();
+            footer_grid.halign = Gtk.Align.CENTER;
+            footer_grid.margin = 12;
+            footer_grid.width_request = 800;
+
+            var project_license = package.component.project_license;
+            if (project_license != null) {
+                var license_icon = new Gtk.Image.from_icon_name ("text-x-copying-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+                license_icon.valign = Gtk.Align.CENTER;
+
+                var license_grid = new Gtk.Grid ();
+                license_grid.column_spacing = 6;
+                license_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+                license_grid.add (license_icon);
+                license_grid.add (new Gtk.Label (project_license));
+
+                footer_grid.add (license_grid);
+            }
+
+            footer_grid.add (links_grid);
+
             var grid = new Gtk.Grid ();
             grid.row_spacing = 12;
             grid.attach (header_box, 0, 0, 1, 1);
             grid.attach (content_grid, 0, 1, 1, 1);
-            grid.attach (links_grid, 0, 2, 1, 1);
+            grid.attach (footer_grid, 0, 2, 1, 1);
 
             var scrolled = new Gtk.ScrolledWindow (null, null);
             scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
