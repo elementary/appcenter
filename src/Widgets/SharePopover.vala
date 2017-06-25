@@ -48,15 +48,15 @@ public class SharePopover : Gtk.Popover {
         twitter_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
         var reddit_button = new Gtk.Button.from_icon_name ("online-account-reddit", Gtk.IconSize.DND);
-        reddit_button.tooltip_text = _("Google+");
+        reddit_button.tooltip_text = _("reddit");
         reddit_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
         var tumblr_button = new Gtk.Button.from_icon_name ("online-account-tumblr", Gtk.IconSize.DND);
-        tumblr_button.tooltip_text = _("Google+");
+        tumblr_button.tooltip_text = _("Tumblr");
         tumblr_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
         var pinterest_button = new Gtk.Button.from_icon_name ("online-account-pinterest", Gtk.IconSize.DND);
-        pinterest_button.tooltip_text = _("Google+");
+        pinterest_button.tooltip_text = _("Pinterest");
         pinterest_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
         var copy_link_button = new Gtk.Button.from_icon_name ("edit-copy-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
@@ -74,6 +74,8 @@ public class SharePopover : Gtk.Popover {
         service_grid.add (google_button);
         service_grid.add (twitter_button);
         service_grid.add (reddit_button);
+        service_grid.add (tumblr_button);
+        service_grid.add (pinterest_button);
 
         var system_grid = new Gtk.Grid ();
         system_grid.margin = 6;
@@ -135,7 +137,7 @@ public class SharePopover : Gtk.Popover {
 
         reddit_button.clicked.connect (() => {
             try {
-                AppInfo.launch_default_for_uri ("http://www.reddit.com/submit?url=%s".printf (uri), null);
+                AppInfo.launch_default_for_uri ("http://www.reddit.com/submit?title=%s?&url=%s".printf (body, uri), null);
             } catch (Error e) {
                 warning ("%s", e.message);
             }
