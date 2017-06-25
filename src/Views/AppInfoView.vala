@@ -268,8 +268,6 @@ namespace AppCenter.Views {
             add (overlay);
 
             open_button.get_style_context ().add_class ("h3");
-
-            reload_css ();
             
             share_button.clicked.connect (() => {
                 var clipboard = Gtk.Clipboard.get_for_display (get_display (), Gdk.SELECTION_CLIPBOARD);
@@ -299,6 +297,7 @@ namespace AppCenter.Views {
                 share_popover.hide ();
             });
 
+            reload_css ();
             set_up_package (128);
             parse_description (package.get_description ());
         }
