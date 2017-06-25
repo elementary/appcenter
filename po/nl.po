@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-05-29 22:02+0000\n"
+"PO-Revision-Date: 2017-06-24 18:54+0000\n"
 "Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
 "Language-Team: Dutch "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/nl/>\n"
@@ -300,7 +300,7 @@ msgstr "Startpagina"
 
 #: ../src/Widgets/Banner.vala:100 ../src/MainWindow.vala:110
 msgid "AppCenter"
-msgstr "Applicatie centrum"
+msgstr "AppCenter"
 
 #: ../src/Widgets/Banner.vala:107
 msgid "An open, pay-what-you-want app store"

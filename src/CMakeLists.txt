@@ -5,6 +5,7 @@ vala_precompile(VALA_C ${EXEC_NAME}
     Core/Houston.vala
     Core/Package.vala
     Core/Task.vala
+    Core/UpdateManager.vala
 
     Application.vala
     MainWindow.vala
