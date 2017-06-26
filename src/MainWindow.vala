@@ -394,12 +394,47 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     private void init_user() {
         user(); 
     }
-
  
 
     public void set (GLib.SimpleAction load) {
         add_action(load);
     }
+
+    private string keyGen() {  
+        
+        var keybuild = new StringBuilder(); 
+        string strongkey;
+        var builder = new StringBuilder();
+        var attributes = new GLib.HashTable<string,string> (str_hash, str_equal); 
+        attributes["size"] = "78"; 
+        attributes["type"] = "appcenter"; 
+        Cancellable cancellable = new Cancellable ();
+        
+        var appCenterS = new Secret.Schema ("org.appcenter.Password", Secret.SchemaFlags.NONE,
+                                            "size", Secret.SchemaAttributeType.INTEGER,
+                                            "type", Secret.SchemaAttributeType.STRING);
+        
+        stdout.printf ("[appcenter] unable to find key, generating a new key\n"); 
+         /*Keygen starts*/
+
+        int i =0;
+        while(i < 12) { //12 
+        // Generates a 32 char passkey 
+         keybuild.append_unichar("ABCDEFGHIJKLMNOPQRSTUVWZWZabcdefghijklmnopqrstuvwxyz0123456789@#$%"[Random.int_range (0,66)]);
+         builder.append( (string) keybuild.str); 
+         i ++; 
+        }
+        strongkey = (string) builder.str; 
+         /*Keygen ends */
+        
+        Secret.password_storev.begin (appCenterS,attributes,Secret.COLLECTION_DEFAULT,"acc",strongkey,null,(obj,async_res) => {
+            bool res = Secret.password_store.end(async_res); 
+            /*Password Stored - complete additional processes */
+            stdout.printf ("[password stored]\n"); 
+            }); 
+
+        return strongkey; 
+    }  
 
     private void file_check () {
         string userN = user();          
@@ -408,7 +443,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         if(!file.query_exists ()) { 
             stderr.printf ("File '%s' doesn't exist. Attempting to recreate..\n", file.get_path ());
             file = file.new_for_path(@"/home/$userN/appcenter/cc.xml");
-
+            keyGen (); 
             cc_create(file,userN); 
         }
 
@@ -458,7 +493,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         }
 
     private void create_directory(string dir, string userN) {
-        // Creates base directory for appcenter files in user home
+        // Creates base directory for appcenter files in user home 
         try { 
             string[] spawn_args = {"mkdir",@"/home/$userN/$dir"};
             string[] spawn_env = Environ.get ();
