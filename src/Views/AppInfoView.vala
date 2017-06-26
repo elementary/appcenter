@@ -283,7 +283,7 @@ namespace AppCenter.Views {
             add (overlay);
 
             open_button.get_style_context ().add_class ("h3");
-            
+
             copy_link_button.clicked.connect (() => {
                 var clipboard = Gtk.Clipboard.get_for_display (get_display (), Gdk.SELECTION_CLIPBOARD);
                 clipboard.set_text ("https://appcenter.elementary.io/" + this.package.component.get_id (), -1);
