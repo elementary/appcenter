@@ -41,7 +41,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog    {
     private Gtk.Stack layouts;
 
     private Gtk.Entry email_entry;
-    public static Gtk.Entry  card_number_entry;
+    private Gtk.Entry  card_number_entry;
     private Gtk.Entry card_expiration_entry;
     private Gtk.Entry card_cvc_entry;
     private Gtk.Button pay_button;
@@ -51,9 +51,6 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog    {
     private Gtk.Label secondary_error_label;
     private Gee.ArrayList<string> xml_nodes; 
 
-    public Gtk.Widget *widget;
-    public Gtk.InfoBar *bar;
-
     public AppCenter.Services.XmlParser internal_xml;  
 
     public int amount { get; construct set; }
@@ -62,7 +59,6 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog    {
     public string stripe_key { get; construct set; }
 
     public static string localuser; 
-    public static Secret.Service service; 
 
     private bool email_valid = false;
     private bool card_valid = false;
@@ -83,8 +79,6 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog    {
                 resizable: false,
                 stripe_key: _stripe_key);
     }
-
-// : Gtk.ApplicationWindow 
 
     construct {
 
@@ -113,11 +107,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog    {
         ActiveUser = get_usermanager ().get_user (GLib.Environment.get_user_name ()); 
         ActiveUser.changed.connect(init_user); 
         
-    
-
-
         card_number_entry = new Gtk.Entry(); 
-        //card_number_entry = new Gtk.ComboBox.with_model (list_store);
         card_number_entry.hexpand = true;
         card_number_entry.input_purpose = Gtk.InputPurpose.DIGITS;
         card_number_entry.max_length = 20;
