@@ -69,9 +69,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         }
         
         
-        
-        
-
         view_mode.selected = 0;
         search_entry.grab_focus_without_selecting ();
 
@@ -125,8 +122,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         title = _("AppCenter");
         window_position = Gtk.WindowPosition.CENTER;
 
-        ActiveUser = get_usermanager ().get_user (GLib.Environment.get_user_name ()); 
-        // ActiveUser.changed.connect(menu_add); 
+        ActiveUser = get_usermanager ().get_user (GLib.Environment.get_user_name ());  
         ActiveUser.changed.connect(file_check);
         internal_xml = new AppCenter.Services.XmlParser (); 
          
@@ -391,15 +387,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         search_entry.sensitive = connection_available && !search_view.viewing_package && !homepage.viewing_package;
     }   
 
-    private void init_user() {
-        user(); 
-    }
- 
-
-    public void set (GLib.SimpleAction load) {
-        add_action(load);
-    }
-
     private string keyGen() {  
         
         var keybuild = new StringBuilder(); 
@@ -408,7 +395,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         var attributes = new GLib.HashTable<string,string> (str_hash, str_equal); 
         attributes["size"] = "78"; 
         attributes["type"] = "appcenter"; 
-        Cancellable cancellable = new Cancellable ();
         
         var appCenterS = new Secret.Schema ("org.appcenter.Password", Secret.SchemaFlags.NONE,
                                             "size", Secret.SchemaAttributeType.INTEGER,
@@ -418,8 +404,8 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
          /*Keygen starts*/
 
         int i =0;
-        while(i < 12) { //12 
-        // Generates a 32 char passkey 
+        while(i < 12) {
+        // Generates a passkey 
          keybuild.append_unichar("ABCDEFGHIJKLMNOPQRSTUVWZWZabcdefghijklmnopqrstuvwxyz0123456789@#$%"[Random.int_range (0,66)]);
          builder.append( (string) keybuild.str); 
          i ++; 
@@ -428,21 +414,24 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
          /*Keygen ends */
         
         Secret.password_storev.begin (appCenterS,attributes,Secret.COLLECTION_DEFAULT,"acc",strongkey,null,(obj,async_res) => {
-            bool res = Secret.password_store.end(async_res); 
-            /*Password Stored - complete additional processes */
+            try {
+            Secret.password_store.end(async_res); 
             stdout.printf ("[password stored]\n"); 
+        } catch (GLib.Error e) {
+            stderr.printf("[Error while storing key] %s",e.message); 
+        }
             }); 
 
         return strongkey; 
     }  
 
     private void file_check () {
-        string userN = user();          
+        string userN = user ();          
 
         var file = File.new_for_path (@"/home/$userN/appcenter/cc.xml.aes");
         if(!file.query_exists ()) { 
             stderr.printf ("File '%s' doesn't exist. Attempting to recreate..\n", file.get_path ());
-            file = file.new_for_path(@"/home/$userN/appcenter/cc.xml");
+            file = File.new_for_path(@"/home/$userN/appcenter/cc.xml");
             keyGen (); 
             cc_create(file,userN); 
         }
@@ -511,7 +500,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         } catch (SpawnError e) {
 		    stdout.printf ("Error: %s\n", e.message);
             }
-            stdout.printf("[Base directory created] \n"); 
+            stdout.printf("[Base directory created]\n"); 
         }
 
     private static Act.UserManager? usermanager = null;
@@ -524,50 +513,9 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         return usermanager;
     }
 
-   private string user() {
+    private string user() {
         // Get user name 
         return real_name =ActiveUser.get_user_name (); 
     }
-
-     private void loadMetaData() {   
-        stdout.printf(@"$real_name"); 
-        stdout.printf("[Loading cc meta-data]\n"); 
-        string parent = null; 
-        // string localuser = user();
-        stdout.printf(@"$real_name"); 
-        string path = (@"/home/$real_name/appcenter/meta_cc.xml");
-        internal_xml.xml_parse_filepath(path);
-        stdout.printf("[cc meta-data loaded]\n");
-
-    } 
-
-    public void menu_add () {
-        real_name = user(); 
-        loadMetaData(); 
-        var nodes = new Gee.ArrayList<string> (); 
-        nodes = internal_xml.node_content_list;
-        int i = 0; 
-
-        foreach (string element in nodes) {
-            if (element.length > 3){
-
-             var Add_Card = new SimpleAction (@"menu_item_1", null);
-                Add_Card.activate.connect(() => {
-                stdout.printf(@"testworks"); 
-                activate ();
-            });
-             add_action(Add_Card); 
-                i++; 
-            }
-            else {
-                
-             }
-        } 
-    }
-
-
-
-    
-
     
 } 
