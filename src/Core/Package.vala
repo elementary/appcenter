@@ -24,6 +24,10 @@ public errordomain PackageLaunchError {
 }
 
 public class AppCenterCore.Package : Object {
+    private const string APPCENTER_PACKAGE_ORIGIN = "appcenter-xenial-main";
+    private const string ELEMENTARY_STABLE_PACKAGE_ORIGIN = "stable-xenial-main";
+    private const string ELEMENTARY_DAILY_PACKAGE_ORIGIN = "daily-xenial-main";
+
     public signal void changing (bool is_changing);
     public signal void info_changed (Pk.Status status);
 
@@ -103,9 +107,9 @@ public class AppCenterCore.Package : Object {
     public bool is_native {
         get {
             switch (component.get_origin ()) {
-                case "appcenter-xenial-main":
-                case "stable-xenial-main":
-                case "daily-xenial-main":
+                case APPCENTER_PACKAGE_ORIGIN:
+                case ELEMENTARY_STABLE_PACKAGE_ORIGIN:
+                case ELEMENTARY_DAILY_PACKAGE_ORIGIN:
                     return true;
                 default:
                     return false;
