@@ -4,15 +4,16 @@ msgstr ""
 "Project-Id-Version: Akan (AppCenter)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-06-12 16:01+0000\n"
-"PO-Revision-Date: 2017-06-21 22:08+0000\n"
+"PO-Revision-Date: 2017-06-26 12:30+0000\n"
 "Last-Translator: Lawrence Aberba <karabutaworld@gmail.com>\n"
-"Language-Team: Akan <karabutaworld@gmail.com>\n"
+"Language-Team: Akan "
+"<https://l10n.elementary.io/projects/appcenter/appcenter/ak/>\n"
 "Language: ak\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Gtranslator 2.91.7\n"
+"X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:24+0000\n"
 
 #: ../src/Application.vala:40
@@ -25,7 +26,7 @@ msgstr "wɔn a wɔkyerɛase"
 
 #: ../src/Application.vala:114
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr "Antumi anhu Link ko a wode mae no, wo ara hwehwɛ"
+msgstr "Antumi anhu link kõ a wobɔe no, wo ara hwehwɛ"
 
 #: ../src/Application.vala:216
 msgid "Application installed"
@@ -148,7 +149,7 @@ msgstr "CVC nɔma no nni mu. Yɛsrɛ wo hwɛ bɔ nea edi mu na san yɛ bio."
 
 #: ../src/Dialogs/StripeDialog.vala:472 ../src/Dialogs/StripeDialog.vala:514
 msgid "The card has expired. Please try again with a different card."
-msgstr "Kaad nɔma no atwam. Yɛsrɛ wo fa kaad foforɔ a ɛdi mu yɛ."
+msgstr "Kaad no atwam. Yɛsrɛ wo fa kaad foforɔ a ɛdi mu yɛ."
 
 #: ../src/Dialogs/StripeDialog.vala:492
 msgid "There are too many payment requests at the moment, please retry later."
@@ -260,7 +261,7 @@ msgstr "Mmoa"
 
 #: ../src/Views/Homepage.vala:104
 msgid "Recently Updated"
-msgstr "Nea wode guu so nkyɛe"
+msgstr "Nea Wode Guu So Nkyɛe"
 
 #: ../src/Views/Homepage.vala:156
 msgid "Categories"
@@ -274,7 +275,7 @@ msgstr "Ahyɛase"
 
 #: ../src/Widgets/Banner.vala:100 ../src/MainWindow.vala:110
 msgid "AppCenter"
-msgstr "Dwumadie Ahoroɔ Twebea"
+msgstr "Dwumadie Twebea"
 
 #: ../src/Widgets/Banner.vala:107
 msgid "An open, pay-what-you-want app store"
@@ -326,7 +327,7 @@ msgstr "Intanɛt"
 
 #: ../src/Widgets/CategoryFlowBox.vala:39
 msgid "Science & Engineering"
-msgstr "Nyansapɛ ne Mfidiyɛ"
+msgstr "Nyansapɛ"
 
 #: ../src/Widgets/CategoryFlowBox.vala:40
 msgid "Universal Access"
@@ -387,7 +388,7 @@ msgstr "Ne Kɛseyɛ: %s"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:105
 msgid "Searching for updates…"
-msgstr "Ɛrehwɛ sɛ afoforɔ aba anaa…"
+msgstr "Ɛrehwɛ sɛ biribi foforɔ aba anaa…"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:112
 msgid "Up to Date"
@@ -504,11 +505,11 @@ msgstr "Ɛrehwɛ Signatures ahoroɔ no"
 
 #: ../src/Core/ChangeInformation.vala:82
 msgid "Testing changes"
-msgstr "Ɛrehwɛ nsakrayɛ no"
+msgstr "Ɛresɔ nsakrayɛ no ahwɛ"
 
 #: ../src/Core/ChangeInformation.vala:84
 msgid "Committing changes"
-msgstr "Ɛrekora nsakrayɛ no so"
+msgstr "Ɛrekora nsakrae no so"
 
 #: ../src/Core/ChangeInformation.vala:86
 msgid "Requesting data"

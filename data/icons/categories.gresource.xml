@@ -2,16 +2,14 @@
 <gresources>
   <gresource prefix="/io/elementary/appcenter/icons">
     <file alias="applications-accessibility-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-accessibility-symbolic.svg</file>
-    <file alias="applications-accessories.svg" compressed="true" preprocess="xml-stripblanks">applications-accessories.svg</file>
     <file alias="applications-audio-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-audio-symbolic.svg</file>
     <file alias="applications-games-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-games-symbolic.svg</file>
-    <file alias="applications-internet.svg" compressed="true" preprocess="xml-stripblanks">applications-internet.svg</file>
     <file alias="applications-office-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-office-symbolic.svg</file>
     <file alias="applications-video-rtl-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-video-rtl-symbolic.svg</file>
     <file alias="applications-video-symbolic-rtl.svg" compressed="true" preprocess="xml-stripblanks">applications-video-rtl-symbolic.svg</file>
     <file alias="applications-video-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-video-symbolic.svg</file>
-    <file alias="applications-system.svg" compressed="true" preprocess="xml-stripblanks">applications-system.svg</file>
     <file alias="online-account-twitter.svg" compressed="true" preprocess="xml-stripblanks">online-account-twitter.svg</file>
+    <file alias="text-x-copying-symbolic.svg" compressed="true" preprocess="xml-stripblanks">text-x-copying-symbolic.svg</file>
   </gresource>
   <gresource prefix="/io/elementary/appcenter/backgrounds">
     <file alias="audio.svg" compressed="true" preprocess="xml-stripblanks">audio.svg</file>
