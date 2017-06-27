@@ -249,16 +249,25 @@ namespace AppCenter.Views {
 
             var project_license = package.component.project_license;
             if (project_license != null) {
-                var license_icon = new Gtk.Image.from_icon_name ("text-x-copying-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
-                license_icon.valign = Gtk.Align.CENTER;
-
-                var license_grid = new Gtk.Grid ();
-                license_grid.column_spacing = 6;
-                license_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-                license_grid.add (license_icon);
-                license_grid.add (new Gtk.Label (project_license));
-
-                footer_grid.add (license_grid);
+                string license_url = "https://choosealicense.com/licenses/";
+                switch (project_license) {
+                    case "GPL-2":
+                    case "GPL-2.0":
+                    case "GPL-2.0+":
+                        license_url = license_url + "gpl-2.0";
+                        break;
+                    case "GPL-3":
+                    case "GPL-3.0":
+                    case "GPL-3.0+":
+                        license_url = license_url + "gpl-3.0";
+                        break;
+                    case "LGPL-2.1":
+                    case "LGPL-2.1+":
+                        license_url = license_url + "lgpl-2.1";
+                        break;
+                }
+                var license_button = new UrlButton (_(project_license), license_url, "text-x-copying-symbolic");
+                footer_grid.add (license_button);
             }
 
             footer_grid.add (links_grid);
