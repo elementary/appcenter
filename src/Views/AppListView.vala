@@ -22,10 +22,6 @@
 namespace AppCenter.Views {
     /** AppList for Category and Search Views.  Sorts by name and does not show Uninstall Button **/
     public class AppListView : AbstractAppList {
-        private const string APPCENTER_PACKAGE_ORIGIN = "appcenter-xenial-main";
-        private const string ELEMENTARY_STABLE_PACKAGE_ORIGIN = "stable-xenial-main";
-        private const string ELEMENTARY_DAILY_PACKAGE_ORIGIN = "daily-xenial-main";
-
         private uint current_visible_index = 0U;
         private GLib.ListStore list_store;
 
@@ -83,30 +79,9 @@ namespace AppCenter.Views {
         }
 
         private static int compare_packages (AppCenterCore.Package p1, AppCenterCore.Package p2) {
-            bool p1_is_elementary_native;
-            switch (p1.component.get_origin ()) {
-                case APPCENTER_PACKAGE_ORIGIN:
-                case ELEMENTARY_STABLE_PACKAGE_ORIGIN:
-                case ELEMENTARY_DAILY_PACKAGE_ORIGIN:
-                    p1_is_elementary_native = true;
-                    break;
-                default:
-                    p1_is_elementary_native = false;
-                    break;
-            }
-            bool p2_is_elementary_native;
-            switch (p2.component.get_origin ()) {
-                case APPCENTER_PACKAGE_ORIGIN:
-                case ELEMENTARY_STABLE_PACKAGE_ORIGIN:
-                case ELEMENTARY_DAILY_PACKAGE_ORIGIN:
-                    p2_is_elementary_native = true;
-                    break;
-                default:
-                    p2_is_elementary_native = false;
-                    break;
-            }
+            bool p1_is_elementary_native = p1.is_native;
 
-            if (p1_is_elementary_native || p2_is_elementary_native) {
+            if (p1_is_elementary_native || p2.is_native) {
                 return p1_is_elementary_native ? -1 : 1;
             }
 
@@ -115,30 +90,9 @@ namespace AppCenter.Views {
 
         [CCode (instance_pos = -1)]
         protected override int package_row_compare (Widgets.AppListRow row1, Widgets.AppListRow row2) {
-            bool p1_is_elementary_native;
-            switch (row1.get_package ().component.get_origin ()) {
-                case APPCENTER_PACKAGE_ORIGIN:
-                case ELEMENTARY_STABLE_PACKAGE_ORIGIN:
-                case ELEMENTARY_DAILY_PACKAGE_ORIGIN:
-                    p1_is_elementary_native = true;
-                    break;
-                default:
-                    p1_is_elementary_native = false;
-                    break;
-            }
-            bool p2_is_elementary_native;
-            switch (row2.get_package ().component.get_origin ()) {
-                case APPCENTER_PACKAGE_ORIGIN:
-                case ELEMENTARY_STABLE_PACKAGE_ORIGIN:
-                case ELEMENTARY_DAILY_PACKAGE_ORIGIN:
-                    p2_is_elementary_native = true;
-                    break;
-                default:
-                    p2_is_elementary_native = false;
-                    break;
-            }
+            bool p1_is_elementary_native = row1.get_package ().is_native;
 
-            if (p1_is_elementary_native || p2_is_elementary_native) {
+            if (p1_is_elementary_native || row2.get_package ().is_native) {
                 return p1_is_elementary_native ? -1 : 1;
             }
 
@@ -147,33 +101,14 @@ namespace AppCenter.Views {
 
         [CCode (instance_pos = -1)]
         private void row_update_header (Widgets.AppListRow row, Widgets.AppListRow? before) {
-            bool elementary_native;
-            switch (row.get_package ().component.get_origin ()) {
-                case APPCENTER_PACKAGE_ORIGIN:
-                case ELEMENTARY_STABLE_PACKAGE_ORIGIN:
-                case ELEMENTARY_DAILY_PACKAGE_ORIGIN:
-                    elementary_native = true;
-                    break;
-                default:
-                    elementary_native = false;
-                    break;
-            }
+            bool elementary_native = row.get_package ().is_native;
+
             if (!elementary_native && before == null) {
                 make_header (row);
             }
+
             if (before != null) {
-                bool before_elementary_native;
-                switch (before.get_package ().component.get_origin ()) {
-                case APPCENTER_PACKAGE_ORIGIN:
-                case ELEMENTARY_STABLE_PACKAGE_ORIGIN:
-                case ELEMENTARY_DAILY_PACKAGE_ORIGIN:
-                    before_elementary_native = true;
-                    break;
-                default:
-                    before_elementary_native = false;
-                    break;
-            }
-                if (!elementary_native && before_elementary_native) {
+                if (!elementary_native && before.get_package ().is_native) {
                     make_header (row);
                 }
             }
