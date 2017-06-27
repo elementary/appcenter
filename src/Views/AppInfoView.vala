@@ -251,6 +251,9 @@ namespace AppCenter.Views {
             if (project_license != null) {
                 string license_url = "https://choosealicense.com/licenses/";
                 switch (project_license) {
+                    case "Apache-2.0":
+                        license_url = license_url + "apache-2.0";
+                        break;
                     case "GPL-2":
                     case "GPL-2.0":
                     case "GPL-2.0+":
@@ -264,6 +267,9 @@ namespace AppCenter.Views {
                     case "LGPL-2.1":
                     case "LGPL-2.1+":
                         license_url = license_url + "lgpl-2.1";
+                        break;
+                    case "MIT":
+                        license_url = license_url + "mit";
                         break;
                 }
                 var license_button = new UrlButton (_(project_license), license_url, "text-x-copying-symbolic");
