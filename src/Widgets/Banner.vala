@@ -226,7 +226,7 @@ namespace AppCenter.Widgets {
             set_background (package);
 
             if (brand_widget != null) {
-                stack.remove (brand_widget);
+                brand_widget.destroy ();
                 brand_widget = null;
             }
         }
