@@ -100,6 +100,19 @@ public class AppCenterCore.Package : Object {
        }
     }
 
+    public bool is_native {
+        get {
+            switch (component.get_origin ()) {
+                case "appcenter-xenial-main":
+                case "stable-xenial-main":
+                case "daily-xenial-main":
+                    return true;
+                default:
+                    return false;
+            }
+        }
+    }
+
     private string? name = null;
     private string? description = null;
     private string? summary = null;

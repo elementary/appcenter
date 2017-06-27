@@ -79,8 +79,8 @@ namespace AppCenter.Views {
         }
 
         private static int compare_packages (AppCenterCore.Package p1, AppCenterCore.Package p2) {
-            bool p1_is_elementary_native = is_native (p1);
-            bool p2_is_elementary_native = is_native (p2);
+            bool p1_is_elementary_native = p1.is_native;
+            bool p2_is_elementary_native = p2.is_native;
 
             if (p1_is_elementary_native || p2_is_elementary_native) {
                 return p1_is_elementary_native ? -1 : 1;
@@ -91,8 +91,8 @@ namespace AppCenter.Views {
 
         [CCode (instance_pos = -1)]
         protected override int package_row_compare (Widgets.AppListRow row1, Widgets.AppListRow row2) {
-            bool p1_is_elementary_native = is_native (row1.get_package ());
-            bool p2_is_elementary_native = is_native (row2.get_package ());
+            bool p1_is_elementary_native = row1.get_package ().is_native;
+            bool p2_is_elementary_native = row2.get_package ().is_native;
 
             if (p1_is_elementary_native || p2_is_elementary_native) {
                 return p1_is_elementary_native ? -1 : 1;
@@ -103,14 +103,14 @@ namespace AppCenter.Views {
 
         [CCode (instance_pos = -1)]
         private void row_update_header (Widgets.AppListRow row, Widgets.AppListRow? before) {
-            bool elementary_native = is_native (row.get_package ());
+            bool elementary_native = row.get_package ().is_native;
 
             if (!elementary_native && before == null) {
                 make_header (row);
             }
 
             if (before != null) {
-                bool before_elementary_native = is_native (before.get_package ());
+                bool before_elementary_native = before.get_package ().is_native;
 
                 if (!elementary_native && before_elementary_native) {
                     make_header (row);
@@ -126,17 +126,6 @@ namespace AppCenter.Views {
             header.hexpand = true;
             header.xalign = 0;
             row.set_header (header);
-        }
-
-        private static bool is_native (AppCenterCore.Package package) {
-            switch (package.component.get_origin ()) {
-                case "appcenter-xenial-main":
-                case "stable-xenial-main":
-                case "daily-xenial-main":
-                    return true;
-                default:
-                    return false;
-            }
         }
     }
 
