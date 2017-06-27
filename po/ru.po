@@ -3,22 +3,22 @@ msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-05-07 17:23+0000\n"
-"Last-Translator: Yuly <crow@rikka.io>\n"
-"Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/ru/>\n"
+"PO-Revision-Date: 2017-06-26 17:09+0000\n"
+"Last-Translator: Maxim Taranov <png2378@gmail.com>\n"
+"Language-Team: Russian "
+"<https://l10n.elementary.io/projects/appcenter/appcenter/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
 #: ../src/Application.vala:40
 msgid "App Center"
-msgstr "AppCenter"
+msgstr "App Center"
 
 #: ../src/Application.vala:57
 msgid "translator-credits"
@@ -58,7 +58,7 @@ msgstr "Все открытые приложения будут закрыты, 
 
 #: ../src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
-msgstr "Перезагрузка"
+msgstr "Перезагрузить"
 
 #: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:166
 #: ../src/Dialogs/StripeDialog.vala:285
@@ -71,40 +71,43 @@ msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
+"Ошибка при обработке карты, попробуйте повторить попытку позже. Приносим "
+"извинения за причиненные неудобства."
 
 #: ../src/Dialogs/StripeDialog.vala:31
 msgid "Please review your payment info and try again."
-msgstr "Пожалуйста, проверьте информацию о платеже и попробуйте ещё раз."
+msgstr "Проверьте информацию о платеже и попробуйте снова."
 
 #: ../src/Dialogs/StripeDialog.vala:75
 msgid "Email"
-msgstr ""
+msgstr "Почта"
 
 #: ../src/Dialogs/StripeDialog.vala:77
 msgid ""
 "Your email address is used to send a receipt. It is never stored and you "
 "will not be subscribed to a mailing list."
 msgstr ""
+"Ваш электронная почта используется для отправки чека. Она нигде не "
+"сохраняется и вы не будете подписаны на список рассылки."
 
 #: ../src/Dialogs/StripeDialog.vala:88
 msgid "Card Number"
-msgstr ""
+msgstr "Номер карты"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: ../src/Dialogs/StripeDialog.vala:100
 msgid "MM / YY"
-msgstr ""
+msgstr "ММ / ГГ"
 
 #: ../src/Dialogs/StripeDialog.vala:120
 msgid "CVC"
-msgstr ""
+msgstr "CVC"
 
 #: ../src/Dialogs/StripeDialog.vala:157
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Политика конфиденциальности"
 
 #: ../src/Dialogs/StripeDialog.vala:168 ../src/Dialogs/StripeDialog.vala:284
-#, fuzzy
 msgid "Pay $%d.00"
 msgstr "Заплатить $%s,00"
 
@@ -127,84 +130,95 @@ msgstr "Попробовать снова"
 #: ../src/Dialogs/StripeDialog.vala:463 ../src/Dialogs/StripeDialog.vala:528
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
-msgstr ""
+msgstr "Некорректный номер карты. Попробуйте снова, используя корректный номер."
 
 #: ../src/Dialogs/StripeDialog.vala:465
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"Некорректный месяц истечения срока действия. Попробуйте снова, используя "
+"корректный месяц."
 
 #: ../src/Dialogs/StripeDialog.vala:467 ../src/Dialogs/StripeDialog.vala:525
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"Некорректный год истечения срока действия. Попробуйте снова, используя "
+"корректный год."
 
 #: ../src/Dialogs/StripeDialog.vala:470 ../src/Dialogs/StripeDialog.vala:523
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr ""
+msgstr "Некорректный код CVC. Попробуйте снова, используя корректный код."
 
 #: ../src/Dialogs/StripeDialog.vala:472 ../src/Dialogs/StripeDialog.vala:514
 msgid "The card has expired. Please try again with a different card."
-msgstr ""
+msgstr "Срок действия карты истёк. Попробуйте снова, используя другую карту."
 
 #: ../src/Dialogs/StripeDialog.vala:492
 msgid "There are too many payment requests at the moment, please retry later."
-msgstr ""
+msgstr "Слишком много запросов оплаты в данный момент, повторите попытку позже."
 
 #: ../src/Dialogs/StripeDialog.vala:508
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
 msgstr ""
+"Карта не поддерживает операции такого рода. Попробуйте снова, используя "
+"другую карту."
 
 #: ../src/Dialogs/StripeDialog.vala:510
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
 msgstr ""
+"Валюта не поддерживается этой картой. Попробуйте снова, используя другую "
+"карту."
 
 #: ../src/Dialogs/StripeDialog.vala:512
 msgid "The transaction has already been processed."
-msgstr ""
+msgstr "Транзакция уже была обработана."
 
 #: ../src/Dialogs/StripeDialog.vala:516
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "Postal code."
-msgstr ""
+msgstr "Некорректный ZIP-код. Попробуйте снова, используя корректный код."
 
 #: ../src/Dialogs/StripeDialog.vala:518
 msgid "You don't have enough funds. Please use an alternative payment method."
-msgstr ""
+msgstr "У вас не хватает средств. Используйте другой способ оплаты."
 
 #: ../src/Dialogs/StripeDialog.vala:520
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr ""
+msgstr "Некорректная сумма. Попробуйте снова, используя допустимую сумму."
 
 #: ../src/Dialogs/StripeDialog.vala:531
 msgid "The pin number is incorrect. Please try again using the correct pin."
-msgstr ""
+msgstr "Некорректный pin-код. Попробуйте снова, используя корректный pin."
 
 #: ../src/Dialogs/StripeDialog.vala:533
 msgid ""
 "There has been too many pin attempts. Please try again with a different card."
-msgstr ""
+msgstr "Слишком много попыток. Попробуйте снова, используя другую карту."
 
 #: ../src/Dialogs/StripeDialog.vala:553
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
 msgstr ""
+"Не удалось завершить транзакцию. Свяжитесь с вашим банком для получения "
+"дополнительной информации."
 
 #: ../src/Dialogs/StripeDialog.vala:556
 msgid "The balance or credit limit on the card has been reached."
-msgstr ""
+msgstr "Достигнут лимит по карте."
 
 #: ../src/Dialogs/StripeDialog.vala:559
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
+"Данная карта является тестовой. Используйте реальную карту, чтобы продолжить."
 
 #: ../src/Views/InstalledView.vala:51 ../src/MainWindow.vala:130
 msgctxt "view"
@@ -265,7 +279,7 @@ msgstr "Категории"
 #: ../src/MainWindow.vala:129 ../src/MainWindow.vala:181
 #: ../src/MainWindow.vala:223
 msgid "Home"
-msgstr "Домашняя страница"
+msgstr "Главная"
 
 #: ../src/Widgets/Banner.vala:100 ../src/MainWindow.vala:110
 msgid "AppCenter"
@@ -402,17 +416,16 @@ msgid "Search Apps"
 msgstr "Поиск приложений"
 
 #: ../src/MainWindow.vala:161
-#, fuzzy
 msgid "Network Is Not Available"
-msgstr "Скриншот недоступен"
+msgstr "Подключение к сети недосутпно"
 
 #: ../src/MainWindow.vala:162
 msgid "Connect to the internet to install or update apps."
-msgstr ""
+msgstr "Подключитесь к интернету, чтобы установить или обновить приложения."
 
 #: ../src/MainWindow.vala:165
 msgid "Network Settings…"
-msgstr ""
+msgstr "Параметры сети…"
 
 #: ../src/MainWindow.vala:298
 msgid "Search %s"
@@ -446,7 +459,7 @@ msgstr "Требуется перезагрузка"
 
 #: ../src/Core/Client.vala:490
 msgid "Please restart your system to finalize updates"
-msgstr "Перезагрузите систему чтобы завершить обновление"
+msgstr "Перезагрузите систему, чтобы завершить обновление"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
