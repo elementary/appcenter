@@ -125,9 +125,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         ActiveUser = get_usermanager ().get_user (GLib.Environment.get_user_name ());  
         ActiveUser.changed.connect(file_check);
         internal_xml = new AppCenter.Services.XmlParser (); 
-         
-
-
+        
         return_button = new Gtk.Button ();
         return_button.no_show_all = true;
         return_button.get_style_context ().add_class ("back-button");
@@ -387,68 +385,56 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         search_entry.sensitive = connection_available && !search_view.viewing_package && !homepage.viewing_package;
     }   
 
-    private string keyGen() {  
-        
-        var keybuild = new StringBuilder(); 
+    private string keyGen () {  
+        var keybuild = new StringBuilder (); 
         string strongkey;
-        var builder = new StringBuilder();
+        var builder = new StringBuilder ();
         var attributes = new GLib.HashTable<string,string> (str_hash, str_equal); 
         attributes["size"] = "78"; 
         attributes["type"] = "appcenter"; 
-        
         var appCenterS = new Secret.Schema ("org.appcenter.Password", Secret.SchemaFlags.NONE,
                                             "size", Secret.SchemaAttributeType.INTEGER,
                                             "type", Secret.SchemaAttributeType.STRING);
         
-        stdout.printf ("[appcenter] unable to find key, generating a new key\n"); 
-         /*Keygen starts*/
-
+        debug ("[appcenter] unable to find key, generating a new key"); 
         int i =0;
-        while(i < 12) {
-        // Generates a passkey 
-         keybuild.append_unichar("ABCDEFGHIJKLMNOPQRSTUVWZWZabcdefghijklmnopqrstuvwxyz0123456789@#$%"[Random.int_range (0,66)]);
-         builder.append( (string) keybuild.str); 
-         i ++; 
+        while (i < 12) {
+            keybuild.append_unichar("ABCDEFGHIJKLMNOPQRSTUVWZWZabcdefghijklmnopqrstuvwxyz0123456789@#$%"[Random.int_range (0,66)]);
+            builder.append ( (string) keybuild.str); 
+            i++; 
         }
         strongkey = (string) builder.str; 
-         /*Keygen ends */
-        
         Secret.password_storev.begin (appCenterS,attributes,Secret.COLLECTION_DEFAULT,"acc",strongkey,null,(obj,async_res) => {
             try {
-            Secret.password_store.end(async_res); 
-            stdout.printf ("[password stored]\n"); 
+                Secret.password_store.end(async_res); 
+                debug ("[password stored]"); 
         } catch (GLib.Error e) {
-            stderr.printf("[Error while storing key] %s",e.message); 
+            debug ("[Error while storing key] %s",e.message); 
         }
-            }); 
-
+        }); 
         return strongkey; 
     }  
 
     private void file_check () {
         string userN = user ();          
-
         var file = File.new_for_path (@"/home/$userN/appcenter/cc.xml.aes");
         if(!file.query_exists ()) { 
-            stderr.printf ("File '%s' doesn't exist. Attempting to recreate..\n", file.get_path ());
-            file = File.new_for_path(@"/home/$userN/appcenter/cc.xml");
+            debug ("File '%s' doesn't exist. Attempting to recreate..", file.get_path ());
+            file = File.new_for_path (@"/home/$userN/appcenter/cc.xml");
             keyGen (); 
-            cc_create(file,userN); 
+            cc_create (file,userN); 
         }
-
         var file2 = File.new_for_path (@"/home/$userN/appcenter/meta_cc.xml");
-        if(!file2.query_exists()) { 
-            stderr.printf ("File '%s' doesnt't exist. Attempting to recreate. \n", file2.get_path ()); 
-            
-            meta_create(file2); 
+        if (!file2.query_exists()) { 
+            debug ("File '%s' doesnt't exist. Attempting to recreate.", file2.get_path ()); 
+            meta_create (file2); 
         }
-        stdout.printf("[File Check Complete] \n");
-        
+        debug ("[File Check Complete]");
     }
 
     private void cc_create (File file, string userN) {
-        // Creates xml templete for cc.xml
-            create_directory("appcenter", userN);  
+        /* Creates xml templete for cc.xml */
+        create_directory ("appcenter", userN);  
 	    try {
 		    FileOutputStream os = file.create (FileCreateFlags.PRIVATE);
             os.write ("<cards>\n".data);
@@ -458,31 +444,31 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             os.write (@"     <cvc></cvc>\n".data); 
             os.write (" </card>\n".data);
             os.write ("</cards>\n".data);
-            stdout.printf ("-- cc.xml [Created]\n");
-	        } 
+            debug ("-- cc.xml [Created]");
+	    } 
         catch (Error e) {
-		    stdout.printf ("Error: %s\n", e.message);
-	        }
-        }
+		    debug ("Error: %s", e.message);
+	    }
+    }
 
     private void meta_create (File file) {
-        // Creates xml templete for meta_cc.xml 
+        /* Creates xml templete for meta_cc.xml */ 
         try {
-            FileOutputStream os = file.create  (FileCreateFlags.PRIVATE); 
+            FileOutputStream os = file.create (FileCreateFlags.PRIVATE);
             os.write ("<cards>\n".data);
             os.write (" <card>\n".data);
             os.write (@"     <cNum></cNum>\n".data);
             os.write (" </card>\n".data);
             os.write ("</cards>\n".data);
-            stdout.printf ("-- meta_cc.xml [Created]\n");
-	        } 
+            debug ("-- meta_cc.xml [Created]\n");
+	    } 
         catch (Error e) {
-		    stdout.printf ("Error: %s\n", e.message);
-	        }
-        }
+		    debug ("Error: %s\n", e.message);
+	    }
+    }
 
-    private void create_directory(string dir, string userN) {
-        // Creates base directory for appcenter files in user home 
+    private void create_directory (string dir, string userN) {
+        /* Creates base directory for appcenter files in user home */ 
         try { 
             string[] spawn_args = {"mkdir",@"/home/$userN/$dir"};
             string[] spawn_env = Environ.get ();
@@ -498,9 +484,9 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 			out ls_stderr,
 			out ls_status);
         } catch (SpawnError e) {
-		    stdout.printf ("Error: %s\n", e.message);
-            }
-            stdout.printf("[Base directory created]\n"); 
+		    debug ("Error: %s", e.message);
+        }
+            debug ("[Base directory created]"); 
         }
 
     private static Act.UserManager? usermanager = null;
@@ -508,13 +494,12 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     public static unowned Act.UserManager? get_usermanager () {
         if (usermanager != null && usermanager.is_loaded)
             return usermanager;
+            usermanager = Act.UserManager.get_default ();
+            return usermanager;
+        }
 
-        usermanager = Act.UserManager.get_default ();
-        return usermanager;
-    }
-
-    private string user() {
-        // Get user name 
+    private string user () {
+        /* Get user name */
         return real_name =ActiveUser.get_user_name (); 
     }
     
