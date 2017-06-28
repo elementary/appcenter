@@ -22,8 +22,6 @@
 namespace AppCenter.Views {
     /** AppList for Category and Search Views.  Sorts by name and does not show Uninstall Button **/
     public class AppListView : AbstractAppList {
-        private const string APPCENTER_PACKAGE_ORIGIN = "appcenter-xenial-main";
-
         private uint current_visible_index = 0U;
         private GLib.ListStore list_store;
 
@@ -81,10 +79,9 @@ namespace AppCenter.Views {
         }
 
         private static int compare_packages (AppCenterCore.Package p1, AppCenterCore.Package p2) {
-            bool p1_is_elementary_native = p1.component.get_origin () == APPCENTER_PACKAGE_ORIGIN;
-            bool p2_is_elementary_native = p2.component.get_origin () == APPCENTER_PACKAGE_ORIGIN;
+            bool p1_is_elementary_native = p1.is_native;
 
-            if (p1_is_elementary_native || p2_is_elementary_native) {
+            if (p1_is_elementary_native || p2.is_native) {
                 return p1_is_elementary_native ? -1 : 1;
             }
 
@@ -93,10 +90,9 @@ namespace AppCenter.Views {
 
         [CCode (instance_pos = -1)]
         protected override int package_row_compare (Widgets.AppListRow row1, Widgets.AppListRow row2) {
-            bool p1_is_elementary_native = row1.get_package ().component.get_origin () == APPCENTER_PACKAGE_ORIGIN;
-            bool p2_is_elementary_native = row2.get_package ().component.get_origin () == APPCENTER_PACKAGE_ORIGIN;
+            bool p1_is_elementary_native = row1.get_package ().is_native;
 
-            if (p1_is_elementary_native || p2_is_elementary_native) {
+            if (p1_is_elementary_native || row2.get_package ().is_native) {
                 return p1_is_elementary_native ? -1 : 1;
             }
 
@@ -105,13 +101,14 @@ namespace AppCenter.Views {
 
         [CCode (instance_pos = -1)]
         private void row_update_header (Widgets.AppListRow row, Widgets.AppListRow? before) {
-            bool elementary_native = row.get_package ().component.get_origin () == APPCENTER_PACKAGE_ORIGIN;
+            bool elementary_native = row.get_package ().is_native;
+
             if (!elementary_native && before == null) {
                 make_header (row);
             }
+
             if (before != null) {
-                bool before_elementary_native = before.get_package ().component.get_origin () == APPCENTER_PACKAGE_ORIGIN;
-                if (!elementary_native && before_elementary_native) {
+                if (!elementary_native && before.get_package ().is_native) {
                     make_header (row);
                 }
             }
@@ -171,7 +168,7 @@ namespace AppCenter.Views {
             infobar.message_type = Gtk.MessageType.WARNING;
             infobar.no_show_all = true;
             infobar.get_content_area ().add (info_label);
-            
+
             var restart_button = infobar.add_button (_("Restart Now"), 0);
             action_button_group.add_widget (restart_button);
 
@@ -236,7 +233,7 @@ namespace AppCenter.Views {
 
         [CCode (instance_pos = -1)]
         private void row_update_header (Widgets.AppListRow row, Widgets.AppListRow? before) {
-            bool update_available = row.get_update_available ();            
+            bool update_available = row.get_update_available ();
             bool is_driver = row.get_is_driver ();
 
             if (update_available) {
@@ -266,7 +263,7 @@ namespace AppCenter.Views {
                     update_all_button.clicked.connect (on_update_all);
                     action_button_group.add_widget (update_all_button);
 
-                    header.add_widget (update_all_button);   
+                    header.add_widget (update_all_button);
                 }
 
                 header.show_all ();
@@ -289,10 +286,10 @@ namespace AppCenter.Views {
                 var header = new Widgets.UpdatedGrid ();
                 header.update (0, 0, updating_cache);
                 header.show_all ();
-                row.set_header (header);              
+                row.set_header (header);
             }
         }
-        
+
         private void on_update_all () {
             perform_all_updates.begin ();
         }
@@ -319,7 +316,7 @@ namespace AppCenter.Views {
                     ((Widgets.PackageRow) row).set_action_sensitive (false);
                 }
             };
-            
+
             // Update all updateable apps
             if (apps_to_update.size > 0) {
                 // Prevent computer from sleeping while updating apps
@@ -331,7 +328,7 @@ namespace AppCenter.Views {
                     on_app_update_end ();
                 });
             } else {
-                updating_all_apps = false; 
+                updating_all_apps = false;
             }
         }
 
@@ -377,7 +374,7 @@ namespace AppCenter.Views {
             sc.uninhibit ();
 
             /* Set the action button sensitive and emit "changed" on each row in order to update
-             * the sort order and headers (any change would have been ignored while updating) */ 
+             * the sort order and headers (any change would have been ignored while updating) */
             Idle.add_full (GLib.Priority.LOW, () => {
                 foreach (var row in list_box.get_children ()) {
                     if (row is Widgets.PackageRow) {
