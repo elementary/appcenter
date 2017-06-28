@@ -26,6 +26,7 @@ namespace AppCenter.Widgets {
         public abstract bool get_is_os_updates ();
         public abstract bool get_is_driver ();
         public abstract bool get_is_updating ();
+        public abstract bool get_is_installed ();
         public abstract string get_name_label ();
         public abstract bool has_package ();
         public abstract AppCenterCore.Package? get_package ();

@@ -117,7 +117,7 @@ namespace AppCenter.Widgets {
 
     public class DriverGrid : AbstractHeaderGrid {
         construct {
-            var label = new Gtk.Label (_("Drivers"));
+            var label = new Gtk.Label (_("Available Drivers"));
             label.get_style_context ().add_class ("h4");
             label.hexpand = true;
             ((Gtk.Misc)label).xalign = 0;
@@ -126,7 +126,7 @@ namespace AppCenter.Widgets {
         }
 
         public override void update (uint _update_numbers, uint64 _update_real_size, bool _is_updating) {
-           
+
         }
-    }    
+    }
 }

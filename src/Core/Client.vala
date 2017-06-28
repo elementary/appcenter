@@ -141,7 +141,7 @@ public class AppCenterCore.Client : Object {
              * If there were no packages found for the requested architecture,
              * try to resolve IDs by not searching for this architecture
              * e.g: filtering 32 bit only package on a 64 bit system
-             */ 
+             */
             GenericArray<weak Pk.Package> package_array = results.get_package_array ();
             if (package_array.length == 0) {
                 results = yield client.resolve_async (Pk.Bitfield.from_enums (Pk.Filter.NEWEST, Pk.Filter.NOT_ARCH), packages_ids, cancellable, () => {});
@@ -318,13 +318,13 @@ public class AppCenterCore.Client : Object {
             }
         }
 
-        return packages;        
+        return packages;
     }
 
     private static void populate_package (AppCenterCore.Package package, Pk.Package pk_package) {
         package.installed_packages.add (pk_package);
         package.latest_version = pk_package.get_version ();
-        package.update_state ();        
+        package.update_state ();
     }
 
     public Gee.Collection<AppCenterCore.Package> get_applications_for_category (AppStream.Category category) {
@@ -397,7 +397,7 @@ public class AppCenterCore.Client : Object {
                 package.size = details.size;
                 package.url = details.url;
             });
-        }   
+        }
 
         task_count--;
         return package;
@@ -608,7 +608,7 @@ public class AppCenterCore.Client : Object {
         }
 
         task_count--;
-        return installed;   
+        return installed;
     }
 
     public AppCenterCore.Package? get_package_for_component_id (string id) {

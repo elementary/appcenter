@@ -49,6 +49,12 @@ namespace AppCenter {
             }
         }
 
+        public bool is_installed {
+            get {
+                return package.installed;
+            }
+        }
+
         public bool update_available {
             get {
                 return package.update_available || package.is_updating;

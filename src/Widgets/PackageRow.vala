@@ -50,6 +50,10 @@ namespace AppCenter.Widgets {
             return grid.is_updating;
         }
 
+        public bool get_is_installed () {
+            return grid.is_installed;
+        }
+
         public bool get_is_os_updates () {
             return grid.is_os_updates;
         }

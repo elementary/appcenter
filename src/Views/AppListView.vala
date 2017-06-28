@@ -171,7 +171,7 @@ namespace AppCenter.Views {
             infobar.message_type = Gtk.MessageType.WARNING;
             infobar.no_show_all = true;
             infobar.get_content_area ().add (info_label);
-            
+
             var restart_button = infobar.add_button (_("Restart Now"), 0);
             action_button_group.add_widget (restart_button);
 
@@ -225,10 +225,12 @@ namespace AppCenter.Views {
             }
 
             bool a_is_driver = row1.get_is_driver ();
+            bool a_is_installed = row1.get_is_installed ();
             bool b_is_driver = row2.get_is_driver ();
+            bool b_is_installed = row2.get_is_installed ();
 
-            if (a_is_driver != b_is_driver) {
-                return a_is_driver ? - 1 : 1;
+            if ((a_is_driver && !a_is_installed) != (b_is_driver && !b_is_installed)) {
+                return (a_is_driver && !a_is_installed) ? -1 : 1;
             }
 
             return row1.get_name_label ().collate (row2.get_name_label ()); /* Else sort in name order */
@@ -236,8 +238,9 @@ namespace AppCenter.Views {
 
         [CCode (instance_pos = -1)]
         private void row_update_header (Widgets.AppListRow row, Widgets.AppListRow? before) {
-            bool update_available = row.get_update_available ();            
+            bool update_available = row.get_update_available ();
             bool is_driver = row.get_is_driver ();
+            bool is_installed = row.get_is_installed ();
 
             if (update_available) {
                 if (before != null && update_available == before.get_update_available ()) {
@@ -266,13 +269,13 @@ namespace AppCenter.Views {
                     update_all_button.clicked.connect (on_update_all);
                     action_button_group.add_widget (update_all_button);
 
-                    header.add_widget (update_all_button);   
+                    header.add_widget (update_all_button);
                 }
 
                 header.show_all ();
                 row.set_header (header);
-            } else if (is_driver) {
-                if (before != null && is_driver == before.get_is_driver ()) {
+            } else if (is_driver && !is_installed) {
+                if (before != null && is_driver == before.get_is_driver () && is_installed == before.get_is_installed ()) {
                     row.set_header (null);
                     return;
                 }
@@ -281,7 +284,7 @@ namespace AppCenter.Views {
                 header.show_all ();
                 row.set_header (header);
             } else {
-                if (before != null && is_driver == before.get_is_driver () && update_available == before.get_update_available ()) {
+                if (before != null && is_installed == before.get_is_installed () && update_available == before.get_update_available ()) {
                     row.set_header (null);
                     return;
                 }
@@ -289,10 +292,10 @@ namespace AppCenter.Views {
                 var header = new Widgets.UpdatedGrid ();
                 header.update (0, 0, updating_cache);
                 header.show_all ();
-                row.set_header (header);              
+                row.set_header (header);
             }
         }
-        
+
         private void on_update_all () {
             perform_all_updates.begin ();
         }
@@ -319,7 +322,7 @@ namespace AppCenter.Views {
                     ((Widgets.PackageRow) row).set_action_sensitive (false);
                 }
             };
-            
+
             // Update all updateable apps
             if (apps_to_update.size > 0) {
                 // Prevent computer from sleeping while updating apps
@@ -331,7 +334,7 @@ namespace AppCenter.Views {
                     on_app_update_end ();
                 });
             } else {
-                updating_all_apps = false; 
+                updating_all_apps = false;
             }
         }
 
@@ -377,7 +380,7 @@ namespace AppCenter.Views {
             sc.uninhibit ();
 
             /* Set the action button sensitive and emit "changed" on each row in order to update
-             * the sort order and headers (any change would have been ignored while updating) */ 
+             * the sort order and headers (any change would have been ignored while updating) */
             Idle.add_full (GLib.Priority.LOW, () => {
                 foreach (var row in list_box.get_children ()) {
                     if (row is Widgets.PackageRow) {
