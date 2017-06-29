@@ -3,21 +3,21 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-04-08 09:58+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
-"Language-Team: Slovak <http://weblate.elementary.io/projects/desktop/"
-"appcenter/sk/>\n"
+"PO-Revision-Date: 2017-06-29 18:25+0000\n"
+"Last-Translator: Matej Niznik <mattnizo@gmail.com>\n"
+"Language-Team: Slovak "
+"<https://l10n.elementary.io/projects/appcenter/appcenter/sk/>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: ../src/Application.vala:40
 msgid "App Center"
-msgstr "App Centrum"
+msgstr "Centrum aplikácií"
 
 #: ../src/Application.vala:57
 msgid "translator-credits"
@@ -32,15 +32,15 @@ msgstr ""
 
 #: ../src/Application.vala:114
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr "Zadaný odkaz '%s' sa nenašiel, vyhľadáva sa ďalej"
+msgstr "Zadaný odkaz '%s' sa nenašiel, spúšťa sa vyhľadávanie"
 
 #: ../src/Application.vala:216
 msgid "Application installed"
-msgstr "Aplikácia nainštalovaná"
+msgstr "Aplikácia bola nainštalovaná"
 
 #: ../src/Application.vala:217
 msgid "%s has been successfully installed"
-msgstr "%s sa úspešne nainštaloval"
+msgstr "Aplikácia %s bola úspešne nainštalovaná"
 
 #: ../src/Application.vala:233
 msgid "Close"
@@ -48,11 +48,11 @@ msgstr "Zatvoriť"
 
 #: ../src/Application.vala:235
 msgid "There Was An Error Installing %s"
-msgstr "Pri inštalácii balíka %s sa vyskytla chyba"
+msgstr "Pri inštalácii balíka %s vyskytla sa chyba"
 
 #: ../src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
-msgstr "Naozaj chcete vykonať reštart?"
+msgstr "Naozaj chcete reštartovať?"
 
 #: ../src/Dialogs/RestartDialog.vala:41
 msgid "This will close all open applications and restart this device."
@@ -73,6 +73,8 @@ msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
+"Počas spracovávania karty sa vyskytla chyba, skúste prosím znova neskôr. "
+"Ospravedlňujeme sa za spo"
 
 #: ../src/Dialogs/StripeDialog.vala:31
 msgid "Please review your payment info and try again."
