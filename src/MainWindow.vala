@@ -15,6 +15,16 @@
 */
 
 public class AppCenter.MainWindow : Gtk.ApplicationWindow {
+    public bool working {
+        set {
+            if (value) {
+                spinner.start ();
+            } else {
+                spinner.stop ();
+            }
+        }
+    }
+
     private Gtk.Revealer view_mode_revealer;
     private Gtk.Stack custom_title_stack;
     private Gtk.Label homepage_header;
@@ -22,6 +32,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     private Gtk.HeaderBar headerbar;
     private Gtk.Stack stack;
     private Gtk.SearchEntry search_entry;
+    private Gtk.Spinner spinner;
     private Homepage homepage;
     private Views.SearchView search_view;
     private Gtk.Button return_button;
@@ -96,6 +107,11 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             }
         });
 
+        unowned AppCenterCore.Client client = AppCenterCore.Client.get_default ();
+        client.notify["task-count"].connect (() => {
+            working = client.task_count > 0;
+        });
+
         this.show.connect (update_view);
     }
 
@@ -140,12 +156,15 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         search_entry = new Gtk.SearchEntry ();
         search_entry.placeholder_text = _("Search Apps");
 
+        spinner = new Gtk.Spinner ();
+
         /* HeaderBar */
         headerbar = new Gtk.HeaderBar ();
         headerbar.show_close_button = true;
         headerbar.set_custom_title (custom_title_stack);
         headerbar.pack_start (button_stack);
         headerbar.pack_end (search_entry);
+        headerbar.pack_end (spinner);
 
         set_titlebar (headerbar);
 
