@@ -45,11 +45,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         unowned Settings saved_state = Settings.get_default ();
         set_default_size (saved_state.window_width, saved_state.window_height);
 
-        Gdk.Geometry hints = Gdk.Geometry ();
-        hints.max_width = 1500;
-        hints.max_height = 1080;
-        set_geometry_hints (null, hints, Gdk.WindowHints.MAX_SIZE);
-
         // Maximize window if necessary
         switch (saved_state.window_state) {
             case Settings.WindowState.MAXIMIZED:
