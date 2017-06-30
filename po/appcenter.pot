@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-23 12:53-0700\n"
+"POT-Creation-Date: 2017-06-29 21:23-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,27 +22,23 @@ msgstr ""
 msgid "App Center"
 msgstr ""
 
-#: ../src/Application.vala:57
-msgid "translator-credits"
-msgstr ""
-
-#: ../src/Application.vala:114
+#: ../src/Application.vala:105
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr ""
 
-#: ../src/Application.vala:217
+#: ../src/Application.vala:208
 msgid "Application installed"
 msgstr ""
 
-#: ../src/Application.vala:218
+#: ../src/Application.vala:209
 msgid "%s has been successfully installed"
 msgstr ""
 
-#: ../src/Application.vala:234
+#: ../src/Application.vala:225
 msgid "Close"
 msgstr ""
 
-#: ../src/Application.vala:236
+#: ../src/Application.vala:227
 msgid "There Was An Error Installing %s"
 msgstr ""
 
@@ -74,7 +70,7 @@ msgstr ""
 msgid "Please review your payment info and try again."
 msgstr ""
 
-#: ../src/Dialogs/StripeDialog.vala:75
+#: ../src/Dialogs/StripeDialog.vala:75 ../src/Widgets/SharePopover.vala:35
 msgid "Email"
 msgstr ""
 
@@ -203,7 +199,7 @@ msgstr ""
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
 
-#: ../src/Views/InstalledView.vala:30 ../src/MainWindow.vala:130
+#: ../src/Views/InstalledView.vala:30 ../src/MainWindow.vala:141
 msgctxt "view"
 msgid "Updates"
 msgstr ""
@@ -214,51 +210,55 @@ msgctxt "view"
 msgid "Search"
 msgstr ""
 
-#: ../src/Views/AppListView.vala:121
+#: ../src/Views/AppListView.vala:118
 msgid "Non-Curated Apps"
 msgstr ""
 
-#: ../src/Views/AppListView.vala:167
+#: ../src/Views/AppListView.vala:164
 msgid "A restart is required to complete the installation of updates"
 msgstr ""
 
-#: ../src/Views/AppListView.vala:175
+#: ../src/Views/AppListView.vala:172
 msgid "Restart Now"
 msgstr ""
 
-#: ../src/Views/AppListView.vala:263
+#: ../src/Views/AppListView.vala:260
 msgid "Update All"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:72
+#: ../src/Views/AppInfoView.vala:70
 msgid "Screenshot Not Available"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:129
+#: ../src/Views/AppInfoView.vala:124
 msgid "Homepage"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:136
+#: ../src/Views/AppInfoView.vala:130
 msgid "Suggest Translations"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:143
+#: ../src/Views/AppInfoView.vala:136
 msgid "Report a Problem"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:150
+#: ../src/Views/AppInfoView.vala:142
 msgid "Help"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:157
+#: ../src/Views/AppInfoView.vala:146
+msgid "Check out %s on AppCenter:"
+msgstr ""
+
+#: ../src/Views/AppInfoView.vala:153
 msgid "Share"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:196
+#: ../src/Views/AppInfoView.vala:194
 msgid "Extensions:"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:240
+#: ../src/Views/AppInfoView.vala:274
 msgid "Link copied to clipboard"
 msgstr ""
 
@@ -275,12 +275,12 @@ msgid "Categories"
 msgstr ""
 
 #: ../src/Views/Homepage.vala:273 ../src/Views/Homepage.vala:281
-#: ../src/MainWindow.vala:129 ../src/MainWindow.vala:181
-#: ../src/MainWindow.vala:223
+#: ../src/MainWindow.vala:140 ../src/MainWindow.vala:195
+#: ../src/MainWindow.vala:237
 msgid "Home"
 msgstr ""
 
-#: ../src/Widgets/Banner.vala:100 ../src/MainWindow.vala:110
+#: ../src/Widgets/Banner.vala:100 ../src/MainWindow.vala:121
 msgid "AppCenter"
 msgstr ""
 
@@ -355,6 +355,30 @@ msgstr ""
 msgid "$%d"
 msgstr ""
 
+#: ../src/Widgets/SharePopover.vala:39
+msgid "Facebook"
+msgstr ""
+
+#: ../src/Widgets/SharePopover.vala:43
+msgid "Google+"
+msgstr ""
+
+#: ../src/Widgets/SharePopover.vala:47
+msgid "Twitter"
+msgstr ""
+
+#: ../src/Widgets/SharePopover.vala:51
+msgid "reddit"
+msgstr ""
+
+#: ../src/Widgets/SharePopover.vala:55
+msgid "Tumblr"
+msgstr ""
+
+#: ../src/Widgets/SharePopover.vala:59
+msgid "Copy link"
+msgstr ""
+
 #: ../src/Widgets/AbstractAppContainer.vala:105
 msgid "Uninstall"
 msgstr ""
@@ -405,24 +429,24 @@ msgstr ""
 msgid "Drivers"
 msgstr ""
 
-#: ../src/MainWindow.vala:118 ../src/MainWindow.vala:146
-#: ../src/MainWindow.vala:316 ../src/MainWindow.vala:338
+#: ../src/MainWindow.vala:129 ../src/MainWindow.vala:157
+#: ../src/MainWindow.vala:330 ../src/MainWindow.vala:352
 msgid "Search Apps"
 msgstr ""
 
-#: ../src/MainWindow.vala:161
+#: ../src/MainWindow.vala:175
 msgid "Network Is Not Available"
 msgstr ""
 
-#: ../src/MainWindow.vala:162
+#: ../src/MainWindow.vala:176
 msgid "Connect to the internet to install or update apps."
 msgstr ""
 
-#: ../src/MainWindow.vala:165
+#: ../src/MainWindow.vala:179
 msgid "Network Settings…"
 msgstr ""
 
-#: ../src/MainWindow.vala:298
+#: ../src/MainWindow.vala:312
 msgid "Search %s"
 msgstr ""
 
