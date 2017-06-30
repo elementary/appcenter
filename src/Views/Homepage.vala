@@ -121,8 +121,8 @@ namespace AppCenter {
 
             houston.get_app_ids.begin ("/newest/project", (obj, res) => {
                 var newest_ids = houston.get_app_ids.end (res);
-                var packages_for_banner = new Gee.LinkedList<AppCenterCore.Package> ();
-                ThreadFunc<void*> run = () => {
+                new Thread<void*> ("update-banner", () => {
+                    var packages_for_banner = new Gee.LinkedList<AppCenterCore.Package> ();
                     foreach (var package in newest_ids) {
                         if (packages_for_banner.size >= NUM_PACKAGES_IN_BANNER) {
                             break;
@@ -151,14 +151,13 @@ namespace AppCenter {
                         return false;
                     });
                     return null;
-                };
-                new Thread<void*> ("update-banner", run);
+                });
             });
 
             houston.get_app_ids.begin ("/newest/release", (obj, res) => {
                 var updated_ids = houston.get_app_ids.end (res);
-                var packages_for_carousel = new Gee.LinkedList<AppCenterCore.Package> ();
-                ThreadFunc<void*> run = () => {
+                new Thread<void*> ("update-recent-carousel", () => {
+                    var packages_for_carousel = new Gee.LinkedList<AppCenterCore.Package> ();
                     foreach (var package in updated_ids) {
                         if (packages_for_carousel.size >= NUM_PACKAGES_IN_CAROUSEL) {
                             break;
@@ -175,7 +174,7 @@ namespace AppCenter {
                         }
                     }
 
-                    if (packages_for_carousel.size > 0) {
+                    if (!packages_for_carousel.is_empty) {
                         Idle.add (() => {
                             foreach (var banner_package in packages_for_carousel) {
                                 recently_updated_carousel.add_package (banner_package);
@@ -185,14 +184,13 @@ namespace AppCenter {
                         });
                     }
                     return null;
-                };
-                new Thread<void*> ("update-recent-carousel", run);
+                });
             });
 
             houston.get_app_ids.begin ("/newest/downloads", (obj, res) => {
                 var trending_ids = houston.get_app_ids.end (res);
-                var packages_for_carousel = new Gee.LinkedList<AppCenterCore.Package> ();
-                ThreadFunc<void*> run = () => {
+                new Thread<void*> ("update-trending-carousel", () => {
+                    var packages_for_carousel = new Gee.LinkedList<AppCenterCore.Package> ();
                     foreach (var package in trending_ids) {
                         if (packages_for_carousel.size >= NUM_PACKAGES_IN_CAROUSEL) {
                             break;
@@ -209,7 +207,7 @@ namespace AppCenter {
                         }
                     }
 
-                    if (packages_for_carousel.size > 0) {
+                    if (!packages_for_carousel.is_empty) {
                         Idle.add (() => {
                             foreach (var trending_package in packages_for_carousel) {
                                 trending_carousel.add_package (trending_package);
@@ -219,8 +217,7 @@ namespace AppCenter {
                         });
                     }
                     return null;
-                };
-                new Thread<void*> ("update-trending-carousel", run);
+                });
             });
 
             category_flow.child_activated.connect ((child) => {
