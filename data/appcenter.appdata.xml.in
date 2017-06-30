@@ -96,9 +96,14 @@
         <binary>appcenter-daemon</binary>
         <dbus type="user">io.elementary.AppCenter</dbus>
     </provides>
+    <screenshots>
+        <screenshot type="default">
+            <image>https://raw.githubusercontent.com/elementary/appcenter/master/data/screenshot.png</image>
+        </screenshot>
+    </screenshots>
     <developer_name>elementary LLC.</developer_name>
     <url type="homepage">http://elementary.io/</url>
-    <url type="bugtracker">https://bugs.launchpad.net/appcenter</url>
+    <url type="bugtracker">https://github.com/elementary/appcenter/issues</url>
     <url type="donation">https://elementary.io/get-involved#funding</url>
     <url type="help">https://elementaryos.stackexchange.com/questions/tagged/appcenter</url>
     <url type="translate">https://l10n.elementary.io/projects/desktop/appcenter</url>
