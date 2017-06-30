@@ -119,7 +119,7 @@ namespace AppCenter.Widgets {
 
         private void on_stack_child_removed (Gtk.Widget widget) {
             var button = buttons.get (widget);
-            remove (button);
+            button.destroy ();
             buttons.unset (widget);
         }
 
@@ -129,13 +129,11 @@ namespace AppCenter.Widgets {
         }
 
         public void clear_children () {
-            foreach (weak Gtk.Widget button in get_children ()) {
-                button.hide ();
-                if (button.get_parent () != null)
-                    remove (button);
-            }
+            get_children ().foreach ((child) => {
+                child.destroy ();
+            });
         }
-        
+
         public void update_selected () {
             foreach (var entry in buttons.entries) {
                 if (entry.key == stack.get_visible_child ()) {

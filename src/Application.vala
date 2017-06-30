@@ -38,7 +38,6 @@ public class AppCenter.App : Granite.Application {
         Intl.textdomain (Build.GETTEXT_PACKAGE);
 
         program_name = _("App Center");
-        app_years = "2015-2017";
         app_icon = Build.DESKTOP_ICON;
 
         build_data_dir = Build.DATADIR;
@@ -48,14 +47,6 @@ public class AppCenter.App : Granite.Application {
         build_version_info = Build.VERSION_INFO;
 
         app_launcher = "io.elementary.appcenter.desktop";
-        main_url = "https://elementary.io";
-        bug_url = "https://github.com/elementary/appcenter/issues";
-        help_url = "https://elementary.io/support";
-        translate_url = "https://l10n.elementary.io/projects/appcenter";
-        about_authors = { "Corentin Noël <corentin@elementary.io>" };
-        about_comments = "";
-        about_translators = _("translator-credits");
-        about_license_type = Gtk.License.GPL_3_0;
         add_main_option_entries (appcenter_options);
 
         var quit_action = new SimpleAction ("quit", null);
