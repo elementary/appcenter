@@ -121,9 +121,10 @@ namespace AppCenter {
 
             houston.get_app_ids.begin ("/newest/project", (obj, res) => {
                 var newest_ids = houston.get_app_ids.end (res);
-                var packages_for_banner = new GLib.List<AppCenterCore.Package> ();
+                var packages_for_banner = new Gee.LinkedList<AppCenterCore.Package> ();
                 ThreadFunc<void*> run = () => {
                     uint packages_added = 0;
+
                     foreach (var package in newest_ids) {
                         if (packages_added >= NUM_PACKAGES_IN_BANNER) {
                             break;
@@ -134,9 +135,10 @@ namespace AppCenter {
 
                         if (candidate_package != null) {
                             candidate_package.update_state ();
+
                             if (candidate_package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
                                 packages_added++;
-                                packages_for_banner.append (candidate_package);
+                                packages_for_banner.add (candidate_package);
                             }
                         }
                     }
@@ -158,7 +160,7 @@ namespace AppCenter {
 
             houston.get_app_ids.begin ("/newest/release", (obj, res) => {
                 var updated_ids = houston.get_app_ids.end (res);
-                var packages_for_carousel = new GLib.List<AppCenterCore.Package> ();
+                var packages_for_carousel = new Gee.LinkedList<AppCenterCore.Package> ();
                 ThreadFunc<void*> run = () => {
                     uint packages_added = 0;
                     foreach (var package in updated_ids) {
@@ -173,7 +175,7 @@ namespace AppCenter {
                             candidate_package.update_state ();
                             if (candidate_package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
                                 packages_added++;
-                                packages_for_carousel.append (candidate_package);
+                                packages_for_carousel.add (candidate_package);
                             }
                         }
                     }
@@ -194,7 +196,7 @@ namespace AppCenter {
 
             houston.get_app_ids.begin ("/newest/downloads", (obj, res) => {
                 var trending_ids = houston.get_app_ids.end (res);
-                var packages_for_carousel = new GLib.List<AppCenterCore.Package> ();
+                var packages_for_carousel = new Gee.LinkedList<AppCenterCore.Package> ();
                 ThreadFunc<void*> run = () => {
                     uint packages_added = 0;
                     foreach (var package in trending_ids) {
@@ -209,7 +211,7 @@ namespace AppCenter {
                             candidate_package.update_state ();
                             if (candidate_package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
                                 packages_added++;
-                                packages_for_carousel.append (candidate_package);
+                                packages_for_carousel.add (candidate_package);
                             }
                         }
                     }
