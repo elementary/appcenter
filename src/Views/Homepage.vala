@@ -64,6 +64,61 @@ namespace AppCenter {
                 }
             });
 
+            var recently_updated_label = new Gtk.Label (_("Recently Updated"));
+            recently_updated_label.get_style_context ().add_class ("h4");
+            recently_updated_label.xalign = 0;
+            recently_updated_label.margin_start = 10;
+
+            var recently_updated_carousel = new Widgets.Carousel ();
+
+            var recently_updated_grid = new Gtk.Grid ();
+            recently_updated_grid.margin = 2;
+            recently_updated_grid.margin_top = 12;
+            recently_updated_grid.attach (recently_updated_label, 0, 0, 1, 1);
+            recently_updated_grid.attach (recently_updated_carousel, 0, 1, 1, 1);
+
+            var recently_updated_revealer = new Gtk.Revealer ();
+            recently_updated_revealer.add (recently_updated_grid );
+
+            var trending_label = new Gtk.Label (_("Trending"));
+            trending_label.get_style_context ().add_class ("h4");
+            trending_label.xalign = 0;
+            trending_label.margin_start = 10;
+
+            var trending_carousel = new Widgets.Carousel ();
+
+            var trending_grid = new Gtk.Grid ();
+            trending_grid.margin = 2;
+            trending_grid.margin_top = 12;
+            trending_grid.attach (trending_label, 0, 0, 1, 1);
+            trending_grid.attach (trending_carousel, 0, 1, 1, 1);
+
+            var trending_revealer = new Gtk.Revealer ();
+            trending_revealer.add (trending_grid );
+
+            var categories_label = new Gtk.Label (_("Categories"));
+            categories_label.get_style_context ().add_class ("h4");
+            categories_label.xalign = 0;
+            categories_label.margin_start = 12;
+            categories_label.margin_top = 24;
+
+            category_flow = new Widgets.CategoryFlowBox ();
+            category_flow.valign = Gtk.Align.START;
+
+            var grid = new Gtk.Grid ();
+            grid.margin = 12;
+            grid.attach (newest_banner, 0, 0, 1, 1);
+            grid.attach (switcher_revealer, 0, 1, 1, 1);
+            grid.attach (trending_revealer, 0, 2, 1, 1);
+            grid.attach (recently_updated_revealer, 0, 3, 1, 1);
+            grid.attach (categories_label, 0, 4, 1, 1);
+            grid.attach (category_flow, 0, 5, 1, 1);
+
+            category_scrolled = new Gtk.ScrolledWindow (null, null);
+            category_scrolled.add (grid);
+
+            add (category_scrolled);
+
             houston.get_app_ids.begin ("/newest/project", (obj, res) => {
                 var newest_ids = houston.get_app_ids.end (res);
                 var packages_for_banner = new GLib.List<AppCenterCore.Package> ();
@@ -101,22 +156,6 @@ namespace AppCenter {
                 new Thread<void*> ("update-banner", run);
             });
 
-            var recently_updated_label = new Gtk.Label (_("Recently Updated"));
-            recently_updated_label.get_style_context ().add_class ("h4");
-            recently_updated_label.xalign = 0;
-            recently_updated_label.margin_start = 10;
-
-            var recently_updated_carousel = new Widgets.Carousel ();
-
-            var recently_updated_grid = new Gtk.Grid ();
-            recently_updated_grid.margin = 2;
-            recently_updated_grid.margin_top = 12;
-            recently_updated_grid.attach (recently_updated_label, 0, 0, 1, 1);
-            recently_updated_grid.attach (recently_updated_carousel, 0, 1, 1, 1);
-
-            var recently_updated_revealer = new Gtk.Revealer ();
-            recently_updated_revealer.add (recently_updated_grid );
-
             houston.get_app_ids.begin ("/newest/release", (obj, res) => {
                 var updated_ids = houston.get_app_ids.end (res);
                 var packages_for_carousel = new GLib.List<AppCenterCore.Package> ();
@@ -153,22 +192,6 @@ namespace AppCenter {
                 new Thread<void*> ("update-recent-carousel", run);
             });
 
-            var trending_label = new Gtk.Label (_("Trending"));
-            trending_label.get_style_context ().add_class ("h4");
-            trending_label.xalign = 0;
-            trending_label.margin_start = 10;
-
-            var trending_carousel = new Widgets.Carousel ();
-
-            var trending_grid = new Gtk.Grid ();
-            trending_grid.margin = 2;
-            trending_grid.margin_top = 12;
-            trending_grid.attach (trending_label, 0, 0, 1, 1);
-            trending_grid.attach (trending_carousel, 0, 1, 1, 1);
-
-            var trending_revealer = new Gtk.Revealer ();
-            trending_revealer.add (trending_grid );
-
             houston.get_app_ids.begin ("/newest/downloads", (obj, res) => {
                 var trending_ids = houston.get_app_ids.end (res);
                 var packages_for_carousel = new GLib.List<AppCenterCore.Package> ();
@@ -204,29 +227,6 @@ namespace AppCenter {
                 };
                 new Thread<void*> ("update-trending-carousel", run);
             });
-
-            var categories_label = new Gtk.Label (_("Categories"));
-            categories_label.get_style_context ().add_class ("h4");
-            categories_label.xalign = 0;
-            categories_label.margin_start = 12;
-            categories_label.margin_top = 24;
-
-            category_flow = new Widgets.CategoryFlowBox ();
-            category_flow.valign = Gtk.Align.START;
-
-            var grid = new Gtk.Grid ();
-            grid.margin = 12;
-            grid.attach (newest_banner, 0, 0, 1, 1);
-            grid.attach (switcher_revealer, 0, 1, 1, 1);
-            grid.attach (trending_revealer, 0, 2, 1, 1);
-            grid.attach (recently_updated_revealer, 0, 3, 1, 1);
-            grid.attach (categories_label, 0, 4, 1, 1);
-            grid.attach (category_flow, 0, 5, 1, 1);
-
-            category_scrolled = new Gtk.ScrolledWindow (null, null);
-            category_scrolled.add (grid);
-
-            add (category_scrolled);
 
             category_flow.child_activated.connect ((child) => {
                 var item = child as Widgets.CategoryItem;
