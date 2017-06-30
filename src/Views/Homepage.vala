@@ -123,10 +123,8 @@ namespace AppCenter {
                 var newest_ids = houston.get_app_ids.end (res);
                 var packages_for_banner = new Gee.LinkedList<AppCenterCore.Package> ();
                 ThreadFunc<void*> run = () => {
-                    uint packages_added = 0;
-
                     foreach (var package in newest_ids) {
-                        if (packages_added >= NUM_PACKAGES_IN_BANNER) {
+                        if (packages_for_banner.size >= NUM_PACKAGES_IN_BANNER) {
                             break;
                         }
 
@@ -137,7 +135,6 @@ namespace AppCenter {
                             candidate_package.update_state ();
 
                             if (candidate_package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
-                                packages_added++;
                                 packages_for_banner.add (candidate_package);
                             }
                         }
@@ -162,9 +159,8 @@ namespace AppCenter {
                 var updated_ids = houston.get_app_ids.end (res);
                 var packages_for_carousel = new Gee.LinkedList<AppCenterCore.Package> ();
                 ThreadFunc<void*> run = () => {
-                    uint packages_added = 0;
                     foreach (var package in updated_ids) {
-                        if (packages_added >= NUM_PACKAGES_IN_CAROUSEL) {
+                        if (packages_for_carousel.size >= NUM_PACKAGES_IN_CAROUSEL) {
                             break;
                         }
 
@@ -174,13 +170,12 @@ namespace AppCenter {
                         if (candidate_package != null) {
                             candidate_package.update_state ();
                             if (candidate_package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
-                                packages_added++;
                                 packages_for_carousel.add (candidate_package);
                             }
                         }
                     }
 
-                    if (packages_added > 0) {
+                    if (packages_for_carousel.size > 0) {
                         Idle.add (() => {
                             foreach (var banner_package in packages_for_carousel) {
                                 recently_updated_carousel.add_package (banner_package);
@@ -198,9 +193,8 @@ namespace AppCenter {
                 var trending_ids = houston.get_app_ids.end (res);
                 var packages_for_carousel = new Gee.LinkedList<AppCenterCore.Package> ();
                 ThreadFunc<void*> run = () => {
-                    uint packages_added = 0;
                     foreach (var package in trending_ids) {
-                        if (packages_added >= NUM_PACKAGES_IN_CAROUSEL) {
+                        if (packages_for_carousel.size >= NUM_PACKAGES_IN_CAROUSEL) {
                             break;
                         }
 
@@ -210,13 +204,12 @@ namespace AppCenter {
                         if (candidate_package != null) {
                             candidate_package.update_state ();
                             if (candidate_package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
-                                packages_added++;
                                 packages_for_carousel.add (candidate_package);
                             }
                         }
                     }
 
-                    if (packages_added > 0) {
+                    if (packages_for_carousel.size > 0) {
                         Idle.add (() => {
                             foreach (var trending_package in packages_for_carousel) {
                                 trending_carousel.add_package (trending_package);
