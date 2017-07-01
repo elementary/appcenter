@@ -269,18 +269,13 @@ namespace AppCenter {
         }
 
         public override void return_clicked () {
-            if (viewing_package) {
-                if (current_category != null) {
-                    set_visible_child_name (current_category);
-                    viewing_package = false;
-                    subview_entered (_("Home"), true, current_category, _("Search %s").printf (current_category));
-                } else {
-                    set_visible_child (category_scrolled);
-                    currently_viewed_category = null;
-                    subview_entered (null, true);
-                }
+            if (viewing_package && current_category != null) {
+                set_visible_child_name (current_category);
+                viewing_package = false;
+                subview_entered (_("Home"), true, current_category, _("Search %s").printf (current_category));
             } else {
                 set_visible_child (category_scrolled);
+                currently_viewed_category = null;
                 subview_entered (null, true);
             }
         }

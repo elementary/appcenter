@@ -55,6 +55,7 @@ public class AppCenter.Views.SearchView : View {
             }
         } else {
             quit_view ();
+            subview_entered (null, true);
         }
     }
 
@@ -69,7 +70,7 @@ public class AppCenter.Views.SearchView : View {
         if (current_category != null) {
             subview_entered (_("Search Apps"), true, current_category.name);
         } else {
-            subview_entered (_("Home"), true);
+            subview_entered (null, true);
         }
     }
 }
