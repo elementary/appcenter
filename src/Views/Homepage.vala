@@ -30,8 +30,6 @@ namespace AppCenter {
         private Gtk.ScrolledWindow category_scrolled;
         private string current_category;
 
-        public signal void package_selected (AppCenterCore.Package package);
-
         public bool viewing_package { get; private set; default = false; }
 
         public AppStream.Category currently_viewed_category;
@@ -60,7 +58,7 @@ namespace AppCenter {
             newest_banner.clicked.connect (() => {
                 var package = newest_banner.get_package ();
                 if (package != null) {
-                    package_selected (package);
+                    show_package (package);
                 }
             });
 
@@ -85,7 +83,7 @@ namespace AppCenter {
                             }
                         }
                     }
-                    
+
                     Idle.add (() => {
                         foreach (var banner_package in packages_for_banner) {
                             newest_banner.add_package (banner_package);
@@ -251,7 +249,7 @@ namespace AppCenter {
                 var package = item.package;
 
                 if (package != null) {
-                    package_selected (package);
+                    show_package (package);
                 }
             });
 
@@ -260,25 +258,32 @@ namespace AppCenter {
                 var package = item.package;
 
                 if (package != null) {
-                    package_selected (package);
+                    show_package (package);
                 }
             });
         }
 
+        public override void show_package (AppCenterCore.Package package) {
+            base.show_package (package);
+            subview_entered (_("Home"), false, "");
+        }
+
         public override void return_clicked () {
-            if (current_category == null) {
-                set_visible_child (category_scrolled);
-                currently_viewed_category = null;
-            } else {
-                subview_entered (_("Home"), true, current_category);
-                viewing_package = false;
-                set_visible_child_name (current_category);
-                current_category = null;
+            if (current_category != null) {
+                if (viewing_package) {
+                    set_visible_child_name (current_category);
+                    viewing_package = false;
+                    subview_entered (_("Home"), true, current_category, _("Search %s").printf (current_category));
+                } else {
+                    set_visible_child (category_scrolled);
+                    currently_viewed_category = null;
+                    subview_entered (null, true);
+                }
             }
         }
 
         private void show_app_list_for_category (AppStream.Category category) {
-            subview_entered (_("Home"), true, category.name);
+            subview_entered (_("Home"), true, category.name, _("Search %s").printf (category.name));
             var child = get_child_by_name (category.name);
             if (child != null) {
                 set_visible_child (child);
@@ -290,17 +295,17 @@ namespace AppCenter {
             add_named (app_list_view, category.name);
             set_visible_child (app_list_view);
 
+            current_category = category.name;
+
             app_list_view.show_app.connect ((package) => {
-                current_category = category.name;
-                subview_entered (category.name, false, "");
                 viewing_package = true;
-                show_package (package);
+                base.show_package (package);
+                subview_entered (category.name, false, "");
             });
 
             unowned Client client = Client.get_default ();
             var apps = client.get_applications_for_category (category);
             app_list_view.add_packages (apps);
-
         }
     }
 }

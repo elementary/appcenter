@@ -6,12 +6,12 @@
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
@@ -23,10 +23,13 @@ using AppCenterCore;
 public class AppCenter.Views.SearchView : View {
     AppListView app_list_view;
 
+    public signal void quit_view ();
+
     public bool viewing_package { get; private set; default = false; }
+    private AppStream.Category? current_category;
 
     public SearchView () {
-        
+
     }
 
     construct {
@@ -41,14 +44,32 @@ public class AppCenter.Views.SearchView : View {
     }
 
     public override void return_clicked () {
-        viewing_package = false;
-        set_visible_child (app_list_view);
+        if (viewing_package) {
+            set_visible_child (app_list_view);
+            viewing_package = false;
+
+            if (current_category != null) {
+                subview_entered (_("Search Apps"), true, current_category.name);
+            } else {
+                subview_entered (null, true);
+            }
+        } else {
+            quit_view ();
+        }
     }
-    
+
     public void search (string search_term, AppStream.Category? category) {
+        current_category = category;
+
         app_list_view.clear ();
         unowned Client client = Client.get_default ();
-        var found_apps = client.search_applications (search_term, category);
+        var found_apps = client.search_applications (search_term, current_category);
         app_list_view.add_packages (found_apps);
+
+        if (current_category != null) {
+            subview_entered (_("Search Apps"), true, current_category.name);
+        } else {
+            subview_entered (_("Home"), true);
+        }
     }
 }

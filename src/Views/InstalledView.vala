@@ -27,7 +27,7 @@ public class AppCenter.Views.InstalledView : View {
         app_list_view = new AppListUpdateView ();
         add (app_list_view);
         app_list_view.show_app.connect ((package) => {
-            subview_entered (C_("view", "Updates"), false);
+            subview_entered (C_("view", "Updates"), false, "");
             show_package (package);
         });
 
@@ -36,8 +36,8 @@ public class AppCenter.Views.InstalledView : View {
             foreach (var driver in client.driver_list) {
                 app_list_view.add_package (driver);
             }
-        });        
-        
+        });
+
         client.updates_available.connect (update_os_package_visibility);
         client.bind_property ("updating-cache", app_list_view, "updating-cache", GLib.BindingFlags.DEFAULT);
         update_os_package_visibility ();
@@ -45,6 +45,7 @@ public class AppCenter.Views.InstalledView : View {
 
     public override void return_clicked () {
         set_visible_child (app_list_view);
+        subview_entered (null, false);
     }
 
     public async void get_apps () {
@@ -75,6 +76,6 @@ public class AppCenter.Views.InstalledView : View {
         var package = Client.get_default ().os_updates;
         if (package.update_available) {
             app_list_view.add_package (package);
-        }        
+        }
     }
 }
