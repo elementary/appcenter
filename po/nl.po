@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-06-24 18:54+0000\n"
+"PO-Revision-Date: 2017-07-01 11:07+0000\n"
 "Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
 "Language-Team: Dutch "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/nl/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 
 #: ../src/Application.vala:40
 msgid "App Center"
-msgstr "Applicatie centrum"
+msgstr "App Center"
 
 #: ../src/Application.vala:57
 msgid "translator-credits"
