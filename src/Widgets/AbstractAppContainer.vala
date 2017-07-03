@@ -173,7 +173,12 @@ namespace AppCenter {
 
             image.gicon = package.get_icon (icon_size);
 
-            package.notify["state"].connect (() => update_state ());
+            package.notify["state"].connect (() => {
+                Idle.add (() => {
+                    update_state ();
+                    return false;
+                });
+            });
 
             package.change_information.bind_property ("can-cancel", cancel_button, "sensitive", GLib.BindingFlags.SYNC_CREATE);
             package.change_information.progress_changed.connect (update_progress);
@@ -281,4 +286,3 @@ namespace AppCenter {
         }
     }
 }
-
