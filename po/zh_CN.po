@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-07-04 08:11+0000\n"
-"Last-Translator: Taylor Swift <1847435584@qq.com>\n"
+"PO-Revision-Date: 2017-07-04 08:12+0000\n"
+"Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/zh_CN/>\n"
 "Language: zh_CN\n"
@@ -199,7 +199,7 @@ msgstr "无法完成交易。请与您的银行联系以获取更多信息。"
 
 #: ../src/Dialogs/StripeDialog.vala:556
 msgid "The balance or credit limit on the card has been reached."
-msgstr "余额或银行卡的信用额度已达到限制。"
+msgstr "卡内余额或信用额度已达上限。"
 
 #: ../src/Dialogs/StripeDialog.vala:559
 msgid "The given card is a test card. Please use a real card to proceed."
