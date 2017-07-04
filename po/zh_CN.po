@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-07-04 08:12+0000\n"
-"Last-Translator: Taylor Swift <1847435584@qq.com>\n"
+"PO-Revision-Date: 2017-07-04 08:14+0000\n"
+"Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/zh_CN/>\n"
 "Language: zh_CN\n"
@@ -203,7 +203,7 @@ msgstr "卡内余额或信用额度已达上限。"
 
 #: ../src/Dialogs/StripeDialog.vala:559
 msgid "The given card is a test card. Please use a real card to proceed."
-msgstr "当前卡仅供测试。请输入一个有效的卡号。"
+msgstr "所示卡号仅为示例，请输入真实有效的卡号。"
 
 #: ../src/Views/InstalledView.vala:51 ../src/MainWindow.vala:130
 msgctxt "view"
