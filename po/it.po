@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-06-24 10:18+0000\n"
+"PO-Revision-Date: 2017-07-03 10:24+0000\n"
 "Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/it/>\n"
@@ -122,7 +122,7 @@ msgstr "Si è verificato un problema durante l'elaborazione del pagamento"
 
 #: ../src/Dialogs/StripeDialog.vala:276
 msgid "Pay Later"
-msgstr "Paga dopo"
+msgstr "Paga più tardi"
 
 #: ../src/Dialogs/StripeDialog.vala:277
 msgid "Retry"
