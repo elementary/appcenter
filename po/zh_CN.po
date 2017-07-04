@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-07-04 08:22+0000\n"
+"PO-Revision-Date: 2017-07-04 08:24+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/zh_CN/>\n"
@@ -84,7 +84,7 @@ msgstr "电子邮件"
 msgid ""
 "Your email address is used to send a receipt. It is never stored and you "
 "will not be subscribed to a mailing list."
-msgstr "您的邮箱地址仅用于接收回执，它不会被保存和加入邮件订阅列表。"
+msgstr "您的邮箱地址仅用于接收回执，不会被保存或订阅邮件内容。"
 
 #: ../src/Dialogs/StripeDialog.vala:88
 msgid "Card Number"
@@ -142,7 +142,7 @@ msgstr "截止年份无效，请输入有效的截止年份后重试。"
 
 #: ../src/Dialogs/StripeDialog.vala:470 ../src/Dialogs/StripeDialog.vala:523
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr "CVC 号码不正确。请输入正确的 CVC 号码后重试。"
+msgstr "CVC 号码不正确，请输入正确的 CVC 号码后重试。"
 
 #: ../src/Dialogs/StripeDialog.vala:472 ../src/Dialogs/StripeDialog.vala:514
 msgid "The card has expired. Please try again with a different card."
