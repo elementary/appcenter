@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-07-04 08:16+0000\n"
-"Last-Translator: Taylor Swift <1847435584@qq.com>\n"
+"PO-Revision-Date: 2017-07-04 08:22+0000\n"
+"Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/zh_CN/>\n"
 "Language: zh_CN\n"
@@ -70,7 +70,7 @@ msgstr "取消"
 msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
-msgstr "处理卡时出现问题，请稍后再试。为您带来的不便我们深表歉意。"
+msgstr "支付流程出现问题，请稍后再试。为您带来的不便我们深表歉意。"
 
 #: ../src/Dialogs/StripeDialog.vala:31
 msgid "Please review your payment info and try again."
@@ -97,7 +97,7 @@ msgstr "月/年"
 
 #: ../src/Dialogs/StripeDialog.vala:120
 msgid "CVC"
-msgstr ""
+msgstr "CVC 号码"
 
 #: ../src/Dialogs/StripeDialog.vala:157
 msgid "Privacy Policy"
@@ -162,7 +162,7 @@ msgstr "此卡不支持该交易类型。请换一张卡重试。"
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
-msgstr ""
+msgstr "此卡不支持该币种，请换一张卡重试。"
 
 #: ../src/Dialogs/StripeDialog.vala:512
 msgid "The transaction has already been processed."
@@ -189,7 +189,7 @@ msgstr "PIN 有误，请输入正确的 PIN 后重试。"
 #: ../src/Dialogs/StripeDialog.vala:533
 msgid ""
 "There has been too many pin attempts. Please try again with a different card."
-msgstr ""
+msgstr "PIN 错误次数已达上限，请换一张卡重试。"
 
 #: ../src/Dialogs/StripeDialog.vala:553
 msgid ""
