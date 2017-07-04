@@ -129,6 +129,9 @@ public class AppCenterCore.Package : Object {
         private get { return _latest_version; }
         internal set { _latest_version = convert_version (value); }
     }
+    public string? timestamp {
+        public get; internal set;
+    }
 
     private Pk.Package? pk_package = null;
     private AppInfo? app_info;

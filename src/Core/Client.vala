@@ -277,6 +277,7 @@ public class AppCenterCore.Client : Object {
                 var pk_package = package.find_package ();
                 if (pk_package != null && pk_package.get_info () == Pk.Info.INSTALLED) {
                     package.installed_packages.add (pk_package);
+                    populate_timestamp (package, pk_package, get_install_transactions_sync ());
                     package.update_state ();
                 }
 
@@ -296,10 +297,12 @@ public class AppCenterCore.Client : Object {
     public async Gee.Collection<AppCenterCore.Package> get_installed_applications () {
         var packages = new Gee.TreeSet<AppCenterCore.Package> ();
         var installed = yield get_installed_packages ();
+        var transactions = yield get_install_transactions ();
+
         foreach (var pk_package in installed) {
             var package = package_list[pk_package.get_name ()];
             if (package != null) {
-                populate_package (package, pk_package);
+                populate_package (package, pk_package, transactions);
                 packages.add (package);
             }
         }
@@ -310,10 +313,12 @@ public class AppCenterCore.Client : Object {
     public Gee.Collection<AppCenterCore.Package> get_installed_applications_sync () {
         var packages = new Gee.TreeSet<AppCenterCore.Package> ();
         var installed = get_installed_packages_sync ();
+        var transactions = get_install_transactions_sync ();
+
         foreach (var pk_package in installed) {
             var package = package_list[pk_package.get_name ()];
             if (package != null) {
-                populate_package (package, pk_package);
+                populate_package (package, pk_package, transactions);
                 packages.add (package);
             }
         }
@@ -321,10 +326,27 @@ public class AppCenterCore.Client : Object {
         return packages;        
     }
 
-    private static void populate_package (AppCenterCore.Package package, Pk.Package pk_package) {
+    private static void populate_package (AppCenterCore.Package package, Pk.Package pk_package, Gee.Collection<Pk.TransactionPast> transactions) {
         package.installed_packages.add (pk_package);
         package.latest_version = pk_package.get_version ();
+        populate_timestamp (package, pk_package, transactions);
         package.update_state ();        
+    }
+
+    private static void populate_timestamp (AppCenterCore.Package package, Pk.Package pk_package, Gee.Collection<Pk.TransactionPast> transactions) {
+        unowned string package_name = pk_package.get_name ();
+
+        foreach (var pk_transaction in transactions) {
+            var lines = pk_transaction.get_data ().split ("\n");
+
+            for (var i = 0; i < lines.length; i++) {
+                if (lines[i].has_prefix ("installing") && lines[i].contains(package_name)) {
+                    if (package.timestamp == null || package.timestamp < pk_transaction.get_timespec ()) {
+                        package.timestamp = pk_transaction.get_timespec ();
+                    }
+                }
+            }
+        }
     }
 
     public Gee.Collection<AppCenterCore.Package> get_applications_for_category (AppStream.Category category) {
@@ -609,6 +631,48 @@ public class AppCenterCore.Client : Object {
 
         task_count--;
         return installed;   
+    }
+
+    public async Gee.TreeSet<Pk.TransactionPast> get_install_transactions () {
+        task_count++;
+
+        var transactions = new Gee.TreeSet<Pk.TransactionPast> ();
+
+        try {
+            Pk.Results results = yield client.get_old_transactions_async (0, null, (prog, type) => {});
+            results.get_transaction_array ().foreach ((pk_transaction) => {
+                if (pk_transaction.get_succeeded () && (pk_transaction.get_role () == Pk.Role.INSTALL_PACKAGES || pk_transaction.get_role () == Pk.Role.UPDATE_PACKAGES)) {
+                    transactions.add (pk_transaction);
+                }
+            });
+
+        } catch (Error e) {
+            critical (e.message);
+        }
+
+        task_count--;
+        return transactions;
+    }
+
+    public Gee.TreeSet<Pk.TransactionPast> get_install_transactions_sync () {
+        task_count++;
+
+        var transactions = new Gee.TreeSet<Pk.TransactionPast> ();
+
+        try {
+            Pk.Results results = client.get_old_transactions (0, null, (prog, type) => {});
+            results.get_transaction_array ().foreach ((pk_transaction) => {
+                if (pk_transaction.get_succeeded () && (pk_transaction.get_role () == Pk.Role.INSTALL_PACKAGES || pk_transaction.get_role () == Pk.Role.UPDATE_PACKAGES)) {
+                    transactions.add (pk_transaction);
+                }
+            });
+
+        } catch (Error e) {
+            critical (e.message);
+        }
+
+        task_count--;
+        return transactions;   
     }
 
     public AppCenterCore.Package? get_package_for_component_id (string id) {

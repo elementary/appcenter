@@ -58,6 +58,10 @@ namespace AppCenter.Widgets {
             return grid.name_label;
         }
 
+        public string get_timestamp () {
+            return grid.timestamp;
+        }
+
         public AppCenterCore.Package? get_package () {
             return grid.package;
         }
