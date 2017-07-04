@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
 "PO-Revision-Date: 2017-07-04 08:01+0000\n"
-"Last-Translator: 雷汝翎 <hensixiang@hotmail.com>\n"
+"Last-Translator: Taylor Swift <1847435584@qq.com>\n"
 "Language-Team: Chinese (Simplified) "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/zh_CN/>\n"
 "Language: zh_CN\n"
@@ -88,12 +88,12 @@ msgstr "您的邮箱地址仅用于接收回执，它不会被保存和加入邮
 
 #: ../src/Dialogs/StripeDialog.vala:88
 msgid "Card Number"
-msgstr ""
+msgstr "卡号"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: ../src/Dialogs/StripeDialog.vala:100
 msgid "MM / YY"
-msgstr ""
+msgstr "月/年"
 
 #: ../src/Dialogs/StripeDialog.vala:120
 msgid "CVC"
@@ -101,7 +101,7 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:157
 msgid "Privacy Policy"
-msgstr ""
+msgstr "隐私策略"
 
 #: ../src/Dialogs/StripeDialog.vala:168 ../src/Dialogs/StripeDialog.vala:284
 #, fuzzy
