@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-07-04 08:04+0000\n"
-"Last-Translator: Taylor Swift <1847435584@qq.com>\n"
+"PO-Revision-Date: 2017-07-04 08:05+0000\n"
+"Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/zh_CN/>\n"
 "Language: zh_CN\n"
@@ -146,7 +146,7 @@ msgstr "CVC 号码不正确。请输入正确的 CVC 号码后重试。"
 
 #: ../src/Dialogs/StripeDialog.vala:472 ../src/Dialogs/StripeDialog.vala:514
 msgid "The card has expired. Please try again with a different card."
-msgstr "这张卡片过期了。请使用另一张卡片再试一次。"
+msgstr "此卡已过期。请更换可用的卡后重试。"
 
 #: ../src/Dialogs/StripeDialog.vala:492
 msgid "There are too many payment requests at the moment, please retry later."
