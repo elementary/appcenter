@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-07-04 08:05+0000\n"
-"Last-Translator: colindemian <colindemian@outlook.com>\n"
+"PO-Revision-Date: 2017-07-04 08:06+0000\n"
+"Last-Translator: Taylor Swift <1847435584@qq.com>\n"
 "Language-Team: Chinese (Simplified) "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/zh_CN/>\n"
 "Language: zh_CN\n"
@@ -150,13 +150,13 @@ msgstr "此卡已过期。请更换可用的卡后重试。"
 
 #: ../src/Dialogs/StripeDialog.vala:492
 msgid "There are too many payment requests at the moment, please retry later."
-msgstr ""
+msgstr "我们目前要处理的付款请求过多，请稍后再试。"
 
 #: ../src/Dialogs/StripeDialog.vala:508
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
-msgstr ""
+msgstr "指定的交易类型不支持这张卡。请换一张卡再试。"
 
 #: ../src/Dialogs/StripeDialog.vala:510
 msgid ""
