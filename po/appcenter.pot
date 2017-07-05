@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-29 21:23-0700\n"
+"POT-Creation-Date: 2017-07-03 10:49-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -246,35 +246,35 @@ msgstr ""
 msgid "Help"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:146
-msgid "Check out %s on AppCenter:"
-msgstr ""
-
-#: ../src/Views/AppInfoView.vala:153
-msgid "Share"
-msgstr ""
-
-#: ../src/Views/AppInfoView.vala:194
+#: ../src/Views/AppInfoView.vala:169
 msgid "Extensions:"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:274
+#: ../src/Views/AppInfoView.vala:249
 msgid "Link copied to clipboard"
 msgstr ""
 
-#: ../src/Views/Homepage.vala:104
+#: ../src/Views/AppInfoView.vala:260
+msgid "Check out %s on AppCenter:"
+msgstr ""
+
+#: ../src/Views/AppInfoView.vala:267
+msgid "Share"
+msgstr ""
+
+#: ../src/Views/Homepage.vala:67
 msgid "Recently Updated"
 msgstr ""
 
-#: ../src/Views/Homepage.vala:156
+#: ../src/Views/Homepage.vala:83
 msgid "Trending"
 msgstr ""
 
-#: ../src/Views/Homepage.vala:208
+#: ../src/Views/Homepage.vala:99
 msgid "Categories"
 msgstr ""
 
-#: ../src/Views/Homepage.vala:273 ../src/Views/Homepage.vala:281
+#: ../src/Views/Homepage.vala:265 ../src/Views/Homepage.vala:273
 #: ../src/MainWindow.vala:140 ../src/MainWindow.vala:195
 #: ../src/MainWindow.vala:237
 msgid "Home"
@@ -340,18 +340,18 @@ msgstr ""
 msgid "Universal Access"
 msgstr ""
 
-#: ../src/Widgets/HumbleButton.vala:85
-#: ../src/Widgets/AbstractAppContainer.vala:195
+#: ../src/Widgets/HumbleButton.vala:81
+#: ../src/Widgets/AbstractAppContainer.vala:200
 msgid "Free"
 msgstr ""
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: ../src/Widgets/HumbleButton.vala:152
+#: ../src/Widgets/HumbleButton.vala:148
 msgid "$%d.00"
 msgstr ""
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: ../src/Widgets/HumbleButton.vala:155
+#: ../src/Widgets/HumbleButton.vala:151
 msgid "$%d"
 msgstr ""
 
@@ -395,7 +395,7 @@ msgstr ""
 msgid "by %s"
 msgstr ""
 
-#: ../src/Widgets/AbstractAppContainer.vala:209
+#: ../src/Widgets/AbstractAppContainer.vala:214
 msgid "Update"
 msgstr ""
 

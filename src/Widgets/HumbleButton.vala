@@ -27,7 +27,7 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
 
     private Gtk.ToggleButton arrow_button;
 
-    private int _amount;
+    private int _amount = 1;
     public int amount {
         get {
             return _amount;
@@ -75,10 +75,6 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
                 arrow_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
             }
         }
-    }
-
-    public HumbleButton () {
-        Object (amount: 1);
     }
 
     construct {
@@ -168,4 +164,3 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
         return button;
     }
 }
-

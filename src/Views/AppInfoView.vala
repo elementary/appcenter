@@ -143,31 +143,6 @@ namespace AppCenter.Views {
                 links_grid.add (help_button);
             }
 
-            var body = _("Check out %s on AppCenter:").printf (package.get_name ());
-            var uri = "https://appcenter.elementary.io/%s".printf (package.component.get_id ());
-            var share_popover = new SharePopover (body, uri);
-
-            var share_icon = new Gtk.Image.from_icon_name ("send-to-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
-            share_icon.valign = Gtk.Align.CENTER;
-
-            var share_label = new Gtk.Label (_("Share"));
-
-            var share_grid = new Gtk.Grid ();
-            share_grid.column_spacing = 6;
-            share_grid.add (share_icon);
-            share_grid.add (share_label);
-
-            var share_button = new Gtk.MenuButton ();
-            share_button.direction = Gtk.ArrowType.UP;
-            share_button.popover = share_popover;
-            share_button.add (share_grid);
-
-            var share_button_context = share_button.get_style_context ();
-            share_button_context.add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-            share_button_context.add_class (Gtk.STYLE_CLASS_FLAT);
-
-            links_grid.add (share_button);
-
             var content_grid = new Gtk.Grid ();
             content_grid.width_request = 800;
             content_grid.halign = Gtk.Align.CENTER;
@@ -281,9 +256,36 @@ namespace AppCenter.Views {
 
             open_button.get_style_context ().add_class ("h3");
 
-            share_popover.link_copied.connect (() => {
-                toast.send_notification ();
-            });
+            if (!package.is_os_updates) {
+                var body = _("Check out %s on AppCenter:").printf (package.get_name ());
+                var uri = "https://appcenter.elementary.io/%s".printf (package.component.get_id ());
+                var share_popover = new SharePopover (body, uri);
+
+                var share_icon = new Gtk.Image.from_icon_name ("send-to-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+                share_icon.valign = Gtk.Align.CENTER;
+
+                var share_label = new Gtk.Label (_("Share"));
+
+                var share_grid = new Gtk.Grid ();
+                share_grid.column_spacing = 6;
+                share_grid.add (share_icon);
+                share_grid.add (share_label);
+
+                var share_button = new Gtk.MenuButton ();
+                share_button.direction = Gtk.ArrowType.UP;
+                share_button.popover = share_popover;
+                share_button.add (share_grid);
+
+                var share_button_context = share_button.get_style_context ();
+                share_button_context.add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+                share_button_context.add_class (Gtk.STYLE_CLASS_FLAT);
+
+                share_popover.link_copied.connect (() => {
+                    toast.send_notification ();
+                });
+
+                links_grid.add (share_button);
+            }
 
             reload_css ();
             set_up_package (128);
