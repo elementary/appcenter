@@ -64,10 +64,15 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
     }
 
     construct {
-        var primary_label = new Gtk.Label ("AppCenter");
+        var primary_label = new Gtk.Label (_("Pay $%d for %s").printf (amount, app_name));
         primary_label.get_style_context ().add_class ("primary");
+        primary_label.xalign = 0;
 
-        var secondary_label = new Gtk.Label (app_name);
+        var secondary_label = new Gtk.Label (_("This is a one time payment. Your email address is only used to send you a receipt."));
+        secondary_label.max_width_chars = 50;
+        secondary_label.wrap = true;
+        secondary_label.xalign = 0;
+
 
         email_entry = new Gtk.Entry ();
         email_entry.hexpand = true;
@@ -568,4 +573,3 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         }
     }
 }
-
