@@ -66,8 +66,11 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
     construct {
         var primary_label = new Gtk.Label (_("Pay $%d for %s").printf (amount, app_name));
         primary_label.get_style_context ().add_class ("primary");
+        primary_label.xalign = 0;
 
         var secondary_label = new Gtk.Label (_("This is a one time payment. Your email address is only used to send you a receipt."));
+        secondary_label.wrap = true;
+        secondary_label.xalign = 0;
 
 
         email_entry = new Gtk.Entry ();
