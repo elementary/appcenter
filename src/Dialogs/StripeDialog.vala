@@ -69,6 +69,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         primary_label.xalign = 0;
 
         var secondary_label = new Gtk.Label (_("This is a one time payment. Your email address is only used to send you a receipt."));
+        secondary_label.max_width_chars = 50;
         secondary_label.wrap = true;
         secondary_label.xalign = 0;
 
