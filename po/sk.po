@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-06-29 18:25+0000\n"
-"Last-Translator: Matej Niznik <mattnizo@gmail.com>\n"
+"PO-Revision-Date: 2017-07-04 14:47+0000\n"
+"Last-Translator: Bokor Pavol <bokor.pavol@gmail.com>\n"
 "Language-Team: Slovak "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/sk/>\n"
 "Language: sk\n"
@@ -82,30 +82,32 @@ msgstr "Prosím, skontrolujte platobné údaje a svoj pokus zopakujte."
 
 #: ../src/Dialogs/StripeDialog.vala:75
 msgid "Email"
-msgstr ""
+msgstr "E-mail"
 
 #: ../src/Dialogs/StripeDialog.vala:77
 msgid ""
 "Your email address is used to send a receipt. It is never stored and you "
 "will not be subscribed to a mailing list."
 msgstr ""
+"Vaša e-mailová adresa sa použije na odoslanie potvrdenia. Neukladá sa a "
+"nebude použitá na prihlásenie do odberu informačných e-mailov."
 
 #: ../src/Dialogs/StripeDialog.vala:88
 msgid "Card Number"
-msgstr ""
+msgstr "Číslo Karty"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: ../src/Dialogs/StripeDialog.vala:100
 msgid "MM / YY"
-msgstr ""
+msgstr "MM / RR"
 
 #: ../src/Dialogs/StripeDialog.vala:120
 msgid "CVC"
-msgstr ""
+msgstr "CVC"
 
 #: ../src/Dialogs/StripeDialog.vala:157
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Zásady ochrany osobných údajov"
 
 #: ../src/Dialogs/StripeDialog.vala:168 ../src/Dialogs/StripeDialog.vala:284
 #, fuzzy
@@ -132,56 +134,64 @@ msgstr "Skúsiť znova"
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr ""
+"Číslo karty je nesprávne. Skúste to znova pomocou správneho čísla karty."
 
 #: ../src/Dialogs/StripeDialog.vala:465
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"Mesiac vypršania platnosti je nesprávny. Skúste to znova použitím správneho "
+"dátumu vypršania platnosti."
 
 #: ../src/Dialogs/StripeDialog.vala:467 ../src/Dialogs/StripeDialog.vala:525
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"Rok vypršania platnosti je nesprávny. Skúste to znova použitím správneho "
+"dátumu vypršania platnosti."
 
 #: ../src/Dialogs/StripeDialog.vala:470 ../src/Dialogs/StripeDialog.vala:523
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr ""
+msgstr "CVC číslo je nesprávne. Skúste to znova použitím správneho CVC čísla."
 
 #: ../src/Dialogs/StripeDialog.vala:472 ../src/Dialogs/StripeDialog.vala:514
 msgid "The card has expired. Please try again with a different card."
-msgstr ""
+msgstr "Platnosť karty vypršala. Skúste to znova s inou kartou."
 
 #: ../src/Dialogs/StripeDialog.vala:492
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr ""
+"V súčasnosti je príliš veľa žiadostí o platbu, skúste to zopakovať neskôr."
 
 #: ../src/Dialogs/StripeDialog.vala:508
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
 msgstr ""
+"Táto karta nepodporuje tento druh transakcie. Skúste to znova s inou kartou."
 
 #: ../src/Dialogs/StripeDialog.vala:510
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
-msgstr ""
+msgstr "Mena nie je podporovaná touto kartou. Skúste to znovu s inou kartou."
 
 #: ../src/Dialogs/StripeDialog.vala:512
 msgid "The transaction has already been processed."
-msgstr ""
+msgstr "Transakcia už bola spracovaná."
 
 #: ../src/Dialogs/StripeDialog.vala:516
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "Postal code."
-msgstr ""
+msgstr "Poštové smerovacie číslo je nesprávne. Skúste to znovu so správnym PSČ."
 
 #: ../src/Dialogs/StripeDialog.vala:518
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr ""
+"Nemáte dostatok finančných prostriedkov. Použite alternatívny spôsob platby."
 
 #: ../src/Dialogs/StripeDialog.vala:520
 msgid "The amount is incorrect. Please try again using a valid amount."
