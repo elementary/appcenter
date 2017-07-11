@@ -67,7 +67,8 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         var primary_label = new Gtk.Label ("AppCenter");
         primary_label.get_style_context ().add_class ("primary");
 
-        var secondary_label = new Gtk.Label (app_name);
+        var secondary_label = new Gtk.Label (_("Pay $%d for %s").printf (amount, app_name));
+
 
         email_entry = new Gtk.Entry ();
         email_entry.hexpand = true;
@@ -568,4 +569,3 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         }
     }
 }
-
