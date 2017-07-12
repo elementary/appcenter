@@ -34,11 +34,10 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
         }
         set {
             _amount = value;
-            amount_button.label = get_amount_formatted (value, true);
             custom_amount.value = value;
 
             if (_amount != 0) {
-                amount_button.label = get_amount_formatted (_amount, true);
+                amount_button.label = (_("Install for %s").printf (get_amount_formatted (value, false)));
             } else {
                 amount_button.label = free_string;
             }
