@@ -23,10 +23,9 @@ using AppCenterCore;
 public class AppCenter.Views.SearchView : View {
     AppListView app_list_view;
 
-    public signal void quit_view ();
-
     public bool viewing_package { get; private set; default = false; }
     private AppStream.Category? current_category;
+    private string current_search_term;
 
     public SearchView () {
 
@@ -54,17 +53,18 @@ public class AppCenter.Views.SearchView : View {
                 subview_entered (null, true);
             }
         } else {
-            quit_view ();
+            search (current_search_term, null);
             subview_entered (null, true);
         }
     }
 
     public void search (string search_term, AppStream.Category? category) {
+        current_search_term = search_term;
         current_category = category;
 
         app_list_view.clear ();
         unowned Client client = Client.get_default ();
-        var found_apps = client.search_applications (search_term, current_category);
+        var found_apps = client.search_applications (current_search_term, current_category);
         app_list_view.add_packages (found_apps);
 
         if (current_category != null) {

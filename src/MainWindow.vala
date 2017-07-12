@@ -93,10 +93,8 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         homepage.subview_entered.connect (view_opened);
         installed_view.subview_entered.connect (view_opened);
-
         search_view.subview_entered.connect (view_opened);
-        search_view.quit_view.connect (on_quit_search_view);
-
+        
         NetworkMonitor.get_default ().network_changed.connect (on_view_mode_changed);
 
         network_alert_view.action_activated.connect (() => {
@@ -230,9 +228,9 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     }
 
     private void trigger_search () {
-        unowned string research = search_entry.text;
-        string query = search_entry.text;
-        bool query_valid = query.length >= 2;
+        unowned string query = search_entry.text;
+        uint query_length = query.length;
+        bool query_valid = query_length >= 2;
 
         view_mode_revealer.reveal_child = !query_valid;
 
@@ -241,9 +239,9 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         return_button.visible = false;
 
         if (query_valid) {
-            search_view.search (research, homepage.currently_viewed_category);
+            search_view.search (query, homepage.currently_viewed_category);
             stack.visible_child = search_view;
-        } else {
+        } else if (query_length == 0) {
             stack.visible_child = homepage;
             if (homepage.currently_viewed_category != null) {
                 homepage.return_clicked ();
@@ -290,10 +288,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         View view = (View) stack.visible_child;
         view.return_clicked ();
-    }
-
-    private void on_quit_search_view () {
-        stack.visible_child = homepage;
     }
 
     private void on_view_mode_changed () {
