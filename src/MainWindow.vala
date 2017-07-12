@@ -94,7 +94,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         homepage.subview_entered.connect (view_opened);
         installed_view.subview_entered.connect (view_opened);
         search_view.subview_entered.connect (view_opened);
-        
+
         NetworkMonitor.get_default ().network_changed.connect (on_view_mode_changed);
 
         network_alert_view.action_activated.connect (() => {
@@ -215,6 +215,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     }
 
     public void show_package (AppCenterCore.Package package) {
+        return_button_history.clear ();
         view_mode.selected = homepage_view_id;
         homepage.show_package (package);
     }
