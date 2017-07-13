@@ -13,6 +13,7 @@
     <file alias="online-account-reddit.svg" compressed="true" preprocess="xml-stripblanks">online-account-reddit.svg</file>
     <file alias="online-account-tumblr.svg" compressed="true" preprocess="xml-stripblanks">online-account-tumblr.svg</file>
     <file alias="online-account-twitter.svg" compressed="true" preprocess="xml-stripblanks">online-account-twitter.svg</file>
+    <file alias="online-account-telegram.svg" compressed="true" preprocess="xml-stripblanks">online-account-telegram.svg</file>
     <file alias="text-x-copying-symbolic.svg" compressed="true" preprocess="xml-stripblanks">text-x-copying-symbolic.svg</file>
   </gresource>
   <gresource prefix="/io/elementary/appcenter/backgrounds">
