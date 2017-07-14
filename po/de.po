@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-06-05 10:05+0000\n"
-"Last-Translator: Uwe S <saabisto@gmx.de>\n"
+"PO-Revision-Date: 2017-07-12 02:49+0000\n"
+"Last-Translator: SteffenL <steffenl@protonmail.com>\n"
 "Language-Team: German "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/de/>\n"
 "Language: de\n"
@@ -316,10 +316,9 @@ msgid "An open, pay-what-you-want app store"
 msgstr "Ein offener, Bezahl-was-du-willst-App-Store"
 
 #: ../src/Widgets/Banner.vala:120
-#, fuzzy
 msgid "Get the apps that you need at a price you can afford."
 msgstr ""
-"Erhalte die Apps, die du brauchst, zu einem Preis, den du dir leisten kannst."
+"Erhalte Apps, die du brauchst, zu einem Preis, den du dir leisten kannst."
 
 #: ../src/Widgets/CategoryFlowBox.vala:29
 msgid "Audio"

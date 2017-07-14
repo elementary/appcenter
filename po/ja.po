@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-06-17 09:49+0000\n"
+"PO-Revision-Date: 2017-07-12 14:21+0000\n"
 "Last-Translator: Ryo Nakano <rmfmada3q@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/ja/>\n"
@@ -202,13 +202,14 @@ msgstr "PIN が違います。正しい PIN を使用してもう一度お試し
 #: ../src/Dialogs/StripeDialog.vala:533
 msgid ""
 "There has been too many pin attempts. Please try again with a different card."
-msgstr ""
+msgstr "PIN の試行が大量にありました。別のカードを使用してもう一度お試しください。"
 
 #: ../src/Dialogs/StripeDialog.vala:553
+#, fuzzy
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
-msgstr ""
+msgstr "処理を完了させることができませんでした。詳細を知るには銀行へ連絡してください。"
 
 #: ../src/Dialogs/StripeDialog.vala:556
 msgid "The balance or credit limit on the card has been reached."

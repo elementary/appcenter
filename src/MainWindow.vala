@@ -36,12 +36,13 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     private Homepage homepage;
     private Views.SearchView search_view;
     private Gtk.Button return_button;
-    private Gtk.Button search_all_button;
-    private Gtk.Stack button_stack;
     private ulong task_finished_connection = 0U;
-    private Gee.Deque<string> return_button_history;
+    private Gee.LinkedList<string> return_button_history;
     private Granite.Widgets.AlertView network_alert_view;
     private Gtk.Grid network_view;
+
+    private int homepage_view_id;
+    private int installed_view_id;
 
     public static Views.InstalledView installed_view { get; private set; }
 
@@ -65,7 +66,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
                 break;
         }
 
-        view_mode.selected = 0;
+        view_mode.selected = homepage_view_id;
         search_entry.grab_focus_without_selecting ();
 
         var go_back = new SimpleAction ("go-back", null);
@@ -75,9 +76,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         search_entry.search_changed.connect (() => trigger_search ());
 
-        view_mode.notify["selected"].connect (() => {
-            update_view ();
-        });
+        view_mode.notify["selected"].connect (on_view_mode_changed);
 
         search_entry.key_press_event.connect ((event) => {
             if (event.keyval == Gdk.Key.Escape) {
@@ -89,7 +88,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         });
 
         return_button.clicked.connect (view_return);
-        search_all_button.clicked.connect (search_all_apps);
 
         installed_view.get_apps.begin ();
 
@@ -97,7 +95,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         installed_view.subview_entered.connect (view_opened);
         search_view.subview_entered.connect (view_opened);
 
-        NetworkMonitor.get_default ().network_changed.connect (update_view);
+        NetworkMonitor.get_default ().network_changed.connect (on_view_mode_changed);
 
         network_alert_view.action_activated.connect (() => {
             try {
@@ -112,7 +110,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             working = client.task_count > 0;
         });
 
-        this.show.connect (update_view);
+        show.connect (on_view_mode_changed);
     }
 
     construct {
@@ -126,26 +124,17 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         return_button.get_style_context ().add_class ("back-button");
         return_button_history = new Gee.LinkedList<string> ();
 
-        search_all_button = new Gtk.Button.with_label (_("Search Apps"));
-        search_all_button.no_show_all = true;
-        search_all_button.get_style_context ().add_class ("back-button");
-
-        button_stack = new Gtk.Stack ();
-        button_stack.add (return_button);
-        button_stack.add (search_all_button);
-        button_stack.set_visible_child (return_button);
-
         view_mode = new Granite.Widgets.ModeButton ();
         view_mode.margin = 1;
-        view_mode.append_text (_("Home"));
-        view_mode.append_text (C_("view", "Updates"));
+        homepage_view_id = view_mode.append_text (_("Home"));
+        installed_view_id = view_mode.append_text (C_("view", "Updates"));
 
         view_mode_revealer = new Gtk.Revealer ();
         view_mode_revealer.reveal_child = true;
         view_mode_revealer.transition_type = Gtk.RevealerTransitionType.CROSSFADE;
         view_mode_revealer.add (view_mode);
 
-        homepage_header = new Gtk.Label ("Homepage Header");
+        homepage_header = new Gtk.Label (null);
         homepage_header.get_style_context ().add_class (Gtk.STYLE_CLASS_TITLE);
 
         custom_title_stack = new Gtk.Stack ();
@@ -162,7 +151,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         headerbar = new Gtk.HeaderBar ();
         headerbar.show_close_button = true;
         headerbar.set_custom_title (custom_title_stack);
-        headerbar.pack_start (button_stack);
+        headerbar.pack_start (return_button);
         headerbar.pack_end (search_entry);
         headerbar.pack_end (spinner);
 
@@ -188,12 +177,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         stack.add (installed_view);
         stack.add (search_view);
         stack.add (network_view);
-
-        homepage.package_selected.connect ((package) => {
-            stack.set_visible_child (homepage);
-            show_package (package);
-            return_button.label = (_("Home"));
-        });
 
         add (stack);
     }
@@ -232,154 +215,101 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     }
 
     public void show_package (AppCenterCore.Package package) {
-        stack.set_visible_child (homepage);
+        return_button_history.clear ();
+        view_mode.selected = homepage_view_id;
         homepage.show_package (package);
-        view_opened (_("Home"), false, null);
-
-        update_view ();
     }
 
     public void go_to_installed () {
-        view_mode.selected = 1;
+        view_mode.selected = installed_view_id;
     }
 
     public void search (string term) {
         search_entry.text = term;
-        trigger_search ();
     }
 
     private void trigger_search () {
-        unowned string research = search_entry.text;
-        if (research.length < 2) {
-            if (homepage.currently_viewed_category == null) {
-                custom_title_stack.set_visible_child (view_mode_revealer);
-            }
+        unowned string query = search_entry.text;
+        uint query_length = query.length;
+        bool query_valid = query_length >= 2;
 
-            view_mode_revealer.reveal_child = true;
-            update_view ();
-            if (!return_button_history.is_empty) {
-                return_button.no_show_all = false;
-                return_button.show_all ();
-            }
+        view_mode_revealer.reveal_child = !query_valid;
 
-            button_stack.visible_child = return_button;
-            search_all_button.no_show_all = true;
-            search_all_button.hide ();
-        } else {
-            search_view.search (research, homepage.currently_viewed_category);
-            if (homepage.currently_viewed_category != null) {
-                button_stack.visible_child = search_all_button;
-                search_all_button.no_show_all = false;
-                search_all_button.show_all ();
-            } else {
-                button_stack.visible_child = return_button;
-                search_all_button.no_show_all = true;
-                search_all_button.hide ();
-            }
+        return_button_history.clear ();
+        return_button.no_show_all = true;
+        return_button.visible = false;
 
-            view_mode_revealer.reveal_child = false;
+        if (query_valid) {
+            search_view.search (query, homepage.currently_viewed_category);
             stack.visible_child = search_view;
-            return_button.no_show_all = true;
-            return_button.hide ();
+        } else if (query_length == 0) {
+            stack.visible_child = homepage;
+            if (homepage.currently_viewed_category != null) {
+                homepage.return_clicked ();
+            }
         }
-
-        update_view ();
     }
 
-    private void view_opened (string return_name, bool allow_search, string? custom_header = null) {
-        if (stack.visible_child == search_view && homepage.currently_viewed_category != null) {
-            button_stack.visible_child = return_button;
-            search_all_button.no_show_all = true;
-            search_all_button.hide ();
-        }
-
-        if (return_button_history.is_empty || return_button_history.peek_head () != return_name) {
+    private void view_opened (string? return_name, bool allow_search, string? custom_header = null, string? custom_search_placeholder = null) {
+        if (return_name != null && return_button_history.peek_head () != return_name) {
             return_button_history.offer_head (return_name);
-        }
-        return_button.label = return_name;
-        return_button.no_show_all = false;
-        return_button.show_all ();
 
-        view_mode_revealer.reveal_child = false;
+            return_button.label = return_name;
+            return_button.no_show_all = false;
+            return_button.visible = true;
+        }
+
         if (custom_header != null) {
             homepage_header.label = custom_header;
-            custom_title_stack.set_visible_child (homepage_header);
+            custom_title_stack.visible_child = homepage_header;
+        } else {
+            custom_title_stack.visible_child = view_mode_revealer;
+        }
+
+        if (custom_search_placeholder != null) {
+            search_entry.placeholder_text = custom_search_placeholder;
+        } else {
+            search_entry.placeholder_text = _("Search Apps");
         }
 
         search_entry.sensitive = allow_search;
         search_entry.grab_focus_without_selecting ();
-        if (stack.visible_child == homepage && homepage.currently_viewed_category != null) {
-            search_entry.placeholder_text = _("Search %s").printf (homepage.currently_viewed_category.get_name ());
-        }
     }
 
     private void view_return () {
-        if (stack.visible_child != search_view) {
-            view_mode_revealer.reveal_child = true;
-            custom_title_stack.set_visible_child (view_mode_revealer);
-            homepage_header.label = "";
-        } else {
-            if (homepage.currently_viewed_category != null) {
-                button_stack.visible_child = search_all_button;
-                search_all_button.no_show_all = false;
-                search_all_button.show_all ();
-            }
-        }
-
-        if (stack.visible_child == homepage) {
-            search_entry.placeholder_text = _("Search Apps");
-        }
-        search_entry.sensitive = true;
-        search_entry.grab_focus_without_selecting ();
-
         return_button_history.poll_head ();
-        if (!return_button_history.is_empty && stack.visible_child == search_view) {
-            return_button.label = return_button_history.peek_head ();
-            return_button.no_show_all = true;
-            return_button.hide ();
+        if (!return_button_history.is_empty) {
+            return_button.label = return_button_history.poll_head ();
+            return_button.no_show_all = false;
+            return_button.visible = true;
         } else {
             return_button.no_show_all = true;
-            return_button.hide ();
+            return_button.visible = false;
         }
 
         View view = (View) stack.visible_child;
         view.return_clicked ();
     }
 
-    private void search_all_apps () {
-        homepage_header.label = "";
-
-        search_entry.placeholder_text = _("Search Apps");
-        search_entry.grab_focus_without_selecting ();
-
-        return_button_history.poll_head ();
-        return_button.no_show_all = true;
-        return_button.hide ();
-
-        homepage.return_clicked ();
-        trigger_search ();
-    }
-
-    private void update_view () {
+    private void on_view_mode_changed () {
         var connection_available = NetworkMonitor.get_default ().get_network_available ();
         if (connection_available) {
             if (search_entry.text.length >= 2) {
                 stack.visible_child = search_view;
             } else {
-                switch (view_mode.selected) {
-                    case 0:
-                        stack.visible_child = homepage;
-                        break;
-                    default:
-                        stack.visible_child = installed_view;
-                        break;
+                if (view_mode.selected == homepage_view_id) {
+                    stack.visible_child = homepage;
+                    search_entry.sensitive = true;
+                } else if (view_mode.selected == installed_view_id) {
+                    stack.visible_child = installed_view;
+                    search_entry.sensitive = false;
                 }
             }
         } else {
-            stack.set_visible_child (network_view);
+            stack.visible_child = network_view;
         }
 
-        button_stack.sensitive = connection_available;
-        search_entry.sensitive = connection_available && !search_view.viewing_package && !homepage.viewing_package;
+        custom_title_stack.sensitive = connection_available;
+        return_button.sensitive = connection_available;
     }
 }
