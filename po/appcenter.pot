@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-10 21:05-0700\n"
+"POT-Creation-Date: 2017-07-13 13:51-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -209,15 +209,20 @@ msgstr ""
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
 
-#: ../src/Views/InstalledView.vala:30 ../src/MainWindow.vala:141
+#: ../src/Views/InstalledView.vala:30 ../src/MainWindow.vala:130
 msgctxt "view"
 msgid "Updates"
 msgstr ""
 
 #. / TRANSLATORS: the name of the Search view
-#: ../src/Views/SearchView.vala:37
+#: ../src/Views/SearchView.vala:39
 msgctxt "view"
 msgid "Search"
+msgstr ""
+
+#: ../src/Views/SearchView.vala:51 ../src/Views/SearchView.vala:71
+#: ../src/MainWindow.vala:146 ../src/MainWindow.vala:272
+msgid "Search Apps"
 msgstr ""
 
 #: ../src/Views/AppListView.vala:118
@@ -272,25 +277,28 @@ msgstr ""
 msgid "Share"
 msgstr ""
 
-#: ../src/Views/Homepage.vala:67
+#: ../src/Views/Homepage.vala:65
 msgid "Recently Updated"
 msgstr ""
 
-#: ../src/Views/Homepage.vala:83
+#: ../src/Views/Homepage.vala:81
 msgid "Trending"
 msgstr ""
 
-#: ../src/Views/Homepage.vala:99
+#: ../src/Views/Homepage.vala:97
 msgid "Categories"
 msgstr ""
 
-#: ../src/Views/Homepage.vala:265 ../src/Views/Homepage.vala:273
-#: ../src/MainWindow.vala:140 ../src/MainWindow.vala:195
-#: ../src/MainWindow.vala:237
+#: ../src/Views/Homepage.vala:260 ../src/Views/Homepage.vala:267
+#: ../src/Views/Homepage.vala:276 ../src/MainWindow.vala:129
 msgid "Home"
 msgstr ""
 
-#: ../src/Widgets/Banner.vala:100 ../src/MainWindow.vala:121
+#: ../src/Views/Homepage.vala:267 ../src/Views/Homepage.vala:276
+msgid "Search %s"
+msgstr ""
+
+#: ../src/Widgets/Banner.vala:100 ../src/MainWindow.vala:119
 msgid "AppCenter"
 msgstr ""
 
@@ -386,6 +394,10 @@ msgid "Tumblr"
 msgstr ""
 
 #: ../src/Widgets/SharePopover.vala:59
+msgid "Telegram"
+msgstr ""
+
+#: ../src/Widgets/SharePopover.vala:63
 msgid "Copy link"
 msgstr ""
 
@@ -439,25 +451,16 @@ msgstr ""
 msgid "Drivers"
 msgstr ""
 
-#: ../src/MainWindow.vala:129 ../src/MainWindow.vala:157
-#: ../src/MainWindow.vala:330 ../src/MainWindow.vala:352
-msgid "Search Apps"
-msgstr ""
-
-#: ../src/MainWindow.vala:175
+#: ../src/MainWindow.vala:164
 msgid "Network Is Not Available"
 msgstr ""
 
-#: ../src/MainWindow.vala:176
+#: ../src/MainWindow.vala:165
 msgid "Connect to the internet to install or update apps."
 msgstr ""
 
-#: ../src/MainWindow.vala:179
+#: ../src/MainWindow.vala:168
 msgid "Network Settings…"
-msgstr ""
-
-#: ../src/MainWindow.vala:312
-msgid "Search %s"
 msgstr ""
 
 #: ../src/Core/UpdateManager.vala:64
