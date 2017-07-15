@@ -123,10 +123,12 @@ const string CATEGORIES_STYLE_CSS = """
                     0 3px 5px alpha (#000, 0.10);
         color: #fe5498;
     }
+    .category.graphics label,
     .category.graphics .label {
         border-image: -gtk-scaled(url("resource:///io/elementary/appcenter/backgrounds/graphics.svg"),url("resource:///io/elementary/appcenter/backgrounds/graphics@2x.svg")) 10 10 10 10 / 10px 10px 10px 10px repeat;
         padding: 12px;
     }
+    .category.graphics label:dir(rtl),
     .category.graphics .label:dir(rtl) {
         border-image: -gtk-scaled(url("resource:///io/elementary/appcenter/backgrounds/graphics-rtl.svg"),url("resource:///io/elementary/appcenter/backgrounds/graphics-rtl@2x.svg")) 10 10 10 10 / 10px 10px 10px 10px repeat;
     }
@@ -266,7 +268,7 @@ public class AppCenter.Widgets.CategoryItem : Gtk.FlowBoxChild {
 
         tooltip_text = app_category.summary ?? "";
 
-        if (app_category.icon != null) {
+        if (app_category.icon != "") {
             display_image.icon_name = app_category.icon;
             ((Gtk.Misc) name_label).xalign = 0;
             name_label.halign = Gtk.Align.START;

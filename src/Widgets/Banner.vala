@@ -43,6 +43,7 @@ const string BANNER_STYLE_CSS = """
             0 3px 5px alpha (shade (@banner_bg_color, 0.5), 0.15);
     }
 
+    .banner button,
     .banner .button {
         background-color: alpha (@banner_fg_color, 0.6);
         background-image: none;
@@ -51,28 +52,35 @@ const string BANNER_STYLE_CSS = """
         font-weight: 600;
     }
 
+    .banner button.destructive-action,
+    .banner button.suggested-action,
     .banner .button.destructive-action,
     .banner .button.suggested-action {
         background-color: alpha (@banner_fg_color, 0.8);
         border-color: alpha (@banner_fg_color, 0.9);
     }
 
+    .banner button:focus,
     .banner .button:focus {
         background-color: alpha (@banner_fg_color, 0.9);
         border-color: @banner_fg_color;
     }
 
+    .banner button:active,
+    .banner button:checked,
     .banner .button:active,
     .banner .button:checked {
         background-color: alpha (@banner_fg_color, 0.5);
         border-color: alpha (@banner_fg_color, 0.6);
     }
 
+    .banner button image,
     .banner .button GtkImage {
         color: @banner_bg_color;
         icon-shadow: 0 1px 1px alpha (@banner_fg_color, 0.1);
     }
 
+    .banner button label,
     .banner .button .label {
         color: @banner_bg_color;
         text-shadow: 0 1px 1px alpha (@banner_fg_color, 0.1);
