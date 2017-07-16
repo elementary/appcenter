@@ -168,7 +168,7 @@ namespace AppCenter {
                     }
                 }
 
-                package_author.label = _("by %s").printf (author);
+                package_author.label = author;
             }
 
             image.gicon = package.get_icon (icon_size);
