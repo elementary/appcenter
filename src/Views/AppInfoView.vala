@@ -196,7 +196,11 @@ namespace AppCenter.Views {
                 package_summary.valign = Gtk.Align.START;
                 header_grid.attach (package_summary, 1, 1, 3, 1);
             }
-            header_grid.attach (action_stack, 3, 0, 1, 1);
+
+            if (!package.is_local) {
+                header_grid.attach (action_stack, 3, 0, 1, 1);
+            }
+            
             header_box.add (header_grid);
 
             var footer_grid = new Gtk.Grid ();

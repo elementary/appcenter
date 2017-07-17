@@ -15,11 +15,13 @@
 */
 
 public class AppCenter.App : Granite.Application {
-    const OptionEntry[] appcenter_options =  {
+    public const OptionEntry[] APPCENTER_OPTIONS =  {
         { "show-updates", 'u', 0, OptionArg.NONE, out show_updates,
         "Display the Installed Panel", null},
         { "silent", 's', 0, OptionArg.NONE, out silent,
         "Run the Application in background", null},
+        { "load-local", 'l', 0, OptionArg.FILENAME, out local_path,
+        "Add a local AppStream XML file to the package list", "FILENAME" },
         { null }
     };
 
@@ -27,6 +29,8 @@ public class AppCenter.App : Granite.Application {
 
     public static bool show_updates;
     public static bool silent;
+    public static string? local_path;
+    public static AppCenterCore.Package? local_package;
     private MainWindow? main_window;
 
     private uint registration_id = 0;
@@ -47,7 +51,6 @@ public class AppCenter.App : Granite.Application {
         build_version_info = Build.VERSION_INFO;
 
         app_launcher = "io.elementary.appcenter.desktop";
-        add_main_option_entries (appcenter_options);
 
         var quit_action = new SimpleAction ("quit", null);
         quit_action.activate.connect (() => {
@@ -121,6 +124,16 @@ public class AppCenter.App : Granite.Application {
             silent = false;
             hold ();
             return;
+        }
+
+        if (local_path != null) {
+            var file = File.new_for_commandline_arg (local_path);
+
+            try {
+                local_package = client.add_local_component_file (file);
+            } catch (Error e) {
+                warning ("Failed to load local AppStream XML file: %s", e.message);
+            }
         }
 
         if (main_window == null) {
@@ -239,6 +252,17 @@ public class AppCenter.App : Granite.Application {
 }
 
 public static int main (string[] args) {
+    try {
+        var opt_context = new OptionContext (null);
+        opt_context.set_help_enabled (true);
+        opt_context.add_main_entries (AppCenter.App.APPCENTER_OPTIONS, null);
+        opt_context.parse (ref args);
+    } catch (OptionError e) {
+        stdout.printf ("error: %s\n", e.message);
+        stdout.printf ("Run '%s --help' to see a full list of available command line options.\n", args[0]);
+        return 0;
+    }
+
     var application = new AppCenter.App ();
     return application.run (args);
 }
