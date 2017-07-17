@@ -135,6 +135,7 @@ public class AppCenterCore.Client : Object {
         if (component != null) {
             string name = _("%s (local)").printf (component.get_name ());
             string id = "%s%s".printf (component.get_id (), Package.LOCAL_ID_SUFFIX);
+            
             component.set_name (name, null);
             component.set_id (id);
             component.set_origin (Package.APPCENTER_PACKAGE_ORIGIN);
