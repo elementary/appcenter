@@ -25,7 +25,8 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
     private const string STRIPE_URI = "https://api.stripe.com/v1/tokens?email=%s"
                             + "&payment_user_agent=%s&amount=%s&card[number]=%s"
                             + "&card[cvc]=%s&card[exp_month]=%s&card[exp_year]=%s"
-                            + "&key=%s&currency=USD";
+                            + "&key=%s"
+                            + "&currency=USD";
 
     private const string INTERNAL_ERROR_MESSAGE = N_("An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused.");
     private const string DEFAULT_ERROR_MESSAGE = N_("Please review your payment info and try again.");
