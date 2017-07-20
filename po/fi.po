@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-07-16 14:26+0000\n"
+"PO-Revision-Date: 2017-07-19 05:46+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish "
-"<https://l10n.elementary.io/projects/appcenter/appcenter/fi/>\n"
+"<https://weblate.elementary.io/projects/appcenter/appcenter/fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.14\n"
+"X-Generator: Weblate 2.15\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #: ../src/Application.vala:40
@@ -407,9 +407,8 @@ msgid "Search Apps"
 msgstr "Etsi sovelluksia"
 
 #: ../src/MainWindow.vala:161
-#, fuzzy
 msgid "Network Is Not Available"
-msgstr "Kuvakaappausta ei ole saatavilla"
+msgstr "Verkkoyhteys ei ole saatavilla"
 
 #: ../src/MainWindow.vala:162
 msgid "Connect to the internet to install or update apps."

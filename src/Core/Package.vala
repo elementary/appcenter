@@ -24,7 +24,7 @@ public errordomain PackageLaunchError {
 }
 
 public class AppCenterCore.Package : Object {
-    private const string APPCENTER_PACKAGE_ORIGIN = "appcenter-xenial-main";
+    public const string APPCENTER_PACKAGE_ORIGIN = "appcenter-xenial-main";
     private const string ELEMENTARY_STABLE_PACKAGE_ORIGIN = "stable-xenial-main";
     private const string ELEMENTARY_DAILY_PACKAGE_ORIGIN = "daily-xenial-main";
 
@@ -41,6 +41,7 @@ public class AppCenterCore.Package : Object {
     }
 
     public const string OS_UPDATES_ID = "xxx-os-updates";
+    public const string LOCAL_ID_SUFFIX = ".appcenter-local";
     public const string DEFAULT_PRICE_DOLLARS = "1";
 
     public AppStream.Component component { get; construct; }
@@ -102,6 +103,12 @@ public class AppCenterCore.Package : Object {
        get {
            return component.get_kind () == AppStream.ComponentKind.DRIVER;
        }
+    }
+
+    public bool is_local {
+        get {
+            return component.get_id ().has_suffix (LOCAL_ID_SUFFIX);
+        }
     }
 
     public bool is_native {
@@ -442,7 +449,7 @@ public class AppCenterCore.Package : Object {
     }
 
     public Pk.Package? find_package () {
-        if (component.id == OS_UPDATES_ID) {
+        if (component.id == OS_UPDATES_ID || is_local) {
             return null;
         }
 
