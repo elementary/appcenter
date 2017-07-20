@@ -453,7 +453,6 @@ public class AppCenterCore.Package : Object {
             return null;
         }
 
-        
         if (pk_package != null) {
             return pk_package;
         }
