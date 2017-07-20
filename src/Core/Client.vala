@@ -123,6 +123,34 @@ public class AppCenterCore.Client : Object {
         return task_count > 0;
     }
 
+    public Package? add_local_component_file (File file) throws Error {
+        var metadata = new AppStream.Metadata ();
+        try {
+            metadata.parse_file (file, AppStream.FormatKind.XML);
+        } catch (Error e) {
+            throw e;
+        }
+
+        var component = metadata.get_component ();
+        if (component != null) {
+            string name = _("%s (local)").printf (component.get_name ());
+            string id = "%s%s".printf (component.get_id (), Package.LOCAL_ID_SUFFIX);
+            
+            component.set_name (name, null);
+            component.set_id (id);
+            component.set_origin (Package.APPCENTER_PACKAGE_ORIGIN);
+
+            appstream_pool.add_component (component);
+            
+            var package = new AppCenterCore.Package (component);
+            package_list[id] = package;
+
+            return package;
+        }
+
+        return null;
+    }
+
     public async Pk.Exit install_package (Package package, Pk.ProgressCallback cb, GLib.Cancellable cancellable) throws GLib.Error {
         task_count++;
 

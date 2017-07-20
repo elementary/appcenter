@@ -180,6 +180,12 @@ namespace AppCenter.Widgets {
             protected override void set_up_package (uint icon_size = 48) {
                 package_summary.label = package.get_summary ();
                 package_summary.ellipsize = Pango.EllipsizeMode.END;
+
+                if (package.is_local) {
+                    action_stack.no_show_all = true;
+                    action_stack.visible = false;
+                }
+
                 base.set_up_package (icon_size);
             }
         }
