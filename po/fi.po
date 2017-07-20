@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-05-29 14:22+0000\n"
+"PO-Revision-Date: 2017-07-16 14:26+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/fi/>\n"
@@ -69,7 +69,7 @@ msgstr "Peru"
 msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
-msgstr ""
+msgstr "Korttiasi käsitellessä tapahtui virhe. Yritä myöhemmin uudelleen."
 
 #: ../src/Dialogs/StripeDialog.vala:31
 msgid "Please review your payment info and try again."
@@ -84,10 +84,12 @@ msgid ""
 "Your email address is used to send a receipt. It is never stored and you "
 "will not be subscribed to a mailing list."
 msgstr ""
+"Sähköpostiosoitettasi käytetään kuitin lähettämiseen. Sitä ei tallenneta "
+"mihinkään, etkä päädy millekään postituslistalle."
 
 #: ../src/Dialogs/StripeDialog.vala:88
 msgid "Card Number"
-msgstr ""
+msgstr "Kortin numero"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: ../src/Dialogs/StripeDialog.vala:100
@@ -96,16 +98,15 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:120
 msgid "CVC"
-msgstr ""
+msgstr "CVC"
 
 #: ../src/Dialogs/StripeDialog.vala:157
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Yksityisyyskäytäntö"
 
 #: ../src/Dialogs/StripeDialog.vala:168 ../src/Dialogs/StripeDialog.vala:284
-#, fuzzy
 msgid "Pay $%d.00"
-msgstr "Maksa $%s.00"
+msgstr "Maksa $%d.00"
 
 #: ../src/Dialogs/StripeDialog.vala:213
 msgid "Processing"
@@ -127,83 +128,92 @@ msgstr "Yritä uudelleen"
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr ""
+"Kortin numero on väärin. Yritä uudelleen käyttäen oikeaa kortin numeroa."
 
 #: ../src/Dialogs/StripeDialog.vala:465
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"Vanhenemiskuukausi on virheellinen. Yritä uudelleen käyttäen oikeaa "
+"vanhenemispäiväystä."
 
 #: ../src/Dialogs/StripeDialog.vala:467 ../src/Dialogs/StripeDialog.vala:525
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"Vanhenemisvuosi on väärin. Yritä uudelleen käyttäen oikeaa "
+"vanhenemispäiväystä."
 
 #: ../src/Dialogs/StripeDialog.vala:470 ../src/Dialogs/StripeDialog.vala:523
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr ""
+msgstr "CVC-numero on väärin. Yritä uudelleen käyttäen oikeaa CVC:tä."
 
 #: ../src/Dialogs/StripeDialog.vala:472 ../src/Dialogs/StripeDialog.vala:514
 msgid "The card has expired. Please try again with a different card."
-msgstr ""
+msgstr "Kortti on vanhentunut. Yritä uudelleen käyttäen toista korttia."
 
 #: ../src/Dialogs/StripeDialog.vala:492
 msgid "There are too many payment requests at the moment, please retry later."
-msgstr ""
+msgstr "Liian monta samanaikaista maksupyyntöä, yritä myöhemmin uudelleen."
 
 #: ../src/Dialogs/StripeDialog.vala:508
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
 msgstr ""
+"Tämä kortti ei tue tämänkaltaista maksua. Yritä uudelleen käyttäen toista "
+"korttia."
 
 #: ../src/Dialogs/StripeDialog.vala:510
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
 msgstr ""
+"Valuutta ei ole tuettu tämän kortin toimesta. Yritä uudelleen käyttäen "
+"toista korttia."
 
 #: ../src/Dialogs/StripeDialog.vala:512
 msgid "The transaction has already been processed."
-msgstr ""
+msgstr "Maksu on jo käsitelty."
 
 #: ../src/Dialogs/StripeDialog.vala:516
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "Postal code."
-msgstr ""
+msgstr "Postinumero on väärin. Yritä uudelleen käyttäen oikeaa postinumeroa."
 
 #: ../src/Dialogs/StripeDialog.vala:518
 msgid "You don't have enough funds. Please use an alternative payment method."
-msgstr ""
+msgstr "Tililläsi ei ole riittävästi rahaa. Käytä jotain toista maksutapaa."
 
 #: ../src/Dialogs/StripeDialog.vala:520
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr ""
+msgstr "Summa on virheellinen. Yritä uudelleen käyttäen kelvollista summaa."
 
 #: ../src/Dialogs/StripeDialog.vala:531
 msgid "The pin number is incorrect. Please try again using the correct pin."
-msgstr ""
+msgstr "PIN-numero on väärin. Yritä uudelleen käyttäen oikeaa PIN-numeroa."
 
 #: ../src/Dialogs/StripeDialog.vala:533
 msgid ""
 "There has been too many pin attempts. Please try again with a different card."
-msgstr ""
+msgstr "Liian monta PIN-yritystä. Yritä uudelleen käyttäen toista korttia."
 
 #: ../src/Dialogs/StripeDialog.vala:553
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
-msgstr ""
+msgstr "Maksun suorittaminen ei onnistu. Pyydä lisätietoja omasta pankistasi."
 
 #: ../src/Dialogs/StripeDialog.vala:556
 msgid "The balance or credit limit on the card has been reached."
-msgstr ""
+msgstr "Kortin luottoraja on ylittynyt."
 
 #: ../src/Dialogs/StripeDialog.vala:559
 msgid "The given card is a test card. Please use a real card to proceed."
-msgstr ""
+msgstr "Annettu kortti on testikortti. Käytä oikeaa korttia jatkaaksesi."
 
 #: ../src/Views/InstalledView.vala:51 ../src/MainWindow.vala:130
 msgctxt "view"
@@ -254,7 +264,7 @@ msgstr "Ohje"
 
 #: ../src/Views/Homepage.vala:104
 msgid "Recently Updated"
-msgstr ""
+msgstr "Äskettäin päivitetty"
 
 #: ../src/Views/Homepage.vala:156
 msgid "Categories"
@@ -389,7 +399,7 @@ msgstr "Ajan tasalla"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:120
 msgid "Drivers"
-msgstr ""
+msgstr "Ajurit"
 
 #: ../src/MainWindow.vala:118 ../src/MainWindow.vala:146
 #: ../src/MainWindow.vala:316 ../src/MainWindow.vala:338
@@ -403,11 +413,11 @@ msgstr "Kuvakaappausta ei ole saatavilla"
 
 #: ../src/MainWindow.vala:162
 msgid "Connect to the internet to install or update apps."
-msgstr ""
+msgstr "Yhdistä internetiin asentaaksesi tai päivittääksesi sovelluksia."
 
 #: ../src/MainWindow.vala:165
 msgid "Network Settings…"
-msgstr ""
+msgstr "Verkon asetukset…"
 
 #: ../src/MainWindow.vala:298
 msgid "Search %s"
