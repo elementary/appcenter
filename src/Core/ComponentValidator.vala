@@ -1,4 +1,3 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
  * Copyright (c) 2017 elementary LLC. (https://elementary.io)
  *
@@ -19,14 +18,16 @@
  */
 
 public class AppCenterCore.ComponentValidator : Object {
-    private string[] blacklist;
+    private Gee.HashMap<string, void*> blacklist;
 
     private static GLib.Once<ComponentValidator> instance;
     public static unowned ComponentValidator get_default () {
         return instance.once (() => { return new ComponentValidator (); });
     }
 
-    private ComponentValidator () {
+    construct {
+        blacklist = new Gee.HashMap<string, void*> ();
+
         string blacklist_path = Path.build_filename (Build.CONFIGDIR, "appcenter.blacklist");
 
         try {
@@ -38,12 +39,17 @@ public class AppCenterCore.ComponentValidator : Object {
         }
     }
 
+    private ComponentValidator () {
+
+    }
+
     public bool validate (AppStream.Component component) {
         if (component.get_kind () == AppStream.ComponentKind.CONSOLE_APP) {
             return false;
         }
 
-        if (component.get_id () in blacklist) {
+        unowned string id = component.get_id ();
+        if (blacklist.has_key (id)) {
             return false;
         }
 
@@ -58,7 +64,7 @@ public class AppCenterCore.ComponentValidator : Object {
             
             string token = line.strip ();
             if (token != "") {
-                blacklist += token;
+                blacklist[token] = null;
             }
         }
     }
