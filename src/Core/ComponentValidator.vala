@@ -18,7 +18,7 @@
  */
 
 public class AppCenterCore.ComponentValidator : Object {
-    private Gee.HashMap<string, void*> blacklist;
+    private Gee.HashSet<string> blacklist;
 
     private static GLib.Once<ComponentValidator> instance;
     public static unowned ComponentValidator get_default () {
@@ -26,7 +26,7 @@ public class AppCenterCore.ComponentValidator : Object {
     }
 
     construct {
-        blacklist = new Gee.HashMap<string, void*> ();
+        blacklist = new Gee.HashSet<string> ();
 
         string blacklist_path = Path.build_filename (Build.CONFIGDIR, "appcenter.blacklist");
 
@@ -48,8 +48,7 @@ public class AppCenterCore.ComponentValidator : Object {
             return false;
         }
 
-        unowned string id = component.get_id ();
-        if (blacklist.has_key (id)) {
+        if (component.get_id () in blacklist) {
             return false;
         }
 
@@ -64,7 +63,7 @@ public class AppCenterCore.ComponentValidator : Object {
             
             string token = line.strip ();
             if (token != "") {
-                blacklist[token] = null;
+                blacklist.add (token);
             }
         }
     }
