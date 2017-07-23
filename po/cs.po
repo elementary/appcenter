@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-07-22 22:40+0000\n"
-"Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
+"PO-Revision-Date: 2017-07-23 00:49+0000\n"
+"Last-Translator: Tonda Pavlík <kontakt@playton.cz>\n"
 "Language-Team: Czech "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/cs/>\n"
 "Language: cs\n"
@@ -194,7 +194,7 @@ msgstr "Platba již byla zpracována."
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "Postal code."
-msgstr ""
+msgstr "PSČ není správně. Prosím zadejte správné PSČ."
 
 #: ../src/Dialogs/StripeDialog.vala:518
 msgid "You don't have enough funds. Please use an alternative payment method."
@@ -206,8 +206,9 @@ msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:531
+#, fuzzy
 msgid "The pin number is incorrect. Please try again using the correct pin."
-msgstr ""
+msgstr "Kód PIN není správný. Prosím zajdete správný PIN kód"
 
 #: ../src/Dialogs/StripeDialog.vala:533
 msgid ""
