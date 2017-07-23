@@ -1,0 +1,14 @@
+# This file is a list of AppStream component ID's that
+# AppCenter will not load at it's initialization.
+#
+# Each line of this file corresponds to a single AppStream component ID,
+# see the <id> tag here: https://www.freedesktop.org/software/appstream/docs/chap-CollectionData.html for more information.
+# Lines beggining with "#" will be ignored.
+#
+# An example of a configuration that will block "id1.desktop" and "id2.desktop"
+# would look like this:
+#   id1.desktop
+#   id2.desktop
+#
+# End of example file.
+#

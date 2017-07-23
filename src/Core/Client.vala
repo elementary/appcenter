@@ -81,7 +81,13 @@ public class AppCenterCore.Client : Object {
 
         try {
             appstream_pool.load ();
+
+            var comp_validator = ComponentValidator.get_default ();
             appstream_pool.get_components ().foreach ((comp) => {
+                if (!comp_validator.validate (comp)) {
+                    return;
+                }
+
                 var package = new AppCenterCore.Package (comp);
                 foreach (var pkg_name in comp.get_pkgnames ()) {
                     package_list[pkg_name] = package;
