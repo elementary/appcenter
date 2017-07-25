@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-06-03 08:25+0000\n"
-"Last-Translator: renato <renatomonroy.95@outlook.com>\n"
+"PO-Revision-Date: 2017-07-20 21:22+0000\n"
+"Last-Translator: haggen svastian <h2gn@openmailbox.org>\n"
 "Language-Team: Spanish "
-"<https://l10n.elementary.io/projects/appcenter/appcenter/es/>\n"
+"<https://weblate.elementary.io/projects/appcenter/appcenter/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.14\n"
+"X-Generator: Weblate 2.15\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
 #: ../src/Application.vala:40
@@ -88,24 +88,24 @@ msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
-"Se produjo un error al procesar la tarjeta. Por favor, inténtelo de nuevo "
-"más tarde. Nos disculpamos por cualquier inconveniente causado."
+"Ha ocurrido un error procesando la tarjeta. Por favor, inténtelo más tarde. "
+"Sentimos las molestias."
 
 #: ../src/Dialogs/StripeDialog.vala:31
 msgid "Please review your payment info and try again."
-msgstr "Por favor, revise la información de su pago e inténtelo de nuevo."
+msgstr "Revise la información de su pago e intente otra vez, por favor."
 
 #: ../src/Dialogs/StripeDialog.vala:75
 msgid "Email"
-msgstr "Correo"
+msgstr "Correo electrónico"
 
 #: ../src/Dialogs/StripeDialog.vala:77
 msgid ""
 "Your email address is used to send a receipt. It is never stored and you "
 "will not be subscribed to a mailing list."
 msgstr ""
-"Su dirección de correo electrónico es usado para enviar un recibo. Nunca se "
-"almacena y no se le suscribirá a una lista de correo."
+"Su dirección de correo electrónico se utiliza para enviar un recibo. Nunca "
+"se almacena y no se suscribirá a una lista de correo."
 
 #: ../src/Dialogs/StripeDialog.vala:88
 msgid "Card Number"
@@ -134,11 +134,11 @@ msgstr "Procesando"
 
 #: ../src/Dialogs/StripeDialog.vala:238
 msgid "There Was a Problem Processing Your Payment"
-msgstr "Ocurrió un problema procesando su pago"
+msgstr "Hubo un problema al procesar su pago"
 
 #: ../src/Dialogs/StripeDialog.vala:276
 msgid "Pay Later"
-msgstr "Pagar más tarde"
+msgstr "Pagar luego"
 
 #: ../src/Dialogs/StripeDialog.vala:277
 msgid "Retry"
@@ -148,7 +148,7 @@ msgstr "Re-intentar"
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr ""
-"El número de tarjeta es incorrecto. Inténtalo de nuevo con el número de "
+"El número de tarjeta es incorrecto. Inténtelo de nuevo con el número de "
 "tarjeta correcto."
 
 #: ../src/Dialogs/StripeDialog.vala:465
@@ -156,7 +156,7 @@ msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
-"El mes de caducidad no es válido. Inténtalo de nuevo utilizando la fecha de "
+"El mes de caducidad no es válido. Inténtelo de nuevo utilizando la fecha de "
 "caducidad correcta."
 
 #: ../src/Dialogs/StripeDialog.vala:467 ../src/Dialogs/StripeDialog.vala:525
@@ -164,8 +164,8 @@ msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
-"El año de caducidad no es válido. Inténtalo de nuevo utilizando la fecha de "
-"caducidad correcta."
+"El año de vencimiento no es válido. Inténtelo de nuevo utilizando la fecha "
+"de caducidad correcta."
 
 #: ../src/Dialogs/StripeDialog.vala:470 ../src/Dialogs/StripeDialog.vala:523
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
@@ -174,12 +174,12 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:472 ../src/Dialogs/StripeDialog.vala:514
 msgid "The card has expired. Please try again with a different card."
-msgstr "La tarjeta ha caducado. Inténtalo de nuevo con una tarjeta diferente."
+msgstr "La tarjeta ha caducado. Inténtelo de nuevo con una tarjeta diferente."
 
 #: ../src/Dialogs/StripeDialog.vala:492
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr ""
-"Hay demasiadas solicitudes de pago en este momento. Vuelve a intentarlo más "
+"Hay demasiadas solicitudes de pago en este momento, vuelva a intentarlo más "
 "tarde."
 
 #: ../src/Dialogs/StripeDialog.vala:508

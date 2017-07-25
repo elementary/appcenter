@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-06-24 21:23+0000\n"
-"Last-Translator: Pavel Petr <pavelpetr.cz@gmail.com>\n"
+"PO-Revision-Date: 2017-07-23 00:49+0000\n"
+"Last-Translator: Tonda Pavlík <kontakt@playton.cz>\n"
 "Language-Team: Czech "
-"<https://l10n.elementary.io/projects/appcenter/appcenter/cs/>\n"
+"<https://weblate.elementary.io/projects/appcenter/appcenter/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 2.14\n"
+"X-Generator: Weblate 2.15\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #: ../src/Application.vala:40
@@ -80,6 +80,8 @@ msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
+"Při zpracování karty se vyskytla chyba. Zkuste to prosím znovu později.  "
+"Omlouváme se za jakékoli způsobené potíže."
 
 #: ../src/Dialogs/StripeDialog.vala:31
 msgid "Please review your payment info and try again."
@@ -94,6 +96,8 @@ msgid ""
 "Your email address is used to send a receipt. It is never stored and you "
 "will not be subscribed to a mailing list."
 msgstr ""
+"Vaše emailová adresa se používá pro zaslání účtenky. Nikdy nebude trvale "
+"uložena a nebudete zapsán do seznamu pro příjem pošty."
 
 #: ../src/Dialogs/StripeDialog.vala:88
 msgid "Card Number"
@@ -102,7 +106,7 @@ msgstr "Číslo karty"
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: ../src/Dialogs/StripeDialog.vala:100
 msgid "MM / YY"
-msgstr ""
+msgstr "MM / RR"
 
 #: ../src/Dialogs/StripeDialog.vala:120
 msgid "CVC"
@@ -110,7 +114,7 @@ msgstr "CVC"
 
 #: ../src/Dialogs/StripeDialog.vala:157
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Zásady soukromí"
 
 #: ../src/Dialogs/StripeDialog.vala:168 ../src/Dialogs/StripeDialog.vala:284
 msgid "Pay $%d.00"
@@ -136,52 +140,61 @@ msgstr "Zkusit znovu"
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr ""
+"Číslo karty je neplatné. Zkuste prosím znovu použít správné číslo karty."
 
 #: ../src/Dialogs/StripeDialog.vala:465
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"Měsíc konce platnosti je nesprávný. Zkuste prosím znovu použít správný měsíc "
+"konce platnosti."
 
 #: ../src/Dialogs/StripeDialog.vala:467 ../src/Dialogs/StripeDialog.vala:525
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"Rok konce platnosti je nesprávný. Zkuste prosím znovu použít správné datum "
+"konce platnosti."
 
 #: ../src/Dialogs/StripeDialog.vala:470 ../src/Dialogs/StripeDialog.vala:523
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr ""
+msgstr "CVC číslo je nesprávné. Zkuste prosím znovu použít správné CVC."
 
 #: ../src/Dialogs/StripeDialog.vala:472 ../src/Dialogs/StripeDialog.vala:514
 msgid "The card has expired. Please try again with a different card."
-msgstr ""
+msgstr "Platnost karty vypršela. Zkuste to prosím znovu s jinou kartou."
 
 #: ../src/Dialogs/StripeDialog.vala:492
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr ""
+"Právě vyřizujeme příliš mnoho požadavků na platbu, zkuste to prosím později."
 
 #: ../src/Dialogs/StripeDialog.vala:508
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
 msgstr ""
+"Tato karta nepodporuje tento typ platby. Zkuste to prosím znovu s jinou "
+"kartou."
 
 #: ../src/Dialogs/StripeDialog.vala:510
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
 msgstr ""
+"Tato měna není kartou podporována. Zkuste to prosím znovu s jinou kartou."
 
 #: ../src/Dialogs/StripeDialog.vala:512
 msgid "The transaction has already been processed."
-msgstr ""
+msgstr "Platba již byla zpracována."
 
 #: ../src/Dialogs/StripeDialog.vala:516
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "Postal code."
-msgstr ""
+msgstr "PSČ není správně. Prosím zadejte správné PSČ."
 
 #: ../src/Dialogs/StripeDialog.vala:518
 msgid "You don't have enough funds. Please use an alternative payment method."
@@ -193,8 +206,9 @@ msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:531
+#, fuzzy
 msgid "The pin number is incorrect. Please try again using the correct pin."
-msgstr ""
+msgstr "Kód PIN není správný. Prosím zajdete správný PIN kód"
 
 #: ../src/Dialogs/StripeDialog.vala:533
 msgid ""
@@ -418,7 +432,6 @@ msgid "Connect to the internet to install or update apps."
 msgstr "Pro instalaci nebo aktualizaci aplikací se připojte k internetu."
 
 #: ../src/MainWindow.vala:165
-#, fuzzy
 msgid "Network Settings…"
 msgstr "Nastavení sítě…"
 

@@ -117,6 +117,11 @@ namespace AppCenter {
 
             add (category_scrolled);
 
+            var local_package = App.local_package;
+            if (local_package != null) {
+                newest_banner.add_package (local_package);
+            }
+
             houston.get_app_ids.begin ("/newest/project", (obj, res) => {
                 var newest_ids = houston.get_app_ids.end (res);
                 new Thread<void*> ("update-banner", () => {

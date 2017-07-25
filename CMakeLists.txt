@@ -2,8 +2,11 @@ project (appcenter C)
 
 cmake_minimum_required (VERSION 2.8)
 
+include (GNUInstallDirs)
+
 set (DATADIR "${CMAKE_INSTALL_PREFIX}/share")
 set (PKGDATADIR "${DATADIR}/${CMAKE_PROJECT_NAME}")
+set (CONFIGDIR "${CMAKE_INSTALL_FULL_SYSCONFDIR}/appcenter")
 set (GETTEXT_PACKAGE ${CMAKE_PROJECT_NAME})
 set (EXEC_NAME ${CMAKE_PROJECT_NAME})
 set (APP_NAME "AppCenter")
@@ -17,7 +20,6 @@ set (DOLLAR "$")
 include (CTest)
 if (BUILD_TESTING)
     add_test (NAME validate-desktop-file COMMAND desktop-file-validate ${CMAKE_BINARY_DIR}/data/io.elementary.appcenter.desktop)
-    add_test (NAME validate-daemon-desktop-file COMMAND desktop-file-validate ${CMAKE_BINARY_DIR}/data/io.elementary.appcenter-daemon.desktop)
     add_test (NAME validate-appdata COMMAND appstreamcli validate ${CMAKE_BINARY_DIR}/data/appcenter.appdata.xml)
 endif ()
 

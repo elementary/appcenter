@@ -1,10 +1,10 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-06-23 02:59+0000\n"
-"Last-Translator: Harry Oxantoriza <reez.aza@gmail.com>\n"
+"PO-Revision-Date: 2017-07-20 12:58+0700\n"
+"Last-Translator: Kukuh Syafaat <syafaatkukuh@gmail.com>\n"
 "Language-Team: Indonesian "
 "<https://l10n.elementary.io/projects/appcenter/appcenter/id/>\n"
 "Language: id\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.14\n"
+"X-Generator: Poedit 2.0.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #: ../src/Application.vala:40
@@ -31,6 +31,7 @@ msgstr ""
 #: ../src/Application.vala:114
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr ""
+"Tautan yang ditentukan '%s' tidak dapat ditemukan, cari sebagai gantinya"
 
 #: ../src/Application.vala:216
 msgid "Application installed"
@@ -217,22 +218,24 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:556
 msgid "The balance or credit limit on the card has been reached."
-msgstr ""
+msgstr "Batas saldo atau kredit pada kartu telah tercapai."
 
 #: ../src/Dialogs/StripeDialog.vala:559
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
+"Kartu yang diberikan adalah kartu tes. Silakan gunakan kartu asli untuk "
+"melanjutkan."
 
 #: ../src/Views/InstalledView.vala:51 ../src/MainWindow.vala:130
 msgctxt "view"
 msgid "Updates"
-msgstr ""
+msgstr "Pembaruan"
 
 #. / TRANSLATORS: the name of the Search view
 #: ../src/Views/SearchView.vala:37
 msgctxt "view"
 msgid "Search"
-msgstr ""
+msgstr "Cari"
 
 #: ../src/Views/AppListView.vala:121
 msgid "A restart is required to complete the installation of updates"
@@ -299,70 +302,70 @@ msgstr ""
 
 #: ../src/Widgets/CategoryFlowBox.vala:29
 msgid "Audio"
-msgstr ""
+msgstr "Suara"
 
 #: ../src/Widgets/CategoryFlowBox.vala:30
 msgid "Development"
-msgstr ""
+msgstr "Pengembangan"
 
 #: ../src/Widgets/CategoryFlowBox.vala:31
 msgid "Accessories"
-msgstr ""
+msgstr "Aksesoris"
 
 #: ../src/Widgets/CategoryFlowBox.vala:32
 msgid "Office"
-msgstr ""
+msgstr "Perkantoran"
 
 #: ../src/Widgets/CategoryFlowBox.vala:33
 msgid "System"
-msgstr ""
+msgstr "Sistem"
 
 #: ../src/Widgets/CategoryFlowBox.vala:34
 msgid "Video"
-msgstr ""
+msgstr "Video"
 
 #: ../src/Widgets/CategoryFlowBox.vala:35
 msgid "Graphics"
-msgstr ""
+msgstr "Grafis"
 
 #: ../src/Widgets/CategoryFlowBox.vala:36
 msgid "Games"
-msgstr ""
+msgstr "Permainan"
 
 #: ../src/Widgets/CategoryFlowBox.vala:37
 msgid "Education"
-msgstr ""
+msgstr "Pendidikan"
 
 #: ../src/Widgets/CategoryFlowBox.vala:38
 msgid "Internet"
-msgstr ""
+msgstr "Internet"
 
 #: ../src/Widgets/CategoryFlowBox.vala:39
 msgid "Science & Engineering"
-msgstr ""
+msgstr "Sains dan Teknik"
 
 #: ../src/Widgets/CategoryFlowBox.vala:40
 msgid "Universal Access"
-msgstr ""
+msgstr "Akses Universal"
 
 #: ../src/Widgets/HumbleButton.vala:85
 #: ../src/Widgets/AbstractAppContainer.vala:195
 msgid "Free"
-msgstr ""
+msgstr "Bebas"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: ../src/Widgets/HumbleButton.vala:152
 msgid "$%d.00"
-msgstr ""
+msgstr "$%d.00"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: ../src/Widgets/HumbleButton.vala:155
 msgid "$%d"
-msgstr ""
+msgstr "$%d"
 
 #: ../src/Widgets/AbstractAppContainer.vala:105
 msgid "Uninstall"
-msgstr ""
+msgstr "Hapus Pemasangan"
 
 #: ../src/Widgets/AbstractAppContainer.vala:108
 msgid "Open"
@@ -370,45 +373,44 @@ msgstr "Buka"
 
 #: ../src/Widgets/AbstractAppContainer.vala:161
 msgid "The %s Developers"
-msgstr ""
+msgstr "Pengembang %s"
 
 #: ../src/Widgets/AbstractAppContainer.vala:165
 msgid "by %s"
-msgstr ""
+msgstr "oleh %s"
 
 #: ../src/Widgets/AbstractAppContainer.vala:209
 msgid "Update"
-msgstr ""
+msgstr "Perbarui"
 
 #: ../src/Widgets/AbstractAppList.vala:35
 msgid "No Results"
-msgstr ""
+msgstr "Tidak Ada Hasil"
 
 #: ../src/Widgets/AbstractAppList.vala:35
 msgid "No apps could be found. Try changing search terms."
-msgstr ""
+msgstr "Tidak ada aplikasi yang bisa ditemukan. Coba ubah istilah penelusuran."
 
 #: ../src/Widgets/UpdateHeaderRow.vala:68
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u Pembaruan Tersedia"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:69
 msgid "Size: %s"
-msgstr ""
+msgstr "Ukuran: %s"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:105
 msgid "Searching for updates…"
-msgstr ""
+msgstr "Mencari pembaruan…"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:112
 msgid "Up to Date"
-msgstr ""
+msgstr "Termutakhir"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:120
 msgid "Drivers"
-msgstr ""
+msgstr "Penggerak"
 
 #: ../src/MainWindow.vala:118 ../src/MainWindow.vala:146
 #: ../src/MainWindow.vala:316 ../src/MainWindow.vala:338
@@ -417,75 +419,73 @@ msgstr "Cari Aplikasi"
 
 #: ../src/MainWindow.vala:161
 msgid "Network Is Not Available"
-msgstr ""
+msgstr "Jaringan Tidak Tersedia"
 
 #: ../src/MainWindow.vala:162
 msgid "Connect to the internet to install or update apps."
-msgstr ""
+msgstr "Sambungkan ke internet untuk memasang atau memperbarui aplikasi."
 
 #: ../src/MainWindow.vala:165
 msgid "Network Settings…"
-msgstr ""
+msgstr "Pengaturan Jaringan…"
 
 #: ../src/MainWindow.vala:298
 msgid "Search %s"
-msgstr ""
+msgstr "Cari %s"
 
 #: ../src/Core/Client.vala:94
 msgid "Operating System Updates"
-msgstr ""
+msgstr "Pembaruan Sistem Operasi"
 
 #: ../src/Core/Client.vala:95
 msgid "Updates to system components"
-msgstr ""
+msgstr "Pembaruan untuk komponen sistem"
 
 #: ../src/Core/Client.vala:459
 msgid "Update Available"
 msgid_plural "Updates Available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Pembaruan Tersedia"
 
 #: ../src/Core/Client.vala:460
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u pembaruan tersedia untuk sistem anda"
 
 #: ../src/Core/Client.vala:489
 msgid "Restart Required"
-msgstr ""
+msgstr "Nyala Ulang Dibutuhkan"
 
 #: ../src/Core/Client.vala:490
 msgid "Please restart your system to finalize updates"
-msgstr ""
+msgstr "Silakan nyalakan ulang sistem Anda untuk menyelesaikan pembaruan"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
-msgstr ""
+msgstr "Memulai"
 
 #: ../src/Core/ChangeInformation.vala:56
 msgid "Waiting"
-msgstr ""
+msgstr "Sedang menunggu"
 
 #: ../src/Core/ChangeInformation.vala:58
 msgid "Running"
-msgstr ""
+msgstr "Sedang berjalan"
 
 #: ../src/Core/ChangeInformation.vala:60
 msgid "Querying"
-msgstr ""
+msgstr "Sedang kueri"
 
 #: ../src/Core/ChangeInformation.vala:62
 msgid "Getting information"
-msgstr ""
+msgstr "Mengambil informasi"
 
 #: ../src/Core/ChangeInformation.vala:64
 msgid "Removing packages"
-msgstr ""
+msgstr "Menghapus paket"
 
 #: ../src/Core/ChangeInformation.vala:66
 msgid "Downloading"
-msgstr ""
+msgstr "Sedang mengunduh"
 
 #: ../src/Core/ChangeInformation.vala:68
 msgid "Installing"
@@ -493,111 +493,111 @@ msgstr "Sedang menginstal"
 
 #: ../src/Core/ChangeInformation.vala:70
 msgid "Refreshing software list"
-msgstr ""
+msgstr "Menyegarkan daftar perangkat lunak"
 
 #: ../src/Core/ChangeInformation.vala:72
 msgid "Installing updates"
-msgstr ""
+msgstr "Sedang memasang pembaruan"
 
 #: ../src/Core/ChangeInformation.vala:74
 msgid "Cleaning up packages"
-msgstr ""
+msgstr "Membersihkan paket"
 
 #: ../src/Core/ChangeInformation.vala:76
 msgid "Obsoleting packages"
-msgstr ""
+msgstr "Mengedaluwarsakan paket"
 
 #: ../src/Core/ChangeInformation.vala:78
 msgid "Resolving dependencies"
-msgstr ""
+msgstr "Mengurai ketergantungan"
 
 #: ../src/Core/ChangeInformation.vala:80
 msgid "Checking signatures"
-msgstr ""
+msgstr "Memeriksa tanda tangan"
 
 #: ../src/Core/ChangeInformation.vala:82
 msgid "Testing changes"
-msgstr ""
+msgstr "Menguji perubahan"
 
 #: ../src/Core/ChangeInformation.vala:84
 msgid "Committing changes"
-msgstr ""
+msgstr "Menerapkan perubahan"
 
 #: ../src/Core/ChangeInformation.vala:86
 msgid "Requesting data"
-msgstr ""
+msgstr "Meminta data"
 
 #: ../src/Core/ChangeInformation.vala:88
 msgid "Finished"
-msgstr ""
+msgstr "Selesai"
 
 #: ../src/Core/ChangeInformation.vala:90
 msgid "Cancelling"
-msgstr ""
+msgstr "Membatalkan"
 
 #: ../src/Core/ChangeInformation.vala:92
 msgid "Downloading repository information"
-msgstr ""
+msgstr "Mengunduh informasi repositori"
 
 #: ../src/Core/ChangeInformation.vala:94
 msgid "Downloading list of packages"
-msgstr ""
+msgstr "Mengunduh daftar paket"
 
 #: ../src/Core/ChangeInformation.vala:96
 msgid "Downloading file lists"
-msgstr ""
+msgstr "Mengunduh daftar berkas"
 
 #: ../src/Core/ChangeInformation.vala:98
 msgid "Downloading lists of changes"
-msgstr ""
+msgstr "Mengunduh daftar perubahan"
 
 #: ../src/Core/ChangeInformation.vala:100
 msgid "Downloading groups"
-msgstr ""
+msgstr "Mengunduh grup"
 
 #: ../src/Core/ChangeInformation.vala:102
 msgid "Downloading update information"
-msgstr ""
+msgstr "Mengunduh informasi pembaruan"
 
 #: ../src/Core/ChangeInformation.vala:104
 msgid "Repackaging files"
-msgstr ""
+msgstr "Mengepak ulang berkas"
 
 #: ../src/Core/ChangeInformation.vala:106
 msgid "Loading cache"
-msgstr ""
+msgstr "Memuat tembolok"
 
 #: ../src/Core/ChangeInformation.vala:108
 msgid "Scanning applications"
-msgstr ""
+msgstr "Memindai aplikasi"
 
 #: ../src/Core/ChangeInformation.vala:110
 msgid "Generating package lists"
-msgstr ""
+msgstr "Membuat daftar paket"
 
 #: ../src/Core/ChangeInformation.vala:112
 msgid "Waiting for package manager lock"
-msgstr ""
+msgstr "Menunggu kunci pengelola paket"
 
 #: ../src/Core/ChangeInformation.vala:114
 msgid "Waiting for authentication"
-msgstr ""
+msgstr "Menunggu otentikasi"
 
 #: ../src/Core/ChangeInformation.vala:116
 msgid "Updating running applications"
-msgstr ""
+msgstr "Memperbarui aplikasi yang sedang berjalan"
 
 #: ../src/Core/ChangeInformation.vala:118
 msgid "Checking applications in use"
-msgstr ""
+msgstr "Memeriksa aplikasi yang digunakan"
 
 #: ../src/Core/ChangeInformation.vala:120
 msgid "Checking libraries in use"
-msgstr ""
+msgstr "Memeriksa pustaka yang digunakan"
 
 #: ../src/Core/ChangeInformation.vala:122
 msgid "Copying files"
-msgstr ""
+msgstr "Menyalin berkas"
 
 #: ../src/Core/ChangeInformation.vala:124
 msgid "Unknown state"
