@@ -7,4 +7,3 @@ configure_file_translation(${CMAKE_CURRENT_SOURCE_DIR}/appcenter.appdata.xml.in 
 install (FILES ${CMAKE_CURRENT_BINARY_DIR}/io.elementary.appcenter.desktop DESTINATION share/applications)
 install (FILES ${CMAKE_CURRENT_BINARY_DIR}/appcenter.appdata.xml DESTINATION share/metainfo)
 install (FILES ${CMAKE_CURRENT_BINARY_DIR}/io.elementary.appcenter.service DESTINATION share/dbus-1/services)
-install (FILES appcenter.blacklist DESTINATION ${CONFIGDIR})
