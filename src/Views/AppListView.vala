@@ -92,11 +92,11 @@ namespace AppCenter.Views {
         protected override int package_row_compare (Widgets.AppListRow row1, Widgets.AppListRow row2) {
             bool p1_is_elementary_native = row1.get_package ().is_native;
 
-            if (p1_is_elementary_native || row2.get_package ().is_native) {
+            if (p1_is_elementary_native != row2.get_package ().is_native) {
                 return p1_is_elementary_native ? -1 : 1;
             }
 
-            return row1.get_name_label ().collate (row1.get_name_label ());
+            return base.package_row_compare (row1, row2);
         }
 
         [CCode (instance_pos = -1)]
