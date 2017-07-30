@@ -58,8 +58,8 @@ namespace AppCenter.Views {
             current_visible_index = 0U;
         }
 
-        protected override Widgets.AppListRow make_row (AppCenterCore.Package package)  {
-            return (Widgets.AppListRow)(new Widgets.PackageRow.list (package, action_button_group, false));
+        protected override Widgets.AppListRow construct_row_for_package (AppCenterCore.Package package)  {
+            return new Widgets.PackageRow.list (package, action_button_group, false);
         }
 
         // Show 20 more apps on the listbox
@@ -67,15 +67,15 @@ namespace AppCenter.Views {
             uint old_index = current_visible_index;
             while (current_visible_index < list_store.get_n_items ()) {
                 var package = (AppCenterCore.Package?) list_store.get_object (current_visible_index);
-                var row = make_row (package);
-                set_up_row (row);
+                var row = construct_row_for_package (package);
+                add_row (row);
                 current_visible_index++;
                 if (old_index + 20 < current_visible_index) {
                     break;
                 }
             }
 
-            after_add_remove_change_row ();
+            on_list_changed ();
         }
 
         private static int compare_packages (AppCenterCore.Package p1, AppCenterCore.Package p2) {
@@ -103,18 +103,14 @@ namespace AppCenter.Views {
         private void row_update_header (Widgets.AppListRow row, Widgets.AppListRow? before) {
             bool elementary_native = row.get_package ().is_native;
 
-            if (!elementary_native && before == null) {
-                make_header (row);
-            }
-
-            if (before != null) {
-                if (!elementary_native && before.get_package ().is_native) {
-                    make_header (row);
+            if (!elementary_native) {
+                if (before == null || (before != null && before.get_package ().is_native)) {
+                    mark_row_non_curated (row);
                 }
             }
         }
 
-        private void make_header (Widgets.AppListRow row) {
+        private void mark_row_non_curated (Widgets.AppListRow row) {
             var header = new Gtk.Label (_("Non-Curated Apps"));
             header.margin = 12;
             header.margin_top = 18;
@@ -125,7 +121,7 @@ namespace AppCenter.Views {
         }
     }
 
-    /** AppList for the Updates View.  Sorts update_available first and shows headers.
+    /** AppList for the Updates View. Sorts update_available first and shows headers.
       * Does not show Uninstall Button **/
     public class AppListUpdateView : AbstractAppList {
         private Gtk.Button? update_all_button;
@@ -185,10 +181,12 @@ namespace AppCenter.Views {
             add (scrolled);
         }
 
-        protected override void after_add_remove_change_row () { list_box.invalidate_headers (); }
+        protected override void on_list_changed () {
+            list_box.invalidate_headers ();
+        }
 
-        protected override Widgets.AppListRow make_row (AppCenterCore.Package package) {
-            return (Widgets.AppListRow)(new Widgets.PackageRow.installed (package, action_button_group, false));
+        protected override Widgets.AppListRow construct_row_for_package (AppCenterCore.Package package) {
+            return new Widgets.PackageRow.installed (package, action_button_group, false);
         }
 
         protected override void on_package_changing (AppCenterCore.Package package, bool is_changing) {
