@@ -49,19 +49,21 @@ namespace AppCenter {
             action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
         }
 
+        protected abstract Widgets.AppListRow construct_row_for_package (AppCenterCore.Package package);
+
         public virtual void add_packages (Gee.Collection<AppCenterCore.Package> packages) {
             foreach (var package in packages) {
-                var row = make_row (package);
-                set_up_row (row);
+                var row = construct_row_for_package (package);
+                add_row (row);
             }
 
-            after_add_remove_change_row ();
+            on_list_changed ();
         }
 
         public virtual void add_package (AppCenterCore.Package package) {
-            var row = make_row (package);
-            set_up_row (row);
-            after_add_remove_change_row ();
+            var row = construct_row_for_package (package);
+            add_row (row);
+            on_list_changed ();
         }
 
         public void remove_package (AppCenterCore.Package package) {
@@ -71,17 +73,23 @@ namespace AppCenter {
                 if (!row.has_package ()) {
                     continue;
                 }
+
                 if (row.get_package () == package) {
                     row.destroy ();
                     break;
                 }
             }
-            after_add_remove_change_row ();
+
+            on_list_changed ();
         }
 
         public virtual void clear () {
             foreach (var r in list_box.get_children ()) {
-                var row = (Widgets.AppListRow)r;
+                var row = r as Widgets.AppListRow;
+                if (row == null) {
+                    continue;
+                }
+
                 if (row.has_package ()) {
                     var package = row.get_package ();
                     package.changing.disconnect (on_package_changing);
@@ -90,24 +98,24 @@ namespace AppCenter {
             };
         }
 
-        protected abstract Widgets.AppListRow make_row (AppCenterCore.Package package); // {
-
-        protected virtual void set_up_row (Widgets.AppListRow row) {
+        protected void add_row (Widgets.AppListRow row) {
             row.show_all ();
             list_box.add (row);
             row.get_package ().changing.connect (on_package_changing);
         }
 
-        protected virtual void after_add_remove_change_row () {}
-
         protected virtual Gee.Collection<AppCenterCore.Package> get_packages () {
             var tree_set = new Gee.TreeSet<AppCenterCore.Package> ();
             foreach (var r in list_box.get_children ()) {
-                var row = (Widgets.AppListRow)r;
+                var row = r as Widgets.AppListRow;
+                if (row == null) {
+                    continue;
+                }
+
                 if (row.has_package ()) {
                     tree_set.add (row.get_package ());
                 }
-            };
+            }
 
             return tree_set;
         }
@@ -124,10 +132,14 @@ namespace AppCenter {
                 packages_changing--;
             }
 
-            assert (packages_changing >=0);
+            assert (packages_changing >= 0);
             if (packages_changing == 0) {
-                after_add_remove_change_row ();
+                on_list_changed ();
             }
+        }
+
+        protected virtual void on_list_changed () {
+
         }
     }
 }
