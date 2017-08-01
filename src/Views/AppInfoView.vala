@@ -20,6 +20,9 @@
 
 namespace AppCenter.Views {
     public class AppInfoView : AppCenter.AbstractAppContainer {
+        private const int MIN_RELEASES = 1;
+        private const int MAX_RELEASES = 5;
+
         static Gtk.CssProvider? previous_css_provider = null;
 
         GenericArray<AppStream.Screenshot> screenshots;
@@ -28,6 +31,7 @@ namespace AppCenter.Views {
         private Gtk.Stack app_screenshots;
         private Gtk.Label app_version;
         private Gtk.ListBox extension_box;
+        private Gtk.ListBox release_box;
         private Gtk.Stack screenshot_stack;
         private Gtk.TextView app_description;
         private Widgets.Switcher screenshot_switcher;
@@ -161,6 +165,12 @@ namespace AppCenter.Views {
             }
 
             content_grid.add (app_description);
+
+            release_box = new Gtk.ListBox ();
+            release_box.selection_mode = Gtk.SelectionMode.NONE;
+            release_box.margin_top = 12;
+            release_box.hide ();
+            content_grid.add (release_box);
 
             if (package_component.get_addons ().length > 0) {
                 extension_box = new Gtk.ListBox ();
@@ -313,6 +323,45 @@ namespace AppCenter.Views {
             });
         }
 
+        private void load_releases () {
+            var releases = package.component.get_releases ();
+            int length = releases.length;
+            if (length == 0) {
+                return;
+            }
+
+            releases.sort_with_data ((a, b) => {
+                return b.vercmp (a);
+            });
+
+            string installed_version = package.get_version ();
+            
+            int start_index = 0;
+            int end_index = MIN_RELEASES;
+
+            if (package.installed) {
+                for (int i = 0; i < length; i++) {
+                    unowned string release_version = releases.@get (i).get_version ();
+                    if (release_version == null) {
+                        continue;
+                    }
+
+                    if (AppStream.utils_compare_versions (release_version, installed_version) == 0) {
+                        end_index = i.clamp (MIN_RELEASES, MAX_RELEASES);
+                        break;
+                    }
+                }
+            }
+
+            for (int j = start_index; j < end_index; j++) {
+                var release = releases.get (j);
+                var row = new Widgets.ReleaseRow (release);
+                release_box.add (row);
+            }
+
+            release_box.show_all ();
+        }
+
         public void reload_css () {
             var provider = new Gtk.CssProvider ();
             try {
@@ -376,6 +425,8 @@ namespace AppCenter.Views {
                 }
 
                 Idle.add (() => {
+                    load_releases ();
+
                     if (app_screenshots.get_children ().length () > 0) {
                         screenshot_stack.visible_child = app_screenshots;
                         screenshot_switcher.update_selected ();

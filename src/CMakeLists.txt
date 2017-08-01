@@ -33,6 +33,7 @@ vala_precompile(VALA_C ${EXEC_NAME}
     Widgets/HumbleButton.vala
     Widgets/SharePopover.vala
     Widgets/Switcher.vala
+    Widgets/ReleaseRow.vala
     Services/DbusInterfaces.vala
     Services/DBusServer.vala
     ${CMAKE_CURRENT_BINARY_DIR}/config.vala
