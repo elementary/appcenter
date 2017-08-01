@@ -326,7 +326,7 @@ namespace AppCenter.Views {
         private void load_releases () {
             var releases = package.component.get_releases ();
             int length = releases.length;
-            if (length == 0) {
+            if (length < MIN_RELEASES) {
                 return;
             }
 
