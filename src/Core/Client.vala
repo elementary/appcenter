@@ -279,52 +279,47 @@ public class AppCenterCore.Client : Object {
         }
 
         var command = new Granite.Services.SimpleCommand ("/", "%s list".printf (drivers_exec_path));
-        command.done.connect ((command, status) => parse_drivers_output (command.standard_output_str, status));
+        command.done.connect ((command, status) => parse_drivers_output.begin (command.standard_output_str, status));
         command.run ();
     }
 
-    private void parse_drivers_output (string output, int status) {
+    private async void parse_drivers_output (string output, int status) {
         if (status != 0) {
             task_count--;
             return;
         }
 
-        new Thread<void*> ("parse-drivers-output", () => {
-            string[] tokens = output.split ("\n");
-            for (int i = 0; i < tokens.length; i++) {
-                string package_name = tokens[i];
-                if (package_name.strip () == "") {
-                    continue;
-                }
+        string[] tokens = output.split ("\n");
 
-                var driver_component = new AppStream.Component ();
-                driver_component.set_kind (AppStream.ComponentKind.DRIVER);
-                driver_component.set_pkgnames ({ package_name });
-                driver_component.set_id (package_name);
-
-                var icon = new AppStream.Icon ();
-                icon.set_name ("application-x-firmware");
-                icon.set_kind (AppStream.IconKind.STOCK);
-                driver_component.add_icon (icon);
-
-                var package = new Package (driver_component);
-                var pk_package = package.find_package ();
-                if (pk_package != null && pk_package.get_info () == Pk.Info.INSTALLED) {
-                    package.installed_packages.add (pk_package);
-                    package.update_state ();
-                }
-
-                driver_list.add (package);
+        for (int i = 0; i < tokens.length; i++) {
+            string package_name = tokens[i];
+            if (package_name.strip () == "") {
+                continue;
             }
 
-            Idle.add (() => {
-                drivers_detected ();
-                return false;
-            });
+            var driver_component = new AppStream.Component ();
+            driver_component.set_kind (AppStream.ComponentKind.DRIVER);
+            driver_component.set_pkgnames ({ package_name });
+            driver_component.set_id (package_name);
 
-            task_count--;
-            return null;
-        });
+            var icon = new AppStream.Icon ();
+            icon.set_name ("application-x-firmware");
+            icon.set_kind (AppStream.IconKind.STOCK);
+            driver_component.add_icon (icon);
+
+            var package = new Package (driver_component);
+            var pk_package = yield package.obtain_package ();
+            if (package.installed) {
+                package.installed_packages.add (pk_package);
+                package.update_state ();
+            }
+
+            driver_list.add (package);
+        }
+
+        drivers_detected ();
+
+        task_count--;
     }
 
     public async Gee.Collection<AppCenterCore.Package> get_installed_applications () {
@@ -404,14 +399,14 @@ public class AppCenterCore.Client : Object {
         return apps;
     }
 
-    public Pk.Package? get_app_package (string application, Pk.Bitfield additional_filters = 0) throws GLib.Error {
+    public async Pk.Package? get_app_package (string application, Pk.Bitfield additional_filters = 0) throws GLib.Error {
         task_count++;
 
         Pk.Package? package = null;
         var filter = Pk.Bitfield.from_enums (Pk.Filter.NEWEST);
         filter |= additional_filters;
         try {
-            var results = client.search_names_sync (filter, { application, null }, cancellable, () => {});
+            var results = yield client.search_names_async (filter, { application, null }, cancellable, () => {});
             var array = results.get_package_array ();
             if (array.length > 0) {
                 package = array.get (0);
@@ -422,7 +417,7 @@ public class AppCenterCore.Client : Object {
         }
 
         if (package != null) {
-            Pk.Results details = client.get_details_sync ({ package.package_id, null }, null, (t, p) => {});
+            Pk.Results details = yield client.get_details_async ({ package.package_id, null }, null, (t, p) => {});
             details.get_details_array ().foreach ((details) => {
                 package.license = details.license;
                 package.description = details.description;

@@ -66,8 +66,7 @@ public class AppCenterCore.Package : Object {
                 return true;
             }
 
-            Pk.Package? package = find_package ();
-            if (package != null && package.info == Pk.Info.INSTALLED) {
+            if (pk_package != null && pk_package.info == Pk.Info.INSTALLED) {
                 return true;
             }
 
@@ -124,6 +123,8 @@ public class AppCenterCore.Package : Object {
         }
     }
 
+    public Pk.Package? pk_package { get; private set; default = null; }
+
     private string? name = null;
     private string? description = null;
     private string? summary = null;
@@ -137,7 +138,6 @@ public class AppCenterCore.Package : Object {
         internal set { _latest_version = convert_version (value); }
     }
 
-    private Pk.Package? pk_package = null;
     private AppInfo? app_info;
     private bool app_info_retrieved = false;
 
@@ -279,9 +279,8 @@ public class AppCenterCore.Package : Object {
 
         name = component.get_name ();
         if (name == null) {
-            var package = find_package ();
-            if (package != null) {
-                name = package.get_name ();
+            if (pk_package != null) {
+                name = pk_package.get_name ();
             }
         }
 
@@ -295,9 +294,8 @@ public class AppCenterCore.Package : Object {
 
         description = component.get_description ();
         if (description == null) {
-            var package = find_package ();
-            if (package != null) {
-                description = package.description;
+            if (pk_package != null) {
+                description = pk_package.description;
             }
         }
 
@@ -311,9 +309,8 @@ public class AppCenterCore.Package : Object {
 
         summary = component.get_summary ();
         if (summary == null) {
-            var package = find_package ();
-            if (package != null) {
-                summary = package.get_summary ();
+            if (pk_package != null) {
+                summary = pk_package.get_summary ();
             }
         }
 
@@ -378,9 +375,8 @@ public class AppCenterCore.Package : Object {
             return latest_version;
         }
 
-        var package = find_package ();
-        if (package != null) {
-            latest_version = package.get_version ();
+        if (pk_package != null) {
+            latest_version = pk_package.get_version ();
         }
 
         return latest_version;
@@ -448,17 +444,17 @@ public class AppCenterCore.Package : Object {
         return app_info != null;
     }
 
-    public Pk.Package? find_package () {
-        if (component.id == OS_UPDATES_ID || is_local) {
-            return null;
-        }
-
+    public async Pk.Package? obtain_package () {
         if (pk_package != null) {
             return pk_package;
         }
 
+        if (component.id == OS_UPDATES_ID || is_local) {
+            return null;
+        }
+
         try {
-            pk_package = AppCenterCore.Client.get_default ().get_app_package (component.get_pkgnames ()[0], 0);
+            pk_package = yield AppCenterCore.Client.get_default ().get_app_package (component.get_pkgnames ()[0], 0);
         } catch (Error e) {
             warning (e.message);
             return null;
