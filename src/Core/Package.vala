@@ -444,22 +444,15 @@ public class AppCenterCore.Package : Object {
         return app_info != null;
     }
 
-    public async Pk.Package? obtain_package () {
-        if (pk_package != null) {
-            return pk_package;
-        }
-
+    public async void obtain_package () {
         if (component.id == OS_UPDATES_ID || is_local) {
-            return null;
+            return;
         }
 
         try {
             pk_package = yield AppCenterCore.Client.get_default ().get_app_package (component.get_pkgnames ()[0], 0);
         } catch (Error e) {
             warning (e.message);
-            return null;
         }
-
-        return pk_package;
     }
 }

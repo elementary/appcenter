@@ -308,9 +308,9 @@ public class AppCenterCore.Client : Object {
             driver_component.add_icon (icon);
 
             var package = new Package (driver_component);
-            var pk_package = yield package.obtain_package ();
+            yield package.obtain_package ();
             if (package.installed) {
-                package.installed_packages.add (pk_package);
+                package.installed_packages.add (package.pk_package);
                 package.update_state ();
             }
 
