@@ -16,6 +16,7 @@ vala_precompile(VALA_C ${EXEC_NAME}
     Dialogs/StripeDialog.vala
     Views/AppInfoView.vala
     Views/AppListView.vala
+    Views/AppListUpdateView.vala
     Views/Homepage.vala
     Views/InstalledView.vala
     Views/SearchView.vala
