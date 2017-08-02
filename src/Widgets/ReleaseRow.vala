@@ -20,12 +20,74 @@
 public class AppCenter.Widgets.ReleaseRow : Gtk.ListBoxRow {
     public AppStream.Release release { get; construct; }
 
+    private Gtk.Label header_label;
+    private Gtk.Label description_label;
+
     construct {
-        var widget = new ReleaseWidget (release);
-        add (widget);
+        string header = format_release_header (release);
+        string description = format_release_description (release);
+
+        header_label = new Gtk.Label (header);
+        header_label.halign = Gtk.Align.START;
+        header_label.get_style_context ().add_class ("h3");
+        header_label.use_markup = true;
+
+        description_label = new Gtk.Label (description);
+        description_label.selectable = true;
+        description_label.get_style_context ().add_class ("h3");
+        description_label.halign = Gtk.Align.START;
+        description_label.margin_start = 12;
+        description_label.use_markup = true;
+
+        var grid = new Gtk.Grid ();
+        grid.margin_bottom = 6;
+        grid.attach (header_label, 0, 0, 1, 1);
+        grid.attach (description_label, 0, 1, 1, 1);
+
+        add (grid);
     }
 
     public ReleaseRow (AppStream.Release release) {
-        Object (release: release, margin_bottom: 6);
+        Object (release: release);
+    }
+
+    private static string format_release_header (AppStream.Release release) {
+        string label;
+
+        unowned string version = release.get_version ();
+
+        uint64 timestamp = release.get_timestamp ();
+        if (timestamp != 0) {
+            var date_time = new DateTime.from_unix_utc ((int64)timestamp);
+            string format = Granite.DateTime.get_default_date_format (false, true, true);
+            string date = date_time.format (format);
+
+            if (version != null) {
+                label = _("<b>%s</b> • %s").printf (version, date);
+            } else {
+                label = date;
+            }
+        } else if (version != null) {
+            label = _("<b>%s</b>").printf (release.get_version ());
+        } else {
+            label = _("Unknown version");
+        }
+
+        return label;
+    }
+
+    private static string format_release_description (AppStream.Release release) {
+        string description = release.get_description ();
+        if (description != null) {
+            try {
+                description = AppStream.markup_convert_simple (description);
+            } catch (Error e) {
+                warning (e.message);
+            }
+        } else {
+            description = _("No description available");
+        }
+
+        return description;
     }
 }
