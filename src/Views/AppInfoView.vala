@@ -357,6 +357,14 @@ namespace AppCenter.Views {
             new Thread<void*> ("content-loading", () => {
                 app_version.label = package.get_version ();
 
+                Idle.add (() => {
+                    if (release_list_box.populate ()) {
+                        release_list_box.show_all ();
+                    }
+
+                    return false;
+                });
+                
                 if (screenshots.length == 0) {
                     return null;
                 }
@@ -382,10 +390,6 @@ namespace AppCenter.Views {
                 }
 
                 Idle.add (() => {
-                    if (release_list_box.populate ()) {
-                        release_list_box.show_all ();
-                    }
-
                     if (app_screenshots.get_children ().length () > 0) {
                         screenshot_stack.visible_child = app_screenshots;
                         screenshot_switcher.update_selected ();
