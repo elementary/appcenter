@@ -44,13 +44,15 @@ public class AppCenterCore.UpdateManager : Object {
                 packages_array += pk_package.get_id ();
             });
 
-            packages_array += null;
+            if (packages_array.length > 0) {
+                packages_array += null;
 
-            Pk.Results details_results = yield client.get_details_async (packages_array, cancellable, (t, p) => { });
+                Pk.Results details_results = yield client.get_details_async (packages_array, cancellable, (t, p) => { });
 
-            details_results.get_details_array ().foreach ((details) => {
-                update_results.add_details (details);
-            });
+                details_results.get_details_array ().foreach ((details) => {
+                    update_results.add_details (details);
+                });
+            }
             
             return update_results;
         } catch (Error e) {
