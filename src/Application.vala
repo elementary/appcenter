@@ -51,6 +51,7 @@ public class AppCenter.App : Granite.Application {
         build_version_info = Build.VERSION_INFO;
 
         app_launcher = "io.elementary.appcenter.desktop";
+        add_main_option_entries (APPCENTER_OPTIONS);
 
         var quit_action = new SimpleAction ("quit", null);
         quit_action.activate.connect (() => {
@@ -252,17 +253,6 @@ public class AppCenter.App : Granite.Application {
 }
 
 public static int main (string[] args) {
-    try {
-        var opt_context = new OptionContext (null);
-        opt_context.set_help_enabled (true);
-        opt_context.add_main_entries (AppCenter.App.APPCENTER_OPTIONS, null);
-        opt_context.parse (ref args);
-    } catch (OptionError e) {
-        stdout.printf ("error: %s\n", e.message);
-        stdout.printf ("Run '%s --help' to see a full list of available command line options.\n", args[0]);
-        return 0;
-    }
-
     var application = new AppCenter.App ();
     return application.run (args);
 }
