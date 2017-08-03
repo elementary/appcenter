@@ -81,6 +81,7 @@ namespace AppCenter.Views {
         }
 
         protected override void on_list_changed () {
+            list_box.invalidate_sort ();
             list_box.invalidate_headers ();
         }
 
