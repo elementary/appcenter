@@ -22,8 +22,8 @@ public class AppCenter.App : Granite.Application {
         "Run the Application in background", null},
         { "load-local", 'l', 0, OptionArg.FILENAME, out local_path,
         "Add a local AppStream XML file to the package list", "FILENAME" },
-        { "fake-updates", 'f', 0, OptionArg.STRING_ARRAY, out fake_update_packages,
-        "Add package names to the update results", "PACKAGES..." },
+        { "fake-package-update", 'f', 0, OptionArg.STRING_ARRAY, out fake_update_packages,
+        "Add the package name to update results so that it is shown as an update", "PACKAGES..." },
         { null }
     };
 
