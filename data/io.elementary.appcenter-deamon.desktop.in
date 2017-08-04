@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=@DAEMON_NAME@
+Comment=@RELEASE_NAME@
+Exec=@EXEC_NAME@ -s
+Icon=@DESKTOP_ICON@
+Terminal=false
+Type=Application
+NoDisplay=true
+X-GNOME-AutoRestart=true
+X-GNOME-Autostart-Phase=Applications
