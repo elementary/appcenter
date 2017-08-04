@@ -1,7 +1,7 @@
-debian/appcenter.list /etc/apt/sources.list.d/
 debian/60appcenter /etc/apt/apt.conf.d/
+debian/appcenter.list /etc/apt/sources.list.d/
 usr/bin/
-usr/share/metainfo/
 usr/share/applications/
 usr/share/glib-2.0/
 usr/share/locale/
+usr/share/metainfo/

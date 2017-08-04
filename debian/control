@@ -12,8 +12,8 @@ Build-Depends: appstream,
                libgranite-dev,
                libgtk-3-dev,
                libjson-glib-dev,
-               libsoup2.4-dev,
                libpackagekit-glib2-dev,
+               libsoup2.4-dev,
                libunity-dev,
                libxml2-dev,
                libxml2-utils,
@@ -26,7 +26,11 @@ Architecture: any
 Priority: extra
 Conflicts: appcenter-daemon
 Replaces: appcenter-daemon
-Depends: appstream, elementary-keyring, packagekit, ${misc:Depends}, ${shlibs:Depends}
+Depends: appstream,
+         elementary-keyring,
+         packagekit,
+         ${misc:Depends},
+         ${shlibs:Depends}
 Recommends: appstream-data-pantheon-loki-stable
 Description: Fast application store
  Install, update and remove apps with ease.
