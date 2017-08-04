@@ -28,7 +28,6 @@ Conflicts: appcenter-daemon
 Replaces: appcenter-daemon
 Depends: appstream, elementary-keyring, packagekit, ${misc:Depends}, ${shlibs:Depends}
 Recommends: appstream-data-pantheon-loki-stable
-Pre-Depends: dpkg (>= 1.15.7.2)
 Description: Fast application store
  Install, update and remove apps with ease.
  Helps independent developers.
@@ -38,7 +37,6 @@ Architecture: any
 Section: debug
 Priority: extra
 Depends: appcenter (= ${binary:Version}), ${misc:Depends}
-Pre-Depends: dpkg (>= 1.15.6)
 Enhances: appcenter
 Description: Fast application store (debugging symbols)
  Install, update and remove apps with ease.
