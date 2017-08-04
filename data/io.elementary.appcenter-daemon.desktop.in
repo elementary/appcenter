@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=@DAEMON_NAME@
+Name=@APP_NAME@ Daemon
 Comment=@RELEASE_NAME@
 Exec=@EXEC_NAME@ -s
 Icon=@DESKTOP_ICON@
