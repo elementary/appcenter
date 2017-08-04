@@ -13,7 +13,7 @@
 	dh $@ 
 
 override_dh_install:
-	dh_install --fail-missing
+	dh_install --fail-missing --exclude=appcenter.blacklist
 
 override_dh_strip:
 	dh_strip --dbg-package=appcenter-dbg
