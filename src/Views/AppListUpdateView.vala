@@ -82,7 +82,6 @@ namespace AppCenter.Views {
 
         protected override void on_list_changed () {
             list_box.invalidate_sort ();
-            list_box.invalidate_headers ();
         }
 
         protected override Widgets.AppListRow construct_row_for_package (AppCenterCore.Package package) {
