@@ -164,10 +164,9 @@ namespace AppCenter.Views {
 
             content_grid.add (app_description);
 
-            var whats_new_label = new Gtk.Label ("<b>" + _("What's New:") + "</b>");
-            whats_new_label.use_markup = true;
-            whats_new_label.get_style_context ().add_class ("h3");
-            whats_new_label.halign = Gtk.Align.START;
+            var whats_new_label = new Gtk.Label (_("What's New:"));
+            whats_new_label.get_style_context ().add_class ("h2");
+            whats_new_label.xalign = 0;
 
             release_list_box = new Widgets.ReleaseListBox (package);
 
@@ -184,10 +183,9 @@ namespace AppCenter.Views {
                 extension_box = new Gtk.ListBox ();
                 extension_box.selection_mode = Gtk.SelectionMode.NONE;
 
-                var extension_label = new Gtk.Label ("<b>" + _("Extensions:") + "</b>");
+                var extension_label = new Gtk.Label (_("Extensions:"));
                 extension_label.margin_top = 12;
-                extension_label.use_markup = true;
-                extension_label.get_style_context ().add_class ("h3");
+                extension_label.get_style_context ().add_class ("h2");
                 extension_label.halign = Gtk.Align.START;
 
                 content_grid.add (extension_label);
