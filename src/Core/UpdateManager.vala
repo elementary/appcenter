@@ -41,13 +41,17 @@ public class AppCenterCore.UpdateManager : Object {
         try {
             Pk.Results update_results = yield client.get_updates_async (0, cancellable, (t, p) => { });
 
-            foreach (string name in fake_packages) {
-                var package = new Pk.Package ();
-                if (package.set_id (FAKE_PACKAGE_ID.printf (name))) {
-                    update_results.add_package (package);
-                } else {
-                    warning ("Could not add a fake package '%s' to the update list".printf (name));
+            if (fake_packages.length > 0) {
+                foreach (string name in fake_packages) {
+                    var package = new Pk.Package ();
+                    if (package.set_id (FAKE_PACKAGE_ID.printf (name))) {
+                        update_results.add_package (package);
+                    } else {
+                        warning ("Could not add a fake package '%s' to the update list".printf (name));
+                    }
                 }
+
+                fake_packages = {};
             }
 
             string[] packages_array = {};
