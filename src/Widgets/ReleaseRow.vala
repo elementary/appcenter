@@ -23,6 +23,10 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.ListBoxRow {
     private Gtk.Label header_label;
     private Gtk.Label description_label;
 
+    public ReleaseRow (AppStream.Release release) {
+        Object (release: release);
+    }
+
     construct {
         string header = format_release_header (release);
         string description = format_release_description (release);
@@ -33,6 +37,7 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.ListBoxRow {
         header_label.use_markup = true;
 
         description_label = new Gtk.Label (description);
+        description_label.wrap = true;
         description_label.selectable = true;
         description_label.get_style_context ().add_class ("h3");
         description_label.halign = Gtk.Align.START;
@@ -47,10 +52,6 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.ListBoxRow {
         add (grid);
     }
 
-    public ReleaseRow (AppStream.Release release) {
-        Object (release: release);
-    }
-
     private static string format_release_header (AppStream.Release release) {
         string label;
 
@@ -63,12 +64,12 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.ListBoxRow {
             string date = date_time.format (format);
 
             if (version != null) {
-                label = _("<b>%s</b> • %s").printf (version, date);
+                label = _("<b>%s</b> – %s").printf (version, date);
             } else {
                 label = date;
             }
         } else if (version != null) {
-            label = _("<b>%s</b>").printf (release.get_version ());
+            label = _("<b>%s</b>").printf (version);
         } else {
             label = _("Unknown version");
         }
