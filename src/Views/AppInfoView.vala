@@ -28,6 +28,8 @@ namespace AppCenter.Views {
         private Gtk.Stack app_screenshots;
         private Gtk.Label app_version;
         private Gtk.ListBox extension_box;
+        private Gtk.Grid release_grid;
+        private Widgets.ReleaseListBox release_list_box;
         private Gtk.Stack screenshot_stack;
         private Gtk.TextView app_description;
         private Widgets.Switcher screenshot_switcher;
@@ -161,6 +163,22 @@ namespace AppCenter.Views {
             }
 
             content_grid.add (app_description);
+
+            var whats_new_label = new Gtk.Label ("<b>" + _("What's New:") + "</b>");
+            whats_new_label.use_markup = true;
+            whats_new_label.get_style_context ().add_class ("h3");
+            whats_new_label.halign = Gtk.Align.START;
+
+            release_list_box = new Widgets.ReleaseListBox (package);
+
+            release_grid = new Gtk.Grid ();
+            release_grid.row_spacing = 12;
+            release_grid.attach (whats_new_label, 0, 0, 1, 1);
+            release_grid.attach (release_list_box, 0, 1, 1, 1);
+            release_grid.no_show_all = true;
+            release_grid.hide ();
+
+            content_grid.add (release_grid);
 
             if (package_component.get_addons ().length > 0) {
                 extension_box = new Gtk.ListBox ();
@@ -351,6 +369,15 @@ namespace AppCenter.Views {
             new Thread<void*> ("content-loading", () => {
                 app_version.label = package.get_version ();
 
+                Idle.add (() => {
+                    if (release_list_box.populate ()) {
+                        release_grid.no_show_all = false;
+                        release_grid.show_all ();
+                    }
+
+                    return false;
+                });
+                
                 if (screenshots.length == 0) {
                     return null;
                 }
