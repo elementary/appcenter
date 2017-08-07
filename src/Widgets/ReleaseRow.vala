@@ -44,6 +44,7 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.ListBoxRow {
         description_label.get_style_context ().add_class ("h3");
 
         var grid = new Gtk.Grid ();
+        grid.margin_bottom = 6;
         grid.attach (header_label, 0, 0, 1, 1);
         grid.attach (description_label, 0, 1, 1, 1);
 
