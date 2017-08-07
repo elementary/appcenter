@@ -32,17 +32,16 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.ListBoxRow {
         string description = format_release_description (release);
 
         header_label = new Gtk.Label (header);
-        header_label.halign = Gtk.Align.START;
-        header_label.get_style_context ().add_class ("h3");
         header_label.use_markup = true;
+        header_label.xalign = 0;
+        header_label.get_style_context ().add_class ("h3");
 
         description_label = new Gtk.Label (description);
-        description_label.wrap = true;
         description_label.selectable = true;
-        description_label.get_style_context ().add_class ("h3");
-        description_label.halign = Gtk.Align.START;
-        description_label.margin_start = 12;
         description_label.use_markup = true;
+        description_label.wrap = true;
+        description_label.xalign = 0;
+        description_label.get_style_context ().add_class ("h3");
 
         var grid = new Gtk.Grid ();
         grid.margin_bottom = 6;
