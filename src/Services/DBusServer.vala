@@ -27,7 +27,14 @@ public class DBusServer : Object {
 
     public static void init () {
         var client = AppCenterCore.Client.get_default ();
-        client.get_installed_applications_sync ();        
+        var loop = new MainLoop ();
+
+        client.get_installed_applications.begin ((obj, res) => {
+            client.get_installed_applications.end (res);
+            loop.quit ();
+        });
+
+        loop.run (); // wait until async method finishes
     }
 
     private DBusServer () {
