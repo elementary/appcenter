@@ -52,7 +52,11 @@ Show restart required messaging:
 Hide restart required messaging:
 
     sudo rm /var/run/reboot-required
-    
+
+Fake updates with the `-f` flag followed by PackageKit package name, **not** appstream id:
+
+    appcenter -f inkscape
+
 Load and preview a local AppStream XML metadata file, your local metadata will show up in the featured banner and will also be searchable. Metadata loaded this way will have a `(local)` suffix in it's name.
 
     appcenter --load-local /path/to/file.appdata.xml
