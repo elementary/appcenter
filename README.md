@@ -34,16 +34,16 @@ Run `cmake` to configure the build environment and then `make all test` to build
     cmake -DCMAKE_INSTALL_PREFIX=/usr ..
     make all test
 
-To install, use `make install`, then execute with `appcenter`
+To install, use `make install`, then execute with `io.elementary.appcenter`
 
     sudo make install
-    appcenter
+    io.elementary.appcenter
 
 ## Debugging
 
 See debug messages:
 
-    appcenter -d
+    io.elementary.appcenter -d
 
 Show restart required messaging:
 
@@ -59,4 +59,4 @@ Fake updates with the `-f` flag followed by PackageKit package name, **not** app
 
 Load and preview a local AppStream XML metadata file, your local metadata will show up in the featured banner and will also be searchable. Metadata loaded this way will have a `(local)` suffix in it's name.
 
-    appcenter --load-local /path/to/file.appdata.xml
+    io.elementary.appcenter --load-local /path/to/file.appdata.xml
