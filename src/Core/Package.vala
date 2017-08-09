@@ -488,8 +488,12 @@ public class AppCenterCore.Package : Object {
     }
 
     public AppStream.Release? get_newest_release () {
-        var releases = get_newest_releases (1, 1);
-        if (releases.size > 0) {
+        var releases = component.get_releases ();
+        releases.sort_with_data ((a, b) => {
+            return b.vercmp (a);
+        });
+
+        if (releases.length > 0) {
             return releases[0];
         }
 
