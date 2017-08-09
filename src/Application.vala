@@ -22,6 +22,8 @@ public class AppCenter.App : Granite.Application {
         "Run the Application in background", null},
         { "load-local", 'l', 0, OptionArg.FILENAME, out local_path,
         "Add a local AppStream XML file to the package list", "FILENAME" },
+        { "fake-package-update", 'f', 0, OptionArg.STRING_ARRAY, out fake_update_packages,
+        "Add the package name to update results so that it is shown as an update", "PACKAGES..." },
         { null }
     };
 
@@ -31,6 +33,9 @@ public class AppCenter.App : Granite.Application {
     public static bool silent;
     public static string? local_path;
     public static AppCenterCore.Package? local_package;
+
+    [CCode (array_length = false, array_null_terminated = true)]
+    public static string[]? fake_update_packages = null;
     private MainWindow? main_window;
 
     private uint registration_id = 0;
@@ -116,6 +121,11 @@ public class AppCenter.App : Granite.Application {
 
     public override void activate () {
         var client = AppCenterCore.Client.get_default ();
+
+        if (fake_update_packages != null) {
+            AppCenterCore.UpdateManager.get_default ().fake_packages = fake_update_packages;
+        }
+
         if (silent) {
             NetworkMonitor.get_default ().network_changed.connect ((available) => {
                 schedule_cache_update (!available);
