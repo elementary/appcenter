@@ -79,26 +79,29 @@ namespace AppCenter.Widgets {
                 margin = 6;
                 margin_start = 12;
                 margin_end = 12;
-                column_homogeneous = true;
+                column_spacing = 12;
+                row_spacing = 6;
 
                 image.icon_size = Gtk.IconSize.DIALOG;
                 /* Needed to enforce size on icons from Filesystem/Remote */
                 image.pixel_size = 48;
 
                 package_name.get_style_context ().add_class ("h3");
-                package_name.hexpand = true;
                 package_name.valign = Gtk.Align.END;
                 ((Gtk.Misc) package_name).xalign = 0;
 
-                action_stack.halign = Gtk.Align.END;
-
                 info_grid = new Gtk.Grid ();
-                info_grid.halign = Gtk.Align.START;
                 info_grid.column_spacing = 12;
                 info_grid.row_spacing = 6;
-
+                info_grid.valign = Gtk.Align.START;
                 info_grid.attach (image, 0, 0, 1, 2);
                 info_grid.attach (package_name, 1, 0, 1, 1);
+
+                action_stack.valign = Gtk.Align.START;
+
+                var sizegroup = new Gtk.SizeGroup (Gtk.SizeGroupMode.VERTICAL);
+                sizegroup.add_widget (info_grid);
+                sizegroup.add_widget (action_stack);
 
                 attach (info_grid, 0, 0, 1, 1);
                 attach (action_stack, 2, 0, 1, 1);
@@ -127,7 +130,6 @@ namespace AppCenter.Widgets {
                 updates_view = true;
                 app_version = new Gtk.Label (null);
                 app_version.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-                app_version.hexpand = true;
                 app_version.valign = Gtk.Align.START;
                 ((Gtk.Misc) app_version).xalign = 0;
 
@@ -139,7 +141,7 @@ namespace AppCenter.Widgets {
 
                 release_expander = new Gtk.Expander ("");
                 release_expander.use_markup = true;
-                release_expander.halign = release_expander.valign = Gtk.Align.CENTER;
+                release_expander.halign = release_expander.valign = Gtk.Align.START;
                 release_expander.add (release_description);
                 release_expander.button_press_event.connect (() => {
                     release_expander.expanded = !release_expander.expanded;
@@ -147,7 +149,7 @@ namespace AppCenter.Widgets {
                 });
 
                 info_grid.attach (app_version, 1, 1, 1, 1);
-                attach (release_expander, 1, 0, 1, 1);
+                attach (release_expander, 2, 0, 1, 2);
             }
 
             public InstalledPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? size_group, bool show_uninstall = true) {
@@ -218,7 +220,7 @@ namespace AppCenter.Widgets {
                 package_summary.valign = Gtk.Align.START;
                 ((Gtk.Misc) package_summary).xalign = 0;
 
-                attach (package_summary, 1, 1, 1, 1);
+                info_grid.attach (package_summary, 1, 1, 1, 1);
             }
 
             public ListPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? size_group, bool show_uninstall = true) {
