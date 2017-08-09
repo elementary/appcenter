@@ -73,12 +73,13 @@ namespace AppCenter.Widgets {
         private abstract class AbstractPackageRowGrid : AbstractAppContainer {
             public signal void changed ();
 
+            protected Gtk.Grid info_grid;
+
             construct {
                 margin = 6;
                 margin_start = 12;
                 margin_end = 12;
-                column_spacing = 12;
-                row_spacing = 6;
+                column_homogeneous = true;
 
                 image.icon_size = Gtk.IconSize.DIALOG;
                 /* Needed to enforce size on icons from Filesystem/Remote */
@@ -89,9 +90,18 @@ namespace AppCenter.Widgets {
                 package_name.valign = Gtk.Align.END;
                 ((Gtk.Misc) package_name).xalign = 0;
 
-                attach (image, 0, 0, 1, 2);
-                attach (package_name, 1, 0, 1, 1);
-                attach (action_stack, 2, 0, 1, 2);
+                action_stack.halign = Gtk.Align.END;
+
+                info_grid = new Gtk.Grid ();
+                info_grid.halign = Gtk.Align.START;
+                info_grid.column_spacing = 12;
+                info_grid.row_spacing = 6;
+
+                info_grid.attach (image, 0, 0, 1, 2);
+                info_grid.attach (package_name, 1, 0, 1, 1);
+
+                attach (info_grid, 0, 0, 1, 1);
+                attach (action_stack, 2, 0, 1, 1);
             }
 
             public AbstractPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? size_group, bool show_uninstall = true) {
@@ -109,6 +119,9 @@ namespace AppCenter.Widgets {
 
         private class InstalledPackageRowGrid : AbstractPackageRowGrid {
             Gtk.Label app_version;
+            Gtk.Expander release_expander;
+            Gtk.Label release_description;
+            AppStream.Release? newest = null;
 
             construct {
                 updates_view = true;
@@ -118,7 +131,23 @@ namespace AppCenter.Widgets {
                 app_version.valign = Gtk.Align.START;
                 ((Gtk.Misc) app_version).xalign = 0;
 
-                attach (app_version, 1, 1, 1, 1);
+                release_description = new Gtk.Label (null);
+                release_description.selectable = true;
+                release_description.use_markup = true;
+                release_description.wrap = true;
+                release_description.xalign = 0;
+
+                release_expander = new Gtk.Expander ("");
+                release_expander.use_markup = true;
+                release_expander.halign = release_expander.valign = Gtk.Align.CENTER;
+                release_expander.add (release_description);
+                release_expander.button_press_event.connect (() => {
+                    release_expander.expanded = !release_expander.expanded;
+                    return true;
+                });
+
+                info_grid.attach (app_version, 1, 1, 1, 1);
+                attach (release_expander, 1, 0, 1, 1);
             }
 
             public InstalledPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? size_group, bool show_uninstall = true) {
@@ -136,6 +165,26 @@ namespace AppCenter.Widgets {
             protected override void update_state (bool first_update = false) {
                 if (!first_update) {
                     app_version.label = package.get_version ();
+                }
+
+                if (package.state == AppCenterCore.Package.State.UPDATE_AVAILABLE) {
+                    if (newest == null) {
+                        newest = package.get_newest_release ();
+                        if (newest != null) {
+                            string header = ReleaseRow.format_release_header (newest, false);
+                            string description = ReleaseRow.format_release_description (newest);
+
+                            release_description.set_text (description);
+                            release_expander.label = header;
+                            set_widget_visibility (release_expander, true);
+                        } else {
+                            set_widget_visibility (release_expander, false);
+                        }
+                    } else {
+                        set_widget_visibility (release_expander, true);
+                    }
+                } else {
+                    set_widget_visibility (release_expander, false);
                 }
 
                 update_action ();

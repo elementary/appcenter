@@ -448,6 +448,54 @@ public class AppCenterCore.Package : Object {
         return app_info != null;
     }
 
+    public Gee.ArrayList<AppStream.Release> get_newest_releases (int min_releases, int max_releases) {
+        var list = new Gee.ArrayList<AppStream.Release> ();
+
+        var releases = component.get_releases ();
+        if (releases.length < min_releases) {
+            return list;
+        }
+
+        releases.sort_with_data ((a, b) => {
+            return b.vercmp (a);
+        });
+
+        string installed_version = get_version ();
+        
+        int start_index = 0;
+        int end_index = min_releases;
+
+        if (installed) {
+            for (int i = 0; i < releases.length; i++) {
+                var release = releases.@get (i);
+                unowned string release_version = release.get_version ();
+                if (release_version == null) {
+                    continue;
+                }
+
+                if (AppStream.utils_compare_versions (release_version, installed_version) == 0) {
+                    end_index = i.clamp (min_releases, max_releases);
+                    break;
+                }
+            }
+        }
+
+        for (int j = start_index; j < end_index; j++) {
+            list.add (releases.get (j));
+        }
+
+        return list;
+    }
+
+    public AppStream.Release? get_newest_release () {
+        var releases = get_newest_releases (1, 1);
+        if (releases.size > 0) {
+            return releases[0];
+        }
+
+        return null;
+    }
+
     public Pk.Package? find_package () {
         if (component.id == OS_UPDATES_ID || is_local) {
             return null;
