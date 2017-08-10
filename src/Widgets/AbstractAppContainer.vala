@@ -141,6 +141,7 @@ namespace AppCenter {
             action_button_group.add_widget (open_button);
 
             action_stack = new Gtk.Stack ();
+            action_stack.hexpand = true;
             action_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
             action_stack.add_named (button_grid, "buttons");
             action_stack.add_named (progress_grid, "progress");
