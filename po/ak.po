@@ -4,16 +4,16 @@ msgstr ""
 "Project-Id-Version: Akan (AppCenter)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-06-12 16:01+0000\n"
-"PO-Revision-Date: 2017-06-26 12:30+0000\n"
+"PO-Revision-Date: 2017-08-10 14:46+0000\n"
 "Last-Translator: Lawrence Aberba <karabutaworld@gmail.com>\n"
 "Language-Team: Akan "
-"<https://l10n.elementary.io/projects/appcenter/appcenter/ak/>\n"
+"<https://weblate.elementary.io/projects/appcenter/appcenter/ak/>\n"
 "Language: ak\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2.14\n"
+"X-Generator: Weblate 2.15\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:24+0000\n"
 
 #: ../src/Application.vala:40
@@ -26,15 +26,15 @@ msgstr "wɔn a wɔkyerɛase"
 
 #: ../src/Application.vala:114
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr "Antumi anhu link kõ a wobɔe no, wo ara hwehwɛ"
+msgstr "Antumi anhu '%s' enti wo ara hwehwɛ"
 
 #: ../src/Application.vala:216
 msgid "Application installed"
-msgstr "Dwumadie a watwe gu so"
+msgstr "Dwumadie a woatwe agu so"
 
 #: ../src/Application.vala:217
 msgid "%s has been successfully installed"
-msgstr "Atwe %s agu so awei"
+msgstr "Atwe %s agu so awie"
 
 #: ../src/Application.vala:233
 msgid "Close"
@@ -105,7 +105,7 @@ msgstr "Nneɛmakora Ho Nhyehyɛe"
 
 #: ../src/Dialogs/StripeDialog.vala:168 ../src/Dialogs/StripeDialog.vala:284
 msgid "Pay $%d.00"
-msgstr "Tua $%s.00"
+msgstr "Tua $%d.00"
 
 #: ../src/Dialogs/StripeDialog.vala:213
 msgid "Processing"
@@ -215,7 +215,7 @@ msgstr "Kaad no yɛ nea wɔde sɔ hwɛ kɛkɛ. Yɛsrɛ wo fa nea edi mu yɛ."
 #: ../src/Views/InstalledView.vala:51 ../src/MainWindow.vala:130
 msgctxt "view"
 msgid "Updates"
-msgstr "Nea aba foforɔ"
+msgstr "Nea Aba Foforɔ"
 
 #. / TRANSLATORS: the name of the Search view
 #: ../src/Views/SearchView.vala:37
@@ -237,7 +237,7 @@ msgstr "Twɛ Foforɔ No Nyinaa"
 
 #: ../src/Views/AppInfoView.vala:57
 msgid "Screenshot Not Available"
-msgstr "Ɛho mfonyin nka ho"
+msgstr "Ɛho Mfonyin Nka Ho"
 
 #: ../src/Views/AppInfoView.vala:170
 msgid "Extensions:"
@@ -265,7 +265,7 @@ msgstr "Nea Wode Guu So Nkyɛe"
 
 #: ../src/Views/Homepage.vala:156
 msgid "Categories"
-msgstr "AKuo Ahoroɔ"
+msgstr "Akuo Ahoroɔ"
 
 #: ../src/Views/Homepage.vala:211 ../src/Views/Homepage.vala:219
 #: ../src/MainWindow.vala:129 ../src/MainWindow.vala:181
@@ -362,7 +362,7 @@ msgstr "%s Dwumadieyɛfoɔ"
 
 #: ../src/Widgets/AbstractAppContainer.vala:165
 msgid "by %s"
-msgstr "nea ɔyɛe ne"
+msgstr "%s na ɔyɛe"
 
 #: ../src/Widgets/AbstractAppContainer.vala:209
 msgid "Update"
