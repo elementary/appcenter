@@ -95,11 +95,8 @@ namespace AppCenter.Widgets {
                 info_grid.attach (image, 0, 0, 1, 2);
                 info_grid.attach (package_name, 1, 0, 1, 1);
 
+                action_stack.margin_top = 10;
                 action_stack.valign = Gtk.Align.START;
-
-                var sizegroup = new Gtk.SizeGroup (Gtk.SizeGroupMode.VERTICAL);
-                sizegroup.add_widget (info_grid);
-                sizegroup.add_widget (action_stack);
 
                 attach (info_grid, 0, 0, 1, 1);
                 attach (action_stack, 2, 0, 1, 1);
