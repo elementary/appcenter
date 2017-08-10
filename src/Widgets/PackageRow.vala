@@ -79,8 +79,7 @@ namespace AppCenter.Widgets {
                 margin = 6;
                 margin_start = 12;
                 margin_end = 12;
-                column_spacing = 12;
-                row_spacing = 6;
+                column_spacing = 24;
 
                 image.icon_size = Gtk.IconSize.DIALOG;
                 /* Needed to enforce size on icons from Filesystem/Remote */
