@@ -121,8 +121,10 @@ namespace AppCenter.Widgets {
 
         private class InstalledPackageRowGrid : AbstractPackageRowGrid {
             Gtk.Label app_version;
+            Gtk.Stack release_stack;
             Gtk.Expander release_expander;
             Gtk.Label release_description;
+            Gtk.Label release_single_label;
             AppStream.Release? newest = null;
 
             construct {
@@ -136,19 +138,37 @@ namespace AppCenter.Widgets {
                 release_description.selectable = true;
                 release_description.use_markup = true;
                 release_description.wrap = true;
+                release_description.margin_start = 14;
                 release_description.xalign = 0;
 
                 release_expander = new Gtk.Expander ("");
                 release_expander.use_markup = true;
                 release_expander.halign = release_expander.valign = Gtk.Align.START;
                 release_expander.add (release_description);
+                release_expander.visible = true;
+                release_expander.show_all ();
                 release_expander.button_press_event.connect (() => {
                     release_expander.expanded = !release_expander.expanded;
                     return true;
                 });
 
+                release_single_label = new Gtk.Label (null);
+                release_single_label.selectable = true;
+                release_single_label.use_markup = true;
+                release_single_label.wrap = true;
+                release_single_label.xalign = 0;
+                release_single_label.halign = release_single_label.valign = Gtk.Align.START;
+                release_single_label.visible = true;
+                release_single_label.show_all ();
+
+                release_stack = new Gtk.Stack ();
+                release_stack.add (release_expander);
+                release_stack.add (release_single_label);
+
+                set_widget_visibility (release_stack, false);
+
                 info_grid.attach (app_version, 1, 1, 1, 1);
-                attach (release_expander, 2, 0, 1, 2);
+                attach (release_stack, 2, 0, 1, 2);
             }
 
             public InstalledPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? info_size_group, Gtk.SizeGroup? action_size_group, bool show_uninstall = true) {
@@ -172,20 +192,22 @@ namespace AppCenter.Widgets {
                     if (newest == null) {
                         newest = package.get_newest_release ();
                         if (newest != null) {
-                            string header = ReleaseRow.format_release_header (newest, false);
                             string description = ReleaseRow.format_release_description (newest);
-
-                            release_description.set_text (description);
-                            release_expander.label = header;
-                            set_widget_visibility (release_expander, true);
-                        } else {
-                            set_widget_visibility (release_expander, false);
+                            string[] lines = description.split ("\n", 2);
+                            if (lines.length > 1) {
+                                release_expander.label = lines[0];
+                                release_description.set_text (lines[1]);
+                                release_stack.visible_child = release_expander;
+                                set_widget_visibility (release_stack, true);
+                            } else if (lines.length > 0) {
+                                release_single_label.label = lines[0];
+                                release_stack.visible_child = release_single_label;
+                                set_widget_visibility (release_stack, true);
+                            }
                         }
                     } else {
-                        set_widget_visibility (release_expander, true);
+                        set_widget_visibility (release_stack, true);
                     }
-                } else {
-                    set_widget_visibility (release_expander, false);
                 }
 
                 update_action ();

@@ -84,6 +84,10 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.ListBoxRow {
             } catch (Error e) {
                 warning (e.message);
             }
+
+            if (description.strip () == "") {
+                description = _("No description available");
+            }
         } else {
             description = _("No description available");
         }
