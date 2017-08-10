@@ -138,7 +138,7 @@ namespace AppCenter.Widgets {
                 release_description.selectable = true;
                 release_description.use_markup = true;
                 release_description.wrap = true;
-                release_description.margin_start = 14;
+                release_description.margin_start = 12;
                 release_description.xalign = 0;
 
                 release_expander = new Gtk.Expander ("");
