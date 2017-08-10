@@ -22,16 +22,16 @@ namespace AppCenter.Widgets {
     public class PackageRow : Gtk.ListBoxRow, AppListRow {
         AbstractPackageRowGrid grid;
 
-        public PackageRow.installed (AppCenterCore.Package package, Gtk.SizeGroup? size_group, bool show_uninstall = true) {
-            grid = new InstalledPackageRowGrid (package, size_group, show_uninstall);
+        public PackageRow.installed (AppCenterCore.Package package, Gtk.SizeGroup? info_size_group, Gtk.SizeGroup? action_size_group, bool show_uninstall = true) {
+            grid = new InstalledPackageRowGrid (package, info_size_group, action_size_group, show_uninstall);
             add (grid);
             grid.changed.connect (() => {
                 changed ();
             });
         }
 
-        public PackageRow.list (AppCenterCore.Package package, Gtk.SizeGroup? size_group, bool show_uninstall = true) {
-            grid = new ListPackageRowGrid (package, size_group, show_uninstall);
+        public PackageRow.list (AppCenterCore.Package package, Gtk.SizeGroup? info_size_group, Gtk.SizeGroup? action_size_group, bool show_uninstall = true) {
+            grid = new ListPackageRowGrid (package, info_size_group, action_size_group, show_uninstall);
             add (grid);
             grid.changed.connect (() => {
                 changed ();
@@ -72,7 +72,6 @@ namespace AppCenter.Widgets {
 
         private abstract class AbstractPackageRowGrid : AbstractAppContainer {
             public signal void changed ();
-
             protected Gtk.Grid info_grid;
 
             construct {
@@ -106,15 +105,19 @@ namespace AppCenter.Widgets {
                 attach (action_stack, 2, 0, 1, 1);
             }
 
-            public AbstractPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? size_group, bool show_uninstall = true) {
+            public AbstractPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? info_size_group, Gtk.SizeGroup? action_size_group, bool show_uninstall = true) {
                 this.package = package;
                 this.show_uninstall = show_uninstall;
                 this.show_open = false;
 
-                if (size_group != null) {
-                    size_group.add_widget (action_button);
-                    size_group.add_widget (cancel_button);
-                    size_group.add_widget (uninstall_button);
+                if (action_size_group != null) {
+                    action_size_group.add_widget (action_button);
+                    action_size_group.add_widget (cancel_button);
+                    action_size_group.add_widget (uninstall_button);
+                }
+
+                if (info_size_group != null) {
+                    info_size_group.add_widget (info_grid);
                 }
             }
         }
@@ -151,8 +154,8 @@ namespace AppCenter.Widgets {
                 attach (release_expander, 2, 0, 1, 2);
             }
 
-            public InstalledPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? size_group, bool show_uninstall = true) {
-                base (package, size_group, show_uninstall);
+            public InstalledPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? info_size_group, Gtk.SizeGroup? action_size_group, bool show_uninstall = true) {
+                base (package, info_size_group, action_size_group, show_uninstall);
                 set_up_package ();
             }
 
@@ -222,8 +225,8 @@ namespace AppCenter.Widgets {
                 info_grid.attach (package_summary, 1, 1, 1, 1);
             }
 
-            public ListPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? size_group, bool show_uninstall = true) {
-                base (package, size_group, show_uninstall);
+            public ListPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? info_size_group, Gtk.SizeGroup? action_size_group, bool show_uninstall = true) {
+                base (package, info_size_group, action_size_group, show_uninstall);
                 set_up_package ();
             }
 
