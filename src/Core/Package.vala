@@ -127,6 +127,7 @@ public class AppCenterCore.Package : Object {
     private string? name = null;
     private string? description = null;
     private string? summary = null;
+    private string? author = null;
     private string? color_primary = null;
     private string? color_primary_text = null;
     private string? payments_key = null;
@@ -384,6 +385,26 @@ public class AppCenterCore.Package : Object {
         }
 
         return latest_version;
+    }
+
+    public string get_author () {
+        if (author != null) {
+            return author;
+        }
+
+        author = component.developer_name;
+
+        if (author == null) {
+            var project_group = component.project_group;
+
+            if (project_group != null) {
+                author = project_group;
+            } else {
+                author = _("The %s Developers").printf (get_name ());
+            }
+        }
+
+        return author;
     }
 
     public string? get_color_primary () {

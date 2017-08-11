@@ -20,6 +20,8 @@
 
 namespace AppCenter.Views {
     public class AppInfoView : AppCenter.AbstractAppContainer {
+        private const int AUTHOR_OTHER_APPS_MAX = 5;
+
         static Gtk.CssProvider? previous_css_provider = null;
 
         GenericArray<AppStream.Screenshot> screenshots;
@@ -255,13 +257,20 @@ namespace AppCenter.Views {
 
             footer_grid.add (links_grid);
 
-            var other_apps_header = new Gtk.Label (_("Other Apps by %s:").printf (package.component.developer_name));
+            var other_apps_header = new Gtk.Label (_("Other Apps by %s:").printf (package.get_author ()));
             other_apps_header.xalign = 0;
             other_apps_header.get_style_context ().add_class ("h4");
 
             var other_apps_carousel = new AppCenter.Widgets.Carousel ();
 
-            other_apps_carousel.add_package (AppCenterCore.Client.get_default ().get_package_for_component_id ("com.github.danrabbit.nimbus.desktop"));
+            var author_packages = AppCenterCore.Client.get_default ().get_packages_by_author (package.get_author (), AUTHOR_OTHER_APPS_MAX);
+            foreach (var author_package in author_packages) {
+                if (author_package.component.get_id () == package.component.get_id ()) {
+                    continue;
+                }
+
+                other_apps_carousel.add_package (author_package);
+            }
 
             var other_apps_grid = new Gtk.Grid ();
             other_apps_grid.halign = Gtk.Align.CENTER;
@@ -284,7 +293,10 @@ namespace AppCenter.Views {
             grid.attach (header_box, 0, 0, 1, 1);
             grid.attach (content_grid, 0, 1, 1, 1);
             grid.attach (footer_grid, 0, 2, 1, 1);
-            grid.attach (other_apps_bar, 0, 3, 1, 1);
+
+            if (other_apps_carousel.get_children ().length () > 0) {
+                grid.attach (other_apps_bar, 0, 3, 1, 1);
+            }
 
             var scrolled = new Gtk.ScrolledWindow (null, null);
             scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
