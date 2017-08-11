@@ -28,41 +28,12 @@ public class AppCenter.Widgets.ReleaseListBox : Gtk.ListBox {
     }
 
     public bool populate () {
-        var releases = package.component.get_releases ();
-        int length = releases.length;
-        if (length < MIN_RELEASES) {
-            return false;
-        }
-
-        releases.sort_with_data ((a, b) => {
-            return b.vercmp (a);
-        });
-
-        string installed_version = package.get_version ();
-        
-        int start_index = 0;
-        int end_index = MIN_RELEASES;
-
-        if (package.installed) {
-            for (int i = 0; i < length; i++) {
-                unowned string release_version = releases.@get (i).get_version ();
-                if (release_version == null) {
-                    continue;
-                }
-
-                if (AppStream.utils_compare_versions (release_version, installed_version) == 0) {
-                    end_index = i.clamp (MIN_RELEASES, MAX_RELEASES);
-                    break;
-                }
-            }
-        }
-
-        for (int j = start_index; j < end_index; j++) {
-            var release = releases.get (j);
-            var row = new Widgets.ReleaseRow (release);
+        var releases = package.get_newest_releases (MIN_RELEASES, MAX_RELEASES);
+        foreach (var release in releases) {
+            var row = new ReleaseRow (release);
             add (row);
         }
 
-        return true;
+        return releases.size > 0;
     }
 }
