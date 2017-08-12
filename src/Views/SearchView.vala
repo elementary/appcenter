@@ -44,13 +44,17 @@ public class AppCenter.Views.SearchView : View {
 
     public override void return_clicked () {
         if (viewing_package) {
-            set_visible_child (app_list_view);
-            viewing_package = false;
-
-            if (current_category != null) {
-                subview_entered (_("Search Apps"), true, current_category.name);
+            if (previous_package != null) {
+                show_package (previous_package);
             } else {
-                subview_entered (null, true);
+                set_visible_child (app_list_view);
+                viewing_package = false;
+
+                if (current_category != null) {
+                    subview_entered (_("Search Apps"), true, current_category.name);
+                } else {
+                    subview_entered (null, true);
+                }
             }
         } else {
             search (current_search_term, null);

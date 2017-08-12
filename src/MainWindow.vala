@@ -251,12 +251,17 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     }
 
     private void view_opened (string? return_name, bool allow_search, string? custom_header = null, string? custom_search_placeholder = null) {
-        if (return_name != null && return_button_history.peek_head () != return_name) {
-            return_button_history.offer_head (return_name);
+        if (return_name != null) {
+            if (return_button_history.peek_head () != return_name) {
+                return_button_history.offer_head (return_name);
+            }
 
             return_button.label = return_name;
             return_button.no_show_all = false;
             return_button.visible = true;
+        } else {
+            return_button.no_show_all = true;
+            return_button.visible = false;
         }
 
         if (custom_header != null) {
