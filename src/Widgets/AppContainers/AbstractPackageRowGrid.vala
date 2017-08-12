@@ -18,7 +18,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-private abstract class AppCenter.Widgets.AbstractPackageRowGrid : AbstractAppContainer {
+public abstract class AppCenter.Widgets.AbstractPackageRowGrid : AbstractAppContainer {
     public signal void changed ();
     protected Gtk.Grid info_grid;
 

@@ -18,7 +18,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-private class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid {
+public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid {
     Gtk.Label app_version;
     Gtk.Stack release_stack;
     Gtk.Expander release_expander;
