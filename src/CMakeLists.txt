@@ -21,7 +21,10 @@ vala_precompile(VALA_C ${EXEC_NAME}
     Views/InstalledView.vala
     Views/SearchView.vala
     Views/View.vala
-    Widgets/AbstractAppContainer.vala
+    Widgets/AppContainers/AbstractAppContainer.vala
+    Widgets/AppContainers/AbstractPackageRowGrid.vala
+    Widgets/AppContainers/InstalledPackageRowGrid.vala
+    Widgets/AppContainers/ListPackageRowGrid.vala
     Widgets/AbstractAppList.vala
     Widgets/Banner.vala
     Widgets/Carousel/Carousel.vala
