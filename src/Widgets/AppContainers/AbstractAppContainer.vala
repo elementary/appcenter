@@ -20,6 +20,8 @@
 namespace AppCenter {
     public abstract class AbstractAppContainer : Gtk.Grid {
         public AppCenterCore.Package package { get; construct set; }
+        protected bool show_uninstall { get; set; default = true; }
+        protected bool show_open { get; set; default = true; }
 
         protected Gtk.Image image;
         protected Gtk.Label package_name;
@@ -35,8 +37,6 @@ namespace AppCenter {
         protected Gtk.Button cancel_button;
         protected Gtk.SizeGroup action_button_group;
         protected Gtk.Stack action_stack;
-        protected bool show_uninstall = true;
-        protected bool show_open = true;
 
         public bool is_os_updates {
             get {
