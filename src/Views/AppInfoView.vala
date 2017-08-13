@@ -22,8 +22,6 @@ namespace AppCenter.Views {
     public class AppInfoView : AppCenter.AbstractAppContainer {
         public signal void show_other_package (AppCenterCore.Package package);
 
-        private const int AUTHOR_OTHER_APPS_MAX = 5;
-
         static Gtk.CssProvider? previous_css_provider = null;
 
         GenericArray<AppStream.Screenshot> screenshots;
@@ -263,22 +261,9 @@ namespace AppCenter.Views {
             other_apps_header.xalign = 0;
             other_apps_header.get_style_context ().add_class ("h4");
 
-            var other_apps_carousel = new AppCenter.Widgets.Carousel ();
-            other_apps_carousel.child_activated.connect ((row) => {
-                if (row is Widgets.CarouselItem) {
-                    var package = ((Widgets.CarouselItem)row).package;
-                    show_other_package (package);
-                }
-            });
-
-            var author_packages = AppCenterCore.Client.get_default ().get_packages_by_author (package.get_author (), AUTHOR_OTHER_APPS_MAX);
-            foreach (var author_package in author_packages) {
-                if (author_package.component.get_id () == package.component.get_id ()) {
-                    continue;
-                }
-
-                other_apps_carousel.add_package (author_package);
-            }
+            var other_apps_carousel = new AppCenter.Widgets.AuthorCarousel (package);
+            other_apps_carousel.hexpand = true;
+            other_apps_carousel.package_activated.connect ((package) => show_other_package (package));
 
             var other_apps_grid = new Gtk.Grid ();
             other_apps_grid.halign = Gtk.Align.CENTER;
