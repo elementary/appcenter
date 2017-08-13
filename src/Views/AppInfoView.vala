@@ -150,8 +150,7 @@ namespace AppCenter.Views {
             var content_grid = new Gtk.Grid ();
             content_grid.width_request = 800;
             content_grid.halign = Gtk.Align.CENTER;
-            content_grid.margin_bottom = 48;
-            content_grid.margin_top = 48;
+            content_grid.margin = 48;
             content_grid.row_spacing = 24;
             content_grid.orientation = Gtk.Orientation.VERTICAL;
 
