@@ -95,7 +95,7 @@ public class AppCenterCore.Package : Object {
 
     public bool is_os_updates {
         get {
-            return component.id == "xxx-os-updates";
+            return component.id == OS_UPDATES_ID;
         }
     }
 
@@ -108,6 +108,12 @@ public class AppCenterCore.Package : Object {
     public bool is_local {
         get {
             return component.get_id ().has_suffix (LOCAL_ID_SUFFIX);
+        }
+    }
+
+    public bool is_shareable {
+        get {
+            return !is_driver && !is_os_updates;
         }
     }
 
