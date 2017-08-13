@@ -124,11 +124,46 @@ public class AppCenterCore.Package : Object {
         }
     }
 
+    private string? _author = null;
+    public string author {
+        get {
+            if (_author != null) {
+                return _author;
+            }
+
+            _author = component.developer_name;
+
+            if (_author == null) {
+                var project_group = component.project_group;
+
+                if (project_group != null) {
+                    _author = project_group;
+                }
+            }
+
+            return _author;
+        }
+    }
+
+    private string? _author_title = null;
+    public string author_title {
+        get {
+            if (_author_title != null) {
+                return _author_title;
+            }
+
+            _author_title = author;
+            if (_author_title == null) {
+                _author_title = _("The %s Developers").printf (get_name ());
+            }
+
+            return _author_title;
+        }
+    }
+
     private string? name = null;
     private string? description = null;
     private string? summary = null;
-    private string? author = null;
-    private string? author_title = null;
     private string? color_primary = null;
     private string? color_primary_text = null;
     private string? payments_key = null;
@@ -386,37 +421,6 @@ public class AppCenterCore.Package : Object {
         }
 
         return latest_version;
-    }
-
-    public string? get_author () {
-        if (author != null) {
-            return author;
-        }
-
-        author = component.developer_name;
-
-        if (author == null) {
-            var project_group = component.project_group;
-
-            if (project_group != null) {
-                author = project_group;
-            }
-        }
-
-        return author;
-    }
-
-    public string get_author_title () {
-        if (author_title != null) {
-            return author_title;
-        }
-
-        author_title = get_author ();
-        if (author_title == null) {
-            author_title = _("The %s Developers").printf (get_name ());
-        }
-
-        return author_title;
     }
 
     public string? get_color_primary () {

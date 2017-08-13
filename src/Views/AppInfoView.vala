@@ -263,8 +263,8 @@ namespace AppCenter.Views {
             grid.attach (content_grid, 0, 1, 1, 1);
             grid.attach (footer_grid, 0, 2, 1, 1);
 
-            if (package.get_author () != null) {
-                var other_apps_header = new Gtk.Label (_("Other Apps by %s:").printf (package.get_author_title ()));
+            if (package.author != null) {
+                var other_apps_header = new Gtk.Label (_("Other Apps by %s").printf (package.author_title));
                 other_apps_header.xalign = 0;
                 other_apps_header.get_style_context ().add_class ("h4");
 
