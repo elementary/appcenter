@@ -28,7 +28,7 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.ListBoxRow {
     }
 
     construct {
-        string header = format_release_header (release);
+        string header = format_release_header (release, true);
         string description = format_release_description (release);
 
         header_label = new Gtk.Label (header);
@@ -51,13 +51,13 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.ListBoxRow {
         add (grid);
     }
 
-    private static string format_release_header (AppStream.Release release) {
+    public static string format_release_header (AppStream.Release release, bool with_date) {
         string label;
 
         unowned string version = release.get_version ();
 
         uint64 timestamp = release.get_timestamp ();
-        if (timestamp != 0) {
+        if (with_date && timestamp != 0) {
             var date_time = new DateTime.from_unix_utc ((int64)timestamp);
             string format = Granite.DateTime.get_default_date_format (false, true, true);
             string date = date_time.format (format);
@@ -76,13 +76,17 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.ListBoxRow {
         return label;
     }
 
-    private static string format_release_description (AppStream.Release release) {
+    public static string format_release_description (AppStream.Release release) {
         string description = release.get_description ();
         if (description != null) {
             try {
                 description = AppStream.markup_convert_simple (description);
             } catch (Error e) {
                 warning (e.message);
+            }
+
+            if (description.strip () == "") {
+                description = _("No description available");
             }
         } else {
             description = _("No description available");

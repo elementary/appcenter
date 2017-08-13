@@ -110,8 +110,7 @@
         <release version="0.1.0" date="2016-08-15"/>
     </releases>
     <provides>
-        <binary>appcenter</binary>
-        <binary>appcenter-daemon</binary>
+        <binary>io.elementary.appcenter</binary>
         <dbus type="user">io.elementary.AppCenter</dbus>
     </provides>
     <screenshots>
