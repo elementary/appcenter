@@ -22,9 +22,6 @@ public class AppCenter.Widgets.AuthorCarousel : Carousel {
 
     public AppCenterCore.Package target { get; construct; }
 
-    // TODO: move that to Carousel itself
-    public signal void package_activated (AppCenterCore.Package package);
-
     construct {
         var author_packages = AppCenterCore.Client.get_default ().get_packages_by_author (target.get_author (), AUTHOR_OTHER_APPS_MAX);
         foreach (var author_package in author_packages) {
@@ -34,18 +31,9 @@ public class AppCenter.Widgets.AuthorCarousel : Carousel {
 
             add_package (author_package);
         }
-
-        child_activated.connect (on_child_activated);
     }
 
     public AuthorCarousel (AppCenterCore.Package target) {
         Object (target: target);
-    }
-
-    private void on_child_activated (Gtk.FlowBoxChild child) {
-        if (child is Widgets.CarouselItem) {
-            var package = ((Widgets.CarouselItem)child).package;
-            package_activated (package);
-        }
     }
 }

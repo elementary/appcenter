@@ -241,23 +241,8 @@ namespace AppCenter {
                 return 0;
             });
 
-            recently_updated_carousel.child_activated.connect ((child) => {
-                var item = (Widgets.CarouselItem) child;
-                var package = item.package;
-
-                if (package != null) {
-                    show_package (package);
-                }
-            });
-
-            trending_carousel.child_activated.connect ((child) => {
-                var item = (Widgets.CarouselItem) child;
-                var package = item.package;
-
-                if (package != null) {
-                    show_package (package);
-                }
-            });
+            recently_updated_carousel.package_activated.connect (show_package);
+            trending_carousel.package_activated.connect (show_package);
         }
 
         public override void show_package (AppCenterCore.Package package) {

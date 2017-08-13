@@ -18,19 +18,32 @@
 */
 
 public class AppCenter.Widgets.Carousel : Gtk.FlowBox {
-        public Carousel () {
-            Object (activate_on_single_click : true,
-                    column_spacing: 12,
-                    row_spacing: 12,
-                    hexpand: true,
-                    homogeneous: true,
-                    max_children_per_line: 5,
-                    min_children_per_line: 2);
-        }
+    public signal void package_activated (AppCenterCore.Package package);
 
-        public void add_package (AppCenterCore.Package? package) {
-            var carousel_item = new CarouselItem (package);
-            add (carousel_item);    
-            show_all ();
+    construct {
+        child_activated.connect (on_child_activated);
+    }
+
+    public Carousel () {
+        Object (activate_on_single_click : true,
+                column_spacing: 12,
+                row_spacing: 12,
+                hexpand: true,
+                homogeneous: true,
+                max_children_per_line: 5,
+                min_children_per_line: 2);
+    }
+
+    public void add_package (AppCenterCore.Package? package) {
+        var carousel_item = new CarouselItem (package);
+        add (carousel_item);
+        show_all ();
+    }
+    
+    private void on_child_activated (Gtk.FlowBoxChild child) {
+        if (child is Widgets.CarouselItem) {
+            var package = ((Widgets.CarouselItem)child).package;
+            package_activated (package);
         }
+    }
 }
