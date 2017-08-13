@@ -152,7 +152,7 @@ namespace AppCenter {
             package_name.label = package.get_name ();
 
             if (package.component.get_id () != AppCenterCore.Package.OS_UPDATES_ID) {
-                package_author.label = package.get_author ();
+                package_author.label = package.get_author_title ();
             }
 
             image.gicon = package.get_icon (icon_size);

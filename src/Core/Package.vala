@@ -128,6 +128,7 @@ public class AppCenterCore.Package : Object {
     private string? description = null;
     private string? summary = null;
     private string? author = null;
+    private string? author_title = null;
     private string? color_primary = null;
     private string? color_primary_text = null;
     private string? payments_key = null;
@@ -387,7 +388,7 @@ public class AppCenterCore.Package : Object {
         return latest_version;
     }
 
-    public string get_author () {
+    public string? get_author () {
         if (author != null) {
             return author;
         }
@@ -399,12 +400,23 @@ public class AppCenterCore.Package : Object {
 
             if (project_group != null) {
                 author = project_group;
-            } else {
-                author = _("The %s Developers").printf (get_name ());
             }
         }
 
         return author;
+    }
+
+    public string get_author_title () {
+        if (author_title != null) {
+            return author_title;
+        }
+
+        author_title = get_author ();
+        if (author_title == null) {
+            author_title = _("The %s Developers").printf (get_name ());
+        }
+
+        return author_title;
     }
 
     public string? get_color_primary () {
