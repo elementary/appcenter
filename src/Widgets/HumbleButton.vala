@@ -21,7 +21,8 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
     public signal void download_requested ();
     public signal void payment_requested (int amount);
 
-    private Gtk.Popover selection;
+    private Gtk.Popover? selection = null;
+    private Gtk.Grid selection_list;
     private Gtk.Button amount_button;
     private Gtk.SpinButton custom_amount;
 
@@ -90,7 +91,7 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
 
         custom_amount = new Gtk.SpinButton.with_range (0, 100, 1);
 
-        var selection_list = new Gtk.Grid ();
+        selection_list = new Gtk.Grid ();
         selection_list.column_spacing = 6;
         selection_list.margin = 12;
         selection_list.add (one_dollar);
@@ -102,10 +103,6 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
         arrow_button = new Gtk.ToggleButton ();
         arrow_button.image = new Gtk.Image.from_icon_name ("pan-down-symbolic", Gtk.IconSize.MENU);
 
-        selection = new Gtk.Popover (arrow_button);
-        selection.position = Gtk.PositionType.BOTTOM;
-        selection.add (selection_list);
-
         amount_button.clicked.connect (() => {
             if (this.amount != 0) {
                 payment_requested (this.amount);
@@ -114,26 +111,22 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
             }
         });
 
-        arrow_button.toggled.connect (() => {
-            selection.show_all ();
-        });
+        arrow_button.toggled.connect (on_arrow_button_toggled);
 
         custom_amount.value_changed.connect (() => {
             amount = (int) custom_amount.value;
         });
 
         custom_amount.activate.connect (() => {
-            selection.hide ();
+            if (selection != null) {
+                selection.hide ();
+            }
 
             if (this.amount != 0) {
                 payment_requested (this.amount);
             } else {
                 download_requested ();
             }
-        });
-
-        selection.closed.connect (() => {
-            arrow_button.active = false;
         });
 
         get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
@@ -157,10 +150,27 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
 
         button.clicked.connect (() => {
             this.amount = amount;
-            selection.hide ();
+            if (selection != null) {
+                selection.hide ();
+            }
+
             payment_requested (this.amount);
         });
 
         return button;
+    }
+
+    private void on_arrow_button_toggled () {
+        if (selection == null) {
+            selection = new Gtk.Popover (arrow_button);
+            selection.position = Gtk.PositionType.BOTTOM;
+            selection.add (selection_list);
+
+            selection.closed.connect (() => {
+                arrow_button.active = false;
+            });            
+        }
+
+        selection.show_all ();
     }
 }

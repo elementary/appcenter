@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-07-19 05:46+0000\n"
+"PO-Revision-Date: 2017-08-12 16:39+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/fi/>\n"
@@ -365,7 +365,7 @@ msgstr "%s Kehittäjät"
 
 #: ../src/Widgets/AbstractAppContainer.vala:165
 msgid "by %s"
-msgstr ""
+msgstr "tekijä %s"
 
 #: ../src/Widgets/AbstractAppContainer.vala:209
 msgid "Update"
