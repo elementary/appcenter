@@ -22,15 +22,16 @@ public class AppCenter.Widgets.Carousel : Gtk.FlowBox {
 
     public Carousel () {
         Object (activate_on_single_click : true,
-                column_spacing: 12,
-                row_spacing: 12,
-                hexpand: true,
-                homogeneous: true,
-                max_children_per_line: 5,
-                min_children_per_line: 2);
+                homogeneous: true);
     }
 
     construct {
+        column_spacing = 12;
+        row_spacing = 12;
+        hexpand = true;
+        max_children_per_line = 5;
+        min_children_per_line = 1;
+        selection_mode = Gtk.SelectionMode.NONE;
         child_activated.connect (on_child_activated);
     }
 

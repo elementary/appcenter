@@ -268,7 +268,6 @@ namespace AppCenter.Views {
                 other_apps_header.get_style_context ().add_class ("h4");
 
                 var other_apps_carousel = new AppCenter.Widgets.AuthorCarousel (package);
-                other_apps_carousel.hexpand = true;
                 other_apps_carousel.package_activated.connect ((package) => show_other_package (package));
 
                 var other_apps_grid = new Gtk.Grid ();
@@ -286,6 +285,7 @@ namespace AppCenter.Views {
                 var other_apps_style_context = other_apps_bar.get_style_context ();
                 other_apps_style_context.add_class (Gtk.STYLE_CLASS_TOOLBAR);
                 other_apps_style_context.add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
+                other_apps_style_context.add_class (Gtk.STYLE_CLASS_SIDEBAR);
 
                 if (other_apps_carousel.get_children ().length () > 0) {
                     grid.attach (other_apps_bar, 0, 3, 1, 1);
