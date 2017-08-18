@@ -148,8 +148,7 @@ namespace AppCenter.Views {
             var content_grid = new Gtk.Grid ();
             content_grid.width_request = 800;
             content_grid.halign = Gtk.Align.CENTER;
-            content_grid.margin_bottom = 48;
-            content_grid.margin_top = 48;
+            content_grid.margin = 48;
             content_grid.row_spacing = 24;
             content_grid.orientation = Gtk.Orientation.VERTICAL;
 
@@ -276,7 +275,7 @@ namespace AppCenter.Views {
 
             open_button.get_style_context ().add_class ("h3");
 
-            if (!package.is_os_updates) {
+            if (package.is_shareable) {
                 var body = _("Check out %s on AppCenter:").printf (package.get_name ());
                 var uri = "https://appcenter.elementary.io/%s".printf (package.component.get_id ());
                 var share_popover = new SharePopover (body, uri);
