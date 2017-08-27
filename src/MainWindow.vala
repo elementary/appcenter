@@ -231,7 +231,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     private void trigger_search () {
         unowned string query = search_entry.text;
         uint query_length = query.length;
-        bool query_valid = query_length >= 2;
+        bool query_valid = query_length >= 3;
 
         view_mode_revealer.reveal_child = !query_valid;
 
