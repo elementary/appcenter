@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-05-31 06:13+0000\n"
+"PO-Revision-Date: 2017-09-02 03:08+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål "
-"<https://l10n.elementary.io/projects/appcenter/appcenter/nb/>\n"
+"<https://weblate.elementary.io/projects/appcenter/appcenter/nb/>\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.14\n"
+"X-Generator: Weblate 2.16\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #: ../src/Application.vala:40
@@ -72,6 +72,8 @@ msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
+"En feil inntraff under behandling av kortet. Prøv igjen senere. Ethvert "
+"bryderi beklages."
 
 #: ../src/Dialogs/StripeDialog.vala:31
 msgid "Please review your payment info and try again."
@@ -86,15 +88,17 @@ msgid ""
 "Your email address is used to send a receipt. It is never stored and you "
 "will not be subscribed to a mailing list."
 msgstr ""
+"Din e-postadresse brukes til å sende en kvittering. Den lagres aldri, og du "
+"vil ikke bli meldt på noen e-postliste."
 
 #: ../src/Dialogs/StripeDialog.vala:88
 msgid "Card Number"
-msgstr ""
+msgstr "Kortnummer"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: ../src/Dialogs/StripeDialog.vala:100
 msgid "MM / YY"
-msgstr ""
+msgstr "MM / ÅÅ"
 
 #: ../src/Dialogs/StripeDialog.vala:120
 msgid "CVC"
@@ -102,7 +106,7 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:157
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Personvernspraksis"
 
 #: ../src/Dialogs/StripeDialog.vala:168 ../src/Dialogs/StripeDialog.vala:284
 #, fuzzy
@@ -128,13 +132,13 @@ msgstr "Prøv igjen"
 #: ../src/Dialogs/StripeDialog.vala:463 ../src/Dialogs/StripeDialog.vala:528
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
-msgstr ""
+msgstr "Kortnummeret er feil. Prøv igjen senere med rett kortnummer."
 
 #: ../src/Dialogs/StripeDialog.vala:465
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
-msgstr ""
+msgstr "Utløpsmåneden er ugyldig. Prøv igjen ved med korrekt utløpsdato."
 
 #: ../src/Dialogs/StripeDialog.vala:467 ../src/Dialogs/StripeDialog.vala:525
 msgid ""
@@ -148,23 +152,25 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:472 ../src/Dialogs/StripeDialog.vala:514
 msgid "The card has expired. Please try again with a different card."
-msgstr ""
+msgstr "Kortet har utløpt. Prøv igjen med et annet kort."
 
 #: ../src/Dialogs/StripeDialog.vala:492
 msgid "There are too many payment requests at the moment, please retry later."
-msgstr ""
+msgstr "For mange betalingsforespørsler for øyeblikket, prøv igjen senere."
 
 #: ../src/Dialogs/StripeDialog.vala:508
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
 msgstr ""
+"Dette kortet støtter ikke denne typen transaksjon. Prøv igjen med et annet "
+"kort."
 
 #: ../src/Dialogs/StripeDialog.vala:510
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
-msgstr ""
+msgstr "Dette kortet støtter ikke denne valuaten. Prøv igjen med et annet kort."
 
 #: ../src/Dialogs/StripeDialog.vala:512
 msgid "The transaction has already been processed."
@@ -205,7 +211,7 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:559
 msgid "The given card is a test card. Please use a real card to proceed."
-msgstr ""
+msgstr "Oppgitt kort er et test-kort. Bruk et ordentlig kort for å fortsette."
 
 #: ../src/Views/InstalledView.vala:51 ../src/MainWindow.vala:130
 msgctxt "view"
@@ -412,7 +418,7 @@ msgstr ""
 
 #: ../src/MainWindow.vala:165
 msgid "Network Settings…"
-msgstr ""
+msgstr "Nettverksinnstillinger…"
 
 #: ../src/MainWindow.vala:298
 msgid "Search %s"
