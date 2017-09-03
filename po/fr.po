@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
 "PO-Revision-Date: 2017-09-03 09:21+0000\n"
-"Last-Translator: Corentin Noël <corentin@elementary.io>\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: French "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/fr/>\n"
 "Language: fr\n"
@@ -532,7 +532,7 @@ msgstr "Vérification des signatures"
 
 #: ../src/Core/ChangeInformation.vala:82
 msgid "Testing changes"
-msgstr "Test des changements"
+msgstr "Essai des changements"
 
 #: ../src/Core/ChangeInformation.vala:84
 msgid "Committing changes"
@@ -596,19 +596,19 @@ msgstr "Attente du verrou du gestionnaire de paquets"
 
 #: ../src/Core/ChangeInformation.vala:114
 msgid "Waiting for authentication"
-msgstr "En attente d'authentification"
+msgstr "En attente d’authentification"
 
 #: ../src/Core/ChangeInformation.vala:116
 msgid "Updating running applications"
-msgstr "Mise à jour des applications en cours d'exécution"
+msgstr "Mise à jour des applications en cours d’exécution"
 
 #: ../src/Core/ChangeInformation.vala:118
 msgid "Checking applications in use"
-msgstr "Vérification des applications en cours d'exécution"
+msgstr "Vérification des applications en cours d’exécution"
 
 #: ../src/Core/ChangeInformation.vala:120
 msgid "Checking libraries in use"
-msgstr "Vérification des bibliothèques en cours d'utilisation"
+msgstr "Vérification des bibliothèques en cours d’utilisation"
 
 #: ../src/Core/ChangeInformation.vala:122
 msgid "Copying files"
