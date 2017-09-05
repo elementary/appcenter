@@ -441,7 +441,7 @@ public class AppCenterCore.Client : Object {
         task_count++;
 
         try {
-            Pk.Results results = yield UpdateManager.get_updates (null);
+            Pk.Results results = yield UpdateManager.get_default ().get_updates (null);
 
             bool was_empty = updates_number == 0U;
             updates_number = get_real_packages_length (results.get_package_array ());

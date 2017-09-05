@@ -20,7 +20,9 @@
 
 public class AppCenterCore.UpdateManager : Object {
     public bool restart_required { public get; private set; default = false; }
+    public string[] fake_packages { get; set; }
 
+    private const string FAKE_PACKAGE_ID = "%s;fake.version;amd64;installed:xenial-main";
     private const string RESTART_REQUIRED_FILE = "/var/run/reboot-required";
 
     private File restart_file;
@@ -33,24 +35,39 @@ public class AppCenterCore.UpdateManager : Object {
 
     }
 
-    public static async Pk.Results get_updates (Cancellable? cancellable) throws Error {
+    public async Pk.Results get_updates (Cancellable? cancellable) throws Error {
         var client = AppCenterCore.Client.get_pk_client ();
 
         try {
             Pk.Results update_results = yield client.get_updates_async (0, cancellable, (t, p) => { });
+
+            if (fake_packages.length > 0) {
+                foreach (string name in fake_packages) {
+                    var package = new Pk.Package ();
+                    if (package.set_id (FAKE_PACKAGE_ID.printf (name))) {
+                        update_results.add_package (package);
+                    } else {
+                        warning ("Could not add a fake package '%s' to the update list".printf (name));
+                    }
+                }
+
+                fake_packages = {};
+            }
 
             string[] packages_array = {};
             update_results.get_package_array ().foreach ((pk_package) => {
                 packages_array += pk_package.get_id ();
             });
 
-            packages_array += null;
+            if (packages_array.length > 0) {
+                packages_array += null;
 
-            Pk.Results details_results = yield client.get_details_async (packages_array, cancellable, (t, p) => { });
+                Pk.Results details_results = yield client.get_details_async (packages_array, cancellable, (t, p) => { });
 
-            details_results.get_details_array ().foreach ((details) => {
-                update_results.add_details (details);
-            });
+                details_results.get_details_array ().foreach ((details) => {
+                    update_results.add_details (details);
+                });
+            }
             
             return update_results;
         } catch (Error e) {

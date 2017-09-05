@@ -15,6 +15,15 @@
         </_p>
     </description>
     <releases>
+        <release version="0.2.5" date="2017-08-04" urgency="medium">
+            <description>
+                <_p>Bug fixes and improve perfomance.</_p>
+                <ul>
+                    <_li>Various bug fixes and performance improvements</_li>
+                    <_li>New translations</_li>
+                </ul>
+            </description>
+        </release>
         <release version="0.2.4" date="2017-07-04" urgency="medium">
             <description>
                 <_p>Bug fixes and improve perfomance.</_p>
@@ -101,8 +110,7 @@
         <release version="0.1.0" date="2016-08-15"/>
     </releases>
     <provides>
-        <binary>appcenter</binary>
-        <binary>appcenter-daemon</binary>
+        <binary>io.elementary.appcenter</binary>
         <dbus type="user">io.elementary.AppCenter</dbus>
     </provides>
     <screenshots>

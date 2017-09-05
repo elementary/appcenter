@@ -16,11 +16,15 @@ vala_precompile(VALA_C ${EXEC_NAME}
     Dialogs/StripeDialog.vala
     Views/AppInfoView.vala
     Views/AppListView.vala
+    Views/AppListUpdateView.vala
     Views/Homepage.vala
     Views/InstalledView.vala
     Views/SearchView.vala
     Views/View.vala
-    Widgets/AbstractAppContainer.vala
+    Widgets/AppContainers/AbstractAppContainer.vala
+    Widgets/AppContainers/AbstractPackageRowGrid.vala
+    Widgets/AppContainers/InstalledPackageRowGrid.vala
+    Widgets/AppContainers/ListPackageRowGrid.vala
     Widgets/AbstractAppList.vala
     Widgets/Banner.vala
     Widgets/Carousel/Carousel.vala
@@ -33,6 +37,8 @@ vala_precompile(VALA_C ${EXEC_NAME}
     Widgets/HumbleButton.vala
     Widgets/SharePopover.vala
     Widgets/Switcher.vala
+    Widgets/ReleaseListBox.vala
+    Widgets/ReleaseRow.vala
     Services/DbusInterfaces.vala
     Services/DBusServer.vala
     ${CMAKE_CURRENT_BINARY_DIR}/config.vala

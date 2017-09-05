@@ -28,6 +28,8 @@ namespace AppCenter.Views {
         private Gtk.Stack app_screenshots;
         private Gtk.Label app_version;
         private Gtk.ListBox extension_box;
+        private Gtk.Grid release_grid;
+        private Widgets.ReleaseListBox release_list_box;
         private Gtk.Stack screenshot_stack;
         private Gtk.TextView app_description;
         private Widgets.Switcher screenshot_switcher;
@@ -146,8 +148,7 @@ namespace AppCenter.Views {
             var content_grid = new Gtk.Grid ();
             content_grid.width_request = 800;
             content_grid.halign = Gtk.Align.CENTER;
-            content_grid.margin_bottom = 48;
-            content_grid.margin_top = 48;
+            content_grid.margin = 48;
             content_grid.row_spacing = 24;
             content_grid.orientation = Gtk.Orientation.VERTICAL;
 
@@ -162,14 +163,28 @@ namespace AppCenter.Views {
 
             content_grid.add (app_description);
 
+            var whats_new_label = new Gtk.Label (_("What's New:"));
+            whats_new_label.get_style_context ().add_class ("h2");
+            whats_new_label.xalign = 0;
+
+            release_list_box = new Widgets.ReleaseListBox (package);
+
+            release_grid = new Gtk.Grid ();
+            release_grid.row_spacing = 12;
+            release_grid.attach (whats_new_label, 0, 0, 1, 1);
+            release_grid.attach (release_list_box, 0, 1, 1, 1);
+            release_grid.no_show_all = true;
+            release_grid.hide ();
+
+            content_grid.add (release_grid);
+
             if (package_component.get_addons ().length > 0) {
                 extension_box = new Gtk.ListBox ();
                 extension_box.selection_mode = Gtk.SelectionMode.NONE;
 
-                var extension_label = new Gtk.Label ("<b>" + _("Extensions:") + "</b>");
+                var extension_label = new Gtk.Label (_("Extensions:"));
                 extension_label.margin_top = 12;
-                extension_label.use_markup = true;
-                extension_label.get_style_context ().add_class ("h3");
+                extension_label.get_style_context ().add_class ("h2");
                 extension_label.halign = Gtk.Align.START;
 
                 content_grid.add (extension_label);
@@ -260,7 +275,7 @@ namespace AppCenter.Views {
 
             open_button.get_style_context ().add_class ("h3");
 
-            if (!package.is_os_updates) {
+            if (package.is_shareable) {
                 var body = _("Check out %s on AppCenter:").printf (package.get_name ());
                 var uri = "https://appcenter.elementary.io/%s".printf (package.component.get_id ());
                 var share_popover = new SharePopover (body, uri);
@@ -306,7 +321,7 @@ namespace AppCenter.Views {
 
         private async void load_extensions () {
             package.component.get_addons ().@foreach ((extension) => {
-                var row = new Widgets.PackageRow.list (new AppCenterCore.Package (extension), null, false);
+                var row = new Widgets.PackageRow.list (new AppCenterCore.Package (extension), null, null, false);
                 if (extension_box != null) {
                     extension_box.add (row);
                 }
@@ -351,6 +366,15 @@ namespace AppCenter.Views {
             new Thread<void*> ("content-loading", () => {
                 app_version.label = package.get_version ();
 
+                Idle.add (() => {
+                    if (release_list_box.populate ()) {
+                        release_grid.no_show_all = false;
+                        release_grid.show_all ();
+                    }
+
+                    return false;
+                });
+                
                 if (screenshots.length == 0) {
                     return null;
                 }

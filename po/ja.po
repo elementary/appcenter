@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-07-12 14:21+0000\n"
+"PO-Revision-Date: 2017-09-02 13:09+0000\n"
 "Last-Translator: Ryo Nakano <rmfmada3q@gmail.com>\n"
 "Language-Team: Japanese "
-"<https://l10n.elementary.io/projects/appcenter/appcenter/ja/>\n"
+"<https://weblate.elementary.io/projects/appcenter/appcenter/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.14\n"
+"X-Generator: Weblate 2.16\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #: ../src/Application.vala:40
@@ -72,7 +72,7 @@ msgstr "キャンセル"
 msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
-msgstr "カードの処理中にエラーが発生しました。ご迷惑おかけして申し訳ありません。"
+msgstr "カードの処理中にエラーが発生しました。後ほどもう一度お試しください。ご迷惑おかけして申し訳ありません。"
 
 #: ../src/Dialogs/StripeDialog.vala:31
 msgid "Please review your payment info and try again."
@@ -170,7 +170,7 @@ msgstr "この種類の取引ではこのカードはサポートされていま
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
-msgstr "この種類の取引ではこの通過はサポートされていません。別のカードを使用してもう一度お試しください。"
+msgstr "この種類の取引ではこの通貨はサポートされていません。別のカードを使用してもう一度お試しください。"
 
 #: ../src/Dialogs/StripeDialog.vala:512
 #, fuzzy

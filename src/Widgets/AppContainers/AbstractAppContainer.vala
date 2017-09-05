@@ -20,6 +20,8 @@
 namespace AppCenter {
     public abstract class AbstractAppContainer : Gtk.Grid {
         public AppCenterCore.Package package { get; construct set; }
+        protected bool show_uninstall { get; set; default = true; }
+        protected bool show_open { get; set; default = true; }
 
         protected Gtk.Image image;
         protected Gtk.Label package_name;
@@ -30,12 +32,11 @@ namespace AppCenter {
         protected Gtk.Button uninstall_button;
         protected Gtk.Button open_button;
 
+        protected Gtk.Grid progress_grid;
         protected Gtk.ProgressBar progress_bar;
         protected Gtk.Button cancel_button;
         protected Gtk.SizeGroup action_button_group;
         protected Gtk.Stack action_stack;
-        protected bool show_uninstall = true;
-        protected bool show_open = true;
 
         public bool is_os_updates {
             get {
@@ -132,7 +133,7 @@ namespace AppCenter {
             cancel_button = new Gtk.Button.with_label (_("Cancel"));
             cancel_button.clicked.connect (() => action_cancelled ());
 
-            var progress_grid = new Gtk.Grid ();
+            progress_grid = new Gtk.Grid ();
             progress_grid.halign = Gtk.Align.END;
             progress_grid.valign = Gtk.Align.CENTER;
             progress_grid.column_spacing = 12;
@@ -146,6 +147,7 @@ namespace AppCenter {
             action_button_group.add_widget (open_button);
 
             action_stack = new Gtk.Stack ();
+            action_stack.hexpand = true;
             action_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
             action_stack.add_named (button_grid, "buttons");
             action_stack.add_named (progress_grid, "progress");
@@ -208,12 +210,14 @@ namespace AppCenter {
                     set_widget_visibility (uninstall_button, false);
                     set_widget_visibility (action_button, true);
                     set_widget_visibility (open_button, false);
+                    set_widget_visibility (progress_grid, false);
 
                     break;
                 case AppCenterCore.Package.State.INSTALLED:
                     set_widget_visibility (uninstall_button, show_uninstall && !is_os_updates);
                     set_widget_visibility (action_button, false);
                     set_widget_visibility (open_button, show_open && package.get_can_launch ());
+                    set_widget_visibility (progress_grid, false);
 
                     break;
                 case AppCenterCore.Package.State.UPDATE_AVAILABLE:
@@ -222,6 +226,7 @@ namespace AppCenter {
                     set_widget_visibility (uninstall_button, show_uninstall && !is_os_updates);
                     set_widget_visibility (action_button, true);
                     set_widget_visibility (open_button, false);
+                    set_widget_visibility (progress_grid, false);
 
                     break;
                 case AppCenterCore.Package.State.INSTALLING:
@@ -230,6 +235,7 @@ namespace AppCenter {
                     set_widget_visibility (uninstall_button, false);
                     set_widget_visibility (action_button, false);
                     set_widget_visibility (open_button, false);
+                    set_widget_visibility (progress_grid, true);
 
                     action_stack.set_visible_child_name ("progress");
                     break;
@@ -239,9 +245,14 @@ namespace AppCenter {
             }
         }
 
-        private static void set_widget_visibility (Gtk.Widget widget, bool show) {
-            widget.no_show_all = !show;
-            widget.visible = show;
+        protected static void set_widget_visibility (Gtk.Widget widget, bool show) {
+            if (show) {
+                widget.no_show_all = false;
+                widget.show_all ();
+            } else {
+                widget.no_show_all = true;
+                widget.hide ();
+            }
         }
 
         protected void update_progress () {
