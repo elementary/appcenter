@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-07-12 02:49+0000\n"
-"Last-Translator: SteffenL <steffenl@protonmail.com>\n"
+"PO-Revision-Date: 2017-09-06 14:48+0000\n"
+"Last-Translator: Lloyd Carr <l.carr@gmx.de>\n"
 "Language-Team: German "
-"<https://l10n.elementary.io/projects/appcenter/appcenter/de/>\n"
+"<https://weblate.elementary.io/projects/appcenter/appcenter/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.14\n"
+"X-Generator: Weblate 2.16\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
 #: ../src/Application.vala:40
@@ -22,7 +22,7 @@ msgstr "App Center"
 #: ../src/Application.vala:57
 msgid "translator-credits"
 msgstr ""
-"Launchpad Contributions:\n"
+"Launchpad-Mitwirkende:\n"
 "  Alexander Wilms https://launchpad.net/~alexander-wilms\n"
 "  Artem Anufrij https://launchpad.net/~artem-anufrij\n"
 "  Corentin Noël https://launchpad.net/~tintou\n"
@@ -46,7 +46,9 @@ msgstr ""
 
 #: ../src/Application.vala:114
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr "Der Verweis »%s« konnte nicht gefunden werden, stattdessen wird gesucht"
+msgstr ""
+"Der angegebene Link '%s' konnte nicht gefunden werden, stattdessen wird "
+"gesucht"
 
 #: ../src/Application.vala:216
 msgid "Application installed"
@@ -66,12 +68,12 @@ msgstr "Während der Installation von %s ist ein Fehler aufgetreten"
 
 #: ../src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
-msgstr "Wollen Sie den Rechner wirklich neu starten?"
+msgstr "Sind Sie sicher, dass Sie den Rechner neustarten wollen?"
 
 #: ../src/Dialogs/RestartDialog.vala:41
 msgid "This will close all open applications and restart this device."
 msgstr ""
-"Alle offenen Anwendungen werden geschlossen und das Gerät neu gestartet."
+"Alle offenen Anwendungen werden geschlossen und der Rechner neu gestartet."
 
 #: ../src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
@@ -94,7 +96,7 @@ msgstr ""
 #: ../src/Dialogs/StripeDialog.vala:31
 msgid "Please review your payment info and try again."
 msgstr ""
-"Bitte überprüfen Sie die Zahlungsdaten und versuchen Sie es noch einmal."
+"Bitte überprüfen Sie Ihre Zahlungsinformationen und versuchen Sie es erneut."
 
 #: ../src/Dialogs/StripeDialog.vala:75
 msgid "Email"
@@ -123,11 +125,11 @@ msgstr "CVC-Prüfnummer"
 
 #: ../src/Dialogs/StripeDialog.vala:157
 msgid "Privacy Policy"
-msgstr "Datenschutz"
+msgstr "Datenschutzbestimmungen"
 
 #: ../src/Dialogs/StripeDialog.vala:168 ../src/Dialogs/StripeDialog.vala:284
 msgid "Pay $%d.00"
-msgstr "%d,00 $ zahlen"
+msgstr "Zahle %d,00 $"
 
 #: ../src/Dialogs/StripeDialog.vala:213
 msgid "Processing"
@@ -135,7 +137,7 @@ msgstr "In Bearbeitung"
 
 #: ../src/Dialogs/StripeDialog.vala:238
 msgid "There Was a Problem Processing Your Payment"
-msgstr "Beim Bearbeiten der Zahlung ist ein Fehler aufgetreten"
+msgstr "Beim Bearbeiten Ihrer Zahlung ist ein Fehler aufgetreten"
 
 #: ../src/Dialogs/StripeDialog.vala:276
 msgid "Pay Later"
@@ -258,8 +260,8 @@ msgstr "Suchen"
 #: ../src/Views/AppListView.vala:121
 msgid "A restart is required to complete the installation of updates"
 msgstr ""
-"Um die Installation der Aktualisierungen abzuschließen, ist ein Neustart "
-"erforderlich"
+"Es ist ein Neustart erforderlich, um die Installation der Aktualisierungen "
+"abzuschließen"
 
 #: ../src/Views/AppListView.vala:129
 msgid "Restart Now"
@@ -295,7 +297,7 @@ msgstr "Hilfe"
 
 #: ../src/Views/Homepage.vala:104
 msgid "Recently Updated"
-msgstr "Kürzlich aktualisiert"
+msgstr "kürzlich aktualisiert"
 
 #: ../src/Views/Homepage.vala:156
 msgid "Categories"
@@ -313,7 +315,7 @@ msgstr "AppCenter"
 
 #: ../src/Widgets/Banner.vala:107
 msgid "An open, pay-what-you-want app store"
-msgstr "Ein offener, Bezahl-was-du-willst-App-Store"
+msgstr "Ein offener, zahl-was-du-willst App Store"
 
 #: ../src/Widgets/Banner.vala:120
 msgid "Get the apps that you need at a price you can afford."
@@ -371,7 +373,7 @@ msgstr "Barrierefreiheit"
 #: ../src/Widgets/HumbleButton.vala:85
 #: ../src/Widgets/AbstractAppContainer.vala:195
 msgid "Free"
-msgstr "Gratis"
+msgstr "Kostenlos"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: ../src/Widgets/HumbleButton.vala:152
@@ -483,19 +485,19 @@ msgstr "Neustart erforderlich"
 
 #: ../src/Core/Client.vala:490
 msgid "Please restart your system to finalize updates"
-msgstr "Bitte starten Sie Ihr Gerät neu, um die Aktualisierungen abzuschließen"
+msgstr "Bitte starten Sie Ihr System neu, um die Aktualisierungen abzuschließen"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
-msgstr "Wird gestartet"
+msgstr "startet"
 
 #: ../src/Core/ChangeInformation.vala:56
 msgid "Waiting"
-msgstr "Warten"
+msgstr "Wartet"
 
 #: ../src/Core/ChangeInformation.vala:58
 msgid "Running"
-msgstr "In Ausführung"
+msgstr "Läuft"
 
 #: ../src/Core/ChangeInformation.vala:60
 msgid "Querying"
@@ -515,7 +517,7 @@ msgstr "Herunterladen"
 
 #: ../src/Core/ChangeInformation.vala:68
 msgid "Installing"
-msgstr "Installieren"
+msgstr "Installiert"
 
 #: ../src/Core/ChangeInformation.vala:70
 msgid "Refreshing software list"
@@ -607,7 +609,7 @@ msgstr "Warten auf die Aufhebung der Paketmanagersperre"
 
 #: ../src/Core/ChangeInformation.vala:114
 msgid "Waiting for authentication"
-msgstr "Warten auf die Legitimierung"
+msgstr "Warten auf Legitimierung"
 
 #: ../src/Core/ChangeInformation.vala:116
 msgid "Updating running applications"
