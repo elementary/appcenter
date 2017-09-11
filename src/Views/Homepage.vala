@@ -282,6 +282,7 @@ namespace AppCenter {
 
         private void show_app_list_for_category (AppStream.Category category) {
             subview_entered (_("Home"), true, category.name, _("Search %s").printf (category.name));
+            current_category = category.name;
             var child = get_child_by_name (category.name);
             if (child != null) {
                 set_visible_child (child);
@@ -292,8 +293,6 @@ namespace AppCenter {
             app_list_view.show_all ();
             add_named (app_list_view, category.name);
             set_visible_child (app_list_view);
-
-            current_category = category.name;
 
             app_list_view.show_app.connect ((package) => {
                 viewing_package = true;
