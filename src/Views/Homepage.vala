@@ -262,6 +262,9 @@ namespace AppCenter {
 
         public override void show_package (AppCenterCore.Package package) {
             base.show_package (package);
+            viewing_package = true;
+            current_category = null;
+            currently_viewed_category = null;
             subview_entered (_("Home"), false, "");
         }
 
