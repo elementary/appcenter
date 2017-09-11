@@ -275,6 +275,7 @@ namespace AppCenter {
                 subview_entered (_("Home"), true, current_category, _("Search %s").printf (current_category));
             } else {
                 set_visible_child (category_scrolled);
+                viewing_package = false;
                 currently_viewed_category = null;
                 subview_entered (null, true);
             }

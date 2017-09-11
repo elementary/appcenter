@@ -237,18 +237,16 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         view_mode_revealer.reveal_child = !query_valid;
 
-        return_button_history.clear ();
-        return_button.no_show_all = true;
-        return_button.visible = false;
-
         if (query_valid) {
             search_view.search (query, homepage.currently_viewed_category);
             stack.visible_child = search_view;
-        } else if (query_length == 0) {
-            stack.visible_child = homepage;
-            if (homepage.currently_viewed_category != null) {
-                homepage.return_clicked ();
+        } else {
+            if (stack.visible_child == search_view && homepage.currently_viewed_category != null) {
+                return_button_history.poll_head ();
+                return_button.label = return_button_history.peek_head ();
             }
+
+            stack.visible_child = homepage;
         }
     }
 
@@ -279,9 +277,17 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     }
 
     private void view_return () {
+        if (stack.visible_child == search_view && !search_view.viewing_package && homepage.currently_viewed_category != null) {
+            homepage.return_clicked ();
+
+            return_button_history.clear ();
+            return_button.no_show_all = true;
+            return_button.visible = false;
+        }
+
         return_button_history.poll_head ();
         if (!return_button_history.is_empty) {
-            return_button.label = return_button_history.poll_head ();
+            return_button.label = return_button_history.peek_head ();
             return_button.no_show_all = false;
             return_button.visible = true;
         } else {
@@ -298,10 +304,11 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         if (connection_available) {
             if (search_entry.text.length >= valid_query_length) {
                 stack.visible_child = search_view;
+                search_entry.sensitive = !search_view.viewing_package;
             } else {
                 if (view_mode.selected == homepage_view_id) {
                     stack.visible_child = homepage;
-                    search_entry.sensitive = true;
+                    search_entry.sensitive = !homepage.viewing_package;
                 } else if (view_mode.selected == installed_view_id) {
                     stack.visible_child = installed_view;
                     search_entry.sensitive = false;
@@ -309,10 +316,10 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             }
         } else {
             stack.visible_child = network_view;
+            search_entry.sensitive = false;
         }
 
         custom_title_stack.sensitive = connection_available;
         return_button.sensitive = connection_available;
-        search_entry.sensitive = connection_available && !search_view.viewing_package && !homepage.viewing_package;
     }
 }
