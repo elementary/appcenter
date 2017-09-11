@@ -217,8 +217,10 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     }
 
     public void show_package (AppCenterCore.Package package) {
+        search ("");
         return_button_history.clear ();
         view_mode.selected = homepage_view_id;
+        stack.visible_child = homepage;
         homepage.show_package (package);
     }
 
@@ -246,6 +248,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
                 return_button.label = return_button_history.peek_head ();
             }
 
+            search_view.reset ();
             stack.visible_child = homepage;
         }
     }
