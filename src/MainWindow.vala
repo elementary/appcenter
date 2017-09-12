@@ -44,7 +44,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     private int homepage_view_id;
     private int installed_view_id;
 
-    private static int valid_query_length = 3;
+    private const int VALID_QUERY_LENGTH = 3;
 
     public static Views.InstalledView installed_view { get; private set; }
 
@@ -235,7 +235,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     private void trigger_search () {
         unowned string query = search_entry.text;
         uint query_length = query.length;
-        bool query_valid = query_length >= valid_query_length;
+        bool query_valid = query_length >= VALID_QUERY_LENGTH;
 
         view_mode_revealer.reveal_child = !query_valid;
 
@@ -305,7 +305,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     private void on_view_mode_changed () {
         var connection_available = NetworkMonitor.get_default ().get_network_available ();
         if (connection_available) {
-            if (search_entry.text.length >= valid_query_length) {
+            if (search_entry.text.length >= VALID_QUERY_LENGTH) {
                 stack.visible_child = search_view;
                 search_entry.sensitive = !search_view.viewing_package;
             } else {
