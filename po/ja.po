@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-08-04 12:55+0000\n"
-"Last-Translator: Ryo Nakano <rmfmada3q@gmail.com>\n"
+"PO-Revision-Date: 2017-09-11 20:46+0000\n"
+"Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
 "Language-Team: Japanese "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/ja/>\n"
 "Language: ja\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.15\n"
+"X-Generator: Weblate 2.16\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #: ../src/Application.vala:40
@@ -108,7 +108,7 @@ msgstr "プライバシーポリシー"
 
 #: ../src/Dialogs/StripeDialog.vala:168 ../src/Dialogs/StripeDialog.vala:284
 msgid "Pay $%d.00"
-msgstr "%s.00 ドル払う"
+msgstr "%d.00 ドル払う"
 
 #: ../src/Dialogs/StripeDialog.vala:213
 msgid "Processing"
@@ -170,7 +170,7 @@ msgstr "この種類の取引ではこのカードはサポートされていま
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
-msgstr "この種類の取引ではこの通過はサポートされていません。別のカードを使用してもう一度お試しください。"
+msgstr "この種類の取引ではこの通貨はサポートされていません。別のカードを使用してもう一度お試しください。"
 
 #: ../src/Dialogs/StripeDialog.vala:512
 #, fuzzy

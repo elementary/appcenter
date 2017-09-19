@@ -162,7 +162,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         search_view = new Views.SearchView ();
 
         network_alert_view = new Granite.Widgets.AlertView (_("Network Is Not Available"),
-                                                            _("Connect to the internet to install or update apps."),
+                                                            _("Connect to the Internet to install or update apps."),
                                                             "network-error");
         network_alert_view.get_style_context ().remove_class (Gtk.STYLE_CLASS_VIEW);
         network_alert_view.show_action (_("Network Settings…"));
@@ -231,7 +231,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     private void trigger_search () {
         unowned string query = search_entry.text;
         uint query_length = query.length;
-        bool query_valid = query_length >= 2;
+        bool query_valid = query_length >= 3;
 
         view_mode_revealer.reveal_child = !query_valid;
 
