@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-08-27 23:03+0000\n"
-"Last-Translator: Flyus Fly <fly_fly@popstar.com>\n"
+"PO-Revision-Date: 2017-09-16 00:54+0000\n"
+"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: English (United Kingdom) "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/en_GB/>\n"
 "Language: en_GB\n"
@@ -32,71 +32,69 @@ msgstr ""
 
 #: ../src/Application.vala:114
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr "Le lien spécifié '%s' n'a pas pu être trouvé, recherche à la place"
+msgstr "Specified link '%s' could not be found, searching instead"
 
 #: ../src/Application.vala:216
 msgid "Application installed"
-msgstr "Application installée"
+msgstr "Application installed"
 
 #: ../src/Application.vala:217
 msgid "%s has been successfully installed"
-msgstr "%s a été installé avec succès"
+msgstr "%s has been successfully installed"
 
 #: ../src/Application.vala:233
 msgid "Close"
-msgstr "Fermer"
+msgstr "Close"
 
 #: ../src/Application.vala:235
 msgid "There Was An Error Installing %s"
-msgstr "Il y a eu une erreur lors de l'installation de %s"
+msgstr "There Was An Error Installing %s"
 
 #: ../src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
-msgstr "Êtes-vous certain de vouloir redémarrer ?"
+msgstr "Are you sure you want to Restart?"
 
 #: ../src/Dialogs/RestartDialog.vala:41
 msgid "This will close all open applications and restart this device."
-msgstr ""
-"Ceci fermera toutes les applications ouvertes et redémarrera l'appareil."
+msgstr "This will close all open applications and restart this device."
 
 #: ../src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
-msgstr "Redémarrage"
+msgstr "Restart"
 
 #: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:166
 #: ../src/Dialogs/StripeDialog.vala:285
 #: ../src/Widgets/AbstractAppContainer.vala:126
 msgid "Cancel"
-msgstr "Annuler"
+msgstr "Cancel"
 
 #: ../src/Dialogs/StripeDialog.vala:30
 msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
-"Une erreur est apparue lors d'un accès au périphérique de stockage. Essayez "
-"plus-tard. Nous vous présentons nos excuses pour la gêne occasionnée."
+"An error occurred while processing the card. Please try again later. We "
+"apologise for any inconvenience caused."
 
 #: ../src/Dialogs/StripeDialog.vala:31
 msgid "Please review your payment info and try again."
-msgstr ""
-"Merci de vérifier les informations relatives à votre paiement et réessayez."
+msgstr "Please review your payment info and try again."
 
 #: ../src/Dialogs/StripeDialog.vala:75
 msgid "Email"
-msgstr "E-mail"
+msgstr "Email"
 
 #: ../src/Dialogs/StripeDialog.vala:77
 msgid ""
 "Your email address is used to send a receipt. It is never stored and you "
 "will not be subscribed to a mailing list."
 msgstr ""
-"Votre email est utilisé pour envoyer un accusé de réception. Il n'est jamais "
-"sauvegardé et ne sera jamais utilisé dans n'importe quelle mailing-list."
+"Your email address is used to send a receipt. It is never stored and you "
+"will not be subscribed to a mailing list."
 
 #: ../src/Dialogs/StripeDialog.vala:88
 msgid "Card Number"
-msgstr "N° de carte"
+msgstr "Card Number"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: ../src/Dialogs/StripeDialog.vala:100
@@ -109,204 +107,195 @@ msgstr "CVC"
 
 #: ../src/Dialogs/StripeDialog.vala:157
 msgid "Privacy Policy"
-msgstr "Politique de confidentialité"
+msgstr "Privacy Policy"
 
 #: ../src/Dialogs/StripeDialog.vala:168 ../src/Dialogs/StripeDialog.vala:284
 msgid "Pay $%d.00"
-msgstr "Réglez $%d.00"
+msgstr "Pay $%d.00"
 
 #: ../src/Dialogs/StripeDialog.vala:213
 msgid "Processing"
-msgstr "En cours de traitement"
+msgstr "Processing"
 
 #: ../src/Dialogs/StripeDialog.vala:238
 msgid "There Was a Problem Processing Your Payment"
-msgstr "Un problème est survenu durant le processus de paiement"
+msgstr "There Was a Problem Processing Your Payment"
 
 #: ../src/Dialogs/StripeDialog.vala:276
 msgid "Pay Later"
-msgstr "Régler plus tard"
+msgstr "Pay Later"
 
 #: ../src/Dialogs/StripeDialog.vala:277
 msgid "Retry"
-msgstr "Réessayez"
+msgstr "Retry"
 
 #: ../src/Dialogs/StripeDialog.vala:463 ../src/Dialogs/StripeDialog.vala:528
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr ""
-"Le N° de carte de crédit est incorrect. Réessayez en utilisant le N° de "
-"carte de crédit correct."
+"The card number is incorrect. Please try again using the correct card number."
 
 #: ../src/Dialogs/StripeDialog.vala:465
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
-"Le mois d'expiration est incorrect. Réessayez en utilisant la bonne date "
-"d'expiration."
+"The expiration month is invalid. Please try again using the correct "
+"expiration date."
 
 #: ../src/Dialogs/StripeDialog.vala:467 ../src/Dialogs/StripeDialog.vala:525
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
-"L'année d'expiration est invalide. Réessayez en utilisant la bonne date "
-"d'expiration."
+"The expiration year is invalid. Please try again using the correct "
+"expiration date."
 
 #: ../src/Dialogs/StripeDialog.vala:470 ../src/Dialogs/StripeDialog.vala:523
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr "Le N° CVC est incorrect. Réessayez en utilisant le bon N° de CVC."
+msgstr "The CVC number is incorrect. Please try again using the correct CVC."
 
 #: ../src/Dialogs/StripeDialog.vala:472 ../src/Dialogs/StripeDialog.vala:514
 msgid "The card has expired. Please try again with a different card."
-msgstr "La carte a expiré. Réessayez en utilisant une autre carte."
+msgstr "The card has expired. Please try again with a different card."
 
 #: ../src/Dialogs/StripeDialog.vala:492
 msgid "There are too many payment requests at the moment, please retry later."
-msgstr ""
-"Il y a trop de demandes de paiement pour le moment. Réessayez un peu plus "
-"tard."
+msgstr "There are too many payment requests at the moment, please retry later."
 
 #: ../src/Dialogs/StripeDialog.vala:508
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
 msgstr ""
-"Cette carte ne supporte pas ce type de transaction. Réessayez avec une autre "
-"carte."
+"This card does not support this kind of transaction. Please try again with a "
+"different card."
 
 #: ../src/Dialogs/StripeDialog.vala:510
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
 msgstr ""
-"La devise n'est pas supportée par cette carte. Essayez avec une autre carte."
+"The currency is not supported by this card. Please try again with a "
+"different card."
 
 #: ../src/Dialogs/StripeDialog.vala:512
 msgid "The transaction has already been processed."
-msgstr "La transaction a été effectuée avec succès."
+msgstr "The transaction has already been processed."
 
 #: ../src/Dialogs/StripeDialog.vala:516
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "Postal code."
-msgstr "Le code postal est incorrect. Réessayez avec un code postal correct."
+msgstr ""
+"The post code is incorrect. Please try again using the correct post code."
 
 #: ../src/Dialogs/StripeDialog.vala:518
 msgid "You don't have enough funds. Please use an alternative payment method."
-msgstr ""
-"Votre solde n'est pas suffisant. Utilisez un moyen de paiement alternatif."
+msgstr "You don't have enough funds. Please use an alternative payment method."
 
 #: ../src/Dialogs/StripeDialog.vala:520
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr "Le montant est incorrect. Réessayez en utilisant un montant valide."
+msgstr "The amount is incorrect. Please try again using a valid amount."
 
 #: ../src/Dialogs/StripeDialog.vala:531
 msgid "The pin number is incorrect. Please try again using the correct pin."
-msgstr "Le N° PIN est incorrect. Réessayez avec le bon N° de code PIN."
+msgstr "The PIN number is incorrect. Please try again using the correct PIN."
 
 #: ../src/Dialogs/StripeDialog.vala:533
 msgid ""
 "There has been too many pin attempts. Please try again with a different card."
 msgstr ""
-"Vous avez effectué un trop grand nombre d'essais dans la saisie de votre "
-"code PIN. Réessayez avec une carte différente."
+"There has been too many PIN attempts. Please try again with a different card."
 
 #: ../src/Dialogs/StripeDialog.vala:553
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
 msgstr ""
-"Impossible de terminer la transaction avec succès. Veuillez vous rapprocher "
-"de votre banque pour de plus amples informations."
+"Unable to complete the transaction. Please contact your bank for further "
+"information."
 
 #: ../src/Dialogs/StripeDialog.vala:556
 msgid "The balance or credit limit on the card has been reached."
-msgstr "Le plafond de votre carte de crédit a été atteint."
+msgstr "The balance or credit limit on the card has been reached."
 
 #: ../src/Dialogs/StripeDialog.vala:559
 msgid "The given card is a test card. Please use a real card to proceed."
-msgstr ""
-"Le N° de carte de crédit correspond à une carte de crédit de test. Merci "
-"d'utiliser une vraie carte de crédit pour compléter l'opération."
+msgstr "The given card is a test card. Please use a real card to proceed."
 
 #: ../src/Views/InstalledView.vala:51 ../src/MainWindow.vala:130
 msgctxt "view"
 msgid "Updates"
-msgstr "Mises à jour"
+msgstr "Updates"
 
 #. / TRANSLATORS: the name of the Search view
 #: ../src/Views/SearchView.vala:37
 msgctxt "view"
 msgid "Search"
-msgstr "Recherche"
+msgstr "Search"
 
 #: ../src/Views/AppListView.vala:121
 msgid "A restart is required to complete the installation of updates"
-msgstr ""
-"Un redémarrage est nécessaire pour terminer l'installation des mises à jour"
+msgstr "A restart is required to complete the installation of updates"
 
 #: ../src/Views/AppListView.vala:129
 msgid "Restart Now"
-msgstr "Redémarrez maintenant"
+msgstr "Restart Now"
 
 #: ../src/Views/AppListView.vala:222
 msgid "Update All"
-msgstr "Mettre tout à jour"
+msgstr "Update All"
 
 #: ../src/Views/AppInfoView.vala:57
 msgid "Screenshot Not Available"
-msgstr "Capture d'écran non disponible"
+msgstr "Screenshot Not Available"
 
 #: ../src/Views/AppInfoView.vala:170
 msgid "Extensions:"
-msgstr "Extensions :"
+msgstr "Extensions:"
 
 #: ../src/Views/AppInfoView.vala:184
-#, fuzzy
 msgid "Homepage"
-msgstr "Home Page"
+msgstr "Homepage"
 
 #: ../src/Views/AppInfoView.vala:191
 msgid "Suggest Translations"
-msgstr "Suggestion de traductions"
+msgstr "Suggest Translations"
 
 #: ../src/Views/AppInfoView.vala:198
 msgid "Report a Problem"
-msgstr "Reportez un problème"
+msgstr "Report a Problem"
 
 #: ../src/Views/AppInfoView.vala:205
 msgid "Help"
-msgstr "Aide"
+msgstr "Help"
 
 #: ../src/Views/Homepage.vala:104
 msgid "Recently Updated"
-msgstr "Mis à jour récemment"
+msgstr "Recently Updated"
 
 #: ../src/Views/Homepage.vala:156
 msgid "Categories"
-msgstr "Catégories"
+msgstr "Categories"
 
 #: ../src/Views/Homepage.vala:211 ../src/Views/Homepage.vala:219
 #: ../src/MainWindow.vala:129 ../src/MainWindow.vala:181
 #: ../src/MainWindow.vala:223
 msgid "Home"
-msgstr "Page de démarrage"
+msgstr "Home"
 
 #: ../src/Widgets/Banner.vala:100 ../src/MainWindow.vala:110
 msgid "AppCenter"
-msgstr ""
+msgstr "AppCentre"
 
 #: ../src/Widgets/Banner.vala:107
 msgid "An open, pay-what-you-want app store"
-msgstr ""
+msgstr "An open, pay-what-you-want app store"
 
 #: ../src/Widgets/Banner.vala:120
 msgid "Get the apps that you need at a price you can afford."
-msgstr ""
-"Récupérez les applications dont vous avez besoin à un prix que vous pouvez "
-"vous offrir."
+msgstr "Get the apps that you need at a price you can afford."
 
 #: ../src/Widgets/CategoryFlowBox.vala:29
 msgid "Audio"
@@ -314,31 +303,31 @@ msgstr "Audio"
 
 #: ../src/Widgets/CategoryFlowBox.vala:30
 msgid "Development"
-msgstr "Développement"
+msgstr "Development"
 
 #: ../src/Widgets/CategoryFlowBox.vala:31
 msgid "Accessories"
-msgstr "Accessoires"
+msgstr "Accessories"
 
 #: ../src/Widgets/CategoryFlowBox.vala:32
 msgid "Office"
-msgstr "Bureau"
+msgstr "Office"
 
 #: ../src/Widgets/CategoryFlowBox.vala:33
 msgid "System"
-msgstr "Système"
+msgstr "System"
 
 #: ../src/Widgets/CategoryFlowBox.vala:34
 msgid "Video"
-msgstr "Vidéo"
+msgstr "Video"
 
 #: ../src/Widgets/CategoryFlowBox.vala:35
 msgid "Graphics"
-msgstr "Graphiques"
+msgstr "Graphics"
 
 #: ../src/Widgets/CategoryFlowBox.vala:36
 msgid "Games"
-msgstr "Jeux"
+msgstr "Games"
 
 #: ../src/Widgets/CategoryFlowBox.vala:37
 msgid "Education"
@@ -350,20 +339,19 @@ msgstr "Internet"
 
 #: ../src/Widgets/CategoryFlowBox.vala:39
 msgid "Science & Engineering"
-msgstr "Science & Ingénierie"
+msgstr "Science & Engineering"
 
 #: ../src/Widgets/CategoryFlowBox.vala:40
 msgid "Universal Access"
-msgstr "Accès universel"
+msgstr "Universal Access"
 
 #: ../src/Widgets/HumbleButton.vala:85
 #: ../src/Widgets/AbstractAppContainer.vala:195
 msgid "Free"
-msgstr "Gratuit"
+msgstr "Free"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: ../src/Widgets/HumbleButton.vala:152
-#, fuzzy
 msgid "$%d.00"
 msgstr "$%d.00USD"
 
@@ -374,249 +362,246 @@ msgstr "$%d"
 
 #: ../src/Widgets/AbstractAppContainer.vala:105
 msgid "Uninstall"
-msgstr "Désinstaller"
+msgstr "Uninstall"
 
 #: ../src/Widgets/AbstractAppContainer.vala:108
 msgid "Open"
-msgstr "Ouvrir"
+msgstr "Open"
 
 #: ../src/Widgets/AbstractAppContainer.vala:161
 msgid "The %s Developers"
-msgstr "Les %s Développeurs"
+msgstr "The %s Developers"
 
 #: ../src/Widgets/AbstractAppContainer.vala:165
 msgid "by %s"
-msgstr "par %s"
+msgstr "by %s"
 
 #: ../src/Widgets/AbstractAppContainer.vala:209
 msgid "Update"
-msgstr "Mettre à jour"
+msgstr "Update"
 
 #: ../src/Widgets/AbstractAppList.vala:35
 msgid "No Results"
-msgstr "Aucun résultat"
+msgstr "No Results"
 
 #: ../src/Widgets/AbstractAppList.vala:35
 msgid "No apps could be found. Try changing search terms."
-msgstr ""
-"Aucune application ne répond à vos critères. Réessayez en modifiant les "
-"termes de recherche."
+msgstr "No apps could be found. Try changing search terms."
 
 #: ../src/Widgets/UpdateHeaderRow.vala:68
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
-msgstr[0] "%u Mise à jour disponible"
-msgstr[1] "%u Mises à jour disponibles"
+msgstr[0] "%u Update Available"
+msgstr[1] "%u Updates Available"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:69
 msgid "Size: %s"
-msgstr "Taille : %s"
+msgstr "Size: %s"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:105
 msgid "Searching for updates…"
-msgstr "Recherche de mises à jour…"
+msgstr "Searching for updates…"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:112
 msgid "Up to Date"
-msgstr "A jour"
+msgstr "Up to Date"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:120
 msgid "Drivers"
-msgstr "Pilotes"
+msgstr "Drivers"
 
 #: ../src/MainWindow.vala:118 ../src/MainWindow.vala:146
 #: ../src/MainWindow.vala:316 ../src/MainWindow.vala:338
 msgid "Search Apps"
-msgstr "Recherche d'applications"
+msgstr "Search Apps"
 
 #: ../src/MainWindow.vala:161
 msgid "Network Is Not Available"
-msgstr "Réseau non disponible"
+msgstr "Network Is Not Available"
 
 #: ../src/MainWindow.vala:162
 msgid "Connect to the internet to install or update apps."
-msgstr ""
-"Connectez vous à internet pour installer ou mettre à jour les applications."
+msgstr "Connect to the internet to install or update apps."
 
 #: ../src/MainWindow.vala:165
 msgid "Network Settings…"
-msgstr "Paramétrages réseau…"
+msgstr "Network Settings…"
 
 #: ../src/MainWindow.vala:298
 msgid "Search %s"
-msgstr "Recherche %s"
+msgstr "Search %s"
 
 #: ../src/Core/Client.vala:94
 msgid "Operating System Updates"
-msgstr "Mises à jour du système d'exploitation"
+msgstr "Operating System Updates"
 
 #: ../src/Core/Client.vala:95
 msgid "Updates to system components"
-msgstr "Mises à jour des composants système"
+msgstr "Updates to system components"
 
 #: ../src/Core/Client.vala:459
 msgid "Update Available"
 msgid_plural "Updates Available"
-msgstr[0] "Mise à jour disponible"
-msgstr[1] "Mises à jour disponibles"
+msgstr[0] "Update Available"
+msgstr[1] "Updates Available"
 
 #: ../src/Core/Client.vala:460
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
-msgstr[0] "La mise à jour de %u est disponible pour votre système"
-msgstr[1] "Les mises à jour de %u sont disponibles pour votre système"
+msgstr[0] "%u update is available for your system"
+msgstr[1] "%u updates are available for your system"
 
 #: ../src/Core/Client.vala:489
 msgid "Restart Required"
-msgstr "Un redémarrage est nécessaire"
+msgstr "Restart Required"
 
 #: ../src/Core/Client.vala:490
 msgid "Please restart your system to finalize updates"
-msgstr "Merci de redémarrer votre système afin de finaliser vos mises à jour"
+msgstr "Please restart your system to finalise updates"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
-msgstr "Redémarrage"
+msgstr "Starting"
 
 #: ../src/Core/ChangeInformation.vala:56
 msgid "Waiting"
-msgstr "En attente"
+msgstr "Waiting"
 
 #: ../src/Core/ChangeInformation.vala:58
 msgid "Running"
-msgstr "En cours"
+msgstr "Running"
 
 #: ../src/Core/ChangeInformation.vala:60
 msgid "Querying"
-msgstr "Requête en cours"
+msgstr "Querying"
 
 #: ../src/Core/ChangeInformation.vala:62
 msgid "Getting information"
-msgstr "Récupération d'information"
+msgstr "Getting information"
 
 #: ../src/Core/ChangeInformation.vala:64
 msgid "Removing packages"
-msgstr "Suppression en cours de paquets"
+msgstr "Removing packages"
 
 #: ../src/Core/ChangeInformation.vala:66
 msgid "Downloading"
-msgstr "Téléchargement"
+msgstr "Downloading"
 
 #: ../src/Core/ChangeInformation.vala:68
 msgid "Installing"
-msgstr "Installation en cours"
+msgstr "Installing"
 
 #: ../src/Core/ChangeInformation.vala:70
 msgid "Refreshing software list"
-msgstr "Merci de rafraîchir la liste des logiciels"
+msgstr "Refreshing software list"
 
 #: ../src/Core/ChangeInformation.vala:72
 msgid "Installing updates"
-msgstr "Installation des mises à jour en cours"
+msgstr "Installing updates"
 
 #: ../src/Core/ChangeInformation.vala:74
 msgid "Cleaning up packages"
-msgstr "Nettoyage en cours des paquets"
+msgstr "Cleaning up packages"
 
 #: ../src/Core/ChangeInformation.vala:76
 msgid "Obsoleting packages"
-msgstr "Paquets obsolets"
+msgstr "Obsoleting packages"
 
 #: ../src/Core/ChangeInformation.vala:78
 msgid "Resolving dependencies"
-msgstr "Résolution des dépendances"
+msgstr "Resolving dependencies"
 
 #: ../src/Core/ChangeInformation.vala:80
 msgid "Checking signatures"
-msgstr "Analyse des signatures"
+msgstr "Checking signatures"
 
 #: ../src/Core/ChangeInformation.vala:82
 msgid "Testing changes"
-msgstr "Tests des changements"
+msgstr "Testing changes"
 
 #: ../src/Core/ChangeInformation.vala:84
 msgid "Committing changes"
-msgstr "Validation des changements"
+msgstr "Committing changes"
 
 #: ../src/Core/ChangeInformation.vala:86
 msgid "Requesting data"
-msgstr "Requête en cours sur les données"
+msgstr "Requesting data"
 
 #: ../src/Core/ChangeInformation.vala:88
 msgid "Finished"
-msgstr "Terminé"
+msgstr "Finished"
 
 #: ../src/Core/ChangeInformation.vala:90
 msgid "Cancelling"
-msgstr "Annulation"
+msgstr "Cancelling"
 
 #: ../src/Core/ChangeInformation.vala:92
 msgid "Downloading repository information"
-msgstr "Récupération des informations du repository"
+msgstr "Downloading repository information"
 
 #: ../src/Core/ChangeInformation.vala:94
 msgid "Downloading list of packages"
-msgstr "Téléchargement de la liste des paquets"
+msgstr "Downloading list of packages"
 
 #: ../src/Core/ChangeInformation.vala:96
 msgid "Downloading file lists"
-msgstr "Téléchargement des listes de fichiers"
+msgstr "Downloading file lists"
 
 #: ../src/Core/ChangeInformation.vala:98
 msgid "Downloading lists of changes"
-msgstr "Téléchargement des listes de changement"
+msgstr "Downloading lists of changes"
 
 #: ../src/Core/ChangeInformation.vala:100
 msgid "Downloading groups"
-msgstr "Téléchargement des groupes"
+msgstr "Downloading groups"
 
 #: ../src/Core/ChangeInformation.vala:102
 msgid "Downloading update information"
-msgstr "Téléchargement des informations de mise à jour"
+msgstr "Downloading update information"
 
 #: ../src/Core/ChangeInformation.vala:104
 msgid "Repackaging files"
-msgstr "Repackaging des fichiers"
+msgstr "Repackaging files"
 
 #: ../src/Core/ChangeInformation.vala:106
 msgid "Loading cache"
-msgstr "Chargement du cache"
+msgstr "Loading cache"
 
 #: ../src/Core/ChangeInformation.vala:108
 msgid "Scanning applications"
-msgstr "Analyse des applications"
+msgstr "Scanning applications"
 
 #: ../src/Core/ChangeInformation.vala:110
 msgid "Generating package lists"
-msgstr "Génération des listes de paquets"
+msgstr "Generating package lists"
 
 #: ../src/Core/ChangeInformation.vala:112
 msgid "Waiting for package manager lock"
-msgstr "En attente du verrou du gestionnaire de paquets"
+msgstr "Waiting for package manager lock"
 
 #: ../src/Core/ChangeInformation.vala:114
 msgid "Waiting for authentication"
-msgstr "En attente d'authentification"
+msgstr "Waiting for authentication"
 
 #: ../src/Core/ChangeInformation.vala:116
 msgid "Updating running applications"
-msgstr "Mise à jour des applications en cours d'exécution"
+msgstr "Updating running applications"
 
 #: ../src/Core/ChangeInformation.vala:118
 msgid "Checking applications in use"
-msgstr "Analyse des applications en cours d'utilisation"
+msgstr "Checking applications in use"
 
 #: ../src/Core/ChangeInformation.vala:120
 msgid "Checking libraries in use"
-msgstr "Analyse des librairies en cours d'utilisation"
+msgstr "Checking libraries in use"
 
 #: ../src/Core/ChangeInformation.vala:122
 msgid "Copying files"
-msgstr "Copie de fichiers"
+msgstr "Copying files"
 
 #: ../src/Core/ChangeInformation.vala:124
 msgid "Unknown state"
-msgstr "Etat inconnu"
+msgstr "Unknown state"
 
 #~ msgid "Install"
 #~ msgstr "Install"
