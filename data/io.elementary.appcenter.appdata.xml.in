@@ -15,6 +15,15 @@
         </_p>
     </description>
     <releases>
+        <release version="0.2.6" date="2017-09-18" urgency="medium">
+            <description>
+                <_p>Bug fixes and improve perfomance.</_p>
+                <ul>
+                    <_li>Various bug fixes and performance improvements</_li>
+                    <_li>New translations</_li>
+                </ul>
+            </description>
+        </release>
         <release version="0.2.5" date="2017-08-04" urgency="medium">
             <description>
                 <_p>Bug fixes and improve perfomance.</_p>
