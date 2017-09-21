@@ -119,10 +119,12 @@ namespace AppCenter.Views {
             }
 
             bool a_is_driver = row1.get_is_driver ();
+            bool a_is_installed = row1.get_is_installed ();
             bool b_is_driver = row2.get_is_driver ();
+            bool b_is_installed = row2.get_is_installed ();
 
-            if (a_is_driver != b_is_driver) {
-                return a_is_driver ? - 1 : 1;
+            if ((a_is_driver && !a_is_installed) != (b_is_driver && !b_is_installed)) {
+                return (a_is_driver && !a_is_installed) ? -1 : 1;
             }
 
             return row1.get_name_label ().collate (row2.get_name_label ()); /* Else sort in name order */
@@ -132,6 +134,7 @@ namespace AppCenter.Views {
         private void row_update_header (Widgets.AppListRow row, Widgets.AppListRow? before) {
             bool update_available = row.get_update_available ();
             bool is_driver = row.get_is_driver ();
+            bool is_installed = row.get_is_installed ();
 
             if (update_available) {
                 if (before != null && update_available == before.get_update_available ()) {
@@ -165,8 +168,8 @@ namespace AppCenter.Views {
 
                 header.show_all ();
                 row.set_header (header);
-            } else if (is_driver) {
-                if (before != null && is_driver == before.get_is_driver ()) {
+            } else if (is_driver && !is_installed) {
+                if (before != null && is_driver == before.get_is_driver () && is_installed == before.get_is_installed ()) {
                     row.set_header (null);
                     return;
                 }
@@ -175,7 +178,7 @@ namespace AppCenter.Views {
                 header.show_all ();
                 row.set_header (header);
             } else {
-                if (before != null && is_driver == before.get_is_driver () && update_available == before.get_update_available ()) {
+                if (before != null && is_installed == before.get_is_installed () && update_available == before.get_update_available ()) {
                     row.set_header (null);
                     return;
                 }
