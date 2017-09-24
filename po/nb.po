@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-09-11 20:46+0000\n"
-"Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
+"PO-Revision-Date: 2017-09-24 16:46+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/nb/>\n"
 "Language: nb\n"
@@ -102,7 +102,7 @@ msgstr "MM / ÅÅ"
 
 #: ../src/Dialogs/StripeDialog.vala:120
 msgid "CVC"
-msgstr ""
+msgstr "CVC"
 
 #: ../src/Dialogs/StripeDialog.vala:157
 msgid "Privacy Policy"
@@ -144,11 +144,11 @@ msgstr "Utløpsmåneden er ugyldig. Prøv igjen ved med korrekt utløpsdato."
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
-msgstr ""
+msgstr "Utløpsåret er ugyldig. Prøv igjen med rett utløpsdato."
 
 #: ../src/Dialogs/StripeDialog.vala:470 ../src/Dialogs/StripeDialog.vala:523
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr ""
+msgstr "CVC-nummeret er ikke rett. Prøv igjen med riktig CVC."
 
 #: ../src/Dialogs/StripeDialog.vala:472 ../src/Dialogs/StripeDialog.vala:514
 msgid "The card has expired. Please try again with a different card."
