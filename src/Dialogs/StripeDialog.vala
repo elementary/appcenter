@@ -519,7 +519,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
             case "expired_card":
                 return _("The card has expired. Please try again with a different card.");
             case "incorrect_zip":
-                return _("The ZIP/Postal code is incorrect. Please try again using the correct ZIP/Postal code.");
+                return _("The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code.");
             case "insufficient_funds":
                 return _("You don't have enough funds. Please use an alternative payment method.");
             case "invalid_amount":
@@ -534,9 +534,9 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
                 return _("The card number is incorrect. Please try again using the correct card number.");
             case "incorrect_pin":
             case "invalid_pin":
-                return _("The pin number is incorrect. Please try again using the correct pin.");
+                return _("The PIN number is incorrect. Please try again using the correct PIN.");
             case "pin_try_exceeded":
-                return _("There has been too many pin attempts. Please try again with a different card.");
+                return _("There has been too many PIN attempts. Please try again with a different card.");
             case "call_issuer":
             case "do_not_honor":
             case "do_not_try_again":
