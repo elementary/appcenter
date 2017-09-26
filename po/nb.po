@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-09-24 16:46+0000\n"
+"PO-Revision-Date: 2017-09-26 22:44+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/nb/>\n"
@@ -109,7 +109,6 @@ msgid "Privacy Policy"
 msgstr "Personvernspraksis"
 
 #: ../src/Dialogs/StripeDialog.vala:168 ../src/Dialogs/StripeDialog.vala:284
-#, fuzzy
 msgid "Pay $%d.00"
 msgstr "Betal $%d.00"
 
@@ -138,13 +137,13 @@ msgstr "Kortnummeret er feil. Prøv igjen senere med rett kortnummer."
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
-msgstr "Utløpsmåneden er ugyldig. Prøv igjen ved med korrekt utløpsdato."
+msgstr "Ugyldig utløpsmåned . Prøv igjen med korrekt utløpsdato."
 
 #: ../src/Dialogs/StripeDialog.vala:467 ../src/Dialogs/StripeDialog.vala:525
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
-msgstr "Utløpsåret er ugyldig. Prøv igjen med rett utløpsdato."
+msgstr "Ugyldig utløpsår. Prøv igjen med rett utløpsdato."
 
 #: ../src/Dialogs/StripeDialog.vala:470 ../src/Dialogs/StripeDialog.vala:523
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
@@ -170,44 +169,48 @@ msgstr ""
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
-msgstr "Dette kortet støtter ikke denne valuaten. Prøv igjen med et annet kort."
+msgstr "Dette kortet støtter ikke denne valutaen. Prøv igjen med et annet kort."
 
 #: ../src/Dialogs/StripeDialog.vala:512
 msgid "The transaction has already been processed."
-msgstr ""
+msgstr "Overføringen har allerede gått igjennom."
 
 #: ../src/Dialogs/StripeDialog.vala:516
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "Postal code."
-msgstr ""
+msgstr "Postnummer er feilaktig. Prøv igjen med riktig postnummer."
 
 #: ../src/Dialogs/StripeDialog.vala:518
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr ""
+"Du kan ikke betale uten aktiva. Overvei å bruke en alternativ "
+"betalingsmetode."
 
 #: ../src/Dialogs/StripeDialog.vala:520
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr ""
+msgstr "Beløpet er feil. Prøv igjen med riktig beløp."
 
 #: ../src/Dialogs/StripeDialog.vala:531
 msgid "The pin number is incorrect. Please try again using the correct pin."
-msgstr ""
+msgstr "PIN-nummeret er feil. Prøv igjen med riktig PIN."
 
 #: ../src/Dialogs/StripeDialog.vala:533
 msgid ""
 "There has been too many pin attempts. Please try again with a different card."
-msgstr ""
+msgstr "For mange PIN-forsøk. Prøv igjen med et annet kort."
 
 #: ../src/Dialogs/StripeDialog.vala:553
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
 msgstr ""
+"Kunne ikke fullføre overføringen. Kontakt banken din for ytterligere "
+"informasjon."
 
 #: ../src/Dialogs/StripeDialog.vala:556
 msgid "The balance or credit limit on the card has been reached."
-msgstr ""
+msgstr "Betalingsgrensen eller beløpsgrensen på kortet har blitt forsert."
 
 #: ../src/Dialogs/StripeDialog.vala:559
 msgid "The given card is a test card. Please use a real card to proceed."
@@ -408,13 +411,12 @@ msgid "Search Apps"
 msgstr "Søk Etter Applikasjoner"
 
 #: ../src/MainWindow.vala:161
-#, fuzzy
 msgid "Network Is Not Available"
-msgstr "Skjermbilde ikke tilgjengelig"
+msgstr "Nettverk ikke tilgjengelig"
 
 #: ../src/MainWindow.vala:162
 msgid "Connect to the internet to install or update apps."
-msgstr ""
+msgstr "Koble til Internett for å installere eller oppdatere programmer."
 
 #: ../src/MainWindow.vala:165
 msgid "Network Settings…"
