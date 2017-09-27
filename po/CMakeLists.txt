@@ -6,5 +6,5 @@ add_translations_catalog (${GETTEXT_PACKAGE}
     DESKTOP_FILES
         ${CMAKE_BINARY_DIR}/data/io.elementary.appcenter.desktop.in
     APPDATA_FILES
-        ../data/appcenter.appdata.xml.in
+        ../data/io.elementary.appcenter.appdata.xml.in
 )
