@@ -73,4 +73,10 @@ public class AppCenter.Views.SearchView : View {
             subview_entered (null, true);
         }
     }
+
+    public void reset () {
+        set_visible_child (app_list_view);
+        viewing_package = false;
+        current_category = null;
+    }
 }
