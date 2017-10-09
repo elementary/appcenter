@@ -14,4 +14,4 @@ X-GNOME-UsesNotifications=true
 
 [Desktop Action ShowUpdates]
 Exec=@EXEC_NAME@ --show-updates
-_Name=Show Updates
+_Name=Check for Updates
