@@ -306,6 +306,12 @@ namespace AppCenter.Views {
                 links_grid.add (share_button);
             }
 
+            if (package.pk_package == null) {
+                package.obtain_package.begin (() => load_more_content.begin ());
+            } else {
+                load_more_content.begin ();
+            }
+
             reload_css ();
             set_up_package (128);
             parse_description (package.get_description ());
@@ -362,60 +368,48 @@ namespace AppCenter.Views {
             }
         }
 
-        public void load_more_content () {
-            new Thread<void*> ("content-loading", () => {
-                app_version.label = package.get_version ();
+        public async void load_more_content () {
+            app_version.label = package.get_version ();
 
-                Idle.add (() => {
-                    if (release_list_box.populate ()) {
-                        release_grid.no_show_all = false;
-                        release_grid.show_all ();
-                    }
+            if (release_list_box.populate ()) {
+                release_grid.no_show_all = false;
+                release_grid.show_all ();
+            }
 
-                    return false;
-                });
-                
-                if (screenshots.length == 0) {
-                    return null;
-                }
+            if (screenshots.length == 0) {
+                return;
+            }
 
-                List<string> urls = new List<string> ();
+            List<string> urls = new List<string> ();
 
-                screenshots.foreach ((screenshot) => {
-                    screenshot.get_images ().foreach ((image) => {
-                        if (image.get_kind () == AppStream.ImageKind.SOURCE) {
-                            if (screenshot.get_kind () == AppStream.ScreenshotKind.DEFAULT) {
-                                urls.prepend (image.get_url ());
-                            } else {
-                                urls.append (image.get_url ());
-                            }
-
-                            return;
+            screenshots.foreach ((screenshot) => {
+                screenshot.get_images ().foreach ((image) => {
+                    if (image.get_kind () == AppStream.ImageKind.SOURCE) {
+                        if (screenshot.get_kind () == AppStream.ScreenshotKind.DEFAULT) {
+                            urls.prepend (image.get_url ());
+                        } else {
+                            urls.append (image.get_url ());
                         }
-                    });
-                });
 
-                foreach (var url in urls) {
-                    load_screenshot (url);
-                }
-
-                Idle.add (() => {
-                    if (app_screenshots.get_children ().length () > 0) {
-                        screenshot_stack.visible_child = app_screenshots;
-                        screenshot_switcher.update_selected ();
-                    } else {
-                        screenshot_stack.visible_child = app_screenshot_not_found;
+                        return;
                     }
-
-                    return GLib.Source.REMOVE;
                 });
-
-                return null;
             });
+
+            foreach (var url in urls) {
+                yield load_screenshot (url);
+            }
+
+            if (app_screenshots.get_children ().length () > 0) {
+                screenshot_stack.visible_child = app_screenshots;
+                screenshot_switcher.update_selected ();
+            } else {
+                screenshot_stack.visible_child = app_screenshot_not_found;
+            }
         }
 
         // We need to first download the screenshot locally so that it doesn't freeze the interface.
-        private void load_screenshot (string url) {
+        private async void load_screenshot (string url) {
             var ret = GLib.DirUtils.create_with_parents (GLib.Environment.get_tmp_dir () + Path.DIR_SEPARATOR_S + ".appcenter", 0755);
             if (ret == -1) {
                 critical ("Error creating the temporary folder: GFileError #%d", GLib.FileUtils.error_from_errno (GLib.errno));
@@ -428,7 +422,7 @@ namespace AppCenter.Views {
                 var source = File.new_for_uri (url);
                 fileimage = File.new_for_path (path);
                 try {
-                    source.copy (fileimage, GLib.FileCopyFlags.OVERWRITE);
+                    yield source.copy_async (fileimage, GLib.FileCopyFlags.OVERWRITE);
                 } catch (Error e) {
                     debug (e.message);
                     return;
@@ -443,23 +437,20 @@ namespace AppCenter.Views {
                 }
             }
 
-            Idle.add (() => {
-                try {
-                    var image = new Gtk.Image ();
-                    image.width_request = 800;
-                    image.height_request = 500;
-                    image.icon_name = "image-x-generic";
-                    image.halign = Gtk.Align.CENTER;
-                    image.pixbuf = new Gdk.Pixbuf.from_file_at_scale (fileimage.get_path (), 800, 600, true);
-                    image.show ();
+            var image = new Gtk.Image ();
+            image.width_request = 800;
+            image.height_request = 500;
+            image.icon_name = "image-x-generic";
+            image.halign = Gtk.Align.CENTER;
 
-                    app_screenshots.add (image);
-                } catch (Error e) {
-                    critical (e.message);
-                }
+            try {
+                image.pixbuf = new Gdk.Pixbuf.from_file_at_scale (fileimage.get_path (), 800, 600, true);
+                image.show ();
 
-                return GLib.Source.REMOVE;
-            });
+                app_screenshots.add (image);
+            } catch (Error e) {
+                critical (e.message);
+            }
         }
 
         private void parse_description (string? description) {
