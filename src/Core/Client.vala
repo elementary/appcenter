@@ -665,6 +665,21 @@ public class AppCenterCore.Client : Object {
         return null;
     }
 
+    public Gee.Collection<AppCenterCore.Package> get_packages_by_author (string author, int max) {
+        var packages = new Gee.ArrayList<AppCenterCore.Package> ();
+        foreach (var package in package_list.values) {
+            if (packages.size > max) {
+                break;
+            }
+
+            if (package.component.developer_name == author) {
+                packages.add (package);
+            }
+        }
+
+        return packages;
+    }
+
     private static GLib.Once<Client> instance;
     public static unowned Client get_default () {
         return instance.once (() => { return new Client (); });
