@@ -20,6 +20,8 @@
 
 namespace AppCenter.Views {
     public class AppInfoView : AppCenter.AbstractAppContainer {
+        public signal void show_other_package (AppCenterCore.Package package);
+
         static Gtk.CssProvider? previous_css_provider = null;
 
         GenericArray<AppStream.Screenshot> screenshots;
@@ -259,6 +261,36 @@ namespace AppCenter.Views {
             grid.attach (header_box, 0, 0, 1, 1);
             grid.attach (content_grid, 0, 1, 1, 1);
             grid.attach (footer_grid, 0, 2, 1, 1);
+
+            if (package.author != null) {
+                var other_apps_header = new Gtk.Label (_("Other Apps by %s").printf (package.author_title));
+                other_apps_header.xalign = 0;
+                other_apps_header.get_style_context ().add_class ("h4");
+
+                var other_apps_carousel = new AppCenter.Widgets.AuthorCarousel (package);
+                other_apps_carousel.package_activated.connect ((package) => show_other_package (package));
+
+                var other_apps_grid = new Gtk.Grid ();
+                other_apps_grid.halign = Gtk.Align.CENTER;
+                other_apps_grid.row_spacing = 12;
+                other_apps_grid.margin = 24;
+                other_apps_grid.width_request = 800;
+                other_apps_grid.orientation = Gtk.Orientation.VERTICAL;
+                other_apps_grid.add (other_apps_header);
+                other_apps_grid.add (other_apps_carousel);
+
+                var other_apps_bar = new Gtk.Grid ();
+                other_apps_bar.add (other_apps_grid);
+
+                var other_apps_style_context = other_apps_bar.get_style_context ();
+                other_apps_style_context.add_class (Gtk.STYLE_CLASS_TOOLBAR);
+                other_apps_style_context.add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
+                other_apps_style_context.add_class (Gtk.STYLE_CLASS_SIDEBAR);
+
+                if (other_apps_carousel.get_children ().length () > 0) {
+                    grid.attach (other_apps_bar, 0, 3, 1, 1);
+                }
+            }
 
             var scrolled = new Gtk.ScrolledWindow (null, null);
             scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
