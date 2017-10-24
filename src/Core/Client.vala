@@ -16,6 +16,7 @@
 
 public class AppCenterCore.Client : Object {
     public signal void operation_finished (Package package, Package.State operation, Error? error);
+    public signal void cache_update_failed (Error error);
     public signal void updates_available ();
     public signal void drivers_detected ();
 
@@ -580,6 +581,7 @@ public class AppCenterCore.Client : Object {
                     success = results.get_exit_code () == Pk.Exit.SUCCESS;
                     last_cache_update = new DateTime.now_local ();
                 } catch (Error e) {
+                    cache_update_failed (e);
                     critical ("Update_cache: Refesh cache async failed - %s", e.message);
                 }
 
