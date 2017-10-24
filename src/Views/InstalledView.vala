@@ -21,50 +21,18 @@
 using AppCenterCore;
 
 public class AppCenter.Views.InstalledView : View {
-    private const int TRY_AGAIN_RESPONSE_ID = 1;
     AppListUpdateView app_list_view;
-    Gtk.InfoBar info_bar;
 
     construct {
-        info_bar = new Gtk.InfoBar ();
-        info_bar.message_type = Gtk.MessageType.ERROR;
-        info_bar.add_button (_("Try Again"), TRY_AGAIN_RESPONSE_ID);
-        info_bar.response.connect (on_info_bar_response);
-        set_widget_visibility (info_bar, false);
-
-        var error_label = new Gtk.Label (null);
-        error_label.wrap = true;
-        error_label.selectable = true;
-
-        var content = info_bar.get_content_area ();
-        content.add (error_label);
-
         app_list_view = new AppListUpdateView ();
         app_list_view.show_app.connect ((package) => {
             subview_entered (C_("view", "Updates"), false, "");
             show_package (package);
         });
 
-        var grid = new Gtk.Grid ();
-        grid.attach (info_bar, 0, 0, 1, 1);
-        grid.attach (app_list_view, 0, 1, 1, 1);
-        add (grid);
+        add (app_list_view);
 
-        var client = Client.get_default ();
-        client.notify["updating-cache"].connect (() => {
-            if (client.updating_cache && info_bar.visible) {
-                set_widget_visibility (info_bar, false);
-            }
-        });
-
-        client.cache_update_failed.connect ((error) => {
-            string message = format_error_message (error.message);
-            error_label.label = _("Failed to fetch updates: %s. This may be caused by external, manually added software repositories or corrupted sources file.").printf (error.message);
-            if (!info_bar.visible) {
-                set_widget_visibility (info_bar, true);
-            }
-        });
-
+        var client = AppCenterCore.Client.get_default ();
         client.drivers_detected.connect (() => {
             foreach (var driver in client.driver_list) {
                 app_list_view.add_package (driver);
@@ -115,21 +83,5 @@ public class AppCenter.Views.InstalledView : View {
         if (package.update_available) {
             app_list_view.add_package (package);
         }
-    }
-
-    private void on_info_bar_response (int response) {
-        if (response == TRY_AGAIN_RESPONSE_ID) {
-            set_widget_visibility (info_bar, false);
-            Client.get_default ().update_cache.begin (true);
-        }
-    }
-
-    private static string format_error_message (string message) {
-        string msg = message.replace ("\n", " ").strip ();
-        if (msg.has_suffix (".")) {
-            msg = msg.substring (0, msg.length - 1);
-        }
-
-        return msg;
     }
 }
