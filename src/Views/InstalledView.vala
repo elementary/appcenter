@@ -32,7 +32,7 @@ public class AppCenter.Views.InstalledView : View {
 
         add (app_list_view);
 
-        var client = AppCenterCore.Client.get_default ();
+        var client = Client.get_default ();
         client.drivers_detected.connect (() => {
             foreach (var driver in client.driver_list) {
                 app_list_view.add_package (driver);
