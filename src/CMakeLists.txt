@@ -3,6 +3,7 @@ vala_precompile(VALA_C ${EXEC_NAME}
     Core/Client.vala
     Core/Houston.vala
     Core/Package.vala
+    Core/PackageList.vala
     Core/Task.vala
     Core/UpdateManager.vala
     Core/ComponentValidator.vala

@@ -117,15 +117,15 @@ namespace AppCenter {
 
             add (category_scrolled);
 
-            var local_package = App.local_package;
-            if (local_package != null) {
-                newest_banner.add_package (local_package);
-            }
-
             houston.get_app_ids.begin ("/newest/project", (obj, res) => {
                 var newest_ids = houston.get_app_ids.end (res);
                 new Thread<void*> ("update-banner", () => {
                     var packages_for_banner = new Gee.LinkedList<AppCenterCore.Package> ();
+
+                    if (App.local_package != null) {
+                        packages_for_banner.add(App.local_package);
+                    }
+
                     foreach (var package in newest_ids) {
                         if (packages_for_banner.size >= NUM_PACKAGES_IN_BANNER) {
                             break;
@@ -144,9 +144,8 @@ namespace AppCenter {
                     }
 
                     Idle.add (() => {
-                        foreach (var banner_package in packages_for_banner) {
-                            newest_banner.add_package (banner_package);
-                        }
+                        var package_list = (new AppCenterCore.PackageList()).set_packages(packages_for_banner);
+                        newest_banner.set_package_list(package_list);
                         newest_banner.go_to_first ();
                         switcher.show_all ();
                         switcher_revealer.set_reveal_child (true);
@@ -179,9 +178,8 @@ namespace AppCenter {
 
                     if (!packages_for_carousel.is_empty) {
                         Idle.add (() => {
-                            foreach (var banner_package in packages_for_carousel) {
-                                recently_updated_carousel.add_package (banner_package);
-                            }
+                            var package_list = (new AppCenterCore.PackageList()).set_packages(packages_for_carousel);
+                            recently_updated_carousel.set_package_list(package_list);
                             recently_updated_revealer.reveal_child = true;
                             return false;
                         });
@@ -212,9 +210,8 @@ namespace AppCenter {
 
                     if (!packages_for_carousel.is_empty) {
                         Idle.add (() => {
-                            foreach (var trending_package in packages_for_carousel) {
-                                trending_carousel.add_package (trending_package);
-                            }
+                            var package_list = (new AppCenterCore.PackageList()).set_packages(packages_for_carousel);
+                            trending_carousel.set_package_list(package_list);
                             trending_revealer.reveal_child = true;
                             return false;
                         });
