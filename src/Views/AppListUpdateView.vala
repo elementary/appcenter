@@ -23,7 +23,6 @@ namespace AppCenter.Views {
 /** AppList for the Updates View. Sorts update_available first and shows headers.
       * Does not show Uninstall Button **/
     public class AppListUpdateView : AbstractAppList {
-        private const int TRY_AGAIN_RESPONSE_ID = 1;
         private Gtk.Button? update_all_button;
         private bool updating_all_apps = false;
         private bool apps_remaining_started = false;
@@ -32,8 +31,6 @@ namespace AppCenter.Views {
         private Gee.LinkedList<AppCenterCore.Package> apps_to_update;
         private AppCenterCore.Package first_package;
         private SuspendControl sc;
-
-        private Gtk.InfoBar error_infobar;
 
         private bool _updating_cache;
         public bool updating_cache {
@@ -67,19 +64,6 @@ namespace AppCenter.Views {
             infobar.no_show_all = true;
             infobar.get_content_area ().add (info_label);
 
-            error_infobar = new Gtk.InfoBar ();
-            error_infobar.message_type = Gtk.MessageType.ERROR;
-            error_infobar.add_button (_("Try Again"), TRY_AGAIN_RESPONSE_ID);
-            error_infobar.response.connect (on_error_infobar_response);
-            set_widget_visibility (error_infobar, false);
-
-            var error_label = new Gtk.Label (null);
-            error_label.wrap = true;
-            error_label.selectable = true;
-
-            var content = error_infobar.get_content_area ();
-            content.add (error_label);
-
             var restart_button = infobar.add_button (_("Restart Now"), 0);
             action_button_group.add_widget (restart_button);
 
@@ -90,25 +74,9 @@ namespace AppCenter.Views {
                 }
             });
 
-            var client = AppCenterCore.Client.get_default ();
-            client.notify["updating-cache"].connect (() => {
-                if (client.updating_cache && error_infobar.visible) {
-                    set_widget_visibility (error_infobar, false);
-                }
-            });
-
-            client.cache_update_failed.connect ((error) => {
-                string message = format_error_message (error.message);
-                error_label.label = _("Failed to fetch updates: %s. This may be caused by external, manually added software repositories or corrupted sources file.").printf (message);
-                if (!error_infobar.visible) {
-                    set_widget_visibility (error_infobar, true);
-                }
-            });
-
             AppCenterCore.UpdateManager.get_default ().bind_property ("restart-required", infobar, "visible", BindingFlags.SYNC_CREATE);
 
             add (infobar);
-            add (error_infobar);
             add (scrolled);
         }
 
@@ -294,22 +262,6 @@ namespace AppCenter.Views {
                 }
             }
             update_mutex.unlock ();
-        }
-
-        private void on_error_infobar_response (int response) {
-            if (response == TRY_AGAIN_RESPONSE_ID) {
-                set_widget_visibility (error_infobar, false);
-                AppCenterCore.Client.get_default ().update_cache.begin (true);
-            }
-        }
-
-        private static string format_error_message (string message) {
-            string msg = message.replace ("\n", " ").strip ();
-            if (msg.has_suffix (".")) {
-                msg = msg.substring (0, msg.length - 1);
-            }
-
-            return msg;
         }
 
         private void finish_updating_all_apps () {
