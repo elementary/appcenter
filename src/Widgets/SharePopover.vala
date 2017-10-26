@@ -35,30 +35,6 @@ public class SharePopover : Gtk.Popover {
         email_button.tooltip_text = _("Email");
         email_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
-        var facebook_button = new Gtk.Button.from_icon_name ("online-account-facebook", Gtk.IconSize.DND);
-        facebook_button.tooltip_text = _("Facebook");
-        facebook_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-
-        var google_button = new Gtk.Button.from_icon_name ("online-account-google-plus", Gtk.IconSize.DND);
-        google_button.tooltip_text = _("Google+");
-        google_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-
-        var twitter_button = new Gtk.Button.from_icon_name ("online-account-twitter", Gtk.IconSize.DND);
-        twitter_button.tooltip_text = _("Twitter");
-        twitter_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-
-        var reddit_button = new Gtk.Button.from_icon_name ("online-account-reddit", Gtk.IconSize.DND);
-        reddit_button.tooltip_text = _("reddit");
-        reddit_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-
-        var tumblr_button = new Gtk.Button.from_icon_name ("online-account-tumblr", Gtk.IconSize.DND);
-        tumblr_button.tooltip_text = _("Tumblr");
-        tumblr_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-
-        var telegram_button = new Gtk.Button.from_icon_name ("online-account-telegram", Gtk.IconSize.DND);
-        telegram_button.tooltip_text = _("Telegram");
-        telegram_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-
         var copy_link_button = new Gtk.Button.from_icon_name ("edit-copy-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
         copy_link_button.tooltip_text = _("Copy link");
         copy_link_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
@@ -69,14 +45,13 @@ public class SharePopover : Gtk.Popover {
 
         var service_grid = new Gtk.Grid ();
         service_grid.margin = 6;
-        service_grid.add (email_button);
-        service_grid.add (facebook_button);
-        service_grid.add (google_button);
-        service_grid.add (twitter_button);
-        service_grid.add (reddit_button);
-        service_grid.add (tumblr_button);
-        service_grid.add (telegram_button);
 
+        service_grid.add (make_share_button(_("Facebook"), "https://www.facebook.com/sharer/sharer.php?u=%s", "online-account-facebook"));
+        service_grid.add (make_share_button(_("Twitter"), "http://twitter.com/home/?status=%s %s", "online-account-twitter"));
+        service_grid.add (make_share_button(_("reddit"), "http://www.reddit.com/submit?title=%s&url=%s", "online-account-reddit"));
+        service_grid.add (make_share_button(_("Tumblr"), "https://www.tumblr.com/share/link?url=%s", "online-account-tumblr"));
+        service_grid.add (make_share_button(_("Telegram"), "https://t.me/share/url?url=%s", "online-account-telegram"));
+        
         var system_grid = new Gtk.Grid ();
         system_grid.margin = 6;
         system_grid.add (copy_link_button);
@@ -107,59 +82,24 @@ public class SharePopover : Gtk.Popover {
             }
             hide ();
         });
+    }
 
-        facebook_button.clicked.connect (() => {
+    Gtk.Widget make_share_button(string name, string uri_template, string icon_name) {
+        var button = new Gtk.Button.from_icon_name (icon_name, Gtk.IconSize.DND);
+        button.tooltip_text = name;
+        button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        button.clicked.connect (() => {
             try {
-                AppInfo.launch_default_for_uri ("https://www.facebook.com/sharer/sharer.php?u=%s".printf (uri), null);
+                if (uri_template.index_of("%s") == uri_template.last_index_of("%s")) {
+                    AppInfo.launch_default_for_uri(uri_template.printf(uri), null);
+                } else {
+                    AppInfo.launch_default_for_uri(uri_template.printf(body, uri), null);
+                }
             } catch (Error e) {
                 warning ("%s", e.message);
             }
-            hide ();
+            hide();
         });
-
-        google_button.clicked.connect (() => {
-            try {
-                AppInfo.launch_default_for_uri ("https://plus.google.com/share?url=%s".printf (uri), null);
-            } catch (Error e) {
-                warning ("%s", e.message);
-            }
-            hide ();
-        });
-
-        twitter_button.clicked.connect (() => {
-            try {
-                AppInfo.launch_default_for_uri ("http://twitter.com/home/?status=%s %s".printf (body, uri), null);
-            } catch (Error e) {
-                warning ("%s", e.message);
-            }
-            hide ();
-        });
-
-        reddit_button.clicked.connect (() => {
-            try {
-                AppInfo.launch_default_for_uri ("http://www.reddit.com/submit?title=%s&url=%s".printf (body, uri), null);
-            } catch (Error e) {
-                warning ("%s", e.message);
-            }
-            hide ();
-        });
-
-        tumblr_button.clicked.connect (() => {
-            try {
-                AppInfo.launch_default_for_uri ("https://www.tumblr.com/share/link?url=%s".printf (uri), null);
-            } catch (Error e) {
-                warning ("%s", e.message);
-            }
-            hide ();
-        });
-
-        telegram_button.clicked.connect (() => {
-            try {
-                AppInfo.launch_default_for_uri ("https://t.me/share/url?url=%s".printf (uri), null);
-            } catch (Error e) {
-                warning ("%s", e.message);
-            }
-            hide ();
-        });
+        return button;
     }
 }
