@@ -20,13 +20,13 @@
 public class SharePopover : Gtk.Popover {
     public signal void link_copied ();
 
-    public string body { get; set; }
-    public string uri { get; set; }
+    public string shared_text { get; set; }
+    public string shared_link { get; set; }
 
-    public SharePopover (string body, string uri) {
+    public SharePopover (string shared_text, string shared_link) {
         Object (
-            body: body,
-            uri: uri
+            shared_text: shared_text,
+            shared_link: shared_link
         );
     }
 
@@ -66,25 +66,28 @@ public class SharePopover : Gtk.Popover {
         add (grid);
     }
 
-    Gtk.Button make_share_button (string name, string uri_template, string icon_name) {
+    Gtk.Button make_share_button (string tooltip_text, string uri_template, string icon_name) {
         var share_button = new Gtk.Button.from_icon_name (icon_name, Gtk.IconSize.DND);
-        share_button.tooltip_text = name;
+        share_button.tooltip_text = tooltip_text;
         share_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
         share_button.clicked.connect (() => {
             try {
+                // Make the text and the uri safe to include in an uri
+                string escaped_link = GLib.Uri.escape_string (shared_link);
+                string escaped_text = GLib.Uri.escape_string (shared_text);
+                string resulting_uri;
                 // Check if there's only one placeholder, if so, use it for a link
                 if (uri_template.index_of ("%s") == uri_template.last_index_of ("%s")) {
-                    AppInfo.launch_default_for_uri (uri_template.printf (uri), null);
+                    resulting_uri = uri_template.printf (escaped_link);
                 } else {
-                    AppInfo.launch_default_for_uri (uri_template.printf (body, uri), null);
+                    resulting_uri = uri_template.printf (escaped_text, escaped_link);
                 }
+                AppInfo.launch_default_for_uri (resulting_uri, null);
             } catch (Error e) {
                 warning ("%s", e.message);
             }
-
             hide ();
         });
-
         return share_button;
     }
         
@@ -92,15 +95,12 @@ public class SharePopover : Gtk.Popover {
         var copy_link_button = new Gtk.Button.from_icon_name ("edit-copy-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
         copy_link_button.tooltip_text = _("Copy link");
         copy_link_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-
         copy_link_button.clicked.connect (() => {
             var clipboard = Gtk.Clipboard.get_for_display (get_display (), Gdk.SELECTION_CLIPBOARD);
-            clipboard.set_text (uri, -1);
+            clipboard.set_text (shared_link, -1);
             link_copied ();
-
             hide ();
         });
-
         return copy_link_button;
     }
 }
