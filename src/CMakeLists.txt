@@ -50,7 +50,7 @@ PACKAGES
     gee-0.8
     granite
     packagekit-glib2
-    libsoup-2.4 
+    libsoup-2.4
     json-glib-1.0
     libxml-2.0
     ${UNITY_PACKAGES}
@@ -68,4 +68,3 @@ add_executable (${EXEC_NAME} ${VALA_C} ${GLIB_RESOURCES_CATEGORIES})
 target_link_libraries (${EXEC_NAME} ${DEPS_LIBRARIES} ${UNITY_LIBRARIES})
 
 install (TARGETS ${EXEC_NAME} RUNTIME DESTINATION bin)
-
