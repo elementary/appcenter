@@ -141,13 +141,13 @@ public class AppCenterCore.Client : Object {
         if (component != null) {
             string name = _("%s (local)").printf (component.get_name ());
             string id = "%s%s".printf (component.get_id (), Package.LOCAL_ID_SUFFIX);
-            
+
             component.set_name (name, null);
             component.set_id (id);
             component.set_origin (Package.APPCENTER_PACKAGE_ORIGIN);
 
             appstream_pool.add_component (component);
-            
+
             var package = new AppCenterCore.Package (component);
             package_list[id] = package;
 
@@ -663,6 +663,21 @@ public class AppCenterCore.Client : Object {
         }
 
         return null;
+    }
+
+    public Gee.Collection<AppCenterCore.Package> get_packages_by_author (string author, int max) {
+        var packages = new Gee.ArrayList<AppCenterCore.Package> ();
+        foreach (var package in package_list.values) {
+            if (packages.size > max) {
+                break;
+            }
+
+            if (package.component.developer_name == author) {
+                packages.add (package);
+            }
+        }
+
+        return packages;
     }
 
     private static GLib.Once<Client> instance;

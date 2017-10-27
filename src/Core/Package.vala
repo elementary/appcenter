@@ -130,6 +130,43 @@ public class AppCenterCore.Package : Object {
         }
     }
 
+    private string? _author = null;
+    public string author {
+        get {
+            if (_author != null) {
+                return _author;
+            }
+
+            _author = component.developer_name;
+
+            if (_author == null) {
+                var project_group = component.project_group;
+
+                if (project_group != null) {
+                    _author = project_group;
+                }
+            }
+
+            return _author;
+        }
+    }
+
+    private string? _author_title = null;
+    public string author_title {
+        get {
+            if (_author_title != null) {
+                return _author_title;
+            }
+
+            _author_title = author;
+            if (_author_title == null) {
+                _author_title = _("The %s Developers").printf (get_name ());
+            }
+
+            return _author_title;
+        }
+    }
+
     private string? name = null;
     private string? description = null;
     private string? summary = null;
@@ -467,7 +504,7 @@ public class AppCenterCore.Package : Object {
         });
 
         string installed_version = get_version ();
-        
+
         int start_index = 0;
         int end_index = min_releases;
 

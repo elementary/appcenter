@@ -21,6 +21,8 @@
 public abstract class AppCenter.View : Gtk.Stack {
     public signal void subview_entered (string? return_name, bool allow_search, string? custom_header = null, string? custom_search_placeholder = null);
 
+    protected AppCenterCore.Package? previous_package = null;
+
     construct {
         get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
         transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
@@ -28,6 +30,8 @@ public abstract class AppCenter.View : Gtk.Stack {
     }
 
     public virtual void show_package (AppCenterCore.Package package) {
+        previous_package = null;
+
         var pk_child = get_child_by_name (package.component.id) as Views.AppInfoView;
         if (pk_child != null) {
             pk_child.reload_css ();
@@ -36,6 +40,12 @@ public abstract class AppCenter.View : Gtk.Stack {
         }
 
         var app_info_view = new Views.AppInfoView (package);
+        app_info_view.show_other_package.connect ((_package) => {
+            show_package (_package);
+            previous_package = package;
+            subview_entered (package.get_name (), false, "", null);
+        });
+
         app_info_view.show_all ();
         add_named (app_info_view, package.component.id);
         set_visible_child (app_info_view);
