@@ -504,7 +504,7 @@ public class AppCenterCore.Package : Object {
         });
 
         string installed_version = get_version ();
-        
+
         int start_index = 0;
         int end_index = min_releases;
 

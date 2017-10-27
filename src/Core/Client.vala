@@ -141,13 +141,13 @@ public class AppCenterCore.Client : Object {
         if (component != null) {
             string name = _("%s (local)").printf (component.get_name ());
             string id = "%s%s".printf (component.get_id (), Package.LOCAL_ID_SUFFIX);
-            
+
             component.set_name (name, null);
             component.set_id (id);
             component.set_origin (Package.APPCENTER_PACKAGE_ORIGIN);
 
             appstream_pool.add_component (component);
-            
+
             var package = new AppCenterCore.Package (component);
             package_list[id] = package;
 
@@ -352,13 +352,13 @@ public class AppCenterCore.Client : Object {
             }
         }
 
-        return packages;        
+        return packages;
     }
 
     private static void populate_package (AppCenterCore.Package package, Pk.Package pk_package) {
         package.installed_packages.add (pk_package);
         package.latest_version = pk_package.get_version ();
-        package.update_state ();        
+        package.update_state ();
     }
 
     public Gee.Collection<AppCenterCore.Package> get_applications_for_category (AppStream.Category category) {
@@ -431,7 +431,7 @@ public class AppCenterCore.Client : Object {
                 package.size = details.size;
                 package.url = details.url;
             });
-        }   
+        }
 
         task_count--;
         return package;
@@ -642,7 +642,7 @@ public class AppCenterCore.Client : Object {
         }
 
         task_count--;
-        return installed;   
+        return installed;
     }
 
     public AppCenterCore.Package? get_package_for_component_id (string id) {

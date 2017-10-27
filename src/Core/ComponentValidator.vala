@@ -60,7 +60,7 @@ public class AppCenterCore.ComponentValidator : Object {
             if (line.has_prefix ("#")) {
                 continue;
             }
-            
+
             string token = line.strip ();
             if (token != "") {
                 blacklist.add (token);
