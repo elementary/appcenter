@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2015 elementary, LLC <contact@elementary.io> -->
 <component type="desktop-application">
-    <id>io.elementary.appcenter.desktop</id>
+    <id>@PROJECT_NAME@.desktop</id>
     <metadata_license>CC0-1.0</metadata_license>
     <project_group>elementary</project_group>
     <project_license>GPL-3.0+</project_license>
@@ -119,7 +119,7 @@
         <release version="0.1.0" date="2016-08-15"/>
     </releases>
     <provides>
-        <binary>io.elementary.appcenter</binary>
+        <binary>@EXEC_NAME@</binary>
         <dbus type="user">io.elementary.AppCenter</dbus>
     </provides>
     <screenshots>
