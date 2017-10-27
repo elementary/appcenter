@@ -64,7 +64,7 @@ public class AppCenter.App : Granite.Application {
                 main_window.destroy ();
             }
         });
-        
+
         var show_updates_action = new SimpleAction ("show-updates", null);
         show_updates_action.activate.connect(() => {
             silent = false;
@@ -153,7 +153,7 @@ public class AppCenter.App : Granite.Application {
             main_window.homepage_loaded.connect (() => {
                 client.update_cache.begin ();
             });
-            
+
             main_window.destroy.connect (() => {
                 main_window = null;
             });
@@ -179,7 +179,7 @@ public class AppCenter.App : Granite.Application {
         if (silent) {
             DBusServer.init ();
             try {
-                registration_id = connection.register_object ("/io/elementary/appcenter", DBusServer.get_default ());    
+                registration_id = connection.register_object ("/io/elementary/appcenter", DBusServer.get_default ());
             } catch (Error e) {
                 warning (e.message);
             }
@@ -234,7 +234,7 @@ public class AppCenter.App : Granite.Application {
                     notification.set_icon (new ThemedIcon ("system-software-install"));
                     notification.set_default_action ("app.open-application");
 
-                    send_notification ("installed", notification);                 
+                    send_notification ("installed", notification);
                 } else {
                     // Check if permission was denied or the operation was cancelled
                     if (error.matches (IOError.quark (), 19) || error.matches (Pk.ClientError.quark (), 303)) {
@@ -259,7 +259,7 @@ public class AppCenter.App : Granite.Application {
             default:
                 break;
         }
-    }    
+    }
 }
 
 public static int main (string[] args) {
