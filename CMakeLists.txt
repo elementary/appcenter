@@ -16,6 +16,12 @@ set (VERSION "0.2.6")
 set (VERSION_INFO "Alpha")
 set (DOLLAR "$")
 
+option (ENABLE_CURATED "Differentiate between apps created for elementary and not" ON)
+set (CURATED_FLAG "")
+if (ENABLE_CURATED)
+    set (CURATED_FLAG "--define=CURATED")
+endif (ENABLE_CURATED)
+
 # CTest
 include (CTest)
 if (BUILD_TESTING)
