@@ -34,6 +34,9 @@ public class AppCenter.App : Granite.Application {
     public static string? local_path;
     public static AppCenterCore.Package? local_package;
 
+    // Add "AppCenter" to the translation catalog
+    public const string APPCENTER = N_("AppCenter");
+
     [CCode (array_length = false, array_null_terminated = true)]
     public static string[]? fake_update_packages = null;
     private MainWindow? main_window;
@@ -46,7 +49,7 @@ public class AppCenter.App : Granite.Application {
         Intl.setlocale (LocaleCategory.ALL, "");
         Intl.textdomain (Build.GETTEXT_PACKAGE);
 
-        program_name = _("App Center");
+        program_name = _(Build.APP_NAME);
         app_icon = Build.DESKTOP_ICON;
 
         build_data_dir = Build.DATADIR;
