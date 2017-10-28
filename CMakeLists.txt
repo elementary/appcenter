@@ -20,6 +20,7 @@ set (DOLLAR "$")
 # CTest
 include (CTest)
 if (BUILD_TESTING)
+    add_test (NAME blacklist-exists COMMAND test -e ${CMAKE_SOURCE_DIR}/data/${BLACKLIST})
     add_test (NAME validate-desktop-file COMMAND desktop-file-validate ${CMAKE_BINARY_DIR}/data/${CMAKE_PROJECT_NAME}.desktop)
     add_test (NAME validate-daemon-desktop-file COMMAND desktop-file-validate ${CMAKE_BINARY_DIR}/data/${CMAKE_PROJECT_NAME}-daemon.desktop)
     add_test (NAME validate-appdata COMMAND appstreamcli validate ${CMAKE_BINARY_DIR}/data/${CMAKE_PROJECT_NAME}.appdata.xml)
