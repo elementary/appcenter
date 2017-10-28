@@ -1,4 +1,5 @@
 namespace Build {
+public const string APP_NAME = "@APP_NAME@";
 public const string DATADIR = "@DATADIR@";
 public const string PKGDATADIR = "@PKGDATADIR@";
 public const string GETTEXT_PACKAGE = "@GETTEXT_PACKAGE@";
