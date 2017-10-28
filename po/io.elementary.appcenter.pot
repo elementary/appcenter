@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-26 22:03-0500\n"
+"POT-Creation-Date: 2017-10-27 23:34-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -198,32 +198,29 @@ msgstr[1] ""
 msgid "The %s Developers"
 msgstr ""
 
-#: ../src/Application.vala:49
-msgid "App Center"
+#: ../src/Application.vala:38 ../src/MainWindow.vala:121
+#: ../src/Widgets/Banner.vala:108
+msgid "AppCenter"
 msgstr ""
 
-#: ../src/Application.vala:114
+#: ../src/Application.vala:117
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr ""
 
-#: ../src/Application.vala:232
+#: ../src/Application.vala:235
 msgid "Application installed"
 msgstr ""
 
-#: ../src/Application.vala:233
+#: ../src/Application.vala:236
 msgid "%s has been successfully installed"
 msgstr ""
 
-#: ../src/Application.vala:249
+#: ../src/Application.vala:252
 msgid "Close"
 msgstr ""
 
-#: ../src/Application.vala:251
+#: ../src/Application.vala:254
 msgid "There Was An Error Installing %s"
-msgstr ""
-
-#: ../src/MainWindow.vala:121 ../src/Widgets/Banner.vala:108
-msgid "AppCenter"
 msgstr ""
 
 #: ../src/MainWindow.vala:131 ../src/Views/Homepage.vala:253
