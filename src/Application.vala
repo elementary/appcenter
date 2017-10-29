@@ -41,7 +41,7 @@ public class AppCenter.App : Granite.Application {
     private uint registration_id = 0;
 
     construct {
-        application_id = "io.elementary.appcenter";
+        application_id = Build.PROJECT_NAME;
         flags |= ApplicationFlags.HANDLES_OPEN;
         Intl.setlocale (LocaleCategory.ALL, "");
         Intl.textdomain (Build.GETTEXT_PACKAGE);
