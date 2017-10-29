@@ -34,6 +34,9 @@ public class AppCenter.App : Granite.Application {
     public static string? local_path;
     public static AppCenterCore.Package? local_package;
 
+    // Add "AppCenter" to the translation catalog
+    public const string APPCENTER = N_("AppCenter");
+
     [CCode (array_length = false, array_null_terminated = true)]
     public static string[]? fake_update_packages = null;
     private MainWindow? main_window;
@@ -41,12 +44,12 @@ public class AppCenter.App : Granite.Application {
     private uint registration_id = 0;
 
     construct {
-        application_id = "io.elementary.appcenter";
+        application_id = Build.PROJECT_NAME;
         flags |= ApplicationFlags.HANDLES_OPEN;
         Intl.setlocale (LocaleCategory.ALL, "");
         Intl.textdomain (Build.GETTEXT_PACKAGE);
 
-        program_name = _("App Center");
+        program_name = _(Build.APP_NAME);
         app_icon = Build.DESKTOP_ICON;
 
         build_data_dir = Build.DATADIR;
@@ -55,7 +58,7 @@ public class AppCenter.App : Granite.Application {
         build_version = Build.VERSION;
         build_version_info = Build.VERSION_INFO;
 
-        app_launcher = "io.elementary.appcenter.desktop";
+        app_launcher = Build.DESKTOP_FILE;
         add_main_option_entries (APPCENTER_OPTIONS);
 
         var quit_action = new SimpleAction ("quit", null);
