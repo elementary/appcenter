@@ -55,7 +55,7 @@ public class AppCenter.App : Granite.Application {
         build_version = Build.VERSION;
         build_version_info = Build.VERSION_INFO;
 
-        app_launcher = "io.elementary.appcenter.desktop";
+        app_launcher = Build.DESKTOP_FILE;
         add_main_option_entries (APPCENTER_OPTIONS);
 
         var quit_action = new SimpleAction ("quit", null);
