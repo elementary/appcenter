@@ -175,7 +175,7 @@ public class AppCenterCore.Client : Object {
              * If there were no packages found for the requested architecture,
              * try to resolve IDs by not searching for this architecture
              * e.g: filtering 32 bit only package on a 64 bit system
-             */ 
+             */
             GenericArray<weak Pk.Package> package_array = results.get_package_array ();
             if (package_array.length == 0) {
                 results = yield client.resolve_async (Pk.Bitfield.from_enums (Pk.Filter.NEWEST, Pk.Filter.NOT_ARCH), packages_ids, cancellable, () => {});
