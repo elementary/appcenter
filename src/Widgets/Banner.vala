@@ -105,7 +105,7 @@ namespace AppCenter.Widgets {
 
                 bool has_package = package != null;
 
-                var name_label = new Gtk.Label (has_package ? package.get_name () : _("AppCenter"));
+                var name_label = new Gtk.Label (has_package ? package.get_name () : _(Build.APP_NAME));
                 name_label.get_style_context ().add_class ("h1");
                 name_label.xalign = 0;
                 name_label.use_markup = true;
