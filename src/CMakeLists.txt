@@ -62,8 +62,9 @@ OPTIONS
 
 include (GResource)
 glib_compile_resources (GLIB_RESOURCES_CATEGORIES SOURCE ../data/icons/categories.gresource.xml)
+glib_compile_resources (GLIB_RESOURCES_CSS SOURCE ../data/io.elementary.appcenter.gresource.xml)
 
-add_executable (${EXEC_NAME} ${VALA_C} ${GLIB_RESOURCES_CATEGORIES})
+add_executable (${EXEC_NAME} ${VALA_C} ${GLIB_RESOURCES_CATEGORIES} ${GLIB_RESOURCES_CSS})
 target_link_libraries (${EXEC_NAME} ${DEPS_LIBRARIES} ${UNITY_LIBRARIES})
 
 install (TARGETS ${EXEC_NAME} RUNTIME DESTINATION bin)
