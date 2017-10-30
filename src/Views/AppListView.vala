@@ -26,7 +26,9 @@ namespace AppCenter.Views {
         private GLib.ListStore list_store;
 
         construct {
+#if CURATED
             list_box.set_header_func ((Gtk.ListBoxUpdateHeaderFunc) row_update_header);
+#endif
             list_store = new GLib.ListStore (typeof (AppCenterCore.Package));
             scrolled.edge_reached.connect ((position) => {
                 if (position == Gtk.PositionType.BOTTOM) {
@@ -79,15 +81,18 @@ namespace AppCenter.Views {
         }
 
         private static int compare_packages (AppCenterCore.Package p1, AppCenterCore.Package p2) {
+#if CURATED
             bool p1_is_elementary_native = p1.is_native;
 
             if (p1_is_elementary_native || p2.is_native) {
                 return p1_is_elementary_native ? -1 : 1;
             }
+#endif
 
             return p1.get_name ().collate (p2.get_name ());
         }
 
+#if CURATED
         [CCode (instance_pos = -1)]
         protected override int package_row_compare (Widgets.AppListRow row1, Widgets.AppListRow row2) {
             bool p1_is_elementary_native = row1.get_package ().is_native;
@@ -119,5 +124,6 @@ namespace AppCenter.Views {
             header.xalign = 0;
             row.set_header (header);
         }
+#endif
     }
 }
