@@ -57,6 +57,7 @@ OPTIONS
   --vapidir=${CMAKE_SOURCE_DIR}/vapi
   --target-glib=2.32
   --thread
+  ${CURATED_FLAG}
   ${UNITY_OPTIONS}
 )
 
