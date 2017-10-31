@@ -217,7 +217,7 @@ namespace AppCenter.Views {
             if (!package.is_local) {
                 header_grid.attach (action_stack, 3, 0, 1, 1);
             }
-            
+
             header_box.add (header_grid);
 
             var footer_grid = new Gtk.Grid ();
@@ -406,7 +406,7 @@ namespace AppCenter.Views {
 
                     return false;
                 });
-                
+
                 if (screenshots.length == 0) {
                     return null;
                 }

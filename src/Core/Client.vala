@@ -150,13 +150,13 @@ public class AppCenterCore.Client : Object {
         if (component != null) {
             string name = _("%s (local)").printf (component.get_name ());
             string id = "%s%s".printf (component.get_id (), Package.LOCAL_ID_SUFFIX);
-            
+
             component.set_name (name, null);
             component.set_id (id);
             component.set_origin (Package.APPCENTER_PACKAGE_ORIGIN);
 
             appstream_pool.add_component (component);
-            
+
             var package = new AppCenterCore.Package (component);
             package_list[id] = package;
 
@@ -184,7 +184,7 @@ public class AppCenterCore.Client : Object {
              * If there were no packages found for the requested architecture,
              * try to resolve IDs by not searching for this architecture
              * e.g: filtering 32 bit only package on a 64 bit system
-             */ 
+             */
             GenericArray<weak Pk.Package> package_array = results.get_package_array ();
             if (package_array.length == 0) {
                 results = yield client.resolve_async (Pk.Bitfield.from_enums (Pk.Filter.NEWEST, Pk.Filter.NOT_ARCH), packages_ids, cancellable, () => {});
@@ -425,7 +425,7 @@ public class AppCenterCore.Client : Object {
                 package.size = details.size;
                 package.url = details.url;
             });
-        }   
+        }
 
         task_count--;
         return package;
@@ -456,7 +456,7 @@ public class AppCenterCore.Client : Object {
             }
 
 #if HAVE_UNITY
-            var launcher_entry = Unity.LauncherEntry.get_for_desktop_file ("io.elementary.appcenter.desktop");
+            var launcher_entry = Unity.LauncherEntry.get_for_desktop_file (Build.DESKTOP_FILE);
             launcher_entry.count = updates_number;
             launcher_entry.count_visible = updates_number != 0U;
 #endif
