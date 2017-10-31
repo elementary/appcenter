@@ -6,6 +6,7 @@ vala_precompile(VALA_C ${EXEC_NAME}
     Core/Task.vala
     Core/UpdateManager.vala
     Core/ComponentValidator.vala
+    Core/PackageIndex.vala
 
     Application.vala
     MainWindow.vala

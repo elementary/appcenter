@@ -38,6 +38,12 @@ public class AppCenter.Views.InstalledView : View {
             }
         });
 
+        if (!client.installed_package_index.ready) {
+            client.installed_package_index.notify["ready"].connect (() => get_apps.begin ());
+        } else {
+            get_apps.begin ();
+        }
+
         client.updates_available.connect (update_os_package_visibility);
         client.bind_property ("updating-cache", app_list_view, "updating-cache", GLib.BindingFlags.DEFAULT);
         update_os_package_visibility ();

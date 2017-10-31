@@ -27,14 +27,15 @@ public class DBusServer : Object {
 
     public static void init () {
         var client = AppCenterCore.Client.get_default ();
-        var loop = new MainLoop ();
 
-        client.get_installed_applications.begin ((obj, res) => {
-            client.get_installed_applications.end (res);
-            loop.quit ();
-        });
+        if (!client.installed_package_index.ready) {
+            var loop = new MainLoop ();
+            client.installed_package_index.notify["ready"].connect (() => {
+                loop.quit ();
+            });
 
-        loop.run (); // wait until async method finishes
+            loop.run (); // wait until the signal is fired
+        }
     }
 
     private DBusServer () {

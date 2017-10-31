@@ -74,6 +74,7 @@ public class AppCenter.App : Granite.Application {
 
         var client = AppCenterCore.Client.get_default ();
         client.operation_finished.connect (on_operation_finished);
+        client.create_package_indexes.begin ();
 
         if (AppInfo.get_default_for_uri_scheme ("appstream") == null) {
             var appinfo = new DesktopAppInfo (app_launcher);

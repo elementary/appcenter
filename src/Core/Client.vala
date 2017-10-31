@@ -42,6 +42,8 @@ public class AppCenterCore.Client : Object {
     public AppCenterCore.Package os_updates { public get; private set; }
     public Gee.TreeSet<AppCenterCore.Package> driver_list { get; construct; }
 
+    public PackageIndex installed_package_index { public get; private set; }
+
     private Gee.HashMap<string, AppCenterCore.Package> package_list;
     private AppStream.Pool appstream_pool;
     private GLib.Cancellable cancellable;
@@ -68,6 +70,7 @@ public class AppCenterCore.Client : Object {
 
     construct {
         package_list = new Gee.HashMap<string, AppCenterCore.Package> (null, null);
+        installed_package_index = new PackageIndex ();
         driver_list = new Gee.TreeSet<AppCenterCore.Package> ();
         cancellable = new GLib.Cancellable ();
 
@@ -123,6 +126,12 @@ public class AppCenterCore.Client : Object {
                 update_cache.begin (true);
             }
         }
+    }
+
+    public async void create_package_indexes () {
+        var installed_packages = yield get_installed_packages ();
+        installed_package_index.add_all (installed_packages);
+        installed_package_index.ready = true;
     }
 
     public bool has_tasks () {
@@ -329,8 +338,7 @@ public class AppCenterCore.Client : Object {
 
     public async Gee.Collection<AppCenterCore.Package> get_installed_applications () {
         var packages = new Gee.TreeSet<AppCenterCore.Package> ();
-        var installed = yield get_installed_packages ();
-        foreach (var pk_package in installed) {
+        foreach (var pk_package in installed_package_index) {
             var package = package_list[pk_package.get_name ()];
             if (package != null) {
                 populate_package (package, pk_package);
@@ -341,24 +349,10 @@ public class AppCenterCore.Client : Object {
         return packages;
     }
 
-    public Gee.Collection<AppCenterCore.Package> get_installed_applications_sync () {
-        var packages = new Gee.TreeSet<AppCenterCore.Package> ();
-        var installed = get_installed_packages_sync ();
-        foreach (var pk_package in installed) {
-            var package = package_list[pk_package.get_name ()];
-            if (package != null) {
-                populate_package (package, pk_package);
-                packages.add (package);
-            }
-        }
-
-        return packages;        
-    }
-
     private static void populate_package (AppCenterCore.Package package, Pk.Package pk_package) {
         package.installed_packages.add (pk_package);
         package.latest_version = pk_package.get_version ();
-        package.update_state ();        
+        package.update_state ();
     }
 
     public Gee.Collection<AppCenterCore.Package> get_applications_for_category (AppStream.Category category) {
@@ -411,10 +405,17 @@ public class AppCenterCore.Client : Object {
         var filter = Pk.Bitfield.from_enums (Pk.Filter.NEWEST);
         filter |= additional_filters;
         try {
-            var results = client.search_names_sync (filter, { application, null }, cancellable, () => {});
+            string[] packages = { application, null };
+            var results = client.resolve_sync (filter, packages, null, () => {});
             var array = results.get_package_array ();
             if (array.length > 0) {
                 package = array.get (0);
+            } else {
+                results = client.search_names_sync (filter, { application, null }, cancellable, () => {});
+                array = results.get_package_array ();
+                if (array.length > 0) {
+                    package = array.get (0);
+                }
             }
         } catch (Error e) {
             task_count--;
@@ -623,26 +624,6 @@ public class AppCenterCore.Client : Object {
 
         task_count--;
         return installed;
-    }
-
-    public Gee.TreeSet<Pk.Package> get_installed_packages_sync () {
-        task_count++;
-
-        Pk.Bitfield filter = Pk.Bitfield.from_enums (Pk.Filter.INSTALLED, Pk.Filter.NEWEST);
-        var installed = new Gee.TreeSet<Pk.Package> ();
-
-        try {
-            Pk.Results results = client.get_packages_sync (filter, null, (prog, type) => {});
-            results.get_package_array ().foreach ((pk_package) => {
-                installed.add (pk_package);
-            });
-
-        } catch (Error e) {
-            critical (e.message);
-        }
-
-        task_count--;
-        return installed;   
     }
 
     public AppCenterCore.Package? get_package_for_component_id (string id) {

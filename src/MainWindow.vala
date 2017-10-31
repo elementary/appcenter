@@ -91,8 +91,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         return_button.clicked.connect (view_return);
 
-        installed_view.get_apps.begin ();
-
         homepage.subview_entered.connect (view_opened);
         installed_view.subview_entered.connect (view_opened);
         search_view.subview_entered.connect (view_opened);
