@@ -405,17 +405,10 @@ public class AppCenterCore.Client : Object {
         var filter = Pk.Bitfield.from_enums (Pk.Filter.NEWEST);
         filter |= additional_filters;
         try {
-            string[] packages = { application, null };
-            var results = client.resolve_sync (filter, packages, null, () => {});
+            var results = client.search_names_sync (filter, { application, null }, cancellable, () => {});
             var array = results.get_package_array ();
             if (array.length > 0) {
                 package = array.get (0);
-            } else {
-                results = client.search_names_sync (filter, { application, null }, cancellable, () => {});
-                array = results.get_package_array ();
-                if (array.length > 0) {
-                    package = array.get (0);
-                }
             }
         } catch (Error e) {
             task_count--;
