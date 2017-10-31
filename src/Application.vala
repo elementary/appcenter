@@ -123,6 +123,10 @@ public class AppCenter.App : Granite.Application {
     }
 
     public override void activate () {
+        var provider = new Gtk.CssProvider ();
+        provider.load_from_resource ("io/elementary/appcenter/application.css");
+        Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
         var client = AppCenterCore.Client.get_default ();
 
         if (fake_update_packages != null) {
