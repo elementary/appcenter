@@ -21,6 +21,10 @@
 const string BANNER_STYLE_CSS = """
     @define-color banner_bg_color %s;
     @define-color banner_fg_color %s;
+
+    .banner { 
+        transition: all %ums ease-in-out;
+    }
 """;
 
 const string DEFAULT_BANNER_COLOR_PRIMARY = "#68758e";
