@@ -1,6 +1,7 @@
 namespace Build {
 public const string APP_NAME = "@APP_NAME@";
 public const string PROJECT_NAME = "@CMAKE_PROJECT_NAME@";
+public const string DBUS_PATH = "@DBUS_PATH@";
 public const string DATADIR = "@DATADIR@";
 public const string PKGDATADIR = "@PKGDATADIR@";
 public const string GETTEXT_PACKAGE = "@GETTEXT_PACKAGE@";
