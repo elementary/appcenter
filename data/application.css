@@ -21,8 +21,9 @@
                               shade (@banner_bg_color, 1.05),
                               shade (@banner_bg_color, 0.95)
                               );
-    color: @banner_fg_color;    
-    transition: all %ums ease-in-out;
+    color: @banner_fg_color;
+    icon-shadow: none;
+    text-shadow: none;
 }
 
 .banner.home {
