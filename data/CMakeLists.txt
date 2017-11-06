@@ -3,7 +3,8 @@ configure_file(${DESKTOP_FILE}.in.in ${CMAKE_CURRENT_BINARY_DIR}/${DESKTOP_FILE}
 configure_file(${CMAKE_PROJECT_NAME}-daemon.desktop.in ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_PROJECT_NAME}-daemon.desktop)
 configure_file_translation(${CMAKE_CURRENT_BINARY_DIR}/${DESKTOP_FILE}.in ${CMAKE_CURRENT_BINARY_DIR}/${DESKTOP_FILE} ${CMAKE_SOURCE_DIR}/po/)
 configure_file(${CMAKE_PROJECT_NAME}.service.in ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_PROJECT_NAME}.service)
-configure_file_translation(${CMAKE_CURRENT_SOURCE_DIR}/${CMAKE_PROJECT_NAME}.appdata.xml.in ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_PROJECT_NAME}.appdata.xml ${CMAKE_SOURCE_DIR}/po/)
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/${CMAKE_PROJECT_NAME}.appdata.xml.in.in ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_PROJECT_NAME}.appdata.xml.in)
+configure_file_translation(${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_PROJECT_NAME}.appdata.xml.in ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_PROJECT_NAME}.appdata.xml ${CMAKE_SOURCE_DIR}/po/)
 
 install (FILES ${CMAKE_CURRENT_BINARY_DIR}/${DESKTOP_FILE} DESTINATION share/applications)
 install (FILES ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_PROJECT_NAME}-daemon.desktop DESTINATION share/applications)
