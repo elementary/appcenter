@@ -35,6 +35,9 @@ public class AppCenter.App : Granite.Application {
     public static string? local_path;
     public static AppCenterCore.Package? local_package;
 
+    // Add "AppCenter" to the translation catalog
+    public const string APPCENTER = N_("AppCenter");
+
     [CCode (array_length = false, array_null_terminated = true)]
     public static string[]? fake_update_packages = null;
     private MainWindow? main_window;
@@ -42,12 +45,12 @@ public class AppCenter.App : Granite.Application {
     private uint registration_id = 0;
 
     construct {
-        application_id = "io.elementary.appcenter";
+        application_id = Build.PROJECT_NAME;
         flags |= ApplicationFlags.HANDLES_OPEN;
         Intl.setlocale (LocaleCategory.ALL, "");
         Intl.textdomain (Build.GETTEXT_PACKAGE);
 
-        program_name = _("App Center");
+        program_name = _(Build.APP_NAME);
         app_icon = Build.DESKTOP_ICON;
 
         build_data_dir = Build.DATADIR;
@@ -56,7 +59,7 @@ public class AppCenter.App : Granite.Application {
         build_version = Build.VERSION;
         build_version_info = Build.VERSION_INFO;
 
-        app_launcher = "io.elementary.appcenter.desktop";
+        app_launcher = Build.DESKTOP_FILE;
         add_main_option_entries (APPCENTER_OPTIONS);
 
         var quit_action = new SimpleAction ("quit", null);
@@ -65,7 +68,7 @@ public class AppCenter.App : Granite.Application {
                 main_window.destroy ();
             }
         });
-        
+
         var show_updates_action = new SimpleAction ("show-updates", null);
         show_updates_action.activate.connect(() => {
             silent = false;
@@ -122,6 +125,10 @@ public class AppCenter.App : Granite.Application {
     }
 
     public override void activate () {
+        var provider = new Gtk.CssProvider ();
+        provider.load_from_resource ("io/elementary/appcenter/application.css");
+        Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
         var client = AppCenterCore.Client.get_default ();
 
         if (fake_update_packages != null) {
@@ -155,7 +162,7 @@ public class AppCenter.App : Granite.Application {
             main_window.homepage_loaded.connect (() => {
                 client.update_cache.begin ();
             });
-            
+
             main_window.destroy.connect (() => {
                 main_window = null;
             });
@@ -181,7 +188,7 @@ public class AppCenter.App : Granite.Application {
         if (silent) {
             DBusServer.init ();
             try {
-                registration_id = connection.register_object ("/io/elementary/appcenter", DBusServer.get_default ());    
+                registration_id = connection.register_object ("/io/elementary/appcenter", DBusServer.get_default ());
             } catch (Error e) {
                 warning (e.message);
             }
@@ -236,7 +243,7 @@ public class AppCenter.App : Granite.Application {
                     notification.set_icon (new ThemedIcon ("system-software-install"));
                     notification.set_default_action ("app.open-application");
 
-                    send_notification ("installed", notification);                 
+                    send_notification ("installed", notification);
                 } else {
                     // Check if permission was denied or the operation was cancelled
                     if (error.matches (IOError.quark (), 19) || error.matches (Pk.ClientError.quark (), 303)) {
@@ -259,7 +266,7 @@ public class AppCenter.App : Granite.Application {
                 break;
         }
     }
-
+    
     private void on_cache_update_failed (Error error) {
         if (main_window == null) {
             return;
@@ -296,7 +303,6 @@ public class AppCenter.App : Granite.Application {
 
         return msg;
     }
-    
 }
 
 public static int main (string[] args) {

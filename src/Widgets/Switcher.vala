@@ -20,19 +20,6 @@
 namespace AppCenter.Widgets {
     public class Switcher : Gtk.Grid {
 
-        const string SWITCHER_STYLE_CSS = """
-            .switcher {
-                background-color: transparent;
-                border: none;
-                box-shadow: none;
-                opacity: 0.4;
-            }
-
-            .switcher:checked {
-                opacity: 1;
-            }
-        """;
-
         public int size {
             get {
                 return (int) buttons.size;
@@ -47,16 +34,6 @@ namespace AppCenter.Widgets {
             column_spacing = 3;
             can_focus = false;
             buttons = new Gee.HashMap<Gtk.Widget, Gtk.ToggleButton> (null, null);
-        }
-
-        construct {
-            var provider = new Gtk.CssProvider ();
-            try {
-                provider.load_from_data (SWITCHER_STYLE_CSS, SWITCHER_STYLE_CSS.length);
-                Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-            } catch (Error e) {
-                critical (e.message);
-            }
         }
 
         public void set_stack (Gtk.Stack stack) {

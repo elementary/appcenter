@@ -28,7 +28,7 @@ public class AppCenterCore.ComponentValidator : Object {
     construct {
         blacklist = new Gee.HashSet<string> ();
 
-        string blacklist_path = Path.build_filename (Build.CONFIGDIR, "appcenter.blacklist");
+        string blacklist_path = Path.build_filename (Build.CONFIGDIR, Build.BLACKLIST);
 
         try {
             string contents;
@@ -60,7 +60,7 @@ public class AppCenterCore.ComponentValidator : Object {
             if (line.has_prefix ("#")) {
                 continue;
             }
-            
+
             string token = line.strip ();
             if (token != "") {
                 blacklist.add (token);
