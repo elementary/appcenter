@@ -282,12 +282,15 @@ public class AppCenter.App : Granite.Application {
         var expander = new Gtk.Expander (_("Details"));
         expander.add (details_label);
 
-        var dialog = new Granite.MessageDialog.with_image_from_icon_name (_("Failed to Fetch Updates"), "This may be caused by external, manually added software repositories or corrupted sources file.", "dialog-error");
+        var dialog = new Granite.MessageDialog.with_image_from_icon_name (
+            _("Failed to Fetch Updates"),
+            _("This may have been caused by external, manually added software repositories or a corrupted sources file."),
+            "dialog-error"
+        );
         dialog.custom_bin.add (expander);
-
         dialog.add_button (_("Try Again"), TRY_AGAIN_RESPONSE_ID);
-
         dialog.show_all ();
+        
         if (dialog.run () == TRY_AGAIN_RESPONSE_ID) {
             AppCenterCore.Client.get_default ().update_cache.begin (true);
         }
