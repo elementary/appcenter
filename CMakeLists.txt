@@ -14,7 +14,7 @@ set (BLACKLIST "appcenter.blacklist")
 set (RELEASE_NAME "Browse and manage apps")
 set (DESKTOP_FILE ${CMAKE_PROJECT_NAME}.desktop)
 set (DESKTOP_ICON "system-software-install")
-set (VERSION "0.2.6")
+set (VERSION "0.2.7")
 set (VERSION_INFO "Alpha")
 set (DOLLAR "$")
 
