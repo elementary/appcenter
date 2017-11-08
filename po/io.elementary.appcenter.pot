@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-26 22:03-0500\n"
+"POT-Creation-Date: 2017-11-07 22:47-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -170,25 +170,25 @@ msgstr ""
 msgid "Please restart your system to finalize updates"
 msgstr ""
 
-#: ../src/Core/Client.vala:106
+#: ../src/Core/Client.vala:107
 msgid "Operating System Updates"
 msgstr ""
 
-#: ../src/Core/Client.vala:107
+#: ../src/Core/Client.vala:108
 msgid "Updates to system components"
 msgstr ""
 
-#: ../src/Core/Client.vala:142
+#: ../src/Core/Client.vala:143
 msgid "%s (local)"
 msgstr ""
 
-#: ../src/Core/Client.vala:451
+#: ../src/Core/Client.vala:452
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/Core/Client.vala:452
+#: ../src/Core/Client.vala:453
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] ""
@@ -198,32 +198,50 @@ msgstr[1] ""
 msgid "The %s Developers"
 msgstr ""
 
-#: ../src/Application.vala:49
-msgid "App Center"
+#: ../src/Application.vala:39
+msgid "AppCenter"
 msgstr ""
 
-#: ../src/Application.vala:114
+#: ../src/Application.vala:119
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr ""
 
-#: ../src/Application.vala:232
+#: ../src/Application.vala:241
 msgid "Application installed"
 msgstr ""
 
-#: ../src/Application.vala:233
+#: ../src/Application.vala:242
 msgid "%s has been successfully installed"
 msgstr ""
 
-#: ../src/Application.vala:249
+#: ../src/Application.vala:255
 msgid "Close"
 msgstr ""
 
-#: ../src/Application.vala:251
-msgid "There Was An Error Installing %s"
+#: ../src/Application.vala:257
+msgid "There Was An Error Installing %s."
 msgstr ""
 
-#: ../src/MainWindow.vala:121 ../src/Widgets/Banner.vala:108
-msgid "AppCenter"
+#: ../src/Application.vala:287
+msgid "Details"
+msgstr ""
+
+#: ../src/Application.vala:291
+msgid "Failed to Fetch Updates"
+msgstr ""
+
+#: ../src/Application.vala:292
+msgid ""
+"This may have been caused by external, manually added software repositories "
+"or a corrupted sources file."
+msgstr ""
+
+#: ../src/Application.vala:298
+msgid "Ignore"
+msgstr ""
+
+#: ../src/Application.vala:299
+msgid "Try Again"
 msgstr ""
 
 #: ../src/MainWindow.vala:131 ../src/Views/Homepage.vala:253
@@ -232,8 +250,8 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: ../src/MainWindow.vala:132 ../src/Views/InstalledView.vala:30
-#: ../src/Views/InstalledView.vala:49
+#: ../src/MainWindow.vala:132 ../src/Views/InstalledView.vala:29
+#: ../src/Views/InstalledView.vala:50
 msgctxt "view"
 msgid "Updates"
 msgstr ""
@@ -273,7 +291,7 @@ msgstr ""
 msgid "Update All"
 msgstr ""
 
-#: ../src/Views/AppListView.vala:114
+#: ../src/Views/AppListView.vala:119
 msgid "Non-Curated Apps"
 msgstr ""
 
@@ -338,7 +356,7 @@ msgid "Share"
 msgstr ""
 
 #: ../src/Widgets/HumbleButton.vala:82
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:190
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:200
 msgid "Free"
 msgstr ""
 
@@ -374,11 +392,11 @@ msgstr ""
 msgid "Drivers"
 msgstr ""
 
-#: ../src/Widgets/Banner.vala:115
+#: ../src/Widgets/Banner.vala:55
 msgid "An open, pay-what-you-want app store"
 msgstr ""
 
-#: ../src/Widgets/Banner.vala:128
+#: ../src/Widgets/Banner.vala:68
 msgid "Get the apps that you need at a price you can afford."
 msgstr ""
 
@@ -462,21 +480,21 @@ msgstr ""
 msgid "Universal Access"
 msgstr ""
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:106
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:116
 msgid "Uninstall"
 msgstr ""
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:109
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:119
 msgid "Open"
 msgstr ""
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:127
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:137
 #: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:172
 #: ../src/Dialogs/StripeDialog.vala:291
 msgid "Cancel"
 msgstr ""
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:206
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:216
 msgid "Update"
 msgstr ""
 
@@ -488,19 +506,19 @@ msgstr ""
 msgid "No apps could be found. Try changing search terms."
 msgstr ""
 
-#: ../src/Widgets/ReleaseRow.vala:66
+#: ../src/Widgets/ReleaseRow.vala:67
 msgid "<b>%s</b> – %s"
 msgstr ""
 
-#: ../src/Widgets/ReleaseRow.vala:71
+#: ../src/Widgets/ReleaseRow.vala:72
 msgid "<b>%s</b>"
 msgstr ""
 
-#: ../src/Widgets/ReleaseRow.vala:73
+#: ../src/Widgets/ReleaseRow.vala:74
 msgid "Unknown version"
 msgstr ""
 
-#: ../src/Widgets/ReleaseRow.vala:89 ../src/Widgets/ReleaseRow.vala:92
+#: ../src/Widgets/ReleaseRow.vala:90 ../src/Widgets/ReleaseRow.vala:93
 msgid "No description available"
 msgstr ""
 
