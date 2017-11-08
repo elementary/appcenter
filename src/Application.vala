@@ -275,9 +275,14 @@ public class AppCenter.App : Granite.Application {
         string message = format_error_message (error.message);
 
         var details_label = new Gtk.Label (message);
+        details_label.margin_top = 12;
+        details_label.max_width_chars = 40;
         details_label.selectable = true;
         details_label.wrap = true;
-        details_label.max_width_chars = 40;
+
+        var details_label_context = details_label.get_style_context ();
+        details_label_context.add_class (Gtk.STYLE_CLASS_MONOSPACE);
+        details_label_context.add_class ("terminal");
 
         var expander = new Gtk.Expander (_("Details"));
         expander.add (details_label);
@@ -285,9 +290,12 @@ public class AppCenter.App : Granite.Application {
         var dialog = new Granite.MessageDialog.with_image_from_icon_name (
             _("Failed to Fetch Updates"),
             _("This may have been caused by external, manually added software repositories or a corrupted sources file."),
-            "dialog-error"
+            "dialog-error",
+            Gtk.ButtonsType.NONE
         );
+        dialog.transient_for = main_window;
         dialog.custom_bin.add (expander);
+        dialog.add_button (_("Ignore"), Gtk.ResponseType.CLOSE);
         dialog.add_button (_("Try Again"), TRY_AGAIN_RESPONSE_ID);
         dialog.show_all ();
         
