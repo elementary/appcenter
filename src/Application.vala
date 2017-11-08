@@ -28,6 +28,7 @@ public class AppCenter.App : Granite.Application {
     };
 
     private const int SECONDS_AFTER_NETWORK_UP = 60;
+    private const int TRY_AGAIN_RESPONSE_ID = 1;
 
     public static bool show_updates;
     public static bool silent;
@@ -77,6 +78,7 @@ public class AppCenter.App : Granite.Application {
 
         var client = AppCenterCore.Client.get_default ();
         client.operation_finished.connect (on_operation_finished);
+        client.cache_update_failed.connect (on_cache_update_failed);
 
         if (AppInfo.get_default_for_uri_scheme ("appstream") == null) {
             var appinfo = new DesktopAppInfo (app_launcher);
@@ -248,14 +250,11 @@ public class AppCenter.App : Granite.Application {
                         break;
                     }
 
-                    string body = error.message;
-                    if (!body.has_suffix (".")) {
-                        body += ".";
-                    }
+                    string body = format_error_message (error.message);
 
                     var close_button = new Gtk.Button.with_label (_("Close"));
 
-                    var dialog = new MessageDialog (_("There Was An Error Installing %s").printf (package.get_name ()), body, "dialog-error");
+                    var dialog = new MessageDialog (_("There Was An Error Installing %s.").printf (package.get_name ()), body, "dialog-error");
                     dialog.add_action_widget (close_button, 0);
                     dialog.show_all ();
                     dialog.run ();
@@ -266,6 +265,46 @@ public class AppCenter.App : Granite.Application {
             default:
                 break;
         }
+    }
+    
+    private void on_cache_update_failed (Error error) {
+        if (main_window == null) {
+            return;
+        }
+
+        string message = format_error_message (error.message);
+
+        var details_label = new Gtk.Label (message);
+        details_label.selectable = true;
+        details_label.wrap = true;
+        details_label.max_width_chars = 40;
+
+        var expander = new Gtk.Expander (_("Details"));
+        expander.add (details_label);
+
+        var dialog = new Granite.MessageDialog.with_image_from_icon_name (
+            _("Failed to Fetch Updates"),
+            _("This may have been caused by external, manually added software repositories or a corrupted sources file."),
+            "dialog-error"
+        );
+        dialog.custom_bin.add (expander);
+        dialog.add_button (_("Try Again"), TRY_AGAIN_RESPONSE_ID);
+        dialog.show_all ();
+        
+        if (dialog.run () == TRY_AGAIN_RESPONSE_ID) {
+            AppCenterCore.Client.get_default ().update_cache.begin (true);
+        }
+
+        dialog.destroy ();
+    }
+
+    private static string format_error_message (string message) {
+        string msg = message.strip ();
+        if (msg.has_suffix (".")) {
+            msg = msg.substring (0, msg.length - 1);
+        }
+
+        return msg;
     }
 }
 
