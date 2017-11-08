@@ -25,11 +25,12 @@ public class AppCenter.Views.InstalledView : View {
 
     construct {
         app_list_view = new AppListUpdateView ();
-        add (app_list_view);
         app_list_view.show_app.connect ((package) => {
             subview_entered (C_("view", "Updates"), false, "");
             show_package (package);
         });
+
+        add (app_list_view);
 
         var client = Client.get_default ();
         client.drivers_detected.connect (() => {
