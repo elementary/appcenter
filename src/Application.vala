@@ -290,10 +290,12 @@ public class AppCenter.App : Granite.Application {
         var dialog = new Granite.MessageDialog.with_image_from_icon_name (
             _("Failed to Fetch Updates"),
             _("This may have been caused by external, manually added software repositories or a corrupted sources file."),
-            "dialog-error"
+            "dialog-error",
+            Gtk.ButtonsType.NONE
         );
         dialog.transient_for = main_window;
         dialog.custom_bin.add (expander);
+        dialog.add_button (_("Ignore"), Gtk.ResponseType.CLOSE);
         dialog.add_button (_("Try Again"), TRY_AGAIN_RESPONSE_ID);
         dialog.show_all ();
         
