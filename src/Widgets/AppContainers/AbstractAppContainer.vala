@@ -197,7 +197,7 @@ namespace AppCenter {
 
             switch (package.state) {
                 case AppCenterCore.Package.State.NOT_INSTALLED:
-                    action_button.label = _("Free");
+                    action_button.label = _("Install");
 
                     set_widget_visibility (uninstall_button, false);
                     set_widget_visibility (action_button, true);

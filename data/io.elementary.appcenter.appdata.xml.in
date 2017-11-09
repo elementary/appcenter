@@ -3,15 +3,13 @@
 <component type="desktop-application">
     <id>io.elementary.appcenter.desktop</id>
     <metadata_license>CC0-1.0</metadata_license>
-    <project_group>elementary</project_group>
+    <project_group>pop</project_group>
     <project_license>GPL-3.0+</project_license>
-    <_name>AppCenter</_name>
+    <_name>Pop!_Shop</_name>
     <_summary>Browse and manage apps</_summary>
     <description>
         <_p>
-        An app store for indie and open source developers. Browse by categories or
-        search and discover new apps. AppCenter is also used for updating your
-        system to the latest and greatest version for new features and fixes.
+            Pop!_Shop
         </_p>
     </description>
     <releases>
@@ -133,16 +131,15 @@
     </provides>
     <screenshots>
         <screenshot type="default">
-            <image>https://raw.githubusercontent.com/elementary/appcenter/master/data/screenshot.png</image>
+            <image>https://raw.githubusercontent.com/system76/pop-shop/master/data/screenshot.png</image>
         </screenshot>
     </screenshots>
-    <developer_name>elementary LLC.</developer_name>
-    <url type="homepage">http://elementary.io/</url>
-    <url type="bugtracker">https://github.com/elementary/appcenter/issues</url>
-    <url type="donation">https://elementary.io/get-involved#funding</url>
+    <developer_name>System76</developer_name>
+    <url type="homepage">https://github.com/system76/pop-shop</url>
+    <url type="bugtracker">https://github.com/system76/pop-shop/issues</url>
     <url type="help">https://elementaryos.stackexchange.com/questions/tagged/appcenter</url>
     <url type="translate">https://l10n.elementary.io/projects/desktop/appcenter</url>
-    <update_contact>contact_at_elementary.io</update_contact>
+    <update_contact>info_at_system76.com</update_contact>
 
     <custom>
         <value key="x-appcenter-color-primary">#665888</value>
