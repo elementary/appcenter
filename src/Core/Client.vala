@@ -16,6 +16,7 @@
 
 public class AppCenterCore.Client : Object {
     public signal void operation_finished (Package package, Package.State operation, Error? error);
+    public signal void cache_update_failed (Error error);
     public signal void updates_available ();
     public signal void drivers_detected ();
 
@@ -606,13 +607,16 @@ public class AppCenterCore.Client : Object {
 
                 refresh_in_progress = true;
                 updating_cache = true;
-
                 try {
                     Pk.Results results = yield client.refresh_cache_async (false, cancellable, (t, p) => { });
                     success = results.get_exit_code () == Pk.Exit.SUCCESS;
                     last_cache_update = new DateTime.now_local ();
                 } catch (Error e) {
+                    refresh_in_progress = false;
+                    updating_cache = false;
+
                     critical ("Update_cache: Refesh cache async failed - %s", e.message);
+                    cache_update_failed (e);
                 }
 
                 if (success) {
