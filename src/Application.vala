@@ -44,6 +44,9 @@ public class AppCenter.App : Granite.Application {
 
     private uint registration_id = 0;
 
+    private SearchProvider search_provider;
+    private uint search_provider_id = 0;
+
     construct {
         application_id = Build.PROJECT_NAME;
         flags |= ApplicationFlags.HANDLES_OPEN;
@@ -92,6 +95,8 @@ public class AppCenter.App : Granite.Application {
         add_action (quit_action);
         add_action (show_updates_action);
         add_accelerator ("<Control>q", "app.quit", null);
+
+        search_provider = new SearchProvider ();
     }
 
     public override void open (File[] files, string hint) {
@@ -192,6 +197,12 @@ public class AppCenter.App : Granite.Application {
             } catch (Error e) {
                 warning (e.message);
             }
+
+            try {
+                search_provider_id = connection.register_object ("/io/elementary/appcenter/SearchProvider", search_provider);
+            } catch (Error e) {
+                warning (e.message);
+            }
         }
 
         return true;
@@ -200,6 +211,12 @@ public class AppCenter.App : Granite.Application {
     public override void dbus_unregister (DBusConnection connection, string object_path) {
         if (registration_id != 0) {
             connection.unregister_object (registration_id);
+            registration_id = 0;
+        }
+
+        if (search_provider_id != 0) {
+            connection.unregister_object (search_provider_id);
+            search_provider_id = 0;
         }
 
         base.dbus_unregister (connection, object_path);
