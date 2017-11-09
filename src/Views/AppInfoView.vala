@@ -341,6 +341,15 @@ namespace AppCenter.Views {
             reload_css ();
             set_up_package (128);
             parse_description (package.get_description ());
+
+            if (package.is_os_updates) {
+                package.notify["state"].connect (() => {
+                    Idle.add (() => {
+                        parse_description (package.get_description ());
+                        return false;
+                    });
+                });
+            }
         }
 
         protected override void update_state (bool first_update = false) {
