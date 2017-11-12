@@ -480,7 +480,7 @@ public class AppCenterCore.Client : Object {
                     unowned string pkg_version = pk_package.get_version();
                     os_count += 1;
                     os_desc += "<li>%s\n\t%s\n\tVersion: %s</li>\n"
-                                .printf(pkg_name, pkg_summary, pkg_version);
+                                .printf(escape_xml (pkg_name), escape_xml (pkg_summary), escape_xml (pkg_version));
                 } else {
                     package.latest_version = pk_package.get_version ();
                     package.change_information.changes.clear ();
@@ -714,6 +714,15 @@ public class AppCenterCore.Client : Object {
         }
 
         return packages;
+    }
+
+    private static string escape_xml (string xml) {
+        return xml
+            .replace ("\"", "&quot;")
+            .replace ("\'", "&apos;")
+            .replace (">", "&lt;")
+            .replace ("<", "&gt;")
+            .replace ("&", "&amp;");
     }
 
     private static GLib.Once<Client> instance;
