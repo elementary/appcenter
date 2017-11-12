@@ -496,7 +496,7 @@ public class AppCenterCore.Client : Object {
                 os_ver = "%d components with updates".printf(os_count);
             }
 
-            if (os_desc.len() > 0) {
+            if (os_desc.length > 0) {
                 os_desc = "<p>%s:</p>\n<ul>\n%s</ul>\n".printf(os_ver, os_desc);
             } else {
                 os_desc = "<p>%s</p>\n".printf(os_ver);
