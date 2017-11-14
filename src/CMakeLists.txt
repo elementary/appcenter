@@ -40,7 +40,7 @@ vala_precompile(VALA_C ${EXEC_NAME}
     Widgets/Switcher.vala
     Widgets/ReleaseListBox.vala
     Widgets/ReleaseRow.vala
-    Services/DbusInterfaces.vala
+    Services/DBusInterfaces.vala
     Services/DBusServer.vala
     Services/SearchProvider.vala
     ${CMAKE_CURRENT_BINARY_DIR}/config.vala
