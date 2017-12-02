@@ -17,13 +17,13 @@
 public class AppCenter.App : Granite.Application {
     public const OptionEntry[] APPCENTER_OPTIONS =  {
         { "show-updates", 'u', 0, OptionArg.NONE, out show_updates,
-        "Display the Installed Panel", null},
+        N_("Display the Installed Panel"), null},
         { "silent", 's', 0, OptionArg.NONE, out silent,
-        "Run the Application in background", null},
+        N_("Run the Application in background"), null},
         { "load-local", 'l', 0, OptionArg.FILENAME, out local_path,
-        "Add a local AppStream XML file to the package list", "FILENAME" },
+        N_("Add a local AppStream XML file to the package list"), N_("FILENAME") },
         { "fake-package-update", 'f', 0, OptionArg.STRING_ARRAY, out fake_update_packages,
-        "Add the package name to update results so that it is shown as an update", "PACKAGES..." },
+        N_("Add the package name to update results so that it is shown as an update"), N_("PACKAGES...") },
         { null }
     };
 
