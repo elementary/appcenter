@@ -16,6 +16,7 @@
 
 public class AppCenterCore.Client : Object {
     public signal void operation_finished (Package package, Package.State operation, Error? error);
+    public signal void cache_update_failed (Error error);
     public signal void updates_available ();
     public signal void drivers_detected ();
 
@@ -141,13 +142,13 @@ public class AppCenterCore.Client : Object {
         if (component != null) {
             string name = _("%s (local)").printf (component.get_name ());
             string id = "%s%s".printf (component.get_id (), Package.LOCAL_ID_SUFFIX);
-            
+
             component.set_name (name, null);
             component.set_id (id);
             component.set_origin (Package.APPCENTER_PACKAGE_ORIGIN);
 
             appstream_pool.add_component (component);
-            
+
             var package = new AppCenterCore.Package (component);
             package_list[id] = package;
 
@@ -175,7 +176,7 @@ public class AppCenterCore.Client : Object {
              * If there were no packages found for the requested architecture,
              * try to resolve IDs by not searching for this architecture
              * e.g: filtering 32 bit only package on a 64 bit system
-             */ 
+             */
             GenericArray<weak Pk.Package> package_array = results.get_package_array ();
             if (package_array.length == 0) {
                 results = yield client.resolve_async (Pk.Bitfield.from_enums (Pk.Filter.NEWEST, Pk.Filter.NOT_ARCH), packages_ids, cancellable, () => {});
@@ -352,13 +353,13 @@ public class AppCenterCore.Client : Object {
             }
         }
 
-        return packages;        
+        return packages;
     }
 
     private static void populate_package (AppCenterCore.Package package, Pk.Package pk_package) {
         package.installed_packages.add (pk_package);
         package.latest_version = pk_package.get_version ();
-        package.update_state ();        
+        package.update_state ();
     }
 
     public Gee.Collection<AppCenterCore.Package> get_applications_for_category (AppStream.Category category) {
@@ -431,7 +432,7 @@ public class AppCenterCore.Client : Object {
                 package.size = details.size;
                 package.url = details.url;
             });
-        }   
+        }
 
         task_count--;
         return package;
@@ -462,22 +463,51 @@ public class AppCenterCore.Client : Object {
             }
 
 #if HAVE_UNITY
-            var launcher_entry = Unity.LauncherEntry.get_for_desktop_file ("io.elementary.appcenter.desktop");
+            var launcher_entry = Unity.LauncherEntry.get_for_desktop_file (Build.DESKTOP_FILE);
             launcher_entry.count = updates_number;
             launcher_entry.count_visible = updates_number != 0U;
 #endif
+
+            int os_count = 0;
+            string os_ver = "";
+            string os_desc = "";
+
             results.get_package_array ().foreach ((pk_package) => {
                 unowned string pkg_name = pk_package.get_name ();
                 var package = package_list[pkg_name];
-                if (package != null) {
+                if (package == null) {
+                    unowned string pkg_summary = pk_package.get_summary();
+                    unowned string pkg_version = pk_package.get_version();
+                    os_count += 1;
+                    os_desc += "<li>%s\n\t%s\n\tVersion: %s</li>\n"
+                                .printf(pkg_name, pkg_summary, pkg_version);
+                } else {
                     package.latest_version = pk_package.get_version ();
                     package.change_information.changes.clear ();
                     package.change_information.details.clear ();
                 }
-
-                os_updates.change_information.changes.clear ();
-                os_updates.change_information.details.clear ();
             });
+
+            if (os_count == 0){
+                os_ver = "No components with updates";
+            } else if (os_count == 1) {
+                os_ver = "%d component with updates".printf(os_count);
+            } else {
+                os_ver = "%d components with updates".printf(os_count);
+            }
+
+            if (os_desc.length > 0) {
+                os_desc = "<p>%s:</p>\n<ul>\n%s</ul>\n".printf(os_ver, os_desc);
+            } else {
+                os_desc = "<p>%s</p>\n".printf(os_ver);
+            }
+
+            os_updates.latest_version = os_ver;
+            os_updates.description = os_desc;
+
+            os_updates.component.set_pkgnames({});
+            os_updates.change_information.changes.clear ();
+            os_updates.change_information.details.clear ();
 
             results.get_details_array ().foreach ((pk_detail) => {
                 var pk_package = new Pk.Package ();
@@ -487,20 +517,23 @@ public class AppCenterCore.Client : Object {
                     unowned string pkg_name = pk_package.get_name ();
                     var package = package_list[pkg_name];
                     if (package == null) {
-                        package = os_updates;
-
                         var pkgnames = os_updates.component.pkgnames;
                         pkgnames += pkg_name;
                         os_updates.component.pkgnames = pkgnames;
-                    }
 
-                    package.change_information.changes.add (pk_package);
-                    package.change_information.details.add (pk_detail);
-                    package.update_state ();
+                        os_updates.change_information.changes.add (pk_package);
+                        os_updates.change_information.details.add (pk_detail);
+                    } else {
+                        package.change_information.changes.add (pk_package);
+                        package.change_information.details.add (pk_detail);
+                        package.update_state ();
+                    }
                 } catch (Error e) {
                     critical (e.message);
                 }
             });
+
+            os_updates.update_state();
         } catch (Error e) {
             critical (e.message);
         }
@@ -574,13 +607,16 @@ public class AppCenterCore.Client : Object {
 
                 refresh_in_progress = true;
                 updating_cache = true;
-
                 try {
                     Pk.Results results = yield client.refresh_cache_async (false, cancellable, (t, p) => { });
                     success = results.get_exit_code () == Pk.Exit.SUCCESS;
                     last_cache_update = new DateTime.now_local ();
                 } catch (Error e) {
+                    refresh_in_progress = false;
+                    updating_cache = false;
+
                     critical ("Update_cache: Refesh cache async failed - %s", e.message);
+                    cache_update_failed (e);
                 }
 
                 if (success) {
@@ -642,7 +678,7 @@ public class AppCenterCore.Client : Object {
         }
 
         task_count--;
-        return installed;   
+        return installed;
     }
 
     public AppCenterCore.Package? get_package_for_component_id (string id) {
@@ -663,6 +699,21 @@ public class AppCenterCore.Client : Object {
         }
 
         return null;
+    }
+
+    public Gee.Collection<AppCenterCore.Package> get_packages_by_author (string author, int max) {
+        var packages = new Gee.ArrayList<AppCenterCore.Package> ();
+        foreach (var package in package_list.values) {
+            if (packages.size > max) {
+                break;
+            }
+
+            if (package.component.developer_name == author) {
+                packages.add (package);
+            }
+        }
+
+        return packages;
     }
 
     private static GLib.Once<Client> instance;

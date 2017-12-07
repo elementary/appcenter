@@ -18,6 +18,16 @@
 */
 
 namespace AppCenter {
+    public static void set_widget_visibility (Gtk.Widget widget, bool show) {
+        if (show) {
+            widget.no_show_all = false;
+            widget.show_all ();
+        } else {
+            widget.no_show_all = true;
+            widget.hide ();
+        }
+    }
+
     public abstract class AbstractAppContainer : Gtk.Grid {
         public AppCenterCore.Package package { get; construct set; }
         protected bool show_uninstall { get; set; default = true; }
@@ -152,19 +162,7 @@ namespace AppCenter {
             package_name.label = package.get_name ();
 
             if (package.component.get_id () != AppCenterCore.Package.OS_UPDATES_ID) {
-                var author = package.component.developer_name;
-
-                if (author == null) {
-                    var project_group = package.component.project_group;
-
-                    if (project_group != null) {
-                        author = project_group;
-                    } else {
-                        author = _("The %s Developers").printf (package.get_name ());
-                    }
-                }
-
-                package_author.label = author;
+                package_author.label = package.author_title;
             }
 
             image.gicon = package.get_icon (icon_size);
@@ -236,16 +234,6 @@ namespace AppCenter {
 
                 default:
                     assert_not_reached ();
-            }
-        }
-
-        protected static void set_widget_visibility (Gtk.Widget widget, bool show) {
-            if (show) {
-                widget.no_show_all = false;
-                widget.show_all ();
-            } else {
-                widget.no_show_all = true;
-                widget.hide ();
             }
         }
 

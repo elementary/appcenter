@@ -4,9 +4,14 @@ _Comment=@RELEASE_NAME@
 Exec=@EXEC_NAME@ %U
 Icon=@DESKTOP_ICON@
 _Keywords=install;uninstall;remove;catalogue;store;apps;updates;software;
+Actions=ShowUpdates;
 Terminal=false
 Type=Application
 StartupNotify=true
 Categories=GNOME;GTK;System;PackageManager;
 MimeType=x-scheme-handler/appstream;
 X-GNOME-UsesNotifications=true
+
+[Desktop Action ShowUpdates]
+Exec=@EXEC_NAME@ --show-updates
+_Name=Check for Updates

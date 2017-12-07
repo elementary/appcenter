@@ -241,44 +241,42 @@ namespace AppCenter {
                 return 0;
             });
 
-            recently_updated_carousel.child_activated.connect ((child) => {
-                var item = (Widgets.CarouselItem) child;
-                var package = item.package;
-
-                if (package != null) {
-                    show_package (package);
-                }
-            });
-
-            trending_carousel.child_activated.connect ((child) => {
-                var item = (Widgets.CarouselItem) child;
-                var package = item.package;
-
-                if (package != null) {
-                    show_package (package);
-                }
-            });
+            recently_updated_carousel.package_activated.connect (show_package);
+            trending_carousel.package_activated.connect (show_package);
         }
 
         public override void show_package (AppCenterCore.Package package) {
             base.show_package (package);
+            viewing_package = true;
+            current_category = null;
+            currently_viewed_category = null;
             subview_entered (_("Home"), false, "");
         }
 
         public override void return_clicked () {
-            if (viewing_package && current_category != null) {
+            if (previous_package != null) {
+                show_package (previous_package);
+                if (current_category != null) {
+                    subview_entered (current_category, false, "");
+                } else {
+                    subview_entered (_("Home"), false, "");
+                }
+            } else if (viewing_package && current_category != null) {
                 set_visible_child_name (current_category);
                 viewing_package = false;
                 subview_entered (_("Home"), true, current_category, _("Search %s").printf (current_category));
             } else {
                 set_visible_child (category_scrolled);
+                viewing_package = false;
                 currently_viewed_category = null;
+                current_category = null;
                 subview_entered (null, true);
             }
         }
 
         private void show_app_list_for_category (AppStream.Category category) {
             subview_entered (_("Home"), true, category.name, _("Search %s").printf (category.name));
+            current_category = category.name;
             var child = get_child_by_name (category.name);
             if (child != null) {
                 set_visible_child (child);
@@ -289,8 +287,6 @@ namespace AppCenter {
             app_list_view.show_all ();
             add_named (app_list_view, category.name);
             set_visible_child (app_list_view);
-
-            current_category = category.name;
 
             app_list_view.show_app.connect ((package) => {
                 viewing_package = true;

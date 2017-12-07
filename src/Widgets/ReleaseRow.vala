@@ -37,6 +37,7 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.ListBoxRow {
         header_label.get_style_context ().add_class ("h3");
 
         description_label = new Gtk.Label (description);
+        description_label.max_width_chars = 100;
         description_label.selectable = true;
         description_label.use_markup = true;
         description_label.wrap = true;

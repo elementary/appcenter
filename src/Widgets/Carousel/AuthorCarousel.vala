@@ -17,23 +17,23 @@
  * Authored by: Adam Bieńkowski <donadigos159@gmail.com>
  */
 
-public class AppCenter.Widgets.ReleaseListBox : Gtk.ListBox {
-    private const int MIN_RELEASES = 1;
-    private const int MAX_RELEASES = 5;
+public class AppCenter.Widgets.AuthorCarousel : Carousel {
+    private const int AUTHOR_OTHER_APPS_MAX = 10;
 
-    public AppCenterCore.Package package { get; construct; }
+    public AppCenterCore.Package target { get; construct; }
 
-    public ReleaseListBox (AppCenterCore.Package package) {
-        Object (package: package, selection_mode: Gtk.SelectionMode.NONE);
+    construct {
+        var author_packages = AppCenterCore.Client.get_default ().get_packages_by_author (target.author, AUTHOR_OTHER_APPS_MAX);
+        foreach (var author_package in author_packages) {
+            if (author_package.component.get_id () == target.component.get_id ()) {
+                continue;
+            }
+
+            add_package (author_package);
+        }
     }
 
-    public bool populate () {
-        var releases = package.get_newest_releases (MIN_RELEASES, MAX_RELEASES);
-        foreach (var release in releases) {
-            var row = new ReleaseRow (release);
-            add (row);
-        }
-
-        return releases.size > 0;
+    public AuthorCarousel (AppCenterCore.Package target) {
+        Object (target: target);
     }
 }

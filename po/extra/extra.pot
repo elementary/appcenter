@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-14 18:09-0500\n"
+"POT-Creation-Date: 2017-11-07 22:47-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,6 +24,9 @@ msgid "Browse and manage apps"
 msgstr ""
 
 msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
+msgstr ""
+
+msgid "Check for Updates"
 msgstr ""
 
 msgid ""
