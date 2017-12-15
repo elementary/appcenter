@@ -40,7 +40,7 @@ vala_precompile(VALA_C ${EXEC_NAME}
     Widgets/Switcher.vala
     Widgets/ReleaseListBox.vala
     Widgets/ReleaseRow.vala
-    Services/DbusInterfaces.vala
+    Services/DBusInterfaces.vala
     Services/DBusServer.vala
     ${CMAKE_CURRENT_BINARY_DIR}/config.vala
 PACKAGES
@@ -57,13 +57,15 @@ OPTIONS
   --vapidir=${CMAKE_SOURCE_DIR}/vapi
   --target-glib=2.32
   --thread
+  ${CURATED_FLAG}
   ${UNITY_OPTIONS}
 )
 
 include (GResource)
 glib_compile_resources (GLIB_RESOURCES_CATEGORIES SOURCE ../data/icons/categories.gresource.xml)
+glib_compile_resources (GLIB_RESOURCES_CSS SOURCE ../data/io.elementary.appcenter.gresource.xml)
 
-add_executable (${EXEC_NAME} ${VALA_C} ${GLIB_RESOURCES_CATEGORIES})
+add_executable (${EXEC_NAME} ${VALA_C} ${GLIB_RESOURCES_CATEGORIES} ${GLIB_RESOURCES_CSS})
 target_link_libraries (${EXEC_NAME} ${DEPS_LIBRARIES} ${UNITY_LIBRARIES})
 
 install (TARGETS ${EXEC_NAME} RUNTIME DESTINATION bin)

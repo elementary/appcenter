@@ -18,6 +18,16 @@
 */
 
 namespace AppCenter {
+    public static void set_widget_visibility (Gtk.Widget widget, bool show) {
+        if (show) {
+            widget.no_show_all = false;
+            widget.show_all ();
+        } else {
+            widget.no_show_all = true;
+            widget.hide ();
+        }
+    }
+
     public abstract class AbstractAppContainer : Gtk.Grid {
         public AppCenterCore.Package package { get; construct set; }
         protected bool show_uninstall { get; set; default = true; }
@@ -230,16 +240,6 @@ namespace AppCenter {
 
                 default:
                     assert_not_reached ();
-            }
-        }
-
-        protected static void set_widget_visibility (Gtk.Widget widget, bool show) {
-            if (show) {
-                widget.no_show_all = false;
-                widget.show_all ();
-            } else {
-                widget.no_show_all = true;
-                widget.hide ();
             }
         }
 

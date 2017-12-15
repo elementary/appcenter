@@ -22,68 +22,8 @@ const string BANNER_STYLE_CSS = """
     @define-color banner_bg_color %s;
     @define-color banner_fg_color %s;
 
-    .banner {
-        background-color: @banner_bg_color;
-        background-image: linear-gradient(to bottom right,
-                                  shade (@banner_bg_color, 1.05),
-                                  shade (@banner_bg_color, 0.95)
-                                  );
-        color: @banner_fg_color;    
+    .banner { 
         transition: all %ums ease-in-out;
-    }
-
-    .banner.home {
-        border: 1px solid shade (@banner_bg_color, 0.8);
-        border-radius: 3px;
-        box-shadow:
-            inset 0 0 0 1px alpha (shade (@banner_bg_color, 1.7), 0.05),
-            inset 0 1px 0 0 alpha (shade (@banner_bg_color, 1.7), 0.45),
-            inset 0 -1px 0 0 alpha (shade (@banner_bg_color, 1.7), 0.15),
-            0 3px 2px -1px alpha (shade (@banner_bg_color, 0.5), 0.2),
-            0 3px 5px alpha (shade (@banner_bg_color, 0.5), 0.15);
-    }
-
-    .banner button,
-    .banner .button {
-        background-color: alpha (@banner_fg_color, 0.6);
-        background-image: none;
-        border-color: alpha (@banner_fg_color, 0.7);
-        box-shadow: none;
-        font-weight: 600;
-    }
-
-    .banner button.destructive-action,
-    .banner button.suggested-action,
-    .banner .button.destructive-action,
-    .banner .button.suggested-action {
-        background-color: alpha (@banner_fg_color, 0.8);
-        border-color: alpha (@banner_fg_color, 0.9);
-    }
-
-    .banner button:focus,
-    .banner .button:focus {
-        background-color: alpha (@banner_fg_color, 0.9);
-        border-color: @banner_fg_color;
-    }
-
-    .banner button:active,
-    .banner button:checked,
-    .banner .button:active,
-    .banner .button:checked {
-        background-color: alpha (@banner_fg_color, 0.5);
-        border-color: alpha (@banner_fg_color, 0.6);
-    }
-
-    .banner button image,
-    .banner .button GtkImage {
-        color: @banner_bg_color;
-        icon-shadow: 0 1px 1px alpha (@banner_fg_color, 0.1);
-    }
-
-    .banner button label,
-    .banner .button .label {
-        color: @banner_bg_color;
-        text-shadow: 0 1px 1px alpha (@banner_fg_color, 0.1);
     }
 """;
 
@@ -105,7 +45,7 @@ namespace AppCenter.Widgets {
 
                 bool has_package = package != null;
 
-                var name_label = new Gtk.Label (has_package ? package.get_name () : _("AppCenter"));
+                var name_label = new Gtk.Label (has_package ? package.get_name () : _(Build.APP_NAME));
                 name_label.get_style_context ().add_class ("h1");
                 name_label.xalign = 0;
                 name_label.use_markup = true;

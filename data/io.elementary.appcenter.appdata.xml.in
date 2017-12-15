@@ -15,6 +15,15 @@
         </_p>
     </description>
     <releases>
+        <release version="0.2.7" date="2017-11-07" urgency="medium">
+            <description>
+                <_p>Bug fixes and improve perfomance.</_p>
+                <ul>
+                    <_li>Various bug fixes and performance improvements</_li>
+                    <_li>New translations</_li>
+                </ul>
+            </description>
+        </release>
         <release version="0.2.6" date="2017-09-18" urgency="medium">
             <description>
                 <_p>Bug fixes and improve perfomance.</_p>
@@ -134,7 +143,7 @@
     <url type="help">https://elementaryos.stackexchange.com/questions/tagged/appcenter</url>
     <url type="translate">https://l10n.elementary.io/projects/desktop/appcenter</url>
     <update_contact>contact_at_elementary.io</update_contact>
-    
+
     <custom>
         <value key="x-appcenter-color-primary">#665888</value>
     </custom>
