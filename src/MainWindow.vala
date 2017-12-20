@@ -79,7 +79,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         button_release_event.connect ((event) => {
             // On back mouse button pressed
             if (event.button == 8) {
-                return_button.clicked ();
+                view_return ();
                 return true;
             }
 
