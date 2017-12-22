@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-07 22:47-0600\n"
 "PO-Revision-Date: 2017-12-22 10:34+0000\n"
-"Last-Translator: Ivan <ipogorelov98@gmail.com>\n"
+"Last-Translator: Maxim Taranov <png2378@gmail.com>\n"
 "Language-Team: Russian "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/ru/>\n"
 "Language: ru\n"
@@ -150,7 +150,7 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:470 ../src/Dialogs/StripeDialog.vala:523
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr "Некорректный CVC код. Попробуйте снова, используя корректный код."
+msgstr "Некорректный CVC-код. Попробуйте снова, используя корректный код."
 
 #: ../src/Dialogs/StripeDialog.vala:472 ../src/Dialogs/StripeDialog.vala:514
 msgid "The card has expired. Please try again with a different card."
