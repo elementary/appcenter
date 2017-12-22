@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-07 22:47-0600\n"
-"PO-Revision-Date: 2017-12-22 10:35+0000\n"
-"Last-Translator: Maxim Taranov <png2378@gmail.com>\n"
+"PO-Revision-Date: 2017-12-22 10:36+0000\n"
+"Last-Translator: Ivan <ipogorelov98@gmail.com>\n"
 "Language-Team: Russian "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/ru/>\n"
 "Language: ru\n"
@@ -214,12 +214,13 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:556
 msgid "The balance or credit limit on the card has been reached."
-msgstr "Достигнут лимит по карте."
+msgstr "Превышен лимит по карте."
 
 #: ../src/Dialogs/StripeDialog.vala:559
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
-"Данная карта является тестовой. Используйте реальную карту, чтобы продолжить."
+"Данная карта является тестовой. Используйте настоящую карту, чтобы "
+"продолжить."
 
 #: ../src/Views/InstalledView.vala:51 ../src/MainWindow.vala:130
 msgctxt "view"
