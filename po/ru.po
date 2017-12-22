@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-07 22:47-0600\n"
 "PO-Revision-Date: 2017-12-22 10:34+0000\n"
-"Last-Translator: Maxim Taranov <png2378@gmail.com>\n"
+"Last-Translator: Ivan <ipogorelov98@gmail.com>\n"
 "Language-Team: Russian "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/ru/>\n"
 "Language: ru\n"
@@ -178,7 +178,7 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:512
 msgid "The transaction has already been processed."
-msgstr "Транзакция уже обработана."
+msgstr "Платеж уже был принят"
 
 #: ../src/Dialogs/StripeDialog.vala:516
 msgid ""
