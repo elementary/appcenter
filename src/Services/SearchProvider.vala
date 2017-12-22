@@ -21,31 +21,35 @@
 [DBus(name = "org.gnome.Shell.SearchProvider2")]
 public class SearchProvider : Object {
     public async string[] get_initial_result_set(string[] terms) {
-        string[] result = {};
+        GenericArray<string> result = new GenericArray<string>();
 
         string query = string.joinv(" ", terms);
 
         var client = AppCenterCore.Client.get_default();
         var packages = client.search_applications(query, null);
         foreach(var package in packages) {
-            result += package.component.get_id();
+            result.add(package.component.get_id());
         }
 
-        return result;
+        result.sort(strcmp);
+
+        return result.data;
     }
 
     public async string[] get_subsearch_result_set(string[] previous_results, string[] terms) {
-        string[] result = {};
+        GenericArray<string> result = new GenericArray<string>();
 
         string query = string.joinv(" ", terms);
 
         var client = AppCenterCore.Client.get_default();
         var packages = client.search_applications(query, null);
         foreach(var package in packages) {
-            result += package.component.get_id();
+            result.add(package.component.get_id());
         }
 
-        return result;
+        result.sort(strcmp);
+
+        return result.data;
     }
 
     public HashTable<string, Variant>[] get_result_metas(string[] results) {
