@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-12-23 20:05+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2017-12-24 00:01+0000\n"
+"Last-Translator: Nuno Tomás <nvctsyler@gmail.com>\n"
 "Language-Team: Portuguese "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/pt/>\n"
 "Language: pt\n"
@@ -32,15 +32,16 @@ msgstr ""
 
 #: ../src/Application.vala:114
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr "O link especificado '%s' não pôde ser encontrado. Pesquisando..."
+msgstr ""
+"O link especificado '%s' não pôde ser encontrado. A pesquisar, em alternativa"
 
 #: ../src/Application.vala:216
 msgid "Application installed"
-msgstr "Aplicações instaladas"
+msgstr "Aplicação instalada"
 
 #: ../src/Application.vala:217
 msgid "%s has been successfully installed"
-msgstr "%u foi instalado com sucesso"
+msgstr "%s foi instalada com sucesso"
 
 #: ../src/Application.vala:233
 msgid "Close"
@@ -52,7 +53,7 @@ msgstr "Ocorreu um erro ao instalar %s"
 
 #: ../src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
-msgstr "Tem certeza que deseja reiniciar?"
+msgstr "Tem certeza que deseja Reiniciar?"
 
 #: ../src/Dialogs/RestartDialog.vala:41
 msgid "This will close all open applications and restart this device."
@@ -75,7 +76,7 @@ msgid ""
 "apologize for any inconvenience caused."
 msgstr ""
 "Ocorreu um erro enquanto o cartão era processado. Por favor tente novamente "
-"mais tarde. Pedimos desculpa pelo inconveniente causado."
+"mais tarde. Pedimos desculpa por qualquer inconveniente causado."
 
 #: ../src/Dialogs/StripeDialog.vala:31
 msgid "Please review your payment info and try again."
@@ -83,15 +84,15 @@ msgstr "Por favor verifique os seus dados de pagamento e tente novamente."
 
 #: ../src/Dialogs/StripeDialog.vala:75
 msgid "Email"
-msgstr "Email"
+msgstr "E-mail"
 
 #: ../src/Dialogs/StripeDialog.vala:77
 msgid ""
 "Your email address is used to send a receipt. It is never stored and you "
 "will not be subscribed to a mailing list."
 msgstr ""
-"O Email será usado para o envio do recibo. Nunca será armazenado nem "
-"subscreverá a nenhuma lista de emails."
+"O seu endereço de e-mail será usado para o envio um recibo. Nunca será "
+"armazenado nem será subscrito a nenhuma lista de e-mails."
 
 #: ../src/Dialogs/StripeDialog.vala:88
 msgid "Card Number"
