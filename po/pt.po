@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-12-23 20:04+0000\n"
-"Last-Translator: Nuno Tomás <nvctsyler@gmail.com>\n"
+"PO-Revision-Date: 2017-12-23 20:05+0000\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Portuguese "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/pt/>\n"
 "Language: pt\n"
@@ -32,7 +32,7 @@ msgstr ""
 
 #: ../src/Application.vala:114
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr "A ligação '%s' não foi encontrada; a pesquisar, em alternativa"
+msgstr "O link especificado '%s' não pôde ser encontrado. Pesquisando..."
 
 #: ../src/Application.vala:216
 msgid "Application installed"
