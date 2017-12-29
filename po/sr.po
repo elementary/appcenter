@@ -5,7 +5,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
 "PO-Revision-Date: 2017-12-29 11:14+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"Last-Translator: Stefan Ric <stfric369@gmail.com>\n"
 "Language-Team: Serbian "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/sr/>\n"
 "Language: sr\n"
@@ -55,7 +55,7 @@ msgstr "Да ли сте сигурни да желите поново покр�
 
 #: ../src/Dialogs/RestartDialog.vala:41
 msgid "This will close all open applications and restart this device."
-msgstr ""
+msgstr "Ово ће затворити све отворене програме и рестартовати овај уређај."
 
 #: ../src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
