@@ -4,8 +4,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-12-29 11:37+0000\n"
-"Last-Translator: Pavle Radosavljević <pavlepiramida@gmail.com>\n"
+"PO-Revision-Date: 2017-12-29 11:38+0000\n"
+"Last-Translator: Nemanja <thedarkbyte96@gmail.com>\n"
 "Language-Team: Serbian "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/sr/>\n"
 "Language: sr\n"
@@ -123,11 +123,11 @@ msgstr "Настао је проблем приликом обраде ваше 
 
 #: ../src/Dialogs/StripeDialog.vala:276
 msgid "Pay Later"
-msgstr ""
+msgstr "Платите касније"
 
 #: ../src/Dialogs/StripeDialog.vala:277
 msgid "Retry"
-msgstr ""
+msgstr "Покушајте поново"
 
 #: ../src/Dialogs/StripeDialog.vala:463 ../src/Dialogs/StripeDialog.vala:528
 msgid ""
