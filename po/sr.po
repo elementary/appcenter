@@ -4,8 +4,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-12-29 11:21+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2017-12-29 11:37+0000\n"
+"Last-Translator: Nemanja <thedarkbyte96@gmail.com>\n"
 "Language-Team: Serbian "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/sr/>\n"
 "Language: sr\n"
@@ -82,42 +82,44 @@ msgstr "Молимо вас проверите ваше информације �
 
 #: ../src/Dialogs/StripeDialog.vala:75
 msgid "Email"
-msgstr ""
+msgstr "Е-Пошта"
 
 #: ../src/Dialogs/StripeDialog.vala:77
 msgid ""
 "Your email address is used to send a receipt. It is never stored and you "
 "will not be subscribed to a mailing list."
 msgstr ""
+"Ваша адреса е-поште се користи да би се послао рачун. Никад се не чува нигде "
+"и нећете бити пријављивани ни на какве мејлинг листе."
 
 #: ../src/Dialogs/StripeDialog.vala:88
 msgid "Card Number"
-msgstr ""
+msgstr "Број картице"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: ../src/Dialogs/StripeDialog.vala:100
 msgid "MM / YY"
-msgstr ""
+msgstr "ММ / ГГ"
 
 #: ../src/Dialogs/StripeDialog.vala:120
 msgid "CVC"
-msgstr ""
+msgstr "Сигурносни код (CVC)"
 
 #: ../src/Dialogs/StripeDialog.vala:157
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Политика приватности"
 
 #: ../src/Dialogs/StripeDialog.vala:168 ../src/Dialogs/StripeDialog.vala:284
 msgid "Pay $%d.00"
-msgstr ""
+msgstr "Платите $%d.00"
 
 #: ../src/Dialogs/StripeDialog.vala:213
 msgid "Processing"
-msgstr ""
+msgstr "Обрађујем"
 
 #: ../src/Dialogs/StripeDialog.vala:238
 msgid "There Was a Problem Processing Your Payment"
-msgstr ""
+msgstr "Настао је проблем приликом обрађивања ваше уплате"
 
 #: ../src/Dialogs/StripeDialog.vala:276
 msgid "Pay Later"
