@@ -5,7 +5,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
 "PO-Revision-Date: 2017-12-29 11:21+0000\n"
-"Last-Translator: Pavle Radosavljević <pavlepiramida@gmail.com>\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Serbian "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/sr/>\n"
 "Language: sr\n"
@@ -78,7 +78,7 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:31
 msgid "Please review your payment info and try again."
-msgstr ""
+msgstr "Молимо вас проверите ваше информације о уплати и покушајте поново."
 
 #: ../src/Dialogs/StripeDialog.vala:75
 msgid "Email"
