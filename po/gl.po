@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-12-30 18:29+0000\n"
+"PO-Revision-Date: 2017-12-31 00:10+0000\n"
 "Last-Translator: Brandan <brandanpl@gmail.com>\n"
 "Language-Team: Galician "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/gl/>\n"
@@ -328,19 +328,19 @@ msgstr ""
 
 #: ../src/Widgets/CategoryFlowBox.vala:37
 msgid "Education"
-msgstr ""
+msgstr "Educación"
 
 #: ../src/Widgets/CategoryFlowBox.vala:38
 msgid "Internet"
-msgstr ""
+msgstr "Internet"
 
 #: ../src/Widgets/CategoryFlowBox.vala:39
 msgid "Science & Engineering"
-msgstr ""
+msgstr "Ciencia e Enxeñería"
 
 #: ../src/Widgets/CategoryFlowBox.vala:40
 msgid "Universal Access"
-msgstr ""
+msgstr "Acceso Universal"
 
 #: ../src/Widgets/HumbleButton.vala:85
 #: ../src/Widgets/AbstractAppContainer.vala:195
@@ -359,7 +359,7 @@ msgstr ""
 
 #: ../src/Widgets/AbstractAppContainer.vala:105
 msgid "Uninstall"
-msgstr ""
+msgstr "Desinstalar"
 
 #: ../src/Widgets/AbstractAppContainer.vala:108
 msgid "Open"
@@ -367,23 +367,24 @@ msgstr "Abrir"
 
 #: ../src/Widgets/AbstractAppContainer.vala:161
 msgid "The %s Developers"
-msgstr ""
+msgstr "Os desarrolladores de %s"
 
 #: ../src/Widgets/AbstractAppContainer.vala:165
 msgid "by %s"
-msgstr ""
+msgstr "por %s"
 
 #: ../src/Widgets/AbstractAppContainer.vala:209
 msgid "Update"
-msgstr ""
+msgstr "Actualizar"
 
 #: ../src/Widgets/AbstractAppList.vala:35
 msgid "No Results"
-msgstr ""
+msgstr "Sen resultados"
 
 #: ../src/Widgets/AbstractAppList.vala:35
 msgid "No apps could be found. Try changing search terms."
 msgstr ""
+"Non se puideron encontrar aplicacións. Probe cambiando os termos da busca."
 
 #: ../src/Widgets/UpdateHeaderRow.vala:68
 msgid "%u Update Available"
@@ -393,19 +394,19 @@ msgstr[1] ""
 
 #: ../src/Widgets/UpdateHeaderRow.vala:69
 msgid "Size: %s"
-msgstr ""
+msgstr "Tamaño: %s"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:105
 msgid "Searching for updates…"
-msgstr ""
+msgstr "Buscando actualizacións…"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:112
 msgid "Up to Date"
-msgstr ""
+msgstr "Actualizado"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:120
 msgid "Drivers"
-msgstr ""
+msgstr "Controladores"
 
 #: ../src/MainWindow.vala:118 ../src/MainWindow.vala:146
 #: ../src/MainWindow.vala:316 ../src/MainWindow.vala:338
@@ -414,59 +415,59 @@ msgstr "Busca de aplicacións"
 
 #: ../src/MainWindow.vala:161
 msgid "Network Is Not Available"
-msgstr ""
+msgstr "A rede non está dispoñible"
 
 #: ../src/MainWindow.vala:162
 msgid "Connect to the internet to install or update apps."
-msgstr ""
+msgstr "Conéctese a Internet para instalar ou actualizar aplicacións."
 
 #: ../src/MainWindow.vala:165
 msgid "Network Settings…"
-msgstr ""
+msgstr "Axustes de redes…"
 
 #: ../src/MainWindow.vala:298
 msgid "Search %s"
-msgstr ""
+msgstr "Buscar %s"
 
 #: ../src/Core/Client.vala:94
 msgid "Operating System Updates"
-msgstr ""
+msgstr "Actualizacións do Sistema Operativo"
 
 #: ../src/Core/Client.vala:95
 msgid "Updates to system components"
-msgstr ""
+msgstr "Actualizacións para compoñentes do sistema"
 
 #: ../src/Core/Client.vala:459
 msgid "Update Available"
 msgid_plural "Updates Available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Actualización dispoñible"
+msgstr[1] "Actualizacións dispoñibles"
 
 #: ../src/Core/Client.vala:460
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u actualización está dispoñible para o seu sistema"
+msgstr[1] "%u actualizacións están dispoñibles para o seu sistema"
 
 #: ../src/Core/Client.vala:489
 msgid "Restart Required"
-msgstr ""
+msgstr "Reinicio requerido"
 
 #: ../src/Core/Client.vala:490
 msgid "Please restart your system to finalize updates"
-msgstr ""
+msgstr "Por favor, reinicie o seu sistema para finalizar as actualizacións"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
-msgstr ""
+msgstr "Iniciando"
 
 #: ../src/Core/ChangeInformation.vala:56
 msgid "Waiting"
-msgstr ""
+msgstr "Esperando"
 
 #: ../src/Core/ChangeInformation.vala:58
 msgid "Running"
-msgstr ""
+msgstr "Executando"
 
 #: ../src/Core/ChangeInformation.vala:60
 msgid "Querying"
@@ -474,15 +475,15 @@ msgstr ""
 
 #: ../src/Core/ChangeInformation.vala:62
 msgid "Getting information"
-msgstr ""
+msgstr "Recollendo información"
 
 #: ../src/Core/ChangeInformation.vala:64
 msgid "Removing packages"
-msgstr ""
+msgstr "Eliminando paquetes"
 
 #: ../src/Core/ChangeInformation.vala:66
 msgid "Downloading"
-msgstr ""
+msgstr "Descargando"
 
 #: ../src/Core/ChangeInformation.vala:68
 msgid "Installing"
@@ -490,31 +491,31 @@ msgstr "Instalando"
 
 #: ../src/Core/ChangeInformation.vala:70
 msgid "Refreshing software list"
-msgstr ""
+msgstr "Refrescando a lista de software"
 
 #: ../src/Core/ChangeInformation.vala:72
 msgid "Installing updates"
-msgstr ""
+msgstr "Instalando actualizacións"
 
 #: ../src/Core/ChangeInformation.vala:74
 msgid "Cleaning up packages"
-msgstr ""
+msgstr "Limpando paquetes"
 
 #: ../src/Core/ChangeInformation.vala:76
 msgid "Obsoleting packages"
-msgstr ""
+msgstr "Paquetes obsoletos"
 
 #: ../src/Core/ChangeInformation.vala:78
 msgid "Resolving dependencies"
-msgstr ""
+msgstr "Resolución de dependencias"
 
 #: ../src/Core/ChangeInformation.vala:80
 msgid "Checking signatures"
-msgstr ""
+msgstr "Comprobando sinaturas"
 
 #: ../src/Core/ChangeInformation.vala:82
 msgid "Testing changes"
-msgstr ""
+msgstr "Probando cambios"
 
 #: ../src/Core/ChangeInformation.vala:84
 msgid "Committing changes"
