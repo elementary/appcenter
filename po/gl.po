@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-12-30 18:10+0000\n"
-"Last-Translator: Brandan <brandanpl@gmail.com>\n"
+"PO-Revision-Date: 2017-12-30 18:12+0000\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Galician "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/gl/>\n"
 "Language: gl\n"
@@ -48,35 +48,38 @@ msgstr "Houbo un erro instalando %s"
 
 #: ../src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
-msgstr ""
+msgstr "Estás seguro/a de que queres reiniciar?"
 
 #: ../src/Dialogs/RestartDialog.vala:41
 msgid "This will close all open applications and restart this device."
 msgstr ""
+"Esto pechará todas as aplicacións abertas e reiniciará este dispositivo."
 
 #: ../src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
-msgstr ""
+msgstr "Reiniciar"
 
 #: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:166
 #: ../src/Dialogs/StripeDialog.vala:285
 #: ../src/Widgets/AbstractAppContainer.vala:126
 msgid "Cancel"
-msgstr ""
+msgstr "Cancelar"
 
 #: ../src/Dialogs/StripeDialog.vala:30
 msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
+"Ocurriu un erro mientras se procesaba a tarxeta. Por favor, probe outra vez "
+"máis tarde. Pedímoslle desculpas por calquera inconveniente causado."
 
 #: ../src/Dialogs/StripeDialog.vala:31
 msgid "Please review your payment info and try again."
-msgstr ""
+msgstr "Por favor, revise a súa información de pago e probe outra vez."
 
 #: ../src/Dialogs/StripeDialog.vala:75
 msgid "Email"
-msgstr ""
+msgstr "Correo electrónico"
 
 #: ../src/Dialogs/StripeDialog.vala:77
 msgid ""
