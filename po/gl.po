@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-12-30 18:12+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2017-12-30 18:29+0000\n"
+"Last-Translator: Brandan <brandanpl@gmail.com>\n"
 "Language-Team: Galician "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/gl/>\n"
 "Language: gl\n"
@@ -102,7 +102,7 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:157
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Política de privacidade"
 
 #: ../src/Dialogs/StripeDialog.vala:168 ../src/Dialogs/StripeDialog.vala:284
 msgid "Pay $%d.00"
@@ -110,60 +110,74 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:213
 msgid "Processing"
-msgstr ""
+msgstr "Procesando"
 
 #: ../src/Dialogs/StripeDialog.vala:238
 msgid "There Was a Problem Processing Your Payment"
-msgstr ""
+msgstr "Houbo un problema procesando o seu pagamento"
 
 #: ../src/Dialogs/StripeDialog.vala:276
 msgid "Pay Later"
-msgstr ""
+msgstr "Pagar máis tarde"
 
 #: ../src/Dialogs/StripeDialog.vala:277
 msgid "Retry"
-msgstr ""
+msgstr "Intentar de novo"
 
 #: ../src/Dialogs/StripeDialog.vala:463 ../src/Dialogs/StripeDialog.vala:528
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr ""
+"O número da tarxeta é incorrecto. Por favor, inténteo outra vez usando o "
+"número correcto da tarxeta."
 
 #: ../src/Dialogs/StripeDialog.vala:465
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"O mes de expiración non é válido. Por favor, inténteo de novo usando a data "
+"de expiración correcta."
 
 #: ../src/Dialogs/StripeDialog.vala:467 ../src/Dialogs/StripeDialog.vala:525
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"O ano de expiración non é válido, Por favor, inténteo de novo utilizando a "
+"data de expiración correcta."
 
 #: ../src/Dialogs/StripeDialog.vala:470 ../src/Dialogs/StripeDialog.vala:523
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr ""
+"O código de seguridade da tarxeta  é incorrecto. Por favor, inténteo de novo "
+"utilizando o código de seguridade correcto."
 
 #: ../src/Dialogs/StripeDialog.vala:472 ../src/Dialogs/StripeDialog.vala:514
 msgid "The card has expired. Please try again with a different card."
-msgstr ""
+msgstr "A tarxeta expirou. Por favor, inténteo de novo cunha tarxeta diferente."
 
 #: ../src/Dialogs/StripeDialog.vala:492
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr ""
+"Hai moitas peticións de pagamento neste momento, por favor inténteo de novo "
+"máis tarde."
 
 #: ../src/Dialogs/StripeDialog.vala:508
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
 msgstr ""
+"Esta tarxeta non soporta este tipo de transacción. Por favor, inténteo de "
+"novo cunha tarxeta distinta."
 
 #: ../src/Dialogs/StripeDialog.vala:510
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
 msgstr ""
+"A moneda non está soportada por esta tarxeta. Por favor, inténteo de novo "
+"cunha tarxeta diferente."
 
 #: ../src/Dialogs/StripeDialog.vala:512
 msgid "The transaction has already been processed."
