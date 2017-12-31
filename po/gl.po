@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-12-31 00:10+0000\n"
-"Last-Translator: Brandan <brandanpl@gmail.com>\n"
+"PO-Revision-Date: 2018-01-03 06:19+0000\n"
+"Last-Translator: Iago <iago.laz@gmail.com>\n"
 "Language-Team: Galician "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/gl/>\n"
 "Language: gl\n"
@@ -28,7 +28,7 @@ msgstr ""
 
 #: ../src/Application.vala:114
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr ""
+msgstr "A ligazón '%s' non pode ser atopada, procurando alternativas"
 
 #: ../src/Application.vala:216
 msgid "Application installed"
@@ -40,7 +40,7 @@ msgstr "%s foi instalado con éxito"
 
 #: ../src/Application.vala:233
 msgid "Close"
-msgstr "Cerrar"
+msgstr "Pechar"
 
 #: ../src/Application.vala:235
 msgid "There Was An Error Installing %s"
@@ -70,7 +70,7 @@ msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
-"Ocurriu un erro mientras se procesaba a tarxeta. Por favor, probe outra vez "
+"Ocorreu un erro mentres se procesaba a tarxeta. Por favor, probe outra vez "
 "máis tarde. Pedímoslle desculpas por calquera inconveniente causado."
 
 #: ../src/Dialogs/StripeDialog.vala:31
@@ -86,19 +86,22 @@ msgid ""
 "Your email address is used to send a receipt. It is never stored and you "
 "will not be subscribed to a mailing list."
 msgstr ""
+"O seu enderezo de correo electrónico é utilizado para o envío dun recibo. "
+"Nunca será gardado e vostede non será suscrito  a ningunha lista de correos "
+"electrónicos."
 
 #: ../src/Dialogs/StripeDialog.vala:88
 msgid "Card Number"
-msgstr ""
+msgstr "Número da tarxeta"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: ../src/Dialogs/StripeDialog.vala:100
 msgid "MM / YY"
-msgstr ""
+msgstr "MM / AA"
 
 #: ../src/Dialogs/StripeDialog.vala:120
 msgid "CVC"
-msgstr ""
+msgstr "CVC"
 
 #: ../src/Dialogs/StripeDialog.vala:157
 msgid "Privacy Policy"
@@ -106,7 +109,7 @@ msgstr "Política de privacidade"
 
 #: ../src/Dialogs/StripeDialog.vala:168 ../src/Dialogs/StripeDialog.vala:284
 msgid "Pay $%d.00"
-msgstr ""
+msgstr "Pagar $%d.00"
 
 #: ../src/Dialogs/StripeDialog.vala:213
 msgid "Processing"
@@ -181,21 +184,25 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:512
 msgid "The transaction has already been processed."
-msgstr ""
+msgstr "A transacción xa foi procesada."
 
 #: ../src/Dialogs/StripeDialog.vala:516
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "Postal code."
 msgstr ""
+"O código postal é incorrecto. Por favor tente de novo usando un código "
+"postal correcto."
 
 #: ../src/Dialogs/StripeDialog.vala:518
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr ""
+"Non ten suficientes fondos. Por favor usa un método de pago alternativo."
 
 #: ../src/Dialogs/StripeDialog.vala:520
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr ""
+"A cantidade é incorrecta. Por favor tenteo de novo cunha cantidade válida."
 
 #: ../src/Dialogs/StripeDialog.vala:531
 msgid "The pin number is incorrect. Please try again using the correct pin."
@@ -224,7 +231,7 @@ msgstr ""
 #: ../src/Views/InstalledView.vala:51 ../src/MainWindow.vala:130
 msgctxt "view"
 msgid "Updates"
-msgstr ""
+msgstr "Actualizacións"
 
 #. / TRANSLATORS: the name of the Search view
 #: ../src/Views/SearchView.vala:37
@@ -234,15 +241,15 @@ msgstr ""
 
 #: ../src/Views/AppListView.vala:121
 msgid "A restart is required to complete the installation of updates"
-msgstr ""
+msgstr "É necesario reiniciar para completar a instalación de actualizacións"
 
 #: ../src/Views/AppListView.vala:129
 msgid "Restart Now"
-msgstr ""
+msgstr "Reiniciar agora"
 
 #: ../src/Views/AppListView.vala:222
 msgid "Update All"
-msgstr ""
+msgstr "Actualizar todo"
 
 #: ../src/Views/AppInfoView.vala:57
 msgid "Screenshot Not Available"
@@ -389,8 +396,8 @@ msgstr ""
 #: ../src/Widgets/UpdateHeaderRow.vala:68
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u actualización dispoñible"
+msgstr[1] "%u actualizacións dispoñibles"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:69
 msgid "Size: %s"
@@ -471,7 +478,7 @@ msgstr "Executando"
 
 #: ../src/Core/ChangeInformation.vala:60
 msgid "Querying"
-msgstr ""
+msgstr "A consultar"
 
 #: ../src/Core/ChangeInformation.vala:62
 msgid "Getting information"
