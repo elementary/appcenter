@@ -444,7 +444,8 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         }
 
         // REMOVE BEFORE MERGE!
-        debug (data.str);
+        // Erroring to avoid a charge while testing ;)
+        error (data.str);
 
         return data.str;
     }
