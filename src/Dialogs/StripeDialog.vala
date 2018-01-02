@@ -443,10 +443,6 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
             data.append ("%c".printf (c));
         }
 
-        // REMOVE BEFORE MERGE!
-        // Erroring to avoid a charge while testing ;)
-        error (data.str);
-
         return data.str;
     }
 
