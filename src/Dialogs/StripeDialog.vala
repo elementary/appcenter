@@ -22,7 +22,9 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
 
     private const string HOUSTON_URI =  "https://developer.elementary.io/api/payment/%s?key=%s&token=%s&email=%s&amount=%s&currency=USD";
     private const string USER_AGENT = "Stripe checkout";
-    private const string STRIPE_URI = "https://api.stripe.com/v1/tokens?email=%s"
+    private const string STRIPE_URI = "https://api.stripe.com/v1/tokens";
+    private const string STRIPE_AUTH = "Bearer %s";
+    private const string STRIPE_REQUEST = "email=%s"
                             + "&payment_user_agent=%s&amount=%s&card[number]=%s"
                             + "&card[cvc]=%s&card[exp_month]=%s&card[exp_year]=%s"
                             + "&key=%s"
@@ -427,15 +429,22 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
     }
 
     private string get_stripe_data (string _key, string _email, string _amount, string _cc_num, string _cc_exp_month, string _cc_exp_year, string _cc_cvc) {
-        var uri = STRIPE_URI.printf (_email, USER_AGENT, _amount, _cc_num, _cc_cvc, _cc_exp_month, _cc_exp_year, _key);
         var session = new Soup.Session ();
-        var message = new Soup.Message ("POST", uri);
+        var message = new Soup.Message ("POST", STRIPE_URI);
+
+        var request = STRIPE_REQUEST.printf (_email, USER_AGENT, _amount, _cc_num, _cc_cvc, _cc_exp_month, _cc_exp_year);
+        message.request_headers.append ("Authorization", STRIPE_AUTH.printf (_key));
+        message.request_body.append_take (request.data);
+
         session.send_message (message);
 
         var data = new StringBuilder ();
         foreach (var c in message.response_body.data) {
             data.append ("%c".printf (c));
         }
+
+        // REMOVE BEFORE MERGE!
+        debug (data.str);
 
         return data.str;
     }
