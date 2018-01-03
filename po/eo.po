@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2018-01-03 20:17+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2018-01-04 00:11+0000\n"
+"Last-Translator: Erin Heart <erin0heart@protonmail.ch>\n"
 "Language-Team: Esperanto "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/eo/>\n"
 "Language: eo\n"
@@ -17,9 +17,10 @@ msgstr ""
 
 #: ../src/Application.vala:40
 msgid "App Center"
-msgstr "Centro de Aplikaĵoj"
+msgstr "Aplikaĵa Centro"
 
 #: ../src/Application.vala:57
+#, fuzzy
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
@@ -103,6 +104,7 @@ msgid "Privacy Policy"
 msgstr "Privateca Politiko"
 
 #: ../src/Dialogs/StripeDialog.vala:168 ../src/Dialogs/StripeDialog.vala:284
+#, fuzzy
 msgid "Pay $%d.00"
 msgstr "Pagi $%d.00"
 
@@ -267,7 +269,7 @@ msgstr ""
 
 #: ../src/Widgets/Banner.vala:100 ../src/MainWindow.vala:110
 msgid "AppCenter"
-msgstr ""
+msgstr "Aplikaĵa Centro"
 
 #: ../src/Widgets/Banner.vala:107
 msgid "An open, pay-what-you-want app store"
