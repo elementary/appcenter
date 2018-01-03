@@ -20,9 +20,19 @@
 public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
     public signal void download_requested ();
 
-    private const string HOUSTON_URI =  "https://developer.elementary.io/api/payment/%s?key=%s&token=%s&email=%s&amount=%s&currency=USD";
+    private const string HOUSTON_URI =  "https://developer.elementary.io/api/payment/%s";
+    private const string HOUSTON_PAYLOAD = "{ "
+                                + "\"data\": {"
+                                    + "\"key\": \"%s\","
+                                    + "\"token\": \"%s\","
+                                    + "\"email\": \"%s\","
+                                    + "\"amount\": %s,"
+                                    + "\"currency\": \"USD\""
+                                + "}}";
     private const string USER_AGENT = "Stripe checkout";
-    private const string STRIPE_URI = "https://api.stripe.com/v1/tokens?email=%s"
+    private const string STRIPE_URI = "https://api.stripe.com/v1/tokens";
+    private const string STRIPE_AUTH = "Bearer %s";
+    private const string STRIPE_REQUEST = "email=%s"
                             + "&payment_user_agent=%s&amount=%s&card[number]=%s"
                             + "&card[cvc]=%s&card[exp_month]=%s&card[exp_year]=%s"
                             + "&key=%s"
@@ -427,9 +437,13 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
     }
 
     private string get_stripe_data (string _key, string _email, string _amount, string _cc_num, string _cc_exp_month, string _cc_exp_year, string _cc_cvc) {
-        var uri = STRIPE_URI.printf (_email, USER_AGENT, _amount, _cc_num, _cc_cvc, _cc_exp_month, _cc_exp_year, _key);
         var session = new Soup.Session ();
-        var message = new Soup.Message ("POST", uri);
+        var message = new Soup.Message ("POST", STRIPE_URI);
+
+        var request = STRIPE_REQUEST.printf (_email, USER_AGENT, _amount, _cc_num, _cc_cvc, _cc_exp_month, _cc_exp_year);
+        message.request_headers.append ("Authorization", STRIPE_AUTH.printf (_key));
+        message.request_body.append_take (request.data);
+
         session.send_message (message);
 
         var data = new StringBuilder ();
@@ -441,9 +455,15 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
     }
 
     private string post_to_houston (string _app_key, string _app_id, string _purchase_token, string _email, string _amount) {
-        var uri = HOUSTON_URI.printf (_app_id, _app_key, _purchase_token, _email, _amount);
         var session = new Soup.Session ();
-        var message = new Soup.Message ("POST", uri);
+        var message = new Soup.Message ("POST", HOUSTON_URI.printf (_app_id));
+
+        message.request_headers.append ("Accepts", "application/vnd.api+json");
+        message.request_headers.append ("Content-Type", "application/vnd.api+json");
+
+        var payload = HOUSTON_PAYLOAD.printf (_app_key, _purchase_token, _email, _amount);
+        message.request_body.append_take (payload.data);
+
         session.send_message (message);
 
         var data = new StringBuilder ();
