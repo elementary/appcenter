@@ -51,7 +51,6 @@ public class AppCenter.App : Granite.Application {
         Intl.textdomain (Build.GETTEXT_PACKAGE);
 
         program_name = _(Build.APP_NAME);
-        app_icon = Build.DESKTOP_ICON;
 
         build_data_dir = Build.DATADIR;
         build_pkg_data_dir = Build.PKGDATADIR;

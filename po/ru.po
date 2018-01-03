@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-08-10 18:49+0000\n"
+"POT-Creation-Date: 2017-11-07 22:47-0600\n"
+"PO-Revision-Date: 2017-12-22 10:38+0000\n"
 "Last-Translator: Maxim Taranov <png2378@gmail.com>\n"
 "Language-Team: Russian "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/ru/>\n"
@@ -13,12 +13,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
 "4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.15\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
 #: ../src/Application.vala:40
 msgid "App Center"
-msgstr "App Center"
+msgstr "Центр приложений"
 
 #: ../src/Application.vala:57
 msgid "translator-credits"
@@ -71,8 +71,8 @@ msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
-"Ошибка при обработке карты, попробуйте повторить попытку позже. Приносим "
-"извинения за причиненные неудобства."
+"Ошибка при обработке данных, попробуйте повторить попытку позже. Приносим "
+"извинения за неудобства."
 
 #: ../src/Dialogs/StripeDialog.vala:31
 msgid "Please review your payment info and try again."
@@ -88,7 +88,7 @@ msgid ""
 "will not be subscribed to a mailing list."
 msgstr ""
 "Ваш электронная почта используется для отправки чека. Она нигде не "
-"сохраняется и вы не будете подписаны на список рассылки."
+"сохраняется и вы не будете подписаны на рассылки."
 
 #: ../src/Dialogs/StripeDialog.vala:88
 msgid "Card Number"
@@ -109,7 +109,7 @@ msgstr "Политика конфиденциальности"
 
 #: ../src/Dialogs/StripeDialog.vala:168 ../src/Dialogs/StripeDialog.vala:284
 msgid "Pay $%d.00"
-msgstr "Заплатить $%s,00"
+msgstr "Заплатить %d,00 USD"
 
 #: ../src/Dialogs/StripeDialog.vala:213
 msgid "Processing"
@@ -117,11 +117,11 @@ msgstr "Обработка"
 
 #: ../src/Dialogs/StripeDialog.vala:238
 msgid "There Was a Problem Processing Your Payment"
-msgstr "Ошибка обработки платежа"
+msgstr "Не удалось обработать ваш платеж"
 
 #: ../src/Dialogs/StripeDialog.vala:276
 msgid "Pay Later"
-msgstr "Заплатить позже"
+msgstr "Оплатить позже"
 
 #: ../src/Dialogs/StripeDialog.vala:277
 msgid "Retry"
@@ -137,20 +137,20 @@ msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
-"Некорректный месяц истечения срока действия. Попробуйте снова, используя "
-"корректный месяц."
+"Некорректный месяц истечения срока действия карты. Попробуйте снова, "
+"используя корректный месяц."
 
 #: ../src/Dialogs/StripeDialog.vala:467 ../src/Dialogs/StripeDialog.vala:525
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
-"Некорректный год истечения срока действия. Попробуйте снова, используя "
+"Некорректный год истечения срока действия карты. Попробуйте снова, используя "
 "корректный год."
 
 #: ../src/Dialogs/StripeDialog.vala:470 ../src/Dialogs/StripeDialog.vala:523
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr "Некорректный код CVC. Попробуйте снова, используя корректный код."
+msgstr "Некорректный CVC-код. Попробуйте снова, используя корректный код."
 
 #: ../src/Dialogs/StripeDialog.vala:472 ../src/Dialogs/StripeDialog.vala:514
 msgid "The card has expired. Please try again with a different card."
@@ -165,7 +165,7 @@ msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
 msgstr ""
-"Карта не поддерживает операции такого рода. Попробуйте снова, используя "
+"Карта не поддерживает данный тип операций. Попробуйте снова, используя "
 "другую карту."
 
 #: ../src/Dialogs/StripeDialog.vala:510
@@ -178,13 +178,14 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:512
 msgid "The transaction has already been processed."
-msgstr "Транзакция уже была обработана."
+msgstr "Платеж уже был принят."
 
 #: ../src/Dialogs/StripeDialog.vala:516
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "Postal code."
-msgstr "Некорректный ZIP-код. Попробуйте снова, используя корректный код."
+msgstr ""
+"Некорректный почтовый индекс. Попробуйте снова, используя корректный индекс."
 
 #: ../src/Dialogs/StripeDialog.vala:518
 msgid "You don't have enough funds. Please use an alternative payment method."
@@ -213,12 +214,13 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:556
 msgid "The balance or credit limit on the card has been reached."
-msgstr "Достигнут лимит по карте."
+msgstr "Превышен лимит по карте."
 
 #: ../src/Dialogs/StripeDialog.vala:559
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
-"Данная карта является тестовой. Используйте реальную карту, чтобы продолжить."
+"Данная карта является тестовой. Используйте настоящую карту, чтобы "
+"продолжить."
 
 #: ../src/Views/InstalledView.vala:51 ../src/MainWindow.vala:130
 msgctxt "view"
@@ -233,7 +235,7 @@ msgstr "Поиск"
 
 #: ../src/Views/AppListView.vala:121
 msgid "A restart is required to complete the installation of updates"
-msgstr "Перезагрузка необходима для завершения установки обновлений"
+msgstr "Для завершения установки обновлений необходима перезагрузка"
 
 #: ../src/Views/AppListView.vala:129
 msgid "Restart Now"
@@ -352,12 +354,12 @@ msgstr "Бесплатно"
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: ../src/Widgets/HumbleButton.vala:152
 msgid "$%d.00"
-msgstr "$%d,00"
+msgstr "%d,00 USD"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: ../src/Widgets/HumbleButton.vala:155
 msgid "$%d"
-msgstr "$%d"
+msgstr "%d USD"
 
 #: ../src/Widgets/AbstractAppContainer.vala:105
 msgid "Uninstall"
@@ -369,7 +371,7 @@ msgstr "Открыть"
 
 #: ../src/Widgets/AbstractAppContainer.vala:161
 msgid "The %s Developers"
-msgstr "Разработчки %s"
+msgstr "Разработчики %s"
 
 #: ../src/Widgets/AbstractAppContainer.vala:165
 msgid "by %s"
@@ -408,7 +410,7 @@ msgstr "Обновления не требуются"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:120
 msgid "Drivers"
-msgstr "Драйвера"
+msgstr "Драйверы"
 
 #: ../src/MainWindow.vala:118 ../src/MainWindow.vala:146
 #: ../src/MainWindow.vala:316 ../src/MainWindow.vala:338
@@ -417,7 +419,7 @@ msgstr "Поиск приложений"
 
 #: ../src/MainWindow.vala:161
 msgid "Network Is Not Available"
-msgstr "Подключение к сети недосутпно"
+msgstr "Подключение к сети недоступно"
 
 #: ../src/MainWindow.vala:162
 msgid "Connect to the internet to install or update apps."
@@ -437,7 +439,7 @@ msgstr "Обновления операционной системы"
 
 #: ../src/Core/Client.vala:95
 msgid "Updates to system components"
-msgstr "Обновление компонентов системы"
+msgstr "Обновления системных компонентов"
 
 #: ../src/Core/Client.vala:459
 msgid "Update Available"

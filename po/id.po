@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2017-08-31 15:05+0700\n"
-"Last-Translator: Kukuh Syafaat <syafaatkukuh@gmail.com>\n"
+"PO-Revision-Date: 2017-12-10 00:10+0000\n"
+"Last-Translator: Liffindra Angga Zaaldian <liffindra.zaaldian@icloud.com>\n"
 "Language-Team: Indonesian "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/id/>\n"
 "Language: id\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.0.3\n"
+"X-Generator: Weblate 2.17.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #: ../src/Application.vala:40
@@ -55,7 +55,8 @@ msgstr "Apakah Anda yakin untuk Mulai Ulang?"
 
 #: ../src/Dialogs/RestartDialog.vala:41
 msgid "This will close all open applications and restart this device."
-msgstr "Ini akan menutup semua aplikasi dan memulai ulang perangkat."
+msgstr ""
+"Ini akan menutup semua aplikasi yang terbuka dan memulai ulang perangkat ini."
 
 #: ../src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
@@ -72,8 +73,8 @@ msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
-"Terjadi kesalahan saat memproses. Silahkan ulangi kembali. Kami minta maaf "
-"atas ketidaknyamanan yang terjadi."
+"Terjadi kesalahan saat mengolah kartu. Silakan ulangi kembali. Kami mohon "
+"maaf atas ketidaknyamanan yang terjadi."
 
 #: ../src/Dialogs/StripeDialog.vala:31
 msgid "Please review your payment info and try again."
@@ -81,16 +82,16 @@ msgstr "Silahkan periksa informasi pembayaran Anda dan ulangi lagi."
 
 #: ../src/Dialogs/StripeDialog.vala:75
 msgid "Email"
-msgstr "Email"
+msgstr "Surel"
 
 #: ../src/Dialogs/StripeDialog.vala:77
 msgid ""
 "Your email address is used to send a receipt. It is never stored and you "
 "will not be subscribed to a mailing list."
 msgstr ""
-"Alamat email anda akan digunakan untuk mengirim tanda terima. Alamat email "
-"anda tidak akan di simpan dan anda tidak akan termasuk kedalam daftar "
-"berlangganan surat-menyurat."
+"Alamat surel Anda akan digunakan untuk mengirim tanda terima. Alamat surel "
+"Anda tidak akan disimpan dan Anda tidak akan didaftarkan ke sebuah layanan "
+"surat-menyurat berlangganan."
 
 #: ../src/Dialogs/StripeDialog.vala:88
 msgid "Card Number"
@@ -115,11 +116,11 @@ msgstr "Bayar $%d.00"
 
 #: ../src/Dialogs/StripeDialog.vala:213
 msgid "Processing"
-msgstr "Memproses"
+msgstr "Mengolah"
 
 #: ../src/Dialogs/StripeDialog.vala:238
 msgid "There Was a Problem Processing Your Payment"
-msgstr "Ada Masalah Saat Memproses Pembayaran Anda"
+msgstr "Ada Masalah Saat Mengolah Pembayaran Anda"
 
 #: ../src/Dialogs/StripeDialog.vala:276
 msgid "Pay Later"
@@ -133,28 +134,29 @@ msgstr "Ulangi"
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr ""
-"Nomor kartu salah. Silahkan ulangi kembali  menggunakan nomor kartu yang "
-"sesuai."
+"Nomor kartu salah. Silakan coba lagi dengan menggunakan nomor kartu yang "
+"benar."
 
 #: ../src/Dialogs/StripeDialog.vala:465
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
-"Bulan kadaluarsa salah. Silakan coba lagi dengan tanggal kadaluarsa yang "
-"benar."
+"Bulan kadaluarsa salah. Silakan coba lagi dengan menggunakan tanggal "
+"kadaluarsa yang benar."
 
 #: ../src/Dialogs/StripeDialog.vala:467 ../src/Dialogs/StripeDialog.vala:525
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
-"Tahun kadaluarsa salah. Silakan coba lagi menggunakan tanggal kadaluarsa "
-"yang benar."
+"Tahun kadaluarsa salah. Silakan coba lagi dengan menggunakan tanggal "
+"kadaluarsa yang benar."
 
 #: ../src/Dialogs/StripeDialog.vala:470 ../src/Dialogs/StripeDialog.vala:523
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr "Nomor CVC salah. Silahkan coba lagi dengan nomor CVC yang benar."
+msgstr ""
+"Nomor CVC salah. Silakan coba lagi dengan menggunakan nomor CVC yang benar."
 
 #: ../src/Dialogs/StripeDialog.vala:472 ../src/Dialogs/StripeDialog.vala:514
 msgid "The card has expired. Please try again with a different card."
@@ -162,7 +164,8 @@ msgstr "Kartu telah kadaluarsa. Silakan coba lagi dengan kartu yang berbeda."
 
 #: ../src/Dialogs/StripeDialog.vala:492
 msgid "There are too many payment requests at the moment, please retry later."
-msgstr "Ada terlalu banyak permintaan pembayaran saat ini, coba lagi nanti."
+msgstr ""
+"Ada terlalu banyak permintaan pembayaran saat ini, silakan coba lagi nanti."
 
 #: ../src/Dialogs/StripeDialog.vala:508
 msgid ""
@@ -182,39 +185,42 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:512
 msgid "The transaction has already been processed."
-msgstr "Transaksi sudah di proses."
+msgstr "Transaksi telah diolah."
 
 #: ../src/Dialogs/StripeDialog.vala:516
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "Postal code."
-msgstr "Kode Pos salah. Silakan coba lagi menggunakan kode pos yang benar."
+msgstr ""
+"Kode Pos salah. Silakan coba lagi dengan menggunakan Kode Pos yang benar."
 
 #: ../src/Dialogs/StripeDialog.vala:518
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr ""
-"Anda tidak punya cukup dana. Harap gunakan metode pembayaran alternatif."
+"Anda tidak memiliki dana yang cukup. Silakan gunakan cara pembayaran lainnya."
 
 #: ../src/Dialogs/StripeDialog.vala:520
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr "Jumlahnya tidak tepat. Coba lagi dengan jumlah yang benar."
+msgstr ""
+"Jumlahnya salah. Silakan coba lagi dengan menggunakan jumlah yang benar."
 
 #: ../src/Dialogs/StripeDialog.vala:531
 msgid "The pin number is incorrect. Please try again using the correct pin."
-msgstr "Nomor pin salah. Coba lagi menggunakan pin yang benar."
+msgstr "Nomor pin salah. Silakan coba lagi dengan menggunakan pin yang benar."
 
 #: ../src/Dialogs/StripeDialog.vala:533
 msgid ""
 "There has been too many pin attempts. Please try again with a different card."
-msgstr "Ada banyak usaha pin. Silakan coba lagi dengan kartu yang berbeda."
+msgstr ""
+"Ada banyak usaha memasukkan pin. Silakan coba lagi dengan kartu yang berbeda."
 
 #: ../src/Dialogs/StripeDialog.vala:553
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
 msgstr ""
-"Tidak dapat menyelesaikan transaksi. Hubungi bank Anda untuk informasi lebih "
-"lanjut."
+"Tidak dapat menyelesaikan transaksi. Silakan hubungi bank Anda untuk "
+"informasi lebih lanjut."
 
 #: ../src/Dialogs/StripeDialog.vala:556
 msgid "The balance or credit limit on the card has been reached."
@@ -289,7 +295,7 @@ msgstr "Halaman Utama"
 
 #: ../src/Widgets/Banner.vala:100 ../src/MainWindow.vala:110
 msgid "AppCenter"
-msgstr "Pusat Aplikasi"
+msgstr "AppCenter"
 
 #: ../src/Widgets/Banner.vala:107
 msgid "An open, pay-what-you-want app store"
@@ -298,7 +304,8 @@ msgstr "Sebuah toko aplikasi terbuka, bayar-yang-Anda-mau"
 #: ../src/Widgets/Banner.vala:120
 msgid "Get the apps that you need at a price you can afford."
 msgstr ""
-"Dapatkan aplikasi yang anda butuhkan dengan harga sesuai kemampuan anda."
+"Dapatkan aplikasi yang Anda butuhkan dengan harga yang sesuai dengan "
+"kemampuan Anda."
 
 #: ../src/Widgets/CategoryFlowBox.vala:29
 msgid "Audio"
@@ -389,7 +396,7 @@ msgstr "Tidak Ada Hasil"
 
 #: ../src/Widgets/AbstractAppList.vala:35
 msgid "No apps could be found. Try changing search terms."
-msgstr "Tidak ada aplikasi yang bisa ditemukan. Coba ubah kata penelusuran."
+msgstr "Tidak ada aplikasi yang bisa ditemukan. Coba ganti kata penelusuran."
 
 #: ../src/Widgets/UpdateHeaderRow.vala:68
 msgid "%u Update Available"
@@ -561,7 +568,7 @@ msgstr "Mengunduh informasi pembaruan"
 
 #: ../src/Core/ChangeInformation.vala:104
 msgid "Repackaging files"
-msgstr "Mengepak ulang berkas"
+msgstr "Membungkus ulang berkas"
 
 #: ../src/Core/ChangeInformation.vala:106
 msgid "Loading cache"
