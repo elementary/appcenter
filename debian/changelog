@@ -1,3 +1,9 @@
+pop-shop (0.2.7-2) artful; urgency=medium
+
+  * Pull in latest version of the upstream.
+
+ -- Ian Santopietro <ian@system76.com>  Fri, 05 Jan 2018 10:45:39 -0700
+
 pop-shop (0.2.7-1) artful; urgency=medium
 
   * Fork off Pop!_Shop
