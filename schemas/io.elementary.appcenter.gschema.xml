@@ -25,5 +25,15 @@
       <summary>The user is a developer</summary>
       <description>Mode that allows the user to see more packages with development purposes</description>
     </key>
+    <key type="b" name="reset-paid-apps">
+      <default>true</default>
+      <summary>Reset/rescan the paid apps list</summary>
+      <description>Whether to clear the paid applications list and regenerate</description>
+    </key>
+    <key type="as" name="paid-apps">
+      <default>[]</default>
+      <summary>List of paid-for applications</summary>
+      <description>A list of appstream IDs which have been paid for</description>
+    </key>
   </schema>
 </schemalist>
