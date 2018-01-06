@@ -3,22 +3,24 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2016-09-20 09:10+0000\n"
-"Last-Translator: Adolfo Jayme <fitoschido@gmail.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2018-01-04 00:11+0000\n"
+"Last-Translator: Erin Heart <erin0heart@protonmail.ch>\n"
+"Language-Team: Esperanto "
+"<https://weblate.elementary.io/projects/appcenter/appcenter/eo/>\n"
+"Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
-"X-Generator: Launchpad (build 18331)\n"
 
 #: ../src/Application.vala:40
 msgid "App Center"
-msgstr ""
+msgstr "Aplikaĵa Centro"
 
 #: ../src/Application.vala:57
+#, fuzzy
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
@@ -28,19 +30,19 @@ msgstr ""
 
 #: ../src/Application.vala:114
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr ""
+msgstr "Specifa ligo \"%s \" ne povis esti trovita, serĉado anstataŭe"
 
 #: ../src/Application.vala:216
 msgid "Application installed"
-msgstr ""
+msgstr "Apliko instalita"
 
 #: ../src/Application.vala:217
 msgid "%s has been successfully installed"
-msgstr ""
+msgstr "%s estis sukcese instalita"
 
 #: ../src/Application.vala:233
 msgid "Close"
-msgstr ""
+msgstr "Fermi"
 
 #: ../src/Application.vala:235
 msgid "There Was An Error Installing %s"
@@ -56,13 +58,13 @@ msgstr ""
 
 #: ../src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
-msgstr ""
+msgstr "Rekomenci"
 
 #: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:166
 #: ../src/Dialogs/StripeDialog.vala:285
 #: ../src/Widgets/AbstractAppContainer.vala:126
 msgid "Cancel"
-msgstr ""
+msgstr "Nuligi"
 
 #: ../src/Dialogs/StripeDialog.vala:30
 msgid ""
@@ -76,7 +78,7 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:75
 msgid "Email"
-msgstr ""
+msgstr "Retpoŝto"
 
 #: ../src/Dialogs/StripeDialog.vala:77
 msgid ""
@@ -86,12 +88,12 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:88
 msgid "Card Number"
-msgstr ""
+msgstr "Karta Nombro"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: ../src/Dialogs/StripeDialog.vala:100
 msgid "MM / YY"
-msgstr ""
+msgstr "MM / JJ"
 
 #: ../src/Dialogs/StripeDialog.vala:120
 msgid "CVC"
@@ -99,15 +101,16 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:157
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Privateca Politiko"
 
 #: ../src/Dialogs/StripeDialog.vala:168 ../src/Dialogs/StripeDialog.vala:284
+#, fuzzy
 msgid "Pay $%d.00"
-msgstr ""
+msgstr "Pagi $%d.00"
 
 #: ../src/Dialogs/StripeDialog.vala:213
 msgid "Processing"
-msgstr ""
+msgstr "Procesorado"
 
 #: ../src/Dialogs/StripeDialog.vala:238
 msgid "There Was a Problem Processing Your Payment"
@@ -266,7 +269,7 @@ msgstr ""
 
 #: ../src/Widgets/Banner.vala:100 ../src/MainWindow.vala:110
 msgid "AppCenter"
-msgstr ""
+msgstr "Aplikaĵa Centro"
 
 #: ../src/Widgets/Banner.vala:107
 msgid "An open, pay-what-you-want app store"
