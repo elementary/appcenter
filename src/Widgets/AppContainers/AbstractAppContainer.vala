@@ -208,6 +208,10 @@ namespace AppCenter {
                 case AppCenterCore.Package.State.NOT_INSTALLED:
                     action_button.label = _("Free");
 
+                    if (package.component.get_id () in settings.paid_apps) {
+                        action_button.amount = 0;
+                    }
+
                     set_widget_visibility (uninstall_button, false);
                     set_widget_visibility (action_button, true);
                     set_widget_visibility (open_button, false);
