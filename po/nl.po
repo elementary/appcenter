@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-25 08:30-0700\n"
-"PO-Revision-Date: 2018-01-08 19:47+0000\n"
-"Last-Translator: stefan t <s.tomeij@gmail.com>\n"
+"PO-Revision-Date: 2018-01-09 00:11+0000\n"
+"Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
 "Language-Team: Dutch "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/nl/>\n"
 "Language: nl\n"
@@ -208,7 +208,7 @@ msgstr "Het bedrag is onjuist. Probeert u het nogmaals met een geldig bedrag."
 
 #: ../src/Dialogs/StripeDialog.vala:531
 msgid "The pin number is incorrect. Please try again using the correct pin."
-msgstr "Het pincode is onjuist. Probeer het opnieuw met de juiste pin."
+msgstr "De pincode is onjuist. Probeer het opnieuw met de juiste pin."
 
 #: ../src/Dialogs/StripeDialog.vala:533
 msgid ""
