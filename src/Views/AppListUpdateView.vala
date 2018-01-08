@@ -203,7 +203,7 @@ namespace AppCenter.Views {
             apps_to_update.clear ();
             // Collect all ready to update apps
             foreach (var package in get_packages ()) {
-                if (package.update_available) {
+                if (package.update_available && !package.should_nag_update) {
                     apps_to_update.add (package);
                 }
             }
