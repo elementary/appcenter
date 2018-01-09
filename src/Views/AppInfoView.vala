@@ -147,6 +147,11 @@ namespace AppCenter.Views {
                 links_grid.add (help_button);
             }
 
+            if (package.get_payments_key () != null) {
+                var fund_button = new FundButton ();
+                links_grid.add (fund_button);
+            }
+
             var content_grid = new Gtk.Grid ();
             content_grid.width_request = 800;
             content_grid.halign = Gtk.Align.CENTER;
@@ -513,11 +518,10 @@ namespace AppCenter.Views {
             }
         }
 
-        class UrlButton : Gtk.Button {
-            public UrlButton (string label, string uri, string icon_name) {
+        class FlatButton : Gtk.Button {
+            public FlatButton (string label, string icon_name) {
                 get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
                 get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-                tooltip_text = uri;
 
                 var icon = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.SMALL_TOOLBAR);
                 icon.valign = Gtk.Align.CENTER;
@@ -530,6 +534,14 @@ namespace AppCenter.Views {
                 grid.add (title);
 
                 add (grid);
+            }
+        }
+
+        class UrlButton : FlatButton {
+            public UrlButton (string label, string uri, string icon_name) {
+                base (label, icon_name);
+
+                tooltip_text = uri;
 
                 clicked.connect (() => {
                     try {
@@ -537,6 +549,17 @@ namespace AppCenter.Views {
                     } catch (Error e) {
                         warning ("%s\n", e.message);
                     }
+                });
+            }
+        }
+
+        class FundButton : FlatButton {
+            public FundButton () {
+                base (_("Fund"), "credit-card-symbolic");
+
+                tooltip_text = _("Fund the development of this project");
+
+                clicked.connect (() => {
                 });
             }
         }

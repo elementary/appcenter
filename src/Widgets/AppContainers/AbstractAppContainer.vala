@@ -96,6 +96,8 @@ namespace AppCenter {
             }
         }
 
+        protected bool updates_view = false;
+
         construct {
             image = new Gtk.Image ();
 
@@ -218,7 +220,7 @@ namespace AppCenter {
                     break;
                 case AppCenterCore.Package.State.INSTALLED:
                     set_widget_visibility (uninstall_button, show_uninstall && !is_os_updates);
-                    set_widget_visibility (action_button, false);
+                    set_widget_visibility (action_button, package.should_pay && updates_view);
                     set_widget_visibility (open_button, show_open && package.get_can_launch ());
                     set_widget_visibility (progress_grid, false);
 
