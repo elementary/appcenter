@@ -554,12 +554,17 @@ namespace AppCenter.Views {
         }
 
         class FundButton : FlatButton {
+            private Widgets.HumblePopover selection;
+
             public FundButton () {
                 base (_("Fund"), "credit-card-symbolic");
+
+                selection = new Widgets.HumblePopover (this);
 
                 tooltip_text = _("Fund the development of this project");
 
                 clicked.connect (() => {
+                    selection.show_all ();
                 });
             }
         }
