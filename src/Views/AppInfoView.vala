@@ -148,7 +148,7 @@ namespace AppCenter.Views {
             }
 
             if (package.get_payments_key () != null) {
-                var fund_button = new FundButton ();
+                var fund_button = new FundButton (package);
                 links_grid.add (fund_button);
             }
 
@@ -556,10 +556,23 @@ namespace AppCenter.Views {
         class FundButton : FlatButton {
             private Widgets.HumblePopover selection;
 
-            public FundButton () {
+            public FundButton (AppCenterCore.Package package) {
                 base (_("Fund"), "credit-card-symbolic");
 
                 selection = new Widgets.HumblePopover (this, true);
+                selection.payment_requested.connect ((amount) => {
+                    var stripe = new Widgets.StripeDialog (amount,
+                                                           package.get_name (),
+                                                           package.component.get_desktop_id ().replace (".desktop", ""),
+                                                           package.get_payments_key()
+                                                          );
+
+                    stripe.download_requested.connect (() => {
+                        Settings.get_default ().add_paid_app (package.component.get_id ());
+                    });
+
+                    stripe.show ();
+                });
 
                 tooltip_text = _("Fund the development of this project");
 
