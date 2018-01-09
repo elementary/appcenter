@@ -145,7 +145,7 @@ namespace AppCenter.Views {
                 uint nag_numbers = 0U;
                 uint64 update_real_size = 0ULL;
                 foreach (var package in get_packages ()) {
-                    if ((package.update_available || package.is_updating)) {
+                    if (package.update_available || package.is_updating) {
                         if (package.should_nag_update) {
                             nag_numbers++;
                         }
