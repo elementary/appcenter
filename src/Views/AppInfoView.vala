@@ -559,7 +559,7 @@ namespace AppCenter.Views {
             public FundButton () {
                 base (_("Fund"), "credit-card-symbolic");
 
-                selection = new Widgets.HumblePopover (this);
+                selection = new Widgets.HumblePopover (this, true);
 
                 tooltip_text = _("Fund the development of this project");
 
