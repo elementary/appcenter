@@ -66,6 +66,12 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
         }
     }
 
+    public bool allow_free {
+        set {
+            selection.allow_free = value;
+        }
+    }
+
     public bool suggested_action {
         set {
             if (value) {
