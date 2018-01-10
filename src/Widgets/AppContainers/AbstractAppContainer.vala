@@ -281,7 +281,12 @@ namespace AppCenter {
         }
 
         private async void action_clicked () {
-             if (package.update_available) {
+            if (package.installed && !package.update_available) {
+                set_widget_visibility (action_button, false);
+                return;
+            }
+
+            if (package.update_available) {
                  yield package.update ();
             } else if (yield package.install ()) {
                  // Add this app to the Installed Apps View
