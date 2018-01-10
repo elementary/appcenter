@@ -24,10 +24,22 @@ public class AppCenter.Widgets.HumblePopover : Gtk.Popover {
 
     public Gtk.SpinButton custom_amount;
     private Gtk.Grid selection_list;
-    public bool free_disabled { get; construct; }
 
-    public HumblePopover (Gtk.Widget relative_to, bool free_disabled = false) {
-        Object (free_disabled: free_disabled);
+    public bool _allow_free = true;
+    public bool allow_free {
+        get {
+            return _allow_free;
+        }
+        set {
+            if (value != _allow_free) {
+                _allow_free = value;
+                custom_amount.set_range (_allow_free ? 0 : 1, 100);
+            }
+        }
+    }
+
+    public HumblePopover (Gtk.Widget relative_to, bool allow_free = true) {
+        Object (allow_free: allow_free);
 
         this.relative_to = relative_to;
     }
@@ -40,11 +52,7 @@ public class AppCenter.Widgets.HumblePopover : Gtk.Popover {
         var custom_label = new Gtk.Label ("$");
         custom_label.margin_start = 12;
 
-        if (!free_disabled) {
-            custom_amount = new Gtk.SpinButton.with_range (0, 100, 1);
-        } else {
-            custom_amount = new Gtk.SpinButton.with_range (1, 100, 1);
-        }
+        custom_amount = new Gtk.SpinButton.with_range (allow_free ? 0 : 1, 100, 1);
 
         selection_list = new Gtk.Grid ();
         selection_list.column_spacing = 6;

@@ -198,6 +198,7 @@ namespace AppCenter {
 
         protected void update_action () {
             action_button.can_purchase = payments_enabled;
+            action_button.allow_free = true;
             if (payments_enabled) {
                 action_button.amount = int.parse (this.package.get_suggested_amount ());
             }
@@ -223,7 +224,7 @@ namespace AppCenter {
                     set_widget_visibility (action_button, package.should_pay && updates_view);
                     set_widget_visibility (open_button, show_open && package.get_can_launch ());
                     set_widget_visibility (progress_grid, false);
-
+                    action_button.allow_free = false;
                     break;
                 case AppCenterCore.Package.State.UPDATE_AVAILABLE:
                     if (!package.should_nag_update) {
