@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-09 18:51+0100\n"
-"PO-Revision-Date: 2018-01-11 00:06+0000\n"
+"PO-Revision-Date: 2018-01-11 09:53+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/he/>\n"
@@ -52,6 +52,8 @@ msgid ""
 "This may have been caused by external, manually added software repositories "
 "or a corrupted sources file."
 msgstr ""
+"יתכן שבעיה זו נגרמה עקב מאגרי תכניות חיצוניים שנוספו באופן ידני או קובצי "
+"מקור פגומים."
 
 #: ../src/Application.vala:297
 msgid "Ignore"
@@ -390,9 +392,8 @@ msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "הסכום שגוי. נא לנסות שוב עם סכום נכון."
 
 #: ../src/Dialogs/StripeDialog.vala:557
-#, fuzzy
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr "קוד האבטחה (CVC) שגוי. נא לנסות שוב עם קוד האבטחה הנכון."
+msgstr "המספר הסודי (pin) שגוי. נא לנסות שוב עם המספר הסודי הנכון."
 
 #: ../src/Dialogs/StripeDialog.vala:559
 msgid ""
@@ -481,7 +482,7 @@ msgstr "הקישור הועתק ללוח הגזירים"
 
 #: ../src/Views/AppInfoView.vala:311
 msgid "Check out %s on AppCenter:"
-msgstr ""
+msgstr "מומלץ לבדוק את %s במרכז היישומים:"
 
 #: ../src/Views/AppInfoView.vala:318
 msgid "Share"
@@ -501,7 +502,7 @@ msgstr "עדכון הכול"
 
 #: ../src/Views/AppListView.vala:119
 msgid "Non-Curated Apps"
-msgstr ""
+msgstr "יישומים שלא נאספו"
 
 #: ../src/Views/Homepage.vala:65
 msgid "Recently Updated"
@@ -650,15 +651,15 @@ msgstr "reddit"
 
 #: ../src/Widgets/SharePopover.vala:55
 msgid "Tumblr"
-msgstr ""
+msgstr "Tumblr"
 
 #: ../src/Widgets/SharePopover.vala:59
 msgid "Telegram"
-msgstr ""
+msgstr "טלגרם"
 
 #: ../src/Widgets/SharePopover.vala:63
 msgid "Copy link"
-msgstr ""
+msgstr "העתקת קישור"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:68
 msgid "%u Update Available"
