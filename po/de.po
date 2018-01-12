@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-09 18:51+0100\n"
-"PO-Revision-Date: 2017-09-06 14:48+0000\n"
-"Last-Translator: Lloyd Carr <l.carr@gmx.de>\n"
-"Language-Team: German <https://weblate.elementary.io/projects/appcenter/"
-"appcenter/de/>\n"
+"PO-Revision-Date: 2018-01-13 00:01+0000\n"
+"Last-Translator: Felix <felixchrist1@icloud.com>\n"
+"Language-Team: German "
+"<https://weblate.elementary.io/projects/appcenter/appcenter/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.16\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
 #: ../src/Application.vala:39
@@ -69,6 +69,7 @@ msgid "Starting"
 msgstr "startet"
 
 #: ../src/Core/ChangeInformation.vala:56
+#, fuzzy
 msgid "Waiting"
 msgstr "Wartet"
 
