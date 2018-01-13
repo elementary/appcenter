@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-09 18:51+0100\n"
-"PO-Revision-Date: 2018-01-13 18:13+0000\n"
-"Last-Translator: Maxim Taranov <png2378@gmail.com>\n"
+"PO-Revision-Date: 2018-01-13 18:20+0000\n"
+"Last-Translator: Михаил <mikrok@yandex.ru>\n"
 "Language-Team: Russian "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/ru/>\n"
 "Language: ru\n"
@@ -62,7 +62,7 @@ msgstr "Игнорировать"
 
 #: ../src/Application.vala:298
 msgid "Try Again"
-msgstr ""
+msgstr "Повторить попытку"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -218,7 +218,7 @@ msgstr "Обновления системных компонентов"
 
 #: ../src/Core/Client.vala:143
 msgid "%s (local)"
-msgstr ""
+msgstr "%s (local)"
 
 #: ../src/Core/Client.vala:452
 msgid "Update Available"
