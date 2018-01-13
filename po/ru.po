@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-09 18:51+0100\n"
-"PO-Revision-Date: 2018-01-13 18:09+0000\n"
-"Last-Translator: Maxim Taranov <png2378@gmail.com>\n"
+"PO-Revision-Date: 2018-01-13 18:10+0000\n"
+"Last-Translator: Михаил <mikrok@yandex.ru>\n"
 "Language-Team: Russian "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/ru/>\n"
 "Language: ru\n"
@@ -42,7 +42,7 @@ msgstr "Ошибка при установке %s."
 
 #: ../src/Application.vala:286
 msgid "Details"
-msgstr ""
+msgstr "Подробности"
 
 #: ../src/Application.vala:290
 msgid "Failed to Fetch Updates"
