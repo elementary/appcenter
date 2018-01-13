@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-09 18:51+0100\n"
-"PO-Revision-Date: 2018-01-13 18:50+0000\n"
+"PO-Revision-Date: 2018-01-13 19:22+0000\n"
 "Last-Translator: Maxim Taranov <png2378@gmail.com>\n"
 "Language-Team: Russian "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/ru/>\n"
@@ -78,7 +78,7 @@ msgstr "Выполнение"
 
 #: ../src/Core/ChangeInformation.vala:60
 msgid "Querying"
-msgstr "Запрашивание"
+msgstr "Запрос"
 
 #: ../src/Core/ChangeInformation.vala:62
 msgid "Getting information"
@@ -214,7 +214,7 @@ msgstr "Обновления операционной системы"
 
 #: ../src/Core/Client.vala:108
 msgid "Updates to system components"
-msgstr "Обновления системных компонентов"
+msgstr "Обновления компонентов системы"
 
 #: ../src/Core/Client.vala:143
 msgid "%s (local)"
@@ -269,8 +269,8 @@ msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
-"Ошибка при обработке данных, попробуйте повторить попытку позже. Приносим "
-"извинения за неудобства."
+"Ошибка при обработке данных, пожалуйста, повторите попытку позже. Приносим "
+"извинения за причинённые неудобства."
 
 #: ../src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
@@ -409,7 +409,7 @@ msgstr "Некорректная сумма. Попробуйте снова, и
 
 #: ../src/Dialogs/StripeDialog.vala:557
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr "Некорректный CVC-код. Попробуйте снова, используя корректный код."
+msgstr "Некорректный PIN. Попробуйте снова, используя корректный код."
 
 #: ../src/Dialogs/StripeDialog.vala:559
 msgid ""
