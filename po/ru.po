@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-09 18:51+0100\n"
-"PO-Revision-Date: 2018-01-13 19:22+0000\n"
+"PO-Revision-Date: 2018-01-14 10:06+0000\n"
 "Last-Translator: Maxim Taranov <png2378@gmail.com>\n"
 "Language-Team: Russian "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/ru/>\n"
@@ -521,7 +521,7 @@ msgstr "Обновить всё"
 
 #: ../src/Views/AppListView.vala:119
 msgid "Non-Curated Apps"
-msgstr "Неподдерживаемое сообществом elementary"
+msgstr "Не поддерживаемое сообществом elementary"
 
 #: ../src/Views/Homepage.vala:65
 msgid "Recently Updated"
