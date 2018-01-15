@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-09 18:51+0100\n"
-"PO-Revision-Date: 2018-01-15 19:23+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2018-01-16 00:09+0000\n"
+"Last-Translator: Piotr Strebski <strebski@o2.pl>\n"
 "Language-Team: Polish "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/pl/>\n"
 "Language: pl\n"
@@ -396,7 +396,6 @@ msgid "The transaction has already been processed."
 msgstr "Transakcja została już przetworzona."
 
 #: ../src/Dialogs/StripeDialog.vala:542
-#, fuzzy
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "postal code."
@@ -415,17 +414,14 @@ msgstr ""
 "Kwota jest nieprawidłowa. Spróbuj ponownie, używając prawidłowej kwoty."
 
 #: ../src/Dialogs/StripeDialog.vala:557
-#, fuzzy
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr ""
-"Numer CVC jest nieprawidłowy. Spróbuj ponownie, używając właściwego numeru "
-"CVC."
+"Kod PIN jest nieprawidłowy. Spróbuj ponownie, używając właściwego kodu PIN."
 
 #: ../src/Dialogs/StripeDialog.vala:559
-#, fuzzy
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
-msgstr "Za dużo prób wprowadzenia numeru PIN. Spróbuj ponownie z inną kartą."
+msgstr "Za dużo prób wprowadzenia kodu PIN. Spróbuj ponownie z inną kartą."
 
 #: ../src/Dialogs/StripeDialog.vala:579
 msgid ""
@@ -542,7 +538,7 @@ msgstr "Ostatnio zaktualizowane"
 
 #: ../src/Views/Homepage.vala:81
 msgid "Trending"
-msgstr ""
+msgstr "Zyskujące popularność"
 
 #: ../src/Views/Homepage.vala:97
 msgid "Categories"
@@ -654,48 +650,47 @@ msgstr "$%d"
 
 #: ../src/Widgets/ReleaseRow.vala:67
 msgid "<b>%s</b> – %s"
-msgstr ""
+msgstr "<b>%s</b> – %s"
 
 #: ../src/Widgets/ReleaseRow.vala:72
 msgid "<b>%s</b>"
-msgstr ""
+msgstr "<b>%s</b>"
 
 #: ../src/Widgets/ReleaseRow.vala:74
-#, fuzzy
 msgid "Unknown version"
-msgstr "Nieznany stan"
+msgstr "Nieznana wersja"
 
 #: ../src/Widgets/ReleaseRow.vala:90 ../src/Widgets/ReleaseRow.vala:93
 msgid "No description available"
-msgstr ""
+msgstr "Brak dostępnego opisu"
 
 #: ../src/Widgets/SharePopover.vala:39
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #: ../src/Widgets/SharePopover.vala:43
 msgid "Google+"
-msgstr ""
+msgstr "Google+"
 
 #: ../src/Widgets/SharePopover.vala:47
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 #: ../src/Widgets/SharePopover.vala:51
 msgid "reddit"
-msgstr ""
+msgstr "reddit"
 
 #: ../src/Widgets/SharePopover.vala:55
 msgid "Tumblr"
-msgstr ""
+msgstr "Tumblr"
 
 #: ../src/Widgets/SharePopover.vala:59
 msgid "Telegram"
-msgstr ""
+msgstr "Telegram"
 
 #: ../src/Widgets/SharePopover.vala:63
 msgid "Copy link"
-msgstr ""
+msgstr "Kopiuj odnośnik"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:68
 msgid "%u Update Available"
