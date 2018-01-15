@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-09 18:51+0100\n"
 "PO-Revision-Date: 2018-01-15 19:19+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"Last-Translator: Piotr Strebski <strebski@o2.pl>\n"
 "Language-Team: Polish "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/pl/>\n"
 "Language: pl\n"
@@ -501,7 +501,7 @@ msgstr "Rozszerzenia:"
 
 #: ../src/Views/AppInfoView.vala:266
 msgid "Other Apps by %s"
-msgstr "Inne aplikacje %s"
+msgstr "Inne programy %s"
 
 #: ../src/Views/AppInfoView.vala:300
 msgid "Link copied to clipboard"
