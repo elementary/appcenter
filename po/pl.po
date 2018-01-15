@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-09 18:51+0100\n"
-"PO-Revision-Date: 2018-01-15 19:22+0000\n"
-"Last-Translator: Piotr Strebski <strebski@o2.pl>\n"
+"PO-Revision-Date: 2018-01-15 19:23+0000\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Polish "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/pl/>\n"
 "Language: pl\n"
@@ -53,6 +53,8 @@ msgid ""
 "This may have been caused by external, manually added software repositories "
 "or a corrupted sources file."
 msgstr ""
+"Przyczyną może być zewnętrzne, ręcznie dodane repozytorium oprogramowania "
+"lub uszkodzony plik źródłowy."
 
 #: ../src/Application.vala:297
 msgid "Ignore"
@@ -278,13 +280,15 @@ msgstr "Proszę przejrzyj informacje dotyczące płatności i spróbuj ponownie.
 
 #: ../src/Dialogs/StripeDialog.vala:78
 msgid "Pay $%d for %s"
-msgstr ""
+msgstr "Zapłać $%d za %s"
 
 #: ../src/Dialogs/StripeDialog.vala:82
 msgid ""
 "This is a one time payment. Your email address is only used to send you a "
 "receipt."
 msgstr ""
+"To jest jednorazowa płatność. Twój adres e-mail jest używany tylko po to, by "
+"wysłać Ci paragon."
 
 #: ../src/Dialogs/StripeDialog.vala:91 ../src/Widgets/SharePopover.vala:35
 msgid "Email"
