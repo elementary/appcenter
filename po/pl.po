@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-09 18:51+0100\n"
-"PO-Revision-Date: 2018-01-15 19:19+0000\n"
-"Last-Translator: Piotr Strebski <strebski@o2.pl>\n"
+"PO-Revision-Date: 2018-01-15 19:21+0000\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Polish "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/pl/>\n"
 "Language: pl\n"
@@ -493,7 +493,7 @@ msgstr "Pomoc"
 
 #: ../src/Views/AppInfoView.vala:168
 msgid "What's New:"
-msgstr ""
+msgstr "Co nowego:"
 
 #: ../src/Views/AppInfoView.vala:187
 msgid "Extensions:"
@@ -509,7 +509,7 @@ msgstr "Odnośnik skopiowany do schowka"
 
 #: ../src/Views/AppInfoView.vala:311
 msgid "Check out %s on AppCenter:"
-msgstr ""
+msgstr "Wypróbuj %s w centrum oprogramowania:"
 
 #: ../src/Views/AppInfoView.vala:318
 msgid "Share"
