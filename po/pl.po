@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-09 18:51+0100\n"
-"PO-Revision-Date: 2018-01-15 19:21+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2018-01-15 19:22+0000\n"
+"Last-Translator: Piotr Strebski <strebski@o2.pl>\n"
 "Language-Team: Polish "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/pl/>\n"
 "Language: pl\n"
@@ -463,7 +463,6 @@ msgid "Network Is Not Available"
 msgstr "Sieć jest niedostępna"
 
 #: ../src/MainWindow.vala:177
-#, fuzzy
 msgid "Connect to the Internet to install or update apps."
 msgstr "Połącz się z Internetem, aby zainstalować lub zaktualizować programy."
 
