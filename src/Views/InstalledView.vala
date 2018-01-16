@@ -60,6 +60,19 @@ public class AppCenter.Views.InstalledView : View {
         app_list_view.add_packages (installed_apps);
 
         client.get_drivers ();
+
+        var settings = Settings.get_default ();
+
+        if (settings.reset_paid_apps) {
+            settings.paid_apps = new string[] {};
+            foreach (var app in installed_apps) {
+                if (app.component.get_origin () == AppCenterCore.Package.APPCENTER_PACKAGE_ORIGIN) {
+                    settings.add_paid_app (app.component.get_id ());
+                }
+            }
+
+            settings.reset_paid_apps = false;
+        }
     }
 
     public async void add_app (AppCenterCore.Package package) {
