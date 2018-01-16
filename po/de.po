@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-09 18:51+0100\n"
-"PO-Revision-Date: 2018-01-13 00:01+0000\n"
-"Last-Translator: Felix <felixchrist1@icloud.com>\n"
+"PO-Revision-Date: 2018-01-16 04:52+0000\n"
+"Last-Translator: SteffenL <steffenl@protonmail.com>\n"
 "Language-Team: German "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/de/>\n"
 "Language: de\n"
@@ -38,40 +38,40 @@ msgid "Close"
 msgstr "Schließen"
 
 #: ../src/Application.vala:256
-#, fuzzy
 msgid "There Was An Error Installing %s."
-msgstr "Während der Installation von %s ist ein Fehler aufgetreten"
+msgstr "Während der Installation von %s ist ein Fehler aufgetreten."
 
 #: ../src/Application.vala:286
 msgid "Details"
-msgstr ""
+msgstr "Details"
 
 #: ../src/Application.vala:290
 msgid "Failed to Fetch Updates"
-msgstr ""
+msgstr "Update-Download fehlgeschlagen"
 
 #: ../src/Application.vala:291
 msgid ""
 "This may have been caused by external, manually added software repositories "
 "or a corrupted sources file."
 msgstr ""
+"Dies könnte durch externe, manuell hinzugefügte Software-Repositorien oder "
+"eine korrupte sources.list-Datei verursacht worden sein."
 
 #: ../src/Application.vala:297
 msgid "Ignore"
-msgstr ""
+msgstr "Ignorieren"
 
 #: ../src/Application.vala:298
 msgid "Try Again"
-msgstr ""
+msgstr "Erneut versuchen"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
 msgstr "startet"
 
 #: ../src/Core/ChangeInformation.vala:56
-#, fuzzy
 msgid "Waiting"
-msgstr "Wartet"
+msgstr "Warte"
 
 #: ../src/Core/ChangeInformation.vala:58
 msgid "Running"
@@ -219,7 +219,7 @@ msgstr "Aktualisierungen für Systemkomponenten"
 
 #: ../src/Core/Client.vala:143
 msgid "%s (local)"
-msgstr ""
+msgstr "%s (lokal)"
 
 #: ../src/Core/Client.vala:452
 msgid "Update Available"
@@ -280,13 +280,15 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:78
 msgid "Pay $%d for %s"
-msgstr ""
+msgstr "Zahle %d USD für %s"
 
 #: ../src/Dialogs/StripeDialog.vala:82
 msgid ""
 "This is a one time payment. Your email address is only used to send you a "
 "receipt."
 msgstr ""
+"Dies ist eine einmalige Zahlung. Die Email-Adresse wird ausschliesslich zur "
+"Zustellung des Kaufbelegs verwendet."
 
 #: ../src/Dialogs/StripeDialog.vala:91 ../src/Widgets/SharePopover.vala:35
 msgid "Email"
@@ -392,12 +394,12 @@ msgid "The transaction has already been processed."
 msgstr "Diese Transaktion wurde bereits bearbeitet."
 
 #: ../src/Dialogs/StripeDialog.vala:542
-#, fuzzy
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "postal code."
 msgstr ""
-"Die Postleitzahl ist nicht korrekt. Geben Sie die korrekte Postleitzahl ein."
+"Die Postleitzahl ist nicht korrekt. Versuche es bitte erneut mit Angabe der "
+"korrekten Postleitzahl."
 
 #: ../src/Dialogs/StripeDialog.vala:544
 msgid "You don't have enough funds. Please use an alternative payment method."
@@ -408,17 +410,17 @@ msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "Der Betrag ist ungültig. Bitte geben Sie einen korrekten Wert ein."
 
 #: ../src/Dialogs/StripeDialog.vala:557
-#, fuzzy
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr "Die CVC-Prüfnummer ist falsch. Bitte geben Sie den korrekten Wert ein."
+msgstr ""
+"Die PIN-Nummer ist falsch. Versuche es bitte erneut mit Angabe der korrekten "
+"PIN."
 
 #: ../src/Dialogs/StripeDialog.vala:559
-#, fuzzy
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
 msgstr ""
-"Die PIN wurde zu oft falsch eingegeben. Versuchen Sie es mit einer anderen "
-"Karte."
+"Die PIN wurde zu oft falsch eingegeben. Versuche es bitte erneut mit einer "
+"anderen Karte."
 
 #: ../src/Dialogs/StripeDialog.vala:579
 msgid ""
@@ -460,11 +462,10 @@ msgid "Network Is Not Available"
 msgstr "Netzwerk ist nicht erreichbar"
 
 #: ../src/MainWindow.vala:177
-#, fuzzy
 msgid "Connect to the Internet to install or update apps."
 msgstr ""
-"Verbindung mit dem Internet herstellen, um Anwendungen zu installieren oder "
-"zu aktualisieren."
+"Verbindung mit dem Internet herstellen, um Apps zu installieren oder zu "
+"aktualisieren."
 
 #: ../src/MainWindow.vala:180
 msgid "Network Settings…"
@@ -492,7 +493,7 @@ msgstr "Hilfe"
 
 #: ../src/Views/AppInfoView.vala:168
 msgid "What's New:"
-msgstr ""
+msgstr "Was es Neues gibt:"
 
 #: ../src/Views/AppInfoView.vala:187
 msgid "Extensions:"
@@ -500,19 +501,19 @@ msgstr "Erweiterungen:"
 
 #: ../src/Views/AppInfoView.vala:266
 msgid "Other Apps by %s"
-msgstr ""
+msgstr "Andere Apps von %s"
 
 #: ../src/Views/AppInfoView.vala:300
 msgid "Link copied to clipboard"
-msgstr ""
+msgstr "Link wurde in die Zwischenablage kopiert"
 
 #: ../src/Views/AppInfoView.vala:311
 msgid "Check out %s on AppCenter:"
-msgstr ""
+msgstr "Sieh dir %s im AppCenter an:"
 
 #: ../src/Views/AppInfoView.vala:318
 msgid "Share"
-msgstr ""
+msgstr "Teilen"
 
 #: ../src/Views/AppListUpdateView.vala:59
 msgid "A restart is required to complete the installation of updates"
@@ -529,9 +530,8 @@ msgid "Update All"
 msgstr "Alle aktualisieren"
 
 #: ../src/Views/AppListView.vala:119
-#, fuzzy
 msgid "Non-Curated Apps"
-msgstr "Keine Anwendungen"
+msgstr "Andere externe Apps"
 
 #: ../src/Views/Homepage.vala:65
 msgid "Recently Updated"
@@ -539,7 +539,7 @@ msgstr "kürzlich aktualisiert"
 
 #: ../src/Views/Homepage.vala:81
 msgid "Trending"
-msgstr ""
+msgstr "Derzeit beliebt"
 
 #: ../src/Views/Homepage.vala:97
 msgid "Categories"
@@ -650,48 +650,47 @@ msgstr "$%d USD"
 
 #: ../src/Widgets/ReleaseRow.vala:67
 msgid "<b>%s</b> – %s"
-msgstr ""
+msgstr "<b>%s</b> – %s"
 
 #: ../src/Widgets/ReleaseRow.vala:72
 msgid "<b>%s</b>"
-msgstr ""
+msgstr "<b>%s</b>"
 
 #: ../src/Widgets/ReleaseRow.vala:74
-#, fuzzy
 msgid "Unknown version"
-msgstr "Unbekannter Zustand"
+msgstr "Unbekannte Version"
 
 #: ../src/Widgets/ReleaseRow.vala:90 ../src/Widgets/ReleaseRow.vala:93
 msgid "No description available"
-msgstr ""
+msgstr "Keine Beschreibung verfügbar"
 
 #: ../src/Widgets/SharePopover.vala:39
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #: ../src/Widgets/SharePopover.vala:43
 msgid "Google+"
-msgstr ""
+msgstr "Google+"
 
 #: ../src/Widgets/SharePopover.vala:47
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 #: ../src/Widgets/SharePopover.vala:51
 msgid "reddit"
-msgstr ""
+msgstr "Reddit"
 
 #: ../src/Widgets/SharePopover.vala:55
 msgid "Tumblr"
-msgstr ""
+msgstr "Tumblr"
 
 #: ../src/Widgets/SharePopover.vala:59
 msgid "Telegram"
-msgstr ""
+msgstr "Telegram"
 
 #: ../src/Widgets/SharePopover.vala:63
 msgid "Copy link"
-msgstr ""
+msgstr "Link kopieren"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:68
 msgid "%u Update Available"
