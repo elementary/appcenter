@@ -74,7 +74,17 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         var go_back = new SimpleAction ("go-back", null);
         go_back.activate.connect (view_return);
         add_action (go_back);
-        app.set_accels_for_action ("win.go-back", {"<Alt>Left"});
+        app.set_accels_for_action ("win.go-back", {"<Alt>Left", "Back"});
+
+        button_release_event.connect ((event) => {
+            // On back mouse button pressed
+            if (event.button == 8) {
+                view_return ();
+                return true;
+            }
+
+            return false;
+        });
 
         search_entry.search_changed.connect (() => trigger_search ());
 
