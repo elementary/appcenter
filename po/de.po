@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-09 18:51+0100\n"
-"PO-Revision-Date: 2018-01-16 04:58+0000\n"
-"Last-Translator: Max Mustermann <mustermann_23@posteo.eu>\n"
+"PO-Revision-Date: 2018-01-16 18:56+0000\n"
+"Last-Translator: SteffenL <steffenl@protonmail.com>\n"
 "Language-Team: German "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/de/>\n"
 "Language: de\n"
@@ -67,7 +67,7 @@ msgstr "Erneut versuchen"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
-msgstr "Startet"
+msgstr "Starte"
 
 #: ../src/Core/ChangeInformation.vala:56
 msgid "Waiting"
@@ -91,11 +91,11 @@ msgstr "Pakete werden entfernt"
 
 #: ../src/Core/ChangeInformation.vala:66
 msgid "Downloading"
-msgstr "Herunterladen"
+msgstr "Herunterladen läuft"
 
 #: ../src/Core/ChangeInformation.vala:68
 msgid "Installing"
-msgstr "Installiert"
+msgstr "Installiere"
 
 #: ../src/Core/ChangeInformation.vala:70
 msgid "Refreshing software list"
@@ -115,7 +115,7 @@ msgstr "Veraltete Pakete werden entfernt"
 
 #: ../src/Core/ChangeInformation.vala:78
 msgid "Resolving dependencies"
-msgstr "Abhängigkeiten werden aufgelöst"
+msgstr "Abhängigkeiten werden eingerichtet"
 
 #: ../src/Core/ChangeInformation.vala:80
 msgid "Checking signatures"
@@ -179,27 +179,27 @@ msgstr "Anwendungen werden überprüft"
 
 #: ../src/Core/ChangeInformation.vala:110
 msgid "Generating package lists"
-msgstr "Paketliste wird erzeugt"
+msgstr "Paketlisten werden erzeugt"
 
 #: ../src/Core/ChangeInformation.vala:112
 msgid "Waiting for package manager lock"
-msgstr "Warten auf die Aufhebung der Paketmanagersperre"
+msgstr "Warte auf Aufhebung der Paketmanagersperre"
 
 #: ../src/Core/ChangeInformation.vala:114
 msgid "Waiting for authentication"
-msgstr "Warten auf Legitimierung"
+msgstr "Warte auf Legitimierung"
 
 #: ../src/Core/ChangeInformation.vala:116
 msgid "Updating running applications"
-msgstr "Liste der laufenden Anwendungen wird aktualisiert"
+msgstr "Laufende Anwendungen werden aktualisiert"
 
 #: ../src/Core/ChangeInformation.vala:118
 msgid "Checking applications in use"
-msgstr "Es wird geprüft, welche Anwendungen aktuell ausgeführt werden"
+msgstr "Derzeit verwendete Anwendungen werden überprüft"
 
 #: ../src/Core/ChangeInformation.vala:120
 msgid "Checking libraries in use"
-msgstr "Es wird geprüft, welche Bibliotheken aktuell benutzt werden"
+msgstr "Derzeit verwendete Libraries werden überprüft"
 
 #: ../src/Core/ChangeInformation.vala:122
 msgid "Copying files"
@@ -248,12 +248,11 @@ msgstr ""
 
 #: ../src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
-msgstr "Sind Sie sicher, dass Sie den Rechner neustarten wollen?"
+msgstr "Sind Sie sicher, dass Sie neu starten wollen?"
 
 #: ../src/Dialogs/RestartDialog.vala:41
 msgid "This will close all open applications and restart this device."
-msgstr ""
-"Alle offenen Anwendungen werden geschlossen und der Rechner neu gestartet."
+msgstr "Dies schließt alle offenen Anwendungen und startet das Gerät neu."
 
 #: ../src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
@@ -270,8 +269,8 @@ msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
-"Bei der Verarbeitung der Karte ist ein Fehler aufgetreten. Sorry für die "
-"Umstände."
+"Bei der Bearbeitung der Kartendaten ist ein Fehler aufgetreten. Wir "
+"entschuldigen uns für die unannehmlichen Umstände."
 
 #: ../src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
@@ -299,7 +298,7 @@ msgid ""
 "Your email address is used to send a receipt. It is never stored and you "
 "will not be subscribed to a mailing list."
 msgstr ""
-"Die E-Mail-Adresse wird benötigt, um eine Bestätigung zu versenden. Sie wird "
+"Die E-Mail-Adresse wird benötigt, um einen Kaufbeleg zu versenden. Sie wird "
 "weder gespeichert noch einer E-Mail-Nachrichtenliste hinzugefügt."
 
 #: ../src/Dialogs/StripeDialog.vala:104
@@ -309,7 +308,7 @@ msgstr "Kartennummer"
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: ../src/Dialogs/StripeDialog.vala:116
 msgid "MM / YY"
-msgstr "MM/JJ"
+msgstr "MM / JJ"
 
 #: ../src/Dialogs/StripeDialog.vala:136
 msgid "CVC"
@@ -321,7 +320,7 @@ msgstr "Datenschutzbestimmungen"
 
 #: ../src/Dialogs/StripeDialog.vala:184 ../src/Dialogs/StripeDialog.vala:300
 msgid "Pay $%d.00"
-msgstr "Zahle %d,00 $"
+msgstr "Zahle %d,00 $ USD"
 
 #: ../src/Dialogs/StripeDialog.vala:229
 msgid "Processing"
