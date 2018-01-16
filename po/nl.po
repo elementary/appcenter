@@ -2,18 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-09 18:51+0100\n"
-<<<<<<< 
+"POT-Creation-Date: 2018-01-09 18:51+0100\n" 
 "PO-Revision-Date: 2018-01-09 00:11+0000\n"
 "Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
 "Language-Team: Dutch "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/nl/>\n"
-=======
-"PO-Revision-Date: 2017-09-05 12:37+0000\n"
-"Last-Translator: Jonathan Moerman <jonathanmoerman@gmail.com>\n"
-"Language-Team: Dutch <https://weblate.elementary.io/projects/appcenter/"
-"appcenter/nl/>\n"
->>>>>>> 
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -417,18 +410,12 @@ msgstr ""
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "Het bedrag is onjuist. Probeert u het nogmaals met een geldig bedrag."
 
-<<<<<<< 
-#: ../src/Dialogs/StripeDialog.vala:531
-msgid "The pin number is incorrect. Please try again using the correct pin."
-msgstr "De pincode is onjuist. Probeer het opnieuw met de juiste pin."
-=======
 #: ../src/Dialogs/StripeDialog.vala:557
 #, fuzzy
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr ""
 "Het CVC-nummer is onjuist. Probeert u het later nogmaals met het juiste CVC-"
 "nummer."
->>>>>>> 
 
 #: ../src/Dialogs/StripeDialog.vala:559
 #, fuzzy
