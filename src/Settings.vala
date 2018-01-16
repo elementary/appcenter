@@ -31,12 +31,22 @@ public class AppCenter.Settings : Granite.Services.Settings {
     public int window_height { get; set; }
     public WindowState window_state { get; set; }
     public bool developer_mode { get; set; }
+    public bool reset_paid_apps { get; set; }
+    public string[] paid_apps { get; set; }
 
     private static Settings main_settings;
     public static unowned Settings get_default () {
         if (main_settings == null)
             main_settings = new Settings ();
         return main_settings;
+    }
+
+    public void add_paid_app (string id) {
+        if (!(id in paid_apps)) {
+            var apps_copy = paid_apps;
+            apps_copy += id;
+            paid_apps = apps_copy;
+        }
     }
 
     private Settings ()  {

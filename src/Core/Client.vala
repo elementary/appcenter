@@ -467,18 +467,46 @@ public class AppCenterCore.Client : Object {
             launcher_entry.count = updates_number;
             launcher_entry.count_visible = updates_number != 0U;
 #endif
+
+            int os_count = 0;
+            string os_ver = "";
+            string os_desc = "";
+
             results.get_package_array ().foreach ((pk_package) => {
                 unowned string pkg_name = pk_package.get_name ();
                 var package = package_list[pkg_name];
-                if (package != null) {
+                if (package == null) {
+                    unowned string pkg_summary = pk_package.get_summary();
+                    unowned string pkg_version = pk_package.get_version();
+                    os_count += 1;
+                    os_desc += Markup.printf_escaped ("<li>%s\n\t%s\n\tVersion: %s</li>\n", pkg_name, pkg_summary, pkg_version);
+                } else {
                     package.latest_version = pk_package.get_version ();
                     package.change_information.changes.clear ();
                     package.change_information.details.clear ();
                 }
-
-                os_updates.change_information.changes.clear ();
-                os_updates.change_information.details.clear ();
             });
+
+            if (os_count == 0){
+                os_ver = "No components with updates";
+            } else if (os_count == 1) {
+                os_ver = "%d component with updates".printf(os_count);
+            } else {
+                os_ver = "%d components with updates".printf(os_count);
+            }
+
+            if (os_desc.length > 0) {
+                os_desc = "<p>%s:</p>\n<ul>\n%s</ul>\n".printf(os_ver, os_desc);
+            } else {
+                os_desc = "<p>%s</p>\n".printf(os_ver);
+            }
+
+            os_updates.latest_version = os_ver;
+            os_updates.description = os_desc;
+
+            os_updates.component.set_pkgnames({});
+            os_updates.change_information.changes.clear ();
+            os_updates.change_information.details.clear ();
 
             results.get_details_array ().foreach ((pk_detail) => {
                 var pk_package = new Pk.Package ();
@@ -488,20 +516,23 @@ public class AppCenterCore.Client : Object {
                     unowned string pkg_name = pk_package.get_name ();
                     var package = package_list[pkg_name];
                     if (package == null) {
-                        package = os_updates;
-
                         var pkgnames = os_updates.component.pkgnames;
                         pkgnames += pkg_name;
                         os_updates.component.pkgnames = pkgnames;
-                    }
 
-                    package.change_information.changes.add (pk_package);
-                    package.change_information.details.add (pk_detail);
-                    package.update_state ();
+                        os_updates.change_information.changes.add (pk_package);
+                        os_updates.change_information.details.add (pk_detail);
+                    } else {
+                        package.change_information.changes.add (pk_package);
+                        package.change_information.details.add (pk_detail);
+                        package.update_state ();
+                    }
                 } catch (Error e) {
                     critical (e.message);
                 }
             });
+
+            os_updates.update_state();
         } catch (Error e) {
             critical (e.message);
         }
