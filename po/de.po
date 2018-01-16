@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-09 18:51+0100\n"
-"PO-Revision-Date: 2018-01-16 04:55+0000\n"
+"PO-Revision-Date: 2018-01-16 04:58+0000\n"
 "Last-Translator: Max Mustermann <mustermann_23@posteo.eu>\n"
 "Language-Team: German "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/de/>\n"
@@ -67,7 +67,7 @@ msgstr "Erneut versuchen"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
-msgstr "startet"
+msgstr "Startet"
 
 #: ../src/Core/ChangeInformation.vala:56
 msgid "Waiting"
