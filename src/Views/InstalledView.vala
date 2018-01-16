@@ -25,11 +25,12 @@ public class AppCenter.Views.InstalledView : View {
 
     construct {
         app_list_view = new AppListUpdateView ();
-        add (app_list_view);
         app_list_view.show_app.connect ((package) => {
             subview_entered (C_("view", "Updates"), false, "");
             show_package (package);
         });
+
+        add (app_list_view);
 
         var client = Client.get_default ();
         client.drivers_detected.connect (() => {
@@ -38,9 +39,8 @@ public class AppCenter.Views.InstalledView : View {
             }
         });
 
-        client.updates_available.connect (update_os_package_visibility);
-        client.bind_property ("updating-cache", app_list_view, "updating-cache", GLib.BindingFlags.DEFAULT);
-        update_os_package_visibility ();
+        var os_updates = Client.get_default ().os_updates;
+        app_list_view.add_package (os_updates);
     }
 
     public override void return_clicked () {
@@ -60,6 +60,19 @@ public class AppCenter.Views.InstalledView : View {
         app_list_view.add_packages (installed_apps);
 
         client.get_drivers ();
+
+        var settings = Settings.get_default ();
+
+        if (settings.reset_paid_apps) {
+            settings.paid_apps = new string[] {};
+            foreach (var app in installed_apps) {
+                if (app.component.get_origin () == AppCenterCore.Package.APPCENTER_PACKAGE_ORIGIN) {
+                    settings.add_paid_app (app.component.get_id ());
+                }
+            }
+
+            settings.reset_paid_apps = false;
+        }
     }
 
     public async void add_app (AppCenterCore.Package package) {
@@ -75,12 +88,5 @@ public class AppCenter.Views.InstalledView : View {
 
     public async void remove_app (AppCenterCore.Package package) {
         app_list_view.remove_package (package);
-    }
-
-    private void update_os_package_visibility () {
-        var package = Client.get_default ().os_updates;
-        if (package.update_available) {
-            app_list_view.add_package (package);
-        }
     }
 }

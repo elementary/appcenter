@@ -18,6 +18,16 @@
 */
 
 namespace AppCenter {
+    public static void set_widget_visibility (Gtk.Widget widget, bool show) {
+        if (show) {
+            widget.no_show_all = false;
+            widget.show_all ();
+        } else {
+            widget.no_show_all = true;
+            widget.hide ();
+        }
+    }
+
     public abstract class AbstractAppContainer : Gtk.Grid {
         public AppCenterCore.Package package { get; construct set; }
         protected bool show_uninstall { get; set; default = true; }
@@ -37,6 +47,8 @@ namespace AppCenter {
         protected Gtk.Button cancel_button;
         protected Gtk.SizeGroup action_button_group;
         protected Gtk.Stack action_stack;
+
+        private Settings settings;
 
         public bool is_os_updates {
             get {
@@ -89,6 +101,8 @@ namespace AppCenter {
         construct {
             image = new Gtk.Image ();
 
+            settings = Settings.get_default ();
+
             package_author = new Gtk.Label ("");
             package_name = new Gtk.Label ("");
             image = new Gtk.Image ();
@@ -99,7 +113,12 @@ namespace AppCenter {
             action_button.payment_requested.connect ((amount) => {
                 var stripe = new Widgets.StripeDialog (amount, this.package_name.label, this.package.component.get_desktop_id ().replace (".desktop", ""), this.package.get_payments_key());
 
-                stripe.download_requested.connect (() => action_clicked.begin ());
+                stripe.download_requested.connect (() => {
+                    action_clicked.begin ();
+
+                    settings.add_paid_app (package.component.get_id ());
+                });
+
                 stripe.show ();
             });
 
@@ -189,6 +208,10 @@ namespace AppCenter {
                 case AppCenterCore.Package.State.NOT_INSTALLED:
                     action_button.label = _("Free");
 
+                    if (package.component.get_id () in settings.paid_apps) {
+                        action_button.amount = 0;
+                    }
+
                     set_widget_visibility (uninstall_button, false);
                     set_widget_visibility (action_button, true);
                     set_widget_visibility (open_button, false);
@@ -224,16 +247,6 @@ namespace AppCenter {
 
                 default:
                     assert_not_reached ();
-            }
-        }
-
-        protected static void set_widget_visibility (Gtk.Widget widget, bool show) {
-            if (show) {
-                widget.no_show_all = false;
-                widget.show_all ();
-            } else {
-                widget.no_show_all = true;
-                widget.hide ();
             }
         }
 
