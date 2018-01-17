@@ -28,6 +28,7 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
     construct {
         add (get_category (_("Accessories"), "applications-accessories", {"Utility"}, "accessories"));
         add (get_category (_("Audio"), "applications-audio-symbolic", {"Audio", "Music"}, "audio"));
+        add (get_category (_("Communication"), "internet-chat", {"Chat", "InstantMessaging", "IRCClient", "VideoConference", "Email", "Telephony", "ContactManagement"}, "communication"));
         add (get_category (_("Development"), "", {"IDE", "Development", "Debugger", "WebDevelopment", "TerminalEmulator", "RevisionControl", "GUIDesigner", "Database"}, "development"));
         add (get_category (_("Education"), "", {"Education"}, "education"));
         add (get_category (_("Games"), "applications-games-symbolic", {"Game", "ActionGame", "AdventureGame", "ArcadeGame", "BlocksGame", "BoardGame", "CardGame", "KidsGame", "LogicGame", "RolePlaying", "Shooter", "Simulation", "SportsGame", "StrategyGame"}, "games"));
@@ -35,7 +36,6 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
         add (get_category (_("Internet"), "applications-internet", {"Network", "P2P"}, "internet"));
         add (get_category (_("Math, Science, & Engineering"), "", {"Science", "Chemistry", "Astronomy", "Electricity", "Math", "Biology", "DataVisualization", "Calculator", "ComputerScience", "Engineering", "Physics", "NumericalAnalysis", "Geology", "Geoscience", "Electronics", "ArtificialIntelligence", "Robotics"}, "science"));
         add (get_category (_("Media Production"), "applications-multimedia", {"AudioVideoEditing", "Recorder", "Midi", "Mixer", "Sequencer"}, "media-production"));
-        add (get_category (_("Messaging"), "internet-chat", {"Chat", "InstantMessaging", "IRCClient", "VideoConference", "Email", "Telephony", "ContactManagement"}, "messaging"));
         add (get_category (_("News & Feeds"), "internet-news-reader", {"News", "Feed"}, "news"));
         add (get_category (_("Office"), "applications-office-symbolic", {"Office", "Publishing", "WordProcessor", "Presentation", "Spreadsheet"}, "office"));
         add (get_category (_("System"), "applications-system", {"System", "Monitor"}, "system"));
