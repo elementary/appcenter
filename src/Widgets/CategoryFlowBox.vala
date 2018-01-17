@@ -36,7 +36,7 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
         add (get_category (_("Internet"), "applications-internet", {"Network", "P2P"}, "internet"));
         add (get_category (_("Math, Science, & Engineering"), "", {"Science", "Chemistry", "Astronomy", "Electricity", "Math", "Biology", "DataVisualization", "Calculator", "ComputerScience", "Engineering", "Physics", "NumericalAnalysis", "Geology", "Geoscience", "Electronics", "ArtificialIntelligence", "Robotics"}, "science"));
         add (get_category (_("Media Production"), "applications-multimedia", {"AudioVideoEditing", "Recorder", "Midi", "Mixer", "Sequencer"}, "media-production"));
-        add (get_category (_("News & Feeds"), "internet-news-reader", {"News", "Feed"}, "news"));
+        add (get_category (_("News & Feeds"), "internet-news-reader-symbolic", {"News", "Feed"}, "news"));
         add (get_category (_("Office"), "applications-office-symbolic", {"Office", "Publishing", "WordProcessor", "Presentation", "Spreadsheet"}, "office"));
         add (get_category (_("System"), "applications-system", {"System", "Monitor"}, "system"));
         add (get_category (_("To-Do & Projects"), "office-calender", {"ProjectManagement", "Calendar"}, "todo"));
