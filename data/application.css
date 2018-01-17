@@ -17,10 +17,7 @@
 
 .banner {
     background-color: @banner_bg_color;
-    background-image: linear-gradient(to bottom right,
-                              shade (@banner_bg_color, 1.05),
-                              shade (@banner_bg_color, 0.95)
-                              );
+    background-image: linear-gradient(@banner_bg_color, @banner_bg_color);
     color: @banner_fg_color;
     icon-shadow: none;
     text-shadow: none;
@@ -80,6 +77,10 @@
     text-shadow: 0 1px 1px alpha (@banner_fg_color, 0.1);
 }
 
+.banner progressbar {
+    color: @banner_fg_color;
+}
+
 .category {
     background-image: linear-gradient(to bottom,
                               #fafafa,
@@ -96,8 +97,12 @@
                 0 3px 2px -1px alpha (#000, 0.15),
                 0 3px 5px alpha (#000, 0.10);
     color: #4d4d4d;
-    font-size: 32px;
     font-weight: 300;
+}
+
+.category label,
+.category .label {
+    font-size: 24px;
 }
 
 .category.audio {
@@ -133,7 +138,6 @@
                 0 0 0 1px alpha (#000, 0.15),
                 0 3px 2px -1px alpha (#000, 0.15),
                 0 3px 5px alpha (#000, 0.10);
-    font-size: 24px;
 }
 
 .category.office {
@@ -234,7 +238,6 @@
                 0 3px 5px alpha (#000, 0.10);
     text-shadow: 0 0 24px alpha (#fff, 0.6);
     font-family: HVD Bodedo;
-    font-size: 24px;
     font-weight: 400;
     color: #fff;
 }
@@ -270,7 +273,6 @@
     text-shadow: 0 1px 2px alpha (#000, 0.3);
     icon-shadow: 0 1px 2px alpha (#000, 0.3);
     font-family: Limelight;
-    font-size: 24px;
     color: #fff;
 }
 
@@ -285,6 +287,31 @@
     font-weight: 600;
     icon-shadow: 0 1px 0 alpha (#000, 0.3);
     text-shadow: 0 1px 0 alpha (#000, 0.3);
+}
+
+.category._3d-modeling {
+    background-image:
+        linear-gradient(
+            to bottom,
+            #505050,
+            #3f3f3f
+        );
+    border-color: alpha (#202020, 0.8);
+    box-shadow:
+        inset 0 0 0 1px alpha (#fff, 0.05),
+        inset 0 1px 0 0 alpha (#fff, 0.25),
+        inset 0 -1px 0 0 alpha (#fff, 0.10),
+        0 3px 2px -1px alpha (#000, 0.15),
+        0 3px 5px alpha (#000, 0.10);
+    text-shadow:
+        0 1px 1px alpha (#000, 0.3),
+        0 2px 3px alpha (#000, 0.3);
+    color: #fff;
+}
+
+.category.language label,
+.category.language .label {
+    font-size: 18px;
 }
 
 .switcher {
@@ -306,5 +333,5 @@
 
 .terminal selection {
     background-color: #93a1a1;
-    color: #252e32; 
+    color: #252e32;
 }
