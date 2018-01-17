@@ -119,6 +119,11 @@
                  0 2px 3px alpha (#6c1900, 0.5);
 }
 
+.category.audio label,
+.category.audio .label {
+    font-size: 32px;
+}
+
 .category.development {
     background-image: linear-gradient(to bottom,
                               #816fa9,
@@ -128,6 +133,11 @@
     font-family: lobster;
     text-shadow: 0 2px 0 alpha (#000, 0.3);
     color: #fff;
+}
+
+.category.development label,
+.category.development .label {
+    font-size: 32px;
 }
 
 .category.accessories {
@@ -183,6 +193,11 @@
     text-shadow: 0 1px 2px alpha (#000, 0.3);
     icon-shadow: 0 1px 2px alpha (#000, 0.3);
     color: #fff;
+}
+
+.category.video label,
+.category.video .label {
+    font-size: 32px;
 }
 
 .category.graphics {
