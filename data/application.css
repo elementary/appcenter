@@ -25,6 +25,7 @@
     icon-shadow: none;
     text-shadow: none;
 }
+
 .banner.home {
     border: 1px solid shade (@banner_bg_color, 0.8);
     border-radius: 3px;
