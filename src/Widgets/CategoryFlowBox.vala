@@ -39,7 +39,7 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
         add (get_category (_("News & Feeds"), "internet-news-reader-symbolic", {"News", "Feed"}, "news"));
         add (get_category (_("Office"), "applications-office-symbolic", {"Office", "Publishing", "WordProcessor", "Presentation", "Spreadsheet"}, "office"));
         add (get_category (_("System"), "applications-system", {"System", "Monitor"}, "system"));
-        add (get_category (_("To-Do & Projects"), "office-calender", {"ProjectManagement", "Calendar"}, "todo"));
+        add (get_category (_("To-Do & Projects"), "office-calendar", {"ProjectManagement", "Calendar"}, "todo"));
         add (get_category (_("Video"), "applications-video-symbolic", {"Video", "TV", "Tuner"}, "video"));
         add (get_category (_("Writing & Language"), "preferences-desktop-locale", {"TextTools", "TextEditor", "Dictionary", "Languages", "Literature", "Translation", "OCR", "WordProcessor"}, "language"));
     }
