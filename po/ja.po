@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-09 18:51+0100\n"
-"PO-Revision-Date: 2018-01-15 00:05+0000\n"
+"PO-Revision-Date: 2018-01-19 00:02+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/ja/>\n"
@@ -63,19 +63,19 @@ msgstr "再試行"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
-msgstr "開始中"
+msgstr "開始しています"
 
 #: ../src/Core/ChangeInformation.vala:56
 msgid "Waiting"
-msgstr "待機中"
+msgstr "待機しています"
 
 #: ../src/Core/ChangeInformation.vala:58
 msgid "Running"
-msgstr "実行中"
+msgstr "実行しています"
 
 #: ../src/Core/ChangeInformation.vala:60
 msgid "Querying"
-msgstr "検索中"
+msgstr "検索しています"
 
 #: ../src/Core/ChangeInformation.vala:62
 msgid "Getting information"
@@ -91,7 +91,7 @@ msgstr "ダウンロードしています"
 
 #: ../src/Core/ChangeInformation.vala:68
 msgid "Installing"
-msgstr "インストール中"
+msgstr "インストールしています"
 
 #: ../src/Core/ChangeInformation.vala:70
 msgid "Refreshing software list"
@@ -187,7 +187,7 @@ msgstr "認証を待っています"
 
 #: ../src/Core/ChangeInformation.vala:116
 msgid "Updating running applications"
-msgstr "実行アプリケーションをアップデートしています"
+msgstr "実行中のアプリケーションをアップデートしています"
 
 #: ../src/Core/ChangeInformation.vala:118
 msgid "Checking applications in use"
