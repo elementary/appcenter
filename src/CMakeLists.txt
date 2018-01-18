@@ -46,7 +46,7 @@ PACKAGES
     appstream
     gtk+-3.0>=3.12
     gee-0.8
-    granite
+    granite>=0.5
     packagekit-glib2
     libsoup-2.4
     json-glib-1.0
