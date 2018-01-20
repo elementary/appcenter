@@ -249,12 +249,12 @@ public class AppCenter.App : Granite.Application {
                         break;
                     }
 
-                    string body = format_error_message (error.message);
-
-                    var close_button = new Gtk.Button.with_label (_("Close"));
-
-                    var dialog = new MessageDialog (_("There Was An Error Installing %s.").printf (package.get_name ()), body, "dialog-error");
-                    dialog.add_action_widget (close_button, 0);
+                    var dialog = new Granite.MessageDialog.with_image_from_icon_name (
+                        _("There Was An Error Installing %s.").printf (package.get_name ()),
+                        format_error_message (error.message),
+                        "dialog-error",
+                        Gtk.ButtonsType.CLOSE
+                    );
                     dialog.show_all ();
                     dialog.run ();
                     dialog.destroy ();
