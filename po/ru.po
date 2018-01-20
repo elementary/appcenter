@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-09 18:51+0100\n"
-"PO-Revision-Date: 2017-12-22 10:38+0000\n"
+"PO-Revision-Date: 2018-01-14 10:06+0000\n"
 "Last-Translator: Maxim Taranov <png2378@gmail.com>\n"
-"Language-Team: Russian <https://weblate.elementary.io/projects/appcenter/"
-"appcenter/ru/>\n"
+"Language-Team: Russian "
+"<https://weblate.elementary.io/projects/appcenter/appcenter/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
@@ -37,31 +37,32 @@ msgid "Close"
 msgstr "Закрыть"
 
 #: ../src/Application.vala:256
-#, fuzzy
 msgid "There Was An Error Installing %s."
-msgstr "Ошибка установки %"
+msgstr "Ошибка при установке %s."
 
 #: ../src/Application.vala:286
 msgid "Details"
-msgstr ""
+msgstr "Подробности"
 
 #: ../src/Application.vala:290
 msgid "Failed to Fetch Updates"
-msgstr ""
+msgstr "Не удалось получить обновления"
 
 #: ../src/Application.vala:291
 msgid ""
 "This may have been caused by external, manually added software repositories "
 "or a corrupted sources file."
 msgstr ""
+"Это может быть вызвано внешними (добавленными вручную) репозиториями или "
+"поврежденным файлом с источниками."
 
 #: ../src/Application.vala:297
 msgid "Ignore"
-msgstr ""
+msgstr "Игнорировать"
 
 #: ../src/Application.vala:298
 msgid "Try Again"
-msgstr ""
+msgstr "Повторить попытку"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -77,7 +78,7 @@ msgstr "Выполнение"
 
 #: ../src/Core/ChangeInformation.vala:60
 msgid "Querying"
-msgstr "Запрашивание"
+msgstr "Запрос"
 
 #: ../src/Core/ChangeInformation.vala:62
 msgid "Getting information"
@@ -213,11 +214,11 @@ msgstr "Обновления операционной системы"
 
 #: ../src/Core/Client.vala:108
 msgid "Updates to system components"
-msgstr "Обновления системных компонентов"
+msgstr "Обновления компонентов системы"
 
 #: ../src/Core/Client.vala:143
 msgid "%s (local)"
-msgstr ""
+msgstr "%s (local)"
 
 #: ../src/Core/Client.vala:452
 msgid "Update Available"
@@ -268,8 +269,8 @@ msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
-"Ошибка при обработке данных, попробуйте повторить попытку позже. Приносим "
-"извинения за неудобства."
+"Ошибка при обработке данных, пожалуйста, повторите попытку позже. Приносим "
+"извинения за причинённые неудобства."
 
 #: ../src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
@@ -277,13 +278,15 @@ msgstr "Проверьте информацию о платеже и попро�
 
 #: ../src/Dialogs/StripeDialog.vala:78
 msgid "Pay $%d for %s"
-msgstr ""
+msgstr "Перевести %d,00 USD для %s"
 
 #: ../src/Dialogs/StripeDialog.vala:82
 msgid ""
 "This is a one time payment. Your email address is only used to send you a "
 "receipt."
 msgstr ""
+"Это разовый платёж. Ваш электронный адрес будет использован только для "
+"отправки квитанции."
 
 #: ../src/Dialogs/StripeDialog.vala:91 ../src/Widgets/SharePopover.vala:35
 msgid "Email"
@@ -390,7 +393,6 @@ msgid "The transaction has already been processed."
 msgstr "Платеж уже был принят."
 
 #: ../src/Dialogs/StripeDialog.vala:542
-#, fuzzy
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "postal code."
@@ -406,12 +408,10 @@ msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "Некорректная сумма. Попробуйте снова, используя допустимую сумму."
 
 #: ../src/Dialogs/StripeDialog.vala:557
-#, fuzzy
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr "Некорректный CVC-код. Попробуйте снова, используя корректный код."
+msgstr "Некорректный PIN. Попробуйте снова, используя корректный код."
 
 #: ../src/Dialogs/StripeDialog.vala:559
-#, fuzzy
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
 msgstr "Слишком много попыток. Попробуйте снова, используя другую карту."
@@ -456,7 +456,6 @@ msgid "Network Is Not Available"
 msgstr "Подключение к сети недоступно"
 
 #: ../src/MainWindow.vala:177
-#, fuzzy
 msgid "Connect to the Internet to install or update apps."
 msgstr "Подключитесь к интернету, чтобы установить или обновить приложения."
 
@@ -486,7 +485,7 @@ msgstr "Помощь"
 
 #: ../src/Views/AppInfoView.vala:168
 msgid "What's New:"
-msgstr ""
+msgstr "Что нового:"
 
 #: ../src/Views/AppInfoView.vala:187
 msgid "Extensions:"
@@ -494,19 +493,19 @@ msgstr "Расширения:"
 
 #: ../src/Views/AppInfoView.vala:266
 msgid "Other Apps by %s"
-msgstr ""
+msgstr "Другие приложения от %s"
 
 #: ../src/Views/AppInfoView.vala:300
 msgid "Link copied to clipboard"
-msgstr ""
+msgstr "Ссылка скопирована в буфер обмена"
 
 #: ../src/Views/AppInfoView.vala:311
 msgid "Check out %s on AppCenter:"
-msgstr ""
+msgstr "%s в AppCenter:"
 
 #: ../src/Views/AppInfoView.vala:318
 msgid "Share"
-msgstr ""
+msgstr "Поделиться"
 
 #: ../src/Views/AppListUpdateView.vala:59
 msgid "A restart is required to complete the installation of updates"
@@ -521,9 +520,8 @@ msgid "Update All"
 msgstr "Обновить всё"
 
 #: ../src/Views/AppListView.vala:119
-#, fuzzy
 msgid "Non-Curated Apps"
-msgstr "Нет приложений"
+msgstr "Не поддерживаемое сообществом elementary"
 
 #: ../src/Views/Homepage.vala:65
 msgid "Recently Updated"
@@ -531,7 +529,7 @@ msgstr "Недавно обновлённые"
 
 #: ../src/Views/Homepage.vala:81
 msgid "Trending"
-msgstr ""
+msgstr "В тренде"
 
 #: ../src/Views/Homepage.vala:97
 msgid "Categories"
@@ -643,48 +641,47 @@ msgstr "%d USD"
 
 #: ../src/Widgets/ReleaseRow.vala:67
 msgid "<b>%s</b> – %s"
-msgstr ""
+msgstr "<b>%s</b> – %s"
 
 #: ../src/Widgets/ReleaseRow.vala:72
 msgid "<b>%s</b>"
-msgstr ""
+msgstr "<b>%s</b>"
 
 #: ../src/Widgets/ReleaseRow.vala:74
-#, fuzzy
 msgid "Unknown version"
-msgstr "Неизвестное состояние"
+msgstr "Неизвестная версия"
 
 #: ../src/Widgets/ReleaseRow.vala:90 ../src/Widgets/ReleaseRow.vala:93
 msgid "No description available"
-msgstr ""
+msgstr "Нет описания"
 
 #: ../src/Widgets/SharePopover.vala:39
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #: ../src/Widgets/SharePopover.vala:43
 msgid "Google+"
-msgstr ""
+msgstr "Google+"
 
 #: ../src/Widgets/SharePopover.vala:47
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 #: ../src/Widgets/SharePopover.vala:51
 msgid "reddit"
-msgstr ""
+msgstr "Reddit"
 
 #: ../src/Widgets/SharePopover.vala:55
 msgid "Tumblr"
-msgstr ""
+msgstr "Tumblr"
 
 #: ../src/Widgets/SharePopover.vala:59
 msgid "Telegram"
-msgstr ""
+msgstr "Telegram"
 
 #: ../src/Widgets/SharePopover.vala:63
 msgid "Copy link"
-msgstr ""
+msgstr "Скопировать ссылку"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:68
 msgid "%u Update Available"
