@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-09 18:51+0100\n"
-"PO-Revision-Date: 2018-01-20 01:43+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2018-01-20 01:56+0000\n"
+"Last-Translator: haggen svastian <h2gn@openmailbox.org>\n"
 "Language-Team: Spanish "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/es/>\n"
 "Language: es\n"
@@ -409,17 +409,15 @@ msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "La cantidad es incorrecta, intenta usando una cantidad valida."
 
 #: ../src/Dialogs/StripeDialog.vala:557
-#, fuzzy
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr ""
 "El número CVC es incorrecto. Vuelva a intentarlo utilizando el CVC correcto."
 
 #: ../src/Dialogs/StripeDialog.vala:559
-#, fuzzy
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
 msgstr ""
-"Demasiados intentos invalidos, porfavor intente con una carta diferente."
+"Demasiados intentos inválidos, por favor intente con una carta diferente."
 
 #: ../src/Dialogs/StripeDialog.vala:579
 msgid ""
@@ -459,9 +457,8 @@ msgid "Network Is Not Available"
 msgstr "Red no disponible"
 
 #: ../src/MainWindow.vala:177
-#, fuzzy
 msgid "Connect to the Internet to install or update apps."
-msgstr "Conectate a internet para instalar / actualizar las aplicaciones."
+msgstr "Conéctese a internet para instalar / actualizar las aplicaciones."
 
 #: ../src/MainWindow.vala:180
 msgid "Network Settings…"
@@ -524,9 +521,8 @@ msgid "Update All"
 msgstr "Actualizar todo"
 
 #: ../src/Views/AppListView.vala:119
-#, fuzzy
 msgid "Non-Curated Apps"
-msgstr "No hay aplicaciones"
+msgstr "Aplicaciones no autorizadas"
 
 #: ../src/Views/Homepage.vala:65
 msgid "Recently Updated"
@@ -652,37 +648,42 @@ msgid "<b>%s</b>"
 msgstr ""
 
 #: ../src/Widgets/ReleaseRow.vala:74
-#, fuzzy
 msgid "Unknown version"
-msgstr "Estado desconocido"
+msgstr "Versión desconocida"
 
 #: ../src/Widgets/ReleaseRow.vala:90 ../src/Widgets/ReleaseRow.vala:93
 msgid "No description available"
 msgstr "Ninguna descripción disponible"
 
 #: ../src/Widgets/SharePopover.vala:39
+#, fuzzy
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #: ../src/Widgets/SharePopover.vala:43
+#, fuzzy
 msgid "Google+"
-msgstr ""
+msgstr "Google+"
 
 #: ../src/Widgets/SharePopover.vala:47
+#, fuzzy
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 #: ../src/Widgets/SharePopover.vala:51
+#, fuzzy
 msgid "reddit"
-msgstr ""
+msgstr "reddit"
 
 #: ../src/Widgets/SharePopover.vala:55
+#, fuzzy
 msgid "Tumblr"
-msgstr ""
+msgstr "Tumblr"
 
 #: ../src/Widgets/SharePopover.vala:59
+#, fuzzy
 msgid "Telegram"
-msgstr ""
+msgstr "Telegram"
 
 #: ../src/Widgets/SharePopover.vala:63
 msgid "Copy link"
