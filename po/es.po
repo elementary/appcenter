@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-09 18:51+0100\n"
-"PO-Revision-Date: 2018-01-12 00:12+0000\n"
-"Last-Translator: Alain M. <alain23@protonmail.com>\n"
+"PO-Revision-Date: 2018-01-20 01:43+0000\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Spanish "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/es/>\n"
 "Language: es\n"
@@ -36,9 +36,8 @@ msgid "Close"
 msgstr "Cerrar"
 
 #: ../src/Application.vala:256
-#, fuzzy
 msgid "There Was An Error Installing %s."
-msgstr "Ocurrió un error instalando %s"
+msgstr "Ocurrió un error instalando %s."
 
 #: ../src/Application.vala:286
 msgid "Details"
@@ -218,7 +217,7 @@ msgstr "Actualizaciones de los componentes del sistema"
 
 #: ../src/Core/Client.vala:143
 msgid "%s (local)"
-msgstr ""
+msgstr "%s (local)"
 
 #: ../src/Core/Client.vala:452
 msgid "Update Available"
@@ -394,11 +393,12 @@ msgid "The transaction has already been processed."
 msgstr "La transacción ya ha sido procesada."
 
 #: ../src/Dialogs/StripeDialog.vala:542
-#, fuzzy
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "postal code."
-msgstr "El codigo postal es incorrecto. Porfavor ingrese uno correcto."
+msgstr ""
+"El código postal es incorrecto. Por favor, introduzca el código postal "
+"correcto."
 
 #: ../src/Dialogs/StripeDialog.vala:544
 msgid "You don't have enough funds. Please use an alternative payment method."
