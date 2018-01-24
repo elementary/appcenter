@@ -14,7 +14,7 @@ You'll need the following dependencies:
 * intltool
 * libappstream-dev (>= 0.10)
 * libgee-0.8-dev
-* libgranite-dev
+* libgranite-dev (>=0.5)
 * libgtk-3-dev
 * libjson-glib-dev
 * libpackagekit-glib2-dev
