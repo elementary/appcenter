@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-09 18:51+0100\n"
-"PO-Revision-Date: 2018-01-25 17:00+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2018-01-26 00:03+0000\n"
+"Last-Translator: Alain M. <alain23@protonmail.com>\n"
 "Language-Team: Spanish "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/es/>\n"
 "Language: es\n"
@@ -510,8 +510,7 @@ msgstr "Compartir"
 
 #: ../src/Views/AppListUpdateView.vala:59
 msgid "A restart is required to complete the installation of updates"
-msgstr ""
-"Un reinicio es requerido para completar la instalación de actualizaciones."
+msgstr "Se requiere reiniciar para completar con la actualización."
 
 #: ../src/Views/AppListUpdateView.vala:67
 msgid "Restart Now"
@@ -633,7 +632,7 @@ msgstr "Acceso universal"
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: ../src/Widgets/HumbleButton.vala:141
 msgid "$%d.00"
-msgstr "Este monto será en Dolares. Algunos idiomas podrían necesitar USD"
+msgstr "$%d.00"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: ../src/Widgets/HumbleButton.vala:144
