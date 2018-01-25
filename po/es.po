@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-09 18:51+0100\n"
-"PO-Revision-Date: 2018-01-20 01:57+0000\n"
+"PO-Revision-Date: 2018-01-25 15:44+0000\n"
 "Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Spanish "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/es/>\n"
@@ -241,7 +241,7 @@ msgstr "Reinicio requerido"
 
 #: ../src/Core/UpdateManager.vala:82
 msgid "Please restart your system to finalize updates"
-msgstr "Por favor, reinicie el sistema para finalizar la actualización"
+msgstr "Reinicia el sistema para finalizar las actualizaciones, por favor."
 
 #: ../src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -266,8 +266,8 @@ msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
-"Ocurrido un error mientras se procesaba el medio de pago. Por favor, "
-"inténtelo más tarde. Sentimos las molestias."
+"Ha ocurrido un error al procesar la tarjeta. Intente de nuevo. Nos "
+"disculpamos por cualquier inconveniente causado."
 
 #: ../src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
@@ -294,8 +294,8 @@ msgid ""
 "Your email address is used to send a receipt. It is never stored and you "
 "will not be subscribed to a mailing list."
 msgstr ""
-"Su dirección de correo electrónico se utiliza para enviar un recibo. Nunca "
-"se almacena y no se suscribirá a una lista de correo."
+"Su dirección de correo electrónico se utiliza para enviarle un recibo. Nunca "
+"se almacena y usted no será suscrito a una lista de correo."
 
 #: ../src/Dialogs/StripeDialog.vala:104
 msgid "Card Number"
@@ -304,7 +304,7 @@ msgstr "Número de tarjeta"
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: ../src/Dialogs/StripeDialog.vala:116
 msgid "MM / YY"
-msgstr "MM / AA"
+msgstr "MM / YY"
 
 #: ../src/Dialogs/StripeDialog.vala:136
 msgid "CVC"
@@ -332,7 +332,7 @@ msgstr "Pagar luego"
 
 #: ../src/Dialogs/StripeDialog.vala:293
 msgid "Retry"
-msgstr "Reintentar"
+msgstr "Intentar de nuevo"
 
 #: ../src/Dialogs/StripeDialog.vala:489 ../src/Dialogs/StripeDialog.vala:554
 msgid ""
@@ -364,7 +364,7 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:498 ../src/Dialogs/StripeDialog.vala:540
 msgid "The card has expired. Please try again with a different card."
-msgstr "La tarjeta ha caducado. Inténtelo de nuevo con una tarjeta diferente."
+msgstr "La tarjeta ha expirado. Intente de nuevo con una tarjeta diferente."
 
 #: ../src/Dialogs/StripeDialog.vala:518
 msgid "There are too many payment requests at the moment, please retry later."
@@ -377,7 +377,7 @@ msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
 msgstr ""
-"Esta tarjeta no admite este tipo de transacción. Inténtelo de nuevo con una "
+"Esta tarjeta no admite este tipo de transacciones. Intente de nuevo con una "
 "tarjeta diferente."
 
 #: ../src/Dialogs/StripeDialog.vala:536
@@ -385,8 +385,8 @@ msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
 msgstr ""
-"El tipo de cambio no es compatible con esta tarjeta. Inténtelo de nuevo con "
-"una tarjeta diferente."
+"La moneda no es compatible con esta tarjeta. Intente de nuevo con una "
+"tarjeta diferente."
 
 #: ../src/Dialogs/StripeDialog.vala:538
 msgid "The transaction has already been processed."
@@ -402,11 +402,11 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:544
 msgid "You don't have enough funds. Please use an alternative payment method."
-msgstr "No tienes suficientes fondos. Por favor usa otra forma de pago."
+msgstr "No tiene suficientes fondos. Por favor use otra forma de pago."
 
 #: ../src/Dialogs/StripeDialog.vala:546
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr "La cantidad es incorrecta, intenta usando una cantidad valida."
+msgstr "La cantidad es incorrecta, intenta usando una cantidad válida."
 
 #: ../src/Dialogs/StripeDialog.vala:557
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
@@ -510,7 +510,8 @@ msgstr "Compartir"
 
 #: ../src/Views/AppListUpdateView.vala:59
 msgid "A restart is required to complete the installation of updates"
-msgstr "Se requiere reiniciar para completar con las actualizaciones"
+msgstr ""
+"Se requiere un reinicio para completar la instalación de actualizaciones"
 
 #: ../src/Views/AppListUpdateView.vala:67
 msgid "Restart Now"
@@ -632,7 +633,7 @@ msgstr "Acceso universal"
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: ../src/Widgets/HumbleButton.vala:141
 msgid "$%d.00"
-msgstr ""
+msgstr "Este monto será en Dolares. Algunos idiomas podrían necesitar USD"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: ../src/Widgets/HumbleButton.vala:144
