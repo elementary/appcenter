@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-09 18:51+0100\n"
-"PO-Revision-Date: 2018-01-25 15:44+0000\n"
+"PO-Revision-Date: 2018-01-25 17:00+0000\n"
 "Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Spanish "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/es/>\n"
@@ -360,7 +360,7 @@ msgstr ""
 #: ../src/Dialogs/StripeDialog.vala:496 ../src/Dialogs/StripeDialog.vala:549
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr ""
-"El número CVC es incorrecto. Vuelva a intentarlo utilizando el CVC correcto."
+"El número CVC es incorrecto. Intente de nuevo utilizando el CVC correcto."
 
 #: ../src/Dialogs/StripeDialog.vala:498 ../src/Dialogs/StripeDialog.vala:540
 msgid "The card has expired. Please try again with a different card."
@@ -406,7 +406,7 @@ msgstr "No tiene suficientes fondos. Por favor use otra forma de pago."
 
 #: ../src/Dialogs/StripeDialog.vala:546
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr "La cantidad es incorrecta, intenta usando una cantidad válida."
+msgstr "La cantidad es incorrecta, intente usando una cantidad valida."
 
 #: ../src/Dialogs/StripeDialog.vala:557
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
@@ -511,7 +511,7 @@ msgstr "Compartir"
 #: ../src/Views/AppListUpdateView.vala:59
 msgid "A restart is required to complete the installation of updates"
 msgstr ""
-"Se requiere un reinicio para completar la instalación de actualizaciones"
+"Un reinicio es requerido para completar la instalación de actualizaciones."
 
 #: ../src/Views/AppListUpdateView.vala:67
 msgid "Restart Now"
