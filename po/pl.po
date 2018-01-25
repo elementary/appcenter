@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-09 18:51+0100\n"
-"PO-Revision-Date: 2018-01-16 00:09+0000\n"
+"PO-Revision-Date: 2018-01-21 17:21+0000\n"
 "Last-Translator: Piotr Strebski <strebski@o2.pl>\n"
 "Language-Team: Polish "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/pl/>\n"
@@ -528,9 +528,8 @@ msgid "Update All"
 msgstr "Aktualizuj wszystko"
 
 #: ../src/Views/AppListView.vala:119
-#, fuzzy
 msgid "Non-Curated Apps"
-msgstr "Brak programów"
+msgstr "Programy nie obsługiwane przez społeczność"
 
 #: ../src/Views/Homepage.vala:65
 msgid "Recently Updated"
