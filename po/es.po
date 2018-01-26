@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-09 18:51+0100\n"
-"PO-Revision-Date: 2018-01-26 15:05+0000\n"
-"Last-Translator: Daniel Foré <daniel@elementary.io>\n"
+"PO-Revision-Date: 2018-01-27 00:05+0000\n"
+"Last-Translator: Alain M. <alain23@protonmail.com>\n"
 "Language-Team: Spanish "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/es/>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 
 #: ../src/Application.vala:39
 msgid "AppCenter"
-msgstr "AppCenter"
+msgstr ""
 
 #: ../src/Application.vala:118
 msgid "Specified link '%s' could not be found, searching instead"
@@ -197,7 +197,7 @@ msgstr "Comprobando aplicaciones en uso"
 
 #: ../src/Core/ChangeInformation.vala:120
 msgid "Checking libraries in use"
-msgstr "Comprobando librerias en uso"
+msgstr "Comprobando librerías en uso"
 
 #: ../src/Core/ChangeInformation.vala:122
 msgid "Copying files"
@@ -241,7 +241,8 @@ msgstr "Reinicio requerido"
 
 #: ../src/Core/UpdateManager.vala:82
 msgid "Please restart your system to finalize updates"
-msgstr "Reinicia el sistema para finalizar las actualizaciones, por favor"
+msgstr ""
+"Por favor, reinicie el sistema para completar el proceso de actualización"
 
 #: ../src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
