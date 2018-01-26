@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-09 18:51+0100\n"
 "PO-Revision-Date: 2018-01-26 03:49+0000\n"
-"Last-Translator: Daniel Foré <daniel@elementary.io>\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Spanish "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/es/>\n"
 "Language: es\n"
@@ -308,7 +308,7 @@ msgstr "MM / AA"
 
 #: ../src/Dialogs/StripeDialog.vala:136
 msgid "CVC"
-msgstr "CVC"
+msgstr "CVT"
 
 #: ../src/Dialogs/StripeDialog.vala:173
 msgid "Privacy Policy"
