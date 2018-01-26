@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-09 18:51+0100\n"
-"PO-Revision-Date: 2018-01-26 03:49+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2018-01-26 15:05+0000\n"
+"Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Spanish "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/es/>\n"
 "Language: es\n"
@@ -241,7 +241,7 @@ msgstr "Reinicio requerido"
 
 #: ../src/Core/UpdateManager.vala:82
 msgid "Please restart your system to finalize updates"
-msgstr "Reinicia el sistema para finalizar las actualizaciones, por favor."
+msgstr "Reinicia el sistema para finalizar las actualizaciones, por favor"
 
 #: ../src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -510,7 +510,7 @@ msgstr "Compartir"
 
 #: ../src/Views/AppListUpdateView.vala:59
 msgid "A restart is required to complete the installation of updates"
-msgstr "Se requiere reiniciar para completar con la actualización."
+msgstr "Se requiere reiniciar para completar con la actualización"
 
 #: ../src/Views/AppListUpdateView.vala:67
 msgid "Restart Now"
