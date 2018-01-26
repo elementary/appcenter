@@ -1,0 +1,26 @@
+#!/bin/sh
+
+PREREQ=""
+DESCRIPTION="Disabling pop-shop..."
+
+prereqs()
+{
+       echo "$PREREQ"
+}
+
+case $1 in
+# get pre-requisites
+prereqs)
+       prereqs
+       exit 0
+       ;;
+esac
+
+. /scripts/casper-functions
+
+log_begin_msg "$DESCRIPTION"
+
+rm -f /root/etc/xdg/autostart/io.elementary.appcenter-daemon.desktop
+rm -f /root/usr/share/dbus-1/services/io.elementary.appcenter.service
+
+log_end_msg

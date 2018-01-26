@@ -41,3 +41,10 @@ Description: Fast application store (debugging symbols)
  Helps independent developers.
  .
  This package contains debugging symbols for pop-shop.
+
+Package: pop-shop-casper
+Architecture: any
+Priority: extra
+Depends: casper
+Description: Disable pop-shop in casper
+ Disable pop-shop when running in a live system with casper

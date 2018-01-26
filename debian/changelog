@@ -1,3 +1,9 @@
+pop-shop (0.2.8-1) bionic; urgency=medium
+
+  * Add pop-shop-casper package
+
+ -- Jeremy Soller <jeremy@system76.com>  Fri, 26 Jan 2018 12:43:40 -0700
+
 pop-shop (0.2.8) bionic; urgency=medium
 
   * Pull in version 0.2.8 from upstream
