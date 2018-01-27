@@ -78,6 +78,7 @@ public class AppCenter.Widgets.HumblePopover : Gtk.Popover {
             }
         });
 
+        selection_list.show_all ();
         add (selection_list);
     }
 
@@ -94,4 +95,3 @@ public class AppCenter.Widgets.HumblePopover : Gtk.Popover {
         return button;
     }
 }
-

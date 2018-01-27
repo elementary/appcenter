@@ -518,10 +518,11 @@ namespace AppCenter.Views {
             }
         }
 
-        class FlatButton : Gtk.Button {
-            public FlatButton (string label, string icon_name) {
+        class UrlButton : Gtk.Button {
+            public UrlButton (string label, string uri, string icon_name) {
                 get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
                 get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+                tooltip_text = uri;
 
                 var icon = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.SMALL_TOOLBAR);
                 icon.valign = Gtk.Align.CENTER;
@@ -534,14 +535,6 @@ namespace AppCenter.Views {
                 grid.add (title);
 
                 add (grid);
-            }
-        }
-
-        class UrlButton : FlatButton {
-            public UrlButton (string label, string uri, string icon_name) {
-                base (label, icon_name);
-
-                tooltip_text = uri;
 
                 clicked.connect (() => {
                     try {
@@ -553,11 +546,22 @@ namespace AppCenter.Views {
             }
         }
 
-        class FundButton : FlatButton {
+        class FundButton : Gtk.MenuButton {
             private Widgets.HumblePopover selection;
 
             public FundButton (AppCenterCore.Package package) {
-                base (_("Fund"), "credit-card-symbolic");
+                get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+                get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+
+                var icon = new Gtk.Image.from_icon_name ("credit-card-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+                icon.valign = Gtk.Align.CENTER;
+
+                var title = new Gtk.Label (_("Fund"));
+
+                var grid = new Gtk.Grid ();
+                grid.column_spacing = 6;
+                grid.add (icon);
+                grid.add (title);
 
                 selection = new Widgets.HumblePopover (this, true);
                 selection.payment_requested.connect ((amount) => {
@@ -574,11 +578,12 @@ namespace AppCenter.Views {
                     stripe.show ();
                 });
 
-                tooltip_text = _("Fund the development of this project");
+                tooltip_text = _("Fund the development of this app");
 
-                clicked.connect (() => {
-                    selection.show_all ();
-                });
+                direction = Gtk.ArrowType.UP;
+                popover = selection;
+
+                add (grid);
             }
         }
     }
