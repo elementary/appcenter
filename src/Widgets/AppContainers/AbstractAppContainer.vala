@@ -88,15 +88,13 @@ namespace AppCenter {
 
         public bool payments_enabled {
             get {
-                if (this.package == null || this.package.component == null || updates_view) {
+                if (package == null || package.component == null || !package.is_native || package.is_os_updates) {
                     return false;
                 }
 
-                return this.package.get_payments_key () != null;
+                return package.get_payments_key () != null;
             }
         }
-
-        public bool updates_view = false;
 
         construct {
             image = new Gtk.Image ();
@@ -213,7 +211,7 @@ namespace AppCenter {
                     }
 
                     set_widget_visibility (uninstall_button, false);
-                    set_widget_visibility (action_button, true);
+                    set_widget_visibility (action_button, !package.is_os_updates);
                     set_widget_visibility (open_button, false);
                     set_widget_visibility (progress_grid, false);
 
@@ -226,6 +224,10 @@ namespace AppCenter {
 
                     break;
                 case AppCenterCore.Package.State.UPDATE_AVAILABLE:
+                    if (!package.should_nag_update) {
+                       action_button.amount = 0;
+                    }
+
                     action_button.label = _("Update");
 
                     set_widget_visibility (uninstall_button, show_uninstall && !is_os_updates);
