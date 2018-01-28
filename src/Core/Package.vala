@@ -91,11 +91,12 @@ public class AppCenterCore.Package : Object {
                 return false;
             }
 
-            if (get_newest_release ().get_urgency () == AppStream.UrgencyKind.CRITICAL) {
+            if (component.get_id () in AppCenter.Settings.get_default ().paid_apps) {
                 return false;
             }
 
-            if (component.get_id () in AppCenter.Settings.get_default ().paid_apps) {
+            var newest_release = get_newest_release ();
+            if (newest_release != null && newest_release.get_urgency () == AppStream.UrgencyKind.CRITICAL) {
                 return false;
             }
 
