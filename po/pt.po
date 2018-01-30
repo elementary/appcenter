@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-09 18:51+0100\n"
-"PO-Revision-Date: 2017-12-24 00:01+0000\n"
-"Last-Translator: Nuno Tomás <nvctsyler@gmail.com>\n"
-"Language-Team: Portuguese <https://weblate.elementary.io/projects/appcenter/"
-"appcenter/pt/>\n"
+"PO-Revision-Date: 2018-01-30 14:33+0000\n"
+"Last-Translator: Guilherme <gpb0262@gmail.com>\n"
+"Language-Team: Portuguese "
+"<https://weblate.elementary.io/projects/appcenter/appcenter/pt/>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -43,25 +43,27 @@ msgstr "Ocorreu um erro ao instalar %s"
 
 #: ../src/Application.vala:286
 msgid "Details"
-msgstr ""
+msgstr "Detalhes"
 
 #: ../src/Application.vala:290
 msgid "Failed to Fetch Updates"
-msgstr ""
+msgstr "A busca por atualizações falhou"
 
 #: ../src/Application.vala:291
 msgid ""
 "This may have been caused by external, manually added software repositories "
 "or a corrupted sources file."
 msgstr ""
+"Isto pode ter sido causado por programas externos instalados manualmente ou "
+"por um arquivo corrompido."
 
 #: ../src/Application.vala:297
 msgid "Ignore"
-msgstr ""
+msgstr "Ignorar"
 
 #: ../src/Application.vala:298
 msgid "Try Again"
-msgstr ""
+msgstr "Tentar novamente"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -217,7 +219,7 @@ msgstr "Atualizações aos componentes do sistema"
 
 #: ../src/Core/Client.vala:143
 msgid "%s (local)"
-msgstr ""
+msgstr "%s (local)"
 
 #: ../src/Core/Client.vala:452
 msgid "Update Available"
@@ -283,6 +285,8 @@ msgid ""
 "This is a one time payment. Your email address is only used to send you a "
 "receipt."
 msgstr ""
+"Este é um pagamento único. Seu e-mail será usado apenas para enviar o "
+"comprovante."
 
 #: ../src/Dialogs/StripeDialog.vala:91 ../src/Widgets/SharePopover.vala:35
 msgid "Email"
@@ -303,7 +307,7 @@ msgstr "Número do Cartão"
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: ../src/Dialogs/StripeDialog.vala:116
 msgid "MM / YY"
-msgstr "MM / AA"
+msgstr "Mês / Ano"
 
 #: ../src/Dialogs/StripeDialog.vala:136
 msgid "CVC"
@@ -393,7 +397,6 @@ msgid "The transaction has already been processed."
 msgstr "A transação já foi processada."
 
 #: ../src/Dialogs/StripeDialog.vala:542
-#, fuzzy
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "postal code."
@@ -412,18 +415,16 @@ msgstr ""
 "O montante está incorreto. Por favor tente de novo com um montante válido."
 
 #: ../src/Dialogs/StripeDialog.vala:557
-#, fuzzy
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr ""
 "O número CVC está incorreto. Por favor tente novamente com o CVC correto."
 
 #: ../src/Dialogs/StripeDialog.vala:559
-#, fuzzy
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
 msgstr ""
-"Foram usadas demasiadas tentativas para inserir o pin. Por favor tente "
-"novamente com um cartão diferente."
+"Foram usadas muitas tentativas para inserir o pin. Por favor tente novamente "
+"com um cartão diferente."
 
 #: ../src/Dialogs/StripeDialog.vala:579
 msgid ""
@@ -464,9 +465,8 @@ msgid "Network Is Not Available"
 msgstr "Sem Ligação à Rede"
 
 #: ../src/MainWindow.vala:177
-#, fuzzy
 msgid "Connect to the Internet to install or update apps."
-msgstr "Ligue-se à rede para instalar ou atualizar as aplicações."
+msgstr "Conecte-se à internet para instalar ou atualizar apps."
 
 #: ../src/MainWindow.vala:180
 msgid "Network Settings…"
@@ -494,7 +494,7 @@ msgstr "Ajuda"
 
 #: ../src/Views/AppInfoView.vala:168
 msgid "What's New:"
-msgstr ""
+msgstr "Novidades:"
 
 #: ../src/Views/AppInfoView.vala:187
 msgid "Extensions:"
@@ -502,19 +502,19 @@ msgstr "Extensões:"
 
 #: ../src/Views/AppInfoView.vala:266
 msgid "Other Apps by %s"
-msgstr ""
+msgstr "Outros aplicativos por %s"
 
 #: ../src/Views/AppInfoView.vala:300
 msgid "Link copied to clipboard"
-msgstr ""
+msgstr "Link copiado para a área de transferência"
 
 #: ../src/Views/AppInfoView.vala:311
 msgid "Check out %s on AppCenter:"
-msgstr ""
+msgstr "Acesse agora no %s AppCenter:"
 
 #: ../src/Views/AppInfoView.vala:318
 msgid "Share"
-msgstr ""
+msgstr "Compartilhar"
 
 #: ../src/Views/AppListUpdateView.vala:59
 msgid "A restart is required to complete the installation of updates"
@@ -530,7 +530,7 @@ msgstr "Actualizar Tudo"
 
 #: ../src/Views/AppListView.vala:119
 msgid "Non-Curated Apps"
-msgstr ""
+msgstr "Aplicativos não categorizados"
 
 #: ../src/Views/Homepage.vala:65
 msgid "Recently Updated"
@@ -538,7 +538,7 @@ msgstr "Atualizado Recentemente"
 
 #: ../src/Views/Homepage.vala:81
 msgid "Trending"
-msgstr ""
+msgstr "Fazendo sucesso"
 
 #: ../src/Views/Homepage.vala:97
 msgid "Categories"
@@ -654,17 +654,16 @@ msgid "<b>%s</b>"
 msgstr ""
 
 #: ../src/Widgets/ReleaseRow.vala:74
-#, fuzzy
 msgid "Unknown version"
-msgstr "Estado desconhecido"
+msgstr "Versão desconhecida"
 
 #: ../src/Widgets/ReleaseRow.vala:90 ../src/Widgets/ReleaseRow.vala:93
 msgid "No description available"
-msgstr ""
+msgstr "Nenhuma descrição disponível"
 
 #: ../src/Widgets/SharePopover.vala:39
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #: ../src/Widgets/SharePopover.vala:43
 msgid "Google+"
@@ -688,7 +687,7 @@ msgstr ""
 
 #: ../src/Widgets/SharePopover.vala:63
 msgid "Copy link"
-msgstr ""
+msgstr "Copiar link"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:68
 msgid "%u Update Available"
@@ -702,7 +701,7 @@ msgstr "Tamanho: %s"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:105
 msgid "Searching for updates…"
-msgstr "A procurar atualizações…"
+msgstr "Procurando atualizações…"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:112
 msgid "Up to Date"
@@ -710,7 +709,7 @@ msgstr "Atualizado"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:120
 msgid "Drivers"
-msgstr "Controladores"
+msgstr "Drivers"
 
 #~ msgid "App Center"
 #~ msgstr "Centro de Aplicações"
