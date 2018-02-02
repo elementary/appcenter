@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-09 18:51+0100\n"
-"PO-Revision-Date: 2018-01-31 15:26+0000\n"
-"Last-Translator: haggen svastian <h2gn@openmailbox.org>\n"
+"PO-Revision-Date: 2018-02-03 00:05+0000\n"
+"Last-Translator: Alain M. <alain23@protonmail.com>\n"
 "Language-Team: Spanish "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/es/>\n"
 "Language: es\n"
@@ -309,7 +309,7 @@ msgstr "MM / AA"
 
 #: ../src/Dialogs/StripeDialog.vala:136
 msgid "CVC"
-msgstr "CVT"
+msgstr "CVC"
 
 #: ../src/Dialogs/StripeDialog.vala:173
 msgid "Privacy Policy"
@@ -418,7 +418,7 @@ msgstr ""
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
 msgstr ""
-"Demasiados intentos inválidos, por favor intente con una carta diferente."
+"Demasiados intentos inválidos, por favor intente con una tarjeta diferente."
 
 #: ../src/Dialogs/StripeDialog.vala:579
 msgid ""
@@ -459,7 +459,7 @@ msgstr "Red no disponible"
 
 #: ../src/MainWindow.vala:177
 msgid "Connect to the Internet to install or update apps."
-msgstr "Conéctese a internet para instalar / actualizar las aplicaciones."
+msgstr "Conéctese a internet para instalar o actualizar aplicaciones."
 
 #: ../src/MainWindow.vala:180
 msgid "Network Settings…"
@@ -495,7 +495,7 @@ msgstr "Complementos:"
 
 #: ../src/Views/AppInfoView.vala:266
 msgid "Other Apps by %s"
-msgstr "Otras aplicaciones por %s"
+msgstr "Más de %s"
 
 #: ../src/Views/AppInfoView.vala:300
 msgid "Link copied to clipboard"
@@ -523,7 +523,7 @@ msgstr "Actualizar todo"
 
 #: ../src/Views/AppListView.vala:119
 msgid "Non-Curated Apps"
-msgstr "Aplicaciones no autorizadas"
+msgstr "Aplicaciones no verificadas"
 
 #: ../src/Views/Homepage.vala:65
 msgid "Recently Updated"
@@ -657,27 +657,22 @@ msgid "No description available"
 msgstr "Ninguna descripción disponible"
 
 #: ../src/Widgets/SharePopover.vala:39
-#, fuzzy
 msgid "Facebook"
 msgstr "Facebook"
 
 #: ../src/Widgets/SharePopover.vala:43
-#, fuzzy
 msgid "Google+"
 msgstr "Google+"
 
 #: ../src/Widgets/SharePopover.vala:47
-#, fuzzy
 msgid "Twitter"
 msgstr "Twitter"
 
 #: ../src/Widgets/SharePopover.vala:51
-#, fuzzy
 msgid "reddit"
 msgstr "reddit"
 
 #: ../src/Widgets/SharePopover.vala:55
-#, fuzzy
 msgid "Tumblr"
 msgstr "Tumblr"
 
