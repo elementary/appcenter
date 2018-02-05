@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-09 18:51+0100\n"
-"PO-Revision-Date: 2017-05-04 19:59+0000\n"
-"Last-Translator: Rokar <rokartv10@gmail.com>\n"
-"Language-Team: ku (generated) <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/ku/>\n"
+"PO-Revision-Date: 2018-02-05 00:10+0000\n"
+"Last-Translator: Rokar <mail@rokar.de>\n"
+"Language-Team: Kurdish "
+"<https://weblate.elementary.io/projects/appcenter/appcenter/ku/>\n"
 "Language: ku\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #: ../src/Application.vala:39
@@ -221,7 +221,7 @@ msgstr ""
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Rojanekirin Amade ye"
-msgstr[1] "Rojanekirin Amade ye"
+msgstr[1] "Rojanekirine Amade ye"
 
 #: ../src/Core/Client.vala:453
 msgid "%u update is available for your system"
@@ -517,7 +517,7 @@ msgstr "Li %s Bigere"
 #: ../src/Views/SearchView.vala:39
 msgctxt "view"
 msgid "Search"
-msgstr "Lê bigere :"
+msgstr "Lê bigere"
 
 #: ../src/Widgets/AbstractAppList.vala:36
 msgid "No Results"
@@ -619,7 +619,6 @@ msgid "<b>%s</b>"
 msgstr ""
 
 #: ../src/Widgets/ReleaseRow.vala:74
-#, fuzzy
 msgid "Unknown version"
 msgstr "Gotin nenas"
 
@@ -637,19 +636,19 @@ msgstr ""
 
 #: ../src/Widgets/SharePopover.vala:47
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 #: ../src/Widgets/SharePopover.vala:51
 msgid "reddit"
-msgstr ""
+msgstr "Reddit"
 
 #: ../src/Widgets/SharePopover.vala:55
 msgid "Tumblr"
-msgstr ""
+msgstr "tumblr"
 
 #: ../src/Widgets/SharePopover.vala:59
 msgid "Telegram"
-msgstr ""
+msgstr "telegram"
 
 #: ../src/Widgets/SharePopover.vala:63
 msgid "Copy link"
@@ -658,7 +657,7 @@ msgstr ""
 #: ../src/Widgets/UpdateHeaderRow.vala:68
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
-msgstr[0] "%u Berdest rojane gihîştî"
+msgstr[0] "%u Berdest rojanekirin gihîştî"
 msgstr[1] "%u Berdest rojane gihîştî"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:69
