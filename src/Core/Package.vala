@@ -95,6 +95,11 @@ public class AppCenterCore.Package : Object {
                 return false;
             }
 
+            var newest_release = get_newest_release ();
+            if (newest_release != null && newest_release.get_urgency () == AppStream.UrgencyKind.CRITICAL) {
+                return false;
+            }
+
             return true;
         }
     }
