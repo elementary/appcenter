@@ -57,13 +57,12 @@ public class AppCenterCore.ComponentValidator : Object {
 
     private void parse_and_populate (string contents) {
         foreach (string line in contents.split ("\n")) {
-            if (line.has_prefix ("#")) {
-                continue;
-            }
-
-            string token = line.strip ();
-            if (token != "") {
-                blacklist.add (token);
+            string[] tokens = line.split ("#");
+            if (tokens.length > 0) {
+                string id = tokens[0].strip ();
+                if (id != "") {
+                    blacklist.add (id);
+                }
             }
         }
     }
