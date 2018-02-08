@@ -249,12 +249,12 @@ public class AppCenter.App : Granite.Application {
                         break;
                     }
 
-                    string body = format_error_message (error.message);
-
-                    var close_button = new Gtk.Button.with_label (_("Close"));
-
-                    var dialog = new MessageDialog (_("There Was An Error Installing %s.").printf (package.get_name ()), body, "dialog-error");
-                    dialog.add_action_widget (close_button, 0);
+                    var dialog = new Granite.MessageDialog.with_image_from_icon_name (
+                        _("There Was An Error Installing %s.").printf (package.get_name ()),
+                        format_error_message (error.message),
+                        "dialog-error",
+                        Gtk.ButtonsType.CLOSE
+                    );
                     dialog.show_all ();
                     dialog.run ();
                     dialog.destroy ();
@@ -274,7 +274,6 @@ public class AppCenter.App : Granite.Application {
         string message = format_error_message (error.message);
 
         var details_label = new Gtk.Label (message);
-        details_label.margin_top = 12;
         details_label.max_width_chars = 40;
         details_label.selectable = true;
         details_label.wrap = true;
@@ -283,8 +282,13 @@ public class AppCenter.App : Granite.Application {
         details_label_context.add_class (Gtk.STYLE_CLASS_MONOSPACE);
         details_label_context.add_class ("terminal");
 
+        var scroll_box = new Gtk.ScrolledWindow (null, null);
+        scroll_box.margin_top = 12;
+        scroll_box.min_content_height = 70;
+        scroll_box.add (details_label);
+
         var expander = new Gtk.Expander (_("Details"));
-        expander.add (details_label);
+        expander.add (scroll_box);
 
         var dialog = new Granite.MessageDialog.with_image_from_icon_name (
             _("Failed to Fetch Updates"),

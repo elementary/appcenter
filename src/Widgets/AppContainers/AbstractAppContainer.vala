@@ -48,6 +48,8 @@ namespace AppCenter {
         protected Gtk.SizeGroup action_button_group;
         protected Gtk.Stack action_stack;
 
+        private Settings settings;
+
         public bool is_os_updates {
             get {
                 return package.is_os_updates;
@@ -86,18 +88,18 @@ namespace AppCenter {
 
         public bool payments_enabled {
             get {
-                if (this.package == null || this.package.component == null || updates_view) {
+                if (package == null || package.component == null || !package.is_native || package.is_os_updates) {
                     return false;
                 }
 
-                return this.package.get_payments_key () != null;
+                return package.get_payments_key () != null;
             }
         }
 
-        public bool updates_view = false;
-
         construct {
             image = new Gtk.Image ();
+
+            settings = Settings.get_default ();
 
             package_author = new Gtk.Label ("");
             package_name = new Gtk.Label ("");
@@ -109,7 +111,12 @@ namespace AppCenter {
             action_button.payment_requested.connect ((amount) => {
                 var stripe = new Widgets.StripeDialog (amount, this.package_name.label, this.package.component.get_desktop_id ().replace (".desktop", ""), this.package.get_payments_key());
 
-                stripe.download_requested.connect (() => action_clicked.begin ());
+                stripe.download_requested.connect (() => {
+                    action_clicked.begin ();
+
+                    settings.add_paid_app (package.component.get_id ());
+                });
+
                 stripe.show ();
             });
 
@@ -199,8 +206,12 @@ namespace AppCenter {
                 case AppCenterCore.Package.State.NOT_INSTALLED:
                     action_button.label = _("Free");
 
+                    if (package.component.get_id () in settings.paid_apps) {
+                        action_button.amount = 0;
+                    }
+
                     set_widget_visibility (uninstall_button, false);
-                    set_widget_visibility (action_button, true);
+                    set_widget_visibility (action_button, !package.is_os_updates);
                     set_widget_visibility (open_button, false);
                     set_widget_visibility (progress_grid, false);
 
@@ -213,6 +224,10 @@ namespace AppCenter {
 
                     break;
                 case AppCenterCore.Package.State.UPDATE_AVAILABLE:
+                    if (!package.should_nag_update) {
+                       action_button.amount = 0;
+                    }
+
                     action_button.label = _("Update");
 
                     set_widget_visibility (uninstall_button, show_uninstall && !is_os_updates);

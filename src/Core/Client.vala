@@ -74,8 +74,6 @@ public class AppCenterCore.Client : Object {
 
         sc = new SuspendControl ();
 
-        cancellable = new GLib.Cancellable ();
-
         appstream_pool = new AppStream.Pool ();
         // We don't want to show installed desktop files here
         appstream_pool.set_flags (appstream_pool.get_flags () & ~AppStream.PoolFlags.READ_DESKTOP_FILES);
@@ -479,8 +477,7 @@ public class AppCenterCore.Client : Object {
                     unowned string pkg_summary = pk_package.get_summary();
                     unowned string pkg_version = pk_package.get_version();
                     os_count += 1;
-                    os_desc += "<li>%s\n\t%s\n\tVersion: %s</li>\n"
-                                .printf(pkg_name, pkg_summary, pkg_version);
+                    os_desc += Markup.printf_escaped ("<li>%s\n\t%s\n\tVersion: %s</li>\n", pkg_name, pkg_summary, pkg_version);
                 } else {
                     package.latest_version = pk_package.get_version ();
                     package.change_information.changes.clear ();
