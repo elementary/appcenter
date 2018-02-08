@@ -74,8 +74,6 @@ public class AppCenterCore.Client : Object {
 
         sc = new SuspendControl ();
 
-        cancellable = new GLib.Cancellable ();
-
         appstream_pool = new AppStream.Pool ();
         // We don't want to show installed desktop files here
         appstream_pool.set_flags (appstream_pool.get_flags () & ~AppStream.PoolFlags.READ_DESKTOP_FILES);

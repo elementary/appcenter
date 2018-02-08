@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-09 18:51+0100\n"
-"PO-Revision-Date: 2018-01-25 17:00+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2018-02-03 00:05+0000\n"
+"Last-Translator: Alain M. <alain23@protonmail.com>\n"
 "Language-Team: Spanish "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/es/>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 
 #: ../src/Application.vala:39
 msgid "AppCenter"
-msgstr "AppCenter"
+msgstr "Centro de Aplicaciones"
 
 #: ../src/Application.vala:118
 msgid "Specified link '%s' could not be found, searching instead"
@@ -197,7 +197,7 @@ msgstr "Comprobando aplicaciones en uso"
 
 #: ../src/Core/ChangeInformation.vala:120
 msgid "Checking libraries in use"
-msgstr "Comprobando librerias en uso"
+msgstr "Comprobando librerías en uso"
 
 #: ../src/Core/ChangeInformation.vala:122
 msgid "Copying files"
@@ -241,7 +241,8 @@ msgstr "Reinicio requerido"
 
 #: ../src/Core/UpdateManager.vala:82
 msgid "Please restart your system to finalize updates"
-msgstr "Reinicia el sistema para finalizar las actualizaciones, por favor."
+msgstr ""
+"Por favor, reinicie el sistema para completar el proceso de actualización"
 
 #: ../src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -304,7 +305,7 @@ msgstr "Número de tarjeta"
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: ../src/Dialogs/StripeDialog.vala:116
 msgid "MM / YY"
-msgstr "MM / YY"
+msgstr "MM / AA"
 
 #: ../src/Dialogs/StripeDialog.vala:136
 msgid "CVC"
@@ -417,7 +418,7 @@ msgstr ""
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
 msgstr ""
-"Demasiados intentos inválidos, por favor intente con una carta diferente."
+"Demasiados intentos inválidos, por favor intente con una tarjeta diferente."
 
 #: ../src/Dialogs/StripeDialog.vala:579
 msgid ""
@@ -458,7 +459,7 @@ msgstr "Red no disponible"
 
 #: ../src/MainWindow.vala:177
 msgid "Connect to the Internet to install or update apps."
-msgstr "Conéctese a internet para instalar / actualizar las aplicaciones."
+msgstr "Conéctese a internet para instalar o actualizar aplicaciones."
 
 #: ../src/MainWindow.vala:180
 msgid "Network Settings…"
@@ -494,7 +495,7 @@ msgstr "Complementos:"
 
 #: ../src/Views/AppInfoView.vala:266
 msgid "Other Apps by %s"
-msgstr "Otras aplicaciones por %s"
+msgstr "Más de %s"
 
 #: ../src/Views/AppInfoView.vala:300
 msgid "Link copied to clipboard"
@@ -510,8 +511,7 @@ msgstr "Compartir"
 
 #: ../src/Views/AppListUpdateView.vala:59
 msgid "A restart is required to complete the installation of updates"
-msgstr ""
-"Un reinicio es requerido para completar la instalación de actualizaciones."
+msgstr "Se requiere reiniciar para completar con la actualización"
 
 #: ../src/Views/AppListUpdateView.vala:67
 msgid "Restart Now"
@@ -523,7 +523,7 @@ msgstr "Actualizar todo"
 
 #: ../src/Views/AppListView.vala:119
 msgid "Non-Curated Apps"
-msgstr "Aplicaciones no autorizadas"
+msgstr "Aplicaciones no verificadas"
 
 #: ../src/Views/Homepage.vala:65
 msgid "Recently Updated"
@@ -633,7 +633,7 @@ msgstr "Acceso universal"
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: ../src/Widgets/HumbleButton.vala:141
 msgid "$%d.00"
-msgstr "Este monto será en Dolares. Algunos idiomas podrían necesitar USD"
+msgstr "$%d.00"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: ../src/Widgets/HumbleButton.vala:144
@@ -657,27 +657,22 @@ msgid "No description available"
 msgstr "Ninguna descripción disponible"
 
 #: ../src/Widgets/SharePopover.vala:39
-#, fuzzy
 msgid "Facebook"
 msgstr "Facebook"
 
 #: ../src/Widgets/SharePopover.vala:43
-#, fuzzy
 msgid "Google+"
 msgstr "Google+"
 
 #: ../src/Widgets/SharePopover.vala:47
-#, fuzzy
 msgid "Twitter"
 msgstr "Twitter"
 
 #: ../src/Widgets/SharePopover.vala:51
-#, fuzzy
 msgid "reddit"
 msgstr "reddit"
 
 #: ../src/Widgets/SharePopover.vala:55
-#, fuzzy
 msgid "Tumblr"
 msgstr "Tumblr"
 
