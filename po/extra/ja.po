@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2017-05-05 10:40+0000\n"
-"Last-Translator: Ryo Nakano <nscnskichiro0911@gmail.com>\n"
+"PO-Revision-Date: 2017-12-20 00:11+0000\n"
+"Last-Translator: Ryo Nakano <rmfmada3q@gmail.com>\n"
 "Language-Team: Japanese "
-"<https://l10n.elementary.io/projects/appcenter/extra/ja/>\n"
+"<https://weblate.elementary.io/projects/appcenter/extra/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 msgid "AppCenter"
@@ -64,9 +64,8 @@ msgstr "検索能力が向上し、カテゴリーの名前がヘッドバーに
 msgid "Fix Steam installation"
 msgstr "Steam のインストールを修正"
 
-#, fuzzy
 msgid "Make search asynchronous"
-msgstr "検索を非同期にする"
+msgstr ""
 
 #, fuzzy
 #~ msgid "App Center"

@@ -3,25 +3,25 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-09 18:51+0100\n"
-"PO-Revision-Date: 2017-07-20 21:22+0000\n"
-"Last-Translator: haggen svastian <h2gn@openmailbox.org>\n"
-"Language-Team: Spanish <https://weblate.elementary.io/projects/appcenter/"
-"appcenter/es/>\n"
+"PO-Revision-Date: 2018-02-03 00:05+0000\n"
+"Last-Translator: Alain M. <alain23@protonmail.com>\n"
+"Language-Team: Spanish "
+"<https://weblate.elementary.io/projects/appcenter/appcenter/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.15\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
 #: ../src/Application.vala:39
 msgid "AppCenter"
-msgstr "AppCenter"
+msgstr "Centro de Aplicaciones"
 
 #: ../src/Application.vala:118
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr "No se encontró el link especificado '%s', buscando alternativas"
+msgstr "No se encontró el vínculo especificado '%s', en busca de alternativas"
 
 #: ../src/Application.vala:240
 msgid "Application installed"
@@ -36,31 +36,32 @@ msgid "Close"
 msgstr "Cerrar"
 
 #: ../src/Application.vala:256
-#, fuzzy
 msgid "There Was An Error Installing %s."
-msgstr "Ocurrió un error instalando %s"
+msgstr "Ocurrió un error instalando %s."
 
 #: ../src/Application.vala:286
 msgid "Details"
-msgstr ""
+msgstr "Detalles"
 
 #: ../src/Application.vala:290
 msgid "Failed to Fetch Updates"
-msgstr ""
+msgstr "Error al realizar las actualizaciones"
 
 #: ../src/Application.vala:291
 msgid ""
 "This may have been caused by external, manually added software repositories "
 "or a corrupted sources file."
 msgstr ""
+"Esto pudo haber sido causado por agregar repositorios externos manualmente o "
+"algún archivo de código fuente corrupto."
 
 #: ../src/Application.vala:297
 msgid "Ignore"
-msgstr ""
+msgstr "Ignorar"
 
 #: ../src/Application.vala:298
 msgid "Try Again"
-msgstr ""
+msgstr "Intente nuevamente"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -140,7 +141,7 @@ msgstr "Cancelando"
 
 #: ../src/Core/ChangeInformation.vala:92
 msgid "Downloading repository information"
-msgstr "Descargando información de repositorios"
+msgstr "Descargando información del repositorio"
 
 #: ../src/Core/ChangeInformation.vala:94
 msgid "Downloading list of packages"
@@ -160,7 +161,7 @@ msgstr "Descargando grupos"
 
 #: ../src/Core/ChangeInformation.vala:102
 msgid "Downloading update information"
-msgstr "Descargando información de actualización"
+msgstr "Descargando información de la actualización"
 
 #: ../src/Core/ChangeInformation.vala:104
 msgid "Repackaging files"
@@ -168,7 +169,7 @@ msgstr "Reempaquetando archivos"
 
 #: ../src/Core/ChangeInformation.vala:106
 msgid "Loading cache"
-msgstr "Cargando almacén"
+msgstr "Cargando cache"
 
 #: ../src/Core/ChangeInformation.vala:108
 msgid "Scanning applications"
@@ -184,7 +185,7 @@ msgstr "Esperando por el bloqueo del gestor de paquetes"
 
 #: ../src/Core/ChangeInformation.vala:114
 msgid "Waiting for authentication"
-msgstr "Esperando a autenticarse"
+msgstr "Esperando la autenticación"
 
 #: ../src/Core/ChangeInformation.vala:116
 msgid "Updating running applications"
@@ -196,7 +197,7 @@ msgstr "Comprobando aplicaciones en uso"
 
 #: ../src/Core/ChangeInformation.vala:120
 msgid "Checking libraries in use"
-msgstr "Comprobando bibliotecas en uso"
+msgstr "Comprobando librerías en uso"
 
 #: ../src/Core/ChangeInformation.vala:122
 msgid "Copying files"
@@ -216,7 +217,7 @@ msgstr "Actualizaciones de los componentes del sistema"
 
 #: ../src/Core/Client.vala:143
 msgid "%s (local)"
-msgstr ""
+msgstr "%s (local)"
 
 #: ../src/Core/Client.vala:452
 msgid "Update Available"
@@ -240,16 +241,16 @@ msgstr "Reinicio requerido"
 
 #: ../src/Core/UpdateManager.vala:82
 msgid "Please restart your system to finalize updates"
-msgstr "Por favor, reinicia el sistema para finalizar las actualizaciones"
+msgstr ""
+"Por favor, reinicie el sistema para completar el proceso de actualización"
 
 #: ../src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
-msgstr "¿Estás seguro de querer reiniciar?"
+msgstr "¿Está seguro de querer Reiniciar?"
 
 #: ../src/Dialogs/RestartDialog.vala:41
 msgid "This will close all open applications and restart this device."
-msgstr ""
-"Esto cerrará todas las aplicaciones abiertas y reiniciará el dispositivo."
+msgstr "Esto cerrará todas las aplicaciones abiertas y reiniciará el sistema."
 
 #: ../src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
@@ -266,22 +267,24 @@ msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
-"Ha ocurrido un error procesando la tarjeta. Por favor, inténtelo más tarde. "
-"Sentimos las molestias."
+"Ha ocurrido un error al procesar la tarjeta. Intente de nuevo. Nos "
+"disculpamos por cualquier inconveniente causado."
 
 #: ../src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
-msgstr "Revise la información de su pago e intente otra vez, por favor."
+msgstr "Revise la información de su pago e intente otra vez."
 
 #: ../src/Dialogs/StripeDialog.vala:78
 msgid "Pay $%d for %s"
-msgstr ""
+msgstr "Pagar $%d por %s"
 
 #: ../src/Dialogs/StripeDialog.vala:82
 msgid ""
 "This is a one time payment. Your email address is only used to send you a "
 "receipt."
 msgstr ""
+"Este es un pago único. Su dirección de correo electrónico sólo se utilizara "
+"para enviarle un recibo."
 
 #: ../src/Dialogs/StripeDialog.vala:91 ../src/Widgets/SharePopover.vala:35
 msgid "Email"
@@ -292,8 +295,8 @@ msgid ""
 "Your email address is used to send a receipt. It is never stored and you "
 "will not be subscribed to a mailing list."
 msgstr ""
-"Su dirección de correo electrónico se utiliza para enviar un recibo. Nunca "
-"se almacena y no se suscribirá a una lista de correo."
+"Su dirección de correo electrónico se utiliza para enviarle un recibo. Nunca "
+"se almacena y usted no será suscrito a una lista de correo."
 
 #: ../src/Dialogs/StripeDialog.vala:104
 msgid "Card Number"
@@ -330,7 +333,7 @@ msgstr "Pagar luego"
 
 #: ../src/Dialogs/StripeDialog.vala:293
 msgid "Retry"
-msgstr "Re-intentar"
+msgstr "Intentar de nuevo"
 
 #: ../src/Dialogs/StripeDialog.vala:489 ../src/Dialogs/StripeDialog.vala:554
 msgid ""
@@ -352,17 +355,17 @@ msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
-"El año de vencimiento no es válido. Inténtelo de nuevo utilizando la fecha "
-"de caducidad correcta."
+"El año de caducidad no es válido. Inténtelo de nuevo utilizando la fecha de "
+"caducidad correcta."
 
 #: ../src/Dialogs/StripeDialog.vala:496 ../src/Dialogs/StripeDialog.vala:549
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr ""
-"El número CVC es incorrecto. Vuelva a intentarlo utilizando el CVC correcto."
+"El número CVC es incorrecto. Intente de nuevo utilizando el CVC correcto."
 
 #: ../src/Dialogs/StripeDialog.vala:498 ../src/Dialogs/StripeDialog.vala:540
 msgid "The card has expired. Please try again with a different card."
-msgstr "La tarjeta ha caducado. Inténtelo de nuevo con una tarjeta diferente."
+msgstr "La tarjeta ha expirado. Intente de nuevo con una tarjeta diferente."
 
 #: ../src/Dialogs/StripeDialog.vala:518
 msgid "There are too many payment requests at the moment, please retry later."
@@ -375,7 +378,7 @@ msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
 msgstr ""
-"Esta tarjeta no admite este tipo de transacción. Inténtelo de nuevo con una "
+"Esta tarjeta no admite este tipo de transacciones. Intente de nuevo con una "
 "tarjeta diferente."
 
 #: ../src/Dialogs/StripeDialog.vala:536
@@ -383,7 +386,7 @@ msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
 msgstr ""
-"La moneda no es compatible con esta tarjeta. Inténtelo de nuevo con una "
+"La moneda no es compatible con esta tarjeta. Intente de nuevo con una "
 "tarjeta diferente."
 
 #: ../src/Dialogs/StripeDialog.vala:538
@@ -391,54 +394,53 @@ msgid "The transaction has already been processed."
 msgstr "La transacción ya ha sido procesada."
 
 #: ../src/Dialogs/StripeDialog.vala:542
-#, fuzzy
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "postal code."
-msgstr "El codigo postal es incorrecto. Porfavor ingrese uno correcto."
+msgstr ""
+"El código postal es incorrecto. Por favor, introduzca el código postal "
+"correcto."
 
 #: ../src/Dialogs/StripeDialog.vala:544
 msgid "You don't have enough funds. Please use an alternative payment method."
-msgstr "No tienes suficientes fondos. Porfavor usa otra forma de pago."
+msgstr "No tiene suficientes fondos. Por favor use otra forma de pago."
 
 #: ../src/Dialogs/StripeDialog.vala:546
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr "La cantidad es incorrecta, intenta usando una cantidad valida."
+msgstr "La cantidad es incorrecta, intente usando una cantidad valida."
 
 #: ../src/Dialogs/StripeDialog.vala:557
-#, fuzzy
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr ""
 "El número CVC es incorrecto. Vuelva a intentarlo utilizando el CVC correcto."
 
 #: ../src/Dialogs/StripeDialog.vala:559
-#, fuzzy
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
 msgstr ""
-"Demasiados intentos invalidos, porfavor intente con una carta diferente."
+"Demasiados intentos inválidos, por favor intente con una tarjeta diferente."
 
 #: ../src/Dialogs/StripeDialog.vala:579
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
 msgstr ""
-"No se pudo completar la transacción. Contacte a su banco para informacion "
-"mas detallada."
+"No se pudo completar la transacción. Contacte a su banco para una "
+"información mas detallada."
 
 #: ../src/Dialogs/StripeDialog.vala:582
 msgid "The balance or credit limit on the card has been reached."
-msgstr "Te haz exedido del limite de la carta de credito."
+msgstr "Se ha alcanzado el saldo límite de la tarjeta."
 
 #: ../src/Dialogs/StripeDialog.vala:585
 msgid "The given card is a test card. Please use a real card to proceed."
-msgstr "La carta usada es de pruebas, ingrese una real para proceder."
+msgstr "La tarjeta usada es de pruebas, ingrese una real para proceder."
 
 #: ../src/MainWindow.vala:141 ../src/Views/Homepage.vala:253
 #: ../src/Views/Homepage.vala:262 ../src/Views/Homepage.vala:267
 #: ../src/Views/Homepage.vala:278
 msgid "Home"
-msgstr "Página principal"
+msgstr "Principal"
 
 #: ../src/MainWindow.vala:142 ../src/Views/InstalledView.vala:29
 #: ../src/Views/InstalledView.vala:49
@@ -456,9 +458,8 @@ msgid "Network Is Not Available"
 msgstr "Red no disponible"
 
 #: ../src/MainWindow.vala:177
-#, fuzzy
 msgid "Connect to the Internet to install or update apps."
-msgstr "Conectate a internet para instalar / actualizar las aplicaciones."
+msgstr "Conéctese a internet para instalar o actualizar aplicaciones."
 
 #: ../src/MainWindow.vala:180
 msgid "Network Settings…"
@@ -486,7 +487,7 @@ msgstr "Ayuda"
 
 #: ../src/Views/AppInfoView.vala:168
 msgid "What's New:"
-msgstr ""
+msgstr "Novedades:"
 
 #: ../src/Views/AppInfoView.vala:187
 msgid "Extensions:"
@@ -494,23 +495,23 @@ msgstr "Complementos:"
 
 #: ../src/Views/AppInfoView.vala:266
 msgid "Other Apps by %s"
-msgstr ""
+msgstr "Más de %s"
 
 #: ../src/Views/AppInfoView.vala:300
 msgid "Link copied to clipboard"
-msgstr ""
+msgstr "Enlace copiado al portapapeles"
 
 #: ../src/Views/AppInfoView.vala:311
 msgid "Check out %s on AppCenter:"
-msgstr ""
+msgstr "Verificar %s en AppCenter:"
 
 #: ../src/Views/AppInfoView.vala:318
 msgid "Share"
-msgstr ""
+msgstr "Compartir"
 
 #: ../src/Views/AppListUpdateView.vala:59
 msgid "A restart is required to complete the installation of updates"
-msgstr "Se requiere reiniciar para completar la instalación de actualizaciones"
+msgstr "Se requiere reiniciar para completar con la actualización"
 
 #: ../src/Views/AppListUpdateView.vala:67
 msgid "Restart Now"
@@ -521,17 +522,16 @@ msgid "Update All"
 msgstr "Actualizar todo"
 
 #: ../src/Views/AppListView.vala:119
-#, fuzzy
 msgid "Non-Curated Apps"
-msgstr "No hay aplicaciones"
+msgstr "Aplicaciones no verificadas"
 
 #: ../src/Views/Homepage.vala:65
 msgid "Recently Updated"
-msgstr "Recientemente actualizada"
+msgstr "Recientemente actualizados"
 
 #: ../src/Views/Homepage.vala:81
 msgid "Trending"
-msgstr ""
+msgstr "Más populares"
 
 #: ../src/Views/Homepage.vala:97
 msgid "Categories"
@@ -554,7 +554,8 @@ msgstr "No hay resultados"
 #: ../src/Widgets/AbstractAppList.vala:36
 msgid "No apps could be found. Try changing search terms."
 msgstr ""
-"No se encontraron aplicaciones. Pruebe a cambiar los términos de búsqueda."
+"No se  encontró ninguna aplicacion. Intente cambiando los parámetros de "
+"búsqueda."
 
 #: ../src/Widgets/AppContainers/AbstractAppContainer.vala:125
 msgid "Uninstall"
@@ -623,7 +624,7 @@ msgstr "Internet"
 
 #: ../src/Widgets/CategoryFlowBox.vala:39
 msgid "Science & Engineering"
-msgstr "Ciencia e ingeniería"
+msgstr "Ciencia e Ingeniería"
 
 #: ../src/Widgets/CategoryFlowBox.vala:40
 msgid "Universal Access"
@@ -632,12 +633,12 @@ msgstr "Acceso universal"
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: ../src/Widgets/HumbleButton.vala:141
 msgid "$%d.00"
-msgstr "$%d.00USD"
+msgstr "$%d.00"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: ../src/Widgets/HumbleButton.vala:144
 msgid "$%d"
-msgstr "$%d USD"
+msgstr ""
 
 #: ../src/Widgets/ReleaseRow.vala:67
 msgid "<b>%s</b> – %s"
@@ -648,41 +649,41 @@ msgid "<b>%s</b>"
 msgstr ""
 
 #: ../src/Widgets/ReleaseRow.vala:74
-#, fuzzy
 msgid "Unknown version"
-msgstr "Estado desconocido"
+msgstr "Versión desconocida"
 
 #: ../src/Widgets/ReleaseRow.vala:90 ../src/Widgets/ReleaseRow.vala:93
 msgid "No description available"
-msgstr ""
+msgstr "Ninguna descripción disponible"
 
 #: ../src/Widgets/SharePopover.vala:39
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #: ../src/Widgets/SharePopover.vala:43
 msgid "Google+"
-msgstr ""
+msgstr "Google+"
 
 #: ../src/Widgets/SharePopover.vala:47
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 #: ../src/Widgets/SharePopover.vala:51
 msgid "reddit"
-msgstr ""
+msgstr "reddit"
 
 #: ../src/Widgets/SharePopover.vala:55
 msgid "Tumblr"
-msgstr ""
+msgstr "Tumblr"
 
 #: ../src/Widgets/SharePopover.vala:59
+#, fuzzy
 msgid "Telegram"
-msgstr ""
+msgstr "Telegram"
 
 #: ../src/Widgets/SharePopover.vala:63
 msgid "Copy link"
-msgstr ""
+msgstr "Copiar enlace"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:68
 msgid "%u Update Available"

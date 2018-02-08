@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-09 18:51+0100\n" 
-"PO-Revision-Date: 2018-01-09 00:11+0000\n"
-"Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
+"POT-Creation-Date: 2018-01-09 18:51+0100\n"
+"PO-Revision-Date: 2018-01-30 00:08+0000\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Dutch "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/nl/>\n"
 "Language: nl\n"
@@ -31,7 +31,7 @@ msgstr "Toepassing geïnstalleerd"
 
 #: ../src/Application.vala:241
 msgid "%s has been successfully installed"
-msgstr "%s is met succes geïnstalleerd"
+msgstr "%s is succesvol geïnstalleerd"
 
 #: ../src/Application.vala:254
 msgid "Close"
@@ -58,11 +58,11 @@ msgstr ""
 
 #: ../src/Application.vala:297
 msgid "Ignore"
-msgstr ""
+msgstr "Negeer"
 
 #: ../src/Application.vala:298
 msgid "Try Again"
-msgstr ""
+msgstr "Probeer opnieuw"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
