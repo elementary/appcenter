@@ -441,13 +441,13 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         var message = new Soup.Message ("POST", STRIPE_URI);
 
         var request = STRIPE_REQUEST.printf (
-            Soup.URI.encode(_email, null),
-            Soup.URI.encode(USER_AGENT, null),
-            Soup.URI.encode(_amount, null),
-            Soup.URI.encode(_cc_num, null),
-            Soup.URI.encode(_cc_cvc, null),
-            Soup.URI.encode(_cc_exp_month, null),
-            Soup.URI.encode(_cc_exp_year, null)
+            Soup.URI.encode (_email, null),
+            Soup.URI.encode (USER_AGENT, null),
+            Soup.URI.encode (_amount, null),
+            Soup.URI.encode (_cc_num, null),
+            Soup.URI.encode (_cc_cvc, null),
+            Soup.URI.encode (_cc_exp_month, null),
+            Soup.URI.encode (_cc_exp_year, null)
         );
 
         message.request_headers.append ("Authorization", STRIPE_AUTH.printf (_key));
