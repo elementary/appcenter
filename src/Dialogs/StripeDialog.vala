@@ -20,7 +20,7 @@
 public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
     public signal void download_requested ();
 
-    private const string HOUSTON_URI =  "https://developer.elementary.io/api/payment/%s";
+    private const string HOUSTON_URI =  "http://localhost:3000/api/payment/%s";
     private const string HOUSTON_PAYLOAD = "{ "
                                 + "\"data\": {"
                                     + "\"key\": \"%s\","
@@ -29,7 +29,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
                                     + "\"amount\": %s,"
                                     + "\"currency\": \"USD\""
                                 + "}}";
-    private const string USER_AGENT = "Stripe checkout";
+    private const string USER_AGENT = "elementary AppCenter";
     private const string STRIPE_URI = "https://api.stripe.com/v1/tokens";
     private const string STRIPE_AUTH = "Bearer %s";
     private const string STRIPE_REQUEST = "email=%s"
@@ -440,7 +440,16 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         var session = new Soup.Session ();
         var message = new Soup.Message ("POST", STRIPE_URI);
 
-        var request = STRIPE_REQUEST.printf (_email, USER_AGENT, _amount, _cc_num, _cc_cvc, _cc_exp_month, _cc_exp_year);
+        var request = STRIPE_REQUEST.printf (
+            Soup.URI.encode(_email, null),
+            Soup.URI.encode(USER_AGENT, null),
+            Soup.URI.encode(_amount, null),
+            Soup.URI.encode(_cc_num, null),
+            Soup.URI.encode(_cc_cvc, null),
+            Soup.URI.encode(_cc_exp_month, null),
+            Soup.URI.encode(_cc_exp_year, null)
+        );
+
         message.request_headers.append ("Authorization", STRIPE_AUTH.printf (_key));
         message.request_body.append_take (request.data);
 
