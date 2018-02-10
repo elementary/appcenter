@@ -163,7 +163,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
 
         layouts = new Gtk.Stack ();
         layouts.vhomogeneous = false;
-        layouts.margin_left = layouts.margin_right = 12;
+        layouts.margin_start = layouts.margin_end = 12;
         layouts.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
         layouts.add_named (card_layout, "card");
         layouts.set_visible_child_name ("card");
@@ -173,8 +173,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         var privacy_policy_link = new Gtk.LinkButton.with_label ("https://stripe.com/privacy", _("Privacy Policy"));
 
         var action_area = (Gtk.ButtonBox) get_action_area ();
-        action_area.margin_right = 5;
-        action_area.margin_bottom = 5;
+        action_area.margin = 5;
         action_area.margin_top = 14;
         action_area.add (privacy_policy_link);
         action_area.set_child_secondary (privacy_policy_link, true);
