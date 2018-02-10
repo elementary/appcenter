@@ -451,6 +451,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         );
 
         message.request_headers.append ("Authorization", STRIPE_AUTH.printf (_key));
+        message.request_headers.append ("Content-Type", "application/x-www-form-urlencoded");
         message.request_body.append_take (request.data);
 
         session.send_message (message);
