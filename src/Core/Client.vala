@@ -678,6 +678,41 @@ public class AppCenterCore.Client : Object {
         return installed;
     }
 
+    public async Gee.ArrayList<Pk.Package> get_needed_deps_for_package (AppCenterCore.Package package, Cancellable? cancellable) {
+        var pk_package = package.find_package ();
+        var deps = new Gee.ArrayList<Pk.Package> ();
+
+        if (pk_package == null) {
+            return deps;
+        }
+
+        string[] package_array = { pk_package.package_id, null };
+        var filters = Pk.Bitfield.from_enums (Pk.Filter.NOT_INSTALLED);
+        try {
+            var deps_result = yield client.depends_on_async (filters, package_array, false, cancellable, (p, t) => {});
+            deps_result.get_package_array ().foreach ((dep_package) => {
+                deps.add (dep_package);
+            });
+
+            package_array = {};
+            foreach (var dep_package in deps) {
+                package_array += dep_package.package_id;
+            }
+
+            package_array += null;
+            if (package_array.length > 1) {
+                deps_result = yield client.depends_on_async (filters, package_array, true, cancellable, (p, t) => {});
+                deps_result.get_package_array ().foreach ((dep_package) => {
+                    deps.add (dep_package);
+                });
+            }
+        } catch (Error e) {
+            warning ("Error fetching dependencies for %s: %s", pk_package.package_id, e.message);
+        }
+
+        return deps;
+    }
+
     public AppCenterCore.Package? get_package_for_component_id (string id) {
         foreach (var package in package_list.values) {
             if (package.component.id == id) {
