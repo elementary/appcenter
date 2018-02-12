@@ -403,6 +403,46 @@ public class AppCenterCore.Client : Object {
         return apps;
     }
 
+    public async Gee.HashMap<string, Pk.Package> get_app_packages (string[] component_ids) {
+        task_count++;
+
+        var pkgid_mappings = new Gee.HashMap<string, string> ();
+        foreach (var package in package_list.values) {
+            if (package.component.id in component_ids) {
+                pkgid_mappings[package.component.get_pkgname ()] = package.component.id;
+            }
+        }
+
+        var packages = new Gee.HashMap<string, Pk.Package> ();
+
+        string[] query = {};
+        foreach (var app in pkgid_mappings.keys) {
+            query += app;
+        }
+
+        if (query.length < 1) {
+            return packages;
+        }
+
+        query += null;
+
+        var filter = Pk.Bitfield.from_enums (Pk.Filter.NONE);
+
+        try {
+            var results = yield client.search_names_async (filter, query, cancellable, () => {});
+            var array = results.get_package_array ();
+            array.foreach ((package) => {
+                packages[pkgid_mappings[package.get_name ()]] = package;
+            });
+        } catch (Error e) {
+            task_count--;
+            throw e;
+        }
+
+        task_count--;
+        return packages;
+    }
+
     public Pk.Package? get_app_package (string application, Pk.Bitfield additional_filters = 0) throws GLib.Error {
         task_count++;
 
