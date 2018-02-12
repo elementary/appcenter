@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-09 18:51+0100\n"
-"PO-Revision-Date: 2018-02-05 23:50+0000\n"
+"PO-Revision-Date: 2018-02-12 00:03+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/ko/>\n"
@@ -271,7 +271,7 @@ msgstr "지불 정보를 다시 한번 확인하신 후에 다시 진행해주�
 
 #: ../src/Dialogs/StripeDialog.vala:78
 msgid "Pay $%d for %s"
-msgstr "%s에 %d$ 지급합니다"
+msgstr "%d$를 %s에 지급합니다"
 
 #: ../src/Dialogs/StripeDialog.vala:82
 msgid ""
