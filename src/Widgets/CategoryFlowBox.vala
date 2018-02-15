@@ -29,7 +29,7 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
         add (get_category (_("Audio"), "applications-audio-symbolic", {"Audio"}, "audio"));
         add (get_category (_("Development"), "", {"IDE", "Development"}, "development"));
         add (get_category (_("Accessories"), "applications-accessories", {"Utility"}, "accessories"));
-        add (get_category (_("Office"), "applications-office-symbolic", {"Office"}, "office"));
+        add (get_category (_("Office"), "applications-office-symbolic", {"Office", "Publishing"}, "office"));
         add (get_category (_("System"), "applications-system", {"System"}, "system"));
         add (get_category (_("Video"), "applications-video-symbolic", {"Video"}, "video"));
         add (get_category (_("Graphics"), "", {"Graphics"}, "graphics"));
