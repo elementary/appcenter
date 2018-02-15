@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-09 18:51+0100\n"
-"PO-Revision-Date: 2018-01-23 08:14+0000\n"
-"Last-Translator: Deo Valiandro. M <vaeloox@gmail.com>\n"
+"PO-Revision-Date: 2018-02-14 17:28+0000\n"
+"Last-Translator: Jonathan Tyar <jonathan.tyar@gmail.com>\n"
 "Language-Team: Indonesian "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/id/>\n"
 "Language: id\n"
@@ -38,7 +38,7 @@ msgstr "Tutup"
 
 #: ../src/Application.vala:256
 msgid "There Was An Error Installing %s."
-msgstr "Terjadi sebuah Kesalahan Saat Memasang %s"
+msgstr "Terjadi Kesalahan Saat Pemasangan% s."
 
 #: ../src/Application.vala:286
 msgid "Details"
