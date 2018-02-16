@@ -149,7 +149,7 @@ namespace AppCenter.Widgets {
         }
 
         public void set_default_brand () {
-            background_color = "#8B45BD";
+            background_color = "#665888";
             foreground_color = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
 
             brand_widget = new BannerWidget (null);
