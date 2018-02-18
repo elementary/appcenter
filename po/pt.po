@@ -2,11 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-17 14:11+0000\n"
-"PO-Revision-Date: 2018-01-30 14:33+0000\n"
-"Last-Translator: Guilherme <gpb0262@gmail.com>\n"
-"Language-Team: Portuguese <https://weblate.elementary.io/projects/appcenter/"
-"appcenter/pt/>\n"
+"POT-Creation-Date: 2018-01-09 18:51+0100\n"
+"PO-Revision-Date: 2018-02-18 00:00+0000\n"
+"Last-Translator: Pedro <pedrosilva510@gmail.com>\n"
+"Language-Team: Portuguese "
+"<https://weblate.elementary.io/projects/appcenter/appcenter/pt/>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -35,7 +35,7 @@ msgstr "%s foi instalada com sucesso"
 #: ../src/Application.vala:253
 #, fuzzy
 msgid "There Was An Error Installing %s."
-msgstr "Ocorreu um erro ao instalar %s"
+msgstr "Ocorreu Um Erro Ao Instalar %s."
 
 #: ../src/Application.vala:286
 msgid "Details"
@@ -681,23 +681,23 @@ msgstr "Facebook"
 
 #: ../src/Widgets/SharePopover.vala:43
 msgid "Google+"
-msgstr ""
+msgstr "Google+"
 
 #: ../src/Widgets/SharePopover.vala:47
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 #: ../src/Widgets/SharePopover.vala:51
 msgid "reddit"
-msgstr ""
+msgstr "reddit"
 
 #: ../src/Widgets/SharePopover.vala:55
 msgid "Tumblr"
-msgstr ""
+msgstr "Tumblr"
 
 #: ../src/Widgets/SharePopover.vala:59
 msgid "Telegram"
-msgstr ""
+msgstr "Telegram"
 
 #: ../src/Widgets/SharePopover.vala:63
 msgid "Copy link"
