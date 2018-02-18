@@ -2,11 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-09 18:51+0100\n"
+"POT-Creation-Date: 2018-02-17 14:11+0000\n"
 "PO-Revision-Date: 2018-01-10 12:35+0000\n"
 "Last-Translator: Corentin Noël <corentin@elementary.io>\n"
-"Language-Team: French "
-"<https://weblate.elementary.io/projects/appcenter/appcenter/fr/>\n"
+"Language-Team: French <https://weblate.elementary.io/projects/appcenter/"
+"appcenter/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,11 +31,7 @@ msgstr "Application installée"
 msgid "%s has been successfully installed"
 msgstr "L’application %s a été installée avec succès"
 
-#: ../src/Application.vala:254
-msgid "Close"
-msgstr "Fermer"
-
-#: ../src/Application.vala:256
+#: ../src/Application.vala:253
 msgid "There Was An Error Installing %s."
 msgstr "Il y a eu une erreur lors de l’installation de l’application %s."
 
@@ -55,11 +51,11 @@ msgstr ""
 "Ceci peut-être provoqué par un dépôt externe ajouté manuellement ou un "
 "fichier corrompu."
 
-#: ../src/Application.vala:297
+#: ../src/Application.vala:298
 msgid "Ignore"
 msgstr "Ignorer"
 
-#: ../src/Application.vala:298
+#: ../src/Application.vala:299
 msgid "Try Again"
 msgstr "Réessayer"
 
@@ -207,31 +203,49 @@ msgstr "Copie des fichiers"
 msgid "Unknown state"
 msgstr "État inconnu"
 
-#: ../src/Core/Client.vala:107
+#: ../src/Core/Client.vala:105
 msgid "Operating System Updates"
 msgstr "Mises à jour du système d’exploitation"
 
-#: ../src/Core/Client.vala:108
+#: ../src/Core/Client.vala:106
 msgid "Updates to system components"
 msgstr "Mise à jour des composants système"
 
-#: ../src/Core/Client.vala:143
+#: ../src/Core/Client.vala:141
 msgid "%s (local)"
 msgstr "%s (local)"
 
-#: ../src/Core/Client.vala:452
+#: ../src/Core/Client.vala:450
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Mise à jour disponible"
 msgstr[1] "Mises à jour disponibles"
 
-#: ../src/Core/Client.vala:453
+#: ../src/Core/Client.vala:451
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "%u mise à jour est disponible pour votre système"
 msgstr[1] "%u mises à jour sont disponibles pour votre système"
 
-#: ../src/Core/Package.vala:163
+#: ../src/Core/Client.vala:480
+msgid "Version: %s"
+msgstr ""
+
+#: ../src/Core/Client.vala:489
+msgid "No components with updates"
+msgstr ""
+
+#: ../src/Core/Client.vala:493
+msgid "%u component with updates"
+msgid_plural "%u components with updates"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/Core/Client.vala:495
+msgid "%s:"
+msgstr ""
+
+#: ../src/Core/Package.vala:186
 msgid "The %s Developers"
 msgstr "Les programmeurs de %s"
 
@@ -255,9 +269,9 @@ msgstr "Ceci fermera toutes les applications et éteindra cet appareil."
 msgid "Restart"
 msgstr "Redémarrer"
 
-#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:182
-#: ../src/Dialogs/StripeDialog.vala:301
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:146
+#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:181
+#: ../src/Dialogs/StripeDialog.vala:300
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:144
 msgid "Cancel"
 msgstr "Annuler"
 
@@ -315,34 +329,34 @@ msgstr "Cryptogramme visuel"
 msgid "Privacy Policy"
 msgstr "Politique de confidentialité"
 
-#: ../src/Dialogs/StripeDialog.vala:184 ../src/Dialogs/StripeDialog.vala:300
+#: ../src/Dialogs/StripeDialog.vala:183 ../src/Dialogs/StripeDialog.vala:299
 msgid "Pay $%d.00"
 msgstr "Payer %d,00 $"
 
-#: ../src/Dialogs/StripeDialog.vala:229
+#: ../src/Dialogs/StripeDialog.vala:228
 msgid "Processing"
 msgstr "Traitement en cours"
 
-#: ../src/Dialogs/StripeDialog.vala:254
+#: ../src/Dialogs/StripeDialog.vala:253
 msgid "There Was a Problem Processing Your Payment"
 msgstr "Il y a eu une erreur lors du traitement de votre paiement"
 
-#: ../src/Dialogs/StripeDialog.vala:292
+#: ../src/Dialogs/StripeDialog.vala:291
 msgid "Pay Later"
 msgstr "Payer plus tard"
 
-#: ../src/Dialogs/StripeDialog.vala:293
+#: ../src/Dialogs/StripeDialog.vala:292
 msgid "Retry"
 msgstr "Réessayer"
 
-#: ../src/Dialogs/StripeDialog.vala:489 ../src/Dialogs/StripeDialog.vala:554
+#: ../src/Dialogs/StripeDialog.vala:498 ../src/Dialogs/StripeDialog.vala:563
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr ""
 "Le numéro de carte est incorrect. Veuillez réessayer avec le bon numéro de "
 "carte."
 
-#: ../src/Dialogs/StripeDialog.vala:491
+#: ../src/Dialogs/StripeDialog.vala:500
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
@@ -350,7 +364,7 @@ msgstr ""
 "Le mois d’expiration de la carte est incorrect. Veuillez réessayer avec la "
 "bonne date d’expiration."
 
-#: ../src/Dialogs/StripeDialog.vala:493 ../src/Dialogs/StripeDialog.vala:551
+#: ../src/Dialogs/StripeDialog.vala:502 ../src/Dialogs/StripeDialog.vala:560
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
@@ -358,23 +372,23 @@ msgstr ""
 "L’année d’expiration de la carte est incorrect. Veuillez réessayer avec la "
 "bonne date d’expiration."
 
-#: ../src/Dialogs/StripeDialog.vala:496 ../src/Dialogs/StripeDialog.vala:549
+#: ../src/Dialogs/StripeDialog.vala:505 ../src/Dialogs/StripeDialog.vala:558
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr ""
 "Le cryptogramme visuel de la carte est incorrect. Veuillez réessayer avec le "
 "bon cryptogramme visuel."
 
-#: ../src/Dialogs/StripeDialog.vala:498 ../src/Dialogs/StripeDialog.vala:540
+#: ../src/Dialogs/StripeDialog.vala:507 ../src/Dialogs/StripeDialog.vala:549
 msgid "The card has expired. Please try again with a different card."
 msgstr "La carte a expiré. Veuillez utiliser une autre carte."
 
-#: ../src/Dialogs/StripeDialog.vala:518
+#: ../src/Dialogs/StripeDialog.vala:527
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr ""
 "Il y a trop de demandes de paiement actuellement, veuillez réessayer plus "
 "tard."
 
-#: ../src/Dialogs/StripeDialog.vala:534
+#: ../src/Dialogs/StripeDialog.vala:543
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
@@ -382,7 +396,7 @@ msgstr ""
 "Cette carte ne permet pas ce type de transaction. Veuillez réessayer avec "
 "une autre carte."
 
-#: ../src/Dialogs/StripeDialog.vala:536
+#: ../src/Dialogs/StripeDialog.vala:545
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
@@ -390,41 +404,41 @@ msgstr ""
 "Cette carte ne permet pas le paiement avec cette devise. Veuillez réessayer "
 "avec une autre carte."
 
-#: ../src/Dialogs/StripeDialog.vala:538
+#: ../src/Dialogs/StripeDialog.vala:547
 msgid "The transaction has already been processed."
 msgstr "La transaction a déjà été effectuée."
 
-#: ../src/Dialogs/StripeDialog.vala:542
+#: ../src/Dialogs/StripeDialog.vala:551
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "postal code."
 msgstr ""
 "Le code postal est incorrect. Veuillez réessayer avec le bon code postal."
 
-#: ../src/Dialogs/StripeDialog.vala:544
+#: ../src/Dialogs/StripeDialog.vala:553
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr ""
 "Vous n’avez pas assez d’argent pour effectuer cette transaction. Veuillez "
 "utiliser une autre méthode de paiement."
 
-#: ../src/Dialogs/StripeDialog.vala:546
+#: ../src/Dialogs/StripeDialog.vala:555
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "Le montant est incorrect. Veuillez réessayer avec un montant valide."
 
-#: ../src/Dialogs/StripeDialog.vala:557
+#: ../src/Dialogs/StripeDialog.vala:566
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr ""
 "Le cryptogramme visuel de la carte est incorrect. Veuillez réessayer avec le "
 "bon cryptogramme visuel."
 
-#: ../src/Dialogs/StripeDialog.vala:559
+#: ../src/Dialogs/StripeDialog.vala:568
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
 msgstr ""
 "La limite maximale d’essais du code pin est atteinte. Veuillez utiliser une "
 "autre carte."
 
-#: ../src/Dialogs/StripeDialog.vala:579
+#: ../src/Dialogs/StripeDialog.vala:588
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
@@ -432,11 +446,11 @@ msgstr ""
 "Impossible de traiter la transaction. Veuillez contacter votre banque pour "
 "plus d’informations."
 
-#: ../src/Dialogs/StripeDialog.vala:582
+#: ../src/Dialogs/StripeDialog.vala:591
 msgid "The balance or credit limit on the card has been reached."
 msgstr "Le solde est dépensé ou la limite de crédit de la carte est atteinte."
 
-#: ../src/Dialogs/StripeDialog.vala:585
+#: ../src/Dialogs/StripeDialog.vala:594
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
 "Cette carte est une carte de test. Veuillez utiliser une vraie carte pour "
@@ -525,7 +539,7 @@ msgstr ""
 msgid "Restart Now"
 msgstr "Redémarrer maintenant"
 
-#: ../src/Views/AppListUpdateView.vala:157
+#: ../src/Views/AppListUpdateView.vala:162
 msgid "Update All"
 msgstr "Tout mettre à jour"
 
@@ -565,20 +579,20 @@ msgstr ""
 "Aucune application n’a été trouvée. Essayez de modifier les termes de la "
 "recherche."
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:125
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:123
 msgid "Uninstall"
 msgstr "Désinstaller"
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:128
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:126
 msgid "Open"
 msgstr "Ouvrir"
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:209
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:207
 #: ../src/Widgets/HumbleButton.vala:82
 msgid "Free"
 msgstr "Gratuit"
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:229
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:231
 msgid "Update"
 msgstr "Mettre à jour"
 
@@ -713,6 +727,9 @@ msgstr "À jour"
 #: ../src/Widgets/UpdateHeaderRow.vala:120
 msgid "Drivers"
 msgstr "Pilotes"
+
+#~ msgid "Close"
+#~ msgstr "Fermer"
 
 #~ msgid "App Center"
 #~ msgstr "Centre d’applications"
