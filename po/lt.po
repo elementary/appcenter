@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-09 18:51+0100\n"
-"PO-Revision-Date: 2018-01-13 23:50+0000\n"
+"POT-Creation-Date: 2018-02-17 14:11+0000\n"
+"PO-Revision-Date: 2018-02-18 19:06+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/lt/>\n"
@@ -32,11 +32,7 @@ msgstr "Programa įdiegta"
 msgid "%s has been successfully installed"
 msgstr "%s buvo sėkmingai įdiegta"
 
-#: ../src/Application.vala:254
-msgid "Close"
-msgstr "Užverti"
-
-#: ../src/Application.vala:256
+#: ../src/Application.vala:253
 msgid "There Was An Error Installing %s."
 msgstr "Įdiegiant %s, įvyko klaida."
 
@@ -56,11 +52,11 @@ msgstr ""
 "Tai galėjo būti sukelta išorinės, rankiniu būdu pridėtos programinės įrangos "
 "saugyklos arba pažeisto šaltinių failo."
 
-#: ../src/Application.vala:297
+#: ../src/Application.vala:298
 msgid "Ignore"
 msgstr "Nepaisyti"
 
-#: ../src/Application.vala:298
+#: ../src/Application.vala:299
 msgid "Try Again"
 msgstr "Bandyti dar kartą"
 
@@ -208,33 +204,53 @@ msgstr "Kopijuojami failai"
 msgid "Unknown state"
 msgstr "Nežinoma būsena"
 
-#: ../src/Core/Client.vala:107
+#: ../src/Core/Client.vala:105
 msgid "Operating System Updates"
 msgstr "Operacinės sistemos atnaujinimai"
 
-#: ../src/Core/Client.vala:108
+#: ../src/Core/Client.vala:106
 msgid "Updates to system components"
 msgstr "Atnaujinimai sistemos komponentams"
 
-#: ../src/Core/Client.vala:143
+#: ../src/Core/Client.vala:141
 msgid "%s (local)"
 msgstr "%s (vietinė)"
 
-#: ../src/Core/Client.vala:452
+#: ../src/Core/Client.vala:450
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Prieinamas atnaujinimas"
 msgstr[1] "Prieinami atnaujinimai"
 msgstr[2] "Prieinami atnaujinimai"
 
-#: ../src/Core/Client.vala:453
+#: ../src/Core/Client.vala:451
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "Jūsų sistemai prieinamas %u atnaujinimas"
 msgstr[1] "Jūsų sistemai prieinami %u atnaujinimai"
 msgstr[2] "Jūsų sistemai prieinama %u atnaujinimų"
 
-#: ../src/Core/Package.vala:163
+#: ../src/Core/Client.vala:480
+msgid "Version: %s"
+msgstr "Versija: %s"
+
+#: ../src/Core/Client.vala:489
+msgid "No components with updates"
+msgstr "Nėra komponentų su atnaujinimais"
+
+#: ../src/Core/Client.vala:493
+msgid "%u component with updates"
+msgid_plural "%u components with updates"
+msgstr[0] "%u komponentas su atnaujinimais"
+msgstr[1] "%u komponentai su atnaujinimais"
+msgstr[2] "%u komponentų su atnaujinimais"
+msgstr[3] ""
+
+#: ../src/Core/Client.vala:495
+msgid "%s:"
+msgstr "%s:"
+
+#: ../src/Core/Package.vala:186
 msgid "The %s Developers"
 msgstr "%s kūrėjai"
 
@@ -258,9 +274,9 @@ msgstr "Tai užvers visas atvertas programas ir paleis šį įrenginį iš naujo
 msgid "Restart"
 msgstr "Paleisti iš naujo"
 
-#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:182
-#: ../src/Dialogs/StripeDialog.vala:301
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:146
+#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:181
+#: ../src/Dialogs/StripeDialog.vala:300
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:144
 msgid "Cancel"
 msgstr "Atsisakyti"
 
@@ -317,34 +333,34 @@ msgstr "CVC saugos kodas"
 msgid "Privacy Policy"
 msgstr "Privatumo politika"
 
-#: ../src/Dialogs/StripeDialog.vala:184 ../src/Dialogs/StripeDialog.vala:300
+#: ../src/Dialogs/StripeDialog.vala:183 ../src/Dialogs/StripeDialog.vala:299
 msgid "Pay $%d.00"
 msgstr "Mokėti $%d,00"
 
-#: ../src/Dialogs/StripeDialog.vala:229
+#: ../src/Dialogs/StripeDialog.vala:228
 msgid "Processing"
 msgstr "Apdorojama"
 
-#: ../src/Dialogs/StripeDialog.vala:254
+#: ../src/Dialogs/StripeDialog.vala:253
 msgid "There Was a Problem Processing Your Payment"
 msgstr "Apdorojant jūsų apmokėjimą, įvyko klaida"
 
-#: ../src/Dialogs/StripeDialog.vala:292
+#: ../src/Dialogs/StripeDialog.vala:291
 msgid "Pay Later"
 msgstr "Mokėti vėliau"
 
-#: ../src/Dialogs/StripeDialog.vala:293
+#: ../src/Dialogs/StripeDialog.vala:292
 msgid "Retry"
 msgstr "Bandyti dar kartą"
 
-#: ../src/Dialogs/StripeDialog.vala:489 ../src/Dialogs/StripeDialog.vala:554
+#: ../src/Dialogs/StripeDialog.vala:498 ../src/Dialogs/StripeDialog.vala:563
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr ""
 "Kortelės numeris yra neteisingas. Prašome bandyti dar kartą, naudojant "
 "teisingą kortelės numerį."
 
-#: ../src/Dialogs/StripeDialog.vala:491
+#: ../src/Dialogs/StripeDialog.vala:500
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
@@ -352,7 +368,7 @@ msgstr ""
 "Galiojimo datos mėnuo yra neteisingas. Prašome bandyti dar kartą, naudojant "
 "teisingą galiojimo datą."
 
-#: ../src/Dialogs/StripeDialog.vala:493 ../src/Dialogs/StripeDialog.vala:551
+#: ../src/Dialogs/StripeDialog.vala:502 ../src/Dialogs/StripeDialog.vala:560
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
@@ -360,25 +376,25 @@ msgstr ""
 "Galiojimo datos metai yra neteisingi. Prašome bandyti dar kartą, naudojant "
 "teisingą galiojimo datą."
 
-#: ../src/Dialogs/StripeDialog.vala:496 ../src/Dialogs/StripeDialog.vala:549
+#: ../src/Dialogs/StripeDialog.vala:505 ../src/Dialogs/StripeDialog.vala:558
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr ""
 "CVC saugumo kodas yra neteisingas. Prašome bandyti dar kartą, naudojant "
 "teisingą CVC saugumo kodą."
 
-#: ../src/Dialogs/StripeDialog.vala:498 ../src/Dialogs/StripeDialog.vala:540
+#: ../src/Dialogs/StripeDialog.vala:507 ../src/Dialogs/StripeDialog.vala:549
 msgid "The card has expired. Please try again with a different card."
 msgstr ""
 "Kortelės galiojimas yra pasibaigęs. Prašome bandyti dar kartą, naudojant "
 "kitą kortelę."
 
-#: ../src/Dialogs/StripeDialog.vala:518
+#: ../src/Dialogs/StripeDialog.vala:527
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr ""
 "Šiuo metu yra pernelyg daug apmokėjimo užklausų, prašome vėliau bandyti dar "
 "kartą."
 
-#: ../src/Dialogs/StripeDialog.vala:534
+#: ../src/Dialogs/StripeDialog.vala:543
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
@@ -386,7 +402,7 @@ msgstr ""
 "Ši kortelė nepalaiko tokio tipo operacijos. Prašome bandyti dar kartą, "
 "naudojant kitą kortelę."
 
-#: ../src/Dialogs/StripeDialog.vala:536
+#: ../src/Dialogs/StripeDialog.vala:545
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
@@ -394,11 +410,11 @@ msgstr ""
 "Ši valiuta nėra palaikoma šios kortelės. Prašome bandyti dar kartą, "
 "naudojant kitą kortelę."
 
-#: ../src/Dialogs/StripeDialog.vala:538
+#: ../src/Dialogs/StripeDialog.vala:547
 msgid "The transaction has already been processed."
 msgstr "Operacija jau buvo apdorota."
 
-#: ../src/Dialogs/StripeDialog.vala:542
+#: ../src/Dialogs/StripeDialog.vala:551
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "postal code."
@@ -406,30 +422,30 @@ msgstr ""
 "Pašto kodas yra neteisingas. Prašome bandyti dar kartą, naudojant teisingą "
 "pašto kodą."
 
-#: ../src/Dialogs/StripeDialog.vala:544
+#: ../src/Dialogs/StripeDialog.vala:553
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr ""
 "Jūs neturite pakankamai lėšų. Prašome naudoti alternatyvų apmokėjimo metodą."
 
-#: ../src/Dialogs/StripeDialog.vala:546
+#: ../src/Dialogs/StripeDialog.vala:555
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr ""
 "Suma yra neteisinga. Prašome bandyti dar kartą, naudojant teisingą sumą."
 
-#: ../src/Dialogs/StripeDialog.vala:557
+#: ../src/Dialogs/StripeDialog.vala:566
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr ""
 "PIN numeris yra neteisingas. Prašome bandyti dar kartą, naudojant teisingą "
 "PIN."
 
-#: ../src/Dialogs/StripeDialog.vala:559
+#: ../src/Dialogs/StripeDialog.vala:568
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
 msgstr ""
 "Buvo atlikta per daug PIN bandymų. Prašome bandyti dar kartą, naudojant kitą "
 "kortelę."
 
-#: ../src/Dialogs/StripeDialog.vala:579
+#: ../src/Dialogs/StripeDialog.vala:588
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
@@ -437,11 +453,11 @@ msgstr ""
 "Nepavyko užbaigti operacijos. Prašome dėl tolimesnės informacijos susisiekti "
 "su savo banku."
 
-#: ../src/Dialogs/StripeDialog.vala:582
+#: ../src/Dialogs/StripeDialog.vala:591
 msgid "The balance or credit limit on the card has been reached."
 msgstr "Kortelėje yra pasiekta balanso ar kredito riba."
 
-#: ../src/Dialogs/StripeDialog.vala:585
+#: ../src/Dialogs/StripeDialog.vala:594
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
 "Nurodyta kortelė yra bandomoji kortelė. Norint tęsti, prašome naudoti tikrą "
@@ -529,7 +545,7 @@ msgstr ""
 msgid "Restart Now"
 msgstr "Paleisti iš naujo dabar"
 
-#: ../src/Views/AppListUpdateView.vala:157
+#: ../src/Views/AppListUpdateView.vala:162
 msgid "Update All"
 msgstr "Atnaujinti viską"
 
@@ -567,20 +583,20 @@ msgstr "Rezultatų nėra"
 msgid "No apps could be found. Try changing search terms."
 msgstr "Nepavyko rasti jokių programų. Pabandykite pakeisti paieškos žodžius."
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:125
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:123
 msgid "Uninstall"
 msgstr "Šalinti"
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:128
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:126
 msgid "Open"
 msgstr "Atverti"
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:209
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:207
 #: ../src/Widgets/HumbleButton.vala:82
 msgid "Free"
 msgstr "Nemokamai"
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:229
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:231
 msgid "Update"
 msgstr "Atnaujinti"
 
@@ -717,6 +733,9 @@ msgstr "Atnaujintos"
 #: ../src/Widgets/UpdateHeaderRow.vala:120
 msgid "Drivers"
 msgstr "Tvarkyklės"
+
+#~ msgid "Close"
+#~ msgstr "Užverti"
 
 #~ msgid "App Center"
 #~ msgstr "Programų centras"
