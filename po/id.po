@@ -2,11 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-09 18:51+0100\n"
+"POT-Creation-Date: 2018-02-17 14:11+0000\n"
 "PO-Revision-Date: 2018-02-14 17:28+0000\n"
 "Last-Translator: Jonathan Tyar <jonathan.tyar@gmail.com>\n"
-"Language-Team: Indonesian "
-"<https://weblate.elementary.io/projects/appcenter/appcenter/id/>\n"
+"Language-Team: Indonesian <https://weblate.elementary.io/projects/appcenter/"
+"appcenter/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -32,11 +32,7 @@ msgstr "Aplikasi terpasang"
 msgid "%s has been successfully installed"
 msgstr "%s telah berhasil terpasang"
 
-#: ../src/Application.vala:254
-msgid "Close"
-msgstr "Tutup"
-
-#: ../src/Application.vala:256
+#: ../src/Application.vala:253
 msgid "There Was An Error Installing %s."
 msgstr "Terjadi Kesalahan Saat Pemasangan% s."
 
@@ -56,11 +52,11 @@ msgstr ""
 "Ini mungkin disebabkan oleh repositori perangkat lunak eksternal atau "
 "perangkat lunak yang ditambahkan secara manual atau file sumber yang rusak."
 
-#: ../src/Application.vala:297
+#: ../src/Application.vala:298
 msgid "Ignore"
 msgstr "Abaikan"
 
-#: ../src/Application.vala:298
+#: ../src/Application.vala:299
 msgid "Try Again"
 msgstr "Coba Kembali"
 
@@ -208,29 +204,46 @@ msgstr "Menyalin berkas"
 msgid "Unknown state"
 msgstr "Keadaan tidak dikenal"
 
-#: ../src/Core/Client.vala:107
+#: ../src/Core/Client.vala:105
 msgid "Operating System Updates"
 msgstr "Pembaruan Sistem Operasi"
 
-#: ../src/Core/Client.vala:108
+#: ../src/Core/Client.vala:106
 msgid "Updates to system components"
 msgstr "Pembaruan untuk komponen sistem"
 
-#: ../src/Core/Client.vala:143
+#: ../src/Core/Client.vala:141
 msgid "%s (local)"
 msgstr "% (lokal)"
 
-#: ../src/Core/Client.vala:452
+#: ../src/Core/Client.vala:450
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Pembaruan Tersedia"
 
-#: ../src/Core/Client.vala:453
+#: ../src/Core/Client.vala:451
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "%u pembaruan tersedia untuk sistem Anda"
 
-#: ../src/Core/Package.vala:163
+#: ../src/Core/Client.vala:480
+msgid "Version: %s"
+msgstr ""
+
+#: ../src/Core/Client.vala:489
+msgid "No components with updates"
+msgstr ""
+
+#: ../src/Core/Client.vala:493
+msgid "%u component with updates"
+msgid_plural "%u components with updates"
+msgstr[0] ""
+
+#: ../src/Core/Client.vala:495
+msgid "%s:"
+msgstr ""
+
+#: ../src/Core/Package.vala:186
 msgid "The %s Developers"
 msgstr "Pengembang %s"
 
@@ -255,9 +268,9 @@ msgstr ""
 msgid "Restart"
 msgstr "Mulai Ulang"
 
-#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:182
-#: ../src/Dialogs/StripeDialog.vala:301
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:146
+#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:181
+#: ../src/Dialogs/StripeDialog.vala:300
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:144
 msgid "Cancel"
 msgstr "Batal"
 
@@ -315,34 +328,34 @@ msgstr "CVC"
 msgid "Privacy Policy"
 msgstr "Kebijakan Privasi"
 
-#: ../src/Dialogs/StripeDialog.vala:184 ../src/Dialogs/StripeDialog.vala:300
+#: ../src/Dialogs/StripeDialog.vala:183 ../src/Dialogs/StripeDialog.vala:299
 msgid "Pay $%d.00"
 msgstr "Bayar $%d.00"
 
-#: ../src/Dialogs/StripeDialog.vala:229
+#: ../src/Dialogs/StripeDialog.vala:228
 msgid "Processing"
 msgstr "Mengolah"
 
-#: ../src/Dialogs/StripeDialog.vala:254
+#: ../src/Dialogs/StripeDialog.vala:253
 msgid "There Was a Problem Processing Your Payment"
 msgstr "Ada Masalah Saat Mengolah Pembayaran Anda"
 
-#: ../src/Dialogs/StripeDialog.vala:292
+#: ../src/Dialogs/StripeDialog.vala:291
 msgid "Pay Later"
 msgstr "Bayar Nanti"
 
-#: ../src/Dialogs/StripeDialog.vala:293
+#: ../src/Dialogs/StripeDialog.vala:292
 msgid "Retry"
 msgstr "Ulangi"
 
-#: ../src/Dialogs/StripeDialog.vala:489 ../src/Dialogs/StripeDialog.vala:554
+#: ../src/Dialogs/StripeDialog.vala:498 ../src/Dialogs/StripeDialog.vala:563
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr ""
 "Nomor kartu salah. Silakan coba lagi dengan menggunakan nomor kartu yang "
 "benar."
 
-#: ../src/Dialogs/StripeDialog.vala:491
+#: ../src/Dialogs/StripeDialog.vala:500
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
@@ -350,7 +363,7 @@ msgstr ""
 "Bulan kadaluarsa salah. Silakan coba lagi dengan menggunakan tanggal "
 "kadaluarsa yang benar."
 
-#: ../src/Dialogs/StripeDialog.vala:493 ../src/Dialogs/StripeDialog.vala:551
+#: ../src/Dialogs/StripeDialog.vala:502 ../src/Dialogs/StripeDialog.vala:560
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
@@ -358,21 +371,21 @@ msgstr ""
 "Tahun kadaluarsa salah. Silakan coba lagi dengan menggunakan tanggal "
 "kadaluarsa yang benar."
 
-#: ../src/Dialogs/StripeDialog.vala:496 ../src/Dialogs/StripeDialog.vala:549
+#: ../src/Dialogs/StripeDialog.vala:505 ../src/Dialogs/StripeDialog.vala:558
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr ""
 "Nomor CVC salah. Silakan coba lagi dengan menggunakan nomor CVC yang benar."
 
-#: ../src/Dialogs/StripeDialog.vala:498 ../src/Dialogs/StripeDialog.vala:540
+#: ../src/Dialogs/StripeDialog.vala:507 ../src/Dialogs/StripeDialog.vala:549
 msgid "The card has expired. Please try again with a different card."
 msgstr "Kartu telah kadaluarsa. Silakan coba lagi dengan kartu yang berbeda."
 
-#: ../src/Dialogs/StripeDialog.vala:518
+#: ../src/Dialogs/StripeDialog.vala:527
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr ""
 "Ada terlalu banyak permintaan pembayaran saat ini, silakan coba lagi nanti."
 
-#: ../src/Dialogs/StripeDialog.vala:534
+#: ../src/Dialogs/StripeDialog.vala:543
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
@@ -380,7 +393,7 @@ msgstr ""
 "Kartu ini tidak mendukung transaksi semacam ini. Silakan coba lagi dengan "
 "kartu yang berbeda."
 
-#: ../src/Dialogs/StripeDialog.vala:536
+#: ../src/Dialogs/StripeDialog.vala:545
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
@@ -388,11 +401,11 @@ msgstr ""
 "Mata uang tidak didukung oleh kartu ini. Silakan coba lagi dengan kartu yang "
 "berbeda."
 
-#: ../src/Dialogs/StripeDialog.vala:538
+#: ../src/Dialogs/StripeDialog.vala:547
 msgid "The transaction has already been processed."
 msgstr "Transaksi telah diolah."
 
-#: ../src/Dialogs/StripeDialog.vala:542
+#: ../src/Dialogs/StripeDialog.vala:551
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "postal code."
@@ -400,29 +413,29 @@ msgstr ""
 "Kode Pos/ZIP salah. Silakan coba lagi dengan menggunakan Kode Pos/ZIP yang "
 "benar."
 
-#: ../src/Dialogs/StripeDialog.vala:544
+#: ../src/Dialogs/StripeDialog.vala:553
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr ""
 "Anda tidak memiliki dana yang cukup. Silakan gunakan cara pembayaran lainnya."
 
-#: ../src/Dialogs/StripeDialog.vala:546
+#: ../src/Dialogs/StripeDialog.vala:555
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr ""
 "Jumlahnya salah. Silakan coba lagi dengan menggunakan jumlah yang benar."
 
-#: ../src/Dialogs/StripeDialog.vala:557
+#: ../src/Dialogs/StripeDialog.vala:566
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr ""
 "Nomor CVC salah. Silakan coba lagi dengan menggunakan nomor CVC yang benar."
 
-#: ../src/Dialogs/StripeDialog.vala:559
+#: ../src/Dialogs/StripeDialog.vala:568
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
 msgstr ""
 "Terlalu banyak usaha memasukkan pin. Silakan coba lagi dengan kartu yang "
 "berbeda."
 
-#: ../src/Dialogs/StripeDialog.vala:579
+#: ../src/Dialogs/StripeDialog.vala:588
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
@@ -430,11 +443,11 @@ msgstr ""
 "Tidak dapat menyelesaikan transaksi. Silakan hubungi bank Anda untuk "
 "informasi lebih lanjut."
 
-#: ../src/Dialogs/StripeDialog.vala:582
+#: ../src/Dialogs/StripeDialog.vala:591
 msgid "The balance or credit limit on the card has been reached."
 msgstr "Batas saldo atau kredit pada kartu telah tercapai."
 
-#: ../src/Dialogs/StripeDialog.vala:585
+#: ../src/Dialogs/StripeDialog.vala:594
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
 "Kartu yang diberikan adalah kartu tes. Silakan gunakan kartu asli untuk "
@@ -521,7 +534,7 @@ msgstr "Mulai ulang diperlukan untuk menyelesaikan pemasangan pembaruan"
 msgid "Restart Now"
 msgstr "Mulai Ulang Sekarang"
 
-#: ../src/Views/AppListUpdateView.vala:157
+#: ../src/Views/AppListUpdateView.vala:162
 msgid "Update All"
 msgstr "Perbarui Semua"
 
@@ -559,20 +572,20 @@ msgstr "Tidak Ada Hasil"
 msgid "No apps could be found. Try changing search terms."
 msgstr "Tidak ada aplikasi yang bisa ditemukan. Coba ganti kata penelusuran."
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:125
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:123
 msgid "Uninstall"
 msgstr "Hapus Pemasangan"
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:128
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:126
 msgid "Open"
 msgstr "Buka"
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:209
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:207
 #: ../src/Widgets/HumbleButton.vala:82
 msgid "Free"
 msgstr "Gratis"
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:229
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:231
 msgid "Update"
 msgstr "Perbarui"
 
@@ -708,6 +721,9 @@ msgstr "Terbaru"
 #: ../src/Widgets/UpdateHeaderRow.vala:120
 msgid "Drivers"
 msgstr "Driver"
+
+#~ msgid "Close"
+#~ msgstr "Tutup"
 
 #~ msgid "App Center"
 #~ msgstr "Pusat Aplikasi"
