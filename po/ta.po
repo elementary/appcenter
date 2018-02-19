@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-09 18:51+0100\n"
+"POT-Creation-Date: 2018-02-17 14:11+0000\n"
 "PO-Revision-Date: 2017-06-16 17:37+0000\n"
 "Last-Translator: Rajeev Kumar <irajeevankumar@gmail.com>\n"
 "Language-Team: Tamil <https://l10n.elementary.io/projects/appcenter/"
@@ -32,11 +32,7 @@ msgstr "மென்பொருள் நிறுவப்பட்டது"
 msgid "%s has been successfully installed"
 msgstr "% வெற்றிகரமாக நிறுவப்பட்டது"
 
-#: ../src/Application.vala:254
-msgid "Close"
-msgstr "மூடு"
-
-#: ../src/Application.vala:256
+#: ../src/Application.vala:253
 #, fuzzy
 msgid "There Was An Error Installing %s."
 msgstr "%s நிறுவுவதில்  ஒரு  பிழை"
@@ -55,11 +51,11 @@ msgid ""
 "or a corrupted sources file."
 msgstr ""
 
-#: ../src/Application.vala:297
+#: ../src/Application.vala:298
 msgid "Ignore"
 msgstr ""
 
-#: ../src/Application.vala:298
+#: ../src/Application.vala:299
 msgid "Try Again"
 msgstr ""
 
@@ -207,31 +203,49 @@ msgstr "கோப்புகளை நகலெடுக்கிறது"
 msgid "Unknown state"
 msgstr "தெரியாத நிலை"
 
-#: ../src/Core/Client.vala:107
+#: ../src/Core/Client.vala:105
 msgid "Operating System Updates"
 msgstr "இயக்க முறைமைகள் மேம்படுத்தல்கள்"
 
-#: ../src/Core/Client.vala:108
+#: ../src/Core/Client.vala:106
 msgid "Updates to system components"
 msgstr "கணினி கூறுகளுக்கான புதுப்பிப்புகள்"
 
-#: ../src/Core/Client.vala:143
+#: ../src/Core/Client.vala:141
 msgid "%s (local)"
 msgstr ""
 
-#: ../src/Core/Client.vala:452
+#: ../src/Core/Client.vala:450
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "புதுப்பிப்பு உள்ளது"
 msgstr[1] "புதுப்பிப்புகள் உள்ளன"
 
-#: ../src/Core/Client.vala:453
+#: ../src/Core/Client.vala:451
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "%u உங்கள் கணினிக்கு புதுப்பிப்பு உள்ளது"
 msgstr[1] "%u உங்கள் கணினிக்கு புதுப்பிப்புகள் உள்ளன"
 
-#: ../src/Core/Package.vala:163
+#: ../src/Core/Client.vala:480
+msgid "Version: %s"
+msgstr ""
+
+#: ../src/Core/Client.vala:489
+msgid "No components with updates"
+msgstr ""
+
+#: ../src/Core/Client.vala:493
+msgid "%u component with updates"
+msgid_plural "%u components with updates"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/Core/Client.vala:495
+msgid "%s:"
+msgstr ""
+
+#: ../src/Core/Package.vala:186
 msgid "The %s Developers"
 msgstr "%s  டெவலப்பர்கள்"
 
@@ -255,9 +269,9 @@ msgstr "இது எல்லா திறந்த பயன்பாடுக
 msgid "Restart"
 msgstr "மறுதொடக்கம்"
 
-#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:182
-#: ../src/Dialogs/StripeDialog.vala:301
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:146
+#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:181
+#: ../src/Dialogs/StripeDialog.vala:300
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:144
 msgid "Cancel"
 msgstr "ரத்துசெய்"
 
@@ -312,57 +326,57 @@ msgstr "சிவிசி"
 msgid "Privacy Policy"
 msgstr "தனியுரிமை கொள்கை"
 
-#: ../src/Dialogs/StripeDialog.vala:184 ../src/Dialogs/StripeDialog.vala:300
+#: ../src/Dialogs/StripeDialog.vala:183 ../src/Dialogs/StripeDialog.vala:299
 msgid "Pay $%d.00"
 msgstr "பணம் செலுத்து $%d.00"
 
-#: ../src/Dialogs/StripeDialog.vala:229
+#: ../src/Dialogs/StripeDialog.vala:228
 msgid "Processing"
 msgstr "செயல்முறை நடக்கிறது"
 
-#: ../src/Dialogs/StripeDialog.vala:254
+#: ../src/Dialogs/StripeDialog.vala:253
 msgid "There Was a Problem Processing Your Payment"
 msgstr "உங்களுடைய கொடுப்பனவு ஒரு பிரச்சனை"
 
-#: ../src/Dialogs/StripeDialog.vala:292
+#: ../src/Dialogs/StripeDialog.vala:291
 msgid "Pay Later"
 msgstr "பின்னர் பணம் கொடுங்கள்"
 
-#: ../src/Dialogs/StripeDialog.vala:293
+#: ../src/Dialogs/StripeDialog.vala:292
 msgid "Retry"
 msgstr "மீண்டும் முயற்சி செய்"
 
-#: ../src/Dialogs/StripeDialog.vala:489 ../src/Dialogs/StripeDialog.vala:554
+#: ../src/Dialogs/StripeDialog.vala:498 ../src/Dialogs/StripeDialog.vala:563
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr "அட்டை எண் தவறானது. சரியான கார்டு எண்ணைப் பயன்படுத்தி மீண்டும் முயற்சிக்கவும்."
 
-#: ../src/Dialogs/StripeDialog.vala:491
+#: ../src/Dialogs/StripeDialog.vala:500
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
 msgstr "காலாவதி மாதம் தவறானது. சரியான காலாவதி தேதி பயன்படுத்தி மீண்டும் முயற்சிக்கவும்."
 
-#: ../src/Dialogs/StripeDialog.vala:493 ../src/Dialogs/StripeDialog.vala:551
+#: ../src/Dialogs/StripeDialog.vala:502 ../src/Dialogs/StripeDialog.vala:560
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
 "காலாவதி ஆண்டு தவறானது. சரியான காலாவதி தேதியைப் பயன்படுத்தி மீண்டும் முயற்சிக்கவும் ."
 
-#: ../src/Dialogs/StripeDialog.vala:496 ../src/Dialogs/StripeDialog.vala:549
+#: ../src/Dialogs/StripeDialog.vala:505 ../src/Dialogs/StripeDialog.vala:558
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr "CVC எண் தவறானது. சரியான CVC ஐ பயன்படுத்தி மீண்டும் முயற்சிக்கவும்."
 
-#: ../src/Dialogs/StripeDialog.vala:498 ../src/Dialogs/StripeDialog.vala:540
+#: ../src/Dialogs/StripeDialog.vala:507 ../src/Dialogs/StripeDialog.vala:549
 msgid "The card has expired. Please try again with a different card."
 msgstr "அட்டை காலாவதியானது. வேறு ஒரு கார்டை மீண்டும் முயற்சிக்கவும்."
 
-#: ../src/Dialogs/StripeDialog.vala:518
+#: ../src/Dialogs/StripeDialog.vala:527
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr "தற்போது பல பணம் கோரிக்கைகள் உள்ளன, பின்னர் மீண்டும் முயற்சிக்கவும்."
 
-#: ../src/Dialogs/StripeDialog.vala:534
+#: ../src/Dialogs/StripeDialog.vala:543
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
@@ -370,17 +384,17 @@ msgstr ""
 "இந்த வகையான பரிவர்த்தனைக்கு இந்த அட்டை ஆதரிக்கவில்லை. வேறு ஒரு கார்டை மீண்டும் "
 "முயற்சிக்கவும்."
 
-#: ../src/Dialogs/StripeDialog.vala:536
+#: ../src/Dialogs/StripeDialog.vala:545
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
 msgstr "இந்த அட்டை நாணயத்தை ஆதரிக்கவில்லை. வேறு ஒரு கார்டை மீண்டும் முயற்சிக்கவும்."
 
-#: ../src/Dialogs/StripeDialog.vala:538
+#: ../src/Dialogs/StripeDialog.vala:547
 msgid "The transaction has already been processed."
 msgstr "பரிவர்த்தனை ஏற்கனவே செயல்படுத்தப்பட்டது."
 
-#: ../src/Dialogs/StripeDialog.vala:542
+#: ../src/Dialogs/StripeDialog.vala:551
 #, fuzzy
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
@@ -389,37 +403,37 @@ msgstr ""
 "ZIP / அஞ்சல் குறியீடு தவறானது. சரியான ZIP / அஞ்சல் குறியீட்டைப் பயன்படுத்தி மீண்டும் "
 "முயற்சிக்கவும்."
 
-#: ../src/Dialogs/StripeDialog.vala:544
+#: ../src/Dialogs/StripeDialog.vala:553
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "உங்களிடம் போதுமான நிதி இல்லை. மாற்று கட்டண முறையைப் பயன்படுத்துக."
 
-#: ../src/Dialogs/StripeDialog.vala:546
+#: ../src/Dialogs/StripeDialog.vala:555
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "அளவு தவறானது. சரியான அளவு பயன்படுத்தி மீண்டும் முயற்சிக்கவும்."
 
-#: ../src/Dialogs/StripeDialog.vala:557
+#: ../src/Dialogs/StripeDialog.vala:566
 #, fuzzy
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "CVC எண் தவறானது. சரியான CVC ஐ பயன்படுத்தி மீண்டும் முயற்சிக்கவும்."
 
-#: ../src/Dialogs/StripeDialog.vala:559
+#: ../src/Dialogs/StripeDialog.vala:568
 #, fuzzy
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
 msgstr "பல PIN முயற்சிகள் உள்ளன. வேறு ஒரு கார்டை மீண்டும் முயற்சிக்கவும்."
 
-#: ../src/Dialogs/StripeDialog.vala:579
+#: ../src/Dialogs/StripeDialog.vala:588
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
 msgstr ""
 "பரிவர்த்தனை முடிக்க முடியவில்லை. மேலும் தகவலுக்கு உங்கள் வங்கியைத் தொடர்பு கொள்ளவும்."
 
-#: ../src/Dialogs/StripeDialog.vala:582
+#: ../src/Dialogs/StripeDialog.vala:591
 msgid "The balance or credit limit on the card has been reached."
 msgstr "அட்டையின் இருப்பு அல்லது கடன் வரம்பு அடைந்துள்ளது."
 
-#: ../src/Dialogs/StripeDialog.vala:585
+#: ../src/Dialogs/StripeDialog.vala:594
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "கொடுக்கப்பட்ட அட்டை ஒரு சோதனை அட்டை. தொடர உண்மையான கார்டைப் பயன்படுத்தவும்."
 
@@ -505,7 +519,7 @@ msgstr "புதுப்பிப்புகளை நிறுவுவத�
 msgid "Restart Now"
 msgstr "இப்போது மறுதொடக்கம் செய்க"
 
-#: ../src/Views/AppListUpdateView.vala:157
+#: ../src/Views/AppListUpdateView.vala:162
 msgid "Update All"
 msgstr "அனைத்தையும் புதுப்பிக்கவும்"
 
@@ -543,20 +557,20 @@ msgstr "முடிவுகள் இல்லை"
 msgid "No apps could be found. Try changing search terms."
 msgstr "எந்த மென்பொருளும் கிடைக்கவில்லை. தேடல் சொற்களை மாற்ற முயற்சிக்கவும்."
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:125
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:123
 msgid "Uninstall"
 msgstr "நீக்குதல்"
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:128
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:126
 msgid "Open"
 msgstr "திற"
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:209
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:207
 #: ../src/Widgets/HumbleButton.vala:82
 msgid "Free"
 msgstr "இலவசம்"
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:229
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:231
 msgid "Update"
 msgstr "புதுப்பிக்கவும்"
 
@@ -692,6 +706,9 @@ msgstr "இது வரை புதுப்பிக்கப்பட்ட�
 #: ../src/Widgets/UpdateHeaderRow.vala:120
 msgid "Drivers"
 msgstr "இயக்கிகள்"
+
+#~ msgid "Close"
+#~ msgstr "மூடு"
 
 #~ msgid "App Center"
 #~ msgstr "மென்பொருள் மையம்"
