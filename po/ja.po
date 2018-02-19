@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-17 14:11+0000\n"
-"PO-Revision-Date: 2018-01-29 00:01+0000\n"
+"PO-Revision-Date: 2018-02-20 00:09+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
-"Language-Team: Japanese <https://weblate.elementary.io/projects/appcenter/"
-"appcenter/ja/>\n"
+"Language-Team: Japanese "
+"<https://weblate.elementary.io/projects/appcenter/appcenter/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -47,7 +47,7 @@ msgstr "アップデートの取得に失敗しました"
 msgid ""
 "This may have been caused by external, manually added software repositories "
 "or a corrupted sources file."
-msgstr ""
+msgstr "これは外部の手動で追加されたソフトウェアリポジトリか、壊れたソースファイルにより発生したかもしれません。"
 
 #: ../src/Application.vala:298
 msgid "Ignore"
@@ -225,20 +225,20 @@ msgstr[0] "システムに %u 件のアップデートが利用可能です"
 
 #: ../src/Core/Client.vala:480
 msgid "Version: %s"
-msgstr ""
+msgstr "バージョン: %s"
 
 #: ../src/Core/Client.vala:489
 msgid "No components with updates"
-msgstr ""
+msgstr "アップデートのあるコンポーネントはありません"
 
 #: ../src/Core/Client.vala:493
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
-msgstr[0] ""
+msgstr[0] "アップデートのあるコンポーネントが %u 個あります"
 
 #: ../src/Core/Client.vala:495
 msgid "%s:"
-msgstr ""
+msgstr "%s:"
 
 #: ../src/Core/Package.vala:186
 msgid "The %s Developers"
@@ -292,7 +292,7 @@ msgstr "%s に%dドル払う"
 msgid ""
 "This is a one time payment. Your email address is only used to send you a "
 "receipt."
-msgstr ""
+msgstr "これは一括払いです。あなたのメールアドレスは領収書を送るためのみに使用されます。"
 
 #: ../src/Dialogs/StripeDialog.vala:91 ../src/Widgets/SharePopover.vala:35
 msgid "Email"
