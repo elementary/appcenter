@@ -467,7 +467,6 @@ public class AppCenterCore.Client : Object {
 #endif
 
             uint os_count = 0;
-            string os_ver = "";
             string os_desc = "";
 
             results.get_package_array ().foreach ((pk_package) => {
