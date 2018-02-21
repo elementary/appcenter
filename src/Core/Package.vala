@@ -466,6 +466,10 @@ public class AppCenterCore.Package : Object {
     }
 
     private string convert_version (string version) {
+        if (is_os_updates) {
+            return version;
+        }
+
         string returned = version;
         returned = returned.split ("+", 2)[0];
         returned = returned.split ("-", 2)[0];
