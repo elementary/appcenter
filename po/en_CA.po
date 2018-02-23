@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-17 14:11+0000\n"
-"PO-Revision-Date: 2017-06-09 12:38+0000\n"
-"Last-Translator: Augusto Lopez <augusto.bet4@gmail.com>\n"
-"Language-Team: English (Canada) <https://l10n.elementary.io/projects/"
-"appcenter/appcenter/en_CA/>\n"
+"PO-Revision-Date: 2018-02-23 00:03+0000\n"
+"Last-Translator: Rafael Carreiro <carreirorco@gmail.com>\n"
+"Language-Team: English (Canada) "
+"<https://weblate.elementary.io/projects/appcenter/appcenter/en_CA/>\n"
 "Language: en_CA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.14\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: ../src/Application.vala:39
@@ -38,11 +38,11 @@ msgstr "There Was An Error Installing %s"
 
 #: ../src/Application.vala:286
 msgid "Details"
-msgstr ""
+msgstr "Detalhes"
 
 #: ../src/Application.vala:290
 msgid "Failed to Fetch Updates"
-msgstr ""
+msgstr "Falha ao buscar atualizações"
 
 #: ../src/Application.vala:291
 msgid ""
@@ -52,11 +52,11 @@ msgstr ""
 
 #: ../src/Application.vala:298
 msgid "Ignore"
-msgstr ""
+msgstr "Ignorar"
 
 #: ../src/Application.vala:299
 msgid "Try Again"
-msgstr ""
+msgstr "Tente novamente"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -212,7 +212,7 @@ msgstr "Updates to system components"
 
 #: ../src/Core/Client.vala:141
 msgid "%s (local)"
-msgstr ""
+msgstr "%s (local)"
 
 #: ../src/Core/Client.vala:450
 msgid "Update Available"
@@ -228,11 +228,11 @@ msgstr[1] "%u updates are available for your system"
 
 #: ../src/Core/Client.vala:480
 msgid "Version: %s"
-msgstr ""
+msgstr "Versão: %s"
 
 #: ../src/Core/Client.vala:489
 msgid "No components with updates"
-msgstr ""
+msgstr "Nenhuma atualização pendente"
 
 #: ../src/Core/Client.vala:493
 msgid "%u component with updates"
@@ -242,7 +242,7 @@ msgstr[1] ""
 
 #: ../src/Core/Client.vala:495
 msgid "%s:"
-msgstr ""
+msgstr "%s:"
 
 #: ../src/Core/Package.vala:186
 msgid "The %s Developers"
@@ -250,11 +250,11 @@ msgstr ""
 
 #: ../src/Core/UpdateManager.vala:81
 msgid "Restart Required"
-msgstr ""
+msgstr "É necessário reiniciar"
 
 #: ../src/Core/UpdateManager.vala:82
 msgid "Please restart your system to finalize updates"
-msgstr ""
+msgstr "Por favor, reinicie o sistema para finalizar as atualizações"
 
 #: ../src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -288,7 +288,7 @@ msgstr "Please review your payment info and try again."
 
 #: ../src/Dialogs/StripeDialog.vala:78
 msgid "Pay $%d for %s"
-msgstr ""
+msgstr "Pagar $%d para %s"
 
 #: ../src/Dialogs/StripeDialog.vala:82
 msgid ""
@@ -308,7 +308,7 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:104
 msgid "Card Number"
-msgstr ""
+msgstr "Número do cartão"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: ../src/Dialogs/StripeDialog.vala:116
@@ -321,7 +321,7 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:173
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Política de Privacidade"
 
 #: ../src/Dialogs/StripeDialog.vala:183 ../src/Dialogs/StripeDialog.vala:299
 msgid "Pay $%d.00"
@@ -443,9 +443,8 @@ msgid "Search Apps"
 msgstr "Search Apps"
 
 #: ../src/MainWindow.vala:176
-#, fuzzy
 msgid "Network Is Not Available"
-msgstr "Screenshot Not Available"
+msgstr "Sem conexão com a internet"
 
 #: ../src/MainWindow.vala:177
 msgid "Connect to the Internet to install or update apps."
@@ -638,9 +637,8 @@ msgid "<b>%s</b>"
 msgstr ""
 
 #: ../src/Widgets/ReleaseRow.vala:74
-#, fuzzy
 msgid "Unknown version"
-msgstr "Unknown state"
+msgstr "Versão desconhecida"
 
 #: ../src/Widgets/ReleaseRow.vala:90 ../src/Widgets/ReleaseRow.vala:93
 msgid "No description available"
