@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-09 18:51+0100\n"
-"PO-Revision-Date: 2018-01-11 09:53+0000\n"
+"POT-Creation-Date: 2018-02-17 14:11+0000\n"
+"PO-Revision-Date: 2018-02-19 08:16+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/he/>\n"
@@ -31,11 +31,7 @@ msgstr "יישום הותקן"
 msgid "%s has been successfully installed"
 msgstr "%s הותקן בהצלחה"
 
-#: ../src/Application.vala:254
-msgid "Close"
-msgstr "סגירה"
-
-#: ../src/Application.vala:256
+#: ../src/Application.vala:253
 msgid "There Was An Error Installing %s."
 msgstr "אירעה שגיאה בהתקנת %s."
 
@@ -55,11 +51,11 @@ msgstr ""
 "יתכן שבעיה זו נגרמה עקב מאגרי תכניות חיצוניים שנוספו באופן ידני או קובצי "
 "מקור פגומים."
 
-#: ../src/Application.vala:297
+#: ../src/Application.vala:298
 msgid "Ignore"
 msgstr "התעלמות"
 
-#: ../src/Application.vala:298
+#: ../src/Application.vala:299
 msgid "Try Again"
 msgstr "לנסות שוב"
 
@@ -207,31 +203,49 @@ msgstr "קבצים מועתקים"
 msgid "Unknown state"
 msgstr "מצב לא ידוע"
 
-#: ../src/Core/Client.vala:107
+#: ../src/Core/Client.vala:105
 msgid "Operating System Updates"
 msgstr "עדכוני מערכת הפעלה"
 
-#: ../src/Core/Client.vala:108
+#: ../src/Core/Client.vala:106
 msgid "Updates to system components"
 msgstr "עדכונים לרכיבי המערכת"
 
-#: ../src/Core/Client.vala:143
+#: ../src/Core/Client.vala:141
 msgid "%s (local)"
 msgstr "%s (מקומי)"
 
-#: ../src/Core/Client.vala:452
+#: ../src/Core/Client.vala:450
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "עדכון זמין"
 msgstr[1] "עדכונים זמינים"
 
-#: ../src/Core/Client.vala:453
+#: ../src/Core/Client.vala:451
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "עדכון אחד זמין עבור המערכת"
 msgstr[1] "%u עדכונים זמינים עבור המערכת"
 
-#: ../src/Core/Package.vala:163
+#: ../src/Core/Client.vala:480
+msgid "Version: %s"
+msgstr "גרסה: %s"
+
+#: ../src/Core/Client.vala:489
+msgid "No components with updates"
+msgstr "אין רכיבים עם עדכונים"
+
+#: ../src/Core/Client.vala:493
+msgid "%u component with updates"
+msgid_plural "%u components with updates"
+msgstr[0] "רכיב אחד עם עדכונים"
+msgstr[1] "%u רכיבים עם עדכונים"
+
+#: ../src/Core/Client.vala:495
+msgid "%s:"
+msgstr "%s:"
+
+#: ../src/Core/Package.vala:186
 msgid "The %s Developers"
 msgstr "המפתחים שמאחורי %s"
 
@@ -255,9 +269,9 @@ msgstr "פעולה זו תסגור את כל היישומים ותפעיל את 
 msgid "Restart"
 msgstr "הפעלה מחדש"
 
-#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:182
-#: ../src/Dialogs/StripeDialog.vala:301
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:146
+#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:181
+#: ../src/Dialogs/StripeDialog.vala:300
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:144
 msgid "Cancel"
 msgstr "ביטול"
 
@@ -312,106 +326,106 @@ msgstr "קוד אבטחה (CVC)"
 msgid "Privacy Policy"
 msgstr "מדיניות פרטיות"
 
-#: ../src/Dialogs/StripeDialog.vala:184 ../src/Dialogs/StripeDialog.vala:300
+#: ../src/Dialogs/StripeDialog.vala:183 ../src/Dialogs/StripeDialog.vala:299
 msgid "Pay $%d.00"
 msgstr "לשלם $%d.00"
 
-#: ../src/Dialogs/StripeDialog.vala:229
+#: ../src/Dialogs/StripeDialog.vala:228
 msgid "Processing"
 msgstr "בהליכי עיבוד"
 
-#: ../src/Dialogs/StripeDialog.vala:254
+#: ../src/Dialogs/StripeDialog.vala:253
 msgid "There Was a Problem Processing Your Payment"
 msgstr "אירעה שגיאה בעת עיבוד התשלום שלך"
 
-#: ../src/Dialogs/StripeDialog.vala:292
+#: ../src/Dialogs/StripeDialog.vala:291
 msgid "Pay Later"
 msgstr "לשלם מאוחר יותר"
 
-#: ../src/Dialogs/StripeDialog.vala:293
+#: ../src/Dialogs/StripeDialog.vala:292
 msgid "Retry"
 msgstr "ניסיון חוזר"
 
-#: ../src/Dialogs/StripeDialog.vala:489 ../src/Dialogs/StripeDialog.vala:554
+#: ../src/Dialogs/StripeDialog.vala:498 ../src/Dialogs/StripeDialog.vala:563
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr "מספר הכרטיס שגוי. נא לנסות שוב עם מספר הכרטיס הנכון."
 
-#: ../src/Dialogs/StripeDialog.vala:491
+#: ../src/Dialogs/StripeDialog.vala:500
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
 msgstr "חודש התפוגה שגוי. נא לנסות שוב עם תאריך תפוגה נכון."
 
-#: ../src/Dialogs/StripeDialog.vala:493 ../src/Dialogs/StripeDialog.vala:551
+#: ../src/Dialogs/StripeDialog.vala:502 ../src/Dialogs/StripeDialog.vala:560
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
 msgstr "שנת התפוגה שגויה. נא לנסות שוב עם תאריך תפוגה נכון."
 
-#: ../src/Dialogs/StripeDialog.vala:496 ../src/Dialogs/StripeDialog.vala:549
+#: ../src/Dialogs/StripeDialog.vala:505 ../src/Dialogs/StripeDialog.vala:558
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr "קוד האבטחה (CVC) שגוי. נא לנסות שוב עם קוד האבטחה הנכון."
 
-#: ../src/Dialogs/StripeDialog.vala:498 ../src/Dialogs/StripeDialog.vala:540
+#: ../src/Dialogs/StripeDialog.vala:507 ../src/Dialogs/StripeDialog.vala:549
 msgid "The card has expired. Please try again with a different card."
 msgstr "תוקף הכרטיס פג. נא לנסות שוב עם כרטיס אחר."
 
-#: ../src/Dialogs/StripeDialog.vala:518
+#: ../src/Dialogs/StripeDialog.vala:527
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr "מתבצעות יותר מדי בקשות תשלום כרגע, נא לנסות שוב מאוחר יותר."
 
-#: ../src/Dialogs/StripeDialog.vala:534
+#: ../src/Dialogs/StripeDialog.vala:543
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
 msgstr "כרטיס זה אינו תומך בסוג כזה של העברה. נא לנסות שוב עם כרטיס אחר."
 
-#: ../src/Dialogs/StripeDialog.vala:536
+#: ../src/Dialogs/StripeDialog.vala:545
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
 msgstr "המטבע אינו נתמך בכרטיס זה. נא לנסות שוב עם כרטיס אחר."
 
-#: ../src/Dialogs/StripeDialog.vala:538
+#: ../src/Dialogs/StripeDialog.vala:547
 msgid "The transaction has already been processed."
 msgstr "כבר בוצע עיבוד על ההעברה."
 
-#: ../src/Dialogs/StripeDialog.vala:542
+#: ../src/Dialogs/StripeDialog.vala:551
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "postal code."
 msgstr "המיקוד שגוי. נא להשתמש במיקוד הנכון."
 
-#: ../src/Dialogs/StripeDialog.vala:544
+#: ../src/Dialogs/StripeDialog.vala:553
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "מכסת האשראי שלך אינה מספקת. נא להשתמש בשיטת תשלום חלופית."
 
-#: ../src/Dialogs/StripeDialog.vala:546
+#: ../src/Dialogs/StripeDialog.vala:555
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "הסכום שגוי. נא לנסות שוב עם סכום נכון."
 
-#: ../src/Dialogs/StripeDialog.vala:557
+#: ../src/Dialogs/StripeDialog.vala:566
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "המספר הסודי (pin) שגוי. נא לנסות שוב עם המספר הסודי הנכון."
 
-#: ../src/Dialogs/StripeDialog.vala:559
+#: ../src/Dialogs/StripeDialog.vala:568
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
 msgstr ""
 "בוצעו ניסיונות רבים מדי להזנת מספר סודי (pin). נא לנסות שוב עם כרטיס שונה."
 
-#: ../src/Dialogs/StripeDialog.vala:579
+#: ../src/Dialogs/StripeDialog.vala:588
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
 msgstr "לא ניתן להשלים את ההעברה. נא ליצור קשר עם הבנק שלך לקבלת פרטים נוספים."
 
-#: ../src/Dialogs/StripeDialog.vala:582
+#: ../src/Dialogs/StripeDialog.vala:591
 msgid "The balance or credit limit on the card has been reached."
 msgstr "הגעת לתקרת המשיכה בכרטיס."
 
-#: ../src/Dialogs/StripeDialog.vala:585
+#: ../src/Dialogs/StripeDialog.vala:594
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "הכרטיס שסיפקת הוא כרטיס בדיקה. נא להשתמש בכרטיס אמתי כדי להמשיך."
 
@@ -496,7 +510,7 @@ msgstr "נדרשת הפעלה מחדש כדי להשלים את התקנת הע�
 msgid "Restart Now"
 msgstr "הפעלה מחדש כעת"
 
-#: ../src/Views/AppListUpdateView.vala:157
+#: ../src/Views/AppListUpdateView.vala:162
 msgid "Update All"
 msgstr "עדכון הכול"
 
@@ -534,20 +548,20 @@ msgstr "אין תוצאות"
 msgid "No apps could be found. Try changing search terms."
 msgstr "לא נמצאו יישומים. כדאי לשנות את ביטוי החיפוש."
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:125
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:123
 msgid "Uninstall"
 msgstr "הסרה"
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:128
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:126
 msgid "Open"
 msgstr "פתיחה"
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:209
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:207
 #: ../src/Widgets/HumbleButton.vala:82
 msgid "Free"
 msgstr "חינם"
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:229
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:231
 msgid "Update"
 msgstr "עדכון"
 
@@ -682,6 +696,9 @@ msgstr "עדכני"
 #: ../src/Widgets/UpdateHeaderRow.vala:120
 msgid "Drivers"
 msgstr "מנהלי התקנים"
+
+#~ msgid "Close"
+#~ msgstr "סגירה"
 
 #~ msgid "App Center"
 #~ msgstr "מרכז היישומים"
