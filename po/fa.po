@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-17 14:11+0000\n"
-"PO-Revision-Date: 2018-02-21 00:06+0000\n"
-"Last-Translator: RaymondDragon <swordart2050@gmail.com>\n"
+"PO-Revision-Date: 2018-02-27 19:11+0000\n"
+"Last-Translator: armoghaddam <armoghaddam24@gmail.com>\n"
 "Language-Team: Persian "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/fa/>\n"
 "Language: fa\n"
@@ -129,71 +129,71 @@ msgstr "درخواست داده"
 
 #: ../src/Core/ChangeInformation.vala:88
 msgid "Finished"
-msgstr ""
+msgstr "تمام شد"
 
 #: ../src/Core/ChangeInformation.vala:90
 msgid "Cancelling"
-msgstr ""
+msgstr "لغو کردن"
 
 #: ../src/Core/ChangeInformation.vala:92
 msgid "Downloading repository information"
-msgstr ""
+msgstr "دانلود اطلاعات مخزن"
 
 #: ../src/Core/ChangeInformation.vala:94
 msgid "Downloading list of packages"
-msgstr ""
+msgstr "دانلود لیست بسته ها"
 
 #: ../src/Core/ChangeInformation.vala:96
 msgid "Downloading file lists"
-msgstr ""
+msgstr "بارگیری لیست فایل"
 
 #: ../src/Core/ChangeInformation.vala:98
 msgid "Downloading lists of changes"
-msgstr ""
+msgstr "بارگیری لیست تغییرات"
 
 #: ../src/Core/ChangeInformation.vala:100
 msgid "Downloading groups"
-msgstr ""
+msgstr "دانلود گروه ها"
 
 #: ../src/Core/ChangeInformation.vala:102
 msgid "Downloading update information"
-msgstr ""
+msgstr "دانلود اطلاعات به روز رسانی"
 
 #: ../src/Core/ChangeInformation.vala:104
 msgid "Repackaging files"
-msgstr ""
+msgstr "بازپرداخت فایل ها"
 
 #: ../src/Core/ChangeInformation.vala:106
 msgid "Loading cache"
-msgstr ""
+msgstr "بارگیری کش"
 
 #: ../src/Core/ChangeInformation.vala:108
 msgid "Scanning applications"
-msgstr ""
+msgstr "اسکن برنامه ها"
 
 #: ../src/Core/ChangeInformation.vala:110
 msgid "Generating package lists"
-msgstr ""
+msgstr "تولید لیست بسته ها"
 
 #: ../src/Core/ChangeInformation.vala:112
 msgid "Waiting for package manager lock"
-msgstr ""
+msgstr "در انتظار قفل مدیریت بسته ها"
 
 #: ../src/Core/ChangeInformation.vala:114
 msgid "Waiting for authentication"
-msgstr ""
+msgstr "منتظر تأیید هویت"
 
 #: ../src/Core/ChangeInformation.vala:116
 msgid "Updating running applications"
-msgstr ""
+msgstr "به روز رسانی برنامه های در حال اجرا"
 
 #: ../src/Core/ChangeInformation.vala:118
 msgid "Checking applications in use"
-msgstr ""
+msgstr "بررسی برنامه ها در استفاده"
 
 #: ../src/Core/ChangeInformation.vala:120
 msgid "Checking libraries in use"
-msgstr ""
+msgstr "بررسی کتابخانه ها در استفاده"
 
 #: ../src/Core/ChangeInformation.vala:122
 msgid "Copying files"
@@ -426,9 +426,8 @@ msgstr ""
 #: ../src/MainWindow.vala:141 ../src/Views/Homepage.vala:253
 #: ../src/Views/Homepage.vala:262 ../src/Views/Homepage.vala:267
 #: ../src/Views/Homepage.vala:278
-#, fuzzy
 msgid "Home"
-msgstr "صفحه نخست"
+msgstr "خانه"
 
 #: ../src/MainWindow.vala:142 ../src/Views/InstalledView.vala:29
 #: ../src/Views/InstalledView.vala:49
@@ -458,9 +457,8 @@ msgid "Screenshot Not Available"
 msgstr ""
 
 #: ../src/Views/AppInfoView.vala:128
-#, fuzzy
 msgid "Homepage"
-msgstr "صفحه نخست"
+msgstr "صفحه اول"
 
 #: ../src/Views/AppInfoView.vala:134
 msgid "Suggest Translations"
