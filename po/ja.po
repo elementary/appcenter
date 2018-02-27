@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-09 18:51+0100\n"
-"PO-Revision-Date: 2018-01-29 00:01+0000\n"
+"POT-Creation-Date: 2018-02-17 14:11+0000\n"
+"PO-Revision-Date: 2018-02-20 00:09+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/ja/>\n"
@@ -31,11 +31,7 @@ msgstr "アプリケーションがインストールされました"
 msgid "%s has been successfully installed"
 msgstr "%s をインストールしました"
 
-#: ../src/Application.vala:254
-msgid "Close"
-msgstr "閉じる"
-
-#: ../src/Application.vala:256
+#: ../src/Application.vala:253
 msgid "There Was An Error Installing %s."
 msgstr "%s のインストール中にエラーが発生しました。"
 
@@ -51,13 +47,13 @@ msgstr "アップデートの取得に失敗しました"
 msgid ""
 "This may have been caused by external, manually added software repositories "
 "or a corrupted sources file."
-msgstr ""
+msgstr "これは外部の手動で追加されたソフトウェアリポジトリか、壊れたソースファイルにより発生したかもしれません。"
 
-#: ../src/Application.vala:297
+#: ../src/Application.vala:298
 msgid "Ignore"
 msgstr "無視"
 
-#: ../src/Application.vala:298
+#: ../src/Application.vala:299
 msgid "Try Again"
 msgstr "再試行"
 
@@ -205,29 +201,46 @@ msgstr "ファイルをコピーしています"
 msgid "Unknown state"
 msgstr "不明な状態"
 
-#: ../src/Core/Client.vala:107
+#: ../src/Core/Client.vala:105
 msgid "Operating System Updates"
 msgstr "オペレーティングシステムのアップデート"
 
-#: ../src/Core/Client.vala:108
+#: ../src/Core/Client.vala:106
 msgid "Updates to system components"
 msgstr "システムコンポーネントのアップデート"
 
-#: ../src/Core/Client.vala:143
+#: ../src/Core/Client.vala:141
 msgid "%s (local)"
 msgstr "%s (ローカル)"
 
-#: ../src/Core/Client.vala:452
+#: ../src/Core/Client.vala:450
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "アップデートが利用可能です"
 
-#: ../src/Core/Client.vala:453
+#: ../src/Core/Client.vala:451
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "システムに %u 件のアップデートが利用可能です"
 
-#: ../src/Core/Package.vala:163
+#: ../src/Core/Client.vala:480
+msgid "Version: %s"
+msgstr "バージョン: %s"
+
+#: ../src/Core/Client.vala:489
+msgid "No components with updates"
+msgstr "アップデートのあるコンポーネントはありません"
+
+#: ../src/Core/Client.vala:493
+msgid "%u component with updates"
+msgid_plural "%u components with updates"
+msgstr[0] "アップデートのあるコンポーネントが %u 個あります"
+
+#: ../src/Core/Client.vala:495
+msgid "%s:"
+msgstr "%s:"
+
+#: ../src/Core/Package.vala:186
 msgid "The %s Developers"
 msgstr "%s の開発者"
 
@@ -245,15 +258,17 @@ msgstr "再起動してもよろしいですか？"
 
 #: ../src/Dialogs/RestartDialog.vala:41
 msgid "This will close all open applications and restart this device."
-msgstr "続行すると、開いているすべてのアプリケーションを閉じてこのデバイスを再起動します。"
+msgstr ""
+"続行すると、開いているすべてのアプリケーションを閉じてこのデバイスを再起動し"
+"ます。"
 
 #: ../src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
 msgstr "再起動"
 
-#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:182
-#: ../src/Dialogs/StripeDialog.vala:301
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:146
+#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:181
+#: ../src/Dialogs/StripeDialog.vala:300
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:144
 msgid "Cancel"
 msgstr "キャンセル"
 
@@ -277,7 +292,7 @@ msgstr "%s に%dドル払う"
 msgid ""
 "This is a one time payment. Your email address is only used to send you a "
 "receipt."
-msgstr ""
+msgstr "これは一括払いです。あなたのメールアドレスは領収書を送るためのみに使用されます。"
 
 #: ../src/Dialogs/StripeDialog.vala:91 ../src/Widgets/SharePopover.vala:35
 msgid "Email"
@@ -308,57 +323,57 @@ msgstr "CVC"
 msgid "Privacy Policy"
 msgstr "プライバシーポリシー"
 
-#: ../src/Dialogs/StripeDialog.vala:184 ../src/Dialogs/StripeDialog.vala:300
+#: ../src/Dialogs/StripeDialog.vala:183 ../src/Dialogs/StripeDialog.vala:299
 msgid "Pay $%d.00"
 msgstr "%d.00 ドル払う"
 
-#: ../src/Dialogs/StripeDialog.vala:229
+#: ../src/Dialogs/StripeDialog.vala:228
 msgid "Processing"
 msgstr "処理中"
 
-#: ../src/Dialogs/StripeDialog.vala:254
+#: ../src/Dialogs/StripeDialog.vala:253
 msgid "There Was a Problem Processing Your Payment"
 msgstr "支払の処理中に問題が発生しました"
 
-#: ../src/Dialogs/StripeDialog.vala:292
+#: ../src/Dialogs/StripeDialog.vala:291
 msgid "Pay Later"
 msgstr "後で支払う"
 
-#: ../src/Dialogs/StripeDialog.vala:293
+#: ../src/Dialogs/StripeDialog.vala:292
 msgid "Retry"
 msgstr "もう一度試す"
 
-#: ../src/Dialogs/StripeDialog.vala:489 ../src/Dialogs/StripeDialog.vala:554
+#: ../src/Dialogs/StripeDialog.vala:498 ../src/Dialogs/StripeDialog.vala:563
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr ""
 "カード番号が違います。正しいカード番号を使用してもう一度お試しください。"
 
-#: ../src/Dialogs/StripeDialog.vala:491
+#: ../src/Dialogs/StripeDialog.vala:500
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
 
-#: ../src/Dialogs/StripeDialog.vala:493 ../src/Dialogs/StripeDialog.vala:551
+#: ../src/Dialogs/StripeDialog.vala:502 ../src/Dialogs/StripeDialog.vala:560
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
 
-#: ../src/Dialogs/StripeDialog.vala:496 ../src/Dialogs/StripeDialog.vala:549
+#: ../src/Dialogs/StripeDialog.vala:505 ../src/Dialogs/StripeDialog.vala:558
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr "CVC 番号が違います。正しい CVC 番号を使用してもう一度お試しください。"
 
-#: ../src/Dialogs/StripeDialog.vala:498 ../src/Dialogs/StripeDialog.vala:540
+#: ../src/Dialogs/StripeDialog.vala:507 ../src/Dialogs/StripeDialog.vala:549
 msgid "The card has expired. Please try again with a different card."
 msgstr "カードが期限切れです。別のカードを使用してもう一度お試しください。"
 
-#: ../src/Dialogs/StripeDialog.vala:518
+#: ../src/Dialogs/StripeDialog.vala:527
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr "ただいま基準以上の支払い要求があります。後ほどお試しください。"
 
-#: ../src/Dialogs/StripeDialog.vala:534
+#: ../src/Dialogs/StripeDialog.vala:543
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
@@ -366,7 +381,7 @@ msgstr ""
 "この種類の取引においてこのカードはサポートされていません。別のカードを使用し"
 "てもう一度お試しください。"
 
-#: ../src/Dialogs/StripeDialog.vala:536
+#: ../src/Dialogs/StripeDialog.vala:545
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
@@ -374,34 +389,37 @@ msgstr ""
 "この種類の取引においてこの通貨はサポートされていません。別のカードを使用して"
 "もう一度お試しください。"
 
-#: ../src/Dialogs/StripeDialog.vala:538
+#: ../src/Dialogs/StripeDialog.vala:547
 msgid "The transaction has already been processed."
 msgstr "支払いはすでに処理中です。"
 
-#: ../src/Dialogs/StripeDialog.vala:542
+#: ../src/Dialogs/StripeDialog.vala:551
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "postal code."
-msgstr "ZIP/Postal コードが違います。正しい ZIP/Postal コードを使用してもう一度お試しください。"
+msgstr ""
+"ZIP/Postal コードが違います。正しい ZIP/Postal コードを使用してもう一度お試し"
+"ください。"
 
-#: ../src/Dialogs/StripeDialog.vala:544
+#: ../src/Dialogs/StripeDialog.vala:553
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "手持ちの資金を十分にお持ちではありません。代替決済を使用してください。"
 
-#: ../src/Dialogs/StripeDialog.vala:546
+#: ../src/Dialogs/StripeDialog.vala:555
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "金額が違います。妥当な金額を使用してもう一度お試しください。"
 
-#: ../src/Dialogs/StripeDialog.vala:557
+#: ../src/Dialogs/StripeDialog.vala:566
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "PIN 番号が違います。正しい PIN を使用してもう一度お試しください。"
 
-#: ../src/Dialogs/StripeDialog.vala:559
+#: ../src/Dialogs/StripeDialog.vala:568
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
-msgstr "過度の PIN の試行がありました。別のカードを使用してもう一度お試しください。"
+msgstr ""
+"過度の PIN の試行がありました。別のカードを使用してもう一度お試しください。"
 
-#: ../src/Dialogs/StripeDialog.vala:579
+#: ../src/Dialogs/StripeDialog.vala:588
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
@@ -409,11 +427,11 @@ msgstr ""
 "処理を完了させることができませんでした。詳細を知るには銀行へ連絡してくださ"
 "い。"
 
-#: ../src/Dialogs/StripeDialog.vala:582
+#: ../src/Dialogs/StripeDialog.vala:591
 msgid "The balance or credit limit on the card has been reached."
 msgstr ""
 
-#: ../src/Dialogs/StripeDialog.vala:585
+#: ../src/Dialogs/StripeDialog.vala:594
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
 "所定のカードはテスト用のカードです。続行するには本物のカードを使用してくださ"
@@ -442,7 +460,9 @@ msgstr "ネットワーク接続がありません"
 
 #: ../src/MainWindow.vala:177
 msgid "Connect to the Internet to install or update apps."
-msgstr "アプリをインストールしたりアップデートしたりするにはインターネットに接続してください。"
+msgstr ""
+"アプリをインストールしたりアップデートしたりするにはインターネットに接続して"
+"ください。"
 
 #: ../src/MainWindow.vala:180
 msgid "Network Settings…"
@@ -500,7 +520,7 @@ msgstr "このアップデートのインストールを完了するには再起
 msgid "Restart Now"
 msgstr "今すぐ再起動する"
 
-#: ../src/Views/AppListUpdateView.vala:157
+#: ../src/Views/AppListUpdateView.vala:162
 msgid "Update All"
 msgstr "すべてアップデート"
 
@@ -538,20 +558,20 @@ msgstr "結果なし"
 msgid "No apps could be found. Try changing search terms."
 msgstr "アプリが見つかりません。検索用語を変えてみてください。"
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:125
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:123
 msgid "Uninstall"
 msgstr "アンインストール"
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:128
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:126
 msgid "Open"
 msgstr "開く"
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:209
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:207
 #: ../src/Widgets/HumbleButton.vala:82
 msgid "Free"
 msgstr "無料"
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:229
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:231
 msgid "Update"
 msgstr "アップデート"
 
@@ -685,6 +705,9 @@ msgstr "最新"
 #: ../src/Widgets/UpdateHeaderRow.vala:120
 msgid "Drivers"
 msgstr "ドライバー"
+
+#~ msgid "Close"
+#~ msgstr "閉じる"
 
 #~ msgid "App Center"
 #~ msgstr "App Center"

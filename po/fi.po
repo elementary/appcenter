@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-09 18:51+0100\n"
-"PO-Revision-Date: 2018-01-18 00:01+0000\n"
+"POT-Creation-Date: 2018-02-17 14:11+0000\n"
+"PO-Revision-Date: 2018-02-24 11:21+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/fi/>\n"
@@ -31,11 +31,7 @@ msgstr "Sovellus asennettu"
 msgid "%s has been successfully installed"
 msgstr "%s asennettiin onnistuneesti"
 
-#: ../src/Application.vala:254
-msgid "Close"
-msgstr "Sulje"
-
-#: ../src/Application.vala:256
+#: ../src/Application.vala:253
 msgid "There Was An Error Installing %s."
 msgstr "Tapahtui virhe asennettaessa %s."
 
@@ -55,11 +51,11 @@ msgstr ""
 "Tämä saattaa johtua ulkoisista, käsin lisätyistä ohjelmistolähteistä tai "
 "rikkoutuneesta sources-tiedostosta."
 
-#: ../src/Application.vala:297
+#: ../src/Application.vala:298
 msgid "Ignore"
 msgstr "Ohita"
 
-#: ../src/Application.vala:298
+#: ../src/Application.vala:299
 msgid "Try Again"
 msgstr "Yritä uudelleen"
 
@@ -207,31 +203,49 @@ msgstr "Kopioidaan tiedostoja"
 msgid "Unknown state"
 msgstr "Tuntematon tila"
 
-#: ../src/Core/Client.vala:107
+#: ../src/Core/Client.vala:105
 msgid "Operating System Updates"
 msgstr "Käyttöjärjestelmäpäivitykset"
 
-#: ../src/Core/Client.vala:108
+#: ../src/Core/Client.vala:106
 msgid "Updates to system components"
 msgstr "Päivitykset järjestelmän osiin"
 
-#: ../src/Core/Client.vala:143
+#: ../src/Core/Client.vala:141
 msgid "%s (local)"
 msgstr "%s (paikallinen)"
 
-#: ../src/Core/Client.vala:452
+#: ../src/Core/Client.vala:450
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Päivitys saatavilla"
 msgstr[1] "Päivityksiä saatavilla"
 
-#: ../src/Core/Client.vala:453
+#: ../src/Core/Client.vala:451
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "Järjestelmälle on saatavilla %u päivitys"
 msgstr[1] "Järjestelmälle on saatavilla %u päivitystä"
 
-#: ../src/Core/Package.vala:163
+#: ../src/Core/Client.vala:480
+msgid "Version: %s"
+msgstr "Versio: %s"
+
+#: ../src/Core/Client.vala:489
+msgid "No components with updates"
+msgstr "Ei komponentteja päivityksin"
+
+#: ../src/Core/Client.vala:493
+msgid "%u component with updates"
+msgid_plural "%u components with updates"
+msgstr[0] "%u komponentti päivityksillä"
+msgstr[1] "%u komponenttia päivityksillä"
+
+#: ../src/Core/Client.vala:495
+msgid "%s:"
+msgstr "%s:"
+
+#: ../src/Core/Package.vala:186
 msgid "The %s Developers"
 msgstr "%s Kehittäjät"
 
@@ -257,9 +271,9 @@ msgstr ""
 msgid "Restart"
 msgstr "Käynnistä uudelleen"
 
-#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:182
-#: ../src/Dialogs/StripeDialog.vala:301
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:146
+#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:181
+#: ../src/Dialogs/StripeDialog.vala:300
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:144
 msgid "Cancel"
 msgstr "Peru"
 
@@ -314,33 +328,33 @@ msgstr "CVC"
 msgid "Privacy Policy"
 msgstr "Yksityisyyskäytäntö"
 
-#: ../src/Dialogs/StripeDialog.vala:184 ../src/Dialogs/StripeDialog.vala:300
+#: ../src/Dialogs/StripeDialog.vala:183 ../src/Dialogs/StripeDialog.vala:299
 msgid "Pay $%d.00"
 msgstr "Maksa $%d.00"
 
-#: ../src/Dialogs/StripeDialog.vala:229
+#: ../src/Dialogs/StripeDialog.vala:228
 msgid "Processing"
 msgstr "Käsitellään"
 
-#: ../src/Dialogs/StripeDialog.vala:254
+#: ../src/Dialogs/StripeDialog.vala:253
 msgid "There Was a Problem Processing Your Payment"
 msgstr "Maksuasi käsitellessä tapahtui virhe"
 
-#: ../src/Dialogs/StripeDialog.vala:292
+#: ../src/Dialogs/StripeDialog.vala:291
 msgid "Pay Later"
 msgstr "Maksa myöhemmin"
 
-#: ../src/Dialogs/StripeDialog.vala:293
+#: ../src/Dialogs/StripeDialog.vala:292
 msgid "Retry"
 msgstr "Yritä uudelleen"
 
-#: ../src/Dialogs/StripeDialog.vala:489 ../src/Dialogs/StripeDialog.vala:554
+#: ../src/Dialogs/StripeDialog.vala:498 ../src/Dialogs/StripeDialog.vala:563
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr ""
 "Kortin numero on väärin. Yritä uudelleen käyttäen oikeaa kortin numeroa."
 
-#: ../src/Dialogs/StripeDialog.vala:491
+#: ../src/Dialogs/StripeDialog.vala:500
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
@@ -348,7 +362,7 @@ msgstr ""
 "Vanhenemiskuukausi on virheellinen. Yritä uudelleen käyttäen oikeaa "
 "vanhenemispäiväystä."
 
-#: ../src/Dialogs/StripeDialog.vala:493 ../src/Dialogs/StripeDialog.vala:551
+#: ../src/Dialogs/StripeDialog.vala:502 ../src/Dialogs/StripeDialog.vala:560
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
@@ -356,19 +370,19 @@ msgstr ""
 "Vanhenemisvuosi on väärin. Yritä uudelleen käyttäen oikeaa "
 "vanhenemispäiväystä."
 
-#: ../src/Dialogs/StripeDialog.vala:496 ../src/Dialogs/StripeDialog.vala:549
+#: ../src/Dialogs/StripeDialog.vala:505 ../src/Dialogs/StripeDialog.vala:558
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr "CVC-numero on väärin. Yritä uudelleen käyttäen oikeaa CVC:tä."
 
-#: ../src/Dialogs/StripeDialog.vala:498 ../src/Dialogs/StripeDialog.vala:540
+#: ../src/Dialogs/StripeDialog.vala:507 ../src/Dialogs/StripeDialog.vala:549
 msgid "The card has expired. Please try again with a different card."
 msgstr "Kortti on vanhentunut. Yritä uudelleen käyttäen toista korttia."
 
-#: ../src/Dialogs/StripeDialog.vala:518
+#: ../src/Dialogs/StripeDialog.vala:527
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr "Liian monta samanaikaista maksupyyntöä, yritä myöhemmin uudelleen."
 
-#: ../src/Dialogs/StripeDialog.vala:534
+#: ../src/Dialogs/StripeDialog.vala:543
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
@@ -376,7 +390,7 @@ msgstr ""
 "Tämä kortti ei tue tämänkaltaista maksua. Yritä uudelleen käyttäen toista "
 "korttia."
 
-#: ../src/Dialogs/StripeDialog.vala:536
+#: ../src/Dialogs/StripeDialog.vala:545
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
@@ -384,44 +398,44 @@ msgstr ""
 "Valuutta ei ole tuettu tämän kortin toimesta. Yritä uudelleen käyttäen "
 "toista korttia."
 
-#: ../src/Dialogs/StripeDialog.vala:538
+#: ../src/Dialogs/StripeDialog.vala:547
 msgid "The transaction has already been processed."
 msgstr "Maksu on jo käsitelty."
 
-#: ../src/Dialogs/StripeDialog.vala:542
+#: ../src/Dialogs/StripeDialog.vala:551
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "postal code."
 msgstr "Postinumero on väärin. Yritä uudelleen käyttäen oikeaa postinumeroa."
 
-#: ../src/Dialogs/StripeDialog.vala:544
+#: ../src/Dialogs/StripeDialog.vala:553
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "Tililläsi ei ole riittävästi rahaa. Käytä jotain toista maksutapaa."
 
-#: ../src/Dialogs/StripeDialog.vala:546
+#: ../src/Dialogs/StripeDialog.vala:555
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "Summa on virheellinen. Yritä uudelleen käyttäen kelvollista summaa."
 
-#: ../src/Dialogs/StripeDialog.vala:557
+#: ../src/Dialogs/StripeDialog.vala:566
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "PIN-numero on väärin. Yritä uudelleen käyttäen oikeaa PIN-numeroa."
 
-#: ../src/Dialogs/StripeDialog.vala:559
+#: ../src/Dialogs/StripeDialog.vala:568
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
 msgstr "Liian monta PIN-yritystä. Yritä uudelleen käyttäen toista korttia."
 
-#: ../src/Dialogs/StripeDialog.vala:579
+#: ../src/Dialogs/StripeDialog.vala:588
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
 msgstr "Maksun suorittaminen ei onnistu. Pyydä lisätietoja omasta pankistasi."
 
-#: ../src/Dialogs/StripeDialog.vala:582
+#: ../src/Dialogs/StripeDialog.vala:591
 msgid "The balance or credit limit on the card has been reached."
 msgstr "Kortin luottoraja on ylittynyt."
 
-#: ../src/Dialogs/StripeDialog.vala:585
+#: ../src/Dialogs/StripeDialog.vala:594
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "Annettu kortti on testikortti. Käytä oikeaa korttia jatkaaksesi."
 
@@ -506,7 +520,7 @@ msgstr "Päivitysten asentamisen viimeistely vaatii uudelleenkäynnistämisen"
 msgid "Restart Now"
 msgstr "Käynnistä uudelleen nyt"
 
-#: ../src/Views/AppListUpdateView.vala:157
+#: ../src/Views/AppListUpdateView.vala:162
 msgid "Update All"
 msgstr "Päivitä kaikki"
 
@@ -544,20 +558,20 @@ msgstr "Ei tuloksia"
 msgid "No apps could be found. Try changing search terms."
 msgstr "Sovelluksia ei löytynyt. Yritä uudelleen eri hakuehdoilla."
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:125
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:123
 msgid "Uninstall"
 msgstr "Poista asennus"
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:128
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:126
 msgid "Open"
 msgstr "Avaa"
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:209
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:207
 #: ../src/Widgets/HumbleButton.vala:82
 msgid "Free"
 msgstr "Ilmainen"
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:229
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:231
 msgid "Update"
 msgstr "Päivitä"
 
@@ -692,6 +706,9 @@ msgstr "Ajan tasalla"
 #: ../src/Widgets/UpdateHeaderRow.vala:120
 msgid "Drivers"
 msgstr "Ajurit"
+
+#~ msgid "Close"
+#~ msgstr "Sulje"
 
 #~ msgid "App Center"
 #~ msgstr "Sovelluskeskus"
