@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-17 14:11+0000\n"
-"PO-Revision-Date: 2018-01-16 18:56+0000\n"
-"Last-Translator: SteffenL <steffenl@protonmail.com>\n"
-"Language-Team: German <https://weblate.elementary.io/projects/appcenter/"
-"appcenter/de/>\n"
+"PO-Revision-Date: 2018-02-26 09:53+0000\n"
+"Last-Translator: Floris Remmert <fadenfisch95@gmail.com>\n"
+"Language-Team: German "
+"<https://weblate.elementary.io/projects/appcenter/appcenter/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -231,21 +231,21 @@ msgstr[1] "%u Aktualisierungen sind für Ihr System verfügbar"
 
 #: ../src/Core/Client.vala:480
 msgid "Version: %s"
-msgstr ""
+msgstr "Version: %s"
 
 #: ../src/Core/Client.vala:489
 msgid "No components with updates"
-msgstr ""
+msgstr "Keine Updates verfügbar"
 
 #: ../src/Core/Client.vala:493
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Für %u Komponente ist ein Update verfügbar"
+msgstr[1] "Für %u Komponenten sind Updates verfügbar"
 
 #: ../src/Core/Client.vala:495
 msgid "%s:"
-msgstr ""
+msgstr "%s:"
 
 #: ../src/Core/Package.vala:186
 msgid "The %s Developers"

@@ -3,86 +3,89 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-17 14:11+0000\n"
-"PO-Revision-Date: 2015-11-06 16:07+0000\n"
-"Last-Translator: elementaryart (old) <Unknown>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2018-02-21 00:06+0000\n"
+"Last-Translator: RaymondDragon <swordart2050@gmail.com>\n"
+"Language-Team: Persian "
+"<https://weblate.elementary.io/projects/appcenter/appcenter/fa/>\n"
+"Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
-"X-Generator: Launchpad (build 18331)\n"
 
 #: ../src/Application.vala:39
 msgid "AppCenter"
-msgstr ""
+msgstr "مرکزبرنامه"
 
 #: ../src/Application.vala:118
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr ""
+msgstr "لینک مشخص شده '٪ s' یافت نشد، در عوض جستجو می شود"
 
 #: ../src/Application.vala:240
 msgid "Application installed"
-msgstr ""
+msgstr "برنامه های نصب شده"
 
 #: ../src/Application.vala:241
 msgid "%s has been successfully installed"
-msgstr ""
+msgstr "٪ s با موفقیت نصب شده است"
 
 #: ../src/Application.vala:253
 msgid "There Was An Error Installing %s."
-msgstr ""
+msgstr "خطا در نصب٪ s وجود داشت."
 
 #: ../src/Application.vala:286
 msgid "Details"
-msgstr ""
+msgstr "جزئیات"
 
 #: ../src/Application.vala:290
 msgid "Failed to Fetch Updates"
-msgstr ""
+msgstr "به روزرسانی دریافت نشد"
 
 #: ../src/Application.vala:291
 msgid ""
 "This may have been caused by external, manually added software repositories "
 "or a corrupted sources file."
 msgstr ""
+"این ممکن است توسط مخزن نرم افزاری خارجی، دستی به وجود آمده یا یک فایل منبع "
+"خراب ایجاد شده باشد."
 
 #: ../src/Application.vala:298
 msgid "Ignore"
-msgstr ""
+msgstr "چشم پوشی"
 
 #: ../src/Application.vala:299
 msgid "Try Again"
-msgstr ""
+msgstr "دوباره امتحان کنید"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
-msgstr ""
+msgstr "راه افتادن"
 
 #: ../src/Core/ChangeInformation.vala:56
 msgid "Waiting"
-msgstr ""
+msgstr "در انتظار"
 
 #: ../src/Core/ChangeInformation.vala:58
 msgid "Running"
-msgstr ""
+msgstr "در حال اجرا"
 
 #: ../src/Core/ChangeInformation.vala:60
 msgid "Querying"
-msgstr ""
+msgstr "پرس و جو"
 
 #: ../src/Core/ChangeInformation.vala:62
 msgid "Getting information"
-msgstr ""
+msgstr "دریافت اطلاعات"
 
 #: ../src/Core/ChangeInformation.vala:64
 msgid "Removing packages"
-msgstr ""
+msgstr "حذف بسته ها"
 
 #: ../src/Core/ChangeInformation.vala:66
 msgid "Downloading"
-msgstr ""
+msgstr "در حال دانلود"
 
 #: ../src/Core/ChangeInformation.vala:68
 msgid "Installing"
@@ -90,39 +93,39 @@ msgstr "درحال نصب"
 
 #: ../src/Core/ChangeInformation.vala:70
 msgid "Refreshing software list"
-msgstr ""
+msgstr "لیست نرم افزارهای تازه"
 
 #: ../src/Core/ChangeInformation.vala:72
 msgid "Installing updates"
-msgstr ""
+msgstr "در حال نصب به روزسانی"
 
 #: ../src/Core/ChangeInformation.vala:74
 msgid "Cleaning up packages"
-msgstr ""
+msgstr "تمیز کردن بسته ها"
 
 #: ../src/Core/ChangeInformation.vala:76
 msgid "Obsoleting packages"
-msgstr ""
+msgstr "بسته های اطمینان"
 
 #: ../src/Core/ChangeInformation.vala:78
 msgid "Resolving dependencies"
-msgstr ""
+msgstr "وابستگی ها را حل می کند"
 
 #: ../src/Core/ChangeInformation.vala:80
 msgid "Checking signatures"
-msgstr ""
+msgstr "بررسی امضا"
 
 #: ../src/Core/ChangeInformation.vala:82
 msgid "Testing changes"
-msgstr ""
+msgstr "تست تغییرات"
 
 #: ../src/Core/ChangeInformation.vala:84
 msgid "Committing changes"
-msgstr ""
+msgstr "اتخاذ تغییرات"
 
 #: ../src/Core/ChangeInformation.vala:86
 msgid "Requesting data"
-msgstr ""
+msgstr "درخواست داده"
 
 #: ../src/Core/ChangeInformation.vala:88
 msgid "Finished"
