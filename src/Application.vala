@@ -271,21 +271,17 @@ public class AppCenter.App : Granite.Application {
             return;
         }
 
-        string message = format_error_message (error.message);
-
-        var details_label = new Gtk.Label (message);
-        details_label.max_width_chars = 40;
-        details_label.selectable = true;
-        details_label.wrap = true;
-
-        var details_label_context = details_label.get_style_context ();
-        details_label_context.add_class (Gtk.STYLE_CLASS_MONOSPACE);
-        details_label_context.add_class ("terminal");
+        var details_view = new Gtk.TextView ();
+        details_view.buffer.text = format_error_message (error.message);
+        details_view.editable = false;
+        details_view.pixels_below_lines = 3;
+        details_view.wrap_mode = Gtk.WrapMode.WORD;
+        details_view.get_style_context ().add_class ("terminal");
 
         var scroll_box = new Gtk.ScrolledWindow (null, null);
         scroll_box.margin_top = 12;
         scroll_box.min_content_height = 70;
-        scroll_box.add (details_label);
+        scroll_box.add (details_view);
 
         var expander = new Gtk.Expander (_("Details"));
         expander.add (scroll_box);
@@ -296,6 +292,7 @@ public class AppCenter.App : Granite.Application {
             "dialog-error",
             Gtk.ButtonsType.NONE
         );
+
         dialog.transient_for = main_window;
         dialog.custom_bin.add (expander);
         dialog.add_button (_("Ignore"), Gtk.ResponseType.CLOSE);

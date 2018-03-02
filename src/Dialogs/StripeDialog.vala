@@ -29,7 +29,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
                                     + "\"amount\": %s,"
                                     + "\"currency\": \"USD\""
                                 + "}}";
-    private const string USER_AGENT = "Stripe checkout";
+    private const string USER_AGENT = "elementary AppCenter";
     private const string STRIPE_URI = "https://api.stripe.com/v1/tokens";
     private const string STRIPE_AUTH = "Bearer %s";
     private const string STRIPE_REQUEST = "email=%s"
@@ -163,7 +163,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
 
         layouts = new Gtk.Stack ();
         layouts.vhomogeneous = false;
-        layouts.margin_left = layouts.margin_right = 12;
+        layouts.margin_start = layouts.margin_end = 12;
         layouts.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
         layouts.add_named (card_layout, "card");
         layouts.set_visible_child_name ("card");
@@ -173,8 +173,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         var privacy_policy_link = new Gtk.LinkButton.with_label ("https://stripe.com/privacy", _("Privacy Policy"));
 
         var action_area = (Gtk.ButtonBox) get_action_area ();
-        action_area.margin_right = 5;
-        action_area.margin_bottom = 5;
+        action_area.margin = 5;
         action_area.margin_top = 14;
         action_area.add (privacy_policy_link);
         action_area.set_child_secondary (privacy_policy_link, true);
@@ -440,8 +439,18 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         var session = new Soup.Session ();
         var message = new Soup.Message ("POST", STRIPE_URI);
 
-        var request = STRIPE_REQUEST.printf (_email, USER_AGENT, _amount, _cc_num, _cc_cvc, _cc_exp_month, _cc_exp_year);
+        var request = STRIPE_REQUEST.printf (
+            Soup.URI.encode (_email, null),
+            Soup.URI.encode (USER_AGENT, null),
+            Soup.URI.encode (_amount, null),
+            Soup.URI.encode (_cc_num, null),
+            Soup.URI.encode (_cc_cvc, null),
+            Soup.URI.encode (_cc_exp_month, null),
+            Soup.URI.encode (_cc_exp_year, null)
+        );
+
         message.request_headers.append ("Authorization", STRIPE_AUTH.printf (_key));
+        message.request_headers.append ("Content-Type", "application/x-www-form-urlencoded");
         message.request_body.append_take (request.data);
 
         session.send_message (message);
