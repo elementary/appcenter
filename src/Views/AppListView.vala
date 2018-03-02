@@ -61,7 +61,7 @@ namespace AppCenter.Views {
         }
 
         protected override Widgets.AppListRow construct_row_for_package (AppCenterCore.Package package)  {
-            return new Widgets.PackageRow.list (package, null, action_button_group, false);
+            return new Widgets.PackageRow.list (package, null, action_button_group, true);
         }
 
         // Show 20 more apps on the listbox
