@@ -15,6 +15,18 @@
         </_p>
     </description>
     <releases>
+        <release version="0.2.9" date="2018-03-02" urgency="medium">
+            <description>
+                <_p>Bug fixes and improve perfomance.</_p>
+                <ul>
+                    <_li>Improve transaction success rate</_li>
+                    <_li>Add Publishing to Office category</_li>
+                    <_li>Improve descriptions of OS Updates</_li>
+                    <_li>Various bug fixes and performance improvements</_li>
+                    <_li>New translations</_li>
+                </ul>
+            </description>
+        </release>
         <release version="0.2.8" date="2018-01-25" urgency="medium">
             <description>
                 <_p>Bug fixes and improve perfomance.</_p>
