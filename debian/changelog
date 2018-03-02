@@ -1,8 +1,8 @@
-appcenter (0.2.9) UNRELEASED; urgency=medium
+appcenter (0.2.9) xenial; urgency=medium
 
-  * Pre-release version bump.
+  * New upstream release.
 
- -- Cody Garver <cody@elementary.io>  Sat, 03 Feb 2018 00:28:53 -0600
+ -- Cody Garver <cody@elementary.io>  Fri, 02 Mar 2018 06:25:35 -0600
 
 appcenter (0.2.8) xenial; urgency=medium
 
