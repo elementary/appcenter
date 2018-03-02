@@ -85,7 +85,7 @@ namespace AppCenter.Views {
         }
 
         protected override Widgets.AppListRow construct_row_for_package (AppCenterCore.Package package) {
-            return new Widgets.PackageRow.installed (package, info_grid_group, action_button_group, false);
+            return new Widgets.PackageRow.installed (package, info_grid_group, action_button_group, true);
         }
 
         protected override void on_package_changing (AppCenterCore.Package package, bool is_changing) {
