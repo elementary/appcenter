@@ -139,7 +139,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         view_mode = new Granite.Widgets.ModeButton ();
         view_mode.margin = 1;
         homepage_view_id = view_mode.append_text (_("Home"));
-        installed_view_id = view_mode.append_text (C_("view", "Updates"));
+        installed_view_id = view_mode.append_text (C_("view", "Installed"));
 
         view_mode_revealer = new Gtk.Revealer ();
         view_mode_revealer.reveal_child = true;
