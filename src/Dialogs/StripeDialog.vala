@@ -109,6 +109,14 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
             validate (1, card_number_entry.text);
         });
 
+        card_number_entry.focus_in_event.connect (() => {
+            card_number_entry.visibility = true;
+        });
+
+        card_number_entry.focus_out_event.connect (() => {
+            card_number_entry.visibility = false;
+        });
+
         card_expiration_entry = new Gtk.Entry ();
         card_expiration_entry.hexpand = true;
         card_expiration_entry.max_length = 5;
