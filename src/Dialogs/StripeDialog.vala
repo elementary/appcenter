@@ -141,13 +141,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
             validate (3, card_cvc_entry.text);
         });
 
-        card_cvc_entry.focus_in_event.connect (() => {
-            card_cvc_entry.visibility = true;
-        });
-
-        card_cvc_entry.focus_out_event.connect (() => {
-            card_cvc_entry.visibility = false;
-        });
+        card_cvc_entry.bind_property ("has-focus", card_cvc_entry, "visibility", GLib.BindingFlags.DEFAULT);
 
         var card_grid_bottom = new Gtk.Grid ();
         card_grid_bottom.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
