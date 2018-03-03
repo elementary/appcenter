@@ -109,6 +109,8 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
             validate (1, card_number_entry.text);
         });
 
+        card_number_entry.bind_property ("has-focus", card_number_entry, "visibility");
+
         card_expiration_entry = new Gtk.Entry ();
         card_expiration_entry.hexpand = true;
         card_expiration_entry.max_length = 5;
