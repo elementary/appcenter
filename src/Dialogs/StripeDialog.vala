@@ -109,6 +109,8 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
             validate (1, card_number_entry.text);
         });
 
+        card_number_entry.bind_property ("has-focus", card_number_entry, "visibility");
+
         card_expiration_entry = new Gtk.Entry ();
         card_expiration_entry.hexpand = true;
         card_expiration_entry.max_length = 5;
@@ -140,6 +142,8 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
             card_cvc_entry.text = card_cvc_entry.text.replace (" ", "");
             validate (3, card_cvc_entry.text);
         });
+
+        card_cvc_entry.bind_property ("has-focus", card_cvc_entry, "visibility");
 
         var card_grid_bottom = new Gtk.Grid ();
         card_grid_bottom.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
