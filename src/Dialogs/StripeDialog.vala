@@ -172,7 +172,9 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         layouts.add_named (card_layout, "card");
         layouts.set_visible_child_name ("card");
 
-        get_content_area ().add (layouts);
+        var content_area = get_content_area ();
+        content_area.add (layouts);
+        content_area.show_all ();
 
         var privacy_policy_link = new Gtk.LinkButton.with_label ("https://stripe.com/privacy", _("Privacy Policy"));
 
@@ -188,8 +190,6 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         pay_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
         pay_button.has_default = true;
         pay_button.sensitive = false;
-
-        show_all ();
 
         response.connect (on_response);
 
