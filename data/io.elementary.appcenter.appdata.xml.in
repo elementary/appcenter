@@ -15,6 +15,18 @@
         </_p>
     </description>
     <releases>
+        <release version="0.2.9" date="2018-03-02" urgency="medium">
+            <description>
+                <_p>Bug fixes and improve perfomance.</_p>
+                <ul>
+                    <_li>Improve transaction success rate</_li>
+                    <_li>Add Publishing to Office category</_li>
+                    <_li>Improve descriptions of OS Updates</_li>
+                    <_li>Various bug fixes and performance improvements</_li>
+                    <_li>New translations</_li>
+                </ul>
+            </description>
+        </release>
         <release version="0.2.8" date="2018-01-25" urgency="medium">
             <description>
                 <_p>Bug fixes and improve perfomance.</_p>
@@ -147,6 +159,35 @@
             <image>https://raw.githubusercontent.com/elementary/appcenter/master/data/screenshot.png</image>
         </screenshot>
     </screenshots>
+    <content_rating type="oars-1.1">
+        <content_attribute id="violence-cartoon">none</content_attribute>
+        <content_attribute id="violence-fantasy">none</content_attribute>
+        <content_attribute id="violence-realistic">none</content_attribute>
+        <content_attribute id="violence-bloodshed">none</content_attribute>
+        <content_attribute id="violence-sexual">none</content_attribute>
+        <content_attribute id="violence-desecration">none</content_attribute>
+        <content_attribute id="violence-slavery">none</content_attribute>
+        <content_attribute id="violence-worship">none</content_attribute>
+        <content_attribute id="drugs-alcohol">none</content_attribute>
+        <content_attribute id="drugs-narcotics">none</content_attribute>
+        <content_attribute id="drugs-tobacco">none</content_attribute>
+        <content_attribute id="sex-nudity">none</content_attribute>
+        <content_attribute id="sex-themes">none</content_attribute>
+        <content_attribute id="sex-homosexuality">none</content_attribute>
+        <content_attribute id="sex-prostitution">none</content_attribute>
+        <content_attribute id="sex-adultery">none</content_attribute>
+        <content_attribute id="sex-appearance">none</content_attribute>
+        <content_attribute id="language-profanity">none</content_attribute>
+        <content_attribute id="language-humor">none</content_attribute>
+        <content_attribute id="language-discrimination">none</content_attribute>
+        <content_attribute id="social-chat">none</content_attribute>
+        <content_attribute id="social-info">mild</content_attribute>
+        <content_attribute id="social-audio">none</content_attribute>
+        <content_attribute id="social-location">none</content_attribute>
+        <content_attribute id="social-contacts">none</content_attribute>
+        <content_attribute id="money-purchasing">intense</content_attribute>
+        <content_attribute id="money-gambling">none</content_attribute>
+    </content_rating>
     <developer_name>elementary LLC.</developer_name>
     <url type="homepage">http://elementary.io/</url>
     <url type="bugtracker">https://github.com/elementary/appcenter/issues</url>

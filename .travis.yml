@@ -1,16 +1,41 @@
-language: generic
+---
+
+language: node_js
+
+node_js:
+  - lts/*
+
+sudo: required
 
 services:
- - docker
+  - docker
 
-env:
- - DEPENDENCY_PACKAGES="appstream cmake cmake-elementary desktop-file-utils intltool libappstream-dev libgee-0.8-dev libgranite-dev libgtk-3-dev libjson-glib-dev libpackagekit-glib2-dev libsoup2.4-dev libunity-dev libxml2-dev libxml2-utils valac"
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - libstdc++-4.9-dev
+
+cache:
+  directories:
+    - /tmp/liftoff
+
+matrix:
+  include:
+    - env: DIST=loki
+    - env: DIST=juno
+
+before_install:
+  - docker pull ubuntu:16.04
 
 install:
- - docker pull elementary/docker:loki
- - docker run -v "$PWD":/tmp/build-dir elementary/docker:loki /bin/sh -c "apt-get update && apt-get -y install $DEPENDENCY_PACKAGES && cd /tmp/build-dir && cmake . && env CTEST_OUTPUT_ON_FAILURE=true make all test"
- - docker pull elementary/docker:loki-unstable
- - docker run -v "$PWD":/tmp/build-dir elementary/docker:loki-unstable /bin/sh -c "apt-get update && apt-get -y install $DEPENDENCY_PACKAGES && cd /tmp/build-dir && cmake . && env CTEST_OUTPUT_ON_FAILURE=true make all test"
+  - npm install @elementaryos/houston
 
 script:
- - echo BUILDS PASSED
+  - houston ci
+    --type system-app
+    --name-appstream io.elementary.appcenter.desktop
+    --name-domain io.elementary.appcenter
+    --name-human AppCenter
+    --distribution $DIST
