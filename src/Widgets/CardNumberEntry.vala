@@ -39,7 +39,7 @@ public class AppCenter.Widgets.CardNumberEntry : Gtk.Entry {
         input_purpose = Gtk.InputPurpose.DIGITS;
         max_length = 26;
         placeholder_text = _("Card Number");
-        primary_icon_name = "credit-card-symbolic";
+        primary_icon_gicon = new ThemedIcon.with_default_fallbacks ("credit-card-symbolic");
         delete_text.connect ((start_pos, end_pos) => {
             insertion = false;
         });
@@ -133,28 +133,28 @@ public class AppCenter.Widgets.CardNumberEntry : Gtk.Entry {
     private void change_card_icon () {
         switch (card_type) {
             case CardType.VISA:
-                primary_icon_name = "credit-card-visa-symbolic";
+                primary_icon_gicon = new ThemedIcon.with_default_fallbacks ("credit-card-visa-symbolic");
                 break;
             case CardType.MASTERCARD:
-                primary_icon_name = "credit-card-mastercard-symbolic";
+                primary_icon_gicon = new ThemedIcon.with_default_fallbacks ("credit-card-mastercard-symbolic");
                 break;
             case CardType.AMERICAN_EXPRESS:
-                primary_icon_name = "credit-card-american-express-symbolic";
+                primary_icon_gicon = new ThemedIcon.with_default_fallbacks ("credit-card-american-express-symbolic");
                 break;
             case CardType.DISCOVER:
-                primary_icon_name = "credit-card-discover-symbolic";
+                primary_icon_gicon = new ThemedIcon.with_default_fallbacks ("credit-card-discover-symbolic");
                 break;
             case CardType.DINERS_CLUB:
-                primary_icon_name = "credit-card-diners-club-symbolic";
+                primary_icon_gicon = new ThemedIcon.with_default_fallbacks ("credit-card-diners-club-symbolic");
                 break;
             case CardType.JBC:
-                primary_icon_name = "credit-card-jbc-symbolic";
+                primary_icon_gicon = new ThemedIcon.with_default_fallbacks ("credit-card-jbc-symbolic");
                 break;
             case CardType.UNIONPAY:
-                primary_icon_name = "credit-card-unionpay-symbolic";
+                primary_icon_gicon = new ThemedIcon.with_default_fallbacks ("credit-card-unionpay-symbolic");
                 break;
             default:
-                primary_icon_name = "credit-card-symbolic";
+                primary_icon_gicon = new ThemedIcon.with_default_fallbacks ("credit-card-symbolic");
                 break;
         }
     }
