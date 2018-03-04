@@ -171,6 +171,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         content_area.show_all ();
 
         var privacy_policy_link = new Gtk.LinkButton.with_label ("https://stripe.com/privacy", _("Privacy Policy"));
+        privacy_policy_link.show ();
 
         var action_area = (Gtk.ButtonBox) get_action_area ();
         action_area.margin = 5;
