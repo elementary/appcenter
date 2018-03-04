@@ -39,7 +39,7 @@ public class AppCenter.Widgets.CardNumberEntry : Gtk.Entry {
         input_purpose = Gtk.InputPurpose.DIGITS;
         max_length = 26;
         placeholder_text = _("Card Number");
-        primary_icon_gicon = new ThemedIcon.with_default_fallbacks ("credit-card-symbolic");
+        primary_icon_gicon = new ThemedIcon.with_default_fallbacks ("payment-card-symbolic");
         delete_text.connect ((start_pos, end_pos) => {
             insertion = false;
         });
@@ -54,6 +54,7 @@ public class AppCenter.Widgets.CardNumberEntry : Gtk.Entry {
             }
             update_number ();
             detect_card ();
+            change_card_icon ();
             int[] pattern = get_card_pattern ();
             var number_chars = card_number.to_utf8 ();
             var builder = new GLib.StringBuilder ();
@@ -127,6 +128,35 @@ public class AppCenter.Widgets.CardNumberEntry : Gtk.Entry {
         }
 
         card_type = CardType.UNKNOWN;
+    }
+
+    private void change_card_icon () {
+        switch (card_type) {
+            case CardType.VISA:
+                secondary_icon_gicon = new ThemedIcon.with_default_fallbacks ("payment-card-visa");
+                break;
+            case CardType.MASTERCARD:
+                secondary_icon_gicon = new ThemedIcon.with_default_fallbacks ("payment-card-mastercard");
+                break;
+            case CardType.AMERICAN_EXPRESS:
+                secondary_icon_gicon = new ThemedIcon.with_default_fallbacks ("payment-card-amex");
+                break;
+            case CardType.DISCOVER:
+                secondary_icon_gicon = new ThemedIcon.with_default_fallbacks ("payment-card-discover");
+                break;
+            case CardType.DINERS_CLUB:
+                secondary_icon_gicon = new ThemedIcon.with_default_fallbacks ("payment-card-diners-club");
+                break;
+            case CardType.JBC:
+                secondary_icon_gicon = new ThemedIcon.with_default_fallbacks ("payment-card-jbc");
+                break;
+            case CardType.UNIONPAY:
+                secondary_icon_gicon = new ThemedIcon.with_default_fallbacks ("payment-card-unionpay");
+                break;
+            default:
+                secondary_icon_gicon = null;
+                break;
+        }
     }
 
     // The numbers represents the position of the spaces
