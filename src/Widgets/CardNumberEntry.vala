@@ -70,7 +70,7 @@ public class AppCenter.Widgets.CardNumberEntry : Gtk.Entry {
             var new_offset = (text.char_count ()-1) - cursor_position;
             if (end_offset != new_offset) {
                 Idle.add (() => {
-                    GLib.Signal.emit_by_name (this, "move-cursor", Gtk.MovementStep.LOGICAL_POSITIONS, new_offset - end_offset, false);
+                    move_cursor (Gtk.MovementStep.LOGICAL_POSITIONS, new_offset - end_offset, false);
                     return false;
                 });
             }
