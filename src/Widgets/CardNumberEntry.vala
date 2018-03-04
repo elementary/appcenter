@@ -54,7 +54,6 @@ public class AppCenter.Widgets.CardNumberEntry : Gtk.Entry {
             }
             update_number ();
             detect_card ();
-            change_card_icon ();
             int[] pattern = get_card_pattern ();
             var number_chars = card_number.to_utf8 ();
             var builder = new GLib.StringBuilder ();
@@ -128,35 +127,6 @@ public class AppCenter.Widgets.CardNumberEntry : Gtk.Entry {
         }
 
         card_type = CardType.UNKNOWN;
-    }
-
-    private void change_card_icon () {
-        switch (card_type) {
-            case CardType.VISA:
-                primary_icon_gicon = new ThemedIcon.with_default_fallbacks ("credit-card-visa-symbolic");
-                break;
-            case CardType.MASTERCARD:
-                primary_icon_gicon = new ThemedIcon.with_default_fallbacks ("credit-card-mastercard-symbolic");
-                break;
-            case CardType.AMERICAN_EXPRESS:
-                primary_icon_gicon = new ThemedIcon.with_default_fallbacks ("credit-card-american-express-symbolic");
-                break;
-            case CardType.DISCOVER:
-                primary_icon_gicon = new ThemedIcon.with_default_fallbacks ("credit-card-discover-symbolic");
-                break;
-            case CardType.DINERS_CLUB:
-                primary_icon_gicon = new ThemedIcon.with_default_fallbacks ("credit-card-diners-club-symbolic");
-                break;
-            case CardType.JBC:
-                primary_icon_gicon = new ThemedIcon.with_default_fallbacks ("credit-card-jbc-symbolic");
-                break;
-            case CardType.UNIONPAY:
-                primary_icon_gicon = new ThemedIcon.with_default_fallbacks ("credit-card-unionpay-symbolic");
-                break;
-            default:
-                primary_icon_gicon = new ThemedIcon.with_default_fallbacks ("credit-card-symbolic");
-                break;
-        }
     }
 
     // The numbers represents the position of the spaces
