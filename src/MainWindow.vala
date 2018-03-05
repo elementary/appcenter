@@ -40,6 +40,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     private Gee.LinkedList<string> return_button_history;
     private Granite.Widgets.AlertView network_alert_view;
     private Gtk.Grid network_view;
+    private Gtk.Label updates_badge;
 
     private int homepage_view_id;
     private int installed_view_id;
@@ -143,7 +144,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         homepage_view_id = view_mode.append_text (_("Home"));
         installed_view_id = view_mode.append_text (C_("view", "Updates"));
 
-        var updates_badge = new Gtk.Label ("5");
+        updates_badge = new Gtk.Label ("5");
         updates_badge.halign = Gtk.Align.END;
         updates_badge.valign = Gtk.Align.START;
         updates_badge.get_style_context ().add_class ("badge");
@@ -236,6 +237,15 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         }
 
         return false;
+    }
+
+    public void show_update_badge(uint updates_number){
+        if (updates_number == 0U) {
+            set_widget_visibility(updates_badge, false);
+        } else {
+            updates_badge.label = updates_number.to_string ();
+            set_widget_visibility(updates_badge, true);
+        }
     }
 
     public void show_package (AppCenterCore.Package package) {

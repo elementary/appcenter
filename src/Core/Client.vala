@@ -124,6 +124,10 @@ public class AppCenterCore.Client : Object {
         }
     }
 
+    public uint get_updates_number () {
+        return updates_number;
+    }
+
     public bool has_tasks () {
         return task_count > 0;
     }

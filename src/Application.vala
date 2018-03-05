@@ -27,6 +27,8 @@ public class AppCenter.App : Granite.Application {
         { null }
     };
 
+    public uint updates_number = 0U;
+
     private const int SECONDS_AFTER_NETWORK_UP = 60;
     private const int TRY_AGAIN_RESPONSE_ID = 1;
 
@@ -40,7 +42,7 @@ public class AppCenter.App : Granite.Application {
 
     [CCode (array_length = false, array_null_terminated = true)]
     public static string[]? fake_update_packages = null;
-    private MainWindow? main_window;
+    public MainWindow? main_window;
 
     private uint registration_id = 0;
 
@@ -61,6 +63,8 @@ public class AppCenter.App : Granite.Application {
         app_launcher = Build.DESKTOP_FILE;
         add_main_option_entries (APPCENTER_OPTIONS);
 
+        updates_number = 0U;
+
         var quit_action = new SimpleAction ("quit", null);
         quit_action.activate.connect (() => {
             if (main_window != null) {
@@ -78,6 +82,7 @@ public class AppCenter.App : Granite.Application {
         var client = AppCenterCore.Client.get_default ();
         client.operation_finished.connect (on_operation_finished);
         client.cache_update_failed.connect (on_cache_update_failed);
+        client.updates_available.connect (on_updates_available);
 
         if (AppInfo.get_default_for_uri_scheme ("appstream") == null) {
             var appinfo = new DesktopAppInfo (app_launcher);
@@ -266,6 +271,13 @@ public class AppCenter.App : Granite.Application {
         }
     }
     
+    public void on_updates_available () {
+        var client = AppCenterCore.Client.get_default ();
+        updates_number = client.get_updates_number ();
+        main_window.show_update_badge(updates_number);
+    }
+
+
     private void on_cache_update_failed (Error error) {
         if (main_window == null) {
             return;
