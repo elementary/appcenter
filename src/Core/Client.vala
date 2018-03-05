@@ -50,7 +50,7 @@ public class AppCenterCore.Client : Object {
     private GLib.DateTime last_cache_update = null;
     private GLib.DateTime last_action = null;
 
-    private uint updates_number = 0U;
+    public uint updates_number { get; private set; default = 0U; }
     private uint update_cache_timeout_id = 0;
     private bool refresh_in_progress = false;
 
@@ -122,10 +122,6 @@ public class AppCenterCore.Client : Object {
                 update_cache.begin (true);
             }
         }
-    }
-
-    public uint get_updates_number () {
-        return updates_number;
     }
 
     public bool has_tasks () {

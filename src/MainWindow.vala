@@ -144,7 +144,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         homepage_view_id = view_mode.append_text (_("Home"));
         installed_view_id = view_mode.append_text (C_("view", "Updates"));
 
-        updates_badge = new Gtk.Label ("5");
+        updates_badge = new Gtk.Label ("!");
         updates_badge.halign = Gtk.Align.END;
         updates_badge.valign = Gtk.Align.START;
         updates_badge.get_style_context ().add_class ("badge");

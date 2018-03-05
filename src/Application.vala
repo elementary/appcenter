@@ -27,8 +27,6 @@ public class AppCenter.App : Granite.Application {
         { null }
     };
 
-    public uint updates_number = 0U;
-
     private const int SECONDS_AFTER_NETWORK_UP = 60;
     private const int TRY_AGAIN_RESPONSE_ID = 1;
 
@@ -62,8 +60,6 @@ public class AppCenter.App : Granite.Application {
 
         app_launcher = Build.DESKTOP_FILE;
         add_main_option_entries (APPCENTER_OPTIONS);
-
-        updates_number = 0U;
 
         var quit_action = new SimpleAction ("quit", null);
         quit_action.activate.connect (() => {
@@ -270,13 +266,11 @@ public class AppCenter.App : Granite.Application {
                 break;
         }
     }
-    
+
     public void on_updates_available () {
         var client = AppCenterCore.Client.get_default ();
-        updates_number = client.get_updates_number ();
-        main_window.show_update_badge (updates_number);
+        main_window.show_update_badge (client.updates_number);
     }
-
 
     private void on_cache_update_failed (Error error) {
         if (main_window == null) {
