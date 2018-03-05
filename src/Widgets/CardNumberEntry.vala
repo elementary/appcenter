@@ -27,7 +27,7 @@ public class AppCenter.Widgets.CardNumberEntry : Gtk.Entry {
         AMERICAN_EXPRESS,
         DISCOVER,
         DINERS_CLUB,
-        JBC,
+        JCB,
         UNIONPAY
     }
 
@@ -123,7 +123,7 @@ public class AppCenter.Widgets.CardNumberEntry : Gtk.Entry {
         }
 
         if (GLib.Regex.match_simple ("^(35([3-8]|2[89]))", number)) {
-            card_type = CardType.JBC;
+            card_type = CardType.JCB;
             return;
         }
 
@@ -147,8 +147,8 @@ public class AppCenter.Widgets.CardNumberEntry : Gtk.Entry {
             case CardType.DINERS_CLUB:
                 secondary_icon_gicon = new ThemedIcon.with_default_fallbacks ("payment-card-diners-club");
                 break;
-            case CardType.JBC:
-                secondary_icon_gicon = new ThemedIcon.with_default_fallbacks ("payment-card-jbc");
+            case CardType.JCB:
+                secondary_icon_gicon = new ThemedIcon.with_default_fallbacks ("payment-card-jcb");
                 break;
             case CardType.UNIONPAY:
                 secondary_icon_gicon = new ThemedIcon.with_default_fallbacks ("payment-card-unionpay");
@@ -168,7 +168,7 @@ public class AppCenter.Widgets.CardNumberEntry : Gtk.Entry {
             case CardType.VISA:
             case CardType.MASTERCARD:
             case CardType.DISCOVER:
-            case CardType.JBC:
+            case CardType.JCB:
             case CardType.UNIONPAY:
             default:
                 return {4, 8, 12};
@@ -184,7 +184,7 @@ public class AppCenter.Widgets.CardNumberEntry : Gtk.Entry {
             case CardType.VISA:
             case CardType.DISCOVER:
             case CardType.DINERS_CLUB:
-            case CardType.JBC:
+            case CardType.JCB:
             case CardType.UNIONPAY:
             default:
                 return 19;
