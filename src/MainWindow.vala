@@ -148,7 +148,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         updates_badge.halign = Gtk.Align.END;
         updates_badge.valign = Gtk.Align.START;
         updates_badge.get_style_context ().add_class ("badge");
-        set_widget_visibility(updates_badge, false);
 
         var view_mode_overlay = new Gtk.Overlay ();
         view_mode_overlay.add (view_mode);
