@@ -40,7 +40,7 @@ public class AppCenter.App : Granite.Application {
 
     [CCode (array_length = false, array_null_terminated = true)]
     public static string[]? fake_update_packages = null;
-    public MainWindow? main_window;
+    private MainWindow? main_window;
 
     private uint registration_id = 0;
 
