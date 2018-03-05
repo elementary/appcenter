@@ -274,7 +274,7 @@ public class AppCenter.App : Granite.Application {
     public void on_updates_available () {
         var client = AppCenterCore.Client.get_default ();
         updates_number = client.get_updates_number ();
-        main_window.show_update_badge(updates_number);
+        main_window.show_update_badge (updates_number);
     }
 
 

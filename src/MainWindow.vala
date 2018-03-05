@@ -148,7 +148,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         updates_badge.halign = Gtk.Align.END;
         updates_badge.valign = Gtk.Align.START;
         updates_badge.get_style_context ().add_class ("badge");
-        set_widget_visibility(updates_badge, false);
+        set_widget_visibility (updates_badge, false);
 
         var view_mode_overlay = new Gtk.Overlay ();
         view_mode_overlay.add (view_mode);
@@ -240,12 +240,12 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         return false;
     }
 
-    public void show_update_badge(uint updates_number){
+    public void show_update_badge (uint updates_number) {
         if (updates_number == 0U) {
-            set_widget_visibility(updates_badge, false);
+            set_widget_visibility (updates_badge, false);
         } else {
             updates_badge.label = updates_number.to_string ();
-            set_widget_visibility(updates_badge, true);
+            set_widget_visibility (updates_badge, true);
         }
     }
 
