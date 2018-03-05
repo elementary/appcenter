@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-17 14:11+0000\n"
-"PO-Revision-Date: 2018-02-03 00:05+0000\n"
-"Last-Translator: Alain M. <alain23@protonmail.com>\n"
-"Language-Team: Spanish <https://weblate.elementary.io/projects/appcenter/"
-"appcenter/es/>\n"
+"PO-Revision-Date: 2018-03-01 00:02+0000\n"
+"Last-Translator: felipe andres gomez villar <felipe.gomez.villar@gmail.com>\n"
+"Language-Team: Spanish "
+"<https://weblate.elementary.io/projects/appcenter/appcenter/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -229,29 +229,29 @@ msgstr[1] "Hay %u actualizaciones disponibles para el sistema"
 
 #: ../src/Core/Client.vala:480
 msgid "Version: %s"
-msgstr ""
+msgstr "Version: %s"
 
 #: ../src/Core/Client.vala:489
 msgid "No components with updates"
-msgstr ""
+msgstr "Sin componentes para actualizar"
 
 #: ../src/Core/Client.vala:493
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u componente para actualizar"
+msgstr[1] "%u componentes para actualizar"
 
 #: ../src/Core/Client.vala:495
 msgid "%s:"
-msgstr ""
+msgstr "%s:"
 
 #: ../src/Core/Package.vala:186
 msgid "The %s Developers"
-msgstr "Desarrolladores de %s"
+msgstr "Los Desarrolladores de %s"
 
 #: ../src/Core/UpdateManager.vala:81
 msgid "Restart Required"
-msgstr "Reinicio requerido"
+msgstr "Se requiere reiniciar"
 
 #: ../src/Core/UpdateManager.vala:82
 msgid "Please restart your system to finalize updates"
@@ -652,7 +652,7 @@ msgstr "$%d.00"
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: ../src/Widgets/HumbleButton.vala:144
 msgid "$%d"
-msgstr ""
+msgstr "$%d"
 
 #: ../src/Widgets/ReleaseRow.vala:67
 msgid "<b>%s</b> – %s"
