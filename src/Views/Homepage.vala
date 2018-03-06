@@ -68,7 +68,7 @@ namespace AppCenter {
 
             pop_banner = new Gtk.Grid ();
             pop_banner.height_request = 300;
-            pop_banner.vexpand = true;
+            pop_banner.hexpand = true;
             pop_banner.get_style_context ().add_class ("pop-banner");
 
             var recently_updated_label = new Gtk.Label (_("Recently Updated"));
