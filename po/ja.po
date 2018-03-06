@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-17 14:11+0000\n"
-"PO-Revision-Date: 2018-02-20 00:09+0000\n"
+"PO-Revision-Date: 2018-03-06 19:48+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/ja/>\n"
@@ -175,7 +175,7 @@ msgstr "パッケージリストを生成しています"
 
 #: ../src/Core/ChangeInformation.vala:112
 msgid "Waiting for package manager lock"
-msgstr "パッケージマネージャのロックで待機しています"
+msgstr "パッケージマネージャーのロックで待機しています"
 
 #: ../src/Core/ChangeInformation.vala:114
 msgid "Waiting for authentication"
