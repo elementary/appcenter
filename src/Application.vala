@@ -78,6 +78,7 @@ public class AppCenter.App : Granite.Application {
         var client = AppCenterCore.Client.get_default ();
         client.operation_finished.connect (on_operation_finished);
         client.cache_update_failed.connect (on_cache_update_failed);
+        client.updates_available.connect (on_updates_available);
 
         if (AppInfo.get_default_for_uri_scheme ("appstream") == null) {
             var appinfo = new DesktopAppInfo (app_launcher);
@@ -265,7 +266,12 @@ public class AppCenter.App : Granite.Application {
                 break;
         }
     }
-    
+
+    public void on_updates_available () {
+        var client = AppCenterCore.Client.get_default ();
+        main_window.show_update_badge (client.updates_number);
+    }
+
     private void on_cache_update_failed (Error error) {
         if (main_window == null) {
             return;
