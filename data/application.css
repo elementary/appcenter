@@ -15,9 +15,15 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
- .pop-banner {
-    background-image: -gtk-scaled(url("resource:///io/elementary/appcenter/Pop_shop_banner.jpg"));
- }
+.pop-banner{
+	background-size: auto 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-image:
+		-gtk-scaled(url("resource:///io/elementary/appcenter/Pop_shop_banner.jpg")),
+		linear-gradient(#003e6c 6%, #f4d3d6 52%, #abdcdc);
+	border-radius: 4px;
+}
 
 .banner {
     background-color: @banner_bg_color;
