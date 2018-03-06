@@ -15,6 +15,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+ .pop-banner {
+    background-image: -gtk-scaled(url("resource:///io/elementary/appcenter/Pop_shop_banner.jpg"));
+ }
+
 .banner {
     background-color: @banner_bg_color;
     background-image: linear-gradient(@banner_bg_color, @banner_bg_color);
