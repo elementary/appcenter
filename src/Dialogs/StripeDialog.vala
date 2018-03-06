@@ -47,7 +47,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
     private Gtk.Stack layouts;
 
     private Gtk.Entry email_entry;
-    private Gtk.Entry card_number_entry;
+    private AppCenter.Widgets.CardNumberEntry card_number_entry;
     private Gtk.Entry card_expiration_entry;
     private Gtk.Entry card_cvc_entry;
     private Gtk.Button pay_button;
@@ -97,16 +97,10 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
            validate (0, email_entry.text);
         });
 
-        card_number_entry = new Gtk.Entry ();
+        card_number_entry = new AppCenter.Widgets.CardNumberEntry ();
         card_number_entry.hexpand = true;
-        card_number_entry.input_purpose = Gtk.InputPurpose.DIGITS;
-        card_number_entry.max_length = 20;
-        card_number_entry.placeholder_text = _("Card Number");
-        card_number_entry.primary_icon_name = "credit-card-symbolic";
-
         card_number_entry.changed.connect (() => {
-            card_number_entry.text = card_number_entry.text.replace (" ", "");
-            validate (1, card_number_entry.text);
+            validate (1, card_number_entry.card_number);
         });
 
         card_number_entry.bind_property ("has-focus", card_number_entry, "visibility");
@@ -172,9 +166,12 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         layouts.add_named (card_layout, "card");
         layouts.set_visible_child_name ("card");
 
-        get_content_area ().add (layouts);
+        var content_area = get_content_area ();
+        content_area.add (layouts);
+        content_area.show_all ();
 
         var privacy_policy_link = new Gtk.LinkButton.with_label ("https://stripe.com/privacy", _("Privacy Policy"));
+        privacy_policy_link.show ();
 
         var action_area = (Gtk.ButtonBox) get_action_area ();
         action_area.margin = 5;
@@ -188,8 +185,6 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         pay_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
         pay_button.has_default = true;
         pay_button.sensitive = false;
-
-        show_all ();
 
         response.connect (on_response);
 
