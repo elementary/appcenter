@@ -36,6 +36,9 @@ namespace AppCenter {
         public MainWindow main_window { get; construct; }
         public Widgets.Banner newest_banner;
         public Gtk.Revealer switcher_revealer;
+        public Gtk.Image banner_image;
+        public Gdk.Pixbuf banner_pixbuf;
+        public Gtk.Grid banner_box;
 
         public Homepage (MainWindow main_window) {
             Object (main_window: main_window);
@@ -52,6 +55,7 @@ namespace AppCenter {
             switcher_revealer.set_transition_duration (Widgets.Banner.TRANSITION_DURATION_MILLISECONDS);
             switcher_revealer.add (switcher);
 
+            /*
             newest_banner = new Widgets.Banner (switcher);
             newest_banner.get_style_context ().add_class ("home");
             newest_banner.margin = 12;
@@ -61,6 +65,12 @@ namespace AppCenter {
                     show_package (package);
                 }
             });
+            */
+
+            banner_pixbuf = new Gdk.Pixbuf.from_resource ("/io/elementary/appcenter/Pop_shop_banner.jpg");
+
+            banner_image = new Gtk.Image.from_pixbuf (banner_pixbuf.scale_simple(882, 300, Gdk.InterpType.BILINEAR));
+            banner_image.height_request = 300;
 
             var recently_updated_label = new Gtk.Label (_("Recently Updated"));
             recently_updated_label.get_style_context ().add_class ("h4");
@@ -105,6 +115,7 @@ namespace AppCenter {
 
             var grid = new Gtk.Grid ();
             grid.margin = 12;
+            grid.attach (banner_image, 0, 0, 1, 1);
             /*
             grid.attach (newest_banner, 0, 0, 1, 1);
             grid.attach (switcher_revealer, 0, 1, 1, 1);
@@ -112,7 +123,7 @@ namespace AppCenter {
             grid.attach (recently_updated_revealer, 0, 3, 1, 1);
             grid.attach (categories_label, 0, 4, 1, 1);
             */
-            grid.attach (category_flow, 0, 0, 1, 1);
+            grid.attach (category_flow, 0, 1, 1, 1);
 
             category_scrolled = new Gtk.ScrolledWindow (null, null);
             category_scrolled.add (grid);
