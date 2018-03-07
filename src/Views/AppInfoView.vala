@@ -424,7 +424,7 @@ namespace AppCenter.Views {
                 size += pk_package.size;
             }
 
-            app_download_size_label.label = _("Download size: %s").printf (format_size (size));
+            app_download_size_label.label = GLib.format_size (size);
             app_download_size_label.visible = true;
         }
 
