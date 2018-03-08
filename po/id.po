@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-17 14:11+0000\n"
 "PO-Revision-Date: 2018-03-08 01:47+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"Last-Translator: Gregi Maulana Mahes <gregim426naxaredix@gmail.com>\n"
 "Language-Team: Indonesian "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/id/>\n"
 "Language: id\n"
@@ -232,10 +232,9 @@ msgstr "Versi: %s"
 
 #: ../src/Core/Client.vala:489
 msgid "No components with updates"
-msgstr ""
+msgstr "Tidak ada komponen yang perlu diperbarui"
 
 #: ../src/Core/Client.vala:493
-#, fuzzy
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "%u komponen perlu diperbarui"
