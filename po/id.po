@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-17 14:11+0000\n"
-"PO-Revision-Date: 2018-03-08 01:46+0000\n"
-"Last-Translator: Gregi Maulana Mahes <gregim426naxaredix@gmail.com>\n"
+"PO-Revision-Date: 2018-03-08 01:47+0000\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Indonesian "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/id/>\n"
 "Language: id\n"
@@ -227,7 +227,6 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "%u pembaruan tersedia untuk sistem Anda"
 
 #: ../src/Core/Client.vala:480
-#, fuzzy
 msgid "Version: %s"
 msgstr "Versi: %s"
 
