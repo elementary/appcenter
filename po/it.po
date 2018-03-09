@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-17 14:11+0000\n"
 "PO-Revision-Date: 2018-03-09 09:26+0000\n"
-"Last-Translator: Lorenzo Serra <mbare.serra@gmail.com>\n"
+"Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/it/>\n"
 "Language: it\n"
@@ -427,7 +427,7 @@ msgstr "L'importo è incorretto. Riprova utilizzando un importo valdo."
 
 #: ../src/Dialogs/StripeDialog.vala:566
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr "Il codice PIN è incorretto. Riprova utilizzando un PIN corretto."
+msgstr "Il codice PIN non è corretto. Riprova utilizzando il PIN corretto."
 
 #: ../src/Dialogs/StripeDialog.vala:568
 #, fuzzy
