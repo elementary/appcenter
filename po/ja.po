@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-17 14:11+0000\n"
 "PO-Revision-Date: 2018-03-09 13:11+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/ja/>\n"
 "Language: ja\n"
@@ -506,7 +506,7 @@ msgstr "リンクをクリップボードにコピーしました"
 
 #: ../src/Views/AppInfoView.vala:311
 msgid "Check out %s on AppCenter:"
-msgstr "アプリセンター(AppCenter)で%sをチェックしてください"
+msgstr "AppCenter で %s を確認する:"
 
 #: ../src/Views/AppInfoView.vala:318
 msgid "Share"
