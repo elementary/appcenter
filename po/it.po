@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-17 14:11+0000\n"
-"PO-Revision-Date: 2018-03-09 09:27+0000\n"
-"Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
+"PO-Revision-Date: 2018-03-09 09:28+0000\n"
+"Last-Translator: zhyuli <benjaminmascolo1993@gmail.com>\n"
 "Language-Team: Italian "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/it/>\n"
 "Language: it\n"
@@ -504,7 +504,7 @@ msgstr "Aiuto"
 
 #: ../src/Views/AppInfoView.vala:168
 msgid "What's New:"
-msgstr ""
+msgstr "Cosa c'è di nuovo:"
 
 #: ../src/Views/AppInfoView.vala:187
 msgid "Extensions:"
@@ -512,7 +512,7 @@ msgstr "Estensioni:"
 
 #: ../src/Views/AppInfoView.vala:266
 msgid "Other Apps by %s"
-msgstr ""
+msgstr "Altre app di %s"
 
 #: ../src/Views/AppInfoView.vala:300
 msgid "Link copied to clipboard"
