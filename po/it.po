@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-17 14:11+0000\n"
 "PO-Revision-Date: 2018-03-09 09:24+0000\n"
-"Last-Translator: Lorenzo Serra <mbare.serra@gmail.com>\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Italian "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/it/>\n"
 "Language: it\n"
@@ -292,7 +292,7 @@ msgstr "Controlla le tue informazioni di pagamento e riprova."
 
 #: ../src/Dialogs/StripeDialog.vala:78
 msgid "Pay $%d for %s"
-msgstr ""
+msgstr "Paga $%d per %s"
 
 #: ../src/Dialogs/StripeDialog.vala:82
 msgid ""
