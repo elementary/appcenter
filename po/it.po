@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-17 14:11+0000\n"
 "PO-Revision-Date: 2018-03-09 09:31+0000\n"
-"Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
+"Last-Translator: Roby Revelli <roby@robyrevelli.com>\n"
 "Language-Team: Italian "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/it/>\n"
 "Language: it\n"
@@ -670,9 +670,8 @@ msgid "<b>%s</b>"
 msgstr "<b>%s</b>"
 
 #: ../src/Widgets/ReleaseRow.vala:74
-#, fuzzy
 msgid "Unknown version"
-msgstr "Stato sconosciuto"
+msgstr "Versione sconosciuta"
 
 #: ../src/Widgets/ReleaseRow.vala:90 ../src/Widgets/ReleaseRow.vala:93
 msgid "No description available"
