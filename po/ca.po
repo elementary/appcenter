@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-17 14:11+0000\n"
-"PO-Revision-Date: 2018-02-19 17:53+0000\n"
+"PO-Revision-Date: 2018-03-09 00:04+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/ca/>\n"
@@ -21,7 +21,8 @@ msgstr "Centre d'aplicacions"
 
 #: ../src/Application.vala:118
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr "No s'ha pogut especificar l'enllaç \"%s\"; a canvi, se cerca"
+msgstr ""
+"No s'ha pogut trobar l'enllaç especificat \"%s\". En lloc d'això, se cerca"
 
 #: ../src/Application.vala:240
 msgid "Application installed"
@@ -33,7 +34,7 @@ msgstr "%s s'ha instal·lat correctament"
 
 #: ../src/Application.vala:253
 msgid "There Was An Error Installing %s."
-msgstr "Hi ha hagut un error instal·lant %s."
+msgstr "Hi ha hagut un error a l'hora d'instal·lar %s."
 
 #: ../src/Application.vala:286
 msgid "Details"
@@ -255,7 +256,7 @@ msgstr "Cal reiniciar"
 
 #: ../src/Core/UpdateManager.vala:82
 msgid "Please restart your system to finalize updates"
-msgstr "Si us plau, reinicieu el sistema per acabar les actualizacions"
+msgstr "Si us plau, reinicieu el sistema per acabar les actualitzacions."
 
 #: ../src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
