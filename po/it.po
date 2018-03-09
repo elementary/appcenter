@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-17 14:11+0000\n"
 "PO-Revision-Date: 2018-03-09 09:31+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/it/>\n"
 "Language: it\n"
@@ -660,12 +660,14 @@ msgid "$%d"
 msgstr "$%d USD"
 
 #: ../src/Widgets/ReleaseRow.vala:67
+#, fuzzy
 msgid "<b>%s</b> – %s"
-msgstr ""
+msgstr "<b>%s</b> – %s"
 
 #: ../src/Widgets/ReleaseRow.vala:72
+#, fuzzy
 msgid "<b>%s</b>"
-msgstr ""
+msgstr "<b>%s</b>"
 
 #: ../src/Widgets/ReleaseRow.vala:74
 #, fuzzy
