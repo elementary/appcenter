@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-09 18:51+0100\n"
+"POT-Creation-Date: 2018-02-17 14:11+0000\n"
 "PO-Revision-Date: 2017-08-31 22:53+0000\n"
 "Last-Translator: Grammatopoulos Athanasios-Vasi <darkthanos.gr@gmail.com>\n"
 "Language-Team: Greek <https://weblate.elementary.io/projects/appcenter/"
@@ -31,11 +31,7 @@ msgstr "Η εφαρμογή εγκαταστάθηκε"
 msgid "%s has been successfully installed"
 msgstr "%s έχει εγκατασταθεί επιτυχώς"
 
-#: ../src/Application.vala:254
-msgid "Close"
-msgstr "Κλείσιμο"
-
-#: ../src/Application.vala:256
+#: ../src/Application.vala:253
 #, fuzzy
 msgid "There Was An Error Installing %s."
 msgstr "Παρουσιάστηκε ένα σφάλμα κατά την εγκατάσταση του '%s'"
@@ -54,11 +50,11 @@ msgid ""
 "or a corrupted sources file."
 msgstr ""
 
-#: ../src/Application.vala:297
+#: ../src/Application.vala:298
 msgid "Ignore"
 msgstr ""
 
-#: ../src/Application.vala:298
+#: ../src/Application.vala:299
 msgid "Try Again"
 msgstr ""
 
@@ -206,31 +202,49 @@ msgstr "Πραγματοποείται αντιγραφή αρχείων"
 msgid "Unknown state"
 msgstr "Άγνωστη κατάσταση"
 
-#: ../src/Core/Client.vala:107
+#: ../src/Core/Client.vala:105
 msgid "Operating System Updates"
 msgstr "Ενημερώσεις λειτουργικού συστήματος"
 
-#: ../src/Core/Client.vala:108
+#: ../src/Core/Client.vala:106
 msgid "Updates to system components"
 msgstr "Ενημερώσεις σε μέρη του συστήματος"
 
-#: ../src/Core/Client.vala:143
+#: ../src/Core/Client.vala:141
 msgid "%s (local)"
 msgstr ""
 
-#: ../src/Core/Client.vala:452
+#: ../src/Core/Client.vala:450
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Διαθέσιμη ενημέρωση"
 msgstr[1] "Διαθέσιμες ενημερώσεις"
 
-#: ../src/Core/Client.vala:453
+#: ../src/Core/Client.vala:451
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "%u ενημέρωση είναι διαθέσιμη για το σύστημα σας"
 msgstr[1] "%u ενημερώσεις είναι διαθέσιμες για το σύστημα σας"
 
-#: ../src/Core/Package.vala:163
+#: ../src/Core/Client.vala:480
+msgid "Version: %s"
+msgstr ""
+
+#: ../src/Core/Client.vala:489
+msgid "No components with updates"
+msgstr ""
+
+#: ../src/Core/Client.vala:493
+msgid "%u component with updates"
+msgid_plural "%u components with updates"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/Core/Client.vala:495
+msgid "%s:"
+msgstr ""
+
+#: ../src/Core/Package.vala:186
 msgid "The %s Developers"
 msgstr "Οι προγραμματιστές του %s"
 
@@ -258,9 +272,9 @@ msgstr ""
 msgid "Restart"
 msgstr "Επανεκκίνηση"
 
-#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:182
-#: ../src/Dialogs/StripeDialog.vala:301
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:146
+#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:181
+#: ../src/Dialogs/StripeDialog.vala:300
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:144
 msgid "Cancel"
 msgstr "Ακύρωση"
 
@@ -316,34 +330,34 @@ msgstr "Kωδικός επαλήθευσης CVC"
 msgid "Privacy Policy"
 msgstr "Πολιτική Απορρήτου"
 
-#: ../src/Dialogs/StripeDialog.vala:184 ../src/Dialogs/StripeDialog.vala:300
+#: ../src/Dialogs/StripeDialog.vala:183 ../src/Dialogs/StripeDialog.vala:299
 msgid "Pay $%d.00"
 msgstr "Πληρωμή $%d,00"
 
-#: ../src/Dialogs/StripeDialog.vala:229
+#: ../src/Dialogs/StripeDialog.vala:228
 msgid "Processing"
 msgstr "Σε επεξεργασία"
 
-#: ../src/Dialogs/StripeDialog.vala:254
+#: ../src/Dialogs/StripeDialog.vala:253
 msgid "There Was a Problem Processing Your Payment"
 msgstr "Παρουσιάστηκε ένα πρόβλημα κατα την επεξεργασία της πληρωμής σας"
 
-#: ../src/Dialogs/StripeDialog.vala:292
+#: ../src/Dialogs/StripeDialog.vala:291
 msgid "Pay Later"
 msgstr "Πληρωμή αργότερα"
 
-#: ../src/Dialogs/StripeDialog.vala:293
+#: ../src/Dialogs/StripeDialog.vala:292
 msgid "Retry"
 msgstr "Προσπάθησε ξανά"
 
-#: ../src/Dialogs/StripeDialog.vala:489 ../src/Dialogs/StripeDialog.vala:554
+#: ../src/Dialogs/StripeDialog.vala:498 ../src/Dialogs/StripeDialog.vala:563
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr ""
 "Ο αριθμός κάρτας είναι λάνθασμένος. Δοκιμάστε ξανά χρησιμοποιώντας τον σωστό "
 "αριθμό κάρτας."
 
-#: ../src/Dialogs/StripeDialog.vala:491
+#: ../src/Dialogs/StripeDialog.vala:500
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
@@ -351,7 +365,7 @@ msgstr ""
 "Ο μήνας λήξης δεν είναι έγκυρος. Δοκιμάστε ξανά χρησιμοποιώντας τη σωστή "
 "ημερομηνία λήξης."
 
-#: ../src/Dialogs/StripeDialog.vala:493 ../src/Dialogs/StripeDialog.vala:551
+#: ../src/Dialogs/StripeDialog.vala:502 ../src/Dialogs/StripeDialog.vala:560
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
@@ -359,23 +373,23 @@ msgstr ""
 "Το έτος λήξης δεν είναι έγκυρο. Δοκιμάστε ξανά χρησιμοποιώντας τη σωστή "
 "ημερομηνία λήξης."
 
-#: ../src/Dialogs/StripeDialog.vala:496 ../src/Dialogs/StripeDialog.vala:549
+#: ../src/Dialogs/StripeDialog.vala:505 ../src/Dialogs/StripeDialog.vala:558
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr ""
 "Ο κωδικός επαλήθευσης CVC δεν είναι έγκυρος. Δοκιμάστε ξανά χρησιμοποιώντας "
 "το σωστό κωδικό επαλήθευσης CVC."
 
-#: ../src/Dialogs/StripeDialog.vala:498 ../src/Dialogs/StripeDialog.vala:540
+#: ../src/Dialogs/StripeDialog.vala:507 ../src/Dialogs/StripeDialog.vala:549
 msgid "The card has expired. Please try again with a different card."
 msgstr "Η κάρτα έχει λήξει. Δοκιμάστε ξανά με διαφορετική κάρτα."
 
-#: ../src/Dialogs/StripeDialog.vala:518
+#: ../src/Dialogs/StripeDialog.vala:527
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr ""
 "Υπάρχουν υπερβολικά πολλά αιτήματα πληρωμής αυτή την στιγμή, παρακαλούμε "
 "προσπαθήστε ξανά αργότερα."
 
-#: ../src/Dialogs/StripeDialog.vala:534
+#: ../src/Dialogs/StripeDialog.vala:543
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
@@ -383,7 +397,7 @@ msgstr ""
 "Αυτή η κάρτα δεν υποστηρίζει αυτό το είδος συναλλαγής. Δοκιμάστε ξανά με "
 "διαφορετική κάρτα."
 
-#: ../src/Dialogs/StripeDialog.vala:536
+#: ../src/Dialogs/StripeDialog.vala:545
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
@@ -391,11 +405,11 @@ msgstr ""
 "Το νόμισμα δεν υποστηρίζεται από αυτήν την κάρτα. Δοκιμάστε ξανά με "
 "διαφορετική κάρτα."
 
-#: ../src/Dialogs/StripeDialog.vala:538
+#: ../src/Dialogs/StripeDialog.vala:547
 msgid "The transaction has already been processed."
 msgstr "Η συναλλαγή έχει ήδη υποβληθεί σε επεξεργασία."
 
-#: ../src/Dialogs/StripeDialog.vala:542
+#: ../src/Dialogs/StripeDialog.vala:551
 #, fuzzy
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
@@ -404,24 +418,24 @@ msgstr ""
 "Ο ταχυδρομικός κώδικας είναι λάνθασμένος. Δοκιμάστε ξανά χρησιμοποιώντας τον "
 "σωστό ταχυδρομικό κώδικα."
 
-#: ../src/Dialogs/StripeDialog.vala:544
+#: ../src/Dialogs/StripeDialog.vala:553
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr ""
 "Δεν έχετε αρκετά χρήματα. Παρακαλώ χρησιμοποιήστε έναν άλλο τρόπο πληρωμής."
 
-#: ../src/Dialogs/StripeDialog.vala:546
+#: ../src/Dialogs/StripeDialog.vala:555
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr ""
 "Το ποσό είναι λανθασμένο. Δοκιμάστε ξανά χρησιμοποιώντας ένα έγκυρο ποσό."
 
-#: ../src/Dialogs/StripeDialog.vala:557
+#: ../src/Dialogs/StripeDialog.vala:566
 #, fuzzy
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr ""
 "Ο κωδικός επαλήθευσης CVC δεν είναι έγκυρος. Δοκιμάστε ξανά χρησιμοποιώντας "
 "το σωστό κωδικό επαλήθευσης CVC."
 
-#: ../src/Dialogs/StripeDialog.vala:559
+#: ../src/Dialogs/StripeDialog.vala:568
 #, fuzzy
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
@@ -429,7 +443,7 @@ msgstr ""
 "Υπήρξαν πάρα πολλές απόπειρες αριθμού PIN. Δοκιμάστε ξανά με διαφορετική "
 "κάρτα."
 
-#: ../src/Dialogs/StripeDialog.vala:579
+#: ../src/Dialogs/StripeDialog.vala:588
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
@@ -437,11 +451,11 @@ msgstr ""
 "Δεν είναι δυνατή η ολοκλήρωση της συναλλαγής. Παρακαλώ επικοινωνήστε με την "
 "τράπεζά σας για περισσότερες πληροφορίες."
 
-#: ../src/Dialogs/StripeDialog.vala:582
+#: ../src/Dialogs/StripeDialog.vala:591
 msgid "The balance or credit limit on the card has been reached."
 msgstr ""
 
-#: ../src/Dialogs/StripeDialog.vala:585
+#: ../src/Dialogs/StripeDialog.vala:594
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
 
@@ -529,7 +543,7 @@ msgstr ""
 msgid "Restart Now"
 msgstr "Επανεκκίνηση τώρα"
 
-#: ../src/Views/AppListUpdateView.vala:157
+#: ../src/Views/AppListUpdateView.vala:162
 msgid "Update All"
 msgstr "Ενημέρωση όλων"
 
@@ -567,20 +581,20 @@ msgstr "Δεν υπάρχουν αποτελέσματα"
 msgid "No apps could be found. Try changing search terms."
 msgstr "Δε βρέθηκαν εφαρμογές. Δοκιμάστε διαφορετικούς όρους αναζήτησης."
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:125
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:123
 msgid "Uninstall"
 msgstr "Απεγκατάσταση"
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:128
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:126
 msgid "Open"
 msgstr "Άνοιγμα"
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:209
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:207
 #: ../src/Widgets/HumbleButton.vala:82
 msgid "Free"
 msgstr "Δωρεάν"
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:229
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:231
 msgid "Update"
 msgstr "Ενημέρωση"
 
@@ -717,6 +731,9 @@ msgstr "Ενημερωμένες"
 #: ../src/Widgets/UpdateHeaderRow.vala:120
 msgid "Drivers"
 msgstr ""
+
+#~ msgid "Close"
+#~ msgstr "Κλείσιμο"
 
 #~ msgid "App Center"
 #~ msgstr "Κέντρο εφαρμογών"

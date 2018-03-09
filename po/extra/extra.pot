@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-09 18:51+0100\n"
+"POT-Creation-Date: 2018-02-17 14:11+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,6 +36,12 @@ msgid ""
 msgstr ""
 
 msgid "Bug fixes and improve perfomance."
+msgstr ""
+
+msgid "Give details for Operating System Updates"
+msgstr ""
+
+msgid "Support mouse button navigation"
 msgstr ""
 
 msgid "Various bug fixes and performance improvements"

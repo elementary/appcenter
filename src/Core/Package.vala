@@ -81,6 +81,29 @@ public class AppCenterCore.Package : Object {
         }
     }
 
+    public bool should_nag_update {
+        get {
+            if (!update_available || !is_native || is_os_updates) {
+                return false;
+            }
+
+            if (get_payments_key () == null || get_suggested_amount () == "0") {
+                return false;
+            }
+
+            if (component.get_id () in AppCenter.Settings.get_default ().paid_apps) {
+                return false;
+            }
+
+            var newest_release = get_newest_release ();
+            if (newest_release != null && newest_release.get_urgency () == AppStream.UrgencyKind.CRITICAL) {
+                return false;
+            }
+
+            return true;
+        }
+    }
+
     public bool is_updating {
         get {
             return state == State.UPDATING;
@@ -466,6 +489,10 @@ public class AppCenterCore.Package : Object {
     }
 
     private string convert_version (string version) {
+        if (is_os_updates) {
+            return version;
+        }
+
         string returned = version;
         returned = returned.split ("+", 2)[0];
         returned = returned.split ("-", 2)[0];

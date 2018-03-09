@@ -142,9 +142,14 @@ namespace AppCenter.Views {
                 var header = new Widgets.UpdatesGrid ();
 
                 uint update_numbers = 0U;
+                uint nag_numbers = 0U;
                 uint64 update_real_size = 0ULL;
                 foreach (var package in get_packages ()) {
                     if (package.update_available || package.is_updating) {
+                        if (package.should_nag_update) {
+                            nag_numbers++;
+                        }
+
                         update_numbers++;
                         update_real_size += package.change_information.get_size ();
                     }
@@ -155,6 +160,10 @@ namespace AppCenter.Views {
                 // Unfortunately the update all button needs to be recreated everytime the header needs to be updated
                 if (!updating_cache && update_numbers > 0) {
                     update_all_button = new Gtk.Button.with_label (_("Update All"));
+                    if (update_numbers == nag_numbers) {
+                        update_all_button.sensitive = false;
+                    }
+
                     update_all_button.valign = Gtk.Align.CENTER;
                     update_all_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
                     update_all_button.clicked.connect (on_update_all);
@@ -203,7 +212,7 @@ namespace AppCenter.Views {
             apps_to_update.clear ();
             // Collect all ready to update apps
             foreach (var package in get_packages ()) {
-                if (package.update_available) {
+                if (package.update_available && !package.should_nag_update) {
                     apps_to_update.add (package);
                 }
             }
