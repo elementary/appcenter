@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-17 14:11+0000\n"
 "PO-Revision-Date: 2018-03-09 09:18+0000\n"
-"Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Italian "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/it/>\n"
 "Language: it\n"
@@ -38,7 +38,7 @@ msgstr "Si è verificato un errore durante l'installazione di %s."
 
 #: ../src/Application.vala:286
 msgid "Details"
-msgstr ""
+msgstr "Dettagli"
 
 #: ../src/Application.vala:290
 msgid "Failed to Fetch Updates"
