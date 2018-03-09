@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-17 14:11+0000\n"
 "PO-Revision-Date: 2018-03-09 09:21+0000\n"
-"Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Italian "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/it/>\n"
 "Language: it\n"
@@ -54,11 +54,11 @@ msgstr ""
 
 #: ../src/Application.vala:298
 msgid "Ignore"
-msgstr ""
+msgstr "Ignora"
 
 #: ../src/Application.vala:299
 msgid "Try Again"
-msgstr ""
+msgstr "Riprova"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -214,7 +214,7 @@ msgstr "Aggiornamenti ai componenti del sistema"
 
 #: ../src/Core/Client.vala:141
 msgid "%s (local)"
-msgstr ""
+msgstr "%s (locale)"
 
 #: ../src/Core/Client.vala:450
 msgid "Update Available"
