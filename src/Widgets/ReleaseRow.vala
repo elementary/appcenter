@@ -69,7 +69,7 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.ListBoxRow {
                 label = date;
             }
         } else if (version != null) {
-            label = _("<b>%s</b>").printf (version);
+            label = "<b>%s</b>".printf (version);
         } else {
             label = _("Unknown version");
         }
