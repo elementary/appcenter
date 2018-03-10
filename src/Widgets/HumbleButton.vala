@@ -57,6 +57,19 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
         }
     }
 
+    public bool _allow_free = true;
+    public bool allow_free {
+        get {
+            return _allow_free;
+        }
+        set {
+            if (value != _allow_free) {
+                _allow_free = value;
+                custom_amount.set_range (_allow_free ? 0 : 1, 100);
+            }
+        }
+    }
+
     public bool can_purchase {
         set {
             if (!value) {
@@ -168,7 +181,7 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
 
             selection.closed.connect (() => {
                 arrow_button.active = false;
-            });            
+            });
         }
 
         selection.show_all ();
