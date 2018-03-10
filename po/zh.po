@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-17 14:11+0000\n"
-"PO-Revision-Date: 2018-03-10 09:51+0000\n"
+"PO-Revision-Date: 2018-03-10 10:07+0000\n"
 "Last-Translator: 二重天 <ybasefinal@163.com>\n"
 "Language-Team: Chinese "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/zh/>\n"
@@ -657,7 +657,7 @@ msgstr "Tumblr"
 
 #: ../src/Widgets/SharePopover.vala:59
 msgid "Telegram"
-msgstr "Tumblr"
+msgstr "Telegram"
 
 #: ../src/Widgets/SharePopover.vala:63
 msgid "Copy link"
