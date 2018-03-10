@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2018-03-10 09:52+0000\n"
+"PO-Revision-Date: 2018-03-10 10:07+0000\n"
 "Last-Translator: 二重天 <ybasefinal@163.com>\n"
 "Language-Team: Chinese "
 "<https://weblate.elementary.io/projects/appcenter/extra/zh/>\n"
@@ -17,48 +17,48 @@ msgid "AppCenter"
 msgstr "应用中心"
 
 msgid "Browse and manage apps"
-msgstr ""
+msgstr "浏览和管理应用"
 
 msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
-msgstr ""
+msgstr "安装;卸载;移除;目录;商店;应用;更新;软件;"
 
 msgid "About AppCenter"
-msgstr ""
+msgstr "关于应用中心"
 
 msgid ""
 "An app store for indie and open source developers. Browse by categories or "
 "search and discover new apps. AppCenter is also used for updating your "
 "system to the latest and greatest version for new features and fixes."
-msgstr ""
+msgstr "一个为独立和开源开发者服务的应用商店。按类别浏览或搜索和发现新应用程序。 应用中心还可用于将您的系统更新为最新最强大的新功能和修复版本。"
 
 msgid "Bug fixes and improve perfomance."
-msgstr ""
+msgstr "错误修复和性能提升。"
 
 msgid "Various bug fixes and performance improvements"
-msgstr ""
+msgstr "各种错误修复和性能提升"
 
 msgid "New translations"
-msgstr ""
+msgstr "新翻译"
 
 msgid "Fix crash caused by entries with missing packages"
-msgstr ""
+msgstr "修复由缺少软件包的条目导致的崩溃"
 
 msgid "Add capability to search by category and apply minor bug fixes."
-msgstr ""
+msgstr "按类别为搜索添加功能并应用一些小错误修复。"
 
 msgid "It is now possible to search apps inside a category"
-msgstr ""
+msgstr "现在可以在类别内搜索应用程序"
 
 msgid "Prevent multiple authentication dialogs when resuming from suspend"
-msgstr ""
+msgstr "从挂起恢复时防止多个身份验证对话框弹出"
 
 msgid ""
 "Search perfomance has beeen improved, the category name is now shown on the "
 "headbar and minor bugs have been fixed."
-msgstr ""
+msgstr "搜索性能得到了改善，类别名称现在显示在了顶栏上，一些小错误也已被修复。"
 
 msgid "Fix Steam installation"
-msgstr ""
+msgstr "修复Steam安装"
 
 msgid "Make search asynchronous"
-msgstr ""
+msgstr "使用异步搜索"
