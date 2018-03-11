@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-09 18:51+0100\n"
-"PO-Revision-Date: 2018-02-28 11:02+0000\n"
-"Last-Translator: Luís Lima <geral@liqensoft.com>\n"
+"PO-Revision-Date: 2018-03-12 00:09+0000\n"
+"Last-Translator: Nuno Tomás <nvctsyler@gmail.com>\n"
 "Language-Team: Portuguese "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/pt/>\n"
 "Language: pt\n"
@@ -30,7 +30,7 @@ msgstr "Aplicação instalada"
 
 #: ../src/Application.vala:241
 msgid "%s has been successfully installed"
-msgstr "%s foi instalada com sucesso"
+msgstr "%s foi instalado com sucesso"
 
 #: ../src/Application.vala:253
 msgid "There Was An Error Installing %s."
