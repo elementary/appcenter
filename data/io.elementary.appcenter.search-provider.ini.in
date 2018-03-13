@@ -1,5 +1,5 @@
 [Shell Search Provider]
-DesktopId=@EXEC_NAME@.desktop
+DesktopId=@DESKTOP_FILE@
 BusName=@EXEC_NAME@
 ObjectPath=/io/elementary/appcenter/SearchProvider
 Version=2
