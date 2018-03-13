@@ -42,6 +42,7 @@ vala_precompile(VALA_C ${EXEC_NAME}
     Widgets/CardNumberEntry.vala
     Services/DBusInterfaces.vala
     Services/DBusServer.vala
+    Services/SearchProvider.vala
     ${CMAKE_CURRENT_BINARY_DIR}/config.vala
 PACKAGES
     appstream
