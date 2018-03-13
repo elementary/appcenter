@@ -11,7 +11,6 @@ vala_precompile(VALA_C ${EXEC_NAME}
     MainWindow.vala
     Settings.vala
     SuspendControl.vala
-    Dialogs/MessageDialog.vala
     Dialogs/RestartDialog.vala
     Dialogs/StripeDialog.vala
     Views/AppInfoView.vala
@@ -40,14 +39,16 @@ vala_precompile(VALA_C ${EXEC_NAME}
     Widgets/Switcher.vala
     Widgets/ReleaseListBox.vala
     Widgets/ReleaseRow.vala
+    Widgets/CardNumberEntry.vala
     Services/DBusInterfaces.vala
     Services/DBusServer.vala
+    Services/SearchProvider.vala
     ${CMAKE_CURRENT_BINARY_DIR}/config.vala
 PACKAGES
     appstream
     gtk+-3.0>=3.12
     gee-0.8
-    granite
+    granite>=0.5
     packagekit-glib2
     libsoup-2.4
     json-glib-1.0

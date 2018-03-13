@@ -40,6 +40,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     private Gee.LinkedList<string> return_button_history;
     private Granite.Widgets.AlertView network_alert_view;
     private Gtk.Grid network_view;
+    private Gtk.Label updates_badge;
 
     private int homepage_view_id;
     private int installed_view_id;
@@ -133,18 +134,30 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         return_button = new Gtk.Button ();
         return_button.no_show_all = true;
+        return_button.valign = Gtk.Align.CENTER;
         return_button.get_style_context ().add_class ("back-button");
         return_button_history = new Gee.LinkedList<string> ();
 
         view_mode = new Granite.Widgets.ModeButton ();
-        view_mode.margin = 1;
+        view_mode.margin_end = view_mode.margin_start = 12;
+        view_mode.margin_bottom = view_mode.margin_top = 7;
         homepage_view_id = view_mode.append_text (_("Home"));
-        installed_view_id = view_mode.append_text (C_("view", "Updates"));
+        installed_view_id = view_mode.append_text (C_("view", "Installed"));
+
+        updates_badge = new Gtk.Label ("!");
+        updates_badge.halign = Gtk.Align.END;
+        updates_badge.valign = Gtk.Align.START;
+        updates_badge.get_style_context ().add_class ("badge");
+        set_widget_visibility (updates_badge, false);
+
+        var view_mode_overlay = new Gtk.Overlay ();
+        view_mode_overlay.add (view_mode);
+        view_mode_overlay.add_overlay (updates_badge);
 
         view_mode_revealer = new Gtk.Revealer ();
         view_mode_revealer.reveal_child = true;
         view_mode_revealer.transition_type = Gtk.RevealerTransitionType.CROSSFADE;
-        view_mode_revealer.add (view_mode);
+        view_mode_revealer.add (view_mode_overlay);
 
         homepage_header = new Gtk.Label (null);
         homepage_header.get_style_context ().add_class (Gtk.STYLE_CLASS_TITLE);
@@ -155,6 +168,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         custom_title_stack.set_visible_child (view_mode_revealer);
 
         search_entry = new Gtk.SearchEntry ();
+        search_entry.valign = Gtk.Align.CENTER;
         search_entry.placeholder_text = _("Search Apps");
 
         spinner = new Gtk.Spinner ();
@@ -224,6 +238,15 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         }
 
         return false;
+    }
+
+    public void show_update_badge (uint updates_number) {
+        if (updates_number == 0U) {
+            set_widget_visibility (updates_badge, false);
+        } else {
+            updates_badge.label = updates_number.to_string ();
+            set_widget_visibility (updates_badge, true);
+        }
     }
 
     public void show_package (AppCenterCore.Package package) {

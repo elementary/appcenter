@@ -44,6 +44,9 @@ public class AppCenter.App : Granite.Application {
 
     private uint registration_id = 0;
 
+    private SearchProvider search_provider;
+    private uint search_provider_id = 0;
+
     construct {
         application_id = Build.PROJECT_NAME;
         flags |= ApplicationFlags.HANDLES_OPEN;
@@ -78,6 +81,7 @@ public class AppCenter.App : Granite.Application {
         var client = AppCenterCore.Client.get_default ();
         client.operation_finished.connect (on_operation_finished);
         client.cache_update_failed.connect (on_cache_update_failed);
+        client.updates_available.connect (on_updates_available);
 
         if (AppInfo.get_default_for_uri_scheme ("appstream") == null) {
             var appinfo = new DesktopAppInfo (app_launcher);
@@ -91,6 +95,8 @@ public class AppCenter.App : Granite.Application {
         add_action (quit_action);
         add_action (show_updates_action);
         add_accelerator ("<Control>q", "app.quit", null);
+
+        search_provider = new SearchProvider ();
     }
 
     public override void open (File[] files, string hint) {
@@ -191,6 +197,12 @@ public class AppCenter.App : Granite.Application {
             } catch (Error e) {
                 warning (e.message);
             }
+
+            try {
+                search_provider_id = connection.register_object ("/io/elementary/appcenter/SearchProvider", search_provider);
+            } catch (Error e) {
+                warning (e.message);
+            }
         }
 
         return true;
@@ -199,6 +211,12 @@ public class AppCenter.App : Granite.Application {
     public override void dbus_unregister (DBusConnection connection, string object_path) {
         if (registration_id != 0) {
             connection.unregister_object (registration_id);
+            registration_id = 0;
+        }
+
+        if (search_provider_id != 0) {
+            connection.unregister_object (search_provider_id);
+            search_provider_id = 0;
         }
 
         base.dbus_unregister (connection, object_path);
@@ -249,12 +267,12 @@ public class AppCenter.App : Granite.Application {
                         break;
                     }
 
-                    string body = format_error_message (error.message);
-
-                    var close_button = new Gtk.Button.with_label (_("Close"));
-
-                    var dialog = new MessageDialog (_("There Was An Error Installing %s.").printf (package.get_name ()), body, "dialog-error");
-                    dialog.add_action_widget (close_button, 0);
+                    var dialog = new Granite.MessageDialog.with_image_from_icon_name (
+                        _("There Was An Error Installing %s.").printf (package.get_name ()),
+                        format_error_message (error.message),
+                        "dialog-error",
+                        Gtk.ButtonsType.CLOSE
+                    );
                     dialog.show_all ();
                     dialog.run ();
                     dialog.destroy ();
@@ -265,26 +283,31 @@ public class AppCenter.App : Granite.Application {
                 break;
         }
     }
-    
+
+    public void on_updates_available () {
+        var client = AppCenterCore.Client.get_default ();
+        main_window.show_update_badge (client.updates_number);
+    }
+
     private void on_cache_update_failed (Error error) {
         if (main_window == null) {
             return;
         }
 
-        string message = format_error_message (error.message);
+        var details_view = new Gtk.TextView ();
+        details_view.buffer.text = format_error_message (error.message);
+        details_view.editable = false;
+        details_view.pixels_below_lines = 3;
+        details_view.wrap_mode = Gtk.WrapMode.WORD;
+        details_view.get_style_context ().add_class ("terminal");
 
-        var details_label = new Gtk.Label (message);
-        details_label.margin_top = 12;
-        details_label.max_width_chars = 40;
-        details_label.selectable = true;
-        details_label.wrap = true;
-
-        var details_label_context = details_label.get_style_context ();
-        details_label_context.add_class (Gtk.STYLE_CLASS_MONOSPACE);
-        details_label_context.add_class ("terminal");
+        var scroll_box = new Gtk.ScrolledWindow (null, null);
+        scroll_box.margin_top = 12;
+        scroll_box.min_content_height = 70;
+        scroll_box.add (details_view);
 
         var expander = new Gtk.Expander (_("Details"));
-        expander.add (details_label);
+        expander.add (scroll_box);
 
         var dialog = new Granite.MessageDialog.with_image_from_icon_name (
             _("Failed to Fetch Updates"),
@@ -292,6 +315,7 @@ public class AppCenter.App : Granite.Application {
             "dialog-error",
             Gtk.ButtonsType.NONE
         );
+
         dialog.transient_for = main_window;
         dialog.custom_bin.add (expander);
         dialog.add_button (_("Ignore"), Gtk.ResponseType.CLOSE);

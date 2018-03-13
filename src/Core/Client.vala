@@ -50,7 +50,7 @@ public class AppCenterCore.Client : Object {
     private GLib.DateTime last_cache_update = null;
     private GLib.DateTime last_action = null;
 
-    private uint updates_number = 0U;
+    public uint updates_number { get; private set; default = 0U; }
     private uint update_cache_timeout_id = 0;
     private bool refresh_in_progress = false;
 
@@ -73,8 +73,6 @@ public class AppCenterCore.Client : Object {
         cancellable = new GLib.Cancellable ();
 
         sc = new SuspendControl ();
-
-        cancellable = new GLib.Cancellable ();
 
         appstream_pool = new AppStream.Pool ();
         // We don't want to show installed desktop files here
@@ -468,8 +466,7 @@ public class AppCenterCore.Client : Object {
             launcher_entry.count_visible = updates_number != 0U;
 #endif
 
-            int os_count = 0;
-            string os_ver = "";
+            uint os_count = 0;
             string os_desc = "";
 
             results.get_package_array ().foreach ((pk_package) => {
@@ -479,7 +476,7 @@ public class AppCenterCore.Client : Object {
                     unowned string pkg_summary = pk_package.get_summary();
                     unowned string pkg_version = pk_package.get_version();
                     os_count += 1;
-                    os_desc += Markup.printf_escaped ("<li>%s\n\t%s\n\tVersion: %s</li>\n", pkg_name, pkg_summary, pkg_version);
+                    os_desc += Markup.printf_escaped ("<li>%s\n\t%s\n\t%s</li>\n", pkg_name, pkg_summary, _("Version: %s").printf (pkg_version));
                 } else {
                     package.latest_version = pk_package.get_version ();
                     package.change_information.changes.clear ();
@@ -488,21 +485,14 @@ public class AppCenterCore.Client : Object {
             });
 
             if (os_count == 0){
-                os_ver = "No components with updates";
-            } else if (os_count == 1) {
-                os_ver = "%d component with updates".printf(os_count);
+                var latest_version = _("No components with updates");
+                os_updates.latest_version = latest_version;
+                os_updates.description = GLib.Markup.printf_escaped ("<p>%s</p>\n", latest_version);
             } else {
-                os_ver = "%d components with updates".printf(os_count);
+                var latest_version = ngettext ("%u component with updates", "%u components with updates", os_count).printf (os_count);
+                os_updates.latest_version = latest_version;
+                os_updates.description = "<p>%s</p>\n<ul>\n%s</ul>\n".printf (GLib.Markup.printf_escaped (_("%s:"), latest_version), os_desc);
             }
-
-            if (os_desc.length > 0) {
-                os_desc = "<p>%s:</p>\n<ul>\n%s</ul>\n".printf(os_ver, os_desc);
-            } else {
-                os_desc = "<p>%s</p>\n".printf(os_ver);
-            }
-
-            os_updates.latest_version = os_ver;
-            os_updates.description = os_desc;
 
             os_updates.component.set_pkgnames({});
             os_updates.change_information.changes.clear ();
@@ -678,6 +668,41 @@ public class AppCenterCore.Client : Object {
 
         task_count--;
         return installed;
+    }
+
+    public async Gee.ArrayList<Pk.Package> get_needed_deps_for_package (AppCenterCore.Package package, Cancellable? cancellable) {
+        var pk_package = package.find_package ();
+        var deps = new Gee.ArrayList<Pk.Package> ();
+
+        if (pk_package == null) {
+            return deps;
+        }
+
+        string[] package_array = { pk_package.package_id, null };
+        var filters = Pk.Bitfield.from_enums (Pk.Filter.NOT_INSTALLED);
+        try {
+            var deps_result = yield client.depends_on_async (filters, package_array, false, cancellable, (p, t) => {});
+            deps_result.get_package_array ().foreach ((dep_package) => {
+                deps.add (dep_package);
+            });
+
+            package_array = {};
+            foreach (var dep_package in deps) {
+                package_array += dep_package.package_id;
+            }
+
+            package_array += null;
+            if (package_array.length > 1) {
+                deps_result = yield client.depends_on_async (filters, package_array, true, cancellable, (p, t) => {});
+                deps_result.get_package_array ().foreach ((dep_package) => {
+                    deps.add (dep_package);
+                });
+            }
+        } catch (Error e) {
+            warning ("Error fetching dependencies for %s: %s", pk_package.package_id, e.message);
+        }
+
+        return deps;
     }
 
     public AppCenterCore.Package? get_package_for_component_id (string id) {

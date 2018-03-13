@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-09 18:51+0100\n"
-"PO-Revision-Date: 2017-12-22 10:38+0000\n"
+"POT-Creation-Date: 2018-02-17 14:11+0000\n"
+"PO-Revision-Date: 2018-01-14 10:06+0000\n"
 "Last-Translator: Maxim Taranov <png2378@gmail.com>\n"
 "Language-Team: Russian <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/ru/>\n"
@@ -32,36 +32,33 @@ msgstr "Приложение установлено"
 msgid "%s has been successfully installed"
 msgstr "Приложение «%s» успешно установлено"
 
-#: ../src/Application.vala:254
-msgid "Close"
-msgstr "Закрыть"
-
-#: ../src/Application.vala:256
-#, fuzzy
+#: ../src/Application.vala:253
 msgid "There Was An Error Installing %s."
-msgstr "Ошибка установки %"
+msgstr "Ошибка при установке %s."
 
 #: ../src/Application.vala:286
 msgid "Details"
-msgstr ""
+msgstr "Подробности"
 
 #: ../src/Application.vala:290
 msgid "Failed to Fetch Updates"
-msgstr ""
+msgstr "Не удалось получить обновления"
 
 #: ../src/Application.vala:291
 msgid ""
 "This may have been caused by external, manually added software repositories "
 "or a corrupted sources file."
 msgstr ""
-
-#: ../src/Application.vala:297
-msgid "Ignore"
-msgstr ""
+"Это может быть вызвано внешними (добавленными вручную) репозиториями или "
+"поврежденным файлом с источниками."
 
 #: ../src/Application.vala:298
+msgid "Ignore"
+msgstr "Игнорировать"
+
+#: ../src/Application.vala:299
 msgid "Try Again"
-msgstr ""
+msgstr "Повторить попытку"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -77,7 +74,7 @@ msgstr "Выполнение"
 
 #: ../src/Core/ChangeInformation.vala:60
 msgid "Querying"
-msgstr "Запрашивание"
+msgstr "Запрос"
 
 #: ../src/Core/ChangeInformation.vala:62
 msgid "Getting information"
@@ -207,33 +204,52 @@ msgstr "Копирование файлов"
 msgid "Unknown state"
 msgstr "Неизвестное состояние"
 
-#: ../src/Core/Client.vala:107
+#: ../src/Core/Client.vala:105
 msgid "Operating System Updates"
 msgstr "Обновления операционной системы"
 
-#: ../src/Core/Client.vala:108
+#: ../src/Core/Client.vala:106
 msgid "Updates to system components"
-msgstr "Обновления системных компонентов"
+msgstr "Обновления компонентов системы"
 
-#: ../src/Core/Client.vala:143
+#: ../src/Core/Client.vala:141
 msgid "%s (local)"
-msgstr ""
+msgstr "%s (local)"
 
-#: ../src/Core/Client.vala:452
+#: ../src/Core/Client.vala:450
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Доступно обновление"
 msgstr[1] "Доступны обновления"
 msgstr[2] "Доступны обновления"
 
-#: ../src/Core/Client.vala:453
+#: ../src/Core/Client.vala:451
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "Для системы доступно %u обновление"
 msgstr[1] "Для системы доступны %u обновления"
 msgstr[2] "Для системы доступны %u обновлений"
 
-#: ../src/Core/Package.vala:163
+#: ../src/Core/Client.vala:480
+msgid "Version: %s"
+msgstr ""
+
+#: ../src/Core/Client.vala:489
+msgid "No components with updates"
+msgstr ""
+
+#: ../src/Core/Client.vala:493
+msgid "%u component with updates"
+msgid_plural "%u components with updates"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: ../src/Core/Client.vala:495
+msgid "%s:"
+msgstr ""
+
+#: ../src/Core/Package.vala:186
 msgid "The %s Developers"
 msgstr "Разработчики %s"
 
@@ -257,9 +273,9 @@ msgstr "Все открытые приложения будут закрыты, 
 msgid "Restart"
 msgstr "Перезагрузить"
 
-#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:182
-#: ../src/Dialogs/StripeDialog.vala:301
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:146
+#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:181
+#: ../src/Dialogs/StripeDialog.vala:300
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:144
 msgid "Cancel"
 msgstr "Отменить"
 
@@ -268,8 +284,8 @@ msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
-"Ошибка при обработке данных, попробуйте повторить попытку позже. Приносим "
-"извинения за неудобства."
+"Ошибка при обработке данных, пожалуйста, повторите попытку позже. Приносим "
+"извинения за причинённые неудобства."
 
 #: ../src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
@@ -277,13 +293,15 @@ msgstr "Проверьте информацию о платеже и попро�
 
 #: ../src/Dialogs/StripeDialog.vala:78
 msgid "Pay $%d for %s"
-msgstr ""
+msgstr "Перевести %d,00 USD для %s"
 
 #: ../src/Dialogs/StripeDialog.vala:82
 msgid ""
 "This is a one time payment. Your email address is only used to send you a "
 "receipt."
 msgstr ""
+"Это разовый платёж. Ваш электронный адрес будет использован только для "
+"отправки квитанции."
 
 #: ../src/Dialogs/StripeDialog.vala:91 ../src/Widgets/SharePopover.vala:35
 msgid "Email"
@@ -314,33 +332,33 @@ msgstr "CVC"
 msgid "Privacy Policy"
 msgstr "Политика конфиденциальности"
 
-#: ../src/Dialogs/StripeDialog.vala:184 ../src/Dialogs/StripeDialog.vala:300
+#: ../src/Dialogs/StripeDialog.vala:183 ../src/Dialogs/StripeDialog.vala:299
 msgid "Pay $%d.00"
 msgstr "Заплатить %d,00 USD"
 
-#: ../src/Dialogs/StripeDialog.vala:229
+#: ../src/Dialogs/StripeDialog.vala:228
 msgid "Processing"
 msgstr "Обработка"
 
-#: ../src/Dialogs/StripeDialog.vala:254
+#: ../src/Dialogs/StripeDialog.vala:253
 msgid "There Was a Problem Processing Your Payment"
 msgstr "Не удалось обработать ваш платеж"
 
-#: ../src/Dialogs/StripeDialog.vala:292
+#: ../src/Dialogs/StripeDialog.vala:291
 msgid "Pay Later"
 msgstr "Оплатить позже"
 
-#: ../src/Dialogs/StripeDialog.vala:293
+#: ../src/Dialogs/StripeDialog.vala:292
 msgid "Retry"
 msgstr "Попробовать снова"
 
-#: ../src/Dialogs/StripeDialog.vala:489 ../src/Dialogs/StripeDialog.vala:554
+#: ../src/Dialogs/StripeDialog.vala:498 ../src/Dialogs/StripeDialog.vala:563
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr ""
 "Некорректный номер карты. Попробуйте снова, используя корректный номер."
 
-#: ../src/Dialogs/StripeDialog.vala:491
+#: ../src/Dialogs/StripeDialog.vala:500
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
@@ -348,7 +366,7 @@ msgstr ""
 "Некорректный месяц истечения срока действия карты. Попробуйте снова, "
 "используя корректный месяц."
 
-#: ../src/Dialogs/StripeDialog.vala:493 ../src/Dialogs/StripeDialog.vala:551
+#: ../src/Dialogs/StripeDialog.vala:502 ../src/Dialogs/StripeDialog.vala:560
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
@@ -356,20 +374,20 @@ msgstr ""
 "Некорректный год истечения срока действия карты. Попробуйте снова, используя "
 "корректный год."
 
-#: ../src/Dialogs/StripeDialog.vala:496 ../src/Dialogs/StripeDialog.vala:549
+#: ../src/Dialogs/StripeDialog.vala:505 ../src/Dialogs/StripeDialog.vala:558
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr "Некорректный CVC-код. Попробуйте снова, используя корректный код."
 
-#: ../src/Dialogs/StripeDialog.vala:498 ../src/Dialogs/StripeDialog.vala:540
+#: ../src/Dialogs/StripeDialog.vala:507 ../src/Dialogs/StripeDialog.vala:549
 msgid "The card has expired. Please try again with a different card."
 msgstr "Срок действия карты истёк. Попробуйте снова, используя другую карту."
 
-#: ../src/Dialogs/StripeDialog.vala:518
+#: ../src/Dialogs/StripeDialog.vala:527
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr ""
 "Слишком много запросов оплаты в данный момент, повторите попытку позже."
 
-#: ../src/Dialogs/StripeDialog.vala:534
+#: ../src/Dialogs/StripeDialog.vala:543
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
@@ -377,7 +395,7 @@ msgstr ""
 "Карта не поддерживает данный тип операций. Попробуйте снова, используя "
 "другую карту."
 
-#: ../src/Dialogs/StripeDialog.vala:536
+#: ../src/Dialogs/StripeDialog.vala:545
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
@@ -385,38 +403,35 @@ msgstr ""
 "Валюта не поддерживается этой картой. Попробуйте снова, используя другую "
 "карту."
 
-#: ../src/Dialogs/StripeDialog.vala:538
+#: ../src/Dialogs/StripeDialog.vala:547
 msgid "The transaction has already been processed."
 msgstr "Платеж уже был принят."
 
-#: ../src/Dialogs/StripeDialog.vala:542
-#, fuzzy
+#: ../src/Dialogs/StripeDialog.vala:551
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "postal code."
 msgstr ""
 "Некорректный почтовый индекс. Попробуйте снова, используя корректный индекс."
 
-#: ../src/Dialogs/StripeDialog.vala:544
+#: ../src/Dialogs/StripeDialog.vala:553
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "У вас не хватает средств. Используйте другой способ оплаты."
 
-#: ../src/Dialogs/StripeDialog.vala:546
+#: ../src/Dialogs/StripeDialog.vala:555
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "Некорректная сумма. Попробуйте снова, используя допустимую сумму."
 
-#: ../src/Dialogs/StripeDialog.vala:557
-#, fuzzy
+#: ../src/Dialogs/StripeDialog.vala:566
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr "Некорректный CVC-код. Попробуйте снова, используя корректный код."
+msgstr "Некорректный PIN. Попробуйте снова, используя корректный код."
 
-#: ../src/Dialogs/StripeDialog.vala:559
-#, fuzzy
+#: ../src/Dialogs/StripeDialog.vala:568
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
 msgstr "Слишком много попыток. Попробуйте снова, используя другую карту."
 
-#: ../src/Dialogs/StripeDialog.vala:579
+#: ../src/Dialogs/StripeDialog.vala:588
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
@@ -424,11 +439,11 @@ msgstr ""
 "Не удалось завершить транзакцию. Свяжитесь с вашим банком для получения "
 "дополнительной информации."
 
-#: ../src/Dialogs/StripeDialog.vala:582
+#: ../src/Dialogs/StripeDialog.vala:591
 msgid "The balance or credit limit on the card has been reached."
 msgstr "Превышен лимит по карте."
 
-#: ../src/Dialogs/StripeDialog.vala:585
+#: ../src/Dialogs/StripeDialog.vala:594
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
 "Данная карта является тестовой. Используйте настоящую карту, чтобы "
@@ -456,7 +471,6 @@ msgid "Network Is Not Available"
 msgstr "Подключение к сети недоступно"
 
 #: ../src/MainWindow.vala:177
-#, fuzzy
 msgid "Connect to the Internet to install or update apps."
 msgstr "Подключитесь к интернету, чтобы установить или обновить приложения."
 
@@ -486,7 +500,7 @@ msgstr "Помощь"
 
 #: ../src/Views/AppInfoView.vala:168
 msgid "What's New:"
-msgstr ""
+msgstr "Что нового:"
 
 #: ../src/Views/AppInfoView.vala:187
 msgid "Extensions:"
@@ -494,19 +508,19 @@ msgstr "Расширения:"
 
 #: ../src/Views/AppInfoView.vala:266
 msgid "Other Apps by %s"
-msgstr ""
+msgstr "Другие приложения от %s"
 
 #: ../src/Views/AppInfoView.vala:300
 msgid "Link copied to clipboard"
-msgstr ""
+msgstr "Ссылка скопирована в буфер обмена"
 
 #: ../src/Views/AppInfoView.vala:311
 msgid "Check out %s on AppCenter:"
-msgstr ""
+msgstr "%s в AppCenter:"
 
 #: ../src/Views/AppInfoView.vala:318
 msgid "Share"
-msgstr ""
+msgstr "Поделиться"
 
 #: ../src/Views/AppListUpdateView.vala:59
 msgid "A restart is required to complete the installation of updates"
@@ -516,14 +530,13 @@ msgstr "Для завершения установки обновлений не
 msgid "Restart Now"
 msgstr "Перезагрузить сейчас"
 
-#: ../src/Views/AppListUpdateView.vala:157
+#: ../src/Views/AppListUpdateView.vala:162
 msgid "Update All"
 msgstr "Обновить всё"
 
 #: ../src/Views/AppListView.vala:119
-#, fuzzy
 msgid "Non-Curated Apps"
-msgstr "Нет приложений"
+msgstr "Не поддерживаемое сообществом elementary"
 
 #: ../src/Views/Homepage.vala:65
 msgid "Recently Updated"
@@ -531,7 +544,7 @@ msgstr "Недавно обновлённые"
 
 #: ../src/Views/Homepage.vala:81
 msgid "Trending"
-msgstr ""
+msgstr "В тренде"
 
 #: ../src/Views/Homepage.vala:97
 msgid "Categories"
@@ -555,20 +568,20 @@ msgstr "Нет результатов"
 msgid "No apps could be found. Try changing search terms."
 msgstr "Приложения не найдены. Попробуйте изменить поисковый запрос."
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:125
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:123
 msgid "Uninstall"
 msgstr "Удалить"
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:128
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:126
 msgid "Open"
 msgstr "Открыть"
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:209
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:207
 #: ../src/Widgets/HumbleButton.vala:82
 msgid "Free"
 msgstr "Бесплатно"
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:229
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:231
 msgid "Update"
 msgstr "Обновить"
 
@@ -643,48 +656,47 @@ msgstr "%d USD"
 
 #: ../src/Widgets/ReleaseRow.vala:67
 msgid "<b>%s</b> – %s"
-msgstr ""
+msgstr "<b>%s</b> – %s"
 
 #: ../src/Widgets/ReleaseRow.vala:72
 msgid "<b>%s</b>"
-msgstr ""
+msgstr "<b>%s</b>"
 
 #: ../src/Widgets/ReleaseRow.vala:74
-#, fuzzy
 msgid "Unknown version"
-msgstr "Неизвестное состояние"
+msgstr "Неизвестная версия"
 
 #: ../src/Widgets/ReleaseRow.vala:90 ../src/Widgets/ReleaseRow.vala:93
 msgid "No description available"
-msgstr ""
+msgstr "Нет описания"
 
 #: ../src/Widgets/SharePopover.vala:39
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #: ../src/Widgets/SharePopover.vala:43
 msgid "Google+"
-msgstr ""
+msgstr "Google+"
 
 #: ../src/Widgets/SharePopover.vala:47
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 #: ../src/Widgets/SharePopover.vala:51
 msgid "reddit"
-msgstr ""
+msgstr "Reddit"
 
 #: ../src/Widgets/SharePopover.vala:55
 msgid "Tumblr"
-msgstr ""
+msgstr "Tumblr"
 
 #: ../src/Widgets/SharePopover.vala:59
 msgid "Telegram"
-msgstr ""
+msgstr "Telegram"
 
 #: ../src/Widgets/SharePopover.vala:63
 msgid "Copy link"
-msgstr ""
+msgstr "Скопировать ссылку"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:68
 msgid "%u Update Available"
@@ -708,6 +720,9 @@ msgstr "Обновления не требуются"
 #: ../src/Widgets/UpdateHeaderRow.vala:120
 msgid "Drivers"
 msgstr "Драйверы"
+
+#~ msgid "Close"
+#~ msgstr "Закрыть"
 
 #~ msgid "App Center"
 #~ msgstr "Центр приложений"

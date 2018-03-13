@@ -1,667 +1,685 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-09 18:51+0100\n"
+"POT-Creation-Date: 2018-02-17 14:11+0000\n"
+"PO-Revision-Date: 2018-03-13 05:27+0000\n"
+"Last-Translator: mitox <antisunny10@gmail.com>\n"
+"Language-Team: Chinese "
+"<https://weblate.elementary.io/projects/appcenter/appcenter/zh/>\n"
+"Language: zh\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2.18\n"
 
 #: ../src/Application.vala:39
 msgid "AppCenter"
-msgstr ""
+msgstr "应用中心"
 
 #: ../src/Application.vala:118
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr ""
+msgstr "未找到指定的链接'%s'，请使用搜索"
 
 #: ../src/Application.vala:240
 msgid "Application installed"
-msgstr ""
+msgstr "应用程序已安装"
 
 #: ../src/Application.vala:241
 msgid "%s has been successfully installed"
-msgstr ""
+msgstr "%s已被安装成功"
 
-#: ../src/Application.vala:254
-msgid "Close"
-msgstr ""
-
-#: ../src/Application.vala:256
+#: ../src/Application.vala:253
 msgid "There Was An Error Installing %s."
-msgstr ""
+msgstr "在安装%s时遇到一个错误。"
 
 #: ../src/Application.vala:286
 msgid "Details"
-msgstr ""
+msgstr "详情"
 
 #: ../src/Application.vala:290
 msgid "Failed to Fetch Updates"
-msgstr ""
+msgstr "获取更新失败"
 
 #: ../src/Application.vala:291
 msgid ""
 "This may have been caused by external, manually added software repositories "
 "or a corrupted sources file."
-msgstr ""
-
-#: ../src/Application.vala:297
-msgid "Ignore"
-msgstr ""
+msgstr "这可能是由一个手动安装的扩展软件仓库或一个已损坏的源文件造成。"
 
 #: ../src/Application.vala:298
+msgid "Ignore"
+msgstr "忽略"
+
+#: ../src/Application.vala:299
 msgid "Try Again"
-msgstr ""
+msgstr "重试"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
-msgstr ""
+msgstr "正在启动"
 
 #: ../src/Core/ChangeInformation.vala:56
 msgid "Waiting"
-msgstr ""
+msgstr "等待中"
 
 #: ../src/Core/ChangeInformation.vala:58
 msgid "Running"
-msgstr ""
+msgstr "正在运行"
 
 #: ../src/Core/ChangeInformation.vala:60
 msgid "Querying"
-msgstr ""
+msgstr "查询中"
 
 #: ../src/Core/ChangeInformation.vala:62
 msgid "Getting information"
-msgstr ""
+msgstr "正在获取相关信息"
 
 #: ../src/Core/ChangeInformation.vala:64
 msgid "Removing packages"
-msgstr ""
+msgstr "正在移除软件包"
 
 #: ../src/Core/ChangeInformation.vala:66
 msgid "Downloading"
-msgstr ""
+msgstr "正在下载"
 
 #: ../src/Core/ChangeInformation.vala:68
 msgid "Installing"
-msgstr ""
+msgstr "正在安装"
 
 #: ../src/Core/ChangeInformation.vala:70
 msgid "Refreshing software list"
-msgstr ""
+msgstr "正在刷新软件列表"
 
 #: ../src/Core/ChangeInformation.vala:72
 msgid "Installing updates"
-msgstr ""
+msgstr "正在安装更新"
 
 #: ../src/Core/ChangeInformation.vala:74
 msgid "Cleaning up packages"
-msgstr ""
+msgstr "正在清理软件包"
 
 #: ../src/Core/ChangeInformation.vala:76
 msgid "Obsoleting packages"
-msgstr ""
+msgstr "正在废弃软件包"
 
 #: ../src/Core/ChangeInformation.vala:78
 msgid "Resolving dependencies"
-msgstr ""
+msgstr "正在解析依赖关系"
 
 #: ../src/Core/ChangeInformation.vala:80
 msgid "Checking signatures"
-msgstr ""
+msgstr "正在检查签名"
 
 #: ../src/Core/ChangeInformation.vala:82
 msgid "Testing changes"
-msgstr ""
+msgstr "正在检测更改"
 
 #: ../src/Core/ChangeInformation.vala:84
 msgid "Committing changes"
-msgstr ""
+msgstr "正在提交更改"
 
 #: ../src/Core/ChangeInformation.vala:86
 msgid "Requesting data"
-msgstr ""
+msgstr "正在请求数据"
 
 #: ../src/Core/ChangeInformation.vala:88
 msgid "Finished"
-msgstr ""
+msgstr "已完成"
 
 #: ../src/Core/ChangeInformation.vala:90
 msgid "Cancelling"
-msgstr ""
+msgstr "正在取消"
 
 #: ../src/Core/ChangeInformation.vala:92
 msgid "Downloading repository information"
-msgstr ""
+msgstr "正在获取仓库信息"
 
 #: ../src/Core/ChangeInformation.vala:94
 msgid "Downloading list of packages"
-msgstr ""
+msgstr "正在下载软件包"
 
 #: ../src/Core/ChangeInformation.vala:96
 msgid "Downloading file lists"
-msgstr ""
+msgstr "正在下载文件列表"
 
 #: ../src/Core/ChangeInformation.vala:98
 msgid "Downloading lists of changes"
-msgstr ""
+msgstr "正在下载更改列表"
 
 #: ../src/Core/ChangeInformation.vala:100
 msgid "Downloading groups"
-msgstr ""
+msgstr "正在下载群组"
 
 #: ../src/Core/ChangeInformation.vala:102
 msgid "Downloading update information"
-msgstr ""
+msgstr "正在下载更新信息"
 
 #: ../src/Core/ChangeInformation.vala:104
 msgid "Repackaging files"
-msgstr ""
+msgstr "正在重新打包文件"
 
 #: ../src/Core/ChangeInformation.vala:106
 msgid "Loading cache"
-msgstr ""
+msgstr "正在加载缓存"
 
 #: ../src/Core/ChangeInformation.vala:108
 msgid "Scanning applications"
-msgstr ""
+msgstr "正在扫描应用程序"
 
 #: ../src/Core/ChangeInformation.vala:110
 msgid "Generating package lists"
-msgstr ""
+msgstr "正在生成软件包清单"
 
 #: ../src/Core/ChangeInformation.vala:112
 msgid "Waiting for package manager lock"
-msgstr ""
+msgstr "正在等待软件包管理器锁"
 
 #: ../src/Core/ChangeInformation.vala:114
 msgid "Waiting for authentication"
-msgstr ""
+msgstr "正在等待认证"
 
 #: ../src/Core/ChangeInformation.vala:116
 msgid "Updating running applications"
-msgstr ""
+msgstr "正在更新运行中的应用程序"
 
 #: ../src/Core/ChangeInformation.vala:118
 msgid "Checking applications in use"
-msgstr ""
+msgstr "正在核对使用中的应用程序"
 
 #: ../src/Core/ChangeInformation.vala:120
 msgid "Checking libraries in use"
-msgstr ""
+msgstr "正在核对使用中的代码库"
 
 #: ../src/Core/ChangeInformation.vala:122
 msgid "Copying files"
-msgstr ""
+msgstr "正在复制文件"
 
 #: ../src/Core/ChangeInformation.vala:124
 msgid "Unknown state"
-msgstr ""
+msgstr "未知状态"
 
-#: ../src/Core/Client.vala:107
+#: ../src/Core/Client.vala:105
 msgid "Operating System Updates"
-msgstr ""
+msgstr "操作系统更新"
 
-#: ../src/Core/Client.vala:108
+#: ../src/Core/Client.vala:106
 msgid "Updates to system components"
-msgstr ""
+msgstr "系统组件的更新"
 
-#: ../src/Core/Client.vala:143
+#: ../src/Core/Client.vala:141
 msgid "%s (local)"
-msgstr ""
+msgstr "%s（本地）"
 
-#: ../src/Core/Client.vala:452
+#: ../src/Core/Client.vala:450
 msgid "Update Available"
 msgid_plural "Updates Available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "有可用更新"
 
-#: ../src/Core/Client.vala:453
+#: ../src/Core/Client.vala:451
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "您的系统有%u的可用更新"
 
-#: ../src/Core/Package.vala:163
+#: ../src/Core/Client.vala:480
+msgid "Version: %s"
+msgstr "版本：%s"
+
+#: ../src/Core/Client.vala:489
+msgid "No components with updates"
+msgstr "没有组件可以更新"
+
+#: ../src/Core/Client.vala:493
+msgid "%u component with updates"
+msgid_plural "%u components with updates"
+msgstr[0] "有%u个组件可以更新"
+
+#: ../src/Core/Client.vala:495
+msgid "%s:"
+msgstr "%s："
+
+#: ../src/Core/Package.vala:186
 msgid "The %s Developers"
-msgstr ""
+msgstr "%s个开发者"
 
 #: ../src/Core/UpdateManager.vala:81
 msgid "Restart Required"
-msgstr ""
+msgstr "需要重启"
 
 #: ../src/Core/UpdateManager.vala:82
 msgid "Please restart your system to finalize updates"
-msgstr ""
+msgstr "请重启您的系统以完成更新"
 
 #: ../src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
-msgstr ""
+msgstr "您确认要重启吗？"
 
 #: ../src/Dialogs/RestartDialog.vala:41
 msgid "This will close all open applications and restart this device."
-msgstr ""
+msgstr "这会关闭所有已打开的应用程序并重启本设备。"
 
 #: ../src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
-msgstr ""
+msgstr "重启"
 
-#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:182
-#: ../src/Dialogs/StripeDialog.vala:301
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:146
+#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:181
+#: ../src/Dialogs/StripeDialog.vala:300
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:144
 msgid "Cancel"
-msgstr ""
+msgstr "取消"
 
 #: ../src/Dialogs/StripeDialog.vala:41
 msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
-msgstr ""
+msgstr "在处理信用卡的过程中发生了一个错误。请稍后再次尝试。我们对引发的任何任何不便之处感到抱歉。"
 
 #: ../src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
-msgstr ""
+msgstr "请检查您的支付信息并再度尝试。"
 
 #: ../src/Dialogs/StripeDialog.vala:78
 msgid "Pay $%d for %s"
-msgstr ""
+msgstr "为%s支付%d美元"
 
 #: ../src/Dialogs/StripeDialog.vala:82
 msgid ""
 "This is a one time payment. Your email address is only used to send you a "
 "receipt."
-msgstr ""
+msgstr "这是一次性支付。您的电子邮件地址只会被用于给您发送收据。"
 
 #: ../src/Dialogs/StripeDialog.vala:91 ../src/Widgets/SharePopover.vala:35
 msgid "Email"
-msgstr ""
+msgstr "电子邮件"
 
 #: ../src/Dialogs/StripeDialog.vala:93
 msgid ""
 "Your email address is used to send a receipt. It is never stored and you "
 "will not be subscribed to a mailing list."
-msgstr ""
+msgstr "您的电子邮件地址用于发送收据。它从未被储存，您也不会订阅某个邮件列表。"
 
 #: ../src/Dialogs/StripeDialog.vala:104
 msgid "Card Number"
-msgstr ""
+msgstr "信用卡卡号"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: ../src/Dialogs/StripeDialog.vala:116
 msgid "MM / YY"
-msgstr ""
+msgstr "月份 / 年份"
 
 #: ../src/Dialogs/StripeDialog.vala:136
 msgid "CVC"
-msgstr ""
+msgstr "CVC号码"
 
 #: ../src/Dialogs/StripeDialog.vala:173
 msgid "Privacy Policy"
-msgstr ""
+msgstr "隐私策略"
 
-#: ../src/Dialogs/StripeDialog.vala:184 ../src/Dialogs/StripeDialog.vala:300
+#: ../src/Dialogs/StripeDialog.vala:183 ../src/Dialogs/StripeDialog.vala:299
 msgid "Pay $%d.00"
-msgstr ""
+msgstr "支付%d.00美元"
 
-#: ../src/Dialogs/StripeDialog.vala:229
+#: ../src/Dialogs/StripeDialog.vala:228
 msgid "Processing"
-msgstr ""
+msgstr "正在处理"
 
-#: ../src/Dialogs/StripeDialog.vala:254
+#: ../src/Dialogs/StripeDialog.vala:253
 msgid "There Was a Problem Processing Your Payment"
-msgstr ""
+msgstr "在处理您的支付时遇到了一个问题"
+
+#: ../src/Dialogs/StripeDialog.vala:291
+msgid "Pay Later"
+msgstr "稍后再支付"
 
 #: ../src/Dialogs/StripeDialog.vala:292
-msgid "Pay Later"
-msgstr ""
-
-#: ../src/Dialogs/StripeDialog.vala:293
 msgid "Retry"
-msgstr ""
+msgstr "重试"
 
-#: ../src/Dialogs/StripeDialog.vala:489 ../src/Dialogs/StripeDialog.vala:554
+#: ../src/Dialogs/StripeDialog.vala:498 ../src/Dialogs/StripeDialog.vala:563
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
-msgstr ""
+msgstr "信用卡卡号有误。请使用正确的信用卡卡号再次尝试。"
 
-#: ../src/Dialogs/StripeDialog.vala:491
+#: ../src/Dialogs/StripeDialog.vala:500
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
-msgstr ""
+msgstr "到期月份无效。请使用正确的到期月份再次尝试。"
 
-#: ../src/Dialogs/StripeDialog.vala:493 ../src/Dialogs/StripeDialog.vala:551
+#: ../src/Dialogs/StripeDialog.vala:502 ../src/Dialogs/StripeDialog.vala:560
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
-msgstr ""
+msgstr "到期年份无效。请使用正确的到期年份再次尝试。"
 
-#: ../src/Dialogs/StripeDialog.vala:496 ../src/Dialogs/StripeDialog.vala:549
+#: ../src/Dialogs/StripeDialog.vala:505 ../src/Dialogs/StripeDialog.vala:558
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr ""
+msgstr "CVC号码有误。请使用正确的CVC再次尝试。"
 
-#: ../src/Dialogs/StripeDialog.vala:498 ../src/Dialogs/StripeDialog.vala:540
+#: ../src/Dialogs/StripeDialog.vala:507 ../src/Dialogs/StripeDialog.vala:549
 msgid "The card has expired. Please try again with a different card."
-msgstr ""
+msgstr "信用卡已过期。请使用其他信用卡再次尝试。"
 
-#: ../src/Dialogs/StripeDialog.vala:518
+#: ../src/Dialogs/StripeDialog.vala:527
 msgid "There are too many payment requests at the moment, please retry later."
-msgstr ""
+msgstr "当前支付请求过多，请稍后重试。"
 
-#: ../src/Dialogs/StripeDialog.vala:534
+#: ../src/Dialogs/StripeDialog.vala:543
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
-msgstr ""
+msgstr "该卡不支付这类交易。请使用其他信用卡再次尝试。"
 
-#: ../src/Dialogs/StripeDialog.vala:536
+#: ../src/Dialogs/StripeDialog.vala:545
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
-msgstr ""
+msgstr "该卡不支持这种货币。请使用其他信用卡再次尝试。"
 
-#: ../src/Dialogs/StripeDialog.vala:538
+#: ../src/Dialogs/StripeDialog.vala:547
 msgid "The transaction has already been processed."
-msgstr ""
+msgstr "交易已经被处理了。"
 
-#: ../src/Dialogs/StripeDialog.vala:542
+#: ../src/Dialogs/StripeDialog.vala:551
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "postal code."
-msgstr ""
+msgstr "邮政编码有误。请使用正确的邮政编码再次尝试。"
 
-#: ../src/Dialogs/StripeDialog.vala:544
+#: ../src/Dialogs/StripeDialog.vala:553
 msgid "You don't have enough funds. Please use an alternative payment method."
-msgstr ""
+msgstr "您的资金不足。请使用其他支持方式。"
 
-#: ../src/Dialogs/StripeDialog.vala:546
+#: ../src/Dialogs/StripeDialog.vala:555
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr ""
+msgstr "数量有误。请使用一个有效的数量再次尝试。"
 
-#: ../src/Dialogs/StripeDialog.vala:557
+#: ../src/Dialogs/StripeDialog.vala:566
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr ""
+msgstr "PIN码有误。请使用正确的PIN码再次尝试。"
 
-#: ../src/Dialogs/StripeDialog.vala:559
+#: ../src/Dialogs/StripeDialog.vala:568
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
-msgstr ""
+msgstr "该PIN码尝试次数过多。请使用其他信用卡再次尝试。"
 
-#: ../src/Dialogs/StripeDialog.vala:579
+#: ../src/Dialogs/StripeDialog.vala:588
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
-msgstr ""
+msgstr "无法未完成交易。请联系您的银行获取更多信息。"
 
-#: ../src/Dialogs/StripeDialog.vala:582
+#: ../src/Dialogs/StripeDialog.vala:591
 msgid "The balance or credit limit on the card has been reached."
-msgstr ""
+msgstr "已超过信用卡余额或限额。"
 
-#: ../src/Dialogs/StripeDialog.vala:585
+#: ../src/Dialogs/StripeDialog.vala:594
 msgid "The given card is a test card. Please use a real card to proceed."
-msgstr ""
+msgstr "给出的信用卡是一张测试卡。请使用一张真正的信用卡继续。"
 
 #: ../src/MainWindow.vala:141 ../src/Views/Homepage.vala:253
 #: ../src/Views/Homepage.vala:262 ../src/Views/Homepage.vala:267
 #: ../src/Views/Homepage.vala:278
 msgid "Home"
-msgstr ""
+msgstr "首页"
 
 #: ../src/MainWindow.vala:142 ../src/Views/InstalledView.vala:29
 #: ../src/Views/InstalledView.vala:49
 msgctxt "view"
 msgid "Updates"
-msgstr ""
+msgstr "更新"
 
 #: ../src/MainWindow.vala:158 ../src/MainWindow.vala:290
 #: ../src/Views/SearchView.vala:54 ../src/Views/SearchView.vala:75
 msgid "Search Apps"
-msgstr ""
+msgstr "搜索应用"
 
 #: ../src/MainWindow.vala:176
 msgid "Network Is Not Available"
-msgstr ""
+msgstr "网络不可用"
 
 #: ../src/MainWindow.vala:177
 msgid "Connect to the Internet to install or update apps."
-msgstr ""
+msgstr "连接到互联网以安装或更新应用。"
 
 #: ../src/MainWindow.vala:180
 msgid "Network Settings…"
-msgstr ""
+msgstr "网络设置…"
 
 #: ../src/Views/AppInfoView.vala:74
 msgid "Screenshot Not Available"
-msgstr ""
+msgstr "截图不可用"
 
 #: ../src/Views/AppInfoView.vala:128
 msgid "Homepage"
-msgstr ""
+msgstr "主页"
 
 #: ../src/Views/AppInfoView.vala:134
 msgid "Suggest Translations"
-msgstr ""
+msgstr "译文建议"
 
 #: ../src/Views/AppInfoView.vala:140
 msgid "Report a Problem"
-msgstr ""
+msgstr "报告一个问题"
 
 #: ../src/Views/AppInfoView.vala:146
 msgid "Help"
-msgstr ""
+msgstr "帮助"
 
 #: ../src/Views/AppInfoView.vala:168
 msgid "What's New:"
-msgstr ""
+msgstr "最新动态："
 
 #: ../src/Views/AppInfoView.vala:187
 msgid "Extensions:"
-msgstr ""
+msgstr "扩展："
 
 #: ../src/Views/AppInfoView.vala:266
 msgid "Other Apps by %s"
-msgstr ""
+msgstr "其他%s的应用"
 
 #: ../src/Views/AppInfoView.vala:300
 msgid "Link copied to clipboard"
-msgstr ""
+msgstr "链接已复制到剪贴板"
 
 #: ../src/Views/AppInfoView.vala:311
 msgid "Check out %s on AppCenter:"
-msgstr ""
+msgstr "到应用中心查看%s："
 
 #: ../src/Views/AppInfoView.vala:318
 msgid "Share"
-msgstr ""
+msgstr "分享"
 
 #: ../src/Views/AppListUpdateView.vala:59
 msgid "A restart is required to complete the installation of updates"
-msgstr ""
+msgstr "需要重启以完成更新的安装"
 
 #: ../src/Views/AppListUpdateView.vala:67
 msgid "Restart Now"
-msgstr ""
+msgstr "现在重启"
 
-#: ../src/Views/AppListUpdateView.vala:157
+#: ../src/Views/AppListUpdateView.vala:162
 msgid "Update All"
-msgstr ""
+msgstr "全部更新"
 
 #: ../src/Views/AppListView.vala:119
 msgid "Non-Curated Apps"
-msgstr ""
+msgstr "非策略性应用程序"
 
 #: ../src/Views/Homepage.vala:65
 msgid "Recently Updated"
-msgstr ""
+msgstr "最近更新"
 
 #: ../src/Views/Homepage.vala:81
 msgid "Trending"
-msgstr ""
+msgstr "趋向"
 
 #: ../src/Views/Homepage.vala:97
 msgid "Categories"
-msgstr ""
+msgstr "类别"
 
 #: ../src/Views/Homepage.vala:267 ../src/Views/Homepage.vala:278
 msgid "Search %s"
-msgstr ""
+msgstr "搜索%s"
 
 #. / TRANSLATORS: the name of the Search view
 #: ../src/Views/SearchView.vala:39
 msgctxt "view"
 msgid "Search"
-msgstr ""
+msgstr "搜索"
 
 #: ../src/Widgets/AbstractAppList.vala:36
 msgid "No Results"
-msgstr ""
+msgstr "无结果"
 
 #: ../src/Widgets/AbstractAppList.vala:36
 msgid "No apps could be found. Try changing search terms."
-msgstr ""
+msgstr "找不到应用。请更改搜索条件。"
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:125
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:123
 msgid "Uninstall"
-msgstr ""
+msgstr "卸载"
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:128
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:126
 msgid "Open"
-msgstr ""
+msgstr "打开"
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:209
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:207
 #: ../src/Widgets/HumbleButton.vala:82
 msgid "Free"
-msgstr ""
+msgstr "清空"
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:229
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:231
 msgid "Update"
-msgstr ""
+msgstr "更新"
 
 #: ../src/Widgets/Banner.vala:55
 msgid "An open, pay-what-you-want app store"
-msgstr ""
+msgstr "一个开放的，可以买您所想的应用程序商店"
 
 #: ../src/Widgets/Banner.vala:68
 msgid "Get the apps that you need at a price you can afford."
-msgstr ""
+msgstr "以可承受的价格获得您需要的应用程序。"
 
 #: ../src/Widgets/CategoryFlowBox.vala:29
 msgid "Audio"
-msgstr ""
+msgstr "声音"
 
 #: ../src/Widgets/CategoryFlowBox.vala:30
 msgid "Development"
-msgstr ""
+msgstr "开发"
 
 #: ../src/Widgets/CategoryFlowBox.vala:31
 msgid "Accessories"
-msgstr ""
+msgstr "附件"
 
 #: ../src/Widgets/CategoryFlowBox.vala:32
 msgid "Office"
-msgstr ""
+msgstr "办公"
 
 #: ../src/Widgets/CategoryFlowBox.vala:33
 msgid "System"
-msgstr ""
+msgstr "系统"
 
 #: ../src/Widgets/CategoryFlowBox.vala:34
 msgid "Video"
-msgstr ""
+msgstr "视频"
 
 #: ../src/Widgets/CategoryFlowBox.vala:35
 msgid "Graphics"
-msgstr ""
+msgstr "图像"
 
 #: ../src/Widgets/CategoryFlowBox.vala:36
 msgid "Games"
-msgstr ""
+msgstr "游戏"
 
 #: ../src/Widgets/CategoryFlowBox.vala:37
 msgid "Education"
-msgstr ""
+msgstr "教学"
 
 #: ../src/Widgets/CategoryFlowBox.vala:38
 msgid "Internet"
-msgstr ""
+msgstr "互联网"
 
 #: ../src/Widgets/CategoryFlowBox.vala:39
 msgid "Science & Engineering"
-msgstr ""
+msgstr "科学与工程设计"
 
 #: ../src/Widgets/CategoryFlowBox.vala:40
 msgid "Universal Access"
-msgstr ""
+msgstr "通用访问"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: ../src/Widgets/HumbleButton.vala:141
 msgid "$%d.00"
-msgstr ""
+msgstr "%d.00美元"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: ../src/Widgets/HumbleButton.vala:144
 msgid "$%d"
-msgstr ""
+msgstr "%d美元"
 
 #: ../src/Widgets/ReleaseRow.vala:67
 msgid "<b>%s</b> – %s"
-msgstr ""
+msgstr "<b>%s</b> – %s"
 
 #: ../src/Widgets/ReleaseRow.vala:72
 msgid "<b>%s</b>"
-msgstr ""
+msgstr "<b>%s</b>"
 
 #: ../src/Widgets/ReleaseRow.vala:74
 msgid "Unknown version"
-msgstr ""
+msgstr "未知版本"
 
 #: ../src/Widgets/ReleaseRow.vala:90 ../src/Widgets/ReleaseRow.vala:93
 msgid "No description available"
-msgstr ""
+msgstr "没有描述可用"
 
 #: ../src/Widgets/SharePopover.vala:39
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #: ../src/Widgets/SharePopover.vala:43
 msgid "Google+"
-msgstr ""
+msgstr "Google+"
 
 #: ../src/Widgets/SharePopover.vala:47
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 #: ../src/Widgets/SharePopover.vala:51
 msgid "reddit"
-msgstr ""
+msgstr "reddit"
 
 #: ../src/Widgets/SharePopover.vala:55
 msgid "Tumblr"
-msgstr ""
+msgstr "Tumblr"
 
 #: ../src/Widgets/SharePopover.vala:59
 msgid "Telegram"
-msgstr ""
+msgstr "Telegram"
 
 #: ../src/Widgets/SharePopover.vala:63
 msgid "Copy link"
-msgstr ""
+msgstr "复制链接"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:68
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u更新可用"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:69
 msgid "Size: %s"
-msgstr ""
+msgstr "大小：%s"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:105
 msgid "Searching for updates…"
-msgstr ""
+msgstr "正在搜索更新…"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:112
 msgid "Up to Date"
-msgstr ""
+msgstr "最新"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:120
 msgid "Drivers"
-msgstr ""
+msgstr "驱动"
