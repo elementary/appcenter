@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-17 14:11+0000\n"
-"PO-Revision-Date: 2018-03-09 13:11+0000\n"
+"PO-Revision-Date: 2018-03-10 18:37+0000\n"
 "Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/it/>\n"
@@ -51,7 +51,7 @@ msgid ""
 "or a corrupted sources file."
 msgstr ""
 "Ciò potrebbe essere stato causato da repository software esterni aggiunti "
-"manualmente o da un file sorgenti danneggiato."
+"manualmente o da un file sorgente danneggiato."
 
 #: ../src/Application.vala:298
 msgid "Ignore"
@@ -293,7 +293,7 @@ msgstr "Controlla le tue informazioni di pagamento e riprova."
 
 #: ../src/Dialogs/StripeDialog.vala:78
 msgid "Pay $%d for %s"
-msgstr "Paga $%d per %s"
+msgstr "Paga $%d USD per %s"
 
 #: ../src/Dialogs/StripeDialog.vala:82
 msgid ""
@@ -305,15 +305,16 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:91 ../src/Widgets/SharePopover.vala:35
 msgid "Email"
-msgstr "Indirizzo di posta elettronica"
+msgstr "Posta elettronica"
 
 #: ../src/Dialogs/StripeDialog.vala:93
 msgid ""
 "Your email address is used to send a receipt. It is never stored and you "
 "will not be subscribed to a mailing list."
 msgstr ""
-"Il tuo indirizzo di posta elettronica è utilizzato per inviare una ricevuta. "
-"Esso non viene mai memorizzato e non sarai iscritto a nessuna mailing list."
+"Il tuo indirizzo di posta elettronica è utilizzato per inviarti una "
+"ricevuta. Esso non viene mai memorizzato e non sarai iscritto a nessuna "
+"mailing list."
 
 #: ../src/Dialogs/StripeDialog.vala:104
 msgid "Card Number"
@@ -334,7 +335,7 @@ msgstr "Politica sulla privacy"
 
 #: ../src/Dialogs/StripeDialog.vala:183 ../src/Dialogs/StripeDialog.vala:299
 msgid "Pay $%d.00"
-msgstr "Paga $%d.00"
+msgstr "Paga $%d.00 USD"
 
 #: ../src/Dialogs/StripeDialog.vala:228
 msgid "Processing"
@@ -356,8 +357,8 @@ msgstr "Riprova"
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr ""
-"Il numero della carta è incorretto. Riprova utilizzando il numero della "
-"carta corretto."
+"Il numero della carta non è corretto. Riprova utilizzando un numero di carta "
+"corretto."
 
 #: ../src/Dialogs/StripeDialog.vala:500
 msgid ""
@@ -562,7 +563,7 @@ msgstr "Cerca %s"
 #: ../src/Views/SearchView.vala:39
 msgctxt "view"
 msgid "Search"
-msgstr "Cerca"
+msgstr "Ricerca"
 
 #: ../src/Widgets/AbstractAppList.vala:36
 msgid "No Results"
@@ -659,12 +660,10 @@ msgid "$%d"
 msgstr "$%d USD"
 
 #: ../src/Widgets/ReleaseRow.vala:67
-#, fuzzy
 msgid "<b>%s</b> – %s"
 msgstr "<b>%s</b> – %s"
 
 #: ../src/Widgets/ReleaseRow.vala:72
-#, fuzzy
 msgid "<b>%s</b>"
 msgstr "<b>%s</b>"
 
