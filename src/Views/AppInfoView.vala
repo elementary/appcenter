@@ -29,6 +29,8 @@ namespace AppCenter.Views {
         private Gtk.Label app_screenshot_not_found;
         private Gtk.Stack app_screenshots;
         private Gtk.Label app_version;
+        private Gtk.Label app_download_size_label;
+        private Cancellable app_download_size_cancellable;
         private Gtk.ListBox extension_box;
         private Gtk.Grid release_grid;
         private Widgets.ReleaseListBox release_list_box;
@@ -215,7 +217,21 @@ namespace AppCenter.Views {
             }
 
             if (!package.is_local) {
-                header_grid.attach (action_stack, 3, 0, 1, 1);
+                var download_button_grid = new Gtk.Grid ();
+                download_button_grid.orientation = Gtk.Orientation.VERTICAL;
+                download_button_grid.valign = Gtk.Align.END;
+                download_button_grid.halign = Gtk.Align.END;
+                download_button_grid.row_spacing = 3;
+
+                app_download_size_cancellable = new Cancellable ();
+
+                app_download_size_label = new Gtk.Label (null);
+                app_download_size_label.visible = false;
+                app_download_size_label.halign = Gtk.Align.END;
+
+                download_button_grid.add (action_stack);
+                download_button_grid.add (app_download_size_label);
+                header_grid.attach (download_button_grid, 3, 0, 1, 1);
             }
 
             header_box.add (header_grid);
@@ -357,6 +373,12 @@ namespace AppCenter.Views {
                 app_version.label = package.get_version ();
             }
 
+            app_download_size_label.visible = package.state == AppCenterCore.Package.State.NOT_INSTALLED;
+            app_download_size_label.label = "";
+            if (package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
+                get_app_download_size.begin ();
+            }
+
             update_action ();
         }
 
@@ -367,6 +389,43 @@ namespace AppCenter.Views {
                     extension_box.add (row);
                 }
             });
+        }
+
+        private async void get_app_download_size () {
+            if (package.state == AppCenterCore.Package.State.INSTALLED) {
+                return;
+            }
+
+            var client = AppCenterCore.Client.get_default ();
+            var deps = yield client.get_needed_deps_for_package (package, app_download_size_cancellable);
+            string[] package_ids = {};
+
+            foreach (var package in deps) {
+                package_ids += package.package_id;
+            }
+
+            package_ids += null;
+            uint64 size = 0;
+
+            if (package_ids.length > 1) {
+                var pk_client = AppCenterCore.Client.get_pk_client ();
+                try {
+                    var details = yield pk_client.get_details_async (package_ids, app_download_size_cancellable, (p, t) => {});
+                    details.get_details_array ().foreach ((details) => {
+                        size += details.size;
+                    });
+                } catch (Error e) {
+                    warning ("Error fetching details for dependencies, download size may be inaccurate: %s", e.message);
+                }
+            }
+
+            var pk_package = package.find_package ();
+            if (pk_package != null) {
+                size += pk_package.size;
+            }
+
+            app_download_size_label.label = GLib.format_size (size);
+            app_download_size_label.visible = true;
         }
 
         public void reload_css () {
@@ -406,6 +465,7 @@ namespace AppCenter.Views {
         public void load_more_content () {
             new Thread<void*> ("content-loading", () => {
                 app_version.label = package.get_version ();
+                get_app_download_size.begin ();
 
                 Idle.add (() => {
                     if (release_list_box.populate ()) {
