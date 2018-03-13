@@ -19,9 +19,9 @@ set (VERSION_INFO "Alpha")
 set (DOLLAR "$")
 
 # Friendly settings for downstreams
-set (INSTALL_BUTTON_LABEL "Free")
 set (DEFAULT_BANNER_COLOR_PRIMARY "#454241")
 set (DEFAULT_BANNER_COLOR_PRIMARY_TEXT "white")
+set (INSTALL_BUTTON_LABEL "Free")
 
 option (ENABLE_CURATED "Differentiate between apps created for elementary and not" ON)
 set (CURATED_FLAG "")
