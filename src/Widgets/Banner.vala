@@ -27,7 +27,7 @@ const string BANNER_STYLE_CSS = """
     }
 """;
 
-const string DEFAULT_BANNER_COLOR_PRIMARY = "#68758e";
+const string DEFAULT_BANNER_COLOR_PRIMARY = "#454241";
 const string DEFAULT_BANNER_COLOR_PRIMARY_TEXT = "white";
 const int MILLISECONDS_BETWEEN_BANNER_ITEMS = 5000;
 

@@ -105,12 +105,14 @@ namespace AppCenter {
 
             var grid = new Gtk.Grid ();
             grid.margin = 12;
+            /*
             grid.attach (newest_banner, 0, 0, 1, 1);
             grid.attach (switcher_revealer, 0, 1, 1, 1);
             grid.attach (trending_revealer, 0, 2, 1, 1);
             grid.attach (recently_updated_revealer, 0, 3, 1, 1);
             grid.attach (categories_label, 0, 4, 1, 1);
-            grid.attach (category_flow, 0, 5, 1, 1);
+            */
+            grid.attach (category_flow, 0, 0, 1, 1);
 
             category_scrolled = new Gtk.ScrolledWindow (null, null);
             category_scrolled.add (grid);

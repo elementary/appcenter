@@ -85,7 +85,6 @@ public class AppCenterCore.UpdateManager : Object {
                 notification.set_icon (new ThemedIcon ("system-software-install"));
                 notification.set_priority (NotificationPriority.URGENT);
                 notification.set_default_action ("app.open-application");
-                Application.get_default ().send_notification ("restart", notification);
             }
 
             restart_required = true;
