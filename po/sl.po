@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-17 14:11+0000\n"
-"PO-Revision-Date: 2018-03-14 18:30+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2018-03-15 00:17+0000\n"
+"Last-Translator: Erazem Kokot <kokot.erazem@protonmail.com>\n"
 "Language-Team: Slovenian "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/sl/>\n"
 "Language: sl\n"
@@ -34,7 +34,7 @@ msgstr "%s je bila uspešno nameščena"
 
 #: ../src/Application.vala:253
 msgid "There Was An Error Installing %s."
-msgstr "Prišlo je do napake pri namestitvi %s."
+msgstr "Pri namestitvi %s je prišlo do napake."
 
 #: ../src/Application.vala:286
 msgid "Details"
@@ -42,7 +42,7 @@ msgstr "Podrobnosti"
 
 #: ../src/Application.vala:290
 msgid "Failed to Fetch Updates"
-msgstr "Ni bilo mogoče prenesti posodobitev"
+msgstr "Posodobitev ni bilo mogoče prenesti"
 
 #: ../src/Application.vala:291
 msgid ""
@@ -69,7 +69,7 @@ msgstr "Čakanje"
 
 #: ../src/Core/ChangeInformation.vala:58
 msgid "Running"
-msgstr "Se izvaja"
+msgstr "Izvajanje"
 
 #: ../src/Core/ChangeInformation.vala:60
 msgid "Querying"
@@ -137,31 +137,31 @@ msgstr "Preklicevanje"
 
 #: ../src/Core/ChangeInformation.vala:92
 msgid "Downloading repository information"
-msgstr "Prejemanje podatkov o skladiščih"
+msgstr "Prejemanje podatkov o repozitorijih"
 
 #: ../src/Core/ChangeInformation.vala:94
 msgid "Downloading list of packages"
-msgstr "Prejemanje seznama paketov"
+msgstr "Prenašanje seznama paketov"
 
 #: ../src/Core/ChangeInformation.vala:96
 msgid "Downloading file lists"
-msgstr "Prejemanje seznamov datotek"
+msgstr "Prenašanje seznamov datotek"
 
 #: ../src/Core/ChangeInformation.vala:98
 msgid "Downloading lists of changes"
-msgstr "Prejemanje seznamov sprememb"
+msgstr "Prenašanje seznamov sprememb"
 
 #: ../src/Core/ChangeInformation.vala:100
 msgid "Downloading groups"
-msgstr "Prejemanje skupin"
+msgstr "Prenašanje skupin"
 
 #: ../src/Core/ChangeInformation.vala:102
 msgid "Downloading update information"
-msgstr "Prejemanje podatkov o posodobitvi"
+msgstr "Prenašanje podatkov o posodobitvi"
 
 #: ../src/Core/ChangeInformation.vala:104
 msgid "Repackaging files"
-msgstr "Prepakiranje datotek"
+msgstr "Ponovno pakiranje datotek"
 
 #: ../src/Core/ChangeInformation.vala:106
 msgid "Loading cache"
@@ -181,7 +181,7 @@ msgstr "Čakanje na zaklep upravljalnika paketov"
 
 #: ../src/Core/ChangeInformation.vala:114
 msgid "Waiting for authentication"
-msgstr "Čakanje na overitev"
+msgstr "Čakanje na potrditev verodostojnosti"
 
 #: ../src/Core/ChangeInformation.vala:116
 msgid "Updating running applications"
@@ -213,7 +213,7 @@ msgstr "Posodobitve sistemskih komponent"
 
 #: ../src/Core/Client.vala:141
 msgid "%s (local)"
-msgstr "%s(lokalno)"
+msgstr "%s (lokalno)"
 
 #: ../src/Core/Client.vala:450
 msgid "Update Available"
