@@ -295,8 +295,8 @@ public class AppCenter.App : Granite.Application {
         }
 
         if (update_fail_dialog == null) {
-            var dialog = new UpdateFailDialog (format_error_message (error.message));
-            dialog.transient_for = main_window;
+            update_fail_dialog = new UpdateFailDialog (format_error_message (error.message));
+            update_fail_dialog.transient_for = main_window;
 
             update_fail_dialog.destroy.connect (() => {
                 update_fail_dialog = null;

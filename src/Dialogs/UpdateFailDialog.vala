@@ -49,13 +49,16 @@ public class UpdateFailDialog : Granite.MessageDialog {
         custom_bin.show_all ();
 
         deletable = false;
+        resizable = false;
         add_button (_("Ignore"), Gtk.ResponseType.CLOSE);
         add_button (_("Try Again"), TRY_AGAIN_RESPONSE_ID);
 
         response.connect ((response_id) => {
             if (response_id == TRY_AGAIN_RESPONSE_ID) {
                 AppCenterCore.Client.get_default ().update_cache.begin (true);
+                
             }
+            destroy ();
         });
     }
 }
