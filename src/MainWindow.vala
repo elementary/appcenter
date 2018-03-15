@@ -112,17 +112,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         network_alert_view.action_activated.connect (() => {
             try {
-                string[] args = {
-                  "gnome-control-center", "network"
-                };
-                Process.spawn_async (
-                    null,
-                    args,
-                    null,
-                    SpawnFlags.SEARCH_PATH,
-                    null,
-                    null
-                );
+                AppInfo.launch_default_for_uri ("settings://network", null);
             } catch (Error e) {
                 warning (e.message);
             }
