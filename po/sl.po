@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-17 14:11+0000\n"
-"PO-Revision-Date: 2018-02-10 00:01+0000\n"
-"Last-Translator: Jernej Virag <jernej@virag.si>\n"
-"Language-Team: Slovenian <https://weblate.elementary.io/projects/appcenter/"
-"appcenter/sl/>\n"
+"PO-Revision-Date: 2018-03-15 00:17+0000\n"
+"Last-Translator: Erazem Kokot <kokot.erazem@protonmail.com>\n"
+"Language-Team: Slovenian "
+"<https://weblate.elementary.io/projects/appcenter/appcenter/sl/>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
-"%100==4 ? 2 : 3;\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
+"n%100==4 ? 2 : 3;\n"
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
@@ -34,7 +34,7 @@ msgstr "%s je bila uspešno nameščena"
 
 #: ../src/Application.vala:253
 msgid "There Was An Error Installing %s."
-msgstr "Prišlo je do napake pri namestitvi %s."
+msgstr "Pri namestitvi %s je prišlo do napake."
 
 #: ../src/Application.vala:286
 msgid "Details"
@@ -42,7 +42,7 @@ msgstr "Podrobnosti"
 
 #: ../src/Application.vala:290
 msgid "Failed to Fetch Updates"
-msgstr "Ni bilo mogoče prenesti posodobitev"
+msgstr "Posodobitev ni bilo mogoče prenesti"
 
 #: ../src/Application.vala:291
 msgid ""
@@ -69,7 +69,7 @@ msgstr "Čakanje"
 
 #: ../src/Core/ChangeInformation.vala:58
 msgid "Running"
-msgstr "Se izvaja"
+msgstr "Izvajanje"
 
 #: ../src/Core/ChangeInformation.vala:60
 msgid "Querying"
@@ -137,31 +137,31 @@ msgstr "Preklicevanje"
 
 #: ../src/Core/ChangeInformation.vala:92
 msgid "Downloading repository information"
-msgstr "Prejemanje podatkov o skladiščih"
+msgstr "Prejemanje podatkov o repozitorijih"
 
 #: ../src/Core/ChangeInformation.vala:94
 msgid "Downloading list of packages"
-msgstr "Prejemanje seznama paketov"
+msgstr "Prenašanje seznama paketov"
 
 #: ../src/Core/ChangeInformation.vala:96
 msgid "Downloading file lists"
-msgstr "Prejemanje seznamov datotek"
+msgstr "Prenašanje seznamov datotek"
 
 #: ../src/Core/ChangeInformation.vala:98
 msgid "Downloading lists of changes"
-msgstr "Prejemanje seznamov sprememb"
+msgstr "Prenašanje seznamov sprememb"
 
 #: ../src/Core/ChangeInformation.vala:100
 msgid "Downloading groups"
-msgstr "Prejemanje skupin"
+msgstr "Prenašanje skupin"
 
 #: ../src/Core/ChangeInformation.vala:102
 msgid "Downloading update information"
-msgstr "Prejemanje podatkov o posodobitvi"
+msgstr "Prenašanje podatkov o posodobitvi"
 
 #: ../src/Core/ChangeInformation.vala:104
 msgid "Repackaging files"
-msgstr "Prepakiranje datotek"
+msgstr "Ponovno pakiranje datotek"
 
 #: ../src/Core/ChangeInformation.vala:106
 msgid "Loading cache"
@@ -181,7 +181,7 @@ msgstr "Čakanje na zaklep upravljalnika paketov"
 
 #: ../src/Core/ChangeInformation.vala:114
 msgid "Waiting for authentication"
-msgstr "Čakanje na overitev"
+msgstr "Čakanje na potrditev verodostojnosti"
 
 #: ../src/Core/ChangeInformation.vala:116
 msgid "Updating running applications"
@@ -213,7 +213,7 @@ msgstr "Posodobitve sistemskih komponent"
 
 #: ../src/Core/Client.vala:141
 msgid "%s (local)"
-msgstr ""
+msgstr "%s (lokalno)"
 
 #: ../src/Core/Client.vala:450
 msgid "Update Available"
@@ -233,23 +233,23 @@ msgstr[3] "%u posodobitev je na voljo za vaš sistem"
 
 #: ../src/Core/Client.vala:480
 msgid "Version: %s"
-msgstr ""
+msgstr "Verzija: %s"
 
 #: ../src/Core/Client.vala:489
 msgid "No components with updates"
-msgstr ""
+msgstr "Nobena posodobitev ni bila najdena"
 
 #: ../src/Core/Client.vala:493
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Najdena %u posodobitev"
+msgstr[1] "Najdeni %u posodobitvi"
+msgstr[2] "Najdene %u posodobitve"
+msgstr[3] "Najdenih %u posodobitev"
 
 #: ../src/Core/Client.vala:495
 msgid "%s:"
-msgstr ""
+msgstr "%s:"
 
 #: ../src/Core/Package.vala:186
 msgid "The %s Developers"
@@ -675,27 +675,27 @@ msgstr "Facebook"
 
 #: ../src/Widgets/SharePopover.vala:43
 msgid "Google+"
-msgstr ""
+msgstr "Google+"
 
 #: ../src/Widgets/SharePopover.vala:47
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 #: ../src/Widgets/SharePopover.vala:51
 msgid "reddit"
-msgstr ""
+msgstr "reddit"
 
 #: ../src/Widgets/SharePopover.vala:55
 msgid "Tumblr"
-msgstr ""
+msgstr "Tumblr"
 
 #: ../src/Widgets/SharePopover.vala:59
 msgid "Telegram"
-msgstr ""
+msgstr "Telegram"
 
 #: ../src/Widgets/SharePopover.vala:63
 msgid "Copy link"
-msgstr ""
+msgstr "Kopiraj povezavo"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:68
 msgid "%u Update Available"
