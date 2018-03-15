@@ -11,7 +11,7 @@
       <description>Window width</description>
     </key>
     <key type="i" name="window-height">
-      <default>660</default>
+      <default>640</default>
       <summary>Window height</summary>
       <description>Window height</description>
     </key>
