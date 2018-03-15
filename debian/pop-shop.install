@@ -1,9 +1,0 @@
-debian/60pop-shop /etc/apt/apt.conf.d/
-etc/
-usr/bin/
-usr/share/applications/
-usr/share/dbus-1/services/
-usr/share/glib-2.0/
-usr/share/gnome-shell/search-providers/
-usr/share/locale/
-usr/share/metainfo/

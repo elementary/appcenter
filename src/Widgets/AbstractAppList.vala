@@ -39,7 +39,6 @@ namespace AppCenter {
             list_box.expand = true;
             list_box.activate_on_single_click = true;
             list_box.set_placeholder (alert_view);
-            list_box.set_selection_mode (Gtk.SelectionMode.NONE);
             list_box.set_sort_func ((Gtk.ListBoxSortFunc) package_row_compare);
             list_box.row_activated.connect ((r) => {
                 var row = (Widgets.AppListRow)r;

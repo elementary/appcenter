@@ -1,8 +1,10 @@
-# Pop\!\_Shop
+# AppCenter
+[![Translation status](https://l10n.elementary.io/widgets/appcenter/-/svg-badge.svg)](https://l10n.elementary.io/projects/appcenter/?utm_source=widget)
+[![Bountysource](https://www.bountysource.com/badge/tracker?tracker_id=57667267)](https://www.bountysource.com/teams/elementary/issues?tracker_ids=57667267)
 
-A fast and simple software center. Based on [elementary AppCenter](https://github.com/elementary/appcenter)
+An open, pay-what-you-want app store for indie developers.
 
-![Pop Shop Screenshot](data/screenshot.png?raw=true)
+![AppCenter Screenshot](data/screenshot.png?raw=true)
 
 ## Building, Testing, and Installation
 
@@ -55,6 +57,6 @@ Fake updates with the `-f` flag followed by PackageKit package name, **not** app
 
     io.elementary.appcenter -f inkscape
 
-Load and preview a local AppStream XML metadata file, your local metadata will be searchable. Metadata loaded this way will have a `(local)` suffix in it's name.
+Load and preview a local AppStream XML metadata file, your local metadata will show up in the featured banner and will also be searchable. Metadata loaded this way will have a `(local)` suffix in it's name.
 
     io.elementary.appcenter --load-local /path/to/file.appdata.xml
