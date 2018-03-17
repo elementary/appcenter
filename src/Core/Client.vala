@@ -226,7 +226,7 @@ public class AppCenterCore.Client : Object {
 #if VALA_0_40
             throw new GLib.IOError.FAILED (exit_status.enum_to_string());
 #else
-            Pk.Exit.enum_to_string (exit_status);
+            throw new GLib.IOError.FAILED (Pk.Exit.enum_to_string (exit_status));
 #endif
         } else {
             package.change_information.clear_update_info ();
