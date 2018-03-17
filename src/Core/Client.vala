@@ -223,7 +223,7 @@ public class AppCenterCore.Client : Object {
         }
 
         if (exit_status != Pk.Exit.SUCCESS) {
-            throw new GLib.IOError.FAILED (Pk.Exit.enum_to_string (exit_status));
+            throw new GLib.IOError.FAILED (exit_status.enum_to_string());
         } else {
             package.change_information.clear_update_info ();
         }
