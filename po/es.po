@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-17 14:11+0000\n"
-"PO-Revision-Date: 2018-03-17 16:42+0000\n"
+"PO-Revision-Date: 2018-03-17 20:38+0000\n"
 "Last-Translator: Alain M. <alain23@protonmail.com>\n"
 "Language-Team: Spanish "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/es/>\n"
@@ -655,7 +655,6 @@ msgid "$%d"
 msgstr "$%d"
 
 #: ../src/Widgets/ReleaseRow.vala:67
-#, fuzzy
 msgid "<b>%s</b> – %s"
 msgstr "<b>%s</b> – %s"
 
