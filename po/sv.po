@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-17 14:11+0000\n"
-"PO-Revision-Date: 2018-03-18 13:57+0000\n"
-"Last-Translator: Ivar Jönsson <ChunkTreasure@hotmail.com>\n"
+"PO-Revision-Date: 2018-03-18 14:41+0000\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Swedish "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/sv/>\n"
 "Language: sv\n"
@@ -464,15 +464,15 @@ msgstr "Webbplats"
 
 #: ../src/Views/AppInfoView.vala:134
 msgid "Suggest Translations"
-msgstr ""
+msgstr "Föreslå översättningar"
 
 #: ../src/Views/AppInfoView.vala:140
 msgid "Report a Problem"
-msgstr ""
+msgstr "Rapportera ett problem"
 
 #: ../src/Views/AppInfoView.vala:146
 msgid "Help"
-msgstr ""
+msgstr "Hjälp"
 
 #: ../src/Views/AppInfoView.vala:168
 msgid "What's New:"
@@ -504,7 +504,7 @@ msgstr ""
 
 #: ../src/Views/AppListUpdateView.vala:67
 msgid "Restart Now"
-msgstr ""
+msgstr "Starta om nu"
 
 #: ../src/Views/AppListUpdateView.vala:162
 msgid "Update All"
@@ -516,7 +516,7 @@ msgstr ""
 
 #: ../src/Views/Homepage.vala:65
 msgid "Recently Updated"
-msgstr ""
+msgstr "Nyligen uppdaterad"
 
 #: ../src/Views/Homepage.vala:81
 msgid "Trending"
