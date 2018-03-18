@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-17 14:11+0000\n"
-"PO-Revision-Date: 2018-03-18 12:44+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2018-03-18 13:41+0000\n"
+"Last-Translator: Ivar Jönsson <ChunkTreasure@hotmail.com>\n"
 "Language-Team: Swedish "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/sv/>\n"
 "Language: sv\n"
@@ -310,11 +310,11 @@ msgstr ""
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: ../src/Dialogs/StripeDialog.vala:116
 msgid "MM / YY"
-msgstr ""
+msgstr "MM / ÅÅ"
 
 #: ../src/Dialogs/StripeDialog.vala:136
 msgid "CVC"
-msgstr ""
+msgstr "CVC"
 
 #: ../src/Dialogs/StripeDialog.vala:173
 msgid "Privacy Policy"
