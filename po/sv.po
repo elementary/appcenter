@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-17 14:11+0000\n"
-"PO-Revision-Date: 2018-03-18 13:41+0000\n"
-"Last-Translator: Ivar Jönsson <ChunkTreasure@hotmail.com>\n"
+"PO-Revision-Date: 2018-03-18 13:53+0000\n"
+"Last-Translator: Smalbenet <smalbenet@gmail.com>\n"
 "Language-Team: Swedish "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/sv/>\n"
 "Language: sv\n"
@@ -51,7 +51,7 @@ msgstr ""
 
 #: ../src/Application.vala:298
 msgid "Ignore"
-msgstr ""
+msgstr "Ignorera"
 
 #: ../src/Application.vala:299
 msgid "Try Again"
@@ -249,11 +249,11 @@ msgstr ""
 
 #: ../src/Core/UpdateManager.vala:81
 msgid "Restart Required"
-msgstr ""
+msgstr "Omstart krävs"
 
 #: ../src/Core/UpdateManager.vala:82
 msgid "Please restart your system to finalize updates"
-msgstr ""
+msgstr "Vänligen starta om ditt system för att slutföra uppdateringarna"
 
 #: ../src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -285,7 +285,7 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:78
 msgid "Pay $%d for %s"
-msgstr ""
+msgstr "Betala $%d för %s"
 
 #: ../src/Dialogs/StripeDialog.vala:82
 msgid ""
@@ -295,7 +295,7 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:91 ../src/Widgets/SharePopover.vala:35
 msgid "Email"
-msgstr ""
+msgstr "E-post"
 
 #: ../src/Dialogs/StripeDialog.vala:93
 msgid ""
@@ -334,11 +334,11 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:291
 msgid "Pay Later"
-msgstr ""
+msgstr "Betala senare"
 
 #: ../src/Dialogs/StripeDialog.vala:292
 msgid "Retry"
-msgstr ""
+msgstr "Försök igen"
 
 #: ../src/Dialogs/StripeDialog.vala:498 ../src/Dialogs/StripeDialog.vala:563
 msgid ""
@@ -550,12 +550,12 @@ msgstr "Avinstallera"
 
 #: ../src/Widgets/AppContainers/AbstractAppContainer.vala:126
 msgid "Open"
-msgstr ""
+msgstr "Öppna"
 
 #: ../src/Widgets/AppContainers/AbstractAppContainer.vala:207
 #: ../src/Widgets/HumbleButton.vala:82
 msgid "Free"
-msgstr ""
+msgstr "Gratis"
 
 #: ../src/Widgets/AppContainers/AbstractAppContainer.vala:231
 msgid "Update"
@@ -636,13 +636,12 @@ msgid "<b>%s</b>"
 msgstr ""
 
 #: ../src/Widgets/ReleaseRow.vala:74
-#, fuzzy
 msgid "Unknown version"
-msgstr "Okänt tillstånd"
+msgstr "Okänd version"
 
 #: ../src/Widgets/ReleaseRow.vala:90 ../src/Widgets/ReleaseRow.vala:93
 msgid "No description available"
-msgstr ""
+msgstr "Ingen beskrivning tillgängling"
 
 #: ../src/Widgets/SharePopover.vala:39
 msgid "Facebook"
@@ -670,7 +669,7 @@ msgstr ""
 
 #: ../src/Widgets/SharePopover.vala:63
 msgid "Copy link"
-msgstr ""
+msgstr "Kopiera länk"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:68
 msgid "%u Update Available"
@@ -692,7 +691,7 @@ msgstr "Uppdaterad"
 
 #: ../src/Widgets/UpdateHeaderRow.vala:120
 msgid "Drivers"
-msgstr ""
+msgstr "Drivrutiner"
 
 #~ msgid "Close"
 #~ msgstr "Stäng"
