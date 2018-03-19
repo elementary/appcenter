@@ -1,6 +1,6 @@
 Source: appcenter
 Section: utils
-Maintainer: Corentin Noël <corentin@elementary.io>
+Maintainer: elementary Builds Team <builds@elementary.io>
 Build-Depends: appstream,
                cmake,
                cmake-elementary,
@@ -19,7 +19,7 @@ Build-Depends: appstream,
                libxml2-utils,
                valac (>= 0.26)
 Standards-Version: 3.9.6
-Homepage: https://launchpad.net/appcenter
+Homepage: https://github.com/elementary/appcenter
 
 Package: appcenter
 Architecture: any
