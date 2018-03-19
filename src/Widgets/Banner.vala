@@ -28,6 +28,8 @@ const string BANNER_STYLE_CSS = """
 """;
 
 const int MILLISECONDS_BETWEEN_BANNER_ITEMS = 5000;
+// Add "Free" to the translation catalog
+const string FREE = N_("Free");
 
 namespace AppCenter.Widgets {
     public class Banner : Gtk.Button {
