@@ -32,6 +32,13 @@ Description: Fast application store
  Install, update and remove apps with ease.
  Helps independent developers.
 
+Package: appcenter-casper
+Architecture: any
+Priority: extra
+Depends: casper
+Description: Disable AppCenter daemon in casper
+Disable AppCenter daemon when running in a live system with casper
+
 Package: appcenter-dbg
 Architecture: any
 Section: debug
