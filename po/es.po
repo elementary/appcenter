@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-17 14:11+0000\n"
-"PO-Revision-Date: 2018-03-09 13:11+0000\n"
-"Last-Translator: haggen svastian <h2gn@openmailbox.org>\n"
+"PO-Revision-Date: 2018-03-17 20:38+0000\n"
+"Last-Translator: Alain M. <alain23@protonmail.com>\n"
 "Language-Team: Spanish "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/es/>\n"
 "Language: es\n"
@@ -541,7 +541,7 @@ msgstr "Aplicaciones no verificadas"
 
 #: ../src/Views/Homepage.vala:65
 msgid "Recently Updated"
-msgstr "Recientemente actualizados"
+msgstr "Actualizados"
 
 #: ../src/Views/Homepage.vala:81
 msgid "Trending"
@@ -568,7 +568,7 @@ msgstr "No hay resultados"
 #: ../src/Widgets/AbstractAppList.vala:36
 msgid "No apps could be found. Try changing search terms."
 msgstr ""
-"No se  encontró ninguna aplicacion. Intente cambiando los parámetros de "
+"No se  encontró ninguna aplicación. Intente cambiando los parámetros de "
 "búsqueda."
 
 #: ../src/Widgets/AppContainers/AbstractAppContainer.vala:123
@@ -655,13 +655,12 @@ msgid "$%d"
 msgstr "$%d"
 
 #: ../src/Widgets/ReleaseRow.vala:67
-#, fuzzy
 msgid "<b>%s</b> – %s"
 msgstr "<b>%s</b> – %s"
 
 #: ../src/Widgets/ReleaseRow.vala:72
 msgid "<b>%s</b>"
-msgstr ""
+msgstr "<b>%s</b>"
 
 #: ../src/Widgets/ReleaseRow.vala:74
 msgid "Unknown version"
