@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-17 14:11+0000\n"
-"PO-Revision-Date: 2018-03-09 13:11+0000\n"
+"PO-Revision-Date: 2018-03-19 04:42+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/ja/>\n"
@@ -429,7 +429,7 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:591
 msgid "The balance or credit limit on the card has been reached."
-msgstr ""
+msgstr "カードの残高か与信限度額に達しました。"
 
 #: ../src/Dialogs/StripeDialog.vala:594
 msgid "The given card is a test card. Please use a real card to proceed."
