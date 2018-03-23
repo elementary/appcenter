@@ -2,62 +2,39 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-17 14:11+0000\n"
+"POT-Creation-Date: 2018-03-23 15:49-0700\n"
 "PO-Revision-Date: 2018-03-15 00:17+0000\n"
 "Last-Translator: Erazem Kokot <kokot.erazem@protonmail.com>\n"
-"Language-Team: Slovenian "
-"<https://weblate.elementary.io/projects/appcenter/appcenter/sl/>\n"
+"Language-Team: Slovenian <https://weblate.elementary.io/projects/appcenter/"
+"appcenter/sl/>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
-"n%100==4 ? 2 : 3;\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3;\n"
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
-#: ../src/Application.vala:39
+#: ../src/Application.vala:38
 msgid "AppCenter"
 msgstr "Center za programsko opremo"
 
-#: ../src/Application.vala:118
+#: ../src/Application.vala:124
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Povezave '%s' ni bilo mogoče najti, iščem"
 
-#: ../src/Application.vala:240
+#: ../src/Application.vala:258
 msgid "Application installed"
 msgstr "Aplikacija nameščena"
 
-#: ../src/Application.vala:241
+#: ../src/Application.vala:259
 msgid "%s has been successfully installed"
 msgstr "%s je bila uspešno nameščena"
 
-#: ../src/Application.vala:253
+#: ../src/Application.vala:271
 msgid "There Was An Error Installing %s."
 msgstr "Pri namestitvi %s je prišlo do napake."
-
-#: ../src/Application.vala:286
-msgid "Details"
-msgstr "Podrobnosti"
-
-#: ../src/Application.vala:290
-msgid "Failed to Fetch Updates"
-msgstr "Posodobitev ni bilo mogoče prenesti"
-
-#: ../src/Application.vala:291
-msgid ""
-"This may have been caused by external, manually added software repositories "
-"or a corrupted sources file."
-msgstr ""
-"Vzrok za napako so lahko zunanji repozitoriji ali napaka v datoteki z viri."
-
-#: ../src/Application.vala:298
-msgid "Ignore"
-msgstr "Ignoriraj"
-
-#: ../src/Application.vala:299
-msgid "Try Again"
-msgstr "Poskusi znova"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -215,7 +192,7 @@ msgstr "Posodobitve sistemskih komponent"
 msgid "%s (local)"
 msgstr "%s (lokalno)"
 
-#: ../src/Core/Client.vala:450
+#: ../src/Core/Client.vala:454
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Posodobitev je na voljo"
@@ -223,7 +200,7 @@ msgstr[1] "Posodobitvi sta na voljo"
 msgstr[2] "Posodobitve so na voljo"
 msgstr[3] "Posodobitve so na voljo"
 
-#: ../src/Core/Client.vala:451
+#: ../src/Core/Client.vala:455
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "%u posodobitev je na voljo za vaš sistem"
@@ -231,15 +208,15 @@ msgstr[1] "%u posodobitvi sta na voljo za vaš sistem"
 msgstr[2] "%u posodobitve so na voljo za vaš sistem"
 msgstr[3] "%u posodobitev je na voljo za vaš sistem"
 
-#: ../src/Core/Client.vala:480
+#: ../src/Core/Client.vala:483
 msgid "Version: %s"
 msgstr "Verzija: %s"
 
-#: ../src/Core/Client.vala:489
+#: ../src/Core/Client.vala:492
 msgid "No components with updates"
 msgstr "Nobena posodobitev ni bila najdena"
 
-#: ../src/Core/Client.vala:493
+#: ../src/Core/Client.vala:496
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "Najdena %u posodobitev"
@@ -247,7 +224,7 @@ msgstr[1] "Najdeni %u posodobitvi"
 msgstr[2] "Najdene %u posodobitve"
 msgstr[3] "Najdenih %u posodobitev"
 
-#: ../src/Core/Client.vala:495
+#: ../src/Core/Client.vala:498
 msgid "%s:"
 msgstr "%s:"
 
@@ -275,9 +252,9 @@ msgstr "To bo zaprlo vse odprte aplikacije ter ponovno zagnalo to napravo."
 msgid "Restart"
 msgstr "Ponovno zaženi"
 
-#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:181
-#: ../src/Dialogs/StripeDialog.vala:300
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:144
+#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:182
+#: ../src/Dialogs/StripeDialog.vala:299
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:145
 msgid "Cancel"
 msgstr "Prekliči"
 
@@ -317,16 +294,12 @@ msgstr ""
 "Na vaš e-poštni naslov bo poslano potrdilo. Naslov ne bo nikoli shranjen in "
 "dobivali ne boste nobene dodatne pošte."
 
-#: ../src/Dialogs/StripeDialog.vala:104
-msgid "Card Number"
-msgstr "Številka kartice"
-
 #. / TRANSLATORS: Don't change the order, only transliterate
-#: ../src/Dialogs/StripeDialog.vala:116
+#: ../src/Dialogs/StripeDialog.vala:112
 msgid "MM / YY"
 msgstr "MM / LL"
 
-#: ../src/Dialogs/StripeDialog.vala:136
+#: ../src/Dialogs/StripeDialog.vala:132
 msgid "CVC"
 msgstr "Varnostna koda (CVC)"
 
@@ -334,33 +307,33 @@ msgstr "Varnostna koda (CVC)"
 msgid "Privacy Policy"
 msgstr "Pravilnik o zasebnosti"
 
-#: ../src/Dialogs/StripeDialog.vala:183 ../src/Dialogs/StripeDialog.vala:299
+#: ../src/Dialogs/StripeDialog.vala:184 ../src/Dialogs/StripeDialog.vala:298
 msgid "Pay $%d.00"
 msgstr "Plačaj $%d.00"
 
-#: ../src/Dialogs/StripeDialog.vala:228
+#: ../src/Dialogs/StripeDialog.vala:227
 msgid "Processing"
 msgstr "Obdelujem"
 
-#: ../src/Dialogs/StripeDialog.vala:253
+#: ../src/Dialogs/StripeDialog.vala:252
 msgid "There Was a Problem Processing Your Payment"
 msgstr "Pri obdelovanju plačila je prišlo do napake"
 
-#: ../src/Dialogs/StripeDialog.vala:291
+#: ../src/Dialogs/StripeDialog.vala:290
 msgid "Pay Later"
 msgstr "Plačaj kasneje"
 
-#: ../src/Dialogs/StripeDialog.vala:292
+#: ../src/Dialogs/StripeDialog.vala:291
 msgid "Retry"
 msgstr "Poskusi znova"
 
-#: ../src/Dialogs/StripeDialog.vala:498 ../src/Dialogs/StripeDialog.vala:563
+#: ../src/Dialogs/StripeDialog.vala:497 ../src/Dialogs/StripeDialog.vala:562
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr ""
 "Številka kartice je napačna. Prosimo preverite če je bil vnos pravilen."
 
-#: ../src/Dialogs/StripeDialog.vala:500
+#: ../src/Dialogs/StripeDialog.vala:499
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
@@ -368,7 +341,7 @@ msgstr ""
 "Mesec poteka veljavnosti kartice je napačen. Prosimo vnesite datum z vaše "
 "kartice."
 
-#: ../src/Dialogs/StripeDialog.vala:502 ../src/Dialogs/StripeDialog.vala:560
+#: ../src/Dialogs/StripeDialog.vala:501 ../src/Dialogs/StripeDialog.vala:559
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
@@ -376,65 +349,65 @@ msgstr ""
 "Leto poteka veljavnosti kartice je napačno. Prosimo vnesite datum z vaše "
 "kartice."
 
-#: ../src/Dialogs/StripeDialog.vala:505 ../src/Dialogs/StripeDialog.vala:558
+#: ../src/Dialogs/StripeDialog.vala:504 ../src/Dialogs/StripeDialog.vala:557
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr ""
 "Varnostna koda (CVC) je napačna. Prosimo vnesite pravilno kodo z zadnje "
 "strani vaše kartice."
 
-#: ../src/Dialogs/StripeDialog.vala:507 ../src/Dialogs/StripeDialog.vala:549
+#: ../src/Dialogs/StripeDialog.vala:506 ../src/Dialogs/StripeDialog.vala:548
 msgid "The card has expired. Please try again with a different card."
 msgstr "Kartica je potekla. Prosimo poskusite z drugo kartico."
 
-#: ../src/Dialogs/StripeDialog.vala:527
+#: ../src/Dialogs/StripeDialog.vala:526
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr "Trenutno se obdeluje preveč plačil, prosimo poskusite kasneje."
 
-#: ../src/Dialogs/StripeDialog.vala:543
+#: ../src/Dialogs/StripeDialog.vala:542
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
 msgstr ""
 "Ta kartica ne podpira teh tranzakcij. Prosimo poskusite z drugo kartico."
 
-#: ../src/Dialogs/StripeDialog.vala:545
+#: ../src/Dialogs/StripeDialog.vala:544
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
 msgstr "Valuta ni podprta na tej kartici. Prosimo poskusite z drugo kartico."
 
-#: ../src/Dialogs/StripeDialog.vala:547
+#: ../src/Dialogs/StripeDialog.vala:546
 msgid "The transaction has already been processed."
 msgstr "Tranzakcija je bila že obdelana."
 
-#: ../src/Dialogs/StripeDialog.vala:551
+#: ../src/Dialogs/StripeDialog.vala:550
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "postal code."
 msgstr "Poštna številka je napačna. Prosimo vnesite pravo poštno številko."
 
-#: ../src/Dialogs/StripeDialog.vala:553
+#: ../src/Dialogs/StripeDialog.vala:552
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "Na računu nimate dovolj sredstev. Prosimo poskusite z drugo kartico."
 
-#: ../src/Dialogs/StripeDialog.vala:555
+#: ../src/Dialogs/StripeDialog.vala:554
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "Vrednost tranzakcije je napačna. Prosimo vnesite veljavno vrednost."
 
-#: ../src/Dialogs/StripeDialog.vala:566
+#: ../src/Dialogs/StripeDialog.vala:565
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr ""
 "Varnostna koda (CVC) je napačna. Prosimo vnesite pravilno kodo z zadnje "
 "strani vaše kartice."
 
-#: ../src/Dialogs/StripeDialog.vala:568
+#: ../src/Dialogs/StripeDialog.vala:567
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
 msgstr ""
 "Na tej kartici ste prevečkrat vnesli napačen PIN. Prosimo poskusite z drugo "
 "kartico."
 
-#: ../src/Dialogs/StripeDialog.vala:588
+#: ../src/Dialogs/StripeDialog.vala:587
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
@@ -442,84 +415,108 @@ msgstr ""
 "Ni bilo mogoče obdelati tranzakcije. Prosimo kontaktirajte vašo banko za več "
 "informacij."
 
-#: ../src/Dialogs/StripeDialog.vala:591
+#: ../src/Dialogs/StripeDialog.vala:590
 msgid "The balance or credit limit on the card has been reached."
 msgstr "Limit na kartici je bil presežen."
 
-#: ../src/Dialogs/StripeDialog.vala:594
+#: ../src/Dialogs/StripeDialog.vala:593
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "To je testna kartica. Uporabite pravo kartico za plačilo."
 
-#: ../src/MainWindow.vala:141 ../src/Views/Homepage.vala:253
+#: ../src/Dialogs/UpdateFailDialog.vala:24
+msgid "Failed to Fetch Updates"
+msgstr "Posodobitev ni bilo mogoče prenesti"
+
+#: ../src/Dialogs/UpdateFailDialog.vala:25
+msgid ""
+"This may have been caused by external, manually added software repositories "
+"or a corrupted sources file."
+msgstr ""
+"Vzrok za napako so lahko zunanji repozitoriji ali napaka v datoteki z viri."
+
+#: ../src/Dialogs/UpdateFailDialog.vala:45
+msgid "Details"
+msgstr "Podrobnosti"
+
+#: ../src/Dialogs/UpdateFailDialog.vala:53
+msgid "Ignore"
+msgstr "Ignoriraj"
+
+#: ../src/Dialogs/UpdateFailDialog.vala:54
+msgid "Try Again"
+msgstr "Poskusi znova"
+
+#: ../src/MainWindow.vala:144 ../src/Views/Homepage.vala:253
 #: ../src/Views/Homepage.vala:262 ../src/Views/Homepage.vala:267
 #: ../src/Views/Homepage.vala:278
 msgid "Home"
 msgstr "Domača stran"
 
-#: ../src/MainWindow.vala:142 ../src/Views/InstalledView.vala:29
+#: ../src/MainWindow.vala:145 ../src/Views/InstalledView.vala:29
 #: ../src/Views/InstalledView.vala:49
+#, fuzzy
 msgctxt "view"
-msgid "Updates"
-msgstr "Posodobitve"
+msgid "Installed"
+msgstr "Namesti"
 
-#: ../src/MainWindow.vala:158 ../src/MainWindow.vala:290
+#: ../src/MainWindow.vala:172 ../src/MainWindow.vala:313
 #: ../src/Views/SearchView.vala:54 ../src/Views/SearchView.vala:75
 msgid "Search Apps"
 msgstr "Iskanje programov"
 
-#: ../src/MainWindow.vala:176
+#: ../src/MainWindow.vala:190
 msgid "Network Is Not Available"
 msgstr "Omrežje ni na voljo"
 
-#: ../src/MainWindow.vala:177
+#: ../src/MainWindow.vala:191
 msgid "Connect to the Internet to install or update apps."
 msgstr "Povežite se na internet za namestitev in posodobitev aplikacij."
 
-#: ../src/MainWindow.vala:180
+#: ../src/MainWindow.vala:194
 msgid "Network Settings…"
 msgstr "Omrežne nastavitve…"
 
-#: ../src/Views/AppInfoView.vala:74
+#: ../src/Views/AppInfoView.vala:76
 msgid "Screenshot Not Available"
 msgstr "Posnetek zaslona ni na voljo"
 
-#: ../src/Views/AppInfoView.vala:128
+#: ../src/Views/AppInfoView.vala:130
 msgid "Homepage"
 msgstr "Domača stran"
 
-#: ../src/Views/AppInfoView.vala:134
+#: ../src/Views/AppInfoView.vala:136
 msgid "Suggest Translations"
 msgstr "Predlagaj prevode"
 
-#: ../src/Views/AppInfoView.vala:140
+#: ../src/Views/AppInfoView.vala:142
 msgid "Report a Problem"
 msgstr "Prijavi težavo"
 
-#: ../src/Views/AppInfoView.vala:146
+#: ../src/Views/AppInfoView.vala:148
 msgid "Help"
 msgstr "Pomoč"
 
-#: ../src/Views/AppInfoView.vala:168
+#: ../src/Views/AppInfoView.vala:170
 msgid "What's New:"
 msgstr "Kaj je novega:"
 
-#: ../src/Views/AppInfoView.vala:187
+#: ../src/Views/AppInfoView.vala:189
 msgid "Extensions:"
 msgstr "Razširitve:"
 
-#: ../src/Views/AppInfoView.vala:266
+#: ../src/Views/AppInfoView.vala:282
 msgid "Other Apps by %s"
 msgstr "Druge aplikacije od %s"
 
-#: ../src/Views/AppInfoView.vala:300
+#: ../src/Views/AppInfoView.vala:316
 msgid "Link copied to clipboard"
 msgstr "Povezava je bila skopirana na odložišče"
 
-#: ../src/Views/AppInfoView.vala:311
+#: ../src/Views/AppInfoView.vala:327
 msgid "Check out %s on AppCenter:"
 msgstr "Poiščite %s v centru za aplikacije:"
 
-#: ../src/Views/AppInfoView.vala:318
+#: ../src/Views/AppInfoView.vala:334
 msgid "Share"
 msgstr "Deli"
 
@@ -570,20 +567,20 @@ msgstr "Ni rezultatov"
 msgid "No apps could be found. Try changing search terms."
 msgstr "Noben program ni bil najden. Poiskusite z drugim iskalnim nizom."
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:123
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:124
 msgid "Uninstall"
 msgstr "Odstrani"
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:126
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:127
 msgid "Open"
 msgstr "Odpri"
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:207
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:208
 #: ../src/Widgets/HumbleButton.vala:82
 msgid "Free"
 msgstr "Brezplačno"
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:231
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:232
 msgid "Update"
 msgstr "Posodobi"
 
@@ -594,6 +591,10 @@ msgstr "Odprta trgovina, kjer plačate kolikor želite"
 #: ../src/Widgets/Banner.vala:68
 msgid "Get the apps that you need at a price you can afford."
 msgstr "Prenesite aplikacije po privoščljivih cenah."
+
+#: ../src/Widgets/CardNumberEntry.vala:41
+msgid "Card Number"
+msgstr "Številka kartice"
 
 #: ../src/Widgets/CategoryFlowBox.vala:29
 msgid "Audio"
@@ -657,10 +658,6 @@ msgstr "$%d"
 msgid "<b>%s</b> – %s"
 msgstr "<b>%s</b> - %s"
 
-#: ../src/Widgets/ReleaseRow.vala:72
-msgid "<b>%s</b>"
-msgstr "<b>%s</b>"
-
 #: ../src/Widgets/ReleaseRow.vala:74
 msgid "Unknown version"
 msgstr "Neznana različica"
@@ -721,6 +718,13 @@ msgstr "Posodobljeno"
 msgid "Drivers"
 msgstr "Gonilniki"
 
+#~ msgctxt "view"
+#~ msgid "Updates"
+#~ msgstr "Posodobitve"
+
+#~ msgid "<b>%s</b>"
+#~ msgstr "<b>%s</b>"
+
 #~ msgid "Close"
 #~ msgstr "Zapri"
 
@@ -740,9 +744,6 @@ msgstr "Gonilniki"
 
 #~ msgid "by %s"
 #~ msgstr "od %s"
-
-#~ msgid "Install"
-#~ msgstr "Namesti"
 
 #~ msgid "Best Rated"
 #~ msgstr "Najboljše ocenjene"
