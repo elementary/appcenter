@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-17 14:11+0000\n"
-"PO-Revision-Date: 2018-02-09 00:08+0000\n"
-"Last-Translator: scootergrisen <scootergrisen@gmail.com>\n"
-"Language-Team: Danish <https://weblate.elementary.io/projects/appcenter/"
-"appcenter/da/>\n"
+"PO-Revision-Date: 2018-03-23 00:04+0000\n"
+"Last-Translator: Kaj Printz Madsen <kajprintz@gmail.com>\n"
+"Language-Team: Danish "
+"<https://weblate.elementary.io/projects/appcenter/appcenter/da/>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,41 +21,43 @@ msgstr "Programcenter"
 
 #: ../src/Application.vala:118
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr ""
+msgstr "Det angivne link '%s' kunne ikke findes, søger i stedet for"
 
 #: ../src/Application.vala:240
 msgid "Application installed"
-msgstr ""
+msgstr "Applikationen er installeret"
 
 #: ../src/Application.vala:241
 msgid "%s has been successfully installed"
-msgstr ""
+msgstr "%s blev succesfuldt installeret"
 
 #: ../src/Application.vala:253
 msgid "There Was An Error Installing %s."
-msgstr ""
+msgstr "Der Opstod Én Fejl ved Installation af %s."
 
 #: ../src/Application.vala:286
 msgid "Details"
-msgstr ""
+msgstr "Detaljer"
 
 #: ../src/Application.vala:290
 msgid "Failed to Fetch Updates"
-msgstr ""
+msgstr "Kunne Ikke Hente Opdateringer"
 
 #: ../src/Application.vala:291
 msgid ""
 "This may have been caused by external, manually added software repositories "
 "or a corrupted sources file."
 msgstr ""
+"Dette kan have været forårsaget af eksterne manuelt tilføjede software "
+"repositories eller en beskadiget kilde fil."
 
 #: ../src/Application.vala:298
 msgid "Ignore"
-msgstr ""
+msgstr "Ignorér"
 
 #: ../src/Application.vala:299
 msgid "Try Again"
-msgstr ""
+msgstr "Prøv Igen"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -63,11 +65,11 @@ msgstr "Starter"
 
 #: ../src/Core/ChangeInformation.vala:56
 msgid "Waiting"
-msgstr ""
+msgstr "Venter"
 
 #: ../src/Core/ChangeInformation.vala:58
 msgid "Running"
-msgstr ""
+msgstr "Kører"
 
 #: ../src/Core/ChangeInformation.vala:60
 msgid "Querying"
@@ -83,7 +85,7 @@ msgstr "Fjerner pakker"
 
 #: ../src/Core/ChangeInformation.vala:66
 msgid "Downloading"
-msgstr ""
+msgstr "Henter"
 
 #: ../src/Core/ChangeInformation.vala:68
 msgid "Installing"
@@ -203,7 +205,7 @@ msgstr "Ukendt tilstand"
 
 #: ../src/Core/Client.vala:105
 msgid "Operating System Updates"
-msgstr ""
+msgstr "Operativsystemopdateringer"
 
 #: ../src/Core/Client.vala:106
 msgid "Updates to system components"
@@ -211,7 +213,7 @@ msgstr "opdateringer til systemkomponenter"
 
 #: ../src/Core/Client.vala:141
 msgid "%s (local)"
-msgstr ""
+msgstr "%s (lokalt)"
 
 #: ../src/Core/Client.vala:450
 msgid "Update Available"
@@ -227,57 +229,59 @@ msgstr[1] "%u opdateringer tilgængelige til dit system"
 
 #: ../src/Core/Client.vala:480
 msgid "Version: %s"
-msgstr ""
+msgstr "Version: %s"
 
 #: ../src/Core/Client.vala:489
 msgid "No components with updates"
-msgstr ""
+msgstr "Ingen komponenter med updateringer"
 
 #: ../src/Core/Client.vala:493
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u komponent med updateringer"
+msgstr[1] "%u komponenter med updateringer"
 
 #: ../src/Core/Client.vala:495
 msgid "%s:"
-msgstr ""
+msgstr "%s:"
 
 #: ../src/Core/Package.vala:186
 msgid "The %s Developers"
-msgstr ""
+msgstr "%s Udviklerne"
 
 #: ../src/Core/UpdateManager.vala:81
 msgid "Restart Required"
-msgstr ""
+msgstr "Genstart Nødvendigt"
 
 #: ../src/Core/UpdateManager.vala:82
 msgid "Please restart your system to finalize updates"
-msgstr ""
+msgstr "Genstart venligst dit system for at færdiggøre opdateringer"
 
 #: ../src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
-msgstr ""
+msgstr "Er du sikker på, at du vil genstarte?"
 
 #: ../src/Dialogs/RestartDialog.vala:41
 msgid "This will close all open applications and restart this device."
-msgstr ""
+msgstr "Dette lukker alle applikationer og genstarter denne enhed."
 
 #: ../src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
-msgstr ""
+msgstr "Genstart"
 
 #: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:181
 #: ../src/Dialogs/StripeDialog.vala:300
 #: ../src/Widgets/AppContainers/AbstractAppContainer.vala:144
 msgid "Cancel"
-msgstr ""
+msgstr "Annullér"
 
 #: ../src/Dialogs/StripeDialog.vala:41
 msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
+"Der opstod en fejl under behandlingen af kortet. Prøv igen senere. Vi "
+"beklager ulejligheden."
 
 #: ../src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
@@ -285,17 +289,19 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:78
 msgid "Pay $%d for %s"
-msgstr ""
+msgstr "Betal $%d for %s"
 
 #: ../src/Dialogs/StripeDialog.vala:82
 msgid ""
 "This is a one time payment. Your email address is only used to send you a "
 "receipt."
 msgstr ""
+"Dette er en engangsbetaling. Din email adresse bruges kun til at sende dig "
+"en kvittering."
 
 #: ../src/Dialogs/StripeDialog.vala:91 ../src/Widgets/SharePopover.vala:35
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: ../src/Dialogs/StripeDialog.vala:93
 msgid ""
@@ -305,122 +311,134 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:104
 msgid "Card Number"
-msgstr ""
+msgstr "Kort Nummer"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: ../src/Dialogs/StripeDialog.vala:116
 msgid "MM / YY"
-msgstr ""
+msgstr "MM / YY"
 
 #: ../src/Dialogs/StripeDialog.vala:136
 msgid "CVC"
-msgstr ""
+msgstr "CVC"
 
 #: ../src/Dialogs/StripeDialog.vala:173
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Fortrolighedspolitik"
 
 #: ../src/Dialogs/StripeDialog.vala:183 ../src/Dialogs/StripeDialog.vala:299
 msgid "Pay $%d.00"
-msgstr ""
+msgstr "Betal $%d.00"
 
 #: ../src/Dialogs/StripeDialog.vala:228
 msgid "Processing"
-msgstr ""
+msgstr "Behandler"
 
 #: ../src/Dialogs/StripeDialog.vala:253
 msgid "There Was a Problem Processing Your Payment"
-msgstr ""
+msgstr "Der Opstod et Problem under Behandlingen af Din Betaling"
 
 #: ../src/Dialogs/StripeDialog.vala:291
 msgid "Pay Later"
-msgstr ""
+msgstr "Betal Senere"
 
 #: ../src/Dialogs/StripeDialog.vala:292
 msgid "Retry"
-msgstr ""
+msgstr "Prøv Igen"
 
 #: ../src/Dialogs/StripeDialog.vala:498 ../src/Dialogs/StripeDialog.vala:563
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr ""
+"Kortnummeret er forkert. Prøv venligst igen med det korrekte kortnummer."
 
 #: ../src/Dialogs/StripeDialog.vala:500
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"Udløbsmåneden er ugyldig. Prøv venligst igen med den korrekte udløbsdato."
 
 #: ../src/Dialogs/StripeDialog.vala:502 ../src/Dialogs/StripeDialog.vala:560
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
-msgstr ""
+msgstr "Udløbsåret er ugyldigt. Prøv igen med den korrekte udløbsdato."
 
 #: ../src/Dialogs/StripeDialog.vala:505 ../src/Dialogs/StripeDialog.vala:558
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr ""
+msgstr "CVC-nummeret er forkert. Prøv venligst igen med den korrekte CVC."
 
 #: ../src/Dialogs/StripeDialog.vala:507 ../src/Dialogs/StripeDialog.vala:549
 msgid "The card has expired. Please try again with a different card."
-msgstr ""
+msgstr "Kortet er udløbet. Prøv venligst igen med et andet kort."
 
 #: ../src/Dialogs/StripeDialog.vala:527
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr ""
+"Der er for mange betalingsanmodninger i øjeblikket, prøv venligst igen "
+"senere."
 
 #: ../src/Dialogs/StripeDialog.vala:543
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
 msgstr ""
+"Dette kort understøtter ikke denne form for transaktion. Prøv venligst igen "
+"med et andet kort."
 
 #: ../src/Dialogs/StripeDialog.vala:545
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
 msgstr ""
+"Valutaen understøttes ikke af dette kort. Prøv venligst igen med et andet "
+"kort."
 
 #: ../src/Dialogs/StripeDialog.vala:547
 msgid "The transaction has already been processed."
-msgstr ""
+msgstr "Transaktionen er allerede blevet behandlet."
 
 #: ../src/Dialogs/StripeDialog.vala:551
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "postal code."
-msgstr ""
+msgstr "Postnummeret er forkert. Prøv venligst igen med det rigtige postnummer."
 
 #: ../src/Dialogs/StripeDialog.vala:553
 msgid "You don't have enough funds. Please use an alternative payment method."
-msgstr ""
+msgstr "Du har ikke nok penge. Brug venligst en alternativ betalingsmetode."
 
 #: ../src/Dialogs/StripeDialog.vala:555
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr ""
+msgstr "Beløbet er forkert. Prøv venligst igen med et gyldigt beløb."
 
 #: ../src/Dialogs/StripeDialog.vala:566
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr ""
+msgstr "PIN-koden er forkert. Prøv venligst igen med den korrekte PIN-kode."
 
 #: ../src/Dialogs/StripeDialog.vala:568
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
-msgstr ""
+msgstr "Der har været for mange PIN-forsøg. Prøv igen med et andet kort."
 
 #: ../src/Dialogs/StripeDialog.vala:588
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
 msgstr ""
+"Kan ikke gennemføre transaktionen. Kontakt din bank for yderligere "
+"information."
 
 #: ../src/Dialogs/StripeDialog.vala:591
 msgid "The balance or credit limit on the card has been reached."
-msgstr ""
+msgstr "Balancen eller kreditgrænsen på kortet er nået."
 
 #: ../src/Dialogs/StripeDialog.vala:594
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
+"Det givne kort er et testkort. Brug venligst et gyldigt kort for at "
+"fortsætte."
 
 #: ../src/MainWindow.vala:141 ../src/Views/Homepage.vala:253
 #: ../src/Views/Homepage.vala:262 ../src/Views/Homepage.vala:267
@@ -457,7 +475,6 @@ msgid "Screenshot Not Available"
 msgstr ""
 
 #: ../src/Views/AppInfoView.vala:128
-#, fuzzy
 msgid "Homepage"
 msgstr "Startside"
 
@@ -636,9 +653,8 @@ msgid "<b>%s</b>"
 msgstr ""
 
 #: ../src/Widgets/ReleaseRow.vala:74
-#, fuzzy
 msgid "Unknown version"
-msgstr "Ukendt tilstand"
+msgstr "Ukendt version"
 
 #: ../src/Widgets/ReleaseRow.vala:90 ../src/Widgets/ReleaseRow.vala:93
 msgid "No description available"
