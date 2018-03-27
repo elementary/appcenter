@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2018-03-19 04:42+0000\n"
+"PO-Revision-Date: 2018-03-20 00:14+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://weblate.elementary.io/projects/appcenter/extra/ja/>\n"
@@ -65,7 +65,7 @@ msgid "Fix Steam installation"
 msgstr "Steam のインストールを修正"
 
 msgid "Make search asynchronous"
-msgstr "検索を非同期にする"
+msgstr "検索を非同期に"
 
 #, fuzzy
 #~ msgid "App Center"
