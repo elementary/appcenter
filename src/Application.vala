@@ -28,7 +28,6 @@ public class AppCenter.App : Granite.Application {
     };
 
     private const int SECONDS_AFTER_NETWORK_UP = 60;
-    private const int TRY_AGAIN_RESPONSE_ID = 1;
 
     public static bool show_updates;
     public static bool silent;
@@ -40,9 +39,13 @@ public class AppCenter.App : Granite.Application {
 
     [CCode (array_length = false, array_null_terminated = true)]
     public static string[]? fake_update_packages = null;
+    private Granite.MessageDialog? update_fail_dialog = null;
     private MainWindow? main_window;
 
     private uint registration_id = 0;
+
+    private SearchProvider search_provider;
+    private uint search_provider_id = 0;
 
     construct {
         application_id = Build.PROJECT_NAME;
@@ -92,6 +95,8 @@ public class AppCenter.App : Granite.Application {
         add_action (quit_action);
         add_action (show_updates_action);
         add_accelerator ("<Control>q", "app.quit", null);
+
+        search_provider = new SearchProvider ();
     }
 
     public override void open (File[] files, string hint) {
@@ -192,6 +197,12 @@ public class AppCenter.App : Granite.Application {
             } catch (Error e) {
                 warning (e.message);
             }
+
+            try {
+                search_provider_id = connection.register_object ("/io/elementary/appcenter/SearchProvider", search_provider);
+            } catch (Error e) {
+                warning (e.message);
+            }
         }
 
         return true;
@@ -200,6 +211,12 @@ public class AppCenter.App : Granite.Application {
     public override void dbus_unregister (DBusConnection connection, string object_path) {
         if (registration_id != 0) {
             connection.unregister_object (registration_id);
+            registration_id = 0;
+        }
+
+        if (search_provider_id != 0) {
+            connection.unregister_object (search_provider_id);
+            search_provider_id = 0;
         }
 
         base.dbus_unregister (connection, object_path);
@@ -277,39 +294,16 @@ public class AppCenter.App : Granite.Application {
             return;
         }
 
-        var details_view = new Gtk.TextView ();
-        details_view.buffer.text = format_error_message (error.message);
-        details_view.editable = false;
-        details_view.pixels_below_lines = 3;
-        details_view.wrap_mode = Gtk.WrapMode.WORD;
-        details_view.get_style_context ().add_class ("terminal");
+        if (update_fail_dialog == null) {
+            update_fail_dialog = new UpdateFailDialog (format_error_message (error.message));
+            update_fail_dialog.transient_for = main_window;
 
-        var scroll_box = new Gtk.ScrolledWindow (null, null);
-        scroll_box.margin_top = 12;
-        scroll_box.min_content_height = 70;
-        scroll_box.add (details_view);
-
-        var expander = new Gtk.Expander (_("Details"));
-        expander.add (scroll_box);
-
-        var dialog = new Granite.MessageDialog.with_image_from_icon_name (
-            _("Failed to Fetch Updates"),
-            _("This may have been caused by external, manually added software repositories or a corrupted sources file."),
-            "dialog-error",
-            Gtk.ButtonsType.NONE
-        );
-
-        dialog.transient_for = main_window;
-        dialog.custom_bin.add (expander);
-        dialog.add_button (_("Ignore"), Gtk.ResponseType.CLOSE);
-        dialog.add_button (_("Try Again"), TRY_AGAIN_RESPONSE_ID);
-        dialog.show_all ();
-        
-        if (dialog.run () == TRY_AGAIN_RESPONSE_ID) {
-            AppCenterCore.Client.get_default ().update_cache.begin (true);
+            update_fail_dialog.destroy.connect (() => {
+                update_fail_dialog = null;
+            });
         }
 
-        dialog.destroy ();
+        update_fail_dialog.present ();
     }
 
     private static string format_error_message (string message) {

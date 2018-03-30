@@ -2,11 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-17 14:11+0000\n"
+"POT-Creation-Date: 2018-03-23 15:49-0700\n"
 "PO-Revision-Date: 2018-03-03 13:54+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
-"Language-Team: Korean "
-"<https://weblate.elementary.io/projects/appcenter/appcenter/ko/>\n"
+"Language-Team: Korean <https://weblate.elementary.io/projects/appcenter/"
+"appcenter/ko/>\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,49 +15,25 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
-#: ../src/Application.vala:39
+#: ../src/Application.vala:38
 msgid "AppCenter"
 msgstr "앱센터"
 
-#: ../src/Application.vala:118
+#: ../src/Application.vala:124
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "'%s' 를 찾을 수 없네요, 검색으로 대신하겠습니다"
 
-#: ../src/Application.vala:240
+#: ../src/Application.vala:258
 msgid "Application installed"
 msgstr "설치한 애플리케이션"
 
-#: ../src/Application.vala:241
+#: ../src/Application.vala:259
 msgid "%s has been successfully installed"
 msgstr "%s의 설치를 마쳤습니다"
 
-#: ../src/Application.vala:253
+#: ../src/Application.vala:271
 msgid "There Was An Error Installing %s."
 msgstr "%s의 설치 도중에 오류가 생겼습니다."
-
-#: ../src/Application.vala:286
-msgid "Details"
-msgstr "세부 정보"
-
-#: ../src/Application.vala:290
-msgid "Failed to Fetch Updates"
-msgstr "업데이트할 내용을 불러오지 못했습니다"
-
-#: ../src/Application.vala:291
-msgid ""
-"This may have been caused by external, manually added software repositories "
-"or a corrupted sources file."
-msgstr ""
-"아마도 기본 시스템 이외의 외적인 요인이나, 수동으로 지정한 저장소 또는 망가"
-"진 소스 파일 때문으로 보입니다."
-
-#: ../src/Application.vala:298
-msgid "Ignore"
-msgstr "그냥 넘깁니다"
-
-#: ../src/Application.vala:299
-msgid "Try Again"
-msgstr "다시 시도합니다"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -215,30 +191,30 @@ msgstr "시스템 구성 요소를 업데이트합니다"
 msgid "%s (local)"
 msgstr "%s (로컬)"
 
-#: ../src/Core/Client.vala:450
+#: ../src/Core/Client.vala:454
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "업데이트할 항목 있음"
 
-#: ../src/Core/Client.vala:451
+#: ../src/Core/Client.vala:455
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "시스템에 %u개의 업데이트할 항목이 있습니다"
 
-#: ../src/Core/Client.vala:480
+#: ../src/Core/Client.vala:483
 msgid "Version: %s"
 msgstr "버전: %s"
 
-#: ../src/Core/Client.vala:489
+#: ../src/Core/Client.vala:492
 msgid "No components with updates"
 msgstr "업데이트할 항목이 없습니다"
 
-#: ../src/Core/Client.vala:493
+#: ../src/Core/Client.vala:496
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "%u개의 업데이트할 항목이 있습니다"
 
-#: ../src/Core/Client.vala:495
+#: ../src/Core/Client.vala:498
 msgid "%s:"
 msgstr "%s:"
 
@@ -266,9 +242,9 @@ msgstr "모든 애플리케이션을 닫고 컴퓨터를 다시 시작하게 됩
 msgid "Restart"
 msgstr "다시 시작"
 
-#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:181
-#: ../src/Dialogs/StripeDialog.vala:300
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:144
+#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:182
+#: ../src/Dialogs/StripeDialog.vala:299
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:145
 msgid "Cancel"
 msgstr "취소"
 
@@ -308,16 +284,12 @@ msgstr ""
 "이메일 주소는 영수증을 보내는 데 사용됩니다. 저장되지 않으며 메일링 리스트에 "
 "가입되지 않습니다."
 
-#: ../src/Dialogs/StripeDialog.vala:104
-msgid "Card Number"
-msgstr "카드 번호"
-
 #. / TRANSLATORS: Don't change the order, only transliterate
-#: ../src/Dialogs/StripeDialog.vala:116
+#: ../src/Dialogs/StripeDialog.vala:112
 msgid "MM / YY"
 msgstr "MM / YY"
 
-#: ../src/Dialogs/StripeDialog.vala:136
+#: ../src/Dialogs/StripeDialog.vala:132
 msgid "CVC"
 msgstr "CVC"
 
@@ -325,59 +297,59 @@ msgstr "CVC"
 msgid "Privacy Policy"
 msgstr "개인 정보 보호 정책"
 
-#: ../src/Dialogs/StripeDialog.vala:183 ../src/Dialogs/StripeDialog.vala:299
+#: ../src/Dialogs/StripeDialog.vala:184 ../src/Dialogs/StripeDialog.vala:298
 msgid "Pay $%d.00"
 msgstr "$%d.00 지불"
 
-#: ../src/Dialogs/StripeDialog.vala:228
+#: ../src/Dialogs/StripeDialog.vala:227
 msgid "Processing"
 msgstr "처리하고 있습니다"
 
-#: ../src/Dialogs/StripeDialog.vala:253
+#: ../src/Dialogs/StripeDialog.vala:252
 msgid "There Was a Problem Processing Your Payment"
 msgstr "결제 처리 과정에서 문제가 있었습니다"
 
-#: ../src/Dialogs/StripeDialog.vala:291
+#: ../src/Dialogs/StripeDialog.vala:290
 msgid "Pay Later"
 msgstr "나중에 지불하겠습니다"
 
-#: ../src/Dialogs/StripeDialog.vala:292
+#: ../src/Dialogs/StripeDialog.vala:291
 msgid "Retry"
 msgstr "다시 시도"
 
-#: ../src/Dialogs/StripeDialog.vala:498 ../src/Dialogs/StripeDialog.vala:563
+#: ../src/Dialogs/StripeDialog.vala:497 ../src/Dialogs/StripeDialog.vala:562
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr "카드 번호가 맞지 않습니다. 올바른 카드 번호로 다시 시도해 주세요."
 
-#: ../src/Dialogs/StripeDialog.vala:500
+#: ../src/Dialogs/StripeDialog.vala:499
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
 "유효기간 중 월(MM)이  맞지 않습니다. 올바른 유효 기간으로 다시 시도해 주세요."
 
-#: ../src/Dialogs/StripeDialog.vala:502 ../src/Dialogs/StripeDialog.vala:560
+#: ../src/Dialogs/StripeDialog.vala:501 ../src/Dialogs/StripeDialog.vala:559
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
 "유효기간 중 년(YY)이  맞지 않습니다. 올바른 유효 기간으로 다시 시도해 주세요."
 
-#: ../src/Dialogs/StripeDialog.vala:505 ../src/Dialogs/StripeDialog.vala:558
+#: ../src/Dialogs/StripeDialog.vala:504 ../src/Dialogs/StripeDialog.vala:557
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr "CVC번호가  맞지 않습니다. 올바른 CVC 번호로 다시 시도해 주세요."
 
-#: ../src/Dialogs/StripeDialog.vala:507 ../src/Dialogs/StripeDialog.vala:549
+#: ../src/Dialogs/StripeDialog.vala:506 ../src/Dialogs/StripeDialog.vala:548
 msgid "The card has expired. Please try again with a different card."
 msgstr "카드의 유효기간이 지났습니다. 다른 카드로 다시 시도해 주세요."
 
-#: ../src/Dialogs/StripeDialog.vala:527
+#: ../src/Dialogs/StripeDialog.vala:526
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr ""
 "지금 결제 요청이 너무 많아 결제가 어렵습니다, 다음에 다시 시도해 주세요."
 
-#: ../src/Dialogs/StripeDialog.vala:543
+#: ../src/Dialogs/StripeDialog.vala:542
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
@@ -385,41 +357,41 @@ msgstr ""
 "이 카드는 이런 방식의 거래를 지원하지 않습니다. 다른 카드로 다시 시도해 주세"
 "요."
 
-#: ../src/Dialogs/StripeDialog.vala:545
+#: ../src/Dialogs/StripeDialog.vala:544
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
 msgstr ""
 "이 카드에서 지원하지 않는 통용화폐입니다. 다른 카드로 다시 시도해 주세요."
 
-#: ../src/Dialogs/StripeDialog.vala:547
+#: ../src/Dialogs/StripeDialog.vala:546
 msgid "The transaction has already been processed."
 msgstr "이미 거래가 진행 중입니다."
 
-#: ../src/Dialogs/StripeDialog.vala:551
+#: ../src/Dialogs/StripeDialog.vala:550
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "postal code."
 msgstr "우편번호가 맞지 않습니다. 다른 우편번호를 이용해서 다시 시도해 주세요."
 
-#: ../src/Dialogs/StripeDialog.vala:553
+#: ../src/Dialogs/StripeDialog.vala:552
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "잔고가 부족합니다. 다른 지불 방식을 이용해 주세요."
 
-#: ../src/Dialogs/StripeDialog.vala:555
+#: ../src/Dialogs/StripeDialog.vala:554
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "수량이 틀렸습니다. 올바른 수량으로 다시 시도해 주세요."
 
-#: ../src/Dialogs/StripeDialog.vala:566
+#: ../src/Dialogs/StripeDialog.vala:565
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "PIN 번호가  맞지 않습니다. 올바른 PIN 번호로 다시 시도해 주세요."
 
-#: ../src/Dialogs/StripeDialog.vala:568
+#: ../src/Dialogs/StripeDialog.vala:567
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
 msgstr "PIN 번호 입력 시도를 초과했습니다. 다른 카드로 시도해 주세요."
 
-#: ../src/Dialogs/StripeDialog.vala:588
+#: ../src/Dialogs/StripeDialog.vala:587
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
@@ -427,86 +399,110 @@ msgstr ""
 "거래를 마무리할 수 없습니다. 자세한 내용은 은행에 연락해서 알아보시기 바랍니"
 "다."
 
-#: ../src/Dialogs/StripeDialog.vala:591
+#: ../src/Dialogs/StripeDialog.vala:590
 msgid "The balance or credit limit on the card has been reached."
 msgstr "신용 한도 또는 신용 카드 한도에 다다랐습니다."
 
-#: ../src/Dialogs/StripeDialog.vala:594
+#: ../src/Dialogs/StripeDialog.vala:593
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
 "지금 사용하신 카드는 테스트용 카드입니다. 실제 거래 가능한 카드로 다시 시도해"
 "주세요."
 
-#: ../src/MainWindow.vala:141 ../src/Views/Homepage.vala:253
+#: ../src/Dialogs/UpdateFailDialog.vala:24
+msgid "Failed to Fetch Updates"
+msgstr "업데이트할 내용을 불러오지 못했습니다"
+
+#: ../src/Dialogs/UpdateFailDialog.vala:25
+msgid ""
+"This may have been caused by external, manually added software repositories "
+"or a corrupted sources file."
+msgstr ""
+"아마도 기본 시스템 이외의 외적인 요인이나, 수동으로 지정한 저장소 또는 망가"
+"진 소스 파일 때문으로 보입니다."
+
+#: ../src/Dialogs/UpdateFailDialog.vala:45
+msgid "Details"
+msgstr "세부 정보"
+
+#: ../src/Dialogs/UpdateFailDialog.vala:53
+msgid "Ignore"
+msgstr "그냥 넘깁니다"
+
+#: ../src/Dialogs/UpdateFailDialog.vala:54
+msgid "Try Again"
+msgstr "다시 시도합니다"
+
+#: ../src/MainWindow.vala:144 ../src/Views/Homepage.vala:253
 #: ../src/Views/Homepage.vala:262 ../src/Views/Homepage.vala:267
 #: ../src/Views/Homepage.vala:278
 msgid "Home"
 msgstr "홈"
 
-#: ../src/MainWindow.vala:142 ../src/Views/InstalledView.vala:29
+#: ../src/MainWindow.vala:145 ../src/Views/InstalledView.vala:29
 #: ../src/Views/InstalledView.vala:49
 msgctxt "view"
-msgid "Updates"
-msgstr "업데이트"
+msgid "Installed"
+msgstr "설치됨"
 
-#: ../src/MainWindow.vala:158 ../src/MainWindow.vala:290
+#: ../src/MainWindow.vala:172 ../src/MainWindow.vala:313
 #: ../src/Views/SearchView.vala:54 ../src/Views/SearchView.vala:75
 msgid "Search Apps"
 msgstr "앱 검색"
 
-#: ../src/MainWindow.vala:176
+#: ../src/MainWindow.vala:190
 msgid "Network Is Not Available"
 msgstr "네트워크를 사용할 수 없습니다"
 
-#: ../src/MainWindow.vala:177
+#: ../src/MainWindow.vala:191
 msgid "Connect to the Internet to install or update apps."
 msgstr "앱을 설치하거나 업데이트하시려면 인터넷에 연결해주세요."
 
-#: ../src/MainWindow.vala:180
+#: ../src/MainWindow.vala:194
 msgid "Network Settings…"
 msgstr "네트워크 설정…"
 
-#: ../src/Views/AppInfoView.vala:74
+#: ../src/Views/AppInfoView.vala:76
 msgid "Screenshot Not Available"
 msgstr "스크린샷을 찍을 수 없습니다"
 
-#: ../src/Views/AppInfoView.vala:128
+#: ../src/Views/AppInfoView.vala:130
 msgid "Homepage"
 msgstr "홈 페이지"
 
-#: ../src/Views/AppInfoView.vala:134
+#: ../src/Views/AppInfoView.vala:136
 msgid "Suggest Translations"
 msgstr "번역 제안하기"
 
-#: ../src/Views/AppInfoView.vala:140
+#: ../src/Views/AppInfoView.vala:142
 msgid "Report a Problem"
 msgstr "버그 리포트"
 
-#: ../src/Views/AppInfoView.vala:146
+#: ../src/Views/AppInfoView.vala:148
 msgid "Help"
 msgstr "도움말"
 
-#: ../src/Views/AppInfoView.vala:168
+#: ../src/Views/AppInfoView.vala:170
 msgid "What's New:"
 msgstr "새로워진 점:"
 
-#: ../src/Views/AppInfoView.vala:187
+#: ../src/Views/AppInfoView.vala:189
 msgid "Extensions:"
 msgstr "확장 프로그램:"
 
-#: ../src/Views/AppInfoView.vala:266
+#: ../src/Views/AppInfoView.vala:282
 msgid "Other Apps by %s"
 msgstr "%s에서 지원되는 다른 앱들"
 
-#: ../src/Views/AppInfoView.vala:300
+#: ../src/Views/AppInfoView.vala:316
 msgid "Link copied to clipboard"
 msgstr "링크를 클립보드에 복사했습니다"
 
-#: ../src/Views/AppInfoView.vala:311
+#: ../src/Views/AppInfoView.vala:327
 msgid "Check out %s on AppCenter:"
 msgstr "앱센터에서 %s 확인하기:"
 
-#: ../src/Views/AppInfoView.vala:318
+#: ../src/Views/AppInfoView.vala:334
 msgid "Share"
 msgstr "공유"
 
@@ -556,20 +552,20 @@ msgstr "없습니다"
 msgid "No apps could be found. Try changing search terms."
 msgstr "찾는 앱이 없습니다. 검색어를 바꿔 보세요."
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:123
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:124
 msgid "Uninstall"
 msgstr "제거"
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:126
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:127
 msgid "Open"
 msgstr "열기"
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:207
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:208
 #: ../src/Widgets/HumbleButton.vala:82
 msgid "Free"
 msgstr "무료"
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:231
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:232
 msgid "Update"
 msgstr "업데이트"
 
@@ -580,6 +576,10 @@ msgstr "열려 있는, 자유로이 값을 정하는 앱 센터"
 #: ../src/Widgets/Banner.vala:68
 msgid "Get the apps that you need at a price you can afford."
 msgstr "필요한 앱을 지불하고자 하는 만큼만 지불하고 설치합니다."
+
+#: ../src/Widgets/CardNumberEntry.vala:41
+msgid "Card Number"
+msgstr "카드 번호"
 
 #: ../src/Widgets/CategoryFlowBox.vala:29
 msgid "Audio"
@@ -643,10 +643,6 @@ msgstr "$%d"
 msgid "<b>%s</b> – %s"
 msgstr "<b>%s</b> – %s"
 
-#: ../src/Widgets/ReleaseRow.vala:72
-msgid "<b>%s</b>"
-msgstr "<b>%s</b>"
-
 #: ../src/Widgets/ReleaseRow.vala:74
 msgid "Unknown version"
 msgstr "버전 정보 없음"
@@ -703,6 +699,13 @@ msgstr "최신 버전입니다"
 #: ../src/Widgets/UpdateHeaderRow.vala:120
 msgid "Drivers"
 msgstr "드라이버"
+
+#~ msgctxt "view"
+#~ msgid "Updates"
+#~ msgstr "업데이트"
+
+#~ msgid "<b>%s</b>"
+#~ msgstr "<b>%s</b>"
 
 #~ msgid "Close"
 #~ msgstr "닫기"
@@ -800,10 +803,6 @@ msgstr "드라이버"
 
 #~ msgid "Up to date"
 #~ msgstr "현재 시스템이 최신 버전입니다"
-
-#~ msgctxt "view"
-#~ msgid "Installed"
-#~ msgstr "설치됨"
 
 #~ msgid "Waiting in queue"
 #~ msgstr "순서를 기다리고 있습니다"
