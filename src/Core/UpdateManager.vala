@@ -23,13 +23,7 @@ public class AppCenterCore.UpdateManager : Object {
     public string[] fake_packages { get; set; }
 
     private const string FAKE_PACKAGE_ID = "%s;fake.version;amd64;installed:xenial-main";
-    private const string RESTART_REQUIRED_FILE = "/var/run/reboot-required";
 
-    private File restart_file;
-
-    construct {
-        restart_file = File.new_for_path (RESTART_REQUIRED_FILE);
-    }
 
     private UpdateManager () {
 
@@ -75,24 +69,6 @@ public class AppCenterCore.UpdateManager : Object {
         }
     }
 
-    public void update_restart_state () {
-        if (restart_file.query_exists ()) {
-            if (!restart_required) {
-                string title = _("Restart Required");
-                string body = _("Please restart your system to finalize updates");
-                var notification = new Notification (title);
-                notification.set_body (body);
-                notification.set_icon (new ThemedIcon ("system-software-install"));
-                notification.set_priority (NotificationPriority.URGENT);
-                notification.set_default_action ("app.open-application");
-                Application.get_default ().send_notification ("restart", notification);
-            }
-
-            restart_required = true;
-        } else if (restart_required) {
-            restart_required = false;
-        }
-    }
 
     private static GLib.Once<UpdateManager> instance;
     public static unowned UpdateManager get_default () {

@@ -30,6 +30,13 @@ public class AppCenterCore.Client : Object {
 	public bool updating_cache { public get; private set; default = false; }
 
     private Gee.HashMap<string, Backend> backends;
+    private const string RESTART_REQUIRED_FILE = "/var/run/reboot-required";
+    private File restart_file;
+    private bool restart_notified;
+
+    construct {
+        restart_file = File.new_for_path (RESTART_REQUIRED_FILE);
+    }
 
     public Client () {
         // Load Backends, for now only PackageKit
@@ -58,7 +65,24 @@ public class AppCenterCore.Client : Object {
     }
 
 	public void update_restart_state () {
+        restart_required = restart_file.query_exists ();
+        for (var has_next = it.next (); has_next; has_next = it.next ()) {
+            var backend = it.get_value ();
+            backend.update_restart_state ();
+            restart_required |= backend.restart_required
+        }
 
+        if (restart_required & !restart_notified) {
+            string title = _("Restart Required");
+            string body = _("Please restart your system to finalize updates");
+            var notification = new Notification (title);
+            notification.set_body (body);
+            notification.set_icon (new ThemedIcon ("system-software-install"));
+            notification.set_priority (NotificationPriority.URGENT);
+            notification.set_default_action ("app.open-application");
+            Application.get_default ().send_notification ("restart", notification);
+            restart_notified = true;
+        }
     }
 
     private static GLib.Once<Client> instance;
