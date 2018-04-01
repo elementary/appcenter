@@ -1,4 +1,5 @@
 vala_precompile(VALA_C ${EXEC_NAME}
+    Core/Backend.vala
     Core/ChangeInformation.vala
     Core/Client.vala
     Core/Houston.vala
@@ -6,6 +7,8 @@ vala_precompile(VALA_C ${EXEC_NAME}
     Core/Task.vala
     Core/UpdateManager.vala
     Core/ComponentValidator.vala
+
+    Core/PkBackend.vala
 
     Application.vala
     MainWindow.vala
