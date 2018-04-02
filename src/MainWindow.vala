@@ -66,7 +66,9 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
                 this.maximize ();
                 break;
             default:
-                move (saved_state.window_x, saved_state.window_y);
+                if (saved_state.window_x != -1 && saved_state.window_y != -1) {
+                    move (saved_state.window_x, saved_state.window_y);
+                }
                 break;
         }
 
