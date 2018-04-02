@@ -221,7 +221,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         }
 
         unowned AppCenterCore.Client client = AppCenterCore.Client.get_default ();
-        if (client.has_tasks ()) {
+        if (client.has_tasks) {
             if (task_finished_connection != 0U) {
                 client.disconnect (task_finished_connection);
             }

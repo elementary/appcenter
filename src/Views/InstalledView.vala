@@ -34,13 +34,17 @@ public class AppCenter.Views.InstalledView : View {
 
         var client = Client.get_default ();
         client.drivers_detected.connect (() => {
-            foreach (var driver in client.driver_list) {
-                app_list_view.add_package (driver);
-            }
+            // TODO: Fix Drivers
+            //foreach (var driver in client.driver_list) {
+            //    app_list_view.add_package (driver);
+            //}
+            critical("Driver detection broken");
         });
 
-        var os_updates = Client.get_default ().os_updates;
-        app_list_view.add_package (os_updates);
+        // TODO: Fix updates
+        // var os_updates = Client.get_default ().os_updates;
+        // app_list_view.add_package (os_updates);
+        critical("OS Updates broken");
     }
 
     public override void return_clicked () {
@@ -66,8 +70,8 @@ public class AppCenter.Views.InstalledView : View {
         if (settings.reset_paid_apps) {
             settings.paid_apps = new string[] {};
             foreach (var app in installed_apps) {
-                if (app.component.get_origin () == AppCenterCore.Package.APPCENTER_PACKAGE_ORIGIN) {
-                    settings.add_paid_app (app.component.get_id ());
+                if (app.has_payments) {
+                    settings.add_paid_app (app.get_id ());
                 }
             }
 

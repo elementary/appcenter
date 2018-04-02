@@ -74,7 +74,7 @@ namespace AppCenter.Views {
                 }
             });
 
-            AppCenterCore.UpdateManager.get_default ().bind_property ("restart-required", infobar, "visible", BindingFlags.SYNC_CREATE);
+            AppCenterCore.Client.get_default ().bind_property ("restart-required", infobar, "visible", BindingFlags.SYNC_CREATE);
 
             add (infobar);
             add (scrolled);
@@ -151,7 +151,7 @@ namespace AppCenter.Views {
                         }
 
                         update_numbers++;
-                        update_real_size += package.change_information.get_size ();
+                        update_real_size += package.get_size ();
                     }
                 }
 
@@ -290,8 +290,9 @@ namespace AppCenter.Views {
                         /* clear update information if the package was successfully updated */
                         /* This information is refreshed by Client on start up (log in) or at daily intervals */
                         /* TODO: Implement refresh on demand (or on list display?) */
+                        // TODO: Move this to the Package, should not be in UI
                         if (pkg.state == AppCenterCore.Package.State.INSTALLED) {
-                            pkg.change_information.clear_update_info ();
+                            //pkg.change_information.clear_update_info ();
                         }
 
                         pkg_row.set_action_sensitive (true);

@@ -136,9 +136,10 @@ public class AppCenter.App : Granite.Application {
 
         var client = AppCenterCore.Client.get_default ();
 
-        if (fake_update_packages != null) {
-            AppCenterCore.UpdateManager.get_default ().fake_packages = fake_update_packages;
-        }
+		// TODO: Move Fake Packages to packagekit backend
+        //if (fake_update_packages != null) {
+        //    AppCenterCore.Client.get_default ().fake_packages = fake_update_packages;
+        //}
 
         if (silent) {
             NetworkMonitor.get_default ().network_changed.connect ((available) => {
@@ -151,11 +152,12 @@ public class AppCenter.App : Granite.Application {
             return;
         }
 
+		// TODO: Provide API for loading Appstream
         if (local_path != null) {
             var file = File.new_for_commandline_arg (local_path);
 
             try {
-                local_package = client.add_local_component_file (file);
+                //local_package = client.add_local_component_file (file);
             } catch (Error e) {
                 warning ("Failed to load local AppStream XML file: %s", e.message);
             }
@@ -243,7 +245,7 @@ public class AppCenter.App : Granite.Application {
         }
     }
 
-    private void on_operation_finished (AppCenterCore.Package package, AppCenterCore.Package.State operation, Error? error) {
+    private void on_operation_finished (AppCenterCore.Client client, AppCenterCore.Package package, AppCenterCore.Package.State operation, Error? error) {
         switch (operation) {
             case AppCenterCore.Package.State.INSTALLING:
                 if (error == null) {

@@ -30,8 +30,12 @@ public interface AppCenterCore.Backend : Object {
     public abstract uint task_count { get; set; }
     public abstract bool updating_cache { get; set; }
 
-	public abstract async Package get_updates (Cancellable? cancellable) throws Error;
-	public abstract async Package get_installed (Cancellable? cancellable) throws Error;
+	public abstract async Gee.Collection<AppCenterCore.Package> get_updates (Cancellable? cancellable) throws Error;
+	public abstract async Gee.Collection<AppCenterCore.Package> get_installed (Cancellable? cancellable) throws Error;
+    public abstract Gee.Collection<AppCenterCore.Package> get_applications_for_category (AppStream.Category category);
+    public abstract Gee.Collection<AppCenterCore.Package> search_applications (string query, AppStream.Category? category);
 
-	public abstract void update_restart_state ();
+	public void update_restart_state () {
+        return;
+    }
 }

@@ -114,11 +114,11 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
 
     protected override void update_progress_status () {
         base.update_progress_status ();
-        var status = package.change_information.status;
-        switch (status) {
-            case Pk.Status.WAIT:
-            case Pk.Status.FINISHED:
-            case Pk.Status.WAITING_FOR_AUTH:
+        var state = package.state;
+        switch (state) {
+            case AppCenterCore.Package.State.NOT_INSTALLED:
+            case AppCenterCore.Package.State.INSTALLED:
+            case AppCenterCore.Package.State.UPDATE_AVAILABLE:
                 progress_bar.no_show_all = true;
                 progress_bar.hide ();
                 break;

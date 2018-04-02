@@ -28,7 +28,7 @@ public class SearchProvider : Object {
         var client = AppCenterCore.Client.get_default ();
         var packages = client.search_applications (query, null);
         foreach (var package in packages) {
-            result.add (package.component.get_id ());
+            result.add (package.get_id ());
         }
 
         result.sort (strcmp);

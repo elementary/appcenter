@@ -88,11 +88,7 @@ namespace AppCenter {
 
         public bool payments_enabled {
             get {
-                if (package == null || package.component == null || !package.is_native || package.is_os_updates) {
-                    return false;
-                }
-
-                return package.get_payments_key () != null;
+                return package.has_payments;
             }
         }
 
@@ -109,13 +105,13 @@ namespace AppCenter {
             action_button.download_requested.connect (() => action_clicked.begin ());
 
             action_button.payment_requested.connect ((amount) => {
-                var stripe = new Widgets.StripeDialog (amount, this.package_name.label, this.package.component.get_desktop_id ().replace (".desktop", ""), this.package.get_payments_key());
+                var stripe = new Widgets.StripeDialog (amount, this.package_name.label, this.package.get_desktop_id ().replace (".desktop", ""), this.package.get_payments_key());
                 stripe.transient_for = (Gtk.Window) get_toplevel ();
 
                 stripe.download_requested.connect (() => {
                     action_clicked.begin ();
 
-                    settings.add_paid_app (package.component.get_id ());
+                    settings.add_paid_app (package.get_id ());
                 });
 
                 stripe.show ();
@@ -169,7 +165,7 @@ namespace AppCenter {
         protected virtual void set_up_package (uint icon_size = 48) {
             package_name.label = package.get_name ();
 
-            if (package.component.get_id () != AppCenterCore.Package.OS_UPDATES_ID) {
+            if (!package.is_os_updates) {
                 package_author.label = package.author_title;
             }
 
@@ -182,9 +178,10 @@ namespace AppCenter {
                 });
             });
 
-            package.change_information.bind_property ("can-cancel", cancel_button, "sensitive", GLib.BindingFlags.SYNC_CREATE);
-            package.change_information.progress_changed.connect (update_progress);
-            package.change_information.status_changed.connect (update_progress_status);
+			// TODO: Abstract this away
+            //package.change_information.bind_property ("can-cancel", cancel_button, "sensitive", GLib.BindingFlags.SYNC_CREATE);
+            //package.change_information.progress_changed.connect (update_progress);
+            //package.change_information.status_changed.connect (update_progress_status);
 
             update_progress_status ();
             update_progress ();
@@ -207,7 +204,7 @@ namespace AppCenter {
                 case AppCenterCore.Package.State.NOT_INSTALLED:
                     action_button.label = _("Free");
 
-                    if (package.component.get_id () in settings.paid_apps) {
+                    if (package.get_id () in settings.paid_apps) {
                         action_button.amount = 0;
                     }
 

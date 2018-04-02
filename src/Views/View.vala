@@ -32,7 +32,7 @@ public abstract class AppCenter.View : Gtk.Stack {
     public virtual void show_package (AppCenterCore.Package package) {
         previous_package = null;
 
-        var pk_child = get_child_by_name (package.component.id) as Views.AppInfoView;
+        var pk_child = get_child_by_name (package.get_id ()) as Views.AppInfoView;
         if (pk_child != null) {
             pk_child.reload_css ();
             set_visible_child (pk_child);
@@ -47,7 +47,7 @@ public abstract class AppCenter.View : Gtk.Stack {
         });
 
         app_info_view.show_all ();
-        add_named (app_info_view, package.component.id);
+        add_named (app_info_view, package.get_id ());
         set_visible_child (app_info_view);
         Timeout.add (transition_duration, () => {
             app_info_view.load_more_content ();

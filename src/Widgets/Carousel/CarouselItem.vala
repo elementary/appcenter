@@ -34,7 +34,7 @@ public class AppCenter.Widgets.CarouselItem : Gtk.FlowBoxChild {
         name_label.xalign = 0;
         name_label.get_style_context ().add_class ("h3");
 
-        var category_label = new Gtk.Label (package.component.developer_name);
+        var category_label = new Gtk.Label (package.author);
         category_label.valign = Gtk.Align.START;
         category_label.xalign = 0;
         category_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);

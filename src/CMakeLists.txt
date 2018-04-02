@@ -5,10 +5,10 @@ vala_precompile(VALA_C ${EXEC_NAME}
     Core/Houston.vala
     Core/Package.vala
     Core/Task.vala
-    Core/UpdateManager.vala
     Core/ComponentValidator.vala
 
     Core/PkBackend.vala
+    Core/PkPackage.vala
 
     Application.vala
     MainWindow.vala

@@ -53,9 +53,12 @@ namespace AppCenter.Views {
             uninstall_button_context.add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
             uninstall_button_context.add_class ("h3");
 
-            var package_component = package.component;
+            var pk_package = package as AppCenterCore.PkPackage;
+            var package_component = pk_package.component;
 
-            screenshots = package_component.get_screenshots ();
+            if (package_component != null) {
+                screenshots = package_component.get_screenshots ();
+            }
 
             if (screenshots.length > 0) {
                 app_screenshots = new Gtk.Stack ();
@@ -241,7 +244,7 @@ namespace AppCenter.Views {
             footer_grid.margin = 12;
             footer_grid.width_request = 800;
 
-            var project_license = package.component.project_license;
+            var project_license = pk_package.component.project_license;
             if (project_license != null) {
                 string license_url = "https://choosealicense.com/licenses/";
                 switch (project_license) {
@@ -325,7 +328,7 @@ namespace AppCenter.Views {
 
             if (package.is_shareable) {
                 var body = _("Check out %s on AppCenter:").printf (package.get_name ());
-                var uri = "https://appcenter.elementary.io/%s".printf (package.component.get_id ());
+                var uri = "https://appcenter.elementary.io/%s".printf (pk_package.component.get_id ());
                 var share_popover = new SharePopover (body, uri);
 
                 var share_icon = new Gtk.Image.from_icon_name ("send-to-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
@@ -382,17 +385,22 @@ namespace AppCenter.Views {
             update_action ();
         }
 
+        // TODO: Abstract this into package API
         private async void load_extensions () {
-            package.component.get_addons ().@foreach ((extension) => {
-                var row = new Widgets.PackageRow.list (new AppCenterCore.Package (extension), null, null, false);
-                if (extension_box != null) {
-                    extension_box.add (row);
-                }
-            });
+            var pk_package = package as AppCenterCore.PkPackage;
+            if (pk_package != null) {
+                pk_package.component.get_addons ().@foreach ((extension) => {
+                        var row = new Widgets.PackageRow.list (new AppCenterCore.PkPackage (extension), null, null, false);
+                        if (extension_box != null) {
+                            extension_box.add (row);
+                        }
+                });
+            }
         }
 
+        // TODO: Move to package
         private async void get_app_download_size () {
-            if (package.state == AppCenterCore.Package.State.INSTALLED) {
+            /*    if (package.state == AppCenterCore.Package.State.INSTALLED) {
                 return;
             }
 
@@ -426,6 +434,7 @@ namespace AppCenter.Views {
 
             app_download_size_label.label = GLib.format_size (size);
             app_download_size_label.visible = true;
+            */
         }
 
         public void reload_css () {

@@ -98,7 +98,7 @@ public class DBusServer : Object {
         var client = AppCenterCore.Client.get_default ();
         var package = client.get_package_for_desktop_id (desktop_id);
         if (package != null) {
-            return package.component.get_id ();
+            return package.get_id ();
         }
 
         return "";
@@ -115,7 +115,7 @@ public class DBusServer : Object {
         var packages = client.search_applications (query, null);
         string[] components = {};
         foreach (var package in packages) {
-            components += package.component.get_id ();
+            components += package.get_id ();
         }
 
         return components;
