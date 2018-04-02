@@ -40,10 +40,15 @@ public class AppCenterCore.PkBackend : AppCenterCore.Backend, Object {
 
     public bool updating_cache { public get; private set; default = false; }
 
-    public AppCenterCore.Package os_updates { public get; private set; }
+    public AppCenterCore.PkPackage os_updates { public get; private set; }
     public Gee.TreeSet<AppCenterCore.Package> driver_list { get; construct; }
 
-    private Gee.HashMap<string, AppCenterCore.Package> package_list;
+    public string[] fake_packages { get; set; }
+
+	public string backend_identifier { get; set; default="PackageKit"; }
+	public bool restart_required { get; set; default=false; }
+
+	private Gee.HashMap<string, AppCenterCore.Package> package_list;
     private AppStream.Pool appstream_pool;
     private GLib.Cancellable cancellable;
 
@@ -56,6 +61,8 @@ public class AppCenterCore.PkBackend : AppCenterCore.Backend, Object {
 
     private const int SECONDS_BETWEEN_REFRESHES = 60 * 60 * 24;
     private const int PACKAGEKIT_ACTIVITY_TIMEOUT_MS = 2000;
+
+    private const string FAKE_PACKAGE_ID = "%s;fake.version;amd64;installed:xenial-main";
 
     private SuspendControl sc;
 
@@ -87,7 +94,7 @@ public class AppCenterCore.PkBackend : AppCenterCore.Backend, Object {
                     return;
                 }
 
-                var package = new AppCenterCore.Package (comp);
+                var package = new PkPackage (comp);
                 foreach (var pkg_name in comp.get_pkgnames ()) {
                     package_list[pkg_name] = package;
                 }
@@ -101,12 +108,12 @@ public class AppCenterCore.PkBackend : AppCenterCore.Backend, Object {
         icon.set_kind (AppStream.IconKind.STOCK);
 
         var os_updates_component = new AppStream.Component ();
-        os_updates_component.id = AppCenterCore.Package.OS_UPDATES_ID;
+        os_updates_component.id = AppCenterCore.PkPackage.OS_UPDATES_ID;
         os_updates_component.name = _("Operating System Updates");
         os_updates_component.summary = _("Updates to system components");
         os_updates_component.add_icon (icon);
 
-        os_updates = new AppCenterCore.Package (os_updates_component);
+        os_updates = new AppCenterCore.PkPackage (os_updates_component);
 
         var control = new Pk.Control ();
         control.updates_changed.connect (updates_changed_callback);
@@ -114,7 +121,7 @@ public class AppCenterCore.PkBackend : AppCenterCore.Backend, Object {
 
     private void updates_changed_callback () {
         if (!has_tasks ()) {
-            UpdateManager.get_default ().update_restart_state ();
+            Client.get_default ().update_restart_state ();
 
             var time_since_last_action = (new DateTime.now_local ()).difference (last_action) / GLib.TimeSpan.MILLISECOND;
             if (time_since_last_action >= PACKAGEKIT_ACTIVITY_TIMEOUT_MS) {
@@ -139,15 +146,15 @@ public class AppCenterCore.PkBackend : AppCenterCore.Backend, Object {
         var component = metadata.get_component ();
         if (component != null) {
             string name = _("%s (local)").printf (component.get_name ());
-            string id = "%s%s".printf (component.get_id (), Package.LOCAL_ID_SUFFIX);
+            string id = "%s%s".printf (component.get_id (), PkPackage.LOCAL_ID_SUFFIX);
 
             component.set_name (name, null);
             component.set_id (id);
-            component.set_origin (Package.APPCENTER_PACKAGE_ORIGIN);
+            component.set_origin (PkPackage.APPCENTER_PACKAGE_ORIGIN);
 
             appstream_pool.add_component (component);
 
-            var package = new AppCenterCore.Package (component);
+            var package = new AppCenterCore.PkPackage (component);
             package_list[id] = package;
 
             return package;
@@ -156,7 +163,7 @@ public class AppCenterCore.PkBackend : AppCenterCore.Backend, Object {
         return null;
     }
 
-    public async Pk.Exit install_package (Package package, Pk.ProgressCallback cb, GLib.Cancellable cancellable) throws GLib.Error {
+    public async Pk.Exit install_package (PkPackage package, Pk.ProgressCallback cb, GLib.Cancellable cancellable) throws GLib.Error {
         task_count++;
 
         Pk.Exit exit_status = Pk.Exit.UNKNOWN;
@@ -199,7 +206,7 @@ public class AppCenterCore.PkBackend : AppCenterCore.Backend, Object {
         return exit_status;
     }
 
-    public async Pk.Exit update_package (Package package, Pk.ProgressCallback cb, GLib.Cancellable cancellable) throws GLib.Error {
+    public async Pk.Exit update_package (PkPackage package, Pk.ProgressCallback cb, GLib.Cancellable cancellable) throws GLib.Error {
         task_count++;
 
         Pk.Exit exit_status = Pk.Exit.UNKNOWN;
@@ -237,7 +244,7 @@ public class AppCenterCore.PkBackend : AppCenterCore.Backend, Object {
         return exit_status;
     }
 
-    public async Pk.Exit remove_package (Package package, Pk.ProgressCallback cb, GLib.Cancellable cancellable) throws GLib.Error {
+    public async Pk.Exit remove_package (PkPackage package, Pk.ProgressCallback cb, GLib.Cancellable cancellable) throws GLib.Error {
         task_count++;
 
         Pk.Exit exit_status = Pk.Exit.UNKNOWN;
@@ -266,6 +273,46 @@ public class AppCenterCore.PkBackend : AppCenterCore.Backend, Object {
         yield refresh_updates ();
         return exit_status;
     }
+
+	public async Pk.Results get_pk_updates (Cancellable? cancellable) throws Error {
+
+        try {
+            Pk.Results update_results = yield get_updates_async (0, cancellable, (t, p) => { });
+
+            if (fake_packages.length > 0) {
+                foreach (string name in fake_packages) {
+                    var package = new Pk.Package ();
+                    if (package.set_id (FAKE_PACKAGE_ID.printf (name))) {
+                        update_results.add_package (package);
+                    } else {
+                        warning ("Could not add a fake package '%s' to the update list".printf (name));
+                    }
+                }
+
+                fake_packages = {};
+            }
+
+            string[] packages_array = {};
+            update_results.get_package_array ().foreach ((pk_package) => {
+                packages_array += pk_package.get_id ();
+            });
+
+            if (packages_array.length > 0) {
+                packages_array += null;
+
+                Pk.Results details_results = yield client.get_details_async (packages_array, cancellable, (t, p) => { });
+
+                details_results.get_details_array ().foreach ((details) => {
+                    update_results.add_details (details);
+                });
+            }
+
+            return update_results;
+        } catch (Error e) {
+            throw e;
+        }
+    }
+
 
     public void get_drivers () {
         task_count++;
@@ -310,7 +357,7 @@ public class AppCenterCore.PkBackend : AppCenterCore.Backend, Object {
                 icon.set_kind (AppStream.IconKind.STOCK);
                 driver_component.add_icon (icon);
 
-                var package = new Package (driver_component);
+                var package = new PkPackage (driver_component);
                 var pk_package = package.find_package ();
                 if (pk_package != null && pk_package.get_info () == Pk.Info.INSTALLED) {
                     package.installed_packages.add (pk_package);
@@ -330,7 +377,7 @@ public class AppCenterCore.PkBackend : AppCenterCore.Backend, Object {
         });
     }
 
-    public async Gee.Collection<AppCenterCore.Package> get_installed_applications () {
+    public async Gee.Collection<AppCenterCore.Package> get_installed () {
         var packages = new Gee.TreeSet<AppCenterCore.Package> ();
         var installed = yield get_installed_packages ();
         foreach (var pk_package in installed) {
@@ -359,6 +406,7 @@ public class AppCenterCore.PkBackend : AppCenterCore.Backend, Object {
     }
 
     private static void populate_package (AppCenterCore.Package package, Pk.Package pk_package) {
+		// TODO: Fix installed list
         package.installed_packages.add (pk_package);
         package.latest_version = pk_package.get_version ();
         package.update_state ();
@@ -440,11 +488,12 @@ public class AppCenterCore.PkBackend : AppCenterCore.Backend, Object {
         return package;
     }
 
+	// TODO: convert this to returning updates as well
     private async void refresh_updates () {
         task_count++;
 
         try {
-            Pk.Results results = yield UpdateManager.get_default ().get_updates (null);
+            Pk.Results results = yield get_pk_updates (null);
 
             bool was_empty = updates_number == 0U;
             updates_number = get_real_packages_length (results.get_package_array ());
@@ -475,7 +524,7 @@ public class AppCenterCore.PkBackend : AppCenterCore.Backend, Object {
 
             results.get_package_array ().foreach ((pk_package) => {
                 unowned string pkg_name = pk_package.get_name ();
-                var package = package_list[pkg_name];
+                var package = (PkPackage) package_list[pkg_name];
                 if (package == null) {
                     unowned string pkg_summary = pk_package.get_summary();
                     unowned string pkg_version = pk_package.get_version();
@@ -508,7 +557,7 @@ public class AppCenterCore.PkBackend : AppCenterCore.Backend, Object {
                     pk_package.set_id (pk_detail.get_package_id ());
 
                     unowned string pkg_name = pk_package.get_name ();
-                    var package = package_list[pkg_name];
+                    var package = (PkPackage) package_list[pkg_name];
                     if (package == null) {
                         var pkgnames = os_updates.component.pkgnames;
                         pkgnames += pkg_name;
@@ -540,7 +589,7 @@ public class AppCenterCore.PkBackend : AppCenterCore.Backend, Object {
         var result_comp = new Gee.TreeSet<AppStream.Component> ();
 
         package_array.foreach ((pk_package) => {
-            var package = package_list[pk_package.get_name ()];
+				var package = (PkPackage) package_list[pk_package.get_name ()];
             if (package != null) {
                 result_comp.add (package.component);
             } else {
@@ -711,7 +760,8 @@ public class AppCenterCore.PkBackend : AppCenterCore.Backend, Object {
 
     public AppCenterCore.Package? get_package_for_component_id (string id) {
         foreach (var package in package_list.values) {
-            if (package.component.id == id) {
+			var pk_package = (PkPackage) package;
+            if (pk_package.component.id == id) {
                 return package;
             }
         }
@@ -721,7 +771,8 @@ public class AppCenterCore.PkBackend : AppCenterCore.Backend, Object {
 
     public AppCenterCore.Package? get_package_for_desktop_id (string desktop_id) {
         foreach (var package in package_list.values) {
-            if (package.component.get_desktop_id () == desktop_id) {
+			var pk_package = (PkPackage) package;
+            if (pk_package.component.get_desktop_id () == desktop_id) {
                 return package;
             }
         }
@@ -732,11 +783,12 @@ public class AppCenterCore.PkBackend : AppCenterCore.Backend, Object {
     public Gee.Collection<AppCenterCore.Package> get_packages_by_author (string author, int max) {
         var packages = new Gee.ArrayList<AppCenterCore.Package> ();
         foreach (var package in package_list.values) {
+			var pk_package = (PkPackage) package;
             if (packages.size > max) {
                 break;
             }
 
-            if (package.component.developer_name == author) {
+            if (pk_package.component.developer_name == author) {
                 packages.add (package);
             }
         }
