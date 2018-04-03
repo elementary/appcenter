@@ -21,6 +21,7 @@ public class UpdateFailDialog : Granite.MessageDialog {
 
     public UpdateFailDialog (string error_message) {
         Object (
+            title: "",
             primary_text: _("Failed to Fetch Updates"),
             secondary_text: _("This may have been caused by external, manually added software repositories or a corrupted sources file."),
             image_icon: new ThemedIcon ("dialog-error"),
@@ -56,7 +57,6 @@ public class UpdateFailDialog : Granite.MessageDialog {
         response.connect ((response_id) => {
             if (response_id == TRY_AGAIN_RESPONSE_ID) {
                 AppCenterCore.Client.get_default ().update_cache.begin (true);
-                
             }
             destroy ();
         });
