@@ -94,7 +94,7 @@ public class AppCenter.App : Granite.Application {
 
         add_action (quit_action);
         add_action (show_updates_action);
-        add_accelerator ("<Control>q", "app.quit", null);
+        set_accels_for_action ("app.quit", {"<Control>q"});
 
         search_provider = new SearchProvider ();
     }
