@@ -14,7 +14,7 @@
 * with this program. If not, see http://www.gnu.org/licenses/.
 */
 
-public class AppCenter.App : Granite.Application {
+public class AppCenter.App : Gtk.Application {
     public const OptionEntry[] APPCENTER_OPTIONS =  {
         { "show-updates", 'u', 0, OptionArg.NONE, out show_updates,
         "Display the Installed Panel", null},
@@ -53,15 +53,6 @@ public class AppCenter.App : Granite.Application {
         Intl.setlocale (LocaleCategory.ALL, "");
         Intl.textdomain (Build.GETTEXT_PACKAGE);
 
-        program_name = _(Build.APP_NAME);
-
-        build_data_dir = Build.DATADIR;
-        build_pkg_data_dir = Build.PKGDATADIR;
-        build_release_name = Build.RELEASE_NAME;
-        build_version = Build.VERSION;
-        build_version_info = Build.VERSION_INFO;
-
-        app_launcher = Build.DESKTOP_FILE;
         add_main_option_entries (APPCENTER_OPTIONS);
 
         var quit_action = new SimpleAction ("quit", null);
@@ -84,7 +75,7 @@ public class AppCenter.App : Granite.Application {
         client.updates_available.connect (on_updates_available);
 
         if (AppInfo.get_default_for_uri_scheme ("appstream") == null) {
-            var appinfo = new DesktopAppInfo (app_launcher);
+            var appinfo = new DesktopAppInfo (application_id + ".desktop");
             try {
                 appinfo.set_as_default_for_type ("x-scheme-handler/appstream");
             } catch (Error e) {
