@@ -173,7 +173,7 @@ namespace AppCenter {
                 package_author.label = package.author_title;
             }
 
-            image.gicon = package.get_icon (icon_size);
+            image.gicon = package.get_icon (icon_size, image.get_scale_factor ());
 
             package.notify["state"].connect (() => {
                 Idle.add (() => {
