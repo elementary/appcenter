@@ -1,12 +1,10 @@
-Source: appcenter
+Source: io.elementary.appcenter
 Section: utils
 Maintainer: elementary Builds Team <builds@elementary.io>
 Build-Depends: appstream,
-               cmake,
-               cmake-elementary,
-               debhelper (>= 9),
+               debhelper (>= 10.5.1),
                desktop-file-utils,
-               intltool,
+               gettext,
                libappstream-dev (>= 0.10),
                libgee-0.8-dev,
                libgranite-dev,
@@ -17,15 +15,16 @@ Build-Depends: appstream,
                libunity-dev,
                libxml2-dev,
                libxml2-utils,
+               meson,
                valac (>= 0.26)
-Standards-Version: 3.9.6
+Standards-Version: 4.1.1
 Homepage: https://github.com/elementary/appcenter
 
-Package: appcenter
+Package: io.elementary.appcenter
 Architecture: any
 Priority: extra
-Conflicts: appcenter-daemon
-Replaces: appcenter-daemon
+Conflicts: appcenter-daemon, appcenter
+Replaces: appcenter-daemon, appcenter
 Depends: appstream (>= 0.12),
          apt-config-icons,
          apt-config-icons-hidpi,
@@ -39,21 +38,9 @@ Description: Fast application store
  Install, update and remove apps with ease.
  Helps independent developers.
 
-Package: appcenter-casper
+Package: io.elementary.appcenter-casper
 Architecture: any
 Priority: extra
 Depends: casper
 Description: Disable AppCenter daemon in casper
  Disable AppCenter daemon when running in a live system with casper
-
-Package: appcenter-dbg
-Architecture: any
-Section: debug
-Priority: extra
-Depends: appcenter (= ${binary:Version}), ${misc:Depends}
-Enhances: appcenter
-Description: Fast application store (debugging symbols)
- Install, update and remove apps with ease.
- Helps independent developers.
- .
- This package contains debugging symbols for appcenter.

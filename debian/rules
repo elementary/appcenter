@@ -12,9 +12,8 @@
 %:
 	dh $@ 
 
-override_dh_install:
-	dh_install --fail-missing --exclude=appcenter.blacklist --exclude=io.elementary.appcenter.service
-
 override_dh_strip:
-	dh_strip --dbg-package=appcenter-dbg
+	dh_strip --dbgsym-migration='appcenter-dbg (<< 0.2.9)'
 
+override_dh_missing:
+	dh_missing --fail-missing --exclude=appcenter.blacklist --exclude=io.elementary.appcenter.service
