@@ -27,7 +27,7 @@ i18n.merge_file(
     input: meson.project_name() + '.appdata.xml.in',
     output: '@BASENAME@',
     po_dir: join_paths(meson.source_root (), 'po', 'extra'),
-    type: 'desktop',
+    type: 'xml',
     install_dir: join_paths(get_option('datadir'), 'metainfo'),
     install: true
 )
