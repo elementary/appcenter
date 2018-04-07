@@ -26,7 +26,7 @@ public class AppCenter.Widgets.CarouselItem : Gtk.FlowBoxChild {
 
     construct {
         var icon = new Gtk.Image ();
-        icon.gicon = package.get_icon (64);
+        icon.gicon = package.get_icon (64, get_scale_factor ());
         icon.pixel_size = 64;
 
         var name_label = new Gtk.Label (package.get_name ());
