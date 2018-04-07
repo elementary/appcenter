@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2014-2016 elementary LLC. (https://elementary.io)
+ * Copyright (c) 2014-2018 elementary LLC. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,6 +19,6 @@
 /* Power and system control */
 [DBus (name = "org.freedesktop.login1.Manager")]
 interface SystemInterface : Object {
-    public abstract void reboot (bool interactive) throws IOError;
+    public abstract void reboot (bool interactive) throws GLib.Error;
 }
 
