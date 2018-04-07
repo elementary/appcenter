@@ -81,7 +81,7 @@ namespace AppCenter.Widgets {
                 var icon = new Gtk.Image ();
                 icon.pixel_size = 128;
                 if (has_package) {
-                    icon.gicon = package.get_icon (128);
+                    icon.gicon = package.get_icon (128, icon.get_scale_factor ());
                 } else {
                     icon.icon_name = "system-software-install";
                 }
