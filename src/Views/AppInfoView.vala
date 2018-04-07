@@ -442,11 +442,11 @@ namespace AppCenter.Views {
                 }
 
                 if (color_primary == null) {
-                    color_primary = DEFAULT_BANNER_COLOR_PRIMARY;
+                    color_primary = Build.DEFAULT_BANNER_COLOR_PRIMARY;
                 }
 
                 if (color_primary_text == null) {
-                    color_primary_text = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
+                    color_primary_text = Build.DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
                 }
                 var colored_css = BANNER_STYLE_CSS.printf (color_primary, color_primary_text);
                 provider.load_from_data (colored_css, colored_css.length);

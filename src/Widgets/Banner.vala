@@ -27,9 +27,9 @@ const string BANNER_STYLE_CSS = """
     }
 """;
 
-const string DEFAULT_BANNER_COLOR_PRIMARY = "#68758e";
-const string DEFAULT_BANNER_COLOR_PRIMARY_TEXT = "white";
 const int MILLISECONDS_BETWEEN_BANNER_ITEMS = 5000;
+// Add "Free" to the translation catalog
+const string FREE = N_("Free");
 
 namespace AppCenter.Widgets {
     public class Banner : Gtk.Button {
@@ -150,7 +150,7 @@ namespace AppCenter.Widgets {
 
         public void set_default_brand () {
             background_color = "#665888";
-            foreground_color = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
+            foreground_color = Build.DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
 
             brand_widget = new BannerWidget (null);
             stack.add_named (brand_widget, "brand");
@@ -215,8 +215,8 @@ namespace AppCenter.Widgets {
 
         public void set_background (AppCenterCore.Package? package) {
             if (package == null) {
-                background_color = DEFAULT_BANNER_COLOR_PRIMARY;
-                foreground_color = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
+                background_color = Build.DEFAULT_BANNER_COLOR_PRIMARY;
+                foreground_color = Build.DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
                 return;
             }
 
@@ -224,14 +224,14 @@ namespace AppCenter.Widgets {
             if (color_primary != null) {
                 background_color = color_primary;
             } else {
-                background_color = DEFAULT_BANNER_COLOR_PRIMARY;
+                background_color = Build.DEFAULT_BANNER_COLOR_PRIMARY;
             }
 
             var color_primary_text = package.get_color_primary_text ();
             if (color_primary_text != null) {
                 foreground_color = color_primary_text;
             } else {
-                foreground_color = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
+                foreground_color = Build.DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
             }
         }
 
