@@ -20,66 +20,42 @@
 public class SharePopover : Gtk.Popover {
     public signal void link_copied ();
 
-    public string body { get; set; }
-    public string uri { get; set; }
+    public string shared_text { get; set; }
+    public string shared_link { get; set; }
 
-    public SharePopover (string body, string uri) {
+    public SharePopover (string shared_text, string shared_link) {
         Object (
-            body: body,
-            uri: uri
+            shared_text: shared_text,
+            shared_link: shared_link
         );
     }
 
     construct {
-        var email_button = new Gtk.Button.from_icon_name ("internet-mail", Gtk.IconSize.DND);
-        email_button.tooltip_text = _("Email");
-        email_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-
-        var facebook_button = new Gtk.Button.from_icon_name ("online-account-facebook", Gtk.IconSize.DND);
-        facebook_button.tooltip_text = _("Facebook");
-        facebook_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-
-        var google_button = new Gtk.Button.from_icon_name ("online-account-google-plus", Gtk.IconSize.DND);
-        google_button.tooltip_text = _("Google+");
-        google_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-
-        var twitter_button = new Gtk.Button.from_icon_name ("online-account-twitter", Gtk.IconSize.DND);
-        twitter_button.tooltip_text = _("Twitter");
-        twitter_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-
-        var reddit_button = new Gtk.Button.from_icon_name ("online-account-reddit", Gtk.IconSize.DND);
-        reddit_button.tooltip_text = _("reddit");
-        reddit_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-
-        var tumblr_button = new Gtk.Button.from_icon_name ("online-account-tumblr", Gtk.IconSize.DND);
-        tumblr_button.tooltip_text = _("Tumblr");
-        tumblr_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-
-        var telegram_button = new Gtk.Button.from_icon_name ("online-account-telegram", Gtk.IconSize.DND);
-        telegram_button.tooltip_text = _("Telegram");
-        telegram_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-
-        var copy_link_button = new Gtk.Button.from_icon_name ("edit-copy-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
-        copy_link_button.tooltip_text = _("Copy link");
-        copy_link_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-
-        var size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
-        size_group.add_widget (email_button);
-        size_group.add_widget (copy_link_button);
-
+        var email_button = make_share_button (
+            _("Email"), "mailto:?body=%s %s", "internet-mail");
+        var copy_link_button = make_copy_link_button ();
+        
         var service_grid = new Gtk.Grid ();
         service_grid.margin = 6;
         service_grid.add (email_button);
-        service_grid.add (facebook_button);
-        service_grid.add (google_button);
-        service_grid.add (twitter_button);
-        service_grid.add (reddit_button);
-        service_grid.add (tumblr_button);
-        service_grid.add (telegram_button);
-
+        service_grid.add (make_share_button (
+            _("Facebook"), "https://www.facebook.com/sharer/sharer.php?u=%s","online-account-facebook"));
+        service_grid.add (make_share_button (
+            _("Twitter"), "http://twitter.com/home/?status=%s %s", "online-account-twitter"));
+        service_grid.add (make_share_button (
+            _("reddit"), "http://www.reddit.com/submit?title=%s&url=%s", "online-account-reddit"));
+        service_grid.add (make_share_button (
+            _("Tumblr"), "https://www.tumblr.com/share/link?url=%s", "online-account-tumblr"));
+        service_grid.add (make_share_button (
+            _("Telegram"), "https://t.me/share/url?url=%s", "online-account-telegram"));
+        
         var system_grid = new Gtk.Grid ();
         system_grid.margin = 6;
         system_grid.add (copy_link_button);
+
+        var size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
+        size_group.add_widget (copy_link_button);
+        size_group.add_widget (email_button);
 
         var grid = new Gtk.Grid ();
         grid.orientation = Gtk.Orientation.VERTICAL;
@@ -87,79 +63,44 @@ public class SharePopover : Gtk.Popover {
         grid.add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
         grid.add (system_grid);
         grid.show_all ();
-
         add (grid);
+    }
 
+    Gtk.Button make_share_button (string tooltip_text, string uri_template, string icon_name) {
+        var share_button = new Gtk.Button.from_icon_name (icon_name, Gtk.IconSize.DND);
+        share_button.tooltip_text = tooltip_text;
+        share_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        share_button.clicked.connect (() => {
+            try {
+                // Make the text and the uri safe to include in an uri
+                string escaped_link = GLib.Uri.escape_string (shared_link);
+                string escaped_text = GLib.Uri.escape_string (shared_text);
+                string resulting_uri;
+                // Check if there's only one placeholder, if so, use it for a link
+                if (uri_template.index_of ("%s") == uri_template.last_index_of ("%s")) {
+                    resulting_uri = uri_template.printf (escaped_link);
+                } else {
+                    resulting_uri = uri_template.printf (escaped_text, escaped_link);
+                }
+                AppInfo.launch_default_for_uri (resulting_uri, null);
+            } catch (Error e) {
+                warning ("%s", e.message);
+            }
+            hide ();
+        });
+        return share_button;
+    }
+        
+    Gtk.Button make_copy_link_button () {
+        var copy_link_button = new Gtk.Button.from_icon_name ("edit-copy-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+        copy_link_button.tooltip_text = _("Copy link");
+        copy_link_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
         copy_link_button.clicked.connect (() => {
             var clipboard = Gtk.Clipboard.get_for_display (get_display (), Gdk.SELECTION_CLIPBOARD);
-            clipboard.set_text (uri, -1);
-
+            clipboard.set_text (shared_link, -1);
             link_copied ();
-
             hide ();
         });
-
-        email_button.clicked.connect (() => {
-            try {
-                AppInfo.launch_default_for_uri ("mailto:?body=%s %s".printf (body, uri), null);
-            } catch (Error e) {
-                warning ("%s", e.message);
-            }
-            hide ();
-        });
-
-        facebook_button.clicked.connect (() => {
-            try {
-                AppInfo.launch_default_for_uri ("https://www.facebook.com/sharer/sharer.php?u=%s".printf (uri), null);
-            } catch (Error e) {
-                warning ("%s", e.message);
-            }
-            hide ();
-        });
-
-        google_button.clicked.connect (() => {
-            try {
-                AppInfo.launch_default_for_uri ("https://plus.google.com/share?url=%s".printf (uri), null);
-            } catch (Error e) {
-                warning ("%s", e.message);
-            }
-            hide ();
-        });
-
-        twitter_button.clicked.connect (() => {
-            try {
-                AppInfo.launch_default_for_uri ("http://twitter.com/home/?status=%s %s".printf (body, uri), null);
-            } catch (Error e) {
-                warning ("%s", e.message);
-            }
-            hide ();
-        });
-
-        reddit_button.clicked.connect (() => {
-            try {
-                AppInfo.launch_default_for_uri ("http://www.reddit.com/submit?title=%s&url=%s".printf (body, uri), null);
-            } catch (Error e) {
-                warning ("%s", e.message);
-            }
-            hide ();
-        });
-
-        tumblr_button.clicked.connect (() => {
-            try {
-                AppInfo.launch_default_for_uri ("https://www.tumblr.com/share/link?url=%s".printf (uri), null);
-            } catch (Error e) {
-                warning ("%s", e.message);
-            }
-            hide ();
-        });
-
-        telegram_button.clicked.connect (() => {
-            try {
-                AppInfo.launch_default_for_uri ("https://t.me/share/url?url=%s".printf (uri), null);
-            } catch (Error e) {
-                warning ("%s", e.message);
-            }
-            hide ();
-        });
+        return copy_link_button;
     }
 }
