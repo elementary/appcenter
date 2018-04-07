@@ -1,6 +1,6 @@
 [Desktop Entry]
 _Name=@APP_NAME@
-_Comment=@RELEASE_NAME@
+_Comment=Browse and manage apps
 Exec=@EXEC_NAME@ %U
 Icon=@DESKTOP_ICON@
 _Keywords=install;uninstall;remove;catalogue;store;apps;updates;software;

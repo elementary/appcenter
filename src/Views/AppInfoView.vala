@@ -544,23 +544,24 @@ namespace AppCenter.Views {
                 }
             }
 
-            Idle.add (() => {
-                try {
-                    var image = new Gtk.Image ();
-                    image.width_request = 800;
-                    image.height_request = 500;
-                    image.icon_name = "image-x-generic";
-                    image.halign = Gtk.Align.CENTER;
-                    image.pixbuf = new Gdk.Pixbuf.from_file_at_scale (fileimage.get_path (), 800, 600, true);
+            var scale_factor = get_scale_factor ();
+            try {
+                var pixbuf = new Gdk.Pixbuf.from_file_at_scale (fileimage.get_path (), 800 * scale_factor, 600 * scale_factor, true);
+                var image = new Gtk.Image ();
+                image.width_request = 800;
+                image.height_request = 500;
+                image.icon_name = "image-x-generic";
+                image.halign = Gtk.Align.CENTER;
+                image.gicon = pixbuf;
+
+                Idle.add (() => {
                     image.show ();
-
                     app_screenshots.add (image);
-                } catch (Error e) {
-                    critical (e.message);
-                }
-
-                return GLib.Source.REMOVE;
-            });
+                    return GLib.Source.REMOVE;
+                });
+            } catch (Error e) {
+                critical (e.message);
+            }
         }
 
         private void parse_description (string? description) {
