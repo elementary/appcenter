@@ -36,6 +36,7 @@ vala_precompile(VALA_C ${EXEC_NAME}
     Widgets/AppListRow.vala
     Widgets/UpdateHeaderRow.vala
     Widgets/HumbleButton.vala
+    Widgets/HumblePopover.vala
     Widgets/SharePopover.vala
     Widgets/Switcher.vala
     Widgets/ReleaseListBox.vala
