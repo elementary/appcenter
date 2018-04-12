@@ -311,3 +311,4 @@ public static int main (string[] args) {
     var application = new AppCenter.App ();
     return application.run (args);
 }
+
