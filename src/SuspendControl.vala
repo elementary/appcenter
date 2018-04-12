@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2011-2015 elementary LLC (https://elementary.io)
+* Copyright (c) 2011-2018 elementary LLC (https://elementary.io)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public
@@ -21,8 +21,8 @@
 
 [DBus (name = "org.gnome.SessionManager")]
 public interface SessionManager : Object {
-    public abstract uint32 inhibit (string app_id, uint32 toplevel_xid, string reason, uint32 flags) throws IOError;
-    public abstract void uninhibit (uint32 inhibit_cookie) throws IOError;
+    public abstract uint32 inhibit (string app_id, uint32 toplevel_xid, string reason, uint32 flags) throws GLib.Error;
+    public abstract void uninhibit (uint32 inhibit_cookie) throws GLib.Error;
 }
 
 public class SuspendControl {
@@ -35,7 +35,7 @@ public class SuspendControl {
     public SuspendControl () {
         try {
             sm = Bus.get_proxy_sync (BusType.SESSION, "org.gnome.SessionManager", "/org/gnome/SessionManager");
-        } catch (IOError e) {
+        } catch (GLib.Error e) {
             supported = false;
             critical (e.message);
         }
@@ -46,7 +46,7 @@ public class SuspendControl {
             try {
                 inhibit_cookie = sm.inhibit ("org.richardfairthorne.SuspendControl", 0, "Inhibit suspend during update", 4);
                 inhibited = true;
-            } catch (IOError e) {
+            } catch (GLib.Error e) {
                 critical (e.message);
             }
         }
@@ -60,7 +60,7 @@ public class SuspendControl {
                 sm.uninhibit (inhibit_cookie);
                 inhibited = false;
             }
-        } catch (IOError e) {
+        } catch (GLib.Error e) {
             critical (e.message);
         }
 

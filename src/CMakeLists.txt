@@ -13,6 +13,7 @@ vala_precompile(VALA_C ${EXEC_NAME}
     SuspendControl.vala
     Dialogs/RestartDialog.vala
     Dialogs/StripeDialog.vala
+    Dialogs/UpdateFailDialog.vala
     Views/AppInfoView.vala
     Views/AppListView.vala
     Views/AppListUpdateView.vala
@@ -43,6 +44,7 @@ vala_precompile(VALA_C ${EXEC_NAME}
     Widgets/CardNumberEntry.vala
     Services/DBusInterfaces.vala
     Services/DBusServer.vala
+    Services/SearchProvider.vala
     ${CMAKE_CURRENT_BINARY_DIR}/config.vala
 PACKAGES
     appstream

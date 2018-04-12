@@ -26,7 +26,7 @@ public class AppCenter.Views.InstalledView : View {
     construct {
         app_list_view = new AppListUpdateView ();
         app_list_view.show_app.connect ((package) => {
-            subview_entered (C_("view", "Updates"), false, "");
+            subview_entered (C_("view", "Installed"), false, "");
             show_package (package);
         });
 
@@ -46,7 +46,7 @@ public class AppCenter.Views.InstalledView : View {
     public override void return_clicked () {
         if (previous_package != null) {
             show_package (previous_package);
-            subview_entered (C_("view", "Updates"), false, null);
+            subview_entered (C_("view", "Installed"), false, null);
         } else {
             set_visible_child (app_list_view);
             subview_entered (null, false);

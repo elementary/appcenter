@@ -66,6 +66,9 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
                 this.maximize ();
                 break;
             default:
+                if (saved_state.window_x != -1 && saved_state.window_y != -1) {
+                    move (saved_state.window_x, saved_state.window_y);
+                }
                 break;
         }
 
@@ -142,7 +145,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         view_mode.margin_end = view_mode.margin_start = 12;
         view_mode.margin_bottom = view_mode.margin_top = 7;
         homepage_view_id = view_mode.append_text (_("Home"));
-        installed_view_id = view_mode.append_text (C_("view", "Updates"));
+        installed_view_id = view_mode.append_text (C_("view", "Installed"));
 
         updates_badge = new Gtk.Label ("!");
         updates_badge.halign = Gtk.Align.END;
@@ -210,10 +213,15 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     public override bool delete_event (Gdk.EventAny event) {
         int window_width;
         int window_height;
+        int window_x;
+        int window_y;
         get_size (out window_width, out window_height);
         unowned Settings saved_state = Settings.get_default ();
         saved_state.window_width = window_width;
         saved_state.window_height = window_height;
+        get_position (out window_x, out window_y);
+        saved_state.window_x = window_x;
+        saved_state.window_y = window_y;
         if (is_maximized) {
             saved_state.window_state = Settings.WindowState.MAXIMIZED;
         } else {

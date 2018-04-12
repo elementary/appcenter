@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=@APP_NAME@ Daemon
-Comment=@RELEASE_NAME@
+Comment=Browse and manage apps
 Exec=@EXEC_NAME@ -s
 Icon=@DESKTOP_ICON@
 Terminal=false

@@ -1,0 +1,5 @@
+[Shell Search Provider]
+DesktopId=@CMAKE_PROJECT_NAME@.desktop
+BusName=@EXEC_NAME@
+ObjectPath=/io/elementary/appcenter/SearchProvider
+Version=2

@@ -1,12 +1,15 @@
 include (Translations)
-configure_file(${DESKTOP_FILE}.in.in ${CMAKE_CURRENT_BINARY_DIR}/${DESKTOP_FILE}.in)
+
+configure_file(${CMAKE_PROJECT_NAME}.desktop.in.in ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_PROJECT_NAME}.desktop.in)
 configure_file(${CMAKE_PROJECT_NAME}-daemon.desktop.in ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_PROJECT_NAME}-daemon.desktop)
-configure_file_translation(${CMAKE_CURRENT_BINARY_DIR}/${DESKTOP_FILE}.in ${CMAKE_CURRENT_BINARY_DIR}/${DESKTOP_FILE} ${CMAKE_SOURCE_DIR}/po/)
+configure_file_translation(${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_PROJECT_NAME}.desktop.in ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_PROJECT_NAME}.desktop ${CMAKE_SOURCE_DIR}/po/)
 configure_file(${CMAKE_PROJECT_NAME}.service.in ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_PROJECT_NAME}.service)
+configure_file(${CMAKE_PROJECT_NAME}.search-provider.ini.in ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_PROJECT_NAME}.search-provider.ini)
 configure_file_translation(${CMAKE_CURRENT_SOURCE_DIR}/${CMAKE_PROJECT_NAME}.appdata.xml.in ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_PROJECT_NAME}.appdata.xml ${CMAKE_SOURCE_DIR}/po/)
 
-install (FILES ${CMAKE_CURRENT_BINARY_DIR}/${DESKTOP_FILE} DESTINATION share/applications)
+install (FILES ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_PROJECT_NAME}.desktop DESTINATION share/applications)
 install (FILES ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_PROJECT_NAME}-daemon.desktop DESTINATION share/applications)
 install (FILES ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_PROJECT_NAME}.appdata.xml DESTINATION share/metainfo)
+install (FILES ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_PROJECT_NAME}.search-provider.ini DESTINATION share/gnome-shell/search-providers)
 install (FILES ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_PROJECT_NAME}.service DESTINATION share/dbus-1/services)
 install (FILES ${BLACKLIST} DESTINATION ${CONFIGDIR})
