@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-23 15:49-0700\n"
+"POT-Creation-Date: 2018-04-12 14:39-0700\n"
 "PO-Revision-Date: 2015-11-04 14:21+0000\n"
 "Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,19 +19,19 @@ msgstr ""
 msgid "AppCenter"
 msgstr ""
 
-#: ../src/Application.vala:124
+#: ../src/Application.vala:115
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr ""
 
-#: ../src/Application.vala:258
+#: ../src/Application.vala:249
 msgid "Application installed"
 msgstr ""
 
-#: ../src/Application.vala:259
+#: ../src/Application.vala:250
 msgid "%s has been successfully installed"
 msgstr ""
 
-#: ../src/Application.vala:271
+#: ../src/Application.vala:262
 msgid "There Was An Error Installing %s."
 msgstr ""
 
@@ -223,7 +223,7 @@ msgstr[3] ""
 msgid "%s:"
 msgstr ""
 
-#: ../src/Core/Package.vala:186
+#: ../src/Core/Package.vala:192
 msgid "The %s Developers"
 msgstr ""
 
@@ -249,7 +249,7 @@ msgstr ""
 
 #: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:182
 #: ../src/Dialogs/StripeDialog.vala:299
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:145
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:147
 msgid "Cancel"
 msgstr ""
 
@@ -398,54 +398,54 @@ msgstr ""
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
 
-#: ../src/Dialogs/UpdateFailDialog.vala:24
+#: ../src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
 msgstr ""
 
-#: ../src/Dialogs/UpdateFailDialog.vala:25
+#: ../src/Dialogs/UpdateFailDialog.vala:26
 msgid ""
 "This may have been caused by external, manually added software repositories "
 "or a corrupted sources file."
 msgstr ""
 
-#: ../src/Dialogs/UpdateFailDialog.vala:45
+#: ../src/Dialogs/UpdateFailDialog.vala:46
 msgid "Details"
 msgstr ""
 
-#: ../src/Dialogs/UpdateFailDialog.vala:53
+#: ../src/Dialogs/UpdateFailDialog.vala:54
 msgid "Ignore"
 msgstr ""
 
-#: ../src/Dialogs/UpdateFailDialog.vala:54
+#: ../src/Dialogs/UpdateFailDialog.vala:55
 msgid "Try Again"
 msgstr ""
 
-#: ../src/MainWindow.vala:144 ../src/Views/Homepage.vala:253
+#: ../src/MainWindow.vala:147 ../src/Views/Homepage.vala:253
 #: ../src/Views/Homepage.vala:262 ../src/Views/Homepage.vala:267
 #: ../src/Views/Homepage.vala:278
 msgid "Home"
 msgstr ""
 
-#: ../src/MainWindow.vala:145 ../src/Views/InstalledView.vala:29
+#: ../src/MainWindow.vala:148 ../src/Views/InstalledView.vala:29
 #: ../src/Views/InstalledView.vala:49
 msgctxt "view"
 msgid "Installed"
 msgstr ""
 
-#: ../src/MainWindow.vala:172 ../src/MainWindow.vala:313
+#: ../src/MainWindow.vala:175 ../src/MainWindow.vala:321
 #: ../src/Views/SearchView.vala:54 ../src/Views/SearchView.vala:75
 msgid "Search Apps"
 msgstr ""
 
-#: ../src/MainWindow.vala:190
+#: ../src/MainWindow.vala:193
 msgid "Network Is Not Available"
 msgstr ""
 
-#: ../src/MainWindow.vala:191
+#: ../src/MainWindow.vala:194
 msgid "Connect to the Internet to install or update apps."
 msgstr ""
 
-#: ../src/MainWindow.vala:194
+#: ../src/MainWindow.vala:197
 msgid "Network Settings…"
 msgstr ""
 
@@ -469,28 +469,36 @@ msgstr ""
 msgid "Help"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:170
+#: ../src/Views/AppInfoView.vala:175
 msgid "What's New:"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:189
+#: ../src/Views/AppInfoView.vala:194
 msgid "Extensions:"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:282
+#: ../src/Views/AppInfoView.vala:287
 msgid "Other Apps by %s"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:316
+#: ../src/Views/AppInfoView.vala:321
 msgid "Link copied to clipboard"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:327
+#: ../src/Views/AppInfoView.vala:332
 msgid "Check out %s on AppCenter:"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:334
+#: ../src/Views/AppInfoView.vala:339
 msgid "Share"
+msgstr ""
+
+#: ../src/Views/AppInfoView.vala:620
+msgid "Fund"
+msgstr ""
+
+#: ../src/Views/AppInfoView.vala:642
+msgid "Fund the development of this app"
 msgstr ""
 
 #: ../src/Views/AppListUpdateView.vala:59
@@ -539,20 +547,20 @@ msgstr ""
 msgid "No apps could be found. Try changing search terms."
 msgstr ""
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:124
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:126
 msgid "Uninstall"
 msgstr ""
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:127
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:129
 msgid "Open"
 msgstr ""
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:208
-#: ../src/Widgets/HumbleButton.vala:82
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:211
+#: ../src/Widgets/HumbleButton.vala:93
 msgid "Free"
 msgstr ""
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:232
+#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:235
 msgid "Update"
 msgstr ""
 
@@ -617,12 +625,12 @@ msgid "Universal Access"
 msgstr ""
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: ../src/Widgets/HumbleButton.vala:141
+#: ../src/Widgets/HumbleButton.vala:127
 msgid "$%d.00"
 msgstr ""
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: ../src/Widgets/HumbleButton.vala:144
+#: ../src/Widgets/HumbleButton.vala:130
 msgid "$%d"
 msgstr ""
 
