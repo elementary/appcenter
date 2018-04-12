@@ -63,7 +63,7 @@ public class AppCenter.App : Gtk.Application {
         });
 
         var show_updates_action = new SimpleAction ("show-updates", null);
-        show_updates_action.activate.connect(() => {
+        show_updates_action.activate.connect (() => {
             silent = false;
             show_updates = true;
             activate ();
@@ -311,4 +311,3 @@ public static int main (string[] args) {
     var application = new AppCenter.App ();
     return application.run (args);
 }
-
