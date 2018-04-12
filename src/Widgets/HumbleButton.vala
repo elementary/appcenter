@@ -55,6 +55,19 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
         }
     }
 
+    public bool _allow_free = true;
+    public bool allow_free {
+        get {
+            return _allow_free;
+        }
+        set {
+            if (value != _allow_free) {
+                _allow_free = value;
+                custom_amount.set_range (_allow_free ? 0 : 1, 100);
+            }
+        }
+    }
+
     public bool can_purchase {
         set {
             if (!value) {
@@ -122,5 +135,34 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
             /// This amount will be US Dollars. Some languages might need a "$%dUSD"
             return _("$%d").printf (_amount);
         }
+    }
+
+    private Gtk.Button get_amount_button (int amount) {
+        var button = new Gtk.Button.with_label (get_amount_formatted (amount, false));
+
+        button.clicked.connect (() => {
+            this.amount = amount;
+            if (selection != null) {
+                selection.hide ();
+            }
+
+            payment_requested (this.amount);
+        });
+
+        return button;
+    }
+
+    private void on_arrow_button_toggled () {
+        if (selection == null) {
+            selection = new Gtk.Popover (arrow_button);
+            selection.position = Gtk.PositionType.BOTTOM;
+            selection.add (selection_list);
+
+            selection.closed.connect (() => {
+                arrow_button.active = false;
+            });
+        }
+
+        selection.show_all ();
     }
 }
