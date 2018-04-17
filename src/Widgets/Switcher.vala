@@ -29,7 +29,7 @@ namespace AppCenter.Widgets {
         private Gtk.Stack stack;
         private Gee.HashMap<Gtk.Widget, Gtk.ToggleButton> buttons;
         public signal void on_stack_changed ();
-        
+
         public Switcher () {
             column_spacing = 3;
             can_focus = false;
@@ -69,14 +69,13 @@ namespace AppCenter.Widgets {
             // show all children after update
             show_all ();
         }
-        
+
         public override void show () {
             base.show ();
             if (buttons.size <= 1)
                 hide ();
         }
 
-        
         public override void show_all () {
             base.show_all ();
             if (buttons.size <= 1)
@@ -122,3 +121,4 @@ namespace AppCenter.Widgets {
         }
     }
 }
+

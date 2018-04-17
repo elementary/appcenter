@@ -22,7 +22,7 @@ const string BANNER_STYLE_CSS = """
     @define-color banner_bg_color %s;
     @define-color banner_fg_color %s;
 
-    .banner { 
+    .banner {
         transition: all %ums ease-in-out;
     }
 """;
@@ -81,7 +81,7 @@ namespace AppCenter.Widgets {
                 var icon = new Gtk.Image ();
                 icon.pixel_size = 128;
                 if (has_package) {
-                    icon.gicon = package.get_icon (128);
+                    icon.gicon = package.get_icon (128, icon.get_scale_factor ());
                 } else {
                     icon.icon_name = "system-software-install";
                 }
@@ -255,3 +255,4 @@ namespace AppCenter.Widgets {
         }
     }
 }
+

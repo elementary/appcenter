@@ -32,6 +32,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
     }
 
     construct {
+        updates_view = true;
         app_version = new Gtk.Label (null);
         app_version.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
         app_version.valign = Gtk.Align.START;

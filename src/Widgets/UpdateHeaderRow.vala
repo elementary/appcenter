@@ -126,7 +126,8 @@ namespace AppCenter.Widgets {
         }
 
         public override void update (uint _update_numbers, uint64 _update_real_size, bool _is_updating) {
-           
+
         }
-    }    
+    }
 }
+
