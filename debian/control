@@ -26,7 +26,7 @@ Architecture: any
 Priority: extra
 Conflicts: appcenter-daemon
 Replaces: appcenter-daemon
-Depends: appstream, packagekit, ${misc:Depends}, ${shlibs:Depends}
+Depends: appstream (>= 0.12), packagekit, ${misc:Depends}, ${shlibs:Depends}
 Recommends: appstream-data-pantheon
 Description: Fast application store
  Install, update and remove apps with ease.
