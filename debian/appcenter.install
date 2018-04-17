@@ -1,4 +1,3 @@
-debian/60appcenter /etc/apt/apt.conf.d/
 usr/bin/
 usr/share/applications/
 usr/share/dbus-1/services/io.elementary.appcenter.service
