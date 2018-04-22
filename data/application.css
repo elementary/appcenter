@@ -68,6 +68,16 @@
         0 3px 5px alpha (shade (@banner_bg_color, 0.5), 0.15);
 }
 
+.banner.home:hover {
+    margin: -3px;
+    box-shadow:
+        inset 0 0 0 1px alpha (shade (@banner_bg_color, 1.7), 0.05),
+        inset 0 1px 0 0 alpha (shade (@banner_bg_color, 1.7), 0.45),
+        inset 0 -1px 0 0 alpha (shade (@banner_bg_color, 1.7), 0.15),
+        0 10px 8px -11px alpha (shade (@banner_bg_color, 0.6), 0.8),
+        0 8px 12px alpha (shade (@banner_bg_color, 0.8), 0.6);
+}
+
 .banner button,
 .banner .button {
     background-color: alpha (@banner_fg_color, 0.6);
@@ -120,15 +130,32 @@
     background-repeat: no-repeat;
     border: 1px solid alpha (#000, 0.15);
     border-radius: 3px;
-
-    box-shadow: inset 0 0 0 1px alpha (#fff, 0.05),
-                inset 0 1px 0 0 alpha (#fff, 0.45),
-                inset 0 -1px 0 0 alpha (#fff, 0.15),
-                0 3px 2px -1px alpha (#000, 0.15),
-                0 3px 5px alpha (#000, 0.10);
+    box-shadow:
+        inset 0 0 0 1px alpha (#fff, 0.05),
+        inset 0 1px 0 0 alpha (#fff, 0.45),
+        inset 0 -1px 0 0 alpha (#fff, 0.15),
+        0 3px 2px -1px alpha (#000, 0.15),
+        0 3px 5px alpha (#000, 0.10);
     color: #4d4d4d;
     font-size: 32px;
     font-weight: 300;
+    text-shadow: none;
+    -gtk-icon-shadow: none;
+    min-width: 240px;
+    min-height: 135px;
+    margin: 12px;
+}
+
+.category:hover {
+    box-shadow:
+        inset 0 0 0 1px alpha (#fff, 0.05),
+        inset 0 1px 0 0 alpha (#fff, 0.45),
+        inset 0 -1px 0 0 alpha (#fff, 0.15),
+        0 5px 4px -5px alpha (#000, 0.2),
+        0 4px 5px alpha (#000, 0.2);
+    min-width: 244px;
+    min-height: 139px;
+    margin: 10px;
 }
 
 .category.audio {
@@ -156,26 +183,61 @@
     color: #fff;
 }
 
-.category.accessories {
+.category.accessories,
+.category.graphics,
+.category.office {
     border:none;
-    box-shadow: inset 0 0 0 1px alpha (#fff, 0.10),
-                inset 0 1px 0 0 alpha (#fff, 0.90),
-                inset 0 -1px 0 0 alpha (#fff, 0.30),
-                0 0 0 1px alpha (#000, 0.15),
-                0 3px 2px -1px alpha (#000, 0.15),
-                0 3px 5px alpha (#000, 0.10);
+    box-shadow:
+        inset 0 0 0 1px alpha (#fff, 0.10),
+        inset 0 1px 0 0 alpha (#fff, 0.90),
+        inset 0 -1px 0 0 alpha (#fff, 0.30),
+        0 0 0 1px alpha (#000, 0.15),
+        0 3px 2px -1px alpha (#000, 0.15),
+        0 3px 5px alpha (#000, 0.10);
+}
+
+.category.accessories:hover,
+.category.graphics:hover,
+.category.office:hover {
+    box-shadow:
+        inset 0 0 0 1px alpha (#fff, 0.05),
+        inset 0 1px 0 0 alpha (#fff, 0.45),
+        inset 0 -1px 0 0 alpha (#fff, 0.15),
+        0 0 0 1px alpha (#000, 0.15),
+        0 5px 4px -5px alpha (#000, 0.2),
+        0 4px 5px alpha (#000, 0.2);
+}
+
+.category.accessories {
     font-size: 24px;
 }
 
 .category.office {
-    border:none;
-    box-shadow: inset 0 0 0 1px alpha (#fff, 0.10),
-                inset 0 1px 0 0 alpha (#fff, 0.90),
-                inset 0 -1px 0 0 alpha (#fff, 0.30),
-                0 0 0 1px alpha (#000, 0.15),
-                0 3px 2px -1px alpha (#000, 0.15),
-                0 3px 5px alpha (#000, 0.10);
     color: #ff750c;
+}
+
+.category.education,
+.category.internet,
+.category.system,
+.category.video {
+    box-shadow:
+        inset 0 0 0 1px alpha (#fff, 0.05),
+        inset 0 1px 0 0 alpha (#fff, 0.25),
+        inset 0 -1px 0 0 alpha (#fff, 0.10),
+        0 3px 2px -1px alpha (#000, 0.15),
+        0 3px 5px alpha (#000, 0.10);
+}
+
+.category.education:hover,
+.category.internet:hover,
+.category.system:hover,
+.category.video:hover {
+    box-shadow:
+        inset 0 0 0 1px alpha (#fff, 0.05),
+        inset 0 1px 0 0 alpha (#fff, 0.25),
+        inset 0 -1px 0 0 alpha (#fff, 0.10),
+        0 5px 4px -5px alpha (#000, 0.2),
+        0 4px 5px alpha (#000, 0.2);
 }
 
 .category.system {
@@ -184,11 +246,6 @@
                               #59687e
                               );
     border-color: alpha (#454951, 0.8);
-    box-shadow: inset 0 0 0 1px alpha (#fff, 0.05),
-                inset 0 1px 0 0 alpha (#fff, 0.25),
-                inset 0 -1px 0 0 alpha (#fff, 0.10),
-                0 3px 2px -1px alpha (#000, 0.15),
-                0 3px 5px alpha (#000, 0.10);
     color: white;
     text-shadow: 0 1px 1px alpha (#000, 0.3),
                  0 2px 3px alpha (#000, 0.3);
@@ -202,24 +259,12 @@
                               );
     background-size: auto 150%;
     border-color: alpha (#7a0000, 0.9);
-    box-shadow: inset 0 0 0 1px alpha (#fff, 0.05),
-                inset 0 1px 0 0 alpha (#fff, 0.25),
-                inset 0 -1px 0 0 alpha (#fff, 0.10),
-                0 3px 2px -1px alpha (#000, 0.15),
-                0 3px 5px alpha (#000, 0.10);
     text-shadow: 0 1px 2px alpha (#7a0000, 0.5);
     -gtk-icon-shadow: 0 1px 2px alpha (#7a0000, 0.5);
     color: #fff;
 }
 
 .category.graphics {
-    border:none;
-    box-shadow: inset 0 0 0 1px alpha (#fff, 0.10),
-                inset 0 1px 0 0 alpha (#fff, 0.90),
-                inset 0 -1px 0 0 alpha (#fff, 0.30),
-                0 0 0 1px alpha (#000, 0.15),
-                0 3px 2px -1px alpha (#000, 0.15),
-                0 3px 5px alpha (#000, 0.10);
     color: #fe5498;
 }
 
@@ -234,17 +279,32 @@
     border-image: -gtk-scaled(url("resource:///io/elementary/appcenter/backgrounds/graphics-rtl.svg"),url("resource:///io/elementary/appcenter/backgrounds/graphics-rtl@2x.svg")) 10 10 10 10 / 10px 10px 10px 10px repeat;
 }
 
+.category.games,
+.category.science {
+    box-shadow:
+        inset 0 0 0 1px alpha (#fff, 0.02),
+        inset 0 1px 0 0 alpha (#fff, 0.23),
+        inset 0 -1px 0 0 alpha (#fff, 0.07),
+        0 3px 2px -1px alpha (#000, 0.15),
+        0 3px 5px alpha (#000, 0.10);
+}
+
+.category.games:hover,
+.category.science:hover {
+    box-shadow:
+        inset 0 0 0 1px alpha (#fff, 0.02),
+        inset 0 1px 0 0 alpha (#fff, 0.23),
+        inset 0 -1px 0 0 alpha (#fff, 0.07),
+        0 5px 4px -5px alpha (#000, 0.2),
+        0 4px 5px alpha (#000, 0.2);
+}
+
 .category.games {
     background-image: linear-gradient(to bottom,
                               #374044,
                               #374044
                               );
     border-color: alpha (#1B2022, 0.8);
-    box-shadow: inset 0 0 0 1px alpha (#fff, 0.02),
-                inset 0 1px 0 0 alpha (#fff, 0.23),
-                inset 0 -1px 0 0 alpha (#fff, 0.07),
-                0 3px 2px -1px alpha (#000, 0.15),
-                0 3px 5px alpha (#000, 0.10);
     text-shadow: 0 1px 2px alpha (#000, 0.3);
     -gtk-icon-shadow: 0 1px 2px alpha (#000, 0.3);
     color: #fff;
@@ -258,11 +318,6 @@
                               #305A46
                               );
     border-color: alpha (#213D30, 0.8);
-    box-shadow: inset 0 0 0 1px alpha (#fff, 0.05),
-                inset 0 1px 0 0 alpha (#fff, 0.25),
-                inset 0 -1px 0 0 alpha (#fff, 0.10),
-                0 3px 2px -1px alpha (#000, 0.15),
-                0 3px 5px alpha (#000, 0.10);
     text-shadow: 0 0 24px alpha (#fff, 0.6);
     font-family: HVD Bodedo;
     font-size: 24px;
@@ -276,11 +331,6 @@
                               #3DA4E8
                               );
     border-color: alpha (#2980D1, 0.8);
-    box-shadow: inset 0 0 0 1px alpha (#fff, 0.05),
-                inset 0 1px 0 0 alpha (#fff, 0.25),
-                inset 0 -1px 0 0 alpha (#fff, 0.10),
-                0 3px 2px -1px alpha (#000, 0.15),
-                0 3px 5px alpha (#000, 0.10);
     text-shadow: 0 1px 1px alpha (#000, 0.3),
                  0 2px 3px alpha (#000, 0.3);
     color: #fff;
@@ -293,11 +343,6 @@
                               #374044
                               );
     border-color: alpha (#1B2022, 0.8);
-    box-shadow: inset 0 0 0 1px alpha (#fff, 0.02),
-                inset 0 1px 0 0 alpha (#fff, 0.23),
-                inset 0 -1px 0 0 alpha (#fff, 0.07),
-                0 3px 2px -1px alpha (#000, 0.15),
-                0 3px 5px alpha (#000, 0.10);
     text-shadow: 0 1px 2px alpha (#000, 0.3);
     -gtk-icon-shadow: 0 1px 2px alpha (#000, 0.3);
     font-family: Limelight;
