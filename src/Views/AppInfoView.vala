@@ -248,30 +248,45 @@ namespace AppCenter.Views {
 
             var project_license = package.component.project_license;
             if (project_license != null) {
-                string license_url = "https://choosealicense.com/licenses/";
-                switch (project_license) {
-                    case "Apache-2.0":
-                        license_url = license_url + "apache-2.0";
-                        break;
-                    case "GPL-2":
-                    case "GPL-2.0":
-                    case "GPL-2.0+":
-                        license_url = license_url + "gpl-2.0";
-                        break;
-                    case "GPL-3":
-                    case "GPL-3.0":
-                    case "GPL-3.0+":
-                        license_url = license_url + "gpl-3.0";
-                        break;
-                    case "LGPL-2.1":
-                    case "LGPL-2.1+":
-                        license_url = license_url + "lgpl-2.1";
-                        break;
-                    case "MIT":
-                        license_url = license_url + "mit";
-                        break;
+                string? license_copy;
+                string? license_url;
+                if (project_license.has_prefix ("LicenseRef")) {
+                    // i.e. `LicenseRef-proprietary=https://example.com`
+                    var split_license = project_license.split_set ("=", 2);
+
+                    var license_type = split_license[0].split_set ("-", 2)[1];
+                    var pretty_license_type = license_type.substring (0, 1).up () + license_type.substring (1);
+
+                    license_copy = _("%s License").printf (pretty_license_type);
+                    license_url = split_license[1];
+                } else {
+                    license_copy = project_license;
+                    license_url = "https://choosealicense.com/licenses/";
+
+                    switch (project_license) {
+                        case "Apache-2.0":
+                            license_url = license_url + "apache-2.0";
+                            break;
+                        case "GPL-2":
+                        case "GPL-2.0":
+                        case "GPL-2.0+":
+                            license_url = license_url + "gpl-2.0";
+                            break;
+                        case "GPL-3":
+                        case "GPL-3.0":
+                        case "GPL-3.0+":
+                            license_url = license_url + "gpl-3.0";
+                            break;
+                        case "LGPL-2.1":
+                        case "LGPL-2.1+":
+                            license_url = license_url + "lgpl-2.1";
+                            break;
+                        case "MIT":
+                            license_url = license_url + "mit";
+                            break;
+                    }
                 }
-                var license_button = new UrlButton (_(project_license), license_url, "text-x-copying-symbolic");
+                var license_button = new UrlButton (_(license_copy), license_url, "text-x-copying-symbolic");
                 footer_grid.add (license_button);
             }
 
@@ -579,10 +594,9 @@ namespace AppCenter.Views {
             }
         }
 
-        class UrlButton : Gtk.Button {
-            public UrlButton (string label, string uri, string icon_name) {
+        class UrlButton : Gtk.Grid {
+            public UrlButton (string label, string? uri, string icon_name) {
                 get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-                get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
                 tooltip_text = uri;
 
                 var icon = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.SMALL_TOOLBAR);
@@ -596,15 +610,23 @@ namespace AppCenter.Views {
                 grid.add (icon);
                 grid.add (title);
 
-                add (grid);
+                if (uri != null) {
+                    var button = new Gtk.Button ();
+                    button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
-                clicked.connect (() => {
-                    try {
-                        AppInfo.launch_default_for_uri (uri, null);
-                    } catch (Error e) {
-                        warning ("%s\n", e.message);
-                    }
-                });
+                    button.add (grid);
+                    add (button);
+
+                    button.clicked.connect (() => {
+                        try {
+                            AppInfo.launch_default_for_uri (uri, null);
+                        } catch (Error e) {
+                            warning ("%s\n", e.message);
+                        }
+                    });
+                } else {
+                    add (grid);
+                }
             }
         }
 
