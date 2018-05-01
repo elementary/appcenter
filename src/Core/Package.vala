@@ -189,7 +189,7 @@ public class AppCenterCore.Package : Object {
 
             _author_title = author;
             if (_author_title == null) {
-                _author_title = _("The %s Developers").printf (get_name ());
+                _author_title = _("%s Developers").printf (get_name ());
             }
 
             return _author_title;
