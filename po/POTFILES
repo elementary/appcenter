@@ -29,6 +29,7 @@ src/Widgets/CardNumberEntry.vala
 src/Widgets/CategoryFlowBox.vala
 src/Widgets/CategoryItem.vala
 src/Widgets/HumbleButton.vala
+src/Widgets/HumblePopover.vala
 src/Widgets/PackageRow.vala
 src/Widgets/ReleaseListBox.vala
 src/Widgets/ReleaseRow.vala
