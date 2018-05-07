@@ -5,146 +5,146 @@
     <metadata_license>CC0-1.0</metadata_license>
     <project_group>elementary</project_group>
     <project_license>GPL-3.0+</project_license>
-    <_name>AppCenter</_name>
-    <_summary>Browse and manage apps</_summary>
+    <name>AppCenter</name>
+    <summary>Browse and manage apps</summary>
     <description>
-        <_p>
+        <p>
         An app store for indie and open source developers. Browse by categories or
         search and discover new apps. AppCenter is also used for updating your
         system to the latest and greatest version for new features and fixes.
-        </_p>
+        </p>
     </description>
     <releases>
         <release version="0.2.9" date="2018-03-02" urgency="medium">
             <description>
-                <_p>Bug fixes and improve performance.</_p>
+                <p>Bug fixes and improve performance.</p>
                 <ul>
-                    <_li>Improve transaction success rate</_li>
-                    <_li>Add Publishing to Office category</_li>
-                    <_li>Improve descriptions of OS Updates</_li>
-                    <_li>Various bug fixes and performance improvements</_li>
-                    <_li>New translations</_li>
+                    <li>Improve transaction success rate</li>
+                    <li>Add Publishing to Office category</li>
+                    <li>Improve descriptions of OS Updates</li>
+                    <li>Various bug fixes and performance improvements</li>
+                    <li>New translations</li>
                 </ul>
             </description>
         </release>
         <release version="0.2.8" date="2018-01-25" urgency="medium">
             <description>
-                <_p>Bug fixes and improve performance.</_p>
+                <p>Bug fixes and improve performance.</p>
                 <ul>
-                    <_li>Give details for Operating System Updates</_li>
-                    <_li>Support mouse button navigation</_li>
-                    <_li>Various bug fixes and performance improvements</_li>
-                    <_li>New translations</_li>
+                    <li>Give details for Operating System Updates</li>
+                    <li>Support mouse button navigation</li>
+                    <li>Various bug fixes and performance improvements</li>
+                    <li>New translations</li>
                 </ul>
             </description>
         </release>
         <release version="0.2.7" date="2017-11-07" urgency="medium">
             <description>
-                <_p>Bug fixes and improve performance.</_p>
+                <p>Bug fixes and improve performance.</p>
                 <ul>
-                    <_li>Various bug fixes and performance improvements</_li>
-                    <_li>New translations</_li>
+                    <li>Various bug fixes and performance improvements</li>
+                    <li>New translations</li>
                 </ul>
             </description>
         </release>
         <release version="0.2.6" date="2017-09-18" urgency="medium">
             <description>
-                <_p>Bug fixes and improve performance.</_p>
+                <p>Bug fixes and improve performance.</p>
                 <ul>
-                    <_li>Various bug fixes and performance improvements</_li>
-                    <_li>New translations</_li>
+                    <li>Various bug fixes and performance improvements</li>
+                    <li>New translations</li>
                 </ul>
             </description>
         </release>
         <release version="0.2.5" date="2017-08-04" urgency="medium">
             <description>
-                <_p>Bug fixes and improve performance.</_p>
+                <p>Bug fixes and improve performance.</p>
                 <ul>
-                    <_li>Various bug fixes and performance improvements</_li>
-                    <_li>New translations</_li>
+                    <li>Various bug fixes and performance improvements</li>
+                    <li>New translations</li>
                 </ul>
             </description>
         </release>
         <release version="0.2.4" date="2017-07-04" urgency="medium">
             <description>
-                <_p>Bug fixes and improve performance.</_p>
+                <p>Bug fixes and improve performance.</p>
                 <ul>
-                    <_li>Various bug fixes and performance improvements</_li>
-                    <_li>New translations</_li>
+                    <li>Various bug fixes and performance improvements</li>
+                    <li>New translations</li>
                 </ul>
             </description>
         </release>
         <release version="0.2.3" date="2017-05-31" urgency="medium">
             <description>
-                <_p>Bug fixes and improve performance.</_p>
+                <p>Bug fixes and improve performance.</p>
                 <ul>
-                    <_li>Various bug fixes and performance improvements</_li>
-                    <_li>New translations</_li>
+                    <li>Various bug fixes and performance improvements</li>
+                    <li>New translations</li>
                 </ul>
             </description>
         </release>
         <release version="0.2.2" date="2017-05-21" urgency="medium">
             <description>
-                <_p>Bug fixes and improve performance.</_p>
+                <p>Bug fixes and improve performance.</p>
                 <ul>
-                    <_li>Various bug fixes and performance improvements</_li>
-                    <_li>New translations</_li>
+                    <li>Various bug fixes and performance improvements</li>
+                    <li>New translations</li>
                 </ul>
             </description>
         </release>
         <release version="0.2.1" date="2017-05-19" urgency="medium">
             <description>
-                <_p>Bug fixes and improve performance.</_p>
+                <p>Bug fixes and improve performance.</p>
                 <ul>
-                    <_li>Various bug fixes and performance improvements</_li>
-                    <_li>New translations</_li>
+                    <li>Various bug fixes and performance improvements</li>
+                    <li>New translations</li>
                 </ul>
             </description>
         </release>
         <release version="0.2" date="2017-05-17" urgency="medium">
             <description>
-                <_p>Bug fixes and improve performance.</_p>
+                <p>Bug fixes and improve performance.</p>
                 <ul>
-                    <_li>Various bug fixes and performance improvements</_li>
-                    <_li>New translations</_li>
+                    <li>Various bug fixes and performance improvements</li>
+                    <li>New translations</li>
                 </ul>
             </description>
         </release>
         <release version="0.1.4" date="2017-03-16" urgency="medium">
             <description>
-                <_p>Bug fixes and improve performance.</_p>
+                <p>Bug fixes and improve performance.</p>
                 <ul>
-                    <_li>Various bug fixes and performance improvements</_li>
-                    <_li>New translations</_li>
+                    <li>Various bug fixes and performance improvements</li>
+                    <li>New translations</li>
                 </ul>
             </description>
         </release>
         <release version="0.1.3" date="2016-12-05" urgency="medium">
             <description>
-                <_p>Bug fixes and improve performance.</_p>
+                <p>Bug fixes and improve performance.</p>
                 <ul>
-                    <_li>Fix crash caused by entries with missing packages</_li>
-                    <_li>New translations</_li>
+                    <li>Fix crash caused by entries with missing packages</li>
+                    <li>New translations</li>
                 </ul>
             </description>
         </release>
         <release version="0.1.2" date="2016-10-29" urgency="medium">
             <description>
-                <_p>Add capability to search by category and apply minor bug fixes.</_p>
+                <p>Add capability to search by category and apply minor bug fixes.</p>
                 <ul>
-                    <_li>It is now possible to search apps inside a category</_li>
-                    <_li>Prevent multiple authentication dialogs when resuming from suspend</_li>
-                    <_li>New translations</_li>
+                    <li>It is now possible to search apps inside a category</li>
+                    <li>Prevent multiple authentication dialogs when resuming from suspend</li>
+                    <li>New translations</li>
                 </ul>
             </description>
         </release>
         <release version="0.1.1" date="2016-09-26" urgency="medium">
             <description>
-                <_p>Search performance has beeen improved, the category name is now shown on the headbar and minor bugs have been fixed.</_p>
+                <p>Search performance has beeen improved, the category name is now shown on the headbar and minor bugs have been fixed.</p>
                 <ul>
-                    <_li>Fix Steam installation</_li>
-                    <_li>Make search asynchronous</_li>
-                    <_li>New translations</_li>
+                    <li>Fix Steam installation</li>
+                    <li>Make search asynchronous</li>
+                    <li>New translations</li>
                 </ul>
             </description>
         </release>
