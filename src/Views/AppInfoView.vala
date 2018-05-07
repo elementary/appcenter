@@ -590,6 +590,7 @@ namespace AppCenter.Views {
                 icon.valign = Gtk.Align.CENTER;
 
                 var title = new Gtk.Label (label);
+                title.ellipsize = Pango.EllipsizeMode.END;
 
                 var grid = new Gtk.Grid ();
                 grid.column_spacing = 6;
