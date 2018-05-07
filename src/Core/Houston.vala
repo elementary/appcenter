@@ -72,6 +72,42 @@ public class AppCenterCore.Houston : Object {
         return app_ids;
     }
 
+    public AppCenterCore.PackageList get_promo_package_list(string endpoint) {
+        var package_list = new AppCenterCore.PackageList ();
+        
+        get_app_ids.begin (endpoint, (obj, res) => {
+            var newest_ids = get_app_ids.end (res);
+            new Thread<void*> ("houston.get_promo_package_list (\""+endpoint+"\")", () => {
+                var packages = new Gee.LinkedList<AppCenterCore.Package> ();
+
+                foreach (var package in newest_ids) {
+                    if (packages.size >= NUM_PACKAGES_IN_BANNER) {
+                        break;
+                    }
+
+                    var candidate = package + ".desktop";
+                    var candidate_package = AppCenterCore.Client.get_default ().get_package_for_component_id (candidate);
+
+                    if (candidate_package != null) {
+                        candidate_package.update_state ();
+
+                        if (candidate_package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
+                            packages.add (candidate_package);
+                        }
+                    }
+                }
+
+                Idle.add (() => {
+                    package_list.set_packages(packages);
+                    return false;
+                });
+                return null;
+            });
+        });
+
+        return package_list;
+    }
+
     private static GLib.Once<Houston> instance;
     public static unowned Houston get_default () {
         return instance.once (() => { return new Houston (); });

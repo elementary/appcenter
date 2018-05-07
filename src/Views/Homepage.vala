@@ -117,110 +117,31 @@ namespace AppCenter {
 
             add (category_scrolled);
 
-            var local_package = App.local_package;
-            if (local_package != null) {
-                newest_banner.add_package (local_package);
-            }
-
-            houston.get_app_ids.begin ("/newest/project", (obj, res) => {
-                var newest_ids = houston.get_app_ids.end (res);
-                new Thread<void*> ("update-banner", () => {
-                    var packages_for_banner = new Gee.LinkedList<AppCenterCore.Package> ();
-                    foreach (var package in newest_ids) {
-                        if (packages_for_banner.size >= NUM_PACKAGES_IN_BANNER) {
-                            break;
-                        }
-
-                        var candidate = package + ".desktop";
-                        var candidate_package = AppCenterCore.Client.get_default ().get_package_for_component_id (candidate);
-
-                        if (candidate_package != null) {
-                            candidate_package.update_state ();
-
-                            if (candidate_package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
-                                packages_for_banner.add (candidate_package);
-                            }
-                        }
-                    }
-
-                    Idle.add (() => {
-                        foreach (var banner_package in packages_for_banner) {
-                            newest_banner.add_package (banner_package);
-                        }
-                        newest_banner.go_to_first ();
-                        switcher.show_all ();
-                        switcher_revealer.set_reveal_child (true);
-                        main_window.homepage_loaded ();
-                        return false;
-                    });
-                    return null;
-                });
+            var newest_package_list = houston.get_promo_package_list("/newest/project");
+            ulong newest_package_list_signal_id = 0;
+            newest_package_list_signal_id = newest_package_list.updated.connect(() => {
+                newest_package_list.disconnect(newest_package_list_signal_id);
+                newest_banner.set_package_list(newest_package_list);
+                newest_banner.go_to_first ();
+                switcher.show_all ();
+                switcher_revealer.set_reveal_child (true);
+                main_window.homepage_loaded ();
             });
 
-            houston.get_app_ids.begin ("/newest/release", (obj, res) => {
-                var updated_ids = houston.get_app_ids.end (res);
-                new Thread<void*> ("update-recent-carousel", () => {
-                    var packages_for_carousel = new Gee.LinkedList<AppCenterCore.Package> ();
-                    foreach (var package in updated_ids) {
-                        if (packages_for_carousel.size >= NUM_PACKAGES_IN_CAROUSEL) {
-                            break;
-                        }
-
-                        var candidate = package + ".desktop";
-                        var candidate_package = AppCenterCore.Client.get_default ().get_package_for_component_id (candidate);
-
-                        if (candidate_package != null) {
-                            candidate_package.update_state ();
-                            if (candidate_package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
-                                packages_for_carousel.add (candidate_package);
-                            }
-                        }
-                    }
-
-                    if (!packages_for_carousel.is_empty) {
-                        Idle.add (() => {
-                            foreach (var banner_package in packages_for_carousel) {
-                                recently_updated_carousel.add_package (banner_package);
-                            }
-                            recently_updated_revealer.reveal_child = true;
-                            return false;
-                        });
-                    }
-                    return null;
-                });
+            var recently_updated_package_list = houston.get_promo_package_list("/newest/release");
+            ulong recently_updated_package_list_signal_id = 0;
+            recently_updated_package_list_signal_id = recently_updated_package_list.updated.connect(() => {
+                recently_updated_package_list.disconnect(recently_updated_package_list_signal_id);
+                recently_updated_carousel.set_package_list(recently_updated_package_list);
+                recently_updated_revealer.reveal_child = true;
             });
 
-            houston.get_app_ids.begin ("/newest/downloads", (obj, res) => {
-                var trending_ids = houston.get_app_ids.end (res);
-                new Thread<void*> ("update-trending-carousel", () => {
-                    var packages_for_carousel = new Gee.LinkedList<AppCenterCore.Package> ();
-                    foreach (var package in trending_ids) {
-                        if (packages_for_carousel.size >= NUM_PACKAGES_IN_CAROUSEL) {
-                            break;
-                        }
-
-                        var candidate = package + ".desktop";
-                        var candidate_package = AppCenterCore.Client.get_default ().get_package_for_component_id (candidate);
-
-                        if (candidate_package != null) {
-                            candidate_package.update_state ();
-                            if (candidate_package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
-                                packages_for_carousel.add (candidate_package);
-                            }
-                        }
-                    }
-
-                    if (!packages_for_carousel.is_empty) {
-                        Idle.add (() => {
-                            foreach (var trending_package in packages_for_carousel) {
-                                trending_carousel.add_package (trending_package);
-                            }
-                            trending_revealer.reveal_child = true;
-                            return false;
-                        });
-                    }
-                    return null;
-                });
+            var trending_package_list = houston.get_promo_package_list("/newest/downloads");
+            ulong trending_package_list_signal_id = 0;
+                trending_package_list_signal_id = trending_package_list.updated.connect(() => {
+                trending_package_list.disconnect(trending_package_list_signal_id);
+                trending_carousel.set_package_list(trending_package_list);
+                trending_revealer.reveal_child = true;
             });
 
             category_flow.child_activated.connect ((child) => {

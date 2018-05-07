@@ -23,14 +23,11 @@ public class AppCenter.Widgets.AuthorCarousel : Carousel {
     public AppCenterCore.Package target { get; construct; }
 
     construct {
-        var author_packages = AppCenterCore.Client.get_default ().get_packages_by_author (target.author, AUTHOR_OTHER_APPS_MAX);
-        foreach (var author_package in author_packages) {
-            if (author_package.component.get_id () == target.component.get_id ()) {
-                continue;
-            }
-
-            add_package (author_package);
-        }
+        set_package_list((new AppCenterCore.PackageList()).set_from_iterator(
+            AppCenterCore.Client.get_default()
+                .get_packages_by_author(target.author, AUTHOR_OTHER_APPS_MAX)
+                .filter((package) => package.component.get_id() != target.component.get_id())
+        ));
     }
 
     public AuthorCarousel (AppCenterCore.Package target) {

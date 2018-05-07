@@ -20,6 +20,8 @@
 public class AppCenter.Widgets.Carousel : Gtk.FlowBox {
     public signal void package_activated (AppCenterCore.Package package);
 
+    protected AppCenterCore.PackageList _package_list;
+
     public Carousel () {
         Object (activate_on_single_click : true,
                 homogeneous: true);
@@ -35,9 +37,27 @@ public class AppCenter.Widgets.Carousel : Gtk.FlowBox {
         child_activated.connect (on_child_activated);
     }
 
-    public void add_package (AppCenterCore.Package? package) {
-        var carousel_item = new CarouselItem (package);
-        add (carousel_item);
+    public void set_package_list(AppCenterCore.PackageList package_list) {
+        if (_package_list != null) {
+            _package_list.updated.disconnect(on_package_list_updated);
+        }
+        _package_list = package_list;
+        _package_list.updated.connect(on_package_list_updated);
+        on_package_list_updated();
+    }
+
+    protected void on_package_list_updated() {
+        rebuild_children();
+    }
+
+    protected void rebuild_children() {
+        @foreach ((widget) => {
+            if (widget is CarouselItem) remove (widget);
+        });
+
+        foreach (var package in _package_list.get_packages()) {
+            add (new CarouselItem(package));
+        }
         show_all ();
     }
 

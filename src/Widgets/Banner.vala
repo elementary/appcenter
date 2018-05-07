@@ -117,6 +117,7 @@ namespace AppCenter.Widgets {
             }
         }
 
+        protected AppCenterCore.PackageList _package_list;
         private BannerWidget? brand_widget;
         private Gtk.Stack stack;
         private Switcher switcher;
@@ -165,18 +166,42 @@ namespace AppCenter.Widgets {
             return null;
         }
 
-        public void add_package (AppCenterCore.Package? package) {
-            var widget = new BannerWidget (package);
-            stack.add_named (widget, next_free_package_index.to_string ());
-            next_free_package_index++;
-            stack.set_visible_child (widget);
-            switcher.update_selected ();
-            set_background (package);
-
-            if (brand_widget != null) {
-                brand_widget.destroy ();
-                brand_widget = null;
+        public void set_package_list(AppCenterCore.PackageList package_list) {
+            if (_package_list != null) {
+                _package_list.updated.disconnect(on_package_list_updated);
             }
+            _package_list = package_list;
+            _package_list.updated.connect(on_package_list_updated);
+            on_package_list_updated();
+        }
+
+        protected void on_package_list_updated() {
+            rebuild_children();
+        }
+   
+        public void rebuild_children() {
+            @foreach ((widget) => {
+                if (widget is BannerWidget) remove (widget);
+            });
+            
+            current_package_index = 1;
+            next_free_package_index = 1;
+            foreach (var package in _package_list.get_packages ()) {
+                var widget = new BannerWidget (package);
+                stack.add_named(widget, next_free_package_index.to_string ());
+                stack.set_visible_child (widget);
+                switcher.update_selected ();
+                set_background (package);
+                
+                if (brand_widget != null) {
+                    brand_widget.destroy ();
+                    brand_widget = null;
+                }
+
+                next_free_package_index++;
+            }
+            
+            show_all();
         }
 
         public void next_package () {
