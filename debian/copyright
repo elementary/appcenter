@@ -1,6 +1,6 @@
 Format: http://dep.debian.net/deps/dep5
 Upstream-Name: appcenter
-Source: https://code.launchpad.net/~elementary-apps/appcenter/appcenter
+Source: https://github.com/elementary/appcenter
 
 Files: src/* debian/*
 Copyright: 2015 Corentin Noël <corentin@elementary.io>
