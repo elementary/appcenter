@@ -172,8 +172,9 @@ namespace AppCenter.Views {
 
             content_grid.add (app_description);
 
-            var whats_new_label = new Gtk.Label (_("What's New:"));
+            var whats_new_label = new Gtk.Label ("<b>%s</b>".printf (_("What's New:")));
             whats_new_label.get_style_context ().add_class ("h2");
+            whats_new_label.use_markup = true;
             whats_new_label.xalign = 0;
 
             release_list_box = new Widgets.ReleaseListBox (package);
