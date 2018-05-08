@@ -149,6 +149,11 @@ namespace AppCenter.Views {
                 links_grid.add (help_button);
             }
 
+            if (package.get_payments_key () != null) {
+                var fund_button = new FundButton (package);
+                links_grid.add (fund_button);
+            }
+
             var content_grid = new Gtk.Grid ();
             content_grid.width_request = 800;
             content_grid.halign = Gtk.Align.CENTER;
@@ -584,6 +589,7 @@ namespace AppCenter.Views {
                 icon.valign = Gtk.Align.CENTER;
 
                 var title = new Gtk.Label (label);
+                title.ellipsize = Pango.EllipsizeMode.END;
 
                 var grid = new Gtk.Grid ();
                 grid.column_spacing = 6;
@@ -599,6 +605,47 @@ namespace AppCenter.Views {
                         warning ("%s\n", e.message);
                     }
                 });
+            }
+        }
+
+        class FundButton : Gtk.MenuButton {
+            private Widgets.HumblePopover selection;
+
+            public FundButton (AppCenterCore.Package package) {
+                get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+                get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+
+                var icon = new Gtk.Image.from_icon_name ("credit-card-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+                icon.valign = Gtk.Align.CENTER;
+
+                var title = new Gtk.Label (_("Fund"));
+
+                var grid = new Gtk.Grid ();
+                grid.column_spacing = 6;
+                grid.add (icon);
+                grid.add (title);
+
+                selection = new Widgets.HumblePopover (this, true);
+                selection.payment_requested.connect ((amount) => {
+                    var stripe = new Widgets.StripeDialog (amount,
+                                                           package.get_name (),
+                                                           package.component.get_desktop_id ().replace (".desktop", ""),
+                                                           package.get_payments_key ()
+                                                          );
+
+                    stripe.download_requested.connect (() => {
+                        Settings.get_default ().add_paid_app (package.component.get_id ());
+                    });
+
+                    stripe.show ();
+                });
+
+                tooltip_text = _("Fund the development of this app");
+
+                direction = Gtk.ArrowType.UP;
+                popover = selection;
+
+                add (grid);
             }
         }
     }

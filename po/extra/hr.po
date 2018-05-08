@@ -2,33 +2,30 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-02 13:03-0700\n"
+"POT-Creation-Date: 2018-05-07 12:28-0700\n"
 "PO-Revision-Date: 2017-04-17 12:20+0000\n"
 "Last-Translator: gogogogi <trebelnik2@gmail.com>\n"
-"Language-Team: Croatian "
-"<https://l10n.elementary.io/projects/appcenter/extra/hr/>\n"
+"Language-Team: Croatian <https://l10n.elementary.io/projects/appcenter/extra/"
+"hr/>\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
-"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
+#: data/io.elementary.appcenter.appdata.xml.in:8
 msgid "AppCenter"
 msgstr "Centar aplikacija"
 
+#: data/io.elementary.appcenter.appdata.xml.in:9
+#: data/io.elementary.appcenter.desktop.in.in:4
 msgid "Browse and manage apps"
 msgstr "Pregledavajte i upravljajte aplikacijama"
 
-msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
-msgstr ""
-"instaliraj;deninstaliraj;ukloni;katalog;trgovina;aplikacije;nadopune;softver;"
-
-msgid "About AppCenter"
-msgstr "O Centru aplikacija"
-
+#: data/io.elementary.appcenter.appdata.xml.in:11
 msgid ""
 "An app store for indie and open source developers. Browse by categories or "
 "search and discover new apps. AppCenter is also used for updating your "
@@ -39,40 +36,65 @@ msgstr ""
 "aplikacija isto tako se koristi i za nadopunjavanje sustava na najnovije "
 "inačice aplikacija u svrhu popravaka i novih značajki."
 
-msgid "Bug fixes and improve perfomance."
-msgstr "Popravci grešaka i poboljšanje performansi."
-
-msgid "Various bug fixes and performance improvements"
-msgstr "Razni popravci grešaka i poboljšanje performansi"
-
-msgid "New translations"
-msgstr "Novi prijevodi"
-
-msgid "Fix crash caused by entries with missing packages"
-msgstr "Popravljeno rušenje uzrokovano s nedostajućim paketima"
-
-msgid "Add capability to search by category and apply minor bug fixes."
-msgstr "Dodana mogućnost pretrage po kategorijama i manji popravci grešaka."
-
-msgid "It is now possible to search apps inside a category"
-msgstr "Sada je moguće pretraživanje aplikacija unutar kategorija"
-
-msgid "Prevent multiple authentication dialogs when resuming from suspend"
+#: data/io.elementary.appcenter.appdata.xml.in:191
+msgid "elementary LLC."
 msgstr ""
-"Spriječeno je pojavljivanje više dijaloga ovjere pri vraćanju iz suspenzije"
 
-msgid ""
-"Search perfomance has beeen improved, the category name is now shown on the "
-"headbar and minor bugs have been fixed."
+#: data/io.elementary.appcenter.desktop.in.in:3
+msgid "@APP_NAME@"
 msgstr ""
-"Performanse pretrage su poboljšane, naziv kategorije je sada prikazan u "
-"zaglavlju i manje greške su popravljene."
 
-msgid "Fix Steam installation"
-msgstr "Popravljena je Steam instalacija"
+#: data/io.elementary.appcenter.desktop.in.in:6
+msgid "@DESKTOP_ICON@"
+msgstr ""
 
-msgid "Make search asynchronous"
-msgstr "Pretraživanje je asinkrono"
+#: data/io.elementary.appcenter.desktop.in.in:7
+msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
+msgstr ""
+"instaliraj;deninstaliraj;ukloni;katalog;trgovina;aplikacije;nadopune;softver;"
+
+#: data/io.elementary.appcenter.desktop.in.in:18
+msgid "Check for Updates"
+msgstr ""
+
+#~ msgid "About AppCenter"
+#~ msgstr "O Centru aplikacija"
+
+#~ msgid "Bug fixes and improve perfomance."
+#~ msgstr "Popravci grešaka i poboljšanje performansi."
+
+#~ msgid "Various bug fixes and performance improvements"
+#~ msgstr "Razni popravci grešaka i poboljšanje performansi"
+
+#~ msgid "New translations"
+#~ msgstr "Novi prijevodi"
+
+#~ msgid "Fix crash caused by entries with missing packages"
+#~ msgstr "Popravljeno rušenje uzrokovano s nedostajućim paketima"
+
+#~ msgid "Add capability to search by category and apply minor bug fixes."
+#~ msgstr "Dodana mogućnost pretrage po kategorijama i manji popravci grešaka."
+
+#~ msgid "It is now possible to search apps inside a category"
+#~ msgstr "Sada je moguće pretraživanje aplikacija unutar kategorija"
+
+#~ msgid "Prevent multiple authentication dialogs when resuming from suspend"
+#~ msgstr ""
+#~ "Spriječeno je pojavljivanje više dijaloga ovjere pri vraćanju iz "
+#~ "suspenzije"
+
+#~ msgid ""
+#~ "Search perfomance has beeen improved, the category name is now shown on "
+#~ "the headbar and minor bugs have been fixed."
+#~ msgstr ""
+#~ "Performanse pretrage su poboljšane, naziv kategorije je sada prikazan u "
+#~ "zaglavlju i manje greške su popravljene."
+
+#~ msgid "Fix Steam installation"
+#~ msgstr "Popravljena je Steam instalacija"
+
+#~ msgid "Make search asynchronous"
+#~ msgstr "Pretraživanje je asinkrono"
 
 #, fuzzy
 #~ msgid "App Center"

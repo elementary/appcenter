@@ -130,3 +130,4 @@ namespace AppCenter.Widgets {
         }
     }
 }
+

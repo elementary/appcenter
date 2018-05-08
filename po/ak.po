@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Akan (AppCenter)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-23 15:49-0700\n"
+"POT-Creation-Date: 2018-05-07 12:27-0700\n"
 "PO-Revision-Date: 2017-08-10 14:46+0000\n"
 "Last-Translator: Lawrence Aberba <karabutaworld@gmail.com>\n"
 "Language-Team: Akan <https://weblate.elementary.io/projects/appcenter/"
@@ -16,244 +16,276 @@ msgstr ""
 "X-Generator: Weblate 2.15\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:24+0000\n"
 
-#: ../src/Application.vala:38
+#: src/Application.vala:38
 msgid "AppCenter"
 msgstr "Dwumadie Twebea"
 
-#: ../src/Application.vala:124
+#: src/Application.vala:115
+#, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Antumi anhu '%s' enti wo ara hwehwɛ"
 
-#: ../src/Application.vala:258
+#: src/Application.vala:249
 msgid "Application installed"
 msgstr "Dwumadie a woatwe agu so"
 
-#: ../src/Application.vala:259
+#: src/Application.vala:250
+#, c-format
 msgid "%s has been successfully installed"
 msgstr "Atwe %s agu so awie"
 
-#: ../src/Application.vala:271
-#, fuzzy
+#: src/Application.vala:262
+#, fuzzy, c-format
 msgid "There Was An Error Installing %s."
 msgstr "Biribi sii ma antumi amfa %s angu so"
 
-#: ../src/Core/ChangeInformation.vala:54
+#: src/MainWindow.vala:147 src/Views/Homepage.vala:253
+#: src/Views/Homepage.vala:262 src/Views/Homepage.vala:267
+#: src/Views/Homepage.vala:278
+msgid "Home"
+msgstr "Ahyɛase"
+
+#: src/MainWindow.vala:175 src/MainWindow.vala:321 src/Views/SearchView.vala:54
+#: src/Views/SearchView.vala:75
+msgid "Search Apps"
+msgstr "Hwehwɛ Dwumadi Bi"
+
+#: src/MainWindow.vala:193
+msgid "Network Is Not Available"
+msgstr "Nɛtwɛk Nni Hɔ"
+
+#: src/MainWindow.vala:194
+#, fuzzy
+msgid "Connect to the Internet to install or update apps."
+msgstr "Kɔnɛkte ma intanɛt ansa woatumi atwe dwumadie bi."
+
+#: src/MainWindow.vala:197
+msgid "Network Settings…"
+msgstr "Nɛtwɛk Ho Nhyehyɛe…"
+
+#: src/Core/ChangeInformation.vala:54
 msgid "Starting"
 msgstr "Ɛrehyɛ ase"
 
-#: ../src/Core/ChangeInformation.vala:56
+#: src/Core/ChangeInformation.vala:56
 msgid "Waiting"
 msgstr "Ɛretwɛn"
 
-#: ../src/Core/ChangeInformation.vala:58
+#: src/Core/ChangeInformation.vala:58
 msgid "Running"
 msgstr "Ɛredi dwuma"
 
-#: ../src/Core/ChangeInformation.vala:60
+#: src/Core/ChangeInformation.vala:60
 msgid "Querying"
 msgstr "Ɛrehwehwɛ"
 
-#: ../src/Core/ChangeInformation.vala:62
+#: src/Core/ChangeInformation.vala:62
 msgid "Getting information"
 msgstr "Ɛrepɛ ho nsɛm"
 
-#: ../src/Core/ChangeInformation.vala:64
+#: src/Core/ChangeInformation.vala:64
 msgid "Removing packages"
 msgstr "Ɛreyi dwumadie no"
 
-#: ../src/Core/ChangeInformation.vala:66
+#: src/Core/ChangeInformation.vala:66
 msgid "Downloading"
 msgstr "Ɛretwe"
 
-#: ../src/Core/ChangeInformation.vala:68
+#: src/Core/ChangeInformation.vala:68
 msgid "Installing"
 msgstr "Ɛde regu so"
 
-#: ../src/Core/ChangeInformation.vala:70
+#: src/Core/ChangeInformation.vala:70
 msgid "Refreshing software list"
 msgstr "Ɛresiesie dwumadie ahoroɔ no"
 
-#: ../src/Core/ChangeInformation.vala:72
+#: src/Core/ChangeInformation.vala:72
 msgid "Installing updates"
 msgstr "Ɛde dwumadie no forɔ a aba regu so"
 
-#: ../src/Core/ChangeInformation.vala:74
+#: src/Core/ChangeInformation.vala:74
 msgid "Cleaning up packages"
 msgstr "Ɛrepopa dwumadie no ho nneɛma a aka"
 
-#: ../src/Core/ChangeInformation.vala:76
+#: src/Core/ChangeInformation.vala:76
 msgid "Obsoleting packages"
 msgstr "Dwumadie ho nneɛma a ɛnhia"
 
-#: ../src/Core/ChangeInformation.vala:78
+#: src/Core/ChangeInformation.vala:78
 msgid "Resolving dependencies"
 msgstr "Ɛresiesie nneɛma a dwumadie no hia"
 
-#: ../src/Core/ChangeInformation.vala:80
+#: src/Core/ChangeInformation.vala:80
 msgid "Checking signatures"
 msgstr "Ɛrehwɛ Signatures ahoroɔ no"
 
-#: ../src/Core/ChangeInformation.vala:82
+#: src/Core/ChangeInformation.vala:82
 msgid "Testing changes"
 msgstr "Ɛresɔ nsakrayɛ no ahwɛ"
 
-#: ../src/Core/ChangeInformation.vala:84
+#: src/Core/ChangeInformation.vala:84
 msgid "Committing changes"
 msgstr "Ɛrekora nsakrae no so"
 
-#: ../src/Core/ChangeInformation.vala:86
+#: src/Core/ChangeInformation.vala:86
 msgid "Requesting data"
 msgstr "Ɛrebisa"
 
-#: ../src/Core/ChangeInformation.vala:88
+#: src/Core/ChangeInformation.vala:88
 msgid "Finished"
 msgstr "Awie"
 
-#: ../src/Core/ChangeInformation.vala:90
+#: src/Core/ChangeInformation.vala:90
 msgid "Cancelling"
 msgstr "Ɛregyae"
 
-#: ../src/Core/ChangeInformation.vala:92
+#: src/Core/ChangeInformation.vala:92
 msgid "Downloading repository information"
 msgstr "Ɛretwe baabi a dwumadie no wɔ no ho nsɛm"
 
-#: ../src/Core/ChangeInformation.vala:94
+#: src/Core/ChangeInformation.vala:94
 msgid "Downloading list of packages"
 msgstr "Ɛretwe dwumadie ahoroɔ a ɛwɔ hɔ no ho nsɛm"
 
-#: ../src/Core/ChangeInformation.vala:96
+#: src/Core/ChangeInformation.vala:96
 msgid "Downloading file lists"
 msgstr "Ɛretwe files ahoroɔ no ho nsɛm"
 
-#: ../src/Core/ChangeInformation.vala:98
+#: src/Core/ChangeInformation.vala:98
 msgid "Downloading lists of changes"
 msgstr "Ɛretwe dwumadie ho nneɛma ahoroɔ no ho nsɛm"
 
-#: ../src/Core/ChangeInformation.vala:100
+#: src/Core/ChangeInformation.vala:100
 msgid "Downloading groups"
 msgstr "Ɛretwɛ Akuo Ahoroɔ"
 
-#: ../src/Core/ChangeInformation.vala:102
+#: src/Core/ChangeInformation.vala:102
 msgid "Downloading update information"
 msgstr "Ɛretwe dwumadie foforɔ a aba no ho nsɛm"
 
-#: ../src/Core/ChangeInformation.vala:104
+#: src/Core/ChangeInformation.vala:104
 msgid "Repackaging files"
 msgstr "Ɛresiesie files no"
 
-#: ../src/Core/ChangeInformation.vala:106
+#: src/Core/ChangeInformation.vala:106
 msgid "Loading cache"
 msgstr "Ɛrefa cache no"
 
-#: ../src/Core/ChangeInformation.vala:108
+#: src/Core/ChangeInformation.vala:108
 msgid "Scanning applications"
 msgstr "Ɛrehwehwɛ dwumadie ahoroɔ no mu"
 
-#: ../src/Core/ChangeInformation.vala:110
+#: src/Core/ChangeInformation.vala:110
 msgid "Generating package lists"
 msgstr "Ɛresiesie package ahoroɔ no"
 
-#: ../src/Core/ChangeInformation.vala:112
+#: src/Core/ChangeInformation.vala:112
 msgid "Waiting for package manager lock"
 msgstr "Ɛretwɛn Package Manager no ma awie dwuma a ɛredi siesie no"
 
-#: ../src/Core/ChangeInformation.vala:114
+#: src/Core/ChangeInformation.vala:114
 msgid "Waiting for authentication"
 msgstr "Ɛretwɛn sɛ wobɛma no hokwan"
 
-#: ../src/Core/ChangeInformation.vala:116
+#: src/Core/ChangeInformation.vala:116
 msgid "Updating running applications"
 msgstr "Ɛretwe dwumadie a ɛredi dwuma no foforɔ"
 
-#: ../src/Core/ChangeInformation.vala:118
+#: src/Core/ChangeInformation.vala:118
 msgid "Checking applications in use"
 msgstr "Ɛrehwehwɛ dwumadie a ɛgu so redi dwuma no"
 
-#: ../src/Core/ChangeInformation.vala:120
+#: src/Core/ChangeInformation.vala:120
 msgid "Checking libraries in use"
 msgstr "Ɛrehwehwɛ Libraries a ɛgu so redi dwuma no"
 
-#: ../src/Core/ChangeInformation.vala:122
+#: src/Core/ChangeInformation.vala:122
 msgid "Copying files"
 msgstr "Ɛrefa files no bi"
 
-#: ../src/Core/ChangeInformation.vala:124
+#: src/Core/ChangeInformation.vala:124
 msgid "Unknown state"
 msgstr "Wɔnnim sɛnea ɛte"
 
-#: ../src/Core/Client.vala:105
+#: src/Core/Client.vala:105
 msgid "Operating System Updates"
 msgstr "Operating System Ho Dwumadie Foforɔ a Aba"
 
-#: ../src/Core/Client.vala:106
+#: src/Core/Client.vala:106
 msgid "Updates to system components"
 msgstr "Ɛso dwumadie foforɔ a aba"
 
-#: ../src/Core/Client.vala:141
+#: src/Core/Client.vala:141
+#, c-format
 msgid "%s (local)"
 msgstr ""
 
-#: ../src/Core/Client.vala:454
+#: src/Core/Client.vala:454
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Foforɔ Aba"
 msgstr[1] "Nneɛma Foforɔ Aba"
 
-#: ../src/Core/Client.vala:455
+#: src/Core/Client.vala:455
+#, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "Dwumadie foforɔ %u aba"
 msgstr[1] "Dwumadie foforɔ %u aba"
 
-#: ../src/Core/Client.vala:483
+#: src/Core/Client.vala:483
+#, c-format
 msgid "Version: %s"
 msgstr ""
 
-#: ../src/Core/Client.vala:492
+#: src/Core/Client.vala:492
 msgid "No components with updates"
 msgstr ""
 
-#: ../src/Core/Client.vala:496
+#: src/Core/Client.vala:496
+#, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/Core/Client.vala:498
+#: src/Core/Client.vala:498
+#, c-format
 msgid "%s:"
 msgstr ""
 
-#: ../src/Core/Package.vala:186
-msgid "The %s Developers"
+#: src/Core/Package.vala:192
+#, fuzzy, c-format
+msgid "%s Developers"
 msgstr "%s Dwumadieyɛfoɔ"
 
-#: ../src/Core/UpdateManager.vala:81
+#: src/Core/UpdateManager.vala:81
 msgid "Restart Required"
 msgstr "Ɛhia Sɛ Wodum Sɔ"
 
-#: ../src/Core/UpdateManager.vala:82
+#: src/Core/UpdateManager.vala:82
 msgid "Please restart your system to finalize updates"
 msgstr "Yɛsrɛ wo dum sɔ ansa atumi de dwumadie ahoroɔ no agu so awei"
 
-#: ../src/Dialogs/RestartDialog.vala:40
+#: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
 msgstr "Wo gye di sɛ wopɛ sɛ wodum sɔ?"
 
-#: ../src/Dialogs/RestartDialog.vala:41
+#: src/Dialogs/RestartDialog.vala:41
 msgid "This will close all open applications and restart this device."
 msgstr "Ɛbɛdum dwumadi a abue no nyinaa na adum woafidie no asan asɔ."
 
-#: ../src/Dialogs/RestartDialog.vala:42
+#: src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
 msgstr "Dumsɔ"
 
-#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:182
-#: ../src/Dialogs/StripeDialog.vala:299
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:145
+#: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:182
+#: src/Dialogs/StripeDialog.vala:299
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:147
 msgid "Cancel"
 msgstr "Gyae"
 
-#: ../src/Dialogs/StripeDialog.vala:41
+#: src/Dialogs/StripeDialog.vala:41
 msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
@@ -261,25 +293,26 @@ msgstr ""
 "Biribi sii ma antumi anyɛ wo Kaad (Card) no ho adwuma anwie. Yɛsrɛ wo san yɛ "
 "bio. Sɛ ahaw wo a, yɛsrɛ wo sɛ fakyɛ yɛn."
 
-#: ../src/Dialogs/StripeDialog.vala:42
+#: src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
 msgstr "Hwɛ sɛ nsɛm a woabɔ de retua no tɛ saa pɛpɛɛpɛ anaa na san yɛ bio."
 
-#: ../src/Dialogs/StripeDialog.vala:78
+#: src/Dialogs/StripeDialog.vala:78
+#, c-format
 msgid "Pay $%d for %s"
 msgstr ""
 
-#: ../src/Dialogs/StripeDialog.vala:82
+#: src/Dialogs/StripeDialog.vala:82
 msgid ""
 "This is a one time payment. Your email address is only used to send you a "
 "receipt."
 msgstr ""
 
-#: ../src/Dialogs/StripeDialog.vala:91 ../src/Widgets/SharePopover.vala:35
+#: src/Dialogs/StripeDialog.vala:91 src/Widgets/SharePopover.vala:35
 msgid "Email"
 msgstr "Email"
 
-#: ../src/Dialogs/StripeDialog.vala:93
+#: src/Dialogs/StripeDialog.vala:93
 msgid ""
 "Your email address is used to send a receipt. It is never stored and you "
 "will not be subscribed to a mailing list."
@@ -287,52 +320,52 @@ msgstr ""
 "Yɛbɛmena wo ne tua ho adanse krataa afa wo email no so. Yɛrenkora so sɛ yɛde "
 "nsɛm bɛfa so amena wo akyiri enti mma ɛnha wo."
 
-#. / TRANSLATORS: Don't change the order, only transliterate
-#: ../src/Dialogs/StripeDialog.vala:112
+#: src/Dialogs/StripeDialog.vala:112
 msgid "MM / YY"
 msgstr "BB / AA"
 
-#: ../src/Dialogs/StripeDialog.vala:132
+#: src/Dialogs/StripeDialog.vala:132
 msgid "CVC"
 msgstr "CVC"
 
-#: ../src/Dialogs/StripeDialog.vala:173
+#: src/Dialogs/StripeDialog.vala:173
 msgid "Privacy Policy"
 msgstr "Nneɛmakora Ho Nhyehyɛe"
 
-#: ../src/Dialogs/StripeDialog.vala:184 ../src/Dialogs/StripeDialog.vala:298
+#: src/Dialogs/StripeDialog.vala:184 src/Dialogs/StripeDialog.vala:298
+#, c-format
 msgid "Pay $%d.00"
 msgstr "Tua $%d.00"
 
-#: ../src/Dialogs/StripeDialog.vala:227
+#: src/Dialogs/StripeDialog.vala:227
 msgid "Processing"
 msgstr "Ɛredi ho dwuma"
 
-#: ../src/Dialogs/StripeDialog.vala:252
+#: src/Dialogs/StripeDialog.vala:252
 msgid "There Was a Problem Processing Your Payment"
 msgstr "Biribi sii nti antumi antua wo sika no"
 
-#: ../src/Dialogs/StripeDialog.vala:290
+#: src/Dialogs/StripeDialog.vala:290
 msgid "Pay Later"
 msgstr "Tua Akyiri"
 
-#: ../src/Dialogs/StripeDialog.vala:291
+#: src/Dialogs/StripeDialog.vala:291
 msgid "Retry"
 msgstr "San yɛ bio"
 
-#: ../src/Dialogs/StripeDialog.vala:497 ../src/Dialogs/StripeDialog.vala:562
+#: src/Dialogs/StripeDialog.vala:497 src/Dialogs/StripeDialog.vala:562
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr "Kaad no nɔma nni mu. Yɛsrɛ wo bɔ nɔma ɛdi mu na san yɛ bio."
 
-#: ../src/Dialogs/StripeDialog.vala:499
+#: src/Dialogs/StripeDialog.vala:499
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
 "Ɛda a kaad no bɛtwam no nni mu. Yɛsrɛ wo hwɛ bɔ nea ɛdi mu na san yɛ bio."
 
-#: ../src/Dialogs/StripeDialog.vala:501 ../src/Dialogs/StripeDialog.vala:559
+#: src/Dialogs/StripeDialog.vala:501 src/Dialogs/StripeDialog.vala:559
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
@@ -340,19 +373,19 @@ msgstr ""
 "Afe a wobɔeɛ sɛ kaad no bɛtwam no nni mu. Yɛsrɛ wo hwɛ bɔ nea edi mu na san "
 "yɛ bio."
 
-#: ../src/Dialogs/StripeDialog.vala:504 ../src/Dialogs/StripeDialog.vala:557
+#: src/Dialogs/StripeDialog.vala:504 src/Dialogs/StripeDialog.vala:557
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr "CVC nɔma no nni mu. Yɛsrɛ wo hwɛ bɔ nea edi mu na san yɛ bio."
 
-#: ../src/Dialogs/StripeDialog.vala:506 ../src/Dialogs/StripeDialog.vala:548
+#: src/Dialogs/StripeDialog.vala:506 src/Dialogs/StripeDialog.vala:548
 msgid "The card has expired. Please try again with a different card."
 msgstr "Kaad no atwam. Yɛsrɛ wo fa kaad foforɔ a ɛdi mu yɛ."
 
-#: ../src/Dialogs/StripeDialog.vala:526
+#: src/Dialogs/StripeDialog.vala:526
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr "Adetua ahoroɔ a ɛrekɔ so siesie no dɔɔso dodo. Yɛsrɛ wo twɛn kakra."
 
-#: ../src/Dialogs/StripeDialog.vala:542
+#: src/Dialogs/StripeDialog.vala:542
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
@@ -360,18 +393,18 @@ msgstr ""
 "Kaad wei mma kwan mma womfa nni dwuma wɔ saa kwan yi so. Yɛsrɛ wo fa kaad "
 "foforɔ yɛ."
 
-#: ../src/Dialogs/StripeDialog.vala:544
+#: src/Dialogs/StripeDialog.vala:544
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
 msgstr ""
 "Kaad wei ntumi mfa saa sika ko yi nni dwuma. Yɛsrɛ wo fa kaad foforɔ yɛ."
 
-#: ../src/Dialogs/StripeDialog.vala:546
+#: src/Dialogs/StripeDialog.vala:546
 msgid "The transaction has already been processed."
 msgstr "Atua awie dedaw."
 
-#: ../src/Dialogs/StripeDialog.vala:550
+#: src/Dialogs/StripeDialog.vala:550
 #, fuzzy
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
@@ -379,331 +412,317 @@ msgid ""
 msgstr ""
 "Wo ZIP anaa Postal code no nni mu. Yɛsrɛ wo bɔ ZIP anaa Postal code foforɔ."
 
-#: ../src/Dialogs/StripeDialog.vala:552
+#: src/Dialogs/StripeDialog.vala:552
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "Wo sika a wowɔ no sua. Yɛsrɛ wo fa ɔkwan foforɔ so tua."
 
-#: ../src/Dialogs/StripeDialog.vala:554
+#: src/Dialogs/StripeDialog.vala:554
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "Ɛboɔ a woabɔ no nni mu. Yɛsrɛ wo bɔ ɛboɔ a edi mu."
 
-#: ../src/Dialogs/StripeDialog.vala:565
+#: src/Dialogs/StripeDialog.vala:565
 #, fuzzy
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "CVC nɔma no nni mu. Yɛsrɛ wo hwɛ bɔ nea edi mu na san yɛ bio."
 
-#: ../src/Dialogs/StripeDialog.vala:567
+#: src/Dialogs/StripeDialog.vala:567
 #, fuzzy
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
 msgstr "Woabɔ pin nɔma ahoroɔ pii dodow. Yɛsrɛ wo fa kaad foforɔ yɛ."
 
-#: ../src/Dialogs/StripeDialog.vala:587
+#: src/Dialogs/StripeDialog.vala:587
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
 msgstr "Antumi antua. Yɛsrɛ wo frɛ wo sikakorabea hɔ bisa eho asɛm."
 
-#: ../src/Dialogs/StripeDialog.vala:590
+#: src/Dialogs/StripeDialog.vala:590
 msgid "The balance or credit limit on the card has been reached."
 msgstr "Sika dodow a wobɛtumi ayi afi wo kaad no so no asõ."
 
-#: ../src/Dialogs/StripeDialog.vala:593
+#: src/Dialogs/StripeDialog.vala:593
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "Kaad no yɛ nea wɔde sɔ hwɛ kɛkɛ. Yɛsrɛ wo fa nea edi mu yɛ."
 
-#: ../src/Dialogs/UpdateFailDialog.vala:24
+#: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
 msgstr ""
 
-#: ../src/Dialogs/UpdateFailDialog.vala:25
+#: src/Dialogs/UpdateFailDialog.vala:26
 msgid ""
 "This may have been caused by external, manually added software repositories "
 "or a corrupted sources file."
 msgstr ""
 
-#: ../src/Dialogs/UpdateFailDialog.vala:45
+#: src/Dialogs/UpdateFailDialog.vala:46
 msgid "Details"
 msgstr ""
 
-#: ../src/Dialogs/UpdateFailDialog.vala:53
+#: src/Dialogs/UpdateFailDialog.vala:54
 msgid "Ignore"
 msgstr ""
 
-#: ../src/Dialogs/UpdateFailDialog.vala:54
+#: src/Dialogs/UpdateFailDialog.vala:55
 msgid "Try Again"
 msgstr ""
 
-#: ../src/MainWindow.vala:144 ../src/Views/Homepage.vala:253
-#: ../src/Views/Homepage.vala:262 ../src/Views/Homepage.vala:267
-#: ../src/Views/Homepage.vala:278
-msgid "Home"
-msgstr "Ahyɛase"
-
-#: ../src/MainWindow.vala:145 ../src/Views/InstalledView.vala:29
-#: ../src/Views/InstalledView.vala:49
-#, fuzzy
-msgctxt "view"
-msgid "Installed"
-msgstr "Twe gu so"
-
-#: ../src/MainWindow.vala:172 ../src/MainWindow.vala:313
-#: ../src/Views/SearchView.vala:54 ../src/Views/SearchView.vala:75
-msgid "Search Apps"
-msgstr "Hwehwɛ Dwumadi Bi"
-
-#: ../src/MainWindow.vala:190
-msgid "Network Is Not Available"
-msgstr "Nɛtwɛk Nni Hɔ"
-
-#: ../src/MainWindow.vala:191
-#, fuzzy
-msgid "Connect to the Internet to install or update apps."
-msgstr "Kɔnɛkte ma intanɛt ansa woatumi atwe dwumadie bi."
-
-#: ../src/MainWindow.vala:194
-msgid "Network Settings…"
-msgstr "Nɛtwɛk Ho Nhyehyɛe…"
-
-#: ../src/Views/AppInfoView.vala:76
+#: src/Views/AppInfoView.vala:76
 msgid "Screenshot Not Available"
 msgstr "Ɛho Mfonyin Nka Ho"
 
-#: ../src/Views/AppInfoView.vala:130
+#: src/Views/AppInfoView.vala:130
 msgid "Homepage"
 msgstr "Dwumadie Yi Wɛbsaet"
 
-#: ../src/Views/AppInfoView.vala:136
+#: src/Views/AppInfoView.vala:136
 msgid "Suggest Translations"
 msgstr "Fa wo nkyerɛase to dwa"
 
-#: ../src/Views/AppInfoView.vala:142
+#: src/Views/AppInfoView.vala:142
 msgid "Report a Problem"
 msgstr "Fa wo haw to dwa"
 
-#: ../src/Views/AppInfoView.vala:148
+#: src/Views/AppInfoView.vala:148
 msgid "Help"
 msgstr "Mmoa"
 
-#: ../src/Views/AppInfoView.vala:170
+#: src/Views/AppInfoView.vala:175
 msgid "What's New:"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:189
+#: src/Views/AppInfoView.vala:194
 msgid "Extensions:"
 msgstr "Extensions:"
 
-#: ../src/Views/AppInfoView.vala:282
+#: src/Views/AppInfoView.vala:287
+#, c-format
 msgid "Other Apps by %s"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:316
+#: src/Views/AppInfoView.vala:321
 msgid "Link copied to clipboard"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:327
+#: src/Views/AppInfoView.vala:332
+#, c-format
 msgid "Check out %s on AppCenter:"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:334
+#: src/Views/AppInfoView.vala:339
 msgid "Share"
 msgstr ""
 
-#: ../src/Views/AppListUpdateView.vala:59
+#: src/Views/AppInfoView.vala:621
+msgid "Fund"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:643
+msgid "Fund the development of this app"
+msgstr ""
+
+#: src/Views/AppListUpdateView.vala:59
 msgid "A restart is required to complete the installation of updates"
 msgstr "Ɛhia sɛ wodum sɔ ansa atumi de dwumadie ahoroɔ no agu so awie"
 
-#: ../src/Views/AppListUpdateView.vala:67
+#: src/Views/AppListUpdateView.vala:67
 msgid "Restart Now"
 msgstr "Dum Sɔ Siesie Ara"
 
-#: ../src/Views/AppListUpdateView.vala:162
+#: src/Views/AppListUpdateView.vala:162
 msgid "Update All"
 msgstr "Twɛ Foforɔ No Nyinaa"
 
-#: ../src/Views/AppListView.vala:119
+#: src/Views/AppListView.vala:119
 msgid "Non-Curated Apps"
 msgstr ""
 
-#: ../src/Views/Homepage.vala:65
+#: src/Views/Homepage.vala:65
 msgid "Recently Updated"
 msgstr "Nea Wode Guu So Nkyɛe"
 
-#: ../src/Views/Homepage.vala:81
+#: src/Views/Homepage.vala:81
 msgid "Trending"
 msgstr ""
 
-#: ../src/Views/Homepage.vala:97
+#: src/Views/Homepage.vala:97
 msgid "Categories"
 msgstr "Akuo Ahoroɔ"
 
-#: ../src/Views/Homepage.vala:267 ../src/Views/Homepage.vala:278
+#: src/Views/Homepage.vala:267 src/Views/Homepage.vala:278
+#, c-format
 msgid "Search %s"
 msgstr "Hwehwɛ %s"
 
-#. / TRANSLATORS: the name of the Search view
-#: ../src/Views/SearchView.vala:39
-msgctxt "view"
-msgid "Search"
-msgstr "Hwehwɛ"
-
-#: ../src/Widgets/AbstractAppList.vala:36
+#: src/Widgets/AbstractAppList.vala:36
 msgid "No Results"
 msgstr "Hwee nni hɔ a ɛte saa"
 
-#: ../src/Widgets/AbstractAppList.vala:36
+#: src/Widgets/AbstractAppList.vala:36
 msgid "No apps could be found. Try changing search terms."
 msgstr "Anhu dwumadie biara saa. Sesã edin a wode hwehwɛe no hwɛ."
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:124
-msgid "Uninstall"
-msgstr "Yi fi so"
-
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:127
-msgid "Open"
-msgstr "Bie"
-
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:208
-#: ../src/Widgets/HumbleButton.vala:82
-msgid "Free"
-msgstr "Kwa"
-
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:232
-msgid "Update"
-msgstr "Twe nea aba"
-
-#: ../src/Widgets/Banner.vala:55
+#: src/Widgets/Banner.vala:55
 msgid "An open, pay-what-you-want app store"
 msgstr "Dwumadie twebea a wotua nea wopɛ"
 
-#: ../src/Widgets/Banner.vala:68
+#: src/Widgets/Banner.vala:68
 msgid "Get the apps that you need at a price you can afford."
 msgstr "Twe dwumadie biribiara a wopɛ wɔ boɔ biara a wobɛtumi atua."
 
-#: ../src/Widgets/CardNumberEntry.vala:41
+#: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
 msgstr "Kaad No Nɔma"
 
-#: ../src/Widgets/CategoryFlowBox.vala:29
+#: src/Widgets/CategoryFlowBox.vala:29
 msgid "Audio"
 msgstr "Audio"
 
-#: ../src/Widgets/CategoryFlowBox.vala:30
+#: src/Widgets/CategoryFlowBox.vala:30
 msgid "Development"
 msgstr "Dwumadi Yɛ"
 
-#: ../src/Widgets/CategoryFlowBox.vala:31
+#: src/Widgets/CategoryFlowBox.vala:31
 msgid "Accessories"
 msgstr "Nkekaho"
 
-#: ../src/Widgets/CategoryFlowBox.vala:32
+#: src/Widgets/CategoryFlowBox.vala:32
 msgid "Office"
 msgstr "Adwuma Mu"
 
-#: ../src/Widgets/CategoryFlowBox.vala:33
+#: src/Widgets/CategoryFlowBox.vala:33
 msgid "System"
 msgstr "System"
 
-#: ../src/Widgets/CategoryFlowBox.vala:34
+#: src/Widgets/CategoryFlowBox.vala:34
 msgid "Video"
 msgstr "Video"
 
-#: ../src/Widgets/CategoryFlowBox.vala:35
+#: src/Widgets/CategoryFlowBox.vala:35
 msgid "Graphics"
 msgstr "Mfonyin"
 
-#: ../src/Widgets/CategoryFlowBox.vala:36
+#: src/Widgets/CategoryFlowBox.vala:36
 msgid "Games"
 msgstr "Agodie"
 
-#: ../src/Widgets/CategoryFlowBox.vala:37
+#: src/Widgets/CategoryFlowBox.vala:37
 msgid "Education"
 msgstr "Adesua"
 
-#: ../src/Widgets/CategoryFlowBox.vala:38
+#: src/Widgets/CategoryFlowBox.vala:38
 msgid "Internet"
 msgstr "Intanɛt"
 
-#: ../src/Widgets/CategoryFlowBox.vala:39
+#: src/Widgets/CategoryFlowBox.vala:39
 msgid "Science & Engineering"
 msgstr "Nyansapɛ"
 
-#: ../src/Widgets/CategoryFlowBox.vala:40
+#: src/Widgets/CategoryFlowBox.vala:40
 msgid "Universal Access"
 msgstr "Universal Access"
 
-#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: ../src/Widgets/HumbleButton.vala:141
+#: src/Widgets/HumbleButton.vala:93
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:211
+msgid "Free"
+msgstr "Kwa"
+
+#: src/Widgets/HumbleButton.vala:127
+#, c-format
 msgid "$%d.00"
 msgstr "$%d.00"
 
-#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: ../src/Widgets/HumbleButton.vala:144
+#: src/Widgets/HumbleButton.vala:130
+#, c-format
 msgid "$%d"
 msgstr "$%d"
 
-#: ../src/Widgets/ReleaseRow.vala:67
+#: src/Widgets/ReleaseRow.vala:67
+#, c-format
 msgid "<b>%s</b> – %s"
 msgstr ""
 
-#: ../src/Widgets/ReleaseRow.vala:74
+#: src/Widgets/ReleaseRow.vala:74
 #, fuzzy
 msgid "Unknown version"
 msgstr "Wɔnnim sɛnea ɛte"
 
-#: ../src/Widgets/ReleaseRow.vala:90 ../src/Widgets/ReleaseRow.vala:93
+#: src/Widgets/ReleaseRow.vala:90 src/Widgets/ReleaseRow.vala:93
 msgid "No description available"
 msgstr ""
 
-#: ../src/Widgets/SharePopover.vala:39
+#: src/Widgets/SharePopover.vala:39
 msgid "Facebook"
 msgstr ""
 
-#: ../src/Widgets/SharePopover.vala:43
+#: src/Widgets/SharePopover.vala:43
 msgid "Google+"
 msgstr ""
 
-#: ../src/Widgets/SharePopover.vala:47
+#: src/Widgets/SharePopover.vala:47
 msgid "Twitter"
 msgstr ""
 
-#: ../src/Widgets/SharePopover.vala:51
+#: src/Widgets/SharePopover.vala:51
 msgid "reddit"
 msgstr ""
 
-#: ../src/Widgets/SharePopover.vala:55
+#: src/Widgets/SharePopover.vala:55
 msgid "Tumblr"
 msgstr ""
 
-#: ../src/Widgets/SharePopover.vala:59
+#: src/Widgets/SharePopover.vala:59
 msgid "Telegram"
 msgstr ""
 
-#: ../src/Widgets/SharePopover.vala:63
+#: src/Widgets/SharePopover.vala:63
 msgid "Copy link"
 msgstr ""
 
-#: ../src/Widgets/UpdateHeaderRow.vala:68
+#: src/Widgets/UpdateHeaderRow.vala:68
+#, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "Foforɔ %u Na Aba"
 msgstr[1] "Afoforɔ %u Na Aba"
 
-#: ../src/Widgets/UpdateHeaderRow.vala:69
+#: src/Widgets/UpdateHeaderRow.vala:69
+#, c-format
 msgid "Size: %s"
 msgstr "Ne Kɛseyɛ: %s"
 
-#: ../src/Widgets/UpdateHeaderRow.vala:105
+#: src/Widgets/UpdateHeaderRow.vala:105
 msgid "Searching for updates…"
 msgstr "Ɛrehwɛ sɛ biribi foforɔ aba anaa…"
 
-#: ../src/Widgets/UpdateHeaderRow.vala:112
+#: src/Widgets/UpdateHeaderRow.vala:112
 msgid "Up to Date"
 msgstr "Nea Ɛyɛ Foforɔ a Ɛtwa Toɔ"
 
-#: ../src/Widgets/UpdateHeaderRow.vala:120
+#: src/Widgets/UpdateHeaderRow.vala:120
 msgid "Drivers"
 msgstr "Drivers"
+
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:126
+msgid "Uninstall"
+msgstr "Yi fi so"
+
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:129
+msgid "Open"
+msgstr "Bie"
+
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:235
+msgid "Update"
+msgstr "Twe nea aba"
+
+#, fuzzy
+#~ msgctxt "view"
+#~ msgid "Installed"
+#~ msgstr "Twe gu so"
+
+#~ msgctxt "view"
+#~ msgid "Search"
+#~ msgstr "Hwehwɛ"
 
 #~ msgctxt "view"
 #~ msgid "Updates"

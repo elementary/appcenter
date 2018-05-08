@@ -2,33 +2,29 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2017-04-18 14:38+0000\n"
+"POT-Creation-Date: 2018-05-07 12:28-0700\n"
+"PO-Revision-Date: 2018-05-08 15:25+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan "
-"<https://l10n.elementary.io/projects/appcenter/extra/ca/>\n"
+"<https://weblate.elementary.io/projects/appcenter/extra/ca/>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
+#: data/io.elementary.appcenter.appdata.xml.in:8
 msgid "AppCenter"
 msgstr "Centre d'aplicacions"
 
+#: data/io.elementary.appcenter.appdata.xml.in:9
+#: data/io.elementary.appcenter.desktop.in.in:4
 msgid "Browse and manage apps"
 msgstr "Navegueu i gestioneu les aplicacions"
 
-msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
-msgstr ""
-"instal·la;desinstal·la;elimina;catàleg;botiga;aplicacions;actualitzacions;"
-"programari;"
-
-msgid "About AppCenter"
-msgstr "Quant al Centre d'aplicacions"
-
+#: data/io.elementary.appcenter.appdata.xml.in:11
 msgid ""
 "An app store for indie and open source developers. Browse by categories or "
 "search and discover new apps. AppCenter is also used for updating your "
@@ -39,43 +35,69 @@ msgstr ""
 "Centre d'aplicacions també s'utilitza per actualitzar el sistema a la versió "
 "més recent i bona, per obtenir les noves característiques i correccions."
 
-msgid "Bug fixes and improve perfomance."
-msgstr "Correcció d'errors i millora del rendiment."
+#: data/io.elementary.appcenter.appdata.xml.in:191
+msgid "elementary LLC."
+msgstr "elementary LLC."
 
-msgid "Various bug fixes and performance improvements"
-msgstr "Diverses correccions d'errors i millores de rendiment"
+#: data/io.elementary.appcenter.desktop.in.in:3
+msgid "@APP_NAME@"
+msgstr "@NOM_APP@"
 
-msgid "New translations"
-msgstr "Traduccions noves"
+#: data/io.elementary.appcenter.desktop.in.in:6
+msgid "@DESKTOP_ICON@"
+msgstr "@ICONA_ESCRIPTORI@"
 
-msgid "Fix crash caused by entries with missing packages"
-msgstr "Correcció de la fallada causada per entrades amb mancances de paquets"
-
-msgid "Add capability to search by category and apply minor bug fixes."
+#: data/io.elementary.appcenter.desktop.in.in:7
+msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
 msgstr ""
-"Addició de la capacitat de cercar per categories i aplicació de correccions "
-"d'errors menors."
+"instal·la;desinstal·la;elimina;catàleg;botiga;aplicacions;actualitzacions;"
+"programari;"
 
-msgid "It is now possible to search apps inside a category"
-msgstr "Ara és possible cercar aplicacions dins d'una categoria"
+#: data/io.elementary.appcenter.desktop.in.in:18
+msgid "Check for Updates"
+msgstr "Comprova si hi ha actualitzacions"
 
-msgid "Prevent multiple authentication dialogs when resuming from suspend"
-msgstr ""
-"Evita diàlegs d'autenticació múltiples quan es torni d'una suspensió o "
-"aturada temporal"
+#~ msgid "About AppCenter"
+#~ msgstr "Quant al Centre d'aplicacions"
 
-msgid ""
-"Search perfomance has beeen improved, the category name is now shown on the "
-"headbar and minor bugs have been fixed."
-msgstr ""
-"S'ha millorat el rendiment de la cerca. Ara el nom de la categoria es mostra "
-"a la capçalera. També s'han corregit errors menors."
+#~ msgid "Bug fixes and improve perfomance."
+#~ msgstr "Correcció d'errors i millora del rendiment."
 
-msgid "Fix Steam installation"
-msgstr "S'ha corregit la instal·lació de l'Steam"
+#~ msgid "Various bug fixes and performance improvements"
+#~ msgstr "Diverses correccions d'errors i millores de rendiment"
 
-msgid "Make search asynchronous"
-msgstr "Fer la cerca asíncrona"
+#~ msgid "New translations"
+#~ msgstr "Traduccions noves"
+
+#~ msgid "Fix crash caused by entries with missing packages"
+#~ msgstr ""
+#~ "Correcció de la fallada causada per entrades amb mancances de paquets"
+
+#~ msgid "Add capability to search by category and apply minor bug fixes."
+#~ msgstr ""
+#~ "Addició de la capacitat de cercar per categories i aplicació de "
+#~ "correccions d'errors menors."
+
+#~ msgid "It is now possible to search apps inside a category"
+#~ msgstr "Ara és possible cercar aplicacions dins d'una categoria"
+
+#~ msgid "Prevent multiple authentication dialogs when resuming from suspend"
+#~ msgstr ""
+#~ "Evita diàlegs d'autenticació múltiples quan es torni d'una suspensió o "
+#~ "aturada temporal"
+
+#~ msgid ""
+#~ "Search perfomance has beeen improved, the category name is now shown on "
+#~ "the headbar and minor bugs have been fixed."
+#~ msgstr ""
+#~ "S'ha millorat el rendiment de la cerca. Ara el nom de la categoria es "
+#~ "mostra a la capçalera. També s'han corregit errors menors."
+
+#~ msgid "Fix Steam installation"
+#~ msgstr "S'ha corregit la instal·lació de l'Steam"
+
+#~ msgid "Make search asynchronous"
+#~ msgstr "Fer la cerca asíncrona"
 
 #, fuzzy
 #~ msgid "App Center"

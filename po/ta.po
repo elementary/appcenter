@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-23 15:49-0700\n"
+"POT-Creation-Date: 2018-05-07 12:27-0700\n"
 "PO-Revision-Date: 2017-06-16 17:37+0000\n"
 "Last-Translator: Rajeev Kumar <irajeevankumar@gmail.com>\n"
 "Language-Team: Tamil <https://l10n.elementary.io/projects/appcenter/"
@@ -15,245 +15,277 @@ msgstr ""
 "X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
-#: ../src/Application.vala:38
+#: src/Application.vala:38
 msgid "AppCenter"
 msgstr "மென்பொருள்-மையம்"
 
-#: ../src/Application.vala:124
+#: src/Application.vala:115
+#, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr ""
 "குறிப்பிடப்பட்ட இணைப்பு '%s'  கண்டுபிடிக்க முடியவில்லை, அதற்கு பதிலாக தேடுகிறது"
 
-#: ../src/Application.vala:258
+#: src/Application.vala:249
 msgid "Application installed"
 msgstr "மென்பொருள் நிறுவப்பட்டது"
 
-#: ../src/Application.vala:259
+#: src/Application.vala:250
+#, fuzzy, c-format
 msgid "%s has been successfully installed"
 msgstr "% வெற்றிகரமாக நிறுவப்பட்டது"
 
-#: ../src/Application.vala:271
-#, fuzzy
+#: src/Application.vala:262
+#, fuzzy, c-format
 msgid "There Was An Error Installing %s."
 msgstr "%s நிறுவுவதில்  ஒரு  பிழை"
 
-#: ../src/Core/ChangeInformation.vala:54
+#: src/MainWindow.vala:147 src/Views/Homepage.vala:253
+#: src/Views/Homepage.vala:262 src/Views/Homepage.vala:267
+#: src/Views/Homepage.vala:278
+msgid "Home"
+msgstr "முதன்மை பக்கம்"
+
+#: src/MainWindow.vala:175 src/MainWindow.vala:321 src/Views/SearchView.vala:54
+#: src/Views/SearchView.vala:75
+msgid "Search Apps"
+msgstr "பயன்பாடுகளை தேடு"
+
+#: src/MainWindow.vala:193
+msgid "Network Is Not Available"
+msgstr "நெட்வொர்க் கிடைக்கவில்லை"
+
+#: src/MainWindow.vala:194
+#, fuzzy
+msgid "Connect to the Internet to install or update apps."
+msgstr "மென்பொருளை நிறுவ அல்லது புதுப்பிப்பதற்கு இணையத்துடன் இணைக்கவும்."
+
+#: src/MainWindow.vala:197
+msgid "Network Settings…"
+msgstr "நெட்வொர்க் அமைப்புகள் …"
+
+#: src/Core/ChangeInformation.vala:54
 msgid "Starting"
 msgstr "தொடங்குகிறது"
 
-#: ../src/Core/ChangeInformation.vala:56
+#: src/Core/ChangeInformation.vala:56
 msgid "Waiting"
 msgstr "காத்திருக்கிறது"
 
-#: ../src/Core/ChangeInformation.vala:58
+#: src/Core/ChangeInformation.vala:58
 msgid "Running"
 msgstr "இயங்குகிறது"
 
-#: ../src/Core/ChangeInformation.vala:60
+#: src/Core/ChangeInformation.vala:60
 msgid "Querying"
 msgstr ""
 
-#: ../src/Core/ChangeInformation.vala:62
+#: src/Core/ChangeInformation.vala:62
 msgid "Getting information"
 msgstr "தகவலைப் பெறுகிறது"
 
-#: ../src/Core/ChangeInformation.vala:64
+#: src/Core/ChangeInformation.vala:64
 msgid "Removing packages"
 msgstr "தொகுப்புகளை நீக்குகிறது"
 
-#: ../src/Core/ChangeInformation.vala:66
+#: src/Core/ChangeInformation.vala:66
 msgid "Downloading"
 msgstr "பதிவிறக்குகிறது"
 
-#: ../src/Core/ChangeInformation.vala:68
+#: src/Core/ChangeInformation.vala:68
 msgid "Installing"
 msgstr "நிறுவுகிறது"
 
-#: ../src/Core/ChangeInformation.vala:70
+#: src/Core/ChangeInformation.vala:70
 msgid "Refreshing software list"
 msgstr "மென்பொருள் பட்டியலை புதுப்பிக்கிறது"
 
-#: ../src/Core/ChangeInformation.vala:72
+#: src/Core/ChangeInformation.vala:72
 msgid "Installing updates"
 msgstr "புதுப்பிப்புகளை நிறுவுகிறது"
 
-#: ../src/Core/ChangeInformation.vala:74
+#: src/Core/ChangeInformation.vala:74
 msgid "Cleaning up packages"
 msgstr "தொகுப்புகளை சீர்செய்கிறது"
 
-#: ../src/Core/ChangeInformation.vala:76
+#: src/Core/ChangeInformation.vala:76
 msgid "Obsoleting packages"
 msgstr "தேவையற்ற தொகுப்புகளை நீக்குகிறது"
 
-#: ../src/Core/ChangeInformation.vala:78
+#: src/Core/ChangeInformation.vala:78
 msgid "Resolving dependencies"
 msgstr "சார்புகளைத் தீர்த்துக் கொள்கிறது"
 
-#: ../src/Core/ChangeInformation.vala:80
+#: src/Core/ChangeInformation.vala:80
 msgid "Checking signatures"
 msgstr "கையொப்பங்களைச் சரிபார்க்கிறது"
 
-#: ../src/Core/ChangeInformation.vala:82
+#: src/Core/ChangeInformation.vala:82
 msgid "Testing changes"
 msgstr "மாற்றங்களை சோதிக்கிறது"
 
-#: ../src/Core/ChangeInformation.vala:84
+#: src/Core/ChangeInformation.vala:84
 msgid "Committing changes"
 msgstr "மாற்றங்களைச் செய்கிறது"
 
-#: ../src/Core/ChangeInformation.vala:86
+#: src/Core/ChangeInformation.vala:86
 msgid "Requesting data"
 msgstr "தரவு கோருகிறது"
 
-#: ../src/Core/ChangeInformation.vala:88
+#: src/Core/ChangeInformation.vala:88
 msgid "Finished"
 msgstr "முடிந்தது"
 
-#: ../src/Core/ChangeInformation.vala:90
+#: src/Core/ChangeInformation.vala:90
 msgid "Cancelling"
 msgstr "ரத்து செய்யப்படுகிறது"
 
-#: ../src/Core/ChangeInformation.vala:92
+#: src/Core/ChangeInformation.vala:92
 msgid "Downloading repository information"
 msgstr "களஞ்சியத் தகவலைப் பதிவிறக்குகிறது"
 
-#: ../src/Core/ChangeInformation.vala:94
+#: src/Core/ChangeInformation.vala:94
 msgid "Downloading list of packages"
 msgstr "தொகுப்புகள் பட்டியலைப் பதிவிறக்குகிறது"
 
-#: ../src/Core/ChangeInformation.vala:96
+#: src/Core/ChangeInformation.vala:96
 msgid "Downloading file lists"
 msgstr "கோப்பு பட்டியல்களைப் பதிவிறக்குகிறது"
 
-#: ../src/Core/ChangeInformation.vala:98
+#: src/Core/ChangeInformation.vala:98
 msgid "Downloading lists of changes"
 msgstr "மாற்றங்களின் பட்டியல்களை பதிவிறக்குகிறது"
 
-#: ../src/Core/ChangeInformation.vala:100
+#: src/Core/ChangeInformation.vala:100
 msgid "Downloading groups"
 msgstr "குழுக்களை பதிவிறக்குகிறது"
 
-#: ../src/Core/ChangeInformation.vala:102
+#: src/Core/ChangeInformation.vala:102
 msgid "Downloading update information"
 msgstr "மேம்படுத்தல் தகவலை பதிவிறக்குகிறது"
 
-#: ../src/Core/ChangeInformation.vala:104
+#: src/Core/ChangeInformation.vala:104
 msgid "Repackaging files"
 msgstr "கோப்புகளை மறுபதிப்பு செய்கிறது"
 
-#: ../src/Core/ChangeInformation.vala:106
+#: src/Core/ChangeInformation.vala:106
 msgid "Loading cache"
 msgstr "கேச் ஏற்றுகிறது"
 
-#: ../src/Core/ChangeInformation.vala:108
+#: src/Core/ChangeInformation.vala:108
 msgid "Scanning applications"
 msgstr "மென்பொருள்களை ஸ்கேன் செய்கிறது"
 
-#: ../src/Core/ChangeInformation.vala:110
+#: src/Core/ChangeInformation.vala:110
 msgid "Generating package lists"
 msgstr "தொகுப்பு பட்டியலை உருவாக்குகிறது"
 
-#: ../src/Core/ChangeInformation.vala:112
+#: src/Core/ChangeInformation.vala:112
 msgid "Waiting for package manager lock"
 msgstr "தொகுப்பு மேலாளர் பூட்டுக்காக காத்திருக்கிறது"
 
-#: ../src/Core/ChangeInformation.vala:114
+#: src/Core/ChangeInformation.vala:114
 msgid "Waiting for authentication"
 msgstr "அங்கீகாரத்திற்காக காத்திருக்கிறது"
 
-#: ../src/Core/ChangeInformation.vala:116
+#: src/Core/ChangeInformation.vala:116
 msgid "Updating running applications"
 msgstr "இயங்கும் மென்பொருள்களை புதுப்பிக்கப்படுகின்றன"
 
-#: ../src/Core/ChangeInformation.vala:118
+#: src/Core/ChangeInformation.vala:118
 msgid "Checking applications in use"
 msgstr "பயன்பாட்டில் உள்ள மென்பொருள்களை சரிபார்க்கிறது"
 
-#: ../src/Core/ChangeInformation.vala:120
+#: src/Core/ChangeInformation.vala:120
 msgid "Checking libraries in use"
 msgstr "பயன்பாட்டில் உள்ள நூலகங்களைச் சரிபார்க்கிறது"
 
-#: ../src/Core/ChangeInformation.vala:122
+#: src/Core/ChangeInformation.vala:122
 msgid "Copying files"
 msgstr "கோப்புகளை நகலெடுக்கிறது"
 
-#: ../src/Core/ChangeInformation.vala:124
+#: src/Core/ChangeInformation.vala:124
 msgid "Unknown state"
 msgstr "தெரியாத நிலை"
 
-#: ../src/Core/Client.vala:105
+#: src/Core/Client.vala:105
 msgid "Operating System Updates"
 msgstr "இயக்க முறைமைகள் மேம்படுத்தல்கள்"
 
-#: ../src/Core/Client.vala:106
+#: src/Core/Client.vala:106
 msgid "Updates to system components"
 msgstr "கணினி கூறுகளுக்கான புதுப்பிப்புகள்"
 
-#: ../src/Core/Client.vala:141
+#: src/Core/Client.vala:141
+#, c-format
 msgid "%s (local)"
 msgstr ""
 
-#: ../src/Core/Client.vala:454
+#: src/Core/Client.vala:454
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "புதுப்பிப்பு உள்ளது"
 msgstr[1] "புதுப்பிப்புகள் உள்ளன"
 
-#: ../src/Core/Client.vala:455
+#: src/Core/Client.vala:455
+#, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "%u உங்கள் கணினிக்கு புதுப்பிப்பு உள்ளது"
 msgstr[1] "%u உங்கள் கணினிக்கு புதுப்பிப்புகள் உள்ளன"
 
-#: ../src/Core/Client.vala:483
+#: src/Core/Client.vala:483
+#, c-format
 msgid "Version: %s"
 msgstr ""
 
-#: ../src/Core/Client.vala:492
+#: src/Core/Client.vala:492
 msgid "No components with updates"
 msgstr ""
 
-#: ../src/Core/Client.vala:496
+#: src/Core/Client.vala:496
+#, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/Core/Client.vala:498
+#: src/Core/Client.vala:498
+#, c-format
 msgid "%s:"
 msgstr ""
 
-#: ../src/Core/Package.vala:186
-msgid "The %s Developers"
+#: src/Core/Package.vala:192
+#, fuzzy, c-format
+msgid "%s Developers"
 msgstr "%s  டெவலப்பர்கள்"
 
-#: ../src/Core/UpdateManager.vala:81
+#: src/Core/UpdateManager.vala:81
 msgid "Restart Required"
 msgstr "மறுதொடக்கம் தேவை"
 
-#: ../src/Core/UpdateManager.vala:82
+#: src/Core/UpdateManager.vala:82
 msgid "Please restart your system to finalize updates"
 msgstr "புதுப்பிப்புகளை முடிக்க உங்கள் கணினியை மீண்டும் தொடங்கவும்"
 
-#: ../src/Dialogs/RestartDialog.vala:40
+#: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
 msgstr "நிச்சயமாக நீங்கள் மறுதொடக்கம் செய்ய விரும்புகிறீர்களா?"
 
-#: ../src/Dialogs/RestartDialog.vala:41
+#: src/Dialogs/RestartDialog.vala:41
 msgid "This will close all open applications and restart this device."
 msgstr "இது எல்லா திறந்த பயன்பாடுகளையும் மூடிவிட்டு இந்த சாதனத்தை மறுதொடக்கம் செய்யும்."
 
-#: ../src/Dialogs/RestartDialog.vala:42
+#: src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
 msgstr "மறுதொடக்கம்"
 
-#: ../src/Dialogs/RestartDialog.vala:62 ../src/Dialogs/StripeDialog.vala:182
-#: ../src/Dialogs/StripeDialog.vala:299
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:145
+#: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:182
+#: src/Dialogs/StripeDialog.vala:299
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:147
 msgid "Cancel"
 msgstr "ரத்துசெய்"
 
-#: ../src/Dialogs/StripeDialog.vala:41
+#: src/Dialogs/StripeDialog.vala:41
 msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
@@ -261,25 +293,26 @@ msgstr ""
 "கார்டைச் செயலாக்குகையில் பிழை ஏற்பட்டது. தயவுசெய்து பின்னர் முயற்சிக்கவும். எந்த "
 "சிரமத்திற்கும் நாங்கள் மன்னிப்பு கோருகிறோம்."
 
-#: ../src/Dialogs/StripeDialog.vala:42
+#: src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
 msgstr "உங்கள் கட்டணத் தகவலை மதிப்பாய்வு செய்து மீண்டும் முயற்சிக்கவும்."
 
-#: ../src/Dialogs/StripeDialog.vala:78
+#: src/Dialogs/StripeDialog.vala:78
+#, c-format
 msgid "Pay $%d for %s"
 msgstr ""
 
-#: ../src/Dialogs/StripeDialog.vala:82
+#: src/Dialogs/StripeDialog.vala:82
 msgid ""
 "This is a one time payment. Your email address is only used to send you a "
 "receipt."
 msgstr ""
 
-#: ../src/Dialogs/StripeDialog.vala:91 ../src/Widgets/SharePopover.vala:35
+#: src/Dialogs/StripeDialog.vala:91 src/Widgets/SharePopover.vala:35
 msgid "Email"
 msgstr "மின்னஞ்சல்"
 
-#: ../src/Dialogs/StripeDialog.vala:93
+#: src/Dialogs/StripeDialog.vala:93
 msgid ""
 "Your email address is used to send a receipt. It is never stored and you "
 "will not be subscribed to a mailing list."
@@ -287,70 +320,70 @@ msgstr ""
 "ரசீது அனுப்ப உங்கள் மின்னஞ்சல் முகவரி பயன்படுத்தப்படுகிறது. இது ஒருபோதும் "
 "சேமிக்கப்படவில்லை மற்றும் நீங்கள் அஞ்சல் பட்டியலில் இணைக்கப்படவில்லை."
 
-#. / TRANSLATORS: Don't change the order, only transliterate
-#: ../src/Dialogs/StripeDialog.vala:112
+#: src/Dialogs/StripeDialog.vala:112
 msgid "MM / YY"
 msgstr "மாதம் / வருடம்"
 
-#: ../src/Dialogs/StripeDialog.vala:132
+#: src/Dialogs/StripeDialog.vala:132
 msgid "CVC"
 msgstr "சிவிசி"
 
-#: ../src/Dialogs/StripeDialog.vala:173
+#: src/Dialogs/StripeDialog.vala:173
 msgid "Privacy Policy"
 msgstr "தனியுரிமை கொள்கை"
 
-#: ../src/Dialogs/StripeDialog.vala:184 ../src/Dialogs/StripeDialog.vala:298
+#: src/Dialogs/StripeDialog.vala:184 src/Dialogs/StripeDialog.vala:298
+#, c-format
 msgid "Pay $%d.00"
 msgstr "பணம் செலுத்து $%d.00"
 
-#: ../src/Dialogs/StripeDialog.vala:227
+#: src/Dialogs/StripeDialog.vala:227
 msgid "Processing"
 msgstr "செயல்முறை நடக்கிறது"
 
-#: ../src/Dialogs/StripeDialog.vala:252
+#: src/Dialogs/StripeDialog.vala:252
 msgid "There Was a Problem Processing Your Payment"
 msgstr "உங்களுடைய கொடுப்பனவு ஒரு பிரச்சனை"
 
-#: ../src/Dialogs/StripeDialog.vala:290
+#: src/Dialogs/StripeDialog.vala:290
 msgid "Pay Later"
 msgstr "பின்னர் பணம் கொடுங்கள்"
 
-#: ../src/Dialogs/StripeDialog.vala:291
+#: src/Dialogs/StripeDialog.vala:291
 msgid "Retry"
 msgstr "மீண்டும் முயற்சி செய்"
 
-#: ../src/Dialogs/StripeDialog.vala:497 ../src/Dialogs/StripeDialog.vala:562
+#: src/Dialogs/StripeDialog.vala:497 src/Dialogs/StripeDialog.vala:562
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr "அட்டை எண் தவறானது. சரியான கார்டு எண்ணைப் பயன்படுத்தி மீண்டும் முயற்சிக்கவும்."
 
-#: ../src/Dialogs/StripeDialog.vala:499
+#: src/Dialogs/StripeDialog.vala:499
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
 msgstr "காலாவதி மாதம் தவறானது. சரியான காலாவதி தேதி பயன்படுத்தி மீண்டும் முயற்சிக்கவும்."
 
-#: ../src/Dialogs/StripeDialog.vala:501 ../src/Dialogs/StripeDialog.vala:559
+#: src/Dialogs/StripeDialog.vala:501 src/Dialogs/StripeDialog.vala:559
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
 "காலாவதி ஆண்டு தவறானது. சரியான காலாவதி தேதியைப் பயன்படுத்தி மீண்டும் முயற்சிக்கவும் ."
 
-#: ../src/Dialogs/StripeDialog.vala:504 ../src/Dialogs/StripeDialog.vala:557
+#: src/Dialogs/StripeDialog.vala:504 src/Dialogs/StripeDialog.vala:557
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr "CVC எண் தவறானது. சரியான CVC ஐ பயன்படுத்தி மீண்டும் முயற்சிக்கவும்."
 
-#: ../src/Dialogs/StripeDialog.vala:506 ../src/Dialogs/StripeDialog.vala:548
+#: src/Dialogs/StripeDialog.vala:506 src/Dialogs/StripeDialog.vala:548
 msgid "The card has expired. Please try again with a different card."
 msgstr "அட்டை காலாவதியானது. வேறு ஒரு கார்டை மீண்டும் முயற்சிக்கவும்."
 
-#: ../src/Dialogs/StripeDialog.vala:526
+#: src/Dialogs/StripeDialog.vala:526
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr "தற்போது பல பணம் கோரிக்கைகள் உள்ளன, பின்னர் மீண்டும் முயற்சிக்கவும்."
 
-#: ../src/Dialogs/StripeDialog.vala:542
+#: src/Dialogs/StripeDialog.vala:542
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
@@ -358,17 +391,17 @@ msgstr ""
 "இந்த வகையான பரிவர்த்தனைக்கு இந்த அட்டை ஆதரிக்கவில்லை. வேறு ஒரு கார்டை மீண்டும் "
 "முயற்சிக்கவும்."
 
-#: ../src/Dialogs/StripeDialog.vala:544
+#: src/Dialogs/StripeDialog.vala:544
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
 msgstr "இந்த அட்டை நாணயத்தை ஆதரிக்கவில்லை. வேறு ஒரு கார்டை மீண்டும் முயற்சிக்கவும்."
 
-#: ../src/Dialogs/StripeDialog.vala:546
+#: src/Dialogs/StripeDialog.vala:546
 msgid "The transaction has already been processed."
 msgstr "பரிவர்த்தனை ஏற்கனவே செயல்படுத்தப்பட்டது."
 
-#: ../src/Dialogs/StripeDialog.vala:550
+#: src/Dialogs/StripeDialog.vala:550
 #, fuzzy
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
@@ -377,332 +410,318 @@ msgstr ""
 "ZIP / அஞ்சல் குறியீடு தவறானது. சரியான ZIP / அஞ்சல் குறியீட்டைப் பயன்படுத்தி மீண்டும் "
 "முயற்சிக்கவும்."
 
-#: ../src/Dialogs/StripeDialog.vala:552
+#: src/Dialogs/StripeDialog.vala:552
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "உங்களிடம் போதுமான நிதி இல்லை. மாற்று கட்டண முறையைப் பயன்படுத்துக."
 
-#: ../src/Dialogs/StripeDialog.vala:554
+#: src/Dialogs/StripeDialog.vala:554
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "அளவு தவறானது. சரியான அளவு பயன்படுத்தி மீண்டும் முயற்சிக்கவும்."
 
-#: ../src/Dialogs/StripeDialog.vala:565
+#: src/Dialogs/StripeDialog.vala:565
 #, fuzzy
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "CVC எண் தவறானது. சரியான CVC ஐ பயன்படுத்தி மீண்டும் முயற்சிக்கவும்."
 
-#: ../src/Dialogs/StripeDialog.vala:567
+#: src/Dialogs/StripeDialog.vala:567
 #, fuzzy
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
 msgstr "பல PIN முயற்சிகள் உள்ளன. வேறு ஒரு கார்டை மீண்டும் முயற்சிக்கவும்."
 
-#: ../src/Dialogs/StripeDialog.vala:587
+#: src/Dialogs/StripeDialog.vala:587
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
 msgstr ""
 "பரிவர்த்தனை முடிக்க முடியவில்லை. மேலும் தகவலுக்கு உங்கள் வங்கியைத் தொடர்பு கொள்ளவும்."
 
-#: ../src/Dialogs/StripeDialog.vala:590
+#: src/Dialogs/StripeDialog.vala:590
 msgid "The balance or credit limit on the card has been reached."
 msgstr "அட்டையின் இருப்பு அல்லது கடன் வரம்பு அடைந்துள்ளது."
 
-#: ../src/Dialogs/StripeDialog.vala:593
+#: src/Dialogs/StripeDialog.vala:593
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "கொடுக்கப்பட்ட அட்டை ஒரு சோதனை அட்டை. தொடர உண்மையான கார்டைப் பயன்படுத்தவும்."
 
-#: ../src/Dialogs/UpdateFailDialog.vala:24
+#: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
 msgstr ""
 
-#: ../src/Dialogs/UpdateFailDialog.vala:25
+#: src/Dialogs/UpdateFailDialog.vala:26
 msgid ""
 "This may have been caused by external, manually added software repositories "
 "or a corrupted sources file."
 msgstr ""
 
-#: ../src/Dialogs/UpdateFailDialog.vala:45
+#: src/Dialogs/UpdateFailDialog.vala:46
 msgid "Details"
 msgstr ""
 
-#: ../src/Dialogs/UpdateFailDialog.vala:53
+#: src/Dialogs/UpdateFailDialog.vala:54
 msgid "Ignore"
 msgstr ""
 
-#: ../src/Dialogs/UpdateFailDialog.vala:54
+#: src/Dialogs/UpdateFailDialog.vala:55
 msgid "Try Again"
 msgstr ""
 
-#: ../src/MainWindow.vala:144 ../src/Views/Homepage.vala:253
-#: ../src/Views/Homepage.vala:262 ../src/Views/Homepage.vala:267
-#: ../src/Views/Homepage.vala:278
-msgid "Home"
-msgstr "முதன்மை பக்கம்"
-
-#: ../src/MainWindow.vala:145 ../src/Views/InstalledView.vala:29
-#: ../src/Views/InstalledView.vala:49
-#, fuzzy
-msgctxt "view"
-msgid "Installed"
-msgstr "நிறுவுக"
-
-#: ../src/MainWindow.vala:172 ../src/MainWindow.vala:313
-#: ../src/Views/SearchView.vala:54 ../src/Views/SearchView.vala:75
-msgid "Search Apps"
-msgstr "பயன்பாடுகளை தேடு"
-
-#: ../src/MainWindow.vala:190
-msgid "Network Is Not Available"
-msgstr "நெட்வொர்க் கிடைக்கவில்லை"
-
-#: ../src/MainWindow.vala:191
-#, fuzzy
-msgid "Connect to the Internet to install or update apps."
-msgstr "மென்பொருளை நிறுவ அல்லது புதுப்பிப்பதற்கு இணையத்துடன் இணைக்கவும்."
-
-#: ../src/MainWindow.vala:194
-msgid "Network Settings…"
-msgstr "நெட்வொர்க் அமைப்புகள் …"
-
-#: ../src/Views/AppInfoView.vala:76
+#: src/Views/AppInfoView.vala:76
 msgid "Screenshot Not Available"
 msgstr "ஸ்கிரீன்ஷாட் கிடைக்கவில்லை"
 
-#: ../src/Views/AppInfoView.vala:130
+#: src/Views/AppInfoView.vala:130
 msgid "Homepage"
 msgstr "முதன்மை-பக்கம்"
 
-#: ../src/Views/AppInfoView.vala:136
+#: src/Views/AppInfoView.vala:136
 msgid "Suggest Translations"
 msgstr "மொழிபெயர்ப்பு பரிந்துரைக்க"
 
-#: ../src/Views/AppInfoView.vala:142
+#: src/Views/AppInfoView.vala:142
 msgid "Report a Problem"
 msgstr "பிரச்சனையைப் புகாரளி"
 
-#: ../src/Views/AppInfoView.vala:148
+#: src/Views/AppInfoView.vala:148
 msgid "Help"
 msgstr "உதவி"
 
-#: ../src/Views/AppInfoView.vala:170
+#: src/Views/AppInfoView.vala:175
 msgid "What's New:"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:189
+#: src/Views/AppInfoView.vala:194
 msgid "Extensions:"
 msgstr "நீட்சிகள்:"
 
-#: ../src/Views/AppInfoView.vala:282
+#: src/Views/AppInfoView.vala:287
+#, c-format
 msgid "Other Apps by %s"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:316
+#: src/Views/AppInfoView.vala:321
 msgid "Link copied to clipboard"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:327
+#: src/Views/AppInfoView.vala:332
+#, c-format
 msgid "Check out %s on AppCenter:"
 msgstr ""
 
-#: ../src/Views/AppInfoView.vala:334
+#: src/Views/AppInfoView.vala:339
 msgid "Share"
 msgstr ""
 
-#: ../src/Views/AppListUpdateView.vala:59
+#: src/Views/AppInfoView.vala:621
+msgid "Fund"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:643
+msgid "Fund the development of this app"
+msgstr ""
+
+#: src/Views/AppListUpdateView.vala:59
 msgid "A restart is required to complete the installation of updates"
 msgstr "புதுப்பிப்புகளை நிறுவுவதற்கு மறுதொடக்கம் தேவைப்படுகிறது"
 
-#: ../src/Views/AppListUpdateView.vala:67
+#: src/Views/AppListUpdateView.vala:67
 msgid "Restart Now"
 msgstr "இப்போது மறுதொடக்கம் செய்க"
 
-#: ../src/Views/AppListUpdateView.vala:162
+#: src/Views/AppListUpdateView.vala:162
 msgid "Update All"
 msgstr "அனைத்தையும் புதுப்பிக்கவும்"
 
-#: ../src/Views/AppListView.vala:119
+#: src/Views/AppListView.vala:119
 msgid "Non-Curated Apps"
 msgstr ""
 
-#: ../src/Views/Homepage.vala:65
+#: src/Views/Homepage.vala:65
 msgid "Recently Updated"
 msgstr "சமீபத்தில் புதுப்பிக்கப்பட்டது"
 
-#: ../src/Views/Homepage.vala:81
+#: src/Views/Homepage.vala:81
 msgid "Trending"
 msgstr ""
 
-#: ../src/Views/Homepage.vala:97
+#: src/Views/Homepage.vala:97
 msgid "Categories"
 msgstr "பிரிவுகள்"
 
-#: ../src/Views/Homepage.vala:267 ../src/Views/Homepage.vala:278
+#: src/Views/Homepage.vala:267 src/Views/Homepage.vala:278
+#, c-format
 msgid "Search %s"
 msgstr "தேடுக %s"
 
-#. / TRANSLATORS: the name of the Search view
-#: ../src/Views/SearchView.vala:39
-msgctxt "view"
-msgid "Search"
-msgstr "தேடுதல்"
-
-#: ../src/Widgets/AbstractAppList.vala:36
+#: src/Widgets/AbstractAppList.vala:36
 msgid "No Results"
 msgstr "முடிவுகள் இல்லை"
 
-#: ../src/Widgets/AbstractAppList.vala:36
+#: src/Widgets/AbstractAppList.vala:36
 msgid "No apps could be found. Try changing search terms."
 msgstr "எந்த மென்பொருளும் கிடைக்கவில்லை. தேடல் சொற்களை மாற்ற முயற்சிக்கவும்."
 
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:124
-msgid "Uninstall"
-msgstr "நீக்குதல்"
-
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:127
-msgid "Open"
-msgstr "திற"
-
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:208
-#: ../src/Widgets/HumbleButton.vala:82
-msgid "Free"
-msgstr "இலவசம்"
-
-#: ../src/Widgets/AppContainers/AbstractAppContainer.vala:232
-msgid "Update"
-msgstr "புதுப்பிக்கவும்"
-
-#: ../src/Widgets/Banner.vala:55
+#: src/Widgets/Banner.vala:55
 msgid "An open, pay-what-you-want app store"
 msgstr "ஒரு திறந்த, நீங்கள்-விரும்பினால்,-பணம் செலுத்தத்தக்க மென்பொருள் மையம்"
 
-#: ../src/Widgets/Banner.vala:68
+#: src/Widgets/Banner.vala:68
 msgid "Get the apps that you need at a price you can afford."
 msgstr "நீங்கள் வாங்கக்கூடிய விலையில் தேவைப்படும் மென்பொருள்களைப்  பெறுங்கள்."
 
-#: ../src/Widgets/CardNumberEntry.vala:41
+#: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
 msgstr "அட்டை எண்"
 
-#: ../src/Widgets/CategoryFlowBox.vala:29
+#: src/Widgets/CategoryFlowBox.vala:29
 msgid "Audio"
 msgstr "ஒலி அமைவு"
 
-#: ../src/Widgets/CategoryFlowBox.vala:30
+#: src/Widgets/CategoryFlowBox.vala:30
 msgid "Development"
 msgstr "மேம்பாடு"
 
-#: ../src/Widgets/CategoryFlowBox.vala:31
+#: src/Widgets/CategoryFlowBox.vala:31
 msgid "Accessories"
 msgstr "துணைக்கருவிகள்"
 
-#: ../src/Widgets/CategoryFlowBox.vala:32
+#: src/Widgets/CategoryFlowBox.vala:32
 msgid "Office"
 msgstr "அலுவல்"
 
-#: ../src/Widgets/CategoryFlowBox.vala:33
+#: src/Widgets/CategoryFlowBox.vala:33
 msgid "System"
 msgstr "அமைப்பு"
 
-#: ../src/Widgets/CategoryFlowBox.vala:34
+#: src/Widgets/CategoryFlowBox.vala:34
 msgid "Video"
 msgstr "காணொளி"
 
-#: ../src/Widgets/CategoryFlowBox.vala:35
+#: src/Widgets/CategoryFlowBox.vala:35
 msgid "Graphics"
 msgstr "கிராபிக்ஸ்"
 
-#: ../src/Widgets/CategoryFlowBox.vala:36
+#: src/Widgets/CategoryFlowBox.vala:36
 msgid "Games"
 msgstr "விளையாட்டுகள்"
 
-#: ../src/Widgets/CategoryFlowBox.vala:37
+#: src/Widgets/CategoryFlowBox.vala:37
 msgid "Education"
 msgstr "கல்வி"
 
-#: ../src/Widgets/CategoryFlowBox.vala:38
+#: src/Widgets/CategoryFlowBox.vala:38
 msgid "Internet"
 msgstr "இணையம்"
 
-#: ../src/Widgets/CategoryFlowBox.vala:39
+#: src/Widgets/CategoryFlowBox.vala:39
 msgid "Science & Engineering"
 msgstr "அறிவியல் & பொறியியல்"
 
-#: ../src/Widgets/CategoryFlowBox.vala:40
+#: src/Widgets/CategoryFlowBox.vala:40
 msgid "Universal Access"
 msgstr "உலகளாவிய அணுகல்"
 
-#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: ../src/Widgets/HumbleButton.vala:141
+#: src/Widgets/HumbleButton.vala:93
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:211
+msgid "Free"
+msgstr "இலவசம்"
+
+#: src/Widgets/HumbleButton.vala:127
+#, c-format
 msgid "$%d.00"
 msgstr ""
 
-#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: ../src/Widgets/HumbleButton.vala:144
+#: src/Widgets/HumbleButton.vala:130
+#, c-format
 msgid "$%d"
 msgstr ""
 
-#: ../src/Widgets/ReleaseRow.vala:67
+#: src/Widgets/ReleaseRow.vala:67
+#, c-format
 msgid "<b>%s</b> – %s"
 msgstr ""
 
-#: ../src/Widgets/ReleaseRow.vala:74
+#: src/Widgets/ReleaseRow.vala:74
 #, fuzzy
 msgid "Unknown version"
 msgstr "தெரியாத நிலை"
 
-#: ../src/Widgets/ReleaseRow.vala:90 ../src/Widgets/ReleaseRow.vala:93
+#: src/Widgets/ReleaseRow.vala:90 src/Widgets/ReleaseRow.vala:93
 msgid "No description available"
 msgstr ""
 
-#: ../src/Widgets/SharePopover.vala:39
+#: src/Widgets/SharePopover.vala:39
 msgid "Facebook"
 msgstr ""
 
-#: ../src/Widgets/SharePopover.vala:43
+#: src/Widgets/SharePopover.vala:43
 msgid "Google+"
 msgstr ""
 
-#: ../src/Widgets/SharePopover.vala:47
+#: src/Widgets/SharePopover.vala:47
 msgid "Twitter"
 msgstr ""
 
-#: ../src/Widgets/SharePopover.vala:51
+#: src/Widgets/SharePopover.vala:51
 msgid "reddit"
 msgstr ""
 
-#: ../src/Widgets/SharePopover.vala:55
+#: src/Widgets/SharePopover.vala:55
 msgid "Tumblr"
 msgstr ""
 
-#: ../src/Widgets/SharePopover.vala:59
+#: src/Widgets/SharePopover.vala:59
 msgid "Telegram"
 msgstr ""
 
-#: ../src/Widgets/SharePopover.vala:63
+#: src/Widgets/SharePopover.vala:63
 msgid "Copy link"
 msgstr ""
 
-#: ../src/Widgets/UpdateHeaderRow.vala:68
+#: src/Widgets/UpdateHeaderRow.vala:68
+#, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "%u மேம்படுத்தல் கிடைக்கின்றன"
 msgstr[1] "%u மேம்படுத்தல்கள் கிடைக்கின்றன"
 
-#: ../src/Widgets/UpdateHeaderRow.vala:69
+#: src/Widgets/UpdateHeaderRow.vala:69
+#, c-format
 msgid "Size: %s"
 msgstr "அளவு: %s"
 
-#: ../src/Widgets/UpdateHeaderRow.vala:105
+#: src/Widgets/UpdateHeaderRow.vala:105
 msgid "Searching for updates…"
 msgstr "புதுப்பிப்புகளுக்குத் தேடுகிறது …"
 
-#: ../src/Widgets/UpdateHeaderRow.vala:112
+#: src/Widgets/UpdateHeaderRow.vala:112
 msgid "Up to Date"
 msgstr "இது வரை புதுப்பிக்கப்பட்டுள்ளது"
 
-#: ../src/Widgets/UpdateHeaderRow.vala:120
+#: src/Widgets/UpdateHeaderRow.vala:120
 msgid "Drivers"
 msgstr "இயக்கிகள்"
+
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:126
+msgid "Uninstall"
+msgstr "நீக்குதல்"
+
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:129
+msgid "Open"
+msgstr "திற"
+
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:235
+msgid "Update"
+msgstr "புதுப்பிக்கவும்"
+
+#, fuzzy
+#~ msgctxt "view"
+#~ msgid "Installed"
+#~ msgstr "நிறுவுக"
+
+#~ msgctxt "view"
+#~ msgid "Search"
+#~ msgstr "தேடுதல்"
 
 #~ msgctxt "view"
 #~ msgid "Updates"

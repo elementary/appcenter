@@ -2,33 +2,30 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-02 13:03-0700\n"
+"POT-Creation-Date: 2018-05-07 12:28-0700\n"
 "PO-Revision-Date: 2017-04-10 18:37+0000\n"
 "Last-Translator: Oleh Astappiev <astappev@gmail.com>\n"
-"Language-Team: Ukrainian "
-"<https://l10n.elementary.io/projects/appcenter/extra/uk/>\n"
+"Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/"
+"extra/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
-"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
+#: data/io.elementary.appcenter.appdata.xml.in:8
 msgid "AppCenter"
 msgstr "Центр програм"
 
+#: data/io.elementary.appcenter.appdata.xml.in:9
+#: data/io.elementary.appcenter.desktop.in.in:4
 msgid "Browse and manage apps"
 msgstr "Керування застосунками"
 
-msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
-msgstr ""
-"встановити;видалити;видалити;каталог;магазин;додатки;оновлення;програми;"
-
-msgid "About AppCenter"
-msgstr "Про Центр програм"
-
+#: data/io.elementary.appcenter.appdata.xml.in:11
 msgid ""
 "An app store for indie and open source developers. Browse by categories or "
 "search and discover new apps. AppCenter is also used for updating your "
@@ -40,43 +37,67 @@ msgstr ""
 "останньої версії для використання нових функцій і виправлення помилок "
 "системи."
 
-msgid "Bug fixes and improve perfomance."
-msgstr "Виправлення помилок і поліпшення продуктивності."
-
-msgid "Various bug fixes and performance improvements"
-msgstr "Різні виправлення помилок і поліпшення продуктивності"
-
-msgid "New translations"
-msgstr "Нові переклади"
-
-msgid "Fix crash caused by entries with missing packages"
-msgstr "Усунути аварію, викликану записами з відсутніми пакетами"
-
-msgid "Add capability to search by category and apply minor bug fixes."
+#: data/io.elementary.appcenter.appdata.xml.in:191
+msgid "elementary LLC."
 msgstr ""
-"Додано можливість здійснювати пошук за категоріями та незначні виправлення "
-"помилок."
 
-msgid "It is now possible to search apps inside a category"
-msgstr "Тепер можна шукати додатки в категорії"
-
-msgid "Prevent multiple authentication dialogs when resuming from suspend"
+#: data/io.elementary.appcenter.desktop.in.in:3
+msgid "@APP_NAME@"
 msgstr ""
-"Виправлена проблема кількох діалогів аутентифікації при відновленні з режиму "
-"очікування"
 
-msgid ""
-"Search perfomance has beeen improved, the category name is now shown on the "
-"headbar and minor bugs have been fixed."
+#: data/io.elementary.appcenter.desktop.in.in:6
+msgid "@DESKTOP_ICON@"
 msgstr ""
-"Продуктивність пошуку була поліпшена, назва категорії тепер відображається "
-"на заголовку вікна та виправлення незначних помилок."
 
-msgid "Fix Steam installation"
-msgstr "Виправлено встановлення Steam"
+#: data/io.elementary.appcenter.desktop.in.in:7
+msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
+msgstr ""
+"встановити;видалити;видалити;каталог;магазин;додатки;оновлення;програми;"
 
-msgid "Make search asynchronous"
-msgstr "Відтепер пошук працює асинхронно"
+#: data/io.elementary.appcenter.desktop.in.in:18
+msgid "Check for Updates"
+msgstr ""
+
+#~ msgid "About AppCenter"
+#~ msgstr "Про Центр програм"
+
+#~ msgid "Bug fixes and improve perfomance."
+#~ msgstr "Виправлення помилок і поліпшення продуктивності."
+
+#~ msgid "Various bug fixes and performance improvements"
+#~ msgstr "Різні виправлення помилок і поліпшення продуктивності"
+
+#~ msgid "New translations"
+#~ msgstr "Нові переклади"
+
+#~ msgid "Fix crash caused by entries with missing packages"
+#~ msgstr "Усунути аварію, викликану записами з відсутніми пакетами"
+
+#~ msgid "Add capability to search by category and apply minor bug fixes."
+#~ msgstr ""
+#~ "Додано можливість здійснювати пошук за категоріями та незначні "
+#~ "виправлення помилок."
+
+#~ msgid "It is now possible to search apps inside a category"
+#~ msgstr "Тепер можна шукати додатки в категорії"
+
+#~ msgid "Prevent multiple authentication dialogs when resuming from suspend"
+#~ msgstr ""
+#~ "Виправлена проблема кількох діалогів аутентифікації при відновленні з "
+#~ "режиму очікування"
+
+#~ msgid ""
+#~ "Search perfomance has beeen improved, the category name is now shown on "
+#~ "the headbar and minor bugs have been fixed."
+#~ msgstr ""
+#~ "Продуктивність пошуку була поліпшена, назва категорії тепер "
+#~ "відображається на заголовку вікна та виправлення незначних помилок."
+
+#~ msgid "Fix Steam installation"
+#~ msgstr "Виправлено встановлення Steam"
+
+#~ msgid "Make search asynchronous"
+#~ msgstr "Відтепер пошук працює асинхронно"
 
 #, fuzzy
 #~ msgid "App Center"

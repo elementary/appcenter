@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the extra package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-23 15:49-0700\n"
+"POT-Creation-Date: 2018-05-07 12:28-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,67 +17,38 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: data/io.elementary.appcenter.appdata.xml.in:8
 msgid "AppCenter"
 msgstr ""
 
+#: data/io.elementary.appcenter.appdata.xml.in:9
+#: data/io.elementary.appcenter.desktop.in.in:4
 msgid "Browse and manage apps"
 msgstr ""
 
-msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
-msgstr ""
-
-msgid "Check for Updates"
-msgstr ""
-
+#: data/io.elementary.appcenter.appdata.xml.in:11
 msgid ""
 "An app store for indie and open source developers. Browse by categories or "
 "search and discover new apps. AppCenter is also used for updating your "
 "system to the latest and greatest version for new features and fixes."
 msgstr ""
 
-msgid "Bug fixes and improve perfomance."
+#: data/io.elementary.appcenter.appdata.xml.in:191
+msgid "elementary LLC."
 msgstr ""
 
-msgid "Improve transaction success rate"
+#: data/io.elementary.appcenter.desktop.in.in:3
+msgid "@APP_NAME@"
 msgstr ""
 
-msgid "Add Publishing to Office category"
+#: data/io.elementary.appcenter.desktop.in.in:6
+msgid "@DESKTOP_ICON@"
 msgstr ""
 
-msgid "Improve descriptions of OS Updates"
+#: data/io.elementary.appcenter.desktop.in.in:7
+msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
 msgstr ""
 
-msgid "Various bug fixes and performance improvements"
-msgstr ""
-
-msgid "New translations"
-msgstr ""
-
-msgid "Give details for Operating System Updates"
-msgstr ""
-
-msgid "Support mouse button navigation"
-msgstr ""
-
-msgid "Fix crash caused by entries with missing packages"
-msgstr ""
-
-msgid "Add capability to search by category and apply minor bug fixes."
-msgstr ""
-
-msgid "It is now possible to search apps inside a category"
-msgstr ""
-
-msgid "Prevent multiple authentication dialogs when resuming from suspend"
-msgstr ""
-
-msgid ""
-"Search perfomance has beeen improved, the category name is now shown on the "
-"headbar and minor bugs have been fixed."
-msgstr ""
-
-msgid "Fix Steam installation"
-msgstr ""
-
-msgid "Make search asynchronous"
+#: data/io.elementary.appcenter.desktop.in.in:18
+msgid "Check for Updates"
 msgstr ""

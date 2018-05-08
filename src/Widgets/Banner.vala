@@ -22,7 +22,7 @@ const string BANNER_STYLE_CSS = """
     @define-color banner_bg_color %s;
     @define-color banner_fg_color %s;
 
-    .banner { 
+    .banner {
         transition: all %ums ease-in-out;
     }
 """;
@@ -255,3 +255,4 @@ namespace AppCenter.Widgets {
         }
     }
 }
+

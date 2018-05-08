@@ -488,7 +488,7 @@ public class AppCenterCore.Client : Object {
                 }
             });
 
-            if (os_count == 0){
+            if (os_count == 0) {
                 var latest_version = _("No components with updates");
                 os_updates.latest_version = latest_version;
                 os_updates.description = GLib.Markup.printf_escaped ("<p>%s</p>\n", latest_version);
@@ -749,3 +749,4 @@ public class AppCenterCore.Client : Object {
         return instance.once (() => { return new Client (); });
     }
 }
+

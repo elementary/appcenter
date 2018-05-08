@@ -81,9 +81,9 @@ public class AppCenterCore.Package : Object {
         }
     }
 
-    public bool should_nag_update {
+    public bool should_pay {
         get {
-            if (!update_available || !is_native || is_os_updates) {
+            if (!is_native || is_os_updates) {
                 return false;
             }
 
@@ -101,6 +101,12 @@ public class AppCenterCore.Package : Object {
             }
 
             return true;
+        }
+    }
+
+    public bool should_nag_update {
+        get {
+            return update_available && should_pay;
         }
     }
 
@@ -183,7 +189,7 @@ public class AppCenterCore.Package : Object {
 
             _author_title = author;
             if (_author_title == null) {
-                _author_title = _("The %s Developers").printf (get_name ());
+                _author_title = _("%s Developers").printf (get_name ());
             }
 
             return _author_title;
