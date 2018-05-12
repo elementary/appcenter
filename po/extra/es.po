@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-07 12:28-0700\n"
-"PO-Revision-Date: 2018-05-12 23:41+0000\n"
+"PO-Revision-Date: 2018-05-12 23:44+0000\n"
 "Last-Translator: Julio García <yllelder@gmail.com>\n"
 "Language-Team: Spanish "
 "<https://weblate.elementary.io/projects/appcenter/extra/es/>\n"
@@ -40,7 +40,6 @@ msgid "elementary LLC."
 msgstr "elementary LLC."
 
 #: data/io.elementary.appcenter.desktop.in.in:3
-#, fuzzy
 msgid "@APP_NAME@"
 msgstr "@APP_NAME@"
 
