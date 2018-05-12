@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-07 12:28-0700\n"
-"PO-Revision-Date: 2018-05-12 00:14+0000\n"
-"Last-Translator: Iuninefrendor <iuninefrendor@gmail.com>\n"
+"PO-Revision-Date: 2018-05-12 23:41+0000\n"
+"Last-Translator: Julio García <yllelder@gmail.com>\n"
 "Language-Team: Spanish "
 "<https://weblate.elementary.io/projects/appcenter/extra/es/>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
 msgid "AppCenter"
-msgstr "Centro de Aplicaciones"
+msgstr "Centro de aplicaciones"
 
 #: data/io.elementary.appcenter.appdata.xml.in:9
 #: data/io.elementary.appcenter.desktop.in.in:4
@@ -51,8 +51,8 @@ msgstr "@DESKTOP_ICON@"
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
 msgstr ""
-"instalar;desinstalar;quitar;catálogo;tienda;aplicaciones;actualizaciones;"
-"software;"
+"instalar;desinstalar;eliminar;catálogo;tienda;aplicaciones;actualizaciones;so"
+"ftware;"
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
