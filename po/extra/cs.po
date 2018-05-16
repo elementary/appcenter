@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-07 12:28-0700\n"
-"PO-Revision-Date: 2017-04-11 13:07+0000\n"
-"Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
-"Language-Team: Czech <https://l10n.elementary.io/projects/appcenter/extra/cs/"
-">\n"
+"PO-Revision-Date: 2018-05-16 12:44+0000\n"
+"Last-Translator: Daniel Zvir <zvir.daniel@seznam.cz>\n"
+"Language-Team: Czech "
+"<https://weblate.elementary.io/projects/appcenter/extra/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
@@ -37,15 +37,15 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:191
 msgid "elementary LLC."
-msgstr ""
+msgstr "elementary LLC."
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
-msgstr ""
+msgstr "@APP_NAME@"
 
 #: data/io.elementary.appcenter.desktop.in.in:6
 msgid "@DESKTOP_ICON@"
-msgstr ""
+msgstr "@DESKTOP_ICON@"
 
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
@@ -55,7 +55,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
-msgstr ""
+msgstr "Zkontrolovat aktualizace"
 
 #~ msgid "About AppCenter"
 #~ msgstr "O aplikaci AppCentrum"
