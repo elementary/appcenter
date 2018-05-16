@@ -51,7 +51,7 @@ namespace AppCenter.Views {
 
             var uninstall_button_context = uninstall_button.get_style_context ();
             uninstall_button_context.add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
-            uninstall_button_context.add_class ("h3");
+            uninstall_button_context.add_class (Granite.STYLE_CLASS_H3_LABEL);
 
             var package_component = package.component;
 
@@ -75,7 +75,7 @@ namespace AppCenter.Views {
 
                 app_screenshot_not_found = new Gtk.Label (_("Screenshot Not Available"));
                 app_screenshot_not_found.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-                app_screenshot_not_found.get_style_context ().add_class ("h2");
+                app_screenshot_not_found.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
                 screenshot_stack = new Gtk.Stack ();
                 screenshot_stack.get_style_context ().add_class (Gtk.STYLE_CLASS_BACKGROUND);
@@ -88,7 +88,7 @@ namespace AppCenter.Views {
             package_name = new Gtk.Label (null);
             package_name.margin_top = 12;
             package_name.xalign = 0;
-            package_name.get_style_context ().add_class ("h1");
+            package_name.get_style_context ().add_class (Granite.STYLE_CLASS_H1_LABEL);
             package_name.valign = Gtk.Align.CENTER;
 
             app_version = new Gtk.Label (null);
@@ -97,24 +97,24 @@ namespace AppCenter.Views {
             app_version.hexpand = true;
             app_version.valign = Gtk.Align.CENTER;
             app_version.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-            app_version.get_style_context ().add_class ("h3");
+            app_version.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
             package_author = new Gtk.Label (null);
             package_author.xalign = 0;
             package_author.valign = Gtk.Align.START;
             package_author.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-            package_author.get_style_context ().add_class ("h2");
+            package_author.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
             package_summary = new Gtk.Label (package.get_summary ());
             package_summary.xalign = 0;
-            package_summary.get_style_context ().add_class ("h2");
+            package_summary.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
             package_summary.wrap = true;
             package_summary.wrap_mode = Pango.WrapMode.WORD_CHAR;
 
             app_description = new Gtk.TextView ();
             app_description.expand = true;
             app_description.editable = false;
-            app_description.get_style_context ().add_class ("h3");
+            app_description.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
             app_description.cursor_visible = false;
             app_description.pixels_below_lines = 3;
             app_description.pixels_inside_wrap = 3;
@@ -173,7 +173,7 @@ namespace AppCenter.Views {
             content_grid.add (app_description);
 
             var whats_new_label = new Gtk.Label (_("What's New:"));
-            whats_new_label.get_style_context ().add_class ("h2");
+            whats_new_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
             whats_new_label.xalign = 0;
 
             release_list_box = new Widgets.ReleaseListBox (package);
@@ -193,7 +193,7 @@ namespace AppCenter.Views {
 
                 var extension_label = new Gtk.Label (_("Extensions:"));
                 extension_label.margin_top = 12;
-                extension_label.get_style_context ().add_class ("h2");
+                extension_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
                 extension_label.halign = Gtk.Align.START;
 
                 content_grid.add (extension_label);
@@ -286,7 +286,7 @@ namespace AppCenter.Views {
             if (package.author != null) {
                 var other_apps_header = new Gtk.Label (_("Other Apps by %s").printf (package.author_title));
                 other_apps_header.xalign = 0;
-                other_apps_header.get_style_context ().add_class ("h4");
+                other_apps_header.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
 
                 var other_apps_carousel = new AppCenter.Widgets.AuthorCarousel (package);
                 other_apps_carousel.package_activated.connect ((package) => show_other_package (package));
@@ -326,7 +326,7 @@ namespace AppCenter.Views {
 
             add (overlay);
 
-            open_button.get_style_context ().add_class ("h3");
+            open_button.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
             if (package.is_shareable) {
                 var body = _("Check out %s on AppCenter:").printf (package.get_name ());

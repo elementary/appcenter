@@ -1,0 +1,5 @@
+option('curated', type : 'boolean', value : true, description : 'Differentiate between apps created for elementary and not')
+option('name', type : 'string', value : 'AppCenter', description : 'The name of the application')
+option('icon', type : 'string', value : 'system-software-install', description : 'The name of the icon')
+option('blacklist_file', type : 'string', value : 'appcenter.blacklist', description : 'The name of the file listing blacklisted applications')
+option('libunity', type : 'boolean', value : true, description : 'Use libunity to show badges')

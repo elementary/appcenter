@@ -226,7 +226,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
 
             var label = new Gtk.Label (_("Processing"));
             label.hexpand = true;
-            label.get_style_context ().add_class ("h2");
+            label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
             var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 12);
             box.valign = Gtk.Align.CENTER;
