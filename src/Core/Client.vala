@@ -425,6 +425,7 @@ public class AppCenterCore.Client : Object {
         }
 
         if (query.length < 1) {
+            task_count--;
             return packages;
         }
 
