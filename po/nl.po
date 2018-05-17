@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-07 12:27-0700\n"
-"PO-Revision-Date: 2018-03-06 00:04+0000\n"
-"Last-Translator: Victor Barnar <victor@witty.com>\n"
-"Language-Team: Dutch <https://weblate.elementary.io/projects/appcenter/"
-"appcenter/nl/>\n"
+"PO-Revision-Date: 2018-05-18 00:06+0000\n"
+"Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
+"Language-Team: Dutch "
+"<https://weblate.elementary.io/projects/appcenter/appcenter/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -56,7 +56,6 @@ msgid "Network Is Not Available"
 msgstr "Geen netwerkverbinding"
 
 #: src/MainWindow.vala:194
-#, fuzzy
 msgid "Connect to the Internet to install or update apps."
 msgstr ""
 "Connecteer met het internet om toepassingen te updaten of te installeren."
@@ -416,12 +415,10 @@ msgid "The transaction has already been processed."
 msgstr "De transactie is reeds verwerkt."
 
 #: src/Dialogs/StripeDialog.vala:550
-#, fuzzy
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "postal code."
-msgstr ""
-"De postcode is onjuist. Probeert u het nogmaals met de juiste postcode."
+msgstr "De postcode is onjuist. Probeert u het nogmaals met de juiste postcode."
 
 #: src/Dialogs/StripeDialog.vala:552
 msgid "You don't have enough funds. Please use an alternative payment method."
@@ -433,14 +430,11 @@ msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "Het bedrag is onjuist. Probeert u het nogmaals met een geldig bedrag."
 
 #: src/Dialogs/StripeDialog.vala:565
-#, fuzzy
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr ""
-"Het CVC-nummer is onjuist. Probeert u het later nogmaals met het juiste CVC-"
-"nummer."
+"De pincode is onjuist. Probeert u het later nogmaals met de juiste pincode."
 
 #: src/Dialogs/StripeDialog.vala:567
-#, fuzzy
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
 msgstr ""
@@ -667,9 +661,8 @@ msgid "<b>%s</b> – %s"
 msgstr ""
 
 #: src/Widgets/ReleaseRow.vala:74
-#, fuzzy
 msgid "Unknown version"
-msgstr "Onbekende toestand"
+msgstr "Onbekende versie"
 
 #: src/Widgets/ReleaseRow.vala:90 src/Widgets/ReleaseRow.vala:93
 msgid "No description available"
