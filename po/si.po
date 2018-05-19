@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-07 12:27-0700\n"
-"PO-Revision-Date: 2018-05-19 14:49+0000\n"
+"PO-Revision-Date: 2018-05-20 00:03+0000\n"
 "Last-Translator: Janith Weerasinghe <janithweerasinghe@rocketmail.com>\n"
 "Language-Team: Sinhala "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/si/>\n"
@@ -22,7 +22,7 @@ msgstr "යෙදවුම් මධ්යස්ථානය"
 #: src/Application.vala:115
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr ""
+msgstr "විශේශිත සබැදුම '%s' සොයා ගැනීමට නොහැකියි, ඒ වෙනුවට මෙසේ සොයන්න"
 
 #: src/Application.vala:249
 msgid "Application installed"
@@ -36,12 +36,11 @@ msgstr "%s සාර්ථකව ස්ථාපිත විය"
 #: src/Application.vala:262
 #, c-format
 msgid "There Was An Error Installing %s."
-msgstr ""
+msgstr "%s  ස්ථාපිත කිරීමේදී වරදක් සිදුවිය"
 
 #: src/MainWindow.vala:147 src/Views/Homepage.vala:253
 #: src/Views/Homepage.vala:262 src/Views/Homepage.vala:267
 #: src/Views/Homepage.vala:278
-#, fuzzy
 msgid "Home"
 msgstr "මුල් පිටුව"
 
@@ -52,27 +51,30 @@ msgstr "භාවිත සෙවීම"
 
 #: src/MainWindow.vala:193
 msgid "Network Is Not Available"
-msgstr ""
+msgstr "ජාලය විසන්ධියි"
 
 #: src/MainWindow.vala:194
+#, fuzzy
 msgid "Connect to the Internet to install or update apps."
-msgstr ""
+msgstr "යෙදවුම ස්ථාපිත හෝ යාවත්කාලීන කිරීමට අන්තර්ජාලයට සම්බන්ධ වන්න"
 
 #: src/MainWindow.vala:197
+#, fuzzy
 msgid "Network Settings…"
-msgstr ""
+msgstr "ජාල සැකසුම්"
 
 #: src/Core/ChangeInformation.vala:54
+#, fuzzy
 msgid "Starting"
-msgstr ""
+msgstr "අරඹමින්"
 
 #: src/Core/ChangeInformation.vala:56
 msgid "Waiting"
-msgstr ""
+msgstr "රැදී සිටිමින්"
 
 #: src/Core/ChangeInformation.vala:58
 msgid "Running"
-msgstr ""
+msgstr "ධාවනය වෙමින්"
 
 #: src/Core/ChangeInformation.vala:60
 msgid "Querying"
