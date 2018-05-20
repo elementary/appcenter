@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-07 12:27-0700\n"
-"PO-Revision-Date: 2018-05-20 14:16+0000\n"
+"PO-Revision-Date: 2018-05-20 19:29+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/ja/>\n"
@@ -561,7 +561,7 @@ msgstr "%s を検索"
 
 #: src/Widgets/AbstractAppList.vala:36
 msgid "No Results"
-msgstr "結果なし"
+msgstr "検索結果がありません"
 
 #: src/Widgets/AbstractAppList.vala:36
 msgid "No apps could be found. Try changing search terms."
