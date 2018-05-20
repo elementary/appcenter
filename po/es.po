@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-07 12:27-0700\n"
-"PO-Revision-Date: 2018-05-20 19:28+0000\n"
+"PO-Revision-Date: 2018-05-20 19:29+0000\n"
 "Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Spanish "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/es/>\n"
@@ -244,8 +244,8 @@ msgstr "Sin componentes para actualizar"
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
-msgstr[0] "%u componente para actualizar"
-msgstr[1] "%u componentes para actualizar"
+msgstr[0] "%u componente con actualizaciones"
+msgstr[1] "%u componentes con actualizaciones"
 
 #: src/Core/Client.vala:498
 #, c-format
