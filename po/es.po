@@ -380,7 +380,7 @@ msgstr ""
 #: src/Dialogs/StripeDialog.vala:504 src/Dialogs/StripeDialog.vala:557
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr ""
-"El número CVC es incorrecto. Intente de nuevo utilizando el CVC correcto."
+"El número CVT es incorrecto. Vuelva a intentarlo utilizando el CVT correcto."
 
 #: src/Dialogs/StripeDialog.vala:506 src/Dialogs/StripeDialog.vala:548
 msgid "The card has expired. Please try again with a different card."
@@ -649,7 +649,9 @@ msgstr "$%d.00"
 #: src/Widgets/HumbleButton.vala:130
 #, c-format
 msgid "$%d"
-msgstr "$%d"
+msgstr ""
+"Esta cantidad será en dólares americanos. Algunos idiomas podrían necesitar "
+"un \"$%dUSD\""
 
 #: src/Widgets/ReleaseRow.vala:67
 #, c-format
