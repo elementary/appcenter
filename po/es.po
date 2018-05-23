@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-07 12:27-0700\n"
-"PO-Revision-Date: 2018-05-24 00:09+0000\n"
+"PO-Revision-Date: 2018-05-28 05:08+0000\n"
 "Last-Translator: haggen svastian <h2gn@openmailbox.org>\n"
 "Language-Team: Spanish "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/es/>\n"
@@ -253,9 +253,9 @@ msgid "%s:"
 msgstr "%s:"
 
 #: src/Core/Package.vala:192
-#, fuzzy, c-format
+#, c-format
 msgid "%s Developers"
-msgstr "Los Desarrolladores de %s"
+msgstr "Desarrolladores de %s"
 
 #: src/Core/UpdateManager.vala:81
 msgid "Restart Required"
