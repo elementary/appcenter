@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-07 12:27-0700\n"
-"PO-Revision-Date: 2018-05-25 12:53+0000\n"
+"PO-Revision-Date: 2018-05-27 00:03+0000\n"
 "Last-Translator: Romanic Ion Nicușor <contact.romanic@gmail.com>\n"
 "Language-Team: Moldovan "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/mo/>\n"
@@ -15,7 +15,7 @@ msgstr ""
 
 #: src/Application.vala:38
 msgid "AppCenter"
-msgstr "Centru de aplicații"
+msgstr "Centru aplicații"
 
 #: src/Application.vala:115
 #, c-format
