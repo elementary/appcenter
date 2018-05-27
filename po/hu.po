@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-07 12:27-0700\n"
-"PO-Revision-Date: 2018-05-27 11:42+0000\n"
+"PO-Revision-Date: 2018-05-27 11:49+0000\n"
 "Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Hungarian "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/hu/>\n"
@@ -64,7 +64,7 @@ msgstr "Hálózati beállítások…"
 
 #: src/Core/ChangeInformation.vala:54
 msgid "Starting"
-msgstr "Kezdés"
+msgstr "Indulás"
 
 #: src/Core/ChangeInformation.vala:56
 msgid "Waiting"
@@ -120,11 +120,11 @@ msgstr "Aláírások ellenőrzése"
 
 #: src/Core/ChangeInformation.vala:82
 msgid "Testing changes"
-msgstr "Változtatások tesztelése"
+msgstr "Változások tesztelése"
 
 #: src/Core/ChangeInformation.vala:84
 msgid "Committing changes"
-msgstr "Változtatások végrehajtása"
+msgstr "Változások végrehajtása"
 
 #: src/Core/ChangeInformation.vala:86
 msgid "Requesting data"
@@ -132,7 +132,7 @@ msgstr "Adatok kérése"
 
 #: src/Core/ChangeInformation.vala:88
 msgid "Finished"
-msgstr "Kész"
+msgstr "Befejeződött"
 
 #: src/Core/ChangeInformation.vala:90
 msgid "Cancelling"
