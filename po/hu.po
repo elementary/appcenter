@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-07 12:27-0700\n"
-"PO-Revision-Date: 2018-05-27 11:31+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2018-05-27 11:36+0000\n"
+"Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
 "Language-Team: Hungarian "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/hu/>\n"
 "Language: hu\n"
@@ -529,11 +529,11 @@ msgstr "Megosztás"
 
 #: src/Views/AppInfoView.vala:621
 msgid "Fund"
-msgstr ""
+msgstr "Támogatás"
 
 #: src/Views/AppInfoView.vala:643
 msgid "Fund the development of this app"
-msgstr ""
+msgstr "Támogassa az alkalmazás fejlesztését"
 
 #: src/Views/AppListUpdateView.vala:59
 msgid "A restart is required to complete the installation of updates"
@@ -549,7 +549,7 @@ msgstr "Összes frissítése"
 
 #: src/Views/AppListView.vala:119
 msgid "Non-Curated Apps"
-msgstr ""
+msgstr "Nem válogatott alkalmazások"
 
 #: src/Views/Homepage.vala:65
 msgid "Recently Updated"
