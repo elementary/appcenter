@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-07 12:27-0700\n"
-"PO-Revision-Date: 2018-05-27 12:03+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2018-05-28 00:01+0000\n"
+"Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
 "Language-Team: Hungarian "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/hu/>\n"
 "Language: hu\n"
@@ -422,11 +422,12 @@ msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:552
 msgid "You don't have enough funds. Please use an alternative payment method."
-msgstr "Nincs elég fedezet. Kérünk, hogy válassz másik fizetési módot."
+msgstr "Nincs elég fedezet. Kérjük, használjon alternatív fizetési módot."
 
 #: src/Dialogs/StripeDialog.vala:554
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr "Hibás összeg. Kérünk, hogy próbáld meg az összeg javítását követően."
+msgstr ""
+"Az összeg helytelen. Kérjük, próbálkozzon újra érvényes összeg beírásával."
 
 #: src/Dialogs/StripeDialog.vala:565
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
@@ -448,12 +449,12 @@ msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:590
 msgid "The balance or credit limit on the card has been reached."
-msgstr "A kártyán lévő egyenleget vagy hitelkeretet elérte."
+msgstr "Elérte a kártyán lévő egyenleget vagy hitelkeretet."
 
 #: src/Dialogs/StripeDialog.vala:593
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
-"A megadott kártya teszt kértya. Kérjük használjon egy valódi kártyát a "
+"A megadott kártya tesztkártya. Kérjük, használjon valódi kártyát a "
 "folytatáshoz."
 
 #: src/Dialogs/UpdateFailDialog.vala:25
