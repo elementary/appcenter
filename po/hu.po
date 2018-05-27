@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-07 12:27-0700\n"
-"PO-Revision-Date: 2018-05-27 10:43+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2018-05-27 11:03+0000\n"
+"Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
 "Language-Team: Hungarian "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/hu/>\n"
 "Language: hu\n"
@@ -254,9 +254,9 @@ msgid "%s:"
 msgstr "%s:"
 
 #: src/Core/Package.vala:192
-#, fuzzy, c-format
+#, c-format
 msgid "%s Developers"
-msgstr "A(z) %s fejlesztők"
+msgstr "%s fejlesztő"
 
 #: src/Core/UpdateManager.vala:81
 msgid "Restart Required"
@@ -299,13 +299,15 @@ msgstr "Nézze át a fizetési adatait és próbálja újra."
 #: src/Dialogs/StripeDialog.vala:78
 #, c-format
 msgid "Pay $%d for %s"
-msgstr ""
+msgstr "%d$ fizetése %s-ért"
 
 #: src/Dialogs/StripeDialog.vala:82
 msgid ""
 "This is a one time payment. Your email address is only used to send you a "
 "receipt."
 msgstr ""
+"Ez egy egyszeri kifizetés. Az e-mail címét csak az átvételi elismervény "
+"elküldésére használjuk."
 
 #: src/Dialogs/StripeDialog.vala:91 src/Widgets/SharePopover.vala:35
 msgid "Email"
@@ -332,9 +334,9 @@ msgid "Privacy Policy"
 msgstr "Adatvédelmi Irányelvek"
 
 #: src/Dialogs/StripeDialog.vala:184 src/Dialogs/StripeDialog.vala:298
-#, fuzzy, c-format
+#, c-format
 msgid "Pay $%d.00"
-msgstr "%s,00 USD fizetése"
+msgstr "%d,00$ fizetése"
 
 #: src/Dialogs/StripeDialog.vala:227
 msgid "Processing"
@@ -412,13 +414,12 @@ msgid "The transaction has already been processed."
 msgstr "A tranzakció feldolgozása már megtörtént."
 
 #: src/Dialogs/StripeDialog.vala:550
-#, fuzzy
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "postal code."
 msgstr ""
-"Az irányítószám hibás. Kérjük, hogy az irányítószám javítását követően "
-"próbáld meg ismét."
+"A postai irányítószám helytelen. Kérjük, próbálja újra egy megfelelő "
+"irányítószámmal."
 
 #: src/Dialogs/StripeDialog.vala:552
 msgid "You don't have enough funds. Please use an alternative payment method."
@@ -429,19 +430,14 @@ msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "Hibás összeg. Kérünk, hogy próbáld meg az összeg javítását követően."
 
 #: src/Dialogs/StripeDialog.vala:565
-#, fuzzy
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr ""
-"A biztonsági CVC kód hibás.Kérünk, hogy a CVC kód javítását követően próbáld "
-"meg újra."
+"A PIN-kód helytelen. Kérjük, próbálja újra a megfelelő PIN-kód használatával."
 
 #: src/Dialogs/StripeDialog.vala:567
-#, fuzzy
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
-msgstr ""
-"Túl sok kísérletet regisztráltunk hibás PIN kóddal. Kérjük, hogy másik "
-"kártyával próbáld meg."
+msgstr "Túl sok PIN próbálkozás volt. Próbálkozzon újra egy másik kártyával."
 
 #: src/Dialogs/StripeDialog.vala:587
 msgid ""
@@ -463,13 +459,15 @@ msgstr ""
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
-msgstr ""
+msgstr "Nem sikerült lekérni a frissítéseket"
 
 #: src/Dialogs/UpdateFailDialog.vala:26
 msgid ""
 "This may have been caused by external, manually added software repositories "
 "or a corrupted sources file."
 msgstr ""
+"Ennek egy külső, kézzel hozzáadott szoftvergyűjtemény vagy egy sérült "
+"forrásfájl lehet az oka."
 
 #: src/Dialogs/UpdateFailDialog.vala:46
 msgid "Details"
