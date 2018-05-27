@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-07 12:27-0700\n"
-"PO-Revision-Date: 2018-05-27 11:29+0000\n"
-"Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
+"PO-Revision-Date: 2018-05-27 11:31+0000\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Hungarian "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/hu/>\n"
 "Language: hu\n"
@@ -525,7 +525,7 @@ msgstr "Nézze meg %s-t az Alkalmazásközpontban:"
 
 #: src/Views/AppInfoView.vala:339
 msgid "Share"
-msgstr ""
+msgstr "Megosztás"
 
 #: src/Views/AppInfoView.vala:621
 msgid "Fund"
