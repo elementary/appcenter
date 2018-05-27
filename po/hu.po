@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-07 12:27-0700\n"
-"PO-Revision-Date: 2018-05-27 11:15+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2018-05-27 11:17+0000\n"
+"Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
 "Language-Team: Hungarian "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/hu/>\n"
 "Language: hu\n"
@@ -479,7 +479,7 @@ msgstr "Mellőz"
 
 #: src/Dialogs/UpdateFailDialog.vala:55
 msgid "Try Again"
-msgstr ""
+msgstr "Próbálja újra"
 
 #: src/Views/AppInfoView.vala:76
 msgid "Screenshot Not Available"
