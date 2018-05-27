@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-07 12:27-0700\n"
-"PO-Revision-Date: 2018-05-27 11:36+0000\n"
-"Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
+"PO-Revision-Date: 2018-05-27 11:38+0000\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Hungarian "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/hu/>\n"
 "Language: hu\n"
@@ -557,7 +557,7 @@ msgstr "Nemrég Frissített"
 
 #: src/Views/Homepage.vala:81
 msgid "Trending"
-msgstr ""
+msgstr "Népszerű"
 
 #: src/Views/Homepage.vala:97
 msgid "Categories"
