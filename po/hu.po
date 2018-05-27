@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-07 12:27-0700\n"
-"PO-Revision-Date: 2018-05-27 10:38+0000\n"
-"Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
+"PO-Revision-Date: 2018-05-27 10:41+0000\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Hungarian "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/hu/>\n"
 "Language: hu\n"
@@ -107,9 +107,8 @@ msgid "Cleaning up packages"
 msgstr "Csomagok tisztítása"
 
 #: src/Core/ChangeInformation.vala:76
-#, fuzzy
 msgid "Obsoleting packages"
-msgstr "Csomagok elavulttá való tétele"
+msgstr "Csomagok elavulttá tétele"
 
 #: src/Core/ChangeInformation.vala:78
 msgid "Resolving dependencies"
@@ -218,7 +217,7 @@ msgstr "Rendszerkomponensek frissítése"
 #: src/Core/Client.vala:141
 #, c-format
 msgid "%s (local)"
-msgstr ""
+msgstr "%s (helyi)"
 
 #: src/Core/Client.vala:454
 msgid "Update Available"
@@ -236,7 +235,7 @@ msgstr[1] "%u frissítés érhető el a rendszerhez"
 #: src/Core/Client.vala:483
 #, c-format
 msgid "Version: %s"
-msgstr ""
+msgstr "Verzió: %s"
 
 #: src/Core/Client.vala:492
 msgid "No components with updates"
