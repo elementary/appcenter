@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-12 14:39-0700\n"
 "PO-Revision-Date: 2018-05-28 23:53+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"Last-Translator: Luiz Gustavo Rocha de Aguiar <luiz.ro.aguiar@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -518,7 +518,7 @@ msgstr "Outros Aplicativos por %s"
 
 #: ../src/Views/AppInfoView.vala:321
 msgid "Link copied to clipboard"
-msgstr ""
+msgstr "Link copiado para área de transferência"
 
 #: ../src/Views/AppInfoView.vala:332
 msgid "Check out %s on AppCenter:"
