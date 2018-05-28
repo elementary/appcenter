@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-12 14:39-0700\n"
-"PO-Revision-Date: 2018-05-28 23:51+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2018-05-28 23:52+0000\n"
+"Last-Translator: Silas Caxias <silascaxias@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -444,11 +444,11 @@ msgstr ""
 
 #: ../src/Dialogs/UpdateFailDialog.vala:46
 msgid "Details"
-msgstr ""
+msgstr "Detalhes"
 
 #: ../src/Dialogs/UpdateFailDialog.vala:54
 msgid "Ignore"
-msgstr ""
+msgstr "Ignorar"
 
 #: ../src/Dialogs/UpdateFailDialog.vala:55
 msgid "Try Again"
