@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-12 14:39-0700\n"
-"PO-Revision-Date: 2018-05-28 23:42+0000\n"
-"Last-Translator: Fernando da Silva Sousa <wild.nando@gmail.com>\n"
+"PO-Revision-Date: 2018-05-28 23:46+0000\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Portuguese (Brazil) "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -267,7 +267,7 @@ msgstr "Por favor, revise suas informações de pagamento e tente novamente."
 
 #: ../src/Dialogs/StripeDialog.vala:78
 msgid "Pay $%d for %s"
-msgstr ""
+msgstr "Pagar $%d por %s"
 
 #: ../src/Dialogs/StripeDialog.vala:82
 msgid ""
