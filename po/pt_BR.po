@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-12 14:39-0700\n"
-"PO-Revision-Date: 2018-05-28 23:40+0000\n"
-"Last-Translator: Charles Jamil <astchars@gmail.com>\n"
+"PO-Revision-Date: 2018-05-28 23:41+0000\n"
+"Last-Translator: Geovanni Pacheco <geovanni.m.pacheco@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -210,13 +210,13 @@ msgstr "Versão: %s"
 
 #: ../src/Core/Client.vala:492
 msgid "No components with updates"
-msgstr ""
+msgstr "Nenhum componente com atualizações"
 
 #: ../src/Core/Client.vala:496
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u componente com atualizações"
+msgstr[1] "%u componentes com atualizações"
 
 #: ../src/Core/Client.vala:498
 msgid "%s:"
