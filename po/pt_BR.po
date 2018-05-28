@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-12 14:39-0700\n"
-"PO-Revision-Date: 2018-05-28 23:41+0000\n"
-"Last-Translator: Geovanni Pacheco <geovanni.m.pacheco@gmail.com>\n"
+"PO-Revision-Date: 2018-05-28 23:42+0000\n"
+"Last-Translator: Fernando da Silva Sousa <wild.nando@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -220,7 +220,7 @@ msgstr[1] "%u componentes com atualizações"
 
 #: ../src/Core/Client.vala:498
 msgid "%s:"
-msgstr ""
+msgstr "%s:"
 
 #: ../src/Core/Package.vala:192
 msgid "The %s Developers"
