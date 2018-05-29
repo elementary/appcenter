@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-07 12:28-0700\n"
-"PO-Revision-Date: 2018-05-08 19:42+0000\n"
-"Last-Translator: Mariel de Jesus™ <marieldejesus12@gmail.com>\n"
+"PO-Revision-Date: 2018-05-29 00:17+0000\n"
+"Last-Translator: Geovanni Pacheco <geovanni.m.pacheco@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) "
 "<https://weblate.elementary.io/projects/appcenter/extra/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -37,15 +37,15 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:191
 msgid "elementary LLC."
-msgstr ""
+msgstr "elementary LLC."
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
-msgstr ""
+msgstr "@APP_NAME@"
 
 #: data/io.elementary.appcenter.desktop.in.in:6
 msgid "@DESKTOP_ICON@"
-msgstr ""
+msgstr "@DESKTOP_ICON@"
 
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
