@@ -57,7 +57,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
-msgstr ""
+msgstr "Проверить наличие обновлений"
 
 #~ msgid "About AppCenter"
 #~ msgstr "О программе"
