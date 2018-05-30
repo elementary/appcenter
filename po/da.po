@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-07 12:27-0700\n"
-"PO-Revision-Date: 2018-05-18 20:00+0000\n"
+"PO-Revision-Date: 2018-05-30 16:06+0000\n"
 "Last-Translator: Kaj Printz Madsen <kajprintz@gmail.com>\n"
 "Language-Team: Danish "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/da/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 
 #: src/Application.vala:38
 msgid "AppCenter"
-msgstr "Programcenter"
+msgstr "AppCenter"
 
 #: src/Application.vala:115
 #, c-format
@@ -59,7 +59,7 @@ msgstr "Forbind til internettet for at installere eller opdatere apps."
 
 #: src/MainWindow.vala:197
 msgid "Network Settings…"
-msgstr "Netværks Indstillinger…"
+msgstr "Netværksindstillinger…"
 
 #: src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -127,7 +127,7 @@ msgstr "Udfører ændringer"
 
 #: src/Core/ChangeInformation.vala:86
 msgid "Requesting data"
-msgstr "Forespørger data"
+msgstr "Anmoder om data"
 
 #: src/Core/ChangeInformation.vala:88
 msgid "Finished"
