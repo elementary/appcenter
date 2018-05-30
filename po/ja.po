@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-07 12:27-0700\n"
-"PO-Revision-Date: 2018-05-29 00:09+0000\n"
+"PO-Revision-Date: 2018-05-30 16:06+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/ja/>\n"
@@ -31,7 +31,7 @@ msgstr "アプリケーションがインストールされました"
 #: src/Application.vala:250
 #, c-format
 msgid "%s has been successfully installed"
-msgstr "%s をインストールしました"
+msgstr "%s のインストールは成功しました"
 
 #: src/Application.vala:262
 #, c-format
@@ -51,7 +51,7 @@ msgstr "アプリの検索"
 
 #: src/MainWindow.vala:193
 msgid "Network Is Not Available"
-msgstr "ネットワーク接続がありません"
+msgstr "ネットワークが利用可能ではありません"
 
 #: src/MainWindow.vala:194
 msgid "Connect to the Internet to install or update apps."
@@ -61,7 +61,7 @@ msgstr ""
 
 #: src/MainWindow.vala:197
 msgid "Network Settings…"
-msgstr "ネットワーク設定…"
+msgstr "ネットワークの設定…"
 
 #: src/Core/ChangeInformation.vala:54
 msgid "Starting"
