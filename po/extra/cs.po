@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-07 12:28-0700\n"
-"PO-Revision-Date: 2018-05-16 12:44+0000\n"
-"Last-Translator: Daniel Zvir <zvir.daniel@seznam.cz>\n"
+"PO-Revision-Date: 2018-06-01 00:06+0000\n"
+"Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
 "Language-Team: Czech "
 "<https://weblate.elementary.io/projects/appcenter/extra/cs/>\n"
 "Language: cs\n"
@@ -22,7 +22,7 @@ msgstr "AppCentrum"
 #: data/io.elementary.appcenter.appdata.xml.in:9
 #: data/io.elementary.appcenter.desktop.in.in:4
 msgid "Browse and manage apps"
-msgstr "Prohlížet a spravovat aplikace"
+msgstr "Procházejte a spravujte aplikace"
 
 #: data/io.elementary.appcenter.appdata.xml.in:11
 msgid ""
