@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-07 12:27-0700\n"
-"PO-Revision-Date: 2018-05-25 00:07+0000\n"
+"PO-Revision-Date: 2018-06-01 00:05+0000\n"
 "Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
 "Language-Team: Czech "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/cs/>\n"
@@ -63,7 +63,7 @@ msgstr "Nastavení sítě…"
 
 #: src/Core/ChangeInformation.vala:54
 msgid "Starting"
-msgstr "Spouští se"
+msgstr "Spouštění"
 
 #: src/Core/ChangeInformation.vala:56
 msgid "Waiting"
@@ -79,11 +79,11 @@ msgstr "Dotazování"
 
 #: src/Core/ChangeInformation.vala:62
 msgid "Getting information"
-msgstr "Získavají se informace"
+msgstr "Získávání informací"
 
 #: src/Core/ChangeInformation.vala:64
 msgid "Removing packages"
-msgstr "Odstraňují se balíčky"
+msgstr "Odstraňování balíčků"
 
 #: src/Core/ChangeInformation.vala:66
 msgid "Downloading"
@@ -95,31 +95,31 @@ msgstr "Instalace"
 
 #: src/Core/ChangeInformation.vala:70
 msgid "Refreshing software list"
-msgstr "Aktualizuje se seznam balíčků"
+msgstr "Aktualizace seznam balíčků"
 
 #: src/Core/ChangeInformation.vala:72
 msgid "Installing updates"
-msgstr "Instalují se aktualizace"
+msgstr "Instalace aktualizací"
 
 #: src/Core/ChangeInformation.vala:74
 msgid "Cleaning up packages"
-msgstr "Uklízí se balíčky"
+msgstr "Uklízení balíčků"
 
 #: src/Core/ChangeInformation.vala:76
 msgid "Obsoleting packages"
-msgstr "Uklízí se zastaralé balíčky"
+msgstr "Uklízení zastaralých balíčků"
 
 #: src/Core/ChangeInformation.vala:78
 msgid "Resolving dependencies"
-msgstr "Řeší se závislosti"
+msgstr "Řešení závislostí"
 
 #: src/Core/ChangeInformation.vala:80
 msgid "Checking signatures"
-msgstr "Ověřují se podpisy"
+msgstr "Ověřování podpisů"
 
 #: src/Core/ChangeInformation.vala:82
 msgid "Testing changes"
-msgstr "Testují se změny"
+msgstr "Testování změn"
 
 #: src/Core/ChangeInformation.vala:84
 msgid "Committing changes"
