@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-07 12:27-0700\n"
-"PO-Revision-Date: 2018-05-28 00:01+0000\n"
+"PO-Revision-Date: 2018-06-02 00:03+0000\n"
 "Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
 "Language-Team: Hungarian "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/hu/>\n"
@@ -22,7 +22,7 @@ msgstr "Alkalmazásközpont"
 #: src/Application.vala:115
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr "'%s': a link nem található, keresés"
+msgstr "A(z) '%s' hivatkozás nem található, keresés helyette"
 
 #: src/Application.vala:249
 msgid "Application installed"
@@ -31,7 +31,7 @@ msgstr "Alkalmazás telepítve"
 #: src/Application.vala:250
 #, c-format
 msgid "%s has been successfully installed"
-msgstr "%s sikeresen telepítésre került"
+msgstr "A(z) %s sikeresen telepítésre került"
 
 #: src/Application.vala:262
 #, c-format
@@ -212,7 +212,7 @@ msgstr "Operációs rendszer frissítések"
 
 #: src/Core/Client.vala:106
 msgid "Updates to system components"
-msgstr "Rendszerkomponensek frissítése"
+msgstr "Rendszer összetevők frissítése"
 
 #: src/Core/Client.vala:141
 #, c-format
@@ -299,7 +299,7 @@ msgstr "Nézze át a fizetési adatait és próbálja újra."
 #: src/Dialogs/StripeDialog.vala:78
 #, c-format
 msgid "Pay $%d for %s"
-msgstr "%d$ fizetése %s-ért"
+msgstr "%d$ fizetése %s alkalmazásért"
 
 #: src/Dialogs/StripeDialog.vala:82
 msgid ""
@@ -516,12 +516,12 @@ msgstr "%s további alkalmazásai"
 
 #: src/Views/AppInfoView.vala:321
 msgid "Link copied to clipboard"
-msgstr "A link vágólapra másolva"
+msgstr "A hivatkozás vágólapra másolva"
 
 #: src/Views/AppInfoView.vala:332
 #, c-format
 msgid "Check out %s on AppCenter:"
-msgstr "Nézze meg %s-t az Alkalmazásközpontban:"
+msgstr "Nézze meg Alkalmazásközpontban ezt: %s:"
 
 #: src/Views/AppInfoView.vala:339
 msgid "Share"
@@ -566,7 +566,7 @@ msgstr "Kategóriák"
 #: src/Views/Homepage.vala:267 src/Views/Homepage.vala:278
 #, c-format
 msgid "Search %s"
-msgstr "%s keresése"
+msgstr "A(z) %s keresése"
 
 #: src/Widgets/AbstractAppList.vala:36
 msgid "No Results"
@@ -583,7 +583,8 @@ msgstr "Egy nyílt, fizess-amennyit-szeretnél alkalmazásközpont"
 #: src/Widgets/Banner.vala:68
 msgid "Get the apps that you need at a price you can afford."
 msgstr ""
-"Szerezze be az applikációkat melyek kellenek azért az árért amit megengedhet."
+"Szerezzen be alkalmazásokat, melyekre szüksége van, azért az árért, amit "
+"megengedhet."
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
@@ -691,7 +692,7 @@ msgstr "Telegram"
 
 #: src/Widgets/SharePopover.vala:63
 msgid "Copy link"
-msgstr "Link másolása"
+msgstr "Hivatkozás másolása"
 
 #: src/Widgets/UpdateHeaderRow.vala:68
 #, c-format
