@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-07 12:27-0700\n"
-"PO-Revision-Date: 2018-06-02 00:03+0000\n"
+"PO-Revision-Date: 2018-06-04 08:07+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/nb/>\n"
@@ -300,7 +300,7 @@ msgstr "Se over din betalingsinfo og prøv igjen."
 #: src/Dialogs/StripeDialog.vala:78
 #, c-format
 msgid "Pay $%d for %s"
-msgstr "Betal"
+msgstr "Betal %d$ for %s"
 
 #: src/Dialogs/StripeDialog.vala:82
 msgid ""
