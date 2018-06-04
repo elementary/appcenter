@@ -7,4 +7,5 @@ Terminal=false
 Type=Application
 NoDisplay=true
 X-GNOME-AutoRestart=true
+X-GNOME-Autostart-Delay=60
 X-GNOME-Autostart-Phase=Applications
