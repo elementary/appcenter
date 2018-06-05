@@ -101,6 +101,7 @@ public class AppCenter.App : Gtk.Application {
         if (file.has_uri_scheme ("type")) {
             string? mimetype = mimetype_from_file (file);
             main_window.search (mimetype);
+            return;
         }
 
         if (!file.has_uri_scheme ("appstream")) {
