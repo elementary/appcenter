@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-12 14:39-0700\n"
-"PO-Revision-Date: 2018-05-29 00:07+0000\n"
-"Last-Translator: Fernando da Silva Sousa <wild.nando@gmail.com>\n"
+"PO-Revision-Date: 2018-06-05 13:46+0000\n"
+"Last-Translator: Leonardo <leonardo@elementary.io>\n"
 "Language-Team: Portuguese (Brazil) "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -17,11 +17,11 @@ msgstr ""
 
 #: ../src/Application.vala:38
 msgid "AppCenter"
-msgstr "Central de aplicativos"
+msgstr "Central de Aplicativos"
 
 #: ../src/Application.vala:115
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr "O link '%s' especificado não pôde ser encontrado, procure ao invés"
+msgstr "O link '%s' especificado não pôde ser encontrado, procurando ao invés"
 
 #: ../src/Application.vala:249
 msgid "Application installed"
@@ -97,7 +97,7 @@ msgstr "Testando as alterações"
 
 #: ../src/Core/ChangeInformation.vala:84
 msgid "Committing changes"
-msgstr "Aplicando alterações"
+msgstr "Aplicando as alterações"
 
 #: ../src/Core/ChangeInformation.vala:86
 msgid "Requesting data"
@@ -231,7 +231,7 @@ msgstr "Reinicialização necessária"
 
 #: ../src/Core/UpdateManager.vala:82
 msgid "Please restart your system to finalize updates"
-msgstr "Por favor, reinicie seu sistema para finalizar as traduções"
+msgstr "Por favor, reinicie seu sistema para finalizar as atualizações"
 
 #: ../src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -240,7 +240,7 @@ msgstr "Você tem certeza que deseja reiniciar?"
 #: ../src/Dialogs/RestartDialog.vala:41
 msgid "This will close all open applications and restart this device."
 msgstr ""
-"Isso vai fechar todos as aplicações abertas e reiniciar este dispositivo."
+"Isso irá fechar todos as aplicações abertas e reiniciar este dispositivo."
 
 #: ../src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
@@ -257,7 +257,7 @@ msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
-"Um erro ocorreu ao processar o cartão. Por favor tente novamente depois. "
+"Um erro ocorreu ao processar o cartão. Por favor tente novamente mais tarde. "
 "Pedimos desculpas por qualquer inconveniente causado."
 
 #: ../src/Dialogs/StripeDialog.vala:42
@@ -285,13 +285,13 @@ msgid ""
 "Your email address is used to send a receipt. It is never stored and you "
 "will not be subscribed to a mailing list."
 msgstr ""
-"Seu endereço de email é usado para um recibo. Ele nunca é armazenado e você "
-"não será inscrito a uma listagem de email."
+"Seu endereço de email é usado para enviar um recibo. Ele nunca é armazenado "
+"e você não será inscrito a uma lista de emails."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: ../src/Dialogs/StripeDialog.vala:112
 msgid "MM / YY"
-msgstr "MM/ AA"
+msgstr "MM / AA"
 
 #: ../src/Dialogs/StripeDialog.vala:132
 msgid "CVC"
@@ -325,7 +325,7 @@ msgstr "Tentar novamente"
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr ""
-"O código do cartão está incorreto. Por favor tente novamente usando o número "
+"O número do cartão está incorreto. Por favor tente novamente usando o número "
 "correto do cartão."
 
 #: ../src/Dialogs/StripeDialog.vala:499
@@ -333,16 +333,16 @@ msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
-"O mês de validade está incorreto. Por favor tente novamente usando o código "
-"de validade correto."
+"O mês de validade está incorreto. Por favor tente novamente usando a data de "
+"validade correta."
 
 #: ../src/Dialogs/StripeDialog.vala:501 ../src/Dialogs/StripeDialog.vala:559
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
-"O ano de validade está incorreto. Por favor tente novamente usando o código "
-"de validade correto."
+"O ano de validade está incorreto. Por favor tente novamente usando a data de "
+"validade correta."
 
 #: ../src/Dialogs/StripeDialog.vala:504 ../src/Dialogs/StripeDialog.vala:557
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
@@ -352,7 +352,7 @@ msgstr ""
 
 #: ../src/Dialogs/StripeDialog.vala:506 ../src/Dialogs/StripeDialog.vala:548
 msgid "The card has expired. Please try again with a different card."
-msgstr "O cartão expirou. Por favor tente um cartão diferente."
+msgstr "O cartão expirou. Por favor tente novamente com um cartão diferente."
 
 #: ../src/Dialogs/StripeDialog.vala:526
 msgid "There are too many payment requests at the moment, please retry later."
@@ -365,15 +365,16 @@ msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
 msgstr ""
-"Esse cartão não suporta esse tipo de transação. Por favor tente com outro "
-"cartão."
+"Esse cartão não suporta esse tipo de transação. Por favor tente com um "
+"cartão diferente."
 
 #: ../src/Dialogs/StripeDialog.vala:544
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
 msgstr ""
-"A moeda não é suportada por esse cartão. Por favor tente com outro cartão."
+"A moeda não é suportada por esse cartão. Por favor tente com um cartão "
+"diferente."
 
 #: ../src/Dialogs/StripeDialog.vala:546
 msgid "The transaction has already been processed."
@@ -390,7 +391,7 @@ msgstr ""
 #: ../src/Dialogs/StripeDialog.vala:552
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr ""
-"Você não tem fundos suficientes. Por favor use um método de pagamentos "
+"Você não tem saldo suficiente. Por favor use um método de pagamentos "
 "alternativo."
 
 #: ../src/Dialogs/StripeDialog.vala:554
@@ -399,9 +400,7 @@ msgstr "O valor está incorreto. Tente novamente usando um valor válido."
 
 #: ../src/Dialogs/StripeDialog.vala:565
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr ""
-"O CVC (Código de Verificação de Cartão) está incorreto. Tente novamente "
-"usando o CVC correto."
+msgstr "O número PIN está incorreto. Tente novamente usando o PIN correto."
 
 #: ../src/Dialogs/StripeDialog.vala:567
 msgid ""
@@ -425,7 +424,7 @@ msgstr "O balanço ou limite de créditos no cartão já foi alcançado."
 #: ../src/Dialogs/StripeDialog.vala:593
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
-"O cartão dado foi um cartão de testes. Por favor use um cartão de verdade "
+"O cartão informado é um cartão de testes. Por favor use um cartão de verdade "
 "para prosseguir."
 
 #: ../src/Dialogs/UpdateFailDialog.vala:25
@@ -437,7 +436,7 @@ msgid ""
 "This may have been caused by external, manually added software repositories "
 "or a corrupted sources file."
 msgstr ""
-"Isso pode ter sido causado por repositórios externos manualmente adicionados "
+"Isso pode ter sido causado por repositórios externos adicionados manualmente "
 "ou uma fonte de arquivos corrompida."
 
 #: ../src/Dialogs/UpdateFailDialog.vala:46
@@ -450,7 +449,7 @@ msgstr "Ignorar"
 
 #: ../src/Dialogs/UpdateFailDialog.vala:55
 msgid "Try Again"
-msgstr "Tente Novamente"
+msgstr "Tente novamente"
 
 #: ../src/MainWindow.vala:147 ../src/Views/Homepage.vala:253
 #: ../src/Views/Homepage.vala:262 ../src/Views/Homepage.vala:267
@@ -462,7 +461,7 @@ msgstr "Página inicial"
 #: ../src/Views/InstalledView.vala:49
 msgctxt "view"
 msgid "Installed"
-msgstr "Instalados"
+msgstr "Instalado"
 
 #: ../src/MainWindow.vala:175 ../src/MainWindow.vala:321
 #: ../src/Views/SearchView.vala:54 ../src/Views/SearchView.vala:75
