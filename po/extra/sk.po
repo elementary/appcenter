@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-07 12:28-0700\n"
-"PO-Revision-Date: 2018-03-02 00:00+0000\n"
-"Last-Translator: Daniela Bencurova <daniela.bencurova@gmail.com>\n"
-"Language-Team: Slovak <https://weblate.elementary.io/projects/appcenter/"
-"extra/sk/>\n"
+"PO-Revision-Date: 2018-06-03 16:22+0000\n"
+"Last-Translator: citro <citro33@centrum.sk>\n"
+"Language-Team: Slovak "
+"<https://weblate.elementary.io/projects/appcenter/extra/sk/>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -36,16 +36,19 @@ msgstr ""
 "systému."
 
 #: data/io.elementary.appcenter.appdata.xml.in:191
+#, fuzzy
 msgid "elementary LLC."
-msgstr ""
+msgstr "elementary LLC."
 
 #: data/io.elementary.appcenter.desktop.in.in:3
+#, fuzzy
 msgid "@APP_NAME@"
-msgstr ""
+msgstr "@APP_NAME@"
 
 #: data/io.elementary.appcenter.desktop.in.in:6
+#, fuzzy
 msgid "@DESKTOP_ICON@"
-msgstr ""
+msgstr "@DESKTOP_ICON@"
 
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
@@ -55,7 +58,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
-msgstr ""
+msgstr "Kontrola aktualizácií"
 
 #~ msgid "About AppCenter"
 #~ msgstr "O AppCenter"
