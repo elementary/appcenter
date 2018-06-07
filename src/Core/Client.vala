@@ -404,11 +404,10 @@ public class AppCenterCore.Client : Object {
             });
         }
 
-        apps.add_all (search_applications_mime (query));
         return apps;
     }
 
-    private Gee.Collection<AppCenterCore.Package> search_applications_mime (string query) {
+    public Gee.Collection<AppCenterCore.Package> search_applications_mime (string query) {
         var apps = new Gee.TreeSet<AppCenterCore.Package> ();
         foreach (var package in package_list.values) {
             weak AppStream.Provided? provided = package.component.get_provided_for_kind (AppStream.ProvidedKind.MIMETYPE);
