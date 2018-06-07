@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-07 12:27-0700\n"
-"PO-Revision-Date: 2018-06-03 16:22+0000\n"
+"PO-Revision-Date: 2018-06-06 00:06+0000\n"
 "Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
 "Language-Team: Hungarian "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/hu/>\n"
@@ -282,7 +282,7 @@ msgstr "Újraindítás"
 #: src/Dialogs/StripeDialog.vala:299
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:147
 msgid "Cancel"
-msgstr "Mégse"
+msgstr "Mégsem"
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid ""
