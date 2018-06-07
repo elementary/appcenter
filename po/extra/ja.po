@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-07 12:28-0700\n"
-"PO-Revision-Date: 2018-05-24 00:09+0000\n"
+"PO-Revision-Date: 2018-06-07 10:12+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://weblate.elementary.io/projects/appcenter/extra/ja/>\n"
@@ -47,7 +47,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
-msgstr "install;uninstall;remove;catalogue;store;apps;updates;software;"
+msgstr "インストール;アンインストール;削除;カタログ;ストア;アプリ;アップデート;ソフトウェア;"
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
