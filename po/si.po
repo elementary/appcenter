@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-07 12:27-0700\n"
-"PO-Revision-Date: 2018-05-20 00:03+0000\n"
+"PO-Revision-Date: 2018-06-10 00:10+0000\n"
 "Last-Translator: Janith Weerasinghe <janithweerasinghe@rocketmail.com>\n"
 "Language-Team: Sinhala "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/si/>\n"
@@ -64,7 +64,6 @@ msgid "Network Settings…"
 msgstr "ජාල සැකසුම්"
 
 #: src/Core/ChangeInformation.vala:54
-#, fuzzy
 msgid "Starting"
 msgstr "අරඹමින්"
 
@@ -82,15 +81,15 @@ msgstr ""
 
 #: src/Core/ChangeInformation.vala:62
 msgid "Getting information"
-msgstr ""
+msgstr "තොරතුරු ලබමින්"
 
 #: src/Core/ChangeInformation.vala:64
 msgid "Removing packages"
-msgstr ""
+msgstr "පැකේජ ඉවත් කරමින්"
 
 #: src/Core/ChangeInformation.vala:66
 msgid "Downloading"
-msgstr ""
+msgstr "භාගත වෙමින්"
 
 #: src/Core/ChangeInformation.vala:68
 msgid "Installing"
@@ -101,8 +100,9 @@ msgid "Refreshing software list"
 msgstr ""
 
 #: src/Core/ChangeInformation.vala:72
+#, fuzzy
 msgid "Installing updates"
-msgstr ""
+msgstr "යාවත්කාලීන ස්තාපිත වෙමින්"
 
 #: src/Core/ChangeInformation.vala:74
 msgid "Cleaning up packages"
@@ -122,11 +122,11 @@ msgstr ""
 
 #: src/Core/ChangeInformation.vala:82
 msgid "Testing changes"
-msgstr ""
+msgstr "වෙනස්කම් පිරික්සමින්"
 
 #: src/Core/ChangeInformation.vala:84
 msgid "Committing changes"
-msgstr ""
+msgstr "වෙනස්කම් සිදුකරමින්"
 
 #: src/Core/ChangeInformation.vala:86
 msgid "Requesting data"
@@ -134,7 +134,7 @@ msgstr ""
 
 #: src/Core/ChangeInformation.vala:88
 msgid "Finished"
-msgstr ""
+msgstr "අවසානයි"
 
 #: src/Core/ChangeInformation.vala:90
 msgid "Cancelling"
@@ -150,19 +150,19 @@ msgstr ""
 
 #: src/Core/ChangeInformation.vala:96
 msgid "Downloading file lists"
-msgstr ""
+msgstr "ගොනු ලැයිස්තු භාගත කරමින්"
 
 #: src/Core/ChangeInformation.vala:98
 msgid "Downloading lists of changes"
-msgstr ""
+msgstr "වෙනස්කම් ලැයිස්තු භාගත කරමින්"
 
 #: src/Core/ChangeInformation.vala:100
 msgid "Downloading groups"
-msgstr ""
+msgstr "සමුහයන් භාගත කරමින්"
 
 #: src/Core/ChangeInformation.vala:102
 msgid "Downloading update information"
-msgstr ""
+msgstr "යාවත්කාලීන තොරතුරු භාගත කරමින්"
 
 #: src/Core/ChangeInformation.vala:104
 msgid "Repackaging files"
@@ -174,7 +174,7 @@ msgstr ""
 
 #: src/Core/ChangeInformation.vala:108
 msgid "Scanning applications"
-msgstr ""
+msgstr "යෙදවුම් පරිලෝකනය කරමින්"
 
 #: src/Core/ChangeInformation.vala:110
 msgid "Generating package lists"
