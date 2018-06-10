@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-07 12:27-0700\n"
-"PO-Revision-Date: 2018-06-10 00:10+0000\n"
+"PO-Revision-Date: 2018-06-12 06:39+0000\n"
 "Last-Translator: Janith Weerasinghe <janithweerasinghe@rocketmail.com>\n"
 "Language-Team: Sinhala "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/si/>\n"
@@ -47,7 +47,7 @@ msgstr "මුල් පිටුව"
 #: src/MainWindow.vala:175 src/MainWindow.vala:321 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:75
 msgid "Search Apps"
-msgstr "භාවිත සෙවීම"
+msgstr "යෙදවුම් සෙවීම"
 
 #: src/MainWindow.vala:193
 msgid "Network Is Not Available"
