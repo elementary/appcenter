@@ -98,6 +98,17 @@ public class AppCenter.App : Gtk.Application {
             return;
         }
 
+        if (file.has_uri_scheme ("type")) {
+            string? mimetype = mimetype_from_file (file);
+            if (mimetype != null) {
+                main_window.search (mimetype, true);
+            } else {
+                info (_("Could not parse mimetype %s").printf (mimetype));
+            }
+            
+            return;
+        }
+
         if (!file.has_uri_scheme ("appstream")) {
             return;
         }
@@ -277,7 +288,9 @@ public class AppCenter.App : Gtk.Application {
 
     public void on_updates_available () {
         var client = AppCenterCore.Client.get_default ();
-        main_window.show_update_badge (client.updates_number);
+        if (main_window != null) {
+            main_window.show_update_badge (client.updates_number);
+        }
     }
 
     private void on_cache_update_failed (Error error) {
@@ -304,6 +317,16 @@ public class AppCenter.App : Gtk.Application {
         }
 
         return msg;
+    }
+
+    private static string? mimetype_from_file (File file) {
+        string uri = file.get_uri ();
+        string[] tokens = uri.split (Path.DIR_SEPARATOR_S);
+        if (tokens.length < 2) {
+            return null;
+        }
+
+        return "%s/%s".printf (tokens[tokens.length - 2], tokens[tokens.length - 1]);
     }
 }
 

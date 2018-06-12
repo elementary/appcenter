@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-07 12:28-0700\n"
-"PO-Revision-Date: 2017-07-06 00:57+0000\n"
-"Last-Translator: Tibike Miklós <miklosflame@hotmail.co.uk>\n"
-"Language-Team: Hungarian <https://l10n.elementary.io/projects/appcenter/"
-"extra/hu/>\n"
+"PO-Revision-Date: 2018-06-07 00:11+0000\n"
+"Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
+"Language-Team: Hungarian "
+"<https://weblate.elementary.io/projects/appcenter/extra/hu/>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.14\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
@@ -30,18 +30,18 @@ msgid ""
 "search and discover new apps. AppCenter is also used for updating your "
 "system to the latest and greatest version for new features and fixes."
 msgstr ""
-"Egy alkalmazásbolt független és nyílt forráskódú fejlesztőknek. Böngésszen "
-"kategóriák szerint, vagy keressen és fedezzen fel új alkalmazásokat. Szintén "
-"az Alkalmazásközpontból frissítheti a rendszerét a legújabb funkciókért és "
+"Egy alkalmazásüzlet független és nyílt forráskódú fejlesztőknek. Böngésszen "
+"kategóriák szerint, vagy keressen és fedezzen fel új alkalmazásokat. Az "
+"AppKözpontból frissítheti a rendszerét a legújabb funkciókért és "
 "javításokért."
 
 #: data/io.elementary.appcenter.appdata.xml.in:191
 msgid "elementary LLC."
-msgstr ""
+msgstr "elementary LLC."
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
-msgstr ""
+msgstr "@APP_NAME@"
 
 #: data/io.elementary.appcenter.desktop.in.in:6
 msgid "@DESKTOP_ICON@"
@@ -50,11 +50,12 @@ msgstr ""
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
 msgstr ""
-"telepít;eltávolít;töröl;bejegyez;üzlet;applikációk;frissítések;szoftver;"
+"install;uninstall;remove;catalogue;store;apps;updates;software;telepítés;eltá"
+"volítás;törlés;katalógus;bolt;alkalmazások;frissítések;szoftver;"
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
-msgstr ""
+msgstr "Frissítések keresése"
 
 #~ msgid "About AppCenter"
 #~ msgstr "Alkalmazásközpont névjegye"
