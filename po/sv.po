@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-07 12:27-0700\n"
-"PO-Revision-Date: 2018-06-12 06:35+0000\n"
+"PO-Revision-Date: 2018-06-12 06:39+0000\n"
 "Last-Translator: Richard Sjöqvist <richard@spiro.se>\n"
 "Language-Team: Swedish "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/sv/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 
 #: src/Application.vala:38
 msgid "AppCenter"
-msgstr "Programcentral"
+msgstr "AppCenter"
 
 #: src/Application.vala:115
 #, c-format
