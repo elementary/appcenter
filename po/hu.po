@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-07 12:27-0700\n"
-"PO-Revision-Date: 2018-06-06 00:06+0000\n"
+"PO-Revision-Date: 2018-06-15 00:09+0000\n"
 "Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
 "Language-Team: Hungarian "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/hu/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 
 #: src/Application.vala:38
 msgid "AppCenter"
-msgstr "Alkalmazásközpont"
+msgstr "AppKözpont"
 
 #: src/Application.vala:115
 #, c-format
@@ -72,7 +72,7 @@ msgstr "Várakozás"
 
 #: src/Core/ChangeInformation.vala:58
 msgid "Running"
-msgstr "Futás"
+msgstr "Folyamatban"
 
 #: src/Core/ChangeInformation.vala:60
 msgid "Querying"
@@ -549,11 +549,11 @@ msgstr "Összes frissítése"
 
 #: src/Views/AppListView.vala:119
 msgid "Non-Curated Apps"
-msgstr "Nem válogatott alkalmazások"
+msgstr "További alkalmazások"
 
 #: src/Views/Homepage.vala:65
 msgid "Recently Updated"
-msgstr "Nemrég Frissített"
+msgstr "Nemrég frissített"
 
 #: src/Views/Homepage.vala:81
 msgid "Trending"
@@ -636,7 +636,7 @@ msgstr "Tudomány és Technika"
 
 #: src/Widgets/CategoryFlowBox.vala:40
 msgid "Universal Access"
-msgstr "Univerzális hozzáférés"
+msgstr "Kisegítő lehetőségek"
 
 #: src/Widgets/HumbleButton.vala:93
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:211
