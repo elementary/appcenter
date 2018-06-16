@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-07 12:27-0700\n"
-"PO-Revision-Date: 2017-12-20 23:07+0000\n"
-"Last-Translator: Marcio <marcio.pelegrini@gmail.com>\n"
-"Language-Team: French (Canada) <https://weblate.elementary.io/projects/"
-"appcenter/appcenter/fr_CA/>\n"
+"PO-Revision-Date: 2018-06-16 00:08+0000\n"
+"Last-Translator: martin fromont <martin.fromont1@gmail.com>\n"
+"Language-Team: French (Canada) "
+"<https://weblate.elementary.io/projects/appcenter/appcenter/fr_CA/>\n"
 "Language: fr_CA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,12 +31,12 @@ msgstr "Application installée"
 #: src/Application.vala:250
 #, c-format
 msgid "%s has been successfully installed"
-msgstr ""
+msgstr "L'application %s  a été installée avec succès"
 
 #: src/Application.vala:262
 #, c-format
 msgid "There Was An Error Installing %s."
-msgstr ""
+msgstr "Une erreur est survenue en installant l'application %s."
 
 #: src/MainWindow.vala:147 src/Views/Homepage.vala:253
 #: src/Views/Homepage.vala:262 src/Views/Homepage.vala:267
@@ -52,43 +52,44 @@ msgstr "Rechercher des Applications"
 
 #: src/MainWindow.vala:193
 msgid "Network Is Not Available"
-msgstr ""
+msgstr "Capture d'écran indisponible"
 
 #: src/MainWindow.vala:194
 msgid "Connect to the Internet to install or update apps."
 msgstr ""
+"Connectez-vous à Internet pour installer ou mettre à jour des applications."
 
 #: src/MainWindow.vala:197
 msgid "Network Settings…"
-msgstr ""
+msgstr "Paramètres du réseau…"
 
 #: src/Core/ChangeInformation.vala:54
 msgid "Starting"
-msgstr ""
+msgstr "Démarrage"
 
 #: src/Core/ChangeInformation.vala:56
 msgid "Waiting"
-msgstr ""
+msgstr "En attente"
 
 #: src/Core/ChangeInformation.vala:58
 msgid "Running"
-msgstr ""
+msgstr "Exécution"
 
 #: src/Core/ChangeInformation.vala:60
 msgid "Querying"
-msgstr ""
+msgstr "Recherche"
 
 #: src/Core/ChangeInformation.vala:62
 msgid "Getting information"
-msgstr ""
+msgstr "Obtention d'informations"
 
 #: src/Core/ChangeInformation.vala:64
 msgid "Removing packages"
-msgstr ""
+msgstr "Suppression de paquets"
 
 #: src/Core/ChangeInformation.vala:66
 msgid "Downloading"
-msgstr ""
+msgstr "Téléchargement"
 
 #: src/Core/ChangeInformation.vala:68
 msgid "Installing"
@@ -96,15 +97,15 @@ msgstr "Installation en cours"
 
 #: src/Core/ChangeInformation.vala:70
 msgid "Refreshing software list"
-msgstr ""
+msgstr "Mise à jour de la liste des logiciels"
 
 #: src/Core/ChangeInformation.vala:72
 msgid "Installing updates"
-msgstr ""
+msgstr "Installation des mises à jour"
 
 #: src/Core/ChangeInformation.vala:74
 msgid "Cleaning up packages"
-msgstr ""
+msgstr "Nettoyage des paquets"
 
 #: src/Core/ChangeInformation.vala:76
 msgid "Obsoleting packages"
@@ -112,71 +113,71 @@ msgstr ""
 
 #: src/Core/ChangeInformation.vala:78
 msgid "Resolving dependencies"
-msgstr ""
+msgstr "Résolution des dépendances"
 
 #: src/Core/ChangeInformation.vala:80
 msgid "Checking signatures"
-msgstr ""
+msgstr "Vérification des signatures"
 
 #: src/Core/ChangeInformation.vala:82
 msgid "Testing changes"
-msgstr ""
+msgstr "Test des changements"
 
 #: src/Core/ChangeInformation.vala:84
 msgid "Committing changes"
-msgstr ""
+msgstr "Inscription des changements"
 
 #: src/Core/ChangeInformation.vala:86
 msgid "Requesting data"
-msgstr ""
+msgstr "Demande de données"
 
 #: src/Core/ChangeInformation.vala:88
 msgid "Finished"
-msgstr ""
+msgstr "Terminé"
 
 #: src/Core/ChangeInformation.vala:90
 msgid "Cancelling"
-msgstr ""
+msgstr "Annulation"
 
 #: src/Core/ChangeInformation.vala:92
 msgid "Downloading repository information"
-msgstr ""
+msgstr "Téléchargement des informations sur les dépôts"
 
 #: src/Core/ChangeInformation.vala:94
 msgid "Downloading list of packages"
-msgstr ""
+msgstr "Téléchargement de la liste des paquets"
 
 #: src/Core/ChangeInformation.vala:96
 msgid "Downloading file lists"
-msgstr ""
+msgstr "Téléchargements de la liste des fichiers"
 
 #: src/Core/ChangeInformation.vala:98
 msgid "Downloading lists of changes"
-msgstr ""
+msgstr "Téléchargement de la liste des changements"
 
 #: src/Core/ChangeInformation.vala:100
 msgid "Downloading groups"
-msgstr ""
+msgstr "Téléchargement des groupes"
 
 #: src/Core/ChangeInformation.vala:102
 msgid "Downloading update information"
-msgstr ""
+msgstr "Téléchargement des informations de mise à jour"
 
 #: src/Core/ChangeInformation.vala:104
 msgid "Repackaging files"
-msgstr ""
+msgstr "Ré-empaquetage des fichiers"
 
 #: src/Core/ChangeInformation.vala:106
 msgid "Loading cache"
-msgstr ""
+msgstr "Chargement du cache"
 
 #: src/Core/ChangeInformation.vala:108
 msgid "Scanning applications"
-msgstr ""
+msgstr "Analyse des applications"
 
 #: src/Core/ChangeInformation.vala:110
 msgid "Generating package lists"
-msgstr ""
+msgstr "Génération des listes de paquets"
 
 #: src/Core/ChangeInformation.vala:112
 msgid "Waiting for package manager lock"
