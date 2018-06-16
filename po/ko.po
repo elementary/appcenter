@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-07 12:27-0700\n"
-"PO-Revision-Date: 2018-06-03 06:06+0000\n"
+"PO-Revision-Date: 2018-06-17 00:06+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/ko/>\n"
@@ -95,7 +95,7 @@ msgstr "설치중"
 
 #: src/Core/ChangeInformation.vala:70
 msgid "Refreshing software list"
-msgstr "소프트웨어  목록을 새로 고치는 중입니다"
+msgstr "소프트웨어  목록을 새로 고치고 있습니다"
 
 #: src/Core/ChangeInformation.vala:72
 msgid "Installing updates"
