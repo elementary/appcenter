@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-07 12:28-0700\n"
-"PO-Revision-Date: 2018-06-07 00:11+0000\n"
+"PO-Revision-Date: 2018-06-15 00:09+0000\n"
 "Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
 "Language-Team: Hungarian "
 "<https://weblate.elementary.io/projects/appcenter/extra/hu/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
 msgid "AppCenter"
-msgstr "Alkalmazásközpont"
+msgstr "AppKözpont"
 
 #: data/io.elementary.appcenter.appdata.xml.in:9
 #: data/io.elementary.appcenter.desktop.in.in:4
@@ -45,7 +45,7 @@ msgstr "@APP_NAME@"
 
 #: data/io.elementary.appcenter.desktop.in.in:6
 msgid "@DESKTOP_ICON@"
-msgstr ""
+msgstr "@DESKTOP_ICON@"
 
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"

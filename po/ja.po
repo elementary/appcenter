@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-07 12:27-0700\n"
-"PO-Revision-Date: 2018-05-30 16:06+0000\n"
+"PO-Revision-Date: 2018-06-18 00:03+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
 "Language-Team: Japanese "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/ja/>\n"
@@ -47,7 +47,7 @@ msgstr "ホーム"
 #: src/MainWindow.vala:175 src/MainWindow.vala:321 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:75
 msgid "Search Apps"
-msgstr "アプリの検索"
+msgstr "アプリを検索"
 
 #: src/MainWindow.vala:193
 msgid "Network Is Not Available"

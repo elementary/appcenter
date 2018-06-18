@@ -3,16 +3,18 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-07 12:27-0700\n"
-"PO-Revision-Date: 2017-02-27 11:43+0000\n"
-"Last-Translator: elementaryart (old) <Unknown>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2018-06-18 00:03+0000\n"
+"Last-Translator: Aoibhe Ní Ghnímh <aoibhe.agnew@gmail.com>\n"
+"Language-Team: Irish "
+"<https://weblate.elementary.io/projects/appcenter/appcenter/ga/>\n"
+"Language: ga\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n==2 ? 1 : 2;\n"
+"Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : (n>2 && n<7) ? 2 :(n>"
+"6 && n<11) ? 3 : 4;\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
-"X-Generator: Launchpad (build 18331)\n"
 
 #: src/Application.vala:38
 msgid "AppCenter"
@@ -41,7 +43,7 @@ msgstr ""
 #: src/Views/Homepage.vala:262 src/Views/Homepage.vala:267
 #: src/Views/Homepage.vala:278
 msgid "Home"
-msgstr ""
+msgstr "Baile"
 
 #: src/MainWindow.vala:175 src/MainWindow.vala:321 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:75
