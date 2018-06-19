@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-07 12:27-0700\n"
-"PO-Revision-Date: 2018-06-15 00:09+0000\n"
+"PO-Revision-Date: 2018-06-19 11:40+0000\n"
 "Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
 "Language-Team: Hungarian "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/hu/>\n"
@@ -51,12 +51,12 @@ msgstr "Alkalmazások keresése"
 
 #: src/MainWindow.vala:193
 msgid "Network Is Not Available"
-msgstr "Nincs internetkapcsolat"
+msgstr "A hálózat nem elérhető"
 
 #: src/MainWindow.vala:194
 msgid "Connect to the Internet to install or update apps."
 msgstr ""
-"Csatlakozzon az internethez az alkalmazások telepítéséhez vagy frissítéséhez."
+"Az alkalmazások telepítéséhez vagy frissítéséhez csatlakozzon az Internetre."
 
 #: src/MainWindow.vala:197
 msgid "Network Settings…"
@@ -80,7 +80,7 @@ msgstr "Lekérdezés"
 
 #: src/Core/ChangeInformation.vala:62
 msgid "Getting information"
-msgstr "Információ beszerzése"
+msgstr "Információ szerzés"
 
 #: src/Core/ChangeInformation.vala:64
 msgid "Removing packages"
@@ -128,7 +128,7 @@ msgstr "Változások végrehajtása"
 
 #: src/Core/ChangeInformation.vala:86
 msgid "Requesting data"
-msgstr "Adatok kérése"
+msgstr "Adatkérés"
 
 #: src/Core/ChangeInformation.vala:88
 msgid "Finished"
@@ -140,11 +140,11 @@ msgstr "Megszakítás"
 
 #: src/Core/ChangeInformation.vala:92
 msgid "Downloading repository information"
-msgstr "Tároló információ letöltése"
+msgstr "Tárolóinformációk letöltése"
 
 #: src/Core/ChangeInformation.vala:94
 msgid "Downloading list of packages"
-msgstr "Csomaglista letöltése"
+msgstr "Csomaglisták letöltése"
 
 #: src/Core/ChangeInformation.vala:96
 msgid "Downloading file lists"
@@ -152,7 +152,7 @@ msgstr "Fájllisták letöltése"
 
 #: src/Core/ChangeInformation.vala:98
 msgid "Downloading lists of changes"
-msgstr "Változások listáinak letöltése"
+msgstr "Változtatások listájának letöltése"
 
 #: src/Core/ChangeInformation.vala:100
 msgid "Downloading groups"
@@ -160,7 +160,7 @@ msgstr "Csoportok letöltése"
 
 #: src/Core/ChangeInformation.vala:102
 msgid "Downloading update information"
-msgstr "Frissítési információ letöltése"
+msgstr "Frissítési információk letöltése"
 
 #: src/Core/ChangeInformation.vala:104
 msgid "Repackaging files"
@@ -184,19 +184,19 @@ msgstr "Várakozás a csomagkezelő zárolására"
 
 #: src/Core/ChangeInformation.vala:114
 msgid "Waiting for authentication"
-msgstr "Várakozás hitelesítésre"
+msgstr "Várakozás a hitelesítésre"
 
 #: src/Core/ChangeInformation.vala:116
 msgid "Updating running applications"
-msgstr "Futó alkalmazások frissítése"
+msgstr "A futó alkalmazások frissítése"
 
 #: src/Core/ChangeInformation.vala:118
 msgid "Checking applications in use"
-msgstr "Használatban lévő alkalmazások ellenőrzése"
+msgstr "A használt alkalmazások ellenőrzése"
 
 #: src/Core/ChangeInformation.vala:120
 msgid "Checking libraries in use"
-msgstr "Használatban lévő könyvtárak ellenőrzése"
+msgstr "A használt könyvtárak ellenőrzése"
 
 #: src/Core/ChangeInformation.vala:122
 msgid "Copying files"
@@ -212,7 +212,7 @@ msgstr "Operációs rendszer frissítések"
 
 #: src/Core/Client.vala:106
 msgid "Updates to system components"
-msgstr "Rendszer összetevők frissítése"
+msgstr "Rendszerösszetevők frissítése"
 
 #: src/Core/Client.vala:141
 #, c-format
@@ -223,7 +223,7 @@ msgstr "%s (helyi)"
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Frissítés elérhető"
-msgstr[1] "Frissítések elérhetők"
+msgstr[1] "Frissítés elérhető"
 
 #: src/Core/Client.vala:455
 #, c-format
@@ -256,7 +256,7 @@ msgstr "%s:"
 #: src/Core/Package.vala:192
 #, c-format
 msgid "%s Developers"
-msgstr "%s fejlesztő"
+msgstr "%s fejlesztők"
 
 #: src/Core/UpdateManager.vala:81
 msgid "Restart Required"
@@ -264,15 +264,16 @@ msgstr "Újraindítás szükséges"
 
 #: src/Core/UpdateManager.vala:82
 msgid "Please restart your system to finalize updates"
-msgstr "Indítsa újra a rendszert a frissítések befejezéséhez"
+msgstr "Indítsa újra a rendszert a frissítések véglegesítéséhez"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
-msgstr "Biztos újra szeretné indítani?"
+msgstr "Biztos benne, hogy újra szeretné indítani?"
 
 #: src/Dialogs/RestartDialog.vala:41
 msgid "This will close all open applications and restart this device."
-msgstr "Ez bezárja a futó alkalmazásokat és újraindítja a készüléket."
+msgstr ""
+"Ezzel bezárja az összes megnyitott alkalmazást, és újraindítja az eszközt."
 
 #: src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
@@ -289,8 +290,8 @@ msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
-"Hiba történt a kártya feldolgozása során. Kérjük próbálja meg újra. Elnézést "
-"kérünk a kellemetlenségért."
+"Hiba történt a kártya feldolgozása során. Kérjük, próbálja meg újra később. "
+"Elnézést kérünk a kellemetlenségért."
 
 #: src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
@@ -319,7 +320,7 @@ msgid ""
 "will not be subscribed to a mailing list."
 msgstr ""
 "Az e-mail cím kizárólag a bizonylat elküldésére szolgál. Nem kerül "
-"eltárolásra, sem feliratkozásra címlistára."
+"eltárolásra, és nem iratkozik fel semmilyen levelezőlistára."
 
 #: src/Dialogs/StripeDialog.vala:112
 msgid "MM / YY"
@@ -379,25 +380,25 @@ msgstr ""
 #: src/Dialogs/StripeDialog.vala:504 src/Dialogs/StripeDialog.vala:557
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr ""
-"A CVC-szám helytelen. Kérjük próbálkozzon újra a megfelelő CVC-szám "
+"A CVC-szám helytelen. Kérjük, próbálja meg újra a megfelelő CVC-szám "
 "használatával."
 
 #: src/Dialogs/StripeDialog.vala:506 src/Dialogs/StripeDialog.vala:548
 msgid "The card has expired. Please try again with a different card."
-msgstr "A kártya lejárt. Próbálkozzon újra egy másik kártyával."
+msgstr "A kártya lejárt. Kérjük, próbálja meg újra egy másik kártyával."
 
 #: src/Dialogs/StripeDialog.vala:526
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr ""
-"Jelenleg túl sok fizetési tranzakció fut párhuzamosan, később próbálja meg "
-"újra."
+"Jelenleg túl sok fizetési tranzakció fut párhuzamosan. Kérjük, próbálja meg "
+"újra később."
 
 #: src/Dialogs/StripeDialog.vala:542
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
 msgstr ""
-"Ez a kártya nem támogatja ezt a típusú tranzakciót. Kérem próbálja meg egy "
+"Ez a kártya nem támogatja ezt a típusú tranzakciót. Kérjük, próbálja meg egy "
 "másik kártyával."
 
 #: src/Dialogs/StripeDialog.vala:544
@@ -405,7 +406,7 @@ msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
 msgstr ""
-"Ez a kártya nem támogatja ezt a valutát. Kérem próbálja meg egy másik "
+"Ez a kártya nem támogatja ezt a valutát. Kérjük, próbálja meg egy másik "
 "kártyával."
 
 #: src/Dialogs/StripeDialog.vala:546
@@ -427,17 +428,20 @@ msgstr "Nincs elég fedezet. Kérjük, használjon alternatív fizetési módot.
 #: src/Dialogs/StripeDialog.vala:554
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr ""
-"Az összeg helytelen. Kérjük, próbálkozzon újra érvényes összeg beírásával."
+"Az összeg helytelen. Kérjük, próbálja meg újra egy érvényes összeg "
+"beírásával."
 
 #: src/Dialogs/StripeDialog.vala:565
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr ""
-"A PIN-kód helytelen. Kérjük, próbálja újra a megfelelő PIN-kód használatával."
+"A PIN-kód helytelen. Kérjük, próbálja meg újra a megfelelő PIN-kód "
+"használatával."
 
 #: src/Dialogs/StripeDialog.vala:567
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
-msgstr "Túl sok PIN próbálkozás volt. Próbálkozzon újra egy másik kártyával."
+msgstr ""
+"Túl sok PIN próbálkozás volt. Kérjük, próbálja meg újra egy másik kártyával."
 
 #: src/Dialogs/StripeDialog.vala:587
 msgid ""
@@ -483,7 +487,7 @@ msgstr "Próbálja újra"
 
 #: src/Views/AppInfoView.vala:76
 msgid "Screenshot Not Available"
-msgstr "Nincs képernyőmentés"
+msgstr "Képernyőkép nem elérhető"
 
 #: src/Views/AppInfoView.vala:130
 msgid "Homepage"
@@ -491,11 +495,11 @@ msgstr "Honlap"
 
 #: src/Views/AppInfoView.vala:136
 msgid "Suggest Translations"
-msgstr "Fordítások javaslása"
+msgstr "Javasoljon fordításokat"
 
 #: src/Views/AppInfoView.vala:142
 msgid "Report a Problem"
-msgstr "Hiba jelentése"
+msgstr "Jelentse a problémát"
 
 #: src/Views/AppInfoView.vala:148
 msgid "Help"
@@ -516,7 +520,7 @@ msgstr "%s további alkalmazásai"
 
 #: src/Views/AppInfoView.vala:321
 msgid "Link copied to clipboard"
-msgstr "A hivatkozás vágólapra másolva"
+msgstr "Hivatkozás a vágólapra másolva"
 
 #: src/Views/AppInfoView.vala:332
 #, c-format
@@ -537,7 +541,7 @@ msgstr "Támogassa az alkalmazás fejlesztését"
 
 #: src/Views/AppListUpdateView.vala:59
 msgid "A restart is required to complete the installation of updates"
-msgstr "Újraindítás szükséges a frissítések telepítésének befejezéséhez"
+msgstr "A frissítések telepítésének véglegesítéséhez újraindításra van szükség"
 
 #: src/Views/AppListUpdateView.vala:67
 msgid "Restart Now"
@@ -549,7 +553,7 @@ msgstr "Összes frissítése"
 
 #: src/Views/AppListView.vala:119
 msgid "Non-Curated Apps"
-msgstr "További alkalmazások"
+msgstr "Nem válogatott alkalmazások"
 
 #: src/Views/Homepage.vala:65
 msgid "Recently Updated"
@@ -574,17 +578,17 @@ msgstr "Nincs találat"
 
 #: src/Widgets/AbstractAppList.vala:36
 msgid "No apps could be found. Try changing search terms."
-msgstr "Nem találhatók alkalmazások. Próbálja más keresési feltételekkel."
+msgstr ""
+"Nem találhatók alkalmazások. Próbálja megváltoztatni a keresési "
+"kifejezéseket."
 
 #: src/Widgets/Banner.vala:55
 msgid "An open, pay-what-you-want app store"
-msgstr "Egy nyílt, fizess-amennyit-szeretnél alkalmazás üzlet"
+msgstr "Egy nyílt, fizessen-amennyit-szeretne alkalmazásüzlet"
 
 #: src/Widgets/Banner.vala:68
 msgid "Get the apps that you need at a price you can afford."
-msgstr ""
-"Szerezzen be alkalmazásokat, melyekre szüksége van, azért az árért, amit "
-"megengedhet."
+msgstr "Szerezzen be alkalmazásokat, olyan áron, amelyet megengedhet magának."
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
@@ -664,7 +668,7 @@ msgstr "Ismeretlen verzió"
 
 #: src/Widgets/ReleaseRow.vala:90 src/Widgets/ReleaseRow.vala:93
 msgid "No description available"
-msgstr "Nincs elérhető leírás"
+msgstr "Nem érhető el leírás"
 
 #: src/Widgets/SharePopover.vala:39
 msgid "Facebook"
