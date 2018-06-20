@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-07 12:28-0700\n"
-"PO-Revision-Date: 2018-06-15 00:09+0000\n"
+"PO-Revision-Date: 2018-06-21 00:08+0000\n"
 "Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
 "Language-Team: Hungarian "
 "<https://weblate.elementary.io/projects/appcenter/extra/hu/>\n"
@@ -22,7 +22,7 @@ msgstr "AppKözpont"
 #: data/io.elementary.appcenter.appdata.xml.in:9
 #: data/io.elementary.appcenter.desktop.in.in:4
 msgid "Browse and manage apps"
-msgstr "Alkalmazások böngészése és kezelése"
+msgstr "Alkalmazások tallózása és kezelése"
 
 #: data/io.elementary.appcenter.appdata.xml.in:11
 msgid ""
@@ -30,10 +30,10 @@ msgid ""
 "search and discover new apps. AppCenter is also used for updating your "
 "system to the latest and greatest version for new features and fixes."
 msgstr ""
-"Egy alkalmazásüzlet független és nyílt forráskódú fejlesztőknek. Böngésszen "
-"kategóriák szerint, vagy keressen és fedezzen fel új alkalmazásokat. Az "
-"AppKözpontból frissítheti a rendszerét a legújabb funkciókért és "
-"javításokért."
+"Egy alkalmazásüzlet a független és nyílt forráskódot használó fejlesztők "
+"számára. Tallózzon kategóriák szerint, vagy keressen és fedezzen fel új "
+"alkalmazásokat. Az AppKözpont segítségével mindig a legújabb és legjobb "
+"verzióra frissítheti rendszerét."
 
 #: data/io.elementary.appcenter.appdata.xml.in:191
 msgid "elementary LLC."
