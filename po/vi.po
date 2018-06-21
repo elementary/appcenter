@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-07 12:27-0700\n"
-"PO-Revision-Date: 2018-06-04 08:07+0000\n"
-"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"PO-Revision-Date: 2018-06-21 00:08+0000\n"
+"Last-Translator: Tuyền Nguyễn <tuyendev@gmail.com>\n"
 "Language-Team: Vietnamese "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/vi/>\n"
 "Language: vi\n"
@@ -22,8 +22,7 @@ msgstr "Trung tâm ứng dụng"
 #: src/Application.vala:115
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr ""
-"Liên kết xác định '%s' có thể không được tìm thấy, đang tìm kiếm thay thế"
+msgstr "Không tìm thấy liên kết cụ thể tới '%s', đang tìm kiếm thay thế"
 
 #: src/Application.vala:249
 msgid "Application installed"
@@ -35,9 +34,9 @@ msgid "%s has been successfully installed"
 msgstr "%s đã được cài đặt thành công"
 
 #: src/Application.vala:262
-#, fuzzy, c-format
+#, c-format
 msgid "There Was An Error Installing %s."
-msgstr "Có một lỗi trong quá trình cài đặt %s"
+msgstr "Có lỗi trong quá trình cài đặt %s"
 
 #: src/MainWindow.vala:147 src/Views/Homepage.vala:253
 #: src/Views/Homepage.vala:262 src/Views/Homepage.vala:267
@@ -62,7 +61,7 @@ msgstr "Kết nối đến internet để cài đặt hoặc cập nhật ứng 
 
 #: src/MainWindow.vala:197
 msgid "Network Settings…"
-msgstr "Cài đặt mạng…"
+msgstr "Cài đặt truy cập mạng…"
 
 #: src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -102,7 +101,7 @@ msgstr "Đang làm mới danh sách phần mềm"
 
 #: src/Core/ChangeInformation.vala:72
 msgid "Installing updates"
-msgstr "Đang cài đặt các gói cập nhật"
+msgstr "Đang cài đặt cập nhật"
 
 #: src/Core/ChangeInformation.vala:74
 msgid "Cleaning up packages"
@@ -114,7 +113,7 @@ msgstr "Đang loại bỏ những gói cũ"
 
 #: src/Core/ChangeInformation.vala:78
 msgid "Resolving dependencies"
-msgstr "Đang xử lý những phần phụ thuộc"
+msgstr "Đang xử lý những thành phần phụ thuộc"
 
 #: src/Core/ChangeInformation.vala:80
 msgid "Checking signatures"
@@ -142,7 +141,7 @@ msgstr "Đang hủy"
 
 #: src/Core/ChangeInformation.vala:92
 msgid "Downloading repository information"
-msgstr "Đang tải về thông tin nguồn"
+msgstr "Đang tải về thông tin kho chứa"
 
 #: src/Core/ChangeInformation.vala:94
 msgid "Downloading list of packages"
@@ -217,9 +216,9 @@ msgid "Updates to system components"
 msgstr "Cập nhật cho các thành phần hệ thống"
 
 #: src/Core/Client.vala:141
-#, c-format
+#, c-format, fuzzy
 msgid "%s (local)"
-msgstr ""
+msgstr "%s (cục bộ)"
 
 #: src/Core/Client.vala:454
 msgid "Update Available"
@@ -235,27 +234,27 @@ msgstr[0] "%u bản cập nhật khả dụng cho hệ thống của bạn"
 #: src/Core/Client.vala:483
 #, c-format
 msgid "Version: %s"
-msgstr ""
+msgstr "Phiên bản: %s"
 
 #: src/Core/Client.vala:492
 msgid "No components with updates"
-msgstr ""
+msgstr "Không thành phần nào có cập nhật"
 
 #: src/Core/Client.vala:496
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
-msgstr[0] ""
+msgstr[0] "Các thành phần %u có cập nhật"
 
 #: src/Core/Client.vala:498
 #, c-format
 msgid "%s:"
-msgstr ""
+msgstr "%s:"
 
 #: src/Core/Package.vala:192
-#, fuzzy, c-format
+#, c-format
 msgid "%s Developers"
-msgstr "Phát triển"
+msgstr "%s Nhà phát triển"
 
 #: src/Core/UpdateManager.vala:81
 msgid "Restart Required"
@@ -263,16 +262,15 @@ msgstr "Yêu cầu khởi động lại"
 
 #: src/Core/UpdateManager.vala:82
 msgid "Please restart your system to finalize updates"
-msgstr "Vui lòng khởi động lại hệ thống của bạn để hoàn tất bản cập nhật"
+msgstr "Vui lòng khởi động lại hệ thống của bạn để hoàn tất cập nhật"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
 msgstr "Bạn có chắc chắn muốn khởi động lại?"
 
 #: src/Dialogs/RestartDialog.vala:41
-#, fuzzy
 msgid "This will close all open applications and restart this device."
-msgstr "Điều này sẽ đóng tất cả các ứng dụng đã mở và khởi động lại thiết bị."
+msgstr "Điều này sẽ đóng tất cả các ứng dụng đang mở và khởi động lại thiết bị."
 
 #: src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
@@ -294,18 +292,19 @@ msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
-msgstr "Vui lòng kiểm tra lại thông tin thanh toán của bạn và thử lại"
+msgstr "Vui lòng kiểm tra thông tin thanh toán của bạn và thử lại"
 
 #: src/Dialogs/StripeDialog.vala:78
 #, c-format
 msgid "Pay $%d for %s"
-msgstr ""
+msgstr "Thanh toán %d cho %s"
 
 #: src/Dialogs/StripeDialog.vala:82
 msgid ""
 "This is a one time payment. Your email address is only used to send you a "
 "receipt."
 msgstr ""
+"Đây là phương thức một lần. Email của bạn chỉ được sử dụng để gửi hóa đơn."
 
 #: src/Dialogs/StripeDialog.vala:91 src/Widgets/SharePopover.vala:35
 msgid "Email"
@@ -316,6 +315,8 @@ msgid ""
 "Your email address is used to send a receipt. It is never stored and you "
 "will not be subscribed to a mailing list."
 msgstr ""
+"Email của bạn được dùng để nhận hóa đơn. Nó không được lưu trữ, bạn sẽ không "
+"bao giờ bị đăng ký trong danh sách gửi thư."
 
 #: src/Dialogs/StripeDialog.vala:112
 msgid "MM / YY"
@@ -336,7 +337,7 @@ msgstr "Thanh toán $%d.00"
 
 #: src/Dialogs/StripeDialog.vala:227
 msgid "Processing"
-msgstr "Đang hoàn tất"
+msgstr "Đang xử lý"
 
 #: src/Dialogs/StripeDialog.vala:252
 msgid "There Was a Problem Processing Your Payment"
@@ -700,7 +701,7 @@ msgstr "Mới nhất"
 
 #: src/Widgets/UpdateHeaderRow.vala:120
 msgid "Drivers"
-msgstr "Drivers"
+msgstr "Các trình điều khiển"
 
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:126
 msgid "Uninstall"
