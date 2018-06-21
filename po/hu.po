@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-07 12:27-0700\n"
-"PO-Revision-Date: 2018-06-19 11:40+0000\n"
+"PO-Revision-Date: 2018-06-21 00:08+0000\n"
 "Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
 "Language-Team: Hungarian "
 "<https://weblate.elementary.io/projects/appcenter/appcenter/hu/>\n"
@@ -728,7 +728,7 @@ msgstr "Eltávolítás"
 
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:129
 msgid "Open"
-msgstr "Nyílt"
+msgstr "Megnyitás"
 
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:235
 msgid "Update"
