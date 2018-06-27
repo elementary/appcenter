@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Akan (AppCenter)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-07 12:27-0700\n"
+"POT-Creation-Date: 2018-06-27 08:32-0700\n"
 "PO-Revision-Date: 2017-08-10 14:46+0000\n"
 "Last-Translator: Lawrence Aberba <karabutaworld@gmail.com>\n"
 "Language-Team: Akan <https://weblate.elementary.io/projects/appcenter/"
@@ -20,46 +20,51 @@ msgstr ""
 msgid "AppCenter"
 msgstr "Dwumadie Twebea"
 
-#: src/Application.vala:115
+#: src/Application.vala:106
+#, c-format
+msgid "Could not parse mimetype %s"
+msgstr ""
+
+#: src/Application.vala:126
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Antumi anhu '%s' enti wo ara hwehwɛ"
 
-#: src/Application.vala:249
+#: src/Application.vala:260
 msgid "Application installed"
 msgstr "Dwumadie a woatwe agu so"
 
-#: src/Application.vala:250
+#: src/Application.vala:261
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "Atwe %s agu so awie"
 
-#: src/Application.vala:262
+#: src/Application.vala:273
 #, fuzzy, c-format
 msgid "There Was An Error Installing %s."
 msgstr "Biribi sii ma antumi amfa %s angu so"
 
-#: src/MainWindow.vala:147 src/Views/Homepage.vala:253
+#: src/MainWindow.vala:149 src/Views/Homepage.vala:253
 #: src/Views/Homepage.vala:262 src/Views/Homepage.vala:267
 #: src/Views/Homepage.vala:278
 msgid "Home"
 msgstr "Ahyɛase"
 
-#: src/MainWindow.vala:175 src/MainWindow.vala:321 src/Views/SearchView.vala:54
-#: src/Views/SearchView.vala:75
+#: src/MainWindow.vala:177 src/MainWindow.vala:328 src/Views/SearchView.vala:54
+#: src/Views/SearchView.vala:81
 msgid "Search Apps"
 msgstr "Hwehwɛ Dwumadi Bi"
 
-#: src/MainWindow.vala:193
+#: src/MainWindow.vala:195
 msgid "Network Is Not Available"
 msgstr "Nɛtwɛk Nni Hɔ"
 
-#: src/MainWindow.vala:194
+#: src/MainWindow.vala:196
 #, fuzzy
 msgid "Connect to the Internet to install or update apps."
 msgstr "Kɔnɛkte ma intanɛt ansa woatumi atwe dwumadie bi."
 
-#: src/MainWindow.vala:197
+#: src/MainWindow.vala:199
 msgid "Network Settings…"
 msgstr "Nɛtwɛk Ho Nhyehyɛe…"
 
@@ -220,36 +225,36 @@ msgstr "Ɛso dwumadie foforɔ a aba"
 msgid "%s (local)"
 msgstr ""
 
-#: src/Core/Client.vala:454
+#: src/Core/Client.vala:466
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Foforɔ Aba"
 msgstr[1] "Nneɛma Foforɔ Aba"
 
-#: src/Core/Client.vala:455
+#: src/Core/Client.vala:467
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "Dwumadie foforɔ %u aba"
 msgstr[1] "Dwumadie foforɔ %u aba"
 
-#: src/Core/Client.vala:483
+#: src/Core/Client.vala:495
 #, c-format
 msgid "Version: %s"
 msgstr ""
 
-#: src/Core/Client.vala:492
+#: src/Core/Client.vala:504
 msgid "No components with updates"
 msgstr ""
 
-#: src/Core/Client.vala:496
+#: src/Core/Client.vala:508
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Core/Client.vala:498
+#: src/Core/Client.vala:510
 #, c-format
 msgid "%s:"
 msgstr ""
@@ -664,7 +669,7 @@ msgid "Twitter"
 msgstr ""
 
 #: src/Widgets/SharePopover.vala:51
-msgid "reddit"
+msgid "Reddit"
 msgstr ""
 
 #: src/Widgets/SharePopover.vala:55
