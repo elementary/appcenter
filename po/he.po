@@ -1,9 +1,10 @@
+# Yaron Shahrabani <sh.yaron@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-27 08:32-0700\n"
-"PO-Revision-Date: 2018-05-16 12:44+0000\n"
+"PO-Revision-Date: 2018-06-29 00:04+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/he/>\n"
@@ -11,8 +12,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #: src/Application.vala:38
@@ -22,12 +23,12 @@ msgstr "מרכז היישומים"
 #: src/Application.vala:106
 #, c-format
 msgid "Could not parse mimetype %s"
-msgstr ""
+msgstr "לא ניתן לפענח את סוג ה־mime‏ %s"
 
 #: src/Application.vala:126
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr "לא ניתן למצוא את הקישור שצוין ‚%s׳ מתבצע חיפוש במקום"
+msgstr "לא ניתן למצוא את הקישור שצוין ‚%s’, מתבצע חיפוש במקום"
 
 #: src/Application.vala:260
 msgid "Application installed"
@@ -659,9 +660,8 @@ msgid "Twitter"
 msgstr "טוויטר"
 
 #: src/Widgets/SharePopover.vala:51
-#, fuzzy
 msgid "Reddit"
-msgstr "reddit"
+msgstr "Reddit"
 
 #: src/Widgets/SharePopover.vala:55
 msgid "Tumblr"
