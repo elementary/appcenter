@@ -2,11 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-07 12:27-0700\n"
+"POT-Creation-Date: 2018-06-27 08:32-0700\n"
 "PO-Revision-Date: 2018-06-16 00:08+0000\n"
 "Last-Translator: martin fromont <martin.fromont1@gmail.com>\n"
-"Language-Team: French (Canada) "
-"<https://weblate.elementary.io/projects/appcenter/appcenter/fr_CA/>\n"
+"Language-Team: French (Canada) <https://weblate.elementary.io/projects/"
+"appcenter/appcenter/fr_CA/>\n"
 "Language: fr_CA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,47 +19,52 @@ msgstr ""
 msgid "AppCenter"
 msgstr "Centre d'applications"
 
-#: src/Application.vala:115
+#: src/Application.vala:106
+#, c-format
+msgid "Could not parse mimetype %s"
+msgstr ""
+
+#: src/Application.vala:126
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Le lien '%s' spécifié n'a pas été trouvé, recherche au lieu"
 
-#: src/Application.vala:249
+#: src/Application.vala:260
 msgid "Application installed"
 msgstr "Application installée"
 
-#: src/Application.vala:250
+#: src/Application.vala:261
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "L'application %s  a été installée avec succès"
 
-#: src/Application.vala:262
+#: src/Application.vala:273
 #, c-format
 msgid "There Was An Error Installing %s."
 msgstr "Une erreur est survenue en installant l'application %s."
 
-#: src/MainWindow.vala:147 src/Views/Homepage.vala:253
+#: src/MainWindow.vala:149 src/Views/Homepage.vala:253
 #: src/Views/Homepage.vala:262 src/Views/Homepage.vala:267
 #: src/Views/Homepage.vala:278
 #, fuzzy
 msgid "Home"
 msgstr "Page d'accueil"
 
-#: src/MainWindow.vala:175 src/MainWindow.vala:321 src/Views/SearchView.vala:54
-#: src/Views/SearchView.vala:75
+#: src/MainWindow.vala:177 src/MainWindow.vala:328 src/Views/SearchView.vala:54
+#: src/Views/SearchView.vala:81
 msgid "Search Apps"
 msgstr "Rechercher des Applications"
 
-#: src/MainWindow.vala:193
+#: src/MainWindow.vala:195
 msgid "Network Is Not Available"
 msgstr "Capture d'écran indisponible"
 
-#: src/MainWindow.vala:194
+#: src/MainWindow.vala:196
 msgid "Connect to the Internet to install or update apps."
 msgstr ""
 "Connectez-vous à Internet pour installer ou mettre à jour des applications."
 
-#: src/MainWindow.vala:197
+#: src/MainWindow.vala:199
 msgid "Network Settings…"
 msgstr "Paramètres du réseau…"
 
@@ -220,36 +225,36 @@ msgstr ""
 msgid "%s (local)"
 msgstr ""
 
-#: src/Core/Client.vala:454
+#: src/Core/Client.vala:466
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Core/Client.vala:455
+#: src/Core/Client.vala:467
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Core/Client.vala:483
+#: src/Core/Client.vala:495
 #, c-format
 msgid "Version: %s"
 msgstr ""
 
-#: src/Core/Client.vala:492
+#: src/Core/Client.vala:504
 msgid "No components with updates"
 msgstr ""
 
-#: src/Core/Client.vala:496
+#: src/Core/Client.vala:508
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Core/Client.vala:498
+#: src/Core/Client.vala:510
 #, c-format
 msgid "%s:"
 msgstr ""
@@ -650,7 +655,7 @@ msgid "Twitter"
 msgstr ""
 
 #: src/Widgets/SharePopover.vala:51
-msgid "reddit"
+msgid "Reddit"
 msgstr ""
 
 #: src/Widgets/SharePopover.vala:55

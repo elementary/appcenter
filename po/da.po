@@ -1,63 +1,69 @@
+# Kaj Printz Madsen <kajprintz@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-07 12:27-0700\n"
-"PO-Revision-Date: 2018-05-30 16:06+0000\n"
+"POT-Creation-Date: 2018-06-27 08:32-0700\n"
+"PO-Revision-Date: 2018-06-28 00:09+0000\n"
 "Last-Translator: Kaj Printz Madsen <kajprintz@gmail.com>\n"
-"Language-Team: Danish "
-"<https://weblate.elementary.io/projects/appcenter/appcenter/da/>\n"
+"Language-Team: Danish <https://weblate.elementary.io/projects/appcenter/"
+"appcenter/da/>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #: src/Application.vala:38
 msgid "AppCenter"
 msgstr "AppCenter"
 
-#: src/Application.vala:115
+#: src/Application.vala:106
+#, c-format
+msgid "Could not parse mimetype %s"
+msgstr "Kunne ikke tolke mimetypen %s"
+
+#: src/Application.vala:126
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Det angivne link '%s' kunne ikke findes, søger i stedet for"
 
-#: src/Application.vala:249
+#: src/Application.vala:260
 msgid "Application installed"
 msgstr "Applikationen er installeret"
 
-#: src/Application.vala:250
+#: src/Application.vala:261
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s blev succesfuldt installeret"
 
-#: src/Application.vala:262
+#: src/Application.vala:273
 #, c-format
 msgid "There Was An Error Installing %s."
 msgstr "Der Opstod Én Fejl ved Installation af %s."
 
-#: src/MainWindow.vala:147 src/Views/Homepage.vala:253
+#: src/MainWindow.vala:149 src/Views/Homepage.vala:253
 #: src/Views/Homepage.vala:262 src/Views/Homepage.vala:267
 #: src/Views/Homepage.vala:278
 msgid "Home"
 msgstr "Hjem"
 
-#: src/MainWindow.vala:175 src/MainWindow.vala:321 src/Views/SearchView.vala:54
-#: src/Views/SearchView.vala:75
+#: src/MainWindow.vala:177 src/MainWindow.vala:328 src/Views/SearchView.vala:54
+#: src/Views/SearchView.vala:81
 msgid "Search Apps"
 msgstr "Søg Apps"
 
-#: src/MainWindow.vala:193
+#: src/MainWindow.vala:195
 msgid "Network Is Not Available"
 msgstr "Netværk er Ikke Tilgængeligt"
 
-#: src/MainWindow.vala:194
+#: src/MainWindow.vala:196
 msgid "Connect to the Internet to install or update apps."
 msgstr "Forbind til internettet for at installere eller opdatere apps."
 
-#: src/MainWindow.vala:197
+#: src/MainWindow.vala:199
 msgid "Network Settings…"
 msgstr "Netværksindstillinger…"
 
@@ -218,36 +224,36 @@ msgstr "opdateringer til systemkomponenter"
 msgid "%s (local)"
 msgstr "%s (lokalt)"
 
-#: src/Core/Client.vala:454
+#: src/Core/Client.vala:466
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Opdatering tilgængelig"
 msgstr[1] "Opdateringer tilgængelige"
 
-#: src/Core/Client.vala:455
+#: src/Core/Client.vala:467
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "%u opdatering tilgængelig til dit system"
 msgstr[1] "%u opdateringer tilgængelige til dit system"
 
-#: src/Core/Client.vala:483
+#: src/Core/Client.vala:495
 #, c-format
 msgid "Version: %s"
 msgstr "Version: %s"
 
-#: src/Core/Client.vala:492
+#: src/Core/Client.vala:504
 msgid "No components with updates"
 msgstr "Ingen komponenter med updateringer"
 
-#: src/Core/Client.vala:496
+#: src/Core/Client.vala:508
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "%u komponent med updateringer"
 msgstr[1] "%u komponenter med updateringer"
 
-#: src/Core/Client.vala:498
+#: src/Core/Client.vala:510
 #, c-format
 msgid "%s:"
 msgstr "%s:"
@@ -670,8 +676,8 @@ msgid "Twitter"
 msgstr "Twitter"
 
 #: src/Widgets/SharePopover.vala:51
-msgid "reddit"
-msgstr "reddit"
+msgid "Reddit"
+msgstr "Reddit"
 
 #: src/Widgets/SharePopover.vala:55
 msgid "Tumblr"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-07 12:27-0700\n"
+"POT-Creation-Date: 2018-06-27 08:32-0700\n"
 "PO-Revision-Date: 2018-02-24 11:21+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://weblate.elementary.io/projects/"
@@ -19,45 +19,50 @@ msgstr ""
 msgid "AppCenter"
 msgstr "AppCenter"
 
-#: src/Application.vala:115
+#: src/Application.vala:106
+#, c-format
+msgid "Could not parse mimetype %s"
+msgstr ""
+
+#: src/Application.vala:126
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "找不到「%s」，而在尋找中"
 
-#: src/Application.vala:249
+#: src/Application.vala:260
 msgid "Application installed"
 msgstr "應用程式已安裝"
 
-#: src/Application.vala:250
+#: src/Application.vala:261
 #, fuzzy, c-format
 msgid "%s has been successfully installed"
 msgstr "已成功安裝 ％s"
 
-#: src/Application.vala:262
+#: src/Application.vala:273
 #, c-format
 msgid "There Was An Error Installing %s."
 msgstr "安裝 %s 時發生錯誤。"
 
-#: src/MainWindow.vala:147 src/Views/Homepage.vala:253
+#: src/MainWindow.vala:149 src/Views/Homepage.vala:253
 #: src/Views/Homepage.vala:262 src/Views/Homepage.vala:267
 #: src/Views/Homepage.vala:278
 msgid "Home"
 msgstr "大廳"
 
-#: src/MainWindow.vala:175 src/MainWindow.vala:321 src/Views/SearchView.vala:54
-#: src/Views/SearchView.vala:75
+#: src/MainWindow.vala:177 src/MainWindow.vala:328 src/Views/SearchView.vala:54
+#: src/Views/SearchView.vala:81
 msgid "Search Apps"
 msgstr "搜尋 App"
 
-#: src/MainWindow.vala:193
+#: src/MainWindow.vala:195
 msgid "Network Is Not Available"
 msgstr "網路無法使用"
 
-#: src/MainWindow.vala:194
+#: src/MainWindow.vala:196
 msgid "Connect to the Internet to install or update apps."
 msgstr "請連接至網際網路來安裝或更新程式。"
 
-#: src/MainWindow.vala:197
+#: src/MainWindow.vala:199
 msgid "Network Settings…"
 msgstr "網路設定值…"
 
@@ -218,33 +223,33 @@ msgstr "系統組件的更新"
 msgid "%s (local)"
 msgstr "%s (本地)"
 
-#: src/Core/Client.vala:454
+#: src/Core/Client.vala:466
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "有更新"
 
-#: src/Core/Client.vala:455
+#: src/Core/Client.vala:467
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "您的系統有 %u 項更新可套用"
 
-#: src/Core/Client.vala:483
+#: src/Core/Client.vala:495
 #, c-format
 msgid "Version: %s"
 msgstr "版本：%s"
 
-#: src/Core/Client.vala:492
+#: src/Core/Client.vala:504
 msgid "No components with updates"
 msgstr "沒有組件需要更新"
 
-#: src/Core/Client.vala:496
+#: src/Core/Client.vala:508
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "%u 個組件需要更新"
 
-#: src/Core/Client.vala:498
+#: src/Core/Client.vala:510
 #, c-format
 msgid "%s:"
 msgstr "%s："
@@ -644,7 +649,8 @@ msgid "Twitter"
 msgstr "Twitter"
 
 #: src/Widgets/SharePopover.vala:51
-msgid "reddit"
+#, fuzzy
+msgid "Reddit"
 msgstr "reddit"
 
 #: src/Widgets/SharePopover.vala:55
