@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-27 08:32-0700\n"
-"PO-Revision-Date: 2018-06-29 00:04+0000\n"
+"PO-Revision-Date: 2018-07-01 00:01+0000\n"
 "Last-Translator: Piotr Strebski <strebski@gmail.com>\n"
 "Language-Team: Polish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/pl/>\n"
@@ -24,7 +24,7 @@ msgstr "Centrum programów"
 #: src/Application.vala:106
 #, c-format
 msgid "Could not parse mimetype %s"
-msgstr "Nie można przetworzyć rodzaju mime %s"
+msgstr "Nie można przetworzyć typu mime %s"
 
 #: src/Application.vala:126
 #, c-format
