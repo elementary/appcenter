@@ -1,9 +1,10 @@
+# Kirill Romanov <djaler1@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-27 08:32-0700\n"
-"PO-Revision-Date: 2018-05-30 15:57+0000\n"
+"PO-Revision-Date: 2018-07-08 14:46+0000\n"
 "Last-Translator: Kirill Romanov <djaler1@gmail.com>\n"
 "Language-Team: Russian <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/ru/>\n"
@@ -11,9 +12,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.18\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
 #: src/Application.vala:38
@@ -23,7 +24,7 @@ msgstr "AppCenter"
 #: src/Application.vala:106
 #, c-format
 msgid "Could not parse mimetype %s"
-msgstr ""
+msgstr "Не удалось распознать mime-тип %s"
 
 #: src/Application.vala:126
 #, c-format
@@ -682,7 +683,6 @@ msgid "Twitter"
 msgstr "Twitter"
 
 #: src/Widgets/SharePopover.vala:51
-#, fuzzy
 msgid "Reddit"
 msgstr "Reddit"
 
