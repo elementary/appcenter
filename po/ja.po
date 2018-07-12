@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-27 08:32-0700\n"
-"PO-Revision-Date: 2018-06-27 15:37+0000\n"
+"PO-Revision-Date: 2018-07-13 00:03+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/ja/>\n"
@@ -520,7 +520,7 @@ msgstr "リンクをクリップボードにコピーしました"
 #: src/Views/AppInfoView.vala:332
 #, c-format
 msgid "Check out %s on AppCenter:"
-msgstr "AppCenter で %s を確認する:"
+msgstr "AppCenter で %s を確認:"
 
 #: src/Views/AppInfoView.vala:339
 msgid "Share"
