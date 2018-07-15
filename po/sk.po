@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 08:32-0700\n"
+"POT-Creation-Date: 2018-07-15 15:47+0900\n"
 "PO-Revision-Date: 2018-06-04 08:07+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Slovak <https://weblate.elementary.io/projects/appcenter/"
@@ -15,6 +15,7 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
+#. Add "AppCenter" to the translation catalog
 #: src/Application.vala:38
 msgid "AppCenter"
 msgstr "AppCentrum"
@@ -48,6 +49,12 @@ msgstr "Pri inštalácii balíka %s sa vyskytla chyba."
 #: src/Views/Homepage.vala:278
 msgid "Home"
 msgstr "Úvodná stránka"
+
+#: src/MainWindow.vala:150 src/Views/InstalledView.vala:29
+#: src/Views/InstalledView.vala:49
+msgctxt "view"
+msgid "Installed"
+msgstr "Nainštalované"
 
 #: src/MainWindow.vala:177 src/MainWindow.vala:328 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:81
@@ -328,6 +335,7 @@ msgstr ""
 "Vaša e-mailová adresa sa použije na odoslanie potvrdenia. Neukladá sa a "
 "nebude použitá na prihlásenie do odberu informačných e-mailov."
 
+#. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:112
 msgid "MM / YY"
 msgstr "MM / RR"
@@ -545,6 +553,7 @@ msgstr "Na dokončenie inštalácie aktualizácií je potrebný reštart"
 msgid "Restart Now"
 msgstr "Reštartovať teraz"
 
+#. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
 #: src/Views/AppListUpdateView.vala:162
 msgid "Update All"
 msgstr "Aktualizovať všetko"
@@ -570,6 +579,12 @@ msgstr "Kategórie"
 #, c-format
 msgid "Search %s"
 msgstr "Prehľadávať %s"
+
+#. / TRANSLATORS: the name of the Search view
+#: src/Views/SearchView.vala:39
+msgctxt "view"
+msgid "Search"
+msgstr "Hľadať"
 
 #: src/Widgets/AbstractAppList.vala:36
 msgid "No Results"
@@ -644,11 +659,13 @@ msgstr "Univerzálny prístup"
 msgid "Free"
 msgstr "Zadarmo"
 
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:127
 #, c-format
 msgid "$%d.00"
 msgstr "$%d.00"
 
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:130
 #, c-format
 msgid "$%d"
@@ -736,14 +753,6 @@ msgstr "Otvoriť"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:235
 msgid "Update"
 msgstr "Aktualizácie"
-
-#~ msgctxt "view"
-#~ msgid "Installed"
-#~ msgstr "Nainštalované"
-
-#~ msgctxt "view"
-#~ msgid "Search"
-#~ msgstr "Hľadať"
 
 #~ msgctxt "view"
 #~ msgid "Updates"
