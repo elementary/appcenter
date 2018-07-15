@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 08:32-0700\n"
+"POT-Creation-Date: 2018-07-15 15:47+0900\n"
 "PO-Revision-Date: 2016-08-29 23:35+0000\n"
 "Last-Translator: Indrit Bashkimi <indrit.bashkimi@gmail.com>\n"
 "Language-Team: sq\n"
@@ -15,6 +15,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:24+0000\n"
 "X-Generator: Launchpad (build 18331)\n"
 
+#. Add "AppCenter" to the translation catalog
 #: src/Application.vala:38
 msgid "AppCenter"
 msgstr ""
@@ -49,6 +50,12 @@ msgstr ""
 #, fuzzy
 msgid "Home"
 msgstr "Faqja kryesore"
+
+#: src/MainWindow.vala:150 src/Views/InstalledView.vala:29
+#: src/Views/InstalledView.vala:49
+msgctxt "view"
+msgid "Installed"
+msgstr "Instaluar"
 
 #: src/MainWindow.vala:177 src/MainWindow.vala:328 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:81
@@ -320,6 +327,7 @@ msgid ""
 "will not be subscribed to a mailing list."
 msgstr ""
 
+#. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:112
 msgid "MM / YY"
 msgstr ""
@@ -520,6 +528,7 @@ msgstr ""
 msgid "Restart Now"
 msgstr ""
 
+#. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
 #: src/Views/AppListUpdateView.vala:162
 msgid "Update All"
 msgstr "Përditësoji të gjithë"
@@ -544,6 +553,12 @@ msgstr "Kategoritë"
 #, c-format
 msgid "Search %s"
 msgstr ""
+
+#. / TRANSLATORS: the name of the Search view
+#: src/Views/SearchView.vala:39
+msgctxt "view"
+msgid "Search"
+msgstr "Kërko"
 
 #: src/Widgets/AbstractAppList.vala:36
 msgid "No Results"
@@ -618,11 +633,13 @@ msgstr ""
 msgid "Free"
 msgstr ""
 
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:127
 #, c-format
 msgid "$%d.00"
 msgstr ""
 
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:130
 #, c-format
 msgid "$%d"
@@ -705,14 +722,6 @@ msgstr ""
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:235
 msgid "Update"
 msgstr "Përditëso"
-
-#~ msgctxt "view"
-#~ msgid "Installed"
-#~ msgstr "Instaluar"
-
-#~ msgctxt "view"
-#~ msgid "Search"
-#~ msgstr "Kërko"
 
 #~ msgctxt "view"
 #~ msgid "Updates"

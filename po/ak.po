@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Akan (AppCenter)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 08:32-0700\n"
+"POT-Creation-Date: 2018-07-15 15:47+0900\n"
 "PO-Revision-Date: 2017-08-10 14:46+0000\n"
 "Last-Translator: Lawrence Aberba <karabutaworld@gmail.com>\n"
 "Language-Team: Akan <https://weblate.elementary.io/projects/appcenter/"
@@ -16,6 +16,7 @@ msgstr ""
 "X-Generator: Weblate 2.15\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:24+0000\n"
 
+#. Add "AppCenter" to the translation catalog
 #: src/Application.vala:38
 msgid "AppCenter"
 msgstr "Dwumadie Twebea"
@@ -49,6 +50,13 @@ msgstr "Biribi sii ma antumi amfa %s angu so"
 #: src/Views/Homepage.vala:278
 msgid "Home"
 msgstr "Ahyɛase"
+
+#: src/MainWindow.vala:150 src/Views/InstalledView.vala:29
+#: src/Views/InstalledView.vala:49
+#, fuzzy
+msgctxt "view"
+msgid "Installed"
+msgstr "Twe gu so"
 
 #: src/MainWindow.vala:177 src/MainWindow.vala:328 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:81
@@ -325,6 +333,7 @@ msgstr ""
 "Yɛbɛmena wo ne tua ho adanse krataa afa wo email no so. Yɛrenkora so sɛ yɛde "
 "nsɛm bɛfa so amena wo akyiri enti mma ɛnha wo."
 
+#. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:112
 msgid "MM / YY"
 msgstr "BB / AA"
@@ -534,6 +543,7 @@ msgstr "Ɛhia sɛ wodum sɔ ansa atumi de dwumadie ahoroɔ no agu so awie"
 msgid "Restart Now"
 msgstr "Dum Sɔ Siesie Ara"
 
+#. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
 #: src/Views/AppListUpdateView.vala:162
 msgid "Update All"
 msgstr "Twɛ Foforɔ No Nyinaa"
@@ -558,6 +568,12 @@ msgstr "Akuo Ahoroɔ"
 #, c-format
 msgid "Search %s"
 msgstr "Hwehwɛ %s"
+
+#. / TRANSLATORS: the name of the Search view
+#: src/Views/SearchView.vala:39
+msgctxt "view"
+msgid "Search"
+msgstr "Hwehwɛ"
 
 #: src/Widgets/AbstractAppList.vala:36
 msgid "No Results"
@@ -632,11 +648,13 @@ msgstr "Universal Access"
 msgid "Free"
 msgstr "Kwa"
 
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:127
 #, c-format
 msgid "$%d.00"
 msgstr "$%d.00"
 
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:130
 #, c-format
 msgid "$%d"
@@ -719,15 +737,6 @@ msgstr "Bie"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:235
 msgid "Update"
 msgstr "Twe nea aba"
-
-#, fuzzy
-#~ msgctxt "view"
-#~ msgid "Installed"
-#~ msgstr "Twe gu so"
-
-#~ msgctxt "view"
-#~ msgid "Search"
-#~ msgstr "Hwehwɛ"
 
 #~ msgctxt "view"
 #~ msgid "Updates"

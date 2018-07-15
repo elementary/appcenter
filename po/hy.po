@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 08:32-0700\n"
+"POT-Creation-Date: 2018-07-15 15:47+0900\n"
 "PO-Revision-Date: 2016-07-02 19:40+0000\n"
 "Last-Translator: Arsen Khachatryan <arsench2000@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,6 +14,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:24+0000\n"
 "X-Generator: Launchpad (build 18331)\n"
 
+#. Add "AppCenter" to the translation catalog
 #: src/Application.vala:38
 msgid "AppCenter"
 msgstr "Ծրագրային կենտրոն"
@@ -48,6 +49,12 @@ msgstr ""
 #, fuzzy
 msgid "Home"
 msgstr "Գլխավոր"
+
+#: src/MainWindow.vala:150 src/Views/InstalledView.vala:29
+#: src/Views/InstalledView.vala:49
+msgctxt "view"
+msgid "Installed"
+msgstr "Տեղադրված է"
 
 #: src/MainWindow.vala:177 src/MainWindow.vala:328 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:81
@@ -318,6 +325,7 @@ msgid ""
 "will not be subscribed to a mailing list."
 msgstr ""
 
+#. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:112
 msgid "MM / YY"
 msgstr ""
@@ -518,6 +526,7 @@ msgstr ""
 msgid "Restart Now"
 msgstr ""
 
+#. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
 #: src/Views/AppListUpdateView.vala:162
 msgid "Update All"
 msgstr "Թարմացնել բոլորը"
@@ -542,6 +551,12 @@ msgstr "Կատեգորիաներ"
 #, c-format
 msgid "Search %s"
 msgstr ""
+
+#. / TRANSLATORS: the name of the Search view
+#: src/Views/SearchView.vala:39
+msgctxt "view"
+msgid "Search"
+msgstr "Որոնում"
 
 #: src/Widgets/AbstractAppList.vala:36
 msgid "No Results"
@@ -616,11 +631,13 @@ msgstr ""
 msgid "Free"
 msgstr ""
 
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:127
 #, c-format
 msgid "$%d.00"
 msgstr ""
 
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:130
 #, c-format
 msgid "$%d"
@@ -701,14 +718,6 @@ msgstr ""
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:235
 msgid "Update"
 msgstr "Թարմացնել"
-
-#~ msgctxt "view"
-#~ msgid "Installed"
-#~ msgstr "Տեղադրված է"
-
-#~ msgctxt "view"
-#~ msgid "Search"
-#~ msgstr "Որոնում"
 
 #~ msgid "App Center"
 #~ msgstr "Ծրագրային կենտրոն"

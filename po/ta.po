@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 08:32-0700\n"
+"POT-Creation-Date: 2018-07-15 15:47+0900\n"
 "PO-Revision-Date: 2017-06-16 17:37+0000\n"
 "Last-Translator: Rajeev Kumar <irajeevankumar@gmail.com>\n"
 "Language-Team: Tamil <https://l10n.elementary.io/projects/appcenter/"
@@ -15,6 +15,7 @@ msgstr ""
 "X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
+#. Add "AppCenter" to the translation catalog
 #: src/Application.vala:38
 msgid "AppCenter"
 msgstr "மென்பொருள்-மையம்"
@@ -49,6 +50,13 @@ msgstr "%s நிறுவுவதில்  ஒரு  பிழை"
 #: src/Views/Homepage.vala:278
 msgid "Home"
 msgstr "முதன்மை பக்கம்"
+
+#: src/MainWindow.vala:150 src/Views/InstalledView.vala:29
+#: src/Views/InstalledView.vala:49
+#, fuzzy
+msgctxt "view"
+msgid "Installed"
+msgstr "நிறுவுக"
 
 #: src/MainWindow.vala:177 src/MainWindow.vala:328 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:81
@@ -325,6 +333,7 @@ msgstr ""
 "ரசீது அனுப்ப உங்கள் மின்னஞ்சல் முகவரி பயன்படுத்தப்படுகிறது. இது ஒருபோதும் "
 "சேமிக்கப்படவில்லை மற்றும் நீங்கள் அஞ்சல் பட்டியலில் இணைக்கப்படவில்லை."
 
+#. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:112
 msgid "MM / YY"
 msgstr "மாதம் / வருடம்"
@@ -533,6 +542,7 @@ msgstr "புதுப்பிப்புகளை நிறுவுவத�
 msgid "Restart Now"
 msgstr "இப்போது மறுதொடக்கம் செய்க"
 
+#. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
 #: src/Views/AppListUpdateView.vala:162
 msgid "Update All"
 msgstr "அனைத்தையும் புதுப்பிக்கவும்"
@@ -557,6 +567,12 @@ msgstr "பிரிவுகள்"
 #, c-format
 msgid "Search %s"
 msgstr "தேடுக %s"
+
+#. / TRANSLATORS: the name of the Search view
+#: src/Views/SearchView.vala:39
+msgctxt "view"
+msgid "Search"
+msgstr "தேடுதல்"
 
 #: src/Widgets/AbstractAppList.vala:36
 msgid "No Results"
@@ -631,11 +647,13 @@ msgstr "உலகளாவிய அணுகல்"
 msgid "Free"
 msgstr "இலவசம்"
 
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:127
 #, c-format
 msgid "$%d.00"
 msgstr ""
 
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:130
 #, c-format
 msgid "$%d"
@@ -718,15 +736,6 @@ msgstr "திற"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:235
 msgid "Update"
 msgstr "புதுப்பிக்கவும்"
-
-#, fuzzy
-#~ msgctxt "view"
-#~ msgid "Installed"
-#~ msgstr "நிறுவுக"
-
-#~ msgctxt "view"
-#~ msgid "Search"
-#~ msgstr "தேடுதல்"
 
 #~ msgctxt "view"
 #~ msgid "Updates"
