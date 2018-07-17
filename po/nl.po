@@ -1,9 +1,10 @@
+# Dieter Debast <dieter_debast@hotmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-15 15:47+0900\n"
-"PO-Revision-Date: 2018-05-18 00:06+0000\n"
+"PO-Revision-Date: 2018-07-18 00:05+0000\n"
 "Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
 "Language-Team: Dutch <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/nl/>\n"
@@ -12,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -54,10 +55,9 @@ msgstr "Startpagina"
 
 #: src/MainWindow.vala:150 src/Views/InstalledView.vala:29
 #: src/Views/InstalledView.vala:49
-#, fuzzy
 msgctxt "view"
 msgid "Installed"
-msgstr "Installeer"
+msgstr "Geïnstalleerd"
 
 #: src/MainWindow.vala:177 src/MainWindow.vala:328 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:81
@@ -269,9 +269,9 @@ msgid "%s:"
 msgstr ""
 
 #: src/Core/Package.vala:192
-#, fuzzy, c-format
+#, c-format
 msgid "%s Developers"
-msgstr "De %s ontwikkelaars"
+msgstr "Ontwikkelaars van %s"
 
 #: src/Core/UpdateManager.vala:81
 msgid "Restart Required"
