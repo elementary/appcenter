@@ -1,11 +1,12 @@
 # Nils K <slx@nilsk.net>, 2018.
+# Allan Nordhøy <epost@anotheragency.no>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-15 15:47+0900\n"
-"PO-Revision-Date: 2018-07-19 20:15+0000\n"
-"Last-Translator: Nils K <slx@nilsk.net>\n"
+"PO-Revision-Date: 2018-07-20 00:06+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://weblate.elementary.io/projects/"
 "appcenter/appcenter/nb/>\n"
 "Language: nb\n"
@@ -433,7 +434,7 @@ msgstr "Beløpet er feil. Prøv igjen med riktig beløp."
 
 #: src/Dialogs/StripeDialog.vala:565
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr "CVC-nummeret er ikke rett. Prøv igjen med riktig CVC."
+msgstr "PIN-nummeret er ikke rett. Prøv igjen med riktig PIN."
 
 #: src/Dialogs/StripeDialog.vala:567
 msgid ""
