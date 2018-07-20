@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-27 08:32-0700\n"
-"PO-Revision-Date: 2018-05-30 04:13+0000\n"
-"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"PO-Revision-Date: 2018-07-20 00:07+0000\n"
+"Last-Translator: Nils K <slx@nilsk.net>\n"
 "Language-Team: Norwegian Bokmål <https://weblate.elementary.io/projects/"
 "appcenter/extra/nb/>\n"
 "Language: nb\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
@@ -22,7 +22,7 @@ msgstr "AppCenter"
 #: data/io.elementary.appcenter.appdata.xml.in:9
 #: data/io.elementary.appcenter.desktop.in.in:4
 msgid "Browse and manage apps"
-msgstr "Bla gjennom og administrere applikasjoner"
+msgstr "Bla gjennom og administrer apper"
 
 #: data/io.elementary.appcenter.appdata.xml.in:11
 msgid ""
@@ -30,9 +30,9 @@ msgid ""
 "search and discover new apps. AppCenter is also used for updating your "
 "system to the latest and greatest version for new features and fixes."
 msgstr ""
-"En program-butikk for freelance friprogutviklere. Utforsk etter kategori "
-"eller søk og finn nye programmer. AppCenter brukes også for oppdatering av "
-"systemet ditt til siste og beste versjon for nye funksjoner og feilrettinger."
+"En appbutikk for uavhengige friprogutviklere. Utforsk etter kategori eller "
+"søk og oppdag nye apper. AppCenter brukes også for oppdatering av systemet "
+"ditt til siste og beste versjon for nye funksjoner og feilrettinger."
 
 #: data/io.elementary.appcenter.appdata.xml.in:191
 msgid "elementary LLC."
@@ -49,8 +49,7 @@ msgstr "@DESKTOP_ICON@"
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
 msgstr ""
-"installer;avinstaller;fjern;mappe;butikk;programmer;oppdateringer;"
-"programvare;"
+"installer;avinstaller;fjern;mappe;butikk;apper;oppdateringer;programvare;"
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
