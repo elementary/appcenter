@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-27 08:32-0700\n"
-"PO-Revision-Date: 2018-07-20 00:07+0000\n"
+"PO-Revision-Date: 2018-07-21 00:06+0000\n"
 "Last-Translator: Nils K <slx@nilsk.net>\n"
 "Language-Team: Norwegian Bokmål <https://weblate.elementary.io/projects/"
 "appcenter/extra/nb/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
 msgid "AppCenter"
-msgstr "AppCenter"
+msgstr "AppSenter"
 
 #: data/io.elementary.appcenter.appdata.xml.in:9
 #: data/io.elementary.appcenter.desktop.in.in:4
@@ -31,7 +31,7 @@ msgid ""
 "system to the latest and greatest version for new features and fixes."
 msgstr ""
 "En appbutikk for uavhengige friprogutviklere. Utforsk etter kategori eller "
-"søk og oppdag nye apper. AppCenter brukes også for oppdatering av systemet "
+"søk og oppdag nye apper. AppSenter brukes også for oppdatering av systemet "
 "ditt til siste og beste versjon for nye funksjoner og feilrettinger."
 
 #: data/io.elementary.appcenter.appdata.xml.in:191
