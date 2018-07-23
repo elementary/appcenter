@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-15 15:47+0900\n"
-"PO-Revision-Date: 2018-07-22 00:03+0000\n"
+"PO-Revision-Date: 2018-07-24 00:05+0000\n"
 "Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
 "Language-Team: Czech <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/cs/>\n"
@@ -60,7 +60,7 @@ msgstr "Nainstalované"
 #: src/MainWindow.vala:177 src/MainWindow.vala:328 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:81
 msgid "Search Apps"
-msgstr "Vyhledat aplikace"
+msgstr "Hledat aplikace"
 
 #: src/MainWindow.vala:195
 msgid "Network Is Not Available"
