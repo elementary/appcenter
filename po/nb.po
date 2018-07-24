@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-15 15:47+0900\n"
-"PO-Revision-Date: 2018-07-21 00:06+0000\n"
+"PO-Revision-Date: 2018-07-25 00:00+0000\n"
 "Last-Translator: Nils K <slx@nilsk.net>\n"
 "Language-Team: Norwegian Bokmål <https://weblate.elementary.io/projects/"
 "appcenter/appcenter/nb/>\n"
@@ -81,7 +81,7 @@ msgstr "Starter"
 
 #: src/Core/ChangeInformation.vala:56
 msgid "Waiting"
-msgstr "VEnter"
+msgstr "Venter"
 
 #: src/Core/ChangeInformation.vala:58
 msgid "Running"
