@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-15 15:47+0900\n"
-"PO-Revision-Date: 2018-06-27 22:00+0000\n"
+"PO-Revision-Date: 2018-07-27 00:09+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/ko/>\n"
@@ -55,7 +55,7 @@ msgstr "홈"
 #: src/Views/InstalledView.vala:49
 msgctxt "view"
 msgid "Installed"
-msgstr "설치됨"
+msgstr "설치함"
 
 #: src/MainWindow.vala:177 src/MainWindow.vala:328 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:81
@@ -549,7 +549,7 @@ msgstr "모두 업데이트하기"
 
 #: src/Views/AppListView.vala:119
 msgid "Non-Curated Apps"
-msgstr "분류하지 않은 앱"
+msgstr "값을 매기지 않는 앱"
 
 #: src/Views/Homepage.vala:65
 msgid "Recently Updated"
