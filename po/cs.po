@@ -1,9 +1,10 @@
+# Jan Marek <janmarek28@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 08:32-0700\n"
-"PO-Revision-Date: 2018-06-01 00:05+0000\n"
+"POT-Creation-Date: 2018-07-15 15:47+0900\n"
+"PO-Revision-Date: 2018-07-24 00:05+0000\n"
 "Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
 "Language-Team: Czech <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/cs/>\n"
@@ -12,9 +13,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
+#. Add "AppCenter" to the translation catalog
 #: src/Application.vala:38
 msgid "AppCenter"
 msgstr "AppCentrum"
@@ -22,7 +24,7 @@ msgstr "AppCentrum"
 #: src/Application.vala:106
 #, c-format
 msgid "Could not parse mimetype %s"
-msgstr ""
+msgstr "Nelze rozpoznat mimetype %s"
 
 #: src/Application.vala:126
 #, c-format
@@ -49,10 +51,16 @@ msgstr "Při instalaci %s se vyskytla chyba."
 msgid "Home"
 msgstr "Domů"
 
+#: src/MainWindow.vala:150 src/Views/InstalledView.vala:29
+#: src/Views/InstalledView.vala:49
+msgctxt "view"
+msgid "Installed"
+msgstr "Nainstalované"
+
 #: src/MainWindow.vala:177 src/MainWindow.vala:328 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:81
 msgid "Search Apps"
-msgstr "Vyhledat aplikace"
+msgstr "Hledat aplikace"
 
 #: src/MainWindow.vala:195
 msgid "Network Is Not Available"
@@ -326,6 +334,7 @@ msgstr ""
 "Vaše emailová adresa se používá pro zaslání účtenky. Nikdy nebude trvale "
 "uložena a nebudete zapsán do seznamu pro příjem pošty."
 
+#. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:112
 msgid "MM / YY"
 msgstr "MM / RR"
@@ -542,6 +551,7 @@ msgstr "Pro dokončení instalace aktualizací je vyžadován restart"
 msgid "Restart Now"
 msgstr "Restartovat nyní"
 
+#. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
 #: src/Views/AppListUpdateView.vala:162
 msgid "Update All"
 msgstr "Aktualizovat vše"
@@ -566,6 +576,12 @@ msgstr "Kategorie"
 #, c-format
 msgid "Search %s"
 msgstr "Hledat %s"
+
+#. / TRANSLATORS: the name of the Search view
+#: src/Views/SearchView.vala:39
+msgctxt "view"
+msgid "Search"
+msgstr "Vyhledávání"
 
 #: src/Widgets/AbstractAppList.vala:36
 msgid "No Results"
@@ -640,11 +656,13 @@ msgstr "Univerzální přístup"
 msgid "Free"
 msgstr "Zdarma"
 
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:127
 #, c-format
 msgid "$%d.00"
 msgstr "$%d.00"
 
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:130
 #, c-format
 msgid "$%d"
@@ -676,9 +694,8 @@ msgid "Twitter"
 msgstr "Twitter"
 
 #: src/Widgets/SharePopover.vala:51
-#, fuzzy
 msgid "Reddit"
-msgstr "reddit"
+msgstr "Reddit"
 
 #: src/Widgets/SharePopover.vala:55
 msgid "Tumblr"
@@ -728,14 +745,6 @@ msgstr "Otevřít"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:235
 msgid "Update"
 msgstr "Aktualizovat"
-
-#~ msgctxt "view"
-#~ msgid "Installed"
-#~ msgstr "Nainstalováno"
-
-#~ msgctxt "view"
-#~ msgid "Search"
-#~ msgstr "Vyhledávání"
 
 #~ msgctxt "view"
 #~ msgid "Updates"

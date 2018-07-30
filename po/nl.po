@@ -1,9 +1,10 @@
+# Dieter Debast <dieter_debast@hotmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 08:32-0700\n"
-"PO-Revision-Date: 2018-05-18 00:06+0000\n"
+"POT-Creation-Date: 2018-07-15 15:47+0900\n"
+"PO-Revision-Date: 2018-07-18 00:05+0000\n"
 "Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
 "Language-Team: Dutch <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/nl/>\n"
@@ -12,9 +13,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
+#. Add "AppCenter" to the translation catalog
 #: src/Application.vala:38
 msgid "AppCenter"
 msgstr "AppCenter"
@@ -50,6 +52,12 @@ msgstr "Er is een fout opgetreden bij het installeren van %s."
 #: src/Views/Homepage.vala:278
 msgid "Home"
 msgstr "Startpagina"
+
+#: src/MainWindow.vala:150 src/Views/InstalledView.vala:29
+#: src/Views/InstalledView.vala:49
+msgctxt "view"
+msgid "Installed"
+msgstr "Geïnstalleerd"
 
 #: src/MainWindow.vala:177 src/MainWindow.vala:328 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:81
@@ -261,9 +269,9 @@ msgid "%s:"
 msgstr ""
 
 #: src/Core/Package.vala:192
-#, fuzzy, c-format
+#, c-format
 msgid "%s Developers"
-msgstr "De %s ontwikkelaars"
+msgstr "Ontwikkelaars van %s"
 
 #: src/Core/UpdateManager.vala:81
 msgid "Restart Required"
@@ -328,6 +336,7 @@ msgstr ""
 "Uw e-mailadres wordt gebruikt om een factuur te sturen. Het wordt nooit "
 "opgeslagen en u zal nooit geabonneerd worden op een maillijst."
 
+#. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:112
 msgid "MM / YY"
 msgstr "MM / YY"
@@ -551,6 +560,7 @@ msgstr ""
 msgid "Restart Now"
 msgstr "Start nu opnieuw op"
 
+#. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
 #: src/Views/AppListUpdateView.vala:162
 msgid "Update All"
 msgstr "Alles bijwerken"
@@ -575,6 +585,12 @@ msgstr "Categorieën"
 #, c-format
 msgid "Search %s"
 msgstr "Zoek %s"
+
+#. / TRANSLATORS: the name of the Search view
+#: src/Views/SearchView.vala:39
+msgctxt "view"
+msgid "Search"
+msgstr "Zoeken"
 
 #: src/Widgets/AbstractAppList.vala:36
 msgid "No Results"
@@ -651,11 +667,13 @@ msgstr "Universele toegang"
 msgid "Free"
 msgstr "Gratis"
 
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:127
 #, c-format
 msgid "$%d.00"
 msgstr "$ %d.00"
 
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:130
 #, c-format
 msgid "$%d"
@@ -737,15 +755,6 @@ msgstr "Open"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:235
 msgid "Update"
 msgstr "Bijwerken"
-
-#, fuzzy
-#~ msgctxt "view"
-#~ msgid "Installed"
-#~ msgstr "Installeer"
-
-#~ msgctxt "view"
-#~ msgid "Search"
-#~ msgstr "Zoeken"
 
 #~ msgctxt "view"
 #~ msgid "Updates"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 08:32-0700\n"
+"POT-Creation-Date: 2018-07-15 15:47+0900\n"
 "PO-Revision-Date: 2018-06-12 06:39+0000\n"
 "Last-Translator: Janith Weerasinghe <janithweerasinghe@rocketmail.com>\n"
 "Language-Team: Sinhala <https://weblate.elementary.io/projects/appcenter/"
@@ -15,6 +15,7 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
+#. Add "AppCenter" to the translation catalog
 #: src/Application.vala:38
 msgid "AppCenter"
 msgstr "යෙදවුම් මධ්යස්ථානය"
@@ -48,6 +49,13 @@ msgstr "%s  ස්ථාපිත කිරීමේදී වරදක් ස�
 #: src/Views/Homepage.vala:278
 msgid "Home"
 msgstr "මුල් පිටුව"
+
+#: src/MainWindow.vala:150 src/Views/InstalledView.vala:29
+#: src/Views/InstalledView.vala:49
+#, fuzzy
+msgctxt "view"
+msgid "Installed"
+msgstr "ස්ථාපනය කරන්න"
 
 #: src/MainWindow.vala:177 src/MainWindow.vala:328 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:81
@@ -322,6 +330,7 @@ msgid ""
 "will not be subscribed to a mailing list."
 msgstr ""
 
+#. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:112
 msgid "MM / YY"
 msgstr ""
@@ -522,6 +531,7 @@ msgstr ""
 msgid "Restart Now"
 msgstr ""
 
+#. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
 #: src/Views/AppListUpdateView.vala:162
 msgid "Update All"
 msgstr ""
@@ -546,6 +556,13 @@ msgstr "ප්‍රවර්ග"
 #, c-format
 msgid "Search %s"
 msgstr ""
+
+#. / TRANSLATORS: the name of the Search view
+#: src/Views/SearchView.vala:39
+#, fuzzy
+msgctxt "view"
+msgid "Search"
+msgstr "යෙදවුම් සෙවීම"
 
 #: src/Widgets/AbstractAppList.vala:36
 msgid "No Results"
@@ -620,11 +637,13 @@ msgstr ""
 msgid "Free"
 msgstr ""
 
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:127
 #, c-format
 msgid "$%d.00"
 msgstr ""
 
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:130
 #, c-format
 msgid "$%d"
@@ -706,11 +725,6 @@ msgstr ""
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:235
 msgid "Update"
 msgstr ""
-
-#, fuzzy
-#~ msgctxt "view"
-#~ msgid "Installed"
-#~ msgstr "ස්ථාපනය කරන්න"
 
 #~ msgid "translator-credits"
 #~ msgstr ""

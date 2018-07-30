@@ -87,6 +87,7 @@ namespace AppCenter.Views {
 
             package_name = new Gtk.Label (null);
             package_name.margin_top = 12;
+            package_name.selectable = true;
             package_name.xalign = 0;
             package_name.get_style_context ().add_class (Granite.STYLE_CLASS_H1_LABEL);
             package_name.valign = Gtk.Align.CENTER;
@@ -100,12 +101,14 @@ namespace AppCenter.Views {
             app_version.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
             package_author = new Gtk.Label (null);
+            package_author.selectable = true;
             package_author.xalign = 0;
             package_author.valign = Gtk.Align.START;
             package_author.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
             package_author.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
             package_summary = new Gtk.Label (package.get_summary ());
+            package_summary.selectable = true;
             package_summary.xalign = 0;
             package_summary.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
             package_summary.wrap = true;
@@ -233,6 +236,7 @@ namespace AppCenter.Views {
                 app_download_size_label = new Gtk.Label (null);
                 app_download_size_label.visible = false;
                 app_download_size_label.halign = Gtk.Align.END;
+                app_download_size_label.selectable = true;
 
                 download_button_grid.add (action_stack);
                 download_button_grid.add (app_download_size_label);

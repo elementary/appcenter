@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 08:32-0700\n"
-"PO-Revision-Date: 2018-06-27 22:00+0000\n"
+"POT-Creation-Date: 2018-07-15 15:47+0900\n"
+"PO-Revision-Date: 2018-07-27 00:09+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/ko/>\n"
@@ -16,6 +16,7 @@ msgstr ""
 "X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
+#. Add "AppCenter" to the translation catalog
 #: src/Application.vala:38
 msgid "AppCenter"
 msgstr "앱센터"
@@ -49,6 +50,12 @@ msgstr "%s의 설치 도중에 오류가 생겼습니다."
 #: src/Views/Homepage.vala:278
 msgid "Home"
 msgstr "홈"
+
+#: src/MainWindow.vala:150 src/Views/InstalledView.vala:29
+#: src/Views/InstalledView.vala:49
+msgctxt "view"
+msgid "Installed"
+msgstr "설치함"
 
 #: src/MainWindow.vala:177 src/MainWindow.vala:328 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:81
@@ -323,6 +330,7 @@ msgstr ""
 "이메일 주소는 영수증을 보내는 데 사용됩니다. 저장되지 않으며 메일링 리스트에 "
 "가입되지 않습니다."
 
+#. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:112
 msgid "MM / YY"
 msgstr "MM / YY"
@@ -534,13 +542,14 @@ msgstr "업데이트를 마무리하려면 다시 시작해야 합니다"
 msgid "Restart Now"
 msgstr "지금 다시 시작하기"
 
+#. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
 #: src/Views/AppListUpdateView.vala:162
 msgid "Update All"
 msgstr "모두 업데이트하기"
 
 #: src/Views/AppListView.vala:119
 msgid "Non-Curated Apps"
-msgstr "분류하지 않은 앱"
+msgstr "값을 매기지 않는 앱"
 
 #: src/Views/Homepage.vala:65
 msgid "Recently Updated"
@@ -558,6 +567,12 @@ msgstr "카테고리"
 #, c-format
 msgid "Search %s"
 msgstr "%s 찾기"
+
+#. / TRANSLATORS: the name of the Search view
+#: src/Views/SearchView.vala:39
+msgctxt "view"
+msgid "Search"
+msgstr "검색"
 
 #: src/Widgets/AbstractAppList.vala:36
 msgid "No Results"
@@ -632,11 +647,13 @@ msgstr "편리한 기능"
 msgid "Free"
 msgstr "무료"
 
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:127
 #, c-format
 msgid "$%d.00"
 msgstr "$%d.00"
 
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:130
 #, c-format
 msgid "$%d"
@@ -717,14 +734,6 @@ msgstr "열기"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:235
 msgid "Update"
 msgstr "업데이트"
-
-#~ msgctxt "view"
-#~ msgid "Installed"
-#~ msgstr "설치됨"
-
-#~ msgctxt "view"
-#~ msgid "Search"
-#~ msgstr "검색"
 
 #~ msgctxt "view"
 #~ msgid "Updates"

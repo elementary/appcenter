@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 08:32-0700\n"
-"PO-Revision-Date: 2018-06-27 15:37+0000\n"
+"POT-Creation-Date: 2018-07-15 15:47+0900\n"
+"PO-Revision-Date: 2018-07-16 05:08+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/ja/>\n"
@@ -16,6 +16,7 @@ msgstr ""
 "X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
+#. Add "AppCenter" to the translation catalog
 #: src/Application.vala:38
 msgid "AppCenter"
 msgstr "AppCenter"
@@ -49,6 +50,12 @@ msgstr "%s のインストール中にエラーが発生しました。"
 #: src/Views/Homepage.vala:278
 msgid "Home"
 msgstr "ホーム"
+
+#: src/MainWindow.vala:150 src/Views/InstalledView.vala:29
+#: src/Views/InstalledView.vala:49
+msgctxt "view"
+msgid "Installed"
+msgstr "インストール済み"
 
 #: src/MainWindow.vala:177 src/MainWindow.vala:328 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:81
@@ -327,6 +334,7 @@ msgstr ""
 "メールアドレスは領収書の送信に使用されます。メールアドレスは保存されず、メー"
 "リングリストに追加されることはありません。"
 
+#. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:112
 msgid "MM / YY"
 msgstr "MM / YY"
@@ -520,7 +528,7 @@ msgstr "リンクをクリップボードにコピーしました"
 #: src/Views/AppInfoView.vala:332
 #, c-format
 msgid "Check out %s on AppCenter:"
-msgstr "AppCenter で %s を確認する:"
+msgstr "AppCenter で %s を確認:"
 
 #: src/Views/AppInfoView.vala:339
 msgid "Share"
@@ -542,6 +550,7 @@ msgstr "アップデートのインストールを完了するには再起動が
 msgid "Restart Now"
 msgstr "今すぐ再起動"
 
+#. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
 #: src/Views/AppListUpdateView.vala:162
 msgid "Update All"
 msgstr "すべてアップデート"
@@ -566,6 +575,12 @@ msgstr "カテゴリー"
 #, c-format
 msgid "Search %s"
 msgstr "%s を検索"
+
+#. / TRANSLATORS: the name of the Search view
+#: src/Views/SearchView.vala:39
+msgctxt "view"
+msgid "Search"
+msgstr "検索"
 
 #: src/Widgets/AbstractAppList.vala:36
 msgid "No Results"
@@ -640,11 +655,13 @@ msgstr "ユニバーサルアクセス"
 msgid "Free"
 msgstr "無料"
 
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:127
 #, c-format
 msgid "$%d.00"
 msgstr "%d.00 ドル"
 
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:130
 #, c-format
 msgid "$%d"
@@ -725,15 +742,6 @@ msgstr "開く"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:235
 msgid "Update"
 msgstr "アップデート"
-
-#, fuzzy
-#~ msgctxt "view"
-#~ msgid "Installed"
-#~ msgstr "インストール"
-
-#~ msgctxt "view"
-#~ msgid "Search"
-#~ msgstr "検索"
 
 #~ msgctxt "view"
 #~ msgid "Updates"

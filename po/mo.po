@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 08:32-0700\n"
+"POT-Creation-Date: 2018-07-15 15:47+0900\n"
 "PO-Revision-Date: 2018-05-27 00:03+0000\n"
 "Last-Translator: Romanic Ion Nicușor <contact.romanic@gmail.com>\n"
 "Language-Team: Moldovan <https://weblate.elementary.io/projects/appcenter/"
@@ -13,6 +13,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.18\n"
 
+#. Add "AppCenter" to the translation catalog
 #: src/Application.vala:38
 msgid "AppCenter"
 msgstr "Centru aplicații"
@@ -46,6 +47,13 @@ msgstr "A apărut o eroare la instalarea%s."
 #: src/Views/Homepage.vala:278
 msgid "Home"
 msgstr "Acasă"
+
+#: src/MainWindow.vala:150 src/Views/InstalledView.vala:29
+#: src/Views/InstalledView.vala:49
+#, fuzzy
+msgctxt "view"
+msgid "Installed"
+msgstr "Instalare"
 
 #: src/MainWindow.vala:177 src/MainWindow.vala:328 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:81
@@ -336,6 +344,7 @@ msgstr ""
 "Adresa dvs. de e-mail este utilizată pentru a trimite o chitanță. Nu va fii "
 "stocată și nu veți fi abonat la o listă de corespondență."
 
+#. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:112
 msgid "MM / YY"
 msgstr "LUNĂ / AN"
@@ -553,6 +562,7 @@ msgstr "Este necesară o repornire pentru a finaliza instalarea actualizărilor"
 msgid "Restart Now"
 msgstr "Reporniți acum"
 
+#. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
 #: src/Views/AppListUpdateView.vala:162
 msgid "Update All"
 msgstr "Actualizați-le pe toate"
@@ -576,6 +586,13 @@ msgstr "Categorii"
 #: src/Views/Homepage.vala:267 src/Views/Homepage.vala:278
 #, c-format
 msgid "Search %s"
+msgstr "Căutare %s"
+
+#. / TRANSLATORS: the name of the Search view
+#: src/Views/SearchView.vala:39
+#, fuzzy
+msgctxt "view"
+msgid "Search"
 msgstr "Căutare %s"
 
 #: src/Widgets/AbstractAppList.vala:36
@@ -653,11 +670,13 @@ msgstr "Acces universal"
 msgid "Free"
 msgstr "Gratuit"
 
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:127
 #, c-format
 msgid "$%d.00"
 msgstr "$ %d. 00"
 
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:130
 #, c-format
 msgid "$%d"

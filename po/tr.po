@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 08:32-0700\n"
+"POT-Creation-Date: 2018-07-15 15:47+0900\n"
 "PO-Revision-Date: 2018-05-27 00:03+0000\n"
 "Last-Translator: İbrahim Ethem Göl <ethem578@gmail.com>\n"
 "Language-Team: Turkish <https://weblate.elementary.io/projects/appcenter/"
@@ -15,6 +15,7 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
+#. Add "AppCenter" to the translation catalog
 #: src/Application.vala:38
 msgid "AppCenter"
 msgstr "Uygulama Merkezi"
@@ -48,6 +49,12 @@ msgstr "%s kurulurken bir hata oluştu."
 #: src/Views/Homepage.vala:278
 msgid "Home"
 msgstr "Ana Sayfa"
+
+#: src/MainWindow.vala:150 src/Views/InstalledView.vala:29
+#: src/Views/InstalledView.vala:49
+msgctxt "view"
+msgid "Installed"
+msgstr "Yüklendi"
 
 #: src/MainWindow.vala:177 src/MainWindow.vala:328 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:81
@@ -326,6 +333,7 @@ msgstr ""
 "E-posta adresiniz makbuz göndermek için kullanılır. Hiçbir zaman saklanmaz "
 "ve bir posta listesine abone olmazsınız."
 
+#. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:112
 msgid "MM / YY"
 msgstr "AA / YY"
@@ -540,6 +548,7 @@ msgstr ""
 msgid "Restart Now"
 msgstr "Şimdi Yeniden Başlat"
 
+#. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
 #: src/Views/AppListUpdateView.vala:162
 msgid "Update All"
 msgstr "Tümünü Güncelle"
@@ -564,6 +573,12 @@ msgstr "Kategoriler"
 #, c-format
 msgid "Search %s"
 msgstr "%s içinde ara"
+
+#. / TRANSLATORS: the name of the Search view
+#: src/Views/SearchView.vala:39
+msgctxt "view"
+msgid "Search"
+msgstr "Ara"
 
 #: src/Widgets/AbstractAppList.vala:36
 msgid "No Results"
@@ -638,11 +653,13 @@ msgstr "Evrensel Erişim"
 msgid "Free"
 msgstr "Ücretsiz"
 
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:127
 #, c-format
 msgid "$%d.00"
 msgstr "$%d.00 (USD)"
 
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:130
 #, c-format
 msgid "$%d"
@@ -725,14 +742,6 @@ msgstr "Aç"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:235
 msgid "Update"
 msgstr "Güncelle"
-
-#~ msgctxt "view"
-#~ msgid "Installed"
-#~ msgstr "Yüklendi"
-
-#~ msgctxt "view"
-#~ msgid "Search"
-#~ msgstr "Ara"
 
 #~ msgctxt "view"
 #~ msgid "Updates"

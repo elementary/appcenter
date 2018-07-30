@@ -1,9 +1,10 @@
+# Piotr Strebski <strebski@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 08:32-0700\n"
-"PO-Revision-Date: 2018-05-16 05:54+0000\n"
+"POT-Creation-Date: 2018-07-15 15:47+0900\n"
+"PO-Revision-Date: 2018-07-03 00:05+0000\n"
 "Last-Translator: Piotr Strebski <strebski@gmail.com>\n"
 "Language-Team: Polish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/pl/>\n"
@@ -13,9 +14,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
+#. Add "AppCenter" to the translation catalog
 #: src/Application.vala:38
 msgid "AppCenter"
 msgstr "Centrum programów"
@@ -23,7 +25,7 @@ msgstr "Centrum programów"
 #: src/Application.vala:106
 #, c-format
 msgid "Could not parse mimetype %s"
-msgstr ""
+msgstr "Nie można przetworzyć typu mime %s"
 
 #: src/Application.vala:126
 #, c-format
@@ -50,10 +52,16 @@ msgstr "Wystąpił błąd podczas instalacji %s."
 msgid "Home"
 msgstr "Strona główna"
 
+#: src/MainWindow.vala:150 src/Views/InstalledView.vala:29
+#: src/Views/InstalledView.vala:49
+msgctxt "view"
+msgid "Installed"
+msgstr "Zainstalowane"
+
 #: src/MainWindow.vala:177 src/MainWindow.vala:328 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:81
 msgid "Search Apps"
-msgstr "Wyszukaj programów"
+msgstr "Wyszukaj program"
 
 #: src/MainWindow.vala:195
 msgid "Network Is Not Available"
@@ -331,6 +339,7 @@ msgstr ""
 "Twój adres e-mail służy do wysyłania potwierdzenia. Nigdy nie jest "
 "przechowywany i nie będziesz subskrybować listy dyskusyjnej."
 
+#. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:112
 msgid "MM / YY"
 msgstr "MM / RR"
@@ -553,6 +562,7 @@ msgstr ""
 msgid "Restart Now"
 msgstr "Uruchom ponownie teraz"
 
+#. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
 #: src/Views/AppListUpdateView.vala:162
 msgid "Update All"
 msgstr "Aktualizuj wszystko"
@@ -577,6 +587,12 @@ msgstr "Kategorie"
 #, c-format
 msgid "Search %s"
 msgstr "Wyszukaj %s"
+
+#. / TRANSLATORS: the name of the Search view
+#: src/Views/SearchView.vala:39
+msgctxt "view"
+msgid "Search"
+msgstr "Szukaj"
 
 #: src/Widgets/AbstractAppList.vala:36
 msgid "No Results"
@@ -654,11 +670,13 @@ msgstr "Dostęp uniwersalny"
 msgid "Free"
 msgstr "Darmowe"
 
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:127
 #, c-format
 msgid "$%d.00"
 msgstr "$%d,00"
 
+#. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:130
 #, c-format
 msgid "$%d"
@@ -690,9 +708,8 @@ msgid "Twitter"
 msgstr "Twitter"
 
 #: src/Widgets/SharePopover.vala:51
-#, fuzzy
 msgid "Reddit"
-msgstr "reddit"
+msgstr "Reddit"
 
 #: src/Widgets/SharePopover.vala:55
 msgid "Tumblr"
@@ -742,14 +759,6 @@ msgstr "Otwórz"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:235
 msgid "Update"
 msgstr "Aktualizuj"
-
-#~ msgctxt "view"
-#~ msgid "Installed"
-#~ msgstr "Zainstalowane"
-
-#~ msgctxt "view"
-#~ msgid "Search"
-#~ msgstr "Szukaj"
 
 #~ msgctxt "view"
 #~ msgid "Updates"
