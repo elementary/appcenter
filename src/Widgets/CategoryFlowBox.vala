@@ -35,7 +35,10 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
         add (get_category (_("Graphics"), "", {"Graphics"}, "graphics"));
         add (get_category (_("Games"), "applications-games-symbolic", {"Game"}, "games"));
         add (get_category (_("Education"), "", {"Education"}, "education"));
-        add (get_category (_("Internet"), "applications-internet", {"Network"}, "internet"));
+        add (get_category (_("Internet"), "applications-internet", {
+            "Network",
+            "P2P"
+        }, "internet"));
         add (get_category (_("Science & Engineering"), "", {"Science"}, "science"));
         add (get_category (_("Universal Access"), "applications-accessibility-symbolic", {"Accessibility"}, "accessibility"));
     }
