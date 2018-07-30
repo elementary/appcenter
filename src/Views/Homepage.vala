@@ -159,6 +159,7 @@ namespace AppCenter {
 
             houston.get_app_ids.begin ("/newest/release", (obj, res) => {
                 var updated_ids = houston.get_app_ids.end (res);
+                Utils.shuffle_array (updated_ids);
                 new Thread<void*> ("update-recent-carousel", () => {
                     var packages_for_carousel = new Gee.LinkedList<AppCenterCore.Package> ();
                     foreach (var package in updated_ids) {
@@ -192,6 +193,7 @@ namespace AppCenter {
 
             houston.get_app_ids.begin ("/newest/downloads", (obj, res) => {
                 var trending_ids = houston.get_app_ids.end (res);
+                Utils.shuffle_array (trending_ids);
                 new Thread<void*> ("update-trending-carousel", () => {
                     var packages_for_carousel = new Gee.LinkedList<AppCenterCore.Package> ();
                     foreach (var package in trending_ids) {
