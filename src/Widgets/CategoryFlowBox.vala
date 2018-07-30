@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2014-2017 elementary LLC. (https://elementary.io)
+  * Copyright (c) 2014-2018 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -36,7 +36,7 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
         add (get_category (_("Games"), "applications-games-symbolic", {"Game"}, "games"));
         add (get_category (_("Education"), "", {"Education"}, "education"));
         add (get_category (_("Internet"), "applications-internet", {"Network"}, "internet"));
-        add (get_category (_("Science & Engineering"), "", {"Science"}, "science"));
+        add (get_category (_("Math, Science, & Engineering"), "", {"Science", "Chemistry", "Astronomy", "Electricity", "Math", "Biology", "DataVisualization", "Calculator", "ComputerScience", "Engineering", "Physics", "NumericalAnalysis", "Geology", "Geoscience", "Electronics", "ArtificialIntelligence", "Robotics"}, "science"));
         add (get_category (_("Universal Access"), "applications-accessibility-symbolic", {"Accessibility"}, "accessibility"));
     }
 
@@ -55,3 +55,4 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
         return item;
     }
 }
+
