@@ -46,14 +46,14 @@ namespace AppCenter.Widgets {
                 bool has_package = package != null;
 
                 var name_label = new Gtk.Label (has_package ? package.get_name () : _(Build.APP_NAME));
-                name_label.get_style_context ().add_class ("h1");
+                name_label.get_style_context ().add_class (Granite.STYLE_CLASS_H1_LABEL);
                 name_label.xalign = 0;
                 name_label.use_markup = true;
                 name_label.wrap = true;
                 name_label.max_width_chars = 50;
 
                 var summary_label = new Gtk.Label (has_package ? package.get_summary () : _("An open, pay-what-you-want app store"));
-                summary_label.get_style_context ().add_class ("h2");
+                summary_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
                 summary_label.xalign = 0;
                 summary_label.use_markup = true;
                 summary_label.wrap = true;
@@ -69,7 +69,7 @@ namespace AppCenter.Widgets {
                 }
 
                 var description_label = new Gtk.Label (description);
-                description_label.get_style_context ().add_class ("h3");
+                description_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
                 description_label.ellipsize = Pango.EllipsizeMode.END;
                 description_label.lines = 2;
                 description_label.margin_top = 12;

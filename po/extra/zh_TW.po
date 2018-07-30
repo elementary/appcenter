@@ -2,32 +2,29 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2017-09-15 00:26+0800\n"
-"Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
-"Language-Team: \n"
+"POT-Creation-Date: 2018-06-27 08:32-0700\n"
+"PO-Revision-Date: 2018-05-19 14:49+0000\n"
+"Last-Translator: Wesley Huang <wezmag@gmail.com>\n"
+"Language-Team: Chinese (Traditional) <https://weblate.elementary.io/projects/"
+"appcenter/extra/zh_TW/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.0.3\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
+#: data/io.elementary.appcenter.appdata.xml.in:8
 msgid "AppCenter"
 msgstr "AppCenter"
 
+#: data/io.elementary.appcenter.appdata.xml.in:9
+#: data/io.elementary.appcenter.desktop.in.in:4
 msgid "Browse and manage apps"
 msgstr "瀏覽和管理軟體"
 
-msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
-msgstr ""
-"install;uninstall;remove;catalogue;store;apps;updates;software;安裝;解除安裝;"
-"反安裝;移除;型錄;目錄;商店;程式;軟體;更新;升級;"
-
-msgid "About AppCenter"
-msgstr "關於 AppCenter"
-
+#: data/io.elementary.appcenter.appdata.xml.in:11
 msgid ""
 "An app store for indie and open source developers. Browse by categories or "
 "search and discover new apps. AppCenter is also used for updating your "
@@ -36,37 +33,62 @@ msgstr ""
 "獨立和開源開發者的軟體商店。可以瀏覽各分類來搜尋和探索新軟體。AppCenter 也能"
 "用來將系統更新成含有新功能和新修正的最嶄新、最強大的版本。"
 
-msgid "Bug fixes and improve perfomance."
-msgstr "修正臭蟲與改善效能。"
+#: data/io.elementary.appcenter.appdata.xml.in:191
+msgid "elementary LLC."
+msgstr ""
 
-msgid "Various bug fixes and performance improvements"
-msgstr "有多項臭蟲修正和效能改善"
+#: data/io.elementary.appcenter.desktop.in.in:3
+msgid "@APP_NAME@"
+msgstr ""
 
-msgid "New translations"
-msgstr "新增翻譯"
+#: data/io.elementary.appcenter.desktop.in.in:6
+msgid "@DESKTOP_ICON@"
+msgstr ""
 
-msgid "Fix crash caused by entries with missing packages"
-msgstr "修正遺失軟體包造成的崩潰"
+#: data/io.elementary.appcenter.desktop.in.in:7
+msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
+msgstr ""
+"install;uninstall;remove;catalogue;store;apps;updates;software;安裝;解除安裝;"
+"反安裝;移除;型錄;目錄;商店;程式;軟體;更新;升級;"
 
-msgid "Add capability to search by category and apply minor bug fixes."
-msgstr "加入依據分類搜尋的能力，並修正一些小臭蟲。"
+#: data/io.elementary.appcenter.desktop.in.in:18
+msgid "Check for Updates"
+msgstr "檢查更新"
 
-msgid "It is now possible to search apps inside a category"
-msgstr "目前可以在分類下搜尋 App"
+#~ msgid "About AppCenter"
+#~ msgstr "關於 AppCenter"
 
-msgid "Prevent multiple authentication dialogs when resuming from suspend"
-msgstr "防止電腦從暫停狀態回復時開啟多次身份核對對話盒"
+#~ msgid "Bug fixes and improve perfomance."
+#~ msgstr "修正臭蟲與改善效能。"
 
-msgid ""
-"Search perfomance has beeen improved, the category name is now shown on the "
-"headbar and minor bugs have been fixed."
-msgstr "搜尋效能已有改善，分類名稱現在顯示在標題列上，還有修正一些小臭蟲。"
+#~ msgid "Various bug fixes and performance improvements"
+#~ msgstr "有多項臭蟲修正和效能改善"
 
-msgid "Fix Steam installation"
-msgstr "修正 Steam 安裝"
+#~ msgid "New translations"
+#~ msgstr "新增翻譯"
 
-msgid "Make search asynchronous"
-msgstr "讓搜尋非同步"
+#~ msgid "Fix crash caused by entries with missing packages"
+#~ msgstr "修正遺失軟體包造成的崩潰"
+
+#~ msgid "Add capability to search by category and apply minor bug fixes."
+#~ msgstr "加入依據分類搜尋的能力，並修正一些小臭蟲。"
+
+#~ msgid "It is now possible to search apps inside a category"
+#~ msgstr "目前可以在分類下搜尋 App"
+
+#~ msgid "Prevent multiple authentication dialogs when resuming from suspend"
+#~ msgstr "防止電腦從暫停狀態回復時開啟多次身份核對對話盒"
+
+#~ msgid ""
+#~ "Search perfomance has beeen improved, the category name is now shown on "
+#~ "the headbar and minor bugs have been fixed."
+#~ msgstr "搜尋效能已有改善，分類名稱現在顯示在標題列上，還有修正一些小臭蟲。"
+
+#~ msgid "Fix Steam installation"
+#~ msgstr "修正 Steam 安裝"
+
+#~ msgid "Make search asynchronous"
+#~ msgstr "讓搜尋非同步"
 
 #, fuzzy
 #~ msgid "App Center"

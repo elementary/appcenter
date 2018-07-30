@@ -119,7 +119,7 @@ namespace AppCenter.Views {
             var header = new Gtk.Label (_("Non-Curated Apps"));
             header.margin = 12;
             header.margin_top = 18;
-            header.get_style_context ().add_class ("h4");
+            header.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
             header.hexpand = true;
             header.xalign = 0;
             row.set_header (header);

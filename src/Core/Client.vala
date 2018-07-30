@@ -407,6 +407,18 @@ public class AppCenterCore.Client : Object {
         return apps;
     }
 
+    public Gee.Collection<AppCenterCore.Package> search_applications_mime (string query) {
+        var apps = new Gee.TreeSet<AppCenterCore.Package> ();
+        foreach (var package in package_list.values) {
+            weak AppStream.Provided? provided = package.component.get_provided_for_kind (AppStream.ProvidedKind.MIMETYPE);
+            if (provided != null && provided.has_item (query)) {
+                apps.add (package);
+            }
+        }
+
+        return apps;
+    }
+
     public Pk.Package? get_app_package (string application, Pk.Bitfield additional_filters = 0) throws GLib.Error {
         task_count++;
 

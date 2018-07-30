@@ -2,70 +2,97 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2018-03-20 00:14+0000\n"
-"Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
-"Language-Team: Japanese "
-"<https://weblate.elementary.io/projects/appcenter/extra/ja/>\n"
+"POT-Creation-Date: 2018-06-27 08:32-0700\n"
+"PO-Revision-Date: 2018-07-24 00:05+0000\n"
+"Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
+"Language-Team: Japanese <https://weblate.elementary.io/projects/appcenter/"
+"extra/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
+#: data/io.elementary.appcenter.appdata.xml.in:8
 msgid "AppCenter"
 msgstr "AppCenter"
 
+#: data/io.elementary.appcenter.appdata.xml.in:9
+#: data/io.elementary.appcenter.desktop.in.in:4
 msgid "Browse and manage apps"
-msgstr "アプリケーションの表示、管理をします"
+msgstr "アプリケーションを表示し管理します"
 
-msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
-msgstr "install;uninstall;remove;catalogue;store;apps;updates;software;"
-
-msgid "About AppCenter"
-msgstr "AppCenter について"
-
+#: data/io.elementary.appcenter.appdata.xml.in:11
 msgid ""
 "An app store for indie and open source developers. Browse by categories or "
 "search and discover new apps. AppCenter is also used for updating your "
 "system to the latest and greatest version for new features and fixes."
 msgstr ""
-"独立会社やオープンソース開発者のためのアプリストアです。カテゴリー別で閲覧したり検索したりして新しいアプリを見つけてください。 AppCenter "
-"は新機能や修正のためにシステムを最新で最高のバージョンへアップデートする際にも使われます。"
+"独立会社やオープンソース開発者のためのアプリストアです。カテゴリー別で閲覧し"
+"たり検索したりして、新しいアプリを見つけてください。 AppCenter は新機能や修正"
+"のためにシステムを最新で最高のバージョンへアップデートするときにも使われま"
+"す。"
 
-msgid "Bug fixes and improve perfomance."
-msgstr "バグ修正とパフォーマンスの向上。"
+#: data/io.elementary.appcenter.appdata.xml.in:191
+msgid "elementary LLC."
+msgstr "elementary LLC."
 
-msgid "Various bug fixes and performance improvements"
-msgstr "様々なバグ修正とパフォーマンスの向上"
+#: data/io.elementary.appcenter.desktop.in.in:3
+msgid "@APP_NAME@"
+msgstr ""
 
-msgid "New translations"
-msgstr "新しい翻訳"
+#: data/io.elementary.appcenter.desktop.in.in:6
+msgid "@DESKTOP_ICON@"
+msgstr ""
 
-msgid "Fix crash caused by entries with missing packages"
-msgstr "不足しているパッケージの登録によるクラッシュを修正"
+#: data/io.elementary.appcenter.desktop.in.in:7
+msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
+msgstr ""
+"インストール;アンインストール;削除;カタログ;ストア;アプリ;アップデート;ソフト"
+"ウェア;"
 
-msgid "Add capability to search by category and apply minor bug fixes."
-msgstr "カテゴリー別で検索できるようにし、マイナーなバグ修正を適用。"
+#: data/io.elementary.appcenter.desktop.in.in:18
+msgid "Check for Updates"
+msgstr "アップデートを確認"
 
-msgid "It is now possible to search apps inside a category"
-msgstr "今やカテゴリー内でアプリを検索することができます"
+#~ msgid "About AppCenter"
+#~ msgstr "AppCenter について"
 
-msgid "Prevent multiple authentication dialogs when resuming from suspend"
-msgstr "サスペンドからの復帰時に複数の認証ダイアログが出るのを防止"
+#~ msgid "Bug fixes and improve perfomance."
+#~ msgstr "バグ修正とパフォーマンスの向上。"
 
-msgid ""
-"Search perfomance has beeen improved, the category name is now shown on the "
-"headbar and minor bugs have been fixed."
-msgstr "検索能力が向上し、カテゴリーの名前がヘッドバーに表示されます。また、マイナーなバグも修正しました。"
+#~ msgid "Various bug fixes and performance improvements"
+#~ msgstr "様々なバグ修正とパフォーマンスの向上"
 
-msgid "Fix Steam installation"
-msgstr "Steam のインストールを修正"
+#~ msgid "New translations"
+#~ msgstr "新しい翻訳"
 
-msgid "Make search asynchronous"
-msgstr "検索を非同期に"
+#~ msgid "Fix crash caused by entries with missing packages"
+#~ msgstr "不足しているパッケージの登録によるクラッシュを修正"
+
+#~ msgid "Add capability to search by category and apply minor bug fixes."
+#~ msgstr "カテゴリー別で検索できるようにし、マイナーなバグ修正を適用。"
+
+#~ msgid "It is now possible to search apps inside a category"
+#~ msgstr "今やカテゴリー内でアプリを検索することができます"
+
+#~ msgid "Prevent multiple authentication dialogs when resuming from suspend"
+#~ msgstr "サスペンドからの復帰時に複数の認証ダイアログが出るのを防止"
+
+#~ msgid ""
+#~ "Search perfomance has beeen improved, the category name is now shown on "
+#~ "the headbar and minor bugs have been fixed."
+#~ msgstr ""
+#~ "検索能力が向上し、カテゴリーの名前がヘッドバーに表示されます。また、マイ"
+#~ "ナーなバグも修正しました。"
+
+#~ msgid "Fix Steam installation"
+#~ msgstr "Steam のインストールを修正"
+
+#~ msgid "Make search asynchronous"
+#~ msgstr "検索を非同期に"
 
 #, fuzzy
 #~ msgid "App Center"

@@ -2,72 +2,95 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2017-07-06 00:57+0000\n"
-"Last-Translator: Tibike Miklós <miklosflame@hotmail.co.uk>\n"
-"Language-Team: Hungarian "
-"<https://l10n.elementary.io/projects/appcenter/extra/hu/>\n"
+"POT-Creation-Date: 2018-06-27 08:32-0700\n"
+"PO-Revision-Date: 2018-06-21 00:08+0000\n"
+"Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
+"Language-Team: Hungarian <https://weblate.elementary.io/projects/appcenter/"
+"extra/hu/>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.14\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
+#: data/io.elementary.appcenter.appdata.xml.in:8
 msgid "AppCenter"
-msgstr "Alkalmazásközpont"
+msgstr "AppKözpont"
 
+#: data/io.elementary.appcenter.appdata.xml.in:9
+#: data/io.elementary.appcenter.desktop.in.in:4
 msgid "Browse and manage apps"
-msgstr "Alkalmazások böngészése és kezelése"
+msgstr "Alkalmazások tallózása és kezelése"
 
-msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
-msgstr ""
-"telepít;eltávolít;töröl;bejegyez;üzlet;applikációk;frissítések;szoftver;"
-
-msgid "About AppCenter"
-msgstr "Alkalmazásközpont névjegye"
-
+#: data/io.elementary.appcenter.appdata.xml.in:11
 msgid ""
 "An app store for indie and open source developers. Browse by categories or "
 "search and discover new apps. AppCenter is also used for updating your "
 "system to the latest and greatest version for new features and fixes."
 msgstr ""
-"Egy alkalmazásbolt független és nyílt forráskódú fejlesztőknek. Böngésszen "
-"kategóriák szerint, vagy keressen és fedezzen fel új alkalmazásokat. Szintén "
-"az Alkalmazásközpontból frissítheti a rendszerét a legújabb funkciókért és "
-"javításokért."
+"Egy alkalmazásüzlet a független és nyílt forráskódot használó fejlesztők "
+"számára. Tallózzon kategóriák szerint, vagy keressen és fedezzen fel új "
+"alkalmazásokat. Az AppKözpont segítségével mindig a legújabb és legjobb "
+"verzióra frissítheti rendszerét."
 
-msgid "Bug fixes and improve perfomance."
-msgstr "Hibajavítások és teljesítmény növelése."
+#: data/io.elementary.appcenter.appdata.xml.in:191
+msgid "elementary LLC."
+msgstr "elementary LLC."
 
-msgid "Various bug fixes and performance improvements"
-msgstr "Különböző hibajavítások és teljesítmény fejlesztések"
+#: data/io.elementary.appcenter.desktop.in.in:3
+msgid "@APP_NAME@"
+msgstr "@APP_NAME@"
 
-msgid "New translations"
-msgstr "Új fordítások"
+#: data/io.elementary.appcenter.desktop.in.in:6
+msgid "@DESKTOP_ICON@"
+msgstr "@DESKTOP_ICON@"
 
-msgid "Fix crash caused by entries with missing packages"
-msgstr "Hiányzó csomagokat tartalmazó bejegyzések miatti összeomlás javítása"
-
-msgid "Add capability to search by category and apply minor bug fixes."
-msgstr "Lehetőség kategória szerinti keresésre, és kisebb hibajavítások."
-
-msgid "It is now possible to search apps inside a category"
-msgstr "Mostantól lehetséges kategórián belül alkalmazásokat keresni"
-
-msgid "Prevent multiple authentication dialogs when resuming from suspend"
-msgstr "Több hitelesítési ablak megelőzése felfüggesztés és folytatás után"
-
-msgid ""
-"Search perfomance has beeen improved, the category name is now shown on the "
-"headbar and minor bugs have been fixed."
+#: data/io.elementary.appcenter.desktop.in.in:7
+msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
 msgstr ""
-"A keresés teljesítménye fejlesztve lett, a kategória neve látszik a "
-"fejlécen, és kisebb hibák javításra kerültek."
+"install;uninstall;remove;catalogue;store;apps;updates;software;telepítés;"
+"eltávolítás;törlés;katalógus;bolt;alkalmazások;frissítések;szoftver;"
 
-msgid "Fix Steam installation"
-msgstr "Steam telepítés javítása"
+#: data/io.elementary.appcenter.desktop.in.in:18
+msgid "Check for Updates"
+msgstr "Frissítések keresése"
 
-msgid "Make search asynchronous"
-msgstr "Keresés aszinkronná tétele"
+#~ msgid "About AppCenter"
+#~ msgstr "Alkalmazásközpont névjegye"
+
+#~ msgid "Bug fixes and improve perfomance."
+#~ msgstr "Hibajavítások és teljesítmény növelése."
+
+#~ msgid "Various bug fixes and performance improvements"
+#~ msgstr "Különböző hibajavítások és teljesítmény fejlesztések"
+
+#~ msgid "New translations"
+#~ msgstr "Új fordítások"
+
+#~ msgid "Fix crash caused by entries with missing packages"
+#~ msgstr ""
+#~ "Hiányzó csomagokat tartalmazó bejegyzések miatti összeomlás javítása"
+
+#~ msgid "Add capability to search by category and apply minor bug fixes."
+#~ msgstr "Lehetőség kategória szerinti keresésre, és kisebb hibajavítások."
+
+#~ msgid "It is now possible to search apps inside a category"
+#~ msgstr "Mostantól lehetséges kategórián belül alkalmazásokat keresni"
+
+#~ msgid "Prevent multiple authentication dialogs when resuming from suspend"
+#~ msgstr "Több hitelesítési ablak megelőzése felfüggesztés és folytatás után"
+
+#~ msgid ""
+#~ "Search perfomance has beeen improved, the category name is now shown on "
+#~ "the headbar and minor bugs have been fixed."
+#~ msgstr ""
+#~ "A keresés teljesítménye fejlesztve lett, a kategória neve látszik a "
+#~ "fejlécen, és kisebb hibák javításra kerültek."
+
+#~ msgid "Fix Steam installation"
+#~ msgstr "Steam telepítés javítása"
+
+#~ msgid "Make search asynchronous"
+#~ msgstr "Keresés aszinkronná tétele"

@@ -2,11 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-02 13:03-0700\n"
+"POT-Creation-Date: 2018-06-27 08:32-0700\n"
 "PO-Revision-Date: 2017-06-18 12:23+0000\n"
 "Last-Translator: Valentin Kirilov <val.kirilov@gmail.com>\n"
-"Language-Team: Bulgarian "
-"<https://l10n.elementary.io/projects/appcenter/extra/bg/>\n"
+"Language-Team: Bulgarian <https://l10n.elementary.io/projects/appcenter/"
+"extra/bg/>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,20 +15,16 @@ msgstr ""
 "X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
+#: data/io.elementary.appcenter.appdata.xml.in:8
 msgid "AppCenter"
 msgstr "Център за приложения"
 
+#: data/io.elementary.appcenter.appdata.xml.in:9
+#: data/io.elementary.appcenter.desktop.in.in:4
 msgid "Browse and manage apps"
 msgstr "Разглеждане и управляване на програми"
 
-msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
-msgstr ""
-"инсталиране;деинсталиране;премахване;каталог;магазин;приложения;програми;"
-"обновления;"
-
-msgid "About AppCenter"
-msgstr "Относно"
-
+#: data/io.elementary.appcenter.appdata.xml.in:11
 msgid ""
 "An app store for indie and open source developers. Browse by categories or "
 "search and discover new apps. AppCenter is also used for updating your "
@@ -39,37 +35,36 @@ msgstr ""
 "Програмата също така се използва и за обновяване на системата ви до най-"
 "новата версия."
 
-msgid "Bug fixes and improve perfomance."
+#: data/io.elementary.appcenter.appdata.xml.in:191
+msgid "elementary LLC."
 msgstr ""
 
-msgid "Various bug fixes and performance improvements"
+#: data/io.elementary.appcenter.desktop.in.in:3
+msgid "@APP_NAME@"
 msgstr ""
 
-msgid "New translations"
-msgstr "Нови преводи"
-
-msgid "Fix crash caused by entries with missing packages"
+#: data/io.elementary.appcenter.desktop.in.in:6
+msgid "@DESKTOP_ICON@"
 msgstr ""
 
-msgid "Add capability to search by category and apply minor bug fixes."
+#: data/io.elementary.appcenter.desktop.in.in:7
+msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
+msgstr ""
+"инсталиране;деинсталиране;премахване;каталог;магазин;приложения;програми;"
+"обновления;"
+
+#: data/io.elementary.appcenter.desktop.in.in:18
+msgid "Check for Updates"
 msgstr ""
 
-msgid "It is now possible to search apps inside a category"
-msgstr "Вече можете да търсите приложения в дадена категория"
+#~ msgid "About AppCenter"
+#~ msgstr "Относно"
 
-msgid "Prevent multiple authentication dialogs when resuming from suspend"
-msgstr ""
+#~ msgid "New translations"
+#~ msgstr "Нови преводи"
 
-msgid ""
-"Search perfomance has beeen improved, the category name is now shown on the "
-"headbar and minor bugs have been fixed."
-msgstr ""
-
-msgid "Fix Steam installation"
-msgstr ""
-
-msgid "Make search asynchronous"
-msgstr ""
+#~ msgid "It is now possible to search apps inside a category"
+#~ msgstr "Вече можете да търсите приложения в дадена категория"
 
 #, fuzzy
 #~ msgid "App Center"

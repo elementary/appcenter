@@ -2,70 +2,80 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2018-02-24 11:21+0000\n"
+"POT-Creation-Date: 2018-06-27 08:32-0700\n"
+"PO-Revision-Date: 2018-07-29 10:28+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
-"Language-Team: Finnish "
-"<https://weblate.elementary.io/projects/appcenter/extra/fi/>\n"
+"Language-Team: Finnish <https://weblate.elementary.io/projects/appcenter/"
+"extra/fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
+#: data/io.elementary.appcenter.appdata.xml.in:8
 msgid "AppCenter"
 msgstr "Sovelluskeskus"
 
+#: data/io.elementary.appcenter.appdata.xml.in:9
+#: data/io.elementary.appcenter.desktop.in.in:4
 msgid "Browse and manage apps"
 msgstr "Selaa ja hallitse sovelluksia"
 
-msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
-msgstr ""
-"install;uninstall;remove;catalogue;store;apps;updates;software;asenna;poista;"
-"katalogi;kauppa;sovellukset;päivitykset;ohjelmistot;"
-
-msgid "About AppCenter"
-msgstr "Tietoja - Sovelluskeskus"
-
+#: data/io.elementary.appcenter.appdata.xml.in:11
 msgid ""
 "An app store for indie and open source developers. Browse by categories or "
 "search and discover new apps. AppCenter is also used for updating your "
 "system to the latest and greatest version for new features and fixes."
 msgstr ""
+"Sovelluskauppa avoimen lähdekoodin ja indie-kehittäjille. Selaa luokittain "
+"tai etsi hakuehdoin ja löydä uusia sovelluksia. Sovelluskauppaa käytetään "
+"myös järjestelmän päivityksiin."
 
-msgid "Bug fixes and improve perfomance."
-msgstr "Korjauksia ja suorituskykyparannuksia."
+#: data/io.elementary.appcenter.appdata.xml.in:191
+msgid "elementary LLC."
+msgstr "elementary LLC."
 
-msgid "Various bug fixes and performance improvements"
-msgstr "Useita korjauksia ja suorituskykyparannuksia"
+#: data/io.elementary.appcenter.desktop.in.in:3
+msgid "@APP_NAME@"
+msgstr "@APP_NAME@"
 
-msgid "New translations"
-msgstr "Uusia kielikäännöksiä"
+#: data/io.elementary.appcenter.desktop.in.in:6
+msgid "@DESKTOP_ICON@"
+msgstr "@DESKTOP_ICON@"
 
-msgid "Fix crash caused by entries with missing packages"
+#: data/io.elementary.appcenter.desktop.in.in:7
+msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
 msgstr ""
+"install;uninstall;remove;catalogue;store;apps;updates;software;asenna;poista;"
+"katalogi;kauppa;sovellukset;päivitykset;ohjelmistot;"
 
-msgid "Add capability to search by category and apply minor bug fixes."
-msgstr ""
+#: data/io.elementary.appcenter.desktop.in.in:18
+msgid "Check for Updates"
+msgstr "Tarkista päivitykset"
 
-msgid "It is now possible to search apps inside a category"
-msgstr "Sovellusten etsiminen luokkien sisältä on nyt mahdollista"
+#~ msgid "About AppCenter"
+#~ msgstr "Tietoja - Sovelluskeskus"
 
-msgid "Prevent multiple authentication dialogs when resuming from suspend"
-msgstr ""
+#~ msgid "Bug fixes and improve perfomance."
+#~ msgstr "Korjauksia ja suorituskykyparannuksia."
 
-msgid ""
-"Search perfomance has beeen improved, the category name is now shown on the "
-"headbar and minor bugs have been fixed."
-msgstr ""
+#~ msgid "Various bug fixes and performance improvements"
+#~ msgstr "Useita korjauksia ja suorituskykyparannuksia"
 
-msgid "Fix Steam installation"
-msgstr "Korjattu Steam-asennus"
+#~ msgid "New translations"
+#~ msgstr "Uusia kielikäännöksiä"
 
-msgid "Make search asynchronous"
-msgstr "Tee hausta asynkroninen"
+#~ msgid "It is now possible to search apps inside a category"
+#~ msgstr "Sovellusten etsiminen luokkien sisältä on nyt mahdollista"
+
+#~ msgid "Fix Steam installation"
+#~ msgstr "Korjattu Steam-asennus"
+
+#~ msgid "Make search asynchronous"
+#~ msgstr "Tee hausta asynkroninen"
 
 #, fuzzy
 #~ msgid "App Center"

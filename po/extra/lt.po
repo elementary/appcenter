@@ -2,35 +2,30 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2017-04-10 21:23+0000\n"
+"POT-Creation-Date: 2018-06-27 08:32-0700\n"
+"PO-Revision-Date: 2018-05-07 20:37+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
-"Language-Team: Lithuanian "
-"<https://l10n.elementary.io/projects/appcenter/extra/lt/>\n"
+"Language-Team: Lithuanian <https://weblate.elementary.io/projects/appcenter/"
+"extra/lt/>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"(n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 0 : n%10>=2 && (n%100<10 || n"
+"%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3;\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
+#: data/io.elementary.appcenter.appdata.xml.in:8
 msgid "AppCenter"
 msgstr "Programų centras"
 
+#: data/io.elementary.appcenter.appdata.xml.in:9
+#: data/io.elementary.appcenter.desktop.in.in:4
 msgid "Browse and manage apps"
 msgstr "Naršyti ir tvarkyti programas"
 
-msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
-msgstr ""
-"įdiegti;idiegti;šalinti;salinti;pašalinti;pasalinti;katalogas;parduotuvė;"
-"parduotuve;programos;atnaujinimai;naujinimai;programinė įranga;programine "
-"iranga;"
-
-msgid "About AppCenter"
-msgstr "Apie Programų centrą"
-
+#: data/io.elementary.appcenter.appdata.xml.in:11
 msgid ""
 "An app store for indie and open source developers. Browse by categories or "
 "search and discover new apps. AppCenter is also used for updating your "
@@ -41,41 +36,67 @@ msgstr ""
 "taip pat yra naudojamas jūsų sistemos atnaujinimui į naujausias ir "
 "šauniausias versijas su naujomis ypatybėmis ir pataisymais."
 
-msgid "Bug fixes and improve perfomance."
-msgstr "Klaidų pataisymai ir našumo patobulinimai."
+#: data/io.elementary.appcenter.appdata.xml.in:191
+msgid "elementary LLC."
+msgstr "elementary LLC."
 
-msgid "Various bug fixes and performance improvements"
-msgstr "Įvairūs klaidų pataisymai ir našumo patobulinimai"
+#: data/io.elementary.appcenter.desktop.in.in:3
+msgid "@APP_NAME@"
+msgstr "@APP_NAME@"
 
-msgid "New translations"
-msgstr "Nauji vertimai"
+#: data/io.elementary.appcenter.desktop.in.in:6
+msgid "@DESKTOP_ICON@"
+msgstr "@DESKTOP_ICON@"
 
-msgid "Fix crash caused by entries with missing packages"
-msgstr "Ištaisyti strigtį, kurią sukelia įrašai su trūkstamais paketais"
-
-msgid "Add capability to search by category and apply minor bug fixes."
+#: data/io.elementary.appcenter.desktop.in.in:7
+msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
 msgstr ""
-"Pridėti galimybę ieškoti pagal kategorijas ir taikyti smulkių klaidų "
-"pataisymus."
+"įdiegti;idiegti;šalinti;salinti;pašalinti;pasalinti;katalogas;parduotuvė;"
+"parduotuve;programos;atnaujinimai;naujinimai;programinė įranga;programine "
+"iranga;"
 
-msgid "It is now possible to search apps inside a category"
-msgstr "Dabar įmanoma ieškoti programas kategorijose"
+#: data/io.elementary.appcenter.desktop.in.in:18
+msgid "Check for Updates"
+msgstr "Tikrinti ar yra atnaujinimų"
 
-msgid "Prevent multiple authentication dialogs when resuming from suspend"
-msgstr "Tęsiant po pristabdymo, neleisti kelių tapatybės nustatymo dialogų"
+#~ msgid "About AppCenter"
+#~ msgstr "Apie Programų centrą"
 
-msgid ""
-"Search perfomance has beeen improved, the category name is now shown on the "
-"headbar and minor bugs have been fixed."
-msgstr ""
-"Buvo patobulintas paieškos greitis, kategorijos pavadinimas dabar yra "
-"rodomas antraštės juostoje, be to, buvo ištaisytos smulkios klaidos."
+#~ msgid "Bug fixes and improve perfomance."
+#~ msgstr "Klaidų pataisymai ir našumo patobulinimai."
 
-msgid "Fix Steam installation"
-msgstr "Ištaisyti Steam diegimą"
+#~ msgid "Various bug fixes and performance improvements"
+#~ msgstr "Įvairūs klaidų pataisymai ir našumo patobulinimai"
 
-msgid "Make search asynchronous"
-msgstr "Padaryti paiešką asinchroninę"
+#~ msgid "New translations"
+#~ msgstr "Nauji vertimai"
+
+#~ msgid "Fix crash caused by entries with missing packages"
+#~ msgstr "Ištaisyti strigtį, kurią sukelia įrašai su trūkstamais paketais"
+
+#~ msgid "Add capability to search by category and apply minor bug fixes."
+#~ msgstr ""
+#~ "Pridėti galimybę ieškoti pagal kategorijas ir taikyti smulkių klaidų "
+#~ "pataisymus."
+
+#~ msgid "It is now possible to search apps inside a category"
+#~ msgstr "Dabar įmanoma ieškoti programas kategorijose"
+
+#~ msgid "Prevent multiple authentication dialogs when resuming from suspend"
+#~ msgstr "Tęsiant po pristabdymo, neleisti kelių tapatybės nustatymo dialogų"
+
+#~ msgid ""
+#~ "Search perfomance has beeen improved, the category name is now shown on "
+#~ "the headbar and minor bugs have been fixed."
+#~ msgstr ""
+#~ "Buvo patobulintas paieškos greitis, kategorijos pavadinimas dabar yra "
+#~ "rodomas antraštės juostoje, be to, buvo ištaisytos smulkios klaidos."
+
+#~ msgid "Fix Steam installation"
+#~ msgstr "Ištaisyti Steam diegimą"
+
+#~ msgid "Make search asynchronous"
+#~ msgstr "Padaryti paiešką asinchroninę"
 
 #, fuzzy
 #~ msgid "App Center"
