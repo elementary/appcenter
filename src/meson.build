@@ -3,6 +3,7 @@ appcenter_files = files(
     'MainWindow.vala',
     'Settings.vala',
     'SuspendControl.vala',
+    'Utils.vala',
     'Core/ChangeInformation.vala',
     'Core/Client.vala',
     'Core/ComponentValidator.vala',
