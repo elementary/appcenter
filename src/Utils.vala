@@ -16,6 +16,7 @@
 
 namespace Utils {
     public void shuffle_array<T> (T[] array) {
+        // https://gitlab.gnome.org/GNOME/vala/issues/7
         var rand = new GLib.Rand ();
         for (int i = 0; i < array.length * 3; i++) {
             swap (&array[0], &array[rand.int_range(1, array.length)]);
