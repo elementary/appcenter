@@ -45,6 +45,8 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     private int homepage_view_id;
     private int installed_view_id;
 
+    private bool mimetype;
+
     private const int VALID_QUERY_LENGTH = 3;
 
     public static Views.InstalledView installed_view { get; private set; }
@@ -269,7 +271,8 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         view_mode.selected = installed_view_id;
     }
 
-    public void search (string term) {
+    public void search (string term, bool mimetype = false) {
+        this.mimetype = mimetype;
         search_entry.text = term;
     }
 
@@ -281,7 +284,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         view_mode_revealer.reveal_child = !query_valid;
 
         if (query_valid) {
-            search_view.search (query, homepage.currently_viewed_category);
+            search_view.search (query, homepage.currently_viewed_category, mimetype);
             stack.visible_child = search_view;
         } else {
             if (stack.visible_child == search_view && homepage.currently_viewed_category != null) {
@@ -291,6 +294,10 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
             search_view.reset ();
             stack.visible_child = homepage;
+        }
+        
+        if (mimetype) {
+            mimetype = false;
         }
     }
 

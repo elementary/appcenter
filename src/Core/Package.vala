@@ -24,9 +24,9 @@ public errordomain PackageLaunchError {
 }
 
 public class AppCenterCore.Package : Object {
-    public const string APPCENTER_PACKAGE_ORIGIN = "appcenter-xenial-main";
-    private const string ELEMENTARY_STABLE_PACKAGE_ORIGIN = "stable-xenial-main";
-    private const string ELEMENTARY_DAILY_PACKAGE_ORIGIN = "daily-xenial-main";
+    public const string APPCENTER_PACKAGE_ORIGIN = "appcenter-bionic-main";
+    private const string ELEMENTARY_STABLE_PACKAGE_ORIGIN = "stable-bionic-main";
+    private const string ELEMENTARY_DAILY_PACKAGE_ORIGIN = "daily-bionic-main";
 
     public signal void changing (bool is_changing);
     public signal void info_changed (Pk.Status status);

@@ -2,11 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2018-01-23 07:54+0000\n"
-"Last-Translator: Liffindra Angga Zaaldian <liffindra.zaaldian@icloud.com>\n"
-"Language-Team: Indonesian "
-"<https://weblate.elementary.io/projects/appcenter/extra/id/>\n"
+"POT-Creation-Date: 2018-06-27 08:32-0700\n"
+"PO-Revision-Date: 2018-06-12 07:12+0000\n"
+"Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
+"Language-Team: Indonesian <https://weblate.elementary.io/projects/appcenter/"
+"extra/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,20 +15,16 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
+#: data/io.elementary.appcenter.appdata.xml.in:8
 msgid "AppCenter"
 msgstr "Pusat Aplikasi"
 
+#: data/io.elementary.appcenter.appdata.xml.in:9
+#: data/io.elementary.appcenter.desktop.in.in:4
 msgid "Browse and manage apps"
 msgstr "Jelajahi dan kelola aplikasi"
 
-msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
-msgstr ""
-"pasang;hapus pemasangan;hapus;katalog;toko;aplikasi;pembaruan;perangkat "
-"lunak;"
-
-msgid "About AppCenter"
-msgstr "Tentang AppCenter"
-
+#: data/io.elementary.appcenter.appdata.xml.in:11
 msgid ""
 "An app store for indie and open source developers. Browse by categories or "
 "search and discover new apps. AppCenter is also used for updating your "
@@ -39,39 +35,67 @@ msgstr ""
 "digunakan untuk memperbarui sistem Anda ke versi terbaru dan terbaik dari "
 "fitur dan perbaikan baru."
 
-msgid "Bug fixes and improve perfomance."
-msgstr "Perbaikan kutu dan peningkatan performa."
+#: data/io.elementary.appcenter.appdata.xml.in:191
+msgid "elementary LLC."
+msgstr "elementary LLC."
 
-msgid "Various bug fixes and performance improvements"
-msgstr "Berbagai perbaikan kutu dan peningkatan kinerja"
+#: data/io.elementary.appcenter.desktop.in.in:3
+msgid "@APP_NAME@"
+msgstr "@NAMA_APLIKASI@"
 
-msgid "New translations"
-msgstr "Terjemahan baru"
+#: data/io.elementary.appcenter.desktop.in.in:6
+msgid "@DESKTOP_ICON@"
+msgstr "@IKON_DESKTOP@"
 
-msgid "Fix crash caused by entries with missing packages"
-msgstr "Perbaiki kerusakan yang disebabkan oleh entri dengan paket yang hilang"
-
-msgid "Add capability to search by category and apply minor bug fixes."
+#: data/io.elementary.appcenter.desktop.in.in:7
+msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
 msgstr ""
-"Tambahkan kemampuan untuk pencarian menurut kategori dan menerapkan "
-"perbaikan kutu kecil."
+"pasang;hapus pemasangan;hapus;katalog;toko;aplikasi;pembaruan;perangkat "
+"lunak;"
 
-msgid "It is now possible to search apps inside a category"
-msgstr ""
-"Sekarang telah memungkinkan untuk mencari aplikasi di dalam sebuah kategori"
+#: data/io.elementary.appcenter.desktop.in.in:18
+msgid "Check for Updates"
+msgstr "Memeriksa Pembaruan"
 
-msgid "Prevent multiple authentication dialogs when resuming from suspend"
-msgstr "Mencegah beberapa dialog otentikasi saat melanjutkan dari keadaan jeda"
+#~ msgid "About AppCenter"
+#~ msgstr "Tentang AppCenter"
 
-msgid ""
-"Search perfomance has beeen improved, the category name is now shown on the "
-"headbar and minor bugs have been fixed."
-msgstr ""
-"Performa pencarian telah diperbaiki, nama kategori sekarang ditampilkan pada "
-"bilah atas dan kutu minor telah diperbaiki."
+#~ msgid "Bug fixes and improve perfomance."
+#~ msgstr "Perbaikan kutu dan peningkatan performa."
 
-msgid "Fix Steam installation"
-msgstr "Memperbaiki pemasangan Steam"
+#~ msgid "Various bug fixes and performance improvements"
+#~ msgstr "Berbagai perbaikan kutu dan peningkatan kinerja"
 
-msgid "Make search asynchronous"
-msgstr "Jadikan pencarian asinkron"
+#~ msgid "New translations"
+#~ msgstr "Terjemahan baru"
+
+#~ msgid "Fix crash caused by entries with missing packages"
+#~ msgstr ""
+#~ "Perbaiki kerusakan yang disebabkan oleh entri dengan paket yang hilang"
+
+#~ msgid "Add capability to search by category and apply minor bug fixes."
+#~ msgstr ""
+#~ "Tambahkan kemampuan untuk pencarian menurut kategori dan menerapkan "
+#~ "perbaikan kutu kecil."
+
+#~ msgid "It is now possible to search apps inside a category"
+#~ msgstr ""
+#~ "Sekarang telah memungkinkan untuk mencari aplikasi di dalam sebuah "
+#~ "kategori"
+
+#~ msgid "Prevent multiple authentication dialogs when resuming from suspend"
+#~ msgstr ""
+#~ "Mencegah beberapa dialog otentikasi saat melanjutkan dari keadaan jeda"
+
+#~ msgid ""
+#~ "Search perfomance has beeen improved, the category name is now shown on "
+#~ "the headbar and minor bugs have been fixed."
+#~ msgstr ""
+#~ "Performa pencarian telah diperbaiki, nama kategori sekarang ditampilkan "
+#~ "pada bilah atas dan kutu minor telah diperbaiki."
+
+#~ msgid "Fix Steam installation"
+#~ msgstr "Memperbaiki pemasangan Steam"
+
+#~ msgid "Make search asynchronous"
+#~ msgstr "Jadikan pencarian asinkron"

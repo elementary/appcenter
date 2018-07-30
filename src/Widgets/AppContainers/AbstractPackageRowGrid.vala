@@ -50,7 +50,7 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : AbstractAppCont
         /* Needed to enforce size on icons from Filesystem/Remote */
         image.pixel_size = 48;
 
-        package_name.get_style_context ().add_class ("h3");
+        package_name.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
         package_name.valign = Gtk.Align.END;
         package_name.xalign = 0;
 

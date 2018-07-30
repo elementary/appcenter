@@ -2,33 +2,29 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2017-04-11 13:07+0000\n"
+"POT-Creation-Date: 2018-06-27 08:32-0700\n"
+"PO-Revision-Date: 2018-06-01 00:06+0000\n"
 "Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
-"Language-Team: Czech "
-"<https://l10n.elementary.io/projects/appcenter/extra/cs/>\n"
+"Language-Team: Czech <https://weblate.elementary.io/projects/appcenter/extra/"
+"cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
+#: data/io.elementary.appcenter.appdata.xml.in:8
 msgid "AppCenter"
 msgstr "AppCentrum"
 
+#: data/io.elementary.appcenter.appdata.xml.in:9
+#: data/io.elementary.appcenter.desktop.in.in:4
 msgid "Browse and manage apps"
-msgstr "Prohlížet a spravovat aplikace"
+msgstr "Procházejte a spravujte aplikace"
 
-msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
-msgstr ""
-"instalovat;odinstalovat;odstranit;katalog;obchod;aplikace;aktualizace;"
-"software;"
-
-msgid "About AppCenter"
-msgstr "O aplikaci AppCentrum"
-
+#: data/io.elementary.appcenter.appdata.xml.in:11
 msgid ""
 "An app store for indie and open source developers. Browse by categories or "
 "search and discover new apps. AppCenter is also used for updating your "
@@ -39,40 +35,65 @@ msgstr ""
 "k aktualizaci vašeho systému na nejnovější a nejlepší verzi, s novými "
 "funkcemi a opravami chyb."
 
-msgid "Bug fixes and improve perfomance."
-msgstr "Opravy chyb a vylepšení výkonu."
+#: data/io.elementary.appcenter.appdata.xml.in:191
+msgid "elementary LLC."
+msgstr "elementary LLC."
 
-msgid "Various bug fixes and performance improvements"
-msgstr "Různé opravy chyb a vylepšení výkonu"
+#: data/io.elementary.appcenter.desktop.in.in:3
+msgid "@APP_NAME@"
+msgstr "@APP_NAME@"
 
-msgid "New translations"
-msgstr "Nové překlady"
+#: data/io.elementary.appcenter.desktop.in.in:6
+msgid "@DESKTOP_ICON@"
+msgstr "@DESKTOP_ICON@"
 
-msgid "Fix crash caused by entries with missing packages"
-msgstr "Opravit padání způsobené položkami s chybějícími balíčky"
-
-msgid "Add capability to search by category and apply minor bug fixes."
-msgstr "Přidat schopnost hledání pomocí kategorie a opravit menší chyby."
-
-msgid "It is now possible to search apps inside a category"
-msgstr "Nyní lze vyhledávat aplikace uvnitř konkrétní kategorie"
-
-msgid "Prevent multiple authentication dialogs when resuming from suspend"
+#: data/io.elementary.appcenter.desktop.in.in:7
+msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
 msgstr ""
-"Zamezit vytvoření více ověřovacích dialogů při probuzení z režimu spánku"
+"instalovat;odinstalovat;odstranit;katalog;obchod;aplikace;aktualizace;"
+"software;"
 
-msgid ""
-"Search perfomance has beeen improved, the category name is now shown on the "
-"headbar and minor bugs have been fixed."
-msgstr ""
-"Byla vylepšena rychlost hledání, název kategorie se nyní zobrazuje v "
-"headerbaru a byli opraveny menší chyby."
+#: data/io.elementary.appcenter.desktop.in.in:18
+msgid "Check for Updates"
+msgstr "Zkontrolovat aktualizace"
 
-msgid "Fix Steam installation"
-msgstr "Opravit instalaci Steam"
+#~ msgid "About AppCenter"
+#~ msgstr "O aplikaci AppCentrum"
 
-msgid "Make search asynchronous"
-msgstr "Udělat vyhledání asynchroní"
+#~ msgid "Bug fixes and improve perfomance."
+#~ msgstr "Opravy chyb a vylepšení výkonu."
+
+#~ msgid "Various bug fixes and performance improvements"
+#~ msgstr "Různé opravy chyb a vylepšení výkonu"
+
+#~ msgid "New translations"
+#~ msgstr "Nové překlady"
+
+#~ msgid "Fix crash caused by entries with missing packages"
+#~ msgstr "Opravit padání způsobené položkami s chybějícími balíčky"
+
+#~ msgid "Add capability to search by category and apply minor bug fixes."
+#~ msgstr "Přidat schopnost hledání pomocí kategorie a opravit menší chyby."
+
+#~ msgid "It is now possible to search apps inside a category"
+#~ msgstr "Nyní lze vyhledávat aplikace uvnitř konkrétní kategorie"
+
+#~ msgid "Prevent multiple authentication dialogs when resuming from suspend"
+#~ msgstr ""
+#~ "Zamezit vytvoření více ověřovacích dialogů při probuzení z režimu spánku"
+
+#~ msgid ""
+#~ "Search perfomance has beeen improved, the category name is now shown on "
+#~ "the headbar and minor bugs have been fixed."
+#~ msgstr ""
+#~ "Byla vylepšena rychlost hledání, název kategorie se nyní zobrazuje v "
+#~ "headerbaru a byli opraveny menší chyby."
+
+#~ msgid "Fix Steam installation"
+#~ msgstr "Opravit instalaci Steam"
+
+#~ msgid "Make search asynchronous"
+#~ msgstr "Udělat vyhledání asynchroní"
 
 #, fuzzy
 #~ msgid "App Center"
