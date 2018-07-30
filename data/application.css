@@ -127,8 +127,12 @@
                 0 3px 2px -1px alpha (#000, 0.15),
                 0 3px 5px alpha (#000, 0.10);
     color: #4d4d4d;
-    font-size: 32px;
     font-weight: 300;
+}
+
+.category label,
+.category .label {
+    font-size: 24px;
 }
 
 .category.audio {
@@ -145,6 +149,11 @@
                  0 2px 3px alpha (#a62100, 0.5);
 }
 
+.category.audio label,
+.category.audio .label {
+    font-size: 32px;
+}
+
 .category.development {
     background-image: linear-gradient(to bottom right,
                               #ad65d6,
@@ -156,6 +165,11 @@
     color: #fff;
 }
 
+.category.development label,
+.category.development .label {
+    font-size: 32px;
+}
+
 .category.accessories {
     border:none;
     box-shadow: inset 0 0 0 1px alpha (#fff, 0.10),
@@ -164,7 +178,6 @@
                 0 0 0 1px alpha (#000, 0.15),
                 0 3px 2px -1px alpha (#000, 0.15),
                 0 3px 5px alpha (#000, 0.10);
-    font-size: 24px;
 }
 
 .category.office {
@@ -210,6 +223,11 @@
     text-shadow: 0 1px 2px alpha (#7a0000, 0.5);
     -gtk-icon-shadow: 0 1px 2px alpha (#7a0000, 0.5);
     color: #fff;
+}
+
+.category.video label,
+.category.video .label {
+    font-size: 32px;
 }
 
 .category.graphics {
@@ -265,7 +283,6 @@
                 0 3px 5px alpha (#000, 0.10);
     text-shadow: 0 0 24px alpha (#fff, 0.6);
     font-family: HVD Bodedo;
-    font-size: 24px;
     font-weight: 400;
     color: #fff;
 }
@@ -301,7 +318,6 @@
     text-shadow: 0 1px 2px alpha (#000, 0.3);
     -gtk-icon-shadow: 0 1px 2px alpha (#000, 0.3);
     font-family: Limelight;
-    font-size: 24px;
     color: #fff;
 }
 
@@ -316,6 +332,11 @@
     font-weight: 600;
     -gtk-icon-shadow: 0 1px 0 alpha (#000, 0.3);
     text-shadow: 0 1px 0 alpha (#000, 0.3);
+}
+
+.category.language label,
+.category.language .label {
+    font-size: 18px;
 }
 
 .switcher {
