@@ -34,7 +34,7 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.ListBoxRow {
         header_label = new Gtk.Label (header);
         header_label.use_markup = true;
         header_label.xalign = 0;
-        header_label.get_style_context ().add_class ("h3");
+        header_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
         description_label = new Gtk.Label (description);
         description_label.max_width_chars = 100;
@@ -42,7 +42,7 @@ public class AppCenter.Widgets.ReleaseRow : Gtk.ListBoxRow {
         description_label.use_markup = true;
         description_label.wrap = true;
         description_label.xalign = 0;
-        description_label.get_style_context ().add_class ("h3");
+        description_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
         var grid = new Gtk.Grid ();
         grid.margin_bottom = 6;

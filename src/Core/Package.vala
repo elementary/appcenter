@@ -24,9 +24,9 @@ public errordomain PackageLaunchError {
 }
 
 public class AppCenterCore.Package : Object {
-    public const string APPCENTER_PACKAGE_ORIGIN = "appcenter-xenial-main";
-    private const string ELEMENTARY_STABLE_PACKAGE_ORIGIN = "stable-xenial-main";
-    private const string ELEMENTARY_DAILY_PACKAGE_ORIGIN = "daily-xenial-main";
+    public const string APPCENTER_PACKAGE_ORIGIN = "appcenter-bionic-main";
+    private const string ELEMENTARY_STABLE_PACKAGE_ORIGIN = "stable-bionic-main";
+    private const string ELEMENTARY_DAILY_PACKAGE_ORIGIN = "daily-bionic-main";
 
     public signal void changing (bool is_changing);
     public signal void info_changed (Pk.Status status);
@@ -81,9 +81,9 @@ public class AppCenterCore.Package : Object {
         }
     }
 
-    public bool should_nag_update {
+    public bool should_pay {
         get {
-            if (!update_available || !is_native || is_os_updates) {
+            if (!is_native || is_os_updates) {
                 return false;
             }
 
@@ -101,6 +101,12 @@ public class AppCenterCore.Package : Object {
             }
 
             return true;
+        }
+    }
+
+    public bool should_nag_update {
+        get {
+            return update_available && should_pay;
         }
     }
 
@@ -183,7 +189,7 @@ public class AppCenterCore.Package : Object {
 
             _author_title = author;
             if (_author_title == null) {
-                _author_title = _("The %s Developers").printf (get_name ());
+                _author_title = _("%s Developers").printf (get_name ());
             }
 
             return _author_title;
@@ -390,43 +396,52 @@ public class AppCenterCore.Package : Object {
         return change_information.get_status_string ();
     }
 
-    public GLib.Icon get_icon (uint size = 32) {
+    public GLib.Icon get_icon (uint size, uint scale_factor) {
         GLib.Icon? icon = null;
         uint current_size = 0;
+        uint current_scale = 0;
+        uint pixel_size = size * scale_factor;
 
-        bool is_stock = false;
-        component.get_icons ().foreach ((_icon) => {
-            if (is_stock) {
-                return;
-            }
-
+        weak GenericArray<AppStream.Icon> icons = component.get_icons ();
+        for (int i = 0; i < icons.length; i++) {
+            weak AppStream.Icon _icon = icons[i];
             switch (_icon.get_kind ()) {
                 case AppStream.IconKind.STOCK:
-                    if (Gtk.IconTheme.get_default ().has_icon (_icon.get_name ())) {
-                        is_stock = true;
-                        icon = new ThemedIcon (_icon.get_name ());
+                    unowned string icon_name = _icon.get_name ();
+                    if (Gtk.IconTheme.get_default ().has_icon (icon_name)) {
+                        return new ThemedIcon (icon_name);
                     }
 
                     break;
                 case AppStream.IconKind.CACHED:
                 case AppStream.IconKind.LOCAL:
-                    if (_icon.get_width () > current_size && current_size < size) {
+                    var icon_scale = _icon.get_scale ();
+                    var icon_width = _icon.get_width () * icon_scale;
+                    bool is_bigger = (icon_width > current_size && current_size < pixel_size);
+                    bool has_better_dpi = (icon_width == current_size && current_scale < icon_scale && scale_factor <= icon_scale);
+                    if (is_bigger || has_better_dpi) {
                         var file = File.new_for_path (_icon.get_filename ());
                         icon = new FileIcon (file);
-                        current_size = _icon.get_width ();
+                        current_size = icon_width;
+                        current_scale = icon_scale;
                     }
 
                     break;
                 case AppStream.IconKind.REMOTE:
-                    if (_icon.get_width () > current_size && current_size < size) {
+                    var icon_scale = _icon.get_scale ();
+                    var icon_width = _icon.get_width () * icon_scale;
+                    bool is_bigger = (icon_width > current_size && current_size < pixel_size);
+                    bool has_better_dpi = (icon_width == current_size && current_scale < icon_scale && scale_factor <= icon_scale);
+                    if (is_bigger || has_better_dpi) {
                         var file = File.new_for_uri (_icon.get_url ());
                         icon = new FileIcon (file);
-                        current_size = _icon.get_width ();
+                        current_size = icon_width;
+                        current_scale = icon_scale;
                     }
 
                     break;
             }
-        });
+        }
 
         if (icon == null) {
             if (component.get_kind () == AppStream.ComponentKind.ADDON) {

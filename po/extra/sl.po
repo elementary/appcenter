@@ -2,34 +2,30 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-02 13:03-0700\n"
+"POT-Creation-Date: 2018-06-27 08:32-0700\n"
 "PO-Revision-Date: 2018-02-10 00:01+0000\n"
 "Last-Translator: Jernej Virag <jernej@virag.si>\n"
-"Language-Team: Slovenian "
-"<https://weblate.elementary.io/projects/appcenter/extra/sl/>\n"
+"Language-Team: Slovenian <https://weblate.elementary.io/projects/appcenter/"
+"extra/sl/>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
-"n%100==4 ? 2 : 3;\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3;\n"
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
+#: data/io.elementary.appcenter.appdata.xml.in:8
 msgid "AppCenter"
 msgstr "Center za programsko opremo"
 
+#: data/io.elementary.appcenter.appdata.xml.in:9
+#: data/io.elementary.appcenter.desktop.in.in:4
 msgid "Browse and manage apps"
 msgstr "Iskanje in upravljanje s programi"
 
-msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
-msgstr ""
-"namesti;odstrani;instaliraj;inštaliraj;install;uninstall;katalog;trgovina;"
-"app;apps;aplikacije;posodobitve;update;software;programi;"
-
-msgid "About AppCenter"
-msgstr "O centru za programsko opremo"
-
+#: data/io.elementary.appcenter.appdata.xml.in:11
 msgid ""
 "An app store for indie and open source developers. Browse by categories or "
 "search and discover new apps. AppCenter is also used for updating your "
@@ -40,40 +36,54 @@ msgstr ""
 "opremo tudi posodablja sistem in nameščene aplikacije na najnovejšo "
 "različico."
 
-msgid "Bug fixes and improve perfomance."
+#: data/io.elementary.appcenter.appdata.xml.in:191
+msgid "elementary LLC."
 msgstr ""
 
-msgid "Various bug fixes and performance improvements"
-msgstr "Raznovrstni popravki in izboljšanje odzivnosti"
-
-msgid "New translations"
-msgstr "Novi prevodi"
-
-msgid "Fix crash caused by entries with missing packages"
-msgstr ""
-"Popravi sesutje do katerega je prišlo zaradi vnosov z manjkajočimi paketi"
-
-msgid "Add capability to search by category and apply minor bug fixes."
+#: data/io.elementary.appcenter.desktop.in.in:3
+msgid "@APP_NAME@"
 msgstr ""
 
-msgid "It is now possible to search apps inside a category"
-msgstr "Aplikacije je sedaj mogoče iskati znotraj kategorij"
-
-msgid "Prevent multiple authentication dialogs when resuming from suspend"
-msgstr ""
-"Prepreči prikaz večih dialogov za preverjanje pristnosti ob vrnitvi iz "
-"suspenza"
-
-msgid ""
-"Search perfomance has beeen improved, the category name is now shown on the "
-"headbar and minor bugs have been fixed."
+#: data/io.elementary.appcenter.desktop.in.in:6
+msgid "@DESKTOP_ICON@"
 msgstr ""
 
-msgid "Fix Steam installation"
-msgstr "Popravi namestitev Steama"
+#: data/io.elementary.appcenter.desktop.in.in:7
+msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
+msgstr ""
+"namesti;odstrani;instaliraj;inštaliraj;install;uninstall;katalog;trgovina;"
+"app;apps;aplikacije;posodobitve;update;software;programi;"
 
-msgid "Make search asynchronous"
-msgstr "Spremeni iskanje v asinhrono operacijo"
+#: data/io.elementary.appcenter.desktop.in.in:18
+msgid "Check for Updates"
+msgstr ""
+
+#~ msgid "About AppCenter"
+#~ msgstr "O centru za programsko opremo"
+
+#~ msgid "Various bug fixes and performance improvements"
+#~ msgstr "Raznovrstni popravki in izboljšanje odzivnosti"
+
+#~ msgid "New translations"
+#~ msgstr "Novi prevodi"
+
+#~ msgid "Fix crash caused by entries with missing packages"
+#~ msgstr ""
+#~ "Popravi sesutje do katerega je prišlo zaradi vnosov z manjkajočimi paketi"
+
+#~ msgid "It is now possible to search apps inside a category"
+#~ msgstr "Aplikacije je sedaj mogoče iskati znotraj kategorij"
+
+#~ msgid "Prevent multiple authentication dialogs when resuming from suspend"
+#~ msgstr ""
+#~ "Prepreči prikaz večih dialogov za preverjanje pristnosti ob vrnitvi iz "
+#~ "suspenza"
+
+#~ msgid "Fix Steam installation"
+#~ msgstr "Popravi namestitev Steama"
+
+#~ msgid "Make search asynchronous"
+#~ msgstr "Spremeni iskanje v asinhrono operacijo"
 
 #, fuzzy
 #~ msgid "App Center"

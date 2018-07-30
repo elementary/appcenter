@@ -96,6 +96,8 @@ namespace AppCenter {
             }
         }
 
+        protected bool updates_view = false;
+
         construct {
             image = new Gtk.Image ();
 
@@ -173,7 +175,7 @@ namespace AppCenter {
                 package_author.label = package.author_title;
             }
 
-            image.gicon = package.get_icon (icon_size);
+            image.gicon = package.get_icon (icon_size, image.get_scale_factor ());
 
             package.notify["state"].connect (() => {
                 Idle.add (() => {
@@ -197,6 +199,7 @@ namespace AppCenter {
 
         protected void update_action () {
             action_button.can_purchase = payments_enabled;
+            action_button.allow_free = true;
             if (payments_enabled) {
                 action_button.amount = int.parse (this.package.get_suggested_amount ());
             }
@@ -219,10 +222,10 @@ namespace AppCenter {
                     break;
                 case AppCenterCore.Package.State.INSTALLED:
                     set_widget_visibility (uninstall_button, show_uninstall && !is_os_updates);
-                    set_widget_visibility (action_button, false);
+                    set_widget_visibility (action_button, package.should_pay && updates_view);
                     set_widget_visibility (open_button, show_open && package.get_can_launch ());
                     set_widget_visibility (progress_grid, false);
-
+                    action_button.allow_free = false;
                     break;
                 case AppCenterCore.Package.State.UPDATE_AVAILABLE:
                     if (!package.should_nag_update) {
@@ -279,7 +282,12 @@ namespace AppCenter {
         }
 
         private async void action_clicked () {
-             if (package.update_available) {
+            if (package.installed && !package.update_available) {
+                set_widget_visibility (action_button, false);
+                return;
+            }
+
+            if (package.update_available) {
                  yield package.update ();
             } else if (yield package.install ()) {
                  // Add this app to the Installed Apps View

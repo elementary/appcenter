@@ -52,7 +52,7 @@ namespace AppCenter.Widgets {
             margin_top = 18;
             updates_label = new Gtk.Label (null);
             ((Gtk.Misc) updates_label).xalign = 0;
-            updates_label.get_style_context ().add_class ("h4");
+            updates_label.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
             updates_label.hexpand = true;
 
             update_size_label = new Gtk.Label (null);
@@ -103,14 +103,14 @@ namespace AppCenter.Widgets {
                 spinner.no_show_all = false;
                 spinner.show ();
                 label.label = _("Searching for updates…");
-                label.get_style_context ().remove_class ("h4");
+                label.get_style_context ().remove_class (Granite.STYLE_CLASS_H4_LABEL);
             } else {
                 halign = Gtk.Align.FILL;
                 spinner.stop ();
                 spinner.no_show_all = true;
                 spinner.hide ();
                 label.label = _("Up to Date");
-                label.get_style_context ().add_class ("h4");
+                label.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
             }
         }
     }
@@ -118,7 +118,7 @@ namespace AppCenter.Widgets {
     public class DriverGrid : AbstractHeaderGrid {
         construct {
             var label = new Gtk.Label (_("Drivers"));
-            label.get_style_context ().add_class ("h4");
+            label.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
             label.hexpand = true;
             ((Gtk.Misc)label).xalign = 0;
 
@@ -126,7 +126,8 @@ namespace AppCenter.Widgets {
         }
 
         public override void update (uint _update_numbers, uint64 _update_real_size, bool _is_updating) {
-           
+
         }
-    }    
+    }
 }
+

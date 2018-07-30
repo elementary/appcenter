@@ -45,6 +45,8 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     private int homepage_view_id;
     private int installed_view_id;
 
+    private bool mimetype;
+
     private const int VALID_QUERY_LENGTH = 3;
 
     public static Views.InstalledView installed_view { get; private set; }
@@ -66,6 +68,9 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
                 this.maximize ();
                 break;
             default:
+                if (saved_state.window_x != -1 && saved_state.window_y != -1) {
+                    move (saved_state.window_x, saved_state.window_y);
+                }
                 break;
         }
 
@@ -142,7 +147,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         view_mode.margin_end = view_mode.margin_start = 12;
         view_mode.margin_bottom = view_mode.margin_top = 7;
         homepage_view_id = view_mode.append_text (_("Home"));
-        installed_view_id = view_mode.append_text (C_("view", "Updates"));
+        installed_view_id = view_mode.append_text (C_("view", "Installed"));
 
         updates_badge = new Gtk.Label ("!");
         updates_badge.halign = Gtk.Align.END;
@@ -210,10 +215,15 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     public override bool delete_event (Gdk.EventAny event) {
         int window_width;
         int window_height;
+        int window_x;
+        int window_y;
         get_size (out window_width, out window_height);
         unowned Settings saved_state = Settings.get_default ();
         saved_state.window_width = window_width;
         saved_state.window_height = window_height;
+        get_position (out window_x, out window_y);
+        saved_state.window_x = window_x;
+        saved_state.window_y = window_y;
         if (is_maximized) {
             saved_state.window_state = Settings.WindowState.MAXIMIZED;
         } else {
@@ -261,7 +271,8 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         view_mode.selected = installed_view_id;
     }
 
-    public void search (string term) {
+    public void search (string term, bool mimetype = false) {
+        this.mimetype = mimetype;
         search_entry.text = term;
     }
 
@@ -273,7 +284,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         view_mode_revealer.reveal_child = !query_valid;
 
         if (query_valid) {
-            search_view.search (query, homepage.currently_viewed_category);
+            search_view.search (query, homepage.currently_viewed_category, mimetype);
             stack.visible_child = search_view;
         } else {
             if (stack.visible_child == search_view && homepage.currently_viewed_category != null) {
@@ -283,6 +294,10 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
             search_view.reset ();
             stack.visible_child = homepage;
+        }
+        
+        if (mimetype) {
+            mimetype = false;
         }
     }
 

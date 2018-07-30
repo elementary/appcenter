@@ -1,10 +1,11 @@
 [Desktop Entry]
 Name=@APP_NAME@ Daemon
-Comment=@RELEASE_NAME@
+Comment=Browse and manage apps
 Exec=@EXEC_NAME@ -s
 Icon=@DESKTOP_ICON@
 Terminal=false
 Type=Application
 NoDisplay=true
 X-GNOME-AutoRestart=true
+X-GNOME-Autostart-Delay=60
 X-GNOME-Autostart-Phase=Applications

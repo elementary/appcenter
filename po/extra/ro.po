@@ -2,11 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-02 13:03-0700\n"
+"POT-Creation-Date: 2018-06-27 08:32-0700\n"
 "PO-Revision-Date: 2017-06-12 20:35+0000\n"
 "Last-Translator: Nicolae Crefelean <kneekoo@yahoo.com>\n"
-"Language-Team: Romanian "
-"<https://l10n.elementary.io/projects/appcenter/extra/ro/>\n"
+"Language-Team: Romanian <https://l10n.elementary.io/projects/appcenter/extra/"
+"ro/>\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,20 +16,16 @@ msgstr ""
 "X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
+#: data/io.elementary.appcenter.appdata.xml.in:8
 msgid "AppCenter"
 msgstr "AppCenter"
 
+#: data/io.elementary.appcenter.appdata.xml.in:9
+#: data/io.elementary.appcenter.desktop.in.in:4
 msgid "Browse and manage apps"
 msgstr "Navighează și administrează aplicațiile"
 
-msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
-msgstr ""
-"instalează;dezinstalează;șterge;cataloghează;magazin;aplicații;actualizări;so"
-"ftware;"
-
-msgid "About AppCenter"
-msgstr "Despre AppCenter"
-
+#: data/io.elementary.appcenter.appdata.xml.in:11
 msgid ""
 "An app store for indie and open source developers. Browse by categories or "
 "search and discover new apps. AppCenter is also used for updating your "
@@ -40,44 +36,70 @@ msgstr ""
 "aplicații. AppCenter este de asemenea folosit pentru a actualiza sistemul la "
 "cele mai noi și bune versiuni pentru caracteristici noi sau remedieri."
 
-msgid "Bug fixes and improve perfomance."
-msgstr "Remedieri și performanță îmbunătățită."
-
-msgid "Various bug fixes and performance improvements"
-msgstr "Diverse erori corectate și performanță îmbunătățită"
-
-msgid "New translations"
-msgstr "Traduceri noi"
-
-msgid "Fix crash caused by entries with missing packages"
+#: data/io.elementary.appcenter.appdata.xml.in:191
+msgid "elementary LLC."
 msgstr ""
-"S-a remediat oprirea neașteptată a aplicației din cauza mențiunilor unor "
-"pachete lipsă"
 
-msgid "Add capability to search by category and apply minor bug fixes."
+#: data/io.elementary.appcenter.desktop.in.in:3
+msgid "@APP_NAME@"
 msgstr ""
-"S-a adăugat funcția de căutare după categorie și s-au aplicat mici remedii."
 
-msgid "It is now possible to search apps inside a category"
-msgstr "Acum este posibilă căutarea de aplicații într-o categorie"
-
-msgid "Prevent multiple authentication dialogs when resuming from suspend"
+#: data/io.elementary.appcenter.desktop.in.in:6
+msgid "@DESKTOP_ICON@"
 msgstr ""
-"Prevenirea afișării de ferestre multiple de autentificare la revenire din "
-"suspendare"
 
-msgid ""
-"Search perfomance has beeen improved, the category name is now shown on the "
-"headbar and minor bugs have been fixed."
+#: data/io.elementary.appcenter.desktop.in.in:7
+msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
 msgstr ""
-"Performanța căutării a fost îmbunătățită, numele categoriei este acum afișat "
-"în bara de antet și au fost remediate câteva probleme minore."
+"instalează;dezinstalează;șterge;cataloghează;magazin;aplicații;actualizări;"
+"software;"
 
-msgid "Fix Steam installation"
-msgstr "Repară instalarea Steam"
+#: data/io.elementary.appcenter.desktop.in.in:18
+msgid "Check for Updates"
+msgstr ""
 
-msgid "Make search asynchronous"
-msgstr "Fă căutarea asincronă"
+#~ msgid "About AppCenter"
+#~ msgstr "Despre AppCenter"
+
+#~ msgid "Bug fixes and improve perfomance."
+#~ msgstr "Remedieri și performanță îmbunătățită."
+
+#~ msgid "Various bug fixes and performance improvements"
+#~ msgstr "Diverse erori corectate și performanță îmbunătățită"
+
+#~ msgid "New translations"
+#~ msgstr "Traduceri noi"
+
+#~ msgid "Fix crash caused by entries with missing packages"
+#~ msgstr ""
+#~ "S-a remediat oprirea neașteptată a aplicației din cauza mențiunilor unor "
+#~ "pachete lipsă"
+
+#~ msgid "Add capability to search by category and apply minor bug fixes."
+#~ msgstr ""
+#~ "S-a adăugat funcția de căutare după categorie și s-au aplicat mici "
+#~ "remedii."
+
+#~ msgid "It is now possible to search apps inside a category"
+#~ msgstr "Acum este posibilă căutarea de aplicații într-o categorie"
+
+#~ msgid "Prevent multiple authentication dialogs when resuming from suspend"
+#~ msgstr ""
+#~ "Prevenirea afișării de ferestre multiple de autentificare la revenire din "
+#~ "suspendare"
+
+#~ msgid ""
+#~ "Search perfomance has beeen improved, the category name is now shown on "
+#~ "the headbar and minor bugs have been fixed."
+#~ msgstr ""
+#~ "Performanța căutării a fost îmbunătățită, numele categoriei este acum "
+#~ "afișat în bara de antet și au fost remediate câteva probleme minore."
+
+#~ msgid "Fix Steam installation"
+#~ msgstr "Repară instalarea Steam"
+
+#~ msgid "Make search asynchronous"
+#~ msgstr "Fă căutarea asincronă"
 
 #, fuzzy
 #~ msgid "App Center"

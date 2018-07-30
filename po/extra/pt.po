@@ -2,32 +2,29 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2017-05-21 18:48+0000\n"
-"Last-Translator: Luís Lima <geral@liqensoft.com>\n"
-"Language-Team: Portuguese "
-"<https://l10n.elementary.io/projects/appcenter/extra/pt/>\n"
+"POT-Creation-Date: 2018-06-27 08:32-0700\n"
+"PO-Revision-Date: 2018-07-21 00:06+0000\n"
+"Last-Translator: Christophe Silva <Christophesilva80@gmail.com>\n"
+"Language-Team: Portuguese <https://weblate.elementary.io/projects/appcenter/"
+"extra/pt/>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.14\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
+#: data/io.elementary.appcenter.appdata.xml.in:8
 msgid "AppCenter"
-msgstr "AppCenter"
+msgstr "Loja de Aplicações"
 
+#: data/io.elementary.appcenter.appdata.xml.in:9
+#: data/io.elementary.appcenter.desktop.in.in:4
 msgid "Browse and manage apps"
-msgstr "Procurar e gerir apps"
+msgstr "Procurar e gerir aplicações"
 
-msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
-msgstr ""
-"instalar;desinstalar;remover;catalogar;armazenar;apps;atualizações;software;"
-
-msgid "About AppCenter"
-msgstr "Sobre o AppCenter"
-
+#: data/io.elementary.appcenter.appdata.xml.in:11
 msgid ""
 "An app store for indie and open source developers. Browse by categories or "
 "search and discover new apps. AppCenter is also used for updating your "
@@ -38,41 +35,67 @@ msgstr ""
 "para atualizar o seu sistema para as últimas versões que incluem novas "
 "funcionalidade e correções."
 
-msgid "Bug fixes and improve perfomance."
-msgstr "Resolução de problemas e melhorias de desempenho."
+#: data/io.elementary.appcenter.appdata.xml.in:191
+msgid "elementary LLC."
+msgstr "elementary LLC."
 
-msgid "Various bug fixes and performance improvements"
-msgstr "Várias resoluções de problemas e melhorias de desempenho"
+#: data/io.elementary.appcenter.desktop.in.in:3
+msgid "@APP_NAME@"
+msgstr "@APP_NAME@"
 
-msgid "New translations"
-msgstr "Novas traduções"
+#: data/io.elementary.appcenter.desktop.in.in:6
+msgid "@DESKTOP_ICON@"
+msgstr "@DESKTOP_ICON@"
 
-msgid "Fix crash caused by entries with missing packages"
-msgstr "Corrigido o problema de crash quando eram encontrados pacotes em falta"
-
-msgid "Add capability to search by category and apply minor bug fixes."
+#: data/io.elementary.appcenter.desktop.in.in:7
+msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
 msgstr ""
-"Aplicadas correções de problemas pequenas e adicionada a possibilidade de "
-"pesquisar por categoria."
+"instalar;desinstalar;remover;catalogar;armazenar;apps;atualizações;software;"
 
-msgid "It is now possible to search apps inside a category"
-msgstr "Agora é possível pesquisar por aplicações dentro de categorias"
+#: data/io.elementary.appcenter.desktop.in.in:18
+msgid "Check for Updates"
+msgstr "Procurar por Atualizações"
 
-msgid "Prevent multiple authentication dialogs when resuming from suspend"
-msgstr "Prevenidos múltiplas janelas de diálgo quando sai do estado suspenso"
+#~ msgid "About AppCenter"
+#~ msgstr "Sobre o AppCenter"
 
-msgid ""
-"Search perfomance has beeen improved, the category name is now shown on the "
-"headbar and minor bugs have been fixed."
-msgstr ""
-"Desempenho de pesquisa melhorado, nome da categoria agora aparece na barra "
-"de cabeçalho e resolvidos pequenos problemas."
+#~ msgid "Bug fixes and improve perfomance."
+#~ msgstr "Resolução de problemas e melhorias de desempenho."
 
-msgid "Fix Steam installation"
-msgstr "Corrigida instalação da Steam"
+#~ msgid "Various bug fixes and performance improvements"
+#~ msgstr "Várias resoluções de problemas e melhorias de desempenho"
 
-msgid "Make search asynchronous"
-msgstr "Aplicada pesquisa assíncrona"
+#~ msgid "New translations"
+#~ msgstr "Novas traduções"
+
+#~ msgid "Fix crash caused by entries with missing packages"
+#~ msgstr ""
+#~ "Corrigido o problema de crash quando eram encontrados pacotes em falta"
+
+#~ msgid "Add capability to search by category and apply minor bug fixes."
+#~ msgstr ""
+#~ "Aplicadas correções de problemas pequenas e adicionada a possibilidade de "
+#~ "pesquisar por categoria."
+
+#~ msgid "It is now possible to search apps inside a category"
+#~ msgstr "Agora é possível pesquisar por aplicações dentro de categorias"
+
+#~ msgid "Prevent multiple authentication dialogs when resuming from suspend"
+#~ msgstr ""
+#~ "Prevenidos múltiplas janelas de diálgo quando sai do estado suspenso"
+
+#~ msgid ""
+#~ "Search perfomance has beeen improved, the category name is now shown on "
+#~ "the headbar and minor bugs have been fixed."
+#~ msgstr ""
+#~ "Desempenho de pesquisa melhorado, nome da categoria agora aparece na "
+#~ "barra de cabeçalho e resolvidos pequenos problemas."
+
+#~ msgid "Fix Steam installation"
+#~ msgstr "Corrigida instalação da Steam"
+
+#~ msgid "Make search asynchronous"
+#~ msgstr "Aplicada pesquisa assíncrona"
 
 #, fuzzy
 #~ msgid "App Center"

@@ -48,7 +48,7 @@ public class SharePopover : Gtk.Popover {
         twitter_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
         var reddit_button = new Gtk.Button.from_icon_name ("online-account-reddit", Gtk.IconSize.DND);
-        reddit_button.tooltip_text = _("reddit");
+        reddit_button.tooltip_text = _("Reddit");
         reddit_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
         var tumblr_button = new Gtk.Button.from_icon_name ("online-account-tumblr", Gtk.IconSize.DND);

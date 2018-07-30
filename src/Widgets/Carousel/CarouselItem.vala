@@ -26,13 +26,13 @@ public class AppCenter.Widgets.CarouselItem : Gtk.FlowBoxChild {
 
     construct {
         var icon = new Gtk.Image ();
-        icon.gicon = package.get_icon (64);
+        icon.gicon = package.get_icon (64, get_scale_factor ());
         icon.pixel_size = 64;
 
         var name_label = new Gtk.Label (package.get_name ());
         name_label.valign = Gtk.Align.END;
         name_label.xalign = 0;
-        name_label.get_style_context ().add_class ("h3");
+        name_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
         var category_label = new Gtk.Label (package.component.developer_name);
         category_label.valign = Gtk.Align.START;

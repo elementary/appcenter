@@ -1,9 +1,9 @@
 [Desktop Entry]
-_Name=@APP_NAME@
-_Comment=@RELEASE_NAME@
+Name=@APP_NAME@
+Comment=Browse and manage apps
 Exec=@EXEC_NAME@ %U
 Icon=@DESKTOP_ICON@
-_Keywords=install;uninstall;remove;catalogue;store;apps;updates;software;
+Keywords=install;uninstall;remove;catalogue;store;apps;updates;software;
 Actions=ShowUpdates;
 Terminal=false
 Type=Application
@@ -14,4 +14,4 @@ X-GNOME-UsesNotifications=true
 
 [Desktop Action ShowUpdates]
 Exec=@EXEC_NAME@ --show-updates
-_Name=Check for Updates
+Name=Check for Updates

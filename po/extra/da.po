@@ -2,11 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2018-02-09 00:08+0000\n"
-"Last-Translator: scootergrisen <scootergrisen@gmail.com>\n"
-"Language-Team: Danish "
-"<https://weblate.elementary.io/projects/appcenter/extra/da/>\n"
+"POT-Creation-Date: 2018-06-27 08:32-0700\n"
+"PO-Revision-Date: 2018-05-10 16:06+0000\n"
+"Last-Translator: Kaj Printz Madsen <kajprintz@gmail.com>\n"
+"Language-Team: Danish <https://weblate.elementary.io/projects/appcenter/"
+"extra/da/>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,52 +15,83 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
+#: data/io.elementary.appcenter.appdata.xml.in:8
 msgid "AppCenter"
-msgstr "Programcenter"
+msgstr "AppCenter"
 
+#: data/io.elementary.appcenter.appdata.xml.in:9
+#: data/io.elementary.appcenter.desktop.in.in:4
 msgid "Browse and manage apps"
-msgstr ""
+msgstr "Gennemse og administrer apps"
 
-msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
-msgstr ""
-
-msgid "About AppCenter"
-msgstr "Om Programcenter"
-
+#: data/io.elementary.appcenter.appdata.xml.in:11
 msgid ""
 "An app store for indie and open source developers. Browse by categories or "
 "search and discover new apps. AppCenter is also used for updating your "
 "system to the latest and greatest version for new features and fixes."
 msgstr ""
+"En app butik for indie og open source udviklere. Gennemse i henhold til "
+"kategorier eller søg og opdag nye apps. AppCenter bruges også til at "
+"opdatere dit system til den nyeste og bedste version med nye funktioner og "
+"rettelser."
 
-msgid "Bug fixes and improve perfomance."
-msgstr ""
+#: data/io.elementary.appcenter.appdata.xml.in:191
+msgid "elementary LLC."
+msgstr "elementary LLC."
 
-msgid "Various bug fixes and performance improvements"
-msgstr ""
+#: data/io.elementary.appcenter.desktop.in.in:3
+msgid "@APP_NAME@"
+msgstr "@APP_NAME@"
 
-msgid "New translations"
-msgstr ""
+#: data/io.elementary.appcenter.desktop.in.in:6
+msgid "@DESKTOP_ICON@"
+msgstr "@DESKTOP_ICON@"
 
-msgid "Fix crash caused by entries with missing packages"
-msgstr ""
+#: data/io.elementary.appcenter.desktop.in.in:7
+msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
+msgstr "installér;afinstallér;fjern;katalog;butik;apps;opdateringer;software;"
 
-msgid "Add capability to search by category and apply minor bug fixes."
-msgstr ""
+#: data/io.elementary.appcenter.desktop.in.in:18
+msgid "Check for Updates"
+msgstr "Søg efter Opdateringer"
 
-msgid "It is now possible to search apps inside a category"
-msgstr ""
+#~ msgid "About AppCenter"
+#~ msgstr "Om Programcenter"
 
-msgid "Prevent multiple authentication dialogs when resuming from suspend"
-msgstr ""
+#~ msgid "Bug fixes and improve perfomance."
+#~ msgstr "Fejlrettelser og forbedring af perfomance."
 
-msgid ""
-"Search perfomance has beeen improved, the category name is now shown on the "
-"headbar and minor bugs have been fixed."
-msgstr ""
+#~ msgid "Various bug fixes and performance improvements"
+#~ msgstr "Forskellige fejlrettelser og performance forbedringer"
 
-msgid "Fix Steam installation"
-msgstr ""
+#~ msgid "New translations"
+#~ msgstr "Nye oversættelser"
 
-msgid "Make search asynchronous"
-msgstr ""
+#~ msgid "Fix crash caused by entries with missing packages"
+#~ msgstr "Fix crash forårsaget af elementer med manglende pakker"
+
+#~ msgid "Add capability to search by category and apply minor bug fixes."
+#~ msgstr ""
+#~ "Tilføj evnen til at søge i henhold til kategori og tilføj mindre "
+#~ "fejlrettelser."
+
+#~ msgid "It is now possible to search apps inside a category"
+#~ msgstr "Det er nu muligt at søge apps i forhold til en kategori"
+
+#~ msgid "Prevent multiple authentication dialogs when resuming from suspend"
+#~ msgstr ""
+#~ "Forhindre gentagende godkendelsesdialoger, når man vækker op fra "
+#~ "suspendering"
+
+#~ msgid ""
+#~ "Search perfomance has beeen improved, the category name is now shown on "
+#~ "the headbar and minor bugs have been fixed."
+#~ msgstr ""
+#~ "Søge peformance er blevet forbedret, kategorinavnet er nu vist på "
+#~ "hovedstøtten og mindre fejl er blevet rettet."
+
+#~ msgid "Fix Steam installation"
+#~ msgstr "Fix Steam installation"
+
+#~ msgid "Make search asynchronous"
+#~ msgstr "Gør søgning asynkron"

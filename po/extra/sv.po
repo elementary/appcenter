@@ -2,67 +2,63 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2016-07-22 16:09+0000\n"
-"Last-Translator: Mikael Nyberg <mikanybe@gmail.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2018-06-27 08:32-0700\n"
+"PO-Revision-Date: 2018-06-12 06:39+0000\n"
+"Last-Translator: Richard Sjöqvist <richard@spiro.se>\n"
+"Language-Team: Swedish <https://weblate.elementary.io/projects/appcenter/"
+"extra/sv/>\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
-"X-Generator: Launchpad (build 18331)\n"
 
+#: data/io.elementary.appcenter.appdata.xml.in:8
 msgid "AppCenter"
-msgstr "Programcentral"
+msgstr "AppCenter"
 
+#: data/io.elementary.appcenter.appdata.xml.in:9
+#: data/io.elementary.appcenter.desktop.in.in:4
 msgid "Browse and manage apps"
-msgstr "Bläddra och hantera program"
+msgstr "Bläddra och hantera appar"
 
-msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
-msgstr ""
-"installera;avinstallera;ta bort;katalog;butik;program;uppdateringar;program;"
-
-msgid "About AppCenter"
-msgstr "Om Programcentral"
-
+#: data/io.elementary.appcenter.appdata.xml.in:11
 msgid ""
 "An app store for indie and open source developers. Browse by categories or "
 "search and discover new apps. AppCenter is also used for updating your "
 "system to the latest and greatest version for new features and fixes."
 msgstr ""
+"En appbutik för indie och öppen källkods-utvecklare. Bläddra i kategorier "
+"eller sök och upptäck nya appar. AppCenter används också för att uppdatera "
+"ditt system till den senaste och bästa versionen för nya funktioner och "
+"korrigeringar."
 
-msgid "Bug fixes and improve perfomance."
-msgstr ""
+#: data/io.elementary.appcenter.appdata.xml.in:191
+msgid "elementary LLC."
+msgstr "elementary LLC."
 
-msgid "Various bug fixes and performance improvements"
-msgstr ""
+#: data/io.elementary.appcenter.desktop.in.in:3
+msgid "@APP_NAME@"
+msgstr "@APP_NAME@"
 
-msgid "New translations"
-msgstr ""
+#: data/io.elementary.appcenter.desktop.in.in:6
+msgid "@DESKTOP_ICON@"
+msgstr "@DESKTOP_ICON@"
 
-msgid "Fix crash caused by entries with missing packages"
+#: data/io.elementary.appcenter.desktop.in.in:7
+msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
 msgstr ""
+"installera;avinstallera;ta bort;katalog;butik;appar;uppdateringar;mjukvara;"
+"program;"
 
-msgid "Add capability to search by category and apply minor bug fixes."
-msgstr ""
+#: data/io.elementary.appcenter.desktop.in.in:18
+msgid "Check for Updates"
+msgstr "Sök efter uppdateringar"
 
-msgid "It is now possible to search apps inside a category"
-msgstr ""
-
-msgid "Prevent multiple authentication dialogs when resuming from suspend"
-msgstr ""
-
-msgid ""
-"Search perfomance has beeen improved, the category name is now shown on the "
-"headbar and minor bugs have been fixed."
-msgstr ""
-
-msgid "Fix Steam installation"
-msgstr ""
-
-msgid "Make search asynchronous"
-msgstr ""
+#~ msgid "About AppCenter"
+#~ msgstr "Om Programcentral"
 
 #, fuzzy
 #~ msgid "App Center"
