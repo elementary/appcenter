@@ -33,7 +33,22 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
         add (get_category (_("System"), "applications-system", {"System"}, "system"));
         add (get_category (_("Video"), "applications-video-symbolic", {"Video"}, "video"));
         add (get_category (_("Graphics"), "", {"Graphics"}, "graphics"));
-        add (get_category (_("Games"), "applications-games-symbolic", {"Game"}, "games"));
+        add (get_category (_("Games"), "applications-games-symbolic", {
+            "ActionGame",
+            "AdventureGame",
+            "ArcadeGame",
+            "BlocksGame",
+            "BoardGame",
+            "CardGame",
+            "Game",
+            "KidsGame",
+            "LogicGame",
+            "RolePlaying",
+            "Shooter",
+            "Simulation",
+            "SportsGame",
+            "StrategyGame"
+        }, "games"));
         add (get_category (_("Education"), "", {"Education"}, "education"));
         add (get_category (_("Internet"), "applications-internet", {"Network"}, "internet"));
         add (get_category (_("Science & Engineering"), "", {"Science"}, "science"));
