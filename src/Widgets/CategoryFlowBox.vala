@@ -34,7 +34,11 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
             "Monitor",
             "System"
         }, "system"));
-        add (get_category (_("Video"), "applications-video-symbolic", {"Video"}, "video"));
+        add (get_category (_("Video"), "applications-video-symbolic", {
+            "Tuner",
+            "TV",
+            "Video"
+        }, "video"));
         add (get_category (_("Graphics"), "", {"Graphics"}, "graphics"));
         add (get_category (_("Games"), "applications-games-symbolic", {"Game"}, "games"));
         add (get_category (_("Education"), "", {"Education"}, "education"));
