@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2014-2017 elementary LLC. (https://elementary.io)
+  * Copyright (c) 2014-2018 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -84,7 +84,25 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
             "Network",
             "P2P"
         }, "internet"));
-        add (get_category (_("Science & Engineering"), "", {"Science"}, "science"));
+        add (get_category (_("Science & Engineering"), "", {
+            "ArtificialIntelligence",
+            "Astronomy",
+            "Biology",
+            "Calculator",
+            "Chemistry",
+            "ComputerScience",
+            "DataVisualization",
+            "Electricity",
+            "Electronics",
+            "Engineering",
+            "Geology",
+            "Geoscience",
+            "Math",
+            "NumericalAnalysis",
+            "Physics",
+            "Robotics",
+            "Science"
+        }, "science"));
         add (get_category (_("Universal Access"), "applications-accessibility-symbolic", {"Accessibility"}, "accessibility"));
     }
 
@@ -103,3 +121,4 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
         return item;
     }
 }
+
