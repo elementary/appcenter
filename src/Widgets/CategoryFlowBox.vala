@@ -36,12 +36,22 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
             "Spreadsheet",
             "WordProcessor"
         }, "office"));
-        add (get_category (_("System"), "applications-system", {"System"}, "system"));
-        add (get_category (_("Video"), "applications-video-symbolic", {"Video"}, "video"));
+        add (get_category (_("System"), "applications-system", {
+            "Monitor",
+            "System"
+        }, "system"));
+        add (get_category (_("Video"), "applications-video-symbolic", {
+            "Tuner",
+            "TV",
+            "Video"
+        }, "video"));
         add (get_category (_("Graphics"), "", {"Graphics"}, "graphics"));
         add (get_category (_("Games"), "applications-games-symbolic", {"Game"}, "games"));
         add (get_category (_("Education"), "", {"Education"}, "education"));
-        add (get_category (_("Internet"), "applications-internet", {"Network"}, "internet"));
+        add (get_category (_("Internet"), "applications-internet", {
+            "Network",
+            "P2P"
+        }, "internet"));
         add (get_category (_("Science & Engineering"), "", {"Science"}, "science"));
         add (get_category (_("Universal Access"), "applications-accessibility-symbolic", {"Accessibility"}, "accessibility"));
     }
