@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-12 14:39-0700\n"
-"PO-Revision-Date: 2018-08-12 10:54+0000\n"
-"Last-Translator: YISH <mokeyish@163.com>\n"
+"PO-Revision-Date: 2018-08-12 10:58+0000\n"
+"Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.elementary.io/projects/"
 "appcenter/appcenter/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -269,7 +269,7 @@ msgstr "为 %s 支付 $%d"
 msgid ""
 "This is a one time payment. Your email address is only used to send you a "
 "receipt."
-msgstr "这是一次性支付。您的电子邮件地址只会被用于给您发送收据。"
+msgstr "此为一次性支付。您的电子邮件地址仅用于发送收据。"
 
 #: ../src/Dialogs/StripeDialog.vala:91 ../src/Widgets/SharePopover.vala:35
 msgid "Email"
@@ -401,21 +401,21 @@ msgstr "所示卡号仅为示例，请输入真实有效的卡号。"
 
 #: ../src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
-msgstr ""
+msgstr "获取更新失败"
 
 #: ../src/Dialogs/UpdateFailDialog.vala:26
 msgid ""
 "This may have been caused by external, manually added software repositories "
 "or a corrupted sources file."
-msgstr ""
+msgstr "这可能是外部、手动添加的软件源或源文件损坏造成的。"
 
 #: ../src/Dialogs/UpdateFailDialog.vala:46
 msgid "Details"
-msgstr ""
+msgstr "详情"
 
 #: ../src/Dialogs/UpdateFailDialog.vala:54
 msgid "Ignore"
-msgstr ""
+msgstr "忽略"
 
 #: ../src/Dialogs/UpdateFailDialog.vala:55
 msgid "Try Again"
@@ -473,7 +473,7 @@ msgstr "帮助"
 
 #: ../src/Views/AppInfoView.vala:175
 msgid "What's New:"
-msgstr ""
+msgstr "新特性："
 
 #: ../src/Views/AppInfoView.vala:194
 msgid "Extensions:"
@@ -481,7 +481,7 @@ msgstr "扩展："
 
 #: ../src/Views/AppInfoView.vala:287
 msgid "Other Apps by %s"
-msgstr ""
+msgstr "%s 的其他应用"
 
 #: ../src/Views/AppInfoView.vala:321
 msgid "Link copied to clipboard"
@@ -489,11 +489,11 @@ msgstr ""
 
 #: ../src/Views/AppInfoView.vala:332
 msgid "Check out %s on AppCenter:"
-msgstr ""
+msgstr "在应用中心内查看 %s ："
 
 #: ../src/Views/AppInfoView.vala:339
 msgid "Share"
-msgstr ""
+msgstr "分享"
 
 #: ../src/Views/AppInfoView.vala:620
 msgid "Fund"
