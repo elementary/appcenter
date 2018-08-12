@@ -6,7 +6,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-12 14:39-0700\n"
 "PO-Revision-Date: 2018-08-13 00:02+0000\n"
-"Last-Translator: colindemian <colindemian@outlook.com>\n"
+"Last-Translator: YISH <mokeyish@163.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.elementary.io/projects/"
 "appcenter/appcenter/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -34,9 +34,8 @@ msgid "%s has been successfully installed"
 msgstr "%s 安装成功"
 
 #: ../src/Application.vala:262
-#, fuzzy
 msgid "There Was An Error Installing %s."
-msgstr "安装 %s 时出现错误"
+msgstr "安装 %s 时发生错误"
 
 #: ../src/Core/ChangeInformation.vala:54
 msgid "Starting"
