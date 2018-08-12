@@ -1,18 +1,19 @@
+# colindemian <colindemian@outlook.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-12 14:39-0700\n"
-"PO-Revision-Date: 2017-07-04 08:24+0000\n"
+"PO-Revision-Date: 2018-08-12 10:52+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
-"Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
-"appcenter/appcenter/zh_CN/>\n"
+"Language-Team: Chinese (Simplified) <https://weblate.elementary.io/projects/"
+"appcenter/appcenter/zh_Hans/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.14\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: ../src/Application.vala:38
@@ -204,20 +205,20 @@ msgstr[0] "您的系统有 %u 个可用更新"
 
 #: ../src/Core/Client.vala:483
 msgid "Version: %s"
-msgstr ""
+msgstr "版本：%s"
 
 #: ../src/Core/Client.vala:492
 msgid "No components with updates"
-msgstr ""
+msgstr "无组件更新"
 
 #: ../src/Core/Client.vala:496
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
-msgstr[0] ""
+msgstr[0] "%u 个组件更新"
 
 #: ../src/Core/Client.vala:498
 msgid "%s:"
-msgstr ""
+msgstr "%s："
 
 #: ../src/Core/Package.vala:192
 msgid "The %s Developers"
