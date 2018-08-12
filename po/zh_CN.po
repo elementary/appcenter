@@ -1,11 +1,12 @@
 # colindemian <colindemian@outlook.com>, 2018.
+# YISH <mokeyish@163.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-12 14:39-0700\n"
 "PO-Revision-Date: 2018-08-12 10:52+0000\n"
-"Last-Translator: colindemian <colindemian@outlook.com>\n"
+"Last-Translator: YISH <mokeyish@163.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.elementary.io/projects/"
 "appcenter/appcenter/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -191,7 +192,7 @@ msgstr "组件更新"
 
 #: ../src/Core/Client.vala:141
 msgid "%s (local)"
-msgstr ""
+msgstr "%s (本地)"
 
 #: ../src/Core/Client.vala:454
 msgid "Update Available"
