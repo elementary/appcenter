@@ -6,7 +6,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-12 14:39-0700\n"
 "PO-Revision-Date: 2018-08-12 10:58+0000\n"
-"Last-Translator: colindemian <colindemian@outlook.com>\n"
+"Last-Translator: YISH <mokeyish@163.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.elementary.io/projects/"
 "appcenter/appcenter/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -419,7 +419,7 @@ msgstr "忽略"
 
 #: ../src/Dialogs/UpdateFailDialog.vala:55
 msgid "Try Again"
-msgstr ""
+msgstr "重试"
 
 #: ../src/MainWindow.vala:147 ../src/Views/Homepage.vala:253
 #: ../src/Views/Homepage.vala:262 ../src/Views/Homepage.vala:267
@@ -485,7 +485,7 @@ msgstr "%s 的其他应用"
 
 #: ../src/Views/AppInfoView.vala:321
 msgid "Link copied to clipboard"
-msgstr ""
+msgstr "链接已复制到剪贴板"
 
 #: ../src/Views/AppInfoView.vala:332
 msgid "Check out %s on AppCenter:"
@@ -497,11 +497,11 @@ msgstr "分享"
 
 #: ../src/Views/AppInfoView.vala:620
 msgid "Fund"
-msgstr ""
+msgstr "基金"
 
 #: ../src/Views/AppInfoView.vala:642
 msgid "Fund the development of this app"
-msgstr ""
+msgstr "资助这个应用程序的开发"
 
 #: ../src/Views/AppListUpdateView.vala:59
 msgid "A restart is required to complete the installation of updates"
