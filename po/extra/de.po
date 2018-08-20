@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-27 08:32-0700\n"
-"PO-Revision-Date: 2018-08-18 09:14+0000\n"
+"PO-Revision-Date: 2018-08-21 00:02+0000\n"
 "Last-Translator: Tucan Holmes <tucan.web.swiss@gmail.com>\n"
 "Language-Team: German <https://weblate.elementary.io/projects/appcenter/"
 "extra/de/>\n"
@@ -41,17 +41,17 @@ msgstr "elementary LLC."
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
-msgstr "@APP_NAME@"
+msgstr ""
 
 #: data/io.elementary.appcenter.desktop.in.in:6
 msgid "@DESKTOP_ICON@"
-msgstr "@DESKTOP_ICON@"
+msgstr ""
 
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
 msgstr ""
-"installieren;deinstallieren;entfernen;auflisten;speichern;Apps;Updates;"
-"Software;"
+"install;uninstall;remove;catalogue;store;installieren;deinstallieren;entferne"
+"n;auflisten;speichern;Apps;Updates;Software;"
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
