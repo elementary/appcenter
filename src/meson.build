@@ -58,6 +58,10 @@ if get_option('curated')
     args += '--define=CURATED'
 endif
 
+if get_option('sharing')
+    args += '--define=SHARING'
+endif
+
 executable(
     meson.project_name(),
     appcenter_files,
