@@ -1,10 +1,11 @@
+# Jörg Arnold <j.ar@mailbox.org>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-15 15:47+0900\n"
-"PO-Revision-Date: 2018-05-16 22:02+0000\n"
-"Last-Translator: Güren Tan Dinga <freakeh@gmx.net>\n"
+"PO-Revision-Date: 2018-08-18 09:14+0000\n"
+"Last-Translator: Jörg Arnold <j.ar@mailbox.org>\n"
 "Language-Team: German <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/de/>\n"
 "Language: de\n"
@@ -12,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -23,7 +24,7 @@ msgstr "AppCenter"
 #: src/Application.vala:106
 #, c-format
 msgid "Could not parse mimetype %s"
-msgstr ""
+msgstr "Der Mimetyp %s konnte nicht analysiert werden"
 
 #: src/Application.vala:126
 #, c-format
@@ -706,7 +707,6 @@ msgid "Twitter"
 msgstr "Twitter"
 
 #: src/Widgets/SharePopover.vala:51
-#, fuzzy
 msgid "Reddit"
 msgstr "Reddit"
 

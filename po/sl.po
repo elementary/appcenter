@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-15 15:47+0900\n"
-"PO-Revision-Date: 2018-07-07 18:59+0000\n"
+"PO-Revision-Date: 2018-08-18 13:45+0000\n"
 "Last-Translator: Jernej Virag <jernej@virag.si>\n"
 "Language-Team: Slovenian <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/sl/>\n"
@@ -12,8 +12,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
-"%100==4 ? 2 : 3;\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
+"n%100==4 ? 2 : 3;\n"
 "X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
@@ -54,10 +54,9 @@ msgstr "Domača stran"
 
 #: src/MainWindow.vala:150 src/Views/InstalledView.vala:29
 #: src/Views/InstalledView.vala:49
-#, fuzzy
 msgctxt "view"
 msgid "Installed"
-msgstr "Namesti"
+msgstr "Nameščeno"
 
 #: src/MainWindow.vala:177 src/MainWindow.vala:328 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:81

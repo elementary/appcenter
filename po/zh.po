@@ -1,9 +1,10 @@
+# colindemian <colindemian@outlook.com>, 2018.
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-15 15:47+0900\n"
-"PO-Revision-Date: 2018-03-13 05:27+0000\n"
-"Last-Translator: mitox <antisunny10@gmail.com>\n"
+"PO-Revision-Date: 2018-08-13 00:02+0000\n"
+"Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/zh/>\n"
 "Language: zh\n"
@@ -11,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 
 #. Add "AppCenter" to the translation catalog
 #: src/Application.vala:38
@@ -21,7 +22,7 @@ msgstr "应用中心"
 #: src/Application.vala:106
 #, c-format
 msgid "Could not parse mimetype %s"
-msgstr ""
+msgstr "无法解析 %s 的文件类型"
 
 #: src/Application.vala:126
 #, c-format

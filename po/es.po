@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-15 15:47+0900\n"
-"PO-Revision-Date: 2018-07-10 00:03+0000\n"
+"PO-Revision-Date: 2018-08-16 15:01+0000\n"
 "Last-Translator: Rafael Bautista Martínez <iuninefrendor@gmail.com>\n"
 "Language-Team: Spanish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
@@ -702,9 +702,8 @@ msgid "Twitter"
 msgstr "Twitter"
 
 #: src/Widgets/SharePopover.vala:51
-#, fuzzy
 msgid "Reddit"
-msgstr "reddit"
+msgstr "Reddit"
 
 #: src/Widgets/SharePopover.vala:55
 msgid "Tumblr"

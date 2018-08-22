@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-27 08:32-0700\n"
-"PO-Revision-Date: 2018-01-05 00:56+0000\n"
+"PO-Revision-Date: 2018-08-13 00:02+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.elementary.io/projects/"
-"appcenter/extra/zh_CN/>\n"
+"appcenter/extra/zh_Hans/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
@@ -34,7 +34,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:191
 msgid "elementary LLC."
-msgstr ""
+msgstr "elementary LLC."
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
@@ -50,7 +50,7 @@ msgstr "安装;卸载;移除;分类;商店;应用;更新;软件;"
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
-msgstr ""
+msgstr "检查更新"
 
 #~ msgid "About AppCenter"
 #~ msgstr "关于 应用中心"
