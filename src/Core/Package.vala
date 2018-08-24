@@ -541,6 +541,12 @@ public class AppCenterCore.Package : Object {
             return list;
         }
 
+        for (uint i = 0; i < releases.length; i++) {
+            if (releases[i].get_version () == null) {
+                releases.remove_index (i);
+            }
+        }
+
         releases.sort_with_data ((a, b) => {
             return b.vercmp (a);
         });
