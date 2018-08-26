@@ -3,6 +3,6 @@ option('curated', type : 'boolean', value : true, description : 'Differentiate b
 option('icon', type : 'string', value : 'system-software-install', description : 'The name of the icon')
 option('libunity', type : 'boolean', value : true, description : 'Use libunity to show badges')
 option('name', type : 'string', value : 'AppCenter', description : 'The name of the application')
-option('payments', type : 'boolean', value : false, description : 'Enable payment features and display paid apps')
+option('payments', type : 'boolean', value : true, description : 'Enable payment features and display paid apps')
 option('sharing', type : 'boolean', value : true, description : 'Display sharing features, i.e. copyable URLs to apps')
 
