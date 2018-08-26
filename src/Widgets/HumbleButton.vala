@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2016-2017 elementary LLC (https://elementary.io)
+* Copyright (c) 2016–2018 elementary, Inc. (https://elementary.io)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public
@@ -25,7 +25,6 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
     private Gtk.Button amount_button;
 
     private Gtk.ToggleButton arrow_button;
-    private Gtk.Image payments_required_icon;
 
     private int _amount = 1;
     public int amount {
@@ -75,22 +74,16 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
                 amount = 0;
             }
 
-#if PAYMENTS
-            // Payments are enabled, so show the dropdown if it's purchasable
             arrow_button.visible = value;
             arrow_button.no_show_all = !value;
+#if PAYMENTS
+            // Nothing special, show everything as normal
 #else
-            // Payments disabled, so hide the whole amount button if it's purchasable
-            amount_button.visible = !value;
-            amount_button.no_show_all = value;
-
-            // Never show the dropdown
-            arrow_button.visible = false;
-            arrow_button.no_show_all = true;
-
-            // Show the error icon
-            payments_required_icon.visible = value;
-            payments_required_icon.no_show_all = !value;
+            // If it's paid, disable it and add a tooltip explaining why
+            if (value) {
+                sensitive = false;
+                tooltip_text = _("Requires payments, which are not enabled");
+            }
 #endif
         }
     }
@@ -106,8 +99,14 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
     }
 
     construct {
-        amount_button = new Gtk.Button.with_label (_("Free"));
+        amount_button = new Gtk.Button ();
         amount_button.hexpand = true;
+
+#if PAYMENTS
+        amount_button.label = _("Free");
+#else
+        amount_button.label = _("Install");
+#endif
 
         arrow_button = new Gtk.ToggleButton ();
         arrow_button.image = new Gtk.Image.from_icon_name ("pan-down-symbolic", Gtk.IconSize.MENU);
@@ -120,12 +119,6 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
         selection.closed.connect (() => {
             arrow_button.active = false;
         });
-
-        // Shown if payments are globally disabled.
-        payments_required_icon = new Gtk.Image.from_icon_name ("emblem-readonly", Gtk.IconSize.LARGE_TOOLBAR);
-        payments_required_icon.no_show_all = true;
-        payments_required_icon.tooltip_text = _("Requires payments, which are not enabled");
-        payments_required_icon.visible = false;
 
         amount_button.clicked.connect (() => {
             if (this.amount != 0) {
@@ -141,7 +134,6 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
 
         add (amount_button);
         add (arrow_button);
-        add (payments_required_icon);
     }
 
     public static string get_amount_formatted (int _amount, bool with_short_part = true) {
@@ -154,3 +146,4 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
         }
     }
 }
+
