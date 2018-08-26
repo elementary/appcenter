@@ -208,8 +208,11 @@ namespace AppCenter {
 
             switch (package.state) {
                 case AppCenterCore.Package.State.NOT_INSTALLED:
+#if PAYMENTS
                     action_button.label = _("Free");
-
+#else
+                    action_button.label = _("Install");
+#endif
                     if (package.component.get_id () in settings.paid_apps) {
                         action_button.amount = 0;
                     }

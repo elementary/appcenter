@@ -25,6 +25,7 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
     private Gtk.Button amount_button;
 
     private Gtk.ToggleButton arrow_button;
+    private Gtk.Image payments_required_icon;
 
     private int _amount = 1;
     public int amount {
@@ -74,8 +75,23 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
                 amount = 0;
             }
 
+#if PAYMENTS
+            // Payments are enabled, so show the dropdown if it's purchasable
             arrow_button.visible = value;
             arrow_button.no_show_all = !value;
+#else
+            // Payments disabled, so hide the whole amount button if it's purchasable
+            amount_button.visible = !value;
+            amount_button.no_show_all = value;
+
+            // Never show the dropdown
+            arrow_button.visible = false;
+            arrow_button.no_show_all = true;
+
+            // Show the error icon
+            payments_required_icon.visible = value;
+            payments_required_icon.no_show_all = !value;
+#endif
         }
     }
 
@@ -105,6 +121,12 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
             arrow_button.active = false;
         });
 
+        // Shown if payments are globally disabled.
+        payments_required_icon = new Gtk.Image.from_icon_name ("emblem-readonly", Gtk.IconSize.LARGE_TOOLBAR);
+        payments_required_icon.no_show_all = true;
+        payments_required_icon.tooltip_text = _("Requires payments, which are not enabled");
+        payments_required_icon.visible = false;
+
         amount_button.clicked.connect (() => {
             if (this.amount != 0) {
                 payment_requested (this.amount);
@@ -119,6 +141,7 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
 
         add (amount_button);
         add (arrow_button);
+        add (payments_required_icon);
     }
 
     public static string get_amount_formatted (int _amount, bool with_short_part = true) {
