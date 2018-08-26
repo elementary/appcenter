@@ -70,17 +70,8 @@ namespace AppCenter.Views {
             while (current_visible_index < list_store.get_n_items ()) {
                 var package = (AppCenterCore.Package?) list_store.get_object (current_visible_index);
 
-#if PAYMENTS
-                // Show regardless of whether it's a paid app or not
                 var row = construct_row_for_package (package);
                 add_row (row);
-#else
-                // Only show if it's not a paid app
-                if (package.get_payments_key () == null) {
-                    var row = construct_row_for_package (package);
-                    add_row (row);
-                }
-#endif
 
                 current_visible_index++;
 
