@@ -142,7 +142,7 @@ public class AppCenterCore.Package : Object {
 
     public bool is_shareable {
         get {
-            return !is_driver && !is_os_updates;
+            return !is_driver && !is_os_updates && is_native;
         }
     }
 
