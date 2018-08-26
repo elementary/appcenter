@@ -69,12 +69,9 @@ namespace AppCenter.Views {
             uint old_index = current_visible_index;
             while (current_visible_index < list_store.get_n_items ()) {
                 var package = (AppCenterCore.Package?) list_store.get_object (current_visible_index);
-
                 var row = construct_row_for_package (package);
                 add_row (row);
-
                 current_visible_index++;
-
                 if (old_index + 20 < current_visible_index) {
                     break;
                 }
