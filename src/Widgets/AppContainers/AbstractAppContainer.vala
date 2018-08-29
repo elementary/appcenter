@@ -49,6 +49,12 @@ namespace AppCenter {
         protected Gtk.Stack action_stack;
 
         private Settings settings;
+        private Mutex action_mutex = Mutex ();
+
+        // Possible values that will be stored in our action_clicked's atomic integer.
+        const int HIDE_BUTTON = 1;
+        const int NO_OP = 2;
+        const int ADD_APP = 3;
 
         public bool is_os_updates {
             get {
@@ -282,17 +288,63 @@ namespace AppCenter {
         }
 
         private async void action_clicked () {
-            if (package.installed && !package.update_available) {
-                set_widget_visibility (action_button, false);
-                return;
-            }
+            int atomic = 0;
 
-            if (package.update_available) {
-                 yield package.update ();
-            } else if (yield package.install ()) {
-                 // Add this app to the Installed Apps View
-                 MainWindow.installed_view.add_app.begin (package);
-            }
+            // Apply packagekit actions in the background, and ultimately yield a result
+            // to this action's atomic integer once the action is complete.
+            var handle = new Thread<bool> ("action_clicked", () => {
+                // Ensure that only one action is performed at a time.
+                action_mutex.lock ();
+
+                int result = 0;
+                if (package.installed && !package.update_available) {
+                    result = HIDE_BUTTON;
+                } else if (package.update_available) {
+                    package.update.begin ();
+                    result = NO_OP;
+                } else {
+                    package.install.begin ((obj, res) => {
+                        if (package.install.end (res)) {
+                            result = ADD_APP;
+                        } else {
+                            result = NO_OP;
+                        }
+                    });
+                }
+
+                AtomicInt.set (ref atomic, result);
+                action_mutex.unlock ();
+                return true;
+            });
+
+            action_button.label = _("Queued");
+
+            // Wake up once a second and check for the result.
+            Timeout.add (1000, () => {
+                var result = AtomicInt.get (ref atomic);
+                var source = Source.CONTINUE;
+
+                if (result != 0) {
+                    handle.join ();
+
+                    switch (result) {
+                        case HIDE_BUTTON:
+                            set_widget_visibility (action_button, false);
+                            source = Source.REMOVE;
+                            break;
+                        case NO_OP:
+                            source = Source.REMOVE;
+                            break;
+                        case ADD_APP:
+                            // Add this app to the Installed Apps View
+                            MainWindow.installed_view.add_app.begin (package);
+                            source = Source.REMOVE;
+                            break;
+                    }
+                }
+
+                return source;
+            });
         }
 
         private async void uninstall_clicked () {
