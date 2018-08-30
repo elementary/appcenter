@@ -50,6 +50,7 @@ namespace AppCenter {
 
         private Settings settings;
         private Mutex action_mutex = Mutex ();
+        private Cancellable action_cancellable = new Cancellable ();
 
         // Possible values that will be stored in our action_clicked's atomic integer.
         private enum ActionResult {
@@ -278,6 +279,8 @@ namespace AppCenter {
         }
 
         private void action_cancelled () {
+            action_cancellable.cancel ();
+            update_action ();
             package.action_cancellable.cancel ();
         }
 
@@ -298,6 +301,7 @@ namespace AppCenter {
             ThreadFunc<bool> run = () => {
                 // Ensure that only one action is performed at a time.
                 action_mutex.lock ();
+
                 var loop = new MainLoop ();
 
                 if (package.installed && !package.update_available) {
@@ -315,6 +319,14 @@ namespace AppCenter {
 
                         loop.quit ();
                     });
+                }
+
+                if (action_cancellable.is_cancelled ()) {
+                    package.action_cancellable.cancel ();
+                    action_cancellable.reset ();
+                    action_mutex.unlock ();
+                    Idle.add ((owned)callback);
+                    return true;
                 }
 
                 loop.run (); // wait for async methods above
