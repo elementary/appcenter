@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-15 15:47+0900\n"
-"PO-Revision-Date: 2018-08-18 09:14+0000\n"
+"PO-Revision-Date: 2018-08-29 00:03+0000\n"
 "Last-Translator: Jörg Arnold <j.ar@mailbox.org>\n"
 "Language-Team: German <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/de/>\n"
@@ -24,7 +24,7 @@ msgstr "AppCenter"
 #: src/Application.vala:106
 #, c-format
 msgid "Could not parse mimetype %s"
-msgstr "Der Mimetyp %s konnte nicht analysiert werden"
+msgstr "Konnte MIME-Typ %s nicht analysieren"
 
 #: src/Application.vala:126
 #, c-format
@@ -62,7 +62,7 @@ msgstr "Installiert"
 #: src/MainWindow.vala:177 src/MainWindow.vala:328 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:81
 msgid "Search Apps"
-msgstr "Anwendungen suchen"
+msgstr "Suche Apps"
 
 #: src/MainWindow.vala:195
 msgid "Network Is Not Available"
@@ -76,7 +76,7 @@ msgstr ""
 
 #: src/MainWindow.vala:199
 msgid "Network Settings…"
-msgstr "Netzwerkeinstellungen …"
+msgstr "Netzwerkeinstellungen…"
 
 #: src/Core/ChangeInformation.vala:54
 msgid "Starting"

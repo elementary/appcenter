@@ -1,18 +1,19 @@
+# Rodrigo Oliveira <rod.oliveira@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-12 14:39-0700\n"
-"PO-Revision-Date: 2018-06-05 13:46+0000\n"
-"Last-Translator: Leonardo <leonardo@elementary.io>\n"
-"Language-Team: Portuguese (Brazil) "
-"<https://weblate.elementary.io/projects/appcenter/appcenter/pt_BR/>\n"
+"PO-Revision-Date: 2018-08-29 19:25+0000\n"
+"Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
+"Language-Team: Portuguese (Brazil) <https://weblate.elementary.io/projects/"
+"appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
 #: ../src/Application.vala:38
@@ -659,12 +660,12 @@ msgstr "Acessibilidade"
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: ../src/Widgets/HumbleButton.vala:127
 msgid "$%d.00"
-msgstr "$%d.00"
+msgstr "US$%d.00"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: ../src/Widgets/HumbleButton.vala:130
 msgid "$%d"
-msgstr "$%d"
+msgstr "US$%d"
 
 #: ../src/Widgets/ReleaseRow.vala:67
 msgid "<b>%s</b> – %s"
