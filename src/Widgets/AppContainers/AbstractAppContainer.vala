@@ -325,7 +325,13 @@ namespace AppCenter {
             };
             new Thread<bool> ("action_clicked", run);
 
-            action_button.label = _("Queued");
+            set_widget_visibility (uninstall_button, false);
+            set_widget_visibility (action_button, false);
+            set_widget_visibility (open_button, false);
+            set_widget_visibility (progress_grid, true);
+
+            action_stack.set_visible_child_name ("progress");
+
             yield;
 
             switch (result) {
