@@ -325,10 +325,12 @@ namespace AppCenter {
             };
             new Thread<bool> ("action_clicked", run);
 
-            progress_bar.visible = true;
-            action_button.visible = false;
-            cancel_button.visible = false;
-            cancel_button.sensitive = true;
+            set_widget_visibility (uninstall_button, false);
+            set_widget_visibility (action_button, false);
+            set_widget_visibility (open_button, false);
+            set_widget_visibility (progress_grid, true);
+
+            action_stack.set_visible_child_name ("progress");
 
             yield;
 
