@@ -325,7 +325,14 @@ public class AppCenterCore.Package : Object {
             case State.INSTALLING:
                 return yield client.install_package (this, cb, action_cancellable);
             case State.REMOVING:
-                return yield client.remove_package (this, cb, action_cancellable);
+                var status = yield client.remove_package (this, cb, action_cancellable);
+
+                // Clear the installed packages set on success, else we cannot reinstall.
+                if (Pk.Exit.SUCCESS == status) {
+                    installed_packages.clear ();
+                }
+
+                return status;
             default:
                 return Pk.Exit.UNKNOWN;
         }
