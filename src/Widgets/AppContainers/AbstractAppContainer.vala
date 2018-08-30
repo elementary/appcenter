@@ -325,7 +325,11 @@ namespace AppCenter {
             };
             new Thread<bool> ("action_clicked", run);
 
-            action_button.label = _("Queued");
+            progress_bar.visible = true;
+            action_button.visible = false;
+            cancel_button.visible = false;
+            cancel_button.sensitive = true;
+
             yield;
 
             switch (result) {
