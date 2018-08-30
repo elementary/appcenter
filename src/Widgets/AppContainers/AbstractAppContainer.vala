@@ -52,9 +52,11 @@ namespace AppCenter {
         private Mutex action_mutex = Mutex ();
 
         // Possible values that will be stored in our action_clicked's atomic integer.
-        const int HIDE_BUTTON = 1;
-        const int NO_OP = 2;
-        const int ADD_APP = 3;
+        private enum ActionResult {
+            NONE = 0,
+            HIDE_BUTTON = 1,
+            ADD_TO_INSTALLED_SCREEN = 2
+        }
 
         public bool is_os_updates {
             get {
@@ -288,63 +290,55 @@ namespace AppCenter {
         }
 
         private async void action_clicked () {
-            int atomic = 0;
+            ActionResult result = 0;
+            SourceFunc callback = action_clicked.callback;
 
             // Apply packagekit actions in the background, and ultimately yield a result
-            // to this action's atomic integer once the action is complete.
-            var handle = new Thread<bool> ("action_clicked", () => {
+            // to this once the action is complete
+            ThreadFunc<bool> run = () => {
                 // Ensure that only one action is performed at a time.
                 action_mutex.lock ();
+                var loop = new MainLoop ();
 
-                int result = 0;
                 if (package.installed && !package.update_available) {
-                    result = HIDE_BUTTON;
+                    result = ActionResult.HIDE_BUTTON;
                 } else if (package.update_available) {
-                    package.update.begin ();
-                    result = NO_OP;
+                    package.update.begin ((obj, res) => {
+                        package.update.end (res);
+                        loop.quit ();
+                    });
                 } else {
                     package.install.begin ((obj, res) => {
-                        if (package.install.end (res)) {
-                            result = ADD_APP;
-                        } else {
-                            result = NO_OP;
+                        if (package.update.end (res)) {
+                            result = ActionResult.ADD_TO_INSTALLED_SCREEN;
                         }
+
+                        loop.quit ();
                     });
                 }
 
-                AtomicInt.set (ref atomic, result);
+                loop.run (); // wait for async methods above
+
                 action_mutex.unlock ();
+                Idle.add ((owned)callback);
                 return true;
-            });
+            };
+            new Thread<bool> ("action_clicked", run);
 
             action_button.label = _("Queued");
+            yield;
 
-            // Wake up once a second and check for the result.
-            Timeout.add (1000, () => {
-                var result = AtomicInt.get (ref atomic);
-                var source = Source.CONTINUE;
-
-                if (result != 0) {
-                    handle.join ();
-
-                    switch (result) {
-                        case HIDE_BUTTON:
-                            set_widget_visibility (action_button, false);
-                            source = Source.REMOVE;
-                            break;
-                        case NO_OP:
-                            source = Source.REMOVE;
-                            break;
-                        case ADD_APP:
-                            // Add this app to the Installed Apps View
-                            MainWindow.installed_view.add_app.begin (package);
-                            source = Source.REMOVE;
-                            break;
-                    }
-                }
-
-                return source;
-            });
+            switch (result) {
+                case ActionResult.HIDE_BUTTON:
+                    set_widget_visibility (action_button, false);
+                    break;
+                case ActionResult.ADD_TO_INSTALLED_SCREEN:
+                    // Add this app to the Installed Apps View
+                    MainWindow.installed_view.add_app.begin (package);
+                    break;
+                default:
+                    break;
+            }
         }
 
         private async void uninstall_clicked () {

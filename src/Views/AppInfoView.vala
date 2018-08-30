@@ -405,12 +405,11 @@ namespace AppCenter.Views {
                 return;
             }
 
+            SourceFunc callback = get_app_download_size.callback;
             uint64 size = 0;
-            int ready = 0;
 
-            // This thread will set the value of `size` in the background. Upon completing that task, it
-            // will set the above `ready` integer to `1` to indicate completeness.
-            var handle = new Thread<bool> ("download size", () => {
+            // This thread will set the value of `size` in the background.
+            ThreadFunc<bool> run = () => {
                 var client = AppCenterCore.Client.get_default ();
                 var deps = new Gee.ArrayList<Pk.Package> ();
                 client.get_needed_deps_for_package.begin (package, app_download_size_cancellable, (obj, res) => {
@@ -442,22 +441,14 @@ namespace AppCenter.Views {
                     size += pk_package.size;
                 }
 
-                AtomicInt.set (ref ready, 1);
+                Idle.add ((owned)callback);
                 return true;
-            });
+            };
+            new Thread<bool> ("download size", run);
 
-            // So as to not block the UI, this will check the readiness of `size`,
-            // and update the UI when it's complete.
-            Timeout.add (1000, () => {
-                if (GLib.AtomicInt.get (ref ready) == 1) {
-                    handle.join();
-                    app_download_size_label.label = GLib.format_size (size);
-                    app_download_size_label.visible = true;
-                    return Source.REMOVE;
-                }
-
-                return Source.CONTINUE;
-            });
+            yield;
+            app_download_size_label.label = GLib.format_size (size);
+            app_download_size_label.visible = true;
         }
 
         public void reload_css () {
