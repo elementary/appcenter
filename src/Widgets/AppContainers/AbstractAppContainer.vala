@@ -52,7 +52,6 @@ namespace AppCenter {
         private Mutex action_mutex = Mutex ();
         private Cancellable action_cancellable = new Cancellable ();
 
-        // Possible values that will be stored in our action_clicked's atomic integer.
         private enum ActionResult {
             NONE = 0,
             HIDE_BUTTON = 1,
