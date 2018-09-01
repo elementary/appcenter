@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-15 15:47+0900\n"
-"PO-Revision-Date: 2018-06-28 00:09+0000\n"
+"PO-Revision-Date: 2018-09-02 00:08+0000\n"
 "Last-Translator: Kaj Printz Madsen <kajprintz@gmail.com>\n"
 "Language-Team: Danish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/da/>\n"
@@ -24,7 +24,7 @@ msgstr "AppCenter"
 #: src/Application.vala:106
 #, c-format
 msgid "Could not parse mimetype %s"
-msgstr "Kunne ikke tolke mimetypen %s"
+msgstr "Kunne ikke forstå mimetypen %s"
 
 #: src/Application.vala:126
 #, c-format
