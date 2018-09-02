@@ -34,13 +34,8 @@ dependencies = [
 ]
 
 if get_option('libunity')
-    unity = dependency ('unity', version: '>=4.0.0', required: false)
-    if unity.found()
-        dependencies += unity
-        add_project_arguments('--define=HAVE_UNITY', language: 'vala')
-    else
-        warning ('Unity support enabled but dependency not found, unity support disabled')
-    endif
+    unity = dependency ('unity', version: '>=4.0.0')
+    add_project_arguments('--define=HAVE_UNITY', language: 'vala')
 endif
 
 config_dir = join_paths(get_option('sysconfdir'), meson.project_name())
