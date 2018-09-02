@@ -34,7 +34,7 @@ dependencies = [
 ]
 
 if get_option('libunity')
-    unity = dependency ('unity', version: '>=4.0.0')
+    dependencies += dependency ('unity', version: '>=4.0.0')
     add_project_arguments('--define=HAVE_UNITY', language: 'vala')
 endif
 
