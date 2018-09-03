@@ -35,6 +35,7 @@ dependencies = [
 
 if get_option('libunity')
     dependencies += dependency ('unity', version: '>=4.0.0')
+    add_project_arguments('--define=HAVE_UNITY', language: 'vala')
 endif
 
 config_dir = join_paths(get_option('sysconfdir'), meson.project_name())
