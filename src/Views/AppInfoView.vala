@@ -407,34 +407,48 @@ namespace AppCenter.Views {
                 return;
             }
 
-            var client = AppCenterCore.Client.get_default ();
-            var deps = yield client.get_needed_deps_for_package (package, app_download_size_cancellable);
-            string[] package_ids = {};
-
-            foreach (var package in deps) {
-                package_ids += package.package_id;
-            }
-
-            package_ids += null;
+            SourceFunc callback = get_app_download_size.callback;
             uint64 size = 0;
 
-            if (package_ids.length > 1) {
-                var pk_client = AppCenterCore.Client.get_pk_client ();
-                try {
-                    var details = yield pk_client.get_details_async (package_ids, app_download_size_cancellable, (p, t) => {});
-                    details.get_details_array ().foreach ((details) => {
-                        size += details.size;
-                    });
-                } catch (Error e) {
-                    warning ("Error fetching details for dependencies, download size may be inaccurate: %s", e.message);
+            // This thread will set the value of `size` in the background.
+            ThreadFunc<bool> run = () => {
+                var client = AppCenterCore.Client.get_default ();
+                var deps = new Gee.ArrayList<Pk.Package> ();
+                client.get_needed_deps_for_package.begin (package, app_download_size_cancellable, (obj, res) => {
+                    deps = client.get_needed_deps_for_package.end (res);
+                });
+
+                string[] package_ids = {};
+
+                foreach (var package in deps) {
+                    package_ids += package.package_id;
                 }
-            }
 
-            var pk_package = package.find_package ();
-            if (pk_package != null) {
-                size += pk_package.size;
-            }
+                package_ids += null;
 
+                if (package_ids.length > 1) {
+                    var pk_client = AppCenterCore.Client.get_pk_client ();
+                    try {
+                        var details = pk_client.get_details (package_ids, app_download_size_cancellable, (p, t) => {});
+                        details.get_details_array ().foreach ((details) => {
+                            size += details.size;
+                        });
+                    } catch (Error e) {
+                        warning ("Error fetching details for dependencies, download size may be inaccurate: %s", e.message);
+                    }
+                }
+
+                var pk_package = package.find_package ();
+                if (pk_package != null) {
+                    size += pk_package.size;
+                }
+
+                Idle.add ((owned)callback);
+                return true;
+            };
+            new Thread<bool> ("download size", run);
+
+            yield;
             app_download_size_label.label = GLib.format_size (size);
             app_download_size_label.visible = true;
         }
