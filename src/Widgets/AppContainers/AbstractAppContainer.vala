@@ -49,6 +49,14 @@ namespace AppCenter {
         protected Gtk.Stack action_stack;
 
         private Settings settings;
+        private Mutex action_mutex = Mutex ();
+        private Cancellable action_cancellable = new Cancellable ();
+
+        private enum ActionResult {
+            NONE = 0,
+            HIDE_BUTTON = 1,
+            ADD_TO_INSTALLED_SCREEN = 2
+        }
 
         public bool is_os_updates {
             get {
@@ -270,6 +278,8 @@ namespace AppCenter {
         }
 
         private void action_cancelled () {
+            action_cancellable.cancel ();
+            update_action ();
             package.action_cancellable.cancel ();
         }
 
@@ -282,16 +292,69 @@ namespace AppCenter {
         }
 
         private async void action_clicked () {
-            if (package.installed && !package.update_available) {
-                set_widget_visibility (action_button, false);
-                return;
-            }
+            ActionResult result = 0;
+            SourceFunc callback = action_clicked.callback;
 
-            if (package.update_available) {
-                 yield package.update ();
-            } else if (yield package.install ()) {
-                 // Add this app to the Installed Apps View
-                 MainWindow.installed_view.add_app.begin (package);
+            // Apply packagekit actions in the background, and ultimately yield a result
+            // to this once the action is complete
+            ThreadFunc<bool> run = () => {
+                // Ensure that only one action is performed at a time.
+                action_mutex.lock ();
+
+                var loop = new MainLoop ();
+
+                if (package.installed && !package.update_available) {
+                    result = ActionResult.HIDE_BUTTON;
+                } else if (package.update_available) {
+                    package.update.begin ((obj, res) => {
+                        package.update.end (res);
+                        loop.quit ();
+                    });
+                } else {
+                    package.install.begin ((obj, res) => {
+                        if (package.update.end (res)) {
+                            result = ActionResult.ADD_TO_INSTALLED_SCREEN;
+                        }
+
+                        loop.quit ();
+                    });
+                }
+
+                if (action_cancellable.is_cancelled ()) {
+                    package.action_cancellable.cancel ();
+                    action_cancellable.reset ();
+                    action_mutex.unlock ();
+                    Idle.add ((owned)callback);
+                    return true;
+                }
+
+                loop.run (); // wait for async methods above
+
+                action_mutex.unlock ();
+                Idle.add ((owned)callback);
+                return true;
+            };
+            new Thread<bool> ("action_clicked", run);
+
+            set_widget_visibility (uninstall_button, false);
+            set_widget_visibility (action_button, false);
+            set_widget_visibility (open_button, false);
+            set_widget_visibility (progress_grid, true);
+
+            action_stack.set_visible_child_name ("progress");
+
+            yield;
+
+            switch (result) {
+                case ActionResult.HIDE_BUTTON:
+                    set_widget_visibility (action_button, false);
+                    break;
+                case ActionResult.ADD_TO_INSTALLED_SCREEN:
+                    // Add this app to the Installed Apps View
+                    MainWindow.installed_view.add_app.begin (package);
+                    break;
+                default:
+                    break;
             }
         }
 
