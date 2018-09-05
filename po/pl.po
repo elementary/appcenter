@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-15 15:47+0900\n"
-"PO-Revision-Date: 2018-07-03 00:05+0000\n"
+"PO-Revision-Date: 2018-09-06 00:08+0000\n"
 "Last-Translator: Piotr Strebski <strebski@gmail.com>\n"
 "Language-Team: Polish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/pl/>\n"
@@ -20,7 +20,7 @@ msgstr ""
 #. Add "AppCenter" to the translation catalog
 #: src/Application.vala:38
 msgid "AppCenter"
-msgstr "Centrum programów"
+msgstr "Centrum oprogramowania"
 
 #: src/Application.vala:106
 #, c-format
