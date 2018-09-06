@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-27 08:32-0700\n"
 "PO-Revision-Date: 2018-09-07 00:05+0000\n"
-"Last-Translator: strozzascotte <marco.depaolini@gmail.com>\n"
+"Last-Translator: Fabio Rifici <fabio.rifici@microtechsrl.com>\n"
 "Language-Team: Italian <https://weblate.elementary.io/projects/appcenter/"
 "extra/it/>\n"
 "Language: it\n"
@@ -41,11 +41,11 @@ msgstr "elementary LLC."
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
-msgstr ""
+msgstr "@NOME_APP@"
 
 #: data/io.elementary.appcenter.desktop.in.in:6
 msgid "@DESKTOP_ICON@"
-msgstr ""
+msgstr "@ICONA_DESKTOP@"
 
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
@@ -55,7 +55,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
-msgstr ""
+msgstr "Verifica gli aggiornamenti"
 
 #~ msgid "About AppCenter"
 #~ msgstr "Informazioni"
