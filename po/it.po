@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-12 14:39-0700\n"
-"PO-Revision-Date: 2018-09-06 00:08+0000\n"
+"PO-Revision-Date: 2018-09-07 00:05+0000\n"
 "Last-Translator: strozzascotte <marco.depaolini@gmail.com>\n"
 "Language-Team: Italian <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/it/>\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../src/Application.vala:38
 msgid "AppCenter"
-msgstr "Centro Applicazioni"
+msgstr "AppCenter"
 
 #: ../src/Application.vala:115
 msgid "Specified link '%s' could not be found, searching instead"
@@ -518,7 +518,7 @@ msgstr "Collegamento copiato negli appunti"
 
 #: ../src/Views/AppInfoView.vala:332
 msgid "Check out %s on AppCenter:"
-msgstr "Scopri %s nel Centro Applicazioni:"
+msgstr "Scopri %s in AppCenter:"
 
 #: ../src/Views/AppInfoView.vala:339
 msgid "Share"
