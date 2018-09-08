@@ -42,15 +42,15 @@ public class AppCenter.Widgets.PaymentMethodButton : Gtk.Revealer {
         var title_label = new Gtk.Label (title);
         title_label.halign = Gtk.Align.START;
         title_label.hexpand = true;
+        title_label.margin_top = title_label.margin_bottom = 3;
 
         var radio_grid = new Gtk.Grid ();
-        radio_grid.margin_top = radio_grid.margin_bottom = 6;
         radio_grid.column_spacing = radio_grid.row_spacing = 6;
 
         radio_grid.attach (title_label, 0, 0);
 
         if (icon != null) {
-            var image = new Gtk.Image.from_icon_name (icon, Gtk.IconSize.BUTTON);
+            var image = new Gtk.Image.from_icon_name (icon, Gtk.IconSize.LARGE_TOOLBAR);
             image.margin_end = 38;
 
             radio_grid.attach (image, 1, 0);
