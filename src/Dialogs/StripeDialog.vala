@@ -82,12 +82,9 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         overlay.valign = Gtk.Align.START;
         overlay.add (image);
 
-        string icon_name = "system-software-install";
-        if (Gtk.IconTheme.get_default ().has_icon (icon_name)) {
-            var overlay_image = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.LARGE_TOOLBAR);
-            overlay_image.halign = overlay_image.valign = Gtk.Align.END;
-            overlay.add_overlay (overlay_image);
-        }
+        var overlay_image = new Gtk.Image.from_icon_name ("system-software-install", Gtk.IconSize.LARGE_TOOLBAR);
+        overlay_image.halign = overlay_image.valign = Gtk.Align.END;
+        overlay.add_overlay (overlay_image);
 
         var primary_label = new Gtk.Label (_("Pay $%d for %s").printf (amount, app_name));
         primary_label.get_style_context ().add_class ("primary");
