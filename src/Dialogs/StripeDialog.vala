@@ -98,6 +98,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         secondary_label.wrap = true;
         secondary_label.xalign = 0;
 
+        // TODO: Save/restore email
         email_entry = new Gtk.Entry ();
         email_entry.hexpand = true;
         email_entry.input_purpose = Gtk.InputPurpose.EMAIL;
@@ -110,8 +111,10 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
            validate (0, email_entry.text);
         });
 
+        // TODO: Hide if no existing methods
         new_payment_method = new AppCenter.Widgets.PaymentMethodButton ("New Payment Method…");
 
+        // TODO: Loop through existing payment methods
         existing_payment_method = new AppCenter.Widgets.PaymentMethodButton ("Visa 1234", "payment-card-visa", true);
         existing_payment_method.radio.join_group (new_payment_method.radio);
         existing_payment_method.radio.active = true;
@@ -178,8 +181,17 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         card_grid.add (card_number_entry);
         card_grid.add (card_grid_bottom);
 
+        var remember_check = new Gtk.CheckButton.with_label (_("Remember payment method"));
+        remember_check.margin_start = 8;
+
+        var card_remember_grid = new Gtk.Grid ();
+        card_remember_grid.row_spacing = 12;
+
+        card_remember_grid.attach (card_grid, 0, 0);
+        card_remember_grid.attach (remember_check, 0, 1);
+
         var new_card_revealer = new Gtk.Revealer ();
-        new_card_revealer.add (card_grid);
+        new_card_revealer.add (card_remember_grid);
 
         new_payment_method.radio.bind_property ("active", new_card_revealer, "reveal_child");
 
