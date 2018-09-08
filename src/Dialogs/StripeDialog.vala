@@ -167,19 +167,19 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
 
         card_cvc_entry.bind_property ("has-focus", card_cvc_entry, "visibility");
 
-        var new_card_bottom = new Gtk.Grid ();
-        new_card_bottom.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
-        new_card_bottom.add (card_expiration_entry);
-        new_card_bottom.add (card_cvc_entry);
+        var card_grid_bottom = new Gtk.Grid ();
+        card_grid_bottom.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
+        card_grid_bottom.add (card_expiration_entry);
+        card_grid_bottom.add (card_cvc_entry);
 
-        var new_card_grid = new Gtk.Grid ();
-        new_card_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
-        new_card_grid.orientation = Gtk.Orientation.VERTICAL;
-        new_card_grid.add (card_number_entry);
-        new_card_grid.add (new_card_bottom);
+        var card_grid = new Gtk.Grid ();
+        card_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
+        card_grid.orientation = Gtk.Orientation.VERTICAL;
+        card_grid.add (card_number_entry);
+        card_grid.add (card_grid_bottom);
 
         var new_card_revealer = new Gtk.Revealer ();
-        new_card_revealer.add (new_card_grid);
+        new_card_revealer.add (card_grid);
 
         new_payment_method.radio.bind_property ("active", new_card_revealer, "reveal_child");
 
