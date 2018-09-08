@@ -78,12 +78,12 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         var image = new Gtk.Image.from_icon_name ("payment-card", Gtk.IconSize.DIALOG);
         image.valign = Gtk.Align.START;
 
+        var overlay_image = new Gtk.Image.from_icon_name ("system-software-install", Gtk.IconSize.LARGE_TOOLBAR);
+        overlay_image.halign = overlay_image.valign = Gtk.Align.END;
+
         var overlay = new Gtk.Overlay ();
         overlay.valign = Gtk.Align.START;
         overlay.add (image);
-
-        var overlay_image = new Gtk.Image.from_icon_name ("system-software-install", Gtk.IconSize.LARGE_TOOLBAR);
-        overlay_image.halign = overlay_image.valign = Gtk.Align.END;
         overlay.add_overlay (overlay_image);
 
         var primary_label = new Gtk.Label (_("Pay $%d for %s").printf (amount, app_name));
