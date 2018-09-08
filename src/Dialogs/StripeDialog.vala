@@ -98,7 +98,6 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         email_entry = new Gtk.Entry ();
         email_entry.hexpand = true;
         email_entry.input_purpose = Gtk.InputPurpose.EMAIL;
-        // email_entry.margin_bottom = 6;
         email_entry.placeholder_text = _("Email");
         email_entry.primary_icon_name = "internet-mail-symbolic";
         email_entry.tooltip_text = _("Your email address is used to send a receipt. It is never stored and you will not be subscribed to a mailing list.");
