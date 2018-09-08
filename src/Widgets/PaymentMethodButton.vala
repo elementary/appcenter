@@ -17,7 +17,7 @@
 * Boston, MA 02110-1301 USA
 */
 
-public class AppCenter.Widgets.PaymentMethodButton : Gtk.ToggleButton {
+public class AppCenter.Widgets.PaymentMethodButton : Gtk.RadioButton {
     public string title { get; construct set; }
     public string icon { get; construct set; }
 
@@ -29,6 +29,8 @@ public class AppCenter.Widgets.PaymentMethodButton : Gtk.ToggleButton {
     }
 
     construct {
+        get_style_context ().add_class (Gtk.STYLE_CLASS_BUTTON);
+
         var image = new Gtk.Image.from_icon_name (icon, Gtk.IconSize.BUTTON);
 
         var title_label = new Gtk.Label (title);
@@ -36,11 +38,11 @@ public class AppCenter.Widgets.PaymentMethodButton : Gtk.ToggleButton {
         title_label.hexpand = true;
 
         var grid = new Gtk.Grid ();
-        grid.margin = 6;
+        grid.margin_top = grid.margin_bottom = 6;
         grid.column_spacing = grid.row_spacing = 6;
 
-        grid.attach (image, 0, 0);
-        grid.attach (title_label, 1, 0);
+        grid.attach (title_label, 0, 0);
+        grid.attach (image, 1, 0);
 
         get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
         add (grid);

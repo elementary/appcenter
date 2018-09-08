@@ -109,9 +109,11 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
            validate (0, email_entry.text);
         });
 
-        existing_payment_method = new AppCenter.Widgets.PaymentMethodButton ("Card ending in 1234", "payment-card-visa");
+        new_payment_method = new AppCenter.Widgets.PaymentMethodButton ("Add Payment Method…", "list-add-symbolic");
 
-        new_payment_method = new AppCenter.Widgets.PaymentMethodButton ("Add Payment Method…", "list-add");
+        existing_payment_method = new AppCenter.Widgets.PaymentMethodButton ("Card ending in 1234", "payment-card-visa");
+        existing_payment_method.set_group (new_payment_method.get_group ());
+        existing_payment_method.active = true;
 
         var payment_methods = new Gtk.Grid ();
         payment_methods.orientation = Gtk.Orientation.VERTICAL;
