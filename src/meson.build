@@ -33,6 +33,7 @@ appcenter_files = files(
     'Widgets/HumbleButton.vala',
     'Widgets/HumblePopover.vala',
     'Widgets/PackageRow.vala',
+    'Widgets/PaymentMethodButton.vala',
     'Widgets/ReleaseListBox.vala',
     'Widgets/ReleaseRow.vala',
     'Widgets/SharePopover.vala',

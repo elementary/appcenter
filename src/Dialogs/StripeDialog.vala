@@ -46,6 +46,8 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
     private Gtk.Stack layouts;
 
     private Gtk.Entry email_entry;
+    private AppCenter.Widgets.PaymentMethodButton existing_payment_method;
+    private AppCenter.Widgets.PaymentMethodButton new_payment_method;
     private AppCenter.Widgets.CardNumberEntry new_card_number;
     private Gtk.Entry new_card_expiration;
     private Gtk.Entry new_card_cvc;
@@ -107,45 +109,13 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
            validate (0, email_entry.text);
         });
 
-        var existing_card_icon = new Gtk.Image.from_icon_name ("payment-card-visa", Gtk.IconSize.BUTTON);
+        existing_payment_method = new AppCenter.Widgets.PaymentMethodButton ("Card ending in 1234", "payment-card-visa");
+        new_payment_method = new AppCenter.Widgets.PaymentMethodButton ("New Payment Method…", "list-add");
 
-        var existing_card_title = new Gtk.Label ("Ending in 1234");
-        existing_card_title.halign = Gtk.Align.START;
-        existing_card_title.hexpand = true;
-
-        var existing_card_grid = new Gtk.Grid ();
-        existing_card_grid.margin = 6;
-        existing_card_grid.column_spacing = existing_card_grid.row_spacing = 6;
-
-        existing_card_grid.attach (existing_card_icon, 0, 0);
-        existing_card_grid.attach (existing_card_title, 1, 0);
-
-        var existing_card_button = new Gtk.ToggleButton ();
-        existing_card_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-        existing_card_button.add (existing_card_grid);
-
-        var new_card_icon = new Gtk.Image.from_icon_name ("payment-card", Gtk.IconSize.BUTTON);
-
-        var new_card_title = new Gtk.Label ("New Payment Method");
-        new_card_title.halign = Gtk.Align.START;
-        new_card_title.hexpand = true;
-
-        var new_card_button_grid = new Gtk.Grid ();
-        new_card_button_grid.margin = 6;
-        new_card_button_grid.column_spacing = existing_card_grid.row_spacing = 6;
-
-        new_card_button_grid.attach (new_card_icon, 0, 0);
-        new_card_button_grid.attach (new_card_title, 1, 0);
-
-        var new_card_button = new Gtk.ToggleButton ();
-        new_card_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-        new_card_button.add (new_card_button_grid);
-
-        var existing_cards = new Gtk.Grid ();
-        existing_cards.orientation = Gtk.Orientation.VERTICAL;
-        // existing_cards.row_spacing = 6;
-        existing_cards.add (existing_card_button);
-        existing_cards.add (new_card_button);
+        var payment_methods = new Gtk.Grid ();
+        payment_methods.orientation = Gtk.Orientation.VERTICAL;
+        payment_methods.add (existing_payment_method);
+        payment_methods.add (new_payment_method);
 
         new_card_number = new AppCenter.Widgets.CardNumberEntry ();
         new_card_number.hexpand = true;
@@ -203,7 +173,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         var new_card_revealer = new Gtk.Revealer ();
         new_card_revealer.add (new_card_grid);
 
-        new_card_button.bind_property ("active", new_card_revealer, "reveal_child");
+        new_payment_method.bind_property ("active", new_card_revealer, "reveal_child");
 
         var card_layout = new Gtk.Grid ();
         card_layout.get_style_context ().add_class ("login");
@@ -213,7 +183,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         card_layout.attach (primary_label, 1, 0);
         card_layout.attach (secondary_label, 1, 1);
         card_layout.attach (email_entry, 1, 2);
-        card_layout.attach (existing_cards, 1, 3);
+        card_layout.attach (payment_methods, 1, 3);
         card_layout.attach (new_card_revealer, 1, 4);
 
         layouts = new Gtk.Stack ();
