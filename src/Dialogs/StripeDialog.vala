@@ -107,7 +107,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
            validate (0, email_entry.text);
         });
 
-        var existing_card_icon = new Gtk.Image.from_icon_name ("payment-card-visa", Gtk.IconSize.DND);
+        var existing_card_icon = new Gtk.Image.from_icon_name ("payment-card-visa", Gtk.IconSize.BUTTON);
 
         var existing_card_title = new Gtk.Label ("Ending in 1234");
         existing_card_title.halign = Gtk.Align.START;
@@ -124,7 +124,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         existing_card_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
         existing_card_button.add (existing_card_grid);
 
-        var new_card_icon = new Gtk.Image.from_icon_name ("payment-card", Gtk.IconSize.DND);
+        var new_card_icon = new Gtk.Image.from_icon_name ("payment-card", Gtk.IconSize.BUTTON);
 
         var new_card_title = new Gtk.Label ("New Payment Method");
         new_card_title.halign = Gtk.Align.START;
