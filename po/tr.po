@@ -1,12 +1,13 @@
 # İbrahim Ethem Göl <ethem578@gmail.com>, 2018.
 # Fatih Arda ZENGİN <fatihardazengin@gmail.com>, 2018.
+# Veysel İNANÇ <vinanc72@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-15 15:47+0900\n"
 "PO-Revision-Date: 2018-09-08 16:00+0000\n"
-"Last-Translator: Fatih Arda ZENGİN <fatihardazengin@gmail.com>\n"
+"Last-Translator: Veysel İNANÇ <vinanc72@gmail.com>\n"
 "Language-Team: Turkish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/tr/>\n"
 "Language: tr\n"
@@ -230,7 +231,7 @@ msgstr "Sistem bileşenleri için güncellemeler"
 #: src/Core/Client.vala:141
 #, c-format
 msgid "%s (local)"
-msgstr ""
+msgstr "%s (yerel)"
 
 #: src/Core/Client.vala:466
 msgid "Update Available"
@@ -411,6 +412,8 @@ msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
 msgstr ""
+"Bu kart bu tür bir işlemi desteklemiyor. Lütfen farklı bir kartla tekrar "
+"deneyin."
 
 #: src/Dialogs/StripeDialog.vala:544
 msgid ""
