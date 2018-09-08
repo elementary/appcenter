@@ -18,8 +18,8 @@
 */
 
 public class AppCenter.Widgets.PaymentMethodButton : Gtk.ToggleButton {
-    public string title { get; set; }
-    public string icon { get; set; }
+    public string title { get; construct set; }
+    public string icon { get; construct set; }
 
     public PaymentMethodButton (string title, string icon) {
         Object (

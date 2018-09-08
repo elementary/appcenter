@@ -110,7 +110,8 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         });
 
         existing_payment_method = new AppCenter.Widgets.PaymentMethodButton ("Card ending in 1234", "payment-card-visa");
-        new_payment_method = new AppCenter.Widgets.PaymentMethodButton ("New Payment Method…", "list-add");
+
+        new_payment_method = new AppCenter.Widgets.PaymentMethodButton ("Add Payment Method…", "list-add");
 
         var payment_methods = new Gtk.Grid ();
         payment_methods.orientation = Gtk.Orientation.VERTICAL;
@@ -218,6 +219,12 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         email_entry.activate.connect (() => {
             if (pay_button.sensitive) {
                 pay_button.activate ();
+            }
+        });
+
+        new_payment_method.clicked.connect (() => {
+            if (new_payment_method.active) {
+                new_card_number.grab_focus ();
             }
         });
 
