@@ -132,6 +132,9 @@ namespace AppCenter {
                         }
 
                         var candidate_package = AppCenterCore.Client.get_default ().get_package_for_component_id (package);
+                        if (candidate_package == null) {
+                            candidate_package = AppCenterCore.Client.get_default ().get_package_for_component_id (package + ".desktop");
+                        }
 
                         if (candidate_package != null) {
                             candidate_package.update_state ();
@@ -166,8 +169,10 @@ namespace AppCenter {
                             break;
                         }
 
-                        var candidate = package + ".desktop";
-                        var candidate_package = AppCenterCore.Client.get_default ().get_package_for_component_id (candidate);
+                        var candidate_package = AppCenterCore.Client.get_default ().get_package_for_component_id (package);
+                        if (candidate_package == null) {
+                            candidate_package = AppCenterCore.Client.get_default ().get_package_for_component_id (package + ".desktop");
+                        }
 
                         if (candidate_package != null) {
                             candidate_package.update_state ();
@@ -200,8 +205,10 @@ namespace AppCenter {
                             break;
                         }
 
-                        var candidate = package + ".desktop";
-                        var candidate_package = AppCenterCore.Client.get_default ().get_package_for_component_id (candidate);
+                        var candidate_package = AppCenterCore.Client.get_default ().get_package_for_component_id (package);
+                        if (candidate_package == null) {
+                            candidate_package = AppCenterCore.Client.get_default ().get_package_for_component_id (package + ".desktop");
+                        }
 
                         if (candidate_package != null) {
                             candidate_package.update_state ();
