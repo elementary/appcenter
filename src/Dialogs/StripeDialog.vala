@@ -41,15 +41,14 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
     private const string INTERNAL_ERROR_MESSAGE = N_("An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused.");
     private const string DEFAULT_ERROR_MESSAGE = N_("Please review your payment info and try again.");
 
-    private Gtk.Grid card_layout;
     private Gtk.Grid? processing_layout = null;
     private Gtk.Grid? error_layout = null;
     private Gtk.Stack layouts;
 
     private Gtk.Entry email_entry;
-    private AppCenter.Widgets.CardNumberEntry card_number_entry;
-    private Gtk.Entry card_expiration_entry;
-    private Gtk.Entry card_cvc_entry;
+    private AppCenter.Widgets.CardNumberEntry new_card_number;
+    private Gtk.Entry new_card_expiration;
+    private Gtk.Entry new_card_cvc;
     private Gtk.Button pay_button;
     private Gtk.Button cancel_button;
 
@@ -99,7 +98,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         email_entry = new Gtk.Entry ();
         email_entry.hexpand = true;
         email_entry.input_purpose = Gtk.InputPurpose.EMAIL;
-        email_entry.margin_bottom = 6;
+        // email_entry.margin_bottom = 6;
         email_entry.placeholder_text = _("Email");
         email_entry.primary_icon_name = "internet-mail-symbolic";
         email_entry.tooltip_text = _("Your email address is used to send a receipt. It is never stored and you will not be subscribed to a mailing list.");
@@ -109,60 +108,105 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
            validate (0, email_entry.text);
         });
 
-        card_number_entry = new AppCenter.Widgets.CardNumberEntry ();
-        card_number_entry.hexpand = true;
-        card_number_entry.changed.connect (() => {
-            validate (1, card_number_entry.card_number);
+        var existing_card_icon = new Gtk.Image.from_icon_name ("payment-card-visa", Gtk.IconSize.DND);
+
+        var existing_card_title = new Gtk.Label ("Ending in 1234");
+        existing_card_title.halign = Gtk.Align.START;
+        existing_card_title.hexpand = true;
+
+        var existing_card_grid = new Gtk.Grid ();
+        existing_card_grid.margin = 6;
+        existing_card_grid.column_spacing = existing_card_grid.row_spacing = 6;
+
+        existing_card_grid.attach (existing_card_icon, 0, 0);
+        existing_card_grid.attach (existing_card_title, 1, 0);
+
+        var existing_card_button = new Gtk.ToggleButton ();
+        existing_card_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        existing_card_button.add (existing_card_grid);
+
+        var new_card_icon = new Gtk.Image.from_icon_name ("payment-card", Gtk.IconSize.DND);
+
+        var new_card_title = new Gtk.Label ("New Payment Method");
+        new_card_title.halign = Gtk.Align.START;
+        new_card_title.hexpand = true;
+
+        var new_card_button_grid = new Gtk.Grid ();
+        new_card_button_grid.margin = 6;
+        new_card_button_grid.column_spacing = existing_card_grid.row_spacing = 6;
+
+        new_card_button_grid.attach (new_card_icon, 0, 0);
+        new_card_button_grid.attach (new_card_title, 1, 0);
+
+        var new_card_button = new Gtk.ToggleButton ();
+        new_card_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        new_card_button.add (new_card_button_grid);
+
+        var existing_cards = new Gtk.Grid ();
+        existing_cards.orientation = Gtk.Orientation.VERTICAL;
+        // existing_cards.row_spacing = 6;
+        existing_cards.add (existing_card_button);
+        existing_cards.add (new_card_button);
+
+        new_card_number = new AppCenter.Widgets.CardNumberEntry ();
+        new_card_number.hexpand = true;
+        new_card_number.changed.connect (() => {
+            validate (1, new_card_number.card_number);
         });
 
-        card_number_entry.bind_property ("has-focus", card_number_entry, "visibility");
+        new_card_number.bind_property ("has-focus", new_card_number, "visibility");
 
-        card_expiration_entry = new Gtk.Entry ();
-        card_expiration_entry.hexpand = true;
-        card_expiration_entry.max_length = 5;
+        new_card_expiration = new Gtk.Entry ();
+        new_card_expiration.hexpand = true;
+        new_card_expiration.max_length = 5;
         /// TRANSLATORS: Don't change the order, only transliterate
-        card_expiration_entry.placeholder_text = _("MM / YY");
-        card_expiration_entry.primary_icon_name = "office-calendar-symbolic";
+        new_card_expiration.placeholder_text = _("MM / YY");
+        new_card_expiration.primary_icon_name = "office-calendar-symbolic";
 
-        card_expiration_entry.changed.connect (() => {
-            card_expiration_entry.text = card_expiration_entry.text.replace (" ", "");
-            validate (2, card_expiration_entry.text);
+        new_card_expiration.changed.connect (() => {
+            new_card_expiration.text = new_card_expiration.text.replace (" ", "");
+            validate (2, new_card_expiration.text);
         });
 
-        card_expiration_entry.focus_out_event.connect (() => {
-            var expiration_text = card_expiration_entry.text;
+        new_card_expiration.focus_out_event.connect (() => {
+            var expiration_text = new_card_expiration.text;
             if (!("/" in expiration_text) && expiration_text.char_count () > 2) {
                 int position = 2;
-                card_expiration_entry.insert_text ("/", 1, ref position);
+                new_card_expiration.insert_text ("/", 1, ref position);
             }
         });
 
-        card_cvc_entry = new Gtk.Entry ();
-        card_cvc_entry.hexpand = true;
-        card_cvc_entry.input_purpose = Gtk.InputPurpose.DIGITS;
-        card_cvc_entry.max_length = 4;
-        card_cvc_entry.placeholder_text = _("CVC");
-        card_cvc_entry.primary_icon_name = "channel-secure-symbolic";
+        new_card_cvc = new Gtk.Entry ();
+        new_card_cvc.hexpand = true;
+        new_card_cvc.input_purpose = Gtk.InputPurpose.DIGITS;
+        new_card_cvc.max_length = 4;
+        new_card_cvc.placeholder_text = _("CVC");
+        new_card_cvc.primary_icon_name = "channel-secure-symbolic";
 
-        card_cvc_entry.changed.connect (() => {
-            card_cvc_entry.text = card_cvc_entry.text.replace (" ", "");
-            validate (3, card_cvc_entry.text);
+        new_card_cvc.changed.connect (() => {
+            new_card_cvc.text = new_card_cvc.text.replace (" ", "");
+            validate (3, new_card_cvc.text);
         });
 
-        card_cvc_entry.bind_property ("has-focus", card_cvc_entry, "visibility");
+        new_card_cvc.bind_property ("has-focus", new_card_cvc, "visibility");
 
-        var card_grid_bottom = new Gtk.Grid ();
-        card_grid_bottom.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
-        card_grid_bottom.add (card_expiration_entry);
-        card_grid_bottom.add (card_cvc_entry);
+        var new_card_bottom = new Gtk.Grid ();
+        new_card_bottom.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
+        new_card_bottom.add (new_card_expiration);
+        new_card_bottom.add (new_card_cvc);
 
-        var card_grid = new Gtk.Grid ();
-        card_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
-        card_grid.orientation = Gtk.Orientation.VERTICAL;
-        card_grid.add (card_number_entry);
-        card_grid.add (card_grid_bottom);
+        var new_card_grid = new Gtk.Grid ();
+        new_card_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
+        new_card_grid.orientation = Gtk.Orientation.VERTICAL;
+        new_card_grid.add (new_card_number);
+        new_card_grid.add (new_card_bottom);
 
-        card_layout = new Gtk.Grid ();
+        var new_card_revealer = new Gtk.Revealer ();
+        new_card_revealer.add (new_card_grid);
+
+        new_card_button.bind_property ("active", new_card_revealer, "reveal_child");
+
+        var card_layout = new Gtk.Grid ();
         card_layout.get_style_context ().add_class ("login");
         card_layout.column_spacing = 12;
         card_layout.row_spacing = 6;
@@ -170,7 +214,8 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         card_layout.attach (primary_label, 1, 0);
         card_layout.attach (secondary_label, 1, 1);
         card_layout.attach (email_entry, 1, 2);
-        card_layout.attach (card_grid, 1, 3);
+        card_layout.attach (existing_cards, 1, 3);
+        card_layout.attach (new_card_revealer, 1, 4);
 
         layouts = new Gtk.Stack ();
         layouts.vhomogeneous = false;
@@ -207,19 +252,19 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
             }
         });
 
-        card_number_entry.activate.connect (() => {
+        new_card_number.activate.connect (() => {
             if (pay_button.sensitive) {
                 pay_button.activate ();
             }
         });
 
-        card_expiration_entry.activate.connect (() => {
+        new_card_expiration.activate.connect (() => {
             if (pay_button.sensitive) {
                 pay_button.activate ();
             }
         });
 
-        card_cvc_entry.activate.connect (() => {
+        new_card_cvc.activate.connect (() => {
             if (pay_button.sensitive) {
                 pay_button.activate ();
             }
@@ -399,10 +444,10 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
 
     private void on_pay_clicked () {
         new Thread<void*> (null, () => {
-            string expiration_dateyear = card_expiration_entry.text.replace("/", "");
+            string expiration_dateyear = new_card_expiration.text.replace("/", "");
             var year = (int.parse (expiration_dateyear[2:4]) + 2000).to_string ();
 
-            var data = get_stripe_data (stripe_key, email_entry.text, (amount * 100).to_string (), card_number_entry.text, expiration_dateyear[0:2], year, card_cvc_entry.text);
+            var data = get_stripe_data (stripe_key, email_entry.text, (amount * 100).to_string (), new_card_number.text, expiration_dateyear[0:2], year, new_card_cvc.text);
             debug ("Stripe data:%s", data);
             string? error = null;
             try {
