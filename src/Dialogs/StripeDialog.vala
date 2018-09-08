@@ -49,9 +49,9 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
     private AppCenter.Widgets.PaymentMethodButton existing_payment_method;
     private AppCenter.Widgets.PaymentMethodButton another_existing_payment_method;
     private AppCenter.Widgets.PaymentMethodButton new_payment_method;
-    private AppCenter.Widgets.CardNumberEntry new_card_number;
-    private Gtk.Entry new_card_expiration;
-    private Gtk.Entry new_card_cvc;
+    private AppCenter.Widgets.CardNumberEntry card_number_entry;
+    private Gtk.Entry card_expiration_entry;
+    private Gtk.Entry card_cvc_entry;
     private Gtk.Button pay_button;
     private Gtk.Button cancel_button;
 
@@ -125,57 +125,57 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         payment_methods.add (another_existing_payment_method);
         payment_methods.add (new_payment_method);
 
-        new_card_number = new AppCenter.Widgets.CardNumberEntry ();
-        new_card_number.hexpand = true;
-        new_card_number.changed.connect (() => {
-            validate (1, new_card_number.card_number);
+        card_number_entry = new AppCenter.Widgets.CardNumberEntry ();
+        card_number_entry.hexpand = true;
+        card_number_entry.changed.connect (() => {
+            validate (1, card_number_entry.card_number);
         });
 
-        new_card_number.bind_property ("has-focus", new_card_number, "visibility");
+        card_number_entry.bind_property ("has-focus", card_number_entry, "visibility");
 
-        new_card_expiration = new Gtk.Entry ();
-        new_card_expiration.hexpand = true;
-        new_card_expiration.max_length = 5;
+        card_expiration_entry = new Gtk.Entry ();
+        card_expiration_entry.hexpand = true;
+        card_expiration_entry.max_length = 5;
         /// TRANSLATORS: Don't change the order, only transliterate
-        new_card_expiration.placeholder_text = _("MM / YY");
-        new_card_expiration.primary_icon_name = "office-calendar-symbolic";
+        card_expiration_entry.placeholder_text = _("MM / YY");
+        card_expiration_entry.primary_icon_name = "office-calendar-symbolic";
 
-        new_card_expiration.changed.connect (() => {
-            new_card_expiration.text = new_card_expiration.text.replace (" ", "");
-            validate (2, new_card_expiration.text);
+        card_expiration_entry.changed.connect (() => {
+            card_expiration_entry.text = card_expiration_entry.text.replace (" ", "");
+            validate (2, card_expiration_entry.text);
         });
 
-        new_card_expiration.focus_out_event.connect (() => {
-            var expiration_text = new_card_expiration.text;
+        card_expiration_entry.focus_out_event.connect (() => {
+            var expiration_text = card_expiration_entry.text;
             if (!("/" in expiration_text) && expiration_text.char_count () > 2) {
                 int position = 2;
-                new_card_expiration.insert_text ("/", 1, ref position);
+                card_expiration_entry.insert_text ("/", 1, ref position);
             }
         });
 
-        new_card_cvc = new Gtk.Entry ();
-        new_card_cvc.hexpand = true;
-        new_card_cvc.input_purpose = Gtk.InputPurpose.DIGITS;
-        new_card_cvc.max_length = 4;
-        new_card_cvc.placeholder_text = _("CVC");
-        new_card_cvc.primary_icon_name = "channel-secure-symbolic";
+        card_cvc_entry = new Gtk.Entry ();
+        card_cvc_entry.hexpand = true;
+        card_cvc_entry.input_purpose = Gtk.InputPurpose.DIGITS;
+        card_cvc_entry.max_length = 4;
+        card_cvc_entry.placeholder_text = _("CVC");
+        card_cvc_entry.primary_icon_name = "channel-secure-symbolic";
 
-        new_card_cvc.changed.connect (() => {
-            new_card_cvc.text = new_card_cvc.text.replace (" ", "");
-            validate (3, new_card_cvc.text);
+        card_cvc_entry.changed.connect (() => {
+            card_cvc_entry.text = card_cvc_entry.text.replace (" ", "");
+            validate (3, card_cvc_entry.text);
         });
 
-        new_card_cvc.bind_property ("has-focus", new_card_cvc, "visibility");
+        card_cvc_entry.bind_property ("has-focus", card_cvc_entry, "visibility");
 
         var new_card_bottom = new Gtk.Grid ();
         new_card_bottom.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
-        new_card_bottom.add (new_card_expiration);
-        new_card_bottom.add (new_card_cvc);
+        new_card_bottom.add (card_expiration_entry);
+        new_card_bottom.add (card_cvc_entry);
 
         var new_card_grid = new Gtk.Grid ();
         new_card_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
         new_card_grid.orientation = Gtk.Orientation.VERTICAL;
-        new_card_grid.add (new_card_number);
+        new_card_grid.add (card_number_entry);
         new_card_grid.add (new_card_bottom);
 
         var new_card_revealer = new Gtk.Revealer ();
@@ -231,23 +231,23 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
 
         new_payment_method.radio.clicked.connect (() => {
             if (new_payment_method.radio.active) {
-                new_card_number.grab_focus ();
+                card_number_entry.grab_focus ();
             }
         });
 
-        new_card_number.activate.connect (() => {
+        card_number_entry.activate.connect (() => {
             if (pay_button.sensitive) {
                 pay_button.activate ();
             }
         });
 
-        new_card_expiration.activate.connect (() => {
+        card_expiration_entry.activate.connect (() => {
             if (pay_button.sensitive) {
                 pay_button.activate ();
             }
         });
 
-        new_card_cvc.activate.connect (() => {
+        card_cvc_entry.activate.connect (() => {
             if (pay_button.sensitive) {
                 pay_button.activate ();
             }
@@ -427,10 +427,10 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
 
     private void on_pay_clicked () {
         new Thread<void*> (null, () => {
-            string expiration_dateyear = new_card_expiration.text.replace("/", "");
+            string expiration_dateyear = card_expiration_entry.text.replace("/", "");
             var year = (int.parse (expiration_dateyear[2:4]) + 2000).to_string ();
 
-            var data = get_stripe_data (stripe_key, email_entry.text, (amount * 100).to_string (), new_card_number.text, expiration_dateyear[0:2], year, new_card_cvc.text);
+            var data = get_stripe_data (stripe_key, email_entry.text, (amount * 100).to_string (), card_number_entry.text, expiration_dateyear[0:2], year, card_cvc_entry.text);
             debug ("Stripe data:%s", data);
             string? error = null;
             try {
