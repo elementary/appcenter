@@ -132,9 +132,6 @@ namespace AppCenter {
                         }
 
                         var candidate_package = AppCenterCore.Client.get_default ().get_package_for_component_id (package);
-                        if (candidate_package == null) {
-                            candidate_package = AppCenterCore.Client.get_default ().get_package_for_component_id (package + ".desktop");
-                        }
 
                         if (candidate_package != null) {
                             candidate_package.update_state ();
@@ -170,9 +167,6 @@ namespace AppCenter {
                         }
 
                         var candidate_package = AppCenterCore.Client.get_default ().get_package_for_component_id (package);
-                        if (candidate_package == null) {
-                            candidate_package = AppCenterCore.Client.get_default ().get_package_for_component_id (package + ".desktop");
-                        }
 
                         if (candidate_package != null) {
                             candidate_package.update_state ();
@@ -206,9 +200,6 @@ namespace AppCenter {
                         }
 
                         var candidate_package = AppCenterCore.Client.get_default ().get_package_for_component_id (package);
-                        if (candidate_package == null) {
-                            candidate_package = AppCenterCore.Client.get_default ().get_package_for_component_id (package + ".desktop");
-                        }
 
                         if (candidate_package != null) {
                             candidate_package.update_state ();
