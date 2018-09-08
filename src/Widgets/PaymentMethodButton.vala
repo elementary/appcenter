@@ -51,7 +51,6 @@ public class AppCenter.Widgets.PaymentMethodButton : Gtk.Revealer {
 
         if (icon != null) {
             var image = new Gtk.Image.from_icon_name (icon, Gtk.IconSize.BUTTON);
-            image.margin = 6;
             image.margin_end = 38;
 
             radio_grid.attach (image, 1, 0);
@@ -68,7 +67,7 @@ public class AppCenter.Widgets.PaymentMethodButton : Gtk.Revealer {
         if (removable) {
             var remove_button = new Gtk.Button.from_icon_name ("edit-delete-symbolic");
             remove_button.halign = Gtk.Align.END;
-            remove_button.margin = 6;
+            remove_button.margin_end = 6;
             remove_button.tooltip_text = _("Remove");
             remove_button.valign = Gtk.Align.CENTER;
             remove_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);

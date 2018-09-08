@@ -47,6 +47,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
 
     private Gtk.Entry email_entry;
     private AppCenter.Widgets.PaymentMethodButton existing_payment_method;
+    private AppCenter.Widgets.PaymentMethodButton another_existing_payment_method;
     private AppCenter.Widgets.PaymentMethodButton new_payment_method;
     private AppCenter.Widgets.CardNumberEntry new_card_number;
     private Gtk.Entry new_card_expiration;
@@ -115,9 +116,13 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         existing_payment_method.radio.join_group (new_payment_method.radio);
         existing_payment_method.radio.active = true;
 
+        another_existing_payment_method = new AppCenter.Widgets.PaymentMethodButton ("Mastercard 5678", "payment-card-mastercard", true);
+        another_existing_payment_method.radio.join_group (new_payment_method.radio);
+
         var payment_methods = new Gtk.Grid ();
         payment_methods.orientation = Gtk.Orientation.VERTICAL;
         payment_methods.add (existing_payment_method);
+        payment_methods.add (another_existing_payment_method);
         payment_methods.add (new_payment_method);
 
         new_card_number = new AppCenter.Widgets.CardNumberEntry ();
