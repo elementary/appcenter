@@ -57,9 +57,11 @@ public class AppCenter.Widgets.PaymentMethodButton : Gtk.Revealer {
         }
 
         radio = new Gtk.RadioButton (null);
-        radio.get_style_context ().add_class (Gtk.STYLE_CLASS_BUTTON);
-        radio.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
         radio.add (radio_grid);
+
+        var.radio_style = radio.get_style_context ();
+        radio_style.add_class (Gtk.STYLE_CLASS_BUTTON);
+        radio_style.add_class (Gtk.STYLE_CLASS_FLAT);
 
         var overlay = new Gtk.Overlay ();
         overlay.add (radio);
