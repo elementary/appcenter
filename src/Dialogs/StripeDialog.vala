@@ -109,11 +109,11 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
            validate (0, email_entry.text);
         });
 
-        new_payment_method = new AppCenter.Widgets.PaymentMethodButton ("Add Payment Method…", "list-add-symbolic");
+        new_payment_method = new AppCenter.Widgets.PaymentMethodButton ("New Payment Method…");
 
-        existing_payment_method = new AppCenter.Widgets.PaymentMethodButton ("Card ending in 1234", "payment-card-visa");
-        existing_payment_method.set_group (new_payment_method.get_group ());
-        existing_payment_method.active = true;
+        existing_payment_method = new AppCenter.Widgets.PaymentMethodButton ("Visa 1234", "payment-card-visa", true);
+        existing_payment_method.radio.join_group (new_payment_method.radio);
+        existing_payment_method.radio.active = true;
 
         var payment_methods = new Gtk.Grid ();
         payment_methods.orientation = Gtk.Orientation.VERTICAL;
@@ -176,7 +176,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         var new_card_revealer = new Gtk.Revealer ();
         new_card_revealer.add (new_card_grid);
 
-        new_payment_method.bind_property ("active", new_card_revealer, "reveal_child");
+        new_payment_method.radio.bind_property ("active", new_card_revealer, "reveal_child");
 
         var card_layout = new Gtk.Grid ();
         card_layout.get_style_context ().add_class ("login");
@@ -224,8 +224,8 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
             }
         });
 
-        new_payment_method.clicked.connect (() => {
-            if (new_payment_method.active) {
+        new_payment_method.radio.clicked.connect (() => {
+            if (new_payment_method.radio.active) {
                 new_card_number.grab_focus ();
             }
         });
@@ -638,3 +638,4 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         }
     }
 }
+
