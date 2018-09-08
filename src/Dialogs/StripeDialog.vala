@@ -75,19 +75,34 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
     }
 
     construct {
+        var image = new Gtk.Image.from_icon_name ("payment-card", Gtk.IconSize.DIALOG);
+        image.valign = Gtk.Align.START;
+
+        var overlay = new Gtk.Overlay ();
+        overlay.valign = Gtk.Align.START;
+        overlay.add (image);
+
+        string icon_name = "system-software-install";
+        if (Gtk.IconTheme.get_default ().has_icon (icon_name)) {
+            var overlay_image = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.LARGE_TOOLBAR);
+            overlay_image.halign = overlay_image.valign = Gtk.Align.END;
+            overlay.add_overlay (overlay_image);
+        }
+
         var primary_label = new Gtk.Label (_("Pay $%d for %s").printf (amount, app_name));
         primary_label.get_style_context ().add_class ("primary");
         primary_label.xalign = 0;
 
         var secondary_label = new Gtk.Label (_("This is a one time payment. Your email address is only used to send you a receipt."));
+        secondary_label.margin_bottom = 18;
         secondary_label.max_width_chars = 50;
         secondary_label.wrap = true;
         secondary_label.xalign = 0;
 
-
         email_entry = new Gtk.Entry ();
         email_entry.hexpand = true;
         email_entry.input_purpose = Gtk.InputPurpose.EMAIL;
+        email_entry.margin_bottom = 6;
         email_entry.placeholder_text = _("Email");
         email_entry.primary_icon_name = "internet-mail-symbolic";
         email_entry.tooltip_text = _("Your email address is used to send a receipt. It is never stored and you will not be subscribed to a mailing list.");
@@ -152,12 +167,13 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
 
         card_layout = new Gtk.Grid ();
         card_layout.get_style_context ().add_class ("login");
-        card_layout.row_spacing = 12;
-        card_layout.orientation = Gtk.Orientation.VERTICAL;
-        card_layout.add (primary_label);
-        card_layout.add (secondary_label);
-        card_layout.add (email_entry);
-        card_layout.add (card_grid);
+        card_layout.column_spacing = 12;
+        card_layout.row_spacing = 6;
+        card_layout.attach (overlay, 0, 0, 1, 2);
+        card_layout.attach (primary_label, 1, 0);
+        card_layout.attach (secondary_label, 1, 1);
+        card_layout.attach (email_entry, 1, 2);
+        card_layout.attach (card_grid, 1, 3);
 
         layouts = new Gtk.Stack ();
         layouts.vhomogeneous = false;
