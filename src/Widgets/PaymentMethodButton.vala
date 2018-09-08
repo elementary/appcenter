@@ -59,7 +59,7 @@ public class AppCenter.Widgets.PaymentMethodButton : Gtk.Revealer {
         radio = new Gtk.RadioButton (null);
         radio.add (radio_grid);
 
-        var.radio_style = radio.get_style_context ();
+        var radio_style = radio.get_style_context ();
         radio_style.add_class (Gtk.STYLE_CLASS_BUTTON);
         radio_style.add_class (Gtk.STYLE_CLASS_FLAT);
 
@@ -72,8 +72,10 @@ public class AppCenter.Widgets.PaymentMethodButton : Gtk.Revealer {
             remove_button.margin_end = 6;
             remove_button.tooltip_text = _("Remove");
             remove_button.valign = Gtk.Align.CENTER;
-            remove_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-            remove_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+
+            var remove_button_style = remove_button.get_style_context ();
+            remove_button_style.add_class (Gtk.STYLE_CLASS_FLAT);
+            remove_button_style.add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
 
             remove_button.draw.connect (() => {
                 image.margin_end = remove_button.get_allocated_width () + radio_grid.column_spacing;
