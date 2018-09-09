@@ -24,15 +24,11 @@ public class AppCenter.Widgets.PaymentMethodButton : Gtk.Revealer {
 
     public Gtk.RadioButton radio { get; private set; }
 
-    public PaymentMethodButton (
-        string title,
-        string? icon = null,
-        bool removable = false
-    ) {
+    public PaymentMethodButton (string _title, string? _icon = null, bool _removable = false) {
         Object (
-            title: title,
-            icon: icon,
-            removable: removable
+            title: _title,
+            icon: _icon,
+            removable: _removable
         );
     }
 
