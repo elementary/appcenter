@@ -117,10 +117,25 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         // TODO: Loop through existing payment methods
         existing_payment_method = new AppCenter.Widgets.PaymentMethodButton ("Visa 1234", "payment-card-visa", true);
         existing_payment_method.radio.join_group (new_payment_method.radio);
+
+        // TODO: Add a payment method being selected as valid for `is_payment_sensitive ()`
         existing_payment_method.radio.active = true;
+        pay_button.sensitive = true;
+
+        existing_payment_method.radio.clicked.connect (() => {
+            if (existing_payment_method.radio.active) {
+                pay_button.sensitive = true;
+            }
+        });
 
         another_existing_payment_method = new AppCenter.Widgets.PaymentMethodButton ("Mastercard 5678", "payment-card-mastercard", true);
         another_existing_payment_method.radio.join_group (new_payment_method.radio);
+
+        another_existing_payment_method.radio.clicked.connect (() => {
+            if (another_existing_payment_method.radio.active) {
+                pay_button.sensitive = true;
+            }
+        });
 
         var payment_methods = new Gtk.Grid ();
         payment_methods.orientation = Gtk.Orientation.VERTICAL;
@@ -244,6 +259,8 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         new_payment_method.radio.clicked.connect (() => {
             if (new_payment_method.radio.active) {
                 card_number_entry.grab_focus ();
+
+                is_payment_sensitive ();
             }
         });
 
