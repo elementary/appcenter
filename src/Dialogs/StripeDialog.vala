@@ -66,12 +66,15 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
     private bool cvc_valid = false;
 
     public StripeDialog (int _amount, string _app_name, string _app_id, string _stripe_key) {
-        Object (amount: _amount,
-                app_name: _app_name,
-                app_id: _app_id,
-                deletable: false,
-                resizable: false,
-                stripe_key: _stripe_key);
+        Object (
+            amount: _amount,
+            app_name: _app_name,
+            app_id: _app_id,
+            deletable: false,
+            resizable: false,
+            stripe_key: _stripe_key,
+            title: _("Payment")
+        );
     }
 
     construct {
