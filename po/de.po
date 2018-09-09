@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-15 15:47+0900\n"
-"PO-Revision-Date: 2018-08-31 00:04+0000\n"
+"PO-Revision-Date: 2018-09-09 00:02+0000\n"
 "Last-Translator: Jörg Arnold <j.ar@mailbox.org>\n"
 "Language-Team: German <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/de/>\n"
@@ -108,7 +108,7 @@ msgstr "Herunterladen"
 
 #: src/Core/ChangeInformation.vala:68
 msgid "Installing"
-msgstr "Installiere"
+msgstr "Installieren"
 
 #: src/Core/ChangeInformation.vala:70
 msgid "Refreshing software list"
