@@ -83,6 +83,11 @@ public class AppCenter.Widgets.PaymentMethodButton : Gtk.Revealer {
             });
 
             overlay.add_overlay (remove_button);
+
+            remove_button.clicked.connect (() => {
+                // TODO: Actually remove things
+                reveal_child = false;
+            });
         }
 
         add (overlay);
