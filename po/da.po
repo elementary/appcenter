@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-10 10:30-0600\n"
-"PO-Revision-Date: 2018-09-02 00:08+0000\n"
+"PO-Revision-Date: 2018-09-10 21:50+0000\n"
 "Last-Translator: Kaj Printz Madsen <kajprintz@gmail.com>\n"
 "Language-Team: Danish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/da/>\n"
@@ -310,7 +310,7 @@ msgstr "Gennemgå venligst dine betalingsoplysninger og prøv igen."
 
 #: src/Dialogs/StripeDialog.vala:76
 msgid "Payment"
-msgstr ""
+msgstr "Betaling"
 
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
@@ -330,13 +330,12 @@ msgid "Email"
 msgstr "Email"
 
 #: src/Dialogs/StripeDialog.vala:108
-#, fuzzy
 msgid ""
 "Your email address is only used to send a receipt. You will not be "
 "subscribed to any mailing list."
 msgstr ""
-"Din email adresse bruges til at sende en kvittering. Den gemmes aldrig, og "
-"du vil ikke blive tilmeldt en mailingliste."
+"Din email adresse bruges kun til at sende en kvittering. Du vil ikke blive "
+"tilmeldt nogen mailingliste."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127
