@@ -212,7 +212,9 @@ namespace AppCenter {
                 action_button.amount = int.parse (this.package.get_suggested_amount ());
             }
 
-            action_stack.set_visible_child_name ("buttons");
+            if (action_stack.get_child_by_name ("buttons") != null) {
+                action_stack.visible_child_name = "buttons";
+            }
 
             switch (package.state) {
                 case AppCenterCore.Package.State.NOT_INSTALLED:
