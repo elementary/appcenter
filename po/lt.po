@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-10 10:30-0600\n"
-"PO-Revision-Date: 2018-07-15 23:27+0000\n"
+"PO-Revision-Date: 2018-09-10 20:20+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/lt/>\n"
@@ -12,8 +12,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n==1 ? 0 : n%10>=2 && (n%100<10 || n"
-"%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3;\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 0 : n%10>=2 && (n%100<10 || "
+"n%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3;\n"
 "X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
@@ -315,7 +315,7 @@ msgstr "Prašome peržiūrėti savo apmokėjimo informaciją ir bandyti dar kart
 
 #: src/Dialogs/StripeDialog.vala:76
 msgid "Payment"
-msgstr ""
+msgstr "Mokėjimas"
 
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
@@ -335,13 +335,12 @@ msgid "Email"
 msgstr "El. paštas"
 
 #: src/Dialogs/StripeDialog.vala:108
-#, fuzzy
 msgid ""
 "Your email address is only used to send a receipt. You will not be "
 "subscribed to any mailing list."
 msgstr ""
-"Jūsų el. paštas yra naudojamas išsiųsti kvitą. El. paštas niekada nėra "
-"kaupiamas ir jūs nebūsite įtraukti į pašto prenumeratos sąrašą."
+"Jūsų el. paštas yra naudojamas tik išsiųsti kvitą. Jūs nebūsite įtraukti į "
+"jokį pašto prenumeratos sąrašą."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127
