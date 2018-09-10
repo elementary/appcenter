@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-10 10:30-0600\n"
-"PO-Revision-Date: 2018-07-25 00:00+0000\n"
-"Last-Translator: Nils K <slx@nilsk.net>\n"
+"PO-Revision-Date: 2018-09-10 22:16+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://weblate.elementary.io/projects/"
 "appcenter/appcenter/nb/>\n"
 "Language: nb\n"
@@ -311,7 +311,7 @@ msgstr "Se over din betalingsinfo og prøv igjen."
 
 #: src/Dialogs/StripeDialog.vala:76
 msgid "Payment"
-msgstr ""
+msgstr "Betaling"
 
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
@@ -336,8 +336,8 @@ msgid ""
 "Your email address is only used to send a receipt. You will not be "
 "subscribed to any mailing list."
 msgstr ""
-"Din e-postadresse brukes til å sende en kvittering. Den lagres aldri, og du "
-"vil ikke bli meldt på noen e-postliste."
+"Din e-postadresse brukes kun til å sende en kvittering. Den lagres aldri, og "
+"du vil ikke bli meldt på noen e-postliste."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127
