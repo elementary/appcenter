@@ -213,7 +213,7 @@ namespace AppCenter {
             }
 
             if (action_stack.get_child_by_name ("buttons") != null) {
-                action_stack.set_visible_child_name ("buttons");
+                action_stack.visible_child_name = "buttons";
             }
 
             switch (package.state) {
