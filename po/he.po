@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-10 10:30-0600\n"
-"PO-Revision-Date: 2018-07-16 11:04+0000\n"
+"PO-Revision-Date: 2018-09-10 22:41+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/he/>\n"
@@ -310,7 +310,7 @@ msgstr "נא לסקור את פרטי התשלום שלך ולנסות שוב."
 
 #: src/Dialogs/StripeDialog.vala:76
 msgid "Payment"
-msgstr ""
+msgstr "תשלום"
 
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
@@ -328,13 +328,12 @@ msgid "Email"
 msgstr "דוא״ל"
 
 #: src/Dialogs/StripeDialog.vala:108
-#, fuzzy
 msgid ""
 "Your email address is only used to send a receipt. You will not be "
 "subscribed to any mailing list."
 msgstr ""
-"כתובת הדוא״ל שלך משמשת לשליחת קבלה. הכתובת לא תאוחסן ולא נרשום אותך לרשימות "
-"דיוור בלא הסכמתך."
+"כתובת הדוא״ל שלך משמשת לשליחת קבלה בלבד. לא נרשום אותך לרשימות דיוור בלא "
+"הסכמתך."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127
