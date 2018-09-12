@@ -7,7 +7,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-12 14:39-0700\n"
 "PO-Revision-Date: 2018-09-12 00:22+0000\n"
-"Last-Translator: Luigi <gorock@gmail.com>\n"
+"Last-Translator: Marco De Paolini <marco.depaolini@gmail.com>\n"
 "Language-Team: Italian <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/it/>\n"
 "Language: it\n"
@@ -531,7 +531,7 @@ msgstr "Sostieni"
 
 #: ../src/Views/AppInfoView.vala:642
 msgid "Fund the development of this app"
-msgstr "Finanzia lo sviluppo di questa app"
+msgstr "Trovato lo sviluppo di questa app"
 
 #: ../src/Views/AppListUpdateView.vala:59
 msgid "A restart is required to complete the installation of updates"
