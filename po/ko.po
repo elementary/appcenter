@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-10 10:30-0600\n"
-"PO-Revision-Date: 2018-07-27 00:09+0000\n"
+"PO-Revision-Date: 2018-09-12 06:53+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/ko/>\n"
@@ -307,7 +307,7 @@ msgstr "지불 정보를 다시 한번 확인하신 후에 다시 진행해주�
 
 #: src/Dialogs/StripeDialog.vala:76
 msgid "Payment"
-msgstr ""
+msgstr "지불"
 
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
@@ -327,13 +327,10 @@ msgid "Email"
 msgstr "이메일"
 
 #: src/Dialogs/StripeDialog.vala:108
-#, fuzzy
 msgid ""
 "Your email address is only used to send a receipt. You will not be "
 "subscribed to any mailing list."
-msgstr ""
-"이메일 주소는 영수증을 보내는 데 사용됩니다. 저장되지 않으며 메일링 리스트에 "
-"가입되지 않습니다."
+msgstr "여러분의 이메일 주소는 영수증을 보내는 데 사용됩니다. 어떤 메일링 리스트에도 가입되지 않습니다."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127
