@@ -1,13 +1,14 @@
 # Luigi <gorock@gmail.com>, 2018.
 # strozzascotte <marco.depaolini@gmail.com>, 2018.
 # Marco De Paolini <marco.depaolini@gmail.com>, 2018.
+# Fabio Rifici <fabio.rifici@microtechsrl.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-12 14:39-0700\n"
 "PO-Revision-Date: 2018-09-12 00:22+0000\n"
-"Last-Translator: Marco De Paolini <marco.depaolini@gmail.com>\n"
+"Last-Translator: Fabio Rifici <fabio.rifici@microtechsrl.com>\n"
 "Language-Team: Italian <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/it/>\n"
 "Language: it\n"
@@ -531,7 +532,7 @@ msgstr "Sostieni"
 
 #: ../src/Views/AppInfoView.vala:642
 msgid "Fund the development of this app"
-msgstr "Trovato lo sviluppo di questa app"
+msgstr "Finanzia lo sviluppo di quest'app"
 
 #: ../src/Views/AppListUpdateView.vala:59
 msgid "A restart is required to complete the installation of updates"
