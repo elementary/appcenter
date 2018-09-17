@@ -1,11 +1,12 @@
 # Corentin Noël <corentin@elementary.io>, 2018.
+# lolo <phantom.re@outlook.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-10 10:30-0600\n"
-"PO-Revision-Date: 2018-09-17 06:13+0000\n"
-"Last-Translator: Corentin Noël <corentin@elementary.io>\n"
+"PO-Revision-Date: 2018-09-17 06:14+0000\n"
+"Last-Translator: lolo <phantom.re@outlook.com>\n"
 "Language-Team: French <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/fr/>\n"
 "Language: fr\n"
@@ -311,7 +312,7 @@ msgstr "Veuillez vérifier vos informations de paiement et réessayer."
 
 #: src/Dialogs/StripeDialog.vala:76
 msgid "Payment"
-msgstr ""
+msgstr "Paiement"
 
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
