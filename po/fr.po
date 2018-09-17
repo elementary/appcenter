@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-10 10:30-0600\n"
-"PO-Revision-Date: 2018-09-17 06:14+0000\n"
+"PO-Revision-Date: 2018-09-17 06:15+0000\n"
 "Last-Translator: lolo <phantom.re@outlook.com>\n"
 "Language-Team: French <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/fr/>\n"
@@ -336,9 +336,8 @@ msgid ""
 "Your email address is only used to send a receipt. You will not be "
 "subscribed to any mailing list."
 msgstr ""
-"Votre adresse e-mail est utilisée pour vous envoyer un reçu. Elle n’est "
-"jamais enregistrée et vous ne serez pas inscrit à quelque liste de diffusion "
-"que ce soit."
+"Votre adresse e-mail est utilisée uniquement pour vous envoyer un reçu. Vous "
+"ne serez inscrit à aucune liste de diffusion."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127
@@ -483,7 +482,7 @@ msgstr ""
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
-msgstr "Erreur lors de la récupération des mises-à-jour"
+msgstr "Erreur lors de la récupération des mises à jour."
 
 #: src/Dialogs/UpdateFailDialog.vala:26
 msgid ""
