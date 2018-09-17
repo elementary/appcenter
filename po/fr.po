@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-10 10:30-0600\n"
-"PO-Revision-Date: 2018-09-17 06:15+0000\n"
-"Last-Translator: lolo <phantom.re@outlook.com>\n"
+"PO-Revision-Date: 2018-09-17 16:29+0000\n"
+"Last-Translator: Corentin Noël <corentin@elementary.io>\n"
 "Language-Team: French <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/fr/>\n"
 "Language: fr\n"
@@ -482,7 +482,7 @@ msgstr ""
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
-msgstr "Erreur lors de la récupération des mises à jour."
+msgstr "Erreur lors de la récupération des mises à jour"
 
 #: src/Dialogs/UpdateFailDialog.vala:26
 msgid ""
