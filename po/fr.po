@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-10 10:30-0600\n"
-"PO-Revision-Date: 2018-07-15 19:59+0000\n"
+"PO-Revision-Date: 2018-09-17 06:13+0000\n"
 "Last-Translator: Corentin Noël <corentin@elementary.io>\n"
 "Language-Team: French <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/fr/>\n"
@@ -331,7 +331,6 @@ msgid "Email"
 msgstr "E-mail"
 
 #: src/Dialogs/StripeDialog.vala:108
-#, fuzzy
 msgid ""
 "Your email address is only used to send a receipt. You will not be "
 "subscribed to any mailing list."
