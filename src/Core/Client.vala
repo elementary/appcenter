@@ -188,6 +188,7 @@ public class AppCenterCore.Client : Object {
 
             packages_ids += null;
 
+            yield dpkg_configure_check ();
             results = yield client.install_packages_async (packages_ids, cancellable, cb);
             exit_status = results.get_exit_code ();
         } catch (Error e) {
@@ -213,6 +214,7 @@ public class AppCenterCore.Client : Object {
         try {
             sc.inhibit ();
 
+            yield dpkg_configure_check ();
             var results = yield client.update_packages_async (packages_ids, cancellable, cb);
             exit_status = results.get_exit_code ();
         } catch (Error e) {
@@ -255,6 +257,7 @@ public class AppCenterCore.Client : Object {
                 packages_ids += package.package_id;
             });
 
+            yield dpkg_configure_check ();
             results = yield client.remove_packages_async (packages_ids, true, true, cancellable, cb);
             exit_status = results.get_exit_code ();
         } catch (Error e) {
@@ -454,6 +457,8 @@ public class AppCenterCore.Client : Object {
 
     private async void refresh_updates () {
         task_count++;
+
+        yield dpkg_configure_check ();
 
         try {
             Pk.Results results = yield UpdateManager.get_default ().get_updates (null);
