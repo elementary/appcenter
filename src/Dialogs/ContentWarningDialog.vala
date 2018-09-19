@@ -31,7 +31,7 @@ public class AppCenter.Widgets.ContentWarningDialog : Granite.MessageDialog {
         secondary_text = _("%s may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app.").printf (app_name);
 
         var check = new Gtk.CheckButton.with_label (_("Show content warnings"));
-        check.active = true;
+        settings.schema.bind ("content-warning", check, "active", SettingsBindFlags.DEFAULT);
 
         var cancel = add_button (_("Don’t Install"), Gtk.ResponseType.CANCEL) as Gtk.Button;
         cancel.clicked.connect (() => { destroy (); });
