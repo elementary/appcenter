@@ -116,11 +116,9 @@ namespace AppCenter {
             package_name = new Gtk.Label ("");
             image = new Gtk.Image ();
 
-            // TODO: Actually check tags
-            bool explicit = true;
-
             action_button = new Widgets.HumbleButton ();
             action_button.download_requested.connect (() => {
+                bool explicit = package.is_explicit;
                 if (explicit) {
                     content_warning = new Widgets.ContentWarningDialog (this.package_name.label);
                     content_warning.transient_for = (Gtk.Window) get_toplevel ();
@@ -137,6 +135,7 @@ namespace AppCenter {
 
             // TODO: DRY
             action_button.payment_requested.connect ((amount) => {
+                bool explicit = package.is_explicit;
                 if (explicit) {
                     content_warning = new Widgets.ContentWarningDialog (this.package_name.label);
                     content_warning.transient_for = (Gtk.Window) get_toplevel ();

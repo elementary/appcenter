@@ -27,6 +27,21 @@ public class AppCenterCore.Package : Object {
     public const string APPCENTER_PACKAGE_ORIGIN = "appcenter-bionic-main";
     private const string ELEMENTARY_STABLE_PACKAGE_ORIGIN = "stable-bionic-main";
     private const string ELEMENTARY_DAILY_PACKAGE_ORIGIN = "daily-bionic-main";
+    private const string[] EXPLICIT_TAGS = {
+        "violence-realistic",
+        "violence-bloodshed",
+        "violence-sexual",
+        "drugs-alcohol",
+        "drugs-narcotics",
+        "drugs-tobacco",
+        "sex-nudity",
+        "sex-themes",
+        "sex-prostitution",
+        "sex-appearance",
+        "language-profanity",
+        "language-discrimination",
+        "social-chat"
+    };
 
     public signal void changing (bool is_changing);
     public signal void info_changed (Pk.Status status);
@@ -156,6 +171,34 @@ public class AppCenterCore.Package : Object {
                 default:
                     return false;
             }
+        }
+    }
+
+    private bool _explicit = false;
+    private bool _check_explicit = true;
+    public bool is_explicit { 
+        get {
+            if (_check_explicit) {
+                var ratings = component.get_content_ratings ();
+                for (int i = 0; i < ratings.length; i++) {
+                    var rating = ratings[i];
+                    if (rating.get_value ("language-humor") == AppStream.ContentRatingValue.INTENSE) {
+                        _explicit = true;
+                        return _explicit;
+                    }
+        
+                    foreach (string tag in EXPLICIT_TAGS) {
+                        if (rating.get_value (tag) != AppStream.ContentRatingValue.NONE) {
+                            _explicit = true;
+                            return _explicit;
+                        }
+                    }
+                }
+
+                _check_explicit = false;
+            }
+
+            return _explicit;
         }
     }
 
