@@ -263,7 +263,6 @@ public class AppCenterCore.Package : Object {
         change_information.status_changed.connect (() => info_changed (change_information.status));
 
         action_cancellable = new GLib.Cancellable ();
-        bool a = is_explicit;
     }
 
     public Package (AppStream.Component component) {
