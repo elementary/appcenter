@@ -116,34 +116,57 @@ namespace AppCenter {
             package_name = new Gtk.Label ("");
             image = new Gtk.Image ();
 
-            action_button = new Widgets.HumbleButton ();
             // TODO: Actually check tags
-            // TODO: DO this BEFORE payment is requested
+            bool explicit = true;
+
+            action_button = new Widgets.HumbleButton ();
             action_button.download_requested.connect (() => {
-                if (1 == 1) {
+                if (explicit) {
                     content_warning = new Widgets.ContentWarningDialog (this.package_name.label);
                     content_warning.transient_for = (Gtk.Window) get_toplevel ();
-                    content_warning.show_all ();
 
                     content_warning.download_requested.connect (() => {
                         action_clicked.begin ();
                     });
+
+                    content_warning.show ();
                 } else {
                     action_clicked.begin ();
                 }
             });
 
+            // TODO: DRY
             action_button.payment_requested.connect ((amount) => {
-                var stripe = new Widgets.StripeDialog (amount, this.package_name.label, this.package.component.get_desktop_id ().replace (".desktop", ""), this.package.get_payments_key());
-                stripe.transient_for = (Gtk.Window) get_toplevel ();
+                if (explicit) {
+                    content_warning = new Widgets.ContentWarningDialog (this.package_name.label);
+                    content_warning.transient_for = (Gtk.Window) get_toplevel ();
 
-                stripe.download_requested.connect (() => {
-                    action_clicked.begin ();
+                    content_warning.download_requested.connect (() => {
+                        var stripe = new Widgets.StripeDialog (amount, this.package_name.label, this.package.component.get_desktop_id ().replace (".desktop", ""), this.package.get_payments_key());
+                        stripe.transient_for = (Gtk.Window) get_toplevel ();
 
-                    settings.add_paid_app (package.component.get_id ());
-                });
+                        stripe.download_requested.connect (() => {
+                            action_clicked.begin ();
 
-                stripe.show ();
+                            settings.add_paid_app (package.component.get_id ());
+                        });
+
+                        stripe.show ();
+                    });
+
+                    content_warning.show ();
+                } else {
+                    var stripe = new Widgets.StripeDialog (amount, this.package_name.label, this.package.component.get_desktop_id ().replace (".desktop", ""), this.package.get_payments_key());
+                    stripe.transient_for = (Gtk.Window) get_toplevel ();
+
+                    stripe.download_requested.connect (() => {
+                        action_clicked.begin ();
+
+                        settings.add_paid_app (package.component.get_id ());
+                    });
+
+                    stripe.show ();
+                }
             });
 
             uninstall_button = new Gtk.Button.with_label (_("Uninstall"));

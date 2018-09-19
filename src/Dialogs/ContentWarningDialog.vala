@@ -49,6 +49,8 @@ public class AppCenter.Widgets.ContentWarningDialog : Granite.MessageDialog {
          });
 
         custom_bin.add (check);
+        custom_bin.show_all ();
+
         set_default (install);
         install.grab_focus ();
     }
