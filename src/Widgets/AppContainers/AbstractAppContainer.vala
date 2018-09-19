@@ -38,6 +38,7 @@ namespace AppCenter {
         protected Gtk.Label package_author;
         protected Gtk.Label package_summary;
 
+        protected Widgets.ContentWarningDialog content_warning;
         protected Widgets.HumbleButton action_button;
         protected Gtk.Button uninstall_button;
         protected Gtk.Button open_button;
@@ -116,7 +117,21 @@ namespace AppCenter {
             image = new Gtk.Image ();
 
             action_button = new Widgets.HumbleButton ();
-            action_button.download_requested.connect (() => action_clicked.begin ());
+            // TODO: Actually check tags
+            // TODO: DO this BEFORE payment is requested
+            action_button.download_requested.connect (() => {
+                if (1 == 1) {
+                    content_warning = new Widgets.ContentWarningDialog (this.package_name.label);
+                    content_warning.transient_for = (Gtk.Window) get_toplevel ();
+                    content_warning.show_all ();
+
+                    content_warning.download_requested.connect (() => {
+                        action_clicked.begin ();
+                    });
+                } else {
+                    action_clicked.begin ();
+                }
+            });
 
             action_button.payment_requested.connect ((amount) => {
                 var stripe = new Widgets.StripeDialog (amount, this.package_name.label, this.package.component.get_desktop_id ().replace (".desktop", ""), this.package.get_payments_key());
