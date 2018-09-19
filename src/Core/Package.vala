@@ -179,6 +179,7 @@ public class AppCenterCore.Package : Object {
     public bool is_explicit { 
         get {
             if (_check_explicit) {
+                _check_explicit = false;
                 var ratings = component.get_content_ratings ();
                 for (int i = 0; i < ratings.length; i++) {
                     var rating = ratings[i];
@@ -188,14 +189,14 @@ public class AppCenterCore.Package : Object {
                     }
         
                     foreach (string tag in EXPLICIT_TAGS) {
-                        if (rating.get_value (tag) != AppStream.ContentRatingValue.NONE) {
+                        var rating_value = rating.get_value (tag);
+                        if (rating_value != AppStream.ContentRatingValue.UNKNOWN &&
+                            rating_value != AppStream.ContentRatingValue.NONE) {
                             _explicit = true;
                             return _explicit;
                         }
                     }
                 }
-
-                _check_explicit = false;
             }
 
             return _explicit;
@@ -262,6 +263,7 @@ public class AppCenterCore.Package : Object {
         change_information.status_changed.connect (() => info_changed (change_information.status));
 
         action_cancellable = new GLib.Cancellable ();
+        bool a = is_explicit;
     }
 
     public Package (AppStream.Component component) {
