@@ -391,7 +391,7 @@ public class AppCenterCore.Package : Object {
                 }
             }
         }
-        
+
         return description;
     }
 
