@@ -7,7 +7,11 @@ public class AppCenterCore.ScreenshotCache {
     private int screenshot_usage;
 
     public ScreenshotCache () {
-        screenshot_path = GLib.Environment.get_user_cache_dir () + "/appcenter/screenshots";
+        screenshot_path = GLib.Environment.get_user_cache_dir ()
+            + "/"
+            + Build.PROJECT_NAME
+            + "/screenshots";
+
         if (GLib.DirUtils.create_with_parents (screenshot_path, 0755) == -1) {
             critical (
                 "Error creating the temporary folder: GFileError #%d",
