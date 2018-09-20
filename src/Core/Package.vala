@@ -176,7 +176,7 @@ public class AppCenterCore.Package : Object {
 
     private bool _explicit = false;
     private bool _check_explicit = true;
-    public bool is_explicit { 
+    public bool is_explicit {
         get {
             if (_check_explicit) {
                 _check_explicit = false;
@@ -187,9 +187,12 @@ public class AppCenterCore.Package : Object {
                         _explicit = true;
                         return _explicit;
                     }
-        
+
                     foreach (string tag in EXPLICIT_TAGS) {
                         var rating_value = rating.get_value (tag);
+
+                        debug ("OARS %s: %s", tag, AppStream.ContentRating.value_to_string (rating_value));
+
                         if (rating_value != AppStream.ContentRatingValue.UNKNOWN &&
                             rating_value != AppStream.ContentRatingValue.NONE) {
                             _explicit = true;
