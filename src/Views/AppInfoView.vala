@@ -485,7 +485,7 @@ namespace AppCenter.Views {
             }
         }
 
-        public void load_more_content () {
+        public void load_more_content (AppCenterCore.ScreenshotCache cache) {
             new Thread<void*> ("content-loading", () => {
                 app_version.label = package.get_version ();
                 get_app_download_size.begin ();
@@ -519,8 +519,31 @@ namespace AppCenter.Views {
                     });
                 });
 
+                File[] screenshot_files = {};
+                int[] results = {};
+                int completed = 0;
+
+                // Fetch each screenshot in parallel.
                 foreach (var url in urls) {
-                    load_screenshot (url);
+                    File? file = null;
+
+                    cache.fetch.begin (url, (obj, res) => {
+                        results += cache.fetch.end (res, out file);
+                        screenshot_files += file;
+                        completed++;
+                    });
+                }
+
+                // TODO: dynamically load screenshots as they become available.
+                while (urls.length () != completed) {
+                    Thread.usleep (100000);
+                }
+
+                // Load screenshots that were successfully obtained.
+                for (int i = 0; i < urls.length (); i++) {
+                    if (0 == results[i]) {
+                        load_screenshot (screenshot_files[i]);
+                    }
                 }
 
                 Idle.add (() => {
@@ -539,34 +562,7 @@ namespace AppCenter.Views {
         }
 
         // We need to first download the screenshot locally so that it doesn't freeze the interface.
-        private void load_screenshot (string url) {
-            var ret = GLib.DirUtils.create_with_parents (GLib.Environment.get_tmp_dir () + Path.DIR_SEPARATOR_S + ".appcenter", 0755);
-            if (ret == -1) {
-                critical ("Error creating the temporary folder: GFileError #%d", GLib.FileUtils.error_from_errno (GLib.errno));
-            }
-
-            string path = Path.build_path (Path.DIR_SEPARATOR_S, GLib.Environment.get_tmp_dir (), ".appcenter", "XXXXXX");
-            File fileimage;
-            var fd = GLib.FileUtils.mkstemp (path);
-            if (fd != -1) {
-                var source = File.new_for_uri (url);
-                fileimage = File.new_for_path (path);
-                try {
-                    source.copy (fileimage, GLib.FileCopyFlags.OVERWRITE);
-                } catch (Error e) {
-                    debug (e.message);
-                    return;
-                }
-
-                GLib.FileUtils.close (fd);
-            } else {
-                critical ("Error create the temporary file: GFileError #%d", GLib.FileUtils.error_from_errno (GLib.errno));
-                fileimage = File.new_for_uri (url);
-                if (fileimage.query_exists () == false) {
-                    return;
-                }
-            }
-
+        private void load_screenshot (File fileimage) {
             var scale_factor = get_scale_factor ();
             try {
                 var pixbuf = new Gdk.Pixbuf.from_file_at_scale (fileimage.get_path (), 800 * scale_factor, 600 * scale_factor, true);

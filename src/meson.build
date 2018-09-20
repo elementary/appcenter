@@ -9,6 +9,7 @@ appcenter_files = files(
     'Core/ComponentValidator.vala',
     'Core/Houston.vala',
     'Core/Package.vala',
+    'Core/ScreenshotCache.vala',
     'Core/Task.vala',
     'Core/UpdateManager.vala',
     'Dialogs/RestartDialog.vala',
