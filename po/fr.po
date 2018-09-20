@@ -1,10 +1,11 @@
 # Corentin Noël <corentin@elementary.io>, 2018.
+# lolo <phantom.re@outlook.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-10 10:30-0600\n"
-"PO-Revision-Date: 2018-07-15 19:59+0000\n"
+"PO-Revision-Date: 2018-09-17 16:29+0000\n"
 "Last-Translator: Corentin Noël <corentin@elementary.io>\n"
 "Language-Team: French <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/fr/>\n"
@@ -311,7 +312,7 @@ msgstr "Veuillez vérifier vos informations de paiement et réessayer."
 
 #: src/Dialogs/StripeDialog.vala:76
 msgid "Payment"
-msgstr ""
+msgstr "Paiement"
 
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
@@ -331,14 +332,12 @@ msgid "Email"
 msgstr "E-mail"
 
 #: src/Dialogs/StripeDialog.vala:108
-#, fuzzy
 msgid ""
 "Your email address is only used to send a receipt. You will not be "
 "subscribed to any mailing list."
 msgstr ""
-"Votre adresse e-mail est utilisée pour vous envoyer un reçu. Elle n’est "
-"jamais enregistrée et vous ne serez pas inscrit à quelque liste de diffusion "
-"que ce soit."
+"Votre adresse e-mail est utilisée uniquement pour vous envoyer un reçu. Vous "
+"ne serez inscrit à aucune liste de diffusion."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127
@@ -483,7 +482,7 @@ msgstr ""
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
-msgstr "Erreur lors de la récupération des mises-à-jour"
+msgstr "Erreur lors de la récupération des mises à jour"
 
 #: src/Dialogs/UpdateFailDialog.vala:26
 msgid ""

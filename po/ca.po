@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-10 10:30-0600\n"
-"PO-Revision-Date: 2018-06-30 00:02+0000\n"
+"PO-Revision-Date: 2018-09-17 16:28+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/ca/>\n"
@@ -312,7 +312,7 @@ msgstr "Si us plau, reviseu la informació del pagament i torneu-ho a intentar."
 
 #: src/Dialogs/StripeDialog.vala:76
 msgid "Payment"
-msgstr ""
+msgstr "Pagament"
 
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
@@ -332,13 +332,12 @@ msgid "Email"
 msgstr "Adreça electrònica"
 
 #: src/Dialogs/StripeDialog.vala:108
-#, fuzzy
 msgid ""
 "Your email address is only used to send a receipt. You will not be "
 "subscribed to any mailing list."
 msgstr ""
-"L'adreça electrònica s'usa per enviar-hi un rebut. No es desa mai i no se us "
-"subscriurà a cap llista de correu."
+"L'adreça electrònica només s'usa per enviar un rebut. No se us subscriurà a "
+"cap llista de correu."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127
