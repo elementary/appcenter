@@ -357,7 +357,7 @@ public class AppCenterCore.Package : Object {
         Pk.Package? package = null;
         new Thread<bool> ("appstream_description", () => {
             package = find_package ();
-            Idle.add((owned)callback);
+            Idle.add ((owned)callback);
             return true;
         });
 
