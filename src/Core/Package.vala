@@ -355,7 +355,7 @@ public class AppCenterCore.Package : Object {
         SourceFunc callback = find_package_async.callback;
 
         Pk.Package? package = null;
-        new Thread<bool> ("appstream_description", () => {
+        new Thread<bool> ("appstream-find-package", () => {
             package = find_package ();
             Idle.add ((owned)callback);
             return true;
@@ -392,6 +392,17 @@ public class AppCenterCore.Package : Object {
             }
         }
 
+        return description;
+    }
+
+    public string? get_description_sync () {
+        var loop = new MainLoop ();
+        get_description.begin((obj, res) => {
+            get_description.end (res);
+            loop.quit ();
+        });
+
+        loop.run ();
         return description;
     }
 

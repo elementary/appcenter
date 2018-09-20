@@ -61,11 +61,9 @@ namespace AppCenter.Widgets {
 
                 string description;
                 if (has_package) {
-                    package.get_description.begin ((obj, res) => {
-                        description = package.get_description.end (res);
-                        int close_paragraph_index = description.index_of ("</p>", 0);
-                        description = description.slice (3, close_paragraph_index);
-                    });
+                    description = package.get_description_sync ();
+                    int close_paragraph_index = description.index_of ("</p>", 0);
+                    description = description.slice (3, close_paragraph_index);
                 } else {
                     description = _("Get the apps that you need at a price you can afford.");
                 }
