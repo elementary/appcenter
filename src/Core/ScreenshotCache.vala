@@ -213,24 +213,29 @@ public class AppCenterCore.ScreenshotCache {
 
                 // Ensure that what was downloaded is an image, before writing it.
                 var content = msg.response_headers.get_one ("Content-Type");
-                if (null != content && content.has_prefix ("image/")) {
-                    var output = stream.output_stream;
-                    try {
-                        size_t written;
-                        output.write_all (data, out written);
-                        output.close ();
-                    } catch (IOError e) {
-                        warning ("failed to write image to %s: %s\n", path, e.message);
-                        delete_file (file, path);
-                        result = -1;
-                        Idle.add ((owned)callback);
-                        return true;
-                    }
+                if (content == null || ! content.has_prefix ("image/")) {
+                    warning ("fetched url is not of the image content type");
+                    result = 1;
+                    Idle.add ((owned)callback);
+                    return true;
+                }
 
-                    var modified = msg.response_headers.get_one ("Last-Modified");
-                    if (null != modified) {
-                        mtime = new Soup.Date.from_string (modified).to_time_t ();
-                    }
+                var output = stream.output_stream;
+                try {
+                    size_t written;
+                    output.write_all (data, out written);
+                    output.close ();
+                } catch (IOError e) {
+                    warning ("failed to write image to %s: %s\n", path, e.message);
+                    delete_file (file, path);
+                    result = -1;
+                    Idle.add ((owned)callback);
+                    return true;
+                }
+
+                var modified = msg.response_headers.get_one ("Last-Modified");
+                if (null != modified) {
+                    mtime = new Soup.Date.from_string (modified).to_time_t ();
                 }
             }
 
