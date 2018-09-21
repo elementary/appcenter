@@ -148,7 +148,7 @@ public class AppCenterCore.ScreenshotCache {
      * 
      * A result indicating the success (0) will be returned as the result upon completion.
      */
-    public async int fetch (string url, out File out_file) {
+    public async int fetch (string url, out string out_file) {
         SourceFunc callback = fetch.callback;
         int result = 0;
         string path = generate_screenshot_path (url);
@@ -248,7 +248,7 @@ public class AppCenterCore.ScreenshotCache {
         });
 
         yield;
-        out_file = file;
+        out_file = path;
         return result;
     }
 

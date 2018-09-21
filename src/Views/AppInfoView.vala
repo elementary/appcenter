@@ -519,13 +519,13 @@ namespace AppCenter.Views {
                     });
                 });
 
-                File[] screenshot_files = {};
+                string?[] screenshot_files = {};
                 int[] results = {};
                 int completed = 0;
 
                 // Fetch each screenshot in parallel.
                 foreach (var url in urls) {
-                    File? file = null;
+                    string? file = null;
 
                     cache.fetch.begin (url, (obj, res) => {
                         results += cache.fetch.end (res, out file);
@@ -564,10 +564,10 @@ namespace AppCenter.Views {
         }
 
         // We need to first download the screenshot locally so that it doesn't freeze the interface.
-        private void load_screenshot (File fileimage) {
+        private void load_screenshot (string path) {
             var scale_factor = get_scale_factor ();
             try {
-                var pixbuf = new Gdk.Pixbuf.from_file_at_scale (fileimage.get_path (), 800 * scale_factor, 600 * scale_factor, true);
+                var pixbuf = new Gdk.Pixbuf.from_file_at_scale (path, 800 * scale_factor, 600 * scale_factor, true);
                 var image = new Gtk.Image ();
                 image.width_request = 800;
                 image.height_request = 500;
