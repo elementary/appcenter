@@ -2,6 +2,7 @@ public class AppCenterCore.ScreenshotCache {
     private const int MAX_CACHE_SIZE = 100000000;
 
     public string screenshot_path;
+    private Soup.Session session;
 
     public ScreenshotCache () {
         screenshot_path = Path.build_filename (
@@ -10,6 +11,9 @@ public class AppCenterCore.ScreenshotCache {
             Build.PROJECT_NAME,
             "screenshots"
         );
+
+        session = new Soup.Session ();
+        session.timeout = 5;
 
         debug ("screenshot path is at %s\n", screenshot_path);
         if (GLib.DirUtils.create_with_parents (screenshot_path, 0755) == -1) {
@@ -155,9 +159,6 @@ public class AppCenterCore.ScreenshotCache {
         var file = File.new_for_path (path);
 
         new Thread<bool> ("fetching_screenshot", () => {
-            var session = new Soup.Session ();
-            session.timeout = 10;
-
             FileIOStream stream;
             bool download = true;
             time_t mtime = 0;
