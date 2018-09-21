@@ -23,7 +23,7 @@ public class AppCenterCore.ScreenshotCache {
     // Prune the cache directory if it exceeds the `MAX_CACHE_SIZE`.
     public void maintain () {
         var screenshot_usage = summarize_screenshot_usage ();
-        if (screenshot_usage != -1) {
+        if (screenshot_usage == -1) {
             return;
         }
 
