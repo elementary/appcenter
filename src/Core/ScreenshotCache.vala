@@ -155,9 +155,10 @@ public class AppCenterCore.ScreenshotCache {
         var file = File.new_for_path (path);
 
         new Thread<bool> ("fetching_screenshot", () => {
-            FileIOStream stream;
             var session = new Soup.Session ();
             session.timeout = 10;
+
+            FileIOStream stream;
             bool download = true;
             time_t mtime = 0;
 
@@ -166,6 +167,13 @@ public class AppCenterCore.ScreenshotCache {
                     stream = file.open_readwrite ();
                     var msg = new Soup.Message ("HEAD", url);
                     session.send_message (msg);
+
+                    if (msg.status_code != Soup.Status.OK) {
+                        warning ("HEAD request of %s failed: %s\n", url, Soup.Status.get_phrase (msg.status_code));
+                        result = 1;
+                        Idle.add ((owned)callback);
+                        return true;
+                    }
 
                     // Compare the mtimes of the header and the existing file.
                     // If they're the same, we do not need to download it again.
@@ -193,6 +201,14 @@ public class AppCenterCore.ScreenshotCache {
 
                 var msg = new Soup.Message ("GET", url);
                 session.send_message (msg);
+
+                if (msg.status_code != Soup.Status.OK) {
+                    warning ("GET request of %s failed: %s\n", url, Soup.Status.get_phrase (msg.status_code));
+                    result = 1;
+                    Idle.add ((owned)callback);
+                    return true;
+                }
+
                 var data = msg.response_body.data;
 
                 // Ensure that what was downloaded is an image, before writing it.
