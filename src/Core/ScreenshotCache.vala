@@ -3,46 +3,79 @@ public class AppCenterCore.ScreenshotCache {
 
     public string screenshot_path;
 
-    // Atomic integer for keeping track of the current screenshot usage.
-    private int screenshot_usage;
-
     public ScreenshotCache () {
-        screenshot_path = GLib.Environment.get_user_cache_dir ()
-            + "/"
-            + Build.PROJECT_NAME
-            + "/screenshots";
+        screenshot_path = Path.build_filename (
+            GLib.Environment.get_user_cache_dir (),
+            Path.DIR_SEPARATOR_S,
+            Build.PROJECT_NAME,
+            "screenshots"
+        );
 
+        debug ("screenshot path is at %s\n", screenshot_path);
         if (GLib.DirUtils.create_with_parents (screenshot_path, 0755) == -1) {
             critical (
                 "Error creating the temporary folder: GFileError #%d",
                 GLib.FileUtils.error_from_errno (GLib.errno)
             );
         }
-
-        new Thread<bool> ("screenshot_cache", () => {
-            cache_removal_event_loop ();
-            return true;
-        });
     }
 
-    // When `screenshot_usage` exceeds `MAX_CACHE_SIZE`, the oldest files (based on ctime) will be deleted.
-    private void cache_removal_event_loop () {
-        screenshot_usage = summarize_screenshot_usage ();
-        while (true) {
-            if (AtomicInt.get (ref screenshot_usage) > MAX_CACHE_SIZE) {
-                delete_oldest_files ();
-            }
+    // Prune the cache directory if it exceeds the `MAX_CACHE_SIZE`.
+    public void maintain () {
+        var screenshot_usage = summarize_screenshot_usage ();
+        if (screenshot_usage != -1) {
+            return;
+        }
 
-            Thread.usleep (1000000);
+        if (screenshot_usage > MAX_CACHE_SIZE) {
+            delete_oldest_files (screenshot_usage);
+        }
+    }
+
+    // Attempt to open a directory for reading.
+    private int read_dir (out Dir? dir, string path) {
+        try {
+            dir = Dir.open (path, 0);
+            return 0;
+        } catch (FileError e) {
+            warning ("failed to read directory at %s: %s\n", path, e.message);
+            dir = null;
+            return -1;
+        }
+    }
+
+    // Attempt to get the size of a given file.
+    private int query_size (string path) {
+        var file = File.new_for_path (path);
+        try {
+            FileInfo info = file.query_info ("standard::*", FileQueryInfoFlags.NONE);
+            return (int) info.get_size ();
+        } catch (Error e) {
+            warning ("failed to get file metadata for %s: %s", path, e.message);
+            return -1;
+        }
+    }
+
+    // Attempt to delete the given file.
+    private int delete_file (File file, string path) {
+        try {
+            file.delete ();
+            return 0;
+        } catch (Error e) {
+            warning ("failed to delete %s: %s", path, e.message);
+            return -1;
         }
     }
 
     // Delete the oldest files in the screenshot cache until the cache is less than the max size.
-    private void delete_oldest_files () {
-        Dir dir = Dir.open (screenshot_path, 0);
+    private void delete_oldest_files (int screenshot_usage) {
         string? name = null;
+        Dir dir;
+        if (read_dir (out dir, screenshot_path) == -1) {
+            return;
+        }
 
-        while (AtomicInt.get (ref screenshot_usage) > MAX_CACHE_SIZE) {
+        while (screenshot_usage > MAX_CACHE_SIZE) {
             string? oldest_path = null;
             time_t oldest_time = 0;
             while ((name = dir.read_name ()) != null) {
@@ -55,14 +88,18 @@ public class AppCenterCore.ScreenshotCache {
             }
 
             if (null != oldest_path) {
+                debug ("deleting screenshot at %s to free cache\n", oldest_path);
+
                 var file = File.new_for_path (oldest_path);
-                try {
-                    FileInfo info = file.query_info ("standard::*", FileQueryInfoFlags.NONE);
-                    var size = (int) info.get_size ();
-                    file.delete ();
-                    AtomicInt.set (ref screenshot_usage, AtomicInt.get (ref screenshot_usage) - size);
-                } catch (Error e) {
-                    stderr.printf ("failed to delete %s: %s\n", oldest_path, e.message);
+                int size = query_size (oldest_path);
+                if (size == -1) {
+                    return;
+                }
+
+                if (delete_file (file, oldest_path) == 0) {
+                    screenshot_usage -= size;
+                } else {
+                    return;
                 }
             }
         }
@@ -70,18 +107,40 @@ public class AppCenterCore.ScreenshotCache {
 
     // Get the combined size of the screenshot cache.
     private int summarize_screenshot_usage () {
-        Dir dir = Dir.open (screenshot_path, 0);
+        Dir dir;
+        if (read_dir (out dir, screenshot_path) == -1) {
+            return -1;
+        }
+        
         string? name = null;
         int size = 0;
 
         while ((name = dir.read_name ()) != null) {
             string entry = Path.build_filename (screenshot_path, name);
-            File file = File.new_for_path (entry);
-            FileInfo info = file.query_info ("standard::*", FileQueryInfoFlags.NONE);
-            size += (int) info.get_size ();
+            int file_size = query_size (entry);
+            if (file_size == -1) {
+                return -1;
+            }
+
+            size += file_size;
         }
 
         return size;
+    }
+
+    // Generate a screenshot path based on the URL to be fetched.
+    private string generate_screenshot_path (string url) {
+        int ext_pos = url.last_index_of (".");
+        string extension = url.slice ((long) ext_pos, (long) url.length);
+        if (extension.contains ("/")) {
+            extension = "";
+        }
+
+        return Path.build_filename (
+            screenshot_path,
+            Path.DIR_SEPARATOR_S,
+            "%02x".printf (url.hash ()) + extension
+        );
     }
 
     /*
@@ -91,13 +150,8 @@ public class AppCenterCore.ScreenshotCache {
      */
     public async int fetch (string url, out File out_file) {
         SourceFunc callback = fetch.callback;
-        int ext_pos = url.last_index_of (".");
-        string extension = url.slice ((long) ext_pos, (long) url.length);
-        string file_name = "%02x".printf (url.hash ());
-
-        string path = screenshot_path + "/" + file_name + extension;
         int result = 0;
-
+        string path = generate_screenshot_path (url);
         var file = File.new_for_path (path);
 
         new Thread<bool> ("fetching_screenshot", () => {
@@ -127,20 +181,14 @@ public class AppCenterCore.ScreenshotCache {
                     stream = file.create_readwrite (FileCreateFlags.NONE);
                 }
             } catch (Error e) {
-                debug (e.message);
+                warning ("failed to open screenshot file for writing: %s\n", e.message);
                 result = -1;
+                Idle.add ((owned)callback);
                 return true;
             }
 
             if (download) {
-                stderr.printf ("downloading %s to %s\n", url, path);
-
-                try {
-                    FileInfo info = file.query_info ("standard::*", FileQueryInfoFlags.NONE);
-                    AtomicInt.set (ref screenshot_usage, AtomicInt.get (ref screenshot_usage) - (int) info.get_size ());
-                } catch (Error e) {
-                    stderr.printf ("unable to get file info of %s\n before downloading: %s\n", path, e.message);
-                }
+                debug ("downloading %s to %s\n", url, path);
 
                 var msg = new Soup.Message ("GET", url);
                 session.send_message (msg);
@@ -153,17 +201,12 @@ public class AppCenterCore.ScreenshotCache {
                     try {
                         size_t written;
                         output.write_all (data, out written);
-                        AtomicInt.add (ref screenshot_usage, (int) written);
                         output.close ();
                     } catch (IOError e) {
-                        try {
-                            file.delete ();
-                        } catch (Error e) {
-                            stderr.printf ("failed to delete %s: %s\n", path, e.message);
-                        }
-
-                        debug (e.message);
+                        warning ("failed to write image to %s: %s\n", path, e.message);
+                        delete_file (file, path);
                         result = -1;
+                        Idle.add ((owned)callback);
                         return true;
                     }
 
