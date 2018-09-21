@@ -157,6 +157,7 @@ public class AppCenterCore.ScreenshotCache {
         new Thread<bool> ("fetching_screenshot", () => {
             FileIOStream stream;
             var session = new Soup.Session ();
+            session.timeout = 10;
             bool download = true;
             time_t mtime = 0;
 
