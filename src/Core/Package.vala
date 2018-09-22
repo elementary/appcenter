@@ -28,6 +28,25 @@ public class AppCenterCore.Package : Object {
     private const string ELEMENTARY_STABLE_PACKAGE_ORIGIN = "stable-bionic-main";
     private const string ELEMENTARY_DAILY_PACKAGE_ORIGIN = "daily-bionic-main";
 
+    /* Note: These are just a stopgap, and are not a replacement for a more
+     * fleshed out parental control system. We assume any of these "moderate"
+     * or above is considered explicit for our naive warning.
+     *
+     * See https://hughsie.github.io/oars/generate.html for ratings.
+     */
+    private const string[] EXPLICIT_TAGS = {
+        "violence-realistic",
+        "violence-bloodshed",
+        "violence-sexual",
+        "drugs-narcotics",
+        "sex-nudity",
+        "sex-themes",
+        "sex-prostitution",
+        "language-profanity",
+        "language-humor",
+        "language-discrimination"
+    };
+
     public signal void changing (bool is_changing);
     public signal void info_changed (Pk.Status status);
 
@@ -165,35 +184,13 @@ public class AppCenterCore.Package : Object {
         get {
             if (_check_explicit) {
                 _check_explicit = false;
-
-                /* Note: These are just a stopgap, and are not a replacement for
-                 * a more fleshed out parental control system */
-                var explicit_tags = new Gee.HashMap<string, AppStream.ContentRatingValue> ();
-                explicit_tags.set("violence-realistic", AppStream.ContentRatingValue.MODERATE);
-                explicit_tags.set("violence-bloodshed", AppStream.ContentRatingValue.MODERATE);
-                explicit_tags.set("violence-sexual", AppStream.ContentRatingValue.INTENSE);
-                explicit_tags.set("drugs-alcohol", AppStream.ContentRatingValue.INTENSE);
-                explicit_tags.set("drugs-narcotics", AppStream.ContentRatingValue.MODERATE);
-                explicit_tags.set("drugs-tobacco", AppStream.ContentRatingValue.INTENSE);
-                explicit_tags.set("sex-nudity", AppStream.ContentRatingValue.MILD);
-                explicit_tags.set("sex-themes", AppStream.ContentRatingValue.MILD);
-                explicit_tags.set("sex-prostitution", AppStream.ContentRatingValue.MILD);
-                explicit_tags.set("sex-adultery", AppStream.ContentRatingValue.MODERATE);
-                explicit_tags.set("sex-appearance", AppStream.ContentRatingValue.INTENSE);
-                explicit_tags.set("language-profanity", AppStream.ContentRatingValue.MODERATE);
-                explicit_tags.set("language-humor", AppStream.ContentRatingValue.INTENSE);
-                explicit_tags.set("language-discrimination", AppStream.ContentRatingValue.MODERATE);
-                explicit_tags.set("social-chat", AppStream.ContentRatingValue.INTENSE);
-
                 var ratings = component.get_content_ratings ();
                 for (int i = 0; i < ratings.length; i++) {
-                    foreach (var tag in explicit_tags) {
-                        var rating_value = rating.get_value (tag.key);
+                    var rating = ratings[i];
 
-                        debug ("OARS %s: %s", tag.key, AppStream.ContentRating.value_to_string (rating_value));
-
-                        // UNKNOWN is 0, NONE is 1, and the severity increases from there
-                        if ((int)rating_value > (int)explicit_tags[tag]) {
+                    foreach (string tag in EXPLICIT_TAGS) {
+                        var rating_value = rating.get_value (tag);
+                        if (rating_value > AppStream.ContentRatingValue.MILD) {
                             _explicit = true;
                             return _explicit;
                         }
