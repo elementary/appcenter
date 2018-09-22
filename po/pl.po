@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-10 10:30-0600\n"
-"PO-Revision-Date: 2018-09-06 00:08+0000\n"
+"PO-Revision-Date: 2018-09-11 14:36+0000\n"
 "Last-Translator: Piotr Strebski <strebski@gmail.com>\n"
 "Language-Team: Polish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/pl/>\n"
@@ -316,7 +316,7 @@ msgstr "Proszę przejrzyj informacje dotyczące płatności i spróbuj ponownie.
 
 #: src/Dialogs/StripeDialog.vala:76
 msgid "Payment"
-msgstr ""
+msgstr "Płatność"
 
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
@@ -336,13 +336,12 @@ msgid "Email"
 msgstr "E-mail"
 
 #: src/Dialogs/StripeDialog.vala:108
-#, fuzzy
 msgid ""
 "Your email address is only used to send a receipt. You will not be "
 "subscribed to any mailing list."
 msgstr ""
-"Twój adres e-mail służy do wysyłania potwierdzenia. Nigdy nie jest "
-"przechowywany i nie będziesz subskrybować listy dyskusyjnej."
+"Twój adres e-mail służy do wysłania potwierdzenia opłaty. Nie zostaniesz "
+"zapisany do żadnej subskrypcji listy dyskusyjnej."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127

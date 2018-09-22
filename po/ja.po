@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-10 10:30-0600\n"
-"PO-Revision-Date: 2018-07-16 05:08+0000\n"
+"PO-Revision-Date: 2018-09-11 05:18+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/ja/>\n"
@@ -311,7 +311,7 @@ msgstr "支払い情報を見直してもう一度お試しください。"
 
 #: src/Dialogs/StripeDialog.vala:76
 msgid "Payment"
-msgstr ""
+msgstr "支払い"
 
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
@@ -331,13 +331,10 @@ msgid "Email"
 msgstr "メール"
 
 #: src/Dialogs/StripeDialog.vala:108
-#, fuzzy
 msgid ""
 "Your email address is only used to send a receipt. You will not be "
 "subscribed to any mailing list."
-msgstr ""
-"メールアドレスは領収書の送信に使用されます。メールアドレスは保存されず、メー"
-"リングリストに追加されることはありません。"
+msgstr "メールアドレスは領収書を送信するためだけに使用されます。メーリングリストに追加されることはありません。"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127

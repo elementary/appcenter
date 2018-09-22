@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-12 14:39-0700\n"
-"PO-Revision-Date: 2018-08-29 19:25+0000\n"
+"PO-Revision-Date: 2018-09-22 00:10+0000\n"
 "Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://weblate.elementary.io/projects/"
 "appcenter/appcenter/pt_BR/>\n"
@@ -479,7 +479,7 @@ msgstr "Conecte-se a internet para instalar ou atualizar aplicativos."
 
 #: ../src/MainWindow.vala:197
 msgid "Network Settings…"
-msgstr "Configurações de rede…"
+msgstr "Configurações de Rede…"
 
 #: ../src/Views/AppInfoView.vala:76
 msgid "Screenshot Not Available"
