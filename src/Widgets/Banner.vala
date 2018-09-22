@@ -166,6 +166,11 @@ namespace AppCenter.Widgets {
         }
 
         public void add_package (AppCenterCore.Package? package) {
+            if (package.is_explicit) {
+                debug ("%s is explicit, not adding to banner", package.component.id);
+                return;
+            }
+            
             var widget = new BannerWidget (package);
             stack.add_named (widget, next_free_package_index.to_string ());
             next_free_package_index++;

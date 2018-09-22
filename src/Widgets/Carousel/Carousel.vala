@@ -36,6 +36,11 @@ public class AppCenter.Widgets.Carousel : Gtk.FlowBox {
     }
 
     public void add_package (AppCenterCore.Package? package) {
+        if (package.is_explicit) {
+            debug ("%s is explicit, not adding to carousel", package.component.id);
+            return;
+        }
+
         var carousel_item = new CarouselItem (package);
         add (carousel_item);
         show_all ();
