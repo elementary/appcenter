@@ -544,14 +544,19 @@ public class AppCenterCore.Package : Object {
         var list = new Gee.ArrayList<AppStream.Release> ();
 
         var releases = component.get_releases ();
-        if (releases.length < min_releases) {
-            return list;
+        uint index = 0;
+        while (index < releases.length) {
+            if (releases[index].get_version () == null) {
+                releases.remove_index (index);
+                index = 0;
+                continue;
+            }
+
+            index++;
         }
 
-        for (uint i = 0; i < releases.length; i++) {
-            if (releases[i].get_version () == null) {
-                releases.remove_index (i);
-            }
+        if (releases.length < min_releases) {
+            return list;
         }
 
         releases.sort_with_data ((a, b) => {
