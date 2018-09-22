@@ -548,7 +548,11 @@ public class AppCenterCore.Package : Object {
         while (index < releases.length) {
             if (releases[index].get_version () == null) {
                 releases.remove_index (index);
-                index = 0;
+                // Go backwards one index to check the item that just replaced the one we removed
+                if (--index == -1u) {
+                    index = 0;
+                }
+
                 continue;
             }
 
