@@ -132,37 +132,18 @@ namespace AppCenter {
                 }
             });
 
-            // TODO: DRY
             action_button.payment_requested.connect ((amount) => {
                 if (package.is_explicit && settings.content_warning == true) {
                     content_warning = new Widgets.ContentWarningDialog (this.package_name.label);
                     content_warning.transient_for = (Gtk.Window) get_toplevel ();
 
                     content_warning.download_requested.connect (() => {
-                        var stripe = new Widgets.StripeDialog (amount, this.package_name.label, this.package.component.get_desktop_id ().replace (".desktop", ""), this.package.get_payments_key());
-                        stripe.transient_for = (Gtk.Window) get_toplevel ();
-
-                        stripe.download_requested.connect (() => {
-                            action_clicked.begin ();
-
-                            settings.add_paid_app (package.component.get_id ());
-                        });
-
-                        stripe.show ();
+                        show_stripe_dialog (amount);
                     });
 
                     content_warning.show ();
                 } else {
-                    var stripe = new Widgets.StripeDialog (amount, this.package_name.label, this.package.component.get_desktop_id ().replace (".desktop", ""), this.package.get_payments_key());
-                    stripe.transient_for = (Gtk.Window) get_toplevel ();
-
-                    stripe.download_requested.connect (() => {
-                        action_clicked.begin ();
-
-                        settings.add_paid_app (package.component.get_id ());
-                    });
-
-                    stripe.show ();
+                    show_stripe_dialog (amount);
                 }
             });
 
@@ -209,6 +190,19 @@ namespace AppCenter {
             action_stack.add_named (button_grid, "buttons");
             action_stack.add_named (progress_grid, "progress");
             action_stack.show_all ();
+        }
+
+        private void show_stripe_dialog (int amount) {
+            var stripe = new Widgets.StripeDialog (amount, this.package_name.label, this.package.component.get_desktop_id ().replace (".desktop", ""), this.package.get_payments_key());
+            stripe.transient_for = (Gtk.Window) get_toplevel ();
+
+            stripe.download_requested.connect (() => {
+                action_clicked.begin ();
+
+                settings.add_paid_app (package.component.get_id ());
+            });
+
+            stripe.show ();
         }
 
         protected virtual void set_up_package (uint icon_size = 48) {
