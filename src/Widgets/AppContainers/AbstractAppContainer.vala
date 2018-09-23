@@ -118,7 +118,7 @@ namespace AppCenter {
 
             action_button = new Widgets.HumbleButton ();
             action_button.download_requested.connect (() => {
-                if (package.is_explicit) {
+                if (package.is_explicit && settings.content_warning == true) {
                     content_warning = new Widgets.ContentWarningDialog (this.package_name.label);
                     content_warning.transient_for = (Gtk.Window) get_toplevel ();
 
@@ -134,7 +134,7 @@ namespace AppCenter {
 
             // TODO: DRY
             action_button.payment_requested.connect ((amount) => {
-                if (package.is_explicit) {
+                if (package.is_explicit && settings.content_warning == true) {
                     content_warning = new Widgets.ContentWarningDialog (this.package_name.label);
                     content_warning.transient_for = (Gtk.Window) get_toplevel ();
 
