@@ -37,22 +37,22 @@ public class AppCenter.Widgets.ContentWarningDialog : Granite.MessageDialog {
         var settings = Settings.get_default ();
         settings.schema.bind ("content-warning", check, "active", SettingsBindFlags.DEFAULT);
 
-        var cancel = add_button (_("Don’t Install"), Gtk.ResponseType.CANCEL) as Gtk.Button;
-        cancel.clicked.connect (() => {
-            destroy ();
-        });
-
-        var install = add_button (_("Install Anyway"), Gtk.ResponseType.OK) as Gtk.Button;
-        install.clicked.connect (() => {
-             download_requested ();
-             destroy ();
-         });
+        var cancel = add_button (_("Don’t Install"), Gtk.ResponseType.CANCEL);
+        var install = add_button (_("Install Anyway"), Gtk.ResponseType.OK);
 
         custom_bin.add (check);
         custom_bin.show_all ();
 
         set_default (install);
         install.grab_focus ();
+
+        response.connect ((response) => {
+            if (response == Gtk.ResponseType.OK) {
+                download_requested ();
+            }
+
+            destroy ();
+        });
     }
 }
 
