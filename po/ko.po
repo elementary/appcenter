@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-23 15:58-0700\n"
-"PO-Revision-Date: 2018-09-12 06:53+0000\n"
+"PO-Revision-Date: 2018-09-24 12:48+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/ko/>\n"
@@ -277,12 +277,12 @@ msgstr "업데이트를 마무리하시려면 컴퓨터를 다시 시작해주�
 
 #: src/Dialogs/ContentWarningDialog.vala:27
 msgid "Content Warning"
-msgstr ""
+msgstr "콘텐츠 주의 알림"
 
 #: src/Dialogs/ContentWarningDialog.vala:32
 #, c-format
 msgid "%s Contains Explicit Content"
-msgstr ""
+msgstr "%s에는 노골적인 내용이 있습니다"
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 #, c-format
@@ -291,20 +291,20 @@ msgid ""
 "disturbing. In general, elementary does not review or endorse the contents "
 "of this app."
 msgstr ""
+"%s에는 성인에게만 적합하거나 민감한 또는 불편한 내용이 있을 수 있습니다. 통상적으로, elementary는 이 앱을 검토하거나 "
+"승인하지 않습니다."
 
 #: src/Dialogs/ContentWarningDialog.vala:35
 msgid "Show content warnings"
-msgstr ""
+msgstr "콘텐츠 주의 알림 보이기"
 
 #: src/Dialogs/ContentWarningDialog.vala:40
-#, fuzzy
 msgid "Don’t Install"
-msgstr "설치"
+msgstr "설치하지 마세요"
 
 #: src/Dialogs/ContentWarningDialog.vala:41
-#, fuzzy
 msgid "Install Anyway"
-msgstr "설치중"
+msgstr "아무튼 설치합니다"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
