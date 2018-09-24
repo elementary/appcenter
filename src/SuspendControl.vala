@@ -23,6 +23,7 @@
 public interface SessionManager : Object {
     public abstract uint32 inhibit (string app_id, uint32 toplevel_xid, string reason, uint32 flags) throws GLib.Error;
     public abstract void uninhibit (uint32 inhibit_cookie) throws GLib.Error;
+    public abstract void reboot () throws GLib.Error;
 }
 
 public class SuspendControl {
@@ -65,6 +66,14 @@ public class SuspendControl {
         }
 
         return !inhibited;
+    }
+
+    public void reboot () {
+        try {
+            sm.reboot ();
+        } catch (GLib.Error e) {
+            critical ("failed to request a reboot from GNOME: %s\n", e.message);
+        }
     }
 
 }

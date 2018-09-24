@@ -69,8 +69,7 @@ namespace AppCenter.Views {
 
             infobar.response.connect ((response) => {
                 if (response == 0) {
-                    var dialog = new Widgets.RestartDialog ();
-                    dialog.show_all ();
+                    Utils.reboot ();
                 }
             });
 
