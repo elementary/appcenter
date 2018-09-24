@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2016-2017 elementary LLC (https://elementary.io)
+* Copyright (c) 2016–2018 elementary, Inc. (https://elementary.io)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public
@@ -38,6 +38,7 @@ namespace AppCenter {
         protected Gtk.Label package_author;
         protected Gtk.Label package_summary;
 
+        protected Widgets.ContentWarningDialog content_warning;
         protected Widgets.HumbleButton action_button;
         protected Gtk.Button uninstall_button;
         protected Gtk.Button open_button;
@@ -116,19 +117,34 @@ namespace AppCenter {
             image = new Gtk.Image ();
 
             action_button = new Widgets.HumbleButton ();
-            action_button.download_requested.connect (() => action_clicked.begin ());
+            action_button.download_requested.connect (() => {
+                if (settings.content_warning == true && package.is_explicit) {
+                    content_warning = new Widgets.ContentWarningDialog (this.package_name.label);
+                    content_warning.transient_for = (Gtk.Window) get_toplevel ();
+
+                    content_warning.download_requested.connect (() => {
+                        action_clicked.begin ();
+                    });
+
+                    content_warning.show ();
+                } else {
+                    action_clicked.begin ();
+                }
+            });
 
             action_button.payment_requested.connect ((amount) => {
-                var stripe = new Widgets.StripeDialog (amount, this.package_name.label, this.package.component.get_desktop_id ().replace (".desktop", ""), this.package.get_payments_key());
-                stripe.transient_for = (Gtk.Window) get_toplevel ();
+                if (settings.content_warning == true && package.is_explicit) {
+                    content_warning = new Widgets.ContentWarningDialog (this.package_name.label);
+                    content_warning.transient_for = (Gtk.Window) get_toplevel ();
 
-                stripe.download_requested.connect (() => {
-                    action_clicked.begin ();
+                    content_warning.download_requested.connect (() => {
+                        show_stripe_dialog (amount);
+                    });
 
-                    settings.add_paid_app (package.component.get_id ());
-                });
-
-                stripe.show ();
+                    content_warning.show ();
+                } else {
+                    show_stripe_dialog (amount);
+                }
             });
 
             uninstall_button = new Gtk.Button.with_label (_("Uninstall"));
@@ -174,6 +190,19 @@ namespace AppCenter {
             action_stack.add_named (button_grid, "buttons");
             action_stack.add_named (progress_grid, "progress");
             action_stack.show_all ();
+        }
+
+        private void show_stripe_dialog (int amount) {
+            var stripe = new Widgets.StripeDialog (amount, this.package_name.label, this.package.component.get_desktop_id ().replace (".desktop", ""), this.package.get_payments_key());
+            stripe.transient_for = (Gtk.Window) get_toplevel ();
+
+            stripe.download_requested.connect (() => {
+                action_clicked.begin ();
+
+                settings.add_paid_app (package.component.get_id ());
+            });
+
+            stripe.show ();
         }
 
         protected virtual void set_up_package (uint icon_size = 48) {
