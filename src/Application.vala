@@ -55,8 +55,6 @@ public class AppCenter.App : Gtk.Application {
 
         add_main_option_entries (APPCENTER_OPTIONS);
 
-        print (Build.CONFIGDIR + "\n");
-
         var quit_action = new SimpleAction ("quit", null);
         quit_action.activate.connect (() => {
             if (main_window != null) {
