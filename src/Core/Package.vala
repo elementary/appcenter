@@ -28,6 +28,25 @@ public class AppCenterCore.Package : Object {
     private const string ELEMENTARY_STABLE_PACKAGE_ORIGIN = "stable-bionic-main";
     private const string ELEMENTARY_DAILY_PACKAGE_ORIGIN = "daily-bionic-main";
 
+    /* Note: These are just a stopgap, and are not a replacement for a more
+     * fleshed out parental control system. We assume any of these "moderate"
+     * or above is considered explicit for our naive warning.
+     *
+     * See https://hughsie.github.io/oars/generate.html for ratings.
+     */
+    private const string[] EXPLICIT_TAGS = {
+        "violence-realistic",
+        "violence-bloodshed",
+        "violence-sexual",
+        "drugs-narcotics",
+        "sex-nudity",
+        "sex-themes",
+        "sex-prostitution",
+        "language-profanity",
+        "language-humor",
+        "language-discrimination"
+    };
+
     public signal void changing (bool is_changing);
     public signal void info_changed (Pk.Status status);
 
@@ -156,6 +175,30 @@ public class AppCenterCore.Package : Object {
                 default:
                     return false;
             }
+        }
+    }
+
+    private bool _explicit = false;
+    private bool _check_explicit = true;
+    public bool is_explicit {
+        get {
+            if (_check_explicit) {
+                _check_explicit = false;
+                var ratings = component.get_content_ratings ();
+                for (int i = 0; i < ratings.length; i++) {
+                    var rating = ratings[i];
+
+                    foreach (string tag in EXPLICIT_TAGS) {
+                        var rating_value = rating.get_value (tag);
+                        if (rating_value > AppStream.ContentRatingValue.MILD) {
+                            _explicit = true;
+                            return _explicit;
+                        }
+                    }
+                }
+            }
+
+            return _explicit;
         }
     }
 
