@@ -9,6 +9,7 @@ src/Core/Houston.vala
 src/Core/Package.vala
 src/Core/Task.vala
 src/Core/UpdateManager.vala
+src/Dialogs/ContentWarningDialog.vala
 src/Dialogs/RestartDialog.vala
 src/Dialogs/StripeDialog.vala
 src/Dialogs/UpdateFailDialog.vala

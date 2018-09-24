@@ -1,11 +1,12 @@
 # Jörg Arnold <j.ar@mailbox.org>, 2018.
+# Julian Raschke <julian@raschke.de>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-10 10:30-0600\n"
-"PO-Revision-Date: 2018-09-10 17:41+0000\n"
-"Last-Translator: Jörg Arnold <j.ar@mailbox.org>\n"
+"POT-Creation-Date: 2018-09-23 15:58-0700\n"
+"PO-Revision-Date: 2018-09-24 07:29+0000\n"
+"Last-Translator: Julian Raschke <julian@raschke.de>\n"
 "Language-Team: German <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/de/>\n"
 "Language: de\n"
@@ -269,7 +270,7 @@ msgstr[1] "Für %u Komponenten sind Updates verfügbar"
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/Package.vala:192
+#: src/Core/Package.vala:235
 #, c-format
 msgid "%s Developers"
 msgstr "Die Entwickler von %s"
@@ -282,6 +283,38 @@ msgstr "Neustart erforderlich"
 msgid "Please restart your system to finalize updates"
 msgstr ""
 "Bitte starten Sie Ihr System neu, um die Aktualisierungen abzuschließen"
+
+#: src/Dialogs/ContentWarningDialog.vala:27
+msgid "Content Warning"
+msgstr "Inhaltswarnung"
+
+#: src/Dialogs/ContentWarningDialog.vala:32
+#, c-format
+msgid "%s Contains Explicit Content"
+msgstr "%s enthält anstößige Inhalte"
+
+#: src/Dialogs/ContentWarningDialog.vala:33
+#, c-format
+msgid ""
+"%s may contain content only suitable for adults or that may be sensitive or "
+"disturbing. In general, elementary does not review or endorse the contents "
+"of this app."
+msgstr ""
+"%s enthält möglicherweise Inhalte, die verstörend oder nur für Erwachsene "
+"geeignet sind. elementary überprüft und befürwortet die Inhalte dieser App "
+"nicht."
+
+#: src/Dialogs/ContentWarningDialog.vala:35
+msgid "Show content warnings"
+msgstr "Inhaltswarnungen anzeigen"
+
+#: src/Dialogs/ContentWarningDialog.vala:40
+msgid "Don’t Install"
+msgstr "Nicht installieren"
+
+#: src/Dialogs/ContentWarningDialog.vala:41
+msgid "Install Anyway"
+msgstr "Trotzdem Installieren"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -297,7 +330,7 @@ msgstr "Neu starten"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:155
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:171
 msgid "Cancel"
 msgstr "Abbrechen"
 
@@ -669,7 +702,7 @@ msgid "Universal Access"
 msgstr "Barrierefreiheit"
 
 #: src/Widgets/HumbleButton.vala:93
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:219
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:250
 msgid "Free"
 msgstr "Kostenlos"
 
@@ -750,15 +783,15 @@ msgstr "Aktuell"
 msgid "Drivers"
 msgstr "Treiber"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:134
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:150
 msgid "Uninstall"
 msgstr "Deinstallieren"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:137
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:153
 msgid "Open"
 msgstr "Öffnen"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:243
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:274
 msgid "Update"
 msgstr "Aktualisieren"
 
@@ -805,9 +838,6 @@ msgstr "Aktualisieren"
 
 #~ msgid "by %s"
 #~ msgstr "von %s"
-
-#~ msgid "Install"
-#~ msgstr "Installieren"
 
 #~ msgid "Best Rated"
 #~ msgstr "Höchstbewertet"
