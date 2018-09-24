@@ -28,7 +28,7 @@ public class AppCenterCore.ComponentValidator : Object {
     construct {
         blacklist = new Gee.HashSet<string> ();
 
-        string blacklist_path = Path.build_filename (Build.CONFIGDIR, Build.BLACKLIST);
+        string blacklist_path = Path.build_filename (Path.DIR_SEPARATOR_S, Build.CONFIGDIR, Build.BLACKLIST);
 
         try {
             string contents;
