@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-23 15:58-0700\n"
-"PO-Revision-Date: 2018-09-10 22:41+0000\n"
+"PO-Revision-Date: 2018-09-24 06:18+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/he/>\n"
@@ -280,12 +280,12 @@ msgstr "נא להפעיל את המערכת מחדש כדי לסיים את הת
 
 #: src/Dialogs/ContentWarningDialog.vala:27
 msgid "Content Warning"
-msgstr ""
+msgstr "אזהרת תוכן"
 
 #: src/Dialogs/ContentWarningDialog.vala:32
 #, c-format
 msgid "%s Contains Explicit Content"
-msgstr ""
+msgstr "%s מכיל תוכן פוגעני"
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 #, c-format
@@ -294,19 +294,20 @@ msgid ""
 "disturbing. In general, elementary does not review or endorse the contents "
 "of this app."
 msgstr ""
+"%s עשוי להכיל תוכן שמתאים למבוגרים בלבד או שהתוכן פוגעני או מטריד. באופן "
+"כללי, צוות elementary לא מפקח או מעודד את תכני היישום הזה."
 
 #: src/Dialogs/ContentWarningDialog.vala:35
 msgid "Show content warnings"
-msgstr ""
+msgstr "הצגת אזהרות תוכן"
 
 #: src/Dialogs/ContentWarningDialog.vala:40
 msgid "Don’t Install"
-msgstr ""
+msgstr "לא להתקין"
 
 #: src/Dialogs/ContentWarningDialog.vala:41
-#, fuzzy
 msgid "Install Anyway"
-msgstr "בהליך התקנה"
+msgstr "להתקין בכל זאת"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"

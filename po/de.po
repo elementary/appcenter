@@ -1,11 +1,12 @@
 # Jörg Arnold <j.ar@mailbox.org>, 2018.
+# Julian Raschke <julian@raschke.de>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-23 15:58-0700\n"
-"PO-Revision-Date: 2018-09-10 17:41+0000\n"
-"Last-Translator: Jörg Arnold <j.ar@mailbox.org>\n"
+"PO-Revision-Date: 2018-09-24 22:00+0000\n"
+"Last-Translator: Julian Raschke <julian@raschke.de>\n"
 "Language-Team: German <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/de/>\n"
 "Language: de\n"
@@ -285,12 +286,12 @@ msgstr ""
 
 #: src/Dialogs/ContentWarningDialog.vala:27
 msgid "Content Warning"
-msgstr ""
+msgstr "Inhaltswarnung"
 
 #: src/Dialogs/ContentWarningDialog.vala:32
 #, c-format
 msgid "%s Contains Explicit Content"
-msgstr ""
+msgstr "%s enthält anstößige Inhalte"
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 #, c-format
@@ -299,20 +300,21 @@ msgid ""
 "disturbing. In general, elementary does not review or endorse the contents "
 "of this app."
 msgstr ""
+"%s enthält möglicherweise Inhalte, die verstörend oder nur für Erwachsene "
+"geeignet sind. elementary überprüft und befürwortet die Inhalte dieser App "
+"nicht."
 
 #: src/Dialogs/ContentWarningDialog.vala:35
 msgid "Show content warnings"
-msgstr ""
+msgstr "Inhaltswarnungen anzeigen"
 
 #: src/Dialogs/ContentWarningDialog.vala:40
-#, fuzzy
 msgid "Don’t Install"
-msgstr "Installieren"
+msgstr "Nicht installieren"
 
 #: src/Dialogs/ContentWarningDialog.vala:41
-#, fuzzy
 msgid "Install Anyway"
-msgstr "Installieren"
+msgstr "Trotzdem installieren"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
