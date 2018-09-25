@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-23 15:58-0700\n"
-"PO-Revision-Date: 2018-09-24 07:29+0000\n"
+"PO-Revision-Date: 2018-09-24 22:00+0000\n"
 "Last-Translator: Julian Raschke <julian@raschke.de>\n"
 "Language-Team: German <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/de/>\n"
@@ -314,7 +314,7 @@ msgstr "Nicht installieren"
 
 #: src/Dialogs/ContentWarningDialog.vala:41
 msgid "Install Anyway"
-msgstr "Trotzdem Installieren"
+msgstr "Trotzdem installieren"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
