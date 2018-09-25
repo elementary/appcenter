@@ -43,23 +43,25 @@ public class AppCenter.Views.SearchView : View {
     }
 
     public override void return_clicked () {
-        if (viewing_package) {
-            if (previous_package != null) {
-                show_package (previous_package);
-            } else {
-                set_visible_child (app_list_view);
-                viewing_package = false;
-
-                if (current_category != null) {
-                    subview_entered (_("Search Apps"), true, current_category.name);
+        remove_visible_package (() => {
+            if (viewing_package) {
+                if (previous_package != null) {
+                    show_package (previous_package);
                 } else {
-                    subview_entered (null, true);
+                    set_visible_child (app_list_view);
+                    viewing_package = false;
+
+                    if (current_category != null) {
+                        subview_entered (_("Search Apps"), true, current_category.name);
+                    } else {
+                        subview_entered (null, true);
+                    }
                 }
+            } else {
+                search (current_search_term, null);
+                subview_entered (null, true);
             }
-        } else {
-            search (current_search_term, null);
-            subview_entered (null, true);
-        }
+        });
     }
 
     public void search (string search_term, AppStream.Category? category, bool mimetype = false) {

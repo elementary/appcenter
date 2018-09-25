@@ -44,13 +44,15 @@ public class AppCenter.Views.InstalledView : View {
     }
 
     public override void return_clicked () {
-        if (previous_package != null) {
-            show_package (previous_package);
-            subview_entered (C_("view", "Installed"), false, null);
-        } else {
-            set_visible_child (app_list_view);
-            subview_entered (null, false);
-        }
+        remove_visible_package (() => {
+            if (previous_package != null) {
+                show_package (previous_package);
+                subview_entered (C_("view", "Installed"), false, null);
+            } else {
+                set_visible_child (app_list_view);
+                subview_entered (null, false);
+            }
+        });
     }
 
     public async void get_apps () {

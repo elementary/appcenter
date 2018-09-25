@@ -253,24 +253,26 @@ namespace AppCenter {
         }
 
         public override void return_clicked () {
-            if (previous_package != null) {
-                show_package (previous_package);
-                if (current_category != null) {
-                    subview_entered (current_category, false, "");
+            remove_visible_package (() => {
+                if (previous_package != null) {
+                    show_package (previous_package);
+                    if (current_category != null) {
+                        subview_entered (current_category, false, "");
+                    } else {
+                        subview_entered (_("Home"), false, "");
+                    }
+                } else if (viewing_package && current_category != null) {
+                    set_visible_child_name (current_category);
+                    viewing_package = false;
+                    subview_entered (_("Home"), true, current_category, _("Search %s").printf (current_category));
                 } else {
-                    subview_entered (_("Home"), false, "");
+                    set_visible_child (category_scrolled);
+                    viewing_package = false;
+                    currently_viewed_category = null;
+                    current_category = null;
+                    subview_entered (null, true);
                 }
-            } else if (viewing_package && current_category != null) {
-                set_visible_child_name (current_category);
-                viewing_package = false;
-                subview_entered (_("Home"), true, current_category, _("Search %s").printf (current_category));
-            } else {
-                set_visible_child (category_scrolled);
-                viewing_package = false;
-                currently_viewed_category = null;
-                current_category = null;
-                subview_entered (null, true);
-            }
+            });
         }
 
         private void show_app_list_for_category (AppStream.Category category) {

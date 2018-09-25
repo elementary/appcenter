@@ -18,6 +18,8 @@
  * Authored by: Corentin Noël <corentin@elementaryos.org>
  */
 
+public delegate void Fn ();
+
 public abstract class AppCenter.View : Gtk.Stack {
     public signal void subview_entered (string? return_name, bool allow_search, string? custom_header = null, string? custom_search_placeholder = null);
 
@@ -49,10 +51,28 @@ public abstract class AppCenter.View : Gtk.Stack {
         app_info_view.show_all ();
         add_named (app_info_view, package.component.id);
         set_visible_child (app_info_view);
+
         Timeout.add (transition_duration, () => {
             app_info_view.load_more_content ();
             return Source.REMOVE;
         });
+    }
+
+    public void remove_visible_package (Fn before_destroy) {
+        unowned Gtk.Widget? child = get_visible_child ();
+        bool marked = false;
+        if (null != child && child is Views.AppInfoView) {
+            marked = true;
+            Idle.add (() => {
+                child.destroy ();
+                return Source.REMOVE;
+            });
+        }
+
+        before_destroy ();
+        if (marked) {
+            remove (child);
+        }
     }
 
     public abstract void return_clicked ();
