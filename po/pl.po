@@ -309,9 +309,8 @@ msgid "Don’t Install"
 msgstr "Nie instaluj"
 
 #: src/Dialogs/ContentWarningDialog.vala:41
-#, fuzzy
 msgid "Install Anyway"
-msgstr "Instalowanie"
+msgstr "Zainstaluj mimo to"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
