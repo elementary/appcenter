@@ -393,7 +393,7 @@ public class AppCenterCore.Package : Object {
             change_information.cancel ();
         }
     }
-    
+
     private async Pk.Package? find_package_async () {
         SourceFunc callback = find_package_async.callback;
 
@@ -440,7 +440,7 @@ public class AppCenterCore.Package : Object {
 
     public string? get_description_sync () {
         var loop = new MainLoop ();
-        get_description.begin((obj, res) => {
+        get_description.begin ((obj, res) => {
             get_description.end (res);
             loop.quit ();
         });
