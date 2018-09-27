@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-10 10:30-0600\n"
-"PO-Revision-Date: 2018-09-17 16:28+0000\n"
+"POT-Creation-Date: 2018-09-23 15:58-0700\n"
+"PO-Revision-Date: 2018-09-25 11:17+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/ca/>\n"
@@ -266,7 +266,7 @@ msgstr[1] "%u components amb actualitzacions"
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/Package.vala:192
+#: src/Core/Package.vala:235
 #, c-format
 msgid "%s Developers"
 msgstr "%s, els desenvolupadors"
@@ -278,6 +278,38 @@ msgstr "Cal reiniciar"
 #: src/Core/UpdateManager.vala:82
 msgid "Please restart your system to finalize updates"
 msgstr "Si us plau, reinicieu el sistema per acabar les actualitzacions."
+
+#: src/Dialogs/ContentWarningDialog.vala:27
+msgid "Content Warning"
+msgstr "Avís de contingut"
+
+#: src/Dialogs/ContentWarningDialog.vala:32
+#, c-format
+msgid "%s Contains Explicit Content"
+msgstr "&s conté contingut explícit"
+
+#: src/Dialogs/ContentWarningDialog.vala:33
+#, c-format
+msgid ""
+"%s may contain content only suitable for adults or that may be sensitive or "
+"disturbing. In general, elementary does not review or endorse the contents "
+"of this app."
+msgstr ""
+"%s pot tenir contingut només adequat per a adults, o bé que pot ser sensible "
+"o pertorbador. En general, l'elementary no revisa ni avala el contingut "
+"d'aquesta aplicació."
+
+#: src/Dialogs/ContentWarningDialog.vala:35
+msgid "Show content warnings"
+msgstr "Mostra els avisos de contingut"
+
+#: src/Dialogs/ContentWarningDialog.vala:40
+msgid "Don’t Install"
+msgstr "No la instal·lis"
+
+#: src/Dialogs/ContentWarningDialog.vala:41
+msgid "Install Anyway"
+msgstr "Instal·la-la tanmateix"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -294,7 +326,7 @@ msgstr "Reinicia'l"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:155
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:171
 msgid "Cancel"
 msgstr "Cancel·la"
 
@@ -672,7 +704,7 @@ msgid "Universal Access"
 msgstr "Accés universal"
 
 #: src/Widgets/HumbleButton.vala:93
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:219
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:250
 msgid "Free"
 msgstr "Lliure"
 
@@ -753,15 +785,15 @@ msgstr "Al dia"
 msgid "Drivers"
 msgstr "Controladors"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:134
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:150
 msgid "Uninstall"
 msgstr "Desinstal·la"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:137
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:153
 msgid "Open"
 msgstr "Obre"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:243
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:274
 msgid "Update"
 msgstr "Actualitza"
 
@@ -794,9 +826,6 @@ msgstr "Actualitza"
 
 #~ msgid "by %s"
 #~ msgstr "per %s"
-
-#~ msgid "Install"
-#~ msgstr "Instal·la"
 
 #~ msgid "Best Rated"
 #~ msgstr "Les millor valorades"

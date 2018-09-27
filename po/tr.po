@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-10 10:30-0600\n"
+"POT-Creation-Date: 2018-09-23 15:58-0700\n"
 "PO-Revision-Date: 2018-09-08 16:00+0000\n"
 "Last-Translator: Veysel İNANÇ <vinanc72@gmail.com>\n"
 "Language-Team: Turkish <https://weblate.elementary.io/projects/appcenter/"
@@ -267,7 +267,7 @@ msgstr[1] "%u bileşenlerinin güncellemeleri var."
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/Package.vala:192
+#: src/Core/Package.vala:235
 #, c-format
 msgid "%s Developers"
 msgstr "%s Geliştiricileri"
@@ -279,6 +279,37 @@ msgstr "Yeniden Başlatma Gerekli"
 #: src/Core/UpdateManager.vala:82
 msgid "Please restart your system to finalize updates"
 msgstr "Lütfen güncellemeler bittikten sonra sisteminizi yeniden başlatın"
+
+#: src/Dialogs/ContentWarningDialog.vala:27
+msgid "Content Warning"
+msgstr ""
+
+#: src/Dialogs/ContentWarningDialog.vala:32
+#, c-format
+msgid "%s Contains Explicit Content"
+msgstr ""
+
+#: src/Dialogs/ContentWarningDialog.vala:33
+#, c-format
+msgid ""
+"%s may contain content only suitable for adults or that may be sensitive or "
+"disturbing. In general, elementary does not review or endorse the contents "
+"of this app."
+msgstr ""
+
+#: src/Dialogs/ContentWarningDialog.vala:35
+msgid "Show content warnings"
+msgstr ""
+
+#: src/Dialogs/ContentWarningDialog.vala:40
+#, fuzzy
+msgid "Don’t Install"
+msgstr "Yükle"
+
+#: src/Dialogs/ContentWarningDialog.vala:41
+#, fuzzy
+msgid "Install Anyway"
+msgstr "Yükleniyor"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -295,7 +326,7 @@ msgstr "Yeniden Başlat"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:155
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:171
 msgid "Cancel"
 msgstr "Vazgeç"
 
@@ -659,7 +690,7 @@ msgid "Universal Access"
 msgstr "Evrensel Erişim"
 
 #: src/Widgets/HumbleButton.vala:93
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:219
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:250
 msgid "Free"
 msgstr "Ücretsiz"
 
@@ -741,15 +772,15 @@ msgstr "Güncel"
 msgid "Drivers"
 msgstr "Sürücüler"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:134
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:150
 msgid "Uninstall"
 msgstr "Kaldır"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:137
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:153
 msgid "Open"
 msgstr "Aç"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:243
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:274
 msgid "Update"
 msgstr "Güncelle"
 
@@ -781,9 +812,6 @@ msgstr "Güncelle"
 #~ "  tolka https://launchpad.net/~tolsen92-s\n"
 #~ "  Özgür BASKIN https://launchpad.net/~ozgur-baskin\n"
 #~ "  İbrahim Ethem Göl https://launchpad.net/~ethem578"
-
-#~ msgid "Install"
-#~ msgstr "Yükle"
 
 #~ msgid "Best Rated"
 #~ msgstr "En İyiler"

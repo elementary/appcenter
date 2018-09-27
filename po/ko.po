@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-10 10:30-0600\n"
-"PO-Revision-Date: 2018-09-12 06:53+0000\n"
+"POT-Creation-Date: 2018-09-23 15:58-0700\n"
+"PO-Revision-Date: 2018-09-24 12:48+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/ko/>\n"
@@ -262,7 +262,7 @@ msgstr[0] "%u개의 업데이트할 항목이 있습니다"
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/Package.vala:192
+#: src/Core/Package.vala:235
 #, c-format
 msgid "%s Developers"
 msgstr "%s 개발자들"
@@ -274,6 +274,37 @@ msgstr "다시 시작해야 합니다"
 #: src/Core/UpdateManager.vala:82
 msgid "Please restart your system to finalize updates"
 msgstr "업데이트를 마무리하시려면 컴퓨터를 다시 시작해주세요"
+
+#: src/Dialogs/ContentWarningDialog.vala:27
+msgid "Content Warning"
+msgstr "콘텐츠 주의 알림"
+
+#: src/Dialogs/ContentWarningDialog.vala:32
+#, c-format
+msgid "%s Contains Explicit Content"
+msgstr "%s에는 노골적인 내용이 있습니다"
+
+#: src/Dialogs/ContentWarningDialog.vala:33
+#, c-format
+msgid ""
+"%s may contain content only suitable for adults or that may be sensitive or "
+"disturbing. In general, elementary does not review or endorse the contents "
+"of this app."
+msgstr ""
+"%s에는 성인에게만 적합하거나 민감한 또는 불편한 내용이 있을 수 있습니다. 통상적으로, elementary는 이 앱을 검토하거나 "
+"승인하지 않습니다."
+
+#: src/Dialogs/ContentWarningDialog.vala:35
+msgid "Show content warnings"
+msgstr "콘텐츠 주의 알림 보이기"
+
+#: src/Dialogs/ContentWarningDialog.vala:40
+msgid "Don’t Install"
+msgstr "설치하지 마세요"
+
+#: src/Dialogs/ContentWarningDialog.vala:41
+msgid "Install Anyway"
+msgstr "아무튼 설치합니다"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -289,7 +320,7 @@ msgstr "다시 시작"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:155
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:171
 msgid "Cancel"
 msgstr "취소"
 
@@ -330,7 +361,9 @@ msgstr "이메일"
 msgid ""
 "Your email address is only used to send a receipt. You will not be "
 "subscribed to any mailing list."
-msgstr "여러분의 이메일 주소는 영수증을 보내는 데 사용됩니다. 어떤 메일링 리스트에도 가입되지 않습니다."
+msgstr ""
+"여러분의 이메일 주소는 영수증을 보내는 데 사용됩니다. 어떤 메일링 리스트에도 "
+"가입되지 않습니다."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127
@@ -645,7 +678,7 @@ msgid "Universal Access"
 msgstr "편리한 기능"
 
 #: src/Widgets/HumbleButton.vala:93
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:219
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:250
 msgid "Free"
 msgstr "무료"
 
@@ -725,15 +758,15 @@ msgstr "최신 버전입니다"
 msgid "Drivers"
 msgstr "드라이버"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:134
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:150
 msgid "Uninstall"
 msgstr "제거"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:137
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:153
 msgid "Open"
 msgstr "열기"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:243
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:274
 msgid "Update"
 msgstr "업데이트"
 
@@ -764,9 +797,6 @@ msgstr "업데이트"
 
 #~ msgid "by %s"
 #~ msgstr "%s 참여"
-
-#~ msgid "Install"
-#~ msgstr "설치"
 
 #~ msgid "Best Rated"
 #~ msgstr "평이 좋은 앱"

@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-10 10:30-0600\n"
-"PO-Revision-Date: 2018-09-10 22:41+0000\n"
+"POT-Creation-Date: 2018-09-23 15:58-0700\n"
+"PO-Revision-Date: 2018-09-24 06:18+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/he/>\n"
@@ -265,7 +265,7 @@ msgstr[1] "%u רכיבים עם עדכונים"
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/Package.vala:192
+#: src/Core/Package.vala:235
 #, c-format
 msgid "%s Developers"
 msgstr "המפתחים שמאחורי %s"
@@ -277,6 +277,37 @@ msgstr "נדרשת הפעלה מחדש"
 #: src/Core/UpdateManager.vala:82
 msgid "Please restart your system to finalize updates"
 msgstr "נא להפעיל את המערכת מחדש כדי לסיים את התקנת העדכונים"
+
+#: src/Dialogs/ContentWarningDialog.vala:27
+msgid "Content Warning"
+msgstr "אזהרת תוכן"
+
+#: src/Dialogs/ContentWarningDialog.vala:32
+#, c-format
+msgid "%s Contains Explicit Content"
+msgstr "%s מכיל תוכן פוגעני"
+
+#: src/Dialogs/ContentWarningDialog.vala:33
+#, c-format
+msgid ""
+"%s may contain content only suitable for adults or that may be sensitive or "
+"disturbing. In general, elementary does not review or endorse the contents "
+"of this app."
+msgstr ""
+"%s עשוי להכיל תוכן שמתאים למבוגרים בלבד או שהתוכן פוגעני או מטריד. באופן "
+"כללי, צוות elementary לא מפקח או מעודד את תכני היישום הזה."
+
+#: src/Dialogs/ContentWarningDialog.vala:35
+msgid "Show content warnings"
+msgstr "הצגת אזהרות תוכן"
+
+#: src/Dialogs/ContentWarningDialog.vala:40
+msgid "Don’t Install"
+msgstr "לא להתקין"
+
+#: src/Dialogs/ContentWarningDialog.vala:41
+msgid "Install Anyway"
+msgstr "להתקין בכל זאת"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -292,7 +323,7 @@ msgstr "הפעלה מחדש"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:155
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:171
 msgid "Cancel"
 msgstr "ביטול"
 
@@ -639,7 +670,7 @@ msgid "Universal Access"
 msgstr "גישה אוניברסלית"
 
 #: src/Widgets/HumbleButton.vala:93
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:219
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:250
 msgid "Free"
 msgstr "חינם"
 
@@ -720,15 +751,15 @@ msgstr "עדכני"
 msgid "Drivers"
 msgstr "מנהלי התקנים"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:134
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:150
 msgid "Uninstall"
 msgstr "הסרה"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:137
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:153
 msgid "Open"
 msgstr "פתיחה"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:243
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:274
 msgid "Update"
 msgstr "עדכון"
 

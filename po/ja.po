@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-10 10:30-0600\n"
-"PO-Revision-Date: 2018-09-11 05:18+0000\n"
+"POT-Creation-Date: 2018-09-23 15:58-0700\n"
+"PO-Revision-Date: 2018-09-24 02:29+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/ja/>\n"
@@ -264,7 +264,7 @@ msgstr[0] "アップデートのあるコンポーネントが %u 個ありま�
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/Package.vala:192
+#: src/Core/Package.vala:235
 #, c-format
 msgid "%s Developers"
 msgstr "%s の開発者"
@@ -276,6 +276,37 @@ msgstr "再起動が必要です"
 #: src/Core/UpdateManager.vala:82
 msgid "Please restart your system to finalize updates"
 msgstr "アップデートを完了するには再起動してください"
+
+#: src/Dialogs/ContentWarningDialog.vala:27
+msgid "Content Warning"
+msgstr "コンテンツの警告"
+
+#: src/Dialogs/ContentWarningDialog.vala:32
+#, c-format
+msgid "%s Contains Explicit Content"
+msgstr "%s は不適切なコンテンツを含んでいます"
+
+#: src/Dialogs/ContentWarningDialog.vala:33
+#, c-format
+msgid ""
+"%s may contain content only suitable for adults or that may be sensitive or "
+"disturbing. In general, elementary does not review or endorse the contents "
+"of this app."
+msgstr ""
+"%s は成人向けの内容、繊細な内容、あるいは動揺させる内容が含まれている可能性があります。一般的に、elementary "
+"はこのアプリのコンテンツを調査したり保証したりしません。"
+
+#: src/Dialogs/ContentWarningDialog.vala:35
+msgid "Show content warnings"
+msgstr "コンテンツの警告を表示"
+
+#: src/Dialogs/ContentWarningDialog.vala:40
+msgid "Don’t Install"
+msgstr "インストールしない"
+
+#: src/Dialogs/ContentWarningDialog.vala:41
+msgid "Install Anyway"
+msgstr "了解してインストール"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -293,7 +324,7 @@ msgstr "再起動"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:155
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:171
 msgid "Cancel"
 msgstr "キャンセル"
 
@@ -334,7 +365,9 @@ msgstr "メール"
 msgid ""
 "Your email address is only used to send a receipt. You will not be "
 "subscribed to any mailing list."
-msgstr "メールアドレスは領収書を送信するためだけに使用されます。メーリングリストに追加されることはありません。"
+msgstr ""
+"メールアドレスは領収書を送信するためだけに使用されます。メーリングリストに追"
+"加されることはありません。"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127
@@ -653,7 +686,7 @@ msgid "Universal Access"
 msgstr "ユニバーサルアクセス"
 
 #: src/Widgets/HumbleButton.vala:93
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:219
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:250
 msgid "Free"
 msgstr "無料"
 
@@ -733,15 +766,15 @@ msgstr "最新"
 msgid "Drivers"
 msgstr "ドライバー"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:134
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:150
 msgid "Uninstall"
 msgstr "アンインストール"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:137
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:153
 msgid "Open"
 msgstr "開く"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:243
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:274
 msgid "Update"
 msgstr "アップデート"
 

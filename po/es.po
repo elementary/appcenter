@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-10 10:30-0600\n"
+"POT-Creation-Date: 2018-09-23 15:58-0700\n"
 "PO-Revision-Date: 2018-08-16 15:01+0000\n"
 "Last-Translator: Rafael Bautista Martínez <iuninefrendor@gmail.com>\n"
 "Language-Team: Spanish <https://weblate.elementary.io/projects/appcenter/"
@@ -265,7 +265,7 @@ msgstr[1] "%u componentes con actualizaciones"
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/Package.vala:192
+#: src/Core/Package.vala:235
 #, c-format
 msgid "%s Developers"
 msgstr "Desarrolladores de %s"
@@ -278,6 +278,37 @@ msgstr "Se requiere reiniciar"
 msgid "Please restart your system to finalize updates"
 msgstr ""
 "Por favor, reinicie el sistema para completar el proceso de actualización"
+
+#: src/Dialogs/ContentWarningDialog.vala:27
+msgid "Content Warning"
+msgstr ""
+
+#: src/Dialogs/ContentWarningDialog.vala:32
+#, c-format
+msgid "%s Contains Explicit Content"
+msgstr ""
+
+#: src/Dialogs/ContentWarningDialog.vala:33
+#, c-format
+msgid ""
+"%s may contain content only suitable for adults or that may be sensitive or "
+"disturbing. In general, elementary does not review or endorse the contents "
+"of this app."
+msgstr ""
+
+#: src/Dialogs/ContentWarningDialog.vala:35
+msgid "Show content warnings"
+msgstr ""
+
+#: src/Dialogs/ContentWarningDialog.vala:40
+#, fuzzy
+msgid "Don’t Install"
+msgstr "Instalar"
+
+#: src/Dialogs/ContentWarningDialog.vala:41
+#, fuzzy
+msgid "Install Anyway"
+msgstr "Instalando"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -293,7 +324,7 @@ msgstr "Reiniciar"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:155
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:171
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -663,7 +694,7 @@ msgid "Universal Access"
 msgstr "Acceso universal"
 
 #: src/Widgets/HumbleButton.vala:93
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:219
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:250
 msgid "Free"
 msgstr "Gratis"
 
@@ -746,15 +777,15 @@ msgstr "Actualizado"
 msgid "Drivers"
 msgstr "Controladores"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:134
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:150
 msgid "Uninstall"
 msgstr "Desinstalar"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:137
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:153
 msgid "Open"
 msgstr "Abrir"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:243
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:274
 msgid "Update"
 msgstr "Actualizar"
 
@@ -802,9 +833,6 @@ msgstr "Actualizar"
 
 #~ msgid "by %s"
 #~ msgstr "por %s"
-
-#~ msgid "Install"
-#~ msgstr "Instalar"
 
 #~ msgid "Best Rated"
 #~ msgstr "Mejor valoradas"
