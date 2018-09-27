@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-23 15:58-0700\n"
-"PO-Revision-Date: 2018-09-24 22:00+0000\n"
+"PO-Revision-Date: 2018-09-27 18:24+0000\n"
 "Last-Translator: Kaj Printz Madsen <kajprintz@gmail.com>\n"
 "Language-Team: Danish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/da/>\n"
@@ -43,7 +43,7 @@ msgstr "%s blev succesfuldt installeret"
 #: src/Application.vala:273
 #, c-format
 msgid "There Was An Error Installing %s."
-msgstr "Der Opstod Én Fejl ved Installation af %s."
+msgstr "Der Opstod En Fejl under Installationen af %s."
 
 #: src/MainWindow.vala:149 src/Views/Homepage.vala:252
 #: src/Views/Homepage.vala:261 src/Views/Homepage.vala:266
@@ -285,7 +285,7 @@ msgstr "Indholdsadvarsel"
 #: src/Dialogs/ContentWarningDialog.vala:32
 #, c-format
 msgid "%s Contains Explicit Content"
-msgstr ""
+msgstr "%s Indeholder Eksplicit Indhold"
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 #, c-format
@@ -294,20 +294,21 @@ msgid ""
 "disturbing. In general, elementary does not review or endorse the contents "
 "of this app."
 msgstr ""
+"%s kan have indhold, der kun er egnet for voksne, eller som kan være af en "
+"følsom eller stødende natur. Generelt vurderer eller støtter elementary ikke "
+"indholdet af denne app."
 
 #: src/Dialogs/ContentWarningDialog.vala:35
 msgid "Show content warnings"
-msgstr ""
+msgstr "Vis indholds advarsler"
 
 #: src/Dialogs/ContentWarningDialog.vala:40
-#, fuzzy
 msgid "Don’t Install"
-msgstr "Installér"
+msgstr "Installer Ikke"
 
 #: src/Dialogs/ContentWarningDialog.vala:41
-#, fuzzy
 msgid "Install Anyway"
-msgstr "Installerer"
+msgstr "Installer Alligevel"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -325,7 +326,7 @@ msgstr "Genstart"
 #: src/Dialogs/StripeDialog.vala:315
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:171
 msgid "Cancel"
-msgstr "Annullér"
+msgstr "Annuller"
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid ""
@@ -769,7 +770,7 @@ msgstr "Drivere"
 
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:150
 msgid "Uninstall"
-msgstr "Afinstallér"
+msgstr "Afinstaller"
 
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:153
 msgid "Open"
