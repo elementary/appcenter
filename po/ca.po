@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-23 15:58-0700\n"
-"PO-Revision-Date: 2018-09-17 16:28+0000\n"
+"PO-Revision-Date: 2018-09-25 11:17+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/ca/>\n"
@@ -281,12 +281,12 @@ msgstr "Si us plau, reinicieu el sistema per acabar les actualitzacions."
 
 #: src/Dialogs/ContentWarningDialog.vala:27
 msgid "Content Warning"
-msgstr ""
+msgstr "Avís de contingut"
 
 #: src/Dialogs/ContentWarningDialog.vala:32
 #, c-format
 msgid "%s Contains Explicit Content"
-msgstr ""
+msgstr "&s conté contingut explícit"
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 #, c-format
@@ -295,20 +295,21 @@ msgid ""
 "disturbing. In general, elementary does not review or endorse the contents "
 "of this app."
 msgstr ""
+"%s pot tenir contingut només adequat per a adults, o bé que pot ser sensible "
+"o pertorbador. En general, l'elementary no revisa ni avala el contingut "
+"d'aquesta aplicació."
 
 #: src/Dialogs/ContentWarningDialog.vala:35
 msgid "Show content warnings"
-msgstr ""
+msgstr "Mostra els avisos de contingut"
 
 #: src/Dialogs/ContentWarningDialog.vala:40
-#, fuzzy
 msgid "Don’t Install"
-msgstr "Instal·la"
+msgstr "No la instal·lis"
 
 #: src/Dialogs/ContentWarningDialog.vala:41
-#, fuzzy
 msgid "Install Anyway"
-msgstr "S'instal·la"
+msgstr "Instal·la-la tanmateix"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"

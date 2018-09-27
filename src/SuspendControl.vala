@@ -44,7 +44,7 @@ public class SuspendControl {
         }
     }
 
-    public static SuspendControl get_default () {
+    public static unowned SuspendControl get_default () {
         if (sc == null) {
             sc = new SuspendControl ();
         }
