@@ -33,6 +33,8 @@ public class SuspendControl {
     uint32 inhibit_cookie = 0;
     bool supported = true;
 
+    private static SuspendControl? sc = null;
+
     public SuspendControl () {
         try {
             sm = Bus.get_proxy_sync (BusType.SESSION, "org.gnome.SessionManager", "/org/gnome/SessionManager");
@@ -40,6 +42,14 @@ public class SuspendControl {
             supported = false;
             critical (e.message);
         }
+    }
+
+    public static SuspendControl get_default () {
+        if (sc == null) {
+            sc = new SuspendControl ();
+        }
+
+        return sc;
     }
 
     public bool inhibit () {

@@ -32,7 +32,7 @@ namespace Utils {
 
     public void reboot () {
         try {
-            new SuspendControl ().reboot ();
+            SuspendControl.get_default ().reboot ();
         } catch (GLib.Error e) {
             var dialog = new AppCenter.Widgets.RestartDialog ();
             dialog.show_all ();

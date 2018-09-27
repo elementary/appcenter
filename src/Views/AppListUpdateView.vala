@@ -54,7 +54,7 @@ namespace AppCenter.Views {
             update_mutex = GLib.Mutex ();
             apps_to_update = new Gee.LinkedList<AppCenterCore.Package> ();
 
-            sc = new SuspendControl ();
+            sc = SuspendControl.get_default ();
 
             var info_label = new Gtk.Label (_("A restart is required to complete the installation of updates"));
             info_label.show ();
