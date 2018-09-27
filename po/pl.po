@@ -1,11 +1,12 @@
 # Piotr Strebski <strebski@gmail.com>, 2018.
+# Kajetan Rosiak <roskaj@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-23 15:58-0700\n"
-"PO-Revision-Date: 2018-09-11 14:36+0000\n"
-"Last-Translator: Piotr Strebski <strebski@gmail.com>\n"
+"PO-Revision-Date: 2018-09-27 11:37+0000\n"
+"Last-Translator: Kajetan Rosiak <roskaj@gmail.com>\n"
 "Language-Team: Polish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/pl/>\n"
 "Language: pl\n"
@@ -20,7 +21,7 @@ msgstr ""
 #. Add "AppCenter" to the translation catalog
 #: src/Application.vala:38
 msgid "AppCenter"
-msgstr "Centrum oprogramowania"
+msgstr "AppCenter"
 
 #: src/Application.vala:106
 #, c-format
@@ -284,12 +285,12 @@ msgstr "Uruchom ponownie system, aby dokończyć aktualizacje"
 
 #: src/Dialogs/ContentWarningDialog.vala:27
 msgid "Content Warning"
-msgstr ""
+msgstr "Ostrzeżenie o zawartości"
 
 #: src/Dialogs/ContentWarningDialog.vala:32
 #, c-format
 msgid "%s Contains Explicit Content"
-msgstr ""
+msgstr "%s zawiera drastyczne treści"
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 #, c-format
@@ -298,20 +299,21 @@ msgid ""
 "disturbing. In general, elementary does not review or endorse the contents "
 "of this app."
 msgstr ""
+"%s może zawierać treści tylko dla dorosłych lub treści o charakterze "
+"wrażliwym lub niepokojącym. Ogólnie rzecz biorąc elementary nie recenzuje "
+"ani nie popiera zawartości tego programu."
 
 #: src/Dialogs/ContentWarningDialog.vala:35
 msgid "Show content warnings"
-msgstr ""
+msgstr "Pokaż ostrzeżenie o zawartości"
 
 #: src/Dialogs/ContentWarningDialog.vala:40
-#, fuzzy
 msgid "Don’t Install"
-msgstr "Zainstaluj"
+msgstr "Nie instaluj"
 
 #: src/Dialogs/ContentWarningDialog.vala:41
-#, fuzzy
 msgid "Install Anyway"
-msgstr "Instalowanie"
+msgstr "Zainstaluj mimo to"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
