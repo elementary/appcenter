@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-23 15:58-0700\n"
-"PO-Revision-Date: 2018-09-26 20:45+0000\n"
+"PO-Revision-Date: 2018-09-27 00:09+0000\n"
 "Last-Translator: Nils K <slx@nilsk.net>\n"
 "Language-Team: Norwegian Bokmål <https://weblate.elementary.io/projects/"
 "appcenter/appcenter/nb/>\n"
@@ -61,7 +61,7 @@ msgstr "Installerte"
 #: src/MainWindow.vala:177 src/MainWindow.vala:328 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:81
 msgid "Search Apps"
-msgstr "Søk Etter Applikasjoner"
+msgstr "Søk etter applikasjoner"
 
 #: src/MainWindow.vala:195
 msgid "Network Is Not Available"
@@ -109,7 +109,7 @@ msgstr "Installerer"
 
 #: src/Core/ChangeInformation.vala:70
 msgid "Refreshing software list"
-msgstr "Oppdaterer liste"
+msgstr "Oppdaterer programvarelisten"
 
 #: src/Core/ChangeInformation.vala:72
 msgid "Installing updates"
