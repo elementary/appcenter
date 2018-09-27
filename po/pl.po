@@ -1,11 +1,12 @@
 # Piotr Strebski <strebski@gmail.com>, 2018.
+# Kajetan Rosiak <roskaj@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-23 15:58-0700\n"
-"PO-Revision-Date: 2018-09-11 14:36+0000\n"
-"Last-Translator: Piotr Strebski <strebski@gmail.com>\n"
+"PO-Revision-Date: 2018-09-27 11:33+0000\n"
+"Last-Translator: Kajetan Rosiak <roskaj@gmail.com>\n"
 "Language-Team: Polish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/pl/>\n"
 "Language: pl\n"
@@ -304,9 +305,8 @@ msgid "Show content warnings"
 msgstr ""
 
 #: src/Dialogs/ContentWarningDialog.vala:40
-#, fuzzy
 msgid "Don’t Install"
-msgstr "Zainstaluj"
+msgstr "Nie instaluj"
 
 #: src/Dialogs/ContentWarningDialog.vala:41
 #, fuzzy
