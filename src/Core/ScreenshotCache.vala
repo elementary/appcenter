@@ -24,7 +24,7 @@ public class AppCenterCore.ScreenshotCache {
             return null;
         } else {
             var cache = new ScreenshotCache ();
-            cache.screenshot_path= screenshot_path;
+            cache.screenshot_path = screenshot_path;
             cache.session = session;
             return cache;
         }
