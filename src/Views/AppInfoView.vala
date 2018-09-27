@@ -485,7 +485,12 @@ namespace AppCenter.Views {
             }
         }
 
-        public void load_more_content (AppCenterCore.ScreenshotCache cache) {
+        public void load_more_content (AppCenterCore.ScreenshotCache? cache) {
+            if (cache == null) {
+                warning ("screenshots cannot be loaded, because the cache could not be created.\n");
+                return;
+            }
+
             new Thread<void*> ("content-loading", () => {
                 app_version.label = package.get_version ();
                 get_app_download_size.begin ();

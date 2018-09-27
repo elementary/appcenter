@@ -4,23 +4,29 @@ public class AppCenterCore.ScreenshotCache {
     public string screenshot_path;
     private Soup.Session session;
 
-    public ScreenshotCache () {
-        screenshot_path = Path.build_filename (
+    public static ScreenshotCache? new_cache () {
+        var screenshot_path = Path.build_filename (
             GLib.Environment.get_user_cache_dir (),
             Path.DIR_SEPARATOR_S,
             Build.PROJECT_NAME,
             "screenshots"
         );
 
-        session = new Soup.Session ();
+        var session = new Soup.Session ();
         session.timeout = 5;
 
         debug ("screenshot path is at %s\n", screenshot_path);
         if (GLib.DirUtils.create_with_parents (screenshot_path, 0755) == -1) {
-            critical (
+            warning (
                 "Error creating the temporary folder: GFileError #%d",
                 GLib.FileUtils.error_from_errno (GLib.errno)
             );
+            return null;
+        } else {
+            var cache = new ScreenshotCache ();
+            cache.screenshot_path= screenshot_path;
+            cache.session = session;
+            return cache;
         }
     }
 
