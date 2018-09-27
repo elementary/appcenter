@@ -519,17 +519,19 @@ namespace AppCenter.Views {
                     });
                 });
 
-                string?[] screenshot_files = {};
-                int[] results = {};
+                string?[] screenshot_files = new string?[urls.length ()];
+                int[] results = new int[urls.length ()];
                 int completed = 0;
 
                 // Fetch each screenshot in parallel.
-                foreach (var url in urls) {
+                for (int i = 0; i < urls.length (); i++) {
+                    string url = urls.nth_data (i);
                     string? file = null;
+                    int index = i;
 
                     cache.fetch.begin (url, (obj, res) => {
-                        results += cache.fetch.end (res, out file);
-                        screenshot_files += file;
+                        results[index] = cache.fetch.end (res, out file);
+                        screenshot_files[index] = file;
                         completed++;
                     });
                 }
