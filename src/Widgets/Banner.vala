@@ -61,7 +61,7 @@ namespace AppCenter.Widgets {
 
                 string description;
                 if (has_package) {
-                    description = package.get_description ();
+                    description = package.get_description_sync ();
                     int close_paragraph_index = description.index_of ("</p>", 0);
                     description = description.slice (3, close_paragraph_index);
                 } else {
@@ -149,7 +149,7 @@ namespace AppCenter.Widgets {
         }
 
         public void set_default_brand () {
-            background_color = "#665888";
+            background_color = "#7E45BE";
             foreground_color = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
 
             brand_widget = new BannerWidget (null);
