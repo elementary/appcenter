@@ -392,7 +392,21 @@ public class AppCenterCore.Package : Object {
             state = fail_state;
             change_information.cancel ();
         }
-     }
+    }
+
+    private async Pk.Package? find_package_async () {
+        SourceFunc callback = find_package_async.callback;
+
+        Pk.Package? package = null;
+        new Thread<bool> ("appstream-find-package", () => {
+            package = find_package ();
+            Idle.add ((owned)callback);
+            return true;
+        });
+
+        yield;
+        return package;
+    }
 
     public string? get_name () {
         if (name != null) {
@@ -410,19 +424,28 @@ public class AppCenterCore.Package : Object {
         return name;
     }
 
-    public string? get_description () {
-        if (description != null) {
-            return description;
-        }
-
-        description = component.get_description ();
+    public async string? get_description () {
         if (description == null) {
-            var package = find_package ();
-            if (package != null) {
-                description = package.description;
+            description = component.get_description ();
+            if (description == null) {
+                var package = yield find_package_async ();
+                if (package != null) {
+                    description = package.description;
+                }
             }
         }
 
+        return description;
+    }
+
+    public string? get_description_sync () {
+        var loop = new MainLoop ();
+        get_description.begin ((obj, res) => {
+            get_description.end (res);
+            loop.quit ();
+        });
+
+        loop.run ();
         return description;
     }
 
@@ -587,14 +610,22 @@ public class AppCenterCore.Package : Object {
         var list = new Gee.ArrayList<AppStream.Release> ();
 
         var releases = component.get_releases ();
-        if (releases.length < min_releases) {
-            return list;
+        uint index = 0;
+        while (index < releases.length) {
+            if (releases[index].get_version () == null) {
+                releases.remove_index (index);
+                if (index >= releases.length) {
+                    break;
+                }
+
+                continue;
+            }
+
+            index++;
         }
 
-        for (uint i = 0; i < releases.length; i++) {
-            if (releases[i].get_version () == null) {
-                releases.remove_index (i);
-            }
+        if (releases.length < min_releases) {
+            return list;
         }
 
         releases.sort_with_data ((a, b) => {

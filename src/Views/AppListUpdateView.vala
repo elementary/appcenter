@@ -30,7 +30,6 @@ namespace AppCenter.Views {
         private uint apps_done = 0;
         private Gee.LinkedList<AppCenterCore.Package> apps_to_update;
         private AppCenterCore.Package first_package;
-        private SuspendControl sc;
 
         private bool _updating_cache;
         public bool updating_cache {
@@ -54,8 +53,6 @@ namespace AppCenter.Views {
             update_mutex = GLib.Mutex ();
             apps_to_update = new Gee.LinkedList<AppCenterCore.Package> ();
 
-            sc = new SuspendControl ();
-
             var info_label = new Gtk.Label (_("A restart is required to complete the installation of updates"));
             info_label.show ();
 
@@ -69,8 +66,7 @@ namespace AppCenter.Views {
 
             infobar.response.connect ((response) => {
                 if (response == 0) {
-                    var dialog = new Widgets.RestartDialog ();
-                    dialog.show_all ();
+                    Utils.reboot ();
                 }
             });
 
@@ -226,7 +222,7 @@ namespace AppCenter.Views {
             // Update all updateable apps
             if (apps_to_update.size > 0) {
                 // Prevent computer from sleeping while updating apps
-                sc.inhibit ();
+                SuspendControl.get_default ().inhibit ();
 
                 first_package = apps_to_update[0];
                 first_package.info_changed.connect_after (after_first_package_info_changed);
@@ -277,7 +273,7 @@ namespace AppCenter.Views {
             assert (updating_all_apps && packages_changing == 0);
 
             updating_all_apps = false;
-            sc.uninhibit ();
+            SuspendControl.get_default ().uninhibit ();
 
             /* Set the action button sensitive and emit "changed" on each row in order to update
              * the sort order and headers (any change would have been ignored while updating) */
