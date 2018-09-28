@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Akan (AppCenter)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-10 10:30-0600\n"
+"POT-Creation-Date: 2018-09-23 15:58-0700\n"
 "PO-Revision-Date: 2017-08-10 14:46+0000\n"
 "Last-Translator: Lawrence Aberba <karabutaworld@gmail.com>\n"
 "Language-Team: Akan <https://weblate.elementary.io/projects/appcenter/"
@@ -267,7 +267,7 @@ msgstr[1] ""
 msgid "%s:"
 msgstr ""
 
-#: src/Core/Package.vala:192
+#: src/Core/Package.vala:235
 #, fuzzy, c-format
 msgid "%s Developers"
 msgstr "%s Dwumadieyɛfoɔ"
@@ -279,6 +279,36 @@ msgstr "Ɛhia Sɛ Wodum Sɔ"
 #: src/Core/UpdateManager.vala:82
 msgid "Please restart your system to finalize updates"
 msgstr "Yɛsrɛ wo dum sɔ ansa atumi de dwumadie ahoroɔ no agu so awei"
+
+#: src/Dialogs/ContentWarningDialog.vala:27
+msgid "Content Warning"
+msgstr ""
+
+#: src/Dialogs/ContentWarningDialog.vala:32
+#, c-format
+msgid "%s Contains Explicit Content"
+msgstr ""
+
+#: src/Dialogs/ContentWarningDialog.vala:33
+#, c-format
+msgid ""
+"%s may contain content only suitable for adults or that may be sensitive or "
+"disturbing. In general, elementary does not review or endorse the contents "
+"of this app."
+msgstr ""
+
+#: src/Dialogs/ContentWarningDialog.vala:35
+msgid "Show content warnings"
+msgstr ""
+
+#: src/Dialogs/ContentWarningDialog.vala:40
+msgid "Don’t Install"
+msgstr ""
+
+#: src/Dialogs/ContentWarningDialog.vala:41
+#, fuzzy
+msgid "Install Anyway"
+msgstr "Ɛde regu so"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -294,7 +324,7 @@ msgstr "Dumsɔ"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:155
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:171
 msgid "Cancel"
 msgstr "Gyae"
 
@@ -649,7 +679,7 @@ msgid "Universal Access"
 msgstr "Universal Access"
 
 #: src/Widgets/HumbleButton.vala:93
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:219
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:250
 msgid "Free"
 msgstr "Kwa"
 
@@ -731,15 +761,15 @@ msgstr "Nea Ɛyɛ Foforɔ a Ɛtwa Toɔ"
 msgid "Drivers"
 msgstr "Drivers"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:134
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:150
 msgid "Uninstall"
 msgstr "Yi fi so"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:137
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:153
 msgid "Open"
 msgstr "Bie"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:243
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:274
 msgid "Update"
 msgstr "Twe nea aba"
 

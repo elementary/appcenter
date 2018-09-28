@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-10 10:30-0600\n"
-"PO-Revision-Date: 2018-09-10 21:50+0000\n"
+"POT-Creation-Date: 2018-09-23 15:58-0700\n"
+"PO-Revision-Date: 2018-09-27 18:24+0000\n"
 "Last-Translator: Kaj Printz Madsen <kajprintz@gmail.com>\n"
 "Language-Team: Danish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/da/>\n"
@@ -43,7 +43,7 @@ msgstr "%s blev succesfuldt installeret"
 #: src/Application.vala:273
 #, c-format
 msgid "There Was An Error Installing %s."
-msgstr "Der Opstod Én Fejl ved Installation af %s."
+msgstr "Der Opstod En Fejl under Installationen af %s."
 
 #: src/MainWindow.vala:149 src/Views/Homepage.vala:252
 #: src/Views/Homepage.vala:261 src/Views/Homepage.vala:266
@@ -265,7 +265,7 @@ msgstr[1] "%u komponenter med updateringer"
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/Package.vala:192
+#: src/Core/Package.vala:235
 #, c-format
 msgid "%s Developers"
 msgstr "%s Udviklere"
@@ -277,6 +277,38 @@ msgstr "Genstart Nødvendigt"
 #: src/Core/UpdateManager.vala:82
 msgid "Please restart your system to finalize updates"
 msgstr "Genstart venligst dit system for at færdiggøre opdateringer"
+
+#: src/Dialogs/ContentWarningDialog.vala:27
+msgid "Content Warning"
+msgstr "Indholdsadvarsel"
+
+#: src/Dialogs/ContentWarningDialog.vala:32
+#, c-format
+msgid "%s Contains Explicit Content"
+msgstr "%s Indeholder Eksplicit Indhold"
+
+#: src/Dialogs/ContentWarningDialog.vala:33
+#, c-format
+msgid ""
+"%s may contain content only suitable for adults or that may be sensitive or "
+"disturbing. In general, elementary does not review or endorse the contents "
+"of this app."
+msgstr ""
+"%s kan have indhold, der kun er egnet for voksne, eller som kan være af en "
+"følsom eller stødende natur. Generelt vurderer eller støtter elementary ikke "
+"indholdet af denne app."
+
+#: src/Dialogs/ContentWarningDialog.vala:35
+msgid "Show content warnings"
+msgstr "Vis indholds advarsler"
+
+#: src/Dialogs/ContentWarningDialog.vala:40
+msgid "Don’t Install"
+msgstr "Installer Ikke"
+
+#: src/Dialogs/ContentWarningDialog.vala:41
+msgid "Install Anyway"
+msgstr "Installer Alligevel"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -292,9 +324,9 @@ msgstr "Genstart"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:155
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:171
 msgid "Cancel"
-msgstr "Annullér"
+msgstr "Annuller"
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid ""
@@ -655,7 +687,7 @@ msgid "Universal Access"
 msgstr "Universal Adgang"
 
 #: src/Widgets/HumbleButton.vala:93
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:219
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:250
 msgid "Free"
 msgstr "Fri"
 
@@ -736,15 +768,15 @@ msgstr "Up to Date"
 msgid "Drivers"
 msgstr "Drivere"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:134
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:150
 msgid "Uninstall"
-msgstr "Afinstallér"
+msgstr "Afinstaller"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:137
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:153
 msgid "Open"
 msgstr "Åben"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:243
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:274
 msgid "Update"
 msgstr "Opdater"
 
@@ -756,9 +788,6 @@ msgstr "Opdater"
 #~ "  Patrick https://launchpad.net/~mangodjango\n"
 #~ "  Rasmus Andersen https://launchpad.net/~rkan67\n"
 #~ "  elementaryart (old) https://launchpad.net/~elementaryart"
-
-#~ msgid "Install"
-#~ msgstr "Installér"
 
 #~ msgid "Best Rated"
 #~ msgstr "Bedst vurderede"
