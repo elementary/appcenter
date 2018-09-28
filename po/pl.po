@@ -1,11 +1,12 @@
 # Piotr Strebski <strebski@gmail.com>, 2018.
+# Kajetan Rosiak <roskaj@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-15 15:47+0900\n"
-"PO-Revision-Date: 2018-07-03 00:05+0000\n"
-"Last-Translator: Piotr Strebski <strebski@gmail.com>\n"
+"POT-Creation-Date: 2018-09-23 15:58-0700\n"
+"PO-Revision-Date: 2018-09-27 11:37+0000\n"
+"Last-Translator: Kajetan Rosiak <roskaj@gmail.com>\n"
 "Language-Team: Polish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/pl/>\n"
 "Language: pl\n"
@@ -20,7 +21,7 @@ msgstr ""
 #. Add "AppCenter" to the translation catalog
 #: src/Application.vala:38
 msgid "AppCenter"
-msgstr "Centrum programów"
+msgstr "AppCenter"
 
 #: src/Application.vala:106
 #, c-format
@@ -46,9 +47,9 @@ msgstr "%s zostało pomyślnie zainstalowane"
 msgid "There Was An Error Installing %s."
 msgstr "Wystąpił błąd podczas instalacji %s."
 
-#: src/MainWindow.vala:149 src/Views/Homepage.vala:253
-#: src/Views/Homepage.vala:262 src/Views/Homepage.vala:267
-#: src/Views/Homepage.vala:278
+#: src/MainWindow.vala:149 src/Views/Homepage.vala:252
+#: src/Views/Homepage.vala:261 src/Views/Homepage.vala:266
+#: src/Views/Homepage.vala:277
 msgid "Home"
 msgstr "Strona główna"
 
@@ -269,7 +270,7 @@ msgstr[2] "%u komponentów z aktualizacją"
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/Package.vala:192
+#: src/Core/Package.vala:235
 #, c-format
 msgid "%s Developers"
 msgstr "Programiści %s"
@@ -281,6 +282,38 @@ msgstr "Wymagane ponowne uruchomienie"
 #: src/Core/UpdateManager.vala:82
 msgid "Please restart your system to finalize updates"
 msgstr "Uruchom ponownie system, aby dokończyć aktualizacje"
+
+#: src/Dialogs/ContentWarningDialog.vala:27
+msgid "Content Warning"
+msgstr "Ostrzeżenie o zawartości"
+
+#: src/Dialogs/ContentWarningDialog.vala:32
+#, c-format
+msgid "%s Contains Explicit Content"
+msgstr "%s zawiera drastyczne treści"
+
+#: src/Dialogs/ContentWarningDialog.vala:33
+#, c-format
+msgid ""
+"%s may contain content only suitable for adults or that may be sensitive or "
+"disturbing. In general, elementary does not review or endorse the contents "
+"of this app."
+msgstr ""
+"%s może zawierać treści tylko dla dorosłych lub treści o charakterze "
+"wrażliwym lub niepokojącym. Ogólnie rzecz biorąc elementary nie recenzuje "
+"ani nie popiera zawartości tego programu."
+
+#: src/Dialogs/ContentWarningDialog.vala:35
+msgid "Show content warnings"
+msgstr "Pokaż ostrzeżenie o zawartości"
+
+#: src/Dialogs/ContentWarningDialog.vala:40
+msgid "Don’t Install"
+msgstr "Nie instaluj"
+
+#: src/Dialogs/ContentWarningDialog.vala:41
+msgid "Install Anyway"
+msgstr "Zainstaluj mimo to"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -296,9 +329,9 @@ msgstr ""
 msgid "Restart"
 msgstr "Uruchom ponownie"
 
-#: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:182
-#: src/Dialogs/StripeDialog.vala:299
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:147
+#: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
+#: src/Dialogs/StripeDialog.vala:315
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:171
 msgid "Cancel"
 msgstr "Anuluj"
 
@@ -314,12 +347,16 @@ msgstr ""
 msgid "Please review your payment info and try again."
 msgstr "Proszę przejrzyj informacje dotyczące płatności i spróbuj ponownie."
 
-#: src/Dialogs/StripeDialog.vala:78
+#: src/Dialogs/StripeDialog.vala:76
+msgid "Payment"
+msgstr "Płatność"
+
+#: src/Dialogs/StripeDialog.vala:92
 #, c-format
 msgid "Pay $%d for %s"
 msgstr "Zapłać $%d za %s"
 
-#: src/Dialogs/StripeDialog.vala:82
+#: src/Dialogs/StripeDialog.vala:96
 msgid ""
 "This is a one time payment. Your email address is only used to send you a "
 "receipt."
@@ -327,60 +364,60 @@ msgstr ""
 "To jest jednorazowa płatność. Twój adres e-mail jest używany tylko po to, by "
 "wysłać Ci paragon."
 
-#: src/Dialogs/StripeDialog.vala:91 src/Widgets/SharePopover.vala:35
+#: src/Dialogs/StripeDialog.vala:106 src/Widgets/SharePopover.vala:35
 msgid "Email"
 msgstr "E-mail"
 
-#: src/Dialogs/StripeDialog.vala:93
+#: src/Dialogs/StripeDialog.vala:108
 msgid ""
-"Your email address is used to send a receipt. It is never stored and you "
-"will not be subscribed to a mailing list."
+"Your email address is only used to send a receipt. You will not be "
+"subscribed to any mailing list."
 msgstr ""
-"Twój adres e-mail służy do wysyłania potwierdzenia. Nigdy nie jest "
-"przechowywany i nie będziesz subskrybować listy dyskusyjnej."
+"Twój adres e-mail służy do wysłania potwierdzenia opłaty. Nie zostaniesz "
+"zapisany do żadnej subskrypcji listy dyskusyjnej."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
-#: src/Dialogs/StripeDialog.vala:112
+#: src/Dialogs/StripeDialog.vala:127
 msgid "MM / YY"
 msgstr "MM / RR"
 
-#: src/Dialogs/StripeDialog.vala:132
+#: src/Dialogs/StripeDialog.vala:147
 msgid "CVC"
 msgstr "CVC"
 
-#: src/Dialogs/StripeDialog.vala:173
+#: src/Dialogs/StripeDialog.vala:189
 msgid "Privacy Policy"
 msgstr "Polityka prywatności"
 
-#: src/Dialogs/StripeDialog.vala:184 src/Dialogs/StripeDialog.vala:298
+#: src/Dialogs/StripeDialog.vala:200 src/Dialogs/StripeDialog.vala:314
 #, c-format
 msgid "Pay $%d.00"
 msgstr "Zapłać $%d,00"
 
-#: src/Dialogs/StripeDialog.vala:227
+#: src/Dialogs/StripeDialog.vala:243
 msgid "Processing"
 msgstr "Przetwarzanie"
 
-#: src/Dialogs/StripeDialog.vala:252
+#: src/Dialogs/StripeDialog.vala:268
 msgid "There Was a Problem Processing Your Payment"
 msgstr "Wystąpił problem podczas przetwarzania twojej płatności"
 
-#: src/Dialogs/StripeDialog.vala:290
+#: src/Dialogs/StripeDialog.vala:306
 msgid "Pay Later"
 msgstr "Zapłać później"
 
-#: src/Dialogs/StripeDialog.vala:291
+#: src/Dialogs/StripeDialog.vala:307
 msgid "Retry"
 msgstr "Ponów"
 
-#: src/Dialogs/StripeDialog.vala:497 src/Dialogs/StripeDialog.vala:562
+#: src/Dialogs/StripeDialog.vala:513 src/Dialogs/StripeDialog.vala:578
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr ""
 "Numer karty jest nieprawidłowy. Spróbuj ponownie, używając prawidłowego "
 "numeru karty."
 
-#: src/Dialogs/StripeDialog.vala:499
+#: src/Dialogs/StripeDialog.vala:515
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
@@ -388,7 +425,7 @@ msgstr ""
 "Miesiąc w dacie wygaśnięcia jest nieprawidłowy. Spróbuj ponownie, używając "
 "właściwej daty wygaśnięcia."
 
-#: src/Dialogs/StripeDialog.vala:501 src/Dialogs/StripeDialog.vala:559
+#: src/Dialogs/StripeDialog.vala:517 src/Dialogs/StripeDialog.vala:575
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
@@ -396,40 +433,40 @@ msgstr ""
 "Rok w dacie wygaśnięcia jest nieprawidłowy. Spróbuj ponownie, używając "
 "właściwej daty wygaśnięcia."
 
-#: src/Dialogs/StripeDialog.vala:504 src/Dialogs/StripeDialog.vala:557
+#: src/Dialogs/StripeDialog.vala:520 src/Dialogs/StripeDialog.vala:573
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr ""
 "Numer CVC jest nieprawidłowy. Spróbuj ponownie, używając właściwego numeru "
 "CVC."
 
-#: src/Dialogs/StripeDialog.vala:506 src/Dialogs/StripeDialog.vala:548
+#: src/Dialogs/StripeDialog.vala:522 src/Dialogs/StripeDialog.vala:564
 msgid "The card has expired. Please try again with a different card."
 msgstr "Ważność karty wygasła. Spróbuj ponownie z inną kartą."
 
-#: src/Dialogs/StripeDialog.vala:526
+#: src/Dialogs/StripeDialog.vala:542
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr ""
 "W tej chwili jest zbyt wiele próśb o płatność, proszę spróbować później."
 
-#: src/Dialogs/StripeDialog.vala:542
+#: src/Dialogs/StripeDialog.vala:558
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
 msgstr ""
 "Ta karta nie obsługuje tego typu transakcji. Spróbuj ponownie z inną kartą."
 
-#: src/Dialogs/StripeDialog.vala:544
+#: src/Dialogs/StripeDialog.vala:560
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
 msgstr ""
 "Waluta nie jest obsługiwana przez tę kartę. Spróbuj ponownie z inną kartą."
 
-#: src/Dialogs/StripeDialog.vala:546
+#: src/Dialogs/StripeDialog.vala:562
 msgid "The transaction has already been processed."
 msgstr "Transakcja została już przetworzona."
 
-#: src/Dialogs/StripeDialog.vala:550
+#: src/Dialogs/StripeDialog.vala:566
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "postal code."
@@ -437,27 +474,27 @@ msgstr ""
 "Kod pocztowy jest niepoprawny. Spróbuj ponownie, używając poprawnego kodu "
 "pocztowego."
 
-#: src/Dialogs/StripeDialog.vala:552
+#: src/Dialogs/StripeDialog.vala:568
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr ""
 "Nie masz wystarczających środków. Proszę użyć alternatywnej metody płatności."
 
-#: src/Dialogs/StripeDialog.vala:554
+#: src/Dialogs/StripeDialog.vala:570
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr ""
 "Kwota jest nieprawidłowa. Spróbuj ponownie, używając prawidłowej kwoty."
 
-#: src/Dialogs/StripeDialog.vala:565
+#: src/Dialogs/StripeDialog.vala:581
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr ""
 "Kod PIN jest nieprawidłowy. Spróbuj ponownie, używając właściwego kodu PIN."
 
-#: src/Dialogs/StripeDialog.vala:567
+#: src/Dialogs/StripeDialog.vala:583
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
 msgstr "Za dużo prób wprowadzenia kodu PIN. Spróbuj ponownie z inną kartą."
 
-#: src/Dialogs/StripeDialog.vala:587
+#: src/Dialogs/StripeDialog.vala:603
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
@@ -465,11 +502,11 @@ msgstr ""
 "Nie można zakończyć transakcji. Aby uzyskać dodatkowe informacje, skontaktuj "
 "się ze swoim bankiem."
 
-#: src/Dialogs/StripeDialog.vala:590
+#: src/Dialogs/StripeDialog.vala:606
 msgid "The balance or credit limit on the card has been reached."
 msgstr "Osiągnięto saldo lub limit kredytowy na karcie."
 
-#: src/Dialogs/StripeDialog.vala:593
+#: src/Dialogs/StripeDialog.vala:609
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
 "Podana karta jest kartą testową. Proszę użyć prawdziwej karty, aby "
@@ -503,53 +540,53 @@ msgstr "Spróbuj ponownie"
 msgid "Screenshot Not Available"
 msgstr "Zrzut ekranu niedostępny"
 
-#: src/Views/AppInfoView.vala:130
+#: src/Views/AppInfoView.vala:133
 msgid "Homepage"
 msgstr "Strona główna"
 
-#: src/Views/AppInfoView.vala:136
+#: src/Views/AppInfoView.vala:139
 msgid "Suggest Translations"
 msgstr "Zaproponuj tłumaczenie"
 
-#: src/Views/AppInfoView.vala:142
+#: src/Views/AppInfoView.vala:145
 msgid "Report a Problem"
 msgstr "Zgłoś problem"
 
-#: src/Views/AppInfoView.vala:148
+#: src/Views/AppInfoView.vala:151
 msgid "Help"
 msgstr "Pomoc"
 
-#: src/Views/AppInfoView.vala:175
+#: src/Views/AppInfoView.vala:178
 msgid "What's New:"
 msgstr "Co nowego:"
 
-#: src/Views/AppInfoView.vala:194
+#: src/Views/AppInfoView.vala:197
 msgid "Extensions:"
 msgstr "Rozszerzenia:"
 
-#: src/Views/AppInfoView.vala:287
+#: src/Views/AppInfoView.vala:291
 #, c-format
 msgid "Other Apps by %s"
 msgstr "Inne programy %s"
 
-#: src/Views/AppInfoView.vala:321
+#: src/Views/AppInfoView.vala:325
 msgid "Link copied to clipboard"
 msgstr "Odnośnik skopiowany do schowka"
 
-#: src/Views/AppInfoView.vala:332
+#: src/Views/AppInfoView.vala:336
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "Wypróbuj %s w centrum oprogramowania:"
 
-#: src/Views/AppInfoView.vala:339
+#: src/Views/AppInfoView.vala:343
 msgid "Share"
 msgstr "Udostępnij"
 
-#: src/Views/AppInfoView.vala:621
+#: src/Views/AppInfoView.vala:639
 msgid "Fund"
 msgstr "Zafunduj"
 
-#: src/Views/AppInfoView.vala:643
+#: src/Views/AppInfoView.vala:661
 msgid "Fund the development of this app"
 msgstr "Zafunduj rozwój tego programu"
 
@@ -583,7 +620,7 @@ msgstr "Zyskujące popularność"
 msgid "Categories"
 msgstr "Kategorie"
 
-#: src/Views/Homepage.vala:267 src/Views/Homepage.vala:278
+#: src/Views/Homepage.vala:266 src/Views/Homepage.vala:277
 #, c-format
 msgid "Search %s"
 msgstr "Wyszukaj %s"
@@ -625,48 +662,48 @@ msgstr "Dźwięk"
 msgid "Development"
 msgstr "Rozwój oprogramowania"
 
-#: src/Widgets/CategoryFlowBox.vala:31
+#: src/Widgets/CategoryFlowBox.vala:40
 msgid "Accessories"
 msgstr "Akcesoria"
 
-#: src/Widgets/CategoryFlowBox.vala:32
+#: src/Widgets/CategoryFlowBox.vala:41
 msgid "Office"
 msgstr "Biuro"
 
-#: src/Widgets/CategoryFlowBox.vala:33
+#: src/Widgets/CategoryFlowBox.vala:48
 msgid "System"
 msgstr "System"
 
-#: src/Widgets/CategoryFlowBox.vala:34
+#: src/Widgets/CategoryFlowBox.vala:52
 msgid "Video"
 msgstr "Wideo"
 
-#: src/Widgets/CategoryFlowBox.vala:35
+#: src/Widgets/CategoryFlowBox.vala:57
 msgid "Graphics"
 msgstr "Grafika"
 
-#: src/Widgets/CategoryFlowBox.vala:36
+#: src/Widgets/CategoryFlowBox.vala:66
 msgid "Games"
 msgstr "Gry"
 
-#: src/Widgets/CategoryFlowBox.vala:37
+#: src/Widgets/CategoryFlowBox.vala:82
 msgid "Education"
 msgstr "Edukacja"
 
-#: src/Widgets/CategoryFlowBox.vala:38
+#: src/Widgets/CategoryFlowBox.vala:83
 msgid "Internet"
 msgstr "Internet"
 
-#: src/Widgets/CategoryFlowBox.vala:39
+#: src/Widgets/CategoryFlowBox.vala:87
 msgid "Science & Engineering"
 msgstr "Nauka i inżynieria"
 
-#: src/Widgets/CategoryFlowBox.vala:40
+#: src/Widgets/CategoryFlowBox.vala:106
 msgid "Universal Access"
 msgstr "Dostęp uniwersalny"
 
 #: src/Widgets/HumbleButton.vala:93
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:211
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:250
 msgid "Free"
 msgstr "Darmowe"
 
@@ -748,15 +785,15 @@ msgstr "Aktualne"
 msgid "Drivers"
 msgstr "Sterowniki"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:126
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:150
 msgid "Uninstall"
 msgstr "Odinstaluj"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:129
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:153
 msgid "Open"
 msgstr "Otwórz"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:235
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:274
 msgid "Update"
 msgstr "Aktualizuj"
 
@@ -794,9 +831,6 @@ msgstr "Aktualizuj"
 
 #~ msgid "by %s"
 #~ msgstr "od %s"
-
-#~ msgid "Install"
-#~ msgstr "Zainstaluj"
 
 #~ msgid "Best Rated"
 #~ msgstr "Najlepiej oceniane"

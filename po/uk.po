@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-15 15:47+0900\n"
+"POT-Creation-Date: 2018-09-23 15:58-0700\n"
 "PO-Revision-Date: 2017-09-11 20:46+0000\n"
 "Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
 "Language-Team: Ukrainian <https://weblate.elementary.io/projects/appcenter/"
@@ -45,9 +45,9 @@ msgstr "%s був успішно встановлений"
 msgid "There Was An Error Installing %s."
 msgstr "Помилка встановлення %s"
 
-#: src/MainWindow.vala:149 src/Views/Homepage.vala:253
-#: src/Views/Homepage.vala:262 src/Views/Homepage.vala:267
-#: src/Views/Homepage.vala:278
+#: src/MainWindow.vala:149 src/Views/Homepage.vala:252
+#: src/Views/Homepage.vala:261 src/Views/Homepage.vala:266
+#: src/Views/Homepage.vala:277
 msgid "Home"
 msgstr "Домашня сторінка"
 
@@ -269,7 +269,7 @@ msgstr[2] ""
 msgid "%s:"
 msgstr ""
 
-#: src/Core/Package.vala:192
+#: src/Core/Package.vala:235
 #, fuzzy, c-format
 msgid "%s Developers"
 msgstr "Розробники %s"
@@ -281,6 +281,37 @@ msgstr "Потрібно перезапуск"
 #: src/Core/UpdateManager.vala:82
 msgid "Please restart your system to finalize updates"
 msgstr "Будь-ласка, перезавантажте систему для завершення оновлення"
+
+#: src/Dialogs/ContentWarningDialog.vala:27
+msgid "Content Warning"
+msgstr ""
+
+#: src/Dialogs/ContentWarningDialog.vala:32
+#, c-format
+msgid "%s Contains Explicit Content"
+msgstr ""
+
+#: src/Dialogs/ContentWarningDialog.vala:33
+#, c-format
+msgid ""
+"%s may contain content only suitable for adults or that may be sensitive or "
+"disturbing. In general, elementary does not review or endorse the contents "
+"of this app."
+msgstr ""
+
+#: src/Dialogs/ContentWarningDialog.vala:35
+msgid "Show content warnings"
+msgstr ""
+
+#: src/Dialogs/ContentWarningDialog.vala:40
+#, fuzzy
+msgid "Don’t Install"
+msgstr "Встановити"
+
+#: src/Dialogs/ContentWarningDialog.vala:41
+#, fuzzy
+msgid "Install Anyway"
+msgstr "Встановлення"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -294,9 +325,9 @@ msgstr "Всі програми буде закрито, а пристрій п�
 msgid "Restart"
 msgstr "Перезавантажити"
 
-#: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:182
-#: src/Dialogs/StripeDialog.vala:299
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:147
+#: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
+#: src/Dialogs/StripeDialog.vala:315
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:171
 msgid "Cancel"
 msgstr "Скасувати"
 
@@ -310,109 +341,113 @@ msgstr ""
 msgid "Please review your payment info and try again."
 msgstr "Будь-ласка перегляньте інформацію вашого платежу та спробуйте ще раз."
 
-#: src/Dialogs/StripeDialog.vala:78
+#: src/Dialogs/StripeDialog.vala:76
+msgid "Payment"
+msgstr ""
+
+#: src/Dialogs/StripeDialog.vala:92
 #, c-format
 msgid "Pay $%d for %s"
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:82
+#: src/Dialogs/StripeDialog.vala:96
 msgid ""
 "This is a one time payment. Your email address is only used to send you a "
 "receipt."
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:91 src/Widgets/SharePopover.vala:35
+#: src/Dialogs/StripeDialog.vala:106 src/Widgets/SharePopover.vala:35
 msgid "Email"
 msgstr "Email"
 
-#: src/Dialogs/StripeDialog.vala:93
+#: src/Dialogs/StripeDialog.vala:108
 msgid ""
-"Your email address is used to send a receipt. It is never stored and you "
-"will not be subscribed to a mailing list."
+"Your email address is only used to send a receipt. You will not be "
+"subscribed to any mailing list."
 msgstr ""
 
 #. / TRANSLATORS: Don't change the order, only transliterate
-#: src/Dialogs/StripeDialog.vala:112
+#: src/Dialogs/StripeDialog.vala:127
 msgid "MM / YY"
 msgstr "MM / YY"
 
-#: src/Dialogs/StripeDialog.vala:132
+#: src/Dialogs/StripeDialog.vala:147
 msgid "CVC"
 msgstr "CVC"
 
-#: src/Dialogs/StripeDialog.vala:173
+#: src/Dialogs/StripeDialog.vala:189
 msgid "Privacy Policy"
 msgstr "Політика конфіденційності"
 
-#: src/Dialogs/StripeDialog.vala:184 src/Dialogs/StripeDialog.vala:298
+#: src/Dialogs/StripeDialog.vala:200 src/Dialogs/StripeDialog.vala:314
 #, fuzzy, c-format
 msgid "Pay $%d.00"
 msgstr "Оплатити $%d.00"
 
-#: src/Dialogs/StripeDialog.vala:227
+#: src/Dialogs/StripeDialog.vala:243
 msgid "Processing"
 msgstr "Обробка"
 
-#: src/Dialogs/StripeDialog.vala:252
+#: src/Dialogs/StripeDialog.vala:268
 msgid "There Was a Problem Processing Your Payment"
 msgstr "Проблема в обробці вашого платежу"
 
-#: src/Dialogs/StripeDialog.vala:290
+#: src/Dialogs/StripeDialog.vala:306
 msgid "Pay Later"
 msgstr "Оплатити пізніше"
 
-#: src/Dialogs/StripeDialog.vala:291
+#: src/Dialogs/StripeDialog.vala:307
 msgid "Retry"
 msgstr "Спробувати ще раз"
 
-#: src/Dialogs/StripeDialog.vala:497 src/Dialogs/StripeDialog.vala:562
+#: src/Dialogs/StripeDialog.vala:513 src/Dialogs/StripeDialog.vala:578
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr ""
 "Номер картки не вірний. Будь ласка, спробуйте ще раз з коректним номером "
 "картки."
 
-#: src/Dialogs/StripeDialog.vala:499
+#: src/Dialogs/StripeDialog.vala:515
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:501 src/Dialogs/StripeDialog.vala:559
+#: src/Dialogs/StripeDialog.vala:517 src/Dialogs/StripeDialog.vala:575
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:504 src/Dialogs/StripeDialog.vala:557
+#: src/Dialogs/StripeDialog.vala:520 src/Dialogs/StripeDialog.vala:573
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:506 src/Dialogs/StripeDialog.vala:548
+#: src/Dialogs/StripeDialog.vala:522 src/Dialogs/StripeDialog.vala:564
 msgid "The card has expired. Please try again with a different card."
 msgstr "Ця картка прострочена. Будь ласка, спробуйте знову з іншою карткою."
 
-#: src/Dialogs/StripeDialog.vala:526
+#: src/Dialogs/StripeDialog.vala:542
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:542
+#: src/Dialogs/StripeDialog.vala:558
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:544
+#: src/Dialogs/StripeDialog.vala:560
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:546
+#: src/Dialogs/StripeDialog.vala:562
 msgid "The transaction has already been processed."
 msgstr "Цей платіж вже опрацьований."
 
-#: src/Dialogs/StripeDialog.vala:550
+#: src/Dialogs/StripeDialog.vala:566
 #, fuzzy
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
@@ -421,38 +456,38 @@ msgstr ""
 "Поштовий код не вірний. Будь ласка, спробуйте знову використовуючи вірний "
 "поштовий код."
 
-#: src/Dialogs/StripeDialog.vala:552
+#: src/Dialogs/StripeDialog.vala:568
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:554
+#: src/Dialogs/StripeDialog.vala:570
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:565
+#: src/Dialogs/StripeDialog.vala:581
 #, fuzzy
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr ""
 "Номер картки не вірний. Будь ласка, спробуйте ще раз з коректним номером "
 "картки."
 
-#: src/Dialogs/StripeDialog.vala:567
+#: src/Dialogs/StripeDialog.vala:583
 #, fuzzy
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
 msgstr "Ця картка прострочена. Будь ласка, спробуйте знову з іншою карткою."
 
-#: src/Dialogs/StripeDialog.vala:587
+#: src/Dialogs/StripeDialog.vala:603
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:590
+#: src/Dialogs/StripeDialog.vala:606
 msgid "The balance or credit limit on the card has been reached."
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:593
+#: src/Dialogs/StripeDialog.vala:609
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
 
@@ -482,53 +517,53 @@ msgstr ""
 msgid "Screenshot Not Available"
 msgstr "Скріншот недоступний"
 
-#: src/Views/AppInfoView.vala:130
+#: src/Views/AppInfoView.vala:133
 msgid "Homepage"
 msgstr "Домашня сторінка"
 
-#: src/Views/AppInfoView.vala:136
+#: src/Views/AppInfoView.vala:139
 msgid "Suggest Translations"
 msgstr "Запропонувати переклад"
 
-#: src/Views/AppInfoView.vala:142
+#: src/Views/AppInfoView.vala:145
 msgid "Report a Problem"
 msgstr "Повідомити про проблему"
 
-#: src/Views/AppInfoView.vala:148
+#: src/Views/AppInfoView.vala:151
 msgid "Help"
 msgstr "Допомога"
 
-#: src/Views/AppInfoView.vala:175
+#: src/Views/AppInfoView.vala:178
 msgid "What's New:"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:194
+#: src/Views/AppInfoView.vala:197
 msgid "Extensions:"
 msgstr "Розширення:"
 
-#: src/Views/AppInfoView.vala:287
+#: src/Views/AppInfoView.vala:291
 #, c-format
 msgid "Other Apps by %s"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:321
+#: src/Views/AppInfoView.vala:325
 msgid "Link copied to clipboard"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:332
+#: src/Views/AppInfoView.vala:336
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:339
+#: src/Views/AppInfoView.vala:343
 msgid "Share"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:621
+#: src/Views/AppInfoView.vala:639
 msgid "Fund"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:643
+#: src/Views/AppInfoView.vala:661
 msgid "Fund the development of this app"
 msgstr ""
 
@@ -562,7 +597,7 @@ msgstr ""
 msgid "Categories"
 msgstr "Категорії"
 
-#: src/Views/Homepage.vala:267 src/Views/Homepage.vala:278
+#: src/Views/Homepage.vala:266 src/Views/Homepage.vala:277
 #, c-format
 msgid "Search %s"
 msgstr "Пошук %s"
@@ -602,48 +637,48 @@ msgstr "Аудіо"
 msgid "Development"
 msgstr "Розробка"
 
-#: src/Widgets/CategoryFlowBox.vala:31
+#: src/Widgets/CategoryFlowBox.vala:40
 msgid "Accessories"
 msgstr "Приладдя"
 
-#: src/Widgets/CategoryFlowBox.vala:32
+#: src/Widgets/CategoryFlowBox.vala:41
 msgid "Office"
 msgstr "Офіс"
 
-#: src/Widgets/CategoryFlowBox.vala:33
+#: src/Widgets/CategoryFlowBox.vala:48
 msgid "System"
 msgstr "Система"
 
-#: src/Widgets/CategoryFlowBox.vala:34
+#: src/Widgets/CategoryFlowBox.vala:52
 msgid "Video"
 msgstr "Відео"
 
-#: src/Widgets/CategoryFlowBox.vala:35
+#: src/Widgets/CategoryFlowBox.vala:57
 msgid "Graphics"
 msgstr "Графіка"
 
-#: src/Widgets/CategoryFlowBox.vala:36
+#: src/Widgets/CategoryFlowBox.vala:66
 msgid "Games"
 msgstr "Ігри"
 
-#: src/Widgets/CategoryFlowBox.vala:37
+#: src/Widgets/CategoryFlowBox.vala:82
 msgid "Education"
 msgstr "Освіта"
 
-#: src/Widgets/CategoryFlowBox.vala:38
+#: src/Widgets/CategoryFlowBox.vala:83
 msgid "Internet"
 msgstr "Інтернет"
 
-#: src/Widgets/CategoryFlowBox.vala:39
+#: src/Widgets/CategoryFlowBox.vala:87
 msgid "Science & Engineering"
 msgstr "Наука та інженерна справа"
 
-#: src/Widgets/CategoryFlowBox.vala:40
+#: src/Widgets/CategoryFlowBox.vala:106
 msgid "Universal Access"
 msgstr "Універсальний доступ"
 
 #: src/Widgets/HumbleButton.vala:93
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:211
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:250
 msgid "Free"
 msgstr "Безкоштовно"
 
@@ -726,15 +761,15 @@ msgstr "Найновіші"
 msgid "Drivers"
 msgstr ""
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:126
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:150
 msgid "Uninstall"
 msgstr "Вилучити"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:129
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:153
 msgid "Open"
 msgstr "Відкрити"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:235
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:274
 msgid "Update"
 msgstr "Оновлення"
 
@@ -766,9 +801,6 @@ msgstr "Оновлення"
 
 #~ msgid "by %s"
 #~ msgstr "від %s"
-
-#~ msgid "Install"
-#~ msgstr "Встановити"
 
 #~ msgid "Best Rated"
 #~ msgstr "З найкращим рейтингом"

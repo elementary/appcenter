@@ -38,6 +38,7 @@ namespace AppCenter {
         protected Gtk.Label package_author;
         protected Gtk.Label package_summary;
 
+        protected Widgets.ContentWarningDialog content_warning;
         protected Widgets.HumbleButton action_button;
         protected Gtk.Button uninstall_button;
         protected Gtk.Button open_button;
@@ -116,19 +117,34 @@ namespace AppCenter {
             image = new Gtk.Image ();
 
             action_button = new Widgets.HumbleButton ();
-            action_button.download_requested.connect (() => action_clicked.begin ());
+            action_button.download_requested.connect (() => {
+                if (settings.content_warning == true && package.is_explicit) {
+                    content_warning = new Widgets.ContentWarningDialog (this.package_name.label);
+                    content_warning.transient_for = (Gtk.Window) get_toplevel ();
+
+                    content_warning.download_requested.connect (() => {
+                        action_clicked.begin ();
+                    });
+
+                    content_warning.show ();
+                } else {
+                    action_clicked.begin ();
+                }
+            });
 
             action_button.payment_requested.connect ((amount) => {
-                var stripe = new Widgets.StripeDialog (amount, this.package_name.label, this.package.component.get_desktop_id ().replace (".desktop", ""), this.package.get_payments_key());
-                stripe.transient_for = (Gtk.Window) get_toplevel ();
+                if (settings.content_warning == true && package.is_explicit) {
+                    content_warning = new Widgets.ContentWarningDialog (this.package_name.label);
+                    content_warning.transient_for = (Gtk.Window) get_toplevel ();
 
-                stripe.download_requested.connect (() => {
-                    action_clicked.begin ();
+                    content_warning.download_requested.connect (() => {
+                        show_stripe_dialog (amount);
+                    });
 
-                    settings.add_paid_app (package.component.get_id ());
-                });
-
-                stripe.show ();
+                    content_warning.show ();
+                } else {
+                    show_stripe_dialog (amount);
+                }
             });
 
             uninstall_button = new Gtk.Button.with_label (_("Uninstall"));
@@ -176,6 +192,19 @@ namespace AppCenter {
             action_stack.show_all ();
         }
 
+        private void show_stripe_dialog (int amount) {
+            var stripe = new Widgets.StripeDialog (amount, this.package_name.label, this.package.component.get_desktop_id ().replace (".desktop", ""), this.package.get_payments_key());
+            stripe.transient_for = (Gtk.Window) get_toplevel ();
+
+            stripe.download_requested.connect (() => {
+                action_clicked.begin ();
+
+                settings.add_paid_app (package.component.get_id ());
+            });
+
+            stripe.show ();
+        }
+
         protected virtual void set_up_package (uint icon_size = 48) {
             package_name.label = package.get_name ();
 
@@ -212,7 +241,9 @@ namespace AppCenter {
                 action_button.amount = int.parse (this.package.get_suggested_amount ());
             }
 
-            action_stack.set_visible_child_name ("buttons");
+            if (action_stack.get_child_by_name ("buttons") != null) {
+                action_stack.visible_child_name = "buttons";
+            }
 
             switch (package.state) {
                 case AppCenterCore.Package.State.NOT_INSTALLED:

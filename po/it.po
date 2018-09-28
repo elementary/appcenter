@@ -1,10 +1,14 @@
+# Luigi <gorock@gmail.com>, 2018.
+# strozzascotte <marco.depaolini@gmail.com>, 2018.
+# Marco De Paolini <marco.depaolini@gmail.com>, 2018.
+# Fabio Rifici <fabio.rifici@microtechsrl.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-12 14:39-0700\n"
-"PO-Revision-Date: 2018-03-10 18:37+0000\n"
-"Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
+"PO-Revision-Date: 2018-09-13 00:01+0000\n"
+"Last-Translator: Marco De Paolini <marco.depaolini@gmail.com>\n"
 "Language-Team: Italian <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/it/>\n"
 "Language: it\n"
@@ -12,18 +16,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #: ../src/Application.vala:38
 msgid "AppCenter"
-msgstr "Centro Applicazioni"
+msgstr "AppCenter"
 
 #: ../src/Application.vala:115
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr ""
-"Non è stato possibile trovare il collegamento '%s' specificato, ricerca in "
-"corso come alternativa"
+"Non è stato possibile trovare il collegamento '%s' specificato, ricerca "
+"alternativa in corso"
 
 #: ../src/Application.vala:249
 msgid "Application installed"
@@ -516,7 +520,7 @@ msgstr "Collegamento copiato negli appunti"
 
 #: ../src/Views/AppInfoView.vala:332
 msgid "Check out %s on AppCenter:"
-msgstr "Scopri %s nel Centro Applicazioni:"
+msgstr "Scopri %s in AppCenter:"
 
 #: ../src/Views/AppInfoView.vala:339
 msgid "Share"
@@ -524,11 +528,11 @@ msgstr "Condividi"
 
 #: ../src/Views/AppInfoView.vala:620
 msgid "Fund"
-msgstr ""
+msgstr "Sostieni"
 
 #: ../src/Views/AppInfoView.vala:642
 msgid "Fund the development of this app"
-msgstr ""
+msgstr "Finanzia lo sviluppo di questa applicazione"
 
 #: ../src/Views/AppListUpdateView.vala:59
 msgid "A restart is required to complete the installation of updates"
@@ -693,7 +697,7 @@ msgstr "Twitter"
 
 #: ../src/Widgets/SharePopover.vala:51
 msgid "reddit"
-msgstr "reddit"
+msgstr "Reddit"
 
 #: ../src/Widgets/SharePopover.vala:55
 msgid "Tumblr"

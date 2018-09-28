@@ -28,6 +28,25 @@ public class AppCenterCore.Package : Object {
     private const string ELEMENTARY_STABLE_PACKAGE_ORIGIN = "stable-bionic-main";
     private const string ELEMENTARY_DAILY_PACKAGE_ORIGIN = "daily-bionic-main";
 
+    /* Note: These are just a stopgap, and are not a replacement for a more
+     * fleshed out parental control system. We assume any of these "moderate"
+     * or above is considered explicit for our naive warning.
+     *
+     * See https://hughsie.github.io/oars/generate.html for ratings.
+     */
+    private const string[] EXPLICIT_TAGS = {
+        "violence-realistic",
+        "violence-bloodshed",
+        "violence-sexual",
+        "drugs-narcotics",
+        "sex-nudity",
+        "sex-themes",
+        "sex-prostitution",
+        "language-profanity",
+        "language-humor",
+        "language-discrimination"
+    };
+
     public signal void changing (bool is_changing);
     public signal void info_changed (Pk.Status status);
 
@@ -156,6 +175,30 @@ public class AppCenterCore.Package : Object {
                 default:
                     return false;
             }
+        }
+    }
+
+    private bool _explicit = false;
+    private bool _check_explicit = true;
+    public bool is_explicit {
+        get {
+            if (_check_explicit) {
+                _check_explicit = false;
+                var ratings = component.get_content_ratings ();
+                for (int i = 0; i < ratings.length; i++) {
+                    var rating = ratings[i];
+
+                    foreach (string tag in EXPLICIT_TAGS) {
+                        var rating_value = rating.get_value (tag);
+                        if (rating_value > AppStream.ContentRatingValue.MILD) {
+                            _explicit = true;
+                            return _explicit;
+                        }
+                    }
+                }
+            }
+
+            return _explicit;
         }
     }
 
@@ -349,7 +392,21 @@ public class AppCenterCore.Package : Object {
             state = fail_state;
             change_information.cancel ();
         }
-     }
+    }
+
+    private async Pk.Package? find_package_async () {
+        SourceFunc callback = find_package_async.callback;
+
+        Pk.Package? package = null;
+        new Thread<bool> ("appstream-find-package", () => {
+            package = find_package ();
+            Idle.add ((owned)callback);
+            return true;
+        });
+
+        yield;
+        return package;
+    }
 
     public string? get_name () {
         if (name != null) {
@@ -367,19 +424,28 @@ public class AppCenterCore.Package : Object {
         return name;
     }
 
-    public string? get_description () {
-        if (description != null) {
-            return description;
-        }
-
-        description = component.get_description ();
+    public async string? get_description () {
         if (description == null) {
-            var package = find_package ();
-            if (package != null) {
-                description = package.description;
+            description = component.get_description ();
+            if (description == null) {
+                var package = yield find_package_async ();
+                if (package != null) {
+                    description = package.description;
+                }
             }
         }
 
+        return description;
+    }
+
+    public string? get_description_sync () {
+        var loop = new MainLoop ();
+        get_description.begin ((obj, res) => {
+            get_description.end (res);
+            loop.quit ();
+        });
+
+        loop.run ();
         return description;
     }
 
@@ -544,14 +610,22 @@ public class AppCenterCore.Package : Object {
         var list = new Gee.ArrayList<AppStream.Release> ();
 
         var releases = component.get_releases ();
-        if (releases.length < min_releases) {
-            return list;
+        uint index = 0;
+        while (index < releases.length) {
+            if (releases[index].get_version () == null) {
+                releases.remove_index (index);
+                if (index >= releases.length) {
+                    break;
+                }
+
+                continue;
+            }
+
+            index++;
         }
 
-        for (uint i = 0; i < releases.length; i++) {
-            if (releases[i].get_version () == null) {
-                releases.remove_index (i);
-            }
+        if (releases.length < min_releases) {
+            return list;
         }
 
         releases.sort_with_data ((a, b) => {

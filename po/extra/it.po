@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-27 08:32-0700\n"
-"PO-Revision-Date: 2018-03-09 13:11+0000\n"
-"Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
+"PO-Revision-Date: 2018-09-12 00:22+0000\n"
+"Last-Translator: Marco De Paolini <marco.depaolini@gmail.com>\n"
 "Language-Team: Italian <https://weblate.elementary.io/projects/appcenter/"
 "extra/it/>\n"
 "Language: it\n"
@@ -12,17 +12,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
 msgid "AppCenter"
-msgstr "Centro Applicazioni"
+msgstr "AppCenter"
 
 #: data/io.elementary.appcenter.appdata.xml.in:9
 #: data/io.elementary.appcenter.desktop.in.in:4
 msgid "Browse and manage apps"
-msgstr "Sfoglia e gestisci le applicazioni"
+msgstr "Esplora e gestisci le applicazioni"
 
 #: data/io.elementary.appcenter.appdata.xml.in:11
 msgid ""
@@ -30,22 +30,22 @@ msgid ""
 "search and discover new apps. AppCenter is also used for updating your "
 "system to the latest and greatest version for new features and fixes."
 msgstr ""
-"Un'app store per sviluppatori indipendenti e open source. Naviga per "
-"categorie, oppure cerca e scopri nuove applicazioni. Il Centro Applicazioni "
+"Un negozio di applicazioni per sviluppatori indipendenti e open source. "
+"Esplora le categorie oppure cerca e scopri nuove applicazioni. AppCenter "
 "viene anche usato per aggiornare il tuo sistema alla versione più recente e "
-"migliore, contenente le ultime novità e correzioni."
+"migliore con le ultime novità e correzioni."
 
 #: data/io.elementary.appcenter.appdata.xml.in:191
 msgid "elementary LLC."
-msgstr ""
+msgstr "elementary LLC."
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
-msgstr ""
+msgstr "@NOME_APP@"
 
 #: data/io.elementary.appcenter.desktop.in.in:6
 msgid "@DESKTOP_ICON@"
-msgstr ""
+msgstr "@ICONA_DESKTOP@"
 
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
@@ -55,7 +55,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
-msgstr ""
+msgstr "Controlla aggiornamenti"
 
 #~ msgid "About AppCenter"
 #~ msgstr "Informazioni"
