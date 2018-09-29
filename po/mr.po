@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-23 15:58-0700\n"
-"PO-Revision-Date: 2018-09-29 18:00+0000\n"
+"PO-Revision-Date: 2018-09-30 00:09+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/mr/>\n"
@@ -99,107 +99,107 @@ msgstr "माहिती आणत आहे"
 
 #: src/Core/ChangeInformation.vala:64
 msgid "Removing packages"
-msgstr ""
+msgstr "पॅकेज मिटवत आहे"
 
 #: src/Core/ChangeInformation.vala:66
 msgid "Downloading"
-msgstr ""
+msgstr "डाउनलोड करित आहे"
 
 #: src/Core/ChangeInformation.vala:68
 msgid "Installing"
-msgstr "स्थापित होत आहे"
+msgstr "इन्स्टॉल  होत आहे"
 
 #: src/Core/ChangeInformation.vala:70
 msgid "Refreshing software list"
-msgstr ""
+msgstr "सॉफ्टवेअर यादी रिफ्रेश करीत आहे"
 
 #: src/Core/ChangeInformation.vala:72
 msgid "Installing updates"
-msgstr ""
+msgstr "अपडेट इन्स्टॉल करीत आहे"
 
 #: src/Core/ChangeInformation.vala:74
 msgid "Cleaning up packages"
-msgstr ""
+msgstr "पॅकेजेस साफ करीत आहे"
 
 #: src/Core/ChangeInformation.vala:76
 msgid "Obsoleting packages"
-msgstr ""
+msgstr "पॅकेजेस अॅबसोलेट करीत आहे"
 
 #: src/Core/ChangeInformation.vala:78
 msgid "Resolving dependencies"
-msgstr ""
+msgstr "अवलंबित्व दूर करा"
 
 #: src/Core/ChangeInformation.vala:80
 msgid "Checking signatures"
-msgstr ""
+msgstr "सह्या तपासत आहे"
 
 #: src/Core/ChangeInformation.vala:82
 msgid "Testing changes"
-msgstr ""
+msgstr "बदलांची तपासणी करीत आहे"
 
 #: src/Core/ChangeInformation.vala:84
 msgid "Committing changes"
-msgstr ""
+msgstr "बदल कमीट करीत आहे"
 
 #: src/Core/ChangeInformation.vala:86
 msgid "Requesting data"
-msgstr ""
+msgstr "डेटाची मागणी करीत आहे"
 
 #: src/Core/ChangeInformation.vala:88
 msgid "Finished"
-msgstr ""
+msgstr "पूर्ण झाले"
 
 #: src/Core/ChangeInformation.vala:90
 msgid "Cancelling"
-msgstr ""
+msgstr "रद्द करीत आहे"
 
 #: src/Core/ChangeInformation.vala:92
 msgid "Downloading repository information"
-msgstr ""
+msgstr "रिपोसिटरी ची माहिती डाउनलोड करीत आहे"
 
 #: src/Core/ChangeInformation.vala:94
 msgid "Downloading list of packages"
-msgstr ""
+msgstr "पॅकेजेस ची यादी डाउनलोड करीत आहे"
 
 #: src/Core/ChangeInformation.vala:96
 msgid "Downloading file lists"
-msgstr ""
+msgstr "फाईल्स ची यादी डाउनलोड करीत आहे"
 
 #: src/Core/ChangeInformation.vala:98
 msgid "Downloading lists of changes"
-msgstr ""
+msgstr "बदलांची यादी डाउनलोड करीत आहे"
 
 #: src/Core/ChangeInformation.vala:100
 msgid "Downloading groups"
-msgstr ""
+msgstr "समूह डाउनलोड करीत आहे"
 
 #: src/Core/ChangeInformation.vala:102
 msgid "Downloading update information"
-msgstr ""
+msgstr "अपडेट करण्यासाठीची माहिती डाउनलोड करीत आहे"
 
 #: src/Core/ChangeInformation.vala:104
 msgid "Repackaging files"
-msgstr ""
+msgstr "फाईल्सचे पुन्हा पॅकेजिंग करीत आहे"
 
 #: src/Core/ChangeInformation.vala:106
 msgid "Loading cache"
-msgstr ""
+msgstr "कॅश लोड करीत आहे"
 
 #: src/Core/ChangeInformation.vala:108
 msgid "Scanning applications"
-msgstr ""
+msgstr "अप्लिकेशन तपासत  आहे"
 
 #: src/Core/ChangeInformation.vala:110
 msgid "Generating package lists"
-msgstr ""
+msgstr "पॅकेजेसची यादी बनवीत आहे"
 
 #: src/Core/ChangeInformation.vala:112
 msgid "Waiting for package manager lock"
-msgstr ""
+msgstr "पॅकेज मॅनेजर लॉक ची वाट पाहत आहे"
 
 #: src/Core/ChangeInformation.vala:114
 msgid "Waiting for authentication"
-msgstr ""
+msgstr "प्रमाणीकरणाची वाट पाहत आहे"
 
 #: src/Core/ChangeInformation.vala:116
 msgid "Updating running applications"
