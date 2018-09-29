@@ -1,47 +1,49 @@
+# Prachi Joshi <josprachi@yahoo.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-23 15:58-0700\n"
-"PO-Revision-Date: 2015-11-06 16:04+0000\n"
-"Last-Translator: elementaryart (old) <Unknown>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2018-09-29 18:00+0000\n"
+"Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
+"Language-Team: Marathi <https://weblate.elementary.io/projects/appcenter/"
+"appcenter/mr/>\n"
+"Language: mr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
-"X-Generator: Launchpad (build 18331)\n"
 
 #. Add "AppCenter" to the translation catalog
 #: src/Application.vala:38
 msgid "AppCenter"
-msgstr ""
+msgstr "अॅप सेंटर"
 
 #: src/Application.vala:106
 #, c-format
 msgid "Could not parse mimetype %s"
-msgstr ""
+msgstr "माईम टाईप \"%s\" पार्स होऊ शकला नाही "
 
 #: src/Application.vala:126
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr ""
+msgstr "दिलेली लिंक '%s ' मिळाली नाही, त्याऐवजी शोध सुरु आहे"
 
 #: src/Application.vala:260
 msgid "Application installed"
-msgstr ""
+msgstr "अप्लिकेशन इंन्स्टॉल  झाले"
 
 #: src/Application.vala:261
 #, c-format
 msgid "%s has been successfully installed"
-msgstr ""
+msgstr "%s सफलतापूर्वक इंन्स्टॉल झाले"
 
 #: src/Application.vala:273
 #, c-format
 msgid "There Was An Error Installing %s."
-msgstr ""
+msgstr "%s इंन्स्टॉल करताना काही चूक झाली आहे ."
 
 #: src/MainWindow.vala:149 src/Views/Homepage.vala:252
 #: src/Views/Homepage.vala:261 src/Views/Homepage.vala:266
@@ -68,15 +70,15 @@ msgstr ""
 
 #: src/MainWindow.vala:196
 msgid "Connect to the Internet to install or update apps."
-msgstr ""
+msgstr "अॅप इन्स्टॉल अथवा अपडेट करण्यासाठी इंटरनेटला कनेक्ट करा."
 
 #: src/MainWindow.vala:199
 msgid "Network Settings…"
-msgstr ""
+msgstr "नेटवर्क सेटिंग्ज…"
 
 #: src/Core/ChangeInformation.vala:54
 msgid "Starting"
-msgstr ""
+msgstr "सुरु होत आहे"
 
 #: src/Core/ChangeInformation.vala:56
 msgid "Waiting"
