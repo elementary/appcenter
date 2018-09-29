@@ -1,11 +1,12 @@
 # Prachi Joshi <josprachi@yahoo.com>, 2018.
+# उदयराज बाळ <udayrajb@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-23 15:58-0700\n"
 "PO-Revision-Date: 2018-09-29 18:00+0000\n"
-"Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
+"Last-Translator: उदयराज बाळ <udayrajb@gmail.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/mr/>\n"
 "Language: mr\n"
@@ -66,7 +67,7 @@ msgstr "अनुप्रयोगांना शोधा"
 
 #: src/MainWindow.vala:195
 msgid "Network Is Not Available"
-msgstr ""
+msgstr "नेटवर्क उपलब्ध नाही"
 
 #: src/MainWindow.vala:196
 msgid "Connect to the Internet to install or update apps."
@@ -82,19 +83,19 @@ msgstr "सुरु होत आहे"
 
 #: src/Core/ChangeInformation.vala:56
 msgid "Waiting"
-msgstr ""
+msgstr "वाट पाहत आहे"
 
 #: src/Core/ChangeInformation.vala:58
 msgid "Running"
-msgstr ""
+msgstr "सुरु आहे"
 
 #: src/Core/ChangeInformation.vala:60
 msgid "Querying"
-msgstr ""
+msgstr "तपासणी करत आहे"
 
 #: src/Core/ChangeInformation.vala:62
 msgid "Getting information"
-msgstr ""
+msgstr "माहिती घेत आहे"
 
 #: src/Core/ChangeInformation.vala:64
 msgid "Removing packages"
