@@ -6,7 +6,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-23 15:58-0700\n"
 "PO-Revision-Date: 2018-09-29 18:00+0000\n"
-"Last-Translator: उदयराज बाळ <udayrajb@gmail.com>\n"
+"Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/mr/>\n"
 "Language: mr\n"
@@ -95,7 +95,7 @@ msgstr "तपासणी करत आहे"
 
 #: src/Core/ChangeInformation.vala:62
 msgid "Getting information"
-msgstr "माहिती घेत आहे"
+msgstr "माहिती आणत आहे"
 
 #: src/Core/ChangeInformation.vala:64
 msgid "Removing packages"
