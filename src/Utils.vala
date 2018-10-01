@@ -28,5 +28,15 @@ namespace Utils {
         *x = *y;
         *y = tmp;
     }
+
+
+    public void reboot () {
+        try {
+            SuspendControl.get_default ().reboot ();
+        } catch (GLib.Error e) {
+            var dialog = new AppCenter.Widgets.RestartDialog ();
+            dialog.show_all ();
+        }
+    }
 }
 
