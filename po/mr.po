@@ -1,47 +1,50 @@
+# Prachi Joshi <josprachi@yahoo.com>, 2018.
+# उदयराज बाळ <udayrajb@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-23 15:58-0700\n"
-"PO-Revision-Date: 2015-11-06 16:04+0000\n"
-"Last-Translator: elementaryart (old) <Unknown>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2018-09-30 00:09+0000\n"
+"Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
+"Language-Team: Marathi <https://weblate.elementary.io/projects/appcenter/"
+"appcenter/mr/>\n"
+"Language: mr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
-"X-Generator: Launchpad (build 18331)\n"
 
 #. Add "AppCenter" to the translation catalog
 #: src/Application.vala:38
 msgid "AppCenter"
-msgstr ""
+msgstr "अॅप सेंटर"
 
 #: src/Application.vala:106
 #, c-format
 msgid "Could not parse mimetype %s"
-msgstr ""
+msgstr "माईम टाईप \"%s\" पार्स होऊ शकला नाही "
 
 #: src/Application.vala:126
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr ""
+msgstr "दिलेली लिंक '%s ' मिळाली नाही, त्याऐवजी शोध सुरु आहे"
 
 #: src/Application.vala:260
 msgid "Application installed"
-msgstr ""
+msgstr "अप्लिकेशन इंन्स्टॉल  झाले"
 
 #: src/Application.vala:261
 #, c-format
 msgid "%s has been successfully installed"
-msgstr ""
+msgstr "%s सफलतापूर्वक इंन्स्टॉल झाले"
 
 #: src/Application.vala:273
 #, c-format
 msgid "There Was An Error Installing %s."
-msgstr ""
+msgstr "%s इंन्स्टॉल करताना काही चूक झाली आहे ."
 
 #: src/MainWindow.vala:149 src/Views/Homepage.vala:252
 #: src/Views/Homepage.vala:261 src/Views/Homepage.vala:266
@@ -64,139 +67,139 @@ msgstr "अनुप्रयोगांना शोधा"
 
 #: src/MainWindow.vala:195
 msgid "Network Is Not Available"
-msgstr ""
+msgstr "नेटवर्क उपलब्ध नाही"
 
 #: src/MainWindow.vala:196
 msgid "Connect to the Internet to install or update apps."
-msgstr ""
+msgstr "अॅप इन्स्टॉल अथवा अपडेट करण्यासाठी इंटरनेटला कनेक्ट करा."
 
 #: src/MainWindow.vala:199
 msgid "Network Settings…"
-msgstr ""
+msgstr "नेटवर्क सेटिंग्ज…"
 
 #: src/Core/ChangeInformation.vala:54
 msgid "Starting"
-msgstr ""
+msgstr "सुरु होत आहे"
 
 #: src/Core/ChangeInformation.vala:56
 msgid "Waiting"
-msgstr ""
+msgstr "वाट पाहत आहे"
 
 #: src/Core/ChangeInformation.vala:58
 msgid "Running"
-msgstr ""
+msgstr "सुरु आहे"
 
 #: src/Core/ChangeInformation.vala:60
 msgid "Querying"
-msgstr ""
+msgstr "तपासणी करत आहे"
 
 #: src/Core/ChangeInformation.vala:62
 msgid "Getting information"
-msgstr ""
+msgstr "माहिती आणत आहे"
 
 #: src/Core/ChangeInformation.vala:64
 msgid "Removing packages"
-msgstr ""
+msgstr "पॅकेज मिटवत आहे"
 
 #: src/Core/ChangeInformation.vala:66
 msgid "Downloading"
-msgstr ""
+msgstr "डाउनलोड करित आहे"
 
 #: src/Core/ChangeInformation.vala:68
 msgid "Installing"
-msgstr "स्थापित होत आहे"
+msgstr "इन्स्टॉल  होत आहे"
 
 #: src/Core/ChangeInformation.vala:70
 msgid "Refreshing software list"
-msgstr ""
+msgstr "सॉफ्टवेअर यादी रिफ्रेश करीत आहे"
 
 #: src/Core/ChangeInformation.vala:72
 msgid "Installing updates"
-msgstr ""
+msgstr "अपडेट इन्स्टॉल करीत आहे"
 
 #: src/Core/ChangeInformation.vala:74
 msgid "Cleaning up packages"
-msgstr ""
+msgstr "पॅकेजेस साफ करीत आहे"
 
 #: src/Core/ChangeInformation.vala:76
 msgid "Obsoleting packages"
-msgstr ""
+msgstr "पॅकेजेस अॅबसोलेट करीत आहे"
 
 #: src/Core/ChangeInformation.vala:78
 msgid "Resolving dependencies"
-msgstr ""
+msgstr "अवलंबित्व दूर करा"
 
 #: src/Core/ChangeInformation.vala:80
 msgid "Checking signatures"
-msgstr ""
+msgstr "सह्या तपासत आहे"
 
 #: src/Core/ChangeInformation.vala:82
 msgid "Testing changes"
-msgstr ""
+msgstr "बदलांची तपासणी करीत आहे"
 
 #: src/Core/ChangeInformation.vala:84
 msgid "Committing changes"
-msgstr ""
+msgstr "बदल कमीट करीत आहे"
 
 #: src/Core/ChangeInformation.vala:86
 msgid "Requesting data"
-msgstr ""
+msgstr "डेटाची मागणी करीत आहे"
 
 #: src/Core/ChangeInformation.vala:88
 msgid "Finished"
-msgstr ""
+msgstr "पूर्ण झाले"
 
 #: src/Core/ChangeInformation.vala:90
 msgid "Cancelling"
-msgstr ""
+msgstr "रद्द करीत आहे"
 
 #: src/Core/ChangeInformation.vala:92
 msgid "Downloading repository information"
-msgstr ""
+msgstr "रिपोसिटरी ची माहिती डाउनलोड करीत आहे"
 
 #: src/Core/ChangeInformation.vala:94
 msgid "Downloading list of packages"
-msgstr ""
+msgstr "पॅकेजेस ची यादी डाउनलोड करीत आहे"
 
 #: src/Core/ChangeInformation.vala:96
 msgid "Downloading file lists"
-msgstr ""
+msgstr "फाईल्स ची यादी डाउनलोड करीत आहे"
 
 #: src/Core/ChangeInformation.vala:98
 msgid "Downloading lists of changes"
-msgstr ""
+msgstr "बदलांची यादी डाउनलोड करीत आहे"
 
 #: src/Core/ChangeInformation.vala:100
 msgid "Downloading groups"
-msgstr ""
+msgstr "समूह डाउनलोड करीत आहे"
 
 #: src/Core/ChangeInformation.vala:102
 msgid "Downloading update information"
-msgstr ""
+msgstr "अपडेट करण्यासाठीची माहिती डाउनलोड करीत आहे"
 
 #: src/Core/ChangeInformation.vala:104
 msgid "Repackaging files"
-msgstr ""
+msgstr "फाईल्सचे पुन्हा पॅकेजिंग करीत आहे"
 
 #: src/Core/ChangeInformation.vala:106
 msgid "Loading cache"
-msgstr ""
+msgstr "कॅश लोड करीत आहे"
 
 #: src/Core/ChangeInformation.vala:108
 msgid "Scanning applications"
-msgstr ""
+msgstr "अप्लिकेशन तपासत  आहे"
 
 #: src/Core/ChangeInformation.vala:110
 msgid "Generating package lists"
-msgstr ""
+msgstr "पॅकेजेसची यादी बनवीत आहे"
 
 #: src/Core/ChangeInformation.vala:112
 msgid "Waiting for package manager lock"
-msgstr ""
+msgstr "पॅकेज मॅनेजर लॉक ची वाट पाहत आहे"
 
 #: src/Core/ChangeInformation.vala:114
 msgid "Waiting for authentication"
-msgstr ""
+msgstr "प्रमाणीकरणाची वाट पाहत आहे"
 
 #: src/Core/ChangeInformation.vala:116
 msgid "Updating running applications"
