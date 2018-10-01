@@ -134,6 +134,12 @@ namespace AppCenter.Widgets {
             add (stack);
 
             set_default_brand ();
+            destroy.connect (() => {
+               if (timer_id > 0) {
+                   Source.remove (timer_id);
+                   timer_id = 0;
+               }
+            });
         }
 
         public Banner (Switcher switcher) {
