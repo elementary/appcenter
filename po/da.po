@@ -5,7 +5,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-23 15:58-0700\n"
 "PO-Revision-Date: 2018-09-27 18:24+0000\n"
-"Last-Translator: Kaj Printz Madsen <kajprintz@gmail.com>\n"
+"Last-Translator: Jeppe Terndrup <jeppe.terndrup@gmail.com>\n"
 "Language-Team: Danish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/da/>\n"
 "Language: da\n"
@@ -29,7 +29,7 @@ msgstr "Kunne ikke forstå mimetypen %s"
 #: src/Application.vala:126
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr "Det angivne link '%s' kunne ikke findes, søger i stedet for"
+msgstr "Det angivne link '%s' kunne ikke findes, søger i stedet"
 
 #: src/Application.vala:260
 msgid "Application installed"
@@ -43,7 +43,7 @@ msgstr "%s blev succesfuldt installeret"
 #: src/Application.vala:273
 #, c-format
 msgid "There Was An Error Installing %s."
-msgstr "Der Opstod En Fejl under Installationen af %s."
+msgstr "Der opstod En fejl under installationen af %s."
 
 #: src/MainWindow.vala:149 src/Views/Homepage.vala:252
 #: src/Views/Homepage.vala:261 src/Views/Homepage.vala:266
@@ -224,7 +224,7 @@ msgstr "Operativsystemopdateringer"
 
 #: src/Core/Client.vala:106
 msgid "Updates to system components"
-msgstr "opdateringer til systemkomponenter"
+msgstr "Opdateringer til systemkomponenter"
 
 #: src/Core/Client.vala:141
 #, c-format
@@ -304,7 +304,7 @@ msgstr "Vis indholds advarsler"
 
 #: src/Dialogs/ContentWarningDialog.vala:40
 msgid "Don’t Install"
-msgstr "Installer Ikke"
+msgstr "Installr Ikke"
 
 #: src/Dialogs/ContentWarningDialog.vala:41
 msgid "Install Anyway"
@@ -393,7 +393,7 @@ msgstr "Behandler"
 
 #: src/Dialogs/StripeDialog.vala:268
 msgid "There Was a Problem Processing Your Payment"
-msgstr "Der Opstod et Problem under Behandlingen af Din Betaling"
+msgstr "Der Opstod et problem under behandlingen af din betaling"
 
 #: src/Dialogs/StripeDialog.vala:306
 msgid "Pay Later"
@@ -524,7 +524,7 @@ msgstr "Prøv Igen"
 
 #: src/Views/AppInfoView.vala:76
 msgid "Screenshot Not Available"
-msgstr "Screenshot er Ikke Tilgængeligt"
+msgstr "Screenshot er ikke tilgængeligt"
 
 #: src/Views/AppInfoView.vala:133
 msgid "Homepage"
@@ -532,11 +532,11 @@ msgstr "Startside"
 
 #: src/Views/AppInfoView.vala:139
 msgid "Suggest Translations"
-msgstr "Foreslå Oversættelser"
+msgstr "Foreslå oversættelser"
 
 #: src/Views/AppInfoView.vala:145
 msgid "Report a Problem"
-msgstr "Rapporter et Problem"
+msgstr "Rapporter et problem"
 
 #: src/Views/AppInfoView.vala:151
 msgid "Help"
@@ -579,7 +579,7 @@ msgstr "Finansier udviklingen af denne app"
 #: src/Views/AppListUpdateView.vala:59
 msgid "A restart is required to complete the installation of updates"
 msgstr ""
-"Genstart af computeren er nødvendig for at fuldføre installationen af "
+"En genstart af computeren er nødvendig for at fuldføre installationen af "
 "opdateringer"
 
 #: src/Views/AppListUpdateView.vala:67
