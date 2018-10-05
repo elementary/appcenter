@@ -227,20 +227,22 @@ namespace AppCenter.Views {
             if (!package.is_local) {
                 var download_button_grid = new Gtk.Grid ();
                 download_button_grid.orientation = Gtk.Orientation.VERTICAL;
-                download_button_grid.valign = Gtk.Align.END;
+                download_button_grid.valign = Gtk.Align.START;
                 download_button_grid.halign = Gtk.Align.END;
                 download_button_grid.row_spacing = 3;
+                download_button_grid.margin_top = 40;
 
                 app_download_size_cancellable = new Cancellable ();
 
                 app_download_size_label = new Gtk.Label (null);
                 app_download_size_label.visible = false;
+                app_download_size_label.valign = Gtk.Align.START;
                 app_download_size_label.halign = Gtk.Align.END;
                 app_download_size_label.selectable = true;
 
                 download_button_grid.add (action_stack);
                 download_button_grid.add (app_download_size_label);
-                header_grid.attach (download_button_grid, 3, 0, 1, 1);
+                header_grid.attach (download_button_grid, 3, 0, 1, 2);
             }
 
             header_box.add (header_grid);
