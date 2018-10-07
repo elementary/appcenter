@@ -94,7 +94,7 @@ public class DBusServer : Object {
      * @param desktop_id  the desktop ID (must include ".desktop" extension)
      * @return the component ID, if not found returns empty string
      */
-    public string get_component_from_desktop_id (string desktop_id) {
+    public string get_component_from_desktop_id (string desktop_id) throws Error {
         var client = AppCenterCore.Client.get_default ();
         var package = client.get_package_for_desktop_id (desktop_id);
         if (package != null) {
@@ -110,7 +110,7 @@ public class DBusServer : Object {
      * @param query  the query to search for
      * @return a list of component ID's that match the query
      */
-    public string[] search_components (string query) {
+    public string[] search_components (string query) throws Error {
         var client = AppCenterCore.Client.get_default ();
         var packages = client.search_applications (query, null);
         string[] components = {};
