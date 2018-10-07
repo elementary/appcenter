@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-23 15:58-0700\n"
-"PO-Revision-Date: 2018-09-30 00:09+0000\n"
+"PO-Revision-Date: 2018-10-07 09:42+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/mr/>\n"
@@ -49,7 +49,6 @@ msgstr "%s इंन्स्टॉल करताना काही चूक
 #: src/MainWindow.vala:149 src/Views/Homepage.vala:252
 #: src/Views/Homepage.vala:261 src/Views/Homepage.vala:266
 #: src/Views/Homepage.vala:277
-#, fuzzy
 msgid "Home"
 msgstr "मुख्य पृष्ठ"
 
@@ -203,23 +202,23 @@ msgstr "प्रमाणीकरणाची वाट पाहत आहे
 
 #: src/Core/ChangeInformation.vala:116
 msgid "Updating running applications"
-msgstr ""
+msgstr "चालू अप्लिकेशन्स उपडते करीत आहोत"
 
 #: src/Core/ChangeInformation.vala:118
 msgid "Checking applications in use"
-msgstr ""
+msgstr "वापरात असलेली अप्लिकेशन्स तपासत आहे"
 
 #: src/Core/ChangeInformation.vala:120
 msgid "Checking libraries in use"
-msgstr ""
+msgstr "वापरात असलेली लाइब्ररीस तपासत आहे"
 
 #: src/Core/ChangeInformation.vala:122
 msgid "Copying files"
-msgstr ""
+msgstr "फाईल्स कॉपी करीत आहे"
 
 #: src/Core/ChangeInformation.vala:124
 msgid "Unknown state"
-msgstr ""
+msgstr "अज्ञात परिस्थिती"
 
 #: src/Core/Client.vala:105
 msgid "Operating System Updates"
