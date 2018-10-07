@@ -80,7 +80,9 @@ public class AppCenterCore.Client : Object {
 
         try {
             appstream_pool.load ();
-
+        } catch (Error e) {
+            critical (e.message);
+        } finally {
             var comp_validator = ComponentValidator.get_default ();
             appstream_pool.get_components ().foreach ((comp) => {
                 if (!comp_validator.validate (comp)) {
@@ -92,8 +94,6 @@ public class AppCenterCore.Client : Object {
                     package_list[pkg_name] = package;
                 }
             });
-        } catch (Error e) {
-            critical (e.message);
         }
 
         var icon = new AppStream.Icon ();
