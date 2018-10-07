@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-23 15:58-0700\n"
-"PO-Revision-Date: 2018-09-24 02:29+0000\n"
+"PO-Revision-Date: 2018-10-07 09:42+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/ja/>\n"
@@ -659,7 +659,7 @@ msgstr "システム"
 
 #: src/Widgets/CategoryFlowBox.vala:52
 msgid "Video"
-msgstr "ビデオ"
+msgstr "動画"
 
 #: src/Widgets/CategoryFlowBox.vala:57
 msgid "Graphics"
