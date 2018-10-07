@@ -6,7 +6,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-23 15:58-0700\n"
 "PO-Revision-Date: 2018-10-07 09:42+0000\n"
-"Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
+"Last-Translator: उदयराज बाळ <udayrajb@gmail.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/mr/>\n"
 "Language: mr\n"
@@ -54,10 +54,9 @@ msgstr "मुख्य पृष्ठ"
 
 #: src/MainWindow.vala:150 src/Views/InstalledView.vala:29
 #: src/Views/InstalledView.vala:49
-#, fuzzy
 msgctxt "view"
 msgid "Installed"
-msgstr "स्थापित करा"
+msgstr "प्रस्थापित"
 
 #: src/MainWindow.vala:177 src/MainWindow.vala:328 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:81
