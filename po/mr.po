@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-23 15:58-0700\n"
-"PO-Revision-Date: 2018-09-30 00:09+0000\n"
+"PO-Revision-Date: 2018-10-08 00:03+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/mr/>\n"
@@ -49,16 +49,14 @@ msgstr "%s इंन्स्टॉल करताना काही चूक
 #: src/MainWindow.vala:149 src/Views/Homepage.vala:252
 #: src/Views/Homepage.vala:261 src/Views/Homepage.vala:266
 #: src/Views/Homepage.vala:277
-#, fuzzy
 msgid "Home"
 msgstr "मुख्य पृष्ठ"
 
 #: src/MainWindow.vala:150 src/Views/InstalledView.vala:29
 #: src/Views/InstalledView.vala:49
-#, fuzzy
 msgctxt "view"
 msgid "Installed"
-msgstr "स्थापित करा"
+msgstr "प्रस्थापित"
 
 #: src/MainWindow.vala:177 src/MainWindow.vala:328 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:81
@@ -203,87 +201,87 @@ msgstr "प्रमाणीकरणाची वाट पाहत आहे
 
 #: src/Core/ChangeInformation.vala:116
 msgid "Updating running applications"
-msgstr ""
+msgstr "चालू अप्लिकेशन्स उपडते करीत आहोत"
 
 #: src/Core/ChangeInformation.vala:118
 msgid "Checking applications in use"
-msgstr ""
+msgstr "वापरात असलेली अप्लिकेशन्स तपासत आहे"
 
 #: src/Core/ChangeInformation.vala:120
 msgid "Checking libraries in use"
-msgstr ""
+msgstr "वापरात असलेली लाइब्ररीस तपासत आहे"
 
 #: src/Core/ChangeInformation.vala:122
 msgid "Copying files"
-msgstr ""
+msgstr "फाईल्स कॉपी करीत आहे"
 
 #: src/Core/ChangeInformation.vala:124
 msgid "Unknown state"
-msgstr ""
+msgstr "अज्ञात परिस्थिती"
 
 #: src/Core/Client.vala:105
 msgid "Operating System Updates"
-msgstr ""
+msgstr "ऑपरेटिंग सिस्टिमचे अपडेट्स"
 
 #: src/Core/Client.vala:106
 msgid "Updates to system components"
-msgstr ""
+msgstr "सिस्टिमच्या भागांचे अपडेट्स"
 
 #: src/Core/Client.vala:141
 #, c-format
 msgid "%s (local)"
-msgstr ""
+msgstr "%s(लोकल)"
 
 #: src/Core/Client.vala:466
 msgid "Update Available"
 msgid_plural "Updates Available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "एक"
+msgstr[1] "अन्य"
 
 #: src/Core/Client.vala:467
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u अपडेट आपल्या सिस्टिम साठी उपलब्ध आहे"
+msgstr[1] "%u अपडेट आपल्या सिस्टिम साठी उपलब्ध आहेत"
 
 #: src/Core/Client.vala:495
 #, c-format
 msgid "Version: %s"
-msgstr ""
+msgstr "आवृत्ती: %s"
 
 #: src/Core/Client.vala:504
 msgid "No components with updates"
-msgstr ""
+msgstr "कोणत्याही भागांचे अपडेट्स उपलब्ध नाहीत"
 
 #: src/Core/Client.vala:508
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u अपडेट्स उपलब्ध असलेला भाग"
+msgstr[1] "%u अपडेट्स उपलब्ध असलेले भाग"
 
 #: src/Core/Client.vala:510
 #, c-format
 msgid "%s:"
-msgstr ""
+msgstr "%s:"
 
 #: src/Core/Package.vala:235
 #, c-format
 msgid "%s Developers"
-msgstr ""
+msgstr "%s डेव्हलपर"
 
 #: src/Core/UpdateManager.vala:81
 msgid "Restart Required"
-msgstr ""
+msgstr "पुन्हा सुरु करणे आवश्यक"
 
 #: src/Core/UpdateManager.vala:82
 msgid "Please restart your system to finalize updates"
-msgstr ""
+msgstr "अपडेट्सना अंतिम स्वरूप देण्यासाठी कृपया आपली सिस्टिम पुन्हा सुरु करा"
 
 #: src/Dialogs/ContentWarningDialog.vala:27
 msgid "Content Warning"
-msgstr ""
+msgstr "मजकूर चेतावणी"
 
 #: src/Dialogs/ContentWarningDialog.vala:32
 #, c-format
@@ -300,34 +298,33 @@ msgstr ""
 
 #: src/Dialogs/ContentWarningDialog.vala:35
 msgid "Show content warnings"
-msgstr ""
+msgstr "मजकूर चेतावण्या दाखवा"
 
 #: src/Dialogs/ContentWarningDialog.vala:40
 msgid "Don’t Install"
-msgstr ""
+msgstr "इन्स्टॉल करू नका"
 
 #: src/Dialogs/ContentWarningDialog.vala:41
-#, fuzzy
 msgid "Install Anyway"
-msgstr "स्थापित होत आहे"
+msgstr "तरीही इन्स्टॉल करा"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
-msgstr ""
+msgstr "पुन्हा सुरु करायचे अशी आपली खात्री आहे का?"
 
 #: src/Dialogs/RestartDialog.vala:41
 msgid "This will close all open applications and restart this device."
-msgstr ""
+msgstr "याने सर्व चालू अप्लिकेशन्स बंद होऊन हे डिव्हाईस पुन्हा सुरु होईल."
 
 #: src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
-msgstr ""
+msgstr "पुन्हा सुरु करा"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:171
 msgid "Cancel"
-msgstr ""
+msgstr "रद्द करा"
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid ""
