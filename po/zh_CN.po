@@ -1,12 +1,13 @@
 # colindemian <colindemian@outlook.com>, 2018.
 # YISH <mokeyish@163.com>, 2018.
+# David Hewitt <davidmhewitt@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-12 14:39-0700\n"
-"PO-Revision-Date: 2018-08-13 00:02+0000\n"
-"Last-Translator: YISH <mokeyish@163.com>\n"
+"PO-Revision-Date: 2018-10-09 00:01+0000\n"
+"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.elementary.io/projects/"
 "appcenter/appcenter/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -261,8 +262,9 @@ msgid "Please review your payment info and try again."
 msgstr "请检查您的支付信息后重试。"
 
 #: ../src/Dialogs/StripeDialog.vala:78
+#, fuzzy
 msgid "Pay $%d for %s"
-msgstr "为 %s 支付 $%d"
+msgstr "为 %2$s 支付 $%1$d"
 
 #: ../src/Dialogs/StripeDialog.vala:82
 msgid ""
