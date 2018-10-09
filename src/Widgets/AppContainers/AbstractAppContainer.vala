@@ -195,7 +195,13 @@ namespace AppCenter {
         }
 
         private void show_stripe_dialog (int amount) {
-            var stripe = new Widgets.StripeDialog (amount, this.package_name.label, this.package.component.get_desktop_id ().replace (".desktop", ""), this.package.get_payments_key());
+            var stripe = new Widgets.StripeDialog (
+                amount,
+                package_name.label,
+                package.component.id.replace (".desktop", ""),
+                package.get_payments_key ()
+            );
+
             stripe.transient_for = (Gtk.Window) get_toplevel ();
 
             stripe.download_requested.connect (() => {

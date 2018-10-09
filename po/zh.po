@@ -1,10 +1,11 @@
 # colindemian <colindemian@outlook.com>, 2018.
+# David Hewitt <davidmhewitt@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-23 15:58-0700\n"
-"PO-Revision-Date: 2018-08-13 00:02+0000\n"
-"Last-Translator: colindemian <colindemian@outlook.com>\n"
+"PO-Revision-Date: 2018-10-09 00:01+0000\n"
+"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Chinese <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/zh/>\n"
 "Language: zh\n"
@@ -341,7 +342,7 @@ msgstr ""
 #: src/Dialogs/StripeDialog.vala:92
 #, fuzzy, c-format
 msgid "Pay $%d for %s"
-msgstr "为%s支付%d美元"
+msgstr "为%2$s支付%1$d美元"
 
 #: src/Dialogs/StripeDialog.vala:96
 msgid ""

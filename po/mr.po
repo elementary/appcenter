@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-23 15:58-0700\n"
-"PO-Revision-Date: 2018-10-07 09:42+0000\n"
-"Last-Translator: उदयराज बाळ <udayrajb@gmail.com>\n"
+"PO-Revision-Date: 2018-10-09 00:01+0000\n"
+"Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/mr/>\n"
 "Language: mr\n"
@@ -221,67 +221,67 @@ msgstr "अज्ञात परिस्थिती"
 
 #: src/Core/Client.vala:105
 msgid "Operating System Updates"
-msgstr ""
+msgstr "ऑपरेटिंग सिस्टिमचे अपडेट्स"
 
 #: src/Core/Client.vala:106
 msgid "Updates to system components"
-msgstr ""
+msgstr "सिस्टिमच्या भागांचे अपडेट्स"
 
 #: src/Core/Client.vala:141
 #, c-format
 msgid "%s (local)"
-msgstr ""
+msgstr "%s(लोकल)"
 
 #: src/Core/Client.vala:466
 msgid "Update Available"
 msgid_plural "Updates Available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "एक"
+msgstr[1] "अन्य"
 
 #: src/Core/Client.vala:467
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u अपडेट आपल्या सिस्टिम साठी उपलब्ध आहे"
+msgstr[1] "%u अपडेट आपल्या सिस्टिम साठी उपलब्ध आहेत"
 
 #: src/Core/Client.vala:495
 #, c-format
 msgid "Version: %s"
-msgstr ""
+msgstr "आवृत्ती: %s"
 
 #: src/Core/Client.vala:504
 msgid "No components with updates"
-msgstr ""
+msgstr "कोणत्याही भागांचे अपडेट्स उपलब्ध नाहीत"
 
 #: src/Core/Client.vala:508
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u अपडेट्स उपलब्ध असलेला भाग"
+msgstr[1] "%u अपडेट्स उपलब्ध असलेले भाग"
 
 #: src/Core/Client.vala:510
 #, c-format
 msgid "%s:"
-msgstr ""
+msgstr "%s:"
 
 #: src/Core/Package.vala:235
 #, c-format
 msgid "%s Developers"
-msgstr ""
+msgstr "%s डेव्हलपर"
 
 #: src/Core/UpdateManager.vala:81
 msgid "Restart Required"
-msgstr ""
+msgstr "पुन्हा सुरु करणे आवश्यक"
 
 #: src/Core/UpdateManager.vala:82
 msgid "Please restart your system to finalize updates"
-msgstr ""
+msgstr "अपडेट्सना अंतिम स्वरूप देण्यासाठी कृपया आपली सिस्टिम पुन्हा सुरु करा"
 
 #: src/Dialogs/ContentWarningDialog.vala:27
 msgid "Content Warning"
-msgstr ""
+msgstr "मजकूर चेतावणी"
 
 #: src/Dialogs/ContentWarningDialog.vala:32
 #, c-format
@@ -298,82 +298,87 @@ msgstr ""
 
 #: src/Dialogs/ContentWarningDialog.vala:35
 msgid "Show content warnings"
-msgstr ""
+msgstr "मजकूर चेतावण्या दाखवा"
 
 #: src/Dialogs/ContentWarningDialog.vala:40
 msgid "Don’t Install"
-msgstr ""
+msgstr "इन्स्टॉल करू नका"
 
 #: src/Dialogs/ContentWarningDialog.vala:41
-#, fuzzy
 msgid "Install Anyway"
-msgstr "स्थापित होत आहे"
+msgstr "तरीही इन्स्टॉल करा"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
-msgstr ""
+msgstr "पुन्हा सुरु करायचे अशी आपली खात्री आहे का?"
 
 #: src/Dialogs/RestartDialog.vala:41
 msgid "This will close all open applications and restart this device."
-msgstr ""
+msgstr "याने सर्व चालू अप्लिकेशन्स बंद होऊन हे डिव्हाईस पुन्हा सुरु होईल."
 
 #: src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
-msgstr ""
+msgstr "पुन्हा सुरु करा"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:171
 msgid "Cancel"
-msgstr ""
+msgstr "रद्द करा"
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
+"ह्या कार्डावरुन प्रक्रिया करतांना काही चूक झाली आहे. कृपया पुन्हा प्रयत्न करा"
+". आपणांस  होणाऱ्या असुविधेबद्दल क्षमा असावी."
 
 #: src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
-msgstr ""
+msgstr "कृपया आपल्या देयक माहितीचे पुनरावलोकन करा आणि पुन्हा प्रयत्न करा."
 
 #: src/Dialogs/StripeDialog.vala:76
 msgid "Payment"
-msgstr ""
+msgstr "देयक"
 
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
 msgid "Pay $%d for %s"
-msgstr ""
+msgstr "%s साठी $ %s देय द्या"
 
 #: src/Dialogs/StripeDialog.vala:96
 msgid ""
 "This is a one time payment. Your email address is only used to send you a "
 "receipt."
 msgstr ""
+"हा एक वेळ पेमेंट आहे. आपला ईमेल केवळ आपल्याला पावती पाठविण्यासाठी वापरला "
+"जातो."
 
 #: src/Dialogs/StripeDialog.vala:106 src/Widgets/SharePopover.vala:35
 msgid "Email"
-msgstr ""
+msgstr "ईमेल"
 
 #: src/Dialogs/StripeDialog.vala:108
 msgid ""
 "Your email address is only used to send a receipt. You will not be "
 "subscribed to any mailing list."
 msgstr ""
+"आपला ईमेल पत्ता केवळ पावती पाठविण्यासाठी वापरला जातो. आपल्याला कोणत्याही "
+"मेलिंग यादीमध्ये सदस्य बनविले जाणार नाही."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127
 msgid "MM / YY"
-msgstr ""
+msgstr "/अनुवादक: क्रम बदलू नका केवळ लिप्यंतरण करा"
 
 #: src/Dialogs/StripeDialog.vala:147
 msgid "CVC"
-msgstr ""
+msgstr "CVC"
 
 #: src/Dialogs/StripeDialog.vala:189
 msgid "Privacy Policy"
-msgstr ""
+msgstr "गोपनीयता धोरण"
 
 #: src/Dialogs/StripeDialog.vala:200 src/Dialogs/StripeDialog.vala:314
 #, c-format
@@ -541,11 +546,11 @@ msgstr ""
 #: src/Views/AppInfoView.vala:336
 #, c-format
 msgid "Check out %s on AppCenter:"
-msgstr ""
+msgstr "अॅप सेंटर वर %s  बघा:"
 
 #: src/Views/AppInfoView.vala:343
 msgid "Share"
-msgstr ""
+msgstr "शेअर करा"
 
 #: src/Views/AppInfoView.vala:639
 msgid "Fund"
