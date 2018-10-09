@@ -220,13 +220,21 @@ namespace AppCenter {
                 package_author.label = package.author_title;
             }
 
+            var scale_factor = inner_image.get_scale_factor ();
+
             if (package.is_plugin) {
-                inner_image.gicon = package.get_plugin_host_package ().get_icon (icon_size, inner_image.get_scale_factor ());
-                var overlay_image = new Gtk.Image.from_gicon (package.get_icon (icon_size, inner_image.get_scale_factor ()), Gtk.IconSize.LARGE_TOOLBAR);
+                inner_image.gicon = package.get_icon (icon_size, scale_factor);
+                var overlay_gicon = package.get_plugin_host_package ().get_icon (icon_size / 2, scale_factor);
+                var badge_icon_size = Gtk.IconSize.LARGE_TOOLBAR;
+                if (icon_size >= 128) {
+                    badge_icon_size = Gtk.IconSize.DIALOG;
+                }
+
+                var overlay_image = new Gtk.Image.from_gicon (overlay_gicon, badge_icon_size);
                 overlay_image.halign = overlay_image.valign = Gtk.Align.END;
                 image.add_overlay (overlay_image);
             } else {
-                inner_image.gicon = package.get_icon (icon_size, inner_image.get_scale_factor ());
+                inner_image.gicon = package.get_icon (icon_size, scale_factor);
             }
 
             package.notify["state"].connect (() => {
