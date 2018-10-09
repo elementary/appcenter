@@ -33,7 +33,7 @@ namespace AppCenter {
         public bool viewing_package { get; private set; default = false; }
 
         public AppStream.Category currently_viewed_category;
-        public MainWindow main_window { get; construct; }
+        public weak MainWindow main_window { get; construct; }
         public Widgets.Banner newest_banner;
         public Gtk.Revealer switcher_revealer;
 
