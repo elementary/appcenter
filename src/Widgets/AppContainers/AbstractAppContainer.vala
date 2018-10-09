@@ -33,7 +33,8 @@ namespace AppCenter {
         protected bool show_uninstall { get; set; default = true; }
         protected bool show_open { get; set; default = true; }
 
-        protected Gtk.Image image;
+        protected Gtk.Overlay image;
+        protected Gtk.Image inner_image;
         protected Gtk.Label package_name;
         protected Gtk.Label package_author;
         protected Gtk.Label package_summary;
@@ -108,13 +109,14 @@ namespace AppCenter {
         protected bool updates_view = false;
 
         construct {
-            image = new Gtk.Image ();
+            image = new Gtk.Overlay ();
+            inner_image = new Gtk.Image ();
+            image.add (inner_image);
 
             settings = Settings.get_default ();
 
             package_author = new Gtk.Label ("");
             package_name = new Gtk.Label ("");
-            image = new Gtk.Image ();
 
             action_button = new Widgets.HumbleButton ();
             action_button.download_requested.connect (() => {
@@ -212,7 +214,14 @@ namespace AppCenter {
                 package_author.label = package.author_title;
             }
 
-            image.gicon = package.get_icon (icon_size, image.get_scale_factor ());
+            if (package.is_plugin) {
+                inner_image.gicon = package.get_plugin_host_package ().get_icon (icon_size, inner_image.get_scale_factor ());
+                var overlay_image = new Gtk.Image.from_gicon (package.get_icon (icon_size, inner_image.get_scale_factor ()), Gtk.IconSize.LARGE_TOOLBAR);
+                overlay_image.halign = overlay_image.valign = Gtk.Align.END;
+                image.add_overlay (overlay_image);
+            } else {
+                inner_image.gicon = package.get_icon (icon_size, inner_image.get_scale_factor ());
+            }
 
             package.notify["state"].connect (() => {
                 Idle.add (() => {
