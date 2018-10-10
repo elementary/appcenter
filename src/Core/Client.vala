@@ -81,7 +81,9 @@ public class AppCenterCore.Client : Object {
 
         try {
             appstream_pool.load ();
-
+        } catch (Error e) {
+            critical (e.message);
+        } finally {
             var comp_validator = ComponentValidator.get_default ();
             appstream_pool.get_components ().foreach ((comp) => {
                 if (!comp_validator.validate (comp)) {
@@ -93,8 +95,6 @@ public class AppCenterCore.Client : Object {
                     package_list[pkg_name] = package;
                 }
             });
-        } catch (Error e) {
-            critical (e.message);
         }
 
         var icon = new AppStream.Icon ();
@@ -736,7 +736,7 @@ public class AppCenterCore.Client : Object {
 
     public AppCenterCore.Package? get_package_for_desktop_id (string desktop_id) {
         foreach (var package in package_list.values) {
-            if (package.component.get_desktop_id () == desktop_id) {
+            if (package.component.id == desktop_id) {
                 return package;
             }
         }
