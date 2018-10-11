@@ -536,7 +536,7 @@ public class AppCenterCore.Package : Object {
     public Package? get_plugin_host_package () {
         var extends = component.get_extends ();
 
-        if (extends.length < 1) {
+        if (extends == null || extends.length < 1) {
             return null;
         }
 
