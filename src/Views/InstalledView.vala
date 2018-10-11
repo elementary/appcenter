@@ -41,6 +41,10 @@ public class AppCenter.Views.InstalledView : View {
 
         var os_updates = Client.get_default ().os_updates;
         app_list_view.add_package (os_updates);
+
+        destroy.connect (() => {
+           app_list_view.clear ();
+        });
     }
 
     public override void return_clicked () {

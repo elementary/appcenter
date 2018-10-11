@@ -1,11 +1,12 @@
 # Rafael Bautista Martínez <iuninefrendor@gmail.com>, 2018.
+# Pablo Solís La Beira <pabsol1977@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-23 15:58-0700\n"
-"PO-Revision-Date: 2018-08-16 15:01+0000\n"
-"Last-Translator: Rafael Bautista Martínez <iuninefrendor@gmail.com>\n"
+"PO-Revision-Date: 2018-10-01 00:08+0000\n"
+"Last-Translator: Pablo Solís La Beira <pabsol1977@gmail.com>\n"
 "Language-Team: Spanish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -281,12 +282,12 @@ msgstr ""
 
 #: src/Dialogs/ContentWarningDialog.vala:27
 msgid "Content Warning"
-msgstr ""
+msgstr "Advertencia sobre el contenido"
 
 #: src/Dialogs/ContentWarningDialog.vala:32
 #, c-format
 msgid "%s Contains Explicit Content"
-msgstr ""
+msgstr "%s contiene contenido explícito"
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 #, c-format
@@ -295,20 +296,21 @@ msgid ""
 "disturbing. In general, elementary does not review or endorse the contents "
 "of this app."
 msgstr ""
+"%s puede contener contenido solo adecuado para adultos o que puede ser "
+"sensible o perturbador. En general, elementary no revisa ni aprueba el "
+"contenido de esta aplicación."
 
 #: src/Dialogs/ContentWarningDialog.vala:35
 msgid "Show content warnings"
-msgstr ""
+msgstr "Mostrar advertencias sobre el contenido"
 
 #: src/Dialogs/ContentWarningDialog.vala:40
-#, fuzzy
 msgid "Don’t Install"
-msgstr "Instalar"
+msgstr "No Instalar"
 
 #: src/Dialogs/ContentWarningDialog.vala:41
-#, fuzzy
 msgid "Install Anyway"
-msgstr "Instalando"
+msgstr "Instalar de todas formas"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -342,7 +344,7 @@ msgstr "Revise la información de su pago e intente otra vez."
 
 #: src/Dialogs/StripeDialog.vala:76
 msgid "Payment"
-msgstr ""
+msgstr "Pago"
 
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
@@ -362,13 +364,12 @@ msgid "Email"
 msgstr "Correo electrónico"
 
 #: src/Dialogs/StripeDialog.vala:108
-#, fuzzy
 msgid ""
 "Your email address is only used to send a receipt. You will not be "
 "subscribed to any mailing list."
 msgstr ""
-"Su dirección de correo electrónico se utiliza para enviarle un recibo. Nunca "
-"se almacena y usted no será suscrito a una lista de correo."
+"La dirección de correo electrónico únicamente se utiliza para enviar un "
+"recibo y no será añadida a ninguna lista de correo."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127
