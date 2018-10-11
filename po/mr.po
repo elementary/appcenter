@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-23 15:58-0700\n"
-"PO-Revision-Date: 2018-10-09 00:01+0000\n"
+"PO-Revision-Date: 2018-10-11 18:22+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/mr/>\n"
@@ -286,7 +286,7 @@ msgstr "मजकूर चेतावणी"
 #: src/Dialogs/ContentWarningDialog.vala:32
 #, c-format
 msgid "%s Contains Explicit Content"
-msgstr ""
+msgstr "%s मध्ये मजकूर स्पष्ट आहे"
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 #, c-format
@@ -295,6 +295,9 @@ msgid ""
 "disturbing. In general, elementary does not review or endorse the contents "
 "of this app."
 msgstr ""
+"% s मध्ये केवळ वयस्कांसाठी उपयुक्त असलेला मजकूर असू शकतो किंवा तो मजकूर "
+"संवेदनशील किंवा त्रासदायक असू शकतो. सर्वसाधारणपणे, एलिमेंटरी या अॅपच्या "
+"समाविष्ट सामग्री किंवा मजकुराचे पुनरावलोकन किंवा समर्थन करीत नाही."
 
 #: src/Dialogs/ContentWarningDialog.vala:35
 msgid "Show content warnings"
@@ -383,109 +386,125 @@ msgstr "गोपनीयता धोरण"
 #: src/Dialogs/StripeDialog.vala:200 src/Dialogs/StripeDialog.vala:314
 #, c-format
 msgid "Pay $%d.00"
-msgstr ""
+msgstr "देय $%d.00 द्या"
 
 #: src/Dialogs/StripeDialog.vala:243
 msgid "Processing"
-msgstr ""
+msgstr "प्रक्रिया करीत आहोत"
 
 #: src/Dialogs/StripeDialog.vala:268
 msgid "There Was a Problem Processing Your Payment"
-msgstr ""
+msgstr "आपल्या देय प्रक्रियेत समस्या आली"
 
 #: src/Dialogs/StripeDialog.vala:306
 msgid "Pay Later"
-msgstr ""
+msgstr "देय नंतर भरा"
 
 #: src/Dialogs/StripeDialog.vala:307
 msgid "Retry"
-msgstr ""
+msgstr "पुन्हा प्रयत्न करा"
 
 #: src/Dialogs/StripeDialog.vala:513 src/Dialogs/StripeDialog.vala:578
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr ""
+"कार्ड नंबर चुकीचा आहे. कृपया योग्य कार्ड नंबर वापरून पुन्हा प्रयत्न करा."
 
 #: src/Dialogs/StripeDialog.vala:515
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"कालबाह्यता महिना अवैध आहे. कृपया योग्य कालबाह्यता तारीख वापरून पुन्हा प्रयत्"
+"न करा."
 
 #: src/Dialogs/StripeDialog.vala:517 src/Dialogs/StripeDialog.vala:575
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"कालबाह्यता वर्ष अवैध आहे. कृपया योग्य कालबाह्यता तारीख वापरून पुन्हा प्रयत्न "
+"करा."
 
 #: src/Dialogs/StripeDialog.vala:520 src/Dialogs/StripeDialog.vala:573
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr ""
+"सीव्हीसी क्रमांक चुकीचा आहे. कृपया योग्य सीव्हीसी वापरून पुन्हा प्रयत्न करा."
 
 #: src/Dialogs/StripeDialog.vala:522 src/Dialogs/StripeDialog.vala:564
 msgid "The card has expired. Please try again with a different card."
-msgstr ""
+msgstr "कार्ड कालबाह्य झाले आहे. कृपया वेगळ्या कार्डासह पुन्हा प्रयत्न करा."
 
 #: src/Dialogs/StripeDialog.vala:542
 msgid "There are too many payment requests at the moment, please retry later."
-msgstr ""
+msgstr "याक्षणी बऱ्याच पेमेंट विनंत्या आहेत, कृपया नंतर पुन्हा प्रयत्न करा."
 
 #: src/Dialogs/StripeDialog.vala:558
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
 msgstr ""
+"हे कार्ड या प्रकारच्या व्यवहारास समर्थन देत नाही. कृपया वेगळ्या कार्डासह "
+"पुन्हा प्रयत्न करा."
 
 #: src/Dialogs/StripeDialog.vala:560
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
 msgstr ""
+"या कार्डाद्वारे हे चलन समर्थित नाही. कृपया वेगळ्या कार्डासह पुन्हा प्रयत्न "
+"करा."
 
 #: src/Dialogs/StripeDialog.vala:562
 msgid "The transaction has already been processed."
-msgstr ""
+msgstr "हा व्यवहार आधीच प्रक्रिया केला गेला आहे."
 
 #: src/Dialogs/StripeDialog.vala:566
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "postal code."
 msgstr ""
+"पिन / पोस्टल कोड चुकीचा आहे. कृपया योग्य पिन / पोस्टल कोड वापरून पुन्हा "
+"प्रयत्न करा."
 
 #: src/Dialogs/StripeDialog.vala:568
 msgid "You don't have enough funds. Please use an alternative payment method."
-msgstr ""
+msgstr "आपल्याकडे पुरेसे पैसे नाहीत. कृपया एक वैकल्पिक देयक पद्धत वापरा."
 
 #: src/Dialogs/StripeDialog.vala:570
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr ""
+msgstr "रक्कम चुकीची आहे. वैध रक्कम वापरून पुन्हा प्रयत्न करा."
 
 #: src/Dialogs/StripeDialog.vala:581
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr ""
+msgstr "पिन क्रमांक चुकीचा आहे. कृपया योग्य पिन वापरून पुन्हा प्रयत्न करा."
 
 #: src/Dialogs/StripeDialog.vala:583
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
 msgstr ""
+"खूप पिन प्रयत्न केले गेले आहेत. कृपया वेगळ्या कार्डासह पुन्हा प्रयत्न करा."
 
 #: src/Dialogs/StripeDialog.vala:603
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
 msgstr ""
+"व्यवहार पूर्ण करण्यास अक्षम. कृपया अधिक माहितीसाठी आपल्या बँकेशी संपर्क साधा."
 
 #: src/Dialogs/StripeDialog.vala:606
 msgid "The balance or credit limit on the card has been reached."
-msgstr ""
+msgstr "कार्डवरील शिल्लक किंवा क्रेडिट मर्यादा गाठली गेली आहे."
 
 #: src/Dialogs/StripeDialog.vala:609
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
+"दिलेले कार्ड एक चाचणी कार्ड आहे. कृपया पुढे जाण्यासाठी एक वास्तविक कार्ड "
+"वापरा."
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
-msgstr ""
+msgstr "अपडेट्स आणण्यात अयशस्वी"
 
 #: src/Dialogs/UpdateFailDialog.vala:26
 msgid ""
@@ -583,7 +602,7 @@ msgstr ""
 
 #: src/Views/Homepage.vala:81
 msgid "Trending"
-msgstr ""
+msgstr "ट्रेन्डिंग"
 
 #: src/Views/Homepage.vala:97
 msgid "Categories"
@@ -592,7 +611,7 @@ msgstr "श्रेणी"
 #: src/Views/Homepage.vala:266 src/Views/Homepage.vala:277
 #, c-format
 msgid "Search %s"
-msgstr ""
+msgstr "%s शोधा"
 
 #. / TRANSLATORS: the name of the Search view
 #: src/Views/SearchView.vala:39
