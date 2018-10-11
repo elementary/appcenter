@@ -1,11 +1,12 @@
 # Jan Marek <janmarek28@gmail.com>, 2018.
+# Daniel Zvir <zvir.daniel@seznam.cz>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-23 15:58-0700\n"
-"PO-Revision-Date: 2018-07-24 00:05+0000\n"
-"Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
+"PO-Revision-Date: 2018-10-03 14:07+0000\n"
+"Last-Translator: Daniel Zvir <zvir.daniel@seznam.cz>\n"
 "Language-Team: Czech <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/cs/>\n"
 "Language: cs\n"
@@ -283,12 +284,12 @@ msgstr "Pro dokončení aktualizací prosím restartujte váš systém"
 
 #: src/Dialogs/ContentWarningDialog.vala:27
 msgid "Content Warning"
-msgstr ""
+msgstr "Varování k obsahu"
 
 #: src/Dialogs/ContentWarningDialog.vala:32
 #, c-format
 msgid "%s Contains Explicit Content"
-msgstr ""
+msgstr "%s Obsahuje explicitní obsah"
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 #, c-format
@@ -297,20 +298,21 @@ msgid ""
 "disturbing. In general, elementary does not review or endorse the contents "
 "of this app."
 msgstr ""
+"%s může obsahovat věci vhodné pouze pro dospělé nebo témata pro některé lidi "
+"citlivé, či jinak rušivé. Obecně, elementary nekontroluje ani neschvaluje "
+"obsah této aplikace."
 
 #: src/Dialogs/ContentWarningDialog.vala:35
 msgid "Show content warnings"
-msgstr ""
+msgstr "Zobrazovat varování o obsahu"
 
 #: src/Dialogs/ContentWarningDialog.vala:40
-#, fuzzy
 msgid "Don’t Install"
-msgstr "Instalovat"
+msgstr "Neinstalovat"
 
 #: src/Dialogs/ContentWarningDialog.vala:41
-#, fuzzy
 msgid "Install Anyway"
-msgstr "Instalace"
+msgstr "Přesto instalovat"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -344,7 +346,7 @@ msgstr "Zkontrolujte prosím vaše platební údaje a zkuste to znovu."
 
 #: src/Dialogs/StripeDialog.vala:76
 msgid "Payment"
-msgstr ""
+msgstr "Platba"
 
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
@@ -362,13 +364,12 @@ msgid "Email"
 msgstr "E-mail"
 
 #: src/Dialogs/StripeDialog.vala:108
-#, fuzzy
 msgid ""
 "Your email address is only used to send a receipt. You will not be "
 "subscribed to any mailing list."
 msgstr ""
-"Vaše emailová adresa se používá pro zaslání účtenky. Nikdy nebude trvale "
-"uložena a nebudete zapsán do seznamu pro příjem pošty."
+"Vaše emailová adresa se používá pro zaslání účtenky. Nebudete zapsán do "
+"žádného seznamu pro příjem pošty."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127

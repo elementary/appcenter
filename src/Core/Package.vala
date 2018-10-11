@@ -597,7 +597,26 @@ public class AppCenterCore.Package : Object {
             return app_info != null;
         }
 
-        string? desktop_id = component.get_desktop_id ();
+        var launchable = component.get_launchable (AppStream.LaunchableKind.DESKTOP_ID);
+        if (launchable != null) {
+            var launchables = launchable.get_entries ();
+            for (int i = 0; i < launchables.length; i++) {
+                app_info = new DesktopAppInfo (launchables[i]);
+                // A bit strange in Vala, but the DesktopAppInfo constructor does indeed return null if the desktop
+                // file isn't found: https://valadoc.org/gio-unix-2.0/GLib.DesktopAppInfo.DesktopAppInfo.html
+                if (app_info != null) {
+                    break;
+                }
+            }
+        }
+
+        if (app_info != null) {
+            app_info_retrieved = true;
+            return true;
+        }
+
+        // Fallback to trying Appstream ID as desktop ID for applications that haven't updated to the newest spec yet
+        string? desktop_id = component.id;
         if (desktop_id != null) {
             app_info = new DesktopAppInfo (desktop_id);
         }
@@ -662,6 +681,16 @@ public class AppCenterCore.Package : Object {
     public AppStream.Release? get_newest_release () {
         var releases = component.get_releases ();
         releases.sort_with_data ((a, b) => {
+            if (a.get_version () == null || b.get_version () == null) {
+                if (a.get_version () != null) {
+                    return -1;
+                } else if (b.get_version () != null) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            }
+
             return b.vercmp (a);
         });
 
