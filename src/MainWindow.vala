@@ -188,7 +188,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         set_titlebar (headerbar);
 
-        homepage = new Homepage (this);
+        homepage = new Homepage ();
         installed_view = new Views.InstalledView ();
         search_view = new Views.SearchView ();
 
@@ -210,6 +210,8 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         stack.add (network_view);
 
         add (stack);
+
+        homepage.page_loaded.connect (() => homepage_loaded ());
     }
 
     public override bool delete_event (Gdk.EventAny event) {
