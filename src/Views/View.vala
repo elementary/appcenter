@@ -49,8 +49,9 @@ public abstract class AppCenter.View : Gtk.Stack {
         app_info_view.show_all ();
         add_named (app_info_view, package.component.id);
         set_visible_child (app_info_view);
+        var cache = AppCenterCore.Client.get_default ().screenshot_cache;
         Timeout.add (transition_duration, () => {
-            app_info_view.load_more_content ();
+            app_info_view.load_more_content (cache);
             return Source.REMOVE;
         });
     }
