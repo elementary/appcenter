@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-15 15:47+0900\n"
+"POT-Creation-Date: 2018-09-23 15:58-0700\n"
 "PO-Revision-Date: 2017-06-16 17:37+0000\n"
 "Last-Translator: Rajeev Kumar <irajeevankumar@gmail.com>\n"
 "Language-Team: Tamil <https://l10n.elementary.io/projects/appcenter/"
@@ -45,9 +45,9 @@ msgstr "% வெற்றிகரமாக நிறுவப்பட்டத
 msgid "There Was An Error Installing %s."
 msgstr "%s நிறுவுவதில்  ஒரு  பிழை"
 
-#: src/MainWindow.vala:149 src/Views/Homepage.vala:253
-#: src/Views/Homepage.vala:262 src/Views/Homepage.vala:267
-#: src/Views/Homepage.vala:278
+#: src/MainWindow.vala:149 src/Views/Homepage.vala:252
+#: src/Views/Homepage.vala:261 src/Views/Homepage.vala:266
+#: src/Views/Homepage.vala:277
 msgid "Home"
 msgstr "முதன்மை பக்கம்"
 
@@ -267,7 +267,7 @@ msgstr[1] ""
 msgid "%s:"
 msgstr ""
 
-#: src/Core/Package.vala:192
+#: src/Core/Package.vala:235
 #, fuzzy, c-format
 msgid "%s Developers"
 msgstr "%s  டெவலப்பர்கள்"
@@ -279,6 +279,36 @@ msgstr "மறுதொடக்கம் தேவை"
 #: src/Core/UpdateManager.vala:82
 msgid "Please restart your system to finalize updates"
 msgstr "புதுப்பிப்புகளை முடிக்க உங்கள் கணினியை மீண்டும் தொடங்கவும்"
+
+#: src/Dialogs/ContentWarningDialog.vala:27
+msgid "Content Warning"
+msgstr ""
+
+#: src/Dialogs/ContentWarningDialog.vala:32
+#, c-format
+msgid "%s Contains Explicit Content"
+msgstr ""
+
+#: src/Dialogs/ContentWarningDialog.vala:33
+#, c-format
+msgid ""
+"%s may contain content only suitable for adults or that may be sensitive or "
+"disturbing. In general, elementary does not review or endorse the contents "
+"of this app."
+msgstr ""
+
+#: src/Dialogs/ContentWarningDialog.vala:35
+msgid "Show content warnings"
+msgstr ""
+
+#: src/Dialogs/ContentWarningDialog.vala:40
+msgid "Don’t Install"
+msgstr ""
+
+#: src/Dialogs/ContentWarningDialog.vala:41
+#, fuzzy
+msgid "Install Anyway"
+msgstr "நிறுவுகிறது"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -292,9 +322,9 @@ msgstr "இது எல்லா திறந்த பயன்பாடுக
 msgid "Restart"
 msgstr "மறுதொடக்கம்"
 
-#: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:182
-#: src/Dialogs/StripeDialog.vala:299
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:147
+#: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
+#: src/Dialogs/StripeDialog.vala:315
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:171
 msgid "Cancel"
 msgstr "ரத்துசெய்"
 
@@ -310,94 +340,99 @@ msgstr ""
 msgid "Please review your payment info and try again."
 msgstr "உங்கள் கட்டணத் தகவலை மதிப்பாய்வு செய்து மீண்டும் முயற்சிக்கவும்."
 
-#: src/Dialogs/StripeDialog.vala:78
+#: src/Dialogs/StripeDialog.vala:76
+msgid "Payment"
+msgstr ""
+
+#: src/Dialogs/StripeDialog.vala:92
 #, c-format
 msgid "Pay $%d for %s"
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:82
+#: src/Dialogs/StripeDialog.vala:96
 msgid ""
 "This is a one time payment. Your email address is only used to send you a "
 "receipt."
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:91 src/Widgets/SharePopover.vala:35
+#: src/Dialogs/StripeDialog.vala:106 src/Widgets/SharePopover.vala:35
 msgid "Email"
 msgstr "மின்னஞ்சல்"
 
-#: src/Dialogs/StripeDialog.vala:93
+#: src/Dialogs/StripeDialog.vala:108
+#, fuzzy
 msgid ""
-"Your email address is used to send a receipt. It is never stored and you "
-"will not be subscribed to a mailing list."
+"Your email address is only used to send a receipt. You will not be "
+"subscribed to any mailing list."
 msgstr ""
 "ரசீது அனுப்ப உங்கள் மின்னஞ்சல் முகவரி பயன்படுத்தப்படுகிறது. இது ஒருபோதும் "
 "சேமிக்கப்படவில்லை மற்றும் நீங்கள் அஞ்சல் பட்டியலில் இணைக்கப்படவில்லை."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
-#: src/Dialogs/StripeDialog.vala:112
+#: src/Dialogs/StripeDialog.vala:127
 msgid "MM / YY"
 msgstr "மாதம் / வருடம்"
 
-#: src/Dialogs/StripeDialog.vala:132
+#: src/Dialogs/StripeDialog.vala:147
 msgid "CVC"
 msgstr "சிவிசி"
 
-#: src/Dialogs/StripeDialog.vala:173
+#: src/Dialogs/StripeDialog.vala:189
 msgid "Privacy Policy"
 msgstr "தனியுரிமை கொள்கை"
 
-#: src/Dialogs/StripeDialog.vala:184 src/Dialogs/StripeDialog.vala:298
+#: src/Dialogs/StripeDialog.vala:200 src/Dialogs/StripeDialog.vala:314
 #, c-format
 msgid "Pay $%d.00"
 msgstr "பணம் செலுத்து $%d.00"
 
-#: src/Dialogs/StripeDialog.vala:227
+#: src/Dialogs/StripeDialog.vala:243
 msgid "Processing"
 msgstr "செயல்முறை நடக்கிறது"
 
-#: src/Dialogs/StripeDialog.vala:252
+#: src/Dialogs/StripeDialog.vala:268
 msgid "There Was a Problem Processing Your Payment"
 msgstr "உங்களுடைய கொடுப்பனவு ஒரு பிரச்சனை"
 
-#: src/Dialogs/StripeDialog.vala:290
+#: src/Dialogs/StripeDialog.vala:306
 msgid "Pay Later"
 msgstr "பின்னர் பணம் கொடுங்கள்"
 
-#: src/Dialogs/StripeDialog.vala:291
+#: src/Dialogs/StripeDialog.vala:307
 msgid "Retry"
 msgstr "மீண்டும் முயற்சி செய்"
 
-#: src/Dialogs/StripeDialog.vala:497 src/Dialogs/StripeDialog.vala:562
+#: src/Dialogs/StripeDialog.vala:513 src/Dialogs/StripeDialog.vala:578
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr "அட்டை எண் தவறானது. சரியான கார்டு எண்ணைப் பயன்படுத்தி மீண்டும் முயற்சிக்கவும்."
 
-#: src/Dialogs/StripeDialog.vala:499
+#: src/Dialogs/StripeDialog.vala:515
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
 msgstr "காலாவதி மாதம் தவறானது. சரியான காலாவதி தேதி பயன்படுத்தி மீண்டும் முயற்சிக்கவும்."
 
-#: src/Dialogs/StripeDialog.vala:501 src/Dialogs/StripeDialog.vala:559
+#: src/Dialogs/StripeDialog.vala:517 src/Dialogs/StripeDialog.vala:575
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
 "காலாவதி ஆண்டு தவறானது. சரியான காலாவதி தேதியைப் பயன்படுத்தி மீண்டும் முயற்சிக்கவும் ."
 
-#: src/Dialogs/StripeDialog.vala:504 src/Dialogs/StripeDialog.vala:557
+#: src/Dialogs/StripeDialog.vala:520 src/Dialogs/StripeDialog.vala:573
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr "CVC எண் தவறானது. சரியான CVC ஐ பயன்படுத்தி மீண்டும் முயற்சிக்கவும்."
 
-#: src/Dialogs/StripeDialog.vala:506 src/Dialogs/StripeDialog.vala:548
+#: src/Dialogs/StripeDialog.vala:522 src/Dialogs/StripeDialog.vala:564
 msgid "The card has expired. Please try again with a different card."
 msgstr "அட்டை காலாவதியானது. வேறு ஒரு கார்டை மீண்டும் முயற்சிக்கவும்."
 
-#: src/Dialogs/StripeDialog.vala:526
+#: src/Dialogs/StripeDialog.vala:542
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr "தற்போது பல பணம் கோரிக்கைகள் உள்ளன, பின்னர் மீண்டும் முயற்சிக்கவும்."
 
-#: src/Dialogs/StripeDialog.vala:542
+#: src/Dialogs/StripeDialog.vala:558
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
@@ -405,17 +440,17 @@ msgstr ""
 "இந்த வகையான பரிவர்த்தனைக்கு இந்த அட்டை ஆதரிக்கவில்லை. வேறு ஒரு கார்டை மீண்டும் "
 "முயற்சிக்கவும்."
 
-#: src/Dialogs/StripeDialog.vala:544
+#: src/Dialogs/StripeDialog.vala:560
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
 msgstr "இந்த அட்டை நாணயத்தை ஆதரிக்கவில்லை. வேறு ஒரு கார்டை மீண்டும் முயற்சிக்கவும்."
 
-#: src/Dialogs/StripeDialog.vala:546
+#: src/Dialogs/StripeDialog.vala:562
 msgid "The transaction has already been processed."
 msgstr "பரிவர்த்தனை ஏற்கனவே செயல்படுத்தப்பட்டது."
 
-#: src/Dialogs/StripeDialog.vala:550
+#: src/Dialogs/StripeDialog.vala:566
 #, fuzzy
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
@@ -424,37 +459,37 @@ msgstr ""
 "ZIP / அஞ்சல் குறியீடு தவறானது. சரியான ZIP / அஞ்சல் குறியீட்டைப் பயன்படுத்தி மீண்டும் "
 "முயற்சிக்கவும்."
 
-#: src/Dialogs/StripeDialog.vala:552
+#: src/Dialogs/StripeDialog.vala:568
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "உங்களிடம் போதுமான நிதி இல்லை. மாற்று கட்டண முறையைப் பயன்படுத்துக."
 
-#: src/Dialogs/StripeDialog.vala:554
+#: src/Dialogs/StripeDialog.vala:570
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "அளவு தவறானது. சரியான அளவு பயன்படுத்தி மீண்டும் முயற்சிக்கவும்."
 
-#: src/Dialogs/StripeDialog.vala:565
+#: src/Dialogs/StripeDialog.vala:581
 #, fuzzy
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "CVC எண் தவறானது. சரியான CVC ஐ பயன்படுத்தி மீண்டும் முயற்சிக்கவும்."
 
-#: src/Dialogs/StripeDialog.vala:567
+#: src/Dialogs/StripeDialog.vala:583
 #, fuzzy
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
 msgstr "பல PIN முயற்சிகள் உள்ளன. வேறு ஒரு கார்டை மீண்டும் முயற்சிக்கவும்."
 
-#: src/Dialogs/StripeDialog.vala:587
+#: src/Dialogs/StripeDialog.vala:603
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
 msgstr ""
 "பரிவர்த்தனை முடிக்க முடியவில்லை. மேலும் தகவலுக்கு உங்கள் வங்கியைத் தொடர்பு கொள்ளவும்."
 
-#: src/Dialogs/StripeDialog.vala:590
+#: src/Dialogs/StripeDialog.vala:606
 msgid "The balance or credit limit on the card has been reached."
 msgstr "அட்டையின் இருப்பு அல்லது கடன் வரம்பு அடைந்துள்ளது."
 
-#: src/Dialogs/StripeDialog.vala:593
+#: src/Dialogs/StripeDialog.vala:609
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "கொடுக்கப்பட்ட அட்டை ஒரு சோதனை அட்டை. தொடர உண்மையான கார்டைப் பயன்படுத்தவும்."
 
@@ -484,53 +519,53 @@ msgstr ""
 msgid "Screenshot Not Available"
 msgstr "ஸ்கிரீன்ஷாட் கிடைக்கவில்லை"
 
-#: src/Views/AppInfoView.vala:130
+#: src/Views/AppInfoView.vala:133
 msgid "Homepage"
 msgstr "முதன்மை-பக்கம்"
 
-#: src/Views/AppInfoView.vala:136
+#: src/Views/AppInfoView.vala:139
 msgid "Suggest Translations"
 msgstr "மொழிபெயர்ப்பு பரிந்துரைக்க"
 
-#: src/Views/AppInfoView.vala:142
+#: src/Views/AppInfoView.vala:145
 msgid "Report a Problem"
 msgstr "பிரச்சனையைப் புகாரளி"
 
-#: src/Views/AppInfoView.vala:148
+#: src/Views/AppInfoView.vala:151
 msgid "Help"
 msgstr "உதவி"
 
-#: src/Views/AppInfoView.vala:175
+#: src/Views/AppInfoView.vala:178
 msgid "What's New:"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:194
+#: src/Views/AppInfoView.vala:197
 msgid "Extensions:"
 msgstr "நீட்சிகள்:"
 
-#: src/Views/AppInfoView.vala:287
+#: src/Views/AppInfoView.vala:291
 #, c-format
 msgid "Other Apps by %s"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:321
+#: src/Views/AppInfoView.vala:325
 msgid "Link copied to clipboard"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:332
+#: src/Views/AppInfoView.vala:336
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:339
+#: src/Views/AppInfoView.vala:343
 msgid "Share"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:621
+#: src/Views/AppInfoView.vala:639
 msgid "Fund"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:643
+#: src/Views/AppInfoView.vala:661
 msgid "Fund the development of this app"
 msgstr ""
 
@@ -563,7 +598,7 @@ msgstr ""
 msgid "Categories"
 msgstr "பிரிவுகள்"
 
-#: src/Views/Homepage.vala:267 src/Views/Homepage.vala:278
+#: src/Views/Homepage.vala:266 src/Views/Homepage.vala:277
 #, c-format
 msgid "Search %s"
 msgstr "தேடுக %s"
@@ -602,48 +637,48 @@ msgstr "ஒலி அமைவு"
 msgid "Development"
 msgstr "மேம்பாடு"
 
-#: src/Widgets/CategoryFlowBox.vala:31
+#: src/Widgets/CategoryFlowBox.vala:40
 msgid "Accessories"
 msgstr "துணைக்கருவிகள்"
 
-#: src/Widgets/CategoryFlowBox.vala:32
+#: src/Widgets/CategoryFlowBox.vala:41
 msgid "Office"
 msgstr "அலுவல்"
 
-#: src/Widgets/CategoryFlowBox.vala:33
+#: src/Widgets/CategoryFlowBox.vala:48
 msgid "System"
 msgstr "அமைப்பு"
 
-#: src/Widgets/CategoryFlowBox.vala:34
+#: src/Widgets/CategoryFlowBox.vala:52
 msgid "Video"
 msgstr "காணொளி"
 
-#: src/Widgets/CategoryFlowBox.vala:35
+#: src/Widgets/CategoryFlowBox.vala:57
 msgid "Graphics"
 msgstr "கிராபிக்ஸ்"
 
-#: src/Widgets/CategoryFlowBox.vala:36
+#: src/Widgets/CategoryFlowBox.vala:66
 msgid "Games"
 msgstr "விளையாட்டுகள்"
 
-#: src/Widgets/CategoryFlowBox.vala:37
+#: src/Widgets/CategoryFlowBox.vala:82
 msgid "Education"
 msgstr "கல்வி"
 
-#: src/Widgets/CategoryFlowBox.vala:38
+#: src/Widgets/CategoryFlowBox.vala:83
 msgid "Internet"
 msgstr "இணையம்"
 
-#: src/Widgets/CategoryFlowBox.vala:39
+#: src/Widgets/CategoryFlowBox.vala:87
 msgid "Science & Engineering"
 msgstr "அறிவியல் & பொறியியல்"
 
-#: src/Widgets/CategoryFlowBox.vala:40
+#: src/Widgets/CategoryFlowBox.vala:106
 msgid "Universal Access"
 msgstr "உலகளாவிய அணுகல்"
 
 #: src/Widgets/HumbleButton.vala:93
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:211
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:250
 msgid "Free"
 msgstr "இலவசம்"
 
@@ -725,15 +760,15 @@ msgstr "இது வரை புதுப்பிக்கப்பட்ட�
 msgid "Drivers"
 msgstr "இயக்கிகள்"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:126
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:150
 msgid "Uninstall"
 msgstr "நீக்குதல்"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:129
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:153
 msgid "Open"
 msgstr "திற"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:235
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:274
 msgid "Update"
 msgstr "புதுப்பிக்கவும்"
 

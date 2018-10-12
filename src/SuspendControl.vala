@@ -23,6 +23,7 @@
 public interface SessionManager : Object {
     public abstract uint32 inhibit (string app_id, uint32 toplevel_xid, string reason, uint32 flags) throws GLib.Error;
     public abstract void uninhibit (uint32 inhibit_cookie) throws GLib.Error;
+    public abstract void reboot () throws GLib.Error;
 }
 
 public class SuspendControl {
@@ -32,6 +33,8 @@ public class SuspendControl {
     uint32 inhibit_cookie = 0;
     bool supported = true;
 
+    private static SuspendControl? sc = null;
+
     public SuspendControl () {
         try {
             sm = Bus.get_proxy_sync (BusType.SESSION, "org.gnome.SessionManager", "/org/gnome/SessionManager");
@@ -39,6 +42,14 @@ public class SuspendControl {
             supported = false;
             critical (e.message);
         }
+    }
+
+    public static unowned SuspendControl get_default () {
+        if (sc == null) {
+            sc = new SuspendControl ();
+        }
+
+        return sc;
     }
 
     public bool inhibit () {
@@ -65,6 +76,15 @@ public class SuspendControl {
         }
 
         return !inhibited;
+    }
+
+    public void reboot () throws GLib.Error {
+        try {
+            sm.reboot ();
+        } catch (GLib.Error e) {
+            critical ("failed to request a reboot from GNOME: %s\n", e.message);
+            throw e;
+        }
     }
 
 }

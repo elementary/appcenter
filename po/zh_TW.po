@@ -1,18 +1,19 @@
+# David Hewitt <davidmhewitt@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-15 15:47+0900\n"
-"PO-Revision-Date: 2018-02-24 11:21+0000\n"
-"Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
+"POT-Creation-Date: 2018-09-23 15:58-0700\n"
+"PO-Revision-Date: 2018-10-09 00:01+0000\n"
+"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://weblate.elementary.io/projects/"
-"appcenter/appcenter/zh_TW/>\n"
+"appcenter/appcenter/zh_Hant/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -44,9 +45,9 @@ msgstr "已成功安裝 ％s"
 msgid "There Was An Error Installing %s."
 msgstr "安裝 %s 時發生錯誤。"
 
-#: src/MainWindow.vala:149 src/Views/Homepage.vala:253
-#: src/Views/Homepage.vala:262 src/Views/Homepage.vala:267
-#: src/Views/Homepage.vala:278
+#: src/MainWindow.vala:149 src/Views/Homepage.vala:252
+#: src/Views/Homepage.vala:261 src/Views/Homepage.vala:266
+#: src/Views/Homepage.vala:277
 msgid "Home"
 msgstr "大廳"
 
@@ -262,7 +263,7 @@ msgstr[0] "%u 個組件需要更新"
 msgid "%s:"
 msgstr "%s："
 
-#: src/Core/Package.vala:192
+#: src/Core/Package.vala:235
 #, fuzzy, c-format
 msgid "%s Developers"
 msgstr "%s 開發者"
@@ -274,6 +275,36 @@ msgstr "需要重新啟動"
 #: src/Core/UpdateManager.vala:82
 msgid "Please restart your system to finalize updates"
 msgstr "請重新啟動您的系統以完成更新"
+
+#: src/Dialogs/ContentWarningDialog.vala:27
+msgid "Content Warning"
+msgstr ""
+
+#: src/Dialogs/ContentWarningDialog.vala:32
+#, c-format
+msgid "%s Contains Explicit Content"
+msgstr ""
+
+#: src/Dialogs/ContentWarningDialog.vala:33
+#, c-format
+msgid ""
+"%s may contain content only suitable for adults or that may be sensitive or "
+"disturbing. In general, elementary does not review or endorse the contents "
+"of this app."
+msgstr ""
+
+#: src/Dialogs/ContentWarningDialog.vala:35
+msgid "Show content warnings"
+msgstr ""
+
+#: src/Dialogs/ContentWarningDialog.vala:40
+msgid "Don’t Install"
+msgstr ""
+
+#: src/Dialogs/ContentWarningDialog.vala:41
+#, fuzzy
+msgid "Install Anyway"
+msgstr "安裝中"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -287,9 +318,9 @@ msgstr "這會使全部的應用程式關閉和使電腦重新啟動。"
 msgid "Restart"
 msgstr "重新啟動"
 
-#: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:182
-#: src/Dialogs/StripeDialog.vala:299
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:147
+#: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
+#: src/Dialogs/StripeDialog.vala:315
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:171
 msgid "Cancel"
 msgstr "取消"
 
@@ -303,140 +334,145 @@ msgstr "處理卡片時出了問題，請等下再試一次。我們為任何不
 msgid "Please review your payment info and try again."
 msgstr "檢查付款資訊後請再試一次。"
 
-#: src/Dialogs/StripeDialog.vala:78
+#: src/Dialogs/StripeDialog.vala:76
+msgid "Payment"
+msgstr ""
+
+#: src/Dialogs/StripeDialog.vala:92
 #, fuzzy, c-format
 msgid "Pay $%d for %s"
-msgstr "為 %s 支付 $%d 元"
+msgstr "為 %2$s 支付 $%1$d 元"
 
-#: src/Dialogs/StripeDialog.vala:82
+#: src/Dialogs/StripeDialog.vala:96
 msgid ""
 "This is a one time payment. Your email address is only used to send you a "
 "receipt."
 msgstr "這是一次性付款。您的電子信箱位址記錄僅用於收據之寄送。"
 
-#: src/Dialogs/StripeDialog.vala:91 src/Widgets/SharePopover.vala:35
+#: src/Dialogs/StripeDialog.vala:106 src/Widgets/SharePopover.vala:35
 msgid "Email"
 msgstr "電子郵件"
 
-#: src/Dialogs/StripeDialog.vala:93
+#: src/Dialogs/StripeDialog.vala:108
+#, fuzzy
 msgid ""
-"Your email address is used to send a receipt. It is never stored and you "
-"will not be subscribed to a mailing list."
+"Your email address is only used to send a receipt. You will not be "
+"subscribed to any mailing list."
 msgstr "您的電子郵件只用與送收據，我們不會存下來。"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
-#: src/Dialogs/StripeDialog.vala:112
+#: src/Dialogs/StripeDialog.vala:127
 msgid "MM / YY"
 msgstr "月／年"
 
-#: src/Dialogs/StripeDialog.vala:132
+#: src/Dialogs/StripeDialog.vala:147
 msgid "CVC"
 msgstr "CVC"
 
-#: src/Dialogs/StripeDialog.vala:173
+#: src/Dialogs/StripeDialog.vala:189
 msgid "Privacy Policy"
 msgstr "隱私權政策"
 
-#: src/Dialogs/StripeDialog.vala:184 src/Dialogs/StripeDialog.vala:298
+#: src/Dialogs/StripeDialog.vala:200 src/Dialogs/StripeDialog.vala:314
 #, c-format
 msgid "Pay $%d.00"
 msgstr "支付 $%d.00"
 
-#: src/Dialogs/StripeDialog.vala:227
+#: src/Dialogs/StripeDialog.vala:243
 msgid "Processing"
 msgstr "處理中"
 
-#: src/Dialogs/StripeDialog.vala:252
+#: src/Dialogs/StripeDialog.vala:268
 msgid "There Was a Problem Processing Your Payment"
 msgstr "處理您的支付時遭遇問題"
 
-#: src/Dialogs/StripeDialog.vala:290
+#: src/Dialogs/StripeDialog.vala:306
 msgid "Pay Later"
 msgstr "稍後支付"
 
-#: src/Dialogs/StripeDialog.vala:291
+#: src/Dialogs/StripeDialog.vala:307
 msgid "Retry"
 msgstr "重試"
 
-#: src/Dialogs/StripeDialog.vala:497 src/Dialogs/StripeDialog.vala:562
+#: src/Dialogs/StripeDialog.vala:513 src/Dialogs/StripeDialog.vala:578
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
 msgstr "卡號不正確。請使用正確卡號重試一次。"
 
-#: src/Dialogs/StripeDialog.vala:499
+#: src/Dialogs/StripeDialog.vala:515
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
 msgstr "過期月份無效。請使用正確的過期資訊重試。"
 
-#: src/Dialogs/StripeDialog.vala:501 src/Dialogs/StripeDialog.vala:559
+#: src/Dialogs/StripeDialog.vala:517 src/Dialogs/StripeDialog.vala:575
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
 msgstr "過期年份無效。請使用正確的過期資訊重試。"
 
-#: src/Dialogs/StripeDialog.vala:504 src/Dialogs/StripeDialog.vala:557
+#: src/Dialogs/StripeDialog.vala:520 src/Dialogs/StripeDialog.vala:573
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr "CVC 碼不正確。請使用正確的 CVC 碼重試。"
 
-#: src/Dialogs/StripeDialog.vala:506 src/Dialogs/StripeDialog.vala:548
+#: src/Dialogs/StripeDialog.vala:522 src/Dialogs/StripeDialog.vala:564
 msgid "The card has expired. Please try again with a different card."
 msgstr "卡片已過期。請使用其他卡片重試。"
 
-#: src/Dialogs/StripeDialog.vala:526
+#: src/Dialogs/StripeDialog.vala:542
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr "此時有太多支付請求，請稍後重試。"
 
-#: src/Dialogs/StripeDialog.vala:542
+#: src/Dialogs/StripeDialog.vala:558
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
 msgstr "這張卡片不支援此類交易。請使用其他卡片重試。"
 
-#: src/Dialogs/StripeDialog.vala:544
+#: src/Dialogs/StripeDialog.vala:560
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
 msgstr "此卡片尚未支援該貨幣。請使用其他卡片重試。"
 
-#: src/Dialogs/StripeDialog.vala:546
+#: src/Dialogs/StripeDialog.vala:562
 msgid "The transaction has already been processed."
 msgstr "交易已經處理。"
 
-#: src/Dialogs/StripeDialog.vala:550
+#: src/Dialogs/StripeDialog.vala:566
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "postal code."
 msgstr "郵遞區號不正確。請使用正確的郵遞區號重試。"
 
-#: src/Dialogs/StripeDialog.vala:552
+#: src/Dialogs/StripeDialog.vala:568
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "您的餘額不足。請使用其他支付方式。"
 
-#: src/Dialogs/StripeDialog.vala:554
+#: src/Dialogs/StripeDialog.vala:570
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "金額不正確。請使用有效的金額重試。"
 
-#: src/Dialogs/StripeDialog.vala:565
+#: src/Dialogs/StripeDialog.vala:581
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "PIN 碼不正確。請使用正確的 PIN 碼重試。"
 
-#: src/Dialogs/StripeDialog.vala:567
+#: src/Dialogs/StripeDialog.vala:583
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
 msgstr "已經嘗試太多次 PIN 碼。請使用其他卡片重試。"
 
-#: src/Dialogs/StripeDialog.vala:587
+#: src/Dialogs/StripeDialog.vala:603
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
 msgstr "無法完成交易。請聯絡您的銀行瞭解更多資訊。"
 
-#: src/Dialogs/StripeDialog.vala:590
+#: src/Dialogs/StripeDialog.vala:606
 msgid "The balance or credit limit on the card has been reached."
 msgstr "已達卡片之餘額或信用額度。"
 
-#: src/Dialogs/StripeDialog.vala:593
+#: src/Dialogs/StripeDialog.vala:609
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "給予的卡片是張測試卡。請使用真實卡片繼續。"
 
@@ -466,53 +502,53 @@ msgstr "重試"
 msgid "Screenshot Not Available"
 msgstr "沒有畫面快照"
 
-#: src/Views/AppInfoView.vala:130
+#: src/Views/AppInfoView.vala:133
 msgid "Homepage"
 msgstr "大廳首頁"
 
-#: src/Views/AppInfoView.vala:136
+#: src/Views/AppInfoView.vala:139
 msgid "Suggest Translations"
 msgstr "翻譯建議"
 
-#: src/Views/AppInfoView.vala:142
+#: src/Views/AppInfoView.vala:145
 msgid "Report a Problem"
 msgstr "問題回報"
 
-#: src/Views/AppInfoView.vala:148
+#: src/Views/AppInfoView.vala:151
 msgid "Help"
 msgstr "幫助"
 
-#: src/Views/AppInfoView.vala:175
+#: src/Views/AppInfoView.vala:178
 msgid "What's New:"
 msgstr "最近更新："
 
-#: src/Views/AppInfoView.vala:194
+#: src/Views/AppInfoView.vala:197
 msgid "Extensions:"
 msgstr "擴充套件："
 
-#: src/Views/AppInfoView.vala:287
+#: src/Views/AppInfoView.vala:291
 #, c-format
 msgid "Other Apps by %s"
 msgstr "其他 %s 開發的程式"
 
-#: src/Views/AppInfoView.vala:321
+#: src/Views/AppInfoView.vala:325
 msgid "Link copied to clipboard"
 msgstr "連結已複製到剪貼簿"
 
-#: src/Views/AppInfoView.vala:332
+#: src/Views/AppInfoView.vala:336
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "在 AppCenter 查看 %s："
 
-#: src/Views/AppInfoView.vala:339
+#: src/Views/AppInfoView.vala:343
 msgid "Share"
 msgstr "分享"
 
-#: src/Views/AppInfoView.vala:621
+#: src/Views/AppInfoView.vala:639
 msgid "Fund"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:643
+#: src/Views/AppInfoView.vala:661
 msgid "Fund the development of this app"
 msgstr ""
 
@@ -545,7 +581,7 @@ msgstr "熱門"
 msgid "Categories"
 msgstr "類別"
 
-#: src/Views/Homepage.vala:267 src/Views/Homepage.vala:278
+#: src/Views/Homepage.vala:266 src/Views/Homepage.vala:277
 #, c-format
 msgid "Search %s"
 msgstr "搜尋 %s"
@@ -584,48 +620,48 @@ msgstr "音訊"
 msgid "Development"
 msgstr "開發"
 
-#: src/Widgets/CategoryFlowBox.vala:31
+#: src/Widgets/CategoryFlowBox.vala:40
 msgid "Accessories"
 msgstr "附屬應用"
 
-#: src/Widgets/CategoryFlowBox.vala:32
+#: src/Widgets/CategoryFlowBox.vala:41
 msgid "Office"
 msgstr "辦公"
 
-#: src/Widgets/CategoryFlowBox.vala:33
+#: src/Widgets/CategoryFlowBox.vala:48
 msgid "System"
 msgstr "系統"
 
-#: src/Widgets/CategoryFlowBox.vala:34
+#: src/Widgets/CategoryFlowBox.vala:52
 msgid "Video"
 msgstr "視訊"
 
-#: src/Widgets/CategoryFlowBox.vala:35
+#: src/Widgets/CategoryFlowBox.vala:57
 msgid "Graphics"
 msgstr "美工繪圖"
 
-#: src/Widgets/CategoryFlowBox.vala:36
+#: src/Widgets/CategoryFlowBox.vala:66
 msgid "Games"
 msgstr "遊戲"
 
-#: src/Widgets/CategoryFlowBox.vala:37
+#: src/Widgets/CategoryFlowBox.vala:82
 msgid "Education"
 msgstr "教育"
 
-#: src/Widgets/CategoryFlowBox.vala:38
+#: src/Widgets/CategoryFlowBox.vala:83
 msgid "Internet"
 msgstr "網際網路"
 
-#: src/Widgets/CategoryFlowBox.vala:39
+#: src/Widgets/CategoryFlowBox.vala:87
 msgid "Science & Engineering"
 msgstr "科學與工程"
 
-#: src/Widgets/CategoryFlowBox.vala:40
+#: src/Widgets/CategoryFlowBox.vala:106
 msgid "Universal Access"
 msgstr "無障礙功能"
 
 #: src/Widgets/HumbleButton.vala:93
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:211
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:250
 msgid "Free"
 msgstr "免費"
 
@@ -706,15 +742,15 @@ msgstr "最新狀態"
 msgid "Drivers"
 msgstr "驅動程式"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:126
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:150
 msgid "Uninstall"
 msgstr "解除安裝"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:129
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:153
 msgid "Open"
 msgstr "開啟"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:235
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:274
 msgid "Update"
 msgstr "更新"
 

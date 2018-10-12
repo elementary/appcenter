@@ -45,7 +45,7 @@ namespace AppCenter.Views {
         construct {
             image.margin_top = 12;
             image.margin_start = 6;
-            image.pixel_size = 128;
+            inner_image.pixel_size = 128;
 
             action_button.suggested_action = true;
 
@@ -380,12 +380,16 @@ namespace AppCenter.Views {
 #endif
             reload_css ();
             set_up_package (128);
-            parse_description (package.get_description ());
+            package.get_description.begin ((obj, res) => {
+                parse_description (package.get_description.end (res));
+            });
 
             if (package.is_os_updates) {
                 package.notify["state"].connect (() => {
                     Idle.add (() => {
-                        parse_description (package.get_description ());
+                        package.get_description.begin ((obj, res) => {
+                            parse_description (package.get_description.end (res));
+                        });
                         return false;
                     });
                 });
@@ -420,34 +424,48 @@ namespace AppCenter.Views {
                 return;
             }
 
-            var client = AppCenterCore.Client.get_default ();
-            var deps = yield client.get_needed_deps_for_package (package, app_download_size_cancellable);
-            string[] package_ids = {};
-
-            foreach (var package in deps) {
-                package_ids += package.package_id;
-            }
-
-            package_ids += null;
+            SourceFunc callback = get_app_download_size.callback;
             uint64 size = 0;
 
-            if (package_ids.length > 1) {
-                var pk_client = AppCenterCore.Client.get_pk_client ();
-                try {
-                    var details = yield pk_client.get_details_async (package_ids, app_download_size_cancellable, (p, t) => {});
-                    details.get_details_array ().foreach ((details) => {
-                        size += details.size;
-                    });
-                } catch (Error e) {
-                    warning ("Error fetching details for dependencies, download size may be inaccurate: %s", e.message);
+            // This thread will set the value of `size` in the background.
+            ThreadFunc<bool> run = () => {
+                var client = AppCenterCore.Client.get_default ();
+                var deps = new Gee.ArrayList<Pk.Package> ();
+                client.get_needed_deps_for_package.begin (package, app_download_size_cancellable, (obj, res) => {
+                    deps = client.get_needed_deps_for_package.end (res);
+                });
+
+                string[] package_ids = {};
+
+                foreach (var package in deps) {
+                    package_ids += package.package_id;
                 }
-            }
 
-            var pk_package = package.find_package ();
-            if (pk_package != null) {
-                size += pk_package.size;
-            }
+                package_ids += null;
 
+                if (package_ids.length > 1) {
+                    var pk_client = AppCenterCore.Client.get_pk_client ();
+                    try {
+                        var details = pk_client.get_details (package_ids, app_download_size_cancellable, (p, t) => {});
+                        details.get_details_array ().foreach ((details) => {
+                            size += details.size;
+                        });
+                    } catch (Error e) {
+                        warning ("Error fetching details for dependencies, download size may be inaccurate: %s", e.message);
+                    }
+                }
+
+                var pk_package = package.find_package ();
+                if (pk_package != null) {
+                    size += pk_package.size;
+                }
+
+                Idle.add ((owned)callback);
+                return true;
+            };
+            new Thread<bool> ("download size", run);
+
+            yield;
             app_download_size_label.label = GLib.format_size (size);
             app_download_size_label.visible = true;
         }
@@ -486,7 +504,12 @@ namespace AppCenter.Views {
             }
         }
 
-        public void load_more_content () {
+        public void load_more_content (AppCenterCore.ScreenshotCache? cache) {
+            if (cache == null) {
+                warning ("screenshots cannot be loaded, because the cache could not be created.\n");
+                return;
+            }
+
             new Thread<void*> ("content-loading", () => {
                 app_version.label = package.get_version ();
                 get_app_download_size.begin ();
@@ -520,8 +543,35 @@ namespace AppCenter.Views {
                     });
                 });
 
-                foreach (var url in urls) {
-                    load_screenshot (url);
+                string?[] screenshot_files = new string?[urls.length ()];
+                int[] results = new int[urls.length ()];
+                int completed = 0;
+
+                // Fetch each screenshot in parallel.
+                for (int i = 0; i < urls.length (); i++) {
+                    string url = urls.nth_data (i);
+                    string? file = null;
+                    int index = i;
+
+                    cache.fetch.begin (url, (obj, res) => {
+                        results[index] = cache.fetch.end (res, out file);
+                        screenshot_files[index] = file;
+                        completed++;
+                    });
+                }
+
+                cache.maintain ();
+
+                // TODO: dynamically load screenshots as they become available.
+                while (urls.length () != completed) {
+                    Thread.usleep (100000);
+                }
+
+                // Load screenshots that were successfully obtained.
+                for (int i = 0; i < urls.length (); i++) {
+                    if (0 == results[i]) {
+                        load_screenshot (screenshot_files[i]);
+                    }
                 }
 
                 Idle.add (() => {
@@ -540,37 +590,10 @@ namespace AppCenter.Views {
         }
 
         // We need to first download the screenshot locally so that it doesn't freeze the interface.
-        private void load_screenshot (string url) {
-            var ret = GLib.DirUtils.create_with_parents (GLib.Environment.get_tmp_dir () + Path.DIR_SEPARATOR_S + ".appcenter", 0755);
-            if (ret == -1) {
-                critical ("Error creating the temporary folder: GFileError #%d", GLib.FileUtils.error_from_errno (GLib.errno));
-            }
-
-            string path = Path.build_path (Path.DIR_SEPARATOR_S, GLib.Environment.get_tmp_dir (), ".appcenter", "XXXXXX");
-            File fileimage;
-            var fd = GLib.FileUtils.mkstemp (path);
-            if (fd != -1) {
-                var source = File.new_for_uri (url);
-                fileimage = File.new_for_path (path);
-                try {
-                    source.copy (fileimage, GLib.FileCopyFlags.OVERWRITE);
-                } catch (Error e) {
-                    debug (e.message);
-                    return;
-                }
-
-                GLib.FileUtils.close (fd);
-            } else {
-                critical ("Error create the temporary file: GFileError #%d", GLib.FileUtils.error_from_errno (GLib.errno));
-                fileimage = File.new_for_uri (url);
-                if (fileimage.query_exists () == false) {
-                    return;
-                }
-            }
-
+        private void load_screenshot (string path) {
             var scale_factor = get_scale_factor ();
             try {
-                var pixbuf = new Gdk.Pixbuf.from_file_at_scale (fileimage.get_path (), 800 * scale_factor, 600 * scale_factor, true);
+                var pixbuf = new Gdk.Pixbuf.from_file_at_scale (path, 800 * scale_factor, 600 * scale_factor, true);
                 var image = new Gtk.Image ();
                 image.width_request = 800;
                 image.height_request = 500;
@@ -655,7 +678,7 @@ namespace AppCenter.Views {
                 selection.payment_requested.connect ((amount) => {
                     var stripe = new Widgets.StripeDialog (amount,
                                                            package.get_name (),
-                                                           package.component.get_desktop_id ().replace (".desktop", ""),
+                                                           package.component.id.replace (".desktop", ""),
                                                            package.get_payments_key ()
                                                           );
 

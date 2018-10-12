@@ -30,15 +30,16 @@ namespace AppCenter {
         private Gtk.ScrolledWindow category_scrolled;
         private string current_category;
 
+        public signal void page_loaded ();
+
         public bool viewing_package { get; private set; default = false; }
 
         public AppStream.Category currently_viewed_category;
-        public MainWindow main_window { get; construct; }
         public Widgets.Banner newest_banner;
         public Gtk.Revealer switcher_revealer;
 
-        public Homepage (MainWindow main_window) {
-            Object (main_window: main_window);
+        public Homepage () {
+            
         }
 
         construct {
@@ -131,8 +132,7 @@ namespace AppCenter {
                             break;
                         }
 
-                        var candidate = package + ".desktop";
-                        var candidate_package = AppCenterCore.Client.get_default ().get_package_for_component_id (candidate);
+                        var candidate_package = AppCenterCore.Client.get_default ().get_package_for_component_id (package);
 
                         if (candidate_package != null) {
                             candidate_package.update_state ();
@@ -150,7 +150,7 @@ namespace AppCenter {
                         newest_banner.go_to_first ();
                         switcher.show_all ();
                         switcher_revealer.set_reveal_child (true);
-                        main_window.homepage_loaded ();
+                        page_loaded ();
                         return false;
                     });
                     return null;
@@ -167,8 +167,7 @@ namespace AppCenter {
                             break;
                         }
 
-                        var candidate = package + ".desktop";
-                        var candidate_package = AppCenterCore.Client.get_default ().get_package_for_component_id (candidate);
+                        var candidate_package = AppCenterCore.Client.get_default ().get_package_for_component_id (package);
 
                         if (candidate_package != null) {
                             candidate_package.update_state ();
@@ -201,8 +200,7 @@ namespace AppCenter {
                             break;
                         }
 
-                        var candidate = package + ".desktop";
-                        var candidate_package = AppCenterCore.Client.get_default ().get_package_for_component_id (candidate);
+                        var candidate_package = AppCenterCore.Client.get_default ().get_package_for_component_id (package);
 
                         if (candidate_package != null) {
                             candidate_package.update_state ();
