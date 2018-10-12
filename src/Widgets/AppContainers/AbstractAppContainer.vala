@@ -47,7 +47,6 @@ namespace AppCenter {
         protected Gtk.Grid progress_grid;
         protected Gtk.ProgressBar progress_bar;
         protected Gtk.Button cancel_button;
-        protected Gtk.SizeGroup action_button_group;
         protected Gtk.Stack action_stack;
 
         private Settings settings;
@@ -179,12 +178,6 @@ namespace AppCenter {
             progress_grid.column_spacing = 12;
             progress_grid.attach (progress_bar, 0, 0, 1, 1);
             progress_grid.attach (cancel_button, 1, 0, 1, 1);
-
-            action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
-            action_button_group.add_widget (action_button);
-            action_button_group.add_widget (uninstall_button);
-            action_button_group.add_widget (cancel_button);
-            action_button_group.add_widget (open_button);
 
             action_stack = new Gtk.Stack ();
             action_stack.hexpand = true;
