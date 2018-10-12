@@ -67,8 +67,8 @@ namespace AppCenter.Widgets {
             confirm.clicked.connect (() => {
                 try {
                     system_interface.reboot (false);
-                } catch (IOError e) {
-                    stderr.printf ("%s\n", e.message);
+                } catch (Error e) {
+                    critical ("Failed to reboot: %s", e.message);
                 }
 
                 destroy ();

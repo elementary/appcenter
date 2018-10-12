@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-27 08:32-0700\n"
-"PO-Revision-Date: 2018-08-03 00:05+0000\n"
+"PO-Revision-Date: 2018-10-08 06:22+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/appcenter/"
 "extra/ja/>\n"
@@ -22,7 +22,7 @@ msgstr "AppCenter"
 #: data/io.elementary.appcenter.appdata.xml.in:9
 #: data/io.elementary.appcenter.desktop.in.in:4
 msgid "Browse and manage apps"
-msgstr "アプリケーションを表示し管理します"
+msgstr "アプリを検索したり管理したりします"
 
 #: data/io.elementary.appcenter.appdata.xml.in:11
 msgid ""
@@ -30,10 +30,8 @@ msgid ""
 "search and discover new apps. AppCenter is also used for updating your "
 "system to the latest and greatest version for new features and fixes."
 msgstr ""
-"独立会社やオープンソース開発者のためのアプリストアです。カテゴリー別で閲覧し"
-"たり検索したりして、新しいアプリを見つけてください。 AppCenter は新機能や修正"
-"のためにシステムを最新で最高のバージョンへアップデートするときにも使われま"
-"す。"
+"独立会社やオープンソース開発者のためのアプリストアです。カテゴリー別で閲覧したり検索したりして、新しいアプリを見つけましょう。AppCenter "
+"は新機能や修正のためにシステムを最新で最高のバージョンへアップデートするときにも使われます。"
 
 #: data/io.elementary.appcenter.appdata.xml.in:191
 msgid "elementary LLC."
@@ -41,11 +39,11 @@ msgstr "elementary LLC."
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
-msgstr ""
+msgstr "@APP_NAME@"
 
 #: data/io.elementary.appcenter.desktop.in.in:6
 msgid "@DESKTOP_ICON@"
-msgstr ""
+msgstr "@DESKTOP_ICON@"
 
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"

@@ -33,7 +33,8 @@ namespace AppCenter {
         protected bool show_uninstall { get; set; default = true; }
         protected bool show_open { get; set; default = true; }
 
-        protected Gtk.Image image;
+        protected Gtk.Overlay image;
+        protected Gtk.Image inner_image;
         protected Gtk.Label package_name;
         protected Gtk.Label package_author;
         protected Gtk.Label package_summary;
@@ -108,13 +109,14 @@ namespace AppCenter {
         protected bool updates_view = false;
 
         construct {
-            image = new Gtk.Image ();
+            image = new Gtk.Overlay ();
+            inner_image = new Gtk.Image ();
+            image.add (inner_image);
 
             settings = Settings.get_default ();
 
             package_author = new Gtk.Label ("");
             package_name = new Gtk.Label ("");
-            image = new Gtk.Image ();
 
             action_button = new Widgets.HumbleButton ();
             action_button.download_requested.connect (() => {
@@ -193,7 +195,13 @@ namespace AppCenter {
         }
 
         private void show_stripe_dialog (int amount) {
-            var stripe = new Widgets.StripeDialog (amount, this.package_name.label, this.package.component.get_desktop_id ().replace (".desktop", ""), this.package.get_payments_key());
+            var stripe = new Widgets.StripeDialog (
+                amount,
+                package_name.label,
+                package.component.id.replace (".desktop", ""),
+                package.get_payments_key ()
+            );
+
             stripe.transient_for = (Gtk.Window) get_toplevel ();
 
             stripe.download_requested.connect (() => {
@@ -212,7 +220,23 @@ namespace AppCenter {
                 package_author.label = package.author_title;
             }
 
-            image.gicon = package.get_icon (icon_size, image.get_scale_factor ());
+            var scale_factor = inner_image.get_scale_factor ();
+
+            var plugin_host_package = package.get_plugin_host_package ();
+            if (package.is_plugin && plugin_host_package != null) {
+                inner_image.gicon = package.get_icon (icon_size, scale_factor);
+                var overlay_gicon = plugin_host_package.get_icon (icon_size / 2, scale_factor);
+                var badge_icon_size = Gtk.IconSize.LARGE_TOOLBAR;
+                if (icon_size >= 128) {
+                    badge_icon_size = Gtk.IconSize.DIALOG;
+                }
+
+                var overlay_image = new Gtk.Image.from_gicon (overlay_gicon, badge_icon_size);
+                overlay_image.halign = overlay_image.valign = Gtk.Align.END;
+                image.add_overlay (overlay_image);
+            } else {
+                inner_image.gicon = package.get_icon (icon_size, scale_factor);
+            }
 
             package.notify["state"].connect (() => {
                 Idle.add (() => {
