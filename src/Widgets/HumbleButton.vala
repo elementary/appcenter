@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2016-2017 elementary LLC (https://elementary.io)
+* Copyright (c) 2016–2018 elementary, Inc. (https://elementary.io)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public
@@ -76,6 +76,15 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
 
             arrow_button.visible = value;
             arrow_button.no_show_all = !value;
+#if PAYMENTS
+            // Nothing special, show everything as normal
+#else
+            // If it's paid, disable it and add a tooltip explaining why
+            if (value) {
+                sensitive = false;
+                tooltip_text = _("Requires payments, which are not enabled");
+            }
+#endif
         }
     }
 
@@ -90,8 +99,14 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
     }
 
     construct {
-        amount_button = new Gtk.Button.with_label (_("Free"));
+        amount_button = new Gtk.Button ();
         amount_button.hexpand = true;
+
+#if PAYMENTS
+        amount_button.label = _("Free");
+#else
+        amount_button.label = _("Install");
+#endif
 
         arrow_button = new Gtk.ToggleButton ();
         arrow_button.image = new Gtk.Image.from_icon_name ("pan-down-symbolic", Gtk.IconSize.MENU);
@@ -131,3 +146,4 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
         }
     }
 }
+
