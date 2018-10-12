@@ -489,7 +489,12 @@ namespace AppCenter.Views {
             }
         }
 
-        public void load_more_content () {
+        public void load_more_content (AppCenterCore.ScreenshotCache? cache) {
+            if (cache == null) {
+                warning ("screenshots cannot be loaded, because the cache could not be created.\n");
+                return;
+            }
+
             new Thread<void*> ("content-loading", () => {
                 app_version.label = package.get_version ();
                 get_app_download_size.begin ();
@@ -523,8 +528,35 @@ namespace AppCenter.Views {
                     });
                 });
 
-                foreach (var url in urls) {
-                    load_screenshot (url);
+                string?[] screenshot_files = new string?[urls.length ()];
+                int[] results = new int[urls.length ()];
+                int completed = 0;
+
+                // Fetch each screenshot in parallel.
+                for (int i = 0; i < urls.length (); i++) {
+                    string url = urls.nth_data (i);
+                    string? file = null;
+                    int index = i;
+
+                    cache.fetch.begin (url, (obj, res) => {
+                        results[index] = cache.fetch.end (res, out file);
+                        screenshot_files[index] = file;
+                        completed++;
+                    });
+                }
+
+                cache.maintain ();
+
+                // TODO: dynamically load screenshots as they become available.
+                while (urls.length () != completed) {
+                    Thread.usleep (100000);
+                }
+
+                // Load screenshots that were successfully obtained.
+                for (int i = 0; i < urls.length (); i++) {
+                    if (0 == results[i]) {
+                        load_screenshot (screenshot_files[i]);
+                    }
                 }
 
                 Idle.add (() => {
@@ -543,37 +575,10 @@ namespace AppCenter.Views {
         }
 
         // We need to first download the screenshot locally so that it doesn't freeze the interface.
-        private void load_screenshot (string url) {
-            var ret = GLib.DirUtils.create_with_parents (GLib.Environment.get_tmp_dir () + Path.DIR_SEPARATOR_S + ".appcenter", 0755);
-            if (ret == -1) {
-                critical ("Error creating the temporary folder: GFileError #%d", GLib.FileUtils.error_from_errno (GLib.errno));
-            }
-
-            string path = Path.build_path (Path.DIR_SEPARATOR_S, GLib.Environment.get_tmp_dir (), ".appcenter", "XXXXXX");
-            File fileimage;
-            var fd = GLib.FileUtils.mkstemp (path);
-            if (fd != -1) {
-                var source = File.new_for_uri (url);
-                fileimage = File.new_for_path (path);
-                try {
-                    source.copy (fileimage, GLib.FileCopyFlags.OVERWRITE);
-                } catch (Error e) {
-                    debug (e.message);
-                    return;
-                }
-
-                GLib.FileUtils.close (fd);
-            } else {
-                critical ("Error create the temporary file: GFileError #%d", GLib.FileUtils.error_from_errno (GLib.errno));
-                fileimage = File.new_for_uri (url);
-                if (fileimage.query_exists () == false) {
-                    return;
-                }
-            }
-
+        private void load_screenshot (string path) {
             var scale_factor = get_scale_factor ();
             try {
-                var pixbuf = new Gdk.Pixbuf.from_file_at_scale (fileimage.get_path (), 800 * scale_factor, 600 * scale_factor, true);
+                var pixbuf = new Gdk.Pixbuf.from_file_at_scale (path, 800 * scale_factor, 600 * scale_factor, true);
                 var image = new Gtk.Image ();
                 image.width_request = 800;
                 image.height_request = 500;

@@ -40,6 +40,7 @@ public class AppCenterCore.Client : Object {
 
     public bool updating_cache { public get; private set; default = false; }
 
+    public AppCenterCore.ScreenshotCache? screenshot_cache { get; construct; }
     public AppCenterCore.Package os_updates { public get; private set; }
     public Gee.TreeSet<AppCenterCore.Package> driver_list { get; construct; }
 
@@ -60,7 +61,7 @@ public class AppCenterCore.Client : Object {
     private SuspendControl sc;
 
     private Client () {
-
+        Object (screenshot_cache: AppCenterCore.ScreenshotCache.new_cache ());
     }
 
     static construct {
