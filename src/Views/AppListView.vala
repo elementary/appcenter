@@ -89,6 +89,10 @@ namespace AppCenter.Views {
             }
 #endif
 
+            if (p1.is_plugin != p2.is_plugin) {
+                return p1.is_plugin ? 1 : -1;
+            }
+
             return p1.get_name ().collate (p2.get_name ());
         }
 
@@ -96,9 +100,14 @@ namespace AppCenter.Views {
         [CCode (instance_pos = -1)]
         protected override int package_row_compare (Widgets.AppListRow row1, Widgets.AppListRow row2) {
             bool p1_is_elementary_native = row1.get_package ().is_native;
+            bool p1_is_plugin = row1.get_package ().is_plugin;
 
             if (p1_is_elementary_native != row2.get_package ().is_native) {
                 return p1_is_elementary_native ? -1 : 1;
+            }
+
+            if (p1_is_plugin != row2.get_package ().is_plugin) {
+                return p1_is_plugin ? 1 : -1;
             }
 
             return base.package_row_compare (row1, row2);
