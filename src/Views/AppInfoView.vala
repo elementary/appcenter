@@ -45,7 +45,7 @@ namespace AppCenter.Views {
         construct {
             image.margin_top = 12;
             image.margin_start = 6;
-            image.pixel_size = 128;
+            inner_image.pixel_size = 128;
 
             action_button.suggested_action = true;
 

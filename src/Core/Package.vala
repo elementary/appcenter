@@ -239,6 +239,12 @@ public class AppCenterCore.Package : Object {
         }
     }
 
+    public bool is_plugin {
+        get {
+            return component.get_kind () == AppStream.ComponentKind.ADDON;
+        }
+    }
+
     private string? name = null;
     public string? description = null;
     private string? summary = null;
@@ -525,6 +531,23 @@ public class AppCenterCore.Package : Object {
         }
 
         return icon;
+    }
+
+    public Package? get_plugin_host_package () {
+        var extends = component.get_extends ();
+
+        if (extends == null || extends.length < 1) {
+            return null;
+        }
+
+        for (int i = 0; i < extends.length; i++) {
+            var package = Client.get_default ().get_package_for_component_id (extends[i]);
+            if (package != null) {
+                return package;
+            }
+        }
+
+        return null;
     }
 
     public string? get_version () {
