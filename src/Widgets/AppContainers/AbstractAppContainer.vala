@@ -222,9 +222,10 @@ namespace AppCenter {
 
             var scale_factor = inner_image.get_scale_factor ();
 
-            if (package.is_plugin && package.get_plugin_host_package () != null) {
+            var plugin_host_package = package.get_plugin_host_package ();
+            if (package.is_plugin && plugin_host_package != null) {
                 inner_image.gicon = package.get_icon (icon_size, scale_factor);
-                var overlay_gicon = package.get_plugin_host_package ().get_icon (icon_size / 2, scale_factor);
+                var overlay_gicon = plugin_host_package.get_icon (icon_size / 2, scale_factor);
                 var badge_icon_size = Gtk.IconSize.LARGE_TOOLBAR;
                 if (icon_size >= 128) {
                     badge_icon_size = Gtk.IconSize.DIALOG;
