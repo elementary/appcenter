@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-23 15:58-0700\n"
-"PO-Revision-Date: 2018-10-11 18:22+0000\n"
+"PO-Revision-Date: 2018-10-13 17:56+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/mr/>\n"
@@ -511,56 +511,57 @@ msgid ""
 "This may have been caused by external, manually added software repositories "
 "or a corrupted sources file."
 msgstr ""
+"हे बाहेरील, मॅन्युअली जोडलेल्या सॉफ्टवेअर रेपॉजिटरिज किंवा दूषित स्रोत "
+"फायलीमुळे झाले असू शकते."
 
 #: src/Dialogs/UpdateFailDialog.vala:46
 msgid "Details"
-msgstr ""
+msgstr "विवरण"
 
 #: src/Dialogs/UpdateFailDialog.vala:54
 msgid "Ignore"
-msgstr ""
+msgstr "दुर्लक्ष करा"
 
 #: src/Dialogs/UpdateFailDialog.vala:55
 msgid "Try Again"
-msgstr ""
+msgstr "पुन्हा प्रयत्न करा"
 
 #: src/Views/AppInfoView.vala:76
 msgid "Screenshot Not Available"
-msgstr ""
+msgstr "स्क्रीनशॉट उपलब्ध नाही"
 
 #: src/Views/AppInfoView.vala:133
-#, fuzzy
 msgid "Homepage"
 msgstr "मुख्य पृष्ठ"
 
 #: src/Views/AppInfoView.vala:139
 msgid "Suggest Translations"
-msgstr ""
+msgstr "अनुवाद सुचवा"
 
 #: src/Views/AppInfoView.vala:145
 msgid "Report a Problem"
-msgstr ""
+msgstr "अडचण कळवा"
 
 #: src/Views/AppInfoView.vala:151
 msgid "Help"
-msgstr ""
+msgstr "मदत"
 
 #: src/Views/AppInfoView.vala:178
 msgid "What's New:"
-msgstr ""
+msgstr "नवीन काय आहे:"
 
 #: src/Views/AppInfoView.vala:197
 msgid "Extensions:"
-msgstr ""
+msgstr "विस्तार :"
 
 #: src/Views/AppInfoView.vala:291
 #, c-format
 msgid "Other Apps by %s"
-msgstr ""
+msgstr "%s प्रमाणे इतर अॅप्स"
 
 #: src/Views/AppInfoView.vala:325
 msgid "Link copied to clipboard"
-msgstr ""
+msgstr "दुवा क्लिपबोर्डवर कॉपी केला"
 
 #: src/Views/AppInfoView.vala:336
 #, c-format
@@ -573,32 +574,34 @@ msgstr "शेअर करा"
 
 #: src/Views/AppInfoView.vala:639
 msgid "Fund"
-msgstr ""
+msgstr "निधी"
 
 #: src/Views/AppInfoView.vala:661
 msgid "Fund the development of this app"
-msgstr ""
+msgstr "या अॅपच्या विकासासाठी निधी द्या"
 
 #: src/Views/AppListUpdateView.vala:59
 msgid "A restart is required to complete the installation of updates"
 msgstr ""
+"अपडेट्स इन्स्टॉल करण्यासाठी हे अप्लिकेशन बंद करूंन पुन्हा सुरु करण्याची गरज "
+"आहे"
 
 #: src/Views/AppListUpdateView.vala:67
 msgid "Restart Now"
-msgstr ""
+msgstr "याक्षणी पुन्हा चालू करा"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
 #: src/Views/AppListUpdateView.vala:162
 msgid "Update All"
-msgstr ""
+msgstr "सर्व अपडेट करा"
 
 #: src/Views/AppListView.vala:119
 msgid "Non-Curated Apps"
-msgstr ""
+msgstr "नॉन-क्युरेटेड अॅप्स"
 
 #: src/Views/Homepage.vala:65
 msgid "Recently Updated"
-msgstr ""
+msgstr "अलीकडे अपडेट केलेले"
 
 #: src/Views/Homepage.vala:81
 msgid "Trending"
@@ -615,172 +618,171 @@ msgstr "%s शोधा"
 
 #. / TRANSLATORS: the name of the Search view
 #: src/Views/SearchView.vala:39
-#, fuzzy
 msgctxt "view"
 msgid "Search"
-msgstr "अनुप्रयोगांना शोधा"
+msgstr "शोधा"
 
 #: src/Widgets/AbstractAppList.vala:36
 msgid "No Results"
-msgstr ""
+msgstr "परिणाम नाहीत"
 
 #: src/Widgets/AbstractAppList.vala:36
 msgid "No apps could be found. Try changing search terms."
-msgstr ""
+msgstr "कोणतेही अॅप्स सापडले नाहीत. शोध संज्ञा बदलण्याचा प्रयत्न करा."
 
 #: src/Widgets/Banner.vala:55
 msgid "An open, pay-what-you-want app store"
-msgstr ""
+msgstr "एक खुला, इच्छेनुसार पैसे द्या अॅप स्टोअर"
 
 #: src/Widgets/Banner.vala:68
 msgid "Get the apps that you need at a price you can afford."
-msgstr ""
+msgstr "आपल्याला आवश्यक असलेल्या किंमतीवर आपल्याला आवश्यक असलेले अॅप्स मिळवा."
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
-msgstr ""
+msgstr "कार्ड नंबर"
 
 #: src/Widgets/CategoryFlowBox.vala:29
 msgid "Audio"
-msgstr ""
+msgstr "ध्वनी"
 
 #: src/Widgets/CategoryFlowBox.vala:30
 msgid "Development"
-msgstr ""
+msgstr "विकास"
 
 #: src/Widgets/CategoryFlowBox.vala:40
 msgid "Accessories"
-msgstr ""
+msgstr "अॅक्सेसरीज"
 
 #: src/Widgets/CategoryFlowBox.vala:41
 msgid "Office"
-msgstr ""
+msgstr "कार्यालय"
 
 #: src/Widgets/CategoryFlowBox.vala:48
 msgid "System"
-msgstr ""
+msgstr "सिस्टिम"
 
 #: src/Widgets/CategoryFlowBox.vala:52
 msgid "Video"
-msgstr ""
+msgstr "व्हिडिओ"
 
 #: src/Widgets/CategoryFlowBox.vala:57
 msgid "Graphics"
-msgstr ""
+msgstr "ग्राफिक"
 
 #: src/Widgets/CategoryFlowBox.vala:66
 msgid "Games"
-msgstr ""
+msgstr "खेळ"
 
 #: src/Widgets/CategoryFlowBox.vala:82
 msgid "Education"
-msgstr ""
+msgstr "शिक्षण"
 
 #: src/Widgets/CategoryFlowBox.vala:83
 msgid "Internet"
-msgstr ""
+msgstr "इंटरनेट"
 
 #: src/Widgets/CategoryFlowBox.vala:87
 msgid "Science & Engineering"
-msgstr ""
+msgstr "विज्ञान आणि अभियांत्रिकी"
 
 #: src/Widgets/CategoryFlowBox.vala:106
 msgid "Universal Access"
-msgstr ""
+msgstr "सार्वत्रिक प्रवेश"
 
 #: src/Widgets/HumbleButton.vala:93
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:250
 msgid "Free"
-msgstr ""
+msgstr "विनामुल्य"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:127
 #, c-format
 msgid "$%d.00"
-msgstr ""
+msgstr "$%d.00"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:130
 #, c-format
 msgid "$%d"
-msgstr ""
+msgstr "$%d"
 
 #: src/Widgets/ReleaseRow.vala:67
 #, c-format
 msgid "<b>%s</b> – %s"
-msgstr ""
+msgstr "<b>%s</b> – %s"
 
 #: src/Widgets/ReleaseRow.vala:74
 msgid "Unknown version"
-msgstr ""
+msgstr "अज्ञात आवृत्ती"
 
 #: src/Widgets/ReleaseRow.vala:90 src/Widgets/ReleaseRow.vala:93
 msgid "No description available"
-msgstr ""
+msgstr "कोणतेही वर्णन उपलब्ध नाही"
 
 #: src/Widgets/SharePopover.vala:39
 msgid "Facebook"
-msgstr ""
+msgstr "फेसबुक"
 
 #: src/Widgets/SharePopover.vala:43
 msgid "Google+"
-msgstr ""
+msgstr "Google+"
 
 #: src/Widgets/SharePopover.vala:47
 msgid "Twitter"
-msgstr ""
+msgstr "ट्विटर"
 
 #: src/Widgets/SharePopover.vala:51
 msgid "Reddit"
-msgstr ""
+msgstr "रेडिट"
 
 #: src/Widgets/SharePopover.vala:55
 msgid "Tumblr"
-msgstr ""
+msgstr "टंबलर"
 
 #: src/Widgets/SharePopover.vala:59
 msgid "Telegram"
-msgstr ""
+msgstr "टेलीग्राम"
 
 #: src/Widgets/SharePopover.vala:63
 msgid "Copy link"
-msgstr ""
+msgstr "दुवा कॉपी करा"
 
 #: src/Widgets/UpdateHeaderRow.vala:68
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u अपडेट उपलब्ध"
+msgstr[1] "%u अपडेट्स उपलब्ध"
 
 #: src/Widgets/UpdateHeaderRow.vala:69
 #, c-format
 msgid "Size: %s"
-msgstr ""
+msgstr "माप : %s"
 
 #: src/Widgets/UpdateHeaderRow.vala:105
 msgid "Searching for updates…"
-msgstr ""
+msgstr "अपडेट्स शोधत आहे …"
 
 #: src/Widgets/UpdateHeaderRow.vala:112
 msgid "Up to Date"
-msgstr ""
+msgstr "अद्ययावत"
 
 #: src/Widgets/UpdateHeaderRow.vala:120
 msgid "Drivers"
-msgstr ""
+msgstr "ड्राइव्हर्स"
 
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:150
 msgid "Uninstall"
-msgstr ""
+msgstr "विस्थापित करा"
 
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:153
 msgid "Open"
-msgstr ""
+msgstr "उघडा"
 
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:274
 msgid "Update"
-msgstr ""
+msgstr "अद्ययावत (अपडेट) करा"
 
 #~ msgid "translator-credits"
 #~ msgstr ""
