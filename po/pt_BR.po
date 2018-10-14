@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-14 08:43-0700\n"
-"PO-Revision-Date: 2018-10-05 00:07+0000\n"
-"Last-Translator: Deyvison Rocha <deyvison@gmail.com>\n"
+"PO-Revision-Date: 2018-10-14 17:03+0000\n"
+"Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://weblate.elementary.io/projects/"
 "appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -25,7 +25,7 @@ msgstr "Central de Aplicativos"
 #: src/Application.vala:106
 #, c-format
 msgid "Could not parse mimetype %s"
-msgstr ""
+msgstr "Não foi possível analisar o mimetype %s"
 
 #: src/Application.vala:126
 #, c-format
@@ -267,9 +267,9 @@ msgid "%s:"
 msgstr "%s:"
 
 #: src/Core/Package.vala:235
-#, fuzzy, c-format
+#, c-format
 msgid "%s Developers"
-msgstr "Os Desenvolvedores do %s"
+msgstr "%s Desenvolvedores"
 
 #: src/Core/UpdateManager.vala:81
 msgid "Restart Required"
@@ -281,12 +281,12 @@ msgstr "Por favor, reinicie seu sistema para finalizar as atualizações"
 
 #: src/Dialogs/ContentWarningDialog.vala:27
 msgid "Content Warning"
-msgstr ""
+msgstr "Aviso de Conteúdo"
 
 #: src/Dialogs/ContentWarningDialog.vala:32
 #, c-format
 msgid "%s Contains Explicit Content"
-msgstr ""
+msgstr "%s Contém Conteúdo Explícito"
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 #, c-format
@@ -295,20 +295,21 @@ msgid ""
 "disturbing. In general, elementary does not review or endorse the contents "
 "of this app."
 msgstr ""
+"%s pode conter conteúdo adequado apenas para adultos ou que seja sensível ou "
+"perturbador. Em geral, o elementary não revê ou endossa o conteúdo deste "
+"aplicativo."
 
 #: src/Dialogs/ContentWarningDialog.vala:35
 msgid "Show content warnings"
-msgstr ""
+msgstr "Exibir avisos de conteúdo"
 
 #: src/Dialogs/ContentWarningDialog.vala:40
-#, fuzzy
 msgid "Don’t Install"
-msgstr "Instalar"
+msgstr "Não Instalar"
 
 #: src/Dialogs/ContentWarningDialog.vala:41
-#, fuzzy
 msgid "Install Anyway"
-msgstr "Instalando"
+msgstr "Instalar mesmo assim"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -343,7 +344,7 @@ msgstr "Por favor, revise suas informações de pagamento e tente novamente."
 
 #: src/Dialogs/StripeDialog.vala:76
 msgid "Payment"
-msgstr ""
+msgstr "Pagamento"
 
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
@@ -363,13 +364,12 @@ msgid "Email"
 msgstr "Email"
 
 #: src/Dialogs/StripeDialog.vala:108
-#, fuzzy
 msgid ""
 "Your email address is only used to send a receipt. You will not be "
 "subscribed to any mailing list."
 msgstr ""
-"Seu endereço de email é usado para enviar um recibo. Ele nunca é armazenado "
-"e você não será inscrito a uma lista de emails."
+"Seu endereço de e-mail é usado apenas para enviar um recibo. Você não será "
+"inscrito em nenhuma lista de discussão."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127
@@ -700,7 +700,7 @@ msgstr "Acessibilidade"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
-msgstr ""
+msgstr "Requer pagamentos, que não estão ativados"
 
 #: src/Widgets/HumbleButton.vala:106
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:275
@@ -750,9 +750,8 @@ msgid "Twitter"
 msgstr "Twitter"
 
 #: src/Widgets/SharePopover.vala:51
-#, fuzzy
 msgid "Reddit"
-msgstr "reddit"
+msgstr "Reddit"
 
 #: src/Widgets/SharePopover.vala:55
 msgid "Tumblr"
