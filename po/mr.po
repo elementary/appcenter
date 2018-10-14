@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-14 08:43-0700\n"
-"PO-Revision-Date: 2018-10-14 16:38+0000\n"
+"PO-Revision-Date: 2018-10-14 16:39+0000\n"
 "Last-Translator: उदयराज बाळ <udayrajb@gmail.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/mr/>\n"
@@ -39,7 +39,7 @@ msgstr "अनुप्रयोग स्थापित झाला"
 #: src/Application.vala:261
 #, c-format
 msgid "%s has been successfully installed"
-msgstr "%s सफलतापूर्वक इंन्स्टॉल झाले"
+msgstr "%s यशस्वीरित्या स्थापित झाले"
 
 #: src/Application.vala:273
 #, c-format
