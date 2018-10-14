@@ -6,7 +6,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-14 08:43-0700\n"
 "PO-Revision-Date: 2018-10-14 16:38+0000\n"
-"Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
+"Last-Translator: उदयराज बाळ <udayrajb@gmail.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/mr/>\n"
 "Language: mr\n"
@@ -34,7 +34,7 @@ msgstr "दिलेली लिंक '%s ' मिळाली नाही, �
 
 #: src/Application.vala:260
 msgid "Application installed"
-msgstr "अप्लिकेशन इंन्स्टॉल  झाले"
+msgstr "अनुप्रयोग स्थापित झाला"
 
 #: src/Application.vala:261
 #, c-format
