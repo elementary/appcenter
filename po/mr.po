@@ -6,7 +6,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-14 08:43-0700\n"
 "PO-Revision-Date: 2018-10-14 16:41+0000\n"
-"Last-Translator: उदयराज बाळ <udayrajb@gmail.com>\n"
+"Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/mr/>\n"
 "Language: mr\n"
@@ -69,7 +69,7 @@ msgstr "नेटवर्क उपलब्ध नाही"
 
 #: src/MainWindow.vala:196
 msgid "Connect to the Internet to install or update apps."
-msgstr "अनुप्रयोग स्थापित किंवा अद्ययावत करण्यासाठी इंटरनेट जोडा"
+msgstr "अनुप्रयोग(अॅप) स्थापित किंवा अद्ययावत करण्यासाठी इंटरनेट जोडा"
 
 #: src/MainWindow.vala:199
 msgid "Network Settings…"
