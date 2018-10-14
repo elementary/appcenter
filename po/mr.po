@@ -6,7 +6,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-14 08:43-0700\n"
 "PO-Revision-Date: 2018-10-14 16:41+0000\n"
-"Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
+"Last-Translator: उदयराज बाळ <udayrajb@gmail.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/mr/>\n"
 "Language: mr\n"
@@ -73,7 +73,7 @@ msgstr "अनुप्रयोग(अॅप) स्थापित किं�
 
 #: src/MainWindow.vala:199
 msgid "Network Settings…"
-msgstr "नेटवर्क सेटिंग्ज…"
+msgstr "नेटवर्क जुळणी"
 
 #: src/Core/ChangeInformation.vala:54
 msgid "Starting"
