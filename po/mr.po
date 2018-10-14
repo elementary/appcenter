@@ -6,7 +6,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-14 08:43-0700\n"
 "PO-Revision-Date: 2018-10-14 16:38+0000\n"
-"Last-Translator: उदयराज बाळ <udayrajb@gmail.com>\n"
+"Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/mr/>\n"
 "Language: mr\n"
@@ -20,7 +20,7 @@ msgstr ""
 #. Add "AppCenter" to the translation catalog
 #: src/Application.vala:38
 msgid "AppCenter"
-msgstr "अनुप्रयोग भांडार"
+msgstr "अनुप्रयोग भांडार(अॅप सेंटर)"
 
 #: src/Application.vala:106
 #, c-format
