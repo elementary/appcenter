@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-14 08:43-0700\n"
-"PO-Revision-Date: 2018-10-14 19:38+0000\n"
+"PO-Revision-Date: 2018-10-15 00:05+0000\n"
 "Last-Translator: Jörg Arnold <j.ar@mailbox.org>\n"
 "Language-Team: German <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/de/>\n"
@@ -703,7 +703,7 @@ msgstr "Barrierefreiheit"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
-msgstr "Erfordert Zahlungsvorgänge, welche jedoch nicht aktiviert sind."
+msgstr "Erfordert Zahlungsvorgänge, welche jedoch nicht aktiviert sind"
 
 #: src/Widgets/HumbleButton.vala:106
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:275
