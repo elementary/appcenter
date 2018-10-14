@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-23 15:58-0700\n"
+"POT-Creation-Date: 2018-10-14 08:43-0700\n"
 "PO-Revision-Date: 2017-09-11 20:46+0000\n"
 "Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
 "Language-Team: Komi <https://weblate.elementary.io/projects/appcenter/"
@@ -45,20 +45,20 @@ msgstr "%s ha sido instalado correctamente"
 msgid "There Was An Error Installing %s."
 msgstr "Hubo un error al instalar %s"
 
-#: src/MainWindow.vala:149 src/Views/Homepage.vala:252
-#: src/Views/Homepage.vala:261 src/Views/Homepage.vala:266
-#: src/Views/Homepage.vala:277
+#: src/MainWindow.vala:149 src/Views/Homepage.vala:253
+#: src/Views/Homepage.vala:262 src/Views/Homepage.vala:267
+#: src/Views/Homepage.vala:278
 msgid "Home"
 msgstr "Inicio"
 
 #: src/MainWindow.vala:150 src/Views/InstalledView.vala:29
-#: src/Views/InstalledView.vala:49
+#: src/Views/InstalledView.vala:53
 #, fuzzy
 msgctxt "view"
 msgid "Installed"
 msgstr "Instalando"
 
-#: src/MainWindow.vala:177 src/MainWindow.vala:328 src/Views/SearchView.vala:54
+#: src/MainWindow.vala:177 src/MainWindow.vala:330 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:81
 msgid "Search Apps"
 msgstr "Buscar aplicaciones"
@@ -231,49 +231,49 @@ msgstr "Copiando archivos"
 msgid "Unknown state"
 msgstr "Estado desconocido"
 
-#: src/Core/Client.vala:105
+#: src/Core/Client.vala:106
 msgid "Operating System Updates"
 msgstr "Actualizaciones del sistema"
 
-#: src/Core/Client.vala:106
+#: src/Core/Client.vala:107
 msgid "Updates to system components"
 msgstr "Actualizaciones de componentes del sistema"
 
-#: src/Core/Client.vala:141
+#: src/Core/Client.vala:142
 #, c-format
 msgid "%s (local)"
 msgstr ""
 
-#: src/Core/Client.vala:466
+#: src/Core/Client.vala:467
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Actualización disponible"
 msgstr[1] "Actualizaciones disponibles"
 
-#: src/Core/Client.vala:467
+#: src/Core/Client.vala:468
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "%u actualización disponible para el sistema"
 msgstr[1] "%u actualizaciones disponibles para el sistema"
 
-#: src/Core/Client.vala:495
+#: src/Core/Client.vala:496
 #, c-format
 msgid "Version: %s"
 msgstr ""
 
-#: src/Core/Client.vala:504
+#: src/Core/Client.vala:505
 msgid "No components with updates"
 msgstr ""
 
-#: src/Core/Client.vala:508
+#: src/Core/Client.vala:509
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Core/Client.vala:510
+#: src/Core/Client.vala:511
 #, c-format
 msgid "%s:"
 msgstr ""
@@ -336,7 +336,7 @@ msgstr "Reiniciar"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:171
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:173
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -533,71 +533,71 @@ msgstr "Reportar un problema"
 msgid "Help"
 msgstr "Ayuda"
 
-#: src/Views/AppInfoView.vala:178
+#: src/Views/AppInfoView.vala:180
 msgid "What's New:"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:197
+#: src/Views/AppInfoView.vala:199
 msgid "Extensions:"
 msgstr "Extensiones:"
 
-#: src/Views/AppInfoView.vala:291
+#: src/Views/AppInfoView.vala:293
 #, c-format
 msgid "Other Apps by %s"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:325
+#: src/Views/AppInfoView.vala:327
 msgid "Link copied to clipboard"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:336
+#: src/Views/AppInfoView.vala:338
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:343
+#: src/Views/AppInfoView.vala:345
 msgid "Share"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:639
+#: src/Views/AppInfoView.vala:650
 msgid "Fund"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:661
+#: src/Views/AppInfoView.vala:672
 msgid "Fund the development of this app"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:59
+#: src/Views/AppListUpdateView.vala:56
 msgid "A restart is required to complete the installation of updates"
 msgstr ""
 "Se requiere reiniciar para completar la instalación de las actualizaciones"
 
-#: src/Views/AppListUpdateView.vala:67
+#: src/Views/AppListUpdateView.vala:64
 msgid "Restart Now"
 msgstr "Reiniciar ahora"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:162
+#: src/Views/AppListUpdateView.vala:158
 msgid "Update All"
 msgstr "Actualizar todo"
 
-#: src/Views/AppListView.vala:119
+#: src/Views/AppListView.vala:128
 msgid "Non-Curated Apps"
 msgstr ""
 
-#: src/Views/Homepage.vala:65
+#: src/Views/Homepage.vala:66
 msgid "Recently Updated"
 msgstr ""
 
-#: src/Views/Homepage.vala:81
+#: src/Views/Homepage.vala:82
 msgid "Trending"
 msgstr ""
 
-#: src/Views/Homepage.vala:97
+#: src/Views/Homepage.vala:98
 msgid "Categories"
 msgstr "Categorías"
 
-#: src/Views/Homepage.vala:266 src/Views/Homepage.vala:277
+#: src/Views/Homepage.vala:267 src/Views/Homepage.vala:278
 #, c-format
 msgid "Search %s"
 msgstr "Buscar %s"
@@ -677,19 +677,29 @@ msgstr "Ciencia e ingeniería"
 msgid "Universal Access"
 msgstr "Acceso universal"
 
-#: src/Widgets/HumbleButton.vala:93
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:250
+#: src/Widgets/HumbleButton.vala:85
+msgid "Requires payments, which are not enabled"
+msgstr ""
+
+#: src/Widgets/HumbleButton.vala:106
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:275
 msgid "Free"
 msgstr "Gratis"
 
+#: src/Widgets/HumbleButton.vala:108
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:277
+#, fuzzy
+msgid "Install"
+msgstr "Instalando"
+
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:127
+#: src/Widgets/HumbleButton.vala:142
 #, c-format
 msgid "$%d.00"
 msgstr "%d.00$"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:130
+#: src/Widgets/HumbleButton.vala:145
 #, c-format
 msgid "$%d"
 msgstr "%d$"
@@ -760,15 +770,15 @@ msgstr "Sistema actualizado"
 msgid "Drivers"
 msgstr ""
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:150
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:152
 msgid "Uninstall"
 msgstr "Desinstalar"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:153
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:155
 msgid "Open"
 msgstr "Abrir"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:274
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:301
 #, fuzzy
 msgid "Update"
 msgstr "Actualizar"
