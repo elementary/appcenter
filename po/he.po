@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-14 08:43-0700\n"
-"PO-Revision-Date: 2018-09-24 06:18+0000\n"
+"PO-Revision-Date: 2018-10-15 09:24+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/he/>\n"
@@ -671,7 +671,7 @@ msgstr "גישה אוניברסלית"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
-msgstr ""
+msgstr "דורש תשלומים, שאינם פעילים עדיין"
 
 #: src/Widgets/HumbleButton.vala:106
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:275
@@ -680,9 +680,8 @@ msgstr "חינם"
 
 #: src/Widgets/HumbleButton.vala:108
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:277
-#, fuzzy
 msgid "Install"
-msgstr "מותקן"
+msgstr "התקנה"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:142
