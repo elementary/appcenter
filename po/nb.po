@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-14 08:43-0700\n"
-"PO-Revision-Date: 2018-10-14 17:02+0000\n"
+"PO-Revision-Date: 2018-10-16 00:08+0000\n"
 "Last-Translator: Nils K <slx@nilsk.net>\n"
 "Language-Team: Norwegian Bokmål <https://weblate.elementary.io/projects/"
 "appcenter/appcenter/nb/>\n"
@@ -586,7 +586,7 @@ msgstr "Oppdater alt"
 
 #: src/Views/AppListView.vala:128
 msgid "Non-Curated Apps"
-msgstr "Ingen tilpassede programmer"
+msgstr "Ikke tilpassede programmer"
 
 #: src/Views/Homepage.vala:66
 msgid "Recently Updated"
