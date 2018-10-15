@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-14 08:43-0700\n"
-"PO-Revision-Date: 2018-10-14 17:03+0000\n"
+"PO-Revision-Date: 2018-10-16 00:08+0000\n"
 "Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://weblate.elementary.io/projects/"
 "appcenter/appcenter/pt_BR/>\n"
@@ -50,7 +50,7 @@ msgstr "Houve um erro ao instalar %s."
 #: src/Views/Homepage.vala:262 src/Views/Homepage.vala:267
 #: src/Views/Homepage.vala:278
 msgid "Home"
-msgstr "Página inicial"
+msgstr "Início"
 
 #: src/MainWindow.vala:150 src/Views/InstalledView.vala:29
 #: src/Views/InstalledView.vala:53
@@ -273,7 +273,7 @@ msgstr "%s Desenvolvedores"
 
 #: src/Core/UpdateManager.vala:81
 msgid "Restart Required"
-msgstr "Reinicialização necessária"
+msgstr "Reinicialização Necessária"
 
 #: src/Core/UpdateManager.vala:82
 msgid "Please restart your system to finalize updates"
@@ -541,15 +541,15 @@ msgstr "Captura de tela não disponível"
 
 #: src/Views/AppInfoView.vala:133
 msgid "Homepage"
-msgstr "Página inicial"
+msgstr "Página Inicial"
 
 #: src/Views/AppInfoView.vala:139
 msgid "Suggest Translations"
-msgstr "Sugerir traduções"
+msgstr "Sugerir Traduções"
 
 #: src/Views/AppInfoView.vala:145
 msgid "Report a Problem"
-msgstr "Reportar um problema"
+msgstr "Reportar um Problema"
 
 #: src/Views/AppInfoView.vala:151
 msgid "Help"
