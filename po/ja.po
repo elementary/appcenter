@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-14 08:43-0700\n"
-"PO-Revision-Date: 2018-10-14 22:10+0000\n"
+"PO-Revision-Date: 2018-10-17 00:06+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/ja/>\n"
@@ -624,7 +624,7 @@ msgstr "検索結果がありません"
 
 #: src/Widgets/AbstractAppList.vala:36
 msgid "No apps could be found. Try changing search terms."
-msgstr "アプリが見つかりませんでした。検索用語を変えてみてください。"
+msgstr "アプリが見つかりませんでした。検索用語を変更してみてください。"
 
 #: src/Widgets/Banner.vala:55
 msgid "An open, pay-what-you-want app store"
