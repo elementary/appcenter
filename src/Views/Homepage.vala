@@ -143,8 +143,8 @@ namespace AppCenter {
                 return 0;
             });
 
-            // Clear the cached categories when the AppStream pool is updated
             AppCenterCore.Client.get_default ().pool_updated.connect (() => {
+                // Clear the cached categories when the AppStream pool is updated
                 foreach (var child in category_flow.get_children ()) {
                     if (child is Widgets.CategoryItem) {
                         var item = child as Widgets.CategoryItem;
@@ -153,11 +153,13 @@ namespace AppCenter {
                     }
                 }
 
+                // Remove any old cached category list views
                 foreach (var child in get_children ()) {
                     if (child is Views.AppListView) {
                         if (child != visible_child) {
                             child.destroy ();
                         } else {
+                            // If the category list view is visible, don't delete it, just make the package list right
                             var list_view = child as Views.AppListView;
                             list_view.clear ();
 
