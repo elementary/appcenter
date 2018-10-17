@@ -38,14 +38,14 @@ namespace AppCenter {
         public Widgets.Banner newest_banner;
         public Gtk.Revealer switcher_revealer;
 
-        public Homepage () {
-            
-        }
+        private Widgets.Switcher switcher;
+        private Widgets.Carousel recently_updated_carousel;
+        private Widgets.Carousel trending_carousel;
+        private Gtk.Revealer recently_updated_revealer;
+        private Gtk.Revealer trending_revealer;
 
         construct {
-            var houston = AppCenterCore.Houston.get_default ();
-
-            var switcher = new Widgets.Switcher ();
+            switcher = new Widgets.Switcher ();
             switcher.halign = Gtk.Align.CENTER;
 
             switcher_revealer = new Gtk.Revealer ();
@@ -68,7 +68,7 @@ namespace AppCenter {
             recently_updated_label.xalign = 0;
             recently_updated_label.margin_start = 10;
 
-            var recently_updated_carousel = new Widgets.Carousel ();
+            recently_updated_carousel = new Widgets.Carousel ();
 
             var recently_updated_grid = new Gtk.Grid ();
             recently_updated_grid.margin = 2;
@@ -76,7 +76,7 @@ namespace AppCenter {
             recently_updated_grid.attach (recently_updated_label, 0, 0, 1, 1);
             recently_updated_grid.attach (recently_updated_carousel, 0, 1, 1, 1);
 
-            var recently_updated_revealer = new Gtk.Revealer ();
+            recently_updated_revealer = new Gtk.Revealer ();
             recently_updated_revealer.add (recently_updated_grid );
 
             var trending_label = new Gtk.Label (_("Trending"));
@@ -84,7 +84,7 @@ namespace AppCenter {
             trending_label.xalign = 0;
             trending_label.margin_start = 10;
 
-            var trending_carousel = new Widgets.Carousel ();
+            trending_carousel = new Widgets.Carousel ();
 
             var trending_grid = new Gtk.Grid ();
             trending_grid.margin = 2;
@@ -92,7 +92,7 @@ namespace AppCenter {
             trending_grid.attach (trending_label, 0, 0, 1, 1);
             trending_grid.attach (trending_carousel, 0, 1, 1, 1);
 
-            var trending_revealer = new Gtk.Revealer ();
+            trending_revealer = new Gtk.Revealer ();
             trending_revealer.add (trending_grid );
 
             var categories_label = new Gtk.Label (_("Categories"));
@@ -122,6 +122,61 @@ namespace AppCenter {
             if (local_package != null) {
                 newest_banner.add_package (local_package);
             }
+
+            refresh_banners ();
+
+            category_flow.child_activated.connect ((child) => {
+                var item = child as Widgets.CategoryItem;
+                if (item != null) {
+                    currently_viewed_category = item.app_category;
+                    show_app_list_for_category (item.app_category);
+                }
+            });
+
+            category_flow.set_sort_func ((child1, child2) => {
+                var item1 = child1 as Widgets.CategoryItem;
+                var item2 = child2 as Widgets.CategoryItem;
+                if (item1 != null && item2 != null) {
+                    return item1.app_category.name.collate (item2.app_category.name);
+                }
+
+                return 0;
+            });
+
+            // Clear the cached categories when the AppStream pool is updated
+            AppCenterCore.Client.get_default ().pool_updated.connect (() => {
+                foreach (var child in category_flow.get_children ()) {
+                    if (child is Widgets.CategoryItem) {
+                        var item = child as Widgets.CategoryItem;
+                        var category_components = item.app_category.get_components ();
+                        category_components.remove_range (0, category_components.length);
+                    }
+                }
+
+                foreach (var child in get_children ()) {
+                    if (child is Views.AppListView) {
+                        if (child != visible_child) {
+                            child.destroy ();
+                        } else {
+                            var list_view = child as Views.AppListView;
+                            list_view.clear ();
+
+                            unowned Client client = Client.get_default ();
+                            var apps = client.get_applications_for_category (currently_viewed_category);
+                            list_view.add_packages (apps);
+                        }
+                    }
+                }
+
+                refresh_banners ();
+            });
+
+            recently_updated_carousel.package_activated.connect (show_package);
+            trending_carousel.package_activated.connect (show_package);
+        }
+
+        private void refresh_banners () {
+            var houston = AppCenterCore.Houston.get_default ();
 
             houston.get_app_ids.begin ("/newest/project", (obj, res) => {
                 var newest_ids = houston.get_app_ids.end (res);
@@ -222,27 +277,6 @@ namespace AppCenter {
                     return null;
                 });
             });
-
-            category_flow.child_activated.connect ((child) => {
-                var item = child as Widgets.CategoryItem;
-                if (item != null) {
-                    currently_viewed_category = item.app_category;
-                    show_app_list_for_category (item.app_category);
-                }
-            });
-
-            category_flow.set_sort_func ((child1, child2) => {
-                var item1 = child1 as Widgets.CategoryItem;
-                var item2 = child2 as Widgets.CategoryItem;
-                if (item1 != null && item2 != null) {
-                    return item1.app_category.name.collate (item2.app_category.name);
-                }
-
-                return 0;
-            });
-
-            recently_updated_carousel.package_activated.connect (show_package);
-            trending_carousel.package_activated.connect (show_package);
         }
 
         public override void show_package (AppCenterCore.Package package) {
