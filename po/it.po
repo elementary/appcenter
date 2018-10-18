@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-18 05:17-0500\n"
 "PO-Revision-Date: 2018-10-18 16:33+0000\n"
-"Last-Translator: Marco De Paolini <marco.depaolini@gmail.com>\n"
+"Last-Translator: icyc0re <tiziano.signo@gmail.com>\n"
 "Language-Team: Italian <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/it/>\n"
 "Language: it\n"
@@ -291,7 +291,7 @@ msgstr "Avvertenze sul contenuto"
 #: src/Dialogs/ContentWarningDialog.vala:32
 #, c-format
 msgid "%s Contains Explicit Content"
-msgstr ""
+msgstr "%s contiene contenuti espliciti"
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 #, c-format
