@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 08:32-0700\n"
+"POT-Creation-Date: 2018-10-18 05:17-0500\n"
 "PO-Revision-Date: 2018-05-10 11:56+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://weblate.elementary.io/projects/appcenter/"
@@ -34,7 +34,7 @@ msgstr ""
 "חיפוש או עיון בקטגוריות. חנות היישומים משמשת גם לצורך עדכון המערכת לגרסה "
 "החדשה והטובה ביותר לטובת תכונות חדשות ותיקונים."
 
-#: data/io.elementary.appcenter.appdata.xml.in:191
+#: data/io.elementary.appcenter.appdata.xml.in:201
 msgid "elementary LLC."
 msgstr "elementary LLC.‎"
 
