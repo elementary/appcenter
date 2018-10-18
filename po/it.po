@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-18 05:17-0500\n"
-"PO-Revision-Date: 2018-10-18 16:27+0000\n"
-"Last-Translator: icyc0re <tiziano.signo@gmail.com>\n"
+"PO-Revision-Date: 2018-10-18 16:32+0000\n"
+"Last-Translator: Marco De Paolini <marco.depaolini@gmail.com>\n"
 "Language-Team: Italian <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/it/>\n"
 "Language: it\n"
@@ -301,7 +301,7 @@ msgid ""
 "of this app."
 msgstr ""
 "%s potrebbe contenere contenuti adatti solamente a un pubblico adulto. In "
-"generale, elementary non rivede ne supporta i contenuti di questa "
+"generale, elementary non supervisiona né approva i contenuti di questa "
 "applicazione."
 
 #: src/Dialogs/ContentWarningDialog.vala:35
@@ -320,7 +320,7 @@ msgstr "Installazione"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
-msgstr "Vuoi davvero riavviare?"
+msgstr "Sei sicuro di voler riavviare?"
 
 #: src/Dialogs/RestartDialog.vala:41
 msgid "This will close all open applications and restart this device."
