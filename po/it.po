@@ -2,13 +2,14 @@
 # strozzascotte <marco.depaolini@gmail.com>, 2018.
 # Marco De Paolini <marco.depaolini@gmail.com>, 2018.
 # Fabio Rifici <fabio.rifici@microtechsrl.com>, 2018.
+# icyc0re <tiziano.signo@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-18 05:17-0500\n"
-"PO-Revision-Date: 2018-09-13 00:01+0000\n"
-"Last-Translator: Marco De Paolini <marco.depaolini@gmail.com>\n"
+"PO-Revision-Date: 2018-10-18 16:27+0000\n"
+"Last-Translator: icyc0re <tiziano.signo@gmail.com>\n"
 "Language-Team: Italian <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/it/>\n"
 "Language: it\n"
@@ -299,6 +300,9 @@ msgid ""
 "disturbing. In general, elementary does not review or endorse the contents "
 "of this app."
 msgstr ""
+"%s potrebbe contenere contenuti adatti solamente a un pubblico adulto. In "
+"generale, elementary non rivede ne supporta i contenuti di questa "
+"applicazione."
 
 #: src/Dialogs/ContentWarningDialog.vala:35
 msgid "Show content warnings"
