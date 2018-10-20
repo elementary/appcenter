@@ -1,9 +1,10 @@
+# Eri Hidayat <eriwhidayat@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-18 05:17-0500\n"
-"PO-Revision-Date: 2018-06-12 07:12+0000\n"
+"PO-Revision-Date: 2018-10-20 08:40+0000\n"
 "Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
 "Language-Team: Indonesian <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/id/>\n"
@@ -12,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -23,7 +24,7 @@ msgstr "Pusat Aplikasi"
 #: src/Application.vala:106
 #, c-format
 msgid "Could not parse mimetype %s"
-msgstr ""
+msgstr "Tidak dapat mengurai jenis mime %s"
 
 #: src/Application.vala:126
 #, c-format
@@ -227,9 +228,9 @@ msgid "Updates to system components"
 msgstr "Pembaruan untuk komponen sistem"
 
 #: src/Core/Client.vala:142
-#, fuzzy, c-format
+#, c-format
 msgid "%s (local)"
-msgstr "% (lokal)"
+msgstr "%s (lokal)"
 
 #: src/Core/Client.vala:467
 msgid "Update Available"
@@ -263,9 +264,9 @@ msgid "%s:"
 msgstr "%s:"
 
 #: src/Core/Package.vala:235
-#, fuzzy, c-format
+#, c-format
 msgid "%s Developers"
-msgstr "Pengembang %s"
+msgstr "%s Pengembang"
 
 #: src/Core/UpdateManager.vala:81
 msgid "Restart Required"
@@ -277,12 +278,12 @@ msgstr "Silakan mulai ulang sistem Anda untuk menyelesaikan pembaruan"
 
 #: src/Dialogs/ContentWarningDialog.vala:27
 msgid "Content Warning"
-msgstr ""
+msgstr "Peringatan Konten"
 
 #: src/Dialogs/ContentWarningDialog.vala:32
 #, c-format
 msgid "%s Contains Explicit Content"
-msgstr ""
+msgstr "%s Berisi Konten Eksplisit"
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 #, c-format
@@ -291,19 +292,21 @@ msgid ""
 "disturbing. In general, elementary does not review or endorse the contents "
 "of this app."
 msgstr ""
+"%s mungkin berisi konten yang hanya cocok untuk orang dewasa atau yang "
+"mungkin sensitif atau mengganggu. Secara umum, elementary tidak meninjau "
+"atau mendukung konten aplikasi ini."
 
 #: src/Dialogs/ContentWarningDialog.vala:35
 msgid "Show content warnings"
-msgstr ""
+msgstr "Tampilkan peringatan konten"
 
 #: src/Dialogs/ContentWarningDialog.vala:40
 msgid "Don’t Install"
-msgstr ""
+msgstr "Jangan Memasang"
 
 #: src/Dialogs/ContentWarningDialog.vala:41
-#, fuzzy
 msgid "Install Anyway"
-msgstr "Memasang"
+msgstr "Tetap Pasang"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -338,7 +341,7 @@ msgstr "Silahkan periksa informasi pembayaran Anda dan ulangi lagi."
 
 #: src/Dialogs/StripeDialog.vala:76
 msgid "Payment"
-msgstr ""
+msgstr "Pembayaran"
 
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
@@ -358,14 +361,12 @@ msgid "Email"
 msgstr "Surel"
 
 #: src/Dialogs/StripeDialog.vala:108
-#, fuzzy
 msgid ""
 "Your email address is only used to send a receipt. You will not be "
 "subscribed to any mailing list."
 msgstr ""
-"Alamat surel Anda akan digunakan untuk mengirim tanda terima. Alamat surel "
-"Anda tidak akan disimpan dan Anda tidak akan didaftarkan ke sebuah layanan "
-"surat-menyurat berlangganan."
+"Alamat surel Anda hanya digunakan untuk mengirim tanda terima. Anda tidak "
+"akan berlangganan ke milis manapun."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127
@@ -696,7 +697,7 @@ msgstr "Akses Universal"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
-msgstr ""
+msgstr "Memerlukan pembayaran, yang tidak diaktifkan"
 
 #: src/Widgets/HumbleButton.vala:106
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:275
@@ -705,9 +706,8 @@ msgstr "Gratis"
 
 #: src/Widgets/HumbleButton.vala:108
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:277
-#, fuzzy
 msgid "Install"
-msgstr "Terpasang"
+msgstr "Pasang"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:142
@@ -747,9 +747,8 @@ msgid "Twitter"
 msgstr "Twitter"
 
 #: src/Widgets/SharePopover.vala:51
-#, fuzzy
 msgid "Reddit"
-msgstr "reddit"
+msgstr "Reddit"
 
 #: src/Widgets/SharePopover.vala:55
 msgid "Tumblr"
