@@ -1,11 +1,12 @@
 # Augusto Fornitani <augusto.fornitani@outlook.com>, 2018.
+# Jesse ALTER <jesse@jessealter.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-18 05:17-0500\n"
 "PO-Revision-Date: 2018-10-21 03:43+0000\n"
-"Last-Translator: Augusto Fornitani <augusto.fornitani@outlook.com>\n"
+"Last-Translator: Jesse ALTER <jesse@jessealter.com>\n"
 "Language-Team: Esperanto <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/eo/>\n"
 "Language: eo\n"
@@ -49,7 +50,7 @@ msgstr "Okazis eraro dum instalado de %s."
 #: src/Views/Homepage.vala:262 src/Views/Homepage.vala:267
 #: src/Views/Homepage.vala:278
 msgid "Home"
-msgstr ""
+msgstr "Hejmo"
 
 #: src/MainWindow.vala:150 src/Views/InstalledView.vala:29
 #: src/Views/InstalledView.vala:53
@@ -76,7 +77,7 @@ msgstr ""
 
 #: src/Core/ChangeInformation.vala:54
 msgid "Starting"
-msgstr ""
+msgstr "Komencante"
 
 #: src/Core/ChangeInformation.vala:56
 msgid "Waiting"
