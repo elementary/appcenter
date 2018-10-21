@@ -1,12 +1,13 @@
 # Rafael Bautista Martínez <iuninefrendor@gmail.com>, 2018.
 # Pablo Solís La Beira <pabsol1977@gmail.com>, 2018.
+# Carlos Cañellas <ratiosu.cct@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-18 05:17-0500\n"
-"PO-Revision-Date: 2018-10-01 00:08+0000\n"
-"Last-Translator: Pablo Solís La Beira <pabsol1977@gmail.com>\n"
+"PO-Revision-Date: 2018-10-21 00:06+0000\n"
+"Last-Translator: Carlos Cañellas <ratiosu.cct@gmail.com>\n"
 "Language-Team: Spanish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -719,9 +720,7 @@ msgstr "$%d.00"
 #: src/Widgets/HumbleButton.vala:145
 #, c-format
 msgid "$%d"
-msgstr ""
-"Esta cantidad será en dólares americanos. Algunos idiomas podrían necesitar "
-"un \"$%dUSD\""
+msgstr "$%d (dólares americanos)"
 
 #: src/Widgets/ReleaseRow.vala:67
 #, c-format

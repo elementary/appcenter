@@ -1,11 +1,12 @@
 # Veli-Pekka Samuli Finnilä <vpf@tuta.io>, 2018.
+# Jiri Grönroos <jiri.gronroos@iki.fi>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-18 05:17-0500\n"
-"PO-Revision-Date: 2018-08-10 10:18+0000\n"
-"Last-Translator: Veli-Pekka Samuli Finnilä <vpf@tuta.io>\n"
+"PO-Revision-Date: 2018-10-21 00:06+0000\n"
+"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/fi/>\n"
 "Language: fi\n"
@@ -281,7 +282,7 @@ msgstr ""
 
 #: src/Dialogs/ContentWarningDialog.vala:27
 msgid "Content Warning"
-msgstr ""
+msgstr "Sisältövaroitus"
 
 #: src/Dialogs/ContentWarningDialog.vala:32
 #, c-format
@@ -298,17 +299,15 @@ msgstr ""
 
 #: src/Dialogs/ContentWarningDialog.vala:35
 msgid "Show content warnings"
-msgstr ""
+msgstr "Näytä sisältövaroitukset"
 
 #: src/Dialogs/ContentWarningDialog.vala:40
-#, fuzzy
 msgid "Don’t Install"
-msgstr "Asenna"
+msgstr "Älä asenna"
 
 #: src/Dialogs/ContentWarningDialog.vala:41
-#, fuzzy
 msgid "Install Anyway"
-msgstr "Asennetaan"
+msgstr "Asenna silti"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -341,7 +340,7 @@ msgstr "Tarkista maksutiedot ja yritä uudelleen."
 
 #: src/Dialogs/StripeDialog.vala:76
 msgid "Payment"
-msgstr ""
+msgstr "Maksu"
 
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
@@ -732,9 +731,8 @@ msgid "Twitter"
 msgstr "Twitter"
 
 #: src/Widgets/SharePopover.vala:51
-#, fuzzy
 msgid "Reddit"
-msgstr "reddit"
+msgstr "Reddit"
 
 #: src/Widgets/SharePopover.vala:55
 msgid "Tumblr"
