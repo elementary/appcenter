@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-18 05:17-0500\n"
 "PO-Revision-Date: 2018-10-23 13:04+0000\n"
-"Last-Translator: ecb <drbambal@gmail.com>\n"
+"Last-Translator: Sinan Decron <intenfinitia@gmail.com>\n"
 "Language-Team: Turkish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/tr/>\n"
 "Language: tr\n"
@@ -34,7 +34,7 @@ msgstr "mimetype %s çözümlenemedi"
 #: src/Application.vala:126
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr "Belirtilen link ' %s ' bulunamadı.Onun yerine aranıyor."
+msgstr "Belirtilen link ' %s ' bulunamadı. Onun yerine aranıyor"
 
 #: src/Application.vala:260
 msgid "Application installed"
@@ -262,8 +262,8 @@ msgstr "Güncelleme içeren bileşen yok"
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
-msgstr[0] "%u bileşenin güncellemesi var."
-msgstr[1] "%u bileşenlerinin güncellemeleri var."
+msgstr[0] "%u bileşenin güncellemesi var"
+msgstr[1] "%u bileşenlerinin güncellemeleri var"
 
 #: src/Core/Client.vala:511
 #, c-format
@@ -312,9 +312,8 @@ msgid "Don’t Install"
 msgstr "Yüklemeyin"
 
 #: src/Dialogs/ContentWarningDialog.vala:41
-#, fuzzy
 msgid "Install Anyway"
-msgstr "Yükleniyor"
+msgstr "Yine de Yükle"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -369,13 +368,12 @@ msgid "Email"
 msgstr "E-posta"
 
 #: src/Dialogs/StripeDialog.vala:108
-#, fuzzy
 msgid ""
 "Your email address is only used to send a receipt. You will not be "
 "subscribed to any mailing list."
 msgstr ""
-"E-posta adresiniz makbuz göndermek için kullanılır. Hiçbir zaman saklanmaz "
-"ve bir posta listesine abone olmazsınız."
+"E-posta adresiniz makbuz göndermek için kullanılır. Bir e-posta listesine "
+"abone edilmeyeceksiniz."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127
@@ -501,7 +499,7 @@ msgstr "İşlem tamamlanamadı. Daha fazla bilgi için lütfen bankanıza başvu
 
 #: src/Dialogs/StripeDialog.vala:606
 msgid "The balance or credit limit on the card has been reached."
-msgstr ""
+msgstr "Karttaki bakiye veya kredi limitine ulaşılmıştır."
 
 #: src/Dialogs/StripeDialog.vala:609
 msgid "The given card is a test card. Please use a real card to proceed."
@@ -562,7 +560,7 @@ msgstr "Eklentiler:"
 #: src/Views/AppInfoView.vala:293
 #, c-format
 msgid "Other Apps by %s"
-msgstr ""
+msgstr "%s tarafından diğer uygulamalar"
 
 #: src/Views/AppInfoView.vala:327
 msgid "Link copied to clipboard"
@@ -571,7 +569,7 @@ msgstr "Bağlantı panoya kopyalandı"
 #: src/Views/AppInfoView.vala:338
 #, c-format
 msgid "Check out %s on AppCenter:"
-msgstr ""
+msgstr "AppCenter'da %s 'e göz atın:"
 
 #: src/Views/AppInfoView.vala:345
 msgid "Share"
@@ -609,7 +607,7 @@ msgstr "Son Güncellenenler"
 
 #: src/Views/Homepage.vala:82
 msgid "Trending"
-msgstr ""
+msgstr "Yükselişte"
 
 #: src/Views/Homepage.vala:98
 msgid "Categories"
@@ -696,7 +694,7 @@ msgstr "Evrensel Erişim"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
-msgstr ""
+msgstr "Ödeme gerektirir, etkinleştirilmemiş"
 
 #: src/Widgets/HumbleButton.vala:106
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:275
@@ -746,9 +744,8 @@ msgid "Twitter"
 msgstr "Twitter"
 
 #: src/Widgets/SharePopover.vala:51
-#, fuzzy
 msgid "Reddit"
-msgstr "reddit"
+msgstr "Reddit"
 
 #: src/Widgets/SharePopover.vala:55
 msgid "Tumblr"
@@ -776,7 +773,7 @@ msgstr "Boyut: %s"
 
 #: src/Widgets/UpdateHeaderRow.vala:105
 msgid "Searching for updates…"
-msgstr "Güncellemeler aranıyor..."
+msgstr "Güncellemeler aranıyor…"
 
 #: src/Widgets/UpdateHeaderRow.vala:112
 msgid "Up to Date"
