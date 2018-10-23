@@ -2,13 +2,14 @@
 # Fatih Arda ZENGİN <fatihardazengin@gmail.com>, 2018.
 # Veysel İNANÇ <vinanc72@gmail.com>, 2018.
 # Sinan Decron <intenfinitia@gmail.com>, 2018.
+# sabri unal <yakushabb@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-18 05:17-0500\n"
 "PO-Revision-Date: 2018-10-23 12:48+0000\n"
-"Last-Translator: Sinan Decron <intenfinitia@gmail.com>\n"
+"Last-Translator: sabri unal <yakushabb@gmail.com>\n"
 "Language-Team: Turkish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/tr/>\n"
 "Language: tr\n"
@@ -288,7 +289,7 @@ msgstr "İçerik Uyarısı"
 #: src/Dialogs/ContentWarningDialog.vala:32
 #, c-format
 msgid "%s Contains Explicit Content"
-msgstr ""
+msgstr "%s Yetişkin veya Rahatsız Edici İçerik"
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 #, c-format
