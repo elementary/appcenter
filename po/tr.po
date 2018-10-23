@@ -3,13 +3,14 @@
 # Veysel İNANÇ <vinanc72@gmail.com>, 2018.
 # Sinan Decron <intenfinitia@gmail.com>, 2018.
 # sabri unal <yakushabb@gmail.com>, 2018.
+# ecb <drbambal@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-18 05:17-0500\n"
 "PO-Revision-Date: 2018-10-23 13:04+0000\n"
-"Last-Translator: sabri unal <yakushabb@gmail.com>\n"
+"Last-Translator: ecb <drbambal@gmail.com>\n"
 "Language-Team: Turkish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/tr/>\n"
 "Language: tr\n"
@@ -307,9 +308,8 @@ msgid "Show content warnings"
 msgstr "İçerik uyarılarını göster"
 
 #: src/Dialogs/ContentWarningDialog.vala:40
-#, fuzzy
 msgid "Don’t Install"
-msgstr "Yükle"
+msgstr "Yüklemeyin"
 
 #: src/Dialogs/ContentWarningDialog.vala:41
 #, fuzzy
@@ -705,9 +705,8 @@ msgstr "Ücretsiz"
 
 #: src/Widgets/HumbleButton.vala:108
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:277
-#, fuzzy
 msgid "Install"
-msgstr "Yüklendi"
+msgstr "Yükle"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:142
