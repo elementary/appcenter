@@ -5,13 +5,14 @@
 # sabri unal <yakushabb@gmail.com>, 2018.
 # ecb <drbambal@gmail.com>, 2018.
 # KN-KZ <kurutmaz.kaan@gmail.com>, 2018.
+# Turker <turkerbol@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-18 05:17-0500\n"
 "PO-Revision-Date: 2018-10-23 13:04+0000\n"
-"Last-Translator: KN-KZ <kurutmaz.kaan@gmail.com>\n"
+"Last-Translator: Turker <turkerbol@gmail.com>\n"
 "Language-Team: Turkish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/tr/>\n"
 "Language: tr\n"
@@ -505,6 +506,8 @@ msgstr "Karttaki bakiye veya kredi limitine ulaşılmıştır."
 #: src/Dialogs/StripeDialog.vala:609
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
+"Kullanılan kart test kartıdır. Devam etmek için lütfen gerçek bir kart "
+"kullanınız."
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
@@ -524,7 +527,7 @@ msgstr "Ayrıntılar"
 
 #: src/Dialogs/UpdateFailDialog.vala:54
 msgid "Ignore"
-msgstr ""
+msgstr "Yoksay"
 
 #: src/Dialogs/UpdateFailDialog.vala:55
 msgid "Try Again"
@@ -582,7 +585,7 @@ msgstr ""
 
 #: src/Views/AppInfoView.vala:672
 msgid "Fund the development of this app"
-msgstr ""
+msgstr "Bu uygulamanın geliştirilmesini destekle"
 
 #: src/Views/AppListUpdateView.vala:56
 msgid "A restart is required to complete the installation of updates"
@@ -635,7 +638,7 @@ msgstr "Uygulama bulunamadı. Arama terimlerini değiştirmeyi deneyin."
 
 #: src/Widgets/Banner.vala:55
 msgid "An open, pay-what-you-want app store"
-msgstr ""
+msgstr "Açık bir, istediğin kadar öde uygulama mağzası"
 
 #: src/Widgets/Banner.vala:68
 msgid "Get the apps that you need at a price you can afford."
