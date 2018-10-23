@@ -4,13 +4,14 @@
 # Sinan Decron <intenfinitia@gmail.com>, 2018.
 # sabri unal <yakushabb@gmail.com>, 2018.
 # ecb <drbambal@gmail.com>, 2018.
+# KN-KZ <kurutmaz.kaan@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-18 05:17-0500\n"
 "PO-Revision-Date: 2018-10-23 13:04+0000\n"
-"Last-Translator: Sinan Decron <intenfinitia@gmail.com>\n"
+"Last-Translator: KN-KZ <kurutmaz.kaan@gmail.com>\n"
 "Language-Team: Turkish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/tr/>\n"
 "Language: tr\n"
@@ -348,7 +349,7 @@ msgstr "Lütfen ödeme bilgilerinizi gözden geçirin ve tekrar deneyin."
 
 #: src/Dialogs/StripeDialog.vala:76
 msgid "Payment"
-msgstr ""
+msgstr "Ödeme"
 
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
