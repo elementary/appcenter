@@ -6,13 +6,14 @@
 # ecb <drbambal@gmail.com>, 2018.
 # KN-KZ <kurutmaz.kaan@gmail.com>, 2018.
 # Turker <turkerbol@gmail.com>, 2018.
+# Mehmet Zahit Yılmaz <darkmehmet3@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-18 05:17-0500\n"
 "PO-Revision-Date: 2018-10-23 13:04+0000\n"
-"Last-Translator: Turker <turkerbol@gmail.com>\n"
+"Last-Translator: Mehmet Zahit Yılmaz <darkmehmet3@gmail.com>\n"
 "Language-Team: Turkish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/tr/>\n"
 "Language: tr\n"
@@ -543,7 +544,7 @@ msgstr "Ana Sayfa"
 
 #: src/Views/AppInfoView.vala:139
 msgid "Suggest Translations"
-msgstr ""
+msgstr "Çeviri Öner"
 
 #: src/Views/AppInfoView.vala:145
 msgid "Report a Problem"
@@ -577,11 +578,11 @@ msgstr "AppCenter'da %s 'e göz atın:"
 
 #: src/Views/AppInfoView.vala:345
 msgid "Share"
-msgstr ""
+msgstr "Paylaş"
 
 #: src/Views/AppInfoView.vala:650
 msgid "Fund"
-msgstr ""
+msgstr "Bağış yap"
 
 #: src/Views/AppInfoView.vala:672
 msgid "Fund the development of this app"
