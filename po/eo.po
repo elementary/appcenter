@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-18 05:17-0500\n"
-"PO-Revision-Date: 2018-10-21 03:43+0000\n"
+"PO-Revision-Date: 2018-10-22 00:02+0000\n"
 "Last-Translator: Jesse ALTER <jesse@jessealter.com>\n"
 "Language-Team: Esperanto <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/eo/>\n"
@@ -301,9 +301,8 @@ msgid "Show content warnings"
 msgstr ""
 
 #: src/Dialogs/ContentWarningDialog.vala:40
-#, fuzzy
 msgid "Don’t Install"
-msgstr "Instali"
+msgstr "Ne instali"
 
 #: src/Dialogs/ContentWarningDialog.vala:41
 #, fuzzy
