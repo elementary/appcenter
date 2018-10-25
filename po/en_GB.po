@@ -1,10 +1,11 @@
+# Ciaran Ainsworth <ciaranainsworth@outlook.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-18 05:17-0500\n"
-"PO-Revision-Date: 2018-05-18 00:06+0000\n"
-"Last-Translator: Ciaran Ainsworth <cda@whistlingkappa.com>\n"
+"PO-Revision-Date: 2018-10-25 07:03+0000\n"
+"Last-Translator: Ciaran Ainsworth <ciaranainsworth@outlook.com>\n"
 "Language-Team: English (United Kingdom) <https://weblate.elementary.io/"
 "projects/appcenter/appcenter/en_GB/>\n"
 "Language: en_GB\n"
@@ -12,18 +13,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
 #: src/Application.vala:38
 msgid "AppCenter"
-msgstr "AppCentre"
+msgstr "AppCenter"
 
 #: src/Application.vala:106
 #, c-format
 msgid "Could not parse mimetype %s"
-msgstr ""
+msgstr "Could not parse mimetype %s"
 
 #: src/Application.vala:126
 #, c-format
@@ -265,9 +266,9 @@ msgid "%s:"
 msgstr "%s:"
 
 #: src/Core/Package.vala:235
-#, fuzzy, c-format
+#, c-format
 msgid "%s Developers"
-msgstr "The %s Developers"
+msgstr "%s Developers"
 
 #: src/Core/UpdateManager.vala:81
 msgid "Restart Required"
@@ -279,12 +280,12 @@ msgstr "Please restart your system to finalise updates"
 
 #: src/Dialogs/ContentWarningDialog.vala:27
 msgid "Content Warning"
-msgstr ""
+msgstr "Content Warning"
 
 #: src/Dialogs/ContentWarningDialog.vala:32
 #, c-format
 msgid "%s Contains Explicit Content"
-msgstr ""
+msgstr "%s Contains Explicit Content"
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 #, c-format
@@ -293,20 +294,21 @@ msgid ""
 "disturbing. In general, elementary does not review or endorse the contents "
 "of this app."
 msgstr ""
+"%s may contain content only suitable for adults or that may be sensitive or "
+"disturbing. In general, elementary does not review or endorse the contents "
+"of this app."
 
 #: src/Dialogs/ContentWarningDialog.vala:35
 msgid "Show content warnings"
-msgstr ""
+msgstr "Show content warnings"
 
 #: src/Dialogs/ContentWarningDialog.vala:40
-#, fuzzy
 msgid "Don’t Install"
-msgstr "Install"
+msgstr "Don't Install"
 
 #: src/Dialogs/ContentWarningDialog.vala:41
-#, fuzzy
 msgid "Install Anyway"
-msgstr "Installing"
+msgstr "Install Anyway"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -340,7 +342,7 @@ msgstr "Please review your payment info and try again."
 
 #: src/Dialogs/StripeDialog.vala:76
 msgid "Payment"
-msgstr ""
+msgstr "Payment"
 
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
@@ -360,13 +362,12 @@ msgid "Email"
 msgstr "Email"
 
 #: src/Dialogs/StripeDialog.vala:108
-#, fuzzy
 msgid ""
 "Your email address is only used to send a receipt. You will not be "
 "subscribed to any mailing list."
 msgstr ""
-"Your email address is used to send a receipt. It is never stored and you "
-"will not be subscribed to a mailing list."
+"Your email address is only used to send a receipt. You will not be "
+"subscribed to any mailing list."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127
@@ -476,7 +477,6 @@ msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "The CVC number is incorrect. Please try again using the correct CVC."
 
 #: src/Dialogs/StripeDialog.vala:583
-#, fuzzy
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
 msgstr ""
@@ -687,7 +687,7 @@ msgstr "Universal Access"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
-msgstr ""
+msgstr "Requires payments, which are not enabled"
 
 #: src/Widgets/HumbleButton.vala:106
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:275
@@ -737,7 +737,6 @@ msgid "Twitter"
 msgstr "Twitter"
 
 #: src/Widgets/SharePopover.vala:51
-#, fuzzy
 msgid "Reddit"
 msgstr "Reddit"
 
