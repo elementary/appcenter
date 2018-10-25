@@ -1,3 +1,9 @@
+appcenter (3.0.1) bionic; urgency=medium
+
+  * New upstream release.
+
+ -- Cody Garver <cody@elementary.io>  Thu, 25 Oct 2018 06:44:28 -0500
+
 appcenter (3.0) bionic; urgency=medium
 
   * New upstream release.
