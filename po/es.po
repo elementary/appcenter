@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-18 05:17-0500\n"
-"PO-Revision-Date: 2018-10-21 00:06+0000\n"
+"POT-Creation-Date: 2018-10-25 16:02-0700\n"
+"PO-Revision-Date: 2018-10-25 22:35+0000\n"
 "Last-Translator: Carlos Cañellas <ratiosu.cct@gmail.com>\n"
 "Language-Team: Spanish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
@@ -688,7 +688,8 @@ msgid "Internet"
 msgstr "Internet"
 
 #: src/Widgets/CategoryFlowBox.vala:87
-msgid "Science & Engineering"
+#, fuzzy
+msgid "Math, Science, & Engineering"
 msgstr "Ciencia e Ingeniería"
 
 #: src/Widgets/CategoryFlowBox.vala:106
@@ -706,9 +707,8 @@ msgstr "Gratis"
 
 #: src/Widgets/HumbleButton.vala:108
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:277
-#, fuzzy
 msgid "Install"
-msgstr "Instaladas"
+msgstr "Instalar"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:142

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-18 05:17-0500\n"
+"POT-Creation-Date: 2018-10-25 16:02-0700\n"
 "PO-Revision-Date: 2018-06-12 06:39+0000\n"
 "Last-Translator: Janith Weerasinghe <janithweerasinghe@rocketmail.com>\n"
 "Language-Team: Sinhala <https://weblate.elementary.io/projects/appcenter/"
@@ -659,7 +659,7 @@ msgid "Internet"
 msgstr ""
 
 #: src/Widgets/CategoryFlowBox.vala:87
-msgid "Science & Engineering"
+msgid "Math, Science, & Engineering"
 msgstr ""
 
 #: src/Widgets/CategoryFlowBox.vala:106

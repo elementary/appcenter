@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-18 05:17-0500\n"
+"POT-Creation-Date: 2018-10-25 16:02-0700\n"
 "PO-Revision-Date: 2016-09-16 04:59+0000\n"
 "Last-Translator: Kristjan Vool <tictac7x@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -657,7 +657,8 @@ msgid "Internet"
 msgstr "Internet"
 
 #: src/Widgets/CategoryFlowBox.vala:87
-msgid "Science & Engineering"
+#, fuzzy
+msgid "Math, Science, & Engineering"
 msgstr "Teadus & tehnika"
 
 #: src/Widgets/CategoryFlowBox.vala:106
