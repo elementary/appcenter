@@ -172,6 +172,24 @@
     font-size: 24px;
 }
 
+.category.communication {
+    background-image: linear-gradient(
+        to bottom,
+        @BANANA_100,
+        @BANANA_300
+    );
+    border:none;
+    box-shadow:
+        inset 0 0 0 1px alpha (#fff, 0.10),
+        inset 0 1px 0 0 alpha (#fff, 0.90),
+        inset 0 -1px 0 0 alpha (#fff, 0.30),
+        0 0 0 1px alpha (#000, 0.15),
+        0 3px 2px -1px alpha (#000, 0.15),
+        0 3px 5px alpha (#000, 0.10);
+    color: #9E5700; /* Darkened @BANANA_900 for AA compliance */
+    font-size: 24px;
+}
+
 .category.office {
     border:none;
     box-shadow: inset 0 0 0 1px alpha (#fff, 0.10),

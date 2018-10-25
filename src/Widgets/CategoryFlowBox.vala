@@ -103,6 +103,15 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
             "Robotics",
             "Science"
         }, "science"));
+        add (get_category (_("Communication"), "internet-chat", {
+            "Chat",
+            "ContactManagement",
+            "Email",
+            "InstantMessaging",
+            "IRCClient",
+            "Telephony",
+            "VideoConference"
+        }, "communication"));
         add (get_category (_("Universal Access"), "applications-accessibility-symbolic", {"Accessibility"}, "accessibility"));
     }
 
