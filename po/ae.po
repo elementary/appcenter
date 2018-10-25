@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-18 05:17-0500\n"
+"POT-Creation-Date: 2018-10-25 16:02-0700\n"
 "PO-Revision-Date: 2017-04-21 09:21+0000\n"
 "Last-Translator: HAYDER <albasimy16@gmail.com>\n"
 "Language-Team: ae (generated) <https://l10n.elementary.io/projects/appcenter/"
@@ -650,7 +650,7 @@ msgid "Internet"
 msgstr ""
 
 #: src/Widgets/CategoryFlowBox.vala:87
-msgid "Science & Engineering"
+msgid "Math, Science, & Engineering"
 msgstr ""
 
 #: src/Widgets/CategoryFlowBox.vala:106
