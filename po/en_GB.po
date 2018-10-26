@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-25 16:02-0700\n"
-"PO-Revision-Date: 2018-10-26 07:09+0000\n"
+"PO-Revision-Date: 2018-10-26 19:09+0000\n"
 "Last-Translator: Ciaran Ainsworth <ciaranainsworth@outlook.com>\n"
 "Language-Team: English (United Kingdom) <https://weblate.elementary.io/"
 "projects/appcenter/appcenter/en_GB/>\n"
@@ -347,7 +347,7 @@ msgstr "Payment"
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
 msgid "Pay $%d for %s"
-msgstr "Pay %d USD for %s"
+msgstr "Pay $%d for %s"
 
 #: src/Dialogs/StripeDialog.vala:96
 msgid ""
@@ -414,16 +414,14 @@ msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
-"The expiration month is invalid. Please try again using the correct "
-"expiration date."
+"The expiry month is invalid. Please try again using the correct expiry date."
 
 #: src/Dialogs/StripeDialog.vala:517 src/Dialogs/StripeDialog.vala:575
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
-"The expiration year is invalid. Please try again using the correct "
-"expiration date."
+"The expiry year is invalid. Please try again using the correct expiry date."
 
 #: src/Dialogs/StripeDialog.vala:520 src/Dialogs/StripeDialog.vala:573
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
@@ -679,7 +677,7 @@ msgstr "Internet"
 
 #: src/Widgets/CategoryFlowBox.vala:87
 msgid "Math, Science, & Engineering"
-msgstr "Maths, Science, & Engineering"
+msgstr "Maths, Science & Engineering"
 
 #: src/Widgets/CategoryFlowBox.vala:106
 msgid "Universal Access"
@@ -703,7 +701,7 @@ msgstr "Install"
 #: src/Widgets/HumbleButton.vala:142
 #, c-format
 msgid "$%d.00"
-msgstr "$%d.00USD"
+msgstr "$%d.00"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:145
