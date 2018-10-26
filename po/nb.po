@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-25 16:02-0700\n"
-"PO-Revision-Date: 2018-10-16 10:33+0000\n"
+"PO-Revision-Date: 2018-10-26 00:20+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://weblate.elementary.io/projects/"
 "appcenter/appcenter/nb/>\n"
@@ -672,9 +672,8 @@ msgid "Internet"
 msgstr "Internett"
 
 #: src/Widgets/CategoryFlowBox.vala:87
-#, fuzzy
 msgid "Math, Science, & Engineering"
-msgstr "Vitenskap og teknikk"
+msgstr "Matematikk, vitenskap og teknikk"
 
 #: src/Widgets/CategoryFlowBox.vala:106
 msgid "Universal Access"
