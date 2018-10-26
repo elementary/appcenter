@@ -84,7 +84,7 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
             "Network",
             "P2P"
         }, "internet"));
-        add (get_category (_("Science & Engineering"), "", {
+        add (get_category (_("Math, Science, & Engineering"), "", {
             "ArtificialIntelligence",
             "Astronomy",
             "Biology",

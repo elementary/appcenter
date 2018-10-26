@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-18 05:17-0500\n"
+"POT-Creation-Date: 2018-10-25 16:02-0700\n"
 "PO-Revision-Date: 2018-10-09 00:01+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.elementary.io/projects/"
@@ -659,7 +659,8 @@ msgid "Internet"
 msgstr "网络"
 
 #: src/Widgets/CategoryFlowBox.vala:87
-msgid "Science & Engineering"
+#, fuzzy
+msgid "Math, Science, & Engineering"
 msgstr "科学 & 工程"
 
 #: src/Widgets/CategoryFlowBox.vala:106

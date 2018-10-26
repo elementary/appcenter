@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-18 05:17-0500\n"
+"POT-Creation-Date: 2018-10-25 16:02-0700\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
@@ -643,7 +643,7 @@ msgid "Internet"
 msgstr ""
 
 #: src/Widgets/CategoryFlowBox.vala:87
-msgid "Science & Engineering"
+msgid "Math, Science, & Engineering"
 msgstr ""
 
 #: src/Widgets/CategoryFlowBox.vala:106

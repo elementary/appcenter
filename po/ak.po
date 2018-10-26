@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Akan (AppCenter)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-18 05:17-0500\n"
+"POT-Creation-Date: 2018-10-25 16:02-0700\n"
 "PO-Revision-Date: 2017-08-10 14:46+0000\n"
 "Last-Translator: Lawrence Aberba <karabutaworld@gmail.com>\n"
 "Language-Team: Akan <https://weblate.elementary.io/projects/appcenter/"
@@ -671,7 +671,8 @@ msgid "Internet"
 msgstr "Intanɛt"
 
 #: src/Widgets/CategoryFlowBox.vala:87
-msgid "Science & Engineering"
+#, fuzzy
+msgid "Math, Science, & Engineering"
 msgstr "Nyansapɛ"
 
 #: src/Widgets/CategoryFlowBox.vala:106
