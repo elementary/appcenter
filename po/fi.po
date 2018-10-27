@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-25 16:02-0700\n"
-"PO-Revision-Date: 2018-10-21 00:06+0000\n"
+"PO-Revision-Date: 2018-10-28 00:05+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/fi/>\n"
@@ -25,7 +25,7 @@ msgstr "Sovelluskeskus"
 #: src/Application.vala:106
 #, c-format
 msgid "Could not parse mimetype %s"
-msgstr ""
+msgstr "Ei voitu jäsentää MIME-tyyppiä %s"
 
 #: src/Application.vala:126
 #, c-format
@@ -267,9 +267,9 @@ msgid "%s:"
 msgstr "%s:"
 
 #: src/Core/Package.vala:235
-#, fuzzy, c-format
+#, c-format
 msgid "%s Developers"
-msgstr "%s Kehittäjät"
+msgstr "%s-kehittäjät"
 
 #: src/Core/UpdateManager.vala:81
 msgid "Restart Required"
@@ -287,7 +287,7 @@ msgstr "Sisältövaroitus"
 #: src/Dialogs/ContentWarningDialog.vala:32
 #, c-format
 msgid "%s Contains Explicit Content"
-msgstr ""
+msgstr "%s sisältää epäsiveellistä sisältöä"
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 #, c-format
@@ -360,13 +360,12 @@ msgid "Email"
 msgstr "Sähköposti"
 
 #: src/Dialogs/StripeDialog.vala:108
-#, fuzzy
 msgid ""
 "Your email address is only used to send a receipt. You will not be "
 "subscribed to any mailing list."
 msgstr ""
-"Sähköpostiosoitettasi käytetään kuitin lähettämiseen. Sitä ei tallenneta "
-"mihinkään, etkä päädy millekään postituslistalle."
+"Sähköpostiosoitettasi käytetään vain kuitin lähettämiseen. Sitä ei lisätä "
+"yhteenkään postituslistaan."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127
@@ -672,9 +671,8 @@ msgid "Internet"
 msgstr "Internet"
 
 #: src/Widgets/CategoryFlowBox.vala:87
-#, fuzzy
 msgid "Math, Science, & Engineering"
-msgstr "Tiede ja suunnittelu"
+msgstr "Matematiikka, tiede ja suunnittelu"
 
 #: src/Widgets/CategoryFlowBox.vala:106
 msgid "Universal Access"
