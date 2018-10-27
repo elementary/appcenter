@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-25 16:02-0700\n"
-"PO-Revision-Date: 2018-10-26 21:29+0000\n"
+"PO-Revision-Date: 2018-10-28 00:05+0000\n"
 "Last-Translator: Sinan Decron <intenfinitia@gmail.com>\n"
 "Language-Team: Turkish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/tr/>\n"
@@ -27,7 +27,7 @@ msgstr ""
 #. Add "AppCenter" to the translation catalog
 #: src/Application.vala:38
 msgid "AppCenter"
-msgstr "Uygulama Merkezi"
+msgstr "AppCenter"
 
 #: src/Application.vala:106
 #, c-format
