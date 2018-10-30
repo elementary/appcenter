@@ -6,8 +6,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-25 16:02-0700\n"
-"PO-Revision-Date: 2018-10-09 00:01+0000\n"
-"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
+"PO-Revision-Date: 2018-10-29 16:29+0000\n"
+"Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.elementary.io/projects/"
 "appcenter/appcenter/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -45,7 +45,7 @@ msgstr "%s 安装成功"
 #: src/Application.vala:273
 #, c-format
 msgid "There Was An Error Installing %s."
-msgstr "安装 %s 时发生错误"
+msgstr "安装 %s 时出现错误。"
 
 #: src/MainWindow.vala:149 src/Views/Homepage.vala:253
 #: src/Views/Homepage.vala:262 src/Views/Homepage.vala:267
@@ -70,7 +70,7 @@ msgstr "网络连接不可用"
 
 #: src/MainWindow.vala:196
 msgid "Connect to the Internet to install or update apps."
-msgstr "要安装或升级应用程序，您必须先连接到网络。"
+msgstr "连接到网络来安装或更新应用程序。"
 
 #: src/MainWindow.vala:199
 msgid "Network Settings…"
@@ -251,7 +251,7 @@ msgstr "版本：%s"
 
 #: src/Core/Client.vala:505
 msgid "No components with updates"
-msgstr "无组件更新"
+msgstr "暂无组件更新"
 
 #: src/Core/Client.vala:509
 #, c-format
@@ -349,7 +349,7 @@ msgstr "为 %2$s 支付 $%1$d"
 msgid ""
 "This is a one time payment. Your email address is only used to send you a "
 "receipt."
-msgstr "此为一次性支付。您的电子邮件地址仅用于向您发送收据。"
+msgstr "此支付为一次性支付。您的电子邮件地址仅用于寄送收据。"
 
 #: src/Dialogs/StripeDialog.vala:106 src/Widgets/SharePopover.vala:35
 msgid "Email"
@@ -457,12 +457,10 @@ msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "金额有误。请输入有效金额后重试。"
 
 #: src/Dialogs/StripeDialog.vala:581
-#, fuzzy
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr "CVC 号码不正确，请输入正确的 CVC 号码后重试。"
+msgstr "PIN 不正确，请输入正确的 PIN 后重试。"
 
 #: src/Dialogs/StripeDialog.vala:583
-#, fuzzy
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
 msgstr "PIN 错误次数已达上限，请换一张卡重试。"
