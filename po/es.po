@@ -1,12 +1,13 @@
 # Rafael Bautista Martínez <iuninefrendor@gmail.com>, 2018.
 # Pablo Solís La Beira <pabsol1977@gmail.com>, 2018.
+# Carlos Cañellas <ratiosu.cct@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-14 08:43-0700\n"
-"PO-Revision-Date: 2018-10-01 00:08+0000\n"
-"Last-Translator: Pablo Solís La Beira <pabsol1977@gmail.com>\n"
+"POT-Creation-Date: 2018-10-25 16:02-0700\n"
+"PO-Revision-Date: 2018-10-25 22:35+0000\n"
+"Last-Translator: Carlos Cañellas <ratiosu.cct@gmail.com>\n"
 "Language-Team: Spanish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -687,7 +688,8 @@ msgid "Internet"
 msgstr "Internet"
 
 #: src/Widgets/CategoryFlowBox.vala:87
-msgid "Science & Engineering"
+#, fuzzy
+msgid "Math, Science, & Engineering"
 msgstr "Ciencia e Ingeniería"
 
 #: src/Widgets/CategoryFlowBox.vala:106
@@ -705,9 +707,8 @@ msgstr "Gratis"
 
 #: src/Widgets/HumbleButton.vala:108
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:277
-#, fuzzy
 msgid "Install"
-msgstr "Instaladas"
+msgstr "Instalar"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:142
@@ -719,9 +720,7 @@ msgstr "$%d.00"
 #: src/Widgets/HumbleButton.vala:145
 #, c-format
 msgid "$%d"
-msgstr ""
-"Esta cantidad será en dólares americanos. Algunos idiomas podrían necesitar "
-"un \"$%dUSD\""
+msgstr "$%d (dólares americanos)"
 
 #: src/Widgets/ReleaseRow.vala:67
 #, c-format

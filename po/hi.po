@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-14 08:43-0700\n"
+"POT-Creation-Date: 2018-10-25 16:02-0700\n"
 "PO-Revision-Date: 2018-03-19 04:42+0000\n"
 "Last-Translator: Anand Kumar <anand@anandkumar.net>\n"
 "Language-Team: Hindi <https://weblate.elementary.io/projects/appcenter/"
@@ -652,7 +652,7 @@ msgid "Internet"
 msgstr ""
 
 #: src/Widgets/CategoryFlowBox.vala:87
-msgid "Science & Engineering"
+msgid "Math, Science, & Engineering"
 msgstr ""
 
 #: src/Widgets/CategoryFlowBox.vala:106

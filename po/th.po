@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-14 08:43-0700\n"
+"POT-Creation-Date: 2018-10-25 16:02-0700\n"
 "PO-Revision-Date: 2018-03-05 18:38+0000\n"
 "Last-Translator: Wattana Gaming <artjang301@gmail.com>\n"
 "Language-Team: Thai <https://weblate.elementary.io/projects/appcenter/"
@@ -653,7 +653,8 @@ msgid "Internet"
 msgstr "อินเทอร์เน็ต"
 
 #: src/Widgets/CategoryFlowBox.vala:87
-msgid "Science & Engineering"
+#, fuzzy
+msgid "Math, Science, & Engineering"
 msgstr "วิทยาศาสตร์และวิศวกรรมศาสตร์"
 
 #: src/Widgets/CategoryFlowBox.vala:106

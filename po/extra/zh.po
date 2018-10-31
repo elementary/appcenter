@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-02 13:03-0700\n"
+"POT-Creation-Date: 2018-10-18 05:17-0500\n"
 "PO-Revision-Date: 2018-03-10 12:15+0000\n"
 "Last-Translator: 二重天 <ybasefinal@163.com>\n"
-"Language-Team: Chinese "
-"<https://weblate.elementary.io/projects/appcenter/extra/zh/>\n"
+"Language-Team: Chinese <https://weblate.elementary.io/projects/appcenter/"
+"extra/zh/>\n"
 "Language: zh\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -13,52 +13,76 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2.18\n"
 
+#: data/io.elementary.appcenter.appdata.xml.in:8
 msgid "AppCenter"
 msgstr "应用中心"
 
+#: data/io.elementary.appcenter.appdata.xml.in:9
+#: data/io.elementary.appcenter.desktop.in.in:4
 msgid "Browse and manage apps"
 msgstr "浏览和管理应用"
 
-msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
-msgstr "安装;卸载;移除;目录;商店;应用;更新;软件;"
-
-msgid "About AppCenter"
-msgstr "关于应用中心"
-
+#: data/io.elementary.appcenter.appdata.xml.in:11
 msgid ""
 "An app store for indie and open source developers. Browse by categories or "
 "search and discover new apps. AppCenter is also used for updating your "
 "system to the latest and greatest version for new features and fixes."
-msgstr "一个为独立和开源开发者服务的应用商店。按类别浏览或搜索和发现新应用程序。 应用中心还可用于将您的系统更新为最新最强大的新功能和修复版本。"
+msgstr ""
+"一个为独立和开源开发者服务的应用商店。按类别浏览或搜索和发现新应用程序。 应用"
+"中心还可用于将您的系统更新为最新最强大的新功能和修复版本。"
 
-msgid "Bug fixes and improve perfomance."
-msgstr "错误修复和性能提升。"
+#: data/io.elementary.appcenter.appdata.xml.in:201
+msgid "elementary LLC."
+msgstr ""
 
-msgid "Various bug fixes and performance improvements"
-msgstr "各种错误修复和性能提升"
+#: data/io.elementary.appcenter.desktop.in.in:3
+msgid "@APP_NAME@"
+msgstr ""
 
-msgid "New translations"
-msgstr "新的翻译"
+#: data/io.elementary.appcenter.desktop.in.in:6
+msgid "@DESKTOP_ICON@"
+msgstr ""
 
-msgid "Fix crash caused by entries with missing packages"
-msgstr "修复由缺少软件包的条目导致的崩溃"
+#: data/io.elementary.appcenter.desktop.in.in:7
+msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
+msgstr "安装;卸载;移除;目录;商店;应用;更新;软件;"
 
-msgid "Add capability to search by category and apply minor bug fixes."
-msgstr "按类别为搜索添加功能并应用一些小错误修复。"
+#: data/io.elementary.appcenter.desktop.in.in:18
+msgid "Check for Updates"
+msgstr ""
 
-msgid "It is now possible to search apps inside a category"
-msgstr "现在可以在类别内搜索应用程序"
+#~ msgid "About AppCenter"
+#~ msgstr "关于应用中心"
 
-msgid "Prevent multiple authentication dialogs when resuming from suspend"
-msgstr "从挂起恢复时防止多个身份验证对话框弹出"
+#~ msgid "Bug fixes and improve perfomance."
+#~ msgstr "错误修复和性能提升。"
 
-msgid ""
-"Search perfomance has beeen improved, the category name is now shown on the "
-"headbar and minor bugs have been fixed."
-msgstr "搜索性能得到了改善，类别名称现在显示在了顶栏上，一些小错误也已被修复。"
+#~ msgid "Various bug fixes and performance improvements"
+#~ msgstr "各种错误修复和性能提升"
 
-msgid "Fix Steam installation"
-msgstr "修复Steam安装"
+#~ msgid "New translations"
+#~ msgstr "新的翻译"
 
-msgid "Make search asynchronous"
-msgstr "使用异步搜索"
+#~ msgid "Fix crash caused by entries with missing packages"
+#~ msgstr "修复由缺少软件包的条目导致的崩溃"
+
+#~ msgid "Add capability to search by category and apply minor bug fixes."
+#~ msgstr "按类别为搜索添加功能并应用一些小错误修复。"
+
+#~ msgid "It is now possible to search apps inside a category"
+#~ msgstr "现在可以在类别内搜索应用程序"
+
+#~ msgid "Prevent multiple authentication dialogs when resuming from suspend"
+#~ msgstr "从挂起恢复时防止多个身份验证对话框弹出"
+
+#~ msgid ""
+#~ "Search perfomance has beeen improved, the category name is now shown on "
+#~ "the headbar and minor bugs have been fixed."
+#~ msgstr ""
+#~ "搜索性能得到了改善，类别名称现在显示在了顶栏上，一些小错误也已被修复。"
+
+#~ msgid "Fix Steam installation"
+#~ msgstr "修复Steam安装"
+
+#~ msgid "Make search asynchronous"
+#~ msgstr "使用异步搜索"

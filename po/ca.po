@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-14 08:43-0700\n"
-"PO-Revision-Date: 2018-10-16 00:08+0000\n"
+"POT-Creation-Date: 2018-10-25 16:02-0700\n"
+"PO-Revision-Date: 2018-10-26 12:27+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/ca/>\n"
@@ -97,7 +97,7 @@ msgstr "S'obté informació"
 
 #: src/Core/ChangeInformation.vala:64
 msgid "Removing packages"
-msgstr "S'eliminen paquets"
+msgstr "Se suprimeixen paquets"
 
 #: src/Core/ChangeInformation.vala:66
 msgid "Downloading"
@@ -696,8 +696,8 @@ msgid "Internet"
 msgstr "Internet"
 
 #: src/Widgets/CategoryFlowBox.vala:87
-msgid "Science & Engineering"
-msgstr "Ciència i enginyeria"
+msgid "Math, Science, & Engineering"
+msgstr "Matemàtiques, ciència i enginyeria"
 
 #: src/Widgets/CategoryFlowBox.vala:106
 msgid "Universal Access"

@@ -1,10 +1,11 @@
+# Fredrik B <frbo9002@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-14 08:43-0700\n"
-"PO-Revision-Date: 2018-06-12 06:39+0000\n"
-"Last-Translator: Richard Sjöqvist <richard@spiro.se>\n"
+"POT-Creation-Date: 2018-10-25 16:02-0700\n"
+"PO-Revision-Date: 2018-10-28 09:52+0000\n"
+"Last-Translator: Fredrik B <frbo9002@gmail.com>\n"
 "Language-Team: Swedish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/sv/>\n"
 "Language: sv\n"
@@ -12,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -23,7 +24,7 @@ msgstr "AppCenter"
 #: src/Application.vala:106
 #, c-format
 msgid "Could not parse mimetype %s"
-msgstr ""
+msgstr "Kunde inte tolka mimetypen %s"
 
 #: src/Application.vala:126
 #, c-format
@@ -52,10 +53,9 @@ msgstr "Hem"
 
 #: src/MainWindow.vala:150 src/Views/InstalledView.vala:29
 #: src/Views/InstalledView.vala:53
-#, fuzzy
 msgctxt "view"
 msgid "Installed"
-msgstr "Installera"
+msgstr "Installerade"
 
 #: src/MainWindow.vala:177 src/MainWindow.vala:330 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:81
@@ -280,12 +280,12 @@ msgstr "Vänligen starta om ditt system för att slutföra uppdateringarna"
 
 #: src/Dialogs/ContentWarningDialog.vala:27
 msgid "Content Warning"
-msgstr ""
+msgstr "Innehållsvarning"
 
 #: src/Dialogs/ContentWarningDialog.vala:32
 #, c-format
 msgid "%s Contains Explicit Content"
-msgstr ""
+msgstr "%s innehåller stötande innehåll"
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 #, c-format
@@ -294,19 +294,21 @@ msgid ""
 "disturbing. In general, elementary does not review or endorse the contents "
 "of this app."
 msgstr ""
+"%s kan ha innehåll som bara passar för vuxna, eller som på annat sätt är "
+"känsligt. Generellt sett varken recenserar eller rekommenderar elementary "
+"innehållet i detta program."
 
 #: src/Dialogs/ContentWarningDialog.vala:35
 msgid "Show content warnings"
-msgstr ""
+msgstr "Visa innehållsvarningar"
 
 #: src/Dialogs/ContentWarningDialog.vala:40
 msgid "Don’t Install"
-msgstr ""
+msgstr "Installera inte"
 
 #: src/Dialogs/ContentWarningDialog.vala:41
-#, fuzzy
 msgid "Install Anyway"
-msgstr "Installerar"
+msgstr "Installera ändå"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -340,7 +342,7 @@ msgstr "Vänligen kontrollera betaluppgifterna och försök igen."
 
 #: src/Dialogs/StripeDialog.vala:76
 msgid "Payment"
-msgstr ""
+msgstr "Betalning"
 
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
@@ -360,13 +362,12 @@ msgid "Email"
 msgstr "E-post"
 
 #: src/Dialogs/StripeDialog.vala:108
-#, fuzzy
 msgid ""
 "Your email address is only used to send a receipt. You will not be "
 "subscribed to any mailing list."
 msgstr ""
-"Din e-postadress används för att skicka ett kvitto. Den lagras aldrig och du "
-"kommer inte att läggas till i någon e-postlista."
+"Din e-postadress används bara för att skicka ett kvitto. Den kommer inte att "
+"läggas till i någon e-postlista."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127
@@ -674,7 +675,7 @@ msgid "Internet"
 msgstr "Internet"
 
 #: src/Widgets/CategoryFlowBox.vala:87
-msgid "Science & Engineering"
+msgid "Math, Science, & Engineering"
 msgstr "Vetenskap och ingenjörskonst"
 
 #: src/Widgets/CategoryFlowBox.vala:106
@@ -683,7 +684,7 @@ msgstr "Hjälpmedel"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
-msgstr ""
+msgstr "Kräver betalning, vilket inte är aktiverat"
 
 #: src/Widgets/HumbleButton.vala:106
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:275
@@ -692,7 +693,6 @@ msgstr "Gratis"
 
 #: src/Widgets/HumbleButton.vala:108
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:277
-#, fuzzy
 msgid "Install"
 msgstr "Installera"
 
@@ -734,9 +734,8 @@ msgid "Twitter"
 msgstr "Twitter"
 
 #: src/Widgets/SharePopover.vala:51
-#, fuzzy
 msgid "Reddit"
-msgstr "reddit"
+msgstr "Reddit"
 
 #: src/Widgets/SharePopover.vala:55
 msgid "Tumblr"

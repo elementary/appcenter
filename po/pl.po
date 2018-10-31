@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-14 08:43-0700\n"
-"PO-Revision-Date: 2018-10-16 10:15+0000\n"
+"POT-Creation-Date: 2018-10-25 16:02-0700\n"
+"PO-Revision-Date: 2018-10-26 05:38+0000\n"
 "Last-Translator: Piotr Strebski <strebski@gmail.com>\n"
 "Language-Team: Polish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/pl/>\n"
@@ -695,8 +695,8 @@ msgid "Internet"
 msgstr "Internet"
 
 #: src/Widgets/CategoryFlowBox.vala:87
-msgid "Science & Engineering"
-msgstr "Nauka i inżynieria"
+msgid "Math, Science, & Engineering"
+msgstr "Matematyka, nauka i inżynieria"
 
 #: src/Widgets/CategoryFlowBox.vala:106
 msgid "Universal Access"

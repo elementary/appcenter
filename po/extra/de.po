@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 08:32-0700\n"
+"POT-Creation-Date: 2018-10-18 05:17-0500\n"
 "PO-Revision-Date: 2018-09-11 17:16+0000\n"
 "Last-Translator: Jörg Arnold <j.ar@mailbox.org>\n"
 "Language-Team: German <https://weblate.elementary.io/projects/appcenter/"
@@ -35,7 +35,7 @@ msgstr ""
 "außerdem zum Aktualisieren des Systems genutzt. Somit erhalten Sie die "
 "aktuellste und beste Software mit allen neuen Funktionen und Verbesserungen."
 
-#: data/io.elementary.appcenter.appdata.xml.in:191
+#: data/io.elementary.appcenter.appdata.xml.in:201
 msgid "elementary LLC."
 msgstr "elementary LLC."
 
@@ -50,8 +50,8 @@ msgstr "@DESKTOP_ICON@"
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
 msgstr ""
-"install;uninstall;remove;catalogue;store;installieren;deinstallieren;entferne"
-"n;auflisten;speichern;Apps;Updates;Software;"
+"install;uninstall;remove;catalogue;store;installieren;deinstallieren;"
+"entfernen;auflisten;speichern;Apps;Updates;Software;"
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 08:32-0700\n"
+"POT-Creation-Date: 2018-10-18 05:17-0500\n"
 "PO-Revision-Date: 2018-05-19 14:49+0000\n"
 "Last-Translator: Wesley Huang <wezmag@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://weblate.elementary.io/projects/"
@@ -33,7 +33,7 @@ msgstr ""
 "獨立和開源開發者的軟體商店。可以瀏覽各分類來搜尋和探索新軟體。AppCenter 也能"
 "用來將系統更新成含有新功能和新修正的最嶄新、最強大的版本。"
 
-#: data/io.elementary.appcenter.appdata.xml.in:191
+#: data/io.elementary.appcenter.appdata.xml.in:201
 msgid "elementary LLC."
 msgstr ""
 
