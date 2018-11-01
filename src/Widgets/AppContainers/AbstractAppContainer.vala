@@ -157,8 +157,9 @@ namespace AppCenter {
 
             var button_grid = new Gtk.Grid ();
             button_grid.column_spacing = 6;
-            button_grid.halign = Gtk.Align.END;
             button_grid.valign = Gtk.Align.CENTER;
+            button_grid.halign = Gtk.Align.END;
+            button_grid.hexpand = false;
             button_grid.add (uninstall_button);
             button_grid.add (action_button);
             button_grid.add (open_button);
@@ -167,12 +168,13 @@ namespace AppCenter {
             progress_bar.show_text = true;
             progress_bar.valign = Gtk.Align.CENTER;
             /* Request a width large enough for the longest text to stop width of
-             * progress bar jumping around */
-            progress_bar.width_request = 350;
+             * progress bar jumping around, but allow space for long package names */
+            progress_bar.width_request = 250;
 
             cancel_button = new Gtk.Button.with_label (_("Cancel"));
             /* Match button text size with that of HumbleButton */
             cancel_button.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+            cancel_button.valign = Gtk.Align.CENTER;
             cancel_button.clicked.connect (() => action_cancelled ());
 
             progress_grid = new Gtk.Grid ();

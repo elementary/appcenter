@@ -86,7 +86,6 @@ namespace AppCenter.Views {
             }
 
             package_name = new Gtk.Label (null);
-            package_name.margin_top = 12;
             package_name.selectable = true;
             package_name.xalign = 0;
             package_name.get_style_context ().add_class (Granite.STYLE_CLASS_H1_LABEL);
@@ -103,7 +102,7 @@ namespace AppCenter.Views {
             package_author = new Gtk.Label (null);
             package_author.selectable = true;
             package_author.xalign = 0;
-            package_author.valign = Gtk.Align.START;
+            package_author.valign = Gtk.Align.CENTER;
             package_author.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
             package_author.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
@@ -162,7 +161,7 @@ namespace AppCenter.Views {
             var content_grid = new Gtk.Grid ();
             content_grid.width_request = 800;
             content_grid.halign = Gtk.Align.CENTER;
-            content_grid.margin = 48;
+            content_grid.margin = 48; /* Total with ~900 */
             content_grid.row_spacing = 24;
             content_grid.orientation = Gtk.Orientation.VERTICAL;
 
@@ -215,19 +214,24 @@ namespace AppCenter.Views {
             header_grid.row_spacing = 6;
             header_grid.halign = Gtk.Align.CENTER;
             header_grid.margin = 12;
-            header_grid.width_request = 800;
+            header_grid.width_request = 900; /* Must wide enought to fit long package name and progress bar */
+            header_grid.hexpand = true;
             header_grid.attach (image, 0, 0, 1, 2);
             header_grid.attach (package_name, 1, 0, 1, 1);
+
             if (!package.is_os_updates) {
-                header_grid.attach (package_author, 1, 1, 3, 1);
+                header_grid.attach (package_author, 1, 1, 1, 1);
                 header_grid.attach (app_version, 2, 0, 1, 1);
             } else {
                 package_summary.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-                package_summary.valign = Gtk.Align.START;
-                header_grid.attach (package_summary, 1, 1, 3, 1);
+                package_summary.valign = Gtk.Align.CENTER;
+                header_grid.attach (package_summary, 1, 1, 2, 1);
             }
 
-            action_stack.valign = Gtk.Align.END;
+            action_stack.valign = Gtk.Align.CENTER;
+            action_stack.halign = Gtk.Align.END;
+            action_stack.hexpand = true;
+
             header_grid.attach (action_stack, 3, 0, 1, 1);
 
             if (!package.is_local) {
@@ -236,7 +240,7 @@ namespace AppCenter.Views {
                 app_download_size_label = new Gtk.Label (null);
                 app_download_size_label.visible = false;
                 app_download_size_label.halign = Gtk.Align.END;
-                app_download_size_label.valign = Gtk.Align.START;
+                app_download_size_label.valign = Gtk.Align.CENTER;
                 app_download_size_label.selectable = true;
                 header_grid.attach (app_download_size_label, 3, 1, 1, 1);
             }
