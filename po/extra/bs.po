@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-18 05:17-0500\n"
-"PO-Revision-Date: 2018-11-03 21:33+0000\n"
+"PO-Revision-Date: 2018-11-03 21:41+0000\n"
 "Last-Translator: Elvis Mujanović <elvis.mujanovic@gmail.com>\n"
 "Language-Team: Bosnian <https://weblate.elementary.io/projects/appcenter/"
 "extra/bs/>\n"
@@ -23,7 +23,7 @@ msgstr "AppCenter"
 #: data/io.elementary.appcenter.appdata.xml.in:9
 #: data/io.elementary.appcenter.desktop.in.in:4
 msgid "Browse and manage apps"
-msgstr ""
+msgstr "Pregledaj aplikacije i upravljaj njima"
 
 #: data/io.elementary.appcenter.appdata.xml.in:11
 msgid ""
@@ -31,23 +31,27 @@ msgid ""
 "search and discover new apps. AppCenter is also used for updating your "
 "system to the latest and greatest version for new features and fixes."
 msgstr ""
+"Trgovina aplikacija za nezavisne programere i programere otvorenog koda. "
+"Pregledajte po kategorijama ili pretražite i otkrijte nove aplijacije. "
+"AppCenter također služi i za ažuriranje Vašeg sistema na najnoviju i "
+"najbolju verziju s novim fukcionalnostima i popravkama."
 
 #: data/io.elementary.appcenter.appdata.xml.in:201
 msgid "elementary LLC."
-msgstr ""
+msgstr "elementary LLC."
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
-msgstr ""
+msgstr "@APP_NAME@"
 
 #: data/io.elementary.appcenter.desktop.in.in:6
 msgid "@DESKTOP_ICON@"
-msgstr ""
+msgstr "@DESKTOP_ICON@"
 
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
-msgstr ""
+msgstr "install;uninstall;remove;catalogue;store;apps;updates;software;"
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
-msgstr ""
+msgstr "Provjeri ima li ažuriranja"
