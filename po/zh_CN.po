@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-25 16:02-0700\n"
-"PO-Revision-Date: 2018-10-29 16:29+0000\n"
+"PO-Revision-Date: 2018-11-03 00:07+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.elementary.io/projects/"
 "appcenter/appcenter/zh_Hans/>\n"
@@ -26,7 +26,7 @@ msgstr "应用中心"
 #: src/Application.vala:106
 #, c-format
 msgid "Could not parse mimetype %s"
-msgstr ""
+msgstr "无法解析文件类型 %s"
 
 #: src/Application.vala:126
 #, c-format
@@ -279,12 +279,12 @@ msgstr "请重启您的系统来完成更新"
 
 #: src/Dialogs/ContentWarningDialog.vala:27
 msgid "Content Warning"
-msgstr ""
+msgstr "内容警告"
 
 #: src/Dialogs/ContentWarningDialog.vala:32
 #, c-format
 msgid "%s Contains Explicit Content"
-msgstr ""
+msgstr "%s 包含限制级内容"
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 #, c-format
@@ -296,7 +296,7 @@ msgstr ""
 
 #: src/Dialogs/ContentWarningDialog.vala:35
 msgid "Show content warnings"
-msgstr ""
+msgstr "显示内容警告"
 
 #: src/Dialogs/ContentWarningDialog.vala:40
 #, fuzzy
@@ -338,7 +338,7 @@ msgstr "请检查您的支付信息后重试。"
 
 #: src/Dialogs/StripeDialog.vala:76
 msgid "Payment"
-msgstr ""
+msgstr "支付方式"
 
 #: src/Dialogs/StripeDialog.vala:92
 #, fuzzy, c-format
@@ -549,7 +549,7 @@ msgstr "分享"
 
 #: src/Views/AppInfoView.vala:650
 msgid "Fund"
-msgstr "基金"
+msgstr "资助"
 
 #: src/Views/AppInfoView.vala:672
 msgid "Fund the development of this app"
@@ -667,7 +667,7 @@ msgstr "通用辅助"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
-msgstr ""
+msgstr "支付方式未启用"
 
 #: src/Widgets/HumbleButton.vala:106
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:275
@@ -694,7 +694,7 @@ msgstr "$%d 美元"
 #: src/Widgets/ReleaseRow.vala:67
 #, c-format
 msgid "<b>%s</b> – %s"
-msgstr ""
+msgstr "<b>%s</b> – %s"
 
 #: src/Widgets/ReleaseRow.vala:74
 #, fuzzy
