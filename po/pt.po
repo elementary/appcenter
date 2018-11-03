@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-25 16:02-0700\n"
-"PO-Revision-Date: 2018-10-15 14:03+0000\n"
+"PO-Revision-Date: 2018-10-30 14:56+0000\n"
 "Last-Translator: Nuno Alexandre MS Ribeiro <nuno.anarresti@gmail.com>\n"
 "Language-Team: Portuguese <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/pt/>\n"
@@ -691,9 +691,8 @@ msgid "Internet"
 msgstr "Internet"
 
 #: src/Widgets/CategoryFlowBox.vala:87
-#, fuzzy
 msgid "Math, Science, & Engineering"
-msgstr "Ciência e Engenharia"
+msgstr "Matemática, Ciência e Engenharia"
 
 #: src/Widgets/CategoryFlowBox.vala:106
 msgid "Universal Access"

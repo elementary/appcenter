@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-25 16:02-0700\n"
-"PO-Revision-Date: 2018-10-17 00:06+0000\n"
+"PO-Revision-Date: 2018-10-29 16:29+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/ja/>\n"
@@ -348,15 +348,13 @@ msgstr "支払い"
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
 msgid "Pay $%d for %s"
-msgstr "%dドルを %s に払う"
+msgstr "%d ドルを %s に払う"
 
 #: src/Dialogs/StripeDialog.vala:96
 msgid ""
 "This is a one time payment. Your email address is only used to send you a "
 "receipt."
-msgstr ""
-"これは一括払いです。あなたのメールアドレスは領収書を送るためのみに使用されま"
-"す。"
+msgstr "これは一括払いです。メールアドレスは領収書を送るためだけに使用されます。"
 
 #: src/Dialogs/StripeDialog.vala:106 src/Widgets/SharePopover.vala:35
 msgid "Email"
@@ -390,11 +388,11 @@ msgstr "%d.00 ドル払う"
 
 #: src/Dialogs/StripeDialog.vala:243
 msgid "Processing"
-msgstr "処理中"
+msgstr "処理しています"
 
 #: src/Dialogs/StripeDialog.vala:268
 msgid "There Was a Problem Processing Your Payment"
-msgstr "支払の処理中に問題が発生しました"
+msgstr "支払いの処理中に問題が発生しました"
 
 #: src/Dialogs/StripeDialog.vala:306
 msgid "Pay Later"
@@ -508,9 +506,7 @@ msgstr "アップデートの取得に失敗しました"
 msgid ""
 "This may have been caused by external, manually added software repositories "
 "or a corrupted sources file."
-msgstr ""
-"これは外部の手動で追加されたソフトウェアリポジトリか、壊れたソースファイルに"
-"より発生したかもしれません。"
+msgstr "これは外部の手動で追加されたソフトウェアリポジトリか、壊れたソースファイルにより発生した可能性があります。"
 
 #: src/Dialogs/UpdateFailDialog.vala:46
 msgid "Details"
@@ -632,7 +628,7 @@ msgstr "オープンで価格はあなた次第のアプリストア"
 
 #: src/Widgets/Banner.vala:68
 msgid "Get the apps that you need at a price you can afford."
-msgstr "必要なアプリケーションをゆとりのある価格で入手してください。"
+msgstr "必要なアプリを自分が支払える価格で入手しましょう。"
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
@@ -664,7 +660,7 @@ msgstr "動画"
 
 #: src/Widgets/CategoryFlowBox.vala:57
 msgid "Graphics"
-msgstr "グラフィック"
+msgstr "グラフィックス"
 
 #: src/Widgets/CategoryFlowBox.vala:66
 msgid "Games"
@@ -679,9 +675,8 @@ msgid "Internet"
 msgstr "インターネット"
 
 #: src/Widgets/CategoryFlowBox.vala:87
-#, fuzzy
 msgid "Math, Science, & Engineering"
-msgstr "科学と技術"
+msgstr "数学と理工学"
 
 #: src/Widgets/CategoryFlowBox.vala:106
 msgid "Universal Access"
@@ -771,7 +766,7 @@ msgstr "アップデートを確認しています…"
 
 #: src/Widgets/UpdateHeaderRow.vala:112
 msgid "Up to Date"
-msgstr "最新"
+msgstr "最新の状態"
 
 #: src/Widgets/UpdateHeaderRow.vala:120
 msgid "Drivers"
