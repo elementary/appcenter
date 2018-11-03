@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2014-2017 elementary LLC. (https://elementary.io)
+ * Copyright (c) 2014–2018 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -152,10 +152,12 @@ namespace AppCenter.Views {
                 links_grid.add (help_button);
             }
 
+#if PAYMENTS
             if (package.get_payments_key () != null) {
                 var fund_button = new FundButton (package);
                 links_grid.add (fund_button);
             }
+#endif
 
             var content_grid = new Gtk.Grid ();
             content_grid.width_request = 800;

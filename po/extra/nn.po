@@ -2,11 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-02 13:03-0700\n"
+"POT-Creation-Date: 2018-10-18 05:17-0500\n"
 "PO-Revision-Date: 2017-04-19 22:07+0000\n"
 "Last-Translator: Martin Myrvold <myrvold.martin@gmail.com>\n"
-"Language-Team: nn (generated) "
-"<https://l10n.elementary.io/projects/appcenter/extra/nn/>\n"
+"Language-Team: nn (generated) <https://l10n.elementary.io/projects/appcenter/"
+"extra/nn/>\n"
 "Language: nn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,19 +15,16 @@ msgstr ""
 "X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
+#: data/io.elementary.appcenter.appdata.xml.in:8
 msgid "AppCenter"
 msgstr "AppCenter"
 
+#: data/io.elementary.appcenter.appdata.xml.in:9
+#: data/io.elementary.appcenter.desktop.in.in:4
 msgid "Browse and manage apps"
 msgstr "Bla gjennom og behandle appar"
 
-msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
-msgstr ""
-"installer;avinstaller;fjern;katalog;butikk;appar;oppdateringar;programvare;"
-
-msgid "About AppCenter"
-msgstr "Om AppCenter"
-
+#: data/io.elementary.appcenter.appdata.xml.in:11
 msgid ""
 "An app store for indie and open source developers. Browse by categories or "
 "search and discover new apps. AppCenter is also used for updating your "
@@ -38,37 +35,61 @@ msgstr ""
 "oppdatera systemet ditt til den nyaste og beste versjonen, med nye "
 "funksjonar og rettingar."
 
-msgid "Bug fixes and improve perfomance."
-msgstr "Rettingar og forbetra ytelse."
-
-msgid "Various bug fixes and performance improvements"
-msgstr "Ulike rettingar og ytelsesforbetringar"
-
-msgid "New translations"
-msgstr "Nye oversettelsar"
-
-msgid "Fix crash caused by entries with missing packages"
-msgstr "Fiksa krasjar som oppstod av oppføringar med manglande pakkar"
-
-msgid "Add capability to search by category and apply minor bug fixes."
+#: data/io.elementary.appcenter.appdata.xml.in:201
+msgid "elementary LLC."
 msgstr ""
-"Legg til evne for å søka etter kategori og legga til mindre feilrettingar."
 
-msgid "It is now possible to search apps inside a category"
-msgstr "Det er no mogleg å søka etter appar innanfor ein kategori"
-
-msgid "Prevent multiple authentication dialogs when resuming from suspend"
-msgstr "Forhindre fleire autentiseringsdialogar etter oppstart frå dvale"
-
-msgid ""
-"Search perfomance has beeen improved, the category name is now shown on the "
-"headbar and minor bugs have been fixed."
+#: data/io.elementary.appcenter.desktop.in.in:3
+msgid "@APP_NAME@"
 msgstr ""
-"Ytelsen i søk har blitt forbetra, kategorinamnet blir no vist i topplinja og "
-"mindre feilrettingar har blitt fiksa."
 
-msgid "Fix Steam installation"
-msgstr "Fiks installasjonen av Steam"
+#: data/io.elementary.appcenter.desktop.in.in:6
+msgid "@DESKTOP_ICON@"
+msgstr ""
 
-msgid "Make search asynchronous"
-msgstr "Gjer søket asynkront"
+#: data/io.elementary.appcenter.desktop.in.in:7
+msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
+msgstr ""
+"installer;avinstaller;fjern;katalog;butikk;appar;oppdateringar;programvare;"
+
+#: data/io.elementary.appcenter.desktop.in.in:18
+msgid "Check for Updates"
+msgstr ""
+
+#~ msgid "About AppCenter"
+#~ msgstr "Om AppCenter"
+
+#~ msgid "Bug fixes and improve perfomance."
+#~ msgstr "Rettingar og forbetra ytelse."
+
+#~ msgid "Various bug fixes and performance improvements"
+#~ msgstr "Ulike rettingar og ytelsesforbetringar"
+
+#~ msgid "New translations"
+#~ msgstr "Nye oversettelsar"
+
+#~ msgid "Fix crash caused by entries with missing packages"
+#~ msgstr "Fiksa krasjar som oppstod av oppføringar med manglande pakkar"
+
+#~ msgid "Add capability to search by category and apply minor bug fixes."
+#~ msgstr ""
+#~ "Legg til evne for å søka etter kategori og legga til mindre feilrettingar."
+
+#~ msgid "It is now possible to search apps inside a category"
+#~ msgstr "Det er no mogleg å søka etter appar innanfor ein kategori"
+
+#~ msgid "Prevent multiple authentication dialogs when resuming from suspend"
+#~ msgstr "Forhindre fleire autentiseringsdialogar etter oppstart frå dvale"
+
+#~ msgid ""
+#~ "Search perfomance has beeen improved, the category name is now shown on "
+#~ "the headbar and minor bugs have been fixed."
+#~ msgstr ""
+#~ "Ytelsen i søk har blitt forbetra, kategorinamnet blir no vist i topplinja "
+#~ "og mindre feilrettingar har blitt fiksa."
+
+#~ msgid "Fix Steam installation"
+#~ msgstr "Fiks installasjonen av Steam"
+
+#~ msgid "Make search asynchronous"
+#~ msgstr "Gjer søket asynkront"

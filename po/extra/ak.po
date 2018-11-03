@@ -3,11 +3,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Akan (AppCenter)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-12 16:08+0000\n"
+"POT-Creation-Date: 2018-10-18 05:17-0500\n"
 "PO-Revision-Date: 2017-06-26 12:22+0000\n"
 "Last-Translator: Lawrence Aberba <karabutaworld@gmail.com>\n"
-"Language-Team: Akan <https://l10n.elementary.io/projects/appcenter/extra/ak/>"
-"\n"
+"Language-Team: Akan <https://l10n.elementary.io/projects/appcenter/extra/ak/"
+">\n"
 "Language: ak\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,18 +16,16 @@ msgstr ""
 "X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
+#: data/io.elementary.appcenter.appdata.xml.in:8
 msgid "AppCenter"
 msgstr "Dwumadie Twebea"
 
+#: data/io.elementary.appcenter.appdata.xml.in:9
+#: data/io.elementary.appcenter.desktop.in.in:4
 msgid "Browse and manage apps"
 msgstr "Hwehwɛ dwumadie a wopɛ."
 
-msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
-msgstr "install;uninstall;remove;catalogue;store;apps;updates;software;"
-
-msgid "About AppCenter"
-msgstr "AppCenter Ho Nsɛm"
-
+#: data/io.elementary.appcenter.appdata.xml.in:11
 msgid ""
 "An app store for indie and open source developers. Browse by categories or "
 "search and discover new apps. AppCenter is also used for updating your "
@@ -37,41 +35,65 @@ msgstr ""
 "wopɛ anaa foforɔ a aba. Wobɛtumi nso de atwɛ dwumadie ahoroɔ a wowɔ no "
 "nkɔanim foforɔ a aba "
 
-msgid "Bug fixes and improve perfomance."
-msgstr "Nsiesie ahoroɔ ɛna afie wɔayɛ ama ɛyɛ adwuma yie sen kan no."
-
-msgid "Various bug fixes and performance improvements"
-msgstr "Wɔayɛ nsiesie ɛna wɔasan nso ayɛ ama ɛyɛ adwuma yie sen kan no"
-
-msgid "New translations"
-msgstr "Nkyerɛase ahoroɔ foforɔ"
-
-msgid "Fix crash caused by entries with missing packages"
-msgstr "Wɔasiesie ɛhaw ahoroɔ a na ɛfi Packages bi ana ɛni so"
-
-msgid "Add capability to search by category and apply minor bug fixes."
+#: data/io.elementary.appcenter.appdata.xml.in:201
+msgid "elementary LLC."
 msgstr ""
-"Wɔayɛ ama wotumi hwehwɛ dwumadie bi wɔ dwumadie kuo mu na wotumi san nso yɛ "
-"nsiesie wɔ mu."
 
-msgid "It is now possible to search apps inside a category"
-msgstr "Siesie wobɛtumi ahwehwɛ dwumadie bi wɔ dwumadie kuo mu"
-
-msgid "Prevent multiple authentication dialogs when resuming from suspend"
-msgstr "Mma ɛnna Hokwan Pono no adi pii mmerɛ a ɛfi twesan (suspend) mu reba"
-
-msgid ""
-"Search perfomance has beeen improved, the category name is now shown on the "
-"headbar and minor bugs have been fixed."
+#: data/io.elementary.appcenter.desktop.in.in:3
+msgid "@APP_NAME@"
 msgstr ""
-"Senea ɛhwehwɛ ade no anya nkɔanim. Siesie de wohu dwumadie kuo no wɔ soro "
-"hɔ. Wɔasan ayɛ nsiesie nketenkete bi."
 
-msgid "Fix Steam installation"
-msgstr "Siesie Steam dwumadie no"
+#: data/io.elementary.appcenter.desktop.in.in:6
+msgid "@DESKTOP_ICON@"
+msgstr ""
 
-msgid "Make search asynchronous"
-msgstr "Ma ɛnhwehwɛ ade kokoa mu"
+#: data/io.elementary.appcenter.desktop.in.in:7
+msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
+msgstr "install;uninstall;remove;catalogue;store;apps;updates;software;"
+
+#: data/io.elementary.appcenter.desktop.in.in:18
+msgid "Check for Updates"
+msgstr ""
+
+#~ msgid "About AppCenter"
+#~ msgstr "AppCenter Ho Nsɛm"
+
+#~ msgid "Bug fixes and improve perfomance."
+#~ msgstr "Nsiesie ahoroɔ ɛna afie wɔayɛ ama ɛyɛ adwuma yie sen kan no."
+
+#~ msgid "Various bug fixes and performance improvements"
+#~ msgstr "Wɔayɛ nsiesie ɛna wɔasan nso ayɛ ama ɛyɛ adwuma yie sen kan no"
+
+#~ msgid "New translations"
+#~ msgstr "Nkyerɛase ahoroɔ foforɔ"
+
+#~ msgid "Fix crash caused by entries with missing packages"
+#~ msgstr "Wɔasiesie ɛhaw ahoroɔ a na ɛfi Packages bi ana ɛni so"
+
+#~ msgid "Add capability to search by category and apply minor bug fixes."
+#~ msgstr ""
+#~ "Wɔayɛ ama wotumi hwehwɛ dwumadie bi wɔ dwumadie kuo mu na wotumi san nso "
+#~ "yɛ nsiesie wɔ mu."
+
+#~ msgid "It is now possible to search apps inside a category"
+#~ msgstr "Siesie wobɛtumi ahwehwɛ dwumadie bi wɔ dwumadie kuo mu"
+
+#~ msgid "Prevent multiple authentication dialogs when resuming from suspend"
+#~ msgstr ""
+#~ "Mma ɛnna Hokwan Pono no adi pii mmerɛ a ɛfi twesan (suspend) mu reba"
+
+#~ msgid ""
+#~ "Search perfomance has beeen improved, the category name is now shown on "
+#~ "the headbar and minor bugs have been fixed."
+#~ msgstr ""
+#~ "Senea ɛhwehwɛ ade no anya nkɔanim. Siesie de wohu dwumadie kuo no wɔ soro "
+#~ "hɔ. Wɔasan ayɛ nsiesie nketenkete bi."
+
+#~ msgid "Fix Steam installation"
+#~ msgstr "Siesie Steam dwumadie no"
+
+#~ msgid "Make search asynchronous"
+#~ msgstr "Ma ɛnhwehwɛ ade kokoa mu"
 
 #, fuzzy
 #~ msgid "App Center"
