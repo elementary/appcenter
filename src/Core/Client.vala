@@ -738,6 +738,8 @@ public class AppCenterCore.Client : Object {
         foreach (var package in package_list.values) {
             if (package.component.id == desktop_id) {
                 return package;
+            } else if (package.component.get_desktop_id () == desktop_id) {
+                return package;
             }
         }
 
