@@ -205,6 +205,10 @@
     font-size: 28px;
 }
 
+.category.finance label {
+    margin-top: 0.125em;
+}
+
 .category.media-production {
     background-image: linear-gradient(
         100deg,
