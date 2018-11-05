@@ -47,6 +47,7 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
             "TerminalEmulator",
             "WebDevelopment"
         }, "development"));
+        add (get_category (_("Education"), "", {"Education"}, "education"));
         add (get_category (_("Games"), "applications-games-symbolic", {
             "ActionGame",
             "AdventureGame",
@@ -72,7 +73,6 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
             "RasterGraphics",
             "VectorGraphics"
         }, "graphics"));
-        add (get_category (_("Education"), "", {"Education"}, "education"));
         add (get_category (_("Internet"), "applications-internet", {
             "Network",
             "P2P"
@@ -96,6 +96,13 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
             "Robotics",
             "Science"
         }, "science"));
+        add (get_category (_("Media Production"), "applications-multimedia-symbolic", {
+            "AudioVideoEditing",
+            "Midi",
+            "Mixer",
+            "Recorder",
+            "Sequencer"
+        }, "media-production"));
         add (get_category (_("Office"), "applications-office-symbolic", {
             "Office",
             "Presentation",

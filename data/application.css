@@ -185,6 +185,26 @@
     font-size: 26px;
 }
 
+.category.media-production {
+    background-image: linear-gradient(
+        100deg,
+        mix (@SLATE_500, @SLATE_700, 0.5) 25%,
+        @SLATE_900
+    );
+    border-color: alpha (@SLATE_900, 0.7);
+    box-shadow:
+        inset 0 0 0 1px alpha (#fff, 0.02),
+        inset 0 1px 0 0 alpha (#fff, 0.23),
+        inset 0 -1px 0 0 alpha (#fff, 0.07),
+        0 3px 2px -1px alpha (#000, 0.15),
+        0 3px 5px alpha (#000, 0.10);
+    color: @BANANA_300;
+    text-shadow: 0 1px 2px alpha (@SLATE_900, 0.75);
+    -gtk-icon-shadow: 0 1px 2px alpha (@SLATE_900, 0.75);
+    font-size: 24px;
+    font-weight: 600;
+}
+
 .category.office {
     border:none;
     box-shadow: inset 0 0 0 1px alpha (#fff, 0.10),
