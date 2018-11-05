@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-05 12:39-0800\n"
-"PO-Revision-Date: 2018-10-26 00:20+0000\n"
-"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"PO-Revision-Date: 2018-11-05 20:48+0000\n"
+"Last-Translator: Nils K <slx@nilsk.net>\n"
 "Language-Team: Norwegian Bokmål <https://weblate.elementary.io/projects/"
 "appcenter/appcenter/nb/>\n"
 "Language: nb\n"
@@ -640,9 +640,8 @@ msgid "Audio"
 msgstr "Lyd"
 
 #: src/Widgets/CategoryFlowBox.vala:31
-#, fuzzy
 msgid "Communication"
-msgstr "Opplæring"
+msgstr "Kommunikasjon"
 
 #: src/Widgets/CategoryFlowBox.vala:40
 msgid "Development"
@@ -670,7 +669,7 @@ msgstr "Matematikk, vitenskap og teknikk"
 
 #: src/Widgets/CategoryFlowBox.vala:99
 msgid "Media Production"
-msgstr ""
+msgstr "Medieproduksjon"
 
 #: src/Widgets/CategoryFlowBox.vala:106
 msgid "Office"
