@@ -96,7 +96,7 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
             "Robotics",
             "Science"
         }, "science"));
-        add (get_category (_("Media Production"), "applications-multimedia", {
+        add (get_category (_("Media Production"), "applications-multimedia-symbolic", {
             "AudioVideoEditing",
             "Midi",
             "Mixer",
