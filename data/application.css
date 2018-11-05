@@ -200,6 +200,7 @@
         0 3px 5px alpha (#000, 0.10);
     color: @SILVER_100;
     text-shadow: 0 1px 2px alpha (@SLATE_900, 0.5);
+    -gtk-icon-shadow: 0 1px 2px alpha (@SLATE_900, 0.5);
     font-family: serif;
     font-size: 28px;
 }
