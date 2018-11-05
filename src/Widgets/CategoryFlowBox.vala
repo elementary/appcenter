@@ -120,6 +120,16 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
             "TV",
             "Video"
         }, "video"));
+        add (get_category (_("Writing & Language"), "preferences-desktop-locale", {
+            "Dictionary",
+            "Languages",
+            "Literature",
+            "OCR",
+            "TextEditor",
+            "TextTools",
+            "Translation",
+            "WordProcessor"
+        }, "writing-language"));
     }
 
     private Widgets.CategoryItem get_category (string name, string icon, string[] groups, string style) {

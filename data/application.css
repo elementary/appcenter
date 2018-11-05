@@ -205,6 +205,26 @@
     font-weight: 600;
 }
 
+.category.writing-language {
+    background-image:
+        linear-gradient(
+            to right,
+            transparent 42px,
+            alpha (@STRAWBERRY_100, 0.25) 42px,
+            alpha (@STRAWBERRY_100, 0.25) 44px,
+            transparent 44px
+        ),
+        linear-gradient(
+            to bottom,
+            white 90%,
+            alpha (@BLUEBERRY_100, 0.2) 90%
+        );
+    background-position: center center;
+    background-size: 100% 1em;
+    background-repeat: repeat-y;
+    font-size: 24px;
+}
+
 .category.office {
     border:none;
     box-shadow: inset 0 0 0 1px alpha (#fff, 0.10),
