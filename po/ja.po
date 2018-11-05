@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-25 16:02-0700\n"
+"POT-Creation-Date: 2018-11-05 12:39-0800\n"
 "PO-Revision-Date: 2018-11-03 21:33+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/appcenter/"
@@ -325,7 +325,7 @@ msgstr "再起動"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:173
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:199
 msgid "Cancel"
 msgstr "キャンセル"
 
@@ -354,7 +354,8 @@ msgstr "%d ドルを %s に払う"
 msgid ""
 "This is a one time payment. Your email address is only used to send you a "
 "receipt."
-msgstr "これは一括払いです。メールアドレスは領収書を送るためだけに使用されます。"
+msgstr ""
+"これは一括払いです。メールアドレスは領収書を送るためだけに使用されます。"
 
 #: src/Dialogs/StripeDialog.vala:106 src/Widgets/SharePopover.vala:35
 msgid "Email"
@@ -405,23 +406,27 @@ msgstr "もう一度試す"
 #: src/Dialogs/StripeDialog.vala:513 src/Dialogs/StripeDialog.vala:578
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
-msgstr "カード番号が違います。正しいカード番号を使用して、もう一度お試しください。"
+msgstr ""
+"カード番号が違います。正しいカード番号を使用して、もう一度お試しください。"
 
 #: src/Dialogs/StripeDialog.vala:515
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
-msgstr "有効期限の月が無効です。正しい有効期限を使用して、もう一度お試しください。"
+msgstr ""
+"有効期限の月が無効です。正しい有効期限を使用して、もう一度お試しください。"
 
 #: src/Dialogs/StripeDialog.vala:517 src/Dialogs/StripeDialog.vala:575
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
-msgstr "有効期限の年が無効です。正しい有効期限を使用して、もう一度お試しください。"
+msgstr ""
+"有効期限の年が無効です。正しい有効期限を使用して、もう一度お試しください。"
 
 #: src/Dialogs/StripeDialog.vala:520 src/Dialogs/StripeDialog.vala:573
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr "CVC 番号が違います。正しい CVC 番号を使用して、もう一度お試しください。"
+msgstr ""
+"CVC 番号が違います。正しい CVC 番号を使用して、もう一度お試しください。"
 
 #: src/Dialogs/StripeDialog.vala:522 src/Dialogs/StripeDialog.vala:564
 msgid "The card has expired. Please try again with a different card."
@@ -435,13 +440,17 @@ msgstr "ただいま基準以上の支払い要求があります。後ほどお
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
-msgstr "このカードはこの種類の取引をサポートしません。別のカードを使用して、もう一度お試しください。"
+msgstr ""
+"このカードはこの種類の取引をサポートしません。別のカードを使用して、もう一度"
+"お試しください。"
 
 #: src/Dialogs/StripeDialog.vala:560
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
-msgstr "この種類の取引においてこの通貨はサポートされていません。別のカードを使用して、もう一度お試しください。"
+msgstr ""
+"この種類の取引においてこの通貨はサポートされていません。別のカードを使用し"
+"て、もう一度お試しください。"
 
 #: src/Dialogs/StripeDialog.vala:562
 msgid "The transaction has already been processed."
@@ -451,7 +460,9 @@ msgstr "支払いはすでに処理中です。"
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "postal code."
-msgstr "ZIP/Postal コードが違います。正しい ZIP/Postal コードを使用して、もう一度お試しください。"
+msgstr ""
+"ZIP/Postal コードが違います。正しい ZIP/Postal コードを使用して、もう一度お試"
+"しください。"
 
 #: src/Dialogs/StripeDialog.vala:568
 msgid "You don't have enough funds. Please use an alternative payment method."
@@ -468,7 +479,8 @@ msgstr "PIN 番号が違います。正しい PIN を使用して、もう一度
 #: src/Dialogs/StripeDialog.vala:583
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
-msgstr "過度の PIN の試行がありました。別のカードを使用して、もう一度お試しください。"
+msgstr ""
+"過度の PIN の試行がありました。別のカードを使用して、もう一度お試しください。"
 
 #: src/Dialogs/StripeDialog.vala:603
 msgid ""
@@ -496,7 +508,9 @@ msgstr "アップデートを取得できませんでした"
 msgid ""
 "This may have been caused by external, manually added software repositories "
 "or a corrupted sources file."
-msgstr "これは外部の手動で追加されたソフトウェアリポジトリか、壊れたソースファイルにより発生した可能性があります。"
+msgstr ""
+"これは外部の手動で追加されたソフトウェアリポジトリか、壊れたソースファイルに"
+"より発生した可能性があります。"
 
 #: src/Dialogs/UpdateFailDialog.vala:46
 msgid "Details"
@@ -625,64 +639,73 @@ msgid "Card Number"
 msgstr "カード番号"
 
 #: src/Widgets/CategoryFlowBox.vala:29
-msgid "Audio"
-msgstr "オーディオ"
-
-#: src/Widgets/CategoryFlowBox.vala:30
-msgid "Development"
-msgstr "開発"
-
-#: src/Widgets/CategoryFlowBox.vala:40
 msgid "Accessories"
 msgstr "アクセサリー"
 
-#: src/Widgets/CategoryFlowBox.vala:41
-msgid "Office"
-msgstr "オフィス"
+#: src/Widgets/CategoryFlowBox.vala:30
+msgid "Audio"
+msgstr "オーディオ"
 
-#: src/Widgets/CategoryFlowBox.vala:48
-msgid "System"
-msgstr "システム"
+#: src/Widgets/CategoryFlowBox.vala:31
+#, fuzzy
+msgid "Communication"
+msgstr "教育"
 
-#: src/Widgets/CategoryFlowBox.vala:52
-msgid "Video"
-msgstr "動画"
+#: src/Widgets/CategoryFlowBox.vala:40
+msgid "Development"
+msgstr "開発"
 
-#: src/Widgets/CategoryFlowBox.vala:57
-msgid "Graphics"
-msgstr "グラフィックス"
-
-#: src/Widgets/CategoryFlowBox.vala:66
-msgid "Games"
-msgstr "ゲーム"
-
-#: src/Widgets/CategoryFlowBox.vala:82
+#: src/Widgets/CategoryFlowBox.vala:50
 msgid "Education"
 msgstr "教育"
 
-#: src/Widgets/CategoryFlowBox.vala:83
+#: src/Widgets/CategoryFlowBox.vala:51
+msgid "Games"
+msgstr "ゲーム"
+
+#: src/Widgets/CategoryFlowBox.vala:67
+msgid "Graphics"
+msgstr "グラフィックス"
+
+#: src/Widgets/CategoryFlowBox.vala:76
 msgid "Internet"
 msgstr "インターネット"
 
-#: src/Widgets/CategoryFlowBox.vala:87
+#: src/Widgets/CategoryFlowBox.vala:80
 msgid "Math, Science, & Engineering"
 msgstr "数学と理工学"
 
+#: src/Widgets/CategoryFlowBox.vala:99
+msgid "Media Production"
+msgstr ""
+
 #: src/Widgets/CategoryFlowBox.vala:106
+msgid "Office"
+msgstr "オフィス"
+
+#: src/Widgets/CategoryFlowBox.vala:113
+msgid "System"
+msgstr "システム"
+
+#: src/Widgets/CategoryFlowBox.vala:117
 msgid "Universal Access"
 msgstr "ユニバーサルアクセス"
+
+#: src/Widgets/CategoryFlowBox.vala:118
+msgid "Video"
+msgstr "動画"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
 msgstr "支払いが必要ですが、有効になっていません"
 
 #: src/Widgets/HumbleButton.vala:106
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:275
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:301
 msgid "Free"
 msgstr "無料"
 
 #: src/Widgets/HumbleButton.vala:108
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:277
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:303
 msgid "Install"
 msgstr "インストール"
 
@@ -762,15 +785,15 @@ msgstr "最新の状態"
 msgid "Drivers"
 msgstr "ドライバー"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:152
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:168
 msgid "Uninstall"
 msgstr "アンインストール"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:155
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:176
 msgid "Open"
 msgstr "開く"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:301
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:326
 msgid "Update"
 msgstr "アップデート"
 

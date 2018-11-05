@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-25 16:02-0700\n"
+"POT-Creation-Date: 2018-11-05 12:39-0800\n"
 "PO-Revision-Date: 2017-09-11 20:46+0000\n"
 "Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
 "Language-Team: Ukrainian <https://weblate.elementary.io/projects/appcenter/"
@@ -327,7 +327,7 @@ msgstr "Перезавантажити"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:173
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:199
 msgid "Cancel"
 msgstr "Скасувати"
 
@@ -630,65 +630,74 @@ msgid "Card Number"
 msgstr "Номер картки"
 
 #: src/Widgets/CategoryFlowBox.vala:29
-msgid "Audio"
-msgstr "Аудіо"
-
-#: src/Widgets/CategoryFlowBox.vala:30
-msgid "Development"
-msgstr "Розробка"
-
-#: src/Widgets/CategoryFlowBox.vala:40
 msgid "Accessories"
 msgstr "Приладдя"
 
-#: src/Widgets/CategoryFlowBox.vala:41
-msgid "Office"
-msgstr "Офіс"
+#: src/Widgets/CategoryFlowBox.vala:30
+msgid "Audio"
+msgstr "Аудіо"
 
-#: src/Widgets/CategoryFlowBox.vala:48
-msgid "System"
-msgstr "Система"
+#: src/Widgets/CategoryFlowBox.vala:31
+#, fuzzy
+msgid "Communication"
+msgstr "Освіта"
 
-#: src/Widgets/CategoryFlowBox.vala:52
-msgid "Video"
-msgstr "Відео"
+#: src/Widgets/CategoryFlowBox.vala:40
+msgid "Development"
+msgstr "Розробка"
 
-#: src/Widgets/CategoryFlowBox.vala:57
-msgid "Graphics"
-msgstr "Графіка"
-
-#: src/Widgets/CategoryFlowBox.vala:66
-msgid "Games"
-msgstr "Ігри"
-
-#: src/Widgets/CategoryFlowBox.vala:82
+#: src/Widgets/CategoryFlowBox.vala:50
 msgid "Education"
 msgstr "Освіта"
 
-#: src/Widgets/CategoryFlowBox.vala:83
+#: src/Widgets/CategoryFlowBox.vala:51
+msgid "Games"
+msgstr "Ігри"
+
+#: src/Widgets/CategoryFlowBox.vala:67
+msgid "Graphics"
+msgstr "Графіка"
+
+#: src/Widgets/CategoryFlowBox.vala:76
 msgid "Internet"
 msgstr "Інтернет"
 
-#: src/Widgets/CategoryFlowBox.vala:87
+#: src/Widgets/CategoryFlowBox.vala:80
 #, fuzzy
 msgid "Math, Science, & Engineering"
 msgstr "Наука та інженерна справа"
 
+#: src/Widgets/CategoryFlowBox.vala:99
+msgid "Media Production"
+msgstr ""
+
 #: src/Widgets/CategoryFlowBox.vala:106
+msgid "Office"
+msgstr "Офіс"
+
+#: src/Widgets/CategoryFlowBox.vala:113
+msgid "System"
+msgstr "Система"
+
+#: src/Widgets/CategoryFlowBox.vala:117
 msgid "Universal Access"
 msgstr "Універсальний доступ"
+
+#: src/Widgets/CategoryFlowBox.vala:118
+msgid "Video"
+msgstr "Відео"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
 msgstr ""
 
 #: src/Widgets/HumbleButton.vala:106
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:275
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:301
 msgid "Free"
 msgstr "Безкоштовно"
 
 #: src/Widgets/HumbleButton.vala:108
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:277
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:303
 #, fuzzy
 msgid "Install"
 msgstr "Встановлені"
@@ -772,15 +781,15 @@ msgstr "Найновіші"
 msgid "Drivers"
 msgstr ""
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:152
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:168
 msgid "Uninstall"
 msgstr "Вилучити"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:155
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:176
 msgid "Open"
 msgstr "Відкрити"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:301
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:326
 msgid "Update"
 msgstr "Оновлення"
 

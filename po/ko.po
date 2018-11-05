@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-25 16:02-0700\n"
+"POT-Creation-Date: 2018-11-05 12:39-0800\n"
 "PO-Revision-Date: 2018-10-26 11:14+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://weblate.elementary.io/projects/appcenter/"
@@ -320,7 +320,7 @@ msgstr "다시 시작"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:173
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:199
 msgid "Cancel"
 msgstr "취소"
 
@@ -630,64 +630,73 @@ msgid "Card Number"
 msgstr "카드 번호"
 
 #: src/Widgets/CategoryFlowBox.vala:29
-msgid "Audio"
-msgstr "오디오"
-
-#: src/Widgets/CategoryFlowBox.vala:30
-msgid "Development"
-msgstr "개발"
-
-#: src/Widgets/CategoryFlowBox.vala:40
 msgid "Accessories"
 msgstr "액세서리"
 
-#: src/Widgets/CategoryFlowBox.vala:41
-msgid "Office"
-msgstr "오피스"
+#: src/Widgets/CategoryFlowBox.vala:30
+msgid "Audio"
+msgstr "오디오"
 
-#: src/Widgets/CategoryFlowBox.vala:48
-msgid "System"
-msgstr "시스템"
+#: src/Widgets/CategoryFlowBox.vala:31
+#, fuzzy
+msgid "Communication"
+msgstr "교육"
 
-#: src/Widgets/CategoryFlowBox.vala:52
-msgid "Video"
-msgstr "비디오"
+#: src/Widgets/CategoryFlowBox.vala:40
+msgid "Development"
+msgstr "개발"
 
-#: src/Widgets/CategoryFlowBox.vala:57
-msgid "Graphics"
-msgstr "그래픽"
-
-#: src/Widgets/CategoryFlowBox.vala:66
-msgid "Games"
-msgstr "게임"
-
-#: src/Widgets/CategoryFlowBox.vala:82
+#: src/Widgets/CategoryFlowBox.vala:50
 msgid "Education"
 msgstr "교육"
 
-#: src/Widgets/CategoryFlowBox.vala:83
+#: src/Widgets/CategoryFlowBox.vala:51
+msgid "Games"
+msgstr "게임"
+
+#: src/Widgets/CategoryFlowBox.vala:67
+msgid "Graphics"
+msgstr "그래픽"
+
+#: src/Widgets/CategoryFlowBox.vala:76
 msgid "Internet"
 msgstr "인터넷"
 
-#: src/Widgets/CategoryFlowBox.vala:87
+#: src/Widgets/CategoryFlowBox.vala:80
 msgid "Math, Science, & Engineering"
 msgstr "수학, 사이언스 & 엔지니어링"
 
+#: src/Widgets/CategoryFlowBox.vala:99
+msgid "Media Production"
+msgstr ""
+
 #: src/Widgets/CategoryFlowBox.vala:106
+msgid "Office"
+msgstr "오피스"
+
+#: src/Widgets/CategoryFlowBox.vala:113
+msgid "System"
+msgstr "시스템"
+
+#: src/Widgets/CategoryFlowBox.vala:117
 msgid "Universal Access"
 msgstr "편리한 기능"
+
+#: src/Widgets/CategoryFlowBox.vala:118
+msgid "Video"
+msgstr "비디오"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
 msgstr "결제를 해야 하는데, 활성화되어있지 않습니다"
 
 #: src/Widgets/HumbleButton.vala:106
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:275
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:301
 msgid "Free"
 msgstr "무료"
 
 #: src/Widgets/HumbleButton.vala:108
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:277
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:303
 msgid "Install"
 msgstr "설치"
 
@@ -767,15 +776,15 @@ msgstr "최신 버전입니다"
 msgid "Drivers"
 msgstr "드라이버"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:152
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:168
 msgid "Uninstall"
 msgstr "제거"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:155
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:176
 msgid "Open"
 msgstr "열기"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:301
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:326
 msgid "Update"
 msgstr "업데이트"
 

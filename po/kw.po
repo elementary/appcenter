@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-25 16:02-0700\n"
+"POT-Creation-Date: 2018-11-05 12:39-0800\n"
 "PO-Revision-Date: 2015-11-04 14:21+0000\n"
 "Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -321,7 +321,7 @@ msgstr ""
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:173
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:199
 msgid "Cancel"
 msgstr ""
 
@@ -613,51 +613,59 @@ msgid "Card Number"
 msgstr ""
 
 #: src/Widgets/CategoryFlowBox.vala:29
-msgid "Audio"
-msgstr ""
-
-#: src/Widgets/CategoryFlowBox.vala:30
-msgid "Development"
-msgstr ""
-
-#: src/Widgets/CategoryFlowBox.vala:40
 msgid "Accessories"
 msgstr ""
 
-#: src/Widgets/CategoryFlowBox.vala:41
-msgid "Office"
+#: src/Widgets/CategoryFlowBox.vala:30
+msgid "Audio"
 msgstr ""
 
-#: src/Widgets/CategoryFlowBox.vala:48
-msgid "System"
+#: src/Widgets/CategoryFlowBox.vala:31
+msgid "Communication"
 msgstr ""
 
-#: src/Widgets/CategoryFlowBox.vala:52
-msgid "Video"
+#: src/Widgets/CategoryFlowBox.vala:40
+msgid "Development"
 msgstr ""
 
-#: src/Widgets/CategoryFlowBox.vala:57
-msgid "Graphics"
-msgstr ""
-
-#: src/Widgets/CategoryFlowBox.vala:66
-msgid "Games"
-msgstr ""
-
-#: src/Widgets/CategoryFlowBox.vala:82
+#: src/Widgets/CategoryFlowBox.vala:50
 msgid "Education"
 msgstr ""
 
-#: src/Widgets/CategoryFlowBox.vala:83
+#: src/Widgets/CategoryFlowBox.vala:51
+msgid "Games"
+msgstr ""
+
+#: src/Widgets/CategoryFlowBox.vala:67
+msgid "Graphics"
+msgstr ""
+
+#: src/Widgets/CategoryFlowBox.vala:76
 msgid "Internet"
 msgstr ""
 
-#: src/Widgets/CategoryFlowBox.vala:87
+#: src/Widgets/CategoryFlowBox.vala:80
 msgid "Math, Science, & Engineering"
 msgstr ""
 
+#: src/Widgets/CategoryFlowBox.vala:99
+msgid "Media Production"
+msgstr ""
+
 #: src/Widgets/CategoryFlowBox.vala:106
+msgid "Office"
+msgstr ""
+
+#: src/Widgets/CategoryFlowBox.vala:113
+msgid "System"
+msgstr ""
+
+#: src/Widgets/CategoryFlowBox.vala:117
 msgid "Universal Access"
+msgstr ""
+
+#: src/Widgets/CategoryFlowBox.vala:118
+msgid "Video"
 msgstr ""
 
 #: src/Widgets/HumbleButton.vala:85
@@ -665,12 +673,12 @@ msgid "Requires payments, which are not enabled"
 msgstr ""
 
 #: src/Widgets/HumbleButton.vala:106
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:275
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:301
 msgid "Free"
 msgstr ""
 
 #: src/Widgets/HumbleButton.vala:108
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:277
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:303
 msgid "Install"
 msgstr ""
 
@@ -751,14 +759,14 @@ msgstr ""
 msgid "Drivers"
 msgstr ""
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:152
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:168
 msgid "Uninstall"
 msgstr ""
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:155
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:176
 msgid "Open"
 msgstr ""
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:301
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:326
 msgid "Update"
 msgstr ""

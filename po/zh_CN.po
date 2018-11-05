@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-25 16:02-0700\n"
+"POT-Creation-Date: 2018-11-05 12:39-0800\n"
 "PO-Revision-Date: 2018-11-03 00:07+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.elementary.io/projects/"
@@ -322,7 +322,7 @@ msgstr "重启"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:173
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:199
 msgid "Cancel"
 msgstr "取消"
 
@@ -617,65 +617,74 @@ msgid "Card Number"
 msgstr "卡号"
 
 #: src/Widgets/CategoryFlowBox.vala:29
-msgid "Audio"
-msgstr "音频"
-
-#: src/Widgets/CategoryFlowBox.vala:30
-msgid "Development"
-msgstr "开发"
-
-#: src/Widgets/CategoryFlowBox.vala:40
 msgid "Accessories"
 msgstr "附件"
 
-#: src/Widgets/CategoryFlowBox.vala:41
-msgid "Office"
-msgstr "办公"
+#: src/Widgets/CategoryFlowBox.vala:30
+msgid "Audio"
+msgstr "音频"
 
-#: src/Widgets/CategoryFlowBox.vala:48
-msgid "System"
-msgstr "系统"
+#: src/Widgets/CategoryFlowBox.vala:31
+#, fuzzy
+msgid "Communication"
+msgstr "教育"
 
-#: src/Widgets/CategoryFlowBox.vala:52
-msgid "Video"
-msgstr "视频"
+#: src/Widgets/CategoryFlowBox.vala:40
+msgid "Development"
+msgstr "开发"
 
-#: src/Widgets/CategoryFlowBox.vala:57
-msgid "Graphics"
-msgstr "图像"
-
-#: src/Widgets/CategoryFlowBox.vala:66
-msgid "Games"
-msgstr "游戏"
-
-#: src/Widgets/CategoryFlowBox.vala:82
+#: src/Widgets/CategoryFlowBox.vala:50
 msgid "Education"
 msgstr "教育"
 
-#: src/Widgets/CategoryFlowBox.vala:83
+#: src/Widgets/CategoryFlowBox.vala:51
+msgid "Games"
+msgstr "游戏"
+
+#: src/Widgets/CategoryFlowBox.vala:67
+msgid "Graphics"
+msgstr "图像"
+
+#: src/Widgets/CategoryFlowBox.vala:76
 msgid "Internet"
 msgstr "网络"
 
-#: src/Widgets/CategoryFlowBox.vala:87
+#: src/Widgets/CategoryFlowBox.vala:80
 #, fuzzy
 msgid "Math, Science, & Engineering"
 msgstr "科学 & 工程"
 
+#: src/Widgets/CategoryFlowBox.vala:99
+msgid "Media Production"
+msgstr ""
+
 #: src/Widgets/CategoryFlowBox.vala:106
+msgid "Office"
+msgstr "办公"
+
+#: src/Widgets/CategoryFlowBox.vala:113
+msgid "System"
+msgstr "系统"
+
+#: src/Widgets/CategoryFlowBox.vala:117
 msgid "Universal Access"
 msgstr "通用辅助"
+
+#: src/Widgets/CategoryFlowBox.vala:118
+msgid "Video"
+msgstr "视频"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
 msgstr "支付方式未启用"
 
 #: src/Widgets/HumbleButton.vala:106
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:275
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:301
 msgid "Free"
 msgstr "免费"
 
 #: src/Widgets/HumbleButton.vala:108
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:277
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:303
 msgid "Install"
 msgstr "安装"
 
@@ -757,15 +766,15 @@ msgstr "已是最新"
 msgid "Drivers"
 msgstr "驱动程序"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:152
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:168
 msgid "Uninstall"
 msgstr "卸载"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:155
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:176
 msgid "Open"
 msgstr "打开"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:301
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:326
 msgid "Update"
 msgstr "更新"
 
