@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-05 12:39-0800\n"
+"POT-Creation-Date: 2018-11-05 14:29-0800\n"
 "PO-Revision-Date: 2017-04-21 09:21+0000\n"
 "Last-Translator: HAYDER <albasimy16@gmail.com>\n"
 "Language-Team: ae (generated) <https://l10n.elementary.io/projects/appcenter/"
@@ -630,38 +630,42 @@ msgid "Education"
 msgstr ""
 
 #: src/Widgets/CategoryFlowBox.vala:51
+msgid "Finance"
+msgstr ""
+
+#: src/Widgets/CategoryFlowBox.vala:55
 msgid "Games"
 msgstr ""
 
-#: src/Widgets/CategoryFlowBox.vala:67
+#: src/Widgets/CategoryFlowBox.vala:71
 msgid "Graphics"
 msgstr ""
 
-#: src/Widgets/CategoryFlowBox.vala:76
+#: src/Widgets/CategoryFlowBox.vala:80
 msgid "Internet"
 msgstr ""
 
-#: src/Widgets/CategoryFlowBox.vala:80
+#: src/Widgets/CategoryFlowBox.vala:84
 msgid "Math, Science, & Engineering"
 msgstr ""
 
-#: src/Widgets/CategoryFlowBox.vala:99
+#: src/Widgets/CategoryFlowBox.vala:103
 msgid "Media Production"
 msgstr ""
 
-#: src/Widgets/CategoryFlowBox.vala:106
+#: src/Widgets/CategoryFlowBox.vala:110
 msgid "Office"
 msgstr ""
 
-#: src/Widgets/CategoryFlowBox.vala:113
+#: src/Widgets/CategoryFlowBox.vala:117
 msgid "System"
 msgstr ""
 
-#: src/Widgets/CategoryFlowBox.vala:117
+#: src/Widgets/CategoryFlowBox.vala:121
 msgid "Universal Access"
 msgstr ""
 
-#: src/Widgets/CategoryFlowBox.vala:118
+#: src/Widgets/CategoryFlowBox.vala:122
 msgid "Video"
 msgstr ""
 
