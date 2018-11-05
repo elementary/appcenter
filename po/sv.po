@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-25 16:02-0700\n"
-"PO-Revision-Date: 2018-10-19 16:15+0000\n"
+"PO-Revision-Date: 2018-10-28 09:52+0000\n"
 "Last-Translator: Fredrik B <frbo9002@gmail.com>\n"
 "Language-Team: Swedish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/sv/>\n"
@@ -675,7 +675,6 @@ msgid "Internet"
 msgstr "Internet"
 
 #: src/Widgets/CategoryFlowBox.vala:87
-#, fuzzy
 msgid "Math, Science, & Engineering"
 msgstr "Vetenskap och ingenjörskonst"
 

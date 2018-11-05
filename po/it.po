@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-25 16:02-0700\n"
-"PO-Revision-Date: 2018-10-18 16:36+0000\n"
+"PO-Revision-Date: 2018-10-26 11:44+0000\n"
 "Last-Translator: Marco De Paolini <marco.depaolini@gmail.com>\n"
 "Language-Team: Italian <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/it/>\n"
@@ -694,9 +694,8 @@ msgid "Internet"
 msgstr "Internet"
 
 #: src/Widgets/CategoryFlowBox.vala:87
-#, fuzzy
 msgid "Math, Science, & Engineering"
-msgstr "Scienza e Ingegneria"
+msgstr "Matematica, scienza e ingegneria"
 
 #: src/Widgets/CategoryFlowBox.vala:106
 msgid "Universal Access"

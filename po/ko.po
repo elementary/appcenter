@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-25 16:02-0700\n"
-"PO-Revision-Date: 2018-10-14 19:33+0000\n"
+"PO-Revision-Date: 2018-10-26 11:14+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/ko/>\n"
@@ -670,9 +670,8 @@ msgid "Internet"
 msgstr "인터넷"
 
 #: src/Widgets/CategoryFlowBox.vala:87
-#, fuzzy
 msgid "Math, Science, & Engineering"
-msgstr "사이언스 & 엔지니어링"
+msgstr "수학, 사이언스 & 엔지니어링"
 
 #: src/Widgets/CategoryFlowBox.vala:106
 msgid "Universal Access"

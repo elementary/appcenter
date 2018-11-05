@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-18 05:17-0500\n"
-"PO-Revision-Date: 2018-10-14 16:38+0000\n"
+"PO-Revision-Date: 2018-10-26 19:09+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/appcenter/"
 "extra/mr/>\n"
@@ -36,15 +36,15 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:201
 msgid "elementary LLC."
-msgstr ""
+msgstr "एलिमेंटरी LLC."
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
-msgstr ""
+msgstr "@APP_NAME@"
 
 #: data/io.elementary.appcenter.desktop.in.in:6
 msgid "@DESKTOP_ICON@"
-msgstr ""
+msgstr "@DESKTOP_ICON@"
 
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
@@ -52,7 +52,7 @@ msgstr "इन्स्टॉल; अनइन्स्टॉल; काढण�
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
-msgstr ""
+msgstr "अपडेट्ससाठी तपासा"
 
 #~ msgid "About AppCenter"
 #~ msgstr "अॅप सेंटर विषयी"
