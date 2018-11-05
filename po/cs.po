@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-05 12:39-0800\n"
+"POT-Creation-Date: 2018-11-05 14:29-0800\n"
 "PO-Revision-Date: 2018-10-18 10:12+0000\n"
 "Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
 "Language-Team: Czech <https://weblate.elementary.io/projects/appcenter/"
@@ -662,39 +662,44 @@ msgid "Education"
 msgstr "Vzdělávání"
 
 #: src/Widgets/CategoryFlowBox.vala:51
+#, fuzzy
+msgid "Finance"
+msgstr "Zrušit"
+
+#: src/Widgets/CategoryFlowBox.vala:55
 msgid "Games"
 msgstr "Hry"
 
-#: src/Widgets/CategoryFlowBox.vala:67
+#: src/Widgets/CategoryFlowBox.vala:71
 msgid "Graphics"
 msgstr "Grafika"
 
-#: src/Widgets/CategoryFlowBox.vala:76
+#: src/Widgets/CategoryFlowBox.vala:80
 msgid "Internet"
 msgstr "Internet"
 
-#: src/Widgets/CategoryFlowBox.vala:80
+#: src/Widgets/CategoryFlowBox.vala:84
 #, fuzzy
 msgid "Math, Science, & Engineering"
 msgstr "Věda a inženýrství"
 
-#: src/Widgets/CategoryFlowBox.vala:99
+#: src/Widgets/CategoryFlowBox.vala:103
 msgid "Media Production"
 msgstr ""
 
-#: src/Widgets/CategoryFlowBox.vala:106
+#: src/Widgets/CategoryFlowBox.vala:110
 msgid "Office"
 msgstr "Kancelář"
 
-#: src/Widgets/CategoryFlowBox.vala:113
+#: src/Widgets/CategoryFlowBox.vala:117
 msgid "System"
 msgstr "Systém"
 
-#: src/Widgets/CategoryFlowBox.vala:117
+#: src/Widgets/CategoryFlowBox.vala:121
 msgid "Universal Access"
 msgstr "Univerzální přístup"
 
-#: src/Widgets/CategoryFlowBox.vala:118
+#: src/Widgets/CategoryFlowBox.vala:122
 msgid "Video"
 msgstr "Video"
 

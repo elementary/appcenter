@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-05 12:39-0800\n"
+"POT-Creation-Date: 2018-11-05 14:29-0800\n"
 "PO-Revision-Date: 2016-06-26 17:02+0000\n"
 "Last-Translator: Bone Pyae Sone <bone.burma@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -631,39 +631,44 @@ msgid "Education"
 msgstr "ပညာရေး"
 
 #: src/Widgets/CategoryFlowBox.vala:51
+#, fuzzy
+msgid "Finance"
+msgstr "မလုပ်တော့"
+
+#: src/Widgets/CategoryFlowBox.vala:55
 msgid "Games"
 msgstr "ဂိမ်းများ"
 
-#: src/Widgets/CategoryFlowBox.vala:67
+#: src/Widgets/CategoryFlowBox.vala:71
 msgid "Graphics"
 msgstr "ရုပ်ထွက်"
 
-#: src/Widgets/CategoryFlowBox.vala:76
+#: src/Widgets/CategoryFlowBox.vala:80
 msgid "Internet"
 msgstr "အင်တာနက်"
 
-#: src/Widgets/CategoryFlowBox.vala:80
+#: src/Widgets/CategoryFlowBox.vala:84
 #, fuzzy
 msgid "Math, Science, & Engineering"
 msgstr "သိပ္ပံနှင့် အင်ဂျင်နီယာပညာ"
 
-#: src/Widgets/CategoryFlowBox.vala:99
+#: src/Widgets/CategoryFlowBox.vala:103
 msgid "Media Production"
 msgstr ""
 
-#: src/Widgets/CategoryFlowBox.vala:106
+#: src/Widgets/CategoryFlowBox.vala:110
 msgid "Office"
 msgstr "ရုံးလုပ်ငန်းသုံး"
 
-#: src/Widgets/CategoryFlowBox.vala:113
+#: src/Widgets/CategoryFlowBox.vala:117
 msgid "System"
 msgstr "စနစ်"
 
-#: src/Widgets/CategoryFlowBox.vala:117
+#: src/Widgets/CategoryFlowBox.vala:121
 msgid "Universal Access"
 msgstr "အားလုံးသုံးခွင့်"
 
-#: src/Widgets/CategoryFlowBox.vala:118
+#: src/Widgets/CategoryFlowBox.vala:122
 msgid "Video"
 msgstr "ဗီဒီယို"
 

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-05 12:39-0800\n"
+"POT-Creation-Date: 2018-11-05 14:29-0800\n"
 "PO-Revision-Date: 2017-12-30 00:06+0000\n"
 "Last-Translator: Nemanja <thedarkbyte96@gmail.com>\n"
 "Language-Team: Serbian <https://weblate.elementary.io/projects/appcenter/"
@@ -659,39 +659,44 @@ msgid "Education"
 msgstr "Образовање"
 
 #: src/Widgets/CategoryFlowBox.vala:51
+#, fuzzy
+msgid "Finance"
+msgstr "Откажи"
+
+#: src/Widgets/CategoryFlowBox.vala:55
 msgid "Games"
 msgstr "Игре"
 
-#: src/Widgets/CategoryFlowBox.vala:67
+#: src/Widgets/CategoryFlowBox.vala:71
 msgid "Graphics"
 msgstr "Графика"
 
-#: src/Widgets/CategoryFlowBox.vala:76
+#: src/Widgets/CategoryFlowBox.vala:80
 msgid "Internet"
 msgstr "Интернет"
 
-#: src/Widgets/CategoryFlowBox.vala:80
+#: src/Widgets/CategoryFlowBox.vala:84
 #, fuzzy
 msgid "Math, Science, & Engineering"
 msgstr "Наука и инжењерство"
 
-#: src/Widgets/CategoryFlowBox.vala:99
+#: src/Widgets/CategoryFlowBox.vala:103
 msgid "Media Production"
 msgstr ""
 
-#: src/Widgets/CategoryFlowBox.vala:106
+#: src/Widgets/CategoryFlowBox.vala:110
 msgid "Office"
 msgstr "Канцеларија"
 
-#: src/Widgets/CategoryFlowBox.vala:113
+#: src/Widgets/CategoryFlowBox.vala:117
 msgid "System"
 msgstr "Систем"
 
-#: src/Widgets/CategoryFlowBox.vala:117
+#: src/Widgets/CategoryFlowBox.vala:121
 msgid "Universal Access"
 msgstr "Универзални приступ"
 
-#: src/Widgets/CategoryFlowBox.vala:118
+#: src/Widgets/CategoryFlowBox.vala:122
 msgid "Video"
 msgstr "Видео"
 
