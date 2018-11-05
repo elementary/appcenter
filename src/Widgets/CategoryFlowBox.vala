@@ -48,6 +48,10 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
             "WebDevelopment"
         }, "development"));
         add (get_category (_("Education"), "", {"Education"}, "education"));
+        add (get_category (_("Finance"), "payment-card", {
+            "Economy",
+            "Finance"
+        }, "finance"));
         add (get_category (_("Games"), "applications-games-symbolic", {
             "ActionGame",
             "AdventureGame",
