@@ -103,7 +103,7 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
             "Robotics",
             "Science"
         }, "science"));
-        add (get_category (_("Communication"), "internet-chat", {
+        add (get_category (_("Communication"), "mail-send-symbolic", {
             "Chat",
             "ContactManagement",
             "Email",
