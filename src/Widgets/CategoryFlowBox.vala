@@ -28,6 +28,15 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
     construct {
         add (get_category (_("Accessories"), "applications-accessories", {"Utility"}, "accessories"));
         add (get_category (_("Audio"), "applications-audio-symbolic", {"Audio", "Music"}, "audio"));
+        add (get_category (_("Communication"), "mail-send-symbolic", {
+            "Chat",
+            "ContactManagement",
+            "Email",
+            "InstantMessaging",
+            "IRCClient",
+            "Telephony",
+            "VideoConference"
+        }, "communication"));
         add (get_category (_("Development"), "", {
             "Database",
             "Debugger",
