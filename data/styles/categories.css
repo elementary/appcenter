@@ -103,14 +103,46 @@
 .category.development {
     background-image:
         linear-gradient(
+            to right,
+            transparent 0.47em,
+            alpha(white, 0.05) 0.47em,
+            alpha(white, 0.05) 0.5em,
+            transparent 0.5em
+        ),
+        linear-gradient(
+            to bottom,
+            transparent 0.47em,
+            alpha(white, 0.05) 0.47em,
+            alpha(white, 0.05) 0.5em,
+            transparent 0.5em
+        ),
+        linear-gradient(
+            to right,
+            transparent 0.97em,
+            alpha(white, 0.125) 0.97em
+        ),
+        linear-gradient(
+            to bottom,
+            transparent 0.97em,
+            alpha(white, 0.125) 0.97em
+        ),
+        linear-gradient(
             to bottom right,
             @GRAPE_500,
             @GRAPE_700
         );
-    border-color: alpha(#260063, 0.7);
-    font-family: "Lobster";
-    text-shadow: 0 2px 0 alpha(#260063, 0.3);
+    background-position: center center;
+    background-repeat: repeat;
+    background-size:
+        1em 1em,
+        1em 1em,
+        1em 1em,
+        1em 1em,
+        cover;
+    border-color: alpha(@GRAPE_900, 0.7);
     color: white;
+    font-family: "Lobster";
+    text-shadow: 0 2px 0 alpha(@GRAPE_900, 0.5);
 }
 
 .category.education {
