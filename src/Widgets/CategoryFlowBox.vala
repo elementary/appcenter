@@ -132,6 +132,16 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
             "Translation",
             "WordProcessor"
         }, "writing-language"));
+
+        set_sort_func ((child1, child2) => {
+            var item1 = child1 as Widgets.CategoryItem;
+            var item2 = child2 as Widgets.CategoryItem;
+            if (item1 != null && item2 != null) {
+                return item1.app_category.name.collate (item2.app_category.name);
+            }
+
+            return 0;
+        });
     }
 
     private Widgets.CategoryItem get_category (string name, string icon, string[] groups, string style) {
