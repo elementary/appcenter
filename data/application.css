@@ -462,12 +462,22 @@
 }
 
 .category.graphics label {
-    border-image: -gtk-scaled(url("resource:///io/elementary/appcenter/backgrounds/graphics.svg"),url("resource:///io/elementary/appcenter/backgrounds/graphics@2x.svg")) 10 10 10 10 / 10px 10px 10px 10px repeat;
+    border-image:
+        -gtk-scaled(
+            /* stylelint-disable-next-line function-comma-newline-after (bug in stylelint?) */
+            url("resource:///io/elementary/appcenter/backgrounds/graphics.svg"),
+            url("resource:///io/elementary/appcenter/backgrounds/graphics@2x.svg")
+        ) 10 10 10 10 / 10px 10px 10px 10px repeat;
     padding: 12px;
 }
 
 .category.graphics label:dir(rtl) {
-    border-image: -gtk-scaled(url("resource:///io/elementary/appcenter/backgrounds/graphics-rtl.svg"),url("resource:///io/elementary/appcenter/backgrounds/graphics-rtl@2x.svg")) 10 10 10 10 / 10px 10px 10px 10px repeat;
+    border-image:
+        -gtk-scaled(
+            /* stylelint-disable-next-line function-comma-newline-after (bug in stylelint?) */
+            url("resource:///io/elementary/appcenter/backgrounds/graphics-rtl.svg"),
+            url("resource:///io/elementary/appcenter/backgrounds/graphics-rtl@2x.svg")
+        ) 10 10 10 10 / 10px 10px 10px 10px repeat;
 }
 
 .category.games {
