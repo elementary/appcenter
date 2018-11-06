@@ -19,8 +19,8 @@
     background-image:
         linear-gradient(
             to bottom,
-            #fafafa,
-            #f2f2f2
+            @SILVER_100,
+            shade(@SILVER_100, 0.96)
         );
     background-position: center center;
     background-repeat: no-repeat;
@@ -32,7 +32,7 @@
         inset 0 -1px 0 0 alpha(white, 0.15),
         0 3px 2px -1px alpha(black, 0.15),
         0 3px 5px alpha(black, 0.1);
-    color: #4d4d4d;
+    color: @BLACK_300;
     font-size: 32px;
     font-weight: 300;
 }
@@ -104,11 +104,11 @@
     background-image:
         linear-gradient(
             to bottom right,
-            #a56de2,
-            #7239b3
+            @GRAPE_500,
+            @GRAPE_700
         );
     border-color: alpha(#260063, 0.7);
-    font-family: lobster;
+    font-family: "Lobster";
     text-shadow: 0 2px 0 alpha(#260063, 0.3);
     color: white;
 }
