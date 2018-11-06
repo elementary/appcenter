@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-05 14:29-0800\n"
-"PO-Revision-Date: 2018-10-26 08:28+0000\n"
+"PO-Revision-Date: 2018-11-06 10:01+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/he/>\n"
@@ -630,9 +630,8 @@ msgid "Audio"
 msgstr "שמע"
 
 #: src/Widgets/CategoryFlowBox.vala:31
-#, fuzzy
 msgid "Communication"
-msgstr "חינוך"
+msgstr "תקשורת"
 
 #: src/Widgets/CategoryFlowBox.vala:40
 msgid "Development"
@@ -643,9 +642,8 @@ msgid "Education"
 msgstr "חינוך"
 
 #: src/Widgets/CategoryFlowBox.vala:51
-#, fuzzy
 msgid "Finance"
-msgstr "ביטול"
+msgstr "כלכלה"
 
 #: src/Widgets/CategoryFlowBox.vala:55
 msgid "Games"
@@ -665,7 +663,7 @@ msgstr "מתמטיקה, מדע והנדסה"
 
 #: src/Widgets/CategoryFlowBox.vala:103
 msgid "Media Production"
-msgstr ""
+msgstr "הפקת מדיה"
 
 #: src/Widgets/CategoryFlowBox.vala:110
 msgid "Office"

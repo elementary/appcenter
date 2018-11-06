@@ -1,11 +1,12 @@
 # Ciaran Ainsworth <ciaranainsworth@outlook.com>, 2018.
+# Ciarán Ainsworth <ciaranainsworth@outlook.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-05 14:29-0800\n"
-"PO-Revision-Date: 2018-10-26 19:09+0000\n"
-"Last-Translator: Ciaran Ainsworth <ciaranainsworth@outlook.com>\n"
+"PO-Revision-Date: 2018-11-06 13:10+0000\n"
+"Last-Translator: Ciarán Ainsworth <ciaranainsworth@outlook.com>\n"
 "Language-Team: English (United Kingdom) <https://weblate.elementary.io/"
 "projects/appcenter/appcenter/en_GB/>\n"
 "Language: en_GB\n"
@@ -644,9 +645,8 @@ msgid "Audio"
 msgstr "Audio"
 
 #: src/Widgets/CategoryFlowBox.vala:31
-#, fuzzy
 msgid "Communication"
-msgstr "Education"
+msgstr "Communication"
 
 #: src/Widgets/CategoryFlowBox.vala:40
 msgid "Development"
@@ -657,9 +657,8 @@ msgid "Education"
 msgstr "Education"
 
 #: src/Widgets/CategoryFlowBox.vala:51
-#, fuzzy
 msgid "Finance"
-msgstr "Cancel"
+msgstr "Finance"
 
 #: src/Widgets/CategoryFlowBox.vala:55
 msgid "Games"
@@ -679,7 +678,7 @@ msgstr "Maths, Science & Engineering"
 
 #: src/Widgets/CategoryFlowBox.vala:103
 msgid "Media Production"
-msgstr ""
+msgstr "Media Production"
 
 #: src/Widgets/CategoryFlowBox.vala:110
 msgid "Office"
