@@ -132,13 +132,9 @@ public class AppCenter.App : Gtk.Application {
     }
 
     public override void activate () {
-        var app_provider = new Gtk.CssProvider ();
-        app_provider.load_from_resource ("io/elementary/appcenter/application.css");
-        Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), app_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-
-        var category_provider = new Gtk.CssProvider ();
-        category_provider.load_from_resource ("io/elementary/appcenter/categories.css");
-        Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), category_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        var provider = new Gtk.CssProvider ();
+        provider.load_from_resource ("io/elementary/appcenter/application.css");
+        Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         var client = AppCenterCore.Client.get_default ();
 

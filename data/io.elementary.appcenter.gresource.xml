@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
   <gresource prefix="/io/elementary/appcenter">
-    <file alias="application.css" compressed="true">application.css</file>
-    <file alias="categories.css" compressed="true">categories.css</file>
+    <file alias="application.css" compressed="true">styles/application.css</file>
+    <file alias="categories.css" compressed="true">styles/categories.css</file>
   </gresource>
 </gresources>
