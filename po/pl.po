@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-05 14:29-0800\n"
-"PO-Revision-Date: 2018-10-26 05:38+0000\n"
+"PO-Revision-Date: 2018-11-06 01:58+0000\n"
 "Last-Translator: Piotr Strebski <strebski@gmail.com>\n"
 "Language-Team: Polish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/pl/>\n"
@@ -663,9 +663,8 @@ msgid "Audio"
 msgstr "Dźwięk"
 
 #: src/Widgets/CategoryFlowBox.vala:31
-#, fuzzy
 msgid "Communication"
-msgstr "Edukacja"
+msgstr "Komunikacja"
 
 #: src/Widgets/CategoryFlowBox.vala:40
 msgid "Development"
@@ -676,9 +675,8 @@ msgid "Education"
 msgstr "Edukacja"
 
 #: src/Widgets/CategoryFlowBox.vala:51
-#, fuzzy
 msgid "Finance"
-msgstr "Anuluj"
+msgstr "Finanse"
 
 #: src/Widgets/CategoryFlowBox.vala:55
 msgid "Games"
@@ -698,7 +696,7 @@ msgstr "Matematyka, nauka i inżynieria"
 
 #: src/Widgets/CategoryFlowBox.vala:103
 msgid "Media Production"
-msgstr ""
+msgstr "Produkcja medialna"
 
 #: src/Widgets/CategoryFlowBox.vala:110
 msgid "Office"
