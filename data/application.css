@@ -210,11 +210,23 @@
 }
 
 .category.media-production {
-    background-image: linear-gradient(
-        100deg,
-        mix (@SLATE_500, @SLATE_700, 0.5) 25%,
-        @SLATE_900
-    );
+    background-image:
+        radial-gradient(circle, rgba(150, 111, 195, 0.2) 18px, rgba(150, 111, 195, 0.3) 19px, transparent 20px),
+        radial-gradient(circle, rgba(224, 124, 203, 0.2) 8px, rgba(224, 124, 203, 0.3) 9px, transparent 10px),
+        radial-gradient(circle, rgba(224, 124, 203, 0.2) 8px, rgba(224, 124, 203, 0.3) 9px, transparent 10px),
+        radial-gradient(circle, rgba(145, 75, 113, 0.2) 19px, rgba(145, 75, 113, 0.3) 20px, transparent 46px),
+        radial-gradient(circle, rgba(145, 75, 113, 0) 10px, rgba(145, 75, 113, 0.2) 19px, transparent 80px),        
+        radial-gradient(circle, rgba(145, 75, 113, 0) 15px, rgba(145, 75, 113, 0.2) 30px, transparent 90px),        
+        radial-gradient(circle, rgba(37, 85, 79, 0.2) 15px, rgba(37, 85, 79, 0.3) 17px, transparent 50px),
+        radial-gradient(circle, rgba(37, 85, 79, 0.2) 8px, rgba(37, 85, 79, 0.3) 9px, transparent 20px),          
+        radial-gradient(circle, rgba(37, 85, 79, 0.2) 13px, rgba(37, 85, 79, 0.3) 13px, transparent 30px),                  
+        radial-gradient(circle, rgba(37, 85, 79, 0.2) 18px, rgba(37, 85, 79, 0.3) 18px, transparent 40px),          
+        radial-gradient(circle, rgba(114, 209, 244, 0.1) 15px, rgba(114, 209, 244, 0.1) 17px, transparent 50px),          
+        radial-gradient(circle, rgba(114, 209, 244, 0.2) 8px, rgba(114, 209, 244, 0.3) 9px, transparent 20px),          
+        radial-gradient(circle, rgba(114, 209, 244, 0.2) 13px, rgba(114, 209, 244, 0.3) 13px, transparent 30px),            
+        radial-gradient(circle, rgba(114, 209, 244, 0.2) 18px, rgba(114, 209, 244, 0.3) 18px, transparent 40px),
+        linear-gradient(100deg, mix (@SLATE_500, @SLATE_700, 0.5) 25%, @SLATE_900);
+    background-position: 30px 15px, 80px -50px, 10px -20px, 50px -30px, 20px -60px, 60px 10px, -50px -40px, -60px 0, -80px -60px, -160px -10px, 20px -10px, 130px -40px, 180px -20px, 180px 20px, center center; 
     border-color: alpha (@SLATE_900, 0.7);
     box-shadow:
         inset 0 0 0 1px alpha (#fff, 0.02),
@@ -278,12 +290,14 @@
 }
 
 .category.video {
-    background-image: -gtk-gradient(radial, center center, 0.42, center center, 0.46, from(alpha(#7a0000,0.0)), to(alpha(#7a0000,0.6))),
-                      linear-gradient(to bottom,
-                              #ed5353,
-                              #c6262e
-                              );
-    background-size: auto 150%;
+    background-image:
+        radial-gradient(circle, alpha(#7a0000,0.0) 65%, alpha(#4c0000,0.35) 4%),
+        linear-gradient(to bottom, alpha (#4c0000, 0.8), alpha (#4c0000, 0)),
+        linear-gradient(to right, transparent, alpha (#ed5353, 0.4) 17%, transparent 28%, transparent 40%, alpha (#ed5353, 0.4) 70%, transparent 80%),
+        linear-gradient(to bottom, #ed5353, #a10705);
+    background-repeat: no-repeat, no-repeat, repeat, no-repeat;
+    background-position: 50%, 0 0, 50%, 50%;
+    background-size: auto 150%, auto 60%, 100px, auto;
     border-color: alpha (#7a0000, 0.9);
     box-shadow: inset 0 0 0 1px alpha (#fff, 0.05),
                 inset 0 1px 0 0 alpha (#fff, 0.25),
