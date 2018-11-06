@@ -105,7 +105,7 @@ public class AppCenter.App : Gtk.Application {
             } else {
                 info (_("Could not parse mimetype %s").printf (mimetype));
             }
-
+            
             return;
         }
 
