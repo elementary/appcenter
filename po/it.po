@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-05 14:29-0800\n"
-"PO-Revision-Date: 2018-10-26 11:44+0000\n"
+"PO-Revision-Date: 2018-11-06 03:44+0000\n"
 "Last-Translator: Marco De Paolini <marco.depaolini@gmail.com>\n"
 "Language-Team: Italian <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/it/>\n"
@@ -662,9 +662,8 @@ msgid "Audio"
 msgstr "Audio"
 
 #: src/Widgets/CategoryFlowBox.vala:31
-#, fuzzy
 msgid "Communication"
-msgstr "Istruzione"
+msgstr "Comunicazione"
 
 #: src/Widgets/CategoryFlowBox.vala:40
 msgid "Development"
@@ -675,9 +674,8 @@ msgid "Education"
 msgstr "Istruzione"
 
 #: src/Widgets/CategoryFlowBox.vala:51
-#, fuzzy
 msgid "Finance"
-msgstr "Annulla"
+msgstr "Finanza"
 
 #: src/Widgets/CategoryFlowBox.vala:55
 msgid "Games"
@@ -697,7 +695,7 @@ msgstr "Matematica, scienza e ingegneria"
 
 #: src/Widgets/CategoryFlowBox.vala:103
 msgid "Media Production"
-msgstr ""
+msgstr "Produzione audio e video"
 
 #: src/Widgets/CategoryFlowBox.vala:110
 msgid "Office"
