@@ -2,5 +2,6 @@
 <gresources>
   <gresource prefix="/io/elementary/appcenter">
     <file alias="application.css" compressed="true">application.css</file>
+    <file alias="categories.css" compressed="true">categories.css</file>
   </gresource>
 </gresources>
