@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-05 14:29-0800\n"
-"PO-Revision-Date: 2018-11-06 17:52+0000\n"
+"PO-Revision-Date: 2018-11-06 21:17+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/lt/>\n"
@@ -700,7 +700,7 @@ msgstr "Matematika, mokslas ir inžinerija"
 
 #: src/Widgets/CategoryFlowBox.vala:103
 msgid "Media Production"
-msgstr ""
+msgstr "Medijos kūryba"
 
 #: src/Widgets/CategoryFlowBox.vala:110
 msgid "Office"
