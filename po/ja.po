@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-05 14:29-0800\n"
-"PO-Revision-Date: 2018-11-06 02:07+0000\n"
+"PO-Revision-Date: 2018-11-06 17:52+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/ja/>\n"
@@ -680,7 +680,7 @@ msgstr "数学と理工学"
 
 #: src/Widgets/CategoryFlowBox.vala:103
 msgid "Media Production"
-msgstr "メディア制作"
+msgstr "メディア製作"
 
 #: src/Widgets/CategoryFlowBox.vala:110
 msgid "Office"
