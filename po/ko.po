@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-05 14:29-0800\n"
-"PO-Revision-Date: 2018-10-26 11:14+0000\n"
+"PO-Revision-Date: 2018-11-07 01:42+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/ko/>\n"
@@ -638,9 +638,8 @@ msgid "Audio"
 msgstr "오디오"
 
 #: src/Widgets/CategoryFlowBox.vala:31
-#, fuzzy
 msgid "Communication"
-msgstr "교육"
+msgstr "통신"
 
 #: src/Widgets/CategoryFlowBox.vala:40
 msgid "Development"
@@ -651,9 +650,8 @@ msgid "Education"
 msgstr "교육"
 
 #: src/Widgets/CategoryFlowBox.vala:51
-#, fuzzy
 msgid "Finance"
-msgstr "취소"
+msgstr "재무"
 
 #: src/Widgets/CategoryFlowBox.vala:55
 msgid "Games"
@@ -673,7 +671,7 @@ msgstr "수학, 사이언스 & 엔지니어링"
 
 #: src/Widgets/CategoryFlowBox.vala:103
 msgid "Media Production"
-msgstr ""
+msgstr "미디어 제작"
 
 #: src/Widgets/CategoryFlowBox.vala:110
 msgid "Office"
