@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-02 13:03-0700\n"
-"PO-Revision-Date: 2018-09-29 18:00+0000\n"
+"POT-Creation-Date: 2018-10-18 05:17-0500\n"
+"PO-Revision-Date: 2018-10-26 19:09+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/appcenter/"
 "extra/mr/>\n"
@@ -15,52 +15,78 @@ msgstr ""
 "X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
+#: data/io.elementary.appcenter.appdata.xml.in:8
 msgid "AppCenter"
-msgstr "अॅप सेंटर"
+msgstr "अनुप्रयोग भांडार(अॅप सेंटर)"
 
+#: data/io.elementary.appcenter.appdata.xml.in:9
+#: data/io.elementary.appcenter.desktop.in.in:4
 msgid "Browse and manage apps"
-msgstr ""
+msgstr "ब्राउझ करा आणि अॅप्स व्यवस्थापित करा"
 
-msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
-msgstr ""
-
-msgid "About AppCenter"
-msgstr ""
-
+#: data/io.elementary.appcenter.appdata.xml.in:11
 msgid ""
 "An app store for indie and open source developers. Browse by categories or "
 "search and discover new apps. AppCenter is also used for updating your "
 "system to the latest and greatest version for new features and fixes."
 msgstr ""
+"इंडी आणि ओपन सोर्स डेव्हलपरसाठी अॅप स्टोअर. श्रेण्यांद्वारे ब्राउझ करा किंवा नवीन अॅप्स "
+"शोधा. नवीन वैशिष्ट्ये आणि निराकरणासाठी तसेच आपल्या सिस्टमला नवीनतम आणि सर्वात मोठ्या "
+"आवृत्तीत अद्यतनित करण्यासाठी देखील अॅप सेंटर  वापरला जातो."
 
-msgid "Bug fixes and improve perfomance."
-msgstr ""
+#: data/io.elementary.appcenter.appdata.xml.in:201
+msgid "elementary LLC."
+msgstr "एलिमेंटरी LLC."
 
-msgid "Various bug fixes and performance improvements"
-msgstr ""
+#: data/io.elementary.appcenter.desktop.in.in:3
+msgid "@APP_NAME@"
+msgstr "@APP_NAME@"
 
-msgid "New translations"
-msgstr ""
+#: data/io.elementary.appcenter.desktop.in.in:6
+msgid "@DESKTOP_ICON@"
+msgstr "@DESKTOP_ICON@"
 
-msgid "Fix crash caused by entries with missing packages"
-msgstr ""
+#: data/io.elementary.appcenter.desktop.in.in:7
+msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
+msgstr "इन्स्टॉल; अनइन्स्टॉल; काढणे; कॅटलॉग; स्टोअर; अॅप्स; अपडेट्स; सॉफ्टवेअर;"
 
-msgid "Add capability to search by category and apply minor bug fixes."
-msgstr ""
+#: data/io.elementary.appcenter.desktop.in.in:18
+msgid "Check for Updates"
+msgstr "अपडेट्ससाठी तपासा"
 
-msgid "It is now possible to search apps inside a category"
-msgstr ""
+#~ msgid "About AppCenter"
+#~ msgstr "अॅप सेंटर विषयी"
 
-msgid "Prevent multiple authentication dialogs when resuming from suspend"
-msgstr ""
+#~ msgid "Bug fixes and improve perfomance."
+#~ msgstr "दोष निराकरण आणि परफॉर्मन्स सुधारित करणे."
 
-msgid ""
-"Search perfomance has beeen improved, the category name is now shown on the "
-"headbar and minor bugs have been fixed."
-msgstr ""
+#~ msgid "Various bug fixes and performance improvements"
+#~ msgstr "विविध दोष निराकरणे आणि कार्यक्षमता सुधारणा"
 
-msgid "Fix Steam installation"
-msgstr ""
+#~ msgid "New translations"
+#~ msgstr "नवीन अनुवाद"
 
-msgid "Make search asynchronous"
-msgstr ""
+#~ msgid "Fix crash caused by entries with missing packages"
+#~ msgstr "गहाळ पॅकेजेससह झालेल्या नोंदीमुळे होणारा क्रॅश दुरुस्त करा"
+
+#~ msgid "Add capability to search by category and apply minor bug fixes."
+#~ msgstr "श्रेणीनुसार शोधण्याची क्षमता जोडा आणि किरकोळ दोष निराकरणे लागू करा."
+
+#~ msgid "It is now possible to search apps inside a category"
+#~ msgstr "श्रेणीमध्ये अॅप्स शोधणे आता शक्य आहे"
+
+#~ msgid "Prevent multiple authentication dialogs when resuming from suspend"
+#~ msgstr "निलंबन पासून पुन्हा सुरू झाल्यावर एकाधिक प्रमाणीकरण संवाद टाळा"
+
+#~ msgid ""
+#~ "Search perfomance has beeen improved, the category name is now shown on "
+#~ "the headbar and minor bugs have been fixed."
+#~ msgstr ""
+#~ "शोध  कार्यक्षमता  सुधारित केली आहे, श्रेणी नाव आता हेडबारवर दर्शविले आहे आणि किरकोळ "
+#~ "दोष निश्चित केले गेले आहेत."
+
+#~ msgid "Fix Steam installation"
+#~ msgstr "स्टीम इंस्टॉलेशन दुरुस्त करा"
+
+#~ msgid "Make search asynchronous"
+#~ msgstr "शोध अतुल्यकालिक करा"

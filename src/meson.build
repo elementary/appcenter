@@ -61,6 +61,10 @@ if get_option('curated')
     args += '--define=CURATED'
 endif
 
+if get_option('payments')
+    args += '--define=PAYMENTS'
+endif
+
 if get_option('sharing')
     args += '--define=SHARING'
 endif
