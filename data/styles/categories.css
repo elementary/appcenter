@@ -213,6 +213,27 @@
 }
 
 .category.graphics {
+    background-color: white;
+    background-image:
+        linear-gradient(
+            45deg,
+            alpha(black, 0.03) 25%,
+            transparent 25%,
+            transparent 75%,
+            alpha(black, 0.03) 75%,
+            alpha(black, 0.03)
+        ),
+        linear-gradient(
+            45deg,
+            alpha(black, 0.03) 25%,
+            transparent 25%,
+            transparent 75%,
+            alpha(black, 0.03) 75%,
+            alpha(black, 0.03)
+        );
+    background-position: 0 0, 12px 12px;
+    background-repeat: repeat;
+    background-size: 24px 24px;
     border: none;
     box-shadow:
         inset 0 0 0 1px alpha(white, 0.1),
@@ -222,6 +243,8 @@
         0 3px 2px -1px alpha(black, 0.15),
         0 3px 5px alpha(black, 0.1);
     color: #fe5498;
+    font-weight: normal;
+    text-shadow: 0 1px 3px white;
 }
 
 .category.graphics label {
@@ -438,21 +461,20 @@
 .category.system {
     background-image:
         linear-gradient(
-            to bottom,
-            #69768f,
-            #59687e
+            170deg,
+            @SLATE_100,
+            @SLATE_300
         );
-    border-color: alpha(#454951, 0.8);
+    border-color: alpha(@SLATE_700, 0.8);
     box-shadow:
         inset 0 0 0 1px alpha(white, 0.05),
         inset 0 1px 0 0 alpha(white, 0.25),
         inset 0 -1px 0 0 alpha(white, 0.1),
         0 3px 2px -1px alpha(black, 0.15),
         0 3px 5px alpha(black, 0.1);
-    color: white;
-    text-shadow:
-        0 1px 1px alpha(black, 0.3),
-        0 2px 3px alpha(black, 0.3);
+    color: @SLATE_900;
+    text-shadow: 0 1px alpha(white, 0.4);
+    -gtk-icon-shadow: 0 1px alpha(white, 0.4);
 }
 
 .category.video {

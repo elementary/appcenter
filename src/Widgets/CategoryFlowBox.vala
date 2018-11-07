@@ -112,7 +112,7 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
             "Spreadsheet",
             "WordProcessor"
         }, "office"));
-        add (get_category (_("System"), "applications-system", {
+        add (get_category (_("System"), "applications-system-symbolic", {
             "Monitor",
             "System"
         }, "system"));
