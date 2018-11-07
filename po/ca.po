@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-23 15:58-0700\n"
-"PO-Revision-Date: 2018-09-25 11:17+0000\n"
+"POT-Creation-Date: 2018-11-05 14:29-0800\n"
+"PO-Revision-Date: 2018-11-07 16:35+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/ca/>\n"
@@ -46,19 +46,19 @@ msgstr "%s s'ha instal·lat correctament"
 msgid "There Was An Error Installing %s."
 msgstr "Hi ha hagut un error a l'hora d'instal·lar %s."
 
-#: src/MainWindow.vala:149 src/Views/Homepage.vala:252
-#: src/Views/Homepage.vala:261 src/Views/Homepage.vala:266
-#: src/Views/Homepage.vala:277
+#: src/MainWindow.vala:149 src/Views/Homepage.vala:253
+#: src/Views/Homepage.vala:262 src/Views/Homepage.vala:267
+#: src/Views/Homepage.vala:278
 msgid "Home"
 msgstr "Pàgina principal"
 
 #: src/MainWindow.vala:150 src/Views/InstalledView.vala:29
-#: src/Views/InstalledView.vala:49
+#: src/Views/InstalledView.vala:53
 msgctxt "view"
 msgid "Installed"
 msgstr "Instal·lades"
 
-#: src/MainWindow.vala:177 src/MainWindow.vala:328 src/Views/SearchView.vala:54
+#: src/MainWindow.vala:177 src/MainWindow.vala:330 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:81
 msgid "Search Apps"
 msgstr "Cerca aplicacions"
@@ -97,7 +97,7 @@ msgstr "S'obté informació"
 
 #: src/Core/ChangeInformation.vala:64
 msgid "Removing packages"
-msgstr "S'eliminen paquets"
+msgstr "Se suprimeixen paquets"
 
 #: src/Core/ChangeInformation.vala:66
 msgid "Downloading"
@@ -219,49 +219,49 @@ msgstr "Es copien fitxers"
 msgid "Unknown state"
 msgstr "Estat desconegut"
 
-#: src/Core/Client.vala:105
+#: src/Core/Client.vala:106
 msgid "Operating System Updates"
 msgstr "Actualitzacions del sistema operatiu"
 
-#: src/Core/Client.vala:106
+#: src/Core/Client.vala:107
 msgid "Updates to system components"
 msgstr "Actualitzacions als components del sistema"
 
-#: src/Core/Client.vala:141
+#: src/Core/Client.vala:142
 #, c-format
 msgid "%s (local)"
 msgstr "%s (local)"
 
-#: src/Core/Client.vala:466
+#: src/Core/Client.vala:467
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Hi ha una actualització disponible"
 msgstr[1] "Hi ha actualitzacions disponibles"
 
-#: src/Core/Client.vala:467
+#: src/Core/Client.vala:468
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "Hi ha %u actualització disponible per al sistema"
 msgstr[1] "Hi ha %u actualitzacions disponibles per al sistema"
 
-#: src/Core/Client.vala:495
+#: src/Core/Client.vala:496
 #, c-format
 msgid "Version: %s"
 msgstr "Versió: %s"
 
-#: src/Core/Client.vala:504
+#: src/Core/Client.vala:505
 msgid "No components with updates"
 msgstr "No hi ha components amb actualitzacions."
 
-#: src/Core/Client.vala:508
+#: src/Core/Client.vala:509
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "%u component amb actualitzacions"
 msgstr[1] "%u components amb actualitzacions"
 
-#: src/Core/Client.vala:510
+#: src/Core/Client.vala:511
 #, c-format
 msgid "%s:"
 msgstr "%s:"
@@ -326,7 +326,7 @@ msgstr "Reinicia'l"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:171
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:199
 msgid "Cancel"
 msgstr "Cancel·la"
 
@@ -395,7 +395,7 @@ msgstr "Processant"
 
 #: src/Dialogs/StripeDialog.vala:268
 msgid "There Was a Problem Processing Your Payment"
-msgstr "Hi ha hagut un problema processant el pagament"
+msgstr "Hi ha hagut un problema processant el pagament."
 
 #: src/Dialogs/StripeDialog.vala:306
 msgid "Pay Later"
@@ -560,70 +560,70 @@ msgstr "Informeu d'un problema"
 msgid "Help"
 msgstr "Ajuda"
 
-#: src/Views/AppInfoView.vala:178
+#: src/Views/AppInfoView.vala:180
 msgid "What's New:"
 msgstr "Què hi ha de nou:"
 
-#: src/Views/AppInfoView.vala:197
+#: src/Views/AppInfoView.vala:199
 msgid "Extensions:"
 msgstr "Extensions:"
 
-#: src/Views/AppInfoView.vala:291
+#: src/Views/AppInfoView.vala:293
 #, c-format
 msgid "Other Apps by %s"
 msgstr "Altres aplicacions de %s"
 
-#: src/Views/AppInfoView.vala:325
+#: src/Views/AppInfoView.vala:327
 msgid "Link copied to clipboard"
 msgstr "Enllaç copiat al porta-retalls"
 
-#: src/Views/AppInfoView.vala:336
+#: src/Views/AppInfoView.vala:338
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "Obtingueu %s al Centre d'aplicacions:"
 
-#: src/Views/AppInfoView.vala:343
+#: src/Views/AppInfoView.vala:345
 msgid "Share"
 msgstr "Comparteix"
 
-#: src/Views/AppInfoView.vala:639
+#: src/Views/AppInfoView.vala:650
 msgid "Fund"
 msgstr "Finançament"
 
-#: src/Views/AppInfoView.vala:661
+#: src/Views/AppInfoView.vala:672
 msgid "Fund the development of this app"
 msgstr "Financeu el desenvolupament d'aquesta aplicació"
 
-#: src/Views/AppListUpdateView.vala:59
+#: src/Views/AppListUpdateView.vala:56
 msgid "A restart is required to complete the installation of updates"
 msgstr "Cal un reinici per completar la instal·lació de les actualitzacions"
 
-#: src/Views/AppListUpdateView.vala:67
+#: src/Views/AppListUpdateView.vala:64
 msgid "Restart Now"
 msgstr "Reincia ara"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:162
+#: src/Views/AppListUpdateView.vala:158
 msgid "Update All"
 msgstr "Actualitza-ho tot"
 
-#: src/Views/AppListView.vala:119
+#: src/Views/AppListView.vala:128
 msgid "Non-Curated Apps"
 msgstr "Aplicacions sense conservació"
 
-#: src/Views/Homepage.vala:65
+#: src/Views/Homepage.vala:66
 msgid "Recently Updated"
 msgstr "Actualitzat recentment"
 
-#: src/Views/Homepage.vala:81
+#: src/Views/Homepage.vala:82
 msgid "Trending"
 msgstr "Tendència"
 
-#: src/Views/Homepage.vala:97
+#: src/Views/Homepage.vala:98
 msgid "Categories"
 msgstr "Categories"
 
-#: src/Views/Homepage.vala:266 src/Views/Homepage.vala:277
+#: src/Views/Homepage.vala:267 src/Views/Homepage.vala:278
 #, c-format
 msgid "Search %s"
 msgstr "Cerca %s"
@@ -656,66 +656,87 @@ msgid "Card Number"
 msgstr "Número de la targeta"
 
 #: src/Widgets/CategoryFlowBox.vala:29
-msgid "Audio"
-msgstr "Àudio"
-
-#: src/Widgets/CategoryFlowBox.vala:30
-msgid "Development"
-msgstr "Desenvolupament"
-
-#: src/Widgets/CategoryFlowBox.vala:40
 msgid "Accessories"
 msgstr "Accessoris"
 
-#: src/Widgets/CategoryFlowBox.vala:41
-msgid "Office"
-msgstr "Oficina"
+#: src/Widgets/CategoryFlowBox.vala:30
+msgid "Audio"
+msgstr "Àudio"
 
-#: src/Widgets/CategoryFlowBox.vala:48
-msgid "System"
-msgstr "Sistema"
+#: src/Widgets/CategoryFlowBox.vala:31
+msgid "Communication"
+msgstr "Comunicació"
 
-#: src/Widgets/CategoryFlowBox.vala:52
-msgid "Video"
-msgstr "Vídeo"
+#: src/Widgets/CategoryFlowBox.vala:40
+msgid "Development"
+msgstr "Desenvolupament"
 
-#: src/Widgets/CategoryFlowBox.vala:57
-msgid "Graphics"
-msgstr "Gràfics"
-
-#: src/Widgets/CategoryFlowBox.vala:66
-msgid "Games"
-msgstr "Jocs"
-
-#: src/Widgets/CategoryFlowBox.vala:82
+#: src/Widgets/CategoryFlowBox.vala:50
 msgid "Education"
 msgstr "Educació"
 
-#: src/Widgets/CategoryFlowBox.vala:83
+#: src/Widgets/CategoryFlowBox.vala:51
+msgid "Finance"
+msgstr "Finances"
+
+#: src/Widgets/CategoryFlowBox.vala:55
+msgid "Games"
+msgstr "Jocs"
+
+#: src/Widgets/CategoryFlowBox.vala:71
+msgid "Graphics"
+msgstr "Gràfics"
+
+#: src/Widgets/CategoryFlowBox.vala:80
 msgid "Internet"
 msgstr "Internet"
 
-#: src/Widgets/CategoryFlowBox.vala:87
-msgid "Science & Engineering"
-msgstr "Ciència i enginyeria"
+#: src/Widgets/CategoryFlowBox.vala:84
+msgid "Math, Science, & Engineering"
+msgstr "Matemàtiques, ciència i enginyeria"
 
-#: src/Widgets/CategoryFlowBox.vala:106
+#: src/Widgets/CategoryFlowBox.vala:103
+msgid "Media Production"
+msgstr "Producció multimèdia"
+
+#: src/Widgets/CategoryFlowBox.vala:110
+msgid "Office"
+msgstr "Oficina"
+
+#: src/Widgets/CategoryFlowBox.vala:117
+msgid "System"
+msgstr "Sistema"
+
+#: src/Widgets/CategoryFlowBox.vala:121
 msgid "Universal Access"
 msgstr "Accés universal"
 
-#: src/Widgets/HumbleButton.vala:93
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:250
+#: src/Widgets/CategoryFlowBox.vala:122
+msgid "Video"
+msgstr "Vídeo"
+
+#: src/Widgets/HumbleButton.vala:85
+msgid "Requires payments, which are not enabled"
+msgstr "Requereix pagaments, que no estan habilitats."
+
+#: src/Widgets/HumbleButton.vala:106
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:301
 msgid "Free"
 msgstr "Lliure"
 
+#: src/Widgets/HumbleButton.vala:108
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:303
+msgid "Install"
+msgstr "Instal·la"
+
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:127
+#: src/Widgets/HumbleButton.vala:142
 #, c-format
 msgid "$%d.00"
 msgstr "$%d.00"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:130
+#: src/Widgets/HumbleButton.vala:145
 #, c-format
 msgid "$%d"
 msgstr "$%d"
@@ -785,15 +806,15 @@ msgstr "Al dia"
 msgid "Drivers"
 msgstr "Controladors"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:150
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:168
 msgid "Uninstall"
 msgstr "Desinstal·la"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:153
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:176
 msgid "Open"
 msgstr "Obre"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:274
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:326
 msgid "Update"
 msgstr "Actualitza"
 

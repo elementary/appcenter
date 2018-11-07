@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 08:32-0700\n"
-"PO-Revision-Date: 2018-08-13 00:02+0000\n"
-"Last-Translator: colindemian <colindemian@outlook.com>\n"
+"POT-Creation-Date: 2018-10-18 05:17-0500\n"
+"PO-Revision-Date: 2018-10-29 16:29+0000\n"
+"Last-Translator: WANG, Wei <ww460160885@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.elementary.io/projects/"
 "appcenter/extra/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -32,17 +32,17 @@ msgid ""
 msgstr ""
 "独立和开源开发者专属应用商店，分类浏览、搜索和发现新应用，更新您的系统。"
 
-#: data/io.elementary.appcenter.appdata.xml.in:191
+#: data/io.elementary.appcenter.appdata.xml.in:201
 msgid "elementary LLC."
 msgstr "elementary LLC."
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
-msgstr ""
+msgstr "@APP_NAME@"
 
 #: data/io.elementary.appcenter.desktop.in.in:6
 msgid "@DESKTOP_ICON@"
-msgstr ""
+msgstr "@DESKTOP_ICON@"
 
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"

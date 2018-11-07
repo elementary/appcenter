@@ -2,11 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-02 13:03-0700\n"
+"POT-Creation-Date: 2018-10-18 05:17-0500\n"
 "PO-Revision-Date: 2017-12-20 00:11+0000\n"
 "Last-Translator: Вагиф Кязым <vaqif134@gmail.com>\n"
-"Language-Team: Azerbaijani "
-"<https://weblate.elementary.io/projects/appcenter/extra/az/>\n"
+"Language-Team: Azerbaijani <https://weblate.elementary.io/projects/appcenter/"
+"extra/az/>\n"
 "Language: az\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,56 +15,54 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
+#: data/io.elementary.appcenter.appdata.xml.in:8
 msgid "AppCenter"
 msgstr "Proqram mərkəzi"
 
+#: data/io.elementary.appcenter.appdata.xml.in:9
+#: data/io.elementary.appcenter.desktop.in.in:4
 msgid "Browse and manage apps"
 msgstr "Proqramları gözdən keçir və idarə et"
 
-msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
-msgstr ""
-"quraşdır;qaldır;sil;kataloq;mağaza;tətbiqlər;yeniliklər;proqram təminatı;"
-
-msgid "About AppCenter"
-msgstr "Proqram mərkəzi haqqında"
-
+#: data/io.elementary.appcenter.appdata.xml.in:11
 msgid ""
 "An app store for indie and open source developers. Browse by categories or "
 "search and discover new apps. AppCenter is also used for updating your "
 "system to the latest and greatest version for new features and fixes."
 msgstr ""
 
-msgid "Bug fixes and improve perfomance."
-msgstr "Səhv düzəltmələri və səmərəlilik təkmilləşmələri."
-
-msgid "Various bug fixes and performance improvements"
-msgstr "Cürbəcür səhv düzəltmələri və səmərəlilik təkmilləşmələri"
-
-msgid "New translations"
-msgstr "Yeni tərcümələr"
-
-msgid "Fix crash caused by entries with missing packages"
+#: data/io.elementary.appcenter.appdata.xml.in:201
+msgid "elementary LLC."
 msgstr ""
 
-msgid "Add capability to search by category and apply minor bug fixes."
+#: data/io.elementary.appcenter.desktop.in.in:3
+msgid "@APP_NAME@"
 msgstr ""
 
-msgid "It is now possible to search apps inside a category"
+#: data/io.elementary.appcenter.desktop.in.in:6
+msgid "@DESKTOP_ICON@"
 msgstr ""
 
-msgid "Prevent multiple authentication dialogs when resuming from suspend"
+#: data/io.elementary.appcenter.desktop.in.in:7
+msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
+msgstr ""
+"quraşdır;qaldır;sil;kataloq;mağaza;tətbiqlər;yeniliklər;proqram təminatı;"
+
+#: data/io.elementary.appcenter.desktop.in.in:18
+msgid "Check for Updates"
 msgstr ""
 
-msgid ""
-"Search perfomance has beeen improved, the category name is now shown on the "
-"headbar and minor bugs have been fixed."
-msgstr ""
+#~ msgid "About AppCenter"
+#~ msgstr "Proqram mərkəzi haqqında"
 
-msgid "Fix Steam installation"
-msgstr ""
+#~ msgid "Bug fixes and improve perfomance."
+#~ msgstr "Səhv düzəltmələri və səmərəlilik təkmilləşmələri."
 
-msgid "Make search asynchronous"
-msgstr ""
+#~ msgid "Various bug fixes and performance improvements"
+#~ msgstr "Cürbəcür səhv düzəltmələri və səmərəlilik təkmilləşmələri"
+
+#~ msgid "New translations"
+#~ msgstr "Yeni tərcümələr"
 
 #, fuzzy
 #~ msgid "App Center"

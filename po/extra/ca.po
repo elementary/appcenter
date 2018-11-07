@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 08:32-0700\n"
-"PO-Revision-Date: 2018-05-08 15:25+0000\n"
+"POT-Creation-Date: 2018-10-18 05:17-0500\n"
+"PO-Revision-Date: 2018-10-23 00:02+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://weblate.elementary.io/projects/appcenter/"
 "extra/ca/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
@@ -35,7 +35,7 @@ msgstr ""
 "Centre d'aplicacions també s'utilitza per actualitzar el sistema a la versió "
 "més recent i bona, per obtenir les noves característiques i correccions."
 
-#: data/io.elementary.appcenter.appdata.xml.in:191
+#: data/io.elementary.appcenter.appdata.xml.in:201
 msgid "elementary LLC."
 msgstr "elementary LLC."
 
@@ -50,8 +50,8 @@ msgstr "@ICONA_ESCRIPTORI@"
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
 msgstr ""
-"instal·la;desinstal·la;elimina;catàleg;botiga;aplicacions;actualitzacions;"
-"programari;"
+"instal·la;desinstal·la;suprimeix;catàleg;botiga;aplicacions;actualitzacions;p"
+"rogramari;"
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"

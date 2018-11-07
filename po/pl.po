@@ -4,9 +4,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-23 15:58-0700\n"
-"PO-Revision-Date: 2018-09-27 11:37+0000\n"
-"Last-Translator: Kajetan Rosiak <roskaj@gmail.com>\n"
+"POT-Creation-Date: 2018-11-05 14:29-0800\n"
+"PO-Revision-Date: 2018-11-06 01:58+0000\n"
+"Last-Translator: Piotr Strebski <strebski@gmail.com>\n"
 "Language-Team: Polish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/pl/>\n"
 "Language: pl\n"
@@ -47,19 +47,19 @@ msgstr "%s zostało pomyślnie zainstalowane"
 msgid "There Was An Error Installing %s."
 msgstr "Wystąpił błąd podczas instalacji %s."
 
-#: src/MainWindow.vala:149 src/Views/Homepage.vala:252
-#: src/Views/Homepage.vala:261 src/Views/Homepage.vala:266
-#: src/Views/Homepage.vala:277
+#: src/MainWindow.vala:149 src/Views/Homepage.vala:253
+#: src/Views/Homepage.vala:262 src/Views/Homepage.vala:267
+#: src/Views/Homepage.vala:278
 msgid "Home"
 msgstr "Strona główna"
 
 #: src/MainWindow.vala:150 src/Views/InstalledView.vala:29
-#: src/Views/InstalledView.vala:49
+#: src/Views/InstalledView.vala:53
 msgctxt "view"
 msgid "Installed"
 msgstr "Zainstalowane"
 
-#: src/MainWindow.vala:177 src/MainWindow.vala:328 src/Views/SearchView.vala:54
+#: src/MainWindow.vala:177 src/MainWindow.vala:330 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:81
 msgid "Search Apps"
 msgstr "Wyszukaj program"
@@ -220,27 +220,27 @@ msgstr "Kopiowanie plików"
 msgid "Unknown state"
 msgstr "Nieznany stan"
 
-#: src/Core/Client.vala:105
+#: src/Core/Client.vala:106
 msgid "Operating System Updates"
 msgstr "Aktualizacje systemu operacyjnego"
 
-#: src/Core/Client.vala:106
+#: src/Core/Client.vala:107
 msgid "Updates to system components"
 msgstr "Aktualizacje elementów systemu"
 
-#: src/Core/Client.vala:141
+#: src/Core/Client.vala:142
 #, c-format
 msgid "%s (local)"
 msgstr "%s (lokalne)"
 
-#: src/Core/Client.vala:466
+#: src/Core/Client.vala:467
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Dostępna aktualizacja"
 msgstr[1] "Dostępne aktualizacje"
 msgstr[2] "Dostępne aktualizacje"
 
-#: src/Core/Client.vala:467
+#: src/Core/Client.vala:468
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
@@ -248,16 +248,16 @@ msgstr[0] "Dostępna jest %u aktualizacja dla Twojego systemu"
 msgstr[1] "Dostępne są %u aktualizacje dla Twojego systemu"
 msgstr[2] "Dostępnych jest %u aktualizacji dla Twojego systemu"
 
-#: src/Core/Client.vala:495
+#: src/Core/Client.vala:496
 #, c-format
 msgid "Version: %s"
 msgstr "Wersja: %s"
 
-#: src/Core/Client.vala:504
+#: src/Core/Client.vala:505
 msgid "No components with updates"
 msgstr "Brak komponentów z aktualizacjami"
 
-#: src/Core/Client.vala:508
+#: src/Core/Client.vala:509
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
@@ -265,7 +265,7 @@ msgstr[0] "Jeden komponent z aktualizacją"
 msgstr[1] "%u komponenty z aktualizacją"
 msgstr[2] "%u komponentów z aktualizacją"
 
-#: src/Core/Client.vala:510
+#: src/Core/Client.vala:511
 #, c-format
 msgid "%s:"
 msgstr "%s:"
@@ -331,7 +331,7 @@ msgstr "Uruchom ponownie"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:171
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:199
 msgid "Cancel"
 msgstr "Anuluj"
 
@@ -556,71 +556,71 @@ msgstr "Zgłoś problem"
 msgid "Help"
 msgstr "Pomoc"
 
-#: src/Views/AppInfoView.vala:178
+#: src/Views/AppInfoView.vala:180
 msgid "What's New:"
 msgstr "Co nowego:"
 
-#: src/Views/AppInfoView.vala:197
+#: src/Views/AppInfoView.vala:199
 msgid "Extensions:"
 msgstr "Rozszerzenia:"
 
-#: src/Views/AppInfoView.vala:291
+#: src/Views/AppInfoView.vala:293
 #, c-format
 msgid "Other Apps by %s"
 msgstr "Inne programy %s"
 
-#: src/Views/AppInfoView.vala:325
+#: src/Views/AppInfoView.vala:327
 msgid "Link copied to clipboard"
 msgstr "Odnośnik skopiowany do schowka"
 
-#: src/Views/AppInfoView.vala:336
+#: src/Views/AppInfoView.vala:338
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "Wypróbuj %s w centrum oprogramowania:"
 
-#: src/Views/AppInfoView.vala:343
+#: src/Views/AppInfoView.vala:345
 msgid "Share"
 msgstr "Udostępnij"
 
-#: src/Views/AppInfoView.vala:639
+#: src/Views/AppInfoView.vala:650
 msgid "Fund"
 msgstr "Zafunduj"
 
-#: src/Views/AppInfoView.vala:661
+#: src/Views/AppInfoView.vala:672
 msgid "Fund the development of this app"
 msgstr "Zafunduj rozwój tego programu"
 
-#: src/Views/AppListUpdateView.vala:59
+#: src/Views/AppListUpdateView.vala:56
 msgid "A restart is required to complete the installation of updates"
 msgstr ""
 "Ponowne uruchomienie jest wymagane, aby dokończyć instalację aktualizacji"
 
-#: src/Views/AppListUpdateView.vala:67
+#: src/Views/AppListUpdateView.vala:64
 msgid "Restart Now"
 msgstr "Uruchom ponownie teraz"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:162
+#: src/Views/AppListUpdateView.vala:158
 msgid "Update All"
 msgstr "Aktualizuj wszystko"
 
-#: src/Views/AppListView.vala:119
+#: src/Views/AppListView.vala:128
 msgid "Non-Curated Apps"
 msgstr "Programy nie obsługiwane przez społeczność"
 
-#: src/Views/Homepage.vala:65
+#: src/Views/Homepage.vala:66
 msgid "Recently Updated"
 msgstr "Ostatnio zaktualizowane"
 
-#: src/Views/Homepage.vala:81
+#: src/Views/Homepage.vala:82
 msgid "Trending"
 msgstr "Zyskujące popularność"
 
-#: src/Views/Homepage.vala:97
+#: src/Views/Homepage.vala:98
 msgid "Categories"
 msgstr "Kategorie"
 
-#: src/Views/Homepage.vala:266 src/Views/Homepage.vala:277
+#: src/Views/Homepage.vala:267 src/Views/Homepage.vala:278
 #, c-format
 msgid "Search %s"
 msgstr "Wyszukaj %s"
@@ -655,66 +655,87 @@ msgid "Card Number"
 msgstr "Numer karty"
 
 #: src/Widgets/CategoryFlowBox.vala:29
-msgid "Audio"
-msgstr "Dźwięk"
-
-#: src/Widgets/CategoryFlowBox.vala:30
-msgid "Development"
-msgstr "Rozwój oprogramowania"
-
-#: src/Widgets/CategoryFlowBox.vala:40
 msgid "Accessories"
 msgstr "Akcesoria"
 
-#: src/Widgets/CategoryFlowBox.vala:41
-msgid "Office"
-msgstr "Biuro"
+#: src/Widgets/CategoryFlowBox.vala:30
+msgid "Audio"
+msgstr "Dźwięk"
 
-#: src/Widgets/CategoryFlowBox.vala:48
-msgid "System"
-msgstr "System"
+#: src/Widgets/CategoryFlowBox.vala:31
+msgid "Communication"
+msgstr "Komunikacja"
 
-#: src/Widgets/CategoryFlowBox.vala:52
-msgid "Video"
-msgstr "Wideo"
+#: src/Widgets/CategoryFlowBox.vala:40
+msgid "Development"
+msgstr "Rozwój oprogramowania"
 
-#: src/Widgets/CategoryFlowBox.vala:57
-msgid "Graphics"
-msgstr "Grafika"
-
-#: src/Widgets/CategoryFlowBox.vala:66
-msgid "Games"
-msgstr "Gry"
-
-#: src/Widgets/CategoryFlowBox.vala:82
+#: src/Widgets/CategoryFlowBox.vala:50
 msgid "Education"
 msgstr "Edukacja"
 
-#: src/Widgets/CategoryFlowBox.vala:83
+#: src/Widgets/CategoryFlowBox.vala:51
+msgid "Finance"
+msgstr "Finanse"
+
+#: src/Widgets/CategoryFlowBox.vala:55
+msgid "Games"
+msgstr "Gry"
+
+#: src/Widgets/CategoryFlowBox.vala:71
+msgid "Graphics"
+msgstr "Grafika"
+
+#: src/Widgets/CategoryFlowBox.vala:80
 msgid "Internet"
 msgstr "Internet"
 
-#: src/Widgets/CategoryFlowBox.vala:87
-msgid "Science & Engineering"
-msgstr "Nauka i inżynieria"
+#: src/Widgets/CategoryFlowBox.vala:84
+msgid "Math, Science, & Engineering"
+msgstr "Matematyka, nauka i inżynieria"
 
-#: src/Widgets/CategoryFlowBox.vala:106
+#: src/Widgets/CategoryFlowBox.vala:103
+msgid "Media Production"
+msgstr "Produkcja medialna"
+
+#: src/Widgets/CategoryFlowBox.vala:110
+msgid "Office"
+msgstr "Biuro"
+
+#: src/Widgets/CategoryFlowBox.vala:117
+msgid "System"
+msgstr "System"
+
+#: src/Widgets/CategoryFlowBox.vala:121
 msgid "Universal Access"
 msgstr "Dostęp uniwersalny"
 
-#: src/Widgets/HumbleButton.vala:93
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:250
+#: src/Widgets/CategoryFlowBox.vala:122
+msgid "Video"
+msgstr "Wideo"
+
+#: src/Widgets/HumbleButton.vala:85
+msgid "Requires payments, which are not enabled"
+msgstr "Wymaga dokonania płatności, która jest niedostępna"
+
+#: src/Widgets/HumbleButton.vala:106
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:301
 msgid "Free"
 msgstr "Darmowe"
 
+#: src/Widgets/HumbleButton.vala:108
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:303
+msgid "Install"
+msgstr "Zainstaluj"
+
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:127
+#: src/Widgets/HumbleButton.vala:142
 #, c-format
 msgid "$%d.00"
 msgstr "$%d,00"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:130
+#: src/Widgets/HumbleButton.vala:145
 #, c-format
 msgid "$%d"
 msgstr "$%d"
@@ -785,15 +806,15 @@ msgstr "Aktualne"
 msgid "Drivers"
 msgstr "Sterowniki"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:150
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:168
 msgid "Uninstall"
 msgstr "Odinstaluj"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:153
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:176
 msgid "Open"
 msgstr "Otwórz"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:274
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:326
 msgid "Update"
 msgstr "Aktualizuj"
 
