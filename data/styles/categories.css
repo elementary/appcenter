@@ -147,10 +147,15 @@
 
 .category.education {
     background-image:
+        radial-gradient(
+            circle,
+            alpha(white, 0) 67%,
+            alpha(white, 0.15)
+        ),
         linear-gradient(
             to bottom,
-            #2f674d,
-            #305a46
+            mix(@LIME_900, @SLATE_100, 0.5),
+            mix(@LIME_900, @SLATE_500, 0.67)
         );
     border-color: alpha(#213d30, 0.8);
     box-shadow:
@@ -163,7 +168,10 @@
     font-family: "HVD Bodedo", serif;
     font-size: 24px;
     font-weight: 400;
-    text-shadow: 0 0 24px alpha(white, 0.6);
+    text-shadow:
+        0 0 2px alpha(white, 0.25),
+        0 0 24px alpha(white, 0.6),
+        0 0 6px alpha(white, 0.15);
 }
 
 .category.finance {
