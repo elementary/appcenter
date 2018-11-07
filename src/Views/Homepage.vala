@@ -231,16 +231,6 @@ namespace AppCenter {
                 }
             });
 
-            category_flow.set_sort_func ((child1, child2) => {
-                var item1 = child1 as Widgets.CategoryItem;
-                var item2 = child2 as Widgets.CategoryItem;
-                if (item1 != null && item2 != null) {
-                    return item1.app_category.name.collate (item2.app_category.name);
-                }
-
-                return 0;
-            });
-
             recently_updated_carousel.package_activated.connect (show_package);
             trending_carousel.package_activated.connect (show_package);
         }
