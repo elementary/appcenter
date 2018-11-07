@@ -169,7 +169,6 @@
     font-size: 24px;
     font-weight: 400;
     text-shadow:
-        0 0 2px alpha(white, 0.25),
         0 0 24px alpha(white, 0.6),
         0 0 6px alpha(white, 0.15);
 }
