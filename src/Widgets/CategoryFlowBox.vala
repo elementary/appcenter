@@ -19,13 +19,11 @@
  */
 
 public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
-    public CategoryFlowBox () {
-        Object (activate_on_single_click: true,
-                homogeneous: true,
-                min_children_per_line: 2);
-    }
-
     construct {
+        activate_on_single_click = true;
+        homogeneous = true;
+        min_children_per_line = 2;
+
         add (get_category (_("Accessories"), "applications-accessories", {"Utility"}, "accessories"));
         add (get_category (_("Audio"), "applications-audio-symbolic", {"Audio", "Music"}, "audio"));
         add (get_category (_("Communication"), "mail-send-symbolic", {
@@ -114,7 +112,7 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
             "Spreadsheet",
             "WordProcessor"
         }, "office"));
-        add (get_category (_("System"), "applications-system", {
+        add (get_category (_("System"), "applications-system-symbolic", {
             "Monitor",
             "System"
         }, "system"));
@@ -134,6 +132,16 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
             "Translation",
             "WordProcessor"
         }, "writing-language"));
+
+        set_sort_func ((child1, child2) => {
+            var item1 = child1 as Widgets.CategoryItem;
+            var item2 = child2 as Widgets.CategoryItem;
+            if (item1 != null && item2 != null) {
+                return item1.app_category.name.collate (item2.app_category.name);
+            }
+
+            return 0;
+        });
     }
 
     private Widgets.CategoryItem get_category (string name, string icon, string[] groups, string style) {
