@@ -88,16 +88,96 @@
 
 .category.communication {
     background-image:
+        -gtk-icontheme("call-start-symbolic"),
+        -gtk-icontheme("internet-chat-symbolic"),
+        -gtk-icontheme("document-edit-symbolic"),
+        -gtk-icontheme("mail-send-symbolic"),
+        -gtk-icontheme("document-edit-symbolic"),
+        -gtk-icontheme("preferences-system-sharing-symbolic"),
+        -gtk-icontheme("internet-chat-symbolic"),
+        -gtk-icontheme("mail-send-symbolic"),
+        -gtk-icontheme("call-start-symbolic"),
+        -gtk-icontheme("document-edit-symbolic"),
+        -gtk-icontheme("preferences-system-sharing-symbolic"),
+        -gtk-icontheme("internet-chat-symbolic"),
+        -gtk-icontheme("emoji-objects-symbolic"),
+        -gtk-icontheme("mail-attachment-symbolic"),
+        -gtk-icontheme("non-starred-symbolic"),
+        -gtk-icontheme("face-heart-symbolic"),
+        -gtk-icontheme("internet-mail-symbolic"),
+        -gtk-icontheme("emoji-body-symbolic"),
+        -gtk-icontheme("emoji-objects-symbolic"),
+        -gtk-icontheme("face-heart-symbolic"),
+        -gtk-icontheme("mail-attachment-symbolic"),
+        -gtk-icontheme("emoji-objects-symbolic"),
+        -gtk-icontheme("non-starred-symbolic"),
+        -gtk-icontheme("emoji-body-symbolic"),
         linear-gradient(
             175deg,
             @LIME_300 5%,
             @LIME_500
         );
+    background-size:
+        24px,
+        24px,
+        24px,
+        24px,
+        24px,
+        24px,
+        24px,
+        24px,
+        24px,
+        24px,
+        24px,
+        24px,
+        16px,
+        16px,
+        16px,
+        16px,
+        16px,
+        16px,
+        16px,
+        16px,
+        16px,
+        16px,
+        16px,
+        16px,
+        cover;
+    background-position:
+        5% 10%,
+        15% 50%,
+        5% 90%,
+        30% 10%,
+        40% 50%,
+        30% 90%,
+        60% 10%,
+        70% 50%,
+        60% 90%,
+        85% 10%,
+        95% 50%,
+        85% 90%,
+        18% 15%,
+        2% 50%,
+        18% 85%,
+        28% 50%,
+        45% 15%,
+        53% 50%,
+        45% 85%,
+        72% 15%,
+        82% 50%,
+        72% 85%,
+        98% 15%,
+        98% 85%,
+        center center;
     border-color: alpha(@LIME_900, 0.7);
-    color: white;
+    color: alpha(@LIME_900, 0.15);
     font-size: 26px;
-    text-shadow: 0 1px 2px alpha(@LIME_900, 0.75);
-    -gtk-icon-shadow: 0 1px 2px alpha(@LIME_900, 0.75);
+    font-weight: 500;
+    text-shadow: 0 1px 2px alpha(@LIME_900, 0.9);
+}
+
+.category.communication label {
+    color: #fff;
 }
 
 .category.development {
