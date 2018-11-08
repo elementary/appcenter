@@ -272,9 +272,6 @@ namespace AppCenter {
                     return null;
                 });
             });
-
-            recently_updated_carousel.package_activated.connect (show_package);
-            trending_carousel.package_activated.connect (show_package);
         }
 
         public override void show_package (AppCenterCore.Package package) {
