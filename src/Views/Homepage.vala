@@ -273,14 +273,6 @@ namespace AppCenter {
                 });
             });
 
-            category_flow.child_activated.connect ((child) => {
-                var item = child as Widgets.CategoryItem;
-                if (item != null) {
-                    currently_viewed_category = item.app_category;
-                    show_app_list_for_category (item.app_category);
-                }
-            });
-
             recently_updated_carousel.package_activated.connect (show_package);
             trending_carousel.package_activated.connect (show_package);
         }
