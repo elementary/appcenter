@@ -133,16 +133,6 @@ namespace AppCenter {
                 }
             });
 
-            category_flow.set_sort_func ((child1, child2) => {
-                var item1 = child1 as Widgets.CategoryItem;
-                var item2 = child2 as Widgets.CategoryItem;
-                if (item1 != null && item2 != null) {
-                    return item1.app_category.name.collate (item2.app_category.name);
-                }
-
-                return 0;
-            });
-
             AppCenterCore.Client.get_default ().pool_updated.connect (() => {
                 // Clear the cached categories when the AppStream pool is updated
                 foreach (var child in category_flow.get_children ()) {
@@ -282,6 +272,17 @@ namespace AppCenter {
                     return null;
                 });
             });
+
+            category_flow.child_activated.connect ((child) => {
+                var item = child as Widgets.CategoryItem;
+                if (item != null) {
+                    currently_viewed_category = item.app_category;
+                    show_app_list_for_category (item.app_category);
+                }
+            });
+
+            recently_updated_carousel.package_activated.connect (show_package);
+            trending_carousel.package_activated.connect (show_package);
         }
 
         public override void show_package (AppCenterCore.Package package) {

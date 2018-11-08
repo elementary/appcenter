@@ -19,14 +19,22 @@
  */
 
 public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
-    public CategoryFlowBox () {
-        Object (activate_on_single_click: true,
-                homogeneous: true,
-                min_children_per_line: 2);
-    }
-
     construct {
+        activate_on_single_click = true;
+        homogeneous = true;
+        min_children_per_line = 2;
+
+        add (get_category (_("Accessories"), "applications-accessories", {"Utility"}, "accessories"));
         add (get_category (_("Audio"), "applications-audio-symbolic", {"Audio", "Music"}, "audio"));
+        add (get_category (_("Communication"), "mail-send-symbolic", {
+            "Chat",
+            "ContactManagement",
+            "Email",
+            "InstantMessaging",
+            "IRCClient",
+            "Telephony",
+            "VideoConference"
+        }, "communication"));
         add (get_category (_("Development"), "", {
             "Database",
             "Debugger",
@@ -37,32 +45,11 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
             "TerminalEmulator",
             "WebDevelopment"
         }, "development"));
-        add (get_category (_("Accessories"), "applications-accessories", {"Utility"}, "accessories"));
-        add (get_category (_("Office"), "applications-office-symbolic", {
-            "Office",
-            "Presentation",
-            "Publishing",
-            "Spreadsheet",
-            "WordProcessor"
-        }, "office"));
-        add (get_category (_("System"), "applications-system", {
-            "Monitor",
-            "System"
-        }, "system"));
-        add (get_category (_("Video"), "applications-video-symbolic", {
-            "Tuner",
-            "TV",
-            "Video"
-        }, "video"));
-        add (get_category (_("Graphics"), "", {
-            "2DGraphics",
-            "3DGraphics",
-            "Graphics",
-            "ImageProcessing",
-            "Photography",
-            "RasterGraphics",
-            "VectorGraphics"
-        }, "graphics"));
+        add (get_category (_("Education"), "", {"Education"}, "education"));
+        add (get_category (_("Finance"), "payment-card-symbolic", {
+            "Economy",
+            "Finance"
+        }, "finance"));
         add (get_category (_("Games"), "applications-games-symbolic", {
             "ActionGame",
             "AdventureGame",
@@ -79,7 +66,15 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
             "SportsGame",
             "StrategyGame"
         }, "games"));
-        add (get_category (_("Education"), "", {"Education"}, "education"));
+        add (get_category (_("Graphics"), "", {
+            "2DGraphics",
+            "3DGraphics",
+            "Graphics",
+            "ImageProcessing",
+            "Photography",
+            "RasterGraphics",
+            "VectorGraphics"
+        }, "graphics"));
         add (get_category (_("Internet"), "applications-internet", {
             "Network",
             "P2P"
@@ -103,7 +98,50 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
             "Robotics",
             "Science"
         }, "science"));
+        add (get_category (_("Media Production"), "applications-multimedia-symbolic", {
+            "AudioVideoEditing",
+            "Midi",
+            "Mixer",
+            "Recorder",
+            "Sequencer"
+        }, "media-production"));
+        add (get_category (_("Office"), "applications-office-symbolic", {
+            "Office",
+            "Presentation",
+            "Publishing",
+            "Spreadsheet",
+            "WordProcessor"
+        }, "office"));
+        add (get_category (_("System"), "applications-system-symbolic", {
+            "Monitor",
+            "System"
+        }, "system"));
         add (get_category (_("Universal Access"), "applications-accessibility-symbolic", {"Accessibility"}, "accessibility"));
+        add (get_category (_("Video"), "applications-video-symbolic", {
+            "Tuner",
+            "TV",
+            "Video"
+        }, "video"));
+        add (get_category (_("Writing & Language"), "preferences-desktop-locale", {
+            "Dictionary",
+            "Languages",
+            "Literature",
+            "OCR",
+            "TextEditor",
+            "TextTools",
+            "Translation",
+            "WordProcessor"
+        }, "writing-language"));
+
+        set_sort_func ((child1, child2) => {
+            var item1 = child1 as Widgets.CategoryItem;
+            var item2 = child2 as Widgets.CategoryItem;
+            if (item1 != null && item2 != null) {
+                return item1.app_category.name.collate (item2.app_category.name);
+            }
+
+            return 0;
+        });
     }
 
     private Widgets.CategoryItem get_category (string name, string icon, string[] groups, string style) {
