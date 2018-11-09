@@ -147,6 +147,11 @@
 
 .category.education {
     background-image:
+        -gtk-scaled(
+            /* stylelint-disable-next-line function-comma-newline-after (bug in stylelint?) */
+            url("resource:///io/elementary/appcenter/backgrounds/education.svg"),
+            url("resource:///io/elementary/appcenter/backgrounds/education@2x.svg")
+        ),
         radial-gradient(
             circle,
             alpha(white, 0) 67%,

@@ -19,6 +19,8 @@
   <gresource prefix="/io/elementary/appcenter/backgrounds">
     <file alias="audio.svg" compressed="true" preprocess="xml-stripblanks">audio.svg</file>
     <file alias="audio@2x.svg" compressed="true" preprocess="xml-stripblanks">audio@2x.svg</file>
+    <file alias="education.svg" compressed="true" preprocess="xml-stripblanks">education.svg</file>
+    <file alias="education@2x.svg" compressed="true" preprocess="xml-stripblanks">education@2x.svg</file>
     <file alias="graphics.svg" compressed="true" preprocess="xml-stripblanks">graphics.svg</file>
     <file alias="graphics-rtl.svg" compressed="true" preprocess="xml-stripblanks">graphics-rtl.svg</file>
     <file alias="graphics@2x.svg" compressed="true" preprocess="xml-stripblanks">graphics@2x.svg</file>
