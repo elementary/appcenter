@@ -281,7 +281,7 @@
         cover,
         cover;
     color: alpha(@BLUEBERRY_100, 0.25);
-    border-color: alpha(@BLUEBERRY_900, 0.8);
+    border-color: alpha(@BLUEBERRY_700, 0.8);
     box-shadow:
         inset 0 0 0 1px alpha(white, 0.05),
         inset 0 1px 0 0 alpha(white, 0.25),
