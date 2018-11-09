@@ -436,6 +436,11 @@
     font-weight: normal;
 }
 
+.category.office label,
+.category.office image {
+    margin-bottom: 12px;
+}
+
 .category.science {
     background-image:
         url("resource:///io/elementary/appcenter/backgrounds/science.svg"),
