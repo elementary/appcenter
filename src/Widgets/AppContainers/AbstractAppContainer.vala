@@ -56,6 +56,7 @@ namespace AppCenter {
         protected Gtk.Stack open_button_stack;
 
         protected Gtk.Grid progress_grid;
+        protected Gtk.Grid button_grid;
         protected Gtk.ProgressBar progress_bar;
         protected Gtk.Button cancel_button;
         protected Gtk.SizeGroup action_button_group;
@@ -181,7 +182,7 @@ namespace AppCenter {
 
             open_button.clicked.connect (launch_package_app);
 
-            var button_grid = new Gtk.Grid ();
+            button_grid = new Gtk.Grid ();
             button_grid.column_spacing = 6;
             button_grid.valign = Gtk.Align.CENTER;
             button_grid.halign = Gtk.Align.END;
@@ -201,7 +202,8 @@ namespace AppCenter {
             cancel_button = new Gtk.Button.with_label (_("Cancel"));
             /* Match button text size with that of HumbleButton */
             cancel_button.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
-            cancel_button.valign = Gtk.Align.CENTER;
+            cancel_button.valign = Gtk.Align.END;
+            cancel_button.halign = Gtk.Align.END;
             cancel_button.clicked.connect (() => action_cancelled ());
 
             progress_grid = new Gtk.Grid ();

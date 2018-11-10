@@ -37,13 +37,13 @@ namespace AppCenter.Views {
         private Gtk.Stack screenshot_stack;
         private Gtk.TextView app_description;
         private Widgets.Switcher screenshot_switcher;
+        private Gtk.Stack app_download_stack;
 
         public AppInfoView (AppCenterCore.Package package) {
             Object (package: package);
         }
 
         construct {
-            image.margin_top = 12;
             inner_image.pixel_size = 128;
 
             action_button.suggested_action = true;
@@ -111,6 +111,7 @@ namespace AppCenter.Views {
             package_summary.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
             package_summary.wrap = true;
             package_summary.wrap_mode = Pango.WrapMode.WORD_CHAR;
+            package_summary.valign = Gtk.Align.CENTER;
 
             app_description = new Gtk.TextView ();
             app_description.expand = true;
@@ -212,26 +213,33 @@ namespace AppCenter.Views {
             var header_grid = new Gtk.Grid ();
             header_grid.column_spacing = 12;
             header_grid.row_spacing = 6;
+            header_grid.row_homogeneous = false;
             header_grid.halign = Gtk.Align.CENTER;
-            header_grid.margin = 12;
+            header_grid.margin =  content_grid.margin / 2;
             /* Must wide enought to fit long package name and progress bar */
             header_grid.width_request = content_grid.width_request + 2 * (content_grid.margin - header_grid.margin);
             header_grid.hexpand = true;
-            header_grid.attach (image, 0, 0, 1, 2);
-            header_grid.attach (package_name, 1, 0, 1, 1);
+            header_grid.attach (image, 0, 0, 1, 3);
+            header_grid.attach (package_name, 1, 0, 1, 2);
 
             if (!package.is_os_updates) {
-                header_grid.attach (package_author, 1, 1, 1, 1);
+                header_grid.attach (package_author, 1, 2, 1, 1);
                 header_grid.attach (app_version, 2, 0, 1, 1);
             } else {
                 package_summary.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
                 package_summary.valign = Gtk.Align.CENTER;
-                header_grid.attach (package_summary, 1, 1, 2, 1);
+                header_grid.attach (package_summary, 1, 2, 2, 1);
             }
 
-            action_stack.valign = Gtk.Align.CENTER;
+            action_stack.valign = Gtk.Align.END;
             action_stack.halign = Gtk.Align.END;
             action_stack.hexpand = true;
+
+            /* This is required to stop any button movement when switch from button_grid to the
+             * progress grid */
+            progress_grid.margin_end = 6;
+            progress_grid.margin_top = 12;
+            button_grid.margin_top = progress_grid.margin_top;
 
             header_grid.attach (action_stack, 3, 0, 1, 1);
 
@@ -239,11 +247,20 @@ namespace AppCenter.Views {
                 app_download_size_cancellable = new Cancellable ();
 
                 app_download_size_label = new Gtk.Label (null);
-                app_download_size_label.visible = false;
                 app_download_size_label.halign = Gtk.Align.END;
                 app_download_size_label.valign = Gtk.Align.CENTER;
+                app_download_size_label.xalign = 1.0f;
+                app_download_size_label.margin_end = open_button.margin_end;
+                action_button_group.add_widget (app_download_size_label);
                 app_download_size_label.selectable = true;
-                header_grid.attach (app_download_size_label, 3, 1, 1, 1);
+                /* We hide the label with a stack in order to stop the size requisition changing */
+                app_download_stack = new Gtk.Stack ();
+                app_download_stack.margin_end = 6;
+                app_download_stack.add_named (app_download_size_label, "CHILD");
+                app_download_stack.add_named (new Gtk.EventBox (), "NONE");
+                app_download_stack.hhomogeneous = false;
+                app_download_stack.set_visible_child_name ("NONE");
+                header_grid.attach (app_download_stack, 3, 1, 1, 1);
             }
 
             header_box.add (header_grid);
@@ -389,7 +406,8 @@ namespace AppCenter.Views {
                 app_version.label = package.get_version ();
             }
 
-            app_download_size_label.visible = package.state == AppCenterCore.Package.State.NOT_INSTALLED;
+            app_download_stack.set_visible_child_name (package.state == AppCenterCore.Package.State.NOT_INSTALLED ?
+                                                       "CHILD" : "NONE");
             app_download_size_label.label = "";
             if (package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
                 get_app_download_size.begin ();
@@ -455,7 +473,7 @@ namespace AppCenter.Views {
 
             yield;
             app_download_size_label.label = GLib.format_size (size);
-            app_download_size_label.visible = true;
+            app_download_stack.set_visible_child_name ("CHILD");
         }
 
         public void reload_css () {
