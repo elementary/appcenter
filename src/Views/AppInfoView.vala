@@ -101,7 +101,7 @@ namespace AppCenter.Views {
             package_author = new Gtk.Label (null);
             package_author.selectable = true;
             package_author.xalign = 0;
-            package_author.valign = Gtk.Align.CENTER;
+            package_author.valign = Gtk.Align.START;
             package_author.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
             package_author.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
