@@ -44,7 +44,6 @@ namespace AppCenter.Views {
 
         construct {
             image.margin_top = 12;
-            image.margin_start = 6;
             inner_image.pixel_size = 128;
 
             action_button.suggested_action = true;
@@ -161,7 +160,8 @@ namespace AppCenter.Views {
             var content_grid = new Gtk.Grid ();
             content_grid.width_request = 800;
             content_grid.halign = Gtk.Align.CENTER;
-            content_grid.margin = 48; /* Total with ~900 */
+            content_grid.hexpand = true;
+            content_grid.margin = 48;
             content_grid.row_spacing = 24;
             content_grid.orientation = Gtk.Orientation.VERTICAL;
 
@@ -214,7 +214,8 @@ namespace AppCenter.Views {
             header_grid.row_spacing = 6;
             header_grid.halign = Gtk.Align.CENTER;
             header_grid.margin = 12;
-            header_grid.width_request = 900; /* Must wide enought to fit long package name and progress bar */
+            /* Must wide enought to fit long package name and progress bar */
+            header_grid.width_request = content_grid.width_request + 2 * (content_grid.margin - header_grid.margin);
             header_grid.hexpand = true;
             header_grid.attach (image, 0, 0, 1, 2);
             header_grid.attach (package_name, 1, 0, 1, 1);
