@@ -228,7 +228,6 @@ namespace AppCenter.Views {
                 header_grid.attach (app_version, 2, 0, 1, 1);
             } else {
                 package_summary.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-                package_summary.valign = Gtk.Align.CENTER;
                 header_grid.attach (package_summary, 1, 2, 2, 1);
             }
 
