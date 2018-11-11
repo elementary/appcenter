@@ -85,7 +85,6 @@ namespace AppCenter.Views {
                 screenshot_stack.add (app_screenshot_not_found);
             }
 
-            package_name = new Gtk.Label (null);
             package_name.selectable = true;
             package_name.xalign = 0;
             package_name.get_style_context ().add_class (Granite.STYLE_CLASS_H1_LABEL);
@@ -99,14 +98,13 @@ namespace AppCenter.Views {
             app_version.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
             app_version.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
-            package_author = new Gtk.Label (null);
             package_author.selectable = true;
             package_author.xalign = 0;
             package_author.valign = Gtk.Align.START;
             package_author.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
             package_author.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
-            package_summary = new Gtk.Label (package.get_summary ());
+            package_summary.label = package.get_summary ();
             package_summary.selectable = true;
             package_summary.xalign = 0;
             package_summary.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);

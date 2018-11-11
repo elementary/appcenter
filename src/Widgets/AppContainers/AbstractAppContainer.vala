@@ -127,8 +127,9 @@ namespace AppCenter {
 
             settings = Settings.get_default ();
 
-            package_author = new Gtk.Label ("");
-            package_name = new Gtk.Label ("");
+            package_author = new Gtk.Label (null);
+            package_name = new Gtk.Label (null);
+            package_summary = new Gtk.Label (null);
 
             action_button = new Widgets.HumbleButton ();
             action_button_stack = new Gtk.Stack ();
