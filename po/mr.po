@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-05 14:29-0800\n"
-"PO-Revision-Date: 2018-10-26 07:04+0000\n"
+"PO-Revision-Date: 2018-11-10 18:39+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/mr/>\n"
@@ -633,9 +633,8 @@ msgid "Audio"
 msgstr "ध्वनी"
 
 #: src/Widgets/CategoryFlowBox.vala:31
-#, fuzzy
 msgid "Communication"
-msgstr "शिक्षण"
+msgstr "संप्रेषण"
 
 #: src/Widgets/CategoryFlowBox.vala:40
 msgid "Development"
@@ -646,9 +645,8 @@ msgid "Education"
 msgstr "शिक्षण"
 
 #: src/Widgets/CategoryFlowBox.vala:51
-#, fuzzy
 msgid "Finance"
-msgstr "रद्द करा"
+msgstr "अर्थ व्यवस्था"
 
 #: src/Widgets/CategoryFlowBox.vala:55
 msgid "Games"
@@ -668,7 +666,7 @@ msgstr "विज्ञान आणि अभियांत्रिकी"
 
 #: src/Widgets/CategoryFlowBox.vala:103
 msgid "Media Production"
-msgstr ""
+msgstr "माध्यम उत्पादन"
 
 #: src/Widgets/CategoryFlowBox.vala:110
 msgid "Office"
