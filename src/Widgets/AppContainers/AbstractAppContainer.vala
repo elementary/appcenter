@@ -325,7 +325,7 @@ namespace AppCenter {
 
                     action_button.label = _("Update");
 
-                    set_stack_visibility (uninstall_button_stack, show_uninstall && !is_os_updates);
+                    set_stack_visibility (uninstall_button_stack, false);
                     set_stack_visibility (action_button_stack, true);
                     set_stack_visibility (open_button_stack, false);
 

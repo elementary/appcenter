@@ -32,7 +32,7 @@ public class AppCenter.Views.SearchView : View {
     }
 
     construct {
-        app_list_view = new AppListView ();
+        app_list_view = new AppListView (true);
         add (app_list_view);
         app_list_view.show_app.connect ((package) => {
             /// TRANSLATORS: the name of the Search view
@@ -76,7 +76,7 @@ public class AppCenter.Views.SearchView : View {
             var found_apps = client.search_applications (current_search_term, current_category);
             app_list_view.add_packages (found_apps);
         }
-        
+
         if (current_category != null) {
             subview_entered (_("Search Apps"), true, current_category.name);
         } else {

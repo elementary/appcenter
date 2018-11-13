@@ -20,10 +20,15 @@
  */
 
 namespace AppCenter.Views {
-    /** AppList for Category and Search Views.  Sorts by name and does not show Uninstall Button **/
+    /** AppList for Category and Search Views.  Sorts by name, Uninstall Button optional **/
     public class AppListView : AbstractAppList {
         private uint current_visible_index = 0U;
         private GLib.ListStore list_store;
+        protected bool show_uninstall;
+
+        public AppListView (bool show_uninstall = false) {
+            this.show_uninstall = show_uninstall;
+        }
 
         construct {
 #if CURATED
@@ -61,7 +66,7 @@ namespace AppCenter.Views {
         }
 
         protected override Widgets.AppListRow construct_row_for_package (AppCenterCore.Package package)  {
-            return new Widgets.PackageRow.list (package, null, action_button_group, false);
+            return new Widgets.PackageRow.list (package, null, action_button_group, show_uninstall);
         }
 
         // Show 20 more apps on the listbox
