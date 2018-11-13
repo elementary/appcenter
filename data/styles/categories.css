@@ -498,6 +498,22 @@
 }
 
 .category.office {
+    background-image:
+        linear-gradient(
+            to right,
+            @BLUEBERRY_300,
+            @BLUEBERRY_500 20%,
+            @LIME_300 20%,
+            @LIME_500 40%,
+            @ORANGE_500 40%,
+            @ORANGE_700 60%,
+            @BANANA_300 60%,
+            @BANANA_500 80%,
+            @GRAPE_500 80%,
+            @GRAPE_700
+        );
+    background-size: 100% 6px;
+    background-position: bottom;
     border: none;
     box-shadow:
         inset 0 0 0 1px alpha(white, 0.1),
@@ -506,7 +522,13 @@
         0 0 0 1px alpha(black, 0.15),
         0 3px 2px -1px alpha(black, 0.15),
         0 3px 5px alpha(black, 0.1);
-    color: #ff750c;
+    color: @ORANGE_500;
+    font-weight: normal;
+}
+
+.category.office label,
+.category.office image {
+    margin-bottom: 12px;
 }
 
 .category.science {
