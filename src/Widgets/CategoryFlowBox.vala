@@ -105,7 +105,7 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
             "Recorder",
             "Sequencer"
         }, "media-production"));
-        add (get_category (_("Office"), "applications-office-symbolic", {
+        add (get_category (_("Office"), "x-office-document-symbolic", {
             "Office",
             "Presentation",
             "Publishing",
