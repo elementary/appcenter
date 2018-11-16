@@ -6,8 +6,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-05 14:29-0800\n"
-"PO-Revision-Date: 2018-11-16 08:03+0000\n"
-"Last-Translator: Eliott Lavier <eliott.lavier@gmail.com>\n"
+"PO-Revision-Date: 2018-11-16 08:05+0000\n"
+"Last-Translator: Corentin Noël <corentin@elementary.io>\n"
 "Language-Team: French <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/fr/>\n"
 "Language: fr\n"
@@ -288,7 +288,7 @@ msgstr ""
 #: src/Dialogs/ContentWarningDialog.vala:32
 #, c-format
 msgid "%s Contains Explicit Content"
-msgstr "%s Contient du contenu explicite"
+msgstr "%s contient du contenu explicite"
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 #, c-format
