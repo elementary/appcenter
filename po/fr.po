@@ -8,7 +8,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-05 14:29-0800\n"
 "PO-Revision-Date: 2018-11-16 08:07+0000\n"
-"Last-Translator: Corentin Noël <corentin@elementary.io>\n"
+"Last-Translator: David Marcel BAUM <david.baum@tuta.io>\n"
 "Language-Team: French <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/fr/>\n"
 "Language: fr\n"
@@ -304,7 +304,7 @@ msgstr ""
 
 #: src/Dialogs/ContentWarningDialog.vala:35
 msgid "Show content warnings"
-msgstr ""
+msgstr "Afficher les avertissement de contenu"
 
 #: src/Dialogs/ContentWarningDialog.vala:40
 msgid "Don’t Install"
@@ -664,9 +664,8 @@ msgid "Audio"
 msgstr "Audio"
 
 #: src/Widgets/CategoryFlowBox.vala:31
-#, fuzzy
 msgid "Communication"
-msgstr "Éducation"
+msgstr "Communication"
 
 #: src/Widgets/CategoryFlowBox.vala:40
 msgid "Development"
@@ -677,9 +676,8 @@ msgid "Education"
 msgstr "Éducation"
 
 #: src/Widgets/CategoryFlowBox.vala:51
-#, fuzzy
 msgid "Finance"
-msgstr "Annuler"
+msgstr "Finance"
 
 #: src/Widgets/CategoryFlowBox.vala:55
 msgid "Games"
@@ -694,13 +692,12 @@ msgid "Internet"
 msgstr "Internet"
 
 #: src/Widgets/CategoryFlowBox.vala:84
-#, fuzzy
 msgid "Math, Science, & Engineering"
-msgstr "Sciences et ingénierie"
+msgstr "Maths, sciences et ingénierie"
 
 #: src/Widgets/CategoryFlowBox.vala:103
 msgid "Media Production"
-msgstr ""
+msgstr "Production de médias"
 
 #: src/Widgets/CategoryFlowBox.vala:110
 msgid "Office"
@@ -720,7 +717,7 @@ msgstr "Vidéo"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
-msgstr ""
+msgstr "Nécessite des payements, qui ne sont pas activés "
 
 #: src/Widgets/HumbleButton.vala:106
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:301
