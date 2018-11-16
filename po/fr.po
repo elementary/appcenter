@@ -2,13 +2,14 @@
 # lolo <phantom.re@outlook.com>, 2018.
 # Eliott Lavier <eliott.lavier@gmail.com>, 2018.
 # David Marcel BAUM <david.baum@tuta.io>, 2018.
+# Lucas Ruffieux <lucasruffieux@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-05 14:29-0800\n"
 "PO-Revision-Date: 2018-11-16 08:07+0000\n"
-"Last-Translator: David Marcel BAUM <david.baum@tuta.io>\n"
+"Last-Translator: Lucas Ruffieux <lucasruffieux@gmail.com>\n"
 "Language-Team: French <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/fr/>\n"
 "Language: fr\n"
@@ -284,7 +285,7 @@ msgstr "Veuillez redémarrer votre système pour terminer les mises à jour"
 
 #: src/Dialogs/ContentWarningDialog.vala:27
 msgid "Content Warning"
-msgstr ""
+msgstr "Avertissement sur le contenu"
 
 #: src/Dialogs/ContentWarningDialog.vala:32
 #, c-format
