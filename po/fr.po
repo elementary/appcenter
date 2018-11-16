@@ -1,13 +1,14 @@
 # Corentin Noël <corentin@elementary.io>, 2018.
 # lolo <phantom.re@outlook.com>, 2018.
 # Eliott Lavier <eliott.lavier@gmail.com>, 2018.
+# David Marcel BAUM <david.baum@tuta.io>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-05 14:29-0800\n"
 "PO-Revision-Date: 2018-11-16 08:05+0000\n"
-"Last-Translator: Corentin Noël <corentin@elementary.io>\n"
+"Last-Translator: David Marcel BAUM <david.baum@tuta.io>\n"
 "Language-Team: French <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/fr/>\n"
 "Language: fr\n"
@@ -297,6 +298,9 @@ msgid ""
 "disturbing. In general, elementary does not review or endorse the contents "
 "of this app."
 msgstr ""
+"%s pourrait contenir du contenu destiné aux adultes seulement ou que vous "
+"pourriez juger comme offensant ou choquant. Généralement, elementary ne "
+"vérifie pas, ni promouvoit les contenus de ce programme."
 
 #: src/Dialogs/ContentWarningDialog.vala:35
 msgid "Show content warnings"
