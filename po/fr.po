@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-05 14:29-0800\n"
 "PO-Revision-Date: 2018-11-17 00:01+0000\n"
-"Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
+"Last-Translator: Eliott Lavier <eliott.lavier@gmail.com>\n"
 "Language-Team: French <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/fr/>\n"
 "Language: fr\n"
@@ -306,7 +306,7 @@ msgstr ""
 
 #: src/Dialogs/ContentWarningDialog.vala:35
 msgid "Show content warnings"
-msgstr "Afficher les avertissement de contenu"
+msgstr "Afficher les avertissements de contenu"
 
 #: src/Dialogs/ContentWarningDialog.vala:40
 msgid "Don’t Install"
