@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-05 14:29-0800\n"
-"PO-Revision-Date: 2018-11-16 08:07+0000\n"
-"Last-Translator: Lucas Ruffieux <lucasruffieux@gmail.com>\n"
+"PO-Revision-Date: 2018-11-17 00:01+0000\n"
+"Last-Translator: Corentin Noël <corentin@elementary.io>\n"
 "Language-Team: French <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/fr/>\n"
 "Language: fr\n"
@@ -299,9 +299,9 @@ msgid ""
 "disturbing. In general, elementary does not review or endorse the contents "
 "of this app."
 msgstr ""
-"%s pourrait contenir du contenu destiné aux adultes seulement ou que vous "
-"pourriez juger comme offensant ou choquant. Plus généralement, elementary ne "
-"vérifie pas, ni promeut les contenus de ce programme."
+"%s pourrait contenir du contenu pour adultes ou pouvant être offensant ou "
+"choquant. Plus généralement, elementary ne vérifie pas, ni promeut le "
+"contenu de ce programme."
 
 #: src/Dialogs/ContentWarningDialog.vala:35
 msgid "Show content warnings"
@@ -718,7 +718,7 @@ msgstr "Vidéo"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
-msgstr "Nécessite des payements, qui ne sont pas activés "
+msgstr "Requiert le module de payements, qui n'est pas activé"
 
 #: src/Widgets/HumbleButton.vala:106
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:301
