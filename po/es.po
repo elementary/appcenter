@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-05 14:29-0800\n"
-"PO-Revision-Date: 2018-11-20 20:36+0000\n"
-"Last-Translator: alexis holguin <wholguinmor@uniminuto.edu.co>\n"
+"PO-Revision-Date: 2018-11-20 20:37+0000\n"
+"Last-Translator: Cristian Molina <megatux@gmail.com>\n"
 "Language-Team: Spanish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -658,9 +658,8 @@ msgid "Audio"
 msgstr "Audio"
 
 #: src/Widgets/CategoryFlowBox.vala:31
-#, fuzzy
 msgid "Communication"
-msgstr "Educación"
+msgstr "Comunicación"
 
 #: src/Widgets/CategoryFlowBox.vala:40
 msgid "Development"
@@ -688,11 +687,11 @@ msgstr "Internet"
 
 #: src/Widgets/CategoryFlowBox.vala:84
 msgid "Math, Science, & Engineering"
-msgstr "Matematicas, Ciencia e Ingeniería"
+msgstr "Matemáticas, Ciencia e Ingeniería"
 
 #: src/Widgets/CategoryFlowBox.vala:103
 msgid "Media Production"
-msgstr ""
+msgstr "Producción de Medios"
 
 #: src/Widgets/CategoryFlowBox.vala:110
 msgid "Office"
@@ -712,7 +711,7 @@ msgstr "Vídeo"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
-msgstr ""
+msgstr "Requiere pagos, los cuales no están activados"
 
 #: src/Widgets/HumbleButton.vala:106
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:301
