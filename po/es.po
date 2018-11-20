@@ -2,13 +2,14 @@
 # Pablo Solís La Beira <pabsol1977@gmail.com>, 2018.
 # Carlos Cañellas <ratiosu.cct@gmail.com>, 2018.
 # Cristian Molina <megatux@gmail.com>, 2018.
+# alexis holguin <wholguinmor@uniminuto.edu.co>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-05 14:29-0800\n"
 "PO-Revision-Date: 2018-11-20 20:36+0000\n"
-"Last-Translator: Cristian Molina <megatux@gmail.com>\n"
+"Last-Translator: alexis holguin <wholguinmor@uniminuto.edu.co>\n"
 "Language-Team: Spanish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -686,9 +687,8 @@ msgid "Internet"
 msgstr "Internet"
 
 #: src/Widgets/CategoryFlowBox.vala:84
-#, fuzzy
 msgid "Math, Science, & Engineering"
-msgstr "Ciencia e Ingeniería"
+msgstr "Matematicas, Ciencia e Ingeniería"
 
 #: src/Widgets/CategoryFlowBox.vala:103
 msgid "Media Production"
