@@ -1,13 +1,14 @@
 # Rafael Bautista Martínez <iuninefrendor@gmail.com>, 2018.
 # Pablo Solís La Beira <pabsol1977@gmail.com>, 2018.
 # Carlos Cañellas <ratiosu.cct@gmail.com>, 2018.
+# Cristian Molina <megatux@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-05 14:29-0800\n"
-"PO-Revision-Date: 2018-10-25 22:35+0000\n"
-"Last-Translator: Carlos Cañellas <ratiosu.cct@gmail.com>\n"
+"PO-Revision-Date: 2018-11-20 20:36+0000\n"
+"Last-Translator: Cristian Molina <megatux@gmail.com>\n"
 "Language-Team: Spanish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -669,9 +670,8 @@ msgid "Education"
 msgstr "Educación"
 
 #: src/Widgets/CategoryFlowBox.vala:51
-#, fuzzy
 msgid "Finance"
-msgstr "Cancelar"
+msgstr "Finanzas"
 
 #: src/Widgets/CategoryFlowBox.vala:55
 msgid "Games"
