@@ -135,7 +135,7 @@ namespace AppCenter {
 
             AppCenterCore.Client.get_default ().pool_updated.connect (() => {
                 // Clear the cached categories when the AppStream pool is updated
-                foreach (var child in category_flow.get_children ()) {
+                foreach (weak Gtk.Widget child in category_flow.get_children ()) {
                     if (child is Widgets.CategoryItem) {
                         var item = child as Widgets.CategoryItem;
                         var category_components = item.app_category.get_components ();
@@ -144,7 +144,7 @@ namespace AppCenter {
                 }
 
                 // Remove any old cached category list views
-                foreach (var child in get_children ()) {
+                foreach (weak Gtk.Widget child in get_children ()) {
                     if (child is Views.AppListView) {
                         if (child != visible_child) {
                             child.destroy ();
