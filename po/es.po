@@ -1,13 +1,15 @@
 # Rafael Bautista Martínez <iuninefrendor@gmail.com>, 2018.
 # Pablo Solís La Beira <pabsol1977@gmail.com>, 2018.
 # Carlos Cañellas <ratiosu.cct@gmail.com>, 2018.
+# Cristian Molina <megatux@gmail.com>, 2018.
+# alexis holguin <wholguinmor@uniminuto.edu.co>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-05 14:29-0800\n"
-"PO-Revision-Date: 2018-10-25 22:35+0000\n"
-"Last-Translator: Carlos Cañellas <ratiosu.cct@gmail.com>\n"
+"PO-Revision-Date: 2018-11-20 20:37+0000\n"
+"Last-Translator: Cristian Molina <megatux@gmail.com>\n"
 "Language-Team: Spanish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -656,9 +658,8 @@ msgid "Audio"
 msgstr "Audio"
 
 #: src/Widgets/CategoryFlowBox.vala:31
-#, fuzzy
 msgid "Communication"
-msgstr "Educación"
+msgstr "Comunicación"
 
 #: src/Widgets/CategoryFlowBox.vala:40
 msgid "Development"
@@ -669,9 +670,8 @@ msgid "Education"
 msgstr "Educación"
 
 #: src/Widgets/CategoryFlowBox.vala:51
-#, fuzzy
 msgid "Finance"
-msgstr "Cancelar"
+msgstr "Finanzas"
 
 #: src/Widgets/CategoryFlowBox.vala:55
 msgid "Games"
@@ -686,13 +686,12 @@ msgid "Internet"
 msgstr "Internet"
 
 #: src/Widgets/CategoryFlowBox.vala:84
-#, fuzzy
 msgid "Math, Science, & Engineering"
-msgstr "Ciencia e Ingeniería"
+msgstr "Matemáticas, Ciencia e Ingeniería"
 
 #: src/Widgets/CategoryFlowBox.vala:103
 msgid "Media Production"
-msgstr ""
+msgstr "Producción de Medios"
 
 #: src/Widgets/CategoryFlowBox.vala:110
 msgid "Office"
@@ -712,7 +711,7 @@ msgstr "Vídeo"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
-msgstr ""
+msgstr "Requiere pagos, los cuales no están activados"
 
 #: src/Widgets/HumbleButton.vala:106
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:301
