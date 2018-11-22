@@ -46,9 +46,9 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : AbstractAppCont
         margin_start = 12;
         margin_end = 12;
 
-        image.icon_size = Gtk.IconSize.DIALOG;
+        inner_image.icon_size = Gtk.IconSize.DIALOG;
         /* Needed to enforce size on icons from Filesystem/Remote */
-        image.pixel_size = 48;
+        inner_image.pixel_size = 48;
 
         package_name.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
         package_name.valign = Gtk.Align.END;

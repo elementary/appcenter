@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2014-2016 elementary LLC. (https://elementary.io)
+ * Copyright (c) 2014–2018 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,6 +27,25 @@ public class AppCenterCore.Package : Object {
     public const string APPCENTER_PACKAGE_ORIGIN = "appcenter-bionic-main";
     private const string ELEMENTARY_STABLE_PACKAGE_ORIGIN = "stable-bionic-main";
     private const string ELEMENTARY_DAILY_PACKAGE_ORIGIN = "daily-bionic-main";
+
+    /* Note: These are just a stopgap, and are not a replacement for a more
+     * fleshed out parental control system. We assume any of these "moderate"
+     * or above is considered explicit for our naive warning.
+     *
+     * See https://hughsie.github.io/oars/generate.html for ratings.
+     */
+    private const string[] EXPLICIT_TAGS = {
+        "violence-realistic",
+        "violence-bloodshed",
+        "violence-sexual",
+        "drugs-narcotics",
+        "sex-nudity",
+        "sex-themes",
+        "sex-prostitution",
+        "language-profanity",
+        "language-humor",
+        "language-discrimination"
+    };
 
     public signal void changing (bool is_changing);
     public signal void info_changed (Pk.Status status);
@@ -142,7 +161,7 @@ public class AppCenterCore.Package : Object {
 
     public bool is_shareable {
         get {
-            return !is_driver && !is_os_updates;
+            return is_native && !is_driver && !is_os_updates;
         }
     }
 
@@ -156,6 +175,30 @@ public class AppCenterCore.Package : Object {
                 default:
                     return false;
             }
+        }
+    }
+
+    private bool _explicit = false;
+    private bool _check_explicit = true;
+    public bool is_explicit {
+        get {
+            if (_check_explicit) {
+                _check_explicit = false;
+                var ratings = component.get_content_ratings ();
+                for (int i = 0; i < ratings.length; i++) {
+                    var rating = ratings[i];
+
+                    foreach (string tag in EXPLICIT_TAGS) {
+                        var rating_value = rating.get_value (tag);
+                        if (rating_value > AppStream.ContentRatingValue.MILD) {
+                            _explicit = true;
+                            return _explicit;
+                        }
+                    }
+                }
+            }
+
+            return _explicit;
         }
     }
 
@@ -193,6 +236,12 @@ public class AppCenterCore.Package : Object {
             }
 
             return _author_title;
+        }
+    }
+
+    public bool is_plugin {
+        get {
+            return component.get_kind () == AppStream.ComponentKind.ADDON;
         }
     }
 
@@ -325,7 +374,14 @@ public class AppCenterCore.Package : Object {
             case State.INSTALLING:
                 return yield client.install_package (this, cb, action_cancellable);
             case State.REMOVING:
-                return yield client.remove_package (this, cb, action_cancellable);
+                var status = yield client.remove_package (this, cb, action_cancellable);
+
+                // Clear the installed packages set on success, else we cannot reinstall.
+                if (Pk.Exit.SUCCESS == status) {
+                    installed_packages.clear ();
+                }
+
+                return status;
             default:
                 return Pk.Exit.UNKNOWN;
         }
@@ -342,7 +398,21 @@ public class AppCenterCore.Package : Object {
             state = fail_state;
             change_information.cancel ();
         }
-     }
+    }
+
+    private async Pk.Package? find_package_async () {
+        SourceFunc callback = find_package_async.callback;
+
+        Pk.Package? package = null;
+        new Thread<bool> ("appstream-find-package", () => {
+            package = find_package ();
+            Idle.add ((owned)callback);
+            return true;
+        });
+
+        yield;
+        return package;
+    }
 
     public string? get_name () {
         if (name != null) {
@@ -360,19 +430,28 @@ public class AppCenterCore.Package : Object {
         return name;
     }
 
-    public string? get_description () {
-        if (description != null) {
-            return description;
-        }
-
-        description = component.get_description ();
+    public async string? get_description () {
         if (description == null) {
-            var package = find_package ();
-            if (package != null) {
-                description = package.description;
+            description = component.get_description ();
+            if (description == null) {
+                var package = yield find_package_async ();
+                if (package != null) {
+                    description = package.description;
+                }
             }
         }
 
+        return description;
+    }
+
+    public string? get_description_sync () {
+        var loop = new MainLoop ();
+        get_description.begin ((obj, res) => {
+            get_description.end (res);
+            loop.quit ();
+        });
+
+        loop.run ();
         return description;
     }
 
@@ -454,6 +533,23 @@ public class AppCenterCore.Package : Object {
         return icon;
     }
 
+    public Package? get_plugin_host_package () {
+        var extends = component.get_extends ();
+
+        if (extends == null || extends.length < 1) {
+            return null;
+        }
+
+        for (int i = 0; i < extends.length; i++) {
+            var package = Client.get_default ().get_package_for_component_id (extends[i]);
+            if (package != null) {
+                return package;
+            }
+        }
+
+        return null;
+    }
+
     public string? get_version () {
         if (latest_version != null) {
             return latest_version;
@@ -524,7 +620,26 @@ public class AppCenterCore.Package : Object {
             return app_info != null;
         }
 
-        string? desktop_id = component.get_desktop_id ();
+        var launchable = component.get_launchable (AppStream.LaunchableKind.DESKTOP_ID);
+        if (launchable != null) {
+            var launchables = launchable.get_entries ();
+            for (int i = 0; i < launchables.length; i++) {
+                app_info = new DesktopAppInfo (launchables[i]);
+                // A bit strange in Vala, but the DesktopAppInfo constructor does indeed return null if the desktop
+                // file isn't found: https://valadoc.org/gio-unix-2.0/GLib.DesktopAppInfo.DesktopAppInfo.html
+                if (app_info != null) {
+                    break;
+                }
+            }
+        }
+
+        if (app_info != null) {
+            app_info_retrieved = true;
+            return true;
+        }
+
+        // Fallback to trying Appstream ID as desktop ID for applications that haven't updated to the newest spec yet
+        string? desktop_id = component.id;
         if (desktop_id != null) {
             app_info = new DesktopAppInfo (desktop_id);
         }
@@ -537,6 +652,20 @@ public class AppCenterCore.Package : Object {
         var list = new Gee.ArrayList<AppStream.Release> ();
 
         var releases = component.get_releases ();
+        uint index = 0;
+        while (index < releases.length) {
+            if (releases[index].get_version () == null) {
+                releases.remove_index (index);
+                if (index >= releases.length) {
+                    break;
+                }
+
+                continue;
+            }
+
+            index++;
+        }
+
         if (releases.length < min_releases) {
             return list;
         }
@@ -575,6 +704,16 @@ public class AppCenterCore.Package : Object {
     public AppStream.Release? get_newest_release () {
         var releases = component.get_releases ();
         releases.sort_with_data ((a, b) => {
+            if (a.get_version () == null || b.get_version () == null) {
+                if (a.get_version () != null) {
+                    return -1;
+                } else if (b.get_version () != null) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            }
+
             return b.vercmp (a);
         });
 

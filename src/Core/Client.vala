@@ -19,6 +19,7 @@ public class AppCenterCore.Client : Object {
     public signal void cache_update_failed (Error error);
     public signal void updates_available ();
     public signal void drivers_detected ();
+    public signal void pool_updated ();
 
     protected static Task client { public get; private set; }
     public static Task get_pk_client () {
@@ -40,6 +41,7 @@ public class AppCenterCore.Client : Object {
 
     public bool updating_cache { public get; private set; default = false; }
 
+    public AppCenterCore.ScreenshotCache? screenshot_cache { get; construct; }
     public AppCenterCore.Package os_updates { public get; private set; }
     public Gee.TreeSet<AppCenterCore.Package> driver_list { get; construct; }
 
@@ -60,7 +62,7 @@ public class AppCenterCore.Client : Object {
     private SuspendControl sc;
 
     private Client () {
-
+        Object (screenshot_cache: AppCenterCore.ScreenshotCache.new_cache ());
     }
 
     static construct {
@@ -78,23 +80,7 @@ public class AppCenterCore.Client : Object {
         // We don't want to show installed desktop files here
         appstream_pool.set_flags (appstream_pool.get_flags () & ~AppStream.PoolFlags.READ_DESKTOP_FILES);
 
-        try {
-            appstream_pool.load ();
-
-            var comp_validator = ComponentValidator.get_default ();
-            appstream_pool.get_components ().foreach ((comp) => {
-                if (!comp_validator.validate (comp)) {
-                    return;
-                }
-
-                var package = new AppCenterCore.Package (comp);
-                foreach (var pkg_name in comp.get_pkgnames ()) {
-                    package_list[pkg_name] = package;
-                }
-            });
-        } catch (Error e) {
-            critical (e.message);
-        }
+        reload_appstream_pool ();
 
         var icon = new AppStream.Icon ();
         icon.set_name ("distributor-logo");
@@ -110,6 +96,30 @@ public class AppCenterCore.Client : Object {
 
         var control = new Pk.Control ();
         control.updates_changed.connect (updates_changed_callback);
+    }
+
+    public void reload_appstream_pool () {
+        package_list.clear ();
+
+        try {
+            appstream_pool.load ();
+        } catch (Error e) {
+            critical (e.message);
+        } finally {
+            var comp_validator = ComponentValidator.get_default ();
+            appstream_pool.get_components ().foreach ((comp) => {
+                if (!comp_validator.validate (comp)) {
+                    return;
+                }
+
+                var package = new AppCenterCore.Package (comp);
+                foreach (var pkg_name in comp.get_pkgnames ()) {
+                    package_list[pkg_name] = package;
+                }
+            });
+
+            pool_updated ();
+        }
     }
 
     private void updates_changed_callback () {
@@ -666,6 +676,7 @@ public class AppCenterCore.Client : Object {
                 }
 
                 if (success) {
+                    reload_appstream_pool ();
                     refresh_updates.begin ();
                 }
             }
@@ -766,6 +777,8 @@ public class AppCenterCore.Client : Object {
         foreach (var package in package_list.values) {
             if (package.component.id == id) {
                 return package;
+            } else if (package.component.id == id + ".desktop") {
+                return package;
             }
         }
 
@@ -774,7 +787,7 @@ public class AppCenterCore.Client : Object {
 
     public AppCenterCore.Package? get_package_for_desktop_id (string desktop_id) {
         foreach (var package in package_list.values) {
-            if (package.component.get_desktop_id () == desktop_id) {
+            if (package.component.id == desktop_id) {
                 return package;
             }
         }

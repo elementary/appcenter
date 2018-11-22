@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2017 elementary LLC (https://elementary.io)
+* Copyright (c) 2017–2018 elementary, Inc. (https://elementary.io)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public
@@ -36,6 +36,11 @@ public class AppCenter.Widgets.Carousel : Gtk.FlowBox {
     }
 
     public void add_package (AppCenterCore.Package? package) {
+        if (package.is_explicit) {
+            debug ("%s is explicit, not adding to carousel", package.component.id);
+            return;
+        }
+
         var carousel_item = new CarouselItem (package);
         add (carousel_item);
         show_all ();

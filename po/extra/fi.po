@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 08:32-0700\n"
+"POT-Creation-Date: 2018-10-18 05:17-0500\n"
 "PO-Revision-Date: 2018-07-29 10:28+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://weblate.elementary.io/projects/appcenter/"
@@ -34,7 +34,7 @@ msgstr ""
 "tai etsi hakuehdoin ja löydä uusia sovelluksia. Sovelluskauppaa käytetään "
 "myös järjestelmän päivityksiin."
 
-#: data/io.elementary.appcenter.appdata.xml.in:191
+#: data/io.elementary.appcenter.appdata.xml.in:201
 msgid "elementary LLC."
 msgstr "elementary LLC."
 

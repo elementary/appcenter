@@ -29,22 +29,20 @@ namespace AppCenter {
         private Gtk.FlowBox category_flow;
         private Gtk.ScrolledWindow category_scrolled;
         private string current_category;
-        private Widgets.Switcher switcher;
-        private Gtk.Revealer recently_updated_revealer;
-        private Widgets.Carousel recently_updated_carousel;
-        private Gtk.Revealer trending_revealer;
-        private Widgets.Carousel trending_carousel;
+
+        public signal void page_loaded ();
 
         public bool viewing_package { get; private set; default = false; }
 
         public AppStream.Category currently_viewed_category;
-        public MainWindow main_window { get; construct; }
         public Widgets.Banner newest_banner;
         public Gtk.Revealer switcher_revealer;
 
-        public Homepage (MainWindow main_window) {
-            Object (main_window: main_window);
-        }
+        private Widgets.Switcher switcher;
+        private Widgets.Carousel recently_updated_carousel;
+        private Widgets.Carousel trending_carousel;
+        private Gtk.Revealer recently_updated_revealer;
+        private Gtk.Revealer trending_revealer;
 
         construct {
             switcher = new Widgets.Switcher ();
@@ -125,7 +123,7 @@ namespace AppCenter {
                 newest_banner.add_package (local_package);
             }
 
-            populate_carousels.begin ();
+            refresh_banners.begin ();
 
             category_flow.child_activated.connect ((child) => {
                 var item = child as Widgets.CategoryItem;
@@ -135,21 +133,44 @@ namespace AppCenter {
                 }
             });
 
-            category_flow.set_sort_func ((child1, child2) => {
-                var item1 = child1 as Widgets.CategoryItem;
-                var item2 = child2 as Widgets.CategoryItem;
-                if (item1 != null && item2 != null) {
-                    return item1.app_category.name.collate (item2.app_category.name);
+            AppCenterCore.Client.get_default ().pool_updated.connect (() => {
+                // Clear the cached categories when the AppStream pool is updated
+                foreach (weak Gtk.Widget child in category_flow.get_children ()) {
+                    if (child is Widgets.CategoryItem) {
+                        var item = child as Widgets.CategoryItem;
+                        var category_components = item.app_category.get_components ();
+                        category_components.remove_range (0, category_components.length);
+                    }
                 }
 
-                return 0;
+                // Remove any old cached category list views
+                foreach (weak Gtk.Widget child in get_children ()) {
+                    if (child is Views.AppListView) {
+                        if (child != visible_child) {
+                            child.destroy ();
+                        } else {
+                            // If the category list view is visible, don't delete it, just make the package list right
+                            var list_view = child as Views.AppListView;
+                            list_view.clear ();
+
+                            unowned Client client = Client.get_default ();
+                            var apps = client.get_applications_for_category (currently_viewed_category);
+                            list_view.add_packages (apps);
+                        }
+                    }
+                }
+
+                // If the banners weren't populated, try again to populate them
+                if (!recently_updated_revealer.reveal_child || !trending_revealer.reveal_child) {
+                    refresh_banners.begin ();
+                }
             });
 
             recently_updated_carousel.package_activated.connect (show_package);
             trending_carousel.package_activated.connect (show_package);
         }
 
-        private async void populate_carousels () {
+        private async void refresh_banners () {
             var houston = AppCenterCore.Houston.get_default ();
             var client = AppCenterCore.Client.get_default ();
 
@@ -159,15 +180,15 @@ namespace AppCenter {
 
             string[] package_query = {};
             foreach (var package in project_packages) {
-                package_query += package + ".desktop";
+                package_query += package;
             }
 
             foreach (var package in release_packages) {
-                package_query += package + ".desktop";
+                package_query += package;
             }
 
             foreach (var package in downloads_packages) {
-                package_query += package + ".desktop";
+                package_query += package;
             }
 
             var carousel_packages = yield client.get_app_packages (package_query);
@@ -178,9 +199,12 @@ namespace AppCenter {
                     break;
                 }
 
-                var component_name = package + ".desktop";
-                if (carousel_packages[component_name].info == Pk.Info.AVAILABLE) {
-                    var candidate_package = client.get_package_for_component_id (component_name);
+                if (carousel_packages[package] == null) {
+                    continue;
+                }
+
+                if (carousel_packages[package].info == Pk.Info.AVAILABLE) {
+                    var candidate_package = client.get_package_for_component_id (package);
                     if (candidate_package != null) {
                         newest_banner.add_package (candidate_package);
                         package_count++;
@@ -188,10 +212,13 @@ namespace AppCenter {
                 }
             }
 
-            newest_banner.go_to_first ();
-            switcher.show_all ();
-            switcher_revealer.set_reveal_child (true);
-            main_window.homepage_loaded ();
+            if (package_count > 0) {
+                newest_banner.go_to_first ();
+                switcher.show_all ();
+                switcher_revealer.set_reveal_child (true);
+            }
+
+            page_loaded ();
 
             package_count = 0;
             foreach (var package in release_packages) {
@@ -199,9 +226,12 @@ namespace AppCenter {
                     break;
                 }
 
-                var component_name = package + ".desktop";
-                if (carousel_packages[component_name].info == Pk.Info.AVAILABLE) {
-                    var candidate_package = client.get_package_for_component_id (component_name);
+                if (carousel_packages[package] == null) {
+                    continue;
+                }
+
+                if (carousel_packages[package].info == Pk.Info.AVAILABLE) {
+                    var candidate_package = client.get_package_for_component_id (package);
                     if (candidate_package != null) {
                         recently_updated_carousel.add_package (candidate_package);
                         package_count++;
@@ -209,7 +239,9 @@ namespace AppCenter {
                 }
             }
 
-            recently_updated_revealer.reveal_child = true;
+            if (package_count > 0) {
+                recently_updated_revealer.reveal_child = true;
+            }
 
             package_count = 0;
             foreach (var package in downloads_packages) {
@@ -217,9 +249,12 @@ namespace AppCenter {
                     break;
                 }
 
-                var component_name = package + ".desktop";
-                if (carousel_packages[component_name].info == Pk.Info.AVAILABLE) {
-                    var candidate_package = client.get_package_for_component_id (component_name);
+                if (carousel_packages[package] == null) {
+                    continue;
+                }
+
+                if (carousel_packages[package].info == Pk.Info.AVAILABLE) {
+                    var candidate_package = client.get_package_for_component_id (package);
                     if (candidate_package != null) {
                         trending_carousel.add_package (candidate_package);
                         package_count++;
@@ -227,7 +262,9 @@ namespace AppCenter {
                 }
             }
 
-            trending_revealer.reveal_child = true;
+            if (package_count > 0) {
+                trending_revealer.reveal_child = true;
+            }
         }
 
         public override void show_package (AppCenterCore.Package package) {

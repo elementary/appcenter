@@ -1,0 +1,577 @@
+/*
+ * Copyright (c) 2017–2018 elementary, Inc. (https://elementary.io)
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+.category {
+    background-color: @bg_color;
+    background-image:
+        linear-gradient(
+            to bottom,
+            shade(@bg_color, 1.02),
+            shade(@bg_color, 0.98)
+        );
+    background-position: center center;
+    background-repeat: no-repeat;
+    border: 1px solid alpha(black, 0.15);
+    border-radius: 3px;
+    box-shadow:
+        inset 0 0 0 1px alpha(white, 0.05),
+        inset 0 1px 0 0 alpha(white, 0.45),
+        inset 0 -1px 0 0 alpha(white, 0.15),
+        0 3px 2px -1px alpha(black, 0.15),
+        0 3px 5px alpha(black, 0.1);
+    color: @fg_color;
+    font-size: 32px;
+    font-weight: 300;
+}
+
+.category.accessibility {
+    background-image:
+        linear-gradient(
+            to bottom,
+            #3ca3e8,
+            #368ae6
+        );
+    border-color: alpha(#2980d1, 0.8);
+    color: #fff8ef;
+    font-size: 24px;
+    font-weight: 600;
+    text-shadow: 0 1px 0 alpha(black, 0.3);
+    -gtk-icon-shadow: 0 1px 0 alpha(black, 0.3);
+}
+
+.category.accessories {
+    border: none;
+    box-shadow:
+        inset 0 0 0 1px alpha(shade(@bg_color, 1.67), 0.05),
+        inset 0 1px 0 0 alpha(shade(@bg_color, 1.67), 0.45),
+        inset 0 -1px 0 0 alpha(shade(@bg_color, 1.67), 0.15),
+        0 0 0 1px alpha(black, 0.15),
+        0 3px 2px -1px alpha(black, 0.15),
+        0 3px 5px alpha(black, 0.1);
+    font-size: 24px;
+}
+
+.category.audio {
+    background-image:
+        -gtk-scaled(
+            /* stylelint-disable-next-line function-comma-newline-after (bug in stylelint?) */
+            url("resource:///io/elementary/appcenter/backgrounds/audio.svg"),
+            url("resource:///io/elementary/appcenter/backgrounds/audio@2x.svg")
+        ),
+        linear-gradient(
+            to bottom,
+            @ORANGE_300,
+            @ORANGE_500
+        );
+    border-color: alpha(@ORANGE_900, 0.7);
+    color: shade(@ORANGE_100, 1.25);
+    -gtk-icon-shadow:
+        0 1px 1px alpha(@ORANGE_900, 0.5),
+        0 2px 3px alpha(@ORANGE_900, 0.5);
+    text-shadow:
+        0 1px 1px alpha(@ORANGE_900, 0.5),
+        0 2px 3px alpha(@ORANGE_900, 0.5);
+}
+
+.category.communication {
+    background-image:
+        linear-gradient(
+            175deg,
+            @LIME_300 5%,
+            @LIME_500
+        );
+    border-color: alpha(@LIME_900, 0.7);
+    color: white;
+    font-size: 26px;
+    text-shadow: 0 1px 2px alpha(@LIME_900, 0.75);
+    -gtk-icon-shadow: 0 1px 2px alpha(@LIME_900, 0.75);
+}
+
+.category.development {
+    background-image:
+        linear-gradient(
+            to right,
+            transparent 0.47em,
+            alpha(white, 0.05) 0.47em,
+            alpha(white, 0.05) 0.5em,
+            transparent 0.5em
+        ),
+        linear-gradient(
+            to bottom,
+            transparent 0.47em,
+            alpha(white, 0.05) 0.47em,
+            alpha(white, 0.05) 0.5em,
+            transparent 0.5em
+        ),
+        linear-gradient(
+            to right,
+            transparent 0.97em,
+            alpha(white, 0.125) 0.97em
+        ),
+        linear-gradient(
+            to bottom,
+            transparent 0.97em,
+            alpha(white, 0.125) 0.97em
+        ),
+        linear-gradient(
+            to bottom right,
+            @GRAPE_500,
+            @GRAPE_700
+        );
+    background-position: center center;
+    background-repeat: repeat;
+    background-size:
+        1em 1em,
+        1em 1em,
+        1em 1em,
+        1em 1em,
+        cover;
+    border-color: alpha(@GRAPE_900, 0.7);
+    color: white;
+    font-family: "Lobster";
+    text-shadow: 0 2px 0 alpha(@GRAPE_900, 0.5);
+}
+
+.category.education {
+    background-image:
+        -gtk-scaled(
+            /* stylelint-disable-next-line function-comma-newline-after (bug in stylelint?) */
+            url("resource:///io/elementary/appcenter/backgrounds/education.svg"),
+            url("resource:///io/elementary/appcenter/backgrounds/education@2x.svg")
+        ),
+        radial-gradient(
+            circle,
+            alpha(white, 0) 67%,
+            alpha(white, 0.15)
+        ),
+        linear-gradient(
+            to bottom,
+            mix(@LIME_900, @SLATE_100, 0.5),
+            mix(@LIME_900, @SLATE_500, 0.67)
+        );
+    border-color: alpha(mix(@LIME_900, @SLATE_900, 0.5), 0.8);
+    box-shadow:
+        inset 0 0 0 1px alpha(white, 0.05),
+        inset 0 1px 0 0 alpha(white, 0.25),
+        inset 0 -1px 0 0 alpha(white, 0.1),
+        0 3px 2px -1px alpha(black, 0.15),
+        0 3px 5px alpha(black, 0.1);
+    color: white;
+    font-family: "HVD Bodedo", serif;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.category.finance {
+    background-image:
+        linear-gradient(
+            to bottom,
+            mix(@BLUEBERRY_500, @SLATE_300, 0.5) 5%,
+            mix(@BLUEBERRY_700, @SLATE_500, 0.5)
+        );
+    border-color: alpha(@SLATE_900, 0.7);
+    box-shadow:
+        inset 0 0 0 1px alpha(white, 0.02),
+        inset 0 1px 0 0 alpha(white, 0.23),
+        inset 0 -1px 0 0 alpha(white, 0.07),
+        0 3px 2px -1px alpha(black, 0.15),
+        0 3px 5px alpha(black, 0.1);
+    color: @SILVER_100;
+    text-shadow: 0 1px 2px alpha(@SLATE_900, 0.5);
+    -gtk-icon-shadow: 0 1px 2px alpha(@SLATE_900, 0.5);
+    font-family: serif;
+    font-size: 28px;
+}
+
+.category.finance label {
+    margin-top: 0.125em;
+}
+
+.category.games {
+    background-image:
+        linear-gradient(
+            to bottom,
+            mix(@SLATE_500, @BLUEBERRY_500, 0.5),
+            @SLATE_900
+        );
+    border-color: alpha(@SLATE_900, 0.8);
+    box-shadow:
+        inset 0 0 0 1px alpha(white, 0.02),
+        inset 0 1px 0 0 alpha(white, 0.23),
+        inset 0 -1px 0 0 alpha(white, 0.07),
+        0 3px 2px -1px alpha(black, 0.15),
+        0 3px 5px alpha(@BLACK_900, 0.1);
+    color: shade(@BLUEBERRY_100, 1.1);
+    font-size: 26px;
+    font-weight: 700;
+    text-shadow: 0 1px 2px alpha(@BLACK_900, 0.8);
+    -gtk-icon-shadow: 0 1px 2px alpha(@BLACK_900, 0.8);
+}
+
+.category.graphics {
+    background-image:
+        linear-gradient(
+            45deg,
+            alpha(@fg_color, 0.03) 25%,
+            transparent 25%,
+            transparent 75%,
+            alpha(@fg_color, 0.03) 75%,
+            alpha(@fg_color, 0.03)
+        ),
+        linear-gradient(
+            45deg,
+            alpha(@fg_color, 0.03) 25%,
+            transparent 25%,
+            transparent 75%,
+            alpha(@fg_color, 0.03) 75%,
+            alpha(@fg_color, 0.03)
+        );
+    background-position: 0 0, 12px 12px;
+    background-repeat: repeat;
+    background-size: 24px 24px;
+    border: none;
+    box-shadow:
+        inset 0 0 0 1px alpha(shade(@bg_color, 1.67), 0.1),
+        inset 0 1px 0 0 alpha(shade(@bg_color, 1.67), 0.9),
+        inset 0 -1px 0 0 alpha(shade(@bg_color, 1.67), 0.3),
+        0 0 0 1px alpha(black, 0.15),
+        0 3px 2px -1px alpha(black, 0.15),
+        0 3px 5px alpha(black, 0.1);
+    color: #fe5498;
+    font-weight: normal;
+    text-shadow: 0 1px 3px @bg_color;
+}
+
+.category.graphics label {
+    border-image:
+        -gtk-scaled(
+            /* stylelint-disable-next-line function-comma-newline-after (bug in stylelint?) */
+            url("resource:///io/elementary/appcenter/backgrounds/graphics.svg"),
+            url("resource:///io/elementary/appcenter/backgrounds/graphics@2x.svg")
+        ) 10 10 10 10 / 10px 10px 10px 10px repeat;
+    padding: 12px;
+}
+
+.category.graphics label:dir(rtl) {
+    border-image:
+        -gtk-scaled(
+            /* stylelint-disable-next-line function-comma-newline-after (bug in stylelint?) */
+            url("resource:///io/elementary/appcenter/backgrounds/graphics-rtl.svg"),
+            url("resource:///io/elementary/appcenter/backgrounds/graphics-rtl@2x.svg")
+        ) 10 10 10 10 / 10px 10px 10px 10px repeat;
+}
+
+.category.internet {
+    background-image:
+        -gtk-icontheme("applications-internet-symbolic"),
+        linear-gradient(
+            to bottom,
+            @BLUEBERRY_300,
+            @BLUEBERRY_500
+        );
+    background-position:
+        center 30%,
+        center center;
+    background-size:
+        cover,
+        cover;
+    color: alpha(@BLUEBERRY_100, 0.25);
+    border-color: alpha(@BLUEBERRY_700, 0.8);
+    box-shadow:
+        inset 0 0 0 1px alpha(white, 0.05),
+        inset 0 1px 0 0 alpha(white, 0.25),
+        inset 0 -1px 0 0 alpha(white, 0.1),
+        0 3px 2px -1px alpha(black, 0.15),
+        0 3px 5px alpha(black, 0.1);
+    text-shadow:
+        0 1px 1px alpha(black, 0.3),
+        0 2px 3px alpha(black, 0.3);
+}
+
+.category.internet label {
+    color: white;
+}
+
+.category.media-production {
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(150, 111, 195, 0.2) 18px,
+            rgba(150, 111, 195, 0.3) 19px,
+            transparent 20px
+        ),
+        radial-gradient(
+            circle,
+            rgba(224, 124, 203, 0.2) 8px,
+            rgba(224, 124, 203, 0.3) 9px,
+            transparent 10px
+        ),
+        radial-gradient(
+            circle,
+            rgba(224, 124, 203, 0.2) 8px,
+            rgba(224, 124, 203, 0.3) 9px,
+            transparent 10px
+        ),
+        radial-gradient(
+            circle,
+            rgba(145, 75, 113, 0.2) 19px,
+            rgba(145, 75, 113, 0.3) 20px,
+            transparent 46px
+        ),
+        radial-gradient(
+            circle,
+            rgba(145, 75, 113, 0) 10px,
+            rgba(145, 75, 113, 0.2) 19px,
+            transparent 80px
+        ),
+        radial-gradient(
+            circle,
+            rgba(145, 75, 113, 0) 15px,
+            rgba(145, 75, 113, 0.2) 30px,
+            transparent 90px
+        ),
+        radial-gradient(
+            circle,
+            rgba(37, 85, 79, 0.2) 15px,
+            rgba(37, 85, 79, 0.3) 17px,
+            transparent 50px
+        ),
+        radial-gradient(
+            circle,
+            rgba(37, 85, 79, 0.2) 8px,
+            rgba(37, 85, 79, 0.3) 9px,
+            transparent 20px
+        ),
+        radial-gradient(
+            circle,
+            rgba(37, 85, 79, 0.2) 13px,
+            rgba(37, 85, 79, 0.3) 13px,
+            transparent 30px
+        ),
+        radial-gradient(
+            circle,
+            rgba(37, 85, 79, 0.2) 18px,
+            rgba(37, 85, 79, 0.3) 18px,
+            transparent 40px
+        ),
+        radial-gradient(
+            circle,
+            rgba(114, 209, 244, 0.1) 15px,
+            rgba(114, 209, 244, 0.1) 17px,
+            transparent 50px
+        ),
+        radial-gradient(
+            circle,
+            rgba(114, 209, 244, 0.2) 8px,
+            rgba(114, 209, 244, 0.3) 9px,
+            transparent 20px
+        ),
+        radial-gradient(
+            circle,
+            rgba(114, 209, 244, 0.2) 13px,
+            rgba(114, 209, 244, 0.3) 13px,
+            transparent 30px
+        ),
+        radial-gradient(
+            circle,
+            rgba(114, 209, 244, 0.2) 18px,
+            rgba(114, 209, 244, 0.3) 18px,
+            transparent 40px
+        ),
+        linear-gradient(
+            100deg,
+            mix(@SLATE_500, @SLATE_700, 0.5) 25%,
+            @SLATE_900
+        );
+    background-position:
+        30px 15px,
+        80px -50px,
+        10px -20px,
+        50px -30px,
+        20px -60px,
+        60px 10px,
+        -50px -40px,
+        -60px 0,
+        -80px -60px,
+        -160px -10px,
+        20px -10px,
+        130px -40px,
+        180px -20px,
+        180px 20px,
+        center center;
+    border-color: alpha(@SLATE_900, 0.7);
+    box-shadow:
+        inset 0 0 0 1px alpha(white, 0.02),
+        inset 0 1px 0 0 alpha(white, 0.23),
+        inset 0 -1px 0 0 alpha(white, 0.07),
+        0 3px 2px -1px alpha(black, 0.15),
+        0 3px 5px alpha(black, 0.1);
+    color: @BANANA_300;
+    font-size: 24px;
+    font-weight: 600;
+    text-shadow: 0 1px 2px alpha(@SLATE_900, 0.75);
+    -gtk-icon-shadow: 0 1px 2px alpha(@SLATE_900, 0.75);
+}
+
+.category.office {
+    background-image:
+        linear-gradient(
+            to right,
+            @BLUEBERRY_300,
+            @BLUEBERRY_500 20%,
+            @LIME_300 20%,
+            @LIME_500 40%,
+            @ORANGE_500 40%,
+            @ORANGE_700 60%,
+            @BANANA_300 60%,
+            @BANANA_500 80%,
+            @GRAPE_500 80%,
+            @GRAPE_700
+        );
+    background-size: 100% 6px;
+    background-position: bottom;
+    border: none;
+    box-shadow:
+        inset 0 0 0 1px alpha(shade(@bg_color, 1.67), 0.1),
+        inset 0 1px 0 0 alpha(shade(@bg_color, 1.67), 0.9),
+        inset 0 -1px 0 0 alpha(shade(@bg_color, 1.67), 0.3),
+        0 0 0 1px alpha(black, 0.15),
+        0 3px 2px -1px alpha(black, 0.15),
+        0 3px 5px alpha(black, 0.1);
+    color: @ORANGE_500;
+    font-weight: normal;
+}
+
+.category.office label,
+.category.office image {
+    margin-bottom: 12px;
+}
+
+.category.science {
+    background-image:
+        url("resource:///io/elementary/appcenter/backgrounds/science.svg"),
+        linear-gradient(
+            to bottom,
+            #374044,
+            #374044
+        );
+    border-color: alpha(#1b2022, 0.8);
+    box-shadow:
+        inset 0 0 0 1px alpha(white, 0.02),
+        inset 0 1px 0 0 alpha(white, 0.23),
+        inset 0 -1px 0 0 alpha(white, 0.07),
+        0 3px 2px -1px alpha(black, 0.15),
+        0 3px 5px alpha(black, 0.1);
+    color: white;
+    font-family: Limelight;
+    font-size: 24px;
+    text-shadow: 0 1px 2px alpha(black, 0.3);
+    -gtk-icon-shadow: 0 1px 2px alpha(black, 0.3);
+}
+
+.category.system {
+    background-image:
+        linear-gradient(
+            170deg,
+            @SLATE_100,
+            @SLATE_300
+        );
+    border-color: alpha(@SLATE_700, 0.8);
+    box-shadow:
+        inset 0 0 0 1px alpha(white, 0.05),
+        inset 0 1px 0 0 alpha(white, 0.25),
+        inset 0 -1px 0 0 alpha(white, 0.1),
+        0 3px 2px -1px alpha(black, 0.15),
+        0 3px 5px alpha(black, 0.1);
+    color: @SLATE_900;
+    text-shadow: 0 1px alpha(white, 0.4);
+    -gtk-icon-shadow: 0 1px alpha(white, 0.4);
+}
+
+.category.video {
+    background-image:
+        radial-gradient(
+            circle,
+            alpha(@STRAWBERRY_900, 0) 65%,
+            alpha(shade(@STRAWBERRY_900, 0.6), 0.35) 4%
+        ),
+        linear-gradient(
+            to bottom,
+            alpha(shade(@STRAWBERRY_900, 0.6), 0.8),
+            alpha(shade(@STRAWBERRY_900, 0.6), 0)
+        ),
+        linear-gradient(
+            to right,
+            transparent,
+            alpha(@STRAWBERRY_300, 0.4) 17%,
+            transparent 28%,
+            transparent 40%,
+            alpha(@STRAWBERRY_300, 0.4) 70%,
+            transparent 80%
+        ),
+        linear-gradient(
+            to bottom,
+            @STRAWBERRY_300,
+            @STRAWBERRY_700
+        );
+    background-repeat:
+        no-repeat,
+        no-repeat,
+        repeat,
+        no-repeat;
+    background-position:
+        50%,
+        0 0,
+        50%,
+        50%;
+    background-size:
+        auto 150%,
+        auto 60%,
+        100px, auto;
+    border-color: alpha(@STRAWBERRY_900, 0.9);
+    box-shadow:
+        inset 0 0 0 1px alpha(white, 0.05),
+        inset 0 1px 0 0 alpha(white, 0.25),
+        inset 0 -1px 0 0 alpha(white, 0.1),
+        0 3px 2px -1px alpha(black, 0.15),
+        0 3px 5px alpha(black, 0.1);
+    color: white;
+    text-shadow: 0 1px 2px alpha(@STRAWBERRY_900, 0.5);
+    -gtk-icon-shadow: 0 1px 2px alpha(@STRAWBERRY_900, 0.5);
+}
+
+.category.writing-language {
+    background-color: white;
+    background-image:
+        linear-gradient(
+            to right,
+            transparent 42px,
+            alpha(@STRAWBERRY_100, 0.25) 42px,
+            alpha(@STRAWBERRY_100, 0.25) 44px,
+            transparent 44px
+        ),
+        linear-gradient(
+            to bottom,
+            white 90%,
+            alpha(@BLUEBERRY_100, 0.2) 90%
+        );
+    background-position: center center;
+    background-repeat: repeat-y;
+    background-size: 100% 1em;
+    color: @BLACK_300;
+    font-size: 24px;
+}

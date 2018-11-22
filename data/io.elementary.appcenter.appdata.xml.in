@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2015 elementary, LLC <contact@elementary.io> -->
 <component type="desktop-application">
-    <id>io.elementary.appcenter.desktop</id>
+    <id>io.elementary.appcenter</id>
     <metadata_license>CC0-1.0</metadata_license>
     <project_group>elementary</project_group>
     <project_license>GPL-3.0+</project_license>
@@ -15,6 +15,14 @@
         </p>
     </description>
     <releases>
+        <release version="3.0.1" date="2018-10-25" urgency="medium">
+            <description>
+                <ul>
+                    <li>New translations</li>
+                </ul>
+            </description>
+        </release>
+        <release version="3.0" date="2018-10-16" urgency="medium"></release>
         <release version="0.2.9" date="2018-03-02" urgency="medium">
             <description>
                 <p>Bug fixes and improve performance.</p>
@@ -157,6 +165,15 @@
     <screenshots>
         <screenshot type="default">
             <image>https://raw.githubusercontent.com/elementary/appcenter/master/data/screenshot.png</image>
+        </screenshot>
+        <screenshot>
+            <image>https://raw.githubusercontent.com/elementary/appcenter/master/data/screenshot-footer.png</image>
+        </screenshot>
+        <screenshot>
+            <image>https://raw.githubusercontent.com/elementary/appcenter/master/data/screenshot-updates.png</image>
+        </screenshot>
+        <screenshot>
+            <image>https://raw.githubusercontent.com/elementary/appcenter/master/data/screenshot-payment.png</image>
         </screenshot>
     </screenshots>
     <content_rating type="oars-1.1">

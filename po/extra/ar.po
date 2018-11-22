@@ -2,11 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-02 13:03-0700\n"
+"POT-Creation-Date: 2018-10-18 05:17-0500\n"
 "PO-Revision-Date: 2017-04-11 02:26+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
-"Language-Team: Arabic "
-"<https://l10n.elementary.io/projects/appcenter/extra/ar/>\n"
+"Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/extra/"
+"ar/>\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,18 +16,16 @@ msgstr ""
 "X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
+#: data/io.elementary.appcenter.appdata.xml.in:8
 msgid "AppCenter"
 msgstr "مركز البرامج"
 
+#: data/io.elementary.appcenter.appdata.xml.in:9
+#: data/io.elementary.appcenter.desktop.in.in:4
 msgid "Browse and manage apps"
 msgstr "ادارة التطبيقات"
 
-msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
-msgstr "تثبيت؛حذف؛التصنيف؛المتجر؛تطبيقات,تحديثات؛برامج;"
-
-msgid "About AppCenter"
-msgstr "عن متجر البرامج"
-
+#: data/io.elementary.appcenter.appdata.xml.in:11
 msgid ""
 "An app store for indie and open source developers. Browse by categories or "
 "search and discover new apps. AppCenter is also used for updating your "
@@ -36,34 +34,48 @@ msgstr ""
 "تطبيق مفتوح المصدر للمطورين المستقلين..تصفح أو ابحث و أكتشف التطبيقات "
 "الجديدة..هذا التطبيق يستخدم لتحديث النظام والحصول على المميزات الجديدة."
 
-msgid "Bug fixes and improve perfomance."
-msgstr "تحسين الاداء والاستقرارية."
-
-msgid "Various bug fixes and performance improvements"
-msgstr "إصلاح العلل وتحسينات في الاداء"
-
-msgid "New translations"
-msgstr "ترجمة جديدة"
-
-msgid "Fix crash caused by entries with missing packages"
+#: data/io.elementary.appcenter.appdata.xml.in:201
+msgid "elementary LLC."
 msgstr ""
 
-msgid "Add capability to search by category and apply minor bug fixes."
-msgstr "اضافة القابلية للبحث عبر التصنيفات.."
-
-msgid "It is now possible to search apps inside a category"
-msgstr "الآن من الممكن البحث عن أي برنامج عبر التصنيفات"
-
-msgid "Prevent multiple authentication dialogs when resuming from suspend"
+#: data/io.elementary.appcenter.desktop.in.in:3
+msgid "@APP_NAME@"
 msgstr ""
 
-msgid ""
-"Search perfomance has beeen improved, the category name is now shown on the "
-"headbar and minor bugs have been fixed."
-msgstr "تم تحسين خاصية البحث، تحديثات اخرى واداء أفضل لمركز البرامج."
-
-msgid "Fix Steam installation"
-msgstr "تحسين خاصية التثبيت"
-
-msgid "Make search asynchronous"
+#: data/io.elementary.appcenter.desktop.in.in:6
+msgid "@DESKTOP_ICON@"
 msgstr ""
+
+#: data/io.elementary.appcenter.desktop.in.in:7
+msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
+msgstr "تثبيت؛حذف؛التصنيف؛المتجر؛تطبيقات,تحديثات؛برامج;"
+
+#: data/io.elementary.appcenter.desktop.in.in:18
+msgid "Check for Updates"
+msgstr ""
+
+#~ msgid "About AppCenter"
+#~ msgstr "عن متجر البرامج"
+
+#~ msgid "Bug fixes and improve perfomance."
+#~ msgstr "تحسين الاداء والاستقرارية."
+
+#~ msgid "Various bug fixes and performance improvements"
+#~ msgstr "إصلاح العلل وتحسينات في الاداء"
+
+#~ msgid "New translations"
+#~ msgstr "ترجمة جديدة"
+
+#~ msgid "Add capability to search by category and apply minor bug fixes."
+#~ msgstr "اضافة القابلية للبحث عبر التصنيفات.."
+
+#~ msgid "It is now possible to search apps inside a category"
+#~ msgstr "الآن من الممكن البحث عن أي برنامج عبر التصنيفات"
+
+#~ msgid ""
+#~ "Search perfomance has beeen improved, the category name is now shown on "
+#~ "the headbar and minor bugs have been fixed."
+#~ msgstr "تم تحسين خاصية البحث، تحديثات اخرى واداء أفضل لمركز البرامج."
+
+#~ msgid "Fix Steam installation"
+#~ msgstr "تحسين خاصية التثبيت"

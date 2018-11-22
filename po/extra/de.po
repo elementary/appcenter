@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 08:32-0700\n"
-"PO-Revision-Date: 2018-06-03 06:06+0000\n"
+"POT-Creation-Date: 2018-10-18 05:17-0500\n"
+"PO-Revision-Date: 2018-09-11 17:16+0000\n"
 "Last-Translator: Jörg Arnold <j.ar@mailbox.org>\n"
 "Language-Team: German <https://weblate.elementary.io/projects/appcenter/"
 "extra/de/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
@@ -22,7 +22,7 @@ msgstr "AppCenter"
 #: data/io.elementary.appcenter.appdata.xml.in:9
 #: data/io.elementary.appcenter.desktop.in.in:4
 msgid "Browse and manage apps"
-msgstr "Anwendungen durchsuchen und verwalten"
+msgstr "Apps durchsuchen und verwalten"
 
 #: data/io.elementary.appcenter.appdata.xml.in:11
 msgid ""
@@ -35,23 +35,23 @@ msgstr ""
 "außerdem zum Aktualisieren des Systems genutzt. Somit erhalten Sie die "
 "aktuellste und beste Software mit allen neuen Funktionen und Verbesserungen."
 
-#: data/io.elementary.appcenter.appdata.xml.in:191
+#: data/io.elementary.appcenter.appdata.xml.in:201
 msgid "elementary LLC."
 msgstr "elementary LLC."
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
-msgstr ""
+msgstr "@APP_NAME@"
 
 #: data/io.elementary.appcenter.desktop.in.in:6
 msgid "@DESKTOP_ICON@"
-msgstr ""
+msgstr "@DESKTOP_ICON@"
 
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
 msgstr ""
-"installieren;deinstallieren;entfernen;auflisten;speichern;Apps;Updates;"
-"Software;"
+"install;uninstall;remove;catalogue;store;installieren;deinstallieren;"
+"entfernen;auflisten;speichern;Apps;Updates;Software;"
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
