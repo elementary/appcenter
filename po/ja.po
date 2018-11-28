@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-05 14:29-0800\n"
-"PO-Revision-Date: 2018-11-21 10:21+0000\n"
+"PO-Revision-Date: 2018-11-29 00:01+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/ja/>\n"
@@ -38,7 +38,7 @@ msgstr "アプリケーションがインストールされました"
 #: src/Application.vala:261
 #, c-format
 msgid "%s has been successfully installed"
-msgstr "%s のインストールは成功しました"
+msgstr "%s のインストールに成功しました"
 
 #: src/Application.vala:273
 #, c-format
