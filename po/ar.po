@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-05 14:29-0800\n"
-"PO-Revision-Date: 2018-12-01 01:19+0000\n"
+"PO-Revision-Date: 2018-12-01 01:21+0000\n"
 "Last-Translator: Mohelm97 <mohelm97@gmail.com>\n"
 "Language-Team: Arabic <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/ar/>\n"
@@ -31,7 +31,7 @@ msgstr "لا يمكن معالجة النوع \"%s\""
 #: src/Application.vala:126
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr "الرابط المعطى '%s' غير موجود، البحث عوضًا عن ذلك"
+msgstr "الرابط المعطى '%s' غير موجود، إبحث عوضًا عن ذلك"
 
 #: src/Application.vala:260
 msgid "Application installed"
@@ -40,12 +40,12 @@ msgstr "تم التثبيت"
 #: src/Application.vala:261
 #, c-format
 msgid "%s has been successfully installed"
-msgstr "%s تم التثبيت بنجاح!"
+msgstr "%s تم تثبيته بنجاح!"
 
 #: src/Application.vala:273
-#, fuzzy, c-format
+#, c-format
 msgid "There Was An Error Installing %s."
-msgstr "خطأ في التثبيت %s"
+msgstr "خطأ في تثبيت %s."
 
 #: src/MainWindow.vala:149 src/Views/Homepage.vala:253
 #: src/Views/Homepage.vala:262 src/Views/Homepage.vala:267
@@ -66,9 +66,8 @@ msgid "Search Apps"
 msgstr "البحث عن التطبيقات"
 
 #: src/MainWindow.vala:195
-#, fuzzy
 msgid "Network Is Not Available"
-msgstr "لقطات الشاشة غير متوفرة"
+msgstr "الشبكة غير متوفرة"
 
 #: src/MainWindow.vala:196
 msgid "Connect to the Internet to install or update apps."
@@ -80,7 +79,7 @@ msgstr ""
 
 #: src/Core/ChangeInformation.vala:54
 msgid "Starting"
-msgstr "البدء"
+msgstr "يتم البدء"
 
 #: src/Core/ChangeInformation.vala:56
 msgid "Waiting"
