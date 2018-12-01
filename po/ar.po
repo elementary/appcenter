@@ -7,7 +7,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-05 14:29-0800\n"
 "PO-Revision-Date: 2018-12-01 02:27+0000\n"
-"Last-Translator: Mohelm97 <mohelm97@gmail.com>\n"
+"Last-Translator: karim inabi <karim99tgt@gmail.com>\n"
 "Language-Team: Arabic <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/ar/>\n"
 "Language: ar\n"
@@ -87,7 +87,7 @@ msgstr "إنتظار"
 
 #: src/Core/ChangeInformation.vala:58
 msgid "Running"
-msgstr "تشغيل"
+msgstr "مشغل"
 
 #: src/Core/ChangeInformation.vala:60
 msgid "Querying"
