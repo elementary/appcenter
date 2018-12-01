@@ -1,12 +1,13 @@
 # Mohelm97 <mohelm97@gmail.com>, 2018.
 # yusuf .s <yusef.ali12@gmail.com>, 2018.
+# karim inabi <karim99tgt@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-05 14:29-0800\n"
 "PO-Revision-Date: 2018-12-01 01:21+0000\n"
-"Last-Translator: Mohelm97 <mohelm97@gmail.com>\n"
+"Last-Translator: karim inabi <karim99tgt@gmail.com>\n"
 "Language-Team: Arabic <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/ar/>\n"
 "Language: ar\n"
@@ -35,7 +36,7 @@ msgstr "الرابط المعطى '%s' غير موجود، إبحث عوضًا �
 
 #: src/Application.vala:260
 msgid "Application installed"
-msgstr "تم التثبيت"
+msgstr "تم تثبيت التطبيق"
 
 #: src/Application.vala:261
 #, c-format
@@ -83,7 +84,7 @@ msgstr "يتم البدء"
 
 #: src/Core/ChangeInformation.vala:56
 msgid "Waiting"
-msgstr "تحميل"
+msgstr "المرجو الإنتظار"
 
 #: src/Core/ChangeInformation.vala:58
 msgid "Running"
