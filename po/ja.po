@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-05 14:29-0800\n"
-"PO-Revision-Date: 2018-11-29 00:01+0000\n"
+"PO-Revision-Date: 2018-12-02 06:09+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/ja/>\n"
@@ -247,7 +247,7 @@ msgstr[0] "システムに %u 件のアップデートが利用可能です"
 #: src/Core/Client.vala:496
 #, c-format
 msgid "Version: %s"
-msgstr "バージョン：%s"
+msgstr "バージョン: %s"
 
 #: src/Core/Client.vala:505
 msgid "No components with updates"
@@ -262,7 +262,7 @@ msgstr[0] "アップデートのあるコンポーネントが %u 個ありま�
 #: src/Core/Client.vala:511
 #, c-format
 msgid "%s:"
-msgstr "%s："
+msgstr "%s:"
 
 #: src/Core/Package.vala:235
 #, c-format
@@ -546,11 +546,11 @@ msgstr "ヘルプ"
 
 #: src/Views/AppInfoView.vala:180
 msgid "What's New:"
-msgstr "更新情報："
+msgstr "更新情報:"
 
 #: src/Views/AppInfoView.vala:199
 msgid "Extensions:"
-msgstr "拡張機能："
+msgstr "拡張機能:"
 
 #: src/Views/AppInfoView.vala:293
 #, c-format
@@ -564,7 +564,7 @@ msgstr "リンクをクリップボードにコピーしました"
 #: src/Views/AppInfoView.vala:338
 #, c-format
 msgid "Check out %s on AppCenter:"
-msgstr "AppCenter で %s を確認："
+msgstr "AppCenter で %s を確認:"
 
 #: src/Views/AppInfoView.vala:345
 msgid "Share"
@@ -774,7 +774,7 @@ msgstr[0] "%u 件のアップデートが利用可能です"
 #: src/Widgets/UpdateHeaderRow.vala:69
 #, c-format
 msgid "Size: %s"
-msgstr "サイズ：%s"
+msgstr "サイズ: %s"
 
 #: src/Widgets/UpdateHeaderRow.vala:105
 msgid "Searching for updates…"
