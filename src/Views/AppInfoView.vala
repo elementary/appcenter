@@ -192,6 +192,79 @@ namespace AppCenter.Views {
 
             content_grid.add (release_grid);
 
+            var oars_label = new Gtk.Label (_("Content Warnings:"));
+            oars_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
+            oars_label.xalign = 0;
+
+            var oars_description = new Gtk.Label (_("This app contains the following types of content according to its developer:"));
+            oars_description.xalign = 0;
+            oars_description.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+
+            /* Ratings summaries:
+
+            Violence. This covers cartoon and fantasy violence as well as realistic violence and violence-related concepts like slavery and desecrating religious symbols, buildings, etc.
+
+            Drugs. This includes both the presence of or references to alcohol, narcotics, or tobacco. This might be better defined as "illicit substances" or some such other since depending on your locale you might not consider all of these to be "drugs" in the traditional sense of the word. If we iconify here it might be worth depicting alcohol and tobacco to make sure it's understood that these are included.
+
+            Sex & Nudity. This oddly includes references to homosexuality and the vague "sexual appearance" with the provided example being women's swimwear. This one might need some special casing to make sure it's useful as a broad category. I wouldn't expect a game like Pokémon to contain a content warning for "Sex & Nudity" because some characters are in swimwear.
+
+            Language. This includes the obvious profanity, but also discrimination and humor. Again might need some filtering since I don't think a "Language" content warning makes sense if your app contains "slapstick humor".
+
+            Money. This includes advertising, gambling, and in-app purchases. In this context advertising goes so far as to refer to "banners showing the Coca-Cola logo shown in a Soccer game". Since we don't allow what most people would consider advertising in AppCenter, maybe we should just look for gambling and in-app purchases here. iOS places a warning about in-app purchases right next to the price button, which I think is an interesting choice especially when the app shows as free. It's kind of a nice way to say "Free, but here's the catch". If we did something like that, then we could just warn about gambling on its own.
+
+            Social. This basically covers anything where you send data to the internet for other humans to see.
+            */
+
+            var violence = new ContentType (
+                _("Violence"),
+                _("Cartoon, fantasy, or realistic violence"),
+                "dialog-error"
+            );
+
+            var drugs = new ContentType (
+                _("Illicit Substances"),
+                _("Presence of or references to alcohol, narcotics, or tobacco"),
+                "applications-science"
+            );
+
+            var sex_nudity = new ContentType (
+                _("Sex & Nudity"),
+                _("Adult nudity or sexual themes"),
+                "face-surprise"
+            );
+
+            var language = new ContentType (
+                _("Offensive Language"),
+                _("Profanity, discriminatory language, or adult humor"),
+                "preferences-desktop-locale"
+            );
+
+            var gambling = new ContentType (
+                _("Gambling"),
+                _("Realistic or participatory gambling"),
+                "payment-card"
+            );
+
+            var social = new ContentType (
+                _("Online Interactions"),
+                _("Communication or data is sent to the Internet for other humans to see"),
+                "internet-chat"
+            );
+
+            var oars_grid = new Gtk.Grid ();
+            oars_grid.row_spacing = 12;
+
+            oars_grid.attach (oars_label,       0, 0, 6);
+            oars_grid.attach (oars_description, 0, 1, 6);
+            oars_grid.attach (violence,         0, 2);
+            oars_grid.attach (drugs,            1, 2);
+            oars_grid.attach (sex_nudity,       2, 2);
+            oars_grid.attach (language,         3, 2);
+            oars_grid.attach (gambling,         4, 2);
+            oars_grid.attach (social,           5, 2);
+
+            content_grid.add (oars_grid);
+
             if (package_component.get_addons ().length > 0) {
                 extension_box = new Gtk.ListBox ();
                 extension_box.selection_mode = Gtk.SelectionMode.NONE;
@@ -605,6 +678,22 @@ namespace AppCenter.Views {
                 } catch (Error e) {
                     critical (e.message);
                 }
+            }
+        }
+
+        class ContentType : Gtk.Grid {
+            public ContentType (string title, string description, string icon_name) {
+                row_spacing = 6;
+                tooltip_text = description;
+
+                var icon = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.DIALOG);
+                icon.hexpand = true;
+                icon.pixel_size = 48;
+
+                var label = new Gtk.Label (title);
+
+                attach (icon, 0, 0);
+                attach (label, 0, 1);
             }
         }
 
