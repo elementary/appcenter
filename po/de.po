@@ -1,12 +1,13 @@
 # Jörg Arnold <j.ar@mailbox.org>, 2018.
 # Julian Raschke <julian@raschke.de>, 2018.
+# Tucan Holmes <tucan.web.swiss@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-05 14:29-0800\n"
-"PO-Revision-Date: 2018-10-15 00:05+0000\n"
-"Last-Translator: Jörg Arnold <j.ar@mailbox.org>\n"
+"PO-Revision-Date: 2018-11-16 22:12+0000\n"
+"Last-Translator: Tucan Holmes <tucan.web.swiss@gmail.com>\n"
 "Language-Team: German <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/de/>\n"
 "Language: de\n"
@@ -662,9 +663,8 @@ msgid "Audio"
 msgstr "Audio"
 
 #: src/Widgets/CategoryFlowBox.vala:31
-#, fuzzy
 msgid "Communication"
-msgstr "Bildung"
+msgstr "Kommunikation"
 
 #: src/Widgets/CategoryFlowBox.vala:40
 msgid "Development"
@@ -675,9 +675,8 @@ msgid "Education"
 msgstr "Bildung"
 
 #: src/Widgets/CategoryFlowBox.vala:51
-#, fuzzy
 msgid "Finance"
-msgstr "Abbrechen"
+msgstr "Finanzen"
 
 #: src/Widgets/CategoryFlowBox.vala:55
 msgid "Games"
@@ -692,13 +691,12 @@ msgid "Internet"
 msgstr "Internet"
 
 #: src/Widgets/CategoryFlowBox.vala:84
-#, fuzzy
 msgid "Math, Science, & Engineering"
-msgstr "Wissenschaft & Technik"
+msgstr "Mathematik, Wissenschaft & Technik"
 
 #: src/Widgets/CategoryFlowBox.vala:103
 msgid "Media Production"
-msgstr ""
+msgstr "Mediengestaltung"
 
 #: src/Widgets/CategoryFlowBox.vala:110
 msgid "Office"

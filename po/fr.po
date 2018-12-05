@@ -1,12 +1,16 @@
 # Corentin Noël <corentin@elementary.io>, 2018.
 # lolo <phantom.re@outlook.com>, 2018.
+# Eliott Lavier <eliott.lavier@gmail.com>, 2018.
+# David Marcel BAUM <david.baum@tuta.io>, 2018.
+# Lucas Ruffieux <lucasruffieux@gmail.com>, 2018.
+# Nathan <bonnemainsnathan@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-05 14:29-0800\n"
-"PO-Revision-Date: 2018-10-16 00:08+0000\n"
-"Last-Translator: Corentin Noël <corentin@elementary.io>\n"
+"PO-Revision-Date: 2018-11-17 00:01+0000\n"
+"Last-Translator: Eliott Lavier <eliott.lavier@gmail.com>\n"
 "Language-Team: French <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/fr/>\n"
 "Language: fr\n"
@@ -65,7 +69,7 @@ msgstr "Rechercher des applications"
 
 #: src/MainWindow.vala:195
 msgid "Network Is Not Available"
-msgstr "Capture d’écran indisponible"
+msgstr "Pas de connexion réseau"
 
 #: src/MainWindow.vala:196
 msgid "Connect to the Internet to install or update apps."
@@ -106,7 +110,7 @@ msgstr "Téléchargement"
 
 #: src/Core/ChangeInformation.vala:68
 msgid "Installing"
-msgstr "En cours d’installation"
+msgstr "Installation"
 
 #: src/Core/ChangeInformation.vala:70
 msgid "Refreshing software list"
@@ -270,7 +274,7 @@ msgstr "%s :"
 #: src/Core/Package.vala:235
 #, c-format
 msgid "%s Developers"
-msgstr "Les programmeurs de %s"
+msgstr "Les développeurs de %s"
 
 #: src/Core/UpdateManager.vala:81
 msgid "Restart Required"
@@ -282,12 +286,12 @@ msgstr "Veuillez redémarrer votre système pour terminer les mises à jour"
 
 #: src/Dialogs/ContentWarningDialog.vala:27
 msgid "Content Warning"
-msgstr ""
+msgstr "Avertissement sur le contenu"
 
 #: src/Dialogs/ContentWarningDialog.vala:32
 #, c-format
 msgid "%s Contains Explicit Content"
-msgstr ""
+msgstr "%s contient du contenu explicite"
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 #, c-format
@@ -296,10 +300,13 @@ msgid ""
 "disturbing. In general, elementary does not review or endorse the contents "
 "of this app."
 msgstr ""
+"%s pourrait contenir du contenu pour adultes ou pouvant être offensant ou "
+"choquant. Plus généralement, elementary ne vérifie pas, ni promeut le "
+"contenu de ce programme."
 
 #: src/Dialogs/ContentWarningDialog.vala:35
 msgid "Show content warnings"
-msgstr ""
+msgstr "Afficher les avertissements de contenu"
 
 #: src/Dialogs/ContentWarningDialog.vala:40
 msgid "Don’t Install"
@@ -315,7 +322,7 @@ msgstr "Voulez-vous vraiment redémarrer ?"
 
 #: src/Dialogs/RestartDialog.vala:41
 msgid "This will close all open applications and restart this device."
-msgstr "Ceci fermera toutes les applications et éteindra cet appareil."
+msgstr "Ceci fermera toutes les applications et redémarrera cet appareil."
 
 #: src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
@@ -659,22 +666,20 @@ msgid "Audio"
 msgstr "Audio"
 
 #: src/Widgets/CategoryFlowBox.vala:31
-#, fuzzy
 msgid "Communication"
-msgstr "Éducation"
+msgstr "Communication"
 
 #: src/Widgets/CategoryFlowBox.vala:40
 msgid "Development"
-msgstr "Programmation"
+msgstr "Développement"
 
 #: src/Widgets/CategoryFlowBox.vala:50
 msgid "Education"
 msgstr "Éducation"
 
 #: src/Widgets/CategoryFlowBox.vala:51
-#, fuzzy
 msgid "Finance"
-msgstr "Annuler"
+msgstr "Finance"
 
 #: src/Widgets/CategoryFlowBox.vala:55
 msgid "Games"
@@ -689,13 +694,12 @@ msgid "Internet"
 msgstr "Internet"
 
 #: src/Widgets/CategoryFlowBox.vala:84
-#, fuzzy
 msgid "Math, Science, & Engineering"
-msgstr "Sciences et ingénierie"
+msgstr "Maths, sciences et ingénierie"
 
 #: src/Widgets/CategoryFlowBox.vala:103
 msgid "Media Production"
-msgstr ""
+msgstr "Production de médias"
 
 #: src/Widgets/CategoryFlowBox.vala:110
 msgid "Office"
@@ -715,7 +719,7 @@ msgstr "Vidéo"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
-msgstr ""
+msgstr "Requiert le module de payements, qui n'est pas activé"
 
 #: src/Widgets/HumbleButton.vala:106
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:301
