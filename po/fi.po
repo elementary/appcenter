@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-05 14:29-0800\n"
-"PO-Revision-Date: 2018-10-28 00:05+0000\n"
+"PO-Revision-Date: 2018-11-17 00:01+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/fi/>\n"
@@ -252,14 +252,14 @@ msgstr "Versio: %s"
 
 #: src/Core/Client.vala:505
 msgid "No components with updates"
-msgstr "Ei komponentteja päivityksin"
+msgstr "Ei päivitettäviä osia"
 
 #: src/Core/Client.vala:509
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
-msgstr[0] "%u komponentti päivityksillä"
-msgstr[1] "%u komponenttia päivityksillä"
+msgstr[0] "%u päivitettävä osa"
+msgstr[1] "%u päivitettävää osaa"
 
 #: src/Core/Client.vala:511
 #, c-format
@@ -639,9 +639,8 @@ msgid "Audio"
 msgstr "Ääni"
 
 #: src/Widgets/CategoryFlowBox.vala:31
-#, fuzzy
 msgid "Communication"
-msgstr "Koulutus"
+msgstr "Viestintä"
 
 #: src/Widgets/CategoryFlowBox.vala:40
 msgid "Development"
@@ -652,9 +651,8 @@ msgid "Education"
 msgstr "Koulutus"
 
 #: src/Widgets/CategoryFlowBox.vala:51
-#, fuzzy
 msgid "Finance"
-msgstr "Peru"
+msgstr "Talous"
 
 #: src/Widgets/CategoryFlowBox.vala:55
 msgid "Games"
@@ -674,7 +672,7 @@ msgstr "Matematiikka, tiede ja suunnittelu"
 
 #: src/Widgets/CategoryFlowBox.vala:103
 msgid "Media Production"
-msgstr ""
+msgstr "Mediatuotanto"
 
 #: src/Widgets/CategoryFlowBox.vala:110
 msgid "Office"
