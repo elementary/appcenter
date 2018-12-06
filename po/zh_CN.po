@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-05 14:29-0800\n"
-"PO-Revision-Date: 2018-11-10 00:02+0000\n"
+"PO-Revision-Date: 2018-11-27 00:03+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.elementary.io/projects/"
 "appcenter/appcenter/zh_Hans/>\n"
@@ -265,7 +265,7 @@ msgid "%s:"
 msgstr "%s："
 
 #: src/Core/Package.vala:235
-#, fuzzy, c-format
+#, c-format
 msgid "%s Developers"
 msgstr "%s 开发者"
 
@@ -339,9 +339,9 @@ msgid "Payment"
 msgstr "支付方式"
 
 #: src/Dialogs/StripeDialog.vala:92
-#, fuzzy, c-format
+#, c-format
 msgid "Pay $%d for %s"
-msgstr "为 %2$s 支付 $%1$d"
+msgstr "为 %s 支付 $%d"
 
 #: src/Dialogs/StripeDialog.vala:96
 msgid ""
@@ -354,7 +354,6 @@ msgid "Email"
 msgstr "电子邮件"
 
 #: src/Dialogs/StripeDialog.vala:108
-#, fuzzy
 msgid ""
 "Your email address is only used to send a receipt. You will not be "
 "subscribed to any mailing list."
@@ -440,7 +439,6 @@ msgid "The transaction has already been processed."
 msgstr "交易已处理。"
 
 #: src/Dialogs/StripeDialog.vala:566
-#, fuzzy
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "postal code."
@@ -659,7 +657,7 @@ msgstr "科学 & 工程"
 
 #: src/Widgets/CategoryFlowBox.vala:103
 msgid "Media Production"
-msgstr ""
+msgstr "多媒体制作"
 
 #: src/Widgets/CategoryFlowBox.vala:110
 msgid "Office"
@@ -709,9 +707,8 @@ msgid "<b>%s</b> – %s"
 msgstr "<b>%s</b> – %s"
 
 #: src/Widgets/ReleaseRow.vala:74
-#, fuzzy
 msgid "Unknown version"
-msgstr "未知状态"
+msgstr "未知版本"
 
 #: src/Widgets/ReleaseRow.vala:90 src/Widgets/ReleaseRow.vala:93
 msgid "No description available"

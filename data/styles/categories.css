@@ -16,11 +16,12 @@
  */
 
 .category {
+    background-color: @bg_color;
     background-image:
         linear-gradient(
             to bottom,
-            @SILVER_100,
-            shade(@SILVER_100, 0.96)
+            shade(@bg_color, 1.02),
+            shade(@bg_color, 0.98)
         );
     background-position: center center;
     background-repeat: no-repeat;
@@ -32,7 +33,7 @@
         inset 0 -1px 0 0 alpha(white, 0.15),
         0 3px 2px -1px alpha(black, 0.15),
         0 3px 5px alpha(black, 0.1);
-    color: @BLACK_300;
+    color: @fg_color;
     font-size: 32px;
     font-weight: 300;
 }
@@ -55,9 +56,9 @@
 .category.accessories {
     border: none;
     box-shadow:
-        inset 0 0 0 1px alpha(white, 0.1),
-        inset 0 1px 0 0 alpha(white, 0.9),
-        inset 0 -1px 0 0 alpha(white, 0.3),
+        inset 0 0 0 1px alpha(shade(@bg_color, 1.67), 0.05),
+        inset 0 1px 0 0 alpha(shade(@bg_color, 1.67), 0.45),
+        inset 0 -1px 0 0 alpha(shade(@bg_color, 1.67), 0.15),
         0 0 0 1px alpha(black, 0.15),
         0 3px 2px -1px alpha(black, 0.15),
         0 3px 5px alpha(black, 0.1);
@@ -88,16 +89,96 @@
 
 .category.communication {
     background-image:
+        -gtk-icontheme("call-start-symbolic"),
+        -gtk-icontheme("internet-chat-symbolic"),
+        -gtk-icontheme("document-edit-symbolic"),
+        -gtk-icontheme("mail-send-symbolic"),
+        -gtk-icontheme("document-edit-symbolic"),
+        -gtk-icontheme("preferences-system-sharing-symbolic"),
+        -gtk-icontheme("internet-chat-symbolic"),
+        -gtk-icontheme("mail-send-symbolic"),
+        -gtk-icontheme("call-start-symbolic"),
+        -gtk-icontheme("document-edit-symbolic"),
+        -gtk-icontheme("preferences-system-sharing-symbolic"),
+        -gtk-icontheme("internet-chat-symbolic"),
+        -gtk-icontheme("emoji-objects-symbolic"),
+        -gtk-icontheme("mail-attachment-symbolic"),
+        -gtk-icontheme("non-starred-symbolic"),
+        -gtk-icontheme("face-heart-symbolic"),
+        -gtk-icontheme("internet-mail-symbolic"),
+        -gtk-icontheme("emoji-body-symbolic"),
+        -gtk-icontheme("emoji-objects-symbolic"),
+        -gtk-icontheme("face-heart-symbolic"),
+        -gtk-icontheme("mail-attachment-symbolic"),
+        -gtk-icontheme("emoji-objects-symbolic"),
+        -gtk-icontheme("non-starred-symbolic"),
+        -gtk-icontheme("emoji-body-symbolic"),
         linear-gradient(
             175deg,
             @LIME_300 5%,
             @LIME_500
         );
+    background-size:
+        24px,
+        24px,
+        24px,
+        24px,
+        24px,
+        24px,
+        24px,
+        24px,
+        24px,
+        24px,
+        24px,
+        24px,
+        16px,
+        16px,
+        16px,
+        16px,
+        16px,
+        16px,
+        16px,
+        16px,
+        16px,
+        16px,
+        16px,
+        16px,
+        cover;
+    background-position:
+        5% 10%,
+        15% 50%,
+        5% 90%,
+        30% 10%,
+        40% 50%,
+        30% 90%,
+        60% 10%,
+        70% 50%,
+        60% 90%,
+        85% 10%,
+        95% 50%,
+        85% 90%,
+        18% 15%,
+        2% 50%,
+        18% 85%,
+        28% 50%,
+        45% 15%,
+        53% 50%,
+        45% 85%,
+        72% 15%,
+        82% 50%,
+        72% 85%,
+        98% 15%,
+        98% 85%,
+        center center;
     border-color: alpha(@LIME_900, 0.7);
-    color: white;
+    color: alpha(@LIME_900, 0.15);
     font-size: 26px;
-    text-shadow: 0 1px 2px alpha(@LIME_900, 0.75);
-    -gtk-icon-shadow: 0 1px 2px alpha(@LIME_900, 0.75);
+    font-weight: 500;
+    text-shadow: 0 1px 2px alpha(@LIME_900, 0.9);
+}
+
+.category.communication label {
+    color: #fff;
 }
 
 .category.development {
@@ -222,38 +303,37 @@
 }
 
 .category.graphics {
-    background-color: white;
     background-image:
         linear-gradient(
             45deg,
-            alpha(black, 0.03) 25%,
+            alpha(@fg_color, 0.03) 25%,
             transparent 25%,
             transparent 75%,
-            alpha(black, 0.03) 75%,
-            alpha(black, 0.03)
+            alpha(@fg_color, 0.03) 75%,
+            alpha(@fg_color, 0.03)
         ),
         linear-gradient(
             45deg,
-            alpha(black, 0.03) 25%,
+            alpha(@fg_color, 0.03) 25%,
             transparent 25%,
             transparent 75%,
-            alpha(black, 0.03) 75%,
-            alpha(black, 0.03)
+            alpha(@fg_color, 0.03) 75%,
+            alpha(@fg_color, 0.03)
         );
     background-position: 0 0, 12px 12px;
     background-repeat: repeat;
     background-size: 24px 24px;
     border: none;
     box-shadow:
-        inset 0 0 0 1px alpha(white, 0.1),
-        inset 0 1px 0 0 alpha(white, 0.9),
-        inset 0 -1px 0 0 alpha(white, 0.3),
+        inset 0 0 0 1px alpha(shade(@bg_color, 1.67), 0.1),
+        inset 0 1px 0 0 alpha(shade(@bg_color, 1.67), 0.9),
+        inset 0 -1px 0 0 alpha(shade(@bg_color, 1.67), 0.3),
         0 0 0 1px alpha(black, 0.15),
         0 3px 2px -1px alpha(black, 0.15),
         0 3px 5px alpha(black, 0.1);
     color: #fe5498;
     font-weight: normal;
-    text-shadow: 0 1px 3px white;
+    text-shadow: 0 1px 3px @bg_color;
 }
 
 .category.graphics label {
@@ -446,9 +526,9 @@
     background-position: bottom;
     border: none;
     box-shadow:
-        inset 0 0 0 1px alpha(white, 0.1),
-        inset 0 1px 0 0 alpha(white, 0.9),
-        inset 0 -1px 0 0 alpha(white, 0.3),
+        inset 0 0 0 1px alpha(shade(@bg_color, 1.67), 0.1),
+        inset 0 1px 0 0 alpha(shade(@bg_color, 1.67), 0.9),
+        inset 0 -1px 0 0 alpha(shade(@bg_color, 1.67), 0.3),
         0 0 0 1px alpha(black, 0.15),
         0 3px 2px -1px alpha(black, 0.15),
         0 3px 5px alpha(black, 0.1);
@@ -572,5 +652,6 @@
     background-position: center center;
     background-repeat: repeat-y;
     background-size: 100% 1em;
+    color: @BLACK_300;
     font-size: 24px;
 }
