@@ -38,6 +38,11 @@ if get_option('libunity')
     add_project_arguments('--define=HAVE_UNITY', language: 'vala')
 endif
 
+if get_option('flatpak')
+    dependencies += dependency('flatpak')
+    add_project_arguments('--define=WITH_FLATPAK', language: 'vala')
+endif
+
 config_dir = join_paths(get_option('sysconfdir'), meson.project_name())
 conf_data = configuration_data()
 conf_data.set('PROJECT_NAME', meson.project_name())
