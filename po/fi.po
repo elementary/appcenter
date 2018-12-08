@@ -1,11 +1,12 @@
 # Veli-Pekka Samuli Finnilä <vpf@tuta.io>, 2018.
 # Jiri Grönroos <jiri.gronroos@iki.fi>, 2018.
+# Kimmo Vänttinen <kvanttinen72@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-05 14:29-0800\n"
-"PO-Revision-Date: 2018-11-15 00:07+0000\n"
+"PO-Revision-Date: 2018-12-08 00:04+0000\n"
 "Last-Translator: Veli-Pekka Samuli Finnilä <vpf@tuta.io>\n"
 "Language-Team: Finnish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/fi/>\n"
@@ -25,7 +26,7 @@ msgstr "Sovelluskeskus"
 #: src/Application.vala:106
 #, c-format
 msgid "Could not parse mimetype %s"
-msgstr "Ei voitu jäsentää MIME-tyyppiä %s"
+msgstr "MIME-tyyppiä %s ei voitu jäsentää"
 
 #: src/Application.vala:126
 #, c-format
@@ -296,6 +297,9 @@ msgid ""
 "disturbing. In general, elementary does not review or endorse the contents "
 "of this app."
 msgstr ""
+"%s saattaa sisältää vain aikuisille suunnattua, arkaluonteista tai "
+"häiritsevää sisältöä. elementary ei yleisesti ottaen käy läpi tai "
+"allekirjoita tämän sovelluksen sisältöä."
 
 #: src/Dialogs/ContentWarningDialog.vala:35
 msgid "Show content warnings"
@@ -639,9 +643,8 @@ msgid "Audio"
 msgstr "Ääni"
 
 #: src/Widgets/CategoryFlowBox.vala:31
-#, fuzzy
 msgid "Communication"
-msgstr "Koulutus"
+msgstr "Viestintä"
 
 #: src/Widgets/CategoryFlowBox.vala:40
 msgid "Development"
@@ -652,9 +655,8 @@ msgid "Education"
 msgstr "Koulutus"
 
 #: src/Widgets/CategoryFlowBox.vala:51
-#, fuzzy
 msgid "Finance"
-msgstr "Peru"
+msgstr "Talous"
 
 #: src/Widgets/CategoryFlowBox.vala:55
 msgid "Games"
@@ -674,7 +676,7 @@ msgstr "Matematiikka, tiede ja suunnittelu"
 
 #: src/Widgets/CategoryFlowBox.vala:103
 msgid "Media Production"
-msgstr ""
+msgstr "Mediatuotanto"
 
 #: src/Widgets/CategoryFlowBox.vala:110
 msgid "Office"
@@ -694,7 +696,7 @@ msgstr "Video"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
-msgstr ""
+msgstr "Maksuja vaaditaan. Niitä ei ole kytketty päälle"
 
 #: src/Widgets/HumbleButton.vala:106
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:301
