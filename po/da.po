@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-05 14:29-0800\n"
-"PO-Revision-Date: 2018-12-08 21:38+0000\n"
+"PO-Revision-Date: 2018-12-09 00:00+0000\n"
 "Last-Translator: Kaj Printz Madsen <kajprintz@gmail.com>\n"
 "Language-Team: Danish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/da/>\n"
@@ -200,11 +200,11 @@ msgstr "Venter på godkendelse"
 
 #: src/Core/ChangeInformation.vala:116
 msgid "Updating running applications"
-msgstr "Opdaterer kørende programmer"
+msgstr "Opdaterer kørende applikationer"
 
 #: src/Core/ChangeInformation.vala:118
 msgid "Checking applications in use"
-msgstr "Kontrollerer programmer som er i brug"
+msgstr "Kontrollerer applikationer i brug"
 
 #: src/Core/ChangeInformation.vala:120
 msgid "Checking libraries in use"
