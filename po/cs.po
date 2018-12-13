@@ -1,12 +1,13 @@
 # Jan Marek <janmarek28@gmail.com>, 2018.
 # Daniel Zvir <zvir.daniel@seznam.cz>, 2018.
+# Antonin Hablak <tondulin5@outlook.cz>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-05 14:29-0800\n"
 "PO-Revision-Date: 2018-12-13 14:11+0000\n"
-"Last-Translator: Daniel Zvir <zvir.daniel@seznam.cz>\n"
+"Last-Translator: Antonin Hablak <tondulin5@outlook.cz>\n"
 "Language-Team: Czech <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/cs/>\n"
 "Language: cs\n"
@@ -20,7 +21,7 @@ msgstr ""
 #. Add "AppCenter" to the translation catalog
 #: src/Application.vala:38
 msgid "AppCenter"
-msgstr "AppCentrum"
+msgstr "Centrum Aplikací"
 
 #: src/Application.vala:106
 #, c-format
