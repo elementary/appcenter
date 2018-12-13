@@ -1,13 +1,14 @@
 # Jan Marek <janmarek28@gmail.com>, 2018.
 # Daniel Zvir <zvir.daniel@seznam.cz>, 2018.
 # Antonin Hablak <tondulin5@outlook.cz>, 2018.
+# Lukáš Kucharczyk <kucharczyk.lukas@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-05 14:29-0800\n"
 "PO-Revision-Date: 2018-12-14 00:07+0000\n"
-"Last-Translator: Daniel Zvir <zvir.daniel@seznam.cz>\n"
+"Last-Translator: Lukáš Kucharczyk <kucharczyk.lukas@gmail.com>\n"
 "Language-Team: Czech <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/cs/>\n"
 "Language: cs\n"
@@ -285,7 +286,7 @@ msgstr "Pro dokončení aktualizací prosím restartujte váš systém"
 
 #: src/Dialogs/ContentWarningDialog.vala:27
 msgid "Content Warning"
-msgstr "Varování k obsahu"
+msgstr "Upozornění na citlivý obsah"
 
 #: src/Dialogs/ContentWarningDialog.vala:32
 #, c-format
@@ -299,13 +300,13 @@ msgid ""
 "disturbing. In general, elementary does not review or endorse the contents "
 "of this app."
 msgstr ""
-"%s může obsahovat věci vhodné pouze pro dospělé nebo témata pro některé lidi "
-"citlivé, či jinak rušivé. Obecně, elementary nekontroluje ani neschvaluje "
-"obsah této aplikace."
+"%s může zahrnovat obsah vhodný pouze pro dospělé nebo může být citlivý či "
+"pohoršující. Společnost elementary obecně tento obsah nezkoumá či "
+"nepodporuje."
 
 #: src/Dialogs/ContentWarningDialog.vala:35
 msgid "Show content warnings"
-msgstr "Zobrazovat varování o obsahu"
+msgstr "Zobrazit upozornění"
 
 #: src/Dialogs/ContentWarningDialog.vala:40
 msgid "Don’t Install"
