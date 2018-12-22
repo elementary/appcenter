@@ -123,22 +123,33 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         settings = new GLib.Settings ("io.elementary.appcenter.settings");
 
         int window_x, window_y;
-        var rect = Gtk.Allocation ();
-
+        int window_width, window_height;
         settings.get ("window-position", "(ii)", out window_x, out window_y);
-        settings.get ("window-size", "(ii)", out rect.width, out rect.height);
+        settings.get ("window-size", "(ii)", out window_width, out window_height);
+
+        set_size_request (910, 640);
 
         if (window_x != -1 ||  window_y != -1) {
             move (window_x, window_y);
         }
+
+        resize (window_width, window_height);
+
+        show.connect (() => {
+            configure_event.connect_after (on_configure_event);
+        });
+
+        hide.connect (() => {
+            configure_event.disconnect (on_configure_event);
+        });
 
         if (settings.get_boolean ("window-maximized")) {
             maximize ();
         }
 
         icon_name = "system-software-install";
-        set_allocation (rect);
-        set_size_request (910, 640);
+
+
         title = _(Build.APP_NAME);
         window_position = Gtk.WindowPosition.CENTER;
 
@@ -219,7 +230,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         homepage.page_loaded.connect (() => homepage_loaded ());
     }
 
-    public override bool configure_event (Gdk.EventConfigure event) {
+    public bool on_configure_event () {
         if (configure_id != 0) {
             GLib.Source.remove (configure_id);
         }
@@ -232,9 +243,9 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             } else {
                 settings.set_boolean ("window-maximized", false);
 
-                Gdk.Rectangle rect;
-                get_allocation (out rect);
-                settings.set ("window-size", "(ii)", rect.width, rect.height);
+                int width, height;
+                get_size (out width, out height);
+                settings.set ("window-size", "(ii)", width, height);
 
                 int root_x, root_y;
                 get_position (out root_x, out root_y);
@@ -244,7 +255,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             return GLib.Source.REMOVE;
         });
 
-        return base.configure_event (event);
+        return Gdk.EVENT_PROPAGATE;
     }
 
     public override bool delete_event (Gdk.EventAny event) {
@@ -313,7 +324,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             search_view.reset ();
             stack.visible_child = homepage;
         }
-        
+
         if (mimetype) {
             mimetype = false;
         }
