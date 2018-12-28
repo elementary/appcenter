@@ -1,13 +1,14 @@
 # Jörg Arnold <j.ar@mailbox.org>, 2018.
 # Julian Raschke <julian@raschke.de>, 2018.
 # Tucan Holmes <tucan.web.swiss@gmail.com>, 2018.
+# Pascal Matthiesen <pascal@false.one>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-05 14:29-0800\n"
-"PO-Revision-Date: 2018-11-16 22:12+0000\n"
-"Last-Translator: Tucan Holmes <tucan.web.swiss@gmail.com>\n"
+"PO-Revision-Date: 2018-12-29 00:00+0000\n"
+"Last-Translator: Pascal Matthiesen <pascal@false.one>\n"
 "Language-Team: German <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/de/>\n"
 "Language: de\n"
@@ -110,7 +111,7 @@ msgstr "Herunterladen"
 
 #: src/Core/ChangeInformation.vala:68
 msgid "Installing"
-msgstr "Installieren"
+msgstr "Wird Installiert"
 
 #: src/Core/ChangeInformation.vala:70
 msgid "Refreshing software list"
@@ -726,7 +727,7 @@ msgstr "Kostenlos"
 #: src/Widgets/HumbleButton.vala:108
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:303
 msgid "Install"
-msgstr "Installiert"
+msgstr "Installieren"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:142
