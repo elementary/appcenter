@@ -1,11 +1,11 @@
-# Piotr Strebski <strebski@gmail.com>, 2018.
+# Piotr Strebski <strebski@gmail.com>, 2018, 2019.
 # Kajetan Rosiak <roskaj@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
-"PO-Revision-Date: 2018-11-06 01:58+0000\n"
+"PO-Revision-Date: 2019-01-02 13:52+0000\n"
 "Last-Translator: Piotr Strebski <strebski@gmail.com>\n"
 "Language-Team: Polish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/pl/>\n"
@@ -716,7 +716,7 @@ msgstr "Wideo"
 
 #: src/Widgets/CategoryFlowBox.vala:125
 msgid "Writing & Language"
-msgstr ""
+msgstr "Pisanie i język"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
