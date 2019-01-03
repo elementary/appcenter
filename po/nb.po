@@ -1,11 +1,11 @@
 # Nils K <slx@nilsk.net>, 2018.
-# Allan Nordhøy <epost@anotheragency.no>, 2018.
+# Allan Nordhøy <epost@anotheragency.no>, 2018, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
-"PO-Revision-Date: 2018-12-04 00:10+0000\n"
+"PO-Revision-Date: 2019-01-04 00:07+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://weblate.elementary.io/projects/"
 "appcenter/appcenter/nb/>\n"
@@ -654,7 +654,7 @@ msgstr "Opplæring"
 #: src/Widgets/CategoryFlowBox.vala:49
 #, fuzzy
 msgid "Finance"
-msgstr "Avbryt"
+msgstr "Finans"
 
 #: src/Widgets/CategoryFlowBox.vala:53
 msgid "Games"
@@ -694,7 +694,7 @@ msgstr "Video"
 
 #: src/Widgets/CategoryFlowBox.vala:125
 msgid "Writing & Language"
-msgstr ""
+msgstr "Skriving og språk"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
