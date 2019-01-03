@@ -1,11 +1,11 @@
-# Rodrigo Oliveira <rod.oliveira@gmail.com>, 2018.
+# Rodrigo Oliveira <rod.oliveira@gmail.com>, 2018, 2019.
 # Deyvison Rocha <deyvison@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
-"PO-Revision-Date: 2018-11-08 03:12+0000\n"
+"PO-Revision-Date: 2019-01-03 14:55+0000\n"
 "Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://weblate.elementary.io/projects/"
 "appcenter/appcenter/pt_BR/>\n"
@@ -712,7 +712,7 @@ msgstr "Vídeo"
 
 #: src/Widgets/CategoryFlowBox.vala:125
 msgid "Writing & Language"
-msgstr ""
+msgstr "Escrita e Linguagem"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
