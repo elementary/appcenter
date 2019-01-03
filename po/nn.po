@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
-"PO-Revision-Date: 2019-01-03 17:49+0000\n"
+"PO-Revision-Date: 2019-01-03 17:55+0000\n"
 "Last-Translator: Simon Dagfinrud <semonje@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <https://weblate.elementary.io/projects/"
 "appcenter/appcenter/nn/>\n"
@@ -72,7 +72,7 @@ msgstr "Kople til internett for å installere eller oppdatere program."
 
 #: src/MainWindow.vala:199
 msgid "Network Settings…"
-msgstr "Nettverksinnstillingar..."
+msgstr "Nettverksinnstillingar…"
 
 #: src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -486,7 +486,7 @@ msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:606
 msgid "The balance or credit limit on the card has been reached."
-msgstr "Betalingsgrensa eller beløpsgrensa på kortet ditt er nådd. "
+msgstr "Betalingsgrensa eller beløpsgrensa på kortet ditt er nådd."
 
 #: src/Dialogs/StripeDialog.vala:609
 msgid "The given card is a test card. Please use a real card to proceed."
