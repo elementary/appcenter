@@ -1,12 +1,13 @@
 # Christophe Silva <Christophesilva80@gmail.com>, 2018.
 # Nuno Alexandre MS Ribeiro <nuno.anarresti@gmail.com>, 2018.
+# Hugo Carvalho <hugokarvalho@hotmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
-"PO-Revision-Date: 2018-11-06 16:54+0000\n"
-"Last-Translator: Nuno Alexandre MS Ribeiro <nuno.anarresti@gmail.com>\n"
+"PO-Revision-Date: 2019-01-04 02:00+0000\n"
+"Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/pt/>\n"
 "Language: pt\n"
@@ -712,7 +713,7 @@ msgstr "Vídeo"
 
 #: src/Widgets/CategoryFlowBox.vala:125
 msgid "Writing & Language"
-msgstr ""
+msgstr "Linguagem escrita"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
