@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
-"PO-Revision-Date: 2019-01-04 02:00+0000\n"
+"PO-Revision-Date: 2019-01-04 13:21+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/pt/>\n"
@@ -21,7 +21,7 @@ msgstr ""
 #. Add "AppCenter" to the translation catalog
 #: src/Application.vala:38
 msgid "AppCenter"
-msgstr "Loja de Aplicações"
+msgstr "Centro de Programas"
 
 #: src/Application.vala:106
 #, c-format
@@ -689,7 +689,7 @@ msgstr "Internet"
 
 #: src/Widgets/CategoryFlowBox.vala:82
 msgid "Math, Science, & Engineering"
-msgstr "Matemática, Ciência e Engenharia"
+msgstr "Matemática, Ciência, & Engenharia"
 
 #: src/Widgets/CategoryFlowBox.vala:101
 msgid "Media Production"
