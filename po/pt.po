@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
-"PO-Revision-Date: 2019-01-04 13:21+0000\n"
+"PO-Revision-Date: 2019-01-05 01:10+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/pt/>\n"
@@ -21,7 +21,7 @@ msgstr ""
 #. Add "AppCenter" to the translation catalog
 #: src/Application.vala:38
 msgid "AppCenter"
-msgstr "Centro de Programas"
+msgstr "Centro de Aplicações"
 
 #: src/Application.vala:106
 #, c-format
@@ -63,7 +63,7 @@ msgstr "Instalado"
 #: src/MainWindow.vala:177 src/MainWindow.vala:330 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:81
 msgid "Search Apps"
-msgstr "Procurar"
+msgstr "Procurar Aplicações"
 
 #: src/MainWindow.vala:195
 msgid "Network Is Not Available"
@@ -71,7 +71,7 @@ msgstr "Sem Ligação à Rede"
 
 #: src/MainWindow.vala:196
 msgid "Connect to the Internet to install or update apps."
-msgstr "Conecte-se à internet para instalar ou atualizar apps."
+msgstr "Conecte-se à internet para instalar ou atualizar aplicações."
 
 #: src/MainWindow.vala:199
 msgid "Network Settings…"
