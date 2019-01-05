@@ -1,11 +1,11 @@
-# Prachi Joshi <josprachi@yahoo.com>, 2018.
+# Prachi Joshi <josprachi@yahoo.com>, 2018, 2019.
 # उदयराज बाळ <udayrajb@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
-"PO-Revision-Date: 2018-11-10 18:39+0000\n"
+"PO-Revision-Date: 2019-01-05 18:10+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/mr/>\n"
@@ -686,7 +686,7 @@ msgstr "व्हिडिओ"
 
 #: src/Widgets/CategoryFlowBox.vala:125
 msgid "Writing & Language"
-msgstr ""
+msgstr "लेखन आणि भाषा"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
