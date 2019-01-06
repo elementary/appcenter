@@ -1,13 +1,13 @@
 # Veli-Pekka Samuli Finnilä <vpf@tuta.io>, 2018.
-# Jiri Grönroos <jiri.gronroos@iki.fi>, 2018.
+# Jiri Grönroos <jiri.gronroos@iki.fi>, 2018, 2019.
 # Kimmo Vänttinen <kvanttinen72@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
-"PO-Revision-Date: 2018-12-08 00:04+0000\n"
-"Last-Translator: Veli-Pekka Samuli Finnilä <vpf@tuta.io>\n"
+"PO-Revision-Date: 2019-01-06 16:21+0000\n"
+"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/fi/>\n"
 "Language: fi\n"
@@ -696,7 +696,7 @@ msgstr "Video"
 
 #: src/Widgets/CategoryFlowBox.vala:125
 msgid "Writing & Language"
-msgstr ""
+msgstr "Kirjoittaminen ja kieli"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
