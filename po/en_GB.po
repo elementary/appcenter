@@ -1,11 +1,11 @@
 # Ciaran Ainsworth <ciaranainsworth@outlook.com>, 2018.
-# Ciarán Ainsworth <ciaranainsworth@outlook.com>, 2018.
+# Ciarán Ainsworth <ciaranainsworth@outlook.com>, 2018, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
-"PO-Revision-Date: 2018-11-06 13:10+0000\n"
+"PO-Revision-Date: 2019-01-07 12:35+0000\n"
 "Last-Translator: Ciarán Ainsworth <ciaranainsworth@outlook.com>\n"
 "Language-Team: English (United Kingdom) <https://weblate.elementary.io/"
 "projects/appcenter/appcenter/en_GB/>\n"
@@ -698,7 +698,7 @@ msgstr "Video"
 
 #: src/Widgets/CategoryFlowBox.vala:125
 msgid "Writing & Language"
-msgstr ""
+msgstr "Writing & Language"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
