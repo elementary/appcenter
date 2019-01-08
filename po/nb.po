@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-05 14:29-0800\n"
-"PO-Revision-Date: 2018-11-05 20:48+0000\n"
-"Last-Translator: Nils K <slx@nilsk.net>\n"
+"PO-Revision-Date: 2018-12-04 00:10+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://weblate.elementary.io/projects/"
 "appcenter/appcenter/nb/>\n"
 "Language: nb\n"
@@ -557,7 +557,7 @@ msgstr "Lenke kopiert til utklippstavle"
 #: src/Views/AppInfoView.vala:338
 #, c-format
 msgid "Check out %s on AppCenter:"
-msgstr "Sjekk ut %s i AppCenter:"
+msgstr "Sjekk ut %s i AppSenter:"
 
 #: src/Views/AppInfoView.vala:345
 msgid "Share"

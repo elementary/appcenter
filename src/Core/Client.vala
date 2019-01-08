@@ -19,6 +19,7 @@ public class AppCenterCore.Client : Object {
     public signal void cache_update_failed (Error error);
     public signal void updates_available ();
     public signal void drivers_detected ();
+    public signal void pool_updated ();
 
     protected static Task client { public get; private set; }
     public static Task get_pk_client () {
@@ -79,6 +80,27 @@ public class AppCenterCore.Client : Object {
         // We don't want to show installed desktop files here
         appstream_pool.set_flags (appstream_pool.get_flags () & ~AppStream.PoolFlags.READ_DESKTOP_FILES);
 
+        reload_appstream_pool ();
+
+        var icon = new AppStream.Icon ();
+        icon.set_name ("distributor-logo");
+        icon.set_kind (AppStream.IconKind.STOCK);
+
+        var os_updates_component = new AppStream.Component ();
+        os_updates_component.id = AppCenterCore.Package.OS_UPDATES_ID;
+        os_updates_component.name = _("Operating System Updates");
+        os_updates_component.summary = _("Updates to system components");
+        os_updates_component.add_icon (icon);
+
+        os_updates = new AppCenterCore.Package (os_updates_component);
+
+        var control = new Pk.Control ();
+        control.updates_changed.connect (updates_changed_callback);
+    }
+
+    public void reload_appstream_pool () {
+        package_list.clear ();
+
         try {
             appstream_pool.load ();
         } catch (Error e) {
@@ -95,22 +117,9 @@ public class AppCenterCore.Client : Object {
                     package_list[pkg_name] = package;
                 }
             });
+
+            pool_updated ();
         }
-
-        var icon = new AppStream.Icon ();
-        icon.set_name ("distributor-logo");
-        icon.set_kind (AppStream.IconKind.STOCK);
-
-        var os_updates_component = new AppStream.Component ();
-        os_updates_component.id = AppCenterCore.Package.OS_UPDATES_ID;
-        os_updates_component.name = _("Operating System Updates");
-        os_updates_component.summary = _("Updates to system components");
-        os_updates_component.add_icon (icon);
-
-        os_updates = new AppCenterCore.Package (os_updates_component);
-
-        var control = new Pk.Control ();
-        control.updates_changed.connect (updates_changed_callback);
     }
 
     private void updates_changed_callback () {
@@ -626,6 +635,7 @@ public class AppCenterCore.Client : Object {
                 }
 
                 if (success) {
+                    reload_appstream_pool ();
                     refresh_updates.begin ();
                 }
             }

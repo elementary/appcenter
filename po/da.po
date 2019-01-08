@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-05 14:29-0800\n"
-"PO-Revision-Date: 2018-10-18 00:09+0000\n"
+"PO-Revision-Date: 2018-12-09 00:00+0000\n"
 "Last-Translator: Kaj Printz Madsen <kajprintz@gmail.com>\n"
 "Language-Team: Danish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/da/>\n"
@@ -200,11 +200,11 @@ msgstr "Venter på godkendelse"
 
 #: src/Core/ChangeInformation.vala:116
 msgid "Updating running applications"
-msgstr "Opdaterer kørende programmer"
+msgstr "Opdaterer kørende applikationer"
 
 #: src/Core/ChangeInformation.vala:118
 msgid "Checking applications in use"
-msgstr "Kontrollerer programmer som er i brug"
+msgstr "Kontrollerer applikationer i brug"
 
 #: src/Core/ChangeInformation.vala:120
 msgid "Checking libraries in use"
@@ -647,9 +647,8 @@ msgid "Audio"
 msgstr "Lyd"
 
 #: src/Widgets/CategoryFlowBox.vala:31
-#, fuzzy
 msgid "Communication"
-msgstr "Uddannelse"
+msgstr "Kommunikation"
 
 #: src/Widgets/CategoryFlowBox.vala:40
 msgid "Development"
@@ -660,9 +659,8 @@ msgid "Education"
 msgstr "Uddannelse"
 
 #: src/Widgets/CategoryFlowBox.vala:51
-#, fuzzy
 msgid "Finance"
-msgstr "Annuller"
+msgstr "Finans"
 
 #: src/Widgets/CategoryFlowBox.vala:55
 msgid "Games"
@@ -677,13 +675,12 @@ msgid "Internet"
 msgstr "Internet"
 
 #: src/Widgets/CategoryFlowBox.vala:84
-#, fuzzy
 msgid "Math, Science, & Engineering"
-msgstr "Videnskab & Ingeniørarbejde"
+msgstr "Matematik, Videnskab & Ingeniørvidenskab"
 
 #: src/Widgets/CategoryFlowBox.vala:103
 msgid "Media Production"
-msgstr ""
+msgstr "Medieproduktion"
 
 #: src/Widgets/CategoryFlowBox.vala:110
 msgid "Office"
