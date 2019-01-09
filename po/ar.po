@@ -1,10 +1,13 @@
+# Mohelm97 <mohelm97@gmail.com>, 2018.
+# yusuf .s <yusef.ali12@gmail.com>, 2018.
+# karim inabi <karim99tgt@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-05 14:29-0800\n"
-"PO-Revision-Date: 2017-09-11 20:46+0000\n"
-"Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
+"POT-Creation-Date: 2019-01-02 07:28-0600\n"
+"PO-Revision-Date: 2018-12-02 00:03+0000\n"
+"Last-Translator: Mohelm97 <mohelm97@gmail.com>\n"
 "Language-Team: Arabic <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/ar/>\n"
 "Language: ar\n"
@@ -13,50 +16,49 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 2.16\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:24+0000\n"
 
 #. Add "AppCenter" to the translation catalog
 #: src/Application.vala:38
 msgid "AppCenter"
-msgstr "مركز البرامج"
+msgstr "مركز التطبيقات"
 
 #: src/Application.vala:106
 #, c-format
 msgid "Could not parse mimetype %s"
-msgstr ""
+msgstr "لا يمكن معالجة النوع \"%s\""
 
 #: src/Application.vala:126
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr ""
+msgstr "الرابط المعطى '%s' غير موجود، إبحث عوضًا عن ذلك"
 
 #: src/Application.vala:260
 msgid "Application installed"
-msgstr "تم التثبيت"
+msgstr "تم تثبيت التطبيق"
 
 #: src/Application.vala:261
 #, c-format
 msgid "%s has been successfully installed"
-msgstr "%s تم التثبيت بنجاح!"
+msgstr "%s تم تثبيته بنجاح"
 
 #: src/Application.vala:273
-#, fuzzy, c-format
+#, c-format
 msgid "There Was An Error Installing %s."
-msgstr "خطأ في التثبيت %s"
+msgstr "خطأ في تثبيت %s."
 
-#: src/MainWindow.vala:149 src/Views/Homepage.vala:253
-#: src/Views/Homepage.vala:262 src/Views/Homepage.vala:267
-#: src/Views/Homepage.vala:278
+#: src/MainWindow.vala:149 src/Views/Homepage.vala:282
+#: src/Views/Homepage.vala:291 src/Views/Homepage.vala:296
+#: src/Views/Homepage.vala:307
 msgid "Home"
 msgstr "الرئيسية"
 
 #: src/MainWindow.vala:150 src/Views/InstalledView.vala:29
 #: src/Views/InstalledView.vala:53
-#, fuzzy
 msgctxt "view"
 msgid "Installed"
-msgstr "ثبّت"
+msgstr "مثبت"
 
 #: src/MainWindow.vala:177 src/MainWindow.vala:330 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:81
@@ -64,29 +66,28 @@ msgid "Search Apps"
 msgstr "البحث عن التطبيقات"
 
 #: src/MainWindow.vala:195
-#, fuzzy
 msgid "Network Is Not Available"
-msgstr "لقطات الشاشة غير متوفرة"
+msgstr "الشبكة غير متوفرة"
 
 #: src/MainWindow.vala:196
 msgid "Connect to the Internet to install or update apps."
-msgstr ""
+msgstr "إتصل بالإنترنت لتحميل أو تحديث التطبيقات."
 
 #: src/MainWindow.vala:199
 msgid "Network Settings…"
-msgstr ""
+msgstr "إعدادات الشبكة…"
 
 #: src/Core/ChangeInformation.vala:54
 msgid "Starting"
-msgstr "البدء"
+msgstr "يتم البدء"
 
 #: src/Core/ChangeInformation.vala:56
 msgid "Waiting"
-msgstr "تحميل"
+msgstr "إنتظار"
 
 #: src/Core/ChangeInformation.vala:58
 msgid "Running"
-msgstr "تشغيل"
+msgstr "مشغل"
 
 #: src/Core/ChangeInformation.vala:60
 msgid "Querying"
@@ -94,11 +95,11 @@ msgstr "استعلام"
 
 #: src/Core/ChangeInformation.vala:62
 msgid "Getting information"
-msgstr "الحصول على المعلومات"
+msgstr "نجلب البيانات"
 
 #: src/Core/ChangeInformation.vala:64
 msgid "Removing packages"
-msgstr "حذف الباكيج"
+msgstr "نحذف الباكيجز"
 
 #: src/Core/ChangeInformation.vala:66
 msgid "Downloading"
@@ -118,161 +119,169 @@ msgstr "تثبيت التحديثات"
 
 #: src/Core/ChangeInformation.vala:74
 msgid "Cleaning up packages"
-msgstr ""
+msgstr "ننظف الباكيجز"
 
 #: src/Core/ChangeInformation.vala:76
 msgid "Obsoleting packages"
-msgstr ""
+msgstr "إهمال الباكيجز"
 
 #: src/Core/ChangeInformation.vala:78
 msgid "Resolving dependencies"
-msgstr ""
+msgstr "حل التبعيات"
 
 #: src/Core/ChangeInformation.vala:80
 msgid "Checking signatures"
-msgstr ""
+msgstr "نفحص التواقيع"
 
 #: src/Core/ChangeInformation.vala:82
 msgid "Testing changes"
-msgstr ""
+msgstr "نختبر التغيرات"
 
 #: src/Core/ChangeInformation.vala:84
 msgid "Committing changes"
-msgstr ""
+msgstr "نعتمد التغيرات"
 
 #: src/Core/ChangeInformation.vala:86
 msgid "Requesting data"
-msgstr ""
+msgstr "نطلب المعلومات"
 
 #: src/Core/ChangeInformation.vala:88
 msgid "Finished"
-msgstr ""
+msgstr "إنتهى"
 
 #: src/Core/ChangeInformation.vala:90
 msgid "Cancelling"
-msgstr ""
+msgstr "إلغاء"
 
 #: src/Core/ChangeInformation.vala:92
 msgid "Downloading repository information"
-msgstr ""
+msgstr "نحمل معلومات المخزن"
 
 #: src/Core/ChangeInformation.vala:94
 msgid "Downloading list of packages"
-msgstr ""
+msgstr "تحميل قائمة الباكيجز"
 
 #: src/Core/ChangeInformation.vala:96
 msgid "Downloading file lists"
-msgstr ""
+msgstr "ننزل قائمة الملفات"
 
 #: src/Core/ChangeInformation.vala:98
 msgid "Downloading lists of changes"
-msgstr ""
+msgstr "نحمل قائمة التغيرات"
 
 #: src/Core/ChangeInformation.vala:100
 msgid "Downloading groups"
-msgstr ""
+msgstr "نحمل المجموعات"
 
 #: src/Core/ChangeInformation.vala:102
 msgid "Downloading update information"
-msgstr ""
+msgstr "نحمل معلومات التحديث"
 
 #: src/Core/ChangeInformation.vala:104
 msgid "Repackaging files"
-msgstr ""
+msgstr "إعادة جمع الملفات"
 
 #: src/Core/ChangeInformation.vala:106
 msgid "Loading cache"
-msgstr ""
+msgstr "نحمل الملفات المؤقتة"
 
 #: src/Core/ChangeInformation.vala:108
 msgid "Scanning applications"
-msgstr ""
+msgstr "نفحص التطبيقات"
 
 #: src/Core/ChangeInformation.vala:110
 msgid "Generating package lists"
-msgstr ""
+msgstr "نولد قوائم الباكيج"
 
 #: src/Core/ChangeInformation.vala:112
 msgid "Waiting for package manager lock"
-msgstr ""
+msgstr "ننتظر قفل مدير الباكيج"
 
 #: src/Core/ChangeInformation.vala:114
 msgid "Waiting for authentication"
-msgstr ""
+msgstr "ننتظر المصادقة"
 
 #: src/Core/ChangeInformation.vala:116
 msgid "Updating running applications"
-msgstr ""
+msgstr "نحدث التطبيقات الفعالة"
 
 #: src/Core/ChangeInformation.vala:118
 msgid "Checking applications in use"
-msgstr ""
+msgstr "نفحص التطبيقات المستخدمة"
 
 #: src/Core/ChangeInformation.vala:120
 msgid "Checking libraries in use"
-msgstr ""
+msgstr "نفحص المكتبات المسخدمة"
 
 #: src/Core/ChangeInformation.vala:122
 msgid "Copying files"
-msgstr ""
+msgstr "ننسخ الملفات"
 
 #: src/Core/ChangeInformation.vala:124
 msgid "Unknown state"
-msgstr ""
+msgstr "حالة غير معلومة"
 
-#: src/Core/Client.vala:106
+#: src/Core/Client.vala:91
 msgid "Operating System Updates"
 msgstr "تحديثات نظام التشغيل"
 
-#: src/Core/Client.vala:107
+#: src/Core/Client.vala:92
 msgid "Updates to system components"
 msgstr "تحديثات اجزاء النظام"
 
-#: src/Core/Client.vala:142
+#: src/Core/Client.vala:151
 #, c-format
 msgid "%s (local)"
-msgstr ""
+msgstr "%s (محلي)"
 
-#: src/Core/Client.vala:467
+#: src/Core/Client.vala:476
 msgid "Update Available"
 msgid_plural "Updates Available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "لا يتوفر تحديثات"
+msgstr[1] "يتوفر تحديث"
+msgstr[2] "يتوفر تحيدثان"
+msgstr[3] "يتوفر بعض التحديثات"
+msgstr[4] "يتوفر  تحديثات"
+msgstr[5] "يتوفر  تحديثات"
 
-#: src/Core/Client.vala:468
+#: src/Core/Client.vala:477
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
-msgstr[0] ""
-msgstr[1] ""
-
-#: src/Core/Client.vala:496
-#, c-format
-msgid "Version: %s"
-msgstr ""
+msgstr[0] "لا يوجد تحديث لنظامك"
+msgstr[1] "يوجد تحديث واحد لنظامك"
+msgstr[2] "يوجد تحديثان لنظامك"
+msgstr[3] "يوجد %u تحديثات لنظامك"
+msgstr[4] "يوجد %u تحديث لنظامك"
+msgstr[5] "يوجد %u تحديث لنظامك"
 
 #: src/Core/Client.vala:505
-msgid "No components with updates"
-msgstr ""
+#, c-format
+msgid "Version: %s"
+msgstr "نسخة : %s"
 
-#: src/Core/Client.vala:509
+#: src/Core/Client.vala:514
+msgid "No components with updates"
+msgstr "لا يوجد عناصر تحتاج تحديث"
+
+#: src/Core/Client.vala:518
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "لا يوجد تحديث للعناصر"
+msgstr[1] "عنصر يحتاج للتحديث"
+msgstr[2] "عنصران يحتاجان للتحديث"
+msgstr[3] "%u عناصر تحتاج للتحديث"
+msgstr[4] "%u عنصر يحتاج للتحديث"
+msgstr[5] "%u عنصر يحتاج للتحديث"
 
-#: src/Core/Client.vala:511
+#: src/Core/Client.vala:520
 #, c-format
 msgid "%s:"
-msgstr ""
+msgstr "%s:"
 
 #: src/Core/Package.vala:235
-#, fuzzy, c-format
+#, c-format
 msgid "%s Developers"
 msgstr "المطور %s"
 
@@ -286,12 +295,12 @@ msgstr "الرجاء اعادة التشغيل لكي يتم التثبيت"
 
 #: src/Dialogs/ContentWarningDialog.vala:27
 msgid "Content Warning"
-msgstr ""
+msgstr "تحذير المحتوى"
 
 #: src/Dialogs/ContentWarningDialog.vala:32
 #, c-format
 msgid "%s Contains Explicit Content"
-msgstr ""
+msgstr "%s يحتوي على محتوى جريء"
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 #, c-format
@@ -300,19 +309,20 @@ msgid ""
 "disturbing. In general, elementary does not review or endorse the contents "
 "of this app."
 msgstr ""
+"%s يمكن أن يحتوي على محتوى مناسب للبالغين أو محتوى مخيف أو مزع. بشكل عام، "
+"إليمنتري لما يراجع أو يضمن محتوى هذا التطبيق."
 
 #: src/Dialogs/ContentWarningDialog.vala:35
 msgid "Show content warnings"
-msgstr ""
+msgstr "أظهر تحذيرات المحتوى"
 
 #: src/Dialogs/ContentWarningDialog.vala:40
 msgid "Don’t Install"
-msgstr ""
+msgstr "لا تثبت"
 
 #: src/Dialogs/ContentWarningDialog.vala:41
-#, fuzzy
 msgid "Install Anyway"
-msgstr "جاري التثبيت"
+msgstr "ثبت على أي حال"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -336,7 +346,7 @@ msgstr "إنهاء"
 msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
-msgstr ""
+msgstr "حصل خطأ في معالجة هذه البطاقة. حاول مرة أخرى. نعذر عن هذا الخطأ."
 
 #: src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
@@ -344,44 +354,45 @@ msgstr "الرجاء التأكد من معلومات الدفع والمحاو�
 
 #: src/Dialogs/StripeDialog.vala:76
 msgid "Payment"
-msgstr ""
+msgstr "الدفع"
 
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
 msgid "Pay $%d for %s"
-msgstr ""
+msgstr "إدفع $%d لـ %s"
 
 #: src/Dialogs/StripeDialog.vala:96
 msgid ""
 "This is a one time payment. Your email address is only used to send you a "
 "receipt."
-msgstr ""
+msgstr "هذه دفعة لمرة واحد. سوف يستخدم بريدك الإلكتروني لإرسال الفاتورة فقط."
 
 #: src/Dialogs/StripeDialog.vala:106 src/Widgets/SharePopover.vala:35
 msgid "Email"
-msgstr ""
+msgstr "البريد"
 
 #: src/Dialogs/StripeDialog.vala:108
 msgid ""
 "Your email address is only used to send a receipt. You will not be "
 "subscribed to any mailing list."
 msgstr ""
+"عنوان بريند سوف يستخدم فقط لإرسال الفاتورة. لن يتم إضافتك لأي قائمة بريدية."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127
 msgid "MM / YY"
-msgstr ""
+msgstr "MM / YY"
 
 #: src/Dialogs/StripeDialog.vala:147
 msgid "CVC"
-msgstr ""
+msgstr "CVC"
 
 #: src/Dialogs/StripeDialog.vala:189
 msgid "Privacy Policy"
-msgstr ""
+msgstr "سياسة الخصوصية"
 
 #: src/Dialogs/StripeDialog.vala:200 src/Dialogs/StripeDialog.vala:314
-#, fuzzy, c-format
+#, c-format
 msgid "Pay $%d.00"
 msgstr "ادفع $%d.00"
 
@@ -404,106 +415,113 @@ msgstr "إعادة"
 #: src/Dialogs/StripeDialog.vala:513 src/Dialogs/StripeDialog.vala:578
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
-msgstr ""
+msgstr "رقم البطاقة خاطئ. من فضلك حاول مرة أخرى بإستخدم الرقم الصحيح."
 
 #: src/Dialogs/StripeDialog.vala:515
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"شهر الإنتهاء غير صحيح. من فضلك حاول مرة أخرى باستخدام تاريخ الإنتهاء الصحيح."
 
 #: src/Dialogs/StripeDialog.vala:517 src/Dialogs/StripeDialog.vala:575
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"سنة الإنتهاء غير صحيحة. من فضلك حاول مرة أخرى باستخدام تاريخ الإنتهاء الصحيح."
 
 #: src/Dialogs/StripeDialog.vala:520 src/Dialogs/StripeDialog.vala:573
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr ""
+msgstr "رقم الـ CVC غير صحيح. من فضلك حاول مرة أخرى بإستخدام الرقم الصحيح."
 
 #: src/Dialogs/StripeDialog.vala:522 src/Dialogs/StripeDialog.vala:564
 msgid "The card has expired. Please try again with a different card."
-msgstr ""
+msgstr "البطاقة منتهية الصلاحية. من فضلك حاول مرة أخرى ببطاقة مختلفة."
 
 #: src/Dialogs/StripeDialog.vala:542
 msgid "There are too many payment requests at the moment, please retry later."
-msgstr ""
+msgstr "يوجد العديد من طلبات الدفع حاليًا, من فضلك حاول في وقت آخر."
 
 #: src/Dialogs/StripeDialog.vala:558
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
 msgstr ""
+"هذه البطاقة لا تدعم هذا النوع من العمليات. من فضلك حاول بإستخدام بطاقة أخرى."
 
 #: src/Dialogs/StripeDialog.vala:560
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
 msgstr ""
+"هذه العملة غير مدعومة على هذه البطاقة. من فضلك حاول بإستخدام بطاقة أخرى."
 
 #: src/Dialogs/StripeDialog.vala:562
 msgid "The transaction has already been processed."
-msgstr ""
+msgstr "تم معاجلة العملية سابقًا."
 
 #: src/Dialogs/StripeDialog.vala:566
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "postal code."
-msgstr ""
+msgstr "العنوان غير صحيح. من فضلك حاول مرة أخرى بإستخدام العنوان الصحيح."
 
 #: src/Dialogs/StripeDialog.vala:568
 msgid "You don't have enough funds. Please use an alternative payment method."
-msgstr ""
+msgstr "لا تملك المال الكافي. من فضلك حاول بإستخدام طريقة دفع أخرى."
 
 #: src/Dialogs/StripeDialog.vala:570
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr ""
+msgstr "المبلغ غير صحيح. من فضلك حاول بإستخدام مبلغ صحيح."
 
 #: src/Dialogs/StripeDialog.vala:581
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr ""
+msgstr "رقم الـ PIN غير صحيح. من فضلك حاول بإستخدام رقم صحيح."
 
 #: src/Dialogs/StripeDialog.vala:583
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
-msgstr ""
+msgstr "تم محاولة وضع الـ PIN اكثر من مرة. من فضلك حاول بإستخدام بطاقة أخرى."
 
 #: src/Dialogs/StripeDialog.vala:603
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
 msgstr ""
+"لم نتمكن من إتمام العملية. من فضلك قم بالتواصل مع بنك لتحصل على معلومات أكثر."
 
 #: src/Dialogs/StripeDialog.vala:606
 msgid "The balance or credit limit on the card has been reached."
-msgstr ""
+msgstr "الرصيد او الحد على البطاقة وصل إليه."
 
 #: src/Dialogs/StripeDialog.vala:609
 msgid "The given card is a test card. Please use a real card to proceed."
-msgstr ""
+msgstr "البطاقة المودة هيا بطاقة تجريب. من فضلك حاول بإستخدام بطاقة حقيقية."
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
-msgstr ""
+msgstr "فشل في جلب التحديثات"
 
 #: src/Dialogs/UpdateFailDialog.vala:26
 msgid ""
 "This may have been caused by external, manually added software repositories "
 "or a corrupted sources file."
 msgstr ""
+"يمكن أن يحدث هذا بسبب إضافة مصادر تطبيقات خارجية، بشكل يدوي، أو من ملف مصادر "
+"معطوب."
 
 #: src/Dialogs/UpdateFailDialog.vala:46
 msgid "Details"
-msgstr ""
+msgstr "التفاصيل"
 
 #: src/Dialogs/UpdateFailDialog.vala:54
 msgid "Ignore"
-msgstr ""
+msgstr "تجاهل"
 
 #: src/Dialogs/UpdateFailDialog.vala:55
 msgid "Try Again"
-msgstr ""
+msgstr "حاول مرة أخرى"
 
 #: src/Views/AppInfoView.vala:76
 msgid "Screenshot Not Available"
@@ -527,7 +545,7 @@ msgstr "مساعدة"
 
 #: src/Views/AppInfoView.vala:180
 msgid "What's New:"
-msgstr ""
+msgstr "ما الجديد:"
 
 #: src/Views/AppInfoView.vala:199
 msgid "Extensions:"
@@ -536,28 +554,28 @@ msgstr "الإضافات:"
 #: src/Views/AppInfoView.vala:293
 #, c-format
 msgid "Other Apps by %s"
-msgstr ""
+msgstr "تطبيقات أخرى من %s"
 
 #: src/Views/AppInfoView.vala:327
 msgid "Link copied to clipboard"
-msgstr ""
+msgstr "تم نسخ الرابط للحافظة"
 
 #: src/Views/AppInfoView.vala:338
 #, c-format
 msgid "Check out %s on AppCenter:"
-msgstr ""
+msgstr "أنظر إلى %s في مركز التطبيقات:"
 
 #: src/Views/AppInfoView.vala:345
 msgid "Share"
-msgstr ""
+msgstr "شارك"
 
 #: src/Views/AppInfoView.vala:650
 msgid "Fund"
-msgstr ""
+msgstr "دعم"
 
 #: src/Views/AppInfoView.vala:672
 msgid "Fund the development of this app"
-msgstr ""
+msgstr "إدعم تطوير هذا التطبيق"
 
 #: src/Views/AppListUpdateView.vala:56
 msgid "A restart is required to complete the installation of updates"
@@ -574,21 +592,21 @@ msgstr "تحديث الكل"
 
 #: src/Views/AppListView.vala:128
 msgid "Non-Curated Apps"
-msgstr ""
+msgstr "تطبيقات غير مختارة"
 
 #: src/Views/Homepage.vala:66
 msgid "Recently Updated"
-msgstr ""
+msgstr "محديثة جديدًا"
 
 #: src/Views/Homepage.vala:82
 msgid "Trending"
-msgstr ""
+msgstr "الشائع"
 
 #: src/Views/Homepage.vala:98
 msgid "Categories"
 msgstr "التصنيفات"
 
-#: src/Views/Homepage.vala:267 src/Views/Homepage.vala:278
+#: src/Views/Homepage.vala:296 src/Views/Homepage.vala:307
 #, c-format
 msgid "Search %s"
 msgstr "بحث %s"
@@ -617,74 +635,75 @@ msgstr "احصل على التطبيقات التي تريديها بالسعر 
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
-msgstr ""
+msgstr "رقم البطاقة"
 
-#: src/Widgets/CategoryFlowBox.vala:29
+#: src/Widgets/CategoryFlowBox.vala:27
 msgid "Accessories"
 msgstr "ادوات"
 
-#: src/Widgets/CategoryFlowBox.vala:30
+#: src/Widgets/CategoryFlowBox.vala:28
 msgid "Audio"
 msgstr "الصوت"
 
-#: src/Widgets/CategoryFlowBox.vala:31
-#, fuzzy
+#: src/Widgets/CategoryFlowBox.vala:29
 msgid "Communication"
-msgstr "التعليم"
+msgstr "التواصل"
 
-#: src/Widgets/CategoryFlowBox.vala:40
+#: src/Widgets/CategoryFlowBox.vala:38
 msgid "Development"
 msgstr "التطوير"
 
-#: src/Widgets/CategoryFlowBox.vala:50
+#: src/Widgets/CategoryFlowBox.vala:48
 msgid "Education"
 msgstr "التعليم"
 
-#: src/Widgets/CategoryFlowBox.vala:51
-#, fuzzy
+#: src/Widgets/CategoryFlowBox.vala:49
 msgid "Finance"
-msgstr "إنهاء"
+msgstr "التمويل"
 
-#: src/Widgets/CategoryFlowBox.vala:55
+#: src/Widgets/CategoryFlowBox.vala:53
 msgid "Games"
 msgstr "الالعاب"
 
-#: src/Widgets/CategoryFlowBox.vala:71
+#: src/Widgets/CategoryFlowBox.vala:69
 msgid "Graphics"
 msgstr "الرسوميات"
 
-#: src/Widgets/CategoryFlowBox.vala:80
+#: src/Widgets/CategoryFlowBox.vala:78
 msgid "Internet"
 msgstr "الإنترنت"
 
-#: src/Widgets/CategoryFlowBox.vala:84
-#, fuzzy
+#: src/Widgets/CategoryFlowBox.vala:82
 msgid "Math, Science, & Engineering"
-msgstr "العلم و الهندسة"
+msgstr "الرياضيات والعلوم والهندسة"
 
-#: src/Widgets/CategoryFlowBox.vala:103
+#: src/Widgets/CategoryFlowBox.vala:101
 msgid "Media Production"
-msgstr ""
+msgstr "إنتاج الوسائط"
 
-#: src/Widgets/CategoryFlowBox.vala:110
+#: src/Widgets/CategoryFlowBox.vala:108
 msgid "Office"
 msgstr "تطبيقات المكتب والانتاجية"
 
-#: src/Widgets/CategoryFlowBox.vala:117
+#: src/Widgets/CategoryFlowBox.vala:115
 msgid "System"
 msgstr "النظام"
 
-#: src/Widgets/CategoryFlowBox.vala:121
+#: src/Widgets/CategoryFlowBox.vala:119
 msgid "Universal Access"
-msgstr ""
+msgstr "الوصول للجميع"
 
-#: src/Widgets/CategoryFlowBox.vala:122
+#: src/Widgets/CategoryFlowBox.vala:120
 msgid "Video"
 msgstr "فديو"
 
+#: src/Widgets/CategoryFlowBox.vala:125
+msgid "Writing & Language"
+msgstr ""
+
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
-msgstr ""
+msgstr "تحتاج لطريقة دفع, وهي غير مفعلة"
 
 #: src/Widgets/HumbleButton.vala:106
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:301
@@ -693,15 +712,14 @@ msgstr "مجاني"
 
 #: src/Widgets/HumbleButton.vala:108
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:303
-#, fuzzy
 msgid "Install"
-msgstr "ثبّت"
+msgstr "تثبيت"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:142
-#, fuzzy, c-format
+#, c-format
 msgid "$%d.00"
-msgstr "دولار"
+msgstr "$%d.00"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:145
@@ -712,54 +730,54 @@ msgstr "دولار$%d"
 #: src/Widgets/ReleaseRow.vala:67
 #, c-format
 msgid "<b>%s</b> – %s"
-msgstr ""
+msgstr "<b>%s</b> – %s"
 
 #: src/Widgets/ReleaseRow.vala:74
 msgid "Unknown version"
-msgstr ""
+msgstr "نسخة غير معروفة"
 
 #: src/Widgets/ReleaseRow.vala:90 src/Widgets/ReleaseRow.vala:93
 msgid "No description available"
-msgstr ""
+msgstr "لا يوجد وصف"
 
 #: src/Widgets/SharePopover.vala:39
 msgid "Facebook"
-msgstr ""
+msgstr "فيسبوك"
 
 #: src/Widgets/SharePopover.vala:43
 msgid "Google+"
-msgstr ""
+msgstr "جوجل بلس"
 
 #: src/Widgets/SharePopover.vala:47
 msgid "Twitter"
-msgstr ""
+msgstr "تويتر"
 
 #: src/Widgets/SharePopover.vala:51
 msgid "Reddit"
-msgstr ""
+msgstr "ريديت"
 
 #: src/Widgets/SharePopover.vala:55
 msgid "Tumblr"
-msgstr ""
+msgstr "تمبلر"
 
 #: src/Widgets/SharePopover.vala:59
 msgid "Telegram"
-msgstr ""
+msgstr "تليجرام"
 
 #: src/Widgets/SharePopover.vala:63
 msgid "Copy link"
-msgstr ""
+msgstr "نسخ الرابط"
 
 #: src/Widgets/UpdateHeaderRow.vala:68
-#, fuzzy, c-format
+#, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
-msgstr[0] "يتوفر تحديث %u"
-msgstr[1] "يتوفر تحديثات جديدة %u"
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "لا يتوفر تحديات"
+msgstr[1] "يتوفر تحديث"
+msgstr[2] "يتوفر تحديثان"
+msgstr[3] "يتوفر %u تحديثات"
+msgstr[4] "يتوفر %u تحديث"
+msgstr[5] "يتوفر %u تحديث"
 
 #: src/Widgets/UpdateHeaderRow.vala:69
 #, c-format
@@ -776,7 +794,7 @@ msgstr "تم تثبيت آخر التحديثات"
 
 #: src/Widgets/UpdateHeaderRow.vala:120
 msgid "Drivers"
-msgstr ""
+msgstr "التعريفات"
 
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:168
 msgid "Uninstall"

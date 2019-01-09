@@ -1,12 +1,16 @@
 # Corentin Noël <corentin@elementary.io>, 2018.
 # lolo <phantom.re@outlook.com>, 2018.
+# Eliott Lavier <eliott.lavier@gmail.com>, 2018.
+# David Marcel BAUM <david.baum@tuta.io>, 2018.
+# Lucas Ruffieux <lucasruffieux@gmail.com>, 2018.
+# Nathan <bonnemainsnathan@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-05 14:29-0800\n"
-"PO-Revision-Date: 2018-10-16 00:08+0000\n"
-"Last-Translator: Corentin Noël <corentin@elementary.io>\n"
+"POT-Creation-Date: 2019-01-02 07:28-0600\n"
+"PO-Revision-Date: 2018-11-17 00:01+0000\n"
+"Last-Translator: Eliott Lavier <eliott.lavier@gmail.com>\n"
 "Language-Team: French <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/fr/>\n"
 "Language: fr\n"
@@ -46,9 +50,9 @@ msgstr "L’application %s a été installée avec succès"
 msgid "There Was An Error Installing %s."
 msgstr "Il y a eu une erreur lors de l’installation de l’application %s."
 
-#: src/MainWindow.vala:149 src/Views/Homepage.vala:253
-#: src/Views/Homepage.vala:262 src/Views/Homepage.vala:267
-#: src/Views/Homepage.vala:278
+#: src/MainWindow.vala:149 src/Views/Homepage.vala:282
+#: src/Views/Homepage.vala:291 src/Views/Homepage.vala:296
+#: src/Views/Homepage.vala:307
 msgid "Home"
 msgstr "Accueil"
 
@@ -65,7 +69,7 @@ msgstr "Rechercher des applications"
 
 #: src/MainWindow.vala:195
 msgid "Network Is Not Available"
-msgstr "Capture d’écran indisponible"
+msgstr "Pas de connexion réseau"
 
 #: src/MainWindow.vala:196
 msgid "Connect to the Internet to install or update apps."
@@ -106,7 +110,7 @@ msgstr "Téléchargement"
 
 #: src/Core/ChangeInformation.vala:68
 msgid "Installing"
-msgstr "En cours d’installation"
+msgstr "Installation"
 
 #: src/Core/ChangeInformation.vala:70
 msgid "Refreshing software list"
@@ -220,49 +224,49 @@ msgstr "Copie des fichiers"
 msgid "Unknown state"
 msgstr "État inconnu"
 
-#: src/Core/Client.vala:106
+#: src/Core/Client.vala:91
 msgid "Operating System Updates"
 msgstr "Mises à jour du système d’exploitation"
 
-#: src/Core/Client.vala:107
+#: src/Core/Client.vala:92
 msgid "Updates to system components"
 msgstr "Mise à jour des composants système"
 
-#: src/Core/Client.vala:142
+#: src/Core/Client.vala:151
 #, c-format
 msgid "%s (local)"
 msgstr "%s (local)"
 
-#: src/Core/Client.vala:467
+#: src/Core/Client.vala:476
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Mise à jour disponible"
 msgstr[1] "Mises à jour disponibles"
 
-#: src/Core/Client.vala:468
+#: src/Core/Client.vala:477
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "%u mise à jour est disponible pour votre système"
 msgstr[1] "%u mises à jour sont disponibles pour votre système"
 
-#: src/Core/Client.vala:496
+#: src/Core/Client.vala:505
 #, c-format
 msgid "Version: %s"
 msgstr "Version : %s"
 
-#: src/Core/Client.vala:505
+#: src/Core/Client.vala:514
 msgid "No components with updates"
 msgstr "Aucune mise à jour disponible"
 
-#: src/Core/Client.vala:509
+#: src/Core/Client.vala:518
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "%u composant avec mises à jour"
 msgstr[1] "%u composants avec mises à jour"
 
-#: src/Core/Client.vala:511
+#: src/Core/Client.vala:520
 #, c-format
 msgid "%s:"
 msgstr "%s :"
@@ -270,7 +274,7 @@ msgstr "%s :"
 #: src/Core/Package.vala:235
 #, c-format
 msgid "%s Developers"
-msgstr "Les programmeurs de %s"
+msgstr "Les développeurs de %s"
 
 #: src/Core/UpdateManager.vala:81
 msgid "Restart Required"
@@ -282,12 +286,12 @@ msgstr "Veuillez redémarrer votre système pour terminer les mises à jour"
 
 #: src/Dialogs/ContentWarningDialog.vala:27
 msgid "Content Warning"
-msgstr ""
+msgstr "Avertissement sur le contenu"
 
 #: src/Dialogs/ContentWarningDialog.vala:32
 #, c-format
 msgid "%s Contains Explicit Content"
-msgstr ""
+msgstr "%s contient du contenu explicite"
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 #, c-format
@@ -296,10 +300,13 @@ msgid ""
 "disturbing. In general, elementary does not review or endorse the contents "
 "of this app."
 msgstr ""
+"%s pourrait contenir du contenu pour adultes ou pouvant être offensant ou "
+"choquant. Plus généralement, elementary ne vérifie pas, ni promeut le "
+"contenu de ce programme."
 
 #: src/Dialogs/ContentWarningDialog.vala:35
 msgid "Show content warnings"
-msgstr ""
+msgstr "Afficher les avertissements de contenu"
 
 #: src/Dialogs/ContentWarningDialog.vala:40
 msgid "Don’t Install"
@@ -315,7 +322,7 @@ msgstr "Voulez-vous vraiment redémarrer ?"
 
 #: src/Dialogs/RestartDialog.vala:41
 msgid "This will close all open applications and restart this device."
-msgstr "Ceci fermera toutes les applications et éteindra cet appareil."
+msgstr "Ceci fermera toutes les applications et redémarrera cet appareil."
 
 #: src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
@@ -617,7 +624,7 @@ msgstr "À l'affiche"
 msgid "Categories"
 msgstr "Catégories"
 
-#: src/Views/Homepage.vala:267 src/Views/Homepage.vala:278
+#: src/Views/Homepage.vala:296 src/Views/Homepage.vala:307
 #, c-format
 msgid "Search %s"
 msgstr "Rechercher %s"
@@ -650,72 +657,73 @@ msgstr "Obtenez des applications selon vos besoins, payez selon vos moyens."
 msgid "Card Number"
 msgstr "Numéro de carte"
 
-#: src/Widgets/CategoryFlowBox.vala:29
+#: src/Widgets/CategoryFlowBox.vala:27
 msgid "Accessories"
 msgstr "Accessoires"
 
-#: src/Widgets/CategoryFlowBox.vala:30
+#: src/Widgets/CategoryFlowBox.vala:28
 msgid "Audio"
 msgstr "Audio"
 
-#: src/Widgets/CategoryFlowBox.vala:31
-#, fuzzy
+#: src/Widgets/CategoryFlowBox.vala:29
 msgid "Communication"
-msgstr "Éducation"
+msgstr "Communication"
 
-#: src/Widgets/CategoryFlowBox.vala:40
+#: src/Widgets/CategoryFlowBox.vala:38
 msgid "Development"
-msgstr "Programmation"
+msgstr "Développement"
 
-#: src/Widgets/CategoryFlowBox.vala:50
+#: src/Widgets/CategoryFlowBox.vala:48
 msgid "Education"
 msgstr "Éducation"
 
-#: src/Widgets/CategoryFlowBox.vala:51
-#, fuzzy
+#: src/Widgets/CategoryFlowBox.vala:49
 msgid "Finance"
-msgstr "Annuler"
+msgstr "Finance"
 
-#: src/Widgets/CategoryFlowBox.vala:55
+#: src/Widgets/CategoryFlowBox.vala:53
 msgid "Games"
 msgstr "Jeux"
 
-#: src/Widgets/CategoryFlowBox.vala:71
+#: src/Widgets/CategoryFlowBox.vala:69
 msgid "Graphics"
 msgstr "Infographie"
 
-#: src/Widgets/CategoryFlowBox.vala:80
+#: src/Widgets/CategoryFlowBox.vala:78
 msgid "Internet"
 msgstr "Internet"
 
-#: src/Widgets/CategoryFlowBox.vala:84
-#, fuzzy
+#: src/Widgets/CategoryFlowBox.vala:82
 msgid "Math, Science, & Engineering"
-msgstr "Sciences et ingénierie"
+msgstr "Maths, sciences et ingénierie"
 
-#: src/Widgets/CategoryFlowBox.vala:103
+#: src/Widgets/CategoryFlowBox.vala:101
 msgid "Media Production"
-msgstr ""
+msgstr "Production de médias"
 
-#: src/Widgets/CategoryFlowBox.vala:110
+#: src/Widgets/CategoryFlowBox.vala:108
 msgid "Office"
 msgstr "Bureautique"
 
-#: src/Widgets/CategoryFlowBox.vala:117
+#: src/Widgets/CategoryFlowBox.vala:115
 msgid "System"
 msgstr "Système"
 
-#: src/Widgets/CategoryFlowBox.vala:121
+#: src/Widgets/CategoryFlowBox.vala:119
 msgid "Universal Access"
 msgstr "Accès universel"
 
-#: src/Widgets/CategoryFlowBox.vala:122
+#: src/Widgets/CategoryFlowBox.vala:120
 msgid "Video"
 msgstr "Vidéo"
 
+#: src/Widgets/CategoryFlowBox.vala:125
+msgid "Writing & Language"
+msgstr ""
+
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
-msgstr ""
+msgstr "Requiert le module de payements, qui n'est pas activé"
 
 #: src/Widgets/HumbleButton.vala:106
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:301
