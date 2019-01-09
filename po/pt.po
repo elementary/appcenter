@@ -1,12 +1,13 @@
 # Christophe Silva <Christophesilva80@gmail.com>, 2018.
 # Nuno Alexandre MS Ribeiro <nuno.anarresti@gmail.com>, 2018.
+# Hugo Carvalho <hugokarvalho@hotmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-05 14:29-0800\n"
-"PO-Revision-Date: 2018-11-06 16:54+0000\n"
-"Last-Translator: Nuno Alexandre MS Ribeiro <nuno.anarresti@gmail.com>\n"
+"POT-Creation-Date: 2019-01-02 07:28-0600\n"
+"PO-Revision-Date: 2019-01-05 08:22+0000\n"
+"Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/pt/>\n"
 "Language: pt\n"
@@ -20,7 +21,7 @@ msgstr ""
 #. Add "AppCenter" to the translation catalog
 #: src/Application.vala:38
 msgid "AppCenter"
-msgstr "Loja de Aplicações"
+msgstr "AppCenter"
 
 #: src/Application.vala:106
 #, c-format
@@ -47,9 +48,9 @@ msgstr "%s foi instalado com sucesso"
 msgid "There Was An Error Installing %s."
 msgstr "Ocorreu Um Erro Ao Instalar %s."
 
-#: src/MainWindow.vala:149 src/Views/Homepage.vala:253
-#: src/Views/Homepage.vala:262 src/Views/Homepage.vala:267
-#: src/Views/Homepage.vala:278
+#: src/MainWindow.vala:149 src/Views/Homepage.vala:282
+#: src/Views/Homepage.vala:291 src/Views/Homepage.vala:296
+#: src/Views/Homepage.vala:307
 msgid "Home"
 msgstr "Página Inicial"
 
@@ -62,7 +63,7 @@ msgstr "Instalado"
 #: src/MainWindow.vala:177 src/MainWindow.vala:330 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:81
 msgid "Search Apps"
-msgstr "Procurar"
+msgstr "Procurar Aplicações"
 
 #: src/MainWindow.vala:195
 msgid "Network Is Not Available"
@@ -70,7 +71,7 @@ msgstr "Sem Ligação à Rede"
 
 #: src/MainWindow.vala:196
 msgid "Connect to the Internet to install or update apps."
-msgstr "Conecte-se à internet para instalar ou atualizar apps."
+msgstr "Conecte-se à internet para instalar ou atualizar aplicações."
 
 #: src/MainWindow.vala:199
 msgid "Network Settings…"
@@ -220,49 +221,49 @@ msgstr "A copiar ficheiros"
 msgid "Unknown state"
 msgstr "Estado desconhecido"
 
-#: src/Core/Client.vala:106
+#: src/Core/Client.vala:91
 msgid "Operating System Updates"
 msgstr "Atualizações do Sistema Operativo"
 
-#: src/Core/Client.vala:107
+#: src/Core/Client.vala:92
 msgid "Updates to system components"
 msgstr "Atualizações aos componentes do sistema"
 
-#: src/Core/Client.vala:142
+#: src/Core/Client.vala:151
 #, c-format
 msgid "%s (local)"
 msgstr "%s (local)"
 
-#: src/Core/Client.vala:467
+#: src/Core/Client.vala:476
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Atualização disponível"
 msgstr[1] "Atualizações disponíveis"
 
-#: src/Core/Client.vala:468
+#: src/Core/Client.vala:477
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "%u atualização disponível para o seu sistema"
 msgstr[1] "%u atualizações disponíveis para o seu sistema"
 
-#: src/Core/Client.vala:496
+#: src/Core/Client.vala:505
 #, c-format
 msgid "Version: %s"
 msgstr "Versão: %s"
 
-#: src/Core/Client.vala:505
+#: src/Core/Client.vala:514
 msgid "No components with updates"
 msgstr "Sem componentes atualizáveis"
 
-#: src/Core/Client.vala:509
+#: src/Core/Client.vala:518
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "%u componente com atualizações"
 msgstr[1] "%u componentes com atualizações"
 
-#: src/Core/Client.vala:511
+#: src/Core/Client.vala:520
 #, c-format
 msgid "%s:"
 msgstr "%s:"
@@ -619,7 +620,7 @@ msgstr "Fazendo sucesso"
 msgid "Categories"
 msgstr "Categorias"
 
-#: src/Views/Homepage.vala:267 src/Views/Homepage.vala:278
+#: src/Views/Homepage.vala:296 src/Views/Homepage.vala:307
 #, c-format
 msgid "Search %s"
 msgstr "Pesquisar %s"
@@ -650,65 +651,69 @@ msgstr "Obtenha as aplicações que precisa ao preço que pode dar por elas."
 msgid "Card Number"
 msgstr "Número do Cartão"
 
-#: src/Widgets/CategoryFlowBox.vala:29
+#: src/Widgets/CategoryFlowBox.vala:27
 msgid "Accessories"
 msgstr "Acessórios"
 
-#: src/Widgets/CategoryFlowBox.vala:30
+#: src/Widgets/CategoryFlowBox.vala:28
 msgid "Audio"
 msgstr "Áudio"
 
-#: src/Widgets/CategoryFlowBox.vala:31
+#: src/Widgets/CategoryFlowBox.vala:29
 msgid "Communication"
 msgstr "Comunicação"
 
-#: src/Widgets/CategoryFlowBox.vala:40
+#: src/Widgets/CategoryFlowBox.vala:38
 msgid "Development"
 msgstr "Desenvolvimento"
 
-#: src/Widgets/CategoryFlowBox.vala:50
+#: src/Widgets/CategoryFlowBox.vala:48
 msgid "Education"
 msgstr "Educação"
 
-#: src/Widgets/CategoryFlowBox.vala:51
+#: src/Widgets/CategoryFlowBox.vala:49
 msgid "Finance"
 msgstr "Finanças"
 
-#: src/Widgets/CategoryFlowBox.vala:55
+#: src/Widgets/CategoryFlowBox.vala:53
 msgid "Games"
 msgstr "Jogos"
 
-#: src/Widgets/CategoryFlowBox.vala:71
+#: src/Widgets/CategoryFlowBox.vala:69
 msgid "Graphics"
 msgstr "Gráficos"
 
-#: src/Widgets/CategoryFlowBox.vala:80
+#: src/Widgets/CategoryFlowBox.vala:78
 msgid "Internet"
 msgstr "Internet"
 
-#: src/Widgets/CategoryFlowBox.vala:84
+#: src/Widgets/CategoryFlowBox.vala:82
 msgid "Math, Science, & Engineering"
-msgstr "Matemática, Ciência e Engenharia"
+msgstr "Matemática, Ciência, & Engenharia"
 
-#: src/Widgets/CategoryFlowBox.vala:103
+#: src/Widgets/CategoryFlowBox.vala:101
 msgid "Media Production"
 msgstr "Produção de Media"
 
-#: src/Widgets/CategoryFlowBox.vala:110
+#: src/Widgets/CategoryFlowBox.vala:108
 msgid "Office"
 msgstr "Escritório"
 
-#: src/Widgets/CategoryFlowBox.vala:117
+#: src/Widgets/CategoryFlowBox.vala:115
 msgid "System"
 msgstr "Sistema"
 
-#: src/Widgets/CategoryFlowBox.vala:121
+#: src/Widgets/CategoryFlowBox.vala:119
 msgid "Universal Access"
 msgstr "Acessibilidade"
 
-#: src/Widgets/CategoryFlowBox.vala:122
+#: src/Widgets/CategoryFlowBox.vala:120
 msgid "Video"
 msgstr "Vídeo"
+
+#: src/Widgets/CategoryFlowBox.vala:125
+msgid "Writing & Language"
+msgstr "Linguagem escrita"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
