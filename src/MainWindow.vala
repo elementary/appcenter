@@ -232,11 +232,11 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
     public bool on_configure_event () {
         if (configure_id != 0) {
-            GLib.Source.remove (configure_id);
+            return Gdk.EVENT_PROPAGATE;
         }
 
         /* Avoid spamming the settings */
-        configure_id = Timeout.add (100, () => {
+        configure_id = Timeout.add (200, () => {
             configure_id = 0;
 
             if (is_maximized) {
