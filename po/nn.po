@@ -1,10 +1,11 @@
+# Simon Dagfinrud <semonje@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-05 14:29-0800\n"
-"PO-Revision-Date: 2017-09-11 20:46+0000\n"
-"Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
+"POT-Creation-Date: 2019-01-02 07:28-0600\n"
+"PO-Revision-Date: 2019-01-03 17:55+0000\n"
+"Last-Translator: Simon Dagfinrud <semonje@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <https://weblate.elementary.io/projects/"
 "appcenter/appcenter/nn/>\n"
 "Language: nn\n"
@@ -12,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.16\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -23,12 +24,12 @@ msgstr "AppCenter"
 #: src/Application.vala:106
 #, c-format
 msgid "Could not parse mimetype %s"
-msgstr ""
+msgstr "Kunne ikkje tolke mimetype %s"
 
 #: src/Application.vala:126
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr "Lenkja '%s vart ikkje funne. Prøv eit søk i staden"
+msgstr "Lenka '%s vart ikkje funne. Prøv eit søk i staden"
 
 #: src/Application.vala:260
 msgid "Application installed"
@@ -40,40 +41,38 @@ msgid "%s has been successfully installed"
 msgstr "%s har blitt installert utan problem"
 
 #: src/Application.vala:273
-#, fuzzy, c-format
+#, c-format
 msgid "There Was An Error Installing %s."
-msgstr "Det oppstod eit problem med installasjonen av %s"
+msgstr "Det oppstod eit problem med installasjonen av %s."
 
-#: src/MainWindow.vala:149 src/Views/Homepage.vala:253
-#: src/Views/Homepage.vala:262 src/Views/Homepage.vala:267
-#: src/Views/Homepage.vala:278
+#: src/MainWindow.vala:149 src/Views/Homepage.vala:282
+#: src/Views/Homepage.vala:291 src/Views/Homepage.vala:296
+#: src/Views/Homepage.vala:307
 msgid "Home"
 msgstr "Heim"
 
 #: src/MainWindow.vala:150 src/Views/InstalledView.vala:29
 #: src/Views/InstalledView.vala:53
-#, fuzzy
 msgctxt "view"
 msgid "Installed"
-msgstr "Installer"
+msgstr "Installerte"
 
 #: src/MainWindow.vala:177 src/MainWindow.vala:330 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:81
 msgid "Search Apps"
-msgstr "Søkje etter applikasjonar"
+msgstr "Søk etter applikasjonar"
 
 #: src/MainWindow.vala:195
-#, fuzzy
 msgid "Network Is Not Available"
-msgstr "Skjermbilete er ikkje tilgjengeleg"
+msgstr "Nettverk er ikkje tilgjengeleg"
 
 #: src/MainWindow.vala:196
 msgid "Connect to the Internet to install or update apps."
-msgstr ""
+msgstr "Kople til internett for å installere eller oppdatere program."
 
 #: src/MainWindow.vala:199
 msgid "Network Settings…"
-msgstr ""
+msgstr "Nettverksinnstillingar…"
 
 #: src/Core/ChangeInformation.vala:54
 msgid "Starting"
@@ -85,11 +84,11 @@ msgstr "Ventar"
 
 #: src/Core/ChangeInformation.vala:58
 msgid "Running"
-msgstr "Kjører"
+msgstr "Køyrer"
 
 #: src/Core/ChangeInformation.vala:60
 msgid "Querying"
-msgstr "Forespør"
+msgstr "Førespør informasjon"
 
 #: src/Core/ChangeInformation.vala:62
 msgid "Getting information"
@@ -105,15 +104,15 @@ msgstr "Lastar ned"
 
 #: src/Core/ChangeInformation.vala:68
 msgid "Installing"
-msgstr "Installerar"
+msgstr "Installerer"
 
 #: src/Core/ChangeInformation.vala:70
 msgid "Refreshing software list"
-msgstr "Oppdaterar programvarelista"
+msgstr "Oppdaterer programvarelista"
 
 #: src/Core/ChangeInformation.vala:72
 msgid "Installing updates"
-msgstr "Installerar oppdateringar"
+msgstr "Installerer oppdateringar"
 
 #: src/Core/ChangeInformation.vala:74
 msgid "Cleaning up packages"
@@ -121,15 +120,15 @@ msgstr "Ryddar opp i pakkar"
 
 #: src/Core/ChangeInformation.vala:76
 msgid "Obsoleting packages"
-msgstr "Foreldrer pakkar"
+msgstr "Markerer pakkar som forelda"
 
 #: src/Core/ChangeInformation.vala:78
 msgid "Resolving dependencies"
-msgstr "Løyser opp"
+msgstr "Løyser avhengnadar"
 
 #: src/Core/ChangeInformation.vala:80
 msgid "Checking signatures"
-msgstr "Sjekkar signaturar"
+msgstr "Kontrollerer signaturar"
 
 #: src/Core/ChangeInformation.vala:82
 msgid "Testing changes"
@@ -137,11 +136,11 @@ msgstr "Testar endringane"
 
 #: src/Core/ChangeInformation.vala:84
 msgid "Committing changes"
-msgstr "Gjennomførar endringane"
+msgstr "Lagrar endringane"
 
 #: src/Core/ChangeInformation.vala:86
 msgid "Requesting data"
-msgstr "Førespurnad om data"
+msgstr "Spør etter data"
 
 #: src/Core/ChangeInformation.vala:88
 msgid "Finished"
@@ -149,15 +148,15 @@ msgstr "Ferdig"
 
 #: src/Core/ChangeInformation.vala:90
 msgid "Cancelling"
-msgstr "Avbryter"
+msgstr "Avbryt"
 
 #: src/Core/ChangeInformation.vala:92
 msgid "Downloading repository information"
-msgstr "Lastar ned oppbevaringsinformasjon"
+msgstr "Lastar ned informasjon om fillager"
 
 #: src/Core/ChangeInformation.vala:94
 msgid "Downloading list of packages"
-msgstr "Lastar ned ei liste av pakkar"
+msgstr "Lastar ned pakkeliste"
 
 #: src/Core/ChangeInformation.vala:96
 msgid "Downloading file lists"
@@ -177,19 +176,19 @@ msgstr "Lastar ned informasjon om oppdateringa"
 
 #: src/Core/ChangeInformation.vala:104
 msgid "Repackaging files"
-msgstr "Pakkar filane om att"
+msgstr "Pakkar filene om att"
 
 #: src/Core/ChangeInformation.vala:106
 msgid "Loading cache"
-msgstr "Lastar buffer"
+msgstr "Lastar mellomlageret"
 
 #: src/Core/ChangeInformation.vala:108
 msgid "Scanning applications"
-msgstr "Skanner applikasjonane"
+msgstr "Skannar applikasjonane"
 
 #: src/Core/ChangeInformation.vala:110
 msgid "Generating package lists"
-msgstr "Genererer pakkeliste"
+msgstr "Lagar pakkelister"
 
 #: src/Core/ChangeInformation.vala:112
 msgid "Waiting for package manager lock"
@@ -201,7 +200,7 @@ msgstr "Ventar på autentisering"
 
 #: src/Core/ChangeInformation.vala:116
 msgid "Updating running applications"
-msgstr "Oppdater opne applikasjonar"
+msgstr "Oppdaterer opne applikasjonar"
 
 #: src/Core/ChangeInformation.vala:118
 msgid "Checking applications in use"
@@ -213,63 +212,63 @@ msgstr "Sjekkar bibliotek som er i bruk"
 
 #: src/Core/ChangeInformation.vala:122
 msgid "Copying files"
-msgstr "Kopierar filer"
+msgstr "Kopierer filer"
 
 #: src/Core/ChangeInformation.vala:124
 msgid "Unknown state"
 msgstr "Ukjend tilstand"
 
-#: src/Core/Client.vala:106
+#: src/Core/Client.vala:91
 msgid "Operating System Updates"
-msgstr "Operative systemoppdateringar"
+msgstr "Operativsystem-oppdateringar"
 
-#: src/Core/Client.vala:107
+#: src/Core/Client.vala:92
 msgid "Updates to system components"
 msgstr "Oppdateringar for systemkomponentar"
 
-#: src/Core/Client.vala:142
+#: src/Core/Client.vala:151
 #, c-format
 msgid "%s (local)"
-msgstr ""
+msgstr "%s (lokal)"
 
-#: src/Core/Client.vala:467
+#: src/Core/Client.vala:476
 msgid "Update Available"
 msgid_plural "Updates Available"
-msgstr[0] "Oppdatering er tilgjengeleg"
-msgstr[1] "Oppdateringar er tilgjengeleg"
+msgstr[0] "Oppdatering tilgjengeleg"
+msgstr[1] "Oppdateringar tilgjengeleg"
 
-#: src/Core/Client.vala:468
+#: src/Core/Client.vala:477
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "%u oppdatering er tilgjengeleg for ditt system"
 msgstr[1] "%u oppdateringar er tilgjengeleg for ditt system"
 
-#: src/Core/Client.vala:496
+#: src/Core/Client.vala:505
 #, c-format
 msgid "Version: %s"
-msgstr ""
+msgstr "Versjon: %s"
 
-#: src/Core/Client.vala:505
+#: src/Core/Client.vala:514
 msgid "No components with updates"
-msgstr ""
+msgstr "Ingen komponentar med oppdateringar"
 
-#: src/Core/Client.vala:509
+#: src/Core/Client.vala:518
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u komponent med oppdateringar"
+msgstr[1] "%u komponentar med oppdateringar"
 
-#: src/Core/Client.vala:511
+#: src/Core/Client.vala:520
 #, c-format
 msgid "%s:"
-msgstr ""
+msgstr "%s:"
 
 #: src/Core/Package.vala:235
-#, fuzzy, c-format
+#, c-format
 msgid "%s Developers"
-msgstr "%s utviklarane"
+msgstr "%s-utviklarane"
 
 #: src/Core/UpdateManager.vala:81
 msgid "Restart Required"
@@ -277,16 +276,16 @@ msgstr "Omstart er naudsynt"
 
 #: src/Core/UpdateManager.vala:82
 msgid "Please restart your system to finalize updates"
-msgstr "Ver venleg og omstart systemet for å gjera ferdig oppdateringane"
+msgstr "Ver venleg og omstart systemet for å fullføre oppdateringane"
 
 #: src/Dialogs/ContentWarningDialog.vala:27
 msgid "Content Warning"
-msgstr ""
+msgstr "Innhaldsåtvaring"
 
 #: src/Dialogs/ContentWarningDialog.vala:32
 #, c-format
 msgid "%s Contains Explicit Content"
-msgstr ""
+msgstr "%s inneheld eksplisitt innhald"
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 #, c-format
@@ -295,27 +294,29 @@ msgid ""
 "disturbing. In general, elementary does not review or endorse the contents "
 "of this app."
 msgstr ""
+"%s kan innehalde innhald som kun passar vaksne, eller som på anna vis er "
+"forstyrrande. Som hovudregel vurderer eller stiller ikkje elementary seg ved "
+"innhaldet til programmet."
 
 #: src/Dialogs/ContentWarningDialog.vala:35
 msgid "Show content warnings"
-msgstr ""
+msgstr "Vis innhaldsåtvaringar"
 
 #: src/Dialogs/ContentWarningDialog.vala:40
 msgid "Don’t Install"
-msgstr ""
+msgstr "Ikkje installer"
 
 #: src/Dialogs/ContentWarningDialog.vala:41
-#, fuzzy
 msgid "Install Anyway"
-msgstr "Installerar"
+msgstr "Installer likevel"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
-msgstr "Er du sikker på at du ynskjer å omstarte?"
+msgstr "Er du sikker på at du ønsker å omstarte?"
 
 #: src/Dialogs/RestartDialog.vala:41
 msgid "This will close all open applications and restart this device."
-msgstr "Dette vil lukke alle applikasjoner og omstarte maskina."
+msgstr "Dette vil lukke alle opne applikasjonar og omstarte maskina."
 
 #: src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
@@ -332,53 +333,59 @@ msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
+"Ein feil skjedde under prosessering av kortet. Prøv igjen seinare. Vi ber om "
+"orsak for eventuelle ulemper det medfører."
 
 #: src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
-msgstr "Ver venleg og sjekk betalingsinformasjonen din på nytt."
+msgstr "Sjå over betalingsinformasjonen din og forsøk om att."
 
 #: src/Dialogs/StripeDialog.vala:76
 msgid "Payment"
-msgstr ""
+msgstr "Betaling"
 
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
 msgid "Pay $%d for %s"
-msgstr ""
+msgstr "Betal %d$ for %s"
 
 #: src/Dialogs/StripeDialog.vala:96
 msgid ""
 "This is a one time payment. Your email address is only used to send you a "
 "receipt."
 msgstr ""
+"Dette er ei éingongsbetaling. E-postadressa vert kun brukt til å sende deg "
+"ei kvittering."
 
 #: src/Dialogs/StripeDialog.vala:106 src/Widgets/SharePopover.vala:35
 msgid "Email"
-msgstr ""
+msgstr "E-post"
 
 #: src/Dialogs/StripeDialog.vala:108
 msgid ""
 "Your email address is only used to send a receipt. You will not be "
 "subscribed to any mailing list."
 msgstr ""
+"E-postadressa di vert kun brukt til å sende ei kvittering. Du vil ikkje bli "
+"påmeldt noko e-postliste."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127
 msgid "MM / YY"
-msgstr ""
+msgstr "MM / ÅÅ"
 
 #: src/Dialogs/StripeDialog.vala:147
 msgid "CVC"
-msgstr ""
+msgstr "CVC"
 
 #: src/Dialogs/StripeDialog.vala:189
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Personvernreglar"
 
 #: src/Dialogs/StripeDialog.vala:200 src/Dialogs/StripeDialog.vala:314
-#, fuzzy, c-format
+#, c-format
 msgid "Pay $%d.00"
-msgstr "Betal $%d.00"
+msgstr "Betal %d.00$"
 
 #: src/Dialogs/StripeDialog.vala:243
 msgid "Processing"
@@ -386,7 +393,7 @@ msgstr "Behandlar"
 
 #: src/Dialogs/StripeDialog.vala:268
 msgid "There Was a Problem Processing Your Payment"
-msgstr "Det oppsto eit problem med behandlinga av betalingen din"
+msgstr "Det oppstod eit problem med behandlinga av betalinga di"
 
 #: src/Dialogs/StripeDialog.vala:306
 msgid "Pay Later"
@@ -399,106 +406,117 @@ msgstr "Prøv om att"
 #: src/Dialogs/StripeDialog.vala:513 src/Dialogs/StripeDialog.vala:578
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
-msgstr ""
+msgstr "Kortnummeret er feil. Prøv igjen seinare med rett kortnummer."
 
 #: src/Dialogs/StripeDialog.vala:515
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
-msgstr ""
+msgstr "Utløpsmånaden er ugyldig. Prøv igjen med korrekt dato."
 
 #: src/Dialogs/StripeDialog.vala:517 src/Dialogs/StripeDialog.vala:575
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
-msgstr ""
+msgstr "Utløpsåret er ugyldig. Prøv igjen med korrekt dato."
 
 #: src/Dialogs/StripeDialog.vala:520 src/Dialogs/StripeDialog.vala:573
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr ""
+msgstr "CVC-nummeret er ikkje rett. Prøv igjen med rett CVC."
 
 #: src/Dialogs/StripeDialog.vala:522 src/Dialogs/StripeDialog.vala:564
 msgid "The card has expired. Please try again with a different card."
-msgstr ""
+msgstr "Kortet har gått ut på dato. Prøv igjen med eit anna kort."
 
 #: src/Dialogs/StripeDialog.vala:542
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr ""
+"I augneblinken er det for mange betalingsførespurnader. Prøv igjen seinare."
 
 #: src/Dialogs/StripeDialog.vala:558
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
 msgstr ""
+"Dette kortet støttar ikkje denne typen transaksjonar. Prøv igjen med eit "
+"anna kort."
 
 #: src/Dialogs/StripeDialog.vala:560
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
 msgstr ""
+"Dette kortet støttar ikkje denne valutaen. Prøv igjen med eit anna kort."
 
 #: src/Dialogs/StripeDialog.vala:562
 msgid "The transaction has already been processed."
-msgstr ""
+msgstr "Overføringa er allereie gått igjennom."
 
 #: src/Dialogs/StripeDialog.vala:566
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "postal code."
-msgstr ""
+msgstr "Postnummeret er feil. Prøv igjen med rett postnummer."
 
 #: src/Dialogs/StripeDialog.vala:568
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr ""
+"Du har ikkje nok midlar på konto. Vurder å nytte ei alternativ "
+"betalingsmetode."
 
 #: src/Dialogs/StripeDialog.vala:570
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr ""
+msgstr "Beløpet er feil. Prøv igjen med rett beløp."
 
 #: src/Dialogs/StripeDialog.vala:581
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr ""
+msgstr "PIN-nummeret er ikkje rett. Prøv igjen med rett PIN."
 
 #: src/Dialogs/StripeDialog.vala:583
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
-msgstr ""
+msgstr "For mange PIN-forsøk. Prøv igjen med eit anna kort."
 
 #: src/Dialogs/StripeDialog.vala:603
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
 msgstr ""
+"Kunne ikkje fullføre overføringa. Kontakt banken din for meir informasjon."
 
 #: src/Dialogs/StripeDialog.vala:606
 msgid "The balance or credit limit on the card has been reached."
-msgstr ""
+msgstr "Betalingsgrensa eller beløpsgrensa på kortet ditt er nådd."
 
 #: src/Dialogs/StripeDialog.vala:609
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
+"Det oppgjevne kortet er eit test-kort. Bruk eit ordentleg kort for å halde "
+"fram."
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
-msgstr ""
+msgstr "Klarte ikkje å hente oppdateringar"
 
 #: src/Dialogs/UpdateFailDialog.vala:26
 msgid ""
 "This may have been caused by external, manually added software repositories "
 "or a corrupted sources file."
 msgstr ""
+"Dette kan ha blitt forårsaka av eksterne, manuelt tillagte "
+"programvarebrønnar, eller ei skada kjeldefil."
 
 #: src/Dialogs/UpdateFailDialog.vala:46
 msgid "Details"
-msgstr ""
+msgstr "Detaljar"
 
 #: src/Dialogs/UpdateFailDialog.vala:54
 msgid "Ignore"
-msgstr ""
+msgstr "Ignorer"
 
 #: src/Dialogs/UpdateFailDialog.vala:55
 msgid "Try Again"
-msgstr ""
+msgstr "Prøv igjen"
 
 #: src/Views/AppInfoView.vala:76
 msgid "Screenshot Not Available"
@@ -510,7 +528,7 @@ msgstr "Heimeside"
 
 #: src/Views/AppInfoView.vala:139
 msgid "Suggest Translations"
-msgstr "Føreslå oversetjing"
+msgstr "Føreslå oversetjingar"
 
 #: src/Views/AppInfoView.vala:145
 msgid "Report a Problem"
@@ -522,7 +540,7 @@ msgstr "Hjelp"
 
 #: src/Views/AppInfoView.vala:180
 msgid "What's New:"
-msgstr ""
+msgstr "Nyhende:"
 
 #: src/Views/AppInfoView.vala:199
 msgid "Extensions:"
@@ -531,32 +549,32 @@ msgstr "Utvidingar:"
 #: src/Views/AppInfoView.vala:293
 #, c-format
 msgid "Other Apps by %s"
-msgstr ""
+msgstr "Andre applikasjonar av %s"
 
 #: src/Views/AppInfoView.vala:327
 msgid "Link copied to clipboard"
-msgstr ""
+msgstr "Lenke kopiert til utklippstavle"
 
 #: src/Views/AppInfoView.vala:338
 #, c-format
 msgid "Check out %s on AppCenter:"
-msgstr ""
+msgstr "Sjekk ut %s i AppCenter:"
 
 #: src/Views/AppInfoView.vala:345
 msgid "Share"
-msgstr ""
+msgstr "Del"
 
 #: src/Views/AppInfoView.vala:650
 msgid "Fund"
-msgstr ""
+msgstr "Bidrag"
 
 #: src/Views/AppInfoView.vala:672
 msgid "Fund the development of this app"
-msgstr ""
+msgstr "Finansier utviklinga av denne applikasjonen"
 
 #: src/Views/AppListUpdateView.vala:56
 msgid "A restart is required to complete the installation of updates"
-msgstr "Ein omstart er naudsynt for å fullføra installeringa av oppdateringane"
+msgstr "Ein omstart er naudsynt for å fullføre installeringa av oppdateringane"
 
 #: src/Views/AppListUpdateView.vala:64
 msgid "Restart Now"
@@ -569,21 +587,21 @@ msgstr "Oppdater alle"
 
 #: src/Views/AppListView.vala:128
 msgid "Non-Curated Apps"
-msgstr ""
+msgstr "Applikasjonar som ikkje er bekrefta"
 
 #: src/Views/Homepage.vala:66
 msgid "Recently Updated"
-msgstr ""
+msgstr "Nyleg oppdatert"
 
 #: src/Views/Homepage.vala:82
 msgid "Trending"
-msgstr ""
+msgstr "Populært no"
 
 #: src/Views/Homepage.vala:98
 msgid "Categories"
 msgstr "Kategoriar"
 
-#: src/Views/Homepage.vala:267 src/Views/Homepage.vala:278
+#: src/Views/Homepage.vala:296 src/Views/Homepage.vala:307
 #, c-format
 msgid "Search %s"
 msgstr "Søk %s"
@@ -604,82 +622,83 @@ msgstr "Ingen appar vart funne. Prøv eit anna søk."
 
 #: src/Widgets/Banner.vala:55
 msgid "An open, pay-what-you-want app store"
-msgstr "Ein open, betal-det-du-ynskjer, appbutikk"
+msgstr "Ein open, betal-det-du-ønsker, appbutikk"
 
 #: src/Widgets/Banner.vala:68
 msgid "Get the apps that you need at a price you can afford."
-msgstr "Få applikasjonane du treng til ein pris du har råd til."
+msgstr "Få tak i applikasjonane du treng til ein pris du har råd til."
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
-msgstr ""
+msgstr "Kortnummer"
 
-#: src/Widgets/CategoryFlowBox.vala:29
+#: src/Widgets/CategoryFlowBox.vala:27
 msgid "Accessories"
-msgstr "Tilbehør"
+msgstr "Tilbehøyr"
 
-#: src/Widgets/CategoryFlowBox.vala:30
+#: src/Widgets/CategoryFlowBox.vala:28
 msgid "Audio"
 msgstr "Lyd"
 
-#: src/Widgets/CategoryFlowBox.vala:31
-#, fuzzy
+#: src/Widgets/CategoryFlowBox.vala:29
 msgid "Communication"
-msgstr "Utdanning"
+msgstr "Kommunikasjon"
 
-#: src/Widgets/CategoryFlowBox.vala:40
+#: src/Widgets/CategoryFlowBox.vala:38
 msgid "Development"
 msgstr "Utvikling"
 
-#: src/Widgets/CategoryFlowBox.vala:50
+#: src/Widgets/CategoryFlowBox.vala:48
 msgid "Education"
 msgstr "Utdanning"
 
-#: src/Widgets/CategoryFlowBox.vala:51
-#, fuzzy
+#: src/Widgets/CategoryFlowBox.vala:49
 msgid "Finance"
-msgstr "Avbryt"
+msgstr "Finans"
 
-#: src/Widgets/CategoryFlowBox.vala:55
+#: src/Widgets/CategoryFlowBox.vala:53
 msgid "Games"
 msgstr "Spel"
 
-#: src/Widgets/CategoryFlowBox.vala:71
+#: src/Widgets/CategoryFlowBox.vala:69
 msgid "Graphics"
 msgstr "Grafikk"
 
-#: src/Widgets/CategoryFlowBox.vala:80
+#: src/Widgets/CategoryFlowBox.vala:78
 msgid "Internet"
 msgstr "Internett"
 
-#: src/Widgets/CategoryFlowBox.vala:84
-#, fuzzy
+#: src/Widgets/CategoryFlowBox.vala:82
 msgid "Math, Science, & Engineering"
-msgstr "Vitenskap og teknikk"
+msgstr "Matematikk, vitskap og teknikk"
 
-#: src/Widgets/CategoryFlowBox.vala:103
+#: src/Widgets/CategoryFlowBox.vala:101
 msgid "Media Production"
-msgstr ""
+msgstr "Medieproduksjon"
 
-#: src/Widgets/CategoryFlowBox.vala:110
+#: src/Widgets/CategoryFlowBox.vala:108
 msgid "Office"
 msgstr "Kontor"
 
-#: src/Widgets/CategoryFlowBox.vala:117
+#: src/Widgets/CategoryFlowBox.vala:115
 msgid "System"
 msgstr "System"
 
-#: src/Widgets/CategoryFlowBox.vala:121
+#: src/Widgets/CategoryFlowBox.vala:119
 msgid "Universal Access"
-msgstr "Tilgjengelighet"
+msgstr "Universelt tilgjenge"
 
-#: src/Widgets/CategoryFlowBox.vala:122
+#: src/Widgets/CategoryFlowBox.vala:120
 msgid "Video"
 msgstr "Video"
 
+#: src/Widgets/CategoryFlowBox.vala:125
+msgid "Writing & Language"
+msgstr "Skriving og språk"
+
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
-msgstr ""
+msgstr "Krev betaling, som ikkje er aktivert"
 
 #: src/Widgets/HumbleButton.vala:106
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:301
@@ -688,7 +707,6 @@ msgstr "Gratis"
 
 #: src/Widgets/HumbleButton.vala:108
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:303
-#, fuzzy
 msgid "Install"
 msgstr "Installer"
 
@@ -696,55 +714,54 @@ msgstr "Installer"
 #: src/Widgets/HumbleButton.vala:142
 #, c-format
 msgid "$%d.00"
-msgstr "$%d.00USD"
+msgstr "$%d USD"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:145
 #, c-format
 msgid "$%d"
-msgstr "$%dUSD"
+msgstr "$%d"
 
 #: src/Widgets/ReleaseRow.vala:67
 #, c-format
 msgid "<b>%s</b> – %s"
-msgstr ""
+msgstr "<b>%s</b> – %s"
 
 #: src/Widgets/ReleaseRow.vala:74
-#, fuzzy
 msgid "Unknown version"
-msgstr "Ukjend tilstand"
+msgstr "Ukjend versjon"
 
 #: src/Widgets/ReleaseRow.vala:90 src/Widgets/ReleaseRow.vala:93
 msgid "No description available"
-msgstr ""
+msgstr "Inga skildring tilgjengeleg"
 
 #: src/Widgets/SharePopover.vala:39
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #: src/Widgets/SharePopover.vala:43
 msgid "Google+"
-msgstr ""
+msgstr "Google+"
 
 #: src/Widgets/SharePopover.vala:47
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 #: src/Widgets/SharePopover.vala:51
 msgid "Reddit"
-msgstr ""
+msgstr "Reddit"
 
 #: src/Widgets/SharePopover.vala:55
 msgid "Tumblr"
-msgstr ""
+msgstr "Tumblr"
 
 #: src/Widgets/SharePopover.vala:59
 msgid "Telegram"
-msgstr ""
+msgstr "Telegram"
 
 #: src/Widgets/SharePopover.vala:63
 msgid "Copy link"
-msgstr ""
+msgstr "Kopier lenke"
 
 #: src/Widgets/UpdateHeaderRow.vala:68
 #, c-format
@@ -768,7 +785,7 @@ msgstr "Alt er oppdatert"
 
 #: src/Widgets/UpdateHeaderRow.vala:120
 msgid "Drivers"
-msgstr ""
+msgstr "Drivarar"
 
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:168
 msgid "Uninstall"

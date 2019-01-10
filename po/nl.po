@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-05 14:29-0800\n"
+"POT-Creation-Date: 2019-01-02 07:28-0600\n"
 "PO-Revision-Date: 2018-07-18 00:05+0000\n"
 "Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
 "Language-Team: Dutch <https://weblate.elementary.io/projects/appcenter/"
@@ -47,9 +47,9 @@ msgstr "%s is succesvol geïnstalleerd"
 msgid "There Was An Error Installing %s."
 msgstr "Er is een fout opgetreden bij het installeren van %s."
 
-#: src/MainWindow.vala:149 src/Views/Homepage.vala:253
-#: src/Views/Homepage.vala:262 src/Views/Homepage.vala:267
-#: src/Views/Homepage.vala:278
+#: src/MainWindow.vala:149 src/Views/Homepage.vala:282
+#: src/Views/Homepage.vala:291 src/Views/Homepage.vala:296
+#: src/Views/Homepage.vala:307
 msgid "Home"
 msgstr "Startpagina"
 
@@ -221,49 +221,49 @@ msgstr "Bestanden kopiëren"
 msgid "Unknown state"
 msgstr "Onbekende toestand"
 
-#: src/Core/Client.vala:106
+#: src/Core/Client.vala:91
 msgid "Operating System Updates"
 msgstr "Updates voor het besturingssysteem"
 
-#: src/Core/Client.vala:107
+#: src/Core/Client.vala:92
 msgid "Updates to system components"
 msgstr "Updates voor systeemcomponenten"
 
-#: src/Core/Client.vala:142
+#: src/Core/Client.vala:151
 #, c-format
 msgid "%s (local)"
 msgstr ""
 
-#: src/Core/Client.vala:467
+#: src/Core/Client.vala:476
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Update beschikbaar"
 msgstr[1] "Updates beschikbaar"
 
-#: src/Core/Client.vala:468
+#: src/Core/Client.vala:477
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "%u update is beschikbaar voor uw systeem"
 msgstr[1] "%u updates zijn beschikbaar voor uw systeem"
 
-#: src/Core/Client.vala:496
+#: src/Core/Client.vala:505
 #, c-format
 msgid "Version: %s"
 msgstr ""
 
-#: src/Core/Client.vala:505
+#: src/Core/Client.vala:514
 msgid "No components with updates"
 msgstr ""
 
-#: src/Core/Client.vala:509
+#: src/Core/Client.vala:518
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Core/Client.vala:511
+#: src/Core/Client.vala:520
 #, c-format
 msgid "%s:"
 msgstr ""
@@ -616,7 +616,7 @@ msgstr ""
 msgid "Categories"
 msgstr "Categorieën"
 
-#: src/Views/Homepage.vala:267 src/Views/Homepage.vala:278
+#: src/Views/Homepage.vala:296 src/Views/Homepage.vala:307
 #, c-format
 msgid "Search %s"
 msgstr "Zoek %s"
@@ -649,68 +649,72 @@ msgstr ""
 msgid "Card Number"
 msgstr "Kaartnummer"
 
-#: src/Widgets/CategoryFlowBox.vala:29
+#: src/Widgets/CategoryFlowBox.vala:27
 msgid "Accessories"
 msgstr "Hulpmiddelen"
 
-#: src/Widgets/CategoryFlowBox.vala:30
+#: src/Widgets/CategoryFlowBox.vala:28
 msgid "Audio"
 msgstr "Geluid"
 
-#: src/Widgets/CategoryFlowBox.vala:31
+#: src/Widgets/CategoryFlowBox.vala:29
 #, fuzzy
 msgid "Communication"
 msgstr "Onderwijs"
 
-#: src/Widgets/CategoryFlowBox.vala:40
+#: src/Widgets/CategoryFlowBox.vala:38
 msgid "Development"
 msgstr "Ontwikkeling"
 
-#: src/Widgets/CategoryFlowBox.vala:50
+#: src/Widgets/CategoryFlowBox.vala:48
 msgid "Education"
 msgstr "Onderwijs"
 
-#: src/Widgets/CategoryFlowBox.vala:51
+#: src/Widgets/CategoryFlowBox.vala:49
 #, fuzzy
 msgid "Finance"
 msgstr "Annuleren"
 
-#: src/Widgets/CategoryFlowBox.vala:55
+#: src/Widgets/CategoryFlowBox.vala:53
 msgid "Games"
 msgstr "Spellen"
 
-#: src/Widgets/CategoryFlowBox.vala:71
+#: src/Widgets/CategoryFlowBox.vala:69
 msgid "Graphics"
 msgstr "Beeld"
 
-#: src/Widgets/CategoryFlowBox.vala:80
+#: src/Widgets/CategoryFlowBox.vala:78
 msgid "Internet"
 msgstr "Internet"
 
-#: src/Widgets/CategoryFlowBox.vala:84
+#: src/Widgets/CategoryFlowBox.vala:82
 #, fuzzy
 msgid "Math, Science, & Engineering"
 msgstr "Wetenschap & Techniek"
 
-#: src/Widgets/CategoryFlowBox.vala:103
+#: src/Widgets/CategoryFlowBox.vala:101
 msgid "Media Production"
 msgstr ""
 
-#: src/Widgets/CategoryFlowBox.vala:110
+#: src/Widgets/CategoryFlowBox.vala:108
 msgid "Office"
 msgstr "Kantoor"
 
-#: src/Widgets/CategoryFlowBox.vala:117
+#: src/Widgets/CategoryFlowBox.vala:115
 msgid "System"
 msgstr "Systeem"
 
-#: src/Widgets/CategoryFlowBox.vala:121
+#: src/Widgets/CategoryFlowBox.vala:119
 msgid "Universal Access"
 msgstr "Universele toegang"
 
-#: src/Widgets/CategoryFlowBox.vala:122
+#: src/Widgets/CategoryFlowBox.vala:120
 msgid "Video"
 msgstr "Video"
+
+#: src/Widgets/CategoryFlowBox.vala:125
+msgid "Writing & Language"
+msgstr ""
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-05 14:29-0800\n"
+"POT-Creation-Date: 2019-01-02 07:28-0600\n"
 "PO-Revision-Date: 2018-08-18 13:45+0000\n"
 "Last-Translator: Jernej Virag <jernej@virag.si>\n"
 "Language-Team: Slovenian <https://weblate.elementary.io/projects/appcenter/"
@@ -46,9 +46,9 @@ msgstr "%s je bila uspešno nameščena"
 msgid "There Was An Error Installing %s."
 msgstr "Pri namestitvi %s je prišlo do napake."
 
-#: src/MainWindow.vala:149 src/Views/Homepage.vala:253
-#: src/Views/Homepage.vala:262 src/Views/Homepage.vala:267
-#: src/Views/Homepage.vala:278
+#: src/MainWindow.vala:149 src/Views/Homepage.vala:282
+#: src/Views/Homepage.vala:291 src/Views/Homepage.vala:296
+#: src/Views/Homepage.vala:307
 msgid "Home"
 msgstr "Domača stran"
 
@@ -219,20 +219,20 @@ msgstr "Kopiranje datotek"
 msgid "Unknown state"
 msgstr "Neznano stanje"
 
-#: src/Core/Client.vala:106
+#: src/Core/Client.vala:91
 msgid "Operating System Updates"
 msgstr "Posodobitve operacijskega sistema"
 
-#: src/Core/Client.vala:107
+#: src/Core/Client.vala:92
 msgid "Updates to system components"
 msgstr "Posodobitve sistemskih komponent"
 
-#: src/Core/Client.vala:142
+#: src/Core/Client.vala:151
 #, c-format
 msgid "%s (local)"
 msgstr "%s (lokalno)"
 
-#: src/Core/Client.vala:467
+#: src/Core/Client.vala:476
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Posodobitev je na voljo"
@@ -240,7 +240,7 @@ msgstr[1] "Posodobitvi sta na voljo"
 msgstr[2] "Posodobitve so na voljo"
 msgstr[3] "Posodobitve so na voljo"
 
-#: src/Core/Client.vala:468
+#: src/Core/Client.vala:477
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
@@ -249,16 +249,16 @@ msgstr[1] "%u posodobitvi sta na voljo za vaš sistem"
 msgstr[2] "%u posodobitve so na voljo za vaš sistem"
 msgstr[3] "%u posodobitev je na voljo za vaš sistem"
 
-#: src/Core/Client.vala:496
+#: src/Core/Client.vala:505
 #, c-format
 msgid "Version: %s"
 msgstr "Verzija: %s"
 
-#: src/Core/Client.vala:505
+#: src/Core/Client.vala:514
 msgid "No components with updates"
 msgstr "Nobena posodobitev ni bila najdena"
 
-#: src/Core/Client.vala:509
+#: src/Core/Client.vala:518
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
@@ -267,7 +267,7 @@ msgstr[1] "Najdeni %u posodobitvi"
 msgstr[2] "Najdene %u posodobitve"
 msgstr[3] "Najdenih %u posodobitev"
 
-#: src/Core/Client.vala:511
+#: src/Core/Client.vala:520
 #, c-format
 msgid "%s:"
 msgstr "%s:"
@@ -612,7 +612,7 @@ msgstr "Popularno"
 msgid "Categories"
 msgstr "Kategorije"
 
-#: src/Views/Homepage.vala:267 src/Views/Homepage.vala:278
+#: src/Views/Homepage.vala:296 src/Views/Homepage.vala:307
 #, c-format
 msgid "Search %s"
 msgstr "Išči %s"
@@ -643,68 +643,72 @@ msgstr "Prenesite aplikacije po privoščljivih cenah."
 msgid "Card Number"
 msgstr "Številka kartice"
 
-#: src/Widgets/CategoryFlowBox.vala:29
+#: src/Widgets/CategoryFlowBox.vala:27
 msgid "Accessories"
 msgstr "Pripomočki"
 
-#: src/Widgets/CategoryFlowBox.vala:30
+#: src/Widgets/CategoryFlowBox.vala:28
 msgid "Audio"
 msgstr "Zvok"
 
-#: src/Widgets/CategoryFlowBox.vala:31
+#: src/Widgets/CategoryFlowBox.vala:29
 #, fuzzy
 msgid "Communication"
 msgstr "Izobraževanje"
 
-#: src/Widgets/CategoryFlowBox.vala:40
+#: src/Widgets/CategoryFlowBox.vala:38
 msgid "Development"
 msgstr "Razvoj"
 
-#: src/Widgets/CategoryFlowBox.vala:50
+#: src/Widgets/CategoryFlowBox.vala:48
 msgid "Education"
 msgstr "Izobraževanje"
 
-#: src/Widgets/CategoryFlowBox.vala:51
+#: src/Widgets/CategoryFlowBox.vala:49
 #, fuzzy
 msgid "Finance"
 msgstr "Prekliči"
 
-#: src/Widgets/CategoryFlowBox.vala:55
+#: src/Widgets/CategoryFlowBox.vala:53
 msgid "Games"
 msgstr "Igre"
 
-#: src/Widgets/CategoryFlowBox.vala:71
+#: src/Widgets/CategoryFlowBox.vala:69
 msgid "Graphics"
 msgstr "Grafika"
 
-#: src/Widgets/CategoryFlowBox.vala:80
+#: src/Widgets/CategoryFlowBox.vala:78
 msgid "Internet"
 msgstr "Splet"
 
-#: src/Widgets/CategoryFlowBox.vala:84
+#: src/Widgets/CategoryFlowBox.vala:82
 #, fuzzy
 msgid "Math, Science, & Engineering"
 msgstr "Znanost in inženirstvo"
 
-#: src/Widgets/CategoryFlowBox.vala:103
+#: src/Widgets/CategoryFlowBox.vala:101
 msgid "Media Production"
 msgstr ""
 
-#: src/Widgets/CategoryFlowBox.vala:110
+#: src/Widgets/CategoryFlowBox.vala:108
 msgid "Office"
 msgstr "Pisarna"
 
-#: src/Widgets/CategoryFlowBox.vala:117
+#: src/Widgets/CategoryFlowBox.vala:115
 msgid "System"
 msgstr "Sistem"
 
-#: src/Widgets/CategoryFlowBox.vala:121
+#: src/Widgets/CategoryFlowBox.vala:119
 msgid "Universal Access"
 msgstr "Univerzalni dostop"
 
-#: src/Widgets/CategoryFlowBox.vala:122
+#: src/Widgets/CategoryFlowBox.vala:120
 msgid "Video"
 msgstr "Video"
+
+#: src/Widgets/CategoryFlowBox.vala:125
+msgid "Writing & Language"
+msgstr ""
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
