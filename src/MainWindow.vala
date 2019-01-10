@@ -136,7 +136,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         resize (window_width, window_height);
 
         show.connect (() => {
-            configure_event.connect_after (on_configure_event);
+            configure_event.connect (on_configure_event);
         });
 
         hide.connect (() => {
@@ -235,6 +235,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             GLib.Source.remove (configure_id);
         }
 
+        /* Avoid spamming the settings */
         configure_id = Timeout.add (100, () => {
             configure_id = 0;
 
