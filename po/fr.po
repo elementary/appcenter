@@ -4,13 +4,14 @@
 # David Marcel BAUM <david.baum@tuta.io>, 2018.
 # Lucas Ruffieux <lucasruffieux@gmail.com>, 2018.
 # Nathan <bonnemainsnathan@gmail.com>, 2018.
+# Franck STAUFFER <franck.stauffer@e.email>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
-"PO-Revision-Date: 2018-11-17 00:01+0000\n"
-"Last-Translator: Eliott Lavier <eliott.lavier@gmail.com>\n"
+"PO-Revision-Date: 2019-01-11 08:43+0000\n"
+"Last-Translator: Franck STAUFFER <franck.stauffer@e.email>\n"
 "Language-Team: French <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/fr/>\n"
 "Language: fr\n"
@@ -719,7 +720,7 @@ msgstr "Vidéo"
 
 #: src/Widgets/CategoryFlowBox.vala:125
 msgid "Writing & Language"
-msgstr ""
+msgstr "Écriture et langue"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
