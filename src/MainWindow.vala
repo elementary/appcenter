@@ -120,6 +120,9 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     }
 
     construct {
+        window_position = Gtk.WindowPosition.CENTER;
+        set_size_request (910, 640);
+
         settings = new GLib.Settings ("io.elementary.appcenter.settings");
 
         int window_x, window_y;
@@ -127,21 +130,11 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         settings.get ("window-position", "(ii)", out window_x, out window_y);
         settings.get ("window-size", "(ii)", out window_width, out window_height);
 
-        set_size_request (910, 640);
-
         if (window_x != -1 ||  window_y != -1) {
             move (window_x, window_y);
         }
 
         resize (window_width, window_height);
-
-        show.connect (() => {
-            configure_event.connect (on_configure_event);
-        });
-
-        hide.connect (() => {
-            configure_event.disconnect (on_configure_event);
-        });
 
         if (settings.get_boolean ("window-maximized")) {
             maximize ();
@@ -151,7 +144,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
 
         title = _(Build.APP_NAME);
-        window_position = Gtk.WindowPosition.CENTER;
 
         return_button = new Gtk.Button ();
         return_button.no_show_all = true;
@@ -230,33 +222,31 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         homepage.page_loaded.connect (() => homepage_loaded ());
     }
 
-    public bool on_configure_event () {
-        if (configure_id != 0) {
-            return Gdk.EVENT_PROPAGATE;
+    public override bool configure_event (Gdk.EventConfigure event) {
+        if (configure_id == 0) {
+            /* Avoid spamming the settings */
+            configure_id = Timeout.add (200, () => {
+                configure_id = 0;
+
+                if (is_maximized) {
+                    settings.set_boolean ("window-maximized", true);
+                } else {
+                    settings.set_boolean ("window-maximized", false);
+
+                    int width, height;
+                    get_size (out width, out height);
+                    settings.set ("window-size", "(ii)", width, height);
+
+                    int root_x, root_y;
+                    get_position (out root_x, out root_y);
+                    settings.set ("window-position", "(ii)", root_x, root_y);
+                }
+
+                return GLib.Source.REMOVE;
+            });
         }
 
-        /* Avoid spamming the settings */
-        configure_id = Timeout.add (200, () => {
-            configure_id = 0;
-
-            if (is_maximized) {
-                settings.set_boolean ("window-maximized", true);
-            } else {
-                settings.set_boolean ("window-maximized", false);
-
-                int width, height;
-                get_size (out width, out height);
-                settings.set ("window-size", "(ii)", width, height);
-
-                int root_x, root_y;
-                get_position (out root_x, out root_y);
-                settings.set ("window-position", "(ii)", root_x, root_y);
-            }
-
-            return GLib.Source.REMOVE;
-        });
-
-        return Gdk.EVENT_PROPAGATE;
+        return base.configure_event (event);
     }
 
     public override bool delete_event (Gdk.EventAny event) {
