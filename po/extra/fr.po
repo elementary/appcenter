@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-18 05:17-0500\n"
-"PO-Revision-Date: 2018-09-17 16:29+0000\n"
-"Last-Translator: Corentin Noël <corentin@elementary.io>\n"
+"PO-Revision-Date: 2019-01-14 00:11+0000\n"
+"Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://weblate.elementary.io/projects/appcenter/"
 "extra/fr/>\n"
 "Language: fr\n"
@@ -17,7 +17,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
 msgid "AppCenter"
-msgstr "Centre d’applications"
+msgstr "Centre d’Applications"
 
 #: data/io.elementary.appcenter.appdata.xml.in:9
 #: data/io.elementary.appcenter.desktop.in.in:4
