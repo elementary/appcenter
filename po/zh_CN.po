@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
-"PO-Revision-Date: 2019-01-15 12:22+0000\n"
+"PO-Revision-Date: 2019-01-16 00:03+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.elementary.io/projects/"
 "appcenter/appcenter/zh_Hans/>\n"
@@ -454,12 +454,12 @@ msgstr "金额有误。请输入有效金额后重试。"
 
 #: src/Dialogs/StripeDialog.vala:581
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr "PIN 不正确，请输入正确的 PIN 后重试。"
+msgstr "PIN 码不正确，请输入正确的 PIN 码后重试。"
 
 #: src/Dialogs/StripeDialog.vala:583
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
-msgstr "PIN 错误次数已达上限，请换一张卡重试。"
+msgstr "PIN 码错误次数已达上限，请换一张卡重试。"
 
 #: src/Dialogs/StripeDialog.vala:603
 msgid ""
