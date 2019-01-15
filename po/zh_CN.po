@@ -1,4 +1,4 @@
-# colindemian <colindemian@outlook.com>, 2018.
+# colindemian <colindemian@outlook.com>, 2018, 2019.
 # YISH <mokeyish@163.com>, 2018.
 # David Hewitt <davidmhewitt@gmail.com>, 2018.
 msgid ""
@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
-"PO-Revision-Date: 2018-11-27 00:03+0000\n"
+"PO-Revision-Date: 2019-01-15 12:22+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.elementary.io/projects/"
 "appcenter/appcenter/zh_Hans/>\n"
@@ -292,7 +292,7 @@ msgid ""
 "%s may contain content only suitable for adults or that may be sensitive or "
 "disturbing. In general, elementary does not review or endorse the contents "
 "of this app."
-msgstr ""
+msgstr "%s 包含的内容可能不适合所有年龄段，或不宜在工作期间访问。一般情况下，elementary 团队不会对应用程序内容进行审查。"
 
 #: src/Dialogs/ContentWarningDialog.vala:35
 msgid "Show content warnings"
@@ -565,9 +565,8 @@ msgid "Update All"
 msgstr "全部更新"
 
 #: src/Views/AppListView.vala:128
-#, fuzzy
 msgid "Non-Curated Apps"
-msgstr "暂无应用"
+msgstr "非精选应用"
 
 #: src/Views/Homepage.vala:66
 msgid "Recently Updated"
@@ -621,9 +620,8 @@ msgid "Audio"
 msgstr "音频"
 
 #: src/Widgets/CategoryFlowBox.vala:29
-#, fuzzy
 msgid "Communication"
-msgstr "教育"
+msgstr "社交"
 
 #: src/Widgets/CategoryFlowBox.vala:38
 msgid "Development"
@@ -634,9 +632,8 @@ msgid "Education"
 msgstr "教育"
 
 #: src/Widgets/CategoryFlowBox.vala:49
-#, fuzzy
 msgid "Finance"
-msgstr "取消"
+msgstr "金融"
 
 #: src/Widgets/CategoryFlowBox.vala:53
 msgid "Games"
@@ -651,9 +648,8 @@ msgid "Internet"
 msgstr "网络"
 
 #: src/Widgets/CategoryFlowBox.vala:82
-#, fuzzy
 msgid "Math, Science, & Engineering"
-msgstr "科学 & 工程"
+msgstr "数学、科学 & 工程"
 
 #: src/Widgets/CategoryFlowBox.vala:101
 msgid "Media Production"
@@ -677,7 +673,7 @@ msgstr "视频"
 
 #: src/Widgets/CategoryFlowBox.vala:125
 msgid "Writing & Language"
-msgstr ""
+msgstr "写作 & 语言"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
@@ -731,7 +727,6 @@ msgid "Twitter"
 msgstr "Twitter"
 
 #: src/Widgets/SharePopover.vala:51
-#, fuzzy
 msgid "Reddit"
 msgstr "reddit"
 
