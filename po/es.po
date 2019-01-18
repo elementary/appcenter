@@ -3,13 +3,14 @@
 # Carlos Cañellas <ratiosu.cct@gmail.com>, 2018.
 # Cristian Molina <megatux@gmail.com>, 2018.
 # alexis holguin <wholguinmor@uniminuto.edu.co>, 2018.
+# Alvaro <alvaroaraoz_92@hotmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
-"PO-Revision-Date: 2018-11-21 10:21+0000\n"
-"Last-Translator: Cristian Molina <megatux@gmail.com>\n"
+"PO-Revision-Date: 2019-01-19 00:09+0000\n"
+"Last-Translator: Alvaro <alvaroaraoz_92@hotmail.com>\n"
 "Language-Team: Spanish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -72,7 +73,7 @@ msgstr "Red no disponible"
 
 #: src/MainWindow.vala:196
 msgid "Connect to the Internet to install or update apps."
-msgstr "Conéctese a internet para instalar o actualizar aplicaciones."
+msgstr "Conéctate a Internet para instalar o actualizar aplicaciones."
 
 #: src/MainWindow.vala:199
 msgid "Network Settings…"
@@ -299,7 +300,7 @@ msgid ""
 "disturbing. In general, elementary does not review or endorse the contents "
 "of this app."
 msgstr ""
-"%s puede contener contenido solo adecuado para adultos o que puede ser "
+"%s puede contener contenido solo adecuado para adultos o que pueda ser "
 "sensible o perturbador. En general, elementary no revisa ni aprueba el "
 "contenido de esta aplicación."
 
@@ -711,7 +712,7 @@ msgstr "Vídeo"
 
 #: src/Widgets/CategoryFlowBox.vala:125
 msgid "Writing & Language"
-msgstr ""
+msgstr "Escritura e Idioma"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
