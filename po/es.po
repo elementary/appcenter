@@ -5,13 +5,14 @@
 # alexis holguin <wholguinmor@uniminuto.edu.co>, 2018.
 # Alvaro <alvaroaraoz_92@hotmail.com>, 2019.
 # felipe andres gomez villar <felipe.gomez.villar@gmail.com>, 2019.
+# Gabriel De Jesus Gomez Peña <gabrieljgp012@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
 "PO-Revision-Date: 2019-01-19 00:09+0000\n"
-"Last-Translator: felipe andres gomez villar <felipe.gomez.villar@gmail.com>\n"
+"Last-Translator: Gabriel De Jesus Gomez Peña <gabrieljgp012@gmail.com>\n"
 "Language-Team: Spanish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -373,8 +374,8 @@ msgid ""
 "Your email address is only used to send a receipt. You will not be "
 "subscribed to any mailing list."
 msgstr ""
-"La dirección de correo electrónico únicamente se utiliza para enviar un "
-"recibo y no será añadida a ninguna lista de correo."
+"La dirección de correo electrónico unicamente sera utilizada para enviarte "
+"un recibo. No seras suscrito a ninguna lista de difusion."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127
