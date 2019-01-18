@@ -4,13 +4,14 @@
 # Cristian Molina <megatux@gmail.com>, 2018.
 # alexis holguin <wholguinmor@uniminuto.edu.co>, 2018.
 # Alvaro <alvaroaraoz_92@hotmail.com>, 2019.
+# felipe andres gomez villar <felipe.gomez.villar@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
 "PO-Revision-Date: 2019-01-19 00:09+0000\n"
-"Last-Translator: Alvaro <alvaroaraoz_92@hotmail.com>\n"
+"Last-Translator: felipe andres gomez villar <felipe.gomez.villar@gmail.com>\n"
 "Language-Team: Spanish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -348,7 +349,7 @@ msgstr "Revise la información de su pago e intente otra vez."
 
 #: src/Dialogs/StripeDialog.vala:76
 msgid "Payment"
-msgstr "Pago"
+msgstr "Pago "
 
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
