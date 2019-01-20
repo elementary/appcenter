@@ -297,7 +297,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             search_view.reset ();
             stack.visible_child = homepage;
         }
-        
+
         if (mimetype) {
             mimetype = false;
         }

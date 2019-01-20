@@ -368,11 +368,18 @@ public class AppCenterCore.Package : Object {
     private async Pk.Exit perform_package_operation () throws GLib.Error {
         Pk.ProgressCallback cb = change_information.ProgressCallback;
         var client = AppCenterCore.Client.get_default ();
+        var pk_client = AppCenterCore.PackageKitClient.get_default ();
+
+        Gee.ArrayList<string> packages_ids = new Gee.ArrayList<string> ();
+        foreach (var pkg_name in this.component.get_pkgnames ()) {
+            packages_ids.add (pkg_name);
+        }
+
         switch (state) {
             case State.UPDATING:
                 return yield client.update_package (this, cb, action_cancellable);
             case State.INSTALLING:
-                return yield client.install_package (this, cb, action_cancellable);
+                return yield pk_client.install_packages (packages_ids, (owned)cb, action_cancellable);
             case State.REMOVING:
                 var status = yield client.remove_package (this, cb, action_cancellable);
 

@@ -342,21 +342,7 @@ public class AppCenterCore.Client : Object {
 
     public async Gee.Collection<AppCenterCore.Package> get_installed_applications () {
         var packages = new Gee.TreeSet<AppCenterCore.Package> ();
-        var installed = yield get_installed_packages ();
-        foreach (var pk_package in installed) {
-            var package = package_list[pk_package.get_name ()];
-            if (package != null) {
-                populate_package (package, pk_package);
-                packages.add (package);
-            }
-        }
-
-        return packages;
-    }
-
-    public Gee.Collection<AppCenterCore.Package> get_installed_applications_sync () {
-        var packages = new Gee.TreeSet<AppCenterCore.Package> ();
-        var installed = get_installed_packages_sync ();
+        var installed = yield PackageKitClient.get_default ().get_installed_packages ();
         foreach (var pk_package in installed) {
             var package = package_list[pk_package.get_name ()];
             if (package != null) {
@@ -655,81 +641,6 @@ public class AppCenterCore.Client : Object {
 
             refresh_in_progress = success;
         } // Otherwise updates and timeout were cancelled during refresh, or no network present.
-    }
-
-    public async Gee.TreeSet<Pk.Package> get_installed_packages () {
-        task_count++;
-
-        Pk.Bitfield filter = Pk.Bitfield.from_enums (Pk.Filter.INSTALLED, Pk.Filter.NEWEST);
-        var installed = new Gee.TreeSet<Pk.Package> ();
-
-        try {
-            Pk.Results results = yield client.get_packages_async (filter, null, (prog, type) => {});
-            results.get_package_array ().foreach ((pk_package) => {
-                installed.add (pk_package);
-            });
-
-        } catch (Error e) {
-            critical (e.message);
-        }
-
-        task_count--;
-        return installed;
-    }
-
-    public Gee.TreeSet<Pk.Package> get_installed_packages_sync () {
-        task_count++;
-
-        Pk.Bitfield filter = Pk.Bitfield.from_enums (Pk.Filter.INSTALLED, Pk.Filter.NEWEST);
-        var installed = new Gee.TreeSet<Pk.Package> ();
-
-        try {
-            Pk.Results results = client.get_packages_sync (filter, null, (prog, type) => {});
-            results.get_package_array ().foreach ((pk_package) => {
-                installed.add (pk_package);
-            });
-
-        } catch (Error e) {
-            critical (e.message);
-        }
-
-        task_count--;
-        return installed;
-    }
-
-    public async Gee.ArrayList<Pk.Package> get_needed_deps_for_package (AppCenterCore.Package package, Cancellable? cancellable) {
-        var pk_package = package.find_package ();
-        var deps = new Gee.ArrayList<Pk.Package> ();
-
-        if (pk_package == null) {
-            return deps;
-        }
-
-        string[] package_array = { pk_package.package_id, null };
-        var filters = Pk.Bitfield.from_enums (Pk.Filter.NOT_INSTALLED);
-        try {
-            var deps_result = yield client.depends_on_async (filters, package_array, false, cancellable, (p, t) => {});
-            deps_result.get_package_array ().foreach ((dep_package) => {
-                deps.add (dep_package);
-            });
-
-            package_array = {};
-            foreach (var dep_package in deps) {
-                package_array += dep_package.package_id;
-            }
-
-            package_array += null;
-            if (package_array.length > 1) {
-                deps_result = yield client.depends_on_async (filters, package_array, true, cancellable, (p, t) => {});
-                deps_result.get_package_array ().foreach ((dep_package) => {
-                    deps.add (dep_package);
-                });
-            }
-        } catch (Error e) {
-            warning ("Error fetching dependencies for %s: %s", pk_package.package_id, e.message);
-        }
-
-        return deps;
     }
 
     public AppCenterCore.Package? get_package_for_component_id (string id) {

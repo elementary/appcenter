@@ -414,14 +414,11 @@ namespace AppCenter.Views {
             SourceFunc callback = get_app_download_size.callback;
             uint64 size = 0;
 
+            var client = AppCenterCore.PackageKitClient.get_default ();
+            var deps = yield client.get_not_installed_deps_for_package (package.find_package (), app_download_size_cancellable);
+
             // This thread will set the value of `size` in the background.
             ThreadFunc<bool> run = () => {
-                var client = AppCenterCore.Client.get_default ();
-                var deps = new Gee.ArrayList<Pk.Package> ();
-                client.get_needed_deps_for_package.begin (package, app_download_size_cancellable, (obj, res) => {
-                    deps = client.get_needed_deps_for_package.end (res);
-                });
-
                 string[] package_ids = {};
 
                 foreach (var package in deps) {
