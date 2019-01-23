@@ -160,10 +160,10 @@ namespace AppCenter {
                     }
                 }
 
-                // If the banners weren't populated, try again to populate them
-                if (!recently_updated_revealer.reveal_child || !trending_revealer.reveal_child) {
-                    refresh_banners ();
-                }
+                //  // If the banners weren't populated, try again to populate them
+                //  if (!recently_updated_revealer.reveal_child || !trending_revealer.reveal_child) {
+                //      refresh_banners ();
+                //  }
             });
 
             recently_updated_carousel.package_activated.connect (show_package);
