@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-05 14:29-0800\n"
+"POT-Creation-Date: 2019-01-02 07:28-0600\n"
 "PO-Revision-Date: 2018-06-04 08:07+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Slovak <https://weblate.elementary.io/projects/appcenter/"
@@ -44,9 +44,9 @@ msgstr "Aplikácia %s bola úspešne nainštalovaná"
 msgid "There Was An Error Installing %s."
 msgstr "Pri inštalácii balíka %s sa vyskytla chyba."
 
-#: src/MainWindow.vala:149 src/Views/Homepage.vala:253
-#: src/Views/Homepage.vala:262 src/Views/Homepage.vala:267
-#: src/Views/Homepage.vala:278
+#: src/MainWindow.vala:149 src/Views/Homepage.vala:282
+#: src/Views/Homepage.vala:291 src/Views/Homepage.vala:296
+#: src/Views/Homepage.vala:307
 msgid "Home"
 msgstr "Úvodná stránka"
 
@@ -217,27 +217,27 @@ msgstr "Kopírujú sa súbory"
 msgid "Unknown state"
 msgstr "Neznámy stav"
 
-#: src/Core/Client.vala:106
+#: src/Core/Client.vala:91
 msgid "Operating System Updates"
 msgstr "Aktualizácie operačného systému"
 
-#: src/Core/Client.vala:107
+#: src/Core/Client.vala:92
 msgid "Updates to system components"
 msgstr "Aktualizácie systémových komponent"
 
-#: src/Core/Client.vala:142
+#: src/Core/Client.vala:151
 #, c-format
 msgid "%s (local)"
 msgstr "%s (lokálny)"
 
-#: src/Core/Client.vala:467
+#: src/Core/Client.vala:476
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Aktualizácií je dostupných"
 msgstr[1] "Aktualizácia je dostupná"
 msgstr[2] "Aktualizácie sú dostupné"
 
-#: src/Core/Client.vala:468
+#: src/Core/Client.vala:477
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
@@ -245,16 +245,16 @@ msgstr[0] "%u aktualizácií je dostupných pre váš systém"
 msgstr[1] "%u aktualizácia je dostupná pre váš systém"
 msgstr[2] "%u aktualizácie sú dostupné pre váš systém"
 
-#: src/Core/Client.vala:496
+#: src/Core/Client.vala:505
 #, c-format
 msgid "Version: %s"
 msgstr "Verzia: %s"
 
-#: src/Core/Client.vala:505
+#: src/Core/Client.vala:514
 msgid "No components with updates"
 msgstr "Žiadne komponenty s aktualizáciami"
 
-#: src/Core/Client.vala:509
+#: src/Core/Client.vala:518
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
@@ -262,7 +262,7 @@ msgstr[0] "%u aktualizovateľný"
 msgstr[1] "%u aktualizovateľné"
 msgstr[2] ""
 
-#: src/Core/Client.vala:511
+#: src/Core/Client.vala:520
 #, c-format
 msgid "%s:"
 msgstr "%s:"
@@ -611,7 +611,7 @@ msgstr "Obľúbené"
 msgid "Categories"
 msgstr "Kategórie"
 
-#: src/Views/Homepage.vala:267 src/Views/Homepage.vala:278
+#: src/Views/Homepage.vala:296 src/Views/Homepage.vala:307
 #, c-format
 msgid "Search %s"
 msgstr "Prehľadávať %s"
@@ -642,68 +642,72 @@ msgstr "Získajte aplikácie, ktoré potrebujete. Za cenu, akú si môžete dovo
 msgid "Card Number"
 msgstr "Číslo Karty"
 
-#: src/Widgets/CategoryFlowBox.vala:29
+#: src/Widgets/CategoryFlowBox.vala:27
 msgid "Accessories"
 msgstr "Príslušenstvo"
 
-#: src/Widgets/CategoryFlowBox.vala:30
+#: src/Widgets/CategoryFlowBox.vala:28
 msgid "Audio"
 msgstr "Zvuk"
 
-#: src/Widgets/CategoryFlowBox.vala:31
+#: src/Widgets/CategoryFlowBox.vala:29
 #, fuzzy
 msgid "Communication"
 msgstr "Vzdelávanie"
 
-#: src/Widgets/CategoryFlowBox.vala:40
+#: src/Widgets/CategoryFlowBox.vala:38
 msgid "Development"
 msgstr "Vývoj"
 
-#: src/Widgets/CategoryFlowBox.vala:50
+#: src/Widgets/CategoryFlowBox.vala:48
 msgid "Education"
 msgstr "Vzdelávanie"
 
-#: src/Widgets/CategoryFlowBox.vala:51
+#: src/Widgets/CategoryFlowBox.vala:49
 #, fuzzy
 msgid "Finance"
 msgstr "Zrušiť"
 
-#: src/Widgets/CategoryFlowBox.vala:55
+#: src/Widgets/CategoryFlowBox.vala:53
 msgid "Games"
 msgstr "Hry"
 
-#: src/Widgets/CategoryFlowBox.vala:71
+#: src/Widgets/CategoryFlowBox.vala:69
 msgid "Graphics"
 msgstr "Grafika"
 
-#: src/Widgets/CategoryFlowBox.vala:80
+#: src/Widgets/CategoryFlowBox.vala:78
 msgid "Internet"
 msgstr "Internet"
 
-#: src/Widgets/CategoryFlowBox.vala:84
+#: src/Widgets/CategoryFlowBox.vala:82
 #, fuzzy
 msgid "Math, Science, & Engineering"
 msgstr "Veda a výskum"
 
-#: src/Widgets/CategoryFlowBox.vala:103
+#: src/Widgets/CategoryFlowBox.vala:101
 msgid "Media Production"
 msgstr ""
 
-#: src/Widgets/CategoryFlowBox.vala:110
+#: src/Widgets/CategoryFlowBox.vala:108
 msgid "Office"
 msgstr "Kancelária"
 
-#: src/Widgets/CategoryFlowBox.vala:117
+#: src/Widgets/CategoryFlowBox.vala:115
 msgid "System"
 msgstr "Systém"
 
-#: src/Widgets/CategoryFlowBox.vala:121
+#: src/Widgets/CategoryFlowBox.vala:119
 msgid "Universal Access"
 msgstr "Univerzálny prístup"
 
-#: src/Widgets/CategoryFlowBox.vala:122
+#: src/Widgets/CategoryFlowBox.vala:120
 msgid "Video"
 msgstr "Video"
+
+#: src/Widgets/CategoryFlowBox.vala:125
+msgid "Writing & Language"
+msgstr ""
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"

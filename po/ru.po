@@ -1,10 +1,10 @@
-# Kirill Romanov <djaler1@gmail.com>, 2018.
+# Kirill Romanov <djaler1@gmail.com>, 2018, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-05 14:29-0800\n"
-"PO-Revision-Date: 2018-07-08 14:46+0000\n"
+"POT-Creation-Date: 2019-01-02 07:28-0600\n"
+"PO-Revision-Date: 2019-01-07 00:02+0000\n"
 "Last-Translator: Kirill Romanov <djaler1@gmail.com>\n"
 "Language-Team: Russian <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/ru/>\n"
@@ -12,8 +12,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
@@ -46,9 +46,9 @@ msgstr "Приложение «%s» успешно установлено"
 msgid "There Was An Error Installing %s."
 msgstr "Ошибка при установке %s."
 
-#: src/MainWindow.vala:149 src/Views/Homepage.vala:253
-#: src/Views/Homepage.vala:262 src/Views/Homepage.vala:267
-#: src/Views/Homepage.vala:278
+#: src/MainWindow.vala:149 src/Views/Homepage.vala:282
+#: src/Views/Homepage.vala:291 src/Views/Homepage.vala:296
+#: src/Views/Homepage.vala:307
 msgid "Home"
 msgstr "Главная"
 
@@ -219,27 +219,27 @@ msgstr "Копирование файлов"
 msgid "Unknown state"
 msgstr "Неизвестное состояние"
 
-#: src/Core/Client.vala:106
+#: src/Core/Client.vala:91
 msgid "Operating System Updates"
 msgstr "Обновления операционной системы"
 
-#: src/Core/Client.vala:107
+#: src/Core/Client.vala:92
 msgid "Updates to system components"
 msgstr "Обновления компонентов системы"
 
-#: src/Core/Client.vala:142
+#: src/Core/Client.vala:151
 #, c-format
 msgid "%s (local)"
 msgstr "%s (local)"
 
-#: src/Core/Client.vala:467
+#: src/Core/Client.vala:476
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Доступно обновление"
 msgstr[1] "Доступны обновления"
 msgstr[2] "Доступны обновления"
 
-#: src/Core/Client.vala:468
+#: src/Core/Client.vala:477
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
@@ -247,16 +247,16 @@ msgstr[0] "Для системы доступно %u обновление"
 msgstr[1] "Для системы доступны %u обновления"
 msgstr[2] "Для системы доступны %u обновлений"
 
-#: src/Core/Client.vala:496
+#: src/Core/Client.vala:505
 #, c-format
 msgid "Version: %s"
 msgstr "Версия: %s"
 
-#: src/Core/Client.vala:505
+#: src/Core/Client.vala:514
 msgid "No components with updates"
 msgstr "Нет приложений нуждающихся в обновлении"
 
-#: src/Core/Client.vala:509
+#: src/Core/Client.vala:518
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
@@ -264,7 +264,7 @@ msgstr[0] "%u компонент с обновлениями"
 msgstr[1] "%u компонента с обновлениями"
 msgstr[2] "%u компонентов с обновлениями"
 
-#: src/Core/Client.vala:511
+#: src/Core/Client.vala:520
 #, c-format
 msgid "%s:"
 msgstr "%s:"
@@ -309,9 +309,8 @@ msgid "Don’t Install"
 msgstr "Установить"
 
 #: src/Dialogs/ContentWarningDialog.vala:41
-#, fuzzy
 msgid "Install Anyway"
-msgstr "Установка"
+msgstr "Всё равно установить"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -611,7 +610,7 @@ msgstr "В тренде"
 msgid "Categories"
 msgstr "Категории"
 
-#: src/Views/Homepage.vala:267 src/Views/Homepage.vala:278
+#: src/Views/Homepage.vala:296 src/Views/Homepage.vala:307
 #, c-format
 msgid "Search %s"
 msgstr "Поиск %s"
@@ -645,68 +644,70 @@ msgstr ""
 msgid "Card Number"
 msgstr "Номер карты"
 
-#: src/Widgets/CategoryFlowBox.vala:29
+#: src/Widgets/CategoryFlowBox.vala:27
 msgid "Accessories"
 msgstr "Утилиты"
 
-#: src/Widgets/CategoryFlowBox.vala:30
+#: src/Widgets/CategoryFlowBox.vala:28
 msgid "Audio"
 msgstr "Аудио"
 
-#: src/Widgets/CategoryFlowBox.vala:31
+#: src/Widgets/CategoryFlowBox.vala:29
 #, fuzzy
 msgid "Communication"
 msgstr "Образование"
 
-#: src/Widgets/CategoryFlowBox.vala:40
+#: src/Widgets/CategoryFlowBox.vala:38
 msgid "Development"
 msgstr "Разработка"
 
-#: src/Widgets/CategoryFlowBox.vala:50
+#: src/Widgets/CategoryFlowBox.vala:48
 msgid "Education"
 msgstr "Образование"
 
-#: src/Widgets/CategoryFlowBox.vala:51
-#, fuzzy
+#: src/Widgets/CategoryFlowBox.vala:49
 msgid "Finance"
-msgstr "Отменить"
+msgstr "Финансы"
 
-#: src/Widgets/CategoryFlowBox.vala:55
+#: src/Widgets/CategoryFlowBox.vala:53
 msgid "Games"
 msgstr "Игры"
 
-#: src/Widgets/CategoryFlowBox.vala:71
+#: src/Widgets/CategoryFlowBox.vala:69
 msgid "Graphics"
 msgstr "Графика"
 
-#: src/Widgets/CategoryFlowBox.vala:80
+#: src/Widgets/CategoryFlowBox.vala:78
 msgid "Internet"
 msgstr "Интернет"
 
-#: src/Widgets/CategoryFlowBox.vala:84
-#, fuzzy
+#: src/Widgets/CategoryFlowBox.vala:82
 msgid "Math, Science, & Engineering"
-msgstr "Наука и инженерия"
+msgstr "Математика, наука и инженерия"
 
-#: src/Widgets/CategoryFlowBox.vala:103
+#: src/Widgets/CategoryFlowBox.vala:101
 msgid "Media Production"
 msgstr ""
 
-#: src/Widgets/CategoryFlowBox.vala:110
+#: src/Widgets/CategoryFlowBox.vala:108
 msgid "Office"
 msgstr "Офис"
 
-#: src/Widgets/CategoryFlowBox.vala:117
+#: src/Widgets/CategoryFlowBox.vala:115
 msgid "System"
 msgstr "Система"
 
-#: src/Widgets/CategoryFlowBox.vala:121
+#: src/Widgets/CategoryFlowBox.vala:119
 msgid "Universal Access"
 msgstr "Универсальный доступ"
 
-#: src/Widgets/CategoryFlowBox.vala:122
+#: src/Widgets/CategoryFlowBox.vala:120
 msgid "Video"
 msgstr "Видео"
+
+#: src/Widgets/CategoryFlowBox.vala:125
+msgid "Writing & Language"
+msgstr ""
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"

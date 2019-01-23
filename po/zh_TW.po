@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-05 14:29-0800\n"
+"POT-Creation-Date: 2019-01-02 07:28-0600\n"
 "PO-Revision-Date: 2018-10-29 16:29+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://weblate.elementary.io/projects/"
@@ -46,9 +46,9 @@ msgstr "％s 已成功安裝"
 msgid "There Was An Error Installing %s."
 msgstr "安裝 %s 時發生錯誤。"
 
-#: src/MainWindow.vala:149 src/Views/Homepage.vala:253
-#: src/Views/Homepage.vala:262 src/Views/Homepage.vala:267
-#: src/Views/Homepage.vala:278
+#: src/MainWindow.vala:149 src/Views/Homepage.vala:282
+#: src/Views/Homepage.vala:291 src/Views/Homepage.vala:296
+#: src/Views/Homepage.vala:307
 msgid "Home"
 msgstr "大廳"
 
@@ -219,46 +219,46 @@ msgstr "正在複製檔案"
 msgid "Unknown state"
 msgstr "未知的狀態"
 
-#: src/Core/Client.vala:106
+#: src/Core/Client.vala:91
 msgid "Operating System Updates"
 msgstr "作業系統更新"
 
-#: src/Core/Client.vala:107
+#: src/Core/Client.vala:92
 msgid "Updates to system components"
 msgstr "系統組件的更新"
 
-#: src/Core/Client.vala:142
+#: src/Core/Client.vala:151
 #, c-format
 msgid "%s (local)"
 msgstr "%s (本地)"
 
-#: src/Core/Client.vala:467
+#: src/Core/Client.vala:476
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "有更新"
 
-#: src/Core/Client.vala:468
+#: src/Core/Client.vala:477
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "您的系統有 %u 項更新可套用"
 
-#: src/Core/Client.vala:496
+#: src/Core/Client.vala:505
 #, c-format
 msgid "Version: %s"
 msgstr "版本：%s"
 
-#: src/Core/Client.vala:505
+#: src/Core/Client.vala:514
 msgid "No components with updates"
 msgstr "沒有組件需要更新"
 
-#: src/Core/Client.vala:509
+#: src/Core/Client.vala:518
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "%u 個組件需要更新"
 
-#: src/Core/Client.vala:511
+#: src/Core/Client.vala:520
 #, c-format
 msgid "%s:"
 msgstr "%s："
@@ -581,7 +581,7 @@ msgstr "熱門"
 msgid "Categories"
 msgstr "類別"
 
-#: src/Views/Homepage.vala:267 src/Views/Homepage.vala:278
+#: src/Views/Homepage.vala:296 src/Views/Homepage.vala:307
 #, c-format
 msgid "Search %s"
 msgstr "搜尋 %s"
@@ -612,67 +612,71 @@ msgstr "以您能負擔的價格取得您需要的程式。"
 msgid "Card Number"
 msgstr "號碼"
 
-#: src/Widgets/CategoryFlowBox.vala:29
+#: src/Widgets/CategoryFlowBox.vala:27
 msgid "Accessories"
 msgstr "附屬應用"
 
-#: src/Widgets/CategoryFlowBox.vala:30
+#: src/Widgets/CategoryFlowBox.vala:28
 msgid "Audio"
 msgstr "音訊"
 
-#: src/Widgets/CategoryFlowBox.vala:31
+#: src/Widgets/CategoryFlowBox.vala:29
 #, fuzzy
 msgid "Communication"
 msgstr "教育"
 
-#: src/Widgets/CategoryFlowBox.vala:40
+#: src/Widgets/CategoryFlowBox.vala:38
 msgid "Development"
 msgstr "開發"
 
-#: src/Widgets/CategoryFlowBox.vala:50
+#: src/Widgets/CategoryFlowBox.vala:48
 msgid "Education"
 msgstr "教育"
 
-#: src/Widgets/CategoryFlowBox.vala:51
+#: src/Widgets/CategoryFlowBox.vala:49
 #, fuzzy
 msgid "Finance"
 msgstr "取消"
 
-#: src/Widgets/CategoryFlowBox.vala:55
+#: src/Widgets/CategoryFlowBox.vala:53
 msgid "Games"
 msgstr "遊戲"
 
-#: src/Widgets/CategoryFlowBox.vala:71
+#: src/Widgets/CategoryFlowBox.vala:69
 msgid "Graphics"
 msgstr "美工繪圖"
 
-#: src/Widgets/CategoryFlowBox.vala:80
+#: src/Widgets/CategoryFlowBox.vala:78
 msgid "Internet"
 msgstr "網際網路"
 
-#: src/Widgets/CategoryFlowBox.vala:84
+#: src/Widgets/CategoryFlowBox.vala:82
 msgid "Math, Science, & Engineering"
 msgstr "數學、科學與工程"
 
-#: src/Widgets/CategoryFlowBox.vala:103
+#: src/Widgets/CategoryFlowBox.vala:101
 msgid "Media Production"
 msgstr ""
 
-#: src/Widgets/CategoryFlowBox.vala:110
+#: src/Widgets/CategoryFlowBox.vala:108
 msgid "Office"
 msgstr "辦公"
 
-#: src/Widgets/CategoryFlowBox.vala:117
+#: src/Widgets/CategoryFlowBox.vala:115
 msgid "System"
 msgstr "系統"
 
-#: src/Widgets/CategoryFlowBox.vala:121
+#: src/Widgets/CategoryFlowBox.vala:119
 msgid "Universal Access"
 msgstr "無障礙功能"
 
-#: src/Widgets/CategoryFlowBox.vala:122
+#: src/Widgets/CategoryFlowBox.vala:120
 msgid "Video"
 msgstr "視訊"
+
+#: src/Widgets/CategoryFlowBox.vala:125
+msgid "Writing & Language"
+msgstr ""
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
