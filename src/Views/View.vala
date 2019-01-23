@@ -61,18 +61,16 @@ public abstract class AppCenter.View : Gtk.Stack {
 
     public void remove_visible_package (Fn before_destroy) {
         unowned Gtk.Widget? child = get_visible_child ();
-        bool marked = false;
-        if (null != child && child is Views.AppInfoView) {
-            marked = true;
-            Idle.add (() => {
-                child.destroy ();
+        before_destroy ();
+
+        if (child != null && child is Views.AppInfoView) {
+            remove (child);
+            Timeout.add (transition_duration, () => {
+                if (child != null && child is Object) {
+                    child.destroy ();
+                }
                 return Source.REMOVE;
             });
-        }
-
-        before_destroy ();
-        if (marked) {
-            remove (child);
         }
     }
 
