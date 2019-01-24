@@ -15,6 +15,18 @@
         </p>
     </description>
     <releases>
+        <release version="3.1.0" date="2019-01-02" urgency="medium">
+            <description>
+                <ul>
+                    <li>New categories: Communication, Finance, Media Production</li>
+                    <li>Add Math to Science category</li>
+                    <li>Relax email address validator</li>
+                    <li>Present update availability more accurately</li>
+                    <li>Category graphics revamped</li>
+                    <li>New translations</li>
+                </ul>
+            </description>
+        </release>
         <release version="3.0.1" date="2018-10-25" urgency="medium">
             <description>
                 <ul>
