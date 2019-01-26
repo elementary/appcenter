@@ -3,13 +3,16 @@
 # Carlos Cañellas <ratiosu.cct@gmail.com>, 2018.
 # Cristian Molina <megatux@gmail.com>, 2018.
 # alexis holguin <wholguinmor@uniminuto.edu.co>, 2018.
+# Alvaro <alvaroaraoz_92@hotmail.com>, 2019.
+# felipe andres gomez villar <felipe.gomez.villar@gmail.com>, 2019.
+# Gabriel De Jesus Gomez Peña <gabrieljgp012@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
-"PO-Revision-Date: 2018-11-21 10:21+0000\n"
-"Last-Translator: Cristian Molina <megatux@gmail.com>\n"
+"PO-Revision-Date: 2019-01-19 00:09+0000\n"
+"Last-Translator: Gabriel De Jesus Gomez Peña <gabrieljgp012@gmail.com>\n"
 "Language-Team: Spanish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -72,7 +75,7 @@ msgstr "Red no disponible"
 
 #: src/MainWindow.vala:196
 msgid "Connect to the Internet to install or update apps."
-msgstr "Conéctese a internet para instalar o actualizar aplicaciones."
+msgstr "Conéctate a Internet para instalar o actualizar aplicaciones."
 
 #: src/MainWindow.vala:199
 msgid "Network Settings…"
@@ -299,7 +302,7 @@ msgid ""
 "disturbing. In general, elementary does not review or endorse the contents "
 "of this app."
 msgstr ""
-"%s puede contener contenido solo adecuado para adultos o que puede ser "
+"%s puede contener contenido solo adecuado para adultos o que pueda ser "
 "sensible o perturbador. En general, elementary no revisa ni aprueba el "
 "contenido de esta aplicación."
 
@@ -347,7 +350,7 @@ msgstr "Revise la información de su pago e intente otra vez."
 
 #: src/Dialogs/StripeDialog.vala:76
 msgid "Payment"
-msgstr "Pago"
+msgstr "Pago "
 
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
@@ -371,8 +374,8 @@ msgid ""
 "Your email address is only used to send a receipt. You will not be "
 "subscribed to any mailing list."
 msgstr ""
-"La dirección de correo electrónico únicamente se utiliza para enviar un "
-"recibo y no será añadida a ninguna lista de correo."
+"La dirección de correo electrónico unicamente sera utilizada para enviarte "
+"un recibo. No seras suscrito a ninguna lista de difusion."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127
@@ -711,7 +714,7 @@ msgstr "Vídeo"
 
 #: src/Widgets/CategoryFlowBox.vala:125
 msgid "Writing & Language"
-msgstr ""
+msgstr "Escritura e Idioma"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
