@@ -43,6 +43,9 @@ public class AppCenterCore.PackageKitClient : Object {
                 case PackageKitJob.Type.INSTALL_PACKAGES:
                     install_packages_internal (job);
                     break;
+                case PackageKitJob.Type.REMOVE_PACKAGES:
+                    remove_packages_internal (job);
+                    break;
                 default:
                     assert_not_reached ();
             }
@@ -306,6 +309,54 @@ public class AppCenterCore.PackageKitClient : Object {
         job_args.cancellable = cancellable;
 
         var job = yield launch_job (PackageKitJob.Type.INSTALL_PACKAGES, job_args);
+        if (job.error != null) {
+            throw job.error;
+        }
+
+        return (Pk.Exit)job.result.get_enum ();
+    }
+
+    private void remove_packages_internal (PackageKitJob job) {
+        var args = (RemovePackagesArgs)job.args;
+        var package_ids = args.package_ids;
+        var cancellable = args.cancellable;
+        unowned Pk.ProgressCallback cb = args.cb;
+
+        Pk.Exit exit_status = Pk.Exit.UNKNOWN;
+        string[] packages_ids = {};
+        foreach (var pkg_name in package_ids) {
+            packages_ids += pkg_name;
+        }
+
+        packages_ids += null;
+
+        try {
+            var results = client.resolve (Pk.Bitfield.from_enums (Pk.Filter.INSTALLED, Pk.Filter.NEWEST), packages_ids, cancellable, () => {});
+            packages_ids = {};
+            results.get_package_array ().foreach ((package) => {
+                packages_ids += package.package_id;
+            });
+
+            results = client.remove_packages_sync (packages_ids, true, true, cancellable, cb);
+            exit_status = results.get_exit_code ();
+        } catch (Error e) {
+            job.error = e;
+            job.results_ready ();
+            return;
+        }
+
+        job.result = Value (typeof (Pk.Exit));
+        job.result.set_enum (exit_status);
+        job.results_ready ();
+    }
+
+    public async Pk.Exit remove_packages (Gee.ArrayList<string> package_ids, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+        var job_args = new RemovePackagesArgs ();
+        job_args.package_ids = package_ids;
+        job_args.cb = (owned)cb;
+        job_args.cancellable = cancellable;
+
+        var job = yield launch_job (PackageKitJob.Type.REMOVE_PACKAGES, job_args);
         if (job.error != null) {
             throw job.error;
         }

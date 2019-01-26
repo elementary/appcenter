@@ -205,27 +205,12 @@ public class AppCenterCore.Client : Object {
     public async Pk.Exit remove_package (Package package, Pk.ProgressCallback cb, GLib.Cancellable cancellable) throws GLib.Error {
         task_count++;
 
-        Pk.Exit exit_status = Pk.Exit.UNKNOWN;
-        string[] packages_ids = {};
-        foreach (var pkg_name in package.component.get_pkgnames ()) {
-            packages_ids += pkg_name;
+        var package_ids = new Gee.ArrayList<string> ();
+        foreach (var package_id in package.component.get_pkgnames ()) {
+            package_ids.add (package_id);
         }
 
-        packages_ids += null;
-
-        try {
-            var results = yield client.resolve_async (Pk.Bitfield.from_enums (Pk.Filter.INSTALLED, Pk.Filter.NEWEST), packages_ids, cancellable, () => {});
-            packages_ids = {};
-            results.get_package_array ().foreach ((package) => {
-                packages_ids += package.package_id;
-            });
-
-            results = yield client.remove_packages_async (packages_ids, true, true, cancellable, cb);
-            exit_status = results.get_exit_code ();
-        } catch (Error e) {
-            task_count--;
-            throw e;
-        }
+        var exit_status = yield PackageKitClient.get_default ().remove_packages (package_ids, cb, cancellable);
 
         task_count--;
         yield refresh_updates ();

@@ -29,7 +29,8 @@ public class AppCenterCore.PackageKitJob : Object {
         GET_DETAILS_FOR_PACKAGE_IDS,
         GET_INSTALLED_PACKAGES,
         GET_NOT_INSTALLED_DEPS_FOR_PACKAGE,
-        INSTALL_PACKAGES
+        INSTALL_PACKAGES,
+        REMOVE_PACKAGES
     }
 
     public Type operation;
@@ -42,6 +43,12 @@ public class AppCenterCore.PackageKitJob : Object {
 public class AppCenterCore.JobArgs { }
 
 public class AppCenterCore.InstallPackagesArgs : JobArgs {
+    public Gee.ArrayList<string> package_ids;
+    public Pk.ProgressCallback cb;
+    public Cancellable cancellable;
+}
+
+public class AppCenterCore.RemovePackagesArgs : JobArgs {
     public Gee.ArrayList<string> package_ids;
     public Pk.ProgressCallback cb;
     public Cancellable cancellable;
