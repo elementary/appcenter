@@ -85,7 +85,7 @@ public class AppCenterCore.Package : Object {
                 return true;
             }
 
-            Pk.Package? package = find_package ();
+            Pk.Package? package = find_package_sync ();
             if (package != null && package.info == Pk.Info.INSTALLED) {
                 return true;
             }
@@ -407,20 +407,6 @@ public class AppCenterCore.Package : Object {
         }
     }
 
-    private async Pk.Package? find_package_async () {
-        SourceFunc callback = find_package_async.callback;
-
-        Pk.Package? package = null;
-        new Thread<bool> ("appstream-find-package", () => {
-            package = find_package ();
-            Idle.add ((owned)callback);
-            return true;
-        });
-
-        yield;
-        return package;
-    }
-
     public string? get_name () {
         if (name != null) {
             return name;
@@ -428,7 +414,7 @@ public class AppCenterCore.Package : Object {
 
         name = component.get_name ();
         if (name == null) {
-            var package = find_package ();
+            var package = find_package_sync ();
             if (package != null) {
                 name = package.get_name ();
             }
@@ -441,7 +427,7 @@ public class AppCenterCore.Package : Object {
         if (description == null) {
             description = component.get_description ();
             if (description == null) {
-                var package = yield find_package_async ();
+                var package = yield find_package ();
                 if (package != null) {
                     description = package.description;
                 }
@@ -469,7 +455,7 @@ public class AppCenterCore.Package : Object {
 
         summary = component.get_summary ();
         if (summary == null) {
-            var package = find_package ();
+            var package = find_package_sync ();
             if (package != null) {
                 summary = package.get_summary ();
             }
@@ -562,7 +548,7 @@ public class AppCenterCore.Package : Object {
             return latest_version;
         }
 
-        var package = find_package ();
+        var package = find_package_sync ();
         if (package != null) {
             latest_version = package.get_version ();
         }
@@ -731,7 +717,34 @@ public class AppCenterCore.Package : Object {
         return null;
     }
 
-    public Pk.Package? find_package () {
+    private Pk.Package? find_package_sync () {
+        if (component.id == OS_UPDATES_ID || is_local) {
+            return null;
+        }
+
+        if (pk_package != null) {
+            return pk_package;
+        }
+
+        var client = AppCenterCore.PackageKitClient.get_default ();
+        var loop = new MainLoop ();
+        Pk.Package? result = null;
+        client.get_package_by_name.begin (component.get_pkgnames ()[0], 0, (obj, res) => {
+            try {
+                result = client.get_package_by_name.end (res);
+            } catch (Error e) {
+                warning (e.message);
+                result = null;
+            } finally {
+                loop.quit ();
+            }
+        });
+
+        pk_package = result;
+        return pk_package;
+    }
+
+    public async Pk.Package? find_package () {
         if (component.id == OS_UPDATES_ID || is_local) {
             return null;
         }
@@ -741,7 +754,7 @@ public class AppCenterCore.Package : Object {
         }
 
         try {
-            pk_package = AppCenterCore.Client.get_default ().get_app_package (component.get_pkgnames ()[0], 0);
+            pk_package = yield AppCenterCore.PackageKitClient.get_default ().get_package_by_name (component.get_pkgnames ()[0]);
         } catch (Error e) {
             warning (e.message);
             return null;

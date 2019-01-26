@@ -28,6 +28,9 @@ public class AppCenterCore.PackageKitClient : Object {
             switch (job.operation) {
                 case PackageKitJob.Type.STOP_THREAD:
                     return true;
+                case PackageKitJob.Type.GET_PACKAGE_BY_NAME:
+                    get_package_by_name_internal (job);
+                    break;
                 case PackageKitJob.Type.GET_INSTALLED_PACKAGES:
                     get_installed_packages_internal (job);
                     break;
@@ -69,6 +72,60 @@ public class AppCenterCore.PackageKitClient : Object {
         jobs.push (job);
         yield;
         return job;
+    }
+
+    private void get_package_by_name_internal (PackageKitJob job) {
+        var args = (GetPackageByNameArgs)job.args;
+        var name = args.name;
+        var additional_filters = args.additional_filters;
+
+        Pk.Package? package = null;
+        var filter = Pk.Bitfield.from_enums (Pk.Filter.NEWEST);
+        filter |= additional_filters;
+        try {
+            var results = client.search_names_sync (filter, { name, null }, null, () => {});
+            var array = results.get_package_array ();
+            if (array.length > 0) {
+                package = array.get (0);
+            }
+        } catch (Error e) {
+            job.error = e;
+            job.results_ready ();
+            return;
+        }
+
+        if (package != null) {
+            try {
+                Pk.Results details = client.get_details_sync ({ package.package_id, null }, null, (t, p) => {});
+                details.get_details_array ().foreach ((details) => {
+                    package.license = details.license;
+                    package.description = details.description;
+                    package.summary = details.summary;
+                    package.group = details.group;
+                    package.size = details.size;
+                    package.url = details.url;
+                });
+            } catch (Error e) {
+                warning ("Unable to get details for package %s: %s", package.package_id, e.message);
+            }
+        }
+
+        job.result = Value (typeof (Object));
+        job.result.take_object (package);
+        job.results_ready ();
+    }
+
+    public async Pk.Package? get_package_by_name (string name, Pk.Bitfield additional_filters = 0) throws GLib.Error {
+        var job_args = new GetPackageByNameArgs ();
+        job_args.name = name;
+        job_args.additional_filters = additional_filters;
+
+        var job = yield launch_job (PackageKitJob.Type.GET_PACKAGE_BY_NAME, job_args);
+        if (job.error != null) {
+            throw job.error;
+        }
+
+        return (Pk.Package?)job.result.get_object ();
     }
 
     private void get_installed_packages_internal (PackageKitJob job) {

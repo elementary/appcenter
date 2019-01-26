@@ -166,49 +166,6 @@ public class AppCenterCore.Client : Object {
         return null;
     }
 
-    public async Pk.Exit install_package (Package package, Pk.ProgressCallback cb, GLib.Cancellable cancellable) throws GLib.Error {
-        task_count++;
-
-        Pk.Exit exit_status = Pk.Exit.UNKNOWN;
-        string[] packages_ids = {};
-        foreach (var pkg_name in package.component.get_pkgnames ()) {
-            packages_ids += pkg_name;
-        }
-
-        packages_ids += null;
-
-        try {
-            var results = yield client.resolve_async (Pk.Bitfield.from_enums (Pk.Filter.NEWEST, Pk.Filter.ARCH), packages_ids, cancellable, () => {});
-
-            /*
-             * If there were no packages found for the requested architecture,
-             * try to resolve IDs by not searching for this architecture
-             * e.g: filtering 32 bit only package on a 64 bit system
-             */
-            GenericArray<weak Pk.Package> package_array = results.get_package_array ();
-            if (package_array.length == 0) {
-                results = yield client.resolve_async (Pk.Bitfield.from_enums (Pk.Filter.NEWEST, Pk.Filter.NOT_ARCH), packages_ids, cancellable, () => {});
-                package_array = results.get_package_array ();
-            }
-
-            packages_ids = {};
-            package_array.foreach ((package) => {
-                packages_ids += package.package_id;
-            });
-
-            packages_ids += null;
-
-            results = yield client.install_packages_async (packages_ids, cancellable, cb);
-            exit_status = results.get_exit_code ();
-        } catch (Error e) {
-            task_count--;
-            throw e;
-        }
-
-        task_count--;
-        return exit_status;
-    }
-
     public async Pk.Exit update_package (Package package, Pk.ProgressCallback cb, GLib.Cancellable cancellable) throws GLib.Error {
         task_count++;
 
@@ -292,52 +249,48 @@ public class AppCenterCore.Client : Object {
         }
 
         var command = new Granite.Services.SimpleCommand ("/", "%s list".printf (drivers_exec_path));
-        command.done.connect ((command, status) => parse_drivers_output (command.standard_output_str, status));
+        command.done.connect ((command, status) => {
+            parse_drivers_output.begin (command.standard_output_str, status);
+        });
+
         command.run ();
     }
 
-    private void parse_drivers_output (string output, int status) {
+    private async void parse_drivers_output (string output, int status) {
         if (status != 0) {
             task_count--;
             return;
         }
 
-        new Thread<void*> ("parse-drivers-output", () => {
-            string[] tokens = output.split ("\n");
-            for (int i = 0; i < tokens.length; i++) {
-                string package_name = tokens[i];
-                if (package_name.strip () == "") {
-                    continue;
-                }
-
-                var driver_component = new AppStream.Component ();
-                driver_component.set_kind (AppStream.ComponentKind.DRIVER);
-                driver_component.set_pkgnames ({ package_name });
-                driver_component.set_id (package_name);
-
-                var icon = new AppStream.Icon ();
-                icon.set_name ("application-x-firmware");
-                icon.set_kind (AppStream.IconKind.STOCK);
-                driver_component.add_icon (icon);
-
-                var package = new Package (driver_component);
-                var pk_package = package.find_package ();
-                if (pk_package != null && pk_package.get_info () == Pk.Info.INSTALLED) {
-                    package.installed_packages.add (pk_package);
-                    package.update_state ();
-                }
-
-                driver_list.add (package);
+        string[] tokens = output.split ("\n");
+        for (int i = 0; i < tokens.length; i++) {
+            string package_name = tokens[i];
+            if (package_name.strip () == "") {
+                continue;
             }
 
-            Idle.add (() => {
-                drivers_detected ();
-                return false;
-            });
+            var driver_component = new AppStream.Component ();
+            driver_component.set_kind (AppStream.ComponentKind.DRIVER);
+            driver_component.set_pkgnames ({ package_name });
+            driver_component.set_id (package_name);
 
-            task_count--;
-            return null;
-        });
+            var icon = new AppStream.Icon ();
+            icon.set_name ("application-x-firmware");
+            icon.set_kind (AppStream.IconKind.STOCK);
+            driver_component.add_icon (icon);
+
+            var package = new Package (driver_component);
+            var pk_package = yield package.find_package ();
+            if (pk_package != null && pk_package.get_info () == Pk.Info.INSTALLED) {
+                package.installed_packages.add (pk_package);
+                package.update_state ();
+            }
+
+            driver_list.add (package);
+        }
+
+        drivers_detected ();
+        task_count--;
     }
 
     public async Gee.Collection<AppCenterCore.Package> get_installed_applications () {
@@ -413,39 +366,6 @@ public class AppCenterCore.Client : Object {
         }
 
         return apps;
-    }
-
-    public Pk.Package? get_app_package (string application, Pk.Bitfield additional_filters = 0) throws GLib.Error {
-        task_count++;
-
-        Pk.Package? package = null;
-        var filter = Pk.Bitfield.from_enums (Pk.Filter.NEWEST);
-        filter |= additional_filters;
-        try {
-            var results = client.search_names_sync (filter, { application, null }, cancellable, () => {});
-            var array = results.get_package_array ();
-            if (array.length > 0) {
-                package = array.get (0);
-            }
-        } catch (Error e) {
-            task_count--;
-            throw e;
-        }
-
-        if (package != null) {
-            Pk.Results details = client.get_details_sync ({ package.package_id, null }, null, (t, p) => {});
-            details.get_details_array ().foreach ((details) => {
-                package.license = details.license;
-                package.description = details.description;
-                package.summary = details.summary;
-                package.group = details.group;
-                package.size = details.size;
-                package.url = details.url;
-            });
-        }
-
-        task_count--;
-        return package;
     }
 
     private async void refresh_updates () {

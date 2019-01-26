@@ -414,8 +414,9 @@ namespace AppCenter.Views {
             SourceFunc callback = get_app_download_size.callback;
             uint64 size = 0;
 
+            var pk_package = yield package.find_package ();
             var client = AppCenterCore.PackageKitClient.get_default ();
-            var deps = yield client.get_not_installed_deps_for_package (package.find_package (), app_download_size_cancellable);
+            var deps = yield client.get_not_installed_deps_for_package (pk_package, app_download_size_cancellable);
 
             // This thread will set the value of `size` in the background.
             ThreadFunc<bool> run = () => {
@@ -439,7 +440,6 @@ namespace AppCenter.Views {
                     }
                 }
 
-                var pk_package = package.find_package ();
                 if (pk_package != null) {
                     size += pk_package.size;
                 }
