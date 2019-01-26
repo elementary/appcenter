@@ -740,6 +740,7 @@ public class AppCenterCore.Package : Object {
             }
         });
 
+        loop.run ();
         pk_package = result;
         return pk_package;
     }
