@@ -23,7 +23,7 @@ public class AppCenterCore.PackageKitClient : Object {
     private Thread<bool> worker_thread;
 
     private bool worker_func () {
-		while (true) {
+        while (true) {
             var job = jobs.pop ();
             switch (job.operation) {
                 case PackageKitJob.Type.STOP_THREAD:
@@ -40,11 +40,11 @@ public class AppCenterCore.PackageKitClient : Object {
                 case PackageKitJob.Type.INSTALL_PACKAGES:
                     install_packages_internal (job);
                     break;
-			    default:
-				    assert_not_reached ();
-		    }
+                default:
+                    assert_not_reached ();
+            }
         }
-	}
+    }
 
     static construct {
         client = new Task ();
