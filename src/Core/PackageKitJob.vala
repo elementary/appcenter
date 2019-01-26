@@ -18,7 +18,7 @@
  */
 
 public class AppCenterCore.PackageKitJob : Object {
-    public Value[] args;
+    public JobArgs? args;
     public Value result;
     public Error error;
     public signal void results_ready ();
@@ -37,9 +37,17 @@ public class AppCenterCore.PackageKitJob : Object {
     }
 }
 
-public class AppCenterCore.InstallPackagesJob : Object {
+public abstract class AppCenterCore.JobArgs : Object {
+}
+
+public class AppCenterCore.InstallPackagesArgs : JobArgs {
     public Gee.ArrayList<string> package_ids;
     public Pk.ProgressCallback cb;
+    public Cancellable cancellable;
+}
+
+public class AppCenterCore.GetNotInstalledDepsFOrPackageArgs : JobArgs {
+    public Pk.Package package;
     public Cancellable cancellable;
 }
 

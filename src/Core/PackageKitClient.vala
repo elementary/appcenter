@@ -57,6 +57,20 @@ public class AppCenterCore.PackageKitClient : Object {
         worker_thread.join ();
     }
 
+    private async PackageKitJob launch_job (PackageKitJob.Type type, JobArgs? args = null) {
+        var job = new PackageKitJob (type);
+        job.args = args;
+
+        SourceFunc callback = launch_job.callback;
+        job.results_ready.connect (() => {
+            Idle.add ((owned) callback);
+        });
+
+        jobs.push (job);
+        yield;
+        return job;
+    }
+
     private void get_installed_packages_internal (PackageKitJob job) {
         Pk.Bitfield filter = Pk.Bitfield.from_enums (Pk.Filter.INSTALLED, Pk.Filter.NEWEST);
         var installed = new Gee.TreeSet<Pk.Package> ();
@@ -77,20 +91,14 @@ public class AppCenterCore.PackageKitClient : Object {
     }
 
     public async Gee.TreeSet<Pk.Package> get_installed_packages () {
-        var job = new PackageKitJob (PackageKitJob.Type.GET_INSTALLED_PACKAGES);
-        SourceFunc callback = get_installed_packages.callback;
-        job.results_ready.connect (() => {
-            Idle.add ((owned) callback);
-        });
-
-        jobs.push (job);
-        yield;
+        var job = yield launch_job (PackageKitJob.Type.GET_INSTALLED_PACKAGES);
         return (Gee.TreeSet<Pk.Package>)job.result.get_object ();
     }
 
     private void get_not_installed_deps_for_package_internal (PackageKitJob job) {
-        var pk_package = (Pk.Package)job.args[0].get_object ();
-        var cancellable = (Cancellable)job.args[1].get_object ();
+        var args = (GetNotInstalledDepsFOrPackageArgs)job.args;
+        var pk_package = args.package;
+        var cancellable = args.cancellable;
 
         var deps = new Gee.ArrayList<Pk.Package> ();
 
@@ -135,27 +143,16 @@ public class AppCenterCore.PackageKitClient : Object {
             return new Gee.ArrayList<Pk.Package> ();
         }
 
-        var job = new PackageKitJob (PackageKitJob.Type.GET_NOT_INSTALLED_DEPS_FOR_PACKAGE);
-        job.args = new Value[2];
+        var job_args = new GetNotInstalledDepsFOrPackageArgs ();
+        job_args.package = package;
+        job_args.cancellable = cancellable;
 
-        job.args[0] = Value (typeof (Object));
-        job.args[0].take_object (package);
-
-        job.args[1] = Value (typeof (Object));
-        job.args[1].take_object (cancellable);
-
-        SourceFunc callback = get_not_installed_deps_for_package.callback;
-        job.results_ready.connect (() => {
-            Idle.add ((owned) callback);
-        });
-
-        jobs.push (job);
-        yield;
+        var job = yield launch_job (PackageKitJob.Type.GET_NOT_INSTALLED_DEPS_FOR_PACKAGE, job_args);
         return (Gee.ArrayList<Pk.Package>)job.result.get_object ();
     }
 
     private void install_packages_internal (PackageKitJob job) {
-        var args = (InstallPackagesJob)job.args[0].get_object ();
+        var args = (InstallPackagesArgs)job.args;
         var package_ids = args.package_ids;
         unowned Pk.ProgressCallback cb = args.cb;
         var cancellable = args.cancellable;
@@ -203,25 +200,12 @@ public class AppCenterCore.PackageKitClient : Object {
     }
 
     public async Pk.Exit install_packages (Gee.ArrayList<string> package_ids, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
-        var job = new PackageKitJob (PackageKitJob.Type.INSTALL_PACKAGES);
-        job.args = new Value[1];
-
-        var job_args = new InstallPackagesJob ();
+        var job_args = new InstallPackagesArgs ();
         job_args.package_ids = package_ids;
         job_args.cb = (owned)cb;
         job_args.cancellable = cancellable;
 
-        job.args[0] = Value (typeof (Object));
-        job.args[0].take_object (job_args);
-
-        SourceFunc callback = install_packages.callback;
-        job.results_ready.connect (() => {
-            Idle.add ((owned) callback);
-        });
-
-        jobs.push (job);
-        yield;
-
+        var job = yield launch_job (PackageKitJob.Type.INSTALL_PACKAGES, job_args);
         if (job.error != null) {
             throw job.error;
         }
