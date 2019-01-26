@@ -31,6 +31,9 @@ public class AppCenterCore.PackageKitClient : Object {
                 case PackageKitJob.Type.GET_PACKAGE_BY_NAME:
                     get_package_by_name_internal (job);
                     break;
+                case PackageKitJob.Type.GET_DETAILS_FOR_PACKAGE_IDS:
+                    get_details_for_package_ids_internal (job);
+                    break;
                 case PackageKitJob.Type.GET_INSTALLED_PACKAGES:
                     get_installed_packages_internal (job);
                     break;
@@ -126,6 +129,46 @@ public class AppCenterCore.PackageKitClient : Object {
         }
 
         return (Pk.Package?)job.result.get_object ();
+    }
+
+    private void get_details_for_package_ids_internal (PackageKitJob job) {
+        var args = (GetDetailsForPackageIDsArgs)job.args;
+        var package_ids = args.package_ids;
+        var cancellable = args.cancellable;
+
+        string[] packages_ids = {};
+
+        foreach (var package in package_ids) {
+            packages_ids += package;
+        }
+
+        packages_ids += null;
+
+        Pk.Results? result = null;
+        try {
+            result = client.get_details (packages_ids, cancellable, (p, t) => {});
+        } catch (Error e) {
+            job.error = e;
+            job.results_ready ();
+            return;
+        }
+
+        job.result = Value (typeof (Object));
+        job.result.take_object (result);
+        job.results_ready ();
+    }
+
+    public async Pk.Results get_details_for_package_ids (Gee.ArrayList<string> package_ids, Cancellable cancellable) throws GLib.Error {
+        var job_args = new GetDetailsForPackageIDsArgs ();
+        job_args.package_ids = package_ids;
+        job_args.cancellable = cancellable;
+
+        var job = yield launch_job (PackageKitJob.Type.GET_DETAILS_FOR_PACKAGE_IDS, job_args);
+        if (job.error != null) {
+            throw job.error;
+        }
+
+        return (Pk.Results)job.result.get_object ();
     }
 
     private void get_installed_packages_internal (PackageKitJob job) {

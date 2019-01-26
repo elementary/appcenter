@@ -26,6 +26,7 @@ public class AppCenterCore.PackageKitJob : Object {
     public enum Type {
         STOP_THREAD,
         GET_PACKAGE_BY_NAME,
+        GET_DETAILS_FOR_PACKAGE_IDS,
         GET_INSTALLED_PACKAGES,
         GET_NOT_INSTALLED_DEPS_FOR_PACKAGE,
         INSTALL_PACKAGES
@@ -38,8 +39,7 @@ public class AppCenterCore.PackageKitJob : Object {
     }
 }
 
-public class AppCenterCore.JobArgs {
-}
+public class AppCenterCore.JobArgs { }
 
 public class AppCenterCore.InstallPackagesArgs : JobArgs {
     public Gee.ArrayList<string> package_ids;
@@ -55,5 +55,10 @@ public class AppCenterCore.GetNotInstalledDepsFOrPackageArgs : JobArgs {
 public class AppCenterCore.GetPackageByNameArgs : JobArgs {
     public string name;
     public Pk.Bitfield additional_filters;
+}
+
+public class AppCenterCore.GetDetailsForPackageIDsArgs : JobArgs {
+    public Gee.ArrayList<string> package_ids;
+    public Cancellable cancellable;
 }
 

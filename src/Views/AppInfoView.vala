@@ -411,45 +411,34 @@ namespace AppCenter.Views {
                 return;
             }
 
-            SourceFunc callback = get_app_download_size.callback;
             uint64 size = 0;
 
             var pk_package = yield package.find_package ();
             var client = AppCenterCore.PackageKitClient.get_default ();
             var deps = yield client.get_not_installed_deps_for_package (pk_package, app_download_size_cancellable);
 
-            // This thread will set the value of `size` in the background.
-            ThreadFunc<bool> run = () => {
-                string[] package_ids = {};
+            var package_ids = new Gee.ArrayList<string> ();
 
-                foreach (var package in deps) {
-                    package_ids += package.package_id;
+            foreach (var package in deps) {
+                package_ids.add (package.package_id);
+            }
+
+            if (package_ids.size > 0) {
+                var pk_client = AppCenterCore.PackageKitClient.get_default ();
+                try {
+                    var details = yield pk_client.get_details_for_package_ids (package_ids, app_download_size_cancellable);
+                    details.get_details_array ().foreach ((details) => {
+                        size += details.size;
+                    });
+                } catch (Error e) {
+                    warning ("Error fetching details for dependencies, download size may be inaccurate: %s", e.message);
                 }
+            }
 
-                package_ids += null;
+            if (pk_package != null) {
+                size += pk_package.size;
+            }
 
-                if (package_ids.length > 1) {
-                    var pk_client = AppCenterCore.Client.get_pk_client ();
-                    try {
-                        var details = pk_client.get_details (package_ids, app_download_size_cancellable, (p, t) => {});
-                        details.get_details_array ().foreach ((details) => {
-                            size += details.size;
-                        });
-                    } catch (Error e) {
-                        warning ("Error fetching details for dependencies, download size may be inaccurate: %s", e.message);
-                    }
-                }
-
-                if (pk_package != null) {
-                    size += pk_package.size;
-                }
-
-                Idle.add ((owned)callback);
-                return true;
-            };
-            new Thread<bool> ("download size", run);
-
-            yield;
             app_download_size_label.label = GLib.format_size (size);
             app_download_size_label.visible = true;
         }
