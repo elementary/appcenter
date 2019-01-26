@@ -26,8 +26,6 @@ public class AppCenterCore.Client : Object {
         return client;
     }
 
-    public bool connected { public get; private set; }
-
     private uint _task_count = 0;
     public uint task_count {
         public get {
