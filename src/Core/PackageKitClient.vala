@@ -22,6 +22,8 @@ public class AppCenterCore.PackageKitClient : Object {
     private AsyncQueue<PackageKitJob> jobs = new AsyncQueue<PackageKitJob> ();
     private Thread<bool> worker_thread;
 
+    private SuspendControl sc;
+
     private bool worker_func () {
         while (true) {
             var job = jobs.pop ();
@@ -40,8 +42,17 @@ public class AppCenterCore.PackageKitClient : Object {
                 case PackageKitJob.Type.GET_NOT_INSTALLED_DEPS_FOR_PACKAGE:
                     get_not_installed_deps_for_package_internal (job);
                     break;
+                case PackageKitJob.Type.REFRESH_CACHE:
+                    refresh_cache_internal (job);
+                    break;
+                case PackageKitJob.Type.GET_UPDATES:
+                    get_updates_internal (job);
+                    break;
                 case PackageKitJob.Type.INSTALL_PACKAGES:
                     install_packages_internal (job);
+                    break;
+                case PackageKitJob.Type.UPDATE_PACKAGES:
+                    update_packages_internal (job);
                     break;
                 case PackageKitJob.Type.REMOVE_PACKAGES:
                     remove_packages_internal (job);
@@ -57,6 +68,7 @@ public class AppCenterCore.PackageKitClient : Object {
     }
 
     private PackageKitClient () {
+        sc = new SuspendControl ();
         worker_thread = new Thread<bool> ("packagekit-worker", worker_func);
     }
 
@@ -316,6 +328,53 @@ public class AppCenterCore.PackageKitClient : Object {
         return (Pk.Exit)job.result.get_enum ();
     }
 
+    private void update_packages_internal (PackageKitJob job) {
+        var args = (UpdatePackagesArgs)job.args;
+        var package_ids = args.package_ids;
+        var cancellable = args.cancellable;
+        unowned Pk.ProgressCallback cb = args.cb;
+
+        Pk.Exit exit_status = Pk.Exit.UNKNOWN;
+        string[] packages_ids = {};
+        foreach (var pk_package in package_ids) {
+            packages_ids += pk_package;
+        }
+
+        packages_ids += null;
+
+        sc.inhibit ();
+
+        try {
+            var results = client.update_packages_sync (packages_ids, cancellable, cb);
+            exit_status = results.get_exit_code ();
+        } catch (Error e) {
+            job.error = e;
+            job.results_ready ();
+            sc.uninhibit ();
+            return;
+        }
+
+        sc.uninhibit ();
+
+        job.result = Value (typeof (Pk.Exit));
+        job.result.set_enum (exit_status);
+        job.results_ready ();
+    }
+
+    public async Pk.Exit update_packages (Gee.ArrayList<string> package_ids, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+        var job_args = new UpdatePackagesArgs ();
+        job_args.package_ids = package_ids;
+        job_args.cb = (owned)cb;
+        job_args.cancellable = cancellable;
+
+        var job = yield launch_job (PackageKitJob.Type.UPDATE_PACKAGES, job_args);
+        if (job.error != null) {
+            throw job.error;
+        }
+
+        return (Pk.Exit)job.result.get_enum ();
+    }
+
     private void remove_packages_internal (PackageKitJob job) {
         var args = (RemovePackagesArgs)job.args;
         var package_ids = args.package_ids;
@@ -362,6 +421,66 @@ public class AppCenterCore.PackageKitClient : Object {
         }
 
         return (Pk.Exit)job.result.get_enum ();
+    }
+
+    private void get_updates_internal (PackageKitJob job) {
+        var args = (GetUpdatesArgs)job.args;
+        var cancellable = args.cancellable;
+
+        Pk.Results? results = null;
+        try {
+            results = client.get_updates (0, cancellable, (t, p) => { });
+        } catch (Error e) {
+            job.error = e;
+            job.results_ready ();
+            return;
+        }
+
+        job.result = Value (typeof (Object));
+        job.result.take_object (results);
+        job.results_ready ();
+    }
+
+    public async Pk.Results get_updates (Cancellable cancellable) throws GLib.Error {
+        var job_args = new GetUpdatesArgs ();
+        job_args.cancellable = cancellable;
+
+        var job = yield launch_job (PackageKitJob.Type.GET_UPDATES, job_args);
+        if (job.error != null) {
+            throw job.error;
+        }
+
+        return (Pk.Results)job.result.get_object ();
+    }
+
+    private void refresh_cache_internal (PackageKitJob job) {
+        var args = (RefreshCacheArgs)job.args;
+        var cancellable = args.cancellable;
+
+        Pk.Results? results = null;
+        try {
+            results = client.refresh_cache (false, cancellable, (t, p) => { });
+        } catch (Error e) {
+            job.error = e;
+            job.results_ready ();
+            return;
+        }
+
+        job.result = Value (typeof (Object));
+        job.result.take_object (results);
+        job.results_ready ();
+    }
+
+    public async Pk.Results refresh_cache (Cancellable cancellable) throws GLib.Error {
+        var job_args = new RefreshCacheArgs ();
+        job_args.cancellable = cancellable;
+
+        var job = yield launch_job (PackageKitJob.Type.REFRESH_CACHE, job_args);
+        if (job.error != null) {
+            throw job.error;
+        }
+
+        return (Pk.Results)job.result.get_object ();
     }
 
     private static GLib.Once<PackageKitClient> instance;

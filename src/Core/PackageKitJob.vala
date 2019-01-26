@@ -29,7 +29,10 @@ public class AppCenterCore.PackageKitJob : Object {
         GET_DETAILS_FOR_PACKAGE_IDS,
         GET_INSTALLED_PACKAGES,
         GET_NOT_INSTALLED_DEPS_FOR_PACKAGE,
+        REFRESH_CACHE,
+        GET_UPDATES,
         INSTALL_PACKAGES,
+        UPDATE_PACKAGES,
         REMOVE_PACKAGES
     }
 
@@ -43,6 +46,12 @@ public class AppCenterCore.PackageKitJob : Object {
 public class AppCenterCore.JobArgs { }
 
 public class AppCenterCore.InstallPackagesArgs : JobArgs {
+    public Gee.ArrayList<string> package_ids;
+    public Pk.ProgressCallback cb;
+    public Cancellable cancellable;
+}
+
+public class AppCenterCore.UpdatePackagesArgs : JobArgs {
     public Gee.ArrayList<string> package_ids;
     public Pk.ProgressCallback cb;
     public Cancellable cancellable;
@@ -69,3 +78,10 @@ public class AppCenterCore.GetDetailsForPackageIDsArgs : JobArgs {
     public Cancellable cancellable;
 }
 
+public class AppCenterCore.GetUpdatesArgs : JobArgs {
+    public Cancellable cancellable;
+}
+
+public class AppCenterCore.RefreshCacheArgs : JobArgs {
+    public Cancellable cancellable;
+}

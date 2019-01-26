@@ -21,11 +21,6 @@ public class AppCenterCore.Client : Object {
     public signal void drivers_detected ();
     public signal void pool_updated ();
 
-    protected static Task client { public get; private set; }
-    public static Task get_pk_client () {
-        return client;
-    }
-
     private uint _task_count = 0;
     public uint task_count {
         public get {
@@ -57,22 +52,14 @@ public class AppCenterCore.Client : Object {
     private const int SECONDS_BETWEEN_REFRESHES = 60 * 60 * 24;
     private const int PACKAGEKIT_ACTIVITY_TIMEOUT_MS = 2000;
 
-    private SuspendControl sc;
-
     private Client () {
         Object (screenshot_cache: AppCenterCore.ScreenshotCache.new_cache ());
-    }
-
-    static construct {
-        client = new Task ();
     }
 
     construct {
         package_list = new Gee.HashMap<string, AppCenterCore.Package> (null, null);
         driver_list = new Gee.TreeSet<AppCenterCore.Package> ();
         cancellable = new GLib.Cancellable ();
-
-        sc = new SuspendControl ();
 
         appstream_pool = new AppStream.Pool ();
         // We don't want to show installed desktop files here
@@ -117,6 +104,7 @@ public class AppCenterCore.Client : Object {
             });
 
             pool_updated ();
+            refresh_updates.begin ();
         }
     }
 
@@ -167,25 +155,12 @@ public class AppCenterCore.Client : Object {
     public async Pk.Exit update_package (Package package, Pk.ProgressCallback cb, GLib.Cancellable cancellable) throws GLib.Error {
         task_count++;
 
-        Pk.Exit exit_status = Pk.Exit.UNKNOWN;
-        string[] packages_ids = {};
+        var packages_ids = new Gee.ArrayList<string> ();
         foreach (var pk_package in package.change_information.changes) {
-            packages_ids += pk_package.get_id ();
+            packages_ids.add (pk_package.get_id ());
         }
 
-        packages_ids += null;
-
-        try {
-            sc.inhibit ();
-
-            var results = yield client.update_packages_async (packages_ids, cancellable, cb);
-            exit_status = results.get_exit_code ();
-        } catch (Error e) {
-            task_count--;
-            throw e;
-        } finally {
-            sc.uninhibit ();
-        }
+        var exit_status = yield PackageKitClient.get_default ().update_packages (packages_ids, cb, cancellable);
 
         if (exit_status != Pk.Exit.SUCCESS) {
 #if VALA_0_40
@@ -265,7 +240,7 @@ public class AppCenterCore.Client : Object {
             var package = new Package (driver_component);
             var pk_package = yield package.find_package ();
             if (pk_package != null && pk_package.get_info () == Pk.Info.INSTALLED) {
-                package.installed_packages.add (pk_package);
+                package.mark_installed ();
                 package.update_state ();
             }
 
@@ -291,7 +266,7 @@ public class AppCenterCore.Client : Object {
     }
 
     private static void populate_package (AppCenterCore.Package package, Pk.Package pk_package) {
-        package.installed_packages.add (pk_package);
+        package.mark_installed ();
         package.latest_version = pk_package.get_version ();
         package.update_state ();
     }
@@ -512,7 +487,7 @@ public class AppCenterCore.Client : Object {
                 refresh_in_progress = true;
                 updating_cache = true;
                 try {
-                    Pk.Results results = yield client.refresh_cache_async (false, cancellable, (t, p) => { });
+                    Pk.Results results = yield PackageKitClient.get_default ().refresh_cache (cancellable);
                     success = results.get_exit_code () == Pk.Exit.SUCCESS;
                     last_cache_update = new DateTime.now_local ();
                 } catch (Error e) {

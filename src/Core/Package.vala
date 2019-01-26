@@ -65,7 +65,6 @@ public class AppCenterCore.Package : Object {
 
     public AppStream.Component component { get; construct; }
     public ChangeInformation change_information { public get; private set; }
-    public Gee.TreeSet<Pk.Package> installed_packages { public get; private set; }
     public GLib.Cancellable action_cancellable { public get; private set; }
     public State state { public get; private set; default = State.NOT_INSTALLED; }
 
@@ -75,9 +74,10 @@ public class AppCenterCore.Package : Object {
         }
     }
 
+    private bool installed_cached;
     public bool installed {
         get {
-            if (!installed_packages.is_empty) {
+            if (installed_cached) {
                 return true;
             }
 
@@ -92,6 +92,10 @@ public class AppCenterCore.Package : Object {
 
             return false;
         }
+    }
+
+    public void mark_installed () {
+        installed_cached = true;
     }
 
     public bool update_available {
@@ -263,7 +267,6 @@ public class AppCenterCore.Package : Object {
     private bool app_info_retrieved = false;
 
     construct {
-        installed_packages = new Gee.TreeSet<Pk.Package> ();
         change_information = new ChangeInformation ();
         change_information.status_changed.connect (() => info_changed (change_information.status));
 
@@ -379,13 +382,17 @@ public class AppCenterCore.Package : Object {
             case State.UPDATING:
                 return yield client.update_package (this, cb, action_cancellable);
             case State.INSTALLING:
-                return yield pk_client.install_packages (packages_ids, (owned)cb, action_cancellable);
+                var status = yield pk_client.install_packages (packages_ids, (owned)cb, action_cancellable);
+                if (status == Pk.Exit.SUCCESS) {
+                    installed_cached = true;
+                }
+
+                return status;
             case State.REMOVING:
                 var status = yield client.remove_package (this, cb, action_cancellable);
 
-                // Clear the installed packages set on success, else we cannot reinstall.
                 if (Pk.Exit.SUCCESS == status) {
-                    installed_packages.clear ();
+                    installed_cached = false;
                 }
 
                 return status;
@@ -397,7 +404,6 @@ public class AppCenterCore.Package : Object {
     private void clean_up_package_operation (Pk.Exit exit_status, State success_state, State fail_state) {
         changing (false);
 
-        installed_packages.add_all (change_information.changes);
         if (exit_status == Pk.Exit.SUCCESS) {
             change_information.complete ();
             state = success_state;
