@@ -120,7 +120,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     }
 
     construct {
-        window_position = Gtk.WindowPosition.CENTER;
+        icon_name = "system-software-install";
         set_size_request (910, 640);
 
         settings = new GLib.Settings ("io.elementary.appcenter.settings");
@@ -139,9 +139,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         if (settings.get_boolean ("window-maximized")) {
             maximize ();
         }
-
-        icon_name = "system-software-install";
-
 
         title = _(Build.APP_NAME);
 
