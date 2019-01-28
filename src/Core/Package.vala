@@ -374,7 +374,7 @@ public class AppCenterCore.Package : Object {
         var pk_client = AppCenterCore.PackageKitClient.get_default ();
 
         Gee.ArrayList<string> packages_ids = new Gee.ArrayList<string> ();
-        foreach (var pkg_name in this.component.get_pkgnames ()) {
+        foreach (var pkg_name in component.get_pkgnames ()) {
             packages_ids.add (pkg_name);
         }
 

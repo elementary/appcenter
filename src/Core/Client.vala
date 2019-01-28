@@ -104,7 +104,6 @@ public class AppCenterCore.Client : Object {
             });
 
             pool_updated ();
-            refresh_updates.begin ();
         }
     }
 

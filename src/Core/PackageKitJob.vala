@@ -43,7 +43,7 @@ public class AppCenterCore.PackageKitJob : Object {
     }
 }
 
-public class AppCenterCore.JobArgs { }
+public abstract class AppCenterCore.JobArgs { }
 
 public class AppCenterCore.InstallPackagesArgs : JobArgs {
     public Gee.ArrayList<string> package_ids;
