@@ -18,9 +18,12 @@
  */
 
 public class AppCenterCore.PackageKitJob : Object {
-    public JobArgs? args;
+    public Type operation { get; construct; }
+    public JobArgs? args { get; set; }
+    public Error error { get; set; }
+
     public Value result;
-    public Error error;
+
     public signal void results_ready ();
 
     public enum Type {
@@ -36,10 +39,8 @@ public class AppCenterCore.PackageKitJob : Object {
         REMOVE_PACKAGES
     }
 
-    public Type operation;
-
     public PackageKitJob (Type type) {
-        operation = type;
+        Object (operation: type);
     }
 }
 
