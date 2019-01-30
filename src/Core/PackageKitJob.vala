@@ -27,7 +27,6 @@ public class AppCenterCore.PackageKitJob : Object {
     public signal void results_ready ();
 
     public enum Type {
-        STOP_THREAD,
         GET_PACKAGE_BY_NAME,
         GET_DETAILS_FOR_PACKAGE_IDS,
         GET_INSTALLED_PACKAGES,

@@ -24,16 +24,18 @@ public class AppCenterCore.PackageKitClient : Object {
 
     private SuspendControl sc;
 
+    // This is OK as we're only using a single thread (PackageKit can only do one job at a time)
+    // This would have to be done differently if there were multiple workers in the pool
+    private bool thread_should_run = true;
+
     public bool working { get; private set; }
 
     private bool worker_func () {
-        while (true) {
+        while (thread_should_run) {
             working = false;
             var job = jobs.pop ();
             working = true;
             switch (job.operation) {
-                case PackageKitJob.Type.STOP_THREAD:
-                    return true;
                 case PackageKitJob.Type.GET_PACKAGE_BY_NAME:
                     get_package_by_name_internal (job);
                     break;
@@ -65,6 +67,8 @@ public class AppCenterCore.PackageKitClient : Object {
                     assert_not_reached ();
             }
         }
+
+        return true;
     }
 
     static construct {
@@ -77,8 +81,7 @@ public class AppCenterCore.PackageKitClient : Object {
     }
 
     ~PackageKitClient () {
-        warning ("stopping packagekit thread");
-        jobs.push (new PackageKitJob (PackageKitJob.Type.STOP_THREAD));
+        thread_should_run = false;
         worker_thread.join ();
     }
 
