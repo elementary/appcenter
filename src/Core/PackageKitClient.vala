@@ -24,9 +24,13 @@ public class AppCenterCore.PackageKitClient : Object {
 
     private SuspendControl sc;
 
+    public bool working { get; private set; }
+
     private bool worker_func () {
         while (true) {
+            working = false;
             var job = jobs.pop ();
+            working = true;
             switch (job.operation) {
                 case PackageKitJob.Type.STOP_THREAD:
                     return true;
