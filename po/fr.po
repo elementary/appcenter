@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
-"PO-Revision-Date: 2019-01-14 00:07+0000\n"
+"PO-Revision-Date: 2019-01-15 00:05+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/fr/>\n"
@@ -619,7 +619,7 @@ msgstr "Mises à jour récentes"
 
 #: src/Views/Homepage.vala:82
 msgid "Trending"
-msgstr "À l'affiche"
+msgstr "Tendances"
 
 #: src/Views/Homepage.vala:98
 msgid "Categories"
