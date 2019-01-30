@@ -226,6 +226,12 @@ public class AppCenterCore.Client : Object {
                 continue;
             }
 
+            foreach (var driver in driver_list) {
+                if (driver.component.get_pkgnames ()[0] == package_name) {
+                    continue;
+                }
+            }
+
             var driver_component = new AppStream.Component ();
             driver_component.set_kind (AppStream.ComponentKind.DRIVER);
             driver_component.set_pkgnames ({ package_name });
