@@ -151,7 +151,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         view_mode = new Granite.Widgets.ModeButton ();
         view_mode.margin_end = view_mode.margin_start = 12;
         view_mode.margin_bottom = view_mode.margin_top = 7;
-        homepage_view_id = view_mode.append_text (_("Home"));
+        homepage_view_id = view_mode.append_text (_(Build.HOMEPAGE_NAME));
         installed_view_id = view_mode.append_text (C_("view", "Installed"));
 
         updates_badge = new Gtk.Label ("!");
