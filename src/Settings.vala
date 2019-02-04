@@ -22,7 +22,6 @@
 
 public class AppCenter.Settings : Granite.Services.Settings {
     public bool developer_mode { get; set; }
-    public bool reset_paid_apps { get; set; }
     public string[] paid_apps { get; set; }
     public bool content_warning { get; set; }
 
