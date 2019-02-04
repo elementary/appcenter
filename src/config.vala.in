@@ -3,11 +3,6 @@ namespace Build {
     public const string BLACKLIST = "@BLACKLIST@";
     public const string CONFIGDIR = "@CONFIGDIR@";
     public const string GETTEXT_PACKAGE = "@GETTEXT_PACKAGE@";
-#if HOMEPAGE
-    public const string HOMEPAGE_NAME = "Home";
-#else
-    public const string HOMEPAGE_NAME = "Categories";
-#endif
     public const string PROJECT_NAME = "@PROJECT_NAME@";
     public const string VERSION = "@VERSION@";
 }

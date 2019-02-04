@@ -291,7 +291,7 @@ namespace AppCenter {
             viewing_package = true;
             current_category = null;
             currently_viewed_category = null;
-            subview_entered (_(Build.HOMEPAGE_NAME), false, "");
+            subview_entered (_("Home"), false, "");
         }
 
         public override void return_clicked () {
@@ -300,12 +300,12 @@ namespace AppCenter {
                 if (current_category != null) {
                     subview_entered (current_category, false, "");
                 } else {
-                    subview_entered (_(Build.HOMEPAGE_NAME), false, "");
+                    subview_entered (_("Home"), false, "");
                 }
             } else if (viewing_package && current_category != null) {
                 set_visible_child_name (current_category);
                 viewing_package = false;
-                subview_entered (_(Build.HOMEPAGE_NAME), true, current_category, _("Search %s").printf (current_category));
+                subview_entered (_("Home"), true, current_category, _("Search %s").printf (current_category));
             } else {
                 set_visible_child (category_scrolled);
                 viewing_package = false;
@@ -316,7 +316,7 @@ namespace AppCenter {
         }
 
         private void show_app_list_for_category (AppStream.Category category) {
-            subview_entered (_(Build.HOMEPAGE_NAME), true, category.name, _("Search %s").printf (category.name));
+            subview_entered (_("Home"), true, category.name, _("Search %s").printf (category.name));
             current_category = category.name;
             var child = get_child_by_name (category.name);
             if (child != null) {
