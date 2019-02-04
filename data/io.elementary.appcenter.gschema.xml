@@ -1,44 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist>
-  <enum id="io.elementary.appcenter.windowstate">
-    <value value="0" nick="normal"/>
-    <value value="1" nick="maximized"/>
-  </enum>
   <schema path="/io/elementary/appcenter/settings/" id="io.elementary.appcenter.settings">
-    <key type="i" name="window-width">
-      <default>1100</default>
-      <summary>Window width</summary>
-      <description>Window width</description>
+    <key name="window-maximized" type="b">
+      <default>false</default>
+      <summary>Whether the window was maximized on last run</summary>
+      <description>Whether the window was maximized on last run</description>
     </key>
-    <key type="i" name="window-height">
-      <default>660</default>
-      <summary>Window height</summary>
-      <description>Window height</description>
+    <key name="window-position" type="(ii)">
+      <default>(-1, -1)</default>
+      <summary>Window position</summary>
+      <description>Most recent window position (x, y)</description>
     </key>
-    <key type="i" name="window-x">
-      <default>-1</default>
-      <summary>Window X position</summary>
-      <description>Window screen position on the X-axis</description>
-    </key>
-    <key type="i" name="window-y">
-      <default>-1</default>
-      <summary>Window Y position</summary>
-      <description>Window screen position on the Y-axis</description>
-    </key>
-    <key enum="io.elementary.appcenter.windowstate" name="window-state">
-      <default>'normal'</default>
-      <summary>The saved state of the window</summary>
-      <description>The saved state of the window</description>
+    <key name="window-size" type="(ii)">
+      <default>(1100, 660)</default>
+      <summary>Most recent window size</summary>
+      <description>Most recent window size (width, height)</description>
     </key>
     <key type="b" name="developer-mode">
       <default>false</default>
       <summary>The user is a developer</summary>
       <description>Mode that allows the user to see more packages with development purposes</description>
-    </key>
-    <key type="b" name="reset-paid-apps">
-      <default>true</default>
-      <summary>Reset/rescan the paid apps list</summary>
-      <description>Whether to clear the paid applications list and regenerate</description>
     </key>
     <key type="as" name="paid-apps">
       <default>[]</default>
