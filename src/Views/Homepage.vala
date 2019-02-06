@@ -35,6 +35,7 @@ namespace AppCenter {
         public bool viewing_package { get; private set; default = false; }
 
         public AppStream.Category currently_viewed_category;
+#if HOMEPAGE
         public Widgets.Banner newest_banner;
         public Gtk.Revealer switcher_revealer;
 
@@ -100,17 +101,21 @@ namespace AppCenter {
             categories_label.xalign = 0;
             categories_label.margin_start = 12;
             categories_label.margin_top = 24;
-
+#else
+        construct {
+#endif
             category_flow = new Widgets.CategoryFlowBox ();
             category_flow.valign = Gtk.Align.START;
 
             var grid = new Gtk.Grid ();
             grid.margin = 12;
+#if HOMEPAGE
             grid.attach (newest_banner, 0, 0, 1, 1);
             grid.attach (switcher_revealer, 0, 1, 1, 1);
             grid.attach (trending_revealer, 0, 2, 1, 1);
             grid.attach (recently_updated_revealer, 0, 3, 1, 1);
             grid.attach (categories_label, 0, 4, 1, 1);
+#endif
             grid.attach (category_flow, 0, 5, 1, 1);
 
             category_scrolled = new Gtk.ScrolledWindow (null, null);
@@ -118,12 +123,14 @@ namespace AppCenter {
 
             add (category_scrolled);
 
+#if HOMEPAGE
             var local_package = App.local_package;
             if (local_package != null) {
                 newest_banner.add_package (local_package);
             }
 
             load_banners.begin ();
+#endif
 
             category_flow.child_activated.connect ((child) => {
                 var item = child as Widgets.CategoryItem;
@@ -160,6 +167,7 @@ namespace AppCenter {
                     }
                 }
 
+#if HOMEPAGE
                 // If the banners weren't populated, try again to populate them
                 if (!recently_updated_revealer.reveal_child && !trending_revealer.reveal_child && !switcher_revealer.reveal_child) {
                     load_banners.begin ();
@@ -251,6 +259,10 @@ namespace AppCenter {
 
             page_loaded ();
         }
+#else
+            });
+        }
+#endif
 
         public override void show_package (AppCenterCore.Package package) {
             base.show_package (package);
