@@ -2,13 +2,14 @@
 # YISH <mokeyish@163.com>, 2018, 2019.
 # David Hewitt <davidmhewitt@gmail.com>, 2018.
 # WANG, Wei <ww460160885@gmail.com>, 2019.
+# imgradeone Yan <imgradeone@outlook.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
-"PO-Revision-Date: 2019-02-07 12:27+0000\n"
-"Last-Translator: YISH <mokeyish@163.com>\n"
+"PO-Revision-Date: 2019-02-09 00:05+0000\n"
+"Last-Translator: imgradeone Yan <imgradeone@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.elementary.io/projects/"
 "appcenter/appcenter/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -258,7 +259,7 @@ msgstr "暂无组件更新"
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
-msgstr[0] "有%u个组件需要更新"
+msgstr[0] "有 %u 个组件需要更新"
 
 #: src/Core/Client.vala:520
 #, c-format
