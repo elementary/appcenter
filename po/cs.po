@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
-"PO-Revision-Date: 2019-02-06 17:54+0000\n"
+"PO-Revision-Date: 2019-02-07 00:05+0000\n"
 "Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
 "Language-Team: Czech <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/cs/>\n"
@@ -22,7 +22,7 @@ msgstr ""
 #. Add "AppCenter" to the translation catalog
 #: src/Application.vala:38
 msgid "AppCenter"
-msgstr "AppCenter"
+msgstr "AppCentrum"
 
 #: src/Application.vala:106
 #, c-format
@@ -384,7 +384,7 @@ msgstr "CVC"
 
 #: src/Dialogs/StripeDialog.vala:189
 msgid "Privacy Policy"
-msgstr "Zásady soukromí"
+msgstr "Zásady ochrany soukromí"
 
 #: src/Dialogs/StripeDialog.vala:200 src/Dialogs/StripeDialog.vala:314
 #, c-format
@@ -660,7 +660,7 @@ msgstr "Vývojové nástroje"
 
 #: src/Widgets/CategoryFlowBox.vala:48
 msgid "Education"
-msgstr "Vzdělávání"
+msgstr "Vzdělání"
 
 #: src/Widgets/CategoryFlowBox.vala:49
 msgid "Finance"
