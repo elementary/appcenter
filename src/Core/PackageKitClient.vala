@@ -180,7 +180,7 @@ public class AppCenterCore.PackageKitClient : Object {
         job.results_ready ();
     }
 
-    public async Pk.Results get_details_for_package_ids (Gee.ArrayList<string> package_ids, Cancellable cancellable) throws GLib.Error {
+    public async Pk.Results get_details_for_package_ids (Gee.ArrayList<string> package_ids, Cancellable? cancellable) throws GLib.Error {
         var job_args = new GetDetailsForPackageIDsArgs ();
         job_args.package_ids = package_ids;
         job_args.cancellable = cancellable;
@@ -218,7 +218,7 @@ public class AppCenterCore.PackageKitClient : Object {
     }
 
     private void get_not_installed_deps_for_package_internal (PackageKitJob job) {
-        var args = (GetNotInstalledDepsFOrPackageArgs)job.args;
+        var args = (GetNotInstalledDepsForPackageArgs)job.args;
         var pk_package = args.package;
         var cancellable = args.cancellable;
 
@@ -265,7 +265,7 @@ public class AppCenterCore.PackageKitClient : Object {
             return new Gee.ArrayList<Pk.Package> ();
         }
 
-        var job_args = new GetNotInstalledDepsFOrPackageArgs ();
+        var job_args = new GetNotInstalledDepsForPackageArgs ();
         job_args.package = package;
         job_args.cancellable = cancellable;
 

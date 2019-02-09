@@ -63,7 +63,7 @@ public class AppCenterCore.RemovePackagesArgs : JobArgs {
     public Cancellable cancellable;
 }
 
-public class AppCenterCore.GetNotInstalledDepsFOrPackageArgs : JobArgs {
+public class AppCenterCore.GetNotInstalledDepsForPackageArgs : JobArgs {
     public Pk.Package package;
     public Cancellable cancellable;
 }

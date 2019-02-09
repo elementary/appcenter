@@ -723,6 +723,37 @@ public class AppCenterCore.Package : Object {
         return null;
     }
 
+    public async uint64 get_download_size_including_deps () {
+        uint64 size = 0;
+
+        var pk_package = yield find_package ();
+        var client = AppCenterCore.PackageKitClient.get_default ();
+        var deps = yield client.get_not_installed_deps_for_package (pk_package, null);
+
+        var package_ids = new Gee.ArrayList<string> ();
+
+        foreach (var package in deps) {
+            package_ids.add (package.package_id);
+        }
+
+        if (package_ids.size > 0) {
+            try {
+                var details = yield client.get_details_for_package_ids (package_ids, null);
+                details.get_details_array ().foreach ((details) => {
+                    size += details.size;
+                });
+            } catch (Error e) {
+                warning ("Error fetching details for dependencies, download size may be inaccurate: %s", e.message);
+            }
+        }
+
+        if (pk_package != null) {
+            size += pk_package.size;
+        }
+
+        return size;
+    }
+
     private Pk.Package? find_package_sync () {
         if (component.id == OS_UPDATES_ID || is_local) {
             return null;
@@ -751,7 +782,7 @@ public class AppCenterCore.Package : Object {
         return pk_package;
     }
 
-    public async Pk.Package? find_package () {
+    private async Pk.Package? find_package () {
         if (component.id == OS_UPDATES_ID || is_local) {
             return null;
         }

@@ -30,7 +30,6 @@ namespace AppCenter.Views {
         private Gtk.Stack app_screenshots;
         private Gtk.Label app_version;
         private Gtk.Label app_download_size_label;
-        private Cancellable app_download_size_cancellable;
         private Gtk.ListBox extension_box;
         private Gtk.Grid release_grid;
         private Widgets.ReleaseListBox release_list_box;
@@ -242,8 +241,6 @@ namespace AppCenter.Views {
             header_grid.attach (action_stack, 3, 0, 1, 1);
 
             if (!package.is_local) {
-                app_download_size_cancellable = new Cancellable ();
-
                 app_download_size_label = new Gtk.Label (null);
                 app_download_size_label.halign = Gtk.Align.END;
                 app_download_size_label.valign = Gtk.Align.CENTER;
@@ -428,33 +425,7 @@ namespace AppCenter.Views {
                 return;
             }
 
-            uint64 size = 0;
-
-            var pk_package = yield package.find_package ();
-            var client = AppCenterCore.PackageKitClient.get_default ();
-            var deps = yield client.get_not_installed_deps_for_package (pk_package, app_download_size_cancellable);
-
-            var package_ids = new Gee.ArrayList<string> ();
-
-            foreach (var package in deps) {
-                package_ids.add (package.package_id);
-            }
-
-            if (package_ids.size > 0) {
-                var pk_client = AppCenterCore.PackageKitClient.get_default ();
-                try {
-                    var details = yield pk_client.get_details_for_package_ids (package_ids, app_download_size_cancellable);
-                    details.get_details_array ().foreach ((details) => {
-                        size += details.size;
-                    });
-                } catch (Error e) {
-                    warning ("Error fetching details for dependencies, download size may be inaccurate: %s", e.message);
-                }
-            }
-
-            if (pk_package != null) {
-                size += pk_package.size;
-            }
+            var size = yield package.get_download_size_including_deps ();
 
             app_download_size_label.label = GLib.format_size (size);
             app_download_stack.set_visible_child_name ("CHILD");

@@ -243,8 +243,7 @@ public class AppCenterCore.Client : Object {
             driver_component.add_icon (icon);
 
             var package = new Package (driver_component);
-            var pk_package = yield package.find_package ();
-            if (pk_package != null && pk_package.get_info () == Pk.Info.INSTALLED) {
+            if (package.installed) {
                 package.mark_installed ();
                 package.update_state ();
             }
