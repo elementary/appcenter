@@ -22,8 +22,6 @@ public class AppCenterCore.PackageKitClient : Object {
     private AsyncQueue<PackageKitJob> jobs = new AsyncQueue<PackageKitJob> ();
     private Thread<bool> worker_thread;
 
-    private SuspendControl sc;
-
     // This is OK as we're only using a single thread (PackageKit can only do one job at a time)
     // This would have to be done differently if there were multiple workers in the pool
     private bool thread_should_run = true;
@@ -76,7 +74,6 @@ public class AppCenterCore.PackageKitClient : Object {
     }
 
     private PackageKitClient () {
-        sc = new SuspendControl ();
         worker_thread = new Thread<bool> ("packagekit-worker", worker_func);
     }
 
@@ -349,19 +346,14 @@ public class AppCenterCore.PackageKitClient : Object {
 
         packages_ids += null;
 
-        sc.inhibit ();
-
         try {
             var results = client.update_packages_sync (packages_ids, cancellable, cb);
             exit_status = results.get_exit_code ();
         } catch (Error e) {
             job.error = e;
             job.results_ready ();
-            sc.uninhibit ();
             return;
         }
-
-        sc.uninhibit ();
 
         job.result = Value (typeof (Pk.Exit));
         job.result.set_enum (exit_status);
