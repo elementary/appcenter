@@ -349,18 +349,18 @@ public class AppCenterCore.Package : Object {
     }
 
     private async bool perform_operation (State performing, State after_success, State after_fail) throws GLib.Error {
-        var exit_status = Pk.Exit.UNKNOWN;
+        bool success = false;
         prepare_package_operation (performing);
         try {
-            exit_status = yield perform_package_operation ();
+            success = yield perform_package_operation ();
         } catch (GLib.Error e) {
             warning ("Operation failed for package %s - %s", get_name (), e.message);
             throw e;
         } finally {
-            clean_up_package_operation (exit_status, after_success, after_fail);
+            clean_up_package_operation (success, after_success, after_fail);
         }
 
-        return (exit_status == Pk.Exit.SUCCESS);
+        return success;
     }
 
     private void prepare_package_operation (State initial_state) {
@@ -371,43 +371,45 @@ public class AppCenterCore.Package : Object {
         state = initial_state;
     }
 
-    private async Pk.Exit perform_package_operation () throws GLib.Error {
+    private async bool perform_package_operation () throws GLib.Error {
         Pk.ProgressCallback cb = change_information.ProgressCallback;
         var client = AppCenterCore.Client.get_default ();
         var pk_client = AppCenterCore.PackageKitClient.get_default ();
 
-        Gee.ArrayList<string> packages_ids = new Gee.ArrayList<string> ();
-        foreach (var pkg_name in component.get_pkgnames ()) {
-            packages_ids.add (pkg_name);
-        }
+        Gee.ArrayList<string> packages_ids = new Gee.ArrayList<string>.wrap (component.get_pkgnames ());
 
         switch (state) {
             case State.UPDATING:
-                return yield client.update_package (this, cb, action_cancellable);
+                var package_ids = new Gee.ArrayList<string> ();
+                foreach (var pk_package in change_information.changes) {
+                    package_ids.add (pk_package.get_id ());
+                }
+
+                var success = yield pk_client.update_packages (package_ids, (owned)cb, action_cancellable);
+                if (success) {
+                    change_information.clear_update_info ();
+                }
+
+                yield client.refresh_updates ();
+                return success;
             case State.INSTALLING:
-                var status = yield pk_client.install_packages (packages_ids, (owned)cb, action_cancellable);
-                if (status == Pk.Exit.SUCCESS) {
-                    installed_cached = true;
-                }
-
-                return status;
+                var success = yield pk_client.install_packages (packages_ids, (owned)cb, action_cancellable);
+                installed_cached = success;
+                return success;
             case State.REMOVING:
-                var status = yield client.remove_package (this, cb, action_cancellable);
-
-                if (Pk.Exit.SUCCESS == status) {
-                    installed_cached = false;
-                }
-
-                return status;
+                var success = yield pk_client.remove_packages (packages_ids, (owned)cb, action_cancellable);
+                installed_cached = !success;
+                yield client.refresh_updates ();
+                return success;
             default:
-                return Pk.Exit.UNKNOWN;
+                return false;
         }
     }
 
-    private void clean_up_package_operation (Pk.Exit exit_status, State success_state, State fail_state) {
+    private void clean_up_package_operation (bool success, State success_state, State fail_state) {
         changing (false);
 
-        if (exit_status == Pk.Exit.SUCCESS) {
+        if (success) {
             change_information.complete ();
             state = success_state;
         } else {

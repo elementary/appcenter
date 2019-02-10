@@ -271,12 +271,12 @@ public class AppCenterCore.PackageKitClient : Object {
             return;
         }
 
-        job.result = Value (typeof(Pk.Exit));
-        job.result.set_enum (exit_status);
+        job.result = Value (typeof (bool));
+        job.result.set_boolean (exit_status == Pk.Exit.SUCCESS);
         job.results_ready ();
     }
 
-    public async Pk.Exit install_packages (Gee.ArrayList<string> package_ids, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+    public async bool install_packages (Gee.ArrayList<string> package_ids, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
         var job_args = new InstallPackagesArgs ();
         job_args.package_ids = package_ids;
         job_args.cb = (owned)cb;
@@ -287,7 +287,7 @@ public class AppCenterCore.PackageKitClient : Object {
             throw job.error;
         }
 
-        return (Pk.Exit)job.result.get_enum ();
+        return job.result.get_boolean ();
     }
 
     private void update_packages_internal (PackageKitJob job) {
@@ -313,12 +313,12 @@ public class AppCenterCore.PackageKitClient : Object {
             return;
         }
 
-        job.result = Value (typeof (Pk.Exit));
-        job.result.set_enum (exit_status);
+        job.result = Value (typeof (bool));
+        job.result.set_boolean (exit_status == Pk.Exit.SUCCESS);
         job.results_ready ();
     }
 
-    public async Pk.Exit update_packages (Gee.ArrayList<string> package_ids, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+    public async bool update_packages (Gee.ArrayList<string> package_ids, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
         var job_args = new UpdatePackagesArgs ();
         job_args.package_ids = package_ids;
         job_args.cb = (owned)cb;
@@ -329,7 +329,7 @@ public class AppCenterCore.PackageKitClient : Object {
             throw job.error;
         }
 
-        return (Pk.Exit)job.result.get_enum ();
+        return job.result.get_boolean ();
     }
 
     private void remove_packages_internal (PackageKitJob job) {
@@ -361,12 +361,12 @@ public class AppCenterCore.PackageKitClient : Object {
             return;
         }
 
-        job.result = Value (typeof (Pk.Exit));
-        job.result.set_enum (exit_status);
+        job.result = Value (typeof (bool));
+        job.result.set_boolean (exit_status == Pk.Exit.SUCCESS);
         job.results_ready ();
     }
 
-    public async Pk.Exit remove_packages (Gee.ArrayList<string> package_ids, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+    public async bool remove_packages (Gee.ArrayList<string> package_ids, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
         var job_args = new RemovePackagesArgs ();
         job_args.package_ids = package_ids;
         job_args.cb = (owned)cb;
@@ -377,7 +377,7 @@ public class AppCenterCore.PackageKitClient : Object {
             throw job.error;
         }
 
-        return (Pk.Exit)job.result.get_enum ();
+        return job.result.get_boolean ();
     }
 
     private void get_updates_internal (PackageKitJob job) {
