@@ -17,6 +17,10 @@
  * Authored by: David Hewitt <davidmhewitt@gmail.com>
  */
 
+errordomain PackageKitClientError {
+    PACKAGE_NOT_FOUND
+}
+
 public class AppCenterCore.PackageKitClient : Object {
     private static Task client;
     private AsyncQueue<PackageKitJob> jobs = new AsyncQueue<PackageKitJob> ();
@@ -34,17 +38,14 @@ public class AppCenterCore.PackageKitClient : Object {
             var job = jobs.pop ();
             working = true;
             switch (job.operation) {
-                case PackageKitJob.Type.GET_PACKAGE_BY_NAME:
-                    get_package_by_name_internal (job);
-                    break;
                 case PackageKitJob.Type.GET_DETAILS_FOR_PACKAGE_IDS:
                     get_details_for_package_ids_internal (job);
                     break;
                 case PackageKitJob.Type.GET_INSTALLED_PACKAGES:
                     get_installed_packages_internal (job);
                     break;
-                case PackageKitJob.Type.GET_NOT_INSTALLED_DEPS_FOR_PACKAGE:
-                    get_not_installed_deps_for_package_internal (job);
+                case PackageKitJob.Type.GET_DOWNLOAD_SIZE:
+                    get_download_size_internal (job);
                     break;
                 case PackageKitJob.Type.REFRESH_CACHE:
                     refresh_cache_internal (job);
@@ -60,6 +61,12 @@ public class AppCenterCore.PackageKitClient : Object {
                     break;
                 case PackageKitJob.Type.REMOVE_PACKAGES:
                     remove_packages_internal (job);
+                    break;
+                case PackageKitJob.Type.IS_PACKAGE_INSTALLED:
+                    is_package_installed_internal (job);
+                    break;
+                case PackageKitJob.Type.GET_PACKAGE_DETAILS:
+                    get_package_details_internal (job);
                     break;
                 default:
                     assert_not_reached ();
@@ -94,60 +101,6 @@ public class AppCenterCore.PackageKitClient : Object {
         jobs.push (job);
         yield;
         return job;
-    }
-
-    private void get_package_by_name_internal (PackageKitJob job) {
-        var args = (GetPackageByNameArgs)job.args;
-        var name = args.name;
-        var additional_filters = args.additional_filters;
-
-        Pk.Package? package = null;
-        var filter = Pk.Bitfield.from_enums (Pk.Filter.NEWEST);
-        filter |= additional_filters;
-        try {
-            var results = client.search_names_sync (filter, { name, null }, null, () => {});
-            var array = results.get_package_array ();
-            if (array.length > 0) {
-                package = array.get (0);
-            }
-        } catch (Error e) {
-            job.error = e;
-            job.results_ready ();
-            return;
-        }
-
-        if (package != null) {
-            try {
-                Pk.Results details = client.get_details_sync ({ package.package_id, null }, null, (t, p) => {});
-                details.get_details_array ().foreach ((details) => {
-                    package.license = details.license;
-                    package.description = details.description;
-                    package.summary = details.summary;
-                    package.group = details.group;
-                    package.size = details.size;
-                    package.url = details.url;
-                });
-            } catch (Error e) {
-                warning ("Unable to get details for package %s: %s", package.package_id, e.message);
-            }
-        }
-
-        job.result = Value (typeof (Object));
-        job.result.take_object (package);
-        job.results_ready ();
-    }
-
-    public async Pk.Package? get_package_by_name (string name, Pk.Bitfield additional_filters = 0) throws GLib.Error {
-        var job_args = new GetPackageByNameArgs ();
-        job_args.name = name;
-        job_args.additional_filters = additional_filters;
-
-        var job = yield launch_job (PackageKitJob.Type.GET_PACKAGE_BY_NAME, job_args);
-        if (job.error != null) {
-            throw job.error;
-        }
-
-        return (Pk.Package?)job.result.get_object ();
     }
 
     private void get_details_for_package_ids_internal (PackageKitJob job) {
@@ -214,60 +167,65 @@ public class AppCenterCore.PackageKitClient : Object {
         return (Gee.TreeSet<Pk.Package>)job.result.get_object ();
     }
 
-    private void get_not_installed_deps_for_package_internal (PackageKitJob job) {
-        var args = (GetNotInstalledDepsForPackageArgs)job.args;
-        var pk_package = args.package;
+    private void get_download_size_internal (PackageKitJob job) {
+        var args = (GetDownloadSizeArgs)job.args;
+        var package = args.package;
         var cancellable = args.cancellable;
 
-        var deps = new Gee.ArrayList<Pk.Package> ();
-
-        if (pk_package == null) {
-            job.result = Value (typeof (Object));
-            job.result.take_object (deps);
+        Pk.Package pk_package;
+        try {
+            pk_package = get_package_internal (package);
+        } catch (Error e) {
+            job.error = e;
             job.results_ready ();
             return;
         }
 
+        uint64 size = 0;
+
         string[] package_array = { pk_package.package_id, null };
-        var filters = Pk.Bitfield.from_enums (Pk.Filter.NOT_INSTALLED);
+        var filters = Pk.Bitfield.from_enums (Pk.Filter.NOT_INSTALLED, Pk.Filter.ARCH, Pk.Filter.NEWEST);
         try {
-            var deps_result = client.depends_on (filters, package_array, false, cancellable, (p, t) => {});
+            var deps_result = client.depends_on (filters, package_array, true, cancellable, (p, t) => {});
+            package_array = { pk_package.package_id };
             deps_result.get_package_array ().foreach ((dep_package) => {
-                deps.add (dep_package);
+                package_array += dep_package.package_id;
             });
 
-            package_array = {};
-            foreach (var dep_package in deps) {
-                package_array += dep_package.package_id;
+            package_array += null;
+
+            Pk.Results details;
+            try {
+                details = client.get_details (package_array, cancellable, (p, t) => {});
+            } catch (Error e) {
+                job.error = e;
+                job.results_ready ();
+                return;
             }
 
-            package_array += null;
-            if (package_array.length > 1) {
-                deps_result = client.depends_on (filters, package_array, true, cancellable, (p, t) => {});
-                deps_result.get_package_array ().foreach ((dep_package) => {
-                    deps.add (dep_package);
-                });
-            }
+            details.get_details_array ().foreach ((detail) => {
+                size += detail.size;
+            });
         } catch (Error e) {
             warning ("Error fetching dependencies for %s: %s", pk_package.package_id, e.message);
         }
 
-        job.result = Value (typeof (Object));
-        job.result.take_object (deps);
+        job.result = Value (typeof (uint64));
+        job.result.set_uint64 (size);
         job.results_ready ();
     }
 
-    public async Gee.ArrayList<Pk.Package> get_not_installed_deps_for_package (Pk.Package? package, Cancellable? cancellable) {
-        if (package == null) {
-            return new Gee.ArrayList<Pk.Package> ();
-        }
-
-        var job_args = new GetNotInstalledDepsForPackageArgs ();
+    public async uint64 get_download_size (Package package, Cancellable? cancellable) throws GLib.Error {
+        var job_args = new GetDownloadSizeArgs ();
         job_args.package = package;
         job_args.cancellable = cancellable;
 
-        var job = yield launch_job (PackageKitJob.Type.GET_NOT_INSTALLED_DEPS_FOR_PACKAGE, job_args);
-        return (Gee.ArrayList<Pk.Package>)job.result.get_object ();
+        var job = yield launch_job (PackageKitJob.Type.GET_DOWNLOAD_SIZE, job_args);
+        if (job.error != null) {
+            throw job.error;
+        }
+
+        return job.result.get_uint64 ();
     }
 
     private void install_packages_internal (PackageKitJob job) {
@@ -480,6 +438,114 @@ public class AppCenterCore.PackageKitClient : Object {
         }
 
         return (Pk.Results)job.result.get_object ();
+    }
+
+    private void is_package_installed_internal (PackageKitJob job) {
+        var args = (IsPackageInstalledArgs)job.args;
+        var package = args.package;
+
+        Pk.Package pk_package;
+        try {
+            pk_package = get_package_internal (package);
+        } catch (Error e) {
+            job.error = e;
+            job.results_ready ();
+            return;
+        }
+
+        job.result = Value (typeof (bool));
+        job.result = pk_package.info == Pk.Info.INSTALLED;
+        job.results_ready ();
+    }
+
+    public async bool is_package_installed (Package package) throws GLib.Error {
+        var job_args = new IsPackageInstalledArgs ();
+        job_args.package = package;
+
+        var job = yield launch_job (PackageKitJob.Type.IS_PACKAGE_INSTALLED, job_args);
+        if (job.error != null) {
+            throw job.error;
+        }
+
+        return job.result.get_boolean ();
+    }
+
+    private Pk.Package get_package_internal (Package package) throws GLib.Error {
+        if (package.component == null || package.component.get_pkgnames ().length < 1) {
+            throw new PackageKitClientError.PACKAGE_NOT_FOUND ("Package not found");
+        }
+
+        var name = package.component.get_pkgnames ()[0];
+
+        Pk.Package? pk_package = null;
+        var filter = Pk.Bitfield.from_enums (Pk.Filter.NEWEST);
+        try {
+            var results = client.search_names_sync (filter, { name, null }, null, () => {});
+            var array = results.get_package_array ();
+            if (array.length > 0) {
+                pk_package = array.get (0);
+            }
+        } catch (Error e) {
+            throw e;
+        }
+
+        if (pk_package != null) {
+            try {
+                Pk.Results details = client.get_details_sync ({ pk_package.package_id, null }, null, (t, p) => {});
+                details.get_details_array ().foreach ((details) => {
+                    pk_package.license = details.license;
+                    pk_package.description = details.description;
+                    pk_package.summary = details.summary;
+                    pk_package.group = details.group;
+                    pk_package.size = details.size;
+                    pk_package.url = details.url;
+                });
+            } catch (Error e) {
+                warning ("Unable to get details for package %s: %s", pk_package.package_id, e.message);
+            }
+        }
+
+        if (pk_package == null) {
+            throw new PackageKitClientError.PACKAGE_NOT_FOUND ("Package not found");
+        }
+
+        return pk_package;
+    }
+
+    private void get_package_details_internal (PackageKitJob job) {
+        var args = (GetPackageDetailsArgs)job.args;
+        var package = args.package;
+
+        Pk.Package pk_package;
+        try {
+            pk_package = get_package_internal (package);
+        } catch (Error e) {
+            job.error = e;
+            job.results_ready ();
+            return;
+        }
+
+        var result = new PackageDetails ();
+        result.name = pk_package.get_name ();
+        result.description = pk_package.description;
+        result.summary = pk_package.summary;
+        result.version = pk_package.get_version ();
+
+        job.result = Value (typeof (Object));
+        job.result.take_object (result);
+        job.results_ready ();
+    }
+
+    public async PackageDetails get_package_details (Package package) throws GLib.Error {
+        var job_args = new GetPackageDetailsArgs ();
+        job_args.package = package;
+
+        var job = yield launch_job (PackageKitJob.Type.GET_PACKAGE_DETAILS, job_args);
+        if (job.error != null) {
+            throw job.error;
+        }
+
+        return (PackageDetails)job.result.get_object ();
     }
 
     private static GLib.Once<PackageKitClient> instance;

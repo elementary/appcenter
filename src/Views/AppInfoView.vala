@@ -380,16 +380,12 @@ namespace AppCenter.Views {
 #endif
             reload_css ();
             set_up_package (128);
-            package.get_description.begin ((obj, res) => {
-                parse_description (package.get_description.end (res));
-            });
+            parse_description (package.get_description ());
 
             if (package.is_os_updates) {
                 package.notify["state"].connect (() => {
                     Idle.add (() => {
-                        package.get_description.begin ((obj, res) => {
-                            parse_description (package.get_description.end (res));
-                        });
+                        parse_description (package.get_description());
                         return false;
                     });
                 });
