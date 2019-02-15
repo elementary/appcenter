@@ -1,13 +1,15 @@
 # colindemian <colindemian@outlook.com>, 2018, 2019.
-# YISH <mokeyish@163.com>, 2018.
+# YISH <mokeyish@163.com>, 2018, 2019.
 # David Hewitt <davidmhewitt@gmail.com>, 2018.
+# WANG, Wei <ww460160885@gmail.com>, 2019.
+# imgradeone Yan <imgradeone@outlook.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
-"PO-Revision-Date: 2019-01-16 00:03+0000\n"
-"Last-Translator: colindemian <colindemian@outlook.com>\n"
+"PO-Revision-Date: 2019-02-09 00:05+0000\n"
+"Last-Translator: imgradeone Yan <imgradeone@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.elementary.io/projects/"
 "appcenter/appcenter/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -45,7 +47,7 @@ msgstr "%s 安装成功"
 #: src/Application.vala:273
 #, c-format
 msgid "There Was An Error Installing %s."
-msgstr "安装 %s 时出现错误。"
+msgstr "安装 %s 时发生错误。"
 
 #: src/MainWindow.vala:149 src/Views/Homepage.vala:282
 #: src/Views/Homepage.vala:291 src/Views/Homepage.vala:296
@@ -257,7 +259,7 @@ msgstr "暂无组件更新"
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
-msgstr[0] "%u 个组件更新"
+msgstr[0] "有 %u 个组件需要更新"
 
 #: src/Core/Client.vala:520
 #, c-format

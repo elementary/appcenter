@@ -1,4 +1,4 @@
-# Jan Marek <janmarek28@gmail.com>, 2018.
+# Jan Marek <janmarek28@gmail.com>, 2018, 2019.
 # Daniel Zvir <zvir.daniel@seznam.cz>, 2018.
 # Antonin Hablak <tondulin5@outlook.cz>, 2018.
 # Lukáš Kucharczyk <kucharczyk.lukas@gmail.com>, 2018.
@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
-"PO-Revision-Date: 2018-12-14 00:07+0000\n"
-"Last-Translator: Lukáš Kucharczyk <kucharczyk.lukas@gmail.com>\n"
+"PO-Revision-Date: 2019-02-07 00:05+0000\n"
+"Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
 "Language-Team: Czech <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/cs/>\n"
 "Language: cs\n"
@@ -22,7 +22,7 @@ msgstr ""
 #. Add "AppCenter" to the translation catalog
 #: src/Application.vala:38
 msgid "AppCenter"
-msgstr "AppCenter"
+msgstr "AppCentrum"
 
 #: src/Application.vala:106
 #, c-format
@@ -384,7 +384,7 @@ msgstr "CVC"
 
 #: src/Dialogs/StripeDialog.vala:189
 msgid "Privacy Policy"
-msgstr "Zásady soukromí"
+msgstr "Zásady ochrany soukromí"
 
 #: src/Dialogs/StripeDialog.vala:200 src/Dialogs/StripeDialog.vala:314
 #, c-format
@@ -660,7 +660,7 @@ msgstr "Vývojové nástroje"
 
 #: src/Widgets/CategoryFlowBox.vala:48
 msgid "Education"
-msgstr "Vzdělávání"
+msgstr "Vzdělání"
 
 #: src/Widgets/CategoryFlowBox.vala:49
 msgid "Finance"
@@ -684,7 +684,7 @@ msgstr "Věda a inženýrství"
 
 #: src/Widgets/CategoryFlowBox.vala:101
 msgid "Media Production"
-msgstr "Produkce Médií"
+msgstr "Mediální tvorba"
 
 #: src/Widgets/CategoryFlowBox.vala:108
 msgid "Office"
@@ -704,7 +704,7 @@ msgstr "Video"
 
 #: src/Widgets/CategoryFlowBox.vala:125
 msgid "Writing & Language"
-msgstr ""
+msgstr "Psaní a jazyky"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"

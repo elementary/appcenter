@@ -15,6 +15,19 @@
         </p>
     </description>
     <releases>
+        <release version="3.1.1" date="2019-02-14" urgency="medium">
+            <description>
+                <ul>
+                    <li>Meson build system fixes</li>
+                    <li>Improve window state restoration</li>
+                    <li>Prevent action buttons from jumping around</li>
+                    <li>Remove reset paid apps gsettings key</li>
+                    <li>Memory management refinements</li>
+                    <li>Add conditional compilation for disabling dynamic remote homepage content</li>
+                    <li>New translations</li>
+                </ul>
+            </description>
+        </release>
         <release version="3.1.0" date="2019-01-02" urgency="medium">
             <description>
                 <ul>
