@@ -221,7 +221,7 @@ public class AppCenterCore.Client : Object {
 
         string[] tokens = output.split ("\n");
         for (int i = 0; i < tokens.length; i++) {
-            string package_name = tokens[i];
+            unowned string package_name = tokens[i];
             if (package_name.strip () == "") {
                 continue;
             }

@@ -98,7 +98,7 @@ public class AppCenterCore.PackageKitClient : Object {
 
     private void get_package_by_name_internal (PackageKitJob job) {
         var args = (GetPackageByNameArgs)job.args;
-        var name = args.name;
+        unowned string name = args.name;
         var additional_filters = args.additional_filters;
 
         Pk.Package? package = null;
