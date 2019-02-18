@@ -36,10 +36,9 @@ public class AppCenterCore.UpdateManager : Object {
     }
 
     public async Pk.Results get_updates (Cancellable? cancellable) throws Error {
-        var client = AppCenterCore.Client.get_pk_client ();
-
+        var client = PackageKitClient.get_default ();
         try {
-            Pk.Results update_results = yield client.get_updates_async (0, cancellable, (t, p) => { });
+            Pk.Results update_results = yield client.get_updates (cancellable);
 
             if (fake_packages.length > 0) {
                 foreach (string name in fake_packages) {
@@ -54,15 +53,13 @@ public class AppCenterCore.UpdateManager : Object {
                 fake_packages = {};
             }
 
-            string[] packages_array = {};
+            var packages_array = new Gee.ArrayList<string> ();
             update_results.get_package_array ().foreach ((pk_package) => {
-                packages_array += pk_package.get_id ();
+                packages_array.add (pk_package.get_id ());
             });
 
-            if (packages_array.length > 0) {
-                packages_array += null;
-
-                Pk.Results details_results = yield client.get_details_async (packages_array, cancellable, (t, p) => { });
+            if (packages_array.size > 0) {
+                var details_results = yield client.get_details_for_package_ids (packages_array, cancellable);
 
                 details_results.get_details_array ().foreach ((details) => {
                     update_results.add_details (details);

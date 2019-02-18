@@ -65,7 +65,6 @@ public class AppCenterCore.Package : Object {
 
     public AppStream.Component component { get; construct; }
     public ChangeInformation change_information { public get; private set; }
-    public Gee.TreeSet<Pk.Package> installed_packages { public get; private set; }
     public GLib.Cancellable action_cancellable { public get; private set; }
     public State state { public get; private set; default = State.NOT_INSTALLED; }
 
@@ -75,9 +74,10 @@ public class AppCenterCore.Package : Object {
         }
     }
 
+    private bool installed_cached;
     public bool installed {
         get {
-            if (!installed_packages.is_empty) {
+            if (installed_cached) {
                 return true;
             }
 
@@ -85,13 +85,17 @@ public class AppCenterCore.Package : Object {
                 return true;
             }
 
-            Pk.Package? package = find_package ();
+            Pk.Package? package = find_package_sync ();
             if (package != null && package.info == Pk.Info.INSTALLED) {
                 return true;
             }
 
             return false;
         }
+    }
+
+    public void mark_installed () {
+        installed_cached = true;
     }
 
     public bool update_available {
@@ -263,7 +267,6 @@ public class AppCenterCore.Package : Object {
     private bool app_info_retrieved = false;
 
     construct {
-        installed_packages = new Gee.TreeSet<Pk.Package> ();
         change_information = new ChangeInformation ();
         change_information.status_changed.connect (() => info_changed (change_information.status));
 
@@ -368,17 +371,25 @@ public class AppCenterCore.Package : Object {
     private async Pk.Exit perform_package_operation () throws GLib.Error {
         Pk.ProgressCallback cb = change_information.ProgressCallback;
         var client = AppCenterCore.Client.get_default ();
+        var pk_client = AppCenterCore.PackageKitClient.get_default ();
+
+        Gee.ArrayList<string> packages_ids = new Gee.ArrayList<string>.wrap (component.get_pkgnames ());
+
         switch (state) {
             case State.UPDATING:
                 return yield client.update_package (this, cb, action_cancellable);
             case State.INSTALLING:
-                return yield client.install_package (this, cb, action_cancellable);
+                var status = yield pk_client.install_packages (packages_ids, (owned)cb, action_cancellable);
+                if (status == Pk.Exit.SUCCESS) {
+                    installed_cached = true;
+                }
+
+                return status;
             case State.REMOVING:
                 var status = yield client.remove_package (this, cb, action_cancellable);
 
-                // Clear the installed packages set on success, else we cannot reinstall.
                 if (Pk.Exit.SUCCESS == status) {
-                    installed_packages.clear ();
+                    installed_cached = false;
                 }
 
                 return status;
@@ -390,7 +401,6 @@ public class AppCenterCore.Package : Object {
     private void clean_up_package_operation (Pk.Exit exit_status, State success_state, State fail_state) {
         changing (false);
 
-        installed_packages.add_all (change_information.changes);
         if (exit_status == Pk.Exit.SUCCESS) {
             change_information.complete ();
             state = success_state;
@@ -400,20 +410,6 @@ public class AppCenterCore.Package : Object {
         }
     }
 
-    private async Pk.Package? find_package_async () {
-        SourceFunc callback = find_package_async.callback;
-
-        Pk.Package? package = null;
-        new Thread<bool> ("appstream-find-package", () => {
-            package = find_package ();
-            Idle.add ((owned)callback);
-            return true;
-        });
-
-        yield;
-        return package;
-    }
-
     public string? get_name () {
         if (name != null) {
             return name;
@@ -421,7 +417,7 @@ public class AppCenterCore.Package : Object {
 
         name = component.get_name ();
         if (name == null) {
-            var package = find_package ();
+            var package = find_package_sync ();
             if (package != null) {
                 name = package.get_name ();
             }
@@ -434,7 +430,7 @@ public class AppCenterCore.Package : Object {
         if (description == null) {
             description = component.get_description ();
             if (description == null) {
-                var package = yield find_package_async ();
+                var package = yield find_package ();
                 if (package != null) {
                     description = package.description;
                 }
@@ -462,7 +458,7 @@ public class AppCenterCore.Package : Object {
 
         summary = component.get_summary ();
         if (summary == null) {
-            var package = find_package ();
+            var package = find_package_sync ();
             if (package != null) {
                 summary = package.get_summary ();
             }
@@ -555,7 +551,7 @@ public class AppCenterCore.Package : Object {
             return latest_version;
         }
 
-        var package = find_package ();
+        var package = find_package_sync ();
         if (package != null) {
             latest_version = package.get_version ();
         }
@@ -724,7 +720,66 @@ public class AppCenterCore.Package : Object {
         return null;
     }
 
-    public Pk.Package? find_package () {
+    public async uint64 get_download_size_including_deps () {
+        uint64 size = 0;
+
+        var pk_package = yield find_package ();
+        var client = AppCenterCore.PackageKitClient.get_default ();
+        var deps = yield client.get_not_installed_deps_for_package (pk_package, null);
+
+        var package_ids = new Gee.ArrayList<string> ();
+
+        foreach (var package in deps) {
+            package_ids.add (package.package_id);
+        }
+
+        if (package_ids.size > 0) {
+            try {
+                var details = yield client.get_details_for_package_ids (package_ids, null);
+                details.get_details_array ().foreach ((details) => {
+                    size += details.size;
+                });
+            } catch (Error e) {
+                warning ("Error fetching details for dependencies, download size may be inaccurate: %s", e.message);
+            }
+        }
+
+        if (pk_package != null) {
+            size += pk_package.size;
+        }
+
+        return size;
+    }
+
+    private Pk.Package? find_package_sync () {
+        if (component.id == OS_UPDATES_ID || is_local) {
+            return null;
+        }
+
+        if (pk_package != null) {
+            return pk_package;
+        }
+
+        var client = AppCenterCore.PackageKitClient.get_default ();
+        var loop = new MainLoop ();
+        Pk.Package? result = null;
+        client.get_package_by_name.begin (component.get_pkgnames ()[0], 0, (obj, res) => {
+            try {
+                result = client.get_package_by_name.end (res);
+            } catch (Error e) {
+                warning (e.message);
+                result = null;
+            } finally {
+                loop.quit ();
+            }
+        });
+
+        loop.run ();
+        pk_package = result;
+        return pk_package;
+    }
+
+    private async Pk.Package? find_package () {
         if (component.id == OS_UPDATES_ID || is_local) {
             return null;
         }
@@ -734,7 +789,7 @@ public class AppCenterCore.Package : Object {
         }
 
         try {
-            pk_package = AppCenterCore.Client.get_default ().get_app_package (component.get_pkgnames ()[0], 0);
+            pk_package = yield AppCenterCore.PackageKitClient.get_default ().get_package_by_name (component.get_pkgnames ()[0]);
         } catch (Error e) {
             warning (e.message);
             return null;

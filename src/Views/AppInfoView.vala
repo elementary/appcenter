@@ -30,7 +30,6 @@ namespace AppCenter.Views {
         private Gtk.Stack app_screenshots;
         private Gtk.Label app_version;
         private Gtk.Label app_download_size_label;
-        private Cancellable app_download_size_cancellable;
         private Gtk.ListBox extension_box;
         private Gtk.Grid release_grid;
         private Widgets.ReleaseListBox release_list_box;
@@ -242,8 +241,6 @@ namespace AppCenter.Views {
             header_grid.attach (action_stack, 3, 0, 1, 1);
 
             if (!package.is_local) {
-                app_download_size_cancellable = new Cancellable ();
-
                 app_download_size_label = new Gtk.Label (null);
                 app_download_size_label.halign = Gtk.Align.END;
                 app_download_size_label.valign = Gtk.Align.CENTER;
@@ -428,48 +425,8 @@ namespace AppCenter.Views {
                 return;
             }
 
-            SourceFunc callback = get_app_download_size.callback;
-            uint64 size = 0;
+            var size = yield package.get_download_size_including_deps ();
 
-            // This thread will set the value of `size` in the background.
-            ThreadFunc<bool> run = () => {
-                var client = AppCenterCore.Client.get_default ();
-                var deps = new Gee.ArrayList<Pk.Package> ();
-                client.get_needed_deps_for_package.begin (package, app_download_size_cancellable, (obj, res) => {
-                    deps = client.get_needed_deps_for_package.end (res);
-                });
-
-                string[] package_ids = {};
-
-                foreach (var package in deps) {
-                    package_ids += package.package_id;
-                }
-
-                package_ids += null;
-
-                if (package_ids.length > 1) {
-                    var pk_client = AppCenterCore.Client.get_pk_client ();
-                    try {
-                        var details = pk_client.get_details (package_ids, app_download_size_cancellable, (p, t) => {});
-                        details.get_details_array ().foreach ((details) => {
-                            size += details.size;
-                        });
-                    } catch (Error e) {
-                        warning ("Error fetching details for dependencies, download size may be inaccurate: %s", e.message);
-                    }
-                }
-
-                var pk_package = package.find_package ();
-                if (pk_package != null) {
-                    size += pk_package.size;
-                }
-
-                Idle.add ((owned)callback);
-                return true;
-            };
-            new Thread<bool> ("download size", run);
-
-            yield;
             app_download_size_label.label = GLib.format_size (size);
             app_download_stack.set_visible_child_name ("CHILD");
         }

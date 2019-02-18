@@ -111,9 +111,9 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             }
         });
 
-        unowned AppCenterCore.Client client = AppCenterCore.Client.get_default ();
-        client.notify["task-count"].connect (() => {
-            working = client.task_count > 0;
+        unowned AppCenterCore.PackageKitClient client = AppCenterCore.PackageKitClient.get_default ();
+        client.notify["working"].connect (() => {
+            working = client.working;
         });
 
         show.connect (on_view_mode_changed);
