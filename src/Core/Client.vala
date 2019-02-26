@@ -151,46 +151,6 @@ public class AppCenterCore.Client : Object {
         return null;
     }
 
-    public async Pk.Exit update_package (Package package, Pk.ProgressCallback cb, GLib.Cancellable cancellable) throws GLib.Error {
-        task_count++;
-
-        var packages_ids = new Gee.ArrayList<string> ();
-        foreach (var pk_package in package.change_information.changes) {
-            packages_ids.add (pk_package.get_id ());
-        }
-
-        var exit_status = yield PackageKitClient.get_default ().update_packages (packages_ids, cb, cancellable);
-
-        if (exit_status != Pk.Exit.SUCCESS) {
-#if VALA_0_40
-            throw new GLib.IOError.FAILED (exit_status.enum_to_string());
-#else
-            throw new GLib.IOError.FAILED (Pk.Exit.enum_to_string (exit_status));
-#endif
-        } else {
-            package.change_information.clear_update_info ();
-        }
-
-        task_count--;
-        yield refresh_updates ();
-        return exit_status;
-    }
-
-    public async Pk.Exit remove_package (Package package, Pk.ProgressCallback cb, GLib.Cancellable cancellable) throws GLib.Error {
-        task_count++;
-
-        var package_ids = new Gee.ArrayList<string> ();
-        foreach (var package_id in package.component.get_pkgnames ()) {
-            package_ids.add (package_id);
-        }
-
-        var exit_status = yield PackageKitClient.get_default ().remove_packages (package_ids, cb, cancellable);
-
-        task_count--;
-        yield refresh_updates ();
-        return exit_status;
-    }
-
     public void get_drivers () {
         task_count++;
         if (driver_list.size > 0) {
@@ -330,7 +290,7 @@ public class AppCenterCore.Client : Object {
         return apps;
     }
 
-    private async void refresh_updates () {
+    public async void refresh_updates () {
         task_count++;
 
         try {

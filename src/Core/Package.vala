@@ -23,6 +23,13 @@ public errordomain PackageLaunchError {
     APP_INFO_NOT_FOUND
 }
 
+public class AppCenterCore.PackageDetails : Object {
+    public string? name { get; set; }
+    public string? description { get; set; }
+    public string? summary { get; set; }
+    public string? version { get; set; }
+}
+
 public class AppCenterCore.Package : Object {
     public const string APPCENTER_PACKAGE_ORIGIN = "appcenter-bionic-main";
     private const string ELEMENTARY_STABLE_PACKAGE_ORIGIN = "stable-bionic-main";
@@ -85,12 +92,8 @@ public class AppCenterCore.Package : Object {
                 return true;
             }
 
-            Pk.Package? package = find_package_sync ();
-            if (package != null && package.info == Pk.Info.INSTALLED) {
-                return true;
-            }
-
-            return false;
+            installed_cached = backend_reports_installed_sync ();
+            return installed_cached;
         }
     }
 
@@ -262,7 +265,7 @@ public class AppCenterCore.Package : Object {
         internal set { _latest_version = convert_version (value); }
     }
 
-    private Pk.Package? pk_package = null;
+    private PackageDetails? backend_details = null;
     private AppInfo? app_info;
     private bool app_info_retrieved = false;
 
@@ -346,18 +349,18 @@ public class AppCenterCore.Package : Object {
     }
 
     private async bool perform_operation (State performing, State after_success, State after_fail) throws GLib.Error {
-        var exit_status = Pk.Exit.UNKNOWN;
+        bool success = false;
         prepare_package_operation (performing);
         try {
-            exit_status = yield perform_package_operation ();
+            success = yield perform_package_operation ();
         } catch (GLib.Error e) {
             warning ("Operation failed for package %s - %s", get_name (), e.message);
             throw e;
         } finally {
-            clean_up_package_operation (exit_status, after_success, after_fail);
+            clean_up_package_operation (success, after_success, after_fail);
         }
 
-        return (exit_status == Pk.Exit.SUCCESS);
+        return success;
     }
 
     private void prepare_package_operation (State initial_state) {
@@ -368,7 +371,7 @@ public class AppCenterCore.Package : Object {
         state = initial_state;
     }
 
-    private async Pk.Exit perform_package_operation () throws GLib.Error {
+    private async bool perform_package_operation () throws GLib.Error {
         Pk.ProgressCallback cb = change_information.ProgressCallback;
         var client = AppCenterCore.Client.get_default ();
         var pk_client = AppCenterCore.PackageKitClient.get_default ();
@@ -377,31 +380,36 @@ public class AppCenterCore.Package : Object {
 
         switch (state) {
             case State.UPDATING:
-                return yield client.update_package (this, cb, action_cancellable);
+                var package_ids = new Gee.ArrayList<string> ();
+                foreach (var pk_package in change_information.changes) {
+                    package_ids.add (pk_package.get_id ());
+                }
+
+                var success = yield pk_client.update_packages (package_ids, (owned)cb, action_cancellable);
+                if (success) {
+                    change_information.clear_update_info ();
+                }
+
+                yield client.refresh_updates ();
+                return success;
             case State.INSTALLING:
-                var status = yield pk_client.install_packages (packages_ids, (owned)cb, action_cancellable);
-                if (status == Pk.Exit.SUCCESS) {
-                    installed_cached = true;
-                }
-
-                return status;
+                var success = yield pk_client.install_packages (packages_ids, (owned)cb, action_cancellable);
+                installed_cached = success;
+                return success;
             case State.REMOVING:
-                var status = yield client.remove_package (this, cb, action_cancellable);
-
-                if (Pk.Exit.SUCCESS == status) {
-                    installed_cached = false;
-                }
-
-                return status;
+                var success = yield pk_client.remove_packages (packages_ids, (owned)cb, action_cancellable);
+                installed_cached = !success;
+                yield client.refresh_updates ();
+                return success;
             default:
-                return Pk.Exit.UNKNOWN;
+                return false;
         }
     }
 
-    private void clean_up_package_operation (Pk.Exit exit_status, State success_state, State fail_state) {
+    private void clean_up_package_operation (bool success, State success_state, State fail_state) {
         changing (false);
 
-        if (exit_status == Pk.Exit.SUCCESS) {
+        if (success) {
             change_information.complete ();
             state = success_state;
         } else {
@@ -417,37 +425,28 @@ public class AppCenterCore.Package : Object {
 
         name = component.get_name ();
         if (name == null) {
-            var package = find_package_sync ();
-            if (package != null) {
-                name = package.get_name ();
+            if (backend_details == null) {
+                populate_backend_details_sync ();
             }
+
+            name = backend_details.name;
         }
 
         return name;
     }
 
-    public async string? get_description () {
+    public string? get_description () {
         if (description == null) {
             description = component.get_description ();
             if (description == null) {
-                var package = yield find_package ();
-                if (package != null) {
-                    description = package.description;
+                if (backend_details == null) {
+                    populate_backend_details_sync ();
                 }
+
+                description = backend_details.description;
             }
         }
 
-        return description;
-    }
-
-    public string? get_description_sync () {
-        var loop = new MainLoop ();
-        get_description.begin ((obj, res) => {
-            get_description.end (res);
-            loop.quit ();
-        });
-
-        loop.run ();
         return description;
     }
 
@@ -458,10 +457,11 @@ public class AppCenterCore.Package : Object {
 
         summary = component.get_summary ();
         if (summary == null) {
-            var package = find_package_sync ();
-            if (package != null) {
-                summary = package.get_summary ();
+            if (backend_details == null) {
+                populate_backend_details_sync ();
             }
+
+            summary = backend_details.summary;
         }
 
         return summary;
@@ -551,9 +551,12 @@ public class AppCenterCore.Package : Object {
             return latest_version;
         }
 
-        var package = find_package_sync ();
-        if (package != null) {
-            latest_version = package.get_version ();
+        if (backend_details == null) {
+            populate_backend_details_sync ();
+        }
+
+        if (backend_details.version != null) {
+            latest_version = backend_details.version;
         }
 
         return latest_version;
@@ -721,80 +724,59 @@ public class AppCenterCore.Package : Object {
     }
 
     public async uint64 get_download_size_including_deps () {
-        uint64 size = 0;
-
-        var pk_package = yield find_package ();
         var client = AppCenterCore.PackageKitClient.get_default ();
-        var deps = yield client.get_not_installed_deps_for_package (pk_package, null);
-
-        var package_ids = new Gee.ArrayList<string> ();
-
-        foreach (var package in deps) {
-            package_ids.add (package.package_id);
-        }
-
-        if (package_ids.size > 0) {
-            try {
-                var details = yield client.get_details_for_package_ids (package_ids, null);
-                details.get_details_array ().foreach ((details) => {
-                    size += details.size;
-                });
-            } catch (Error e) {
-                warning ("Error fetching details for dependencies, download size may be inaccurate: %s", e.message);
-            }
-        }
-
-        if (pk_package != null) {
-            size += pk_package.size;
+        uint64 size = 0;
+        try {
+            size = yield client.get_download_size (this, null);
+        } catch (Error e) {
+            warning ("Error getting download size: %s", e.message);
         }
 
         return size;
     }
 
-    private Pk.Package? find_package_sync () {
-        if (component.id == OS_UPDATES_ID || is_local) {
-            return null;
-        }
-
-        if (pk_package != null) {
-            return pk_package;
-        }
-
+    private bool backend_reports_installed_sync () {
         var client = AppCenterCore.PackageKitClient.get_default ();
         var loop = new MainLoop ();
-        Pk.Package? result = null;
-        client.get_package_by_name.begin (component.get_pkgnames ()[0], 0, (obj, res) => {
+        bool result = false;
+        client.is_package_installed.begin (this, (obj, res) => {
             try {
-                result = client.get_package_by_name.end (res);
+                result = client.is_package_installed.end (res);
             } catch (Error e) {
                 warning (e.message);
-                result = null;
+                result = false;
             } finally {
                 loop.quit ();
             }
         });
 
         loop.run ();
-        pk_package = result;
-        return pk_package;
+        return result;
     }
 
-    private async Pk.Package? find_package () {
+    private void populate_backend_details_sync () {
         if (component.id == OS_UPDATES_ID || is_local) {
-            return null;
+            backend_details = new PackageDetails ();
+            return;
         }
 
-        if (pk_package != null) {
-            return pk_package;
-        }
+        var client = AppCenterCore.PackageKitClient.get_default ();
+        var loop = new MainLoop ();
+        PackageDetails? result = null;
+        client.get_package_details.begin (this, (obj, res) => {
+            try {
+                result = client.get_package_details.end (res);
+            } catch (Error e) {
+                warning (e.message);
+            } finally {
+                loop.quit ();
+            }
+        });
 
-        try {
-            pk_package = yield AppCenterCore.PackageKitClient.get_default ().get_package_by_name (component.get_pkgnames ()[0]);
-        } catch (Error e) {
-            warning (e.message);
-            return null;
+        loop.run ();
+        backend_details = result;
+        if (backend_details == null) {
+            backend_details = new PackageDetails ();
         }
-
-        return pk_package;
     }
 }
