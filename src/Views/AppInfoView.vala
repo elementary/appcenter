@@ -87,7 +87,7 @@ namespace AppCenter.Views {
             package_name.selectable = true;
             package_name.xalign = 0;
             package_name.get_style_context ().add_class (Granite.STYLE_CLASS_H1_LABEL);
-            package_name.valign = Gtk.Align.CENTER;
+            package_name.valign = Gtk.Align.END;
 
             app_version = new Gtk.Label (null);
             app_version.margin_top = 12;
@@ -101,7 +101,7 @@ namespace AppCenter.Views {
             package_author.xalign = 0;
             package_author.valign = Gtk.Align.START;
             package_author.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-            package_author.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
+            package_author.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
             package_summary.label = package.get_summary ();
             package_summary.selectable = true;
@@ -204,10 +204,6 @@ namespace AppCenter.Views {
                 load_extensions.begin ();
             }
 
-            var header_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
-            header_box.get_style_context ().add_class ("banner");
-            header_box.hexpand = true;
-
             var header_grid = new Gtk.Grid ();
             header_grid.column_spacing = 12;
             header_grid.row_spacing = 6;
@@ -217,11 +213,11 @@ namespace AppCenter.Views {
             /* Must wide enought to fit long package name and progress bar */
             header_grid.width_request = content_grid.width_request + 2 * (content_grid.margin - header_grid.margin);
             header_grid.hexpand = true;
-            header_grid.attach (image, 0, 0, 1, 3);
-            header_grid.attach (package_name, 1, 0, 1, 2);
+            header_grid.attach (image, 0, 0, 1, 2);
+            header_grid.attach (package_name, 1, 0);
 
             if (!package.is_os_updates) {
-                header_grid.attach (package_author, 1, 2, 1, 1);
+                header_grid.attach (package_author, 1, 1, 2);
                 header_grid.attach (app_version, 2, 0, 1, 1);
             } else {
                 package_summary.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
@@ -243,8 +239,8 @@ namespace AppCenter.Views {
             if (!package.is_local) {
                 app_download_size_label = new Gtk.Label (null);
                 app_download_size_label.halign = Gtk.Align.END;
-                app_download_size_label.valign = Gtk.Align.CENTER;
-                app_download_size_label.xalign = 1.0f;
+                app_download_size_label.valign = Gtk.Align.START;
+                app_download_size_label.xalign = 1;
                 app_download_size_label.margin_end = open_button.margin_end;
                 action_button_group.add_widget (app_download_size_label);
                 app_download_size_label.selectable = true;
@@ -258,6 +254,9 @@ namespace AppCenter.Views {
                 header_grid.attach (app_download_stack, 3, 1, 1, 1);
             }
 
+            var header_box = new Gtk.Grid ();
+            header_box.get_style_context ().add_class ("banner");
+            header_box.hexpand = true;
             header_box.add (header_grid);
 
             var footer_grid = new Gtk.Grid ();
