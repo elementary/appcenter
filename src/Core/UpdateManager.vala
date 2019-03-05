@@ -46,8 +46,15 @@ public class AppCenterCore.UpdateManager : Object {
         var apps_with_updates = new Gee.TreeSet<Package> ();
         uint count = 0;
 
+        Pk.Results pk_updates;
         unowned PackageKitClient client = PackageKitClient.get_default ();
-        var pk_updates = yield client.get_updates (cancellable);
+        try {
+            pk_updates = yield client.get_updates (cancellable);
+        } catch (Error e) {
+            warning ("Unable to get updates from PackageKit backend: %s", e.message);
+            return 0;
+        }
+
         uint os_count = 0;
         string os_desc = "";
 
