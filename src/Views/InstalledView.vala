@@ -37,7 +37,7 @@ public class AppCenter.Views.InstalledView : View {
         client.get_drivers ();
         get_apps.begin ();
 
-        client.pool_updated.connect (() => {
+        client.update_check_finished.connect (() => {
             get_apps.begin ();
         });
 
@@ -65,7 +65,7 @@ public class AppCenter.Views.InstalledView : View {
 
         unowned Client client = Client.get_default ();
 
-        var os_updates = Client.get_default ().os_updates;
+        var os_updates = UpdateManager.get_default ().os_updates;
         app_list_view.add_package (os_updates);
 
         foreach (var driver in client.driver_list) {

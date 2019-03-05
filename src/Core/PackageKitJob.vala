@@ -69,11 +69,6 @@ public class AppCenterCore.GetDownloadSizeArgs : JobArgs {
     public Cancellable cancellable;
 }
 
-public class AppCenterCore.GetDetailsForPackageIDsArgs : JobArgs {
-    public Gee.ArrayList<string> package_ids;
-    public Cancellable cancellable;
-}
-
 public class AppCenterCore.GetUpdatesArgs : JobArgs {
     public Cancellable cancellable;
 }
