@@ -3,21 +3,21 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-18 05:17-0500\n"
-"PO-Revision-Date: 2019-01-05 08:21+0000\n"
+"PO-Revision-Date: 2019-03-05 16:27+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
-"Language-Team: Portuguese <https://weblate.elementary.io/projects/appcenter/"
+"Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
 "extra/pt/>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.4\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
 msgid "AppCenter"
-msgstr "AppCenter"
+msgstr "Centro de Aplicações"
 
 #: data/io.elementary.appcenter.appdata.xml.in:9
 #: data/io.elementary.appcenter.desktop.in.in:4
@@ -31,9 +31,9 @@ msgid ""
 "system to the latest and greatest version for new features and fixes."
 msgstr ""
 "Uma loja de aplicações para programadores indie e open source. Navegue por "
-"categorias ou pesquise e descubra novas apps. O AppCenter também é usado "
-"para atualizar o seu sistema para as últimas versões que incluem novas "
-"funcionalidade e correções."
+"categorias ou pesquise e descubra novas aplicações. O Centro de Aplicações "
+"também é usado para atualizar o seu sistema para as últimas versões que "
+"incluem novas funcionalidade e correções."
 
 #: data/io.elementary.appcenter.appdata.xml.in:201
 msgid "elementary LLC."
