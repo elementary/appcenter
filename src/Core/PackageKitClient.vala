@@ -26,6 +26,16 @@ public class AppCenterCore.PackageKitClient : Object {
     private AsyncQueue<PackageKitJob> jobs = new AsyncQueue<PackageKitJob> ();
     private Thread<bool> worker_thread;
 
+    private GLib.DateTime last_action = null;
+    private Gee.HashMap<string, AppCenterCore.Package> package_list;
+    private AppStream.Pool appstream_pool;
+
+    public string[] fake_packages { get; set; }
+
+    private const string FAKE_PACKAGE_ID = "%s;fake.version;amd64;installed:xenial-main";
+
+    private const int PACKAGEKIT_ACTIVITY_TIMEOUT_MS = 2000;
+
     // This is OK as we're only using a single thread (PackageKit can only do one job at a time)
     // This would have to be done differently if there were multiple workers in the pool
     private bool thread_should_run = true;
@@ -34,13 +44,11 @@ public class AppCenterCore.PackageKitClient : Object {
 
     private bool worker_func () {
         while (thread_should_run) {
+            last_action = new DateTime.now_local ();
             working = false;
             var job = jobs.pop ();
             working = true;
             switch (job.operation) {
-                case PackageKitJob.Type.GET_DETAILS_FOR_PACKAGE_IDS:
-                    get_details_for_package_ids_internal (job);
-                    break;
                 case PackageKitJob.Type.GET_INSTALLED_PACKAGES:
                     get_installed_packages_internal (job);
                     break;
@@ -82,11 +90,199 @@ public class AppCenterCore.PackageKitClient : Object {
 
     private PackageKitClient () {
         worker_thread = new Thread<bool> ("packagekit-worker", worker_func);
+
+        package_list = new Gee.HashMap<string, AppCenterCore.Package> (null, null);
+        appstream_pool = new AppStream.Pool ();
+        // We don't want to show installed desktop files here
+        appstream_pool.set_flags (appstream_pool.get_flags () & ~AppStream.PoolFlags.READ_DESKTOP_FILES);
+
+        reload_appstream_pool ();
+
+        var control = new Pk.Control ();
+        control.updates_changed.connect (updates_changed_callback);
+    }
+
+    private void updates_changed_callback () {
+        if (!working) {
+            UpdateManager.get_default ().update_restart_state ();
+
+            var time_since_last_action = (new DateTime.now_local ()).difference (last_action) / GLib.TimeSpan.MILLISECOND;
+            if (time_since_last_action >= PACKAGEKIT_ACTIVITY_TIMEOUT_MS) {
+                info ("packages possibly changed by external program, refreshing cache");
+                Client.get_default ().update_cache.begin (true);
+            }
+        }
     }
 
     ~PackageKitClient () {
         thread_should_run = false;
         worker_thread.join ();
+    }
+
+    private void reload_appstream_pool () {
+        package_list.clear ();
+
+        try {
+            appstream_pool.load ();
+        } catch (Error e) {
+            critical (e.message);
+        } finally {
+            var comp_validator = ComponentValidator.get_default ();
+            appstream_pool.get_components ().foreach ((comp) => {
+                if (!comp_validator.validate (comp)) {
+                    return;
+                }
+
+                var package = new AppCenterCore.Package (comp);
+                foreach (var pkg_name in comp.get_pkgnames ()) {
+                    package_list[pkg_name] = package;
+                }
+            });
+        }
+    }
+
+    public Package? lookup_package_by_id (string id) {
+        return package_list[id];
+    }
+
+    public Package? add_local_component_file (File file) throws Error {
+        var metadata = new AppStream.Metadata ();
+        try {
+            metadata.parse_file (file, AppStream.FormatKind.XML);
+        } catch (Error e) {
+            throw e;
+        }
+
+        var component = metadata.get_component ();
+        if (component != null) {
+            string name = _("%s (local)").printf (component.get_name ());
+            string id = "%s%s".printf (component.get_id (), Package.LOCAL_ID_SUFFIX);
+
+            component.set_name (name, null);
+            component.set_id (id);
+            component.set_origin (Package.APPCENTER_PACKAGE_ORIGIN);
+
+            appstream_pool.add_component (component);
+
+            var package = new AppCenterCore.Package (component);
+            package_list[id] = package;
+
+            return package;
+        }
+
+        return null;
+    }
+
+    public async Gee.Collection<AppCenterCore.Package> get_installed_applications () {
+        var packages = new Gee.TreeSet<AppCenterCore.Package> ();
+        var installed = yield get_installed_packages ();
+        foreach (var pk_package in installed) {
+            var package = package_list[pk_package.get_name ()];
+            if (package != null) {
+                populate_package (package, pk_package);
+                packages.add (package);
+            }
+        }
+
+        return packages;
+    }
+
+    private static void populate_package (AppCenterCore.Package package, Pk.Package pk_package) {
+        package.mark_installed ();
+        package.latest_version = pk_package.get_version ();
+        package.update_state ();
+    }
+
+    public AppCenterCore.Package? get_package_for_component_id (string id) {
+        foreach (var package in package_list.values) {
+            if (package.component.id == id) {
+                return package;
+            } else if (package.component.id == id + ".desktop") {
+                return package;
+            }
+        }
+
+        return null;
+    }
+
+    public AppCenterCore.Package? get_package_for_desktop_id (string desktop_id) {
+        foreach (var package in package_list.values) {
+            if (package.component.id == desktop_id) {
+                return package;
+            }
+        }
+
+        return null;
+    }
+
+    public Gee.Collection<AppCenterCore.Package> get_packages_by_author (string author, int max) {
+        var packages = new Gee.ArrayList<AppCenterCore.Package> ();
+        foreach (var package in package_list.values) {
+            if (packages.size > max) {
+                break;
+            }
+
+            if (package.component.developer_name == author) {
+                packages.add (package);
+            }
+        }
+
+        return packages;
+    }
+
+    public Gee.Collection<AppCenterCore.Package> get_applications_for_category (AppStream.Category category) {
+        unowned GLib.GenericArray<AppStream.Component> components = category.get_components ();
+        if (components.length == 0) {
+            var category_array = new GLib.GenericArray<AppStream.Category> ();
+            category_array.add (category);
+            AppStream.utils_sort_components_into_categories (appstream_pool.get_components (), category_array, true);
+            components = category.get_components ();
+        }
+
+        var apps = new Gee.TreeSet<AppCenterCore.Package> ();
+        components.foreach ((comp) => {
+            var package = get_package_for_component_id (comp.get_id ());
+            if (package != null) {
+                apps.add (package);
+            }
+        });
+
+        return apps;
+    }
+
+    public Gee.Collection<AppCenterCore.Package> search_applications (string query, AppStream.Category? category) {
+        var apps = new Gee.TreeSet<AppCenterCore.Package> ();
+        GLib.GenericArray<weak AppStream.Component> comps = appstream_pool.search (query);
+        if (category == null) {
+            comps.foreach ((comp) => {
+                var package = get_package_for_component_id (comp.get_id ());
+                if (package != null) {
+                    apps.add (package);
+                }
+            });
+        } else {
+            var cat_packages = get_applications_for_category (category);
+            comps.foreach ((comp) => {
+                var package = get_package_for_component_id (comp.get_id ());
+                if (package != null && package in cat_packages) {
+                    apps.add (package);
+                }
+            });
+        }
+
+        return apps;
+    }
+
+    public Gee.Collection<AppCenterCore.Package> search_applications_mime (string query) {
+        var apps = new Gee.TreeSet<AppCenterCore.Package> ();
+        foreach (var package in package_list.values) {
+            weak AppStream.Provided? provided = package.component.get_provided_for_kind (AppStream.ProvidedKind.MIMETYPE);
+            if (provided != null && provided.has_item (query)) {
+                apps.add (package);
+            }
+        }
+
+        return apps;
     }
 
     private async PackageKitJob launch_job (PackageKitJob.Type type, JobArgs? args = null) {
@@ -101,46 +297,6 @@ public class AppCenterCore.PackageKitClient : Object {
         jobs.push (job);
         yield;
         return job;
-    }
-
-    private void get_details_for_package_ids_internal (PackageKitJob job) {
-        var args = (GetDetailsForPackageIDsArgs)job.args;
-        var package_ids = args.package_ids;
-        var cancellable = args.cancellable;
-
-        string[] packages_ids = {};
-
-        foreach (var package in package_ids) {
-            packages_ids += package;
-        }
-
-        packages_ids += null;
-
-        Pk.Results? result = null;
-        try {
-            result = client.get_details (packages_ids, cancellable, (p, t) => {});
-        } catch (Error e) {
-            job.error = e;
-            job.results_ready ();
-            return;
-        }
-
-        job.result = Value (typeof (Object));
-        job.result.take_object (result);
-        job.results_ready ();
-    }
-
-    public async Pk.Results get_details_for_package_ids (Gee.ArrayList<string> package_ids, Cancellable? cancellable) throws GLib.Error {
-        var job_args = new GetDetailsForPackageIDsArgs ();
-        job_args.package_ids = package_ids;
-        job_args.cancellable = cancellable;
-
-        var job = yield launch_job (PackageKitJob.Type.GET_DETAILS_FOR_PACKAGE_IDS, job_args);
-        if (job.error != null) {
-            throw job.error;
-        }
-
-        return (Pk.Results)job.result.get_object ();
     }
 
     private void get_installed_packages_internal (PackageKitJob job) {
@@ -387,11 +543,51 @@ public class AppCenterCore.PackageKitClient : Object {
         Pk.Results? results = null;
         try {
             results = client.get_updates (0, cancellable, (t, p) => { });
+
+            if (fake_packages.length > 0) {
+                foreach (string name in fake_packages) {
+                    var package = new Pk.Package ();
+                    if (package.set_id (FAKE_PACKAGE_ID.printf (name))) {
+                        results.add_package (package);
+                    } else {
+                        warning ("Could not add a fake package '%s' to the update list".printf (name));
+                    }
+                }
+
+                fake_packages = {};
+            }
         } catch (Error e) {
             job.error = e;
             job.results_ready ();
             return;
         }
+
+        if (results.get_package_array ().length == 0) {
+            job.result = Value (typeof (Object));
+            job.result.take_object (results);
+            job.results_ready ();
+            return;
+        }
+
+        string[] package_ids = {};
+        results.get_package_array ().foreach ((pk_package) => {
+            package_ids += pk_package.get_id ();
+        });
+
+        package_ids += null;
+
+        Pk.Results details;
+        try {
+            details = client.get_details (package_ids, cancellable, (p, t) => {});
+        } catch (Error e) {
+            job.error = e;
+            job.results_ready ();
+            return;
+        }
+
+        details.get_details_array ().foreach ((details) => {
+            results.add_details (details);
+        });
 
         job.result = Value (typeof (Object));
         job.result.take_object (results);
@@ -421,6 +617,10 @@ public class AppCenterCore.PackageKitClient : Object {
             job.error = e;
             job.results_ready ();
             return;
+        }
+
+        if (results.get_exit_code () == Pk.Exit.SUCCESS) {
+            reload_appstream_pool ();
         }
 
         job.result = Value (typeof (Object));

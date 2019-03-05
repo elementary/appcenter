@@ -247,20 +247,20 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     }
 
     public override bool delete_event (Gdk.EventAny event) {
-        unowned AppCenterCore.Client client = AppCenterCore.Client.get_default ();
-        if (client.has_tasks ()) {
+        unowned AppCenterCore.PackageKitClient client = AppCenterCore.PackageKitClient.get_default ();
+        if (client.working) {
             if (task_finished_connection != 0U) {
                 client.disconnect (task_finished_connection);
             }
 
             hide ();
-            task_finished_connection = client.notify["task-count"].connect (() => {
-                if (!visible && client.task_count == 0) {
+            task_finished_connection = client.notify["working"].connect (() => {
+                if (!visible && !client.working) {
                     destroy ();
                 }
             });
 
-            client.cancel_updates (false); //Timeouts keep running
+            AppCenterCore.Client.get_default ().cancel_updates (false); //Timeouts keep running
             return true;
         }
 
