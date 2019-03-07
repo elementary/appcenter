@@ -15,7 +15,7 @@ add_project_arguments(
 
 gee = dependency ('gee-0.8')
 gtk = dependency ('gtk+-3.0', version: '>=3.10')
-granite = dependency ('granite', version: '>=0.4.2')
+granite = dependency ('granite', version: '>=5.2.3')
 packagekit = dependency ('packagekit-glib2')
 appstream = dependency ('appstream', version: '>=0.10.0')
 libsoup = dependency ('libsoup-2.4')

@@ -12,7 +12,7 @@ You'll need the following dependencies:
 * gettext
 * libappstream-dev (>= 0.10)
 * libgee-0.8-dev
-* libgranite-dev (>=0.5)
+* libgranite-dev (>=5.2.3)
 * libgtk-3-dev
 * libjson-glib-dev
 * libpackagekit-glib2-dev
