@@ -189,16 +189,40 @@ public class AppCenterCore.Client : Object {
         } // Otherwise updates and timeout were cancelled during refresh, or no network present.
     }
 
-    public AppCenterCore.Package? get_package_for_component_id (string id) {
-        return PackageKitClient.get_default ().get_package_for_component_id (id);
+    public Package? get_package_for_component_id (string id) {
+        Package? package;
+        foreach (var backend in backends) {
+            package = backend.get_package_for_component_id (id);
+            if (package != null) {
+                return package;
+            }
+        }
+
+        return null;
     }
 
-    public AppCenterCore.Package? get_package_for_desktop_id (string desktop_id) {
-        return PackageKitClient.get_default ().get_package_for_desktop_id (desktop_id);
+    public Package? get_package_for_desktop_id (string desktop_id) {
+        Package? package;
+        foreach (var backend in backends) {
+            package = backend.get_package_for_desktop_id (desktop_id);
+            if (package != null) {
+                return package;
+            }
+        }
+
+        return null;
     }
 
-    public Gee.Collection<AppCenterCore.Package> get_packages_by_author (string author, int max) {
-        return PackageKitClient.get_default ().get_packages_by_author (author, max);
+    public Gee.Collection<Package> get_packages_by_author (string author, int max) {
+        var packages = new Gee.TreeSet<Package> ();
+        foreach (var backend in backends) {
+            packages.add_all (backend.get_packages_by_author (author, max));
+            if (packages.size >= max) {
+                break;
+            }
+        }
+
+        return packages;
     }
 
     private static GLib.Once<Client> instance;

@@ -531,7 +531,7 @@ public class AppCenterCore.Package : Object {
         }
 
         for (int i = 0; i < extends.length; i++) {
-            var package = Client.get_default ().get_package_for_component_id (extends[i]);
+            var package = backend.get_package_for_component_id (extends[i]);
             if (package != null) {
                 return package;
             }

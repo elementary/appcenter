@@ -85,6 +85,18 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
         return new Gee.ArrayList<Package> ();
     }
 
+    public Package? get_package_for_component_id (string id) {
+        return null;
+    }
+
+    public Package? get_package_for_desktop_id (string id) {
+        return null;
+    }
+
+    public Gee.Collection<Package> get_packages_by_author (string author, int max) {
+        return new Gee.ArrayList<Package> ();
+    }
+
     public async uint64 get_download_size (Package package, Cancellable? cancellable) throws GLib.Error {
         return yield PackageKitClient.get_default ().get_download_size (package, cancellable);
     }

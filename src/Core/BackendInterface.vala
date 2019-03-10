@@ -23,10 +23,13 @@ public enum BackendType {
 }
 
 public interface AppCenterCore.Backend : Object {
-    public abstract async Gee.Collection<AppCenterCore.Package> get_installed_applications ();
+    public abstract async Gee.Collection<Package> get_installed_applications ();
     public abstract Gee.Collection<Package> get_applications_for_category (AppStream.Category category);
     public abstract Gee.Collection<Package> search_applications (string query, AppStream.Category? category);
     public abstract Gee.Collection<Package> search_applications_mime (string query);
+    public abstract Package? get_package_for_component_id (string id);
+    public abstract Package? get_package_for_desktop_id (string id);
+    public abstract Gee.Collection<Package> get_packages_by_author (string author, int max);
 
     public abstract async uint64 get_download_size (Package package, Cancellable? cancellable) throws GLib.Error;
     public abstract async bool is_package_installed (Package package) throws GLib.Error;
