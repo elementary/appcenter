@@ -61,14 +61,14 @@ public class AppCenterCore.PackageKitClient : Backend, Object {
                 case PackageKitJob.Type.GET_UPDATES:
                     get_updates_internal (job);
                     break;
-                case PackageKitJob.Type.INSTALL_PACKAGES:
-                    install_packages_internal (job);
+                case PackageKitJob.Type.INSTALL_PACKAGE:
+                    install_package_internal (job);
                     break;
                 case PackageKitJob.Type.UPDATE_PACKAGES:
                     update_packages_internal (job);
                     break;
-                case PackageKitJob.Type.REMOVE_PACKAGES:
-                    remove_packages_internal (job);
+                case PackageKitJob.Type.REMOVE_PACKAGE:
+                    remove_package_internal (job);
                     break;
                 case PackageKitJob.Type.IS_PACKAGE_INSTALLED:
                     is_package_installed_internal (job);
@@ -384,16 +384,16 @@ public class AppCenterCore.PackageKitClient : Backend, Object {
         return job.result.get_uint64 ();
     }
 
-    private void install_packages_internal (PackageKitJob job) {
-        var args = (InstallPackagesArgs)job.args;
-        var package_ids = args.package_ids;
+    private void install_package_internal (PackageKitJob job) {
+        var args = (InstallPackageArgs)job.args;
+        var package = args.package;
         unowned Pk.ProgressCallback cb = args.cb;
         var cancellable = args.cancellable;
 
         Pk.Exit exit_status = Pk.Exit.UNKNOWN;
         string[] packages_ids = {};
-        foreach (var pkg_name in package_ids) {
-            packages_ids += pkg_name;
+        for (int i = 0; i < package.component.get_pkgnames ().length; i++) {
+            packages_ids += package.component.get_pkgnames ()[i];
         }
 
         packages_ids += null;
@@ -432,13 +432,13 @@ public class AppCenterCore.PackageKitClient : Backend, Object {
         job.results_ready ();
     }
 
-    public async bool install_packages (Gee.ArrayList<string> package_ids, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
-        var job_args = new InstallPackagesArgs ();
-        job_args.package_ids = package_ids;
+    public async bool install_package (Package package, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+        var job_args = new InstallPackageArgs ();
+        job_args.package = package;
         job_args.cb = (owned)cb;
         job_args.cancellable = cancellable;
 
-        var job = yield launch_job (PackageKitJob.Type.INSTALL_PACKAGES, job_args);
+        var job = yield launch_job (PackageKitJob.Type.INSTALL_PACKAGE, job_args);
         if (job.error != null) {
             throw job.error;
         }
@@ -488,16 +488,16 @@ public class AppCenterCore.PackageKitClient : Backend, Object {
         return job.result.get_boolean ();
     }
 
-    private void remove_packages_internal (PackageKitJob job) {
-        var args = (RemovePackagesArgs)job.args;
-        var package_ids = args.package_ids;
+    private void remove_package_internal (PackageKitJob job) {
+        var args = (RemovePackageArgs)job.args;
+        var package = args.package;
         var cancellable = args.cancellable;
         unowned Pk.ProgressCallback cb = args.cb;
 
         Pk.Exit exit_status = Pk.Exit.UNKNOWN;
         string[] packages_ids = {};
-        foreach (var pkg_name in package_ids) {
-            packages_ids += pkg_name;
+        for (int i = 0; i < package.component.get_pkgnames ().length; i++) {
+            packages_ids += package.component.get_pkgnames ()[i];
         }
 
         packages_ids += null;
@@ -522,13 +522,13 @@ public class AppCenterCore.PackageKitClient : Backend, Object {
         job.results_ready ();
     }
 
-    public async bool remove_packages (Gee.ArrayList<string> package_ids, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
-        var job_args = new RemovePackagesArgs ();
-        job_args.package_ids = package_ids;
+    public async bool remove_package (Package package, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+        var job_args = new RemovePackageArgs ();
+        job_args.package = package;
         job_args.cb = (owned)cb;
         job_args.cancellable = cancellable;
 
-        var job = yield launch_job (PackageKitJob.Type.REMOVE_PACKAGES, job_args);
+        var job = yield launch_job (PackageKitJob.Type.REMOVE_PACKAGE, job_args);
         if (job.error != null) {
             throw job.error;
         }

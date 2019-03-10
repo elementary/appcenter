@@ -65,7 +65,7 @@ public class AppCenterCore.UpdateManager : Object {
                 apps_with_updates.add (appcenter_package);
                 appcenter_package.latest_version = pk_package.get_version ();
                 appcenter_package.change_information.changes.clear ();
-                appcenter_package.change_information.details.clear ();
+                appcenter_package.change_information.size += 0;
             } else {
                 os_count++;
                 unowned string pkg_summary = pk_package.get_summary ();
@@ -91,7 +91,7 @@ public class AppCenterCore.UpdateManager : Object {
 
         os_updates.component.set_pkgnames({});
         os_updates.change_information.changes.clear ();
-        os_updates.change_information.details.clear ();
+        os_updates.change_information.size = 0;
 
         count = apps_with_updates.size;
         if (os_count > 0) {
@@ -106,7 +106,7 @@ public class AppCenterCore.UpdateManager : Object {
                 var appcenter_package = client.lookup_package_by_id (pkg_name);
                     if (appcenter_package != null) {
                         appcenter_package.change_information.changes.add (pk_package);
-                        appcenter_package.change_information.details.add (pk_detail);
+                        appcenter_package.change_information.size += pk_detail.size;
                         appcenter_package.update_state ();
                     } else {
                         var pkgnames = os_updates.component.pkgnames;
@@ -114,7 +114,7 @@ public class AppCenterCore.UpdateManager : Object {
                         os_updates.component.pkgnames = pkgnames;
 
                         os_updates.change_information.changes.add (pk_package);
-                        os_updates.change_information.details.add (pk_detail);
+                        os_updates.change_information.size += pk_detail.size;
                     }
             } catch (Error e) {
                 critical (e.message);

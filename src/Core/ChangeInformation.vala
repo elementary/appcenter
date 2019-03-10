@@ -23,7 +23,6 @@ public class AppCenterCore.ChangeInformation : Object {
     public signal void progress_changed ();
 
     public Gee.TreeSet<Pk.Package> changes { public get; private set; }
-    public Gee.TreeSet<Pk.Details> details { public get; private set; }
     public bool can_cancel { public get; private set; default=true; }
     public Pk.Status status { public get; private set; }
     public double progress { public get; private set; }
@@ -32,9 +31,10 @@ public class AppCenterCore.ChangeInformation : Object {
     private Pk.Status current_status;
     private double progress_denom;
 
+    public uint64 size;
+
     construct {
         changes = new Gee.TreeSet<Pk.Package> ();
-        details = new Gee.TreeSet<Pk.Details> ();
         status = Pk.Status.SETUP;
         progress = 0.0f;
         current_progress = 0;
@@ -42,6 +42,7 @@ public class AppCenterCore.ChangeInformation : Object {
         current_status = Pk.Status.SETUP;
         /* usually we have 2 transactions, each with 100% progress */
         progress_denom = 200.0f;
+        size = 0;
     }
 
     public bool has_changes () {
@@ -125,15 +126,6 @@ public class AppCenterCore.ChangeInformation : Object {
         }
     }
 
-    public uint64 get_size () {
-        uint64 size = 0ULL;
-        foreach (var detail in details) {
-            size += detail.size;
-        }
-
-        return size;
-    }
-
     public void start () {
         progress = 0.0f;
         progress_changed ();
@@ -157,7 +149,7 @@ public class AppCenterCore.ChangeInformation : Object {
 
     public void clear_update_info () {
          changes.clear ();
-         details.clear ();
+         size = 0;
      }
 
     public void reset_progress () {

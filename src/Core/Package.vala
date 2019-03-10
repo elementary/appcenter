@@ -76,19 +76,6 @@ public class AppCenterCore.Package : Object {
     public State state { public get; private set; default = State.NOT_INSTALLED; }
 
     public Backend backend { public get; construct; }
-    public BackendType backend_type {
-        get {
-            if (backend is PackageKitClient) {
-                return BackendType.PACKAGEKIT;
-            }
-
-            if (backend is UbuntuDriversBackend) {
-                return BackendType.UBUNTU_DRIVERS;
-            }
-
-            assert_not_reached ();
-        }
-    }
 
     public double progress {
         get {
@@ -389,9 +376,6 @@ public class AppCenterCore.Package : Object {
     private async bool perform_package_operation () throws GLib.Error {
         Pk.ProgressCallback cb = change_information.ProgressCallback;
         var client = AppCenterCore.Client.get_default ();
-        var pk_client = AppCenterCore.PackageKitClient.get_default ();
-
-        Gee.ArrayList<string> packages_ids = new Gee.ArrayList<string>.wrap (component.get_pkgnames ());
 
         switch (state) {
             case State.UPDATING:
@@ -400,7 +384,7 @@ public class AppCenterCore.Package : Object {
                     package_ids.add (pk_package.get_id ());
                 }
 
-                var success = yield pk_client.update_packages (package_ids, (owned)cb, action_cancellable);
+                var success = yield AppCenterCore.PackageKitClient.get_default ().update_packages (package_ids, (owned)cb, action_cancellable);
                 if (success) {
                     change_information.clear_update_info ();
                 }
@@ -408,11 +392,11 @@ public class AppCenterCore.Package : Object {
                 yield client.refresh_updates ();
                 return success;
             case State.INSTALLING:
-                var success = yield pk_client.install_packages (packages_ids, (owned)cb, action_cancellable);
+                var success = yield backend.install_package (this, (owned)cb, action_cancellable);
                 installed_cached = success;
                 return success;
             case State.REMOVING:
-                var success = yield pk_client.remove_packages (packages_ids, (owned)cb, action_cancellable);
+                var success = yield backend.remove_package (this, (owned)cb, action_cancellable);
                 installed_cached = !success;
                 yield client.refresh_updates ();
                 return success;

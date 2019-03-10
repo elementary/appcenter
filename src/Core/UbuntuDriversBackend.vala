@@ -97,6 +97,14 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
         return yield PackageKitClient.get_default ().get_package_details (package);
     }
 
+    public async bool install_package (Package package, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+        return yield PackageKitClient.get_default ().install_package (package, cb, cancellable);
+    }
+
+    public async bool remove_package (Package package, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+        return yield PackageKitClient.get_default ().remove_package (package, cb, cancellable);
+    }
+
     private static GLib.Once<UbuntuDriversBackend> instance;
     public static unowned UbuntuDriversBackend get_default () {
         return instance.once (() => { return new UbuntuDriversBackend (); });
