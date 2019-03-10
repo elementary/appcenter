@@ -64,8 +64,8 @@ public class AppCenterCore.PackageKitClient : Backend, Object {
                 case PackageKitJob.Type.INSTALL_PACKAGE:
                     install_package_internal (job);
                     break;
-                case PackageKitJob.Type.UPDATE_PACKAGES:
-                    update_packages_internal (job);
+                case PackageKitJob.Type.UPDATE_PACKAGE:
+                    update_package_internal (job);
                     break;
                 case PackageKitJob.Type.REMOVE_PACKAGE:
                     remove_package_internal (job);
@@ -446,15 +446,15 @@ public class AppCenterCore.PackageKitClient : Backend, Object {
         return job.result.get_boolean ();
     }
 
-    private void update_packages_internal (PackageKitJob job) {
-        var args = (UpdatePackagesArgs)job.args;
-        var package_ids = args.package_ids;
+    private void update_package_internal (PackageKitJob job) {
+        var args = (UpdatePackageArgs)job.args;
+        var package = args.package;
         var cancellable = args.cancellable;
         unowned Pk.ProgressCallback cb = args.cb;
 
         Pk.Exit exit_status = Pk.Exit.UNKNOWN;
         string[] packages_ids = {};
-        foreach (var pk_package in package_ids) {
+        foreach (var pk_package in package.change_information.updatable_ids) {
             packages_ids += pk_package;
         }
 
@@ -474,13 +474,13 @@ public class AppCenterCore.PackageKitClient : Backend, Object {
         job.results_ready ();
     }
 
-    public async bool update_packages (Gee.ArrayList<string> package_ids, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
-        var job_args = new UpdatePackagesArgs ();
-        job_args.package_ids = package_ids;
+    public async bool update_package (Package package, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+        var job_args = new UpdatePackageArgs ();
+        job_args.package = package;
         job_args.cb = (owned)cb;
         job_args.cancellable = cancellable;
 
-        var job = yield launch_job (PackageKitJob.Type.UPDATE_PACKAGES, job_args);
+        var job = yield launch_job (PackageKitJob.Type.UPDATE_PACKAGE, job_args);
         if (job.error != null) {
             throw job.error;
         }

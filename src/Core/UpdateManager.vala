@@ -64,8 +64,7 @@ public class AppCenterCore.UpdateManager : Object {
             if (appcenter_package != null) {
                 apps_with_updates.add (appcenter_package);
                 appcenter_package.latest_version = pk_package.get_version ();
-                appcenter_package.change_information.changes.clear ();
-                appcenter_package.change_information.size += 0;
+                appcenter_package.change_information.clear_update_info ();
             } else {
                 os_count++;
                 unowned string pkg_summary = pk_package.get_summary ();
@@ -90,8 +89,7 @@ public class AppCenterCore.UpdateManager : Object {
         }
 
         os_updates.component.set_pkgnames({});
-        os_updates.change_information.changes.clear ();
-        os_updates.change_information.size = 0;
+        os_updates.change_information.clear_update_info ();
 
         count = apps_with_updates.size;
         if (os_count > 0) {
@@ -105,7 +103,7 @@ public class AppCenterCore.UpdateManager : Object {
                 var pkg_name = pk_package.get_name ();
                 var appcenter_package = client.lookup_package_by_id (pkg_name);
                     if (appcenter_package != null) {
-                        appcenter_package.change_information.changes.add (pk_package);
+                        appcenter_package.change_information.updatable_ids.add (pk_package.get_id ());
                         appcenter_package.change_information.size += pk_detail.size;
                         appcenter_package.update_state ();
                     } else {
@@ -113,7 +111,7 @@ public class AppCenterCore.UpdateManager : Object {
                         pkgnames += pkg_name;
                         os_updates.component.pkgnames = pkgnames;
 
-                        os_updates.change_information.changes.add (pk_package);
+                        os_updates.change_information.updatable_ids.add (pk_package.get_id ());
                         os_updates.change_information.size += pk_detail.size;
                     }
             } catch (Error e) {

@@ -379,12 +379,7 @@ public class AppCenterCore.Package : Object {
 
         switch (state) {
             case State.UPDATING:
-                var package_ids = new Gee.ArrayList<string> ();
-                foreach (var pk_package in change_information.changes) {
-                    package_ids.add (pk_package.get_id ());
-                }
-
-                var success = yield AppCenterCore.PackageKitClient.get_default ().update_packages (package_ids, (owned)cb, action_cancellable);
+                var success = yield backend.update_package (this, (owned)cb, action_cancellable);
                 if (success) {
                     change_information.clear_update_info ();
                 }

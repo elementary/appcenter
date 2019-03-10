@@ -22,7 +22,7 @@ public class AppCenterCore.ChangeInformation : Object {
     public signal void status_changed ();
     public signal void progress_changed ();
 
-    public Gee.TreeSet<Pk.Package> changes { public get; private set; }
+    public Gee.TreeSet<string> updatable_ids { public get; private set; }
     public bool can_cancel { public get; private set; default=true; }
     public Pk.Status status { public get; private set; }
     public double progress { public get; private set; }
@@ -34,7 +34,7 @@ public class AppCenterCore.ChangeInformation : Object {
     public uint64 size;
 
     construct {
-        changes = new Gee.TreeSet<Pk.Package> ();
+        updatable_ids = new Gee.TreeSet<string> ();
         status = Pk.Status.SETUP;
         progress = 0.0f;
         current_progress = 0;
@@ -46,7 +46,7 @@ public class AppCenterCore.ChangeInformation : Object {
     }
 
     public bool has_changes () {
-        return changes.size > 0;
+        return updatable_ids.size > 0;
     }
 
     public string get_status_string () {
@@ -148,7 +148,7 @@ public class AppCenterCore.ChangeInformation : Object {
     }
 
     public void clear_update_info () {
-         changes.clear ();
+         updatable_ids.clear ();
          size = 0;
      }
 

@@ -33,7 +33,7 @@ public class AppCenterCore.PackageKitJob : Object {
         REFRESH_CACHE,
         GET_UPDATES,
         INSTALL_PACKAGE,
-        UPDATE_PACKAGES,
+        UPDATE_PACKAGE,
         REMOVE_PACKAGE,
         IS_PACKAGE_INSTALLED,
         GET_PACKAGE_DETAILS
@@ -52,8 +52,8 @@ public class AppCenterCore.InstallPackageArgs : JobArgs {
     public Cancellable cancellable;
 }
 
-public class AppCenterCore.UpdatePackagesArgs : JobArgs {
-    public Gee.ArrayList<string> package_ids;
+public class AppCenterCore.UpdatePackageArgs : JobArgs {
+    public Package package;
     public Pk.ProgressCallback cb;
     public Cancellable cancellable;
 }
