@@ -21,7 +21,7 @@ errordomain PackageKitClientError {
     PACKAGE_NOT_FOUND
 }
 
-public class AppCenterCore.PackageKitClient : Object {
+public class AppCenterCore.PackageKitClient : Backend, Object {
     private static Task client;
     private AsyncQueue<PackageKitJob> jobs = new AsyncQueue<PackageKitJob> ();
     private Thread<bool> worker_thread;
@@ -133,7 +133,7 @@ public class AppCenterCore.PackageKitClient : Object {
                     return;
                 }
 
-                var package = new AppCenterCore.Package (comp);
+                var package = new AppCenterCore.Package (this, comp);
                 foreach (var pkg_name in comp.get_pkgnames ()) {
                     package_list[pkg_name] = package;
                 }
@@ -164,7 +164,7 @@ public class AppCenterCore.PackageKitClient : Object {
 
             appstream_pool.add_component (component);
 
-            var package = new AppCenterCore.Package (component);
+            var package = new AppCenterCore.Package (this, component);
             package_list[id] = package;
 
             return package;

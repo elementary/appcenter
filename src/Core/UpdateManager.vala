@@ -39,7 +39,7 @@ public class AppCenterCore.UpdateManager : Object {
         os_updates_component.summary = _("Updates to system components");
         os_updates_component.add_icon (icon);
 
-        os_updates = new AppCenterCore.Package (os_updates_component);
+        os_updates = new AppCenterCore.Package (PackageKitClient.get_default (), os_updates_component);
     }
 
     public async uint get_updates (Cancellable? cancellable = null) {

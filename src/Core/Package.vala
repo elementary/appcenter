@@ -75,6 +75,21 @@ public class AppCenterCore.Package : Object {
     public GLib.Cancellable action_cancellable { public get; private set; }
     public State state { public get; private set; default = State.NOT_INSTALLED; }
 
+    public Backend backend { public get; construct; }
+    public BackendType backend_type {
+        get {
+            if (backend is PackageKitClient) {
+                return BackendType.PACKAGEKIT;
+            }
+
+            if (backend is UbuntuDriversBackend) {
+                return BackendType.UBUNTU_DRIVERS;
+            }
+
+            assert_not_reached ();
+        }
+    }
+
     public double progress {
         get {
             return change_information.progress;
@@ -276,8 +291,8 @@ public class AppCenterCore.Package : Object {
         action_cancellable = new GLib.Cancellable ();
     }
 
-    public Package (AppStream.Component component) {
-        Object (component: component);
+    public Package (Backend backend, AppStream.Component component) {
+        Object (backend: backend, component: component);
     }
 
     public void update_state () {
@@ -724,10 +739,9 @@ public class AppCenterCore.Package : Object {
     }
 
     public async uint64 get_download_size_including_deps () {
-        var client = AppCenterCore.PackageKitClient.get_default ();
         uint64 size = 0;
         try {
-            size = yield client.get_download_size (this, null);
+            size = yield backend.get_download_size (this, null);
         } catch (Error e) {
             warning ("Error getting download size: %s", e.message);
         }
@@ -736,12 +750,11 @@ public class AppCenterCore.Package : Object {
     }
 
     private bool backend_reports_installed_sync () {
-        var client = AppCenterCore.PackageKitClient.get_default ();
         var loop = new MainLoop ();
         bool result = false;
-        client.is_package_installed.begin (this, (obj, res) => {
+        backend.is_package_installed.begin (this, (obj, res) => {
             try {
-                result = client.is_package_installed.end (res);
+                result = backend.is_package_installed.end (res);
             } catch (Error e) {
                 warning (e.message);
                 result = false;
@@ -760,12 +773,11 @@ public class AppCenterCore.Package : Object {
             return;
         }
 
-        var client = AppCenterCore.PackageKitClient.get_default ();
         var loop = new MainLoop ();
         PackageDetails? result = null;
-        client.get_package_details.begin (this, (obj, res) => {
+        backend.get_package_details.begin (this, (obj, res) => {
             try {
-                result = client.get_package_details.end (res);
+                result = backend.get_package_details.end (res);
             } catch (Error e) {
                 warning (e.message);
             } finally {
