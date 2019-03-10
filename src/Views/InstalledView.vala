@@ -64,15 +64,15 @@ public class AppCenter.Views.InstalledView : View {
         }
 
         refresh_running = true;
-        app_list_view.clear ();
 
         unowned AppCenterCore.Client client = AppCenterCore.Client.get_default ();
 
-        var os_updates = AppCenterCore.UpdateManager.get_default ().os_updates;
-        app_list_view.add_package (os_updates);
-
         var installed_apps = yield client.get_installed_applications ();
         if (!refresh_cancellable.is_cancelled ()) {
+            app_list_view.clear ();
+
+            var os_updates = AppCenterCore.UpdateManager.get_default ().os_updates;
+            app_list_view.add_package (os_updates);
             app_list_view.add_packages (installed_apps);
         }
 
