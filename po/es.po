@@ -3,13 +3,16 @@
 # Carlos Cañellas <ratiosu.cct@gmail.com>, 2018.
 # Cristian Molina <megatux@gmail.com>, 2018.
 # alexis holguin <wholguinmor@uniminuto.edu.co>, 2018.
+# Alvaro <alvaroaraoz_92@hotmail.com>, 2019.
+# felipe andres gomez villar <felipe.gomez.villar@gmail.com>, 2019.
+# Gabriel De Jesus Gomez Peña <gabrieljgp012@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-05 14:29-0800\n"
-"PO-Revision-Date: 2018-11-21 10:21+0000\n"
-"Last-Translator: Cristian Molina <megatux@gmail.com>\n"
+"POT-Creation-Date: 2019-01-02 07:28-0600\n"
+"PO-Revision-Date: 2019-02-07 00:05+0000\n"
+"Last-Translator: Alvaro <alvaroaraoz_92@hotmail.com>\n"
 "Language-Team: Spanish <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -49,9 +52,9 @@ msgstr "%s ha sido correctamente instalado"
 msgid "There Was An Error Installing %s."
 msgstr "Ocurrió un error al instalar %s."
 
-#: src/MainWindow.vala:149 src/Views/Homepage.vala:253
-#: src/Views/Homepage.vala:262 src/Views/Homepage.vala:267
-#: src/Views/Homepage.vala:278
+#: src/MainWindow.vala:149 src/Views/Homepage.vala:282
+#: src/Views/Homepage.vala:291 src/Views/Homepage.vala:296
+#: src/Views/Homepage.vala:307
 msgid "Home"
 msgstr "Principal"
 
@@ -72,7 +75,7 @@ msgstr "Red no disponible"
 
 #: src/MainWindow.vala:196
 msgid "Connect to the Internet to install or update apps."
-msgstr "Conéctese a internet para instalar o actualizar aplicaciones."
+msgstr "Conéctate a Internet para instalar o actualizar aplicaciones."
 
 #: src/MainWindow.vala:199
 msgid "Network Settings…"
@@ -222,49 +225,49 @@ msgstr "Copiando archivos"
 msgid "Unknown state"
 msgstr "Estado desconocido"
 
-#: src/Core/Client.vala:106
+#: src/Core/Client.vala:91
 msgid "Operating System Updates"
 msgstr "Actualizaciones del sistema operativo"
 
-#: src/Core/Client.vala:107
+#: src/Core/Client.vala:92
 msgid "Updates to system components"
 msgstr "Actualizaciones de los componentes del sistema"
 
-#: src/Core/Client.vala:142
+#: src/Core/Client.vala:151
 #, c-format
 msgid "%s (local)"
 msgstr "%s (local)"
 
-#: src/Core/Client.vala:467
+#: src/Core/Client.vala:476
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Actualización disponible"
 msgstr[1] "Actualizaciones disponibles"
 
-#: src/Core/Client.vala:468
+#: src/Core/Client.vala:477
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "Hay %u actualización disponible para el sistema"
 msgstr[1] "Hay %u actualizaciones disponibles para el sistema"
 
-#: src/Core/Client.vala:496
+#: src/Core/Client.vala:505
 #, c-format
 msgid "Version: %s"
 msgstr "Version: %s"
 
-#: src/Core/Client.vala:505
+#: src/Core/Client.vala:514
 msgid "No components with updates"
 msgstr "Sin componentes para actualizar"
 
-#: src/Core/Client.vala:509
+#: src/Core/Client.vala:518
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "%u componente con actualizaciones"
 msgstr[1] "%u componentes con actualizaciones"
 
-#: src/Core/Client.vala:511
+#: src/Core/Client.vala:520
 #, c-format
 msgid "%s:"
 msgstr "%s:"
@@ -299,7 +302,7 @@ msgid ""
 "disturbing. In general, elementary does not review or endorse the contents "
 "of this app."
 msgstr ""
-"%s puede contener contenido solo adecuado para adultos o que puede ser "
+"%s puede contener contenido solo adecuado para adultos o que pueda ser "
 "sensible o perturbador. En general, elementary no revisa ni aprueba el "
 "contenido de esta aplicación."
 
@@ -371,8 +374,8 @@ msgid ""
 "Your email address is only used to send a receipt. You will not be "
 "subscribed to any mailing list."
 msgstr ""
-"La dirección de correo electrónico únicamente se utiliza para enviar un "
-"recibo y no será añadida a ninguna lista de correo."
+"La dirección de correo electrónico unicamente sera utilizada para enviarte "
+"un recibo. No seras suscrito a ninguna lista de difusion."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127
@@ -616,7 +619,7 @@ msgstr "Más populares"
 msgid "Categories"
 msgstr "Categorías"
 
-#: src/Views/Homepage.vala:267 src/Views/Homepage.vala:278
+#: src/Views/Homepage.vala:296 src/Views/Homepage.vala:307
 #, c-format
 msgid "Search %s"
 msgstr "Buscar %s"
@@ -643,71 +646,75 @@ msgstr "Una tienda abierta, donde pagas lo que quieras"
 
 #: src/Widgets/Banner.vala:68
 msgid "Get the apps that you need at a price you can afford."
-msgstr "Obtén las apps que necesitas a un precio cómodo."
+msgstr "Obtén las apps que necesitas a un módico precio."
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
 msgstr "Número de tarjeta"
 
-#: src/Widgets/CategoryFlowBox.vala:29
+#: src/Widgets/CategoryFlowBox.vala:27
 msgid "Accessories"
 msgstr "Accesorios"
 
-#: src/Widgets/CategoryFlowBox.vala:30
+#: src/Widgets/CategoryFlowBox.vala:28
 msgid "Audio"
 msgstr "Audio"
 
-#: src/Widgets/CategoryFlowBox.vala:31
+#: src/Widgets/CategoryFlowBox.vala:29
 msgid "Communication"
 msgstr "Comunicación"
 
-#: src/Widgets/CategoryFlowBox.vala:40
+#: src/Widgets/CategoryFlowBox.vala:38
 msgid "Development"
 msgstr "Desarrollo"
 
-#: src/Widgets/CategoryFlowBox.vala:50
+#: src/Widgets/CategoryFlowBox.vala:48
 msgid "Education"
 msgstr "Educación"
 
-#: src/Widgets/CategoryFlowBox.vala:51
+#: src/Widgets/CategoryFlowBox.vala:49
 msgid "Finance"
 msgstr "Finanzas"
 
-#: src/Widgets/CategoryFlowBox.vala:55
+#: src/Widgets/CategoryFlowBox.vala:53
 msgid "Games"
 msgstr "Juegos"
 
-#: src/Widgets/CategoryFlowBox.vala:71
+#: src/Widgets/CategoryFlowBox.vala:69
 msgid "Graphics"
 msgstr "Gráficos"
 
-#: src/Widgets/CategoryFlowBox.vala:80
+#: src/Widgets/CategoryFlowBox.vala:78
 msgid "Internet"
 msgstr "Internet"
 
-#: src/Widgets/CategoryFlowBox.vala:84
+#: src/Widgets/CategoryFlowBox.vala:82
 msgid "Math, Science, & Engineering"
 msgstr "Matemáticas, Ciencia e Ingeniería"
 
-#: src/Widgets/CategoryFlowBox.vala:103
+#: src/Widgets/CategoryFlowBox.vala:101
 msgid "Media Production"
 msgstr "Producción de Medios"
 
-#: src/Widgets/CategoryFlowBox.vala:110
+#: src/Widgets/CategoryFlowBox.vala:108
 msgid "Office"
 msgstr "Aplicaciones ofimáticas"
 
-#: src/Widgets/CategoryFlowBox.vala:117
+#: src/Widgets/CategoryFlowBox.vala:115
 msgid "System"
 msgstr "Sistema"
 
-#: src/Widgets/CategoryFlowBox.vala:121
+#: src/Widgets/CategoryFlowBox.vala:119
 msgid "Universal Access"
 msgstr "Acceso universal"
 
-#: src/Widgets/CategoryFlowBox.vala:122
+#: src/Widgets/CategoryFlowBox.vala:120
 msgid "Video"
 msgstr "Vídeo"
+
+#: src/Widgets/CategoryFlowBox.vala:125
+msgid "Writing & Language"
+msgstr "Escritura e Idioma"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"

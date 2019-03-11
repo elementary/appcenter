@@ -9,6 +9,8 @@ appcenter_files = files(
     'Core/ComponentValidator.vala',
     'Core/Houston.vala',
     'Core/Package.vala',
+    'Core/PackageKitClient.vala',
+    'Core/PackageKitJob.vala',
     'Core/ScreenshotCache.vala',
     'Core/Task.vala',
     'Core/UpdateManager.vala',
@@ -58,6 +60,10 @@ config_file = configure_file(
 args = []
 if get_option('curated')
     args += '--define=CURATED'
+endif
+
+if get_option('homepage')
+    args += '--define=HOMEPAGE'
 endif
 
 if get_option('payments')

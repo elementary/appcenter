@@ -32,15 +32,18 @@ public class AppCenter.Views.InstalledView : View {
 
         add (app_list_view);
 
-        var client = Client.get_default ();
-        client.drivers_detected.connect (() => {
-            foreach (var driver in client.driver_list) {
-                app_list_view.add_package (driver);
-            }
+        unowned Client client = Client.get_default ();
+
+        client.get_drivers ();
+        get_apps.begin ();
+
+        client.pool_updated.connect (() => {
+            get_apps.begin ();
         });
 
-        var os_updates = Client.get_default ().os_updates;
-        app_list_view.add_package (os_updates);
+        client.drivers_detected.connect (() => {
+            get_apps.begin ();
+        });
 
         destroy.connect (() => {
            app_list_view.clear ();
@@ -58,25 +61,19 @@ public class AppCenter.Views.InstalledView : View {
     }
 
     public async void get_apps () {
+        app_list_view.clear ();
+
         unowned Client client = Client.get_default ();
+
+        var os_updates = Client.get_default ().os_updates;
+        app_list_view.add_package (os_updates);
+
+        foreach (var driver in client.driver_list) {
+            app_list_view.add_package (driver);
+        }
 
         var installed_apps = yield client.get_installed_applications ();
         app_list_view.add_packages (installed_apps);
-
-        client.get_drivers ();
-
-        var settings = Settings.get_default ();
-
-        if (settings.reset_paid_apps) {
-            settings.paid_apps = new string[] {};
-            foreach (var app in installed_apps) {
-                if (app.component.get_origin () == AppCenterCore.Package.APPCENTER_PACKAGE_ORIGIN) {
-                    settings.add_paid_app (app.component.get_id ());
-                }
-            }
-
-            settings.reset_paid_apps = false;
-        }
     }
 
     public async void add_app (AppCenterCore.Package package) {

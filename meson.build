@@ -1,7 +1,7 @@
 project(
     'io.elementary.appcenter',
     'vala', 'c',
-    version: '3.0.1')
+    version: '3.1.1')
 
 gettext_name = meson.project_name()
 gnome = import('gnome')

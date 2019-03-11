@@ -1,10 +1,11 @@
+# tylnesh <kohutek.michal@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-05 14:29-0800\n"
-"PO-Revision-Date: 2018-06-04 08:07+0000\n"
-"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"POT-Creation-Date: 2019-01-02 07:28-0600\n"
+"PO-Revision-Date: 2019-02-11 00:07+0000\n"
+"Last-Translator: tylnesh <kohutek.michal@gmail.com>\n"
 "Language-Team: Slovak <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/sk/>\n"
 "Language: sk\n"
@@ -12,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -23,7 +24,7 @@ msgstr "AppCentrum"
 #: src/Application.vala:106
 #, c-format
 msgid "Could not parse mimetype %s"
-msgstr ""
+msgstr "Nepodarilo sa rozpoznať mimetype %s"
 
 #: src/Application.vala:126
 #, c-format
@@ -40,13 +41,13 @@ msgid "%s has been successfully installed"
 msgstr "Aplikácia %s bola úspešne nainštalovaná"
 
 #: src/Application.vala:273
-#, fuzzy, c-format
+#, c-format
 msgid "There Was An Error Installing %s."
-msgstr "Pri inštalácii balíka %s sa vyskytla chyba."
+msgstr "Pri inštalácii programu %s sa vyskytla chyba."
 
-#: src/MainWindow.vala:149 src/Views/Homepage.vala:253
-#: src/Views/Homepage.vala:262 src/Views/Homepage.vala:267
-#: src/Views/Homepage.vala:278
+#: src/MainWindow.vala:149 src/Views/Homepage.vala:282
+#: src/Views/Homepage.vala:291 src/Views/Homepage.vala:296
+#: src/Views/Homepage.vala:307
 msgid "Home"
 msgstr "Úvodná stránka"
 
@@ -217,27 +218,27 @@ msgstr "Kopírujú sa súbory"
 msgid "Unknown state"
 msgstr "Neznámy stav"
 
-#: src/Core/Client.vala:106
+#: src/Core/Client.vala:91
 msgid "Operating System Updates"
 msgstr "Aktualizácie operačného systému"
 
-#: src/Core/Client.vala:107
+#: src/Core/Client.vala:92
 msgid "Updates to system components"
 msgstr "Aktualizácie systémových komponent"
 
-#: src/Core/Client.vala:142
+#: src/Core/Client.vala:151
 #, c-format
 msgid "%s (local)"
 msgstr "%s (lokálny)"
 
-#: src/Core/Client.vala:467
+#: src/Core/Client.vala:476
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Aktualizácií je dostupných"
 msgstr[1] "Aktualizácia je dostupná"
 msgstr[2] "Aktualizácie sú dostupné"
 
-#: src/Core/Client.vala:468
+#: src/Core/Client.vala:477
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
@@ -245,30 +246,30 @@ msgstr[0] "%u aktualizácií je dostupných pre váš systém"
 msgstr[1] "%u aktualizácia je dostupná pre váš systém"
 msgstr[2] "%u aktualizácie sú dostupné pre váš systém"
 
-#: src/Core/Client.vala:496
+#: src/Core/Client.vala:505
 #, c-format
 msgid "Version: %s"
 msgstr "Verzia: %s"
 
-#: src/Core/Client.vala:505
+#: src/Core/Client.vala:514
 msgid "No components with updates"
 msgstr "Žiadne komponenty s aktualizáciami"
 
-#: src/Core/Client.vala:509
+#: src/Core/Client.vala:518
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
-msgstr[0] "%u aktualizovateľný"
-msgstr[1] "%u aktualizovateľné"
-msgstr[2] ""
+msgstr[0] "%u balíček má dostupné aktualizácie"
+msgstr[1] "%u balíčky majú dostupné aktualizácie"
+msgstr[2] "%u balíčky majú dostupné aktualizácie"
 
-#: src/Core/Client.vala:511
+#: src/Core/Client.vala:520
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
 #: src/Core/Package.vala:235
-#, fuzzy, c-format
+#, c-format
 msgid "%s Developers"
 msgstr "Vývojári projektu %s"
 
@@ -282,12 +283,12 @@ msgstr "Prosím, dokončite aktualizáciu reštartovaním systému"
 
 #: src/Dialogs/ContentWarningDialog.vala:27
 msgid "Content Warning"
-msgstr ""
+msgstr "Upozornenie na citlivý obsah"
 
 #: src/Dialogs/ContentWarningDialog.vala:32
 #, c-format
 msgid "%s Contains Explicit Content"
-msgstr ""
+msgstr "Obsahuje nevhodný obsah"
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 #, c-format
@@ -296,20 +297,21 @@ msgid ""
 "disturbing. In general, elementary does not review or endorse the contents "
 "of this app."
 msgstr ""
+"%s môže obsahovať obsah vhodný len pre dospelých, alebo môže byť citlivý či "
+"pohoršujúci. Tvorcovia elementary vo všeobecnosti nekontrolujú ani "
+"nepodporujú."
 
 #: src/Dialogs/ContentWarningDialog.vala:35
 msgid "Show content warnings"
-msgstr ""
+msgstr "Zobraziť upozornenia"
 
 #: src/Dialogs/ContentWarningDialog.vala:40
-#, fuzzy
 msgid "Don’t Install"
-msgstr "Inštalácia"
+msgstr "Neinštalovať"
 
 #: src/Dialogs/ContentWarningDialog.vala:41
-#, fuzzy
 msgid "Install Anyway"
-msgstr "Inštalácia"
+msgstr "Aj tak inštalovať"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -343,7 +345,7 @@ msgstr "Prosím, skontrolujte platobné údaje a svoj pokus zopakujte."
 
 #: src/Dialogs/StripeDialog.vala:76
 msgid "Payment"
-msgstr ""
+msgstr "Platba"
 
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
@@ -363,13 +365,12 @@ msgid "Email"
 msgstr "E-mail"
 
 #: src/Dialogs/StripeDialog.vala:108
-#, fuzzy
 msgid ""
 "Your email address is only used to send a receipt. You will not be "
 "subscribed to any mailing list."
 msgstr ""
-"Vaša e-mailová adresa sa použije na odoslanie potvrdenia. Neukladá sa a "
-"nebude použitá na prihlásenie do odberu informačných e-mailov."
+"Vaša e-mailová adresa sa použije na odoslanie účtenky. Neukladá sa a nebude "
+"použitá na prihlásenie do odberu informačných e-mailov."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127
@@ -385,9 +386,9 @@ msgid "Privacy Policy"
 msgstr "Zásady ochrany osobných údajov"
 
 #: src/Dialogs/StripeDialog.vala:200 src/Dialogs/StripeDialog.vala:314
-#, fuzzy, c-format
+#, c-format
 msgid "Pay $%d.00"
-msgstr "Zaplatiť  $%s,00"
+msgstr "Zaplatiť  $%d,00"
 
 #: src/Dialogs/StripeDialog.vala:243
 msgid "Processing"
@@ -458,12 +459,10 @@ msgid "The transaction has already been processed."
 msgstr "Transakcia už bola spracovaná."
 
 #: src/Dialogs/StripeDialog.vala:566
-#, fuzzy
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "postal code."
-msgstr ""
-"Poštové smerovacie číslo je nesprávne. Skúste to znovu so správnym PSČ."
+msgstr "Poštové smerovacie číslo je nesprávne. Skúste to znovu so správnym PSČ."
 
 #: src/Dialogs/StripeDialog.vala:568
 msgid "You don't have enough funds. Please use an alternative payment method."
@@ -477,15 +476,15 @@ msgstr ""
 "množstvom."
 
 #: src/Dialogs/StripeDialog.vala:581
-#, fuzzy
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr "CVC číslo je nesprávne. Skúste to znova použitím správneho CVC čísla."
+msgstr "CVC číslo je nesprávne. Skúste to znova s použitím správneho CVC čísla."
 
 #: src/Dialogs/StripeDialog.vala:583
-#, fuzzy
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
-msgstr "Platnosť karty vypršala. Skúste to znova s inou kartou."
+msgstr ""
+"S kartou prebehlo príliš veľa pokusov o autentifikáciu pomocou PIN. Skúste "
+"to znova s inou kartou."
 
 #: src/Dialogs/StripeDialog.vala:603
 msgid ""
@@ -567,7 +566,7 @@ msgstr "Odkaz bol skopírovaný"
 #: src/Views/AppInfoView.vala:338
 #, c-format
 msgid "Check out %s on AppCenter:"
-msgstr "Overiť %s v AppCenter"
+msgstr "Pozrite si %s v AppCenter:"
 
 #: src/Views/AppInfoView.vala:345
 msgid "Share"
@@ -595,9 +594,8 @@ msgid "Update All"
 msgstr "Aktualizovať všetko"
 
 #: src/Views/AppListView.vala:128
-#, fuzzy
 msgid "Non-Curated Apps"
-msgstr "Žiadne aplikácie"
+msgstr "Ostatné aplikácie"
 
 #: src/Views/Homepage.vala:66
 msgid "Recently Updated"
@@ -611,7 +609,7 @@ msgstr "Obľúbené"
 msgid "Categories"
 msgstr "Kategórie"
 
-#: src/Views/Homepage.vala:267 src/Views/Homepage.vala:278
+#: src/Views/Homepage.vala:296 src/Views/Homepage.vala:307
 #, c-format
 msgid "Search %s"
 msgstr "Prehľadávať %s"
@@ -642,72 +640,73 @@ msgstr "Získajte aplikácie, ktoré potrebujete. Za cenu, akú si môžete dovo
 msgid "Card Number"
 msgstr "Číslo Karty"
 
-#: src/Widgets/CategoryFlowBox.vala:29
+#: src/Widgets/CategoryFlowBox.vala:27
 msgid "Accessories"
 msgstr "Príslušenstvo"
 
-#: src/Widgets/CategoryFlowBox.vala:30
+#: src/Widgets/CategoryFlowBox.vala:28
 msgid "Audio"
 msgstr "Zvuk"
 
-#: src/Widgets/CategoryFlowBox.vala:31
-#, fuzzy
+#: src/Widgets/CategoryFlowBox.vala:29
 msgid "Communication"
-msgstr "Vzdelávanie"
+msgstr "Komunikácia"
 
-#: src/Widgets/CategoryFlowBox.vala:40
+#: src/Widgets/CategoryFlowBox.vala:38
 msgid "Development"
 msgstr "Vývoj"
 
-#: src/Widgets/CategoryFlowBox.vala:50
+#: src/Widgets/CategoryFlowBox.vala:48
 msgid "Education"
 msgstr "Vzdelávanie"
 
-#: src/Widgets/CategoryFlowBox.vala:51
-#, fuzzy
+#: src/Widgets/CategoryFlowBox.vala:49
 msgid "Finance"
-msgstr "Zrušiť"
+msgstr "Financie"
 
-#: src/Widgets/CategoryFlowBox.vala:55
+#: src/Widgets/CategoryFlowBox.vala:53
 msgid "Games"
 msgstr "Hry"
 
-#: src/Widgets/CategoryFlowBox.vala:71
+#: src/Widgets/CategoryFlowBox.vala:69
 msgid "Graphics"
 msgstr "Grafika"
 
-#: src/Widgets/CategoryFlowBox.vala:80
+#: src/Widgets/CategoryFlowBox.vala:78
 msgid "Internet"
 msgstr "Internet"
 
-#: src/Widgets/CategoryFlowBox.vala:84
-#, fuzzy
+#: src/Widgets/CategoryFlowBox.vala:82
 msgid "Math, Science, & Engineering"
-msgstr "Veda a výskum"
+msgstr "Matematika, veda a vývoj"
 
-#: src/Widgets/CategoryFlowBox.vala:103
+#: src/Widgets/CategoryFlowBox.vala:101
 msgid "Media Production"
-msgstr ""
+msgstr "Mediálna produkcia"
 
-#: src/Widgets/CategoryFlowBox.vala:110
+#: src/Widgets/CategoryFlowBox.vala:108
 msgid "Office"
 msgstr "Kancelária"
 
-#: src/Widgets/CategoryFlowBox.vala:117
+#: src/Widgets/CategoryFlowBox.vala:115
 msgid "System"
 msgstr "Systém"
 
-#: src/Widgets/CategoryFlowBox.vala:121
+#: src/Widgets/CategoryFlowBox.vala:119
 msgid "Universal Access"
 msgstr "Univerzálny prístup"
 
-#: src/Widgets/CategoryFlowBox.vala:122
+#: src/Widgets/CategoryFlowBox.vala:120
 msgid "Video"
 msgstr "Video"
 
+#: src/Widgets/CategoryFlowBox.vala:125
+msgid "Writing & Language"
+msgstr "Písanie a jazyk"
+
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
-msgstr ""
+msgstr "Vyžaduje platby, ktoré nie sú povolené"
 
 #: src/Widgets/HumbleButton.vala:106
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:301
@@ -716,9 +715,8 @@ msgstr "Zadarmo"
 
 #: src/Widgets/HumbleButton.vala:108
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:303
-#, fuzzy
 msgid "Install"
-msgstr "Nainštalované"
+msgstr "Nainštalovať"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:142
@@ -733,7 +731,7 @@ msgid "$%d"
 msgstr "$%d"
 
 #: src/Widgets/ReleaseRow.vala:67
-#, fuzzy, c-format
+#, c-format
 msgid "<b>%s</b> – %s"
 msgstr "<b>%s</b> – %s"
 
@@ -750,27 +748,22 @@ msgid "Facebook"
 msgstr "Facebook"
 
 #: src/Widgets/SharePopover.vala:43
-#, fuzzy
 msgid "Google+"
 msgstr "Google+"
 
 #: src/Widgets/SharePopover.vala:47
-#, fuzzy
 msgid "Twitter"
 msgstr "Twitter"
 
 #: src/Widgets/SharePopover.vala:51
-#, fuzzy
 msgid "Reddit"
-msgstr "reddit"
+msgstr "Reddit"
 
 #: src/Widgets/SharePopover.vala:55
-#, fuzzy
 msgid "Tumblr"
 msgstr "Tumblr"
 
 #: src/Widgets/SharePopover.vala:59
-#, fuzzy
 msgid "Telegram"
 msgstr "Telegram"
 

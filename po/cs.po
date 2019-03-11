@@ -1,11 +1,13 @@
-# Jan Marek <janmarek28@gmail.com>, 2018.
+# Jan Marek <janmarek28@gmail.com>, 2018, 2019.
 # Daniel Zvir <zvir.daniel@seznam.cz>, 2018.
+# Antonin Hablak <tondulin5@outlook.cz>, 2018.
+# Lukáš Kucharczyk <kucharczyk.lukas@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-05 14:29-0800\n"
-"PO-Revision-Date: 2018-10-18 10:12+0000\n"
+"POT-Creation-Date: 2019-01-02 07:28-0600\n"
+"PO-Revision-Date: 2019-02-07 00:05+0000\n"
 "Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
 "Language-Team: Czech <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/cs/>\n"
@@ -46,9 +48,9 @@ msgstr "Instalace %s byla úspěšná"
 msgid "There Was An Error Installing %s."
 msgstr "Při instalaci %s se vyskytla chyba."
 
-#: src/MainWindow.vala:149 src/Views/Homepage.vala:253
-#: src/Views/Homepage.vala:262 src/Views/Homepage.vala:267
-#: src/Views/Homepage.vala:278
+#: src/MainWindow.vala:149 src/Views/Homepage.vala:282
+#: src/Views/Homepage.vala:291 src/Views/Homepage.vala:296
+#: src/Views/Homepage.vala:307
 msgid "Home"
 msgstr "Domů"
 
@@ -219,27 +221,27 @@ msgstr "Kopírují se soubory"
 msgid "Unknown state"
 msgstr "Neznámý stav"
 
-#: src/Core/Client.vala:106
+#: src/Core/Client.vala:91
 msgid "Operating System Updates"
 msgstr "Aktualizace operačního systému"
 
-#: src/Core/Client.vala:107
+#: src/Core/Client.vala:92
 msgid "Updates to system components"
 msgstr "Aktualizace systémových částí"
 
-#: src/Core/Client.vala:142
+#: src/Core/Client.vala:151
 #, c-format
 msgid "%s (local)"
 msgstr "%s (lokální)"
 
-#: src/Core/Client.vala:467
+#: src/Core/Client.vala:476
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Dostupná aktualizace"
 msgstr[1] "Dostupné aktualizace"
 msgstr[2] "Dostupných aktualizací"
 
-#: src/Core/Client.vala:468
+#: src/Core/Client.vala:477
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
@@ -247,16 +249,16 @@ msgstr[0] "%u aktualizace je pro váš systém k dispozici"
 msgstr[1] "%u aktualizace jsou pro váš systém k dispozici"
 msgstr[2] "%u aktualizací je pro váš systém k dispozici"
 
-#: src/Core/Client.vala:496
+#: src/Core/Client.vala:505
 #, c-format
 msgid "Version: %s"
 msgstr "Verze: %s"
 
-#: src/Core/Client.vala:505
+#: src/Core/Client.vala:514
 msgid "No components with updates"
 msgstr "Žádné balíčky nevyžadují aktualizaci"
 
-#: src/Core/Client.vala:509
+#: src/Core/Client.vala:518
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
@@ -264,7 +266,7 @@ msgstr[0] "%u balíček vyžaduje aktualizaci"
 msgstr[1] "%u balíčky vyžadují aktualizaci"
 msgstr[2] "%u balíčků vyžaduje aktualizaci"
 
-#: src/Core/Client.vala:511
+#: src/Core/Client.vala:520
 #, c-format
 msgid "%s:"
 msgstr "%s:"
@@ -284,12 +286,12 @@ msgstr "Pro dokončení aktualizací prosím restartujte váš systém"
 
 #: src/Dialogs/ContentWarningDialog.vala:27
 msgid "Content Warning"
-msgstr "Varování k obsahu"
+msgstr "Upozornění na citlivý obsah"
 
 #: src/Dialogs/ContentWarningDialog.vala:32
 #, c-format
 msgid "%s Contains Explicit Content"
-msgstr "%s Obsahuje explicitní obsah"
+msgstr "%s Obsahuje Nevhodný Obsah"
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 #, c-format
@@ -298,13 +300,13 @@ msgid ""
 "disturbing. In general, elementary does not review or endorse the contents "
 "of this app."
 msgstr ""
-"%s může obsahovat věci vhodné pouze pro dospělé nebo témata pro některé lidi "
-"citlivé, či jinak rušivé. Obecně, elementary nekontroluje ani neschvaluje "
-"obsah této aplikace."
+"%s může zahrnovat obsah vhodný pouze pro dospělé nebo může být citlivý či "
+"pohoršující. Společnost elementary obecně tento obsah nezkoumá či "
+"nepodporuje."
 
 #: src/Dialogs/ContentWarningDialog.vala:35
 msgid "Show content warnings"
-msgstr "Zobrazovat varování o obsahu"
+msgstr "Zobrazit upozornění"
 
 #: src/Dialogs/ContentWarningDialog.vala:40
 msgid "Don’t Install"
@@ -382,7 +384,7 @@ msgstr "CVC"
 
 #: src/Dialogs/StripeDialog.vala:189
 msgid "Privacy Policy"
-msgstr "Zásady soukromí"
+msgstr "Zásady ochrany soukromí"
 
 #: src/Dialogs/StripeDialog.vala:200 src/Dialogs/StripeDialog.vala:314
 #, c-format
@@ -609,7 +611,7 @@ msgstr "Aktuální trendy"
 msgid "Categories"
 msgstr "Kategorie"
 
-#: src/Views/Homepage.vala:267 src/Views/Homepage.vala:278
+#: src/Views/Homepage.vala:296 src/Views/Homepage.vala:307
 #, c-format
 msgid "Search %s"
 msgstr "Hledat %s"
@@ -640,72 +642,73 @@ msgstr "Získejte aplikace, které potřebujete, za pro vás přijatelnou cenu."
 msgid "Card Number"
 msgstr "Číslo karty"
 
-#: src/Widgets/CategoryFlowBox.vala:29
+#: src/Widgets/CategoryFlowBox.vala:27
 msgid "Accessories"
 msgstr "Příslušenství"
 
-#: src/Widgets/CategoryFlowBox.vala:30
+#: src/Widgets/CategoryFlowBox.vala:28
 msgid "Audio"
 msgstr "Audio"
 
-#: src/Widgets/CategoryFlowBox.vala:31
-#, fuzzy
+#: src/Widgets/CategoryFlowBox.vala:29
 msgid "Communication"
-msgstr "Vzdělávání"
+msgstr "Komunikace"
 
-#: src/Widgets/CategoryFlowBox.vala:40
+#: src/Widgets/CategoryFlowBox.vala:38
 msgid "Development"
 msgstr "Vývojové nástroje"
 
-#: src/Widgets/CategoryFlowBox.vala:50
+#: src/Widgets/CategoryFlowBox.vala:48
 msgid "Education"
-msgstr "Vzdělávání"
+msgstr "Vzdělání"
 
-#: src/Widgets/CategoryFlowBox.vala:51
-#, fuzzy
+#: src/Widgets/CategoryFlowBox.vala:49
 msgid "Finance"
-msgstr "Zrušit"
+msgstr "Finance"
 
-#: src/Widgets/CategoryFlowBox.vala:55
+#: src/Widgets/CategoryFlowBox.vala:53
 msgid "Games"
 msgstr "Hry"
 
-#: src/Widgets/CategoryFlowBox.vala:71
+#: src/Widgets/CategoryFlowBox.vala:69
 msgid "Graphics"
 msgstr "Grafika"
 
-#: src/Widgets/CategoryFlowBox.vala:80
+#: src/Widgets/CategoryFlowBox.vala:78
 msgid "Internet"
 msgstr "Internet"
 
-#: src/Widgets/CategoryFlowBox.vala:84
-#, fuzzy
+#: src/Widgets/CategoryFlowBox.vala:82
 msgid "Math, Science, & Engineering"
 msgstr "Věda a inženýrství"
 
-#: src/Widgets/CategoryFlowBox.vala:103
+#: src/Widgets/CategoryFlowBox.vala:101
 msgid "Media Production"
-msgstr ""
+msgstr "Mediální tvorba"
 
-#: src/Widgets/CategoryFlowBox.vala:110
+#: src/Widgets/CategoryFlowBox.vala:108
 msgid "Office"
 msgstr "Kancelář"
 
-#: src/Widgets/CategoryFlowBox.vala:117
+#: src/Widgets/CategoryFlowBox.vala:115
 msgid "System"
 msgstr "Systém"
 
-#: src/Widgets/CategoryFlowBox.vala:121
+#: src/Widgets/CategoryFlowBox.vala:119
 msgid "Universal Access"
 msgstr "Univerzální přístup"
 
-#: src/Widgets/CategoryFlowBox.vala:122
+#: src/Widgets/CategoryFlowBox.vala:120
 msgid "Video"
 msgstr "Video"
 
+#: src/Widgets/CategoryFlowBox.vala:125
+msgid "Writing & Language"
+msgstr "Psaní a jazyky"
+
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
-msgstr ""
+msgstr "Vyžaduje platby, které nejsou povolené"
 
 #: src/Widgets/HumbleButton.vala:106
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:301
