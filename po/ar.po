@@ -8,7 +8,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
 "PO-Revision-Date: 2019-03-11 14:11+0000\n"
-"Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
+"Last-Translator: yusuf .s <yusef.ali12@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ar/>\n"
 "Language: ar\n"
@@ -192,7 +192,7 @@ msgstr "جاري فحص التطبيقات"
 
 #: src/Core/ChangeInformation.vala:110
 msgid "Generating package lists"
-msgstr "نولد قوائم الباكيج"
+msgstr "توليد قائمة بالصناديق"
 
 #: src/Core/ChangeInformation.vala:112
 msgid "Waiting for package manager lock"
