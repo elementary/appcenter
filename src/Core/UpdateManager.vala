@@ -20,56 +20,109 @@
 
 public class AppCenterCore.UpdateManager : Object {
     public bool restart_required { public get; private set; default = false; }
-    public string[] fake_packages { get; set; }
+    public Package os_updates { public get; private set; }
 
-    private const string FAKE_PACKAGE_ID = "%s;fake.version;amd64;installed:xenial-main";
     private const string RESTART_REQUIRED_FILE = "/var/run/reboot-required";
 
     private File restart_file;
 
     construct {
         restart_file = File.new_for_path (RESTART_REQUIRED_FILE);
+
+        var icon = new AppStream.Icon ();
+        icon.set_name ("distributor-logo");
+        icon.set_kind (AppStream.IconKind.STOCK);
+
+        var os_updates_component = new AppStream.Component ();
+        os_updates_component.id = AppCenterCore.Package.OS_UPDATES_ID;
+        os_updates_component.name = _("Operating System Updates");
+        os_updates_component.summary = _("Updates to system components");
+        os_updates_component.add_icon (icon);
+
+        os_updates = new AppCenterCore.Package (os_updates_component);
     }
 
-    private UpdateManager () {
+    public async uint get_updates (Cancellable? cancellable = null) {
+        var apps_with_updates = new Gee.TreeSet<Package> ();
+        uint count = 0;
 
-    }
-
-    public async Pk.Results get_updates (Cancellable? cancellable) throws Error {
-        var client = PackageKitClient.get_default ();
+        Pk.Results pk_updates;
+        unowned PackageKitClient client = PackageKitClient.get_default ();
         try {
-            Pk.Results update_results = yield client.get_updates (cancellable);
-
-            if (fake_packages.length > 0) {
-                foreach (string name in fake_packages) {
-                    var package = new Pk.Package ();
-                    if (package.set_id (FAKE_PACKAGE_ID.printf (name))) {
-                        update_results.add_package (package);
-                    } else {
-                        warning ("Could not add a fake package '%s' to the update list".printf (name));
-                    }
-                }
-
-                fake_packages = {};
-            }
-
-            var packages_array = new Gee.ArrayList<string> ();
-            update_results.get_package_array ().foreach ((pk_package) => {
-                packages_array.add (pk_package.get_id ());
-            });
-
-            if (packages_array.size > 0) {
-                var details_results = yield client.get_details_for_package_ids (packages_array, cancellable);
-
-                details_results.get_details_array ().foreach ((details) => {
-                    update_results.add_details (details);
-                });
-            }
-
-            return update_results;
+            pk_updates = yield client.get_updates (cancellable);
         } catch (Error e) {
-            throw e;
+            warning ("Unable to get updates from PackageKit backend: %s", e.message);
+            return 0;
         }
+
+        uint os_count = 0;
+        string os_desc = "";
+
+        pk_updates.get_package_array ().foreach ((pk_package) => {
+            var pkg_name = pk_package.get_name ();
+            var appcenter_package = client.lookup_package_by_id (pkg_name);
+            if (appcenter_package != null) {
+                apps_with_updates.add (appcenter_package);
+                appcenter_package.latest_version = pk_package.get_version ();
+                appcenter_package.change_information.changes.clear ();
+                appcenter_package.change_information.details.clear ();
+            } else {
+                os_count++;
+                unowned string pkg_summary = pk_package.get_summary ();
+                unowned string pkg_version = pk_package.get_version ();
+                os_desc += Markup.printf_escaped (
+                    "<li>%s\n\t%s\n\t%s</li>\n",
+                    pkg_name,
+                    pkg_summary,
+                    _("Version: %s").printf (pkg_version)
+                );
+            }
+        });
+
+        if (os_count == 0) {
+            var latest_version = _("No components with updates");
+            os_updates.latest_version = latest_version;
+            os_updates.description = GLib.Markup.printf_escaped ("<p>%s</p>\n", latest_version);
+        } else {
+            var latest_version = ngettext ("%u component with updates", "%u components with updates", os_count).printf (os_count);
+            os_updates.latest_version = latest_version;
+            os_updates.description = "<p>%s</p>\n<ul>\n%s</ul>\n".printf (GLib.Markup.printf_escaped (_("%s:"), latest_version), os_desc);
+        }
+
+        os_updates.component.set_pkgnames({});
+        os_updates.change_information.changes.clear ();
+        os_updates.change_information.details.clear ();
+
+        count = apps_with_updates.size;
+        if (os_count > 0) {
+            count += 1;
+        }
+
+        pk_updates.get_details_array ().foreach ((pk_detail) => {
+            var pk_package = new Pk.Package ();
+            try {
+                pk_package.set_id (pk_detail.get_package_id ());
+                var pkg_name = pk_package.get_name ();
+                var appcenter_package = client.lookup_package_by_id (pkg_name);
+                    if (appcenter_package != null) {
+                        appcenter_package.change_information.changes.add (pk_package);
+                        appcenter_package.change_information.details.add (pk_detail);
+                        appcenter_package.update_state ();
+                    } else {
+                        var pkgnames = os_updates.component.pkgnames;
+                        pkgnames += pkg_name;
+                        os_updates.component.pkgnames = pkgnames;
+
+                        os_updates.change_information.changes.add (pk_package);
+                        os_updates.change_information.details.add (pk_detail);
+                    }
+            } catch (Error e) {
+                critical (e.message);
+            }
+        });
+
+        os_updates.update_state ();
+        return count;
     }
 
     public void update_restart_state () {
