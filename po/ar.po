@@ -1,5 +1,5 @@
 # Mohelm97 <mohelm97@gmail.com>, 2018.
-# yusuf .s <yusef.ali12@gmail.com>, 2018.
+# yusuf .s <yusef.ali12@gmail.com>, 2018, 2019.
 # karim inabi <karim99tgt@gmail.com>, 2018, 2019.
 # nasserbinlaboun <nasser1990com@gmail.com>, 2019.
 msgid ""
@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
-"PO-Revision-Date: 2019-03-11 13:59+0000\n"
-"Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
+"PO-Revision-Date: 2019-03-11 14:01+0000\n"
+"Last-Translator: yusuf .s <yusef.ali12@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ar/>\n"
 "Language: ar\n"
@@ -120,7 +120,7 @@ msgstr "تثبيت التحديثات"
 
 #: src/Core/ChangeInformation.vala:74
 msgid "Cleaning up packages"
-msgstr "ننظف الباكيجز"
+msgstr "جاري تنظيف الصناديق"
 
 #: src/Core/ChangeInformation.vala:76
 msgid "Obsoleting packages"
