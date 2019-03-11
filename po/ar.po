@@ -8,7 +8,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
 "PO-Revision-Date: 2019-03-11 14:06+0000\n"
-"Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
+"Last-Translator: yusuf .s <yusef.ali12@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ar/>\n"
 "Language: ar\n"
@@ -144,19 +144,19 @@ msgstr "اتمام التغييرات"
 
 #: src/Core/ChangeInformation.vala:86
 msgid "Requesting data"
-msgstr "نطلب المعلومات"
+msgstr "طلب المعلومات"
 
 #: src/Core/ChangeInformation.vala:88
 msgid "Finished"
-msgstr "إنتهى"
+msgstr "انتهى"
 
 #: src/Core/ChangeInformation.vala:90
 msgid "Cancelling"
-msgstr "إلغاء"
+msgstr "الغاء"
 
 #: src/Core/ChangeInformation.vala:92
 msgid "Downloading repository information"
-msgstr "نحمل معلومات المخزن"
+msgstr "تحميل معلومات المخزن"
 
 #: src/Core/ChangeInformation.vala:94
 msgid "Downloading list of packages"
@@ -164,7 +164,7 @@ msgstr "تحميل قائمة الحزم"
 
 #: src/Core/ChangeInformation.vala:96
 msgid "Downloading file lists"
-msgstr "ننزل قائمة الملفات"
+msgstr "تنزيل قائمة بالملفات"
 
 #: src/Core/ChangeInformation.vala:98
 msgid "Downloading lists of changes"
