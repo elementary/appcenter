@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
-"PO-Revision-Date: 2019-03-11 14:08+0000\n"
-"Last-Translator: yusuf .s <yusef.ali12@gmail.com>\n"
+"PO-Revision-Date: 2019-03-11 14:11+0000\n"
+"Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ar/>\n"
 "Language: ar\n"
@@ -176,19 +176,19 @@ msgstr "تنزيل المجموعات"
 
 #: src/Core/ChangeInformation.vala:102
 msgid "Downloading update information"
-msgstr "تنزيل  المعلومات المحدثة"
+msgstr "تنزيل معلومات التحديث"
 
 #: src/Core/ChangeInformation.vala:104
 msgid "Repackaging files"
-msgstr "إعادة جمع الملفات"
+msgstr "إعادة تحزيم الملفات"
 
 #: src/Core/ChangeInformation.vala:106
 msgid "Loading cache"
-msgstr "نحمل الملفات المؤقتة"
+msgstr "تحمبل الملفات المؤقتة"
 
 #: src/Core/ChangeInformation.vala:108
 msgid "Scanning applications"
-msgstr "نفحص التطبيقات"
+msgstr "جاري فحص التطبيقات"
 
 #: src/Core/ChangeInformation.vala:110
 msgid "Generating package lists"
