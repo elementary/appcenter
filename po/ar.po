@@ -2,13 +2,14 @@
 # yusuf .s <yusef.ali12@gmail.com>, 2018, 2019.
 # karim inabi <karim99tgt@gmail.com>, 2018, 2019.
 # nasserbinlaboun <nasser1990com@gmail.com>, 2019.
+# alfa <dkotrada@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
-"PO-Revision-Date: 2019-03-11 14:14+0000\n"
-"Last-Translator: yusuf .s <yusef.ali12@gmail.com>\n"
+"PO-Revision-Date: 2019-03-12 14:26+0000\n"
+"Last-Translator: alfa <dkotrada@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ar/>\n"
 "Language: ar\n"
@@ -208,15 +209,15 @@ msgstr "تحديث التطبيقات الشغالة"
 
 #: src/Core/ChangeInformation.vala:118
 msgid "Checking applications in use"
-msgstr "فحص التطبيق المستخدمة "
+msgstr "فحص التطبيقات المستخدمة"
 
 #: src/Core/ChangeInformation.vala:120
 msgid "Checking libraries in use"
-msgstr "نفحص المكتبات المسخدمة"
+msgstr "فحص المكتبات المستخدمة"
 
 #: src/Core/ChangeInformation.vala:122
 msgid "Copying files"
-msgstr "ننسخ الملفات"
+msgstr "جاري نسخ الملفات"
 
 #: src/Core/ChangeInformation.vala:124
 msgid "Unknown state"
@@ -700,7 +701,7 @@ msgstr "فديو"
 
 #: src/Widgets/CategoryFlowBox.vala:125
 msgid "Writing & Language"
-msgstr ""
+msgstr "الكتابة و اللغة"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
