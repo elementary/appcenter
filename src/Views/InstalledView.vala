@@ -18,12 +18,15 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-using AppCenterCore;
-
 public class AppCenter.Views.InstalledView : View {
-    AppListUpdateView app_list_view;
+    private Cancellable refresh_cancellable;
+    private bool refresh_running = false;
+
+    private AppListUpdateView app_list_view;
 
     construct {
+        refresh_cancellable = new Cancellable ();
+
         app_list_view = new AppListUpdateView ();
         app_list_view.show_app.connect ((package) => {
             subview_entered (C_("view", "Installed"), false, "");
@@ -32,16 +35,11 @@ public class AppCenter.Views.InstalledView : View {
 
         add (app_list_view);
 
-        unowned Client client = Client.get_default ();
+        unowned AppCenterCore.Client client = AppCenterCore.Client.get_default ();
 
-        client.get_drivers ();
         get_apps.begin ();
 
-        client.update_check_finished.connect (() => {
-            get_apps.begin ();
-        });
-
-        client.drivers_detected.connect (() => {
+        client.installed_apps_changed.connect (() => {
             get_apps.begin ();
         });
 
@@ -61,23 +59,29 @@ public class AppCenter.Views.InstalledView : View {
     }
 
     public async void get_apps () {
-        app_list_view.clear ();
-
-        unowned Client client = Client.get_default ();
-
-        var os_updates = UpdateManager.get_default ().os_updates;
-        app_list_view.add_package (os_updates);
-
-        foreach (var driver in client.driver_list) {
-            app_list_view.add_package (driver);
+        if (refresh_running) {
+            refresh_cancellable.cancel ();
         }
 
+        refresh_running = true;
+
+        unowned AppCenterCore.Client client = AppCenterCore.Client.get_default ();
+
         var installed_apps = yield client.get_installed_applications ();
-        app_list_view.add_packages (installed_apps);
+        if (!refresh_cancellable.is_cancelled ()) {
+            app_list_view.clear ();
+
+            var os_updates = AppCenterCore.UpdateManager.get_default ().os_updates;
+            app_list_view.add_package (os_updates);
+            app_list_view.add_packages (installed_apps);
+        }
+
+        refresh_cancellable.reset ();
+        refresh_running = false;
     }
 
     public async void add_app (AppCenterCore.Package package) {
-        unowned Client client = Client.get_default ();
+        unowned AppCenterCore.Client client = AppCenterCore.Client.get_default ();
         var installed_apps = yield client.get_installed_applications ();
         foreach (var app in installed_apps) {
             if (app == package) {
