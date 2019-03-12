@@ -13,6 +13,7 @@ appcenter_files = files(
     'Core/PackageKitJob.vala',
     'Core/ScreenshotCache.vala',
     'Core/Task.vala',
+    'Core/UbuntuDriversBackend.vala',
     'Core/UpdateManager.vala',
     'Dialogs/RestartDialog.vala',
     'Dialogs/ContentWarningDialog.vala',

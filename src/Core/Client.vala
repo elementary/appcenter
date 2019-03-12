@@ -17,13 +17,11 @@
 public class AppCenterCore.Client : Object {
     public signal void operation_finished (Package package, Package.State operation, Error? error);
     public signal void cache_update_failed (Error error);
-    public signal void update_check_finished ();
-    public signal void drivers_detected ();
+    public signal void installed_apps_changed ();
 
     public bool updating_cache { public get; private set; default = false; }
 
     public AppCenterCore.ScreenshotCache? screenshot_cache { get; construct; }
-    public Gee.TreeSet<AppCenterCore.Package> driver_list { get; construct; }
 
     private GLib.Cancellable cancellable;
 
@@ -40,71 +38,15 @@ public class AppCenterCore.Client : Object {
     }
 
     construct {
-        driver_list = new Gee.TreeSet<AppCenterCore.Package> ();
         cancellable = new GLib.Cancellable ();
     }
 
-    public void get_drivers () {
-        if (driver_list.size > 0) {
-            drivers_detected ();
-            return;
-        }
-
-        string? drivers_exec_path = Environment.find_program_in_path ("ubuntu-drivers");
-        if (drivers_exec_path == null) {
-            return;
-        }
-
-        var command = new Granite.Services.SimpleCommand ("/", "%s list".printf (drivers_exec_path));
-        command.done.connect ((command, status) => {
-            parse_drivers_output.begin (command.standard_output_str, status);
-        });
-
-        command.run ();
-    }
-
-    private async void parse_drivers_output (string output, int status) {
-        if (status != 0) {
-            return;
-        }
-
-        string[] tokens = output.split ("\n");
-        for (int i = 0; i < tokens.length; i++) {
-            unowned string package_name = tokens[i];
-            if (package_name.strip () == "") {
-                continue;
-            }
-
-            foreach (var driver in driver_list) {
-                if (driver.component.get_pkgnames ()[0] == package_name) {
-                    continue;
-                }
-            }
-
-            var driver_component = new AppStream.Component ();
-            driver_component.set_kind (AppStream.ComponentKind.DRIVER);
-            driver_component.set_pkgnames ({ package_name });
-            driver_component.set_id (package_name);
-
-            var icon = new AppStream.Icon ();
-            icon.set_name ("application-x-firmware");
-            icon.set_kind (AppStream.IconKind.STOCK);
-            driver_component.add_icon (icon);
-
-            var package = new Package (driver_component);
-            if (package.installed) {
-                package.mark_installed ();
-                package.update_state ();
-            }
-
-            driver_list.add (package);
-        }
-
-        drivers_detected ();
-    }
-
     public async Gee.Collection<AppCenterCore.Package> get_installed_applications () {
-        return yield PackageKitClient.get_default ().get_installed_applications ();
+        var apps = new Gee.TreeSet<Package> ();
+        apps.add_all (yield PackageKitClient.get_default ().get_installed_applications ());
+        apps.add_all (yield UbuntuDriversBackend.get_default ().get_drivers ());
+
+        return apps;
     }
 
     public Gee.Collection<AppCenterCore.Package> get_applications_for_category (AppStream.Category category) {
@@ -144,7 +86,7 @@ public class AppCenterCore.Client : Object {
         launcher_entry.count_visible = updates_number != 0U;
 #endif
 
-        update_check_finished ();
+        installed_apps_changed ();
     }
 
     public void cancel_updates (bool cancel_timeout) {
