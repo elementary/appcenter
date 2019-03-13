@@ -19,6 +19,59 @@
 
 public class AppCenterCore.FlatpakBackend : Backend, Object {
 
+    private FlatpakBackend () {
+        var installations = Flatpak.get_system_installations ();
+        for (int i = 0; i < installations.length; i++) {
+            unowned Flatpak.Installation installation = installations[i];
+
+            var xremotes = installation.list_remotes ();
+            for (int j = 0; j < xremotes.length; j++) {
+                bool cache_refresh_needed = false;
+
+                unowned Flatpak.Remote remote = xremotes[j];
+                if (remote.get_disabled ()) {
+                    continue;
+                }
+
+                unowned string name = remote.get_name ();
+                message ("Found remote: %s", name);
+
+                var timestamp_file = remote.get_appstream_timestamp (null);
+                if (!timestamp_file.query_exists ()) {
+                    cache_refresh_needed = true;
+                } else {
+                    var age = Utils.get_file_age (timestamp_file);
+                    message ("Appstream age: %u", age);
+                    if (age > 600) {
+                        message ("Appstream cache older than 10 mins, refreshing");
+                        cache_refresh_needed = true;
+                    }
+                }
+
+                if (cache_refresh_needed) {
+                    message ("Updating remote");
+                    bool success = false;
+                    try {
+                        success = installation.update_remote_sync (remote.get_name ());
+                    } catch (Error e) {
+                        warning ("Unable to update remote: %s", e.message);
+                    }
+                    message ("Remote updated: %s", success.to_string ());
+
+                    message ("Updating appstream data");
+                    success = false;
+                    try {
+                        success = installation.update_appstream_sync (remote.get_name (), null, null);
+                    } catch (Error e) {
+                        warning ("Unable to update appstream: %s", e.message);
+                    }
+
+                    message ("Appstream updated: %s", success.to_string ());
+                }
+            }
+        }
+    }
+
     public async Gee.Collection<Package> get_installed_applications () {
         return new Gee.ArrayList<Package> ();
     }
@@ -71,8 +124,8 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         return false;
     }
 
-    private static GLib.Once<UbuntuDriversBackend> instance;
-    public static unowned UbuntuDriversBackend get_default () {
-        return instance.once (() => { return new UbuntuDriversBackend (); });
+    private static GLib.Once<FlatpakBackend> instance;
+    public static unowned FlatpakBackend get_default () {
+        return instance.once (() => { return new FlatpakBackend (); });
     }
 }

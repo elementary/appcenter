@@ -43,6 +43,7 @@ public class AppCenterCore.Client : Object {
         backends = new Gee.ArrayList<unowned Backend> ();
         backends.add (PackageKitClient.get_default ());
         backends.add (UbuntuDriversBackend.get_default ());
+        backends.add (FlatpakBackend.get_default ());
 
         cancellable = new GLib.Cancellable ();
     }

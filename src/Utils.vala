@@ -38,5 +38,27 @@ namespace Utils {
             dialog.show_all ();
         }
     }
+
+    public uint get_file_age (GLib.File file)
+    {
+	    var info = file.query_info (FileAttribute.TIME_MODIFIED, FileQueryInfoFlags.NONE);
+
+	    if (info == null) {
+            return uint.MAX;
+        }
+
+	    uint64 mtime = info.get_attribute_uint64 (FileAttribute.TIME_MODIFIED);
+	    uint64 now = (uint64) get_real_time () / 1000000;
+
+	    if (mtime > now) {
+		    return uint.MAX;
+        }
+
+	    if (now - mtime > uint.MAX) {
+		    return uint.MAX;
+        }
+
+	    return (uint) (now - mtime);
+    }
 }
 

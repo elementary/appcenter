@@ -34,7 +34,8 @@ dependencies = [
     packagekit,
     appstream,
     libsoup,
-    json
+    json,
+    flatpak
 ]
 
 if get_option('libunity')
