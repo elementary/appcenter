@@ -8,6 +8,7 @@ appcenter_files = files(
     'Core/ChangeInformation.vala',
     'Core/Client.vala',
     'Core/ComponentValidator.vala',
+    'Core/FlatpakBackend.vala',
     'Core/Houston.vala',
     'Core/Package.vala',
     'Core/PackageKitClient.vala',
