@@ -147,7 +147,7 @@ namespace AppCenter.Views {
                         }
 
                         update_numbers++;
-                        update_real_size += package.change_information.get_size ();
+                        update_real_size += package.change_information.size;
                     }
                 }
 

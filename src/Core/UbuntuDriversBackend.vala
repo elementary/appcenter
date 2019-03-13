@@ -17,7 +17,7 @@
  * Authored by: David Hewitt <davidmhewitt@gmail.com>
  */
 
-public class AppCenterCore.UbuntuDriversBackend : Object {
+public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
     private async bool get_drivers_output (out string? output) {
         output = null;
         string? drivers_exec_path = Environment.find_program_in_path ("ubuntu-drivers");
@@ -36,7 +36,7 @@ public class AppCenterCore.UbuntuDriversBackend : Object {
         return command.get_exit_status () == 0;
     }
 
-    public async Gee.TreeSet<Package> get_drivers () {
+    public async Gee.Collection<Package> get_installed_applications () {
         var driver_list = new Gee.TreeSet<Package> ();
         string? command_output;
         var result = yield get_drivers_output (out command_output);
@@ -61,7 +61,7 @@ public class AppCenterCore.UbuntuDriversBackend : Object {
             icon.set_kind (AppStream.IconKind.STOCK);
             driver_component.add_icon (icon);
 
-            var package = new Package (driver_component);
+            var package = new Package (this, driver_component);
             if (package.installed) {
                 package.mark_installed ();
                 package.update_state ();
@@ -71,6 +71,54 @@ public class AppCenterCore.UbuntuDriversBackend : Object {
         }
 
         return driver_list;
+    }
+
+    public Gee.Collection<Package> get_applications_for_category (AppStream.Category category) {
+        return new Gee.ArrayList<Package> ();
+    }
+
+    public Gee.Collection<Package> search_applications (string query, AppStream.Category? category) {
+        return new Gee.ArrayList<Package> ();
+    }
+
+    public Gee.Collection<Package> search_applications_mime (string query) {
+        return new Gee.ArrayList<Package> ();
+    }
+
+    public Package? get_package_for_component_id (string id) {
+        return null;
+    }
+
+    public Package? get_package_for_desktop_id (string id) {
+        return null;
+    }
+
+    public Gee.Collection<Package> get_packages_by_author (string author, int max) {
+        return new Gee.ArrayList<Package> ();
+    }
+
+    public async uint64 get_download_size (Package package, Cancellable? cancellable) throws GLib.Error {
+        return yield PackageKitClient.get_default ().get_download_size (package, cancellable);
+    }
+
+    public async bool is_package_installed (Package package) throws GLib.Error {
+        return yield PackageKitClient.get_default ().is_package_installed (package);
+    }
+
+    public async PackageDetails get_package_details (Package package) throws GLib.Error {
+        return yield PackageKitClient.get_default ().get_package_details (package);
+    }
+
+    public async bool install_package (Package package, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+        return yield PackageKitClient.get_default ().install_package (package, cb, cancellable);
+    }
+
+    public async bool remove_package (Package package, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+        return yield PackageKitClient.get_default ().remove_package (package, cb, cancellable);
+    }
+
+    public async bool update_package (Package package, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+        return yield PackageKitClient.get_default ().update_package (package, cb, cancellable);
     }
 
     private static GLib.Once<UbuntuDriversBackend> instance;

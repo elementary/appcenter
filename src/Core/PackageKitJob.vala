@@ -32,9 +32,9 @@ public class AppCenterCore.PackageKitJob : Object {
         GET_DOWNLOAD_SIZE,
         REFRESH_CACHE,
         GET_UPDATES,
-        INSTALL_PACKAGES,
-        UPDATE_PACKAGES,
-        REMOVE_PACKAGES,
+        INSTALL_PACKAGE,
+        UPDATE_PACKAGE,
+        REMOVE_PACKAGE,
         IS_PACKAGE_INSTALLED,
         GET_PACKAGE_DETAILS
     }
@@ -46,20 +46,20 @@ public class AppCenterCore.PackageKitJob : Object {
 
 public abstract class AppCenterCore.JobArgs { }
 
-public class AppCenterCore.InstallPackagesArgs : JobArgs {
-    public Gee.ArrayList<string> package_ids;
+public class AppCenterCore.InstallPackageArgs : JobArgs {
+    public Package package;
     public Pk.ProgressCallback cb;
     public Cancellable cancellable;
 }
 
-public class AppCenterCore.UpdatePackagesArgs : JobArgs {
-    public Gee.ArrayList<string> package_ids;
+public class AppCenterCore.UpdatePackageArgs : JobArgs {
+    public Package package;
     public Pk.ProgressCallback cb;
     public Cancellable cancellable;
 }
 
-public class AppCenterCore.RemovePackagesArgs : JobArgs {
-    public Gee.ArrayList<string> package_ids;
+public class AppCenterCore.RemovePackageArgs : JobArgs {
+    public Package package;
     public Pk.ProgressCallback cb;
     public Cancellable cancellable;
 }
