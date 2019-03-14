@@ -17,7 +17,7 @@
  * Authored by: David Hewitt <davidmhewitt@gmail.com>
  */
 
-public class AppCenterCore.PackageKitJob : Object {
+public class AppCenterCore.Job : Object {
     public Type operation { get; construct; }
     public JobArgs? args { get; set; }
     public Error error { get; set; }
@@ -39,7 +39,7 @@ public class AppCenterCore.PackageKitJob : Object {
         GET_PACKAGE_DETAILS
     }
 
-    public PackageKitJob (Type type) {
+    public Job (Type type) {
         Object (operation: type);
     }
 }

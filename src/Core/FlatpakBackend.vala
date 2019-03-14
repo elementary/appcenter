@@ -18,8 +18,31 @@
  */
 
 public class AppCenterCore.FlatpakBackend : Backend, Object {
+    private AsyncQueue<Job> jobs = new AsyncQueue<Job> ();
+    private Thread<bool> worker_thread;
+
+// This is OK as we're only using a single thread (PackageKit can only do one job at a time)
+    // This would have to be done differently if there were multiple workers in the pool
+    private bool thread_should_run = true;
+
+    public bool working { get; private set; }
+
+    private bool worker_func () {
+        while (thread_should_run) {
+            working = false;
+            var job = jobs.pop ();
+            working = true;
+            switch (job.operation) {
+
+            }
+        }
+
+        return true;
+    }
 
     private FlatpakBackend () {
+        worker_thread = new Thread<bool> ("flatpak-worker", worker_func);
+
         var installations = Flatpak.get_system_installations ();
         for (int i = 0; i < installations.length; i++) {
             unowned Flatpak.Installation installation = installations[i];
@@ -70,6 +93,11 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 }
             }
         }
+    }
+
+    ~FlatpakBackend () {
+        thread_should_run = false;
+        worker_thread.join ();
     }
 
     public async Gee.Collection<Package> get_installed_applications () {
