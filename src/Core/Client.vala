@@ -41,7 +41,7 @@ public class AppCenterCore.Client : Object {
 
     construct {
         backends = new Gee.ArrayList<unowned Backend> ();
-        backends.add (PackageKitClient.get_default ());
+        backends.add (PackageKitBackend.get_default ());
         backends.add (UbuntuDriversBackend.get_default ());
 
         cancellable = new GLib.Cancellable ();
@@ -156,8 +156,7 @@ public class AppCenterCore.Client : Object {
                 refresh_in_progress = true;
                 updating_cache = true;
                 try {
-                    Pk.Results results = yield PackageKitClient.get_default ().refresh_cache (cancellable);
-                    success = results.get_exit_code () == Pk.Exit.SUCCESS;
+                    success = yield PackageKitBackend.get_default ().refresh_cache (cancellable);
                     last_cache_update = new DateTime.now_local ();
                 } catch (Error e) {
                     refresh_in_progress = false;
