@@ -72,7 +72,7 @@ public class AppCenter.App : Gtk.Application {
         var client = AppCenterCore.Client.get_default ();
         client.operation_finished.connect (on_operation_finished);
         client.cache_update_failed.connect (on_cache_update_failed);
-        client.update_check_finished.connect (on_updates_available);
+        client.installed_apps_changed.connect (on_updates_available);
 
         if (AppInfo.get_default_for_uri_scheme ("appstream") == null) {
             var appinfo = new DesktopAppInfo (application_id + ".desktop");

@@ -140,7 +140,7 @@ namespace AppCenter {
                 }
             });
 
-            AppCenterCore.Client.get_default ().update_check_finished.connect (() => {
+            AppCenterCore.Client.get_default ().installed_apps_changed.connect (() => {
                 // Clear the cached categories when the AppStream pool is updated
                 foreach (weak Gtk.Widget child in category_flow.get_children ()) {
                     if (child is Widgets.CategoryItem) {
