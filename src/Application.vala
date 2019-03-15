@@ -139,7 +139,7 @@ public class AppCenter.App : Gtk.Application {
         var client = AppCenterCore.Client.get_default ();
 
         if (fake_update_packages != null) {
-            AppCenterCore.PackageKitClient.get_default ().fake_packages = fake_update_packages;
+            AppCenterCore.PackageKitBackend.get_default ().fake_packages = fake_update_packages;
         }
 
         if (silent) {
@@ -157,7 +157,7 @@ public class AppCenter.App : Gtk.Application {
             var file = File.new_for_commandline_arg (local_path);
 
             try {
-                local_package = AppCenterCore.PackageKitClient.get_default ().add_local_component_file (file);
+                local_package = AppCenterCore.PackageKitBackend.get_default ().add_local_component_file (file);
             } catch (Error e) {
                 warning ("Failed to load local AppStream XML file: %s", e.message);
             }
