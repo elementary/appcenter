@@ -21,6 +21,9 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     private AsyncQueue<Job> jobs = new AsyncQueue<Job> ();
     private Thread<bool> worker_thread;
 
+    private Gee.HashMap<string, Package> package_list;
+    private AppStream.Pool appstream_pool;
+
     // This is OK as we're only using a single thread (PackageKit can only do one job at a time)
     // This would have to be done differently if there were multiple workers in the pool
     private bool thread_should_run = true;
@@ -46,6 +49,8 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
     private FlatpakBackend () {
         worker_thread = new Thread<bool> ("flatpak-worker", worker_func);
+        appstream_pool = new AppStream.Pool ();
+        package_list = new Gee.HashMap<string, Package> (null, null);
 
         refresh_cache.begin (null);
     }
@@ -74,11 +79,47 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     }
 
     public Gee.Collection<Package> get_applications_for_category (AppStream.Category category) {
-        return new Gee.ArrayList<Package> ();
+        unowned GLib.GenericArray<AppStream.Component> components = category.get_components ();
+        if (components.length == 0) {
+            var category_array = new GLib.GenericArray<AppStream.Category> ();
+            category_array.add (category);
+            AppStream.utils_sort_components_into_categories (appstream_pool.get_components (), category_array, true);
+            components = category.get_components ();
+        }
+
+        var apps = new Gee.TreeSet<AppCenterCore.Package> ();
+        components.foreach ((comp) => {
+            var package = get_package_for_component_id (comp.get_id ());
+            if (package != null) {
+                apps.add (package);
+            }
+        });
+
+        return apps;
     }
 
     public Gee.Collection<Package> search_applications (string query, AppStream.Category? category) {
-        return new Gee.ArrayList<Package> ();
+        var apps = new Gee.TreeSet<AppCenterCore.Package> ();
+        GLib.GenericArray<weak AppStream.Component> comps = appstream_pool.search (query);
+        if (category == null) {
+            message ("search: %s", query);
+            comps.foreach ((comp) => {
+                var package = get_package_for_component_id (comp.get_id ());
+                if (package != null) {
+                    apps.add (package);
+                }
+            });
+        } else {
+            var cat_packages = get_applications_for_category (category);
+            comps.foreach ((comp) => {
+                var package = get_package_for_component_id (comp.get_id ());
+                if (package != null && package in cat_packages) {
+                    apps.add (package);
+                }
+            });
+        }
+
+        return apps;
     }
 
     public Gee.Collection<Package> search_applications_mime (string query) {
@@ -86,6 +127,14 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     }
 
     public Package? get_package_for_component_id (string id) {
+        foreach (var package in package_list.values) {
+            if (package.component.id == id) {
+                return package;
+            } else if (package.component.id == id + ".desktop") {
+                return package;
+            }
+        }
+
         return null;
     }
 
@@ -106,12 +155,15 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     }
 
     public async PackageDetails get_package_details (Package package) throws GLib.Error {
+        message ("get_package_details");
         return new PackageDetails ();
     }
 
     private void refresh_cache_internal (Job job) {
         var args = (RefreshCacheArgs)job.args;
         var cancellable = args.cancellable;
+
+        appstream_pool.clear_metadata_locations ();
 
         var installations = Flatpak.get_system_installations ();
         for (int i = 0; i < installations.length; i++) {
@@ -161,7 +213,31 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
                     message ("Appstream updated: %s", success.to_string ());
                 }
+
+                var metadata_location = remote.get_appstream_dir (null).get_path ();
+                message ("Appstream path: %s", metadata_location);
+                appstream_pool.add_metadata_location (metadata_location);
             }
+        }
+
+        message ("Loading pool");
+        try {
+            appstream_pool.load ();
+        } catch (Error e) {
+            warning (e.message);
+        } finally {
+            var comp_validator = ComponentValidator.get_default ();
+            appstream_pool.get_components ().foreach ((comp) => {
+                if (!comp_validator.validate (comp)) {
+                    return;
+                }
+
+                var bundle = comp.get_bundle (AppStream.BundleKind.FLATPAK);
+                if (bundle != null) {
+                    var package = new AppCenterCore.Package (this, comp);
+                    package_list[bundle.get_id ()] = package;
+                }
+            });
         }
 
         job.result = Value (typeof (bool));
