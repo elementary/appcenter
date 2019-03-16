@@ -109,6 +109,10 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
         return yield PackageKitBackend.get_default ().get_package_details (package);
     }
 
+    public async bool refresh_cache (Cancellable cancellable) {
+        return true;
+    }
+
     public async bool install_package (Package package, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
         return yield PackageKitBackend.get_default ().install_package (package, cb, cancellable);
     }
