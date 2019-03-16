@@ -98,27 +98,27 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
     }
 
     public async uint64 get_download_size (Package package, Cancellable? cancellable) throws GLib.Error {
-        return yield PackageKitClient.get_default ().get_download_size (package, cancellable);
+        return yield PackageKitBackend.get_default ().get_download_size (package, cancellable);
     }
 
     public async bool is_package_installed (Package package) throws GLib.Error {
-        return yield PackageKitClient.get_default ().is_package_installed (package);
+        return yield PackageKitBackend.get_default ().is_package_installed (package);
     }
 
     public async PackageDetails get_package_details (Package package) throws GLib.Error {
-        return yield PackageKitClient.get_default ().get_package_details (package);
+        return yield PackageKitBackend.get_default ().get_package_details (package);
     }
 
     public async bool install_package (Package package, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
-        return yield PackageKitClient.get_default ().install_package (package, cb, cancellable);
+        return yield PackageKitBackend.get_default ().install_package (package, cb, cancellable);
     }
 
     public async bool remove_package (Package package, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
-        return yield PackageKitClient.get_default ().remove_package (package, cb, cancellable);
+        return yield PackageKitBackend.get_default ().remove_package (package, cb, cancellable);
     }
 
     public async bool update_package (Package package, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
-        return yield PackageKitClient.get_default ().update_package (package, cb, cancellable);
+        return yield PackageKitBackend.get_default ().update_package (package, cb, cancellable);
     }
 
     private static GLib.Once<UbuntuDriversBackend> instance;

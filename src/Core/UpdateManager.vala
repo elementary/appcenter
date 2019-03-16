@@ -39,7 +39,7 @@ public class AppCenterCore.UpdateManager : Object {
         os_updates_component.summary = _("Updates to system components");
         os_updates_component.add_icon (icon);
 
-        os_updates = new AppCenterCore.Package (PackageKitClient.get_default (), os_updates_component);
+        os_updates = new AppCenterCore.Package (PackageKitBackend.get_default (), os_updates_component);
     }
 
     public async uint get_updates (Cancellable? cancellable = null) {
@@ -47,7 +47,7 @@ public class AppCenterCore.UpdateManager : Object {
         uint count = 0;
 
         Pk.Results pk_updates;
-        unowned PackageKitClient client = PackageKitClient.get_default ();
+        unowned PackageKitBackend client = PackageKitBackend.get_default ();
         try {
             pk_updates = yield client.get_updates (cancellable);
         } catch (Error e) {

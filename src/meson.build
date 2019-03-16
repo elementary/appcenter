@@ -12,7 +12,7 @@ appcenter_files = files(
     'Core/Houston.vala',
     'Core/Job.vala',
     'Core/Package.vala',
-    'Core/PackageKitClient.vala',
+    'Core/PackageKitBackend.vala',
     'Core/ScreenshotCache.vala',
     'Core/Task.vala',
     'Core/UbuntuDriversBackend.vala',

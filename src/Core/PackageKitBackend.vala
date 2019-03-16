@@ -17,11 +17,11 @@
  * Authored by: David Hewitt <davidmhewitt@gmail.com>
  */
 
-errordomain PackageKitClientError {
+errordomain PackageKitBackendError {
     PACKAGE_NOT_FOUND
 }
 
-public class AppCenterCore.PackageKitClient : Backend, Object {
+public class AppCenterCore.PackageKitBackend : Backend, Object {
     private static Task client;
     private AsyncQueue<Job> jobs = new AsyncQueue<Job> ();
     private Thread<bool> worker_thread;
@@ -88,7 +88,7 @@ public class AppCenterCore.PackageKitClient : Backend, Object {
         client = new Task ();
     }
 
-    private PackageKitClient () {
+    private PackageKitBackend () {
         worker_thread = new Thread<bool> ("packagekit-worker", worker_func);
 
         package_list = new Gee.HashMap<string, AppCenterCore.Package> (null, null);
@@ -114,7 +114,7 @@ public class AppCenterCore.PackageKitClient : Backend, Object {
         }
     }
 
-    ~PackageKitClient () {
+    ~PackageKitBackend () {
         thread_should_run = false;
         worker_thread.join ();
     }
@@ -619,16 +619,17 @@ public class AppCenterCore.PackageKitClient : Backend, Object {
             return;
         }
 
-        if (results.get_exit_code () == Pk.Exit.SUCCESS) {
+        var exit_status = results.get_exit_code ();
+        if (exit_status == Pk.Exit.SUCCESS) {
             reload_appstream_pool ();
         }
 
-        job.result = Value (typeof (Object));
-        job.result.take_object (results);
+        job.result = Value (typeof (bool));
+        job.result.set_boolean (exit_status == Pk.Exit.SUCCESS);
         job.results_ready ();
     }
 
-    public async Pk.Results refresh_cache (Cancellable cancellable) throws GLib.Error {
+    public async bool refresh_cache (Cancellable cancellable) throws GLib.Error {
         var job_args = new RefreshCacheArgs ();
         job_args.cancellable = cancellable;
 
@@ -637,7 +638,7 @@ public class AppCenterCore.PackageKitClient : Backend, Object {
             throw job.error;
         }
 
-        return (Pk.Results)job.result.get_object ();
+        return job.result.get_boolean ();
     }
 
     private void is_package_installed_internal (Job job) {
@@ -672,7 +673,7 @@ public class AppCenterCore.PackageKitClient : Backend, Object {
 
     private Pk.Package get_package_internal (Package package) throws GLib.Error {
         if (package.component == null || package.component.get_pkgnames ().length < 1) {
-            throw new PackageKitClientError.PACKAGE_NOT_FOUND ("Package not found");
+            throw new PackageKitBackendError.PACKAGE_NOT_FOUND ("Package not found");
         }
 
         var name = package.component.get_pkgnames ()[0];
@@ -706,7 +707,7 @@ public class AppCenterCore.PackageKitClient : Backend, Object {
         }
 
         if (pk_package == null) {
-            throw new PackageKitClientError.PACKAGE_NOT_FOUND ("Package not found");
+            throw new PackageKitBackendError.PACKAGE_NOT_FOUND ("Package not found");
         }
 
         return pk_package;
@@ -748,8 +749,8 @@ public class AppCenterCore.PackageKitClient : Backend, Object {
         return (PackageDetails)job.result.get_object ();
     }
 
-    private static GLib.Once<PackageKitClient> instance;
-    public static unowned PackageKitClient get_default () {
-        return instance.once (() => { return new PackageKitClient (); });
+    private static GLib.Once<PackageKitBackend> instance;
+    public static unowned PackageKitBackend get_default () {
+        return instance.once (() => { return new PackageKitBackend (); });
     }
 }
