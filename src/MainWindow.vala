@@ -111,7 +111,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             }
         });
 
-        unowned AppCenterCore.PackageKitClient client = AppCenterCore.PackageKitClient.get_default ();
+        unowned AppCenterCore.PackageKitBackend client = AppCenterCore.PackageKitBackend.get_default ();
         client.notify["working"].connect (() => {
             working = client.working;
         });
@@ -247,7 +247,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     }
 
     public override bool delete_event (Gdk.EventAny event) {
-        unowned AppCenterCore.PackageKitClient client = AppCenterCore.PackageKitClient.get_default ();
+        unowned AppCenterCore.PackageKitBackend client = AppCenterCore.PackageKitBackend.get_default ();
         if (client.working) {
             if (task_finished_connection != 0U) {
                 client.disconnect (task_finished_connection);
