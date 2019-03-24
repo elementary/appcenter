@@ -50,6 +50,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     private FlatpakBackend () {
         worker_thread = new Thread<bool> ("flatpak-worker", worker_func);
         appstream_pool = new AppStream.Pool ();
+        appstream_pool.set_cache_flags (AppStream.CacheFlags.NONE);
         package_list = new Gee.HashMap<string, Package> (null, null);
 
         refresh_cache.begin (null);
