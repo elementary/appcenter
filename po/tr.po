@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
-"PO-Revision-Date: 2019-03-29 21:47+0000\n"
+"PO-Revision-Date: 2019-03-30 22:51+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/tr/>\n"
@@ -36,9 +36,9 @@ msgid "Could not parse mimetype %s"
 msgstr "MIME Type %s ayrıştırılamadı"
 
 #: src/Application.vala:126
-#, c-format
+#, c-format, fuzzy
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr "Belirtilen link ' %s ' bulunamadı. Onun yerine aranıyor"
+msgstr "Belirtilen bağlantı '%s' bulunamadı. Onun yerine aranıyor"
 
 #: src/Application.vala:260
 msgid "Application installed"
@@ -688,7 +688,7 @@ msgstr "İnternet"
 
 #: src/Widgets/CategoryFlowBox.vala:82
 msgid "Math, Science, & Engineering"
-msgstr "Matematik, Bilim & Mühendislik"
+msgstr "Matematik, Bilim ve Mühendislik"
 
 #: src/Widgets/CategoryFlowBox.vala:101
 msgid "Media Production"
@@ -712,7 +712,7 @@ msgstr "Video"
 
 #: src/Widgets/CategoryFlowBox.vala:125
 msgid "Writing & Language"
-msgstr "Yazı & Dil"
+msgstr "Yazı ve Dil"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
