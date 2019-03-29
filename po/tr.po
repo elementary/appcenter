@@ -7,13 +7,14 @@
 # KN-KZ <kurutmaz.kaan@gmail.com>, 2018.
 # Turker <turkerbol@gmail.com>, 2018.
 # Mehmet Zahit Yılmaz <darkmehmet3@gmail.com>, 2018.
+# Ozgur Baskin <bebeto_baskin@yahoo.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
 "PO-Revision-Date: 2019-03-29 21:47+0000\n"
-"Last-Translator: ecb <drbambal@gmail.com>\n"
+"Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/tr/>\n"
 "Language: tr\n"
@@ -32,7 +33,7 @@ msgstr "AppCenter"
 #: src/Application.vala:106
 #, c-format
 msgid "Could not parse mimetype %s"
-msgstr "Ayrıştırılamayan MIME Type %s"
+msgstr "MIME Type %s ayrıştırılamadı"
 
 #: src/Application.vala:126
 #, c-format
