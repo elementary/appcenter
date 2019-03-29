@@ -3,7 +3,7 @@
 # Veysel İNANÇ <vinanc72@gmail.com>, 2018.
 # Sinan Decron <intenfinitia@gmail.com>, 2018, 2019.
 # sabri unal <yakushabb@gmail.com>, 2018.
-# ecb <drbambal@gmail.com>, 2018.
+# ecb <drbambal@gmail.com>, 2018, 2019.
 # KN-KZ <kurutmaz.kaan@gmail.com>, 2018.
 # Turker <turkerbol@gmail.com>, 2018.
 # Mehmet Zahit Yılmaz <darkmehmet3@gmail.com>, 2018.
@@ -12,16 +12,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
-"PO-Revision-Date: 2019-01-03 07:26+0000\n"
-"Last-Translator: Sinan Decron <intenfinitia@gmail.com>\n"
-"Language-Team: Turkish <https://weblate.elementary.io/projects/appcenter/"
+"PO-Revision-Date: 2019-03-29 21:47+0000\n"
+"Last-Translator: ecb <drbambal@gmail.com>\n"
+"Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.5.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -32,7 +32,7 @@ msgstr "AppCenter"
 #: src/Application.vala:106
 #, c-format
 msgid "Could not parse mimetype %s"
-msgstr "mimetype %s çözümlenemedi"
+msgstr "Ayrıştırılamayan MIME Type %s"
 
 #: src/Application.vala:126
 #, c-format
