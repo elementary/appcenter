@@ -192,8 +192,8 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                     continue;
                 }
 
-                unowned string name = remote.get_name ();
-                message ("Found remote: %s", name);
+                unowned string origin_name = remote.get_name ();
+                message ("Found remote: %s", origin_name);
 
                 var timestamp_file = remote.get_appstream_timestamp (null);
                 if (!timestamp_file.query_exists ()) {
@@ -235,18 +235,9 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 var metadata_file = File.new_for_path (metadata_path);
 
                 if (metadata_file.query_exists ()) {
-                    var dest_file = dest_folder.get_child (name + ".xml.gz");
-                    var origin = get_origin (metadata_file);
-                    if (origin == null) {
-                        continue;
-                    }
+                    var dest_file = dest_folder.get_child (origin_name + ".xml.gz");
 
-                    if (origin == "flatpak") {
-                        perform_xml_fixups (name, metadata_file, dest_file);
-                        origin = name;
-                    } else {
-                        metadata_file.copy (dest_file, FileCopyFlags.NONE);
-                    }
+                    perform_xml_fixups (origin_name, metadata_file, dest_file);
 
                     var local_icons_path = dest_folder.get_child ("icons");
                     if (!local_icons_path.query_exists ()) {
@@ -258,12 +249,11 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                         continue;
                     }
 
-                    if (remote_icons_folder.get_child (origin).query_exists ()) {
-                        local_icons_path = local_icons_path.get_child (origin);
-                        local_icons_path.make_symbolic_link (remote_icons_folder.get_child (origin).get_path ());
+                    if (remote_icons_folder.get_child (origin_name).query_exists ()) {
+                        local_icons_path = local_icons_path.get_child (origin_name);
+                        local_icons_path.make_symbolic_link (remote_icons_folder.get_child (origin_name).get_path ());
                     } else {
-                        message ("flatpak appstream folder has icons subdir");
-                        local_icons_path = local_icons_path.get_child (origin);
+                        local_icons_path = local_icons_path.get_child (origin_name);
                         local_icons_path.make_symbolic_link (remote_icons_folder.get_path ());
                     }
                 } else {
@@ -288,7 +278,8 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 var bundle = comp.get_bundle (AppStream.BundleKind.FLATPAK);
                 if (bundle != null) {
                     var package = new AppCenterCore.Package (this, comp);
-                    package_list[bundle.get_id ()] = package;
+                    var key = "%s/%s".printf (comp.get_origin (), bundle.get_id ());
+                    package_list[key] = package;
                 }
             });
         }
@@ -317,26 +308,6 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 child.delete ();
             }
         }
-    }
-
-    private string? get_origin (File appdata_file) {
-        var path = appdata_file.get_path ();
-        Xml.Doc* doc = Xml.Parser.parse_file (path);
-        if (doc == null) {
-            warning ("Appstream XML file %s not found or permissions missing", path);
-            return null;
-        }
-
-        Xml.Node* root = doc->get_root_element ();
-        if (root == null) {
-            delete doc;
-            warning ("The xml file '%s' is empty", path);
-            return null;
-        }
-
-        string origin = root->get_no_ns_prop ("origin");
-        delete doc;
-        return origin;
     }
 
     private void perform_xml_fixups (string origin_name, File src_file, File dest_file) {
