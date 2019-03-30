@@ -166,6 +166,19 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
         appstream_pool.clear_metadata_locations ();
 
+        var dest_folder_path = Path.build_filename (
+            Environment.get_user_cache_dir (),
+            "io.elementary.appcenter",
+            "flatpak-metadata"
+        );
+
+        var dest_folder = File.new_for_path (dest_folder_path);
+        if (!dest_folder.query_exists ()) {
+            dest_folder.make_directory_with_parents ();
+        }
+
+        delete_folder_contents (dest_folder, cancellable);
+
         var installations = Flatpak.get_system_installations ();
         for (int i = 0; i < installations.length; i++) {
             unowned Flatpak.Installation installation = installations[i];
@@ -216,11 +229,50 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 }
 
                 var metadata_location = remote.get_appstream_dir (null).get_path ();
-                message ("Appstream path: %s", metadata_location);
-                appstream_pool.add_metadata_location (metadata_location);
+                var metadata_folder_file = File.new_for_path (metadata_location);
+
+                var metadata_path = Path.build_filename (metadata_location, "appstream.xml.gz");
+                var metadata_file = File.new_for_path (metadata_path);
+
+                if (metadata_file.query_exists ()) {
+                    var dest_file = dest_folder.get_child (name + ".xml.gz");
+                    var origin = get_origin (metadata_file);
+                    if (origin == null) {
+                        continue;
+                    }
+
+                    if (origin == "flatpak") {
+                        perform_xml_fixups (name, metadata_file, dest_file);
+                        origin = name;
+                    } else {
+                        metadata_file.copy (dest_file, FileCopyFlags.NONE);
+                    }
+
+                    var local_icons_path = dest_folder.get_child ("icons");
+                    if (!local_icons_path.query_exists ()) {
+                        local_icons_path.make_directory ();
+                    }
+
+                    var remote_icons_folder = metadata_folder_file.get_child ("icons");
+                    if (!remote_icons_folder.query_exists ()) {
+                        continue;
+                    }
+
+                    if (remote_icons_folder.get_child (origin).query_exists ()) {
+                        local_icons_path = local_icons_path.get_child (origin);
+                        local_icons_path.make_symbolic_link (remote_icons_folder.get_child (origin).get_path ());
+                    } else {
+                        message ("flatpak appstream folder has icons subdir");
+                        local_icons_path = local_icons_path.get_child (origin);
+                        local_icons_path.make_symbolic_link (remote_icons_folder.get_path ());
+                    }
+                } else {
+                    continue;
+                }
             }
         }
 
+        appstream_pool.add_metadata_location (dest_folder_path);
         message ("Loading pool");
         try {
             appstream_pool.load ();
@@ -244,6 +296,82 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         job.result = Value (typeof (bool));
         job.result.set_boolean (true);
         job.results_ready ();
+    }
+
+    private void delete_folder_contents (File folder, Cancellable? cancellable = null) {
+        var enumerator = folder.enumerate_children (
+            "standard::*",
+            FileQueryInfoFlags.NOFOLLOW_SYMLINKS,
+            cancellable
+        );
+
+        FileInfo info = null;
+        while ((info = enumerator.next_file (cancellable)) != null) {
+            if (info.get_file_type () != FileType.DIRECTORY) {
+                var child = folder.resolve_relative_path (info.get_name ());
+                message ("Deleting %s", child.get_path ());
+                child.delete ();
+            } else {
+                var child = folder.resolve_relative_path (info.get_name ());
+                delete_folder_contents (child, cancellable);
+                child.delete ();
+            }
+        }
+    }
+
+    private string? get_origin (File appdata_file) {
+        var path = appdata_file.get_path ();
+        Xml.Doc* doc = Xml.Parser.parse_file (path);
+        if (doc == null) {
+            warning ("Appstream XML file %s not found or permissions missing", path);
+            return null;
+        }
+
+        Xml.Node* root = doc->get_root_element ();
+        if (root == null) {
+            delete doc;
+            warning ("The xml file '%s' is empty", path);
+            return null;
+        }
+
+        string origin = root->get_no_ns_prop ("origin");
+        delete doc;
+        return origin;
+    }
+
+    private void perform_xml_fixups (string origin_name, File src_file, File dest_file) {
+        var path = src_file.get_path ();
+        Xml.Doc* doc = Xml.Parser.parse_file (path);
+        if (doc == null) {
+            warning ("Appstream XML file %s not found or permissions missing", path);
+            return;
+        }
+
+        Xml.Node* root = doc->get_root_element ();
+        if (root == null) {
+            delete doc;
+            warning ("The xml file '%s' is empty", path);
+            return;
+        }
+
+        if (root->name != "components") {
+            delete doc;
+            warning ("The root node of %s isn't 'components', valid appstream file?", path);
+            return;
+        }
+
+        Xml.Attr* origin_attr = root->has_prop ("origin");
+        if (origin_attr == null) {
+            delete doc;
+            warning ("The root node of %s doesn't have an origin attribute, valid appstream file?", path);
+            return;
+        }
+
+        root->set_prop ("origin", origin_name);
+
+        doc->set_compress_mode (7);
+        doc->save_file (dest_file.get_path ());
+        delete doc;
     }
 
     public async bool refresh_cache (Cancellable cancellable) throws GLib.Error {

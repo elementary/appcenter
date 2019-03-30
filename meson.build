@@ -24,6 +24,7 @@ appstream = dependency ('appstream', version: '>=0.10.0')
 libsoup = dependency ('libsoup-2.4')
 json = dependency ('json-glib-1.0')
 flatpak = dependency ('flatpak')
+xml = dependency ('libxml-2.0')
 
 dbus = dependency ('dbus-1')
 
@@ -35,7 +36,8 @@ dependencies = [
     appstream,
     libsoup,
     json,
-    flatpak
+    flatpak,
+    xml
 ]
 
 if get_option('libunity')
