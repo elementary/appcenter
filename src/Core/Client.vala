@@ -108,7 +108,12 @@ public class AppCenterCore.Client : Object {
         launcher_entry.count_visible = updates_number != 0U;
 #endif
 
-        installed_apps_changed ();
+        // Probably being called from a different thread, ensure any UI logic
+        // driven from this signal doesn't cause crashses
+        Idle.add (() => {
+            installed_apps_changed ();
+            return GLib.Source.REMOVE;
+        });
     }
 
     public void cancel_updates (bool cancel_timeout) {
