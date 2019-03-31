@@ -76,7 +76,29 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     }
 
     public async Gee.Collection<Package> get_installed_applications () {
-        return new Gee.ArrayList<Package> ();
+        var installed_apps = new Gee.HashSet<Package> ();
+
+        var installations = Flatpak.get_system_installations ();
+        for (int i = 0; i < installations.length; i++) {
+            unowned Flatpak.Installation installation = installations[i];
+
+            var installed_refs = installation.list_installed_refs ();
+            for (int j = 0; j < installed_refs.length; j++) {
+                unowned Flatpak.InstalledRef installed_ref = installed_refs[j];
+
+                if (installed_ref.kind == Flatpak.RefKind.RUNTIME) {
+                    continue;
+                }
+
+                var bundle_id = "%s/%s".printf (installed_ref.origin, installed_ref.format_ref ());
+                var package = package_list[bundle_id];
+                if (package != null) {
+                    installed_apps.add (package);
+                }
+            }
+        }
+
+        return installed_apps;
     }
 
     public Gee.Collection<Package> get_applications_for_category (AppStream.Category category) {
