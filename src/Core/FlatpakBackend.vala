@@ -171,6 +171,24 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     }
 
     public async uint64 get_download_size (Package package, Cancellable? cancellable) throws GLib.Error {
+        var bundle = package.component.get_bundle (AppStream.BundleKind.FLATPAK);
+        if (bundle == null) {
+            return 0;
+        }
+
+        var flatpak_ref = Flatpak.Ref.parse (bundle.get_id ());
+
+        uint64 download_size = 0;
+        var installations = Flatpak.get_system_installations ();
+        for (int i = 0; i < installations.length; i++) {
+            unowned Flatpak.Installation installation = installations[i];
+
+            installation.fetch_remote_size_sync (package.component.get_origin (), flatpak_ref, out download_size, null);
+            if (download_size > 0) {
+                return download_size;
+            }
+        }
+
         return 0;
     }
 
