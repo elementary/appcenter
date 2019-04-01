@@ -173,6 +173,7 @@ public class AppCenterCore.ChangeInformation : Object {
         switch (type) {
             case Pk.ProgressType.ALLOW_CANCEL:
                 can_cancel = progress.allow_cancel;
+                status_changed ();
                 break;
             case Pk.ProgressType.ITEM_PROGRESS:
                 if (current_status == Pk.Status.SETUP) {
