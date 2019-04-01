@@ -17,6 +17,10 @@
 public class AppCenterCore.Client : Object {
     public signal void operation_finished (Package package, Package.State operation, Error? error);
     public signal void cache_update_failed (Error error);
+    /**
+     * This signal is likely to be fired from a non-main thread. Ensure any UI
+     * logic driven from this runs on the GTK thread
+     */
     public signal void installed_apps_changed ();
 
     public Gee.ArrayList<unowned Backend> backends;
@@ -108,12 +112,7 @@ public class AppCenterCore.Client : Object {
         launcher_entry.count_visible = updates_number != 0U;
 #endif
 
-        // Probably being called from a different thread, ensure any UI logic
-        // driven from this signal doesn't cause crashses
-        Idle.add (() => {
-            installed_apps_changed ();
-            return GLib.Source.REMOVE;
-        });
+        installed_apps_changed ();
     }
 
     public void cancel_updates (bool cancel_timeout) {

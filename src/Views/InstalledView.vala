@@ -40,7 +40,10 @@ public class AppCenter.Views.InstalledView : View {
         get_apps.begin ();
 
         client.installed_apps_changed.connect (() => {
-            get_apps.begin ();
+            Idle.add (() => {
+                get_apps.begin ();
+                return GLib.Source.REMOVE;
+            });
         });
 
         destroy.connect (() => {

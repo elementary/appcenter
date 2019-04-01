@@ -128,22 +128,22 @@ public class AppCenterCore.ChangeInformation : Object {
 
     public void start () {
         progress = 0.0f;
-        fire_progress_changed ();
+        progress_changed ();
         status = Pk.Status.WAIT;
-        fire_status_changed ();
+        status_changed ();
     }
 
     public void complete () {
         status = Pk.Status.FINISHED;
-        fire_status_changed ();
+        status_changed ();
         reset_progress ();
     }
 
     public void cancel () {
         progress = 0.0f;
-        fire_progress_changed ();
+        progress_changed ();
         status = Pk.Status.CANCEL;
-        fire_status_changed ();
+        status_changed ();
         reset_progress ();
     }
 
@@ -183,28 +183,12 @@ public class AppCenterCore.ChangeInformation : Object {
                 last_progress = progress.percentage;
                 double progress_sum = current_progress + last_progress;
                 this.progress = progress_sum / progress_denom;
-                fire_progress_changed ();
+                progress_changed ();
                 break;
             case Pk.ProgressType.STATUS:
                 status = (Pk.Status) progress.status;
-                fire_status_changed ();
+                status_changed ();
                 break;
         }
-    }
-
-    // We're more than likely being called from a non-main thread, wrap all
-    // signal calls in a Idle.add as UI logic may be triggered from them
-    public void fire_status_changed () {
-        Idle.add (() => {
-            status_changed ();
-            return GLib.Source.REMOVE;
-        });
-    }
-
-    public void fire_progress_changed () {
-        Idle.add (() => {
-            progress_changed ();
-            return GLib.Source.REMOVE;
-        });
     }
 }
