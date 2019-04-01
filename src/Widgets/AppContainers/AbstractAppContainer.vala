@@ -352,16 +352,23 @@ namespace AppCenter {
         }
 
         protected void update_progress () {
-             progress_bar.fraction = package.progress;
-         }
+            Idle.add (() => {
+                progress_bar.fraction = package.progress;
+                return GLib.Source.REMOVE;
+            });
+        }
 
         protected virtual void update_progress_status () {
-            progress_bar.text = package.get_progress_description ();
-            /* Ensure progress bar shows complete to match status (lp:1606902) */
-            if (package.changes_finished) {
-                progress_bar.fraction = 1.0f;
-                cancel_button.sensitive = false;
-            }
+            Idle.add (() => {
+                progress_bar.text = package.get_progress_description ();
+                /* Ensure progress bar shows complete to match status (lp:1606902) */
+                if (package.changes_finished) {
+                    progress_bar.fraction = 1.0f;
+                    cancel_button.sensitive = false;
+                }
+
+                return GLib.Source.REMOVE;
+            });
         }
 
         private void action_cancelled () {
