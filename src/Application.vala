@@ -288,9 +288,13 @@ public class AppCenter.App : Gtk.Application {
 
     public void on_updates_available () {
         var client = AppCenterCore.Client.get_default ();
-        if (main_window != null) {
-            main_window.show_update_badge (client.updates_number);
-        }
+        Idle.add (() => {
+            if (main_window != null) {
+                main_window.show_update_badge (client.updates_number);
+            }
+
+            return GLib.Source.REMOVE;
+        });
     }
 
     private void on_cache_update_failed (Error error) {
