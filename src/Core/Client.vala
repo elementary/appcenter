@@ -17,6 +17,10 @@
 public class AppCenterCore.Client : Object {
     public signal void operation_finished (Package package, Package.State operation, Error? error);
     public signal void cache_update_failed (Error error);
+    /**
+     * This signal is likely to be fired from a non-main thread. Ensure any UI
+     * logic driven from this runs on the GTK thread
+     */
     public signal void installed_apps_changed ();
 
     public Gee.ArrayList<unowned Backend> backends;

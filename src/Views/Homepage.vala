@@ -141,37 +141,41 @@ namespace AppCenter {
             });
 
             AppCenterCore.Client.get_default ().installed_apps_changed.connect (() => {
-                // Clear the cached categories when the AppStream pool is updated
-                foreach (weak Gtk.Widget child in category_flow.get_children ()) {
-                    if (child is Widgets.CategoryItem) {
-                        var item = child as Widgets.CategoryItem;
-                        var category_components = item.app_category.get_components ();
-                        category_components.remove_range (0, category_components.length);
-                    }
-                }
-
-                // Remove any old cached category list views
-                foreach (weak Gtk.Widget child in get_children ()) {
-                    if (child is Views.AppListView) {
-                        if (child != visible_child) {
-                            child.destroy ();
-                        } else {
-                            // If the category list view is visible, don't delete it, just make the package list right
-                            var list_view = child as Views.AppListView;
-                            list_view.clear ();
-
-                            unowned Client client = Client.get_default ();
-                            var apps = client.get_applications_for_category (currently_viewed_category);
-                            list_view.add_packages (apps);
+                Idle.add (() => {
+                    // Clear the cached categories when the AppStream pool is updated
+                    foreach (weak Gtk.Widget child in category_flow.get_children ()) {
+                        if (child is Widgets.CategoryItem) {
+                            var item = child as Widgets.CategoryItem;
+                            var category_components = item.app_category.get_components ();
+                            category_components.remove_range (0, category_components.length);
                         }
                     }
-                }
+
+                    // Remove any old cached category list views
+                    foreach (weak Gtk.Widget child in get_children ()) {
+                        if (child is Views.AppListView) {
+                            if (child != visible_child) {
+                                child.destroy ();
+                            } else {
+                                // If the category list view is visible, don't delete it, just make the package list right
+                                var list_view = child as Views.AppListView;
+                                list_view.clear ();
+
+                                unowned Client client = Client.get_default ();
+                                var apps = client.get_applications_for_category (currently_viewed_category);
+                                list_view.add_packages (apps);
+                            }
+                        }
+                    }
 
 #if HOMEPAGE
-                // If the banners weren't populated, try again to populate them
-                if (!recently_updated_revealer.reveal_child && !trending_revealer.reveal_child && !switcher_revealer.reveal_child) {
-                    load_banners.begin ();
-                }
+                    // If the banners weren't populated, try again to populate them
+                    if (!recently_updated_revealer.reveal_child && !trending_revealer.reveal_child && !switcher_revealer.reveal_child) {
+                        load_banners.begin ();
+                    }
+
+                    return GLib.Source.REMOVE;
+                });
             });
 
             recently_updated_carousel.package_activated.connect (show_package);
