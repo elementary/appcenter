@@ -56,6 +56,7 @@ namespace AppCenter {
         protected Gtk.Stack open_button_stack;
 
         protected Gtk.Grid progress_grid;
+        protected Gtk.Grid button_grid;
         protected Gtk.ProgressBar progress_bar;
         protected Gtk.Button cancel_button;
         protected Gtk.SizeGroup action_button_group;
@@ -126,8 +127,9 @@ namespace AppCenter {
 
             settings = Settings.get_default ();
 
-            package_author = new Gtk.Label ("");
-            package_name = new Gtk.Label ("");
+            package_author = new Gtk.Label (null);
+            package_name = new Gtk.Label (null);
+            package_summary = new Gtk.Label (null);
 
             action_button = new Widgets.HumbleButton ();
             action_button_stack = new Gtk.Stack ();
@@ -181,10 +183,12 @@ namespace AppCenter {
 
             open_button.clicked.connect (launch_package_app);
 
-            var button_grid = new Gtk.Grid ();
+            button_grid = new Gtk.Grid ();
             button_grid.column_spacing = 6;
-            button_grid.halign = Gtk.Align.END;
             button_grid.valign = Gtk.Align.CENTER;
+            button_grid.halign = Gtk.Align.END;
+            button_grid.hexpand = false;
+
             button_grid.add (uninstall_button_stack);
             button_grid.add (action_button_stack);
             button_grid.add (open_button_stack);
@@ -193,10 +197,14 @@ namespace AppCenter {
             progress_bar.show_text = true;
             progress_bar.valign = Gtk.Align.CENTER;
             /* Request a width large enough for the longest text to stop width of
-             * progress bar jumping around */
-            progress_bar.width_request = 350;
+             * progress bar jumping around, but allow space for long package names */
+            progress_bar.width_request = 250;
 
             cancel_button = new Gtk.Button.with_label (_("Cancel"));
+            /* Match button text size with that of HumbleButton */
+            cancel_button.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+            cancel_button.valign = Gtk.Align.END;
+            cancel_button.halign = Gtk.Align.END;
             cancel_button.clicked.connect (() => action_cancelled ());
 
             progress_grid = new Gtk.Grid ();

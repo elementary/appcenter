@@ -4,13 +4,17 @@ appcenter_files = files(
     'Settings.vala',
     'SuspendControl.vala',
     'Utils.vala',
+    'Core/BackendInterface.vala',
     'Core/ChangeInformation.vala',
     'Core/Client.vala',
     'Core/ComponentValidator.vala',
     'Core/Houston.vala',
+    'Core/Job.vala',
     'Core/Package.vala',
+    'Core/PackageKitBackend.vala',
     'Core/ScreenshotCache.vala',
     'Core/Task.vala',
+    'Core/UbuntuDriversBackend.vala',
     'Core/UpdateManager.vala',
     'Dialogs/RestartDialog.vala',
     'Dialogs/ContentWarningDialog.vala',
@@ -58,6 +62,10 @@ config_file = configure_file(
 args = []
 if get_option('curated')
     args += '--define=CURATED'
+endif
+
+if get_option('homepage')
+    args += '--define=HOMEPAGE'
 endif
 
 if get_option('payments')

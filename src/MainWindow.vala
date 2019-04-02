@@ -42,6 +42,9 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     private Gtk.Grid network_view;
     private Gtk.Label updates_badge;
 
+    private GLib.Settings settings;
+
+    private uint configure_id;
     private int homepage_view_id;
     private int installed_view_id;
 
@@ -58,21 +61,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         weak Gtk.IconTheme default_theme = Gtk.IconTheme.get_default ();
         default_theme.add_resource_path ("/io/elementary/appcenter/icons");
-
-        unowned Settings saved_state = Settings.get_default ();
-        set_default_size (saved_state.window_width, saved_state.window_height);
-
-        // Maximize window if necessary
-        switch (saved_state.window_state) {
-            case Settings.WindowState.MAXIMIZED:
-                this.maximize ();
-                break;
-            default:
-                if (saved_state.window_x != -1 && saved_state.window_y != -1) {
-                    move (saved_state.window_x, saved_state.window_y);
-                }
-                break;
-        }
 
         view_mode.selected = homepage_view_id;
         search_entry.grab_focus_without_selecting ();
@@ -123,9 +111,9 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             }
         });
 
-        unowned AppCenterCore.Client client = AppCenterCore.Client.get_default ();
-        client.notify["task-count"].connect (() => {
-            working = client.task_count > 0;
+        unowned AppCenterCore.PackageKitBackend client = AppCenterCore.PackageKitBackend.get_default ();
+        client.notify["working"].connect (() => {
+            working = client.working;
         });
 
         show.connect (on_view_mode_changed);
@@ -134,8 +122,25 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     construct {
         icon_name = "system-software-install";
         set_size_request (910, 640);
+
+        settings = new GLib.Settings ("io.elementary.appcenter.settings");
+
+        int window_x, window_y;
+        int window_width, window_height;
+        settings.get ("window-position", "(ii)", out window_x, out window_y);
+        settings.get ("window-size", "(ii)", out window_width, out window_height);
+
+        if (window_x != -1 ||  window_y != -1) {
+            move (window_x, window_y);
+        }
+
+        resize (window_width, window_height);
+
+        if (settings.get_boolean ("window-maximized")) {
+            maximize ();
+        }
+
         title = _(Build.APP_NAME);
-        window_position = Gtk.WindowPosition.CENTER;
 
         return_button = new Gtk.Button ();
         return_button.no_show_all = true;
@@ -214,38 +219,48 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         homepage.page_loaded.connect (() => homepage_loaded ());
     }
 
-    public override bool delete_event (Gdk.EventAny event) {
-        int window_width;
-        int window_height;
-        int window_x;
-        int window_y;
-        get_size (out window_width, out window_height);
-        unowned Settings saved_state = Settings.get_default ();
-        saved_state.window_width = window_width;
-        saved_state.window_height = window_height;
-        get_position (out window_x, out window_y);
-        saved_state.window_x = window_x;
-        saved_state.window_y = window_y;
-        if (is_maximized) {
-            saved_state.window_state = Settings.WindowState.MAXIMIZED;
-        } else {
-            saved_state.window_state = Settings.WindowState.NORMAL;
+    public override bool configure_event (Gdk.EventConfigure event) {
+        if (configure_id == 0) {
+            /* Avoid spamming the settings */
+            configure_id = Timeout.add (200, () => {
+                configure_id = 0;
+
+                if (is_maximized) {
+                    settings.set_boolean ("window-maximized", true);
+                } else {
+                    settings.set_boolean ("window-maximized", false);
+
+                    int width, height;
+                    get_size (out width, out height);
+                    settings.set ("window-size", "(ii)", width, height);
+
+                    int root_x, root_y;
+                    get_position (out root_x, out root_y);
+                    settings.set ("window-position", "(ii)", root_x, root_y);
+                }
+
+                return GLib.Source.REMOVE;
+            });
         }
 
-        unowned AppCenterCore.Client client = AppCenterCore.Client.get_default ();
-        if (client.has_tasks ()) {
+        return base.configure_event (event);
+    }
+
+    public override bool delete_event (Gdk.EventAny event) {
+        unowned AppCenterCore.PackageKitBackend client = AppCenterCore.PackageKitBackend.get_default ();
+        if (client.working) {
             if (task_finished_connection != 0U) {
                 client.disconnect (task_finished_connection);
             }
 
             hide ();
-            task_finished_connection = client.notify["task-count"].connect (() => {
-                if (!visible && client.task_count == 0) {
+            task_finished_connection = client.notify["working"].connect (() => {
+                if (!visible && !client.working) {
                     destroy ();
                 }
             });
 
-            client.cancel_updates (false); //Timeouts keep running
+            AppCenterCore.Client.get_default ().cancel_updates (false); //Timeouts keep running
             return true;
         }
 
@@ -297,7 +312,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             search_view.reset ();
             stack.visible_child = homepage;
         }
-        
+
         if (mimetype) {
             mimetype = false;
         }

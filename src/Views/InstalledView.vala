@@ -18,12 +18,15 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-using AppCenterCore;
-
 public class AppCenter.Views.InstalledView : View {
-    AppListUpdateView app_list_view;
+    private Cancellable refresh_cancellable;
+    private bool refresh_running = false;
+
+    private AppListUpdateView app_list_view;
 
     construct {
+        refresh_cancellable = new Cancellable ();
+
         app_list_view = new AppListUpdateView ();
         app_list_view.show_app.connect ((package) => {
             subview_entered (C_("view", "Installed"), false, "");
@@ -32,15 +35,16 @@ public class AppCenter.Views.InstalledView : View {
 
         add (app_list_view);
 
-        var client = Client.get_default ();
-        client.drivers_detected.connect (() => {
-            foreach (var driver in client.driver_list) {
-                app_list_view.add_package (driver);
-            }
-        });
+        unowned AppCenterCore.Client client = AppCenterCore.Client.get_default ();
 
-        var os_updates = Client.get_default ().os_updates;
-        app_list_view.add_package (os_updates);
+        get_apps.begin ();
+
+        client.installed_apps_changed.connect (() => {
+            Idle.add (() => {
+                get_apps.begin ();
+                return GLib.Source.REMOVE;
+            });
+        });
 
         destroy.connect (() => {
            app_list_view.clear ();
@@ -58,29 +62,29 @@ public class AppCenter.Views.InstalledView : View {
     }
 
     public async void get_apps () {
-        unowned Client client = Client.get_default ();
+        if (refresh_running) {
+            refresh_cancellable.cancel ();
+        }
+
+        refresh_running = true;
+
+        unowned AppCenterCore.Client client = AppCenterCore.Client.get_default ();
 
         var installed_apps = yield client.get_installed_applications ();
-        app_list_view.add_packages (installed_apps);
+        if (!refresh_cancellable.is_cancelled ()) {
+            app_list_view.clear ();
 
-        client.get_drivers ();
-
-        var settings = Settings.get_default ();
-
-        if (settings.reset_paid_apps) {
-            settings.paid_apps = new string[] {};
-            foreach (var app in installed_apps) {
-                if (app.component.get_origin () == AppCenterCore.Package.APPCENTER_PACKAGE_ORIGIN) {
-                    settings.add_paid_app (app.component.get_id ());
-                }
-            }
-
-            settings.reset_paid_apps = false;
+            var os_updates = AppCenterCore.UpdateManager.get_default ().os_updates;
+            app_list_view.add_package (os_updates);
+            app_list_view.add_packages (installed_apps);
         }
+
+        refresh_cancellable.reset ();
+        refresh_running = false;
     }
 
     public async void add_app (AppCenterCore.Package package) {
-        unowned Client client = Client.get_default ();
+        unowned AppCenterCore.Client client = AppCenterCore.Client.get_default ();
         var installed_apps = yield client.get_installed_applications ();
         foreach (var app in installed_apps) {
             if (app == package) {

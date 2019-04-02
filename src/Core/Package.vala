@@ -23,6 +23,13 @@ public errordomain PackageLaunchError {
     APP_INFO_NOT_FOUND
 }
 
+public class AppCenterCore.PackageDetails : Object {
+    public string? name { get; set; }
+    public string? description { get; set; }
+    public string? summary { get; set; }
+    public string? version { get; set; }
+}
+
 public class AppCenterCore.Package : Object {
     public const string APPCENTER_PACKAGE_ORIGIN = "appcenter-bionic-main";
     private const string ELEMENTARY_STABLE_PACKAGE_ORIGIN = "stable-bionic-main";
@@ -65,9 +72,10 @@ public class AppCenterCore.Package : Object {
 
     public AppStream.Component component { get; construct; }
     public ChangeInformation change_information { public get; private set; }
-    public Gee.TreeSet<Pk.Package> installed_packages { public get; private set; }
     public GLib.Cancellable action_cancellable { public get; private set; }
     public State state { public get; private set; default = State.NOT_INSTALLED; }
+
+    public Backend backend { public get; construct; }
 
     public double progress {
         get {
@@ -75,9 +83,10 @@ public class AppCenterCore.Package : Object {
         }
     }
 
+    private bool installed_cached;
     public bool installed {
         get {
-            if (!installed_packages.is_empty) {
+            if (installed_cached) {
                 return true;
             }
 
@@ -85,13 +94,13 @@ public class AppCenterCore.Package : Object {
                 return true;
             }
 
-            Pk.Package? package = find_package ();
-            if (package != null && package.info == Pk.Info.INSTALLED) {
-                return true;
-            }
-
-            return false;
+            installed_cached = backend_reports_installed_sync ();
+            return installed_cached;
         }
+    }
+
+    public void mark_installed () {
+        installed_cached = true;
     }
 
     public bool update_available {
@@ -258,20 +267,19 @@ public class AppCenterCore.Package : Object {
         internal set { _latest_version = convert_version (value); }
     }
 
-    private Pk.Package? pk_package = null;
+    private PackageDetails? backend_details = null;
     private AppInfo? app_info;
     private bool app_info_retrieved = false;
 
     construct {
-        installed_packages = new Gee.TreeSet<Pk.Package> ();
         change_information = new ChangeInformation ();
         change_information.status_changed.connect (() => info_changed (change_information.status));
 
         action_cancellable = new GLib.Cancellable ();
     }
 
-    public Package (AppStream.Component component) {
-        Object (component: component);
+    public Package (Backend backend, AppStream.Component component) {
+        Object (backend: backend, component: component);
     }
 
     public void update_state () {
@@ -343,18 +351,18 @@ public class AppCenterCore.Package : Object {
     }
 
     private async bool perform_operation (State performing, State after_success, State after_fail) throws GLib.Error {
-        var exit_status = Pk.Exit.UNKNOWN;
+        bool success = false;
         prepare_package_operation (performing);
         try {
-            exit_status = yield perform_package_operation ();
+            success = yield perform_package_operation ();
         } catch (GLib.Error e) {
             warning ("Operation failed for package %s - %s", get_name (), e.message);
             throw e;
         } finally {
-            clean_up_package_operation (exit_status, after_success, after_fail);
+            clean_up_package_operation (success, after_success, after_fail);
         }
 
-        return (exit_status == Pk.Exit.SUCCESS);
+        return success;
     }
 
     private void prepare_package_operation (State initial_state) {
@@ -365,53 +373,43 @@ public class AppCenterCore.Package : Object {
         state = initial_state;
     }
 
-    private async Pk.Exit perform_package_operation () throws GLib.Error {
+    private async bool perform_package_operation () throws GLib.Error {
         Pk.ProgressCallback cb = change_information.ProgressCallback;
         var client = AppCenterCore.Client.get_default ();
+
         switch (state) {
             case State.UPDATING:
-                return yield client.update_package (this, cb, action_cancellable);
-            case State.INSTALLING:
-                return yield client.install_package (this, cb, action_cancellable);
-            case State.REMOVING:
-                var status = yield client.remove_package (this, cb, action_cancellable);
-
-                // Clear the installed packages set on success, else we cannot reinstall.
-                if (Pk.Exit.SUCCESS == status) {
-                    installed_packages.clear ();
+                var success = yield backend.update_package (this, (owned)cb, action_cancellable);
+                if (success) {
+                    change_information.clear_update_info ();
                 }
 
-                return status;
+                yield client.refresh_updates ();
+                return success;
+            case State.INSTALLING:
+                var success = yield backend.install_package (this, (owned)cb, action_cancellable);
+                installed_cached = success;
+                return success;
+            case State.REMOVING:
+                var success = yield backend.remove_package (this, (owned)cb, action_cancellable);
+                installed_cached = !success;
+                yield client.refresh_updates ();
+                return success;
             default:
-                return Pk.Exit.UNKNOWN;
+                return false;
         }
     }
 
-    private void clean_up_package_operation (Pk.Exit exit_status, State success_state, State fail_state) {
+    private void clean_up_package_operation (bool success, State success_state, State fail_state) {
         changing (false);
 
-        installed_packages.add_all (change_information.changes);
-        if (exit_status == Pk.Exit.SUCCESS) {
+        if (success) {
             change_information.complete ();
             state = success_state;
         } else {
             state = fail_state;
             change_information.cancel ();
         }
-    }
-
-    private async Pk.Package? find_package_async () {
-        SourceFunc callback = find_package_async.callback;
-
-        Pk.Package? package = null;
-        new Thread<bool> ("appstream-find-package", () => {
-            package = find_package ();
-            Idle.add ((owned)callback);
-            return true;
-        });
-
-        yield;
-        return package;
     }
 
     public string? get_name () {
@@ -421,37 +419,28 @@ public class AppCenterCore.Package : Object {
 
         name = component.get_name ();
         if (name == null) {
-            var package = find_package ();
-            if (package != null) {
-                name = package.get_name ();
+            if (backend_details == null) {
+                populate_backend_details_sync ();
             }
+
+            name = backend_details.name;
         }
 
         return name;
     }
 
-    public async string? get_description () {
+    public string? get_description () {
         if (description == null) {
             description = component.get_description ();
             if (description == null) {
-                var package = yield find_package_async ();
-                if (package != null) {
-                    description = package.description;
+                if (backend_details == null) {
+                    populate_backend_details_sync ();
                 }
+
+                description = backend_details.description;
             }
         }
 
-        return description;
-    }
-
-    public string? get_description_sync () {
-        var loop = new MainLoop ();
-        get_description.begin ((obj, res) => {
-            get_description.end (res);
-            loop.quit ();
-        });
-
-        loop.run ();
         return description;
     }
 
@@ -462,10 +451,11 @@ public class AppCenterCore.Package : Object {
 
         summary = component.get_summary ();
         if (summary == null) {
-            var package = find_package ();
-            if (package != null) {
-                summary = package.get_summary ();
+            if (backend_details == null) {
+                populate_backend_details_sync ();
             }
+
+            summary = backend_details.summary;
         }
 
         return summary;
@@ -541,7 +531,7 @@ public class AppCenterCore.Package : Object {
         }
 
         for (int i = 0; i < extends.length; i++) {
-            var package = Client.get_default ().get_package_for_component_id (extends[i]);
+            var package = backend.get_package_for_component_id (extends[i]);
             if (package != null) {
                 return package;
             }
@@ -555,9 +545,12 @@ public class AppCenterCore.Package : Object {
             return latest_version;
         }
 
-        var package = find_package ();
-        if (package != null) {
-            latest_version = package.get_version ();
+        if (backend_details == null) {
+            populate_backend_details_sync ();
+        }
+
+        if (backend_details.version != null) {
+            latest_version = backend_details.version;
         }
 
         return latest_version;
@@ -724,22 +717,57 @@ public class AppCenterCore.Package : Object {
         return null;
     }
 
-    public Pk.Package? find_package () {
-        if (component.id == OS_UPDATES_ID || is_local) {
-            return null;
-        }
-
-        if (pk_package != null) {
-            return pk_package;
-        }
-
+    public async uint64 get_download_size_including_deps () {
+        uint64 size = 0;
         try {
-            pk_package = AppCenterCore.Client.get_default ().get_app_package (component.get_pkgnames ()[0], 0);
+            size = yield backend.get_download_size (this, null);
         } catch (Error e) {
-            warning (e.message);
-            return null;
+            warning ("Error getting download size: %s", e.message);
         }
 
-        return pk_package;
+        return size;
+    }
+
+    private bool backend_reports_installed_sync () {
+        var loop = new MainLoop ();
+        bool result = false;
+        backend.is_package_installed.begin (this, (obj, res) => {
+            try {
+                result = backend.is_package_installed.end (res);
+            } catch (Error e) {
+                warning (e.message);
+                result = false;
+            } finally {
+                loop.quit ();
+            }
+        });
+
+        loop.run ();
+        return result;
+    }
+
+    private void populate_backend_details_sync () {
+        if (component.id == OS_UPDATES_ID || is_local) {
+            backend_details = new PackageDetails ();
+            return;
+        }
+
+        var loop = new MainLoop ();
+        PackageDetails? result = null;
+        backend.get_package_details.begin (this, (obj, res) => {
+            try {
+                result = backend.get_package_details.end (res);
+            } catch (Error e) {
+                warning (e.message);
+            } finally {
+                loop.quit ();
+            }
+        });
+
+        loop.run ();
+        backend_details = result;
+        if (backend_details == null) {
+            backend_details = new PackageDetails ();
+        }
     }
 }

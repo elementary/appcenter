@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
-"PO-Revision-Date: 2019-01-04 00:07+0000\n"
+"PO-Revision-Date: 2019-02-22 00:03+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://weblate.elementary.io/projects/"
 "appcenter/appcenter/nb/>\n"
@@ -23,14 +23,14 @@ msgid "AppCenter"
 msgstr "AppSenter"
 
 #: src/Application.vala:106
-#, c-format
+#, c-format, fuzzy
 msgid "Could not parse mimetype %s"
-msgstr "Kunne ikke tolke mimetype %"
+msgstr "Kunne ikke tolke MIME-type %"
 
 #: src/Application.vala:126
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr "Fant ikke oppgitt lenke '%s', søker istedenfor"
+msgstr "Fant ikke oppgitt lenke «%s», søker istedenfor"
 
 #: src/Application.vala:260
 msgid "Application installed"
@@ -61,7 +61,7 @@ msgstr "Installerte"
 #: src/MainWindow.vala:177 src/MainWindow.vala:330 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:81
 msgid "Search Apps"
-msgstr "Søk etter applikasjoner"
+msgstr "Programsøk"
 
 #: src/MainWindow.vala:195
 msgid "Network Is Not Available"
@@ -185,7 +185,7 @@ msgstr "Laster mellomlageret"
 
 #: src/Core/ChangeInformation.vala:108
 msgid "Scanning applications"
-msgstr "Skanner applikasjoner"
+msgstr "Skanner programmer"
 
 #: src/Core/ChangeInformation.vala:110
 msgid "Generating package lists"
@@ -205,7 +205,7 @@ msgstr "Oppdaterer kjørende programmer"
 
 #: src/Core/ChangeInformation.vala:118
 msgid "Checking applications in use"
-msgstr "Sjekker applikasjoner som er i bruk"
+msgstr "Sjekker programmer som er i bruk"
 
 #: src/Core/ChangeInformation.vala:120
 msgid "Checking libraries in use"
@@ -617,7 +617,7 @@ msgstr "Ingen resultater"
 
 #: src/Widgets/AbstractAppList.vala:36
 msgid "No apps could be found. Try changing search terms."
-msgstr "Ingen applikasjoner ble funnet. Prøv å endre søkeord."
+msgstr "Fant ingen programmer. Prøv å endre søkeord."
 
 #: src/Widgets/Banner.vala:55
 msgid "An open, pay-what-you-want app store"
