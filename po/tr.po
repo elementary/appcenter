@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
-"PO-Revision-Date: 2019-04-03 13:15+0000\n"
+"PO-Revision-Date: 2019-04-04 13:51+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/tr/>\n"
@@ -33,7 +33,7 @@ msgstr "AppCenter"
 #: src/Application.vala:106
 #, c-format
 msgid "Could not parse mimetype %s"
-msgstr "MIME Type %s ayrıştırılamadı"
+msgstr "MIME Türü %s ayrıştırılamadı"
 
 #: src/Application.vala:126
 #, c-format
@@ -250,8 +250,8 @@ msgstr[1] "Güncellemeler Mevcut"
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
-msgstr[0] "Sisteminiz için %u adet güncelleme var"
-msgstr[1] "Sisteminiz için %u adet güncelleme var"
+msgstr[0] "Sisteminiz için %u güncelleme var"
+msgstr[1] "Sisteminiz için %u güncelleme var"
 
 #: src/Core/Client.vala:505
 #, c-format
@@ -785,8 +785,8 @@ msgstr "Bağlantıyı kopyala"
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
-msgstr[0] "%u Adet Güncelleme Mevcut"
-msgstr[1] "%u Adet Güncelleme Mevcut"
+msgstr[0] "%u Güncelleme Var"
+msgstr[1] "%u Güncelleme Var"
 
 #: src/Widgets/UpdateHeaderRow.vala:69
 #, c-format
