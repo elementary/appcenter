@@ -223,8 +223,12 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     }
 
     public async PackageDetails get_package_details (Package package) throws GLib.Error {
-        message ("get_package_details");
-        return new PackageDetails ();
+        var details = new PackageDetails ();
+        details.name = package.component.get_name ();
+        details.description = package.component.get_description ();
+        details.summary = package.component.get_summary ();
+        details.version = package.get_newest_release ().get_version ();
+        return details;
     }
 
     private void refresh_cache_internal (Job job) {
