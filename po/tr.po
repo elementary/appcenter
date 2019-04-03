@@ -14,7 +14,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
 "PO-Revision-Date: 2019-04-03 13:15+0000\n"
-"Last-Translator: Turker <turkerbol@gmail.com>\n"
+"Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/tr/>\n"
 "Language: tr\n"
@@ -38,7 +38,7 @@ msgstr "MIME Type %s ayrıştırılamadı"
 #: src/Application.vala:126
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr "Belirtilen link '%s'  bulunmadı, yerine başkası araştırılıyor"
+msgstr "Belirtilen '%s' bağlantısı bulunmadı, yerine başkası araştırılıyor"
 
 #: src/Application.vala:260
 msgid "Application installed"
