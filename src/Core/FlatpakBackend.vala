@@ -39,6 +39,9 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 case Job.Type.REFRESH_CACHE:
                     refresh_cache_internal (job);
                     break;
+                case Job.Type.INSTALL_PACKAGE:
+                    install_package_internal (job);
+                    break;
                 default:
                     assert_not_reached ();
             }
@@ -78,25 +81,22 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     public async Gee.Collection<Package> get_installed_applications () {
         var installed_apps = new Gee.HashSet<Package> ();
 
-        var installations = Flatpak.get_system_installations ();
-        for (int i = 0; i < installations.length; i++) {
-            unowned Flatpak.Installation installation = installations[i];
+        var installation = new Flatpak.Installation.system ();
 
-            var installed_refs = installation.list_installed_refs ();
-            for (int j = 0; j < installed_refs.length; j++) {
-                unowned Flatpak.InstalledRef installed_ref = installed_refs[j];
+        var installed_refs = installation.list_installed_refs ();
+        for (int j = 0; j < installed_refs.length; j++) {
+            unowned Flatpak.InstalledRef installed_ref = installed_refs[j];
 
-                if (installed_ref.kind == Flatpak.RefKind.RUNTIME) {
-                    continue;
-                }
+            if (installed_ref.kind == Flatpak.RefKind.RUNTIME) {
+                continue;
+            }
 
-                var bundle_id = "%s/%s".printf (installed_ref.origin, installed_ref.format_ref ());
-                var package = package_list[bundle_id];
-                if (package != null) {
-                    package.mark_installed ();
-                    package.update_state ();
-                    installed_apps.add (package);
-                }
+            var bundle_id = "%s/%s".printf (installed_ref.origin, installed_ref.format_ref ());
+            var package = package_list[bundle_id];
+            if (package != null) {
+                package.mark_installed ();
+                package.update_state ();
+                installed_apps.add (package);
             }
         }
 
@@ -179,14 +179,11 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         var flatpak_ref = Flatpak.Ref.parse (bundle.get_id ());
 
         uint64 download_size = 0;
-        var installations = Flatpak.get_system_installations ();
-        for (int i = 0; i < installations.length; i++) {
-            unowned Flatpak.Installation installation = installations[i];
+        var installation = new Flatpak.Installation.system ();
 
-            installation.fetch_remote_size_sync (package.component.get_origin (), flatpak_ref, out download_size, null);
-            if (download_size > 0) {
-                return download_size;
-            }
+        installation.fetch_remote_size_sync (package.component.get_origin (), flatpak_ref, out download_size, null);
+        if (download_size > 0) {
+            return download_size;
         }
 
         return 0;
@@ -200,22 +197,19 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
         var key = "%s/%s".printf (package.component.get_origin (), bundle.get_id ());
 
-        var installations = Flatpak.get_system_installations ();
-        for (int i = 0; i < installations.length; i++) {
-            unowned Flatpak.Installation installation = installations[i];
+        var installation = new Flatpak.Installation.system ();
 
-            var installed_refs = installation.list_installed_refs ();
-            for (int j = 0; j < installed_refs.length; j++) {
-                unowned Flatpak.InstalledRef installed_ref = installed_refs[j];
+        var installed_refs = installation.list_installed_refs ();
+        for (int j = 0; j < installed_refs.length; j++) {
+            unowned Flatpak.InstalledRef installed_ref = installed_refs[j];
 
-                if (installed_ref.kind == Flatpak.RefKind.RUNTIME) {
-                    continue;
-                }
+            if (installed_ref.kind == Flatpak.RefKind.RUNTIME) {
+                continue;
+            }
 
-                var bundle_id = "%s/%s".printf (installed_ref.origin, installed_ref.format_ref ());
-                if (key == bundle_id) {
-                    return true;
-                }
+            var bundle_id = "%s/%s".printf (installed_ref.origin, installed_ref.format_ref ());
+            if (key == bundle_id) {
+                return true;
             }
         }
 
@@ -250,86 +244,83 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
         delete_folder_contents (dest_folder, cancellable);
 
-        var installations = Flatpak.get_system_installations ();
-        for (int i = 0; i < installations.length; i++) {
-            unowned Flatpak.Installation installation = installations[i];
+        var installation = new Flatpak.Installation.system ();
 
-            var xremotes = installation.list_remotes ();
-            for (int j = 0; j < xremotes.length; j++) {
-                bool cache_refresh_needed = false;
+        var xremotes = installation.list_remotes ();
+        for (int j = 0; j < xremotes.length; j++) {
+            bool cache_refresh_needed = false;
 
-                unowned Flatpak.Remote remote = xremotes[j];
-                if (remote.get_disabled ()) {
-                    continue;
-                }
+            unowned Flatpak.Remote remote = xremotes[j];
+            if (remote.get_disabled ()) {
+                continue;
+            }
 
-                unowned string origin_name = remote.get_name ();
-                message ("Found remote: %s", origin_name);
+            unowned string origin_name = remote.get_name ();
+            message ("Found remote: %s", origin_name);
 
-                var timestamp_file = remote.get_appstream_timestamp (null);
-                if (!timestamp_file.query_exists ()) {
+            var timestamp_file = remote.get_appstream_timestamp (null);
+            if (!timestamp_file.query_exists ()) {
+                cache_refresh_needed = true;
+            } else {
+                var age = Utils.get_file_age (timestamp_file);
+                message ("Appstream age: %u", age);
+                if (age > 600) {
+                    message ("Appstream cache older than 10 mins, refreshing");
                     cache_refresh_needed = true;
-                } else {
-                    var age = Utils.get_file_age (timestamp_file);
-                    message ("Appstream age: %u", age);
-                    if (age > 600) {
-                        message ("Appstream cache older than 10 mins, refreshing");
-                        cache_refresh_needed = true;
-                    }
+                }
+            }
+
+            if (cache_refresh_needed) {
+                message ("Updating remote");
+                bool success = false;
+                try {
+                    success = installation.update_remote_sync (remote.get_name ());
+                } catch (Error e) {
+                    warning ("Unable to update remote: %s", e.message);
+                }
+                message ("Remote updated: %s", success.to_string ());
+
+                message ("Updating appstream data");
+                success = false;
+                try {
+                    success = installation.update_appstream_sync (remote.get_name (), null, null, cancellable);
+                } catch (Error e) {
+                    warning ("Unable to update appstream: %s", e.message);
                 }
 
-                if (cache_refresh_needed) {
-                    message ("Updating remote");
-                    bool success = false;
-                    try {
-                        success = installation.update_remote_sync (remote.get_name ());
-                    } catch (Error e) {
-                        warning ("Unable to update remote: %s", e.message);
-                    }
-                    message ("Remote updated: %s", success.to_string ());
+                message ("Appstream updated: %s", success.to_string ());
+            }
 
-                    message ("Updating appstream data");
-                    success = false;
-                    try {
-                        success = installation.update_appstream_sync (remote.get_name (), null, null, cancellable);
-                    } catch (Error e) {
-                        warning ("Unable to update appstream: %s", e.message);
-                    }
+            var metadata_location = remote.get_appstream_dir (null).get_path ();
+            var metadata_folder_file = File.new_for_path (metadata_location);
 
-                    message ("Appstream updated: %s", success.to_string ());
+            var metadata_path = Path.build_filename (metadata_location, "appstream.xml.gz");
+            var metadata_file = File.new_for_path (metadata_path);
+
+            if (metadata_file.query_exists ()) {
+                var dest_file = dest_folder.get_child (origin_name + ".xml.gz");
+
+                perform_xml_fixups (origin_name, metadata_file, dest_file);
+
+                var local_icons_path = dest_folder.get_child ("icons");
+                if (!local_icons_path.query_exists ()) {
+                    local_icons_path.make_directory ();
                 }
 
-                var metadata_location = remote.get_appstream_dir (null).get_path ();
-                var metadata_folder_file = File.new_for_path (metadata_location);
-
-                var metadata_path = Path.build_filename (metadata_location, "appstream.xml.gz");
-                var metadata_file = File.new_for_path (metadata_path);
-
-                if (metadata_file.query_exists ()) {
-                    var dest_file = dest_folder.get_child (origin_name + ".xml.gz");
-
-                    perform_xml_fixups (origin_name, metadata_file, dest_file);
-
-                    var local_icons_path = dest_folder.get_child ("icons");
-                    if (!local_icons_path.query_exists ()) {
-                        local_icons_path.make_directory ();
-                    }
-
-                    var remote_icons_folder = metadata_folder_file.get_child ("icons");
-                    if (!remote_icons_folder.query_exists ()) {
-                        continue;
-                    }
-
-                    if (remote_icons_folder.get_child (origin_name).query_exists ()) {
-                        local_icons_path = local_icons_path.get_child (origin_name);
-                        local_icons_path.make_symbolic_link (remote_icons_folder.get_child (origin_name).get_path ());
-                    } else {
-                        local_icons_path = local_icons_path.get_child (origin_name);
-                        local_icons_path.make_symbolic_link (remote_icons_folder.get_path ());
-                    }
-                } else {
+                var remote_icons_folder = metadata_folder_file.get_child ("icons");
+                if (!remote_icons_folder.query_exists ()) {
                     continue;
                 }
+
+                if (remote_icons_folder.get_child (origin_name).query_exists ()) {
+                    local_icons_path = local_icons_path.get_child (origin_name);
+                    local_icons_path.make_symbolic_link (remote_icons_folder.get_child (origin_name).get_path ());
+                } else {
+                    local_icons_path = local_icons_path.get_child (origin_name);
+                    local_icons_path.make_symbolic_link (remote_icons_folder.get_path ());
+                }
+            } else {
+                continue;
             }
         }
 
@@ -428,8 +419,42 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         return job.result.get_boolean ();
     }
 
+    private void install_package_internal (Job job) {
+        var args = (InstallPackageArgs)job.args;
+        var package = args.package;
+        unowned Pk.ProgressCallback cb = args.cb;
+        var cancellable = args.cancellable;
+
+        var bundle = package.component.get_bundle (AppStream.BundleKind.FLATPAK);
+        if (bundle == null) {
+            job.result = Value (typeof (bool));
+            job.result.set_boolean (false);
+            job.results_ready ();
+            return;
+        }
+
+        var flatpak_ref = Flatpak.Ref.parse (bundle.get_id ());
+
+        var installation = new Flatpak.Installation.system ();
+        installation.install (package.component.get_origin (), Flatpak.RefKind.APP, flatpak_ref.name, flatpak_ref.arch, flatpak_ref.branch, null, cancellable);
+
+        job.result = Value (typeof (bool));
+        job.result.set_boolean (true);
+        job.results_ready ();
+    }
+
     public async bool install_package (Package package, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
-        return false;
+        var job_args = new InstallPackageArgs ();
+        job_args.package = package;
+        job_args.cb = (owned)cb;
+        job_args.cancellable = cancellable;
+
+        var job = yield launch_job (Job.Type.INSTALL_PACKAGE, job_args);
+        if (job.error != null) {
+            throw job.error;
+        }
+
+        return job.result.get_boolean ();
     }
 
     public async bool remove_package (Package package, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {

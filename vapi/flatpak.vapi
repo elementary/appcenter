@@ -43,7 +43,7 @@ namespace Flatpak {
 		public Flatpak.Remote get_remote_by_name (string name, GLib.Cancellable? cancellable = null) throws GLib.Error;
 		[Version (since = "0.8")]
 		public Flatpak.StorageType get_storage_type ();
-		public Flatpak.InstalledRef install (string remote_name, Flatpak.RefKind kind, string name, string? arch, string? branch, GLib.Cancellable? cancellable = null) throws GLib.Error;
+		public Flatpak.InstalledRef install (string remote_name, Flatpak.RefKind kind, string name, string? arch, string? branch, ProgressCallback cb, GLib.Cancellable? cancellable = null) throws GLib.Error;
 		public Flatpak.InstalledRef install_bundle (GLib.File file, GLib.Cancellable? cancellable = null) throws GLib.Error;
 		public Flatpak.InstalledRef install_full (Flatpak.InstallFlags flags, string remote_name, Flatpak.RefKind kind, string name, string? arch, string? branch, [CCode (array_length = false, array_null_terminated = true)] string[]? subpaths, GLib.Cancellable? cancellable = null) throws GLib.Error;
 		[Version (since = "0.6.10")]
