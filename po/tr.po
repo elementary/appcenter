@@ -6,7 +6,7 @@
 # ecb <drbambal@gmail.com>, 2018, 2019.
 # KN-KZ <kurutmaz.kaan@gmail.com>, 2018.
 # Turker <turkerbol@gmail.com>, 2018, 2019.
-# Mehmet Zahit Yılmaz <darkmehmet3@gmail.com>, 2018.
+# Mehmet Zahit Yılmaz <darkmehmet3@gmail.com>, 2018, 2019.
 # Ozgur Baskin <bebeto_baskin@yahoo.com>, 2019.
 msgid ""
 msgstr ""
@@ -14,7 +14,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
 "PO-Revision-Date: 2019-04-04 16:36+0000\n"
-"Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
+"Last-Translator: Mehmet Zahit Yılmaz <darkmehmet3@gmail.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/tr/>\n"
 "Language: tr\n"
@@ -640,7 +640,7 @@ msgstr "Uygulama bulunamadı. Arama terimlerini değiştirmeyi deneyin."
 
 #: src/Widgets/Banner.vala:55
 msgid "An open, pay-what-you-want app store"
-msgstr "Açık bir, istediğin kadar öde uygulama mağzası"
+msgstr "Açık kaynak kodlu \"istediğine-istediğin-kadar-öde\" uygulama mağazası"
 
 #: src/Widgets/Banner.vala:68
 msgid "Get the apps that you need at a price you can afford."
