@@ -6,15 +6,15 @@
 # ecb <drbambal@gmail.com>, 2018, 2019.
 # KN-KZ <kurutmaz.kaan@gmail.com>, 2018.
 # Turker <turkerbol@gmail.com>, 2018, 2019.
-# Mehmet Zahit Yılmaz <darkmehmet3@gmail.com>, 2018.
+# Mehmet Zahit Yılmaz <darkmehmet3@gmail.com>, 2018, 2019.
 # Ozgur Baskin <bebeto_baskin@yahoo.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
-"PO-Revision-Date: 2019-04-03 13:15+0000\n"
-"Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
+"PO-Revision-Date: 2019-04-04 16:36+0000\n"
+"Last-Translator: Mehmet Zahit Yılmaz <darkmehmet3@gmail.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/tr/>\n"
 "Language: tr\n"
@@ -33,7 +33,7 @@ msgstr "AppCenter"
 #: src/Application.vala:106
 #, c-format
 msgid "Could not parse mimetype %s"
-msgstr "MIME Type %s ayrıştırılamadı"
+msgstr "MIME Türü %s ayrıştırılamadı"
 
 #: src/Application.vala:126
 #, c-format
@@ -52,7 +52,7 @@ msgstr "%s başarı ile yüklendi"
 #: src/Application.vala:273
 #, c-format
 msgid "There Was An Error Installing %s."
-msgstr "%s kurulurken bir hata oluştu."
+msgstr "%s Yüklenirken Bir Hata Oluştu."
 
 #: src/MainWindow.vala:149 src/Views/Homepage.vala:282
 #: src/Views/Homepage.vala:291 src/Views/Homepage.vala:296
@@ -73,7 +73,7 @@ msgstr "Uygulama Ara"
 
 #: src/MainWindow.vala:195
 msgid "Network Is Not Available"
-msgstr "Ağ Bağlantısı Mevcut Değil"
+msgstr "Ağ Kullanılamıyor"
 
 #: src/MainWindow.vala:196
 msgid "Connect to the Internet to install or update apps."
@@ -243,20 +243,20 @@ msgstr "%s (yerel)"
 #: src/Core/Client.vala:476
 msgid "Update Available"
 msgid_plural "Updates Available"
-msgstr[0] "Güncelleme Mevcut"
-msgstr[1] "Güncellemeler Mevcut"
+msgstr[0] "Güncelleme Var"
+msgstr[1] "Güncellemeler Var"
 
 #: src/Core/Client.vala:477
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
-msgstr[0] "Sisteminiz için %u adet güncelleme var"
-msgstr[1] "Sisteminiz için %u adet güncelleme var"
+msgstr[0] "Sisteminiz için %u güncelleme var"
+msgstr[1] "Sisteminiz için %u güncelleme var"
 
 #: src/Core/Client.vala:505
 #, c-format
 msgid "Version: %s"
-msgstr "Versiyon: %s"
+msgstr "Sürüm: %s"
 
 #: src/Core/Client.vala:514
 msgid "No components with updates"
@@ -267,7 +267,7 @@ msgstr "Güncelleme içeren bileşen yok"
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "%u bileşenin güncellemesi var"
-msgstr[1] "%u bileşenlerinin güncellemeleri var"
+msgstr[1] "%u bileşenin güncellemesi var"
 
 #: src/Core/Client.vala:520
 #, c-format
@@ -376,7 +376,7 @@ msgid ""
 "Your email address is only used to send a receipt. You will not be "
 "subscribed to any mailing list."
 msgstr ""
-"E-posta adresiniz makbuz göndermek için kullanılır. Bir e-posta listesine "
+"E-posta adresiniz makbuz göndermek için kullanılır. Hiçbir e-posta listesine "
 "abone edilmeyeceksiniz."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
@@ -474,7 +474,7 @@ msgstr "Bu işlem zaten işlendi."
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "postal code."
-msgstr "Posta kodu hatalıdır.Lütfen doğru posta koduyla tekrar deneyiniz."
+msgstr "Posta kodu hatalıdır. Lütfen doğru posta koduyla tekrar deneyiniz."
 
 #: src/Dialogs/StripeDialog.vala:568
 msgid "You don't have enough funds. Please use an alternative payment method."
@@ -537,7 +537,7 @@ msgstr "Tekrar Dene"
 
 #: src/Views/AppInfoView.vala:76
 msgid "Screenshot Not Available"
-msgstr "Ekran görüntüsü mevcut değil"
+msgstr "Ekran Görüntüsü Yok"
 
 #: src/Views/AppInfoView.vala:133
 msgid "Homepage"
@@ -566,7 +566,7 @@ msgstr "Eklentiler:"
 #: src/Views/AppInfoView.vala:293
 #, c-format
 msgid "Other Apps by %s"
-msgstr "%s tarafından diğer uygulamalar"
+msgstr "%s tarafından geliştirilen diğer uygulamalar"
 
 #: src/Views/AppInfoView.vala:327
 msgid "Link copied to clipboard"
@@ -575,7 +575,7 @@ msgstr "Bağlantı panoya kopyalandı"
 #: src/Views/AppInfoView.vala:338
 #, c-format
 msgid "Check out %s on AppCenter:"
-msgstr "AppCenter'da %s 'e göz atın:"
+msgstr "AppCenter'da %s uygulamasına göz atın:"
 
 #: src/Views/AppInfoView.vala:345
 msgid "Share"
@@ -640,7 +640,7 @@ msgstr "Uygulama bulunamadı. Arama terimlerini değiştirmeyi deneyin."
 
 #: src/Widgets/Banner.vala:55
 msgid "An open, pay-what-you-want app store"
-msgstr "Açık bir, istediğin kadar öde uygulama mağzası"
+msgstr "Açık kaynak kodlu \"istediğine-istediğin-kadar-öde\" uygulama mağazası"
 
 #: src/Widgets/Banner.vala:68
 msgid "Get the apps that you need at a price you can afford."
@@ -785,8 +785,8 @@ msgstr "Bağlantıyı kopyala"
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
-msgstr[0] "%u Adet Güncelleme Mevcut"
-msgstr[1] "%u Adet Güncelleme Mevcut"
+msgstr[0] "%u Güncelleme Var"
+msgstr[1] "%u Güncelleme Var"
 
 #: src/Widgets/UpdateHeaderRow.vala:69
 #, c-format
