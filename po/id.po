@@ -1,4 +1,4 @@
-# Eri Hidayat <eriwhidayat@gmail.com>, 2018.
+# Eri Hidayat <eriwhidayat@gmail.com>, 2018, 2019.
 # Yusnur Rofiq <yusnurrofiq@gmail.com>, 2019.
 msgid ""
 msgstr ""
@@ -6,7 +6,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
 "PO-Revision-Date: 2019-04-07 08:52+0000\n"
-"Last-Translator: Yusnur Rofiq <yusnurrofiq@gmail.com>\n"
+"Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/id/>\n"
 "Language: id\n"
@@ -690,7 +690,7 @@ msgstr "Matematika, Sains & Teknik"
 
 #: src/Widgets/CategoryFlowBox.vala:101
 msgid "Media Production"
-msgstr ""
+msgstr "Produksi Media"
 
 #: src/Widgets/CategoryFlowBox.vala:108
 msgid "Office"
@@ -710,11 +710,11 @@ msgstr "Video"
 
 #: src/Widgets/CategoryFlowBox.vala:125
 msgid "Writing & Language"
-msgstr ""
+msgstr "Penulisan & Bahasa"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
-msgstr "Memerlukan pembayaran, yang tidak diaktifkan"
+msgstr "Memerlukan pembayaran, mode belum diizinkan"
 
 #: src/Widgets/HumbleButton.vala:106
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:301
