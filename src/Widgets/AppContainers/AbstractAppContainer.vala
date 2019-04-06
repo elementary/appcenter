@@ -66,6 +66,8 @@ namespace AppCenter {
         private Mutex action_mutex = Mutex ();
         private Cancellable action_cancellable = new Cancellable ();
 
+        private bool destroyed = false;
+
         private enum ActionResult {
             NONE = 0,
             HIDE_BUTTON = 1,
@@ -226,6 +228,8 @@ namespace AppCenter {
             action_stack.add_named (button_grid, "buttons");
             action_stack.add_named (progress_grid, "progress");
             action_stack.show_all ();
+
+            destroy.connect (() => { destroyed = true; });
         }
 
         private void show_stripe_dialog (int amount) {
@@ -272,12 +276,7 @@ namespace AppCenter {
                 inner_image.gicon = package.get_icon (icon_size, scale_factor);
             }
 
-            package.notify["state"].connect (() => {
-                Idle.add (() => {
-                    update_state ();
-                    return false;
-                });
-            });
+            package.notify["state"].connect (on_package_state_changed);
 
             package.change_information.bind_property ("can-cancel", cancel_button, "sensitive", GLib.BindingFlags.SYNC_CREATE);
             package.change_information.progress_changed.connect (update_progress);
@@ -286,6 +285,17 @@ namespace AppCenter {
             update_progress_status ();
             update_progress ();
             update_state (true);
+        }
+
+        private void on_package_state_changed () {
+            Idle.add (() => {
+                if (destroyed) {
+                    return GLib.Source.REMOVE;
+                }
+
+                update_state ();
+                return GLib.Source.REMOVE;
+            });
         }
 
         protected virtual void update_state (bool first_update = false) {
