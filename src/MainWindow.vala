@@ -113,7 +113,10 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         unowned AppCenterCore.PackageKitBackend client = AppCenterCore.PackageKitBackend.get_default ();
         client.notify["working"].connect (() => {
-            working = client.working;
+            Idle.add (() => {
+                working = client.working;
+                return GLib.Source.REMOVE;
+            });
         });
 
         show.connect (on_view_mode_changed);
