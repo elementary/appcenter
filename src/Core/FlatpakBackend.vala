@@ -180,12 +180,22 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             return 0;
         }
 
-        var flatpak_ref = Flatpak.Ref.parse (bundle.get_id ());
+        var id = "%s/%s".printf (package.component.get_origin (), bundle.get_id ());
+        return yield get_download_size_by_id (id, cancellable);
+    }
+
+    public async uint64 get_download_size_by_id (string id, Cancellable? cancellable) throws GLib.Error {
+        var parts = id.split ("/", 2);
+        if (parts.length != 2) {
+            return 0;
+        }
+
+        var flatpak_ref = Flatpak.Ref.parse (parts[1]);
 
         uint64 download_size = 0;
         var installation = new Flatpak.Installation.system ();
 
-        installation.fetch_remote_size_sync (package.component.get_origin (), flatpak_ref, out download_size, null);
+        installation.fetch_remote_size_sync (parts[0], flatpak_ref, out download_size, null);
         if (download_size > 0) {
             return download_size;
         }
@@ -345,6 +355,10 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 if (bundle != null) {
                     var package = new AppCenterCore.Package (this, comp);
                     var key = "%s/%s".printf (comp.get_origin (), bundle.get_id ());
+                    if (comp.get_origin () == "gnome-nightly") {
+                        message (key);
+                    }
+
                     package_list[key] = package;
                 }
             });

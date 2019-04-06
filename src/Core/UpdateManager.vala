@@ -78,6 +78,9 @@ public class AppCenterCore.UpdateManager : Object {
             }
         });
 
+        os_updates.component.set_pkgnames({});
+        os_updates.change_information.clear_update_info ();
+
         unowned FlatpakBackend fp_client = FlatpakBackend.get_default ();
         var flatpak_updates = yield fp_client.get_updates ();
 
@@ -86,6 +89,7 @@ public class AppCenterCore.UpdateManager : Object {
             if (appcenter_package != null) {
                 apps_with_updates.add (appcenter_package);
                 appcenter_package.change_information.updatable_ids.add (flatpak_update);
+                appcenter_package.change_information.size = yield fp_client.get_download_size (appcenter_package, null);
             } else {
                 var name = flatpak_update.split ("/")[2];
                 os_count++;
@@ -94,6 +98,9 @@ public class AppCenterCore.UpdateManager : Object {
                     name,
                     _("Flatpak runtime")
                 );
+
+                var dl_size = yield fp_client.get_download_size_by_id (flatpak_update, null);
+                os_updates.change_information.size += dl_size;
             }
         }
 
@@ -106,9 +113,6 @@ public class AppCenterCore.UpdateManager : Object {
             os_updates.latest_version = latest_version;
             os_updates.description = "<p>%s</p>\n<ul>\n%s</ul>\n".printf (GLib.Markup.printf_escaped (_("%s:"), latest_version), os_desc);
         }
-
-        os_updates.component.set_pkgnames({});
-        os_updates.change_information.clear_update_info ();
 
         count = apps_with_updates.size;
         if (os_count > 0) {
