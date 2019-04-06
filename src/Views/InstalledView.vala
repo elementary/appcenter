@@ -70,7 +70,7 @@ public class AppCenter.Views.InstalledView : View {
 
         unowned AppCenterCore.Client client = AppCenterCore.Client.get_default ();
 
-        var installed_apps = yield client.get_installed_applications ();
+        var installed_apps = yield client.get_installed_applications (refresh_cancellable);
         if (!refresh_cancellable.is_cancelled ()) {
             app_list_view.clear ();
 

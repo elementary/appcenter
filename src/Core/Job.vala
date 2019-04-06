@@ -46,6 +46,10 @@ public class AppCenterCore.Job : Object {
 
 public abstract class AppCenterCore.JobArgs { }
 
+public class AppCenterCore.GetInstalledPackagesArgs : JobArgs {
+    public Cancellable cancellable;
+}
+
 public class AppCenterCore.InstallPackageArgs : JobArgs {
     public Package package;
     public Pk.ProgressCallback cb;
