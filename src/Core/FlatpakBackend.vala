@@ -78,13 +78,17 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         return job;
     }
 
-    public async Gee.Collection<Package> get_installed_applications () {
+    public async Gee.Collection<Package> get_installed_applications (Cancellable? cancellable = null) {
         var installed_apps = new Gee.HashSet<Package> ();
 
         var installation = new Flatpak.Installation.system ();
 
         var installed_refs = installation.list_installed_refs ();
         for (int j = 0; j < installed_refs.length; j++) {
+            if (cancellable.is_cancelled ()) {
+                break;
+            }
+
             unowned Flatpak.InstalledRef installed_ref = installed_refs[j];
 
             if (installed_ref.kind == Flatpak.RefKind.RUNTIME) {
@@ -463,6 +467,24 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
     public async bool update_package (Package package, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
         return false;
+    }
+
+    public async Gee.ArrayList<string> get_updates (Cancellable? cancellable = null) {
+        var installation = new Flatpak.Installation.system ();
+        var update_refs = installation.list_installed_refs_for_update (cancellable);
+
+        var updatable_ids = new Gee.ArrayList<string> ();
+
+        for (int i = 0; i < update_refs.length; i++) {
+            unowned Flatpak.InstalledRef updatable_ref = update_refs[i];
+            updatable_ids.add ("%s/%s".printf (updatable_ref.origin, updatable_ref.format_ref ()));
+        }
+
+        return updatable_ids;
+    }
+
+    public Package? lookup_package_by_id (string id) {
+        return package_list[id];
     }
 
     private static GLib.Once<FlatpakBackend> instance;

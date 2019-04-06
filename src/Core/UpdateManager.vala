@@ -78,6 +78,25 @@ public class AppCenterCore.UpdateManager : Object {
             }
         });
 
+        unowned FlatpakBackend fp_client = FlatpakBackend.get_default ();
+        var flatpak_updates = yield fp_client.get_updates ();
+
+        foreach (var flatpak_update in flatpak_updates) {
+            var appcenter_package = fp_client.lookup_package_by_id (flatpak_update);
+            if (appcenter_package != null) {
+                apps_with_updates.add (appcenter_package);
+                appcenter_package.change_information.updatable_ids.add (flatpak_update);
+            } else {
+                var name = flatpak_update.split ("/")[2];
+                os_count++;
+                os_desc += Markup.printf_escaped (
+                    "<li>%s\n\t%s</li>",
+                    name,
+                    _("Flatpak runtime")
+                );
+            }
+        }
+
         if (os_count == 0) {
             var latest_version = _("No components with updates");
             os_updates.latest_version = latest_version;
