@@ -454,7 +454,21 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         var flatpak_ref = Flatpak.Ref.parse (bundle.get_id ());
 
         var installation = new Flatpak.Installation.system ();
-        installation.install (package.component.get_origin (), Flatpak.RefKind.APP, flatpak_ref.name, flatpak_ref.arch, flatpak_ref.branch, null, cancellable);
+        var final_status = "";
+        installation.install (
+            package.component.get_origin (),
+            Flatpak.RefKind.APP,
+            flatpak_ref.name,
+            flatpak_ref.arch,
+            flatpak_ref.branch,
+            (status, progress, estimating) => {
+                final_status = status;
+                cb (true, status, progress, ChangeInformation.Status.RUNNING);
+            },
+            cancellable
+        );
+
+        cb (false, final_status, 100, ChangeInformation.Status.FINISHED);
 
         job.result = Value (typeof (bool));
         job.result.set_boolean (true);
