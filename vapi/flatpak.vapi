@@ -74,7 +74,7 @@ namespace Flatpak {
 		[CCode (has_construct_function = false)]
 		[Version (since = "0.8")]
 		public Installation.system_with_id (string? id, GLib.Cancellable? cancellable = null) throws GLib.Error;
-		public bool uninstall (Flatpak.RefKind kind, string name, string? arch, string? branch, GLib.Cancellable? cancellable = null) throws GLib.Error;
+		public bool uninstall (Flatpak.RefKind kind, string name, string? arch, string? branch, ProgressCallback cb, GLib.Cancellable? cancellable = null) throws GLib.Error;
 		[Version (since = "0.11.8")]
 		public bool uninstall_full (Flatpak.UninstallFlags flags, Flatpak.RefKind kind, string name, string? arch, string? branch, GLib.Cancellable? cancellable = null) throws GLib.Error;
 		public Flatpak.InstalledRef update (Flatpak.UpdateFlags flags, Flatpak.RefKind kind, string name, string? arch, string? branch, GLib.Cancellable? cancellable = null) throws GLib.Error;
