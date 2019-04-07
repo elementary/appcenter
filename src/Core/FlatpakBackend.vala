@@ -455,20 +455,29 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
         var installation = new Flatpak.Installation.system ();
         var final_status = "";
-        installation.install (
-            package.component.get_origin (),
-            Flatpak.RefKind.APP,
-            flatpak_ref.name,
-            flatpak_ref.arch,
-            flatpak_ref.branch,
-            (status, progress, estimating) => {
-                final_status = status;
-                cb (true, status, progress, ChangeInformation.Status.RUNNING);
-            },
-            cancellable
-        );
 
-        cb (false, final_status, 100, ChangeInformation.Status.FINISHED);
+        try {
+            installation.install (
+                package.component.get_origin (),
+                Flatpak.RefKind.APP,
+                flatpak_ref.name,
+                flatpak_ref.arch,
+                flatpak_ref.branch,
+                (status, progress, estimating) => {
+                    final_status = status;
+                    cb (true, status, progress, ChangeInformation.Status.RUNNING);
+                },
+                cancellable
+            );
+
+            cb (false, final_status, 100, ChangeInformation.Status.FINISHED);
+        } catch (Error e) {
+            if (e is GLib.IOError.CANCELLED) {
+                cb (false, final_status, 100, ChangeInformation.Status.CANCELLED);
+            } else {
+                warning ("Flatpak installation failed: %s", e.message);
+            }
+        }
 
         job.result = Value (typeof (bool));
         job.result.set_boolean (true);
