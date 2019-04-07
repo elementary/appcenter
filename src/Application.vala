@@ -166,9 +166,13 @@ public class AppCenter.App : Gtk.Application {
         if (main_window == null) {
             main_window = new MainWindow (this);
 
+#if HOMEPAGE
             main_window.homepage_loaded.connect (() => {
                 client.update_cache.begin ();
             });
+#else
+            client.update_cache.begin ();
+#endif
 
             main_window.destroy.connect (() => {
                 main_window = null;
