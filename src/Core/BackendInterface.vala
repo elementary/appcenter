@@ -35,7 +35,7 @@ public interface AppCenterCore.Backend : Object {
     public abstract async bool is_package_installed (Package package) throws GLib.Error;
     public abstract async PackageDetails get_package_details (Package package) throws GLib.Error;
     public abstract async bool refresh_cache (Cancellable cancellable) throws GLib.Error;
-    public abstract async bool install_package (Package package, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error;
-    public abstract async bool update_package (Package package, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error;
-    public abstract async bool remove_package (Package package, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error;
+    public abstract async bool install_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error;
+    public abstract async bool update_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error;
+    public abstract async bool remove_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error;
 }
