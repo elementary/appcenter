@@ -264,6 +264,7 @@ namespace AppCenter {
             page_loaded ();
         }
 #else
+                });
             });
         }
 #endif
