@@ -42,6 +42,14 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 
     public bool working { get; private set; }
 
+    private bool can_cancel = true;
+    private int current_progress = 0;
+    private int last_progress = 0;
+    private Pk.Status current_status = Pk.Status.SETUP;
+    private Pk.Status status = Pk.Status.SETUP;
+    private double progress_denom = 200.0f;
+    private double progress = 0.0f;
+
     private bool worker_func () {
         while (thread_should_run) {
             last_action = new DateTime.now_local ();
@@ -387,8 +395,10 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
     private void install_package_internal (Job job) {
         var args = (InstallPackageArgs)job.args;
         var package = args.package;
-        unowned Pk.ProgressCallback cb = args.cb;
+        unowned ChangeInformation.ProgressCallback cb = args.cb;
         var cancellable = args.cancellable;
+
+        reset_progress ();
 
         Pk.Exit exit_status = Pk.Exit.UNKNOWN;
         string[] packages_ids = {};
@@ -419,7 +429,11 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 
             packages_ids += null;
 
-            results = client.install_packages_sync (packages_ids, cancellable, cb);
+            results = client.install_packages_sync (packages_ids, cancellable, (progress, status) => {
+                ProgressCallback (progress, status);
+                cb (can_cancel, Utils.pk_status_to_string (this.status), (uint)(this.progress * 100.0f), pk_status_to_appcenter_status (this.status));
+            });
+
             exit_status = results.get_exit_code ();
         } catch (Error e) {
             job.error = e;
@@ -432,7 +446,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         job.results_ready ();
     }
 
-    public async bool install_package (Package package, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+    public async bool install_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
         var job_args = new InstallPackageArgs ();
         job_args.package = package;
         job_args.cb = (owned)cb;
@@ -450,7 +464,9 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         var args = (UpdatePackageArgs)job.args;
         var package = args.package;
         var cancellable = args.cancellable;
-        unowned Pk.ProgressCallback cb = args.cb;
+        unowned ChangeInformation.ProgressCallback cb = args.cb;
+
+        reset_progress ();
 
         Pk.Exit exit_status = Pk.Exit.UNKNOWN;
         string[] packages_ids = {};
@@ -461,7 +477,11 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         packages_ids += null;
 
         try {
-            var results = client.update_packages_sync (packages_ids, cancellable, cb);
+            var results = client.update_packages_sync (packages_ids, cancellable, (progress, status) => {
+                ProgressCallback (progress, status);
+                cb (can_cancel, Utils.pk_status_to_string (this.status), (uint)(this.progress * 100.0f), pk_status_to_appcenter_status (this.status));
+            });
+
             exit_status = results.get_exit_code ();
         } catch (Error e) {
             job.error = e;
@@ -474,7 +494,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         job.results_ready ();
     }
 
-    public async bool update_package (Package package, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+    public async bool update_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
         var job_args = new UpdatePackageArgs ();
         job_args.package = package;
         job_args.cb = (owned)cb;
@@ -492,7 +512,9 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         var args = (RemovePackageArgs)job.args;
         var package = args.package;
         var cancellable = args.cancellable;
-        unowned Pk.ProgressCallback cb = args.cb;
+        unowned ChangeInformation.ProgressCallback cb = args.cb;
+
+        reset_progress ();
 
         Pk.Exit exit_status = Pk.Exit.UNKNOWN;
         string[] packages_ids = {};
@@ -509,7 +531,11 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
                 packages_ids += package.package_id;
             });
 
-            results = client.remove_packages_sync (packages_ids, true, true, cancellable, cb);
+            results = client.remove_packages_sync (packages_ids, true, true, cancellable, (progress, status) => {
+                ProgressCallback (progress, status);
+                cb (can_cancel, Utils.pk_status_to_string (this.status), (uint)(this.progress * 100.0f), pk_status_to_appcenter_status (this.status));
+            });
+
             exit_status = results.get_exit_code ();
         } catch (Error e) {
             job.error = e;
@@ -522,7 +548,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         job.results_ready ();
     }
 
-    public async bool remove_package (Package package, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+    public async bool remove_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
         var job_args = new RemovePackageArgs ();
         job_args.package = package;
         job_args.cb = (owned)cb;
@@ -747,6 +773,59 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         }
 
         return (PackageDetails)job.result.get_object ();
+    }
+
+    private void ProgressCallback (Pk.Progress progress, Pk.ProgressType type) {
+        switch (type) {
+            case Pk.ProgressType.ALLOW_CANCEL:
+                can_cancel = progress.allow_cancel;
+                break;
+            case Pk.ProgressType.ITEM_PROGRESS:
+                if (current_status == Pk.Status.SETUP) {
+                    current_status = (Pk.Status) progress.status;
+                    /* skipping package download, we have cached packages */
+                    if (current_status != Pk.Status.DOWNLOAD) {
+                        progress_denom = 100.0f;
+                    }
+                }
+                /* transaction changed so progress count is starting over */
+                else if ((Pk.Status) progress.status != current_status) {
+                    current_status = (Pk.Status) progress.status;
+                    current_progress = last_progress;
+                }
+
+                last_progress = progress.percentage;
+                double progress_sum = current_progress + last_progress;
+                this.progress = progress_sum / progress_denom;
+                break;
+            case Pk.ProgressType.STATUS:
+                status = (Pk.Status) progress.status;
+                break;
+        }
+    }
+
+    private static ChangeInformation.Status pk_status_to_appcenter_status (Pk.Status status) {
+        switch (status) {
+            case Pk.Status.WAIT:
+            case Pk.Status.WAITING_FOR_AUTH:
+                return ChangeInformation.Status.WAITING;
+            case Pk.Status.CANCEL:
+                return ChangeInformation.Status.CANCELLED;
+            case Pk.Status.FINISHED:
+                return ChangeInformation.Status.FINISHED;
+            default:
+                return ChangeInformation.Status.RUNNING;
+        }
+    }
+
+    private void reset_progress () {
+        can_cancel = true;
+        current_progress = 0;
+        last_progress = 0;
+        current_status = Pk.Status.SETUP;
+        status = Pk.Status.SETUP;
+        progress_denom = 200.0f;
+        progress = 0.0f;
     }
 
     private static GLib.Once<PackageKitBackend> instance;

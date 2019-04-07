@@ -59,7 +59,7 @@ public class AppCenterCore.Package : Object {
      * This signal is likely to be fired from a non-main thread. Ensure any UI
      * logic driven from this runs on the GTK thread
      */
-    public signal void info_changed (Pk.Status status);
+    public signal void info_changed (ChangeInformation.Status status);
 
     public enum State {
         NOT_INSTALLED,
@@ -150,7 +150,7 @@ public class AppCenterCore.Package : Object {
 
     public bool changes_finished {
         get {
-            return change_information.status == Pk.Status.FINISHED;
+            return change_information.status == ChangeInformation.Status.FINISHED;
         }
     }
 
@@ -378,7 +378,7 @@ public class AppCenterCore.Package : Object {
     }
 
     private async bool perform_package_operation () throws GLib.Error {
-        Pk.ProgressCallback cb = change_information.ProgressCallback;
+        ChangeInformation.ProgressCallback cb = change_information.Callback;
         var client = AppCenterCore.Client.get_default ();
 
         switch (state) {
@@ -466,7 +466,7 @@ public class AppCenterCore.Package : Object {
     }
 
     public string get_progress_description () {
-        return change_information.get_status_string ();
+        return change_information.status_description;
     }
 
     public GLib.Icon get_icon (uint size, uint scale_factor) {

@@ -360,7 +360,7 @@ namespace AppCenter {
         protected virtual void update_progress_status () {
             Idle.add (() => {
                 progress_bar.text = package.get_progress_description ();
-                cancel_button.sensitive = package.change_information.can_cancel;
+                cancel_button.sensitive = package.change_information.can_cancel && !package.changes_finished;
                 /* Ensure progress bar shows complete to match status (lp:1606902) */
                 if (package.changes_finished) {
                     progress_bar.fraction = 1.0f;

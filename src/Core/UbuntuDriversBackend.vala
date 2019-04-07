@@ -109,15 +109,15 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
         return yield PackageKitBackend.get_default ().get_package_details (package);
     }
 
-    public async bool install_package (Package package, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+    public async bool install_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
         return yield PackageKitBackend.get_default ().install_package (package, cb, cancellable);
     }
 
-    public async bool remove_package (Package package, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+    public async bool remove_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
         return yield PackageKitBackend.get_default ().remove_package (package, cb, cancellable);
     }
 
-    public async bool update_package (Package package, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+    public async bool update_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
         return yield PackageKitBackend.get_default ().update_package (package, cb, cancellable);
     }
 
