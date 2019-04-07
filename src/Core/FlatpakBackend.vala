@@ -42,6 +42,9 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 case Job.Type.INSTALL_PACKAGE:
                     install_package_internal (job);
                     break;
+                case Job.Type.UPDATE_PACKAGE:
+                    update_package_internal (job);
+                    break;
                 case Job.Type.REMOVE_PACKAGE:
                     remove_package_internal (job);
                     break;
@@ -569,8 +572,69 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         return job.result.get_boolean ();
     }
 
-    public async bool update_package (Package package, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
-        return false;
+    private void update_package_internal (Job job) {
+        var args = (UpdatePackageArgs)job.args;
+        var package = args.package;
+        unowned ChangeInformation.ProgressCallback cb = args.cb;
+        var cancellable = args.cancellable;
+
+        var bundle = package.component.get_bundle (AppStream.BundleKind.FLATPAK);
+        if (bundle == null) {
+            job.result = Value (typeof (bool));
+            job.result.set_boolean (false);
+            job.results_ready ();
+            return;
+        }
+
+        var flatpak_ref = Flatpak.Ref.parse (bundle.get_id ());
+
+        var installation = new Flatpak.Installation.system ();
+        var final_status = "";
+
+        try {
+            installation.update (
+                Flatpak.UpdateFlags.NONE,
+                Flatpak.RefKind.APP,
+                flatpak_ref.name,
+                flatpak_ref.arch,
+                flatpak_ref.branch,
+                (status, progress, estimating) => {
+                    final_status = status;
+                    cb (true, status, progress, ChangeInformation.Status.RUNNING);
+                },
+                cancellable
+            );
+
+            cb (false, final_status, 100, ChangeInformation.Status.FINISHED);
+        } catch (Error e) {
+            if (e is GLib.IOError.CANCELLED) {
+                cb (false, final_status, 100, ChangeInformation.Status.CANCELLED);
+            } else {
+                warning ("Flatpak update failed: %s", e.message);
+                job.result = Value (typeof (bool));
+                job.result.set_boolean (false);
+                job.results_ready ();
+                return;
+            }
+        }
+
+        job.result = Value (typeof (bool));
+        job.result.set_boolean (true);
+        job.results_ready ();
+    }
+
+    public async bool update_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+        var job_args = new UpdatePackageArgs ();
+        job_args.package = package;
+        job_args.cb = (owned)cb;
+        job_args.cancellable = cancellable;
+
+        var job = yield launch_job (Job.Type.UPDATE_PACKAGE, job_args);
+        if (job.error != null) {
+            throw job.error;
+        }
+
+        return job.result.get_boolean ();
     }
 
     public async Gee.ArrayList<string> get_updates (Cancellable? cancellable = null) {
