@@ -440,7 +440,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     private void install_package_internal (Job job) {
         var args = (InstallPackageArgs)job.args;
         var package = args.package;
-        unowned Pk.ProgressCallback cb = args.cb;
+        unowned ChangeInformation.ProgressCallback cb = args.cb;
         var cancellable = args.cancellable;
 
         var bundle = package.component.get_bundle (AppStream.BundleKind.FLATPAK);
@@ -461,7 +461,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         job.results_ready ();
     }
 
-    public async bool install_package (Package package, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+    public async bool install_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
         var job_args = new InstallPackageArgs ();
         job_args.package = package;
         job_args.cb = (owned)cb;
