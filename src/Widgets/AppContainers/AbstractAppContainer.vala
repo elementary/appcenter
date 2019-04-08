@@ -66,7 +66,7 @@ namespace AppCenter {
         private Mutex action_mutex = Mutex ();
         private Cancellable action_cancellable = new Cancellable ();
 
-        private bool is_destroyed = false;
+        private uint state_source = 0U;
 
         private enum ActionResult {
             NONE = 0,
@@ -229,7 +229,11 @@ namespace AppCenter {
             action_stack.add_named (progress_grid, "progress");
             action_stack.show_all ();
 
-            destroy.connect (() => { is_destroyed = true; });
+            destroy.connect (() => {
+                if (state_source > 0) {
+                    GLib.Source.remove (state_source);
+                }
+            });
         }
 
         private void show_stripe_dialog (int amount) {
@@ -287,12 +291,13 @@ namespace AppCenter {
         }
 
         private void on_package_state_changed () {
-            Idle.add (() => {
-                if (is_destroyed) {
-                    return GLib.Source.REMOVE;
-                }
+            if (state_source > 0) {
+                return;
+            }
 
+            state_source = Idle.add (() => {
                 update_state ();
+                state_source = 0U;
                 return GLib.Source.REMOVE;
             });
         }
