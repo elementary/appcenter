@@ -457,40 +457,49 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             return;
         }
 
-        var flatpak_ref = Flatpak.Ref.parse (bundle.get_id ());
-
         var installation = new Flatpak.Installation.system ();
         var final_status = "";
 
-        try {
-            installation.install (
-                package.component.get_origin (),
-                Flatpak.RefKind.APP,
-                flatpak_ref.name,
-                flatpak_ref.arch,
-                flatpak_ref.branch,
-                (status, progress, estimating) => {
-                    final_status = status;
-                    cb (true, status, progress, ChangeInformation.Status.RUNNING);
-                },
-                cancellable
-            );
+        var transaction = new Flatpak.Transaction.for_installation (installation, cancellable);
+        transaction.add_install (package.component.get_origin (), bundle.get_id (), null);
+        transaction.choose_remote_for_ref.connect ((@ref, runtime_ref, remotes) => {
+            if (remotes.length > 0) {
+                return 0;
+            } else {
+                return -1;
+            }
+        });
 
-            cb (false, final_status, 100, ChangeInformation.Status.FINISHED);
-        } catch (Error e) {
+        transaction.new_operation.connect ((operation, progress) => {
+            progress.changed.connect (() => {
+                cb (true, progress.get_status (), progress.get_progress (), ChangeInformation.Status.RUNNING);
+            });
+        });
+
+        bool success = false;
+
+        transaction.operation_error.connect ((operation, e, detail) => {
+            warning ("Flatpak installation failed: %s", e.message);
             if (e is GLib.IOError.CANCELLED) {
                 cb (false, final_status, 100, ChangeInformation.Status.CANCELLED);
+                success = true;
             } else {
-                warning ("Flatpak installation failed: %s", e.message);
-                job.result = Value (typeof (bool));
-                job.result.set_boolean (false);
-                job.results_ready ();
-                return;
+                return false;
             }
-        }
+
+            return true;
+        });
+
+        transaction.operation_done.connect ((operation, commit, details) => {
+            success = true;
+        });
+
+        transaction.run (cancellable);
+
+        message ("transaction done");
 
         job.result = Value (typeof (bool));
-        job.result.set_boolean (true);
+        job.result.set_boolean (success);
         job.results_ready ();
     }
 
