@@ -1,11 +1,12 @@
 # KSingh1980 <ksingh@sysmethod.com>, 2019.
+# Prachi Joshi <josprachi@yahoo.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
 "PO-Revision-Date: 2019-04-10 09:36+0000\n"
-"Last-Translator: KSingh1980 <ksingh@sysmethod.com>\n"
+"Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Hindi <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/hi/>\n"
 "Language: hi\n"
@@ -24,7 +25,7 @@ msgstr "एपसेंटर"
 #: src/Application.vala:106
 #, c-format
 msgid "Could not parse mimetype %s"
-msgstr "% s मइम को पार्स नहीं किया जा सका"
+msgstr "%s मइम को पार्स नहीं किया जा सका"
 
 #: src/Application.vala:126
 #, c-format
