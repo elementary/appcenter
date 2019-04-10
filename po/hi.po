@@ -6,7 +6,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
 "PO-Revision-Date: 2019-04-11 22:53+0000\n"
-"Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
+"Last-Translator: KSingh1980 <ksingh@sysmethod.com>\n"
 "Language-Team: Hindi <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/hi/>\n"
 "Language: hi\n"
@@ -50,34 +50,38 @@ msgstr "%s इनस्टॉल करने में चूक हुई ह�
 #: src/Views/Homepage.vala:291 src/Views/Homepage.vala:296
 #: src/Views/Homepage.vala:307
 msgid "Home"
-msgstr ""
+msgstr "होम"
 
 #: src/MainWindow.vala:150 src/Views/InstalledView.vala:29
 #: src/Views/InstalledView.vala:53
 msgctxt "view"
 msgid "Installed"
-msgstr ""
+msgstr "स्थापित"
 
 #: src/MainWindow.vala:177 src/MainWindow.vala:330 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:81
 msgid "Search Apps"
 msgstr ""
+"\n"
+"ऐप्स खोजें"
 
 #: src/MainWindow.vala:195
 msgid "Network Is Not Available"
-msgstr ""
+msgstr "नेटवर्क उपलब्ध नहीं है"
 
 #: src/MainWindow.vala:196
 msgid "Connect to the Internet to install or update apps."
 msgstr ""
+"\n"
+"एप्लिकेशन इंस्टॉल करने या अपडेट करने के लिए इंटरनेट से कनेक्ट करें।"
 
 #: src/MainWindow.vala:199
 msgid "Network Settings…"
-msgstr ""
+msgstr "नेटवर्क सेटिंग…"
 
 #: src/Core/ChangeInformation.vala:54
 msgid "Starting"
-msgstr ""
+msgstr "शुरु"
 
 #: src/Core/ChangeInformation.vala:56
 msgid "Waiting"
@@ -89,7 +93,7 @@ msgstr "चल रहा"
 
 #: src/Core/ChangeInformation.vala:60
 msgid "Querying"
-msgstr ""
+msgstr "पता कर रहा है"
 
 #: src/Core/ChangeInformation.vala:62
 msgid "Getting information"
