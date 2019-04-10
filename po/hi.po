@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
-"PO-Revision-Date: 2019-04-10 09:37+0000\n"
-"Last-Translator: KSingh1980 <ksingh@sysmethod.com>\n"
+"PO-Revision-Date: 2019-04-11 22:53+0000\n"
+"Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Hindi <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/hi/>\n"
 "Language: hi\n"
@@ -30,7 +30,7 @@ msgstr "%s मइम को पार्स नहीं किया जा स
 #: src/Application.vala:126
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr "दिए गए लिंक '% s' को खोजा नहीं जा सका,इसके बजाय खोजें"
+msgstr "दिए गए लिंक '%s' को खोजा नहीं जा सका,इसके बजाय खोजें"
 
 #: src/Application.vala:260
 msgid "Application installed"
