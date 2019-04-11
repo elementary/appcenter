@@ -28,6 +28,14 @@ namespace AppCenter {
         }
     }
 
+    public static void set_stack_visibility (Gtk.Stack stack, bool show) {
+        if (show) {
+            stack.set_visible_child_name ("CHILD");
+        } else {
+            stack.set_visible_child_name ("NONE");
+        }
+    }
+
     public abstract class AbstractAppContainer : Gtk.Grid {
         public AppCenterCore.Package package { get; construct set; }
         protected bool show_uninstall { get; set; default = true; }
@@ -43,8 +51,12 @@ namespace AppCenter {
         protected Widgets.HumbleButton action_button;
         protected Gtk.Button uninstall_button;
         protected Gtk.Button open_button;
+        protected Gtk.Stack action_button_stack;
+        protected Gtk.Stack uninstall_button_stack;
+        protected Gtk.Stack open_button_stack;
 
         protected Gtk.Grid progress_grid;
+        protected Gtk.Grid button_grid;
         protected Gtk.ProgressBar progress_bar;
         protected Gtk.Button cancel_button;
         protected Gtk.SizeGroup action_button_group;
@@ -53,6 +65,8 @@ namespace AppCenter {
         private Settings settings;
         private Mutex action_mutex = Mutex ();
         private Cancellable action_cancellable = new Cancellable ();
+
+        private uint state_source = 0U;
 
         private enum ActionResult {
             NONE = 0,
@@ -115,10 +129,16 @@ namespace AppCenter {
 
             settings = Settings.get_default ();
 
-            package_author = new Gtk.Label ("");
-            package_name = new Gtk.Label ("");
+            package_author = new Gtk.Label (null);
+            package_name = new Gtk.Label (null);
+            package_summary = new Gtk.Label (null);
 
             action_button = new Widgets.HumbleButton ();
+            action_button_stack = new Gtk.Stack ();
+            action_button_stack.add_named (action_button, "CHILD");
+            action_button_stack.add_named (new Gtk.EventBox (), "NONE");
+            action_button_stack.hhomogeneous = false;
+
             action_button.download_requested.connect (() => {
                 if (settings.content_warning == true && package.is_explicit) {
                     content_warning = new Widgets.ContentWarningDialog (this.package_name.label);
@@ -150,27 +170,43 @@ namespace AppCenter {
             });
 
             uninstall_button = new Gtk.Button.with_label (_("Uninstall"));
+            uninstall_button_stack = new Gtk.Stack ();
+            uninstall_button_stack.add_named (uninstall_button, "CHILD");
+            uninstall_button_stack.add_named (new Gtk.EventBox (), "NONE");
+            uninstall_button_stack.hhomogeneous = false;
+
             uninstall_button.clicked.connect (() => uninstall_clicked.begin ());
 
             open_button = new Gtk.Button.with_label (_("Open"));
+            open_button_stack = new Gtk.Stack ();
+            open_button_stack.add_named (open_button, "CHILD");
+            open_button_stack.add_named (new Gtk.EventBox (), "NONE");
+            open_button_stack.hhomogeneous = false;
+
             open_button.clicked.connect (launch_package_app);
 
-            var button_grid = new Gtk.Grid ();
+            button_grid = new Gtk.Grid ();
             button_grid.column_spacing = 6;
-            button_grid.halign = Gtk.Align.END;
             button_grid.valign = Gtk.Align.CENTER;
-            button_grid.add (uninstall_button);
-            button_grid.add (action_button);
-            button_grid.add (open_button);
+            button_grid.halign = Gtk.Align.END;
+            button_grid.hexpand = false;
+
+            button_grid.add (uninstall_button_stack);
+            button_grid.add (action_button_stack);
+            button_grid.add (open_button_stack);
 
             progress_bar = new Gtk.ProgressBar ();
             progress_bar.show_text = true;
             progress_bar.valign = Gtk.Align.CENTER;
             /* Request a width large enough for the longest text to stop width of
-             * progress bar jumping around */
-            progress_bar.width_request = 350;
+             * progress bar jumping around, but allow space for long package names */
+            progress_bar.width_request = 250;
 
             cancel_button = new Gtk.Button.with_label (_("Cancel"));
+            /* Match button text size with that of HumbleButton */
+            cancel_button.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+            cancel_button.valign = Gtk.Align.END;
+            cancel_button.halign = Gtk.Align.END;
             cancel_button.clicked.connect (() => action_cancelled ());
 
             progress_grid = new Gtk.Grid ();
@@ -192,6 +228,12 @@ namespace AppCenter {
             action_stack.add_named (button_grid, "buttons");
             action_stack.add_named (progress_grid, "progress");
             action_stack.show_all ();
+
+            destroy.connect (() => {
+                if (state_source > 0) {
+                    GLib.Source.remove (state_source);
+                }
+            });
         }
 
         private void show_stripe_dialog (int amount) {
@@ -238,20 +280,26 @@ namespace AppCenter {
                 inner_image.gicon = package.get_icon (icon_size, scale_factor);
             }
 
-            package.notify["state"].connect (() => {
-                Idle.add (() => {
-                    update_state ();
-                    return false;
-                });
-            });
+            package.notify["state"].connect (on_package_state_changed);
 
-            package.change_information.bind_property ("can-cancel", cancel_button, "sensitive", GLib.BindingFlags.SYNC_CREATE);
             package.change_information.progress_changed.connect (update_progress);
             package.change_information.status_changed.connect (update_progress_status);
 
             update_progress_status ();
             update_progress ();
             update_state (true);
+        }
+
+        private void on_package_state_changed () {
+            if (state_source > 0) {
+                return;
+            }
+
+            state_source = Idle.add (() => {
+                update_state ();
+                state_source = 0U;
+                return GLib.Source.REMOVE;
+            });
         }
 
         protected virtual void update_state (bool first_update = false) {
@@ -271,23 +319,25 @@ namespace AppCenter {
 
             switch (package.state) {
                 case AppCenterCore.Package.State.NOT_INSTALLED:
+#if PAYMENTS
                     action_button.label = _("Free");
-
+#else
+                    action_button.label = _("Install");
+#endif
                     if (package.component.get_id () in settings.paid_apps) {
                         action_button.amount = 0;
                     }
 
-                    set_widget_visibility (uninstall_button, false);
-                    set_widget_visibility (action_button, !package.is_os_updates);
-                    set_widget_visibility (open_button, false);
-                    set_widget_visibility (progress_grid, false);
+                    set_stack_visibility (uninstall_button_stack, false);
+                    set_stack_visibility (action_button_stack, !package.is_os_updates);
+                    set_stack_visibility (open_button_stack, false);
 
                     break;
                 case AppCenterCore.Package.State.INSTALLED:
-                    set_widget_visibility (uninstall_button, show_uninstall && !is_os_updates);
-                    set_widget_visibility (action_button, package.should_pay && updates_view);
-                    set_widget_visibility (open_button, show_open && package.get_can_launch ());
-                    set_widget_visibility (progress_grid, false);
+                    set_stack_visibility (uninstall_button_stack, show_uninstall && !is_os_updates);
+                    set_stack_visibility (action_button_stack, package.should_pay && updates_view);
+                    set_stack_visibility (open_button_stack, show_open && package.get_can_launch ());
+
                     action_button.allow_free = false;
                     break;
                 case AppCenterCore.Package.State.UPDATE_AVAILABLE:
@@ -297,39 +347,42 @@ namespace AppCenter {
 
                     action_button.label = _("Update");
 
-                    set_widget_visibility (uninstall_button, show_uninstall && !is_os_updates);
-                    set_widget_visibility (action_button, true);
-                    set_widget_visibility (open_button, false);
-                    set_widget_visibility (progress_grid, false);
+                    set_stack_visibility (uninstall_button_stack, show_uninstall && !is_os_updates);
+                    set_stack_visibility (action_button_stack, true);
+                    set_stack_visibility (open_button_stack, false);
 
                     break;
                 case AppCenterCore.Package.State.INSTALLING:
                 case AppCenterCore.Package.State.UPDATING:
                 case AppCenterCore.Package.State.REMOVING:
-                    set_widget_visibility (uninstall_button, false);
-                    set_widget_visibility (action_button, false);
-                    set_widget_visibility (open_button, false);
-                    set_widget_visibility (progress_grid, true);
 
                     action_stack.set_visible_child_name ("progress");
                     break;
 
                 default:
-                    assert_not_reached ();
+                    critical ("Unrecognised package state %s", package.state.to_string ());
+                    break;
             }
         }
 
         protected void update_progress () {
-             progress_bar.fraction = package.progress;
-         }
+            Idle.add (() => {
+                progress_bar.fraction = package.progress;
+                return GLib.Source.REMOVE;
+            });
+        }
 
         protected virtual void update_progress_status () {
-            progress_bar.text = package.get_progress_description ();
-            /* Ensure progress bar shows complete to match status (lp:1606902) */
-            if (package.changes_finished) {
-                progress_bar.fraction = 1.0f;
-                cancel_button.sensitive = false;
-            }
+            Idle.add (() => {
+                progress_bar.text = package.get_progress_description ();
+                cancel_button.sensitive = package.change_information.can_cancel;
+                /* Ensure progress bar shows complete to match status (lp:1606902) */
+                if (package.changes_finished) {
+                    progress_bar.fraction = 1.0f;
+                }
+
+                return GLib.Source.REMOVE;
+            });
         }
 
         private void action_cancelled () {
@@ -389,12 +442,8 @@ namespace AppCenter {
                 Idle.add ((owned)callback);
                 return true;
             };
-            new Thread<bool> ("action_clicked", run);
 
-            set_widget_visibility (uninstall_button, false);
-            set_widget_visibility (action_button, false);
-            set_widget_visibility (open_button, false);
-            set_widget_visibility (progress_grid, true);
+            new Thread<bool> ("action_clicked", run);
 
             action_stack.set_visible_child_name ("progress");
 
@@ -402,7 +451,7 @@ namespace AppCenter {
 
             switch (result) {
                 case ActionResult.HIDE_BUTTON:
-                    set_widget_visibility (action_button, false);
+                    set_stack_visibility (action_button_stack, false);
                     break;
                 case ActionResult.ADD_TO_INSTALLED_SCREEN:
                     // Add this app to the Installed Apps View

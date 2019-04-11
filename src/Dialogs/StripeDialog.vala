@@ -322,7 +322,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         try {
             switch (entry) {
                 case 0:
-                    var regex = new Regex ("""[a-z|0-9]+@[a-z|0-9]+\.[a-z]+""");
+                    var regex = new Regex ("""^[^\s]+@[^\s]+\.[^\s]+$""");
                     email_valid = regex.match (new_text);
                     break;
                 case 1:

@@ -15,6 +15,39 @@
         </p>
     </description>
     <releases>
+        <release version="3.1.1" date="2019-02-14" urgency="medium">
+            <description>
+                <ul>
+                    <li>Meson build system fixes</li>
+                    <li>Improve window state restoration</li>
+                    <li>Prevent action buttons from jumping around</li>
+                    <li>Remove reset paid apps gsettings key</li>
+                    <li>Memory management refinements</li>
+                    <li>Add conditional compilation for disabling dynamic remote homepage content</li>
+                    <li>New translations</li>
+                </ul>
+            </description>
+        </release>
+        <release version="3.1.0" date="2019-01-02" urgency="medium">
+            <description>
+                <ul>
+                    <li>New categories: Communication, Finance, Media Production</li>
+                    <li>Add Math to Science category</li>
+                    <li>Relax email address validator</li>
+                    <li>Present update availability more accurately</li>
+                    <li>Category graphics revamped</li>
+                    <li>New translations</li>
+                </ul>
+            </description>
+        </release>
+        <release version="3.0.1" date="2018-10-25" urgency="medium">
+            <description>
+                <ul>
+                    <li>New translations</li>
+                </ul>
+            </description>
+        </release>
+        <release version="3.0" date="2018-10-16" urgency="medium"></release>
         <release version="0.2.9" date="2018-03-02" urgency="medium">
             <description>
                 <p>Bug fixes and improve performance.</p>

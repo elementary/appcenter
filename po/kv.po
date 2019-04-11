@@ -1,10 +1,11 @@
+# Aleksei <alekseivanov2008@yandex.ru>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-23 15:58-0700\n"
-"PO-Revision-Date: 2017-09-11 20:46+0000\n"
-"Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
+"POT-Creation-Date: 2019-01-02 07:28-0600\n"
+"PO-Revision-Date: 2018-11-17 00:01+0000\n"
+"Last-Translator: Aleksei <alekseivanov2008@yandex.ru>\n"
 "Language-Team: Komi <https://weblate.elementary.io/projects/appcenter/"
 "appcenter/kv/>\n"
 "Language: kv\n"
@@ -12,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.16\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -23,193 +24,179 @@ msgstr "AppCenter"
 #: src/Application.vala:106
 #, c-format
 msgid "Could not parse mimetype %s"
-msgstr ""
+msgstr "Эз артмы лӧсьӧдны mimetype %s"
 
 #: src/Application.vala:126
-#, fuzzy, c-format
+#, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr ""
-"No se pudo encontrar el link especificado '%s', buscando link alternativo"
+msgstr "Индӧм ыстӧд '%s' эз сюр, мӧдӧс корсьӧм"
 
 #: src/Application.vala:260
 msgid "Application installed"
-msgstr "Aplicación instalada"
+msgstr "Содтӧг пуктӧма"
 
 #: src/Application.vala:261
 #, c-format
 msgid "%s has been successfully installed"
-msgstr "%s ha sido instalado correctamente"
+msgstr "%s бура пуктӧма"
 
 #: src/Application.vala:273
-#, fuzzy, c-format
+#, c-format
 msgid "There Was An Error Installing %s."
-msgstr "Hubo un error al instalar %s"
+msgstr "Лоис торкалӧм %s пуктігӧн."
 
-#: src/MainWindow.vala:149 src/Views/Homepage.vala:252
-#: src/Views/Homepage.vala:261 src/Views/Homepage.vala:266
-#: src/Views/Homepage.vala:277
+#: src/MainWindow.vala:149 src/Views/Homepage.vala:282
+#: src/Views/Homepage.vala:291 src/Views/Homepage.vala:296
+#: src/Views/Homepage.vala:307
 msgid "Home"
-msgstr "Inicio"
+msgstr "Медшӧр"
 
 #: src/MainWindow.vala:150 src/Views/InstalledView.vala:29
-#: src/Views/InstalledView.vala:49
-#, fuzzy
+#: src/Views/InstalledView.vala:53
 msgctxt "view"
 msgid "Installed"
-msgstr "Instalando"
+msgstr "Пуктӧма"
 
-#: src/MainWindow.vala:177 src/MainWindow.vala:328 src/Views/SearchView.vala:54
+#: src/MainWindow.vala:177 src/MainWindow.vala:330 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:81
 msgid "Search Apps"
-msgstr "Buscar aplicaciones"
+msgstr "Содтӧг корсьӧм"
 
 #: src/MainWindow.vala:195
-#, fuzzy
 msgid "Network Is Not Available"
-msgstr "Captura de pantalla no disponible"
+msgstr "Вез абу судзана"
 
 #: src/MainWindow.vala:196
 msgid "Connect to the Internet to install or update apps."
-msgstr ""
+msgstr "Йитчӧй Ӧтуввезкӧд, медым сувтӧдны либӧ выльмӧдны содтӧгъяс."
 
 #: src/MainWindow.vala:199
 msgid "Network Settings…"
-msgstr ""
+msgstr "Вез муртӧс..."
 
 #: src/Core/ChangeInformation.vala:54
 msgid "Starting"
-msgstr "Iniciando"
+msgstr "Старт"
 
 #: src/Core/ChangeInformation.vala:56
-#, fuzzy
 msgid "Waiting"
-msgstr "Espere"
+msgstr "Виччысьӧм"
 
 #: src/Core/ChangeInformation.vala:58
 msgid "Running"
-msgstr "Iniciado"
+msgstr "Вӧчӧм"
 
 #: src/Core/ChangeInformation.vala:60
-#, fuzzy
 msgid "Querying"
-msgstr "Consultando"
+msgstr "Корӧм"
 
 #: src/Core/ChangeInformation.vala:62
 msgid "Getting information"
-msgstr "Obteniendo información"
+msgstr "Юӧр босьтӧм"
 
 #: src/Core/ChangeInformation.vala:64
 msgid "Removing packages"
-msgstr "Eliminando paquetes"
+msgstr "Пакет чышкӧм"
 
 #: src/Core/ChangeInformation.vala:66
 msgid "Downloading"
-msgstr "Descargando"
+msgstr "Кыскӧм"
 
 #: src/Core/ChangeInformation.vala:68
 msgid "Installing"
-msgstr "Instalando"
+msgstr "Сувтӧдӧм"
 
 #: src/Core/ChangeInformation.vala:70
 msgid "Refreshing software list"
-msgstr "Actualizando la lista de software"
+msgstr "Уджтасулов лыддьӧг выльмӧдӧм"
 
 #: src/Core/ChangeInformation.vala:72
 msgid "Installing updates"
-msgstr "Instalando actualizaciones"
+msgstr "Выльмӧдӧмъяс пуктӧм"
 
 #: src/Core/ChangeInformation.vala:74
 msgid "Cleaning up packages"
-msgstr "Limpiando paquetes"
+msgstr "Пакетъяс весалӧм"
 
 #: src/Core/ChangeInformation.vala:76
 msgid "Obsoleting packages"
-msgstr "Paquetes obsoletos"
+msgstr "Важмӧм пакетъяс"
 
 #: src/Core/ChangeInformation.vala:78
 msgid "Resolving dependencies"
-msgstr "Resolviendo dependencias"
+msgstr "Йитӧдъяс разьӧм"
 
 #: src/Core/ChangeInformation.vala:80
-#, fuzzy
 msgid "Checking signatures"
-msgstr "Comprobando firmas"
+msgstr "Кырымпас видлалӧм"
 
 #: src/Core/ChangeInformation.vala:82
 msgid "Testing changes"
-msgstr "Probando los cambios"
+msgstr "Вежсьӧмъяс видлалӧм"
 
 #: src/Core/ChangeInformation.vala:84
-#, fuzzy
 msgid "Committing changes"
-msgstr "Realizando los cambios"
+msgstr "Вежӧмъяс пыртӧм"
 
 #: src/Core/ChangeInformation.vala:86
-#, fuzzy
 msgid "Requesting data"
-msgstr "Solicitando datos"
+msgstr "Мыччӧдъяс корӧм"
 
 #: src/Core/ChangeInformation.vala:88
 msgid "Finished"
-msgstr "Terminado"
+msgstr "Эштӧма"
 
 #: src/Core/ChangeInformation.vala:90
 msgid "Cancelling"
-msgstr "Cancelando"
+msgstr "Дугӧдӧм"
 
 #: src/Core/ChangeInformation.vala:92
 msgid "Downloading repository information"
-msgstr "Descargando información del repositorio"
+msgstr "Репозиторий юӧр кыскӧм"
 
 #: src/Core/ChangeInformation.vala:94
 msgid "Downloading list of packages"
-msgstr "Descargando lista de paquetes"
+msgstr "Пакет лыддьӧг кыскӧм"
 
 #: src/Core/ChangeInformation.vala:96
 msgid "Downloading file lists"
-msgstr "Descargando listas de archivos"
+msgstr "Файл лыддьӧг кыскӧм"
 
 #: src/Core/ChangeInformation.vala:98
 msgid "Downloading lists of changes"
-msgstr "Descargando listas de cambios"
+msgstr "Вежсьӧм лыддьӧг кыскӧм"
 
 #: src/Core/ChangeInformation.vala:100
-#, fuzzy
 msgid "Downloading groups"
-msgstr "Descargando grupos"
+msgstr "Юкӧр кыскӧм"
 
 #: src/Core/ChangeInformation.vala:102
-#, fuzzy
 msgid "Downloading update information"
-msgstr "Descargando información de actualización"
+msgstr "Выльмӧдан юӧр кыскӧм"
 
 #: src/Core/ChangeInformation.vala:104
-#, fuzzy
 msgid "Repackaging files"
-msgstr "Reempaquetando archivos"
+msgstr "Файлъяс выльысь гартлӧм"
 
 #: src/Core/ChangeInformation.vala:106
 msgid "Loading cache"
-msgstr "Cargando caché"
+msgstr "Кэш пыртӧм"
 
 #: src/Core/ChangeInformation.vala:108
-#, fuzzy
 msgid "Scanning applications"
-msgstr "Escaneando aplicaciones"
+msgstr "Содтӧгъяс видлалӧм"
 
 #: src/Core/ChangeInformation.vala:110
 msgid "Generating package lists"
-msgstr "Generando listas de paquetes"
+msgstr "Вӧчны пакет лыддьӧг"
 
 #: src/Core/ChangeInformation.vala:112
-#, fuzzy
 msgid "Waiting for package manager lock"
-msgstr "Esperando al bloqueo del gestor de paquetes"
+msgstr "Гартлысь менеджкерлӧн тас виччысьӧм"
 
 #: src/Core/ChangeInformation.vala:114
-#, fuzzy
 msgid "Waiting for authentication"
-msgstr "Esperando autenticación"
+msgstr "Эскӧдӧм виччысьӧм"
 
 #: src/Core/ChangeInformation.vala:116
 msgid "Updating running applications"
@@ -231,57 +218,57 @@ msgstr "Copiando archivos"
 msgid "Unknown state"
 msgstr "Estado desconocido"
 
-#: src/Core/Client.vala:105
+#: src/Core/Client.vala:91
 msgid "Operating System Updates"
 msgstr "Actualizaciones del sistema"
 
-#: src/Core/Client.vala:106
+#: src/Core/Client.vala:92
 msgid "Updates to system components"
 msgstr "Actualizaciones de componentes del sistema"
 
-#: src/Core/Client.vala:141
+#: src/Core/Client.vala:151
 #, c-format
 msgid "%s (local)"
-msgstr ""
+msgstr "%s (local)"
 
-#: src/Core/Client.vala:466
+#: src/Core/Client.vala:476
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Actualización disponible"
 msgstr[1] "Actualizaciones disponibles"
 
-#: src/Core/Client.vala:467
+#: src/Core/Client.vala:477
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "%u actualización disponible para el sistema"
 msgstr[1] "%u actualizaciones disponibles para el sistema"
 
-#: src/Core/Client.vala:495
+#: src/Core/Client.vala:505
 #, c-format
 msgid "Version: %s"
-msgstr ""
+msgstr "Версия: %s"
 
-#: src/Core/Client.vala:504
+#: src/Core/Client.vala:514
 msgid "No components with updates"
-msgstr ""
+msgstr "Выльмӧдны нинӧм"
 
-#: src/Core/Client.vala:508
+#: src/Core/Client.vala:518
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u тор позьӧ выльмӧдны"
+msgstr[1] "%u тор позьӧ выльмӧдны"
 
-#: src/Core/Client.vala:510
+#: src/Core/Client.vala:520
 #, c-format
 msgid "%s:"
-msgstr ""
+msgstr "%s:"
 
 #: src/Core/Package.vala:235
-#, fuzzy, c-format
+#, c-format
 msgid "%s Developers"
-msgstr "Los desarrolladores de %s"
+msgstr "%s вӧчысь"
 
 #: src/Core/UpdateManager.vala:81
 msgid "Restart Required"
@@ -292,13 +279,14 @@ msgid "Please restart your system to finalize updates"
 msgstr "Reinicie el sistema para completar las actualizaciones"
 
 #: src/Dialogs/ContentWarningDialog.vala:27
+#, fuzzy
 msgid "Content Warning"
-msgstr ""
+msgstr "Контент ӧлӧдӧм"
 
 #: src/Dialogs/ContentWarningDialog.vala:32
 #, c-format
 msgid "%s Contains Explicit Content"
-msgstr ""
+msgstr "%s содтӧгын эм этштӧмтор"
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 #, c-format
@@ -307,19 +295,20 @@ msgid ""
 "disturbing. In general, elementary does not review or endorse the contents "
 "of this app."
 msgstr ""
+"%s содтӧгын вермас лоны эмтор сӧмын верстӧяслы либӧ повзьӧдана да дойдана "
+"эмтор. Elementary оз дорйы либӧ ошкы тайӧ содтӧглысь нурсӧ."
 
 #: src/Dialogs/ContentWarningDialog.vala:35
 msgid "Show content warnings"
-msgstr ""
+msgstr "Петкӧдлыны ӧлӧдӧм"
 
 #: src/Dialogs/ContentWarningDialog.vala:40
 msgid "Don’t Install"
-msgstr ""
+msgstr "Оз ков сувтӧдны"
 
 #: src/Dialogs/ContentWarningDialog.vala:41
-#, fuzzy
 msgid "Install Anyway"
-msgstr "Instalando"
+msgstr "Сувтӧдны"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -336,7 +325,7 @@ msgstr "Reiniciar"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:171
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:199
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -344,7 +333,7 @@ msgstr "Cancelar"
 msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
-msgstr ""
+msgstr "Видлалігӧн лоис торкалӧм. Видлӧй бара сёрӧнджык."
 
 #: src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
@@ -352,46 +341,46 @@ msgstr "Por favor, compruebe la información del pago e inténtelo de nuevo"
 
 #: src/Dialogs/StripeDialog.vala:76
 msgid "Payment"
-msgstr ""
+msgstr "Мынтӧм"
 
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
 msgid "Pay $%d for %s"
-msgstr ""
+msgstr "Мынтыны $%d %s содтӧгысь"
 
 #: src/Dialogs/StripeDialog.vala:96
 msgid ""
 "This is a one time payment. Your email address is only used to send you a "
 "receipt."
-msgstr ""
+msgstr "Тайӧ ӧтка вештысьӧм. Тіян email колӧ сӧмын индӧд ыстӧм вылӧ."
 
 #: src/Dialogs/StripeDialog.vala:106 src/Widgets/SharePopover.vala:35
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: src/Dialogs/StripeDialog.vala:108
 msgid ""
 "Your email address is only used to send a receipt. You will not be "
 "subscribed to any mailing list."
-msgstr ""
+msgstr "Тіян email колӧ сӧмын инӧд ыстӧм вылӧ. Ті онӧ гижӧдчӧй нинӧм вылӧ."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127
 msgid "MM / YY"
-msgstr ""
+msgstr "ТТ / ВВ"
 
 #: src/Dialogs/StripeDialog.vala:147
 msgid "CVC"
-msgstr ""
+msgstr "CVC"
 
 #: src/Dialogs/StripeDialog.vala:189
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Аскостса сёрнитчӧм"
 
 #: src/Dialogs/StripeDialog.vala:200 src/Dialogs/StripeDialog.vala:314
-#, fuzzy, c-format
+#, c-format
 msgid "Pay $%d.00"
-msgstr "Pagar %d.00$"
+msgstr "Мынтыны %d.00$"
 
 #: src/Dialogs/StripeDialog.vala:243
 msgid "Processing"
@@ -412,70 +401,70 @@ msgstr "Reintentar"
 #: src/Dialogs/StripeDialog.vala:513 src/Dialogs/StripeDialog.vala:578
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
-msgstr ""
+msgstr "Карта номӧр абу стӧч. Видлӧй бара стӧч карта номӧрӧн."
 
 #: src/Dialogs/StripeDialog.vala:515
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
-msgstr ""
+msgstr "Эштан тӧлысь абу стӧч. Видлӧй бара стӧч эштан дата индӧмӧн."
 
 #: src/Dialogs/StripeDialog.vala:517 src/Dialogs/StripeDialog.vala:575
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
-msgstr ""
+msgstr "Эштан во абу стӧч. Видлӧй бара стӧч эштан дата индӧмӧн."
 
 #: src/Dialogs/StripeDialog.vala:520 src/Dialogs/StripeDialog.vala:573
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr ""
+msgstr "CVC номӧр абу стӧч. Видлӧй бара стӧч CVC индӧмӧн."
 
 #: src/Dialogs/StripeDialog.vala:522 src/Dialogs/StripeDialog.vala:564
 msgid "The card has expired. Please try again with a different card."
-msgstr ""
+msgstr "Карталӧн уджалан кад эштӧма. Видлӧй бара мӧд картаӧн."
 
 #: src/Dialogs/StripeDialog.vala:542
 msgid "There are too many payment requests at the moment, please retry later."
-msgstr ""
+msgstr "Вывті уна мынтан шыӧдчӧм. Видлӧй сёрӧнджык."
 
 #: src/Dialogs/StripeDialog.vala:558
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
-msgstr ""
+msgstr "Тайӧ картаӧн оз позь вӧчны татшӧм мынтысьӧм. Видлӧй бара мӧд картаӧн."
 
 #: src/Dialogs/StripeDialog.vala:560
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
-msgstr ""
+msgstr "Валютаыс оз уджав тайӧ картанас. Видлӧй бара мӧд картаӧн."
 
 #: src/Dialogs/StripeDialog.vala:562
 msgid "The transaction has already been processed."
-msgstr ""
+msgstr "Мынтысьӧм вӧчӧма нин."
 
 #: src/Dialogs/StripeDialog.vala:566
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "postal code."
-msgstr ""
+msgstr "Пошта индӧсыс абу стӧч. Видлӧй бара колана пошта индӧсӧн."
 
 #: src/Dialogs/StripeDialog.vala:568
 msgid "You don't have enough funds. Please use an alternative payment method."
-msgstr ""
+msgstr "Оз тырмы сьӧмныд. Видлӧй бара мӧд мынтанногӧн."
 
 #: src/Dialogs/StripeDialog.vala:570
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr ""
+msgstr "Сьӧм лыд абу стӧч. Видлӧй бара колана сьӧм лыд индӧмӧн."
 
 #: src/Dialogs/StripeDialog.vala:581
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr ""
+msgstr "PIN номӧр абу стӧч. Вилоӧй бара колана PIN индӧмӧн."
 
 #: src/Dialogs/StripeDialog.vala:583
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
-msgstr ""
+msgstr "Вывті уна PIN видлӧм. Видлӧй бара мӧд картаӧн."
 
 #: src/Dialogs/StripeDialog.vala:603
 msgid ""
@@ -533,71 +522,71 @@ msgstr "Reportar un problema"
 msgid "Help"
 msgstr "Ayuda"
 
-#: src/Views/AppInfoView.vala:178
+#: src/Views/AppInfoView.vala:180
 msgid "What's New:"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:197
+#: src/Views/AppInfoView.vala:199
 msgid "Extensions:"
 msgstr "Extensiones:"
 
-#: src/Views/AppInfoView.vala:291
+#: src/Views/AppInfoView.vala:293
 #, c-format
 msgid "Other Apps by %s"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:325
+#: src/Views/AppInfoView.vala:327
 msgid "Link copied to clipboard"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:336
+#: src/Views/AppInfoView.vala:338
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:343
+#: src/Views/AppInfoView.vala:345
 msgid "Share"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:639
+#: src/Views/AppInfoView.vala:650
 msgid "Fund"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:661
+#: src/Views/AppInfoView.vala:672
 msgid "Fund the development of this app"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:59
+#: src/Views/AppListUpdateView.vala:56
 msgid "A restart is required to complete the installation of updates"
 msgstr ""
 "Se requiere reiniciar para completar la instalación de las actualizaciones"
 
-#: src/Views/AppListUpdateView.vala:67
+#: src/Views/AppListUpdateView.vala:64
 msgid "Restart Now"
 msgstr "Reiniciar ahora"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:162
+#: src/Views/AppListUpdateView.vala:158
 msgid "Update All"
 msgstr "Actualizar todo"
 
-#: src/Views/AppListView.vala:119
+#: src/Views/AppListView.vala:128
 msgid "Non-Curated Apps"
 msgstr ""
 
-#: src/Views/Homepage.vala:65
+#: src/Views/Homepage.vala:66
 msgid "Recently Updated"
 msgstr ""
 
-#: src/Views/Homepage.vala:81
+#: src/Views/Homepage.vala:82
 msgid "Trending"
 msgstr ""
 
-#: src/Views/Homepage.vala:97
+#: src/Views/Homepage.vala:98
 msgid "Categories"
 msgstr "Categorías"
 
-#: src/Views/Homepage.vala:266 src/Views/Homepage.vala:277
+#: src/Views/Homepage.vala:296 src/Views/Homepage.vala:307
 #, c-format
 msgid "Search %s"
 msgstr "Buscar %s"
@@ -629,67 +618,96 @@ msgstr "Las aplicaciones que necesitas al precio que te puedas permitir"
 msgid "Card Number"
 msgstr ""
 
-#: src/Widgets/CategoryFlowBox.vala:29
-msgid "Audio"
-msgstr "Audio"
-
-#: src/Widgets/CategoryFlowBox.vala:30
-msgid "Development"
-msgstr "Programación"
-
-#: src/Widgets/CategoryFlowBox.vala:40
+#: src/Widgets/CategoryFlowBox.vala:27
 msgid "Accessories"
 msgstr "Accesorios"
 
-#: src/Widgets/CategoryFlowBox.vala:41
-msgid "Office"
-msgstr "Ofimática"
+#: src/Widgets/CategoryFlowBox.vala:28
+msgid "Audio"
+msgstr "Audio"
+
+#: src/Widgets/CategoryFlowBox.vala:29
+#, fuzzy
+msgid "Communication"
+msgstr "Educación"
+
+#: src/Widgets/CategoryFlowBox.vala:38
+msgid "Development"
+msgstr "Programación"
 
 #: src/Widgets/CategoryFlowBox.vala:48
-msgid "System"
-msgstr "Sistema"
-
-#: src/Widgets/CategoryFlowBox.vala:52
-msgid "Video"
-msgstr "Vídeo"
-
-#: src/Widgets/CategoryFlowBox.vala:57
-msgid "Graphics"
-msgstr "Gráficos"
-
-#: src/Widgets/CategoryFlowBox.vala:66
-msgid "Games"
-msgstr "Juegos"
-
-#: src/Widgets/CategoryFlowBox.vala:82
 msgid "Education"
 msgstr "Educación"
 
-#: src/Widgets/CategoryFlowBox.vala:83
+#: src/Widgets/CategoryFlowBox.vala:49
+#, fuzzy
+msgid "Finance"
+msgstr "Cancelar"
+
+#: src/Widgets/CategoryFlowBox.vala:53
+msgid "Games"
+msgstr "Juegos"
+
+#: src/Widgets/CategoryFlowBox.vala:69
+msgid "Graphics"
+msgstr "Gráficos"
+
+#: src/Widgets/CategoryFlowBox.vala:78
 msgid "Internet"
 msgstr "Internet"
 
-#: src/Widgets/CategoryFlowBox.vala:87
-msgid "Science & Engineering"
+#: src/Widgets/CategoryFlowBox.vala:82
+#, fuzzy
+msgid "Math, Science, & Engineering"
 msgstr "Ciencia e ingeniería"
 
-#: src/Widgets/CategoryFlowBox.vala:106
+#: src/Widgets/CategoryFlowBox.vala:101
+msgid "Media Production"
+msgstr ""
+
+#: src/Widgets/CategoryFlowBox.vala:108
+msgid "Office"
+msgstr "Ofimática"
+
+#: src/Widgets/CategoryFlowBox.vala:115
+msgid "System"
+msgstr "Sistema"
+
+#: src/Widgets/CategoryFlowBox.vala:119
 msgid "Universal Access"
 msgstr "Acceso universal"
 
-#: src/Widgets/HumbleButton.vala:93
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:250
+#: src/Widgets/CategoryFlowBox.vala:120
+msgid "Video"
+msgstr "Vídeo"
+
+#: src/Widgets/CategoryFlowBox.vala:125
+msgid "Writing & Language"
+msgstr ""
+
+#: src/Widgets/HumbleButton.vala:85
+msgid "Requires payments, which are not enabled"
+msgstr ""
+
+#: src/Widgets/HumbleButton.vala:106
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:301
 msgid "Free"
 msgstr "Gratis"
 
+#: src/Widgets/HumbleButton.vala:108
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:303
+#, fuzzy
+msgid "Install"
+msgstr "Instalando"
+
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:127
+#: src/Widgets/HumbleButton.vala:142
 #, c-format
 msgid "$%d.00"
 msgstr "%d.00$"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:130
+#: src/Widgets/HumbleButton.vala:145
 #, c-format
 msgid "$%d"
 msgstr "%d$"
@@ -760,15 +778,15 @@ msgstr "Sistema actualizado"
 msgid "Drivers"
 msgstr ""
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:150
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:168
 msgid "Uninstall"
 msgstr "Desinstalar"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:153
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:176
 msgid "Open"
 msgstr "Abrir"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:274
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:326
 #, fuzzy
 msgid "Update"
 msgstr "Actualizar"
