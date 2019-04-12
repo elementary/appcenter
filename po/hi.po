@@ -62,7 +62,6 @@ msgstr "स्थापित"
 #: src/Views/SearchView.vala:81
 msgid "Search Apps"
 msgstr ""
-"\n"
 "ऐप्स खोजें"
 
 #: src/MainWindow.vala:195
@@ -72,7 +71,6 @@ msgstr "नेटवर्क उपलब्ध नहीं है"
 #: src/MainWindow.vala:196
 msgid "Connect to the Internet to install or update apps."
 msgstr ""
-"\n"
 "एप्लिकेशन इंस्टॉल करने या अपडेट करने के लिए इंटरनेट से कनेक्ट करें।"
 
 #: src/MainWindow.vala:199
