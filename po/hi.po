@@ -1,12 +1,13 @@
 # KSingh1980 <ksingh@sysmethod.com>, 2019.
 # Prachi Joshi <josprachi@yahoo.com>, 2019.
+# Cody Garver <cody@elementary.io>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
-"PO-Revision-Date: 2019-04-11 22:53+0000\n"
-"Last-Translator: KSingh1980 <ksingh@sysmethod.com>\n"
+"PO-Revision-Date: 2019-04-12 00:57+0000\n"
+"Last-Translator: Cody Garver <cody@elementary.io>\n"
 "Language-Team: Hindi <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/hi/>\n"
 "Language: hi\n"
@@ -61,9 +62,7 @@ msgstr "स्थापित"
 #: src/MainWindow.vala:177 src/MainWindow.vala:330 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:81
 msgid "Search Apps"
-msgstr ""
-"\n"
-"ऐप्स खोजें"
+msgstr "ऐप्स खोजें"
 
 #: src/MainWindow.vala:195
 msgid "Network Is Not Available"
@@ -71,9 +70,7 @@ msgstr "नेटवर्क उपलब्ध नहीं है"
 
 #: src/MainWindow.vala:196
 msgid "Connect to the Internet to install or update apps."
-msgstr ""
-"\n"
-"एप्लिकेशन इंस्टॉल करने या अपडेट करने के लिए इंटरनेट से कनेक्ट करें।"
+msgstr "एप्लिकेशन इंस्टॉल करने या अपडेट करने के लिए इंटरनेट से कनेक्ट करें।"
 
 #: src/MainWindow.vala:199
 msgid "Network Settings…"
