@@ -703,30 +703,11 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         unowned ChangeInformation.ProgressCallback cb = args.cb;
         var cancellable = args.cancellable;
 
-        var bundle = package.component.get_bundle (AppStream.BundleKind.FLATPAK);
-        if (bundle == null) {
-            job.result = Value (typeof (bool));
-            job.result.set_boolean (false);
-            job.results_ready ();
-            return;
-        }
-
-        Flatpak.Ref flatpak_ref;
-        try {
-            flatpak_ref = Flatpak.Ref.parse (bundle.get_id ());
-        } catch (Error e) {
-            critical ("Error parsing flatpak ref for update: %s", e.message);
-            job.result = Value (typeof (bool));
-            job.result.set_boolean (false);
-            job.results_ready ();
-            return;
-        }
-
         Flatpak.Installation installation;
         try {
             installation = new Flatpak.Installation.system ();
         } catch (Error e) {
-            critical ("Error getting default flatpak installation for update: %s", e.message);
+            critical ("Error getting default flatpak installation: %s", e.message);
             job.result = Value (typeof (bool));
             job.result.set_boolean (false);
             job.results_ready ();
@@ -735,26 +716,34 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
         var final_status = "";
 
+        Flatpak.Transaction transaction;
         try {
-            installation.update (
-                Flatpak.UpdateFlags.NONE,
-                Flatpak.RefKind.APP,
-                flatpak_ref.name,
-                flatpak_ref.arch,
-                flatpak_ref.branch,
-                (status, progress, estimating) => {
-                    final_status = status;
-                    cb (true, status, progress, ChangeInformation.Status.RUNNING);
-                },
-                cancellable
-            );
-
-            cb (false, final_status, 100, ChangeInformation.Status.FINISHED);
+            transaction = new Flatpak.Transaction.for_installation (installation, cancellable);
         } catch (Error e) {
-            if (e is GLib.IOError.CANCELLED) {
-                cb (false, final_status, 100, ChangeInformation.Status.CANCELLED);
-            } else {
-                critical ("Flatpak update failed: %s", e.message);
+            critical ("Error creating transaction for flatpak updates: %s", e.message);
+            job.result = Value (typeof (bool));
+            job.result.set_boolean (false);
+            job.results_ready ();
+            return;
+        }
+
+        foreach (var updatable in package.change_information.updatable_packages) {
+            if (updatable.backend != this) {
+                continue;
+            }
+
+            var parts = updatable.id.split ("/", 2);
+            if (parts.length != 2) {
+                job.result = Value (typeof (bool));
+                job.result.set_boolean (false);
+                job.results_ready ();
+                return;
+            }
+
+            try {
+                transaction.add_update (parts[1], null, null);
+            } catch (Error e) {
+                critical ("Error setting up transaction for flatpak update: %s", e.message);
                 job.result = Value (typeof (bool));
                 job.result.set_boolean (false);
                 job.results_ready ();
@@ -762,8 +751,57 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             }
         }
 
+        transaction.choose_remote_for_ref.connect ((@ref, runtime_ref, remotes) => {
+            if (remotes.length > 0) {
+                return 0;
+            } else {
+                return -1;
+            }
+        });
+
+        transaction.new_operation.connect ((operation, progress) => {
+            progress.changed.connect (() => {
+                if (cancellable.is_cancelled ()) {
+                    return;
+                }
+
+                cb (true, progress.get_status (), progress.get_progress (), ChangeInformation.Status.RUNNING);
+            });
+        });
+
+        bool success = false;
+
+        transaction.operation_error.connect ((operation, e, detail) => {
+            warning ("Flatpak installation failed: %s", e.message);
+            if (e is GLib.IOError.CANCELLED) {
+                cb (false, final_status, 100, ChangeInformation.Status.CANCELLED);
+                success = true;
+            } else {
+                return false;
+            }
+
+            return true;
+        });
+
+        transaction.operation_done.connect ((operation, commit, details) => {
+            success = true;
+        });
+
+        try {
+            transaction.run (cancellable);
+        } catch (Error e) {
+            if (e is GLib.IOError.CANCELLED) {
+                cb (false, final_status, 100, ChangeInformation.Status.CANCELLED);
+                success = true;
+            } else {
+                success = false;
+            }
+        }
+
+        message ("transaction done");
+
         job.result = Value (typeof (bool));
-        job.result.set_boolean (true);
+        job.result.set_boolean (success);
         job.results_ready ();
     }
 

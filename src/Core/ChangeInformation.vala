@@ -20,6 +20,11 @@
 
 public class AppCenterCore.ChangeInformation : Object {
 
+    public struct UpdatablePackage {
+        Backend backend;
+        string id;
+    }
+
     public enum Status {
         UNKNOWN,
         CANCELLED,
@@ -42,7 +47,7 @@ public class AppCenterCore.ChangeInformation : Object {
      */
     public signal void progress_changed ();
 
-    public Gee.TreeSet<string> updatable_ids { public get; private set; }
+    public Gee.ArrayList<UpdatablePackage?> updatable_packages { public get; private set; }
     public bool can_cancel { public get; private set; default=true; }
     public double progress { public get; private set; default=0.0f; }
     public Status status { public get; private set; default=Status.UNKNOWN; }
@@ -50,12 +55,12 @@ public class AppCenterCore.ChangeInformation : Object {
     public uint64 size;
 
     construct {
-        updatable_ids = new Gee.TreeSet<string> ();
+        updatable_packages = new Gee.ArrayList<UpdatablePackage?> ();
         size = 0;
     }
 
     public bool has_changes () {
-        return updatable_ids.size > 0;
+        return updatable_packages.size > 0;
     }
 
     public void start () {
@@ -83,7 +88,7 @@ public class AppCenterCore.ChangeInformation : Object {
     }
 
     public void clear_update_info () {
-         updatable_ids.clear ();
+         updatable_packages.clear ();
          size = 0;
      }
 

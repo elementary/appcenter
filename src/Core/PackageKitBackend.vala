@@ -490,8 +490,17 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 
         Pk.Exit exit_status = Pk.Exit.UNKNOWN;
         string[] packages_ids = {};
-        foreach (var pk_package in package.change_information.updatable_ids) {
-            packages_ids += pk_package;
+        foreach (var pk_package in package.change_information.updatable_packages) {
+            if (pk_package.backend == this) {
+                packages_ids += pk_package.id;
+            }
+        }
+
+        if (packages_ids.length == 0) {
+            job.result = Value (typeof (bool));
+            job.result.set_boolean (true);
+            job.results_ready ();
+            return;
         }
 
         packages_ids += null;
