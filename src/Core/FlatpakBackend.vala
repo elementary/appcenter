@@ -472,6 +472,10 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
         transaction.new_operation.connect ((operation, progress) => {
             progress.changed.connect (() => {
+                if (cancellable.is_cancelled ()) {
+                    return;
+                }
+
                 cb (true, progress.get_status (), progress.get_progress (), ChangeInformation.Status.RUNNING);
             });
         });
@@ -494,7 +498,16 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             success = true;
         });
 
-        transaction.run (cancellable);
+        try {
+            transaction.run (cancellable);
+        } catch (Error e) {
+            if (e is GLib.IOError.CANCELLED) {
+                cb (false, final_status, 100, ChangeInformation.Status.CANCELLED);
+                success = true;
+            } else {
+                success = false;
+            }
+        }
 
         message ("transaction done");
 
