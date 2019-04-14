@@ -18,7 +18,7 @@
  */
 
 public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
-    private async bool get_drivers_output (out string? output, Cancellable? cancellable = null) {
+    private async bool get_drivers_output (Cancellable? cancellable = null, out string? output = null) {
         output = null;
         string? drivers_exec_path = Environment.find_program_in_path ("ubuntu-drivers");
         if (drivers_exec_path == null) {
@@ -39,7 +39,7 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
     public async Gee.Collection<Package> get_installed_applications (Cancellable? cancellable = null) {
         var driver_list = new Gee.TreeSet<Package> ();
         string? command_output;
-        var result = yield get_drivers_output (out command_output, cancellable);
+        var result = yield get_drivers_output (cancellable, out command_output);
         if (!result || command_output == null || cancellable.is_cancelled ()) {
             return driver_list;
         }

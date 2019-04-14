@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
-"PO-Revision-Date: 2019-03-12 14:26+0000\n"
-"Last-Translator: alfa <dkotrada@gmail.com>\n"
+"PO-Revision-Date: 2019-04-10 09:36+0000\n"
+"Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ar/>\n"
 "Language: ar\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 3.4\n"
+"X-Generator: Weblate 3.5.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:24+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -241,10 +241,10 @@ msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "لا يتوفر تحديثات"
 msgstr[1] "يتوفر تحديث"
-msgstr[2] "يتوفر تحيدثان"
+msgstr[2] "يتوفر تحديثان"
 msgstr[3] "يتوفر بعض التحديثات"
-msgstr[4] "يتوفر  تحديثات"
-msgstr[5] "يتوفر  تحديثات"
+msgstr[4] "يتوفر تحديثات"
+msgstr[5] "يتوفر تحديثات"
 
 #: src/Core/Client.vala:477
 #, c-format
@@ -764,7 +764,7 @@ msgstr "تمبلر"
 
 #: src/Widgets/SharePopover.vala:59
 msgid "Telegram"
-msgstr "تليجرام"
+msgstr "تيليجرام"
 
 #: src/Widgets/SharePopover.vala:63
 msgid "Copy link"
@@ -774,7 +774,7 @@ msgstr "نسخ الرابط"
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
-msgstr[0] "لا يتوفر تحديات"
+msgstr[0] "لا يتوفر تحديثات"
 msgstr[1] "يتوفر تحديث"
 msgstr[2] "يتوفر تحديثان"
 msgstr[3] "يتوفر %u تحديثات"
