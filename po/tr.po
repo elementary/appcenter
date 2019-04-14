@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
-"PO-Revision-Date: 2019-04-05 20:52+0000\n"
+"PO-Revision-Date: 2019-04-11 22:53+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/tr/>\n"
@@ -694,7 +694,7 @@ msgstr "Matematik, Bilim ve Mühendislik"
 
 #: src/Widgets/CategoryFlowBox.vala:101
 msgid "Media Production"
-msgstr "İçerik Üretimi"
+msgstr "Medya Üretimi"
 
 #: src/Widgets/CategoryFlowBox.vala:108
 msgid "Office"

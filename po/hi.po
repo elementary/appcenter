@@ -1,18 +1,21 @@
+# KSingh1980 <ksingh@sysmethod.com>, 2019.
+# Prachi Joshi <josprachi@yahoo.com>, 2019.
+# Cody Garver <cody@elementary.io>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
-"PO-Revision-Date: 2018-03-19 04:42+0000\n"
-"Last-Translator: Anand Kumar <anand@anandkumar.net>\n"
-"Language-Team: Hindi <https://weblate.elementary.io/projects/appcenter/"
+"PO-Revision-Date: 2019-04-12 00:57+0000\n"
+"Last-Translator: Cody Garver <cody@elementary.io>\n"
+"Language-Team: Hindi <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/hi/>\n"
 "Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.5.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -23,12 +26,12 @@ msgstr "एपसेंटर"
 #: src/Application.vala:106
 #, c-format
 msgid "Could not parse mimetype %s"
-msgstr ""
+msgstr "%s मइम को पार्स नहीं किया जा सका"
 
 #: src/Application.vala:126
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr ""
+msgstr "दिए गए लिंक '%s' को खोजा नहीं जा सका,इसके बजाय खोजें"
 
 #: src/Application.vala:260
 msgid "Application installed"
@@ -48,34 +51,34 @@ msgstr "%s इनस्टॉल करने में चूक हुई ह�
 #: src/Views/Homepage.vala:291 src/Views/Homepage.vala:296
 #: src/Views/Homepage.vala:307
 msgid "Home"
-msgstr ""
+msgstr "होम"
 
 #: src/MainWindow.vala:150 src/Views/InstalledView.vala:29
 #: src/Views/InstalledView.vala:53
 msgctxt "view"
 msgid "Installed"
-msgstr ""
+msgstr "स्थापित"
 
 #: src/MainWindow.vala:177 src/MainWindow.vala:330 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:81
 msgid "Search Apps"
-msgstr ""
+msgstr "ऐप्स खोजें"
 
 #: src/MainWindow.vala:195
 msgid "Network Is Not Available"
-msgstr ""
+msgstr "नेटवर्क उपलब्ध नहीं है"
 
 #: src/MainWindow.vala:196
 msgid "Connect to the Internet to install or update apps."
-msgstr ""
+msgstr "एप्लिकेशन इंस्टॉल करने या अपडेट करने के लिए इंटरनेट से कनेक्ट करें।"
 
 #: src/MainWindow.vala:199
 msgid "Network Settings…"
-msgstr ""
+msgstr "नेटवर्क सेटिंग…"
 
 #: src/Core/ChangeInformation.vala:54
 msgid "Starting"
-msgstr ""
+msgstr "शुरु"
 
 #: src/Core/ChangeInformation.vala:56
 msgid "Waiting"
@@ -87,7 +90,7 @@ msgstr "चल रहा"
 
 #: src/Core/ChangeInformation.vala:60
 msgid "Querying"
-msgstr ""
+msgstr "पता कर रहा है"
 
 #: src/Core/ChangeInformation.vala:62
 msgid "Getting information"
