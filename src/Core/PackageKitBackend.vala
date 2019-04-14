@@ -675,7 +675,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         job.results_ready ();
     }
 
-    public async bool refresh_cache (Cancellable cancellable) throws GLib.Error {
+    public async bool refresh_cache (Cancellable? cancellable) throws GLib.Error {
         var job_args = new RefreshCacheArgs ();
         job_args.cancellable = cancellable;
 

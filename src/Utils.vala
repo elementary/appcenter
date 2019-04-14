@@ -40,7 +40,13 @@ namespace Utils {
     }
 
     public uint get_file_age (GLib.File file) {
-	    var info = file.query_info (FileAttribute.TIME_MODIFIED, FileQueryInfoFlags.NONE);
+        FileInfo info;
+        try {
+	        info = file.query_info (FileAttribute.TIME_MODIFIED, FileQueryInfoFlags.NONE);
+        } catch (Error e) {
+            warning ("Error while getting file age: %s", e.message);
+            return uint.MAX;
+        }
 
 	    if (info == null) {
             return uint.MAX;

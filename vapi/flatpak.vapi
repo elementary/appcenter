@@ -79,7 +79,7 @@ namespace Flatpak {
 		public bool uninstall_full (Flatpak.UninstallFlags flags, Flatpak.RefKind kind, string name, string? arch, string? branch, GLib.Cancellable? cancellable = null) throws GLib.Error;
 		public Flatpak.InstalledRef update (Flatpak.UpdateFlags flags, Flatpak.RefKind kind, string name, string? arch, string? branch, ProgressCallback cb, GLib.Cancellable? cancellable = null) throws GLib.Error;
 		public bool update_appstream_full_sync (string remote_name, string arch, bool? out_changed, GLib.Cancellable? cancellable = null) throws GLib.Error;
-		public bool update_appstream_sync (string remote_name, string arch, bool? out_changed, GLib.Cancellable? cancellable = null) throws GLib.Error;
+		public bool update_appstream_sync (string remote_name, string? arch, bool? out_changed, GLib.Cancellable? cancellable = null) throws GLib.Error;
 		public Flatpak.InstalledRef update_full (Flatpak.UpdateFlags flags, Flatpak.RefKind kind, string name, string? arch, string? branch, [CCode (array_length = false, array_null_terminated = true)] string[]? subpaths, GLib.Cancellable? cancellable = null) throws GLib.Error;
 		[Version (since = "0.6.13")]
 		public bool update_remote_sync (string name, GLib.Cancellable? cancellable = null) throws GLib.Error;

@@ -87,9 +87,22 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     public async Gee.Collection<Package> get_installed_applications (Cancellable? cancellable = null) {
         var installed_apps = new Gee.HashSet<Package> ();
 
-        var installation = new Flatpak.Installation.system ();
+        Flatpak.Installation installation;
+        try {
+            installation = new Flatpak.Installation.system ();
+        } catch (Error e) {
+            critical ("Unable to get system default flatpak installation when checking installed apps: %s", e.message);
+            return installed_apps;
+        }
 
-        var installed_refs = installation.list_installed_refs ();
+        GLib.GenericArray<weak Flatpak.InstalledRef> installed_refs;
+        try {
+            installed_refs = installation.list_installed_refs ();
+        } catch (Error e) {
+            critical ("Unable to get installed flatpaks: %s", e.message);
+            return installed_apps;
+        }
+
         for (int i = 0; i < installed_refs.length; i++) {
             if (cancellable.is_cancelled ()) {
                 break;
@@ -473,7 +486,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         delete doc;
     }
 
-    public async bool refresh_cache (Cancellable cancellable) throws GLib.Error {
+    public async bool refresh_cache (Cancellable? cancellable) throws GLib.Error {
         var job_args = new RefreshCacheArgs ();
         job_args.cancellable = cancellable;
 
@@ -769,10 +782,23 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     }
 
     public async Gee.ArrayList<string> get_updates (Cancellable? cancellable = null) {
-        var installation = new Flatpak.Installation.system ();
-        var update_refs = installation.list_installed_refs_for_update (cancellable);
-
         var updatable_ids = new Gee.ArrayList<string> ();
+
+        Flatpak.Installation installation;
+        try {
+            installation = new Flatpak.Installation.system ();
+        } catch (Error e) {
+            critical ("Unable to get default flatpak installation when checking for updates: %s", e.message);
+            return updatable_ids;
+        }
+
+        GLib.GenericArray<weak Flatpak.InstalledRef> update_refs;
+        try {
+            update_refs = installation.list_installed_refs_for_update (cancellable);
+        } catch (Error e) {
+            critical ("Unable to get list of updatable flatpaks: %s", e.message);
+            return updatable_ids;
+        }
 
         for (int i = 0; i < update_refs.length; i++) {
             unowned Flatpak.InstalledRef updatable_ref = update_refs[i];
