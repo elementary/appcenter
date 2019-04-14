@@ -18,6 +18,9 @@
  */
 
 public class AppCenterCore.FlatpakBackend : Backend, Object {
+    // AppStream data has to be 1 hour old before it's refreshed
+    public const uint MAX_APPSTREAM_AGE = 3600;
+
     private AsyncQueue<Job> jobs = new AsyncQueue<Job> ();
     private Thread<bool> worker_thread;
 
@@ -306,31 +309,30 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             }
 
             unowned string origin_name = remote.get_name ();
-            message ("Found remote: %s", origin_name);
+            debug ("Found remote: %s", origin_name);
 
             var timestamp_file = remote.get_appstream_timestamp (null);
             if (!timestamp_file.query_exists ()) {
                 cache_refresh_needed = true;
             } else {
                 var age = Utils.get_file_age (timestamp_file);
-                message ("Appstream age: %u", age);
-                if (age > 600) {
-                    message ("Appstream cache older than 10 mins, refreshing");
+                debug ("Appstream age: %u", age);
+                if (age > MAX_APPSTREAM_AGE) {
                     cache_refresh_needed = true;
                 }
             }
 
             if (cache_refresh_needed) {
-                message ("Updating remote");
+                debug ("Updating remote");
                 bool success = false;
                 try {
                     success = installation.update_remote_sync (remote.get_name ());
                 } catch (Error e) {
                     warning ("Unable to update remote: %s", e.message);
                 }
-                message ("Remote updated: %s", success.to_string ());
+                debug ("Remote updated: %s", success.to_string ());
 
-                message ("Updating appstream data");
+                debug ("Updating appstream data");
                 success = false;
                 try {
                     success = installation.update_appstream_sync (remote.get_name (), null, null, cancellable);
@@ -338,7 +340,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                     warning ("Unable to update appstream: %s", e.message);
                 }
 
-                message ("Appstream updated: %s", success.to_string ());
+                debug ("Appstream updated: %s", success.to_string ());
             }
 
             var metadata_location = remote.get_appstream_dir (null).get_path ();
@@ -390,7 +392,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         }
 
         appstream_pool.add_metadata_location (dest_folder_path);
-        message ("Loading pool");
+        debug ("Loading pool");
         try {
             appstream_pool.load ();
         } catch (Error e) {
@@ -406,10 +408,6 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 if (bundle != null) {
                     var package = new AppCenterCore.Package (this, comp);
                     var key = "%s/%s".printf (comp.get_origin (), bundle.get_id ());
-                    if (comp.get_origin () == "gnome-nightly") {
-                        message (key);
-                    }
-
                     package_list[key] = package;
                 }
             });
@@ -438,7 +436,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             while (!cancellable.is_cancelled () && (info = enumerator.next_file (cancellable)) != null) {
                 if (info.get_file_type () != FileType.DIRECTORY) {
                     var child = folder.resolve_relative_path (info.get_name ());
-                    message ("Deleting %s", child.get_path ());
+                    debug ("Deleting %s", child.get_path ());
                     child.delete ();
                 } else {
                     var child = folder.resolve_relative_path (info.get_name ());
@@ -592,8 +590,6 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 success = false;
             }
         }
-
-        message ("transaction done");
 
         job.result = Value (typeof (bool));
         job.result.set_boolean (success);
@@ -797,8 +793,6 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 success = false;
             }
         }
-
-        message ("transaction done");
 
         job.result = Value (typeof (bool));
         job.result.set_boolean (success);
