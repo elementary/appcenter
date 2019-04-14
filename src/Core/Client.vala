@@ -23,8 +23,6 @@ public class AppCenterCore.Client : Object {
      */
     public signal void installed_apps_changed ();
 
-    public Gee.ArrayList<unowned Backend> backends;
-
     public bool updating_cache { public get; private set; default = false; }
 
     public AppCenterCore.ScreenshotCache? screenshot_cache { get; construct; }
@@ -44,51 +42,23 @@ public class AppCenterCore.Client : Object {
     }
 
     construct {
-        backends = new Gee.ArrayList<unowned Backend> ();
-        backends.add (PackageKitBackend.get_default ());
-        backends.add (UbuntuDriversBackend.get_default ());
-
         cancellable = new GLib.Cancellable ();
     }
 
     public async Gee.Collection<AppCenterCore.Package> get_installed_applications (Cancellable? cancellable = null) {
-        var apps = new Gee.TreeSet<Package> ();
-        foreach (var backend in backends) {
-            if (cancellable.is_cancelled ()) {
-                break;
-            }
-
-            apps.add_all (yield backend.get_installed_applications (cancellable));
-        }
-
-        return apps;
+        return yield BackendAggregator.get_default ().get_installed_applications (cancellable);
     }
 
     public Gee.Collection<Package> get_applications_for_category (AppStream.Category category) {
-        var apps = new Gee.TreeSet<Package> ();
-        foreach (var backend in backends) {
-            apps.add_all (backend.get_applications_for_category (category));
-        }
-
-        return apps;
+        return BackendAggregator.get_default ().get_applications_for_category (category);
     }
 
     public Gee.Collection<Package> search_applications (string query, AppStream.Category? category) {
-        var apps = new Gee.TreeSet<Package> ();
-        foreach (var backend in backends) {
-            apps.add_all (backend.search_applications (query, category));
-        }
-
-        return apps;
+        return BackendAggregator.get_default ().search_applications (query, category);
     }
 
     public Gee.Collection<Package> search_applications_mime (string query) {
-        var apps = new Gee.TreeSet<Package> ();
-        foreach (var backend in backends) {
-            apps.add_all (backend.search_applications_mime (query));
-        }
-
-        return apps;
+        return BackendAggregator.get_default ().search_applications_mime (query);
     }
 
     public async void refresh_updates () {
@@ -197,39 +167,15 @@ public class AppCenterCore.Client : Object {
     }
 
     public Package? get_package_for_component_id (string id) {
-        Package? package;
-        foreach (var backend in backends) {
-            package = backend.get_package_for_component_id (id);
-            if (package != null) {
-                return package;
-            }
-        }
-
-        return null;
+        return BackendAggregator.get_default ().get_package_for_component_id (id);
     }
 
     public Package? get_package_for_desktop_id (string desktop_id) {
-        Package? package;
-        foreach (var backend in backends) {
-            package = backend.get_package_for_desktop_id (desktop_id);
-            if (package != null) {
-                return package;
-            }
-        }
-
-        return null;
+        return BackendAggregator.get_default ().get_package_for_desktop_id (desktop_id);
     }
 
     public Gee.Collection<Package> get_packages_by_author (string author, int max) {
-        var packages = new Gee.TreeSet<Package> ();
-        foreach (var backend in backends) {
-            packages.add_all (backend.get_packages_by_author (author, max));
-            if (packages.size >= max) {
-                break;
-            }
-        }
-
-        return packages;
+        return BackendAggregator.get_default ().get_packages_by_author (author, max);
     }
 
     private static GLib.Once<Client> instance;

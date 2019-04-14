@@ -19,6 +19,12 @@
  */
 
 public class AppCenterCore.ChangeInformation : Object {
+
+    public struct UpdatablePackage {
+        Backend backend;
+        string id;
+    }
+
     /**
      * This signal is likely to be fired from a non-main thread. Ensure any UI
      * logic driven from this runs on the GTK thread
@@ -30,7 +36,7 @@ public class AppCenterCore.ChangeInformation : Object {
      */
     public signal void progress_changed ();
 
-    public Gee.TreeSet<string> updatable_ids { public get; private set; }
+    public Gee.ArrayList<UpdatablePackage?> updatable_packages { public get; private set; }
     public bool can_cancel { public get; private set; default=true; }
     public Pk.Status status { public get; private set; }
     public double progress { public get; private set; }
@@ -42,7 +48,8 @@ public class AppCenterCore.ChangeInformation : Object {
     public uint64 size;
 
     construct {
-        updatable_ids = new Gee.TreeSet<string> ();
+        updatable_packages = new Gee.ArrayList<UpdatablePackage?> ();
+
         status = Pk.Status.SETUP;
         progress = 0.0f;
         current_progress = 0;
@@ -54,7 +61,7 @@ public class AppCenterCore.ChangeInformation : Object {
     }
 
     public bool has_changes () {
-        return updatable_ids.size > 0;
+        return updatable_packages.size > 0;
     }
 
     public string get_status_string () {
@@ -156,7 +163,7 @@ public class AppCenterCore.ChangeInformation : Object {
     }
 
     public void clear_update_info () {
-         updatable_ids.clear ();
+         updatable_packages.clear ();
          size = 0;
      }
 
