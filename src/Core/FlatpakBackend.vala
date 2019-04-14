@@ -257,7 +257,12 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         details.name = package.component.get_name ();
         details.description = package.component.get_description ();
         details.summary = package.component.get_summary ();
-        details.version = package.get_newest_release ().get_version ();
+
+        var newest_version = package.get_newest_release ();
+        if (newest_version != null) {
+            details.version = package.get_newest_release ().get_version ();
+        }
+
         return details;
     }
 
