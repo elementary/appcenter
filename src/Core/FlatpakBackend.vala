@@ -90,12 +90,12 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         var installation = new Flatpak.Installation.system ();
 
         var installed_refs = installation.list_installed_refs ();
-        for (int j = 0; j < installed_refs.length; j++) {
+        for (int i = 0; i < installed_refs.length; i++) {
             if (cancellable.is_cancelled ()) {
                 break;
             }
 
-            unowned Flatpak.InstalledRef installed_ref = installed_refs[j];
+            unowned Flatpak.InstalledRef installed_ref = installed_refs[i];
 
             if (installed_ref.kind == Flatpak.RefKind.RUNTIME) {
                 continue;
@@ -259,18 +259,35 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
         var dest_folder = File.new_for_path (dest_folder_path);
         if (!dest_folder.query_exists ()) {
-            dest_folder.make_directory_with_parents ();
+            try {
+                dest_folder.make_directory_with_parents ();
+            } catch (Error e) {
+                critical ("Error while creating flatpak metadata dir: %s", e.message);
+                return;
+            }
         }
 
         delete_folder_contents (dest_folder, cancellable);
 
-        var installation = new Flatpak.Installation.system ();
+        Flatpak.Installation installation;
+        try {
+            installation = new Flatpak.Installation.system ();
+        } catch (Error e) {
+            critical ("Error getting default flatpak installation: %s", e.message);
+            return;
+        }
 
-        var xremotes = installation.list_remotes ();
-        for (int j = 0; j < xremotes.length; j++) {
+        GLib.GenericArray<weak Flatpak.Remote> remotes = null;
+        try {
+            remotes = installation.list_remotes ();
+        } catch (Error e) {
+            critical ("Error getting flatpak remotes: %s", e.message);
+        }
+
+        for (int i = 0; i < remotes.length; i++) {
             bool cache_refresh_needed = false;
 
-            unowned Flatpak.Remote remote = xremotes[j];
+            unowned Flatpak.Remote remote = remotes[i];
             if (remote.get_disabled ()) {
                 continue;
             }
@@ -324,7 +341,12 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
                 var local_icons_path = dest_folder.get_child ("icons");
                 if (!local_icons_path.query_exists ()) {
-                    local_icons_path.make_directory ();
+                    try {
+                        local_icons_path.make_directory ();
+                    } catch (Error e) {
+                        warning ("Error creating flatpak icons structure, icons may not display: %s", e.message);
+                        continue;
+                    }
                 }
 
                 var remote_icons_folder = metadata_folder_file.get_child ("icons");
@@ -334,10 +356,20 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
                 if (remote_icons_folder.get_child (origin_name).query_exists ()) {
                     local_icons_path = local_icons_path.get_child (origin_name);
-                    local_icons_path.make_symbolic_link (remote_icons_folder.get_child (origin_name).get_path ());
+                    try {
+                        local_icons_path.make_symbolic_link (remote_icons_folder.get_child (origin_name).get_path ());
+                    } catch (Error e) {
+                        warning ("Error creating flatpak icons structure, icons may not display: %s", e.message);
+                        continue;
+                    }
                 } else {
                     local_icons_path = local_icons_path.get_child (origin_name);
-                    local_icons_path.make_symbolic_link (remote_icons_folder.get_path ());
+                    try {
+                        local_icons_path.make_symbolic_link (remote_icons_folder.get_path ());
+                    } catch (Error e) {
+                        warning ("Error creating flatpak icons structure, icons may not display: %s", e.message);
+                        continue;
+                    }
                 }
             } else {
                 continue;
@@ -376,23 +408,33 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     }
 
     private void delete_folder_contents (File folder, Cancellable? cancellable = null) {
-        var enumerator = folder.enumerate_children (
-            "standard::*",
-            FileQueryInfoFlags.NOFOLLOW_SYMLINKS,
-            cancellable
-        );
+        FileEnumerator enumerator;
+        try {
+            enumerator = folder.enumerate_children (
+                "standard::*",
+                FileQueryInfoFlags.NOFOLLOW_SYMLINKS,
+                cancellable
+            );
+        } catch (Error e) {
+            warning ("Unable to create enumerator to cleanup flatpak metadata: %s", e.message);
+            return;
+        }
 
         FileInfo info = null;
-        while ((info = enumerator.next_file (cancellable)) != null) {
-            if (info.get_file_type () != FileType.DIRECTORY) {
-                var child = folder.resolve_relative_path (info.get_name ());
-                message ("Deleting %s", child.get_path ());
-                child.delete ();
-            } else {
-                var child = folder.resolve_relative_path (info.get_name ());
-                delete_folder_contents (child, cancellable);
-                child.delete ();
+        try {
+            while (!cancellable.is_cancelled () && (info = enumerator.next_file (cancellable)) != null) {
+                if (info.get_file_type () != FileType.DIRECTORY) {
+                    var child = folder.resolve_relative_path (info.get_name ());
+                    message ("Deleting %s", child.get_path ());
+                    child.delete ();
+                } else {
+                    var child = folder.resolve_relative_path (info.get_name ());
+                    delete_folder_contents (child, cancellable);
+                    child.delete ();
+                }
             }
+        } catch (Error e) {
+            warning ("Error while cleaning up flatpak metadat directory: %s", e.message);
         }
     }
 
@@ -457,11 +499,40 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             return;
         }
 
-        var installation = new Flatpak.Installation.system ();
+        Flatpak.Installation installation;
+        try {
+            installation = new Flatpak.Installation.system ();
+        } catch (Error e) {
+            critical ("Error getting default flatpak installation: %s", e.message);
+            job.result = Value (typeof (bool));
+            job.result.set_boolean (false);
+            job.results_ready ();
+            return;
+        }
+
         var final_status = "";
 
-        var transaction = new Flatpak.Transaction.for_installation (installation, cancellable);
-        transaction.add_install (package.component.get_origin (), bundle.get_id (), null);
+        Flatpak.Transaction transaction;
+        try {
+            transaction = new Flatpak.Transaction.for_installation (installation, cancellable);
+        } catch (Error e) {
+            critical ("Error creating transaction for flatpak install: %s", e.message);
+            job.result = Value (typeof (bool));
+            job.result.set_boolean (false);
+            job.results_ready ();
+            return;
+        }
+
+        try {
+            transaction.add_install (package.component.get_origin (), bundle.get_id (), null);
+        } catch (Error e) {
+            critical ("Error setting up transaction for flatpak install: %s", e.message);
+            job.result = Value (typeof (bool));
+            job.result.set_boolean (false);
+            job.results_ready ();
+            return;
+        }
+
         transaction.choose_remote_for_ref.connect ((@ref, runtime_ref, remotes) => {
             if (remotes.length > 0) {
                 return 0;
@@ -544,9 +615,28 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             return;
         }
 
-        var flatpak_ref = Flatpak.Ref.parse (bundle.get_id ());
+        Flatpak.Ref flatpak_ref;
+        try {
+            flatpak_ref = Flatpak.Ref.parse (bundle.get_id ());
+        } catch (Error e) {
+            critical ("Error parsing flatpak ref for removal: %s", e.message);
+            job.result = Value (typeof (bool));
+            job.result.set_boolean (false);
+            job.results_ready ();
+            return;
+        }
 
-        var installation = new Flatpak.Installation.system ();
+        Flatpak.Installation installation;
+        try {
+            installation = new Flatpak.Installation.system ();
+        } catch (Error e) {
+            critical ("Error getting default flatpak installation for removal: %s", e.message);
+            job.result = Value (typeof (bool));
+            job.result.set_boolean (false);
+            job.results_ready ();
+            return;
+        }
+
         var final_status = "";
 
         try {
@@ -608,9 +698,28 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             return;
         }
 
-        var flatpak_ref = Flatpak.Ref.parse (bundle.get_id ());
+        Flatpak.Ref flatpak_ref;
+        try {
+            flatpak_ref = Flatpak.Ref.parse (bundle.get_id ());
+        } catch (Error e) {
+            critical ("Error parsing flatpak ref for update: %s", e.message);
+            job.result = Value (typeof (bool));
+            job.result.set_boolean (false);
+            job.results_ready ();
+            return;
+        }
 
-        var installation = new Flatpak.Installation.system ();
+        Flatpak.Installation installation;
+        try {
+            installation = new Flatpak.Installation.system ();
+        } catch (Error e) {
+            critical ("Error getting default flatpak installation for update: %s", e.message);
+            job.result = Value (typeof (bool));
+            job.result.set_boolean (false);
+            job.results_ready ();
+            return;
+        }
+
         var final_status = "";
 
         try {
@@ -632,7 +741,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             if (e is GLib.IOError.CANCELLED) {
                 cb (false, final_status, 100, ChangeInformation.Status.CANCELLED);
             } else {
-                warning ("Flatpak update failed: %s", e.message);
+                critical ("Flatpak update failed: %s", e.message);
                 job.result = Value (typeof (bool));
                 job.result.set_boolean (false);
                 job.results_ready ();
