@@ -103,7 +103,7 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
     }
 
     public async uint64 get_download_size (Package package, Cancellable? cancellable) throws GLib.Error {
-        assert_not_reached ();
+        return package.change_information.size;
     }
 
     public async bool is_package_installed (Package package) throws GLib.Error {
