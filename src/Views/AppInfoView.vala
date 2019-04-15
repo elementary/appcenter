@@ -266,8 +266,10 @@ namespace AppCenter.Views {
 
             var project_license = package.component.project_license;
             if (project_license != null) {
-                string? license_copy;
-                string? license_url;
+                string? license_copy = null;
+                string? license_url = null;
+
+                // NOTE: Ideally this would be handled in AppStream: https://github.com/ximion/appstream/issues/107
                 if (project_license.has_prefix ("LicenseRef")) {
                     // i.e. `LicenseRef-proprietary=https://example.com`
                     string[] split_license = project_license.split_set ("=", 2);
@@ -280,7 +282,7 @@ namespace AppCenter.Views {
                         case "public-domain":
                             // TRANSLATORS: See the Wikipedia page
                             license_copy = _("Public Domain");
-                            if (license_url != null) {
+                            if (license_url == null) {
                                 // TRANSLATORS: Replace the link with the version for your language
                                 license_url = _("https://en.wikipedia.org/wiki/Public_domain");
                             }
@@ -288,7 +290,7 @@ namespace AppCenter.Views {
                         case "free":
                             // TRANSLATORS: Freedom, not price. See the GNU page.
                             license_copy = _("Free Software");
-                            if (license_url != null) {
+                            if (license_url == null) {
                                 // TRANSLATORS: Replace the link with the version for your language
                                 license_url = _("https://www.gnu.org/philosophy/free-sw");
                             }
@@ -692,3 +694,4 @@ namespace AppCenter.Views {
         }
     }
 }
+
