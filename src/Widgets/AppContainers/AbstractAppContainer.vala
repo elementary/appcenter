@@ -66,6 +66,8 @@ namespace AppCenter {
         private Mutex action_mutex = Mutex ();
         private Cancellable action_cancellable = new Cancellable ();
 
+        private uint state_source = 0U;
+
         private enum ActionResult {
             NONE = 0,
             HIDE_BUTTON = 1,
@@ -226,6 +228,12 @@ namespace AppCenter {
             action_stack.add_named (button_grid, "buttons");
             action_stack.add_named (progress_grid, "progress");
             action_stack.show_all ();
+
+            destroy.connect (() => {
+                if (state_source > 0) {
+                    GLib.Source.remove (state_source);
+                }
+            });
         }
 
         private void show_stripe_dialog (int amount) {
@@ -272,20 +280,26 @@ namespace AppCenter {
                 inner_image.gicon = package.get_icon (icon_size, scale_factor);
             }
 
-            package.notify["state"].connect (() => {
-                Idle.add (() => {
-                    update_state ();
-                    return false;
-                });
-            });
+            package.notify["state"].connect (on_package_state_changed);
 
-            package.change_information.bind_property ("can-cancel", cancel_button, "sensitive", GLib.BindingFlags.SYNC_CREATE);
             package.change_information.progress_changed.connect (update_progress);
             package.change_information.status_changed.connect (update_progress_status);
 
             update_progress_status ();
             update_progress ();
             update_state (true);
+        }
+
+        private void on_package_state_changed () {
+            if (state_source > 0) {
+                return;
+            }
+
+            state_source = Idle.add (() => {
+                update_state ();
+                state_source = 0U;
+                return GLib.Source.REMOVE;
+            });
         }
 
         protected virtual void update_state (bool first_update = false) {
@@ -352,16 +366,23 @@ namespace AppCenter {
         }
 
         protected void update_progress () {
-             progress_bar.fraction = package.progress;
-         }
+            Idle.add (() => {
+                progress_bar.fraction = package.progress;
+                return GLib.Source.REMOVE;
+            });
+        }
 
         protected virtual void update_progress_status () {
-            progress_bar.text = package.get_progress_description ();
-            /* Ensure progress bar shows complete to match status (lp:1606902) */
-            if (package.changes_finished) {
-                progress_bar.fraction = 1.0f;
-                cancel_button.sensitive = false;
-            }
+            Idle.add (() => {
+                progress_bar.text = package.get_progress_description ();
+                cancel_button.sensitive = package.change_information.can_cancel;
+                /* Ensure progress bar shows complete to match status (lp:1606902) */
+                if (package.changes_finished) {
+                    progress_bar.fraction = 1.0f;
+                }
+
+                return GLib.Source.REMOVE;
+            });
         }
 
         private void action_cancelled () {

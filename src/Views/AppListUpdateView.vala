@@ -245,16 +245,20 @@ namespace AppCenter.Views {
             /* Not interested in any future changes for first_package */
             first_package.info_changed.disconnect (after_first_package_info_changed);
 
-            if (status != Pk.Status.CANCEL) { /* must  be running */
-                apps_remaining_started = true;
-                for (int i = 1; i < apps_to_update.size; i++) {
-                    apps_to_update[i].update.begin (() => {
-                        on_app_update_end ();
-                    });
+            Idle.add (() => {
+                if (status != Pk.Status.CANCEL) { /* must  be running */
+                    apps_remaining_started = true;
+                    for (int i = 1; i < apps_to_update.size; i++) {
+                        apps_to_update[i].update.begin (() => {
+                            on_app_update_end ();
+                        });
+                    }
+                } else { /* it was aborted - do not start updating the rest */
+                    finish_updating_all_apps ();
                 }
-            } else { /* it was aborted - do not start updating the rest */
-                finish_updating_all_apps ();
-            }
+
+                return GLib.Source.REMOVE;
+            });
         }
 
         private void on_app_update_end () {

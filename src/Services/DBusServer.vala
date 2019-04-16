@@ -29,7 +29,7 @@ public class DBusServer : Object {
         var client = AppCenterCore.Client.get_default ();
         var loop = new MainLoop ();
 
-        client.get_installed_applications.begin ((obj, res) => {
+        client.get_installed_applications.begin (null, (obj, res) => {
             client.get_installed_applications.end (res);
             loop.quit ();
         });

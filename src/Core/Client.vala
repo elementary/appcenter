@@ -51,10 +51,14 @@ public class AppCenterCore.Client : Object {
         cancellable = new GLib.Cancellable ();
     }
 
-    public async Gee.Collection<AppCenterCore.Package> get_installed_applications () {
+    public async Gee.Collection<AppCenterCore.Package> get_installed_applications (Cancellable? cancellable = null) {
         var apps = new Gee.TreeSet<Package> ();
         foreach (var backend in backends) {
-            apps.add_all (yield backend.get_installed_applications ());
+            if (cancellable.is_cancelled ()) {
+                break;
+            }
+
+            apps.add_all (yield backend.get_installed_applications (cancellable));
         }
 
         return apps;
