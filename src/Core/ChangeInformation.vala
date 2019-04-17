@@ -20,11 +20,6 @@
 
 public class AppCenterCore.ChangeInformation : Object {
 
-    public struct UpdatablePackage {
-        unowned Backend backend;
-        string id;
-    }
-
     public enum Status {
         UNKNOWN,
         CANCELLED,
