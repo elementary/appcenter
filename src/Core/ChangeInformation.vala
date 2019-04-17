@@ -19,12 +19,6 @@
  */
 
 public class AppCenterCore.ChangeInformation : Object {
-
-    public struct UpdatablePackage {
-        unowned Backend backend;
-        string id;
-    }
-
     /**
      * This signal is likely to be fired from a non-main thread. Ensure any UI
      * logic driven from this runs on the GTK thread
@@ -36,7 +30,7 @@ public class AppCenterCore.ChangeInformation : Object {
      */
     public signal void progress_changed ();
 
-    public Gee.ArrayList<UpdatablePackage?> updatable_packages { public get; private set; }
+    public Gee.MultiMap<unowned Backend, string> updatable_packages { public get; private set; }
     public bool can_cancel { public get; private set; default=true; }
     public Pk.Status status { public get; private set; }
     public double progress { public get; private set; }
@@ -48,7 +42,7 @@ public class AppCenterCore.ChangeInformation : Object {
     public uint64 size;
 
     construct {
-        updatable_packages = new Gee.ArrayList<UpdatablePackage?> ();
+        updatable_packages = new Gee.HashMultiMap<unowned Backend, string> ();
 
         status = Pk.Status.SETUP;
         progress = 0.0f;
@@ -57,6 +51,7 @@ public class AppCenterCore.ChangeInformation : Object {
         current_status = Pk.Status.SETUP;
         /* usually we have 2 transactions, each with 100% progress */
         progress_denom = 200.0f;
+
         size = 0;
     }
 
