@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-02 07:28-0600\n"
+"POT-Creation-Date: 2019-04-17 11:14-0700\n"
 "PO-Revision-Date: 2017-09-11 20:46+0000\n"
 "Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
 "Language-Team: Ukrainian <https://weblate.elementary.io/projects/appcenter/"
@@ -31,215 +31,202 @@ msgstr ""
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Вказане посилання «%s» не знайдено, пошук заміни"
 
-#: src/Application.vala:260
+#: src/Application.vala:264
 msgid "Application installed"
 msgstr "Додаток встановлено"
 
-#: src/Application.vala:261
+#: src/Application.vala:265
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s був успішно встановлений"
 
-#: src/Application.vala:273
+#: src/Application.vala:277
 #, fuzzy, c-format
 msgid "There Was An Error Installing %s."
 msgstr "Помилка встановлення %s"
 
-#: src/MainWindow.vala:149 src/Views/Homepage.vala:282
-#: src/Views/Homepage.vala:291 src/Views/Homepage.vala:296
-#: src/Views/Homepage.vala:307
+#: src/MainWindow.vala:157 src/Views/Homepage.vala:277
+#: src/Views/Homepage.vala:286 src/Views/Homepage.vala:291
+#: src/Views/Homepage.vala:302
 msgid "Home"
 msgstr "Домашня сторінка"
 
-#: src/MainWindow.vala:150 src/Views/InstalledView.vala:29
-#: src/Views/InstalledView.vala:53
+#: src/MainWindow.vala:158 src/Views/InstalledView.vala:32
+#: src/Views/InstalledView.vala:57
 msgctxt "view"
 msgid "Installed"
 msgstr "Встановлені"
 
-#: src/MainWindow.vala:177 src/MainWindow.vala:330 src/Views/SearchView.vala:54
+#: src/MainWindow.vala:185 src/MainWindow.vala:348 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:81
 msgid "Search Apps"
 msgstr "Шукати додатки"
 
-#: src/MainWindow.vala:195
+#: src/MainWindow.vala:203
 #, fuzzy
 msgid "Network Is Not Available"
 msgstr "Скріншот недоступний"
 
-#: src/MainWindow.vala:196
+#: src/MainWindow.vala:204
 msgid "Connect to the Internet to install or update apps."
 msgstr ""
 
-#: src/MainWindow.vala:199
+#: src/MainWindow.vala:207
 msgid "Network Settings…"
 msgstr ""
 
-#: src/Core/ChangeInformation.vala:54
+#: src/Core/ChangeInformation.vala:63
 msgid "Starting"
 msgstr "Запускається"
 
-#: src/Core/ChangeInformation.vala:56
+#: src/Core/ChangeInformation.vala:65
 msgid "Waiting"
 msgstr "Очікування"
 
-#: src/Core/ChangeInformation.vala:58
+#: src/Core/ChangeInformation.vala:67
 msgid "Running"
 msgstr "Виконання"
 
-#: src/Core/ChangeInformation.vala:60
+#: src/Core/ChangeInformation.vala:69
 msgid "Querying"
 msgstr "Виконання запиту"
 
-#: src/Core/ChangeInformation.vala:62
+#: src/Core/ChangeInformation.vala:71
 msgid "Getting information"
 msgstr "Отримання інформації"
 
-#: src/Core/ChangeInformation.vala:64
+#: src/Core/ChangeInformation.vala:73
 msgid "Removing packages"
 msgstr "Вилучення пакунків"
 
-#: src/Core/ChangeInformation.vala:66
+#: src/Core/ChangeInformation.vala:75
 msgid "Downloading"
 msgstr "Завантаження"
 
-#: src/Core/ChangeInformation.vala:68
+#: src/Core/ChangeInformation.vala:77
 msgid "Installing"
 msgstr "Встановлення"
 
-#: src/Core/ChangeInformation.vala:70
+#: src/Core/ChangeInformation.vala:79
 msgid "Refreshing software list"
 msgstr "Оновлення списку програм"
 
-#: src/Core/ChangeInformation.vala:72
+#: src/Core/ChangeInformation.vala:81
 msgid "Installing updates"
 msgstr "Встановлення оновлень"
 
-#: src/Core/ChangeInformation.vala:74
+#: src/Core/ChangeInformation.vala:83
 msgid "Cleaning up packages"
 msgstr "Вилучення зайвих пакунків"
 
-#: src/Core/ChangeInformation.vala:76
+#: src/Core/ChangeInformation.vala:85
 msgid "Obsoleting packages"
 msgstr "Вилучення застарілих пакунків"
 
-#: src/Core/ChangeInformation.vala:78
+#: src/Core/ChangeInformation.vala:87
 msgid "Resolving dependencies"
 msgstr "Розв’язання залежностей"
 
-#: src/Core/ChangeInformation.vala:80
+#: src/Core/ChangeInformation.vala:89
 msgid "Checking signatures"
 msgstr "Перевірка підписів"
 
-#: src/Core/ChangeInformation.vala:82
+#: src/Core/ChangeInformation.vala:91
 msgid "Testing changes"
 msgstr "Випробування змін"
 
-#: src/Core/ChangeInformation.vala:84
+#: src/Core/ChangeInformation.vala:93
 msgid "Committing changes"
 msgstr "Застосування змін"
 
-#: src/Core/ChangeInformation.vala:86
+#: src/Core/ChangeInformation.vala:95
 msgid "Requesting data"
 msgstr "Запит данних"
 
-#: src/Core/ChangeInformation.vala:88
+#: src/Core/ChangeInformation.vala:97
 msgid "Finished"
 msgstr "Завершено"
 
-#: src/Core/ChangeInformation.vala:90
+#: src/Core/ChangeInformation.vala:99
 msgid "Cancelling"
 msgstr "Скасування"
 
-#: src/Core/ChangeInformation.vala:92
+#: src/Core/ChangeInformation.vala:101
 msgid "Downloading repository information"
 msgstr "Звантаження інформації про сховище"
 
-#: src/Core/ChangeInformation.vala:94
+#: src/Core/ChangeInformation.vala:103
 msgid "Downloading list of packages"
 msgstr "Звантаження списку пакунків"
 
-#: src/Core/ChangeInformation.vala:96
+#: src/Core/ChangeInformation.vala:105
 msgid "Downloading file lists"
 msgstr "Звантаження списків файлів"
 
-#: src/Core/ChangeInformation.vala:98
+#: src/Core/ChangeInformation.vala:107
 msgid "Downloading lists of changes"
 msgstr "Звантаження списків змін"
 
-#: src/Core/ChangeInformation.vala:100
+#: src/Core/ChangeInformation.vala:109
 msgid "Downloading groups"
 msgstr "Звантаження груп"
 
-#: src/Core/ChangeInformation.vala:102
+#: src/Core/ChangeInformation.vala:111
 msgid "Downloading update information"
 msgstr "Звантаження інформації про оновлення"
 
-#: src/Core/ChangeInformation.vala:104
+#: src/Core/ChangeInformation.vala:113
 msgid "Repackaging files"
 msgstr "Перепакування файлів"
 
-#: src/Core/ChangeInformation.vala:106
+#: src/Core/ChangeInformation.vala:115
 msgid "Loading cache"
 msgstr "Завантаження кешу"
 
-#: src/Core/ChangeInformation.vala:108
+#: src/Core/ChangeInformation.vala:117
 msgid "Scanning applications"
 msgstr "Пошук програм"
 
-#: src/Core/ChangeInformation.vala:110
+#: src/Core/ChangeInformation.vala:119
 msgid "Generating package lists"
 msgstr "Створення списків пакунків"
 
-#: src/Core/ChangeInformation.vala:112
+#: src/Core/ChangeInformation.vala:121
 msgid "Waiting for package manager lock"
 msgstr "Очікування на блокування менеджера пакунків"
 
-#: src/Core/ChangeInformation.vala:114
+#: src/Core/ChangeInformation.vala:123
 msgid "Waiting for authentication"
 msgstr "Очікується завершення автентифікації"
 
-#: src/Core/ChangeInformation.vala:116
+#: src/Core/ChangeInformation.vala:125
 msgid "Updating running applications"
 msgstr "Оновлення списку запущенний програм"
 
-#: src/Core/ChangeInformation.vala:118
+#: src/Core/ChangeInformation.vala:127
 msgid "Checking applications in use"
 msgstr "Виявлення програм, що використовуються"
 
-#: src/Core/ChangeInformation.vala:120
+#: src/Core/ChangeInformation.vala:129
 msgid "Checking libraries in use"
 msgstr "Виявлення бібліотек, що використовуються"
 
-#: src/Core/ChangeInformation.vala:122
+#: src/Core/ChangeInformation.vala:131
 msgid "Copying files"
 msgstr "Копіювання файлів"
 
-#: src/Core/ChangeInformation.vala:124
+#: src/Core/ChangeInformation.vala:133
 msgid "Unknown state"
 msgstr "Невідомий стан"
 
-#: src/Core/Client.vala:91
-msgid "Operating System Updates"
-msgstr "Оновлення Операційної Системи"
-
-#: src/Core/Client.vala:92
-msgid "Updates to system components"
-msgstr "Оновлення системних компонетів"
-
-#: src/Core/Client.vala:151
-#, c-format
-msgid "%s (local)"
-msgstr ""
-
-#: src/Core/Client.vala:476
+#: src/Core/Client.vala:100
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Оновлення доступне"
 msgstr[1] "Оновлення доступні"
 msgstr[2] "Оновлень доступно"
 
-#: src/Core/Client.vala:477
+#: src/Core/Client.vala:101
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
@@ -247,16 +234,29 @@ msgstr[0] "%u оновлення доступне для вашої систем
 msgstr[1] "%u оновлення доступні для вашої системи"
 msgstr[2] "%u оновлень доступно для вашої системи"
 
-#: src/Core/Client.vala:505
+#: src/Core/Package.vala:248
+#, fuzzy, c-format
+msgid "%s Developers"
+msgstr "Розробники %s"
+
+#: src/Core/UpdateManager.vala:38
+msgid "Operating System Updates"
+msgstr "Оновлення Операційної Системи"
+
+#: src/Core/UpdateManager.vala:39
+msgid "Updates to system components"
+msgstr "Оновлення системних компонетів"
+
+#: src/Core/UpdateManager.vala:76
 #, c-format
 msgid "Version: %s"
 msgstr ""
 
-#: src/Core/Client.vala:514
+#: src/Core/UpdateManager.vala:82
 msgid "No components with updates"
 msgstr ""
 
-#: src/Core/Client.vala:518
+#: src/Core/UpdateManager.vala:86
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
@@ -264,21 +264,16 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: src/Core/Client.vala:520
+#: src/Core/UpdateManager.vala:88
 #, c-format
 msgid "%s:"
 msgstr ""
 
-#: src/Core/Package.vala:235
-#, fuzzy, c-format
-msgid "%s Developers"
-msgstr "Розробники %s"
-
-#: src/Core/UpdateManager.vala:81
+#: src/Core/UpdateManager.vala:129
 msgid "Restart Required"
 msgstr "Потрібно перезапуск"
 
-#: src/Core/UpdateManager.vala:82
+#: src/Core/UpdateManager.vala:130
 msgid "Please restart your system to finalize updates"
 msgstr "Будь-ласка, перезавантажте систему для завершення оновлення"
 
@@ -327,7 +322,7 @@ msgstr "Перезавантажити"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:199
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:205
 msgid "Cancel"
 msgstr "Скасувати"
 
@@ -501,69 +496,95 @@ msgid ""
 "or a corrupted sources file."
 msgstr ""
 
-#: src/Dialogs/UpdateFailDialog.vala:46
-msgid "Details"
-msgstr ""
-
-#: src/Dialogs/UpdateFailDialog.vala:54
+#: src/Dialogs/UpdateFailDialog.vala:34
 msgid "Ignore"
 msgstr ""
 
-#: src/Dialogs/UpdateFailDialog.vala:55
+#: src/Dialogs/UpdateFailDialog.vala:35
 msgid "Try Again"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:76
+#: src/Views/AppInfoView.vala:75
 msgid "Screenshot Not Available"
 msgstr "Скріншот недоступний"
 
-#: src/Views/AppInfoView.vala:133
+#: src/Views/AppInfoView.vala:130
 msgid "Homepage"
 msgstr "Домашня сторінка"
 
-#: src/Views/AppInfoView.vala:139
+#: src/Views/AppInfoView.vala:136
 msgid "Suggest Translations"
 msgstr "Запропонувати переклад"
 
-#: src/Views/AppInfoView.vala:145
+#: src/Views/AppInfoView.vala:142
 msgid "Report a Problem"
 msgstr "Повідомити про проблему"
 
-#: src/Views/AppInfoView.vala:151
+#: src/Views/AppInfoView.vala:148
 msgid "Help"
 msgstr "Допомога"
 
-#: src/Views/AppInfoView.vala:180
+#: src/Views/AppInfoView.vala:178
 msgid "What's New:"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:199
+#: src/Views/AppInfoView.vala:197
 msgid "Extensions:"
 msgstr "Розширення:"
 
-#: src/Views/AppInfoView.vala:293
+#. TRANSLATORS: See the Wikipedia page
+#: src/Views/AppInfoView.vala:284
+msgid "Public Domain"
+msgstr ""
+
+#. TRANSLATORS: Replace the link with the version for your language
+#: src/Views/AppInfoView.vala:287
+msgid "https://en.wikipedia.org/wiki/Public_domain"
+msgstr ""
+
+#. TRANSLATORS: Freedom, not price. See the GNU page.
+#: src/Views/AppInfoView.vala:292
+#, fuzzy
+msgid "Free Software"
+msgstr "Редагувати джерела ПЗ"
+
+#. TRANSLATORS: Replace the link with the version for your language
+#: src/Views/AppInfoView.vala:295
+msgid "https://www.gnu.org/philosophy/free-sw"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:299
+msgid "Proprietary"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:302
+#, fuzzy
+msgid "Unknown License"
+msgstr "Невідомий стан"
+
+#: src/Views/AppInfoView.vala:344
 #, c-format
 msgid "Other Apps by %s"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:327
+#: src/Views/AppInfoView.vala:378
 msgid "Link copied to clipboard"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:338
+#: src/Views/AppInfoView.vala:389
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:345
+#: src/Views/AppInfoView.vala:396
 msgid "Share"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:650
+#: src/Views/AppInfoView.vala:665
 msgid "Fund"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:672
+#: src/Views/AppInfoView.vala:687
 msgid "Fund the development of this app"
 msgstr ""
 
@@ -585,19 +606,19 @@ msgstr "Оновити все"
 msgid "Non-Curated Apps"
 msgstr "Немає додатків"
 
-#: src/Views/Homepage.vala:66
+#: src/Views/Homepage.vala:67
 msgid "Recently Updated"
 msgstr ""
 
-#: src/Views/Homepage.vala:82
+#: src/Views/Homepage.vala:83
 msgid "Trending"
 msgstr ""
 
-#: src/Views/Homepage.vala:98
+#: src/Views/Homepage.vala:99
 msgid "Categories"
 msgstr "Категорії"
 
-#: src/Views/Homepage.vala:296 src/Views/Homepage.vala:307
+#: src/Views/Homepage.vala:291 src/Views/Homepage.vala:302
 #, c-format
 msgid "Search %s"
 msgstr "Пошук %s"
@@ -701,12 +722,12 @@ msgid "Requires payments, which are not enabled"
 msgstr ""
 
 #: src/Widgets/HumbleButton.vala:106
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:301
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:323
 msgid "Free"
 msgstr "Безкоштовно"
 
 #: src/Widgets/HumbleButton.vala:108
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:303
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:325
 #, fuzzy
 msgid "Install"
 msgstr "Встановлені"
@@ -790,15 +811,15 @@ msgstr "Найновіші"
 msgid "Drivers"
 msgstr ""
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:168
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:172
 msgid "Uninstall"
 msgstr "Вилучити"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:176
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:180
 msgid "Open"
 msgstr "Відкрити"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:326
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:348
 msgid "Update"
 msgstr "Оновлення"
 
@@ -839,9 +860,6 @@ msgstr "Оновлення"
 
 #~ msgid "Remove"
 #~ msgstr "Вилучити"
-
-#~ msgid "Edit source software"
-#~ msgstr "Редагувати джерела ПЗ"
 
 #~ msgid "Software Sources"
 #~ msgstr "Джерела програмного забезпечення"
