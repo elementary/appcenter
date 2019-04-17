@@ -18,7 +18,7 @@
  */
 
 public class AppCenterCore.BackendAggregator : Backend, Object {
-    public Gee.ArrayList<unowned Backend> backends;
+    private Gee.ArrayList<unowned Backend> backends;
 
     construct {
         backends = new Gee.ArrayList<unowned Backend> ();
@@ -132,7 +132,7 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
     public async bool update_package (Package package, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
         var success = true;
         foreach (var backend in backends) {
-            if (!yield backend.update_package (package, cb, cancellable)) {
+            if (!yield backend.update_package (package, (owned) cb, cancellable)) {
                 success = false;
             }
         }

@@ -21,7 +21,7 @@
 public class AppCenterCore.ChangeInformation : Object {
 
     public struct UpdatablePackage {
-        Backend backend;
+        unowned Backend backend;
         string id;
     }
 
