@@ -728,12 +728,8 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             return;
         }
 
-        foreach (var updatable in package.change_information.updatable_packages) {
-            if (updatable.backend != this) {
-                continue;
-            }
-
-            var parts = updatable.id.split ("/", 2);
+        foreach (var updatable in package.change_information.updatable_packages[this]) {
+            var parts = updatable.split ("/", 2);
             if (parts.length != 2) {
                 job.result = Value (typeof (bool));
                 job.result.set_boolean (false);
