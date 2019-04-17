@@ -19,7 +19,15 @@
  */
 
 public class AppCenterCore.ChangeInformation : Object {
+    /**
+     * This signal is likely to be fired from a non-main thread. Ensure any UI
+     * logic driven from this runs on the GTK thread
+     */
     public signal void status_changed ();
+    /**
+     * This signal is likely to be fired from a non-main thread. Ensure any UI
+     * logic driven from this runs on the GTK thread
+     */
     public signal void progress_changed ();
 
     public Gee.TreeSet<string> updatable_ids { public get; private set; }
@@ -165,6 +173,7 @@ public class AppCenterCore.ChangeInformation : Object {
         switch (type) {
             case Pk.ProgressType.ALLOW_CANCEL:
                 can_cancel = progress.allow_cancel;
+                status_changed ();
                 break;
             case Pk.ProgressType.ITEM_PROGRESS:
                 if (current_status == Pk.Status.SETUP) {

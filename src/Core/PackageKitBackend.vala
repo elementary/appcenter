@@ -173,10 +173,14 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         return null;
     }
 
-    public async Gee.Collection<AppCenterCore.Package> get_installed_applications () {
+    public async Gee.Collection<AppCenterCore.Package> get_installed_applications (Cancellable? cancellable = null) {
         var packages = new Gee.TreeSet<AppCenterCore.Package> ();
         var installed = yield get_installed_packages ();
         foreach (var pk_package in installed) {
+            if (cancellable.is_cancelled ()) {
+                break;
+            }
+
             var package = package_list[pk_package.get_name ()];
             if (package != null) {
                 populate_package (package, pk_package);
@@ -300,14 +304,27 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
     }
 
     private void get_installed_packages_internal (Job job) {
+        var args = (GetInstalledPackagesArgs)job.args;
+        var cancellable = args.cancellable;
+
         Pk.Bitfield filter = Pk.Bitfield.from_enums (Pk.Filter.INSTALLED, Pk.Filter.NEWEST);
         var installed = new Gee.TreeSet<Pk.Package> ();
 
         try {
-            Pk.Results results = client.get_packages (filter, null, (prog, type) => {});
-            results.get_package_array ().foreach ((pk_package) => {
+            Pk.Results results = client.get_packages (filter, cancellable, (prog, type) => {});
+            var packages = results.get_package_array ();
+
+            for (int i = 0; i < packages.length; i++) {
+                if (cancellable.is_cancelled ()) {
+                    job.result = Value (typeof (Object));
+                    job.result.take_object (installed);
+                    job.results_ready ();
+                    return;
+                }
+
+                unowned Pk.Package pk_package = packages[i];
                 installed.add (pk_package);
-            });
+            }
 
         } catch (Error e) {
             critical (e.message);
@@ -318,8 +335,11 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         job.results_ready ();
     }
 
-    public async Gee.TreeSet<Pk.Package> get_installed_packages () {
-        var job = yield launch_job (Job.Type.GET_INSTALLED_PACKAGES);
+    public async Gee.TreeSet<Pk.Package> get_installed_packages (Cancellable? cancellable = null) {
+        var job_args = new GetInstalledPackagesArgs ();
+        job_args.cancellable = cancellable;
+
+        var job = yield launch_job (Job.Type.GET_INSTALLED_PACKAGES, job_args);
         return (Gee.TreeSet<Pk.Package>)job.result.get_object ();
     }
 

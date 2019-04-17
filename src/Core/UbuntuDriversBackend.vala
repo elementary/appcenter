@@ -18,7 +18,7 @@
  */
 
 public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
-    private async bool get_drivers_output (out string? output) {
+    private async bool get_drivers_output (Cancellable? cancellable = null, out string? output = null) {
         output = null;
         string? drivers_exec_path = Environment.find_program_in_path ("ubuntu-drivers");
         if (drivers_exec_path == null) {
@@ -28,7 +28,7 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
         Subprocess command;
         try {
             command = new Subprocess (SubprocessFlags.STDOUT_PIPE, drivers_exec_path, "list");
-            yield command.communicate_utf8_async (null, null, out output, null);
+            yield command.communicate_utf8_async (null, cancellable, out output, null);
         } catch (Error e) {
             return false;
         }
@@ -36,16 +36,20 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
         return command.get_exit_status () == 0;
     }
 
-    public async Gee.Collection<Package> get_installed_applications () {
+    public async Gee.Collection<Package> get_installed_applications (Cancellable? cancellable = null) {
         var driver_list = new Gee.TreeSet<Package> ();
         string? command_output;
-        var result = yield get_drivers_output (out command_output);
-        if (!result || command_output == null) {
+        var result = yield get_drivers_output (cancellable, out command_output);
+        if (!result || command_output == null || cancellable.is_cancelled ()) {
             return driver_list;
         }
 
         string[] tokens = command_output.split ("\n");
         for (int i = 0; i < tokens.length; i++) {
+            if (cancellable.is_cancelled ()) {
+                break;
+            }
+
             unowned string package_name = tokens[i];
             if (package_name.strip () == "") {
                 continue;

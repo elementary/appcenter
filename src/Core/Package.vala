@@ -55,6 +55,10 @@ public class AppCenterCore.Package : Object {
     };
 
     public signal void changing (bool is_changing);
+    /**
+     * This signal is likely to be fired from a non-main thread. Ensure any UI
+     * logic driven from this runs on the GTK thread
+     */
     public signal void info_changed (Pk.Status status);
 
     public enum State {
