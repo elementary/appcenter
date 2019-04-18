@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
-"PO-Revision-Date: 2019-04-11 22:53+0000\n"
+"PO-Revision-Date: 2019-04-19 22:58+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/tr/>\n"
@@ -260,7 +260,7 @@ msgstr "Sürüm: %s"
 
 #: src/Core/Client.vala:514
 msgid "No components with updates"
-msgstr "Güncelleme içeren bileşen yok"
+msgstr "Güncellenecek bileşen yok"
 
 #: src/Core/Client.vala:518
 #, c-format
@@ -575,7 +575,7 @@ msgstr "Bağlantı panoya kopyalandı"
 #: src/Views/AppInfoView.vala:338
 #, c-format
 msgid "Check out %s on AppCenter:"
-msgstr "AppCenter'da %s uygulamasına göz atın:"
+msgstr "%s uygulamasına göz atın:"
 
 #: src/Views/AppInfoView.vala:345
 msgid "Share"
