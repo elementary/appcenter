@@ -774,7 +774,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         return pk_package;
     }
 
-    public async void update_multiple_package_state (Gee.Collection<Package> packages) {
+    public async void update_multiple_package_state (Gee.Collection<Package> packages) throws GLib.Error {
         string[] query = {};
         foreach (var app in packages) {
             query += app.component.get_pkgnames ()[0];

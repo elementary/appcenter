@@ -203,7 +203,11 @@ namespace AppCenter {
                     package.update_state ();
                 }
             } else {
-                yield pk_client.update_multiple_package_state (packages.values);
+                try {
+                    yield pk_client.update_multiple_package_state (packages.values);
+                } catch (Error e) {
+                    warning ("Error while getting installed state of banner packages: %s", e.message);
+                }
             }
 
             foreach (var package in newest_ids) {
