@@ -42,6 +42,26 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 
     public bool working { get; private set; }
 
+    // The aptcc backend included in PackageKit < 1.1.10 wasn't able to support multiple packages
+    // passed to the search_names method at once. If we have a new enough version we can enable
+    // some optimisations when looking up packages
+    public bool supports_parallel_package_queries {
+        get {
+            var control = new Pk.Control ();
+            if (control.backend_name != "aptcc") {
+                return true;
+            }
+
+            if (control.version_major >= 1 &&
+                control.version_minor >= 1 &&
+                control.version_micro >= 10) {
+                return true;
+            }
+
+            return false;
+        }
+    }
+
     private bool worker_func () {
         while (thread_should_run) {
             last_action = new DateTime.now_local ();
@@ -207,6 +227,18 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         }
 
         return null;
+    }
+
+    public Gee.HashMap<string, AppCenterCore.Package> get_packages_for_component_ids (string[] ids) {
+        var packages = new Gee.HashMap<string, AppCenterCore.Package> ();
+        foreach (var id in ids) {
+            var package = get_package_for_component_id (id);
+            if (package != null) {
+                packages.set (id, package);
+            }
+        }
+
+        return packages;
     }
 
     public AppCenterCore.Package? get_package_for_desktop_id (string desktop_id) {
@@ -731,6 +763,33 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         }
 
         return pk_package;
+    }
+
+    public async void update_multiple_package_state (Gee.Collection<Package> packages) {
+        string[] query = {};
+        foreach (var app in packages) {
+            query += app.component.get_pkgnames ()[0];
+        }
+
+        if (query.length < 1) {
+            return;
+        }
+
+        query += null;
+
+        var filter = Pk.Bitfield.from_enums (Pk.Filter.NONE);
+
+        try {
+            var results = yield client.search_names_async (filter, query, null, () => {});
+            var array = results.get_package_array ();
+            array.foreach ((package) => {
+                if (package.info == Pk.Info.INSTALLED) {
+                    package_list[package.get_name ()].mark_installed ();
+                }
+            });
+        } catch (Error e) {
+            throw e;
+        }
     }
 
     private void get_package_details_internal (Job job) {
