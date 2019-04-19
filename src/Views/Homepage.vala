@@ -198,7 +198,7 @@ namespace AppCenter {
             packages.set_all (pk_client.get_packages_for_component_ids (updated_ids));
             packages.set_all (pk_client.get_packages_for_component_ids (trending_ids));
 
-            if (!pk_client.supports_parallel_package_queries) {
+            if (!AppCenterCore.PackageKitBackend.supports_parallel_package_queries) {
                 foreach (var package in packages.values) {
                     package.update_state ();
                 }

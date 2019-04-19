@@ -45,9 +45,8 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
     // The aptcc backend included in PackageKit < 1.1.10 wasn't able to support multiple packages
     // passed to the search_names method at once. If we have a new enough version we can enable
     // some optimisations when looking up packages
-    public bool supports_parallel_package_queries {
+    public static bool supports_parallel_package_queries {
         get {
-            var control = new Pk.Control ();
             if (control.backend_name != "aptcc") {
                 return true;
             }
@@ -59,6 +58,17 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
             }
 
             return false;
+        }
+    }
+
+    private static Pk.Control? _control;
+    private static unowned Pk.Control control {
+        get {
+            if (_control == null) {
+                _control = new Pk.Control ();
+            }
+
+            return _control;
         }
     }
 
@@ -118,7 +128,6 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 
         reload_appstream_pool ();
 
-        var control = new Pk.Control ();
         control.updates_changed.connect (updates_changed_callback);
     }
 
