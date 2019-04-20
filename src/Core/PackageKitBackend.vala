@@ -479,8 +479,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         }
 
         if (packages_ids.length == 0) {
-            job.result = Value (typeof (bool));
-            job.result.set_boolean (true);
+            job.result = true;
             job.results_ready ();
             return;
         }
