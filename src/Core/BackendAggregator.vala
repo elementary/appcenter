@@ -41,7 +41,20 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
     }
 
     public Gee.Collection<Package> get_applications_for_category (AppStream.Category category) {
-        var apps = new Gee.TreeSet<Package> ();
+        var apps = new Gee.TreeSet<Package> ((a, b) => {
+            var a_id = a.component.get_id ();
+            var b_id = b.component.get_id ();
+            if (a_id.has_suffix (".desktop")) {
+                a_id = a_id.substring (0, a_id.length + a_id.index_of_nth_char (-8));
+            }
+
+            if (b_id.has_suffix (".desktop")) {
+                b_id = b_id.substring (0, b_id.length + b_id.index_of_nth_char (-8));
+            }
+
+            return a_id.collate (b_id);
+        });
+
         foreach (var backend in backends) {
             apps.add_all (backend.get_applications_for_category (category));
         }
@@ -50,7 +63,20 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
     }
 
     public Gee.Collection<Package> search_applications (string query, AppStream.Category? category) {
-        var apps = new Gee.TreeSet<Package> ();
+        var apps = new Gee.TreeSet<Package> ((a, b) => {
+            var a_id = a.component.get_id ();
+            var b_id = b.component.get_id ();
+            if (a_id.has_suffix (".desktop")) {
+                a_id = a_id.substring (0, a_id.length + a_id.index_of_nth_char (-8));
+            }
+
+            if (b_id.has_suffix (".desktop")) {
+                b_id = b_id.substring (0, b_id.length + b_id.index_of_nth_char (-8));
+            }
+
+            return a_id.collate (b_id);
+        });
+
         foreach (var backend in backends) {
             apps.add_all (backend.search_applications (query, category));
         }
@@ -77,6 +103,19 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
         }
 
         return null;
+    }
+
+    public Gee.Collection<Package> get_packages_for_component_id (string id) {
+        var packages = new Gee.ArrayList<Package> ();
+        Package? package;
+        foreach (var backend in backends) {
+            package = backend.get_package_for_component_id (id);
+            if (package != null) {
+                packages.add (package);
+            }
+        }
+
+        return packages;
     }
 
     public Package? get_package_for_desktop_id (string desktop_id) {

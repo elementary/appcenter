@@ -258,6 +258,36 @@ public class AppCenterCore.Package : Object {
         }
     }
 
+    public Gee.Collection<Package> versions {
+        owned get {
+            return BackendAggregator.get_default ().get_packages_for_component_id (component.get_id ());
+        }
+    }
+
+    public bool has_multiple_versions {
+        get {
+            return versions.size > 1;
+        }
+    }
+
+    public string origin_description {
+        owned get {
+            if (backend is PackageKitBackend) {
+                if (component.get_origin () == APPCENTER_PACKAGE_ORIGIN) {
+                    return _("AppCenter Curated");
+                } else if (component.get_origin () == ELEMENTARY_STABLE_PACKAGE_ORIGIN || component.get_origin () == ELEMENTARY_DAILY_PACKAGE_ORIGIN) {
+                    return _("elementary Repository");
+                } else if (component.get_origin ().has_prefix ("ubuntu-")) {
+                    return _("Ubuntu Repository (non-curated)");
+                }
+            } else if (backend is FlatpakBackend) {
+                return _("%s Flatpak Repository").printf (component.get_origin ());
+            }
+
+            return _("Unknown Origin");
+        }
+    }
+
     private string? name = null;
     public string? description = null;
     private string? summary = null;
