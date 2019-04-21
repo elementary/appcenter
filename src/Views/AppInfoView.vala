@@ -213,11 +213,43 @@ namespace AppCenter.Views {
             /* Must wide enought to fit long package name and progress bar */
             header_grid.width_request = content_grid.width_request + 2 * (content_grid.margin - header_grid.margin);
             header_grid.hexpand = true;
-            header_grid.attach (image, 0, 0, 1, 2);
+            header_grid.attach (image, 0, 0, 1, 3);
             header_grid.attach (package_name, 1, 0);
+
+            var version_liststore = new Gtk.ListStore (2, typeof (AppCenterCore.Package), typeof (string));
+            var version_combo = new Gtk.ComboBox.with_model (version_liststore);
+            version_combo.changed.connect (() => {
+                Gtk.TreeIter iter;
+                AppCenterCore.Package selected_version;
+                version_combo.get_active_iter (out iter);
+                version_liststore.@get (iter, 0, out selected_version);
+                if (selected_version != null && selected_version != package) {
+                    show_other_package (selected_version);
+                }
+            });
+
+            version_combo.halign = Gtk.Align.START;
+            version_combo.valign = Gtk.Align.START;
+
+            Gtk.TreeIter iter;
+            int i = 0;
+            foreach (var version in package.versions) {
+                version_liststore.append (out iter);
+                version_liststore.set (iter, 0, version, 1, version.origin_description);
+                if (version == package) {
+                    version_combo.set_active (i);
+                }
+
+                i++;
+            }
+
+            var renderer = new Gtk.CellRendererText ();
+            version_combo.pack_start (renderer, true);
+            version_combo.add_attribute (renderer, "text", 1);
 
             if (!package.is_os_updates) {
                 header_grid.attach (package_author, 1, 1, 2);
+                header_grid.attach (version_combo, 1, 2, 2);
                 header_grid.attach (app_version, 2, 0, 1, 1);
             } else {
                 package_summary.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
