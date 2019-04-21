@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-02 07:28-0600\n"
-"PO-Revision-Date: 2019-04-19 22:58+0000\n"
+"PO-Revision-Date: 2019-04-22 22:05+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/tr/>\n"
@@ -33,12 +33,12 @@ msgstr "Uygulama Merkezi"
 #: src/Application.vala:106
 #, c-format
 msgid "Could not parse mimetype %s"
-msgstr "MIME Türü %s ayrıştırılamadı"
+msgstr "MIME türü %s ayrıştırılamadı"
 
 #: src/Application.vala:126
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr "Belirtilen '%s' bağlantısı bulunmadı, yerine başkası araştırılıyor"
+msgstr "Belirtilen '%s' bağlantısı bulunamadı, bunun yerine arama yapıldı"
 
 #: src/Application.vala:264
 msgid "Application installed"
@@ -352,7 +352,7 @@ msgstr "Ödeme"
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
 msgid "Pay $%d for %s"
-msgstr "%s için %d $ öde"
+msgstr "%s için %d$ öde"
 
 #: src/Dialogs/StripeDialog.vala:96
 msgid ""
