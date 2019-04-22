@@ -37,6 +37,8 @@ namespace AppCenter.Views {
         private Gtk.TextView app_description;
         private Widgets.Switcher screenshot_switcher;
         private Gtk.Stack app_download_stack;
+        private Gtk.ListStore version_liststore;
+        private Gtk.ComboBox version_combo;
 
         public AppInfoView (AppCenterCore.Package package) {
             Object (package: package);
@@ -216,8 +218,10 @@ namespace AppCenter.Views {
             header_grid.attach (image, 0, 0, 1, 3);
             header_grid.attach (package_name, 1, 0);
 
-            var version_liststore = new Gtk.ListStore (2, typeof (AppCenterCore.Package), typeof (string));
-            var version_combo = new Gtk.ComboBox.with_model (version_liststore);
+            version_liststore = new Gtk.ListStore (2, typeof (AppCenterCore.Package), typeof (string));
+            version_combo = new Gtk.ComboBox.with_model (version_liststore);
+            version_combo.halign = Gtk.Align.START;
+            version_combo.valign = Gtk.Align.START;
             version_combo.changed.connect (() => {
                 Gtk.TreeIter iter;
                 AppCenterCore.Package selected_version;
@@ -227,21 +231,6 @@ namespace AppCenter.Views {
                     show_other_package (selected_version);
                 }
             });
-
-            version_combo.halign = Gtk.Align.START;
-            version_combo.valign = Gtk.Align.START;
-
-            Gtk.TreeIter iter;
-            int i = 0;
-            foreach (var version in package.versions) {
-                version_liststore.append (out iter);
-                version_liststore.set (iter, 0, version, 1, version.origin_description);
-                if (version == package) {
-                    version_combo.set_active (i);
-                }
-
-                i++;
-            }
 
             var renderer = new Gtk.CellRendererText ();
             version_combo.pack_start (renderer, true);
@@ -535,6 +524,18 @@ namespace AppCenter.Views {
             if (cache == null) {
                 warning ("screenshots cannot be loaded, because the cache could not be created.\n");
                 return;
+            }
+
+            Gtk.TreeIter iter;
+            int selected_index = 0;
+            foreach (var version in package.versions) {
+                version_liststore.append (out iter);
+                version_liststore.set (iter, 0, version, 1, version.origin_description);
+                if (version == package) {
+                    version_combo.set_active (selected_index);
+                }
+
+                selected_index++;
             }
 
             new Thread<void*> ("content-loading", () => {

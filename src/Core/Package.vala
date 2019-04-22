@@ -74,7 +74,7 @@ public class AppCenterCore.Package : Object {
     public const string LOCAL_ID_SUFFIX = ".appcenter-local";
     public const string DEFAULT_PRICE_DOLLARS = "1";
 
-    public AppStream.Component component { get; construct; }
+    public AppStream.Component component { get; protected set; }
     public ChangeInformation change_information { public get; private set; }
     public GLib.Cancellable action_cancellable { public get; private set; }
     public State state { public get; private set; default = State.NOT_INSTALLED; }
@@ -314,6 +314,23 @@ public class AppCenterCore.Package : Object {
 
     public Package (Backend backend, AppStream.Component component) {
         Object (backend: backend, component: component);
+    }
+
+    public void replace_component (AppStream.Component component) {
+        name = null;
+        description = null;
+        summary = null;
+        color_primary = null;
+        color_primary_text = null;
+        payments_key = null;
+        suggested_amount = null;
+        _latest_version = null;
+        installed_cached = false;
+        _author = null;
+        _author_title = null;
+        backend_details = null;
+
+        this.component = component;
     }
 
     public void update_state () {
