@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-18 05:17-0500\n"
-"PO-Revision-Date: 2019-04-05 20:52+0000\n"
+"PO-Revision-Date: 2019-04-19 21:32+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/extra/"
 "tr/>\n"
@@ -53,7 +53,7 @@ msgstr "yükle;kaldır;sil;katalog;mağaza;uygulamalar;güncellemeler;yazılım;
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
-msgstr "Güncellemeleri Kontrol Et"
+msgstr "Güncellemeleri Denetle"
 
 #~ msgid "About AppCenter"
 #~ msgstr "Uygulama Merkezi Hakkında"
