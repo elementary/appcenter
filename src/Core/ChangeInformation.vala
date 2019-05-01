@@ -30,7 +30,7 @@ public class AppCenterCore.ChangeInformation : Object {
      */
     public signal void progress_changed ();
 
-    public Gee.TreeSet<string> updatable_ids { public get; private set; }
+    public Gee.MultiMap<unowned Backend, string> updatable_packages { public get; private set; }
     public bool can_cancel { public get; private set; default=true; }
     public Pk.Status status { public get; private set; }
     public double progress { public get; private set; }
@@ -42,7 +42,8 @@ public class AppCenterCore.ChangeInformation : Object {
     public uint64 size;
 
     construct {
-        updatable_ids = new Gee.TreeSet<string> ();
+        updatable_packages = new Gee.HashMultiMap<unowned Backend, string> ();
+
         status = Pk.Status.SETUP;
         progress = 0.0f;
         current_progress = 0;
@@ -50,11 +51,12 @@ public class AppCenterCore.ChangeInformation : Object {
         current_status = Pk.Status.SETUP;
         /* usually we have 2 transactions, each with 100% progress */
         progress_denom = 200.0f;
+
         size = 0;
     }
 
     public bool has_changes () {
-        return updatable_ids.size > 0;
+        return updatable_packages.size > 0;
     }
 
     public string get_status_string () {
@@ -156,7 +158,7 @@ public class AppCenterCore.ChangeInformation : Object {
     }
 
     public void clear_update_info () {
-         updatable_ids.clear ();
+         updatable_packages.clear ();
          size = 0;
      }
 
