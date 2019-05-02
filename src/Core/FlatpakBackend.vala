@@ -33,6 +33,8 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
     public bool working { get; private set; }
 
+    private string local_metadata_path;
+
     private bool worker_func () {
         while (thread_should_run) {
             working = false;
@@ -65,7 +67,13 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         appstream_pool.set_cache_flags (AppStream.CacheFlags.NONE);
         package_list = new Gee.HashMap<string, Package> (null, null);
 
-        refresh_cache.begin (null);
+        local_metadata_path = Path.build_filename (
+            Environment.get_user_cache_dir (),
+            "io.elementary.appcenter",
+            "flatpak-metadata"
+        );
+
+        reload_appstream_pool ();
     }
 
     ~FlatpakBackend () {
@@ -270,15 +278,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         var args = (RefreshCacheArgs)job.args;
         var cancellable = args.cancellable;
 
-        appstream_pool.clear_metadata_locations ();
-
-        var dest_folder_path = Path.build_filename (
-            Environment.get_user_cache_dir (),
-            "io.elementary.appcenter",
-            "flatpak-metadata"
-        );
-
-        var dest_folder = File.new_for_path (dest_folder_path);
+        var dest_folder = File.new_for_path (local_metadata_path);
         if (!dest_folder.query_exists ()) {
             try {
                 dest_folder.make_directory_with_parents ();
@@ -396,31 +396,52 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             }
         }
 
-        appstream_pool.add_metadata_location (dest_folder_path);
+        reload_appstream_pool ();
+
+        job.result = Value (typeof (bool));
+        job.result.set_boolean (true);
+        job.results_ready ();
+    }
+
+    private void reload_appstream_pool () {
+        appstream_pool.clear_metadata_locations ();
+        appstream_pool.add_metadata_location (local_metadata_path);
         debug ("Loading pool");
+
         try {
             appstream_pool.load ();
         } catch (Error e) {
-            warning (e.message);
+            critical (e.message);
         } finally {
+            var modified_packages = new Gee.TreeSet<string> ();
             var comp_validator = ComponentValidator.get_default ();
             appstream_pool.get_components ().foreach ((comp) => {
                 if (!comp_validator.validate (comp)) {
                     return;
                 }
 
-                var bundle = comp.get_bundle (AppStream.BundleKind.FLATPAK);
-                if (bundle != null) {
-                    var package = new AppCenterCore.Package (this, comp);
-                    var key = "%s/%s".printf (comp.get_origin (), bundle.get_id ());
-                    package_list[key] = package;
+                foreach (var pkg_name in comp.get_pkgnames ()) {
+                    modified_packages.add (pkg_name);
+                    var existing_package = package_list[pkg_name];
+                    if (existing_package != null) {
+                        existing_package.replace_component (comp);
+                    } else {
+                        package_list[pkg_name] = new AppCenterCore.Package (this, comp);
+                    }
                 }
             });
-        }
 
-        job.result = Value (typeof (bool));
-        job.result.set_boolean (true);
-        job.results_ready ();
+            var to_remove = new Gee.ArrayList<string> ();
+            foreach (var key in package_list.keys) {
+                if (!(key in modified_packages)) {
+                    to_remove.add (key);
+                }
+            }
+
+            foreach (var key in to_remove) {
+                package_list.unset (key);
+            }
+        }
     }
 
     private void delete_folder_contents (File folder, Cancellable? cancellable = null) {
