@@ -450,7 +450,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
             packages_ids += null;
 
             results = client.install_packages_sync (packages_ids, cancellable, (progress, status) => {
-                ProgressCallback (progress, status);
+                update_progress_status (progress, status);
                 cb (can_cancel, Utils.pk_status_to_string (this.status), (uint)(this.progress * 100.0f), pk_status_to_appcenter_status (this.status));
             });
 
@@ -504,7 +504,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 
         try {
             var results = client.update_packages_sync (packages_ids, cancellable, (progress, status) => {
-                ProgressCallback (progress, status);
+                update_progress_status (progress, status);
                 cb (can_cancel, Utils.pk_status_to_string (this.status), (uint)(this.progress * 100.0f), pk_status_to_appcenter_status (this.status));
             });
 
@@ -558,7 +558,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
             });
 
             results = client.remove_packages_sync (packages_ids, true, true, cancellable, (progress, status) => {
-                ProgressCallback (progress, status);
+                update_progress_status (progress, status);
                 cb (can_cancel, Utils.pk_status_to_string (this.status), (uint)(this.progress * 100.0f), pk_status_to_appcenter_status (this.status));
             });
 
@@ -801,7 +801,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         return (PackageDetails)job.result.get_object ();
     }
 
-    private void ProgressCallback (Pk.Progress progress, Pk.ProgressType type) {
+    private void update_progress_status (Pk.Progress progress, Pk.ProgressType type) {
         switch (type) {
             case Pk.ProgressType.ALLOW_CANCEL:
                 can_cancel = progress.allow_cancel;
