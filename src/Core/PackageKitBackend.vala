@@ -515,8 +515,14 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 
         Pk.Exit exit_status = Pk.Exit.UNKNOWN;
         string[] packages_ids = {};
-        foreach (var pk_package in package.change_information.updatable_ids) {
+        foreach (var pk_package in package.change_information.updatable_packages[this]) {
             packages_ids += pk_package;
+        }
+
+        if (packages_ids.length == 0) {
+            job.result = true;
+            job.results_ready ();
+            return;
         }
 
         packages_ids += null;
@@ -690,7 +696,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         job.results_ready ();
     }
 
-    public async bool refresh_cache (Cancellable cancellable) throws GLib.Error {
+    public async bool refresh_cache (Cancellable? cancellable) throws GLib.Error {
         var job_args = new RefreshCacheArgs ();
         job_args.cancellable = cancellable;
 
