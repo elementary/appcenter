@@ -451,7 +451,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 
             results = client.install_packages_sync (packages_ids, cancellable, (progress, status) => {
                 update_progress_status (progress, status);
-                cb (can_cancel, Utils.pk_status_to_string (this.status), (uint)(this.progress * 100.0f), pk_status_to_appcenter_status (this.status));
+                cb (can_cancel, Utils.pk_status_to_string (this.status), this.progress, pk_status_to_appcenter_status (this.status));
             });
 
             exit_status = results.get_exit_code ();
@@ -505,7 +505,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         try {
             var results = client.update_packages_sync (packages_ids, cancellable, (progress, status) => {
                 update_progress_status (progress, status);
-                cb (can_cancel, Utils.pk_status_to_string (this.status), (uint)(this.progress * 100.0f), pk_status_to_appcenter_status (this.status));
+                cb (can_cancel, Utils.pk_status_to_string (this.status), this.progress, pk_status_to_appcenter_status (this.status));
             });
 
             exit_status = results.get_exit_code ();
@@ -559,7 +559,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 
             results = client.remove_packages_sync (packages_ids, true, true, cancellable, (progress, status) => {
                 update_progress_status (progress, status);
-                cb (can_cancel, Utils.pk_status_to_string (this.status), (uint)(this.progress * 100.0f), pk_status_to_appcenter_status (this.status));
+                cb (can_cancel, Utils.pk_status_to_string (this.status), this.progress, pk_status_to_appcenter_status (this.status));
             });
 
             exit_status = results.get_exit_code ();
