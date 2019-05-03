@@ -433,13 +433,15 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                     return;
                 }
 
-                foreach (var pkg_name in comp.get_pkgnames ()) {
-                    modified_packages.add (pkg_name);
-                    var existing_package = package_list[pkg_name];
+                var bundle = comp.get_bundle (AppStream.BundleKind.FLATPAK);
+                if (bundle != null) {
+                    var key = "%s/%s".printf (comp.get_origin (), bundle.get_id ());
+                    modified_packages.add (key);
+                    var existing_package = package_list[key];
                     if (existing_package != null) {
                         existing_package.replace_component (comp);
                     } else {
-                        package_list[pkg_name] = new AppCenterCore.Package (this, comp);
+                        package_list[key] = new AppCenterCore.Package (this, comp);
                     }
                 }
             });
