@@ -28,7 +28,7 @@ public class AppCenterCore.ChangeInformation : Object {
         FINISHED
     }
 
-    public delegate void ProgressCallback (bool can_cancel, string status_description, uint progress, Status status);
+    public delegate void ProgressCallback (bool can_cancel, string status_description, double progress, Status status);
 
     /**
      * This signal is likely to be fired from a non-main thread. Ensure any UI
@@ -93,7 +93,7 @@ public class AppCenterCore.ChangeInformation : Object {
         progress = 0.0f;
     }
 
-    public void Callback (bool can_cancel, string status_description, uint progress, Status status) {
+    public void Callback (bool can_cancel, string status_description, double progress, Status status) {
         if (this.can_cancel != can_cancel || this.status_description != status_description || this.status != status) {
             this.can_cancel = can_cancel;
             this.status_description = status_description;
@@ -101,8 +101,8 @@ public class AppCenterCore.ChangeInformation : Object {
             status_changed ();
         }
 
-        if (this.progress != (progress / 100.0f)) {
-            this.progress = progress / 100.0f;
+        if (this.progress != progress) {
+            this.progress = progress;
             progress_changed ();
         }
     }

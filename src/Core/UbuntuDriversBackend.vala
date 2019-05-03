@@ -117,7 +117,7 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
         return yield PackageKitBackend.get_default ().get_package_details (package);
     }
 
-    public async bool refresh_cache (Cancellable? cancellable) {
+    public async bool refresh_cache (Cancellable? cancellable) throws GLib.Error {
         return true;
     }
 
