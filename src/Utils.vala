@@ -39,7 +39,7 @@ namespace Utils {
         }
     }
 
-    public static string pk_status_to_string (Pk.Status status) {
+    public static unowned string pk_status_to_string (Pk.Status status) {
         switch (status) {
             case Pk.Status.SETUP:
                 return _("Starting");
