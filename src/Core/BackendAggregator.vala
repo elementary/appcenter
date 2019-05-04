@@ -112,12 +112,8 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
         }
 
         var packages = new Gee.ArrayList<Package> ();
-        Package? package;
         foreach (var backend in backends) {
-            package = backend.get_package_for_component_id (package_id);
-            if (package != null) {
-                packages.add (package);
-            }
+            packages.add_all (backend.get_packages_for_component_id (package_id));
         }
 
         return packages;
