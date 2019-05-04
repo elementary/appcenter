@@ -220,6 +220,8 @@ namespace AppCenter.Views {
 
             version_liststore = new Gtk.ListStore (2, typeof (AppCenterCore.Package), typeof (string));
             version_combo = new Gtk.ComboBox.with_model (version_liststore);
+            version_combo.no_show_all = true;
+            version_combo.visible = false;
             version_combo.halign = Gtk.Align.START;
             version_combo.valign = Gtk.Align.START;
             version_combo.changed.connect (() => {
@@ -536,6 +538,11 @@ namespace AppCenter.Views {
                 }
 
                 selected_index++;
+
+                if (selected_index > 1) {
+                    version_combo.no_show_all = false;
+                    version_combo.show_all ();
+                }
             }
 
             new Thread<void*> ("content-loading", () => {
