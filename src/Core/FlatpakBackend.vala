@@ -413,7 +413,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         } catch (Error e) {
             critical (e.message);
         } finally {
-            var modified_packages = new Gee.TreeSet<string> ();
+            var new_package_list = new Gee.HashMap<string, Package> ();
             var comp_validator = ComponentValidator.get_default ();
             appstream_pool.get_components ().foreach ((comp) => {
                 if (!comp_validator.validate (comp)) {
@@ -423,26 +423,18 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 var bundle = comp.get_bundle (AppStream.BundleKind.FLATPAK);
                 if (bundle != null) {
                     var key = "%s/%s".printf (comp.get_origin (), bundle.get_id ());
-                    modified_packages.add (key);
-                    var existing_package = package_list[key];
-                    if (existing_package != null) {
-                        existing_package.replace_component (comp);
+                    var package = package_list[key];
+                    if (package != null) {
+                        package.replace_component (comp);
                     } else {
-                        package_list[key] = new AppCenterCore.Package (this, comp);
+                        package = new Package (this, comp);
                     }
+
+                    new_package_list[key] = package;
                 }
             });
 
-            var to_remove = new Gee.ArrayList<string> ();
-            foreach (var key in package_list.keys) {
-                if (!(key in modified_packages)) {
-                    to_remove.add (key);
-                }
-            }
-
-            foreach (var key in to_remove) {
-                package_list.unset (key);
-            }
+            package_list = new_package_list;
         }
     }
 
