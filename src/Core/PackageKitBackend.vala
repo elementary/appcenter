@@ -133,7 +133,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         } catch (Error e) {
             critical (e.message);
         } finally {
-            var modified_packages = new Gee.TreeSet<string> ();
+            var new_package_list = new Gee.HashMap<string, Package> ();
             var comp_validator = ComponentValidator.get_default ();
             appstream_pool.get_components ().foreach ((comp) => {
                 if (!comp_validator.validate (comp)) {
@@ -141,26 +141,18 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
                 }
 
                 foreach (var pkg_name in comp.get_pkgnames ()) {
-                    modified_packages.add (pkg_name);
-                    var existing_package = package_list[pkg_name];
-                    if (existing_package != null) {
-                        existing_package.replace_component (comp);
+                    var package = package_list[pkg_name];
+                    if (package != null) {
+                        package.replace_component (comp);
                     } else {
-                        package_list[pkg_name] = new AppCenterCore.Package (this, comp);
+                        package = new Package (this, comp);
                     }
+
+                    new_package_list[pkg_name] = package;
                 }
             });
 
-            var to_remove = new Gee.ArrayList<string> ();
-            foreach (var key in package_list.keys) {
-                if (!(key in modified_packages)) {
-                    to_remove.add (key);
-                }
-            }
-
-            foreach (var key in to_remove) {
-                package_list.unset (key);
-            }
+            package_list = new_package_list;
         }
     }
 
