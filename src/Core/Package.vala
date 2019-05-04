@@ -282,6 +282,8 @@ public class AppCenterCore.Package : Object {
                 }
             } else if (backend is FlatpakBackend) {
                 return _("%s Flatpak Repository").printf (component.get_origin ());
+            } else if (backend is UbuntuDriversBackend) {
+                return _("Ubuntu Repository Drivers");
             }
 
             return _("Unknown Origin");
