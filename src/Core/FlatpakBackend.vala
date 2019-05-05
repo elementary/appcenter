@@ -578,7 +578,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                     return;
                 }
 
-                cb (true, progress.get_status (), (double)progress.get_progress () / 100.0f, ChangeInformation.Status.RUNNING);
+                cb (true, _("Installing"), (double)progress.get_progress () / 100.0f, ChangeInformation.Status.RUNNING);
             });
         });
 
@@ -587,7 +587,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         transaction.operation_error.connect ((operation, e, detail) => {
             warning ("Flatpak installation failed: %s", e.message);
             if (e is GLib.IOError.CANCELLED) {
-                cb (false, final_status, 100, ChangeInformation.Status.CANCELLED);
+                cb (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);
                 success = true;
             } else {
                 return false;
@@ -604,7 +604,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             transaction.run (cancellable);
         } catch (Error e) {
             if (e is GLib.IOError.CANCELLED) {
-                cb (false, final_status, 100, ChangeInformation.Status.CANCELLED);
+                cb (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);
                 success = true;
             } else {
                 success = false;
@@ -676,15 +676,15 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 flatpak_ref.branch,
                 (status, progress, estimating) => {
                     final_status = status;
-                    cb (true, status, (double)progress / 100.0f, ChangeInformation.Status.RUNNING);
+                    cb (true, _("Uninstalling"), (double)progress / 100.0f, ChangeInformation.Status.RUNNING);
                 },
                 cancellable
             );
 
-            cb (false, final_status, 100, ChangeInformation.Status.FINISHED);
+            cb (false, _("Finishing"), 1.0f, ChangeInformation.Status.FINISHED);
         } catch (Error e) {
             if (e is GLib.IOError.CANCELLED) {
-                cb (false, final_status, 100, ChangeInformation.Status.CANCELLED);
+                cb (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);
             } else {
                 warning ("Flatpak removal failed: %s", e.message);
                 job.result = Value (typeof (bool));
@@ -777,7 +777,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                     return;
                 }
 
-                cb (true, progress.get_status (), (double)progress.get_progress () / 100.0f, ChangeInformation.Status.RUNNING);
+                cb (true, _("Updating"), (double)progress.get_progress () / 100.0f, ChangeInformation.Status.RUNNING);
             });
         });
 
@@ -786,7 +786,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         transaction.operation_error.connect ((operation, e, detail) => {
             warning ("Flatpak installation failed: %s", e.message);
             if (e is GLib.IOError.CANCELLED) {
-                cb (false, final_status, 100, ChangeInformation.Status.CANCELLED);
+                cb (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);
                 success = true;
             } else {
                 return false;
@@ -803,7 +803,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             transaction.run (cancellable);
         } catch (Error e) {
             if (e is GLib.IOError.CANCELLED) {
-                cb (false, final_status, 100, ChangeInformation.Status.CANCELLED);
+                cb (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);
                 success = true;
             } else {
                 success = false;
