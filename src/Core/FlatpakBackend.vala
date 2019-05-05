@@ -541,8 +541,6 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             return;
         }
 
-        var final_status = "";
-
         Flatpak.Transaction transaction;
         try {
             transaction = new Flatpak.Transaction.for_installation (installation, cancellable);
@@ -666,8 +664,6 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             return;
         }
 
-        var final_status = "";
-
         try {
             installation.uninstall (
                 Flatpak.RefKind.APP,
@@ -675,7 +671,6 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 flatpak_ref.arch,
                 flatpak_ref.branch,
                 (status, progress, estimating) => {
-                    final_status = status;
                     cb (true, _("Uninstalling"), (double)progress / 100.0f, ChangeInformation.Status.RUNNING);
                 },
                 cancellable
@@ -729,8 +724,6 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             job.results_ready ();
             return;
         }
-
-        var final_status = "";
 
         Flatpak.Transaction transaction;
         try {
