@@ -27,7 +27,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     private Gee.HashMap<string, Package> package_list;
     private AppStream.Pool appstream_pool;
 
-    // This is OK as we're only using a single thread (PackageKit can only do one job at a time)
+    // This is OK as we're only using a single thread
     // This would have to be done differently if there were multiple workers in the pool
     private bool thread_should_run = true;
 
