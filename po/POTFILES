@@ -2,6 +2,7 @@ src/Application.vala
 src/MainWindow.vala
 src/Settings.vala
 src/SuspendControl.vala
+src/Utils.vala
 src/Core/ChangeInformation.vala
 src/Core/Client.vala
 src/Core/ComponentValidator.vala

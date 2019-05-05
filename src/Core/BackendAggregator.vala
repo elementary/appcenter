@@ -125,11 +125,11 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
         return success;
     }
 
-    public async bool install_package (Package package, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+    public async bool install_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
         assert_not_reached ();
     }
 
-    public async bool update_package (Package package, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+    public async bool update_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
         var success = true;
         foreach (var backend in backends) {
             if (!yield backend.update_package (package, (owned) cb, cancellable)) {
@@ -140,7 +140,7 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
         return success;
     }
 
-    public async bool remove_package (Package package, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+    public async bool remove_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
         assert_not_reached ();
     }
 

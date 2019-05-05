@@ -59,7 +59,7 @@ public class AppCenterCore.Package : Object {
      * This signal is likely to be fired from a non-main thread. Ensure any UI
      * logic driven from this runs on the GTK thread
      */
-    public signal void info_changed (Pk.Status status);
+    public signal void info_changed (ChangeInformation.Status status);
 
     public enum State {
         NOT_INSTALLED,
@@ -74,7 +74,7 @@ public class AppCenterCore.Package : Object {
     public const string LOCAL_ID_SUFFIX = ".appcenter-local";
     public const string DEFAULT_PRICE_DOLLARS = "1";
 
-    public AppStream.Component component { get; construct; }
+    public AppStream.Component component { get; protected set; }
     public ChangeInformation change_information { public get; private set; }
     public GLib.Cancellable action_cancellable { public get; private set; }
     public State state { public get; private set; default = State.NOT_INSTALLED; }
@@ -150,7 +150,7 @@ public class AppCenterCore.Package : Object {
 
     public bool changes_finished {
         get {
-            return change_information.status == Pk.Status.FINISHED;
+            return change_information.status == ChangeInformation.Status.FINISHED;
         }
     }
 
@@ -286,6 +286,23 @@ public class AppCenterCore.Package : Object {
         Object (backend: backend, component: component);
     }
 
+    public void replace_component (AppStream.Component component) {
+        name = null;
+        description = null;
+        summary = null;
+        color_primary = null;
+        color_primary_text = null;
+        payments_key = null;
+        suggested_amount = null;
+        _latest_version = null;
+        installed_cached = false;
+        _author = null;
+        _author_title = null;
+        backend_details = null;
+
+        this.component = component;
+    }
+
     public void update_state () {
         if (installed) {
             if (change_information.has_changes ()) {
@@ -378,7 +395,7 @@ public class AppCenterCore.Package : Object {
     }
 
     private async bool perform_package_operation () throws GLib.Error {
-        Pk.ProgressCallback cb = change_information.ProgressCallback;
+        ChangeInformation.ProgressCallback cb = change_information.Callback;
         var client = AppCenterCore.Client.get_default ();
 
         switch (state) {
@@ -466,7 +483,7 @@ public class AppCenterCore.Package : Object {
     }
 
     public string get_progress_description () {
-        return change_information.get_status_string ();
+        return change_information.status_description;
     }
 
     public GLib.Icon get_icon (uint size, uint scale_factor) {

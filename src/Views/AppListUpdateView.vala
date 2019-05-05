@@ -234,11 +234,11 @@ namespace AppCenter.Views {
             }
         }
 
-        private void after_first_package_info_changed (Pk.Status status) {
+        private void after_first_package_info_changed (AppCenterCore.ChangeInformation.Status status) {
             assert (!apps_remaining_started);
 
             /* Only interested if the first package has started running or has been cancelled (before starting) */
-            if (status != Pk.Status.CANCEL && status != Pk.Status.RUNNING) {
+            if (status != AppCenterCore.ChangeInformation.Status.CANCELLED && status != AppCenterCore.ChangeInformation.Status.RUNNING) {
                 return;
             }
 
@@ -246,7 +246,7 @@ namespace AppCenter.Views {
             first_package.info_changed.disconnect (after_first_package_info_changed);
 
             Idle.add (() => {
-                if (status != Pk.Status.CANCEL) { /* must  be running */
+                if (status != AppCenterCore.ChangeInformation.Status.CANCELLED) { /* must  be running */
                     apps_remaining_started = true;
                     for (int i = 1; i < apps_to_update.size; i++) {
                         apps_to_update[i].update.begin (() => {
