@@ -128,24 +128,31 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
     }
 
     private void reload_appstream_pool () {
-        package_list.clear ();
-
         try {
             appstream_pool.load ();
         } catch (Error e) {
             critical (e.message);
         } finally {
+            var new_package_list = new Gee.HashMap<string, Package> ();
             var comp_validator = ComponentValidator.get_default ();
             appstream_pool.get_components ().foreach ((comp) => {
                 if (!comp_validator.validate (comp)) {
                     return;
                 }
 
-                var package = new AppCenterCore.Package (this, comp);
-                foreach (var pkg_name in comp.get_pkgnames ()) {
-                    package_list[pkg_name] = package;
+                foreach (unowned string pkg_name in comp.get_pkgnames ()) {
+                    var package = package_list[pkg_name];
+                    if (package != null) {
+                        package.replace_component (comp);
+                    } else {
+                        package = new Package (this, comp);
+                    }
+
+                    new_package_list[pkg_name] = package;
                 }
             });
+
+            package_list = new_package_list;
         }
     }
 
