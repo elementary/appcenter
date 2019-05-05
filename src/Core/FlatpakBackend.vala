@@ -411,7 +411,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         try {
             appstream_pool.load ();
         } catch (Error e) {
-            critical (e.message);
+            warning ("Errors found in flatpak appdata, some components may be incomplete/missing: %s", e.message);
         } finally {
             var new_package_list = new Gee.HashMap<string, Package> ();
             var comp_validator = ComponentValidator.get_default ();
@@ -578,7 +578,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                     return;
                 }
 
-                cb (true, progress.get_status (), progress.get_progress (), ChangeInformation.Status.RUNNING);
+                cb (true, progress.get_status (), (double)progress.get_progress () / 100.0f, ChangeInformation.Status.RUNNING);
             });
         });
 
@@ -676,7 +676,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 flatpak_ref.branch,
                 (status, progress, estimating) => {
                     final_status = status;
-                    cb (true, status, progress, ChangeInformation.Status.RUNNING);
+                    cb (true, status, (double)progress / 100.0f, ChangeInformation.Status.RUNNING);
                 },
                 cancellable
             );
@@ -777,7 +777,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                     return;
                 }
 
-                cb (true, progress.get_status (), progress.get_progress (), ChangeInformation.Status.RUNNING);
+                cb (true, progress.get_status (), (double)progress.get_progress () / 100.0f, ChangeInformation.Status.RUNNING);
             });
         });
 
