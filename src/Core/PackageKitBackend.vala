@@ -140,7 +140,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
                     return;
                 }
 
-                foreach (var pkg_name in comp.get_pkgnames ()) {
+                foreach (unowned string pkg_name in comp.get_pkgnames ()) {
                     var package = package_list[pkg_name];
                     if (package != null) {
                         package.replace_component (comp);
