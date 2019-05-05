@@ -27,7 +27,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     private Gee.HashMap<string, Package> package_list;
     private AppStream.Pool appstream_pool;
 
-    // This is OK as we're only using a single thread (PackageKit can only do one job at a time)
+    // This is OK as we're only using a single thread
     // This would have to be done differently if there were multiple workers in the pool
     private bool thread_should_run = true;
 
@@ -424,7 +424,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         try {
             appstream_pool.load ();
         } catch (Error e) {
-            critical (e.message);
+            warning ("Errors found in flatpak appdata, some components may be incomplete/missing: %s", e.message);
         } finally {
             var new_package_list = new Gee.HashMap<string, Package> ();
             var comp_validator = ComponentValidator.get_default ();
@@ -554,8 +554,6 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             return;
         }
 
-        var final_status = "";
-
         Flatpak.Transaction transaction;
         try {
             transaction = new Flatpak.Transaction.for_installation (installation, cancellable);
@@ -591,7 +589,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                     return;
                 }
 
-                cb (true, progress.get_status (), progress.get_progress (), ChangeInformation.Status.RUNNING);
+                cb (true, _("Installing"), (double)progress.get_progress () / 100.0f, ChangeInformation.Status.RUNNING);
             });
         });
 
@@ -600,7 +598,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         transaction.operation_error.connect ((operation, e, detail) => {
             warning ("Flatpak installation failed: %s", e.message);
             if (e is GLib.IOError.CANCELLED) {
-                cb (false, final_status, 100, ChangeInformation.Status.CANCELLED);
+                cb (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);
                 success = true;
             } else {
                 return false;
@@ -617,7 +615,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             transaction.run (cancellable);
         } catch (Error e) {
             if (e is GLib.IOError.CANCELLED) {
-                cb (false, final_status, 100, ChangeInformation.Status.CANCELLED);
+                cb (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);
                 success = true;
             } else {
                 success = false;
@@ -679,8 +677,6 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             return;
         }
 
-        var final_status = "";
-
         try {
             installation.uninstall (
                 Flatpak.RefKind.APP,
@@ -688,16 +684,15 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 flatpak_ref.arch,
                 flatpak_ref.branch,
                 (status, progress, estimating) => {
-                    final_status = status;
-                    cb (true, status, progress, ChangeInformation.Status.RUNNING);
+                    cb (true, _("Uninstalling"), (double)progress / 100.0f, ChangeInformation.Status.RUNNING);
                 },
                 cancellable
             );
 
-            cb (false, final_status, 100, ChangeInformation.Status.FINISHED);
+            cb (false, _("Finishing"), 1.0f, ChangeInformation.Status.FINISHED);
         } catch (Error e) {
             if (e is GLib.IOError.CANCELLED) {
-                cb (false, final_status, 100, ChangeInformation.Status.CANCELLED);
+                cb (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);
             } else {
                 warning ("Flatpak removal failed: %s", e.message);
                 job.result = Value (typeof (bool));
@@ -742,8 +737,6 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             job.results_ready ();
             return;
         }
-
-        var final_status = "";
 
         Flatpak.Transaction transaction;
         try {
@@ -790,7 +783,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                     return;
                 }
 
-                cb (true, progress.get_status (), progress.get_progress (), ChangeInformation.Status.RUNNING);
+                cb (true, _("Updating"), (double)progress.get_progress () / 100.0f, ChangeInformation.Status.RUNNING);
             });
         });
 
@@ -799,7 +792,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         transaction.operation_error.connect ((operation, e, detail) => {
             warning ("Flatpak installation failed: %s", e.message);
             if (e is GLib.IOError.CANCELLED) {
-                cb (false, final_status, 100, ChangeInformation.Status.CANCELLED);
+                cb (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);
                 success = true;
             } else {
                 return false;
@@ -816,7 +809,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             transaction.run (cancellable);
         } catch (Error e) {
             if (e is GLib.IOError.CANCELLED) {
-                cb (false, final_status, 100, ChangeInformation.Status.CANCELLED);
+                cb (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);
                 success = true;
             } else {
                 success = false;
