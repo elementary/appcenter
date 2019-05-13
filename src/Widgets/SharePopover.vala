@@ -112,15 +112,6 @@ public class SharePopover : Gtk.Popover {
             hide ();
         });
 
-        google_button.clicked.connect (() => {
-            try {
-                AppInfo.launch_default_for_uri ("https://plus.google.com/share?url=%s".printf (uri), null);
-            } catch (Error e) {
-                warning ("%s", e.message);
-            }
-            hide ();
-        });
-
         twitter_button.clicked.connect (() => {
             try {
                 AppInfo.launch_default_for_uri ("http://twitter.com/home/?status=%s %s".printf (body, uri), null);
