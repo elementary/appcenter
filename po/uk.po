@@ -1,19 +1,20 @@
+# Andrii Priadko <mendeleev.ua@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-17 11:14-0700\n"
-"PO-Revision-Date: 2017-09-11 20:46+0000\n"
-"Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
-"Language-Team: Ukrainian <https://weblate.elementary.io/projects/appcenter/"
+"PO-Revision-Date: 2019-05-14 23:24+0000\n"
+"Last-Translator: Andrii Priadko <mendeleev.ua@gmail.com>\n"
+"Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.16\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 3.6.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -24,7 +25,7 @@ msgstr "Центр програм"
 #: src/Application.vala:106
 #, c-format
 msgid "Could not parse mimetype %s"
-msgstr ""
+msgstr "Не зрозумілий mime тип %s"
 
 #: src/Application.vala:126
 #, c-format
@@ -70,10 +71,12 @@ msgstr "Скріншот недоступний"
 #: src/MainWindow.vala:204
 msgid "Connect to the Internet to install or update apps."
 msgstr ""
+"Необхідне підключення до мережі Internet для встановлення чи оновлення "
+"застосунків"
 
 #: src/MainWindow.vala:207
 msgid "Network Settings…"
-msgstr ""
+msgstr "Налаштування мережі..."
 
 #: src/Core/ChangeInformation.vala:63
 msgid "Starting"
@@ -250,24 +253,24 @@ msgstr "Оновлення системних компонетів"
 #: src/Core/UpdateManager.vala:76
 #, c-format
 msgid "Version: %s"
-msgstr ""
+msgstr "Версія: %s"
 
 #: src/Core/UpdateManager.vala:82
 msgid "No components with updates"
-msgstr ""
+msgstr "Компоненти з оновленнями відсутні"
 
 #: src/Core/UpdateManager.vala:86
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%u компонент з оновленнями"
+msgstr[1] "%u компоненти з оновленнями"
+msgstr[2] "%u компонентів з оновленнями"
 
 #: src/Core/UpdateManager.vala:88
 #, c-format
 msgid "%s:"
-msgstr ""
+msgstr "%s:"
 
 #: src/Core/UpdateManager.vala:129
 msgid "Restart Required"
@@ -331,6 +334,8 @@ msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
+"Сталась помилка при обробці картки. Будь ласка, спробуйте пізніше ще раз. "
+"Просимо вибачення за незручності."
 
 #: src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
@@ -343,13 +348,15 @@ msgstr ""
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
 msgid "Pay $%d for %s"
-msgstr ""
+msgstr "Оплатити $%d за %s"
 
 #: src/Dialogs/StripeDialog.vala:96
 msgid ""
 "This is a one time payment. Your email address is only used to send you a "
 "receipt."
 msgstr ""
+"Це є одноразовий платіж. Ваша email-адреса буде використана лише для "
+"відправки квитанції."
 
 #: src/Dialogs/StripeDialog.vala:106 src/Widgets/SharePopover.vala:35
 msgid "Email"
@@ -407,16 +414,22 @@ msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"Місяць не дійсний. Спробуйте будь ласка ще раз, використовуючи коректний "
+"термін закінчення дії."
 
 #: src/Dialogs/StripeDialog.vala:517 src/Dialogs/StripeDialog.vala:575
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"Рік не дійсний. Спробуйте будь ласка ще раз, використовуючи коректний термін "
+"закінчення дії."
 
 #: src/Dialogs/StripeDialog.vala:520 src/Dialogs/StripeDialog.vala:573
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr ""
+"CVC номер не вірний. Спробуйте будь ласка ще раз, використовуючи коректний "
+"CVC."
 
 #: src/Dialogs/StripeDialog.vala:522 src/Dialogs/StripeDialog.vala:564
 msgid "The card has expired. Please try again with a different card."
@@ -425,18 +438,23 @@ msgstr "Ця картка прострочена. Будь ласка, спро�
 #: src/Dialogs/StripeDialog.vala:542
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr ""
+"Забагато платіжних запитів у даний момент. Спробуйте будь ласка пізніше."
 
 #: src/Dialogs/StripeDialog.vala:558
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
 msgstr ""
+"Ця картка не підтримує даний вид транзакції. Будь ласка, спробуйте знову, з "
+"іншою карткою."
 
 #: src/Dialogs/StripeDialog.vala:560
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
 msgstr ""
+"Цей тип валюти не підтримується цією карткою. Будь ласка, спробуйте знову, з "
+"іншою карткою."
 
 #: src/Dialogs/StripeDialog.vala:562
 msgid "The transaction has already been processed."
@@ -454,10 +472,13 @@ msgstr ""
 #: src/Dialogs/StripeDialog.vala:568
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr ""
+"Не достатньо коштів на рахунку. Спробуйте будь ласка інший платіжний метод."
 
 #: src/Dialogs/StripeDialog.vala:570
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr ""
+"Не коректно вказана сума. Спробуйте будь ласка ще раз, вказавши коректну "
+"суму."
 
 #: src/Dialogs/StripeDialog.vala:581
 #, fuzzy
@@ -809,7 +830,7 @@ msgstr "Найновіші"
 
 #: src/Widgets/UpdateHeaderRow.vala:120
 msgid "Drivers"
-msgstr ""
+msgstr "Драйвери"
 
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:172
 msgid "Uninstall"
