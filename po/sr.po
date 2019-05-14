@@ -1,12 +1,13 @@
 # Мирослав Николић <miroslavnikolic@rocketmail.com>, 2017.
 # Miroslav Božić <miroslav.bozic@outlook.com>, 2019.
+# Daniel Foré <daniel@elementary.io>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-17 11:14-0700\n"
-"PO-Revision-Date: 2019-05-07 22:56+0000\n"
-"Last-Translator: Miroslav Božić <miroslav.bozic@outlook.com>\n"
+"PO-Revision-Date: 2019-05-14 21:35+0000\n"
+"Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Serbian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/sr/>\n"
 "Language: sr\n"
@@ -77,7 +78,7 @@ msgstr "Повежите се интернетом да би сте инстал
 
 #: src/MainWindow.vala:207
 msgid "Network Settings…"
-msgstr "Подешавања мреже..."
+msgstr "Подешавања мреже…"
 
 #: src/Core/ChangeInformation.vala:63
 msgid "Starting"
