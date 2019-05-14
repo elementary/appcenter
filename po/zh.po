@@ -1,12 +1,13 @@
 # colindemian <colindemian@outlook.com>, 2018.
 # David Hewitt <davidmhewitt@gmail.com>, 2018.
 # Daniel Foré <daniel@elementary.io>, 2019.
+# sdopx <26029682@qq.com>, 2019.
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-17 11:14-0700\n"
 "PO-Revision-Date: 2019-05-15 01:18+0000\n"
-"Last-Translator: Daniel Foré <daniel@elementary.io>\n"
+"Last-Translator: sdopx <26029682@qq.com>\n"
 "Language-Team: Chinese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/zh/>\n"
 "Language: zh\n"
@@ -568,11 +569,11 @@ msgstr "分享"
 
 #: src/Views/AppInfoView.vala:665
 msgid "Fund"
-msgstr ""
+msgstr "金额"
 
 #: src/Views/AppInfoView.vala:687
 msgid "Fund the development of this app"
-msgstr ""
+msgstr "资助这个应用程序的开发"
 
 #: src/Views/AppListUpdateView.vala:56
 msgid "A restart is required to complete the installation of updates"
