@@ -2,12 +2,13 @@
 # David Hewitt <davidmhewitt@gmail.com>, 2018.
 # Daniel Foré <daniel@elementary.io>, 2019.
 # sdopx <26029682@qq.com>, 2019.
+# Jimmy Sun <jimmysuncn@hotmail.com>, 2019.
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-17 11:14-0700\n"
 "PO-Revision-Date: 2019-05-15 01:18+0000\n"
-"Last-Translator: sdopx <26029682@qq.com>\n"
+"Last-Translator: Jimmy Sun <jimmysuncn@hotmail.com>\n"
 "Language-Team: Chinese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/zh/>\n"
 "Language: zh\n"
@@ -704,7 +705,7 @@ msgstr ""
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
-msgstr ""
+msgstr "尚未设置付款信息"
 
 #: src/Widgets/HumbleButton.vala:106
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:323
@@ -755,9 +756,8 @@ msgid "Twitter"
 msgstr "Twitter"
 
 #: src/Widgets/SharePopover.vala:51
-#, fuzzy
 msgid "Reddit"
-msgstr "reddit"
+msgstr "Reddit社区"
 
 #: src/Widgets/SharePopover.vala:55
 msgid "Tumblr"
