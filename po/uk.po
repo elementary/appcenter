@@ -1,11 +1,12 @@
 # Andrii Priadko <mendeleev.ua@gmail.com>, 2019.
+# Denis Papushaev <denqxotl@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-17 11:14-0700\n"
 "PO-Revision-Date: 2019-05-14 23:24+0000\n"
-"Last-Translator: Andrii Priadko <mendeleev.ua@gmail.com>\n"
+"Last-Translator: Denis Papushaev <denqxotl@gmail.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/uk/>\n"
 "Language: uk\n"
@@ -282,7 +283,7 @@ msgstr "Будь-ласка, перезавантажте систему для 
 
 #: src/Dialogs/ContentWarningDialog.vala:27
 msgid "Content Warning"
-msgstr ""
+msgstr "Попередження про вміст"
 
 #: src/Dialogs/ContentWarningDialog.vala:32
 #, c-format
@@ -299,7 +300,7 @@ msgstr ""
 
 #: src/Dialogs/ContentWarningDialog.vala:35
 msgid "Show content warnings"
-msgstr ""
+msgstr "Показати попередження про вміст"
 
 #: src/Dialogs/ContentWarningDialog.vala:40
 #, fuzzy
