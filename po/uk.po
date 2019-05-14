@@ -1,13 +1,14 @@
 # Andrii Priadko <mendeleev.ua@gmail.com>, 2019.
 # Denis Papushaev <denqxotl@gmail.com>, 2019.
 # Andrii Alforov <andrevpost@gmail.com>, 2019.
+# Daniel Foré <daniel@elementary.io>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-17 11:14-0700\n"
-"PO-Revision-Date: 2019-05-14 23:24+0000\n"
-"Last-Translator: Andrii Alforov <andrevpost@gmail.com>\n"
+"PO-Revision-Date: 2019-05-16 00:14+0000\n"
+"Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/uk/>\n"
 "Language: uk\n"
@@ -78,7 +79,7 @@ msgstr ""
 
 #: src/MainWindow.vala:207
 msgid "Network Settings…"
-msgstr "Налаштування мережі..."
+msgstr "Налаштування мережі…"
 
 #: src/Core/ChangeInformation.vala:63
 msgid "Starting"
