@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-18 05:17-0500\n"
 "PO-Revision-Date: 2019-05-16 00:14+0000\n"
-"Last-Translator: Daniel Foré <daniel@elementary.io>\n"
+"Last-Translator: TheApple <quentinpomarel@gmail.com>\n"
 "Language-Team: French (Canada) <https://l10n.elementary.io/projects/"
 "appcenter/extra/fr_CA/>\n"
 "Language: fr_CA\n"
@@ -55,7 +55,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
-msgstr ""
+msgstr "Rechercher des mises à jour"
 
 #~ msgid "About AppCenter"
 #~ msgstr "À propos du centre d’applications"
