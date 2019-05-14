@@ -1,12 +1,13 @@
 # Andrii Priadko <mendeleev.ua@gmail.com>, 2019.
 # Denis Papushaev <denqxotl@gmail.com>, 2019.
+# Andrii Alforov <andrevpost@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-17 11:14-0700\n"
 "PO-Revision-Date: 2019-05-14 23:24+0000\n"
-"Last-Translator: Denis Papushaev <denqxotl@gmail.com>\n"
+"Last-Translator: Andrii Alforov <andrevpost@gmail.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/uk/>\n"
 "Language: uk\n"
@@ -502,29 +503,33 @@ msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:606
 msgid "The balance or credit limit on the card has been reached."
-msgstr ""
+msgstr "Баланс або кредитний ліміт картки перевищений."
 
 #: src/Dialogs/StripeDialog.vala:609
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
+"Дана картка є тестовою карткою. Будь ласка, використовуйте реальну картку, "
+"щоб продовжити."
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
-msgstr ""
+msgstr "Не вдалося отримати оновлення"
 
 #: src/Dialogs/UpdateFailDialog.vala:26
 msgid ""
 "This may have been caused by external, manually added software repositories "
 "or a corrupted sources file."
 msgstr ""
+"Це може бути викликано зовнішньо, вручну доданими сховищами програмного "
+"забезпечення або файлом з пошкодженими джерелами."
 
 #: src/Dialogs/UpdateFailDialog.vala:34
 msgid "Ignore"
-msgstr ""
+msgstr "Ігнорувати"
 
 #: src/Dialogs/UpdateFailDialog.vala:35
 msgid "Try Again"
-msgstr ""
+msgstr "Спробуйте знову"
 
 #: src/Views/AppInfoView.vala:75
 msgid "Screenshot Not Available"
@@ -548,7 +553,7 @@ msgstr "Допомога"
 
 #: src/Views/AppInfoView.vala:178
 msgid "What's New:"
-msgstr ""
+msgstr "Що нового:"
 
 #: src/Views/AppInfoView.vala:197
 msgid "Extensions:"
@@ -587,28 +592,28 @@ msgstr "Невідомий стан"
 #: src/Views/AppInfoView.vala:344
 #, c-format
 msgid "Other Apps by %s"
-msgstr ""
+msgstr "Інші додатки від %s"
 
 #: src/Views/AppInfoView.vala:378
 msgid "Link copied to clipboard"
-msgstr ""
+msgstr "Посилання скопійовано до буферу обміну"
 
 #: src/Views/AppInfoView.vala:389
 #, c-format
 msgid "Check out %s on AppCenter:"
-msgstr ""
+msgstr "Перевірте %s в Центрі програм:"
 
 #: src/Views/AppInfoView.vala:396
 msgid "Share"
-msgstr ""
+msgstr "Поділитися"
 
 #: src/Views/AppInfoView.vala:665
 msgid "Fund"
-msgstr ""
+msgstr "Фінансувати"
 
 #: src/Views/AppInfoView.vala:687
 msgid "Fund the development of this app"
-msgstr ""
+msgstr "Профінансуйте розробку цього додатка"
 
 #: src/Views/AppListUpdateView.vala:56
 msgid "A restart is required to complete the installation of updates"
@@ -630,11 +635,11 @@ msgstr "Немає додатків"
 
 #: src/Views/Homepage.vala:67
 msgid "Recently Updated"
-msgstr ""
+msgstr "Нещодавно оновлені"
 
 #: src/Views/Homepage.vala:83
 msgid "Trending"
-msgstr ""
+msgstr "Популярне"
 
 #: src/Views/Homepage.vala:99
 msgid "Categories"
@@ -778,35 +783,35 @@ msgstr "Невідомий стан"
 
 #: src/Widgets/ReleaseRow.vala:90 src/Widgets/ReleaseRow.vala:93
 msgid "No description available"
-msgstr ""
+msgstr "Немає опису"
 
 #: src/Widgets/SharePopover.vala:39
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #: src/Widgets/SharePopover.vala:43
 msgid "Google+"
-msgstr ""
+msgstr "Google+"
 
 #: src/Widgets/SharePopover.vala:47
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 #: src/Widgets/SharePopover.vala:51
 msgid "Reddit"
-msgstr ""
+msgstr "Reddit"
 
 #: src/Widgets/SharePopover.vala:55
 msgid "Tumblr"
-msgstr ""
+msgstr "Tumblr"
 
 #: src/Widgets/SharePopover.vala:59
 msgid "Telegram"
-msgstr ""
+msgstr "Telegram"
 
 #: src/Widgets/SharePopover.vala:63
 msgid "Copy link"
-msgstr ""
+msgstr "Скопіювати посилання"
 
 #: src/Widgets/UpdateHeaderRow.vala:68
 #, c-format
