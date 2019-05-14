@@ -1,12 +1,13 @@
 # Daniel Foré <daniel@elementary.io>, 2019.
 # Serban Iordache <iordache.serban2002@gmail.com>, 2019.
+# HeyLinux <heylinux.me@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-17 11:14-0700\n"
 "PO-Revision-Date: 2019-05-16 00:14+0000\n"
-"Last-Translator: Serban Iordache <iordache.serban2002@gmail.com>\n"
+"Last-Translator: HeyLinux <heylinux.me@gmail.com>\n"
 "Language-Team: Romanian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ro/>\n"
 "Language: ro\n"
@@ -258,15 +259,15 @@ msgstr "Versiune: %s"
 
 #: src/Core/UpdateManager.vala:82
 msgid "No components with updates"
-msgstr ""
+msgstr "Nici un component cu o actualizare"
 
 #: src/Core/UpdateManager.vala:86
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
-msgstr[0] ""
+msgstr[0] "%u componente cu actualizari"
 msgstr[1] ""
-msgstr[2] ""
+msgstr[2] "%u componente cu actualizari"
 
 #: src/Core/UpdateManager.vala:88
 #, c-format
