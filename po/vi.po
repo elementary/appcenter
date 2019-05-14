@@ -1,18 +1,19 @@
+# AMONK <anandahanuman@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-17 11:14-0700\n"
-"PO-Revision-Date: 2018-06-21 00:08+0000\n"
-"Last-Translator: Tuyền Nguyễn <tuyendev@gmail.com>\n"
-"Language-Team: Vietnamese <https://weblate.elementary.io/projects/appcenter/"
+"PO-Revision-Date: 2019-05-16 00:14+0000\n"
+"Last-Translator: AMONK <anandahanuman@gmail.com>\n"
+"Language-Team: Vietnamese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/vi/>\n"
 "Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.6.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -23,7 +24,7 @@ msgstr "Trung tâm ứng dụng"
 #: src/Application.vala:106
 #, c-format
 msgid "Could not parse mimetype %s"
-msgstr ""
+msgstr "Không thể phân tích loại nội dung %s"
 
 #: src/Application.vala:126
 #, c-format
@@ -335,12 +336,12 @@ msgstr "Vui lòng kiểm tra thông tin thanh toán của bạn và thử lại"
 
 #: src/Dialogs/StripeDialog.vala:76
 msgid "Payment"
-msgstr ""
+msgstr "Thanh toán"
 
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
 msgid "Pay $%d for %s"
-msgstr "Thanh toán %d cho %s"
+msgstr "Thanh toán $%d cho %s"
 
 #: src/Dialogs/StripeDialog.vala:96
 msgid ""
@@ -493,7 +494,7 @@ msgstr ""
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
-msgstr ""
+msgstr "Không thể tải nội dung cập nhật"
 
 #: src/Dialogs/UpdateFailDialog.vala:26
 msgid ""
@@ -503,7 +504,7 @@ msgstr ""
 
 #: src/Dialogs/UpdateFailDialog.vala:34
 msgid "Ignore"
-msgstr ""
+msgstr "Bỏ qua"
 
 #: src/Dialogs/UpdateFailDialog.vala:35
 msgid "Try Again"
@@ -531,7 +532,7 @@ msgstr "Trợ giúp"
 
 #: src/Views/AppInfoView.vala:178
 msgid "What's New:"
-msgstr ""
+msgstr "Tin tức mới:"
 
 #: src/Views/AppInfoView.vala:197
 msgid "Extensions:"
@@ -569,28 +570,28 @@ msgstr "Trạng thái không xác định"
 #: src/Views/AppInfoView.vala:344
 #, c-format
 msgid "Other Apps by %s"
-msgstr ""
+msgstr "Các ứng dụng khác %s"
 
 #: src/Views/AppInfoView.vala:378
 msgid "Link copied to clipboard"
-msgstr ""
+msgstr "Đường dẫn đã được sao chép lưu tạm thời"
 
 #: src/Views/AppInfoView.vala:389
 #, c-format
 msgid "Check out %s on AppCenter:"
-msgstr ""
+msgstr "Kiểm tra %s trên Trung tâm Ứng dụng:"
 
 #: src/Views/AppInfoView.vala:396
 msgid "Share"
-msgstr ""
+msgstr "Chia sẻ"
 
 #: src/Views/AppInfoView.vala:665
 msgid "Fund"
-msgstr ""
+msgstr "Tài trợ"
 
 #: src/Views/AppInfoView.vala:687
 msgid "Fund the development of this app"
-msgstr ""
+msgstr "Tài trợ cho sự phát triển của ứng dụng này"
 
 #: src/Views/AppListUpdateView.vala:56
 msgid "A restart is required to complete the installation of updates"
