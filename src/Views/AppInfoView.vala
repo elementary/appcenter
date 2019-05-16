@@ -266,30 +266,69 @@ namespace AppCenter.Views {
 
             var project_license = package.component.project_license;
             if (project_license != null) {
-                string license_url = "https://choosealicense.com/licenses/";
-                switch (project_license) {
-                    case "Apache-2.0":
-                        license_url = license_url + "apache-2.0";
-                        break;
-                    case "GPL-2":
-                    case "GPL-2.0":
-                    case "GPL-2.0+":
-                        license_url = license_url + "gpl-2.0";
-                        break;
-                    case "GPL-3":
-                    case "GPL-3.0":
-                    case "GPL-3.0+":
-                        license_url = license_url + "gpl-3.0";
-                        break;
-                    case "LGPL-2.1":
-                    case "LGPL-2.1+":
-                        license_url = license_url + "lgpl-2.1";
-                        break;
-                    case "MIT":
-                        license_url = license_url + "mit";
-                        break;
+                string? license_copy = null;
+                string? license_url = null;
+
+                // NOTE: Ideally this would be handled in AppStream: https://github.com/ximion/appstream/issues/107
+                if (project_license.has_prefix ("LicenseRef")) {
+                    // i.e. `LicenseRef-proprietary=https://example.com`
+                    string[] split_license = project_license.split_set ("=", 2);
+                    if (split_license[1] != null) {
+                        license_url = split_license[1];
+                    }
+
+                    string license_type = split_license[0].split_set ("-", 2)[1].down ();
+                    switch (license_type) {
+                        case "public-domain":
+                            // TRANSLATORS: See the Wikipedia page
+                            license_copy = _("Public Domain");
+                            if (license_url == null) {
+                                // TRANSLATORS: Replace the link with the version for your language
+                                license_url = _("https://en.wikipedia.org/wiki/Public_domain");
+                            }
+                            break;
+                        case "free":
+                            // TRANSLATORS: Freedom, not price. See the GNU page.
+                            license_copy = _("Free Software");
+                            if (license_url == null) {
+                                // TRANSLATORS: Replace the link with the version for your language
+                                license_url = _("https://www.gnu.org/philosophy/free-sw");
+                            }
+                            break;
+                        case "proprietary":
+                            license_copy = _("Proprietary");
+                            break;
+                        default:
+                            license_copy = _("Unknown License");
+                    }
+                } else {
+                    license_copy = project_license;
+                    license_url = "https://choosealicense.com/licenses/";
+
+                    switch (project_license) {
+                        case "Apache-2.0":
+                            license_url = license_url + "apache-2.0";
+                            break;
+                        case "GPL-2":
+                        case "GPL-2.0":
+                        case "GPL-2.0+":
+                            license_url = license_url + "gpl-2.0";
+                            break;
+                        case "GPL-3":
+                        case "GPL-3.0":
+                        case "GPL-3.0+":
+                            license_url = license_url + "gpl-3.0";
+                            break;
+                        case "LGPL-2.1":
+                        case "LGPL-2.1+":
+                            license_url = license_url + "lgpl-2.1";
+                            break;
+                        case "MIT":
+                            license_url = license_url + "mit";
+                            break;
+                    }
                 }
-                var license_button = new UrlButton (_(project_license), license_url, "text-x-copying-symbolic");
+                var license_button = new UrlButton (_(license_copy), license_url, "text-x-copying-symbolic");
                 footer_grid.add (license_button);
             }
 
@@ -577,10 +616,9 @@ namespace AppCenter.Views {
             }
         }
 
-        class UrlButton : Gtk.Button {
-            public UrlButton (string label, string uri, string icon_name) {
+        class UrlButton : Gtk.Grid {
+            public UrlButton (string label, string? uri, string icon_name) {
                 get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-                get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
                 tooltip_text = uri;
 
                 var icon = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.SMALL_TOOLBAR);
@@ -594,15 +632,23 @@ namespace AppCenter.Views {
                 grid.add (icon);
                 grid.add (title);
 
-                add (grid);
+                if (uri != null) {
+                    var button = new Gtk.Button ();
+                    button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
-                clicked.connect (() => {
-                    try {
-                        AppInfo.launch_default_for_uri (uri, null);
-                    } catch (Error e) {
-                        warning ("%s\n", e.message);
-                    }
-                });
+                    button.add (grid);
+                    add (button);
+
+                    button.clicked.connect (() => {
+                        try {
+                            AppInfo.launch_default_for_uri (uri, null);
+                        } catch (Error e) {
+                            warning ("%s\n", e.message);
+                        }
+                    });
+                } else {
+                    add (grid);
+                }
             }
         }
 
@@ -648,3 +694,4 @@ namespace AppCenter.Views {
         }
     }
 }
+

@@ -150,7 +150,7 @@ public class AppCenter.App : Gtk.Application {
         var client = AppCenterCore.Client.get_default ();
 
         if (fake_update_packages != null) {
-            AppCenterCore.PackageKitClient.get_default ().fake_packages = fake_update_packages;
+            AppCenterCore.PackageKitBackend.get_default ().fake_packages = fake_update_packages;
         }
 
         if (silent) {
@@ -168,7 +168,7 @@ public class AppCenter.App : Gtk.Application {
             var file = File.new_for_commandline_arg (local_path);
 
             try {
-                local_package = AppCenterCore.PackageKitClient.get_default ().add_local_component_file (file);
+                local_package = AppCenterCore.PackageKitBackend.get_default ().add_local_component_file (file);
             } catch (Error e) {
                 warning ("Failed to load local AppStream XML file: %s", e.message);
             }
@@ -177,9 +177,13 @@ public class AppCenter.App : Gtk.Application {
         if (main_window == null) {
             main_window = new MainWindow (this);
 
+#if HOMEPAGE
             main_window.homepage_loaded.connect (() => {
                 client.update_cache.begin ();
             });
+#else
+            client.update_cache.begin ();
+#endif
 
             main_window.destroy.connect (() => {
                 main_window = null;
@@ -299,9 +303,13 @@ public class AppCenter.App : Gtk.Application {
 
     public void on_updates_available () {
         var client = AppCenterCore.Client.get_default ();
-        if (main_window != null) {
-            main_window.show_update_badge (client.updates_number);
-        }
+        Idle.add (() => {
+            if (main_window != null) {
+                main_window.show_update_badge (client.updates_number);
+            }
+
+            return GLib.Source.REMOVE;
+        });
     }
 
     private void on_cache_update_failed (Error error) {

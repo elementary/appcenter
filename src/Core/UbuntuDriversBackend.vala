@@ -18,7 +18,7 @@
  */
 
 public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
-    private async bool get_drivers_output (out string? output) {
+    private async bool get_drivers_output (Cancellable? cancellable = null, out string? output = null) {
         output = null;
         string? drivers_exec_path = Environment.find_program_in_path ("ubuntu-drivers");
         if (drivers_exec_path == null) {
@@ -28,7 +28,7 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
         Subprocess command;
         try {
             command = new Subprocess (SubprocessFlags.STDOUT_PIPE, drivers_exec_path, "list");
-            yield command.communicate_utf8_async (null, null, out output, null);
+            yield command.communicate_utf8_async (null, cancellable, out output, null);
         } catch (Error e) {
             return false;
         }
@@ -36,16 +36,20 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
         return command.get_exit_status () == 0;
     }
 
-    public async Gee.Collection<Package> get_installed_applications () {
+    public async Gee.Collection<Package> get_installed_applications (Cancellable? cancellable = null) {
         var driver_list = new Gee.TreeSet<Package> ();
         string? command_output;
-        var result = yield get_drivers_output (out command_output);
-        if (!result || command_output == null) {
+        var result = yield get_drivers_output (cancellable, out command_output);
+        if (!result || command_output == null || cancellable.is_cancelled ()) {
             return driver_list;
         }
 
         string[] tokens = command_output.split ("\n");
         for (int i = 0; i < tokens.length; i++) {
+            if (cancellable.is_cancelled ()) {
+                break;
+            }
+
             unowned string package_name = tokens[i];
             if (package_name.strip () == "") {
                 continue;
@@ -98,27 +102,31 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
     }
 
     public async uint64 get_download_size (Package package, Cancellable? cancellable) throws GLib.Error {
-        return yield PackageKitClient.get_default ().get_download_size (package, cancellable);
+        return yield PackageKitBackend.get_default ().get_download_size (package, cancellable);
     }
 
     public async bool is_package_installed (Package package) throws GLib.Error {
-        return yield PackageKitClient.get_default ().is_package_installed (package);
+        return yield PackageKitBackend.get_default ().is_package_installed (package);
     }
 
     public async PackageDetails get_package_details (Package package) throws GLib.Error {
-        return yield PackageKitClient.get_default ().get_package_details (package);
+        return yield PackageKitBackend.get_default ().get_package_details (package);
     }
 
-    public async bool install_package (Package package, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
-        return yield PackageKitClient.get_default ().install_package (package, cb, cancellable);
+    public async bool refresh_cache (Cancellable? cancellable) throws GLib.Error {
+        return true;
     }
 
-    public async bool remove_package (Package package, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
-        return yield PackageKitClient.get_default ().remove_package (package, cb, cancellable);
+    public async bool install_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+        return yield PackageKitBackend.get_default ().install_package (package, cb, cancellable);
     }
 
-    public async bool update_package (Package package, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
-        return yield PackageKitClient.get_default ().update_package (package, cb, cancellable);
+    public async bool remove_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+        return yield PackageKitBackend.get_default ().remove_package (package, cb, cancellable);
+    }
+
+    public async bool update_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+        return yield PackageKitBackend.get_default ().update_package (package, cb, cancellable);
     }
 
     private static GLib.Once<UbuntuDriversBackend> instance;

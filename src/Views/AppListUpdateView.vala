@@ -234,27 +234,31 @@ namespace AppCenter.Views {
             }
         }
 
-        private void after_first_package_info_changed (Pk.Status status) {
+        private void after_first_package_info_changed (AppCenterCore.ChangeInformation.Status status) {
             assert (!apps_remaining_started);
 
             /* Only interested if the first package has started running or has been cancelled (before starting) */
-            if (status != Pk.Status.CANCEL && status != Pk.Status.RUNNING) {
+            if (status != AppCenterCore.ChangeInformation.Status.CANCELLED && status != AppCenterCore.ChangeInformation.Status.RUNNING) {
                 return;
             }
 
             /* Not interested in any future changes for first_package */
             first_package.info_changed.disconnect (after_first_package_info_changed);
 
-            if (status != Pk.Status.CANCEL) { /* must  be running */
-                apps_remaining_started = true;
-                for (int i = 1; i < apps_to_update.size; i++) {
-                    apps_to_update[i].update.begin (() => {
-                        on_app_update_end ();
-                    });
+            Idle.add (() => {
+                if (status != AppCenterCore.ChangeInformation.Status.CANCELLED) { /* must  be running */
+                    apps_remaining_started = true;
+                    for (int i = 1; i < apps_to_update.size; i++) {
+                        apps_to_update[i].update.begin (() => {
+                            on_app_update_end ();
+                        });
+                    }
+                } else { /* it was aborted - do not start updating the rest */
+                    finish_updating_all_apps ();
                 }
-            } else { /* it was aborted - do not start updating the rest */
-                finish_updating_all_apps ();
-            }
+
+                return GLib.Source.REMOVE;
+            });
         }
 
         private void on_app_update_end () {

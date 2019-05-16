@@ -17,13 +17,13 @@
  * Authored by: David Hewitt <davidmhewitt@gmail.com>
  */
 
-errordomain PackageKitClientError {
+errordomain PackageKitBackendError {
     PACKAGE_NOT_FOUND
 }
 
-public class AppCenterCore.PackageKitClient : Backend, Object {
+public class AppCenterCore.PackageKitBackend : Backend, Object {
     private static Task client;
-    private AsyncQueue<PackageKitJob> jobs = new AsyncQueue<PackageKitJob> ();
+    private AsyncQueue<Job> jobs = new AsyncQueue<Job> ();
     private Thread<bool> worker_thread;
 
     private GLib.DateTime last_action = null;
@@ -42,6 +42,14 @@ public class AppCenterCore.PackageKitClient : Backend, Object {
 
     public bool working { get; private set; }
 
+    private bool can_cancel = true;
+    private int current_progress = 0;
+    private int last_progress = 0;
+    private Pk.Status current_status = Pk.Status.SETUP;
+    private Pk.Status status = Pk.Status.SETUP;
+    private double progress_denom = 200.0f;
+    private double progress = 0.0f;
+
     private bool worker_func () {
         while (thread_should_run) {
             last_action = new DateTime.now_local ();
@@ -49,31 +57,31 @@ public class AppCenterCore.PackageKitClient : Backend, Object {
             var job = jobs.pop ();
             working = true;
             switch (job.operation) {
-                case PackageKitJob.Type.GET_INSTALLED_PACKAGES:
+                case Job.Type.GET_INSTALLED_PACKAGES:
                     get_installed_packages_internal (job);
                     break;
-                case PackageKitJob.Type.GET_DOWNLOAD_SIZE:
+                case Job.Type.GET_DOWNLOAD_SIZE:
                     get_download_size_internal (job);
                     break;
-                case PackageKitJob.Type.REFRESH_CACHE:
+                case Job.Type.REFRESH_CACHE:
                     refresh_cache_internal (job);
                     break;
-                case PackageKitJob.Type.GET_UPDATES:
+                case Job.Type.GET_UPDATES:
                     get_updates_internal (job);
                     break;
-                case PackageKitJob.Type.INSTALL_PACKAGE:
+                case Job.Type.INSTALL_PACKAGE:
                     install_package_internal (job);
                     break;
-                case PackageKitJob.Type.UPDATE_PACKAGE:
+                case Job.Type.UPDATE_PACKAGE:
                     update_package_internal (job);
                     break;
-                case PackageKitJob.Type.REMOVE_PACKAGE:
+                case Job.Type.REMOVE_PACKAGE:
                     remove_package_internal (job);
                     break;
-                case PackageKitJob.Type.IS_PACKAGE_INSTALLED:
+                case Job.Type.IS_PACKAGE_INSTALLED:
                     is_package_installed_internal (job);
                     break;
-                case PackageKitJob.Type.GET_PACKAGE_DETAILS:
+                case Job.Type.GET_PACKAGE_DETAILS:
                     get_package_details_internal (job);
                     break;
                 default:
@@ -88,7 +96,7 @@ public class AppCenterCore.PackageKitClient : Backend, Object {
         client = new Task ();
     }
 
-    private PackageKitClient () {
+    private PackageKitBackend () {
         worker_thread = new Thread<bool> ("packagekit-worker", worker_func);
 
         package_list = new Gee.HashMap<string, AppCenterCore.Package> (null, null);
@@ -114,30 +122,37 @@ public class AppCenterCore.PackageKitClient : Backend, Object {
         }
     }
 
-    ~PackageKitClient () {
+    ~PackageKitBackend () {
         thread_should_run = false;
         worker_thread.join ();
     }
 
     private void reload_appstream_pool () {
-        package_list.clear ();
-
         try {
             appstream_pool.load ();
         } catch (Error e) {
             critical (e.message);
         } finally {
+            var new_package_list = new Gee.HashMap<string, Package> ();
             var comp_validator = ComponentValidator.get_default ();
             appstream_pool.get_components ().foreach ((comp) => {
                 if (!comp_validator.validate (comp)) {
                     return;
                 }
 
-                var package = new AppCenterCore.Package (this, comp);
-                foreach (var pkg_name in comp.get_pkgnames ()) {
-                    package_list[pkg_name] = package;
+                foreach (unowned string pkg_name in comp.get_pkgnames ()) {
+                    var package = package_list[pkg_name];
+                    if (package != null) {
+                        package.replace_component (comp);
+                    } else {
+                        package = new Package (this, comp);
+                    }
+
+                    new_package_list[pkg_name] = package;
                 }
             });
+
+            package_list = new_package_list;
         }
     }
 
@@ -173,10 +188,14 @@ public class AppCenterCore.PackageKitClient : Backend, Object {
         return null;
     }
 
-    public async Gee.Collection<AppCenterCore.Package> get_installed_applications () {
+    public async Gee.Collection<AppCenterCore.Package> get_installed_applications (Cancellable? cancellable = null) {
         var packages = new Gee.TreeSet<AppCenterCore.Package> ();
         var installed = yield get_installed_packages ();
         foreach (var pk_package in installed) {
+            if (cancellable.is_cancelled ()) {
+                break;
+            }
+
             var package = package_list[pk_package.get_name ()];
             if (package != null) {
                 populate_package (package, pk_package);
@@ -285,8 +304,8 @@ public class AppCenterCore.PackageKitClient : Backend, Object {
         return apps;
     }
 
-    private async PackageKitJob launch_job (PackageKitJob.Type type, JobArgs? args = null) {
-        var job = new PackageKitJob (type);
+    private async Job launch_job (Job.Type type, JobArgs? args = null) {
+        var job = new Job (type);
         job.args = args;
 
         SourceFunc callback = launch_job.callback;
@@ -299,15 +318,28 @@ public class AppCenterCore.PackageKitClient : Backend, Object {
         return job;
     }
 
-    private void get_installed_packages_internal (PackageKitJob job) {
+    private void get_installed_packages_internal (Job job) {
+        var args = (GetInstalledPackagesArgs)job.args;
+        var cancellable = args.cancellable;
+
         Pk.Bitfield filter = Pk.Bitfield.from_enums (Pk.Filter.INSTALLED, Pk.Filter.NEWEST);
         var installed = new Gee.TreeSet<Pk.Package> ();
 
         try {
-            Pk.Results results = client.get_packages (filter, null, (prog, type) => {});
-            results.get_package_array ().foreach ((pk_package) => {
+            Pk.Results results = client.get_packages (filter, cancellable, (prog, type) => {});
+            var packages = results.get_package_array ();
+
+            for (int i = 0; i < packages.length; i++) {
+                if (cancellable.is_cancelled ()) {
+                    job.result = Value (typeof (Object));
+                    job.result.take_object (installed);
+                    job.results_ready ();
+                    return;
+                }
+
+                unowned Pk.Package pk_package = packages[i];
                 installed.add (pk_package);
-            });
+            }
 
         } catch (Error e) {
             critical (e.message);
@@ -318,12 +350,15 @@ public class AppCenterCore.PackageKitClient : Backend, Object {
         job.results_ready ();
     }
 
-    public async Gee.TreeSet<Pk.Package> get_installed_packages () {
-        var job = yield launch_job (PackageKitJob.Type.GET_INSTALLED_PACKAGES);
+    public async Gee.TreeSet<Pk.Package> get_installed_packages (Cancellable? cancellable = null) {
+        var job_args = new GetInstalledPackagesArgs ();
+        job_args.cancellable = cancellable;
+
+        var job = yield launch_job (Job.Type.GET_INSTALLED_PACKAGES, job_args);
         return (Gee.TreeSet<Pk.Package>)job.result.get_object ();
     }
 
-    private void get_download_size_internal (PackageKitJob job) {
+    private void get_download_size_internal (Job job) {
         var args = (GetDownloadSizeArgs)job.args;
         var package = args.package;
         var cancellable = args.cancellable;
@@ -376,7 +411,7 @@ public class AppCenterCore.PackageKitClient : Backend, Object {
         job_args.package = package;
         job_args.cancellable = cancellable;
 
-        var job = yield launch_job (PackageKitJob.Type.GET_DOWNLOAD_SIZE, job_args);
+        var job = yield launch_job (Job.Type.GET_DOWNLOAD_SIZE, job_args);
         if (job.error != null) {
             throw job.error;
         }
@@ -384,11 +419,13 @@ public class AppCenterCore.PackageKitClient : Backend, Object {
         return job.result.get_uint64 ();
     }
 
-    private void install_package_internal (PackageKitJob job) {
+    private void install_package_internal (Job job) {
         var args = (InstallPackageArgs)job.args;
         var package = args.package;
-        unowned Pk.ProgressCallback cb = args.cb;
+        unowned ChangeInformation.ProgressCallback cb = args.cb;
         var cancellable = args.cancellable;
+
+        reset_progress ();
 
         Pk.Exit exit_status = Pk.Exit.UNKNOWN;
         string[] packages_ids = {};
@@ -419,7 +456,11 @@ public class AppCenterCore.PackageKitClient : Backend, Object {
 
             packages_ids += null;
 
-            results = client.install_packages_sync (packages_ids, cancellable, cb);
+            results = client.install_packages_sync (packages_ids, cancellable, (progress, status) => {
+                update_progress_status (progress, status);
+                cb (can_cancel, Utils.pk_status_to_string (this.status), this.progress, pk_status_to_appcenter_status (this.status));
+            });
+
             exit_status = results.get_exit_code ();
         } catch (Error e) {
             job.error = e;
@@ -432,13 +473,13 @@ public class AppCenterCore.PackageKitClient : Backend, Object {
         job.results_ready ();
     }
 
-    public async bool install_package (Package package, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+    public async bool install_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
         var job_args = new InstallPackageArgs ();
         job_args.package = package;
         job_args.cb = (owned)cb;
         job_args.cancellable = cancellable;
 
-        var job = yield launch_job (PackageKitJob.Type.INSTALL_PACKAGE, job_args);
+        var job = yield launch_job (Job.Type.INSTALL_PACKAGE, job_args);
         if (job.error != null) {
             throw job.error;
         }
@@ -446,22 +487,34 @@ public class AppCenterCore.PackageKitClient : Backend, Object {
         return job.result.get_boolean ();
     }
 
-    private void update_package_internal (PackageKitJob job) {
+    private void update_package_internal (Job job) {
         var args = (UpdatePackageArgs)job.args;
         var package = args.package;
         var cancellable = args.cancellable;
-        unowned Pk.ProgressCallback cb = args.cb;
+        unowned ChangeInformation.ProgressCallback cb = args.cb;
+
+        reset_progress ();
 
         Pk.Exit exit_status = Pk.Exit.UNKNOWN;
         string[] packages_ids = {};
-        foreach (var pk_package in package.change_information.updatable_ids) {
+        foreach (var pk_package in package.change_information.updatable_packages[this]) {
             packages_ids += pk_package;
+        }
+
+        if (packages_ids.length == 0) {
+            job.result = true;
+            job.results_ready ();
+            return;
         }
 
         packages_ids += null;
 
         try {
-            var results = client.update_packages_sync (packages_ids, cancellable, cb);
+            var results = client.update_packages_sync (packages_ids, cancellable, (progress, status) => {
+                update_progress_status (progress, status);
+                cb (can_cancel, Utils.pk_status_to_string (this.status), this.progress, pk_status_to_appcenter_status (this.status));
+            });
+
             exit_status = results.get_exit_code ();
         } catch (Error e) {
             job.error = e;
@@ -474,13 +527,13 @@ public class AppCenterCore.PackageKitClient : Backend, Object {
         job.results_ready ();
     }
 
-    public async bool update_package (Package package, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+    public async bool update_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
         var job_args = new UpdatePackageArgs ();
         job_args.package = package;
         job_args.cb = (owned)cb;
         job_args.cancellable = cancellable;
 
-        var job = yield launch_job (PackageKitJob.Type.UPDATE_PACKAGE, job_args);
+        var job = yield launch_job (Job.Type.UPDATE_PACKAGE, job_args);
         if (job.error != null) {
             throw job.error;
         }
@@ -488,11 +541,13 @@ public class AppCenterCore.PackageKitClient : Backend, Object {
         return job.result.get_boolean ();
     }
 
-    private void remove_package_internal (PackageKitJob job) {
+    private void remove_package_internal (Job job) {
         var args = (RemovePackageArgs)job.args;
         var package = args.package;
         var cancellable = args.cancellable;
-        unowned Pk.ProgressCallback cb = args.cb;
+        unowned ChangeInformation.ProgressCallback cb = args.cb;
+
+        reset_progress ();
 
         Pk.Exit exit_status = Pk.Exit.UNKNOWN;
         string[] packages_ids = {};
@@ -509,7 +564,11 @@ public class AppCenterCore.PackageKitClient : Backend, Object {
                 packages_ids += package.package_id;
             });
 
-            results = client.remove_packages_sync (packages_ids, true, true, cancellable, cb);
+            results = client.remove_packages_sync (packages_ids, true, true, cancellable, (progress, status) => {
+                update_progress_status (progress, status);
+                cb (can_cancel, Utils.pk_status_to_string (this.status), this.progress, pk_status_to_appcenter_status (this.status));
+            });
+
             exit_status = results.get_exit_code ();
         } catch (Error e) {
             job.error = e;
@@ -522,13 +581,13 @@ public class AppCenterCore.PackageKitClient : Backend, Object {
         job.results_ready ();
     }
 
-    public async bool remove_package (Package package, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+    public async bool remove_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
         var job_args = new RemovePackageArgs ();
         job_args.package = package;
         job_args.cb = (owned)cb;
         job_args.cancellable = cancellable;
 
-        var job = yield launch_job (PackageKitJob.Type.REMOVE_PACKAGE, job_args);
+        var job = yield launch_job (Job.Type.REMOVE_PACKAGE, job_args);
         if (job.error != null) {
             throw job.error;
         }
@@ -536,7 +595,7 @@ public class AppCenterCore.PackageKitClient : Backend, Object {
         return job.result.get_boolean ();
     }
 
-    private void get_updates_internal (PackageKitJob job) {
+    private void get_updates_internal (Job job) {
         var args = (GetUpdatesArgs)job.args;
         var cancellable = args.cancellable;
 
@@ -598,7 +657,7 @@ public class AppCenterCore.PackageKitClient : Backend, Object {
         var job_args = new GetUpdatesArgs ();
         job_args.cancellable = cancellable;
 
-        var job = yield launch_job (PackageKitJob.Type.GET_UPDATES, job_args);
+        var job = yield launch_job (Job.Type.GET_UPDATES, job_args);
         if (job.error != null) {
             throw job.error;
         }
@@ -606,7 +665,7 @@ public class AppCenterCore.PackageKitClient : Backend, Object {
         return (Pk.Results)job.result.get_object ();
     }
 
-    private void refresh_cache_internal (PackageKitJob job) {
+    private void refresh_cache_internal (Job job) {
         var args = (RefreshCacheArgs)job.args;
         var cancellable = args.cancellable;
 
@@ -619,28 +678,29 @@ public class AppCenterCore.PackageKitClient : Backend, Object {
             return;
         }
 
-        if (results.get_exit_code () == Pk.Exit.SUCCESS) {
+        var exit_status = results.get_exit_code ();
+        if (exit_status == Pk.Exit.SUCCESS) {
             reload_appstream_pool ();
         }
 
-        job.result = Value (typeof (Object));
-        job.result.take_object (results);
+        job.result = Value (typeof (bool));
+        job.result.set_boolean (exit_status == Pk.Exit.SUCCESS);
         job.results_ready ();
     }
 
-    public async Pk.Results refresh_cache (Cancellable cancellable) throws GLib.Error {
+    public async bool refresh_cache (Cancellable? cancellable) throws GLib.Error {
         var job_args = new RefreshCacheArgs ();
         job_args.cancellable = cancellable;
 
-        var job = yield launch_job (PackageKitJob.Type.REFRESH_CACHE, job_args);
+        var job = yield launch_job (Job.Type.REFRESH_CACHE, job_args);
         if (job.error != null) {
             throw job.error;
         }
 
-        return (Pk.Results)job.result.get_object ();
+        return job.result.get_boolean ();
     }
 
-    private void is_package_installed_internal (PackageKitJob job) {
+    private void is_package_installed_internal (Job job) {
         var args = (IsPackageInstalledArgs)job.args;
         var package = args.package;
 
@@ -662,7 +722,7 @@ public class AppCenterCore.PackageKitClient : Backend, Object {
         var job_args = new IsPackageInstalledArgs ();
         job_args.package = package;
 
-        var job = yield launch_job (PackageKitJob.Type.IS_PACKAGE_INSTALLED, job_args);
+        var job = yield launch_job (Job.Type.IS_PACKAGE_INSTALLED, job_args);
         if (job.error != null) {
             throw job.error;
         }
@@ -672,7 +732,7 @@ public class AppCenterCore.PackageKitClient : Backend, Object {
 
     private Pk.Package get_package_internal (Package package) throws GLib.Error {
         if (package.component == null || package.component.get_pkgnames ().length < 1) {
-            throw new PackageKitClientError.PACKAGE_NOT_FOUND ("Package not found");
+            throw new PackageKitBackendError.PACKAGE_NOT_FOUND ("Package not found");
         }
 
         var name = package.component.get_pkgnames ()[0];
@@ -706,13 +766,13 @@ public class AppCenterCore.PackageKitClient : Backend, Object {
         }
 
         if (pk_package == null) {
-            throw new PackageKitClientError.PACKAGE_NOT_FOUND ("Package not found");
+            throw new PackageKitBackendError.PACKAGE_NOT_FOUND ("Package not found");
         }
 
         return pk_package;
     }
 
-    private void get_package_details_internal (PackageKitJob job) {
+    private void get_package_details_internal (Job job) {
         var args = (GetPackageDetailsArgs)job.args;
         var package = args.package;
 
@@ -740,7 +800,7 @@ public class AppCenterCore.PackageKitClient : Backend, Object {
         var job_args = new GetPackageDetailsArgs ();
         job_args.package = package;
 
-        var job = yield launch_job (PackageKitJob.Type.GET_PACKAGE_DETAILS, job_args);
+        var job = yield launch_job (Job.Type.GET_PACKAGE_DETAILS, job_args);
         if (job.error != null) {
             throw job.error;
         }
@@ -748,8 +808,61 @@ public class AppCenterCore.PackageKitClient : Backend, Object {
         return (PackageDetails)job.result.get_object ();
     }
 
-    private static GLib.Once<PackageKitClient> instance;
-    public static unowned PackageKitClient get_default () {
-        return instance.once (() => { return new PackageKitClient (); });
+    private void update_progress_status (Pk.Progress progress, Pk.ProgressType type) {
+        switch (type) {
+            case Pk.ProgressType.ALLOW_CANCEL:
+                can_cancel = progress.allow_cancel;
+                break;
+            case Pk.ProgressType.ITEM_PROGRESS:
+                if (current_status == Pk.Status.SETUP) {
+                    current_status = (Pk.Status) progress.status;
+                    /* skipping package download, we have cached packages */
+                    if (current_status != Pk.Status.DOWNLOAD) {
+                        progress_denom = 100.0f;
+                    }
+                }
+                /* transaction changed so progress count is starting over */
+                else if ((Pk.Status) progress.status != current_status) {
+                    current_status = (Pk.Status) progress.status;
+                    current_progress = last_progress;
+                }
+
+                last_progress = progress.percentage;
+                double progress_sum = current_progress + last_progress;
+                this.progress = progress_sum / progress_denom;
+                break;
+            case Pk.ProgressType.STATUS:
+                status = (Pk.Status) progress.status;
+                break;
+        }
+    }
+
+    private static ChangeInformation.Status pk_status_to_appcenter_status (Pk.Status status) {
+        switch (status) {
+            case Pk.Status.WAIT:
+            case Pk.Status.WAITING_FOR_AUTH:
+                return ChangeInformation.Status.WAITING;
+            case Pk.Status.CANCEL:
+                return ChangeInformation.Status.CANCELLED;
+            case Pk.Status.FINISHED:
+                return ChangeInformation.Status.FINISHED;
+            default:
+                return ChangeInformation.Status.RUNNING;
+        }
+    }
+
+    private void reset_progress () {
+        can_cancel = true;
+        current_progress = 0;
+        last_progress = 0;
+        current_status = Pk.Status.SETUP;
+        status = Pk.Status.SETUP;
+        progress_denom = 200.0f;
+        progress = 0.0f;
+    }
+
+    private static GLib.Once<PackageKitBackend> instance;
+    public static unowned PackageKitBackend get_default () {
+        return instance.once (() => { return new PackageKitBackend (); });
     }
 }
