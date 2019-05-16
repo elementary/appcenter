@@ -39,10 +39,6 @@ public class SharePopover : Gtk.Popover {
         facebook_button.tooltip_text = _("Facebook");
         facebook_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
-        var google_button = new Gtk.Button.from_icon_name ("online-account-google-plus", Gtk.IconSize.DND);
-        google_button.tooltip_text = _("Google+");
-        google_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
-
         var twitter_button = new Gtk.Button.from_icon_name ("online-account-twitter", Gtk.IconSize.DND);
         twitter_button.tooltip_text = _("Twitter");
         twitter_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
@@ -71,7 +67,6 @@ public class SharePopover : Gtk.Popover {
         service_grid.margin = 6;
         service_grid.add (email_button);
         service_grid.add (facebook_button);
-        service_grid.add (google_button);
         service_grid.add (twitter_button);
         service_grid.add (reddit_button);
         service_grid.add (tumblr_button);
@@ -111,15 +106,6 @@ public class SharePopover : Gtk.Popover {
         facebook_button.clicked.connect (() => {
             try {
                 AppInfo.launch_default_for_uri ("https://www.facebook.com/sharer/sharer.php?u=%s".printf (uri), null);
-            } catch (Error e) {
-                warning ("%s", e.message);
-            }
-            hide ();
-        });
-
-        google_button.clicked.connect (() => {
-            try {
-                AppInfo.launch_default_for_uri ("https://plus.google.com/share?url=%s".printf (uri), null);
             } catch (Error e) {
                 warning ("%s", e.message);
             }
