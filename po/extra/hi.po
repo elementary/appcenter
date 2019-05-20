@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-18 05:17-0500\n"
-"PO-Revision-Date: 2018-03-19 04:42+0000\n"
-"Last-Translator: Anand Kumar <anand@anandkumar.net>\n"
-"Language-Team: Hindi <https://weblate.elementary.io/projects/appcenter/extra/"
-"hi/>\n"
+"PO-Revision-Date: 2019-05-16 00:14+0000\n"
+"Last-Translator: Daniel Foré <daniel@elementary.io>\n"
+"Language-Team: Hindi <https://l10n.elementary.io/projects/appcenter/extra/hi/"
+">\n"
 "Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.6.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
@@ -22,7 +22,7 @@ msgstr "एपसेंटर"
 #: data/io.elementary.appcenter.appdata.xml.in:9
 #: data/io.elementary.appcenter.desktop.in.in:4
 msgid "Browse and manage apps"
-msgstr ""
+msgstr "एप्लिकेशन ब्राउज़ करें और प्रबंधित करें"
 
 #: data/io.elementary.appcenter.appdata.xml.in:11
 msgid ""
@@ -30,6 +30,10 @@ msgid ""
 "search and discover new apps. AppCenter is also used for updating your "
 "system to the latest and greatest version for new features and fixes."
 msgstr ""
+"इंडी और ओपन सोर्स डेवलपर्स के लिए एक ऐप स्टोर। श्रेणियों के आधार पर ब्राउज़ "
+"करें या नए एप्लिकेशन खोजें । एप्लिकेशन केंद्र का उपयोग आपके सिस्टम को नई "
+"सुविधाओं और सुधारों के लिए नवीनतम और सबसे बड़े संस्करण में अपडेट करने के लिए "
+"भी किया जाता है।"
 
 #: data/io.elementary.appcenter.appdata.xml.in:201
 msgid "elementary LLC."
@@ -37,16 +41,17 @@ msgstr ""
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
-msgstr ""
+msgstr "@APP_NAME@"
 
 #: data/io.elementary.appcenter.desktop.in.in:6
 msgid "@DESKTOP_ICON@"
-msgstr ""
+msgstr "@DESKTOP_ICON@"
 
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
 msgstr ""
+"स्थापित करें; स्थापना रद्द, हटाने, सूची, दुकान, क्षुधा, अपडेट, सॉफ्टवेयर;"
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
-msgstr ""
+msgstr "अपडेट के लिये जांचें"
