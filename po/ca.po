@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-17 11:14-0700\n"
-"PO-Revision-Date: 2019-04-24 23:21+0000\n"
+"PO-Revision-Date: 2019-05-03 12:38+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ca/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.5.1\n"
+"X-Generator: Weblate 3.6\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -243,7 +243,7 @@ msgstr "Actualitzacions del sistema operatiu"
 
 #: src/Core/UpdateManager.vala:39
 msgid "Updates to system components"
-msgstr "Actualitzacions als components del sistema"
+msgstr "Actualitzacions per als components del sistema"
 
 #: src/Core/UpdateManager.vala:76
 #, c-format

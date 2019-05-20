@@ -9,7 +9,6 @@
     <file alias="applications-video-symbolic-rtl.svg" compressed="true" preprocess="xml-stripblanks">applications-video-rtl-symbolic.svg</file>
     <file alias="applications-video-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-video-symbolic.svg</file>
     <file alias="online-account-facebook.svg" compressed="true" preprocess="xml-stripblanks">online-account-facebook.svg</file>
-    <file alias="online-account-google-plus.svg" compressed="true" preprocess="xml-stripblanks">online-account-google-plus.svg</file>
     <file alias="online-account-reddit.svg" compressed="true" preprocess="xml-stripblanks">online-account-reddit.svg</file>
     <file alias="online-account-tumblr.svg" compressed="true" preprocess="xml-stripblanks">online-account-tumblr.svg</file>
     <file alias="online-account-twitter.svg" compressed="true" preprocess="xml-stripblanks">online-account-twitter.svg</file>

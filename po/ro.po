@@ -1,10 +1,13 @@
+# Daniel Foré <daniel@elementary.io>, 2019.
+# Serban Iordache <iordache.serban2002@gmail.com>, 2019.
+# HeyLinux <heylinux.me@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-17 11:14-0700\n"
-"PO-Revision-Date: 2017-06-12 20:23+0000\n"
-"Last-Translator: Nicolae Crefelean <kneekoo@yahoo.com>\n"
+"PO-Revision-Date: 2019-05-16 00:14+0000\n"
+"Last-Translator: HeyLinux <heylinux.me@gmail.com>\n"
 "Language-Team: Romanian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ro/>\n"
 "Language: ro\n"
@@ -13,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2;\n"
-"X-Generator: Weblate 2.14\n"
+"X-Generator: Weblate 3.6.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -24,7 +27,7 @@ msgstr "AppCenter"
 #: src/Application.vala:106
 #, c-format
 msgid "Could not parse mimetype %s"
-msgstr ""
+msgstr "Nu s-a putut analiza mimetype %s"
 
 #: src/Application.vala:126
 #, c-format
@@ -252,24 +255,24 @@ msgstr "Actualizări pentru componentele sistemului"
 #: src/Core/UpdateManager.vala:76
 #, c-format
 msgid "Version: %s"
-msgstr ""
+msgstr "Versiune: %s"
 
 #: src/Core/UpdateManager.vala:82
 msgid "No components with updates"
-msgstr ""
+msgstr "Nici un component cu o actualizare"
 
 #: src/Core/UpdateManager.vala:86
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
-msgstr[0] ""
+msgstr[0] "%u componente cu actualizari"
 msgstr[1] ""
-msgstr[2] ""
+msgstr[2] "%u componente cu actualizari"
 
 #: src/Core/UpdateManager.vala:88
 #, c-format
 msgid "%s:"
-msgstr ""
+msgstr "%s:"
 
 #: src/Core/UpdateManager.vala:129
 msgid "Restart Required"
@@ -347,13 +350,15 @@ msgstr ""
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
 msgid "Pay $%d for %s"
-msgstr ""
+msgstr "Plăteste $%d pentru %s"
 
 #: src/Dialogs/StripeDialog.vala:96
 msgid ""
 "This is a one time payment. Your email address is only used to send you a "
 "receipt."
 msgstr ""
+"Aceasta este o plată unică. Adresa dumneavoastră de email va fi folosită "
+"doar pentru a vă trimite factura."
 
 #: src/Dialogs/StripeDialog.vala:106 src/Widgets/SharePopover.vala:35
 msgid "Email"
@@ -512,21 +517,23 @@ msgstr ""
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
-msgstr ""
+msgstr "Descărcarea actualizărilor eșuată"
 
 #: src/Dialogs/UpdateFailDialog.vala:26
 msgid ""
 "This may have been caused by external, manually added software repositories "
 "or a corrupted sources file."
 msgstr ""
+"Aceasta poate fi cauzată de arhivele externe adăugate manual sau de un "
+"fişier cu surse corupt."
 
 #: src/Dialogs/UpdateFailDialog.vala:34
 msgid "Ignore"
-msgstr ""
+msgstr "Ignoră"
 
 #: src/Dialogs/UpdateFailDialog.vala:35
 msgid "Try Again"
-msgstr ""
+msgstr "Reîncearcă"
 
 #: src/Views/AppInfoView.vala:75
 msgid "Screenshot Not Available"
@@ -550,7 +557,7 @@ msgstr "Ajutor"
 
 #: src/Views/AppInfoView.vala:178
 msgid "What's New:"
-msgstr ""
+msgstr "Ce este nou:"
 
 #: src/Views/AppInfoView.vala:197
 msgid "Extensions:"
@@ -589,28 +596,28 @@ msgstr "Stare necunoscută"
 #: src/Views/AppInfoView.vala:344
 #, c-format
 msgid "Other Apps by %s"
-msgstr ""
+msgstr "Alte aplicaţii de %s"
 
 #: src/Views/AppInfoView.vala:378
 msgid "Link copied to clipboard"
-msgstr ""
+msgstr "Link copiat in clipboard"
 
 #: src/Views/AppInfoView.vala:389
 #, c-format
 msgid "Check out %s on AppCenter:"
-msgstr ""
+msgstr "Încercați %s in AppCenter:"
 
 #: src/Views/AppInfoView.vala:396
 msgid "Share"
-msgstr ""
+msgstr "Partajează"
 
 #: src/Views/AppInfoView.vala:665
 msgid "Fund"
-msgstr ""
+msgstr "Susţine"
 
 #: src/Views/AppInfoView.vala:687
 msgid "Fund the development of this app"
-msgstr ""
+msgstr "Susţine dezvoltarea acestei aplicaţii"
 
 #: src/Views/AppListUpdateView.vala:56
 msgid "A restart is required to complete the installation of updates"
@@ -636,7 +643,7 @@ msgstr "Actualizate recent"
 
 #: src/Views/Homepage.vala:83
 msgid "Trending"
-msgstr ""
+msgstr "Populare"
 
 #: src/Views/Homepage.vala:99
 msgid "Categories"
