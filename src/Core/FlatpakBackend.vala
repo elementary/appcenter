@@ -37,7 +37,6 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
     private bool worker_func () {
         while (thread_should_run) {
-            working = false;
             var job = jobs.pop ();
             working = true;
             switch (job.operation) {
@@ -56,6 +55,8 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 default:
                     assert_not_reached ();
             }
+
+            working = false;
         }
 
         return true;

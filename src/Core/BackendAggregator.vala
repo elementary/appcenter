@@ -25,6 +25,27 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
         backends.add (PackageKitBackend.get_default ());
         backends.add (UbuntuDriversBackend.get_default ());
         backends.add (FlatpakBackend.get_default ());
+
+        foreach (var backend in backends) {
+            backend.notify["working"].connect (() => {
+                // Trigger a notify on this class, value doesn't matter
+                working = true;
+            });
+        }
+    }
+
+    public bool working {
+        get {
+            foreach (var backend in backends) {
+                if (backend.working) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        set { }
     }
 
     public async Gee.Collection<Package> get_installed_applications (Cancellable? cancellable = null) {

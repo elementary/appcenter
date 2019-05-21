@@ -111,7 +111,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             }
         });
 
-        unowned AppCenterCore.PackageKitBackend client = AppCenterCore.PackageKitBackend.get_default ();
+        unowned AppCenterCore.BackendAggregator client = AppCenterCore.BackendAggregator.get_default ();
         client.notify["working"].connect (() => {
             Idle.add (() => {
                 working = client.working;
