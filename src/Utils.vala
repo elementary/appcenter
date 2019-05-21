@@ -53,7 +53,7 @@ namespace Utils {
         }
 
         uint64 mtime = info.get_attribute_uint64 (FileAttribute.TIME_MODIFIED);
-        uint64 now = (uint64) get_real_time () / 1000000;
+        uint64 now = (uint64) time_t ();
 
         if (mtime > now) {
             return uint.MAX;
