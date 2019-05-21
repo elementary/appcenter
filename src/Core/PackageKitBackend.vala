@@ -40,7 +40,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
     // This would have to be done differently if there were multiple workers in the pool
     private bool thread_should_run = true;
 
-    public bool working { get; private set; }
+    public bool working { public get; protected set; }
 
     private bool can_cancel = true;
     private int current_progress = 0;

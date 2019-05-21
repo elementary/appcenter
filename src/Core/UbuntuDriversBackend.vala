@@ -19,16 +19,7 @@
 
 public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
 
-    private bool _working;
-    public bool working {
-        get {
-            return _working;
-        }
-
-        set {
-            _working = working;
-        }
-    }
+    public bool working { public get; protected set; }
 
     private async bool get_drivers_output (Cancellable? cancellable = null, out string? output = null) {
         output = null;
