@@ -314,12 +314,12 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         }
 
         for (int i = 0; i < remotes.length; i++) {
-            bool cache_refresh_needed = false;
-
             unowned Flatpak.Remote remote = remotes[i];
             if (remote.get_disabled ()) {
                 continue;
             }
+
+            bool cache_refresh_needed = false;
 
             unowned string origin_name = remote.get_name ();
             debug ("Found remote: %s", origin_name);
@@ -459,7 +459,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             return;
         }
 
-        FileInfo info = null;
+        FileInfo? info = null;
         try {
             while (!cancellable.is_cancelled () && (info = enumerator.next_file (cancellable)) != null) {
                 if (info.get_file_type () != FileType.DIRECTORY) {

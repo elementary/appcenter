@@ -39,7 +39,7 @@ namespace Utils {
         }
     }
 
-    public uint get_file_age (GLib.File file) {
+    public static uint get_file_age (GLib.File file) {
         FileInfo info;
         try {
             info = file.query_info (FileAttribute.TIME_MODIFIED, FileQueryInfoFlags.NONE);
