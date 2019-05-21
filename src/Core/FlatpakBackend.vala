@@ -62,7 +62,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         return true;
     }
 
-    private FlatpakBackend () {
+    construct {
         worker_thread = new Thread<bool> ("flatpak-worker", worker_func);
         appstream_pool = new AppStream.Pool ();
         appstream_pool.set_cache_flags (AppStream.CacheFlags.NONE);
