@@ -28,8 +28,7 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
 
         foreach (var backend in backends) {
             backend.notify["working"].connect (() => {
-                // Trigger a notify on this class, value doesn't matter
-                working = true;
+                notify_property ("working");
             });
         }
     }
