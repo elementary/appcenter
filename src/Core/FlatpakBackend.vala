@@ -76,13 +76,15 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             "flatpak-metadata"
         );
 
+        reload_appstream_pool ();
+    }
+
+    static construct {
         try {
             installation = new Flatpak.Installation.system ();
         } catch (Error e) {
             critical ("Unable to get system default flatpak installation : %s", e.message);
         }
-
-        reload_appstream_pool ();
     }
 
     ~FlatpakBackend () {
@@ -279,7 +281,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
         var newest_version = package.get_newest_release ();
         if (newest_version != null) {
-            details.version = package.get_newest_release ().get_version ();
+            details.version = newest_version.get_version ();
         }
 
         return details;
@@ -477,7 +479,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         }
     }
 
-    private void perform_xml_fixups (string origin_name, File src_file, File dest_file) {
+    private static void perform_xml_fixups (string origin_name, File src_file, File dest_file) {
         var path = src_file.get_path ();
         Xml.Doc* doc = Xml.Parser.parse_file (path);
         if (doc == null) {
