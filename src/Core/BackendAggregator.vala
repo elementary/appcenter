@@ -24,6 +24,27 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
         backends = new Gee.ArrayList<unowned Backend> ();
         backends.add (PackageKitBackend.get_default ());
         backends.add (UbuntuDriversBackend.get_default ());
+        backends.add (FlatpakBackend.get_default ());
+
+        foreach (var backend in backends) {
+            backend.notify["working"].connect (() => {
+                notify_property ("working");
+            });
+        }
+    }
+
+    public bool working {
+        get {
+            foreach (var backend in backends) {
+                if (backend.working) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        set { }
     }
 
     public async Gee.Collection<Package> get_installed_applications (Cancellable? cancellable = null) {
@@ -132,7 +153,7 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
     public async bool update_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
         var success = true;
         foreach (var backend in backends) {
-            if (!yield backend.update_package (package, (owned) cb, cancellable)) {
+            if (!yield backend.update_package (package, cb, cancellable)) {
                 success = false;
             }
         }
