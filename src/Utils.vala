@@ -39,7 +39,7 @@ namespace Utils {
         }
     }
 
-    public uint get_file_age (GLib.File file) {
+    public static uint get_file_age (GLib.File file) {
         FileInfo info;
         try {
             info = file.query_info (FileAttribute.TIME_MODIFIED, FileQueryInfoFlags.NONE);
@@ -53,7 +53,7 @@ namespace Utils {
         }
 
         uint64 mtime = info.get_attribute_uint64 (FileAttribute.TIME_MODIFIED);
-        uint64 now = (uint64) get_real_time () / 1000000;
+        uint64 now = (uint64) time_t ();
 
         if (mtime > now) {
             return uint.MAX;

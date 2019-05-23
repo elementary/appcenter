@@ -191,6 +191,25 @@ public class AppCenterCore.Package : Object {
         }
     }
 
+    public bool is_compulsory {
+        get {
+            unowned string? _current = Environment.get_variable ("XDG_SESSION_DESKTOP");
+            if (_current == null) {
+                return false;
+            }
+
+            string current = _current.down ();
+            unowned GenericArray<string> compulsory = component.get_compulsory_for_desktops ();
+            for (int i = 0; i < compulsory.length; i++) {
+                if (current == compulsory[i].down ()) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+    }
+
     private bool _explicit = false;
     private bool _check_explicit = true;
     public bool is_explicit {

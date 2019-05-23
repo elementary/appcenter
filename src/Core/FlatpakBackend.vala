@@ -31,13 +31,14 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     // This would have to be done differently if there were multiple workers in the pool
     private bool thread_should_run = true;
 
-    public bool working { get; private set; }
+    public bool working { public get; protected set; }
 
     private string local_metadata_path;
 
+    private static Flatpak.Installation? installation;
+
     private bool worker_func () {
         while (thread_should_run) {
-            working = false;
             var job = jobs.pop ();
             working = true;
             switch (job.operation) {
@@ -56,12 +57,14 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 default:
                     assert_not_reached ();
             }
+
+            working = false;
         }
 
         return true;
     }
 
-    private FlatpakBackend () {
+    construct {
         worker_thread = new Thread<bool> ("flatpak-worker", worker_func);
         appstream_pool = new AppStream.Pool ();
         appstream_pool.set_cache_flags (AppStream.CacheFlags.NONE);
@@ -74,6 +77,14 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         );
 
         reload_appstream_pool ();
+    }
+
+    static construct {
+        try {
+            installation = new Flatpak.Installation.system ();
+        } catch (Error e) {
+            critical ("Unable to get system default flatpak installation : %s", e.message);
+        }
     }
 
     ~FlatpakBackend () {
@@ -98,11 +109,8 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     public async Gee.Collection<Package> get_installed_applications (Cancellable? cancellable = null) {
         var installed_apps = new Gee.HashSet<Package> ();
 
-        Flatpak.Installation installation;
-        try {
-            installation = new Flatpak.Installation.system ();
-        } catch (Error e) {
-            critical ("Unable to get system default flatpak installation when checking installed apps: %s", e.message);
+        if (installation == null) {
+            critical ("Couldn't get installed apps due to no flatpak system installation");
             return installed_apps;
         }
 
@@ -228,6 +236,10 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     }
 
     public async uint64 get_download_size_by_id (string id, Cancellable? cancellable) throws GLib.Error {
+        if (installation == null) {
+            return 0;
+        }
+
         var parts = id.split ("/", 2);
         if (parts.length != 2) {
             return 0;
@@ -236,8 +248,6 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         var flatpak_ref = Flatpak.Ref.parse (parts[1]);
 
         uint64 download_size = 0;
-        var installation = new Flatpak.Installation.system ();
-
         installation.fetch_remote_size_sync (parts[0], flatpak_ref, out download_size, null);
         if (download_size > 0) {
             return download_size;
@@ -247,14 +257,17 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     }
 
     public async bool is_package_installed (Package package) throws GLib.Error {
+        if (installation == null) {
+            critical ("Could not check installed state of package due to no system flatpak installation");
+            return false;
+        }
+
         var bundle = package.component.get_bundle (AppStream.BundleKind.FLATPAK);
         if (bundle == null) {
             return false;
         }
 
         var key = "%s/%s".printf (package.component.get_origin (), bundle.get_id ());
-
-        var installation = new Flatpak.Installation.system ();
 
         var installed_refs = installation.list_installed_refs ();
         for (int j = 0; j < installed_refs.length; j++) {
@@ -281,7 +294,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
         var newest_version = package.get_newest_release ();
         if (newest_version != null) {
-            details.version = package.get_newest_release ().get_version ();
+            details.version = newest_version.get_version ();
         }
 
         return details;
@@ -303,11 +316,8 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
         delete_folder_contents (dest_folder, cancellable);
 
-        Flatpak.Installation installation;
-        try {
-            installation = new Flatpak.Installation.system ();
-        } catch (Error e) {
-            critical ("Error getting default flatpak installation: %s", e.message);
+        if (installation == null) {
+            critical ("Error refreshing flatpak cache due to no installation");
             return;
         }
 
@@ -319,12 +329,12 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         }
 
         for (int i = 0; i < remotes.length; i++) {
-            bool cache_refresh_needed = false;
-
             unowned Flatpak.Remote remote = remotes[i];
             if (remote.get_disabled ()) {
                 continue;
             }
+
+            bool cache_refresh_needed = false;
 
             unowned string origin_name = remote.get_name ();
             debug ("Found remote: %s", origin_name);
@@ -464,7 +474,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             return;
         }
 
-        FileInfo info = null;
+        FileInfo? info = null;
         try {
             while (!cancellable.is_cancelled () && (info = enumerator.next_file (cancellable)) != null) {
                 if (info.get_file_type () != FileType.DIRECTORY) {
@@ -482,7 +492,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         }
     }
 
-    private void perform_xml_fixups (string origin_name, File src_file, File dest_file) {
+    private static void perform_xml_fixups (string origin_name, File src_file, File dest_file) {
         var path = src_file.get_path ();
         Xml.Doc* doc = Xml.Parser.parse_file (path);
         if (doc == null) {
@@ -543,13 +553,9 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             return;
         }
 
-        Flatpak.Installation installation;
-        try {
-            installation = new Flatpak.Installation.system ();
-        } catch (Error e) {
-            critical ("Error getting default flatpak installation: %s", e.message);
-            job.result = Value (typeof (bool));
-            job.result.set_boolean (false);
+        if (installation == null) {
+            critical ("Error getting default flatpak installation");
+            job.result = false;
             job.results_ready ();
             return;
         }
@@ -666,13 +672,9 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             return;
         }
 
-        Flatpak.Installation installation;
-        try {
-            installation = new Flatpak.Installation.system ();
-        } catch (Error e) {
-            critical ("Error getting default flatpak installation for removal: %s", e.message);
-            job.result = Value (typeof (bool));
-            job.result.set_boolean (false);
+        if (installation == null) {
+            critical ("Error getting default flatpak installation for removal");
+            job.result = false;
             job.results_ready ();
             return;
         }
@@ -727,13 +729,9 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         unowned ChangeInformation.ProgressCallback cb = args.cb;
         var cancellable = args.cancellable;
 
-        Flatpak.Installation installation;
-        try {
-            installation = new Flatpak.Installation.system ();
-        } catch (Error e) {
-            critical ("Error getting default flatpak installation: %s", e.message);
-            job.result = Value (typeof (bool));
-            job.result.set_boolean (false);
+        if (installation == null) {
+            critical ("Error getting default flatpak installation");
+            job.result = false;
             job.results_ready ();
             return;
         }
@@ -838,11 +836,8 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     public async Gee.ArrayList<string> get_updates (Cancellable? cancellable = null) {
         var updatable_ids = new Gee.ArrayList<string> ();
 
-        Flatpak.Installation installation;
-        try {
-            installation = new Flatpak.Installation.system ();
-        } catch (Error e) {
-            critical ("Unable to get default flatpak installation when checking for updates: %s", e.message);
+        if (installation == null) {
+            critical ("Unable to get default flatpak installation when checking for updates");
             return updatable_ids;
         }
 

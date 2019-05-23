@@ -1,18 +1,20 @@
+# AMONK <anandahanuman@gmail.com>, 2019.
+# Pomi Not <uspomai@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-17 11:14-0700\n"
-"PO-Revision-Date: 2018-06-21 00:08+0000\n"
-"Last-Translator: Tuyền Nguyễn <tuyendev@gmail.com>\n"
-"Language-Team: Vietnamese <https://weblate.elementary.io/projects/appcenter/"
+"PO-Revision-Date: 2019-05-16 00:14+0000\n"
+"Last-Translator: Pomi Not <uspomai@gmail.com>\n"
+"Language-Team: Vietnamese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/vi/>\n"
 "Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.6.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -23,7 +25,7 @@ msgstr "Trung tâm ứng dụng"
 #: src/Application.vala:106
 #, c-format
 msgid "Could not parse mimetype %s"
-msgstr ""
+msgstr "Không thể phân tích loại nội dung %s"
 
 #: src/Application.vala:126
 #, c-format
@@ -274,12 +276,12 @@ msgstr "Vui lòng khởi động lại hệ thống của bạn để hoàn tấ
 
 #: src/Dialogs/ContentWarningDialog.vala:27
 msgid "Content Warning"
-msgstr ""
+msgstr "Cảnh báo nội dung"
 
 #: src/Dialogs/ContentWarningDialog.vala:32
 #, c-format
 msgid "%s Contains Explicit Content"
-msgstr ""
+msgstr "%s chứa nội dung nhạy cảm"
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 #, c-format
@@ -291,11 +293,11 @@ msgstr ""
 
 #: src/Dialogs/ContentWarningDialog.vala:35
 msgid "Show content warnings"
-msgstr ""
+msgstr "Hiện cảnh báo nội dung"
 
 #: src/Dialogs/ContentWarningDialog.vala:40
 msgid "Don’t Install"
-msgstr ""
+msgstr "Đừng cài đặt"
 
 #: src/Dialogs/ContentWarningDialog.vala:41
 #, fuzzy
@@ -335,12 +337,12 @@ msgstr "Vui lòng kiểm tra thông tin thanh toán của bạn và thử lại"
 
 #: src/Dialogs/StripeDialog.vala:76
 msgid "Payment"
-msgstr ""
+msgstr "Thanh toán"
 
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
 msgid "Pay $%d for %s"
-msgstr "Thanh toán %d cho %s"
+msgstr "Thanh toán $%d cho %s"
 
 #: src/Dialogs/StripeDialog.vala:96
 msgid ""
@@ -493,21 +495,21 @@ msgstr ""
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
-msgstr ""
+msgstr "Không thể tải nội dung cập nhật"
 
 #: src/Dialogs/UpdateFailDialog.vala:26
 msgid ""
 "This may have been caused by external, manually added software repositories "
 "or a corrupted sources file."
-msgstr ""
+msgstr "Điều này có thể gây ra bởi các nguồn ngoài hoặc file nguồn bị lỗi"
 
 #: src/Dialogs/UpdateFailDialog.vala:34
 msgid "Ignore"
-msgstr ""
+msgstr "Bỏ qua"
 
 #: src/Dialogs/UpdateFailDialog.vala:35
 msgid "Try Again"
-msgstr ""
+msgstr "Thử lại"
 
 #: src/Views/AppInfoView.vala:75
 msgid "Screenshot Not Available"
@@ -531,7 +533,7 @@ msgstr "Trợ giúp"
 
 #: src/Views/AppInfoView.vala:178
 msgid "What's New:"
-msgstr ""
+msgstr "Tin tức mới:"
 
 #: src/Views/AppInfoView.vala:197
 msgid "Extensions:"
@@ -569,28 +571,28 @@ msgstr "Trạng thái không xác định"
 #: src/Views/AppInfoView.vala:344
 #, c-format
 msgid "Other Apps by %s"
-msgstr ""
+msgstr "Các ứng dụng khác %s"
 
 #: src/Views/AppInfoView.vala:378
 msgid "Link copied to clipboard"
-msgstr ""
+msgstr "Đường dẫn đã được sao chép lưu tạm thời"
 
 #: src/Views/AppInfoView.vala:389
 #, c-format
 msgid "Check out %s on AppCenter:"
-msgstr ""
+msgstr "Kiểm tra %s trên Trung tâm Ứng dụng:"
 
 #: src/Views/AppInfoView.vala:396
 msgid "Share"
-msgstr ""
+msgstr "Chia sẻ"
 
 #: src/Views/AppInfoView.vala:665
 msgid "Fund"
-msgstr ""
+msgstr "Tài trợ"
 
 #: src/Views/AppInfoView.vala:687
 msgid "Fund the development of this app"
-msgstr ""
+msgstr "Tài trợ cho sự phát triển của ứng dụng này"
 
 #: src/Views/AppListUpdateView.vala:56
 msgid "A restart is required to complete the installation of updates"
@@ -607,7 +609,7 @@ msgstr "Cập nhật tất cả"
 
 #: src/Views/AppListView.vala:128
 msgid "Non-Curated Apps"
-msgstr ""
+msgstr "Không được quản lý"
 
 #: src/Views/Homepage.vala:67
 msgid "Recently Updated"
@@ -615,7 +617,7 @@ msgstr "Đã cập nhật gần đây"
 
 #: src/Views/Homepage.vala:83
 msgid "Trending"
-msgstr ""
+msgstr "Nổi bật"
 
 #: src/Views/Homepage.vala:99
 msgid "Categories"
@@ -709,7 +711,7 @@ msgstr "Hệ thống"
 
 #: src/Widgets/CategoryFlowBox.vala:119
 msgid "Universal Access"
-msgstr ""
+msgstr "Trợ năng"
 
 #: src/Widgets/CategoryFlowBox.vala:120
 msgid "Video"
@@ -721,7 +723,7 @@ msgstr ""
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
-msgstr ""
+msgstr "Yêu cầu thanh toán, nhưng không được bật"
 
 #: src/Widgets/HumbleButton.vala:106
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:323
@@ -758,7 +760,7 @@ msgstr "Trạng thái không xác định"
 
 #: src/Widgets/ReleaseRow.vala:90 src/Widgets/ReleaseRow.vala:93
 msgid "No description available"
-msgstr ""
+msgstr "Không có mô tả"
 
 #: src/Widgets/SharePopover.vala:39
 msgid "Facebook"
@@ -786,7 +788,7 @@ msgstr ""
 
 #: src/Widgets/SharePopover.vala:63
 msgid "Copy link"
-msgstr ""
+msgstr "Sao chép liên kết"
 
 #: src/Widgets/UpdateHeaderRow.vala:68
 #, c-format
