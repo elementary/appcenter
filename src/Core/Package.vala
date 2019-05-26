@@ -313,19 +313,19 @@ public class AppCenterCore.Package : Object {
         owned get {
             if (backend is PackageKitBackend) {
                 if (component.get_origin () == APPCENTER_PACKAGE_ORIGIN) {
-                    return _("AppCenter Curated");
+                    return _("AppCenter");
                 } else if (component.get_origin () == ELEMENTARY_STABLE_PACKAGE_ORIGIN || component.get_origin () == ELEMENTARY_DAILY_PACKAGE_ORIGIN) {
-                    return _("elementary Repository");
+                    return _("elementary Updates");
                 } else if (component.get_origin ().has_prefix ("ubuntu-")) {
-                    return _("Ubuntu Repository (non-curated)");
+                    return _("Ubuntu (non-curated)");
                 }
             } else if (backend is FlatpakBackend) {
-                return _("%s Flatpak Repository").printf (component.get_origin ());
+                return _("%s (non-curated)").printf (component.get_origin ());
             } else if (backend is UbuntuDriversBackend) {
-                return _("Ubuntu Repository Drivers");
+                return _("Ubuntu Drivers");
             }
 
-            return _("Unknown Origin");
+            return _("Unknown Origin (non-curated)");
         }
     }
 
