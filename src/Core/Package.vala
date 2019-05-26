@@ -113,6 +113,26 @@ public class AppCenterCore.Package : Object {
         }
     }
 
+    /**
+     * The component ID of the package with the .desktop suffix removed if it exists.
+     * This is used for comparing two packages to see if they have a matching ID
+     */
+    private string? _component_id = null;
+    public string normalized_component_id {
+        get {
+            if (_component_id != null) {
+                return _component_id;
+            }
+
+            _component_id = component.id;
+            if (_component_id.has_suffix (".desktop")) {
+                _component_id = _component_id.substring (0, _component_id.length + _component_id.index_of_nth_char (-8));
+            }
+
+            return _component_id;
+        }
+    }
+
     public bool should_pay {
         get {
             if (!is_native || is_os_updates) {

@@ -62,17 +62,7 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
 
     public Gee.Collection<Package> get_applications_for_category (AppStream.Category category) {
         var apps = new Gee.TreeSet<Package> ((a, b) => {
-            var a_id = a.component.get_id ();
-            var b_id = b.component.get_id ();
-            if (a_id.has_suffix (".desktop")) {
-                a_id = a_id.substring (0, a_id.length + a_id.index_of_nth_char (-8));
-            }
-
-            if (b_id.has_suffix (".desktop")) {
-                b_id = b_id.substring (0, b_id.length + b_id.index_of_nth_char (-8));
-            }
-
-            return a_id.collate (b_id);
+            return a.normalized_component_id.collate (b.normalized_component_id);
         });
 
         foreach (var backend in backends) {
@@ -84,17 +74,7 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
 
     public Gee.Collection<Package> search_applications (string query, AppStream.Category? category) {
         var apps = new Gee.TreeSet<Package> ((a, b) => {
-            var a_id = a.component.get_id ();
-            var b_id = b.component.get_id ();
-            if (a_id.has_suffix (".desktop")) {
-                a_id = a_id.substring (0, a_id.length + a_id.index_of_nth_char (-8));
-            }
-
-            if (b_id.has_suffix (".desktop")) {
-                b_id = b_id.substring (0, b_id.length + b_id.index_of_nth_char (-8));
-            }
-
-            return a_id.collate (b_id);
+            return a.normalized_component_id.collate (b.normalized_component_id);
         });
 
         foreach (var backend in backends) {
