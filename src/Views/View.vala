@@ -25,11 +25,15 @@ public abstract class AppCenter.View : Gtk.Stack {
 
     construct {
         get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
-        transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
         expand = true;
     }
 
-    public virtual void show_package (AppCenterCore.Package package) {
+    public virtual void show_package (
+        AppCenterCore.Package package,
+        Gtk.StackTransitionType transition = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT
+    ) {
+        transition_type = transition;
+
         previous_package = null;
 
         var package_hash = package.component.get_origin () + "-" + package.component.id;
@@ -42,8 +46,8 @@ public abstract class AppCenter.View : Gtk.Stack {
         }
 
         var app_info_view = new Views.AppInfoView (package);
-        app_info_view.show_other_package.connect ((_package) => {
-            show_package (_package);
+        app_info_view.show_other_package.connect ((_package, transition) => {
+            show_package (_package, transition);
             previous_package = package;
             subview_entered (package.get_name (), false, "", null);
         });

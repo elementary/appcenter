@@ -178,8 +178,8 @@ namespace AppCenter {
                 });
             });
 
-            recently_updated_carousel.package_activated.connect (show_package);
-            trending_carousel.package_activated.connect (show_package);
+            recently_updated_carousel.package_activated.connect ((package) => show_package (package));
+            trending_carousel.package_activated.connect ((package) => show_package (package));
         }
 
         private async void load_banners () {
@@ -269,7 +269,10 @@ namespace AppCenter {
         }
 #endif
 
-        public override void show_package (AppCenterCore.Package package) {
+        public override void show_package (
+            AppCenterCore.Package package,
+            Gtk.StackTransitionType transition = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT
+        ) {
             base.show_package (package);
             viewing_package = true;
             current_category = null;
