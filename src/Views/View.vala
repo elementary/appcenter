@@ -40,7 +40,7 @@ public abstract class AppCenter.View : Gtk.Stack {
 
         var pk_child = get_child_by_name (package_hash) as Views.AppInfoView;
         if (pk_child != null) {
-            pk_child.reload_css ();
+            pk_child.view_entered ();
             set_visible_child (pk_child);
             return;
         }

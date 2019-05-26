@@ -442,7 +442,7 @@ namespace AppCenter.Views {
                 links_grid.add (share_button);
             }
 #endif
-            reload_css ();
+            view_entered ();
             set_up_package (128);
             parse_description (package.get_description ());
 
@@ -491,7 +491,18 @@ namespace AppCenter.Views {
             app_download_stack.set_visible_child_name ("CHILD");
         }
 
-        public void reload_css () {
+        public void view_entered () {
+            Gtk.TreeIter iter;
+            AppCenterCore.Package version;
+            if (version_liststore.get_iter_first (out iter)) {
+                do {
+                    version_liststore.@get (iter, 0, out version);
+                    if (version == package) {
+                        version_combo.set_active_iter (iter);
+                    }
+                } while (version_liststore.iter_next (ref iter));
+            }
+
             var provider = new Gtk.CssProvider ();
             try {
                 string color_primary;
@@ -532,17 +543,16 @@ namespace AppCenter.Views {
             }
 
             Gtk.TreeIter iter;
-            int selected_index = 0;
+            uint count = 0;
             foreach (var version in package.versions) {
                 version_liststore.append (out iter);
                 version_liststore.set (iter, 0, version, 1, version.origin_description);
                 if (version == package) {
-                    version_combo.set_active (selected_index);
+                    version_combo.set_active_iter (iter);
                 }
 
-                selected_index++;
-
-                if (selected_index > 1) {
+                count++;
+                if (count > 1) {
                     version_combo.no_show_all = false;
                     version_combo.show_all ();
                 }
