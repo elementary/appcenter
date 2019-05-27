@@ -30,6 +30,7 @@ public abstract class AppCenter.View : Gtk.Stack {
 
     public virtual void show_package (
         AppCenterCore.Package package,
+        bool remember_history = true,
         Gtk.StackTransitionType transition = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT
     ) {
         transition_type = transition;
@@ -46,10 +47,12 @@ public abstract class AppCenter.View : Gtk.Stack {
         }
 
         var app_info_view = new Views.AppInfoView (package);
-        app_info_view.show_other_package.connect ((_package, transition) => {
-            show_package (_package, transition);
-            previous_package = package;
-            subview_entered (package.get_name (), false, "", null);
+        app_info_view.show_other_package.connect ((_package, remember_history, transition) => {
+            show_package (_package, remember_history, transition);
+            if (remember_history) {
+                previous_package = package;
+                subview_entered (package.get_name (), false, "", null);
+            }
         });
 
         app_info_view.show_all ();

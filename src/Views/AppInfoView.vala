@@ -22,6 +22,7 @@ namespace AppCenter.Views {
     public class AppInfoView : AppCenter.AbstractAppContainer {
         public signal void show_other_package (
             AppCenterCore.Package package,
+            bool remember_history = true,
             Gtk.StackTransitionType transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT
         );
 
@@ -233,7 +234,7 @@ namespace AppCenter.Views {
                 version_combo.get_active_iter (out iter);
                 version_liststore.@get (iter, 0, out selected_version);
                 if (selected_version != null && selected_version != package) {
-                    show_other_package (selected_version, Gtk.StackTransitionType.CROSSFADE);
+                    show_other_package (selected_version, false, Gtk.StackTransitionType.CROSSFADE);
                 }
             });
 
