@@ -21,6 +21,8 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
 
     public bool working { public get; protected set; }
 
+    public Gee.TreeSet<Package>? cached_packages = null;
+
     private async bool get_drivers_output (Cancellable? cancellable = null, out string? output = null) {
         output = null;
         string? drivers_exec_path = Environment.find_program_in_path ("ubuntu-drivers");
@@ -40,13 +42,17 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
     }
 
     public async Gee.Collection<Package> get_installed_applications (Cancellable? cancellable = null) {
+        if (cached_packages != null) {
+            return cached_packages;
+        }
+
         working = true;
-        var driver_list = new Gee.TreeSet<Package> ();
+        cached_packages = new Gee.TreeSet<Package> ();
         string? command_output;
         var result = yield get_drivers_output (cancellable, out command_output);
         if (!result || command_output == null || cancellable.is_cancelled ()) {
             working = false;
-            return driver_list;
+            return cached_packages;
         }
 
         string[] tokens = command_output.split ("\n");
@@ -76,11 +82,11 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
                 package.update_state ();
             }
 
-            driver_list.add (package);
+            cached_packages.add (package);
         }
 
         working = false;
-        return driver_list;
+        return cached_packages;
     }
 
     public Gee.Collection<Package> get_applications_for_category (AppStream.Category category) {
