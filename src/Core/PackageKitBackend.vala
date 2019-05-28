@@ -40,7 +40,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
     // This would have to be done differently if there were multiple workers in the pool
     private bool thread_should_run = true;
 
-    public bool working { get; private set; }
+    public bool working { public get; protected set; }
 
     // The aptcc backend included in PackageKit < 1.1.10 wasn't able to support multiple packages
     // passed to the search_names method at once. If we have a new enough version we can enable

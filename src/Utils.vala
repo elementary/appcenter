@@ -39,6 +39,33 @@ namespace Utils {
         }
     }
 
+    public static uint get_file_age (GLib.File file) {
+        FileInfo info;
+        try {
+            info = file.query_info (FileAttribute.TIME_MODIFIED, FileQueryInfoFlags.NONE);
+        } catch (Error e) {
+            warning ("Error while getting file age: %s", e.message);
+            return uint.MAX;
+        }
+
+        if (info == null) {
+            return uint.MAX;
+        }
+
+        uint64 mtime = info.get_attribute_uint64 (FileAttribute.TIME_MODIFIED);
+        uint64 now = (uint64) time_t ();
+
+        if (mtime > now) {
+            return uint.MAX;
+        }
+
+        if (now - mtime > uint.MAX) {
+            return uint.MAX;
+        }
+
+        return (uint) (now - mtime);
+    }
+
     public static unowned string pk_status_to_string (Pk.Status status) {
         switch (status) {
             case Pk.Status.SETUP:
