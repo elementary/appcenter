@@ -77,7 +77,11 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
 
     protected override void set_up_package (uint icon_size = 48) {
         if (package.get_version () != null) {
-            app_version.label = "%s - %s".printf (package.get_version (), package.origin_description);
+            if (package.has_multiple_versions) {
+                app_version.label = "%s - %s".printf (package.get_version (), package.origin_description);
+            } else {
+                app_version.label = package.get_version ();
+            }
         }
 
         app_version.ellipsize = Pango.EllipsizeMode.END;
@@ -87,7 +91,11 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
 
     protected override void update_state (bool first_update = false) {
         if (!first_update && package.get_version != null) {
-            app_version.label = "%s - %s".printf (package.get_version (), package.origin_description);
+            if (package.has_multiple_versions) {
+                app_version.label = "%s - %s".printf (package.get_version (), package.origin_description);
+            } else {
+                app_version.label = package.get_version ();
+            }
         }
 
         if (package.state == AppCenterCore.Package.State.UPDATE_AVAILABLE) {
