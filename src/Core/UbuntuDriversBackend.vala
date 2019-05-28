@@ -99,6 +99,10 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
         return null;
     }
 
+    public Gee.Collection<Package> get_packages_for_component_id (string id) {
+        return new Gee.ArrayList<Package> ();
+    }
+
     public Package? get_package_for_desktop_id (string id) {
         return null;
     }

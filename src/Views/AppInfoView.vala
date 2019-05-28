@@ -20,7 +20,11 @@
 
 namespace AppCenter.Views {
     public class AppInfoView : AppCenter.AbstractAppContainer {
-        public signal void show_other_package (AppCenterCore.Package package);
+        public signal void show_other_package (
+            AppCenterCore.Package package,
+            bool remember_history = true,
+            Gtk.StackTransitionType transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT
+        );
 
         static Gtk.CssProvider? previous_css_provider = null;
 
@@ -37,6 +41,8 @@ namespace AppCenter.Views {
         private Gtk.TextView app_description;
         private Widgets.Switcher screenshot_switcher;
         private Gtk.Stack app_download_stack;
+        private Gtk.ListStore version_liststore;
+        private Gtk.ComboBox version_combo;
 
         public AppInfoView (AppCenterCore.Package package) {
             Object (package: package);
@@ -213,11 +219,32 @@ namespace AppCenter.Views {
             /* Must wide enought to fit long package name and progress bar */
             header_grid.width_request = content_grid.width_request + 2 * (content_grid.margin - header_grid.margin);
             header_grid.hexpand = true;
-            header_grid.attach (image, 0, 0, 1, 2);
+            header_grid.attach (image, 0, 0, 1, 3);
             header_grid.attach (package_name, 1, 0);
+
+            version_liststore = new Gtk.ListStore (2, typeof (AppCenterCore.Package), typeof (string));
+            version_combo = new Gtk.ComboBox.with_model (version_liststore);
+            version_combo.no_show_all = true;
+            version_combo.visible = false;
+            version_combo.halign = Gtk.Align.START;
+            version_combo.valign = Gtk.Align.START;
+            version_combo.changed.connect (() => {
+                Gtk.TreeIter iter;
+                AppCenterCore.Package selected_version;
+                version_combo.get_active_iter (out iter);
+                version_liststore.@get (iter, 0, out selected_version);
+                if (selected_version != null && selected_version != package) {
+                    show_other_package (selected_version, false, Gtk.StackTransitionType.CROSSFADE);
+                }
+            });
+
+            var renderer = new Gtk.CellRendererText ();
+            version_combo.pack_start (renderer, true);
+            version_combo.add_attribute (renderer, "text", 1);
 
             if (!package.is_os_updates) {
                 header_grid.attach (package_author, 1, 1, 2);
+                header_grid.attach (version_combo, 1, 2, 2);
                 header_grid.attach (app_version, 2, 0, 1, 1);
             } else {
                 package_summary.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
@@ -416,7 +443,7 @@ namespace AppCenter.Views {
                 links_grid.add (share_button);
             }
 #endif
-            reload_css ();
+            view_entered ();
             set_up_package (128);
             parse_description (package.get_description ());
 
@@ -465,7 +492,18 @@ namespace AppCenter.Views {
             app_download_stack.set_visible_child_name ("CHILD");
         }
 
-        public void reload_css () {
+        public void view_entered () {
+            Gtk.TreeIter iter;
+            AppCenterCore.Package version;
+            if (version_liststore.get_iter_first (out iter)) {
+                do {
+                    version_liststore.@get (iter, 0, out version);
+                    if (version == package) {
+                        version_combo.set_active_iter (iter);
+                    }
+                } while (version_liststore.iter_next (ref iter));
+            }
+
             var provider = new Gtk.CssProvider ();
             try {
                 string color_primary;
@@ -503,6 +541,22 @@ namespace AppCenter.Views {
             if (cache == null) {
                 warning ("screenshots cannot be loaded, because the cache could not be created.\n");
                 return;
+            }
+
+            Gtk.TreeIter iter;
+            uint count = 0;
+            foreach (var version in package.versions) {
+                version_liststore.append (out iter);
+                version_liststore.set (iter, 0, version, 1, version.origin_description);
+                if (version == package) {
+                    version_combo.set_active_iter (iter);
+                }
+
+                count++;
+                if (count > 1) {
+                    version_combo.no_show_all = false;
+                    version_combo.show_all ();
+                }
             }
 
             new Thread<void*> ("content-loading", () => {

@@ -113,6 +113,26 @@ public class AppCenterCore.Package : Object {
         }
     }
 
+    /**
+     * The component ID of the package with the .desktop suffix removed if it exists.
+     * This is used for comparing two packages to see if they have a matching ID
+     */
+    private string? _component_id = null;
+    public string normalized_component_id {
+        get {
+            if (_component_id != null) {
+                return _component_id;
+            }
+
+            _component_id = component.id;
+            if (_component_id.has_suffix (".desktop")) {
+                _component_id = _component_id.substring (0, _component_id.length + _component_id.index_of_nth_char (-8));
+            }
+
+            return _component_id;
+        }
+    }
+
     public bool should_pay {
         get {
             if (!is_native || is_os_updates) {
@@ -274,6 +294,38 @@ public class AppCenterCore.Package : Object {
     public bool is_plugin {
         get {
             return component.get_kind () == AppStream.ComponentKind.ADDON;
+        }
+    }
+
+    public Gee.Collection<Package> versions {
+        owned get {
+            return BackendAggregator.get_default ().get_packages_for_component_id (component.get_id ());
+        }
+    }
+
+    public bool has_multiple_versions {
+        get {
+            return versions.size > 1;
+        }
+    }
+
+    public string origin_description {
+        owned get {
+            if (backend is PackageKitBackend) {
+                if (component.get_origin () == APPCENTER_PACKAGE_ORIGIN) {
+                    return _("AppCenter");
+                } else if (component.get_origin () == ELEMENTARY_STABLE_PACKAGE_ORIGIN || component.get_origin () == ELEMENTARY_DAILY_PACKAGE_ORIGIN) {
+                    return _("elementary Updates");
+                } else if (component.get_origin ().has_prefix ("ubuntu-")) {
+                    return _("Ubuntu (non-curated)");
+                }
+            } else if (backend is FlatpakBackend) {
+                return _("%s (non-curated)").printf (component.get_origin ());
+            } else if (backend is UbuntuDriversBackend) {
+                return _("Ubuntu Drivers");
+            }
+
+            return _("Unknown Origin (non-curated)");
         }
     }
 

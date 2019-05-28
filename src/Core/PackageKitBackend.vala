@@ -212,7 +212,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         package.update_state ();
     }
 
-    public AppCenterCore.Package? get_package_for_component_id (string id) {
+    public Package? get_package_for_component_id (string id) {
         foreach (var package in package_list.values) {
             if (package.component.id == id) {
                 return package;
@@ -222,6 +222,19 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         }
 
         return null;
+    }
+
+    public Gee.Collection<Package> get_packages_for_component_id (string id) {
+        var packages = new Gee.ArrayList<Package> ();
+        foreach (var package in package_list.values) {
+            if (package.component.id == id) {
+                packages.add (package);
+            } else if (package.component.id == id + ".desktop") {
+                packages.add (package);
+            }
+        }
+
+        return packages;
     }
 
     public AppCenterCore.Package? get_package_for_desktop_id (string desktop_id) {
