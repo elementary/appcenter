@@ -21,7 +21,7 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
 
     public bool working { public get; protected set; }
 
-    public Gee.TreeSet<Package>? cached_packages = null;
+    private Gee.TreeSet<Package>? cached_packages = null;
 
     private async bool get_drivers_output (Cancellable? cancellable = null, out string? output = null) {
         output = null;
