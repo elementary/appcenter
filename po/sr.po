@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-17 11:14-0700\n"
+"POT-Creation-Date: 2019-05-29 11:06+0200\n"
 "PO-Revision-Date: 2019-05-16 00:14+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Serbian <https://l10n.elementary.io/projects/appcenter/"
@@ -14,13 +14,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
-"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 3.6.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38
+#: src/Application.vala:38 src/Core/Package.vala:316
 msgid "AppCenter"
 msgstr "Програмски центар"
 
@@ -48,9 +48,9 @@ msgstr "„%s“ је успешно инсталиран"
 msgid "There Was An Error Installing %s."
 msgstr "Дошло је до грешке приликом инсталације %s"
 
-#: src/MainWindow.vala:157 src/Views/Homepage.vala:277
-#: src/Views/Homepage.vala:286 src/Views/Homepage.vala:291
-#: src/Views/Homepage.vala:302
+#: src/MainWindow.vala:157 src/Views/Homepage.vala:282
+#: src/Views/Homepage.vala:294 src/Views/Homepage.vala:299
+#: src/Views/Homepage.vala:310
 #, fuzzy
 msgid "Home"
 msgstr "Матична страница"
@@ -62,8 +62,8 @@ msgctxt "view"
 msgid "Installed"
 msgstr "Инсталирај"
 
-#: src/MainWindow.vala:185 src/MainWindow.vala:348 src/Views/SearchView.vala:54
-#: src/Views/SearchView.vala:81
+#: src/MainWindow.vala:185 src/MainWindow.vala:348 src/Views/SearchView.vala:55
+#: src/Views/SearchView.vala:82
 msgid "Search Apps"
 msgstr "Тражи програме"
 
@@ -80,158 +80,159 @@ msgstr "Повежите се интернетом да би сте инстал
 msgid "Network Settings…"
 msgstr "Подешавања мреже…"
 
-#: src/Core/ChangeInformation.vala:63
+#: src/Utils.vala:72 src/Core/ChangeInformation.vala:92
 msgid "Starting"
 msgstr "Покрећем"
 
-#: src/Core/ChangeInformation.vala:65
+#: src/Utils.vala:74 src/Core/ChangeInformation.vala:49
+#: src/Core/ChangeInformation.vala:64
 msgid "Waiting"
 msgstr "Чекам"
 
-#: src/Core/ChangeInformation.vala:67
+#: src/Utils.vala:76
 msgid "Running"
 msgstr "Извршавам"
 
-#: src/Core/ChangeInformation.vala:69
+#: src/Utils.vala:78
 msgid "Querying"
 msgstr "Постављам упит"
 
-#: src/Core/ChangeInformation.vala:71
+#: src/Utils.vala:80
 msgid "Getting information"
 msgstr "Добављам податке"
 
-#: src/Core/ChangeInformation.vala:73
+#: src/Utils.vala:82
 msgid "Removing packages"
 msgstr "Уклањам пакете"
 
-#: src/Core/ChangeInformation.vala:75
+#: src/Utils.vala:84
 msgid "Downloading"
 msgstr "Преузимам"
 
-#: src/Core/ChangeInformation.vala:77
+#: src/Utils.vala:86
 msgid "Installing"
 msgstr "Инсталирам"
 
-#: src/Core/ChangeInformation.vala:79
+#: src/Utils.vala:88
 msgid "Refreshing software list"
 msgstr "Освежавам списак програма"
 
-#: src/Core/ChangeInformation.vala:81
+#: src/Utils.vala:90
 msgid "Installing updates"
 msgstr "Инсталирам ажурирања"
 
-#: src/Core/ChangeInformation.vala:83
+#: src/Utils.vala:92
 msgid "Cleaning up packages"
 msgstr "Чистим пакете"
 
-#: src/Core/ChangeInformation.vala:85
+#: src/Utils.vala:94
 msgid "Obsoleting packages"
 msgstr "Отписујем пакете"
 
-#: src/Core/ChangeInformation.vala:87
+#: src/Utils.vala:96
 msgid "Resolving dependencies"
 msgstr "Решавам зависности"
 
-#: src/Core/ChangeInformation.vala:89
+#: src/Utils.vala:98
 msgid "Checking signatures"
 msgstr "Проверавам потписе"
 
-#: src/Core/ChangeInformation.vala:91
+#: src/Utils.vala:100
 msgid "Testing changes"
 msgstr "Проверавам измене"
 
-#: src/Core/ChangeInformation.vala:93
+#: src/Utils.vala:102
 msgid "Committing changes"
 msgstr "Уграђујем измене"
 
-#: src/Core/ChangeInformation.vala:95
+#: src/Utils.vala:104
 msgid "Requesting data"
 msgstr "Захтевам податке"
 
-#: src/Core/ChangeInformation.vala:97
+#: src/Utils.vala:106 src/Core/ChangeInformation.vala:71
 msgid "Finished"
 msgstr "Завршено"
 
-#: src/Core/ChangeInformation.vala:99
+#: src/Utils.vala:108 src/Core/ChangeInformation.vala:79
 msgid "Cancelling"
 msgstr "Отказујем"
 
-#: src/Core/ChangeInformation.vala:101
+#: src/Utils.vala:110
 msgid "Downloading repository information"
 msgstr "Преузимам податке о ризници"
 
-#: src/Core/ChangeInformation.vala:103
+#: src/Utils.vala:112
 msgid "Downloading list of packages"
 msgstr "Преузимам списак пакета"
 
-#: src/Core/ChangeInformation.vala:105
+#: src/Utils.vala:114
 msgid "Downloading file lists"
 msgstr "Преузимам списак датотека"
 
-#: src/Core/ChangeInformation.vala:107
+#: src/Utils.vala:116
 msgid "Downloading lists of changes"
 msgstr "Преузимам списак измена"
 
-#: src/Core/ChangeInformation.vala:109
+#: src/Utils.vala:118
 msgid "Downloading groups"
 msgstr "Преузимам групе"
 
-#: src/Core/ChangeInformation.vala:111
+#: src/Utils.vala:120
 msgid "Downloading update information"
 msgstr "Преузимам податке о освежавању"
 
-#: src/Core/ChangeInformation.vala:113
+#: src/Utils.vala:122
 msgid "Repackaging files"
 msgstr "Препакујем датотеке"
 
-#: src/Core/ChangeInformation.vala:115
+#: src/Utils.vala:124
 msgid "Loading cache"
 msgstr "Учитавам кеш"
 
-#: src/Core/ChangeInformation.vala:117
+#: src/Utils.vala:126
 msgid "Scanning applications"
 msgstr "Прегледам програме"
 
-#: src/Core/ChangeInformation.vala:119
+#: src/Utils.vala:128
 msgid "Generating package lists"
 msgstr "Стварам списак пакета"
 
-#: src/Core/ChangeInformation.vala:121
+#: src/Utils.vala:130
 msgid "Waiting for package manager lock"
 msgstr "Чекам на закључавање управника пакета"
 
-#: src/Core/ChangeInformation.vala:123
+#: src/Utils.vala:132
 msgid "Waiting for authentication"
 msgstr "Чекам на потврђивање идентитета"
 
-#: src/Core/ChangeInformation.vala:125
+#: src/Utils.vala:134
 msgid "Updating running applications"
 msgstr "Освежавам покренуте програме"
 
-#: src/Core/ChangeInformation.vala:127
+#: src/Utils.vala:136
 msgid "Checking applications in use"
 msgstr "Проверавам програме у употреби"
 
-#: src/Core/ChangeInformation.vala:129
+#: src/Utils.vala:138
 msgid "Checking libraries in use"
 msgstr "Проверавам библиотеке у употреби"
 
-#: src/Core/ChangeInformation.vala:131
+#: src/Utils.vala:140
 msgid "Copying files"
 msgstr "Умножавам датотеке"
 
-#: src/Core/ChangeInformation.vala:133
+#: src/Utils.vala:142
 msgid "Unknown state"
 msgstr "Непознато стање"
 
-#: src/Core/Client.vala:100
+#: src/Core/Client.vala:70
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Доступно је освежење"
 msgstr[1] "Доступна су освежења"
 msgstr[2] "Доступна су освежења"
 
-#: src/Core/Client.vala:101
+#: src/Core/Client.vala:71
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
@@ -239,10 +240,32 @@ msgstr[0] "%u освежење је доступно за ваш систем"
 msgstr[1] "%u освежења су доступна за ваш систем"
 msgstr[2] "%u освежења је доступно за ваш систем"
 
-#: src/Core/Package.vala:248
+#: src/Core/Package.vala:287
 #, fuzzy, c-format
 msgid "%s Developers"
 msgstr "Програмирање"
+
+#: src/Core/Package.vala:318
+#, fuzzy
+msgid "elementary Updates"
+msgstr "Скоро ажурирани"
+
+#: src/Core/Package.vala:320
+msgid "Ubuntu (non-curated)"
+msgstr ""
+
+#: src/Core/Package.vala:323
+#, c-format
+msgid "%s (non-curated)"
+msgstr ""
+
+#: src/Core/Package.vala:325
+msgid "Ubuntu Drivers"
+msgstr ""
+
+#: src/Core/Package.vala:328
+msgid "Unknown Origin (non-curated)"
+msgstr ""
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -257,11 +280,15 @@ msgstr "Освежења компонентама система"
 msgid "Version: %s"
 msgstr "Верзија: %s"
 
-#: src/Core/UpdateManager.vala:82
+#: src/Core/UpdateManager.vala:103
+msgid "Flatpak runtime"
+msgstr ""
+
+#: src/Core/UpdateManager.vala:119
 msgid "No components with updates"
 msgstr "Нема компонента за ажурирање"
 
-#: src/Core/UpdateManager.vala:86
+#: src/Core/UpdateManager.vala:123
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
@@ -269,16 +296,16 @@ msgstr[0] "%u компонент за ажурирање"
 msgstr[1] "%u компоненте за ажурирање"
 msgstr[2] "%u компоненте за ажурирање"
 
-#: src/Core/UpdateManager.vala:88
+#: src/Core/UpdateManager.vala:125
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:129
+#: src/Core/UpdateManager.vala:163
 msgid "Restart Required"
 msgstr "Потребно поновно покретање система"
 
-#: src/Core/UpdateManager.vala:130
+#: src/Core/UpdateManager.vala:164
 msgid "Please restart your system to finalize updates"
 msgstr "Молимо, покрените поновно ваш систем за да се заврши ажурирање система"
 
@@ -534,88 +561,88 @@ msgstr "Игнориши"
 msgid "Try Again"
 msgstr "Покушај поново"
 
-#: src/Views/AppInfoView.vala:75
+#: src/Views/AppInfoView.vala:81
 msgid "Screenshot Not Available"
 msgstr "Снимак екрана није доступан"
 
-#: src/Views/AppInfoView.vala:130
+#: src/Views/AppInfoView.vala:136
 #, fuzzy
 msgid "Homepage"
 msgstr "Матична страница"
 
-#: src/Views/AppInfoView.vala:136
+#: src/Views/AppInfoView.vala:142
 msgid "Suggest Translations"
 msgstr "Предложи преводе"
 
-#: src/Views/AppInfoView.vala:142
+#: src/Views/AppInfoView.vala:148
 msgid "Report a Problem"
 msgstr "Пријави проблем"
 
-#: src/Views/AppInfoView.vala:148
+#: src/Views/AppInfoView.vala:154
 msgid "Help"
 msgstr "Помоћ"
 
-#: src/Views/AppInfoView.vala:178
+#: src/Views/AppInfoView.vala:184
 msgid "What's New:"
 msgstr "Новости:"
 
-#: src/Views/AppInfoView.vala:197
+#: src/Views/AppInfoView.vala:203
 msgid "Extensions:"
 msgstr "Проширења:"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:284
+#: src/Views/AppInfoView.vala:311
 msgid "Public Domain"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:287
+#: src/Views/AppInfoView.vala:314
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr ""
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:292
+#: src/Views/AppInfoView.vala:319
 #, fuzzy
 msgid "Free Software"
 msgstr "Уредите изворни софтвер"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:295
+#: src/Views/AppInfoView.vala:322
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:299
+#: src/Views/AppInfoView.vala:326
 msgid "Proprietary"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:302
+#: src/Views/AppInfoView.vala:329
 #, fuzzy
 msgid "Unknown License"
 msgstr "Непознато стање"
 
-#: src/Views/AppInfoView.vala:344
+#: src/Views/AppInfoView.vala:371
 #, c-format
 msgid "Other Apps by %s"
 msgstr "Друге апликације од %s"
 
-#: src/Views/AppInfoView.vala:378
+#: src/Views/AppInfoView.vala:405
 msgid "Link copied to clipboard"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:389
+#: src/Views/AppInfoView.vala:416
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "Погледај %s у Центру апликација:"
 
-#: src/Views/AppInfoView.vala:396
+#: src/Views/AppInfoView.vala:423
 msgid "Share"
 msgstr "Подели"
 
-#: src/Views/AppInfoView.vala:665
+#: src/Views/AppInfoView.vala:719
 msgid "Fund"
 msgstr "Финансирај"
 
-#: src/Views/AppInfoView.vala:687
+#: src/Views/AppInfoView.vala:741
 msgid "Fund the development of this app"
 msgstr "Финансирај развоја ове апликације"
 
@@ -649,7 +676,7 @@ msgstr "Најпопуларније"
 msgid "Categories"
 msgstr "Категорије"
 
-#: src/Views/Homepage.vala:291 src/Views/Homepage.vala:302
+#: src/Views/Homepage.vala:299 src/Views/Homepage.vala:310
 #, c-format
 msgid "Search %s"
 msgstr "Тражи „%s“"
@@ -794,30 +821,26 @@ msgid "Facebook"
 msgstr "Facebook"
 
 #: src/Widgets/SharePopover.vala:43
-msgid "Google+"
-msgstr "Google+"
-
-#: src/Widgets/SharePopover.vala:47
 msgid "Twitter"
 msgstr "Twitter"
 
-#: src/Widgets/SharePopover.vala:51
+#: src/Widgets/SharePopover.vala:47
 msgid "Reddit"
 msgstr ""
 
-#: src/Widgets/SharePopover.vala:55
+#: src/Widgets/SharePopover.vala:51
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: src/Widgets/SharePopover.vala:59
+#: src/Widgets/SharePopover.vala:55
 msgid "Telegram"
 msgstr "Telegram"
 
-#: src/Widgets/SharePopover.vala:63
+#: src/Widgets/SharePopover.vala:59
 msgid "Copy link"
 msgstr "Копирај везу"
 
-#: src/Widgets/UpdateHeaderRow.vala:68
+#: src/Widgets/UpdateHeaderRow.vala:64
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
@@ -825,20 +848,20 @@ msgstr[0] "%u освежење је доступно"
 msgstr[1] "%u освежења су доступна"
 msgstr[2] "%u освежења је доступно"
 
-#: src/Widgets/UpdateHeaderRow.vala:69
+#: src/Widgets/UpdateHeaderRow.vala:65
 #, c-format
 msgid "Size: %s"
 msgstr "Величина: %s"
 
-#: src/Widgets/UpdateHeaderRow.vala:105
+#: src/Widgets/UpdateHeaderRow.vala:101
 msgid "Searching for updates…"
 msgstr "Тражим освежења…"
 
-#: src/Widgets/UpdateHeaderRow.vala:112
+#: src/Widgets/UpdateHeaderRow.vala:108
 msgid "Up to Date"
 msgstr "Освежено је"
 
-#: src/Widgets/UpdateHeaderRow.vala:120
+#: src/Widgets/UpdateHeaderRow.vala:116
 msgid "Drivers"
 msgstr ""
 
@@ -853,6 +876,9 @@ msgstr "Отвори"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:348
 msgid "Update"
 msgstr "Освежи"
+
+#~ msgid "Google+"
+#~ msgstr "Google+"
 
 #~ msgctxt "view"
 #~ msgid "Updates"
