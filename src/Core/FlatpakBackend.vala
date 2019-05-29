@@ -204,6 +204,19 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         return null;
     }
 
+    public Gee.Collection<Package> get_packages_for_component_id (string id) {
+        var packages = new Gee.ArrayList<Package> ();
+        foreach (var package in package_list.values) {
+            if (package.component.id == id) {
+                packages.add (package);
+            } else if (package.component.id == id + ".desktop") {
+                packages.add (package);
+            }
+        }
+
+        return packages;
+    }
+
     public Package? get_package_for_desktop_id (string id) {
         return null;
     }

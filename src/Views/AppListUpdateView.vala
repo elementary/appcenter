@@ -165,7 +165,7 @@ namespace AppCenter.Views {
                     update_all_button.clicked.connect (on_update_all);
                     action_button_group.add_widget (update_all_button);
 
-                    header.add_widget (update_all_button);
+                    header.add (update_all_button);
                 }
 
                 header.show_all ();

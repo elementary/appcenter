@@ -30,6 +30,7 @@ public interface AppCenterCore.Backend : Object {
     public abstract Gee.Collection<Package> search_applications (string query, AppStream.Category? category);
     public abstract Gee.Collection<Package> search_applications_mime (string query);
     public abstract Package? get_package_for_component_id (string id);
+    public abstract Gee.Collection<Package> get_packages_for_component_id (string id);
     public abstract Package? get_package_for_desktop_id (string id);
     public abstract Gee.Collection<Package> get_packages_by_author (string author, int max);
 
