@@ -663,7 +663,11 @@ namespace AppCenter.Views {
         private void parse_description (string? description) {
             if (description != null) {
                 try {
-                    app_description.buffer.text = AppStream.markup_convert_simple (description);
+                    var stripped_description = description.replace ("\n", "");
+                    while (stripped_description.contains ("  ")) {
+                        stripped_description = stripped_description.replace ("  ", " ");
+                    }
+                    app_description.buffer.text = AppStream.markup_convert_simple (stripped_description);
                 } catch (Error e) {
                     critical (e.message);
                 }
