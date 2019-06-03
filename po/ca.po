@@ -6,7 +6,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-05-29 11:06+0200\n"
 "PO-Revision-Date: 2019-06-03 16:08+0000\n"
-"Last-Translator: David M <rbndavid@gmail.com>\n"
+"Last-Translator: Seifer23 <salvador.rodo@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ca/>\n"
 "Language: ca\n"
@@ -253,9 +253,8 @@ msgid "%s (non-curated)"
 msgstr "%s (sense conservació)"
 
 #: src/Core/Package.vala:325
-#, fuzzy
 msgid "Ubuntu Drivers"
-msgstr "Controladors"
+msgstr "Controladors d'Ubuntu"
 
 #: src/Core/Package.vala:328
 msgid "Unknown Origin (non-curated)"
