@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-05-29 11:06+0200\n"
-"PO-Revision-Date: 2019-04-28 10:38+0000\n"
+"PO-Revision-Date: 2019-06-13 18:43+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/fi/>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.6\n"
+"X-Generator: Weblate 3.6.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -240,9 +240,8 @@ msgid "%s Developers"
 msgstr "%s-kehittäjät"
 
 #: src/Core/Package.vala:318
-#, fuzzy
 msgid "elementary Updates"
-msgstr "Äskettäin päivitetty"
+msgstr "elementary-päivitykset"
 
 #: src/Core/Package.vala:320
 msgid "Ubuntu (non-curated)"
@@ -254,9 +253,8 @@ msgid "%s (non-curated)"
 msgstr "%s (paikallinen)"
 
 #: src/Core/Package.vala:325
-#, fuzzy
 msgid "Ubuntu Drivers"
-msgstr "Ajurit"
+msgstr "Ubuntu-ajurit"
 
 #: src/Core/Package.vala:328
 msgid "Unknown Origin (non-curated)"
