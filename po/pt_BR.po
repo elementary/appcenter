@@ -7,7 +7,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-05-29 11:06+0200\n"
 "PO-Revision-Date: 2019-06-16 05:43+0000\n"
-"Last-Translator: Henrique Andrade <henrique.coelho@gmail.com>\n"
+"Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -245,7 +245,7 @@ msgstr "Atualizações do elementary"
 
 #: src/Core/Package.vala:320
 msgid "Ubuntu (non-curated)"
-msgstr ""
+msgstr "Ubuntu (não-curado)"
 
 #: src/Core/Package.vala:323
 #, fuzzy, c-format
