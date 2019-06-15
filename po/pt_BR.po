@@ -1,13 +1,14 @@
 # Rodrigo Oliveira <rod.oliveira@gmail.com>, 2018, 2019.
 # Deyvison Rocha <deyvison@gmail.com>, 2018.
 # Henrique Andrade <henrique.coelho@gmail.com>, 2019.
+# Mateus Fonseca <mateuspaf23@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-05-29 11:06+0200\n"
 "PO-Revision-Date: 2019-06-16 05:43+0000\n"
-"Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
+"Last-Translator: Mateus Fonseca <mateuspaf23@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -248,9 +249,9 @@ msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (não-curado)"
 
 #: src/Core/Package.vala:323
-#, fuzzy, c-format
+#, c-format
 msgid "%s (non-curated)"
-msgstr "%s (local)"
+msgstr "%s (não curados)"
 
 #: src/Core/Package.vala:325
 msgid "Ubuntu Drivers"
@@ -258,7 +259,7 @@ msgstr "Drivers do Ubuntu"
 
 #: src/Core/Package.vala:328
 msgid "Unknown Origin (non-curated)"
-msgstr ""
+msgstr "Origem desconhecida (não curados)"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
