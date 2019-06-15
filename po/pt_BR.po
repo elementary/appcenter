@@ -2,13 +2,14 @@
 # Deyvison Rocha <deyvison@gmail.com>, 2018.
 # Henrique Andrade <henrique.coelho@gmail.com>, 2019.
 # Mateus Fonseca <mateuspaf23@gmail.com>, 2019.
+# Cleiton Floss <cleitonfloss@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-05-29 11:06+0200\n"
 "PO-Revision-Date: 2019-06-16 05:43+0000\n"
-"Last-Translator: Mateus Fonseca <mateuspaf23@gmail.com>\n"
+"Last-Translator: Cleiton Floss <cleitonfloss@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -276,7 +277,7 @@ msgstr "Versão: %s"
 
 #: src/Core/UpdateManager.vala:103
 msgid "Flatpak runtime"
-msgstr ""
+msgstr "Ambiente de execução Flatpak"
 
 #: src/Core/UpdateManager.vala:119
 msgid "No components with updates"
