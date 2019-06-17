@@ -5,5 +5,6 @@
     <file alias="arrow.css" compressed="true">styles/arrow.css</file>
     <file alias="categories.css" compressed="true">styles/categories.css</file>
     <file alias="loading.css" compressed="true">styles/loading.css</file>
+    <file alias="pop-banner.png" compressed="true">images/pop-banner.png</file>
   </gresource>
 </gresources>

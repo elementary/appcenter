@@ -116,6 +116,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
                         set_widget_visibility (release_stack, true);
                     } else if (lines.length > 0) {
                         release_single_label.label = lines[0];
+                        release_single_label.wrap = true;
                         release_stack.visible_child = release_single_label;
                         set_widget_visibility (release_stack, true);
                     }

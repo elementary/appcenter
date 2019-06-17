@@ -196,10 +196,18 @@ namespace AppCenter.Views {
             package_name.valign = Gtk.Align.END;
 
             app_version = new Gtk.Label (null);
+#if POP_OS
+            // Fix version number misalignment.
+            app_version.margin_bottom = 4;
+            app_version.xalign = 0;
+            app_version.hexpand = true;
+            app_version.valign = Gtk.Align.END;
+#else
             app_version.margin_top = 12;
             app_version.xalign = 0;
             app_version.hexpand = true;
             app_version.valign = Gtk.Align.CENTER;
+#endif
             app_version.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
             app_version.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 

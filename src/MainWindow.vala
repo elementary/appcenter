@@ -174,11 +174,37 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         spinner = new Gtk.Spinner ();
 
+#if POP_OS
+        var repos_button = new Gtk.Button.from_icon_name ("preferences-system-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+        repos_button.tooltip_text = _("Edit Software Sources…");
+        repos_button.valign = Gtk.Align.CENTER;
+        repos_button.clicked.connect (() => {
+            try {
+                string[] args = {
+                  "/usr/lib/repoman/repoman.pkexec"
+                };
+                Process.spawn_async (
+                    null,
+                    args,
+                    null,
+                    SpawnFlags.SEARCH_PATH,
+                    null,
+                    null
+                );
+            } catch (Error e) {
+                warning (e.message);
+            }
+        });
+#endif
+
         /* HeaderBar */
         headerbar = new Gtk.HeaderBar ();
         headerbar.show_close_button = true;
         headerbar.set_custom_title (custom_title_stack);
         headerbar.pack_start (return_button);
+#if POP_OS
+        headerbar.pack_end (repos_button);
+#endif
         headerbar.pack_end (search_entry);
         headerbar.pack_end (spinner);
 

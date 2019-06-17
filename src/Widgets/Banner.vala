@@ -27,7 +27,11 @@ const string BANNER_STYLE_CSS = """
     }
 """;
 
+#if POP_OS
+const string DEFAULT_BANNER_COLOR_PRIMARY = "#454241";
+#else
 const string DEFAULT_BANNER_COLOR_PRIMARY = "#68758e";
+#endif
 const string DEFAULT_BANNER_COLOR_PRIMARY_TEXT = "white";
 const int MILLISECONDS_BETWEEN_BANNER_ITEMS = 5000;
 
@@ -155,7 +159,11 @@ namespace AppCenter.Widgets {
         }
 
         public void set_default_brand () {
+#if POP_OS
+            background_color = "#665888";
+#else
             background_color = "#7E45BE";
+#endif
             foreground_color = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
 
             brand_widget = new BannerWidget (null);

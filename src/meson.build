@@ -80,6 +80,10 @@ if get_option('sharing')
     args += '--define=SHARING'
 endif
 
+if get_option('pop_os')
+    args += '--define=POP_OS'
+endif
+
 executable(
     meson.project_name(),
     appcenter_files,

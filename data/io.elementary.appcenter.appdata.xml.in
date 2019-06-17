@@ -3,11 +3,14 @@
 <component type="desktop-application">
     <id>io.elementary.appcenter</id>
     <metadata_license>CC0-1.0</metadata_license>
-    <project_group>elementary</project_group>
+    <project_group>pop</project_group>
     <project_license>GPL-3.0+</project_license>
-    <name>AppCenter</name>
+    <name>Pop!_Shop</name>
     <summary>Browse and manage apps</summary>
     <description>
+        <_p>
+            Pop!_Shop
+        </_p>
         <p>
         An app store for indie and open source developers. Browse by categories or
         search and discover new apps. AppCenter is also used for updating your
@@ -189,16 +192,7 @@
     </provides>
     <screenshots>
         <screenshot type="default">
-            <image>https://raw.githubusercontent.com/elementary/appcenter/master/data/screenshot.png</image>
-        </screenshot>
-        <screenshot>
-            <image>https://raw.githubusercontent.com/elementary/appcenter/master/data/screenshot-footer.png</image>
-        </screenshot>
-        <screenshot>
-            <image>https://raw.githubusercontent.com/elementary/appcenter/master/data/screenshot-updates.png</image>
-        </screenshot>
-        <screenshot>
-            <image>https://raw.githubusercontent.com/elementary/appcenter/master/data/screenshot-payment.png</image>
+            <image>https://raw.githubusercontent.com/pop-os/shop/master/data/screenshot.png</image>
         </screenshot>
     </screenshots>
     <content_rating type="oars-1.1">
@@ -230,11 +224,9 @@
         <content_attribute id="money-purchasing">intense</content_attribute>
         <content_attribute id="money-gambling">none</content_attribute>
     </content_rating>
-    <compulsory_for_desktop>Pantheon</compulsory_for_desktop>
-    <developer_name>elementary LLC.</developer_name>
-    <url type="homepage">http://elementary.io/</url>
-    <url type="bugtracker">https://github.com/elementary/appcenter/issues</url>
-    <url type="donation">https://elementary.io/get-involved#funding</url>
+    <developer_name>System76</developer_name>
+    <url type="homepage">https://github.com/pop-os/shop</url>
+    <url type="bugtracker">https://github.com/pop-os/shop/issues</url>
     <url type="help">https://elementaryos.stackexchange.com/questions/tagged/appcenter</url>
     <url type="translate">https://l10n.elementary.io/projects/desktop/appcenter</url>
     <update_contact>contact_at_elementary.io</update_contact>

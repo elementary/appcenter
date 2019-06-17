@@ -27,7 +27,7 @@
       <description>A list of appstream IDs which have been paid for</description>
     </key>
     <key type="b" name="content-warning">
-      <default>true</default>
+      <default>false</default>
       <summary>Display content warning for explicit apps</summary>
       <description>Whether to display a warning dialog when attempting to install apps that are explicit according to their OARS data</description>
     </key>
