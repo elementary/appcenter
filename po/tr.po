@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-05-29 11:06+0200\n"
-"PO-Revision-Date: 2019-04-24 23:21+0000\n"
+"PO-Revision-Date: 2019-06-04 20:29+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/tr/>\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.5.1\n"
+"X-Generator: Weblate 3.6.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -247,27 +247,25 @@ msgid "%s Developers"
 msgstr "%s Geliştiricileri"
 
 #: src/Core/Package.vala:318
-#, fuzzy
 msgid "elementary Updates"
-msgstr "Son Güncellenenler"
+msgstr "elementary Güncellemeleri"
 
 #: src/Core/Package.vala:320
 msgid "Ubuntu (non-curated)"
-msgstr ""
+msgstr "Ubuntu (doğrulanmamış)"
 
 #: src/Core/Package.vala:323
-#, fuzzy, c-format
+#, c-format
 msgid "%s (non-curated)"
-msgstr "%s (yerel)"
+msgstr "%s (doğrulanmamış)"
 
 #: src/Core/Package.vala:325
-#, fuzzy
 msgid "Ubuntu Drivers"
-msgstr "Sürücüler"
+msgstr "Ubuntu Sürücüleri"
 
 #: src/Core/Package.vala:328
 msgid "Unknown Origin (non-curated)"
-msgstr ""
+msgstr "Bilinmeyen Kaynak (doğrulanmamış)"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -284,7 +282,7 @@ msgstr "Sürüm: %s"
 
 #: src/Core/UpdateManager.vala:103
 msgid "Flatpak runtime"
-msgstr ""
+msgstr "Flatpak runtime"
 
 #: src/Core/UpdateManager.vala:119
 msgid "No components with updates"
@@ -652,7 +650,7 @@ msgstr "Tümünü Güncelle"
 
 #: src/Views/AppListView.vala:128
 msgid "Non-Curated Apps"
-msgstr "Onaylanmamış Uygulamalar"
+msgstr "Doğrulanmamış Uygulamalar"
 
 #: src/Views/Homepage.vala:67
 msgid "Recently Updated"

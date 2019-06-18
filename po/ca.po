@@ -1,10 +1,11 @@
 # David M <rbndavid@gmail.com>, 2018, 2019.
+# Seifer23 <salvador.rodo@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-05-29 11:06+0200\n"
-"PO-Revision-Date: 2019-05-03 12:38+0000\n"
+"PO-Revision-Date: 2019-06-04 20:29+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ca/>\n"
@@ -13,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.6\n"
+"X-Generator: Weblate 3.6.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -239,27 +240,25 @@ msgid "%s Developers"
 msgstr "%s, els desenvolupadors"
 
 #: src/Core/Package.vala:318
-#, fuzzy
 msgid "elementary Updates"
-msgstr "Actualitzat recentment"
+msgstr "Actualitzacions de l'elementary"
 
 #: src/Core/Package.vala:320
 msgid "Ubuntu (non-curated)"
-msgstr ""
+msgstr "Ubuntu (sense conservació)"
 
 #: src/Core/Package.vala:323
-#, fuzzy, c-format
+#, c-format
 msgid "%s (non-curated)"
-msgstr "%s (local)"
+msgstr "%s (sense conservació)"
 
 #: src/Core/Package.vala:325
-#, fuzzy
 msgid "Ubuntu Drivers"
-msgstr "Controladors"
+msgstr "Controladors de l'Ubuntu"
 
 #: src/Core/Package.vala:328
 msgid "Unknown Origin (non-curated)"
-msgstr ""
+msgstr "D'origen desconegut (sense conservació)"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -276,7 +275,7 @@ msgstr "Versió: %s"
 
 #: src/Core/UpdateManager.vala:103
 msgid "Flatpak runtime"
-msgstr ""
+msgstr "Entorn d'execució de Flatpak"
 
 #: src/Core/UpdateManager.vala:119
 msgid "No components with updates"

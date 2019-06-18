@@ -96,22 +96,34 @@ namespace AppCenter.Views {
             bool a_is_updating = row1.get_is_updating ();
             bool b_is_updating = row2.get_is_updating ();
 
+            // The currently updating package is always top of the list
             if (a_is_updating || b_is_updating) {
                 return a_is_updating ? -1 : 1;
-            }
-
-            bool a_is_os = row1.get_is_os_updates ();
-            bool b_is_os = row2.get_is_os_updates ();
-
-            if (a_is_os || b_is_os) { /* OS update row sorts ahead of other update rows */
-                return a_is_os ? -1 : 1;
             }
 
             bool a_has_updates = row1.get_update_available ();
             bool b_has_updates = row2.get_update_available ();
 
-            if (a_has_updates != b_has_updates) { /* Updates rows sort ahead of updated rows */
-                return a_has_updates ? -1 : 1;
+            bool a_is_os = row1.get_is_os_updates ();
+            bool b_is_os = row2.get_is_os_updates ();
+
+            // Sort updatable OS updates first, then other updatable packages
+            if (a_has_updates != b_has_updates) {
+                if (a_is_os && a_has_updates) {
+                    return -1;
+                }
+
+                if (b_is_os && b_has_updates) {
+                    return 1;
+                }
+
+                if (a_has_updates) {
+                    return -1;
+                }
+
+                if (b_has_updates) {
+                    return 1;
+                }
             }
 
             bool a_is_driver = row1.get_is_driver ();
@@ -119,6 +131,11 @@ namespace AppCenter.Views {
 
             if (a_is_driver != b_is_driver) {
                 return a_is_driver ? - 1 : 1;
+            }
+
+            // Ensures OS updates are sorted to the top amongst up-to-date packages
+            if (a_is_os || b_is_os) {
+                return a_is_os ? -1 : 1;
             }
 
             return row1.get_name_label ().collate (row2.get_name_label ()); /* Else sort in name order */
