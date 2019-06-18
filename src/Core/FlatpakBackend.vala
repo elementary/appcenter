@@ -606,11 +606,9 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             if (e is GLib.IOError.CANCELLED) {
                 cb (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);
                 success = true;
-            } else {
-                return false;
             }
 
-            return true;
+            return false;
         });
 
         transaction.operation_done.connect ((operation, commit, details) => {
@@ -792,11 +790,10 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             if (e is GLib.IOError.CANCELLED) {
                 cb (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);
                 success = true;
-            } else {
                 return false;
+            } else {
+                return true;
             }
-
-            return true;
         });
 
         transaction.operation_done.connect ((operation, commit, details) => {
