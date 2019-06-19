@@ -1,13 +1,14 @@
 # Augusto Fornitani <augusto.fornitani@outlook.com>, 2018.
 # Jesse ALTER <jesse@jessealter.com>, 2018.
 # Shtonchjo <shtonchjo@gmail.com>, 2019.
+# Steven <Stevenjeffers19@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-05-29 11:06+0200\n"
 "PO-Revision-Date: 2019-06-19 20:06+0000\n"
-"Last-Translator: Shtonchjo <shtonchjo@gmail.com>\n"
+"Last-Translator: Steven <Stevenjeffers19@gmail.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/eo/>\n"
 "Language: eo\n"
@@ -66,7 +67,7 @@ msgstr "Serĉi Aplikaĵojn"
 
 #: src/MainWindow.vala:203
 msgid "Network Is Not Available"
-msgstr ""
+msgstr "Reto Ne Estas Disponebla"
 
 #: src/MainWindow.vala:204
 msgid "Connect to the Internet to install or update apps."
@@ -83,7 +84,7 @@ msgstr "Komencante"
 #: src/Utils.vala:74 src/Core/ChangeInformation.vala:49
 #: src/Core/ChangeInformation.vala:64
 msgid "Waiting"
-msgstr ""
+msgstr "Atendante"
 
 #: src/Utils.vala:76
 msgid "Running"
@@ -99,7 +100,7 @@ msgstr "Informiĝanta"
 
 #: src/Utils.vala:82
 msgid "Removing packages"
-msgstr ""
+msgstr "Forigante pakaĵojn"
 
 #: src/Utils.vala:84
 msgid "Downloading"
