@@ -8,7 +8,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-05-29 11:06+0200\n"
 "PO-Revision-Date: 2019-06-19 20:06+0000\n"
-"Last-Translator: Steven <Stevenjeffers19@gmail.com>\n"
+"Last-Translator: Shtonchjo <shtonchjo@gmail.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/eo/>\n"
 "Language: eo\n"
@@ -100,7 +100,7 @@ msgstr "Informiĝanta"
 
 #: src/Utils.vala:82
 msgid "Removing packages"
-msgstr "Forigante pakaĵojn"
+msgstr "Foriganta pakaĵojn"
 
 #: src/Utils.vala:84
 msgid "Downloading"
