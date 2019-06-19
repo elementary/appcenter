@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-05-29 11:06+0200\n"
-"PO-Revision-Date: 2019-06-19 20:06+0000\n"
+"PO-Revision-Date: 2019-06-19 20:09+0000\n"
 "Last-Translator: Shtonchjo <shtonchjo@gmail.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/eo/>\n"
@@ -104,35 +104,35 @@ msgstr "Foriganta pakaĵojn"
 
 #: src/Utils.vala:84
 msgid "Downloading"
-msgstr ""
+msgstr "Elŝutanta"
 
 #: src/Utils.vala:86
 msgid "Installing"
-msgstr ""
+msgstr "Instalanta"
 
 #: src/Utils.vala:88
 msgid "Refreshing software list"
-msgstr ""
+msgstr "Ĝisdatiganta programliston"
 
 #: src/Utils.vala:90
 msgid "Installing updates"
-msgstr ""
+msgstr "Instalanta ĝisdatigojn"
 
 #: src/Utils.vala:92
 msgid "Cleaning up packages"
-msgstr ""
+msgstr "Puriganta pakaĵojn"
 
 #: src/Utils.vala:94
 msgid "Obsoleting packages"
-msgstr ""
+msgstr "Kadukiganta pakaĵojn"
 
 #: src/Utils.vala:96
 msgid "Resolving dependencies"
-msgstr ""
+msgstr "Solvanta dependojn"
 
 #: src/Utils.vala:98
 msgid "Checking signatures"
-msgstr ""
+msgstr "Kontrolanta subskribojn"
 
 #: src/Utils.vala:100
 msgid "Testing changes"
