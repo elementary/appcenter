@@ -7,13 +7,14 @@
 # felipe andres gomez villar <felipe.gomez.villar@gmail.com>, 2019.
 # Gabriel De Jesus Gomez Peña <gabrieljgp012@gmail.com>, 2019.
 # Daniel Foré <daniel@elementary.io>, 2019.
+# Ernesto Miranda <epmiranda94@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-05-29 11:06+0200\n"
 "PO-Revision-Date: 2019-06-23 00:26+0000\n"
-"Last-Translator: Daniel Foré <daniel@elementary.io>\n"
+"Last-Translator: Ernesto Miranda <epmiranda94@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -251,12 +252,12 @@ msgstr "Actualizaciones de elementary"
 
 #: src/Core/Package.vala:320
 msgid "Ubuntu (non-curated)"
-msgstr ""
+msgstr "Ubuntu (no verificadas)"
 
 #: src/Core/Package.vala:323
-#, fuzzy, c-format
+#, c-format
 msgid "%s (non-curated)"
-msgstr "%s (local)"
+msgstr "%s (no verificadas)"
 
 #: src/Core/Package.vala:325
 msgid "Ubuntu Drivers"
@@ -264,7 +265,7 @@ msgstr "Controladores de Ubuntu"
 
 #: src/Core/Package.vala:328
 msgid "Unknown Origin (non-curated)"
-msgstr ""
+msgstr "Origen desconocido (no verificadas)"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
