@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-05-29 11:06+0200\n"
-"PO-Revision-Date: 2019-05-16 00:14+0000\n"
+"PO-Revision-Date: 2019-06-23 00:26+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
@@ -246,9 +246,8 @@ msgid "%s Developers"
 msgstr "Desarrolladores de %s"
 
 #: src/Core/Package.vala:318
-#, fuzzy
 msgid "elementary Updates"
-msgstr "Actualizados"
+msgstr "Actualizaciones de elementary"
 
 #: src/Core/Package.vala:320
 msgid "Ubuntu (non-curated)"
@@ -260,9 +259,8 @@ msgid "%s (non-curated)"
 msgstr "%s (local)"
 
 #: src/Core/Package.vala:325
-#, fuzzy
 msgid "Ubuntu Drivers"
-msgstr "Controladores"
+msgstr "Controladores de Ubuntu"
 
 #: src/Core/Package.vala:328
 msgid "Unknown Origin (non-curated)"
