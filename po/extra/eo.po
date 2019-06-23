@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-18 05:17-0500\n"
-"PO-Revision-Date: 2018-01-11 00:12+0000\n"
-"Last-Translator: Alt Strigo <altstrigo@gmail.com>\n"
-"Language-Team: Esperanto <https://weblate.elementary.io/projects/appcenter/"
+"PO-Revision-Date: 2019-06-27 05:09+0000\n"
+"Last-Translator: Shtonchjo <shtonchjo@gmail.com>\n"
+"Language-Team: Esperanto <https://l10n.elementary.io/projects/appcenter/"
 "extra/eo/>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.6.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
@@ -22,7 +22,7 @@ msgstr "Aplikaĵa Centro"
 #: data/io.elementary.appcenter.appdata.xml.in:9
 #: data/io.elementary.appcenter.desktop.in.in:4
 msgid "Browse and manage apps"
-msgstr ""
+msgstr "Esplori kaj mastrumi aplikaĵojn"
 
 #: data/io.elementary.appcenter.appdata.xml.in:11
 msgid ""
@@ -30,26 +30,31 @@ msgid ""
 "search and discover new apps. AppCenter is also used for updating your "
 "system to the latest and greatest version for new features and fixes."
 msgstr ""
+"Aplikaĵa vendejo por sendependuloj kaj malfermkodaj programistoj. Esploru "
+"laŭ kategorioj, aŭ serĉu kaj malkovru novajn aplikaĵojn. La Aplikaĵa Centro "
+"uzeblas ankaŭ por ĝisdatigo de via sistemo al la plej freŝa kaj mojosa "
+"versio, kun novaj funkcioj kaj riparoj."
 
 #: data/io.elementary.appcenter.appdata.xml.in:201
 msgid "elementary LLC."
-msgstr ""
+msgstr "elementary LLC."
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
-msgstr ""
+msgstr "@APP_NAME@"
 
 #: data/io.elementary.appcenter.desktop.in.in:6
 msgid "@DESKTOP_ICON@"
-msgstr ""
+msgstr "@DESKTOP_ICON@"
 
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
 msgstr ""
+"instali;malinstali;forigi;katalogo;vendejo;aplikaĵoj;ĝisdatigoj;programoj;"
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
-msgstr ""
+msgstr "Kontroli pri Ĝisdatigoj"
 
 #~ msgid "About AppCenter"
 #~ msgstr "Pri Aplikaĵa Centro"
