@@ -1,12 +1,15 @@
 # Rodrigo Oliveira <rod.oliveira@gmail.com>, 2018, 2019.
 # Deyvison Rocha <deyvison@gmail.com>, 2018.
+# Henrique Andrade <henrique.coelho@gmail.com>, 2019.
+# Mateus Fonseca <mateuspaf23@gmail.com>, 2019.
+# Cleiton Floss <cleitonfloss@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-05-29 11:06+0200\n"
-"PO-Revision-Date: 2019-05-10 03:33+0000\n"
-"Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
+"PO-Revision-Date: 2019-06-16 05:43+0000\n"
+"Last-Translator: Cleiton Floss <cleitonfloss@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -239,27 +242,25 @@ msgid "%s Developers"
 msgstr "%s Desenvolvedores"
 
 #: src/Core/Package.vala:318
-#, fuzzy
 msgid "elementary Updates"
-msgstr "Atualizados recentemente"
+msgstr "Atualizações do elementary"
 
 #: src/Core/Package.vala:320
 msgid "Ubuntu (non-curated)"
-msgstr ""
+msgstr "Ubuntu (não-curado)"
 
 #: src/Core/Package.vala:323
-#, fuzzy, c-format
+#, c-format
 msgid "%s (non-curated)"
-msgstr "%s (local)"
+msgstr "%s (não curados)"
 
 #: src/Core/Package.vala:325
-#, fuzzy
 msgid "Ubuntu Drivers"
-msgstr "Drivers"
+msgstr "Drivers do Ubuntu"
 
 #: src/Core/Package.vala:328
 msgid "Unknown Origin (non-curated)"
-msgstr ""
+msgstr "Origem desconhecida (não curados)"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -276,7 +277,7 @@ msgstr "Versão: %s"
 
 #: src/Core/UpdateManager.vala:103
 msgid "Flatpak runtime"
-msgstr ""
+msgstr "Ambiente de execução Flatpak"
 
 #: src/Core/UpdateManager.vala:119
 msgid "No components with updates"

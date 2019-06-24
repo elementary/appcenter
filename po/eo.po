@@ -1,20 +1,22 @@
 # Augusto Fornitani <augusto.fornitani@outlook.com>, 2018.
 # Jesse ALTER <jesse@jessealter.com>, 2018.
+# Shtonchjo <shtonchjo@gmail.com>, 2019.
+# Steven <Stevenjeffers19@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-05-29 11:06+0200\n"
-"PO-Revision-Date: 2018-10-22 00:02+0000\n"
-"Last-Translator: Jesse ALTER <jesse@jessealter.com>\n"
-"Language-Team: Esperanto <https://weblate.elementary.io/projects/appcenter/"
+"PO-Revision-Date: 2019-06-21 21:26+0000\n"
+"Last-Translator: Shtonchjo <shtonchjo@gmail.com>\n"
+"Language-Team: Esperanto <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/eo/>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.6.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -25,7 +27,7 @@ msgstr "Aplikaĵa Centro"
 #: src/Application.vala:106
 #, c-format
 msgid "Could not parse mimetype %s"
-msgstr ""
+msgstr "Ne eblas analizi MIME-tipon %s"
 
 #: src/Application.vala:126
 #, c-format
@@ -61,19 +63,19 @@ msgstr "Instalitaj"
 #: src/MainWindow.vala:185 src/MainWindow.vala:348 src/Views/SearchView.vala:55
 #: src/Views/SearchView.vala:82
 msgid "Search Apps"
-msgstr ""
+msgstr "Serĉi Aplikaĵojn"
 
 #: src/MainWindow.vala:203
 msgid "Network Is Not Available"
-msgstr ""
+msgstr "Reto Ne Estas Disponebla"
 
 #: src/MainWindow.vala:204
 msgid "Connect to the Internet to install or update apps."
-msgstr ""
+msgstr "Konekti al Interreto por instali aŭ ĝisdatigi aplikaĵojn."
 
 #: src/MainWindow.vala:207
 msgid "Network Settings…"
-msgstr ""
+msgstr "Retaj Agordoj…"
 
 #: src/Utils.vala:72 src/Core/ChangeInformation.vala:92
 msgid "Starting"
@@ -82,139 +84,139 @@ msgstr "Komencante"
 #: src/Utils.vala:74 src/Core/ChangeInformation.vala:49
 #: src/Core/ChangeInformation.vala:64
 msgid "Waiting"
-msgstr ""
+msgstr "Atendante"
 
 #: src/Utils.vala:76
 msgid "Running"
-msgstr ""
+msgstr "Funkcianta"
 
 #: src/Utils.vala:78
 msgid "Querying"
-msgstr ""
+msgstr "Serĉanta"
 
 #: src/Utils.vala:80
 msgid "Getting information"
-msgstr ""
+msgstr "Informiĝanta"
 
 #: src/Utils.vala:82
 msgid "Removing packages"
-msgstr ""
+msgstr "Foriganta pakaĵojn"
 
 #: src/Utils.vala:84
 msgid "Downloading"
-msgstr ""
+msgstr "Elŝutanta"
 
 #: src/Utils.vala:86
 msgid "Installing"
-msgstr ""
+msgstr "Instalanta"
 
 #: src/Utils.vala:88
 msgid "Refreshing software list"
-msgstr ""
+msgstr "Ĝisdatiganta programliston"
 
 #: src/Utils.vala:90
 msgid "Installing updates"
-msgstr ""
+msgstr "Instalanta ĝisdatigojn"
 
 #: src/Utils.vala:92
 msgid "Cleaning up packages"
-msgstr ""
+msgstr "Puriganta pakaĵojn"
 
 #: src/Utils.vala:94
 msgid "Obsoleting packages"
-msgstr ""
+msgstr "Kadukiganta pakaĵojn"
 
 #: src/Utils.vala:96
 msgid "Resolving dependencies"
-msgstr ""
+msgstr "Solvanta dependojn"
 
 #: src/Utils.vala:98
 msgid "Checking signatures"
-msgstr ""
+msgstr "Kontrolanta subskribojn"
 
 #: src/Utils.vala:100
 msgid "Testing changes"
-msgstr ""
+msgstr "Provanta ŝanĝojn"
 
 #: src/Utils.vala:102
 msgid "Committing changes"
-msgstr ""
+msgstr "Enmetanta ŝanĝojn"
 
 #: src/Utils.vala:104
 msgid "Requesting data"
-msgstr ""
+msgstr "Petanta datumojn"
 
 #: src/Utils.vala:106 src/Core/ChangeInformation.vala:71
 msgid "Finished"
-msgstr ""
+msgstr "Finite"
 
 #: src/Utils.vala:108 src/Core/ChangeInformation.vala:79
 msgid "Cancelling"
-msgstr ""
+msgstr "Nuliganta"
 
 #: src/Utils.vala:110
 msgid "Downloading repository information"
-msgstr ""
+msgstr "Elŝutanta deponejajn informojn"
 
 #: src/Utils.vala:112
 msgid "Downloading list of packages"
-msgstr ""
+msgstr "Elŝutanta pakaĵliston"
 
 #: src/Utils.vala:114
 msgid "Downloading file lists"
-msgstr ""
+msgstr "Elŝutanta dosierlistojn"
 
 #: src/Utils.vala:116
 msgid "Downloading lists of changes"
-msgstr ""
+msgstr "Elŝutanta ŝanĝolistojn"
 
 #: src/Utils.vala:118
 msgid "Downloading groups"
-msgstr ""
+msgstr "Elŝutanta grupojn"
 
 #: src/Utils.vala:120
 msgid "Downloading update information"
-msgstr ""
+msgstr "Elŝutanta ĝisdatigajn informojn"
 
 #: src/Utils.vala:122
 msgid "Repackaging files"
-msgstr ""
+msgstr "Repakiganta dosierojn"
 
 #: src/Utils.vala:124
 msgid "Loading cache"
-msgstr ""
+msgstr "Ŝarganta kaŝmemoron"
 
 #: src/Utils.vala:126
 msgid "Scanning applications"
-msgstr ""
+msgstr "Skaniganta aplikaĵojn"
 
 #: src/Utils.vala:128
 msgid "Generating package lists"
-msgstr ""
+msgstr "Generanta pakaĵlistojn"
 
 #: src/Utils.vala:130
 msgid "Waiting for package manager lock"
-msgstr ""
+msgstr "Atendanta pakaĵan mastruman riglilon"
 
 #: src/Utils.vala:132
 msgid "Waiting for authentication"
-msgstr ""
+msgstr "Atendanta aŭtentigon"
 
 #: src/Utils.vala:134
 msgid "Updating running applications"
-msgstr ""
+msgstr "Ĝisdatiganta funkciantajn aplikaĵojn"
 
 #: src/Utils.vala:136
 msgid "Checking applications in use"
-msgstr ""
+msgstr "Kontrolanta uzatajn aplikaĵojn"
 
 #: src/Utils.vala:138
 msgid "Checking libraries in use"
-msgstr ""
+msgstr "Kontrolanta uzatajn bibliotekojn"
 
 #: src/Utils.vala:140
 msgid "Copying files"
-msgstr ""
+msgstr "Kopianta dosierojn"
 
 #: src/Utils.vala:142
 msgid "Unknown state"
@@ -230,84 +232,84 @@ msgstr[1] "Ĝisdatigoj haveblaj"
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u ĝisdatigo disponeblas por via sistemo"
+msgstr[1] "%u ĝisdatigoj disponeblas por via sistemo"
 
 #: src/Core/Package.vala:287
 #, c-format
 msgid "%s Developers"
-msgstr ""
+msgstr "%s Programistoj"
 
 #: src/Core/Package.vala:318
 msgid "elementary Updates"
-msgstr ""
+msgstr "Ĝisdatigoj de elementary"
 
 #: src/Core/Package.vala:320
 msgid "Ubuntu (non-curated)"
-msgstr ""
+msgstr "Ubuntu (ne kontrolita)"
 
 #: src/Core/Package.vala:323
 #, c-format
 msgid "%s (non-curated)"
-msgstr ""
+msgstr "%s (ne kontrolita)"
 
 #: src/Core/Package.vala:325
 msgid "Ubuntu Drivers"
-msgstr ""
+msgstr "Peliloj de Ubuntu"
 
 #: src/Core/Package.vala:328
 msgid "Unknown Origin (non-curated)"
-msgstr ""
+msgstr "Nekonata Deveno (ne kontrolita)"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
-msgstr ""
+msgstr "Operaciumaj Ĝisdatigoj"
 
 #: src/Core/UpdateManager.vala:39
 msgid "Updates to system components"
-msgstr ""
+msgstr "Sistem-elementaj Ĝisdatigoj"
 
 #: src/Core/UpdateManager.vala:76
 #, c-format
 msgid "Version: %s"
-msgstr ""
+msgstr "Versio: %s"
 
 #: src/Core/UpdateManager.vala:103
 msgid "Flatpak runtime"
-msgstr ""
+msgstr "Rultempo de Flatpak"
 
 #: src/Core/UpdateManager.vala:119
 msgid "No components with updates"
-msgstr ""
+msgstr "Neniu ĝisdatigota elemento"
 
 #: src/Core/UpdateManager.vala:123
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u elemento ĝisdatigota"
+msgstr[1] "%u elementoj ĝisdatigotaj"
 
 #: src/Core/UpdateManager.vala:125
 #, c-format
 msgid "%s:"
-msgstr ""
+msgstr "%s:"
 
 #: src/Core/UpdateManager.vala:163
 msgid "Restart Required"
-msgstr ""
+msgstr "Necesa Restartigo"
 
 #: src/Core/UpdateManager.vala:164
 msgid "Please restart your system to finalize updates"
-msgstr ""
+msgstr "Bonvolu restartigi vian sistemon por fin-ĝisdatigo"
 
 #: src/Dialogs/ContentWarningDialog.vala:27
 msgid "Content Warning"
-msgstr ""
+msgstr "Averto pri Enhavo"
 
 #: src/Dialogs/ContentWarningDialog.vala:32
 #, c-format
 msgid "%s Contains Explicit Content"
-msgstr ""
+msgstr "%s Prezentas Ne-porinfanan Enhavon"
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 #, c-format
@@ -316,27 +318,29 @@ msgid ""
 "disturbing. In general, elementary does not review or endorse the contents "
 "of this app."
 msgstr ""
+"%s povus prezenti enhavon ne-porinfanan, nur por plenkreskuloj, aŭ ofendan "
+"aŭ ĝenan. Ĝenerale, elementary ne kontrolas aŭ validigas le enhavon de ĉi "
+"aplikaĵo."
 
 #: src/Dialogs/ContentWarningDialog.vala:35
 msgid "Show content warnings"
-msgstr ""
+msgstr "Montri avertojn pri enhavo"
 
 #: src/Dialogs/ContentWarningDialog.vala:40
 msgid "Don’t Install"
 msgstr "Ne instali"
 
 #: src/Dialogs/ContentWarningDialog.vala:41
-#, fuzzy
 msgid "Install Anyway"
-msgstr "Instali"
+msgstr "Instali Ĉiukaze"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
-msgstr ""
+msgstr "Ĉu vi certas pri restartigo?"
 
 #: src/Dialogs/RestartDialog.vala:41
 msgid "This will close all open applications and restart this device."
-msgstr ""
+msgstr "Tio fermos ĉiujn aktivajn aplikaĵojn, kaj restartigos la aparaton."
 
 #: src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
@@ -353,25 +357,29 @@ msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
+"Okazis eraro dum procezado de la karto. Bonvolu reprovi poste. Ni "
+"pardonpetas pri la okazigita ĝeno."
 
 #: src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
-msgstr ""
+msgstr "Bonvolu kontroli viajn pagajn informojn kaj reprovi."
 
 #: src/Dialogs/StripeDialog.vala:76
 msgid "Payment"
-msgstr ""
+msgstr "Pago"
 
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
 msgid "Pay $%d for %s"
-msgstr ""
+msgstr "Pagi %d $ por %s"
 
 #: src/Dialogs/StripeDialog.vala:96
 msgid ""
 "This is a one time payment. Your email address is only used to send you a "
 "receipt."
 msgstr ""
+"Tio konsistigas ununuran pagon. Via retmesaĝadreso estos uzata nur por sendi "
+"la kvitancon."
 
 #: src/Dialogs/StripeDialog.vala:106 src/Widgets/SharePopover.vala:35
 msgid "Email"
@@ -382,6 +390,8 @@ msgid ""
 "Your email address is only used to send a receipt. You will not be "
 "subscribed to any mailing list."
 msgstr ""
+"Via retmesaĝadreso estos uzata nur por sendi la kvitancon. Vi abonos neniun "
+"dissendoliton."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127
@@ -390,16 +400,16 @@ msgstr "MM / JJ"
 
 #: src/Dialogs/StripeDialog.vala:147
 msgid "CVC"
-msgstr ""
+msgstr "CVC-kodo malantaŭ la bankokarto"
 
 #: src/Dialogs/StripeDialog.vala:189
 msgid "Privacy Policy"
 msgstr "Privateca Politiko"
 
 #: src/Dialogs/StripeDialog.vala:200 src/Dialogs/StripeDialog.vala:314
-#, fuzzy, c-format
+#, c-format
 msgid "Pay $%d.00"
-msgstr "Pagi $%d.00"
+msgstr "Pagi %d,00 $"
 
 #: src/Dialogs/StripeDialog.vala:243
 msgid "Processing"
@@ -407,93 +417,105 @@ msgstr "Procesorado"
 
 #: src/Dialogs/StripeDialog.vala:268
 msgid "There Was a Problem Processing Your Payment"
-msgstr ""
+msgstr "Okazis problemo dum procezo de via pago"
 
 #: src/Dialogs/StripeDialog.vala:306
 msgid "Pay Later"
-msgstr ""
+msgstr "Pagi Poste"
 
 #: src/Dialogs/StripeDialog.vala:307
 msgid "Retry"
-msgstr ""
+msgstr "Reprovi"
 
 #: src/Dialogs/StripeDialog.vala:513 src/Dialogs/StripeDialog.vala:578
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
-msgstr ""
+msgstr "La kartonumero malvalidas. Bonvolu reprovi uzante la ĝustan numeron."
 
 #: src/Dialogs/StripeDialog.vala:515
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"La monato de la limdato malvalidas. Bonvolu reprovi uzante la ĝustan "
+"limdaton."
 
 #: src/Dialogs/StripeDialog.vala:517 src/Dialogs/StripeDialog.vala:575
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"La jaro de la limdato malvalidas. Bonvolu reprovi uzante la ĝustan limdaton."
 
 #: src/Dialogs/StripeDialog.vala:520 src/Dialogs/StripeDialog.vala:573
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr ""
+msgstr "La CVC-kodo malvalidas. Bonvolu reprovi uzante la ĝustan kodon."
 
 #: src/Dialogs/StripeDialog.vala:522 src/Dialogs/StripeDialog.vala:564
 msgid "The card has expired. Please try again with a different card."
-msgstr ""
+msgstr "La karto eksvalidiĝis. Bonvolu reprovi uzante alian bankokarton."
 
 #: src/Dialogs/StripeDialog.vala:542
 msgid "There are too many payment requests at the moment, please retry later."
-msgstr ""
+msgstr "Okazas momente tro multaj pago-petoj, bonvolu reprovi pli poste."
 
 #: src/Dialogs/StripeDialog.vala:558
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
 msgstr ""
+"Ĉi karto ne akceptas tian transakcion. Bonvolu reprovi uzante alian "
+"bankokarton."
 
 #: src/Dialogs/StripeDialog.vala:560
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
 msgstr ""
+"La karto ne akceptas la monunuon. Bonvolu reprovi uzante alian bankokarton."
 
 #: src/Dialogs/StripeDialog.vala:562
 msgid "The transaction has already been processed."
-msgstr ""
+msgstr "La transakcio jam estis procezita."
 
 #: src/Dialogs/StripeDialog.vala:566
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "postal code."
-msgstr ""
+msgstr "La poŝtkodo malvalidas. Bonvolu reprovi uzante la ĝustan kodon."
 
 #: src/Dialogs/StripeDialog.vala:568
 msgid "You don't have enough funds. Please use an alternative payment method."
-msgstr ""
+msgstr "Ne estas sufiĉa monsumo. Bonvolu reprovi uzante alian pagmanieron."
 
 #: src/Dialogs/StripeDialog.vala:570
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr ""
+msgstr "La kvanto malvalidas. Bonvolu reprovi uzante validan monsumon."
 
 #: src/Dialogs/StripeDialog.vala:581
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr ""
+"La PIN-persona identiga numero malvalidas. Bonvolu reprovi uzante validan "
+"PIN-numeron."
 
 #: src/Dialogs/StripeDialog.vala:583
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
 msgstr ""
+"Okazis tro multaj PIN-numeraj provoj. Bonvolu reprovi uzante alian "
+"bankokarton."
 
 #: src/Dialogs/StripeDialog.vala:603
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
 msgstr ""
+"Maleblas pritrakti la transakcion. Bonvolu kontakti vian bankon, pri pliaj "
+"informoj."
 
 #: src/Dialogs/StripeDialog.vala:606
 msgid "The balance or credit limit on the card has been reached."
-msgstr ""
+msgstr "La saldo aŭ kreditlimo de la bankokarto estis atingita."
 
 #: src/Dialogs/StripeDialog.vala:609
 msgid "The given card is a test card. Please use a real card to proceed."
@@ -699,35 +721,35 @@ msgstr ""
 
 #: src/Widgets/CategoryFlowBox.vala:82
 msgid "Math, Science, & Engineering"
-msgstr ""
+msgstr "Matematikoj, Sciencoj & Inĝenierado"
 
 #: src/Widgets/CategoryFlowBox.vala:101
 msgid "Media Production"
-msgstr ""
+msgstr "Aŭdovidaĵa Produktado"
 
 #: src/Widgets/CategoryFlowBox.vala:108
 msgid "Office"
-msgstr ""
+msgstr "Oficejaj Programoj"
 
 #: src/Widgets/CategoryFlowBox.vala:115
 msgid "System"
-msgstr ""
+msgstr "Sistemo"
 
 #: src/Widgets/CategoryFlowBox.vala:119
 msgid "Universal Access"
-msgstr ""
+msgstr "Faciluziloj"
 
 #: src/Widgets/CategoryFlowBox.vala:120
 msgid "Video"
-msgstr ""
+msgstr "Video"
 
 #: src/Widgets/CategoryFlowBox.vala:125
 msgid "Writing & Language"
-msgstr ""
+msgstr "Skribo & Lingvoj"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
-msgstr ""
+msgstr "Postulas pagoreĝimon, kio ne estas ebligita"
 
 #: src/Widgets/HumbleButton.vala:106
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:323
