@@ -203,8 +203,6 @@ namespace AppCenter {
             progress_bar.width_request = 250;
 
             cancel_button = new Gtk.Button.with_label (_("Cancel"));
-            /* Match button text size with that of HumbleButton */
-            cancel_button.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
             cancel_button.valign = Gtk.Align.END;
             cancel_button.halign = Gtk.Align.END;
             cancel_button.clicked.connect (() => action_cancelled ());
