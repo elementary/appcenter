@@ -47,7 +47,6 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         release_description.xalign = 0;
 
         release_expander = new Gtk.Expander ("");
-        release_expander.use_markup = true;
         release_expander.halign = release_expander.valign = Gtk.Align.START;
         release_expander.add (release_description);
         release_expander.visible = true;
