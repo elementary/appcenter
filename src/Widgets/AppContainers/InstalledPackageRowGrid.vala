@@ -22,6 +22,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
     Gtk.Label app_version;
     Gtk.Stack release_stack;
     Gtk.Expander release_expander;
+    Gtk.Label release_expander_label;
     Gtk.Label release_description;
     Gtk.Label release_single_label;
     AppStream.Release? newest = null;
@@ -55,6 +56,11 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
             release_expander.expanded = !release_expander.expanded;
             return true;
         });
+
+        release_expander_label = new Gtk.Label ("");
+        release_expander_label.wrap = true;
+        release_expander_label.use_markup = true;
+        release_expander.set_label_widget (release_expander_label);
 
         release_single_label = new Gtk.Label (null);
         release_single_label.selectable = true;
@@ -105,7 +111,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
                     string description = ReleaseRow.format_release_description (newest);
                     string[] lines = description.split ("\n", 2);
                     if (lines.length > 1) {
-                        release_expander.label = lines[0];
+                        release_expander_label.label = lines[0];
                         release_description.set_text (lines[1]);
                         release_stack.visible_child = release_expander;
                         set_widget_visibility (release_stack, true);
