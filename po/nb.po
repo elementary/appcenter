@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-05-29 11:06+0200\n"
-"PO-Revision-Date: 2019-04-24 23:21+0000\n"
+"PO-Revision-Date: 2019-06-27 05:09+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/nb/>\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.5.1\n"
+"X-Generator: Weblate 3.6.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -239,27 +239,26 @@ msgid "%s Developers"
 msgstr "%s-utviklerne"
 
 #: src/Core/Package.vala:318
-#, fuzzy
 msgid "elementary Updates"
-msgstr "Nylig oppdatert"
+msgstr "elementary-oppgraderinger"
 
 #: src/Core/Package.vala:320
 msgid "Ubuntu (non-curated)"
-msgstr ""
+msgstr "Ubuntu (ikke-bekreftet)"
 
 #: src/Core/Package.vala:323
-#, fuzzy, c-format
+#, c-format
 msgid "%s (non-curated)"
-msgstr "%s (lokal)"
+msgstr "%s (ikke-bekreftet)"
 
 #: src/Core/Package.vala:325
 #, fuzzy
 msgid "Ubuntu Drivers"
-msgstr "Drivere"
+msgstr "Ubuntu-drivere"
 
 #: src/Core/Package.vala:328
 msgid "Unknown Origin (non-curated)"
-msgstr ""
+msgstr "Ukjent opprinnelse (ikke-bekreftet)"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -275,8 +274,9 @@ msgid "Version: %s"
 msgstr "Versjon: %s"
 
 #: src/Core/UpdateManager.vala:103
+#, fuzzy
 msgid "Flatpak runtime"
-msgstr ""
+msgstr "Flatpak-kjøreomgivelse"
 
 #: src/Core/UpdateManager.vala:119
 msgid "No components with updates"
@@ -578,7 +578,7 @@ msgstr "https://no.wikipedia.org/wiki/Offentlig_eiendom"
 #: src/Views/AppInfoView.vala:319
 #, fuzzy
 msgid "Free Software"
-msgstr "Rediger programvarekilder"
+msgstr "Fri programvare"
 
 #. TRANSLATORS: Replace the link with the version for your language
 #: src/Views/AppInfoView.vala:322
@@ -590,9 +590,8 @@ msgid "Proprietary"
 msgstr "Proprietært"
 
 #: src/Views/AppInfoView.vala:329
-#, fuzzy
 msgid "Unknown License"
-msgstr "Ukjent tilstand"
+msgstr "Ukjent lisens"
 
 #: src/Views/AppInfoView.vala:371
 #, c-format
