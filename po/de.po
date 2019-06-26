@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-29 11:06+0200\n"
+"POT-Creation-Date: 2019-06-26 22:42+0200\n"
 "PO-Revision-Date: 2019-01-02 18:07+0000\n"
 "Last-Translator: Jörg Arnold <j.ar@mailbox.org>\n"
 "Language-Team: German <https://weblate.elementary.io/projects/appcenter/"
@@ -25,8 +25,8 @@ msgid "AppCenter"
 msgstr "AppCenter"
 
 #: src/Application.vala:106
-#, c-format
-msgid "Could not parse mimetype %s"
+#, fuzzy, c-format
+msgid "Could not parse the media type %s"
 msgstr "Konnte MIME-Typ %s nicht analysieren"
 
 #: src/Application.vala:126
@@ -632,11 +632,11 @@ msgstr "Sieh dir %s im AppCenter an:"
 msgid "Share"
 msgstr "Teilen"
 
-#: src/Views/AppInfoView.vala:719
+#: src/Views/AppInfoView.vala:724
 msgid "Fund"
 msgstr "Unterstützen"
 
-#: src/Views/AppInfoView.vala:741
+#: src/Views/AppInfoView.vala:746
 msgid "Fund the development of this app"
 msgstr "Die Entwicklung dieser App unterstützen"
 
@@ -651,7 +651,7 @@ msgid "Restart Now"
 msgstr "Jetzt neu starten"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:158
+#: src/Views/AppListUpdateView.vala:175
 msgid "Update All"
 msgstr "Alle aktualisieren"
 
@@ -772,24 +772,24 @@ msgstr "Schreiben und Sprache"
 msgid "Requires payments, which are not enabled"
 msgstr "Erfordert Zahlungsvorgänge, welche jedoch nicht aktiviert sind"
 
-#: src/Widgets/HumbleButton.vala:106
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:323
+#: src/Widgets/HumbleButton.vala:105
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:321
 msgid "Free"
 msgstr "Kostenlos"
 
-#: src/Widgets/HumbleButton.vala:108
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:325
+#: src/Widgets/HumbleButton.vala:107
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:323
 msgid "Install"
 msgstr "Installieren"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:142
+#: src/Widgets/HumbleButton.vala:141
 #, c-format
 msgid "$%d.00"
 msgstr "$%d,00 USD"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:145
+#: src/Widgets/HumbleButton.vala:144
 #, c-format
 msgid "$%d"
 msgstr "$%d USD"
@@ -863,7 +863,7 @@ msgstr "Deinstallieren"
 msgid "Open"
 msgstr "Öffnen"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:348
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:346
 msgid "Update"
 msgstr "Aktualisieren"
 
