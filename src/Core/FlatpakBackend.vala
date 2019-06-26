@@ -606,11 +606,10 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             if (e is GLib.IOError.CANCELLED) {
                 cb (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);
                 success = true;
-            } else {
-                return false;
             }
 
-            return true;
+            // Any error during the installation of a single package and its deps is probably fatal, don't continue
+            return false;
         });
 
         transaction.operation_done.connect ((operation, commit, details) => {
@@ -792,11 +791,13 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             if (e is GLib.IOError.CANCELLED) {
                 cb (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);
                 success = true;
-            } else {
+                // The user hit cancel, don't go any further
                 return false;
+            } else {
+                // If there was an error while updating a single package in the transaction, we probably still want
+                // the rest updated, continue.
+                return true;
             }
-
-            return true;
         });
 
         transaction.operation_done.connect ((operation, commit, details) => {
