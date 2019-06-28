@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:42+0200\n"
-"PO-Revision-Date: 2019-05-31 11:29+0000\n"
+"PO-Revision-Date: 2019-06-30 03:52+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ja/>\n"
@@ -22,9 +22,9 @@ msgid "AppCenter"
 msgstr "AppCenter"
 
 #: src/Application.vala:106
-#, fuzzy, c-format
+#, c-format
 msgid "Could not parse the media type %s"
-msgstr "MIME タイプ %s を解析できませんでした"
+msgstr "メディアタイプ %s を解析できませんでした"
 
 #: src/Application.vala:126
 #, c-format
