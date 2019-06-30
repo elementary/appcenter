@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:42+0200\n"
-"PO-Revision-Date: 2018-09-12 00:22+0000\n"
-"Last-Translator: Marco De Paolini <marco.depaolini@gmail.com>\n"
-"Language-Team: Italian <https://weblate.elementary.io/projects/appcenter/"
-"extra/it/>\n"
+"PO-Revision-Date: 2019-07-03 14:02+0000\n"
+"Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
+"Language-Team: Italian <https://l10n.elementary.io/projects/appcenter/extra/"
+"it/>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.6.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
@@ -37,11 +37,12 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
 msgid "Meson build system fixes"
-msgstr ""
+msgstr "Correzioni al sistema di compilazione Meson"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
+#, fuzzy
 msgid "Improve window state restoration"
-msgstr ""
+msgstr "Migliorato il ripristino allo stato precedente della finestra"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Prevent action buttons from jumping around"
@@ -53,7 +54,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
 msgid "Memory management refinements"
-msgstr ""
+msgstr "Miglioramenti alla gestione della memoria"
 
 #: data/io.elementary.appcenter.appdata.xml.in:26
 msgid ""
@@ -82,11 +83,11 @@ msgstr "Nuove traduzioni"
 
 #: data/io.elementary.appcenter.appdata.xml.in:34
 msgid "New categories: Communication, Finance, Media Production"
-msgstr ""
+msgstr "Nuove categorie: Comunicazione, Finanza, Produzione multimediale"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
 msgid "Add Math to Science category"
-msgstr ""
+msgstr "Aggiunta di Matematica alla categoria Scienza"
 
 #: data/io.elementary.appcenter.appdata.xml.in:36
 msgid "Relax email address validator"
@@ -98,7 +99,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:38
 msgid "Category graphics revamped"
-msgstr ""
+msgstr "Migliorata la grafica delle categorie"
 
 #: data/io.elementary.appcenter.appdata.xml.in:53
 #: data/io.elementary.appcenter.appdata.xml.in:65
@@ -112,7 +113,6 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:139
 #: data/io.elementary.appcenter.appdata.xml.in:148
 #: data/io.elementary.appcenter.appdata.xml.in:157
-#, fuzzy
 msgid "Bug fixes and improve performance."
 msgstr "Correzione di problemi e miglioramento delle prestazioni."
 
