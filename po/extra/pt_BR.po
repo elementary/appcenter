@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:42+0200\n"
 "PO-Revision-Date: 2019-07-03 14:02+0000\n"
-"Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
+"Last-Translator: ricardomaciel17 <ricardopmaciel@hotmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/extra/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -88,11 +88,11 @@ msgstr "Novas categorias: Comunicação, Finanças, Produção de Mídia"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
 msgid "Add Math to Science category"
-msgstr ""
+msgstr "Adicionar Matemática à categoria Ciência"
 
 #: data/io.elementary.appcenter.appdata.xml.in:36
 msgid "Relax email address validator"
-msgstr ""
+msgstr "Resolver o validador de endereço de e-mail"
 
 #: data/io.elementary.appcenter.appdata.xml.in:37
 msgid "Present update availability more accurately"
@@ -100,7 +100,7 @@ msgstr "Apresentar a disponibilidade de atualizações com mais precisão"
 
 #: data/io.elementary.appcenter.appdata.xml.in:38
 msgid "Category graphics revamped"
-msgstr ""
+msgstr "Categoria gráficos renovada"
 
 #: data/io.elementary.appcenter.appdata.xml.in:53
 #: data/io.elementary.appcenter.appdata.xml.in:65
