@@ -180,6 +180,8 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         custom_title_stack.add (homepage_header);
         custom_title_stack.set_visible_child (view_mode_revealer);
 
+        var preferences_button = new Gtk.Button.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR);
+
         search_entry = new Gtk.SearchEntry ();
         search_entry.valign = Gtk.Align.CENTER;
         search_entry.placeholder_text = _("Search Apps");
@@ -191,6 +193,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         headerbar.show_close_button = true;
         headerbar.set_custom_title (custom_title_stack);
         headerbar.pack_start (return_button);
+        headerbar.pack_end (preferences_button);
         headerbar.pack_end (search_entry);
         headerbar.pack_end (spinner);
 
@@ -220,6 +223,11 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         add (stack);
 
         homepage.page_loaded.connect (() => homepage_loaded ());
+
+        preferences_button.clicked.connect (() => {
+            var preferences_dialog = new AppCenter.Widgets.PreferencesDialog ();
+            preferences_dialog.show_all ();
+        });
     }
 
     public override bool configure_event (Gdk.EventConfigure event) {
