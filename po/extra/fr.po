@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:42+0200\n"
-"PO-Revision-Date: 2019-01-15 00:05+0000\n"
+"PO-Revision-Date: 2019-07-06 10:49+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
-"Language-Team: French <https://weblate.elementary.io/projects/appcenter/"
-"extra/fr/>\n"
+"Language-Team: French <https://l10n.elementary.io/projects/appcenter/extra/"
+"fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.6.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
@@ -37,28 +37,32 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
 msgid "Meson build system fixes"
-msgstr ""
+msgstr "Corrections du système de compilation Meson"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "Improve window state restoration"
-msgstr ""
+msgstr "Amélioration de la restauration de l'état de la fenêtre"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Prevent action buttons from jumping around"
-msgstr ""
+msgstr "Correction des boutons d'action désalignés"
 
 #: data/io.elementary.appcenter.appdata.xml.in:24
 msgid "Remove reset paid apps gsettings key"
 msgstr ""
+"Suppression de la clé de réinitialisation des applications payantes dans "
+"gsettings"
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
 msgid "Memory management refinements"
-msgstr ""
+msgstr "Ajustements de la gestion de la mémoire"
 
 #: data/io.elementary.appcenter.appdata.xml.in:26
 msgid ""
 "Add conditional compilation for disabling dynamic remote homepage content"
 msgstr ""
+"Ajout d'une compilation conditionnelle pour désactiver le contenu dynamique "
+"des pages d'accueil distantes"
 
 #: data/io.elementary.appcenter.appdata.xml.in:27
 #: data/io.elementary.appcenter.appdata.xml.in:39
@@ -82,11 +86,11 @@ msgstr "Nouvelles traductions"
 
 #: data/io.elementary.appcenter.appdata.xml.in:34
 msgid "New categories: Communication, Finance, Media Production"
-msgstr ""
+msgstr "Nouvelles catégories : Communication, Finance, Production de média"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
 msgid "Add Math to Science category"
-msgstr ""
+msgstr "Ajout de la catégorie Maths dans Sciences"
 
 #: data/io.elementary.appcenter.appdata.xml.in:36
 msgid "Relax email address validator"
@@ -95,10 +99,11 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:37
 msgid "Present update availability more accurately"
 msgstr ""
+"Présentation de la disponibilité des mises à jour avec plus de précision"
 
 #: data/io.elementary.appcenter.appdata.xml.in:38
 msgid "Category graphics revamped"
-msgstr ""
+msgstr "Catégorie Infographie refondue"
 
 #: data/io.elementary.appcenter.appdata.xml.in:53
 #: data/io.elementary.appcenter.appdata.xml.in:65
@@ -112,21 +117,20 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:139
 #: data/io.elementary.appcenter.appdata.xml.in:148
 #: data/io.elementary.appcenter.appdata.xml.in:157
-#, fuzzy
 msgid "Bug fixes and improve performance."
-msgstr "Correction d’erreurs et amélioration des performances."
+msgstr "Correction de bugs et amélioration des performances."
 
 #: data/io.elementary.appcenter.appdata.xml.in:55
 msgid "Improve transaction success rate"
-msgstr ""
+msgstr "Amélioration du taux de réussite des transactions"
 
 #: data/io.elementary.appcenter.appdata.xml.in:56
 msgid "Add Publishing to Office category"
-msgstr ""
+msgstr "Ajout de la catégorie Édition à la catégorie Bureautique"
 
 #: data/io.elementary.appcenter.appdata.xml.in:57
 msgid "Improve descriptions of OS Updates"
-msgstr ""
+msgstr "Amélioration de la description des mises à jour du système"
 
 #: data/io.elementary.appcenter.appdata.xml.in:58
 #: data/io.elementary.appcenter.appdata.xml.in:69
@@ -144,11 +148,11 @@ msgstr "Diverses corrections d’erreurs et amélioration des performances"
 
 #: data/io.elementary.appcenter.appdata.xml.in:67
 msgid "Give details for Operating System Updates"
-msgstr ""
+msgstr "Détails pour les mises à jour du système"
 
 #: data/io.elementary.appcenter.appdata.xml.in:68
 msgid "Support mouse button navigation"
-msgstr ""
+msgstr "Prise en charge de la navigation à l'aide des boutons de la souris"
 
 #: data/io.elementary.appcenter.appdata.xml.in:159
 msgid "Fix crash caused by entries with missing packages"
@@ -170,13 +174,12 @@ msgstr ""
 "sortie de veille"
 
 #: data/io.elementary.appcenter.appdata.xml.in:176
-#, fuzzy
 msgid ""
 "Search performance has beeen improved, the category name is now shown on the "
 "headbar and minor bugs have been fixed."
 msgstr ""
-"Amélioration des performances de recherche, le nom de catégorie est "
-"maintenant affichée dans la barre de titre, correction de petites anomalies."
+"Les performances de recherche ont été améliorées, le nom de catégorie est "
+"maintenant affiché dans la barre de titre et correction de bugs mineurs."
 
 #: data/io.elementary.appcenter.appdata.xml.in:178
 msgid "Fix Steam installation"
