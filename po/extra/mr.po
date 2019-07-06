@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:42+0200\n"
-"PO-Revision-Date: 2019-07-06 09:28+0000\n"
+"PO-Revision-Date: 2019-07-07 10:28+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/extra/"
 "mr/>\n"
@@ -89,15 +89,15 @@ msgstr "विज्ञान श्रेणीमध्ये गणित ज
 
 #: data/io.elementary.appcenter.appdata.xml.in:36
 msgid "Relax email address validator"
-msgstr ""
+msgstr "आरामदायक ईमेल पत्ता वैधता तपासक"
 
 #: data/io.elementary.appcenter.appdata.xml.in:37
 msgid "Present update availability more accurately"
-msgstr ""
+msgstr "वर्तमान अद्यतन उपलब्धता अधिक अचूकपणे"
 
 #: data/io.elementary.appcenter.appdata.xml.in:38
 msgid "Category graphics revamped"
-msgstr ""
+msgstr "सुधारित ग्राफिक्स श्रेणी"
 
 #: data/io.elementary.appcenter.appdata.xml.in:53
 #: data/io.elementary.appcenter.appdata.xml.in:65
@@ -111,21 +111,20 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:139
 #: data/io.elementary.appcenter.appdata.xml.in:148
 #: data/io.elementary.appcenter.appdata.xml.in:157
-#, fuzzy
 msgid "Bug fixes and improve performance."
-msgstr "दोष निराकरण आणि परफॉर्मन्स सुधारित करणे."
+msgstr "दोष निराकरण आणि कार्यप्रदर्शन सुधारित करा."
 
 #: data/io.elementary.appcenter.appdata.xml.in:55
 msgid "Improve transaction success rate"
-msgstr ""
+msgstr "व्यवहार यश दर सुधारित करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:56
 msgid "Add Publishing to Office category"
-msgstr ""
+msgstr "कार्यालय श्रेणीमध्ये प्रकाशन जोडा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:57
 msgid "Improve descriptions of OS Updates"
-msgstr ""
+msgstr "ओएस अपडेट्सचे वर्णन सुधारा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:58
 #: data/io.elementary.appcenter.appdata.xml.in:69
@@ -143,11 +142,11 @@ msgstr "विविध दोष निराकरणे आणि कार�
 
 #: data/io.elementary.appcenter.appdata.xml.in:67
 msgid "Give details for Operating System Updates"
-msgstr ""
+msgstr "ऑपरेटिंग सिस्टम अद्यतनांसाठी तपशील द्या"
 
 #: data/io.elementary.appcenter.appdata.xml.in:68
 msgid "Support mouse button navigation"
-msgstr ""
+msgstr "माऊस बटण नेव्हिगेशन समर्थन"
 
 #: data/io.elementary.appcenter.appdata.xml.in:159
 msgid "Fix crash caused by entries with missing packages"
@@ -166,13 +165,12 @@ msgid "Prevent multiple authentication dialogs when resuming from suspend"
 msgstr "निलंबन पासून पुन्हा सुरू झाल्यावर एकाधिक प्रमाणीकरण संवाद टाळा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:176
-#, fuzzy
 msgid ""
 "Search performance has beeen improved, the category name is now shown on the "
 "headbar and minor bugs have been fixed."
 msgstr ""
-"शोध  कार्यक्षमता  सुधारित केली आहे, श्रेणी नाव आता हेडबारवर दर्शविले आहे आणि किरकोळ दोष "
-"निश्चित केले गेले आहेत."
+"शोध  कार्यक्षमता  सुधारित केली आहे, श्रेणी नाव आता हेडबारवर दर्शविले आहे आणि "
+"किरकोळ दोष निश्चित केले गेले आहेत."
 
 #: data/io.elementary.appcenter.appdata.xml.in:178
 msgid "Fix Steam installation"
