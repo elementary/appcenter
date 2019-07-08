@@ -80,11 +80,21 @@ public class AppCenterCore.Client : Object {
             application.withdraw_notification ("updates");
         }
 
-#if HAVE_UNITY
-        var launcher_entry = Unity.LauncherEntry.get_for_desktop_file (GLib.Application.get_default ().application_id + ".desktop");
-        launcher_entry.count = updates_number;
-        launcher_entry.count_visible = updates_number != 0U;
-#endif
+        Granite.Services.Application.set_badge.begin (updates_number, (obj, res) => {
+            try {
+                Granite.Services.Application.set_badge.end (res);
+            } catch (GLib.Error e) {
+                critical (e.message);
+            }
+        });
+
+        Granite.Services.Application.set_badge_visible.begin (updates_number != 0U, (obj, res) => {
+            try {
+                Granite.Services.Application.set_badge_visible.end (res);
+            } catch (GLib.Error e) {
+                critical (e.message);
+            }
+        });
 
         installed_apps_changed ();
     }
