@@ -37,9 +37,9 @@ namespace AppCenter.Views {
         private Gtk.ListBox extension_box;
         private Gtk.Grid release_grid;
         private Widgets.ReleaseListBox release_list_box;
+        private Gtk.Grid screenshot_arrows;
         private Gtk.Button screenshot_next;
         private Gtk.Button screenshot_previous;
-        private Gtk.Grid screenshot_arrows;
         private Gtk.Stack screenshot_stack;
         private Gtk.TextView app_description;
         private Widgets.Switcher screenshot_switcher;
@@ -104,6 +104,20 @@ namespace AppCenter.Views {
                 screenshot_switcher = new Widgets.Switcher ();
                 screenshot_switcher.halign = Gtk.Align.CENTER;
                 screenshot_switcher.set_stack (app_screenshots);
+
+                app_screenshots.notify["visible-child"].connect (() => {
+                    screenshot_previous.sensitive = true;
+                    screenshot_next.sensitive = true;
+
+                    GLib.List<unowned Gtk.Widget> screenshot_children = app_screenshots.get_children ();
+                    var index = screenshot_children.index (app_screenshots.visible_child);
+
+                    if (index == 0) {
+                        screenshot_previous.sensitive = false;
+                    } else if (index == screenshot_children.length () - 1) {
+                        screenshot_next.sensitive = false;
+                    }
+                });
 
                 var app_screenshot_spinner = new Gtk.Spinner ();
                 app_screenshot_spinner.halign = Gtk.Align.CENTER;
