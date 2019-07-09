@@ -39,7 +39,7 @@ namespace AppCenter.Views {
         private Widgets.ReleaseListBox release_list_box;
         private Gtk.Button screenshot_next;
         private Gtk.Button screenshot_previous;
-        private Gtk.Grid screenshot_previous_next;
+        private Gtk.Grid screenshot_arrows;
         private Gtk.Stack screenshot_stack;
         private Gtk.TextView app_description;
         private Widgets.Switcher screenshot_switcher;
@@ -96,10 +96,10 @@ namespace AppCenter.Views {
                     }
                 });
 
-                screenshot_previous_next = new Gtk.Grid ();
-                screenshot_previous_next.add (screenshot_previous);
-                screenshot_previous_next.add (screenshot_next);
-                screenshot_previous_next.no_show_all = true;
+                screenshot_arrows = new Gtk.Grid ();
+                screenshot_arrows.add (screenshot_previous);
+                screenshot_arrows.add (screenshot_next);
+                screenshot_arrows.no_show_all = true;
 
                 screenshot_switcher = new Widgets.Switcher ();
                 screenshot_switcher.halign = Gtk.Align.CENTER;
@@ -203,7 +203,7 @@ namespace AppCenter.Views {
             content_grid.orientation = Gtk.Orientation.VERTICAL;
 
             if (screenshots.length > 0) {
-                content_grid.add (screenshot_previous_next);
+                content_grid.add (screenshot_arrows);
                 content_grid.add (screenshot_stack);
                 content_grid.add (screenshot_switcher);
             }
@@ -660,8 +660,8 @@ namespace AppCenter.Views {
                     if (app_screenshots.get_children ().length () > 0) {
                         screenshot_stack.visible_child = app_screenshots;
                         screenshot_switcher.update_selected ();
-                        screenshot_previous_next.no_show_all = false;
-                        screenshot_previous_next.show_all ();
+                        screenshot_arrows.no_show_all = false;
+                        screenshot_arrows.show_all ();
                     } else {
                         screenshot_stack.visible_child = app_screenshot_not_found;
                     }
