@@ -125,6 +125,7 @@ namespace AppCenter.Views {
 
                 screenshot_overlay = new Gtk.Overlay ();
                 screenshot_overlay.add_events (Gdk.EventMask.ENTER_NOTIFY_MASK);
+                screenshot_overlay.add_events (Gdk.EventMask.LEAVE_NOTIFY_MASK);
                 screenshot_overlay.add (app_screenshots);
                 screenshot_overlay.add_overlay (screenshot_arrows_revealer);
 
