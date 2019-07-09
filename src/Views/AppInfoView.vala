@@ -79,8 +79,6 @@ namespace AppCenter.Views {
                     var index = screenshot_children.index (app_screenshots.visible_child);
                     if (index > 0) {
                         app_screenshots.visible_child = screenshot_children.nth_data (index - 1);
-                    } else {
-                        critical ("Can't go back!");
                     }
                 });
 
@@ -91,8 +89,6 @@ namespace AppCenter.Views {
                     var index = screenshot_children.index (app_screenshots.visible_child);
                     if (index < screenshot_children.length () - 1) {
                         app_screenshots.visible_child = screenshot_children.nth_data (index + 1);
-                    } else {
-                        critical ("Can't go forward!");
                     }
                 });
 
