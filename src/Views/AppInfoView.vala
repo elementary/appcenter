@@ -131,13 +131,11 @@ namespace AppCenter.Views {
 
                 screenshot_overlay.enter_notify_event.connect (() => {
                     screenshot_arrows_revealer.reveal_child = true;
-                    critical ("Mouse entering!");
                     return false;
                 });
 
                 screenshot_overlay.leave_notify_event.connect (() => {
                     screenshot_arrows_revealer.reveal_child = false;
-                    critical ("Mouse leaving!");
                     return false;
                 });
 
