@@ -92,15 +92,6 @@ namespace AppCenter.Views {
                     }
                 });
 
-                screenshot_arrows = new Gtk.Grid ();
-                screenshot_arrows.add (screenshot_previous);
-                screenshot_arrows.add (screenshot_next);
-                screenshot_arrows.no_show_all = true;
-
-                screenshot_switcher = new Widgets.Switcher ();
-                screenshot_switcher.halign = Gtk.Align.CENTER;
-                screenshot_switcher.set_stack (app_screenshots);
-
                 app_screenshots.notify["visible-child"].connect (() => {
                     screenshot_previous.sensitive = true;
                     screenshot_next.sensitive = true;
@@ -114,6 +105,15 @@ namespace AppCenter.Views {
                         screenshot_next.sensitive = false;
                     }
                 });
+
+                screenshot_arrows = new Gtk.Grid ();
+                screenshot_arrows.add (screenshot_previous);
+                screenshot_arrows.add (screenshot_next);
+                screenshot_arrows.no_show_all = true;
+
+                screenshot_switcher = new Widgets.Switcher ();
+                screenshot_switcher.halign = Gtk.Align.CENTER;
+                screenshot_switcher.set_stack (app_screenshots);
 
                 var app_screenshot_spinner = new Gtk.Spinner ();
                 app_screenshot_spinner.halign = Gtk.Align.CENTER;
