@@ -8,7 +8,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:42+0200\n"
 "PO-Revision-Date: 2019-07-10 20:57+0000\n"
-"Last-Translator: Steven <Stevenjeffers19@gmail.com>\n"
+"Last-Translator: Shtonchjo <shtonchjo@gmail.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/eo/>\n"
 "Language: eo\n"
@@ -132,7 +132,7 @@ msgstr "Solvanta dependojn"
 
 #: src/Utils.vala:98
 msgid "Checking signatures"
-msgstr "Kontroli subskribojn"
+msgstr "Kontrolanta subskribojn"
 
 #: src/Utils.vala:100
 msgid "Testing changes"
