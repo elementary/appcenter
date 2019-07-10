@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:42+0200\n"
-"PO-Revision-Date: 2019-06-02 15:29+0000\n"
+"PO-Revision-Date: 2019-07-09 23:46+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/pt/>\n"
@@ -24,9 +24,9 @@ msgid "AppCenter"
 msgstr "Centro de Aplicações"
 
 #: src/Application.vala:106
-#, fuzzy, c-format
+#, c-format
 msgid "Could not parse the media type %s"
-msgstr "Não foi possível analisar o mimetype %s"
+msgstr "Não foi possível analisar o tipo de média %s"
 
 #: src/Application.vala:126
 #, c-format
