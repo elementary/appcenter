@@ -8,7 +8,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:42+0200\n"
 "PO-Revision-Date: 2019-07-10 21:00+0000\n"
-"Last-Translator: Steven <Stevenjeffers19@gmail.com>\n"
+"Last-Translator: Shtonchjo <shtonchjo@gmail.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/eo/>\n"
 "Language: eo\n"
@@ -204,7 +204,7 @@ msgstr "Atendanta aŭtentigon"
 
 #: src/Utils.vala:134
 msgid "Updating running applications"
-msgstr "Ĝisdatigante kurante aplikojn"
+msgstr "Ĝisdatiganta funkciantajn aplikaĵojn"
 
 #: src/Utils.vala:136
 msgid "Checking applications in use"
