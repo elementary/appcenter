@@ -8,7 +8,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:42+0200\n"
 "PO-Revision-Date: 2019-07-10 21:02+0000\n"
-"Last-Translator: Shtonchjo <shtonchjo@gmail.com>\n"
+"Last-Translator: Steven <Stevenjeffers19@gmail.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/eo/>\n"
 "Language: eo\n"
@@ -280,7 +280,7 @@ msgstr "Rultempo de Flatpak"
 
 #: src/Core/UpdateManager.vala:119
 msgid "No components with updates"
-msgstr "Neniu ĝisdatigota elemento"
+msgstr "Neniu komponantoj kun ĝisdatigoj"
 
 #: src/Core/UpdateManager.vala:123
 #, c-format
