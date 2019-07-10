@@ -8,7 +8,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:42+0200\n"
 "PO-Revision-Date: 2019-07-10 21:00+0000\n"
-"Last-Translator: Shtonchjo <shtonchjo@gmail.com>\n"
+"Last-Translator: Steven <Stevenjeffers19@gmail.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/eo/>\n"
 "Language: eo\n"
@@ -200,7 +200,7 @@ msgstr "Atendanta pakaĵan mastruman riglilon"
 
 #: src/Utils.vala:132
 msgid "Waiting for authentication"
-msgstr "Atendanta aŭtentigon"
+msgstr "Atendante aŭtentikigon"
 
 #: src/Utils.vala:134
 msgid "Updating running applications"
