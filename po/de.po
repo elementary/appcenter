@@ -1,5 +1,5 @@
 # Jörg Arnold <j.ar@mailbox.org>, 2018, 2019.
-# Julian Raschke <julian@raschke.de>, 2018.
+# Julian Raschke <julian@raschke.de>, 2018, 2019.
 # Tucan Holmes <tucan.web.swiss@gmail.com>, 2018.
 # Pascal Matthiesen <pascal@false.one>, 2018.
 msgid ""
@@ -7,16 +7,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:42+0200\n"
-"PO-Revision-Date: 2019-01-02 18:07+0000\n"
-"Last-Translator: Jörg Arnold <j.ar@mailbox.org>\n"
-"Language-Team: German <https://weblate.elementary.io/projects/appcenter/"
+"PO-Revision-Date: 2019-07-12 22:46+0000\n"
+"Last-Translator: Julian Raschke <julian@raschke.de>\n"
+"Language-Team: German <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.6.1\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -25,9 +25,9 @@ msgid "AppCenter"
 msgstr "AppCenter"
 
 #: src/Application.vala:106
-#, fuzzy, c-format
+#, c-format
 msgid "Could not parse the media type %s"
-msgstr "Konnte MIME-Typ %s nicht analysieren"
+msgstr "Der Medientyp %s wurde nicht erkannt"
 
 #: src/Application.vala:126
 #, c-format
