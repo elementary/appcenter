@@ -77,7 +77,12 @@ namespace AppCenter.Views {
                 screenshot_previous = new Gtk.Button.from_icon_name ("go-previous-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
                 screenshot_previous.expand = true;
                 screenshot_previous.halign = Gtk.Align.START;
-                screenshot_previous.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+                screenshot_previous.valign = Gtk.Align.CENTER;
+
+                var previous_context = screenshot_previous.get_style_context ();
+                previous_context.add_class (Gtk.STYLE_CLASS_FLAT);
+                previous_context.add_class ("circular");
+                previous_context.add_class ("arrow");
 
                 screenshot_previous.clicked.connect (() => {
                     GLib.List<unowned Gtk.Widget> screenshot_children = app_screenshots.get_children ();
@@ -90,7 +95,12 @@ namespace AppCenter.Views {
                 screenshot_next = new Gtk.Button.from_icon_name ("go-next-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
                 screenshot_next.expand = true;
                 screenshot_next.halign = Gtk.Align.END;
-                screenshot_next.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+                screenshot_next.valign = Gtk.Align.CENTER;
+
+                var next_context = screenshot_next.get_style_context ();
+                next_context.add_class (Gtk.STYLE_CLASS_FLAT);
+                next_context.add_class ("circular");
+                next_context.add_class ("arrow");
 
                 screenshot_next.clicked.connect (() => {
                     GLib.List<unowned Gtk.Widget> screenshot_children = app_screenshots.get_children ();
