@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:42+0200\n"
-"PO-Revision-Date: 2019-07-03 14:02+0000\n"
+"PO-Revision-Date: 2019-07-11 21:28+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/extra/"
 "ja/>\n"
@@ -30,9 +30,8 @@ msgid ""
 "search and discover new apps. AppCenter is also used for updating your "
 "system to the latest and greatest version for new features and fixes."
 msgstr ""
-"独立会社やオープンソース開発者のためのアプリストアです。カテゴリー別で閲覧し"
-"たり検索したりして、新しいアプリを見つけましょう。AppCenter は新機能や修正の"
-"ためにシステムを最新で最高のバージョンへアップデートするときにも使われます。"
+"個人のオープンソース開発者のためのアプリストアです。カテゴリー別で閲覧したり検索したりして、新しいアプリを見つけましょう。AppCenter "
+"は、新機能や修正によってシステムを最新で最高のバージョンへアップデートするときにも使われます。"
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
 msgid "Meson build system fixes"
@@ -89,7 +88,7 @@ msgstr "数学関連のアプリを科学カテゴリーに追加"
 
 #: data/io.elementary.appcenter.appdata.xml.in:36
 msgid "Relax email address validator"
-msgstr ""
+msgstr "メールアドレスの検証を緩和"
 
 #: data/io.elementary.appcenter.appdata.xml.in:37
 msgid "Present update availability more accurately"

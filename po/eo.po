@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:42+0200\n"
-"PO-Revision-Date: 2019-07-03 14:02+0000\n"
+"PO-Revision-Date: 2019-07-11 21:28+0000\n"
 "Last-Translator: Shtonchjo <shtonchjo@gmail.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/eo/>\n"
@@ -96,7 +96,7 @@ msgstr "Serĉanta"
 
 #: src/Utils.vala:80
 msgid "Getting information"
-msgstr "Informiĝanta"
+msgstr "Ricevi Informojn"
 
 #: src/Utils.vala:82
 msgid "Removing packages"
