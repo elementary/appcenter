@@ -186,7 +186,7 @@ namespace AppCenter {
             open_button.clicked.connect (launch_package_app);
 
             button_grid = new Gtk.Grid ();
-            button_grid.column_spacing = 6;
+            button_grid.column_spacing = 0;
             button_grid.valign = Gtk.Align.CENTER;
             button_grid.halign = Gtk.Align.END;
             button_grid.hexpand = false;
