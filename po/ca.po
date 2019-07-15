@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:42+0200\n"
-"PO-Revision-Date: 2019-07-06 09:27+0000\n"
+"PO-Revision-Date: 2019-07-16 09:11+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ca/>\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -195,7 +195,7 @@ msgstr "Es generen les llistes de paquets"
 
 #: src/Utils.vala:130
 msgid "Waiting for package manager lock"
-msgstr "S'espera el bloqueig del gestor de paquets"
+msgstr "S'espera el bloqueig del gestor de paquets."
 
 #: src/Utils.vala:132
 msgid "Waiting for authentication"
