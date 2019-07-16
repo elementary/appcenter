@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:42+0200\n"
-"PO-Revision-Date: 2019-07-07 10:28+0000\n"
+"PO-Revision-Date: 2019-07-12 22:46+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/extra/"
 "mr/>\n"
@@ -44,11 +44,11 @@ msgstr "विंडो स्थिती पुनर्संचयन सु
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Prevent action buttons from jumping around"
-msgstr ""
+msgstr "ऍक्शन बटणांना जंप अराउंड करण्यापासून प्रतिबंधित करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:24
 msgid "Remove reset paid apps gsettings key"
-msgstr ""
+msgstr "रीसेट पेड ऍप्प जी सेटिंग की काढा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
 msgid "Memory management refinements"
