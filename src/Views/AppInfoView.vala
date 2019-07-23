@@ -33,7 +33,7 @@ namespace AppCenter.Views {
         private Gtk.Label app_screenshot_not_found;
         private Gtk.Stack app_screenshots;
         private Gtk.Label app_version;
-        private Gtk.Label app_download_size_label;
+        private Widgets.SizeLabel size_label;
         private Gtk.ListBox extension_box;
         private Gtk.Grid release_grid;
         private Widgets.ReleaseListBox release_list_box;
@@ -264,17 +264,17 @@ namespace AppCenter.Views {
             header_grid.attach (action_stack, 3, 0, 1, 1);
 
             if (!package.is_local) {
-                app_download_size_label = new Gtk.Label (null);
-                app_download_size_label.halign = Gtk.Align.END;
-                app_download_size_label.valign = Gtk.Align.START;
-                app_download_size_label.xalign = 1;
-                app_download_size_label.margin_end = open_button.margin_end;
-                action_button_group.add_widget (app_download_size_label);
-                app_download_size_label.selectable = true;
+                size_label = new Widgets.SizeLabel ();
+                size_label.halign = Gtk.Align.END;
+                size_label.margin_end = open_button.margin_end;
+                size_label.valign = Gtk.Align.START;
+
+                action_button_group.add_widget (size_label);
+
                 /* We hide the label with a stack in order to stop the size requisition changing */
                 app_download_stack = new Gtk.Stack ();
-                app_download_stack.margin_end = 6;
-                app_download_stack.add_named (app_download_size_label, "CHILD");
+                // app_download_stack.margin_end = 6;
+                app_download_stack.add_named (size_label, "CHILD");
                 app_download_stack.add_named (new Gtk.EventBox (), "NONE");
                 app_download_stack.hhomogeneous = false;
                 app_download_stack.set_visible_child_name ("NONE");
@@ -464,7 +464,7 @@ namespace AppCenter.Views {
 
             app_download_stack.set_visible_child_name (package.state == AppCenterCore.Package.State.NOT_INSTALLED ?
                                                        "CHILD" : "NONE");
-            app_download_size_label.label = "";
+            size_label.update ();
             if (package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
                 get_app_download_size.begin ();
             }
@@ -488,7 +488,7 @@ namespace AppCenter.Views {
 
             var size = yield package.get_download_size_including_deps ();
 
-            app_download_size_label.label = GLib.format_size (size);
+            size_label.update (size);
             app_download_stack.set_visible_child_name ("CHILD");
         }
 

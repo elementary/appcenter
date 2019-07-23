@@ -41,25 +41,21 @@ namespace AppCenter.Widgets {
 
     /** Header to show at top of list if there are updates available **/
     public class UpdatesGrid : AbstractHeaderGrid {
-        private Gtk.Label update_size_label;
+        private SizeLabel size_label;
         private Gtk.Label updates_label;
 
         construct {
             margin_top = 18;
+
             updates_label = new Gtk.Label (null);
             ((Gtk.Misc) updates_label).xalign = 0;
             updates_label.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
             updates_label.hexpand = true;
 
-            update_size_label = new Gtk.Label (null);
-
-            var update_size_grid = new Gtk.Grid ();
-            update_size_grid.tooltip_text = _("Actual download size likely to be much smaller. AppCenter downloads the parts of apps that have changed.");
-            update_size_grid.add (update_size_label);
-            update_size_grid.add (new Gtk.Image.from_icon_name ("dialog-information-symbolic", Gtk.IconSize.LARGE_TOOLBAR));
+            size_label = new SizeLabel ();
 
             add (updates_label);
-            add (update_size_grid);
+            add (size_label);
         }
 
         public override void update (uint _update_numbers, uint64 _update_real_size, bool _is_updating) {
@@ -67,7 +63,8 @@ namespace AppCenter.Widgets {
 
             if (!is_updating) {
                 updates_label.label = ngettext ("%u Update Available", "%u Updates Available", update_numbers).printf (update_numbers);
-                update_size_label.label = _("Up to %s").printf (GLib.format_size (update_real_size));
+                size_label.update (update_real_size);
+
                 if (update_numbers > 0) {
                     show_all ();
                 } else {
