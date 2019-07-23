@@ -43,7 +43,7 @@ namespace AppCenter.Widgets {
             size_label.xalign = 1;
             size_label.show ();
 
-            var icon = new Gtk.Image.from_icon_name ("dialog-information-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+            var icon = new Gtk.Image.from_icon_name ("dialog-information-symbolic", Gtk.IconSize.BUTTON);
             icon.margin_start = 6;
             icon.show ();
 
