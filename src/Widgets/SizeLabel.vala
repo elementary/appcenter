@@ -32,7 +32,6 @@ namespace AppCenter.Widgets {
         }
 
         construct {
-            // TODO: Only show "Up to", info icon, and tooltip if using Flatpak
             tooltip_markup = "<b>%s</b>\n%s".printf (
                 _("Actual download size likely to be smaller."),
                 _("AppCenter only downloads the parts of apps and updates that are needed.")

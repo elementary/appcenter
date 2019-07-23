@@ -63,6 +63,7 @@ namespace AppCenter.Widgets {
 
             if (!is_updating) {
                 updates_label.label = ngettext ("%u Update Available", "%u Updates Available", update_numbers).printf (update_numbers);
+                // TODO: pass in bool whether or not using Flatpak as second param
                 size_label.update (update_real_size);
 
                 if (update_numbers > 0) {
