@@ -40,7 +40,6 @@ namespace AppCenter.Views {
         private Gtk.Stack screenshot_stack;
         private Gtk.TextView app_description;
         private Widgets.Switcher screenshot_switcher;
-        private Gtk.Stack app_download_stack;
         private Gtk.ListStore version_liststore;
         private Gtk.ComboBox version_combo;
 
@@ -266,19 +265,11 @@ namespace AppCenter.Views {
             if (!package.is_local) {
                 size_label = new Widgets.SizeLabel ();
                 size_label.halign = Gtk.Align.END;
-                size_label.margin_end = open_button.margin_end;
                 size_label.valign = Gtk.Align.START;
 
                 action_button_group.add_widget (size_label);
 
-                /* We hide the label with a stack in order to stop the size requisition changing */
-                app_download_stack = new Gtk.Stack ();
-                // app_download_stack.margin_end = 6;
-                app_download_stack.add_named (size_label, "CHILD");
-                app_download_stack.add_named (new Gtk.EventBox (), "NONE");
-                app_download_stack.hhomogeneous = false;
-                app_download_stack.set_visible_child_name ("NONE");
-                header_grid.attach (app_download_stack, 3, 1, 1, 1);
+                header_grid.attach (size_label, 3, 1, 1, 2);
             }
 
             var header_box = new Gtk.Grid ();
@@ -462,8 +453,6 @@ namespace AppCenter.Views {
                 app_version.label = package.get_version ();
             }
 
-            app_download_stack.set_visible_child_name (package.state == AppCenterCore.Package.State.NOT_INSTALLED ?
-                                                       "CHILD" : "NONE");
             size_label.update ();
             if (package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
                 get_app_download_size.begin ();
@@ -489,7 +478,6 @@ namespace AppCenter.Views {
             var size = yield package.get_download_size_including_deps ();
 
             size_label.update (size);
-            app_download_stack.set_visible_child_name ("CHILD");
         }
 
         public void view_entered () {
