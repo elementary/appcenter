@@ -275,7 +275,6 @@ namespace AppCenter.Views {
             var header_box = new Gtk.Grid ();
             header_box.get_style_context ().add_class ("banner");
             header_box.hexpand = true;
-            header_box.hexpand = true;
             header_box.add (header_grid);
 
             var footer_grid = new Gtk.Grid ();
