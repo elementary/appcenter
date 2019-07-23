@@ -476,8 +476,6 @@ namespace AppCenter.Views {
             }
 
             var size = yield package.get_download_size_including_deps ();
-
-            // TODO: pass in bool whether or not using Flatpak as second param
             size_label.update (size, package.is_flatpak);
         }
 
