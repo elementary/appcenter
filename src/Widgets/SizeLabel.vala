@@ -18,16 +18,16 @@
 
 namespace AppCenter.Widgets {
     public class SizeLabel : Gtk.Grid {
-        public bool downloading_flatpak { get; construct set; }
+        public bool using_flatpak { get; construct set; }
         public uint64 size { get; construct set; }
 
         private Gtk.Label size_label;
         private Gtk.Revealer icon_revealer;
 
-        public SizeLabel (uint64 _size = 0, bool _downloading_flatpak = false) {
+        public SizeLabel (uint64 _size = 0, bool _using_flatpak = false) {
             Object (
-                downloading_flatpak: _downloading_flatpak,
-                size: _size
+                size: _size,
+                using_flatpak: _using_flatpak
             );
         }
 
@@ -55,13 +55,13 @@ namespace AppCenter.Widgets {
             add (size_label);
             add (icon_revealer);
 
-            update (size, downloading_flatpak);
+            update (size, using_flatpak);
         }
 
-        public void update (uint64 size = 0, bool downloading_flatpak = false) {
+        public void update (uint64 size = 0, bool using_flatpak = false) {
             string human_size = GLib.format_size (size);
 
-            if (downloading_flatpak) {
+            if (using_flatpak) {
                 size_label.label = _("Up to %s").printf (human_size);
                 has_tooltip = true;
                 icon_revealer.reveal_child = true;
