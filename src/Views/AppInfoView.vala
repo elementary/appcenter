@@ -266,6 +266,7 @@ namespace AppCenter.Views {
                 size_label = new Widgets.SizeLabel ();
                 size_label.halign = Gtk.Align.END;
                 size_label.valign = Gtk.Align.START;
+                size_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
                 action_button_group.add_widget (size_label);
 

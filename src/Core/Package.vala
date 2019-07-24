@@ -256,7 +256,8 @@ public class AppCenterCore.Package : Object {
 
     public bool is_flatpak {
         get {
-            return (backend is FlatpakBackend) || change_information.updatable_packages.contains (FlatpakBackend.get_default ());
+            return (backend is FlatpakBackend)
+                || change_information.updatable_packages.contains (FlatpakBackend.get_default ());
         }
     }
 

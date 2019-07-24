@@ -38,7 +38,6 @@ namespace AppCenter.Widgets {
             );
             size_label = new Gtk.Label (null);
             size_label.hexpand = true;
-            size_label.use_markup = true;
             size_label.vexpand = true;
             size_label.xalign = 1;
             size_label.show ();
