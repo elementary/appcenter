@@ -157,7 +157,6 @@ namespace AppCenter.Views {
                 uint update_numbers = 0U;
                 uint nag_numbers = 0U;
                 uint64 update_real_size = 0ULL;
-                bool _check_flatpak = true;
                 bool using_flatpak = false;
                 foreach (var package in get_packages ()) {
                     if (package.update_available || package.is_updating) {
@@ -165,8 +164,7 @@ namespace AppCenter.Views {
                             nag_numbers++;
                         }
 
-                        if (_check_flatpak && package.is_flatpak) {
-                            _check_flatpak = false;
+                        if (!using_flatpak && package.is_flatpak) {
                             using_flatpak = true;
                         }
 
