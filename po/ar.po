@@ -65,7 +65,7 @@ msgstr "مثبت"
 #: src/MainWindow.vala:185 src/MainWindow.vala:348 src/Views/SearchView.vala:55
 #: src/Views/SearchView.vala:82
 msgid "Search Apps"
-msgstr "البحث عن التطبيقات"
+msgstr "البحث عن تطبيقات"
 
 #: src/MainWindow.vala:203
 msgid "Network Is Not Available"
@@ -90,7 +90,7 @@ msgstr "إنتظار"
 
 #: src/Utils.vala:76
 msgid "Running"
-msgstr "مشغل"
+msgstr "يعمل"
 
 #: src/Utils.vala:78
 msgid "Querying"
@@ -98,7 +98,7 @@ msgstr "استعلام"
 
 #: src/Utils.vala:80
 msgid "Getting information"
-msgstr "الحصول على معلومة"
+msgstr "الحصول على المعلومات"
 
 #: src/Utils.vala:82
 msgid "Removing packages"
@@ -126,11 +126,11 @@ msgstr "جاري تنظيف الحزم"
 
 #: src/Utils.vala:94
 msgid "Obsoleting packages"
-msgstr "إهمال الباكيجز"
+msgstr "إهمال حزم البرامج"
 
 #: src/Utils.vala:96
 msgid "Resolving dependencies"
-msgstr "حل التبعيات"
+msgstr "جارى حل التبعيات"
 
 #: src/Utils.vala:98
 msgid "Checking signatures"
@@ -138,15 +138,15 @@ msgstr "جاري فحص التواقيع"
 
 #: src/Utils.vala:100
 msgid "Testing changes"
-msgstr "فحص التغييرات"
+msgstr "جارى اختبار التغييرات"
 
 #: src/Utils.vala:102
 msgid "Committing changes"
-msgstr "اتمام التغييرات"
+msgstr "جارى اتمام التغييرات"
 
 #: src/Utils.vala:104
 msgid "Requesting data"
-msgstr "طلب المعلومات"
+msgstr "جارى طلب المعلومات"
 
 #: src/Utils.vala:106 src/Core/ChangeInformation.vala:71
 msgid "Finished"
@@ -194,7 +194,7 @@ msgstr "جاري فحص التطبيقات"
 
 #: src/Utils.vala:128
 msgid "Generating package lists"
-msgstr "توليد قائمة الحزم"
+msgstr "جارى توليد قائمة الحزم"
 
 #: src/Utils.vala:130
 msgid "Waiting for package manager lock"
@@ -206,7 +206,7 @@ msgstr "في انتظار المصادقة"
 
 #: src/Utils.vala:134
 msgid "Updating running applications"
-msgstr "تحديث التطبيقات الشغالة"
+msgstr "تحديث التطبيقات التى تعمل حالياً"
 
 #: src/Utils.vala:136
 msgid "Checking applications in use"
@@ -253,11 +253,11 @@ msgstr "المطور %s"
 #: src/Core/Package.vala:318
 #, fuzzy
 msgid "elementary Updates"
-msgstr "محديثة جديدًا"
+msgstr "تحديثات إلمنترى"
 
 #: src/Core/Package.vala:320
 msgid "Ubuntu (non-curated)"
-msgstr ""
+msgstr " أوبونتو (غير مُدققة)"
 
 #: src/Core/Package.vala:323
 #, fuzzy, c-format
@@ -271,7 +271,7 @@ msgstr "التعريفات"
 
 #: src/Core/Package.vala:328
 msgid "Unknown Origin (non-curated)"
-msgstr ""
+msgstr "غير معروفة المصدر"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -427,7 +427,7 @@ msgstr "العملية"
 
 #: src/Dialogs/StripeDialog.vala:268
 msgid "There Was a Problem Processing Your Payment"
-msgstr "كان هناك خطأ في عملية الدفع"
+msgstr "حدث خطأ في عملية الدفع"
 
 #: src/Dialogs/StripeDialog.vala:306
 msgid "Pay Later"
@@ -435,7 +435,7 @@ msgstr "ادفع لاحقاً"
 
 #: src/Dialogs/StripeDialog.vala:307
 msgid "Retry"
-msgstr "إعادة"
+msgstr "إعادة المحاولة"
 
 #: src/Dialogs/StripeDialog.vala:513 src/Dialogs/StripeDialog.vala:578
 msgid ""
@@ -595,7 +595,7 @@ msgstr "https://ar.wikipedia.org/wiki/%D8%A8%D8%B1%D9%85%D8%AC%D9%8A%D8%A7%D8%AA
 
 #: src/Views/AppInfoView.vala:326
 msgid "Proprietary"
-msgstr ""
+msgstr "برمجيات مملوكة"
 
 #: src/Views/AppInfoView.vala:329
 #, fuzzy
@@ -622,7 +622,7 @@ msgstr "شارك"
 
 #: src/Views/AppInfoView.vala:724
 msgid "Fund"
-msgstr "دعم"
+msgstr "دعم مالى"
 
 #: src/Views/AppInfoView.vala:746
 msgid "Fund the development of this app"
@@ -647,7 +647,7 @@ msgstr "تطبيقات غير مختارة"
 
 #: src/Views/Homepage.vala:67
 msgid "Recently Updated"
-msgstr "محديثة جديدًا"
+msgstr "محديثة حديثاً"
 
 #: src/Views/Homepage.vala:83
 msgid "Trending"
