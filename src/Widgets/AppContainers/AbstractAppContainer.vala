@@ -28,14 +28,6 @@ namespace AppCenter {
         }
     }
 
-    public static void set_stack_visibility (Gtk.Stack stack, bool show) {
-        if (show) {
-            stack.set_visible_child_name ("CHILD");
-        } else {
-            stack.set_visible_child_name ("NONE");
-        }
-    }
-
     public abstract class AbstractAppContainer : Gtk.Grid {
         public AppCenterCore.Package package { get; construct set; }
         protected bool show_uninstall { get; set; default = true; }
@@ -51,9 +43,6 @@ namespace AppCenter {
         protected Widgets.HumbleButton action_button;
         protected Gtk.Button uninstall_button;
         protected Gtk.Button open_button;
-        protected Gtk.Stack action_button_stack;
-        protected Gtk.Stack uninstall_button_stack;
-        protected Gtk.Stack open_button_stack;
 
         protected Gtk.Grid progress_grid;
         protected Gtk.Grid button_grid;
@@ -62,6 +51,9 @@ namespace AppCenter {
         protected Gtk.SizeGroup action_button_group;
         protected Gtk.Stack action_stack;
 
+        private Gtk.Revealer open_button_revealer;
+        private Gtk.Revealer uninstall_button_revealer;
+        private Gtk.Revealer action_button_revealer;
         private Settings settings;
         private Mutex action_mutex = Mutex ();
         private Cancellable action_cancellable = new Cancellable ();
@@ -134,10 +126,10 @@ namespace AppCenter {
             package_summary = new Gtk.Label (null);
 
             action_button = new Widgets.HumbleButton ();
-            action_button_stack = new Gtk.Stack ();
-            action_button_stack.add_named (action_button, "CHILD");
-            action_button_stack.add_named (new Gtk.EventBox (), "NONE");
-            action_button_stack.hhomogeneous = false;
+
+            action_button_revealer = new Gtk.Revealer ();
+            action_button_revealer.transition_type = Gtk.RevealerTransitionType.Gtk.RevealerTransitionType.SLIDE_LEFT;
+            action_button_revealer.add (action_button);
 
             action_button.download_requested.connect (() => {
                 if (settings.content_warning == true && package.is_explicit) {
@@ -170,18 +162,17 @@ namespace AppCenter {
             });
 
             uninstall_button = new Gtk.Button.with_label (_("Uninstall"));
-            uninstall_button_stack = new Gtk.Stack ();
-            uninstall_button_stack.add_named (uninstall_button, "CHILD");
-            uninstall_button_stack.add_named (new Gtk.EventBox (), "NONE");
-            uninstall_button_stack.hhomogeneous = false;
+            uninstall_button_revealer = new Gtk.Revealer ();
+            uninstall_button_revealer.transition_type = Gtk.RevealerTransitionType.Gtk.RevealerTransitionType.SLIDE_LEFT;
+            uninstall_button_revealer.add (uninstall_button);
 
             uninstall_button.clicked.connect (() => uninstall_clicked.begin ());
 
             open_button = new Gtk.Button.with_label (_("Open"));
-            open_button_stack = new Gtk.Stack ();
-            open_button_stack.add_named (open_button, "CHILD");
-            open_button_stack.add_named (new Gtk.EventBox (), "NONE");
-            open_button_stack.hhomogeneous = false;
+
+            open_button_revealer = new Gtk.Revealer ();
+            open_button_revealer.transition_type = Gtk.RevealerTransitionType.Gtk.RevealerTransitionType.SLIDE_LEFT;
+            open_button_revealer.add (open_button);
 
             open_button.clicked.connect (launch_package_app);
 
@@ -190,9 +181,9 @@ namespace AppCenter {
             button_grid.halign = Gtk.Align.END;
             button_grid.hexpand = false;
 
-            button_grid.add (uninstall_button_stack);
-            button_grid.add (action_button_stack);
-            button_grid.add (open_button_stack);
+            button_grid.add (uninstall_button_revealer);
+            button_grid.add (action_button_revealer);
+            button_grid.add (open_button_revealer);
 
             progress_bar = new Gtk.ProgressBar ();
             progress_bar.show_text = true;
@@ -325,15 +316,15 @@ namespace AppCenter {
                         action_button.amount = 0;
                     }
 
-                    set_stack_visibility (uninstall_button_stack, false);
-                    set_stack_visibility (action_button_stack, !package.is_os_updates);
-                    set_stack_visibility (open_button_stack, false);
+                    uninstall_button_revealer.reveal_child = false;
+                    action_button_revealer.reveal_child = !package.is_os_updates;
+                    open_button_revealer.reveal_child = false;
 
                     break;
                 case AppCenterCore.Package.State.INSTALLED:
-                    set_stack_visibility (uninstall_button_stack, show_uninstall && !is_os_updates && !package.is_compulsory);
-                    set_stack_visibility (action_button_stack, package.should_pay && updates_view);
-                    set_stack_visibility (open_button_stack, show_open && package.get_can_launch ());
+                    uninstall_button_revealer.reveal_child = show_uninstall && !is_os_updates && !package.is_compulsory;
+                    action_button_revealer.reveal_child = package.should_pay && updates_view;
+                    open_button_revealer.reveal_child = show_open && package.get_can_launch ();
 
                     action_button.allow_free = false;
                     break;
@@ -344,9 +335,9 @@ namespace AppCenter {
 
                     action_button.label = _("Update");
 
-                    set_stack_visibility (uninstall_button_stack, show_uninstall && !is_os_updates && !package.is_compulsory);
-                    set_stack_visibility (action_button_stack, true);
-                    set_stack_visibility (open_button_stack, false);
+                    uninstall_button_revealer.reveal_child = show_uninstall && !is_os_updates && !package.is_compulsory;
+                    action_button_revealer.reveal_child = true;
+                    open_button_revealer.reveal_child = false;
 
                     break;
                 case AppCenterCore.Package.State.INSTALLING:
@@ -448,7 +439,7 @@ namespace AppCenter {
 
             switch (result) {
                 case ActionResult.HIDE_BUTTON:
-                    set_stack_visibility (action_button_stack, false);
+                    action_button_revealer.reveal_child = false;
                     break;
                 case ActionResult.ADD_TO_INSTALLED_SCREEN:
                     // Add this app to the Installed Apps View
