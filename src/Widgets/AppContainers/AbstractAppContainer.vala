@@ -128,7 +128,7 @@ namespace AppCenter {
             action_button = new Widgets.HumbleButton ();
 
             action_button_revealer = new Gtk.Revealer ();
-            action_button_revealer.transition_type = Gtk.RevealerTransitionType.Gtk.RevealerTransitionType.SLIDE_LEFT;
+            action_button_revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT;
             action_button_revealer.add (action_button);
 
             action_button.download_requested.connect (() => {
@@ -163,7 +163,7 @@ namespace AppCenter {
 
             uninstall_button = new Gtk.Button.with_label (_("Uninstall"));
             uninstall_button_revealer = new Gtk.Revealer ();
-            uninstall_button_revealer.transition_type = Gtk.RevealerTransitionType.Gtk.RevealerTransitionType.SLIDE_LEFT;
+            uninstall_button_revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT;
             uninstall_button_revealer.add (uninstall_button);
 
             uninstall_button.clicked.connect (() => uninstall_clicked.begin ());
@@ -171,7 +171,7 @@ namespace AppCenter {
             open_button = new Gtk.Button.with_label (_("Open"));
 
             open_button_revealer = new Gtk.Revealer ();
-            open_button_revealer.transition_type = Gtk.RevealerTransitionType.Gtk.RevealerTransitionType.SLIDE_LEFT;
+            open_button_revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT;
             open_button_revealer.add (open_button);
 
             open_button.clicked.connect (launch_package_app);
