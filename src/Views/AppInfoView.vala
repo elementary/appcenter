@@ -26,7 +26,8 @@ namespace AppCenter.Views {
             Gtk.StackTransitionType transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT
         );
 
-        static Gtk.CssProvider? previous_css_provider = null;
+        private static Gtk.CssProvider arrow_provider;
+        private static Gtk.CssProvider? previous_css_provider = null;
 
         GenericArray<AppStream.Screenshot> screenshots;
 
@@ -51,6 +52,11 @@ namespace AppCenter.Views {
 
         public AppInfoView (AppCenterCore.Package package) {
             Object (package: package);
+        }
+
+        static construct {
+            arrow_provider = new Gtk.CssProvider ();
+            arrow_provider.load_from_resource ("io/elementary/appcenter/arrow.css");
         }
 
         construct {
@@ -83,6 +89,7 @@ namespace AppCenter.Views {
                 previous_context.add_class (Gtk.STYLE_CLASS_FLAT);
                 previous_context.add_class ("circular");
                 previous_context.add_class ("arrow");
+                previous_context.add_provider (arrow_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
                 screenshot_previous.clicked.connect (() => {
                     GLib.List<unowned Gtk.Widget> screenshot_children = app_screenshots.get_children ();
@@ -101,6 +108,7 @@ namespace AppCenter.Views {
                 next_context.add_class (Gtk.STYLE_CLASS_FLAT);
                 next_context.add_class ("circular");
                 next_context.add_class ("arrow");
+                next_context.add_provider (arrow_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
                 screenshot_next.clicked.connect (() => {
                     GLib.List<unowned Gtk.Widget> screenshot_children = app_screenshots.get_children ();
