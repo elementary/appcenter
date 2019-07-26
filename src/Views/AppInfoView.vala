@@ -37,6 +37,7 @@ namespace AppCenter.Views {
         private Gtk.ListBox extension_box;
         private Gtk.Grid release_grid;
         private Widgets.ReleaseListBox release_list_box;
+        private Gtk.Revealer version_combo_revealer;
         private Gtk.Stack screenshot_stack;
         private Gtk.TextView app_description;
         private Widgets.Switcher screenshot_switcher;
@@ -174,10 +175,7 @@ namespace AppCenter.Views {
                 content_grid.add (screenshot_switcher);
             }
 
-            if (!package.is_os_updates) {
-                content_grid.add (package_summary);
-            }
-
+            content_grid.add (package_summary);
             content_grid.add (app_description);
 
             var whats_new_label = new Gtk.Label (_("What's New:"));
@@ -209,22 +207,8 @@ namespace AppCenter.Views {
                 load_extensions.begin ();
             }
 
-            var header_grid = new Gtk.Grid ();
-            header_grid.column_spacing = 12;
-            header_grid.row_spacing = 6;
-            header_grid.row_homogeneous = false;
-            header_grid.halign = Gtk.Align.CENTER;
-            header_grid.margin =  content_grid.margin / 2;
-            /* Must wide enought to fit long package name and progress bar */
-            header_grid.width_request = content_grid.width_request + 2 * (content_grid.margin - header_grid.margin);
-            header_grid.hexpand = true;
-            header_grid.attach (image, 0, 0, 1, 3);
-            header_grid.attach (package_name, 1, 0);
-
             version_liststore = new Gtk.ListStore (2, typeof (AppCenterCore.Package), typeof (string));
             version_combo = new Gtk.ComboBox.with_model (version_liststore);
-            version_combo.no_show_all = true;
-            version_combo.visible = false;
             version_combo.halign = Gtk.Align.START;
             version_combo.valign = Gtk.Align.START;
             version_combo.changed.connect (() => {
@@ -237,18 +221,12 @@ namespace AppCenter.Views {
                 }
             });
 
+            version_combo_revealer = new Gtk.Revealer ();
+            version_combo_revealer.add (version_combo);
+
             var renderer = new Gtk.CellRendererText ();
             version_combo.pack_start (renderer, true);
             version_combo.add_attribute (renderer, "text", 1);
-
-            if (!package.is_os_updates) {
-                header_grid.attach (package_author, 1, 1, 2);
-                header_grid.attach (version_combo, 1, 2, 2);
-                header_grid.attach (app_version, 2, 0, 1, 1);
-            } else {
-                package_summary.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-                header_grid.attach (package_summary, 1, 2, 2, 1);
-            }
 
             action_stack.valign = Gtk.Align.END;
             action_stack.halign = Gtk.Align.END;
@@ -260,7 +238,21 @@ namespace AppCenter.Views {
             progress_grid.margin_top = 12;
             button_grid.margin_top = progress_grid.margin_top;
 
-            header_grid.attach (action_stack, 3, 0, 1, 1);
+            var header_grid = new Gtk.Grid ();
+            header_grid.column_spacing = 12;
+            header_grid.row_spacing = 6;
+            header_grid.hexpand = true;
+            header_grid.halign = Gtk.Align.CENTER;
+            header_grid.valign = Gtk.Align.CENTER;
+            header_grid.margin = content_grid.margin / 2;
+            /* Must wide enought to fit long package name and progress bar */
+            header_grid.width_request = content_grid.width_request + 2 * (content_grid.margin - header_grid.margin);
+            header_grid.attach (image, 0, 0, 1, 3);
+            header_grid.attach (package_name, 1, 0);
+            header_grid.attach (package_author, 1, 1, 2);
+            header_grid.attach (version_combo_revealer, 1, 2, 2);
+            header_grid.attach (app_version, 2, 0);
+            header_grid.attach (action_stack, 3, 0);
 
             if (!package.is_local) {
                 size_label = new Widgets.SizeLabel ();
@@ -270,7 +262,7 @@ namespace AppCenter.Views {
 
                 action_button_group.add_widget (size_label);
 
-                header_grid.attach (size_label, 3, 1, 1, 2);
+                header_grid.attach (size_label, 3, 1);
             }
 
             var header_box = new Gtk.Grid ();
@@ -450,7 +442,7 @@ namespace AppCenter.Views {
         }
 
         protected override void update_state (bool first_update = false) {
-            if (!first_update) {
+            if (!first_update && !package.is_os_updates) {
                 app_version.label = package.get_version ();
             }
 
@@ -542,13 +534,17 @@ namespace AppCenter.Views {
 
                 count++;
                 if (count > 1) {
-                    version_combo.no_show_all = false;
-                    version_combo.show_all ();
+                    version_combo_revealer.reveal_child = true;
                 }
             }
 
             new Thread<void*> ("content-loading", () => {
-                app_version.label = package.get_version ();
+                if (!package.is_os_updates) {
+                    app_version.label = package.get_version ();
+                } else {
+                    package_author.label = package.get_version ();
+                }
+
                 get_app_download_size.begin ();
 
                 Idle.add (() => {
