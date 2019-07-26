@@ -111,8 +111,7 @@ namespace AppCenter.Views {
                 });
 
                 app_screenshots.notify["visible-child"].connect (() => {
-                    screenshot_previous.sensitive = true;
-                    screenshot_next.sensitive = true;
+                    screenshot_previous.sensitive = screenshot_next.sensitive = true;
 
                     GLib.List<unowned Gtk.Widget> screenshot_children = app_screenshots.get_children ();
                     var index = screenshot_children.index (app_screenshots.visible_child);
@@ -140,12 +139,17 @@ namespace AppCenter.Views {
                 screenshot_overlay.add_overlay (screenshot_arrows_revealer);
 
                 screenshot_overlay.enter_notify_event.connect (() => {
+                    critical ("ENTERING");
                     screenshot_arrows_revealer.reveal_child = true;
                     return false;
                 });
 
-                screenshot_overlay.leave_notify_event.connect (() => {
-                    screenshot_arrows_revealer.reveal_child = false;
+                screenshot_overlay.leave_notify_event.connect ((event) => {
+                    // Prevent hiding prev/next button when they're marked as insensitive
+                    if (event.mode != Gdk.CrossingMode.STATE_CHANGED) {
+                        screenshot_arrows_revealer.reveal_child = false;
+                    }
+
                     return false;
                 });
 
