@@ -39,19 +39,17 @@ public class AppCenter.Widgets.SizeLabel : Gtk.Grid {
         size_label.hexpand = true;
         size_label.vexpand = true;
         size_label.xalign = 1;
-        size_label.show ();
 
         var icon = new Gtk.Image.from_icon_name ("dialog-information-symbolic", Gtk.IconSize.BUTTON);
         icon.margin_start = 6;
-        icon.show ();
 
         icon_revealer = new Gtk.Revealer ();
         icon_revealer.transition_type = Gtk.RevealerTransitionType.NONE;
         icon_revealer.add (icon);
-        icon_revealer.show ();
 
         add (size_label);
         add (icon_revealer);
+        show_all ();
 
         update (size, using_flatpak);
     }
