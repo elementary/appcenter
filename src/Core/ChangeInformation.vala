@@ -19,185 +19,91 @@
  */
 
 public class AppCenterCore.ChangeInformation : Object {
+
+    public enum Status {
+        UNKNOWN,
+        CANCELLED,
+        WAITING,
+        RUNNING,
+        FINISHED
+    }
+
+    public delegate void ProgressCallback (bool can_cancel, string status_description, double progress, Status status);
+
     /**
      * This signal is likely to be fired from a non-main thread. Ensure any UI
      * logic driven from this runs on the GTK thread
      */
     public signal void status_changed ();
+
     /**
      * This signal is likely to be fired from a non-main thread. Ensure any UI
      * logic driven from this runs on the GTK thread
      */
     public signal void progress_changed ();
 
-    public Gee.TreeSet<string> updatable_ids { public get; private set; }
+    public Gee.MultiMap<unowned Backend, string> updatable_packages { public get; private set; }
     public bool can_cancel { public get; private set; default=true; }
-    public Pk.Status status { public get; private set; }
-    public double progress { public get; private set; }
-    private int current_progress;
-    private int last_progress;
-    private Pk.Status current_status;
-    private double progress_denom;
-
+    public double progress { public get; private set; default=0.0f; }
+    public Status status { public get; private set; default=Status.UNKNOWN; }
+    public string status_description { public get; private set; default=_("Waiting"); }
     public uint64 size;
 
     construct {
-        updatable_ids = new Gee.TreeSet<string> ();
-        status = Pk.Status.SETUP;
-        progress = 0.0f;
-        current_progress = 0;
-        last_progress = 0;
-        current_status = Pk.Status.SETUP;
-        /* usually we have 2 transactions, each with 100% progress */
-        progress_denom = 200.0f;
+        updatable_packages = new Gee.HashMultiMap<unowned Backend, string> ();
         size = 0;
     }
 
     public bool has_changes () {
-        return updatable_ids.size > 0;
-    }
-
-    public string get_status_string () {
-        switch (status) {
-            case Pk.Status.SETUP:
-                return _("Starting");
-            case Pk.Status.WAIT:
-                return _("Waiting");
-            case Pk.Status.RUNNING:
-                return _("Running");
-            case Pk.Status.QUERY:
-                return _("Querying");
-            case Pk.Status.INFO:
-                return _("Getting information");
-            case Pk.Status.REMOVE:
-                return _("Removing packages");
-            case Pk.Status.DOWNLOAD:
-                return _("Downloading");
-            case Pk.Status.INSTALL:
-                return _("Installing");
-            case Pk.Status.REFRESH_CACHE:
-                return _("Refreshing software list");
-            case Pk.Status.UPDATE:
-                return _("Installing updates");
-            case Pk.Status.CLEANUP:
-                return _("Cleaning up packages");
-            case Pk.Status.OBSOLETE:
-                return _("Obsoleting packages");
-            case Pk.Status.DEP_RESOLVE:
-                return _("Resolving dependencies");
-            case Pk.Status.SIG_CHECK:
-                return _("Checking signatures");
-            case Pk.Status.TEST_COMMIT:
-                return _("Testing changes");
-            case Pk.Status.COMMIT:
-                return _("Committing changes");
-            case Pk.Status.REQUEST:
-                return _("Requesting data");
-            case Pk.Status.FINISHED:
-                return _("Finished");
-            case Pk.Status.CANCEL:
-                return _("Cancelling");
-            case Pk.Status.DOWNLOAD_REPOSITORY:
-                return _("Downloading repository information");
-            case Pk.Status.DOWNLOAD_PACKAGELIST:
-                return _("Downloading list of packages");
-            case Pk.Status.DOWNLOAD_FILELIST:
-                return _("Downloading file lists");
-            case Pk.Status.DOWNLOAD_CHANGELOG:
-                return _("Downloading lists of changes");
-            case Pk.Status.DOWNLOAD_GROUP:
-                return _("Downloading groups");
-            case Pk.Status.DOWNLOAD_UPDATEINFO:
-                return _("Downloading update information");
-            case Pk.Status.REPACKAGING:
-                return _("Repackaging files");
-            case Pk.Status.LOADING_CACHE:
-                return _("Loading cache");
-            case Pk.Status.SCAN_APPLICATIONS:
-                return _("Scanning applications");
-            case Pk.Status.GENERATE_PACKAGE_LIST:
-                return _("Generating package lists");
-            case Pk.Status.WAITING_FOR_LOCK:
-                return _("Waiting for package manager lock");
-            case Pk.Status.WAITING_FOR_AUTH:
-                return _("Waiting for authentication");
-            case Pk.Status.SCAN_PROCESS_LIST:
-                return _("Updating running applications");
-            case Pk.Status.CHECK_EXECUTABLE_FILES:
-                return _("Checking applications in use");
-            case Pk.Status.CHECK_LIBRARIES:
-                return _("Checking libraries in use");
-            case Pk.Status.COPY_FILES:
-                return _("Copying files");
-            default:
-                return _("Unknown state");
-        }
+        return updatable_packages.size > 0;
     }
 
     public void start () {
         progress = 0.0f;
-        progress_changed ();
-        status = Pk.Status.WAIT;
+        status = Status.WAITING;
+        status_description = _("Waiting");
         status_changed ();
+        progress_changed ();
     }
 
     public void complete () {
-        status = Pk.Status.FINISHED;
+        status = Status.FINISHED;
+        status_description = _("Finished");
         status_changed ();
         reset_progress ();
     }
 
     public void cancel () {
         progress = 0.0f;
-        progress_changed ();
-        status = Pk.Status.CANCEL;
-        status_changed ();
+        status = Status.CANCELLED;
+        status_description = _("Cancelling");
         reset_progress ();
+        status_changed ();
+        progress_changed ();
     }
 
     public void clear_update_info () {
-         updatable_ids.clear ();
+         updatable_packages.clear ();
          size = 0;
      }
 
     public void reset_progress () {
-        status = Pk.Status.SETUP;
+        status = Status.UNKNOWN;
+        status_description = _("Starting");
         progress = 0.0f;
-        last_progress = 0;
-        current_progress = 0;
-        current_status = 0;
-        progress_denom = 200.0f;
     }
 
-    public void ProgressCallback (Pk.Progress progress, Pk.ProgressType type) {
-        switch (type) {
-            case Pk.ProgressType.ALLOW_CANCEL:
-                can_cancel = progress.allow_cancel;
-                status_changed ();
-                break;
-            case Pk.ProgressType.ITEM_PROGRESS:
-                if (current_status == Pk.Status.SETUP) {
-                    current_status = (Pk.Status) progress.status;
-                    /* skipping package download, we have cached packages */
-                    if (current_status != Pk.Status.DOWNLOAD) {
-                        progress_denom = 100.0f;
-                    }
-                }
-                /* transaction changed so progress count is starting over */
-                else if ((Pk.Status) progress.status != current_status) {
-                    current_status = (Pk.Status) progress.status;
-                    current_progress = last_progress;
-                }
+    public void Callback (bool can_cancel, string status_description, double progress, Status status) {
+        if (this.can_cancel != can_cancel || this.status_description != status_description || this.status != status) {
+            this.can_cancel = can_cancel;
+            this.status_description = status_description;
+            this.status = status;
+            status_changed ();
+        }
 
-                last_progress = progress.percentage;
-                double progress_sum = current_progress + last_progress;
-                this.progress = progress_sum / progress_denom;
-                progress_changed ();
-                break;
-            case Pk.ProgressType.STATUS:
-                status = (Pk.Status) progress.status;
-                status_changed ();
-                break;
+        if (this.progress != progress) {
+            this.progress = progress;
+            progress_changed ();
         }
     }
 }

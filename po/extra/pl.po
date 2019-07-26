@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-18 05:17-0500\n"
+"POT-Creation-Date: 2019-06-26 22:42+0200\n"
 "PO-Revision-Date: 2018-09-27 11:37+0000\n"
 "Last-Translator: Piotr Strebski <strebski@gmail.com>\n"
 "Language-Team: Polish <https://weblate.elementary.io/projects/appcenter/"
@@ -36,7 +36,159 @@ msgstr ""
 "programów jest także używane do aktualizowania systemu do najnowszej wersji, "
 "celem uzyskiwania nowych wspaniałych funkcji i niezbędnych poprawek."
 
-#: data/io.elementary.appcenter.appdata.xml.in:201
+#: data/io.elementary.appcenter.appdata.xml.in:21
+msgid "Meson build system fixes"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:22
+msgid "Improve window state restoration"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:23
+msgid "Prevent action buttons from jumping around"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:24
+msgid "Remove reset paid apps gsettings key"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:25
+msgid "Memory management refinements"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:26
+msgid ""
+"Add conditional compilation for disabling dynamic remote homepage content"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:27
+#: data/io.elementary.appcenter.appdata.xml.in:39
+#: data/io.elementary.appcenter.appdata.xml.in:46
+#: data/io.elementary.appcenter.appdata.xml.in:59
+#: data/io.elementary.appcenter.appdata.xml.in:70
+#: data/io.elementary.appcenter.appdata.xml.in:79
+#: data/io.elementary.appcenter.appdata.xml.in:88
+#: data/io.elementary.appcenter.appdata.xml.in:97
+#: data/io.elementary.appcenter.appdata.xml.in:106
+#: data/io.elementary.appcenter.appdata.xml.in:115
+#: data/io.elementary.appcenter.appdata.xml.in:124
+#: data/io.elementary.appcenter.appdata.xml.in:133
+#: data/io.elementary.appcenter.appdata.xml.in:142
+#: data/io.elementary.appcenter.appdata.xml.in:151
+#: data/io.elementary.appcenter.appdata.xml.in:160
+#: data/io.elementary.appcenter.appdata.xml.in:170
+#: data/io.elementary.appcenter.appdata.xml.in:180
+msgid "New translations"
+msgstr "Nowe tłumaczenia"
+
+#: data/io.elementary.appcenter.appdata.xml.in:34
+msgid "New categories: Communication, Finance, Media Production"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:35
+msgid "Add Math to Science category"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:36
+msgid "Relax email address validator"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:37
+msgid "Present update availability more accurately"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:38
+msgid "Category graphics revamped"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:53
+#: data/io.elementary.appcenter.appdata.xml.in:65
+#: data/io.elementary.appcenter.appdata.xml.in:76
+#: data/io.elementary.appcenter.appdata.xml.in:85
+#: data/io.elementary.appcenter.appdata.xml.in:94
+#: data/io.elementary.appcenter.appdata.xml.in:103
+#: data/io.elementary.appcenter.appdata.xml.in:112
+#: data/io.elementary.appcenter.appdata.xml.in:121
+#: data/io.elementary.appcenter.appdata.xml.in:130
+#: data/io.elementary.appcenter.appdata.xml.in:139
+#: data/io.elementary.appcenter.appdata.xml.in:148
+#: data/io.elementary.appcenter.appdata.xml.in:157
+#, fuzzy
+msgid "Bug fixes and improve performance."
+msgstr "Poprawki błędów i ulepszenia wydajności."
+
+#: data/io.elementary.appcenter.appdata.xml.in:55
+msgid "Improve transaction success rate"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:56
+msgid "Add Publishing to Office category"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:57
+msgid "Improve descriptions of OS Updates"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:58
+#: data/io.elementary.appcenter.appdata.xml.in:69
+#: data/io.elementary.appcenter.appdata.xml.in:78
+#: data/io.elementary.appcenter.appdata.xml.in:87
+#: data/io.elementary.appcenter.appdata.xml.in:96
+#: data/io.elementary.appcenter.appdata.xml.in:105
+#: data/io.elementary.appcenter.appdata.xml.in:114
+#: data/io.elementary.appcenter.appdata.xml.in:123
+#: data/io.elementary.appcenter.appdata.xml.in:132
+#: data/io.elementary.appcenter.appdata.xml.in:141
+#: data/io.elementary.appcenter.appdata.xml.in:150
+msgid "Various bug fixes and performance improvements"
+msgstr "Poprawki różnych błędów i ulepszenie wydajności"
+
+#: data/io.elementary.appcenter.appdata.xml.in:67
+msgid "Give details for Operating System Updates"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:68
+msgid "Support mouse button navigation"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:159
+msgid "Fix crash caused by entries with missing packages"
+msgstr "Naprawiono problem spowodowany wpisami z brakującymi pakietami"
+
+#: data/io.elementary.appcenter.appdata.xml.in:166
+msgid "Add capability to search by category and apply minor bug fixes."
+msgstr ""
+"Dodana możliwość wyszukiwania poprzez kategorie oraz zastosowanie drobnych "
+"poprawek błędów."
+
+#: data/io.elementary.appcenter.appdata.xml.in:168
+msgid "It is now possible to search apps inside a category"
+msgstr "Istnieje teraz możliwość wyszukiwania programu wewnątrz kategorii"
+
+#: data/io.elementary.appcenter.appdata.xml.in:169
+msgid "Prevent multiple authentication dialogs when resuming from suspend"
+msgstr ""
+"Zapobieżenie wielokrotnym oknom dialogowym uwierzytelniania przy wychodzeniu "
+"ze stanu uśpienia"
+
+#: data/io.elementary.appcenter.appdata.xml.in:176
+#, fuzzy
+msgid ""
+"Search performance has beeen improved, the category name is now shown on the "
+"headbar and minor bugs have been fixed."
+msgstr ""
+"Poprawiono skuteczność wyszukiwania, nazwa kategorii jest teraz widoczna na "
+"pasku oraz poprawiono drobne błędy."
+
+#: data/io.elementary.appcenter.appdata.xml.in:178
+msgid "Fix Steam installation"
+msgstr "Poprawiono proces instalacji Steam"
+
+#: data/io.elementary.appcenter.appdata.xml.in:179
+msgid "Make search asynchronous"
+msgstr "Dodano wyszukiwanie asynchroniczne"
+
+#: data/io.elementary.appcenter.appdata.xml.in:234
 msgid "elementary LLC."
 msgstr "elementary LLC."
 
@@ -59,44 +211,6 @@ msgstr "Sprawdź aktualizacje"
 
 #~ msgid "About AppCenter"
 #~ msgstr "O centrum programów"
-
-#~ msgid "Bug fixes and improve perfomance."
-#~ msgstr "Poprawki błędów i ulepszenia wydajności."
-
-#~ msgid "Various bug fixes and performance improvements"
-#~ msgstr "Poprawki różnych błędów i ulepszenie wydajności"
-
-#~ msgid "New translations"
-#~ msgstr "Nowe tłumaczenia"
-
-#~ msgid "Fix crash caused by entries with missing packages"
-#~ msgstr "Naprawiono problem spowodowany wpisami z brakującymi pakietami"
-
-#~ msgid "Add capability to search by category and apply minor bug fixes."
-#~ msgstr ""
-#~ "Dodana możliwość wyszukiwania poprzez kategorie oraz zastosowanie "
-#~ "drobnych poprawek błędów."
-
-#~ msgid "It is now possible to search apps inside a category"
-#~ msgstr "Istnieje teraz możliwość wyszukiwania programu wewnątrz kategorii"
-
-#~ msgid "Prevent multiple authentication dialogs when resuming from suspend"
-#~ msgstr ""
-#~ "Zapobieżenie wielokrotnym oknom dialogowym uwierzytelniania przy "
-#~ "wychodzeniu ze stanu uśpienia"
-
-#~ msgid ""
-#~ "Search perfomance has beeen improved, the category name is now shown on "
-#~ "the headbar and minor bugs have been fixed."
-#~ msgstr ""
-#~ "Poprawiono skuteczność wyszukiwania, nazwa kategorii jest teraz widoczna "
-#~ "na pasku oraz poprawiono drobne błędy."
-
-#~ msgid "Fix Steam installation"
-#~ msgstr "Poprawiono proces instalacji Steam"
-
-#~ msgid "Make search asynchronous"
-#~ msgstr "Dodano wyszukiwanie asynchroniczne"
 
 #, fuzzy
 #~ msgid "App Center"

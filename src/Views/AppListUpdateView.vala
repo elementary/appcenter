@@ -96,22 +96,34 @@ namespace AppCenter.Views {
             bool a_is_updating = row1.get_is_updating ();
             bool b_is_updating = row2.get_is_updating ();
 
+            // The currently updating package is always top of the list
             if (a_is_updating || b_is_updating) {
                 return a_is_updating ? -1 : 1;
-            }
-
-            bool a_is_os = row1.get_is_os_updates ();
-            bool b_is_os = row2.get_is_os_updates ();
-
-            if (a_is_os || b_is_os) { /* OS update row sorts ahead of other update rows */
-                return a_is_os ? -1 : 1;
             }
 
             bool a_has_updates = row1.get_update_available ();
             bool b_has_updates = row2.get_update_available ();
 
-            if (a_has_updates != b_has_updates) { /* Updates rows sort ahead of updated rows */
-                return a_has_updates ? -1 : 1;
+            bool a_is_os = row1.get_is_os_updates ();
+            bool b_is_os = row2.get_is_os_updates ();
+
+            // Sort updatable OS updates first, then other updatable packages
+            if (a_has_updates != b_has_updates) {
+                if (a_is_os && a_has_updates) {
+                    return -1;
+                }
+
+                if (b_is_os && b_has_updates) {
+                    return 1;
+                }
+
+                if (a_has_updates) {
+                    return -1;
+                }
+
+                if (b_has_updates) {
+                    return 1;
+                }
             }
 
             bool a_is_driver = row1.get_is_driver ();
@@ -119,6 +131,11 @@ namespace AppCenter.Views {
 
             if (a_is_driver != b_is_driver) {
                 return a_is_driver ? - 1 : 1;
+            }
+
+            // Ensures OS updates are sorted to the top amongst up-to-date packages
+            if (a_is_os || b_is_os) {
+                return a_is_os ? -1 : 1;
             }
 
             return row1.get_name_label ().collate (row2.get_name_label ()); /* Else sort in name order */
@@ -165,7 +182,7 @@ namespace AppCenter.Views {
                     update_all_button.clicked.connect (on_update_all);
                     action_button_group.add_widget (update_all_button);
 
-                    header.add_widget (update_all_button);
+                    header.add (update_all_button);
                 }
 
                 header.show_all ();
@@ -234,11 +251,11 @@ namespace AppCenter.Views {
             }
         }
 
-        private void after_first_package_info_changed (Pk.Status status) {
+        private void after_first_package_info_changed (AppCenterCore.ChangeInformation.Status status) {
             assert (!apps_remaining_started);
 
             /* Only interested if the first package has started running or has been cancelled (before starting) */
-            if (status != Pk.Status.CANCEL && status != Pk.Status.RUNNING) {
+            if (status != AppCenterCore.ChangeInformation.Status.CANCELLED && status != AppCenterCore.ChangeInformation.Status.RUNNING) {
                 return;
             }
 
@@ -246,7 +263,7 @@ namespace AppCenter.Views {
             first_package.info_changed.disconnect (after_first_package_info_changed);
 
             Idle.add (() => {
-                if (status != Pk.Status.CANCEL) { /* must  be running */
+                if (status != AppCenterCore.ChangeInformation.Status.CANCELLED) { /* must  be running */
                     apps_remaining_started = true;
                     for (int i = 1; i < apps_to_update.size; i++) {
                         apps_to_update[i].update.begin (() => {

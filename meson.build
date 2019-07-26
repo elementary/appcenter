@@ -13,6 +13,9 @@ add_project_arguments(
     language:'c'
 )
 
+vapi_dir = join_paths(meson.current_source_dir(), 'vapi')
+add_project_arguments(['--vapidir', vapi_dir], language: 'vala')
+
 gee = dependency ('gee-0.8')
 gtk = dependency ('gtk+-3.0', version: '>=3.10')
 granite = dependency ('granite', version: '>=5.2.3')
@@ -20,6 +23,8 @@ packagekit = dependency ('packagekit-glib2')
 appstream = dependency ('appstream', version: '>=0.10.0')
 libsoup = dependency ('libsoup-2.4')
 json = dependency ('json-glib-1.0')
+flatpak = dependency ('flatpak')
+xml = dependency ('libxml-2.0')
 
 dbus = dependency ('dbus-1')
 
@@ -30,7 +35,9 @@ dependencies = [
     packagekit,
     appstream,
     libsoup,
-    json
+    json,
+    flatpak,
+    xml
 ]
 
 if get_option('libunity')

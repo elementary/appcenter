@@ -170,6 +170,8 @@ namespace AppCenter {
             });
 
             uninstall_button = new Gtk.Button.with_label (_("Uninstall"));
+            uninstall_button.margin_end = 12;
+
             uninstall_button_stack = new Gtk.Stack ();
             uninstall_button_stack.add_named (uninstall_button, "CHILD");
             uninstall_button_stack.add_named (new Gtk.EventBox (), "NONE");
@@ -186,7 +188,6 @@ namespace AppCenter {
             open_button.clicked.connect (launch_package_app);
 
             button_grid = new Gtk.Grid ();
-            button_grid.column_spacing = 6;
             button_grid.valign = Gtk.Align.CENTER;
             button_grid.halign = Gtk.Align.END;
             button_grid.hexpand = false;
@@ -203,8 +204,6 @@ namespace AppCenter {
             progress_bar.width_request = 250;
 
             cancel_button = new Gtk.Button.with_label (_("Cancel"));
-            /* Match button text size with that of HumbleButton */
-            cancel_button.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
             cancel_button.valign = Gtk.Align.END;
             cancel_button.halign = Gtk.Align.END;
             cancel_button.clicked.connect (() => action_cancelled ());
@@ -334,7 +333,7 @@ namespace AppCenter {
 
                     break;
                 case AppCenterCore.Package.State.INSTALLED:
-                    set_stack_visibility (uninstall_button_stack, show_uninstall && !is_os_updates);
+                    set_stack_visibility (uninstall_button_stack, show_uninstall && !is_os_updates && !package.is_compulsory);
                     set_stack_visibility (action_button_stack, package.should_pay && updates_view);
                     set_stack_visibility (open_button_stack, show_open && package.get_can_launch ());
 
@@ -347,7 +346,7 @@ namespace AppCenter {
 
                     action_button.label = _("Update");
 
-                    set_stack_visibility (uninstall_button_stack, show_uninstall && !is_os_updates);
+                    set_stack_visibility (uninstall_button_stack, show_uninstall && !is_os_updates && !package.is_compulsory);
                     set_stack_visibility (action_button_stack, true);
                     set_stack_visibility (open_button_stack, false);
 
@@ -375,7 +374,7 @@ namespace AppCenter {
         protected virtual void update_progress_status () {
             Idle.add (() => {
                 progress_bar.text = package.get_progress_description ();
-                cancel_button.sensitive = package.change_information.can_cancel;
+                cancel_button.sensitive = package.change_information.can_cancel && !package.changes_finished;
                 /* Ensure progress bar shows complete to match status (lp:1606902) */
                 if (package.changes_finished) {
                     progress_bar.fraction = 1.0f;

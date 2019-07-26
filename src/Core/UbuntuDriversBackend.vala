@@ -18,6 +18,11 @@
  */
 
 public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
+
+    public bool working { public get; protected set; }
+
+    private Gee.TreeSet<Package>? cached_packages = null;
+
     private async bool get_drivers_output (Cancellable? cancellable = null, out string? output = null) {
         output = null;
         string? drivers_exec_path = Environment.find_program_in_path ("ubuntu-drivers");
@@ -37,11 +42,17 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
     }
 
     public async Gee.Collection<Package> get_installed_applications (Cancellable? cancellable = null) {
-        var driver_list = new Gee.TreeSet<Package> ();
+        if (cached_packages != null) {
+            return cached_packages;
+        }
+
+        working = true;
+        cached_packages = new Gee.TreeSet<Package> ();
         string? command_output;
         var result = yield get_drivers_output (cancellable, out command_output);
         if (!result || command_output == null || cancellable.is_cancelled ()) {
-            return driver_list;
+            working = false;
+            return cached_packages;
         }
 
         string[] tokens = command_output.split ("\n");
@@ -71,10 +82,11 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
                 package.update_state ();
             }
 
-            driver_list.add (package);
+            cached_packages.add (package);
         }
 
-        return driver_list;
+        working = false;
+        return cached_packages;
     }
 
     public Gee.Collection<Package> get_applications_for_category (AppStream.Category category) {
@@ -91,6 +103,10 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
 
     public Package? get_package_for_component_id (string id) {
         return null;
+    }
+
+    public Gee.Collection<Package> get_packages_for_component_id (string id) {
+        return new Gee.ArrayList<Package> ();
     }
 
     public Package? get_package_for_desktop_id (string id) {
@@ -113,15 +129,19 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
         return yield PackageKitBackend.get_default ().get_package_details (package);
     }
 
-    public async bool install_package (Package package, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+    public async bool refresh_cache (Cancellable? cancellable) throws GLib.Error {
+        return true;
+    }
+
+    public async bool install_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
         return yield PackageKitBackend.get_default ().install_package (package, cb, cancellable);
     }
 
-    public async bool remove_package (Package package, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+    public async bool remove_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
         return yield PackageKitBackend.get_default ().remove_package (package, cb, cancellable);
     }
 
-    public async bool update_package (Package package, owned Pk.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+    public async bool update_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
         return yield PackageKitBackend.get_default ().update_package (package, cb, cancellable);
     }
 

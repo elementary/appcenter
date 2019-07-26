@@ -1,33 +1,33 @@
 # Jörg Arnold <j.ar@mailbox.org>, 2018, 2019.
-# Julian Raschke <julian@raschke.de>, 2018.
+# Julian Raschke <julian@raschke.de>, 2018, 2019.
 # Tucan Holmes <tucan.web.swiss@gmail.com>, 2018.
 # Pascal Matthiesen <pascal@false.one>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-17 11:14-0700\n"
-"PO-Revision-Date: 2019-01-02 18:07+0000\n"
-"Last-Translator: Jörg Arnold <j.ar@mailbox.org>\n"
-"Language-Team: German <https://weblate.elementary.io/projects/appcenter/"
+"POT-Creation-Date: 2019-06-26 22:42+0200\n"
+"PO-Revision-Date: 2019-07-23 12:24+0000\n"
+"Last-Translator: Julian Raschke <julian@raschke.de>\n"
+"Language-Team: German <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38
+#: src/Application.vala:38 src/Core/Package.vala:316
 msgid "AppCenter"
 msgstr "AppCenter"
 
 #: src/Application.vala:106
 #, c-format
-msgid "Could not parse mimetype %s"
-msgstr "Konnte MIME-Typ %s nicht analysieren"
+msgid "Could not parse the media type %s"
+msgstr "Der Medientyp %s wurde nicht erkannt"
 
 #: src/Application.vala:126
 #, c-format
@@ -50,9 +50,9 @@ msgstr "%s wurde erfolgreich installiert"
 msgid "There Was An Error Installing %s."
 msgstr "Während der Installation von %s ist ein Fehler aufgetreten."
 
-#: src/MainWindow.vala:157 src/Views/Homepage.vala:277
-#: src/Views/Homepage.vala:286 src/Views/Homepage.vala:291
-#: src/Views/Homepage.vala:302
+#: src/MainWindow.vala:157 src/Views/Homepage.vala:282
+#: src/Views/Homepage.vala:294 src/Views/Homepage.vala:299
+#: src/Views/Homepage.vala:310
 msgid "Home"
 msgstr "Startseite"
 
@@ -62,8 +62,8 @@ msgctxt "view"
 msgid "Installed"
 msgstr "Installiert"
 
-#: src/MainWindow.vala:185 src/MainWindow.vala:348 src/Views/SearchView.vala:54
-#: src/Views/SearchView.vala:81
+#: src/MainWindow.vala:185 src/MainWindow.vala:348 src/Views/SearchView.vala:55
+#: src/Views/SearchView.vala:82
 msgid "Search Apps"
 msgstr "Suche Apps"
 
@@ -81,167 +81,191 @@ msgstr ""
 msgid "Network Settings…"
 msgstr "Netzwerkeinstellungen…"
 
-#: src/Core/ChangeInformation.vala:63
+#: src/Utils.vala:72 src/Core/ChangeInformation.vala:92
 msgid "Starting"
 msgstr "Starte"
 
-#: src/Core/ChangeInformation.vala:65
+#: src/Utils.vala:74 src/Core/ChangeInformation.vala:49
+#: src/Core/ChangeInformation.vala:64
 msgid "Waiting"
 msgstr "Warte"
 
-#: src/Core/ChangeInformation.vala:67
+#: src/Utils.vala:76
 msgid "Running"
 msgstr "Läuft"
 
-#: src/Core/ChangeInformation.vala:69
+#: src/Utils.vala:78
 msgid "Querying"
 msgstr "Abfrage läuft"
 
-#: src/Core/ChangeInformation.vala:71
+#: src/Utils.vala:80
 msgid "Getting information"
 msgstr "Informationen werden abgerufen"
 
-#: src/Core/ChangeInformation.vala:73
+#: src/Utils.vala:82
 msgid "Removing packages"
 msgstr "Pakete werden entfernt"
 
-#: src/Core/ChangeInformation.vala:75
+#: src/Utils.vala:84
 msgid "Downloading"
 msgstr "Herunterladen"
 
-#: src/Core/ChangeInformation.vala:77
+#: src/Utils.vala:86
 msgid "Installing"
 msgstr "Wird Installiert"
 
-#: src/Core/ChangeInformation.vala:79
+#: src/Utils.vala:88
 msgid "Refreshing software list"
 msgstr "Software-Liste wird aktualisiert"
 
-#: src/Core/ChangeInformation.vala:81
+#: src/Utils.vala:90
 msgid "Installing updates"
 msgstr "Aktualisierungen werden installiert"
 
-#: src/Core/ChangeInformation.vala:83
+#: src/Utils.vala:92
 msgid "Cleaning up packages"
 msgstr "Pakete werden aufgeräumt"
 
-#: src/Core/ChangeInformation.vala:85
+#: src/Utils.vala:94
 msgid "Obsoleting packages"
 msgstr "Veraltete Pakete werden entfernt"
 
-#: src/Core/ChangeInformation.vala:87
+#: src/Utils.vala:96
 msgid "Resolving dependencies"
 msgstr "Abhängigkeiten werden eingerichtet"
 
-#: src/Core/ChangeInformation.vala:89
+#: src/Utils.vala:98
 msgid "Checking signatures"
 msgstr "Signaturen werden überprüft"
 
-#: src/Core/ChangeInformation.vala:91
+#: src/Utils.vala:100
 msgid "Testing changes"
 msgstr "Änderungen werden überprüft"
 
-#: src/Core/ChangeInformation.vala:93
+#: src/Utils.vala:102
 msgid "Committing changes"
 msgstr "Änderungen werden gespeichert"
 
-#: src/Core/ChangeInformation.vala:95
+#: src/Utils.vala:104
 msgid "Requesting data"
 msgstr "Daten werden angefordert"
 
-#: src/Core/ChangeInformation.vala:97
+#: src/Utils.vala:106 src/Core/ChangeInformation.vala:71
 msgid "Finished"
 msgstr "Abgeschlossen"
 
-#: src/Core/ChangeInformation.vala:99
+#: src/Utils.vala:108 src/Core/ChangeInformation.vala:79
 msgid "Cancelling"
 msgstr "Wird abgebrochen"
 
-#: src/Core/ChangeInformation.vala:101
+#: src/Utils.vala:110
 msgid "Downloading repository information"
 msgstr "Informationen zu Paketquellen werden heruntergeladen"
 
-#: src/Core/ChangeInformation.vala:103
+#: src/Utils.vala:112
 msgid "Downloading list of packages"
 msgstr "Paketliste wird heruntergeladen"
 
-#: src/Core/ChangeInformation.vala:105
+#: src/Utils.vala:114
 msgid "Downloading file lists"
 msgstr "Dateiliste wird heruntergeladen"
 
-#: src/Core/ChangeInformation.vala:107
+#: src/Utils.vala:116
 msgid "Downloading lists of changes"
 msgstr "Liste der Änderungen wird heruntergeladen"
 
-#: src/Core/ChangeInformation.vala:109
+#: src/Utils.vala:118
 msgid "Downloading groups"
 msgstr "Gruppen werden heruntergeladen"
 
-#: src/Core/ChangeInformation.vala:111
+#: src/Utils.vala:120
 msgid "Downloading update information"
 msgstr "Aktualisierungsinformationen werden heruntergeladen"
 
-#: src/Core/ChangeInformation.vala:113
+#: src/Utils.vala:122
 msgid "Repackaging files"
 msgstr "Dateien werden neu gepackt"
 
-#: src/Core/ChangeInformation.vala:115
+#: src/Utils.vala:124
 msgid "Loading cache"
 msgstr "Zwischenspeicher wird geladen"
 
-#: src/Core/ChangeInformation.vala:117
+#: src/Utils.vala:126
 msgid "Scanning applications"
 msgstr "Anwendungen werden überprüft"
 
-#: src/Core/ChangeInformation.vala:119
+#: src/Utils.vala:128
 msgid "Generating package lists"
 msgstr "Paketlisten werden erzeugt"
 
-#: src/Core/ChangeInformation.vala:121
+#: src/Utils.vala:130
 msgid "Waiting for package manager lock"
 msgstr "Warte auf Aufhebung der Paketmanagersperre"
 
-#: src/Core/ChangeInformation.vala:123
+#: src/Utils.vala:132
 msgid "Waiting for authentication"
 msgstr "Warte auf Legitimierung"
 
-#: src/Core/ChangeInformation.vala:125
+#: src/Utils.vala:134
 msgid "Updating running applications"
 msgstr "Laufende Anwendungen werden aktualisiert"
 
-#: src/Core/ChangeInformation.vala:127
+#: src/Utils.vala:136
 msgid "Checking applications in use"
 msgstr "Derzeit verwendete Anwendungen werden überprüft"
 
-#: src/Core/ChangeInformation.vala:129
+#: src/Utils.vala:138
 msgid "Checking libraries in use"
 msgstr "Derzeit verwendete Libraries werden überprüft"
 
-#: src/Core/ChangeInformation.vala:131
+#: src/Utils.vala:140
 msgid "Copying files"
 msgstr "Dateien werden kopiert"
 
-#: src/Core/ChangeInformation.vala:133
+#: src/Utils.vala:142
 msgid "Unknown state"
 msgstr "Unbekannter Zustand"
 
-#: src/Core/Client.vala:100
+#: src/Core/Client.vala:70
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Aktualisierung verfügbar"
 msgstr[1] "Aktualisierungen verfügbar"
 
-#: src/Core/Client.vala:101
+#: src/Core/Client.vala:71
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "%u Aktualisierung ist für Ihr System verfügbar"
 msgstr[1] "%u Aktualisierungen sind für Ihr System verfügbar"
 
-#: src/Core/Package.vala:248
+#: src/Core/Package.vala:287
 #, c-format
 msgid "%s Developers"
 msgstr "Die Entwickler von %s"
+
+#: src/Core/Package.vala:318
+#, fuzzy
+msgid "elementary Updates"
+msgstr "kürzlich aktualisiert"
+
+#: src/Core/Package.vala:320
+msgid "Ubuntu (non-curated)"
+msgstr ""
+
+#: src/Core/Package.vala:323
+#, fuzzy, c-format
+msgid "%s (non-curated)"
+msgstr "%s (lokal)"
+
+#: src/Core/Package.vala:325
+#, fuzzy
+msgid "Ubuntu Drivers"
+msgstr "Treiber"
+
+#: src/Core/Package.vala:328
+msgid "Unknown Origin (non-curated)"
+msgstr ""
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -256,27 +280,31 @@ msgstr "Aktualisierungen für Systemkomponenten"
 msgid "Version: %s"
 msgstr "Version: %s"
 
-#: src/Core/UpdateManager.vala:82
+#: src/Core/UpdateManager.vala:103
+msgid "Flatpak runtime"
+msgstr ""
+
+#: src/Core/UpdateManager.vala:119
 msgid "No components with updates"
 msgstr "Keine Updates verfügbar"
 
-#: src/Core/UpdateManager.vala:86
+#: src/Core/UpdateManager.vala:123
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "Für %u Komponente ist ein Update verfügbar"
 msgstr[1] "Für %u Komponenten sind Updates verfügbar"
 
-#: src/Core/UpdateManager.vala:88
+#: src/Core/UpdateManager.vala:125
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:129
+#: src/Core/UpdateManager.vala:163
 msgid "Restart Required"
 msgstr "Neustart erforderlich"
 
-#: src/Core/UpdateManager.vala:130
+#: src/Core/UpdateManager.vala:164
 msgid "Please restart your system to finalize updates"
 msgstr ""
 "Bitte starten Sie Ihr System neu, um die Aktualisierungen abzuschließen"
@@ -528,87 +556,86 @@ msgstr "Ignorieren"
 msgid "Try Again"
 msgstr "Erneut versuchen"
 
-#: src/Views/AppInfoView.vala:75
+#: src/Views/AppInfoView.vala:81
 msgid "Screenshot Not Available"
 msgstr "Kein Bildschirmfoto vorhanden"
 
-#: src/Views/AppInfoView.vala:130
-msgid "Homepage"
-msgstr "Startseite"
-
 #: src/Views/AppInfoView.vala:136
+msgid "Homepage"
+msgstr "Webseite"
+
+#: src/Views/AppInfoView.vala:142
 msgid "Suggest Translations"
 msgstr "Übersetzungen vorschlagen"
 
-#: src/Views/AppInfoView.vala:142
+#: src/Views/AppInfoView.vala:148
 msgid "Report a Problem"
 msgstr "Problem melden"
 
-#: src/Views/AppInfoView.vala:148
+#: src/Views/AppInfoView.vala:154
 msgid "Help"
 msgstr "Hilfe"
 
-#: src/Views/AppInfoView.vala:178
+#: src/Views/AppInfoView.vala:184
 msgid "What's New:"
 msgstr "Was es Neues gibt:"
 
-#: src/Views/AppInfoView.vala:197
+#: src/Views/AppInfoView.vala:203
 msgid "Extensions:"
 msgstr "Erweiterungen:"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:284
+#: src/Views/AppInfoView.vala:311
 msgid "Public Domain"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:287
+#: src/Views/AppInfoView.vala:314
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr ""
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:292
+#: src/Views/AppInfoView.vala:319
 #, fuzzy
 msgid "Free Software"
 msgstr "Anwendungsquellen bearbeiten"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:295
+#: src/Views/AppInfoView.vala:322
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:299
+#: src/Views/AppInfoView.vala:326
 msgid "Proprietary"
-msgstr ""
+msgstr "Proprietär"
 
-#: src/Views/AppInfoView.vala:302
-#, fuzzy
+#: src/Views/AppInfoView.vala:329
 msgid "Unknown License"
-msgstr "Unbekannter Zustand"
+msgstr "Unbekannte Lizenz"
 
-#: src/Views/AppInfoView.vala:344
+#: src/Views/AppInfoView.vala:371
 #, c-format
 msgid "Other Apps by %s"
 msgstr "Andere Apps von %s"
 
-#: src/Views/AppInfoView.vala:378
+#: src/Views/AppInfoView.vala:405
 msgid "Link copied to clipboard"
 msgstr "Link wurde in die Zwischenablage kopiert"
 
-#: src/Views/AppInfoView.vala:389
+#: src/Views/AppInfoView.vala:416
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "Sieh dir %s im AppCenter an:"
 
-#: src/Views/AppInfoView.vala:396
+#: src/Views/AppInfoView.vala:423
 msgid "Share"
 msgstr "Teilen"
 
-#: src/Views/AppInfoView.vala:665
+#: src/Views/AppInfoView.vala:724
 msgid "Fund"
 msgstr "Unterstützen"
 
-#: src/Views/AppInfoView.vala:687
+#: src/Views/AppInfoView.vala:746
 msgid "Fund the development of this app"
 msgstr "Die Entwicklung dieser App unterstützen"
 
@@ -623,7 +650,7 @@ msgid "Restart Now"
 msgstr "Jetzt neu starten"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:158
+#: src/Views/AppListUpdateView.vala:175
 msgid "Update All"
 msgstr "Alle aktualisieren"
 
@@ -643,7 +670,7 @@ msgstr "Derzeit beliebt"
 msgid "Categories"
 msgstr "Kategorien"
 
-#: src/Views/Homepage.vala:291 src/Views/Homepage.vala:302
+#: src/Views/Homepage.vala:299 src/Views/Homepage.vala:310
 #, c-format
 msgid "Search %s"
 msgstr "%s durchsuchen"
@@ -744,24 +771,24 @@ msgstr "Schreiben und Sprache"
 msgid "Requires payments, which are not enabled"
 msgstr "Erfordert Zahlungsvorgänge, welche jedoch nicht aktiviert sind"
 
-#: src/Widgets/HumbleButton.vala:106
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:323
+#: src/Widgets/HumbleButton.vala:105
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:321
 msgid "Free"
 msgstr "Kostenlos"
 
-#: src/Widgets/HumbleButton.vala:108
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:325
+#: src/Widgets/HumbleButton.vala:107
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:323
 msgid "Install"
 msgstr "Installieren"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:142
+#: src/Widgets/HumbleButton.vala:141
 #, c-format
 msgid "$%d.00"
 msgstr "$%d,00 USD"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:145
+#: src/Widgets/HumbleButton.vala:144
 #, c-format
 msgid "$%d"
 msgstr "$%d USD"
@@ -784,50 +811,46 @@ msgid "Facebook"
 msgstr "Facebook"
 
 #: src/Widgets/SharePopover.vala:43
-msgid "Google+"
-msgstr "Google+"
-
-#: src/Widgets/SharePopover.vala:47
 msgid "Twitter"
 msgstr "Twitter"
 
-#: src/Widgets/SharePopover.vala:51
+#: src/Widgets/SharePopover.vala:47
 msgid "Reddit"
 msgstr "Reddit"
 
-#: src/Widgets/SharePopover.vala:55
+#: src/Widgets/SharePopover.vala:51
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: src/Widgets/SharePopover.vala:59
+#: src/Widgets/SharePopover.vala:55
 msgid "Telegram"
 msgstr "Telegram"
 
-#: src/Widgets/SharePopover.vala:63
+#: src/Widgets/SharePopover.vala:59
 msgid "Copy link"
 msgstr "Link kopieren"
 
-#: src/Widgets/UpdateHeaderRow.vala:68
+#: src/Widgets/UpdateHeaderRow.vala:64
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "%u Aktualisierung verfügbar"
 msgstr[1] "%u Aktualisierungen verfügbar"
 
-#: src/Widgets/UpdateHeaderRow.vala:69
+#: src/Widgets/UpdateHeaderRow.vala:65
 #, c-format
 msgid "Size: %s"
 msgstr "Größe: %s"
 
-#: src/Widgets/UpdateHeaderRow.vala:105
+#: src/Widgets/UpdateHeaderRow.vala:101
 msgid "Searching for updates…"
 msgstr "Suche nach Aktualisierungen …"
 
-#: src/Widgets/UpdateHeaderRow.vala:112
+#: src/Widgets/UpdateHeaderRow.vala:108
 msgid "Up to Date"
 msgstr "Aktuell"
 
-#: src/Widgets/UpdateHeaderRow.vala:120
+#: src/Widgets/UpdateHeaderRow.vala:116
 msgid "Drivers"
 msgstr "Treiber"
 
@@ -839,12 +862,12 @@ msgstr "Deinstallieren"
 msgid "Open"
 msgstr "Öffnen"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:348
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:346
 msgid "Update"
 msgstr "Aktualisieren"
 
-#~ msgid "%s (local)"
-#~ msgstr "%s (lokal)"
+#~ msgid "Google+"
+#~ msgstr "Google+"
 
 #~ msgid "Details"
 #~ msgstr "Details"

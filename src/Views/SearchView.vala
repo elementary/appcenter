@@ -47,6 +47,7 @@ public class AppCenter.Views.SearchView : View {
             if (previous_package != null) {
                 show_package (previous_package);
             } else {
+                transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
                 set_visible_child (app_list_view);
                 viewing_package = false;
 
@@ -76,7 +77,7 @@ public class AppCenter.Views.SearchView : View {
             var found_apps = client.search_applications (current_search_term, current_category);
             app_list_view.add_packages (found_apps);
         }
-        
+
         if (current_category != null) {
             subview_entered (_("Search Apps"), true, current_category.name);
         } else {

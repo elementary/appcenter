@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-17 11:14-0700\n"
-"PO-Revision-Date: 2019-04-07 08:52+0000\n"
+"POT-Creation-Date: 2019-06-26 22:42+0200\n"
+"PO-Revision-Date: 2019-07-19 06:23+0000\n"
 "Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/id/>\n"
@@ -14,18 +14,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.5.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38
+#: src/Application.vala:38 src/Core/Package.vala:316
 msgid "AppCenter"
 msgstr "Pusat Aplikasi"
 
 #: src/Application.vala:106
 #, c-format
-msgid "Could not parse mimetype %s"
-msgstr "Tidak dapat mengurai jenis mime %s"
+msgid "Could not parse the media type %s"
+msgstr "Tidak dapat mengurai tipe media %s"
 
 #: src/Application.vala:126
 #, c-format
@@ -47,9 +47,9 @@ msgstr "%s telah berhasil terpasang"
 msgid "There Was An Error Installing %s."
 msgstr "Terjadi Kesalahan Saat Pemasangan %s."
 
-#: src/MainWindow.vala:157 src/Views/Homepage.vala:277
-#: src/Views/Homepage.vala:286 src/Views/Homepage.vala:291
-#: src/Views/Homepage.vala:302
+#: src/MainWindow.vala:157 src/Views/Homepage.vala:282
+#: src/Views/Homepage.vala:294 src/Views/Homepage.vala:299
+#: src/Views/Homepage.vala:310
 msgid "Home"
 msgstr "Halaman Utama"
 
@@ -59,8 +59,8 @@ msgctxt "view"
 msgid "Installed"
 msgstr "Terpasang"
 
-#: src/MainWindow.vala:185 src/MainWindow.vala:348 src/Views/SearchView.vala:54
-#: src/Views/SearchView.vala:81
+#: src/MainWindow.vala:185 src/MainWindow.vala:348 src/Views/SearchView.vala:55
+#: src/Views/SearchView.vala:82
 msgid "Search Apps"
 msgstr "Cari Aplikasi"
 
@@ -76,165 +76,187 @@ msgstr "Sambungkan ke internet untuk pemasangan atau memperbarui aplikasi."
 msgid "Network Settings…"
 msgstr "Pengaturan Jaringan…"
 
-#: src/Core/ChangeInformation.vala:63
+#: src/Utils.vala:72 src/Core/ChangeInformation.vala:92
 msgid "Starting"
 msgstr "Memulai"
 
-#: src/Core/ChangeInformation.vala:65
+#: src/Utils.vala:74 src/Core/ChangeInformation.vala:49
+#: src/Core/ChangeInformation.vala:64
 msgid "Waiting"
 msgstr "Sedang menunggu"
 
-#: src/Core/ChangeInformation.vala:67
+#: src/Utils.vala:76
 msgid "Running"
 msgstr "Sedang berjalan"
 
-#: src/Core/ChangeInformation.vala:69
+#: src/Utils.vala:78
 msgid "Querying"
 msgstr "Melakukan queri"
 
-#: src/Core/ChangeInformation.vala:71
+#: src/Utils.vala:80
 msgid "Getting information"
 msgstr "Mengambil informasi"
 
-#: src/Core/ChangeInformation.vala:73
+#: src/Utils.vala:82
 msgid "Removing packages"
 msgstr "Menghapus paket"
 
-#: src/Core/ChangeInformation.vala:75
+#: src/Utils.vala:84
 msgid "Downloading"
 msgstr "Mengunduh"
 
-#: src/Core/ChangeInformation.vala:77
+#: src/Utils.vala:86
 msgid "Installing"
 msgstr "Memasang"
 
-#: src/Core/ChangeInformation.vala:79
+#: src/Utils.vala:88
 msgid "Refreshing software list"
 msgstr "Menyegarkan daftar perangkat lunak"
 
-#: src/Core/ChangeInformation.vala:81
+#: src/Utils.vala:90
 msgid "Installing updates"
 msgstr "Memasang pembaruan"
 
-#: src/Core/ChangeInformation.vala:83
+#: src/Utils.vala:92
 msgid "Cleaning up packages"
 msgstr "Membersihkan paket"
 
-#: src/Core/ChangeInformation.vala:85
+#: src/Utils.vala:94
 msgid "Obsoleting packages"
 msgstr "Menjadikan paket kadaluarsa"
 
-#: src/Core/ChangeInformation.vala:87
+#: src/Utils.vala:96
 msgid "Resolving dependencies"
 msgstr "Menyelesaikan ketergantungan"
 
-#: src/Core/ChangeInformation.vala:89
+#: src/Utils.vala:98
 msgid "Checking signatures"
 msgstr "Memeriksa tanda tangan"
 
-#: src/Core/ChangeInformation.vala:91
+#: src/Utils.vala:100
 msgid "Testing changes"
 msgstr "Menguji perubahan"
 
-#: src/Core/ChangeInformation.vala:93
+#: src/Utils.vala:102
 msgid "Committing changes"
 msgstr "Menerapkan perubahan"
 
-#: src/Core/ChangeInformation.vala:95
+#: src/Utils.vala:104
 msgid "Requesting data"
 msgstr "Meminta data"
 
-#: src/Core/ChangeInformation.vala:97
+#: src/Utils.vala:106 src/Core/ChangeInformation.vala:71
 msgid "Finished"
 msgstr "Selesai"
 
-#: src/Core/ChangeInformation.vala:99
+#: src/Utils.vala:108 src/Core/ChangeInformation.vala:79
 msgid "Cancelling"
 msgstr "Membatalkan"
 
-#: src/Core/ChangeInformation.vala:101
+#: src/Utils.vala:110
 msgid "Downloading repository information"
 msgstr "Mengunduh informasi repositori"
 
-#: src/Core/ChangeInformation.vala:103
+#: src/Utils.vala:112
 msgid "Downloading list of packages"
 msgstr "Mengunduh daftar paket"
 
-#: src/Core/ChangeInformation.vala:105
+#: src/Utils.vala:114
 msgid "Downloading file lists"
 msgstr "Mengunduh daftar berkas"
 
-#: src/Core/ChangeInformation.vala:107
+#: src/Utils.vala:116
 msgid "Downloading lists of changes"
 msgstr "Mengunduh daftar perubahan"
 
-#: src/Core/ChangeInformation.vala:109
+#: src/Utils.vala:118
 msgid "Downloading groups"
 msgstr "Mengunduh grup"
 
-#: src/Core/ChangeInformation.vala:111
+#: src/Utils.vala:120
 msgid "Downloading update information"
 msgstr "Mengunduh informasi pembaruan"
 
-#: src/Core/ChangeInformation.vala:113
+#: src/Utils.vala:122
 msgid "Repackaging files"
 msgstr "Membungkus ulang berkas"
 
-#: src/Core/ChangeInformation.vala:115
+#: src/Utils.vala:124
 msgid "Loading cache"
 msgstr "Memuat tembolok"
 
-#: src/Core/ChangeInformation.vala:117
+#: src/Utils.vala:126
 msgid "Scanning applications"
 msgstr "Memindai aplikasi"
 
-#: src/Core/ChangeInformation.vala:119
+#: src/Utils.vala:128
 msgid "Generating package lists"
 msgstr "Membuat daftar paket"
 
-#: src/Core/ChangeInformation.vala:121
+#: src/Utils.vala:130
 msgid "Waiting for package manager lock"
 msgstr "Menunggu kunci pengelola paket"
 
-#: src/Core/ChangeInformation.vala:123
+#: src/Utils.vala:132
 msgid "Waiting for authentication"
 msgstr "Menunggu otentikasi"
 
-#: src/Core/ChangeInformation.vala:125
+#: src/Utils.vala:134
 msgid "Updating running applications"
 msgstr "Memperbarui aplikasi yang sedang berjalan"
 
-#: src/Core/ChangeInformation.vala:127
+#: src/Utils.vala:136
 msgid "Checking applications in use"
 msgstr "Memeriksa aplikasi yang digunakan"
 
-#: src/Core/ChangeInformation.vala:129
+#: src/Utils.vala:138
 msgid "Checking libraries in use"
 msgstr "Memeriksa pustaka yang digunakan"
 
-#: src/Core/ChangeInformation.vala:131
+#: src/Utils.vala:140
 msgid "Copying files"
 msgstr "Menyalin berkas"
 
-#: src/Core/ChangeInformation.vala:133
+#: src/Utils.vala:142
 msgid "Unknown state"
 msgstr "Keadaan tidak dikenal"
 
-#: src/Core/Client.vala:100
+#: src/Core/Client.vala:70
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Pembaruan Tersedia"
 
-#: src/Core/Client.vala:101
+#: src/Core/Client.vala:71
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "%u pembaruan tersedia untuk sistem Anda"
 
-#: src/Core/Package.vala:248
+#: src/Core/Package.vala:287
 #, c-format
 msgid "%s Developers"
 msgstr "%s Pengembang"
+
+#: src/Core/Package.vala:318
+msgid "elementary Updates"
+msgstr "Pembaruan elementary"
+
+#: src/Core/Package.vala:320
+msgid "Ubuntu (non-curated)"
+msgstr "Ubuntu (tidak dikuratori)"
+
+#: src/Core/Package.vala:323
+#, c-format
+msgid "%s (non-curated)"
+msgstr "%s (tidak dikuratori)"
+
+#: src/Core/Package.vala:325
+msgid "Ubuntu Drivers"
+msgstr "Driver Ubuntu"
+
+#: src/Core/Package.vala:328
+msgid "Unknown Origin (non-curated)"
+msgstr "Sumber tidak diketahui (tidak dikuratori)"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -249,26 +271,30 @@ msgstr "Pembaruan untuk komponen sistem"
 msgid "Version: %s"
 msgstr "Versi: %s"
 
-#: src/Core/UpdateManager.vala:82
+#: src/Core/UpdateManager.vala:103
+msgid "Flatpak runtime"
+msgstr "Runtime Flatpak"
+
+#: src/Core/UpdateManager.vala:119
 msgid "No components with updates"
 msgstr "Tidak ada komponen yang perlu diperbarui"
 
-#: src/Core/UpdateManager.vala:86
+#: src/Core/UpdateManager.vala:123
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "%u komponen perlu diperbarui"
 
-#: src/Core/UpdateManager.vala:88
+#: src/Core/UpdateManager.vala:125
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:129
+#: src/Core/UpdateManager.vala:163
 msgid "Restart Required"
 msgstr "Mulai Ulang Dibutuhkan"
 
-#: src/Core/UpdateManager.vala:130
+#: src/Core/UpdateManager.vala:164
 msgid "Please restart your system to finalize updates"
 msgstr "Silakan mulai ulang sistem Anda untuk menyelesaikan pembaruan"
 
@@ -523,87 +549,85 @@ msgstr "Abaikan"
 msgid "Try Again"
 msgstr "Coba Kembali"
 
-#: src/Views/AppInfoView.vala:75
+#: src/Views/AppInfoView.vala:81
 msgid "Screenshot Not Available"
 msgstr "Tangkapan Layar Tidak Tersedia"
 
-#: src/Views/AppInfoView.vala:130
+#: src/Views/AppInfoView.vala:136
 msgid "Homepage"
 msgstr "Beranda"
 
-#: src/Views/AppInfoView.vala:136
+#: src/Views/AppInfoView.vala:142
 msgid "Suggest Translations"
 msgstr "Sarankan Terjemahan"
 
-#: src/Views/AppInfoView.vala:142
+#: src/Views/AppInfoView.vala:148
 msgid "Report a Problem"
 msgstr "Laporkan Masalah"
 
-#: src/Views/AppInfoView.vala:148
+#: src/Views/AppInfoView.vala:154
 msgid "Help"
 msgstr "Bantuan"
 
-#: src/Views/AppInfoView.vala:178
+#: src/Views/AppInfoView.vala:184
 msgid "What's New:"
 msgstr "Apa yang baru:"
 
-#: src/Views/AppInfoView.vala:197
+#: src/Views/AppInfoView.vala:203
 msgid "Extensions:"
 msgstr "Ekstensi:"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:284
+#: src/Views/AppInfoView.vala:311
 msgid "Public Domain"
-msgstr ""
+msgstr "Domain Publik"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:287
+#: src/Views/AppInfoView.vala:314
 msgid "https://en.wikipedia.org/wiki/Public_domain"
-msgstr ""
+msgstr "https://id.wikipedia.org/wiki/Domain_publik"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:292
-#, fuzzy
+#: src/Views/AppInfoView.vala:319
 msgid "Free Software"
-msgstr "Edit sumber aplikasi"
+msgstr "Perangkat Lunak Bebas"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:295
+#: src/Views/AppInfoView.vala:322
 msgid "https://www.gnu.org/philosophy/free-sw"
-msgstr ""
+msgstr "https://www.gnu.org/philosophy/free-sw.id.html"
 
-#: src/Views/AppInfoView.vala:299
+#: src/Views/AppInfoView.vala:326
 msgid "Proprietary"
-msgstr ""
+msgstr "Hak milik"
 
-#: src/Views/AppInfoView.vala:302
-#, fuzzy
+#: src/Views/AppInfoView.vala:329
 msgid "Unknown License"
-msgstr "Keadaan tidak dikenal"
+msgstr "Lisensi tidak dikenal"
 
-#: src/Views/AppInfoView.vala:344
+#: src/Views/AppInfoView.vala:371
 #, c-format
 msgid "Other Apps by %s"
 msgstr "Aplikasi lainnya oleh %s"
 
-#: src/Views/AppInfoView.vala:378
+#: src/Views/AppInfoView.vala:405
 msgid "Link copied to clipboard"
 msgstr "Tautan disalin ke clipboard"
 
-#: src/Views/AppInfoView.vala:389
+#: src/Views/AppInfoView.vala:416
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "Lihat %s di AppCenter:"
 
-#: src/Views/AppInfoView.vala:396
+#: src/Views/AppInfoView.vala:423
 msgid "Share"
 msgstr "Bagikan"
 
-#: src/Views/AppInfoView.vala:665
+#: src/Views/AppInfoView.vala:724
 msgid "Fund"
 msgstr "Dana"
 
-#: src/Views/AppInfoView.vala:687
+#: src/Views/AppInfoView.vala:746
 msgid "Fund the development of this app"
 msgstr "Danai pengembangan aplikasi ini"
 
@@ -616,7 +640,7 @@ msgid "Restart Now"
 msgstr "Mulai Ulang Sekarang"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:158
+#: src/Views/AppListUpdateView.vala:175
 msgid "Update All"
 msgstr "Perbarui Semua"
 
@@ -636,7 +660,7 @@ msgstr "Tren"
 msgid "Categories"
 msgstr "Kategori"
 
-#: src/Views/Homepage.vala:291 src/Views/Homepage.vala:302
+#: src/Views/Homepage.vala:299 src/Views/Homepage.vala:310
 #, c-format
 msgid "Search %s"
 msgstr "Cari %s"
@@ -737,24 +761,24 @@ msgstr "Penulisan & Bahasa"
 msgid "Requires payments, which are not enabled"
 msgstr "Memerlukan pembayaran, mode belum diizinkan"
 
-#: src/Widgets/HumbleButton.vala:106
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:323
+#: src/Widgets/HumbleButton.vala:105
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:321
 msgid "Free"
 msgstr "Gratis"
 
-#: src/Widgets/HumbleButton.vala:108
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:325
+#: src/Widgets/HumbleButton.vala:107
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:323
 msgid "Install"
 msgstr "Pasang"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:142
+#: src/Widgets/HumbleButton.vala:141
 #, c-format
 msgid "$%d.00"
 msgstr "$%d.00"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:145
+#: src/Widgets/HumbleButton.vala:144
 #, c-format
 msgid "$%d"
 msgstr "$%d"
@@ -777,49 +801,45 @@ msgid "Facebook"
 msgstr "Facebook"
 
 #: src/Widgets/SharePopover.vala:43
-msgid "Google+"
-msgstr "Google+"
-
-#: src/Widgets/SharePopover.vala:47
 msgid "Twitter"
 msgstr "Twitter"
 
-#: src/Widgets/SharePopover.vala:51
+#: src/Widgets/SharePopover.vala:47
 msgid "Reddit"
 msgstr "Reddit"
 
-#: src/Widgets/SharePopover.vala:55
+#: src/Widgets/SharePopover.vala:51
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: src/Widgets/SharePopover.vala:59
+#: src/Widgets/SharePopover.vala:55
 msgid "Telegram"
 msgstr "Telegram"
 
-#: src/Widgets/SharePopover.vala:63
+#: src/Widgets/SharePopover.vala:59
 msgid "Copy link"
 msgstr "Salin Tautan"
 
-#: src/Widgets/UpdateHeaderRow.vala:68
+#: src/Widgets/UpdateHeaderRow.vala:64
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "%u Pembaruan Tersedia"
 
-#: src/Widgets/UpdateHeaderRow.vala:69
+#: src/Widgets/UpdateHeaderRow.vala:65
 #, c-format
 msgid "Size: %s"
 msgstr "Ukuran: %s"
 
-#: src/Widgets/UpdateHeaderRow.vala:105
+#: src/Widgets/UpdateHeaderRow.vala:101
 msgid "Searching for updates…"
 msgstr "Mencari pembaruan…"
 
-#: src/Widgets/UpdateHeaderRow.vala:112
+#: src/Widgets/UpdateHeaderRow.vala:108
 msgid "Up to Date"
 msgstr "Terbaru"
 
-#: src/Widgets/UpdateHeaderRow.vala:120
+#: src/Widgets/UpdateHeaderRow.vala:116
 msgid "Drivers"
 msgstr "Driver"
 
@@ -831,12 +851,12 @@ msgstr "Hapus Pemasangan"
 msgid "Open"
 msgstr "Buka"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:348
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:346
 msgid "Update"
 msgstr "Perbarui"
 
-#~ msgid "%s (local)"
-#~ msgstr "%s (lokal)"
+#~ msgid "Google+"
+#~ msgstr "Google+"
 
 #~ msgid "Details"
 #~ msgstr "Detail"

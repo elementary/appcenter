@@ -39,7 +39,7 @@ public class AppCenterCore.UpdateManager : Object {
         os_updates_component.summary = _("Updates to system components");
         os_updates_component.add_icon (icon);
 
-        os_updates = new AppCenterCore.Package (PackageKitBackend.get_default (), os_updates_component);
+        os_updates = new AppCenterCore.Package (BackendAggregator.get_default (), os_updates_component);
     }
 
     public async uint get_updates (Cancellable? cancellable = null) {
@@ -78,6 +78,43 @@ public class AppCenterCore.UpdateManager : Object {
             }
         });
 
+        os_updates.component.set_pkgnames({});
+        os_updates.change_information.clear_update_info ();
+
+        unowned FlatpakBackend fp_client = FlatpakBackend.get_default ();
+        var flatpak_updates = yield fp_client.get_updates ();
+
+        foreach (var flatpak_update in flatpak_updates) {
+            var appcenter_package = fp_client.lookup_package_by_id (flatpak_update);
+            if (appcenter_package != null) {
+                apps_with_updates.add (appcenter_package);
+                appcenter_package.change_information.updatable_packages.@set (fp_client, flatpak_update);
+                try {
+                    appcenter_package.change_information.size = yield fp_client.get_download_size (appcenter_package, null);
+                } catch (Error e) {
+                    warning ("Unable to get flatpak download size: %s", e.message);
+                }
+            } else {
+                var name = flatpak_update.split ("/")[2];
+                os_count++;
+                os_desc += Markup.printf_escaped (
+                    "<li>%s\n\t%s</li>",
+                    name,
+                    _("Flatpak runtime")
+                );
+
+                uint64 dl_size = 0;
+                try {
+                    dl_size = yield fp_client.get_download_size_by_id (flatpak_update, null);
+                } catch (Error e) {
+                    warning ("Unable to get flatpak download size: %s", e.message);
+                }
+
+                os_updates.change_information.size += dl_size;
+                os_updates.change_information.updatable_packages.@set (fp_client, flatpak_update);
+            }
+        }
+
         if (os_count == 0) {
             var latest_version = _("No components with updates");
             os_updates.latest_version = latest_version;
@@ -87,9 +124,6 @@ public class AppCenterCore.UpdateManager : Object {
             os_updates.latest_version = latest_version;
             os_updates.description = "<p>%s</p>\n<ul>\n%s</ul>\n".printf (GLib.Markup.printf_escaped (_("%s:"), latest_version), os_desc);
         }
-
-        os_updates.component.set_pkgnames({});
-        os_updates.change_information.clear_update_info ();
 
         count = apps_with_updates.size;
         if (os_count > 0) {
@@ -103,7 +137,7 @@ public class AppCenterCore.UpdateManager : Object {
                 var pkg_name = pk_package.get_name ();
                 var appcenter_package = client.lookup_package_by_id (pkg_name);
                     if (appcenter_package != null) {
-                        appcenter_package.change_information.updatable_ids.add (pk_package.get_id ());
+                        appcenter_package.change_information.updatable_packages.@set (client, pk_package.get_id ());
                         appcenter_package.change_information.size += pk_detail.size;
                         appcenter_package.update_state ();
                     } else {
@@ -111,7 +145,7 @@ public class AppCenterCore.UpdateManager : Object {
                         pkgnames += pkg_name;
                         os_updates.component.pkgnames = pkgnames;
 
-                        os_updates.change_information.updatable_ids.add (pk_package.get_id ());
+                        os_updates.change_information.updatable_packages.@set (client, pk_package.get_id ());
                         os_updates.change_information.size += pk_detail.size;
                     }
             } catch (Error e) {
