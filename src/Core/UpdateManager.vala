@@ -37,6 +37,7 @@ public class AppCenterCore.UpdateManager : Object {
         os_updates_component.id = AppCenterCore.Package.OS_UPDATES_ID;
         os_updates_component.name = _("Operating System Updates");
         os_updates_component.summary = _("Updates to system components");
+        os_updates_component.description = _("These core updates can improve security, increase stability, fix issues, and provide new features for other apps to use.");
         os_updates_component.add_icon (icon);
 
         os_updates = new AppCenterCore.Package (BackendAggregator.get_default (), os_updates_component);
