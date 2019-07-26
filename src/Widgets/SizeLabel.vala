@@ -57,16 +57,15 @@ public class AppCenter.Widgets.SizeLabel : Gtk.Grid {
     }
 
     public void update (uint64 size = 0, bool using_flatpak = false) {
+        has_tooltip = using_flatpak;
+        icon_revealer.reveal_child = using_flatpak;
+
         string human_size = GLib.format_size (size);
 
         if (using_flatpak) {
             size_label.label = _("Up to %s").printf (human_size);
-            has_tooltip = true;
-            icon_revealer.reveal_child = true;
         } else {
             size_label.label = "%s".printf (human_size);
-            has_tooltip = false;
-            icon_revealer.reveal_child = false;
         }
 
         if (size > 0) {
