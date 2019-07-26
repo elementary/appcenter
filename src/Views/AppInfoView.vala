@@ -139,7 +139,6 @@ namespace AppCenter.Views {
                 screenshot_overlay.add_overlay (screenshot_arrows_revealer);
 
                 screenshot_overlay.enter_notify_event.connect (() => {
-                    critical ("ENTERING");
                     screenshot_arrows_revealer.reveal_child = true;
                     return false;
                 });
