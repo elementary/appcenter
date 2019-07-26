@@ -254,6 +254,13 @@ public class AppCenterCore.Package : Object {
         }
     }
 
+    public bool is_flatpak {
+        get {
+            return (backend is FlatpakBackend)
+                || change_information.updatable_packages.contains (FlatpakBackend.get_default ());
+        }
+    }
+
     private string? _author = null;
     public string author {
         get {

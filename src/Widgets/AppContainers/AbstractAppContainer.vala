@@ -170,6 +170,8 @@ namespace AppCenter {
             });
 
             uninstall_button = new Gtk.Button.with_label (_("Uninstall"));
+            uninstall_button.margin_end = 12;
+
             uninstall_button_stack = new Gtk.Stack ();
             uninstall_button_stack.add_named (uninstall_button, "CHILD");
             uninstall_button_stack.add_named (new Gtk.EventBox (), "NONE");
@@ -186,7 +188,6 @@ namespace AppCenter {
             open_button.clicked.connect (launch_package_app);
 
             button_grid = new Gtk.Grid ();
-            button_grid.column_spacing = 6;
             button_grid.valign = Gtk.Align.CENTER;
             button_grid.halign = Gtk.Align.END;
             button_grid.hexpand = false;
