@@ -26,7 +26,8 @@ namespace AppCenter.Views {
             Gtk.StackTransitionType transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT
         );
 
-        static Gtk.CssProvider? previous_css_provider = null;
+        private static Gtk.CssProvider arrow_provider;
+        private static Gtk.CssProvider? previous_css_provider = null;
 
         GenericArray<AppStream.Screenshot> screenshots;
 
@@ -38,7 +39,12 @@ namespace AppCenter.Views {
         private Gtk.Grid release_grid;
         private Widgets.ReleaseListBox release_list_box;
         private Gtk.Revealer version_combo_revealer;
+        private Gtk.Grid screenshot_arrows;
+        private Gtk.Revealer screenshot_arrows_revealer;
+        private Gtk.Button screenshot_previous;
+        private Gtk.Button screenshot_next;
         private Gtk.Stack screenshot_stack;
+        private Gtk.Overlay screenshot_overlay;
         private Gtk.TextView app_description;
         private Widgets.Switcher screenshot_switcher;
         private Gtk.ListStore version_liststore;
@@ -46,6 +52,11 @@ namespace AppCenter.Views {
 
         public AppInfoView (AppCenterCore.Package package) {
             Object (package: package);
+        }
+
+        static construct {
+            arrow_provider = new Gtk.CssProvider ();
+            arrow_provider.load_from_resource ("io/elementary/appcenter/arrow.css");
         }
 
         construct {
@@ -69,6 +80,86 @@ namespace AppCenter.Views {
                 app_screenshots.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
                 app_screenshots.halign = Gtk.Align.CENTER;
 
+                screenshot_previous = new Gtk.Button.from_icon_name ("go-previous-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+                screenshot_previous.expand = true;
+                screenshot_previous.halign = Gtk.Align.START;
+                screenshot_previous.valign = Gtk.Align.CENTER;
+
+                var previous_context = screenshot_previous.get_style_context ();
+                previous_context.add_class (Gtk.STYLE_CLASS_FLAT);
+                previous_context.add_class ("circular");
+                previous_context.add_class ("arrow");
+                previous_context.add_provider (arrow_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+                screenshot_previous.clicked.connect (() => {
+                    GLib.List<unowned Gtk.Widget> screenshot_children = app_screenshots.get_children ();
+                    var index = screenshot_children.index (app_screenshots.visible_child);
+                    if (index > 0) {
+                        app_screenshots.visible_child = screenshot_children.nth_data (index - 1);
+                    }
+                });
+
+                screenshot_next = new Gtk.Button.from_icon_name ("go-next-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+                screenshot_next.expand = true;
+                screenshot_next.halign = Gtk.Align.END;
+                screenshot_next.valign = Gtk.Align.CENTER;
+
+                var next_context = screenshot_next.get_style_context ();
+                next_context.add_class (Gtk.STYLE_CLASS_FLAT);
+                next_context.add_class ("circular");
+                next_context.add_class ("arrow");
+                next_context.add_provider (arrow_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+                screenshot_next.clicked.connect (() => {
+                    GLib.List<unowned Gtk.Widget> screenshot_children = app_screenshots.get_children ();
+                    var index = screenshot_children.index (app_screenshots.visible_child);
+                    if (index < screenshot_children.length () - 1) {
+                        app_screenshots.visible_child = screenshot_children.nth_data (index + 1);
+                    }
+                });
+
+                app_screenshots.notify["visible-child"].connect (() => {
+                    screenshot_previous.sensitive = screenshot_next.sensitive = true;
+
+                    GLib.List<unowned Gtk.Widget> screenshot_children = app_screenshots.get_children ();
+                    var index = screenshot_children.index (app_screenshots.visible_child);
+
+                    if (index == 0) {
+                        screenshot_previous.sensitive = false;
+                    } else if (index == screenshot_children.length () - 1) {
+                        screenshot_next.sensitive = false;
+                    }
+                });
+
+                screenshot_arrows = new Gtk.Grid ();
+                screenshot_arrows.add (screenshot_previous);
+                screenshot_arrows.add (screenshot_next);
+                screenshot_arrows.no_show_all = true;
+
+                screenshot_arrows_revealer = new Gtk.Revealer ();
+                screenshot_arrows_revealer.transition_type = Gtk.RevealerTransitionType.CROSSFADE;
+                screenshot_arrows_revealer.add (screenshot_arrows);
+
+                screenshot_overlay = new Gtk.Overlay ();
+                screenshot_overlay.add_events (Gdk.EventMask.ENTER_NOTIFY_MASK);
+                screenshot_overlay.add_events (Gdk.EventMask.LEAVE_NOTIFY_MASK);
+                screenshot_overlay.add (app_screenshots);
+                screenshot_overlay.add_overlay (screenshot_arrows_revealer);
+
+                screenshot_overlay.enter_notify_event.connect (() => {
+                    screenshot_arrows_revealer.reveal_child = true;
+                    return false;
+                });
+
+                screenshot_overlay.leave_notify_event.connect ((event) => {
+                    // Prevent hiding prev/next button when they're marked as insensitive
+                    if (event.mode != Gdk.CrossingMode.STATE_CHANGED) {
+                        screenshot_arrows_revealer.reveal_child = false;
+                    }
+
+                    return false;
+                });
+
                 screenshot_switcher = new Widgets.Switcher ();
                 screenshot_switcher.halign = Gtk.Align.CENTER;
                 screenshot_switcher.set_stack (app_screenshots);
@@ -86,7 +177,7 @@ namespace AppCenter.Views {
                 screenshot_stack.get_style_context ().add_class (Gtk.STYLE_CLASS_BACKGROUND);
                 screenshot_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
                 screenshot_stack.add (app_screenshot_spinner);
-                screenshot_stack.add (app_screenshots);
+                screenshot_stack.add (screenshot_overlay);
                 screenshot_stack.add (app_screenshot_not_found);
             }
 
@@ -608,9 +699,16 @@ namespace AppCenter.Views {
                 }
 
                 Idle.add (() => {
-                    if (app_screenshots.get_children ().length () > 0) {
-                        screenshot_stack.visible_child = app_screenshots;
+                    var number_of_screenshots = app_screenshots.get_children ().length ();
+
+                    if (number_of_screenshots > 0) {
+                        screenshot_stack.visible_child = screenshot_overlay;
                         screenshot_switcher.update_selected ();
+
+                        if (number_of_screenshots > 1) {
+                            screenshot_arrows.no_show_all = false;
+                            screenshot_arrows.show_all ();
+                        }
                     } else {
                         screenshot_stack.visible_child = app_screenshot_not_found;
                     }
