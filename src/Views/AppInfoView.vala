@@ -245,7 +245,7 @@ namespace AppCenter.Views {
             header_grid.halign = Gtk.Align.CENTER;
             header_grid.valign = Gtk.Align.CENTER;
             header_grid.margin = content_grid.margin / 2;
-            /* Must wide enought to fit long package name and progress bar */
+            // Must be wide enough to fit long package name and progress bar
             header_grid.width_request = content_grid.width_request + 2 * (content_grid.margin - header_grid.margin);
             header_grid.attach (image, 0, 0, 1, 3);
             header_grid.attach (package_name, 1, 0);
