@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:42+0200\n"
-"PO-Revision-Date: 2018-06-12 07:12+0000\n"
+"PO-Revision-Date: 2019-07-19 06:24+0000\n"
 "Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
-"Language-Team: Indonesian <https://weblate.elementary.io/projects/appcenter/"
+"Language-Team: Indonesian <https://l10n.elementary.io/projects/appcenter/"
 "extra/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
@@ -37,28 +37,30 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
 msgid "Meson build system fixes"
-msgstr ""
+msgstr "Perbaikan sistem pembangunan Meson"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "Improve window state restoration"
-msgstr ""
+msgstr "Meningkatkan pemulihan keadaan jendela"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Prevent action buttons from jumping around"
-msgstr ""
+msgstr "Mencegah tombol aksi melompat-lompat"
 
 #: data/io.elementary.appcenter.appdata.xml.in:24
 msgid "Remove reset paid apps gsettings key"
-msgstr ""
+msgstr "Hapus setel ulang kunci gsettings aplikasi berbayar"
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
 msgid "Memory management refinements"
-msgstr ""
+msgstr "Perbaikan manajemen memori"
 
 #: data/io.elementary.appcenter.appdata.xml.in:26
 msgid ""
 "Add conditional compilation for disabling dynamic remote homepage content"
 msgstr ""
+"Menambahkan kompilasi pengondisian untuk menonaktifkan kendali jarak jauh "
+"konten beranda dinamis"
 
 #: data/io.elementary.appcenter.appdata.xml.in:27
 #: data/io.elementary.appcenter.appdata.xml.in:39
@@ -82,23 +84,23 @@ msgstr "Terjemahan baru"
 
 #: data/io.elementary.appcenter.appdata.xml.in:34
 msgid "New categories: Communication, Finance, Media Production"
-msgstr ""
+msgstr "Kategori baru: Komunikasi, Keuangan, Produksi Media"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
 msgid "Add Math to Science category"
-msgstr ""
+msgstr "Menambahkan Matematika pada kategori Sains"
 
 #: data/io.elementary.appcenter.appdata.xml.in:36
 msgid "Relax email address validator"
-msgstr ""
+msgstr "Pemvalidator alamat surat elektronik"
 
 #: data/io.elementary.appcenter.appdata.xml.in:37
 msgid "Present update availability more accurately"
-msgstr ""
+msgstr "Sajikan ketersediaan pembaruan lebih akurat"
 
 #: data/io.elementary.appcenter.appdata.xml.in:38
 msgid "Category graphics revamped"
-msgstr ""
+msgstr "Kategori grafik dirubah"
 
 #: data/io.elementary.appcenter.appdata.xml.in:53
 #: data/io.elementary.appcenter.appdata.xml.in:65
@@ -112,21 +114,20 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:139
 #: data/io.elementary.appcenter.appdata.xml.in:148
 #: data/io.elementary.appcenter.appdata.xml.in:157
-#, fuzzy
 msgid "Bug fixes and improve performance."
-msgstr "Perbaikan kutu dan peningkatan performa."
+msgstr "Perbaikan kesalahan dan peningkatan performa."
 
 #: data/io.elementary.appcenter.appdata.xml.in:55
 msgid "Improve transaction success rate"
-msgstr ""
+msgstr "Meningkatkan persentase keberhasilan transaksi"
 
 #: data/io.elementary.appcenter.appdata.xml.in:56
 msgid "Add Publishing to Office category"
-msgstr ""
+msgstr "Menambahkan Penerbitan ke Kategori Kantor"
 
 #: data/io.elementary.appcenter.appdata.xml.in:57
 msgid "Improve descriptions of OS Updates"
-msgstr ""
+msgstr "Meningkatkan deskripsi Pembaruan SO"
 
 #: data/io.elementary.appcenter.appdata.xml.in:58
 #: data/io.elementary.appcenter.appdata.xml.in:69
@@ -144,11 +145,11 @@ msgstr "Berbagai perbaikan kutu dan peningkatan kinerja"
 
 #: data/io.elementary.appcenter.appdata.xml.in:67
 msgid "Give details for Operating System Updates"
-msgstr ""
+msgstr "Memberikan detail Pembaruan Sistem Operasi"
 
 #: data/io.elementary.appcenter.appdata.xml.in:68
 msgid "Support mouse button navigation"
-msgstr ""
+msgstr "Mendukung navigasi tombol mouse"
 
 #: data/io.elementary.appcenter.appdata.xml.in:159
 msgid "Fix crash caused by entries with missing packages"
@@ -170,13 +171,12 @@ msgid "Prevent multiple authentication dialogs when resuming from suspend"
 msgstr "Mencegah beberapa dialog otentikasi saat melanjutkan dari keadaan jeda"
 
 #: data/io.elementary.appcenter.appdata.xml.in:176
-#, fuzzy
 msgid ""
 "Search performance has beeen improved, the category name is now shown on the "
 "headbar and minor bugs have been fixed."
 msgstr ""
-"Performa pencarian telah diperbaiki, nama kategori sekarang ditampilkan pada "
-"bilah atas dan kutu minor telah diperbaiki."
+"Performa pencarian telah diimprovisasi, nama kategori sekarang ditampilkan "
+"pada bilah atas dan kesalahan kecil telah diperbaiki."
 
 #: data/io.elementary.appcenter.appdata.xml.in:178
 msgid "Fix Steam installation"
@@ -188,7 +188,7 @@ msgstr "Jadikan pencarian asinkron"
 
 #: data/io.elementary.appcenter.appdata.xml.in:234
 msgid "elementary LLC."
-msgstr "elementary LLC."
+msgstr "PT elementary."
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
