@@ -17,8 +17,8 @@
 */
 
 public class AppCenter.Widgets.SizeLabel : Gtk.Grid {
-    public bool using_flatpak { get; construct set; }
-    public uint64 size { get; construct set; }
+    public bool using_flatpak { get; construct; }
+    public uint64 size { get; construct; }
 
     private Gtk.Label size_label;
     private Gtk.Revealer icon_revealer;
