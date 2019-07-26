@@ -1,28 +1,31 @@
 # colindemian <colindemian@outlook.com>, 2018.
 # David Hewitt <davidmhewitt@gmail.com>, 2018.
+# Daniel Foré <daniel@elementary.io>, 2019.
+# sdopx <26029682@qq.com>, 2019.
+# Jimmy Sun <jimmysuncn@hotmail.com>, 2019.
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-02 07:28-0600\n"
-"PO-Revision-Date: 2018-10-09 00:01+0000\n"
-"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
-"Language-Team: Chinese <https://weblate.elementary.io/projects/appcenter/"
+"POT-Creation-Date: 2019-06-26 22:42+0200\n"
+"PO-Revision-Date: 2019-05-15 01:18+0000\n"
+"Last-Translator: Jimmy Sun <jimmysuncn@hotmail.com>\n"
+"Language-Team: Chinese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/zh/>\n"
 "Language: zh\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.6.1\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38
+#: src/Application.vala:38 src/Core/Package.vala:316
 msgid "AppCenter"
 msgstr "应用中心"
 
 #: src/Application.vala:106
-#, c-format
-msgid "Could not parse mimetype %s"
+#, fuzzy, c-format
+msgid "Could not parse the media type %s"
 msgstr "无法解析 %s 的文件类型"
 
 #: src/Application.vala:126
@@ -30,259 +33,282 @@ msgstr "无法解析 %s 的文件类型"
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "未找到指定的链接'%s'，请使用搜索"
 
-#: src/Application.vala:260
+#: src/Application.vala:264
 msgid "Application installed"
 msgstr "应用程序已安装"
 
-#: src/Application.vala:261
+#: src/Application.vala:265
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s已被安装成功"
 
-#: src/Application.vala:273
+#: src/Application.vala:277
 #, c-format
 msgid "There Was An Error Installing %s."
 msgstr "在安装%s时遇到一个错误。"
 
-#: src/MainWindow.vala:149 src/Views/Homepage.vala:282
-#: src/Views/Homepage.vala:291 src/Views/Homepage.vala:296
-#: src/Views/Homepage.vala:307
+#: src/MainWindow.vala:157 src/Views/Homepage.vala:282
+#: src/Views/Homepage.vala:294 src/Views/Homepage.vala:299
+#: src/Views/Homepage.vala:310
 msgid "Home"
 msgstr "首页"
 
-#: src/MainWindow.vala:150 src/Views/InstalledView.vala:29
-#: src/Views/InstalledView.vala:53
+#: src/MainWindow.vala:158 src/Views/InstalledView.vala:32
+#: src/Views/InstalledView.vala:57
 #, fuzzy
 msgctxt "view"
 msgid "Installed"
 msgstr "正在安装"
 
-#: src/MainWindow.vala:177 src/MainWindow.vala:330 src/Views/SearchView.vala:54
-#: src/Views/SearchView.vala:81
+#: src/MainWindow.vala:185 src/MainWindow.vala:348 src/Views/SearchView.vala:55
+#: src/Views/SearchView.vala:82
 msgid "Search Apps"
 msgstr "搜索应用"
 
-#: src/MainWindow.vala:195
+#: src/MainWindow.vala:203
 msgid "Network Is Not Available"
 msgstr "网络不可用"
 
-#: src/MainWindow.vala:196
+#: src/MainWindow.vala:204
 msgid "Connect to the Internet to install or update apps."
 msgstr "连接到互联网以安装或更新应用。"
 
-#: src/MainWindow.vala:199
+#: src/MainWindow.vala:207
 msgid "Network Settings…"
 msgstr "网络设置…"
 
-#: src/Core/ChangeInformation.vala:54
+#: src/Utils.vala:72 src/Core/ChangeInformation.vala:92
 msgid "Starting"
 msgstr "正在启动"
 
-#: src/Core/ChangeInformation.vala:56
+#: src/Utils.vala:74 src/Core/ChangeInformation.vala:49
+#: src/Core/ChangeInformation.vala:64
 msgid "Waiting"
 msgstr "等待中"
 
-#: src/Core/ChangeInformation.vala:58
+#: src/Utils.vala:76
 msgid "Running"
 msgstr "正在运行"
 
-#: src/Core/ChangeInformation.vala:60
+#: src/Utils.vala:78
 msgid "Querying"
 msgstr "查询中"
 
-#: src/Core/ChangeInformation.vala:62
+#: src/Utils.vala:80
 msgid "Getting information"
 msgstr "正在获取相关信息"
 
-#: src/Core/ChangeInformation.vala:64
+#: src/Utils.vala:82
 msgid "Removing packages"
 msgstr "正在移除软件包"
 
-#: src/Core/ChangeInformation.vala:66
+#: src/Utils.vala:84
 msgid "Downloading"
 msgstr "正在下载"
 
-#: src/Core/ChangeInformation.vala:68
+#: src/Utils.vala:86
 msgid "Installing"
 msgstr "正在安装"
 
-#: src/Core/ChangeInformation.vala:70
+#: src/Utils.vala:88
 msgid "Refreshing software list"
 msgstr "正在刷新软件列表"
 
-#: src/Core/ChangeInformation.vala:72
+#: src/Utils.vala:90
 msgid "Installing updates"
 msgstr "正在安装更新"
 
-#: src/Core/ChangeInformation.vala:74
+#: src/Utils.vala:92
 msgid "Cleaning up packages"
 msgstr "正在清理软件包"
 
-#: src/Core/ChangeInformation.vala:76
+#: src/Utils.vala:94
 msgid "Obsoleting packages"
 msgstr "正在废弃软件包"
 
-#: src/Core/ChangeInformation.vala:78
+#: src/Utils.vala:96
 msgid "Resolving dependencies"
 msgstr "正在解析依赖关系"
 
-#: src/Core/ChangeInformation.vala:80
+#: src/Utils.vala:98
 msgid "Checking signatures"
 msgstr "正在检查签名"
 
-#: src/Core/ChangeInformation.vala:82
+#: src/Utils.vala:100
 msgid "Testing changes"
 msgstr "正在检测更改"
 
-#: src/Core/ChangeInformation.vala:84
+#: src/Utils.vala:102
 msgid "Committing changes"
 msgstr "正在提交更改"
 
-#: src/Core/ChangeInformation.vala:86
+#: src/Utils.vala:104
 msgid "Requesting data"
 msgstr "正在请求数据"
 
-#: src/Core/ChangeInformation.vala:88
+#: src/Utils.vala:106 src/Core/ChangeInformation.vala:71
 msgid "Finished"
 msgstr "已完成"
 
-#: src/Core/ChangeInformation.vala:90
+#: src/Utils.vala:108 src/Core/ChangeInformation.vala:79
 msgid "Cancelling"
 msgstr "正在取消"
 
-#: src/Core/ChangeInformation.vala:92
+#: src/Utils.vala:110
 msgid "Downloading repository information"
 msgstr "正在获取仓库信息"
 
-#: src/Core/ChangeInformation.vala:94
+#: src/Utils.vala:112
 msgid "Downloading list of packages"
 msgstr "正在下载软件包"
 
-#: src/Core/ChangeInformation.vala:96
+#: src/Utils.vala:114
 msgid "Downloading file lists"
 msgstr "正在下载文件列表"
 
-#: src/Core/ChangeInformation.vala:98
+#: src/Utils.vala:116
 msgid "Downloading lists of changes"
 msgstr "正在下载更改列表"
 
-#: src/Core/ChangeInformation.vala:100
+#: src/Utils.vala:118
 msgid "Downloading groups"
 msgstr "正在下载群组"
 
-#: src/Core/ChangeInformation.vala:102
+#: src/Utils.vala:120
 msgid "Downloading update information"
 msgstr "正在下载更新信息"
 
-#: src/Core/ChangeInformation.vala:104
+#: src/Utils.vala:122
 msgid "Repackaging files"
 msgstr "正在重新打包文件"
 
-#: src/Core/ChangeInformation.vala:106
+#: src/Utils.vala:124
 msgid "Loading cache"
 msgstr "正在加载缓存"
 
-#: src/Core/ChangeInformation.vala:108
+#: src/Utils.vala:126
 msgid "Scanning applications"
 msgstr "正在扫描应用程序"
 
-#: src/Core/ChangeInformation.vala:110
+#: src/Utils.vala:128
 msgid "Generating package lists"
 msgstr "正在生成软件包清单"
 
-#: src/Core/ChangeInformation.vala:112
+#: src/Utils.vala:130
 msgid "Waiting for package manager lock"
 msgstr "正在等待软件包管理器锁"
 
-#: src/Core/ChangeInformation.vala:114
+#: src/Utils.vala:132
 msgid "Waiting for authentication"
 msgstr "正在等待认证"
 
-#: src/Core/ChangeInformation.vala:116
+#: src/Utils.vala:134
 msgid "Updating running applications"
 msgstr "正在更新运行中的应用程序"
 
-#: src/Core/ChangeInformation.vala:118
+#: src/Utils.vala:136
 msgid "Checking applications in use"
 msgstr "正在核对使用中的应用程序"
 
-#: src/Core/ChangeInformation.vala:120
+#: src/Utils.vala:138
 msgid "Checking libraries in use"
 msgstr "正在核对使用中的代码库"
 
-#: src/Core/ChangeInformation.vala:122
+#: src/Utils.vala:140
 msgid "Copying files"
 msgstr "正在复制文件"
 
-#: src/Core/ChangeInformation.vala:124
+#: src/Utils.vala:142
 msgid "Unknown state"
 msgstr "未知状态"
 
-#: src/Core/Client.vala:91
-msgid "Operating System Updates"
-msgstr "操作系统更新"
-
-#: src/Core/Client.vala:92
-msgid "Updates to system components"
-msgstr "系统组件的更新"
-
-#: src/Core/Client.vala:151
-#, c-format
-msgid "%s (local)"
-msgstr "%s（本地）"
-
-#: src/Core/Client.vala:476
+#: src/Core/Client.vala:70
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "有可用更新"
 
-#: src/Core/Client.vala:477
+#: src/Core/Client.vala:71
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "您的系统有%u的可用更新"
 
-#: src/Core/Client.vala:505
+#: src/Core/Package.vala:287
+#, fuzzy, c-format
+msgid "%s Developers"
+msgstr "%s个开发者"
+
+#: src/Core/Package.vala:318
+#, fuzzy
+msgid "elementary Updates"
+msgstr "最近更新"
+
+#: src/Core/Package.vala:320
+msgid "Ubuntu (non-curated)"
+msgstr ""
+
+#: src/Core/Package.vala:323
+#, fuzzy, c-format
+msgid "%s (non-curated)"
+msgstr "%s（本地）"
+
+#: src/Core/Package.vala:325
+#, fuzzy
+msgid "Ubuntu Drivers"
+msgstr "驱动"
+
+#: src/Core/Package.vala:328
+msgid "Unknown Origin (non-curated)"
+msgstr ""
+
+#: src/Core/UpdateManager.vala:38
+msgid "Operating System Updates"
+msgstr "操作系统更新"
+
+#: src/Core/UpdateManager.vala:39
+msgid "Updates to system components"
+msgstr "系统组件的更新"
+
+#: src/Core/UpdateManager.vala:76
 #, c-format
 msgid "Version: %s"
 msgstr "版本：%s"
 
-#: src/Core/Client.vala:514
+#: src/Core/UpdateManager.vala:103
+msgid "Flatpak runtime"
+msgstr ""
+
+#: src/Core/UpdateManager.vala:119
 msgid "No components with updates"
 msgstr "没有组件可以更新"
 
-#: src/Core/Client.vala:518
+#: src/Core/UpdateManager.vala:123
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "有%u个组件可以更新"
 
-#: src/Core/Client.vala:520
+#: src/Core/UpdateManager.vala:125
 #, c-format
 msgid "%s:"
 msgstr "%s："
 
-#: src/Core/Package.vala:235
-#, fuzzy, c-format
-msgid "%s Developers"
-msgstr "%s个开发者"
-
-#: src/Core/UpdateManager.vala:81
+#: src/Core/UpdateManager.vala:163
 msgid "Restart Required"
 msgstr "需要重启"
 
-#: src/Core/UpdateManager.vala:82
+#: src/Core/UpdateManager.vala:164
 msgid "Please restart your system to finalize updates"
 msgstr "请重启您的系统以完成更新"
 
 #: src/Dialogs/ContentWarningDialog.vala:27
 msgid "Content Warning"
-msgstr ""
+msgstr "注意事项"
 
 #: src/Dialogs/ContentWarningDialog.vala:32
 #, c-format
 msgid "%s Contains Explicit Content"
-msgstr ""
+msgstr "%s 包含敏感内容"
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 #, c-format
@@ -291,14 +317,16 @@ msgid ""
 "disturbing. In general, elementary does not review or endorse the contents "
 "of this app."
 msgstr ""
+"%s 可能包含成人或者其他令人不适的内容。Elementry未对此应用进行审查，亦不对此"
+"应用的内容负责。"
 
 #: src/Dialogs/ContentWarningDialog.vala:35
 msgid "Show content warnings"
-msgstr ""
+msgstr "显示内容警告"
 
 #: src/Dialogs/ContentWarningDialog.vala:40
 msgid "Don’t Install"
-msgstr ""
+msgstr "未安装"
 
 #: src/Dialogs/ContentWarningDialog.vala:41
 #, fuzzy
@@ -319,7 +347,7 @@ msgstr "重启"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:199
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:205
 msgid "Cancel"
 msgstr "取消"
 
@@ -337,7 +365,7 @@ msgstr "请检查您的支付信息并再度尝试。"
 
 #: src/Dialogs/StripeDialog.vala:76
 msgid "Payment"
-msgstr ""
+msgstr "付款"
 
 #: src/Dialogs/StripeDialog.vala:92
 #, fuzzy, c-format
@@ -487,71 +515,96 @@ msgid ""
 "or a corrupted sources file."
 msgstr "这可能是由一个手动安装的扩展软件仓库或一个已损坏的源文件造成。"
 
-#: src/Dialogs/UpdateFailDialog.vala:46
-msgid "Details"
-msgstr "详情"
-
-#: src/Dialogs/UpdateFailDialog.vala:54
+#: src/Dialogs/UpdateFailDialog.vala:34
 msgid "Ignore"
 msgstr "忽略"
 
-#: src/Dialogs/UpdateFailDialog.vala:55
+#: src/Dialogs/UpdateFailDialog.vala:35
 msgid "Try Again"
 msgstr "重试"
 
-#: src/Views/AppInfoView.vala:76
+#: src/Views/AppInfoView.vala:81
 msgid "Screenshot Not Available"
 msgstr "截图不可用"
 
-#: src/Views/AppInfoView.vala:133
+#: src/Views/AppInfoView.vala:136
 msgid "Homepage"
 msgstr "主页"
 
-#: src/Views/AppInfoView.vala:139
+#: src/Views/AppInfoView.vala:142
 msgid "Suggest Translations"
 msgstr "译文建议"
 
-#: src/Views/AppInfoView.vala:145
+#: src/Views/AppInfoView.vala:148
 msgid "Report a Problem"
 msgstr "报告一个问题"
 
-#: src/Views/AppInfoView.vala:151
+#: src/Views/AppInfoView.vala:154
 msgid "Help"
 msgstr "帮助"
 
-#: src/Views/AppInfoView.vala:180
+#: src/Views/AppInfoView.vala:184
 msgid "What's New:"
 msgstr "最新动态："
 
-#: src/Views/AppInfoView.vala:199
+#: src/Views/AppInfoView.vala:203
 msgid "Extensions:"
 msgstr "扩展："
 
-#: src/Views/AppInfoView.vala:293
+#. TRANSLATORS: See the Wikipedia page
+#: src/Views/AppInfoView.vala:311
+msgid "Public Domain"
+msgstr ""
+
+#. TRANSLATORS: Replace the link with the version for your language
+#: src/Views/AppInfoView.vala:314
+msgid "https://en.wikipedia.org/wiki/Public_domain"
+msgstr ""
+
+#. TRANSLATORS: Freedom, not price. See the GNU page.
+#: src/Views/AppInfoView.vala:319
+msgid "Free Software"
+msgstr ""
+
+#. TRANSLATORS: Replace the link with the version for your language
+#: src/Views/AppInfoView.vala:322
+msgid "https://www.gnu.org/philosophy/free-sw"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:326
+msgid "Proprietary"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:329
+#, fuzzy
+msgid "Unknown License"
+msgstr "未知状态"
+
+#: src/Views/AppInfoView.vala:371
 #, c-format
 msgid "Other Apps by %s"
 msgstr "其他%s的应用"
 
-#: src/Views/AppInfoView.vala:327
+#: src/Views/AppInfoView.vala:405
 msgid "Link copied to clipboard"
 msgstr "链接已复制到剪贴板"
 
-#: src/Views/AppInfoView.vala:338
+#: src/Views/AppInfoView.vala:416
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "到应用中心查看%s："
 
-#: src/Views/AppInfoView.vala:345
+#: src/Views/AppInfoView.vala:423
 msgid "Share"
 msgstr "分享"
 
-#: src/Views/AppInfoView.vala:650
+#: src/Views/AppInfoView.vala:724
 msgid "Fund"
-msgstr ""
+msgstr "金额"
 
-#: src/Views/AppInfoView.vala:672
+#: src/Views/AppInfoView.vala:746
 msgid "Fund the development of this app"
-msgstr ""
+msgstr "资助这个应用程序的开发"
 
 #: src/Views/AppListUpdateView.vala:56
 msgid "A restart is required to complete the installation of updates"
@@ -562,7 +615,7 @@ msgid "Restart Now"
 msgstr "现在重启"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:158
+#: src/Views/AppListUpdateView.vala:175
 msgid "Update All"
 msgstr "全部更新"
 
@@ -570,19 +623,19 @@ msgstr "全部更新"
 msgid "Non-Curated Apps"
 msgstr "非策略性应用程序"
 
-#: src/Views/Homepage.vala:66
+#: src/Views/Homepage.vala:67
 msgid "Recently Updated"
 msgstr "最近更新"
 
-#: src/Views/Homepage.vala:82
+#: src/Views/Homepage.vala:83
 msgid "Trending"
 msgstr "趋向"
 
-#: src/Views/Homepage.vala:98
+#: src/Views/Homepage.vala:99
 msgid "Categories"
 msgstr "类别"
 
-#: src/Views/Homepage.vala:296 src/Views/Homepage.vala:307
+#: src/Views/Homepage.vala:299 src/Views/Homepage.vala:310
 #, c-format
 msgid "Search %s"
 msgstr "搜索%s"
@@ -658,7 +711,7 @@ msgstr "科学与工程设计"
 
 #: src/Widgets/CategoryFlowBox.vala:101
 msgid "Media Production"
-msgstr ""
+msgstr "媒体创造"
 
 #: src/Widgets/CategoryFlowBox.vala:108
 msgid "Office"
@@ -682,27 +735,27 @@ msgstr ""
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
-msgstr ""
+msgstr "尚未设置付款信息"
 
-#: src/Widgets/HumbleButton.vala:106
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:301
+#: src/Widgets/HumbleButton.vala:105
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:321
 msgid "Free"
 msgstr "清空"
 
-#: src/Widgets/HumbleButton.vala:108
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:303
+#: src/Widgets/HumbleButton.vala:107
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:323
 #, fuzzy
 msgid "Install"
 msgstr "正在安装"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:142
+#: src/Widgets/HumbleButton.vala:141
 #, c-format
 msgid "$%d.00"
 msgstr "%d.00美元"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:145
+#: src/Widgets/HumbleButton.vala:144
 #, c-format
 msgid "$%d"
 msgstr "%d美元"
@@ -725,64 +778,65 @@ msgid "Facebook"
 msgstr "Facebook"
 
 #: src/Widgets/SharePopover.vala:43
-msgid "Google+"
-msgstr "Google+"
-
-#: src/Widgets/SharePopover.vala:47
 msgid "Twitter"
 msgstr "Twitter"
 
-#: src/Widgets/SharePopover.vala:51
-#, fuzzy
+#: src/Widgets/SharePopover.vala:47
 msgid "Reddit"
-msgstr "reddit"
+msgstr "Reddit社区"
 
-#: src/Widgets/SharePopover.vala:55
+#: src/Widgets/SharePopover.vala:51
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: src/Widgets/SharePopover.vala:59
+#: src/Widgets/SharePopover.vala:55
 msgid "Telegram"
 msgstr "Telegram"
 
-#: src/Widgets/SharePopover.vala:63
+#: src/Widgets/SharePopover.vala:59
 msgid "Copy link"
 msgstr "复制链接"
 
-#: src/Widgets/UpdateHeaderRow.vala:68
+#: src/Widgets/UpdateHeaderRow.vala:64
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "%u更新可用"
 
-#: src/Widgets/UpdateHeaderRow.vala:69
+#: src/Widgets/UpdateHeaderRow.vala:65
 #, c-format
 msgid "Size: %s"
 msgstr "大小：%s"
 
-#: src/Widgets/UpdateHeaderRow.vala:105
+#: src/Widgets/UpdateHeaderRow.vala:101
 msgid "Searching for updates…"
 msgstr "正在搜索更新…"
 
-#: src/Widgets/UpdateHeaderRow.vala:112
+#: src/Widgets/UpdateHeaderRow.vala:108
 msgid "Up to Date"
 msgstr "最新"
 
-#: src/Widgets/UpdateHeaderRow.vala:120
+#: src/Widgets/UpdateHeaderRow.vala:116
 msgid "Drivers"
 msgstr "驱动"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:168
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:172
 msgid "Uninstall"
 msgstr "卸载"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:176
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:180
 msgid "Open"
 msgstr "打开"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:326
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:346
 msgid "Update"
 msgstr "更新"
+
+#~ msgid "Google+"
+#~ msgstr "Google+"
+
+#~ msgid "Details"
+#~ msgstr "详情"
 
 #~ msgctxt "view"
 #~ msgid "Updates"

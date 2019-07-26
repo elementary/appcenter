@@ -1,5 +1,6 @@
 option('blacklist_file', type : 'string', value : 'appcenter.blacklist', description : 'The name of the file listing blacklisted applications')
 option('curated', type : 'boolean', value : true, description : 'Differentiate between apps created for elementary and not')
+option('homepage', type : 'boolean', value : true, description: 'Dynamic homepage using remote server data')
 option('icon', type : 'string', value : 'system-software-install', description : 'The name of the icon')
 option('libunity', type : 'boolean', value : true, description : 'Use libunity to show badges')
 option('name', type : 'string', value : 'AppCenter', description : 'The name of the application')

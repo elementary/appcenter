@@ -22,6 +22,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
     Gtk.Label app_version;
     Gtk.Stack release_stack;
     Gtk.Expander release_expander;
+    Gtk.Label release_expander_label;
     Gtk.Label release_description;
     Gtk.Label release_single_label;
     AppStream.Release? newest = null;
@@ -46,7 +47,6 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         release_description.xalign = 0;
 
         release_expander = new Gtk.Expander ("");
-        release_expander.use_markup = true;
         release_expander.halign = release_expander.valign = Gtk.Align.START;
         release_expander.add (release_description);
         release_expander.visible = true;
@@ -55,6 +55,11 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
             release_expander.expanded = !release_expander.expanded;
             return true;
         });
+
+        release_expander_label = new Gtk.Label ("");
+        release_expander_label.wrap = true;
+        release_expander_label.use_markup = true;
+        release_expander.set_label_widget (release_expander_label);
 
         release_single_label = new Gtk.Label (null);
         release_single_label.selectable = true;
@@ -76,15 +81,26 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
     }
 
     protected override void set_up_package (uint icon_size = 48) {
-        app_version.label = package.get_version ();
+        if (package.get_version () != null) {
+            if (package.has_multiple_versions) {
+                app_version.label = "%s - %s".printf (package.get_version (), package.origin_description);
+            } else {
+                app_version.label = package.get_version ();
+            }
+        }
+
         app_version.ellipsize = Pango.EllipsizeMode.END;
 
         base.set_up_package (icon_size);
     }
 
     protected override void update_state (bool first_update = false) {
-        if (!first_update) {
-            app_version.label = package.get_version ();
+        if (!first_update && package.get_version != null) {
+            if (package.has_multiple_versions) {
+                app_version.label = "%s - %s".printf (package.get_version (), package.origin_description);
+            } else {
+                app_version.label = package.get_version ();
+            }
         }
 
         if (package.state == AppCenterCore.Package.State.UPDATE_AVAILABLE) {
@@ -94,7 +110,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
                     string description = ReleaseRow.format_release_description (newest);
                     string[] lines = description.split ("\n", 2);
                     if (lines.length > 1) {
-                        release_expander.label = lines[0];
+                        release_expander_label.label = lines[0];
                         release_description.set_text (lines[1]);
                         release_stack.visible_child = release_expander;
                         set_widget_visibility (release_stack, true);
@@ -114,19 +130,15 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
     }
 
     protected override void update_progress_status () {
-        base.update_progress_status ();
-        var status = package.change_information.status;
-        switch (status) {
-            case Pk.Status.WAIT:
-            case Pk.Status.FINISHED:
-            case Pk.Status.WAITING_FOR_AUTH:
-                progress_bar.no_show_all = true;
-                progress_bar.hide ();
-                break;
-            default:
-                progress_bar.no_show_all = false;
-                progress_bar.show_all ();
-                break;
+        if (package.change_information.status == AppCenterCore.ChangeInformation.Status.WAITING ||
+            package.change_information.status == AppCenterCore.ChangeInformation.Status.FINISHED) {
+            progress_bar.no_show_all = true;
+            progress_bar.hide ();
+        } else {
+            progress_bar.no_show_all = false;
+            progress_bar.show_all ();
         }
+
+        base.update_progress_status ();
     }
 }

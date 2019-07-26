@@ -25,29 +25,38 @@ public abstract class AppCenter.View : Gtk.Stack {
 
     construct {
         get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
-        transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
         expand = true;
     }
 
-    public virtual void show_package (AppCenterCore.Package package) {
+    public virtual void show_package (
+        AppCenterCore.Package package,
+        bool remember_history = true,
+        Gtk.StackTransitionType transition = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT
+    ) {
+        transition_type = transition;
+
         previous_package = null;
 
-        var pk_child = get_child_by_name (package.component.id) as Views.AppInfoView;
+        var package_hash = package.component.get_origin () + "-" + package.component.id;
+
+        var pk_child = get_child_by_name (package_hash) as Views.AppInfoView;
         if (pk_child != null) {
-            pk_child.reload_css ();
+            pk_child.view_entered ();
             set_visible_child (pk_child);
             return;
         }
 
         var app_info_view = new Views.AppInfoView (package);
-        app_info_view.show_other_package.connect ((_package) => {
-            show_package (_package);
-            previous_package = package;
-            subview_entered (package.get_name (), false, "", null);
+        app_info_view.show_other_package.connect ((_package, remember_history, transition) => {
+            show_package (_package, remember_history, transition);
+            if (remember_history) {
+                previous_package = package;
+                subview_entered (package.get_name (), false, "", null);
+            }
         });
 
         app_info_view.show_all ();
-        add_named (app_info_view, package.component.id);
+        add_named (app_info_view, package_hash);
         set_visible_child (app_info_view);
         var cache = AppCenterCore.Client.get_default ().screenshot_cache;
         Timeout.add (transition_duration, () => {

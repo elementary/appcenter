@@ -20,7 +20,11 @@
 
 namespace AppCenter.Views {
     public class AppInfoView : AppCenter.AbstractAppContainer {
-        public signal void show_other_package (AppCenterCore.Package package);
+        public signal void show_other_package (
+            AppCenterCore.Package package,
+            bool remember_history = true,
+            Gtk.StackTransitionType transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT
+        );
 
         static Gtk.CssProvider? previous_css_provider = null;
 
@@ -30,21 +34,22 @@ namespace AppCenter.Views {
         private Gtk.Stack app_screenshots;
         private Gtk.Label app_version;
         private Gtk.Label app_download_size_label;
-        private Cancellable app_download_size_cancellable;
         private Gtk.ListBox extension_box;
         private Gtk.Grid release_grid;
         private Widgets.ReleaseListBox release_list_box;
         private Gtk.Stack screenshot_stack;
         private Gtk.TextView app_description;
         private Widgets.Switcher screenshot_switcher;
+        private Gtk.Stack app_download_stack;
+        private Gtk.ListStore version_liststore;
+        private Gtk.ComboBox version_combo;
 
         public AppInfoView (AppCenterCore.Package package) {
             Object (package: package);
         }
 
         construct {
-            image.margin_top = 12;
-            image.margin_start = 6;
+            inner_image.margin_top = 12;
             inner_image.pixel_size = 128;
 
             action_button.suggested_action = true;
@@ -85,12 +90,10 @@ namespace AppCenter.Views {
                 screenshot_stack.add (app_screenshot_not_found);
             }
 
-            package_name = new Gtk.Label (null);
-            package_name.margin_top = 12;
             package_name.selectable = true;
             package_name.xalign = 0;
             package_name.get_style_context ().add_class (Granite.STYLE_CLASS_H1_LABEL);
-            package_name.valign = Gtk.Align.CENTER;
+            package_name.valign = Gtk.Align.END;
 
             app_version = new Gtk.Label (null);
             app_version.margin_top = 12;
@@ -100,19 +103,19 @@ namespace AppCenter.Views {
             app_version.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
             app_version.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
-            package_author = new Gtk.Label (null);
             package_author.selectable = true;
             package_author.xalign = 0;
             package_author.valign = Gtk.Align.START;
             package_author.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-            package_author.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
+            package_author.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
-            package_summary = new Gtk.Label (package.get_summary ());
+            package_summary.label = package.get_summary ();
             package_summary.selectable = true;
             package_summary.xalign = 0;
             package_summary.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
             package_summary.wrap = true;
             package_summary.wrap_mode = Pango.WrapMode.WORD_CHAR;
+            package_summary.valign = Gtk.Align.CENTER;
 
             app_description = new Gtk.TextView ();
             app_description.expand = true;
@@ -162,6 +165,7 @@ namespace AppCenter.Views {
             var content_grid = new Gtk.Grid ();
             content_grid.width_request = 800;
             content_grid.halign = Gtk.Align.CENTER;
+            content_grid.hexpand = true;
             content_grid.margin = 48;
             content_grid.row_spacing = 24;
             content_grid.orientation = Gtk.Orientation.VERTICAL;
@@ -206,45 +210,80 @@ namespace AppCenter.Views {
                 load_extensions.begin ();
             }
 
-            var header_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
-            header_box.get_style_context ().add_class ("banner");
-            header_box.hexpand = true;
-
             var header_grid = new Gtk.Grid ();
             header_grid.column_spacing = 12;
+            header_grid.row_spacing = 6;
+            header_grid.row_homogeneous = false;
             header_grid.halign = Gtk.Align.CENTER;
-            header_grid.margin = 12;
-            header_grid.width_request = 800;
-            header_grid.attach (image, 0, 0, 1, 2);
-            header_grid.attach (package_name, 1, 0, 1, 1);
+            header_grid.margin =  content_grid.margin / 2;
+            /* Must wide enought to fit long package name and progress bar */
+            header_grid.width_request = content_grid.width_request + 2 * (content_grid.margin - header_grid.margin);
+            header_grid.hexpand = true;
+            header_grid.attach (image, 0, 0, 1, 3);
+            header_grid.attach (package_name, 1, 0);
+
+            version_liststore = new Gtk.ListStore (2, typeof (AppCenterCore.Package), typeof (string));
+            version_combo = new Gtk.ComboBox.with_model (version_liststore);
+            version_combo.no_show_all = true;
+            version_combo.visible = false;
+            version_combo.halign = Gtk.Align.START;
+            version_combo.valign = Gtk.Align.START;
+            version_combo.changed.connect (() => {
+                Gtk.TreeIter iter;
+                AppCenterCore.Package selected_version;
+                version_combo.get_active_iter (out iter);
+                version_liststore.@get (iter, 0, out selected_version);
+                if (selected_version != null && selected_version != package) {
+                    show_other_package (selected_version, false, Gtk.StackTransitionType.CROSSFADE);
+                }
+            });
+
+            var renderer = new Gtk.CellRendererText ();
+            version_combo.pack_start (renderer, true);
+            version_combo.add_attribute (renderer, "text", 1);
+
             if (!package.is_os_updates) {
-                header_grid.attach (package_author, 1, 1, 3, 1);
+                header_grid.attach (package_author, 1, 1, 2);
+                header_grid.attach (version_combo, 1, 2, 2);
                 header_grid.attach (app_version, 2, 0, 1, 1);
             } else {
                 package_summary.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-                package_summary.valign = Gtk.Align.START;
-                header_grid.attach (package_summary, 1, 1, 3, 1);
+                header_grid.attach (package_summary, 1, 2, 2, 1);
             }
+
+            action_stack.valign = Gtk.Align.END;
+            action_stack.halign = Gtk.Align.END;
+            action_stack.hexpand = true;
+
+            /* This is required to stop any button movement when switch from button_grid to the
+             * progress grid */
+            progress_grid.margin_end = 6;
+            progress_grid.margin_top = 12;
+            button_grid.margin_top = progress_grid.margin_top;
+
+            header_grid.attach (action_stack, 3, 0, 1, 1);
 
             if (!package.is_local) {
-                var download_button_grid = new Gtk.Grid ();
-                download_button_grid.orientation = Gtk.Orientation.VERTICAL;
-                download_button_grid.valign = Gtk.Align.END;
-                download_button_grid.halign = Gtk.Align.END;
-                download_button_grid.row_spacing = 3;
-
-                app_download_size_cancellable = new Cancellable ();
-
                 app_download_size_label = new Gtk.Label (null);
-                app_download_size_label.visible = false;
                 app_download_size_label.halign = Gtk.Align.END;
+                app_download_size_label.valign = Gtk.Align.START;
+                app_download_size_label.xalign = 1;
+                app_download_size_label.margin_end = open_button.margin_end;
+                action_button_group.add_widget (app_download_size_label);
                 app_download_size_label.selectable = true;
-
-                download_button_grid.add (action_stack);
-                download_button_grid.add (app_download_size_label);
-                header_grid.attach (download_button_grid, 3, 0, 1, 1);
+                /* We hide the label with a stack in order to stop the size requisition changing */
+                app_download_stack = new Gtk.Stack ();
+                app_download_stack.margin_end = 6;
+                app_download_stack.add_named (app_download_size_label, "CHILD");
+                app_download_stack.add_named (new Gtk.EventBox (), "NONE");
+                app_download_stack.hhomogeneous = false;
+                app_download_stack.set_visible_child_name ("NONE");
+                header_grid.attach (app_download_stack, 3, 1, 1, 1);
             }
 
+            var header_box = new Gtk.Grid ();
+            header_box.get_style_context ().add_class ("banner");
+            header_box.hexpand = true;
             header_box.add (header_grid);
 
             var footer_grid = new Gtk.Grid ();
@@ -254,30 +293,69 @@ namespace AppCenter.Views {
 
             var project_license = package.component.project_license;
             if (project_license != null) {
-                string license_url = "https://choosealicense.com/licenses/";
-                switch (project_license) {
-                    case "Apache-2.0":
-                        license_url = license_url + "apache-2.0";
-                        break;
-                    case "GPL-2":
-                    case "GPL-2.0":
-                    case "GPL-2.0+":
-                        license_url = license_url + "gpl-2.0";
-                        break;
-                    case "GPL-3":
-                    case "GPL-3.0":
-                    case "GPL-3.0+":
-                        license_url = license_url + "gpl-3.0";
-                        break;
-                    case "LGPL-2.1":
-                    case "LGPL-2.1+":
-                        license_url = license_url + "lgpl-2.1";
-                        break;
-                    case "MIT":
-                        license_url = license_url + "mit";
-                        break;
+                string? license_copy = null;
+                string? license_url = null;
+
+                // NOTE: Ideally this would be handled in AppStream: https://github.com/ximion/appstream/issues/107
+                if (project_license.has_prefix ("LicenseRef")) {
+                    // i.e. `LicenseRef-proprietary=https://example.com`
+                    string[] split_license = project_license.split_set ("=", 2);
+                    if (split_license[1] != null) {
+                        license_url = split_license[1];
+                    }
+
+                    string license_type = split_license[0].split_set ("-", 2)[1].down ();
+                    switch (license_type) {
+                        case "public-domain":
+                            // TRANSLATORS: See the Wikipedia page
+                            license_copy = _("Public Domain");
+                            if (license_url == null) {
+                                // TRANSLATORS: Replace the link with the version for your language
+                                license_url = _("https://en.wikipedia.org/wiki/Public_domain");
+                            }
+                            break;
+                        case "free":
+                            // TRANSLATORS: Freedom, not price. See the GNU page.
+                            license_copy = _("Free Software");
+                            if (license_url == null) {
+                                // TRANSLATORS: Replace the link with the version for your language
+                                license_url = _("https://www.gnu.org/philosophy/free-sw");
+                            }
+                            break;
+                        case "proprietary":
+                            license_copy = _("Proprietary");
+                            break;
+                        default:
+                            license_copy = _("Unknown License");
+                    }
+                } else {
+                    license_copy = project_license;
+                    license_url = "https://choosealicense.com/licenses/";
+
+                    switch (project_license) {
+                        case "Apache-2.0":
+                            license_url = license_url + "apache-2.0";
+                            break;
+                        case "GPL-2":
+                        case "GPL-2.0":
+                        case "GPL-2.0+":
+                            license_url = license_url + "gpl-2.0";
+                            break;
+                        case "GPL-3":
+                        case "GPL-3.0":
+                        case "GPL-3.0+":
+                            license_url = license_url + "gpl-3.0";
+                            break;
+                        case "LGPL-2.1":
+                        case "LGPL-2.1+":
+                            license_url = license_url + "lgpl-2.1";
+                            break;
+                        case "MIT":
+                            license_url = license_url + "mit";
+                            break;
+                    }
                 }
-                var license_button = new UrlButton (_(project_license), license_url, "text-x-copying-symbolic");
+                var license_button = new UrlButton (_(license_copy), license_url, "text-x-copying-symbolic");
                 footer_grid.add (license_button);
             }
 
@@ -365,18 +443,14 @@ namespace AppCenter.Views {
                 links_grid.add (share_button);
             }
 #endif
-            reload_css ();
+            view_entered ();
             set_up_package (128);
-            package.get_description.begin ((obj, res) => {
-                parse_description (package.get_description.end (res));
-            });
+            parse_description (package.get_description ());
 
             if (package.is_os_updates) {
                 package.notify["state"].connect (() => {
                     Idle.add (() => {
-                        package.get_description.begin ((obj, res) => {
-                            parse_description (package.get_description.end (res));
-                        });
+                        parse_description (package.get_description());
                         return false;
                     });
                 });
@@ -388,7 +462,8 @@ namespace AppCenter.Views {
                 app_version.label = package.get_version ();
             }
 
-            app_download_size_label.visible = package.state == AppCenterCore.Package.State.NOT_INSTALLED;
+            app_download_stack.set_visible_child_name (package.state == AppCenterCore.Package.State.NOT_INSTALLED ?
+                                                       "CHILD" : "NONE");
             app_download_size_label.label = "";
             if (package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
                 get_app_download_size.begin ();
@@ -399,7 +474,7 @@ namespace AppCenter.Views {
 
         private async void load_extensions () {
             package.component.get_addons ().@foreach ((extension) => {
-                var row = new Widgets.PackageRow.list (new AppCenterCore.Package (extension), null, null, false);
+                var row = new Widgets.PackageRow.list (new AppCenterCore.Package (package.backend, extension), null, null, false);
                 if (extension_box != null) {
                     extension_box.add (row);
                 }
@@ -411,53 +486,24 @@ namespace AppCenter.Views {
                 return;
             }
 
-            SourceFunc callback = get_app_download_size.callback;
-            uint64 size = 0;
+            var size = yield package.get_download_size_including_deps ();
 
-            // This thread will set the value of `size` in the background.
-            ThreadFunc<bool> run = () => {
-                var client = AppCenterCore.Client.get_default ();
-                var deps = new Gee.ArrayList<Pk.Package> ();
-                client.get_needed_deps_for_package.begin (package, app_download_size_cancellable, (obj, res) => {
-                    deps = client.get_needed_deps_for_package.end (res);
-                });
-
-                string[] package_ids = {};
-
-                foreach (var package in deps) {
-                    package_ids += package.package_id;
-                }
-
-                package_ids += null;
-
-                if (package_ids.length > 1) {
-                    var pk_client = AppCenterCore.Client.get_pk_client ();
-                    try {
-                        var details = pk_client.get_details (package_ids, app_download_size_cancellable, (p, t) => {});
-                        details.get_details_array ().foreach ((details) => {
-                            size += details.size;
-                        });
-                    } catch (Error e) {
-                        warning ("Error fetching details for dependencies, download size may be inaccurate: %s", e.message);
-                    }
-                }
-
-                var pk_package = package.find_package ();
-                if (pk_package != null) {
-                    size += pk_package.size;
-                }
-
-                Idle.add ((owned)callback);
-                return true;
-            };
-            new Thread<bool> ("download size", run);
-
-            yield;
             app_download_size_label.label = GLib.format_size (size);
-            app_download_size_label.visible = true;
+            app_download_stack.set_visible_child_name ("CHILD");
         }
 
-        public void reload_css () {
+        public void view_entered () {
+            Gtk.TreeIter iter;
+            AppCenterCore.Package version;
+            if (version_liststore.get_iter_first (out iter)) {
+                do {
+                    version_liststore.@get (iter, 0, out version);
+                    if (version == package) {
+                        version_combo.set_active_iter (iter);
+                    }
+                } while (version_liststore.iter_next (ref iter));
+            }
+
             var provider = new Gtk.CssProvider ();
             try {
                 string color_primary;
@@ -495,6 +541,22 @@ namespace AppCenter.Views {
             if (cache == null) {
                 warning ("screenshots cannot be loaded, because the cache could not be created.\n");
                 return;
+            }
+
+            Gtk.TreeIter iter;
+            uint count = 0;
+            foreach (var version in package.versions) {
+                version_liststore.append (out iter);
+                version_liststore.set (iter, 0, version, 1, version.origin_description);
+                if (version == package) {
+                    version_combo.set_active_iter (iter);
+                }
+
+                count++;
+                if (count > 1) {
+                    version_combo.no_show_all = false;
+                    version_combo.show_all ();
+                }
             }
 
             new Thread<void*> ("content-loading", () => {
@@ -601,17 +663,21 @@ namespace AppCenter.Views {
         private void parse_description (string? description) {
             if (description != null) {
                 try {
-                    app_description.buffer.text = AppStream.markup_convert_simple (description);
+                    string[] lines = description.split ("\n");
+                    string stripped_description = lines[0].strip ();
+                    for (int i = 1; i < lines.length; i++) {
+                        stripped_description += " " + lines[i].strip ();
+                    }
+                    app_description.buffer.text = AppStream.markup_convert_simple (stripped_description);
                 } catch (Error e) {
                     critical (e.message);
                 }
             }
         }
 
-        class UrlButton : Gtk.Button {
-            public UrlButton (string label, string uri, string icon_name) {
+        class UrlButton : Gtk.Grid {
+            public UrlButton (string label, string? uri, string icon_name) {
                 get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-                get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
                 tooltip_text = uri;
 
                 var icon = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.SMALL_TOOLBAR);
@@ -625,15 +691,23 @@ namespace AppCenter.Views {
                 grid.add (icon);
                 grid.add (title);
 
-                add (grid);
+                if (uri != null) {
+                    var button = new Gtk.Button ();
+                    button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
-                clicked.connect (() => {
-                    try {
-                        AppInfo.launch_default_for_uri (uri, null);
-                    } catch (Error e) {
-                        warning ("%s\n", e.message);
-                    }
-                });
+                    button.add (grid);
+                    add (button);
+
+                    button.clicked.connect (() => {
+                        try {
+                            AppInfo.launch_default_for_uri (uri, null);
+                        } catch (Error e) {
+                            warning ("%s\n", e.message);
+                        }
+                    });
+                } else {
+                    add (grid);
+                }
             }
         }
 
@@ -679,3 +753,4 @@ namespace AppCenter.Views {
         }
     }
 }
+

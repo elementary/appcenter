@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-18 05:17-0500\n"
+"POT-Creation-Date: 2019-06-26 22:42+0200\n"
 "PO-Revision-Date: 2018-05-19 14:49+0000\n"
 "Last-Translator: Wesley Huang <wezmag@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://weblate.elementary.io/projects/"
@@ -33,7 +33,153 @@ msgstr ""
 "獨立和開源開發者的軟體商店。可以瀏覽各分類來搜尋和探索新軟體。AppCenter 也能"
 "用來將系統更新成含有新功能和新修正的最嶄新、最強大的版本。"
 
-#: data/io.elementary.appcenter.appdata.xml.in:201
+#: data/io.elementary.appcenter.appdata.xml.in:21
+msgid "Meson build system fixes"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:22
+msgid "Improve window state restoration"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:23
+msgid "Prevent action buttons from jumping around"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:24
+msgid "Remove reset paid apps gsettings key"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:25
+msgid "Memory management refinements"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:26
+msgid ""
+"Add conditional compilation for disabling dynamic remote homepage content"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:27
+#: data/io.elementary.appcenter.appdata.xml.in:39
+#: data/io.elementary.appcenter.appdata.xml.in:46
+#: data/io.elementary.appcenter.appdata.xml.in:59
+#: data/io.elementary.appcenter.appdata.xml.in:70
+#: data/io.elementary.appcenter.appdata.xml.in:79
+#: data/io.elementary.appcenter.appdata.xml.in:88
+#: data/io.elementary.appcenter.appdata.xml.in:97
+#: data/io.elementary.appcenter.appdata.xml.in:106
+#: data/io.elementary.appcenter.appdata.xml.in:115
+#: data/io.elementary.appcenter.appdata.xml.in:124
+#: data/io.elementary.appcenter.appdata.xml.in:133
+#: data/io.elementary.appcenter.appdata.xml.in:142
+#: data/io.elementary.appcenter.appdata.xml.in:151
+#: data/io.elementary.appcenter.appdata.xml.in:160
+#: data/io.elementary.appcenter.appdata.xml.in:170
+#: data/io.elementary.appcenter.appdata.xml.in:180
+msgid "New translations"
+msgstr "新增翻譯"
+
+#: data/io.elementary.appcenter.appdata.xml.in:34
+msgid "New categories: Communication, Finance, Media Production"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:35
+msgid "Add Math to Science category"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:36
+msgid "Relax email address validator"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:37
+msgid "Present update availability more accurately"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:38
+msgid "Category graphics revamped"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:53
+#: data/io.elementary.appcenter.appdata.xml.in:65
+#: data/io.elementary.appcenter.appdata.xml.in:76
+#: data/io.elementary.appcenter.appdata.xml.in:85
+#: data/io.elementary.appcenter.appdata.xml.in:94
+#: data/io.elementary.appcenter.appdata.xml.in:103
+#: data/io.elementary.appcenter.appdata.xml.in:112
+#: data/io.elementary.appcenter.appdata.xml.in:121
+#: data/io.elementary.appcenter.appdata.xml.in:130
+#: data/io.elementary.appcenter.appdata.xml.in:139
+#: data/io.elementary.appcenter.appdata.xml.in:148
+#: data/io.elementary.appcenter.appdata.xml.in:157
+#, fuzzy
+msgid "Bug fixes and improve performance."
+msgstr "修正臭蟲與改善效能。"
+
+#: data/io.elementary.appcenter.appdata.xml.in:55
+msgid "Improve transaction success rate"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:56
+msgid "Add Publishing to Office category"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:57
+msgid "Improve descriptions of OS Updates"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:58
+#: data/io.elementary.appcenter.appdata.xml.in:69
+#: data/io.elementary.appcenter.appdata.xml.in:78
+#: data/io.elementary.appcenter.appdata.xml.in:87
+#: data/io.elementary.appcenter.appdata.xml.in:96
+#: data/io.elementary.appcenter.appdata.xml.in:105
+#: data/io.elementary.appcenter.appdata.xml.in:114
+#: data/io.elementary.appcenter.appdata.xml.in:123
+#: data/io.elementary.appcenter.appdata.xml.in:132
+#: data/io.elementary.appcenter.appdata.xml.in:141
+#: data/io.elementary.appcenter.appdata.xml.in:150
+msgid "Various bug fixes and performance improvements"
+msgstr "有多項臭蟲修正和效能改善"
+
+#: data/io.elementary.appcenter.appdata.xml.in:67
+msgid "Give details for Operating System Updates"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:68
+msgid "Support mouse button navigation"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:159
+msgid "Fix crash caused by entries with missing packages"
+msgstr "修正遺失軟體包造成的崩潰"
+
+#: data/io.elementary.appcenter.appdata.xml.in:166
+msgid "Add capability to search by category and apply minor bug fixes."
+msgstr "加入依據分類搜尋的能力，並修正一些小臭蟲。"
+
+#: data/io.elementary.appcenter.appdata.xml.in:168
+msgid "It is now possible to search apps inside a category"
+msgstr "目前可以在分類下搜尋 App"
+
+#: data/io.elementary.appcenter.appdata.xml.in:169
+msgid "Prevent multiple authentication dialogs when resuming from suspend"
+msgstr "防止電腦從暫停狀態回復時開啟多次身份核對對話盒"
+
+#: data/io.elementary.appcenter.appdata.xml.in:176
+#, fuzzy
+msgid ""
+"Search performance has beeen improved, the category name is now shown on the "
+"headbar and minor bugs have been fixed."
+msgstr "搜尋效能已有改善，分類名稱現在顯示在標題列上，還有修正一些小臭蟲。"
+
+#: data/io.elementary.appcenter.appdata.xml.in:178
+msgid "Fix Steam installation"
+msgstr "修正 Steam 安裝"
+
+#: data/io.elementary.appcenter.appdata.xml.in:179
+msgid "Make search asynchronous"
+msgstr "讓搜尋非同步"
+
+#: data/io.elementary.appcenter.appdata.xml.in:234
 msgid "elementary LLC."
 msgstr ""
 
@@ -57,38 +203,6 @@ msgstr "檢查更新"
 
 #~ msgid "About AppCenter"
 #~ msgstr "關於 AppCenter"
-
-#~ msgid "Bug fixes and improve perfomance."
-#~ msgstr "修正臭蟲與改善效能。"
-
-#~ msgid "Various bug fixes and performance improvements"
-#~ msgstr "有多項臭蟲修正和效能改善"
-
-#~ msgid "New translations"
-#~ msgstr "新增翻譯"
-
-#~ msgid "Fix crash caused by entries with missing packages"
-#~ msgstr "修正遺失軟體包造成的崩潰"
-
-#~ msgid "Add capability to search by category and apply minor bug fixes."
-#~ msgstr "加入依據分類搜尋的能力，並修正一些小臭蟲。"
-
-#~ msgid "It is now possible to search apps inside a category"
-#~ msgstr "目前可以在分類下搜尋 App"
-
-#~ msgid "Prevent multiple authentication dialogs when resuming from suspend"
-#~ msgstr "防止電腦從暫停狀態回復時開啟多次身份核對對話盒"
-
-#~ msgid ""
-#~ "Search perfomance has beeen improved, the category name is now shown on "
-#~ "the headbar and minor bugs have been fixed."
-#~ msgstr "搜尋效能已有改善，分類名稱現在顯示在標題列上，還有修正一些小臭蟲。"
-
-#~ msgid "Fix Steam installation"
-#~ msgstr "修正 Steam 安裝"
-
-#~ msgid "Make search asynchronous"
-#~ msgstr "讓搜尋非同步"
 
 #, fuzzy
 #~ msgid "App Center"

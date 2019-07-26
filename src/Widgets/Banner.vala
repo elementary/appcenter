@@ -61,7 +61,7 @@ namespace AppCenter.Widgets {
 
                 string description;
                 if (has_package) {
-                    description = package.get_description_sync ();
+                    description = package.get_description ();
                     int close_paragraph_index = description.index_of ("</p>", 0);
                     description = description.slice (3, close_paragraph_index);
                 } else {
