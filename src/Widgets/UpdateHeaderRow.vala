@@ -56,6 +56,7 @@ namespace AppCenter.Widgets {
 
             size_label = new SizeLabel ();
             size_label.halign = Gtk.Align.END;
+            size_label.valign = Gtk.Align.CENTER;
 
             add (updates_label);
             add (size_label);
