@@ -157,10 +157,15 @@ namespace AppCenter.Views {
                 uint update_numbers = 0U;
                 uint nag_numbers = 0U;
                 uint64 update_real_size = 0ULL;
+                bool using_flatpak = false;
                 foreach (var package in get_packages ()) {
                     if (package.update_available || package.is_updating) {
                         if (package.should_nag_update) {
                             nag_numbers++;
+                        }
+
+                        if (!using_flatpak && package.is_flatpak) {
+                            using_flatpak = true;
                         }
 
                         update_numbers++;
@@ -168,7 +173,7 @@ namespace AppCenter.Views {
                     }
                 }
 
-                header.update (update_numbers, update_real_size, updating_cache);
+                header.update (update_numbers, update_real_size, updating_cache, using_flatpak);
 
                 // Unfortunately the update all button needs to be recreated everytime the header needs to be updated
                 if (!updating_cache && update_numbers > 0) {
@@ -203,7 +208,7 @@ namespace AppCenter.Views {
                 }
 
                 var header = new Widgets.UpdatedGrid ();
-                header.update (0, 0, updating_cache);
+                header.update (0, 0, updating_cache, false);
                 header.show_all ();
                 row.set_header (header);
             }

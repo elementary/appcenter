@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:42+0200\n"
+"POT-Creation-Date: 2019-07-26 08:22-0700\n"
 "PO-Revision-Date: 2019-07-16 09:11+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:316
+#: src/Application.vala:38 src/Core/Package.vala:323
 msgid "AppCenter"
 msgstr "Centre d'aplicacions"
 
@@ -234,29 +234,29 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "Hi ha %u actualització disponible per al sistema"
 msgstr[1] "Hi ha %u actualitzacions disponibles per al sistema"
 
-#: src/Core/Package.vala:287
+#: src/Core/Package.vala:294
 #, c-format
 msgid "%s Developers"
 msgstr "%s, els desenvolupadors"
 
-#: src/Core/Package.vala:318
+#: src/Core/Package.vala:325
 msgid "elementary Updates"
 msgstr "Actualitzacions de l'elementary"
 
-#: src/Core/Package.vala:320
+#: src/Core/Package.vala:327
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (sense cura)"
 
-#: src/Core/Package.vala:323
+#: src/Core/Package.vala:330
 #, c-format
 msgid "%s (non-curated)"
 msgstr "%s (sense cura)"
 
-#: src/Core/Package.vala:325
+#: src/Core/Package.vala:332
 msgid "Ubuntu Drivers"
 msgstr "Controladors de l'Ubuntu"
 
-#: src/Core/Package.vala:328
+#: src/Core/Package.vala:335
 msgid "Unknown Origin (non-curated)"
 msgstr "D'origen desconegut (sense cura)"
 
@@ -348,7 +348,7 @@ msgstr "Reinicia'l"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:205
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:206
 msgid "Cancel"
 msgstr "Cancel·la"
 
@@ -558,85 +558,85 @@ msgstr "Ignora-ho"
 msgid "Try Again"
 msgstr "Torna-ho a intentar"
 
-#: src/Views/AppInfoView.vala:81
+#: src/Views/AppInfoView.vala:80
 msgid "Screenshot Not Available"
 msgstr "Captura no disponible"
 
-#: src/Views/AppInfoView.vala:136
+#: src/Views/AppInfoView.vala:135
 msgid "Homepage"
 msgstr "Pàgina principal"
 
-#: src/Views/AppInfoView.vala:142
+#: src/Views/AppInfoView.vala:141
 msgid "Suggest Translations"
 msgstr "Suggeriu traduccions"
 
-#: src/Views/AppInfoView.vala:148
+#: src/Views/AppInfoView.vala:147
 msgid "Report a Problem"
 msgstr "Informeu d'un problema"
 
-#: src/Views/AppInfoView.vala:154
+#: src/Views/AppInfoView.vala:153
 msgid "Help"
 msgstr "Ajuda"
 
-#: src/Views/AppInfoView.vala:184
+#: src/Views/AppInfoView.vala:183
 msgid "What's New:"
 msgstr "Què hi ha de nou:"
 
-#: src/Views/AppInfoView.vala:203
+#: src/Views/AppInfoView.vala:202
 msgid "Extensions:"
 msgstr "Extensions:"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:311
+#: src/Views/AppInfoView.vala:303
 msgid "Public Domain"
 msgstr "Domini públic"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:314
+#: src/Views/AppInfoView.vala:306
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://ca.wikipedia.org/wiki/Domini_p%C3%BAblic"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:319
+#: src/Views/AppInfoView.vala:311
 msgid "Free Software"
 msgstr "Programari lliure"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:322
+#: src/Views/AppInfoView.vala:314
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw.ca.html"
 
-#: src/Views/AppInfoView.vala:326
+#: src/Views/AppInfoView.vala:318
 msgid "Proprietary"
 msgstr "De propietat"
 
-#: src/Views/AppInfoView.vala:329
+#: src/Views/AppInfoView.vala:321
 msgid "Unknown License"
 msgstr "Llicència desconeguda"
 
-#: src/Views/AppInfoView.vala:371
+#: src/Views/AppInfoView.vala:363
 #, c-format
 msgid "Other Apps by %s"
 msgstr "Altres aplicacions de %s"
 
-#: src/Views/AppInfoView.vala:405
+#: src/Views/AppInfoView.vala:397
 msgid "Link copied to clipboard"
 msgstr "Enllaç copiat al porta-retalls"
 
-#: src/Views/AppInfoView.vala:416
+#: src/Views/AppInfoView.vala:408
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "Obtingueu %s al Centre d'aplicacions:"
 
-#: src/Views/AppInfoView.vala:423
+#: src/Views/AppInfoView.vala:415
 msgid "Share"
 msgstr "Comparteix"
 
-#: src/Views/AppInfoView.vala:724
+#: src/Views/AppInfoView.vala:712
 msgid "Fund"
 msgstr "Finançament"
 
-#: src/Views/AppInfoView.vala:746
+#: src/Views/AppInfoView.vala:734
 msgid "Fund the development of this app"
 msgstr "Financeu el desenvolupament d'aquesta aplicació"
 
@@ -649,7 +649,7 @@ msgid "Restart Now"
 msgstr "Reincia ara"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:175
+#: src/Views/AppListUpdateView.vala:180
 msgid "Update All"
 msgstr "Actualitza-ho tot"
 
@@ -770,12 +770,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "Requereix pagaments, que no estan habilitats."
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:321
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:322
 msgid "Free"
 msgstr "Lliure"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:323
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:324
 msgid "Install"
 msgstr "Instal·la"
 
@@ -828,27 +828,35 @@ msgstr "Telegram"
 msgid "Copy link"
 msgstr "Copia l'enllaç"
 
-#: src/Widgets/UpdateHeaderRow.vala:64
+#: src/Widgets/SizeLabel.vala:35
+msgid "Actual Download Size Likely to Be Smaller"
+msgstr ""
+
+#: src/Widgets/SizeLabel.vala:36
+msgid "Only the parts of apps and updates that are needed will be downloaded."
+msgstr ""
+
+#: src/Widgets/SizeLabel.vala:64
+#, fuzzy, c-format
+msgid "Up to %s"
+msgstr "Al dia"
+
+#: src/Widgets/UpdateHeaderRow.vala:68
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "%u actualització disponible"
 msgstr[1] "%u actualitzacions disponibles"
 
-#: src/Widgets/UpdateHeaderRow.vala:65
-#, c-format
-msgid "Size: %s"
-msgstr "Mida: %s"
-
-#: src/Widgets/UpdateHeaderRow.vala:101
+#: src/Widgets/UpdateHeaderRow.vala:106
 msgid "Searching for updates…"
 msgstr "Se cerquen actualitzacions…"
 
-#: src/Widgets/UpdateHeaderRow.vala:108
+#: src/Widgets/UpdateHeaderRow.vala:113
 msgid "Up to Date"
 msgstr "Al dia"
 
-#: src/Widgets/UpdateHeaderRow.vala:116
+#: src/Widgets/UpdateHeaderRow.vala:121
 msgid "Drivers"
 msgstr "Controladors"
 
@@ -856,13 +864,16 @@ msgstr "Controladors"
 msgid "Uninstall"
 msgstr "Desinstal·la"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:180
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:182
 msgid "Open"
 msgstr "Obre"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:346
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:347
 msgid "Update"
 msgstr "Actualitza"
+
+#~ msgid "Size: %s"
+#~ msgstr "Mida: %s"
 
 #~ msgid "Google+"
 #~ msgstr "Google+"

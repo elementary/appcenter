@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:42+0200\n"
+"POT-Creation-Date: 2019-07-26 08:22-0700\n"
 "PO-Revision-Date: 2019-02-09 00:05+0000\n"
 "Last-Translator: imgradeone Yan <imgradeone@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.elementary.io/projects/"
@@ -21,7 +21,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:316
+#: src/Application.vala:38 src/Core/Package.vala:323
 msgid "AppCenter"
 msgstr "应用中心"
 
@@ -234,31 +234,31 @@ msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "您的系统有 %u 个可用更新"
 
-#: src/Core/Package.vala:287
+#: src/Core/Package.vala:294
 #, c-format
 msgid "%s Developers"
 msgstr "%s 开发者"
 
-#: src/Core/Package.vala:318
+#: src/Core/Package.vala:325
 #, fuzzy
 msgid "elementary Updates"
 msgstr "最近更新"
 
-#: src/Core/Package.vala:320
+#: src/Core/Package.vala:327
 msgid "Ubuntu (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:323
+#: src/Core/Package.vala:330
 #, fuzzy, c-format
 msgid "%s (non-curated)"
 msgstr "%s （本地）"
 
-#: src/Core/Package.vala:325
+#: src/Core/Package.vala:332
 #, fuzzy
 msgid "Ubuntu Drivers"
 msgstr "驱动程序"
 
-#: src/Core/Package.vala:328
+#: src/Core/Package.vala:335
 msgid "Unknown Origin (non-curated)"
 msgstr ""
 
@@ -347,7 +347,7 @@ msgstr "重启"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:205
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:206
 msgid "Cancel"
 msgstr "取消"
 
@@ -520,87 +520,87 @@ msgstr "忽略"
 msgid "Try Again"
 msgstr "重试"
 
-#: src/Views/AppInfoView.vala:81
+#: src/Views/AppInfoView.vala:80
 msgid "Screenshot Not Available"
 msgstr "截图不可用"
 
-#: src/Views/AppInfoView.vala:136
+#: src/Views/AppInfoView.vala:135
 msgid "Homepage"
 msgstr "首页"
 
-#: src/Views/AppInfoView.vala:142
+#: src/Views/AppInfoView.vala:141
 msgid "Suggest Translations"
 msgstr "助力翻译"
 
-#: src/Views/AppInfoView.vala:148
+#: src/Views/AppInfoView.vala:147
 msgid "Report a Problem"
 msgstr "报告问题"
 
-#: src/Views/AppInfoView.vala:154
+#: src/Views/AppInfoView.vala:153
 msgid "Help"
 msgstr "帮助"
 
-#: src/Views/AppInfoView.vala:184
+#: src/Views/AppInfoView.vala:183
 msgid "What's New:"
 msgstr "新特性："
 
-#: src/Views/AppInfoView.vala:203
+#: src/Views/AppInfoView.vala:202
 msgid "Extensions:"
 msgstr "扩展："
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:311
+#: src/Views/AppInfoView.vala:303
 msgid "Public Domain"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:314
+#: src/Views/AppInfoView.vala:306
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr ""
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:319
+#: src/Views/AppInfoView.vala:311
 #, fuzzy
 msgid "Free Software"
 msgstr "编辑源软件"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:322
+#: src/Views/AppInfoView.vala:314
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:326
+#: src/Views/AppInfoView.vala:318
 msgid "Proprietary"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:329
+#: src/Views/AppInfoView.vala:321
 #, fuzzy
 msgid "Unknown License"
 msgstr "未知状态"
 
-#: src/Views/AppInfoView.vala:371
+#: src/Views/AppInfoView.vala:363
 #, c-format
 msgid "Other Apps by %s"
 msgstr "%s 的其他应用"
 
-#: src/Views/AppInfoView.vala:405
+#: src/Views/AppInfoView.vala:397
 msgid "Link copied to clipboard"
 msgstr "链接已复制到剪贴板"
 
-#: src/Views/AppInfoView.vala:416
+#: src/Views/AppInfoView.vala:408
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "在应用中心内查看 %s ："
 
-#: src/Views/AppInfoView.vala:423
+#: src/Views/AppInfoView.vala:415
 msgid "Share"
 msgstr "分享"
 
-#: src/Views/AppInfoView.vala:724
+#: src/Views/AppInfoView.vala:712
 msgid "Fund"
 msgstr "资助"
 
-#: src/Views/AppInfoView.vala:746
+#: src/Views/AppInfoView.vala:734
 msgid "Fund the development of this app"
 msgstr "资助此应用程序的开发"
 
@@ -613,7 +613,7 @@ msgid "Restart Now"
 msgstr "现在重启"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:175
+#: src/Views/AppListUpdateView.vala:180
 msgid "Update All"
 msgstr "全部更新"
 
@@ -733,12 +733,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "支付方式未启用"
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:321
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:322
 msgid "Free"
 msgstr "免费"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:323
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:324
 msgid "Install"
 msgstr "安装"
 
@@ -791,26 +791,34 @@ msgstr "Telegram"
 msgid "Copy link"
 msgstr "复制链接"
 
-#: src/Widgets/UpdateHeaderRow.vala:64
+#: src/Widgets/SizeLabel.vala:35
+msgid "Actual Download Size Likely to Be Smaller"
+msgstr ""
+
+#: src/Widgets/SizeLabel.vala:36
+msgid "Only the parts of apps and updates that are needed will be downloaded."
+msgstr ""
+
+#: src/Widgets/SizeLabel.vala:64
+#, fuzzy, c-format
+msgid "Up to %s"
+msgstr "已是最新"
+
+#: src/Widgets/UpdateHeaderRow.vala:68
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "%u 个可用更新"
 
-#: src/Widgets/UpdateHeaderRow.vala:65
-#, c-format
-msgid "Size: %s"
-msgstr "大小： %s"
-
-#: src/Widgets/UpdateHeaderRow.vala:101
+#: src/Widgets/UpdateHeaderRow.vala:106
 msgid "Searching for updates…"
 msgstr "正在查找更新…"
 
-#: src/Widgets/UpdateHeaderRow.vala:108
+#: src/Widgets/UpdateHeaderRow.vala:113
 msgid "Up to Date"
 msgstr "已是最新"
 
-#: src/Widgets/UpdateHeaderRow.vala:116
+#: src/Widgets/UpdateHeaderRow.vala:121
 msgid "Drivers"
 msgstr "驱动程序"
 
@@ -818,13 +826,16 @@ msgstr "驱动程序"
 msgid "Uninstall"
 msgstr "卸载"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:180
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:182
 msgid "Open"
 msgstr "打开"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:346
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:347
 msgid "Update"
 msgstr "更新"
+
+#~ msgid "Size: %s"
+#~ msgstr "大小： %s"
 
 #~ msgid "Google+"
 #~ msgstr "Google+"
