@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2016–2018 elementary, Inc. (https://elementary.io)
+* Copyright (c) 2016–2019 elementary, Inc. (https://elementary.io)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public
@@ -162,6 +162,8 @@ namespace AppCenter {
             });
 
             uninstall_button = new Gtk.Button.with_label (_("Uninstall"));
+            uninstall_button.margin_end = 12;
+
             uninstall_button_revealer = new Gtk.Revealer ();
             uninstall_button_revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT;
             uninstall_button_revealer.add (uninstall_button);
