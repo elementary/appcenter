@@ -33,7 +33,7 @@ namespace AppCenter.Widgets {
 
         construct {
             tooltip_markup = "<b>%s</b>\n%s".printf (
-                _("Actual download size likely to be smaller."),
+                _("Actual Download Size Likely to Be Smaller"),
                 _("Only the parts of apps and updates that are needed will be downloaded.")
             );
             size_label = new Gtk.Label (null);
