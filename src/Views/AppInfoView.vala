@@ -27,6 +27,7 @@ namespace AppCenter.Views {
         );
 
         private static Gtk.CssProvider arrow_provider;
+        private static Gtk.CssProvider loading_provider;
         private static Gtk.CssProvider? previous_css_provider = null;
 
         GenericArray<AppStream.Screenshot> screenshots;
@@ -44,6 +45,7 @@ namespace AppCenter.Views {
         private Gtk.Button screenshot_previous;
         private Gtk.Button screenshot_next;
         private Gtk.Stack screenshot_stack;
+        private Gtk.StyleContext stack_context;
         private Gtk.Overlay screenshot_overlay;
         private Gtk.TextView app_description;
         private Widgets.Switcher screenshot_switcher;
@@ -57,6 +59,9 @@ namespace AppCenter.Views {
         static construct {
             arrow_provider = new Gtk.CssProvider ();
             arrow_provider.load_from_resource ("io/elementary/appcenter/arrow.css");
+
+            loading_provider = new Gtk.CssProvider ();
+            loading_provider.load_from_resource ("io/elementary/appcenter/loading.css");
         }
 
         construct {
@@ -174,11 +179,15 @@ namespace AppCenter.Views {
                 app_screenshot_not_found.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
                 screenshot_stack = new Gtk.Stack ();
-                screenshot_stack.get_style_context ().add_class (Gtk.STYLE_CLASS_BACKGROUND);
                 screenshot_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
                 screenshot_stack.add (app_screenshot_spinner);
                 screenshot_stack.add (screenshot_overlay);
                 screenshot_stack.add (app_screenshot_not_found);
+
+                stack_context = screenshot_stack.get_style_context ();
+                stack_context.add_class (Gtk.STYLE_CLASS_BACKGROUND);
+                stack_context.add_class ("loading");
+                stack_context.add_provider (loading_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
             }
 
             package_name.selectable = true;
@@ -703,6 +712,7 @@ namespace AppCenter.Views {
 
                     if (number_of_screenshots > 0) {
                         screenshot_stack.visible_child = screenshot_overlay;
+                        stack_context.remove_class ("loading");
                         screenshot_switcher.update_selected ();
 
                         if (number_of_screenshots > 1) {
@@ -711,6 +721,7 @@ namespace AppCenter.Views {
                         }
                     } else {
                         screenshot_stack.visible_child = app_screenshot_not_found;
+                        stack_context.remove_class ("loading");
                     }
 
                     return GLib.Source.REMOVE;
