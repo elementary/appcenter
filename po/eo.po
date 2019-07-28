@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-07-26 08:22-0700\n"
-"PO-Revision-Date: 2019-07-21 10:24+0000\n"
+"PO-Revision-Date: 2019-07-28 00:57+0000\n"
 "Last-Translator: Shtonchjo <shtonchjo@gmail.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/eo/>\n"
@@ -812,16 +812,16 @@ msgstr "Kopii la ligilon"
 
 #: src/Widgets/SizeLabel.vala:35
 msgid "Actual Download Size Likely to Be Smaller"
-msgstr ""
+msgstr "La elŝuto povas esti efektive pli malgranda"
 
 #: src/Widgets/SizeLabel.vala:36
 msgid "Only the parts of apps and updates that are needed will be downloaded."
-msgstr ""
+msgstr "Nur tiuj aplikaĵoj kaj ĝisdatigoj necesaj estos elŝutitaj."
 
 #: src/Widgets/SizeLabel.vala:64
-#, fuzzy, c-format
+#, c-format
 msgid "Up to %s"
-msgstr "Ĝisdata"
+msgstr "Ĝis %s"
 
 #: src/Widgets/UpdateHeaderRow.vala:68
 #, c-format
