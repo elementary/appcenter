@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-07-26 08:22-0700\n"
-"PO-Revision-Date: 2019-07-03 14:02+0000\n"
+"PO-Revision-Date: 2019-07-28 00:57+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ja/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -812,16 +812,16 @@ msgstr "リンクをコピー"
 
 #: src/Widgets/SizeLabel.vala:35
 msgid "Actual Download Size Likely to Be Smaller"
-msgstr ""
+msgstr "実際のダウンロードサイズは小さくなる可能性があります"
 
 #: src/Widgets/SizeLabel.vala:36
 msgid "Only the parts of apps and updates that are needed will be downloaded."
-msgstr ""
+msgstr "アプリとアップデートの、必要な部分のみをダウンロードします。"
 
 #: src/Widgets/SizeLabel.vala:64
-#, fuzzy, c-format
+#, c-format
 msgid "Up to %s"
-msgstr "最新の状態"
+msgstr "最大 %s"
 
 #: src/Widgets/UpdateHeaderRow.vala:68
 #, c-format
