@@ -20,7 +20,7 @@
     background-image: linear-gradient(
         to right,
         @bg_color 20%,
-        white,
+        @base_color,
         @bg_color 80%
     );
 }
