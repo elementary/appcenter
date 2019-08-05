@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-07-26 08:22-0700\n"
-"PO-Revision-Date: 2019-07-16 09:11+0000\n"
+"PO-Revision-Date: 2019-08-06 08:21+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ca/>\n"
@@ -830,16 +830,18 @@ msgstr "Copia l'enllaç"
 
 #: src/Widgets/SizeLabel.vala:35
 msgid "Actual Download Size Likely to Be Smaller"
-msgstr ""
+msgstr "És probable que la mida real de la baixada sigui menor."
 
 #: src/Widgets/SizeLabel.vala:36
 msgid "Only the parts of apps and updates that are needed will be downloaded."
 msgstr ""
+"Només es baixaran les parts que calguin de les aplicacions i de les "
+"actualitzacions."
 
 #: src/Widgets/SizeLabel.vala:64
-#, fuzzy, c-format
+#, c-format
 msgid "Up to %s"
-msgstr "Al dia"
+msgstr "Fins a %s"
 
 #: src/Widgets/UpdateHeaderRow.vala:68
 #, c-format
