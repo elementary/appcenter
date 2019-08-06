@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-18 05:17-0500\n"
-"PO-Revision-Date: 2019-03-05 16:27+0000\n"
+"POT-Creation-Date: 2019-06-26 22:42+0200\n"
+"PO-Revision-Date: 2019-07-09 23:46+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
 "extra/pt/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.4\n"
+"X-Generator: Weblate 3.6.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
@@ -35,7 +35,157 @@ msgstr ""
 "também é usado para atualizar o seu sistema para as últimas versões que "
 "incluem novas funcionalidade e correções."
 
-#: data/io.elementary.appcenter.appdata.xml.in:201
+#: data/io.elementary.appcenter.appdata.xml.in:21
+msgid "Meson build system fixes"
+msgstr "Compilação Meson de correções do sistema"
+
+#: data/io.elementary.appcenter.appdata.xml.in:22
+msgid "Improve window state restoration"
+msgstr "Melhora o restauro do estado da janela"
+
+#: data/io.elementary.appcenter.appdata.xml.in:23
+msgid "Prevent action buttons from jumping around"
+msgstr "Evita que os botões de ação saltem"
+
+#: data/io.elementary.appcenter.appdata.xml.in:24
+msgid "Remove reset paid apps gsettings key"
+msgstr "Remover chave redefinida de gsettings de aplicações pagas"
+
+#: data/io.elementary.appcenter.appdata.xml.in:25
+msgid "Memory management refinements"
+msgstr "Refinamentos de gestão de memória"
+
+#: data/io.elementary.appcenter.appdata.xml.in:26
+msgid ""
+"Add conditional compilation for disabling dynamic remote homepage content"
+msgstr ""
+"Adicionar compilação condicional para desabilitar o conteúdo da página "
+"dinâmica remota"
+
+#: data/io.elementary.appcenter.appdata.xml.in:27
+#: data/io.elementary.appcenter.appdata.xml.in:39
+#: data/io.elementary.appcenter.appdata.xml.in:46
+#: data/io.elementary.appcenter.appdata.xml.in:59
+#: data/io.elementary.appcenter.appdata.xml.in:70
+#: data/io.elementary.appcenter.appdata.xml.in:79
+#: data/io.elementary.appcenter.appdata.xml.in:88
+#: data/io.elementary.appcenter.appdata.xml.in:97
+#: data/io.elementary.appcenter.appdata.xml.in:106
+#: data/io.elementary.appcenter.appdata.xml.in:115
+#: data/io.elementary.appcenter.appdata.xml.in:124
+#: data/io.elementary.appcenter.appdata.xml.in:133
+#: data/io.elementary.appcenter.appdata.xml.in:142
+#: data/io.elementary.appcenter.appdata.xml.in:151
+#: data/io.elementary.appcenter.appdata.xml.in:160
+#: data/io.elementary.appcenter.appdata.xml.in:170
+#: data/io.elementary.appcenter.appdata.xml.in:180
+msgid "New translations"
+msgstr "Novas traduções"
+
+#: data/io.elementary.appcenter.appdata.xml.in:34
+msgid "New categories: Communication, Finance, Media Production"
+msgstr "Novas categorias: Comunicação, Finanças, Produção de Média"
+
+#: data/io.elementary.appcenter.appdata.xml.in:35
+msgid "Add Math to Science category"
+msgstr "Adicionar Matemática à categoria Ciência"
+
+#: data/io.elementary.appcenter.appdata.xml.in:36
+msgid "Relax email address validator"
+msgstr "Resolver a validação de endereço de e-mail"
+
+#: data/io.elementary.appcenter.appdata.xml.in:37
+msgid "Present update availability more accurately"
+msgstr "Apresentar a disponibilidade de atualizações com mais precisão"
+
+#: data/io.elementary.appcenter.appdata.xml.in:38
+msgid "Category graphics revamped"
+msgstr "Categoria de Gráficos renovados"
+
+#: data/io.elementary.appcenter.appdata.xml.in:53
+#: data/io.elementary.appcenter.appdata.xml.in:65
+#: data/io.elementary.appcenter.appdata.xml.in:76
+#: data/io.elementary.appcenter.appdata.xml.in:85
+#: data/io.elementary.appcenter.appdata.xml.in:94
+#: data/io.elementary.appcenter.appdata.xml.in:103
+#: data/io.elementary.appcenter.appdata.xml.in:112
+#: data/io.elementary.appcenter.appdata.xml.in:121
+#: data/io.elementary.appcenter.appdata.xml.in:130
+#: data/io.elementary.appcenter.appdata.xml.in:139
+#: data/io.elementary.appcenter.appdata.xml.in:148
+#: data/io.elementary.appcenter.appdata.xml.in:157
+msgid "Bug fixes and improve performance."
+msgstr "Correção de problemas e melhorar o desempenho."
+
+#: data/io.elementary.appcenter.appdata.xml.in:55
+msgid "Improve transaction success rate"
+msgstr "Melhora a taxa de sucesso das transações"
+
+#: data/io.elementary.appcenter.appdata.xml.in:56
+msgid "Add Publishing to Office category"
+msgstr "Adicionar categoria Publicar ao Escritório"
+
+#: data/io.elementary.appcenter.appdata.xml.in:57
+msgid "Improve descriptions of OS Updates"
+msgstr "Melhora as descrições de atualizações do sistema operativo"
+
+#: data/io.elementary.appcenter.appdata.xml.in:58
+#: data/io.elementary.appcenter.appdata.xml.in:69
+#: data/io.elementary.appcenter.appdata.xml.in:78
+#: data/io.elementary.appcenter.appdata.xml.in:87
+#: data/io.elementary.appcenter.appdata.xml.in:96
+#: data/io.elementary.appcenter.appdata.xml.in:105
+#: data/io.elementary.appcenter.appdata.xml.in:114
+#: data/io.elementary.appcenter.appdata.xml.in:123
+#: data/io.elementary.appcenter.appdata.xml.in:132
+#: data/io.elementary.appcenter.appdata.xml.in:141
+#: data/io.elementary.appcenter.appdata.xml.in:150
+msgid "Various bug fixes and performance improvements"
+msgstr "Várias resoluções de problemas e melhorias de desempenho"
+
+#: data/io.elementary.appcenter.appdata.xml.in:67
+msgid "Give details for Operating System Updates"
+msgstr "Dar detalhes para atualizações do sistema operativo"
+
+#: data/io.elementary.appcenter.appdata.xml.in:68
+msgid "Support mouse button navigation"
+msgstr "Suporta a navegação por botão do rato"
+
+#: data/io.elementary.appcenter.appdata.xml.in:159
+msgid "Fix crash caused by entries with missing packages"
+msgstr "Corrigido o problema de falha quando eram encontrados pacotes em falta"
+
+#: data/io.elementary.appcenter.appdata.xml.in:166
+msgid "Add capability to search by category and apply minor bug fixes."
+msgstr ""
+"Aplicadas correções de problemas pequenas e adicionada a possibilidade de "
+"pesquisar por categoria."
+
+#: data/io.elementary.appcenter.appdata.xml.in:168
+msgid "It is now possible to search apps inside a category"
+msgstr "Agora é possível pesquisar por aplicações dentro de categorias"
+
+#: data/io.elementary.appcenter.appdata.xml.in:169
+msgid "Prevent multiple authentication dialogs when resuming from suspend"
+msgstr "Prevenidos múltiplas janelas de diálgo quando sai do estado suspenso"
+
+#: data/io.elementary.appcenter.appdata.xml.in:176
+msgid ""
+"Search performance has beeen improved, the category name is now shown on the "
+"headbar and minor bugs have been fixed."
+msgstr ""
+"O desempenho de pesquisa foi melhorado, o nome da categoria agora aparece na "
+"barra de cabeçalho e pequenos problemas foram corrigidos."
+
+#: data/io.elementary.appcenter.appdata.xml.in:178
+msgid "Fix Steam installation"
+msgstr "Corrigida instalação da Steam"
+
+#: data/io.elementary.appcenter.appdata.xml.in:179
+msgid "Make search asynchronous"
+msgstr "Aplicada pesquisa assíncrona"
+
+#: data/io.elementary.appcenter.appdata.xml.in:234
 msgid "elementary LLC."
 msgstr "elementary LLC."
 
@@ -58,44 +208,6 @@ msgstr "Procurar por Atualizações"
 
 #~ msgid "About AppCenter"
 #~ msgstr "Sobre o AppCenter"
-
-#~ msgid "Bug fixes and improve perfomance."
-#~ msgstr "Resolução de problemas e melhorias de desempenho."
-
-#~ msgid "Various bug fixes and performance improvements"
-#~ msgstr "Várias resoluções de problemas e melhorias de desempenho"
-
-#~ msgid "New translations"
-#~ msgstr "Novas traduções"
-
-#~ msgid "Fix crash caused by entries with missing packages"
-#~ msgstr ""
-#~ "Corrigido o problema de crash quando eram encontrados pacotes em falta"
-
-#~ msgid "Add capability to search by category and apply minor bug fixes."
-#~ msgstr ""
-#~ "Aplicadas correções de problemas pequenas e adicionada a possibilidade de "
-#~ "pesquisar por categoria."
-
-#~ msgid "It is now possible to search apps inside a category"
-#~ msgstr "Agora é possível pesquisar por aplicações dentro de categorias"
-
-#~ msgid "Prevent multiple authentication dialogs when resuming from suspend"
-#~ msgstr ""
-#~ "Prevenidos múltiplas janelas de diálgo quando sai do estado suspenso"
-
-#~ msgid ""
-#~ "Search perfomance has beeen improved, the category name is now shown on "
-#~ "the headbar and minor bugs have been fixed."
-#~ msgstr ""
-#~ "Desempenho de pesquisa melhorado, nome da categoria agora aparece na "
-#~ "barra de cabeçalho e resolvidos pequenos problemas."
-
-#~ msgid "Fix Steam installation"
-#~ msgstr "Corrigida instalação da Steam"
-
-#~ msgid "Make search asynchronous"
-#~ msgstr "Aplicada pesquisa assíncrona"
 
 #, fuzzy
 #~ msgid "App Center"

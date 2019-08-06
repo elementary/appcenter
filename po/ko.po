@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-17 11:14-0700\n"
-"PO-Revision-Date: 2019-04-24 23:21+0000\n"
+"POT-Creation-Date: 2019-07-26 08:22-0700\n"
+"PO-Revision-Date: 2019-06-30 03:52+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ko/>\n"
@@ -13,18 +13,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.5.1\n"
+"X-Generator: Weblate 3.6.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38
+#: src/Application.vala:38 src/Core/Package.vala:323
 msgid "AppCenter"
 msgstr "앱센터"
 
 #: src/Application.vala:106
 #, c-format
-msgid "Could not parse mimetype %s"
-msgstr "mimetype 구문 분석을 할 수 없었습니다 %s"
+msgid "Could not parse the media type %s"
+msgstr "미디어 형식 %s의 구문을 분석할 수 없습니다"
 
 #: src/Application.vala:126
 #, c-format
@@ -45,9 +45,9 @@ msgstr "%s의 설치를 마쳤습니다"
 msgid "There Was An Error Installing %s."
 msgstr "%s의 설치 도중에 오류가 생겼습니다."
 
-#: src/MainWindow.vala:157 src/Views/Homepage.vala:277
-#: src/Views/Homepage.vala:286 src/Views/Homepage.vala:291
-#: src/Views/Homepage.vala:302
+#: src/MainWindow.vala:157 src/Views/Homepage.vala:282
+#: src/Views/Homepage.vala:294 src/Views/Homepage.vala:299
+#: src/Views/Homepage.vala:310
 msgid "Home"
 msgstr "홈"
 
@@ -57,8 +57,8 @@ msgctxt "view"
 msgid "Installed"
 msgstr "설치함"
 
-#: src/MainWindow.vala:185 src/MainWindow.vala:348 src/Views/SearchView.vala:54
-#: src/Views/SearchView.vala:81
+#: src/MainWindow.vala:185 src/MainWindow.vala:348 src/Views/SearchView.vala:55
+#: src/Views/SearchView.vala:82
 msgid "Search Apps"
 msgstr "앱 검색"
 
@@ -74,165 +74,187 @@ msgstr "앱을 설치하거나 업데이트하시려면 인터넷에 연결해�
 msgid "Network Settings…"
 msgstr "네트워크 설정…"
 
-#: src/Core/ChangeInformation.vala:63
+#: src/Utils.vala:72 src/Core/ChangeInformation.vala:92
 msgid "Starting"
 msgstr "시작하고 있습니다"
 
-#: src/Core/ChangeInformation.vala:65
+#: src/Utils.vala:74 src/Core/ChangeInformation.vala:49
+#: src/Core/ChangeInformation.vala:64
 msgid "Waiting"
 msgstr "기다리고 있습니다"
 
-#: src/Core/ChangeInformation.vala:67
+#: src/Utils.vala:76
 msgid "Running"
 msgstr "작업하고 있습니다"
 
-#: src/Core/ChangeInformation.vala:69
+#: src/Utils.vala:78
 msgid "Querying"
 msgstr "조회하고 있습니다"
 
-#: src/Core/ChangeInformation.vala:71
+#: src/Utils.vala:80
 msgid "Getting information"
 msgstr "정보를 가져오고 있습니다"
 
-#: src/Core/ChangeInformation.vala:73
+#: src/Utils.vala:82
 msgid "Removing packages"
 msgstr "패키지를 제거하고 있습니다"
 
-#: src/Core/ChangeInformation.vala:75
+#: src/Utils.vala:84
 msgid "Downloading"
 msgstr "내려받고 있습니다"
 
-#: src/Core/ChangeInformation.vala:77
+#: src/Utils.vala:86
 msgid "Installing"
 msgstr "설치중"
 
-#: src/Core/ChangeInformation.vala:79
+#: src/Utils.vala:88
 msgid "Refreshing software list"
 msgstr "소프트웨어  목록을 새로 고치고 있습니다"
 
-#: src/Core/ChangeInformation.vala:81
+#: src/Utils.vala:90
 msgid "Installing updates"
 msgstr "업데이트 설치 중입니다"
 
-#: src/Core/ChangeInformation.vala:83
+#: src/Utils.vala:92
 msgid "Cleaning up packages"
 msgstr "패키지를 정리하고 있습니다"
 
-#: src/Core/ChangeInformation.vala:85
+#: src/Utils.vala:94
 msgid "Obsoleting packages"
 msgstr "패키지를 지우고 있습니다"
 
-#: src/Core/ChangeInformation.vala:87
+#: src/Utils.vala:96
 msgid "Resolving dependencies"
 msgstr "의존성 문제를 해결하고 있습니다"
 
-#: src/Core/ChangeInformation.vala:89
+#: src/Utils.vala:98
 msgid "Checking signatures"
 msgstr "서명을 확인하고 있습니다"
 
-#: src/Core/ChangeInformation.vala:91
+#: src/Utils.vala:100
 msgid "Testing changes"
 msgstr "바뀐 내용을 확인하고 있습니다"
 
-#: src/Core/ChangeInformation.vala:93
+#: src/Utils.vala:102
 msgid "Committing changes"
 msgstr "바뀐 내용을 적용하고 있습니다"
 
-#: src/Core/ChangeInformation.vala:95
+#: src/Utils.vala:104
 msgid "Requesting data"
 msgstr "데이터를 요청하고 있습니다"
 
-#: src/Core/ChangeInformation.vala:97
+#: src/Utils.vala:106 src/Core/ChangeInformation.vala:71
 msgid "Finished"
 msgstr "마쳤습니다"
 
-#: src/Core/ChangeInformation.vala:99
+#: src/Utils.vala:108 src/Core/ChangeInformation.vala:79
 msgid "Cancelling"
 msgstr "취소하고 있습니다"
 
-#: src/Core/ChangeInformation.vala:101
+#: src/Utils.vala:110
 msgid "Downloading repository information"
 msgstr "저장소 정보를 내려받고 있습니다"
 
-#: src/Core/ChangeInformation.vala:103
+#: src/Utils.vala:112
 msgid "Downloading list of packages"
 msgstr "패키지 목록을 내려받고 있습니다"
 
-#: src/Core/ChangeInformation.vala:105
+#: src/Utils.vala:114
 msgid "Downloading file lists"
 msgstr "파일 목록을 내려받고 있습니다"
 
-#: src/Core/ChangeInformation.vala:107
+#: src/Utils.vala:116
 msgid "Downloading lists of changes"
 msgstr "바뀐 목록을 내려받고 있습니다"
 
-#: src/Core/ChangeInformation.vala:109
+#: src/Utils.vala:118
 msgid "Downloading groups"
 msgstr "그룹을 내려받고 있습니다"
 
-#: src/Core/ChangeInformation.vala:111
+#: src/Utils.vala:120
 msgid "Downloading update information"
 msgstr "업데이트 정보를 내려받고 있습니다"
 
-#: src/Core/ChangeInformation.vala:113
+#: src/Utils.vala:122
 msgid "Repackaging files"
 msgstr "파일을 다시 패키징하고 있습니다"
 
-#: src/Core/ChangeInformation.vala:115
+#: src/Utils.vala:124
 msgid "Loading cache"
 msgstr "캐시를 불러오고 있습니다"
 
-#: src/Core/ChangeInformation.vala:117
+#: src/Utils.vala:126
 msgid "Scanning applications"
 msgstr "애플리케이션을 확인하고 있습니다"
 
-#: src/Core/ChangeInformation.vala:119
+#: src/Utils.vala:128
 msgid "Generating package lists"
 msgstr "패키지 목록을 만들고 있습니다"
 
-#: src/Core/ChangeInformation.vala:121
+#: src/Utils.vala:130
 msgid "Waiting for package manager lock"
 msgstr "패키지 관리자 잠금 대기 중입니다"
 
-#: src/Core/ChangeInformation.vala:123
+#: src/Utils.vala:132
 msgid "Waiting for authentication"
 msgstr "인증을 기다리고 있습니다"
 
-#: src/Core/ChangeInformation.vala:125
+#: src/Utils.vala:134
 msgid "Updating running applications"
 msgstr "실행하고 있는 애플리케이션을 업데이트하고 있습니다"
 
-#: src/Core/ChangeInformation.vala:127
+#: src/Utils.vala:136
 msgid "Checking applications in use"
 msgstr "사용하고 있는 애플리케이션을 확인하고 있습니다"
 
-#: src/Core/ChangeInformation.vala:129
+#: src/Utils.vala:138
 msgid "Checking libraries in use"
 msgstr "사용하고 있는 라이브러리를 확인하고 있습니다"
 
-#: src/Core/ChangeInformation.vala:131
+#: src/Utils.vala:140
 msgid "Copying files"
 msgstr "파일을 복사하고 있습니다"
 
-#: src/Core/ChangeInformation.vala:133
+#: src/Utils.vala:142
 msgid "Unknown state"
 msgstr "알 수 없는 상태"
 
-#: src/Core/Client.vala:100
+#: src/Core/Client.vala:70
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "업데이트할 항목 있음"
 
-#: src/Core/Client.vala:101
+#: src/Core/Client.vala:71
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "시스템에 %u개의 업데이트할 항목이 있습니다"
 
-#: src/Core/Package.vala:248
+#: src/Core/Package.vala:294
 #, c-format
 msgid "%s Developers"
 msgstr "%s 개발자들"
+
+#: src/Core/Package.vala:325
+msgid "elementary Updates"
+msgstr "elementary 업데이트"
+
+#: src/Core/Package.vala:327
+msgid "Ubuntu (non-curated)"
+msgstr "Ubuntu (검수 안 함)"
+
+#: src/Core/Package.vala:330
+#, c-format
+msgid "%s (non-curated)"
+msgstr "%s (검수 안 함)"
+
+#: src/Core/Package.vala:332
+msgid "Ubuntu Drivers"
+msgstr "Ubuntu 드라이버"
+
+#: src/Core/Package.vala:335
+msgid "Unknown Origin (non-curated)"
+msgstr "알려지지 않은 소스 (검수 안 함)"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -247,26 +269,30 @@ msgstr "시스템 구성 요소를 업데이트합니다"
 msgid "Version: %s"
 msgstr "버전: %s"
 
-#: src/Core/UpdateManager.vala:82
+#: src/Core/UpdateManager.vala:103
+msgid "Flatpak runtime"
+msgstr "Flatpak 런타임"
+
+#: src/Core/UpdateManager.vala:119
 msgid "No components with updates"
 msgstr "업데이트할 항목이 없습니다"
 
-#: src/Core/UpdateManager.vala:86
+#: src/Core/UpdateManager.vala:123
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "%u개의 업데이트할 항목이 있습니다"
 
-#: src/Core/UpdateManager.vala:88
+#: src/Core/UpdateManager.vala:125
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:129
+#: src/Core/UpdateManager.vala:163
 msgid "Restart Required"
 msgstr "다시 시작해야 합니다"
 
-#: src/Core/UpdateManager.vala:130
+#: src/Core/UpdateManager.vala:164
 msgid "Please restart your system to finalize updates"
 msgstr "업데이트를 마무리하시려면 컴퓨터를 다시 시작해주세요"
 
@@ -315,7 +341,7 @@ msgstr "다시 시작"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:205
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:206
 msgid "Cancel"
 msgstr "취소"
 
@@ -506,85 +532,85 @@ msgstr "나중에 하겠습니다"
 msgid "Try Again"
 msgstr "다시 시도합니다"
 
-#: src/Views/AppInfoView.vala:75
+#: src/Views/AppInfoView.vala:80
 msgid "Screenshot Not Available"
 msgstr "스크린샷을 찍을 수 없습니다"
 
-#: src/Views/AppInfoView.vala:130
+#: src/Views/AppInfoView.vala:135
 msgid "Homepage"
 msgstr "홈 페이지"
 
-#: src/Views/AppInfoView.vala:136
+#: src/Views/AppInfoView.vala:141
 msgid "Suggest Translations"
 msgstr "번역 제안하기"
 
-#: src/Views/AppInfoView.vala:142
+#: src/Views/AppInfoView.vala:147
 msgid "Report a Problem"
 msgstr "버그 리포트"
 
-#: src/Views/AppInfoView.vala:148
+#: src/Views/AppInfoView.vala:153
 msgid "Help"
 msgstr "도움말"
 
-#: src/Views/AppInfoView.vala:178
+#: src/Views/AppInfoView.vala:183
 msgid "What's New:"
 msgstr "새로워진 점:"
 
-#: src/Views/AppInfoView.vala:197
+#: src/Views/AppInfoView.vala:202
 msgid "Extensions:"
 msgstr "확장 프로그램:"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:284
+#: src/Views/AppInfoView.vala:303
 msgid "Public Domain"
 msgstr "퍼블릭 도메인"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:287
+#: src/Views/AppInfoView.vala:306
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://ko.wikipedia.org/wiki/퍼블릭_도메인"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:292
+#: src/Views/AppInfoView.vala:311
 msgid "Free Software"
 msgstr "자유 소프트웨어"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:295
+#: src/Views/AppInfoView.vala:314
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "http://www.gnu.org/philosophy/free-sw.ko.html"
 
-#: src/Views/AppInfoView.vala:299
+#: src/Views/AppInfoView.vala:318
 msgid "Proprietary"
 msgstr "소유권"
 
-#: src/Views/AppInfoView.vala:302
+#: src/Views/AppInfoView.vala:321
 msgid "Unknown License"
 msgstr "알 수 없는 라이선스"
 
-#: src/Views/AppInfoView.vala:344
+#: src/Views/AppInfoView.vala:363
 #, c-format
 msgid "Other Apps by %s"
 msgstr "%s에서 지원되는 다른 앱들"
 
-#: src/Views/AppInfoView.vala:378
+#: src/Views/AppInfoView.vala:397
 msgid "Link copied to clipboard"
 msgstr "링크를 클립보드에 복사했습니다"
 
-#: src/Views/AppInfoView.vala:389
+#: src/Views/AppInfoView.vala:408
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "앱센터에서 %s 확인하기:"
 
-#: src/Views/AppInfoView.vala:396
+#: src/Views/AppInfoView.vala:415
 msgid "Share"
 msgstr "공유"
 
-#: src/Views/AppInfoView.vala:665
+#: src/Views/AppInfoView.vala:712
 msgid "Fund"
 msgstr "투자"
 
-#: src/Views/AppInfoView.vala:687
+#: src/Views/AppInfoView.vala:734
 msgid "Fund the development of this app"
 msgstr "이 앱의 개발에 투자하기"
 
@@ -597,7 +623,7 @@ msgid "Restart Now"
 msgstr "지금 다시 시작하기"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:158
+#: src/Views/AppListUpdateView.vala:180
 msgid "Update All"
 msgstr "모두 업데이트하기"
 
@@ -617,7 +643,7 @@ msgstr "인기 좋은 앱"
 msgid "Categories"
 msgstr "카테고리"
 
-#: src/Views/Homepage.vala:291 src/Views/Homepage.vala:302
+#: src/Views/Homepage.vala:299 src/Views/Homepage.vala:310
 #, c-format
 msgid "Search %s"
 msgstr "%s 찾기"
@@ -716,24 +742,24 @@ msgstr "글쓰기 & 언어"
 msgid "Requires payments, which are not enabled"
 msgstr "결제를 해야 하는데, 활성화되어있지 않습니다"
 
-#: src/Widgets/HumbleButton.vala:106
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:323
+#: src/Widgets/HumbleButton.vala:105
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:322
 msgid "Free"
 msgstr "무료"
 
-#: src/Widgets/HumbleButton.vala:108
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:325
+#: src/Widgets/HumbleButton.vala:107
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:324
 msgid "Install"
 msgstr "설치"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:142
+#: src/Widgets/HumbleButton.vala:141
 #, c-format
 msgid "$%d.00"
 msgstr "$%d.00"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:145
+#: src/Widgets/HumbleButton.vala:144
 #, c-format
 msgid "$%d"
 msgstr "$%d"
@@ -756,28 +782,37 @@ msgid "Facebook"
 msgstr "Facebook"
 
 #: src/Widgets/SharePopover.vala:43
-msgid "Google+"
-msgstr "Google+"
-
-#: src/Widgets/SharePopover.vala:47
 msgid "Twitter"
 msgstr "Twitter"
 
-#: src/Widgets/SharePopover.vala:51
+#: src/Widgets/SharePopover.vala:47
 msgid "Reddit"
 msgstr "Reddit"
 
-#: src/Widgets/SharePopover.vala:55
+#: src/Widgets/SharePopover.vala:51
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: src/Widgets/SharePopover.vala:59
+#: src/Widgets/SharePopover.vala:55
 msgid "Telegram"
 msgstr "Telegram"
 
-#: src/Widgets/SharePopover.vala:63
+#: src/Widgets/SharePopover.vala:59
 msgid "Copy link"
 msgstr "링크 복사"
+
+#: src/Widgets/SizeLabel.vala:35
+msgid "Actual Download Size Likely to Be Smaller"
+msgstr ""
+
+#: src/Widgets/SizeLabel.vala:36
+msgid "Only the parts of apps and updates that are needed will be downloaded."
+msgstr ""
+
+#: src/Widgets/SizeLabel.vala:64
+#, fuzzy, c-format
+msgid "Up to %s"
+msgstr "최신 버전입니다"
 
 #: src/Widgets/UpdateHeaderRow.vala:68
 #, c-format
@@ -785,20 +820,15 @@ msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "%u개의 업데이트 가능한 항목이 있습니다"
 
-#: src/Widgets/UpdateHeaderRow.vala:69
-#, c-format
-msgid "Size: %s"
-msgstr "크기: %s"
-
-#: src/Widgets/UpdateHeaderRow.vala:105
+#: src/Widgets/UpdateHeaderRow.vala:106
 msgid "Searching for updates…"
 msgstr "업데이트 검색 중…"
 
-#: src/Widgets/UpdateHeaderRow.vala:112
+#: src/Widgets/UpdateHeaderRow.vala:113
 msgid "Up to Date"
 msgstr "최신 버전입니다"
 
-#: src/Widgets/UpdateHeaderRow.vala:120
+#: src/Widgets/UpdateHeaderRow.vala:121
 msgid "Drivers"
 msgstr "드라이버"
 
@@ -806,16 +836,19 @@ msgstr "드라이버"
 msgid "Uninstall"
 msgstr "제거"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:180
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:182
 msgid "Open"
 msgstr "열기"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:348
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:347
 msgid "Update"
 msgstr "업데이트"
 
-#~ msgid "%s (local)"
-#~ msgstr "%s (로컬)"
+#~ msgid "Size: %s"
+#~ msgstr "크기: %s"
+
+#~ msgid "Google+"
+#~ msgstr "Google+"
 
 #~ msgid "Details"
 #~ msgstr "세부 정보"

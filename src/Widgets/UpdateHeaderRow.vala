@@ -24,49 +24,51 @@ namespace AppCenter.Widgets {
         public uint update_numbers { get; protected set; default = 0; }
         public uint64 update_real_size { get; protected set; default = 0; }
         public bool is_updating { get; protected set; default = false; }
+        public bool using_flatpak { get; protected set; default = false; }
 
         construct {
             margin = 12;
             column_spacing = 12;
         }
 
-        protected void store_data (uint _update_numbers, uint64 _update_real_size, bool _is_updating) {
+        protected void store_data (uint _update_numbers, uint64 _update_real_size, bool _is_updating, bool _using_flatpak) {
             update_numbers = _update_numbers;
             update_real_size = _update_real_size;
             is_updating = _is_updating;
+            using_flatpak = _using_flatpak;
         }
 
-        public void add_widget (Gtk.Widget widget) {
-            add (widget);
-        }
-
-        public abstract void update (uint _update_numbers, uint64 _update_real_size, bool _is_updating);
+        public abstract void update (uint _update_numbers, uint64 _update_real_size, bool _is_updating, bool _using_flatpak);
     }
 
     /** Header to show at top of list if there are updates available **/
     public class UpdatesGrid : AbstractHeaderGrid {
-        private Gtk.Label update_size_label;
+        private SizeLabel size_label;
         private Gtk.Label updates_label;
 
         construct {
             margin_top = 18;
+
             updates_label = new Gtk.Label (null);
             ((Gtk.Misc) updates_label).xalign = 0;
             updates_label.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
             updates_label.hexpand = true;
 
-            update_size_label = new Gtk.Label (null);
+            size_label = new SizeLabel ();
+            size_label.halign = Gtk.Align.END;
+            size_label.valign = Gtk.Align.CENTER;
 
             add (updates_label);
-            add (update_size_label);
+            add (size_label);
         }
 
-        public override void update (uint _update_numbers, uint64 _update_real_size, bool _is_updating) {
-            store_data (_update_numbers,  _update_real_size, _is_updating);
+        public override void update (uint _update_numbers, uint64 _update_real_size, bool _is_updating, bool _using_flatpak) {
+            store_data (_update_numbers,  _update_real_size, _is_updating, _using_flatpak);
 
             if (!is_updating) {
                 updates_label.label = ngettext ("%u Update Available", "%u Updates Available", update_numbers).printf (update_numbers);
-                update_size_label.label = _("Size: %s").printf (GLib.format_size (update_real_size));
+                size_label.update (update_real_size, using_flatpak);
+
                 if (update_numbers > 0) {
                     show_all ();
                 } else {
@@ -94,8 +96,8 @@ namespace AppCenter.Widgets {
             add (spinner);
         }
 
-        public override void update (uint _update_numbers, uint64 _update_real_size, bool _is_updating) {
-            store_data (_update_numbers,  _update_real_size, _is_updating);
+        public override void update (uint _update_numbers, uint64 _update_real_size, bool _is_updating, bool _using_flatpak) {
+            store_data (_update_numbers,  _update_real_size, _is_updating, _using_flatpak);
 
             if (is_updating) {
                 halign = Gtk.Align.CENTER;
@@ -125,7 +127,7 @@ namespace AppCenter.Widgets {
             add (label);
         }
 
-        public override void update (uint _update_numbers, uint64 _update_real_size, bool _is_updating) {
+        public override void update (uint _update_numbers, uint64 _update_real_size, bool _is_updating, bool _using_flatpak) {
 
         }
     }

@@ -61,6 +61,7 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : AbstractAppCont
         info_grid.attach (image, 0, 0, 1, 2);
         info_grid.attach (package_name, 1, 0, 1, 1);
 
+        action_stack.homogeneous = false;
         action_stack.margin_top = 10;
         action_stack.valign = Gtk.Align.START;
 

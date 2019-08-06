@@ -91,7 +91,6 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
     public bool suggested_action {
         set {
             if (value) {
-                amount_button.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
                 amount_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
                 arrow_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
             }

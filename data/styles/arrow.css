@@ -1,0 +1,44 @@
+/*
+ * Copyright (c) 2019 elementary, Inc. (https://elementary.io)
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+.arrow {
+    background: @base_color;
+    box-shadow:
+        inset 0 0 0 1px alpha (@bg_highlight_color, 0.05),
+        inset 0 1px 0 0 alpha (@bg_highlight_color, 0.45),
+        inset 0 -1px 0 0 alpha (@bg_highlight_color, 0.15),
+        0 0 0 1px alpha (#000, 0.05),
+        0 1px 3px rgba(0,0,0,0.12),
+        0 1px 2px rgba(0,0,0,0.24);
+    margin: 6px;
+    padding: 6px;
+    color: #333;
+}
+
+.arrow:active,
+.arrow:disabled {
+    background-color: @bg_color;
+    box-shadow:
+        0 0 0 1px alpha (#000, 0.05),
+        0 1px 2px alpha (#000, 0.22);
+    box-shadow:
+        inset 0 0 0 1px alpha (@bg_highlight_color, 0.05),
+        inset 0 1px 0 0 alpha (@bg_highlight_color, 0.45),
+        inset 0 -1px 0 0 alpha (@bg_highlight_color, 0.15),
+        0 0 0 1px alpha (#000, 0.05),
+        0 1px 2px alpha (#000, 0.22);
+}

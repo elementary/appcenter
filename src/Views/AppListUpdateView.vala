@@ -96,22 +96,34 @@ namespace AppCenter.Views {
             bool a_is_updating = row1.get_is_updating ();
             bool b_is_updating = row2.get_is_updating ();
 
+            // The currently updating package is always top of the list
             if (a_is_updating || b_is_updating) {
                 return a_is_updating ? -1 : 1;
-            }
-
-            bool a_is_os = row1.get_is_os_updates ();
-            bool b_is_os = row2.get_is_os_updates ();
-
-            if (a_is_os || b_is_os) { /* OS update row sorts ahead of other update rows */
-                return a_is_os ? -1 : 1;
             }
 
             bool a_has_updates = row1.get_update_available ();
             bool b_has_updates = row2.get_update_available ();
 
-            if (a_has_updates != b_has_updates) { /* Updates rows sort ahead of updated rows */
-                return a_has_updates ? -1 : 1;
+            bool a_is_os = row1.get_is_os_updates ();
+            bool b_is_os = row2.get_is_os_updates ();
+
+            // Sort updatable OS updates first, then other updatable packages
+            if (a_has_updates != b_has_updates) {
+                if (a_is_os && a_has_updates) {
+                    return -1;
+                }
+
+                if (b_is_os && b_has_updates) {
+                    return 1;
+                }
+
+                if (a_has_updates) {
+                    return -1;
+                }
+
+                if (b_has_updates) {
+                    return 1;
+                }
             }
 
             bool a_is_driver = row1.get_is_driver ();
@@ -119,6 +131,11 @@ namespace AppCenter.Views {
 
             if (a_is_driver != b_is_driver) {
                 return a_is_driver ? - 1 : 1;
+            }
+
+            // Ensures OS updates are sorted to the top amongst up-to-date packages
+            if (a_is_os || b_is_os) {
+                return a_is_os ? -1 : 1;
             }
 
             return row1.get_name_label ().collate (row2.get_name_label ()); /* Else sort in name order */
@@ -140,10 +157,15 @@ namespace AppCenter.Views {
                 uint update_numbers = 0U;
                 uint nag_numbers = 0U;
                 uint64 update_real_size = 0ULL;
+                bool using_flatpak = false;
                 foreach (var package in get_packages ()) {
                     if (package.update_available || package.is_updating) {
                         if (package.should_nag_update) {
                             nag_numbers++;
+                        }
+
+                        if (!using_flatpak && package.is_flatpak) {
+                            using_flatpak = true;
                         }
 
                         update_numbers++;
@@ -151,7 +173,7 @@ namespace AppCenter.Views {
                     }
                 }
 
-                header.update (update_numbers, update_real_size, updating_cache);
+                header.update (update_numbers, update_real_size, updating_cache, using_flatpak);
 
                 // Unfortunately the update all button needs to be recreated everytime the header needs to be updated
                 if (!updating_cache && update_numbers > 0) {
@@ -165,7 +187,7 @@ namespace AppCenter.Views {
                     update_all_button.clicked.connect (on_update_all);
                     action_button_group.add_widget (update_all_button);
 
-                    header.add_widget (update_all_button);
+                    header.add (update_all_button);
                 }
 
                 header.show_all ();
@@ -186,7 +208,7 @@ namespace AppCenter.Views {
                 }
 
                 var header = new Widgets.UpdatedGrid ();
-                header.update (0, 0, updating_cache);
+                header.update (0, 0, updating_cache, false);
                 header.show_all ();
                 row.set_header (header);
             }

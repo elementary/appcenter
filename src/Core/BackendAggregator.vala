@@ -61,7 +61,10 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
     }
 
     public Gee.Collection<Package> get_applications_for_category (AppStream.Category category) {
-        var apps = new Gee.TreeSet<Package> ();
+        var apps = new Gee.TreeSet<Package> ((a, b) => {
+            return a.normalized_component_id.collate (b.normalized_component_id);
+        });
+
         foreach (var backend in backends) {
             apps.add_all (backend.get_applications_for_category (category));
         }
@@ -70,7 +73,10 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
     }
 
     public Gee.Collection<Package> search_applications (string query, AppStream.Category? category) {
-        var apps = new Gee.TreeSet<Package> ();
+        var apps = new Gee.TreeSet<Package> ((a, b) => {
+            return a.normalized_component_id.collate (b.normalized_component_id);
+        });
+
         foreach (var backend in backends) {
             apps.add_all (backend.search_applications (query, category));
         }
@@ -97,6 +103,20 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
         }
 
         return null;
+    }
+
+    public Gee.Collection<Package> get_packages_for_component_id (string id) {
+        string package_id = id;
+        if (package_id.has_suffix (".desktop")) {
+            package_id = package_id.substring (0, package_id.length + package_id.index_of_nth_char (-8));
+        }
+
+        var packages = new Gee.ArrayList<Package> ();
+        foreach (var backend in backends) {
+            packages.add_all (backend.get_packages_for_component_id (package_id));
+        }
+
+        return packages;
     }
 
     public Package? get_package_for_desktop_id (string desktop_id) {

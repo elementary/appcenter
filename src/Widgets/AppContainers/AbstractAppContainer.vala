@@ -170,6 +170,8 @@ namespace AppCenter {
             });
 
             uninstall_button = new Gtk.Button.with_label (_("Uninstall"));
+            uninstall_button.margin_end = 12;
+
             uninstall_button_stack = new Gtk.Stack ();
             uninstall_button_stack.add_named (uninstall_button, "CHILD");
             uninstall_button_stack.add_named (new Gtk.EventBox (), "NONE");
@@ -186,7 +188,6 @@ namespace AppCenter {
             open_button.clicked.connect (launch_package_app);
 
             button_grid = new Gtk.Grid ();
-            button_grid.column_spacing = 6;
             button_grid.valign = Gtk.Align.CENTER;
             button_grid.halign = Gtk.Align.END;
             button_grid.hexpand = false;
@@ -203,8 +204,6 @@ namespace AppCenter {
             progress_bar.width_request = 250;
 
             cancel_button = new Gtk.Button.with_label (_("Cancel"));
-            /* Match button text size with that of HumbleButton */
-            cancel_button.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
             cancel_button.valign = Gtk.Align.END;
             cancel_button.halign = Gtk.Align.END;
             cancel_button.clicked.connect (() => action_cancelled ());

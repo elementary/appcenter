@@ -204,6 +204,19 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         return null;
     }
 
+    public Gee.Collection<Package> get_packages_for_component_id (string id) {
+        var packages = new Gee.ArrayList<Package> ();
+        foreach (var package in package_list.values) {
+            if (package.component.id == id) {
+                packages.add (package);
+            } else if (package.component.id == id + ".desktop") {
+                packages.add (package);
+            }
+        }
+
+        return packages;
+    }
+
     public Package? get_package_for_desktop_id (string id) {
         return null;
     }
@@ -593,11 +606,10 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             if (e is GLib.IOError.CANCELLED) {
                 cb (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);
                 success = true;
-            } else {
-                return false;
             }
 
-            return true;
+            // Any error during the installation of a single package and its deps is probably fatal, don't continue
+            return false;
         });
 
         transaction.operation_done.connect ((operation, commit, details) => {
@@ -779,11 +791,13 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             if (e is GLib.IOError.CANCELLED) {
                 cb (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);
                 success = true;
-            } else {
+                // The user hit cancel, don't go any further
                 return false;
+            } else {
+                // If there was an error while updating a single package in the transaction, we probably still want
+                // the rest updated, continue.
+                return true;
             }
-
-            return true;
         });
 
         transaction.operation_done.connect ((operation, commit, details) => {

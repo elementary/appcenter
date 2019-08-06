@@ -103,7 +103,7 @@ public class AppCenter.App : Gtk.Application {
             if (mimetype != null) {
                 main_window.search (mimetype, true);
             } else {
-                info (_("Could not parse mimetype %s").printf (mimetype));
+                info (_("Could not parse the media type %s").printf (mimetype));
             }
 
             return;

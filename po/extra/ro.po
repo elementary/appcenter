@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-18 05:17-0500\n"
+"POT-Creation-Date: 2019-06-26 22:42+0200\n"
 "PO-Revision-Date: 2017-06-12 20:35+0000\n"
 "Last-Translator: Nicolae Crefelean <kneekoo@yahoo.com>\n"
 "Language-Team: Romanian <https://l10n.elementary.io/projects/appcenter/extra/"
@@ -36,7 +36,160 @@ msgstr ""
 "aplicații. AppCenter este de asemenea folosit pentru a actualiza sistemul la "
 "cele mai noi și bune versiuni pentru caracteristici noi sau remedieri."
 
-#: data/io.elementary.appcenter.appdata.xml.in:201
+#: data/io.elementary.appcenter.appdata.xml.in:21
+msgid "Meson build system fixes"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:22
+msgid "Improve window state restoration"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:23
+msgid "Prevent action buttons from jumping around"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:24
+msgid "Remove reset paid apps gsettings key"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:25
+msgid "Memory management refinements"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:26
+msgid ""
+"Add conditional compilation for disabling dynamic remote homepage content"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:27
+#: data/io.elementary.appcenter.appdata.xml.in:39
+#: data/io.elementary.appcenter.appdata.xml.in:46
+#: data/io.elementary.appcenter.appdata.xml.in:59
+#: data/io.elementary.appcenter.appdata.xml.in:70
+#: data/io.elementary.appcenter.appdata.xml.in:79
+#: data/io.elementary.appcenter.appdata.xml.in:88
+#: data/io.elementary.appcenter.appdata.xml.in:97
+#: data/io.elementary.appcenter.appdata.xml.in:106
+#: data/io.elementary.appcenter.appdata.xml.in:115
+#: data/io.elementary.appcenter.appdata.xml.in:124
+#: data/io.elementary.appcenter.appdata.xml.in:133
+#: data/io.elementary.appcenter.appdata.xml.in:142
+#: data/io.elementary.appcenter.appdata.xml.in:151
+#: data/io.elementary.appcenter.appdata.xml.in:160
+#: data/io.elementary.appcenter.appdata.xml.in:170
+#: data/io.elementary.appcenter.appdata.xml.in:180
+msgid "New translations"
+msgstr "Traduceri noi"
+
+#: data/io.elementary.appcenter.appdata.xml.in:34
+msgid "New categories: Communication, Finance, Media Production"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:35
+msgid "Add Math to Science category"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:36
+msgid "Relax email address validator"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:37
+msgid "Present update availability more accurately"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:38
+msgid "Category graphics revamped"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:53
+#: data/io.elementary.appcenter.appdata.xml.in:65
+#: data/io.elementary.appcenter.appdata.xml.in:76
+#: data/io.elementary.appcenter.appdata.xml.in:85
+#: data/io.elementary.appcenter.appdata.xml.in:94
+#: data/io.elementary.appcenter.appdata.xml.in:103
+#: data/io.elementary.appcenter.appdata.xml.in:112
+#: data/io.elementary.appcenter.appdata.xml.in:121
+#: data/io.elementary.appcenter.appdata.xml.in:130
+#: data/io.elementary.appcenter.appdata.xml.in:139
+#: data/io.elementary.appcenter.appdata.xml.in:148
+#: data/io.elementary.appcenter.appdata.xml.in:157
+#, fuzzy
+msgid "Bug fixes and improve performance."
+msgstr "Remedieri și performanță îmbunătățită."
+
+#: data/io.elementary.appcenter.appdata.xml.in:55
+msgid "Improve transaction success rate"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:56
+msgid "Add Publishing to Office category"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:57
+msgid "Improve descriptions of OS Updates"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:58
+#: data/io.elementary.appcenter.appdata.xml.in:69
+#: data/io.elementary.appcenter.appdata.xml.in:78
+#: data/io.elementary.appcenter.appdata.xml.in:87
+#: data/io.elementary.appcenter.appdata.xml.in:96
+#: data/io.elementary.appcenter.appdata.xml.in:105
+#: data/io.elementary.appcenter.appdata.xml.in:114
+#: data/io.elementary.appcenter.appdata.xml.in:123
+#: data/io.elementary.appcenter.appdata.xml.in:132
+#: data/io.elementary.appcenter.appdata.xml.in:141
+#: data/io.elementary.appcenter.appdata.xml.in:150
+msgid "Various bug fixes and performance improvements"
+msgstr "Diverse erori corectate și performanță îmbunătățită"
+
+#: data/io.elementary.appcenter.appdata.xml.in:67
+msgid "Give details for Operating System Updates"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:68
+msgid "Support mouse button navigation"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:159
+msgid "Fix crash caused by entries with missing packages"
+msgstr ""
+"S-a remediat oprirea neașteptată a aplicației din cauza mențiunilor unor "
+"pachete lipsă"
+
+#: data/io.elementary.appcenter.appdata.xml.in:166
+msgid "Add capability to search by category and apply minor bug fixes."
+msgstr ""
+"S-a adăugat funcția de căutare după categorie și s-au aplicat mici remedii."
+
+#: data/io.elementary.appcenter.appdata.xml.in:168
+msgid "It is now possible to search apps inside a category"
+msgstr "Acum este posibilă căutarea de aplicații într-o categorie"
+
+#: data/io.elementary.appcenter.appdata.xml.in:169
+msgid "Prevent multiple authentication dialogs when resuming from suspend"
+msgstr ""
+"Prevenirea afișării de ferestre multiple de autentificare la revenire din "
+"suspendare"
+
+#: data/io.elementary.appcenter.appdata.xml.in:176
+#, fuzzy
+msgid ""
+"Search performance has beeen improved, the category name is now shown on the "
+"headbar and minor bugs have been fixed."
+msgstr ""
+"Performanța căutării a fost îmbunătățită, numele categoriei este acum afișat "
+"în bara de antet și au fost remediate câteva probleme minore."
+
+#: data/io.elementary.appcenter.appdata.xml.in:178
+msgid "Fix Steam installation"
+msgstr "Repară instalarea Steam"
+
+#: data/io.elementary.appcenter.appdata.xml.in:179
+msgid "Make search asynchronous"
+msgstr "Fă căutarea asincronă"
+
+#: data/io.elementary.appcenter.appdata.xml.in:234
 msgid "elementary LLC."
 msgstr ""
 
@@ -60,46 +213,6 @@ msgstr ""
 
 #~ msgid "About AppCenter"
 #~ msgstr "Despre AppCenter"
-
-#~ msgid "Bug fixes and improve perfomance."
-#~ msgstr "Remedieri și performanță îmbunătățită."
-
-#~ msgid "Various bug fixes and performance improvements"
-#~ msgstr "Diverse erori corectate și performanță îmbunătățită"
-
-#~ msgid "New translations"
-#~ msgstr "Traduceri noi"
-
-#~ msgid "Fix crash caused by entries with missing packages"
-#~ msgstr ""
-#~ "S-a remediat oprirea neașteptată a aplicației din cauza mențiunilor unor "
-#~ "pachete lipsă"
-
-#~ msgid "Add capability to search by category and apply minor bug fixes."
-#~ msgstr ""
-#~ "S-a adăugat funcția de căutare după categorie și s-au aplicat mici "
-#~ "remedii."
-
-#~ msgid "It is now possible to search apps inside a category"
-#~ msgstr "Acum este posibilă căutarea de aplicații într-o categorie"
-
-#~ msgid "Prevent multiple authentication dialogs when resuming from suspend"
-#~ msgstr ""
-#~ "Prevenirea afișării de ferestre multiple de autentificare la revenire din "
-#~ "suspendare"
-
-#~ msgid ""
-#~ "Search perfomance has beeen improved, the category name is now shown on "
-#~ "the headbar and minor bugs have been fixed."
-#~ msgstr ""
-#~ "Performanța căutării a fost îmbunătățită, numele categoriei este acum "
-#~ "afișat în bara de antet și au fost remediate câteva probleme minore."
-
-#~ msgid "Fix Steam installation"
-#~ msgstr "Repară instalarea Steam"
-
-#~ msgid "Make search asynchronous"
-#~ msgstr "Fă căutarea asincronă"
 
 #, fuzzy
 #~ msgid "App Center"

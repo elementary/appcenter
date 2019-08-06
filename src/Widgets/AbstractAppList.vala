@@ -98,6 +98,8 @@ namespace AppCenter {
                     row.destroy ();
                 }
             };
+
+            on_list_changed ();
         }
 
         protected void add_row (Widgets.AppListRow row) {
