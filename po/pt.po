@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-07-26 08:22-0700\n"
-"PO-Revision-Date: 2019-07-09 23:46+0000\n"
+"PO-Revision-Date: 2019-08-12 17:21+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/pt/>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -825,16 +825,17 @@ msgstr "Copiar link"
 
 #: src/Widgets/SizeLabel.vala:35
 msgid "Actual Download Size Likely to Be Smaller"
-msgstr ""
+msgstr "Tamanho real da transferência provável de ser menor"
 
 #: src/Widgets/SizeLabel.vala:36
 msgid "Only the parts of apps and updates that are needed will be downloaded."
 msgstr ""
+"Apenas as partes de aplicações e atualizações necessárias serão transferidas."
 
 #: src/Widgets/SizeLabel.vala:64
-#, fuzzy, c-format
+#, c-format
 msgid "Up to %s"
-msgstr "Atualizado"
+msgstr "Até %s"
 
 #: src/Widgets/UpdateHeaderRow.vala:68
 #, c-format
