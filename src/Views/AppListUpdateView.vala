@@ -66,7 +66,11 @@ namespace AppCenter.Views {
 
             infobar.response.connect ((response) => {
                 if (response == 0) {
-                    Utils.reboot ();
+                    if (!Utils.reboot ()) {
+                        info_label.label = _("Could not restart");
+                        infobar.message_type = Gtk.MessageType.ERROR;
+                        restart_button.visible = false;
+                    }
                 }
             });
 

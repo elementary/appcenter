@@ -50,10 +50,14 @@ namespace AppCenter.Widgets {
                         system_interface.reboot (false);
                     } catch (Error e) {
                         critical ("Failed to reboot: %s", e.message);
+                        response_id = Gtk.ResponseType.REJECT;
+                        return;
                     }
+                } else if (response_id == Gtk.ResponseType.CANCEL) {
+                    return;
                 }
 
-                destroy ();
+                /* If restart succeeds then will be destroyed otherwise need to return response_id to caller */
             });
         }
     }

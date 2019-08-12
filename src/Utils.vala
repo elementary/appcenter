@@ -30,19 +30,24 @@ namespace Utils {
     }
 
 
-    public void reboot () {
+    public bool reboot () {
         try {
             SuspendControl.get_default ().reboot ();
         } catch (GLib.Error e) {
             if (e is IOError.CANCELLED) {
-                return;
+                return true;
             } else {
                 /* Failed to restart/shutdown using org.gnome.SessionManager dbus interface
                    - use our own dialog and org.freedesktop.login1 dbus interface */
                 var dialog = new AppCenter.Widgets.RestartDialog ();
-                dialog.show_all ();
+                var resp = dialog.run ();
+                dialog.destroy ();
+
+                return resp == Gtk.ResponseType.CANCEL;
             }
         }
+
+        return true;
     }
 
     public static uint get_file_age (GLib.File file) {
