@@ -34,8 +34,14 @@ namespace Utils {
         try {
             SuspendControl.get_default ().reboot ();
         } catch (GLib.Error e) {
-            var dialog = new AppCenter.Widgets.RestartDialog ();
-            dialog.show_all ();
+            if (e is IOError.CANCELLED) {
+                return;
+            } else {
+                /* Failed to restart/shutdown using org.gnome.SessionManager dbus interface
+                   - use our own dialog and org.freedesktop.login1 dbus interface */
+                var dialog = new AppCenter.Widgets.RestartDialog ();
+                dialog.show_all ();
+            }
         }
     }
 

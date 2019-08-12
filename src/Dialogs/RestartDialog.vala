@@ -52,6 +52,7 @@ namespace AppCenter.Widgets {
                         critical ("Failed to reboot: %s", e.message);
                     }
                 }
+
                 destroy ();
             });
         }
