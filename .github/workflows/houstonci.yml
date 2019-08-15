@@ -4,14 +4,18 @@ on: [push, pull_request]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     
     steps:
     - uses: actions/checkout@v1
+ 
+    - name: Install Houston dependencies
+      run: sudo apt install -y libstdc++-6-dev
+ 
     - name: Install Houston CI
       run: sudo npm i -g @elementaryos/houston
-    - name: Run a multi-line script
+ 
+    - name: Run Houston
       run: houston ci
             --type system-app
             --name-domain io.elementary.appcenter
