@@ -1,0 +1,18 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install Houston CI
+      run: npm i -g @elementaryos/houston
+    - name: Run a multi-line script
+      run: houston ci
+            --type system-app
+            --name-domain io.elementary.appcenter
+            --name-human AppCenter
