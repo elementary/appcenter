@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Install Houston CI
-      run: npm i -g @elementaryos/houston
+      run: sudo npm i -g @elementaryos/houston
     - name: Run a multi-line script
       run: houston ci
             --type system-app
