@@ -80,6 +80,8 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         search_entry.search_changed.connect (() => trigger_search ());
 
+        view_mode.notify["selected"].connect (on_view_mode_changed);
+
         search_entry.key_press_event.connect ((event) => {
             if (event.keyval == Gdk.Key.Escape) {
                 search_entry.text = "";
@@ -104,6 +106,8 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
                 return GLib.Source.REMOVE;
             });
         });
+
+        show.connect (on_view_mode_changed);
     }
 
     construct {
@@ -354,4 +358,20 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         View view = (View) stack.visible_child;
         view.return_clicked ();
     }
+
+    private void on_view_mode_changed () {
+        if (search_entry.text.length >= VALID_QUERY_LENGTH) {
+            stack.visible_child = search_view;
+            search_entry.sensitive = !search_view.viewing_package;
+        } else {
+            if (view_mode.selected == homepage_view_id) {
+                stack.visible_child = homepage;
+                search_entry.sensitive = !homepage.viewing_package;
+            } else if (view_mode.selected == installed_view_id) {
+                stack.visible_child = installed_view;
+                search_entry.sensitive = false;
+            }
+        }
+    }
 }
+
