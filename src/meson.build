@@ -40,6 +40,7 @@ appcenter_files = files(
     'Widgets/CategoryItem.vala',
     'Widgets/HumbleButton.vala',
     'Widgets/HumblePopover.vala',
+    'Widgets/NetworkInfoBar.vala',
     'Widgets/PackageRow.vala',
     'Widgets/ReleaseListBox.vala',
     'Widgets/ReleaseRow.vala',
