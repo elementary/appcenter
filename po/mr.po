@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-07-26 08:22-0700\n"
-"PO-Revision-Date: 2019-07-03 14:02+0000\n"
+"PO-Revision-Date: 2019-08-26 04:22+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/mr/>\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -801,16 +801,16 @@ msgstr "दुवा कॉपी करा"
 
 #: src/Widgets/SizeLabel.vala:35
 msgid "Actual Download Size Likely to Be Smaller"
-msgstr ""
+msgstr "वास्तविक डाउनलोड आकार लहान होण्याची शक्यता आहे"
 
 #: src/Widgets/SizeLabel.vala:36
 msgid "Only the parts of apps and updates that are needed will be downloaded."
-msgstr ""
+msgstr "केवळ अॅप्सचे आवश्यक भाग आणि अद्यतने डाउनलोड केली जातील."
 
 #: src/Widgets/SizeLabel.vala:64
-#, fuzzy, c-format
+#, c-format
 msgid "Up to %s"
-msgstr "अद्ययावत"
+msgstr "%s पर्यंत"
 
 #: src/Widgets/UpdateHeaderRow.vala:68
 #, c-format
