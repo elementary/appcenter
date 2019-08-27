@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-27 09:43-0700\n"
-"PO-Revision-Date: 2019-08-08 23:21+0000\n"
+"PO-Revision-Date: 2019-08-29 14:22+0000\n"
 "Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/pt_BR/>\n"
@@ -777,14 +777,12 @@ msgid "$%d"
 msgstr "US$%d"
 
 #: src/Widgets/NetworkInfoBar.vala:32
-#, fuzzy
 msgid "Network Not Available."
-msgstr "Rede não disponível"
+msgstr "Rede não disponível."
 
 #: src/Widgets/NetworkInfoBar.vala:33
-#, fuzzy
 msgid "Connect to the Internet to browse and install apps."
-msgstr "Conecte-se a internet para instalar ou atualizar aplicativos."
+msgstr "Conecte-se à Internet para navegar e instalar aplicativos."
 
 #. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
 #: src/Widgets/NetworkInfoBar.vala:41
