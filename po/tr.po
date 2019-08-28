@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-27 09:43-0700\n"
-"PO-Revision-Date: 2019-08-21 23:22+0000\n"
+"PO-Revision-Date: 2019-08-29 14:22+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/tr/>\n"
@@ -776,14 +776,12 @@ msgid "$%d"
 msgstr "%d$"
 
 #: src/Widgets/NetworkInfoBar.vala:32
-#, fuzzy
 msgid "Network Not Available."
-msgstr "Ağ Kullanılamıyor"
+msgstr "Ağ Bağlantısı Kullanılamıyor."
 
 #: src/Widgets/NetworkInfoBar.vala:33
-#, fuzzy
 msgid "Connect to the Internet to browse and install apps."
-msgstr "Uygulamaları yüklemek veya güncellemek için İnternet'e bağlanın."
+msgstr "Uygulamalara göz atmak ve yüklemek için İnternet'e bağlanın."
 
 #. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
 #: src/Widgets/NetworkInfoBar.vala:41
