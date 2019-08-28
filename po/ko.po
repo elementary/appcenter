@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-26 08:22-0700\n"
+"POT-Creation-Date: 2019-08-27 09:43-0700\n"
 "PO-Revision-Date: 2019-06-30 03:52+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/appcenter/"
@@ -45,34 +45,22 @@ msgstr "%s의 설치를 마쳤습니다"
 msgid "There Was An Error Installing %s."
 msgstr "%s의 설치 도중에 오류가 생겼습니다."
 
-#: src/MainWindow.vala:157 src/Views/Homepage.vala:282
+#: src/MainWindow.vala:145 src/Views/Homepage.vala:282
 #: src/Views/Homepage.vala:294 src/Views/Homepage.vala:299
 #: src/Views/Homepage.vala:310
 msgid "Home"
 msgstr "홈"
 
-#: src/MainWindow.vala:158 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:146 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 msgctxt "view"
 msgid "Installed"
 msgstr "설치함"
 
-#: src/MainWindow.vala:185 src/MainWindow.vala:348 src/Views/SearchView.vala:55
+#: src/MainWindow.vala:173 src/MainWindow.vala:332 src/Views/SearchView.vala:55
 #: src/Views/SearchView.vala:82
 msgid "Search Apps"
 msgstr "앱 검색"
-
-#: src/MainWindow.vala:203
-msgid "Network Is Not Available"
-msgstr "네트워크를 사용할 수 없습니다"
-
-#: src/MainWindow.vala:204
-msgid "Connect to the Internet to install or update apps."
-msgstr "앱을 설치하거나 업데이트하시려면 인터넷에 연결해주세요."
-
-#: src/MainWindow.vala:207
-msgid "Network Settings…"
-msgstr "네트워크 설정…"
 
 #: src/Utils.vala:72 src/Core/ChangeInformation.vala:92
 msgid "Starting"
@@ -341,7 +329,7 @@ msgstr "다시 시작"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:206
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:197
 msgid "Cancel"
 msgstr "취소"
 
@@ -532,85 +520,85 @@ msgstr "나중에 하겠습니다"
 msgid "Try Again"
 msgstr "다시 시도합니다"
 
-#: src/Views/AppInfoView.vala:80
+#: src/Views/AppInfoView.vala:177
 msgid "Screenshot Not Available"
 msgstr "스크린샷을 찍을 수 없습니다"
 
-#: src/Views/AppInfoView.vala:135
+#: src/Views/AppInfoView.vala:236
 msgid "Homepage"
 msgstr "홈 페이지"
 
-#: src/Views/AppInfoView.vala:141
+#: src/Views/AppInfoView.vala:242
 msgid "Suggest Translations"
 msgstr "번역 제안하기"
 
-#: src/Views/AppInfoView.vala:147
+#: src/Views/AppInfoView.vala:248
 msgid "Report a Problem"
 msgstr "버그 리포트"
 
-#: src/Views/AppInfoView.vala:153
+#: src/Views/AppInfoView.vala:254
 msgid "Help"
 msgstr "도움말"
 
-#: src/Views/AppInfoView.vala:183
+#: src/Views/AppInfoView.vala:281
 msgid "What's New:"
 msgstr "새로워진 점:"
 
-#: src/Views/AppInfoView.vala:202
+#: src/Views/AppInfoView.vala:300
 msgid "Extensions:"
 msgstr "확장 프로그램:"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:303
+#: src/Views/AppInfoView.vala:395
 msgid "Public Domain"
 msgstr "퍼블릭 도메인"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:306
+#: src/Views/AppInfoView.vala:398
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://ko.wikipedia.org/wiki/퍼블릭_도메인"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:311
+#: src/Views/AppInfoView.vala:403
 msgid "Free Software"
 msgstr "자유 소프트웨어"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:314
+#: src/Views/AppInfoView.vala:406
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "http://www.gnu.org/philosophy/free-sw.ko.html"
 
-#: src/Views/AppInfoView.vala:318
+#: src/Views/AppInfoView.vala:410
 msgid "Proprietary"
 msgstr "소유권"
 
-#: src/Views/AppInfoView.vala:321
+#: src/Views/AppInfoView.vala:413
 msgid "Unknown License"
 msgstr "알 수 없는 라이선스"
 
-#: src/Views/AppInfoView.vala:363
+#: src/Views/AppInfoView.vala:455
 #, c-format
 msgid "Other Apps by %s"
 msgstr "%s에서 지원되는 다른 앱들"
 
-#: src/Views/AppInfoView.vala:397
+#: src/Views/AppInfoView.vala:489
 msgid "Link copied to clipboard"
 msgstr "링크를 클립보드에 복사했습니다"
 
-#: src/Views/AppInfoView.vala:408
+#: src/Views/AppInfoView.vala:500
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "앱센터에서 %s 확인하기:"
 
-#: src/Views/AppInfoView.vala:415
+#: src/Views/AppInfoView.vala:507
 msgid "Share"
 msgstr "공유"
 
-#: src/Views/AppInfoView.vala:712
+#: src/Views/AppInfoView.vala:817
 msgid "Fund"
 msgstr "투자"
 
-#: src/Views/AppInfoView.vala:734
+#: src/Views/AppInfoView.vala:839
 msgid "Fund the development of this app"
 msgstr "이 앱의 개발에 투자하기"
 
@@ -743,12 +731,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "결제를 해야 하는데, 활성화되어있지 않습니다"
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:322
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:313
 msgid "Free"
 msgstr "무료"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:324
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:315
 msgid "Install"
 msgstr "설치"
 
@@ -763,6 +751,21 @@ msgstr "$%d.00"
 #, c-format
 msgid "$%d"
 msgstr "$%d"
+
+#: src/Widgets/NetworkInfoBar.vala:32
+#, fuzzy
+msgid "Network Not Available."
+msgstr "네트워크를 사용할 수 없습니다"
+
+#: src/Widgets/NetworkInfoBar.vala:33
+#, fuzzy
+msgid "Connect to the Internet to browse and install apps."
+msgstr "앱을 설치하거나 업데이트하시려면 인터넷에 연결해주세요."
+
+#. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
+#: src/Widgets/NetworkInfoBar.vala:41
+msgid "Network Settings…"
+msgstr "네트워크 설정…"
 
 #: src/Widgets/ReleaseRow.vala:67
 #, c-format
@@ -809,38 +812,38 @@ msgstr ""
 msgid "Only the parts of apps and updates that are needed will be downloaded."
 msgstr ""
 
-#: src/Widgets/SizeLabel.vala:64
+#: src/Widgets/SizeLabel.vala:63
 #, fuzzy, c-format
 msgid "Up to %s"
 msgstr "최신 버전입니다"
 
-#: src/Widgets/UpdateHeaderRow.vala:68
+#: src/Widgets/UpdateHeaderRow.vala:69
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "%u개의 업데이트 가능한 항목이 있습니다"
 
-#: src/Widgets/UpdateHeaderRow.vala:106
+#: src/Widgets/UpdateHeaderRow.vala:107
 msgid "Searching for updates…"
 msgstr "업데이트 검색 중…"
 
-#: src/Widgets/UpdateHeaderRow.vala:113
+#: src/Widgets/UpdateHeaderRow.vala:114
 msgid "Up to Date"
 msgstr "최신 버전입니다"
 
-#: src/Widgets/UpdateHeaderRow.vala:121
+#: src/Widgets/UpdateHeaderRow.vala:122
 msgid "Drivers"
 msgstr "드라이버"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:172
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:164
 msgid "Uninstall"
 msgstr "제거"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:182
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:173
 msgid "Open"
 msgstr "열기"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:347
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:338
 msgid "Update"
 msgstr "업데이트"
 
