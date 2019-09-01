@@ -2,13 +2,14 @@
 # Julian Raschke <julian@raschke.de>, 2018, 2019.
 # Tucan Holmes <tucan.web.swiss@gmail.com>, 2018.
 # Pascal Matthiesen <pascal@false.one>, 2018.
+# Tim Krueger <t@timkrueger.me>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-27 09:43-0700\n"
-"PO-Revision-Date: 2019-07-23 12:24+0000\n"
-"Last-Translator: Julian Raschke <julian@raschke.de>\n"
+"PO-Revision-Date: 2019-09-01 13:29+0000\n"
+"Last-Translator: Tim Krueger <t@timkrueger.me>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/de/>\n"
 "Language: de\n"
@@ -573,7 +574,7 @@ msgstr "Erweiterungen:"
 #. TRANSLATORS: See the Wikipedia page
 #: src/Views/AppInfoView.vala:395
 msgid "Public Domain"
-msgstr ""
+msgstr "Gemeinfreiheit"
 
 #. TRANSLATORS: Replace the link with the version for your language
 #: src/Views/AppInfoView.vala:398
