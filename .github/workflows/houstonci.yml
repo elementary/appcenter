@@ -15,7 +15,7 @@ jobs:
     - name: Install Houston dependencies
       run: |
         apt update
-        apt install -y libstdc++-6-dev
+        apt install -y libstdc++-6-dev npm
  
     - name: Install Houston CI
       run: npm i -g @elementaryos/houston
