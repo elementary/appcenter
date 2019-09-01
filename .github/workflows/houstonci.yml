@@ -6,14 +6,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
     
+    container:  
+      image: elementary/docker:unstable
+    
     steps:
     - uses: actions/checkout@v1
  
     - name: Install Houston dependencies
-      run: sudo apt install -y libstdc++-6-dev
+      run: |
+        apt update
+        apt install -y libstdc++-6-dev
  
     - name: Install Houston CI
-      run: sudo npm i -g @elementaryos/houston
+      run: npm i -g @elementaryos/houston
  
     - name: Run Houston
       run: houston ci
