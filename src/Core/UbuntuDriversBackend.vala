@@ -55,6 +55,9 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
             return cached_packages;
         }
 
+        unowned string? latest_nvidia_package = null;
+        unowned string? latest_nvidia_version = null;
+
         string[] tokens = command_output.split ("\n");
         for (int i = 0; i < tokens.length; i++) {
             if (cancellable.is_cancelled ()) {
@@ -66,23 +69,28 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
                 continue;
             }
 
-            var driver_component = new AppStream.Component ();
-            driver_component.set_kind (AppStream.ComponentKind.DRIVER);
-            driver_component.set_pkgnames ({ package_name });
-            driver_component.set_id (package_name);
+            unowned string? nvidia_version = null;
 
-            var icon = new AppStream.Icon ();
-            icon.set_name ("application-x-firmware");
-            icon.set_kind (AppStream.IconKind.STOCK);
-            driver_component.add_icon (icon);
-
-            var package = new Package (this, driver_component);
-            if (package.installed) {
-                package.mark_installed ();
-                package.update_state ();
+            if (package_name.has_prefix ("nvidia-driver-")) {
+                nvidia_version = package_name.offset (14);
+            } else if (package_name.has_prefix ("nvidia-")) {
+                nvidia_version = package_name.offset (7);
             }
 
-            cached_packages.add (package);
+            if (null != nvidia_version) {
+                if (-1 == GLib.strcmp (latest_nvidia_version, nvidia_version)) {
+                    latest_nvidia_package = package_name;
+                    latest_nvidia_version = nvidia_version;
+                }
+
+                continue;
+            }
+
+            add_driver (cached_packages, package_name);
+        }
+
+        if (null != latest_nvidia_package) {
+            add_driver (cached_packages, latest_nvidia_package);
         }
 
         working = false;
@@ -148,5 +156,25 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
     private static GLib.Once<UbuntuDriversBackend> instance;
     public static unowned UbuntuDriversBackend get_default () {
         return instance.once (() => { return new UbuntuDriversBackend (); });
+    }
+
+    private void add_driver (Gee.TreeSet<Package> cached_packages, string package_name) {
+        var driver_component = new AppStream.Component ();
+        driver_component.set_kind (AppStream.ComponentKind.DRIVER);
+        driver_component.set_pkgnames ({ package_name });
+        driver_component.set_id (package_name);
+
+        var icon = new AppStream.Icon ();
+        icon.set_name ("application-x-firmware");
+        icon.set_kind (AppStream.IconKind.STOCK);
+        driver_component.add_icon (icon);
+
+        var package = new Package (this, driver_component);
+        if (package.installed) {
+            package.mark_installed ();
+            package.update_state ();
+        }
+
+        cached_packages.add (package);
     }
 }
