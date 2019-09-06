@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-27 09:43-0700\n"
-"PO-Revision-Date: 2019-09-05 08:35+0000\n"
-"Last-Translator: Pablo Varela <pablovarela182@gmail.com>\n"
+"PO-Revision-Date: 2019-09-06 18:22+0000\n"
+"Last-Translator: Daniel <riesp@protonmail.com>\n"
 "Language-Team: Galician <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/gl/>\n"
 "Language: gl\n"
@@ -163,7 +163,7 @@ msgstr "Descargando grupos"
 
 #: src/Utils.vala:120
 msgid "Downloading update information"
-msgstr "Descargando información de actualización"
+msgstr "Descargando información da actualización"
 
 #: src/Utils.vala:122
 msgid "Repackaging files"
