@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-27 09:43-0700\n"
 "PO-Revision-Date: 2019-09-09 21:41+0000\n"
-"Last-Translator: Michael Leocádio <leocadiomichael@outlook.com>\n"
+"Last-Translator: Mateus Fonseca <mateuspaf23@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -266,7 +266,7 @@ msgstr "Versão: %s"
 
 #: src/Core/UpdateManager.vala:103
 msgid "Flatpak runtime"
-msgstr "Ambiente de execução Flatpak"
+msgstr "Execução do Flatpak"
 
 #: src/Core/UpdateManager.vala:119
 msgid "No components with updates"
