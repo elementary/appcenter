@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-27 09:43-0700\n"
-"PO-Revision-Date: 2019-09-09 21:34+0000\n"
-"Last-Translator: Mateus Fonseca <mateuspaf23@gmail.com>\n"
+"PO-Revision-Date: 2019-09-09 21:35+0000\n"
+"Last-Translator: Cleiton Floss <cleitonfloss@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -236,7 +236,7 @@ msgstr "Atualizações do elementary"
 
 #: src/Core/Package.vala:327
 msgid "Ubuntu (non-curated)"
-msgstr "Externos (não curados)"
+msgstr "Ubuntu (não-curadas)"
 
 #: src/Core/Package.vala:330
 #, c-format
