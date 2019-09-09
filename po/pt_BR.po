@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-27 09:43-0700\n"
 "PO-Revision-Date: 2019-09-09 21:35+0000\n"
-"Last-Translator: Michael Leocádio <leocadiomichael@outlook.com>\n"
+"Last-Translator: Cleiton Floss <cleitonfloss@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -241,7 +241,7 @@ msgstr "Ubuntu (não supervisionado)"
 #: src/Core/Package.vala:330
 #, c-format
 msgid "%s (non-curated)"
-msgstr "%s (não-curado)"
+msgstr "%s (não-curadas)"
 
 #: src/Core/Package.vala:332
 msgid "Ubuntu Drivers"
