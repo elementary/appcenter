@@ -3,13 +3,14 @@
 # Henrique Andrade <henrique.coelho@gmail.com>, 2019.
 # Mateus Fonseca <mateuspaf23@gmail.com>, 2019.
 # Cleiton Floss <cleitonfloss@gmail.com>, 2019.
+# Michael Leocádio <leocadiomichael@outlook.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-27 09:43-0700\n"
-"PO-Revision-Date: 2019-08-29 14:22+0000\n"
-"Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
+"PO-Revision-Date: 2019-09-09 21:34+0000\n"
+"Last-Translator: Michael Leocádio <leocadiomichael@outlook.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -33,21 +34,21 @@ msgstr "Não foi possível analisar o tipo de mídia %s"
 #: src/Application.vala:126
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr "O link '%s' especificado não pôde ser encontrado, procurando ao invés"
+msgstr "O link especificado '%s' não pôde ser encontrado, buscando"
 
 #: src/Application.vala:264
 msgid "Application installed"
-msgstr "Aplicação instalada"
+msgstr "Aplicativo instalado"
 
 #: src/Application.vala:265
 #, c-format
 msgid "%s has been successfully installed"
-msgstr "%s foi instalado(a) com sucesso"
+msgstr "%s foi instalado com sucesso"
 
 #: src/Application.vala:277
 #, c-format
 msgid "There Was An Error Installing %s."
-msgstr "Houve um erro ao instalar %s."
+msgstr "Houve um Erro ao Instalar o %s."
 
 #: src/MainWindow.vala:145 src/Views/Homepage.vala:282
 #: src/Views/Homepage.vala:294 src/Views/Homepage.vala:299
@@ -64,7 +65,7 @@ msgstr "Instalado"
 #: src/MainWindow.vala:173 src/MainWindow.vala:332 src/Views/SearchView.vala:55
 #: src/Views/SearchView.vala:82
 msgid "Search Apps"
-msgstr "Procurar aplicativos"
+msgstr "Encontrar Aplicativos"
 
 #: src/Utils.vala:72 src/Core/ChangeInformation.vala:92
 msgid "Starting"
@@ -125,11 +126,11 @@ msgstr "Verificando assinaturas"
 
 #: src/Utils.vala:100
 msgid "Testing changes"
-msgstr "Testando as alterações"
+msgstr "Testando alterações"
 
 #: src/Utils.vala:102
 msgid "Committing changes"
-msgstr "Aplicando as alterações"
+msgstr "Aplicando alterações"
 
 #: src/Utils.vala:104
 msgid "Requesting data"
@@ -149,15 +150,15 @@ msgstr "Baixando informações do repositório"
 
 #: src/Utils.vala:112
 msgid "Downloading list of packages"
-msgstr "Baixando a lista de pacotes"
+msgstr "Baixando lista de pacotes"
 
 #: src/Utils.vala:114
 msgid "Downloading file lists"
-msgstr "Baixando lista de arquivos"
+msgstr "Baixando listas de arquivos"
 
 #: src/Utils.vala:116
 msgid "Downloading lists of changes"
-msgstr "Baixando lista de alterações"
+msgstr "Baixando listas de alterações"
 
 #: src/Utils.vala:118
 msgid "Downloading groups"
@@ -165,7 +166,7 @@ msgstr "Baixando grupos"
 
 #: src/Utils.vala:120
 msgid "Downloading update information"
-msgstr "Baixando informações da atualização"
+msgstr "Baixando informações de atualização"
 
 #: src/Utils.vala:122
 msgid "Repackaging files"
@@ -185,11 +186,11 @@ msgstr "Gerando listas de pacotes"
 
 #: src/Utils.vala:130
 msgid "Waiting for package manager lock"
-msgstr "Aguardando o bloqueio do gerenciador de pacotes"
+msgstr "Aguardando a liberação do gerenciador de pacotes"
 
 #: src/Utils.vala:132
 msgid "Waiting for authentication"
-msgstr "Aguardando pela autenticação"
+msgstr "Aguardando autenticação"
 
 #: src/Utils.vala:134
 msgid "Updating running applications"
@@ -209,13 +210,13 @@ msgstr "Copiando arquivos"
 
 #: src/Utils.vala:142
 msgid "Unknown state"
-msgstr "Estado desconhecido"
+msgstr "Status desconhecido"
 
 #: src/Core/Client.vala:70
 msgid "Update Available"
 msgid_plural "Updates Available"
-msgstr[0] "Atualização disponível"
-msgstr[1] "Atualizações disponíveis"
+msgstr[0] "Atualização Disponível"
+msgstr[1] "Atualizações Disponíveis"
 
 #: src/Core/Client.vala:71
 #, c-format
@@ -235,7 +236,7 @@ msgstr "Atualizações do elementary"
 
 #: src/Core/Package.vala:327
 msgid "Ubuntu (non-curated)"
-msgstr "Ubuntu (não-curado)"
+msgstr "Ubuntu (não supervisionado)"
 
 #: src/Core/Package.vala:330
 #, c-format
