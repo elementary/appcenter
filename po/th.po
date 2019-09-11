@@ -1,11 +1,12 @@
 # Athiwat Tiprasaharn <hiyakutake@gmail.com>, 2019.
+# Daniel Foré <daniel@elementary.io>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-27 09:43-0700\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
-"Last-Translator: Athiwat Tiprasaharn <hiyakutake@gmail.com>\n"
+"Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Thai <https://l10n.elementary.io/projects/appcenter/appcenter/"
 "th/>\n"
 "Language: th\n"
@@ -49,7 +50,7 @@ msgstr "มีปัญหาในการติดตั้ง %s"
 #: src/Views/Homepage.vala:294 src/Views/Homepage.vala:299
 #: src/Views/Homepage.vala:310
 msgid "Home"
-msgstr ""
+msgstr "หน้าหลัก"
 
 #: src/MainWindow.vala:146 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
@@ -752,7 +753,7 @@ msgstr ""
 #. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
 #: src/Widgets/NetworkInfoBar.vala:41
 msgid "Network Settings…"
-msgstr ""
+msgstr "ตั้งค่าเครือข่าย…"
 
 #: src/Widgets/ReleaseRow.vala:67
 #, c-format
