@@ -2,13 +2,16 @@
 # Julian Raschke <julian@raschke.de>, 2018, 2019.
 # Tucan Holmes <tucan.web.swiss@gmail.com>, 2018.
 # Pascal Matthiesen <pascal@false.one>, 2018.
+# Tim Krueger <t@timkrueger.me>, 2019.
+# Uwe S <saabisto@gmx.de>, 2019.
+# Christoph Matthies <c.matthies.mail+github@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-27 09:43-0700\n"
-"PO-Revision-Date: 2019-07-23 12:24+0000\n"
-"Last-Translator: Julian Raschke <julian@raschke.de>\n"
+"PO-Revision-Date: 2019-09-02 20:22+0000\n"
+"Last-Translator: Christoph Matthies <c.matthies.mail+github@gmail.com>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/de/>\n"
 "Language: de\n"
@@ -573,23 +576,22 @@ msgstr "Erweiterungen:"
 #. TRANSLATORS: See the Wikipedia page
 #: src/Views/AppInfoView.vala:395
 msgid "Public Domain"
-msgstr ""
+msgstr "Gemeinfrei"
 
 #. TRANSLATORS: Replace the link with the version for your language
 #: src/Views/AppInfoView.vala:398
 msgid "https://en.wikipedia.org/wiki/Public_domain"
-msgstr ""
+msgstr "https://de.wikipedia.org/wiki/Gemeinfreiheit#Public_Domain"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
 #: src/Views/AppInfoView.vala:403
-#, fuzzy
 msgid "Free Software"
-msgstr "Anwendungsquellen bearbeiten"
+msgstr "Freie Software"
 
 #. TRANSLATORS: Replace the link with the version for your language
 #: src/Views/AppInfoView.vala:406
 msgid "https://www.gnu.org/philosophy/free-sw"
-msgstr ""
+msgstr "https://www.gnu.org/philosophy/free-sw"
 
 #: src/Views/AppInfoView.vala:410
 msgid "Proprietary"
@@ -623,7 +625,7 @@ msgstr "Unterstützen"
 
 #: src/Views/AppInfoView.vala:839
 msgid "Fund the development of this app"
-msgstr "Die Entwicklung dieser App unterstützen"
+msgstr "Entwicklung dieser App unterstützen"
 
 #: src/Views/AppListUpdateView.vala:56
 msgid "A restart is required to complete the installation of updates"
@@ -646,7 +648,7 @@ msgstr "Andere externe Apps"
 
 #: src/Views/Homepage.vala:67
 msgid "Recently Updated"
-msgstr "kürzlich aktualisiert"
+msgstr "Kürzlich aktualisiert"
 
 #: src/Views/Homepage.vala:83
 msgid "Trending"

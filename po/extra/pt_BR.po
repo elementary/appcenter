@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:42+0200\n"
-"PO-Revision-Date: 2019-07-03 14:02+0000\n"
+"PO-Revision-Date: 2019-09-10 00:32+0000\n"
 "Last-Translator: ricardomaciel17 <ricardopmaciel@hotmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/extra/pt_BR/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
@@ -37,11 +37,11 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
 msgid "Meson build system fixes"
-msgstr "Correções de sistema do Meson"
+msgstr "Correções do sistema de compilação do Meson"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "Improve window state restoration"
-msgstr "Melhore a restauração do estado da janela"
+msgstr "Melhorar a restauração do estado da janela"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Prevent action buttons from jumping around"
@@ -59,8 +59,8 @@ msgstr "Refinamentos de gerenciamento de memória"
 msgid ""
 "Add conditional compilation for disabling dynamic remote homepage content"
 msgstr ""
-"Adicionar compilação condicional para desabilitar o conteúdo da página "
-"dinâmica remota"
+"Adicionar compilação condicional para desabilitar conteúdo da pagina inicial "
+"remota"
 
 #: data/io.elementary.appcenter.appdata.xml.in:27
 #: data/io.elementary.appcenter.appdata.xml.in:39

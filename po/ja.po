@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-27 09:43-0700\n"
-"PO-Revision-Date: 2019-07-28 00:57+0000\n"
+"PO-Revision-Date: 2019-08-29 14:22+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ja/>\n"
@@ -760,16 +760,12 @@ msgid "$%d"
 msgstr "%d ドル"
 
 #: src/Widgets/NetworkInfoBar.vala:32
-#, fuzzy
 msgid "Network Not Available."
-msgstr "ネットワークが利用可能ではありません"
+msgstr "ネットワークが利用できません。"
 
 #: src/Widgets/NetworkInfoBar.vala:33
-#, fuzzy
 msgid "Connect to the Internet to browse and install apps."
-msgstr ""
-"アプリをインストールしたりアップデートしたりするにはインターネットに接続して"
-"ください。"
+msgstr "アプリを閲覧したりインストールしたりするにはインターネットに接続してください。"
 
 #. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
 #: src/Widgets/NetworkInfoBar.vala:41

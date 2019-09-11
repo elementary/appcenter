@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-27 09:43-0700\n"
-"PO-Revision-Date: 2019-08-26 04:22+0000\n"
+"PO-Revision-Date: 2019-09-06 18:22+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/mr/>\n"
@@ -751,14 +751,12 @@ msgid "$%d"
 msgstr "$%d"
 
 #: src/Widgets/NetworkInfoBar.vala:32
-#, fuzzy
 msgid "Network Not Available."
-msgstr "नेटवर्क उपलब्ध नाही"
+msgstr "नेटवर्क उपलब्ध नाही."
 
 #: src/Widgets/NetworkInfoBar.vala:33
-#, fuzzy
 msgid "Connect to the Internet to browse and install apps."
-msgstr "अनुप्रयोग(अॅप) स्थापित किंवा अद्ययावत करण्यासाठी इंटरनेट जोडा."
+msgstr "अ‍ॅप्स ब्राउझ आणि स्थापित करण्यासाठी इंटरनेटशी कनेक्ट व्हा."
 
 #. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
 #: src/Widgets/NetworkInfoBar.vala:41
