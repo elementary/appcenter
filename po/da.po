@@ -1,19 +1,20 @@
 # Kaj Printz Madsen <kajprintz@gmail.com>, 2018, 2019.
+# Frederik Lund <fln8203@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-27 09:43-0700\n"
-"PO-Revision-Date: 2019-01-25 18:42+0000\n"
-"Last-Translator: Kaj Printz Madsen <kajprintz@gmail.com>\n"
-"Language-Team: Danish <https://weblate.elementary.io/projects/appcenter/"
+"PO-Revision-Date: 2019-09-12 01:22+0000\n"
+"Last-Translator: Frederik Lund <fln8203@gmail.com>\n"
+"Language-Team: Danish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/da/>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -22,9 +23,9 @@ msgid "AppCenter"
 msgstr "AppCenter"
 
 #: src/Application.vala:106
-#, fuzzy, c-format
+#, c-format
 msgid "Could not parse the media type %s"
-msgstr "Kunne ikke forstå mimetypen %s"
+msgstr "Kunne ikke forstå medie type %s"
 
 #: src/Application.vala:126
 #, c-format
@@ -232,7 +233,7 @@ msgstr "Nyligt Opdaterede"
 
 #: src/Core/Package.vala:327
 msgid "Ubuntu (non-curated)"
-msgstr ""
+msgstr "Ubuntu (Ikke-kurateret)"
 
 #: src/Core/Package.vala:330
 #, fuzzy, c-format
