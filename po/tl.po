@@ -1,19 +1,20 @@
 # Axel Philip Advento <badwolf.bloodseeker.rev@gmail.com>, 2018.
+# Daniel Foré <daniel@elementary.io>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-27 09:43-0700\n"
-"PO-Revision-Date: 2018-10-07 09:42+0000\n"
-"Last-Translator: Axel Philip Advento <badwolf.bloodseeker.rev@gmail.com>\n"
-"Language-Team: Tagalog <https://weblate.elementary.io/projects/appcenter/"
+"PO-Revision-Date: 2019-09-12 01:22+0000\n"
+"Last-Translator: Daniel Foré <daniel@elementary.io>\n"
+"Language-Team: Tagalog <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/tl/>\n"
 "Language: tl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -33,7 +34,7 @@ msgstr ""
 
 #: src/Application.vala:264
 msgid "Application installed"
-msgstr ""
+msgstr "Ang Application Ay Naka-Install"
 
 #: src/Application.vala:265
 #, fuzzy, c-format
