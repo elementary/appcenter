@@ -1,12 +1,13 @@
 # Jernej Virag <jernej@virag.si>, 2018.
 # Leon C <leonleon102012@gmail.com>, 2019.
+# Daniel Foré <daniel@elementary.io>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-27 09:43-0700\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
-"Last-Translator: Leon C <leonleon102012@gmail.com>\n"
+"Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Slovenian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/sl/>\n"
 "Language: sl\n"
@@ -320,7 +321,7 @@ msgstr ""
 
 #: src/Dialogs/ContentWarningDialog.vala:40
 msgid "Don’t Install"
-msgstr ""
+msgstr "Ne namesti"
 
 #: src/Dialogs/ContentWarningDialog.vala:41
 #, fuzzy
@@ -359,7 +360,7 @@ msgstr "Prosimo, da pregledate plačniške podatke in poskusite znova."
 
 #: src/Dialogs/StripeDialog.vala:76
 msgid "Payment"
-msgstr ""
+msgstr "Plačilo"
 
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
