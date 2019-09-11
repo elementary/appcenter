@@ -1,11 +1,12 @@
 # Robin Khan <sk118420@gmail.com>, 2019.
+# Daniel Foré <daniel@elementary.io>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-27 09:43-0700\n"
-"PO-Revision-Date: 2019-05-07 22:51+0000\n"
-"Last-Translator: Robin Khan <sk118420@gmail.com>\n"
+"PO-Revision-Date: 2019-09-12 01:22+0000\n"
+"Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Bengali <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/bn/>\n"
 "Language: bn\n"
@@ -13,13 +14,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
 #: src/Application.vala:38 src/Core/Package.vala:323
 msgid "AppCenter"
-msgstr ""
+msgstr "অ্যাপলিকেশন সেন্টার"
 
 #: src/Application.vala:106
 #, fuzzy, c-format
@@ -748,7 +749,7 @@ msgstr "ইন্টারনেটের সাথে কানেক্ট হ
 #. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
 #: src/Widgets/NetworkInfoBar.vala:41
 msgid "Network Settings…"
-msgstr "নেটোয়ার্ক সেটিংস..."
+msgstr "নেটোয়ার্ক সেটিংস…"
 
 #: src/Widgets/ReleaseRow.vala:67
 #, c-format
