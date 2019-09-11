@@ -1,11 +1,12 @@
 # Dimative <ulziibat.n@gmail.com>, 2019.
+# Cleiton Floss <cleitonfloss@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-27 09:43-0700\n"
-"PO-Revision-Date: 2019-05-01 01:31+0000\n"
-"Last-Translator: Dimative <ulziibat.n@gmail.com>\n"
+"PO-Revision-Date: 2019-09-12 01:22+0000\n"
+"Last-Translator: Cleiton Floss <cleitonfloss@gmail.com>\n"
 "Language-Team: Mongolian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/mn/>\n"
 "Language: mn\n"
@@ -13,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.6\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -769,7 +770,7 @@ msgstr "Интернэтэд холбогдоод аппуудын шинэчл�
 #. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
 #: src/Widgets/NetworkInfoBar.vala:41
 msgid "Network Settings…"
-msgstr "Сүлжээний тохиргоо..."
+msgstr "Сүлжээний тохиргоо…"
 
 #: src/Widgets/ReleaseRow.vala:67
 #, c-format
@@ -829,7 +830,7 @@ msgstr[0] "%u Шинэчлэл илэрсэн"
 
 #: src/Widgets/UpdateHeaderRow.vala:107
 msgid "Searching for updates…"
-msgstr "Шинэчлэлтүүдийг хайж байна..."
+msgstr "Шинэчлэлтүүдийг хайж байна…"
 
 #: src/Widgets/UpdateHeaderRow.vala:114
 msgid "Up to Date"
