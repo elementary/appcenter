@@ -1,11 +1,12 @@
 # Cleiton Floss <cleitonfloss@gmail.com>, 2019.
+# Daniel Foré <daniel@elementary.io>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-27 09:43-0700\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
-"Last-Translator: Cleiton Floss <cleitonfloss@gmail.com>\n"
+"Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Estonian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/et/>\n"
 "Language: et\n"
@@ -61,7 +62,7 @@ msgstr "Paigaldatud"
 #: src/MainWindow.vala:173 src/MainWindow.vala:332 src/Views/SearchView.vala:55
 #: src/Views/SearchView.vala:82
 msgid "Search Apps"
-msgstr "Otsi rakendusi..."
+msgstr "Otsi rakendusi"
 
 #: src/Utils.vala:72 src/Core/ChangeInformation.vala:92
 msgid "Starting"
