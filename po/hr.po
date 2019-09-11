@@ -1,11 +1,12 @@
 # Aleksandar Kovač <alex.open.design@gmail.com>, 2019.
+# Daniel Foré <daniel@elementary.io>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-27 09:43-0700\n"
 "PO-Revision-Date: 2019-09-11 00:32+0000\n"
-"Last-Translator: Aleksandar Kovač <alex.open.design@gmail.com>\n"
+"Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Croatian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/hr/>\n"
 "Language: hr\n"
@@ -806,7 +807,7 @@ msgstr ""
 
 #: src/Widgets/SharePopover.vala:59
 msgid "Copy link"
-msgstr ""
+msgstr "Kopiraj poveznicu"
 
 #: src/Widgets/SizeLabel.vala:35
 msgid "Actual Download Size Likely to Be Smaller"
@@ -839,7 +840,7 @@ msgstr "Sustav je nadopunjen"
 
 #: src/Widgets/UpdateHeaderRow.vala:122
 msgid "Drivers"
-msgstr ""
+msgstr "Upravljački programi"
 
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:164
 msgid "Uninstall"
