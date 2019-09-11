@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-27 09:43-0700\n"
-"PO-Revision-Date: 2019-09-11 00:32+0000\n"
+"PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Croatian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/hr/>\n"
@@ -769,7 +769,7 @@ msgstr ""
 #. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
 #: src/Widgets/NetworkInfoBar.vala:41
 msgid "Network Settings…"
-msgstr "Mrežne postavke..."
+msgstr "Mrežne postavke…"
 
 #: src/Widgets/ReleaseRow.vala:67
 #, c-format
