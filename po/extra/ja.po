@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:42+0200\n"
-"PO-Revision-Date: 2019-07-11 21:28+0000\n"
+"PO-Revision-Date: 2019-09-14 12:23+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/extra/"
 "ja/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
@@ -153,7 +153,7 @@ msgstr "不足しているパッケージの登録によるクラッシュを修
 
 #: data/io.elementary.appcenter.appdata.xml.in:166
 msgid "Add capability to search by category and apply minor bug fixes."
-msgstr "カテゴリー別で検索できるようにし、マイナーなバグ修正を適用しました。"
+msgstr "カテゴリー別で検索できるようにし、軽微なバグを修正しました。"
 
 #: data/io.elementary.appcenter.appdata.xml.in:168
 msgid "It is now possible to search apps inside a category"
