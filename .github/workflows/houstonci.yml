@@ -22,6 +22,7 @@ jobs:
  
     - name: Run Houston
       run: houston ci
+            --repo https://github.com/elementary/appcenter
             --type system-app
             --name-domain io.elementary.appcenter
             --name-human AppCenter
