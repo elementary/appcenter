@@ -1,12 +1,13 @@
 # AMONK <anandahanuman@gmail.com>, 2019.
 # Pomi Not <uspomai@gmail.com>, 2019.
+# Daniel Foré <daniel@elementary.io>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-27 09:43-0700\n"
-"PO-Revision-Date: 2019-05-16 00:14+0000\n"
-"Last-Translator: Pomi Not <uspomai@gmail.com>\n"
+"PO-Revision-Date: 2019-09-12 01:22+0000\n"
+"Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Vietnamese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/vi/>\n"
 "Language: vi\n"
@@ -14,13 +15,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
 #: src/Application.vala:38 src/Core/Package.vala:323
 msgid "AppCenter"
-msgstr "Trung tâm ứng dụng"
+msgstr "Trung tâm Ứng dụng"
 
 #: src/Application.vala:106
 #, fuzzy, c-format

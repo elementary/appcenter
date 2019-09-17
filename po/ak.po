@@ -1,19 +1,19 @@
-# Lawrence Aberba <karabutaworld@gmail.com>, 2017.
+# Lawrence Aberba <karabutaworld@gmail.com>, 2017, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: Akan (AppCenter)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-27 09:43-0700\n"
-"PO-Revision-Date: 2017-08-10 14:46+0000\n"
+"PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Lawrence Aberba <karabutaworld@gmail.com>\n"
-"Language-Team: Akan <https://weblate.elementary.io/projects/appcenter/"
-"appcenter/ak/>\n"
+"Language-Team: Akan <https://l10n.elementary.io/projects/appcenter/appcenter/"
+"ak/>\n"
 "Language: ak\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2.15\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:24+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -260,7 +260,7 @@ msgstr "Ɛso dwumadie foforɔ a aba"
 #: src/Core/UpdateManager.vala:76
 #, c-format
 msgid "Version: %s"
-msgstr ""
+msgstr "Version: %s"
 
 #: src/Core/UpdateManager.vala:103
 msgid "Flatpak runtime"

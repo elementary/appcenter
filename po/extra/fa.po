@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:42+0200\n"
-"PO-Revision-Date: 2018-02-21 00:06+0000\n"
-"Last-Translator: RaymondDragon <swordart2050@gmail.com>\n"
-"Language-Team: Persian <https://weblate.elementary.io/projects/appcenter/"
-"extra/fa/>\n"
+"PO-Revision-Date: 2019-09-12 01:22+0000\n"
+"Last-Translator: Daniel Foré <daniel@elementary.io>\n"
+"Language-Team: Persian <https://l10n.elementary.io/projects/appcenter/extra/"
+"fa/>\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
@@ -22,7 +22,7 @@ msgstr "مرکزبرنامه"
 #: data/io.elementary.appcenter.appdata.xml.in:9
 #: data/io.elementary.appcenter.desktop.in.in:4
 msgid "Browse and manage apps"
-msgstr ""
+msgstr "برنامک‌ها را مرور و مدیریت کنید"
 
 #: data/io.elementary.appcenter.appdata.xml.in:11
 msgid ""
@@ -30,6 +30,10 @@ msgid ""
 "search and discover new apps. AppCenter is also used for updating your "
 "system to the latest and greatest version for new features and fixes."
 msgstr ""
+"یک فروشگاه برنامک برای توسعه‌دهندگان مستقل و متن باز. بر اساس دسته بندی مرور "
+"کرده و یا کاوش کرده و برنامک‌های جدیدی بیابید. فروشگاه برنامک همچنین برای "
+"بروزرسانی سیستم به آخرین و برترین نگارش برای ویژگی‌های نو و اصلاحات به‌کار "
+"می‌رود."
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
 msgid "Meson build system fixes"
@@ -181,7 +185,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
-msgstr ""
+msgstr "@APP_NAME@"
 
 #: data/io.elementary.appcenter.desktop.in.in:6
 msgid "@DESKTOP_ICON@"
@@ -189,8 +193,8 @@ msgstr ""
 
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
-msgstr ""
+msgstr "نصب;حذف نصب;حذف;کارنما;فروشگاه;برنامک‌ها;بروزرسانی‌ها;نرم‌افزار;"
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
-msgstr ""
+msgstr "بررسی برای بروزرسانی"

@@ -13,12 +13,11 @@ You'll need the following dependencies:
 * libappstream-dev (>= 0.10)
 * libflatpak-dev
 * libgee-0.8-dev
-* libgranite-dev (>=5.2.3)
+* libgranite-dev (>=5.2.5)
 * libgtk-3-dev
 * libjson-glib-dev
 * libpackagekit-glib2-dev
 * libsoup2.4-dev
-* libunity-dev
 * libxml2-dev
 * libxml2-utils
 * meson

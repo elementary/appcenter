@@ -1,18 +1,21 @@
+# Athiwat Tiprasaharn <hiyakutake@gmail.com>, 2019.
+# Daniel Foré <daniel@elementary.io>, 2019.
+# Cleiton Floss <cleitonfloss@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-27 09:43-0700\n"
-"PO-Revision-Date: 2018-03-05 18:38+0000\n"
-"Last-Translator: Wattana Gaming <artjang301@gmail.com>\n"
-"Language-Team: Thai <https://weblate.elementary.io/projects/appcenter/"
-"appcenter/th/>\n"
+"PO-Revision-Date: 2019-09-12 01:22+0000\n"
+"Last-Translator: Cleiton Floss <cleitonfloss@gmail.com>\n"
+"Language-Team: Thai <https://l10n.elementary.io/projects/appcenter/appcenter/"
+"th/>\n"
 "Language: th\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -28,7 +31,7 @@ msgstr ""
 #: src/Application.vala:126
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr ""
+msgstr "ค้นหาลิ้งค์เฉพาะ '%s' ไม่พบ กรุณาค้นหาด้วยตนเอง"
 
 #: src/Application.vala:264
 msgid "Application installed"
@@ -48,7 +51,7 @@ msgstr "มีปัญหาในการติดตั้ง %s"
 #: src/Views/Homepage.vala:294 src/Views/Homepage.vala:299
 #: src/Views/Homepage.vala:310
 msgid "Home"
-msgstr ""
+msgstr "หน้าหลัก"
 
 #: src/MainWindow.vala:146 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
@@ -751,7 +754,7 @@ msgstr ""
 #. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
 #: src/Widgets/NetworkInfoBar.vala:41
 msgid "Network Settings…"
-msgstr ""
+msgstr "ตั้งค่าเครือข่าย…"
 
 #: src/Widgets/ReleaseRow.vala:67
 #, c-format
@@ -812,7 +815,7 @@ msgstr[0] "การอัปเดต %u รายการพร้อมใ�
 
 #: src/Widgets/UpdateHeaderRow.vala:107
 msgid "Searching for updates…"
-msgstr "กำลังค้นหาอัปเดต..."
+msgstr "กำลังค้นหาอัปเดต…"
 
 #: src/Widgets/UpdateHeaderRow.vala:114
 msgid "Up to Date"

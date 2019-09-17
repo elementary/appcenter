@@ -1,13 +1,14 @@
 # David Hewitt <davidmhewitt@gmail.com>, 2018.
 # Cheng-Chia Tseng <pswo10680@gmail.com>, 2018.
 # P.-H. Lin <cypressyew@gmail.com>, 2019.
+# Aefgh Threenine <aefgh39622@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-27 09:43-0700\n"
-"PO-Revision-Date: 2019-05-22 06:03+0000\n"
-"Last-Translator: P.-H. Lin <cypressyew@gmail.com>\n"
+"PO-Revision-Date: 2019-09-12 01:22+0000\n"
+"Last-Translator: Aefgh Threenine <aefgh39622@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/zh_Hant/>\n"
 "Language: zh_TW\n"
@@ -15,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -24,9 +25,9 @@ msgid "AppCenter"
 msgstr "AppCenter"
 
 #: src/Application.vala:106
-#, fuzzy, c-format
+#, c-format
 msgid "Could not parse the media type %s"
-msgstr "無法解析 MIME 類型 %s"
+msgstr "無法解析媒體類型 %s"
 
 #: src/Application.vala:126
 #, c-format
@@ -226,13 +227,12 @@ msgid "%s Developers"
 msgstr "%s 開發者"
 
 #: src/Core/Package.vala:325
-#, fuzzy
 msgid "elementary Updates"
-msgstr "最近更新"
+msgstr "elementary 更新"
 
 #: src/Core/Package.vala:327
 msgid "Ubuntu (non-curated)"
-msgstr ""
+msgstr "Ubuntu (未整理)"
 
 #: src/Core/Package.vala:330
 #, fuzzy, c-format
@@ -240,13 +240,12 @@ msgid "%s (non-curated)"
 msgstr "%s (本地)"
 
 #: src/Core/Package.vala:332
-#, fuzzy
 msgid "Ubuntu Drivers"
-msgstr "驅動程式"
+msgstr "Ubuntu 驅動程式"
 
 #: src/Core/Package.vala:335
 msgid "Unknown Origin (non-curated)"
-msgstr ""
+msgstr "未知的來源 (未整理)"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -263,7 +262,7 @@ msgstr "版本：%s"
 
 #: src/Core/UpdateManager.vala:103
 msgid "Flatpak runtime"
-msgstr ""
+msgstr "Flatpak 執行階段"
 
 #: src/Core/UpdateManager.vala:119
 msgid "No components with updates"

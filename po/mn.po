@@ -1,11 +1,13 @@
 # Dimative <ulziibat.n@gmail.com>, 2019.
+# Cleiton Floss <cleitonfloss@gmail.com>, 2019.
+# Daniel Foré <daniel@elementary.io>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-27 09:43-0700\n"
-"PO-Revision-Date: 2019-05-01 01:31+0000\n"
-"Last-Translator: Dimative <ulziibat.n@gmail.com>\n"
+"PO-Revision-Date: 2019-09-12 01:22+0000\n"
+"Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Mongolian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/mn/>\n"
 "Language: mn\n"
@@ -13,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.6\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -38,7 +40,7 @@ msgstr "Програм суулгагдсан"
 #: src/Application.vala:265
 #, c-format
 msgid "%s has been successfully installed"
-msgstr "%s амжилттай суулгагдлаа."
+msgstr "%s амжилттай суулгагдлаа"
 
 #: src/Application.vala:277
 #, c-format
@@ -322,7 +324,7 @@ msgstr "Та системийн унтрааж асаахдаа итгэлтэй
 msgid "This will close all open applications and restart this device."
 msgstr ""
 "Төхөөрөмжийг унтрааж асаах үед одоо ажиллаж байгаа бүх програмуудаас гарах "
-"болно"
+"болно."
 
 #: src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
@@ -352,7 +354,7 @@ msgstr "Төлбөр"
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
 msgid "Pay $%d for %s"
-msgstr " %s зориулан $%d төлөх"
+msgstr "%s зориулан $%d төлөх"
 
 #: src/Dialogs/StripeDialog.vala:96
 msgid ""
@@ -591,7 +593,7 @@ msgstr "Холбоосыг түр санах ойд хуулах"
 #: src/Views/AppInfoView.vala:500
 #, c-format
 msgid "Check out %s on AppCenter:"
-msgstr "%s Аппын Төвөөс шалгах"
+msgstr "%s Аппын Төвөөс шалгах:"
 
 #: src/Views/AppInfoView.vala:507
 msgid "Share"
@@ -769,7 +771,7 @@ msgstr "Интернэтэд холбогдоод аппуудын шинэчл�
 #. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
 #: src/Widgets/NetworkInfoBar.vala:41
 msgid "Network Settings…"
-msgstr "Сүлжээний тохиргоо..."
+msgstr "Сүлжээний тохиргоо…"
 
 #: src/Widgets/ReleaseRow.vala:67
 #, c-format
@@ -829,7 +831,7 @@ msgstr[0] "%u Шинэчлэл илэрсэн"
 
 #: src/Widgets/UpdateHeaderRow.vala:107
 msgid "Searching for updates…"
-msgstr "Шинэчлэлтүүдийг хайж байна..."
+msgstr "Шинэчлэлтүүдийг хайж байна…"
 
 #: src/Widgets/UpdateHeaderRow.vala:114
 msgid "Up to Date"
