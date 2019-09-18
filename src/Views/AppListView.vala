@@ -83,9 +83,13 @@ namespace AppCenter.Views {
         private static int compare_packages (AppCenterCore.Package p1, AppCenterCore.Package p2) {
 #if CURATED
             bool p1_is_elementary_native = p1.is_native;
-
             if (p1_is_elementary_native || p2.is_native) {
                 return p1_is_elementary_native ? -1 : 1;
+            }
+            
+            bool p1_is_flatpak = p1.is_flatpak;
+            if (p1_is_flatpak || p2.is_flatpak) {
+                return p1_is_flatpak ? -1 : 1;
             }
 #endif
 
@@ -100,10 +104,15 @@ namespace AppCenter.Views {
         [CCode (instance_pos = -1)]
         protected override int package_row_compare (Widgets.AppListRow row1, Widgets.AppListRow row2) {
             bool p1_is_elementary_native = row1.get_package ().is_native;
+            bool p1_is_flatpak = row1.get_package ().is_flatpak;
             bool p1_is_plugin = row1.get_package ().is_plugin;
 
             if (p1_is_elementary_native != row2.get_package ().is_native) {
                 return p1_is_elementary_native ? -1 : 1;
+            }
+
+            if (p1_is_flatpak != row2.get_package ().is_flatpak) {
+                return p1_is_flatpak ? -1 : 1;
             }
 
             if (p1_is_plugin != row2.get_package ().is_plugin) {
