@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-27 09:43-0700\n"
-"PO-Revision-Date: 2019-09-18 13:53+0000\n"
+"PO-Revision-Date: 2019-09-18 13:56+0000\n"
 "Last-Translator: Andrii Priadko <mendeleev.ua@gmail.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/uk/>\n"
@@ -234,21 +234,20 @@ msgstr "%s Розробників"
 
 #: src/Core/Package.vala:325
 msgid "elementary Updates"
-msgstr "Оновлення elementary OS"
+msgstr "Оновлення Elementary OS"
 
 #: src/Core/Package.vala:327
 msgid "Ubuntu (non-curated)"
-msgstr ""
+msgstr "Ubuntu (не курований)"
 
 #: src/Core/Package.vala:330
 #, c-format
 msgid "%s (non-curated)"
-msgstr ""
+msgstr "%s (не курований)"
 
 #: src/Core/Package.vala:332
-#, fuzzy
 msgid "Ubuntu Drivers"
-msgstr "Драйвери"
+msgstr "Драйвери Ubuntu"
 
 #: src/Core/Package.vala:335
 msgid "Unknown Origin (non-curated)"
