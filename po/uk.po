@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-27 09:43-0700\n"
 "PO-Revision-Date: 2019-09-19 15:22+0000\n"
-"Last-Translator: Andrii Priadko <mendeleev.ua@gmail.com>\n"
+"Last-Translator: pandreyko <andrii.pavloshchuk@gmail.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/uk/>\n"
 "Language: uk\n"
@@ -716,9 +716,8 @@ msgid "Education"
 msgstr "Освіта"
 
 #: src/Widgets/CategoryFlowBox.vala:49
-#, fuzzy
 msgid "Finance"
-msgstr "Скасувати"
+msgstr "Фінанси"
 
 #: src/Widgets/CategoryFlowBox.vala:53
 msgid "Games"
