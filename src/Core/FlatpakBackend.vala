@@ -217,7 +217,15 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         return packages;
     }
 
-    public Package? get_package_for_desktop_id (string id) {
+    public Package? get_package_for_desktop_id (string desktop_id) {
+        foreach (var package in package_list.values) {
+            if (package.component.id == desktop_id ||
+                package.component.id  + ".desktop" == desktop_id
+            ) {
+                return package;
+            }
+        }
+        
         return null;
     }
 
