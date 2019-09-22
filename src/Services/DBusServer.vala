@@ -62,15 +62,16 @@ public class DBusServer : Object {
      * Uninstalls a package that's id is component_id
      *
      * @param compontent_id  the component ID to uninstall
+     * @return true if the uninstall is successful
      */
-    public void uninstall (string component_id) throws Error {
+    public async bool uninstall (string component_id) throws Error {
         var client = AppCenterCore.Client.get_default ();
         var package = client.get_package_for_component_id (component_id);
         if (package == null) {
             throw new IOError.FAILED ("Failed to find package for '%s' component ID".printf (component_id));
         }
 
-        package.uninstall.begin ();
+        return yield package.uninstall ();
     }
 
     /**
