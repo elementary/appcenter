@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:42+0200\n"
-"PO-Revision-Date: 2019-09-12 01:22+0000\n"
-"Last-Translator: Daniel Foré <daniel@elementary.io>\n"
+"PO-Revision-Date: 2019-09-21 15:23+0000\n"
+"Last-Translator: Andrii Priadko <mendeleev.ua@gmail.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/"
 "extra/uk/>\n"
 "Language: uk\n"
@@ -39,28 +39,30 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
 msgid "Meson build system fixes"
-msgstr ""
+msgstr "Система виправлень Meson"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "Improve window state restoration"
-msgstr ""
+msgstr "Поліпшити відновлення стану вікна"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Prevent action buttons from jumping around"
-msgstr ""
+msgstr "Запобігти стрибанню дійових кнопок"
 
 #: data/io.elementary.appcenter.appdata.xml.in:24
 msgid "Remove reset paid apps gsettings key"
-msgstr ""
+msgstr "Видалити ключ gsettings для скидання платних застосунків"
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
 msgid "Memory management refinements"
-msgstr ""
+msgstr "Управління налаштуваннями пам'яті"
 
 #: data/io.elementary.appcenter.appdata.xml.in:26
 msgid ""
 "Add conditional compilation for disabling dynamic remote homepage content"
 msgstr ""
+"Додати умовне компілювання для відключення динамічного віддаленого контенту "
+"головної сторінки"
 
 #: data/io.elementary.appcenter.appdata.xml.in:27
 #: data/io.elementary.appcenter.appdata.xml.in:39
@@ -84,23 +86,23 @@ msgstr "Нові переклади"
 
 #: data/io.elementary.appcenter.appdata.xml.in:34
 msgid "New categories: Communication, Finance, Media Production"
-msgstr ""
+msgstr "Нові категорії: Комунікація, Фінанси, Медіавиробництво"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
 msgid "Add Math to Science category"
-msgstr ""
+msgstr "Додати математику до категорії «Наука»"
 
 #: data/io.elementary.appcenter.appdata.xml.in:36
 msgid "Relax email address validator"
-msgstr ""
+msgstr "Послабити валідацію email адреси"
 
 #: data/io.elementary.appcenter.appdata.xml.in:37
 msgid "Present update availability more accurately"
-msgstr ""
+msgstr "Ретельніше представити можливість оновлення"
 
 #: data/io.elementary.appcenter.appdata.xml.in:38
 msgid "Category graphics revamped"
-msgstr ""
+msgstr "Категорію «Графіка» оновлено"
 
 #: data/io.elementary.appcenter.appdata.xml.in:53
 #: data/io.elementary.appcenter.appdata.xml.in:65
@@ -114,21 +116,20 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:139
 #: data/io.elementary.appcenter.appdata.xml.in:148
 #: data/io.elementary.appcenter.appdata.xml.in:157
-#, fuzzy
 msgid "Bug fixes and improve performance."
 msgstr "Виправлення помилок і поліпшення продуктивності."
 
 #: data/io.elementary.appcenter.appdata.xml.in:55
 msgid "Improve transaction success rate"
-msgstr ""
+msgstr "Покращити рівень успішних транзакцій"
 
 #: data/io.elementary.appcenter.appdata.xml.in:56
 msgid "Add Publishing to Office category"
-msgstr ""
+msgstr "Додати публікацію до категорії \"Офіс\""
 
 #: data/io.elementary.appcenter.appdata.xml.in:57
 msgid "Improve descriptions of OS Updates"
-msgstr ""
+msgstr "Покращити опис до оновлень ОС"
 
 #: data/io.elementary.appcenter.appdata.xml.in:58
 #: data/io.elementary.appcenter.appdata.xml.in:69
@@ -146,15 +147,15 @@ msgstr "Різні виправлення помилок і поліпшення
 
 #: data/io.elementary.appcenter.appdata.xml.in:67
 msgid "Give details for Operating System Updates"
-msgstr ""
+msgstr "Надайте деталі щодо оновлення операційної системи"
 
 #: data/io.elementary.appcenter.appdata.xml.in:68
 msgid "Support mouse button navigation"
-msgstr ""
+msgstr "Підтримка кнопки миші для навігації"
 
 #: data/io.elementary.appcenter.appdata.xml.in:159
 msgid "Fix crash caused by entries with missing packages"
-msgstr "Усунути аварію, викликану записами з відсутніми пакетами"
+msgstr "Виправити збій, що був викликаний через відсутність пакетів"
 
 #: data/io.elementary.appcenter.appdata.xml.in:166
 msgid "Add capability to search by category and apply minor bug fixes."
@@ -164,26 +165,25 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:168
 msgid "It is now possible to search apps inside a category"
-msgstr "Тепер можна шукати додатки в категорії"
+msgstr "Тепер можливо здійснювати пошук застосунків прямо в середині категорії"
 
 #: data/io.elementary.appcenter.appdata.xml.in:169
 msgid "Prevent multiple authentication dialogs when resuming from suspend"
 msgstr ""
-"Виправлена проблема кількох діалогів аутентифікації при відновленні з режиму "
+"Виправлено проблему кількох діалогів аутентифікації при відновленні з режиму "
 "очікування"
 
 #: data/io.elementary.appcenter.appdata.xml.in:176
-#, fuzzy
 msgid ""
 "Search performance has beeen improved, the category name is now shown on the "
 "headbar and minor bugs have been fixed."
 msgstr ""
-"Продуктивність пошуку була поліпшена, назва категорії тепер відображається "
-"на заголовку вікна та виправлення незначних помилок."
+"Продуктивність пошуку була поліпшена, назва категорії відтепер "
+"відображається на заголовку вікна та виправлення незначних помилок."
 
 #: data/io.elementary.appcenter.appdata.xml.in:178
 msgid "Fix Steam installation"
-msgstr "Виправлено встановлення Steam"
+msgstr "Виправлено проблему при встановленні Steam"
 
 #: data/io.elementary.appcenter.appdata.xml.in:179
 msgid "Make search asynchronous"
@@ -191,7 +191,7 @@ msgstr "Відтепер пошук працює асинхронно"
 
 #: data/io.elementary.appcenter.appdata.xml.in:234
 msgid "elementary LLC."
-msgstr "elementary LLC."
+msgstr "ТОВ «Elementary»."
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
@@ -204,7 +204,7 @@ msgstr "@DESKTOP_ICON@"
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
 msgstr ""
-"встановити;видалити;видалити;каталог;магазин;додатки;оновлення;програми;"
+"встановити;вилучити;видалити;каталог;магазин;застосунки;оновлення;програми;"
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
