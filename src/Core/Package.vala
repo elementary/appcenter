@@ -473,7 +473,7 @@ public class AppCenterCore.Package : Object {
     }
 
     private async bool perform_package_operation () throws GLib.Error {
-        ChangeInformation.ProgressCallback cb = change_information.Callback;
+        ChangeInformation.ProgressCallback cb = change_information.callback;
         var client = AppCenterCore.Client.get_default ();
 
         switch (state) {
