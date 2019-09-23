@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-27 09:43-0700\n"
-"PO-Revision-Date: 2019-08-29 14:22+0000\n"
+"PO-Revision-Date: 2019-09-23 21:23+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/tr/>\n"
@@ -646,7 +646,7 @@ msgstr "Son Güncellenenler"
 
 #: src/Views/Homepage.vala:83
 msgid "Trending"
-msgstr "Yükselişte"
+msgstr "Popüler"
 
 #: src/Views/Homepage.vala:99
 msgid "Categories"
