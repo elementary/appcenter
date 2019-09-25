@@ -23,6 +23,10 @@ public errordomain PackageLaunchError {
     APP_INFO_NOT_FOUND
 }
 
+public errordomain PackageUninstallError {
+    APP_STATE_NOT_INSTALLED
+}
+
 public class AppCenterCore.PackageDetails : Object {
     public string? name { get; set; }
     public string? description { get; set; }
@@ -425,36 +429,18 @@ public class AppCenterCore.Package : Object {
         }
     }
 
-    public async bool uninstall () {
-        var uninstall_failed_dialog = new Granite.MessageDialog (
-            _("Uninstall failed for %s").printf (get_name ()),
-            _("This may have been caused by external, manually added software repositories or a corrupted sources file."),
-            get_icon (48, (Application.get_default () as Gtk.Application).active_window.get_scale_factor ()),
-            Gtk.ButtonsType.CLOSE
-        );
+    public async bool uninstall () throws Error {
 
-        uninstall_failed_dialog.badge_icon = new ThemedIcon ("dialog-error");
-        uninstall_failed_dialog.set_keep_above (true);
-        uninstall_failed_dialog.stick ();
-        uninstall_failed_dialog.window_position = Gtk.WindowPosition.CENTER;
 
         if (state == State.INSTALLED || state == State.UPDATE_AVAILABLE) {
             try {
                 return yield perform_operation (State.REMOVING, State.NOT_INSTALLED, state);
             } catch (Error e) {
-                // Disable error dialog for if user clicks cancel. Reason: Failed to obtain authentication
-                if (e.code != 303) {
-                    uninstall_failed_dialog.show_error_details (e.message);
-                    uninstall_failed_dialog.run ();
-                    uninstall_failed_dialog.destroy ();
-                }
-
-                return false;
+                throw e;
             }
+        } else {
+            throw new PackageUninstallError.APP_STATE_NOT_INSTALLED (_("Application state is not set as installed in AppCenter."));
         }
-
-        uninstall_failed_dialog.run ();
-        uninstall_failed_dialog.destroy ();
 
         return false;
     }

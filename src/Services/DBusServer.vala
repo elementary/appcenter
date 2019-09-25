@@ -66,11 +66,29 @@ public class DBusServer : Object {
     public void uninstall (string component_id) throws Error {
         var client = AppCenterCore.Client.get_default ();
         var package = client.get_package_for_component_id (component_id);
+        var uninstall_confirm_dialog = create_uninstall_confirm_dialog (package);
+
         if (package == null) {
-            throw new IOError.FAILED ("Failed to find package for '%s' component ID".printf (component_id));
+            var error = new IOError.FAILED ("Failed to find package for '%s' component ID".printf (component_id));
+            show_uninstall_failed_dialog (package, error);
+            throw error;
         }
 
-        package.uninstall.begin ();
+        if (uninstall_confirm_dialog.run () == Gtk.ResponseType.ACCEPT) {
+            package.uninstall.begin ((obj, res) => {
+                try {
+                    package.uninstall.end (res);
+                } catch (Error e) {
+                    // Disable error dialog for if user clicks cancel. Reason: Failed to obtain authentication
+                    if (e.code != 303) {
+                        show_uninstall_failed_dialog (package, e);
+                    }
+                    throw e;
+                }
+            });
+        }
+
+        uninstall_confirm_dialog.destroy ();
     }
 
     /**
@@ -119,5 +137,39 @@ public class DBusServer : Object {
         }
 
         return components;
+    }
+
+    private void show_uninstall_failed_dialog (AppCenterCore.Package package, Error error) {
+        var dialog = new Granite.MessageDialog (
+            _("Uninstall failed for %s").printf (package.get_name ()),
+            _("This may have been caused by external, manually added software repositories or a corrupted sources file."),
+            package.get_icon (48, (Application.get_default () as Gtk.Application).active_window.get_scale_factor ()),
+            Gtk.ButtonsType.CLOSE
+        );
+
+        dialog.badge_icon = new ThemedIcon ("dialog-error");
+        dialog.set_keep_above (true);
+        dialog.stick ();
+        dialog.window_position = Gtk.WindowPosition.CENTER;
+
+        dialog.show_error_details (error.message);
+        dialog.run ();
+        dialog.destroy ();
+    }
+
+    private Granite.MessageDialog create_uninstall_confirm_dialog (AppCenterCore.Package package) {
+        var dialog = new Granite.MessageDialog (
+            _("Uninstall “%s”?").printf (package.get_name ()),
+            _("Uninstalling this app may also delete its data."),
+            package.get_icon (48, (Application.get_default () as Gtk.Application).active_window.get_scale_factor ()),
+            Gtk.ButtonsType.CANCEL
+        );
+        dialog.badge_icon = new ThemedIcon ("edit-delete");
+        dialog.stick ();
+        dialog.window_position = Gtk.WindowPosition.CENTER;
+
+        var uninstall_button = dialog.add_button (_("Uninstall"), Gtk.ResponseType.ACCEPT);
+        uninstall_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+        return dialog;
     }
 }
