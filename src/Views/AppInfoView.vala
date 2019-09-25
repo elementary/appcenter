@@ -534,7 +534,7 @@ namespace AppCenter.Views {
             if (package.is_os_updates) {
                 package.notify["state"].connect (() => {
                     Idle.add (() => {
-                        parse_description (package.get_description());
+                        parse_description (package.get_description ());
                         return false;
                     });
                 });
@@ -846,4 +846,3 @@ namespace AppCenter.Views {
         }
     }
 }
-

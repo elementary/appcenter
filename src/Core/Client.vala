@@ -194,4 +194,3 @@ public class AppCenterCore.Client : Object {
         return instance.once (() => { return new Client (); });
     }
 }
-

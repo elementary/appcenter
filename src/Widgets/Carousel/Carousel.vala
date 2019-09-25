@@ -53,4 +53,3 @@ public class AppCenter.Widgets.Carousel : Gtk.FlowBox {
         }
     }
 }
-
