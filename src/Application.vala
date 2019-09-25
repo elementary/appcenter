@@ -15,7 +15,7 @@
 */
 
 public class AppCenter.App : Gtk.Application {
-    public const OptionEntry[] APPCENTER_OPTIONS =  {
+    public const OptionEntry[] APPCENTER_OPTIONS = {
         { "show-updates", 'u', 0, OptionArg.NONE, out show_updates,
         "Display the Installed Panel", null},
         { "silent", 's', 0, OptionArg.NONE, out silent,
@@ -23,7 +23,7 @@ public class AppCenter.App : Gtk.Application {
         { "load-local", 'l', 0, OptionArg.FILENAME, out local_path,
         "Add a local AppStream XML file to the package list", "FILENAME" },
         { "fake-package-update", 'f', 0, OptionArg.STRING_ARRAY, out fake_update_packages,
-        "Add the package name to update results so that it is shown as an update", "PACKAGES..." },
+        "Add the package name to update results so that it is shown as an update", "PACKAGES…" },
         { null }
     };
 

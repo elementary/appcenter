@@ -63,7 +63,7 @@ namespace AppCenter.Widgets {
         }
 
         public override void update (uint _update_numbers, uint64 _update_real_size, bool _is_updating, bool _using_flatpak) {
-            store_data (_update_numbers,  _update_real_size, _is_updating, _using_flatpak);
+            store_data (_update_numbers, _update_real_size, _is_updating, _using_flatpak);
 
             if (!is_updating) {
                 updates_label.label = ngettext ("%u Update Available", "%u Updates Available", update_numbers).printf (update_numbers);
@@ -97,7 +97,7 @@ namespace AppCenter.Widgets {
         }
 
         public override void update (uint _update_numbers, uint64 _update_real_size, bool _is_updating, bool _using_flatpak) {
-            store_data (_update_numbers,  _update_real_size, _is_updating, _using_flatpak);
+            store_data (_update_numbers, _update_real_size, _is_updating, _using_flatpak);
 
             if (is_updating) {
                 halign = Gtk.Align.CENTER;
@@ -132,4 +132,3 @@ namespace AppCenter.Widgets {
         }
     }
 }
-
