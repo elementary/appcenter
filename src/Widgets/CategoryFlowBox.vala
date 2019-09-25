@@ -159,4 +159,3 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
         return item;
     }
 }
-

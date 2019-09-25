@@ -40,8 +40,7 @@ public class AppCenter.Settings : Granite.Services.Settings {
         }
     }
 
-    private Settings ()  {
+    private Settings () {
         base ("io.elementary.appcenter.settings");
     }
 }
-
