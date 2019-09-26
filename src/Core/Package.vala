@@ -430,19 +430,15 @@ public class AppCenterCore.Package : Object {
     }
 
     public async bool uninstall () throws Error {
-
-
         if (state == State.INSTALLED || state == State.UPDATE_AVAILABLE) {
             try {
                 return yield perform_operation (State.REMOVING, State.NOT_INSTALLED, state);
             } catch (Error e) {
                 throw e;
             }
-        } else {
-            throw new PackageUninstallError.APP_STATE_NOT_INSTALLED (_("Application state is not set as installed in AppCenter."));
         }
 
-        return false;
+        throw new PackageUninstallError.APP_STATE_NOT_INSTALLED (_("Application state is not set as installed in AppCenter."));
     }
 
     public void launch () throws Error {

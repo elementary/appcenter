@@ -20,9 +20,6 @@
 
 [DBus (name="io.elementary.appcenter")]
 public class DBusServer : Object {
-
-    private Granite.MessageDialog? uninstall_fail_dialog = null;
-
     private static GLib.Once<DBusServer> instance;
     public static unowned DBusServer get_default () {
         return instance.once (() => { return new DBusServer (); });
@@ -69,7 +66,7 @@ public class DBusServer : Object {
     public void uninstall (string component_id) throws Error {
         var client = AppCenterCore.Client.get_default ();
         var package = client.get_package_for_component_id (component_id);
-        var uninstall_confirm_dialog = create_uninstall_confirmation_dialog (package);
+        var uninstall_confirm_dialog = new UninstallConfirmDialog (package);
 
         if (package == null) {
             var error = new IOError.FAILED ("Failed to find package for '%s' component ID".printf (component_id));
@@ -92,6 +89,7 @@ public class DBusServer : Object {
         }
 
         uninstall_confirm_dialog.destroy ();
+
     }
 
     /**
@@ -140,21 +138,5 @@ public class DBusServer : Object {
         }
 
         return components;
-    }
-
-    private Granite.MessageDialog create_uninstall_confirmation_dialog (AppCenterCore.Package package) {
-        var dialog = new Granite.MessageDialog (
-            _("Uninstall “%s”?").printf (package.get_name ()),
-            _("Uninstalling this app may also delete its data."),
-            package.get_icon (48, (Application.get_default () as Gtk.Application).active_window.get_scale_factor ()),
-            Gtk.ButtonsType.CANCEL
-        );
-        dialog.badge_icon = new ThemedIcon ("edit-delete");
-        dialog.stick ();
-        dialog.window_position = Gtk.WindowPosition.CENTER;
-
-        var uninstall_button = dialog.add_button (_("Uninstall"), Gtk.ResponseType.ACCEPT);
-        uninstall_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
-        return dialog;
     }
 }
