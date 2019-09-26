@@ -16,6 +16,7 @@
  */
 
 public class UninstallFailDialog : Granite.MessageDialog {
+    public AppCenterCore.Package package { get; construct; }
     public Error error { get; construct; }
 
     public UninstallFailDialog (AppCenterCore.Package package, Error error) {
@@ -23,20 +24,20 @@ public class UninstallFailDialog : Granite.MessageDialog {
             title: "",
             primary_text: _("Uninstall failed for %s").printf (package.get_name ()),
             secondary_text: _("This may have been caused by external, manually added software repositories or a corrupted sources file."),
-            image_icon: package.get_icon (
-                48,
-                (Application.get_default () as Gtk.Application).active_window.get_scale_factor ()
-            ),
             buttons: Gtk.ButtonsType.CLOSE,
             badge_icon: new ThemedIcon ("dialog-error"),
+            window_position: Gtk.WindowPosition.CENTER,
             error: error,
-            window_position: Gtk.WindowPosition.CENTER
+            package: package
         );
     }
 
     construct {
-        stick ();
-        show_error_details (error.message);
+        image_icon = package.get_icon (48, get_scale_factor ());
+
         response.connect (() => destroy ());
+
+        show_error_details (error.message);
+        stick ();
     }
 }
