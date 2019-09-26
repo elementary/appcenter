@@ -438,7 +438,7 @@ public class AppCenterCore.Package : Object {
             }
         }
 
-        throw new PackageUninstallError.APP_STATE_NOT_INSTALLED (_("Application state is not set as installed in AppCenter."));
+        throw new PackageUninstallError.APP_STATE_NOT_INSTALLED (_("Application state not set as installed in AppCenter for package: %s".printf (get_name ())));
     }
 
     public void launch () throws Error {
