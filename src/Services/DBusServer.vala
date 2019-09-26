@@ -89,7 +89,6 @@ public class DBusServer : Object {
         }
 
         uninstall_confirm_dialog.destroy ();
-
     }
 
     /**
