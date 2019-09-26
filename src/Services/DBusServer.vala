@@ -83,7 +83,6 @@ public class DBusServer : Object {
                     if (e.code != 303) {
                         new UninstallFailDialog (package, e).present ();
                     }
-
                 }
             });
         }
