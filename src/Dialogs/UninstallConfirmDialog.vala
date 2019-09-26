@@ -36,7 +36,6 @@ public class UninstallConfirmDialog : Granite.MessageDialog {
         var uninstall_button = add_button (_("Uninstall"), Gtk.ResponseType.ACCEPT);
         uninstall_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
 
-        debug ("Using new dialog");
         stick ();
     }
 }
