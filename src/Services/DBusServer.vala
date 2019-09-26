@@ -66,7 +66,7 @@ public class DBusServer : Object {
     public void uninstall (string component_id) throws Error {
         var client = AppCenterCore.Client.get_default ();
         var package = client.get_package_for_component_id (component_id);
-        var uninstall_confirm_dialog = create_uninstall_confirm_dialog (package);
+        var uninstall_confirm_dialog = create_uninstall_confirmation_dialog (package);
 
         if (package == null) {
             var error = new IOError.FAILED ("Failed to find package for '%s' component ID".printf (component_id));
@@ -148,7 +148,6 @@ public class DBusServer : Object {
         );
 
         dialog.badge_icon = new ThemedIcon ("dialog-error");
-        dialog.set_keep_above (true);
         dialog.stick ();
         dialog.window_position = Gtk.WindowPosition.CENTER;
 
@@ -157,7 +156,7 @@ public class DBusServer : Object {
         dialog.destroy ();
     }
 
-    private Granite.MessageDialog create_uninstall_confirm_dialog (AppCenterCore.Package package) {
+    private Granite.MessageDialog create_uninstall_confirmation_dialog (AppCenterCore.Package package) {
         var dialog = new Granite.MessageDialog (
             _("Uninstall “%s”?").printf (package.get_name ()),
             _("Uninstalling this app may also delete its data."),
