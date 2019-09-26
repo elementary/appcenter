@@ -20,6 +20,9 @@
 
 [DBus (name="io.elementary.appcenter")]
 public class DBusServer : Object {
+
+    private Granite.MessageDialog? uninstall_fail_dialog = null;
+
     private static GLib.Once<DBusServer> instance;
     public static unowned DBusServer get_default () {
         return instance.once (() => { return new DBusServer (); });
@@ -70,7 +73,7 @@ public class DBusServer : Object {
 
         if (package == null) {
             var error = new IOError.FAILED ("Failed to find package for '%s' component ID".printf (component_id));
-            show_uninstall_failed_dialog (package, error);
+            new UninstallFailDialog (package, error).present ();
             throw error;
         }
 
@@ -81,7 +84,7 @@ public class DBusServer : Object {
                 } catch (Error e) {
                     // Disable error dialog for if user clicks cancel. Reason: Failed to obtain authentication
                     if (e.code != 303) {
-                        show_uninstall_failed_dialog (package, e);
+                        new UninstallFailDialog (package, e).present ();
                     }
                     throw e;
                 }
@@ -137,23 +140,6 @@ public class DBusServer : Object {
         }
 
         return components;
-    }
-
-    private void show_uninstall_failed_dialog (AppCenterCore.Package package, Error error) {
-        var dialog = new Granite.MessageDialog (
-            _("Uninstall failed for %s").printf (package.get_name ()),
-            _("This may have been caused by external, manually added software repositories or a corrupted sources file."),
-            package.get_icon (48, (Application.get_default () as Gtk.Application).active_window.get_scale_factor ()),
-            Gtk.ButtonsType.CLOSE
-        );
-
-        dialog.badge_icon = new ThemedIcon ("dialog-error");
-        dialog.stick ();
-        dialog.window_position = Gtk.WindowPosition.CENTER;
-
-        dialog.show_error_details (error.message);
-        dialog.run ();
-        dialog.destroy ();
     }
 
     private Granite.MessageDialog create_uninstall_confirmation_dialog (AppCenterCore.Package package) {

@@ -21,6 +21,7 @@ appcenter_files = files(
     'Dialogs/RestartDialog.vala',
     'Dialogs/ContentWarningDialog.vala',
     'Dialogs/StripeDialog.vala',
+    'Dialogs/UninstallFailDialog.vala',
     'Dialogs/UpdateFailDialog.vala',
     'Services/DBusInterfaces.vala',
     'Services/DBusServer.vala',
