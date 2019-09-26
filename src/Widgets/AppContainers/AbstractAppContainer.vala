@@ -453,10 +453,18 @@ namespace AppCenter {
         }
 
         private async void uninstall_clicked () {
-            if (yield package.uninstall ()) {
-                // Remove this app from the Installed Apps View
-                MainWindow.installed_view.remove_app.begin (package);
-            }
+            package.uninstall.begin ((obj, res) => {
+                try {
+                    if (package.uninstall.end (res)) {
+                        MainWindow.installed_view.remove_app.begin (package);
+                    }
+                } catch (Error e) {
+                    // Disable error dialog for if user clicks cancel. Reason: Failed to obtain authentication
+                    if (e.code != 303) {
+                        new UninstallFailDialog (package, e).present ();
+                    }
+                }
+            });
         }
     }
 }
