@@ -8,7 +8,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-27 09:43-0700\n"
 "PO-Revision-Date: 2019-09-28 15:23+0000\n"
-"Last-Translator: Xurxo Guerra <xguerrap@gmail.com>\n"
+"Last-Translator: Pablo Varela <pablovarela182@gmail.com>\n"
 "Language-Team: Galician <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/gl/>\n"
 "Language: gl\n"
@@ -156,7 +156,7 @@ msgstr "Descargando listas de arquivos"
 
 #: src/Utils.vala:116
 msgid "Downloading lists of changes"
-msgstr ""
+msgstr "Descargando listas de cambios"
 
 #: src/Utils.vala:118
 msgid "Downloading groups"
@@ -168,19 +168,19 @@ msgstr "Descargando información da actualización"
 
 #: src/Utils.vala:122
 msgid "Repackaging files"
-msgstr ""
+msgstr "Reempaquetando arquivos"
 
 #: src/Utils.vala:124
 msgid "Loading cache"
-msgstr ""
+msgstr "Cargando caché"
 
 #: src/Utils.vala:126
 msgid "Scanning applications"
-msgstr ""
+msgstr "Escaneando aplicacións"
 
 #: src/Utils.vala:128
 msgid "Generating package lists"
-msgstr ""
+msgstr "Xerando listas de paquetes"
 
 #: src/Utils.vala:130
 msgid "Waiting for package manager lock"
@@ -188,15 +188,15 @@ msgstr ""
 
 #: src/Utils.vala:132
 msgid "Waiting for authentication"
-msgstr ""
+msgstr "Esperando pola autenticación"
 
 #: src/Utils.vala:134
 msgid "Updating running applications"
-msgstr ""
+msgstr "Actualizando aplicaciones en funcionamento"
 
 #: src/Utils.vala:136
 msgid "Checking applications in use"
-msgstr ""
+msgstr "Comprobando aplicacións en uso"
 
 #: src/Utils.vala:138
 msgid "Checking libraries in use"
