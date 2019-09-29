@@ -121,7 +121,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         settings.get ("window-position", "(ii)", out window_x, out window_y);
         settings.get ("window-size", "(ii)", out window_width, out window_height);
 
-        if (window_x != -1 ||  window_y != -1) {
+        if (window_x != -1 || window_y != -1) {
             move (window_x, window_y);
         }
 
@@ -374,4 +374,3 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         }
     }
 }
-

@@ -60,7 +60,7 @@ namespace AppCenter.Views {
             current_visible_index = 0U;
         }
 
-        protected override Widgets.AppListRow construct_row_for_package (AppCenterCore.Package package)  {
+        protected override Widgets.AppListRow construct_row_for_package (AppCenterCore.Package package) {
             return new Widgets.PackageRow.list (package, null, action_button_group, false);
         }
 

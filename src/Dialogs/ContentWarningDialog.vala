@@ -55,4 +55,3 @@ public class AppCenter.Widgets.ContentWarningDialog : Granite.MessageDialog {
         });
     }
 }
-
