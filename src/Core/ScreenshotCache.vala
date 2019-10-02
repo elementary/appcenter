@@ -121,7 +121,7 @@ public class AppCenterCore.ScreenshotCache {
         if (read_dir (out dir, screenshot_path) == -1) {
             return -1;
         }
-        
+
         string? name = null;
         int size = 0;
 

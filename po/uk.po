@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-27 09:43-0700\n"
-"PO-Revision-Date: 2019-09-19 15:22+0000\n"
-"Last-Translator: pandreyko <andrii.pavloshchuk@gmail.com>\n"
+"PO-Revision-Date: 2019-09-28 15:23+0000\n"
+"Last-Translator: Andrii Priadko <mendeleev.ua@gmail.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/uk/>\n"
 "Language: uk\n"
@@ -234,7 +234,7 @@ msgstr "%s Розробників"
 
 #: src/Core/Package.vala:325
 msgid "elementary Updates"
-msgstr "Оновлення Elementary OS"
+msgstr "Оновлення elementary OS"
 
 #: src/Core/Package.vala:327
 msgid "Ubuntu (non-curated)"
@@ -312,7 +312,7 @@ msgid ""
 "of this app."
 msgstr ""
 "%s може містити контент 18+ або такий, що може викликати підвищену "
-"чутливість та тревожність. Як правило, Elementary не переглядає та не "
+"чутливість та тревожність. Як правило, elementary не переглядає та не "
 "підтримує зміст цього застосунку."
 
 #: src/Dialogs/ContentWarningDialog.vala:35
@@ -376,7 +376,7 @@ msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:106 src/Widgets/SharePopover.vala:35
 msgid "Email"
-msgstr "Email"
+msgstr "Пошта"
 
 #: src/Dialogs/StripeDialog.vala:108
 msgid ""

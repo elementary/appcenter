@@ -60,14 +60,14 @@ public class AppCenter.Widgets.CardNumberEntry : Gtk.Entry {
             var builder = new GLib.StringBuilder ();
             for (int i = 0; i < number_chars.length; i++) {
                 builder.append_c (number_chars[i]);
-                if ((insertion || i+1 != number_chars.length) && (i+1) in pattern) {
+                if ((insertion || i + 1 != number_chars.length) && (i + 1) in pattern) {
                     builder.append_c (' ');
                 }
             }
 
-            var end_offset = (text.char_count ()-1) - cursor_position;
+            var end_offset = (text.char_count () - 1) - cursor_position;
             text = builder.str;
-            var new_offset = (text.char_count ()-1) - cursor_position;
+            var new_offset = (text.char_count () - 1) - cursor_position;
             if (end_offset != new_offset) {
                 Idle.add (() => {
                     move_cursor (Gtk.MovementStep.LOGICAL_POSITIONS, new_offset - end_offset, false);
