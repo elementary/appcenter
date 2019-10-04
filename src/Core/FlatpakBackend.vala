@@ -610,14 +610,14 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         bool success = false;
 
         transaction.operation_error.connect ((operation, e, detail) => {
-            warning ("Flatpak installation failed: %s", e.message);
+            warning ("Flatpak installation failed: %s (detail: %d)", e.message, detail);
             if (e is GLib.IOError.CANCELLED) {
                 cb (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);
                 success = true;
             }
 
-            // Any error during the installation of a single package and its deps is probably fatal, don't continue
-            return false;
+            // Only stop if this is a fatal error
+            return detail == Flatpak.TransactionErrorDetails.NON_FATAL;
         });
 
         transaction.operation_done.connect ((operation, commit, details) => {
