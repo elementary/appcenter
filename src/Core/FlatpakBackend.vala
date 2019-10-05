@@ -81,9 +81,9 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
     static construct {
         try {
-            installation = new Flatpak.Installation.system ();
+            installation = new Flatpak.Installation.user ();
         } catch (Error e) {
-            critical ("Unable to get system default flatpak installation : %s", e.message);
+            critical ("Unable to get flatpak installation : %s", e.message);
         }
     }
 
@@ -110,7 +110,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         var installed_apps = new Gee.HashSet<Package> ();
 
         if (installation == null) {
-            critical ("Couldn't get installed apps due to no flatpak system installation");
+            critical ("Couldn't get installed apps due to no flatpak installation");
             return installed_apps;
         }
 
@@ -266,7 +266,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
     public async bool is_package_installed (Package package) throws GLib.Error {
         if (installation == null) {
-            critical ("Could not check installed state of package due to no system flatpak installation");
+            critical ("Could not check installed state of package due to no flatpak installation");
             return false;
         }
 
