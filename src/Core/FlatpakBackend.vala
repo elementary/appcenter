@@ -37,6 +37,9 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
     private static Flatpak.Installation? installation;
 
+    private uint total_operations;
+    private int current_operation;
+
     private bool worker_func () {
         while (thread_should_run) {
             var job = jobs.pop ();
@@ -598,12 +601,17 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         });
 
         transaction.new_operation.connect ((operation, progress) => {
+            current_operation++;
+
             progress.changed.connect (() => {
                 if (cancellable.is_cancelled ()) {
                     return;
                 }
 
-                cb (true, _("Installing"), (double)progress.get_progress () / 100.0f, ChangeInformation.Status.RUNNING);
+                // Calculate the progress contribution of the previous operations not including the current, hence -1
+                double existing_progress = (double)(current_operation - 1) / (double)total_operations;
+                double this_op_progress = (double)progress.get_progress () / 100.0f / (double)total_operations;
+                cb (true, _("Installing"), existing_progress + this_op_progress, ChangeInformation.Status.RUNNING);
             });
         });
 
@@ -623,6 +631,13 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         transaction.operation_done.connect ((operation, commit, details) => {
             success = true;
         });
+
+        transaction.ready.connect (() => {
+            total_operations = transaction.get_operations ().length ();
+            return true;
+        });
+
+        current_operation = 0;
 
         try {
             transaction.run (cancellable);
@@ -783,12 +798,17 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         });
 
         transaction.new_operation.connect ((operation, progress) => {
+            current_operation++;
+
             progress.changed.connect (() => {
                 if (cancellable.is_cancelled ()) {
                     return;
                 }
 
-                cb (true, _("Updating"), (double)progress.get_progress () / 100.0f, ChangeInformation.Status.RUNNING);
+                // Calculate the progress contribution of the previous operations not including the current, hence -1
+                double existing_progress = (double)(current_operation - 1) / (double)total_operations;
+                double this_op_progress = (double)progress.get_progress () / 100.0f / (double)total_operations;
+                cb (true, _("Updating"), existing_progress + this_op_progress, ChangeInformation.Status.RUNNING);
             });
         });
 
@@ -811,6 +831,13 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         transaction.operation_done.connect ((operation, commit, details) => {
             success = true;
         });
+
+        transaction.ready.connect (() => {
+            total_operations = transaction.get_operations ().length ();
+            return true;
+        });
+
+        current_operation = 0;
 
         try {
             transaction.run (cancellable);
