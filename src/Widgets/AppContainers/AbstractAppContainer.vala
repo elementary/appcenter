@@ -460,7 +460,7 @@ namespace AppCenter {
                     }
                 } catch (Error e) {
                     // Disable error dialog for if user clicks cancel. Reason: Failed to obtain authentication
-                    if ((e.domain != Pk.ClientError.quark ())) {
+                    if (e.domain != Pk.ClientError.quark ()) {
                         new UninstallFailDialog (package, e).present ();
                     }
                 }

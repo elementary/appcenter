@@ -79,7 +79,7 @@ public class DBusServer : Object {
                 try {
                     package.uninstall.end (res);
                 } catch (Error e) {
-                    if ((e.domain != Pk.ClientError.quark ())) {
+                    if (e.domain != Pk.ClientError.quark ()) {
                         new UninstallFailDialog (package, e).present ();
                     }
                 }
