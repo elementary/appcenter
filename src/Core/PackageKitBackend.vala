@@ -240,7 +240,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
     public AppCenterCore.Package? get_package_for_desktop_id (string desktop_id) {
         foreach (var package in package_list.values) {
             if (package.component.id == desktop_id ||
-                package.component.id  + ".desktop" == desktop_id
+                package.component.id + ".desktop" == desktop_id
             ) {
                 return package;
             }
