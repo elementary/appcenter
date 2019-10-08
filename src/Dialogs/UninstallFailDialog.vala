@@ -23,7 +23,7 @@ public class UninstallFailDialog : Granite.MessageDialog {
         Object (
             title: "",
             primary_text: _("Uninstall failed for %s").printf (package.get_name ()),
-            secondary_text: _("This may have been caused by external, manually added software repositories or a corrupted sources file."),
+            secondary_text: _("This may have been caused by external or manually compiled softwares."),
             buttons: Gtk.ButtonsType.CLOSE,
             badge_icon: new ThemedIcon ("dialog-error"),
             window_position: Gtk.WindowPosition.CENTER,
