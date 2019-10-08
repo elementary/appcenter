@@ -22,8 +22,8 @@ public class UninstallFailDialog : Granite.MessageDialog {
     public UninstallFailDialog (AppCenterCore.Package package, Error error) {
         Object (
             title: "",
-            primary_text: _("Uninstall failed for %s").printf (package.get_name ()),
-            secondary_text: _("This may have been caused by external or manually compiled softwares."),
+            primary_text: _("Failed to uninstall “%s”").printf (package.get_name ()),
+            secondary_text: _("This may have been caused by external or manually compiled software."),
             buttons: Gtk.ButtonsType.CLOSE,
             badge_icon: new ThemedIcon ("dialog-error"),
             window_position: Gtk.WindowPosition.CENTER,
@@ -38,6 +38,5 @@ public class UninstallFailDialog : Granite.MessageDialog {
         response.connect (() => destroy ());
 
         show_error_details (error.message);
-        stick ();
     }
 }
