@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-27 09:43-0700\n"
+"POT-Creation-Date: 2019-10-09 09:59-0700\n"
 "PO-Revision-Date: 2017-06-16 17:37+0000\n"
 "Last-Translator: Rajeev Kumar <irajeevankumar@gmail.com>\n"
 "Language-Team: Tamil <https://l10n.elementary.io/projects/appcenter/"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:323
+#: src/Application.vala:38 src/Core/Package.vala:327
 msgid "AppCenter"
 msgstr "மென்பொருள்-மையம்"
 
@@ -221,32 +221,37 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "%u உங்கள் கணினிக்கு புதுப்பிப்பு உள்ளது"
 msgstr[1] "%u உங்கள் கணினிக்கு புதுப்பிப்புகள் உள்ளன"
 
-#: src/Core/Package.vala:294
+#: src/Core/Package.vala:298
 #, fuzzy, c-format
 msgid "%s Developers"
 msgstr "%s  டெவலப்பர்கள்"
 
-#: src/Core/Package.vala:325
+#: src/Core/Package.vala:329
 #, fuzzy
 msgid "elementary Updates"
 msgstr "சமீபத்தில் புதுப்பிக்கப்பட்டது"
 
-#: src/Core/Package.vala:327
+#: src/Core/Package.vala:331
 msgid "Ubuntu (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:330
+#: src/Core/Package.vala:334
 #, c-format
 msgid "%s (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:332
+#: src/Core/Package.vala:336
 #, fuzzy
 msgid "Ubuntu Drivers"
 msgstr "இயக்கிகள்"
 
-#: src/Core/Package.vala:335
+#: src/Core/Package.vala:339
 msgid "Unknown Origin (non-curated)"
+msgstr ""
+
+#: src/Core/Package.vala:441
+#, c-format
+msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
 
 #: src/Core/UpdateManager.vala:38
@@ -502,6 +507,39 @@ msgstr "அட்டையின் இருப்பு அல்லது க
 #: src/Dialogs/StripeDialog.vala:609
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "கொடுக்கப்பட்ட அட்டை ஒரு சோதனை அட்டை. தொடர உண்மையான கார்டைப் பயன்படுத்தவும்."
+
+#: src/Dialogs/UninstallConfirmDialog.vala:25
+msgid "Uninstalling this app may also delete its data."
+msgstr ""
+
+#: src/Dialogs/UninstallConfirmDialog.vala:35
+#, fuzzy
+msgid "Uninstall app?"
+msgstr "நீக்குதல்"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:38
+#, fuzzy, c-format
+msgid "Uninstall “%s”?"
+msgstr "நீக்குதல்"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:42
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:164
+msgid "Uninstall"
+msgstr "நீக்குதல்"
+
+#: src/Dialogs/UninstallFailDialog.vala:26
+msgid "This may have been caused by external or manually compiled software."
+msgstr ""
+
+#: src/Dialogs/UninstallFailDialog.vala:37
+#, fuzzy
+msgid "Failed to uninstall app"
+msgstr "பயன்பாடுகளை கண்டறிந்து நிறுவு"
+
+#: src/Dialogs/UninstallFailDialog.vala:40
+#, c-format
+msgid "Failed to uninstall “%s”"
+msgstr ""
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
@@ -844,10 +882,6 @@ msgstr "இது வரை புதுப்பிக்கப்பட்ட�
 msgid "Drivers"
 msgstr "இயக்கிகள்"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:164
-msgid "Uninstall"
-msgstr "நீக்குதல்"
-
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:173
 msgid "Open"
 msgstr "திற"
@@ -898,9 +932,6 @@ msgstr "புதுப்பிக்கவும்"
 
 #~ msgid "application download center"
 #~ msgstr "பயன்பாட்டு பதிவிறக்க மையம்"
-
-#~ msgid "Find and install apps"
-#~ msgstr "பயன்பாடுகளை கண்டறிந்து நிறுவு"
 
 #~ msgid "Apps View"
 #~ msgstr "பயன்பாடுகள் பார்வை"

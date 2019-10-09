@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-27 09:43-0700\n"
+"POT-Creation-Date: 2019-10-09 09:59-0700\n"
 "PO-Revision-Date: 2019-10-02 11:23+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -21,7 +21,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:323
+#: src/Application.vala:38 src/Core/Package.vala:327
 msgid "AppCenter"
 msgstr "应用中心"
 
@@ -222,31 +222,36 @@ msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "您的系统有 %u 个可用更新"
 
-#: src/Core/Package.vala:294
+#: src/Core/Package.vala:298
 #, c-format
 msgid "%s Developers"
 msgstr "%s 开发者"
 
-#: src/Core/Package.vala:325
+#: src/Core/Package.vala:329
 msgid "elementary Updates"
 msgstr "elementary 更新"
 
-#: src/Core/Package.vala:327
+#: src/Core/Package.vala:331
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu（不支持的更新）"
 
-#: src/Core/Package.vala:330
+#: src/Core/Package.vala:334
 #, c-format
 msgid "%s (non-curated)"
 msgstr "%s（不支持的更新）"
 
-#: src/Core/Package.vala:332
+#: src/Core/Package.vala:336
 msgid "Ubuntu Drivers"
 msgstr "Ubuntu 驱动程序"
 
-#: src/Core/Package.vala:335
+#: src/Core/Package.vala:339
 msgid "Unknown Origin (non-curated)"
 msgstr "未知来源"
+
+#: src/Core/Package.vala:441
+#, c-format
+msgid "Application state not set as installed in AppCenter for package: %s"
+msgstr ""
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -487,6 +492,40 @@ msgstr "卡内余额或信用额度已达上限。"
 #: src/Dialogs/StripeDialog.vala:609
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "所示卡号仅为示例，请输入真实有效的卡号。"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:25
+msgid "Uninstalling this app may also delete its data."
+msgstr ""
+
+#: src/Dialogs/UninstallConfirmDialog.vala:35
+#, fuzzy
+msgid "Uninstall app?"
+msgstr "卸载"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:38
+#, fuzzy, c-format
+msgid "Uninstall “%s”?"
+msgstr "卸载"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:42
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:164
+msgid "Uninstall"
+msgstr "卸载"
+
+#: src/Dialogs/UninstallFailDialog.vala:26
+#, fuzzy
+msgid "This may have been caused by external or manually compiled software."
+msgstr "这可能是外部、手动添加的软件源或源文件损坏造成的。"
+
+#: src/Dialogs/UninstallFailDialog.vala:37
+#, fuzzy
+msgid "Failed to uninstall app"
+msgstr "查找和安装应用"
+
+#: src/Dialogs/UninstallFailDialog.vala:40
+#, c-format
+msgid "Failed to uninstall “%s”"
+msgstr ""
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
@@ -819,10 +858,6 @@ msgstr "已是最新"
 msgid "Drivers"
 msgstr "驱动程序"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:164
-msgid "Uninstall"
-msgstr "卸载"
-
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:173
 msgid "Open"
 msgstr "打开"
@@ -911,9 +946,6 @@ msgstr "更新"
 
 #~ msgid "application download center"
 #~ msgstr "应用程序下载中心"
-
-#~ msgid "Find and install apps"
-#~ msgstr "查找和安装应用"
 
 #~ msgid "Browser apps in categories"
 #~ msgstr "分类浏览"

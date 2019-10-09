@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-27 09:43-0700\n"
+"POT-Creation-Date: 2019-10-09 09:59-0700\n"
 "PO-Revision-Date: 2019-08-10 10:21+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:323
+#: src/Application.vala:38 src/Core/Package.vala:327
 msgid "AppCenter"
 msgstr "AppSenter"
 
@@ -221,32 +221,37 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "%u oppdatering er tilgjengelig for ditt system"
 msgstr[1] "%u oppdateringer er tilgjengelige for ditt system"
 
-#: src/Core/Package.vala:294
+#: src/Core/Package.vala:298
 #, c-format
 msgid "%s Developers"
 msgstr "%s-utviklerne"
 
-#: src/Core/Package.vala:325
+#: src/Core/Package.vala:329
 msgid "elementary Updates"
 msgstr "elementary-oppgraderinger"
 
-#: src/Core/Package.vala:327
+#: src/Core/Package.vala:331
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (ikke-bekreftet)"
 
-#: src/Core/Package.vala:330
+#: src/Core/Package.vala:334
 #, c-format
 msgid "%s (non-curated)"
 msgstr "%s (ikke-bekreftet)"
 
-#: src/Core/Package.vala:332
+#: src/Core/Package.vala:336
 #, fuzzy
 msgid "Ubuntu Drivers"
 msgstr "Ubuntu-drivere"
 
-#: src/Core/Package.vala:335
+#: src/Core/Package.vala:339
 msgid "Unknown Origin (non-curated)"
 msgstr "Ukjent opprinnelse (ikke-bekreftet)"
+
+#: src/Core/Package.vala:441
+#, c-format
+msgid "Application state not set as installed in AppCenter for package: %s"
+msgstr ""
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -503,6 +508,42 @@ msgstr "Betalingsgrensen eller beløpsgrensen på kortet har blitt forsert."
 #: src/Dialogs/StripeDialog.vala:609
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "Oppgitt kort er et test-kort. Bruk et ordentlig kort for å fortsette."
+
+#: src/Dialogs/UninstallConfirmDialog.vala:25
+msgid "Uninstalling this app may also delete its data."
+msgstr ""
+
+#: src/Dialogs/UninstallConfirmDialog.vala:35
+#, fuzzy
+msgid "Uninstall app?"
+msgstr "Avinstaller"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:38
+#, fuzzy, c-format
+msgid "Uninstall “%s”?"
+msgstr "Avinstaller"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:42
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:164
+msgid "Uninstall"
+msgstr "Avinstaller"
+
+#: src/Dialogs/UninstallFailDialog.vala:26
+#, fuzzy
+msgid "This may have been caused by external or manually compiled software."
+msgstr ""
+"Dette kan ha sitt opphav i ekstern, manuelt tillagte "
+"programvarepakkebrønner, eller en skadet kilde-fil."
+
+#: src/Dialogs/UninstallFailDialog.vala:37
+#, fuzzy
+msgid "Failed to uninstall app"
+msgstr "Finn og installer applikasjoner"
+
+#: src/Dialogs/UninstallFailDialog.vala:40
+#, c-format
+msgid "Failed to uninstall “%s”"
+msgstr ""
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
@@ -845,10 +886,6 @@ msgstr "Oppdatert"
 msgid "Drivers"
 msgstr "Drivere"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:164
-msgid "Uninstall"
-msgstr "Avinstaller"
-
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:173
 msgid "Open"
 msgstr "Åpne"
@@ -941,9 +978,6 @@ msgstr "Oppdater"
 
 #~ msgid "application download center"
 #~ msgstr "nedlastningssenter for applikasjoner"
-
-#~ msgid "Find and install apps"
-#~ msgstr "Finn og installer applikasjoner"
 
 #~ msgid "Updates"
 #~ msgstr "Oppdateringer"

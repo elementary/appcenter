@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-27 09:43-0700\n"
+"POT-Creation-Date: 2019-10-09 09:59-0700\n"
 "PO-Revision-Date: 2019-09-02 20:22+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/appcenter/"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:323
+#: src/Application.vala:38 src/Core/Package.vala:327
 msgid "AppCenter"
 msgstr "Sovelluskeskus"
 
@@ -222,30 +222,35 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "Järjestelmälle on saatavilla %u päivitys"
 msgstr[1] "Järjestelmälle on saatavilla %u päivitystä"
 
-#: src/Core/Package.vala:294
+#: src/Core/Package.vala:298
 #, c-format
 msgid "%s Developers"
 msgstr "%s-kehittäjät"
 
-#: src/Core/Package.vala:325
+#: src/Core/Package.vala:329
 msgid "elementary Updates"
 msgstr "elementary-päivitykset"
 
-#: src/Core/Package.vala:327
+#: src/Core/Package.vala:331
 msgid "Ubuntu (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:330
+#: src/Core/Package.vala:334
 #, fuzzy, c-format
 msgid "%s (non-curated)"
 msgstr "%s (paikallinen)"
 
-#: src/Core/Package.vala:332
+#: src/Core/Package.vala:336
 msgid "Ubuntu Drivers"
 msgstr "Ubuntu-ajurit"
 
-#: src/Core/Package.vala:335
+#: src/Core/Package.vala:339
 msgid "Unknown Origin (non-curated)"
+msgstr ""
+
+#: src/Core/Package.vala:441
+#, c-format
+msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
 
 #: src/Core/UpdateManager.vala:38
@@ -504,6 +509,42 @@ msgstr "Kortin luottoraja on ylittynyt."
 #: src/Dialogs/StripeDialog.vala:609
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "Annettu kortti on testikortti. Käytä oikeaa korttia jatkaaksesi."
+
+#: src/Dialogs/UninstallConfirmDialog.vala:25
+msgid "Uninstalling this app may also delete its data."
+msgstr ""
+
+#: src/Dialogs/UninstallConfirmDialog.vala:35
+#, fuzzy
+msgid "Uninstall app?"
+msgstr "Poista asennus"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:38
+#, fuzzy, c-format
+msgid "Uninstall “%s”?"
+msgstr "Poista asennus"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:42
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:164
+msgid "Uninstall"
+msgstr "Poista asennus"
+
+#: src/Dialogs/UninstallFailDialog.vala:26
+#, fuzzy
+msgid "This may have been caused by external or manually compiled software."
+msgstr ""
+"Tämä saattaa johtua ulkoisista, käsin lisätyistä ohjelmistolähteistä tai "
+"rikkoutuneesta sources-tiedostosta."
+
+#: src/Dialogs/UninstallFailDialog.vala:37
+#, fuzzy
+msgid "Failed to uninstall app"
+msgstr "Etsi ja asenna sovelluksia"
+
+#: src/Dialogs/UninstallFailDialog.vala:40
+#, c-format
+msgid "Failed to uninstall “%s”"
+msgstr ""
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
@@ -839,10 +880,6 @@ msgstr "Ajan tasalla"
 msgid "Drivers"
 msgstr "Ajurit"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:164
-msgid "Uninstall"
-msgstr "Poista asennus"
-
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:173
 msgid "Open"
 msgstr "Avaa"
@@ -926,9 +963,6 @@ msgstr "Päivitä"
 
 #~ msgid "Updates"
 #~ msgstr "Päivitykset"
-
-#~ msgid "Find and install apps"
-#~ msgstr "Etsi ja asenna sovelluksia"
 
 #~ msgid "Browser apps in categories"
 #~ msgstr "Selaa ohjelmia kategorioissa"

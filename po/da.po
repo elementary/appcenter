@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-27 09:43-0700\n"
+"POT-Creation-Date: 2019-10-09 09:59-0700\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Frederik Lund <fln8203@gmail.com>\n"
 "Language-Team: Danish <https://l10n.elementary.io/projects/appcenter/"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:323
+#: src/Application.vala:38 src/Core/Package.vala:327
 msgid "AppCenter"
 msgstr "AppCenter"
 
@@ -221,32 +221,37 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "%u opdatering tilgængelig til dit system"
 msgstr[1] "%u opdateringer tilgængelige til dit system"
 
-#: src/Core/Package.vala:294
+#: src/Core/Package.vala:298
 #, c-format
 msgid "%s Developers"
 msgstr "%s Udviklere"
 
-#: src/Core/Package.vala:325
+#: src/Core/Package.vala:329
 #, fuzzy
 msgid "elementary Updates"
 msgstr "Nyligt Opdaterede"
 
-#: src/Core/Package.vala:327
+#: src/Core/Package.vala:331
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (Ikke-kurateret)"
 
-#: src/Core/Package.vala:330
+#: src/Core/Package.vala:334
 #, fuzzy, c-format
 msgid "%s (non-curated)"
 msgstr "%s (lokalt)"
 
-#: src/Core/Package.vala:332
+#: src/Core/Package.vala:336
 #, fuzzy
 msgid "Ubuntu Drivers"
 msgstr "Drivere"
 
-#: src/Core/Package.vala:335
+#: src/Core/Package.vala:339
 msgid "Unknown Origin (non-curated)"
+msgstr ""
+
+#: src/Core/Package.vala:441
+#, c-format
+msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
 
 #: src/Core/UpdateManager.vala:38
@@ -509,6 +514,42 @@ msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
 "Det givne kort er et testkort. Brug venligst et gyldigt kort for at "
 "fortsætte."
+
+#: src/Dialogs/UninstallConfirmDialog.vala:25
+msgid "Uninstalling this app may also delete its data."
+msgstr ""
+
+#: src/Dialogs/UninstallConfirmDialog.vala:35
+#, fuzzy
+msgid "Uninstall app?"
+msgstr "Afinstaller"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:38
+#, fuzzy, c-format
+msgid "Uninstall “%s”?"
+msgstr "Afinstaller"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:42
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:164
+msgid "Uninstall"
+msgstr "Afinstaller"
+
+#: src/Dialogs/UninstallFailDialog.vala:26
+#, fuzzy
+msgid "This may have been caused by external or manually compiled software."
+msgstr ""
+"Dette kan have været forårsaget af eksterne manuelt tilføjede software "
+"repositories eller en beskadiget kilde fil."
+
+#: src/Dialogs/UninstallFailDialog.vala:37
+#, fuzzy
+msgid "Failed to uninstall app"
+msgstr "Find og installer apps"
+
+#: src/Dialogs/UninstallFailDialog.vala:40
+#, c-format
+msgid "Failed to uninstall “%s”"
+msgstr ""
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
@@ -850,10 +891,6 @@ msgstr "Up to Date"
 msgid "Drivers"
 msgstr "Drivere"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:164
-msgid "Uninstall"
-msgstr "Afinstaller"
-
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:173
 msgid "Open"
 msgstr "Åben"
@@ -933,9 +970,6 @@ msgstr "Opdater"
 
 #~ msgid "Browser apps in categories"
 #~ msgstr "Gennemse software i kategorier"
-
-#~ msgid "Find and install apps"
-#~ msgstr "Find og installer apps"
 
 #~ msgid "Up to date"
 #~ msgstr "Opdateret"

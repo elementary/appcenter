@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-27 09:43-0700\n"
+"POT-Creation-Date: 2019-10-09 09:59-0700\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Moldovan <https://l10n.elementary.io/projects/appcenter/"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Generator: Weblate 3.7.1\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:323
+#: src/Application.vala:38 src/Core/Package.vala:327
 msgid "AppCenter"
 msgstr "Centru aplicații"
 
@@ -227,32 +227,37 @@ msgstr[1] ""
 "Altu\n"
 "%u sunt disponibile actualizări pentru sistemul dvs"
 
-#: src/Core/Package.vala:294
+#: src/Core/Package.vala:298
 #, c-format
 msgid "%s Developers"
 msgstr "%s Dezvoltatori"
 
-#: src/Core/Package.vala:325
+#: src/Core/Package.vala:329
 #, fuzzy
 msgid "elementary Updates"
 msgstr "Actualizat recent"
 
-#: src/Core/Package.vala:327
+#: src/Core/Package.vala:331
 msgid "Ubuntu (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:330
+#: src/Core/Package.vala:334
 #, fuzzy, c-format
 msgid "%s (non-curated)"
 msgstr "%s (local)"
 
-#: src/Core/Package.vala:332
+#: src/Core/Package.vala:336
 #, fuzzy
 msgid "Ubuntu Drivers"
 msgstr "Draivers"
 
-#: src/Core/Package.vala:335
+#: src/Core/Package.vala:339
 msgid "Unknown Origin (non-curated)"
+msgstr ""
+
+#: src/Core/Package.vala:441
+#, c-format
+msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
 
 #: src/Core/UpdateManager.vala:38
@@ -522,6 +527,41 @@ msgstr "S-a atins cantitatea limită de credit de pe card."
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
 "Cardul dat este un card de probă. Utilizați o carte reală pentru a continua."
+
+#: src/Dialogs/UninstallConfirmDialog.vala:25
+msgid "Uninstalling this app may also delete its data."
+msgstr ""
+
+#: src/Dialogs/UninstallConfirmDialog.vala:35
+#, fuzzy
+msgid "Uninstall app?"
+msgstr "Dezinstalați"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:38
+#, fuzzy, c-format
+msgid "Uninstall “%s”?"
+msgstr "Dezinstalați"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:42
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:164
+msgid "Uninstall"
+msgstr "Dezinstalați"
+
+#: src/Dialogs/UninstallFailDialog.vala:26
+#, fuzzy
+msgid "This may have been caused by external or manually compiled software."
+msgstr ""
+"Acest lucru s-ar putea să fi fost cauzat de un depozit extern de programe "
+"software sau de un fișier de surse corupte."
+
+#: src/Dialogs/UninstallFailDialog.vala:37
+msgid "Failed to uninstall app"
+msgstr ""
+
+#: src/Dialogs/UninstallFailDialog.vala:40
+#, c-format
+msgid "Failed to uninstall “%s”"
+msgstr ""
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
@@ -871,10 +911,6 @@ msgstr "La zi"
 #: src/Widgets/UpdateHeaderRow.vala:122
 msgid "Drivers"
 msgstr "Draivers"
-
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:164
-msgid "Uninstall"
-msgstr "Dezinstalați"
 
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:173
 msgid "Open"
