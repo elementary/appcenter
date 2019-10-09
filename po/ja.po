@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-09 09:59-0700\n"
-"PO-Revision-Date: 2019-08-29 14:22+0000\n"
+"PO-Revision-Date: 2019-10-12 13:23+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ja/>\n"
@@ -247,7 +247,7 @@ msgstr "提供元不明 (キュレーションされていないアプリ)"
 #: src/Core/Package.vala:441
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
-msgstr ""
+msgstr "以下のパッケージのアプリケーションは AppCenter でインストール済みの状態になっていません: %s"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -514,17 +514,16 @@ msgstr ""
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
-msgstr ""
+msgstr "このアプリをアンインストールすると、関連するデータも削除される可能性があります。"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:35
-#, fuzzy
 msgid "Uninstall app?"
-msgstr "アンインストール"
+msgstr "アプリをアンインストールしますか？"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:38
-#, fuzzy, c-format
+#, c-format
 msgid "Uninstall “%s”?"
-msgstr "アンインストール"
+msgstr "“%s”をアンインストールしますか?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:164
@@ -532,20 +531,17 @@ msgid "Uninstall"
 msgstr "アンインストール"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
-#, fuzzy
 msgid "This may have been caused by external or manually compiled software."
-msgstr ""
-"これは外部の手動で追加されたソフトウェアリポジトリか、壊れたソースファイルに"
-"より発生した可能性があります。"
+msgstr "これは外部のソフトウェアか、コンパイルしてインストールされたソフトウェアによって発生した可能性があります。"
 
 #: src/Dialogs/UninstallFailDialog.vala:37
 msgid "Failed to uninstall app"
-msgstr ""
+msgstr "アプリのアンインストールに失敗しました"
 
 #: src/Dialogs/UninstallFailDialog.vala:40
 #, c-format
 msgid "Failed to uninstall “%s”"
-msgstr ""
+msgstr "“%s”のアンインストールに失敗しました"
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
