@@ -16,12 +16,11 @@
  */
 
 public class UninstallConfirmDialog : Granite.MessageDialog {
-    public AppCenterCore.Package package { get; construct; }
+    public AppCenterCore.Package? package { get; construct; }
 
-    public UninstallConfirmDialog (AppCenterCore.Package package) {
+    public UninstallConfirmDialog (AppCenterCore.Package? package) {
         Object (
             title: "",
-            primary_text: _("Uninstall “%s”?").printf (package.get_name ()),
             secondary_text: _("Uninstalling this app may also delete its data."),
             buttons: Gtk.ButtonsType.CANCEL,
             badge_icon: new ThemedIcon ("edit-delete"),
@@ -31,6 +30,12 @@ public class UninstallConfirmDialog : Granite.MessageDialog {
     }
 
     construct {
+        if (package == null) {
+            primary_text = _("Uninstall app?");
+        } else {
+            primary_text = _("Uninstall “%s”?").printf (package.get_name ());
+        }
+
         image_icon = package.get_icon (48, get_scale_factor ());
 
         var uninstall_button = add_button (_("Uninstall"), Gtk.ResponseType.ACCEPT);

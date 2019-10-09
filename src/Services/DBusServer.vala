@@ -66,13 +66,14 @@ public class DBusServer : Object {
     public void uninstall (string component_id) throws Error {
         var client = AppCenterCore.Client.get_default ();
         var package = client.get_package_for_component_id (component_id);
-        var uninstall_confirm_dialog = new UninstallConfirmDialog (package);
 
         if (package == null) {
             var error = new IOError.FAILED ("Failed to find package for '%s' component ID".printf (component_id));
             new UninstallFailDialog (package, error).present ();
             throw error;
         }
+
+        var uninstall_confirm_dialog = new UninstallConfirmDialog (package);
 
         if (uninstall_confirm_dialog.run () == Gtk.ResponseType.ACCEPT) {
             package.uninstall.begin ((obj, res) => {
