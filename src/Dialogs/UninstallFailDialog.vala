@@ -18,6 +18,7 @@
 public class UninstallFailDialog : Granite.MessageDialog {
     public AppCenterCore.Package? package { get; construct; }
     public Error error { get; construct; }
+    private const string FALLBACK_ICON = "application-default-icon";
 
     public UninstallFailDialog (AppCenterCore.Package? package, Error error) {
         Object (
@@ -34,11 +35,11 @@ public class UninstallFailDialog : Granite.MessageDialog {
     construct {
         if (package == null) {
             primary_text = _("Failed to uninstall app");
+            image_icon = new ThemedIcon (FALLBACK_ICON);
         } else {
             primary_text = _("Failed to uninstall “%s”").printf (package.get_name ());
+            image_icon = package.get_icon (48, get_scale_factor ());
         }
-
-        image_icon = package.get_icon (48, get_scale_factor ());
 
         response.connect (() => destroy ());
 

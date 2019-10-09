@@ -460,6 +460,7 @@ namespace AppCenter {
                     }
                 } catch (Error e) {
                     // Disable error dialog for if user clicks cancel. Reason: Failed to obtain authentication
+                    // Pk ErrorEnums are mapped to the error code at an offset of 0xFF (see packagekit-glib2/pk-client.h)
                     if (!(e is Pk.ClientError) || e.code != Pk.ErrorEnum.NOT_AUTHORIZED + 0xFF) {
                         new UninstallFailDialog (package, e).present ();
                     }

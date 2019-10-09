@@ -17,6 +17,7 @@
 
 public class UninstallConfirmDialog : Granite.MessageDialog {
     public AppCenterCore.Package? package { get; construct; }
+    private const string FALLBACK_ICON = "application-default-icon";
 
     public UninstallConfirmDialog (AppCenterCore.Package? package) {
         Object (
@@ -32,11 +33,11 @@ public class UninstallConfirmDialog : Granite.MessageDialog {
     construct {
         if (package == null) {
             primary_text = _("Uninstall app?");
+            image_icon = new ThemedIcon (FALLBACK_ICON);
         } else {
             primary_text = _("Uninstall “%s”?").printf (package.get_name ());
+            image_icon = package.get_icon (48, get_scale_factor ());
         }
-
-        image_icon = package.get_icon (48, get_scale_factor ());
 
         var uninstall_button = add_button (_("Uninstall"), Gtk.ResponseType.ACCEPT);
         uninstall_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
