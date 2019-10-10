@@ -2,13 +2,14 @@
 # Jesse ALTER <jesse@jessealter.com>, 2018.
 # Shtonchjo <shtonchjo@gmail.com>, 2019.
 # Steven <Stevenjeffers19@gmail.com>, 2019.
+# contemplator <mistylinux@qq.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-09 09:59-0700\n"
 "PO-Revision-Date: 2019-10-10 18:20+0000\n"
-"Last-Translator: Shtonchjo <shtonchjo@gmail.com>\n"
+"Last-Translator: contemplator <mistylinux@qq.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/eo/>\n"
 "Language: eo\n"
@@ -518,7 +519,7 @@ msgstr "Tio estas test-karto. Bonvolu uzi veran karton por procedi."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
-msgstr ""
+msgstr "Malinstali ĉi tiun programon eble ankaŭ forigos ĝiajn datumojn."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:35
 #, fuzzy
