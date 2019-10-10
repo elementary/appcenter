@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-09 09:59-0700\n"
-"PO-Revision-Date: 2019-08-29 14:22+0000\n"
+"PO-Revision-Date: 2019-10-10 18:20+0000\n"
 "Last-Translator: Shtonchjo <shtonchjo@gmail.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/eo/>\n"
@@ -253,6 +253,8 @@ msgstr "Nekonata Deveno (ne kontrolita)"
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
+"Aplikaĵa stato ne estas agordita kiel instalita en la Aplikaĵa Centro, "
+"rilate la pakaĵon: %s"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
