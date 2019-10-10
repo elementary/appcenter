@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-09 09:59-0700\n"
-"PO-Revision-Date: 2019-10-10 18:20+0000\n"
-"Last-Translator: contemplator <mistylinux@qq.com>\n"
+"PO-Revision-Date: 2019-10-12 13:23+0000\n"
+"Last-Translator: Shtonchjo <shtonchjo@gmail.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/eo/>\n"
 "Language: eo\n"
@@ -522,14 +522,13 @@ msgid "Uninstalling this app may also delete its data."
 msgstr "Malinstali ĉi tiun programon eble ankaŭ forigos ĝiajn datumojn."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:35
-#, fuzzy
 msgid "Uninstall app?"
-msgstr "Malinstali"
+msgstr "Ĉu malinstali la aplikaĵon?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:38
-#, fuzzy, c-format
+#, c-format
 msgid "Uninstall “%s”?"
-msgstr "Malinstali"
+msgstr "Ĉu malinstali „%s“?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:164
@@ -537,20 +536,17 @@ msgid "Uninstall"
 msgstr "Malinstali"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
-#, fuzzy
 msgid "This may have been caused by external or manually compiled software."
-msgstr ""
-"Tio estis okazigita de fontaj dosieroj eksteraj el mane enigitaj program-"
-"deponejaj adresoj aŭ pro difekto."
+msgstr "Tion kaŭzis eble ekstera aŭ mane programtradukita programo."
 
 #: src/Dialogs/UninstallFailDialog.vala:37
 msgid "Failed to uninstall app"
-msgstr ""
+msgstr "Fiaskis la aplikaĵa malinstalo"
 
 #: src/Dialogs/UninstallFailDialog.vala:40
 #, c-format
 msgid "Failed to uninstall “%s”"
-msgstr ""
+msgstr "Fiaskis la malinstalo de „%s“"
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
