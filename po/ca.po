@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-09 09:59-0700\n"
-"PO-Revision-Date: 2019-08-29 14:22+0000\n"
+"PO-Revision-Date: 2019-10-12 13:23+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ca/>\n"
@@ -252,6 +252,8 @@ msgstr "D'origen desconegut (sense cura)"
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
+"L'estat de l'aplicació no està establert com a instal·lada al Centre "
+"d'aplicacions per al paquet %s."
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -533,17 +535,16 @@ msgstr ""
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
-msgstr ""
+msgstr "Desinstal·lar aquesta aplicació pot suprimir-ne també les dades."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:35
-#, fuzzy
 msgid "Uninstall app?"
-msgstr "Desinstal·la"
+msgstr "Desinstal·lo l'aplicació?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:38
-#, fuzzy, c-format
+#, c-format
 msgid "Uninstall “%s”?"
-msgstr "Desinstal·la"
+msgstr "Voleu desinstal·lar %s?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:164
@@ -551,21 +552,18 @@ msgid "Uninstall"
 msgstr "Desinstal·la"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
-#, fuzzy
 msgid "This may have been caused by external or manually compiled software."
 msgstr ""
-"Això pot haver estat causat per repositoris externs afegits manualment o per "
-"un fitxer de fonts corromput."
+"Això pot haver estat causat per programari extern o compilat manualment."
 
 #: src/Dialogs/UninstallFailDialog.vala:37
-#, fuzzy
 msgid "Failed to uninstall app"
-msgstr "Cerqueu i instal·leu aplicacions"
+msgstr "Ha fallat desinstal·lar l'aplicació."
 
 #: src/Dialogs/UninstallFailDialog.vala:40
 #, c-format
 msgid "Failed to uninstall “%s”"
-msgstr ""
+msgstr "Ha fallat desinstal·lar %s."
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
