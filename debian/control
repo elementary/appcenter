@@ -34,7 +34,7 @@ Depends: appstream (>= 0.12),
          packagekit,
          ${misc:Depends},
          ${shlibs:Depends}
-Recommends: appstream-data-pantheon
+Recommends: appstream-data-pantheon, flatpak
 Description: Fast application store
  Install, update and remove apps with ease.
  Helps independent developers.
