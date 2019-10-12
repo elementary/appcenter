@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-26 08:22-0700\n"
+"POT-Creation-Date: 2019-10-09 09:59-0700\n"
 "PO-Revision-Date: 2019-05-16 00:14+0000\n"
 "Last-Translator: HeyLinux <heylinux.me@gmail.com>\n"
 "Language-Team: Romanian <https://l10n.elementary.io/projects/appcenter/"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:323
+#: src/Application.vala:38 src/Core/Package.vala:327
 msgid "AppCenter"
 msgstr "AppCenter"
 
@@ -48,37 +48,23 @@ msgstr "%s s-a instalat cu succes"
 msgid "There Was An Error Installing %s."
 msgstr "S-a produs o eroare la instalarea %s"
 
-#: src/MainWindow.vala:157 src/Views/Homepage.vala:282
+#: src/MainWindow.vala:145 src/Views/Homepage.vala:282
 #: src/Views/Homepage.vala:294 src/Views/Homepage.vala:299
 #: src/Views/Homepage.vala:310
 msgid "Home"
 msgstr "Pagina principală"
 
-#: src/MainWindow.vala:158 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:146 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 #, fuzzy
 msgctxt "view"
 msgid "Installed"
 msgstr "Instalează"
 
-#: src/MainWindow.vala:185 src/MainWindow.vala:348 src/Views/SearchView.vala:55
+#: src/MainWindow.vala:173 src/MainWindow.vala:332 src/Views/SearchView.vala:55
 #: src/Views/SearchView.vala:82
 msgid "Search Apps"
 msgstr "Caută aplicații"
-
-#: src/MainWindow.vala:203
-msgid "Network Is Not Available"
-msgstr "Lipsă conexiune la internet"
-
-#: src/MainWindow.vala:204
-#, fuzzy
-msgid "Connect to the Internet to install or update apps."
-msgstr ""
-"Conectați-vă la Internet pentru instalarea sau actualizarea aplicațiilor."
-
-#: src/MainWindow.vala:207
-msgid "Network Settings…"
-msgstr "Setări de rețea…"
 
 #: src/Utils.vala:72 src/Core/ChangeInformation.vala:92
 msgid "Starting"
@@ -240,32 +226,37 @@ msgstr[0] "%u actualizare de sistem este disponibilă"
 msgstr[1] "%u actualizări de sistem sunt disponibile"
 msgstr[2] "%u de actualizări de sistem sunt disponibile"
 
-#: src/Core/Package.vala:294
+#: src/Core/Package.vala:298
 #, fuzzy, c-format
 msgid "%s Developers"
 msgstr "Dezvoltatorii %s"
 
-#: src/Core/Package.vala:325
+#: src/Core/Package.vala:329
 #, fuzzy
 msgid "elementary Updates"
 msgstr "Actualizate recent"
 
-#: src/Core/Package.vala:327
+#: src/Core/Package.vala:331
 msgid "Ubuntu (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:330
+#: src/Core/Package.vala:334
 #, c-format
 msgid "%s (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:332
+#: src/Core/Package.vala:336
 #, fuzzy
 msgid "Ubuntu Drivers"
 msgstr "Drivere"
 
-#: src/Core/Package.vala:335
+#: src/Core/Package.vala:339
 msgid "Unknown Origin (non-curated)"
+msgstr ""
+
+#: src/Core/Package.vala:441
+#, c-format
+msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
 
 #: src/Core/UpdateManager.vala:38
@@ -355,7 +346,7 @@ msgstr "Repornește"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:206
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:197
 msgid "Cancel"
 msgstr "Anulează"
 
@@ -543,6 +534,41 @@ msgstr ""
 "Acesta este un card de test. Vă rugăm folosiți un card real pentru "
 "continuare."
 
+#: src/Dialogs/UninstallConfirmDialog.vala:25
+msgid "Uninstalling this app may also delete its data."
+msgstr ""
+
+#: src/Dialogs/UninstallConfirmDialog.vala:35
+#, fuzzy
+msgid "Uninstall app?"
+msgstr "Dezinstalează"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:38
+#, fuzzy, c-format
+msgid "Uninstall “%s”?"
+msgstr "Dezinstalează"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:42
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:164
+msgid "Uninstall"
+msgstr "Dezinstalează"
+
+#: src/Dialogs/UninstallFailDialog.vala:26
+#, fuzzy
+msgid "This may have been caused by external or manually compiled software."
+msgstr ""
+"Aceasta poate fi cauzată de arhivele externe adăugate manual sau de un "
+"fişier cu surse corupt."
+
+#: src/Dialogs/UninstallFailDialog.vala:37
+msgid "Failed to uninstall app"
+msgstr ""
+
+#: src/Dialogs/UninstallFailDialog.vala:40
+#, c-format
+msgid "Failed to uninstall “%s”"
+msgstr ""
+
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
 msgstr "Descărcarea actualizărilor eșuată"
@@ -563,87 +589,87 @@ msgstr "Ignoră"
 msgid "Try Again"
 msgstr "Reîncearcă"
 
-#: src/Views/AppInfoView.vala:80
+#: src/Views/AppInfoView.vala:177
 msgid "Screenshot Not Available"
 msgstr "Captura de ecran nu este disponibilă"
 
-#: src/Views/AppInfoView.vala:135
+#: src/Views/AppInfoView.vala:236
 msgid "Homepage"
 msgstr "Pagină de pornire"
 
-#: src/Views/AppInfoView.vala:141
+#: src/Views/AppInfoView.vala:242
 msgid "Suggest Translations"
 msgstr "Sugerați traduceri"
 
-#: src/Views/AppInfoView.vala:147
+#: src/Views/AppInfoView.vala:248
 msgid "Report a Problem"
 msgstr "Raportați o problemă"
 
-#: src/Views/AppInfoView.vala:153
+#: src/Views/AppInfoView.vala:254
 msgid "Help"
 msgstr "Ajutor"
 
-#: src/Views/AppInfoView.vala:183
+#: src/Views/AppInfoView.vala:281
 msgid "What's New:"
 msgstr "Ce este nou:"
 
-#: src/Views/AppInfoView.vala:202
+#: src/Views/AppInfoView.vala:300
 msgid "Extensions:"
 msgstr "Extensii:"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:303
+#: src/Views/AppInfoView.vala:395
 msgid "Public Domain"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:306
+#: src/Views/AppInfoView.vala:398
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr ""
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:311
+#: src/Views/AppInfoView.vala:403
 #, fuzzy
 msgid "Free Software"
 msgstr "Editează sursele software"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:314
+#: src/Views/AppInfoView.vala:406
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:318
+#: src/Views/AppInfoView.vala:410
 msgid "Proprietary"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:321
+#: src/Views/AppInfoView.vala:413
 #, fuzzy
 msgid "Unknown License"
 msgstr "Stare necunoscută"
 
-#: src/Views/AppInfoView.vala:363
+#: src/Views/AppInfoView.vala:455
 #, c-format
 msgid "Other Apps by %s"
 msgstr "Alte aplicaţii de %s"
 
-#: src/Views/AppInfoView.vala:397
+#: src/Views/AppInfoView.vala:489
 msgid "Link copied to clipboard"
 msgstr "Link copiat in clipboard"
 
-#: src/Views/AppInfoView.vala:408
+#: src/Views/AppInfoView.vala:500
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "Încercați %s in AppCenter:"
 
-#: src/Views/AppInfoView.vala:415
+#: src/Views/AppInfoView.vala:507
 msgid "Share"
 msgstr "Partajează"
 
-#: src/Views/AppInfoView.vala:712
+#: src/Views/AppInfoView.vala:817
 msgid "Fund"
 msgstr "Susţine"
 
-#: src/Views/AppInfoView.vala:734
+#: src/Views/AppInfoView.vala:839
 msgid "Fund the development of this app"
 msgstr "Susţine dezvoltarea acestei aplicaţii"
 
@@ -780,12 +806,12 @@ msgid "Requires payments, which are not enabled"
 msgstr ""
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:322
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:313
 msgid "Free"
 msgstr "Gratuit"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:324
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:315
 #, fuzzy
 msgid "Install"
 msgstr "Instalează"
@@ -801,6 +827,22 @@ msgstr "$%dUSD"
 #, c-format
 msgid "$%d"
 msgstr "$%dUSD"
+
+#: src/Widgets/NetworkInfoBar.vala:32
+#, fuzzy
+msgid "Network Not Available."
+msgstr "Lipsă conexiune la internet"
+
+#: src/Widgets/NetworkInfoBar.vala:33
+#, fuzzy
+msgid "Connect to the Internet to browse and install apps."
+msgstr ""
+"Conectați-vă la Internet pentru instalarea sau actualizarea aplicațiilor."
+
+#. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
+#: src/Widgets/NetworkInfoBar.vala:41
+msgid "Network Settings…"
+msgstr "Setări de rețea…"
 
 #: src/Widgets/ReleaseRow.vala:67
 #, c-format
@@ -848,12 +890,12 @@ msgstr ""
 msgid "Only the parts of apps and updates that are needed will be downloaded."
 msgstr ""
 
-#: src/Widgets/SizeLabel.vala:64
+#: src/Widgets/SizeLabel.vala:63
 #, fuzzy, c-format
 msgid "Up to %s"
 msgstr "Aplicații la zi"
 
-#: src/Widgets/UpdateHeaderRow.vala:68
+#: src/Widgets/UpdateHeaderRow.vala:69
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
@@ -861,27 +903,23 @@ msgstr[0] "%u actualizare disponibilă"
 msgstr[1] "%u actualizări disponibile"
 msgstr[2] "%u de actualizări disponibile"
 
-#: src/Widgets/UpdateHeaderRow.vala:106
+#: src/Widgets/UpdateHeaderRow.vala:107
 msgid "Searching for updates…"
 msgstr "Căutare actualizări…"
 
-#: src/Widgets/UpdateHeaderRow.vala:113
+#: src/Widgets/UpdateHeaderRow.vala:114
 msgid "Up to Date"
 msgstr "Aplicații la zi"
 
-#: src/Widgets/UpdateHeaderRow.vala:121
+#: src/Widgets/UpdateHeaderRow.vala:122
 msgid "Drivers"
 msgstr "Drivere"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:172
-msgid "Uninstall"
-msgstr "Dezinstalează"
-
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:182
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:173
 msgid "Open"
 msgstr "Deschide"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:347
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:338
 msgid "Update"
 msgstr "Actualizează"
 

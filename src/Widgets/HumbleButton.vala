@@ -145,4 +145,3 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
         }
     }
 }
-

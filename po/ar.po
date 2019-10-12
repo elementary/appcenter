@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-26 08:22-0700\n"
-"PO-Revision-Date: 2019-04-10 09:36+0000\n"
+"POT-Creation-Date: 2019-10-09 09:59-0700\n"
+"PO-Revision-Date: 2019-08-26 04:22+0000\n"
 "Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ar/>\n"
@@ -18,18 +18,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 3.5.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:24+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:323
+#: src/Application.vala:38 src/Core/Package.vala:327
 msgid "AppCenter"
 msgstr "مركز التطبيقات"
 
 #: src/Application.vala:106
-#, fuzzy, c-format
+#, c-format
 msgid "Could not parse the media type %s"
-msgstr "لا يمكن معالجة النوع \"%s\""
+msgstr "لا يمكن تحليل نوع الوسائط \"%s\""
 
 #: src/Application.vala:126
 #, c-format
@@ -50,34 +50,22 @@ msgstr "%s تم تثبيته بنجاح"
 msgid "There Was An Error Installing %s."
 msgstr "خطأ في تثبيت %s."
 
-#: src/MainWindow.vala:157 src/Views/Homepage.vala:282
+#: src/MainWindow.vala:145 src/Views/Homepage.vala:282
 #: src/Views/Homepage.vala:294 src/Views/Homepage.vala:299
 #: src/Views/Homepage.vala:310
 msgid "Home"
 msgstr "الرئيسية"
 
-#: src/MainWindow.vala:158 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:146 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 msgctxt "view"
 msgid "Installed"
 msgstr "مثبت"
 
-#: src/MainWindow.vala:185 src/MainWindow.vala:348 src/Views/SearchView.vala:55
+#: src/MainWindow.vala:173 src/MainWindow.vala:332 src/Views/SearchView.vala:55
 #: src/Views/SearchView.vala:82
 msgid "Search Apps"
 msgstr "البحث عن التطبيقات"
-
-#: src/MainWindow.vala:203
-msgid "Network Is Not Available"
-msgstr "الشبكة غير متوفرة"
-
-#: src/MainWindow.vala:204
-msgid "Connect to the Internet to install or update apps."
-msgstr "إتصل بالإنترنت لتحميل أو تحديث التطبيقات."
-
-#: src/MainWindow.vala:207
-msgid "Network Settings…"
-msgstr "إعدادات الشبكة…"
 
 #: src/Utils.vala:72 src/Core/ChangeInformation.vala:92
 msgid "Starting"
@@ -245,32 +233,35 @@ msgstr[3] "يوجد %u تحديثات لنظامك"
 msgstr[4] "يوجد %u تحديث لنظامك"
 msgstr[5] "يوجد %u تحديث لنظامك"
 
-#: src/Core/Package.vala:294
+#: src/Core/Package.vala:298
 #, c-format
 msgid "%s Developers"
 msgstr "المطور %s"
 
-#: src/Core/Package.vala:325
-#, fuzzy
+#: src/Core/Package.vala:329
 msgid "elementary Updates"
-msgstr "محديثة جديدًا"
+msgstr "تحديثات المنتري"
 
-#: src/Core/Package.vala:327
+#: src/Core/Package.vala:331
 msgid "Ubuntu (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:330
+#: src/Core/Package.vala:334
 #, fuzzy, c-format
 msgid "%s (non-curated)"
 msgstr "%s (محلي)"
 
-#: src/Core/Package.vala:332
-#, fuzzy
+#: src/Core/Package.vala:336
 msgid "Ubuntu Drivers"
-msgstr "التعريفات"
+msgstr "تعريفات أوبونتو"
 
-#: src/Core/Package.vala:335
+#: src/Core/Package.vala:339
 msgid "Unknown Origin (non-curated)"
+msgstr ""
+
+#: src/Core/Package.vala:441
+#, c-format
+msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
 
 #: src/Core/UpdateManager.vala:38
@@ -363,7 +354,7 @@ msgstr "إعادة تشغيل"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:206
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:197
 msgid "Cancel"
 msgstr "إنهاء"
 
@@ -524,6 +515,42 @@ msgstr "الرصيد او الحد على البطاقة وصل إليه."
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "البطاقة المودة هيا بطاقة تجريب. من فضلك حاول بإستخدام بطاقة حقيقية."
 
+#: src/Dialogs/UninstallConfirmDialog.vala:25
+msgid "Uninstalling this app may also delete its data."
+msgstr ""
+
+#: src/Dialogs/UninstallConfirmDialog.vala:35
+#, fuzzy
+msgid "Uninstall app?"
+msgstr "حذف"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:38
+#, fuzzy, c-format
+msgid "Uninstall “%s”?"
+msgstr "حذف"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:42
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:164
+msgid "Uninstall"
+msgstr "حذف"
+
+#: src/Dialogs/UninstallFailDialog.vala:26
+#, fuzzy
+msgid "This may have been caused by external or manually compiled software."
+msgstr ""
+"يمكن أن يحدث هذا بسبب إضافة مصادر تطبيقات خارجية، بشكل يدوي، أو من ملف مصادر "
+"معطوب."
+
+#: src/Dialogs/UninstallFailDialog.vala:37
+#, fuzzy
+msgid "Failed to uninstall app"
+msgstr "بحث و تثبيت تطبيقات"
+
+#: src/Dialogs/UninstallFailDialog.vala:40
+#, c-format
+msgid "Failed to uninstall “%s”"
+msgstr ""
+
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
 msgstr "فشل في جلب التحديثات"
@@ -544,87 +571,87 @@ msgstr "تجاهل"
 msgid "Try Again"
 msgstr "حاول مرة أخرى"
 
-#: src/Views/AppInfoView.vala:80
+#: src/Views/AppInfoView.vala:177
 msgid "Screenshot Not Available"
 msgstr "لقطات الشاشة غير متوفرة"
 
-#: src/Views/AppInfoView.vala:135
+#: src/Views/AppInfoView.vala:236
 msgid "Homepage"
 msgstr "الرئيسية"
 
-#: src/Views/AppInfoView.vala:141
+#: src/Views/AppInfoView.vala:242
 msgid "Suggest Translations"
 msgstr "إقتراح ترجمة"
 
-#: src/Views/AppInfoView.vala:147
+#: src/Views/AppInfoView.vala:248
 msgid "Report a Problem"
 msgstr "تقرير المشكلة"
 
-#: src/Views/AppInfoView.vala:153
+#: src/Views/AppInfoView.vala:254
 msgid "Help"
 msgstr "مساعدة"
 
-#: src/Views/AppInfoView.vala:183
+#: src/Views/AppInfoView.vala:281
 msgid "What's New:"
 msgstr "ما الجديد:"
 
-#: src/Views/AppInfoView.vala:202
+#: src/Views/AppInfoView.vala:300
 msgid "Extensions:"
 msgstr "الإضافات:"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:303
+#: src/Views/AppInfoView.vala:395
 msgid "Public Domain"
-msgstr ""
+msgstr "ملكية عامة"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:306
+#: src/Views/AppInfoView.vala:398
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr ""
+"https://ar.wikipedia.org/wiki/%D9%85%D9%84%D9%83%D9%8A%D8%A9_"
+"%D8%B9%D8%A7%D9%85%D8%A9"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:311
-#, fuzzy
+#: src/Views/AppInfoView.vala:403
 msgid "Free Software"
-msgstr "تحرير مصادر البرمجيات"
+msgstr "برمجيات حرة"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:314
+#: src/Views/AppInfoView.vala:406
 msgid "https://www.gnu.org/philosophy/free-sw"
-msgstr ""
+msgstr "https://www.gnu.org/philosophy/free-sw.ar.html"
 
-#: src/Views/AppInfoView.vala:318
+#: src/Views/AppInfoView.vala:410
 msgid "Proprietary"
-msgstr ""
+msgstr "محتكر"
 
-#: src/Views/AppInfoView.vala:321
-#, fuzzy
+#: src/Views/AppInfoView.vala:413
 msgid "Unknown License"
-msgstr "حالة غير معلومة"
+msgstr "ترخيص غير معروف"
 
-#: src/Views/AppInfoView.vala:363
+#: src/Views/AppInfoView.vala:455
 #, c-format
 msgid "Other Apps by %s"
 msgstr "تطبيقات أخرى من %s"
 
-#: src/Views/AppInfoView.vala:397
+#: src/Views/AppInfoView.vala:489
 msgid "Link copied to clipboard"
 msgstr "تم نسخ الرابط للحافظة"
 
-#: src/Views/AppInfoView.vala:408
+#: src/Views/AppInfoView.vala:500
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "أنظر إلى %s في مركز التطبيقات:"
 
-#: src/Views/AppInfoView.vala:415
+#: src/Views/AppInfoView.vala:507
 msgid "Share"
 msgstr "شارك"
 
-#: src/Views/AppInfoView.vala:712
+#: src/Views/AppInfoView.vala:817
 msgid "Fund"
 msgstr "دعم"
 
-#: src/Views/AppInfoView.vala:734
+#: src/Views/AppInfoView.vala:839
 msgid "Fund the development of this app"
 msgstr "إدعم تطوير هذا التطبيق"
 
@@ -726,7 +753,7 @@ msgstr "الإنترنت"
 
 #: src/Widgets/CategoryFlowBox.vala:82
 msgid "Math, Science, & Engineering"
-msgstr "الرياضيات والعلوم والهندسة"
+msgstr "الرياضيات, العلوم و الهندسة"
 
 #: src/Widgets/CategoryFlowBox.vala:101
 msgid "Media Production"
@@ -757,12 +784,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "تحتاج لطريقة دفع, وهي غير مفعلة"
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:322
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:313
 msgid "Free"
 msgstr "مجاني"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:324
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:315
 msgid "Install"
 msgstr "تثبيت"
 
@@ -777,6 +804,21 @@ msgstr "$%d.00"
 #, c-format
 msgid "$%d"
 msgstr "دولار$%d"
+
+#: src/Widgets/NetworkInfoBar.vala:32
+#, fuzzy
+msgid "Network Not Available."
+msgstr "الشبكة غير متوفرة"
+
+#: src/Widgets/NetworkInfoBar.vala:33
+#, fuzzy
+msgid "Connect to the Internet to browse and install apps."
+msgstr "إتصل بالإنترنت لتحميل أو تحديث التطبيقات."
+
+#. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
+#: src/Widgets/NetworkInfoBar.vala:41
+msgid "Network Settings…"
+msgstr "إعدادات الشبكة…"
 
 #: src/Widgets/ReleaseRow.vala:67
 #, c-format
@@ -817,18 +859,18 @@ msgstr "نسخ الرابط"
 
 #: src/Widgets/SizeLabel.vala:35
 msgid "Actual Download Size Likely to Be Smaller"
-msgstr ""
+msgstr "حجم التنزيل الفعلي من المحتمل أن يكون أصغر"
 
 #: src/Widgets/SizeLabel.vala:36
 msgid "Only the parts of apps and updates that are needed will be downloaded."
-msgstr ""
+msgstr "سيتم تنزيل أجزاء التطبيقات والتحديثات المطلوبة فقط."
 
-#: src/Widgets/SizeLabel.vala:64
-#, fuzzy, c-format
+#: src/Widgets/SizeLabel.vala:63
+#, c-format
 msgid "Up to %s"
-msgstr "تم تثبيت آخر التحديثات"
+msgstr "تم تثبيت آخر التحديثات %s"
 
-#: src/Widgets/UpdateHeaderRow.vala:68
+#: src/Widgets/UpdateHeaderRow.vala:69
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
@@ -839,27 +881,23 @@ msgstr[3] "يتوفر %u تحديثات"
 msgstr[4] "يتوفر %u تحديث"
 msgstr[5] "يتوفر %u تحديث"
 
-#: src/Widgets/UpdateHeaderRow.vala:106
+#: src/Widgets/UpdateHeaderRow.vala:107
 msgid "Searching for updates…"
 msgstr "البحث عن تحديثات…"
 
-#: src/Widgets/UpdateHeaderRow.vala:113
+#: src/Widgets/UpdateHeaderRow.vala:114
 msgid "Up to Date"
 msgstr "تم تثبيت آخر التحديثات"
 
-#: src/Widgets/UpdateHeaderRow.vala:121
+#: src/Widgets/UpdateHeaderRow.vala:122
 msgid "Drivers"
 msgstr "التعريفات"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:172
-msgid "Uninstall"
-msgstr "حذف"
-
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:182
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:173
 msgid "Open"
 msgstr "فتح"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:347
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:338
 msgid "Update"
 msgstr "تحديث"
 
@@ -923,9 +961,6 @@ msgstr "تحديث"
 
 #~ msgid "Load a package from the given id"
 #~ msgstr "تحميل الحزمة من تعريف معين"
-
-#~ msgid "Find and install apps"
-#~ msgstr "بحث و تثبيت تطبيقات"
 
 #~ msgid "application download center"
 #~ msgstr "سوق التطبيقات"

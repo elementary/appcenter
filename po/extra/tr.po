@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:42+0200\n"
-"PO-Revision-Date: 2019-04-19 21:32+0000\n"
+"PO-Revision-Date: 2019-09-23 21:23+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/extra/"
 "tr/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.5.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
@@ -32,8 +32,8 @@ msgid ""
 msgstr ""
 "Bağımsız ve açık kaynak geliştiricileri için bir uygulama mağazası. "
 "Kategorilere göre göz atın veya yeni uygulamalar arayın ve keşfedin. "
-"AppCenter ayrıca sisteminizi yeni özellikler ve düzeltmeler için en son ve "
-"en iyi sürüme güncellemek için kullanılır."
+"Uygulama Merkezi ayrıca sisteminizi yeni özellikler ve düzeltmeler için en "
+"son ve en iyi sürüme güncellemek için kullanılır."
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
 msgid "Meson build system fixes"
@@ -112,7 +112,6 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:139
 #: data/io.elementary.appcenter.appdata.xml.in:148
 #: data/io.elementary.appcenter.appdata.xml.in:157
-#, fuzzy
 msgid "Bug fixes and improve performance."
 msgstr "Bug düzeltmeleri ve performans iyileştirmeleri."
 

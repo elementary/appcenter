@@ -38,8 +38,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     private Gtk.Button return_button;
     private ulong task_finished_connection = 0U;
     private Gee.LinkedList<string> return_button_history;
-    private Granite.Widgets.AlertView network_alert_view;
-    private Gtk.Grid network_view;
     private Gtk.Label updates_badge;
 
     private GLib.Settings settings;
@@ -101,16 +99,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         installed_view.subview_entered.connect (view_opened);
         search_view.subview_entered.connect (view_opened);
 
-        NetworkMonitor.get_default ().network_changed.connect (on_view_mode_changed);
-
-        network_alert_view.action_activated.connect (() => {
-            try {
-                AppInfo.launch_default_for_uri ("settings://network", null);
-            } catch (Error e) {
-                warning (e.message);
-            }
-        });
-
         unowned AppCenterCore.BackendAggregator client = AppCenterCore.BackendAggregator.get_default ();
         client.notify["working"].connect (() => {
             Idle.add (() => {
@@ -133,7 +121,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         settings.get ("window-position", "(ii)", out window_x, out window_y);
         settings.get ("window-size", "(ii)", out window_width, out window_height);
 
-        if (window_x != -1 ||  window_y != -1) {
+        if (window_x != -1 || window_y != -1) {
             move (window_x, window_y);
         }
 
@@ -200,24 +188,20 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         installed_view = new Views.InstalledView ();
         search_view = new Views.SearchView ();
 
-        network_alert_view = new Granite.Widgets.AlertView (_("Network Is Not Available"),
-                                                            _("Connect to the Internet to install or update apps."),
-                                                            "network-error");
-        network_alert_view.get_style_context ().remove_class (Gtk.STYLE_CLASS_VIEW);
-        network_alert_view.show_action (_("Network Settings…"));
-
-        network_view = new Gtk.Grid ();
-        network_view.margin = 24;
-        network_view.attach (network_alert_view, 0, 0, 1, 1);
-
         stack = new Gtk.Stack ();
         stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
         stack.add (homepage);
         stack.add (installed_view);
         stack.add (search_view);
-        stack.add (network_view);
 
-        add (stack);
+        var network_info_bar = new AppCenter.Widgets.NetworkInfoBar ();
+
+        var grid = new Gtk.Grid ();
+        grid.orientation = Gtk.Orientation.VERTICAL;
+        grid.add (network_info_bar);
+        grid.add (stack);
+
+        add (grid);
 
         homepage.page_loaded.connect (() => homepage_loaded ());
     }
@@ -376,26 +360,17 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     }
 
     private void on_view_mode_changed () {
-        var connection_available = NetworkMonitor.get_default ().get_network_available ();
-        if (connection_available) {
-            if (search_entry.text.length >= VALID_QUERY_LENGTH) {
-                stack.visible_child = search_view;
-                search_entry.sensitive = !search_view.viewing_package;
-            } else {
-                if (view_mode.selected == homepage_view_id) {
-                    stack.visible_child = homepage;
-                    search_entry.sensitive = !homepage.viewing_package;
-                } else if (view_mode.selected == installed_view_id) {
-                    stack.visible_child = installed_view;
-                    search_entry.sensitive = false;
-                }
-            }
+        if (search_entry.text.length >= VALID_QUERY_LENGTH) {
+            stack.visible_child = search_view;
+            search_entry.sensitive = !search_view.viewing_package;
         } else {
-            stack.visible_child = network_view;
-            search_entry.sensitive = false;
+            if (view_mode.selected == homepage_view_id) {
+                stack.visible_child = homepage;
+                search_entry.sensitive = !homepage.viewing_package;
+            } else if (view_mode.selected == installed_view_id) {
+                stack.visible_child = installed_view;
+                search_entry.sensitive = false;
+            }
         }
-
-        custom_title_stack.sensitive = connection_available;
-        return_button.sensitive = connection_available;
     }
 }

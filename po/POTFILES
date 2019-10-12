@@ -13,6 +13,8 @@ src/Core/UpdateManager.vala
 src/Dialogs/ContentWarningDialog.vala
 src/Dialogs/RestartDialog.vala
 src/Dialogs/StripeDialog.vala
+src/Dialogs/UninstallConfirmDialog.vala
+src/Dialogs/UninstallFailDialog.vala
 src/Dialogs/UpdateFailDialog.vala
 src/Services/DBusInterfaces.vala
 src/Services/DBusServer.vala
@@ -32,6 +34,7 @@ src/Widgets/CategoryFlowBox.vala
 src/Widgets/CategoryItem.vala
 src/Widgets/HumbleButton.vala
 src/Widgets/HumblePopover.vala
+src/Widgets/NetworkInfoBar.vala
 src/Widgets/PackageRow.vala
 src/Widgets/ReleaseListBox.vala
 src/Widgets/ReleaseRow.vala
