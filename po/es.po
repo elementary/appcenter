@@ -9,13 +9,14 @@
 # Daniel Foré <daniel@elementary.io>, 2019.
 # Ernesto Miranda <epmiranda94@gmail.com>, 2019.
 # Adolfo Jayme Barrientos <fitojb@ubuntu.com>, 2019.
+# Daniel R. <riesp@pm.me>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-09 09:59-0700\n"
-"PO-Revision-Date: 2019-09-19 15:22+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"PO-Revision-Date: 2019-10-12 13:23+0000\n"
+"Last-Translator: Daniel R. <riesp@pm.me>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -260,6 +261,8 @@ msgstr "Origen desconocido (no verificadas)"
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
+"El paquete %s consta como aplicación no instalada en el Centro de "
+"Aplicaciones"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -531,17 +534,16 @@ msgstr "La tarjeta usada es de pruebas, ingrese una real para proceder."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
-msgstr ""
+msgstr "La desinstalación de esta aplicación también puede eliminar sus datos."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:35
-#, fuzzy
 msgid "Uninstall app?"
-msgstr "Desinstalar"
+msgstr "¿Desea desinstalar la aplicación?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:38
-#, fuzzy, c-format
+#, c-format
 msgid "Uninstall “%s”?"
-msgstr "Desinstalar"
+msgstr "¿Desea desinstalar «%s»?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:164
@@ -549,21 +551,19 @@ msgid "Uninstall"
 msgstr "Desinstalar"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
-#, fuzzy
 msgid "This may have been caused by external or manually compiled software."
 msgstr ""
-"Esto pudo haber sido causado por agregar repositorios externos manualmente o "
-"algún archivo de código fuente corrupto."
+"Esto pudo haber sido causado por software compilado de forma externa o "
+"manual."
 
 #: src/Dialogs/UninstallFailDialog.vala:37
-#, fuzzy
 msgid "Failed to uninstall app"
-msgstr "Encuentre e instale aplicaciones"
+msgstr "No se pudo desinstalar la aplicación"
 
 #: src/Dialogs/UninstallFailDialog.vala:40
 #, c-format
 msgid "Failed to uninstall “%s”"
-msgstr ""
+msgstr "Se ha producido un error desinstalando «%s»"
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"

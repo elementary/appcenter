@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-09 09:59-0700\n"
-"PO-Revision-Date: 2019-08-29 14:22+0000\n"
+"PO-Revision-Date: 2019-10-12 13:23+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/lt/>\n"
@@ -12,8 +12,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n==1 ? 0 : n%10>=2 && (n%100<10 || n"
-"%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3;\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 0 : n%10>=2 && (n%100<10 || "
+"n%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3;\n"
 "X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
@@ -253,6 +253,7 @@ msgstr "Nežinoma kilmė (nekuruojama)"
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
+"Programos būsena Programų centre nėra nustatyta kaip įdiegta šiam paketui: %s"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -534,17 +535,16 @@ msgstr ""
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
-msgstr ""
+msgstr "Pašalinus šią programą, gali būti ištrinti jos duomenys."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:35
-#, fuzzy
 msgid "Uninstall app?"
-msgstr "Šalinti"
+msgstr "Pašalinti programą?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:38
-#, fuzzy, c-format
+#, c-format
 msgid "Uninstall “%s”?"
-msgstr "Šalinti"
+msgstr "Pašalinti \"%s\"?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:164
@@ -552,21 +552,19 @@ msgid "Uninstall"
 msgstr "Šalinti"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
-#, fuzzy
 msgid "This may have been caused by external or manually compiled software."
 msgstr ""
-"Tai galėjo būti sukelta išorinės, rankiniu būdu pridėtos programinės įrangos "
-"saugyklos arba pažeisto šaltinių failo."
+"Tai galėjo būti sukelta išorinės ar rankiniu būdu kompiliuotos programinės "
+"įrangos."
 
 #: src/Dialogs/UninstallFailDialog.vala:37
-#, fuzzy
 msgid "Failed to uninstall app"
-msgstr "Rasti ir diegti programas"
+msgstr "Nepavyko pašalinti programos"
 
 #: src/Dialogs/UninstallFailDialog.vala:40
 #, c-format
 msgid "Failed to uninstall “%s”"
-msgstr ""
+msgstr "Nepavyko pašalinti \"%s\""
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"

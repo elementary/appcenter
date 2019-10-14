@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-09 09:59-0700\n"
-"PO-Revision-Date: 2019-09-23 21:23+0000\n"
+"PO-Revision-Date: 2019-10-12 13:23+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/tr/>\n"
@@ -258,7 +258,7 @@ msgstr "Bilinmeyen Kaynak (doğrulanmamış)"
 #: src/Core/Package.vala:441
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
-msgstr ""
+msgstr "%s paketinin Uygulama Merkezindeki durumu yüklü olarak ayarlanmadı"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -527,17 +527,16 @@ msgstr ""
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
-msgstr ""
+msgstr "Bu uygulamayı kaldırmak uygulamanın verilerinide silebilir."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:35
-#, fuzzy
 msgid "Uninstall app?"
-msgstr "Kaldır"
+msgstr "Uygulama kaldırılsın mı?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:38
-#, fuzzy, c-format
+#, c-format
 msgid "Uninstall “%s”?"
-msgstr "Kaldır"
+msgstr "\"%s\" kaldırılsın mı?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:164
@@ -545,21 +544,17 @@ msgid "Uninstall"
 msgstr "Kaldır"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
-#, fuzzy
 msgid "This may have been caused by external or manually compiled software."
-msgstr ""
-"Bunun nedeni elle eklenen harici dosyalar, yazılım depoları veya bozuk bir "
-"kaynak dosyası olabilir."
+msgstr "Buna harici veya elle derlenmiş yazılımlar neden olmuş olabilir."
 
 #: src/Dialogs/UninstallFailDialog.vala:37
-#, fuzzy
 msgid "Failed to uninstall app"
-msgstr "Uygulamaları bul ve yükle"
+msgstr "Uygulama kaldırılamadı"
 
 #: src/Dialogs/UninstallFailDialog.vala:40
 #, c-format
 msgid "Failed to uninstall “%s”"
-msgstr ""
+msgstr "\"%s\" kaldırılamadı"
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
