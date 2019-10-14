@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-09 09:59-0700\n"
-"PO-Revision-Date: 2019-08-29 14:22+0000\n"
+"PO-Revision-Date: 2019-10-14 14:23+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/pt/>\n"
@@ -253,6 +253,8 @@ msgstr "Origem desconhecida (não-curadas)"
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
+"Estado da aplicação não definido como instalada na AppCenter para o pacote: "
+"%s"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -529,17 +531,16 @@ msgstr ""
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
-msgstr ""
+msgstr "Desinstalar esta aplicação também pode eliminar os seus dados."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:35
-#, fuzzy
 msgid "Uninstall app?"
-msgstr "Desinstalar"
+msgstr "Desinstalar aplicação?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:38
-#, fuzzy, c-format
+#, c-format
 msgid "Uninstall “%s”?"
-msgstr "Desinstalar"
+msgstr "Desinstalar “%s”?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:164
@@ -547,21 +548,18 @@ msgid "Uninstall"
 msgstr "Desinstalar"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
-#, fuzzy
 msgid "This may have been caused by external or manually compiled software."
 msgstr ""
-"Isto pode ter sido causado por programas externos instalados manualmente ou "
-"por um arquivo corrompido."
+"Isto pode ter sido causado por software externo ou compilado manualmente."
 
 #: src/Dialogs/UninstallFailDialog.vala:37
-#, fuzzy
 msgid "Failed to uninstall app"
-msgstr "Procurar e instalar aplicações"
+msgstr "Falha ao desinstalar a aplicação"
 
 #: src/Dialogs/UninstallFailDialog.vala:40
 #, c-format
 msgid "Failed to uninstall “%s”"
-msgstr ""
+msgstr "Falha ao desinstalar “%s”"
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
