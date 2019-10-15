@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-09 09:59-0700\n"
-"PO-Revision-Date: 2019-09-06 18:22+0000\n"
+"PO-Revision-Date: 2019-10-16 20:23+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/mr/>\n"
@@ -251,6 +251,8 @@ msgstr "अज्ञात उत्पत्ति (नॉन-क्युर�
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
+"%s : पॅकेजसाठी AppCenter मध्ये स्थापित केल्यानुसार अनुप्रयोग स्थिती सेट "
+"केलेली नाही"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -503,17 +505,16 @@ msgstr "दिलेले कार्ड एक चाचणी कार्�
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
-msgstr ""
+msgstr "हा अ‍ॅप विस्थापित केल्यास त्याचा डेटा हटविला जाऊ शकतो."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:35
-#, fuzzy
 msgid "Uninstall app?"
-msgstr "विस्थापित करा"
+msgstr "अ‍ॅप विस्थापित करायचा?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:38
-#, fuzzy, c-format
+#, c-format
 msgid "Uninstall “%s”?"
-msgstr "विस्थापित करा"
+msgstr "\"%s\" विस्थापित करायचा?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:164
@@ -521,20 +522,17 @@ msgid "Uninstall"
 msgstr "विस्थापित करा"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
-#, fuzzy
 msgid "This may have been caused by external or manually compiled software."
-msgstr ""
-"हे बाहेरील, मॅन्युअली जोडलेल्या सॉफ्टवेअर रेपॉजिटरिज किंवा दूषित स्रोत फायलीमुळे झाले असू शकते."
+msgstr "हे बाहेरील, मॅन्युअली जोडलेल्या सॉफ्टवेअरमुळे झाले असू शकते."
 
 #: src/Dialogs/UninstallFailDialog.vala:37
-#, fuzzy
 msgid "Failed to uninstall app"
-msgstr "अनुप्रयोगांना शोधा आणी स्थापित करा"
+msgstr "अ‍ॅप विस्थापित करण्यात अयशस्वी"
 
 #: src/Dialogs/UninstallFailDialog.vala:40
 #, c-format
 msgid "Failed to uninstall “%s”"
-msgstr ""
+msgstr "\"%s\" विस्थापित करण्यात अयशस्वी"
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
