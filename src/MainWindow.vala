@@ -204,7 +204,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
     public override bool configure_event (Gdk.EventConfigure event) {
         if (configure_id == 0) {
-            /* Avoid spamming the App.settings */
+            /* Avoid spamming the settings */
             configure_id = Timeout.add (200, () => {
                 configure_id = 0;
 
