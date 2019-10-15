@@ -50,7 +50,7 @@ public class AppCenter.App : Gtk.Application {
     public static GLib.Settings settings;
 
     static construct {
-        settings = new GLib.Settings ("io.elementary.appcenter");
+        settings = new GLib.Settings ("io.elementary.appcenter.settings");
     }
 
     construct {
