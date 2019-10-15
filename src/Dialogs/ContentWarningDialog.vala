@@ -34,8 +34,7 @@ public class AppCenter.Widgets.ContentWarningDialog : Granite.MessageDialog {
 
         var check = new Gtk.CheckButton.with_label (_("Show content warnings"));
 
-        var settings = Settings.get_default ();
-        settings.schema.bind ("content-warning", check, "active", SettingsBindFlags.DEFAULT);
+        App.settings.bind ("content-warning", check, "active", SettingsBindFlags.DEFAULT);
 
         add_button (_("Don’t Install"), Gtk.ResponseType.CANCEL);
         var install = add_button (_("Install Anyway"), Gtk.ResponseType.OK);

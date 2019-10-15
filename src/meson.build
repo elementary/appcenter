@@ -1,7 +1,6 @@
 appcenter_files = files(
     'Application.vala',
     'MainWindow.vala',
-    'Settings.vala',
     'SuspendControl.vala',
     'Utils.vala',
     'Core/BackendAggregator.vala',

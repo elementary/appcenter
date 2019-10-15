@@ -47,6 +47,12 @@ public class AppCenter.App : Gtk.Application {
     private SearchProvider search_provider;
     private uint search_provider_id = 0;
 
+    public static GLib.Settings settings;
+
+    static construct {
+        settings = new GLib.Settings ("io.elementary.appcenter");
+    }
+
     construct {
         application_id = Build.PROJECT_NAME;
         flags |= ApplicationFlags.HANDLES_OPEN;
