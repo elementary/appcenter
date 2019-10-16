@@ -830,12 +830,7 @@ namespace AppCenter.Views {
                                                           );
 
                     stripe.download_requested.connect (() => {
-                        var id = package.component.get_id ();
-                        var paid_apps = App.settings.get_strv ("paid-apps");
-                        if (!(id in paid_apps)) {
-                            paid_apps += id;
-                            App.settings.set_strv ("paid-apps", paid_apps);
-                        }
+                        App.add_paid_app (package.component.get_id ());
                     });
 
                     stripe.show ();
