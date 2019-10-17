@@ -40,8 +40,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     private Gee.LinkedList<string> return_button_history;
     private Gtk.Label updates_badge;
 
-    private GLib.Settings settings;
-
     private uint configure_id;
     private int homepage_view_id;
     private int installed_view_id;
@@ -114,12 +112,10 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         icon_name = "system-software-install";
         set_size_request (910, 640);
 
-        settings = new GLib.Settings ("io.elementary.appcenter.settings");
-
         int window_x, window_y;
         int window_width, window_height;
-        settings.get ("window-position", "(ii)", out window_x, out window_y);
-        settings.get ("window-size", "(ii)", out window_width, out window_height);
+        App.settings.get ("window-position", "(ii)", out window_x, out window_y);
+        App.settings.get ("window-size", "(ii)", out window_width, out window_height);
 
         if (window_x != -1 || window_y != -1) {
             move (window_x, window_y);
@@ -127,7 +123,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         resize (window_width, window_height);
 
-        if (settings.get_boolean ("window-maximized")) {
+        if (App.settings.get_boolean ("window-maximized")) {
             maximize ();
         }
 
@@ -213,17 +209,17 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
                 configure_id = 0;
 
                 if (is_maximized) {
-                    settings.set_boolean ("window-maximized", true);
+                    App.settings.set_boolean ("window-maximized", true);
                 } else {
-                    settings.set_boolean ("window-maximized", false);
+                    App.settings.set_boolean ("window-maximized", false);
 
                     int width, height;
                     get_size (out width, out height);
-                    settings.set ("window-size", "(ii)", width, height);
+                    App.settings.set ("window-size", "(ii)", width, height);
 
                     int root_x, root_y;
                     get_position (out root_x, out root_y);
-                    settings.set ("window-position", "(ii)", root_x, root_y);
+                    App.settings.set ("window-position", "(ii)", root_x, root_y);
                 }
 
                 return GLib.Source.REMOVE;

@@ -54,7 +54,6 @@ namespace AppCenter {
         private Gtk.Revealer open_button_revealer;
         private Gtk.Revealer uninstall_button_revealer;
         private Gtk.Revealer action_button_revealer;
-        private Settings settings;
         private Mutex action_mutex = Mutex ();
         private Cancellable action_cancellable = new Cancellable ();
 
@@ -119,8 +118,6 @@ namespace AppCenter {
             inner_image = new Gtk.Image ();
             image.add (inner_image);
 
-            settings = Settings.get_default ();
-
             package_author = new Gtk.Label (null);
             package_name = new Gtk.Label (null);
             package_summary = new Gtk.Label (null);
@@ -132,7 +129,7 @@ namespace AppCenter {
             action_button_revealer.add (action_button);
 
             action_button.download_requested.connect (() => {
-                if (settings.content_warning == true && package.is_explicit) {
+                if (App.settings.get_boolean ("content-warning") == true && package.is_explicit) {
                     content_warning = new Widgets.ContentWarningDialog (this.package_name.label);
                     content_warning.transient_for = (Gtk.Window) get_toplevel ();
 
@@ -147,7 +144,7 @@ namespace AppCenter {
             });
 
             action_button.payment_requested.connect ((amount) => {
-                if (settings.content_warning == true && package.is_explicit) {
+                if (App.settings.get_boolean ("content-warning") == true && package.is_explicit) {
                     content_warning = new Widgets.ContentWarningDialog (this.package_name.label);
                     content_warning.transient_for = (Gtk.Window) get_toplevel ();
 
@@ -238,8 +235,7 @@ namespace AppCenter {
 
             stripe.download_requested.connect (() => {
                 action_clicked.begin ();
-
-                settings.add_paid_app (package.component.get_id ());
+                App.add_paid_app (package.component.get_id ());
             });
 
             stripe.show ();
@@ -314,7 +310,7 @@ namespace AppCenter {
 #else
                     action_button.label = _("Install");
 #endif
-                    if (package.component.get_id () in settings.paid_apps) {
+                    if (package.component.get_id () in App.settings.get_strv ("paid-apps")) {
                         action_button.amount = 0;
                     }
 
