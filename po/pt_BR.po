@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-09 09:59-0700\n"
-"PO-Revision-Date: 2019-09-12 01:22+0000\n"
-"Last-Translator: Michael Leocádio <leocadiomichael@outlook.com>\n"
+"PO-Revision-Date: 2019-10-19 04:23+0000\n"
+"Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -255,6 +255,8 @@ msgstr "Origem Desconhecida (não supervisionado)"
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
+"Estado do aplicativo não definido como instalado no AppCenter para o pacote: "
+"%s"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -533,7 +535,7 @@ msgstr ""
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
-msgstr ""
+msgstr "Desinstalar este aplicativo também pode excluir seus dados."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:35
 #, fuzzy
@@ -558,14 +560,13 @@ msgstr ""
 "manualmente ou um arquivo de fontes corrompido."
 
 #: src/Dialogs/UninstallFailDialog.vala:37
-#, fuzzy
 msgid "Failed to uninstall app"
-msgstr "Encontre e instale aplicativos"
+msgstr "Falha ao desinstalar o aplicativo"
 
 #: src/Dialogs/UninstallFailDialog.vala:40
 #, c-format
 msgid "Failed to uninstall “%s”"
-msgstr ""
+msgstr "Falha ao desinstalar “%s”"
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
