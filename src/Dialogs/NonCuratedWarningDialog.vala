@@ -28,7 +28,7 @@ public class AppCenter.Widgets.NonCuratedWarningDialog : Granite.MessageDialog {
 
     construct {
         primary_text = _("“%s” is not curated").printf (app_name);
-        secondary_text = _("“%s” is not distributed by elementary, and neither its contents nor app listing have been reviewed. Install at your own risk.").printf (app_name);
+        secondary_text = _("This app is not distributed or updated by elementary, and neither its contents nor app listing have been reviewed. Install at your own risk.").printf (app_name);
 
         var check = new Gtk.CheckButton.with_label (_("Show non-curated warnings"));
 
