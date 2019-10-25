@@ -23,7 +23,7 @@ public class AppCenter.Widgets.NonCuratedWarningDialog : Granite.MessageDialog {
     public NonCuratedWarningDialog (string _app_name) {
         Object (
             app_name: _app_name,
-            image_icon: new ThemedIcon ("dialog-warning"),
+            image_icon: new ThemedIcon ("security-low"),
             title: _("Non-Curated Warning")
         );
     }
