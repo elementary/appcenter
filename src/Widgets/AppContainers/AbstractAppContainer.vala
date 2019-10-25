@@ -451,44 +451,60 @@ namespace AppCenter {
             bool approved = true;
 
             if (App.settings.get_boolean ("non-curated-warning") == true && !package.is_native) {
-                // approved = false;
+                approved = false;
 
                 non_curated_warning = new Widgets.NonCuratedWarningDialog (this.package_name.label);
                 non_curated_warning.transient_for = (Gtk.Window) get_toplevel ();
 
-                non_curated_warning.show ();
+                non_curated_warning.response.connect ((response_id) => {
+                    switch (response_id) {
+                        case Gtk.ResponseType.OK:
+                            approved = true;
+                            break;
+                        case Gtk.ResponseType.CANCEL:
+                        case Gtk.ResponseType.CLOSE:
+                        case Gtk.ResponseType.DELETE_EVENT:
+                            approved = false;
+                            break;
+                        default:
+                            assert_not_reached ();
+                    }
 
-                non_curated_warning.download_requested.connect (() => {
-                    // approved = true;
-                    return true;
+                    non_curated_warning.close ();
                 });
-                
-                // TODO: connect to dialog cancel and close signal; return false
+
+                non_curated_warning.run ();
+                non_curated_warning.destroy ();
             }
 
             if (App.settings.get_boolean ("content-warning") == true && package.is_explicit) {
-                // approved = false;
+                approved = false;
 
                 content_warning = new Widgets.ContentWarningDialog (this.package_name.label);
                 content_warning.transient_for = (Gtk.Window) get_toplevel ();
 
-                content_warning.show ();
+                content_warning.response.connect ((response_id) => {
+                    switch (response_id) {
+                        case Gtk.ResponseType.OK:
+                            approved = true;
+                            break;
+                        case Gtk.ResponseType.CANCEL:
+                        case Gtk.ResponseType.CLOSE:
+                        case Gtk.ResponseType.DELETE_EVENT:
+                            approved = false;
+                            break;
+                        default:
+                            assert_not_reached ();
+                    }
 
-                content_warning.download_requested.connect (() => {
-                    // approved = true;
-                    return true;
+                    content_warning.close ();
                 });
-                
-                // TODO: connect to dialog cancel and close signal; return false
+
+                content_warning.run ();
+                content_warning.destroy ();
             }
 
-            if (approved == true) {
-                critical ("Approved");
-            } else {
-                critical ("Not approved");
-            }
-
-            // return approved;
+            return approved;
         }
     }
 }

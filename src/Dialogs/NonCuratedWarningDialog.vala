@@ -16,8 +16,6 @@
  */
 
 public class AppCenter.Widgets.NonCuratedWarningDialog : Granite.MessageDialog {
-    public signal void download_requested ();
-
     public string app_name { get; construct set; }
 
     public NonCuratedWarningDialog (string _app_name) {
@@ -42,15 +40,7 @@ public class AppCenter.Widgets.NonCuratedWarningDialog : Granite.MessageDialog {
         custom_bin.add (check);
         custom_bin.show_all ();
 
-        set_default (install);
-        install.grab_focus ();
-
-        response.connect ((response) => {
-            if (response == Gtk.ResponseType.OK) {
-                download_requested ();
-            }
-
-            destroy ();
-        });
+        set_default (check);
+        check.grab_focus ();
     }
 }
