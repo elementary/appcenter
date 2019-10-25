@@ -27,7 +27,7 @@ public class AppCenter.Widgets.ContentWarningDialog : Granite.MessageDialog {
     }
 
     construct {
-        primary_text = _("“%s” Contains Explicit Content").printf (app_name);
+        primary_text = _("“%s” contains explicit content").printf (app_name);
         secondary_text = _("“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app.").printf (app_name);
 
         var check = new Gtk.CheckButton.with_label (_("Show content warnings"));
