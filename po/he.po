@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-09 09:59-0700\n"
-"PO-Revision-Date: 2019-04-24 23:21+0000\n"
+"PO-Revision-Date: 2019-10-27 10:23+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/he/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 3.5.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -22,9 +22,9 @@ msgid "AppCenter"
 msgstr "מרכז היישומים"
 
 #: src/Application.vala:106
-#, fuzzy, c-format
+#, c-format
 msgid "Could not parse the media type %s"
-msgstr "לא ניתן לפענח את סוג ה־mime‏ %s"
+msgstr "לא ניתן לפענח את סוג המדיה %s"
 
 #: src/Application.vala:126
 #, c-format
@@ -226,32 +226,30 @@ msgid "%s Developers"
 msgstr "המפתחים שמאחורי %s"
 
 #: src/Core/Package.vala:329
-#, fuzzy
 msgid "elementary Updates"
-msgstr "עודכנו לאחרונה"
+msgstr "עדכונים ל־elementary"
 
 #: src/Core/Package.vala:331
 msgid "Ubuntu (non-curated)"
-msgstr ""
+msgstr "אובונטו (לא מאורגן)"
 
 #: src/Core/Package.vala:334
-#, fuzzy, c-format
+#, c-format
 msgid "%s (non-curated)"
-msgstr "%s (מקומי)"
+msgstr "%s (לא מאורגן)"
 
 #: src/Core/Package.vala:336
-#, fuzzy
 msgid "Ubuntu Drivers"
-msgstr "מנהלי התקנים"
+msgstr "מנהלי התקנים של אובונטו"
 
 #: src/Core/Package.vala:339
 msgid "Unknown Origin (non-curated)"
-msgstr ""
+msgstr "מקור לא ידוע (לא מאורגן)"
 
 #: src/Core/Package.vala:441
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
-msgstr ""
+msgstr "מצב היישום לא מוגדר כמותקן בחנות היישומים לחבילה: %s"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -268,7 +266,7 @@ msgstr "גרסה: %s"
 
 #: src/Core/UpdateManager.vala:103
 msgid "Flatpak runtime"
-msgstr ""
+msgstr "סביבת הרצת Flatpak"
 
 #: src/Core/UpdateManager.vala:119
 msgid "No components with updates"
@@ -501,17 +499,16 @@ msgstr "הכרטיס שסיפקת הוא כרטיס בדיקה. נא להשתמ�
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
-msgstr ""
+msgstr "הסרת היישום הזה עשויה גם למחוק את הנתונים שלו."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:35
-#, fuzzy
 msgid "Uninstall app?"
-msgstr "הסרה"
+msgstr "להסיר את היישום?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:38
-#, fuzzy, c-format
+#, c-format
 msgid "Uninstall “%s”?"
-msgstr "הסרה"
+msgstr "להסיר את „%s”?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:164
@@ -519,21 +516,17 @@ msgid "Uninstall"
 msgstr "הסרה"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
-#, fuzzy
 msgid "This may have been caused by external or manually compiled software."
-msgstr ""
-"יתכן שבעיה זו נגרמה עקב מאגרי תכניות חיצוניים שנוספו באופן ידני או קובצי "
-"מקור פגומים."
+msgstr "יתכן שבעיה זו נגרמה עקב תכנה חיצונית או כזאת שהודרה ידנית."
 
 #: src/Dialogs/UninstallFailDialog.vala:37
-#, fuzzy
 msgid "Failed to uninstall app"
-msgstr "חפש והתקן אפליקציות"
+msgstr "הסרת היישום נכשלה"
 
 #: src/Dialogs/UninstallFailDialog.vala:40
 #, c-format
 msgid "Failed to uninstall “%s”"
-msgstr ""
+msgstr "הסרת „%s” נכשלה"
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
@@ -788,14 +781,12 @@ msgid "$%d"
 msgstr "$%d USD"
 
 #: src/Widgets/NetworkInfoBar.vala:32
-#, fuzzy
 msgid "Network Not Available."
-msgstr "הרשת אינה זמינה"
+msgstr "הרשת אינה זמינה."
 
 #: src/Widgets/NetworkInfoBar.vala:33
-#, fuzzy
 msgid "Connect to the Internet to browse and install apps."
-msgstr "יש להתחבר לאינטרנט כדי להתקין או לעדכן יישומים."
+msgstr "יש להתחבר לאינטרנט כדי לעיין או להתקין יישומים."
 
 #. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
 #: src/Widgets/NetworkInfoBar.vala:41
@@ -841,16 +832,16 @@ msgstr "העתקת קישור"
 
 #: src/Widgets/SizeLabel.vala:35
 msgid "Actual Download Size Likely to Be Smaller"
-msgstr ""
+msgstr "ייתכן שגודל הקובץ בפועל יהיה קטן יותר"
 
 #: src/Widgets/SizeLabel.vala:36
 msgid "Only the parts of apps and updates that are needed will be downloaded."
-msgstr ""
+msgstr "רק החלקים של היישומים והעדכונים שנדרשים יורדו."
 
 #: src/Widgets/SizeLabel.vala:63
-#, fuzzy, c-format
+#, c-format
 msgid "Up to %s"
-msgstr "עדכני"
+msgstr "עד %s"
 
 #: src/Widgets/UpdateHeaderRow.vala:69
 #, c-format
