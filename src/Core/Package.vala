@@ -147,7 +147,7 @@ public class AppCenterCore.Package : Object {
                 return false;
             }
 
-            if (component.get_id () in AppCenter.Settings.get_default ().paid_apps) {
+            if (component.get_id () in AppCenter.App.settings.get_strv ("paid-apps")) {
                 return false;
             }
 

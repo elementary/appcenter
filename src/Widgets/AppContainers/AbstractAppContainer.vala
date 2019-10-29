@@ -40,6 +40,7 @@ namespace AppCenter {
         protected Gtk.Label package_summary;
 
         protected Widgets.ContentWarningDialog content_warning;
+        protected Widgets.NonCuratedWarningDialog non_curated_warning;
         protected Widgets.HumbleButton action_button;
         protected Gtk.Button uninstall_button;
         protected Gtk.Button open_button;
@@ -54,7 +55,6 @@ namespace AppCenter {
         private Gtk.Revealer open_button_revealer;
         private Gtk.Revealer uninstall_button_revealer;
         private Gtk.Revealer action_button_revealer;
-        private Settings settings;
         private Mutex action_mutex = Mutex ();
         private Cancellable action_cancellable = new Cancellable ();
 
@@ -119,8 +119,6 @@ namespace AppCenter {
             inner_image = new Gtk.Image ();
             image.add (inner_image);
 
-            settings = Settings.get_default ();
-
             package_author = new Gtk.Label (null);
             package_name = new Gtk.Label (null);
             package_summary = new Gtk.Label (null);
@@ -132,31 +130,13 @@ namespace AppCenter {
             action_button_revealer.add (action_button);
 
             action_button.download_requested.connect (() => {
-                if (settings.content_warning == true && package.is_explicit) {
-                    content_warning = new Widgets.ContentWarningDialog (this.package_name.label);
-                    content_warning.transient_for = (Gtk.Window) get_toplevel ();
-
-                    content_warning.download_requested.connect (() => {
-                        action_clicked.begin ();
-                    });
-
-                    content_warning.show ();
-                } else {
+                if (install_approved (package) == true) {
                     action_clicked.begin ();
                 }
             });
 
             action_button.payment_requested.connect ((amount) => {
-                if (settings.content_warning == true && package.is_explicit) {
-                    content_warning = new Widgets.ContentWarningDialog (this.package_name.label);
-                    content_warning.transient_for = (Gtk.Window) get_toplevel ();
-
-                    content_warning.download_requested.connect (() => {
-                        show_stripe_dialog (amount);
-                    });
-
-                    content_warning.show ();
-                } else {
+                if (install_approved (package) == true) {
                     show_stripe_dialog (amount);
                 }
             });
@@ -238,8 +218,7 @@ namespace AppCenter {
 
             stripe.download_requested.connect (() => {
                 action_clicked.begin ();
-
-                settings.add_paid_app (package.component.get_id ());
+                App.add_paid_app (package.component.get_id ());
             });
 
             stripe.show ();
@@ -314,7 +293,7 @@ namespace AppCenter {
 #else
                     action_button.label = _("Install");
 #endif
-                    if (package.component.get_id () in settings.paid_apps) {
+                    if (package.component.get_id () in App.settings.get_strv ("paid-apps")) {
                         action_button.amount = 0;
                     }
 
@@ -466,6 +445,66 @@ namespace AppCenter {
                     }
                 }
             });
+        }
+
+        private bool install_approved (AppCenterCore.Package package) {
+            bool approved = true;
+
+            if (App.settings.get_boolean ("non-curated-warning") == true && !package.is_native) {
+                approved = false;
+
+                non_curated_warning = new Widgets.NonCuratedWarningDialog (this.package_name.label);
+                non_curated_warning.transient_for = (Gtk.Window) get_toplevel ();
+
+                non_curated_warning.response.connect ((response_id) => {
+                    switch (response_id) {
+                        case Gtk.ResponseType.OK:
+                            approved = true;
+                            break;
+                        case Gtk.ResponseType.CANCEL:
+                        case Gtk.ResponseType.CLOSE:
+                        case Gtk.ResponseType.DELETE_EVENT:
+                            approved = false;
+                            break;
+                        default:
+                            assert_not_reached ();
+                    }
+
+                    non_curated_warning.close ();
+                });
+
+                non_curated_warning.run ();
+                non_curated_warning.destroy ();
+            }
+
+            if (App.settings.get_boolean ("content-warning") == true && package.is_explicit) {
+                approved = false;
+
+                content_warning = new Widgets.ContentWarningDialog (this.package_name.label);
+                content_warning.transient_for = (Gtk.Window) get_toplevel ();
+
+                content_warning.response.connect ((response_id) => {
+                    switch (response_id) {
+                        case Gtk.ResponseType.OK:
+                            approved = true;
+                            break;
+                        case Gtk.ResponseType.CANCEL:
+                        case Gtk.ResponseType.CLOSE:
+                        case Gtk.ResponseType.DELETE_EVENT:
+                            approved = false;
+                            break;
+                        default:
+                            assert_not_reached ();
+                    }
+
+                    content_warning.close ();
+                });
+
+                content_warning.run ();
+                content_warning.destroy ();
+            }
+
+            return approved;
         }
     }
 }
