@@ -450,7 +450,7 @@ namespace AppCenter {
         private bool install_approved (AppCenterCore.Package package) {
             bool approved = true;
 
-            if (App.settings.get_boolean ("non-curated-warning") == true && !package.is_native) {
+            if (App.settings.get_boolean ("non-curated-warning") == true && !(package.is_native || is_os_updates)) {
                 approved = false;
 
                 non_curated_warning = new Widgets.NonCuratedWarningDialog (this.package_name.label);
