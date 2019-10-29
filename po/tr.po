@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-27 09:43-0700\n"
-"PO-Revision-Date: 2019-08-29 14:22+0000\n"
+"POT-Creation-Date: 2019-10-09 09:59-0700\n"
+"PO-Revision-Date: 2019-10-12 13:23+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/tr/>\n"
@@ -26,7 +26,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:323
+#: src/Application.vala:38 src/Core/Package.vala:327
 msgid "AppCenter"
 msgstr "Uygulama Merkezi"
 
@@ -229,31 +229,36 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "Sisteminiz için %u güncelleme var"
 msgstr[1] "Sisteminiz için %u güncelleme var"
 
-#: src/Core/Package.vala:294
+#: src/Core/Package.vala:298
 #, c-format
 msgid "%s Developers"
 msgstr "%s Geliştiricileri"
 
-#: src/Core/Package.vala:325
+#: src/Core/Package.vala:329
 msgid "elementary Updates"
 msgstr "elementary Güncellemeleri"
 
-#: src/Core/Package.vala:327
+#: src/Core/Package.vala:331
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (doğrulanmamış)"
 
-#: src/Core/Package.vala:330
+#: src/Core/Package.vala:334
 #, c-format
 msgid "%s (non-curated)"
 msgstr "%s (doğrulanmamış)"
 
-#: src/Core/Package.vala:332
+#: src/Core/Package.vala:336
 msgid "Ubuntu Drivers"
 msgstr "Ubuntu Sürücüleri"
 
-#: src/Core/Package.vala:335
+#: src/Core/Package.vala:339
 msgid "Unknown Origin (non-curated)"
 msgstr "Bilinmeyen Kaynak (doğrulanmamış)"
+
+#: src/Core/Package.vala:441
+#, c-format
+msgid "Application state not set as installed in AppCenter for package: %s"
+msgstr "%s paketinin Uygulama Merkezindeki durumu yüklü olarak ayarlanmadı"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -520,6 +525,37 @@ msgstr ""
 "Kullanılan kart test kartıdır. Devam etmek için lütfen gerçek bir kart "
 "kullanınız."
 
+#: src/Dialogs/UninstallConfirmDialog.vala:25
+msgid "Uninstalling this app may also delete its data."
+msgstr "Bu uygulamayı kaldırmak uygulamanın verilerinide silebilir."
+
+#: src/Dialogs/UninstallConfirmDialog.vala:35
+msgid "Uninstall app?"
+msgstr "Uygulama kaldırılsın mı?"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:38
+#, c-format
+msgid "Uninstall “%s”?"
+msgstr "\"%s\" kaldırılsın mı?"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:42
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:164
+msgid "Uninstall"
+msgstr "Kaldır"
+
+#: src/Dialogs/UninstallFailDialog.vala:26
+msgid "This may have been caused by external or manually compiled software."
+msgstr "Buna harici veya elle derlenmiş yazılımlar neden olmuş olabilir."
+
+#: src/Dialogs/UninstallFailDialog.vala:37
+msgid "Failed to uninstall app"
+msgstr "Uygulama kaldırılamadı"
+
+#: src/Dialogs/UninstallFailDialog.vala:40
+#, c-format
+msgid "Failed to uninstall “%s”"
+msgstr "\"%s\" kaldırılamadı"
+
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
 msgstr "Güncelleştirmeler Alınamadı"
@@ -646,7 +682,7 @@ msgstr "Son Güncellenenler"
 
 #: src/Views/Homepage.vala:83
 msgid "Trending"
-msgstr "Yükselişte"
+msgstr "Popüler"
 
 #: src/Views/Homepage.vala:99
 msgid "Categories"
@@ -858,10 +894,6 @@ msgstr "Güncel"
 msgid "Drivers"
 msgstr "Sürücüler"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:164
-msgid "Uninstall"
-msgstr "Kaldır"
-
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:173
 msgid "Open"
 msgstr "Aç"
@@ -943,9 +975,6 @@ msgstr "Güncelle"
 
 #~ msgid "application download center"
 #~ msgstr "uygulama indirme merkezi"
-
-#~ msgid "Find and install apps"
-#~ msgstr "Uygulamaları bul ve yükle"
 
 #~ msgid "Load a package from the given id"
 #~ msgstr "Verilen id'ye göre paketi yükle"

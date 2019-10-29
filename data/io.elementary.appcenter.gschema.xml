@@ -31,5 +31,10 @@
       <summary>Display content warning for explicit apps</summary>
       <description>Whether to display a warning dialog when attempting to install apps that are explicit according to their OARS data</description>
     </key>
+    <key type="b" name="non-curated-warning">
+      <default>true</default>
+      <summary>Display warning for non-curated apps</summary>
+      <description>Whether to display a warning dialog when attempting to install apps are not from a curated source</description>
+    </key>
   </schema>
 </schemalist>

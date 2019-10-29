@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-27 09:43-0700\n"
+"POT-Creation-Date: 2019-10-09 09:59-0700\n"
 "PO-Revision-Date: 2019-06-30 03:52+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/appcenter/"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:323
+#: src/Application.vala:38 src/Core/Package.vala:327
 msgid "AppCenter"
 msgstr "앱센터"
 
@@ -218,31 +218,36 @@ msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "시스템에 %u개의 업데이트할 항목이 있습니다"
 
-#: src/Core/Package.vala:294
+#: src/Core/Package.vala:298
 #, c-format
 msgid "%s Developers"
 msgstr "%s 개발자들"
 
-#: src/Core/Package.vala:325
+#: src/Core/Package.vala:329
 msgid "elementary Updates"
 msgstr "elementary 업데이트"
 
-#: src/Core/Package.vala:327
+#: src/Core/Package.vala:331
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (검수 안 함)"
 
-#: src/Core/Package.vala:330
+#: src/Core/Package.vala:334
 #, c-format
 msgid "%s (non-curated)"
 msgstr "%s (검수 안 함)"
 
-#: src/Core/Package.vala:332
+#: src/Core/Package.vala:336
 msgid "Ubuntu Drivers"
 msgstr "Ubuntu 드라이버"
 
-#: src/Core/Package.vala:335
+#: src/Core/Package.vala:339
 msgid "Unknown Origin (non-curated)"
 msgstr "알려지지 않은 소스 (검수 안 함)"
+
+#: src/Core/Package.vala:441
+#, c-format
+msgid "Application state not set as installed in AppCenter for package: %s"
+msgstr ""
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -499,6 +504,42 @@ msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
 "지금 사용하신 카드는 테스트용 카드입니다. 실제 거래 가능한 카드로 다시 시도해"
 "주세요."
+
+#: src/Dialogs/UninstallConfirmDialog.vala:25
+msgid "Uninstalling this app may also delete its data."
+msgstr ""
+
+#: src/Dialogs/UninstallConfirmDialog.vala:35
+#, fuzzy
+msgid "Uninstall app?"
+msgstr "제거"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:38
+#, fuzzy, c-format
+msgid "Uninstall “%s”?"
+msgstr "제거"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:42
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:164
+msgid "Uninstall"
+msgstr "제거"
+
+#: src/Dialogs/UninstallFailDialog.vala:26
+#, fuzzy
+msgid "This may have been caused by external or manually compiled software."
+msgstr ""
+"아마도 기본 시스템 이외의 외적인 요인이나, 수동으로 지정한 저장소 또는 망가"
+"진 소스 파일 때문으로 보입니다."
+
+#: src/Dialogs/UninstallFailDialog.vala:37
+#, fuzzy
+msgid "Failed to uninstall app"
+msgstr "앱을 검색하고 설치하기"
+
+#: src/Dialogs/UninstallFailDialog.vala:40
+#, c-format
+msgid "Failed to uninstall “%s”"
+msgstr ""
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
@@ -835,10 +876,6 @@ msgstr "최신 버전입니다"
 msgid "Drivers"
 msgstr "드라이버"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:164
-msgid "Uninstall"
-msgstr "제거"
-
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:173
 msgid "Open"
 msgstr "열기"
@@ -934,9 +971,6 @@ msgstr "업데이트"
 
 #~ msgid "Updates"
 #~ msgstr "업데이트"
-
-#~ msgid "Find and install apps"
-#~ msgstr "앱을 검색하고 설치하기"
 
 #~ msgid "Use debug quiet mode"
 #~ msgstr "조용한 디버그 모드 사용"

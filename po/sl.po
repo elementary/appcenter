@@ -1,12 +1,14 @@
 # Jernej Virag <jernej@virag.si>, 2018.
+# Leon C <leonleon102012@gmail.com>, 2019.
+# Daniel Foré <daniel@elementary.io>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-27 09:43-0700\n"
-"PO-Revision-Date: 2018-08-18 13:45+0000\n"
-"Last-Translator: Jernej Virag <jernej@virag.si>\n"
-"Language-Team: Slovenian <https://weblate.elementary.io/projects/appcenter/"
+"POT-Creation-Date: 2019-10-09 09:59-0700\n"
+"PO-Revision-Date: 2019-09-12 01:22+0000\n"
+"Last-Translator: Daniel Foré <daniel@elementary.io>\n"
+"Language-Team: Slovenian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/sl/>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
@@ -14,11 +16,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
 "%100==4 ? 2 : 3;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:323
+#: src/Application.vala:38 src/Core/Package.vala:327
 msgid "AppCenter"
 msgstr "Center za programsko opremo"
 
@@ -225,32 +227,37 @@ msgstr[1] "%u posodobitvi sta na voljo za vaš sistem"
 msgstr[2] "%u posodobitve so na voljo za vaš sistem"
 msgstr[3] "%u posodobitev je na voljo za vaš sistem"
 
-#: src/Core/Package.vala:294
+#: src/Core/Package.vala:298
 #, c-format
 msgid "%s Developers"
 msgstr "Razvijalci %d"
 
-#: src/Core/Package.vala:325
+#: src/Core/Package.vala:329
 #, fuzzy
 msgid "elementary Updates"
 msgstr "Nedavno posodobljeno"
 
-#: src/Core/Package.vala:327
+#: src/Core/Package.vala:331
 msgid "Ubuntu (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:330
+#: src/Core/Package.vala:334
 #, fuzzy, c-format
 msgid "%s (non-curated)"
 msgstr "%s (lokalno)"
 
-#: src/Core/Package.vala:332
+#: src/Core/Package.vala:336
 #, fuzzy
 msgid "Ubuntu Drivers"
 msgstr "Gonilniki"
 
-#: src/Core/Package.vala:335
+#: src/Core/Package.vala:339
 msgid "Unknown Origin (non-curated)"
+msgstr ""
+
+#: src/Core/Package.vala:441
+#, c-format
+msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
 
 #: src/Core/UpdateManager.vala:38
@@ -298,7 +305,7 @@ msgstr "Za dokončanje posodobitev ponovno zaženite vaš sistem"
 
 #: src/Dialogs/ContentWarningDialog.vala:27
 msgid "Content Warning"
-msgstr ""
+msgstr "Opozorilo o vsebini"
 
 #: src/Dialogs/ContentWarningDialog.vala:32
 #, c-format
@@ -319,7 +326,7 @@ msgstr ""
 
 #: src/Dialogs/ContentWarningDialog.vala:40
 msgid "Don’t Install"
-msgstr ""
+msgstr "Ne namesti"
 
 #: src/Dialogs/ContentWarningDialog.vala:41
 #, fuzzy
@@ -358,7 +365,7 @@ msgstr "Prosimo, da pregledate plačniške podatke in poskusite znova."
 
 #: src/Dialogs/StripeDialog.vala:76
 msgid "Payment"
-msgstr ""
+msgstr "Plačilo"
 
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
@@ -515,6 +522,41 @@ msgstr "Limit na kartici je bil presežen."
 #: src/Dialogs/StripeDialog.vala:609
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "To je testna kartica. Uporabite pravo kartico za plačilo."
+
+#: src/Dialogs/UninstallConfirmDialog.vala:25
+msgid "Uninstalling this app may also delete its data."
+msgstr ""
+
+#: src/Dialogs/UninstallConfirmDialog.vala:35
+#, fuzzy
+msgid "Uninstall app?"
+msgstr "Odstrani"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:38
+#, fuzzy, c-format
+msgid "Uninstall “%s”?"
+msgstr "Odstrani"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:42
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:164
+msgid "Uninstall"
+msgstr "Odstrani"
+
+#: src/Dialogs/UninstallFailDialog.vala:26
+#, fuzzy
+msgid "This may have been caused by external or manually compiled software."
+msgstr ""
+"Vzrok za napako so lahko zunanji repozitoriji ali napaka v datoteki z viri."
+
+#: src/Dialogs/UninstallFailDialog.vala:37
+#, fuzzy
+msgid "Failed to uninstall app"
+msgstr "Poiščite in namestite programe"
+
+#: src/Dialogs/UninstallFailDialog.vala:40
+#, c-format
+msgid "Failed to uninstall “%s”"
+msgstr ""
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
@@ -860,10 +902,6 @@ msgstr "Posodobljeno"
 msgid "Drivers"
 msgstr "Gonilniki"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:164
-msgid "Uninstall"
-msgstr "Odstrani"
-
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:173
 msgid "Open"
 msgstr "Odpri"
@@ -958,9 +996,6 @@ msgstr "Posodobi"
 
 #~ msgid "application download center"
 #~ msgstr "središče za prejem programov"
-
-#~ msgid "Find and install apps"
-#~ msgstr "Poiščite in namestite programe"
 
 #~ msgid "Browser apps in categories"
 #~ msgstr "Programi brskalnika po kategorijah"

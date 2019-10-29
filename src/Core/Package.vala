@@ -23,6 +23,10 @@ public errordomain PackageLaunchError {
     APP_INFO_NOT_FOUND
 }
 
+public errordomain PackageUninstallError {
+    APP_STATE_NOT_INSTALLED
+}
+
 public class AppCenterCore.PackageDetails : Object {
     public string? name { get; set; }
     public string? description { get; set; }
@@ -143,7 +147,7 @@ public class AppCenterCore.Package : Object {
                 return false;
             }
 
-            if (component.get_id () in AppCenter.Settings.get_default ().paid_apps) {
+            if (component.get_id () in AppCenter.App.settings.get_strv ("paid-apps")) {
                 return false;
             }
 
@@ -425,16 +429,16 @@ public class AppCenterCore.Package : Object {
         }
     }
 
-    public async bool uninstall () {
+    public async bool uninstall () throws Error {
         if (state == State.INSTALLED || state == State.UPDATE_AVAILABLE) {
             try {
                 return yield perform_operation (State.REMOVING, State.NOT_INSTALLED, state);
             } catch (Error e) {
-                return false;
+                throw e;
             }
         }
 
-        return false;
+        throw new PackageUninstallError.APP_STATE_NOT_INSTALLED (_("Application state not set as installed in AppCenter for package: %s".printf (get_name ())));
     }
 
     public void launch () throws Error {
@@ -473,7 +477,7 @@ public class AppCenterCore.Package : Object {
     }
 
     private async bool perform_package_operation () throws GLib.Error {
-        ChangeInformation.ProgressCallback cb = change_information.Callback;
+        ChangeInformation.ProgressCallback cb = change_information.callback;
         var client = AppCenterCore.Client.get_default ();
 
         switch (state) {

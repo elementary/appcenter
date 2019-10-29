@@ -67,4 +67,3 @@ public class AppCenter.Widgets.NetworkInfoBar : Gtk.InfoBar {
         revealed = reveal && !network_available;
     }
 }
-

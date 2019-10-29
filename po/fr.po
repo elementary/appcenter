@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-27 09:43-0700\n"
-"PO-Revision-Date: 2019-08-14 12:21+0000\n"
-"Last-Translator: Corentin Noël <corentin@elementary.io>\n"
+"POT-Creation-Date: 2019-10-09 09:59-0700\n"
+"PO-Revision-Date: 2019-10-12 13:23+0000\n"
+"Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/fr/>\n"
 "Language: fr\n"
@@ -24,7 +24,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:323
+#: src/Application.vala:38 src/Core/Package.vala:327
 msgid "AppCenter"
 msgstr "Centre d’Applications"
 
@@ -227,31 +227,38 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "%u mise à jour est disponible pour votre système"
 msgstr[1] "%u mises à jour sont disponibles pour votre système"
 
-#: src/Core/Package.vala:294
+#: src/Core/Package.vala:298
 #, c-format
 msgid "%s Developers"
 msgstr "Les développeurs de %s"
 
-#: src/Core/Package.vala:325
+#: src/Core/Package.vala:329
 msgid "elementary Updates"
 msgstr "Mises à jour d'elementary"
 
-#: src/Core/Package.vala:327
+#: src/Core/Package.vala:331
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (non-vérifié)"
 
-#: src/Core/Package.vala:330
+#: src/Core/Package.vala:334
 #, c-format
 msgid "%s (non-curated)"
 msgstr "%s (non vérifié)"
 
-#: src/Core/Package.vala:332
+#: src/Core/Package.vala:336
 msgid "Ubuntu Drivers"
 msgstr "Pilotes Ubuntu"
 
-#: src/Core/Package.vala:335
+#: src/Core/Package.vala:339
 msgid "Unknown Origin (non-curated)"
 msgstr "Origine inconnue (non-vérifiée)"
+
+#: src/Core/Package.vala:441
+#, c-format
+msgid "Application state not set as installed in AppCenter for package: %s"
+msgstr ""
+"L'état de l'application n'est pas défini comme installé dans le Centre "
+"d'Applications pour le paquet : %s"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -526,6 +533,38 @@ msgstr ""
 "Cette carte est une carte de test. Veuillez utiliser une vraie carte pour "
 "continuer."
 
+#: src/Dialogs/UninstallConfirmDialog.vala:25
+msgid "Uninstalling this app may also delete its data."
+msgstr ""
+"La désinstallation de cette application peut également supprimer ses données."
+
+#: src/Dialogs/UninstallConfirmDialog.vala:35
+msgid "Uninstall app?"
+msgstr "Désinstaller l'application ?"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:38
+#, c-format
+msgid "Uninstall “%s”?"
+msgstr "Désinstaller « %s » ?"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:42
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:164
+msgid "Uninstall"
+msgstr "Désinstaller"
+
+#: src/Dialogs/UninstallFailDialog.vala:26
+msgid "This may have been caused by external or manually compiled software."
+msgstr "Cela peut être dû à des logiciels externes ou compilés manuellement."
+
+#: src/Dialogs/UninstallFailDialog.vala:37
+msgid "Failed to uninstall app"
+msgstr "Échec de la désinstallation de l'application"
+
+#: src/Dialogs/UninstallFailDialog.vala:40
+#, c-format
+msgid "Failed to uninstall “%s”"
+msgstr "Échec de la désinstallation de « %s »"
+
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
 msgstr "Erreur lors de la récupération des mises à jour"
@@ -784,15 +823,13 @@ msgid "$%d"
 msgstr "%d $"
 
 #: src/Widgets/NetworkInfoBar.vala:32
-#, fuzzy
 msgid "Network Not Available."
-msgstr "Pas de connexion réseau"
+msgstr "Pas de connexion réseau."
 
 #: src/Widgets/NetworkInfoBar.vala:33
-#, fuzzy
 msgid "Connect to the Internet to browse and install apps."
 msgstr ""
-"Connectez-vous à internet pour installer ou mettre à jour des applications."
+"Connectez-vous à Internet pour parcourir et installer des applications."
 
 #. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
 #: src/Widgets/NetworkInfoBar.vala:41
@@ -869,10 +906,6 @@ msgstr "À jour"
 #: src/Widgets/UpdateHeaderRow.vala:122
 msgid "Drivers"
 msgstr "Pilotes"
-
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:164
-msgid "Uninstall"
-msgstr "Désinstaller"
 
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:173
 msgid "Open"
@@ -970,9 +1003,6 @@ msgstr "Mettre à jour"
 
 #~ msgid "application download center"
 #~ msgstr "Logithèque"
-
-#~ msgid "Find and install apps"
-#~ msgstr "Chercher et installer des applications"
 
 #~ msgid "Updates"
 #~ msgstr "Mises à jours"

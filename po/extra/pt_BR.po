@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:42+0200\n"
-"PO-Revision-Date: 2019-09-10 00:32+0000\n"
-"Last-Translator: ricardomaciel17 <ricardopmaciel@hotmail.com>\n"
+"PO-Revision-Date: 2019-09-12 01:22+0000\n"
+"Last-Translator: Michael Leocádio <leocadiomichael@outlook.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/extra/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -59,8 +59,8 @@ msgstr "Refinamentos de gerenciamento de memória"
 msgid ""
 "Add conditional compilation for disabling dynamic remote homepage content"
 msgstr ""
-"Adicionar compilação condicional para desabilitar conteúdo da pagina inicial "
-"remota"
+"Adicionar compilação condicional para desabilitar conteúdo remoto dinâmico "
+"da pagina inicial"
 
 #: data/io.elementary.appcenter.appdata.xml.in:27
 #: data/io.elementary.appcenter.appdata.xml.in:39
@@ -92,11 +92,11 @@ msgstr "Adicionar Matemática à categoria Ciência"
 
 #: data/io.elementary.appcenter.appdata.xml.in:36
 msgid "Relax email address validator"
-msgstr "Resolver o validador de endereço de e-mail"
+msgstr "Suavizar o validador de endereço de e-mail"
 
 #: data/io.elementary.appcenter.appdata.xml.in:37
 msgid "Present update availability more accurately"
-msgstr "Apresentar a disponibilidade de atualizações com mais precisão"
+msgstr "Apresentar disponibilidade de atualizações mais precisamente"
 
 #: data/io.elementary.appcenter.appdata.xml.in:38
 msgid "Category graphics revamped"
@@ -115,19 +115,19 @@ msgstr "Categoria gráficos renovada"
 #: data/io.elementary.appcenter.appdata.xml.in:148
 #: data/io.elementary.appcenter.appdata.xml.in:157
 msgid "Bug fixes and improve performance."
-msgstr "Correções de bugs e melhorar o desempenho."
+msgstr "Correções de erros e melhora no desempenho."
 
 #: data/io.elementary.appcenter.appdata.xml.in:55
 msgid "Improve transaction success rate"
-msgstr "Melhore a taxa de sucesso das transações"
+msgstr "Melhorar a taxa de sucesso das transações"
 
 #: data/io.elementary.appcenter.appdata.xml.in:56
 msgid "Add Publishing to Office category"
-msgstr "Adicionar Publishing para categoria Office"
+msgstr "Adicionar Escrita & Linguagem à categoria Escritório"
 
 #: data/io.elementary.appcenter.appdata.xml.in:57
 msgid "Improve descriptions of OS Updates"
-msgstr "Melhore as descrições de atualizações do sistema operacional"
+msgstr "Melhorar descrições de Atualizações do Sistema Operacional"
 
 #: data/io.elementary.appcenter.appdata.xml.in:58
 #: data/io.elementary.appcenter.appdata.xml.in:69
@@ -141,25 +141,25 @@ msgstr "Melhore as descrições de atualizações do sistema operacional"
 #: data/io.elementary.appcenter.appdata.xml.in:141
 #: data/io.elementary.appcenter.appdata.xml.in:150
 msgid "Various bug fixes and performance improvements"
-msgstr "Várias correções de bugs e aprimoramentos de performance"
+msgstr "Várias correções de erros e melhorias de performance"
 
 #: data/io.elementary.appcenter.appdata.xml.in:67
 msgid "Give details for Operating System Updates"
-msgstr "Dar detalhes para atualizações do sistema operacional"
+msgstr "Fornecer detalhes para Atualizações do Sistema Operacional"
 
 #: data/io.elementary.appcenter.appdata.xml.in:68
 msgid "Support mouse button navigation"
-msgstr "Suporte a navegação por botão do mouse"
+msgstr "Suportar navegação pelo botão do mouse"
 
 #: data/io.elementary.appcenter.appdata.xml.in:159
 msgid "Fix crash caused by entries with missing packages"
-msgstr "Corrigida falha causada por entradas com pacotes não existentes"
+msgstr "Corrigir falha causada por itens com pacotes ausentes"
 
 #: data/io.elementary.appcenter.appdata.xml.in:166
 msgid "Add capability to search by category and apply minor bug fixes."
 msgstr ""
-"Adicionada capacidade de buscar por categoria e aplicadas pequenas correções "
-"de bugs."
+"Adicionar capacidade para buscar por categoria e aplicar pequenas correções "
+"de erros."
 
 #: data/io.elementary.appcenter.appdata.xml.in:168
 msgid "It is now possible to search apps inside a category"
@@ -167,23 +167,23 @@ msgstr "Agora é possível buscar aplicativos dentro de uma categoria"
 
 #: data/io.elementary.appcenter.appdata.xml.in:169
 msgid "Prevent multiple authentication dialogs when resuming from suspend"
-msgstr "Evita mútiplas janelas de autenticação quando volta do modo suspensão"
+msgstr "Prevenir múltiplas janelas de autenticação ao resumir da suspensão"
 
 #: data/io.elementary.appcenter.appdata.xml.in:176
 msgid ""
 "Search performance has beeen improved, the category name is now shown on the "
 "headbar and minor bugs have been fixed."
 msgstr ""
-"O desempenho da pesquisa melhorou, o nome da categoria é agora mostrado na "
-"barra de entrada e pequenos bugs foram corrigidos."
+"O desempenho da pesquisa foi melhorado, o nome da categoria agora é mostrado "
+"na barra principal e pequenos erros foram corrigidos."
 
 #: data/io.elementary.appcenter.appdata.xml.in:178
 msgid "Fix Steam installation"
-msgstr "Corrigida a instalação do Steam"
+msgstr "Corrigir a instalação do Steam"
 
 #: data/io.elementary.appcenter.appdata.xml.in:179
 msgid "Make search asynchronous"
-msgstr "Torna a busca assíncrona"
+msgstr "Tornar a busca assíncrona"
 
 #: data/io.elementary.appcenter.appdata.xml.in:234
 msgid "elementary LLC."
@@ -200,11 +200,12 @@ msgstr "@DESKTOP_ICON@"
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
 msgstr ""
-"instalar;desinstalar;remover;catalogar;loja;apps;atualizações;software;"
+"instalar;desinstalar;remover;catalogar;loja;aplicativos;atualizações;software"
+";"
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
-msgstr "Verificar se há atualizações"
+msgstr "Verificar por Atualizações"
 
 #~ msgid "About AppCenter"
 #~ msgstr "Sobre central de aplicativos"

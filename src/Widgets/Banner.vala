@@ -266,4 +266,3 @@ namespace AppCenter.Widgets {
         }
     }
 }
-

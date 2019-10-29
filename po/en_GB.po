@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-27 09:43-0700\n"
-"PO-Revision-Date: 2019-08-21 23:22+0000\n"
+"POT-Creation-Date: 2019-10-09 09:59-0700\n"
+"PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Ciarán Ainsworth <ciaranainsworth@posteo.net>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/en_GB/>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:323
+#: src/Application.vala:38 src/Core/Package.vala:327
 msgid "AppCenter"
 msgstr "AppCenter"
 
@@ -222,31 +222,36 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "%u update is available for your system"
 msgstr[1] "%u updates are available for your system"
 
-#: src/Core/Package.vala:294
+#: src/Core/Package.vala:298
 #, c-format
 msgid "%s Developers"
 msgstr "%s Developers"
 
-#: src/Core/Package.vala:325
+#: src/Core/Package.vala:329
 msgid "elementary Updates"
 msgstr "elementary Updates"
 
-#: src/Core/Package.vala:327
+#: src/Core/Package.vala:331
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (non-curated)"
 
-#: src/Core/Package.vala:330
+#: src/Core/Package.vala:334
 #, c-format
 msgid "%s (non-curated)"
 msgstr "%s (non-curated)"
 
-#: src/Core/Package.vala:332
+#: src/Core/Package.vala:336
 msgid "Ubuntu Drivers"
 msgstr "Ubuntu Drivers"
 
-#: src/Core/Package.vala:335
+#: src/Core/Package.vala:339
 msgid "Unknown Origin (non-curated)"
 msgstr "Unknown Origin (non-curated)"
+
+#: src/Core/Package.vala:441
+#, c-format
+msgid "Application state not set as installed in AppCenter for package: %s"
+msgstr ""
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -508,6 +513,42 @@ msgstr "The balance or credit limit on the card has been reached."
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "The given card is a test card. Please use a real card to proceed."
 
+#: src/Dialogs/UninstallConfirmDialog.vala:25
+msgid "Uninstalling this app may also delete its data."
+msgstr ""
+
+#: src/Dialogs/UninstallConfirmDialog.vala:35
+#, fuzzy
+msgid "Uninstall app?"
+msgstr "Uninstall"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:38
+#, fuzzy, c-format
+msgid "Uninstall “%s”?"
+msgstr "Uninstall"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:42
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:164
+msgid "Uninstall"
+msgstr "Uninstall"
+
+#: src/Dialogs/UninstallFailDialog.vala:26
+#, fuzzy
+msgid "This may have been caused by external or manually compiled software."
+msgstr ""
+"This may have been caused by external, manually added software repositories "
+"or a corrupted sources file."
+
+#: src/Dialogs/UninstallFailDialog.vala:37
+#, fuzzy
+msgid "Failed to uninstall app"
+msgstr "Find and install apps"
+
+#: src/Dialogs/UninstallFailDialog.vala:40
+#, c-format
+msgid "Failed to uninstall “%s”"
+msgstr ""
+
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
 msgstr "Failed to Fetch Updates"
@@ -761,14 +802,12 @@ msgid "$%d"
 msgstr "$%d"
 
 #: src/Widgets/NetworkInfoBar.vala:32
-#, fuzzy
 msgid "Network Not Available."
-msgstr "Network Is Not Available"
+msgstr "Network Not Available."
 
 #: src/Widgets/NetworkInfoBar.vala:33
-#, fuzzy
 msgid "Connect to the Internet to browse and install apps."
-msgstr "Connect to the Internet to install or update apps."
+msgstr "Connect to the Internet to browse and install apps."
 
 #. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
 #: src/Widgets/NetworkInfoBar.vala:41
@@ -843,10 +882,6 @@ msgstr "Up to Date"
 #: src/Widgets/UpdateHeaderRow.vala:122
 msgid "Drivers"
 msgstr "Drivers"
-
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:164
-msgid "Uninstall"
-msgstr "Uninstall"
 
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:173
 msgid "Open"
@@ -948,9 +983,6 @@ msgstr "Update"
 
 #~ msgid "application download center"
 #~ msgstr "application download centre"
-
-#~ msgid "Find and install apps"
-#~ msgstr "Find and install apps"
 
 #~ msgid "Search App"
 #~ msgstr "Search App"

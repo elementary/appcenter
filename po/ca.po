@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-27 09:43-0700\n"
-"PO-Revision-Date: 2019-08-29 14:22+0000\n"
+"POT-Creation-Date: 2019-10-09 09:59-0700\n"
+"PO-Revision-Date: 2019-10-12 13:23+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ca/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:323
+#: src/Application.vala:38 src/Core/Package.vala:327
 msgid "AppCenter"
 msgstr "Centre d'aplicacions"
 
@@ -222,31 +222,38 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "Hi ha %u actualització disponible per al sistema"
 msgstr[1] "Hi ha %u actualitzacions disponibles per al sistema"
 
-#: src/Core/Package.vala:294
+#: src/Core/Package.vala:298
 #, c-format
 msgid "%s Developers"
 msgstr "%s, els desenvolupadors"
 
-#: src/Core/Package.vala:325
+#: src/Core/Package.vala:329
 msgid "elementary Updates"
 msgstr "Actualitzacions de l'elementary"
 
-#: src/Core/Package.vala:327
+#: src/Core/Package.vala:331
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (sense cura)"
 
-#: src/Core/Package.vala:330
+#: src/Core/Package.vala:334
 #, c-format
 msgid "%s (non-curated)"
 msgstr "%s (sense cura)"
 
-#: src/Core/Package.vala:332
+#: src/Core/Package.vala:336
 msgid "Ubuntu Drivers"
 msgstr "Controladors de l'Ubuntu"
 
-#: src/Core/Package.vala:335
+#: src/Core/Package.vala:339
 msgid "Unknown Origin (non-curated)"
 msgstr "D'origen desconegut (sense cura)"
+
+#: src/Core/Package.vala:441
+#, c-format
+msgid "Application state not set as installed in AppCenter for package: %s"
+msgstr ""
+"L'estat de l'aplicació no està establert com a instal·lada al Centre "
+"d'aplicacions per al paquet %s."
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -525,6 +532,38 @@ msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
 "La targeta és una targeta de prova. Si us plau, useu una targeta real per "
 "continuar."
+
+#: src/Dialogs/UninstallConfirmDialog.vala:25
+msgid "Uninstalling this app may also delete its data."
+msgstr "Desinstal·lar aquesta aplicació pot suprimir-ne també les dades."
+
+#: src/Dialogs/UninstallConfirmDialog.vala:35
+msgid "Uninstall app?"
+msgstr "Desinstal·lo l'aplicació?"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:38
+#, c-format
+msgid "Uninstall “%s”?"
+msgstr "Voleu desinstal·lar %s?"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:42
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:164
+msgid "Uninstall"
+msgstr "Desinstal·la"
+
+#: src/Dialogs/UninstallFailDialog.vala:26
+msgid "This may have been caused by external or manually compiled software."
+msgstr ""
+"Això pot haver estat causat per programari extern o compilat manualment."
+
+#: src/Dialogs/UninstallFailDialog.vala:37
+msgid "Failed to uninstall app"
+msgstr "Ha fallat desinstal·lar l'aplicació."
+
+#: src/Dialogs/UninstallFailDialog.vala:40
+#, c-format
+msgid "Failed to uninstall “%s”"
+msgstr "Ha fallat desinstal·lar %s."
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
@@ -863,10 +902,6 @@ msgstr "Al dia"
 msgid "Drivers"
 msgstr "Controladors"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:164
-msgid "Uninstall"
-msgstr "Desinstal·la"
-
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:173
 msgid "Open"
 msgstr "Obre"
@@ -964,9 +999,6 @@ msgstr "Actualitza"
 
 #~ msgid "Updates"
 #~ msgstr "Actualitzacions"
-
-#~ msgid "Find and install apps"
-#~ msgstr "Cerqueu i instal·leu aplicacions"
 
 #~ msgid "application download center"
 #~ msgstr "centre de baixada d'aplicacions"
