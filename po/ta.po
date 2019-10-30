@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-09 09:59-0700\n"
+"POT-Creation-Date: 2019-10-29 15:31-0700\n"
 "PO-Revision-Date: 2017-06-16 17:37+0000\n"
 "Last-Translator: Rajeev Kumar <irajeevankumar@gmail.com>\n"
 "Language-Team: Tamil <https://l10n.elementary.io/projects/appcenter/"
@@ -20,45 +20,45 @@ msgstr ""
 msgid "AppCenter"
 msgstr "மென்பொருள்-மையம்"
 
-#: src/Application.vala:106
+#: src/Application.vala:112
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr ""
 
-#: src/Application.vala:126
+#: src/Application.vala:132
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr ""
 "குறிப்பிடப்பட்ட இணைப்பு '%s'  கண்டுபிடிக்க முடியவில்லை, அதற்கு பதிலாக தேடுகிறது"
 
-#: src/Application.vala:264
+#: src/Application.vala:270
 msgid "Application installed"
 msgstr "மென்பொருள் நிறுவப்பட்டது"
 
-#: src/Application.vala:265
+#: src/Application.vala:271
 #, fuzzy, c-format
 msgid "%s has been successfully installed"
 msgstr "% வெற்றிகரமாக நிறுவப்பட்டது"
 
-#: src/Application.vala:277
+#: src/Application.vala:283
 #, fuzzy, c-format
 msgid "There Was An Error Installing %s."
 msgstr "%s நிறுவுவதில்  ஒரு  பிழை"
 
-#: src/MainWindow.vala:145 src/Views/Homepage.vala:282
+#: src/MainWindow.vala:141 src/Views/Homepage.vala:282
 #: src/Views/Homepage.vala:294 src/Views/Homepage.vala:299
 #: src/Views/Homepage.vala:310
 msgid "Home"
 msgstr "முதன்மை பக்கம்"
 
-#: src/MainWindow.vala:146 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:142 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 #, fuzzy
 msgctxt "view"
 msgid "Installed"
 msgstr "நிறுவுக"
 
-#: src/MainWindow.vala:173 src/MainWindow.vala:332 src/Views/SearchView.vala:55
+#: src/MainWindow.vala:169 src/MainWindow.vala:328 src/Views/SearchView.vala:55
 #: src/Views/SearchView.vala:82
 msgid "Search Apps"
 msgstr "பயன்பாடுகளை தேடு"
@@ -295,32 +295,32 @@ msgstr "மறுதொடக்கம் தேவை"
 msgid "Please restart your system to finalize updates"
 msgstr "புதுப்பிப்புகளை முடிக்க உங்கள் கணினியை மீண்டும் தொடங்கவும்"
 
-#: src/Dialogs/ContentWarningDialog.vala:27
+#: src/Dialogs/ContentWarningDialog.vala:25
 msgid "Content Warning"
 msgstr ""
 
-#: src/Dialogs/ContentWarningDialog.vala:32
+#: src/Dialogs/ContentWarningDialog.vala:30
 #, c-format
-msgid "%s Contains Explicit Content"
+msgid "“%s” contains explicit content"
+msgstr ""
+
+#: src/Dialogs/ContentWarningDialog.vala:31
+#, c-format
+msgid ""
+"“%s” may contain content only suitable for adults or that may be sensitive "
+"or disturbing. In general, elementary does not review or endorse the "
+"contents of this app."
 msgstr ""
 
 #: src/Dialogs/ContentWarningDialog.vala:33
-#, c-format
-msgid ""
-"%s may contain content only suitable for adults or that may be sensitive or "
-"disturbing. In general, elementary does not review or endorse the contents "
-"of this app."
-msgstr ""
-
-#: src/Dialogs/ContentWarningDialog.vala:35
 msgid "Show content warnings"
 msgstr ""
 
-#: src/Dialogs/ContentWarningDialog.vala:40
+#: src/Dialogs/ContentWarningDialog.vala:37
 msgid "Don’t Install"
 msgstr ""
 
-#: src/Dialogs/ContentWarningDialog.vala:41
+#: src/Dialogs/ContentWarningDialog.vala:38
 #, fuzzy
 msgid "Install Anyway"
 msgstr "நிறுவுகிறது"
@@ -339,7 +339,7 @@ msgstr "மறுதொடக்கம்"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:197
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:177
 msgid "Cancel"
 msgstr "ரத்துசெய்"
 
@@ -523,7 +523,7 @@ msgid "Uninstall “%s”?"
 msgstr "நீக்குதல்"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:164
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:144
 msgid "Uninstall"
 msgstr "நீக்குதல்"
 
@@ -775,12 +775,12 @@ msgid "Requires payments, which are not enabled"
 msgstr ""
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:313
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:292
 msgid "Free"
 msgstr "இலவசம்"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:315
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:294
 #, fuzzy
 msgid "Install"
 msgstr "நிறுவுக"
@@ -882,11 +882,11 @@ msgstr "இது வரை புதுப்பிக்கப்பட்ட�
 msgid "Drivers"
 msgstr "இயக்கிகள்"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:173
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:153
 msgid "Open"
 msgstr "திற"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:338
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:317
 msgid "Update"
 msgstr "புதுப்பிக்கவும்"
 

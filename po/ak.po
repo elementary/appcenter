@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Akan (AppCenter)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-09 09:59-0700\n"
+"POT-Creation-Date: 2019-10-29 15:31-0700\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Lawrence Aberba <karabutaworld@gmail.com>\n"
 "Language-Team: Akan <https://l10n.elementary.io/projects/appcenter/appcenter/"
@@ -21,44 +21,44 @@ msgstr ""
 msgid "AppCenter"
 msgstr "Dwumadie Twebea"
 
-#: src/Application.vala:106
+#: src/Application.vala:112
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr ""
 
-#: src/Application.vala:126
+#: src/Application.vala:132
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Antumi anhu '%s' enti wo ara hwehwɛ"
 
-#: src/Application.vala:264
+#: src/Application.vala:270
 msgid "Application installed"
 msgstr "Dwumadie a woatwe agu so"
 
-#: src/Application.vala:265
+#: src/Application.vala:271
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "Atwe %s agu so awie"
 
-#: src/Application.vala:277
+#: src/Application.vala:283
 #, fuzzy, c-format
 msgid "There Was An Error Installing %s."
 msgstr "Biribi sii ma antumi amfa %s angu so"
 
-#: src/MainWindow.vala:145 src/Views/Homepage.vala:282
+#: src/MainWindow.vala:141 src/Views/Homepage.vala:282
 #: src/Views/Homepage.vala:294 src/Views/Homepage.vala:299
 #: src/Views/Homepage.vala:310
 msgid "Home"
 msgstr "Ahyɛase"
 
-#: src/MainWindow.vala:146 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:142 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 #, fuzzy
 msgctxt "view"
 msgid "Installed"
 msgstr "Twe gu so"
 
-#: src/MainWindow.vala:173 src/MainWindow.vala:332 src/Views/SearchView.vala:55
+#: src/MainWindow.vala:169 src/MainWindow.vala:328 src/Views/SearchView.vala:55
 #: src/Views/SearchView.vala:82
 msgid "Search Apps"
 msgstr "Hwehwɛ Dwumadi Bi"
@@ -295,32 +295,32 @@ msgstr "Ɛhia Sɛ Wodum Sɔ"
 msgid "Please restart your system to finalize updates"
 msgstr "Yɛsrɛ wo dum sɔ ansa atumi de dwumadie ahoroɔ no agu so awei"
 
-#: src/Dialogs/ContentWarningDialog.vala:27
+#: src/Dialogs/ContentWarningDialog.vala:25
 msgid "Content Warning"
 msgstr ""
 
-#: src/Dialogs/ContentWarningDialog.vala:32
+#: src/Dialogs/ContentWarningDialog.vala:30
 #, c-format
-msgid "%s Contains Explicit Content"
+msgid "“%s” contains explicit content"
+msgstr ""
+
+#: src/Dialogs/ContentWarningDialog.vala:31
+#, c-format
+msgid ""
+"“%s” may contain content only suitable for adults or that may be sensitive "
+"or disturbing. In general, elementary does not review or endorse the "
+"contents of this app."
 msgstr ""
 
 #: src/Dialogs/ContentWarningDialog.vala:33
-#, c-format
-msgid ""
-"%s may contain content only suitable for adults or that may be sensitive or "
-"disturbing. In general, elementary does not review or endorse the contents "
-"of this app."
-msgstr ""
-
-#: src/Dialogs/ContentWarningDialog.vala:35
 msgid "Show content warnings"
 msgstr ""
 
-#: src/Dialogs/ContentWarningDialog.vala:40
+#: src/Dialogs/ContentWarningDialog.vala:37
 msgid "Don’t Install"
 msgstr ""
 
-#: src/Dialogs/ContentWarningDialog.vala:41
+#: src/Dialogs/ContentWarningDialog.vala:38
 #, fuzzy
 msgid "Install Anyway"
 msgstr "Ɛde regu so"
@@ -339,7 +339,7 @@ msgstr "Dumsɔ"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:197
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:177
 msgid "Cancel"
 msgstr "Gyae"
 
@@ -524,7 +524,7 @@ msgid "Uninstall “%s”?"
 msgstr "Yi fi so"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:164
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:144
 msgid "Uninstall"
 msgstr "Yi fi so"
 
@@ -774,12 +774,12 @@ msgid "Requires payments, which are not enabled"
 msgstr ""
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:313
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:292
 msgid "Free"
 msgstr "Kwa"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:315
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:294
 #, fuzzy
 msgid "Install"
 msgstr "Twe gu so"
@@ -881,11 +881,11 @@ msgstr "Nea Ɛyɛ Foforɔ a Ɛtwa Toɔ"
 msgid "Drivers"
 msgstr "Drivers"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:173
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:153
 msgid "Open"
 msgstr "Bie"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:338
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:317
 msgid "Update"
 msgstr "Twe nea aba"
 

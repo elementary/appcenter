@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-09 09:59-0700\n"
+"POT-Creation-Date: 2019-10-29 15:31-0700\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Ciarán Ainsworth <ciaranainsworth@posteo.net>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
@@ -23,43 +23,43 @@ msgstr ""
 msgid "AppCenter"
 msgstr "AppCenter"
 
-#: src/Application.vala:106
+#: src/Application.vala:112
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr "Could not parse the media type %s"
 
-#: src/Application.vala:126
+#: src/Application.vala:132
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Specified link '%s' could not be found, searching instead"
 
-#: src/Application.vala:264
+#: src/Application.vala:270
 msgid "Application installed"
 msgstr "Application installed"
 
-#: src/Application.vala:265
+#: src/Application.vala:271
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s has been successfully installed"
 
-#: src/Application.vala:277
+#: src/Application.vala:283
 #, c-format
 msgid "There Was An Error Installing %s."
 msgstr "There Was An Error Installing %s."
 
-#: src/MainWindow.vala:145 src/Views/Homepage.vala:282
+#: src/MainWindow.vala:141 src/Views/Homepage.vala:282
 #: src/Views/Homepage.vala:294 src/Views/Homepage.vala:299
 #: src/Views/Homepage.vala:310
 msgid "Home"
 msgstr "Home"
 
-#: src/MainWindow.vala:146 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:142 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 msgctxt "view"
 msgid "Installed"
 msgstr "Installed"
 
-#: src/MainWindow.vala:173 src/MainWindow.vala:332 src/Views/SearchView.vala:55
+#: src/MainWindow.vala:169 src/MainWindow.vala:328 src/Views/SearchView.vala:55
 #: src/Views/SearchView.vala:82
 msgid "Search Apps"
 msgstr "Search Apps"
@@ -294,35 +294,35 @@ msgstr "Restart Required"
 msgid "Please restart your system to finalize updates"
 msgstr "Please restart your system to finalise updates"
 
-#: src/Dialogs/ContentWarningDialog.vala:27
+#: src/Dialogs/ContentWarningDialog.vala:25
 msgid "Content Warning"
 msgstr "Content Warning"
 
-#: src/Dialogs/ContentWarningDialog.vala:32
-#, c-format
-msgid "%s Contains Explicit Content"
+#: src/Dialogs/ContentWarningDialog.vala:30
+#, fuzzy, c-format
+msgid "“%s” contains explicit content"
 msgstr "%s Contains Explicit Content"
 
-#: src/Dialogs/ContentWarningDialog.vala:33
-#, c-format
+#: src/Dialogs/ContentWarningDialog.vala:31
+#, fuzzy, c-format
 msgid ""
-"%s may contain content only suitable for adults or that may be sensitive or "
-"disturbing. In general, elementary does not review or endorse the contents "
-"of this app."
+"“%s” may contain content only suitable for adults or that may be sensitive "
+"or disturbing. In general, elementary does not review or endorse the "
+"contents of this app."
 msgstr ""
 "%s may contain content only suitable for adults or that may be sensitive or "
 "disturbing. In general, elementary does not review or endorse the contents "
 "of this app."
 
-#: src/Dialogs/ContentWarningDialog.vala:35
+#: src/Dialogs/ContentWarningDialog.vala:33
 msgid "Show content warnings"
 msgstr "Show content warnings"
 
-#: src/Dialogs/ContentWarningDialog.vala:40
+#: src/Dialogs/ContentWarningDialog.vala:37
 msgid "Don’t Install"
 msgstr "Don't Install"
 
-#: src/Dialogs/ContentWarningDialog.vala:41
+#: src/Dialogs/ContentWarningDialog.vala:38
 msgid "Install Anyway"
 msgstr "Install Anyway"
 
@@ -340,7 +340,7 @@ msgstr "Restart"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:197
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:177
 msgid "Cancel"
 msgstr "Cancel"
 
@@ -528,7 +528,7 @@ msgid "Uninstall “%s”?"
 msgstr "Uninstall"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:164
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:144
 msgid "Uninstall"
 msgstr "Uninstall"
 
@@ -780,12 +780,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "Requires payments, which are not enabled"
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:313
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:292
 msgid "Free"
 msgstr "Free"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:315
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:294
 msgid "Install"
 msgstr "Install"
 
@@ -883,11 +883,11 @@ msgstr "Up to Date"
 msgid "Drivers"
 msgstr "Drivers"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:173
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:153
 msgid "Open"
 msgstr "Open"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:338
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:317
 msgid "Update"
 msgstr "Update"
 

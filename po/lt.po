@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-09 09:59-0700\n"
+"POT-Creation-Date: 2019-10-29 15:31-0700\n"
 "PO-Revision-Date: 2019-10-12 13:23+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://l10n.elementary.io/projects/appcenter/"
@@ -12,8 +12,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n==1 ? 0 : n%10>=2 && (n%100<10 || "
-"n%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3;\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 0 : n%10>=2 && (n%100<10 || n"
+"%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3;\n"
 "X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
@@ -22,43 +22,43 @@ msgstr ""
 msgid "AppCenter"
 msgstr "Programų centras"
 
-#: src/Application.vala:106
+#: src/Application.vala:112
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr "Nepavyko išnagrinėti medijos tipo %s"
 
-#: src/Application.vala:126
+#: src/Application.vala:132
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Nurodytos nuorodos \"%s\" rasti nepavyko, vietoj to, atliekama paieška"
 
-#: src/Application.vala:264
+#: src/Application.vala:270
 msgid "Application installed"
 msgstr "Programa įdiegta"
 
-#: src/Application.vala:265
+#: src/Application.vala:271
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s buvo sėkmingai įdiegta"
 
-#: src/Application.vala:277
+#: src/Application.vala:283
 #, c-format
 msgid "There Was An Error Installing %s."
 msgstr "Įdiegiant %s, įvyko klaida."
 
-#: src/MainWindow.vala:145 src/Views/Homepage.vala:282
+#: src/MainWindow.vala:141 src/Views/Homepage.vala:282
 #: src/Views/Homepage.vala:294 src/Views/Homepage.vala:299
 #: src/Views/Homepage.vala:310
 msgid "Home"
 msgstr "Pradžia"
 
-#: src/MainWindow.vala:146 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:142 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 msgctxt "view"
 msgid "Installed"
 msgstr "Įdiegtos"
 
-#: src/MainWindow.vala:173 src/MainWindow.vala:332 src/Views/SearchView.vala:55
+#: src/MainWindow.vala:169 src/MainWindow.vala:328 src/Views/SearchView.vala:55
 #: src/Views/SearchView.vala:82
 msgid "Search Apps"
 msgstr "Ieškoti programų"
@@ -298,35 +298,35 @@ msgstr "Reikalingas paleidimas iš naujo"
 msgid "Please restart your system to finalize updates"
 msgstr "Norėdami užbaigti atnaujinimus, paleiskite savo sistemą iš naujo"
 
-#: src/Dialogs/ContentWarningDialog.vala:27
+#: src/Dialogs/ContentWarningDialog.vala:25
 msgid "Content Warning"
 msgstr "Įspėjimas dėl turinio"
 
-#: src/Dialogs/ContentWarningDialog.vala:32
-#, c-format
-msgid "%s Contains Explicit Content"
+#: src/Dialogs/ContentWarningDialog.vala:30
+#, fuzzy, c-format
+msgid "“%s” contains explicit content"
 msgstr "Programoje %s yra turinio suaugusiems"
 
-#: src/Dialogs/ContentWarningDialog.vala:33
-#, c-format
+#: src/Dialogs/ContentWarningDialog.vala:31
+#, fuzzy, c-format
 msgid ""
-"%s may contain content only suitable for adults or that may be sensitive or "
-"disturbing. In general, elementary does not review or endorse the contents "
-"of this app."
+"“%s” may contain content only suitable for adults or that may be sensitive "
+"or disturbing. In general, elementary does not review or endorse the "
+"contents of this app."
 msgstr ""
 "Programoje %s gali būti turinys, kuris yra skirtas suaugusiems arba, kuris "
 "gali būti intymus ar keliantis nerimą. Apskritai, elementary neperžiūri arba "
 "nepritaria šios programos turiniui."
 
-#: src/Dialogs/ContentWarningDialog.vala:35
+#: src/Dialogs/ContentWarningDialog.vala:33
 msgid "Show content warnings"
 msgstr "Rodyti įspėjimus dėl turinio"
 
-#: src/Dialogs/ContentWarningDialog.vala:40
+#: src/Dialogs/ContentWarningDialog.vala:37
 msgid "Don’t Install"
 msgstr "Neįdiegti"
 
-#: src/Dialogs/ContentWarningDialog.vala:41
+#: src/Dialogs/ContentWarningDialog.vala:38
 msgid "Install Anyway"
 msgstr "Vis tiek įdiegti"
 
@@ -344,7 +344,7 @@ msgstr "Paleisti iš naujo"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:197
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:177
 msgid "Cancel"
 msgstr "Atsisakyti"
 
@@ -547,7 +547,7 @@ msgid "Uninstall “%s”?"
 msgstr "Pašalinti \"%s\"?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:164
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:144
 msgid "Uninstall"
 msgstr "Šalinti"
 
@@ -799,12 +799,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "Reikalauja mokėjimų, kurie savo ruožtu nėra įjungti"
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:313
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:292
 msgid "Free"
 msgstr "Nemokamai"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:315
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:294
 msgid "Install"
 msgstr "Įdiegti"
 
@@ -903,11 +903,11 @@ msgstr "Atnaujintos"
 msgid "Drivers"
 msgstr "Tvarkyklės"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:173
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:153
 msgid "Open"
 msgstr "Atverti"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:338
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:317
 msgid "Update"
 msgstr "Atnaujinti"
 
