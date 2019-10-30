@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-29 15:31-0700\n"
-"PO-Revision-Date: 2019-10-12 13:23+0000\n"
+"PO-Revision-Date: 2019-10-31 15:34+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/tr/>\n"
@@ -306,20 +306,20 @@ msgid "Content Warning"
 msgstr "İçerik Uyarısı"
 
 #: src/Dialogs/ContentWarningDialog.vala:30
-#, fuzzy, c-format
+#, c-format
 msgid "“%s” contains explicit content"
-msgstr "%s Yetişkin veya Rahatsız Edici İçerik Barındırır"
+msgstr "\"%s\" müstehcen içerik barındırır"
 
 #: src/Dialogs/ContentWarningDialog.vala:31
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "“%s” may contain content only suitable for adults or that may be sensitive "
 "or disturbing. In general, elementary does not review or endorse the "
 "contents of this app."
 msgstr ""
-"%s yetişkinlere yönelik, rahatsız edici veya hassas içerik içerebilir. Genel "
-"olarak, elementary bu uygulama içindeki içerikleri gözden geçirmez veya "
-"kontrol etmez."
+"\"%s\" yetişkinlere yönelik, rahatsız edici veya hassas içerik "
+"barındırabilir. Genel olarak, elementary bu uygulama içindeki içerikleri "
+"gözden geçirmez veya kontrol etmez."
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 msgid "Show content warnings"
