@@ -54,7 +54,10 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
                 break;
             }
 
-            apps.add_all (yield backend.get_installed_applications (cancellable));
+            var installed = yield backend.get_installed_applications (cancellable);
+            if (installed != null) {
+                apps.add_all (installed);
+            }
         }
 
         return apps;
