@@ -1,5 +1,6 @@
 appcenter_files = files(
     'Application.vala',
+    'AsyncMutex.vala',
     'MainWindow.vala',
     'SuspendControl.vala',
     'Utils.vala',
