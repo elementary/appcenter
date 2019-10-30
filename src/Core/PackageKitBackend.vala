@@ -42,6 +42,36 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 
     public bool working { public get; protected set; }
 
+    // The aptcc backend included in PackageKit < 1.1.10 wasn't able to support multiple packages
+    // passed to the search_names method at once. If we have a new enough version we can enable
+    // some optimisations when looking up packages
+    public static bool supports_parallel_package_queries {
+        get {
+            if (control.backend_name != "aptcc") {
+                return true;
+            }
+
+            if (control.version_major >= 1 &&
+                control.version_minor >= 1 &&
+                control.version_micro >= 10) {
+                return true;
+            }
+
+            return false;
+        }
+    }
+
+    private static Pk.Control? _control;
+    private static unowned Pk.Control control {
+        get {
+            if (_control == null) {
+                _control = new Pk.Control ();
+            }
+
+            return _control;
+        }
+    }
+
     private bool can_cancel = true;
     private int current_progress = 0;
     private int last_progress = 0;
@@ -106,7 +136,6 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 
         reload_appstream_pool ();
 
-        var control = new Pk.Control ();
         control.updates_changed.connect (updates_changed_callback);
     }
 
@@ -190,7 +219,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 
     public async Gee.Collection<AppCenterCore.Package> get_installed_applications (Cancellable? cancellable = null) {
         var packages = new Gee.TreeSet<AppCenterCore.Package> ();
-        var installed = yield get_installed_packages ();
+        var installed = yield get_installed_packages (cancellable);
         foreach (var pk_package in installed) {
             if (cancellable.is_cancelled ()) {
                 break;
@@ -222,6 +251,18 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         }
 
         return null;
+    }
+
+    public Gee.HashMap<string, AppCenterCore.Package> get_packages_for_component_ids (string[] ids) {
+        var packages = new Gee.HashMap<string, AppCenterCore.Package> ();
+        foreach (var id in ids) {
+            var package = get_package_for_component_id (id);
+            if (package != null) {
+                packages.set (id, package);
+            }
+        }
+
+        return packages;
     }
 
     public Gee.Collection<Package> get_packages_for_component_id (string id) {
@@ -785,6 +826,35 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         }
 
         return pk_package;
+    }
+
+    public async void update_multiple_package_state (Gee.Collection<Package> packages) throws GLib.Error {
+        string[] query = {};
+        foreach (var app in packages) {
+            if (app.backend == this) {
+                query += app.component.get_pkgnames ()[0];
+            }
+        }
+
+        if (query.length < 1) {
+            return;
+        }
+
+        query += null;
+
+        var filter = Pk.Bitfield.from_enums (Pk.Filter.NONE);
+
+        try {
+            var results = yield client.search_names_async (filter, query, null, () => {});
+            var array = results.get_package_array ();
+            array.foreach ((package) => {
+                if (package.info == Pk.Info.INSTALLED) {
+                    package_list[package.get_name ()].mark_installed ();
+                }
+            });
+        } catch (Error e) {
+            throw e;
+        }
     }
 
     private void get_package_details_internal (Job job) {
