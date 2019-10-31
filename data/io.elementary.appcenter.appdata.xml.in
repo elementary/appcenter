@@ -15,7 +15,7 @@
     </p>
   </description>
   <releases>
-    <release version="3.2.0" date="2019-10-29" urgency="medium">
+    <release version="3.2.0" date="2019-10-31" urgency="medium">
       <description>
         <ul>
           <li>Add support for Flatpak apps</li>
