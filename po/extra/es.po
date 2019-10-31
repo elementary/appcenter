@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-29 15:31-0700\n"
-"PO-Revision-Date: 2019-09-29 18:23+0000\n"
+"PO-Revision-Date: 2019-10-31 15:34+0000\n"
 "Last-Translator: Daniel R. <riesp@pm.me>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/extra/"
 "es/>\n"
@@ -37,11 +37,11 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
 msgid "Add support for Flatpak apps"
-msgstr ""
+msgstr "Agregar soporte para aplicaciones Flatpak"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "Warn about non-curated apps"
-msgstr ""
+msgstr "Avisar sobre aplicaciones no seleccionadas"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Show an error dialog if an installation fails"
@@ -90,14 +90,12 @@ msgid "Fix crashes"
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:34
-#, fuzzy
 msgid "Performance improvements"
-msgstr "Varios errores corregidos y mejoras de rendimiento"
+msgstr "Mejoras de rendimiento"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
-#, fuzzy
 msgid "Updated translations"
-msgstr "Nuevas traducciones"
+msgstr "Traducciones actualizadas"
 
 #: data/io.elementary.appcenter.appdata.xml.in:42
 msgid "Meson build system fixes"
@@ -254,9 +252,8 @@ msgid "Make search asynchronous"
 msgstr "Ahora la búsqueda es asincrónica"
 
 #: data/io.elementary.appcenter.appdata.xml.in:255
-#, fuzzy
 msgid "elementary, Inc."
-msgstr "elementary LLC."
+msgstr "elementary, Inc."
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
@@ -267,11 +264,8 @@ msgid "@DESKTOP_ICON@"
 msgstr "@DESKTOP_ICON@"
 
 #: data/io.elementary.appcenter.desktop.in.in:7
-#, fuzzy
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
-msgstr ""
-"instalar;desinstalar;eliminar;catálogo;tienda;aplicaciones;actualizaciones;"
-"software;"
+msgstr "instalar;desinstalar;eliminar;catálogo;tienda;aplicaciones;software;"
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
