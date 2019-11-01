@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-29 15:31-0700\n"
-"PO-Revision-Date: 2019-10-31 15:34+0000\n"
+"PO-Revision-Date: 2019-11-03 00:24+0000\n"
 "Last-Translator: Daniel R. <riesp@pm.me>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/extra/"
 "es/>\n"
@@ -45,49 +45,52 @@ msgstr "Avisar sobre aplicaciones no seleccionadas"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Show an error dialog if an installation fails"
-msgstr ""
+msgstr "Mostrar un cuadro de diálogo de error si falla una instalación"
 
 #: data/io.elementary.appcenter.appdata.xml.in:24
 msgid ""
 "Fix an issue where some apps couldn't be uninstalled from the Applications "
 "Menu"
 msgstr ""
+"Corrección de un problema por el cual algunas aplicaciones no se pueden "
+"desinstalar desde el menú de aplicaciones"
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
 msgid "Allow browsing and uninstalling apps while offline"
-msgstr ""
+msgstr "Permitir navegar y desinstalar aplicaciones sin conexión"
 
 #: data/io.elementary.appcenter.appdata.xml.in:26
 msgid "Fix twitter share URLs"
-msgstr ""
+msgstr "Corrección de las URL de compartición de Twitter"
 
 #: data/io.elementary.appcenter.appdata.xml.in:27
 msgid "Drop Google+ from the share menu"
-msgstr ""
+msgstr "Eliminar Google+ del menú de compartir"
 
 #: data/io.elementary.appcenter.appdata.xml.in:28
 msgid "Animate screenshot background while loading"
-msgstr ""
+msgstr "Animar fondo de captura de pantalla mientras se carga"
 
 #: data/io.elementary.appcenter.appdata.xml.in:29
 msgid "Add navigation arrows for screenshots"
-msgstr ""
+msgstr "Agregar flechas de navegación para capturas de pantalla"
 
 #: data/io.elementary.appcenter.appdata.xml.in:30
 msgid "Don't show uninstall buttons for essential system components"
 msgstr ""
+"No mostrar botones de desinstalación para componentes esenciales del sistema"
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
 msgid "Properly display proprietary licenses"
-msgstr ""
+msgstr "Mostrar correctamente las licencias propietarias"
 
 #: data/io.elementary.appcenter.appdata.xml.in:32
 msgid "Fix some layout issues"
-msgstr ""
+msgstr "Corrección de algunos problemas de diseño"
 
 #: data/io.elementary.appcenter.appdata.xml.in:33
 msgid "Fix crashes"
-msgstr ""
+msgstr "Corrección de errores"
 
 #: data/io.elementary.appcenter.appdata.xml.in:34
 msgid "Performance improvements"
@@ -273,7 +276,7 @@ msgstr "Buscar actualizaciones"
 
 #: data/io.elementary.appcenter.desktop.in.in:19
 msgid "system-software-update"
-msgstr ""
+msgstr "system-software-update"
 
 #~ msgid "About AppCenter"
 #~ msgstr "Acerca de AppCenter"
