@@ -121,8 +121,6 @@ namespace AppCenter {
 
             package_author = new Gtk.Label (null);
             package_name = new Gtk.Label (null);
-            package_name.use_markup = true;
-
             package_summary = new Gtk.Label (null);
 
             action_button = new Widgets.HumbleButton ();
@@ -227,7 +225,7 @@ namespace AppCenter {
         }
 
         protected virtual void set_up_package (uint icon_size = 48) {
-            package_name.label = package.get_name ();
+            package_name.label = GLib.Uri.unescape_string (package.get_name ());
 
             if (package.component.get_id () != AppCenterCore.Package.OS_UPDATES_ID) {
                 package_author.label = package.author_title;
