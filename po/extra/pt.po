@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-29 15:31-0700\n"
-"PO-Revision-Date: 2019-08-31 16:22+0000\n"
+"PO-Revision-Date: 2019-11-03 00:24+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
 "extra/pt/>\n"
@@ -37,67 +37,68 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
 msgid "Add support for Flatpak apps"
-msgstr ""
+msgstr "Adiciona suporte para aplicações Flatpak"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "Warn about non-curated apps"
-msgstr ""
+msgstr "Avisa sobre aplicações não curadas"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Show an error dialog if an installation fails"
-msgstr ""
+msgstr "Mostrar um diálogo de erro se uma instalação falhar"
 
 #: data/io.elementary.appcenter.appdata.xml.in:24
 msgid ""
 "Fix an issue where some apps couldn't be uninstalled from the Applications "
 "Menu"
 msgstr ""
+"Corrige um problema onde algumas aplicações não poderiam ser desinstaladas a "
+"partir do Menu Aplicações"
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
 msgid "Allow browsing and uninstalling apps while offline"
-msgstr ""
+msgstr "Permite a navegação e desinstalação de aplicações enquanto offline"
 
 #: data/io.elementary.appcenter.appdata.xml.in:26
 msgid "Fix twitter share URLs"
-msgstr ""
+msgstr "Corrige URLs de compartilhamento do twitter"
 
 #: data/io.elementary.appcenter.appdata.xml.in:27
 msgid "Drop Google+ from the share menu"
-msgstr ""
+msgstr "Solta o Google+ a partir do menu de partilha"
 
 #: data/io.elementary.appcenter.appdata.xml.in:28
 msgid "Animate screenshot background while loading"
-msgstr ""
+msgstr "Animar o plano de fundo do ecrã durante o carregamento"
 
 #: data/io.elementary.appcenter.appdata.xml.in:29
 msgid "Add navigation arrows for screenshots"
-msgstr ""
+msgstr "Adicionar setas de navegação para capturas de ecrã"
 
 #: data/io.elementary.appcenter.appdata.xml.in:30
 msgid "Don't show uninstall buttons for essential system components"
 msgstr ""
+"Não mostrar botões de desinstalação para componentes essenciais do sistema"
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
 msgid "Properly display proprietary licenses"
-msgstr ""
+msgstr "Exibir corretamente as licenças proprietárias"
 
 #: data/io.elementary.appcenter.appdata.xml.in:32
 msgid "Fix some layout issues"
-msgstr ""
+msgstr "Corrije alguns problemas de disposição"
 
 #: data/io.elementary.appcenter.appdata.xml.in:33
 msgid "Fix crashes"
-msgstr ""
+msgstr "Corrigir falhas"
 
 #: data/io.elementary.appcenter.appdata.xml.in:34
-#, fuzzy
 msgid "Performance improvements"
-msgstr "Várias resoluções de problemas e melhorias de desempenho"
+msgstr "Melhorias de desempenho"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
-#, fuzzy
 msgid "Updated translations"
-msgstr "Novas traduções"
+msgstr "Traduções atualizadas"
 
 #: data/io.elementary.appcenter.appdata.xml.in:42
 msgid "Meson build system fixes"
@@ -250,9 +251,8 @@ msgid "Make search asynchronous"
 msgstr "Aplicada pesquisa assíncrona"
 
 #: data/io.elementary.appcenter.appdata.xml.in:255
-#, fuzzy
 msgid "elementary, Inc."
-msgstr "elementary LLC."
+msgstr "elementary, Inc."
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
@@ -263,10 +263,10 @@ msgid "@DESKTOP_ICON@"
 msgstr "@DESKTOP_ICON@"
 
 #: data/io.elementary.appcenter.desktop.in.in:7
-#, fuzzy
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
 msgstr ""
-"instalar;desinstalar;remover;catalogar;armazenar;apps;atualizações;software;"
+"instalar;desinstalar;remover;catalogar;armazenar;aplicações;atualizações;soft"
+"ware;"
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
@@ -274,7 +274,7 @@ msgstr "Procurar por Atualizações"
 
 #: data/io.elementary.appcenter.desktop.in.in:19
 msgid "system-software-update"
-msgstr ""
+msgstr "atualização do software do sistema"
 
 #~ msgid "About AppCenter"
 #~ msgstr "Sobre o AppCenter"

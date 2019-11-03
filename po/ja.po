@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-29 15:31-0700\n"
-"PO-Revision-Date: 2019-10-12 13:23+0000\n"
+"PO-Revision-Date: 2019-11-03 00:24+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ja/>\n"
@@ -296,20 +296,19 @@ msgid "Content Warning"
 msgstr "コンテンツの警告"
 
 #: src/Dialogs/ContentWarningDialog.vala:30
-#, fuzzy, c-format
+#, c-format
 msgid "“%s” contains explicit content"
-msgstr "%s は不適切なコンテンツを含んでいます"
+msgstr "“%s”は不適切なコンテンツを含んでいます"
 
 #: src/Dialogs/ContentWarningDialog.vala:31
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "“%s” may contain content only suitable for adults or that may be sensitive "
 "or disturbing. In general, elementary does not review or endorse the "
 "contents of this app."
 msgstr ""
-"%s には、成人向けの内容、不適切な内容、あるいは動揺させる内容が含まれている可"
-"能性があります。一般的に、elementary はこのアプリのコンテンツを審査・保証して"
-"いません。"
+"“%s”には、成人向けの内容、不適切な内容、あるいは動揺させる内容が含まれている可能性があります。一般的に、elementary "
+"はこのアプリのコンテンツを審査・保証していません。"
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 msgid "Show content warnings"
