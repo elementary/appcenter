@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-29 15:31-0700\n"
-"PO-Revision-Date: 2019-07-03 14:02+0000\n"
+"PO-Revision-Date: 2019-11-03 00:24+0000\n"
 "Last-Translator: Shtonchjo <shtonchjo@gmail.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/appcenter/"
 "extra/eo/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
@@ -37,67 +37,66 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
 msgid "Add support for Flatpak apps"
-msgstr ""
+msgstr "Aldoni subtenon de Flatpak-aplikaĵoj"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "Warn about non-curated apps"
-msgstr ""
+msgstr "Averti pri nezorgataj aplikaĵoj"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Show an error dialog if an installation fails"
-msgstr ""
+msgstr "Montri eraran avertan se instalo fiaskas"
 
 #: data/io.elementary.appcenter.appdata.xml.in:24
 msgid ""
 "Fix an issue where some apps couldn't be uninstalled from the Applications "
 "Menu"
 msgstr ""
+"Ripari problemon pri iuj aplikaĵoj ne malinstaleblaj de la Aplikaĵa Menuo"
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
 msgid "Allow browsing and uninstalling apps while offline"
-msgstr ""
+msgstr "Permesi senkonektajn foliumadon kaj malinstalon de aplikaĵoj"
 
 #: data/io.elementary.appcenter.appdata.xml.in:26
 msgid "Fix twitter share URLs"
-msgstr ""
+msgstr "Ripari kundividajn ligilojn al Twitter"
 
 #: data/io.elementary.appcenter.appdata.xml.in:27
 msgid "Drop Google+ from the share menu"
-msgstr ""
+msgstr "Forigi Google+-butonon el la kundivida menuo"
 
 #: data/io.elementary.appcenter.appdata.xml.in:28
 msgid "Animate screenshot background while loading"
-msgstr ""
+msgstr "Animacii la ekrankopian fundon dum ŝargo"
 
 #: data/io.elementary.appcenter.appdata.xml.in:29
 msgid "Add navigation arrows for screenshots"
-msgstr ""
+msgstr "Aldoni foliumajn sagojn por ekrankopioj"
 
 #: data/io.elementary.appcenter.appdata.xml.in:30
 msgid "Don't show uninstall buttons for essential system components"
-msgstr ""
+msgstr "Ne montri malinstalajn butonojn de gravaj sistemaj elementoj"
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
 msgid "Properly display proprietary licenses"
-msgstr ""
+msgstr "Taŭge montri proprietajn permesilojn"
 
 #: data/io.elementary.appcenter.appdata.xml.in:32
 msgid "Fix some layout issues"
-msgstr ""
+msgstr "Ripari iujn aperajn problemojn"
 
 #: data/io.elementary.appcenter.appdata.xml.in:33
 msgid "Fix crashes"
-msgstr ""
+msgstr "Ripari kolapsojn"
 
 #: data/io.elementary.appcenter.appdata.xml.in:34
-#, fuzzy
 msgid "Performance improvements"
-msgstr "Diversaj cimoriparoj kaj rendimentaj plibonigoj"
+msgstr "Rendimentaj plibonigoj"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
-#, fuzzy
 msgid "Updated translations"
-msgstr "Novaj tradukoj"
+msgstr "Ĝisdatigaj tradukoj"
 
 #: data/io.elementary.appcenter.appdata.xml.in:42
 msgid "Meson build system fixes"
@@ -248,9 +247,8 @@ msgid "Make search asynchronous"
 msgstr "Malsinkronigi serĉadon"
 
 #: data/io.elementary.appcenter.appdata.xml.in:255
-#, fuzzy
 msgid "elementary, Inc."
-msgstr "elementary LLC."
+msgstr "elementary, Inc."
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
@@ -261,7 +259,6 @@ msgid "@DESKTOP_ICON@"
 msgstr "@DESKTOP_ICON@"
 
 #: data/io.elementary.appcenter.desktop.in.in:7
-#, fuzzy
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
 msgstr ""
 "instali;malinstali;forigi;katalogo;vendejo;aplikaĵoj;ĝisdatigoj;programoj;"
@@ -272,7 +269,7 @@ msgstr "Kontroli pri Ĝisdatigoj"
 
 #: data/io.elementary.appcenter.desktop.in.in:19
 msgid "system-software-update"
-msgstr ""
+msgstr "system-software-update"
 
 #~ msgid "About AppCenter"
 #~ msgstr "Pri Aplikaĵa Centro"
