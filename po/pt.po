@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-27 09:43-0700\n"
-"PO-Revision-Date: 2019-08-29 14:22+0000\n"
+"POT-Creation-Date: 2019-10-29 15:31-0700\n"
+"PO-Revision-Date: 2019-11-03 00:24+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/pt/>\n"
@@ -19,48 +19,48 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:323
+#: src/Application.vala:38 src/Core/Package.vala:327
 msgid "AppCenter"
 msgstr "Centro de Aplicações"
 
-#: src/Application.vala:106
+#: src/Application.vala:112
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr "Não foi possível analisar o tipo de média %s"
 
-#: src/Application.vala:126
+#: src/Application.vala:132
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr ""
 "O link especificado '%s' não pôde ser encontrado. A pesquisar, em alternativa"
 
-#: src/Application.vala:264
+#: src/Application.vala:270
 msgid "Application installed"
 msgstr "Aplicação instalada"
 
-#: src/Application.vala:265
+#: src/Application.vala:271
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s foi instalado com sucesso"
 
-#: src/Application.vala:277
+#: src/Application.vala:283
 #, c-format
 msgid "There Was An Error Installing %s."
 msgstr "Ocorreu Um Erro Ao Instalar %s."
 
-#: src/MainWindow.vala:145 src/Views/Homepage.vala:282
+#: src/MainWindow.vala:141 src/Views/Homepage.vala:282
 #: src/Views/Homepage.vala:294 src/Views/Homepage.vala:299
 #: src/Views/Homepage.vala:310
 msgid "Home"
 msgstr "Página Inicial"
 
-#: src/MainWindow.vala:146 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:142 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 msgctxt "view"
 msgid "Installed"
 msgstr "Instalado"
 
-#: src/MainWindow.vala:173 src/MainWindow.vala:332 src/Views/SearchView.vala:55
+#: src/MainWindow.vala:169 src/MainWindow.vala:328 src/Views/SearchView.vala:55
 #: src/Views/SearchView.vala:82
 msgid "Search Apps"
 msgstr "Procurar Aplicações"
@@ -223,31 +223,38 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "%u atualização disponível para o seu sistema"
 msgstr[1] "%u atualizações disponíveis para o seu sistema"
 
-#: src/Core/Package.vala:294
+#: src/Core/Package.vala:298
 #, c-format
 msgid "%s Developers"
 msgstr "%s Desenvolvedores"
 
-#: src/Core/Package.vala:325
+#: src/Core/Package.vala:329
 msgid "elementary Updates"
 msgstr "Atualizações do elementary"
 
-#: src/Core/Package.vala:327
+#: src/Core/Package.vala:331
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (não-curadas)"
 
-#: src/Core/Package.vala:330
+#: src/Core/Package.vala:334
 #, c-format
 msgid "%s (non-curated)"
 msgstr "%s (não-curadas)"
 
-#: src/Core/Package.vala:332
+#: src/Core/Package.vala:336
 msgid "Ubuntu Drivers"
 msgstr "Drivers Ubuntu"
 
-#: src/Core/Package.vala:335
+#: src/Core/Package.vala:339
 msgid "Unknown Origin (non-curated)"
 msgstr "Origem desconhecida (não-curadas)"
+
+#: src/Core/Package.vala:441
+#, c-format
+msgid "Application state not set as installed in AppCenter for package: %s"
+msgstr ""
+"Estado da aplicação não definido como instalada na AppCenter para o pacote: "
+"%s"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -290,35 +297,35 @@ msgstr "Necessário Reiniciar"
 msgid "Please restart your system to finalize updates"
 msgstr "Por favor reinicie o seu sistema para finalizar as atualizações"
 
-#: src/Dialogs/ContentWarningDialog.vala:27
+#: src/Dialogs/ContentWarningDialog.vala:25
 msgid "Content Warning"
 msgstr "Aviso sobre o Conteúdo"
 
-#: src/Dialogs/ContentWarningDialog.vala:32
+#: src/Dialogs/ContentWarningDialog.vala:30
 #, c-format
-msgid "%s Contains Explicit Content"
-msgstr "%s Contém Conteúdo Explícito"
+msgid "“%s” contains explicit content"
+msgstr "\"%s\" contém conteúdo explícito"
 
-#: src/Dialogs/ContentWarningDialog.vala:33
+#: src/Dialogs/ContentWarningDialog.vala:31
 #, c-format
 msgid ""
-"%s may contain content only suitable for adults or that may be sensitive or "
-"disturbing. In general, elementary does not review or endorse the contents "
-"of this app."
+"“%s” may contain content only suitable for adults or that may be sensitive "
+"or disturbing. In general, elementary does not review or endorse the "
+"contents of this app."
 msgstr ""
-"%s pode conter conteúdo adequado apenas para adultos ou que seja sensível ou "
-"perturbador. Em geral, o elementary não revê nem sanciona o conteúdo desta "
-"aplicação."
+"\"%s\" pode conter conteúdo adequado apenas para adultos ou que seja "
+"sensível ou perturbador. Em geral, o elementary não revê nem sanciona o "
+"conteúdo desta aplicação."
 
-#: src/Dialogs/ContentWarningDialog.vala:35
+#: src/Dialogs/ContentWarningDialog.vala:33
 msgid "Show content warnings"
 msgstr "Mostrar avisos sobre o conteúdo"
 
-#: src/Dialogs/ContentWarningDialog.vala:40
+#: src/Dialogs/ContentWarningDialog.vala:37
 msgid "Don’t Install"
 msgstr "Não Instalar"
 
-#: src/Dialogs/ContentWarningDialog.vala:41
+#: src/Dialogs/ContentWarningDialog.vala:38
 msgid "Install Anyway"
 msgstr "Mesmo assim instalar"
 
@@ -337,7 +344,7 @@ msgstr "Reiniciar"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:197
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:177
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -521,6 +528,38 @@ msgstr "Atingido limite de crédito ou balanço negativo."
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
 "O cartão fornecido é de testes. Por favor use um cartão real para continuar."
+
+#: src/Dialogs/UninstallConfirmDialog.vala:25
+msgid "Uninstalling this app may also delete its data."
+msgstr "Desinstalar esta aplicação também pode eliminar os seus dados."
+
+#: src/Dialogs/UninstallConfirmDialog.vala:35
+msgid "Uninstall app?"
+msgstr "Desinstalar aplicação?"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:38
+#, c-format
+msgid "Uninstall “%s”?"
+msgstr "Desinstalar “%s”?"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:42
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:144
+msgid "Uninstall"
+msgstr "Desinstalar"
+
+#: src/Dialogs/UninstallFailDialog.vala:26
+msgid "This may have been caused by external or manually compiled software."
+msgstr ""
+"Isto pode ter sido causado por software externo ou compilado manualmente."
+
+#: src/Dialogs/UninstallFailDialog.vala:37
+msgid "Failed to uninstall app"
+msgstr "Falha ao desinstalar a aplicação"
+
+#: src/Dialogs/UninstallFailDialog.vala:40
+#, c-format
+msgid "Failed to uninstall “%s”"
+msgstr "Falha ao desinstalar “%s”"
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
@@ -753,12 +792,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "Requer pagamentos, que não estão ativados"
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:313
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:292
 msgid "Free"
 msgstr "Gratuito"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:315
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:294
 msgid "Install"
 msgstr "Instalar"
 
@@ -857,15 +896,11 @@ msgstr "Atualizado"
 msgid "Drivers"
 msgstr "Drivers"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:164
-msgid "Uninstall"
-msgstr "Desinstalar"
-
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:173
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:153
 msgid "Open"
 msgstr "Abrir"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:338
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:317
 msgid "Update"
 msgstr "Atualizar"
 
@@ -957,9 +992,6 @@ msgstr "Atualizar"
 
 #~ msgid "Updates"
 #~ msgstr "Atualizações"
-
-#~ msgid "Find and install apps"
-#~ msgstr "Procurar e instalar aplicações"
 
 #~ msgid "application download center"
 #~ msgstr "centro de transferência de aplicações"

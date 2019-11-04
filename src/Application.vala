@@ -47,6 +47,12 @@ public class AppCenter.App : Gtk.Application {
     private SearchProvider search_provider;
     private uint search_provider_id = 0;
 
+    public static GLib.Settings settings;
+
+    static construct {
+        settings = new GLib.Settings ("io.elementary.appcenter.settings");
+    }
+
     construct {
         application_id = Build.PROJECT_NAME;
         flags |= ApplicationFlags.HANDLES_OPEN;
@@ -335,6 +341,14 @@ public class AppCenter.App : Gtk.Application {
         }
 
         return "%s/%s".printf (tokens[tokens.length - 2], tokens[tokens.length - 1]);
+    }
+
+    public static void add_paid_app (string id) {
+        var paid_apps = settings.get_strv ("paid-apps");
+        if (!(id in paid_apps)) {
+            paid_apps += id;
+            settings.set_strv ("paid-apps", paid_apps);
+        }
     }
 }
 

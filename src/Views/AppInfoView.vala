@@ -830,7 +830,7 @@ namespace AppCenter.Views {
                                                           );
 
                     stripe.download_requested.connect (() => {
-                        Settings.get_default ().add_paid_app (package.component.get_id ());
+                        App.add_paid_app (package.component.get_id ());
                     });
 
                     stripe.show ();

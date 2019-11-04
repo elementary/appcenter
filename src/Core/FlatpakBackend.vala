@@ -37,6 +37,9 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
     private static Flatpak.Installation? installation;
 
+    private uint total_operations;
+    private int current_operation;
+
     private bool worker_func () {
         while (thread_should_run) {
             var job = jobs.pop ();
@@ -81,9 +84,9 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
     static construct {
         try {
-            installation = new Flatpak.Installation.system ();
+            installation = new Flatpak.Installation.user ();
         } catch (Error e) {
-            critical ("Unable to get system default flatpak installation : %s", e.message);
+            critical ("Unable to get flatpak installation : %s", e.message);
         }
     }
 
@@ -110,7 +113,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         var installed_apps = new Gee.HashSet<Package> ();
 
         if (installation == null) {
-            critical ("Couldn't get installed apps due to no flatpak system installation");
+            critical ("Couldn't get installed apps due to no flatpak installation");
             return installed_apps;
         }
 
@@ -266,7 +269,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
     public async bool is_package_installed (Package package) throws GLib.Error {
         if (installation == null) {
-            critical ("Could not check installed state of package due to no system flatpak installation");
+            critical ("Could not check installed state of package due to no flatpak installation");
             return false;
         }
 
@@ -598,31 +601,43 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         });
 
         transaction.new_operation.connect ((operation, progress) => {
+            current_operation++;
+
             progress.changed.connect (() => {
                 if (cancellable.is_cancelled ()) {
                     return;
                 }
 
-                cb (true, _("Installing"), (double)progress.get_progress () / 100.0f, ChangeInformation.Status.RUNNING);
+                // Calculate the progress contribution of the previous operations not including the current, hence -1
+                double existing_progress = (double)(current_operation - 1) / (double)total_operations;
+                double this_op_progress = (double)progress.get_progress () / 100.0f / (double)total_operations;
+                cb (true, _("Installing"), existing_progress + this_op_progress, ChangeInformation.Status.RUNNING);
             });
         });
 
         bool success = false;
 
         transaction.operation_error.connect ((operation, e, detail) => {
-            warning ("Flatpak installation failed: %s", e.message);
+            warning ("Flatpak installation failed: %s (detail: %d)", e.message, detail);
             if (e is GLib.IOError.CANCELLED) {
                 cb (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);
                 success = true;
             }
 
-            // Any error during the installation of a single package and its deps is probably fatal, don't continue
-            return false;
+            // Only stop if this is a fatal error
+            return detail == Flatpak.TransactionErrorDetails.NON_FATAL;
         });
 
         transaction.operation_done.connect ((operation, commit, details) => {
             success = true;
         });
+
+        transaction.ready.connect (() => {
+            total_operations = transaction.get_operations ().length ();
+            return true;
+        });
+
+        current_operation = 0;
 
         try {
             transaction.run (cancellable);
@@ -783,12 +798,17 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         });
 
         transaction.new_operation.connect ((operation, progress) => {
+            current_operation++;
+
             progress.changed.connect (() => {
                 if (cancellable.is_cancelled ()) {
                     return;
                 }
 
-                cb (true, _("Updating"), (double)progress.get_progress () / 100.0f, ChangeInformation.Status.RUNNING);
+                // Calculate the progress contribution of the previous operations not including the current, hence -1
+                double existing_progress = (double)(current_operation - 1) / (double)total_operations;
+                double this_op_progress = (double)progress.get_progress () / 100.0f / (double)total_operations;
+                cb (true, _("Updating"), existing_progress + this_op_progress, ChangeInformation.Status.RUNNING);
             });
         });
 
@@ -811,6 +831,13 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         transaction.operation_done.connect ((operation, commit, details) => {
             success = true;
         });
+
+        transaction.ready.connect (() => {
+            total_operations = transaction.get_operations ().length ();
+            return true;
+        });
+
+        current_operation = 0;
 
         try {
             transaction.run (cancellable);

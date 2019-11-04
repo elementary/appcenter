@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-27 09:43-0700\n"
+"POT-Creation-Date: 2019-10-29 15:31-0700\n"
 "PO-Revision-Date: 2019-08-26 04:22+0000\n"
 "Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/"
@@ -22,47 +22,47 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:24+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:323
+#: src/Application.vala:38 src/Core/Package.vala:327
 msgid "AppCenter"
 msgstr "مركز التطبيقات"
 
-#: src/Application.vala:106
+#: src/Application.vala:112
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr "لا يمكن تحليل نوع الوسائط \"%s\""
 
-#: src/Application.vala:126
+#: src/Application.vala:132
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "الرابط المعطى '%s' غير موجود، إبحث عوضًا عن ذلك"
 
-#: src/Application.vala:264
+#: src/Application.vala:270
 msgid "Application installed"
 msgstr "تم تثبيت التطبيق"
 
-#: src/Application.vala:265
+#: src/Application.vala:271
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s تم تثبيته بنجاح"
 
-#: src/Application.vala:277
+#: src/Application.vala:283
 #, c-format
 msgid "There Was An Error Installing %s."
 msgstr "خطأ في تثبيت %s."
 
-#: src/MainWindow.vala:145 src/Views/Homepage.vala:282
+#: src/MainWindow.vala:141 src/Views/Homepage.vala:282
 #: src/Views/Homepage.vala:294 src/Views/Homepage.vala:299
 #: src/Views/Homepage.vala:310
 msgid "Home"
 msgstr "الرئيسية"
 
-#: src/MainWindow.vala:146 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:142 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 msgctxt "view"
 msgid "Installed"
 msgstr "مثبت"
 
-#: src/MainWindow.vala:173 src/MainWindow.vala:332 src/Views/SearchView.vala:55
+#: src/MainWindow.vala:169 src/MainWindow.vala:328 src/Views/SearchView.vala:55
 #: src/Views/SearchView.vala:82
 msgid "Search Apps"
 msgstr "البحث عن التطبيقات"
@@ -233,30 +233,35 @@ msgstr[3] "يوجد %u تحديثات لنظامك"
 msgstr[4] "يوجد %u تحديث لنظامك"
 msgstr[5] "يوجد %u تحديث لنظامك"
 
-#: src/Core/Package.vala:294
+#: src/Core/Package.vala:298
 #, c-format
 msgid "%s Developers"
 msgstr "المطور %s"
 
-#: src/Core/Package.vala:325
+#: src/Core/Package.vala:329
 msgid "elementary Updates"
 msgstr "تحديثات المنتري"
 
-#: src/Core/Package.vala:327
+#: src/Core/Package.vala:331
 msgid "Ubuntu (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:330
+#: src/Core/Package.vala:334
 #, fuzzy, c-format
 msgid "%s (non-curated)"
 msgstr "%s (محلي)"
 
-#: src/Core/Package.vala:332
+#: src/Core/Package.vala:336
 msgid "Ubuntu Drivers"
 msgstr "تعريفات أوبونتو"
 
-#: src/Core/Package.vala:335
+#: src/Core/Package.vala:339
 msgid "Unknown Origin (non-curated)"
+msgstr ""
+
+#: src/Core/Package.vala:441
+#, c-format
+msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
 
 #: src/Core/UpdateManager.vala:38
@@ -304,34 +309,34 @@ msgstr "يتطلب اعادة تشغيل"
 msgid "Please restart your system to finalize updates"
 msgstr "الرجاء اعادة التشغيل لكي يتم التثبيت"
 
-#: src/Dialogs/ContentWarningDialog.vala:27
+#: src/Dialogs/ContentWarningDialog.vala:25
 msgid "Content Warning"
 msgstr "تحذير المحتوى"
 
-#: src/Dialogs/ContentWarningDialog.vala:32
-#, c-format
-msgid "%s Contains Explicit Content"
+#: src/Dialogs/ContentWarningDialog.vala:30
+#, fuzzy, c-format
+msgid "“%s” contains explicit content"
 msgstr "%s يحتوي على محتوى جريء"
 
-#: src/Dialogs/ContentWarningDialog.vala:33
-#, c-format
+#: src/Dialogs/ContentWarningDialog.vala:31
+#, fuzzy, c-format
 msgid ""
-"%s may contain content only suitable for adults or that may be sensitive or "
-"disturbing. In general, elementary does not review or endorse the contents "
-"of this app."
+"“%s” may contain content only suitable for adults or that may be sensitive "
+"or disturbing. In general, elementary does not review or endorse the "
+"contents of this app."
 msgstr ""
 "%s يمكن أن يحتوي على محتوى مناسب للبالغين أو محتوى مخيف أو مزع. بشكل عام، "
 "إليمنتري لما يراجع أو يضمن محتوى هذا التطبيق."
 
-#: src/Dialogs/ContentWarningDialog.vala:35
+#: src/Dialogs/ContentWarningDialog.vala:33
 msgid "Show content warnings"
 msgstr "أظهر تحذيرات المحتوى"
 
-#: src/Dialogs/ContentWarningDialog.vala:40
+#: src/Dialogs/ContentWarningDialog.vala:37
 msgid "Don’t Install"
 msgstr "لا تثبت"
 
-#: src/Dialogs/ContentWarningDialog.vala:41
+#: src/Dialogs/ContentWarningDialog.vala:38
 msgid "Install Anyway"
 msgstr "ثبت على أي حال"
 
@@ -349,7 +354,7 @@ msgstr "إعادة تشغيل"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:197
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:177
 msgid "Cancel"
 msgstr "إنهاء"
 
@@ -509,6 +514,42 @@ msgstr "الرصيد او الحد على البطاقة وصل إليه."
 #: src/Dialogs/StripeDialog.vala:609
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "البطاقة المودة هيا بطاقة تجريب. من فضلك حاول بإستخدام بطاقة حقيقية."
+
+#: src/Dialogs/UninstallConfirmDialog.vala:25
+msgid "Uninstalling this app may also delete its data."
+msgstr ""
+
+#: src/Dialogs/UninstallConfirmDialog.vala:35
+#, fuzzy
+msgid "Uninstall app?"
+msgstr "حذف"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:38
+#, fuzzy, c-format
+msgid "Uninstall “%s”?"
+msgstr "حذف"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:42
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:144
+msgid "Uninstall"
+msgstr "حذف"
+
+#: src/Dialogs/UninstallFailDialog.vala:26
+#, fuzzy
+msgid "This may have been caused by external or manually compiled software."
+msgstr ""
+"يمكن أن يحدث هذا بسبب إضافة مصادر تطبيقات خارجية، بشكل يدوي، أو من ملف مصادر "
+"معطوب."
+
+#: src/Dialogs/UninstallFailDialog.vala:37
+#, fuzzy
+msgid "Failed to uninstall app"
+msgstr "بحث و تثبيت تطبيقات"
+
+#: src/Dialogs/UninstallFailDialog.vala:40
+#, c-format
+msgid "Failed to uninstall “%s”"
+msgstr ""
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
@@ -743,12 +784,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "تحتاج لطريقة دفع, وهي غير مفعلة"
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:313
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:292
 msgid "Free"
 msgstr "مجاني"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:315
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:294
 msgid "Install"
 msgstr "تثبيت"
 
@@ -852,15 +893,11 @@ msgstr "تم تثبيت آخر التحديثات"
 msgid "Drivers"
 msgstr "التعريفات"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:164
-msgid "Uninstall"
-msgstr "حذف"
-
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:173
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:153
 msgid "Open"
 msgstr "فتح"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:338
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:317
 msgid "Update"
 msgstr "تحديث"
 
@@ -924,9 +961,6 @@ msgstr "تحديث"
 
 #~ msgid "Load a package from the given id"
 #~ msgstr "تحميل الحزمة من تعريف معين"
-
-#~ msgid "Find and install apps"
-#~ msgstr "بحث و تثبيت تطبيقات"
 
 #~ msgid "application download center"
 #~ msgstr "سوق التطبيقات"

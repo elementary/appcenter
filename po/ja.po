@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-27 09:43-0700\n"
-"PO-Revision-Date: 2019-08-29 14:22+0000\n"
+"POT-Creation-Date: 2019-10-29 15:31-0700\n"
+"PO-Revision-Date: 2019-11-03 00:24+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ja/>\n"
@@ -17,47 +17,47 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:323
+#: src/Application.vala:38 src/Core/Package.vala:327
 msgid "AppCenter"
 msgstr "AppCenter"
 
-#: src/Application.vala:106
+#: src/Application.vala:112
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr "メディアタイプ %s を解析できませんでした"
 
-#: src/Application.vala:126
+#: src/Application.vala:132
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "指定されたリンク '%s' は見つかりませんでした。代わりを検索します"
 
-#: src/Application.vala:264
+#: src/Application.vala:270
 msgid "Application installed"
 msgstr "アプリケーションがインストールされました"
 
-#: src/Application.vala:265
+#: src/Application.vala:271
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s は正常にインストールされました"
 
-#: src/Application.vala:277
+#: src/Application.vala:283
 #, c-format
 msgid "There Was An Error Installing %s."
 msgstr "%s のインストール中にエラーが発生しました。"
 
-#: src/MainWindow.vala:145 src/Views/Homepage.vala:282
+#: src/MainWindow.vala:141 src/Views/Homepage.vala:282
 #: src/Views/Homepage.vala:294 src/Views/Homepage.vala:299
 #: src/Views/Homepage.vala:310
 msgid "Home"
 msgstr "ホーム"
 
-#: src/MainWindow.vala:146 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:142 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 msgctxt "view"
 msgid "Installed"
 msgstr "インストール済み"
 
-#: src/MainWindow.vala:173 src/MainWindow.vala:332 src/Views/SearchView.vala:55
+#: src/MainWindow.vala:169 src/MainWindow.vala:328 src/Views/SearchView.vala:55
 #: src/Views/SearchView.vala:82
 msgid "Search Apps"
 msgstr "アプリを検索"
@@ -218,31 +218,38 @@ msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "システムに %u 件のアップデートが利用可能です"
 
-#: src/Core/Package.vala:294
+#: src/Core/Package.vala:298
 #, c-format
 msgid "%s Developers"
 msgstr "%s の開発者"
 
-#: src/Core/Package.vala:325
+#: src/Core/Package.vala:329
 msgid "elementary Updates"
 msgstr "elementary のアップデート"
 
-#: src/Core/Package.vala:327
+#: src/Core/Package.vala:331
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (キュレーションされていないアプリ)"
 
-#: src/Core/Package.vala:330
+#: src/Core/Package.vala:334
 #, c-format
 msgid "%s (non-curated)"
 msgstr "%s (キュレーションされていないアプリ)"
 
-#: src/Core/Package.vala:332
+#: src/Core/Package.vala:336
 msgid "Ubuntu Drivers"
 msgstr "Ubuntu ドライバー"
 
-#: src/Core/Package.vala:335
+#: src/Core/Package.vala:339
 msgid "Unknown Origin (non-curated)"
 msgstr "提供元不明 (キュレーションされていないアプリ)"
+
+#: src/Core/Package.vala:441
+#, c-format
+msgid "Application state not set as installed in AppCenter for package: %s"
+msgstr ""
+"以下のパッケージのアプリケーションは AppCenter でインストール済みの状態になっ"
+"ていません: %s"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -284,35 +291,34 @@ msgstr "再起動が必要です"
 msgid "Please restart your system to finalize updates"
 msgstr "アップデートを完了するには再起動してください"
 
-#: src/Dialogs/ContentWarningDialog.vala:27
+#: src/Dialogs/ContentWarningDialog.vala:25
 msgid "Content Warning"
 msgstr "コンテンツの警告"
 
-#: src/Dialogs/ContentWarningDialog.vala:32
+#: src/Dialogs/ContentWarningDialog.vala:30
 #, c-format
-msgid "%s Contains Explicit Content"
-msgstr "%s は不適切なコンテンツを含んでいます"
+msgid "“%s” contains explicit content"
+msgstr "“%s”は不適切なコンテンツを含んでいます"
 
-#: src/Dialogs/ContentWarningDialog.vala:33
+#: src/Dialogs/ContentWarningDialog.vala:31
 #, c-format
 msgid ""
-"%s may contain content only suitable for adults or that may be sensitive or "
-"disturbing. In general, elementary does not review or endorse the contents "
-"of this app."
+"“%s” may contain content only suitable for adults or that may be sensitive "
+"or disturbing. In general, elementary does not review or endorse the "
+"contents of this app."
 msgstr ""
-"%s には、成人向けの内容、不適切な内容、あるいは動揺させる内容が含まれている可"
-"能性があります。一般的に、elementary はこのアプリのコンテンツを審査・保証して"
-"いません。"
+"“%s”には、成人向けの内容、不適切な内容、あるいは動揺させる内容が含まれている可能性があります。一般的に、elementary "
+"はこのアプリのコンテンツを審査・保証していません。"
 
-#: src/Dialogs/ContentWarningDialog.vala:35
+#: src/Dialogs/ContentWarningDialog.vala:33
 msgid "Show content warnings"
 msgstr "コンテンツの警告を表示"
 
-#: src/Dialogs/ContentWarningDialog.vala:40
+#: src/Dialogs/ContentWarningDialog.vala:37
 msgid "Don’t Install"
 msgstr "インストールしない"
 
-#: src/Dialogs/ContentWarningDialog.vala:41
+#: src/Dialogs/ContentWarningDialog.vala:38
 msgid "Install Anyway"
 msgstr "了解してインストール"
 
@@ -332,7 +338,7 @@ msgstr "再起動"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:197
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:177
 msgid "Cancel"
 msgstr "キャンセル"
 
@@ -506,6 +512,41 @@ msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
 "所定のカードはテスト用のカードです。続行するには本物のカードを使用してくださ"
 "い。"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:25
+msgid "Uninstalling this app may also delete its data."
+msgstr ""
+"このアプリをアンインストールすると、関連するデータも削除される可能性がありま"
+"す。"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:35
+msgid "Uninstall app?"
+msgstr "アプリをアンインストールしますか？"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:38
+#, c-format
+msgid "Uninstall “%s”?"
+msgstr "“%s”をアンインストールしますか?"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:42
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:144
+msgid "Uninstall"
+msgstr "アンインストール"
+
+#: src/Dialogs/UninstallFailDialog.vala:26
+msgid "This may have been caused by external or manually compiled software."
+msgstr ""
+"これは外部のソフトウェアか、コンパイルしてインストールされたソフトウェアに"
+"よって発生した可能性があります。"
+
+#: src/Dialogs/UninstallFailDialog.vala:37
+msgid "Failed to uninstall app"
+msgstr "アプリのアンインストールに失敗しました"
+
+#: src/Dialogs/UninstallFailDialog.vala:40
+#, c-format
+msgid "Failed to uninstall “%s”"
+msgstr "“%s”のアンインストールに失敗しました"
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
@@ -738,12 +779,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "支払いが必要ですが、有効になっていません"
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:313
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:292
 msgid "Free"
 msgstr "無料"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:315
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:294
 msgid "Install"
 msgstr "インストール"
 
@@ -765,7 +806,9 @@ msgstr "ネットワークが利用できません。"
 
 #: src/Widgets/NetworkInfoBar.vala:33
 msgid "Connect to the Internet to browse and install apps."
-msgstr "アプリを閲覧したりインストールしたりするにはインターネットに接続してください。"
+msgstr ""
+"アプリを閲覧したりインストールしたりするにはインターネットに接続してくださ"
+"い。"
 
 #. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
 #: src/Widgets/NetworkInfoBar.vala:41
@@ -840,15 +883,11 @@ msgstr "最新の状態"
 msgid "Drivers"
 msgstr "ドライバー"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:164
-msgid "Uninstall"
-msgstr "アンインストール"
-
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:173
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:153
 msgid "Open"
 msgstr "開く"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:338
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:317
 msgid "Update"
 msgstr "アップデート"
 

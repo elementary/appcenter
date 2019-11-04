@@ -54,7 +54,10 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
                 break;
             }
 
-            apps.add_all (yield backend.get_installed_applications (cancellable));
+            var installed = yield backend.get_installed_applications (cancellable);
+            if (installed != null) {
+                apps.add_all (installed);
+            }
         }
 
         return apps;
@@ -173,7 +176,7 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
     public async bool update_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
         var success = true;
         foreach (var backend in backends) {
-            if (!yield backend.update_package (package, cb, cancellable)) {
+            if (!yield backend.update_package (package, (owned)cb, cancellable)) {
                 success = false;
             }
         }

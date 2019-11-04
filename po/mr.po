@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-27 09:43-0700\n"
-"PO-Revision-Date: 2019-09-06 18:22+0000\n"
+"POT-Creation-Date: 2019-10-29 15:31-0700\n"
+"PO-Revision-Date: 2019-10-16 20:23+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/mr/>\n"
@@ -18,47 +18,47 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:323
+#: src/Application.vala:38 src/Core/Package.vala:327
 msgid "AppCenter"
 msgstr "अनुप्रयोग भांडार(अॅप सेंटर)"
 
-#: src/Application.vala:106
+#: src/Application.vala:112
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr "मीडिया टाईप %s पार्स होऊ शकला नाही"
 
-#: src/Application.vala:126
+#: src/Application.vala:132
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "दिलेली लिंक '%s ' मिळाली नाही, त्याऐवजी शोध सुरु आहे"
 
-#: src/Application.vala:264
+#: src/Application.vala:270
 msgid "Application installed"
 msgstr "अनुप्रयोग स्थापित झाला"
 
-#: src/Application.vala:265
+#: src/Application.vala:271
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s यशस्वीरित्या इन्स्टॉल झाले"
 
-#: src/Application.vala:277
+#: src/Application.vala:283
 #, c-format
 msgid "There Was An Error Installing %s."
 msgstr "%s इंन्स्टॉल करताना काही चूक झाली आहे."
 
-#: src/MainWindow.vala:145 src/Views/Homepage.vala:282
+#: src/MainWindow.vala:141 src/Views/Homepage.vala:282
 #: src/Views/Homepage.vala:294 src/Views/Homepage.vala:299
 #: src/Views/Homepage.vala:310
 msgid "Home"
 msgstr "मुख्य पृष्ठ"
 
-#: src/MainWindow.vala:146 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:142 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 msgctxt "view"
 msgid "Installed"
 msgstr "प्रस्थापित"
 
-#: src/MainWindow.vala:173 src/MainWindow.vala:332 src/Views/SearchView.vala:55
+#: src/MainWindow.vala:169 src/MainWindow.vala:328 src/Views/SearchView.vala:55
 #: src/Views/SearchView.vala:82
 msgid "Search Apps"
 msgstr "अनुप्रयोग शोधा"
@@ -221,31 +221,36 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "%u अपडेट आपल्या सिस्टिम साठी उपलब्ध आहे"
 msgstr[1] "%u अपडेट आपल्या सिस्टिम साठी उपलब्ध आहेत"
 
-#: src/Core/Package.vala:294
+#: src/Core/Package.vala:298
 #, c-format
 msgid "%s Developers"
 msgstr "%s डेव्हलपर"
 
-#: src/Core/Package.vala:325
+#: src/Core/Package.vala:329
 msgid "elementary Updates"
 msgstr "एलिमेंटरी अपडेट"
 
-#: src/Core/Package.vala:327
+#: src/Core/Package.vala:331
 msgid "Ubuntu (non-curated)"
 msgstr "उबंटू (नॉन-क्युरेटेड)"
 
-#: src/Core/Package.vala:330
+#: src/Core/Package.vala:334
 #, c-format
 msgid "%s (non-curated)"
 msgstr "%s (नॉन-क्युरेटेड)"
 
-#: src/Core/Package.vala:332
+#: src/Core/Package.vala:336
 msgid "Ubuntu Drivers"
 msgstr "उबंटू ड्राइव्हर्स"
 
-#: src/Core/Package.vala:335
+#: src/Core/Package.vala:339
 msgid "Unknown Origin (non-curated)"
 msgstr "अज्ञात उत्पत्ति (नॉन-क्युरेटेड)"
+
+#: src/Core/Package.vala:441
+#, c-format
+msgid "Application state not set as installed in AppCenter for package: %s"
+msgstr "%s : पॅकेजसाठी AppCenter मध्ये स्थापित केल्यानुसार अनुप्रयोग स्थिती सेट केलेली नाही"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -288,35 +293,35 @@ msgstr "पुन्हा सुरु करणे आवश्यक"
 msgid "Please restart your system to finalize updates"
 msgstr "अपडेट्सना अंतिम स्वरूप देण्यासाठी कृपया आपली सिस्टिम पुन्हा सुरु करा"
 
-#: src/Dialogs/ContentWarningDialog.vala:27
+#: src/Dialogs/ContentWarningDialog.vala:25
 msgid "Content Warning"
 msgstr "मजकूर चेतावणी"
 
-#: src/Dialogs/ContentWarningDialog.vala:32
-#, c-format
-msgid "%s Contains Explicit Content"
+#: src/Dialogs/ContentWarningDialog.vala:30
+#, fuzzy, c-format
+msgid "“%s” contains explicit content"
 msgstr "%s मध्ये मजकूर स्पष्ट आहे"
 
-#: src/Dialogs/ContentWarningDialog.vala:33
-#, c-format
+#: src/Dialogs/ContentWarningDialog.vala:31
+#, fuzzy, c-format
 msgid ""
-"%s may contain content only suitable for adults or that may be sensitive or "
-"disturbing. In general, elementary does not review or endorse the contents "
-"of this app."
+"“%s” may contain content only suitable for adults or that may be sensitive "
+"or disturbing. In general, elementary does not review or endorse the "
+"contents of this app."
 msgstr ""
 "% s मध्ये केवळ वयस्कांसाठी उपयुक्त असलेला मजकूर असू शकतो किंवा तो मजकूर संवेदनशील किंवा "
 "त्रासदायक असू शकतो. सर्वसाधारणपणे, एलिमेंटरी या अॅपच्या समाविष्ट सामग्री किंवा मजकुराचे "
 "पुनरावलोकन किंवा समर्थन करीत नाही."
 
-#: src/Dialogs/ContentWarningDialog.vala:35
+#: src/Dialogs/ContentWarningDialog.vala:33
 msgid "Show content warnings"
 msgstr "मजकूर चेतावण्या दाखवा"
 
-#: src/Dialogs/ContentWarningDialog.vala:40
+#: src/Dialogs/ContentWarningDialog.vala:37
 msgid "Don’t Install"
 msgstr "इन्स्टॉल करू नका"
 
-#: src/Dialogs/ContentWarningDialog.vala:41
+#: src/Dialogs/ContentWarningDialog.vala:38
 msgid "Install Anyway"
 msgstr "तरीही इन्स्टॉल करा"
 
@@ -334,7 +339,7 @@ msgstr "पुन्हा सुरु करा"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:197
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:177
 msgid "Cancel"
 msgstr "रद्द करा"
 
@@ -495,6 +500,37 @@ msgstr "कार्डवरील शिल्लक किंवा क्र
 #: src/Dialogs/StripeDialog.vala:609
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "दिलेले कार्ड एक चाचणी कार्ड आहे. कृपया पुढे जाण्यासाठी एक वास्तविक कार्ड वापरा."
+
+#: src/Dialogs/UninstallConfirmDialog.vala:25
+msgid "Uninstalling this app may also delete its data."
+msgstr "हा अ‍ॅप विस्थापित केल्यास त्याचा डेटा हटविला जाऊ शकतो."
+
+#: src/Dialogs/UninstallConfirmDialog.vala:35
+msgid "Uninstall app?"
+msgstr "अ‍ॅप विस्थापित करायचा?"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:38
+#, c-format
+msgid "Uninstall “%s”?"
+msgstr "\"%s\" विस्थापित करायचा?"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:42
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:144
+msgid "Uninstall"
+msgstr "विस्थापित करा"
+
+#: src/Dialogs/UninstallFailDialog.vala:26
+msgid "This may have been caused by external or manually compiled software."
+msgstr "हे बाहेरील, मॅन्युअली जोडलेल्या सॉफ्टवेअरमुळे झाले असू शकते."
+
+#: src/Dialogs/UninstallFailDialog.vala:37
+msgid "Failed to uninstall app"
+msgstr "अ‍ॅप विस्थापित करण्यात अयशस्वी"
+
+#: src/Dialogs/UninstallFailDialog.vala:40
+#, c-format
+msgid "Failed to uninstall “%s”"
+msgstr "\"%s\" विस्थापित करण्यात अयशस्वी"
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
@@ -729,12 +765,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "जे सक्षम नाहीत, त्यांसाठी पेमेंट आवश्यक आहे"
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:313
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:292
 msgid "Free"
 msgstr "विनामुल्य"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:315
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:294
 msgid "Install"
 msgstr "प्रस्थापित"
 
@@ -832,15 +868,11 @@ msgstr "अद्ययावत"
 msgid "Drivers"
 msgstr "ड्राइव्हर्स"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:164
-msgid "Uninstall"
-msgstr "विस्थापित करा"
-
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:173
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:153
 msgid "Open"
 msgstr "उघडा"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:338
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:317
 msgid "Update"
 msgstr "अद्ययावत (अपडेट) करा"
 
@@ -864,9 +896,6 @@ msgstr "अद्ययावत (अपडेट) करा"
 
 #~ msgid "Updates"
 #~ msgstr "अद्यतने"
-
-#~ msgid "Find and install apps"
-#~ msgstr "अनुप्रयोगांना शोधा आणी स्थापित करा"
 
 #~ msgid "Quit"
 #~ msgstr "बाहेर पडा"

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-27 09:43-0700\n"
+"POT-Creation-Date: 2019-10-29 15:31-0700\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Alma Ibrašimović <belma.alma@hotmail.com>\n"
 "Language-Team: Bosnian <https://l10n.elementary.io/projects/appcenter/"
@@ -13,53 +13,53 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
-"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:323
+#: src/Application.vala:38 src/Core/Package.vala:327
 msgid "AppCenter"
 msgstr "AppCenter"
 
-#: src/Application.vala:106
+#: src/Application.vala:112
 #, fuzzy, c-format
 msgid "Could not parse the media type %s"
 msgstr "MIME tip %s nije prepoznat"
 
-#: src/Application.vala:126
+#: src/Application.vala:132
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Navedeni link %s nije pronađen, traži se"
 
-#: src/Application.vala:264
+#: src/Application.vala:270
 msgid "Application installed"
 msgstr "Aplikacija instalirana"
 
-#: src/Application.vala:265
+#: src/Application.vala:271
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s je uspješno instaliran"
 
-#: src/Application.vala:277
+#: src/Application.vala:283
 #, c-format
 msgid "There Was An Error Installing %s."
 msgstr "Došlo je do greške prilikom instalacije %s."
 
-#: src/MainWindow.vala:145 src/Views/Homepage.vala:282
+#: src/MainWindow.vala:141 src/Views/Homepage.vala:282
 #: src/Views/Homepage.vala:294 src/Views/Homepage.vala:299
 #: src/Views/Homepage.vala:310
 msgid "Home"
 msgstr "Naslovnica"
 
-#: src/MainWindow.vala:146 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:142 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 msgctxt "view"
 msgid "Installed"
 msgstr "Instalirano"
 
-#: src/MainWindow.vala:173 src/MainWindow.vala:332 src/Views/SearchView.vala:55
+#: src/MainWindow.vala:169 src/MainWindow.vala:328 src/Views/SearchView.vala:55
 #: src/Views/SearchView.vala:82
 msgid "Search Apps"
 msgstr "Pretraži aplikacije"
@@ -224,32 +224,37 @@ msgstr[0] "%u ažuriranje je dostupno za Vaš sistem"
 msgstr[1] "%u ažuriranja su dostupna za Vaš sistem"
 msgstr[2] "%u ažuriranja je dostupno za Vaš sistem"
 
-#: src/Core/Package.vala:294
+#: src/Core/Package.vala:298
 #, c-format
 msgid "%s Developers"
 msgstr "Programeri aplikacije %s"
 
-#: src/Core/Package.vala:325
+#: src/Core/Package.vala:329
 #, fuzzy
 msgid "elementary Updates"
 msgstr "Nedavno ažurirano"
 
-#: src/Core/Package.vala:327
+#: src/Core/Package.vala:331
 msgid "Ubuntu (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:330
+#: src/Core/Package.vala:334
 #, fuzzy, c-format
 msgid "%s (non-curated)"
 msgstr "%s (lokalno)"
 
-#: src/Core/Package.vala:332
+#: src/Core/Package.vala:336
 #, fuzzy
 msgid "Ubuntu Drivers"
 msgstr "Upravljački programi"
 
-#: src/Core/Package.vala:335
+#: src/Core/Package.vala:339
 msgid "Unknown Origin (non-curated)"
+msgstr ""
+
+#: src/Core/Package.vala:441
+#, c-format
+msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
 
 #: src/Core/UpdateManager.vala:38
@@ -294,35 +299,35 @@ msgstr "Potrebno je ponovno pokretanje"
 msgid "Please restart your system to finalize updates"
 msgstr "Ponovo pokrenite sistem kako biste dovršili ažuriranja"
 
-#: src/Dialogs/ContentWarningDialog.vala:27
+#: src/Dialogs/ContentWarningDialog.vala:25
 msgid "Content Warning"
 msgstr "Upozorenje o sadržaju"
 
-#: src/Dialogs/ContentWarningDialog.vala:32
-#, c-format
-msgid "%s Contains Explicit Content"
+#: src/Dialogs/ContentWarningDialog.vala:30
+#, fuzzy, c-format
+msgid "“%s” contains explicit content"
 msgstr "%s sadrži eksplicitan sadržaj"
 
-#: src/Dialogs/ContentWarningDialog.vala:33
-#, c-format
+#: src/Dialogs/ContentWarningDialog.vala:31
+#, fuzzy, c-format
 msgid ""
-"%s may contain content only suitable for adults or that may be sensitive or "
-"disturbing. In general, elementary does not review or endorse the contents "
-"of this app."
+"“%s” may contain content only suitable for adults or that may be sensitive "
+"or disturbing. In general, elementary does not review or endorse the "
+"contents of this app."
 msgstr ""
 "%s može sadržavati sadržaj koji nije prikladan za odrasle ili koji može biti "
 "osjetljiv ili uznemirujući. U pravilu, elementary ne pregledava niti "
 "zagovara sadržaje ove aplikacije."
 
-#: src/Dialogs/ContentWarningDialog.vala:35
+#: src/Dialogs/ContentWarningDialog.vala:33
 msgid "Show content warnings"
 msgstr "Prikaži upozorenja o sadržaju"
 
-#: src/Dialogs/ContentWarningDialog.vala:40
+#: src/Dialogs/ContentWarningDialog.vala:37
 msgid "Don’t Install"
 msgstr "Ne instaliraj"
 
-#: src/Dialogs/ContentWarningDialog.vala:41
+#: src/Dialogs/ContentWarningDialog.vala:38
 msgid "Install Anyway"
 msgstr "Svejedno instaliraj"
 
@@ -342,7 +347,7 @@ msgstr "Ponovo pokreni"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:197
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:177
 msgid "Cancel"
 msgstr "Otkaži"
 
@@ -524,6 +529,42 @@ msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
 "Navedena kartica je testna kartica. Molimo, koristite pravu karticu kako "
 "biste nastavili."
+
+#: src/Dialogs/UninstallConfirmDialog.vala:25
+msgid "Uninstalling this app may also delete its data."
+msgstr ""
+
+#: src/Dialogs/UninstallConfirmDialog.vala:35
+#, fuzzy
+msgid "Uninstall app?"
+msgstr "Deinstaliraj"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:38
+#, fuzzy, c-format
+msgid "Uninstall “%s”?"
+msgstr "Deinstaliraj"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:42
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:144
+msgid "Uninstall"
+msgstr "Deinstaliraj"
+
+#: src/Dialogs/UninstallFailDialog.vala:26
+#, fuzzy
+msgid "This may have been caused by external or manually compiled software."
+msgstr ""
+"Uzrok za ovo mogu biti vanjske, ručno dodane riznice softvera ili "
+"korumpirana datoteka sa izvorima."
+
+#: src/Dialogs/UninstallFailDialog.vala:37
+#, fuzzy
+msgid "Failed to uninstall app"
+msgstr "Nađi i instaliraj aplikacije"
+
+#: src/Dialogs/UninstallFailDialog.vala:40
+#, c-format
+msgid "Failed to uninstall “%s”"
+msgstr ""
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
@@ -762,12 +803,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "Zahtijeva plaćanja, koja nisu aktivirana"
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:313
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:292
 msgid "Free"
 msgstr "Besplatno"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:315
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:294
 msgid "Install"
 msgstr "Instalirano"
 
@@ -869,15 +910,11 @@ msgstr "Ažurno"
 msgid "Drivers"
 msgstr "Upravljački programi"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:164
-msgid "Uninstall"
-msgstr "Deinstaliraj"
-
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:173
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:153
 msgid "Open"
 msgstr "Otvori"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:338
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:317
 msgid "Update"
 msgstr "Ažuriraj"
 
@@ -910,9 +947,6 @@ msgstr "Ažuriraj"
 
 #~ msgid "Updates"
 #~ msgstr "Ažuriranja"
-
-#~ msgid "Find and install apps"
-#~ msgstr "Nađi i instaliraj aplikacije"
 
 #~ msgid "Apps View"
 #~ msgstr "Pregled aplikacija"

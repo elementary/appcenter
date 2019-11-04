@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Akan (AppCenter)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:42+0200\n"
+"POT-Creation-Date: 2019-10-29 15:31-0700\n"
 "PO-Revision-Date: 2019-02-10 00:06+0000\n"
 "Last-Translator: Rico Tzschichholz <ricotz@ubuntu.com>\n"
 "Language-Team: Akan <https://weblate.elementary.io/projects/appcenter/extra/"
@@ -36,37 +36,136 @@ msgstr ""
 "nkɔanim foforɔ a aba"
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
-msgid "Meson build system fixes"
+msgid "Add support for Flatpak apps"
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
-msgid "Improve window state restoration"
+msgid "Warn about non-curated apps"
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
-msgid "Prevent action buttons from jumping around"
+msgid "Show an error dialog if an installation fails"
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:24
-msgid "Remove reset paid apps gsettings key"
+msgid ""
+"Fix an issue where some apps couldn't be uninstalled from the Applications "
+"Menu"
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
-msgid "Memory management refinements"
+msgid "Allow browsing and uninstalling apps while offline"
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:26
+msgid "Fix twitter share URLs"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:27
+msgid "Drop Google+ from the share menu"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:28
+msgid "Animate screenshot background while loading"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:29
+msgid "Add navigation arrows for screenshots"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:30
+msgid "Don't show uninstall buttons for essential system components"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:31
+msgid "Properly display proprietary licenses"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:32
+msgid "Fix some layout issues"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:33
+msgid "Fix crashes"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:34
+#, fuzzy
+msgid "Performance improvements"
+msgstr "Wɔayɛ nsiesie ɛna wɔasan nso ayɛ ama ɛyɛ adwuma yie sen kan no"
+
+#: data/io.elementary.appcenter.appdata.xml.in:35
+#, fuzzy
+msgid "Updated translations"
+msgstr "Nkyerɛase ahoroɔ foforɔ"
+
+#: data/io.elementary.appcenter.appdata.xml.in:42
+msgid "Meson build system fixes"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:43
+msgid "Improve window state restoration"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:44
+msgid "Prevent action buttons from jumping around"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:45
+msgid "Remove reset paid apps gsettings key"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:46
+msgid "Memory management refinements"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:47
 msgid ""
 "Add conditional compilation for disabling dynamic remote homepage content"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:27
-#: data/io.elementary.appcenter.appdata.xml.in:39
-#: data/io.elementary.appcenter.appdata.xml.in:46
+#: data/io.elementary.appcenter.appdata.xml.in:48
+#: data/io.elementary.appcenter.appdata.xml.in:60
+#: data/io.elementary.appcenter.appdata.xml.in:67
+#: data/io.elementary.appcenter.appdata.xml.in:80
+#: data/io.elementary.appcenter.appdata.xml.in:91
+#: data/io.elementary.appcenter.appdata.xml.in:100
+#: data/io.elementary.appcenter.appdata.xml.in:109
+#: data/io.elementary.appcenter.appdata.xml.in:118
+#: data/io.elementary.appcenter.appdata.xml.in:127
+#: data/io.elementary.appcenter.appdata.xml.in:136
+#: data/io.elementary.appcenter.appdata.xml.in:145
+#: data/io.elementary.appcenter.appdata.xml.in:154
+#: data/io.elementary.appcenter.appdata.xml.in:163
+#: data/io.elementary.appcenter.appdata.xml.in:172
+#: data/io.elementary.appcenter.appdata.xml.in:181
+#: data/io.elementary.appcenter.appdata.xml.in:191
+#: data/io.elementary.appcenter.appdata.xml.in:201
+msgid "New translations"
+msgstr "Nkyerɛase ahoroɔ foforɔ"
+
+#: data/io.elementary.appcenter.appdata.xml.in:55
+msgid "New categories: Communication, Finance, Media Production"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:56
+msgid "Add Math to Science category"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:57
+msgid "Relax email address validator"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:58
+msgid "Present update availability more accurately"
+msgstr ""
+
 #: data/io.elementary.appcenter.appdata.xml.in:59
-#: data/io.elementary.appcenter.appdata.xml.in:70
-#: data/io.elementary.appcenter.appdata.xml.in:79
-#: data/io.elementary.appcenter.appdata.xml.in:88
+msgid "Category graphics revamped"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:74
+#: data/io.elementary.appcenter.appdata.xml.in:86
 #: data/io.elementary.appcenter.appdata.xml.in:97
 #: data/io.elementary.appcenter.appdata.xml.in:106
 #: data/io.elementary.appcenter.appdata.xml.in:115
@@ -75,100 +174,65 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:142
 #: data/io.elementary.appcenter.appdata.xml.in:151
 #: data/io.elementary.appcenter.appdata.xml.in:160
-#: data/io.elementary.appcenter.appdata.xml.in:170
-#: data/io.elementary.appcenter.appdata.xml.in:180
-msgid "New translations"
-msgstr "Nkyerɛase ahoroɔ foforɔ"
-
-#: data/io.elementary.appcenter.appdata.xml.in:34
-msgid "New categories: Communication, Finance, Media Production"
-msgstr ""
-
-#: data/io.elementary.appcenter.appdata.xml.in:35
-msgid "Add Math to Science category"
-msgstr ""
-
-#: data/io.elementary.appcenter.appdata.xml.in:36
-msgid "Relax email address validator"
-msgstr ""
-
-#: data/io.elementary.appcenter.appdata.xml.in:37
-msgid "Present update availability more accurately"
-msgstr ""
-
-#: data/io.elementary.appcenter.appdata.xml.in:38
-msgid "Category graphics revamped"
-msgstr ""
-
-#: data/io.elementary.appcenter.appdata.xml.in:53
-#: data/io.elementary.appcenter.appdata.xml.in:65
-#: data/io.elementary.appcenter.appdata.xml.in:76
-#: data/io.elementary.appcenter.appdata.xml.in:85
-#: data/io.elementary.appcenter.appdata.xml.in:94
-#: data/io.elementary.appcenter.appdata.xml.in:103
-#: data/io.elementary.appcenter.appdata.xml.in:112
-#: data/io.elementary.appcenter.appdata.xml.in:121
-#: data/io.elementary.appcenter.appdata.xml.in:130
-#: data/io.elementary.appcenter.appdata.xml.in:139
-#: data/io.elementary.appcenter.appdata.xml.in:148
-#: data/io.elementary.appcenter.appdata.xml.in:157
+#: data/io.elementary.appcenter.appdata.xml.in:169
+#: data/io.elementary.appcenter.appdata.xml.in:178
 #, fuzzy
 msgid "Bug fixes and improve performance."
 msgstr "Nsiesie ahoroɔ ɛna afie wɔayɛ ama ɛyɛ adwuma yie sen kan no."
 
-#: data/io.elementary.appcenter.appdata.xml.in:55
+#: data/io.elementary.appcenter.appdata.xml.in:76
 msgid "Improve transaction success rate"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:56
+#: data/io.elementary.appcenter.appdata.xml.in:77
 msgid "Add Publishing to Office category"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:57
+#: data/io.elementary.appcenter.appdata.xml.in:78
 msgid "Improve descriptions of OS Updates"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:58
-#: data/io.elementary.appcenter.appdata.xml.in:69
-#: data/io.elementary.appcenter.appdata.xml.in:78
-#: data/io.elementary.appcenter.appdata.xml.in:87
-#: data/io.elementary.appcenter.appdata.xml.in:96
-#: data/io.elementary.appcenter.appdata.xml.in:105
-#: data/io.elementary.appcenter.appdata.xml.in:114
-#: data/io.elementary.appcenter.appdata.xml.in:123
-#: data/io.elementary.appcenter.appdata.xml.in:132
-#: data/io.elementary.appcenter.appdata.xml.in:141
-#: data/io.elementary.appcenter.appdata.xml.in:150
+#: data/io.elementary.appcenter.appdata.xml.in:79
+#: data/io.elementary.appcenter.appdata.xml.in:90
+#: data/io.elementary.appcenter.appdata.xml.in:99
+#: data/io.elementary.appcenter.appdata.xml.in:108
+#: data/io.elementary.appcenter.appdata.xml.in:117
+#: data/io.elementary.appcenter.appdata.xml.in:126
+#: data/io.elementary.appcenter.appdata.xml.in:135
+#: data/io.elementary.appcenter.appdata.xml.in:144
+#: data/io.elementary.appcenter.appdata.xml.in:153
+#: data/io.elementary.appcenter.appdata.xml.in:162
+#: data/io.elementary.appcenter.appdata.xml.in:171
 msgid "Various bug fixes and performance improvements"
 msgstr "Wɔayɛ nsiesie ɛna wɔasan nso ayɛ ama ɛyɛ adwuma yie sen kan no"
 
-#: data/io.elementary.appcenter.appdata.xml.in:67
+#: data/io.elementary.appcenter.appdata.xml.in:88
 msgid "Give details for Operating System Updates"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:68
+#: data/io.elementary.appcenter.appdata.xml.in:89
 msgid "Support mouse button navigation"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:159
+#: data/io.elementary.appcenter.appdata.xml.in:180
 msgid "Fix crash caused by entries with missing packages"
 msgstr "Wɔasiesie ɛhaw ahoroɔ a na ɛfi Packages bi ana ɛni so"
 
-#: data/io.elementary.appcenter.appdata.xml.in:166
+#: data/io.elementary.appcenter.appdata.xml.in:187
 msgid "Add capability to search by category and apply minor bug fixes."
 msgstr ""
 "Wɔayɛ ama wotumi hwehwɛ dwumadie bi wɔ dwumadie kuo mu na wotumi san nso yɛ "
 "nsiesie wɔ mu."
 
-#: data/io.elementary.appcenter.appdata.xml.in:168
+#: data/io.elementary.appcenter.appdata.xml.in:189
 msgid "It is now possible to search apps inside a category"
 msgstr "Siesie wobɛtumi ahwehwɛ dwumadie bi wɔ dwumadie kuo mu"
 
-#: data/io.elementary.appcenter.appdata.xml.in:169
+#: data/io.elementary.appcenter.appdata.xml.in:190
 msgid "Prevent multiple authentication dialogs when resuming from suspend"
 msgstr "Mma ɛnna Hokwan Pono no adi pii mmerɛ a ɛfi twesan (suspend) mu reba"
 
-#: data/io.elementary.appcenter.appdata.xml.in:176
+#: data/io.elementary.appcenter.appdata.xml.in:197
 #, fuzzy
 msgid ""
 "Search performance has beeen improved, the category name is now shown on the "
@@ -177,16 +241,16 @@ msgstr ""
 "Senea ɛhwehwɛ ade no anya nkɔanim. Siesie de wohu dwumadie kuo no wɔ soro "
 "hɔ. Wɔasan ayɛ nsiesie nketenkete bi."
 
-#: data/io.elementary.appcenter.appdata.xml.in:178
+#: data/io.elementary.appcenter.appdata.xml.in:199
 msgid "Fix Steam installation"
 msgstr "Siesie Steam dwumadie no"
 
-#: data/io.elementary.appcenter.appdata.xml.in:179
+#: data/io.elementary.appcenter.appdata.xml.in:200
 msgid "Make search asynchronous"
 msgstr "Ma ɛnhwehwɛ ade kokoa mu"
 
-#: data/io.elementary.appcenter.appdata.xml.in:234
-msgid "elementary LLC."
+#: data/io.elementary.appcenter.appdata.xml.in:255
+msgid "elementary, Inc."
 msgstr ""
 
 #: data/io.elementary.appcenter.desktop.in.in:3
@@ -198,11 +262,16 @@ msgid "@DESKTOP_ICON@"
 msgstr ""
 
 #: data/io.elementary.appcenter.desktop.in.in:7
-msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
+#, fuzzy
+msgid "install;uninstall;remove;catalogue;store;apps;software;"
 msgstr "install;uninstall;remove;catalogue;store;apps;updates;software;"
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
+msgstr ""
+
+#: data/io.elementary.appcenter.desktop.in.in:19
+msgid "system-software-update"
 msgstr ""
 
 #~ msgid "About AppCenter"

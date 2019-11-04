@@ -1,6 +1,5 @@
 src/Application.vala
 src/MainWindow.vala
-src/Settings.vala
 src/SuspendControl.vala
 src/Utils.vala
 src/Core/ChangeInformation.vala
@@ -13,6 +12,8 @@ src/Core/UpdateManager.vala
 src/Dialogs/ContentWarningDialog.vala
 src/Dialogs/RestartDialog.vala
 src/Dialogs/StripeDialog.vala
+src/Dialogs/UninstallConfirmDialog.vala
+src/Dialogs/UninstallFailDialog.vala
 src/Dialogs/UpdateFailDialog.vala
 src/Services/DBusInterfaces.vala
 src/Services/DBusServer.vala
