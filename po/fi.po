@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-29 15:31-0700\n"
-"PO-Revision-Date: 2019-09-02 20:22+0000\n"
+"PO-Revision-Date: 2019-11-05 20:24+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/fi/>\n"
@@ -300,9 +300,9 @@ msgid "Content Warning"
 msgstr "Sisältövaroitus"
 
 #: src/Dialogs/ContentWarningDialog.vala:30
-#, fuzzy, c-format
+#, c-format
 msgid "“%s” contains explicit content"
-msgstr "%s sisältää epäsiveellistä sisältöä"
+msgstr "“%s” sisältää epäsiveellistä sisältöä"
 
 #: src/Dialogs/ContentWarningDialog.vala:31
 #, fuzzy, c-format
@@ -513,16 +513,16 @@ msgstr "Annettu kortti on testikortti. Käytä oikeaa korttia jatkaaksesi."
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
 msgstr ""
+"Tämän sovelluksen poistaminen saattaa myös poistaa siihen liittyvät tiedot."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:35
-#, fuzzy
 msgid "Uninstall app?"
-msgstr "Poista asennus"
+msgstr "Poistetaanko sovellus?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:38
-#, fuzzy, c-format
+#, c-format
 msgid "Uninstall “%s”?"
-msgstr "Poista asennus"
+msgstr "Poistetaanko “%s”?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:144
@@ -537,14 +537,13 @@ msgstr ""
 "rikkoutuneesta sources-tiedostosta."
 
 #: src/Dialogs/UninstallFailDialog.vala:37
-#, fuzzy
 msgid "Failed to uninstall app"
-msgstr "Etsi ja asenna sovelluksia"
+msgstr "Sovelluksen poistaminen epäonnistui"
 
 #: src/Dialogs/UninstallFailDialog.vala:40
 #, c-format
 msgid "Failed to uninstall “%s”"
-msgstr ""
+msgstr "Sovelluksen “%s” poistaminen epäonnistui"
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
