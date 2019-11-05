@@ -324,16 +324,17 @@ public class AppCenterCore.Package : Object {
 
     public string origin_description {
         owned get {
+            unowned string origin = component.get_origin ();
             if (backend is PackageKitBackend) {
-                if (component.get_origin () == APPCENTER_PACKAGE_ORIGIN) {
+                if (origin == APPCENTER_PACKAGE_ORIGIN) {
                     return _("AppCenter");
-                } else if (component.get_origin () == DEPRECATED_ELEMENTARY_STABLE_PACKAGE_ORIGIN || component.get_origin () == ELEMENTARY_STABLE_PACKAGE_ORIGIN) {
+                } else if (origin == DEPRECATED_ELEMENTARY_STABLE_PACKAGE_ORIGIN || origin == ELEMENTARY_STABLE_PACKAGE_ORIGIN) {
                     return _("elementary Updates");
-                } else if (component.get_origin ().has_prefix ("ubuntu-")) {
+                } else if (origin.has_prefix ("ubuntu-")) {
                     return _("Ubuntu (non-curated)");
                 }
             } else if (backend is FlatpakBackend) {
-                return _("%s (non-curated)").printf (component.get_origin ());
+                return _("%s (non-curated)").printf (origin);
             } else if (backend is UbuntuDriversBackend) {
                 return _("Ubuntu Drivers");
             }
