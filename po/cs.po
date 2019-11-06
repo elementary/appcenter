@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-29 15:31-0700\n"
+"POT-Creation-Date: 2019-11-06 21:09+0000\n"
 "PO-Revision-Date: 2019-02-07 00:05+0000\n"
 "Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
 "Language-Team: Czech <https://weblate.elementary.io/projects/appcenter/"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:327
+#: src/Application.vala:38 src/Core/Package.vala:330
 msgid "AppCenter"
 msgstr "AppCentrum"
 
@@ -48,14 +48,14 @@ msgstr "Instalace %s byla úspěšná"
 msgid "There Was An Error Installing %s."
 msgstr "Při instalaci %s se vyskytla chyba."
 
-#: src/MainWindow.vala:141 src/Views/Homepage.vala:282
-#: src/Views/Homepage.vala:294 src/Views/Homepage.vala:299
-#: src/Views/Homepage.vala:310
+#: src/MainWindow.vala:141 src/Views/Homepage.vala:297
+#: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
+#: src/Views/Homepage.vala:325
 msgid "Home"
 msgstr "Domů"
 
-#: src/MainWindow.vala:142 src/Views/InstalledView.vala:32
-#: src/Views/InstalledView.vala:57
+#: src/MainWindow.vala:142 src/Views/InstalledView.vala:33
+#: src/Views/InstalledView.vala:58
 msgctxt "view"
 msgid "Installed"
 msgstr "Nainstalované"
@@ -225,35 +225,35 @@ msgstr[0] "%u aktualizace je pro váš systém k dispozici"
 msgstr[1] "%u aktualizace jsou pro váš systém k dispozici"
 msgstr[2] "%u aktualizací je pro váš systém k dispozici"
 
-#: src/Core/Package.vala:298
+#: src/Core/Package.vala:300
 #, c-format
 msgid "%s Developers"
 msgstr "Vývojáři %s"
 
-#: src/Core/Package.vala:329
+#: src/Core/Package.vala:332
 #, fuzzy
 msgid "elementary Updates"
 msgstr "Nedávno aktualizované"
 
-#: src/Core/Package.vala:331
+#: src/Core/Package.vala:334
 msgid "Ubuntu (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:334
+#: src/Core/Package.vala:337
 #, fuzzy, c-format
 msgid "%s (non-curated)"
 msgstr "%s (lokální)"
 
-#: src/Core/Package.vala:336
+#: src/Core/Package.vala:339
 #, fuzzy
 msgid "Ubuntu Drivers"
 msgstr "Ovladače"
 
-#: src/Core/Package.vala:339
+#: src/Core/Package.vala:342
 msgid "Unknown Origin (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:441
+#: src/Core/Package.vala:444
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
@@ -688,7 +688,7 @@ msgstr "Aktuální trendy"
 msgid "Categories"
 msgstr "Kategorie"
 
-#: src/Views/Homepage.vala:299 src/Views/Homepage.vala:310
+#: src/Views/Homepage.vala:314 src/Views/Homepage.vala:325
 #, c-format
 msgid "Search %s"
 msgstr "Hledat %s"

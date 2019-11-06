@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-29 15:31-0700\n"
+"POT-Creation-Date: 2019-11-06 21:09+0000\n"
 "PO-Revision-Date: 2019-11-03 00:24+0000\n"
 "Last-Translator: Daniel R. <riesp@pm.me>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
@@ -28,7 +28,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:327
+#: src/Application.vala:38 src/Core/Package.vala:330
 msgid "AppCenter"
 msgstr "Centro de aplicaciones"
 
@@ -56,14 +56,14 @@ msgstr "%s se instaló correctamente"
 msgid "There Was An Error Installing %s."
 msgstr "Ocurrió un error al instalar %s."
 
-#: src/MainWindow.vala:141 src/Views/Homepage.vala:282
-#: src/Views/Homepage.vala:294 src/Views/Homepage.vala:299
-#: src/Views/Homepage.vala:310
+#: src/MainWindow.vala:141 src/Views/Homepage.vala:297
+#: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
+#: src/Views/Homepage.vala:325
 msgid "Home"
 msgstr "Principal"
 
-#: src/MainWindow.vala:142 src/Views/InstalledView.vala:32
-#: src/Views/InstalledView.vala:57
+#: src/MainWindow.vala:142 src/Views/InstalledView.vala:33
+#: src/Views/InstalledView.vala:58
 msgctxt "view"
 msgid "Installed"
 msgstr "Instaladas"
@@ -231,33 +231,33 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "Hay %u actualización disponible para el sistema"
 msgstr[1] "Hay %u actualizaciones disponibles para el sistema"
 
-#: src/Core/Package.vala:298
+#: src/Core/Package.vala:300
 #, c-format
 msgid "%s Developers"
 msgstr "Desarrolladores de %s"
 
-#: src/Core/Package.vala:329
+#: src/Core/Package.vala:332
 msgid "elementary Updates"
 msgstr "Actualizaciones de elementary"
 
-#: src/Core/Package.vala:331
+#: src/Core/Package.vala:334
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (no verificadas)"
 
-#: src/Core/Package.vala:334
+#: src/Core/Package.vala:337
 #, c-format
 msgid "%s (non-curated)"
 msgstr "%s (no verificadas)"
 
-#: src/Core/Package.vala:336
+#: src/Core/Package.vala:339
 msgid "Ubuntu Drivers"
 msgstr "Controladores de Ubuntu"
 
-#: src/Core/Package.vala:339
+#: src/Core/Package.vala:342
 msgid "Unknown Origin (non-curated)"
 msgstr "Origen desconocido (no verificadas)"
 
-#: src/Core/Package.vala:441
+#: src/Core/Package.vala:444
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
@@ -697,7 +697,7 @@ msgstr "En tendencia"
 msgid "Categories"
 msgstr "Categorías"
 
-#: src/Views/Homepage.vala:299 src/Views/Homepage.vala:310
+#: src/Views/Homepage.vala:314 src/Views/Homepage.vala:325
 #, c-format
 msgid "Search %s"
 msgstr "Buscar %s"

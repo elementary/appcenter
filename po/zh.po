@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-29 15:31-0700\n"
+"POT-Creation-Date: 2019-11-06 21:09+0000\n"
 "PO-Revision-Date: 2019-05-15 01:18+0000\n"
 "Last-Translator: Jimmy Sun <jimmysuncn@hotmail.com>\n"
 "Language-Team: Chinese <https://l10n.elementary.io/projects/appcenter/"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Generator: Weblate 3.6.1\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:327
+#: src/Application.vala:38 src/Core/Package.vala:330
 msgid "AppCenter"
 msgstr "应用中心"
 
@@ -47,14 +47,14 @@ msgstr "%s已被安装成功"
 msgid "There Was An Error Installing %s."
 msgstr "在安装%s时遇到一个错误。"
 
-#: src/MainWindow.vala:141 src/Views/Homepage.vala:282
-#: src/Views/Homepage.vala:294 src/Views/Homepage.vala:299
-#: src/Views/Homepage.vala:310
+#: src/MainWindow.vala:141 src/Views/Homepage.vala:297
+#: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
+#: src/Views/Homepage.vala:325
 msgid "Home"
 msgstr "首页"
 
-#: src/MainWindow.vala:142 src/Views/InstalledView.vala:32
-#: src/Views/InstalledView.vala:57
+#: src/MainWindow.vala:142 src/Views/InstalledView.vala:33
+#: src/Views/InstalledView.vala:58
 #, fuzzy
 msgctxt "view"
 msgid "Installed"
@@ -221,35 +221,35 @@ msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "您的系统有%u的可用更新"
 
-#: src/Core/Package.vala:298
+#: src/Core/Package.vala:300
 #, fuzzy, c-format
 msgid "%s Developers"
 msgstr "%s个开发者"
 
-#: src/Core/Package.vala:329
+#: src/Core/Package.vala:332
 #, fuzzy
 msgid "elementary Updates"
 msgstr "最近更新"
 
-#: src/Core/Package.vala:331
+#: src/Core/Package.vala:334
 msgid "Ubuntu (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:334
+#: src/Core/Package.vala:337
 #, fuzzy, c-format
 msgid "%s (non-curated)"
 msgstr "%s（本地）"
 
-#: src/Core/Package.vala:336
+#: src/Core/Package.vala:339
 #, fuzzy
 msgid "Ubuntu Drivers"
 msgstr "驱动"
 
-#: src/Core/Package.vala:339
+#: src/Core/Package.vala:342
 msgid "Unknown Origin (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:441
+#: src/Core/Package.vala:444
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
@@ -661,7 +661,7 @@ msgstr "趋向"
 msgid "Categories"
 msgstr "类别"
 
-#: src/Views/Homepage.vala:299 src/Views/Homepage.vala:310
+#: src/Views/Homepage.vala:314 src/Views/Homepage.vala:325
 #, c-format
 msgid "Search %s"
 msgstr "搜索%s"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-29 15:31-0700\n"
+"POT-Creation-Date: 2019-11-06 21:09+0000\n"
 "PO-Revision-Date: 2015-11-06 16:06+0000\n"
 "Last-Translator: elementaryart (old) <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Generator: Launchpad (build 18331)\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:327
+#: src/Application.vala:38 src/Core/Package.vala:330
 msgid "AppCenter"
 msgstr ""
 
@@ -43,15 +43,15 @@ msgstr ""
 msgid "There Was An Error Installing %s."
 msgstr ""
 
-#: src/MainWindow.vala:141 src/Views/Homepage.vala:282
-#: src/Views/Homepage.vala:294 src/Views/Homepage.vala:299
-#: src/Views/Homepage.vala:310
+#: src/MainWindow.vala:141 src/Views/Homepage.vala:297
+#: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
+#: src/Views/Homepage.vala:325
 #, fuzzy
 msgid "Home"
 msgstr "Уй саҳифасига"
 
-#: src/MainWindow.vala:142 src/Views/InstalledView.vala:32
-#: src/Views/InstalledView.vala:57
+#: src/MainWindow.vala:142 src/Views/InstalledView.vala:33
+#: src/Views/InstalledView.vala:58
 #, fuzzy
 msgctxt "view"
 msgid "Installed"
@@ -220,33 +220,33 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Core/Package.vala:298
+#: src/Core/Package.vala:300
 #, c-format
 msgid "%s Developers"
 msgstr ""
 
-#: src/Core/Package.vala:329
+#: src/Core/Package.vala:332
 msgid "elementary Updates"
 msgstr ""
 
-#: src/Core/Package.vala:331
+#: src/Core/Package.vala:334
 msgid "Ubuntu (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:334
+#: src/Core/Package.vala:337
 #, c-format
 msgid "%s (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:336
+#: src/Core/Package.vala:339
 msgid "Ubuntu Drivers"
 msgstr ""
 
-#: src/Core/Package.vala:339
+#: src/Core/Package.vala:342
 msgid "Unknown Origin (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:441
+#: src/Core/Package.vala:444
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
@@ -654,7 +654,7 @@ msgstr ""
 msgid "Categories"
 msgstr "Категориялар"
 
-#: src/Views/Homepage.vala:299 src/Views/Homepage.vala:310
+#: src/Views/Homepage.vala:314 src/Views/Homepage.vala:325
 #, c-format
 msgid "Search %s"
 msgstr ""
