@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-29 15:31-0700\n"
-"PO-Revision-Date: 2019-10-12 13:23+0000\n"
+"PO-Revision-Date: 2019-11-06 10:40+0000\n"
 "Last-Translator: Shtonchjo <shtonchjo@gmail.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/eo/>\n"
@@ -254,8 +254,8 @@ msgstr "Nekonata Deveno (ne kontrolita)"
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
-"Aplikaĵa stato ne estas agordita kiel instalita en la Aplikaĵa Centro, "
-"rilate la pakaĵon: %s"
+"Aplikaĵa stato ne difinita kiel instalita en la Aplikaĵa Centro, rilate la "
+"pakaĵon: %s"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -303,19 +303,19 @@ msgid "Content Warning"
 msgstr "Averto pri Enhavo"
 
 #: src/Dialogs/ContentWarningDialog.vala:30
-#, fuzzy, c-format
+#, c-format
 msgid "“%s” contains explicit content"
-msgstr "%s Prezentas Ne-porinfanan Enhavon"
+msgstr "„%s“ prezentas fian enhavon"
 
 #: src/Dialogs/ContentWarningDialog.vala:31
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "“%s” may contain content only suitable for adults or that may be sensitive "
 "or disturbing. In general, elementary does not review or endorse the "
 "contents of this app."
 msgstr ""
-"%s povus prezenti enhavon ne-porinfanan, nur por plenkreskuloj, aŭ ofendan "
-"aŭ ĝenan. Ĝenerale, elementary ne kontrolas aŭ validigas le enhavon de ĉi "
+"„%s“ povus prezenti enhavon taŭgan nur al plenkreskuloj, aŭ ofendan aŭ "
+"ĝenan. Ĝenerale, elementary ne kontrolas aŭ validigas le enhavon de ĉi "
 "aplikaĵo."
 
 #: src/Dialogs/ContentWarningDialog.vala:33
