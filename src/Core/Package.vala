@@ -36,8 +36,10 @@ public class AppCenterCore.PackageDetails : Object {
 
 public class AppCenterCore.Package : Object {
     public const string APPCENTER_PACKAGE_ORIGIN = "appcenter-bionic-main";
-    private const string ELEMENTARY_STABLE_PACKAGE_ORIGIN = "stable-bionic-main";
-    private const string ELEMENTARY_DAILY_PACKAGE_ORIGIN = "daily-bionic-main";
+    // We stopped using this origin in elementary OS 5.1, references to this can be removed
+    // after everyone has had chance to update their appstream-data-pantheon package
+    private const string DEPRECATED_ELEMENTARY_STABLE_PACKAGE_ORIGIN = "stable-bionic-main";
+    private const string ELEMENTARY_STABLE_PACKAGE_ORIGIN = "elementary-stable-bionic-main";
 
     /* Note: These are just a stopgap, and are not a replacement for a more
      * fleshed out parental control system. We assume any of these "moderate"
@@ -206,8 +208,8 @@ public class AppCenterCore.Package : Object {
         get {
             switch (component.get_origin ()) {
                 case APPCENTER_PACKAGE_ORIGIN:
+                case DEPRECATED_ELEMENTARY_STABLE_PACKAGE_ORIGIN:
                 case ELEMENTARY_STABLE_PACKAGE_ORIGIN:
-                case ELEMENTARY_DAILY_PACKAGE_ORIGIN:
                     return true;
                 default:
                     return false;
@@ -322,16 +324,17 @@ public class AppCenterCore.Package : Object {
 
     public string origin_description {
         owned get {
+            unowned string origin = component.get_origin ();
             if (backend is PackageKitBackend) {
-                if (component.get_origin () == APPCENTER_PACKAGE_ORIGIN) {
+                if (origin == APPCENTER_PACKAGE_ORIGIN) {
                     return _("AppCenter");
-                } else if (component.get_origin () == ELEMENTARY_STABLE_PACKAGE_ORIGIN || component.get_origin () == ELEMENTARY_DAILY_PACKAGE_ORIGIN) {
+                } else if (origin == DEPRECATED_ELEMENTARY_STABLE_PACKAGE_ORIGIN || origin == ELEMENTARY_STABLE_PACKAGE_ORIGIN) {
                     return _("elementary Updates");
-                } else if (component.get_origin ().has_prefix ("ubuntu-")) {
+                } else if (origin.has_prefix ("ubuntu-")) {
                     return _("Ubuntu (non-curated)");
                 }
             } else if (backend is FlatpakBackend) {
-                return _("%s (non-curated)").printf (component.get_origin ());
+                return _("%s (non-curated)").printf (origin);
             } else if (backend is UbuntuDriversBackend) {
                 return _("Ubuntu Drivers");
             }

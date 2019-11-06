@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-29 15:31-0700\n"
-"PO-Revision-Date: 2019-07-07 10:28+0000\n"
+"PO-Revision-Date: 2019-11-05 20:24+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/appcenter/extra/"
 "fr/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
@@ -37,67 +37,72 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
 msgid "Add support for Flatpak apps"
-msgstr ""
+msgstr "Ajout de la prise en charge des applications Flatpak"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "Warn about non-curated apps"
-msgstr ""
+msgstr "Avertissements à propos des applications non vérifiées"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Show an error dialog if an installation fails"
 msgstr ""
+"Affichage d'une boîte de dialogue d'erreur lorsque une installation échoue"
 
 #: data/io.elementary.appcenter.appdata.xml.in:24
 msgid ""
 "Fix an issue where some apps couldn't be uninstalled from the Applications "
 "Menu"
 msgstr ""
+"Correction d'un problème où certaines applications ne pouvaient pas être "
+"désinstallées depuis le menu Applications"
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
 msgid "Allow browsing and uninstalling apps while offline"
 msgstr ""
+"Il est maintenant possible de naviguer et de désinstaller des applications "
+"sans connexion"
 
 #: data/io.elementary.appcenter.appdata.xml.in:26
 msgid "Fix twitter share URLs"
-msgstr ""
+msgstr "Correction des URL de partage vers Twitter"
 
 #: data/io.elementary.appcenter.appdata.xml.in:27
 msgid "Drop Google+ from the share menu"
-msgstr ""
+msgstr "Suppression de Google+ du menu de partage"
 
 #: data/io.elementary.appcenter.appdata.xml.in:28
 msgid "Animate screenshot background while loading"
-msgstr ""
+msgstr "Animation de l'arrière-plan des captures d'écran pendant le chargement"
 
 #: data/io.elementary.appcenter.appdata.xml.in:29
 msgid "Add navigation arrows for screenshots"
-msgstr ""
+msgstr "Ajout de flèches de navigation pour les captures-d'écran"
 
 #: data/io.elementary.appcenter.appdata.xml.in:30
 msgid "Don't show uninstall buttons for essential system components"
 msgstr ""
+"Les boutons de désinstallation ne sont plus affichées pour les composants "
+"essentiels au système"
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
 msgid "Properly display proprietary licenses"
-msgstr ""
+msgstr "Affichage correct des licences de propriété"
 
 #: data/io.elementary.appcenter.appdata.xml.in:32
 msgid "Fix some layout issues"
-msgstr ""
+msgstr "Correction de certains problèmes de disposition"
 
 #: data/io.elementary.appcenter.appdata.xml.in:33
 msgid "Fix crashes"
-msgstr ""
+msgstr "Correction de plantages"
 
 #: data/io.elementary.appcenter.appdata.xml.in:34
-#, fuzzy
 msgid "Performance improvements"
-msgstr "Diverses corrections d’erreurs et amélioration des performances"
+msgstr "Améliorations des performances"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
-#, fuzzy
 msgid "Updated translations"
-msgstr "Nouvelles traductions"
+msgstr "Mise à jour des traductions"
 
 #: data/io.elementary.appcenter.appdata.xml.in:42
 msgid "Meson build system fixes"
@@ -254,9 +259,8 @@ msgid "Make search asynchronous"
 msgstr "La recherche est maintenant asynchrone"
 
 #: data/io.elementary.appcenter.appdata.xml.in:255
-#, fuzzy
 msgid "elementary, Inc."
-msgstr "elementary LLC."
+msgstr "elementary, Inc."
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
@@ -267,11 +271,10 @@ msgid "@DESKTOP_ICON@"
 msgstr "@DESKTOP_ICON@"
 
 #: data/io.elementary.appcenter.desktop.in.in:7
-#, fuzzy
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
 msgstr ""
-"installer;désinstaller;supprimer;catalogue;store;magasin;boutique;logithèque;"
-"applications;applis;mises;jour;logiciel;programme;"
+"installer;désinstaller;supprimer;catalogue;magasin;boutique;logithèque;applic"
+"ations;logiciel;programme;"
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
@@ -279,7 +282,7 @@ msgstr "Vérifier les mises à jour"
 
 #: data/io.elementary.appcenter.desktop.in.in:19
 msgid "system-software-update"
-msgstr ""
+msgstr "system-software-update"
 
 #~ msgid "About AppCenter"
 #~ msgstr "À propos du Centre d’applications"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-29 15:31-0700\n"
-"PO-Revision-Date: 2019-09-23 21:23+0000\n"
+"PO-Revision-Date: 2019-11-05 20:24+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/extra/"
 "tr/>\n"
@@ -90,14 +90,12 @@ msgid "Fix crashes"
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:34
-#, fuzzy
 msgid "Performance improvements"
-msgstr "Çeşitli bug düzeltmeleri ve performans iyileştirmeleri"
+msgstr "Performans iyileştirmeleri"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
-#, fuzzy
 msgid "Updated translations"
-msgstr "Yeni çeviriler"
+msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:42
 msgid "Meson build system fixes"
@@ -244,9 +242,8 @@ msgid "Make search asynchronous"
 msgstr "Eş zamanlı olmayan arama yapmak"
 
 #: data/io.elementary.appcenter.appdata.xml.in:255
-#, fuzzy
 msgid "elementary, Inc."
-msgstr "elementary LLC."
+msgstr "elementary, Inc."
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
@@ -257,9 +254,8 @@ msgid "@DESKTOP_ICON@"
 msgstr "@DESKTOP_ICON@"
 
 #: data/io.elementary.appcenter.desktop.in.in:7
-#, fuzzy
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
-msgstr "yükle;kaldır;sil;katalog;mağaza;uygulamalar;güncellemeler;yazılım;"
+msgstr "yükle;kaldır;sil;katalog;mağaza;uygulamalar;yazılım;"
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
