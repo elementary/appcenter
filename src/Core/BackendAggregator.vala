@@ -175,7 +175,10 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
 
     public async bool update_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
         var success = true;
-        foreach (var backend in backends) {
+        // updatable_packages is a HashMultiMap of packages to be updated, where the key is
+        // a pointer to the backend that is capable of updating them. Call update on each of these
+        // backends to update the packages belonging to them
+        foreach (var backend in package.change_information.updatable_packages.get_keys ()) {
             if (!yield backend.update_package (package, (owned)cb, cancellable)) {
                 success = false;
             }
