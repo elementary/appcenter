@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-29 15:31-0700\n"
-"PO-Revision-Date: 2019-09-02 20:22+0000\n"
+"POT-Creation-Date: 2019-11-06 21:09+0000\n"
+"PO-Revision-Date: 2019-11-05 20:24+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/fi/>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:327
+#: src/Application.vala:38 src/Core/Package.vala:330
 msgid "AppCenter"
 msgstr "Sovelluskeskus"
 
@@ -47,14 +47,14 @@ msgstr "%s asennettiin onnistuneesti"
 msgid "There Was An Error Installing %s."
 msgstr "Tapahtui virhe asennettaessa %s."
 
-#: src/MainWindow.vala:141 src/Views/Homepage.vala:282
-#: src/Views/Homepage.vala:294 src/Views/Homepage.vala:299
-#: src/Views/Homepage.vala:310
+#: src/MainWindow.vala:141 src/Views/Homepage.vala:297
+#: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
+#: src/Views/Homepage.vala:325
 msgid "Home"
 msgstr "Etusivu"
 
-#: src/MainWindow.vala:142 src/Views/InstalledView.vala:32
-#: src/Views/InstalledView.vala:57
+#: src/MainWindow.vala:142 src/Views/InstalledView.vala:33
+#: src/Views/InstalledView.vala:58
 msgctxt "view"
 msgid "Installed"
 msgstr "Asennettu"
@@ -222,33 +222,33 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "Järjestelmälle on saatavilla %u päivitys"
 msgstr[1] "Järjestelmälle on saatavilla %u päivitystä"
 
-#: src/Core/Package.vala:298
+#: src/Core/Package.vala:300
 #, c-format
 msgid "%s Developers"
 msgstr "%s-kehittäjät"
 
-#: src/Core/Package.vala:329
+#: src/Core/Package.vala:332
 msgid "elementary Updates"
 msgstr "elementary-päivitykset"
 
-#: src/Core/Package.vala:331
+#: src/Core/Package.vala:334
 msgid "Ubuntu (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:334
+#: src/Core/Package.vala:337
 #, fuzzy, c-format
 msgid "%s (non-curated)"
 msgstr "%s (paikallinen)"
 
-#: src/Core/Package.vala:336
+#: src/Core/Package.vala:339
 msgid "Ubuntu Drivers"
 msgstr "Ubuntu-ajurit"
 
-#: src/Core/Package.vala:339
+#: src/Core/Package.vala:342
 msgid "Unknown Origin (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:441
+#: src/Core/Package.vala:444
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
@@ -300,9 +300,9 @@ msgid "Content Warning"
 msgstr "Sisältövaroitus"
 
 #: src/Dialogs/ContentWarningDialog.vala:30
-#, fuzzy, c-format
+#, c-format
 msgid "“%s” contains explicit content"
-msgstr "%s sisältää epäsiveellistä sisältöä"
+msgstr "“%s” sisältää epäsiveellistä sisältöä"
 
 #: src/Dialogs/ContentWarningDialog.vala:31
 #, fuzzy, c-format
@@ -513,16 +513,16 @@ msgstr "Annettu kortti on testikortti. Käytä oikeaa korttia jatkaaksesi."
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
 msgstr ""
+"Tämän sovelluksen poistaminen saattaa myös poistaa siihen liittyvät tiedot."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:35
-#, fuzzy
 msgid "Uninstall app?"
-msgstr "Poista asennus"
+msgstr "Poistetaanko sovellus?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:38
-#, fuzzy, c-format
+#, c-format
 msgid "Uninstall “%s”?"
-msgstr "Poista asennus"
+msgstr "Poistetaanko “%s”?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:144
@@ -537,14 +537,13 @@ msgstr ""
 "rikkoutuneesta sources-tiedostosta."
 
 #: src/Dialogs/UninstallFailDialog.vala:37
-#, fuzzy
 msgid "Failed to uninstall app"
-msgstr "Etsi ja asenna sovelluksia"
+msgstr "Sovelluksen poistaminen epäonnistui"
 
 #: src/Dialogs/UninstallFailDialog.vala:40
 #, c-format
 msgid "Failed to uninstall “%s”"
-msgstr ""
+msgstr "Sovelluksen “%s” poistaminen epäonnistui"
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
@@ -677,7 +676,7 @@ msgstr "Nousussa"
 msgid "Categories"
 msgstr "Luokat"
 
-#: src/Views/Homepage.vala:299 src/Views/Homepage.vala:310
+#: src/Views/Homepage.vala:314 src/Views/Homepage.vala:325
 #, c-format
 msgid "Search %s"
 msgstr "Etsi %s"
