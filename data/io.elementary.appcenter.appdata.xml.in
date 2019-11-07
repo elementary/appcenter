@@ -20,7 +20,7 @@
         <p>Minor fixes</p>
         <ul>
           <li>Prevent ghost update notification when there are no updates available</li>
-          <li>Speedup loading of installed applications view</li>
+          <li>Speed up loading apps in the Installed view</li>
         </ul>
       </description>
     </release>
