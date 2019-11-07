@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-29 15:31-0700\n"
+"POT-Creation-Date: 2019-11-06 21:09+0000\n"
 "PO-Revision-Date: 2019-07-03 14:02+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/appcenter/extra/"
@@ -34,164 +34,107 @@ msgstr ""
 "트 검색으로 새 앱들을 둘러보세요. 앱센터는 운영체제의 모든 부분을 최신 버전으"
 "로 업데이트하고 새로운 기능과 수정본을 적용하는 데도 기여합니다."
 
-#: data/io.elementary.appcenter.appdata.xml.in:21
-msgid "Add support for Flatpak apps"
+#: data/io.elementary.appcenter.appdata.xml.in:20
+msgid "Minor fixes"
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
+msgid "Prevent ghost update notification when there are no updates available"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:29
+msgid "Add support for Flatpak apps"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:30
 msgid "Warn about non-curated apps"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:23
+#: data/io.elementary.appcenter.appdata.xml.in:31
 msgid "Show an error dialog if an installation fails"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:24
+#: data/io.elementary.appcenter.appdata.xml.in:32
 msgid ""
 "Fix an issue where some apps couldn't be uninstalled from the Applications "
 "Menu"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:25
+#: data/io.elementary.appcenter.appdata.xml.in:33
 msgid "Allow browsing and uninstalling apps while offline"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:26
+#: data/io.elementary.appcenter.appdata.xml.in:34
 msgid "Fix twitter share URLs"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:27
+#: data/io.elementary.appcenter.appdata.xml.in:35
 msgid "Drop Google+ from the share menu"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:28
+#: data/io.elementary.appcenter.appdata.xml.in:36
 msgid "Animate screenshot background while loading"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:29
+#: data/io.elementary.appcenter.appdata.xml.in:37
 msgid "Add navigation arrows for screenshots"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:30
+#: data/io.elementary.appcenter.appdata.xml.in:38
 msgid "Don't show uninstall buttons for essential system components"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:31
+#: data/io.elementary.appcenter.appdata.xml.in:39
 msgid "Properly display proprietary licenses"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:32
+#: data/io.elementary.appcenter.appdata.xml.in:40
 msgid "Fix some layout issues"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:33
+#: data/io.elementary.appcenter.appdata.xml.in:41
 msgid "Fix crashes"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:34
+#: data/io.elementary.appcenter.appdata.xml.in:42
 #, fuzzy
 msgid "Performance improvements"
 msgstr "여러 가지 버그 해결 및 성능 향상"
 
-#: data/io.elementary.appcenter.appdata.xml.in:35
+#: data/io.elementary.appcenter.appdata.xml.in:43
 #, fuzzy
 msgid "Updated translations"
 msgstr "새 번역"
 
-#: data/io.elementary.appcenter.appdata.xml.in:42
+#: data/io.elementary.appcenter.appdata.xml.in:50
 msgid "Meson build system fixes"
 msgstr "Meson 빌드 시스템 수정"
 
-#: data/io.elementary.appcenter.appdata.xml.in:43
+#: data/io.elementary.appcenter.appdata.xml.in:51
 msgid "Improve window state restoration"
 msgstr "창 상태 복원 기능 개선"
 
-#: data/io.elementary.appcenter.appdata.xml.in:44
+#: data/io.elementary.appcenter.appdata.xml.in:52
 msgid "Prevent action buttons from jumping around"
 msgstr "실행 버튼이 튀어나오지 못하도록 방지"
 
-#: data/io.elementary.appcenter.appdata.xml.in:45
+#: data/io.elementary.appcenter.appdata.xml.in:53
 msgid "Remove reset paid apps gsettings key"
 msgstr "지불된 앱의 gsettings 키 초기화 값 제거"
 
-#: data/io.elementary.appcenter.appdata.xml.in:46
+#: data/io.elementary.appcenter.appdata.xml.in:54
 msgid "Memory management refinements"
 msgstr "메모리 관리 능력 향상"
 
-#: data/io.elementary.appcenter.appdata.xml.in:47
+#: data/io.elementary.appcenter.appdata.xml.in:55
 msgid ""
 "Add conditional compilation for disabling dynamic remote homepage content"
 msgstr "동적 원격 홈페이지 콘텐츠 비활성화를 위한 조건부 편집 추가"
 
-#: data/io.elementary.appcenter.appdata.xml.in:48
-#: data/io.elementary.appcenter.appdata.xml.in:60
-#: data/io.elementary.appcenter.appdata.xml.in:67
-#: data/io.elementary.appcenter.appdata.xml.in:80
-#: data/io.elementary.appcenter.appdata.xml.in:91
-#: data/io.elementary.appcenter.appdata.xml.in:100
-#: data/io.elementary.appcenter.appdata.xml.in:109
-#: data/io.elementary.appcenter.appdata.xml.in:118
-#: data/io.elementary.appcenter.appdata.xml.in:127
-#: data/io.elementary.appcenter.appdata.xml.in:136
-#: data/io.elementary.appcenter.appdata.xml.in:145
-#: data/io.elementary.appcenter.appdata.xml.in:154
-#: data/io.elementary.appcenter.appdata.xml.in:163
-#: data/io.elementary.appcenter.appdata.xml.in:172
-#: data/io.elementary.appcenter.appdata.xml.in:181
-#: data/io.elementary.appcenter.appdata.xml.in:191
-#: data/io.elementary.appcenter.appdata.xml.in:201
-msgid "New translations"
-msgstr "새 번역"
-
-#: data/io.elementary.appcenter.appdata.xml.in:55
-msgid "New categories: Communication, Finance, Media Production"
-msgstr "새 카테고리: 커뮤니케이션, 금융, 영상 제작"
-
 #: data/io.elementary.appcenter.appdata.xml.in:56
-msgid "Add Math to Science category"
-msgstr "과학 카테고리에 수학 추가"
-
-#: data/io.elementary.appcenter.appdata.xml.in:57
-msgid "Relax email address validator"
-msgstr "이메일 주소 검사기 수정"
-
-#: data/io.elementary.appcenter.appdata.xml.in:58
-msgid "Present update availability more accurately"
-msgstr "보다 정확하게 제공되는 업데이트 가용성"
-
-#: data/io.elementary.appcenter.appdata.xml.in:59
-msgid "Category graphics revamped"
-msgstr "카테고리 그래픽 새로 손질함"
-
-#: data/io.elementary.appcenter.appdata.xml.in:74
-#: data/io.elementary.appcenter.appdata.xml.in:86
-#: data/io.elementary.appcenter.appdata.xml.in:97
-#: data/io.elementary.appcenter.appdata.xml.in:106
-#: data/io.elementary.appcenter.appdata.xml.in:115
-#: data/io.elementary.appcenter.appdata.xml.in:124
-#: data/io.elementary.appcenter.appdata.xml.in:133
-#: data/io.elementary.appcenter.appdata.xml.in:142
-#: data/io.elementary.appcenter.appdata.xml.in:151
-#: data/io.elementary.appcenter.appdata.xml.in:160
-#: data/io.elementary.appcenter.appdata.xml.in:169
-#: data/io.elementary.appcenter.appdata.xml.in:178
-msgid "Bug fixes and improve performance."
-msgstr "버그 수정 및 기능 향상."
-
-#: data/io.elementary.appcenter.appdata.xml.in:76
-msgid "Improve transaction success rate"
-msgstr "거래 성공률 향상"
-
-#: data/io.elementary.appcenter.appdata.xml.in:77
-msgid "Add Publishing to Office category"
-msgstr "오피스 카테고리에 출판 추가"
-
-#: data/io.elementary.appcenter.appdata.xml.in:78
-msgid "Improve descriptions of OS Updates"
-msgstr "OS 업데이트 항목 설명 개선"
-
-#: data/io.elementary.appcenter.appdata.xml.in:79
-#: data/io.elementary.appcenter.appdata.xml.in:90
+#: data/io.elementary.appcenter.appdata.xml.in:68
+#: data/io.elementary.appcenter.appdata.xml.in:75
+#: data/io.elementary.appcenter.appdata.xml.in:88
 #: data/io.elementary.appcenter.appdata.xml.in:99
 #: data/io.elementary.appcenter.appdata.xml.in:108
 #: data/io.elementary.appcenter.appdata.xml.in:117
@@ -201,34 +144,99 @@ msgstr "OS 업데이트 항목 설명 개선"
 #: data/io.elementary.appcenter.appdata.xml.in:153
 #: data/io.elementary.appcenter.appdata.xml.in:162
 #: data/io.elementary.appcenter.appdata.xml.in:171
+#: data/io.elementary.appcenter.appdata.xml.in:180
+#: data/io.elementary.appcenter.appdata.xml.in:189
+#: data/io.elementary.appcenter.appdata.xml.in:199
+#: data/io.elementary.appcenter.appdata.xml.in:209
+msgid "New translations"
+msgstr "새 번역"
+
+#: data/io.elementary.appcenter.appdata.xml.in:63
+msgid "New categories: Communication, Finance, Media Production"
+msgstr "새 카테고리: 커뮤니케이션, 금융, 영상 제작"
+
+#: data/io.elementary.appcenter.appdata.xml.in:64
+msgid "Add Math to Science category"
+msgstr "과학 카테고리에 수학 추가"
+
+#: data/io.elementary.appcenter.appdata.xml.in:65
+msgid "Relax email address validator"
+msgstr "이메일 주소 검사기 수정"
+
+#: data/io.elementary.appcenter.appdata.xml.in:66
+msgid "Present update availability more accurately"
+msgstr "보다 정확하게 제공되는 업데이트 가용성"
+
+#: data/io.elementary.appcenter.appdata.xml.in:67
+msgid "Category graphics revamped"
+msgstr "카테고리 그래픽 새로 손질함"
+
+#: data/io.elementary.appcenter.appdata.xml.in:82
+#: data/io.elementary.appcenter.appdata.xml.in:94
+#: data/io.elementary.appcenter.appdata.xml.in:105
+#: data/io.elementary.appcenter.appdata.xml.in:114
+#: data/io.elementary.appcenter.appdata.xml.in:123
+#: data/io.elementary.appcenter.appdata.xml.in:132
+#: data/io.elementary.appcenter.appdata.xml.in:141
+#: data/io.elementary.appcenter.appdata.xml.in:150
+#: data/io.elementary.appcenter.appdata.xml.in:159
+#: data/io.elementary.appcenter.appdata.xml.in:168
+#: data/io.elementary.appcenter.appdata.xml.in:177
+#: data/io.elementary.appcenter.appdata.xml.in:186
+msgid "Bug fixes and improve performance."
+msgstr "버그 수정 및 기능 향상."
+
+#: data/io.elementary.appcenter.appdata.xml.in:84
+msgid "Improve transaction success rate"
+msgstr "거래 성공률 향상"
+
+#: data/io.elementary.appcenter.appdata.xml.in:85
+msgid "Add Publishing to Office category"
+msgstr "오피스 카테고리에 출판 추가"
+
+#: data/io.elementary.appcenter.appdata.xml.in:86
+msgid "Improve descriptions of OS Updates"
+msgstr "OS 업데이트 항목 설명 개선"
+
+#: data/io.elementary.appcenter.appdata.xml.in:87
+#: data/io.elementary.appcenter.appdata.xml.in:98
+#: data/io.elementary.appcenter.appdata.xml.in:107
+#: data/io.elementary.appcenter.appdata.xml.in:116
+#: data/io.elementary.appcenter.appdata.xml.in:125
+#: data/io.elementary.appcenter.appdata.xml.in:134
+#: data/io.elementary.appcenter.appdata.xml.in:143
+#: data/io.elementary.appcenter.appdata.xml.in:152
+#: data/io.elementary.appcenter.appdata.xml.in:161
+#: data/io.elementary.appcenter.appdata.xml.in:170
+#: data/io.elementary.appcenter.appdata.xml.in:179
 msgid "Various bug fixes and performance improvements"
 msgstr "여러 가지 버그 해결 및 성능 향상"
 
-#: data/io.elementary.appcenter.appdata.xml.in:88
+#: data/io.elementary.appcenter.appdata.xml.in:96
 msgid "Give details for Operating System Updates"
 msgstr "운영 체제 업데이트 항목에 대한 자세한 정보 제공"
 
-#: data/io.elementary.appcenter.appdata.xml.in:89
+#: data/io.elementary.appcenter.appdata.xml.in:97
 msgid "Support mouse button navigation"
 msgstr "마우스 버튼 내비게이션 지원"
 
-#: data/io.elementary.appcenter.appdata.xml.in:180
+#: data/io.elementary.appcenter.appdata.xml.in:188
 msgid "Fix crash caused by entries with missing packages"
 msgstr "빠진 패키지가 있는 목록에 의한 비정상 종료 수정"
 
-#: data/io.elementary.appcenter.appdata.xml.in:187
+#: data/io.elementary.appcenter.appdata.xml.in:195
 msgid "Add capability to search by category and apply minor bug fixes."
 msgstr "카테고리 내 검색 추가와 자잘한 버그 수정."
 
-#: data/io.elementary.appcenter.appdata.xml.in:189
+#: data/io.elementary.appcenter.appdata.xml.in:197
 msgid "It is now possible to search apps inside a category"
 msgstr "이젠 카테고리 안에서 앱을 검색할 수 있게 되었습니다"
 
-#: data/io.elementary.appcenter.appdata.xml.in:190
+#: data/io.elementary.appcenter.appdata.xml.in:198
 msgid "Prevent multiple authentication dialogs when resuming from suspend"
 msgstr "대기 모드에서 돌아올 때 인증 창이 여러 번 뜨지 않도록 했습니다"
 
-#: data/io.elementary.appcenter.appdata.xml.in:197
+#: data/io.elementary.appcenter.appdata.xml.in:205
 msgid ""
 "Search performance has beeen improved, the category name is now shown on the "
 "headbar and minor bugs have been fixed."
@@ -236,15 +244,15 @@ msgstr ""
 "검색 기능이 개선되었고 카테고리 이름이 제목에 표시되며 자잘한 버그들이 수정되"
 "었습니다."
 
-#: data/io.elementary.appcenter.appdata.xml.in:199
+#: data/io.elementary.appcenter.appdata.xml.in:207
 msgid "Fix Steam installation"
 msgstr "스팀 설치 문제 해결"
 
-#: data/io.elementary.appcenter.appdata.xml.in:200
+#: data/io.elementary.appcenter.appdata.xml.in:208
 msgid "Make search asynchronous"
 msgstr "비동기 검색 생성"
 
-#: data/io.elementary.appcenter.appdata.xml.in:255
+#: data/io.elementary.appcenter.appdata.xml.in:263
 #, fuzzy
 msgid "elementary, Inc."
 msgstr "elementary LLC."
