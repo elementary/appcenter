@@ -20,6 +20,7 @@
         <p>Minor fixes</p>
         <ul>
           <li>Prevent ghost update notification when there are no updates available</li>
+          <li>Prevent unescaped XML entities from appearing in application names</li>
         </ul>
       </description>
     </release>
