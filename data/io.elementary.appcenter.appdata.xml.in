@@ -20,6 +20,7 @@
         <p>Minor fixes</p>
         <ul>
           <li>Prevent ghost update notification when there are no updates available</li>
+          <li>Show correct installation state for extensions</li>
         </ul>
       </description>
     </release>
