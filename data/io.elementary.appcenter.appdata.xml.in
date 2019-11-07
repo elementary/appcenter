@@ -20,6 +20,7 @@
         <p>Minor fixes</p>
         <ul>
           <li>Prevent ghost update notification when there are no updates available</li>
+          <li>Ensure that the restart required notification fires as expected</li>
         </ul>
       </description>
     </release>
