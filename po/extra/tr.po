@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-29 15:31-0700\n"
-"PO-Revision-Date: 2019-11-05 20:24+0000\n"
+"PO-Revision-Date: 2019-11-10 19:24+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/extra/"
 "tr/>\n"
@@ -41,7 +41,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "Warn about non-curated apps"
-msgstr ""
+msgstr "Doğrulanmamış uygulamalar için uyar"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Show an error dialog if an installation fails"
@@ -263,7 +263,7 @@ msgstr "Güncellemeleri Denetle"
 
 #: data/io.elementary.appcenter.desktop.in.in:19
 msgid "system-software-update"
-msgstr ""
+msgstr "system-software-update"
 
 #~ msgid "About AppCenter"
 #~ msgstr "Uygulama Merkezi Hakkında"
