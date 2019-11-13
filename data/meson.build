@@ -11,7 +11,7 @@ configure_file(
     input: meson.project_name() + '.service.in',
     output: meson.project_name() + '.service',
     configuration: conf_data,
-    install_dir: dbus.get_pkgconfig_variable('session_bus_services_dir')
+    install_dir: dbus.get_pkgconfig_variable('session_bus_services_dir', define_variable: ['datadir', get_option('datadir')])
 )
 
 # GNOME Shell Search Provider

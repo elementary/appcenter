@@ -20,9 +20,10 @@
 
 public class AppCenter.Views.InstalledView : View {
     private Cancellable refresh_cancellable;
-    private bool refresh_running = false;
 
     private AppListUpdateView app_list_view;
+
+    private AsyncMutex refresh_mutex = new AsyncMutex ();
 
     construct {
         refresh_cancellable = new Cancellable ();
@@ -62,11 +63,9 @@ public class AppCenter.Views.InstalledView : View {
     }
 
     public async void get_apps () {
-        if (refresh_running) {
-            refresh_cancellable.cancel ();
-        }
+        refresh_cancellable.cancel ();
 
-        refresh_running = true;
+        yield refresh_mutex.lock ();
 
         unowned AppCenterCore.Client client = AppCenterCore.Client.get_default ();
 
@@ -79,8 +78,9 @@ public class AppCenter.Views.InstalledView : View {
             app_list_view.add_packages (installed_apps);
         }
 
+        refresh_mutex.unlock ();
+
         refresh_cancellable.reset ();
-        refresh_running = false;
     }
 
     public async void add_app (AppCenterCore.Package package) {

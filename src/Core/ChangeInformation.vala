@@ -93,7 +93,7 @@ public class AppCenterCore.ChangeInformation : Object {
         progress = 0.0f;
     }
 
-    public void Callback (bool can_cancel, string status_description, double progress, Status status) {
+    public void callback (bool can_cancel, string status_description, double progress, Status status) {
         if (this.can_cancel != can_cancel || this.status_description != status_description || this.status != status) {
             this.can_cancel = can_cancel;
             this.status_description = status_description;

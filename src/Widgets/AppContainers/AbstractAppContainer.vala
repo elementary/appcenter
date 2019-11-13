@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2016–2018 elementary, Inc. (https://elementary.io)
+* Copyright (c) 2016–2019 elementary, Inc. (https://elementary.io)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public
@@ -28,14 +28,6 @@ namespace AppCenter {
         }
     }
 
-    public static void set_stack_visibility (Gtk.Stack stack, bool show) {
-        if (show) {
-            stack.set_visible_child_name ("CHILD");
-        } else {
-            stack.set_visible_child_name ("NONE");
-        }
-    }
-
     public abstract class AbstractAppContainer : Gtk.Grid {
         public AppCenterCore.Package package { get; construct set; }
         protected bool show_uninstall { get; set; default = true; }
@@ -48,12 +40,10 @@ namespace AppCenter {
         protected Gtk.Label package_summary;
 
         protected Widgets.ContentWarningDialog content_warning;
+        protected Widgets.NonCuratedWarningDialog non_curated_warning;
         protected Widgets.HumbleButton action_button;
         protected Gtk.Button uninstall_button;
         protected Gtk.Button open_button;
-        protected Gtk.Stack action_button_stack;
-        protected Gtk.Stack uninstall_button_stack;
-        protected Gtk.Stack open_button_stack;
 
         protected Gtk.Grid progress_grid;
         protected Gtk.Grid button_grid;
@@ -62,7 +52,9 @@ namespace AppCenter {
         protected Gtk.SizeGroup action_button_group;
         protected Gtk.Stack action_stack;
 
-        private Settings settings;
+        private Gtk.Revealer open_button_revealer;
+        private Gtk.Revealer uninstall_button_revealer;
+        private Gtk.Revealer action_button_revealer;
         private Mutex action_mutex = Mutex ();
         private Cancellable action_cancellable = new Cancellable ();
 
@@ -127,44 +119,24 @@ namespace AppCenter {
             inner_image = new Gtk.Image ();
             image.add (inner_image);
 
-            settings = Settings.get_default ();
-
             package_author = new Gtk.Label (null);
             package_name = new Gtk.Label (null);
             package_summary = new Gtk.Label (null);
 
             action_button = new Widgets.HumbleButton ();
-            action_button_stack = new Gtk.Stack ();
-            action_button_stack.add_named (action_button, "CHILD");
-            action_button_stack.add_named (new Gtk.EventBox (), "NONE");
-            action_button_stack.hhomogeneous = false;
+
+            action_button_revealer = new Gtk.Revealer ();
+            action_button_revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT;
+            action_button_revealer.add (action_button);
 
             action_button.download_requested.connect (() => {
-                if (settings.content_warning == true && package.is_explicit) {
-                    content_warning = new Widgets.ContentWarningDialog (this.package_name.label);
-                    content_warning.transient_for = (Gtk.Window) get_toplevel ();
-
-                    content_warning.download_requested.connect (() => {
-                        action_clicked.begin ();
-                    });
-
-                    content_warning.show ();
-                } else {
+                if (install_approved (package) == true) {
                     action_clicked.begin ();
                 }
             });
 
             action_button.payment_requested.connect ((amount) => {
-                if (settings.content_warning == true && package.is_explicit) {
-                    content_warning = new Widgets.ContentWarningDialog (this.package_name.label);
-                    content_warning.transient_for = (Gtk.Window) get_toplevel ();
-
-                    content_warning.download_requested.connect (() => {
-                        show_stripe_dialog (amount);
-                    });
-
-                    content_warning.show ();
-                } else {
+                if (install_approved (package) == true) {
                     show_stripe_dialog (amount);
                 }
             });
@@ -172,18 +144,17 @@ namespace AppCenter {
             uninstall_button = new Gtk.Button.with_label (_("Uninstall"));
             uninstall_button.margin_end = 12;
 
-            uninstall_button_stack = new Gtk.Stack ();
-            uninstall_button_stack.add_named (uninstall_button, "CHILD");
-            uninstall_button_stack.add_named (new Gtk.EventBox (), "NONE");
-            uninstall_button_stack.hhomogeneous = false;
+            uninstall_button_revealer = new Gtk.Revealer ();
+            uninstall_button_revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT;
+            uninstall_button_revealer.add (uninstall_button);
 
             uninstall_button.clicked.connect (() => uninstall_clicked.begin ());
 
             open_button = new Gtk.Button.with_label (_("Open"));
-            open_button_stack = new Gtk.Stack ();
-            open_button_stack.add_named (open_button, "CHILD");
-            open_button_stack.add_named (new Gtk.EventBox (), "NONE");
-            open_button_stack.hhomogeneous = false;
+
+            open_button_revealer = new Gtk.Revealer ();
+            open_button_revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT;
+            open_button_revealer.add (open_button);
 
             open_button.clicked.connect (launch_package_app);
 
@@ -192,9 +163,9 @@ namespace AppCenter {
             button_grid.halign = Gtk.Align.END;
             button_grid.hexpand = false;
 
-            button_grid.add (uninstall_button_stack);
-            button_grid.add (action_button_stack);
-            button_grid.add (open_button_stack);
+            button_grid.add (uninstall_button_revealer);
+            button_grid.add (action_button_revealer);
+            button_grid.add (open_button_revealer);
 
             progress_bar = new Gtk.ProgressBar ();
             progress_bar.show_text = true;
@@ -247,8 +218,7 @@ namespace AppCenter {
 
             stripe.download_requested.connect (() => {
                 action_clicked.begin ();
-
-                settings.add_paid_app (package.component.get_id ());
+                App.add_paid_app (package.component.get_id ());
             });
 
             stripe.show ();
@@ -323,19 +293,19 @@ namespace AppCenter {
 #else
                     action_button.label = _("Install");
 #endif
-                    if (package.component.get_id () in settings.paid_apps) {
+                    if (package.component.get_id () in App.settings.get_strv ("paid-apps")) {
                         action_button.amount = 0;
                     }
 
-                    set_stack_visibility (uninstall_button_stack, false);
-                    set_stack_visibility (action_button_stack, !package.is_os_updates);
-                    set_stack_visibility (open_button_stack, false);
+                    uninstall_button_revealer.reveal_child = false;
+                    action_button_revealer.reveal_child = !package.is_os_updates;
+                    open_button_revealer.reveal_child = false;
 
                     break;
                 case AppCenterCore.Package.State.INSTALLED:
-                    set_stack_visibility (uninstall_button_stack, show_uninstall && !is_os_updates && !package.is_compulsory);
-                    set_stack_visibility (action_button_stack, package.should_pay && updates_view);
-                    set_stack_visibility (open_button_stack, show_open && package.get_can_launch ());
+                    uninstall_button_revealer.reveal_child = show_uninstall && !is_os_updates && !package.is_compulsory;
+                    action_button_revealer.reveal_child = package.should_pay && updates_view;
+                    open_button_revealer.reveal_child = show_open && package.get_can_launch ();
 
                     action_button.allow_free = false;
                     break;
@@ -346,9 +316,9 @@ namespace AppCenter {
 
                     action_button.label = _("Update");
 
-                    set_stack_visibility (uninstall_button_stack, show_uninstall && !is_os_updates && !package.is_compulsory);
-                    set_stack_visibility (action_button_stack, true);
-                    set_stack_visibility (open_button_stack, false);
+                    uninstall_button_revealer.reveal_child = show_uninstall && !is_os_updates && !package.is_compulsory;
+                    action_button_revealer.reveal_child = true;
+                    open_button_revealer.reveal_child = false;
 
                     break;
                 case AppCenterCore.Package.State.INSTALLING:
@@ -450,7 +420,7 @@ namespace AppCenter {
 
             switch (result) {
                 case ActionResult.HIDE_BUTTON:
-                    set_stack_visibility (action_button_stack, false);
+                    action_button_revealer.reveal_child = false;
                     break;
                 case ActionResult.ADD_TO_INSTALLED_SCREEN:
                     // Add this app to the Installed Apps View
@@ -462,10 +432,79 @@ namespace AppCenter {
         }
 
         private async void uninstall_clicked () {
-            if (yield package.uninstall ()) {
-                // Remove this app from the Installed Apps View
-                MainWindow.installed_view.remove_app.begin (package);
+            package.uninstall.begin ((obj, res) => {
+                try {
+                    if (package.uninstall.end (res)) {
+                        MainWindow.installed_view.remove_app.begin (package);
+                    }
+                } catch (Error e) {
+                    // Disable error dialog for if user clicks cancel. Reason: Failed to obtain authentication
+                    // Pk ErrorEnums are mapped to the error code at an offset of 0xFF (see packagekit-glib2/pk-client.h)
+                    if (!(e is Pk.ClientError) || e.code != Pk.ErrorEnum.NOT_AUTHORIZED + 0xFF) {
+                        new UninstallFailDialog (package, e).present ();
+                    }
+                }
+            });
+        }
+
+        private bool install_approved (AppCenterCore.Package package) {
+            bool approved = true;
+
+            if (App.settings.get_boolean ("non-curated-warning") == true && !(package.is_native || is_os_updates)) {
+                approved = false;
+
+                non_curated_warning = new Widgets.NonCuratedWarningDialog (this.package_name.label);
+                non_curated_warning.transient_for = (Gtk.Window) get_toplevel ();
+
+                non_curated_warning.response.connect ((response_id) => {
+                    switch (response_id) {
+                        case Gtk.ResponseType.OK:
+                            approved = true;
+                            break;
+                        case Gtk.ResponseType.CANCEL:
+                        case Gtk.ResponseType.CLOSE:
+                        case Gtk.ResponseType.DELETE_EVENT:
+                            approved = false;
+                            break;
+                        default:
+                            assert_not_reached ();
+                    }
+
+                    non_curated_warning.close ();
+                });
+
+                non_curated_warning.run ();
+                non_curated_warning.destroy ();
             }
+
+            if (App.settings.get_boolean ("content-warning") == true && package.is_explicit) {
+                approved = false;
+
+                content_warning = new Widgets.ContentWarningDialog (this.package_name.label);
+                content_warning.transient_for = (Gtk.Window) get_toplevel ();
+
+                content_warning.response.connect ((response_id) => {
+                    switch (response_id) {
+                        case Gtk.ResponseType.OK:
+                            approved = true;
+                            break;
+                        case Gtk.ResponseType.CANCEL:
+                        case Gtk.ResponseType.CLOSE:
+                        case Gtk.ResponseType.DELETE_EVENT:
+                            approved = false;
+                            break;
+                        default:
+                            assert_not_reached ();
+                    }
+
+                    content_warning.close ();
+                });
+
+                content_warning.run ();
+                content_warning.destroy ();
+            }
+
+            return approved;
         }
     }
 }

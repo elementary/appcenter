@@ -20,7 +20,7 @@
 public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
     public signal void download_requested ();
 
-    private const string HOUSTON_URI =  "https://developer.elementary.io/api/payment/%s";
+    private const string HOUSTON_URI = "https://developer.elementary.io/api/payment/%s";
     private const string HOUSTON_PAYLOAD = "{ "
                                 + "\"data\": {"
                                     + "\"key\": \"%s\","
@@ -418,12 +418,12 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
 
         if (char_count < 14) return false;
 
-        int hash = int.parse (numbers[char_count-1:char_count]);
+        int hash = int.parse (numbers[char_count - 1:char_count]);
 
         int j = 1;
         int sum = 0;
-        for (int i = char_count -1; i > 0; i--) {
-            var number = int.parse (numbers[i-1:i]);
+        for (int i = char_count - 1; i > 0; i--) {
+            var number = int.parse (numbers[i - 1:i]);
             if (j++ % 2 == 1) {
                 number = number * 2;
                 if (number > 9) {
@@ -459,7 +459,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
 
     private void on_pay_clicked () {
         new Thread<void*> (null, () => {
-            string expiration_dateyear = card_expiration_entry.text.replace("/", "");
+            string expiration_dateyear = card_expiration_entry.text.replace ("/", "");
             var year = (int.parse (expiration_dateyear[2:4]) + 2000).to_string ();
 
             var data = get_stripe_data (stripe_key, email_entry.text, (amount * 100).to_string (), card_number_entry.text, expiration_dateyear[0:2], year, card_cvc_entry.text);

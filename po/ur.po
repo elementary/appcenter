@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:42+0200\n"
+"POT-Creation-Date: 2019-11-06 21:09+0000\n"
 "PO-Revision-Date: 2016-11-24 12:37+0000\n"
 "Last-Translator: Waqar Ahmed <waqar.17a@gmail.com>\n"
 "Language-Team: \n"
@@ -15,63 +15,50 @@ msgstr ""
 "X-Generator: Launchpad (build 18331)\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:316
+#: src/Application.vala:38 src/Core/Package.vala:330
 msgid "AppCenter"
 msgstr "مرکزِ اپلی کیشن"
 
-#: src/Application.vala:106
+#: src/Application.vala:112
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr ""
 
-#: src/Application.vala:126
+#: src/Application.vala:132
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr ""
 
-#: src/Application.vala:264
+#: src/Application.vala:270
 msgid "Application installed"
 msgstr "ایپ نصب کر دی گئی"
 
-#: src/Application.vala:265
+#: src/Application.vala:271
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "پیکج %s کامیابی کے ساتھ انسٹال کر دیا گیا ہے"
 
-#: src/Application.vala:277
+#: src/Application.vala:283
 #, c-format
 msgid "There Was An Error Installing %s."
 msgstr ""
 
-#: src/MainWindow.vala:157 src/Views/Homepage.vala:282
-#: src/Views/Homepage.vala:294 src/Views/Homepage.vala:299
-#: src/Views/Homepage.vala:310
+#: src/MainWindow.vala:141 src/Views/Homepage.vala:297
+#: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
+#: src/Views/Homepage.vala:325
 msgid "Home"
 msgstr ""
 
-#: src/MainWindow.vala:158 src/Views/InstalledView.vala:32
-#: src/Views/InstalledView.vala:57
+#: src/MainWindow.vala:142 src/Views/InstalledView.vala:33
+#: src/Views/InstalledView.vala:58
 msgctxt "view"
 msgid "Installed"
 msgstr "نصب شُدہ"
 
-#: src/MainWindow.vala:185 src/MainWindow.vala:348 src/Views/SearchView.vala:55
+#: src/MainWindow.vala:169 src/MainWindow.vala:328 src/Views/SearchView.vala:55
 #: src/Views/SearchView.vala:82
 msgid "Search Apps"
 msgstr "اطلاقیےتلاش کریں"
-
-#: src/MainWindow.vala:203
-#, fuzzy
-msgid "Network Is Not Available"
-msgstr "سکرین شاٹ دستیاب نہیں"
-
-#: src/MainWindow.vala:204
-msgid "Connect to the Internet to install or update apps."
-msgstr ""
-
-#: src/MainWindow.vala:207
-msgid "Network Settings…"
-msgstr ""
 
 #: src/Utils.vala:72 src/Core/ChangeInformation.vala:92
 msgid "Starting"
@@ -231,30 +218,35 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "%u تازہ کاری آپ کے سسٹم کے لیے دستیاب ہے"
 msgstr[1] "%u تازہ کاریاں آپ کے سسٹم کے لیے دستیاب ہے"
 
-#: src/Core/Package.vala:287
+#: src/Core/Package.vala:300
 #, fuzzy, c-format
 msgid "%s Developers"
 msgstr "ڈیولپمنٹ"
 
-#: src/Core/Package.vala:318
+#: src/Core/Package.vala:332
 msgid "elementary Updates"
 msgstr ""
 
-#: src/Core/Package.vala:320
+#: src/Core/Package.vala:334
 msgid "Ubuntu (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:323
+#: src/Core/Package.vala:337
 #, c-format
 msgid "%s (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:325
+#: src/Core/Package.vala:339
 msgid "Ubuntu Drivers"
 msgstr ""
 
-#: src/Core/Package.vala:328
+#: src/Core/Package.vala:342
 msgid "Unknown Origin (non-curated)"
+msgstr ""
+
+#: src/Core/Package.vala:444
+#, c-format
+msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
 
 #: src/Core/UpdateManager.vala:38
@@ -298,33 +290,33 @@ msgstr ""
 msgid "Please restart your system to finalize updates"
 msgstr ""
 
-#: src/Dialogs/ContentWarningDialog.vala:27
+#: src/Dialogs/ContentWarningDialog.vala:25
 msgid "Content Warning"
 msgstr ""
 
-#: src/Dialogs/ContentWarningDialog.vala:32
+#: src/Dialogs/ContentWarningDialog.vala:30
 #, c-format
-msgid "%s Contains Explicit Content"
+msgid "“%s” contains explicit content"
+msgstr ""
+
+#: src/Dialogs/ContentWarningDialog.vala:31
+#, c-format
+msgid ""
+"“%s” may contain content only suitable for adults or that may be sensitive "
+"or disturbing. In general, elementary does not review or endorse the "
+"contents of this app."
 msgstr ""
 
 #: src/Dialogs/ContentWarningDialog.vala:33
-#, c-format
-msgid ""
-"%s may contain content only suitable for adults or that may be sensitive or "
-"disturbing. In general, elementary does not review or endorse the contents "
-"of this app."
-msgstr ""
-
-#: src/Dialogs/ContentWarningDialog.vala:35
 msgid "Show content warnings"
 msgstr ""
 
-#: src/Dialogs/ContentWarningDialog.vala:40
+#: src/Dialogs/ContentWarningDialog.vala:37
 #, fuzzy
 msgid "Don’t Install"
 msgstr "نصب کریں"
 
-#: src/Dialogs/ContentWarningDialog.vala:41
+#: src/Dialogs/ContentWarningDialog.vala:38
 #, fuzzy
 msgid "Install Anyway"
 msgstr "انسٹال کیا جارہا ہے"
@@ -343,7 +335,7 @@ msgstr ""
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:205
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:177
 msgid "Cancel"
 msgstr "منسوخ کریں"
 
@@ -498,6 +490,38 @@ msgstr ""
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr ""
 
+#: src/Dialogs/UninstallConfirmDialog.vala:25
+msgid "Uninstalling this app may also delete its data."
+msgstr ""
+
+#: src/Dialogs/UninstallConfirmDialog.vala:35
+#, fuzzy
+msgid "Uninstall app?"
+msgstr "غیر تنصیب"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:38
+#, fuzzy, c-format
+msgid "Uninstall “%s”?"
+msgstr "غیر تنصیب"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:42
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:144
+msgid "Uninstall"
+msgstr "غیر تنصیب"
+
+#: src/Dialogs/UninstallFailDialog.vala:26
+msgid "This may have been caused by external or manually compiled software."
+msgstr ""
+
+#: src/Dialogs/UninstallFailDialog.vala:37
+msgid "Failed to uninstall app"
+msgstr ""
+
+#: src/Dialogs/UninstallFailDialog.vala:40
+#, c-format
+msgid "Failed to uninstall “%s”"
+msgstr ""
+
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
 msgstr ""
@@ -516,86 +540,86 @@ msgstr ""
 msgid "Try Again"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:81
+#: src/Views/AppInfoView.vala:177
 msgid "Screenshot Not Available"
 msgstr "سکرین شاٹ دستیاب نہیں"
 
-#: src/Views/AppInfoView.vala:136
+#: src/Views/AppInfoView.vala:236
 msgid "Homepage"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:142
+#: src/Views/AppInfoView.vala:242
 msgid "Suggest Translations"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:148
+#: src/Views/AppInfoView.vala:248
 msgid "Report a Problem"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:154
+#: src/Views/AppInfoView.vala:254
 msgid "Help"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:184
+#: src/Views/AppInfoView.vala:281
 msgid "What's New:"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:203
+#: src/Views/AppInfoView.vala:300
 msgid "Extensions:"
 msgstr "ایکس ٹینشن:"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:311
+#: src/Views/AppInfoView.vala:395
 msgid "Public Domain"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:314
+#: src/Views/AppInfoView.vala:398
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr ""
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:319
+#: src/Views/AppInfoView.vala:403
 msgid "Free Software"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:322
+#: src/Views/AppInfoView.vala:406
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:326
+#: src/Views/AppInfoView.vala:410
 msgid "Proprietary"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:329
+#: src/Views/AppInfoView.vala:413
 #, fuzzy
 msgid "Unknown License"
 msgstr "نامعلوم حالت"
 
-#: src/Views/AppInfoView.vala:371
+#: src/Views/AppInfoView.vala:455
 #, c-format
 msgid "Other Apps by %s"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:405
+#: src/Views/AppInfoView.vala:489
 msgid "Link copied to clipboard"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:416
+#: src/Views/AppInfoView.vala:500
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:423
+#: src/Views/AppInfoView.vala:507
 msgid "Share"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:724
+#: src/Views/AppInfoView.vala:817
 msgid "Fund"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:746
+#: src/Views/AppInfoView.vala:839
 msgid "Fund the development of this app"
 msgstr ""
 
@@ -608,7 +632,7 @@ msgid "Restart Now"
 msgstr ""
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:175
+#: src/Views/AppListUpdateView.vala:180
 msgid "Update All"
 msgstr "سب کو تاذہ کریں"
 
@@ -629,7 +653,7 @@ msgstr ""
 msgid "Categories"
 msgstr "اقسام"
 
-#: src/Views/Homepage.vala:299 src/Views/Homepage.vala:310
+#: src/Views/Homepage.vala:314 src/Views/Homepage.vala:325
 #, c-format
 msgid "Search %s"
 msgstr "تلاش کریں %s"
@@ -732,12 +756,12 @@ msgid "Requires payments, which are not enabled"
 msgstr ""
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:321
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:292
 msgid "Free"
 msgstr ""
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:323
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:294
 msgid "Install"
 msgstr "نصب کریں"
 
@@ -751,6 +775,20 @@ msgstr ""
 #: src/Widgets/HumbleButton.vala:144
 #, c-format
 msgid "$%d"
+msgstr ""
+
+#: src/Widgets/NetworkInfoBar.vala:32
+#, fuzzy
+msgid "Network Not Available."
+msgstr "سکرین شاٹ دستیاب نہیں"
+
+#: src/Widgets/NetworkInfoBar.vala:33
+msgid "Connect to the Internet to browse and install apps."
+msgstr ""
+
+#. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
+#: src/Widgets/NetworkInfoBar.vala:41
+msgid "Network Settings…"
 msgstr ""
 
 #: src/Widgets/ReleaseRow.vala:67
@@ -791,41 +829,48 @@ msgstr ""
 msgid "Copy link"
 msgstr ""
 
-#: src/Widgets/UpdateHeaderRow.vala:64
+#: src/Widgets/SizeLabel.vala:35
+msgid "Actual Download Size Likely to Be Smaller"
+msgstr ""
+
+#: src/Widgets/SizeLabel.vala:36
+msgid "Only the parts of apps and updates that are needed will be downloaded."
+msgstr ""
+
+#: src/Widgets/SizeLabel.vala:63
+#, fuzzy, c-format
+msgid "Up to %s"
+msgstr "بلکل جدید ہے"
+
+#: src/Widgets/UpdateHeaderRow.vala:69
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "%u اپ ڈیٹس دستیاب"
 msgstr[1] "%u اپ ڈیٹس دستیاب"
 
-#: src/Widgets/UpdateHeaderRow.vala:65
-#, c-format
-msgid "Size: %s"
-msgstr "سائز: %s"
-
-#: src/Widgets/UpdateHeaderRow.vala:101
+#: src/Widgets/UpdateHeaderRow.vala:107
 msgid "Searching for updates…"
 msgstr "تاذہ شمارے تلاش کئے جارہے ہیں"
 
-#: src/Widgets/UpdateHeaderRow.vala:108
+#: src/Widgets/UpdateHeaderRow.vala:114
 msgid "Up to Date"
 msgstr "بلکل جدید ہے"
 
-#: src/Widgets/UpdateHeaderRow.vala:116
+#: src/Widgets/UpdateHeaderRow.vala:122
 msgid "Drivers"
 msgstr ""
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:172
-msgid "Uninstall"
-msgstr "غیر تنصیب"
-
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:180
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:153
 msgid "Open"
 msgstr ""
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:346
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:317
 msgid "Update"
 msgstr "تجدید-"
+
+#~ msgid "Size: %s"
+#~ msgstr "سائز: %s"
 
 #~ msgctxt "view"
 #~ msgid "Updates"

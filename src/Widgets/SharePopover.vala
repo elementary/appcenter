@@ -114,7 +114,7 @@ public class SharePopover : Gtk.Popover {
 
         twitter_button.clicked.connect (() => {
             try {
-                AppInfo.launch_default_for_uri ("http://twitter.com/home/?status=%s %s".printf (body, uri), null);
+                AppInfo.launch_default_for_uri ("https://twitter.com/intent/tweet?text=%s&url=%s".printf (body, uri), null);
             } catch (Error e) {
                 warning ("%s", e.message);
             }

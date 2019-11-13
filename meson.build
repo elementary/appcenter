@@ -1,7 +1,8 @@
 project(
     'io.elementary.appcenter',
     'vala', 'c',
-    version: '3.1.1')
+    version: '3.2.1'
+)
 
 gettext_name = meson.project_name()
 gnome = import('gnome')
@@ -18,7 +19,7 @@ add_project_arguments(['--vapidir', vapi_dir], language: 'vala')
 
 gee = dependency ('gee-0.8')
 gtk = dependency ('gtk+-3.0', version: '>=3.10')
-granite = dependency ('granite', version: '>=5.2.3')
+granite = dependency ('granite', version: '>=5.2.5')
 packagekit = dependency ('packagekit-glib2')
 appstream = dependency ('appstream', version: '>=0.10.0')
 libsoup = dependency ('libsoup-2.4')
@@ -39,11 +40,6 @@ dependencies = [
     flatpak,
     xml
 ]
-
-if get_option('libunity')
-    dependencies += dependency ('unity', version: '>=4.0.0')
-    add_project_arguments('--define=HAVE_UNITY', language: 'vala')
-endif
 
 config_dir = join_paths(get_option('sysconfdir'), meson.project_name())
 conf_data = configuration_data()

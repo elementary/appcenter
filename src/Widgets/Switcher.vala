@@ -102,6 +102,7 @@ namespace AppCenter.Widgets {
         private void connect_stack_signals () {
             stack.add.connect_after (add_child);
             stack.remove.connect_after (on_stack_child_removed);
+            stack.notify["visible-child"].connect_after (update_selected);
         }
 
         public void clear_children () {
@@ -121,4 +122,3 @@ namespace AppCenter.Widgets {
         }
     }
 }
-
