@@ -1,13 +1,14 @@
 # Piotr Strebski <strebski@gmail.com>, 2018, 2019.
 # Kajetan Rosiak <roskaj@gmail.com>, 2018.
 # Daniel Foré <daniel@elementary.io>, 2019.
+# Deleted User <noreply+917@weblate.org>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-29 15:31-0700\n"
 "PO-Revision-Date: 2019-11-15 21:24+0000\n"
-"Last-Translator: Piotr Strebski <strebski@gmail.com>\n"
+"Last-Translator: Deleted User <noreply+917@weblate.org>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/pl/>\n"
 "Language: pl\n"
@@ -906,7 +907,7 @@ msgstr "Otwórz"
 
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:317
 msgid "Update"
-msgstr "Aktualizuj"
+msgstr "Zaktualizuj"
 
 #~ msgid "Size: %s"
 #~ msgstr "Rozmiar: %s"
