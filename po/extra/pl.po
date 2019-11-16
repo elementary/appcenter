@@ -3,17 +3,17 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-29 15:31-0700\n"
-"PO-Revision-Date: 2018-09-27 11:37+0000\n"
+"PO-Revision-Date: 2019-11-17 21:24+0000\n"
 "Last-Translator: Piotr Strebski <strebski@gmail.com>\n"
-"Language-Team: Polish <https://weblate.elementary.io/projects/appcenter/"
-"extra/pl/>\n"
+"Language-Team: Polish <https://l10n.elementary.io/projects/appcenter/extra/"
+"pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
@@ -32,9 +32,9 @@ msgid ""
 "system to the latest and greatest version for new features and fixes."
 msgstr ""
 "Sklep z programami dla niezależnych i otwartoźródłowych programistów. "
-"Przeglądaj według kategorii lub wyszukuj i odkrywaj nowe programy. Centrum "
-"programów jest także używane do aktualizowania systemu do najnowszej wersji, "
-"celem uzyskiwania nowych wspaniałych funkcji i niezbędnych poprawek."
+"Przeglądaj według kategorii lub wyszukuj i odkrywaj nowe programy. AppCenter "
+"jest także używane do aktualizowania systemu do najnowszej wersji, celem "
+"uzyskiwania nowych wspaniałych funkcji i niezbędnych poprawek."
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
 msgid "Add support for Flatpak apps"
@@ -91,14 +91,12 @@ msgid "Fix crashes"
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:34
-#, fuzzy
 msgid "Performance improvements"
-msgstr "Poprawki różnych błędów i ulepszenie wydajności"
+msgstr "Poprawki wydajności"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
-#, fuzzy
 msgid "Updated translations"
-msgstr "Nowe tłumaczenia"
+msgstr "Zaktualizowane tłumaczenia"
 
 #: data/io.elementary.appcenter.appdata.xml.in:42
 msgid "Meson build system fixes"
@@ -177,7 +175,6 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:160
 #: data/io.elementary.appcenter.appdata.xml.in:169
 #: data/io.elementary.appcenter.appdata.xml.in:178
-#, fuzzy
 msgid "Bug fixes and improve performance."
 msgstr "Poprawki błędów i ulepszenia wydajności."
 
@@ -236,7 +233,6 @@ msgstr ""
 "ze stanu uśpienia"
 
 #: data/io.elementary.appcenter.appdata.xml.in:197
-#, fuzzy
 msgid ""
 "Search performance has beeen improved, the category name is now shown on the "
 "headbar and minor bugs have been fixed."
@@ -253,9 +249,8 @@ msgid "Make search asynchronous"
 msgstr "Dodano wyszukiwanie asynchroniczne"
 
 #: data/io.elementary.appcenter.appdata.xml.in:255
-#, fuzzy
 msgid "elementary, Inc."
-msgstr "elementary LLC."
+msgstr "elementary, Inc."
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
@@ -266,19 +261,18 @@ msgid "@DESKTOP_ICON@"
 msgstr "@DESKTOP_ICON@"
 
 #: data/io.elementary.appcenter.desktop.in.in:7
-#, fuzzy
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
 msgstr ""
-"instaluj;odinstaluj;usuń;katalog;sklep;programy;aktualizacje;oprogramowanie;"
+"instaluj;odinstaluj;usuń;katalog;sklep;programy;aplikacje;aktualizacje;oprogr"
+"amowanie;"
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
 msgstr "Sprawdź aktualizacje"
 
 #: data/io.elementary.appcenter.desktop.in.in:19
-#, fuzzy
 msgid "system-software-update"
-msgstr "system-software-install"
+msgstr "system-software-update"
 
 #~ msgid "About AppCenter"
 #~ msgstr "O centrum programów"
