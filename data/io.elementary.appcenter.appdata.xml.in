@@ -21,6 +21,7 @@
         <ul>
           <li>Prevent AppCenter from opening on log in</li>
           <li>Prevent ghost update notification when there are no updates available</li>
+          <li>Ensure Flatpak download size estimations include dependencies</li>
         </ul>
       </description>
     </release>
