@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-11-19 06:26-0800\n"
 "PO-Revision-Date: 2019-11-22 02:24+0000\n"
-"Last-Translator: Wolf000x <thecrazyoficial@outlook.com>\n"
+"Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
 "extra/pt/>\n"
 "Language: pt\n"
@@ -41,11 +41,13 @@ msgstr "Pequenas correções"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "Prevent AppCenter from opening on log in"
-msgstr ""
+msgstr "Impedir a abertura do Centro de Aplicações no início da sessão"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Prevent ghost update notification when there are no updates available"
 msgstr ""
+"Prevenir a notificação de atualização fantasma quando não há atualizações "
+"disponíveis"
 
 #: data/io.elementary.appcenter.appdata.xml.in:30
 msgid "Add support for Flatpak apps"
