@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-13 15:46+0000\n"
-"PO-Revision-Date: 2019-07-12 22:46+0000\n"
+"POT-Creation-Date: 2019-11-19 06:26-0800\n"
+"PO-Revision-Date: 2019-11-07 20:24+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/extra/"
 "mr/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
@@ -48,67 +48,67 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:30
 msgid "Add support for Flatpak apps"
-msgstr ""
+msgstr "फ्लॅटपॅक अ‍ॅप्ससाठी समर्थन जोडा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
 msgid "Warn about non-curated apps"
-msgstr ""
+msgstr "क्यूरेट न केलेल्या अ‍ॅप्सबद्दल चेतावणी द्या"
 
 #: data/io.elementary.appcenter.appdata.xml.in:32
 msgid "Show an error dialog if an installation fails"
-msgstr ""
+msgstr "स्थापना अयशस्वी झाल्यास त्रुटी संवाद दर्शवा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:33
 msgid ""
 "Fix an issue where some apps couldn't be uninstalled from the Applications "
 "Menu"
-msgstr ""
+msgstr "अनुप्रयोग मेनूमधून काही अॅप्स विस्थापित केले जाऊ शकत नाहीत अशा समस्येचे निराकरण करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:34
 msgid "Allow browsing and uninstalling apps while offline"
-msgstr ""
+msgstr "ऑफलाइन असताना ब्राउझिंग आणि विस्थापित करणे यासाठी अ‍ॅप्सना अनुमती द्या"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
 msgid "Fix twitter share URLs"
-msgstr ""
+msgstr "ट्विटर शेअर URL दुरुस्त करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:36
 msgid "Drop Google+ from the share menu"
-msgstr ""
+msgstr "सामायिक मेनूमधून Google+ ड्रॉप करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:37
 msgid "Animate screenshot background while loading"
-msgstr ""
+msgstr "लोड करताना स्क्रीनशॉट पार्श्वभूमी एनिमेट करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:38
 msgid "Add navigation arrows for screenshots"
-msgstr ""
+msgstr "स्क्रीनशॉटसाठी नेव्हिगेशन बाण जोडा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:39
 msgid "Don't show uninstall buttons for essential system components"
-msgstr ""
+msgstr "आवश्यक सिस्टम घटकांसाठी विस्थापित बटणे दर्शवू नका"
 
 #: data/io.elementary.appcenter.appdata.xml.in:40
 msgid "Properly display proprietary licenses"
-msgstr ""
+msgstr "मालकी परवाने योग्यरित्या प्रदर्शित करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:41
 msgid "Fix some layout issues"
-msgstr ""
+msgstr "काही लेआउट समस्यांचे निराकरण करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:42
 msgid "Fix crashes"
-msgstr ""
+msgstr "क्रॅश निराकरण करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:43
 #, fuzzy
 msgid "Performance improvements"
-msgstr "विविध दोष निराकरणे आणि कार्यक्षमता सुधारणा"
+msgstr "कार्यक्षमता सुधारणा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:44
 #, fuzzy
 msgid "Updated translations"
-msgstr "नवीन अनुवाद"
+msgstr "अद्ययावत भाषांतर"
 
 #: data/io.elementary.appcenter.appdata.xml.in:51
 msgid "Meson build system fixes"
@@ -259,7 +259,7 @@ msgstr "शोध अतुल्यकालिक करा"
 #: data/io.elementary.appcenter.appdata.xml.in:264
 #, fuzzy
 msgid "elementary, Inc."
-msgstr "एलिमेंटरी LLC."
+msgstr "एलिमेंटरी, Inc."
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
@@ -270,9 +270,8 @@ msgid "@DESKTOP_ICON@"
 msgstr "@DESKTOP_ICON@"
 
 #: data/io.elementary.appcenter.desktop.in.in:7
-#, fuzzy
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
-msgstr "इन्स्टॉल; अनइन्स्टॉल; काढणे; कॅटलॉग; स्टोअर; अॅप्स; अपडेट्स; सॉफ्टवेअर;"
+msgstr "इन्स्टॉल; अनइन्स्टॉल; काढणे; कॅटलॉग; स्टोअर; अॅप्स; सॉफ्टवेअर;"
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
@@ -280,7 +279,7 @@ msgstr "अपडेट्ससाठी तपासा"
 
 #: data/io.elementary.appcenter.desktop.in.in:19
 msgid "system-software-update"
-msgstr ""
+msgstr "system-software-update"
 
 #~ msgid "About AppCenter"
 #~ msgstr "अॅप सेंटर विषयी"
