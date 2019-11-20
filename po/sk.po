@@ -98,7 +98,7 @@ msgstr "Inštalácia"
 
 #: src/Utils.vala:88
 msgid "Refreshing software list"
-msgstr "Obnovavanie zoznamu softwaru"
+msgstr "Obnovovanie zoznamu softvéru"
 
 #: src/Utils.vala:90
 msgid "Installing updates"
@@ -262,7 +262,7 @@ msgstr "Aktualizácie operačného systému"
 
 #: src/Core/UpdateManager.vala:39
 msgid "Updates to system components"
-msgstr "Aktualizácie systémových komponent"
+msgstr "Aktualizácie systémových komponentov"
 
 #: src/Core/UpdateManager.vala:76
 #, c-format
@@ -374,7 +374,7 @@ msgid ""
 "This is a one time payment. Your email address is only used to send you a "
 "receipt."
 msgstr ""
-"Toto je jednorázová platba. Vaša emailová adresa bude použitá len na "
+"Toto je jednorázová platba. Vaša e-mailová adresa bude použitá len na "
 "odoslanie potvrdenia o platbe."
 
 #: src/Dialogs/StripeDialog.vala:106 src/Widgets/SharePopover.vala:35
@@ -519,7 +519,7 @@ msgstr "Kreditný limit na Vašej karte bol už presiahnutý."
 
 #: src/Dialogs/StripeDialog.vala:609
 msgid "The given card is a test card. Please use a real card to proceed."
-msgstr "Poskýtnutá karta je testovacia. Prosím, použite kartu skutočnú."
+msgstr "Poskytnutá karta je testovacia. Prosím, použite skutočnú kartu."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
@@ -544,7 +544,7 @@ msgstr "Odinštalovať"
 #, fuzzy
 msgid "This may have been caused by external or manually compiled software."
 msgstr ""
-"Toto mohlo byť spôsobené externým, manuálne pridaným repositárom softvéru "
+"Toto mohlo byť spôsobené externým, manuálne pridaným repozitárom softvéru "
 "alebo poškodeným zdrojovým súborom."
 
 #: src/Dialogs/UninstallFailDialog.vala:37
@@ -559,14 +559,14 @@ msgstr ""
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
-msgstr "Aktualizácie sa nepodarilo stiahnúť"
+msgstr "Aktualizácie sa nepodarilo stiahnuť"
 
 #: src/Dialogs/UpdateFailDialog.vala:26
 msgid ""
 "This may have been caused by external, manually added software repositories "
 "or a corrupted sources file."
 msgstr ""
-"Toto mohlo byť spôsobené externým, manuálne pridaným repositárom softvéru "
+"Toto mohlo byť spôsobené externým, manuálne pridaným repozitárom softvéru "
 "alebo poškodeným zdrojovým súborom."
 
 #: src/Dialogs/UpdateFailDialog.vala:34
@@ -707,7 +707,7 @@ msgstr "Žiadne výsledky"
 
 #: src/Widgets/AbstractAppList.vala:36
 msgid "No apps could be found. Try changing search terms."
-msgstr "Nenašli sa žiadne aplikácie. Skúste zmeniť výraz vyhľadávanie."
+msgstr "Nenašli sa žiadne aplikácie. Skúste zmeniť výraz vyhľadávania."
 
 #: src/Widgets/Banner.vala:55
 msgid "An open, pay-what-you-want app store"
@@ -719,7 +719,7 @@ msgstr "Získajte aplikácie, ktoré potrebujete. Za cenu, akú si môžete dovo
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
-msgstr "Číslo Karty"
+msgstr "Číslo karty"
 
 #: src/Widgets/CategoryFlowBox.vala:27
 msgid "Accessories"
@@ -967,7 +967,7 @@ msgstr "Aktualizácie"
 #~ msgstr "Vložte balíček z danej id"
 
 #~ msgid "application download center"
-#~ msgstr "Centrun pre sťahovanie"
+#~ msgstr "Centrum pre sťahovanie"
 
 #~ msgid "Apps View"
 #~ msgstr "Zobraziť aplikácie"
