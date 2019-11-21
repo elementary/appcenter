@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-11-19 06:26-0800\n"
-"PO-Revision-Date: 2019-09-12 01:22+0000\n"
-"Last-Translator: Michael Leocádio <leocadiomichael@outlook.com>\n"
+"PO-Revision-Date: 2019-11-22 02:24+0000\n"
+"Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/extra/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -37,79 +37,83 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 msgid "Minor fixes"
-msgstr ""
+msgstr "Pequenas correções"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "Prevent AppCenter from opening on log in"
-msgstr ""
+msgstr "Impedir a abertura da Central de Aplicativos  no início da sessão"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Prevent ghost update notification when there are no updates available"
 msgstr ""
+"Impedir notificação de atualização fantasma quando não houver atualizações "
+"disponíveis"
 
 #: data/io.elementary.appcenter.appdata.xml.in:30
 msgid "Add support for Flatpak apps"
-msgstr ""
+msgstr "Adiciona suporte para aplicativos Flatpak"
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
 msgid "Warn about non-curated apps"
-msgstr ""
+msgstr "Avisar sobre aplicativos não curados"
 
 #: data/io.elementary.appcenter.appdata.xml.in:32
 msgid "Show an error dialog if an installation fails"
-msgstr ""
+msgstr "Mostrar uma caixa de diálogo de erro se uma instalação falhar"
 
 #: data/io.elementary.appcenter.appdata.xml.in:33
 msgid ""
 "Fix an issue where some apps couldn't be uninstalled from the Applications "
 "Menu"
 msgstr ""
+"Corrige um problema em que alguns aplicativos não pudessem ser desinstalados "
+"no Menu de Aplicativos"
 
 #: data/io.elementary.appcenter.appdata.xml.in:34
 msgid "Allow browsing and uninstalling apps while offline"
 msgstr ""
+"Permitir navegação e desinstalação de aplicativos enquanto estiver offline"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
 msgid "Fix twitter share URLs"
-msgstr ""
+msgstr "Corrigir URLs de compartilhamento do Twitter"
 
 #: data/io.elementary.appcenter.appdata.xml.in:36
 msgid "Drop Google+ from the share menu"
-msgstr ""
+msgstr "Retirado Google+ no menu de compartilhamento"
 
 #: data/io.elementary.appcenter.appdata.xml.in:37
 msgid "Animate screenshot background while loading"
-msgstr ""
+msgstr "Animar o plano de fundo da tela durante o carregamento"
 
 #: data/io.elementary.appcenter.appdata.xml.in:38
 msgid "Add navigation arrows for screenshots"
-msgstr ""
+msgstr "Adicionar setas de navegação para capturas de tela"
 
 #: data/io.elementary.appcenter.appdata.xml.in:39
 msgid "Don't show uninstall buttons for essential system components"
 msgstr ""
+"Não mostrar botões de desinstalação para componentes essenciais do sistema"
 
 #: data/io.elementary.appcenter.appdata.xml.in:40
 msgid "Properly display proprietary licenses"
-msgstr ""
+msgstr "Exibir corretamente as licenças proprietárias"
 
 #: data/io.elementary.appcenter.appdata.xml.in:41
 msgid "Fix some layout issues"
-msgstr ""
+msgstr "Corrige alguns problemas de layout"
 
 #: data/io.elementary.appcenter.appdata.xml.in:42
 msgid "Fix crashes"
-msgstr ""
+msgstr "Corrige falhas"
 
 #: data/io.elementary.appcenter.appdata.xml.in:43
-#, fuzzy
 msgid "Performance improvements"
-msgstr "Várias correções de erros e melhorias de performance"
+msgstr "Melhorias de desempenho"
 
 #: data/io.elementary.appcenter.appdata.xml.in:44
-#, fuzzy
 msgid "Updated translations"
-msgstr "Novas traduções"
+msgstr "Traduções atualizadas"
 
 #: data/io.elementary.appcenter.appdata.xml.in:51
 msgid "Meson build system fixes"
@@ -262,9 +266,8 @@ msgid "Make search asynchronous"
 msgstr "Tornar a busca assíncrona"
 
 #: data/io.elementary.appcenter.appdata.xml.in:264
-#, fuzzy
 msgid "elementary, Inc."
-msgstr "elementary LLC."
+msgstr "elementary, Inc."
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
@@ -275,11 +278,8 @@ msgid "@DESKTOP_ICON@"
 msgstr "@DESKTOP_ICON@"
 
 #: data/io.elementary.appcenter.desktop.in.in:7
-#, fuzzy
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
-msgstr ""
-"instalar;desinstalar;remover;catalogar;loja;aplicativos;atualizações;"
-"software;"
+msgstr "instalar;desinstalar;remover;catalogar;loja;aplicativos;software;"
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
@@ -287,7 +287,7 @@ msgstr "Verificar por Atualizações"
 
 #: data/io.elementary.appcenter.desktop.in.in:19
 msgid "system-software-update"
-msgstr ""
+msgstr "system-software-update"
 
 #~ msgid "About AppCenter"
 #~ msgstr "Sobre central de aplicativos"
