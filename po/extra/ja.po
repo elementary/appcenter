@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-11-19 06:26-0800\n"
-"PO-Revision-Date: 2019-11-09 12:25+0000\n"
+"PO-Revision-Date: 2019-11-25 09:25+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/extra/"
 "ja/>\n"
@@ -36,15 +36,15 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 msgid "Minor fixes"
-msgstr ""
+msgstr "軽微な修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "Prevent AppCenter from opening on log in"
-msgstr ""
+msgstr "ログイン時に AppCenter が勝手に開かないように修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Prevent ghost update notification when there are no updates available"
-msgstr ""
+msgstr "アップデートがないのに通知が表示される問題を修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:30
 msgid "Add support for Flatpak apps"
@@ -107,12 +107,10 @@ msgid "Fix crashes"
 msgstr "クラッシュを修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:43
-#, fuzzy
 msgid "Performance improvements"
 msgstr "パフォーマンスの改善"
 
 #: data/io.elementary.appcenter.appdata.xml.in:44
-#, fuzzy
 msgid "Updated translations"
 msgstr "翻訳の更新"
 
@@ -263,7 +261,6 @@ msgid "Make search asynchronous"
 msgstr "検索の非同期化"
 
 #: data/io.elementary.appcenter.appdata.xml.in:264
-#, fuzzy
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
