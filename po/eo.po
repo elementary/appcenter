@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-06 21:09+0000\n"
-"PO-Revision-Date: 2019-11-06 10:41+0000\n"
-"Last-Translator: contemplator <mistylinux@qq.com>\n"
+"POT-Creation-Date: 2019-11-19 06:24-0800\n"
+"PO-Revision-Date: 2019-11-06 21:09+0000\n"
+"Last-Translator: Shtonchjo <shtonchjo@gmail.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/eo/>\n"
 "Language: eo\n"
@@ -253,7 +253,9 @@ msgstr "Nekonata Deveno (ne kontrolita)"
 #: src/Core/Package.vala:444
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
-msgstr "Aplika stato ne agordita kiel instalita en AppCenter por pako: %s"
+msgstr ""
+"Aplikaĵa stato ne difinita kiel instalita en la Aplikaĵa Centro, rilate la "
+"pakaĵon: %s"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"

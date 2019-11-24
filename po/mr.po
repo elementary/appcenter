@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-06 21:09+0000\n"
-"PO-Revision-Date: 2019-10-16 20:23+0000\n"
+"POT-Creation-Date: 2019-11-19 06:24-0800\n"
+"PO-Revision-Date: 2019-11-06 21:09+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/mr/>\n"
@@ -298,18 +298,18 @@ msgid "Content Warning"
 msgstr "मजकूर चेतावणी"
 
 #: src/Dialogs/ContentWarningDialog.vala:30
-#, fuzzy, c-format
+#, c-format
 msgid "“%s” contains explicit content"
-msgstr "%s मध्ये मजकूर स्पष्ट आहे"
+msgstr "\"%s\" मध्ये स्पष्ट मजकूर आहे"
 
 #: src/Dialogs/ContentWarningDialog.vala:31
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "“%s” may contain content only suitable for adults or that may be sensitive "
 "or disturbing. In general, elementary does not review or endorse the "
 "contents of this app."
 msgstr ""
-"% s मध्ये केवळ वयस्कांसाठी उपयुक्त असलेला मजकूर असू शकतो किंवा तो मजकूर संवेदनशील किंवा "
+"\"%s\" मध्ये केवळ वयस्कांसाठी उपयुक्त असलेला मजकूर असू शकतो किंवा तो मजकूर संवेदनशील किंवा "
 "त्रासदायक असू शकतो. सर्वसाधारणपणे, एलिमेंटरी या अॅपच्या समाविष्ट सामग्री किंवा मजकुराचे "
 "पुनरावलोकन किंवा समर्थन करीत नाही."
 

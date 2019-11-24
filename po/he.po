@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-06 21:09+0000\n"
-"PO-Revision-Date: 2019-10-27 10:23+0000\n"
+"POT-Creation-Date: 2019-11-19 06:24-0800\n"
+"PO-Revision-Date: 2019-11-07 20:24+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/he/>\n"
@@ -297,18 +297,18 @@ msgid "Content Warning"
 msgstr "אזהרת תוכן"
 
 #: src/Dialogs/ContentWarningDialog.vala:30
-#, fuzzy, c-format
+#, c-format
 msgid "“%s” contains explicit content"
-msgstr "%s מכיל תוכן פוגעני"
+msgstr "„%s” מכיל תוכן פוגעני"
 
 #: src/Dialogs/ContentWarningDialog.vala:31
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "“%s” may contain content only suitable for adults or that may be sensitive "
 "or disturbing. In general, elementary does not review or endorse the "
 "contents of this app."
 msgstr ""
-"%s עשוי להכיל תוכן שמתאים למבוגרים בלבד או שהתוכן פוגעני או מטריד. באופן "
+"„%s” עשוי להכיל תוכן שמתאים למבוגרים בלבד או שהתוכן פוגעני או מטריד. באופן "
 "כללי, צוות elementary לא מפקח או מעודד את תכני היישום הזה."
 
 #: src/Dialogs/ContentWarningDialog.vala:33

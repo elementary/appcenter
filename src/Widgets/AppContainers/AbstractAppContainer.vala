@@ -238,12 +238,15 @@ namespace AppCenter {
                 inner_image.gicon = package.get_icon (icon_size, scale_factor);
                 var overlay_gicon = plugin_host_package.get_icon (icon_size / 2, scale_factor);
                 var badge_icon_size = Gtk.IconSize.LARGE_TOOLBAR;
+                var badge_pixel_size = 24;
                 if (icon_size >= 128) {
                     badge_icon_size = Gtk.IconSize.DIALOG;
+                    badge_pixel_size = 64;
                 }
 
                 var overlay_image = new Gtk.Image.from_gicon (overlay_gicon, badge_icon_size);
                 overlay_image.halign = overlay_image.valign = Gtk.Align.END;
+                overlay_image.pixel_size = badge_pixel_size;
                 image.add_overlay (overlay_image);
             } else {
                 inner_image.gicon = package.get_icon (icon_size, scale_factor);
