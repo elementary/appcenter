@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-11-19 06:26-0800\n"
-"PO-Revision-Date: 2019-11-07 20:24+0000\n"
+"PO-Revision-Date: 2019-11-25 09:25+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/extra/"
 "mr/>\n"
@@ -36,15 +36,15 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 msgid "Minor fixes"
-msgstr ""
+msgstr "किरकोळ दोष निराकरणे"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "Prevent AppCenter from opening on log in"
-msgstr ""
+msgstr "लॉग इन होताच उघडण्यापासून AppCenter ला प्रतिबंधित करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Prevent ghost update notification when there are no updates available"
-msgstr ""
+msgstr "कोणतीही अद्यतने उपलब्ध नसताना घोस्ट अद्यतन सूचना प्रतिबंधित करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:30
 msgid "Add support for Flatpak apps"
@@ -101,12 +101,10 @@ msgid "Fix crashes"
 msgstr "क्रॅश निराकरण करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:43
-#, fuzzy
 msgid "Performance improvements"
 msgstr "कार्यक्षमता सुधारणा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:44
-#, fuzzy
 msgid "Updated translations"
 msgstr "अद्ययावत भाषांतर"
 
@@ -257,7 +255,6 @@ msgid "Make search asynchronous"
 msgstr "शोध अतुल्यकालिक करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:264
-#, fuzzy
 msgid "elementary, Inc."
 msgstr "एलिमेंटरी, Inc."
 
