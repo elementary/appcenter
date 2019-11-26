@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-13 15:46+0000\n"
-"PO-Revision-Date: 2019-10-19 04:23+0000\n"
-"Last-Translator: Cleiton Floss <cleitonfloss@gmail.com>\n"
+"POT-Creation-Date: 2019-11-19 06:24-0800\n"
+"PO-Revision-Date: 2019-11-22 02:24+0000\n"
+"Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -304,20 +304,20 @@ msgid "Content Warning"
 msgstr "Aviso de Conteúdo"
 
 #: src/Dialogs/ContentWarningDialog.vala:30
-#, fuzzy, c-format
+#, c-format
 msgid "“%s” contains explicit content"
-msgstr "%s Contém Conteúdo Explícito"
+msgstr "\"%s\" contém conteúdo explícito"
 
 #: src/Dialogs/ContentWarningDialog.vala:31
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "“%s” may contain content only suitable for adults or that may be sensitive "
 "or disturbing. In general, elementary does not review or endorse the "
 "contents of this app."
 msgstr ""
-"%s pode conter conteúdo adequado apenas para adultos ou que seja sensível ou "
-"incômodo. Em geral, o elementary não revisa ou sanciona o conteúdo deste "
-"aplicativo."
+"\"%s\" pode conter conteúdo adequado apenas para adultos ou que seja "
+"sensível ou incômodo. Em geral, o elementary não revisa ou sanciona o "
+"conteúdo deste aplicativo."
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 msgid "Show content warnings"

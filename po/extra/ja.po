@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-13 15:46+0000\n"
-"PO-Revision-Date: 2019-09-14 12:23+0000\n"
+"POT-Creation-Date: 2019-11-19 06:26-0800\n"
+"PO-Revision-Date: 2019-11-25 09:25+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/extra/"
 "ja/>\n"
@@ -36,79 +36,83 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 msgid "Minor fixes"
-msgstr ""
+msgstr "軽微な修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "Prevent AppCenter from opening on log in"
-msgstr ""
+msgstr "ログイン時に AppCenter が勝手に開かないように修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Prevent ghost update notification when there are no updates available"
-msgstr ""
+msgstr "アップデートがないのに通知が表示される問題を修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:30
 msgid "Add support for Flatpak apps"
-msgstr ""
+msgstr "Flatpak アプリに対応"
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
 msgid "Warn about non-curated apps"
 msgstr ""
+"キュレーションされていないアプリのインストール時に警告を表示するように修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:32
 msgid "Show an error dialog if an installation fails"
-msgstr ""
+msgstr "インストールの失敗時にエラーダイアログを表示するように修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:33
 msgid ""
 "Fix an issue where some apps couldn't be uninstalled from the Applications "
 "Menu"
 msgstr ""
+"一部のアプリがアプリケーションメニューからアンインストールできない問題を修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:34
 msgid "Allow browsing and uninstalling apps while offline"
 msgstr ""
+"オフライン時にインストール済みのアプリを確認したりアンインストールしたりでき"
+"るように変更"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
 msgid "Fix twitter share URLs"
-msgstr ""
+msgstr "Twitter 共有の URL を修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:36
 msgid "Drop Google+ from the share menu"
-msgstr ""
+msgstr "共有メニューから Google+ を削除"
 
 #: data/io.elementary.appcenter.appdata.xml.in:37
 msgid "Animate screenshot background while loading"
-msgstr ""
+msgstr "読み込み時にスクリーンショットの背景をアニメーション表示するように変更"
 
 #: data/io.elementary.appcenter.appdata.xml.in:38
 msgid "Add navigation arrows for screenshots"
-msgstr ""
+msgstr "別jのスクリーンショットに移動するための矢印ボタンを追加"
 
 #: data/io.elementary.appcenter.appdata.xml.in:39
 msgid "Don't show uninstall buttons for essential system components"
 msgstr ""
+"削除してはいけないシステムコンポーネントにはアンインストールボタンを表示しな"
+"いように修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:40
 msgid "Properly display proprietary licenses"
-msgstr ""
+msgstr "プロプライエタリーなライセンスを適切に表示するように修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:41
 msgid "Fix some layout issues"
-msgstr ""
+msgstr "レイアウトの問題を修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:42
 msgid "Fix crashes"
-msgstr ""
+msgstr "クラッシュを修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:43
-#, fuzzy
 msgid "Performance improvements"
-msgstr "様々なバグ修正とパフォーマンスの改善"
+msgstr "パフォーマンスの改善"
 
 #: data/io.elementary.appcenter.appdata.xml.in:44
-#, fuzzy
 msgid "Updated translations"
-msgstr "新しい翻訳"
+msgstr "翻訳の更新"
 
 #: data/io.elementary.appcenter.appdata.xml.in:51
 msgid "Meson build system fixes"
@@ -257,9 +261,8 @@ msgid "Make search asynchronous"
 msgstr "検索の非同期化"
 
 #: data/io.elementary.appcenter.appdata.xml.in:264
-#, fuzzy
 msgid "elementary, Inc."
-msgstr "elementary LLC."
+msgstr "elementary, Inc."
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
@@ -270,11 +273,10 @@ msgid "@DESKTOP_ICON@"
 msgstr "@DESKTOP_ICON@"
 
 #: data/io.elementary.appcenter.desktop.in.in:7
-#, fuzzy
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
 msgstr ""
-"install;uninstall;remove;catalogue;store;apps;updates;software;インストール;"
-"アンインストール;削除;カタログ;ストア;アプリ;アップデート;ソフトウェア;"
+"install;uninstall;remove;catalogue;store;apps;software;インストール;アンイン"
+"ストール;削除;カタログ;ストア;アプリ;ソフトウェア;"
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
@@ -282,7 +284,7 @@ msgstr "アップデートを確認"
 
 #: data/io.elementary.appcenter.desktop.in.in:19
 msgid "system-software-update"
-msgstr ""
+msgstr "system-software-update"
 
 #~ msgid "About AppCenter"
 #~ msgstr "AppCenter について"
