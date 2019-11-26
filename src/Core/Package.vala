@@ -23,6 +23,10 @@ public errordomain PackageLaunchError {
     APP_INFO_NOT_FOUND
 }
 
+public errordomain PackageUninstallError {
+    APP_STATE_NOT_INSTALLED
+}
+
 public class AppCenterCore.PackageDetails : Object {
     public string? name { get; set; }
     public string? description { get; set; }
@@ -32,8 +36,10 @@ public class AppCenterCore.PackageDetails : Object {
 
 public class AppCenterCore.Package : Object {
     public const string APPCENTER_PACKAGE_ORIGIN = "appcenter-bionic-main";
-    private const string ELEMENTARY_STABLE_PACKAGE_ORIGIN = "stable-bionic-main";
-    private const string ELEMENTARY_DAILY_PACKAGE_ORIGIN = "daily-bionic-main";
+    // We stopped using this origin in elementary OS 5.1, references to this can be removed
+    // after everyone has had chance to update their appstream-data-pantheon package
+    private const string DEPRECATED_ELEMENTARY_STABLE_PACKAGE_ORIGIN = "stable-bionic-main";
+    private const string ELEMENTARY_STABLE_PACKAGE_ORIGIN = "elementary-stable-bionic-main";
 
     /* Note: These are just a stopgap, and are not a replacement for a more
      * fleshed out parental control system. We assume any of these "moderate"
@@ -143,7 +149,7 @@ public class AppCenterCore.Package : Object {
                 return false;
             }
 
-            if (component.get_id () in AppCenter.Settings.get_default ().paid_apps) {
+            if (component.get_id () in AppCenter.App.settings.get_strv ("paid-apps")) {
                 return false;
             }
 
@@ -202,8 +208,8 @@ public class AppCenterCore.Package : Object {
         get {
             switch (component.get_origin ()) {
                 case APPCENTER_PACKAGE_ORIGIN:
+                case DEPRECATED_ELEMENTARY_STABLE_PACKAGE_ORIGIN:
                 case ELEMENTARY_STABLE_PACKAGE_ORIGIN:
-                case ELEMENTARY_DAILY_PACKAGE_ORIGIN:
                     return true;
                 default:
                     return false;
@@ -318,16 +324,17 @@ public class AppCenterCore.Package : Object {
 
     public string origin_description {
         owned get {
+            unowned string origin = component.get_origin ();
             if (backend is PackageKitBackend) {
-                if (component.get_origin () == APPCENTER_PACKAGE_ORIGIN) {
+                if (origin == APPCENTER_PACKAGE_ORIGIN) {
                     return _("AppCenter");
-                } else if (component.get_origin () == ELEMENTARY_STABLE_PACKAGE_ORIGIN || component.get_origin () == ELEMENTARY_DAILY_PACKAGE_ORIGIN) {
+                } else if (origin == DEPRECATED_ELEMENTARY_STABLE_PACKAGE_ORIGIN || origin == ELEMENTARY_STABLE_PACKAGE_ORIGIN) {
                     return _("elementary Updates");
-                } else if (component.get_origin ().has_prefix ("ubuntu-")) {
+                } else if (origin.has_prefix ("ubuntu-")) {
                     return _("Ubuntu (non-curated)");
                 }
             } else if (backend is FlatpakBackend) {
-                return _("%s (non-curated)").printf (component.get_origin ());
+                return _("%s (non-curated)").printf (origin);
             } else if (backend is UbuntuDriversBackend) {
                 return _("Ubuntu Drivers");
             }
@@ -425,16 +432,16 @@ public class AppCenterCore.Package : Object {
         }
     }
 
-    public async bool uninstall () {
+    public async bool uninstall () throws Error {
         if (state == State.INSTALLED || state == State.UPDATE_AVAILABLE) {
             try {
                 return yield perform_operation (State.REMOVING, State.NOT_INSTALLED, state);
             } catch (Error e) {
-                return false;
+                throw e;
             }
         }
 
-        return false;
+        throw new PackageUninstallError.APP_STATE_NOT_INSTALLED (_("Application state not set as installed in AppCenter for package: %s".printf (get_name ())));
     }
 
     public void launch () throws Error {
@@ -473,7 +480,7 @@ public class AppCenterCore.Package : Object {
     }
 
     private async bool perform_package_operation () throws GLib.Error {
-        ChangeInformation.ProgressCallback cb = change_information.Callback;
+        ChangeInformation.ProgressCallback cb = change_information.callback;
         var client = AppCenterCore.Client.get_default ();
 
         switch (state) {

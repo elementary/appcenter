@@ -534,7 +534,7 @@ namespace AppCenter.Views {
             if (package.is_os_updates) {
                 package.notify["state"].connect (() => {
                     Idle.add (() => {
-                        parse_description (package.get_description());
+                        parse_description (package.get_description ());
                         return false;
                     });
                 });
@@ -830,7 +830,7 @@ namespace AppCenter.Views {
                                                           );
 
                     stripe.download_requested.connect (() => {
-                        Settings.get_default ().add_paid_app (package.component.get_id ());
+                        App.add_paid_app (package.component.get_id ());
                     });
 
                     stripe.show ();
@@ -846,4 +846,3 @@ namespace AppCenter.Views {
         }
     }
 }
-

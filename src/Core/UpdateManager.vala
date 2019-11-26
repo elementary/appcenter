@@ -78,7 +78,7 @@ public class AppCenterCore.UpdateManager : Object {
             }
         });
 
-        os_updates.component.set_pkgnames({});
+        os_updates.component.set_pkgnames ({});
         os_updates.change_information.clear_update_info ();
 
         unowned FlatpakBackend fp_client = FlatpakBackend.get_default ();

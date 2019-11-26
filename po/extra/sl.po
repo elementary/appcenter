@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:42+0200\n"
+"POT-Creation-Date: 2019-11-19 06:26-0800\n"
 "PO-Revision-Date: 2018-02-10 00:01+0000\n"
 "Last-Translator: Jernej Virag <jernej@virag.si>\n"
 "Language-Team: Slovenian <https://weblate.elementary.io/projects/appcenter/"
@@ -36,39 +36,149 @@ msgstr ""
 "opremo tudi posodablja sistem in nameščene aplikacije na najnovejšo "
 "različico."
 
-#: data/io.elementary.appcenter.appdata.xml.in:21
-msgid "Meson build system fixes"
+#: data/io.elementary.appcenter.appdata.xml.in:20
+msgid "Minor fixes"
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
-msgid "Improve window state restoration"
+msgid "Prevent AppCenter from opening on log in"
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
+msgid "Prevent ghost update notification when there are no updates available"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:30
+msgid "Add support for Flatpak apps"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:31
+msgid "Warn about non-curated apps"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:32
+msgid "Show an error dialog if an installation fails"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:33
+msgid ""
+"Fix an issue where some apps couldn't be uninstalled from the Applications "
+"Menu"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:34
+msgid "Allow browsing and uninstalling apps while offline"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:35
+msgid "Fix twitter share URLs"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:36
+msgid "Drop Google+ from the share menu"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:37
+msgid "Animate screenshot background while loading"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:38
+msgid "Add navigation arrows for screenshots"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:39
+msgid "Don't show uninstall buttons for essential system components"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:40
+msgid "Properly display proprietary licenses"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:41
+msgid "Fix some layout issues"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:42
+msgid "Fix crashes"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:43
+#, fuzzy
+msgid "Performance improvements"
+msgstr "Raznovrstni popravki in izboljšanje odzivnosti"
+
+#: data/io.elementary.appcenter.appdata.xml.in:44
+#, fuzzy
+msgid "Updated translations"
+msgstr "Novi prevodi"
+
+#: data/io.elementary.appcenter.appdata.xml.in:51
+msgid "Meson build system fixes"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:52
+msgid "Improve window state restoration"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:53
 msgid "Prevent action buttons from jumping around"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:24
+#: data/io.elementary.appcenter.appdata.xml.in:54
 msgid "Remove reset paid apps gsettings key"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:25
+#: data/io.elementary.appcenter.appdata.xml.in:55
 msgid "Memory management refinements"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:26
+#: data/io.elementary.appcenter.appdata.xml.in:56
 msgid ""
 "Add conditional compilation for disabling dynamic remote homepage content"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:27
-#: data/io.elementary.appcenter.appdata.xml.in:39
-#: data/io.elementary.appcenter.appdata.xml.in:46
-#: data/io.elementary.appcenter.appdata.xml.in:59
-#: data/io.elementary.appcenter.appdata.xml.in:70
-#: data/io.elementary.appcenter.appdata.xml.in:79
-#: data/io.elementary.appcenter.appdata.xml.in:88
-#: data/io.elementary.appcenter.appdata.xml.in:97
+#: data/io.elementary.appcenter.appdata.xml.in:57
+#: data/io.elementary.appcenter.appdata.xml.in:69
+#: data/io.elementary.appcenter.appdata.xml.in:76
+#: data/io.elementary.appcenter.appdata.xml.in:89
+#: data/io.elementary.appcenter.appdata.xml.in:100
+#: data/io.elementary.appcenter.appdata.xml.in:109
+#: data/io.elementary.appcenter.appdata.xml.in:118
+#: data/io.elementary.appcenter.appdata.xml.in:127
+#: data/io.elementary.appcenter.appdata.xml.in:136
+#: data/io.elementary.appcenter.appdata.xml.in:145
+#: data/io.elementary.appcenter.appdata.xml.in:154
+#: data/io.elementary.appcenter.appdata.xml.in:163
+#: data/io.elementary.appcenter.appdata.xml.in:172
+#: data/io.elementary.appcenter.appdata.xml.in:181
+#: data/io.elementary.appcenter.appdata.xml.in:190
+#: data/io.elementary.appcenter.appdata.xml.in:200
+#: data/io.elementary.appcenter.appdata.xml.in:210
+msgid "New translations"
+msgstr "Novi prevodi"
+
+#: data/io.elementary.appcenter.appdata.xml.in:64
+msgid "New categories: Communication, Finance, Media Production"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:65
+msgid "Add Math to Science category"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:66
+msgid "Relax email address validator"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:67
+msgid "Present update availability more accurately"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:68
+msgid "Category graphics revamped"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:83
+#: data/io.elementary.appcenter.appdata.xml.in:95
 #: data/io.elementary.appcenter.appdata.xml.in:106
 #: data/io.elementary.appcenter.appdata.xml.in:115
 #: data/io.elementary.appcenter.appdata.xml.in:124
@@ -76,116 +186,82 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:142
 #: data/io.elementary.appcenter.appdata.xml.in:151
 #: data/io.elementary.appcenter.appdata.xml.in:160
-#: data/io.elementary.appcenter.appdata.xml.in:170
-#: data/io.elementary.appcenter.appdata.xml.in:180
-msgid "New translations"
-msgstr "Novi prevodi"
-
-#: data/io.elementary.appcenter.appdata.xml.in:34
-msgid "New categories: Communication, Finance, Media Production"
-msgstr ""
-
-#: data/io.elementary.appcenter.appdata.xml.in:35
-msgid "Add Math to Science category"
-msgstr ""
-
-#: data/io.elementary.appcenter.appdata.xml.in:36
-msgid "Relax email address validator"
-msgstr ""
-
-#: data/io.elementary.appcenter.appdata.xml.in:37
-msgid "Present update availability more accurately"
-msgstr ""
-
-#: data/io.elementary.appcenter.appdata.xml.in:38
-msgid "Category graphics revamped"
-msgstr ""
-
-#: data/io.elementary.appcenter.appdata.xml.in:53
-#: data/io.elementary.appcenter.appdata.xml.in:65
-#: data/io.elementary.appcenter.appdata.xml.in:76
-#: data/io.elementary.appcenter.appdata.xml.in:85
-#: data/io.elementary.appcenter.appdata.xml.in:94
-#: data/io.elementary.appcenter.appdata.xml.in:103
-#: data/io.elementary.appcenter.appdata.xml.in:112
-#: data/io.elementary.appcenter.appdata.xml.in:121
-#: data/io.elementary.appcenter.appdata.xml.in:130
-#: data/io.elementary.appcenter.appdata.xml.in:139
-#: data/io.elementary.appcenter.appdata.xml.in:148
-#: data/io.elementary.appcenter.appdata.xml.in:157
+#: data/io.elementary.appcenter.appdata.xml.in:169
+#: data/io.elementary.appcenter.appdata.xml.in:178
+#: data/io.elementary.appcenter.appdata.xml.in:187
 #, fuzzy
 msgid "Bug fixes and improve performance."
 msgstr "Raznovrstni popravki in izboljšanje odzivnosti"
 
-#: data/io.elementary.appcenter.appdata.xml.in:55
+#: data/io.elementary.appcenter.appdata.xml.in:85
 msgid "Improve transaction success rate"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:56
+#: data/io.elementary.appcenter.appdata.xml.in:86
 msgid "Add Publishing to Office category"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:57
+#: data/io.elementary.appcenter.appdata.xml.in:87
 msgid "Improve descriptions of OS Updates"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:58
-#: data/io.elementary.appcenter.appdata.xml.in:69
-#: data/io.elementary.appcenter.appdata.xml.in:78
-#: data/io.elementary.appcenter.appdata.xml.in:87
-#: data/io.elementary.appcenter.appdata.xml.in:96
-#: data/io.elementary.appcenter.appdata.xml.in:105
-#: data/io.elementary.appcenter.appdata.xml.in:114
-#: data/io.elementary.appcenter.appdata.xml.in:123
-#: data/io.elementary.appcenter.appdata.xml.in:132
-#: data/io.elementary.appcenter.appdata.xml.in:141
-#: data/io.elementary.appcenter.appdata.xml.in:150
+#: data/io.elementary.appcenter.appdata.xml.in:88
+#: data/io.elementary.appcenter.appdata.xml.in:99
+#: data/io.elementary.appcenter.appdata.xml.in:108
+#: data/io.elementary.appcenter.appdata.xml.in:117
+#: data/io.elementary.appcenter.appdata.xml.in:126
+#: data/io.elementary.appcenter.appdata.xml.in:135
+#: data/io.elementary.appcenter.appdata.xml.in:144
+#: data/io.elementary.appcenter.appdata.xml.in:153
+#: data/io.elementary.appcenter.appdata.xml.in:162
+#: data/io.elementary.appcenter.appdata.xml.in:171
+#: data/io.elementary.appcenter.appdata.xml.in:180
 msgid "Various bug fixes and performance improvements"
 msgstr "Raznovrstni popravki in izboljšanje odzivnosti"
 
-#: data/io.elementary.appcenter.appdata.xml.in:67
+#: data/io.elementary.appcenter.appdata.xml.in:97
 msgid "Give details for Operating System Updates"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:68
+#: data/io.elementary.appcenter.appdata.xml.in:98
 msgid "Support mouse button navigation"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:159
+#: data/io.elementary.appcenter.appdata.xml.in:189
 msgid "Fix crash caused by entries with missing packages"
 msgstr ""
 "Popravi sesutje do katerega je prišlo zaradi vnosov z manjkajočimi paketi"
 
-#: data/io.elementary.appcenter.appdata.xml.in:166
+#: data/io.elementary.appcenter.appdata.xml.in:196
 msgid "Add capability to search by category and apply minor bug fixes."
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:168
+#: data/io.elementary.appcenter.appdata.xml.in:198
 msgid "It is now possible to search apps inside a category"
 msgstr "Aplikacije je sedaj mogoče iskati znotraj kategorij"
 
-#: data/io.elementary.appcenter.appdata.xml.in:169
+#: data/io.elementary.appcenter.appdata.xml.in:199
 msgid "Prevent multiple authentication dialogs when resuming from suspend"
 msgstr ""
 "Prepreči prikaz večih dialogov za preverjanje pristnosti ob vrnitvi iz "
 "suspenza"
 
-#: data/io.elementary.appcenter.appdata.xml.in:176
+#: data/io.elementary.appcenter.appdata.xml.in:206
 msgid ""
 "Search performance has beeen improved, the category name is now shown on the "
 "headbar and minor bugs have been fixed."
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:178
+#: data/io.elementary.appcenter.appdata.xml.in:208
 msgid "Fix Steam installation"
 msgstr "Popravi namestitev Steama"
 
-#: data/io.elementary.appcenter.appdata.xml.in:179
+#: data/io.elementary.appcenter.appdata.xml.in:209
 msgid "Make search asynchronous"
 msgstr "Spremeni iskanje v asinhrono operacijo"
 
-#: data/io.elementary.appcenter.appdata.xml.in:234
-msgid "elementary LLC."
+#: data/io.elementary.appcenter.appdata.xml.in:264
+msgid "elementary, Inc."
 msgstr ""
 
 #: data/io.elementary.appcenter.desktop.in.in:3
@@ -197,13 +273,18 @@ msgid "@DESKTOP_ICON@"
 msgstr ""
 
 #: data/io.elementary.appcenter.desktop.in.in:7
-msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
+#, fuzzy
+msgid "install;uninstall;remove;catalogue;store;apps;software;"
 msgstr ""
 "namesti;odstrani;instaliraj;inštaliraj;install;uninstall;katalog;trgovina;"
 "app;apps;aplikacije;posodobitve;update;software;programi;"
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
+msgstr ""
+
+#: data/io.elementary.appcenter.desktop.in.in:19
+msgid "system-software-update"
 msgstr ""
 
 #~ msgid "About AppCenter"

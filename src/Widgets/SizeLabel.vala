@@ -74,4 +74,3 @@ public class AppCenter.Widgets.SizeLabel : Gtk.Grid {
         }
     }
 }
-
