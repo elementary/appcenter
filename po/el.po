@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-06 21:09+0000\n"
+"POT-Creation-Date: 2019-12-01 23:35+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Greek <https://l10n.elementary.io/projects/appcenter/"
@@ -659,11 +659,11 @@ msgstr ""
 msgid "Share"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:817
+#: src/Views/AppInfoView.vala:822
 msgid "Fund"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:839
+#: src/Views/AppInfoView.vala:844
 msgid "Fund the development of this app"
 msgstr ""
 
@@ -801,12 +801,12 @@ msgid "Requires payments, which are not enabled"
 msgstr ""
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:292
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:295
 msgid "Free"
 msgstr "Δωρεάν"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:294
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:297
 #, fuzzy
 msgid "Install"
 msgstr "Εγκατάσταση"
@@ -913,7 +913,7 @@ msgstr ""
 msgid "Open"
 msgstr "Άνοιγμα"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:317
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:320
 msgid "Update"
 msgstr "Ενημέρωση"
 
