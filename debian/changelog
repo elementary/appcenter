@@ -1,3 +1,22 @@
+appcenter (3.2.1) bionic; urgency=medium
+
+  * Release 3.2.1 (#1150)
+  * Update translation template
+  * Lookup extensions in backend instead of constructing new (#1133)
+  * Fix extension badge size (#1144)
+  * Update translation template
+  * AppData: Update release info
+  * Remove dbus service file (#1126)
+  * Bump meson version to 3.2.1 (#1131)
+  * Update translation template
+  * Only call update on backends which have updates available (#1129)
+  * Add Gettext Updates to Actions
+  * Use new orign name from appstream data (#1125)
+  * Fix lint error and delegate warnings (#1124)
+  * Update flatpak.vapi (#1122)
+
+ -- elementary Builds Team <builds@elementary.io>  Mon, 02 Dec 2019 17:55:37 +0000
+
 appcenter (3.2.0) bionic; urgency=medium
 
   * Release 3.2.0 (#1110)
