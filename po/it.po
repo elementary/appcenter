@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-13 15:46+0000\n"
+"POT-Creation-Date: 2019-12-01 23:35+0000\n"
 "PO-Revision-Date: 2019-07-03 14:02+0000\n"
 "Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian <https://l10n.elementary.io/projects/appcenter/"
@@ -656,11 +656,11 @@ msgstr "Scopri %s in AppCenter:"
 msgid "Share"
 msgstr "Condividi"
 
-#: src/Views/AppInfoView.vala:817
+#: src/Views/AppInfoView.vala:822
 msgid "Fund"
 msgstr "Sostieni"
 
-#: src/Views/AppInfoView.vala:839
+#: src/Views/AppInfoView.vala:844
 msgid "Fund the development of this app"
 msgstr "Finanzia lo sviluppo di questa applicazione"
 
@@ -797,12 +797,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "Richiede pagamenti, che non sono stati abilitati"
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:292
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:295
 msgid "Free"
 msgstr "Gratuito"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:294
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:297
 msgid "Install"
 msgstr "Installa"
 
@@ -906,7 +906,7 @@ msgstr "Driver"
 msgid "Open"
 msgstr "Apri"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:317
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:320
 msgid "Update"
 msgstr "Aggiorna"
 
