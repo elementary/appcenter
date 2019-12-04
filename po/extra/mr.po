@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-01 23:35+0000\n"
-"PO-Revision-Date: 2019-11-25 09:25+0000\n"
+"PO-Revision-Date: 2019-12-04 01:25+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/extra/"
 "mr/>\n"
@@ -48,7 +48,7 @@ msgstr "कोणतीही अद्यतने उपलब्ध नसत
 
 #: data/io.elementary.appcenter.appdata.xml.in:24
 msgid "Show correct installation state for extensions"
-msgstr ""
+msgstr "विस्तारांसाठी योग्य स्थापना स्थिती दर्शवा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
 msgid "Add support for Flatpak apps"
