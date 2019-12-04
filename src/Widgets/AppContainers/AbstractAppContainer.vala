@@ -233,20 +233,32 @@ namespace AppCenter {
 
             var scale_factor = inner_image.get_scale_factor ();
 
+            var badge_icon_size = Gtk.IconSize.LARGE_TOOLBAR;
+            var badge_pixel_size = 24;
+            if (icon_size >= 128) {
+                badge_icon_size = Gtk.IconSize.DIALOG;
+                badge_pixel_size = 64;
+            }
+
             var plugin_host_package = package.get_plugin_host_package ();
             if (package.is_plugin && plugin_host_package != null) {
                 inner_image.gicon = package.get_icon (icon_size, scale_factor);
                 var overlay_gicon = plugin_host_package.get_icon (icon_size / 2, scale_factor);
-                var badge_icon_size = Gtk.IconSize.LARGE_TOOLBAR;
-                if (icon_size >= 128) {
-                    badge_icon_size = Gtk.IconSize.DIALOG;
-                }
 
                 var overlay_image = new Gtk.Image.from_gicon (overlay_gicon, badge_icon_size);
                 overlay_image.halign = overlay_image.valign = Gtk.Align.END;
+                overlay_image.pixel_size = badge_pixel_size;
                 image.add_overlay (overlay_image);
             } else {
                 inner_image.gicon = package.get_icon (icon_size, scale_factor);
+
+                if (is_os_updates) {
+                    var overlay_image = new Gtk.Image.from_icon_name ("system-software-update", badge_icon_size);
+                    overlay_image.halign = overlay_image.valign = Gtk.Align.END;
+                    overlay_image.pixel_size = badge_pixel_size;
+
+                    image.add_overlay (overlay_image);
+                }
             }
 
             package.notify["state"].connect (on_package_state_changed);
