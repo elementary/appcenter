@@ -21,4 +21,3 @@
 interface SystemInterface : Object {
     public abstract void reboot (bool interactive) throws GLib.Error;
 }
-

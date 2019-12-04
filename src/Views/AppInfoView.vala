@@ -534,7 +534,7 @@ namespace AppCenter.Views {
             if (package.is_os_updates) {
                 package.notify["state"].connect (() => {
                     Idle.add (() => {
-                        parse_description (package.get_description());
+                        parse_description (package.get_description ());
                         return false;
                     });
                 });
@@ -556,7 +556,12 @@ namespace AppCenter.Views {
 
         private async void load_extensions () {
             package.component.get_addons ().@foreach ((extension) => {
-                var row = new Widgets.PackageRow.list (new AppCenterCore.Package (package.backend, extension), null, null, false);
+                var extension_package = package.backend.get_package_for_component_id (extension.id);
+                if (extension_package == null) {
+                    return;
+                }
+
+                var row = new Widgets.PackageRow.list (extension_package, null, null, false);
                 if (extension_box != null) {
                     extension_box.add (row);
                 }
@@ -830,7 +835,7 @@ namespace AppCenter.Views {
                                                           );
 
                     stripe.download_requested.connect (() => {
-                        Settings.get_default ().add_paid_app (package.component.get_id ());
+                        App.add_paid_app (package.component.get_id ());
                     });
 
                     stripe.show ();
@@ -846,4 +851,3 @@ namespace AppCenter.Views {
         }
     }
 }
-

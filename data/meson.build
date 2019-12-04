@@ -6,14 +6,6 @@ configure_file(
     install_dir: join_paths(get_option('datadir'), 'applications')
 )
 
-# D-Bus Service
-configure_file(
-    input: meson.project_name() + '.service.in',
-    output: meson.project_name() + '.service',
-    configuration: conf_data,
-    install_dir: dbus.get_pkgconfig_variable('session_bus_services_dir')
-)
-
 # GNOME Shell Search Provider
 configure_file(
     input: meson.project_name() + '.search-provider.ini.in',

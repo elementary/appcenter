@@ -1,12 +1,13 @@
 # Piotr Strebski <strebski@gmail.com>, 2018, 2019.
 # Kajetan Rosiak <roskaj@gmail.com>, 2018.
 # Daniel Foré <daniel@elementary.io>, 2019.
+# Deleted User <noreply+917@weblate.org>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-26 08:22-0700\n"
-"PO-Revision-Date: 2019-05-16 00:14+0000\n"
+"POT-Creation-Date: 2019-12-01 23:35+0000\n"
+"PO-Revision-Date: 2019-11-15 21:24+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/pl/>\n"
@@ -16,66 +17,54 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:323
+#: src/Application.vala:38 src/Core/Package.vala:330
 msgid "AppCenter"
 msgstr "AppCenter"
 
-#: src/Application.vala:106
-#, fuzzy, c-format
+#: src/Application.vala:112
+#, c-format
 msgid "Could not parse the media type %s"
-msgstr "Nie można przetworzyć typu mime %s"
+msgstr "Nie można przetworzyć typu mediów %s"
 
-#: src/Application.vala:126
+#: src/Application.vala:132
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Określony odnośnik '%s' nie został odnaleziony, wyszukiwanie"
 
-#: src/Application.vala:264
+#: src/Application.vala:270
 msgid "Application installed"
 msgstr "Program zainstalowany"
 
-#: src/Application.vala:265
+#: src/Application.vala:271
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s zostało pomyślnie zainstalowane"
 
-#: src/Application.vala:277
+#: src/Application.vala:283
 #, c-format
 msgid "There Was An Error Installing %s."
 msgstr "Wystąpił błąd podczas instalacji %s."
 
-#: src/MainWindow.vala:157 src/Views/Homepage.vala:282
-#: src/Views/Homepage.vala:294 src/Views/Homepage.vala:299
-#: src/Views/Homepage.vala:310
+#: src/MainWindow.vala:141 src/Views/Homepage.vala:297
+#: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
+#: src/Views/Homepage.vala:325
 msgid "Home"
 msgstr "Strona główna"
 
-#: src/MainWindow.vala:158 src/Views/InstalledView.vala:32
-#: src/Views/InstalledView.vala:57
+#: src/MainWindow.vala:142 src/Views/InstalledView.vala:33
+#: src/Views/InstalledView.vala:58
 msgctxt "view"
 msgid "Installed"
 msgstr "Zainstalowane"
 
-#: src/MainWindow.vala:185 src/MainWindow.vala:348 src/Views/SearchView.vala:55
+#: src/MainWindow.vala:169 src/MainWindow.vala:328 src/Views/SearchView.vala:55
 #: src/Views/SearchView.vala:82
 msgid "Search Apps"
 msgstr "Wyszukaj program"
-
-#: src/MainWindow.vala:203
-msgid "Network Is Not Available"
-msgstr "Sieć jest niedostępna"
-
-#: src/MainWindow.vala:204
-msgid "Connect to the Internet to install or update apps."
-msgstr "Połącz się z Internetem, aby zainstalować lub zaktualizować programy."
-
-#: src/MainWindow.vala:207
-msgid "Network Settings…"
-msgstr "Ustawienia sieci…"
 
 #: src/Utils.vala:72 src/Core/ChangeInformation.vala:92
 msgid "Starting"
@@ -227,7 +216,7 @@ msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Dostępna aktualizacja"
 msgstr[1] "Dostępne aktualizacje"
-msgstr[2] "Dostępne aktualizacje"
+msgstr[2] "Dostępnych aktualizacji"
 
 #: src/Core/Client.vala:71
 #, c-format
@@ -237,33 +226,40 @@ msgstr[0] "Dostępna jest %u aktualizacja dla Twojego systemu"
 msgstr[1] "Dostępne są %u aktualizacje dla Twojego systemu"
 msgstr[2] "Dostępnych jest %u aktualizacji dla Twojego systemu"
 
-#: src/Core/Package.vala:294
+#: src/Core/Package.vala:300
 #, c-format
 msgid "%s Developers"
 msgstr "Programiści %s"
 
-#: src/Core/Package.vala:325
-#, fuzzy
-msgid "elementary Updates"
-msgstr "Ostatnio zaktualizowane"
-
-#: src/Core/Package.vala:327
-msgid "Ubuntu (non-curated)"
-msgstr ""
-
-#: src/Core/Package.vala:330
-#, fuzzy, c-format
-msgid "%s (non-curated)"
-msgstr "%s (lokalne)"
-
 #: src/Core/Package.vala:332
 #, fuzzy
-msgid "Ubuntu Drivers"
-msgstr "Sterowniki"
+msgid "elementary Updates"
+msgstr "Aktualizacje elementary"
 
-#: src/Core/Package.vala:335
+#: src/Core/Package.vala:334
+msgid "Ubuntu (non-curated)"
+msgstr "Ubuntu (bez przeglądu)"
+
+#: src/Core/Package.vala:337
+#, fuzzy, c-format
+msgid "%s (non-curated)"
+msgstr "%s (bez przeglądu)"
+
+#: src/Core/Package.vala:339
+#, fuzzy
+msgid "Ubuntu Drivers"
+msgstr "Sterowniki Ubuntu"
+
+#: src/Core/Package.vala:342
 msgid "Unknown Origin (non-curated)"
+msgstr "Nieznanego pochodzenia (bez przeglądu)"
+
+#: src/Core/Package.vala:444
+#, c-format
+msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
+"Stan programu nie jest ustawiony jako zainstalowany w AppCenter dla pakietu: "
+"%s"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -280,7 +276,7 @@ msgstr "Wersja: %s"
 
 #: src/Core/UpdateManager.vala:103
 msgid "Flatpak runtime"
-msgstr ""
+msgstr "Biblioteka uruchomieniowa Flatpak"
 
 #: src/Core/UpdateManager.vala:119
 msgid "No components with updates"
@@ -307,35 +303,35 @@ msgstr "Wymagane ponowne uruchomienie"
 msgid "Please restart your system to finalize updates"
 msgstr "Uruchom ponownie system, aby dokończyć aktualizacje"
 
-#: src/Dialogs/ContentWarningDialog.vala:27
+#: src/Dialogs/ContentWarningDialog.vala:25
 msgid "Content Warning"
 msgstr "Ostrzeżenie o zawartości"
 
-#: src/Dialogs/ContentWarningDialog.vala:32
+#: src/Dialogs/ContentWarningDialog.vala:30
 #, c-format
-msgid "%s Contains Explicit Content"
-msgstr "%s zawiera drastyczne treści"
+msgid "“%s” contains explicit content"
+msgstr "„%s” zawiera nieodpowiednie treści"
 
-#: src/Dialogs/ContentWarningDialog.vala:33
+#: src/Dialogs/ContentWarningDialog.vala:31
 #, c-format
 msgid ""
-"%s may contain content only suitable for adults or that may be sensitive or "
-"disturbing. In general, elementary does not review or endorse the contents "
-"of this app."
+"“%s” may contain content only suitable for adults or that may be sensitive "
+"or disturbing. In general, elementary does not review or endorse the "
+"contents of this app."
 msgstr ""
-"%s może zawierać treści tylko dla dorosłych lub treści o charakterze "
+"„%s” może zawierać treści tylko dla dorosłych lub treści o charakterze "
 "wrażliwym lub niepokojącym. Ogólnie rzecz biorąc elementary nie recenzuje "
 "ani nie popiera zawartości tego programu."
 
-#: src/Dialogs/ContentWarningDialog.vala:35
+#: src/Dialogs/ContentWarningDialog.vala:33
 msgid "Show content warnings"
 msgstr "Pokaż ostrzeżenie o zawartości"
 
-#: src/Dialogs/ContentWarningDialog.vala:40
+#: src/Dialogs/ContentWarningDialog.vala:37
 msgid "Don’t Install"
 msgstr "Nie instaluj"
 
-#: src/Dialogs/ContentWarningDialog.vala:41
+#: src/Dialogs/ContentWarningDialog.vala:38
 msgid "Install Anyway"
 msgstr "Zainstaluj mimo to"
 
@@ -355,7 +351,7 @@ msgstr "Uruchom ponownie"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:206
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:177
 msgid "Cancel"
 msgstr "Anuluj"
 
@@ -536,6 +532,39 @@ msgstr ""
 "Podana karta jest kartą testową. Proszę użyć prawdziwej karty, aby "
 "kontynuować."
 
+#: src/Dialogs/UninstallConfirmDialog.vala:25
+msgid "Uninstalling this app may also delete its data."
+msgstr ""
+"Odinstalowanie tego programu może skutkować także usunięciem jego danych."
+
+#: src/Dialogs/UninstallConfirmDialog.vala:35
+msgid "Uninstall app?"
+msgstr "Odinstalować program?"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:38
+#, c-format
+msgid "Uninstall “%s”?"
+msgstr "Odinstalować „%s”?"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:42
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:144
+msgid "Uninstall"
+msgstr "Odinstaluj"
+
+#: src/Dialogs/UninstallFailDialog.vala:26
+msgid "This may have been caused by external or manually compiled software."
+msgstr ""
+"Przyczyną może być zewnętrznie lub ręcznie skompilowane oprogramowanie."
+
+#: src/Dialogs/UninstallFailDialog.vala:37
+msgid "Failed to uninstall app"
+msgstr "Błąd odinstalowania programu"
+
+#: src/Dialogs/UninstallFailDialog.vala:40
+#, c-format
+msgid "Failed to uninstall “%s”"
+msgstr "Nie udało się odinstalować „%s”"
+
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
 msgstr "Błąd pobrania aktualizacji"
@@ -556,87 +585,85 @@ msgstr "Zignoruj"
 msgid "Try Again"
 msgstr "Spróbuj ponownie"
 
-#: src/Views/AppInfoView.vala:80
+#: src/Views/AppInfoView.vala:177
 msgid "Screenshot Not Available"
 msgstr "Zrzut ekranu niedostępny"
 
-#: src/Views/AppInfoView.vala:135
+#: src/Views/AppInfoView.vala:236
 msgid "Homepage"
 msgstr "Strona główna"
 
-#: src/Views/AppInfoView.vala:141
+#: src/Views/AppInfoView.vala:242
 msgid "Suggest Translations"
 msgstr "Zaproponuj tłumaczenie"
 
-#: src/Views/AppInfoView.vala:147
+#: src/Views/AppInfoView.vala:248
 msgid "Report a Problem"
 msgstr "Zgłoś problem"
 
-#: src/Views/AppInfoView.vala:153
+#: src/Views/AppInfoView.vala:254
 msgid "Help"
 msgstr "Pomoc"
 
-#: src/Views/AppInfoView.vala:183
+#: src/Views/AppInfoView.vala:281
 msgid "What's New:"
 msgstr "Co nowego:"
 
-#: src/Views/AppInfoView.vala:202
+#: src/Views/AppInfoView.vala:300
 msgid "Extensions:"
 msgstr "Rozszerzenia:"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:303
+#: src/Views/AppInfoView.vala:395
 msgid "Public Domain"
 msgstr "Domena publiczna"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:306
+#: src/Views/AppInfoView.vala:398
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://pl.m.wikipedia.org/wiki/Domena_publiczna"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:311
-#, fuzzy
+#: src/Views/AppInfoView.vala:403
 msgid "Free Software"
-msgstr "Edycja źródeł oprogramowania"
+msgstr "Wolne oprogramowanie"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:314
+#: src/Views/AppInfoView.vala:406
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw"
 
-#: src/Views/AppInfoView.vala:318
+#: src/Views/AppInfoView.vala:410
 msgid "Proprietary"
 msgstr "Prawnie zastrzeżone"
 
-#: src/Views/AppInfoView.vala:321
-#, fuzzy
+#: src/Views/AppInfoView.vala:413
 msgid "Unknown License"
-msgstr "Nieznany stan"
+msgstr "Nieznana licencja"
 
-#: src/Views/AppInfoView.vala:363
+#: src/Views/AppInfoView.vala:455
 #, c-format
 msgid "Other Apps by %s"
-msgstr "Inne programy %s"
+msgstr "Inne programy autorstwa %s"
 
-#: src/Views/AppInfoView.vala:397
+#: src/Views/AppInfoView.vala:489
 msgid "Link copied to clipboard"
 msgstr "Odnośnik skopiowany do schowka"
 
-#: src/Views/AppInfoView.vala:408
+#: src/Views/AppInfoView.vala:500
 #, c-format
 msgid "Check out %s on AppCenter:"
-msgstr "Wypróbuj %s w centrum oprogramowania:"
+msgstr "Wypróbuj %s w AppCenter:"
 
-#: src/Views/AppInfoView.vala:415
+#: src/Views/AppInfoView.vala:507
 msgid "Share"
 msgstr "Udostępnij"
 
-#: src/Views/AppInfoView.vala:712
+#: src/Views/AppInfoView.vala:822
 msgid "Fund"
 msgstr "Zafunduj"
 
-#: src/Views/AppInfoView.vala:734
+#: src/Views/AppInfoView.vala:844
 msgid "Fund the development of this app"
 msgstr "Zafunduj rozwój tego programu"
 
@@ -656,7 +683,7 @@ msgstr "Aktualizuj wszystko"
 
 #: src/Views/AppListView.vala:128
 msgid "Non-Curated Apps"
-msgstr "Programy nie obsługiwane przez społeczność"
+msgstr "Programy bez przeglądu"
 
 #: src/Views/Homepage.vala:67
 msgid "Recently Updated"
@@ -670,7 +697,7 @@ msgstr "Zyskujące popularność"
 msgid "Categories"
 msgstr "Kategorie"
 
-#: src/Views/Homepage.vala:299 src/Views/Homepage.vala:310
+#: src/Views/Homepage.vala:314 src/Views/Homepage.vala:325
 #, c-format
 msgid "Search %s"
 msgstr "Wyszukaj %s"
@@ -692,7 +719,7 @@ msgstr ""
 
 #: src/Widgets/Banner.vala:55
 msgid "An open, pay-what-you-want app store"
-msgstr "Otwarty, płać-ile-chcesz sklep z aplikacjami"
+msgstr "Otwarty sklep typu płać-ile-chcesz z programami"
 
 #: src/Widgets/Banner.vala:68
 msgid "Get the apps that you need at a price you can afford."
@@ -746,7 +773,7 @@ msgstr "Matematyka, nauka i inżynieria"
 
 #: src/Widgets/CategoryFlowBox.vala:101
 msgid "Media Production"
-msgstr "Produkcja medialna"
+msgstr "Produkcja mediów"
 
 #: src/Widgets/CategoryFlowBox.vala:108
 msgid "Office"
@@ -773,12 +800,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "Wymaga dokonania płatności, która jest niedostępna"
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:322
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:295
 msgid "Free"
 msgstr "Darmowe"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:324
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:297
 msgid "Install"
 msgstr "Zainstaluj"
 
@@ -793,6 +820,19 @@ msgstr "$%d,00"
 #, c-format
 msgid "$%d"
 msgstr "$%d"
+
+#: src/Widgets/NetworkInfoBar.vala:32
+msgid "Network Not Available."
+msgstr "Sieć jest niedostępna."
+
+#: src/Widgets/NetworkInfoBar.vala:33
+msgid "Connect to the Internet to browse and install apps."
+msgstr "Połącz się z Internetem, aby przeglądać i instalować programy."
+
+#. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
+#: src/Widgets/NetworkInfoBar.vala:41
+msgid "Network Settings…"
+msgstr "Ustawienia sieci…"
 
 #: src/Widgets/ReleaseRow.vala:67
 #, c-format
@@ -833,18 +873,18 @@ msgstr "Kopiuj odnośnik"
 
 #: src/Widgets/SizeLabel.vala:35
 msgid "Actual Download Size Likely to Be Smaller"
-msgstr ""
+msgstr "Realny rozmiar pobrania jest z reguły mniejszy"
 
 #: src/Widgets/SizeLabel.vala:36
 msgid "Only the parts of apps and updates that are needed will be downloaded."
-msgstr ""
+msgstr "Zostaną pobrane tylko potrzebne części programu i jego aktualizacje."
 
-#: src/Widgets/SizeLabel.vala:64
-#, fuzzy, c-format
+#: src/Widgets/SizeLabel.vala:63
+#, c-format
 msgid "Up to %s"
-msgstr "Aktualne"
+msgstr "Przejdź do %s"
 
-#: src/Widgets/UpdateHeaderRow.vala:68
+#: src/Widgets/UpdateHeaderRow.vala:69
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
@@ -852,29 +892,25 @@ msgstr[0] "%u dostępna aktualizacja"
 msgstr[1] "%u dostępne aktualizacje"
 msgstr[2] "%u dostępnych aktualizacji"
 
-#: src/Widgets/UpdateHeaderRow.vala:106
+#: src/Widgets/UpdateHeaderRow.vala:107
 msgid "Searching for updates…"
 msgstr "Szukanie aktualizacji…"
 
-#: src/Widgets/UpdateHeaderRow.vala:113
+#: src/Widgets/UpdateHeaderRow.vala:114
 msgid "Up to Date"
 msgstr "Aktualne"
 
-#: src/Widgets/UpdateHeaderRow.vala:121
+#: src/Widgets/UpdateHeaderRow.vala:122
 msgid "Drivers"
 msgstr "Sterowniki"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:172
-msgid "Uninstall"
-msgstr "Odinstaluj"
-
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:182
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:153
 msgid "Open"
 msgstr "Otwórz"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:347
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:320
 msgid "Update"
-msgstr "Aktualizuj"
+msgstr "Zaktualizuj"
 
 #~ msgid "Size: %s"
 #~ msgstr "Rozmiar: %s"
@@ -967,9 +1003,6 @@ msgstr "Aktualizuj"
 
 #~ msgid "Updates"
 #~ msgstr "Aktualizacje"
-
-#~ msgid "Find and install apps"
-#~ msgstr "Znajdź i zainstaluj aplikacje"
 
 #~ msgid "Use debug quiet mode"
 #~ msgstr "Ukryj informacje debugowania"

@@ -16,8 +16,6 @@
  */
 
 public class AppCenter.Widgets.ContentWarningDialog : Granite.MessageDialog {
-    public signal void download_requested ();
-
     public string app_name { get; construct set; }
 
     public ContentWarningDialog (string _app_name) {
@@ -29,13 +27,12 @@ public class AppCenter.Widgets.ContentWarningDialog : Granite.MessageDialog {
     }
 
     construct {
-        primary_text = _("%s Contains Explicit Content").printf (app_name);
-        secondary_text = _("%s may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app.").printf (app_name);
+        primary_text = _("“%s” contains explicit content").printf (app_name);
+        secondary_text = _("“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app.").printf (app_name);
 
         var check = new Gtk.CheckButton.with_label (_("Show content warnings"));
 
-        var settings = Settings.get_default ();
-        settings.schema.bind ("content-warning", check, "active", SettingsBindFlags.DEFAULT);
+        App.settings.bind ("content-warning", check, "active", SettingsBindFlags.DEFAULT);
 
         add_button (_("Don’t Install"), Gtk.ResponseType.CANCEL);
         var install = add_button (_("Install Anyway"), Gtk.ResponseType.OK);
@@ -43,16 +40,6 @@ public class AppCenter.Widgets.ContentWarningDialog : Granite.MessageDialog {
         custom_bin.add (check);
         custom_bin.show_all ();
 
-        set_default (install);
-        install.grab_focus ();
-
-        response.connect ((response) => {
-            if (response == Gtk.ResponseType.OK) {
-                download_requested ();
-            }
-
-            destroy ();
-        });
+        check.grab_focus ();
     }
 }
-

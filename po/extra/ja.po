@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:42+0200\n"
-"PO-Revision-Date: 2019-07-11 21:28+0000\n"
+"POT-Creation-Date: 2019-12-01 23:35+0000\n"
+"PO-Revision-Date: 2019-11-25 09:25+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/extra/"
 "ja/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
@@ -30,156 +30,243 @@ msgid ""
 "search and discover new apps. AppCenter is also used for updating your "
 "system to the latest and greatest version for new features and fixes."
 msgstr ""
-"個人のオープンソース開発者のためのアプリストアです。カテゴリー別で閲覧したり検索したりして、新しいアプリを見つけましょう。AppCenter "
-"は、新機能や修正によってシステムを最新で最高のバージョンへアップデートするときにも使われます。"
+"個人のオープンソース開発者のためのアプリストアです。カテゴリー別で閲覧したり"
+"検索したりして、新しいアプリを見つけましょう。AppCenter は、新機能や修正に"
+"よってシステムを最新で最高のバージョンへアップデートするときにも使われます。"
 
-#: data/io.elementary.appcenter.appdata.xml.in:21
+#: data/io.elementary.appcenter.appdata.xml.in:20
+msgid "Minor fixes"
+msgstr "軽微な修正"
+
+#: data/io.elementary.appcenter.appdata.xml.in:22
+msgid "Prevent AppCenter from opening on log in"
+msgstr "ログイン時に AppCenter が勝手に開かないように修正"
+
+#: data/io.elementary.appcenter.appdata.xml.in:23
+msgid "Prevent ghost update notification when there are no updates available"
+msgstr "アップデートがないのに通知が表示される問題を修正"
+
+#: data/io.elementary.appcenter.appdata.xml.in:24
+msgid "Show correct installation state for extensions"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:31
+msgid "Add support for Flatpak apps"
+msgstr "Flatpak アプリに対応"
+
+#: data/io.elementary.appcenter.appdata.xml.in:32
+msgid "Warn about non-curated apps"
+msgstr ""
+"キュレーションされていないアプリのインストール時に警告を表示するように修正"
+
+#: data/io.elementary.appcenter.appdata.xml.in:33
+msgid "Show an error dialog if an installation fails"
+msgstr "インストールの失敗時にエラーダイアログを表示するように修正"
+
+#: data/io.elementary.appcenter.appdata.xml.in:34
+msgid ""
+"Fix an issue where some apps couldn't be uninstalled from the Applications "
+"Menu"
+msgstr ""
+"一部のアプリがアプリケーションメニューからアンインストールできない問題を修正"
+
+#: data/io.elementary.appcenter.appdata.xml.in:35
+msgid "Allow browsing and uninstalling apps while offline"
+msgstr ""
+"オフライン時にインストール済みのアプリを確認したりアンインストールしたりでき"
+"るように変更"
+
+#: data/io.elementary.appcenter.appdata.xml.in:36
+msgid "Fix twitter share URLs"
+msgstr "Twitter 共有の URL を修正"
+
+#: data/io.elementary.appcenter.appdata.xml.in:37
+msgid "Drop Google+ from the share menu"
+msgstr "共有メニューから Google+ を削除"
+
+#: data/io.elementary.appcenter.appdata.xml.in:38
+msgid "Animate screenshot background while loading"
+msgstr "読み込み時にスクリーンショットの背景をアニメーション表示するように変更"
+
+#: data/io.elementary.appcenter.appdata.xml.in:39
+msgid "Add navigation arrows for screenshots"
+msgstr "別jのスクリーンショットに移動するための矢印ボタンを追加"
+
+#: data/io.elementary.appcenter.appdata.xml.in:40
+msgid "Don't show uninstall buttons for essential system components"
+msgstr ""
+"削除してはいけないシステムコンポーネントにはアンインストールボタンを表示しな"
+"いように修正"
+
+#: data/io.elementary.appcenter.appdata.xml.in:41
+msgid "Properly display proprietary licenses"
+msgstr "プロプライエタリーなライセンスを適切に表示するように修正"
+
+#: data/io.elementary.appcenter.appdata.xml.in:42
+msgid "Fix some layout issues"
+msgstr "レイアウトの問題を修正"
+
+#: data/io.elementary.appcenter.appdata.xml.in:43
+msgid "Fix crashes"
+msgstr "クラッシュを修正"
+
+#: data/io.elementary.appcenter.appdata.xml.in:44
+msgid "Performance improvements"
+msgstr "パフォーマンスの改善"
+
+#: data/io.elementary.appcenter.appdata.xml.in:45
+msgid "Updated translations"
+msgstr "翻訳の更新"
+
+#: data/io.elementary.appcenter.appdata.xml.in:52
 msgid "Meson build system fixes"
 msgstr "Meson ビルドシステムの修正"
 
-#: data/io.elementary.appcenter.appdata.xml.in:22
+#: data/io.elementary.appcenter.appdata.xml.in:53
 msgid "Improve window state restoration"
 msgstr "ウィンドウの状態の復元を改善"
 
-#: data/io.elementary.appcenter.appdata.xml.in:23
+#: data/io.elementary.appcenter.appdata.xml.in:54
 msgid "Prevent action buttons from jumping around"
 msgstr "アクションボタンが移動する問題を修正"
 
-#: data/io.elementary.appcenter.appdata.xml.in:24
+#: data/io.elementary.appcenter.appdata.xml.in:55
 msgid "Remove reset paid apps gsettings key"
 msgstr "GSettings キー \"reset_paid_apps\" を削除"
 
-#: data/io.elementary.appcenter.appdata.xml.in:25
+#: data/io.elementary.appcenter.appdata.xml.in:56
 msgid "Memory management refinements"
 msgstr "メモリー管理の改善"
 
-#: data/io.elementary.appcenter.appdata.xml.in:26
+#: data/io.elementary.appcenter.appdata.xml.in:57
 msgid ""
 "Add conditional compilation for disabling dynamic remote homepage content"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:27
-#: data/io.elementary.appcenter.appdata.xml.in:39
-#: data/io.elementary.appcenter.appdata.xml.in:46
-#: data/io.elementary.appcenter.appdata.xml.in:59
+#: data/io.elementary.appcenter.appdata.xml.in:58
 #: data/io.elementary.appcenter.appdata.xml.in:70
-#: data/io.elementary.appcenter.appdata.xml.in:79
-#: data/io.elementary.appcenter.appdata.xml.in:88
-#: data/io.elementary.appcenter.appdata.xml.in:97
-#: data/io.elementary.appcenter.appdata.xml.in:106
-#: data/io.elementary.appcenter.appdata.xml.in:115
-#: data/io.elementary.appcenter.appdata.xml.in:124
-#: data/io.elementary.appcenter.appdata.xml.in:133
-#: data/io.elementary.appcenter.appdata.xml.in:142
-#: data/io.elementary.appcenter.appdata.xml.in:151
-#: data/io.elementary.appcenter.appdata.xml.in:160
-#: data/io.elementary.appcenter.appdata.xml.in:170
-#: data/io.elementary.appcenter.appdata.xml.in:180
+#: data/io.elementary.appcenter.appdata.xml.in:77
+#: data/io.elementary.appcenter.appdata.xml.in:90
+#: data/io.elementary.appcenter.appdata.xml.in:101
+#: data/io.elementary.appcenter.appdata.xml.in:110
+#: data/io.elementary.appcenter.appdata.xml.in:119
+#: data/io.elementary.appcenter.appdata.xml.in:128
+#: data/io.elementary.appcenter.appdata.xml.in:137
+#: data/io.elementary.appcenter.appdata.xml.in:146
+#: data/io.elementary.appcenter.appdata.xml.in:155
+#: data/io.elementary.appcenter.appdata.xml.in:164
+#: data/io.elementary.appcenter.appdata.xml.in:173
+#: data/io.elementary.appcenter.appdata.xml.in:182
+#: data/io.elementary.appcenter.appdata.xml.in:191
+#: data/io.elementary.appcenter.appdata.xml.in:201
+#: data/io.elementary.appcenter.appdata.xml.in:211
 msgid "New translations"
 msgstr "新しい翻訳"
 
-#: data/io.elementary.appcenter.appdata.xml.in:34
+#: data/io.elementary.appcenter.appdata.xml.in:65
 msgid "New categories: Communication, Finance, Media Production"
 msgstr "新しいカテゴリー: コミュニケーション、ファイナンス、メディア製作"
 
-#: data/io.elementary.appcenter.appdata.xml.in:35
+#: data/io.elementary.appcenter.appdata.xml.in:66
 msgid "Add Math to Science category"
 msgstr "数学関連のアプリを科学カテゴリーに追加"
 
-#: data/io.elementary.appcenter.appdata.xml.in:36
+#: data/io.elementary.appcenter.appdata.xml.in:67
 msgid "Relax email address validator"
 msgstr "メールアドレスの検証を緩和"
 
-#: data/io.elementary.appcenter.appdata.xml.in:37
+#: data/io.elementary.appcenter.appdata.xml.in:68
 msgid "Present update availability more accurately"
 msgstr "利用可能なアップデートをより正確に表示"
 
-#: data/io.elementary.appcenter.appdata.xml.in:38
+#: data/io.elementary.appcenter.appdata.xml.in:69
 msgid "Category graphics revamped"
 msgstr "カテゴリーのバナーのイラストを刷新"
 
-#: data/io.elementary.appcenter.appdata.xml.in:53
-#: data/io.elementary.appcenter.appdata.xml.in:65
-#: data/io.elementary.appcenter.appdata.xml.in:76
-#: data/io.elementary.appcenter.appdata.xml.in:85
-#: data/io.elementary.appcenter.appdata.xml.in:94
-#: data/io.elementary.appcenter.appdata.xml.in:103
-#: data/io.elementary.appcenter.appdata.xml.in:112
-#: data/io.elementary.appcenter.appdata.xml.in:121
-#: data/io.elementary.appcenter.appdata.xml.in:130
-#: data/io.elementary.appcenter.appdata.xml.in:139
-#: data/io.elementary.appcenter.appdata.xml.in:148
-#: data/io.elementary.appcenter.appdata.xml.in:157
+#: data/io.elementary.appcenter.appdata.xml.in:84
+#: data/io.elementary.appcenter.appdata.xml.in:96
+#: data/io.elementary.appcenter.appdata.xml.in:107
+#: data/io.elementary.appcenter.appdata.xml.in:116
+#: data/io.elementary.appcenter.appdata.xml.in:125
+#: data/io.elementary.appcenter.appdata.xml.in:134
+#: data/io.elementary.appcenter.appdata.xml.in:143
+#: data/io.elementary.appcenter.appdata.xml.in:152
+#: data/io.elementary.appcenter.appdata.xml.in:161
+#: data/io.elementary.appcenter.appdata.xml.in:170
+#: data/io.elementary.appcenter.appdata.xml.in:179
+#: data/io.elementary.appcenter.appdata.xml.in:188
 msgid "Bug fixes and improve performance."
 msgstr "バグ修正とパフォーマンスの改善。"
 
-#: data/io.elementary.appcenter.appdata.xml.in:55
+#: data/io.elementary.appcenter.appdata.xml.in:86
 msgid "Improve transaction success rate"
 msgstr "取引成功率を改善"
 
-#: data/io.elementary.appcenter.appdata.xml.in:56
+#: data/io.elementary.appcenter.appdata.xml.in:87
 msgid "Add Publishing to Office category"
 msgstr "Office カテゴリーに出版関連のアプリを追加"
 
-#: data/io.elementary.appcenter.appdata.xml.in:57
+#: data/io.elementary.appcenter.appdata.xml.in:88
 msgid "Improve descriptions of OS Updates"
 msgstr "OS のアップデートの説明を改善"
 
-#: data/io.elementary.appcenter.appdata.xml.in:58
-#: data/io.elementary.appcenter.appdata.xml.in:69
-#: data/io.elementary.appcenter.appdata.xml.in:78
-#: data/io.elementary.appcenter.appdata.xml.in:87
-#: data/io.elementary.appcenter.appdata.xml.in:96
-#: data/io.elementary.appcenter.appdata.xml.in:105
-#: data/io.elementary.appcenter.appdata.xml.in:114
-#: data/io.elementary.appcenter.appdata.xml.in:123
-#: data/io.elementary.appcenter.appdata.xml.in:132
-#: data/io.elementary.appcenter.appdata.xml.in:141
-#: data/io.elementary.appcenter.appdata.xml.in:150
+#: data/io.elementary.appcenter.appdata.xml.in:89
+#: data/io.elementary.appcenter.appdata.xml.in:100
+#: data/io.elementary.appcenter.appdata.xml.in:109
+#: data/io.elementary.appcenter.appdata.xml.in:118
+#: data/io.elementary.appcenter.appdata.xml.in:127
+#: data/io.elementary.appcenter.appdata.xml.in:136
+#: data/io.elementary.appcenter.appdata.xml.in:145
+#: data/io.elementary.appcenter.appdata.xml.in:154
+#: data/io.elementary.appcenter.appdata.xml.in:163
+#: data/io.elementary.appcenter.appdata.xml.in:172
+#: data/io.elementary.appcenter.appdata.xml.in:181
 msgid "Various bug fixes and performance improvements"
 msgstr "様々なバグ修正とパフォーマンスの改善"
 
-#: data/io.elementary.appcenter.appdata.xml.in:67
+#: data/io.elementary.appcenter.appdata.xml.in:98
 msgid "Give details for Operating System Updates"
 msgstr "オペレーティングシステムのアップデートに詳細を追加"
 
-#: data/io.elementary.appcenter.appdata.xml.in:68
+#: data/io.elementary.appcenter.appdata.xml.in:99
 msgid "Support mouse button navigation"
 msgstr "マウスボタンによるナビゲーションをサポート"
 
-#: data/io.elementary.appcenter.appdata.xml.in:159
+#: data/io.elementary.appcenter.appdata.xml.in:190
 msgid "Fix crash caused by entries with missing packages"
 msgstr "不足しているパッケージの登録によるクラッシュを修正"
 
-#: data/io.elementary.appcenter.appdata.xml.in:166
+#: data/io.elementary.appcenter.appdata.xml.in:197
 msgid "Add capability to search by category and apply minor bug fixes."
-msgstr "カテゴリー別で検索できるようにし、マイナーなバグ修正を適用しました。"
+msgstr "カテゴリー別で検索できるようにし、軽微なバグを修正しました。"
 
-#: data/io.elementary.appcenter.appdata.xml.in:168
+#: data/io.elementary.appcenter.appdata.xml.in:199
 msgid "It is now possible to search apps inside a category"
 msgstr "カテゴリー内でアプリを検索できるようになりました"
 
-#: data/io.elementary.appcenter.appdata.xml.in:169
+#: data/io.elementary.appcenter.appdata.xml.in:200
 msgid "Prevent multiple authentication dialogs when resuming from suspend"
 msgstr "サスペンドからの復帰時に複数の認証ダイアログが出るのを防止"
 
-#: data/io.elementary.appcenter.appdata.xml.in:176
+#: data/io.elementary.appcenter.appdata.xml.in:207
 msgid ""
 "Search performance has beeen improved, the category name is now shown on the "
 "headbar and minor bugs have been fixed."
-msgstr "検索能力が向上し、カテゴリーの名前がヘッドバーに表示されます。また、マイナーなバグも修正しました。"
+msgstr ""
+"検索能力が向上し、カテゴリーの名前がヘッドバーに表示されます。また、マイナー"
+"なバグも修正しました。"
 
-#: data/io.elementary.appcenter.appdata.xml.in:178
+#: data/io.elementary.appcenter.appdata.xml.in:209
 msgid "Fix Steam installation"
 msgstr "Steam のインストールを修正"
 
-#: data/io.elementary.appcenter.appdata.xml.in:179
+#: data/io.elementary.appcenter.appdata.xml.in:210
 msgid "Make search asynchronous"
 msgstr "検索の非同期化"
 
-#: data/io.elementary.appcenter.appdata.xml.in:234
-msgid "elementary LLC."
-msgstr "elementary LLC."
+#: data/io.elementary.appcenter.appdata.xml.in:265
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
@@ -190,14 +277,18 @@ msgid "@DESKTOP_ICON@"
 msgstr "@DESKTOP_ICON@"
 
 #: data/io.elementary.appcenter.desktop.in.in:7
-msgid "install;uninstall;remove;catalogue;store;apps;updates;software;"
+msgid "install;uninstall;remove;catalogue;store;apps;software;"
 msgstr ""
-"install;uninstall;remove;catalogue;store;apps;updates;software;インストール;"
-"アンインストール;削除;カタログ;ストア;アプリ;アップデート;ソフトウェア;"
+"install;uninstall;remove;catalogue;store;apps;software;インストール;アンイン"
+"ストール;削除;カタログ;ストア;アプリ;ソフトウェア;"
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
 msgstr "アップデートを確認"
+
+#: data/io.elementary.appcenter.desktop.in.in:19
+msgid "system-software-update"
+msgstr "system-software-update"
 
 #~ msgid "About AppCenter"
 #~ msgstr "AppCenter について"

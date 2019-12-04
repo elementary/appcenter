@@ -3,7 +3,7 @@ Name=@APP_NAME@
 Comment=Browse and manage apps
 Exec=@EXEC_NAME@ %U
 Icon=@DESKTOP_ICON@
-Keywords=install;uninstall;remove;catalogue;store;apps;updates;software;
+Keywords=install;uninstall;remove;catalogue;store;apps;software;
 Actions=ShowUpdates;
 Terminal=false
 Type=Application
@@ -15,3 +15,4 @@ X-GNOME-UsesNotifications=true
 [Desktop Action ShowUpdates]
 Exec=@EXEC_NAME@ --show-updates
 Name=Check for Updates
+Icon=system-software-update
