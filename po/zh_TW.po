@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-01 23:35+0000\n"
+"POT-Creation-Date: 2019-12-05 00:29+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Aefgh Threenine <aefgh39622@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
@@ -755,12 +755,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "要求支付，但沒有啟用"
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:295
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:304
 msgid "Free"
 msgstr "免費"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:297
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:306
 msgid "Install"
 msgstr "安裝"
 
@@ -863,7 +863,7 @@ msgstr "驅動程式"
 msgid "Open"
 msgstr "開啟"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:320
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:329
 msgid "Update"
 msgstr "更新"
 

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-01 23:35+0000\n"
+"POT-Creation-Date: 2019-12-05 00:29+0000\n"
 "PO-Revision-Date: 2018-07-18 00:05+0000\n"
 "Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
 "Language-Team: Dutch <https://weblate.elementary.io/projects/appcenter/"
@@ -795,12 +795,12 @@ msgid "Requires payments, which are not enabled"
 msgstr ""
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:295
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:304
 msgid "Free"
 msgstr "Gratis"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:297
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:306
 #, fuzzy
 msgid "Install"
 msgstr "Geïnstalleerd"
@@ -906,7 +906,7 @@ msgstr "Stuurprogramma's"
 msgid "Open"
 msgstr "Open"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:320
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:329
 msgid "Update"
 msgstr "Bijwerken"
 
