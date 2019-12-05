@@ -19,6 +19,7 @@
       <description>
         <p>Minor fixes</p>
         <ul>
+          <li>Make download size estimates more accurate/li>
           <li>Prevent unescaped XML entities from appearing in application names</li>
         </ul>
       </description>
