@@ -19,7 +19,7 @@
       <description>
         <p>Minor fixes</p>
         <ul>
-          <li>Make download size estimates more accurate/li>
+          <li>Make download size estimates more accurate</li>
           <li>Prevent unescaped XML entities from appearing in application names</li>
           <li>Load the "Installed" view faster</li>
         </ul>
