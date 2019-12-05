@@ -20,6 +20,7 @@
         <p>Minor fixes</p>
         <ul>
           <li>Prevent unescaped XML entities from appearing in application names</li>
+          <li>Load the "Installed" view faster</li>
         </ul>
       </description>
     </release>
