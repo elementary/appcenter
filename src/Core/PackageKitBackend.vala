@@ -864,9 +864,15 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         try {
             var results = yield client.search_names_async (filter, query, null, () => {});
             var array = results.get_package_array ();
-            array.foreach ((package) => {
-                if (package.info == Pk.Info.INSTALLED) {
-                    package_list[package.get_name ()].mark_installed ();
+            array.foreach ((pk_package) => {
+                var package = package_list[pk_package.get_name ()];
+                if (package == null) {
+                    return;
+                }
+
+                package.latest_version = pk_package.get_version ();
+                if (pk_package.info == Pk.Info.INSTALLED) {
+                    package.mark_installed ();
                 }
             });
         } catch (Error e) {

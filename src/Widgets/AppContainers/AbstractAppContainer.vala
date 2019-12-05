@@ -225,7 +225,7 @@ namespace AppCenter {
         }
 
         protected virtual void set_up_package (uint icon_size = 48) {
-            package_name.label = package.get_name ();
+            package_name.label = Utils.unescape_markup (package.get_name ());
 
             if (package.component.get_id () != AppCenterCore.Package.OS_UPDATES_ID) {
                 package_author.label = package.author_title;
