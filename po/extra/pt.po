@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-01 23:35+0000\n"
-"PO-Revision-Date: 2019-12-04 01:25+0000\n"
+"PO-Revision-Date: 2019-12-06 17:19+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
 "extra/pt/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
 msgid "AppCenter"
-msgstr "Centro de Aplicações"
+msgstr "Centro de aplicações"
 
 #: data/io.elementary.appcenter.appdata.xml.in:9
 #: data/io.elementary.appcenter.desktop.in.in:4
