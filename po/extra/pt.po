@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-01 23:35+0000\n"
-"PO-Revision-Date: 2019-12-06 17:19+0000\n"
+"PO-Revision-Date: 2019-12-08 03:25+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
 "extra/pt/>\n"
@@ -41,7 +41,7 @@ msgstr "Pequenas correções"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "Prevent AppCenter from opening on log in"
-msgstr "Impedir a abertura do Centro de Aplicações no início da sessão"
+msgstr "Impedir a abertura do Centro de aplicações no início da sessão"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Prevent ghost update notification when there are no updates available"
@@ -63,7 +63,7 @@ msgstr "Avisa sobre aplicações não curadas"
 
 #: data/io.elementary.appcenter.appdata.xml.in:33
 msgid "Show an error dialog if an installation fails"
-msgstr "Mostrar um diálogo de erro se uma instalação falhar"
+msgstr "Mostrar uma caixa de diálogo de erro se uma instalação falhar"
 
 #: data/io.elementary.appcenter.appdata.xml.in:34
 msgid ""
