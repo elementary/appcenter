@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-05 00:29+0000\n"
-"PO-Revision-Date: 2019-11-22 02:24+0000\n"
+"PO-Revision-Date: 2019-12-08 03:25+0000\n"
 "Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/extra/pt_BR/>\n"
@@ -60,7 +60,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:33
 msgid "Show correct installation state for extensions"
-msgstr ""
+msgstr "Mostrar o correto estado de instalação para extensões"
 
 #: data/io.elementary.appcenter.appdata.xml.in:40
 msgid "Add support for Flatpak apps"
