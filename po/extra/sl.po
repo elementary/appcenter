@@ -3,17 +3,17 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-05 00:29+0000\n"
-"PO-Revision-Date: 2018-02-10 00:01+0000\n"
-"Last-Translator: Jernej Virag <jernej@virag.si>\n"
-"Language-Team: Slovenian <https://weblate.elementary.io/projects/appcenter/"
+"PO-Revision-Date: 2019-12-23 11:07+0000\n"
+"Last-Translator: Marko <marko.dolar@gmail.com>\n"
+"Language-Team: Slovenian <https://l10n.elementary.io/projects/appcenter/"
 "extra/sl/>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
-"%100==4 ? 2 : 3;\n"
-"X-Generator: Weblate 2.18\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
+"n%100==4 ? 2 : 3;\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
@@ -39,116 +39,118 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:29
 msgid "Minor fixes"
-msgstr ""
+msgstr "Manjši popravki"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "Prevent unescaped XML entities from appearing in application names"
-msgstr ""
+msgstr "Prepreči pojav ubežnih znakov iz XML-jev v imenih aplikacij"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Load the \"Installed\" view faster"
-msgstr ""
+msgstr "Naloži hitreje kategorijo \"Nameščeno\""
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
 msgid "Prevent AppCenter from opening on log in"
-msgstr ""
+msgstr "Prepreči da se Center za programsko opremo odpre po prijavi"
 
 #: data/io.elementary.appcenter.appdata.xml.in:32
 msgid "Prevent ghost update notification when there are no updates available"
-msgstr ""
+msgstr "Prepreči obvestilo o posodobitvah, ko sploh ni novih posodobitev"
 
 #: data/io.elementary.appcenter.appdata.xml.in:33
 msgid "Show correct installation state for extensions"
-msgstr ""
+msgstr "Prikaži pravilno stanje namestitve za razširitve"
 
 #: data/io.elementary.appcenter.appdata.xml.in:40
 msgid "Add support for Flatpak apps"
-msgstr ""
+msgstr "Dodaj podporo za Flatpak aplikacije"
 
 #: data/io.elementary.appcenter.appdata.xml.in:41
 msgid "Warn about non-curated apps"
-msgstr ""
+msgstr "Opozori o nepreverjenih aplikacijah"
 
 #: data/io.elementary.appcenter.appdata.xml.in:42
 msgid "Show an error dialog if an installation fails"
-msgstr ""
+msgstr "Prikaži dialog z napako, če namestitev spodleti"
 
 #: data/io.elementary.appcenter.appdata.xml.in:43
 msgid ""
 "Fix an issue where some apps couldn't be uninstalled from the Applications "
 "Menu"
 msgstr ""
+"Popravljen problem, kjer nekatere aplikacije niso mogle biti odstranjene iz "
+"Aplikacijskega menija"
 
 #: data/io.elementary.appcenter.appdata.xml.in:44
 msgid "Allow browsing and uninstalling apps while offline"
-msgstr ""
+msgstr "Dovoli pregledovanje in odstranjevanje aplikacij brez povezave"
 
 #: data/io.elementary.appcenter.appdata.xml.in:45
 msgid "Fix twitter share URLs"
-msgstr ""
+msgstr "Popravi delitveni URL naslov za Twitter"
 
 #: data/io.elementary.appcenter.appdata.xml.in:46
 msgid "Drop Google+ from the share menu"
-msgstr ""
+msgstr "Umakni Google+ iz delitvenega menija"
 
 #: data/io.elementary.appcenter.appdata.xml.in:47
 msgid "Animate screenshot background while loading"
-msgstr ""
+msgstr "Animiraj ozadje zaslonskih posnetkov med nalaganjem"
 
 #: data/io.elementary.appcenter.appdata.xml.in:48
 msgid "Add navigation arrows for screenshots"
-msgstr ""
+msgstr "Dodaj navigacijske puščice za zaslonske posnetke"
 
 #: data/io.elementary.appcenter.appdata.xml.in:49
 msgid "Don't show uninstall buttons for essential system components"
-msgstr ""
+msgstr "Ne pokaži gumba za odstranitev pri ključnih sistemskih komponentah"
 
 #: data/io.elementary.appcenter.appdata.xml.in:50
 msgid "Properly display proprietary licenses"
-msgstr ""
+msgstr "Ustrezno prikaži lastniške licence"
 
 #: data/io.elementary.appcenter.appdata.xml.in:51
 msgid "Fix some layout issues"
-msgstr ""
+msgstr "Popravljenih nekaj težav pri razporeditvi vmesnika"
 
 #: data/io.elementary.appcenter.appdata.xml.in:52
 msgid "Fix crashes"
-msgstr ""
+msgstr "Popravi sesutja"
 
 #: data/io.elementary.appcenter.appdata.xml.in:53
-#, fuzzy
 msgid "Performance improvements"
-msgstr "Raznovrstni popravki in izboljšanje odzivnosti"
+msgstr "Izboljšanje odzivnosti"
 
 #: data/io.elementary.appcenter.appdata.xml.in:54
-#, fuzzy
 msgid "Updated translations"
-msgstr "Novi prevodi"
+msgstr "Posodobljeni prevodi"
 
 #: data/io.elementary.appcenter.appdata.xml.in:61
 msgid "Meson build system fixes"
-msgstr ""
+msgstr "Popravki za graditveni sistem Meson"
 
 #: data/io.elementary.appcenter.appdata.xml.in:62
 msgid "Improve window state restoration"
-msgstr ""
+msgstr "Izboljšanje obnovitve stanja okna"
 
 #: data/io.elementary.appcenter.appdata.xml.in:63
 msgid "Prevent action buttons from jumping around"
-msgstr ""
+msgstr "Preprečeno premikanje akcijskih gumbov"
 
 #: data/io.elementary.appcenter.appdata.xml.in:64
 msgid "Remove reset paid apps gsettings key"
-msgstr ""
+msgstr "Izbrisan gsettings ključ za resetiranje plačanih aplikacij"
 
 #: data/io.elementary.appcenter.appdata.xml.in:65
 msgid "Memory management refinements"
-msgstr ""
+msgstr "Izboljšave upravljanja s pomnilnikom"
 
 #: data/io.elementary.appcenter.appdata.xml.in:66
 msgid ""
 "Add conditional compilation for disabling dynamic remote homepage content"
 msgstr ""
+"Dodaj pogojno prevajanje za izklop dinamične oddaljene vsebine na domači "
+"stani"
 
 #: data/io.elementary.appcenter.appdata.xml.in:67
 #: data/io.elementary.appcenter.appdata.xml.in:79
@@ -172,23 +174,23 @@ msgstr "Novi prevodi"
 
 #: data/io.elementary.appcenter.appdata.xml.in:74
 msgid "New categories: Communication, Finance, Media Production"
-msgstr ""
+msgstr "Nove kategorije: Sporazumevanje, Finance, Medijska produkcija"
 
 #: data/io.elementary.appcenter.appdata.xml.in:75
 msgid "Add Math to Science category"
-msgstr ""
+msgstr "Dodaj Matematika h kategoriji Znanost"
 
 #: data/io.elementary.appcenter.appdata.xml.in:76
 msgid "Relax email address validator"
-msgstr ""
+msgstr "Omilitev preverjalnika e-poštnih naslovov"
 
 #: data/io.elementary.appcenter.appdata.xml.in:77
 msgid "Present update availability more accurately"
-msgstr ""
+msgstr "Bolj natančna predstavitev razpoložljivosti posodobitev"
 
 #: data/io.elementary.appcenter.appdata.xml.in:78
 msgid "Category graphics revamped"
-msgstr ""
+msgstr "Izpopolnitev grafike kategorij"
 
 #: data/io.elementary.appcenter.appdata.xml.in:93
 #: data/io.elementary.appcenter.appdata.xml.in:105
@@ -202,21 +204,20 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:179
 #: data/io.elementary.appcenter.appdata.xml.in:188
 #: data/io.elementary.appcenter.appdata.xml.in:197
-#, fuzzy
 msgid "Bug fixes and improve performance."
-msgstr "Raznovrstni popravki in izboljšanje odzivnosti"
+msgstr "Raznovrstni popravki in izboljšanje odzivnosti."
 
 #: data/io.elementary.appcenter.appdata.xml.in:95
 msgid "Improve transaction success rate"
-msgstr ""
+msgstr "Izboljšanje uspešnosti transakcij"
 
 #: data/io.elementary.appcenter.appdata.xml.in:96
 msgid "Add Publishing to Office category"
-msgstr ""
+msgstr "Dodano Založništvo pod kategorijo Pisarna"
 
 #: data/io.elementary.appcenter.appdata.xml.in:97
 msgid "Improve descriptions of OS Updates"
-msgstr ""
+msgstr "Izboljšanje opisov pri posodobitvah operacijskega sistema"
 
 #: data/io.elementary.appcenter.appdata.xml.in:98
 #: data/io.elementary.appcenter.appdata.xml.in:109
@@ -234,11 +235,11 @@ msgstr "Raznovrstni popravki in izboljšanje odzivnosti"
 
 #: data/io.elementary.appcenter.appdata.xml.in:107
 msgid "Give details for Operating System Updates"
-msgstr ""
+msgstr "Podaj podrobnosti pri posodobitvah operacijskega sistema"
 
 #: data/io.elementary.appcenter.appdata.xml.in:108
 msgid "Support mouse button navigation"
-msgstr ""
+msgstr "Podprta navigacija z miškinimi gumbi"
 
 #: data/io.elementary.appcenter.appdata.xml.in:199
 msgid "Fix crash caused by entries with missing packages"
@@ -247,7 +248,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:206
 msgid "Add capability to search by category and apply minor bug fixes."
-msgstr ""
+msgstr "Dodana možnost iskanja preko kategorij in manjši popravki."
 
 #: data/io.elementary.appcenter.appdata.xml.in:208
 msgid "It is now possible to search apps inside a category"
@@ -264,6 +265,8 @@ msgid ""
 "Search performance has beeen improved, the category name is now shown on the "
 "headbar and minor bugs have been fixed."
 msgstr ""
+"Histrost iskanja je bila izboljšana, imena kategorij so zdaj prikazana v "
+"naslovni vrstici, manjše napake so bile popravljene."
 
 #: data/io.elementary.appcenter.appdata.xml.in:218
 msgid "Fix Steam installation"
@@ -275,30 +278,29 @@ msgstr "Spremeni iskanje v asinhrono operacijo"
 
 #: data/io.elementary.appcenter.appdata.xml.in:274
 msgid "elementary, Inc."
-msgstr ""
+msgstr "elementary, Inc."
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
-msgstr ""
+msgstr "@APP_NAME@"
 
 #: data/io.elementary.appcenter.desktop.in.in:6
 msgid "@DESKTOP_ICON@"
-msgstr ""
+msgstr "@DESKTOP_ICON@"
 
 #: data/io.elementary.appcenter.desktop.in.in:7
-#, fuzzy
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
 msgstr ""
-"namesti;odstrani;instaliraj;inštaliraj;install;uninstall;katalog;trgovina;"
-"app;apps;aplikacije;posodobitve;update;software;programi;"
+"namesti;odstrani;instaliraj;inštaliraj;katalog;trgovina;aplikacije;programi;i"
+"nstall;uninstall;remove;catalogue;store;apps;software;"
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
-msgstr ""
+msgstr "Preveri za posodobitve"
 
 #: data/io.elementary.appcenter.desktop.in.in:19
 msgid "system-software-update"
-msgstr ""
+msgstr "system-software-update"
 
 #~ msgid "About AppCenter"
 #~ msgstr "O centru za programsko opremo"
