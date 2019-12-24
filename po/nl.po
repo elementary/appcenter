@@ -1,19 +1,20 @@
 # Dieter Debast <dieter_debast@hotmail.com>, 2018.
+# Jaimie85 <alsemgeest@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-05 00:29+0000\n"
-"PO-Revision-Date: 2018-07-18 00:05+0000\n"
-"Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
-"Language-Team: Dutch <https://weblate.elementary.io/projects/appcenter/"
+"PO-Revision-Date: 2019-12-25 02:16+0000\n"
+"Last-Translator: Jaimie85 <alsemgeest@gmail.com>\n"
+"Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -24,7 +25,7 @@ msgstr "AppCenter"
 #: src/Application.vala:112
 #, c-format
 msgid "Could not parse the media type %s"
-msgstr ""
+msgstr "Kon het media type %s niet lezen"
 
 #: src/Application.vala:132
 #, c-format
@@ -228,32 +229,30 @@ msgid "%s Developers"
 msgstr "Ontwikkelaars van %s"
 
 #: src/Core/Package.vala:332
-#, fuzzy
 msgid "elementary Updates"
-msgstr "Onlangs bijgewerkt"
+msgstr "elementary Updates"
 
 #: src/Core/Package.vala:334
 msgid "Ubuntu (non-curated)"
-msgstr ""
+msgstr "Ubuntu (niet beheerd)"
 
 #: src/Core/Package.vala:337
 #, c-format
 msgid "%s (non-curated)"
-msgstr ""
+msgstr "%s (niet beheerd)"
 
 #: src/Core/Package.vala:339
-#, fuzzy
 msgid "Ubuntu Drivers"
-msgstr "Stuurprogramma's"
+msgstr "Ubuntu Stuurprogramma's"
 
 #: src/Core/Package.vala:342
 msgid "Unknown Origin (non-curated)"
-msgstr ""
+msgstr "Onbekende bron (niet beheerd)"
 
 #: src/Core/Package.vala:444
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
-msgstr ""
+msgstr "Het volgende pakket is niet geïnstalleerd in AppCenter: %s"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -266,27 +265,27 @@ msgstr "Updates voor systeemcomponenten"
 #: src/Core/UpdateManager.vala:76
 #, c-format
 msgid "Version: %s"
-msgstr ""
+msgstr "Versie: %s"
 
 #: src/Core/UpdateManager.vala:103
 msgid "Flatpak runtime"
-msgstr ""
+msgstr "Flatpak runtime"
 
 #: src/Core/UpdateManager.vala:119
 msgid "No components with updates"
-msgstr ""
+msgstr "Geen componenten met updates"
 
 #: src/Core/UpdateManager.vala:123
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u component met updates"
+msgstr[1] "%u componenten met updates"
 
 #: src/Core/UpdateManager.vala:125
 #, c-format
 msgid "%s:"
-msgstr ""
+msgstr "%s:"
 
 #: src/Core/UpdateManager.vala:163
 msgid "Restart Required"
@@ -298,12 +297,12 @@ msgstr "Gelieve uw systeem opnieuw op te starten om de updates te voltooien"
 
 #: src/Dialogs/ContentWarningDialog.vala:25
 msgid "Content Warning"
-msgstr ""
+msgstr "Inhoudswaarschuwing"
 
 #: src/Dialogs/ContentWarningDialog.vala:30
 #, c-format
 msgid "“%s” contains explicit content"
-msgstr ""
+msgstr "“%s” bevat expliciete inhoud"
 
 #: src/Dialogs/ContentWarningDialog.vala:31
 #, c-format
@@ -312,19 +311,21 @@ msgid ""
 "or disturbing. In general, elementary does not review or endorse the "
 "contents of this app."
 msgstr ""
+"“%s” bevat mogelijk inhoud die alleen geschikt is voor volwassenen of inhoud "
+"die gevoelig of storend is. elementary beoordeelt of ondersteunt de inhoud "
+"van deze app niet."
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 msgid "Show content warnings"
-msgstr ""
+msgstr "Waarschuwingen weergeven"
 
 #: src/Dialogs/ContentWarningDialog.vala:37
 msgid "Don’t Install"
-msgstr ""
+msgstr "Niet installeren"
 
 #: src/Dialogs/ContentWarningDialog.vala:38
-#, fuzzy
 msgid "Install Anyway"
-msgstr "Installeren"
+msgstr "Toch installeren"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -360,31 +361,32 @@ msgstr "Controleer alstublieft uw betalingsinformatie en probeer opnieuw."
 
 #: src/Dialogs/StripeDialog.vala:76
 msgid "Payment"
-msgstr ""
+msgstr "Betaling"
 
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
 msgid "Pay $%d for %s"
-msgstr ""
+msgstr "Betaal $%d voor %s"
 
 #: src/Dialogs/StripeDialog.vala:96
 msgid ""
 "This is a one time payment. Your email address is only used to send you a "
 "receipt."
 msgstr ""
+"Dit is een eenmalige betaling. Uw e-mailadres wordt alleen gebruikt om u een "
+"betaalbewijs te sturen."
 
 #: src/Dialogs/StripeDialog.vala:106 src/Widgets/SharePopover.vala:35
 msgid "Email"
 msgstr "E-mail"
 
 #: src/Dialogs/StripeDialog.vala:108
-#, fuzzy
 msgid ""
 "Your email address is only used to send a receipt. You will not be "
 "subscribed to any mailing list."
 msgstr ""
-"Uw e-mailadres wordt gebruikt om een factuur te sturen. Het wordt nooit "
-"opgeslagen en u zal nooit geabonneerd worden op een maillijst."
+"Uw e-mailadres wordt uitsluitend gebruikt om u een betalingsbewijs te "
+"verzenden. Uw e-mailadres wordt niet toegevoegd aan een mail lijst."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127
@@ -526,17 +528,16 @@ msgstr ""
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
-msgstr ""
+msgstr "Als u deze app verwijdert, wordt de data mogelijk ook gewist."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:35
-#, fuzzy
 msgid "Uninstall app?"
-msgstr "Verwijderen"
+msgstr "Verwijderen?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:38
-#, fuzzy, c-format
+#, c-format
 msgid "Uninstall “%s”?"
-msgstr "Verwijderen"
+msgstr "“%s” verwijderen?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:144
@@ -546,26 +547,29 @@ msgstr "Verwijderen"
 #: src/Dialogs/UninstallFailDialog.vala:26
 msgid "This may have been caused by external or manually compiled software."
 msgstr ""
+"Dit is mogelijk veroorzaakt door externe software of handmatig gecompileerde "
+"software."
 
 #: src/Dialogs/UninstallFailDialog.vala:37
-#, fuzzy
 msgid "Failed to uninstall app"
-msgstr "Zoek en installeer apps"
+msgstr "Verwijderen van de app is mislukt"
 
 #: src/Dialogs/UninstallFailDialog.vala:40
 #, c-format
 msgid "Failed to uninstall “%s”"
-msgstr ""
+msgstr "Het verwijderen van “%s” is mislukt"
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
-msgstr ""
+msgstr "De updates konden niet worden opgehaald"
 
 #: src/Dialogs/UpdateFailDialog.vala:26
 msgid ""
 "This may have been caused by external, manually added software repositories "
 "or a corrupted sources file."
 msgstr ""
+"Dit is mogelijk veroorzaakt door externe, handmatig toegevoegde software "
+"bibliotheken of een corrupt bronbestand."
 
 #: src/Dialogs/UpdateFailDialog.vala:34
 msgid "Ignore"
@@ -597,7 +601,7 @@ msgstr "Hulp"
 
 #: src/Views/AppInfoView.vala:281
 msgid "What's New:"
-msgstr ""
+msgstr "Wat er nieuw is:"
 
 #: src/Views/AppInfoView.vala:300
 msgid "Extensions:"
@@ -606,58 +610,56 @@ msgstr "Uitbreidingen:"
 #. TRANSLATORS: See the Wikipedia page
 #: src/Views/AppInfoView.vala:395
 msgid "Public Domain"
-msgstr ""
+msgstr "Publiek domein"
 
 #. TRANSLATORS: Replace the link with the version for your language
 #: src/Views/AppInfoView.vala:398
 msgid "https://en.wikipedia.org/wiki/Public_domain"
-msgstr ""
+msgstr "https://nl.wikipedia.org/wiki/Publiek_domein"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
 #: src/Views/AppInfoView.vala:403
-#, fuzzy
 msgid "Free Software"
-msgstr "Bewerk softwarebronnen"
+msgstr "Vrije software"
 
 #. TRANSLATORS: Replace the link with the version for your language
 #: src/Views/AppInfoView.vala:406
 msgid "https://www.gnu.org/philosophy/free-sw"
-msgstr ""
+msgstr "https://www.gnu.org/philosophy/free-sw"
 
 #: src/Views/AppInfoView.vala:410
 msgid "Proprietary"
-msgstr ""
+msgstr "Eigendom"
 
 #: src/Views/AppInfoView.vala:413
-#, fuzzy
 msgid "Unknown License"
-msgstr "Onbekende toestand"
+msgstr "Onbekende licentie"
 
 #: src/Views/AppInfoView.vala:455
 #, c-format
 msgid "Other Apps by %s"
-msgstr ""
+msgstr "Andere applicaties van %s"
 
 #: src/Views/AppInfoView.vala:489
 msgid "Link copied to clipboard"
-msgstr ""
+msgstr "Link gekopieerd naar het klembord"
 
 #: src/Views/AppInfoView.vala:500
 #, c-format
 msgid "Check out %s on AppCenter:"
-msgstr ""
+msgstr "Ontdek %s in het AppCenter:"
 
 #: src/Views/AppInfoView.vala:507
 msgid "Share"
-msgstr ""
+msgstr "Deel"
 
 #: src/Views/AppInfoView.vala:822
 msgid "Fund"
-msgstr ""
+msgstr "Financier"
 
 #: src/Views/AppInfoView.vala:844
 msgid "Fund the development of this app"
-msgstr ""
+msgstr "Financier de ontwikkeling van deze app"
 
 #: src/Views/AppListUpdateView.vala:56
 msgid "A restart is required to complete the installation of updates"
@@ -676,7 +678,7 @@ msgstr "Alles bijwerken"
 
 #: src/Views/AppListView.vala:128
 msgid "Non-Curated Apps"
-msgstr ""
+msgstr "Onbeheerde Apps"
 
 #: src/Views/Homepage.vala:67
 msgid "Recently Updated"
@@ -684,7 +686,7 @@ msgstr "Onlangs bijgewerkt"
 
 #: src/Views/Homepage.vala:83
 msgid "Trending"
-msgstr ""
+msgstr "Populair"
 
 #: src/Views/Homepage.vala:99
 msgid "Categories"
@@ -732,9 +734,8 @@ msgid "Audio"
 msgstr "Geluid"
 
 #: src/Widgets/CategoryFlowBox.vala:29
-#, fuzzy
 msgid "Communication"
-msgstr "Onderwijs"
+msgstr "Communicatie"
 
 #: src/Widgets/CategoryFlowBox.vala:38
 msgid "Development"
@@ -745,9 +746,8 @@ msgid "Education"
 msgstr "Onderwijs"
 
 #: src/Widgets/CategoryFlowBox.vala:49
-#, fuzzy
 msgid "Finance"
-msgstr "Annuleren"
+msgstr "Financieel"
 
 #: src/Widgets/CategoryFlowBox.vala:53
 msgid "Games"
@@ -762,13 +762,12 @@ msgid "Internet"
 msgstr "Internet"
 
 #: src/Widgets/CategoryFlowBox.vala:82
-#, fuzzy
 msgid "Math, Science, & Engineering"
-msgstr "Wetenschap & Techniek"
+msgstr "Wiskunde, Wetenschap & Techniek"
 
 #: src/Widgets/CategoryFlowBox.vala:101
 msgid "Media Production"
-msgstr ""
+msgstr "Media"
 
 #: src/Widgets/CategoryFlowBox.vala:108
 msgid "Office"
@@ -788,11 +787,11 @@ msgstr "Video"
 
 #: src/Widgets/CategoryFlowBox.vala:125
 msgid "Writing & Language"
-msgstr ""
+msgstr "Schrijven & Taal"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
-msgstr ""
+msgstr "Vereist betalingen, die niet ingeschakeld zijn"
 
 #: src/Widgets/HumbleButton.vala:105
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:304
@@ -801,9 +800,8 @@ msgstr "Gratis"
 
 #: src/Widgets/HumbleButton.vala:107
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:306
-#, fuzzy
 msgid "Install"
-msgstr "Geïnstalleerd"
+msgstr "Installeren"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:141
@@ -818,15 +816,14 @@ msgid "$%d"
 msgstr "$ %d"
 
 #: src/Widgets/NetworkInfoBar.vala:32
-#, fuzzy
 msgid "Network Not Available."
-msgstr "Geen netwerkverbinding"
+msgstr "Geen netwerkverbinding."
 
 #: src/Widgets/NetworkInfoBar.vala:33
-#, fuzzy
 msgid "Connect to the Internet to browse and install apps."
 msgstr ""
-"Connecteer met het internet om toepassingen te updaten of te installeren."
+"Verbind de computer met het internet om toepassingen te updaten of te "
+"installeren."
 
 #. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
 #: src/Widgets/NetworkInfoBar.vala:41
@@ -836,7 +833,7 @@ msgstr "Netwerkinstellingen…"
 #: src/Widgets/ReleaseRow.vala:67
 #, c-format
 msgid "<b>%s</b> – %s"
-msgstr ""
+msgstr "<b>%s</b> – %s"
 
 #: src/Widgets/ReleaseRow.vala:74
 msgid "Unknown version"
@@ -844,44 +841,44 @@ msgstr "Onbekende versie"
 
 #: src/Widgets/ReleaseRow.vala:90 src/Widgets/ReleaseRow.vala:93
 msgid "No description available"
-msgstr ""
+msgstr "Geen beschrijving beschikbaar"
 
 #: src/Widgets/SharePopover.vala:39
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #: src/Widgets/SharePopover.vala:43
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 #: src/Widgets/SharePopover.vala:47
 msgid "Reddit"
-msgstr ""
+msgstr "Reddit"
 
 #: src/Widgets/SharePopover.vala:51
 msgid "Tumblr"
-msgstr ""
+msgstr "Tumblr"
 
 #: src/Widgets/SharePopover.vala:55
 msgid "Telegram"
-msgstr ""
+msgstr "Telegram"
 
 #: src/Widgets/SharePopover.vala:59
 msgid "Copy link"
-msgstr ""
+msgstr "Kopieer link"
 
 #: src/Widgets/SizeLabel.vala:35
 msgid "Actual Download Size Likely to Be Smaller"
-msgstr ""
+msgstr "De werkelijke bestandsgrootte van de download is waarschijnlijk kleiner"
 
 #: src/Widgets/SizeLabel.vala:36
 msgid "Only the parts of apps and updates that are needed will be downloaded."
-msgstr ""
+msgstr "Alleen de benodigde gegevens van de apps en updates worden gedownload."
 
 #: src/Widgets/SizeLabel.vala:63
-#, fuzzy, c-format
+#, c-format
 msgid "Up to %s"
-msgstr "Actueel"
+msgstr "Tot %s"
 
 #: src/Widgets/UpdateHeaderRow.vala:69
 #, c-format
