@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-05 00:29+0000\n"
-"PO-Revision-Date: 2019-09-02 20:22+0000\n"
-"Last-Translator: Christoph Matthies <c.matthies.mail+github@gmail.com>\n"
+"PO-Revision-Date: 2019-12-25 16:14+0000\n"
+"Last-Translator: Jörg Arnold <j.ar@mailbox.org>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/de/>\n"
 "Language: de\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -234,32 +234,30 @@ msgid "%s Developers"
 msgstr "Die Entwickler von %s"
 
 #: src/Core/Package.vala:332
-#, fuzzy
 msgid "elementary Updates"
-msgstr "kürzlich aktualisiert"
+msgstr "elementary Aktualisierungen"
 
 #: src/Core/Package.vala:334
 msgid "Ubuntu (non-curated)"
-msgstr ""
+msgstr "Ubuntu (nicht kuratiert)"
 
 #: src/Core/Package.vala:337
-#, fuzzy, c-format
+#, c-format
 msgid "%s (non-curated)"
-msgstr "%s (lokal)"
+msgstr "%s (nicht kuratiert)"
 
 #: src/Core/Package.vala:339
-#, fuzzy
 msgid "Ubuntu Drivers"
-msgstr "Treiber"
+msgstr "Ubuntu Treiber"
 
 #: src/Core/Package.vala:342
 msgid "Unknown Origin (non-curated)"
-msgstr ""
+msgstr "Unbekannte Quelle (nicht kuratiert)"
 
 #: src/Core/Package.vala:444
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
-msgstr ""
+msgstr "Das Paket ist im AppCenter nicht als \"installiert\" markiert: %s"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -276,7 +274,7 @@ msgstr "Version: %s"
 
 #: src/Core/UpdateManager.vala:103
 msgid "Flatpak runtime"
-msgstr ""
+msgstr "Flatpak-Laufzeitumgebung"
 
 #: src/Core/UpdateManager.vala:119
 msgid "No components with updates"
@@ -308,20 +306,20 @@ msgid "Content Warning"
 msgstr "Inhaltswarnung"
 
 #: src/Dialogs/ContentWarningDialog.vala:30
-#, fuzzy, c-format
+#, c-format
 msgid "“%s” contains explicit content"
-msgstr "%s enthält anstößige Inhalte"
+msgstr "“%s” enthält explizite Inhalte"
 
 #: src/Dialogs/ContentWarningDialog.vala:31
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "“%s” may contain content only suitable for adults or that may be sensitive "
 "or disturbing. In general, elementary does not review or endorse the "
 "contents of this app."
 msgstr ""
-"%s enthält möglicherweise Inhalte, die verstörend oder nur für Erwachsene "
-"geeignet sind. elementary überprüft und befürwortet die Inhalte dieser App "
-"nicht."
+"“%s” kann Inhalte aufweisen, die nur für Erwachsene geeignet sind oder die "
+"empfindlich oder verstörend sein können. Die Inhalte dieser App werden von "
+"elementary grundsätzlich nicht überprüft oder befürwortet."
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 msgid "Show content warnings"
@@ -533,16 +531,17 @@ msgstr ""
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
 msgstr ""
+"Bei der Deinstallation dieser App werden möglicherweise auch die zugehörigen "
+"Daten gelöscht."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:35
-#, fuzzy
 msgid "Uninstall app?"
-msgstr "Deinstallieren"
+msgstr "App deinstallieren?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:38
-#, fuzzy, c-format
+#, c-format
 msgid "Uninstall “%s”?"
-msgstr "Deinstallieren"
+msgstr "“%s” deinstallieren?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:144
@@ -550,21 +549,19 @@ msgid "Uninstall"
 msgstr "Deinstallieren"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
-#, fuzzy
 msgid "This may have been caused by external or manually compiled software."
 msgstr ""
-"Dies könnte durch externe, manuell hinzugefügte Software-Repositorien oder "
-"eine korrupte sources.list-Datei verursacht worden sein."
+"Dies kann durch die Verwendung externer oder manuell kompilierter Software "
+"verursacht worden sein."
 
 #: src/Dialogs/UninstallFailDialog.vala:37
-#, fuzzy
 msgid "Failed to uninstall app"
-msgstr "Anwendungen suchen und installieren"
+msgstr "Deinstallation der App fehlgeschlagen"
 
 #: src/Dialogs/UninstallFailDialog.vala:40
 #, c-format
 msgid "Failed to uninstall “%s”"
-msgstr ""
+msgstr "\"%s\" konnte nicht deinstalliert werden"
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
@@ -823,16 +820,14 @@ msgid "$%d"
 msgstr "$%d USD"
 
 #: src/Widgets/NetworkInfoBar.vala:32
-#, fuzzy
 msgid "Network Not Available."
-msgstr "Netzwerk ist nicht erreichbar"
+msgstr "Netzwerk nicht verfügbar."
 
 #: src/Widgets/NetworkInfoBar.vala:33
-#, fuzzy
 msgid "Connect to the Internet to browse and install apps."
 msgstr ""
-"Verbindung mit dem Internet herstellen, um Apps zu installieren oder zu "
-"aktualisieren."
+"Verbinden Sie sich mit dem Internet, um Apps zu durchsuchen und zu "
+"installieren."
 
 #. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
 #: src/Widgets/NetworkInfoBar.vala:41
@@ -878,16 +873,18 @@ msgstr "Link kopieren"
 
 #: src/Widgets/SizeLabel.vala:35
 msgid "Actual Download Size Likely to Be Smaller"
-msgstr ""
+msgstr "Tatsächliche Downloadgröße wahrscheinlich kleiner"
 
 #: src/Widgets/SizeLabel.vala:36
 msgid "Only the parts of apps and updates that are needed will be downloaded."
 msgstr ""
+"Nur die von den Anwendungen und Updates benötigten Bestandteile werden "
+"heruntergeladen."
 
 #: src/Widgets/SizeLabel.vala:63
-#, fuzzy, c-format
+#, c-format
 msgid "Up to %s"
-msgstr "Aktuell"
+msgstr "Bis zu %s"
 
 #: src/Widgets/UpdateHeaderRow.vala:69
 #, c-format
