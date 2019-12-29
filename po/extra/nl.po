@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-05 00:29+0000\n"
-"PO-Revision-Date: 2019-12-25 02:16+0000\n"
+"PO-Revision-Date: 2019-12-29 10:29+0000\n"
 "Last-Translator: Jaimie85 <alsemgeest@gmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/extra/nl/"
 ">\n"
@@ -31,9 +31,9 @@ msgid ""
 "system to the latest and greatest version for new features and fixes."
 msgstr ""
 "Een applicatiewinkel voor zelfstandige en open source ontwikkelaars. Blader "
-"doorheen categorieën of zoek en ontdek nieuwe applicaties. AppCenter wordt "
-"ook gebruikt voor het updaten van uw systeem naar de laatste en beste versie "
-"met nieuwe functies en oplossingen."
+"door categorieën of zoek en ontdek nieuwe applicaties. AppCenter wordt ook "
+"gebruikt voor het updaten van uw systeem naar de laatste en beste versie met "
+"nieuwe functies en oplossingen."
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:29
@@ -240,11 +240,11 @@ msgstr "Verschillende fouten opgelost en prestaties verbeterd"
 
 #: data/io.elementary.appcenter.appdata.xml.in:107
 msgid "Give details for Operating System Updates"
-msgstr ""
+msgstr "Detailweergave van updates van het besturingssysteem"
 
 #: data/io.elementary.appcenter.appdata.xml.in:108
 msgid "Support mouse button navigation"
-msgstr ""
+msgstr "Ondersteuning voor navigeren met behulp van muisknoppen"
 
 #: data/io.elementary.appcenter.appdata.xml.in:199
 msgid "Fix crash caused by entries with missing packages"
@@ -266,13 +266,12 @@ msgid "Prevent multiple authentication dialogs when resuming from suspend"
 msgstr "Voorkom meerdere authenticatieschermen bij hervatten uit slaapstand"
 
 #: data/io.elementary.appcenter.appdata.xml.in:216
-#, fuzzy
 msgid ""
 "Search performance has beeen improved, the category name is now shown on the "
 "headbar and minor bugs have been fixed."
 msgstr ""
-"Performantie tijdens het zoeken werd verbeterd, de categorienaam wordt nu "
-"getoond in de titelbalk en kleine bugs werden opgelost."
+"Zoekprestaties zijn verbeterd, de categorienaam wordt nu getoond in de "
+"titelbalk en kleine bugs werden opgelost."
 
 #: data/io.elementary.appcenter.appdata.xml.in:218
 msgid "Fix Steam installation"
@@ -284,22 +283,21 @@ msgstr "Maak zoeken asynchroon"
 
 #: data/io.elementary.appcenter.appdata.xml.in:274
 msgid "elementary, Inc."
-msgstr ""
+msgstr "elementary, Inc."
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
-msgstr ""
+msgstr "@APP_NAME@"
 
 #: data/io.elementary.appcenter.desktop.in.in:6
 msgid "@DESKTOP_ICON@"
-msgstr ""
+msgstr "@DESKTOP_ICON@"
 
 #: data/io.elementary.appcenter.desktop.in.in:7
-#, fuzzy
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
 msgstr ""
-"installeren;deïnstalleren;verwijderen;catalogus;winkel;applicaties;updates;"
-"software;"
+"installeren;deïnstalleren;verwijderen;catalogus;winkel;applicaties;software;u"
+"pdates;"
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
@@ -307,7 +305,7 @@ msgstr "Controleer op updates"
 
 #: data/io.elementary.appcenter.desktop.in.in:19
 msgid "system-software-update"
-msgstr ""
+msgstr "system-software-update"
 
 #~ msgid "About AppCenter"
 #~ msgstr "Over AppCenter"
