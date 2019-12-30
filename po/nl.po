@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-05 00:29+0000\n"
-"PO-Revision-Date: 2019-12-25 02:16+0000\n"
+"PO-Revision-Date: 2019-12-31 06:14+0000\n"
 "Last-Translator: Jaimie85 <alsemgeest@gmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/nl/>\n"
@@ -317,7 +317,7 @@ msgstr ""
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 msgid "Show content warnings"
-msgstr "Waarschuwingen weergeven"
+msgstr "Toon inhoudswaarschuwingen"
 
 #: src/Dialogs/ContentWarningDialog.vala:37
 msgid "Don’t Install"
