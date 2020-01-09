@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-05 00:29+0000\n"
-"PO-Revision-Date: 2018-07-29 10:28+0000\n"
-"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
-"Language-Team: Finnish <https://weblate.elementary.io/projects/appcenter/"
-"extra/fi/>\n"
+"PO-Revision-Date: 2020-01-10 14:07+0000\n"
+"Last-Translator: Veli-Pekka Samuli Finnilä <vpf@tuta.io>\n"
+"Language-Team: Finnish <https://l10n.elementary.io/projects/appcenter/extra/"
+"fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
@@ -37,23 +37,26 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:29
 msgid "Minor fixes"
-msgstr ""
+msgstr "Pieniä korjauksia"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "Prevent unescaped XML entities from appearing in application names"
 msgstr ""
+"Karkaamattomien XML-yksiköiden ilmaantuminen sovellusten nimissä estetty"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Load the \"Installed\" view faster"
-msgstr ""
+msgstr "Asennettu-näkymän nopeampi lataaminen"
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
 msgid "Prevent AppCenter from opening on log in"
-msgstr ""
+msgstr "Sovelluskeskuksen aukeaminen sisäänkirjautumisen yhteydessä estetty"
 
 #: data/io.elementary.appcenter.appdata.xml.in:32
 msgid "Prevent ghost update notification when there are no updates available"
 msgstr ""
+"Virheelliset ilmoitukset uusista päivityksistä kun sellaisia ei ole "
+"saatavilla estetty"
 
 #: data/io.elementary.appcenter.appdata.xml.in:33
 msgid "Show correct installation state for extensions"
