@@ -1,13 +1,13 @@
 # Daniel <riesp@protonmail.com>, 2019.
 # Pablo Varela <pablovarela182@gmail.com>, 2019.
-# Daniel R. <riesp@pm.me>, 2019.
+# Daniel R. <riesp@pm.me>, 2019, 2020.
 # Xurxo Guerra <xguerrap@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-05 00:29+0000\n"
-"PO-Revision-Date: 2019-09-28 15:23+0000\n"
+"PO-Revision-Date: 2020-01-16 16:07+0000\n"
 "Last-Translator: Daniel R. <riesp@pm.me>\n"
 "Language-Team: Galician <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/gl/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -253,6 +253,8 @@ msgstr "Orixe descoñecida (non verificadas)"
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
+"O paquete da aplicación non foi marcado como instalado no Centro de "
+"Aplicacións: %s"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -300,19 +302,19 @@ msgid "Content Warning"
 msgstr "Advertencia sobre o contido"
 
 #: src/Dialogs/ContentWarningDialog.vala:30
-#, fuzzy, c-format
+#, c-format
 msgid "“%s” contains explicit content"
-msgstr "%s contén contido explícito"
+msgstr "«%s» contén contido explícito"
 
 #: src/Dialogs/ContentWarningDialog.vala:31
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "“%s” may contain content only suitable for adults or that may be sensitive "
 "or disturbing. In general, elementary does not review or endorse the "
 "contents of this app."
 msgstr ""
-"%s pode conter contido só adecuado para adultos ou que pode ser sensíbel ou "
-"perturbador. En xeral, elementary non revisa ou respalda o contido desta "
+"«%s» pode conter contido só adecuado para adultos ou que pode ser sensíbel "
+"ou perturbador. En xeral, elementary non revisa ou respalda o contido desta "
 "aplicación."
 
 #: src/Dialogs/ContentWarningDialog.vala:33
@@ -531,17 +533,16 @@ msgstr ""
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
-msgstr ""
+msgstr "A desinstalación desta aplicación tamén pode eliminar os seus datos."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:35
-#, fuzzy
 msgid "Uninstall app?"
-msgstr "Desinstalar"
+msgstr "Desinstalar aplicación?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:38
-#, fuzzy, c-format
+#, c-format
 msgid "Uninstall “%s”?"
-msgstr "Desinstalar"
+msgstr "Desinstalar «%s»?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:144
@@ -549,21 +550,18 @@ msgid "Uninstall"
 msgstr "Desinstalar"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
-#, fuzzy
 msgid "This may have been caused by external or manually compiled software."
 msgstr ""
-"Isto puido ser causado por engadir repositorios externos manualmente ou "
-"algún ficheiro de código fonte corrompido."
+"Isto puido ser causado por programas externos ou compilados manualmente."
 
 #: src/Dialogs/UninstallFailDialog.vala:37
-#, fuzzy
 msgid "Failed to uninstall app"
-msgstr "Buscar e instalar aplicativos"
+msgstr "Non se puido desinstalar a aplicación"
 
 #: src/Dialogs/UninstallFailDialog.vala:40
 #, c-format
 msgid "Failed to uninstall “%s”"
-msgstr ""
+msgstr "Fallou ó desinstalar \"%s\""
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
