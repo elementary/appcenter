@@ -40,9 +40,6 @@ namespace AppCenter.Views {
         private Widgets.ReleaseListBox release_list_box;
         private Gtk.Revealer origin_combo_revealer;
         private Gtk.Grid screenshot_arrows;
-        private Gtk.Revealer screenshot_arrows_revealer;
-        private Gtk.Button screenshot_previous;
-        private Gtk.Button screenshot_next;
         private Gtk.Stack screenshot_stack;
         private Gtk.StyleContext stack_context;
         private Gtk.Overlay screenshot_overlay;
@@ -84,7 +81,7 @@ namespace AppCenter.Views {
                 app_screenshots.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
                 app_screenshots.halign = Gtk.Align.CENTER;
 
-                screenshot_previous = new Gtk.Button.from_icon_name ("go-previous-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+                var screenshot_previous = new Gtk.Button.from_icon_name ("go-previous-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
                 screenshot_previous.expand = true;
                 screenshot_previous.halign = Gtk.Align.START;
                 screenshot_previous.valign = Gtk.Align.CENTER;
@@ -103,7 +100,7 @@ namespace AppCenter.Views {
                     }
                 });
 
-                screenshot_next = new Gtk.Button.from_icon_name ("go-next-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+                var screenshot_next = new Gtk.Button.from_icon_name ("go-next-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
                 screenshot_next.expand = true;
                 screenshot_next.halign = Gtk.Align.END;
                 screenshot_next.valign = Gtk.Align.CENTER;
@@ -140,7 +137,7 @@ namespace AppCenter.Views {
                 screenshot_arrows.add (screenshot_next);
                 screenshot_arrows.no_show_all = true;
 
-                screenshot_arrows_revealer = new Gtk.Revealer ();
+                var screenshot_arrows_revealer = new Gtk.Revealer ();
                 screenshot_arrows_revealer.transition_type = Gtk.RevealerTransitionType.CROSSFADE;
                 screenshot_arrows_revealer.add (screenshot_arrows);
 
