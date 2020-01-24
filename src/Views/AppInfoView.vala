@@ -26,7 +26,6 @@ namespace AppCenter.Views {
             Gtk.StackTransitionType transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT
         );
 
-        private static Gtk.CssProvider arrow_provider;
         private static Gtk.CssProvider loading_provider;
         private static Gtk.CssProvider? previous_css_provider = null;
 
@@ -53,9 +52,6 @@ namespace AppCenter.Views {
         }
 
         static construct {
-            arrow_provider = new Gtk.CssProvider ();
-            arrow_provider.load_from_resource ("io/elementary/appcenter/arrow.css");
-
             loading_provider = new Gtk.CssProvider ();
             loading_provider.load_from_resource ("io/elementary/appcenter/loading.css");
         }
@@ -81,16 +77,9 @@ namespace AppCenter.Views {
                 app_screenshots.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
                 app_screenshots.halign = Gtk.Align.CENTER;
 
-                var screenshot_previous = new Gtk.Button.from_icon_name ("go-previous-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
-                screenshot_previous.expand = true;
+                var screenshot_previous = new ArrowButton ();
                 screenshot_previous.halign = Gtk.Align.START;
-                screenshot_previous.valign = Gtk.Align.CENTER;
-
-                var previous_context = screenshot_previous.get_style_context ();
-                previous_context.add_class (Gtk.STYLE_CLASS_FLAT);
-                previous_context.add_class ("circular");
-                previous_context.add_class ("arrow");
-                previous_context.add_provider (arrow_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+                screenshot_previous.image = new Gtk.Image.from_icon_name ("go-previous-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
 
                 screenshot_previous.clicked.connect (() => {
                     GLib.List<unowned Gtk.Widget> screenshot_children = app_screenshots.get_children ();
@@ -100,16 +89,9 @@ namespace AppCenter.Views {
                     }
                 });
 
-                var screenshot_next = new Gtk.Button.from_icon_name ("go-next-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
-                screenshot_next.expand = true;
+                var screenshot_next = new ArrowButton ();
                 screenshot_next.halign = Gtk.Align.END;
-                screenshot_next.valign = Gtk.Align.CENTER;
-
-                var next_context = screenshot_next.get_style_context ();
-                next_context.add_class (Gtk.STYLE_CLASS_FLAT);
-                next_context.add_class ("circular");
-                next_context.add_class ("arrow");
-                next_context.add_provider (arrow_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+                screenshot_next.image = new Gtk.Image.from_icon_name ("go-next-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
 
                 screenshot_next.clicked.connect (() => {
                     GLib.List<unowned Gtk.Widget> screenshot_children = app_screenshots.get_children ();
@@ -828,6 +810,26 @@ namespace AppCenter.Views {
                 popover = selection;
 
                 add (grid);
+            }
+        }
+
+        private class ArrowButton : Gtk.Button {
+            private static Gtk.CssProvider arrow_provider;
+
+            static construct {
+                arrow_provider = new Gtk.CssProvider ();
+                arrow_provider.load_from_resource ("io/elementary/appcenter/arrow.css");
+            }
+
+            construct {
+                expand = true;
+                valign = Gtk.Align.CENTER;
+
+                unowned Gtk.StyleContext context = get_style_context ();
+                context.add_class (Gtk.STYLE_CLASS_FLAT);
+                context.add_class ("circular");
+                context.add_class ("arrow");
+                context.add_provider (arrow_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
             }
         }
     }
