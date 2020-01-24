@@ -206,9 +206,6 @@ namespace AppCenter.Views {
 
             package_author.selectable = true;
             package_author.xalign = 0;
-            package_author.valign = Gtk.Align.START;
-            package_author.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-            package_author.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
             package_summary.label = package.get_summary ();
             package_summary.selectable = true;
@@ -310,7 +307,6 @@ namespace AppCenter.Views {
 
             origin_label = new Gtk.Label (null);
             origin_label.halign = Gtk.Align.START;
-            origin_label.valign = Gtk.Align.START;
 
             origin_stack = new Gtk.Stack ();
             origin_stack.add (origin_label);
@@ -353,10 +349,23 @@ namespace AppCenter.Views {
             header_grid.margin = content_grid.margin / 2;
             // Must be wide enough to fit long package name and progress bar
             header_grid.width_request = content_grid.width_request + 2 * (content_grid.margin - header_grid.margin);
-            header_grid.attach (image, 0, 0, 1, 3);
+
+            var subtitle_separator = new Gtk.Label ("•");
+
+            var subtitle = new Gtk.Grid ();
+            subtitle.column_spacing = 6;
+
+            subtitle.add (package_author);
+            subtitle.add (subtitle_separator);
+            subtitle.add (origin_stack);
+
+            var subtitle_context = subtitle.get_style_context ();
+            subtitle_context.add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+            subtitle_context.add_class (Granite.STYLE_CLASS_H3_LABEL);
+
+            header_grid.attach (image, 0, 0, 1, 2);
             header_grid.attach (package_name, 1, 0);
-            header_grid.attach (package_author, 1, 1, 2);
-            header_grid.attach (origin_stack, 1, 2, 2);
+            header_grid.attach (subtitle, 1, 1, 2);
             header_grid.attach (app_version, 2, 0);
             header_grid.attach (action_stack, 3, 0);
 
