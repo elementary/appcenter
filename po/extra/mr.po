@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-05 00:29+0000\n"
-"PO-Revision-Date: 2019-12-04 01:25+0000\n"
+"PO-Revision-Date: 2019-12-16 21:08+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/extra/"
 "mr/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
@@ -41,11 +41,11 @@ msgstr "किरकोळ दोष निराकरणे"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "Prevent unescaped XML entities from appearing in application names"
-msgstr ""
+msgstr "अनुप्रयोगावरील नावे दिसण्यापासून न वाचलेल्या XML घटकांना प्रतिबंधित करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Load the \"Installed\" view faster"
-msgstr ""
+msgstr "\"Installed\" दृश्य जलद लोड करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
 msgid "Prevent AppCenter from opening on log in"
