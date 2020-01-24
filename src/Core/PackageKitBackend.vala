@@ -127,7 +127,8 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 
         // Work around an issue where if we call any synchronous method on PackageKit,
         // we never receive signals from Pk.Control.Calling this here causes packagekit-glib2 to
-        // connect to the PackageKit DBus and fire signals on the right thread
+        // connect to the PackageKit DBus and fire signals on the right thread.
+        // See: https://github.com/hughsie/PackageKit/issues/207
         var loop = new MainLoop ();
         _control.get_properties_async.begin (null, (obj, res) => {
             try {
