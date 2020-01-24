@@ -153,7 +153,7 @@ namespace AppCenter.Views {
             noncurated_grid.margin_start = 24;
             noncurated_grid.row_spacing = 3;
             noncurated_grid.tooltip_markup = "<b>%s</b>\n%s\n%s".printf (
-                _("“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration.").printf (package.get_name ()),
+                _("“%s” has not been reviewed by elementary for security, privacy, or system integration.").printf (package.get_name ()),
                 _("It may not receive bug fix or feature updates"),
                 _("It may access or change system or personal files without permission")
             );
