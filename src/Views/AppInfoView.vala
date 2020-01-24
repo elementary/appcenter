@@ -39,7 +39,6 @@ namespace AppCenter.Views {
         private Gtk.ListBox extension_box;
         private Gtk.Grid release_grid;
         private Widgets.ReleaseListBox release_list_box;
-        private Gtk.Revealer origin_combo_revealer;
         private Gtk.Grid screenshot_arrows;
         private Gtk.Revealer screenshot_arrows_revealer;
         private Gtk.Button screenshot_previous;
@@ -49,8 +48,10 @@ namespace AppCenter.Views {
         private Gtk.Overlay screenshot_overlay;
         private Gtk.TextView app_description;
         private Widgets.Switcher screenshot_switcher;
+        private Gtk.Stack origin_stack;
         private Gtk.ListStore origin_liststore;
         private Gtk.ComboBox origin_combo;
+        private Gtk.Label origin_label;
 
         public AppInfoView (AppCenterCore.Package package) {
             Object (package: package);
@@ -307,6 +308,13 @@ namespace AppCenter.Views {
                 load_extensions.begin ();
             }
 
+            origin_label = new Gtk.Label (null);
+            origin_label.halign = Gtk.Align.START;
+            origin_label.valign = Gtk.Align.START;
+
+            origin_stack = new Gtk.Stack ();
+            origin_stack.add (origin_label);
+
             origin_liststore = new Gtk.ListStore (2, typeof (AppCenterCore.Package), typeof (string));
             origin_combo = new Gtk.ComboBox.with_model (origin_liststore);
             origin_combo.halign = Gtk.Align.START;
@@ -320,9 +328,7 @@ namespace AppCenter.Views {
                     show_other_package (selected_origin_package, false, Gtk.StackTransitionType.CROSSFADE);
                 }
             });
-
-            origin_combo_revealer = new Gtk.Revealer ();
-            origin_combo_revealer.add (origin_combo);
+            origin_stack.add (origin_combo);
 
             var renderer = new Gtk.CellRendererText ();
             origin_combo.pack_start (renderer, true);
@@ -350,7 +356,7 @@ namespace AppCenter.Views {
             header_grid.attach (image, 0, 0, 1, 3);
             header_grid.attach (package_name, 1, 0);
             header_grid.attach (package_author, 1, 1, 2);
-            header_grid.attach (origin_combo_revealer, 1, 2, 2);
+            header_grid.attach (origin_stack, 1, 2, 2);
             header_grid.attach (app_version, 2, 0);
             header_grid.attach (action_stack, 3, 0);
 
@@ -630,7 +636,7 @@ namespace AppCenter.Views {
 
             Gtk.TreeIter iter;
             uint count = 0;
-            foreach (unowned Package origin_package in package.origin_packages) {
+            foreach (var origin_package in package.origin_packages) {
                 origin_liststore.append (out iter);
                 origin_liststore.set (iter, 0, origin_package, 1, origin_package.origin_description);
                 if (origin_package == package) {
@@ -639,7 +645,10 @@ namespace AppCenter.Views {
 
                 count++;
                 if (count > 1) {
-                    origin_combo_revealer.reveal_child = true;
+                    origin_stack.visible_child = origin_combo;
+                } else {
+                    origin_label.label = origin_package.origin_description;
+                    origin_stack.visible_child = origin_label;
                 }
             }
 
