@@ -77,10 +77,7 @@ namespace AppCenter.Views {
                 app_screenshots.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
                 app_screenshots.halign = Gtk.Align.CENTER;
 
-                var screenshot_previous = new ArrowButton ();
-                screenshot_previous.halign = Gtk.Align.START;
-                screenshot_previous.image = new Gtk.Image.from_icon_name ("go-previous-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
-
+                var screenshot_previous = new ArrowButton ("go-previous-symbolic", Gtk.Align.START);
                 screenshot_previous.clicked.connect (() => {
                     GLib.List<unowned Gtk.Widget> screenshot_children = app_screenshots.get_children ();
                     var index = screenshot_children.index (app_screenshots.visible_child);
@@ -89,10 +86,7 @@ namespace AppCenter.Views {
                     }
                 });
 
-                var screenshot_next = new ArrowButton ();
-                screenshot_next.halign = Gtk.Align.END;
-                screenshot_next.image = new Gtk.Image.from_icon_name ("go-next-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
-
+                var screenshot_next = new ArrowButton ("go-next-symbolic", Gtk.Align.END);
                 screenshot_next.clicked.connect (() => {
                     GLib.List<unowned Gtk.Widget> screenshot_children = app_screenshots.get_children ();
                     var index = screenshot_children.index (app_screenshots.visible_child);
@@ -815,6 +809,13 @@ namespace AppCenter.Views {
 
         private class ArrowButton : Gtk.Button {
             private static Gtk.CssProvider arrow_provider;
+
+            public ArrowButton (string icon_name, Gtk.Align halign) {
+                Object (
+                    halign: halign,
+                    image: new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.LARGE_TOOLBAR)
+                );
+            }
 
             static construct {
                 arrow_provider = new Gtk.CssProvider ();
