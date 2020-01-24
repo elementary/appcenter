@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-05 00:29+0000\n"
-"PO-Revision-Date: 2019-11-10 19:24+0000\n"
+"PO-Revision-Date: 2019-12-18 23:11+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/extra/"
 "tr/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
@@ -38,7 +38,7 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:29
 msgid "Minor fixes"
-msgstr ""
+msgstr "Küçük düzeltmeler"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "Prevent unescaped XML entities from appearing in application names"
@@ -120,7 +120,7 @@ msgstr "Performans iyileştirmeleri"
 
 #: data/io.elementary.appcenter.appdata.xml.in:54
 msgid "Updated translations"
-msgstr ""
+msgstr "Çeviriler güncellendi"
 
 #: data/io.elementary.appcenter.appdata.xml.in:61
 msgid "Meson build system fixes"

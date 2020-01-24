@@ -1,10 +1,10 @@
-# Ryo Nakano <ryonakaknock3@gmail.com>, 2018, 2019.
+# Ryo Nakano <ryonakaknock3@gmail.com>, 2018, 2019, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-05 00:29+0000\n"
-"PO-Revision-Date: 2019-11-03 00:24+0000\n"
+"PO-Revision-Date: 2020-01-24 15:40+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ja/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -628,7 +628,7 @@ msgstr "不明なライセンス"
 #: src/Views/AppInfoView.vala:455
 #, c-format
 msgid "Other Apps by %s"
-msgstr "%s によるその他のアプリ"
+msgstr "%s によるほかのアプリ"
 
 #: src/Views/AppInfoView.vala:489
 msgid "Link copied to clipboard"
