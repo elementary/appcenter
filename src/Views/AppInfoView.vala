@@ -34,7 +34,6 @@ namespace AppCenter.Views {
 
         private Gtk.Label app_screenshot_not_found;
         private Gtk.Stack app_screenshots;
-        private Gtk.Label app_version;
         private Widgets.SizeLabel size_label;
         private Gtk.ListBox extension_box;
         private Gtk.Grid release_grid;
@@ -195,14 +194,6 @@ namespace AppCenter.Views {
             package_name.get_style_context ().add_class (Granite.STYLE_CLASS_H1_LABEL);
             package_name.valign = Gtk.Align.END;
 
-            app_version = new Gtk.Label (null);
-            app_version.margin_top = 12;
-            app_version.xalign = 0;
-            app_version.hexpand = true;
-            app_version.valign = Gtk.Align.CENTER;
-            app_version.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-            app_version.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
-
             package_author.selectable = true;
             package_author.xalign = 0;
             package_author.valign = Gtk.Align.START;
@@ -349,9 +340,8 @@ namespace AppCenter.Views {
             header_grid.width_request = content_grid.width_request + 2 * (content_grid.margin - header_grid.margin);
             header_grid.attach (image, 0, 0, 1, 3);
             header_grid.attach (package_name, 1, 0);
-            header_grid.attach (package_author, 1, 1, 2);
-            header_grid.attach (origin_combo_revealer, 1, 2, 2);
-            header_grid.attach (app_version, 2, 0);
+            header_grid.attach (package_author, 1, 1);
+            header_grid.attach (origin_combo_revealer, 1, 2);
             header_grid.attach (action_stack, 3, 0);
 
             if (!package.is_local) {
@@ -542,10 +532,6 @@ namespace AppCenter.Views {
         }
 
         protected override void update_state (bool first_update = false) {
-            if (!first_update && !package.is_os_updates) {
-                app_version.label = package.get_version ();
-            }
-
             size_label.update ();
             if (package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
                 get_app_download_size.begin ();
@@ -644,9 +630,7 @@ namespace AppCenter.Views {
             }
 
             new Thread<void*> ("content-loading", () => {
-                if (!package.is_os_updates) {
-                    app_version.label = package.get_version ();
-                } else {
+                if (package.is_os_updates) {
                     package_author.label = package.get_version ();
                 }
 
