@@ -630,7 +630,7 @@ namespace AppCenter.Views {
 
             Gtk.TreeIter iter;
             uint count = 0;
-            foreach (var origin_package in package.origin_packages) {
+            foreach (unowned Package origin_package in package.origin_packages) {
                 origin_liststore.append (out iter);
                 origin_liststore.set (iter, 0, origin_package, 1, origin_package.origin_description);
                 if (origin_package == package) {
