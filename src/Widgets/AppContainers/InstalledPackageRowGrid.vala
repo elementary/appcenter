@@ -82,7 +82,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
 
     protected override void set_up_package (uint icon_size = 48) {
         if (package.get_version () != null) {
-            if (package.has_multiple_versions) {
+            if (package.has_multiple_origins) {
                 app_version.label = "%s - %s".printf (package.get_version (), package.origin_description);
             } else {
                 app_version.label = package.get_version ();
@@ -96,7 +96,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
 
     protected override void update_state (bool first_update = false) {
         if (!first_update && package.get_version != null) {
-            if (package.has_multiple_versions) {
+            if (package.has_multiple_origins) {
                 app_version.label = "%s - %s".printf (package.get_version (), package.origin_description);
             } else {
                 app_version.label = package.get_version ();
