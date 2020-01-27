@@ -153,7 +153,7 @@ namespace AppCenter.Views {
             noncurated_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
             var noncurated_revealer = new Gtk.Revealer ();
-            noncurated_revealer.reveal_child = !package.is_native;
+            noncurated_revealer.reveal_child = !(package.is_native || package.is_os_updates);
             noncurated_revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT;
             noncurated_revealer.add (noncurated_grid);
 
