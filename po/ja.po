@@ -1,10 +1,10 @@
-# Ryo Nakano <ryonakaknock3@gmail.com>, 2018, 2019.
+# Ryo Nakano <ryonakaknock3@gmail.com>, 2018, 2019, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-19 06:24-0800\n"
-"PO-Revision-Date: 2019-11-03 00:24+0000\n"
+"POT-Creation-Date: 2019-12-05 00:29+0000\n"
+"PO-Revision-Date: 2020-01-24 15:40+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ja/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -628,7 +628,7 @@ msgstr "不明なライセンス"
 #: src/Views/AppInfoView.vala:455
 #, c-format
 msgid "Other Apps by %s"
-msgstr "%s によるその他のアプリ"
+msgstr "%s によるほかのアプリ"
 
 #: src/Views/AppInfoView.vala:489
 msgid "Link copied to clipboard"
@@ -643,11 +643,11 @@ msgstr "AppCenter で %s を確認:"
 msgid "Share"
 msgstr "共有"
 
-#: src/Views/AppInfoView.vala:817
+#: src/Views/AppInfoView.vala:822
 msgid "Fund"
 msgstr "資金提供"
 
-#: src/Views/AppInfoView.vala:839
+#: src/Views/AppInfoView.vala:844
 msgid "Fund the development of this app"
 msgstr "このアプリの開発に資金を提供します"
 
@@ -780,12 +780,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "支払いが必要ですが、有効になっていません"
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:292
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:304
 msgid "Free"
 msgstr "無料"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:294
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:306
 msgid "Install"
 msgstr "インストール"
 
@@ -888,7 +888,7 @@ msgstr "ドライバー"
 msgid "Open"
 msgstr "開く"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:317
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:329
 msgid "Update"
 msgstr "アップデート"
 

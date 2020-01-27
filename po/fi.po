@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-19 06:24-0800\n"
+"POT-Creation-Date: 2019-12-05 00:29+0000\n"
 "PO-Revision-Date: 2019-11-06 21:09+0000\n"
 "Last-Translator: Veli-Pekka Samuli Finnilä <vpf@tuta.io>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/appcenter/"
@@ -638,11 +638,11 @@ msgstr "Tutustu sovellukseen %s AppCenterissä:"
 msgid "Share"
 msgstr "Jaa"
 
-#: src/Views/AppInfoView.vala:817
+#: src/Views/AppInfoView.vala:822
 msgid "Fund"
 msgstr "Rahoita"
 
-#: src/Views/AppInfoView.vala:839
+#: src/Views/AppInfoView.vala:844
 msgid "Fund the development of this app"
 msgstr "Rahoita tämän sovelluksen kehitystä"
 
@@ -775,12 +775,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "Maksuja vaaditaan. Niitä ei ole kytketty päälle"
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:292
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:304
 msgid "Free"
 msgstr "Ilmainen"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:294
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:306
 msgid "Install"
 msgstr "Asenna"
 
@@ -882,7 +882,7 @@ msgstr "Ajurit"
 msgid "Open"
 msgstr "Avaa"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:317
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:329
 msgid "Update"
 msgstr "Päivitä"
 

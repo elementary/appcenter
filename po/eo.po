@@ -1,4 +1,4 @@
-# Augusto Fornitani <augusto.fornitani@outlook.com>, 2018.
+# Augusto Fornitani <augusto.fornitani@outlook.com>, 2018, 2019.
 # Jesse ALTER <jesse@jessealter.com>, 2018.
 # Shtonchjo <shtonchjo@gmail.com>, 2019.
 # Steven <Stevenjeffers19@gmail.com>, 2019.
@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-19 06:24-0800\n"
-"PO-Revision-Date: 2019-11-06 21:09+0000\n"
-"Last-Translator: Shtonchjo <shtonchjo@gmail.com>\n"
+"POT-Creation-Date: 2019-12-05 00:29+0000\n"
+"PO-Revision-Date: 2019-12-12 19:07+0000\n"
+"Last-Translator: Augusto Fornitani <augusto.fornitani@outlook.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/eo/>\n"
 "Language: eo\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -642,11 +642,11 @@ msgstr "Esploru pri %s ĉe la Aplikaĵa Centro:"
 msgid "Share"
 msgstr "Kunhavigi"
 
-#: src/Views/AppInfoView.vala:817
+#: src/Views/AppInfoView.vala:822
 msgid "Fund"
 msgstr "Financi"
 
-#: src/Views/AppInfoView.vala:839
+#: src/Views/AppInfoView.vala:844
 msgid "Fund the development of this app"
 msgstr "Financi la disvolvon de ĉi aplikaĵo"
 
@@ -748,7 +748,7 @@ msgstr "Interretado"
 
 #: src/Widgets/CategoryFlowBox.vala:82
 msgid "Math, Science, & Engineering"
-msgstr "Matematikoj, Sciencoj & Inĝenierado"
+msgstr "Matematiko, Scienco kaj Inĝenierado"
 
 #: src/Widgets/CategoryFlowBox.vala:101
 msgid "Media Production"
@@ -779,12 +779,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "Postulas pagadon, kio ne estas ebligita"
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:292
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:304
 msgid "Free"
 msgstr "Senpaga"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:294
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:306
 msgid "Install"
 msgstr "Instali"
 
@@ -840,7 +840,7 @@ msgstr "Reddit"
 
 #: src/Widgets/SharePopover.vala:51
 msgid "Tumblr"
-msgstr "Tumblr"
+msgstr "tumblr"
 
 #: src/Widgets/SharePopover.vala:55
 msgid "Telegram"
@@ -886,7 +886,7 @@ msgstr "Peliloj"
 msgid "Open"
 msgstr "Malfermi"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:317
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:329
 msgid "Update"
 msgstr "Ĝisdatigi"
 

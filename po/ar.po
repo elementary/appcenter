@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-19 06:24-0800\n"
-"PO-Revision-Date: 2019-08-26 04:22+0000\n"
+"POT-Creation-Date: 2019-12-05 00:29+0000\n"
+"PO-Revision-Date: 2019-12-18 23:11+0000\n"
 "Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ar/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:24+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -236,7 +236,7 @@ msgstr[5] "يوجد %u تحديث لنظامك"
 #: src/Core/Package.vala:300
 #, c-format
 msgid "%s Developers"
-msgstr "المطور %s"
+msgstr "المطورون %s"
 
 #: src/Core/Package.vala:332
 msgid "elementary Updates"
@@ -247,9 +247,9 @@ msgid "Ubuntu (non-curated)"
 msgstr ""
 
 #: src/Core/Package.vala:337
-#, fuzzy, c-format
+#, c-format
 msgid "%s (non-curated)"
-msgstr "%s (محلي)"
+msgstr "%s (غير منظم)"
 
 #: src/Core/Package.vala:339
 msgid "Ubuntu Drivers"
@@ -279,7 +279,7 @@ msgstr "نسخة : %s"
 
 #: src/Core/UpdateManager.vala:103
 msgid "Flatpak runtime"
-msgstr ""
+msgstr "وقت التشغيل Flatpak"
 
 #: src/Core/UpdateManager.vala:119
 msgid "No components with updates"
@@ -647,11 +647,11 @@ msgstr "أنظر إلى %s في مركز التطبيقات:"
 msgid "Share"
 msgstr "شارك"
 
-#: src/Views/AppInfoView.vala:817
+#: src/Views/AppInfoView.vala:822
 msgid "Fund"
 msgstr "دعم"
 
-#: src/Views/AppInfoView.vala:839
+#: src/Views/AppInfoView.vala:844
 msgid "Fund the development of this app"
 msgstr "إدعم تطوير هذا التطبيق"
 
@@ -784,12 +784,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "تحتاج لطريقة دفع, وهي غير مفعلة"
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:292
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:304
 msgid "Free"
 msgstr "مجاني"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:294
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:306
 msgid "Install"
 msgstr "تثبيت"
 
@@ -897,7 +897,7 @@ msgstr "التعريفات"
 msgid "Open"
 msgstr "فتح"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:317
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:329
 msgid "Update"
 msgstr "تحديث"
 

@@ -15,12 +15,22 @@
     </p>
   </description>
   <releases>
-    <release version="3.2.1" date="2019-11-06" urgency="medium">
+    <release version="3.2.2" date="2019-12-20" urgency="medium">
+      <description>
+        <p>Minor fixes</p>
+        <ul>
+          <li>Prevent unescaped XML entities from appearing in application names</li>
+          <li>Load the "Installed" view faster</li>
+        </ul>
+      </description>
+    </release>
+    <release version="3.2.1" date="2019-12-02" urgency="medium">
       <description>
         <p>Minor fixes</p>
         <ul>
           <li>Prevent AppCenter from opening on log in</li>
           <li>Prevent ghost update notification when there are no updates available</li>
+          <li>Show correct installation state for extensions</li>
         </ul>
       </description>
     </release>
