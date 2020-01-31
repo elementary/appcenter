@@ -7,13 +7,13 @@
 # KN-KZ <kurutmaz.kaan@gmail.com>, 2018.
 # Turker <turkerbol@gmail.com>, 2018, 2019.
 # Mehmet Zahit Yılmaz <darkmehmet3@gmail.com>, 2018, 2019.
-# Ozgur Baskin <bebeto_baskin@yahoo.com>, 2019.
+# Ozgur Baskin <bebeto_baskin@yahoo.com>, 2019, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-05 00:29+0000\n"
-"PO-Revision-Date: 2019-10-31 15:34+0000\n"
+"PO-Revision-Date: 2020-02-01 02:08+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/tr/>\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -38,7 +38,7 @@ msgstr "Medya türü %s ayrıştırılamadı"
 #: src/Application.vala:132
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr "Belirtilen '%s' bağlantısı bulunamadı, bunun yerine arama yapıldı"
+msgstr "Belirtilen '%s' bağlantısı bulunamadı, bunun yerine arama yapılıyor."
 
 #: src/Application.vala:270
 msgid "Application installed"
