@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-05 00:29+0000\n"
-"PO-Revision-Date: 2019-12-08 03:25+0000\n"
+"PO-Revision-Date: 2020-02-01 02:08+0000\n"
 "Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/extra/pt_BR/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
@@ -42,11 +42,11 @@ msgstr "Pequenas correções"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "Prevent unescaped XML entities from appearing in application names"
-msgstr ""
+msgstr "Impedir que entidades XML sem escape apareçam nos nomes dos aplicativos"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Load the \"Installed\" view faster"
-msgstr ""
+msgstr "Carregue a visualização \"Instalado\" mais rapidamente"
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
 msgid "Prevent AppCenter from opening on log in"
