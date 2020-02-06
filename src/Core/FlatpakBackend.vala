@@ -37,6 +37,8 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
     private static Flatpak.Installation? installation;
 
+    private static GLib.FileMonitor monitor;
+
     private uint total_operations;
     private int current_operation;
 
@@ -72,6 +74,11 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         appstream_pool = new AppStream.Pool ();
         appstream_pool.set_cache_flags (AppStream.CacheFlags.NONE);
         package_list = new Gee.HashMap<string, Package> (null, null);
+        monitor = installation.create_monitor ();
+        monitor.changed.connect (() => {
+            debug ("Flatpak installation changed.");
+            // Flatpak cache update tasks go here?
+        });
 
         local_metadata_path = Path.build_filename (
             Environment.get_user_cache_dir (),
