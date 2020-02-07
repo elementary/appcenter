@@ -37,6 +37,16 @@ public abstract class AppCenter.View : Gtk.Stack {
 
         previous_package = null;
 
+        if (AppCenterCore.BackendAggregator.get_default ().cache_flush_needed) {
+            foreach (var child in get_children ()) {
+                if (child is Views.AppInfoView && child != visible_child) {
+                    child.destroy ();
+                }
+            }
+
+            AppCenterCore.BackendAggregator.get_default ().cache_flush_needed = false;
+        }
+
         var package_hash = package.component.get_origin () + "-" + package.component.id;
 
         var pk_child = get_child_by_name (package_hash) as Views.AppInfoView;
