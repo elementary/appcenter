@@ -30,7 +30,7 @@ public abstract class AppCenter.View : Gtk.Stack {
         notify["transition-running"].connect (() => {
             // Transition finished
             if (!transition_running) {
-                foreach (var child in get_children ()) {
+                foreach (weak Gtk.Widget child in get_children ()) {
                     if (child is Views.AppInfoView && (child as Views.AppInfoView).to_recycle) {
                         child.destroy ();
                     }
@@ -52,6 +52,7 @@ public abstract class AppCenter.View : Gtk.Stack {
 
         var pk_child = get_child_by_name (package_hash) as Views.AppInfoView;
         if (pk_child.to_recycle) {
+            // Don't switch to a view that needs recycling
             pk_child.destroy ();
             pk_child = null;
         }
