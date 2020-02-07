@@ -37,7 +37,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
     private static Flatpak.Installation? installation;
 
-    private static GLib.FileMonitor monitor;
+    private static GLib.FileMonitor installation_changed_monitor;
 
     private uint total_operations;
     private int current_operation;
@@ -74,12 +74,23 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         appstream_pool = new AppStream.Pool ();
         appstream_pool.set_cache_flags (AppStream.CacheFlags.NONE);
         package_list = new Gee.HashMap<string, Package> (null, null);
-        monitor = installation.create_monitor ();
-        monitor.changed.connect (() => {
-            debug ("Flatpak installation changed.");
-            // Flatpak cache update tasks go here?
-            Client.get_default ().update_cache.begin (true);
-        });
+        
+        // Monitor the FlatpakInstallation for changes (e.g. adding/removing remotes)
+        if (installation != null) {
+            try {
+                installation_changed_monitor = installation.create_monitor ();
+            } catch (Error e) {
+                critical ("Couldn't create Installation File Monitor : %s", e.message);
+            }
+            
+            installation_changed_monitor.changed.connect (() => {
+                debug ("Flatpak installation changed.");
+                var cache_cancellable = new GLib.Cancellable ();
+                refresh_cache (cache_cancellable);
+            });
+        } else {
+            error ("Couldn't create Installation File Monitor due to no installation");
+        }
 
         local_metadata_path = Path.build_filename (
             Environment.get_user_cache_dir (),
