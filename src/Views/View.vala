@@ -51,7 +51,7 @@ public abstract class AppCenter.View : Gtk.Stack {
         var package_hash = package.component.get_origin () + "-" + package.component.id;
 
         var pk_child = get_child_by_name (package_hash) as Views.AppInfoView;
-        if (pk_child.to_recycle) {
+        if (pk_child != null && pk_child.to_recycle) {
             // Don't switch to a view that needs recycling
             pk_child.destroy ();
             pk_child = null;
