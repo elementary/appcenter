@@ -77,7 +77,9 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         monitor = installation.create_monitor ();
         monitor.changed.connect (() => {
             debug ("Flatpak installation changed.");
+            GLib.Cancellable cancellable = new GLib.Cancellable ();
             // Flatpak cache update tasks go here?
+            Client.get_default ().update_cache.begin (true);
         });
 
         local_metadata_path = Path.build_filename (
@@ -348,14 +350,16 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
         for (int i = 0; i < remotes.length; i++) {
             unowned Flatpak.Remote remote = remotes[i];
-            if (remote.get_disabled ()) {
-                continue;
-            }
 
             bool cache_refresh_needed = false;
 
             unowned string origin_name = remote.get_name ();
             debug ("Found remote: %s", origin_name);
+
+            if (remote.get_disabled ()) {
+                debug ("%s is disabled, skipping.", origin_name);
+                continue;
+            }
 
             var timestamp_file = remote.get_appstream_timestamp (null);
             if (!timestamp_file.query_exists ()) {
