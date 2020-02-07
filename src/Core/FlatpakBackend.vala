@@ -74,7 +74,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         appstream_pool = new AppStream.Pool ();
         appstream_pool.set_cache_flags (AppStream.CacheFlags.NONE);
         package_list = new Gee.HashMap<string, Package> (null, null);
-        
+
         // Monitor the FlatpakInstallation for changes (e.g. adding/removing remotes)
         if (installation != null) {
             try {
@@ -82,7 +82,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             } catch (Error e) {
                 critical ("Couldn't create Installation File Monitor : %s", e.message);
             }
-            
+
             installation_changed_monitor.changed.connect (() => {
                 debug ("Flatpak installation changed.");
                 var cache_cancellable = new GLib.Cancellable ();
