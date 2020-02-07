@@ -40,7 +40,6 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
     // This would have to be done differently if there were multiple workers in the pool
     private bool thread_should_run = true;
 
-    public bool cache_flush_needed { public get; public set; default = false; }
     public bool working { public get; protected set; }
 
     // The aptcc backend included in PackageKit < 1.1.10 wasn't able to support multiple packages
@@ -201,7 +200,6 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
             });
 
             package_list = new_package_list;
-            cache_flush_needed = true;
         }
     }
 
@@ -757,6 +755,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         var exit_status = results.get_exit_code ();
         if (exit_status == Pk.Exit.SUCCESS) {
             reload_appstream_pool ();
+            BackendAggregator.get_default ().cache_flush_needed ();
         }
 
         job.result = Value (typeof (bool));

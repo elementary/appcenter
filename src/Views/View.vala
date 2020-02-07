@@ -26,6 +26,17 @@ public abstract class AppCenter.View : Gtk.Stack {
     construct {
         get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
         expand = true;
+
+        notify["transition-running"].connect (() => {
+            // Transition finished
+            if (!transition_running) {
+                foreach (var child in get_children ()) {
+                    if (child is Views.AppInfoView && (child as Views.AppInfoView).to_recycle) {
+                        child.destroy ();
+                    }
+                }
+            }
+        });
     }
 
     public virtual void show_package (
@@ -37,19 +48,14 @@ public abstract class AppCenter.View : Gtk.Stack {
 
         previous_package = null;
 
-        if (AppCenterCore.BackendAggregator.get_default ().cache_flush_needed) {
-            foreach (var child in get_children ()) {
-                if (child is Views.AppInfoView && child != visible_child) {
-                    child.destroy ();
-                }
-            }
-
-            AppCenterCore.BackendAggregator.get_default ().cache_flush_needed = false;
-        }
-
         var package_hash = package.component.get_origin () + "-" + package.component.id;
 
         var pk_child = get_child_by_name (package_hash) as Views.AppInfoView;
+        if (pk_child.to_recycle) {
+            pk_child.destroy ();
+            pk_child = null;
+        }
+
         if (pk_child != null) {
             pk_child.view_entered ();
             set_visible_child (pk_child);

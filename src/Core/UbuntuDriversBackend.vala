@@ -19,7 +19,6 @@
 
 public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
 
-    public bool cache_flush_needed { public get; public set; default = false; }
     public bool working { public get; protected set; }
 
     private Gee.TreeSet<Package>? cached_packages = null;

@@ -47,6 +47,8 @@ namespace AppCenter.Views {
         private Gtk.ListStore origin_liststore;
         private Gtk.ComboBox origin_combo;
 
+        public bool to_recycle { public get; private set; default = false; }
+
         public AppInfoView (AppCenterCore.Package package) {
             Object (package: package);
         }
@@ -57,6 +59,10 @@ namespace AppCenter.Views {
         }
 
         construct {
+            AppCenterCore.BackendAggregator.get_default ().cache_flush_needed.connect (() => {
+                to_recycle = true;
+            });
+
             inner_image.margin_top = 12;
             inner_image.pixel_size = 128;
 

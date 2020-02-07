@@ -18,6 +18,8 @@
  */
 
 public class AppCenterCore.BackendAggregator : Backend, Object {
+    public signal void cache_flush_needed ();
+
     private Gee.ArrayList<unowned Backend> backends;
 
     construct {
@@ -45,24 +47,6 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
         }
 
         set { }
-    }
-
-    public bool cache_flush_needed {
-        get {
-            foreach (var backend in backends) {
-                if (backend.cache_flush_needed) {
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
-        set {
-            foreach (var backend in backends) {
-                backend.cache_flush_needed = value;
-            }
-        }
     }
 
     public async Gee.Collection<Package> get_installed_applications (Cancellable? cancellable = null) {

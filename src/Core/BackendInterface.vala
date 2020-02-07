@@ -23,7 +23,6 @@ public enum BackendType {
 }
 
 public interface AppCenterCore.Backend : Object {
-    public abstract bool cache_flush_needed { public get; public set; default = false; }
     public abstract bool working { public get; protected set; }
 
     public abstract async Gee.Collection<Package> get_installed_applications (Cancellable? cancellable = null);
