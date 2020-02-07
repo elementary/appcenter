@@ -80,16 +80,15 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             try {
                 installation_changed_monitor = installation.create_monitor ();
             } catch (Error e) {
-                critical ("Couldn't create Installation File Monitor : %s", e.message);
+                warning ("Couldn't create Installation File Monitor : %s", e.message);
             }
 
             installation_changed_monitor.changed.connect (() => {
                 debug ("Flatpak installation changed.");
-                var cache_cancellable = new GLib.Cancellable ();
-                refresh_cache (cache_cancellable);
+                refresh_cache (null);
             });
         } else {
-            error ("Couldn't create Installation File Monitor due to no installation");
+            warning ("Couldn't create Installation File Monitor due to no installation");
         }
 
         local_metadata_path = Path.build_filename (
