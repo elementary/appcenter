@@ -77,7 +77,6 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         monitor = installation.create_monitor ();
         monitor.changed.connect (() => {
             debug ("Flatpak installation changed.");
-            GLib.Cancellable cancellable = new GLib.Cancellable ();
             // Flatpak cache update tasks go here?
             Client.get_default ().update_cache.begin (true);
         });
