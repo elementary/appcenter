@@ -755,6 +755,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         var exit_status = results.get_exit_code ();
         if (exit_status == Pk.Exit.SUCCESS) {
             reload_appstream_pool ();
+            BackendAggregator.get_default ().cache_flush_needed ();
         }
 
         job.result = Value (typeof (bool));

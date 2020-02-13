@@ -451,6 +451,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         }
 
         reload_appstream_pool ();
+        BackendAggregator.get_default ().cache_flush_needed ();
 
         job.result = Value (typeof (bool));
         job.result.set_boolean (true);
