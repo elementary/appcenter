@@ -4,11 +4,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-05 00:29+0000\n"
+"POT-Creation-Date: 2020-02-13 19:56+0000\n"
 "PO-Revision-Date: 2019-12-31 06:14+0000\n"
 "Last-Translator: Jaimie85 <alsemgeest@gmail.com>\n"
-"Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/nl/>\n"
+"Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/appcenter/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,9 +29,7 @@ msgstr "Kon het media type %s niet lezen"
 #: src/Application.vala:132
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr ""
-"Opgegeven koppeling '%s' kon niet gevonden worden, in plaats daarvan als "
-"zoekterm gebruiken"
+msgstr "Opgegeven koppeling '%s' kon niet gevonden worden, in plaats daarvan als zoekterm gebruiken"
 
 #: src/Application.vala:270
 msgid "Application installed"
@@ -306,14 +303,8 @@ msgstr "“%s” bevat expliciete inhoud"
 
 #: src/Dialogs/ContentWarningDialog.vala:31
 #, c-format
-msgid ""
-"“%s” may contain content only suitable for adults or that may be sensitive "
-"or disturbing. In general, elementary does not review or endorse the "
-"contents of this app."
-msgstr ""
-"“%s” bevat mogelijk inhoud die alleen geschikt is voor volwassenen of inhoud "
-"die gevoelig of storend is. elementary beoordeelt of ondersteunt de inhoud "
-"van deze app niet."
+msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
+msgstr "“%s” bevat mogelijk inhoud die alleen geschikt is voor volwassenen of inhoud die gevoelig of storend is. elementary beoordeelt of ondersteunt de inhoud van deze app niet."
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 msgid "Show content warnings"
@@ -333,9 +324,7 @@ msgstr "Weet u zeker dat u opnieuw op wilt starten?"
 
 #: src/Dialogs/RestartDialog.vala:41
 msgid "This will close all open applications and restart this device."
-msgstr ""
-"Dit zal alle openstaande toepassingen sluiten en dit apparaat opnieuw "
-"opstarten."
+msgstr "Dit zal alle openstaande toepassingen sluiten en dit apparaat opnieuw opstarten."
 
 #: src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
@@ -348,12 +337,8 @@ msgid "Cancel"
 msgstr "Annuleren"
 
 #: src/Dialogs/StripeDialog.vala:41
-msgid ""
-"An error occurred while processing the card. Please try again later. We "
-"apologize for any inconvenience caused."
-msgstr ""
-"Bij het verwerken van de kaart is er een fout opgetreden. Probeer het later "
-"nogmaals. Onze excuses voor het ongemak."
+msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
+msgstr "Bij het verwerken van de kaart is er een fout opgetreden. Probeer het later nogmaals. Onze excuses voor het ongemak."
 
 #: src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
@@ -369,24 +354,16 @@ msgid "Pay $%d for %s"
 msgstr "Betaal $%d voor %s"
 
 #: src/Dialogs/StripeDialog.vala:96
-msgid ""
-"This is a one time payment. Your email address is only used to send you a "
-"receipt."
-msgstr ""
-"Dit is een eenmalige betaling. Uw e-mailadres wordt alleen gebruikt om u een "
-"betaalbewijs te sturen."
+msgid "This is a one time payment. Your email address is only used to send you a receipt."
+msgstr "Dit is een eenmalige betaling. Uw e-mailadres wordt alleen gebruikt om u een betaalbewijs te sturen."
 
 #: src/Dialogs/StripeDialog.vala:106 src/Widgets/SharePopover.vala:35
 msgid "Email"
 msgstr "E-mail"
 
 #: src/Dialogs/StripeDialog.vala:108
-msgid ""
-"Your email address is only used to send a receipt. You will not be "
-"subscribed to any mailing list."
-msgstr ""
-"Uw e-mailadres wordt uitsluitend gebruikt om u een betalingsbewijs te "
-"verzenden. Uw e-mailadres wordt niet toegevoegd aan een mail lijst."
+msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
+msgstr "Uw e-mailadres wordt uitsluitend gebruikt om u een betalingsbewijs te verzenden. Uw e-mailadres wordt niet toegevoegd aan een mail lijst."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127
@@ -423,33 +400,20 @@ msgid "Retry"
 msgstr "Probeer opnieuw"
 
 #: src/Dialogs/StripeDialog.vala:513 src/Dialogs/StripeDialog.vala:578
-msgid ""
-"The card number is incorrect. Please try again using the correct card number."
-msgstr ""
-"Het kaartnummer is onjuist. Probeert u het nogmaals met het juiste "
-"kaartnummer."
+msgid "The card number is incorrect. Please try again using the correct card number."
+msgstr "Het kaartnummer is onjuist. Probeert u het nogmaals met het juiste kaartnummer."
 
 #: src/Dialogs/StripeDialog.vala:515
-msgid ""
-"The expiration month is invalid. Please try again using the correct "
-"expiration date."
-msgstr ""
-"De maand van de uiterste geldigheidsdatum is onjuist. Probeert u het later "
-"nogmaals met de juiste vervaldatum."
+msgid "The expiration month is invalid. Please try again using the correct expiration date."
+msgstr "De maand van de uiterste geldigheidsdatum is onjuist. Probeert u het later nogmaals met de juiste vervaldatum."
 
 #: src/Dialogs/StripeDialog.vala:517 src/Dialogs/StripeDialog.vala:575
-msgid ""
-"The expiration year is invalid. Please try again using the correct "
-"expiration date."
-msgstr ""
-"Het jaar van de uiterste geldigheidsdatum is onjuist. Probeert u het later "
-"nogmaals met de juiste vervaldatum."
+msgid "The expiration year is invalid. Please try again using the correct expiration date."
+msgstr "Het jaar van de uiterste geldigheidsdatum is onjuist. Probeert u het later nogmaals met de juiste vervaldatum."
 
 #: src/Dialogs/StripeDialog.vala:520 src/Dialogs/StripeDialog.vala:573
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr ""
-"Het CVC-nummer is onjuist. Probeert u het later nogmaals met het juiste CVC-"
-"nummer."
+msgstr "Het CVC-nummer is onjuist. Probeert u het later nogmaals met het juiste CVC-nummer."
 
 #: src/Dialogs/StripeDialog.vala:522 src/Dialogs/StripeDialog.vala:564
 msgid "The card has expired. Please try again with a different card."
@@ -457,40 +421,27 @@ msgstr "De kaart is vervallen. Probeert u het nogmaals met een andere kaart."
 
 #: src/Dialogs/StripeDialog.vala:542
 msgid "There are too many payment requests at the moment, please retry later."
-msgstr ""
-"Er zijn momenteel te veel betaalverzoeken, probeert u het later nogmaals."
+msgstr "Er zijn momenteel te veel betaalverzoeken, probeert u het later nogmaals."
 
 #: src/Dialogs/StripeDialog.vala:558
-msgid ""
-"This card does not support this kind of transaction. Please try again with a "
-"different card."
-msgstr ""
-"Deze kaart ondersteunt dergelijke transacties niet. Probeert u het nogmaals "
-"met een andere kaart."
+msgid "This card does not support this kind of transaction. Please try again with a different card."
+msgstr "Deze kaart ondersteunt dergelijke transacties niet. Probeert u het nogmaals met een andere kaart."
 
 #: src/Dialogs/StripeDialog.vala:560
-msgid ""
-"The currency is not supported by this card. Please try again with a "
-"different card."
-msgstr ""
-"De valuta wordt niet ondersteunt door deze kaart. Probeert u het nogmaals "
-"met een andere kaart."
+msgid "The currency is not supported by this card. Please try again with a different card."
+msgstr "De valuta wordt niet ondersteunt door deze kaart. Probeert u het nogmaals met een andere kaart."
 
 #: src/Dialogs/StripeDialog.vala:562
 msgid "The transaction has already been processed."
 msgstr "De transactie is reeds verwerkt."
 
 #: src/Dialogs/StripeDialog.vala:566
-msgid ""
-"The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
-"postal code."
-msgstr ""
-"De postcode is onjuist. Probeert u het nogmaals met de juiste postcode."
+msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
+msgstr "De postcode is onjuist. Probeert u het nogmaals met de juiste postcode."
 
 #: src/Dialogs/StripeDialog.vala:568
 msgid "You don't have enough funds. Please use an alternative payment method."
-msgstr ""
-"U heeft onvoldoende krediet. Gelieve een andere betaalmethode te gebruiken."
+msgstr "U heeft onvoldoende krediet. Gelieve een andere betaalmethode te gebruiken."
 
 #: src/Dialogs/StripeDialog.vala:570
 msgid "The amount is incorrect. Please try again using a valid amount."
@@ -498,23 +449,15 @@ msgstr "Het bedrag is onjuist. Probeert u het nogmaals met een geldig bedrag."
 
 #: src/Dialogs/StripeDialog.vala:581
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr ""
-"De pincode is onjuist. Probeert u het later nogmaals met de juiste pincode."
+msgstr "De pincode is onjuist. Probeert u het later nogmaals met de juiste pincode."
 
 #: src/Dialogs/StripeDialog.vala:583
-msgid ""
-"There has been too many PIN attempts. Please try again with a different card."
-msgstr ""
-"U heeft te veel pogingen gedaan om uw pincode in te voeren. Probeert u het "
-"nogmaals met een andere kaart."
+msgid "There has been too many PIN attempts. Please try again with a different card."
+msgstr "U heeft te veel pogingen gedaan om uw pincode in te voeren. Probeert u het nogmaals met een andere kaart."
 
 #: src/Dialogs/StripeDialog.vala:603
-msgid ""
-"Unable to complete the transaction. Please contact your bank for further "
-"information."
-msgstr ""
-"Het is niet mogelijk om de transactie af te ronden. Contacteer uw bank voor "
-"aanvullende informatie."
+msgid "Unable to complete the transaction. Please contact your bank for further information."
+msgstr "Het is niet mogelijk om de transactie af te ronden. Contacteer uw bank voor aanvullende informatie."
 
 #: src/Dialogs/StripeDialog.vala:606
 msgid "The balance or credit limit on the card has been reached."
@@ -522,9 +465,7 @@ msgstr "Onvoldoende saldo of het limiet van uw kaart werd bereikt."
 
 #: src/Dialogs/StripeDialog.vala:609
 msgid "The given card is a test card. Please use a real card to proceed."
-msgstr ""
-"De ingevoerde kaart is een proefkaart. Gebruik alstublieft een geldige kaart "
-"om verder te gaan."
+msgstr "De ingevoerde kaart is een proefkaart. Gebruik alstublieft een geldige kaart om verder te gaan."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
@@ -546,9 +487,7 @@ msgstr "Verwijderen"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
 msgid "This may have been caused by external or manually compiled software."
-msgstr ""
-"Dit is mogelijk veroorzaakt door externe software of handmatig gecompileerde "
-"software."
+msgstr "Dit is mogelijk veroorzaakt door externe software of handmatig gecompileerde software."
 
 #: src/Dialogs/UninstallFailDialog.vala:37
 msgid "Failed to uninstall app"
@@ -564,12 +503,8 @@ msgid "Failed to Fetch Updates"
 msgstr "De updates konden niet worden opgehaald"
 
 #: src/Dialogs/UpdateFailDialog.vala:26
-msgid ""
-"This may have been caused by external, manually added software repositories "
-"or a corrupted sources file."
-msgstr ""
-"Dit is mogelijk veroorzaakt door externe, handmatig toegevoegde software "
-"bibliotheken of een corrupt bronbestand."
+msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
+msgstr "Dit is mogelijk veroorzaakt door externe, handmatig toegevoegde software bibliotheken of een corrupt bronbestand."
 
 #: src/Dialogs/UpdateFailDialog.vala:34
 msgid "Ignore"
@@ -579,93 +514,91 @@ msgstr "Negeer"
 msgid "Try Again"
 msgstr "Probeer opnieuw"
 
-#: src/Views/AppInfoView.vala:177
+#: src/Views/AppInfoView.vala:155
 msgid "Screenshot Not Available"
 msgstr "Geen schermafbeelding beschikbaar"
 
-#: src/Views/AppInfoView.vala:236
+#: src/Views/AppInfoView.vala:206
 msgid "Homepage"
 msgstr "Startpagina"
 
-#: src/Views/AppInfoView.vala:242
+#: src/Views/AppInfoView.vala:212
 msgid "Suggest Translations"
 msgstr "Suggereer vertalingen"
 
-#: src/Views/AppInfoView.vala:248
+#: src/Views/AppInfoView.vala:218
 msgid "Report a Problem"
 msgstr "Rapporteer een probleem"
 
-#: src/Views/AppInfoView.vala:254
+#: src/Views/AppInfoView.vala:224
 msgid "Help"
 msgstr "Hulp"
 
-#: src/Views/AppInfoView.vala:281
+#: src/Views/AppInfoView.vala:251
 msgid "What's New:"
 msgstr "Wat er nieuw is:"
 
-#: src/Views/AppInfoView.vala:300
+#: src/Views/AppInfoView.vala:270
 msgid "Extensions:"
 msgstr "Uitbreidingen:"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:395
+#: src/Views/AppInfoView.vala:364
 msgid "Public Domain"
 msgstr "Publiek domein"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:398
+#: src/Views/AppInfoView.vala:367
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://nl.wikipedia.org/wiki/Publiek_domein"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:403
+#: src/Views/AppInfoView.vala:372
 msgid "Free Software"
 msgstr "Vrije software"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:406
+#: src/Views/AppInfoView.vala:375
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw"
 
-#: src/Views/AppInfoView.vala:410
+#: src/Views/AppInfoView.vala:379
 msgid "Proprietary"
 msgstr "Eigendom"
 
-#: src/Views/AppInfoView.vala:413
+#: src/Views/AppInfoView.vala:382
 msgid "Unknown License"
 msgstr "Onbekende licentie"
 
-#: src/Views/AppInfoView.vala:455
+#: src/Views/AppInfoView.vala:424
 #, c-format
 msgid "Other Apps by %s"
 msgstr "Andere applicaties van %s"
 
-#: src/Views/AppInfoView.vala:489
+#: src/Views/AppInfoView.vala:458
 msgid "Link copied to clipboard"
 msgstr "Link gekopieerd naar het klembord"
 
-#: src/Views/AppInfoView.vala:500
+#: src/Views/AppInfoView.vala:469
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "Ontdek %s in het AppCenter:"
 
-#: src/Views/AppInfoView.vala:507
+#: src/Views/AppInfoView.vala:476
 msgid "Share"
 msgstr "Deel"
 
-#: src/Views/AppInfoView.vala:822
+#: src/Views/AppInfoView.vala:785
 msgid "Fund"
 msgstr "Financier"
 
-#: src/Views/AppInfoView.vala:844
+#: src/Views/AppInfoView.vala:807
 msgid "Fund the development of this app"
 msgstr "Financier de ontwikkeling van deze app"
 
 #: src/Views/AppListUpdateView.vala:56
 msgid "A restart is required to complete the installation of updates"
-msgstr ""
-"Het is nodig om opnieuw op te starten om de installatie van de updates te "
-"voltooien"
+msgstr "Het is nodig om opnieuw op te starten om de installatie van de updates te voltooien"
 
 #: src/Views/AppListUpdateView.vala:64
 msgid "Restart Now"
@@ -717,9 +650,7 @@ msgstr "Een open, betaal-wat-u-wilt applicatiewinkel"
 
 #: src/Widgets/Banner.vala:68
 msgid "Get the apps that you need at a price you can afford."
-msgstr ""
-"Krijg de applicaties die u nodig heeft aan de prijs die u zich kunt "
-"veroorloven."
+msgstr "Krijg de applicaties die u nodig heeft aan de prijs die u zich kunt veroorloven."
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
@@ -821,9 +752,7 @@ msgstr "Geen netwerkverbinding."
 
 #: src/Widgets/NetworkInfoBar.vala:33
 msgid "Connect to the Internet to browse and install apps."
-msgstr ""
-"Verbind de computer met het internet om toepassingen te updaten of te "
-"installeren."
+msgstr "Verbind de computer met het internet om toepassingen te updaten of te installeren."
 
 #. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
 #: src/Widgets/NetworkInfoBar.vala:41
@@ -934,8 +863,7 @@ msgstr "Bijwerken"
 #~ "  kay van der Zander https://launchpad.net/~kay20"
 
 #~ msgid "The pin number is incorrect. Please try again using the correct pin."
-#~ msgstr ""
-#~ "De pincode is onjuist. Probeert u het nogmaals met de juiste pincode."
+#~ msgstr "De pincode is onjuist. Probeert u het nogmaals met de juiste pincode."
 
 #~ msgid "by %s"
 #~ msgstr "door %s"

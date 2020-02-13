@@ -4,11 +4,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-05 00:29+0000\n"
+"POT-Creation-Date: 2020-02-13 19:56+0000\n"
 "PO-Revision-Date: 2019-10-31 15:34+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
-"Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/ca/>\n"
+"Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/appcenter/ca/>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,8 +29,7 @@ msgstr "No s'ha pogut analitzar el tipus de mitjà %s"
 #: src/Application.vala:132
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr ""
-"No s'ha pogut trobar l'enllaç especificat \"%s\". En lloc d'això, se cerca"
+msgstr "No s'ha pogut trobar l'enllaç especificat \"%s\". En lloc d'això, se cerca"
 
 #: src/Application.vala:270
 msgid "Application installed"
@@ -251,9 +249,7 @@ msgstr "D'origen desconegut (sense cura)"
 #: src/Core/Package.vala:444
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
-msgstr ""
-"L'estat de l'aplicació no està establert com a instal·lada al Centre "
-"d'aplicacions per al paquet %s."
+msgstr "L'estat de l'aplicació no està establert com a instal·lada al Centre d'aplicacions per al paquet %s."
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -307,14 +303,8 @@ msgstr "%s conté contingut explícit"
 
 #: src/Dialogs/ContentWarningDialog.vala:31
 #, c-format
-msgid ""
-"“%s” may contain content only suitable for adults or that may be sensitive "
-"or disturbing. In general, elementary does not review or endorse the "
-"contents of this app."
-msgstr ""
-"%s pot tenir contingut només adequat per a adults, o bé que pot ser sensible "
-"o pertorbador. En general, l'elementary no revisa ni avala el contingut "
-"d'aquesta aplicació."
+msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
+msgstr "%s pot tenir contingut només adequat per a adults, o bé que pot ser sensible o pertorbador. En general, l'elementary no revisa ni avala el contingut d'aquesta aplicació."
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 msgid "Show content warnings"
@@ -334,8 +324,7 @@ msgstr "Segur que el voleu reiniciar?"
 
 #: src/Dialogs/RestartDialog.vala:41
 msgid "This will close all open applications and restart this device."
-msgstr ""
-"Això tancarà totes les aplicacions obertes i reiniciarà aquest dispositiu."
+msgstr "Això tancarà totes les aplicacions obertes i reiniciarà aquest dispositiu."
 
 #: src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
@@ -348,12 +337,8 @@ msgid "Cancel"
 msgstr "Cancel·la"
 
 #: src/Dialogs/StripeDialog.vala:41
-msgid ""
-"An error occurred while processing the card. Please try again later. We "
-"apologize for any inconvenience caused."
-msgstr ""
-"Hi ha hagut un error mentre es processava la targeta. Si us plau, torneu-ho "
-"a provar més tard. Disculpeu les molèsties."
+msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
+msgstr "Hi ha hagut un error mentre es processava la targeta. Si us plau, torneu-ho a provar més tard. Disculpeu les molèsties."
 
 #: src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
@@ -369,24 +354,16 @@ msgid "Pay $%d for %s"
 msgstr "Paga %d $ per %s"
 
 #: src/Dialogs/StripeDialog.vala:96
-msgid ""
-"This is a one time payment. Your email address is only used to send you a "
-"receipt."
-msgstr ""
-"Es paga una sola vegada. L'adreça electrònica només s'usa per enviar-vos un "
-"rebut."
+msgid "This is a one time payment. Your email address is only used to send you a receipt."
+msgstr "Es paga una sola vegada. L'adreça electrònica només s'usa per enviar-vos un rebut."
 
 #: src/Dialogs/StripeDialog.vala:106 src/Widgets/SharePopover.vala:35
 msgid "Email"
 msgstr "Adreça electrònica"
 
 #: src/Dialogs/StripeDialog.vala:108
-msgid ""
-"Your email address is only used to send a receipt. You will not be "
-"subscribed to any mailing list."
-msgstr ""
-"L'adreça electrònica només s'usa per enviar un rebut. No se us subscriurà a "
-"cap llista de correu."
+msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
+msgstr "L'adreça electrònica només s'usa per enviar un rebut. No se us subscriurà a cap llista de correu."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127
@@ -423,105 +400,64 @@ msgid "Retry"
 msgstr "Torna-ho a intentar"
 
 #: src/Dialogs/StripeDialog.vala:513 src/Dialogs/StripeDialog.vala:578
-msgid ""
-"The card number is incorrect. Please try again using the correct card number."
-msgstr ""
-"El número de la targeta no és correcte. Si us plau, torneu-ho a intentar amb "
-"el número correcte."
+msgid "The card number is incorrect. Please try again using the correct card number."
+msgstr "El número de la targeta no és correcte. Si us plau, torneu-ho a intentar amb el número correcte."
 
 #: src/Dialogs/StripeDialog.vala:515
-msgid ""
-"The expiration month is invalid. Please try again using the correct "
-"expiration date."
-msgstr ""
-"El mes de caducitat no és vàlid. Si us plau, torneu-ho a intentar amb la "
-"data de caducitat correcta."
+msgid "The expiration month is invalid. Please try again using the correct expiration date."
+msgstr "El mes de caducitat no és vàlid. Si us plau, torneu-ho a intentar amb la data de caducitat correcta."
 
 #: src/Dialogs/StripeDialog.vala:517 src/Dialogs/StripeDialog.vala:575
-msgid ""
-"The expiration year is invalid. Please try again using the correct "
-"expiration date."
-msgstr ""
-"L'any de caducitat no és vàlid. Si us plau, torneu-ho a intentar amb la data "
-"de caducitat correcta."
+msgid "The expiration year is invalid. Please try again using the correct expiration date."
+msgstr "L'any de caducitat no és vàlid. Si us plau, torneu-ho a intentar amb la data de caducitat correcta."
 
 #: src/Dialogs/StripeDialog.vala:520 src/Dialogs/StripeDialog.vala:573
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr ""
-"El número CVC no és correcte. Si us plau, torneu-ho a intentar amb el número "
-"correcte."
+msgstr "El número CVC no és correcte. Si us plau, torneu-ho a intentar amb el número correcte."
 
 #: src/Dialogs/StripeDialog.vala:522 src/Dialogs/StripeDialog.vala:564
 msgid "The card has expired. Please try again with a different card."
-msgstr ""
-"La targeta està caducada. Si us plau, torneu-ho a intentar amb una targeta "
-"diferent."
+msgstr "La targeta està caducada. Si us plau, torneu-ho a intentar amb una targeta diferent."
 
 #: src/Dialogs/StripeDialog.vala:542
 msgid "There are too many payment requests at the moment, please retry later."
-msgstr ""
-"Hi ha massa peticions de pagament en aquests moments. Si us plau, torneu-ho "
-"a intentar més tard."
+msgstr "Hi ha massa peticions de pagament en aquests moments. Si us plau, torneu-ho a intentar més tard."
 
 #: src/Dialogs/StripeDialog.vala:558
-msgid ""
-"This card does not support this kind of transaction. Please try again with a "
-"different card."
-msgstr ""
-"Aquesta targeta no admet aquest tipus de transacció. Si us plau, torneu-ho a "
-"intentar amb una targeta diferent."
+msgid "This card does not support this kind of transaction. Please try again with a different card."
+msgstr "Aquesta targeta no admet aquest tipus de transacció. Si us plau, torneu-ho a intentar amb una targeta diferent."
 
 #: src/Dialogs/StripeDialog.vala:560
-msgid ""
-"The currency is not supported by this card. Please try again with a "
-"different card."
-msgstr ""
-"Aquesta targeta no admet el tipus de moneda. Si us plau, torneu-ho a provar "
-"amb una targeta diferent."
+msgid "The currency is not supported by this card. Please try again with a different card."
+msgstr "Aquesta targeta no admet el tipus de moneda. Si us plau, torneu-ho a provar amb una targeta diferent."
 
 #: src/Dialogs/StripeDialog.vala:562
 msgid "The transaction has already been processed."
 msgstr "Ja s'ha processat la transacció."
 
 #: src/Dialogs/StripeDialog.vala:566
-msgid ""
-"The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
-"postal code."
-msgstr ""
-"El codi postal no és correcte. Si us plau, torneu-ho a intentar amb el codi "
-"postal correcte."
+msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
+msgstr "El codi postal no és correcte. Si us plau, torneu-ho a intentar amb el codi postal correcte."
 
 #: src/Dialogs/StripeDialog.vala:568
 msgid "You don't have enough funds. Please use an alternative payment method."
-msgstr ""
-"No teniu fons suficient. Si us plau, useu un mètode de pagament alternatiu."
+msgstr "No teniu fons suficient. Si us plau, useu un mètode de pagament alternatiu."
 
 #: src/Dialogs/StripeDialog.vala:570
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr ""
-"La quantitat no és correcta. Si us plau, torneu-ho a provar amb una "
-"quantitat correcta."
+msgstr "La quantitat no és correcta. Si us plau, torneu-ho a provar amb una quantitat correcta."
 
 #: src/Dialogs/StripeDialog.vala:581
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr ""
-"El número PIN no és correcte. Si us plau, torneu-ho a intentar amb el número "
-"correcte."
+msgstr "El número PIN no és correcte. Si us plau, torneu-ho a intentar amb el número correcte."
 
 #: src/Dialogs/StripeDialog.vala:583
-msgid ""
-"There has been too many PIN attempts. Please try again with a different card."
-msgstr ""
-"Hi ha hagut massa intents de número secret. Si us plau, torneu-ho a provar "
-"amb una targeta diferent."
+msgid "There has been too many PIN attempts. Please try again with a different card."
+msgstr "Hi ha hagut massa intents de número secret. Si us plau, torneu-ho a provar amb una targeta diferent."
 
 #: src/Dialogs/StripeDialog.vala:603
-msgid ""
-"Unable to complete the transaction. Please contact your bank for further "
-"information."
-msgstr ""
-"No s'ha pogut completar la transacció. Si us plau, contacteu amb el banc per "
-"a més informació."
+msgid "Unable to complete the transaction. Please contact your bank for further information."
+msgstr "No s'ha pogut completar la transacció. Si us plau, contacteu amb el banc per a més informació."
 
 #: src/Dialogs/StripeDialog.vala:606
 msgid "The balance or credit limit on the card has been reached."
@@ -529,9 +465,7 @@ msgstr "S'ha arribat al límit de saldo o crèdit de la targeta."
 
 #: src/Dialogs/StripeDialog.vala:609
 msgid "The given card is a test card. Please use a real card to proceed."
-msgstr ""
-"La targeta és una targeta de prova. Si us plau, useu una targeta real per "
-"continuar."
+msgstr "La targeta és una targeta de prova. Si us plau, useu una targeta real per continuar."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
@@ -553,8 +487,7 @@ msgstr "Desinstal·la"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
 msgid "This may have been caused by external or manually compiled software."
-msgstr ""
-"Això pot haver estat causat per programari extern o compilat manualment."
+msgstr "Això pot haver estat causat per programari extern o compilat manualment."
 
 #: src/Dialogs/UninstallFailDialog.vala:37
 msgid "Failed to uninstall app"
@@ -570,12 +503,8 @@ msgid "Failed to Fetch Updates"
 msgstr "Ha fallat recuperar les actualitzacions."
 
 #: src/Dialogs/UpdateFailDialog.vala:26
-msgid ""
-"This may have been caused by external, manually added software repositories "
-"or a corrupted sources file."
-msgstr ""
-"Això pot haver estat causat per repositoris externs afegits manualment o per "
-"un fitxer de fonts corromput."
+msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
+msgstr "Això pot haver estat causat per repositoris externs afegits manualment o per un fitxer de fonts corromput."
 
 #: src/Dialogs/UpdateFailDialog.vala:34
 msgid "Ignore"
@@ -585,85 +514,85 @@ msgstr "Ignora-ho"
 msgid "Try Again"
 msgstr "Torna-ho a intentar"
 
-#: src/Views/AppInfoView.vala:177
+#: src/Views/AppInfoView.vala:155
 msgid "Screenshot Not Available"
 msgstr "Captura no disponible"
 
-#: src/Views/AppInfoView.vala:236
+#: src/Views/AppInfoView.vala:206
 msgid "Homepage"
 msgstr "Pàgina principal"
 
-#: src/Views/AppInfoView.vala:242
+#: src/Views/AppInfoView.vala:212
 msgid "Suggest Translations"
 msgstr "Suggeriu traduccions"
 
-#: src/Views/AppInfoView.vala:248
+#: src/Views/AppInfoView.vala:218
 msgid "Report a Problem"
 msgstr "Informeu d'un problema"
 
-#: src/Views/AppInfoView.vala:254
+#: src/Views/AppInfoView.vala:224
 msgid "Help"
 msgstr "Ajuda"
 
-#: src/Views/AppInfoView.vala:281
+#: src/Views/AppInfoView.vala:251
 msgid "What's New:"
 msgstr "Què hi ha de nou:"
 
-#: src/Views/AppInfoView.vala:300
+#: src/Views/AppInfoView.vala:270
 msgid "Extensions:"
 msgstr "Extensions:"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:395
+#: src/Views/AppInfoView.vala:364
 msgid "Public Domain"
 msgstr "Domini públic"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:398
+#: src/Views/AppInfoView.vala:367
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://ca.wikipedia.org/wiki/Domini_p%C3%BAblic"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:403
+#: src/Views/AppInfoView.vala:372
 msgid "Free Software"
 msgstr "Programari lliure"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:406
+#: src/Views/AppInfoView.vala:375
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw.ca.html"
 
-#: src/Views/AppInfoView.vala:410
+#: src/Views/AppInfoView.vala:379
 msgid "Proprietary"
 msgstr "De propietat"
 
-#: src/Views/AppInfoView.vala:413
+#: src/Views/AppInfoView.vala:382
 msgid "Unknown License"
 msgstr "Llicència desconeguda"
 
-#: src/Views/AppInfoView.vala:455
+#: src/Views/AppInfoView.vala:424
 #, c-format
 msgid "Other Apps by %s"
 msgstr "Altres aplicacions de %s"
 
-#: src/Views/AppInfoView.vala:489
+#: src/Views/AppInfoView.vala:458
 msgid "Link copied to clipboard"
 msgstr "Enllaç copiat al porta-retalls"
 
-#: src/Views/AppInfoView.vala:500
+#: src/Views/AppInfoView.vala:469
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "Obtingueu %s al Centre d'aplicacions:"
 
-#: src/Views/AppInfoView.vala:507
+#: src/Views/AppInfoView.vala:476
 msgid "Share"
 msgstr "Comparteix"
 
-#: src/Views/AppInfoView.vala:822
+#: src/Views/AppInfoView.vala:785
 msgid "Fund"
 msgstr "Finançament"
 
-#: src/Views/AppInfoView.vala:844
+#: src/Views/AppInfoView.vala:807
 msgid "Fund the development of this app"
 msgstr "Financeu el desenvolupament d'aquesta aplicació"
 
@@ -713,8 +642,7 @@ msgstr "Sense resultats"
 
 #: src/Widgets/AbstractAppList.vala:36
 msgid "No apps could be found. Try changing search terms."
-msgstr ""
-"No s'ha trobat cap aplicació. Proveu de canviar els termes de la cerca."
+msgstr "No s'ha trobat cap aplicació. Proveu de canviar els termes de la cerca."
 
 #: src/Widgets/Banner.vala:55
 msgid "An open, pay-what-you-want app store"
@@ -874,9 +802,7 @@ msgstr "És probable que la mida real de la baixada sigui menor."
 
 #: src/Widgets/SizeLabel.vala:36
 msgid "Only the parts of apps and updates that are needed will be downloaded."
-msgstr ""
-"Només es baixaran les parts que calguin de les aplicacions i de les "
-"actualitzacions."
+msgstr "Només es baixaran les parts que calguin de les aplicacions i de les actualitzacions."
 
 #: src/Widgets/SizeLabel.vala:63
 #, c-format
@@ -942,9 +868,7 @@ msgstr "Actualitza"
 #~ "  elementaryart (old) https://launchpad.net/~elementaryart"
 
 #~ msgid "The pin number is incorrect. Please try again using the correct pin."
-#~ msgstr ""
-#~ "El número secret no és correcte. Si us plau, torneu-ho a provar amb el "
-#~ "número correcte."
+#~ msgstr "El número secret no és correcte. Si us plau, torneu-ho a provar amb el número correcte."
 
 #~ msgid "by %s"
 #~ msgstr "per %s"
