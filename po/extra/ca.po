@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-13 19:56+0000\n"
-"PO-Revision-Date: 2019-12-12 19:07+0000\n"
+"PO-Revision-Date: 2020-02-16 19:08+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/extra/"
 "ca/>\n"
@@ -43,10 +43,12 @@ msgstr "Petites correccions"
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "Update application details when changes happen outside of AppCenter"
 msgstr ""
+"Actualització de detalls de les aplicacions quan els canvis passen fora del "
+"Centre d'aplicacions"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Fix for notification not appearing when a restart is required"
-msgstr ""
+msgstr "Correcció de la notificació que no apareix quan cal un reinici"
 
 #: data/io.elementary.appcenter.appdata.xml.in:24
 msgid "Prevent unescaped XML entities from appearing in application names"
