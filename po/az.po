@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-13 19:56+0000\n"
+"POT-Creation-Date: 2020-02-17 15:51+0000\n"
 "PO-Revision-Date: 2018-06-17 00:06+0000\n"
 "Last-Translator: Musa Abbasov <abbasov13@outlook.com>\n"
 "Language-Team: Azerbaijani <https://weblate.elementary.io/projects/appcenter/appcenter/az/>\n"
@@ -651,7 +651,7 @@ msgstr ""
 msgid "An open, pay-what-you-want app store"
 msgstr ""
 
-#: src/Widgets/Banner.vala:68
+#: src/Widgets/Banner.vala:74
 msgid "Get the apps that you need at a price you can afford."
 msgstr ""
 

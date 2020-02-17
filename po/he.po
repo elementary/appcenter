@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-13 19:56+0000\n"
+"POT-Creation-Date: 2020-02-17 15:51+0000\n"
 "PO-Revision-Date: 2019-11-07 20:24+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/appcenter/he/>\n"
@@ -647,7 +647,7 @@ msgstr "לא נמצאו יישומים. כדאי לשנות את ביטוי הח
 msgid "An open, pay-what-you-want app store"
 msgstr "חנות יישומים פתוחה עם תשלום לפי ראות עיניך"
 
-#: src/Widgets/Banner.vala:68
+#: src/Widgets/Banner.vala:74
 msgid "Get the apps that you need at a price you can afford."
 msgstr "קבלת היישומים שמעניינים אותך במחיר שמתאים לך."
 

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Akan (AppCenter)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-13 19:56+0000\n"
+"POT-Creation-Date: 2020-02-17 15:51+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Lawrence Aberba <karabutaworld@gmail.com>\n"
 "Language-Team: Akan <https://l10n.elementary.io/projects/appcenter/appcenter/ak/>\n"
@@ -657,7 +657,7 @@ msgstr "Anhu dwumadie biara saa. Sesã edin a wode hwehwɛe no hwɛ."
 msgid "An open, pay-what-you-want app store"
 msgstr "Dwumadie twebea a wotua nea wopɛ"
 
-#: src/Widgets/Banner.vala:68
+#: src/Widgets/Banner.vala:74
 msgid "Get the apps that you need at a price you can afford."
 msgstr "Twe dwumadie biribiara a wopɛ wɔ boɔ biara a wobɛtumi atua."
 
