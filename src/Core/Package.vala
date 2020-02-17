@@ -719,6 +719,10 @@ public class AppCenterCore.Package : Object {
             return app_info != null;
         }
 
+        if (is_compulsory) {
+            return false;
+        }
+
         var launchable = component.get_launchable (AppStream.LaunchableKind.DESKTOP_ID);
         if (launchable != null) {
             var launchables = launchable.get_entries ();

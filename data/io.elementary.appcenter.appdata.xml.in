@@ -24,6 +24,7 @@
           <li>Prevent unescaped XML entities from appearing in application names</li>
           <li>Load the "Installed" view faster</li>
           <li>Save some bandwidth by downloading smaller screenshots where appropriate</li>
+          <li>System components no longer have an "Open" button</li>
         </ul>
       </description>
     </release>
