@@ -80,10 +80,8 @@ namespace AppCenter.Views {
 
             if (screenshots.length > 0) {
                 app_screenshots = new Gtk.Stack ();
-                app_screenshots.width_request = MAX_WIDTH;
                 app_screenshots.height_request = 500;
                 app_screenshots.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
-                app_screenshots.halign = Gtk.Align.CENTER;
 
                 var screenshot_previous = new ArrowButton ("go-previous-symbolic", Gtk.Align.START);
                 screenshot_previous.clicked.connect (() => {
