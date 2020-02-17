@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-13 19:56+0000\n"
+"POT-Creation-Date: 2020-02-17 15:51+0000\n"
 "PO-Revision-Date: 2018-05-18 16:09+0000\n"
 "Last-Translator: Shawn <syst3mfailur3@gmail.com>\n"
 "Language-Team: English (Canada) <https://weblate.elementary.io/projects/appcenter/appcenter/en_CA/>\n"
@@ -654,7 +654,7 @@ msgstr "No apps could be found. Try changing search terms."
 msgid "An open, pay-what-you-want app store"
 msgstr "An open, pay-what-you-want app store"
 
-#: src/Widgets/Banner.vala:68
+#: src/Widgets/Banner.vala:74
 msgid "Get the apps that you need at a price you can afford."
 msgstr "Get the apps that you need at a price you can afford."
 

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-13 19:56+0000\n"
+"POT-Creation-Date: 2020-02-17 15:51+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Alma Ibrašimović <belma.alma@hotmail.com>\n"
 "Language-Team: Bosnian <https://l10n.elementary.io/projects/appcenter/appcenter/bs/>\n"
@@ -658,7 +658,7 @@ msgstr "Nijedna aplikacija nije pronađena. Pokušajte izmijeniti pojam pretrage
 msgid "An open, pay-what-you-want app store"
 msgstr "Otvorena trgovina, gdje plaćate koliko Vi želite"
 
-#: src/Widgets/Banner.vala:68
+#: src/Widgets/Banner.vala:74
 msgid "Get the apps that you need at a price you can afford."
 msgstr "Nabavite aplikacije koje Vam trebaju po cijenama koje sebi možete priuštiti."
 

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-13 19:56+0000\n"
+"POT-Creation-Date: 2020-02-17 15:51+0000\n"
 "PO-Revision-Date: 2019-01-07 00:02+0000\n"
 "Last-Translator: Kirill Romanov <djaler1@gmail.com>\n"
 "Language-Team: Russian <https://weblate.elementary.io/projects/appcenter/appcenter/ru/>\n"
@@ -659,7 +659,7 @@ msgstr "Приложения не найдены. Попробуйте изме�
 msgid "An open, pay-what-you-want app store"
 msgstr "Открытый магазин приложений, использующий модель «плати, сколько хочешь»"
 
-#: src/Widgets/Banner.vala:68
+#: src/Widgets/Banner.vala:74
 msgid "Get the apps that you need at a price you can afford."
 msgstr "Получите приложения, которые вам нужны, за ту цену, которую вы готовы предложить."
 

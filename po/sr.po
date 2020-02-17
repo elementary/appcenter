@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-13 19:56+0000\n"
+"POT-Creation-Date: 2020-02-17 15:51+0000\n"
 "PO-Revision-Date: 2019-05-16 00:14+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Serbian <https://l10n.elementary.io/projects/appcenter/appcenter/sr/>\n"
@@ -665,7 +665,7 @@ msgstr "Не могу да нађем ниједан програм. Проба�
 msgid "An open, pay-what-you-want app store"
 msgstr "Отворени центар апликација у којем плаћаш колико желиш"
 
-#: src/Widgets/Banner.vala:68
+#: src/Widgets/Banner.vala:74
 msgid "Get the apps that you need at a price you can afford."
 msgstr "Купуј апликације које требаш по цени која ти одговара."
 

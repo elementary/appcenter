@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-13 19:56+0000\n"
+"POT-Creation-Date: 2020-02-17 15:51+0000\n"
 "PO-Revision-Date: 2019-12-26 12:32+0000\n"
 "Last-Translator: Jörg Arnold <j.ar@mailbox.org>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/appcenter/appcenter/de/>\n"
@@ -653,7 +653,7 @@ msgstr "Keine Anwendungen gefunden. Bitte versuchen Sie einen anderen Suchbegrif
 msgid "An open, pay-what-you-want app store"
 msgstr "Ein offener, zahl-was-du-willst Appstore"
 
-#: src/Widgets/Banner.vala:68
+#: src/Widgets/Banner.vala:74
 msgid "Get the apps that you need at a price you can afford."
 msgstr "Erhalte Apps, die du brauchst, zu einem Preis, den du dir leisten kannst."
 

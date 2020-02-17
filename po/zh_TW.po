@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-13 19:56+0000\n"
+"POT-Creation-Date: 2020-02-17 15:51+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Aefgh Threenine <aefgh39622@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/appcenter/appcenter/zh_Hant/>\n"
@@ -650,7 +650,7 @@ msgstr "找不到相關程式。請嘗試更改搜尋字詞。"
 msgid "An open, pay-what-you-want app store"
 msgstr "開放、隨心支付的 App 商店"
 
-#: src/Widgets/Banner.vala:68
+#: src/Widgets/Banner.vala:74
 msgid "Get the apps that you need at a price you can afford."
 msgstr "以您能負擔的價格取得您需要的程式。"
 

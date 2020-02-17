@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-13 19:56+0000\n"
+"POT-Creation-Date: 2020-02-17 15:51+0000\n"
 "PO-Revision-Date: 2019-10-31 15:34+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/appcenter/ca/>\n"
@@ -648,7 +648,7 @@ msgstr "No s'ha trobat cap aplicació. Proveu de canviar els termes de la cerca.
 msgid "An open, pay-what-you-want app store"
 msgstr "Una botiga d'aplicacions oberta, que permet pagar el que vulgueu"
 
-#: src/Widgets/Banner.vala:68
+#: src/Widgets/Banner.vala:74
 msgid "Get the apps that you need at a price you can afford."
 msgstr "Obtingueu les aplicacions que necessiteu al preu que podeu pagar."
 
