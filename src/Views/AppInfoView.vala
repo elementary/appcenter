@@ -656,7 +656,7 @@ namespace AppCenter.Views {
 
                     if (screenshot.get_kind () == AppStream.ScreenshotKind.DEFAULT && best_image != null) {
                         urls.prepend (best_image.get_url ());
-                    } else {
+                    } else if (best_image != null) {
                         urls.append (best_image.get_url ());
                     }
                 });
