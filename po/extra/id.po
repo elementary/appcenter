@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-13 19:56+0000\n"
+"POT-Creation-Date: 2020-02-17 16:29+0000\n"
 "PO-Revision-Date: 2019-11-30 20:24+0000\n"
 "Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/appcenter/"
@@ -36,7 +36,7 @@ msgstr ""
 "fitur dan perbaikan baru."
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
-#: data/io.elementary.appcenter.appdata.xml.in:31
+#: data/io.elementary.appcenter.appdata.xml.in:33
 msgid "Minor fixes"
 msgstr "Perbaikan kecil"
 
@@ -56,32 +56,41 @@ msgstr ""
 msgid "Load the \"Installed\" view faster"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:33
+#: data/io.elementary.appcenter.appdata.xml.in:26
+msgid ""
+"Save some bandwidth by downloading smaller screenshots where appropriate"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:27
+msgid "System components no longer have an \"Open\" button"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:35
 msgid "Prevent AppCenter from opening on log in"
 msgstr "Mencegah buka AppCenter pada saat masuk"
 
-#: data/io.elementary.appcenter.appdata.xml.in:34
+#: data/io.elementary.appcenter.appdata.xml.in:36
 msgid "Prevent ghost update notification when there are no updates available"
 msgstr ""
 "Mencegah pemberitahuan pembaruan palsu saat tidak ada pembaruan yang tersedia"
 
-#: data/io.elementary.appcenter.appdata.xml.in:35
+#: data/io.elementary.appcenter.appdata.xml.in:37
 msgid "Show correct installation state for extensions"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:42
+#: data/io.elementary.appcenter.appdata.xml.in:44
 msgid "Add support for Flatpak apps"
 msgstr "Tambah dukungan untuk aplikasi Flatpak"
 
-#: data/io.elementary.appcenter.appdata.xml.in:43
+#: data/io.elementary.appcenter.appdata.xml.in:45
 msgid "Warn about non-curated apps"
 msgstr "Memperingatkan tentang aplikasi-aplikasi yang tidak dikuratori"
 
-#: data/io.elementary.appcenter.appdata.xml.in:44
+#: data/io.elementary.appcenter.appdata.xml.in:46
 msgid "Show an error dialog if an installation fails"
 msgstr "Menampilkan dialog galat jika pemasangan gagal"
 
-#: data/io.elementary.appcenter.appdata.xml.in:45
+#: data/io.elementary.appcenter.appdata.xml.in:47
 msgid ""
 "Fix an issue where some apps couldn't be uninstalled from the Applications "
 "Menu"
@@ -89,146 +98,119 @@ msgstr ""
 "Perbaikan sebuah masalah dimana beberapa aplikasi tidak dapat dicopot "
 "pemasangan dari Menu Aplikasi"
 
-#: data/io.elementary.appcenter.appdata.xml.in:46
+#: data/io.elementary.appcenter.appdata.xml.in:48
 msgid "Allow browsing and uninstalling apps while offline"
 msgstr "Izinkan telusur dan mencopot pemasangan saat luar jaringan"
 
-#: data/io.elementary.appcenter.appdata.xml.in:47
+#: data/io.elementary.appcenter.appdata.xml.in:49
 msgid "Fix twitter share URLs"
 msgstr "Perbaikan tautan berbagi twitter"
 
-#: data/io.elementary.appcenter.appdata.xml.in:48
+#: data/io.elementary.appcenter.appdata.xml.in:50
 msgid "Drop Google+ from the share menu"
 msgstr "Hapus Google+ dari menu bagikan"
 
-#: data/io.elementary.appcenter.appdata.xml.in:49
+#: data/io.elementary.appcenter.appdata.xml.in:51
 msgid "Animate screenshot background while loading"
 msgstr "Animasikan latar belakang tangkapan layar pada saat memuat"
 
-#: data/io.elementary.appcenter.appdata.xml.in:50
+#: data/io.elementary.appcenter.appdata.xml.in:52
 msgid "Add navigation arrows for screenshots"
 msgstr "Tambahkan panah navigasi untuk tangkapan layar"
 
-#: data/io.elementary.appcenter.appdata.xml.in:51
+#: data/io.elementary.appcenter.appdata.xml.in:53
 msgid "Don't show uninstall buttons for essential system components"
 msgstr "Jangan tampilkan tombol untuk komponen penting sistem"
 
-#: data/io.elementary.appcenter.appdata.xml.in:52
+#: data/io.elementary.appcenter.appdata.xml.in:54
 msgid "Properly display proprietary licenses"
 msgstr "Tampilkan lisensi hak milik dengan benar"
 
-#: data/io.elementary.appcenter.appdata.xml.in:53
+#: data/io.elementary.appcenter.appdata.xml.in:55
 msgid "Fix some layout issues"
 msgstr "Perbaikan beberapa masalah tata letak"
 
-#: data/io.elementary.appcenter.appdata.xml.in:54
+#: data/io.elementary.appcenter.appdata.xml.in:56
 msgid "Fix crashes"
 msgstr "Perbaikan crash"
 
-#: data/io.elementary.appcenter.appdata.xml.in:55
+#: data/io.elementary.appcenter.appdata.xml.in:57
 msgid "Performance improvements"
 msgstr "Peningkatan performa"
 
-#: data/io.elementary.appcenter.appdata.xml.in:56
+#: data/io.elementary.appcenter.appdata.xml.in:58
 msgid "Updated translations"
 msgstr "Terjemahan diperbarui"
 
-#: data/io.elementary.appcenter.appdata.xml.in:63
+#: data/io.elementary.appcenter.appdata.xml.in:65
 msgid "Meson build system fixes"
 msgstr "Perbaikan sistem pembangunan Meson"
 
-#: data/io.elementary.appcenter.appdata.xml.in:64
+#: data/io.elementary.appcenter.appdata.xml.in:66
 msgid "Improve window state restoration"
 msgstr "Meningkatkan pemulihan keadaan jendela"
 
-#: data/io.elementary.appcenter.appdata.xml.in:65
+#: data/io.elementary.appcenter.appdata.xml.in:67
 msgid "Prevent action buttons from jumping around"
 msgstr "Mencegah tombol aksi melompat-lompat"
 
-#: data/io.elementary.appcenter.appdata.xml.in:66
+#: data/io.elementary.appcenter.appdata.xml.in:68
 msgid "Remove reset paid apps gsettings key"
 msgstr "Hapus setel ulang kunci gsettings aplikasi berbayar"
 
-#: data/io.elementary.appcenter.appdata.xml.in:67
+#: data/io.elementary.appcenter.appdata.xml.in:69
 msgid "Memory management refinements"
 msgstr "Perbaikan manajemen memori"
 
-#: data/io.elementary.appcenter.appdata.xml.in:68
+#: data/io.elementary.appcenter.appdata.xml.in:70
 msgid ""
 "Add conditional compilation for disabling dynamic remote homepage content"
 msgstr ""
 "Menambahkan kompilasi pengondisian untuk menonaktifkan kendali jarak jauh "
 "konten beranda dinamis"
 
-#: data/io.elementary.appcenter.appdata.xml.in:69
-#: data/io.elementary.appcenter.appdata.xml.in:81
-#: data/io.elementary.appcenter.appdata.xml.in:88
-#: data/io.elementary.appcenter.appdata.xml.in:101
-#: data/io.elementary.appcenter.appdata.xml.in:112
-#: data/io.elementary.appcenter.appdata.xml.in:121
-#: data/io.elementary.appcenter.appdata.xml.in:130
-#: data/io.elementary.appcenter.appdata.xml.in:139
-#: data/io.elementary.appcenter.appdata.xml.in:148
-#: data/io.elementary.appcenter.appdata.xml.in:157
-#: data/io.elementary.appcenter.appdata.xml.in:166
-#: data/io.elementary.appcenter.appdata.xml.in:175
-#: data/io.elementary.appcenter.appdata.xml.in:184
-#: data/io.elementary.appcenter.appdata.xml.in:193
-#: data/io.elementary.appcenter.appdata.xml.in:202
-#: data/io.elementary.appcenter.appdata.xml.in:212
-#: data/io.elementary.appcenter.appdata.xml.in:222
+#: data/io.elementary.appcenter.appdata.xml.in:71
+#: data/io.elementary.appcenter.appdata.xml.in:83
+#: data/io.elementary.appcenter.appdata.xml.in:90
+#: data/io.elementary.appcenter.appdata.xml.in:103
+#: data/io.elementary.appcenter.appdata.xml.in:114
+#: data/io.elementary.appcenter.appdata.xml.in:123
+#: data/io.elementary.appcenter.appdata.xml.in:132
+#: data/io.elementary.appcenter.appdata.xml.in:141
+#: data/io.elementary.appcenter.appdata.xml.in:150
+#: data/io.elementary.appcenter.appdata.xml.in:159
+#: data/io.elementary.appcenter.appdata.xml.in:168
+#: data/io.elementary.appcenter.appdata.xml.in:177
+#: data/io.elementary.appcenter.appdata.xml.in:186
+#: data/io.elementary.appcenter.appdata.xml.in:195
+#: data/io.elementary.appcenter.appdata.xml.in:204
+#: data/io.elementary.appcenter.appdata.xml.in:214
+#: data/io.elementary.appcenter.appdata.xml.in:224
 msgid "New translations"
 msgstr "Terjemahan baru"
 
-#: data/io.elementary.appcenter.appdata.xml.in:76
+#: data/io.elementary.appcenter.appdata.xml.in:78
 msgid "New categories: Communication, Finance, Media Production"
 msgstr "Kategori baru: Komunikasi, Keuangan, Produksi Media"
 
-#: data/io.elementary.appcenter.appdata.xml.in:77
+#: data/io.elementary.appcenter.appdata.xml.in:79
 msgid "Add Math to Science category"
 msgstr "Menambahkan Matematika pada kategori Sains"
 
-#: data/io.elementary.appcenter.appdata.xml.in:78
+#: data/io.elementary.appcenter.appdata.xml.in:80
 msgid "Relax email address validator"
 msgstr "Pemvalidator alamat surat elektronik"
 
-#: data/io.elementary.appcenter.appdata.xml.in:79
+#: data/io.elementary.appcenter.appdata.xml.in:81
 msgid "Present update availability more accurately"
 msgstr "Sajikan ketersediaan pembaruan lebih akurat"
 
-#: data/io.elementary.appcenter.appdata.xml.in:80
+#: data/io.elementary.appcenter.appdata.xml.in:82
 msgid "Category graphics revamped"
 msgstr "Kategori grafik dirubah"
 
-#: data/io.elementary.appcenter.appdata.xml.in:95
-#: data/io.elementary.appcenter.appdata.xml.in:107
-#: data/io.elementary.appcenter.appdata.xml.in:118
-#: data/io.elementary.appcenter.appdata.xml.in:127
-#: data/io.elementary.appcenter.appdata.xml.in:136
-#: data/io.elementary.appcenter.appdata.xml.in:145
-#: data/io.elementary.appcenter.appdata.xml.in:154
-#: data/io.elementary.appcenter.appdata.xml.in:163
-#: data/io.elementary.appcenter.appdata.xml.in:172
-#: data/io.elementary.appcenter.appdata.xml.in:181
-#: data/io.elementary.appcenter.appdata.xml.in:190
-#: data/io.elementary.appcenter.appdata.xml.in:199
-msgid "Bug fixes and improve performance."
-msgstr "Perbaikan kesalahan dan peningkatan performa."
-
 #: data/io.elementary.appcenter.appdata.xml.in:97
-msgid "Improve transaction success rate"
-msgstr "Meningkatkan persentase keberhasilan transaksi"
-
-#: data/io.elementary.appcenter.appdata.xml.in:98
-msgid "Add Publishing to Office category"
-msgstr "Menambahkan Penerbitan ke Kategori Kantor"
-
-#: data/io.elementary.appcenter.appdata.xml.in:99
-msgid "Improve descriptions of OS Updates"
-msgstr "Meningkatkan deskripsi Pembaruan SO"
-
-#: data/io.elementary.appcenter.appdata.xml.in:100
-#: data/io.elementary.appcenter.appdata.xml.in:111
+#: data/io.elementary.appcenter.appdata.xml.in:109
 #: data/io.elementary.appcenter.appdata.xml.in:120
 #: data/io.elementary.appcenter.appdata.xml.in:129
 #: data/io.elementary.appcenter.appdata.xml.in:138
@@ -238,37 +220,64 @@ msgstr "Meningkatkan deskripsi Pembaruan SO"
 #: data/io.elementary.appcenter.appdata.xml.in:174
 #: data/io.elementary.appcenter.appdata.xml.in:183
 #: data/io.elementary.appcenter.appdata.xml.in:192
+#: data/io.elementary.appcenter.appdata.xml.in:201
+msgid "Bug fixes and improve performance."
+msgstr "Perbaikan kesalahan dan peningkatan performa."
+
+#: data/io.elementary.appcenter.appdata.xml.in:99
+msgid "Improve transaction success rate"
+msgstr "Meningkatkan persentase keberhasilan transaksi"
+
+#: data/io.elementary.appcenter.appdata.xml.in:100
+msgid "Add Publishing to Office category"
+msgstr "Menambahkan Penerbitan ke Kategori Kantor"
+
+#: data/io.elementary.appcenter.appdata.xml.in:101
+msgid "Improve descriptions of OS Updates"
+msgstr "Meningkatkan deskripsi Pembaruan SO"
+
+#: data/io.elementary.appcenter.appdata.xml.in:102
+#: data/io.elementary.appcenter.appdata.xml.in:113
+#: data/io.elementary.appcenter.appdata.xml.in:122
+#: data/io.elementary.appcenter.appdata.xml.in:131
+#: data/io.elementary.appcenter.appdata.xml.in:140
+#: data/io.elementary.appcenter.appdata.xml.in:149
+#: data/io.elementary.appcenter.appdata.xml.in:158
+#: data/io.elementary.appcenter.appdata.xml.in:167
+#: data/io.elementary.appcenter.appdata.xml.in:176
+#: data/io.elementary.appcenter.appdata.xml.in:185
+#: data/io.elementary.appcenter.appdata.xml.in:194
 msgid "Various bug fixes and performance improvements"
 msgstr "Berbagai perbaikan kutu dan peningkatan kinerja"
 
-#: data/io.elementary.appcenter.appdata.xml.in:109
+#: data/io.elementary.appcenter.appdata.xml.in:111
 msgid "Give details for Operating System Updates"
 msgstr "Memberikan detail Pembaruan Sistem Operasi"
 
-#: data/io.elementary.appcenter.appdata.xml.in:110
+#: data/io.elementary.appcenter.appdata.xml.in:112
 msgid "Support mouse button navigation"
 msgstr "Mendukung navigasi tombol mouse"
 
-#: data/io.elementary.appcenter.appdata.xml.in:201
+#: data/io.elementary.appcenter.appdata.xml.in:203
 msgid "Fix crash caused by entries with missing packages"
 msgstr "Perbaiki kerusakan yang disebabkan oleh entri dengan paket yang hilang"
 
-#: data/io.elementary.appcenter.appdata.xml.in:208
+#: data/io.elementary.appcenter.appdata.xml.in:210
 msgid "Add capability to search by category and apply minor bug fixes."
 msgstr ""
 "Tambahkan kemampuan untuk pencarian menurut kategori dan menerapkan "
 "perbaikan kutu kecil."
 
-#: data/io.elementary.appcenter.appdata.xml.in:210
+#: data/io.elementary.appcenter.appdata.xml.in:212
 msgid "It is now possible to search apps inside a category"
 msgstr ""
 "Sekarang telah memungkinkan untuk mencari aplikasi di dalam sebuah kategori"
 
-#: data/io.elementary.appcenter.appdata.xml.in:211
+#: data/io.elementary.appcenter.appdata.xml.in:213
 msgid "Prevent multiple authentication dialogs when resuming from suspend"
 msgstr "Mencegah beberapa dialog otentikasi saat melanjutkan dari keadaan jeda"
 
-#: data/io.elementary.appcenter.appdata.xml.in:218
+#: data/io.elementary.appcenter.appdata.xml.in:220
 msgid ""
 "Search performance has beeen improved, the category name is now shown on the "
 "headbar and minor bugs have been fixed."
@@ -276,15 +285,15 @@ msgstr ""
 "Performa pencarian telah diimprovisasi, nama kategori sekarang ditampilkan "
 "pada bilah atas dan kesalahan kecil telah diperbaiki."
 
-#: data/io.elementary.appcenter.appdata.xml.in:220
+#: data/io.elementary.appcenter.appdata.xml.in:222
 msgid "Fix Steam installation"
 msgstr "Memperbaiki pemasangan Steam"
 
-#: data/io.elementary.appcenter.appdata.xml.in:221
+#: data/io.elementary.appcenter.appdata.xml.in:223
 msgid "Make search asynchronous"
 msgstr "Jadikan pencarian asinkron"
 
-#: data/io.elementary.appcenter.appdata.xml.in:276
+#: data/io.elementary.appcenter.appdata.xml.in:278
 msgid "elementary, Inc."
 msgstr "elementary, PT."
 

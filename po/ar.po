@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-13 19:56+0000\n"
+"POT-Creation-Date: 2020-02-17 16:29+0000\n"
 "PO-Revision-Date: 2019-12-18 23:11+0000\n"
 "Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/appcenter/ar/>\n"
@@ -532,85 +532,85 @@ msgstr "تجاهل"
 msgid "Try Again"
 msgstr "حاول مرة أخرى"
 
-#: src/Views/AppInfoView.vala:155
+#: src/Views/AppInfoView.vala:157
 msgid "Screenshot Not Available"
 msgstr "لقطات الشاشة غير متوفرة"
 
-#: src/Views/AppInfoView.vala:206
+#: src/Views/AppInfoView.vala:208
 msgid "Homepage"
 msgstr "الرئيسية"
 
-#: src/Views/AppInfoView.vala:212
+#: src/Views/AppInfoView.vala:214
 msgid "Suggest Translations"
 msgstr "إقتراح ترجمة"
 
-#: src/Views/AppInfoView.vala:218
+#: src/Views/AppInfoView.vala:220
 msgid "Report a Problem"
 msgstr "تقرير المشكلة"
 
-#: src/Views/AppInfoView.vala:224
+#: src/Views/AppInfoView.vala:226
 msgid "Help"
 msgstr "مساعدة"
 
-#: src/Views/AppInfoView.vala:251
+#: src/Views/AppInfoView.vala:253
 msgid "What's New:"
 msgstr "ما الجديد:"
 
-#: src/Views/AppInfoView.vala:270
+#: src/Views/AppInfoView.vala:272
 msgid "Extensions:"
 msgstr "الإضافات:"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:364
+#: src/Views/AppInfoView.vala:366
 msgid "Public Domain"
 msgstr "ملكية عامة"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:367
+#: src/Views/AppInfoView.vala:369
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://ar.wikipedia.org/wiki/%D9%85%D9%84%D9%83%D9%8A%D8%A9_%D8%B9%D8%A7%D9%85%D8%A9"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:372
+#: src/Views/AppInfoView.vala:374
 msgid "Free Software"
 msgstr "برمجيات حرة"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:375
+#: src/Views/AppInfoView.vala:377
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw.ar.html"
 
-#: src/Views/AppInfoView.vala:379
+#: src/Views/AppInfoView.vala:381
 msgid "Proprietary"
 msgstr "محتكر"
 
-#: src/Views/AppInfoView.vala:382
+#: src/Views/AppInfoView.vala:384
 msgid "Unknown License"
 msgstr "ترخيص غير معروف"
 
-#: src/Views/AppInfoView.vala:424
+#: src/Views/AppInfoView.vala:426
 #, c-format
 msgid "Other Apps by %s"
 msgstr "تطبيقات أخرى من %s"
 
-#: src/Views/AppInfoView.vala:458
+#: src/Views/AppInfoView.vala:460
 msgid "Link copied to clipboard"
 msgstr "تم نسخ الرابط للحافظة"
 
-#: src/Views/AppInfoView.vala:469
+#: src/Views/AppInfoView.vala:471
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "أنظر إلى %s في مركز التطبيقات:"
 
-#: src/Views/AppInfoView.vala:476
+#: src/Views/AppInfoView.vala:478
 msgid "Share"
 msgstr "شارك"
 
-#: src/Views/AppInfoView.vala:785
+#: src/Views/AppInfoView.vala:802
 msgid "Fund"
 msgstr "دعم"
 
-#: src/Views/AppInfoView.vala:807
+#: src/Views/AppInfoView.vala:824
 msgid "Fund the development of this app"
 msgstr "إدعم تطوير هذا التطبيق"
 
@@ -666,7 +666,7 @@ msgstr "لا يوجد تطبيقات بهذا الاسم حاول مرة اخر�
 msgid "An open, pay-what-you-want app store"
 msgstr "متجر مفتوح المصدر ادفع ماشئت للمطورين"
 
-#: src/Widgets/Banner.vala:68
+#: src/Widgets/Banner.vala:74
 msgid "Get the apps that you need at a price you can afford."
 msgstr "احصل على التطبيقات التي تريديها بالسعر الذي تريده."
 
