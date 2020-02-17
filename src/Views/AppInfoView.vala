@@ -247,17 +247,17 @@ namespace AppCenter.Views {
             release_grid.no_show_all = true;
             release_grid.hide ();
 
-            var body_grid = new Gtk.Grid ();
-            body_grid.row_spacing = 24;
+            var content_grid = new Gtk.Grid ();
+            content_grid.row_spacing = 24;
 
             if (screenshots.length > 0) {
-                body_grid.attach (screenshot_stack, 0, 0, 2);
-                body_grid.attach (screenshot_switcher, 0, 1, 2);
+                content_grid.attach (screenshot_stack, 0, 0, 2);
+                content_grid.attach (screenshot_switcher, 0, 1, 2);
             }
 
-            body_grid.attach (package_summary, 0, 2, 2);
-            body_grid.attach (app_description, 0, 3, 2);
-            body_grid.attach (release_grid, 0, 4, 2);
+            content_grid.attach (package_summary, 0, 2, 2);
+            content_grid.attach (app_description, 0, 3, 2);
+            content_grid.attach (release_grid, 0, 4, 2);
 
             if (package_component.get_addons ().length > 0) {
                 extension_box = new Gtk.ListBox ();
@@ -268,8 +268,8 @@ namespace AppCenter.Views {
                 extension_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
                 extension_label.halign = Gtk.Align.START;
 
-                body_grid.attach (extension_label, 0, 5, 2);
-                body_grid.attach (extension_box, 0, 6, 2);
+                content_grid.attach (extension_label, 0, 5, 2);
+                content_grid.attach (extension_box, 0, 6, 2);
                 load_extensions.begin ();
             }
 
@@ -405,15 +405,15 @@ namespace AppCenter.Views {
                 var license_button = new UrlButton (_(license_copy), license_url, "text-x-copying-symbolic");
                 license_button.hexpand = true;
 
-                body_grid.attach (license_button, 0, 7);
+                content_grid.attach (license_button, 0, 7);
             }
 
-            body_grid.attach (links_grid, 1, 7);
+            content_grid.attach (links_grid, 1, 7);
 
             var body_column = new Hdy.Column ();
             body_column.margin = 24;
             body_column.maximum_width = MAX_WIDTH;
-            body_column.add (body_grid);
+            body_column.add (content_grid);
 
             var grid = new Gtk.Grid ();
             grid.row_spacing = 12;
