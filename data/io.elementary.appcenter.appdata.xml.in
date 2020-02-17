@@ -21,6 +21,7 @@
         <ul>
           <li>Update application details when changes happen outside of AppCenter</li>
           <li>Fix for notification not appearing when a restart is required</li>
+          <li>Apps in list views now load in the correct order when scrolling</li>
           <li>Prevent unescaped XML entities from appearing in application names</li>
           <li>Load the "Installed" view faster</li>
           <li>Save some bandwidth by downloading smaller screenshots where appropriate</li>

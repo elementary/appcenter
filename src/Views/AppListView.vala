@@ -84,7 +84,7 @@ namespace AppCenter.Views {
 #if CURATED
             bool p1_is_elementary_native = p1.is_native;
 
-            if (p1_is_elementary_native || p2.is_native) {
+            if (p1_is_elementary_native != p2.is_native) {
                 return p1_is_elementary_native ? -1 : 1;
             }
 #endif
