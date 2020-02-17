@@ -18,6 +18,8 @@
  */
 
 public class AppCenterCore.BackendAggregator : Backend, Object {
+    public signal void cache_flush_needed ();
+
     private Gee.ArrayList<unowned Backend> backends;
 
     construct {

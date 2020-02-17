@@ -61,7 +61,13 @@ namespace AppCenter.Widgets {
 
                 string description;
                 if (has_package) {
-                    description = package.get_description ();
+                    string[] lines = package.get_description ().split ("\n");
+                    description = lines[0].strip ();
+
+                    for (int i = 1; i < lines.length; i++) {
+                        description += " " + lines[i].strip ();
+                    }
+
                     int close_paragraph_index = description.index_of ("</p>", 0);
                     description = description.slice (3, close_paragraph_index);
                 } else {

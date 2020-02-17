@@ -7,17 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-05 00:29+0000\n"
+"POT-Creation-Date: 2020-02-17 16:29+0000\n"
 "PO-Revision-Date: 2019-09-28 15:23+0000\n"
 "Last-Translator: Andrii Priadko <mendeleev.ua@gmail.com>\n"
-"Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/uk/>\n"
+"Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/appcenter/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
@@ -311,14 +309,8 @@ msgstr "%s містить контент для дорослих"
 
 #: src/Dialogs/ContentWarningDialog.vala:31
 #, fuzzy, c-format
-msgid ""
-"“%s” may contain content only suitable for adults or that may be sensitive "
-"or disturbing. In general, elementary does not review or endorse the "
-"contents of this app."
-msgstr ""
-"%s може містити контент 18+ або такий, що може викликати підвищену "
-"чутливість та тревожність. Як правило, elementary не переглядає та не "
-"підтримує зміст цього застосунку."
+msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
+msgstr "%s може містити контент 18+ або такий, що може викликати підвищену чутливість та тревожність. Як правило, elementary не переглядає та не підтримує зміст цього застосунку."
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 msgid "Show content warnings"
@@ -351,12 +343,8 @@ msgid "Cancel"
 msgstr "Скасувати"
 
 #: src/Dialogs/StripeDialog.vala:41
-msgid ""
-"An error occurred while processing the card. Please try again later. We "
-"apologize for any inconvenience caused."
-msgstr ""
-"Сталась помилка при обробці картки. Будь ласка, спробуйте пізніше ще раз. "
-"Просимо вибачення за незручності."
+msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
+msgstr "Сталась помилка при обробці картки. Будь ласка, спробуйте пізніше ще раз. Просимо вибачення за незручності."
 
 #: src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
@@ -372,24 +360,16 @@ msgid "Pay $%d for %s"
 msgstr "Оплатити $%d за %s"
 
 #: src/Dialogs/StripeDialog.vala:96
-msgid ""
-"This is a one time payment. Your email address is only used to send you a "
-"receipt."
-msgstr ""
-"Це є одноразовий платіж. Ваша email-адреса буде використана лише для "
-"відправки квитанції."
+msgid "This is a one time payment. Your email address is only used to send you a receipt."
+msgstr "Це є одноразовий платіж. Ваша email-адреса буде використана лише для відправки квитанції."
 
 #: src/Dialogs/StripeDialog.vala:106 src/Widgets/SharePopover.vala:35
 msgid "Email"
 msgstr "Пошта"
 
 #: src/Dialogs/StripeDialog.vala:108
-msgid ""
-"Your email address is only used to send a receipt. You will not be "
-"subscribed to any mailing list."
-msgstr ""
-"Ваша електронна адреса буде використана лише для відправки квитанції. Не для "
-"розсилок."
+msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
+msgstr "Ваша електронна адреса буде використана лише для відправки квитанції. Не для розсилок."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127
@@ -426,33 +406,20 @@ msgid "Retry"
 msgstr "Спробувати ще раз"
 
 #: src/Dialogs/StripeDialog.vala:513 src/Dialogs/StripeDialog.vala:578
-msgid ""
-"The card number is incorrect. Please try again using the correct card number."
-msgstr ""
-"Номер картки не вірний. Будь ласка, спробуйте ще раз з коректним номером "
-"картки."
+msgid "The card number is incorrect. Please try again using the correct card number."
+msgstr "Номер картки не вірний. Будь ласка, спробуйте ще раз з коректним номером картки."
 
 #: src/Dialogs/StripeDialog.vala:515
-msgid ""
-"The expiration month is invalid. Please try again using the correct "
-"expiration date."
-msgstr ""
-"Місяць не дійсний. Спробуйте будь ласка ще раз, використовуючи коректний "
-"термін закінчення дії."
+msgid "The expiration month is invalid. Please try again using the correct expiration date."
+msgstr "Місяць не дійсний. Спробуйте будь ласка ще раз, використовуючи коректний термін закінчення дії."
 
 #: src/Dialogs/StripeDialog.vala:517 src/Dialogs/StripeDialog.vala:575
-msgid ""
-"The expiration year is invalid. Please try again using the correct "
-"expiration date."
-msgstr ""
-"Рік не дійсний. Спробуйте будь ласка ще раз, використовуючи коректний термін "
-"закінчення дії."
+msgid "The expiration year is invalid. Please try again using the correct expiration date."
+msgstr "Рік не дійсний. Спробуйте будь ласка ще раз, використовуючи коректний термін закінчення дії."
 
 #: src/Dialogs/StripeDialog.vala:520 src/Dialogs/StripeDialog.vala:573
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr ""
-"CVC номер не вірний. Спробуйте будь ласка ще раз, використовуючи коректний "
-"CVC."
+msgstr "CVC номер не вірний. Спробуйте будь ласка ще раз, використовуючи коректний CVC."
 
 #: src/Dialogs/StripeDialog.vala:522 src/Dialogs/StripeDialog.vala:564
 msgid "The card has expired. Please try again with a different card."
@@ -460,67 +427,43 @@ msgstr "Ця картка прострочена. Будь ласка, спро�
 
 #: src/Dialogs/StripeDialog.vala:542
 msgid "There are too many payment requests at the moment, please retry later."
-msgstr ""
-"Забагато платіжних запитів у даний момент. Спробуйте будь ласка пізніше."
+msgstr "Забагато платіжних запитів у даний момент. Спробуйте будь ласка пізніше."
 
 #: src/Dialogs/StripeDialog.vala:558
-msgid ""
-"This card does not support this kind of transaction. Please try again with a "
-"different card."
-msgstr ""
-"Ця картка не підтримує даний вид транзакції. Будь ласка, спробуйте знову, з "
-"іншою карткою."
+msgid "This card does not support this kind of transaction. Please try again with a different card."
+msgstr "Ця картка не підтримує даний вид транзакції. Будь ласка, спробуйте знову, з іншою карткою."
 
 #: src/Dialogs/StripeDialog.vala:560
-msgid ""
-"The currency is not supported by this card. Please try again with a "
-"different card."
-msgstr ""
-"Цей тип валюти не підтримується цією карткою. Будь ласка, спробуйте знову, з "
-"іншою карткою."
+msgid "The currency is not supported by this card. Please try again with a different card."
+msgstr "Цей тип валюти не підтримується цією карткою. Будь ласка, спробуйте знову, з іншою карткою."
 
 #: src/Dialogs/StripeDialog.vala:562
 msgid "The transaction has already been processed."
 msgstr "Цей платіж вже опрацьований."
 
 #: src/Dialogs/StripeDialog.vala:566
-msgid ""
-"The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
-"postal code."
-msgstr ""
-"Поштовий індекс вказано не вірно. Будь ласка перевірте індекс та спробуйте "
-"знову."
+msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
+msgstr "Поштовий індекс вказано не вірно. Будь ласка перевірте індекс та спробуйте знову."
 
 #: src/Dialogs/StripeDialog.vala:568
 msgid "You don't have enough funds. Please use an alternative payment method."
-msgstr ""
-"Не достатньо коштів на рахунку. Спробуйте будь ласка інший платіжний метод."
+msgstr "Не достатньо коштів на рахунку. Спробуйте будь ласка інший платіжний метод."
 
 #: src/Dialogs/StripeDialog.vala:570
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr ""
-"Не коректно вказана сума. Спробуйте будь ласка ще раз, вказавши коректну "
-"суму."
+msgstr "Не коректно вказана сума. Спробуйте будь ласка ще раз, вказавши коректну суму."
 
 #: src/Dialogs/StripeDialog.vala:581
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr ""
-"PIN-код не вірний. Будь ласка, спробуйте ще раз з коректним номером PIN."
+msgstr "PIN-код не вірний. Будь ласка, спробуйте ще раз з коректним номером PIN."
 
 #: src/Dialogs/StripeDialog.vala:583
-msgid ""
-"There has been too many PIN attempts. Please try again with a different card."
-msgstr ""
-"Кількість спроб для введення PIN-коду вичерпано. Спробуйте будь ласка "
-"скористатись іншою карткою."
+msgid "There has been too many PIN attempts. Please try again with a different card."
+msgstr "Кількість спроб для введення PIN-коду вичерпано. Спробуйте будь ласка скористатись іншою карткою."
 
 #: src/Dialogs/StripeDialog.vala:603
-msgid ""
-"Unable to complete the transaction. Please contact your bank for further "
-"information."
-msgstr ""
-"Транзакцію не вдалось завершити. Зверніться будь ласка до вашого банку для "
-"інформації."
+msgid "Unable to complete the transaction. Please contact your bank for further information."
+msgstr "Транзакцію не вдалось завершити. Зверніться будь ласка до вашого банку для інформації."
 
 #: src/Dialogs/StripeDialog.vala:606
 msgid "The balance or credit limit on the card has been reached."
@@ -528,9 +471,7 @@ msgstr "Баланс або кредитний ліміт картки пере�
 
 #: src/Dialogs/StripeDialog.vala:609
 msgid "The given card is a test card. Please use a real card to proceed."
-msgstr ""
-"Дана картка є тестовою карткою. Будь ласка, використовуйте реальну картку, "
-"щоб продовжити."
+msgstr "Дана картка є тестовою карткою. Будь ласка, використовуйте реальну картку, щоб продовжити."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
@@ -554,9 +495,7 @@ msgstr "Вилучити"
 #: src/Dialogs/UninstallFailDialog.vala:26
 #, fuzzy
 msgid "This may have been caused by external or manually compiled software."
-msgstr ""
-"Це може бути викликано зовнішньо, вручну доданими сховищами програмного "
-"забезпечення або файлом з пошкодженими джерелами."
+msgstr "Це може бути викликано зовнішньо, вручну доданими сховищами програмного забезпечення або файлом з пошкодженими джерелами."
 
 #: src/Dialogs/UninstallFailDialog.vala:37
 #, fuzzy
@@ -573,12 +512,8 @@ msgid "Failed to Fetch Updates"
 msgstr "Не вдалося отримати оновлення"
 
 #: src/Dialogs/UpdateFailDialog.vala:26
-msgid ""
-"This may have been caused by external, manually added software repositories "
-"or a corrupted sources file."
-msgstr ""
-"Це може бути викликано зовнішньо, вручну доданими сховищами програмного "
-"забезпечення або файлом з пошкодженими джерелами."
+msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
+msgstr "Це може бути викликано зовнішньо, вручну доданими сховищами програмного забезпечення або файлом з пошкодженими джерелами."
 
 #: src/Dialogs/UpdateFailDialog.vala:34
 msgid "Ignore"
@@ -588,91 +523,85 @@ msgstr "Ігнорувати"
 msgid "Try Again"
 msgstr "Спробуйте знову"
 
-#: src/Views/AppInfoView.vala:177
+#: src/Views/AppInfoView.vala:157
 msgid "Screenshot Not Available"
 msgstr "Скріншот недоступний"
 
-#: src/Views/AppInfoView.vala:236
+#: src/Views/AppInfoView.vala:208
 msgid "Homepage"
 msgstr "Домашня сторінка"
 
-#: src/Views/AppInfoView.vala:242
+#: src/Views/AppInfoView.vala:214
 msgid "Suggest Translations"
 msgstr "Запропонувати переклад"
 
-#: src/Views/AppInfoView.vala:248
+#: src/Views/AppInfoView.vala:220
 msgid "Report a Problem"
 msgstr "Повідомити про проблему"
 
-#: src/Views/AppInfoView.vala:254
+#: src/Views/AppInfoView.vala:226
 msgid "Help"
 msgstr "Допомога"
 
-#: src/Views/AppInfoView.vala:281
+#: src/Views/AppInfoView.vala:253
 msgid "What's New:"
 msgstr "Що нового:"
 
-#: src/Views/AppInfoView.vala:300
+#: src/Views/AppInfoView.vala:272
 msgid "Extensions:"
 msgstr "Розширення:"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:395
+#: src/Views/AppInfoView.vala:366
 msgid "Public Domain"
 msgstr "Домен верхнього рівня"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:398
+#: src/Views/AppInfoView.vala:369
 msgid "https://en.wikipedia.org/wiki/Public_domain"
-msgstr ""
-"https://uk.wikipedia.org/wiki/%D0%94%D0%BE%D0%BC%D0%B5%D0%BD_"
-"%D0%B2%D0%B5%D1%80%D1%85%D0%BD%D1%8C%D0%BE%D0%B3%D0%BE_"
-"%D1%80%D1%96%D0%B2%D0%BD%D1%8F"
+msgstr "https://uk.wikipedia.org/wiki/%D0%94%D0%BE%D0%BC%D0%B5%D0%BD_%D0%B2%D0%B5%D1%80%D1%85%D0%BD%D1%8C%D0%BE%D0%B3%D0%BE_%D1%80%D1%96%D0%B2%D0%BD%D1%8F"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:403
+#: src/Views/AppInfoView.vala:374
 msgid "Free Software"
 msgstr "Вільне програмне забезпечення"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:406
+#: src/Views/AppInfoView.vala:377
 msgid "https://www.gnu.org/philosophy/free-sw"
-msgstr ""
-"https://uk.wikipedia.org/wiki/%D0%92%D1%96%D0%BB%D1%8C%D0%BD%D0%B5_%D0%BF"
-"%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BD%D0%B5_"
-"%D0%B7%D0%B0%D0%B1%D0%B5%D0%B7%D0%BF%D0%B5%D1%87%D0%B5%D0%BD%D0%BD%D1%8F"
+msgstr "https://uk.wikipedia.org/wiki/%D0%92%D1%96%D0%BB%D1%8C%D0%BD%D0%B5_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BD%D0%B5_%D0%B7%D0%B0%D0%B1%D0%B5%D0%B7%D0%BF%D0%B5%D1%87%D0%B5%D0%BD%D0%BD%D1%8F"
 
-#: src/Views/AppInfoView.vala:410
+#: src/Views/AppInfoView.vala:381
 msgid "Proprietary"
 msgstr "Право власності"
 
-#: src/Views/AppInfoView.vala:413
+#: src/Views/AppInfoView.vala:384
 msgid "Unknown License"
 msgstr "Ліцензія не відома"
 
-#: src/Views/AppInfoView.vala:455
+#: src/Views/AppInfoView.vala:426
 #, c-format
 msgid "Other Apps by %s"
 msgstr "Інші додатки від %s"
 
-#: src/Views/AppInfoView.vala:489
+#: src/Views/AppInfoView.vala:460
 msgid "Link copied to clipboard"
 msgstr "Посилання скопійовано до буферу обміну"
 
-#: src/Views/AppInfoView.vala:500
+#: src/Views/AppInfoView.vala:471
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "Перевірте %s в Центрі програм:"
 
-#: src/Views/AppInfoView.vala:507
+#: src/Views/AppInfoView.vala:478
 msgid "Share"
 msgstr "Поділитися"
 
-#: src/Views/AppInfoView.vala:822
+#: src/Views/AppInfoView.vala:802
 msgid "Fund"
 msgstr "Фінансувати"
 
-#: src/Views/AppInfoView.vala:844
+#: src/Views/AppInfoView.vala:824
 msgid "Fund the development of this app"
 msgstr "Профінансуйте розробку цього додатка"
 
@@ -728,10 +657,9 @@ msgstr "Додатки не знайдені. Спробуйте змінити 
 msgid "An open, pay-what-you-want app store"
 msgstr "Вільний \"Плати за що хочеш\" магазин"
 
-#: src/Widgets/Banner.vala:68
+#: src/Widgets/Banner.vala:74
 msgid "Get the apps that you need at a price you can afford."
-msgstr ""
-"Отримуй додатки які тобі необхідно, за ціну, яку ти можеш запропонувати."
+msgstr "Отримуй додатки які тобі необхідно, за ціну, яку ти можеш запропонувати."
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
@@ -833,9 +761,7 @@ msgstr "Мережа не доступна."
 
 #: src/Widgets/NetworkInfoBar.vala:33
 msgid "Connect to the Internet to browse and install apps."
-msgstr ""
-"Необхідне підключення до мережі Internet для встановлення чи оновлення "
-"застосунків."
+msgstr "Необхідне підключення до мережі Internet для встановлення чи оновлення застосунків."
 
 #. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
 #: src/Widgets/NetworkInfoBar.vala:41

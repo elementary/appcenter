@@ -310,15 +310,15 @@ public class AppCenterCore.Package : Object {
         }
     }
 
-    public Gee.Collection<Package> versions {
+    public Gee.Collection<Package> origin_packages {
         owned get {
             return BackendAggregator.get_default ().get_packages_for_component_id (component.get_id ());
         }
     }
 
-    public bool has_multiple_versions {
+    public bool has_multiple_origins {
         get {
-            return versions.size > 1;
+            return origin_packages.size > 1;
         }
     }
 
@@ -717,6 +717,10 @@ public class AppCenterCore.Package : Object {
     public bool get_can_launch () {
         if (app_info_retrieved) {
             return app_info != null;
+        }
+
+        if (is_compulsory) {
+            return false;
         }
 
         var launchable = component.get_launchable (AppStream.LaunchableKind.DESKTOP_ID);

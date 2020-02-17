@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-05 00:29+0000\n"
+"POT-Creation-Date: 2020-02-17 16:29+0000\n"
 "PO-Revision-Date: 2019-12-16 21:08+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/extra/"
@@ -35,223 +35,240 @@ msgstr ""
 "आवृत्तीत अद्यतनित करण्यासाठी देखील अॅप सेंटर  वापरला जातो."
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
-#: data/io.elementary.appcenter.appdata.xml.in:29
+#: data/io.elementary.appcenter.appdata.xml.in:33
 msgid "Minor fixes"
 msgstr "किरकोळ दोष निराकरणे"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
+msgid "Update application details when changes happen outside of AppCenter"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:23
+msgid "Fix for notification not appearing when a restart is required"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:24
 msgid "Prevent unescaped XML entities from appearing in application names"
 msgstr "अनुप्रयोगावरील नावे दिसण्यापासून न वाचलेल्या XML घटकांना प्रतिबंधित करा"
 
-#: data/io.elementary.appcenter.appdata.xml.in:23
+#: data/io.elementary.appcenter.appdata.xml.in:25
 msgid "Load the \"Installed\" view faster"
 msgstr "\"Installed\" दृश्य जलद लोड करा"
 
-#: data/io.elementary.appcenter.appdata.xml.in:31
+#: data/io.elementary.appcenter.appdata.xml.in:26
+msgid ""
+"Save some bandwidth by downloading smaller screenshots where appropriate"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:27
+msgid "System components no longer have an \"Open\" button"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:35
 msgid "Prevent AppCenter from opening on log in"
 msgstr "लॉग इन होताच उघडण्यापासून AppCenter ला प्रतिबंधित करा"
 
-#: data/io.elementary.appcenter.appdata.xml.in:32
+#: data/io.elementary.appcenter.appdata.xml.in:36
 msgid "Prevent ghost update notification when there are no updates available"
 msgstr "कोणतीही अद्यतने उपलब्ध नसताना घोस्ट अद्यतन सूचना प्रतिबंधित करा"
 
-#: data/io.elementary.appcenter.appdata.xml.in:33
+#: data/io.elementary.appcenter.appdata.xml.in:37
 msgid "Show correct installation state for extensions"
 msgstr "विस्तारांसाठी योग्य स्थापना स्थिती दर्शवा"
 
-#: data/io.elementary.appcenter.appdata.xml.in:40
+#: data/io.elementary.appcenter.appdata.xml.in:44
 msgid "Add support for Flatpak apps"
 msgstr "फ्लॅटपॅक अ‍ॅप्ससाठी समर्थन जोडा"
 
-#: data/io.elementary.appcenter.appdata.xml.in:41
+#: data/io.elementary.appcenter.appdata.xml.in:45
 msgid "Warn about non-curated apps"
 msgstr "क्यूरेट न केलेल्या अ‍ॅप्सबद्दल चेतावणी द्या"
 
-#: data/io.elementary.appcenter.appdata.xml.in:42
+#: data/io.elementary.appcenter.appdata.xml.in:46
 msgid "Show an error dialog if an installation fails"
 msgstr "स्थापना अयशस्वी झाल्यास त्रुटी संवाद दर्शवा"
 
-#: data/io.elementary.appcenter.appdata.xml.in:43
+#: data/io.elementary.appcenter.appdata.xml.in:47
 msgid ""
 "Fix an issue where some apps couldn't be uninstalled from the Applications "
 "Menu"
 msgstr "अनुप्रयोग मेनूमधून काही अॅप्स विस्थापित केले जाऊ शकत नाहीत अशा समस्येचे निराकरण करा"
 
-#: data/io.elementary.appcenter.appdata.xml.in:44
+#: data/io.elementary.appcenter.appdata.xml.in:48
 msgid "Allow browsing and uninstalling apps while offline"
 msgstr "ऑफलाइन असताना ब्राउझिंग आणि विस्थापित करणे यासाठी अ‍ॅप्सना अनुमती द्या"
 
-#: data/io.elementary.appcenter.appdata.xml.in:45
+#: data/io.elementary.appcenter.appdata.xml.in:49
 msgid "Fix twitter share URLs"
 msgstr "ट्विटर शेअर URL दुरुस्त करा"
 
-#: data/io.elementary.appcenter.appdata.xml.in:46
+#: data/io.elementary.appcenter.appdata.xml.in:50
 msgid "Drop Google+ from the share menu"
 msgstr "सामायिक मेनूमधून Google+ ड्रॉप करा"
 
-#: data/io.elementary.appcenter.appdata.xml.in:47
+#: data/io.elementary.appcenter.appdata.xml.in:51
 msgid "Animate screenshot background while loading"
 msgstr "लोड करताना स्क्रीनशॉट पार्श्वभूमी एनिमेट करा"
 
-#: data/io.elementary.appcenter.appdata.xml.in:48
+#: data/io.elementary.appcenter.appdata.xml.in:52
 msgid "Add navigation arrows for screenshots"
 msgstr "स्क्रीनशॉटसाठी नेव्हिगेशन बाण जोडा"
 
-#: data/io.elementary.appcenter.appdata.xml.in:49
+#: data/io.elementary.appcenter.appdata.xml.in:53
 msgid "Don't show uninstall buttons for essential system components"
 msgstr "आवश्यक सिस्टम घटकांसाठी विस्थापित बटणे दर्शवू नका"
 
-#: data/io.elementary.appcenter.appdata.xml.in:50
+#: data/io.elementary.appcenter.appdata.xml.in:54
 msgid "Properly display proprietary licenses"
 msgstr "मालकी परवाने योग्यरित्या प्रदर्शित करा"
 
-#: data/io.elementary.appcenter.appdata.xml.in:51
+#: data/io.elementary.appcenter.appdata.xml.in:55
 msgid "Fix some layout issues"
 msgstr "काही लेआउट समस्यांचे निराकरण करा"
 
-#: data/io.elementary.appcenter.appdata.xml.in:52
+#: data/io.elementary.appcenter.appdata.xml.in:56
 msgid "Fix crashes"
 msgstr "क्रॅश निराकरण करा"
 
-#: data/io.elementary.appcenter.appdata.xml.in:53
+#: data/io.elementary.appcenter.appdata.xml.in:57
 msgid "Performance improvements"
 msgstr "कार्यक्षमता सुधारणा"
 
-#: data/io.elementary.appcenter.appdata.xml.in:54
+#: data/io.elementary.appcenter.appdata.xml.in:58
 msgid "Updated translations"
 msgstr "अद्ययावत भाषांतर"
 
-#: data/io.elementary.appcenter.appdata.xml.in:61
+#: data/io.elementary.appcenter.appdata.xml.in:65
 msgid "Meson build system fixes"
 msgstr "मेसन बिल्डचे सिस्टम फिक्स"
 
-#: data/io.elementary.appcenter.appdata.xml.in:62
+#: data/io.elementary.appcenter.appdata.xml.in:66
 msgid "Improve window state restoration"
 msgstr "विंडो स्थिती पुनर्संचयन सुधारित करा"
 
-#: data/io.elementary.appcenter.appdata.xml.in:63
+#: data/io.elementary.appcenter.appdata.xml.in:67
 msgid "Prevent action buttons from jumping around"
 msgstr "ऍक्शन बटणांना जंप अराउंड करण्यापासून प्रतिबंधित करा"
 
-#: data/io.elementary.appcenter.appdata.xml.in:64
+#: data/io.elementary.appcenter.appdata.xml.in:68
 msgid "Remove reset paid apps gsettings key"
 msgstr "रीसेट पेड ऍप्प जी सेटिंग की काढा"
 
-#: data/io.elementary.appcenter.appdata.xml.in:65
+#: data/io.elementary.appcenter.appdata.xml.in:69
 msgid "Memory management refinements"
 msgstr "मेमरी व्यवस्थापन परिष्करण"
 
-#: data/io.elementary.appcenter.appdata.xml.in:66
+#: data/io.elementary.appcenter.appdata.xml.in:70
 msgid ""
 "Add conditional compilation for disabling dynamic remote homepage content"
 msgstr "डायनॅमिक रिमोट मुख्यपृष्ठ सामग्री अक्षम करण्यासाठी सशर्त संकलन जोडा"
 
-#: data/io.elementary.appcenter.appdata.xml.in:67
-#: data/io.elementary.appcenter.appdata.xml.in:79
-#: data/io.elementary.appcenter.appdata.xml.in:86
-#: data/io.elementary.appcenter.appdata.xml.in:99
-#: data/io.elementary.appcenter.appdata.xml.in:110
-#: data/io.elementary.appcenter.appdata.xml.in:119
-#: data/io.elementary.appcenter.appdata.xml.in:128
-#: data/io.elementary.appcenter.appdata.xml.in:137
-#: data/io.elementary.appcenter.appdata.xml.in:146
-#: data/io.elementary.appcenter.appdata.xml.in:155
-#: data/io.elementary.appcenter.appdata.xml.in:164
-#: data/io.elementary.appcenter.appdata.xml.in:173
-#: data/io.elementary.appcenter.appdata.xml.in:182
-#: data/io.elementary.appcenter.appdata.xml.in:191
-#: data/io.elementary.appcenter.appdata.xml.in:200
-#: data/io.elementary.appcenter.appdata.xml.in:210
-#: data/io.elementary.appcenter.appdata.xml.in:220
+#: data/io.elementary.appcenter.appdata.xml.in:71
+#: data/io.elementary.appcenter.appdata.xml.in:83
+#: data/io.elementary.appcenter.appdata.xml.in:90
+#: data/io.elementary.appcenter.appdata.xml.in:103
+#: data/io.elementary.appcenter.appdata.xml.in:114
+#: data/io.elementary.appcenter.appdata.xml.in:123
+#: data/io.elementary.appcenter.appdata.xml.in:132
+#: data/io.elementary.appcenter.appdata.xml.in:141
+#: data/io.elementary.appcenter.appdata.xml.in:150
+#: data/io.elementary.appcenter.appdata.xml.in:159
+#: data/io.elementary.appcenter.appdata.xml.in:168
+#: data/io.elementary.appcenter.appdata.xml.in:177
+#: data/io.elementary.appcenter.appdata.xml.in:186
+#: data/io.elementary.appcenter.appdata.xml.in:195
+#: data/io.elementary.appcenter.appdata.xml.in:204
+#: data/io.elementary.appcenter.appdata.xml.in:214
+#: data/io.elementary.appcenter.appdata.xml.in:224
 msgid "New translations"
 msgstr "नवीन अनुवाद"
 
-#: data/io.elementary.appcenter.appdata.xml.in:74
+#: data/io.elementary.appcenter.appdata.xml.in:78
 msgid "New categories: Communication, Finance, Media Production"
 msgstr "नवीन वर्गः संप्रेषण, वित्त, माध्यम उत्पादन"
 
-#: data/io.elementary.appcenter.appdata.xml.in:75
+#: data/io.elementary.appcenter.appdata.xml.in:79
 msgid "Add Math to Science category"
 msgstr "विज्ञान श्रेणीमध्ये गणित जोडा"
 
-#: data/io.elementary.appcenter.appdata.xml.in:76
+#: data/io.elementary.appcenter.appdata.xml.in:80
 msgid "Relax email address validator"
 msgstr "आरामदायक ईमेल पत्ता वैधता तपासक"
 
-#: data/io.elementary.appcenter.appdata.xml.in:77
+#: data/io.elementary.appcenter.appdata.xml.in:81
 msgid "Present update availability more accurately"
 msgstr "वर्तमान अद्यतन उपलब्धता अधिक अचूकपणे"
 
-#: data/io.elementary.appcenter.appdata.xml.in:78
+#: data/io.elementary.appcenter.appdata.xml.in:82
 msgid "Category graphics revamped"
 msgstr "सुधारित ग्राफिक्स श्रेणी"
 
-#: data/io.elementary.appcenter.appdata.xml.in:93
-#: data/io.elementary.appcenter.appdata.xml.in:105
-#: data/io.elementary.appcenter.appdata.xml.in:116
-#: data/io.elementary.appcenter.appdata.xml.in:125
-#: data/io.elementary.appcenter.appdata.xml.in:134
-#: data/io.elementary.appcenter.appdata.xml.in:143
-#: data/io.elementary.appcenter.appdata.xml.in:152
-#: data/io.elementary.appcenter.appdata.xml.in:161
-#: data/io.elementary.appcenter.appdata.xml.in:170
-#: data/io.elementary.appcenter.appdata.xml.in:179
-#: data/io.elementary.appcenter.appdata.xml.in:188
-#: data/io.elementary.appcenter.appdata.xml.in:197
+#: data/io.elementary.appcenter.appdata.xml.in:97
+#: data/io.elementary.appcenter.appdata.xml.in:109
+#: data/io.elementary.appcenter.appdata.xml.in:120
+#: data/io.elementary.appcenter.appdata.xml.in:129
+#: data/io.elementary.appcenter.appdata.xml.in:138
+#: data/io.elementary.appcenter.appdata.xml.in:147
+#: data/io.elementary.appcenter.appdata.xml.in:156
+#: data/io.elementary.appcenter.appdata.xml.in:165
+#: data/io.elementary.appcenter.appdata.xml.in:174
+#: data/io.elementary.appcenter.appdata.xml.in:183
+#: data/io.elementary.appcenter.appdata.xml.in:192
+#: data/io.elementary.appcenter.appdata.xml.in:201
 msgid "Bug fixes and improve performance."
 msgstr "दोष निराकरण आणि कार्यप्रदर्शन सुधारित करा."
 
-#: data/io.elementary.appcenter.appdata.xml.in:95
+#: data/io.elementary.appcenter.appdata.xml.in:99
 msgid "Improve transaction success rate"
 msgstr "व्यवहार यश दर सुधारित करा"
 
-#: data/io.elementary.appcenter.appdata.xml.in:96
+#: data/io.elementary.appcenter.appdata.xml.in:100
 msgid "Add Publishing to Office category"
 msgstr "कार्यालय श्रेणीमध्ये प्रकाशन जोडा"
 
-#: data/io.elementary.appcenter.appdata.xml.in:97
+#: data/io.elementary.appcenter.appdata.xml.in:101
 msgid "Improve descriptions of OS Updates"
 msgstr "ओएस अपडेट्सचे वर्णन सुधारा"
 
-#: data/io.elementary.appcenter.appdata.xml.in:98
-#: data/io.elementary.appcenter.appdata.xml.in:109
-#: data/io.elementary.appcenter.appdata.xml.in:118
-#: data/io.elementary.appcenter.appdata.xml.in:127
-#: data/io.elementary.appcenter.appdata.xml.in:136
-#: data/io.elementary.appcenter.appdata.xml.in:145
-#: data/io.elementary.appcenter.appdata.xml.in:154
-#: data/io.elementary.appcenter.appdata.xml.in:163
-#: data/io.elementary.appcenter.appdata.xml.in:172
-#: data/io.elementary.appcenter.appdata.xml.in:181
-#: data/io.elementary.appcenter.appdata.xml.in:190
+#: data/io.elementary.appcenter.appdata.xml.in:102
+#: data/io.elementary.appcenter.appdata.xml.in:113
+#: data/io.elementary.appcenter.appdata.xml.in:122
+#: data/io.elementary.appcenter.appdata.xml.in:131
+#: data/io.elementary.appcenter.appdata.xml.in:140
+#: data/io.elementary.appcenter.appdata.xml.in:149
+#: data/io.elementary.appcenter.appdata.xml.in:158
+#: data/io.elementary.appcenter.appdata.xml.in:167
+#: data/io.elementary.appcenter.appdata.xml.in:176
+#: data/io.elementary.appcenter.appdata.xml.in:185
+#: data/io.elementary.appcenter.appdata.xml.in:194
 msgid "Various bug fixes and performance improvements"
 msgstr "विविध दोष निराकरणे आणि कार्यक्षमता सुधारणा"
 
-#: data/io.elementary.appcenter.appdata.xml.in:107
+#: data/io.elementary.appcenter.appdata.xml.in:111
 msgid "Give details for Operating System Updates"
 msgstr "ऑपरेटिंग सिस्टम अद्यतनांसाठी तपशील द्या"
 
-#: data/io.elementary.appcenter.appdata.xml.in:108
+#: data/io.elementary.appcenter.appdata.xml.in:112
 msgid "Support mouse button navigation"
 msgstr "माऊस बटण नेव्हिगेशन समर्थन"
 
-#: data/io.elementary.appcenter.appdata.xml.in:199
+#: data/io.elementary.appcenter.appdata.xml.in:203
 msgid "Fix crash caused by entries with missing packages"
 msgstr "गहाळ पॅकेजेससह झालेल्या नोंदीमुळे होणारा क्रॅश दुरुस्त करा"
 
-#: data/io.elementary.appcenter.appdata.xml.in:206
+#: data/io.elementary.appcenter.appdata.xml.in:210
 msgid "Add capability to search by category and apply minor bug fixes."
 msgstr "श्रेणीनुसार शोधण्याची क्षमता जोडा आणि किरकोळ दोष निराकरणे लागू करा."
 
-#: data/io.elementary.appcenter.appdata.xml.in:208
+#: data/io.elementary.appcenter.appdata.xml.in:212
 msgid "It is now possible to search apps inside a category"
 msgstr "श्रेणीमध्ये अॅप्स शोधणे आता शक्य आहे"
 
-#: data/io.elementary.appcenter.appdata.xml.in:209
+#: data/io.elementary.appcenter.appdata.xml.in:213
 msgid "Prevent multiple authentication dialogs when resuming from suspend"
 msgstr "निलंबन पासून पुन्हा सुरू झाल्यावर एकाधिक प्रमाणीकरण संवाद टाळा"
 
-#: data/io.elementary.appcenter.appdata.xml.in:216
+#: data/io.elementary.appcenter.appdata.xml.in:220
 msgid ""
 "Search performance has beeen improved, the category name is now shown on the "
 "headbar and minor bugs have been fixed."
@@ -259,15 +276,15 @@ msgstr ""
 "शोध  कार्यक्षमता  सुधारित केली आहे, श्रेणी नाव आता हेडबारवर दर्शविले आहे आणि किरकोळ दोष "
 "निश्चित केले गेले आहेत."
 
-#: data/io.elementary.appcenter.appdata.xml.in:218
+#: data/io.elementary.appcenter.appdata.xml.in:222
 msgid "Fix Steam installation"
 msgstr "स्टीम इंस्टॉलेशन दुरुस्त करा"
 
-#: data/io.elementary.appcenter.appdata.xml.in:219
+#: data/io.elementary.appcenter.appdata.xml.in:223
 msgid "Make search asynchronous"
 msgstr "शोध अतुल्यकालिक करा"
 
-#: data/io.elementary.appcenter.appdata.xml.in:274
+#: data/io.elementary.appcenter.appdata.xml.in:278
 msgid "elementary, Inc."
 msgstr "एलिमेंटरी, Inc."
 
