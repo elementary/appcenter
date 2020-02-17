@@ -308,7 +308,6 @@ namespace AppCenter.Views {
             header_grid.column_spacing = 12;
             header_grid.row_spacing = 6;
             header_grid.hexpand = true;
-            header_grid.valign = Gtk.Align.CENTER;
             header_grid.attach (image, 0, 0, 1, 3);
             header_grid.attach (package_name, 1, 0);
             header_grid.attach (package_author, 1, 1);
