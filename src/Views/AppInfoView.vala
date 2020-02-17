@@ -20,6 +20,8 @@
 
 namespace AppCenter.Views {
     public class AppInfoView : AppCenter.AbstractAppContainer {
+        public const int SCREENSHOT_WIDGET_WIDTH = 800;
+
         public signal void show_other_package (
             AppCenterCore.Package package,
             bool remember_history = true,
@@ -78,7 +80,7 @@ namespace AppCenter.Views {
 
             if (screenshots.length > 0) {
                 app_screenshots = new Gtk.Stack ();
-                app_screenshots.width_request = 800;
+                app_screenshots.width_request = SCREENSHOT_WIDGET_WIDTH;
                 app_screenshots.height_request = 500;
                 app_screenshots.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
                 app_screenshots.halign = Gtk.Align.CENTER;
@@ -630,18 +632,33 @@ namespace AppCenter.Views {
 
                 List<string> urls = new List<string> ();
 
-                screenshots.foreach ((screenshot) => {
-                    screenshot.get_images ().foreach ((image) => {
-                        if (image.get_kind () == AppStream.ImageKind.SOURCE) {
-                            if (screenshot.get_kind () == AppStream.ScreenshotKind.DEFAULT) {
-                                urls.prepend (image.get_url ());
-                            } else {
-                                urls.append (image.get_url ());
-                            }
+                var scale = get_scale_factor ();
+                var min_screenshot_width = SCREENSHOT_WIDGET_WIDTH * scale;
 
-                            return;
+                screenshots.foreach ((screenshot) => {
+                    AppStream.Image? best_image = null;
+                    screenshot.get_images ().foreach ((image) => {
+                        // Image is better than no image
+                        if (best_image == null) {
+                            best_image = image;
+                        }
+
+                        // If our current best is less than the minimum and we have a bigger image, choose that instead
+                        if (best_image.get_width () < min_screenshot_width && image.get_width () >= best_image.get_width ()) {
+                            best_image = image;
+                        }
+
+                        // If our new image is smaller than the current best, but still bigger than the minimum, pick that
+                        if (image.get_width () < best_image.get_width () && image.get_width () >= min_screenshot_width) {
+                            best_image = image;
                         }
                     });
+
+                    if (screenshot.get_kind () == AppStream.ScreenshotKind.DEFAULT && best_image != null) {
+                        urls.prepend (best_image.get_url ());
+                    } else {
+                        urls.append (best_image.get_url ());
+                    }
                 });
 
                 string?[] screenshot_files = new string?[urls.length ()];
@@ -703,9 +720,9 @@ namespace AppCenter.Views {
         private void load_screenshot (string path) {
             var scale_factor = get_scale_factor ();
             try {
-                var pixbuf = new Gdk.Pixbuf.from_file_at_scale (path, 800 * scale_factor, 600 * scale_factor, true);
+                var pixbuf = new Gdk.Pixbuf.from_file_at_scale (path, SCREENSHOT_WIDGET_WIDTH * scale_factor, 600 * scale_factor, true);
                 var image = new Gtk.Image ();
-                image.width_request = 800;
+                image.width_request = SCREENSHOT_WIDGET_WIDTH;
                 image.height_request = 500;
                 image.icon_name = "image-x-generic";
                 image.halign = Gtk.Align.CENTER;
