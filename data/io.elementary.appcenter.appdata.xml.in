@@ -23,6 +23,7 @@
           <li>Fix for notification not appearing when a restart is required</li>
           <li>Prevent unescaped XML entities from appearing in application names</li>
           <li>Load the "Installed" view faster</li>
+          <li>System components no longer have an "Open" button</li>
         </ul>
       </description>
     </release>
