@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-17 16:29+0000\n"
-"PO-Revision-Date: 2019-12-18 23:11+0000\n"
+"PO-Revision-Date: 2020-02-17 21:28+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
 "extra/pt/>\n"
@@ -43,10 +43,13 @@ msgstr "Pequenas correções"
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "Update application details when changes happen outside of AppCenter"
 msgstr ""
+"Atualizar detalhes da aplicação quando as alterações acontecem fora da Loja "
+"de Aplicações"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Fix for notification not appearing when a restart is required"
 msgstr ""
+"Correção para não aparecer uma notificação quando é necessário reiniciar"
 
 #: data/io.elementary.appcenter.appdata.xml.in:24
 msgid "Prevent unescaped XML entities from appearing in application names"
@@ -60,10 +63,12 @@ msgstr "Carregar a visão \"Instalado\" mais rapidamente"
 msgid ""
 "Save some bandwidth by downloading smaller screenshots where appropriate"
 msgstr ""
+"Economiza alguma banda larga ao transferir ecrãs mais pequenos quando "
+"apropriado"
 
 #: data/io.elementary.appcenter.appdata.xml.in:27
 msgid "System components no longer have an \"Open\" button"
-msgstr ""
+msgstr "Os componentes do sistema já não têm um botão \"Abrir\""
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
 msgid "Prevent AppCenter from opening on log in"
