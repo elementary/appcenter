@@ -85,7 +85,8 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
             installation_changed_monitor.changed.connect (() => {
                 debug ("Flatpak installation changed.");
-                refresh_cache (null);
+                refresh_cache.begin (null);
+                get_installed_applications.begin (null);
             });
         } else {
             warning ("Couldn't create Installation File Monitor due to no installation");
