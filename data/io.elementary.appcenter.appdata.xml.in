@@ -27,6 +27,7 @@
           <li>Ensure flatpak applications show in the category views</li>
           <li>Save some bandwidth by downloading smaller screenshots where appropriate</li>
           <li>System components no longer have an "Open" button</li>
+          <li>Applications menu can now remove flatpaks that weren't installed by AppCenter</li>
         </ul>
       </description>
     </release>
