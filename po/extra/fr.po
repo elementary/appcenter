@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-18 00:34+0000\n"
-"PO-Revision-Date: 2020-02-16 19:08+0000\n"
+"PO-Revision-Date: 2020-02-19 10:08+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/appcenter/extra/"
 "fr/>\n"
@@ -55,6 +55,8 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:24
 msgid "Apps in list views now load in the correct order when scrolling"
 msgstr ""
+"Les applications dans la vue en liste sont désormais chargées dans le bon "
+"ordre lors du défilement"
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
 msgid "Prevent unescaped XML entities from appearing in application names"
@@ -68,20 +70,26 @@ msgstr "Chargement de la vue « Installées » plus rapide"
 #: data/io.elementary.appcenter.appdata.xml.in:27
 msgid "Ensure flatpak applications show in the category views"
 msgstr ""
+"Nous avons fait en sorte que les applications flatpak s'affichent des les "
+"vues par catégorie"
 
 #: data/io.elementary.appcenter.appdata.xml.in:28
 msgid ""
 "Save some bandwidth by downloading smaller screenshots where appropriate"
 msgstr ""
+"Lorsque c'est possible, des captures d'écran de plus petite taille sont "
+"téléchargées pour économiser de la bande passante"
 
 #: data/io.elementary.appcenter.appdata.xml.in:29
 msgid "System components no longer have an \"Open\" button"
-msgstr ""
+msgstr "Les composants système n'ont plus de bouton « Ouvrir »"
 
 #: data/io.elementary.appcenter.appdata.xml.in:30
 msgid ""
 "Applications menu can now remove flatpaks that weren't installed by AppCenter"
 msgstr ""
+"Le menu des Applications permet désormais de supprimer des applications "
+"flatpak non installées via le Centre d'Applications"
 
 #: data/io.elementary.appcenter.appdata.xml.in:38
 msgid "Prevent AppCenter from opening on log in"
