@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-18 00:34+0000\n"
-"PO-Revision-Date: 2020-02-17 21:28+0000\n"
+"PO-Revision-Date: 2020-02-20 23:08+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
 "extra/pt/>\n"
@@ -54,6 +54,8 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:24
 msgid "Apps in list views now load in the correct order when scrolling"
 msgstr ""
+"As aplicações em vista de lista agora são carregadas na ordem correta ao "
+"rolar o cursor"
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
 msgid "Prevent unescaped XML entities from appearing in application names"
@@ -66,6 +68,8 @@ msgstr "Carregar a visão \"Instalado\" mais rapidamente"
 #: data/io.elementary.appcenter.appdata.xml.in:27
 msgid "Ensure flatpak applications show in the category views"
 msgstr ""
+"Certifica-se de que as aplicações flatpak são mostradas na vista em "
+"categorias"
 
 #: data/io.elementary.appcenter.appdata.xml.in:28
 msgid ""
@@ -82,6 +86,8 @@ msgstr "Os componentes do sistema já não têm um botão \"Abrir\""
 msgid ""
 "Applications menu can now remove flatpaks that weren't installed by AppCenter"
 msgstr ""
+"O menu de aplicações pode agora remover os flatpaks que não foram instalados "
+"pela Loja de Aplicações"
 
 #: data/io.elementary.appcenter.appdata.xml.in:38
 msgid "Prevent AppCenter from opening on log in"
