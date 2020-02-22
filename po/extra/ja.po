@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-18 00:34+0000\n"
-"PO-Revision-Date: 2019-12-18 23:11+0000\n"
+"PO-Revision-Date: 2020-02-22 14:08+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/extra/"
 "ja/>\n"
@@ -41,15 +41,15 @@ msgstr "軽微な修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "Update application details when changes happen outside of AppCenter"
-msgstr ""
+msgstr "AppCenter 以外で変更があった際にアプリケーションの詳細情報を更新"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Fix for notification not appearing when a restart is required"
-msgstr ""
+msgstr "再起動が必要な場合に通知が表示されない問題を修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:24
 msgid "Apps in list views now load in the correct order when scrolling"
-msgstr ""
+msgstr "スクロール時にリストビューのアプリが正しい順番で読み込まれない問題を修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
 msgid "Prevent unescaped XML entities from appearing in application names"
@@ -63,21 +63,21 @@ msgstr "\"インストール済み\" タブの読み込みを高速化"
 
 #: data/io.elementary.appcenter.appdata.xml.in:27
 msgid "Ensure flatpak applications show in the category views"
-msgstr ""
+msgstr "Flatpak アプリケーションがカテゴリービューで表示されるように修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:28
 msgid ""
 "Save some bandwidth by downloading smaller screenshots where appropriate"
-msgstr ""
+msgstr "場合に応じて小さいサイズのスクリーンショットをダウンロードすることで、帯域幅を小さくするように修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:29
 msgid "System components no longer have an \"Open\" button"
-msgstr ""
+msgstr "システムコンポーネントに \"開く\" ボタンが表示されないように修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:30
 msgid ""
 "Applications menu can now remove flatpaks that weren't installed by AppCenter"
-msgstr ""
+msgstr "AppCenter からインストールしていない Flatpak アプリケーションを、アプリケーションメニューから削除できるように修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:38
 msgid "Prevent AppCenter from opening on log in"
