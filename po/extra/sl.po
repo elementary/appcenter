@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-18 00:34+0000\n"
-"PO-Revision-Date: 2020-02-16 19:08+0000\n"
+"PO-Revision-Date: 2020-02-24 23:08+0000\n"
 "Last-Translator: Marko <marko.dolar@gmail.com>\n"
 "Language-Team: Slovenian <https://l10n.elementary.io/projects/appcenter/"
 "extra/sl/>\n"
@@ -11,8 +11,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
-"%100==4 ? 2 : 3;\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
+"n%100==4 ? 2 : 3;\n"
 "X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
@@ -54,6 +54,8 @@ msgstr "Popravljeno neprikazano obvestilo, ko je potreben ponovni zagon"
 #: data/io.elementary.appcenter.appdata.xml.in:24
 msgid "Apps in list views now load in the correct order when scrolling"
 msgstr ""
+"Aplikacije v seznamih se zdaj naložijo v pravilnem vrstnem redu med "
+"pomikanjem"
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
 msgid "Prevent unescaped XML entities from appearing in application names"
@@ -65,21 +67,23 @@ msgstr "Naloži hitreje kategorijo \"Nameščeno\""
 
 #: data/io.elementary.appcenter.appdata.xml.in:27
 msgid "Ensure flatpak applications show in the category views"
-msgstr ""
+msgstr "Zagotovitev prikaza flatpak aplikacij v kategorijah"
 
 #: data/io.elementary.appcenter.appdata.xml.in:28
 msgid ""
 "Save some bandwidth by downloading smaller screenshots where appropriate"
-msgstr ""
+msgstr "Varčuj s pasovno širino s prenašanjem manjših slik, kjer je to primerno"
 
 #: data/io.elementary.appcenter.appdata.xml.in:29
 msgid "System components no longer have an \"Open\" button"
-msgstr ""
+msgstr "Sistemske komponente nimajo več gumba \"Odpri\""
 
 #: data/io.elementary.appcenter.appdata.xml.in:30
 msgid ""
 "Applications menu can now remove flatpaks that weren't installed by AppCenter"
 msgstr ""
+"Aplikacijski meni lahko izbriše flatpack-e, ki niso bili nameščeni prek "
+"Centra aplikacij"
 
 #: data/io.elementary.appcenter.appdata.xml.in:38
 msgid "Prevent AppCenter from opening on log in"
