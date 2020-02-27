@@ -5,17 +5,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-05 00:29+0000\n"
+"POT-Creation-Date: 2020-02-17 16:29+0000\n"
 "PO-Revision-Date: 2019-05-16 00:14+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
-"Language-Team: Serbian <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/sr/>\n"
+"Language-Team: Serbian <https://l10n.elementary.io/projects/appcenter/appcenter/sr/>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 3.6.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
@@ -312,10 +310,7 @@ msgstr ""
 
 #: src/Dialogs/ContentWarningDialog.vala:31
 #, c-format
-msgid ""
-"“%s” may contain content only suitable for adults or that may be sensitive "
-"or disturbing. In general, elementary does not review or endorse the "
-"contents of this app."
+msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
 msgstr ""
 
 #: src/Dialogs/ContentWarningDialog.vala:33
@@ -350,12 +345,8 @@ msgid "Cancel"
 msgstr "Откажи"
 
 #: src/Dialogs/StripeDialog.vala:41
-msgid ""
-"An error occurred while processing the card. Please try again later. We "
-"apologize for any inconvenience caused."
-msgstr ""
-"Дошло је до грешке приликом обраде картице. Молимо вас покушајте касније. "
-"Извињавамо се на непријатности."
+msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
+msgstr "Дошло је до грешке приликом обраде картице. Молимо вас покушајте касније. Извињавамо се на непријатности."
 
 #: src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
@@ -371,12 +362,8 @@ msgid "Pay $%d for %s"
 msgstr "Плати $%d за %s"
 
 #: src/Dialogs/StripeDialog.vala:96
-msgid ""
-"This is a one time payment. Your email address is only used to send you a "
-"receipt."
-msgstr ""
-"Ово је једнократна уплата. Ваша адреса е-поште јединствено се користи за "
-"испоруку рачуна."
+msgid "This is a one time payment. Your email address is only used to send you a receipt."
+msgstr "Ово је једнократна уплата. Ваша адреса е-поште јединствено се користи за испоруку рачуна."
 
 #: src/Dialogs/StripeDialog.vala:106 src/Widgets/SharePopover.vala:35
 msgid "Email"
@@ -384,12 +371,8 @@ msgstr "Е-Пошта"
 
 #: src/Dialogs/StripeDialog.vala:108
 #, fuzzy
-msgid ""
-"Your email address is only used to send a receipt. You will not be "
-"subscribed to any mailing list."
-msgstr ""
-"Ваша адреса е-поште се користи да би се послао рачун. Никад се не чува нигде "
-"и нећете бити пријављивани ни на какве мејлинг листе."
+msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
+msgstr "Ваша адреса е-поште се користи да би се послао рачун. Никад се не чува нигде и нећете бити пријављивани ни на какве мејлинг листе."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127
@@ -426,33 +409,20 @@ msgid "Retry"
 msgstr "Покушајте поново"
 
 #: src/Dialogs/StripeDialog.vala:513 src/Dialogs/StripeDialog.vala:578
-msgid ""
-"The card number is incorrect. Please try again using the correct card number."
-msgstr ""
-"Број картице није исправан. Молим, покушајте касније са исправним бројем "
-"картице."
+msgid "The card number is incorrect. Please try again using the correct card number."
+msgstr "Број картице није исправан. Молим, покушајте касније са исправним бројем картице."
 
 #: src/Dialogs/StripeDialog.vala:515
-msgid ""
-"The expiration month is invalid. Please try again using the correct "
-"expiration date."
-msgstr ""
-"Месец истека картице није у реду. Молим, покушајте поново са коришћењем "
-"исправног датума истека картице."
+msgid "The expiration month is invalid. Please try again using the correct expiration date."
+msgstr "Месец истека картице није у реду. Молим, покушајте поново са коришћењем исправног датума истека картице."
 
 #: src/Dialogs/StripeDialog.vala:517 src/Dialogs/StripeDialog.vala:575
-msgid ""
-"The expiration year is invalid. Please try again using the correct "
-"expiration date."
-msgstr ""
-"Година истека није исправна. Молимо, покушајте поново са исправном годином "
-"истека."
+msgid "The expiration year is invalid. Please try again using the correct expiration date."
+msgstr "Година истека није исправна. Молимо, покушајте поново са исправном годином истека."
 
 #: src/Dialogs/StripeDialog.vala:520 src/Dialogs/StripeDialog.vala:573
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr ""
-"Сигурносни код (CVC) није исправан. Молимо, покушајте поново користећи "
-"исправан сигурносни код (CVC)."
+msgstr "Сигурносни код (CVC) није исправан. Молимо, покушајте поново користећи исправан сигурносни код (CVC)."
 
 #: src/Dialogs/StripeDialog.vala:522 src/Dialogs/StripeDialog.vala:564
 msgid "The card has expired. Please try again with a different card."
@@ -460,24 +430,15 @@ msgstr "Картица је истекла. Молимо, покушајте п�
 
 #: src/Dialogs/StripeDialog.vala:542
 msgid "There are too many payment requests at the moment, please retry later."
-msgstr ""
-"Тренутно има превише упите за уплату, молимо, покушајте  касније поново."
+msgstr "Тренутно има превише упите за уплату, молимо, покушајте  касније поново."
 
 #: src/Dialogs/StripeDialog.vala:558
-msgid ""
-"This card does not support this kind of transaction. Please try again with a "
-"different card."
-msgstr ""
-"Ова картица не подржава ту врсту уплате. Молимо, покушајте поново са другом "
-"картицом."
+msgid "This card does not support this kind of transaction. Please try again with a different card."
+msgstr "Ова картица не подржава ту врсту уплате. Молимо, покушајте поново са другом картицом."
 
 #: src/Dialogs/StripeDialog.vala:560
-msgid ""
-"The currency is not supported by this card. Please try again with a "
-"different card."
-msgstr ""
-"Ова картица не подржава уплату са том валутом. Молимо, покушајте поново са "
-"другом картицом."
+msgid "The currency is not supported by this card. Please try again with a different card."
+msgstr "Ова картица не подржава уплату са том валутом. Молимо, покушајте поново са другом картицом."
 
 #: src/Dialogs/StripeDialog.vala:562
 msgid "The transaction has already been processed."
@@ -485,18 +446,12 @@ msgstr "Уплата је већ била обрађена."
 
 #: src/Dialogs/StripeDialog.vala:566
 #, fuzzy
-msgid ""
-"The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
-"postal code."
-msgstr ""
-"Број картице није исправан. Молим, покушајте касније са исправним бројем "
-"картице."
+msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
+msgstr "Број картице није исправан. Молим, покушајте касније са исправним бројем картице."
 
 #: src/Dialogs/StripeDialog.vala:568
 msgid "You don't have enough funds. Please use an alternative payment method."
-msgstr ""
-"Немате довољно средстава за извршавање уплате. Молимо, користите другу врсту "
-"плаћања."
+msgstr "Немате довољно средстава за извршавање уплате. Молимо, користите другу врсту плаћања."
 
 #: src/Dialogs/StripeDialog.vala:570
 msgid "The amount is incorrect. Please try again using a valid amount."
@@ -505,24 +460,15 @@ msgstr "Износ није исправан. Молимо, покушајте �
 #: src/Dialogs/StripeDialog.vala:581
 #, fuzzy
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr ""
-"Број картице није исправан. Молим, покушајте касније са исправним бројем "
-"картице."
+msgstr "Број картице није исправан. Молим, покушајте касније са исправним бројем картице."
 
 #: src/Dialogs/StripeDialog.vala:583
-msgid ""
-"There has been too many PIN attempts. Please try again with a different card."
-msgstr ""
-"Превише грешне покушаје уноса PIN кода. Молимо, покушајте поново са другом "
-"картицом."
+msgid "There has been too many PIN attempts. Please try again with a different card."
+msgstr "Превише грешне покушаје уноса PIN кода. Молимо, покушајте поново са другом картицом."
 
 #: src/Dialogs/StripeDialog.vala:603
-msgid ""
-"Unable to complete the transaction. Please contact your bank for further "
-"information."
-msgstr ""
-"Немогуће извршавање уплате. Молимо, обратите се вашој банци за више "
-"информација."
+msgid "Unable to complete the transaction. Please contact your bank for further information."
+msgstr "Немогуће извршавање уплате. Молимо, обратите се вашој банци за више информација."
 
 #: src/Dialogs/StripeDialog.vala:606
 msgid "The balance or credit limit on the card has been reached."
@@ -530,8 +476,7 @@ msgstr "Расположљива средства или лимит кредит
 
 #: src/Dialogs/StripeDialog.vala:609
 msgid "The given card is a test card. Please use a real card to proceed."
-msgstr ""
-"Ова картица је пробна. Молимо, користите праву картицу да би сте наставили."
+msgstr "Ова картица је пробна. Молимо, користите праву картицу да би сте наставили."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
@@ -555,9 +500,7 @@ msgstr "Уклони"
 #: src/Dialogs/UninstallFailDialog.vala:26
 #, fuzzy
 msgid "This may have been caused by external or manually compiled software."
-msgstr ""
-"Ово се можда догодило због мануелно додате апликације или корумпиране "
-"датотеке."
+msgstr "Ово се можда догодило због мануелно додате апликације или корумпиране датотеке."
 
 #: src/Dialogs/UninstallFailDialog.vala:37
 #, fuzzy
@@ -574,12 +517,8 @@ msgid "Failed to Fetch Updates"
 msgstr "Грешка при прибављивањем ажурирања"
 
 #: src/Dialogs/UpdateFailDialog.vala:26
-msgid ""
-"This may have been caused by external, manually added software repositories "
-"or a corrupted sources file."
-msgstr ""
-"Ово се можда догодило због мануелно додате апликације или корумпиране "
-"датотеке."
+msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
+msgstr "Ово се можда догодило због мануелно додате апликације или корумпиране датотеке."
 
 #: src/Dialogs/UpdateFailDialog.vala:34
 msgid "Ignore"
@@ -589,95 +528,94 @@ msgstr "Игнориши"
 msgid "Try Again"
 msgstr "Покушај поново"
 
-#: src/Views/AppInfoView.vala:177
+#: src/Views/AppInfoView.vala:157
 msgid "Screenshot Not Available"
 msgstr "Снимак екрана није доступан"
 
-#: src/Views/AppInfoView.vala:236
+#: src/Views/AppInfoView.vala:208
 #, fuzzy
 msgid "Homepage"
 msgstr "Матична страница"
 
-#: src/Views/AppInfoView.vala:242
+#: src/Views/AppInfoView.vala:214
 msgid "Suggest Translations"
 msgstr "Предложи преводе"
 
-#: src/Views/AppInfoView.vala:248
+#: src/Views/AppInfoView.vala:220
 msgid "Report a Problem"
 msgstr "Пријави проблем"
 
-#: src/Views/AppInfoView.vala:254
+#: src/Views/AppInfoView.vala:226
 msgid "Help"
 msgstr "Помоћ"
 
-#: src/Views/AppInfoView.vala:281
+#: src/Views/AppInfoView.vala:253
 msgid "What's New:"
 msgstr "Новости:"
 
-#: src/Views/AppInfoView.vala:300
+#: src/Views/AppInfoView.vala:272
 msgid "Extensions:"
 msgstr "Проширења:"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:395
+#: src/Views/AppInfoView.vala:366
 msgid "Public Domain"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:398
+#: src/Views/AppInfoView.vala:369
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr ""
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:403
+#: src/Views/AppInfoView.vala:374
 #, fuzzy
 msgid "Free Software"
 msgstr "Уредите изворни софтвер"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:406
+#: src/Views/AppInfoView.vala:377
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:410
+#: src/Views/AppInfoView.vala:381
 msgid "Proprietary"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:413
+#: src/Views/AppInfoView.vala:384
 #, fuzzy
 msgid "Unknown License"
 msgstr "Непознато стање"
 
-#: src/Views/AppInfoView.vala:455
+#: src/Views/AppInfoView.vala:426
 #, c-format
 msgid "Other Apps by %s"
 msgstr "Друге апликације од %s"
 
-#: src/Views/AppInfoView.vala:489
+#: src/Views/AppInfoView.vala:460
 msgid "Link copied to clipboard"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:500
+#: src/Views/AppInfoView.vala:471
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "Погледај %s у Центру апликација:"
 
-#: src/Views/AppInfoView.vala:507
+#: src/Views/AppInfoView.vala:478
 msgid "Share"
 msgstr "Подели"
 
-#: src/Views/AppInfoView.vala:822
+#: src/Views/AppInfoView.vala:802
 msgid "Fund"
 msgstr "Финансирај"
 
-#: src/Views/AppInfoView.vala:844
+#: src/Views/AppInfoView.vala:824
 msgid "Fund the development of this app"
 msgstr "Финансирај развоја ове апликације"
 
 #: src/Views/AppListUpdateView.vala:56
 msgid "A restart is required to complete the installation of updates"
-msgstr ""
-"Потребно је поновно покретање система за завршавање инсталације ажурирања"
+msgstr "Потребно је поновно покретање система за завршавање инсталације ажурирања"
 
 #: src/Views/AppListUpdateView.vala:64
 msgid "Restart Now"
@@ -721,14 +659,13 @@ msgstr "Нема резултата"
 
 #: src/Widgets/AbstractAppList.vala:36
 msgid "No apps could be found. Try changing search terms."
-msgstr ""
-"Не могу да нађем ниједан програм. Пробајте да измените услове претраге."
+msgstr "Не могу да нађем ниједан програм. Пробајте да измените услове претраге."
 
 #: src/Widgets/Banner.vala:55
 msgid "An open, pay-what-you-want app store"
 msgstr "Отворени центар апликација у којем плаћаш колико желиш"
 
-#: src/Widgets/Banner.vala:68
+#: src/Widgets/Banner.vala:74
 msgid "Get the apps that you need at a price you can afford."
 msgstr "Купуј апликације које требаш по цени која ти одговара."
 

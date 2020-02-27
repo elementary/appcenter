@@ -325,12 +325,15 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 
     public Gee.Collection<AppCenterCore.Package> get_applications_for_category (AppStream.Category category) {
         unowned GLib.GenericArray<AppStream.Component> components = category.get_components ();
-        if (components.length == 0) {
-            var category_array = new GLib.GenericArray<AppStream.Category> ();
-            category_array.add (category);
-            AppStream.utils_sort_components_into_categories (appstream_pool.get_components (), category_array, true);
-            components = category.get_components ();
+        // Clear out any cached components that could be from other backends
+        if (components.length != 0) {
+            components.remove_range (0, components.length);
         }
+
+        var category_array = new GLib.GenericArray<AppStream.Category> ();
+        category_array.add (category);
+        AppStream.utils_sort_components_into_categories (appstream_pool.get_components (), category_array, true);
+        components = category.get_components ();
 
         var apps = new Gee.TreeSet<AppCenterCore.Package> ();
         components.foreach ((comp) => {
@@ -755,6 +758,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         var exit_status = results.get_exit_code ();
         if (exit_status == Pk.Exit.SUCCESS) {
             reload_appstream_pool ();
+            BackendAggregator.get_default ().cache_flush_needed ();
         }
 
         job.result = Value (typeof (bool));

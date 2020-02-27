@@ -37,6 +37,8 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
     private static Flatpak.Installation? installation;
 
+    private static GLib.FileMonitor installation_changed_monitor;
+
     private uint total_operations;
     private int current_operation;
 
@@ -72,6 +74,23 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         appstream_pool = new AppStream.Pool ();
         appstream_pool.set_cache_flags (AppStream.CacheFlags.NONE);
         package_list = new Gee.HashMap<string, Package> (null, null);
+
+        // Monitor the FlatpakInstallation for changes (e.g. adding/removing remotes)
+        if (installation != null) {
+            try {
+                installation_changed_monitor = installation.create_monitor ();
+            } catch (Error e) {
+                warning ("Couldn't create Installation File Monitor : %s", e.message);
+            }
+
+            installation_changed_monitor.changed.connect (() => {
+                debug ("Flatpak installation changed.");
+                refresh_cache.begin (null);
+                get_installed_applications.begin (null);
+            });
+        } else {
+            warning ("Couldn't create Installation File Monitor due to no installation");
+        }
 
         local_metadata_path = Path.build_filename (
             Environment.get_user_cache_dir (),
@@ -150,12 +169,15 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
     public Gee.Collection<Package> get_applications_for_category (AppStream.Category category) {
         unowned GLib.GenericArray<AppStream.Component> components = category.get_components ();
-        if (components.length == 0) {
-            var category_array = new GLib.GenericArray<AppStream.Category> ();
-            category_array.add (category);
-            AppStream.utils_sort_components_into_categories (appstream_pool.get_components (), category_array, true);
-            components = category.get_components ();
+        // Clear out any cached components that could be from other backends
+        if (components.length != 0) {
+            components.remove_range (0, components.length);
         }
+
+        var category_array = new GLib.GenericArray<AppStream.Category> ();
+        category_array.add (category);
+        AppStream.utils_sort_components_into_categories (appstream_pool.get_components (), category_array, true);
+        components = category.get_components ();
 
         var apps = new Gee.TreeSet<AppCenterCore.Package> ();
         components.foreach ((comp) => {
@@ -341,14 +363,16 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
         for (int i = 0; i < remotes.length; i++) {
             unowned Flatpak.Remote remote = remotes[i];
-            if (remote.get_disabled ()) {
-                continue;
-            }
 
             bool cache_refresh_needed = false;
 
             unowned string origin_name = remote.get_name ();
             debug ("Found remote: %s", origin_name);
+
+            if (remote.get_disabled ()) {
+                debug ("%s is disabled, skipping.", origin_name);
+                continue;
+            }
 
             var timestamp_file = remote.get_appstream_timestamp (null);
             if (!timestamp_file.query_exists ()) {
@@ -431,6 +455,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         }
 
         reload_appstream_pool ();
+        BackendAggregator.get_default ().cache_flush_needed ();
 
         job.result = Value (typeof (bool));
         job.result.set_boolean (true);
