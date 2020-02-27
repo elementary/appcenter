@@ -90,7 +90,7 @@ public class AppCenterCore.UpdateManager : Object {
                 apps_with_updates.add (appcenter_package);
                 appcenter_package.change_information.updatable_packages.@set (fp_client, flatpak_update);
                 try {
-                    appcenter_package.change_information.size = yield fp_client.get_download_size (appcenter_package, null);
+                    appcenter_package.change_information.size = yield fp_client.get_download_size (appcenter_package, null, true);
                 } catch (Error e) {
                     warning ("Unable to get flatpak download size: %s", e.message);
                 }
@@ -105,7 +105,7 @@ public class AppCenterCore.UpdateManager : Object {
 
                 uint64 dl_size = 0;
                 try {
-                    dl_size = yield fp_client.get_download_size_by_id (flatpak_update, null);
+                    dl_size = yield fp_client.get_download_size_by_id (flatpak_update, null, true);
                 } catch (Error e) {
                     warning ("Unable to get flatpak download size: %s", e.message);
                 }
