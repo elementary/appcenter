@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-27 20:46+0000\n"
-"PO-Revision-Date: 2020-02-19 10:08+0000\n"
+"PO-Revision-Date: 2020-02-28 20:49+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/extra/"
 "ca/>\n"
@@ -91,7 +91,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
 msgid "Make download size estimates more accurate"
-msgstr ""
+msgstr "Estimacions de mida de baixades més acurades"
 
 #: data/io.elementary.appcenter.appdata.xml.in:39
 msgid "Prevent AppCenter from opening on log in"
