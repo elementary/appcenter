@@ -1,3 +1,51 @@
+appcenter (3.2.2) bionic; urgency=medium
+
+  * Release 3.2.2 (#1225)
+  * Update translation files
+  * Update translation template
+  * Include dependencies in flatpak download size calculations (#1139)
+  * Update translation files
+  * Update translation template
+  * FlatpakBackend: Update installed applications on external change
+    (#1219)
+  * Update translation files
+  * Update translation template
+  * Ensure categories are cleared of cached components before querying
+    (#1218)
+  * Update translation files
+  * Update translation template
+  * Fix sorting of native apps in list views (#1213)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * Choose a more appropriate screenshot size to download (#1215)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * Mark compulsory for desktop apps as non-launchable (#1214)
+  * Banner: Strip whitespace from description (#1206)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * Delete .travis.yml
+  * Add recent changes to appdata (#1209)
+  * Monitor FlatpakInstallation for Changes (#1202)
+  * Clear AppInfoView caches when appstream pools are reloaded (#1203)
+  * Run build and install in GitHub CI (#1208)
+  * Workaround PackageKit issue to fix restart notification (#1130)
+  * AppInfoView: Make an ArrowButton class (#1191)
+  * AppInfoView: Remove version from header (#1188)
+  * Replace confusing 'version' terms with 'origin' terms (#1184)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * Lookup PackageKit packages for the installed view in parallel
+    (#1117)
+  * Unescape markup for package names (#1118)
+  * AbstractAppContainer: Add a badge to OS updates (#1147)
+
+ -- elementary Builds Team <builds@elementary.io>  Fri, 28 Feb 2020 20:51:21 +0000
+
 appcenter (3.2.1) bionic; urgency=medium
 
   * Release 3.2.1 (#1150)
