@@ -325,12 +325,15 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 
     public Gee.Collection<AppCenterCore.Package> get_applications_for_category (AppStream.Category category) {
         unowned GLib.GenericArray<AppStream.Component> components = category.get_components ();
-        if (components.length == 0) {
-            var category_array = new GLib.GenericArray<AppStream.Category> ();
-            category_array.add (category);
-            AppStream.utils_sort_components_into_categories (appstream_pool.get_components (), category_array, true);
-            components = category.get_components ();
+        // Clear out any cached components that could be from other backends
+        if (components.length != 0) {
+            components.remove_range (0, components.length);
         }
+
+        var category_array = new GLib.GenericArray<AppStream.Category> ();
+        category_array.add (category);
+        AppStream.utils_sort_components_into_categories (appstream_pool.get_components (), category_array, true);
+        components = category.get_components ();
 
         var apps = new Gee.TreeSet<AppCenterCore.Package> ();
         components.foreach ((comp) => {
@@ -480,7 +483,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         job.results_ready ();
     }
 
-    public async uint64 get_download_size (Package package, Cancellable? cancellable) throws GLib.Error {
+    public async uint64 get_download_size (Package package, Cancellable? cancellable, bool is_update = false) throws GLib.Error {
         var job_args = new GetDownloadSizeArgs ();
         job_args.package = package;
         job_args.cancellable = cancellable;

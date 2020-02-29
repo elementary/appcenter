@@ -148,7 +148,7 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
         return packages;
     }
 
-    public async uint64 get_download_size (Package package, Cancellable? cancellable) throws GLib.Error {
+    public async uint64 get_download_size (Package package, Cancellable? cancellable, bool is_update = false) throws GLib.Error {
         return package.change_information.size;
     }
 

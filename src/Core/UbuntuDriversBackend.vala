@@ -117,8 +117,8 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
         return new Gee.ArrayList<Package> ();
     }
 
-    public async uint64 get_download_size (Package package, Cancellable? cancellable) throws GLib.Error {
-        return yield PackageKitBackend.get_default ().get_download_size (package, cancellable);
+    public async uint64 get_download_size (Package package, Cancellable? cancellable, bool is_update = false) throws GLib.Error {
+        return yield PackageKitBackend.get_default ().get_download_size (package, cancellable, is_update);
     }
 
     public async bool is_package_installed (Package package) throws GLib.Error {

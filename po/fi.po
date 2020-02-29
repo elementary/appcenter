@@ -1,20 +1,21 @@
 # Veli-Pekka Samuli Finnilä <vpf@tuta.io>, 2018, 2019.
-# Jiri Grönroos <jiri.gronroos@iki.fi>, 2018, 2019.
+# Jiri Grönroos <jiri.gronroos@iki.fi>, 2018, 2019, 2020.
 # Kimmo Vänttinen <kvanttinen72@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-17 16:29+0000\n"
-"PO-Revision-Date: 2019-11-06 21:09+0000\n"
-"Last-Translator: Veli-Pekka Samuli Finnilä <vpf@tuta.io>\n"
-"Language-Team: Finnish <https://l10n.elementary.io/projects/appcenter/appcenter/fi/>\n"
+"PO-Revision-Date: 2020-02-22 14:08+0000\n"
+"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
+"Language-Team: Finnish <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -232,12 +233,12 @@ msgstr "elementary-päivitykset"
 
 #: src/Core/Package.vala:334
 msgid "Ubuntu (non-curated)"
-msgstr ""
+msgstr "Ubuntu (ei kuratoitu)"
 
 #: src/Core/Package.vala:337
-#, fuzzy, c-format
+#, c-format
 msgid "%s (non-curated)"
-msgstr "%s (paikallinen)"
+msgstr "%s (ei kuratoitu)"
 
 #: src/Core/Package.vala:339
 msgid "Ubuntu Drivers"
@@ -245,7 +246,7 @@ msgstr "Ubuntu-ajurit"
 
 #: src/Core/Package.vala:342
 msgid "Unknown Origin (non-curated)"
-msgstr ""
+msgstr "Tuntematon alkuperä (ei kuratoitu)"
 
 #: src/Core/Package.vala:444
 #, c-format
