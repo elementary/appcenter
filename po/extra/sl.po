@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-27 20:46+0000\n"
-"PO-Revision-Date: 2020-02-24 23:08+0000\n"
+"PO-Revision-Date: 2020-03-01 13:09+0000\n"
 "Last-Translator: Marko <marko.dolar@gmail.com>\n"
 "Language-Team: Slovenian <https://l10n.elementary.io/projects/appcenter/"
 "extra/sl/>\n"
@@ -11,8 +11,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
-"%100==4 ? 2 : 3;\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
+"n%100==4 ? 2 : 3;\n"
 "X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
@@ -88,7 +88,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
 msgid "Make download size estimates more accurate"
-msgstr ""
+msgstr "Natančnejše ocenjevanje velikosti prenosa"
 
 #: data/io.elementary.appcenter.appdata.xml.in:39
 msgid "Prevent AppCenter from opening on log in"
