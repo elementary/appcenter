@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-27 20:46+0000\n"
-"PO-Revision-Date: 2020-02-16 19:08+0000\n"
+"PO-Revision-Date: 2020-03-05 14:09+0000\n"
 "Last-Translator: Jaimie85 <alsemgeest@gmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/extra/nl/"
 ">\n"
@@ -54,6 +54,8 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:24
 msgid "Apps in list views now load in the correct order when scrolling"
 msgstr ""
+"Toepassingen in de lijst weergave laden nu in de juiste volgorde tijdens het "
+"scrollen"
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
 msgid "Prevent unescaped XML entities from appearing in application names"
@@ -67,24 +69,29 @@ msgstr "Het “geinstalleerd” scherm laadt sneller"
 #: data/io.elementary.appcenter.appdata.xml.in:27
 msgid "Ensure flatpak applications show in the category views"
 msgstr ""
+"Zorg ervoor dat flatpak toepassingen getoond worden in categorie weergaven"
 
 #: data/io.elementary.appcenter.appdata.xml.in:28
 msgid ""
 "Save some bandwidth by downloading smaller screenshots where appropriate"
 msgstr ""
+"Bespaar bandbreedte door kleinere screenshots te downloaden waar dat "
+"mogelijk is"
 
 #: data/io.elementary.appcenter.appdata.xml.in:29
 msgid "System components no longer have an \"Open\" button"
-msgstr ""
+msgstr "Systeem componenten hebben niet langer een “Openen” knop"
 
 #: data/io.elementary.appcenter.appdata.xml.in:30
 msgid ""
 "Applications menu can now remove flatpaks that weren't installed by AppCenter"
 msgstr ""
+"Het Toepassingen menu kan nu flatpaks verwijderen die niet geïnstalleerd "
+"zijn door AppCenter"
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
 msgid "Make download size estimates more accurate"
-msgstr ""
+msgstr "Schattingen van de grootte van downloads is accurater"
 
 #: data/io.elementary.appcenter.appdata.xml.in:39
 msgid "Prevent AppCenter from opening on log in"
