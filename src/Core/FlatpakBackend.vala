@@ -258,17 +258,17 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         return new Gee.ArrayList<Package> ();
     }
 
-    public async uint64 get_download_size (Package package, Cancellable? cancellable) throws GLib.Error {
+    public async uint64 get_download_size (Package package, Cancellable? cancellable, bool is_update = false) throws GLib.Error {
         var bundle = package.component.get_bundle (AppStream.BundleKind.FLATPAK);
         if (bundle == null) {
             return 0;
         }
 
         var id = "%s/%s".printf (package.component.get_origin (), bundle.get_id ());
-        return yield get_download_size_by_id (id, cancellable);
+        return yield get_download_size_by_id (id, cancellable, is_update);
     }
 
-    public async uint64 get_download_size_by_id (string id, Cancellable? cancellable) throws GLib.Error {
+    public async uint64 get_download_size_by_id (string id, Cancellable? cancellable, bool is_update = false) throws GLib.Error {
         if (installation == null) {
             return 0;
         }
@@ -279,14 +279,73 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         }
 
         var flatpak_ref = Flatpak.Ref.parse (parts[1]);
+        bool is_app = flatpak_ref.kind == Flatpak.RefKind.APP;
 
         uint64 download_size = 0;
-        installation.fetch_remote_size_sync (parts[0], flatpak_ref, out download_size, null);
-        if (download_size > 0) {
-            return download_size;
+
+        var added_remotes = new Gee.ArrayList<string> ();
+
+        try {
+            var transaction = new Flatpak.Transaction.for_installation (installation, cancellable);
+            if (is_update) {
+                transaction.add_update (parts[1], null, null);
+            } else {
+                transaction.add_install (parts[0], parts[1], null);
+            }
+
+            transaction.add_new_remote.connect ((reason, from_id, remote_name, url) => {
+                if (reason == Flatpak.TransactionRemoteReason.RUNTIME_DEPS) {
+                    added_remotes.add (url);
+                    return true;
+                }
+
+                return false;
+            });
+
+            transaction.ready.connect (() => {
+                var operations = transaction.get_operations ();
+                operations.foreach ((entry) => {
+
+                    Flatpak.Ref entry_ref;
+                    try {
+                        entry_ref = Flatpak.Ref.parse (entry.get_ref ());
+                    } catch (Error e) {
+                        return;
+                    }
+
+                    // Don't include runtime deps in download size for apps we're updating
+                    // as this is counted in the OS Updates package
+                    var entry_is_runtime_dep = entry_ref.kind == Flatpak.RefKind.RUNTIME;
+                    if (is_update && is_app && entry_is_runtime_dep) {
+                        return;
+                    }
+
+                    download_size += entry.get_download_size ();
+                });
+
+                // Do not allow the install to start, this is a dry run
+                return false;
+            });
+
+            transaction.run (cancellable);
+
+            // Cleanup any remotes we had to add while testing the transaction
+            installation.list_remotes ().foreach ((remote) => {
+                if (remote.get_url () in added_remotes) {
+                    try {
+                        installation.remove_remote (remote.get_name ());
+                    } catch (Error e) {
+                        warning ("Error while removing dry run remote: %s", e.message);
+                    }
+                }
+            });
+        } catch (Error e) {
+            if (!(e is Flatpak.Error.ABORTED)) {
+                throw e;
+            }
         }
 
-        return 0;
+        return download_size;
     }
 
     public async bool is_package_installed (Package package) throws GLib.Error {

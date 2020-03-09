@@ -8,22 +8,23 @@
 # Gabriel De Jesus Gomez Peña <gabrieljgp012@gmail.com>, 2019.
 # Daniel Foré <daniel@elementary.io>, 2019.
 # Ernesto Miranda <epmiranda94@gmail.com>, 2019.
-# Adolfo Jayme Barrientos <fitojb@ubuntu.com>, 2019.
+# Adolfo Jayme Barrientos <fitojb@ubuntu.com>, 2019, 2020.
 # Daniel R. <riesp@pm.me>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-17 16:29+0000\n"
-"PO-Revision-Date: 2019-11-03 00:24+0000\n"
-"Last-Translator: Daniel R. <riesp@pm.me>\n"
-"Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/appcenter/es/>\n"
+"PO-Revision-Date: 2020-03-05 14:09+0000\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -300,7 +301,7 @@ msgstr "Se requiere reiniciar"
 
 #: src/Core/UpdateManager.vala:164
 msgid "Please restart your system to finalize updates"
-msgstr "Por favor, reinicie el sistema para completar el proceso de actualización"
+msgstr "Reinicie el sistema para finalizar las actualizaciones"
 
 #: src/Dialogs/ContentWarningDialog.vala:25
 msgid "Content Warning"
@@ -322,7 +323,7 @@ msgstr "Mostrar advertencias sobre el contenido"
 
 #: src/Dialogs/ContentWarningDialog.vala:37
 msgid "Don’t Install"
-msgstr "No Instalar"
+msgstr "No instalar"
 
 #: src/Dialogs/ContentWarningDialog.vala:38
 msgid "Install Anyway"
@@ -330,7 +331,7 @@ msgstr "Instalar de todas formas"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
-msgstr "¿Está seguro de querer Reiniciar?"
+msgstr "¿Confirma que quiere reiniciar?"
 
 #: src/Dialogs/RestartDialog.vala:41
 msgid "This will close all open applications and restart this device."
@@ -361,11 +362,13 @@ msgstr "Pago"
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
 msgid "Pay $%d for %s"
-msgstr "Pagar $%d por %s"
+msgstr "Pagar %d USD por %s"
 
 #: src/Dialogs/StripeDialog.vala:96
 msgid "This is a one time payment. Your email address is only used to send you a receipt."
-msgstr "Este es un pago único. Su dirección de correo electrónico sólo se utilizara para enviarle un recibo."
+msgstr ""
+"Este es un pago único. Su dirección de correo electrónico se utilizará solo "
+"para enviarle un recibo."
 
 #: src/Dialogs/StripeDialog.vala:106 src/Widgets/SharePopover.vala:35
 msgid "Email"
@@ -386,12 +389,12 @@ msgstr "CVC"
 
 #: src/Dialogs/StripeDialog.vala:189
 msgid "Privacy Policy"
-msgstr "Política de privacidad"
+msgstr "Normativa de privacidad"
 
 #: src/Dialogs/StripeDialog.vala:200 src/Dialogs/StripeDialog.vala:314
 #, c-format
 msgid "Pay $%d.00"
-msgstr "Pagar $%d.00"
+msgstr "Pagar %d,00 USD"
 
 #: src/Dialogs/StripeDialog.vala:243
 msgid "Processing"
@@ -479,7 +482,8 @@ msgstr "La tarjeta usada es de pruebas, ingrese una real para proceder."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
-msgstr "La desinstalación de esta aplicación también puede eliminar sus datos."
+msgstr ""
+"La desinstalación de esta aplicación también podría eliminarle los datos."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:35
 msgid "Uninstall app?"

@@ -15,7 +15,7 @@
     </p>
   </description>
   <releases>
-    <release version="3.2.2" date="2019-12-20" urgency="medium">
+    <release version="3.2.2" date="2020-02-28" urgency="medium">
       <description>
         <p>Minor fixes</p>
         <ul>
@@ -28,6 +28,7 @@
           <li>Save some bandwidth by downloading smaller screenshots where appropriate</li>
           <li>System components no longer have an "Open" button</li>
           <li>Applications menu can now remove flatpaks that weren't installed by AppCenter</li>
+          <li>Make download size estimates more accurate</li>
         </ul>
       </description>
     </release>
