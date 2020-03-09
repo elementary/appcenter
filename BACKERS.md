@@ -8,7 +8,6 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - Aaron Newsome
 - Aaron Tan
 - Abir Mukherjee
-- Adam Balla
 - Adam Miller
 - Ahmed Hamed
 - Alan Diggs
@@ -182,6 +181,7 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - Christoph Uber
 - Christophe Boissonnade
 - Christopher Kaster
+- chzbacon
 - clarkaddison
 - Clemens Lang
 - Conor Stayt
