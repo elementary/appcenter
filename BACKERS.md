@@ -167,7 +167,6 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - Bryce Adam Prescott
 - Caio Vitor Hungria
 - cairon
-- Callum
 - Cameron N. Coulter
 - camerontauxe
 - Carlos López
@@ -467,6 +466,7 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - Stuart Still
 - Sudip Chatterjee
 - Swaroop Chirayinkil
+- TailRed
 - Tarek Raafat
 - Taufiq Widi Nugroho
 - Taylor Baldwin
