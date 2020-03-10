@@ -1,21 +1,23 @@
 # Mohelm97 <mohelm97@gmail.com>, 2018.
 # yusuf .s <yusef.ali12@gmail.com>, 2018, 2019.
 # karim inabi <karim99tgt@gmail.com>, 2018, 2019.
-# nasserbinlaboun <nasser1990com@gmail.com>, 2019.
+# nasserbinlaboun <nasser1990com@gmail.com>, 2019, 2020.
 # alfa <dkotrada@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-17 16:29+0000\n"
-"PO-Revision-Date: 2019-12-18 23:11+0000\n"
+"PO-Revision-Date: 2020-03-10 17:10+0000\n"
 "Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
-"Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/appcenter/ar/>\n"
+"Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/ar/>\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
 "X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:24+0000\n"
 
@@ -487,34 +489,33 @@ msgid "Uninstalling this app may also delete its data."
 msgstr ""
 
 #: src/Dialogs/UninstallConfirmDialog.vala:35
-#, fuzzy
 msgid "Uninstall app?"
-msgstr "حذف"
+msgstr "حذفالغاء تثبيت التطبيق ؟"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:38
-#, fuzzy, c-format
+#, c-format
 msgid "Uninstall “%s”?"
-msgstr "حذف"
+msgstr "إلغاء تثبيت \"%s\"؟"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:144
 msgid "Uninstall"
-msgstr "حذف"
+msgstr "إلغاء التثبيت"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
-#, fuzzy
 msgid "This may have been caused by external or manually compiled software."
-msgstr "يمكن أن يحدث هذا بسبب إضافة مصادر تطبيقات خارجية، بشكل يدوي، أو من ملف مصادر معطوب."
+msgstr ""
+"يمكن أن يحدث هذا بسبب إضافة مصادر تطبيقات خارجية، بشكل يدوي، أو من ملف مصادر "
+"معطوب."
 
 #: src/Dialogs/UninstallFailDialog.vala:37
-#, fuzzy
 msgid "Failed to uninstall app"
-msgstr "بحث و تثبيت تطبيقات"
+msgstr "فشل في إلغاء التثبيت للتطبيق"
 
 #: src/Dialogs/UninstallFailDialog.vala:40
 #, c-format
 msgid "Failed to uninstall “%s”"
-msgstr ""
+msgstr "فشل في إلغاء التثبيت \"%s\""
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
@@ -765,14 +766,12 @@ msgid "$%d"
 msgstr "دولار$%d"
 
 #: src/Widgets/NetworkInfoBar.vala:32
-#, fuzzy
 msgid "Network Not Available."
-msgstr "الشبكة غير متوفرة"
+msgstr "الشبكة غير متوفرة."
 
 #: src/Widgets/NetworkInfoBar.vala:33
-#, fuzzy
 msgid "Connect to the Internet to browse and install apps."
-msgstr "إتصل بالإنترنت لتحميل أو تحديث التطبيقات."
+msgstr "إتصل بالإنترنت لتصفح و تحميل التطبيقات."
 
 #. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
 #: src/Widgets/NetworkInfoBar.vala:41
