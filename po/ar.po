@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-17 16:29+0000\n"
-"PO-Revision-Date: 2020-03-10 17:10+0000\n"
+"PO-Revision-Date: 2020-03-11 18:09+0000\n"
 "Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ar/>\n"
@@ -244,12 +244,12 @@ msgstr "تحديثات المنتري"
 
 #: src/Core/Package.vala:334
 msgid "Ubuntu (non-curated)"
-msgstr ""
+msgstr "اوبونتو (غير المنسقة)"
 
 #: src/Core/Package.vala:337
 #, c-format
 msgid "%s (non-curated)"
-msgstr "%s (غير منظم)"
+msgstr "%s (غير منسق)"
 
 #: src/Core/Package.vala:339
 msgid "Ubuntu Drivers"
@@ -257,12 +257,12 @@ msgstr "تعريفات أوبونتو"
 
 #: src/Core/Package.vala:342
 msgid "Unknown Origin (non-curated)"
-msgstr ""
+msgstr "غير معروف الأصل (غير منظم)"
 
 #: src/Core/Package.vala:444
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
-msgstr ""
+msgstr "لم يتم تعيين حالة التطبيق كما هو مثبت في مركز التطبيقات للحزمة: %s"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -314,14 +314,16 @@ msgid "Content Warning"
 msgstr "تحذير المحتوى"
 
 #: src/Dialogs/ContentWarningDialog.vala:30
-#, fuzzy, c-format
+#, c-format
 msgid "“%s” contains explicit content"
-msgstr "%s يحتوي على محتوى جريء"
+msgstr "\"%s\" يحتوي على محتوى جريء"
 
 #: src/Dialogs/ContentWarningDialog.vala:31
-#, fuzzy, c-format
+#, c-format
 msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
-msgstr "%s يمكن أن يحتوي على محتوى مناسب للبالغين أو محتوى مخيف أو مزع. بشكل عام، إليمنتري لما يراجع أو يضمن محتوى هذا التطبيق."
+msgstr ""
+"\"%s\" يمكن أن يحتوي على محتوى مناسب للبالغين أو محتوى مخيف أو مفزع. بشكل "
+"عام، إليمنتري لم تراجع أو تتأكد من محتوى هذا التطبيق."
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 msgid "Show content warnings"
@@ -486,11 +488,11 @@ msgstr "البطاقة المودة هيا بطاقة تجريب. من فضلك 
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
-msgstr ""
+msgstr "الغاء تثبيت هذا التطبيق ربما ايضا يمسح بيانته."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:35
 msgid "Uninstall app?"
-msgstr "حذفالغاء تثبيت التطبيق ؟"
+msgstr "إلغاء تثبيت التطبيق؟"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:38
 #, c-format
