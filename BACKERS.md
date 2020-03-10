@@ -200,7 +200,7 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - Daniel Tauschke
 - Danilo Weber Nunes
 - Danny Roth
-- darrel
+- Darrel Davis
 - Darryl Daniel
 - Dave Kretz
 - davemelanson
