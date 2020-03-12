@@ -53,7 +53,7 @@ public class AppCenter.Widgets.AccountDialog : Gtk.Dialog {
         listbox.selection_mode = Gtk.SelectionMode.MULTIPLE;
         listbox.set_placeholder (placeholder);
 
-        listbox.add (new AppHistoryRow("Example App", "App description goes here", "application-default-icon"));
+        listbox.add (new AppHistoryRow ("Example App", "App description goes here", "application-default-icon"));
 
         var scrolled_window = new Gtk.ScrolledWindow (null, null);
         scrolled_window.hscrollbar_policy = Gtk.PolicyType.NEVER;

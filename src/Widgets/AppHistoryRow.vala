@@ -53,4 +53,3 @@ public class AppCenter.Widgets.AppHistoryRow : Gtk.ListBoxRow {
         title_label.bind_property ("label", this, "title-text");
     }
 }
-
