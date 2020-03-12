@@ -171,7 +171,9 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         account_button.clicked.connect (() => {
             var account_dialog = new AppCenter.Widgets.AccountDialog ();
-            account_dialog.show ();
+            account_dialog.transient_for = (Gtk.Window) get_toplevel ();
+            account_dialog.run ();
+            account_dialog.destroy ();
         });
 
         search_entry = new Gtk.SearchEntry ();
