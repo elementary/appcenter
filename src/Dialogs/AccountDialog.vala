@@ -25,7 +25,7 @@ public class AppCenter.Widgets.AccountDialog : Gtk.Dialog {
     }
 
     construct {
-        var primary_label = new Gtk.Label (title);
+        var primary_label = new Gtk.Label (_("Account"));
         primary_label.wrap = true;
         primary_label.max_width_chars = 60;
         primary_label.xalign = 0;
