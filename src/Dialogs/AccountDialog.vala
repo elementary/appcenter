@@ -20,12 +20,12 @@ public class AppCenter.Widgets.AccountDialog : Gtk.Dialog {
         Object (
             default_width: 400,
             default_height: 300,
-            title: _("Log In or Sign Up")
+            title: _("Account")
         );
     }
 
     construct {
-        var primary_label = new Gtk.Label (_("Account"));
+        var primary_label = new Gtk.Label (title);
         primary_label.wrap = true;
         primary_label.max_width_chars = 60;
         primary_label.xalign = 0;
