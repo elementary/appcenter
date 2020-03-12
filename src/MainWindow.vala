@@ -137,7 +137,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         view_mode = new Granite.Widgets.ModeButton ();
         view_mode.margin_end = view_mode.margin_start = 12;
-        // view_mode.margin_bottom = view_mode.margin_top = 7;
         view_mode.get_style_context ().add_class ("view-switcher");
         homepage_view_id = view_mode.append_text (_("Home"));
         installed_view_id = view_mode.append_text (C_("view", "Installed"));
@@ -165,13 +164,15 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         custom_title_stack.add (homepage_header);
         custom_title_stack.set_visible_child (view_mode_revealer);
 
-        var account_button = new Gtk.MenuButton ();
-        account_button.image = new Gtk.Image.from_icon_name ("avatar-default", Gtk.IconSize.LARGE_TOOLBAR);
-        account_button.tooltip_text = _("Account");
+
+        var account_button = new Gtk.Button.from_icon_name ("avatar-default", Gtk.IconSize.LARGE_TOOLBAR);
+        account_button.tooltip_text = _("Account…");
         account_button.valign = Gtk.Align.CENTER;
 
-        var account_popover = new Gtk.Popover (account_button);
-        account_button.popover = account_popover;
+        account_button.clicked.connect (() => {
+            var account_dialog = new AppCenter.Widgets.AccountDialog ();
+            account_dialog.show ();
+        });
 
         search_entry = new Gtk.SearchEntry ();
         search_entry.valign = Gtk.Align.CENTER;
