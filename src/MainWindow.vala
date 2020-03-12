@@ -38,7 +38,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     private Gtk.Button return_button;
     private ulong task_finished_connection = 0U;
     private Gee.LinkedList<string> return_button_history;
-    private Gtk.Label updates_badge;
+    // private Gtk.Label updates_badge;
 
     private uint configure_id;
     private int homepage_view_id;
@@ -137,19 +137,19 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         view_mode = new Granite.Widgets.ModeButton ();
         view_mode.margin_end = view_mode.margin_start = 12;
-        view_mode.margin_bottom = view_mode.margin_top = 7;
+        // view_mode.margin_bottom = view_mode.margin_top = 7;
         homepage_view_id = view_mode.append_text (_("Home"));
         installed_view_id = view_mode.append_text (C_("view", "Installed"));
 
-        updates_badge = new Gtk.Label ("!");
-        updates_badge.halign = Gtk.Align.END;
-        updates_badge.valign = Gtk.Align.START;
-        updates_badge.get_style_context ().add_class ("badge");
-        set_widget_visibility (updates_badge, false);
+        // updates_badge = new Gtk.Label ("!");
+        // updates_badge.halign = Gtk.Align.END;
+        // updates_badge.valign = Gtk.Align.START;
+        // updates_badge.get_style_context ().add_class ("badge");
+        // set_widget_visibility (updates_badge, false);
 
         var view_mode_overlay = new Gtk.Overlay ();
         view_mode_overlay.add (view_mode);
-        view_mode_overlay.add_overlay (updates_badge);
+        // view_mode_overlay.add_overlay (updates_badge);
 
         view_mode_revealer = new Gtk.Revealer ();
         view_mode_revealer.reveal_child = true;
@@ -164,6 +164,13 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         custom_title_stack.add (homepage_header);
         custom_title_stack.set_visible_child (view_mode_revealer);
 
+        var account_button = new Gtk.MenuButton ();
+        account_button.image = new Gtk.Image.from_icon_name ("avatar-default", Gtk.IconSize.LARGE_TOOLBAR);
+        account_button.tooltip_text = _("Account");
+
+        var account_popover = new Gtk.Popover (account_button);
+        account_button.popover = account_popover;
+
         search_entry = new Gtk.SearchEntry ();
         search_entry.valign = Gtk.Align.CENTER;
         search_entry.placeholder_text = _("Search Apps");
@@ -175,6 +182,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         headerbar.show_close_button = true;
         headerbar.set_custom_title (custom_title_stack);
         headerbar.pack_start (return_button);
+        headerbar.pack_end (account_button);
         headerbar.pack_end (search_entry);
         headerbar.pack_end (spinner);
 
@@ -251,12 +259,12 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     }
 
     public void show_update_badge (uint updates_number) {
-        if (updates_number == 0U) {
-            set_widget_visibility (updates_badge, false);
-        } else {
-            updates_badge.label = updates_number.to_string ();
-            set_widget_visibility (updates_badge, true);
-        }
+        // if (updates_number == 0U) {
+            // set_widget_visibility (updates_badge, false);
+        // } else {
+        //     updates_badge.label = updates_number.to_string ();
+        //     set_widget_visibility (updates_badge, true);
+        // }
     }
 
     public void show_package (AppCenterCore.Package package) {
