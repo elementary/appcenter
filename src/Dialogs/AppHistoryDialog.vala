@@ -48,26 +48,31 @@ public class AppCenter.Widgets.AppHistoryDialog : Gtk.Dialog {
         );
         placeholder.show_all ();
 
-        var listbox = new Gtk.ListBox ();
-        listbox.activate_on_single_click = false;
-        listbox.expand = true;
-        listbox.selection_mode = Gtk.SelectionMode.MULTIPLE;
-        listbox.set_placeholder (placeholder);
+        var list_box = new Gtk.ListBox ();
+        list_box.activate_on_single_click = true;
+        list_box.expand = true;
+        list_box.selection_mode = Gtk.SelectionMode.MULTIPLE;
+        list_box.set_placeholder (placeholder);
 
-        listbox.add (new AppHistoryRow ("Example App", "App description goes here", "application-default-icon"));
+        list_box.add (new AppHistoryRow (
+            "Example App",
+            "App description goes here",
+            "com.example.app",
+            "application-default-icon"
+        ));
 
         var scrolled_window = new Gtk.ScrolledWindow (null, null);
         scrolled_window.hscrollbar_policy = Gtk.PolicyType.NEVER;
-        scrolled_window.add (listbox);
+        scrolled_window.add (list_box);
 
-        var list_grid = new Gtk.Grid ();
-        list_grid.attach (search_entry, 0, 0);
-        list_grid.attach (scrolled_window, 0, 1);
+        var list_box_grid = new Gtk.Grid ();
+        list_box_grid.attach (search_entry, 0, 0);
+        list_box_grid.attach (scrolled_window, 0, 1);
 
         var frame = new Gtk.Frame (null);
         frame.margin_top = 24;
         frame.get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
-        frame.add (list_grid);
+        frame.add (list_box_grid);
 
         var grid = new Gtk.Grid ();
         grid.margin = 12;
