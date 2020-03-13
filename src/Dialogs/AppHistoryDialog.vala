@@ -51,7 +51,7 @@ public class AppCenter.Widgets.AppHistoryDialog : Gtk.Dialog {
         var list_box = new Gtk.ListBox ();
         list_box.activate_on_single_click = true;
         list_box.expand = true;
-        list_box.selection_mode = Gtk.SelectionMode.MULTIPLE;
+        list_box.selection_mode = Gtk.SelectionMode.SINGLE;
         list_box.set_placeholder (placeholder);
 
         list_box.add (new AppHistoryRow (

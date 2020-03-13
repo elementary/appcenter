@@ -16,19 +16,19 @@
  */
 
 public class AppCenter.Widgets.AppHistoryRow : Gtk.ListBoxRow {
-    public string name { get; construct; }
+    public string title { get; construct; }
     public string description { get; construct; }
     public string rdnn { get; construct; }
     public string icon_name { get; construct; }
 
     public AppHistoryRow (
-        string _name,
+        string _title,
         string _description,
         string _rdnn,
         string? _icon_name = "application-default-icon"
     ) {
         Object (
-            name: _name,
+            title: _title,
             description: _description,
             rdnn: _rdnn,
             icon_name: _icon_name
@@ -39,9 +39,9 @@ public class AppCenter.Widgets.AppHistoryRow : Gtk.ListBoxRow {
         var image = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.DND);
         image.pixel_size = 32;
 
-        var name_label = new Gtk.Label (name);
-        name_label.ellipsize = Pango.EllipsizeMode.END;
-        name_label.halign = Gtk.Align.START;
+        var title_label = new Gtk.Label (title);
+        title_label.ellipsize = Pango.EllipsizeMode.END;
+        title_label.halign = Gtk.Align.START;
 
         var description_label = new Gtk.Label ("<span font_size='small'>%s</span>".printf (Markup.escape_text (description)));
         description_label.ellipsize = Pango.EllipsizeMode.END;
@@ -52,7 +52,7 @@ public class AppCenter.Widgets.AppHistoryRow : Gtk.ListBoxRow {
         grid.margin = 6;
         grid.column_spacing = 6;
         grid.attach (image, 0, 0, 1, 2);
-        grid.attach (name_label, 1, 0);
+        grid.attach (title_label, 1, 0);
         grid.attach (description_label, 1, 1);
 
         add (grid);
