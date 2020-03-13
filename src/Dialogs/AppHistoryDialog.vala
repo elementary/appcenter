@@ -20,7 +20,7 @@ public class AppCenter.Widgets.AppHistoryDialog : Gtk.Dialog {
         Object (
             deletable: false,
             default_width: 400,
-            default_height: 300,
+            default_height: 5gut00,
             title: _("App History")
         );
     }
@@ -65,9 +65,14 @@ public class AppCenter.Widgets.AppHistoryDialog : Gtk.Dialog {
         scrolled_window.hscrollbar_policy = Gtk.PolicyType.NEVER;
         scrolled_window.add (list_box);
 
+        var filter_check_button = new Gtk.CheckButton ();
+        filter_check_button.label = _("Include currently-installed apps");
+        filter_check_button.margin = 6;
+
         var list_box_grid = new Gtk.Grid ();
-        list_box_grid.attach (search_entry, 0, 0);
-        list_box_grid.attach (scrolled_window, 0, 1);
+        list_box_grid.orientation = Gtk.Orientation.VERTICAL;
+        list_box_grid.add (search_entry);
+        list_box_grid.add (scrolled_window);
 
         var frame = new Gtk.Frame (null);
         frame.margin_top = 24;
@@ -81,6 +86,7 @@ public class AppCenter.Widgets.AppHistoryDialog : Gtk.Dialog {
         grid.add (primary_label);
         grid.add (secondary_label);
         grid.add (frame);
+        grid.add (filter_check_button);
         grid.show_all ();
 
         var action_area = (Gtk.ButtonBox) get_action_area ();
