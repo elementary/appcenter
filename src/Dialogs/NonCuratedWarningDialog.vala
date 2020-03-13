@@ -35,7 +35,7 @@ public class AppCenter.Widgets.NonCuratedWarningDialog : Granite.MessageDialog {
 
     construct {
         primary_text = _("Install non-curated app?");
-        secondary_text = _("“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration.").printf (app_name);
+        secondary_text = _("“%s” has not been reviewed by elementary for security, privacy, or system integration.").printf (app_name);
 
         var updates_icon = new Gtk.Image.from_icon_name ("system-software-update-symbolic", Gtk.IconSize.BUTTON);
         updates_icon.valign = Gtk.Align.START;
