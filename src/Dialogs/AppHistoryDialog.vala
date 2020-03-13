@@ -20,7 +20,7 @@ public class AppCenter.Widgets.AppHistoryDialog : Gtk.Dialog {
         Object (
             deletable: false,
             default_width: 400,
-            default_height: 5gut00,
+            default_height: 500,
             title: _("App History")
         );
     }
