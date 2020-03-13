@@ -164,17 +164,54 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         custom_title_stack.add (homepage_header);
         custom_title_stack.set_visible_child (view_mode_revealer);
 
+        var app_history_model_button = new Gtk.ModelButton ();
+        app_history_model_button.text = _("App History…");
 
-        var account_button = new Gtk.Button.from_icon_name ("avatar-default", Gtk.IconSize.LARGE_TOOLBAR);
-        account_button.tooltip_text = _("Account…");
-        account_button.valign = Gtk.Align.CENTER;
-
-        account_button.clicked.connect (() => {
-            var account_dialog = new AppCenter.Widgets.AccountDialog ();
-            account_dialog.transient_for = (Gtk.Window) get_toplevel ();
-            account_dialog.run ();
-            account_dialog.destroy ();
+        app_history_model_button.clicked.connect (() => {
+            var app_history_dialog = new AppCenter.Widgets.AppHistoryDialog ();
+            app_history_dialog.transient_for = (Gtk.Window) get_toplevel ();
+            app_history_dialog.show_all ();
         });
+
+        var wallet_model_button = new Gtk.ModelButton ();
+        wallet_model_button.text = _("Wallet…");
+
+        wallet_model_button.clicked.connect (() => {
+            try {
+                AppInfo.launch_default_for_uri ("settings://personal/payments", null);
+            } catch (Error e) {
+                critical (e.message);
+            }
+        });
+
+        var account_settings_model_button = new Gtk.ModelButton ();
+        account_settings_model_button.text = _("Online Accounts Settings…");
+
+        account_settings_model_button.clicked.connect (() => {
+            try {
+                AppInfo.launch_default_for_uri ("settings://accounts/online", null);
+            } catch (Error e) {
+                critical (e.message);
+            }
+        });
+
+        var account_popover_grid = new Gtk.Grid ();
+        account_popover_grid.margin_bottom = account_popover_grid.margin_top = 3;
+        account_popover_grid.orientation = Gtk.Orientation.VERTICAL;
+
+        account_popover_grid.add (app_history_model_button);
+        account_popover_grid.add (wallet_model_button);
+        account_popover_grid.add (account_settings_model_button);
+        account_popover_grid.show_all ();
+
+        var account_popover = new Gtk.Popover (null);
+        account_popover.add (account_popover_grid);
+
+        var account_button = new Gtk.MenuButton ();
+        account_button.image = new Gtk.Image.from_icon_name ("avatar-default", Gtk.IconSize.LARGE_TOOLBAR);
+        account_button.popover = account_popover;
+        account_button.tooltip_text = _("Account");
+        account_button.valign = Gtk.Align.CENTER;
 
         search_entry = new Gtk.SearchEntry ();
         search_entry.valign = Gtk.Align.CENTER;
@@ -182,7 +219,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         spinner = new Gtk.Spinner ();
 
-        /* HeaderBar */
         headerbar = new Gtk.HeaderBar ();
         headerbar.show_close_button = true;
         headerbar.set_custom_title (custom_title_stack);

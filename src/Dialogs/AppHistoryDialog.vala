@@ -15,17 +15,18 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public class AppCenter.Widgets.AccountDialog : Gtk.Dialog {
-    public AccountDialog () {
+public class AppCenter.Widgets.AppHistoryDialog : Gtk.Dialog {
+    public AppHistoryDialog () {
         Object (
+            deletable: false,
             default_width: 400,
             default_height: 300,
-            title: _("Account")
+            title: _("App History")
         );
     }
 
     construct {
-        var primary_label = new Gtk.Label (_("Account"));
+        var primary_label = new Gtk.Label (_("App History"));
         primary_label.wrap = true;
         primary_label.max_width_chars = 60;
         primary_label.xalign = 0;
@@ -41,7 +42,7 @@ public class AppCenter.Widgets.AccountDialog : Gtk.Dialog {
         search_entry.placeholder_text = _("Search App History");
 
         var placeholder = new Granite.Widgets.AlertView (
-            _("No app history"),
+            _("No apps in history"),
             _("Download or purchase an app for it to show up here."),
             ""
         );
@@ -77,6 +78,14 @@ public class AppCenter.Widgets.AccountDialog : Gtk.Dialog {
         grid.add (frame);
         grid.show_all ();
 
+        var action_area = (Gtk.ButtonBox) get_action_area ();
+        action_area.margin = 6;
+
         get_content_area ().add (grid);
+        add_button (_("Cancel"), Gtk.ResponseType.CANCEL);
+
+        response.connect (() => {
+            destroy ();
+        });
     }
 }

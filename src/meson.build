@@ -18,7 +18,7 @@ appcenter_files = files(
     'Core/Task.vala',
     'Core/UbuntuDriversBackend.vala',
     'Core/UpdateManager.vala',
-    'Dialogs/AccountDialog.vala',
+    'Dialogs/AppHistoryDialog.vala',
     'Dialogs/ContentWarningDialog.vala',
     'Dialogs/NonCuratedWarningDialog.vala',
     'Dialogs/RestartDialog.vala',
