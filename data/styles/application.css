@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017–2018 elementary, Inc. (https://elementary.io)
+ * Copyright © 2017–2020 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,22 +16,6 @@
  */
 
 @import url("categories.css");
-
-/* To account for badge styling */
-.titlebar {
-   padding-bottom: 0;
-   padding-top: 0;
-}
-
-/* To account for no headerbar padding due to badge styling */
-.titlebar .view-switcher {
-  margin: 12px 0 11px;
-}
-
-/* To get the slimmer headerbar on tile/maximize */
-.tiled .titlebar .view-switcher {
-  margin: 8px 0;
-}
 
 .badge {
    background-image:
@@ -54,6 +38,22 @@
    min-height: 18px;
    min-width: 18px;
    text-shadow: 0 1px 1px alpha(black, 0.3);
+}
+
+/* To account for badge styling */
+.titlebar {
+   padding-bottom: 0;
+   padding-top: 0;
+}
+
+/* To account for no headerbar padding due to badge styling */
+.titlebar .view-switcher {
+  margin: 12px 0 11px;
+}
+
+/* To get the slimmer headerbar on tile/maximize */
+.tiled .titlebar .view-switcher {
+  margin: 8px 0;
 }
 
 .banner {
