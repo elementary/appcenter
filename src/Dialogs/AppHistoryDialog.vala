@@ -89,6 +89,11 @@ public class AppCenter.Widgets.AppHistoryDialog : Gtk.Dialog {
         get_content_area ().add (grid);
         add_button (_("Cancel"), Gtk.ResponseType.CANCEL);
 
+        list_box.row_activated.connect ((row) => {
+            (row as Widgets.AppHistoryRow).open_app ();
+            destroy ();
+        });
+
         response.connect (() => {
             destroy ();
         });

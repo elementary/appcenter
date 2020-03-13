@@ -56,13 +56,13 @@ public class AppCenter.Widgets.AppHistoryRow : Gtk.ListBoxRow {
         grid.attach (description_label, 1, 1);
 
         add (grid);
+    }
 
-        activate.connect (() => {
-            try {
-                AppInfo.launch_default_for_uri ("appstream://%s".printf (rdnn), null);
-            } catch (Error e) {
-                critical (e.message);
-            }
-        });
+    public void open_app () {
+        try {
+            AppInfo.launch_default_for_uri ("appstream://%s".printf (rdnn), null);
+        } catch (Error e) {
+            critical (e.message);
+        }
     }
 }
