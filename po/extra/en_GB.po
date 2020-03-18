@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-27 20:46+0000\n"
-"PO-Revision-Date: 2019-08-21 23:22+0000\n"
+"PO-Revision-Date: 2020-03-19 17:09+0000\n"
 "Last-Translator: Ciarán Ainsworth <ciaranainsworth@posteo.net>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "appcenter/extra/en_GB/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
@@ -37,125 +37,127 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:37
 msgid "Minor fixes"
-msgstr ""
+msgstr "Minor fixes"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "Update application details when changes happen outside of AppCenter"
-msgstr ""
+msgstr "Update application details when changes happen outside of AppCenter"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Fix for notification not appearing when a restart is required"
-msgstr ""
+msgstr "Fix for notification not appearing when a restart is required"
 
 #: data/io.elementary.appcenter.appdata.xml.in:24
 msgid "Apps in list views now load in the correct order when scrolling"
-msgstr ""
+msgstr "Apps in list views now load in the correct order when scrolling"
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
 msgid "Prevent unescaped XML entities from appearing in application names"
-msgstr ""
+msgstr "Prevent unescaped XML entities from appearing in application names"
 
 #: data/io.elementary.appcenter.appdata.xml.in:26
 msgid "Load the \"Installed\" view faster"
-msgstr ""
+msgstr "Load the \"Installed\" view faster"
 
 #: data/io.elementary.appcenter.appdata.xml.in:27
 msgid "Ensure flatpak applications show in the category views"
-msgstr ""
+msgstr "Ensure flatpak applications show in the category views"
 
 #: data/io.elementary.appcenter.appdata.xml.in:28
 msgid ""
 "Save some bandwidth by downloading smaller screenshots where appropriate"
 msgstr ""
+"Save some bandwidth by downloading smaller screenshots where appropriate"
 
 #: data/io.elementary.appcenter.appdata.xml.in:29
 msgid "System components no longer have an \"Open\" button"
-msgstr ""
+msgstr "System components no longer have an \"Open\" button"
 
 #: data/io.elementary.appcenter.appdata.xml.in:30
 msgid ""
 "Applications menu can now remove flatpaks that weren't installed by AppCenter"
 msgstr ""
+"Applications menu can now remove flatpaks that weren't installed by AppCenter"
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
 msgid "Make download size estimates more accurate"
-msgstr ""
+msgstr "Make download size estimates more accurate"
 
 #: data/io.elementary.appcenter.appdata.xml.in:39
 msgid "Prevent AppCenter from opening on log in"
-msgstr ""
+msgstr "Prevent AppCenter from opening on log in"
 
 #: data/io.elementary.appcenter.appdata.xml.in:40
 msgid "Prevent ghost update notification when there are no updates available"
-msgstr ""
+msgstr "Prevent ghost update notification when there are no updates available"
 
 #: data/io.elementary.appcenter.appdata.xml.in:41
 msgid "Show correct installation state for extensions"
-msgstr ""
+msgstr "Show correct installation state for extensions"
 
 #: data/io.elementary.appcenter.appdata.xml.in:48
 msgid "Add support for Flatpak apps"
-msgstr ""
+msgstr "Add support for Flatpak apps"
 
 #: data/io.elementary.appcenter.appdata.xml.in:49
 msgid "Warn about non-curated apps"
-msgstr ""
+msgstr "Warn about non-curated apps"
 
 #: data/io.elementary.appcenter.appdata.xml.in:50
 msgid "Show an error dialog if an installation fails"
-msgstr ""
+msgstr "Show an error dialog if an installation fails"
 
 #: data/io.elementary.appcenter.appdata.xml.in:51
 msgid ""
 "Fix an issue where some apps couldn't be uninstalled from the Applications "
 "Menu"
 msgstr ""
+"Fix an issue where some apps couldn't be uninstalled from the Applications "
+"Menu"
 
 #: data/io.elementary.appcenter.appdata.xml.in:52
 msgid "Allow browsing and uninstalling apps while offline"
-msgstr ""
+msgstr "Allow browsing and uninstalling apps while offline"
 
 #: data/io.elementary.appcenter.appdata.xml.in:53
 msgid "Fix twitter share URLs"
-msgstr ""
+msgstr "Fix twitter share URLs"
 
 #: data/io.elementary.appcenter.appdata.xml.in:54
 msgid "Drop Google+ from the share menu"
-msgstr ""
+msgstr "Drop Google+ from the share menu"
 
 #: data/io.elementary.appcenter.appdata.xml.in:55
 msgid "Animate screenshot background while loading"
-msgstr ""
+msgstr "Animate screenshot background while loading"
 
 #: data/io.elementary.appcenter.appdata.xml.in:56
 msgid "Add navigation arrows for screenshots"
-msgstr ""
+msgstr "Add navigation arrows for screenshots"
 
 #: data/io.elementary.appcenter.appdata.xml.in:57
 msgid "Don't show uninstall buttons for essential system components"
-msgstr ""
+msgstr "Don't show uninstall buttons for essential system components"
 
 #: data/io.elementary.appcenter.appdata.xml.in:58
 msgid "Properly display proprietary licenses"
-msgstr ""
+msgstr "Properly display proprietary licenses"
 
 #: data/io.elementary.appcenter.appdata.xml.in:59
 msgid "Fix some layout issues"
-msgstr ""
+msgstr "Fix some layout issues"
 
 #: data/io.elementary.appcenter.appdata.xml.in:60
 msgid "Fix crashes"
-msgstr ""
+msgstr "Fix crashes"
 
 #: data/io.elementary.appcenter.appdata.xml.in:61
-#, fuzzy
 msgid "Performance improvements"
-msgstr "Various bug fixes and performance improvements"
+msgstr "Performance improvements"
 
 #: data/io.elementary.appcenter.appdata.xml.in:62
-#, fuzzy
 msgid "Updated translations"
-msgstr "New translations"
+msgstr "Updated translations"
 
 #: data/io.elementary.appcenter.appdata.xml.in:69
 msgid "Meson build system fixes"
@@ -305,9 +307,8 @@ msgid "Make search asynchronous"
 msgstr "Make search asynchronous"
 
 #: data/io.elementary.appcenter.appdata.xml.in:282
-#, fuzzy
 msgid "elementary, Inc."
-msgstr "elementary LLC."
+msgstr "elementary, Inc."
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
@@ -318,9 +319,8 @@ msgid "@DESKTOP_ICON@"
 msgstr "@DESKTOP_ICON@"
 
 #: data/io.elementary.appcenter.desktop.in.in:7
-#, fuzzy
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
-msgstr "install;uninstall;remove;catalogue;store;apps;updates;software;"
+msgstr "install;uninstall;remove;catalogue;store;apps;software;"
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
@@ -328,7 +328,7 @@ msgstr "Check for Updates"
 
 #: data/io.elementary.appcenter.desktop.in.in:19
 msgid "system-software-update"
-msgstr ""
+msgstr "system-software-update"
 
 #~ msgid "About AppCenter"
 #~ msgstr "About AppCentre"
