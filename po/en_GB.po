@@ -1,20 +1,21 @@
 # Ciaran Ainsworth <ciaranainsworth@outlook.com>, 2018.
 # Ciarán Ainsworth <ciaranainsworth@outlook.com>, 2018, 2019.
-# Ciarán Ainsworth <ciaranainsworth@posteo.net>, 2019.
+# Ciarán Ainsworth <ciaranainsworth@posteo.net>, 2019, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-17 16:29+0000\n"
-"PO-Revision-Date: 2019-09-12 01:22+0000\n"
+"PO-Revision-Date: 2020-03-19 17:09+0000\n"
 "Last-Translator: Ciarán Ainsworth <ciaranainsworth@posteo.net>\n"
-"Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/appcenter/appcenter/en_GB/>\n"
+"Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
+"appcenter/appcenter/en_GB/>\n"
 "Language: en_GB\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -250,7 +251,7 @@ msgstr "Unknown Origin (non-curated)"
 #: src/Core/Package.vala:444
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
-msgstr ""
+msgstr "Application state not set as installed in AppCenter for package: %s"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -298,14 +299,17 @@ msgid "Content Warning"
 msgstr "Content Warning"
 
 #: src/Dialogs/ContentWarningDialog.vala:30
-#, fuzzy, c-format
+#, c-format
 msgid "“%s” contains explicit content"
-msgstr "%s Contains Explicit Content"
+msgstr "“%s” contains explicit content"
 
 #: src/Dialogs/ContentWarningDialog.vala:31
-#, fuzzy, c-format
+#, c-format
 msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
-msgstr "%s may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
+msgstr ""
+"“%s” may contain content only suitable for adults or that may be sensitive "
+"or disturbing. In general, elementary does not review or endorse the "
+"contents of this app."
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 msgid "Show content warnings"
@@ -470,17 +474,16 @@ msgstr "The given card is a test card. Please use a real card to proceed."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
-msgstr ""
+msgstr "Uninstalling this app may also delete its data."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:35
-#, fuzzy
 msgid "Uninstall app?"
-msgstr "Uninstall"
+msgstr "Uninstall app?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:38
-#, fuzzy, c-format
+#, c-format
 msgid "Uninstall “%s”?"
-msgstr "Uninstall"
+msgstr "Uninstall “%s”?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:144
@@ -488,19 +491,17 @@ msgid "Uninstall"
 msgstr "Uninstall"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
-#, fuzzy
 msgid "This may have been caused by external or manually compiled software."
-msgstr "This may have been caused by external, manually added software repositories or a corrupted sources file."
+msgstr "This may have been caused by external or manually compiled software."
 
 #: src/Dialogs/UninstallFailDialog.vala:37
-#, fuzzy
 msgid "Failed to uninstall app"
-msgstr "Find and install apps"
+msgstr "Failed to uninstall app"
 
 #: src/Dialogs/UninstallFailDialog.vala:40
 #, c-format
 msgid "Failed to uninstall “%s”"
-msgstr ""
+msgstr "Failed to uninstall “%s”"
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
