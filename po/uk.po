@@ -1,4 +1,4 @@
-# Andrii Priadko <mendeleev.ua@gmail.com>, 2019.
+# Andrii Priadko <mendeleev.ua@gmail.com>, 2019, 2020.
 # Denis Papushaev <denqxotl@gmail.com>, 2019.
 # Andrii Alforov <andrevpost@gmail.com>, 2019.
 # Daniel Foré <daniel@elementary.io>, 2019.
@@ -8,15 +8,17 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-17 16:29+0000\n"
-"PO-Revision-Date: 2019-09-28 15:23+0000\n"
+"PO-Revision-Date: 2020-03-22 13:09+0000\n"
 "Last-Translator: Andrii Priadko <mendeleev.ua@gmail.com>\n"
-"Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/appcenter/uk/>\n"
+"Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.7.1\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -255,6 +257,8 @@ msgstr "Невідоме походження (не курований)"
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
+"Статус додатку не встановлено як інстальований в Центрі програм для пакету: "
+"%s"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -303,14 +307,17 @@ msgid "Content Warning"
 msgstr "Попередження про вміст"
 
 #: src/Dialogs/ContentWarningDialog.vala:30
-#, fuzzy, c-format
+#, c-format
 msgid "“%s” contains explicit content"
 msgstr "%s містить контент для дорослих"
 
 #: src/Dialogs/ContentWarningDialog.vala:31
-#, fuzzy, c-format
+#, c-format
 msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
-msgstr "%s може містити контент 18+ або такий, що може викликати підвищену чутливість та тревожність. Як правило, elementary не переглядає та не підтримує зміст цього застосунку."
+msgstr ""
+"“%s” може мати вразливий чи тривожний вміст, або такий, що призначений лише "
+"для дорослих. Elementary як правило не переглядає та не схвалює вміст цього "
+"додатку."
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 msgid "Show content warnings"
@@ -475,17 +482,16 @@ msgstr "Дана картка є тестовою карткою. Будь ла�
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
-msgstr ""
+msgstr "Видалення цього додатку також може видалити його дані."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:35
-#, fuzzy
 msgid "Uninstall app?"
-msgstr "Вилучити"
+msgstr "Видалили додаток?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:38
-#, fuzzy, c-format
+#, c-format
 msgid "Uninstall “%s”?"
-msgstr "Вилучити"
+msgstr "Видалити “%s”?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:144
@@ -493,19 +499,19 @@ msgid "Uninstall"
 msgstr "Вилучити"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
-#, fuzzy
 msgid "This may have been caused by external or manually compiled software."
-msgstr "Це може бути викликано зовнішньо, вручну доданими сховищами програмного забезпечення або файлом з пошкодженими джерелами."
+msgstr ""
+"Це може бути викликано програмним забезпеченням встановленим шляхом "
+"використання зовнішніх джерел або вручну."
 
 #: src/Dialogs/UninstallFailDialog.vala:37
-#, fuzzy
 msgid "Failed to uninstall app"
-msgstr "Пошук та встановлення додатків"
+msgstr "Не вдалося видалити додаток"
 
 #: src/Dialogs/UninstallFailDialog.vala:40
 #, c-format
 msgid "Failed to uninstall “%s”"
-msgstr ""
+msgstr "Помилка при видаленні “%s”"
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
