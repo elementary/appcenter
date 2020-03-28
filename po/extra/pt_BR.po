@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-27 20:46+0000\n"
-"PO-Revision-Date: 2020-02-01 02:08+0000\n"
+"PO-Revision-Date: 2020-03-29 21:09+0000\n"
 "Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/extra/pt_BR/>\n"
@@ -43,14 +43,20 @@ msgstr "Pequenas correções"
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "Update application details when changes happen outside of AppCenter"
 msgstr ""
+"Atualizar detalhes do aplicativo quando ocorrerem alterações fora do "
+"AppCenter"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Fix for notification not appearing when a restart is required"
 msgstr ""
+"Correção para a notificação não aparecer quando uma reinicialização é "
+"necessária"
 
 #: data/io.elementary.appcenter.appdata.xml.in:24
 msgid "Apps in list views now load in the correct order when scrolling"
 msgstr ""
+"Os aplicativos nas visualizações de lista agora são carregados na ordem "
+"correta ao rolar"
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
 msgid "Prevent unescaped XML entities from appearing in application names"
@@ -64,24 +70,30 @@ msgstr "Carregue a visualização \"Instalado\" mais rapidamente"
 #: data/io.elementary.appcenter.appdata.xml.in:27
 msgid "Ensure flatpak applications show in the category views"
 msgstr ""
+"Verifique se os aplicativos flatpak são exibidos nas visualizações de "
+"categoria"
 
 #: data/io.elementary.appcenter.appdata.xml.in:28
 msgid ""
 "Save some bandwidth by downloading smaller screenshots where appropriate"
 msgstr ""
+"Economize largura de banda baixando capturas de tela menores, quando "
+"apropriado"
 
 #: data/io.elementary.appcenter.appdata.xml.in:29
 msgid "System components no longer have an \"Open\" button"
-msgstr ""
+msgstr "Os componentes do sistema não têm mais o botão \"Abrir\""
 
 #: data/io.elementary.appcenter.appdata.xml.in:30
 msgid ""
 "Applications menu can now remove flatpaks that weren't installed by AppCenter"
 msgstr ""
+"O menu Aplicativos agora pode remover flatpaks que não foram instalados pelo "
+"AppCenter"
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
 msgid "Make download size estimates more accurate"
-msgstr ""
+msgstr "Torne as estimativas de tamanho de download mais precisas"
 
 #: data/io.elementary.appcenter.appdata.xml.in:39
 msgid "Prevent AppCenter from opening on log in"
