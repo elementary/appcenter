@@ -1,3 +1,21 @@
+appcenter (3.2.3) bionic; urgency=medium
+
+  * Release 3.2.3 (#1243)
+  * arrow.css: Don't hardcode arrow color (#1240)
+  * Backers.md: anon → Carolos Foscolos
+  * Backers.md: anon → Gerphil Niebur
+  * Backers.md: Ascii Wolf → Daniel Rusek
+  * BACKERS.md: anon → Rocco – BigDaddyLinux
+  * BACKERS.md: pesasa → Petri Salmela
+  * BACKERS.md: darrel → Darrel Davis
+  * BACKERS.md: Add Berger Rudolf
+  * BACKERS.md: Adam Balla → chzbacon
+  * BACKERS.md: Callum → TailRed
+  * BACKERS.md: add Sepehr Lajevardi
+  * Add backers (#1228)
+
+ -- elementary Builds Team <builds@elementary.io>  Thu, 02 Apr 2020 00:21:20 +0000
+
 appcenter (3.2.2) bionic; urgency=medium
 
   * Release 3.2.2 (#1225)
