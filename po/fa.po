@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-17 16:29+0000\n"
+"POT-Creation-Date: 2020-04-04 16:09+0000\n"
 "PO-Revision-Date: 2018-02-27 19:11+0000\n"
 "Last-Translator: armoghaddam <armoghaddam24@gmail.com>\n"
 "Language-Team: Persian <https://weblate.elementary.io/projects/appcenter/appcenter/fa/>\n"
@@ -90,7 +90,7 @@ msgstr "حذف بسته ها"
 msgid "Downloading"
 msgstr "در حال دانلود"
 
-#: src/Utils.vala:86
+#: src/Utils.vala:86 src/Core/FlatpakBackend.vala:698
 msgid "Installing"
 msgstr "درحال نصب"
 
@@ -135,6 +135,9 @@ msgid "Finished"
 msgstr "تمام شد"
 
 #: src/Utils.vala:108 src/Core/ChangeInformation.vala:79
+#: src/Core/FlatpakBackend.vala:707 src/Core/FlatpakBackend.vala:730
+#: src/Core/FlatpakBackend.vala:803 src/Core/FlatpakBackend.vala:904
+#: src/Core/FlatpakBackend.vala:930
 msgid "Cancelling"
 msgstr "لغو کردن"
 
@@ -219,6 +222,24 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] ""
 msgstr[1] ""
 
+#: src/Core/FlatpakBackend.vala:795
+#, fuzzy
+#| msgid "Installing"
+msgid "Uninstalling"
+msgstr "درحال نصب"
+
+#: src/Core/FlatpakBackend.vala:800
+#, fuzzy
+#| msgid "Finished"
+msgid "Finishing"
+msgstr "تمام شد"
+
+#: src/Core/FlatpakBackend.vala:895
+#, fuzzy
+#| msgid "Updates"
+msgid "Updating"
+msgstr "بروزرسانی‌ها"
+
 #: src/Core/Package.vala:300
 #, c-format
 msgid "%s Developers"
@@ -248,6 +269,11 @@ msgstr ""
 #: src/Core/Package.vala:444
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
+msgstr ""
+
+#: src/Core/PackageKitBackend.vala:220
+#, c-format
+msgid "%s (local)"
 msgstr ""
 
 #: src/Core/UpdateManager.vala:38
@@ -309,13 +335,40 @@ msgid "Show content warnings"
 msgstr ""
 
 #: src/Dialogs/ContentWarningDialog.vala:37
+#: src/Dialogs/NonCuratedWarningDialog.vala:81
 msgid "Don’t Install"
 msgstr ""
 
 #: src/Dialogs/ContentWarningDialog.vala:38
+#: src/Dialogs/NonCuratedWarningDialog.vala:82
 #, fuzzy
 msgid "Install Anyway"
 msgstr "درحال نصب"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:27
+msgid "Non-Curated Warning"
+msgstr ""
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:37
+msgid "Install non-curated app?"
+msgstr ""
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:38
+#, c-format
+msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
+msgstr ""
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:47
+msgid "It may not receive bug fix or feature updates"
+msgstr ""
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:60
+msgid "It may access or change system or personal files without permission"
+msgstr ""
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:66
+msgid "Show non-curated warnings"
+msgstr ""
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -870,9 +923,6 @@ msgstr ""
 
 #~ msgid "application download center"
 #~ msgstr "مرکز دانلود نرم افزار"
-
-#~ msgid "Updates"
-#~ msgstr "بروزرسانی‌ها"
 
 #~ msgid "Use debug quiet mode"
 #~ msgstr "استفاده از حالت اشکال یابی"
