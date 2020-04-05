@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-17 16:29+0000\n"
+"POT-Creation-Date: 2020-04-04 16:09+0000\n"
 "PO-Revision-Date: 2019-10-12 13:23+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://l10n.elementary.io/projects/appcenter/appcenter/lt/>\n"
@@ -90,7 +90,7 @@ msgstr "Šalinami paketai"
 msgid "Downloading"
 msgstr "Atsiunčiama"
 
-#: src/Utils.vala:86
+#: src/Utils.vala:86 src/Core/FlatpakBackend.vala:698
 msgid "Installing"
 msgstr "Diegiama"
 
@@ -135,6 +135,9 @@ msgid "Finished"
 msgstr "Užbaigta"
 
 #: src/Utils.vala:108 src/Core/ChangeInformation.vala:79
+#: src/Core/FlatpakBackend.vala:707 src/Core/FlatpakBackend.vala:730
+#: src/Core/FlatpakBackend.vala:803 src/Core/FlatpakBackend.vala:904
+#: src/Core/FlatpakBackend.vala:930
 msgid "Cancelling"
 msgstr "Atšaukiama"
 
@@ -221,6 +224,24 @@ msgstr[0] "Jūsų sistemai prieinamas %u atnaujinimas"
 msgstr[1] "Jūsų sistemai prieinami %u atnaujinimai"
 msgstr[2] "Jūsų sistemai prieinama %u atnaujinimų"
 
+#: src/Core/FlatpakBackend.vala:795
+#, fuzzy
+#| msgid "Uninstall"
+msgid "Uninstalling"
+msgstr "Šalinti"
+
+#: src/Core/FlatpakBackend.vala:800
+#, fuzzy
+#| msgid "Finished"
+msgid "Finishing"
+msgstr "Užbaigta"
+
+#: src/Core/FlatpakBackend.vala:895
+#, fuzzy
+#| msgid "Update"
+msgid "Updating"
+msgstr "Atnaujinti"
+
 #: src/Core/Package.vala:300
 #, c-format
 msgid "%s Developers"
@@ -251,6 +272,12 @@ msgstr "Nežinoma kilmė (nekuruojama)"
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Programos būsena Programų centre nėra nustatyta kaip įdiegta šiam paketui: %s"
+
+#: src/Core/PackageKitBackend.vala:220
+#, fuzzy, c-format
+#| msgid "%s (non-curated)"
+msgid "%s (local)"
+msgstr "%s (nekuruojama)"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -314,12 +341,45 @@ msgid "Show content warnings"
 msgstr "Rodyti įspėjimus dėl turinio"
 
 #: src/Dialogs/ContentWarningDialog.vala:37
+#: src/Dialogs/NonCuratedWarningDialog.vala:81
 msgid "Don’t Install"
 msgstr "Neįdiegti"
 
 #: src/Dialogs/ContentWarningDialog.vala:38
+#: src/Dialogs/NonCuratedWarningDialog.vala:82
 msgid "Install Anyway"
 msgstr "Vis tiek įdiegti"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:27
+#, fuzzy
+#| msgid "Content Warning"
+msgid "Non-Curated Warning"
+msgstr "Įspėjimas dėl turinio"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:37
+#, fuzzy
+#| msgid "%s (non-curated)"
+msgid "Install non-curated app?"
+msgstr "%s (nekuruojama)"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:38
+#, c-format
+msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
+msgstr ""
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:47
+msgid "It may not receive bug fix or feature updates"
+msgstr ""
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:60
+msgid "It may access or change system or personal files without permission"
+msgstr ""
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:66
+#, fuzzy
+#| msgid "Show content warnings"
+msgid "Show non-curated warnings"
+msgstr "Rodyti įspėjimus dėl turinio"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"

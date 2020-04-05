@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-17 16:29+0000\n"
+"POT-Creation-Date: 2020-04-04 16:09+0000\n"
 "PO-Revision-Date: 2019-10-02 11:23+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/appcenter/appcenter/zh_Hans/>\n"
@@ -94,7 +94,7 @@ msgstr "正在删除软件包"
 msgid "Downloading"
 msgstr "下载中"
 
-#: src/Utils.vala:86
+#: src/Utils.vala:86 src/Core/FlatpakBackend.vala:698
 msgid "Installing"
 msgstr "正在安装"
 
@@ -139,6 +139,9 @@ msgid "Finished"
 msgstr "已完成"
 
 #: src/Utils.vala:108 src/Core/ChangeInformation.vala:79
+#: src/Core/FlatpakBackend.vala:707 src/Core/FlatpakBackend.vala:730
+#: src/Core/FlatpakBackend.vala:803 src/Core/FlatpakBackend.vala:904
+#: src/Core/FlatpakBackend.vala:930
 msgid "Cancelling"
 msgstr "取消中"
 
@@ -221,6 +224,24 @@ msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "您的系统有 %u 个可用更新"
 
+#: src/Core/FlatpakBackend.vala:795
+#, fuzzy
+#| msgid "Uninstall"
+msgid "Uninstalling"
+msgstr "卸载"
+
+#: src/Core/FlatpakBackend.vala:800
+#, fuzzy
+#| msgid "Finished"
+msgid "Finishing"
+msgstr "已完成"
+
+#: src/Core/FlatpakBackend.vala:895
+#, fuzzy
+#| msgid "Update"
+msgid "Updating"
+msgstr "更新"
+
 #: src/Core/Package.vala:300
 #, c-format
 msgid "%s Developers"
@@ -251,6 +272,12 @@ msgstr "未知来源"
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
+
+#: src/Core/PackageKitBackend.vala:220
+#, fuzzy, c-format
+#| msgid "%s (non-curated)"
+msgid "%s (local)"
+msgstr "%s（不支持的更新）"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -311,12 +338,45 @@ msgid "Show content warnings"
 msgstr "显示内容警告"
 
 #: src/Dialogs/ContentWarningDialog.vala:37
+#: src/Dialogs/NonCuratedWarningDialog.vala:81
 msgid "Don’t Install"
 msgstr "不要安装"
 
 #: src/Dialogs/ContentWarningDialog.vala:38
+#: src/Dialogs/NonCuratedWarningDialog.vala:82
 msgid "Install Anyway"
 msgstr "仍然安装"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:27
+#, fuzzy
+#| msgid "Content Warning"
+msgid "Non-Curated Warning"
+msgstr "内容警告"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:37
+#, fuzzy
+#| msgid "%s (non-curated)"
+msgid "Install non-curated app?"
+msgstr "%s（不支持的更新）"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:38
+#, c-format
+msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
+msgstr ""
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:47
+msgid "It may not receive bug fix or feature updates"
+msgstr ""
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:60
+msgid "It may access or change system or personal files without permission"
+msgstr ""
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:66
+#, fuzzy
+#| msgid "Show content warnings"
+msgid "Show non-curated warnings"
+msgstr "显示内容警告"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
