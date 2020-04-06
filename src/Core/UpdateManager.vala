@@ -129,14 +129,14 @@ public class AppCenterCore.UpdateManager : Object {
             os_updates.latest_version = latest_version;
             os_updates.description = GLib.Markup.printf_escaped ("<p>%s</p>\n", latest_version);
         } else {
-            debug ("%d OS updates found", os_count);
+            debug ("%u OS updates found", os_count);
             var latest_version = ngettext ("%u component with updates", "%u components with updates", os_count).printf (os_count);
             os_updates.latest_version = latest_version;
             os_updates.description = "<p>%s</p>\n<ul>\n%s</ul>\n".printf (GLib.Markup.printf_escaped (_("%s:"), latest_version), os_desc);
         }
 
         count = apps_with_updates.size;
-        debug ("%d app updates found", count);
+        debug ("%u app updates found", count);
         if (os_count > 0) {
             count += 1;
         }
