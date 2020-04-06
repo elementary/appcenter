@@ -89,7 +89,7 @@ public class AppCenterCore.UpdateManager : Object {
         unowned FlatpakBackend fp_client = FlatpakBackend.get_default ();
         var flatpak_updates = yield fp_client.get_updates ();
         debug ("Flatpak backend reports %d updates", flatpak_updates.size);
-        
+
         foreach (var flatpak_update in flatpak_updates) {
             var appcenter_package = fp_client.lookup_package_by_id (flatpak_update);
             if (appcenter_package != null) {
