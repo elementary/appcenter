@@ -131,7 +131,7 @@ namespace AppCenter {
 
             action_button.download_requested.connect (() => {
                 if (package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
-                    if (install_approved () == true) {
+                    if (install_approved ()) {
                         action_clicked.begin ();
                     }
                 } else {
