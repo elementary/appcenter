@@ -178,10 +178,33 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
     public async bool update_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
         var success = true;
         // updatable_packages is a HashMultiMap of packages to be updated, where the key is
-        // a pointer to the backend that is capable of updating them. Call update on each of these
-        // backends to update the packages belonging to them
-        foreach (var backend in package.change_information.updatable_packages.get_keys ()) {
-            if (!yield backend.update_package (package, (owned)cb, cancellable)) {
+        // a pointer to the backend that is capable of updating them. Most packages only have one
+        // backend, but there is the special case of the OS updates package which could contain
+        // flatpaks and/or packagekit packages
+
+        var backends = package.change_information.updatable_packages.get_keys ().to_array ();
+        int num_backends = backends.length;
+
+        for (int i = 0; i < num_backends; i++) {
+            unowned Backend backend = backends[i];
+
+            var backend_succeeded = yield backend.update_package (
+                package,
+                // Intercept progress callbacks so we can divide the progress between the number of backends
+                (can_cancel, description, progress, status) => {
+                    double calculated_progress = (i * (1.0f / num_backends)) + (progress / num_backends);
+                    ChangeInformation.Status consolidated_status = status;
+                    // Only report finished when the last operation completes
+                    if (consolidated_status == ChangeInformation.Status.FINISHED && (i + 1) < num_backends) {
+                        consolidated_status = ChangeInformation.Status.RUNNING;
+                    }
+
+                    cb (can_cancel, description, calculated_progress, consolidated_status);
+                },
+                cancellable
+            );
+
+            if (!backend_succeeded) {
                 success = false;
             }
         }

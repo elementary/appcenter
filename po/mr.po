@@ -1,19 +1,20 @@
-# Prachi Joshi <josprachi@yahoo.com>, 2018, 2019.
+# Prachi Joshi <josprachi@yahoo.com>, 2018, 2019, 2020.
 # उदयराज बाळ <udayrajb@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-04 16:09+0000\n"
-"PO-Revision-Date: 2019-11-06 21:09+0000\n"
+"PO-Revision-Date: 2020-04-06 14:22+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
-"Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/appcenter/mr/>\n"
+"Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/mr/>\n"
 "Language: mr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -224,22 +225,16 @@ msgstr[0] "%u अपडेट आपल्या सिस्टिम साठ
 msgstr[1] "%u अपडेट आपल्या सिस्टिम साठी उपलब्ध आहेत"
 
 #: src/Core/FlatpakBackend.vala:795
-#, fuzzy
-#| msgid "Uninstall"
 msgid "Uninstalling"
-msgstr "विस्थापित करा"
+msgstr "विस्थापित करीत आहे"
 
 #: src/Core/FlatpakBackend.vala:800
-#, fuzzy
-#| msgid "Finished"
 msgid "Finishing"
-msgstr "पूर्ण झाले"
+msgstr "पूर्ण करीत आहे"
 
 #: src/Core/FlatpakBackend.vala:895
-#, fuzzy
-#| msgid "Update"
 msgid "Updating"
-msgstr "अद्ययावत (अपडेट) करा"
+msgstr "अद्ययावत (अपडेट) करीत आहे"
 
 #: src/Core/Package.vala:300
 #, c-format
@@ -273,10 +268,9 @@ msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "%s : पॅकेजसाठी AppCenter मध्ये स्थापित केल्यानुसार अनुप्रयोग स्थिती सेट केलेली नाही"
 
 #: src/Core/PackageKitBackend.vala:220
-#, fuzzy, c-format
-#| msgid "%s (non-curated)"
+#, c-format
 msgid "%s (local)"
-msgstr "%s (नॉन-क्युरेटेड)"
+msgstr "%s (स्थानिक)"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -348,35 +342,33 @@ msgid "Install Anyway"
 msgstr "तरीही इन्स्टॉल करा"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
-#, fuzzy
-#| msgid "Content Warning"
 msgid "Non-Curated Warning"
-msgstr "मजकूर चेतावणी"
+msgstr "नॉन-क्युरेटेड चेतावणी"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:37
-#, fuzzy
-#| msgid "%s (non-curated)"
 msgid "Install non-curated app?"
-msgstr "%s (नॉन-क्युरेटेड)"
+msgstr "नॉन-क्युरेटेड अ‍ॅप स्थापित करायचा?"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
 msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
 msgstr ""
+"\"%s\" एलिमेंटरी द्वारे क्युरेट केलेले नाही आणि सुरक्षितता, गोपनीयता किंवा "
+"सिस्टम एकीकरणासाठी त्याचे पुनरावलोकन केले गेले नाही."
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
 msgid "It may not receive bug fix or feature updates"
-msgstr ""
+msgstr "हे दोष निराकरण किंवा वैशिष्ट्य अद्यतने प्राप्त करू शकत नाही"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:60
 msgid "It may access or change system or personal files without permission"
 msgstr ""
+"हे परवानगीशिवाय सिस्टम किंवा वैयक्तिक फायलींमध्ये प्रवेश करू शकते किंवा बदलू "
+"शकते"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
-#, fuzzy
-#| msgid "Show content warnings"
 msgid "Show non-curated warnings"
-msgstr "मजकूर चेतावण्या दाखवा"
+msgstr "नॉन-क्युरेटेड चेतावण्या दाखवा"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"

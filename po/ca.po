@@ -1,4 +1,4 @@
-# David M <rbndavid@gmail.com>, 2018, 2019.
+# David M <rbndavid@gmail.com>, 2018, 2019, 2020.
 # Seifer23 <salvador.rodo@gmail.com>, 2019.
 # Adolfo Jayme Barrientos <fitojb@ubuntu.com>, 2020.
 msgid ""
@@ -6,9 +6,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-04 16:09+0000\n"
-"PO-Revision-Date: 2020-03-05 14:09+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
-"Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/appcenter/ca/>\n"
+"PO-Revision-Date: 2020-04-06 14:22+0000\n"
+"Last-Translator: David M <rbndavid@gmail.com>\n"
+"Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/ca/>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -225,22 +226,16 @@ msgstr[0] "Hi ha %u actualització disponible per al sistema"
 msgstr[1] "Hi ha %u actualitzacions disponibles per al sistema"
 
 #: src/Core/FlatpakBackend.vala:795
-#, fuzzy
-#| msgid "Uninstall"
 msgid "Uninstalling"
-msgstr "Desinstal·la"
+msgstr "Es desinstal·la"
 
 #: src/Core/FlatpakBackend.vala:800
-#, fuzzy
-#| msgid "Finished"
 msgid "Finishing"
-msgstr "S'ha acabat"
+msgstr "S'acaba"
 
 #: src/Core/FlatpakBackend.vala:895
-#, fuzzy
-#| msgid "Update"
 msgid "Updating"
-msgstr "Actualitza"
+msgstr "S'actualitza"
 
 #: src/Core/Package.vala:300
 #, c-format
@@ -274,10 +269,9 @@ msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "L'estat de l'aplicació no està establert com a instal·lada al Centre d'aplicacions per al paquet %s."
 
 #: src/Core/PackageKitBackend.vala:220
-#, fuzzy, c-format
-#| msgid "%s (non-curated)"
+#, c-format
 msgid "%s (local)"
-msgstr "%s (sense cura)"
+msgstr "%s (local)"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -349,35 +343,32 @@ msgid "Install Anyway"
 msgstr "Instal·la-la tanmateix"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
-#, fuzzy
-#| msgid "Content Warning"
 msgid "Non-Curated Warning"
-msgstr "Avís de contingut"
+msgstr "Avís de manca de cura"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:37
-#, fuzzy
-#| msgid "%s (non-curated)"
 msgid "Install non-curated app?"
-msgstr "%s (sense cura)"
+msgstr "Voleu instal·lar l'aplicació sense curar?"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
 msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
 msgstr ""
+"%s no té la cura de l'elementary i no s'ha revisat pel que fa a la "
+"seguretat, privadesa o integració amb el sistema."
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
 msgid "It may not receive bug fix or feature updates"
 msgstr ""
+"Podria no rebre correcions d'errors o actualitzacions de característiques."
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:60
 msgid "It may access or change system or personal files without permission"
-msgstr ""
+msgstr "Podria accedir o canviar fitxers personals del sistema sense permís."
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
-#, fuzzy
-#| msgid "Show content warnings"
 msgid "Show non-curated warnings"
-msgstr "Mostra els avisos de contingut"
+msgstr "Mostra els avisos de manca de cura"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
