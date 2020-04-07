@@ -130,17 +130,15 @@ namespace AppCenter {
             action_button_revealer.add (action_button);
 
             action_button.download_requested.connect (() => {
-                if (package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
-                    if (install_approved ()) {
-                        action_clicked.begin ();
-                    }
-                } else {
+                if (install_approved ()) {
                     action_clicked.begin ();
                 }
             });
 
             action_button.payment_requested.connect ((amount) => {
-                show_stripe_dialog (amount);
+                if (install_approved ()) {
+                    show_stripe_dialog (amount);
+                }
             });
 
             uninstall_button = new Gtk.Button.with_label (_("Uninstall"));
@@ -464,7 +462,11 @@ namespace AppCenter {
         private bool install_approved () {
             bool approved = true;
 
-            if (App.settings.get_boolean ("non-curated-warning") == true && !(package.is_native || is_os_updates)) {
+            var curated_dialog_allowed = App.settings.get_boolean ("non-curated-warning");
+            var app_not_installed = package.state == AppCenterCore.Package.State.NOT_INSTALLED;
+            var app_curated = package.is_native || is_os_updates;
+
+            if (curated_dialog_allowed && app_not_installed && !app_curated) {
                 approved = false;
 
                 non_curated_warning = new Widgets.NonCuratedWarningDialog (this.package_name.label);
@@ -489,6 +491,11 @@ namespace AppCenter {
 
                 non_curated_warning.run ();
                 non_curated_warning.destroy ();
+
+                // If the install has been rejected at this stage, return early
+                if (!approved) {
+                    return false;
+                }
             }
 
             if (App.settings.get_boolean ("content-warning") == true && package.is_explicit) {
