@@ -463,10 +463,12 @@ namespace AppCenter {
             bool approved = true;
 
             var curated_dialog_allowed = App.settings.get_boolean ("non-curated-warning");
-            var app_not_installed = package.state == AppCenterCore.Package.State.NOT_INSTALLED;
+            var app_installed = package.state != AppCenterCore.Package.State.NOT_INSTALLED;
             var app_curated = package.is_native || is_os_updates;
 
-            if (curated_dialog_allowed && app_not_installed && !app_curated) {
+            // Only show the curated dialog if the user has left them enabled, the app isn't installed
+            // and it isn't a curated app
+            if (curated_dialog_allowed && !app_installed && !app_curated) {
                 approved = false;
 
                 non_curated_warning = new Widgets.NonCuratedWarningDialog (this.package_name.label);
