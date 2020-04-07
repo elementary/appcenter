@@ -130,15 +130,17 @@ namespace AppCenter {
             action_button_revealer.add (action_button);
 
             action_button.download_requested.connect (() => {
-                if (install_approved (package) == true) {
+                if (package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
+                    if (install_approved () == true) {
+                        action_clicked.begin ();
+                    }
+                } else {
                     action_clicked.begin ();
                 }
             });
 
             action_button.payment_requested.connect ((amount) => {
-                if (install_approved (package) == true) {
-                    show_stripe_dialog (amount);
-                }
+                show_stripe_dialog (amount);
             });
 
             uninstall_button = new Gtk.Button.with_label (_("Uninstall"));
@@ -459,7 +461,7 @@ namespace AppCenter {
             });
         }
 
-        private bool install_approved (AppCenterCore.Package package) {
+        private bool install_approved () {
             bool approved = true;
 
             if (App.settings.get_boolean ("non-curated-warning") == true && !(package.is_native || is_os_updates)) {
