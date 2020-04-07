@@ -39,11 +39,16 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
 
                     SuspendControl.get_default ().inhibit ();
                 } else {
-                    remove_inhibit_timeout = Timeout.add_seconds (5, () => {
-                        SuspendControl.get_default ().uninhibit ();
+                    // Wait for 5 seconds of inactivity before uninhibiting as we may be
+                    // rapidly switching between working states on different backends etc...
+                    if (remove_inhibit_timeout == 0) {
+                        remove_inhibit_timeout = Timeout.add_seconds (5, () => {
+                            SuspendControl.get_default ().uninhibit ();
+                            remove_inhibit_timeout = 0;
 
-                        return false;
-                    });
+                            return false;
+                        });
+                    }
                 }
 
                 notify_property ("working");
