@@ -15,6 +15,19 @@
     </p>
   </description>
   <releases>
+    <release version="3.2.4" date="2020-04-25" urgency="medium">
+      <description>
+        <p>Fixes</p>
+        <ul>
+          <li>Prevent crashes when updating Flatpaks and system packages simultaneously</li>
+        </ul>
+      </description>
+    </release>
+    <release version="3.2.3" date="2020-04-01" urgency="medium">
+      <description>
+        <p>Updated translations</p>
+      </description>
+    </release>
     <release version="3.2.2" date="2020-02-28" urgency="medium">
       <description>
         <p>Minor fixes</p>

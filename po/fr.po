@@ -3,23 +3,24 @@
 # Eliott Lavier <eliott.lavier@gmail.com>, 2018.
 # David Marcel BAUM <david.baum@tuta.io>, 2018.
 # Lucas Ruffieux <lucasruffieux@gmail.com>, 2018.
-# Nathan <bonnemainsnathan@gmail.com>, 2018, 2019.
+# Nathan <bonnemainsnathan@gmail.com>, 2018, 2019, 2020.
 # Franck STAUFFER <franck.stauffer@e.email>, 2019.
 # Kristien <kristien@mailo.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-17 16:29+0000\n"
-"PO-Revision-Date: 2019-11-05 20:24+0000\n"
+"POT-Creation-Date: 2020-04-04 16:09+0000\n"
+"PO-Revision-Date: 2020-04-06 14:22+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
-"Language-Team: French <https://l10n.elementary.io/projects/appcenter/appcenter/fr/>\n"
+"Language-Team: French <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -97,7 +98,7 @@ msgstr "Suppression des paquets"
 msgid "Downloading"
 msgstr "Téléchargement"
 
-#: src/Utils.vala:86
+#: src/Utils.vala:86 src/Core/FlatpakBackend.vala:698
 msgid "Installing"
 msgstr "Installation"
 
@@ -142,6 +143,9 @@ msgid "Finished"
 msgstr "Terminé"
 
 #: src/Utils.vala:108 src/Core/ChangeInformation.vala:79
+#: src/Core/FlatpakBackend.vala:707 src/Core/FlatpakBackend.vala:730
+#: src/Core/FlatpakBackend.vala:803 src/Core/FlatpakBackend.vala:904
+#: src/Core/FlatpakBackend.vala:930
 msgid "Cancelling"
 msgstr "Annulation"
 
@@ -226,6 +230,18 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "%u mise à jour est disponible pour votre système"
 msgstr[1] "%u mises à jour sont disponibles pour votre système"
 
+#: src/Core/FlatpakBackend.vala:795
+msgid "Uninstalling"
+msgstr "Désinstallation"
+
+#: src/Core/FlatpakBackend.vala:800
+msgid "Finishing"
+msgstr "Finalisation"
+
+#: src/Core/FlatpakBackend.vala:895
+msgid "Updating"
+msgstr "Mise à jour"
+
 #: src/Core/Package.vala:300
 #, c-format
 msgid "%s Developers"
@@ -256,6 +272,11 @@ msgstr "Origine inconnue (non-vérifiée)"
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "L'état de l'application n'est pas défini comme installé dans le Centre d'Applications pour le paquet : %s"
+
+#: src/Core/PackageKitBackend.vala:220
+#, c-format
+msgid "%s (local)"
+msgstr "%s (local)"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -317,12 +338,45 @@ msgid "Show content warnings"
 msgstr "Afficher les avertissements de contenu"
 
 #: src/Dialogs/ContentWarningDialog.vala:37
+#: src/Dialogs/NonCuratedWarningDialog.vala:81
 msgid "Don’t Install"
 msgstr "Ne pas installer"
 
 #: src/Dialogs/ContentWarningDialog.vala:38
+#: src/Dialogs/NonCuratedWarningDialog.vala:82
 msgid "Install Anyway"
 msgstr "Installer quand même"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:27
+msgid "Non-Curated Warning"
+msgstr "Avertissement des applications non vérifiées"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:37
+msgid "Install non-curated app?"
+msgstr "Installer l'application non vérifiée ?"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:38
+#, c-format
+msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
+msgstr ""
+"« %s » n'a pas été vérifiée par elementary, notamment au regard de la "
+"sécurité, de la confidentialité et l’intégration dans le système."
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:47
+msgid "It may not receive bug fix or feature updates"
+msgstr ""
+"Il se pourrait qu'il n'y ait pas de corrections de bugs ou de mises à jour "
+"de fonctionnalités"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:60
+msgid "It may access or change system or personal files without permission"
+msgstr ""
+"Il se pourrait qu'elle ait accès au système et qu'elle modifie des "
+"paramètres ou des fichiers personnels sans autorisation"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:66
+msgid "Show non-curated warnings"
+msgstr "Afficher des avertissements pour les applications non vérifiées"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"

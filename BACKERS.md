@@ -132,14 +132,9 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - Anonymous Backer
 - Anonymous Backer
 - Anonymous Backer
-- Anonymous Backer
-- Anonymous Backer
-- Anonymous Backer
-- Anonymous Backer
 - Anthony Weathers
 - Antti Impiö
 - Arnaud Durif
-- Ascii Wolf
 - Ashton Snapp
 - Audric Gueidan
 - Avi Romanoff
@@ -151,6 +146,7 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - Benedikt Willi
 - Benjamin Bellamy
 - Benjamin Collet
+- Berger Rudolf
 - Bernardo Ferrari
 - binternagel
 - Bjarne Kristensen
@@ -170,6 +166,7 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - camerontauxe
 - Carlos López
 - Carlos Soutullo
+- Carolos Foscolos
 - cdnbigj
 - Chase Longmore
 - Chau Ngoc Duy Khuong
@@ -197,10 +194,11 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - Daniel Landau
 - Daniel Patton
 - Daniel Pontoriero
+- Daniel Rusek
 - Daniel Tauschke
 - Danilo Weber Nunes
 - Danny Roth
-- darrel
+- Darrel Davis
 - Darryl Daniel
 - Dave Kretz
 - davemelanson
@@ -252,6 +250,7 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - Georges-Emmanuel Pallud
 - gerardo
 - Geri Vahey
+- Gerphil Niebur
 - gffranco
 - graygoats
 - Greg Hedin
@@ -405,7 +404,7 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - Pavel Dolinin
 - Pedro Rittner
 - Per Bering
-- pesasa
+- Petri Salmela
 - Peter Uithoven
 - Peter Vanderfeesten
 - Peter Volf
@@ -434,6 +433,7 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - Robert Gorbul
 - Robin Candau
 - robinsoncollado
+- Rocco – BigDaddyLinux
 - Rohith Madhavan
 - Roland Hemmer
 - Romain De Filippi

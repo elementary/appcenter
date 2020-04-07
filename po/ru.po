@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-17 16:29+0000\n"
+"POT-Creation-Date: 2020-04-04 16:09+0000\n"
 "PO-Revision-Date: 2019-01-07 00:02+0000\n"
 "Last-Translator: Kirill Romanov <djaler1@gmail.com>\n"
 "Language-Team: Russian <https://weblate.elementary.io/projects/appcenter/appcenter/ru/>\n"
@@ -90,7 +90,7 @@ msgstr "Удаление пакетов"
 msgid "Downloading"
 msgstr "Загрузка"
 
-#: src/Utils.vala:86
+#: src/Utils.vala:86 src/Core/FlatpakBackend.vala:698
 msgid "Installing"
 msgstr "Установка"
 
@@ -135,6 +135,9 @@ msgid "Finished"
 msgstr "Завершено"
 
 #: src/Utils.vala:108 src/Core/ChangeInformation.vala:79
+#: src/Core/FlatpakBackend.vala:707 src/Core/FlatpakBackend.vala:730
+#: src/Core/FlatpakBackend.vala:803 src/Core/FlatpakBackend.vala:904
+#: src/Core/FlatpakBackend.vala:930
 msgid "Cancelling"
 msgstr "Отмена"
 
@@ -221,6 +224,24 @@ msgstr[0] "Для системы доступно %u обновление"
 msgstr[1] "Для системы доступны %u обновления"
 msgstr[2] "Для системы доступны %u обновлений"
 
+#: src/Core/FlatpakBackend.vala:795
+#, fuzzy
+#| msgid "Uninstall"
+msgid "Uninstalling"
+msgstr "Удалить"
+
+#: src/Core/FlatpakBackend.vala:800
+#, fuzzy
+#| msgid "Finished"
+msgid "Finishing"
+msgstr "Завершено"
+
+#: src/Core/FlatpakBackend.vala:895
+#, fuzzy
+#| msgid "Update"
+msgid "Updating"
+msgstr "Обновить"
+
 #: src/Core/Package.vala:300
 #, c-format
 msgid "%s Developers"
@@ -253,6 +274,11 @@ msgstr ""
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
+
+#: src/Core/PackageKitBackend.vala:220
+#, fuzzy, c-format
+msgid "%s (local)"
+msgstr "%s (local)"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -315,13 +341,43 @@ msgid "Show content warnings"
 msgstr ""
 
 #: src/Dialogs/ContentWarningDialog.vala:37
+#: src/Dialogs/NonCuratedWarningDialog.vala:81
 #, fuzzy
 msgid "Don’t Install"
 msgstr "Установить"
 
 #: src/Dialogs/ContentWarningDialog.vala:38
+#: src/Dialogs/NonCuratedWarningDialog.vala:82
 msgid "Install Anyway"
 msgstr "Всё равно установить"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:27
+#, fuzzy
+#| msgid "Non-Curated Apps"
+msgid "Non-Curated Warning"
+msgstr "Не поддерживаемое сообществом elementary"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:37
+#, fuzzy
+msgid "Install non-curated app?"
+msgstr "%s (local)"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:38
+#, c-format
+msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
+msgstr ""
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:47
+msgid "It may not receive bug fix or feature updates"
+msgstr ""
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:60
+msgid "It may access or change system or personal files without permission"
+msgstr ""
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:66
+msgid "Show non-curated warnings"
+msgstr ""
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
