@@ -243,9 +243,6 @@ namespace AppCenter.Views {
 
             // Update all updateable apps
             if (apps_to_update.size > 0) {
-                // Prevent computer from sleeping while updating apps
-                SuspendControl.get_default ().inhibit ();
-
                 first_package = apps_to_update[0];
                 first_package.info_changed.connect_after (after_first_package_info_changed);
                 first_package.update.begin (() => {
@@ -299,7 +296,6 @@ namespace AppCenter.Views {
             assert (updating_all_apps && packages_changing == 0);
 
             updating_all_apps = false;
-            SuspendControl.get_default ().uninhibit ();
 
             /* Set the action button sensitive and emit "changed" on each row in order to update
              * the sort order and headers (any change would have been ignored while updating) */

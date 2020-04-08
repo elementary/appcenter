@@ -21,6 +21,7 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
     public signal void cache_flush_needed ();
 
     private Gee.ArrayList<unowned Backend> backends;
+    private uint remove_inhibit_timeout = 0;
 
     construct {
         backends = new Gee.ArrayList<unowned Backend> ();
@@ -30,6 +31,26 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
 
         foreach (var backend in backends) {
             backend.notify["working"].connect (() => {
+                if (working) {
+                    if (remove_inhibit_timeout != 0) {
+                        Source.remove (remove_inhibit_timeout);
+                        remove_inhibit_timeout = 0;
+                    }
+
+                    SuspendControl.get_default ().inhibit ();
+                } else {
+                    // Wait for 5 seconds of inactivity before uninhibiting as we may be
+                    // rapidly switching between working states on different backends etc...
+                    if (remove_inhibit_timeout == 0) {
+                        remove_inhibit_timeout = Timeout.add_seconds (5, () => {
+                            SuspendControl.get_default ().uninhibit ();
+                            remove_inhibit_timeout = 0;
+
+                            return false;
+                        });
+                    }
+                }
+
                 notify_property ("working");
             });
         }

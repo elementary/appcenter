@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-06 14:24+0000\n"
-"PO-Revision-Date: 2020-03-29 21:09+0000\n"
+"PO-Revision-Date: 2020-04-08 23:30+0000\n"
 "Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/extra/pt_BR/>\n"
@@ -37,12 +37,12 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 msgid "Fixes"
-msgstr ""
+msgstr "Correções"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid ""
 "Prevent crashes when updating Flatpaks and system packages simultaneously"
-msgstr ""
+msgstr "Evita falhas ao atualizar Flatpaks e pacotes do sistema simultaneamente"
 
 #: data/io.elementary.appcenter.appdata.xml.in:28
 #: data/io.elementary.appcenter.appdata.xml.in:75

@@ -1,20 +1,21 @@
 # Christophe Silva <Christophesilva80@gmail.com>, 2018.
 # Nuno Alexandre MS Ribeiro <nuno.anarresti@gmail.com>, 2018, 2019.
-# Hugo Carvalho <hugokarvalho@hotmail.com>, 2019.
+# Hugo Carvalho <hugokarvalho@hotmail.com>, 2019, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-04 16:09+0000\n"
-"PO-Revision-Date: 2019-12-06 17:19+0000\n"
+"PO-Revision-Date: 2020-04-08 23:30+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
-"Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/appcenter/pt/>\n"
+"Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/pt/>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -225,22 +226,16 @@ msgstr[0] "%u atualização disponível para o seu sistema"
 msgstr[1] "%u atualizações disponíveis para o seu sistema"
 
 #: src/Core/FlatpakBackend.vala:795
-#, fuzzy
-#| msgid "Uninstall"
 msgid "Uninstalling"
-msgstr "Desinstalar"
+msgstr "A desinstalar"
 
 #: src/Core/FlatpakBackend.vala:800
-#, fuzzy
-#| msgid "Finished"
 msgid "Finishing"
-msgstr "Concluído"
+msgstr "A concluir"
 
 #: src/Core/FlatpakBackend.vala:895
-#, fuzzy
-#| msgid "Update"
 msgid "Updating"
-msgstr "Atualizar"
+msgstr "A atualizar"
 
 #: src/Core/Package.vala:300
 #, c-format
@@ -274,10 +269,9 @@ msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Estado da aplicação não definido como instalada na AppCenter para o pacote: %s"
 
 #: src/Core/PackageKitBackend.vala:220
-#, fuzzy, c-format
-#| msgid "%s (non-curated)"
+#, c-format
 msgid "%s (local)"
-msgstr "%s (não-curadas)"
+msgstr "%s (local)"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -349,35 +343,31 @@ msgid "Install Anyway"
 msgstr "Mesmo assim instalar"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
-#, fuzzy
-#| msgid "Content Warning"
 msgid "Non-Curated Warning"
-msgstr "Aviso sobre o conteúdo"
+msgstr "Aviso de não-curada"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:37
-#, fuzzy
-#| msgid "%s (non-curated)"
 msgid "Install non-curated app?"
-msgstr "%s (não-curadas)"
+msgstr "Instalar aplicação não-curada?"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
 msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
 msgstr ""
+"“%s” não é curada pelo elementary e não foi revista quanto à segurança, "
+"privacidade ou integração do sistema."
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
 msgid "It may not receive bug fix or feature updates"
-msgstr ""
+msgstr "Pode não receber correcções de erros ou apresentar actualizações"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:60
 msgid "It may access or change system or personal files without permission"
-msgstr ""
+msgstr "Pode aceder ou alterar o sistema ou ficheiros pessoais sem autorização"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
-#, fuzzy
-#| msgid "Show content warnings"
 msgid "Show non-curated warnings"
-msgstr "Mostrar avisos sobre o conteúdo"
+msgstr "Mostrar avisos de não-curadas"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"

@@ -20,6 +20,7 @@
         <p>Fixes</p>
         <ul>
           <li>Prevent crashes when updating Flatpaks and system packages simultaneously</li>
+          <li>Prevent suspending when installing, updating, or removing packages</li>
           <li>Updated translations</li>
         </ul>
       </description>
