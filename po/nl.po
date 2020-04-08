@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-04 16:09+0000\n"
+"POT-Creation-Date: 2020-04-08 23:33+0000\n"
 "PO-Revision-Date: 2019-12-31 06:14+0000\n"
 "Last-Translator: Jaimie85 <alsemgeest@gmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/appcenter/nl/>\n"
@@ -286,36 +286,36 @@ msgstr "Updates voor het besturingssysteem"
 msgid "Updates to system components"
 msgstr "Updates voor systeemcomponenten"
 
-#: src/Core/UpdateManager.vala:76
+#: src/Core/UpdateManager.vala:81
 #, c-format
 msgid "Version: %s"
 msgstr "Versie: %s"
 
-#: src/Core/UpdateManager.vala:103
+#: src/Core/UpdateManager.vala:111
 msgid "Flatpak runtime"
 msgstr "Flatpak runtime"
 
-#: src/Core/UpdateManager.vala:119
+#: src/Core/UpdateManager.vala:128
 msgid "No components with updates"
 msgstr "Geen componenten met updates"
 
-#: src/Core/UpdateManager.vala:123
+#: src/Core/UpdateManager.vala:133
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "%u component met updates"
 msgstr[1] "%u componenten met updates"
 
-#: src/Core/UpdateManager.vala:125
+#: src/Core/UpdateManager.vala:135
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:163
+#: src/Core/UpdateManager.vala:174
 msgid "Restart Required"
 msgstr "Opnieuw opstarten vereist"
 
-#: src/Core/UpdateManager.vala:164
+#: src/Core/UpdateManager.vala:175
 msgid "Please restart your system to finalize updates"
 msgstr "Gelieve uw systeem opnieuw op te starten om de updates te voltooien"
 

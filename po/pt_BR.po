@@ -8,11 +8,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-04 16:09+0000\n"
+"POT-Creation-Date: 2020-04-08 23:33+0000\n"
 "PO-Revision-Date: 2020-04-08 23:30+0000\n"
 "Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
-"Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
-"appcenter/appcenter/pt_BR/>\n"
+"Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -284,36 +283,36 @@ msgstr "Atualizações do Sistema Operacional"
 msgid "Updates to system components"
 msgstr "Atualizações de componentes do sistema"
 
-#: src/Core/UpdateManager.vala:76
+#: src/Core/UpdateManager.vala:81
 #, c-format
 msgid "Version: %s"
 msgstr "Versão: %s"
 
-#: src/Core/UpdateManager.vala:103
+#: src/Core/UpdateManager.vala:111
 msgid "Flatpak runtime"
 msgstr "Tempo de execução do Flatpak"
 
-#: src/Core/UpdateManager.vala:119
+#: src/Core/UpdateManager.vala:128
 msgid "No components with updates"
 msgstr "Nenhum componente com atualizações"
 
-#: src/Core/UpdateManager.vala:123
+#: src/Core/UpdateManager.vala:133
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "%u componente com atualizações"
 msgstr[1] "%u componentes com atualizações"
 
-#: src/Core/UpdateManager.vala:125
+#: src/Core/UpdateManager.vala:135
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:163
+#: src/Core/UpdateManager.vala:174
 msgid "Restart Required"
 msgstr "Reinicialização Necessária"
 
-#: src/Core/UpdateManager.vala:164
+#: src/Core/UpdateManager.vala:175
 msgid "Please restart your system to finalize updates"
 msgstr "Por favor reinicie seu sistema para concluir as atualizações"
 
@@ -356,9 +355,7 @@ msgstr "Instalar aplicativo não curado?"
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
 msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-msgstr ""
-"\"%s\" não é curado pelo elementary e não foi revisado para segurança, "
-"privacidade ou integração de sistemas."
+msgstr "\"%s\" não é curado pelo elementary e não foi revisado para segurança, privacidade ou integração de sistemas."
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
 msgid "It may not receive bug fix or feature updates"
