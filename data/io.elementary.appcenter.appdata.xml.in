@@ -15,11 +15,12 @@
     </p>
   </description>
   <releases>
-    <release version="3.2.4" date="2020-04-25" urgency="medium">
+    <release version="3.2.4" date="2020-04-08" urgency="medium">
       <description>
         <p>Fixes</p>
         <ul>
           <li>Prevent crashes when updating Flatpaks and system packages simultaneously</li>
+          <li>Updated translations</li>
         </ul>
       </description>
     </release>
