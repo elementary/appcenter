@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-06 14:24+0000\n"
-"PO-Revision-Date: 2019-12-15 01:07+0000\n"
+"PO-Revision-Date: 2020-04-08 23:30+0000\n"
 "Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/extra/"
 "ar/>\n"
@@ -56,11 +56,11 @@ msgstr "إصلاحات ثانوية"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
 msgid "Update application details when changes happen outside of AppCenter"
-msgstr ""
+msgstr "حدث تفاصيل التطبيق عندما تحصل التغييرات خارج مركز التطبيقات"
 
 #: data/io.elementary.appcenter.appdata.xml.in:36
 msgid "Fix for notification not appearing when a restart is required"
-msgstr ""
+msgstr "اصلاح لعدم ظهور اشعار عندما يكون اعادة التشغيل مطلوبا"
 
 #: data/io.elementary.appcenter.appdata.xml.in:37
 msgid "Apps in list views now load in the correct order when scrolling"
