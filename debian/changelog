@@ -1,3 +1,20 @@
+appcenter (3.2.4) bionic; urgency=medium
+
+  * Release 3.2.4 (#1256)
+  * Inhibit suspend during all package operations (#1255)
+  * Add debugging to update counting (#1252)
+  * Update translation files
+  * Update translation template
+  * Split progress callbacks when an update has multiple backends
+    (#1246)
+  * Update translation files
+  * Update translation template
+  * po: Add missing files to POTFILES (#1248)
+  * Update translation files
+  * Update translation template
+
+ -- elementary Builds Team <builds@elementary.io>  Wed, 08 Apr 2020 23:33:22 +0000
+
 appcenter (3.2.3) bionic; urgency=medium
 
   * Release 3.2.3 (#1243)
