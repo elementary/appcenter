@@ -7,17 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-17 16:29+0000\n"
+"POT-Creation-Date: 2020-04-08 23:33+0000\n"
 "PO-Revision-Date: 2020-03-11 18:09+0000\n"
 "Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
-"Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/ar/>\n"
+"Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/appcenter/ar/>\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
 "X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:24+0000\n"
 
@@ -96,7 +94,7 @@ msgstr "جاري حذف الحزم"
 msgid "Downloading"
 msgstr "تحميل"
 
-#: src/Utils.vala:86
+#: src/Utils.vala:86 src/Core/FlatpakBackend.vala:698
 msgid "Installing"
 msgstr "جاري التثبيت"
 
@@ -141,6 +139,9 @@ msgid "Finished"
 msgstr "انتهى"
 
 #: src/Utils.vala:108 src/Core/ChangeInformation.vala:79
+#: src/Core/FlatpakBackend.vala:707 src/Core/FlatpakBackend.vala:730
+#: src/Core/FlatpakBackend.vala:803 src/Core/FlatpakBackend.vala:904
+#: src/Core/FlatpakBackend.vala:930
 msgid "Cancelling"
 msgstr "الغاء"
 
@@ -233,6 +234,24 @@ msgstr[3] "يوجد %u تحديثات لنظامك"
 msgstr[4] "يوجد %u تحديث لنظامك"
 msgstr[5] "يوجد %u تحديث لنظامك"
 
+#: src/Core/FlatpakBackend.vala:795
+#, fuzzy
+#| msgid "Uninstall"
+msgid "Uninstalling"
+msgstr "إلغاء التثبيت"
+
+#: src/Core/FlatpakBackend.vala:800
+#, fuzzy
+#| msgid "Finished"
+msgid "Finishing"
+msgstr "انتهى"
+
+#: src/Core/FlatpakBackend.vala:895
+#, fuzzy
+#| msgid "Update"
+msgid "Updating"
+msgstr "تحديث"
+
 #: src/Core/Package.vala:300
 #, c-format
 msgid "%s Developers"
@@ -264,6 +283,12 @@ msgstr "غير معروف الأصل (غير منظم)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "لم يتم تعيين حالة التطبيق كما هو مثبت في مركز التطبيقات للحزمة: %s"
 
+#: src/Core/PackageKitBackend.vala:220
+#, fuzzy, c-format
+#| msgid "%s (non-curated)"
+msgid "%s (local)"
+msgstr "%s (غير منسق)"
+
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
 msgstr "تحديثات نظام التشغيل"
@@ -272,20 +297,20 @@ msgstr "تحديثات نظام التشغيل"
 msgid "Updates to system components"
 msgstr "تحديثات اجزاء النظام"
 
-#: src/Core/UpdateManager.vala:76
+#: src/Core/UpdateManager.vala:81
 #, c-format
 msgid "Version: %s"
 msgstr "نسخة : %s"
 
-#: src/Core/UpdateManager.vala:103
+#: src/Core/UpdateManager.vala:111
 msgid "Flatpak runtime"
 msgstr "وقت التشغيل Flatpak"
 
-#: src/Core/UpdateManager.vala:119
+#: src/Core/UpdateManager.vala:128
 msgid "No components with updates"
 msgstr "لا يوجد عناصر تحتاج تحديث"
 
-#: src/Core/UpdateManager.vala:123
+#: src/Core/UpdateManager.vala:133
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
@@ -296,16 +321,16 @@ msgstr[3] "%u عناصر تحتاج للتحديث"
 msgstr[4] "%u عنصر يحتاج للتحديث"
 msgstr[5] "%u عنصر يحتاج للتحديث"
 
-#: src/Core/UpdateManager.vala:125
+#: src/Core/UpdateManager.vala:135
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:163
+#: src/Core/UpdateManager.vala:174
 msgid "Restart Required"
 msgstr "يتطلب اعادة تشغيل"
 
-#: src/Core/UpdateManager.vala:164
+#: src/Core/UpdateManager.vala:175
 msgid "Please restart your system to finalize updates"
 msgstr "الرجاء اعادة التشغيل لكي يتم التثبيت"
 
@@ -321,21 +346,52 @@ msgstr "\"%s\" يحتوي على محتوى جريء"
 #: src/Dialogs/ContentWarningDialog.vala:31
 #, c-format
 msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
-msgstr ""
-"\"%s\" يمكن أن يحتوي على محتوى مناسب للبالغين أو محتوى مخيف أو مفزع. بشكل "
-"عام، إليمنتري لم تراجع أو تتأكد من محتوى هذا التطبيق."
+msgstr "\"%s\" يمكن أن يحتوي على محتوى مناسب للبالغين أو محتوى مخيف أو مفزع. بشكل عام، إليمنتري لم تراجع أو تتأكد من محتوى هذا التطبيق."
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 msgid "Show content warnings"
 msgstr "أظهر تحذيرات المحتوى"
 
 #: src/Dialogs/ContentWarningDialog.vala:37
+#: src/Dialogs/NonCuratedWarningDialog.vala:81
 msgid "Don’t Install"
 msgstr "لا تثبت"
 
 #: src/Dialogs/ContentWarningDialog.vala:38
+#: src/Dialogs/NonCuratedWarningDialog.vala:82
 msgid "Install Anyway"
 msgstr "ثبت على أي حال"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:27
+#, fuzzy
+#| msgid "Content Warning"
+msgid "Non-Curated Warning"
+msgstr "تحذير المحتوى"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:37
+#, fuzzy
+#| msgid "%s (non-curated)"
+msgid "Install non-curated app?"
+msgstr "%s (غير منسق)"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:38
+#, c-format
+msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
+msgstr ""
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:47
+msgid "It may not receive bug fix or feature updates"
+msgstr ""
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:60
+msgid "It may access or change system or personal files without permission"
+msgstr ""
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:66
+#, fuzzy
+#| msgid "Show content warnings"
+msgid "Show non-curated warnings"
+msgstr "أظهر تحذيرات المحتوى"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -506,9 +562,7 @@ msgstr "إلغاء التثبيت"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
 msgid "This may have been caused by external or manually compiled software."
-msgstr ""
-"يمكن أن يحدث هذا بسبب إضافة مصادر تطبيقات خارجية، بشكل يدوي، أو من ملف مصادر "
-"معطوب."
+msgstr "يمكن أن يحدث هذا بسبب إضافة مصادر تطبيقات خارجية، بشكل يدوي، أو من ملف مصادر معطوب."
 
 #: src/Dialogs/UninstallFailDialog.vala:37
 msgid "Failed to uninstall app"

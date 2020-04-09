@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-17 16:29+0000\n"
+"POT-Creation-Date: 2020-04-08 23:33+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Tagalog <https://l10n.elementary.io/projects/appcenter/appcenter/tl/>\n"
@@ -91,7 +91,7 @@ msgstr "Nagtatangal ng mga package"
 msgid "Downloading"
 msgstr ""
 
-#: src/Utils.vala:86
+#: src/Utils.vala:86 src/Core/FlatpakBackend.vala:698
 msgid "Installing"
 msgstr ""
 
@@ -136,6 +136,9 @@ msgid "Finished"
 msgstr "Tapos na"
 
 #: src/Utils.vala:108 src/Core/ChangeInformation.vala:79
+#: src/Core/FlatpakBackend.vala:707 src/Core/FlatpakBackend.vala:730
+#: src/Core/FlatpakBackend.vala:803 src/Core/FlatpakBackend.vala:904
+#: src/Core/FlatpakBackend.vala:930
 msgid "Cancelling"
 msgstr "Kinakansela"
 
@@ -220,6 +223,24 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "May %u update na pwedeng kunin para sa iyong sistema"
 msgstr[1] "May mga %u na update na pwedeng kunin para sa iyong sistema"
 
+#: src/Core/FlatpakBackend.vala:795
+#, fuzzy
+#| msgid "Uninstall"
+msgid "Uninstalling"
+msgstr "I-uninstall"
+
+#: src/Core/FlatpakBackend.vala:800
+#, fuzzy
+#| msgid "Finished"
+msgid "Finishing"
+msgstr "Tapos na"
+
+#: src/Core/FlatpakBackend.vala:895
+#, fuzzy
+#| msgid "Update"
+msgid "Updating"
+msgstr "I-update"
+
 #: src/Core/Package.vala:300
 #, c-format
 msgid "%s Developers"
@@ -251,6 +272,11 @@ msgstr ""
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
 
+#: src/Core/PackageKitBackend.vala:220
+#, c-format
+msgid "%s (local)"
+msgstr ""
+
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
 msgstr "Mga Update para sa Operating System"
@@ -259,36 +285,36 @@ msgstr "Mga Update para sa Operating System"
 msgid "Updates to system components"
 msgstr "Mga update para sa system components"
 
-#: src/Core/UpdateManager.vala:76
+#: src/Core/UpdateManager.vala:81
 #, c-format
 msgid "Version: %s"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:103
+#: src/Core/UpdateManager.vala:111
 msgid "Flatpak runtime"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:119
+#: src/Core/UpdateManager.vala:128
 msgid "No components with updates"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:123
+#: src/Core/UpdateManager.vala:133
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Core/UpdateManager.vala:125
+#: src/Core/UpdateManager.vala:135
 #, c-format
 msgid "%s:"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:163
+#: src/Core/UpdateManager.vala:174
 msgid "Restart Required"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:164
+#: src/Core/UpdateManager.vala:175
 msgid "Please restart your system to finalize updates"
 msgstr ""
 
@@ -311,14 +337,41 @@ msgid "Show content warnings"
 msgstr ""
 
 #: src/Dialogs/ContentWarningDialog.vala:37
+#: src/Dialogs/NonCuratedWarningDialog.vala:81
 #, fuzzy
 msgid "Don’t Install"
 msgstr "I-install"
 
 #: src/Dialogs/ContentWarningDialog.vala:38
+#: src/Dialogs/NonCuratedWarningDialog.vala:82
 #, fuzzy
 msgid "Install Anyway"
 msgstr "I-install"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:27
+msgid "Non-Curated Warning"
+msgstr ""
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:37
+msgid "Install non-curated app?"
+msgstr ""
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:38
+#, c-format
+msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
+msgstr ""
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:47
+msgid "It may not receive bug fix or feature updates"
+msgstr ""
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:60
+msgid "It may access or change system or personal files without permission"
+msgstr ""
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:66
+msgid "Show non-curated warnings"
+msgstr ""
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"

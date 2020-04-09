@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-17 16:29+0000\n"
+"POT-Creation-Date: 2020-04-08 23:33+0000\n"
 "PO-Revision-Date: 2019-12-23 11:07+0000\n"
 "Last-Translator: Marko <marko.dolar@gmail.com>\n"
 "Language-Team: Slovenian <https://l10n.elementary.io/projects/appcenter/appcenter/sl/>\n"
@@ -93,7 +93,7 @@ msgstr "Odstranjevanje paketov"
 msgid "Downloading"
 msgstr "Prenašanje"
 
-#: src/Utils.vala:86
+#: src/Utils.vala:86 src/Core/FlatpakBackend.vala:698
 msgid "Installing"
 msgstr "Nameščanje"
 
@@ -138,6 +138,9 @@ msgid "Finished"
 msgstr "Dokončano"
 
 #: src/Utils.vala:108 src/Core/ChangeInformation.vala:79
+#: src/Core/FlatpakBackend.vala:707 src/Core/FlatpakBackend.vala:730
+#: src/Core/FlatpakBackend.vala:803 src/Core/FlatpakBackend.vala:904
+#: src/Core/FlatpakBackend.vala:930
 msgid "Cancelling"
 msgstr "Preklicevanje"
 
@@ -226,6 +229,24 @@ msgstr[1] "%u posodobitvi sta na voljo za vaš sistem"
 msgstr[2] "%u posodobitve so na voljo za vaš sistem"
 msgstr[3] "%u posodobitev je na voljo za vaš sistem"
 
+#: src/Core/FlatpakBackend.vala:795
+#, fuzzy
+#| msgid "Uninstall"
+msgid "Uninstalling"
+msgstr "Odstrani"
+
+#: src/Core/FlatpakBackend.vala:800
+#, fuzzy
+#| msgid "Finished"
+msgid "Finishing"
+msgstr "Dokončano"
+
+#: src/Core/FlatpakBackend.vala:895
+#, fuzzy
+#| msgid "Update"
+msgid "Updating"
+msgstr "Posodobi"
+
 #: src/Core/Package.vala:300
 #, c-format
 msgid "%s Developers"
@@ -257,6 +278,12 @@ msgstr "Neznan vir (nepreverjeno)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Stanje aplikacije v Centru za programsko opremo ni nastavljeno kot nameščeno za pakete: %s"
 
+#: src/Core/PackageKitBackend.vala:220
+#, fuzzy, c-format
+#| msgid "%s (non-curated)"
+msgid "%s (local)"
+msgstr "%s (nepreverjeno)"
+
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
 msgstr "Posodobitve operacijskega sistema"
@@ -265,20 +292,20 @@ msgstr "Posodobitve operacijskega sistema"
 msgid "Updates to system components"
 msgstr "Posodobitve sistemskih komponent"
 
-#: src/Core/UpdateManager.vala:76
+#: src/Core/UpdateManager.vala:81
 #, c-format
 msgid "Version: %s"
 msgstr "Verzija: %s"
 
-#: src/Core/UpdateManager.vala:103
+#: src/Core/UpdateManager.vala:111
 msgid "Flatpak runtime"
 msgstr "Flatpak izvajalnik"
 
-#: src/Core/UpdateManager.vala:119
+#: src/Core/UpdateManager.vala:128
 msgid "No components with updates"
 msgstr "Nobena posodobitev ni bila najdena"
 
-#: src/Core/UpdateManager.vala:123
+#: src/Core/UpdateManager.vala:133
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
@@ -287,16 +314,16 @@ msgstr[1] "Najdeni %u posodobitvi"
 msgstr[2] "Najdene %u posodobitve"
 msgstr[3] "Najdenih %u posodobitev"
 
-#: src/Core/UpdateManager.vala:125
+#: src/Core/UpdateManager.vala:135
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:163
+#: src/Core/UpdateManager.vala:174
 msgid "Restart Required"
 msgstr "Potreben je ponovni zagon"
 
-#: src/Core/UpdateManager.vala:164
+#: src/Core/UpdateManager.vala:175
 msgid "Please restart your system to finalize updates"
 msgstr "Za dokončanje posodobitev ponovno zaženite vaš sistem"
 
@@ -319,12 +346,45 @@ msgid "Show content warnings"
 msgstr "Prikaži opozorila o vsebini"
 
 #: src/Dialogs/ContentWarningDialog.vala:37
+#: src/Dialogs/NonCuratedWarningDialog.vala:81
 msgid "Don’t Install"
 msgstr "Ne namesti"
 
 #: src/Dialogs/ContentWarningDialog.vala:38
+#: src/Dialogs/NonCuratedWarningDialog.vala:82
 msgid "Install Anyway"
 msgstr "Vseeno namesti"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:27
+#, fuzzy
+#| msgid "Content Warning"
+msgid "Non-Curated Warning"
+msgstr "Opozorilo o vsebini"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:37
+#, fuzzy
+#| msgid "%s (non-curated)"
+msgid "Install non-curated app?"
+msgstr "%s (nepreverjeno)"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:38
+#, c-format
+msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
+msgstr ""
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:47
+msgid "It may not receive bug fix or feature updates"
+msgstr ""
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:60
+msgid "It may access or change system or personal files without permission"
+msgstr ""
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:66
+#, fuzzy
+#| msgid "Show content warnings"
+msgid "Show non-curated warnings"
+msgstr "Prikaži opozorila o vsebini"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"

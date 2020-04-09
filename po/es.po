@@ -14,11 +14,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-17 16:29+0000\n"
+"POT-Creation-Date: 2020-04-08 23:33+0000\n"
 "PO-Revision-Date: 2020-03-05 14:09+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
-"Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/es/>\n"
+"Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/appcenter/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -102,7 +101,7 @@ msgstr "Desinstalando paquetes"
 msgid "Downloading"
 msgstr "Descargando"
 
-#: src/Utils.vala:86
+#: src/Utils.vala:86 src/Core/FlatpakBackend.vala:698
 msgid "Installing"
 msgstr "Instalando"
 
@@ -147,6 +146,9 @@ msgid "Finished"
 msgstr "Terminado"
 
 #: src/Utils.vala:108 src/Core/ChangeInformation.vala:79
+#: src/Core/FlatpakBackend.vala:707 src/Core/FlatpakBackend.vala:730
+#: src/Core/FlatpakBackend.vala:803 src/Core/FlatpakBackend.vala:904
+#: src/Core/FlatpakBackend.vala:930
 msgid "Cancelling"
 msgstr "Cancelando"
 
@@ -231,6 +233,24 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "Hay %u actualización disponible para el sistema"
 msgstr[1] "Hay %u actualizaciones disponibles para el sistema"
 
+#: src/Core/FlatpakBackend.vala:795
+#, fuzzy
+#| msgid "Uninstall"
+msgid "Uninstalling"
+msgstr "Desinstalar"
+
+#: src/Core/FlatpakBackend.vala:800
+#, fuzzy
+#| msgid "Finished"
+msgid "Finishing"
+msgstr "Terminado"
+
+#: src/Core/FlatpakBackend.vala:895
+#, fuzzy
+#| msgid "Update"
+msgid "Updating"
+msgstr "Actualizar"
+
 #: src/Core/Package.vala:300
 #, c-format
 msgid "%s Developers"
@@ -262,6 +282,12 @@ msgstr "Origen desconocido (no verificadas)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "El paquete %s consta como aplicación no instalada en el Centro de Aplicaciones"
 
+#: src/Core/PackageKitBackend.vala:220
+#, fuzzy, c-format
+#| msgid "%s (non-curated)"
+msgid "%s (local)"
+msgstr "%s (no verificadas)"
+
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
 msgstr "Actualizaciones del sistema operativo"
@@ -270,36 +296,36 @@ msgstr "Actualizaciones del sistema operativo"
 msgid "Updates to system components"
 msgstr "Actualizaciones de los componentes del sistema"
 
-#: src/Core/UpdateManager.vala:76
+#: src/Core/UpdateManager.vala:81
 #, c-format
 msgid "Version: %s"
 msgstr "Version: %s"
 
-#: src/Core/UpdateManager.vala:103
+#: src/Core/UpdateManager.vala:111
 msgid "Flatpak runtime"
 msgstr "Entorno de ejecución de Flatpak"
 
-#: src/Core/UpdateManager.vala:119
+#: src/Core/UpdateManager.vala:128
 msgid "No components with updates"
 msgstr "Sin componentes para actualizar"
 
-#: src/Core/UpdateManager.vala:123
+#: src/Core/UpdateManager.vala:133
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "%u componente con actualizaciones"
 msgstr[1] "%u componentes con actualizaciones"
 
-#: src/Core/UpdateManager.vala:125
+#: src/Core/UpdateManager.vala:135
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:163
+#: src/Core/UpdateManager.vala:174
 msgid "Restart Required"
 msgstr "Se requiere reiniciar"
 
-#: src/Core/UpdateManager.vala:164
+#: src/Core/UpdateManager.vala:175
 msgid "Please restart your system to finalize updates"
 msgstr "Reinicie el sistema para finalizar las actualizaciones"
 
@@ -322,12 +348,45 @@ msgid "Show content warnings"
 msgstr "Mostrar advertencias sobre el contenido"
 
 #: src/Dialogs/ContentWarningDialog.vala:37
+#: src/Dialogs/NonCuratedWarningDialog.vala:81
 msgid "Don’t Install"
 msgstr "No instalar"
 
 #: src/Dialogs/ContentWarningDialog.vala:38
+#: src/Dialogs/NonCuratedWarningDialog.vala:82
 msgid "Install Anyway"
 msgstr "Instalar de todas formas"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:27
+#, fuzzy
+#| msgid "Content Warning"
+msgid "Non-Curated Warning"
+msgstr "Advertencia sobre el contenido"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:37
+#, fuzzy
+#| msgid "%s (non-curated)"
+msgid "Install non-curated app?"
+msgstr "%s (no verificadas)"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:38
+#, c-format
+msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
+msgstr ""
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:47
+msgid "It may not receive bug fix or feature updates"
+msgstr ""
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:60
+msgid "It may access or change system or personal files without permission"
+msgstr ""
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:66
+#, fuzzy
+#| msgid "Show content warnings"
+msgid "Show non-curated warnings"
+msgstr "Mostrar advertencias sobre el contenido"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -366,9 +425,7 @@ msgstr "Pagar %d USD por %s"
 
 #: src/Dialogs/StripeDialog.vala:96
 msgid "This is a one time payment. Your email address is only used to send you a receipt."
-msgstr ""
-"Este es un pago único. Su dirección de correo electrónico se utilizará solo "
-"para enviarle un recibo."
+msgstr "Este es un pago único. Su dirección de correo electrónico se utilizará solo para enviarle un recibo."
 
 #: src/Dialogs/StripeDialog.vala:106 src/Widgets/SharePopover.vala:35
 msgid "Email"
@@ -482,8 +539,7 @@ msgstr "La tarjeta usada es de pruebas, ingrese una real para proceder."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
-msgstr ""
-"La desinstalación de esta aplicación también podría eliminarle los datos."
+msgstr "La desinstalación de esta aplicación también podría eliminarle los datos."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:35
 msgid "Uninstall app?"

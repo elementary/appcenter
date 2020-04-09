@@ -21,6 +21,7 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
     public signal void cache_flush_needed ();
 
     private Gee.ArrayList<unowned Backend> backends;
+    private uint remove_inhibit_timeout = 0;
 
     construct {
         backends = new Gee.ArrayList<unowned Backend> ();
@@ -30,6 +31,26 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
 
         foreach (var backend in backends) {
             backend.notify["working"].connect (() => {
+                if (working) {
+                    if (remove_inhibit_timeout != 0) {
+                        Source.remove (remove_inhibit_timeout);
+                        remove_inhibit_timeout = 0;
+                    }
+
+                    SuspendControl.get_default ().inhibit ();
+                } else {
+                    // Wait for 5 seconds of inactivity before uninhibiting as we may be
+                    // rapidly switching between working states on different backends etc...
+                    if (remove_inhibit_timeout == 0) {
+                        remove_inhibit_timeout = Timeout.add_seconds (5, () => {
+                            SuspendControl.get_default ().uninhibit ();
+                            remove_inhibit_timeout = 0;
+
+                            return false;
+                        });
+                    }
+                }
+
                 notify_property ("working");
             });
         }
@@ -178,10 +199,33 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
     public async bool update_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
         var success = true;
         // updatable_packages is a HashMultiMap of packages to be updated, where the key is
-        // a pointer to the backend that is capable of updating them. Call update on each of these
-        // backends to update the packages belonging to them
-        foreach (var backend in package.change_information.updatable_packages.get_keys ()) {
-            if (!yield backend.update_package (package, (owned)cb, cancellable)) {
+        // a pointer to the backend that is capable of updating them. Most packages only have one
+        // backend, but there is the special case of the OS updates package which could contain
+        // flatpaks and/or packagekit packages
+
+        var backends = package.change_information.updatable_packages.get_keys ().to_array ();
+        int num_backends = backends.length;
+
+        for (int i = 0; i < num_backends; i++) {
+            unowned Backend backend = backends[i];
+
+            var backend_succeeded = yield backend.update_package (
+                package,
+                // Intercept progress callbacks so we can divide the progress between the number of backends
+                (can_cancel, description, progress, status) => {
+                    double calculated_progress = (i * (1.0f / num_backends)) + (progress / num_backends);
+                    ChangeInformation.Status consolidated_status = status;
+                    // Only report finished when the last operation completes
+                    if (consolidated_status == ChangeInformation.Status.FINISHED && (i + 1) < num_backends) {
+                        consolidated_status = ChangeInformation.Status.RUNNING;
+                    }
+
+                    cb (can_cancel, description, calculated_progress, consolidated_status);
+                },
+                cancellable
+            );
+
+            if (!backend_succeeded) {
                 success = false;
             }
         }

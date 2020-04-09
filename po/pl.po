@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-17 16:29+0000\n"
+"POT-Creation-Date: 2020-04-08 23:33+0000\n"
 "PO-Revision-Date: 2019-11-15 21:24+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/appcenter/appcenter/pl/>\n"
@@ -93,7 +93,7 @@ msgstr "Usuwanie pakietów"
 msgid "Downloading"
 msgstr "Pobieranie"
 
-#: src/Utils.vala:86
+#: src/Utils.vala:86 src/Core/FlatpakBackend.vala:698
 msgid "Installing"
 msgstr "Instalowanie"
 
@@ -138,6 +138,9 @@ msgid "Finished"
 msgstr "Zakończono"
 
 #: src/Utils.vala:108 src/Core/ChangeInformation.vala:79
+#: src/Core/FlatpakBackend.vala:707 src/Core/FlatpakBackend.vala:730
+#: src/Core/FlatpakBackend.vala:803 src/Core/FlatpakBackend.vala:904
+#: src/Core/FlatpakBackend.vala:930
 msgid "Cancelling"
 msgstr "Anulowanie"
 
@@ -224,6 +227,24 @@ msgstr[0] "Dostępna jest %u aktualizacja dla Twojego systemu"
 msgstr[1] "Dostępne są %u aktualizacje dla Twojego systemu"
 msgstr[2] "Dostępnych jest %u aktualizacji dla Twojego systemu"
 
+#: src/Core/FlatpakBackend.vala:795
+#, fuzzy
+#| msgid "Uninstall"
+msgid "Uninstalling"
+msgstr "Odinstaluj"
+
+#: src/Core/FlatpakBackend.vala:800
+#, fuzzy
+#| msgid "Finished"
+msgid "Finishing"
+msgstr "Zakończono"
+
+#: src/Core/FlatpakBackend.vala:895
+#, fuzzy
+#| msgid "Update"
+msgid "Updating"
+msgstr "Zaktualizuj"
+
 #: src/Core/Package.vala:300
 #, c-format
 msgid "%s Developers"
@@ -257,6 +278,11 @@ msgstr "Nieznanego pochodzenia (bez przeglądu)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Stan programu nie jest ustawiony jako zainstalowany w AppCenter dla pakietu: %s"
 
+#: src/Core/PackageKitBackend.vala:220
+#, fuzzy, c-format
+msgid "%s (local)"
+msgstr "%s (bez przeglądu)"
+
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
 msgstr "Aktualizacje systemu operacyjnego"
@@ -265,20 +291,20 @@ msgstr "Aktualizacje systemu operacyjnego"
 msgid "Updates to system components"
 msgstr "Aktualizacje elementów systemu"
 
-#: src/Core/UpdateManager.vala:76
+#: src/Core/UpdateManager.vala:81
 #, c-format
 msgid "Version: %s"
 msgstr "Wersja: %s"
 
-#: src/Core/UpdateManager.vala:103
+#: src/Core/UpdateManager.vala:111
 msgid "Flatpak runtime"
 msgstr "Biblioteka uruchomieniowa Flatpak"
 
-#: src/Core/UpdateManager.vala:119
+#: src/Core/UpdateManager.vala:128
 msgid "No components with updates"
 msgstr "Brak komponentów z aktualizacjami"
 
-#: src/Core/UpdateManager.vala:123
+#: src/Core/UpdateManager.vala:133
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
@@ -286,16 +312,16 @@ msgstr[0] "Jeden komponent z aktualizacją"
 msgstr[1] "%u komponenty z aktualizacją"
 msgstr[2] "%u komponentów z aktualizacją"
 
-#: src/Core/UpdateManager.vala:125
+#: src/Core/UpdateManager.vala:135
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:163
+#: src/Core/UpdateManager.vala:174
 msgid "Restart Required"
 msgstr "Wymagane ponowne uruchomienie"
 
-#: src/Core/UpdateManager.vala:164
+#: src/Core/UpdateManager.vala:175
 msgid "Please restart your system to finalize updates"
 msgstr "Uruchom ponownie system, aby dokończyć aktualizacje"
 
@@ -318,12 +344,44 @@ msgid "Show content warnings"
 msgstr "Pokaż ostrzeżenie o zawartości"
 
 #: src/Dialogs/ContentWarningDialog.vala:37
+#: src/Dialogs/NonCuratedWarningDialog.vala:81
 msgid "Don’t Install"
 msgstr "Nie instaluj"
 
 #: src/Dialogs/ContentWarningDialog.vala:38
+#: src/Dialogs/NonCuratedWarningDialog.vala:82
 msgid "Install Anyway"
 msgstr "Zainstaluj mimo to"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:27
+#, fuzzy
+#| msgid "Content Warning"
+msgid "Non-Curated Warning"
+msgstr "Ostrzeżenie o zawartości"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:37
+#, fuzzy
+msgid "Install non-curated app?"
+msgstr "%s (bez przeglądu)"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:38
+#, c-format
+msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
+msgstr ""
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:47
+msgid "It may not receive bug fix or feature updates"
+msgstr ""
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:60
+msgid "It may access or change system or personal files without permission"
+msgstr ""
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:66
+#, fuzzy
+#| msgid "Show content warnings"
+msgid "Show non-curated warnings"
+msgstr "Pokaż ostrzeżenie o zawartości"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"

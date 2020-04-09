@@ -58,14 +58,19 @@ public class AppCenterCore.UpdateManager : Object {
         uint os_count = 0;
         string os_desc = "";
 
-        pk_updates.get_package_array ().foreach ((pk_package) => {
+        var package_array = pk_updates.get_package_array ();
+        debug ("PackageKit backend reports %d updates", package_array.length);
+
+        package_array.foreach ((pk_package) => {
             var pkg_name = pk_package.get_name ();
             var appcenter_package = client.lookup_package_by_id (pkg_name);
             if (appcenter_package != null) {
+                debug ("Added %s to app updates", pkg_name);
                 apps_with_updates.add (appcenter_package);
                 appcenter_package.latest_version = pk_package.get_version ();
                 appcenter_package.change_information.clear_update_info ();
             } else {
+                debug ("Added %s to OS updates", pkg_name);
                 os_count++;
                 unowned string pkg_summary = pk_package.get_summary ();
                 unowned string pkg_version = pk_package.get_version ();
@@ -83,10 +88,12 @@ public class AppCenterCore.UpdateManager : Object {
 
         unowned FlatpakBackend fp_client = FlatpakBackend.get_default ();
         var flatpak_updates = yield fp_client.get_updates ();
+        debug ("Flatpak backend reports %d updates", flatpak_updates.size);
 
         foreach (var flatpak_update in flatpak_updates) {
             var appcenter_package = fp_client.lookup_package_by_id (flatpak_update);
             if (appcenter_package != null) {
+                debug ("Added %s to app updates", flatpak_update);
                 apps_with_updates.add (appcenter_package);
                 appcenter_package.change_information.updatable_packages.@set (fp_client, flatpak_update);
                 try {
@@ -95,6 +102,7 @@ public class AppCenterCore.UpdateManager : Object {
                     warning ("Unable to get flatpak download size: %s", e.message);
                 }
             } else {
+                debug ("Added %s to OS updates", flatpak_update);
                 var name = flatpak_update.split ("/")[2];
                 os_count++;
                 os_desc += Markup.printf_escaped (
@@ -116,16 +124,19 @@ public class AppCenterCore.UpdateManager : Object {
         }
 
         if (os_count == 0) {
+            debug ("No OS updates found");
             var latest_version = _("No components with updates");
             os_updates.latest_version = latest_version;
             os_updates.description = GLib.Markup.printf_escaped ("<p>%s</p>\n", latest_version);
         } else {
+            debug ("%u OS updates found", os_count);
             var latest_version = ngettext ("%u component with updates", "%u components with updates", os_count).printf (os_count);
             os_updates.latest_version = latest_version;
             os_updates.description = "<p>%s</p>\n<ul>\n%s</ul>\n".printf (GLib.Markup.printf_escaped (_("%s:"), latest_version), os_desc);
         }
 
         count = apps_with_updates.size;
+        debug ("%u app updates found", count);
         if (os_count > 0) {
             count += 1;
         }

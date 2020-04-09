@@ -2,17 +2,15 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-17 16:29+0000\n"
+"POT-Creation-Date: 2020-04-08 23:33+0000\n"
 "PO-Revision-Date: 2020-02-24 23:09+0000\n"
 "Last-Translator: gkkulik <g.kulik@o2.pl>\n"
-"Language-Team: Silesian <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/szl/>\n"
+"Language-Team: Silesian <https://l10n.elementary.io/projects/appcenter/appcenter/szl/>\n"
 "Language: szl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 3.9.1\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -90,7 +88,7 @@ msgstr "Kasowanie paketōw"
 msgid "Downloading"
 msgstr "Pobiyranie"
 
-#: src/Utils.vala:86
+#: src/Utils.vala:86 src/Core/FlatpakBackend.vala:698
 msgid "Installing"
 msgstr "Instalowanie"
 
@@ -135,6 +133,9 @@ msgid "Finished"
 msgstr "Fertich"
 
 #: src/Utils.vala:108 src/Core/ChangeInformation.vala:79
+#: src/Core/FlatpakBackend.vala:707 src/Core/FlatpakBackend.vala:730
+#: src/Core/FlatpakBackend.vala:803 src/Core/FlatpakBackend.vala:904
+#: src/Core/FlatpakBackend.vala:930
 msgid "Cancelling"
 msgstr "Pociepowanie"
 
@@ -221,6 +222,24 @@ msgstr[0] "Je dostympno %u aktualizacyjo dlo tego systymu"
 msgstr[1] "Sōm dostympne %u aktualizacyje dlo tego systymu"
 msgstr[2] "Je dostympne %u aktualizacyji dlo tego systymu"
 
+#: src/Core/FlatpakBackend.vala:795
+#, fuzzy
+#| msgid "Uninstall"
+msgid "Uninstalling"
+msgstr "Ôdinstaluj"
+
+#: src/Core/FlatpakBackend.vala:800
+#, fuzzy
+#| msgid "Finished"
+msgid "Finishing"
+msgstr "Fertich"
+
+#: src/Core/FlatpakBackend.vala:895
+#, fuzzy
+#| msgid "Update"
+msgid "Updating"
+msgstr "Zaktualizuj"
+
 #: src/Core/Package.vala:300
 #, c-format
 msgid "%s Developers"
@@ -250,9 +269,13 @@ msgstr "Niyznōmego pochodzynio (niynadzorowane)"
 #: src/Core/Package.vala:444
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
-msgstr ""
-"Sztand programu niyma nasztelowany za zainstalowany we AppCenter dlo paketu: "
-"%s"
+msgstr "Sztand programu niyma nasztelowany za zainstalowany we AppCenter dlo paketu: %s"
+
+#: src/Core/PackageKitBackend.vala:220
+#, fuzzy, c-format
+#| msgid "%s (non-curated)"
+msgid "%s (local)"
+msgstr "%s (niynadzorowane)"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -262,20 +285,20 @@ msgstr "Aktualizacyje systymu ôperacyjnego"
 msgid "Updates to system components"
 msgstr "Aktualizacyje elymyntōw systymu"
 
-#: src/Core/UpdateManager.vala:76
+#: src/Core/UpdateManager.vala:81
 #, c-format
 msgid "Version: %s"
 msgstr "Wersyjo: %s"
 
-#: src/Core/UpdateManager.vala:103
+#: src/Core/UpdateManager.vala:111
 msgid "Flatpak runtime"
 msgstr "Bibliotyka Flatpak"
 
-#: src/Core/UpdateManager.vala:119
+#: src/Core/UpdateManager.vala:128
 msgid "No components with updates"
 msgstr "Brak kōmpōnyntōw z aktualizacyjami"
 
-#: src/Core/UpdateManager.vala:123
+#: src/Core/UpdateManager.vala:133
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
@@ -283,16 +306,16 @@ msgstr[0] "Jedyn kōmpōnynt z aktualizacyjōm"
 msgstr[1] "%u kōmpōnynta z aktualizacyjami"
 msgstr[2] "%u kōmpōnyntōw z aktualizacyjami"
 
-#: src/Core/UpdateManager.vala:125
+#: src/Core/UpdateManager.vala:135
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:163
+#: src/Core/UpdateManager.vala:174
 msgid "Restart Required"
 msgstr "Potrzebny restart"
 
-#: src/Core/UpdateManager.vala:164
+#: src/Core/UpdateManager.vala:175
 msgid "Please restart your system to finalize updates"
 msgstr "Zresztartuj systym, żeby dokōńczyć aktualizacyje"
 
@@ -308,21 +331,52 @@ msgstr "„%s” zawiyro niycynzuralne treści"
 #: src/Dialogs/ContentWarningDialog.vala:31
 #, c-format
 msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
-msgstr ""
-"„%s” może zawiyrać treści ino dlo majoryntnych abo treści, co szterujōm. "
-"Ôgōlnie elementary niy przeglōndo ani niy spiyro zawartości tego programu."
+msgstr "„%s” może zawiyrać treści ino dlo majoryntnych abo treści, co szterujōm. Ôgōlnie elementary niy przeglōndo ani niy spiyro zawartości tego programu."
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 msgid "Show content warnings"
 msgstr "Pokoż ôstrzeżynia ô zawartości"
 
 #: src/Dialogs/ContentWarningDialog.vala:37
+#: src/Dialogs/NonCuratedWarningDialog.vala:81
 msgid "Don’t Install"
 msgstr "Niy instaluj"
 
 #: src/Dialogs/ContentWarningDialog.vala:38
+#: src/Dialogs/NonCuratedWarningDialog.vala:82
 msgid "Install Anyway"
 msgstr "Zainstaluj i tak"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:27
+#, fuzzy
+#| msgid "Content Warning"
+msgid "Non-Curated Warning"
+msgstr "Ôstrzeżynie ô zawartości"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:37
+#, fuzzy
+#| msgid "%s (non-curated)"
+msgid "Install non-curated app?"
+msgstr "%s (niynadzorowane)"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:38
+#, c-format
+msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
+msgstr ""
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:47
+msgid "It may not receive bug fix or feature updates"
+msgstr ""
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:60
+msgid "It may access or change system or personal files without permission"
+msgstr ""
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:66
+#, fuzzy
+#| msgid "Show content warnings"
+msgid "Show non-curated warnings"
+msgstr "Pokoż ôstrzeżynia ô zawartości"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -344,9 +398,7 @@ msgstr "Pociep"
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
-msgstr ""
-"Przi przetworzaniu karty trefiōł sie feler. Sprōbuj zaś niyskorzij. "
-"Przeproszōmy za wszyjske niywygody."
+msgstr "Przi przetworzaniu karty trefiōł sie feler. Sprōbuj zaś niyskorzij. Przeproszōmy za wszyjske niywygody."
 
 #: src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
@@ -363,9 +415,7 @@ msgstr "Zapłać $%d za %s"
 
 #: src/Dialogs/StripeDialog.vala:96
 msgid "This is a one time payment. Your email address is only used to send you a receipt."
-msgstr ""
-"To je jednorazowy płat. Twoja adresa e-mail je używano ino żeby wysłać ci "
-"rachōnek."
+msgstr "To je jednorazowy płat. Twoja adresa e-mail je używano ino żeby wysłać ci rachōnek."
 
 #: src/Dialogs/StripeDialog.vala:106 src/Widgets/SharePopover.vala:35
 msgid "Email"
@@ -373,9 +423,7 @@ msgstr "E-mail"
 
 #: src/Dialogs/StripeDialog.vala:108
 msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
-msgstr ""
-"Twoja adresa e-mail suży do wysłanio rachōnku. Niy bydzie zapisano do żodnyj "
-"listy pocztowyj."
+msgstr "Twoja adresa e-mail suży do wysłanio rachōnku. Niy bydzie zapisano do żodnyj listy pocztowyj."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127
@@ -417,14 +465,11 @@ msgstr "Numer karty je niynoleżny. Sprōbuj zaś ze noleżnym numerym karty."
 
 #: src/Dialogs/StripeDialog.vala:515
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
-msgstr ""
-"Miesiōnc przedowniynio je niynoleżny. Sprōbuj zaś ze noleżnōm datōm "
-"przedowniynio."
+msgstr "Miesiōnc przedowniynio je niynoleżny. Sprōbuj zaś ze noleżnōm datōm przedowniynio."
 
 #: src/Dialogs/StripeDialog.vala:517 src/Dialogs/StripeDialog.vala:575
 msgid "The expiration year is invalid. Please try again using the correct expiration date."
-msgstr ""
-"Rok przedowniynio je niynoleżny. Sprōbuj zaś ze noleżnōm datōm przedowniynio."
+msgstr "Rok przedowniynio je niynoleżny. Sprōbuj zaś ze noleżnōm datōm przedowniynio."
 
 #: src/Dialogs/StripeDialog.vala:520 src/Dialogs/StripeDialog.vala:573
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
@@ -440,8 +485,7 @@ msgstr "W tym mōmyncie je za moc prōśb ô płat. Sprōbuj niyskorzij."
 
 #: src/Dialogs/StripeDialog.vala:558
 msgid "This card does not support this kind of transaction. Please try again with a different card."
-msgstr ""
-"Ta karta niy spiyro tyj zorty transakcyje. Sprōbuj zaś z inkszōm kartōm."
+msgstr "Ta karta niy spiyro tyj zorty transakcyje. Sprōbuj zaś z inkszōm kartōm."
 
 #: src/Dialogs/StripeDialog.vala:560
 msgid "The currency is not supported by this card. Please try again with a different card."
@@ -473,9 +517,7 @@ msgstr "Za moc prōb wkludzynio kodu PIN. Sprōbuj zaś z inkszōm kartōm."
 
 #: src/Dialogs/StripeDialog.vala:603
 msgid "Unable to complete the transaction. Please contact your bank for further information."
-msgstr ""
-"Niy idzie zakōńczyć transakcyje. Coby dostać ekstra informacyje, skōntaktuj "
-"sie ze swojim bankym."
+msgstr "Niy idzie zakōńczyć transakcyje. Coby dostać ekstra informacyje, skōntaktuj sie ze swojim bankym."
 
 #: src/Dialogs/StripeDialog.vala:606
 msgid "The balance or credit limit on the card has been reached."
@@ -505,8 +547,7 @@ msgstr "Ôdinstaluj"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
 msgid "This may have been caused by external or manually compiled software."
-msgstr ""
-"To może być skirz zewnyntrznego abo ryncznie skōmpilowanego ôprogramowanio."
+msgstr "To może być skirz zewnyntrznego abo ryncznie skōmpilowanego ôprogramowanio."
 
 #: src/Dialogs/UninstallFailDialog.vala:37
 msgid "Failed to uninstall app"
@@ -523,9 +564,7 @@ msgstr "Niy szło pobrać aktualizacyji"
 
 #: src/Dialogs/UpdateFailDialog.vala:26
 msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
-msgstr ""
-"To może być skuli ryncznie przidanego repozytorium ôprogramowanio abo "
-"poprzniōnego zbioru zdrzōdłowego."
+msgstr "To może być skuli ryncznie przidanego repozytorium ôprogramowanio abo poprzniōnego zbioru zdrzōdłowego."
 
 #: src/Dialogs/UpdateFailDialog.vala:34
 msgid "Ignore"
@@ -663,8 +702,7 @@ msgstr "Brak wynikōw"
 
 #: src/Widgets/AbstractAppList.vala:36
 msgid "No apps could be found. Try changing search terms."
-msgstr ""
-"Niy szło znojś żodnych programōw. Sprōbuj zmiynić kryteria wyszukowanio."
+msgstr "Niy szło znojś żodnych programōw. Sprōbuj zmiynić kryteria wyszukowanio."
 
 #: src/Widgets/Banner.vala:55
 msgid "An open, pay-what-you-want app store"

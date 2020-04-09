@@ -1,4 +1,4 @@
-# Rodrigo Oliveira <rod.oliveira@gmail.com>, 2018, 2019.
+# Rodrigo Oliveira <rod.oliveira@gmail.com>, 2018, 2019, 2020.
 # Deyvison Rocha <deyvison@gmail.com>, 2018.
 # Henrique Andrade <henrique.coelho@gmail.com>, 2019.
 # Mateus Fonseca <mateuspaf23@gmail.com>, 2019.
@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-17 16:29+0000\n"
-"PO-Revision-Date: 2019-11-22 02:24+0000\n"
+"POT-Creation-Date: 2020-04-08 23:33+0000\n"
+"PO-Revision-Date: 2020-04-08 23:30+0000\n"
 "Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -95,7 +95,7 @@ msgstr "Removendo pacotes"
 msgid "Downloading"
 msgstr "Baixando"
 
-#: src/Utils.vala:86
+#: src/Utils.vala:86 src/Core/FlatpakBackend.vala:698
 msgid "Installing"
 msgstr "Instalando"
 
@@ -140,6 +140,9 @@ msgid "Finished"
 msgstr "Concluído"
 
 #: src/Utils.vala:108 src/Core/ChangeInformation.vala:79
+#: src/Core/FlatpakBackend.vala:707 src/Core/FlatpakBackend.vala:730
+#: src/Core/FlatpakBackend.vala:803 src/Core/FlatpakBackend.vala:904
+#: src/Core/FlatpakBackend.vala:930
 msgid "Cancelling"
 msgstr "Cancelando"
 
@@ -224,6 +227,18 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "%u atualização está disponível para seu sistema"
 msgstr[1] "%u atualizações estão disponíveis para seu sistema"
 
+#: src/Core/FlatpakBackend.vala:795
+msgid "Uninstalling"
+msgstr "Desinstalando"
+
+#: src/Core/FlatpakBackend.vala:800
+msgid "Finishing"
+msgstr "Finalizando"
+
+#: src/Core/FlatpakBackend.vala:895
+msgid "Updating"
+msgstr "Atualizando"
+
 #: src/Core/Package.vala:300
 #, c-format
 msgid "%s Developers"
@@ -255,6 +270,11 @@ msgstr "Origem Desconhecida (não supervisionado)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Estado do aplicativo não definido como instalado no AppCenter para o pacote: %s"
 
+#: src/Core/PackageKitBackend.vala:220
+#, c-format
+msgid "%s (local)"
+msgstr "%s (local)"
+
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
 msgstr "Atualizações do Sistema Operacional"
@@ -263,36 +283,36 @@ msgstr "Atualizações do Sistema Operacional"
 msgid "Updates to system components"
 msgstr "Atualizações de componentes do sistema"
 
-#: src/Core/UpdateManager.vala:76
+#: src/Core/UpdateManager.vala:81
 #, c-format
 msgid "Version: %s"
 msgstr "Versão: %s"
 
-#: src/Core/UpdateManager.vala:103
+#: src/Core/UpdateManager.vala:111
 msgid "Flatpak runtime"
 msgstr "Tempo de execução do Flatpak"
 
-#: src/Core/UpdateManager.vala:119
+#: src/Core/UpdateManager.vala:128
 msgid "No components with updates"
 msgstr "Nenhum componente com atualizações"
 
-#: src/Core/UpdateManager.vala:123
+#: src/Core/UpdateManager.vala:133
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "%u componente com atualizações"
 msgstr[1] "%u componentes com atualizações"
 
-#: src/Core/UpdateManager.vala:125
+#: src/Core/UpdateManager.vala:135
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:163
+#: src/Core/UpdateManager.vala:174
 msgid "Restart Required"
 msgstr "Reinicialização Necessária"
 
-#: src/Core/UpdateManager.vala:164
+#: src/Core/UpdateManager.vala:175
 msgid "Please restart your system to finalize updates"
 msgstr "Por favor reinicie seu sistema para concluir as atualizações"
 
@@ -315,12 +335,39 @@ msgid "Show content warnings"
 msgstr "Exibir avisos de conteúdo"
 
 #: src/Dialogs/ContentWarningDialog.vala:37
+#: src/Dialogs/NonCuratedWarningDialog.vala:81
 msgid "Don’t Install"
 msgstr "Não Instalar"
 
 #: src/Dialogs/ContentWarningDialog.vala:38
+#: src/Dialogs/NonCuratedWarningDialog.vala:82
 msgid "Install Anyway"
 msgstr "Instalar Mesmo Assim"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:27
+msgid "Non-Curated Warning"
+msgstr "Aviso de não curado"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:37
+msgid "Install non-curated app?"
+msgstr "Instalar aplicativo não curado?"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:38
+#, c-format
+msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
+msgstr "\"%s\" não é curado pelo elementary e não foi revisado para segurança, privacidade ou integração de sistemas."
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:47
+msgid "It may not receive bug fix or feature updates"
+msgstr "Pode não receber correção de bugs ou atualizações de recursos"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:60
+msgid "It may access or change system or personal files without permission"
+msgstr "Pode acessar ou alterar arquivos pessoais ou do sistema sem permissão"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:66
+msgid "Show non-curated warnings"
+msgstr "Mostrar avisos de não curados"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"

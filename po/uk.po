@@ -1,4 +1,4 @@
-# Andrii Priadko <mendeleev.ua@gmail.com>, 2019.
+# Andrii Priadko <mendeleev.ua@gmail.com>, 2019, 2020.
 # Denis Papushaev <denqxotl@gmail.com>, 2019.
 # Andrii Alforov <andrevpost@gmail.com>, 2019.
 # Daniel Foré <daniel@elementary.io>, 2019.
@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-17 16:29+0000\n"
-"PO-Revision-Date: 2019-09-28 15:23+0000\n"
+"POT-Creation-Date: 2020-04-08 23:33+0000\n"
+"PO-Revision-Date: 2020-03-22 13:09+0000\n"
 "Last-Translator: Andrii Priadko <mendeleev.ua@gmail.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/appcenter/uk/>\n"
 "Language: uk\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -94,7 +94,7 @@ msgstr "Вилучення пакунків"
 msgid "Downloading"
 msgstr "Завантаження"
 
-#: src/Utils.vala:86
+#: src/Utils.vala:86 src/Core/FlatpakBackend.vala:698
 msgid "Installing"
 msgstr "Встановлення"
 
@@ -139,6 +139,9 @@ msgid "Finished"
 msgstr "Завершено"
 
 #: src/Utils.vala:108 src/Core/ChangeInformation.vala:79
+#: src/Core/FlatpakBackend.vala:707 src/Core/FlatpakBackend.vala:730
+#: src/Core/FlatpakBackend.vala:803 src/Core/FlatpakBackend.vala:904
+#: src/Core/FlatpakBackend.vala:930
 msgid "Cancelling"
 msgstr "Скасування"
 
@@ -225,6 +228,24 @@ msgstr[0] "%u оновлення доступне для вашої систем
 msgstr[1] "%u оновлення доступні для вашої системи"
 msgstr[2] "%u оновлень доступно для вашої системи"
 
+#: src/Core/FlatpakBackend.vala:795
+#, fuzzy
+#| msgid "Uninstall"
+msgid "Uninstalling"
+msgstr "Вилучити"
+
+#: src/Core/FlatpakBackend.vala:800
+#, fuzzy
+#| msgid "Finished"
+msgid "Finishing"
+msgstr "Завершено"
+
+#: src/Core/FlatpakBackend.vala:895
+#, fuzzy
+#| msgid "Update"
+msgid "Updating"
+msgstr "Оновлення"
+
 #: src/Core/Package.vala:300
 #, c-format
 msgid "%s Developers"
@@ -254,7 +275,13 @@ msgstr "Невідоме походження (не курований)"
 #: src/Core/Package.vala:444
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
-msgstr ""
+msgstr "Статус додатку не встановлено як інстальований в Центрі програм для пакету: %s"
+
+#: src/Core/PackageKitBackend.vala:220
+#, fuzzy, c-format
+#| msgid "%s (non-curated)"
+msgid "%s (local)"
+msgstr "%s (не курований)"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -264,20 +291,20 @@ msgstr "Оновлення Операційної Системи"
 msgid "Updates to system components"
 msgstr "Оновлення системних компонетів"
 
-#: src/Core/UpdateManager.vala:76
+#: src/Core/UpdateManager.vala:81
 #, c-format
 msgid "Version: %s"
 msgstr "Версія: %s"
 
-#: src/Core/UpdateManager.vala:103
+#: src/Core/UpdateManager.vala:111
 msgid "Flatpak runtime"
 msgstr "Час виконання Flatpak"
 
-#: src/Core/UpdateManager.vala:119
+#: src/Core/UpdateManager.vala:128
 msgid "No components with updates"
 msgstr "Компоненти з оновленнями відсутні"
 
-#: src/Core/UpdateManager.vala:123
+#: src/Core/UpdateManager.vala:133
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
@@ -285,16 +312,16 @@ msgstr[0] "%u компонент з оновленнями"
 msgstr[1] "%u компоненти з оновленнями"
 msgstr[2] "%u компонентів з оновленнями"
 
-#: src/Core/UpdateManager.vala:125
+#: src/Core/UpdateManager.vala:135
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:163
+#: src/Core/UpdateManager.vala:174
 msgid "Restart Required"
 msgstr "Потрібно перезапуск"
 
-#: src/Core/UpdateManager.vala:164
+#: src/Core/UpdateManager.vala:175
 msgid "Please restart your system to finalize updates"
 msgstr "Будь-ласка, перезавантажте систему для завершення оновлення"
 
@@ -303,26 +330,59 @@ msgid "Content Warning"
 msgstr "Попередження про вміст"
 
 #: src/Dialogs/ContentWarningDialog.vala:30
-#, fuzzy, c-format
+#, c-format
 msgid "“%s” contains explicit content"
 msgstr "%s містить контент для дорослих"
 
 #: src/Dialogs/ContentWarningDialog.vala:31
-#, fuzzy, c-format
+#, c-format
 msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
-msgstr "%s може містити контент 18+ або такий, що може викликати підвищену чутливість та тревожність. Як правило, elementary не переглядає та не підтримує зміст цього застосунку."
+msgstr "“%s” може мати вразливий чи тривожний вміст, або такий, що призначений лише для дорослих. Elementary як правило не переглядає та не схвалює вміст цього додатку."
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 msgid "Show content warnings"
 msgstr "Показати попередження про вміст"
 
 #: src/Dialogs/ContentWarningDialog.vala:37
+#: src/Dialogs/NonCuratedWarningDialog.vala:81
 msgid "Don’t Install"
 msgstr "Не встановлювати"
 
 #: src/Dialogs/ContentWarningDialog.vala:38
+#: src/Dialogs/NonCuratedWarningDialog.vala:82
 msgid "Install Anyway"
 msgstr "Встановити у будь якому випадку"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:27
+#, fuzzy
+#| msgid "Content Warning"
+msgid "Non-Curated Warning"
+msgstr "Попередження про вміст"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:37
+#, fuzzy
+#| msgid "%s (non-curated)"
+msgid "Install non-curated app?"
+msgstr "%s (не курований)"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:38
+#, c-format
+msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
+msgstr ""
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:47
+msgid "It may not receive bug fix or feature updates"
+msgstr ""
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:60
+msgid "It may access or change system or personal files without permission"
+msgstr ""
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:66
+#, fuzzy
+#| msgid "Show content warnings"
+msgid "Show non-curated warnings"
+msgstr "Показати попередження про вміст"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -475,17 +535,16 @@ msgstr "Дана картка є тестовою карткою. Будь ла�
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
-msgstr ""
+msgstr "Видалення цього додатку також може видалити його дані."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:35
-#, fuzzy
 msgid "Uninstall app?"
-msgstr "Вилучити"
+msgstr "Видалили додаток?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:38
-#, fuzzy, c-format
+#, c-format
 msgid "Uninstall “%s”?"
-msgstr "Вилучити"
+msgstr "Видалити “%s”?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:144
@@ -493,19 +552,17 @@ msgid "Uninstall"
 msgstr "Вилучити"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
-#, fuzzy
 msgid "This may have been caused by external or manually compiled software."
-msgstr "Це може бути викликано зовнішньо, вручну доданими сховищами програмного забезпечення або файлом з пошкодженими джерелами."
+msgstr "Це може бути викликано програмним забезпеченням встановленим шляхом використання зовнішніх джерел або вручну."
 
 #: src/Dialogs/UninstallFailDialog.vala:37
-#, fuzzy
 msgid "Failed to uninstall app"
-msgstr "Пошук та встановлення додатків"
+msgstr "Не вдалося видалити додаток"
 
 #: src/Dialogs/UninstallFailDialog.vala:40
 #, c-format
 msgid "Failed to uninstall “%s”"
-msgstr ""
+msgstr "Помилка при видаленні “%s”"
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"

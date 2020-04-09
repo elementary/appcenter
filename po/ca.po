@@ -1,15 +1,14 @@
-# David M <rbndavid@gmail.com>, 2018, 2019.
+# David M <rbndavid@gmail.com>, 2018, 2019, 2020.
 # Seifer23 <salvador.rodo@gmail.com>, 2019.
 # Adolfo Jayme Barrientos <fitojb@ubuntu.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-17 16:29+0000\n"
-"PO-Revision-Date: 2020-03-05 14:09+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
-"Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/ca/>\n"
+"POT-Creation-Date: 2020-04-08 23:33+0000\n"
+"PO-Revision-Date: 2020-04-06 14:22+0000\n"
+"Last-Translator: David M <rbndavid@gmail.com>\n"
+"Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/appcenter/ca/>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,8 +30,7 @@ msgstr "No s'ha pogut analitzar el tipus de mitjà %s"
 #: src/Application.vala:132
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr ""
-"No s'ha pogut trobar l'enllaç especificat «%s». En lloc d'això, se cerca"
+msgstr "No s'ha pogut trobar l'enllaç especificat «%s». En lloc d'això, se cerca"
 
 #: src/Application.vala:270
 msgid "Application installed"
@@ -94,7 +92,7 @@ msgstr "Se suprimeixen paquets"
 msgid "Downloading"
 msgstr "Es baixa"
 
-#: src/Utils.vala:86
+#: src/Utils.vala:86 src/Core/FlatpakBackend.vala:698
 msgid "Installing"
 msgstr "S'instal·la"
 
@@ -139,6 +137,9 @@ msgid "Finished"
 msgstr "S'ha acabat"
 
 #: src/Utils.vala:108 src/Core/ChangeInformation.vala:79
+#: src/Core/FlatpakBackend.vala:707 src/Core/FlatpakBackend.vala:730
+#: src/Core/FlatpakBackend.vala:803 src/Core/FlatpakBackend.vala:904
+#: src/Core/FlatpakBackend.vala:930
 msgid "Cancelling"
 msgstr "Es cancel·la"
 
@@ -223,6 +224,18 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "Hi ha %u actualització disponible per al sistema"
 msgstr[1] "Hi ha %u actualitzacions disponibles per al sistema"
 
+#: src/Core/FlatpakBackend.vala:795
+msgid "Uninstalling"
+msgstr "Es desinstal·la"
+
+#: src/Core/FlatpakBackend.vala:800
+msgid "Finishing"
+msgstr "S'acaba"
+
+#: src/Core/FlatpakBackend.vala:895
+msgid "Updating"
+msgstr "S'actualitza"
+
 #: src/Core/Package.vala:300
 #, c-format
 msgid "%s Developers"
@@ -254,6 +267,11 @@ msgstr "D'origen desconegut (sense cura)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "L'estat de l'aplicació no està establert com a instal·lada al Centre d'aplicacions per al paquet %s."
 
+#: src/Core/PackageKitBackend.vala:220
+#, c-format
+msgid "%s (local)"
+msgstr "%s (local)"
+
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
 msgstr "Actualitzacions del sistema operatiu"
@@ -262,36 +280,36 @@ msgstr "Actualitzacions del sistema operatiu"
 msgid "Updates to system components"
 msgstr "Actualitzacions per als components del sistema"
 
-#: src/Core/UpdateManager.vala:76
+#: src/Core/UpdateManager.vala:81
 #, c-format
 msgid "Version: %s"
 msgstr "Versió: %s"
 
-#: src/Core/UpdateManager.vala:103
+#: src/Core/UpdateManager.vala:111
 msgid "Flatpak runtime"
 msgstr "Entorn d'execució del Flatpak"
 
-#: src/Core/UpdateManager.vala:119
+#: src/Core/UpdateManager.vala:128
 msgid "No components with updates"
 msgstr "No hi ha components amb actualitzacions."
 
-#: src/Core/UpdateManager.vala:123
+#: src/Core/UpdateManager.vala:133
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "%u component amb actualitzacions"
 msgstr[1] "%u components amb actualitzacions"
 
-#: src/Core/UpdateManager.vala:125
+#: src/Core/UpdateManager.vala:135
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:163
+#: src/Core/UpdateManager.vala:174
 msgid "Restart Required"
 msgstr "Cal reiniciar"
 
-#: src/Core/UpdateManager.vala:164
+#: src/Core/UpdateManager.vala:175
 msgid "Please restart your system to finalize updates"
 msgstr "Reinicieu el sistema per a acabar les actualitzacions"
 
@@ -307,22 +325,46 @@ msgstr "%s conté contingut explícit"
 #: src/Dialogs/ContentWarningDialog.vala:31
 #, c-format
 msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
-msgstr ""
-"«%s» pot tenir contingut només adequat per a adults, o bé que pot ser "
-"delicat o pertorbador. En general, l'elementary no revisa ni avala el "
-"contingut d'aquesta aplicació."
+msgstr "«%s» pot tenir contingut només adequat per a adults, o bé que pot ser delicat o pertorbador. En general, l'elementary no revisa ni avala el contingut d'aquesta aplicació."
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 msgid "Show content warnings"
 msgstr "Mostra els avisos de contingut"
 
 #: src/Dialogs/ContentWarningDialog.vala:37
+#: src/Dialogs/NonCuratedWarningDialog.vala:81
 msgid "Don’t Install"
 msgstr "No la instal·lis"
 
 #: src/Dialogs/ContentWarningDialog.vala:38
+#: src/Dialogs/NonCuratedWarningDialog.vala:82
 msgid "Install Anyway"
 msgstr "Instal·la-la tanmateix"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:27
+msgid "Non-Curated Warning"
+msgstr "Avís de manca de cura"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:37
+msgid "Install non-curated app?"
+msgstr "Voleu instal·lar l'aplicació sense curar?"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:38
+#, c-format
+msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
+msgstr "%s no té la cura de l'elementary i no s'ha revisat pel que fa a la seguretat, privadesa o integració amb el sistema."
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:47
+msgid "It may not receive bug fix or feature updates"
+msgstr "Podria no rebre correcions d'errors o actualitzacions de característiques."
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:60
+msgid "It may access or change system or personal files without permission"
+msgstr "Podria accedir o canviar fitxers personals del sistema sense permís."
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:66
+msgid "Show non-curated warnings"
+msgstr "Mostra els avisos de manca de cura"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -344,9 +386,7 @@ msgstr "Cancel·la"
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
-msgstr ""
-"Hi ha hagut un error mentre es processava la targeta. Torneu-ho a provar més "
-"tard. Disculpeu les molèsties."
+msgstr "Hi ha hagut un error mentre es processava la targeta. Torneu-ho a provar més tard. Disculpeu les molèsties."
 
 #: src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
@@ -363,9 +403,7 @@ msgstr "Paga %d USD per %s"
 
 #: src/Dialogs/StripeDialog.vala:96
 msgid "This is a one time payment. Your email address is only used to send you a receipt."
-msgstr ""
-"Es paga una sola vegada. L'adreça electrònica només s'usa per a enviar-vos "
-"un rebut."
+msgstr "Es paga una sola vegada. L'adreça electrònica només s'usa per a enviar-vos un rebut."
 
 #: src/Dialogs/StripeDialog.vala:106 src/Widgets/SharePopover.vala:35
 msgid "Email"
@@ -373,9 +411,7 @@ msgstr "Adreça electrònica"
 
 #: src/Dialogs/StripeDialog.vala:108
 msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
-msgstr ""
-"L'adreça electrònica només s'usa per a enviar un rebut. No se us subscriurà "
-"a cap llista de correu."
+msgstr "L'adreça electrònica només s'usa per a enviar un rebut. No se us subscriurà a cap llista de correu."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127
@@ -413,49 +449,35 @@ msgstr "Torna-ho a intentar"
 
 #: src/Dialogs/StripeDialog.vala:513 src/Dialogs/StripeDialog.vala:578
 msgid "The card number is incorrect. Please try again using the correct card number."
-msgstr ""
-"El número de la targeta no és correcte. Torneu-ho a intentar amb el número "
-"correcte."
+msgstr "El número de la targeta no és correcte. Torneu-ho a intentar amb el número correcte."
 
 #: src/Dialogs/StripeDialog.vala:515
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
-msgstr ""
-"El mes de caducitat no és vàlid. Torneu-ho a intentar amb la data de "
-"caducitat correcta."
+msgstr "El mes de caducitat no és vàlid. Torneu-ho a intentar amb la data de caducitat correcta."
 
 #: src/Dialogs/StripeDialog.vala:517 src/Dialogs/StripeDialog.vala:575
 msgid "The expiration year is invalid. Please try again using the correct expiration date."
-msgstr ""
-"L'any de caducitat no és vàlid. Torneu-ho a intentar amb la data de "
-"caducitat correcta."
+msgstr "L'any de caducitat no és vàlid. Torneu-ho a intentar amb la data de caducitat correcta."
 
 #: src/Dialogs/StripeDialog.vala:520 src/Dialogs/StripeDialog.vala:573
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr ""
-"El número CVC no és correcte. Torneu-ho a intentar amb el número correcte."
+msgstr "El número CVC no és correcte. Torneu-ho a intentar amb el número correcte."
 
 #: src/Dialogs/StripeDialog.vala:522 src/Dialogs/StripeDialog.vala:564
 msgid "The card has expired. Please try again with a different card."
-msgstr ""
-"La targeta està caducada. Torneu-ho a intentar amb una targeta diferent."
+msgstr "La targeta està caducada. Torneu-ho a intentar amb una targeta diferent."
 
 #: src/Dialogs/StripeDialog.vala:542
 msgid "There are too many payment requests at the moment, please retry later."
-msgstr ""
-"Hi ha massa peticions de pagament en aquests moments. Torneu-ho a intentar "
-"més tard."
+msgstr "Hi ha massa peticions de pagament en aquests moments. Torneu-ho a intentar més tard."
 
 #: src/Dialogs/StripeDialog.vala:558
 msgid "This card does not support this kind of transaction. Please try again with a different card."
-msgstr ""
-"Aquesta targeta no admet aquest tipus de transacció. Torneu-ho a intentar "
-"amb una targeta diferent."
+msgstr "Aquesta targeta no admet aquest tipus de transacció. Torneu-ho a intentar amb una targeta diferent."
 
 #: src/Dialogs/StripeDialog.vala:560
 msgid "The currency is not supported by this card. Please try again with a different card."
-msgstr ""
-"Aquesta targeta no admet el tipus de moneda. Torneu-ho a provar amb una "
-"targeta diferent."
+msgstr "Aquesta targeta no admet el tipus de moneda. Torneu-ho a provar amb una targeta diferent."
 
 #: src/Dialogs/StripeDialog.vala:562
 msgid "The transaction has already been processed."
@@ -463,9 +485,7 @@ msgstr "Ja s'ha processat la transacció."
 
 #: src/Dialogs/StripeDialog.vala:566
 msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
-msgstr ""
-"El codi postal no és correcte. Torneu-ho a intentar amb el codi postal "
-"correcte."
+msgstr "El codi postal no és correcte. Torneu-ho a intentar amb el codi postal correcte."
 
 #: src/Dialogs/StripeDialog.vala:568
 msgid "You don't have enough funds. Please use an alternative payment method."
@@ -473,25 +493,19 @@ msgstr "No teniu fons suficient. Feu servir un mètode de pagament alternatiu."
 
 #: src/Dialogs/StripeDialog.vala:570
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr ""
-"La quantitat no és correcta. Torneu-ho a provar amb una quantitat correcta."
+msgstr "La quantitat no és correcta. Torneu-ho a provar amb una quantitat correcta."
 
 #: src/Dialogs/StripeDialog.vala:581
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr ""
-"El número PIN no és correcte. Torneu-ho a intentar amb el número correcte."
+msgstr "El número PIN no és correcte. Torneu-ho a intentar amb el número correcte."
 
 #: src/Dialogs/StripeDialog.vala:583
 msgid "There has been too many PIN attempts. Please try again with a different card."
-msgstr ""
-"Hi ha hagut massa intents de número secret. Torneu-ho a provar amb una "
-"targeta diferent."
+msgstr "Hi ha hagut massa intents de número secret. Torneu-ho a provar amb una targeta diferent."
 
 #: src/Dialogs/StripeDialog.vala:603
 msgid "Unable to complete the transaction. Please contact your bank for further information."
-msgstr ""
-"No s'ha pogut completar la transacció. Contacteu amb el banc per a més "
-"informació."
+msgstr "No s'ha pogut completar la transacció. Contacteu amb el banc per a més informació."
 
 #: src/Dialogs/StripeDialog.vala:606
 msgid "The balance or credit limit on the card has been reached."
@@ -499,8 +513,7 @@ msgstr "S'ha arribat al límit de saldo o crèdit de la targeta."
 
 #: src/Dialogs/StripeDialog.vala:609
 msgid "The given card is a test card. Please use a real card to proceed."
-msgstr ""
-"Aquesta és una targeta de prova. Feu servir una targeta real per continuar."
+msgstr "Aquesta és una targeta de prova. Feu servir una targeta real per continuar."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
