@@ -19,7 +19,7 @@
       <description>
         <p>Fixes</p>
         <ul>
-          <li>AppCenter now uses configured network proxy settings</li>
+          <li>AppCenter now uses configured network proxy settings for apt operations</li>
         </ul>
       </description>
     </release>
