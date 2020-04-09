@@ -15,6 +15,14 @@
     </p>
   </description>
   <releases>
+    <release version="3.2.5" date="2020-04-28" urgency="medium">
+      <description>
+        <p>Fixes</p>
+        <ul>
+          <li>AppCenter now uses configured network proxy settings</li>
+        </ul>
+      </description>
+    </release>
     <release version="3.2.4" date="2020-04-08" urgency="medium">
       <description>
         <p>Fixes</p>
