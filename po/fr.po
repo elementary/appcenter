@@ -10,11 +10,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-04 16:09+0000\n"
+"POT-Creation-Date: 2020-04-08 23:33+0000\n"
 "PO-Revision-Date: 2020-04-06 14:22+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
-"Language-Team: French <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/fr/>\n"
+"Language-Team: French <https://l10n.elementary.io/projects/appcenter/appcenter/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -286,36 +285,36 @@ msgstr "Mises à jour du système d’exploitation"
 msgid "Updates to system components"
 msgstr "Mise à jour des composants système"
 
-#: src/Core/UpdateManager.vala:76
+#: src/Core/UpdateManager.vala:81
 #, c-format
 msgid "Version: %s"
 msgstr "Version : %s"
 
-#: src/Core/UpdateManager.vala:103
+#: src/Core/UpdateManager.vala:111
 msgid "Flatpak runtime"
 msgstr "Environnement d'exécution Flatpak"
 
-#: src/Core/UpdateManager.vala:119
+#: src/Core/UpdateManager.vala:128
 msgid "No components with updates"
 msgstr "Aucune mise à jour disponible"
 
-#: src/Core/UpdateManager.vala:123
+#: src/Core/UpdateManager.vala:133
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "%u composant avec mises à jour"
 msgstr[1] "%u composants avec mises à jour"
 
-#: src/Core/UpdateManager.vala:125
+#: src/Core/UpdateManager.vala:135
 #, c-format
 msgid "%s:"
 msgstr "%s :"
 
-#: src/Core/UpdateManager.vala:163
+#: src/Core/UpdateManager.vala:174
 msgid "Restart Required"
 msgstr "Redémarrage nécessaire"
 
-#: src/Core/UpdateManager.vala:164
+#: src/Core/UpdateManager.vala:175
 msgid "Please restart your system to finalize updates"
 msgstr "Veuillez redémarrer votre système pour terminer les mises à jour"
 
@@ -358,21 +357,15 @@ msgstr "Installer l'application non vérifiée ?"
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
 msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-msgstr ""
-"« %s » n'a pas été vérifiée par elementary, notamment au regard de la "
-"sécurité, de la confidentialité et l’intégration dans le système."
+msgstr "« %s » n'a pas été vérifiée par elementary, notamment au regard de la sécurité, de la confidentialité et l’intégration dans le système."
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
 msgid "It may not receive bug fix or feature updates"
-msgstr ""
-"Il se pourrait qu'il n'y ait pas de corrections de bugs ou de mises à jour "
-"de fonctionnalités"
+msgstr "Il se pourrait qu'il n'y ait pas de corrections de bugs ou de mises à jour de fonctionnalités"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:60
 msgid "It may access or change system or personal files without permission"
-msgstr ""
-"Il se pourrait qu'elle ait accès au système et qu'elle modifie des "
-"paramètres ou des fichiers personnels sans autorisation"
+msgstr "Il se pourrait qu'elle ait accès au système et qu'elle modifie des paramètres ou des fichiers personnels sans autorisation"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
 msgid "Show non-curated warnings"
