@@ -26,6 +26,8 @@ namespace AppCenter {
         protected Gtk.SizeGroup action_button_group;
         protected Gtk.SizeGroup info_grid_group;
         protected uint packages_changing = 0;
+        protected Granite.Widgets.AlertView alert_view;
+        protected Granite.Widgets.AlertView loading_view;
 
         construct {
             orientation = Gtk.Orientation.VERTICAL;
@@ -33,12 +35,14 @@ namespace AppCenter {
             scrolled = new Gtk.ScrolledWindow (null, null);
             scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
 
-            var alert_view = new Granite.Widgets.AlertView (_("No Results"), _("No apps could be found. Try changing search terms."), "edit-find-symbolic");
+            alert_view = new Granite.Widgets.AlertView (_("No Results"), _("No apps could be found. Try changing search terms."), "edit-find-symbolic");
+            loading_view = new Granite.Widgets.AlertView (_("Loading"), _("Updating package list"), "system-software-update");
             alert_view.show_all ();
+            loading_view.show_all ();
             list_box = new Gtk.ListBox ();
             list_box.expand = true;
             list_box.activate_on_single_click = true;
-            list_box.set_placeholder (alert_view);
+
             list_box.set_sort_func ((Gtk.ListBoxSortFunc) package_row_compare);
             list_box.row_activated.connect ((r) => {
                 var row = (Widgets.AppListRow)r;
@@ -49,6 +53,14 @@ namespace AppCenter {
 
             action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
             info_grid_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
+        }
+
+        public void set_placeholder_loading () {
+            list_box.set_placeholder (loading_view);
+        }
+
+        public void set_placeholder_no_results () {
+            list_box.set_placeholder (alert_view);
         }
 
         protected abstract Widgets.AppListRow construct_row_for_package (AppCenterCore.Package package);

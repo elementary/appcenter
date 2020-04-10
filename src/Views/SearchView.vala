@@ -70,12 +70,18 @@ public class AppCenter.Views.SearchView : View {
         app_list_view.clear ();
         unowned Client client = Client.get_default ();
 
+        Gee.Collection<Package> found_apps;
+
         if (mimetype) {
-            var found_apps = client.search_applications_mime (current_search_term);
+            found_apps = client.search_applications_mime (current_search_term);
             app_list_view.add_packages (found_apps);
         } else {
-            var found_apps = client.search_applications (current_search_term, current_category);
+            found_apps = client.search_applications (current_search_term, current_category);
             app_list_view.add_packages (found_apps);
+        }
+
+        if (found_apps.size == 0) {
+            app_list_view.set_placeholder_no_results ();
         }
 
         if (current_category != null) {

@@ -38,10 +38,12 @@ public class AppCenter.Views.InstalledView : View {
 
         unowned AppCenterCore.Client client = AppCenterCore.Client.get_default ();
 
+        app_list_view.set_placeholder_loading ();
         get_apps.begin ();
 
         client.installed_apps_changed.connect (() => {
             Idle.add (() => {
+                app_list_view.set_placeholder_loading ();
                 get_apps.begin ();
                 return GLib.Source.REMOVE;
             });
@@ -89,6 +91,10 @@ public class AppCenter.Views.InstalledView : View {
             var os_updates = AppCenterCore.UpdateManager.get_default ().os_updates;
             app_list_view.add_package (os_updates);
             app_list_view.add_packages (installed_apps);
+
+            if (os_updates == null && installed_apps.size == 0) { // Can this ever happen?
+                app_list_view.set_placeholder_no_results ();
+            }
         }
 
         refresh_mutex.unlock ();
