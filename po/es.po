@@ -16,7 +16,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-08 23:33+0000\n"
 "PO-Revision-Date: 2020-04-12 13:10+0000\n"
-"Last-Translator: Rafael Bautista Martínez <iuninefrendor@gmail.com>\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -40,7 +40,7 @@ msgstr "No se pudo analizar el tipo de medio %s"
 #: src/Application.vala:132
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr "No se encontró el vínculo especificado '%s', en busca de alternativas"
+msgstr "No se encontró el enlace «%s» especificado; en busca de alternativas"
 
 #: src/Application.vala:270
 msgid "Application installed"
@@ -384,6 +384,8 @@ msgstr ""
 #: src/Dialogs/NonCuratedWarningDialog.vala:60
 msgid "It may access or change system or personal files without permission"
 msgstr ""
+"Puede consultar o modificar archivos personales y del sistema sin "
+"autorización"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
 #, fuzzy
@@ -436,7 +438,9 @@ msgstr "Correo electrónico"
 
 #: src/Dialogs/StripeDialog.vala:108
 msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
-msgstr "La dirección de correo electrónico unicamente sera utilizada para enviarte un recibo. No seras suscrito a ninguna lista de difusion."
+msgstr ""
+"Su dirección de correo electrónico solo se utiliza para enviarle un recibo. "
+"No se le suscribirá a ninguna lista de correo."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127
@@ -546,12 +550,12 @@ msgstr "La desinstalación de esta aplicación también podría eliminarle los d
 
 #: src/Dialogs/UninstallConfirmDialog.vala:35
 msgid "Uninstall app?"
-msgstr "¿Desea desinstalar la aplicación?"
+msgstr "¿Quiere desinstalar la aplicación?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:38
 #, c-format
 msgid "Uninstall “%s”?"
-msgstr "¿Desea desinstalar «%s»?"
+msgstr "¿Quiere desinstalar «%s»?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:144
@@ -569,11 +573,11 @@ msgstr "No se pudo desinstalar la aplicación"
 #: src/Dialogs/UninstallFailDialog.vala:40
 #, c-format
 msgid "Failed to uninstall “%s”"
-msgstr "Se ha producido un error desinstalando «%s»"
+msgstr "No se pudo desinstalar «%s»"
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
-msgstr "Error al realizar las actualizaciones"
+msgstr "No se pudieron recuperar las actualizaciones"
 
 #: src/Dialogs/UpdateFailDialog.vala:26
 msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
@@ -585,7 +589,7 @@ msgstr "Ignorar"
 
 #: src/Dialogs/UpdateFailDialog.vala:35
 msgid "Try Again"
-msgstr "Intente nuevamente"
+msgstr "Intentar nuevamente"
 
 #: src/Views/AppInfoView.vala:157
 msgid "Screenshot Not Available"
@@ -597,11 +601,11 @@ msgstr "Página principal"
 
 #: src/Views/AppInfoView.vala:214
 msgid "Suggest Translations"
-msgstr "Sugerir traducción"
+msgstr "Sugerir traducciones"
 
 #: src/Views/AppInfoView.vala:220
 msgid "Report a Problem"
-msgstr "Reportar un problema"
+msgstr "Informar de un problema"
 
 #: src/Views/AppInfoView.vala:226
 msgid "Help"
