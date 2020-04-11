@@ -80,9 +80,7 @@ public class AppCenter.Views.SearchView : View {
             app_list_view.add_packages (found_apps);
         }
 
-        if (found_apps.size == 0) {
-            app_list_view.set_placeholder_no_results ();
-        }
+        app_list_view.set_placeholder_no_results (); //will only be visible if no packages found
 
         if (current_category != null) {
             subview_entered (_("Search Apps"), true, current_category.name);

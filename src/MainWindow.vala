@@ -285,7 +285,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         if (query_valid) {
             search_view.search (query, homepage.currently_viewed_category, mimetype);
-            stack.visible_child = search_view;
+            stack.visible_child = search_view; // Only show search view after search completed.
         } else {
             if (stack.visible_child == search_view && homepage.currently_viewed_category != null) {
                 return_button_history.poll_head ();
