@@ -35,8 +35,17 @@ namespace AppCenter {
             scrolled = new Gtk.ScrolledWindow (null, null);
             scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
 
-            alert_view = new Granite.Widgets.AlertView (_("No Results"), _("No apps could be found. Try changing search terms."), "edit-find-symbolic");
-            loading_view = new Granite.Widgets.AlertView (_("Loading"), _("Updating package list"), "system-software-update");
+            alert_view = new Granite.Widgets.AlertView (
+                _("No Results"),
+                _("No apps could be found. Try changing search terms."),
+                "edit-find-symbolic"
+            );
+
+            loading_view = new Granite.Widgets.AlertView (
+                _("Checking for updates"),
+                _("Verifying the installed apps and checking for updates to the OS and apps"),
+                "sync-synchronizing"
+            );
             alert_view.show_all ();
             loading_view.show_all ();
             list_box = new Gtk.ListBox ();
