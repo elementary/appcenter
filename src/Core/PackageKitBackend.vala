@@ -245,18 +245,14 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 
             var package = package_list[pk_package.get_name ()];
             if (package != null) {
-                populate_package (package, pk_package);
+                package.mark_installed ();
+                package.latest_version = pk_package.get_version ();
+                package.update_state ();
                 packages.add (package);
             }
         }
 
         return packages;
-    }
-
-    private static void populate_package (AppCenterCore.Package package, Pk.Package pk_package) {
-        package.mark_installed ();
-        package.latest_version = pk_package.get_version ();
-        package.update_state ();
     }
 
     public Package? get_package_for_component_id (string id) {

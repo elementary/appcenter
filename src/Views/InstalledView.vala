@@ -67,6 +67,8 @@ public class AppCenter.Views.InstalledView : View {
 
         yield refresh_mutex.lock ();
 
+        refresh_cancellable.reset ();
+
         unowned AppCenterCore.Client client = AppCenterCore.Client.get_default ();
 
         var installed_apps = yield client.get_installed_applications (refresh_cancellable);
@@ -83,6 +85,7 @@ public class AppCenter.Views.InstalledView : View {
             }
         }
 
+
         if (!refresh_cancellable.is_cancelled ()) {
             app_list_view.clear ();
 
@@ -92,8 +95,6 @@ public class AppCenter.Views.InstalledView : View {
         }
 
         refresh_mutex.unlock ();
-
-        refresh_cancellable.reset ();
     }
 
     public async void add_app (AppCenterCore.Package package) {

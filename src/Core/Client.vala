@@ -144,8 +144,7 @@ public class AppCenterCore.Client : Object {
                 refresh_in_progress = true;
                 updating_cache = true;
                 try {
-                    success = yield PackageKitBackend.get_default ().refresh_cache (cancellable);
-                    yield FlatpakBackend.get_default ().refresh_cache (cancellable);
+                    success = yield BackendAggregator.get_default ().refresh_cache (cancellable);
                     last_cache_update = new DateTime.now_local ();
                 } catch (Error e) {
                     refresh_in_progress = false;

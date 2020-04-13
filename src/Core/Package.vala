@@ -433,6 +433,9 @@ public class AppCenterCore.Package : Object {
     }
 
     public async bool uninstall () throws Error {
+        // We possibly don't know if this package is installed or not yet, so trigger that check first
+        update_state ();
+
         if (state == State.INSTALLED || state == State.UPDATE_AVAILABLE) {
             try {
                 return yield perform_operation (State.REMOVING, State.NOT_INSTALLED, state);
