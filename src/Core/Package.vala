@@ -379,7 +379,6 @@ public class AppCenterCore.Package : Object {
         color_primary_text = null;
         payments_key = null;
         suggested_amount = null;
-        _latest_version = null;
         installed_cached = false;
         _author = null;
         _author_title = null;

@@ -247,6 +247,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
             if (package != null) {
                 package.mark_installed ();
                 package.latest_version = pk_package.get_version ();
+
                 if (package.component.get_name () == null) {
                     package.set_name (pk_package.get_name ());
                 }
