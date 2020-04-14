@@ -570,6 +570,10 @@ public class AppCenterCore.Package : Object {
         return summary;
     }
 
+    public void set_summary (string? new_summary) {
+        summary = new_summary;
+    }
+
     public string get_progress_description () {
         return change_information.status_description;
     }
