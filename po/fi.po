@@ -6,9 +6,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-08 23:33+0000\n"
-"PO-Revision-Date: 2020-02-22 14:08+0000\n"
+"PO-Revision-Date: 2020-04-14 14:10+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
-"Language-Team: Finnish <https://l10n.elementary.io/projects/appcenter/appcenter/fi/>\n"
+"Language-Team: Finnish <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -225,22 +226,16 @@ msgstr[0] "Järjestelmälle on saatavilla %u päivitys"
 msgstr[1] "Järjestelmälle on saatavilla %u päivitystä"
 
 #: src/Core/FlatpakBackend.vala:795
-#, fuzzy
-#| msgid "Uninstall"
 msgid "Uninstalling"
-msgstr "Poista asennus"
+msgstr "Poistetaan"
 
 #: src/Core/FlatpakBackend.vala:800
-#, fuzzy
-#| msgid "Finished"
 msgid "Finishing"
-msgstr "Valmis"
+msgstr "Valmistellaan"
 
 #: src/Core/FlatpakBackend.vala:895
-#, fuzzy
-#| msgid "Update"
 msgid "Updating"
-msgstr "Päivitä"
+msgstr "Päivitetään"
 
 #: src/Core/Package.vala:300
 #, c-format
@@ -253,12 +248,12 @@ msgstr "elementary-päivitykset"
 
 #: src/Core/Package.vala:334
 msgid "Ubuntu (non-curated)"
-msgstr "Ubuntu (ei kuratoitu)"
+msgstr "Ubuntu (kuratoimaton)"
 
 #: src/Core/Package.vala:337
 #, c-format
 msgid "%s (non-curated)"
-msgstr "%s (ei kuratoitu)"
+msgstr "%s (kuratoimaton)"
 
 #: src/Core/Package.vala:339
 msgid "Ubuntu Drivers"
@@ -266,7 +261,7 @@ msgstr "Ubuntu-ajurit"
 
 #: src/Core/Package.vala:342
 msgid "Unknown Origin (non-curated)"
-msgstr "Tuntematon alkuperä (ei kuratoitu)"
+msgstr "Tuntematon alkuperä (kuratoimaton)"
 
 #: src/Core/Package.vala:444
 #, c-format
@@ -274,10 +269,9 @@ msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Sovellustilaa ei ole asetettu asennetuksi Sovelluskeskuksessa paketille %s"
 
 #: src/Core/PackageKitBackend.vala:220
-#, fuzzy, c-format
-#| msgid "%s (non-curated)"
+#, c-format
 msgid "%s (local)"
-msgstr "%s (ei kuratoitu)"
+msgstr "%s (paikallinen)"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -349,35 +343,33 @@ msgid "Install Anyway"
 msgstr "Asenna silti"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
-#, fuzzy
-#| msgid "Content Warning"
 msgid "Non-Curated Warning"
-msgstr "Sisältövaroitus"
+msgstr "Kuratoimattoman varoitus"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:37
-#, fuzzy
-#| msgid "%s (non-curated)"
 msgid "Install non-curated app?"
-msgstr "%s (ei kuratoitu)"
+msgstr "Asennetaanko kuratoimaton sovellus?"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
 msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
 msgstr ""
+"“%s” ei ole kuratoitu elementaryn toimesta, eikä sitä ole katselmoitu "
+"tietoturvan, yksityisyyden tai järjestelmäintegraation osalta."
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
 msgid "It may not receive bug fix or feature updates"
-msgstr ""
+msgstr "Se ei välttämättä saa vikakorjauksia tai ominaisuuspäivityksiä"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:60
 msgid "It may access or change system or personal files without permission"
 msgstr ""
+"Se saattaa käyttää tai muuttaa järjestelmän tiedostoja tai henkilökohtaisia "
+"tiedostoja ilman lupaa"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
-#, fuzzy
-#| msgid "Show content warnings"
 msgid "Show non-curated warnings"
-msgstr "Näytä sisältövaroitukset"
+msgstr "Näytä kuratoimattomien varoitukset"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -672,7 +664,7 @@ msgstr "Päivitä kaikki"
 
 #: src/Views/AppListView.vala:128
 msgid "Non-Curated Apps"
-msgstr "Ei-kuratoidut sovellukset"
+msgstr "Kuratoimattomat sovellukset"
 
 #: src/Views/Homepage.vala:67
 msgid "Recently Updated"
