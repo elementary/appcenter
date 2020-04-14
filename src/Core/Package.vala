@@ -538,6 +538,10 @@ public class AppCenterCore.Package : Object {
         return name;
     }
 
+    public void set_name (string? new_name) {
+        name = new_name;
+    }
+
     public string? get_description () {
         if (description == null) {
             description = component.get_description ();

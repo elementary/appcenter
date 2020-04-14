@@ -247,6 +247,14 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
             if (package != null) {
                 package.mark_installed ();
                 package.latest_version = pk_package.get_version ();
+                if (package.component.get_name () == null) {
+                    package.set_name (pk_package.get_name ());
+                }
+
+                if (package.component.get_summary () == null) {
+                    package.set_summary (pk_package.get_summary ());
+                }
+
                 package.update_state ();
                 packages.add (package);
             }
@@ -876,6 +884,10 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
                 package.latest_version = pk_package.get_version ();
                 if (package.component.get_summary () == null) {
                     package.set_summary (pk_package.get_summary ());
+                }
+
+                if (package.component.get_name () == null) {
+                    package.set_name (pk_package.get_name ());
                 }
 
                 if (pk_package.info == Pk.Info.INSTALLED) {

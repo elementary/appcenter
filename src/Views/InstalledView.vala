@@ -73,19 +73,6 @@ public class AppCenter.Views.InstalledView : View {
 
         var installed_apps = yield client.get_installed_applications (refresh_cancellable);
 
-        // To gain some speedup of the installed applications list, update the state of the packages ahead
-        // of adding them to the list. Otherwise, AppCenter will query each one in turn to get the latest
-        // verison string from PackageKit. The update_multiple_package state method ignores packages that
-        // aren't PackageKit packages, so this is safe to run on the whole list, even if it includes Flatpaks
-        if (AppCenterCore.PackageKitBackend.supports_parallel_package_queries && installed_apps != null) {
-            try {
-                yield AppCenterCore.PackageKitBackend.get_default ().update_multiple_package_state (installed_apps);
-            } catch (Error e) {
-                warning ("Error while updating state of installed packages, loading of installed list may fail or be slow: %s", e.message);
-            }
-        }
-
-
         if (!refresh_cancellable.is_cancelled ()) {
             app_list_view.clear ();
 
