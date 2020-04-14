@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-08 23:33+0000\n"
-"PO-Revision-Date: 2020-04-08 23:30+0000\n"
+"PO-Revision-Date: 2020-04-09 14:47+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
 "extra/pt/>\n"
@@ -47,7 +47,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Prevent suspending when installing, updating, or removing packages"
-msgstr ""
+msgstr "Impedir a suspensão na instalação, atualização ou remoção de pacotes"
 
 #: data/io.elementary.appcenter.appdata.xml.in:24
 #: data/io.elementary.appcenter.appdata.xml.in:30

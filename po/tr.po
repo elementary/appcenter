@@ -13,9 +13,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-08 23:33+0000\n"
-"PO-Revision-Date: 2020-02-02 18:08+0000\n"
+"PO-Revision-Date: 2020-04-12 13:10+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
-"Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/appcenter/tr/>\n"
+"Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -232,22 +233,16 @@ msgstr[0] "Sisteminiz için %u güncelleme var"
 msgstr[1] "Sisteminiz için %u güncelleme var"
 
 #: src/Core/FlatpakBackend.vala:795
-#, fuzzy
-#| msgid "Uninstall"
 msgid "Uninstalling"
-msgstr "Kaldır"
+msgstr "Kaldırılıyor"
 
 #: src/Core/FlatpakBackend.vala:800
-#, fuzzy
-#| msgid "Finished"
 msgid "Finishing"
-msgstr "Tamamlandı"
+msgstr "Bitiriliyor"
 
 #: src/Core/FlatpakBackend.vala:895
-#, fuzzy
-#| msgid "Update"
 msgid "Updating"
-msgstr "Güncelle"
+msgstr "Güncelleniyor"
 
 #: src/Core/Package.vala:300
 #, c-format
@@ -281,10 +276,9 @@ msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "%s paketinin Uygulama Merkezindeki durumu yüklü olarak ayarlanmadı"
 
 #: src/Core/PackageKitBackend.vala:220
-#, fuzzy, c-format
-#| msgid "%s (non-curated)"
+#, c-format
 msgid "%s (local)"
-msgstr "%s (doğrulanmamış)"
+msgstr "%s (yerel)"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -356,35 +350,33 @@ msgid "Install Anyway"
 msgstr "Yine de Yükle"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
-#, fuzzy
-#| msgid "Content Warning"
 msgid "Non-Curated Warning"
-msgstr "İçerik Uyarısı"
+msgstr "Doğrulanmamış İçerik Uyarısı"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:37
-#, fuzzy
-#| msgid "%s (non-curated)"
 msgid "Install non-curated app?"
-msgstr "%s (doğrulanmamış)"
+msgstr "Doğrulanmamış uygulama yüklensin mi?"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
 msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
 msgstr ""
+"\"%s\", elementary tarafından doğrulanmamış ve güvenlik, gizlilik veya "
+"sistem entegrasyonu açısından incelenmemiştir."
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
 msgid "It may not receive bug fix or feature updates"
-msgstr ""
+msgstr "Hata düzeltmeleri veya özellik güncellemeleri alamayabilir"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:60
 msgid "It may access or change system or personal files without permission"
 msgstr ""
+"Sistem veya kişisel dosyalarınıza izniniz olmadan erişebilir veya bunları "
+"değiştirebilir"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
-#, fuzzy
-#| msgid "Show content warnings"
 msgid "Show non-curated warnings"
-msgstr "İçerik uyarılarını göster"
+msgstr "Doğrulanmamış içerik uyarılarını göster"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
