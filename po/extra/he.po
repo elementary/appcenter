@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-08 23:33+0000\n"
-"PO-Revision-Date: 2020-04-08 23:30+0000\n"
+"PO-Revision-Date: 2020-04-14 14:10+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/extra/"
 "he/>\n"
@@ -45,7 +45,7 @@ msgstr "נמנעו קריסות בעת עדכוני Flatpaks וחבילות מע
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Prevent suspending when installing, updating, or removing packages"
-msgstr ""
+msgstr "קיצוץ השהיה בעת התקנה, עדכון או הסרת חבילות"
 
 #: data/io.elementary.appcenter.appdata.xml.in:24
 #: data/io.elementary.appcenter.appdata.xml.in:30
