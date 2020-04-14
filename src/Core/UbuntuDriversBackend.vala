@@ -134,7 +134,14 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
         }
 
         string[] tokens = command_output.split ("\n");
-        AppCenter.App.settings.set_strv ("cached-drivers", tokens);
+        string[] pkgnames = {};
+        foreach (unowned string token in tokens) {
+            if (token.strip () != "") {
+                pkgnames += token;
+            }
+        }
+
+        AppCenter.App.settings.set_strv ("cached-drivers", pkgnames);
 
         working = false;
         return true;
