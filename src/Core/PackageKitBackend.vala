@@ -246,9 +246,13 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
             var package = package_list[pk_package.get_name ()];
             if (package != null) {
                 package.mark_installed ();
+
+                // The version, name and summary are required in the installed list view, cache these values
+                // here where necessary to avoid looking up each package individually later
                 package.latest_version = pk_package.get_version ();
 
-                if (package.component.get_name () == null) {
+                // If there is no AppStream name for the component, use the debian package name instead
+                if (unlikely (package.component.get_name () == null)) {
                     package.set_name (pk_package.get_name ());
                 }
 
@@ -880,8 +884,6 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
                     return;
                 }
 
-                // The version and summary are required in the installed list view, cache these values
-                // here to avoid looking up each package individually later
                 package.latest_version = pk_package.get_version ();
                 if (package.component.get_summary () == null) {
                     package.set_summary (pk_package.get_summary ());
