@@ -20,6 +20,7 @@
         <p>Fixes</p>
         <ul>
           <li>AppCenter now uses configured network proxy settings for apt operations</li>
+          <li>AppCenter no longer prompts for approval to update non-curated apps</li>
         </ul>
       </description>
     </release>
