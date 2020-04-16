@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-16 18:59+0000\n"
+"POT-Creation-Date: 2020-04-16 19:48+0000\n"
 "PO-Revision-Date: 2019-12-23 11:07+0000\n"
 "Last-Translator: Marko <marko.dolar@gmail.com>\n"
 "Language-Team: Slovenian <https://l10n.elementary.io/projects/appcenter/appcenter/sl/>\n"
@@ -656,11 +656,11 @@ msgstr "Poiščite %s v centru za aplikacije:"
 msgid "Share"
 msgstr "Deli"
 
-#: src/Views/AppInfoView.vala:805
+#: src/Views/AppInfoView.vala:813
 msgid "Fund"
 msgstr "Podpri"
 
-#: src/Views/AppInfoView.vala:827
+#: src/Views/AppInfoView.vala:835
 msgid "Fund the development of this app"
 msgstr "Podpri razvoj te aplikacije"
 
