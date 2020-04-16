@@ -21,6 +21,10 @@
         <ul>
           <li>AppCenter no longer prompts for approval to update non-curated apps</li>
         </ul>
+        <p>Features</p>
+        <ul>
+          <li>To de-clutter the updates view, plugins are now only shown if they require updates</li>
+        </ul>
       </description>
     </release>
     <release version="3.2.4" date="2020-04-08" urgency="medium">
