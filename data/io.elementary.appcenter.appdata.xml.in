@@ -20,6 +20,7 @@
         <p>Fixes</p>
         <ul>
           <li>AppCenter no longer prompts for approval to update non-curated apps</li>
+          <li>Reduce slowdowns when opening certain apps</li>
         </ul>
       </description>
     </release>
