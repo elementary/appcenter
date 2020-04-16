@@ -497,7 +497,6 @@ namespace AppCenter.Views {
 #endif
             view_entered ();
             set_up_package (128);
-            parse_description (package.get_description ());
 
             if (package.is_os_updates) {
                 package.notify["state"].connect (() => {
@@ -611,6 +610,8 @@ namespace AppCenter.Views {
                 if (package.is_os_updates) {
                     package_author.label = package.get_version ();
                 }
+
+                parse_description (package.get_description ());
 
                 get_app_download_size.begin ();
 
