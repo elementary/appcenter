@@ -502,6 +502,9 @@ namespace AppCenter.Views {
             if (package.is_os_updates) {
                 package.notify["state"].connect (() => {
                     Idle.add (() => {
+                        // For the OS updates component, this is the "x components with updates" text
+                        package_author.label = package.get_version ();
+
                         parse_description (package.get_description ());
                         return false;
                     });
