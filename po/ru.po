@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-16 18:59+0000\n"
+"POT-Creation-Date: 2020-04-16 19:48+0000\n"
 "PO-Revision-Date: 2019-01-07 00:02+0000\n"
 "Last-Translator: Kirill Romanov <djaler1@gmail.com>\n"
 "Language-Team: Russian <https://weblate.elementary.io/projects/appcenter/appcenter/ru/>\n"
@@ -655,11 +655,11 @@ msgstr "%s в AppCenter:"
 msgid "Share"
 msgstr "Поделиться"
 
-#: src/Views/AppInfoView.vala:805
+#: src/Views/AppInfoView.vala:813
 msgid "Fund"
 msgstr "Поддержать"
 
-#: src/Views/AppInfoView.vala:827
+#: src/Views/AppInfoView.vala:835
 msgid "Fund the development of this app"
 msgstr "Поддержать разработку этого приложения"
 

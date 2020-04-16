@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-16 18:59+0000\n"
+"POT-Creation-Date: 2020-04-16 19:48+0000\n"
 "PO-Revision-Date: 2016-12-28 08:13+0000\n"
 "Last-Translator: elementaryart (old) <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -644,11 +644,11 @@ msgstr ""
 msgid "Share"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:805
+#: src/Views/AppInfoView.vala:813
 msgid "Fund"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:827
+#: src/Views/AppInfoView.vala:835
 msgid "Fund the development of this app"
 msgstr ""
 
