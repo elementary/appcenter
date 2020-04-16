@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-14 16:23+0000\n"
-"PO-Revision-Date: 2020-04-09 14:47+0000\n"
+"PO-Revision-Date: 2020-04-16 18:57+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
 "extra/pt/>\n"
@@ -43,6 +43,8 @@ msgstr "Correções"
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "AppCenter no longer prompts for approval to update non-curated apps"
 msgstr ""
+"O Centro de Aplicações já não solicita a aprovação para atualizar aplicações "
+"não-curadas"
 
 #: data/io.elementary.appcenter.appdata.xml.in:30
 msgid ""
