@@ -259,7 +259,13 @@ namespace AppCenter.Views {
 
             if (package_component.get_addons ().length > 0) {
                 extension_box = new Gtk.ListBox ();
-                extension_box.selection_mode = Gtk.SelectionMode.NONE;
+                extension_box.selection_mode = Gtk.SelectionMode.SINGLE;
+                extension_box.row_activated.connect ((row) => {
+                    var extension_row = row as Widgets.PackageRow;
+                    if (extension_row != null) {
+                        show_other_package (extension_row.get_package (), true, Gtk.StackTransitionType.SLIDE_LEFT_RIGHT);
+                    }
+                });
 
                 var extension_label = new Gtk.Label (_("Extensions:"));
                 extension_label.margin_top = 12;
