@@ -744,7 +744,14 @@ namespace AppCenter.Views {
                     for (int i = 1; i < lines.length; i++) {
                         stripped_description += " " + lines[i].strip ();
                     }
-                    app_description.buffer.text = AppStream.markup_convert_simple (stripped_description);
+
+                    // This method may be called in a thread, pass back to GTK thread
+                    Idle.add (() => {
+                        app_description.buffer.text = AppStream.markup_convert_simple (stripped_description);
+
+                        return false;
+                    });
+
                 } catch (Error e) {
                     critical (e.message);
                 }
