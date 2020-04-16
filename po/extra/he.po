@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-14 16:23+0000\n"
-"PO-Revision-Date: 2020-04-14 14:10+0000\n"
+"POT-Creation-Date: 2020-04-16 18:59+0000\n"
+"PO-Revision-Date: 2020-04-16 18:57+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/extra/"
 "he/>\n"
@@ -35,175 +35,245 @@ msgstr ""
 "החדשה והטובה ביותר לטובת תכונות חדשות ותיקונים."
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
-#: data/io.elementary.appcenter.appdata.xml.in:28
+#: data/io.elementary.appcenter.appdata.xml.in:29
 msgid "Fixes"
 msgstr "תיקונים"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "AppCenter no longer prompts for approval to update non-curated apps"
+msgstr "מרכז היישומים אינו מבקש אישור לעדכן יישומים שמחוץ למאגר"
+
+#: data/io.elementary.appcenter.appdata.xml.in:23
+msgid ""
+"Clicking an extension on an app's info page now shows details for the "
+"extension"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:30
+#: data/io.elementary.appcenter.appdata.xml.in:31
 msgid ""
 "Prevent crashes when updating Flatpaks and system packages simultaneously"
 msgstr "נמנעו קריסות בעת עדכוני Flatpaks וחבילות מערכת בו־זמנית"
 
-#: data/io.elementary.appcenter.appdata.xml.in:31
+#: data/io.elementary.appcenter.appdata.xml.in:32
 msgid "Prevent suspending when installing, updating, or removing packages"
 msgstr "קיצוץ השהיה בעת התקנה, עדכון או הסרת חבילות"
 
-#: data/io.elementary.appcenter.appdata.xml.in:32
-#: data/io.elementary.appcenter.appdata.xml.in:38
-#: data/io.elementary.appcenter.appdata.xml.in:85
+#: data/io.elementary.appcenter.appdata.xml.in:33
+#: data/io.elementary.appcenter.appdata.xml.in:39
+#: data/io.elementary.appcenter.appdata.xml.in:86
 msgid "Updated translations"
 msgstr "תרגומים עודכנו"
 
-#: data/io.elementary.appcenter.appdata.xml.in:43
-#: data/io.elementary.appcenter.appdata.xml.in:60
+#: data/io.elementary.appcenter.appdata.xml.in:44
+#: data/io.elementary.appcenter.appdata.xml.in:61
 msgid "Minor fixes"
 msgstr "תיקונים מזעריים"
 
-#: data/io.elementary.appcenter.appdata.xml.in:45
+#: data/io.elementary.appcenter.appdata.xml.in:46
 msgid "Update application details when changes happen outside of AppCenter"
 msgstr "עדכון פרטי היישום כאשר מתרחשים שינויים מחוץ למרכז היישומים"
 
-#: data/io.elementary.appcenter.appdata.xml.in:46
+#: data/io.elementary.appcenter.appdata.xml.in:47
 msgid "Fix for notification not appearing when a restart is required"
 msgstr "תיקון לכך שההתראות לא מופיעות כאשר נדרשת הפעלה מחדש"
 
-#: data/io.elementary.appcenter.appdata.xml.in:47
+#: data/io.elementary.appcenter.appdata.xml.in:48
 msgid "Apps in list views now load in the correct order when scrolling"
 msgstr "היישומים בתצוגת הרשימה לא נטענים בסדר הנכון בעת גלילה"
 
-#: data/io.elementary.appcenter.appdata.xml.in:48
+#: data/io.elementary.appcenter.appdata.xml.in:49
 msgid "Prevent unescaped XML entities from appearing in application names"
 msgstr "למנוע הצגה של יישויות XML שלא הוחרגו כראוי בשמות היישומים"
 
-#: data/io.elementary.appcenter.appdata.xml.in:49
+#: data/io.elementary.appcenter.appdata.xml.in:50
 msgid "Load the \"Installed\" view faster"
 msgstr "טעינת תצוגת ה„מותקנים” מהירה יותר"
 
-#: data/io.elementary.appcenter.appdata.xml.in:50
+#: data/io.elementary.appcenter.appdata.xml.in:51
 msgid "Ensure flatpak applications show in the category views"
 msgstr "וידוא לכך שיישומי flatpak מופיעים בתצוגות הקטגוריות"
 
-#: data/io.elementary.appcenter.appdata.xml.in:51
+#: data/io.elementary.appcenter.appdata.xml.in:52
 msgid ""
 "Save some bandwidth by downloading smaller screenshots where appropriate"
 msgstr "חיסכון ברוחב פס על ידי הורדת צילומי מסך קטנים יותר איפה שניתן"
 
-#: data/io.elementary.appcenter.appdata.xml.in:52
+#: data/io.elementary.appcenter.appdata.xml.in:53
 msgid "System components no longer have an \"Open\" button"
 msgstr "לרכיבי המערכת אין עוד כפתור „פתיחה”"
 
-#: data/io.elementary.appcenter.appdata.xml.in:53
+#: data/io.elementary.appcenter.appdata.xml.in:54
 msgid ""
 "Applications menu can now remove flatpaks that weren't installed by AppCenter"
 msgstr ""
 "תפריט היישומים יכול מעתה להסיר התקנות flatpak שלא הותקנו דרך מרכז היישומים"
 
-#: data/io.elementary.appcenter.appdata.xml.in:54
+#: data/io.elementary.appcenter.appdata.xml.in:55
 msgid "Make download size estimates more accurate"
 msgstr "שיפור דיוק אומדן גודל ההורדה"
 
-#: data/io.elementary.appcenter.appdata.xml.in:62
+#: data/io.elementary.appcenter.appdata.xml.in:63
 msgid "Prevent AppCenter from opening on log in"
 msgstr "הימנעות מפתיחת מרכז היישומים עם הכניסה למערכת"
 
-#: data/io.elementary.appcenter.appdata.xml.in:63
+#: data/io.elementary.appcenter.appdata.xml.in:64
 msgid "Prevent ghost update notification when there are no updates available"
 msgstr "הימנעות מהתראות רפאים כשאין עדכונים זמינים"
 
-#: data/io.elementary.appcenter.appdata.xml.in:64
+#: data/io.elementary.appcenter.appdata.xml.in:65
 msgid "Show correct installation state for extensions"
 msgstr "מצב ההתקנה הנכון להרחבות מוצג מעתה"
 
-#: data/io.elementary.appcenter.appdata.xml.in:71
+#: data/io.elementary.appcenter.appdata.xml.in:72
 msgid "Add support for Flatpak apps"
 msgstr "הוספת תמיכה ליישומים שנארזו ב־Flatpak"
 
-#: data/io.elementary.appcenter.appdata.xml.in:72
+#: data/io.elementary.appcenter.appdata.xml.in:73
 msgid "Warn about non-curated apps"
 msgstr "הצגת אזהרה לגבי יישומים שלא נאספו"
 
-#: data/io.elementary.appcenter.appdata.xml.in:73
+#: data/io.elementary.appcenter.appdata.xml.in:74
 msgid "Show an error dialog if an installation fails"
 msgstr "הצגת דו־שיח שגיאה אם התקנה נכשלת"
 
-#: data/io.elementary.appcenter.appdata.xml.in:74
+#: data/io.elementary.appcenter.appdata.xml.in:75
 msgid ""
 "Fix an issue where some apps couldn't be uninstalled from the Applications "
 "Menu"
 msgstr "תיקון תקלה שבעקבותיה הסרת יישומים מתפריט היישומים לא הושלמה"
 
-#: data/io.elementary.appcenter.appdata.xml.in:75
+#: data/io.elementary.appcenter.appdata.xml.in:76
 msgid "Allow browsing and uninstalling apps while offline"
 msgstr "הוספת האפשרות לעיין ולהסיר יישומים ללא חיבור לרשת"
 
-#: data/io.elementary.appcenter.appdata.xml.in:76
+#: data/io.elementary.appcenter.appdata.xml.in:77
 msgid "Fix twitter share URLs"
 msgstr "תיקון כתובות שיתוף בטוויטר"
 
-#: data/io.elementary.appcenter.appdata.xml.in:77
+#: data/io.elementary.appcenter.appdata.xml.in:78
 msgid "Drop Google+ from the share menu"
 msgstr "השמטת Google+‎ מתפריט השיתוף"
 
-#: data/io.elementary.appcenter.appdata.xml.in:78
+#: data/io.elementary.appcenter.appdata.xml.in:79
 msgid "Animate screenshot background while loading"
 msgstr "הנפשת רקע צילומי מסך בזמן הורדה"
 
-#: data/io.elementary.appcenter.appdata.xml.in:79
+#: data/io.elementary.appcenter.appdata.xml.in:80
 msgid "Add navigation arrows for screenshots"
 msgstr "הוספת חצי ניווט לצילומי מסך"
 
-#: data/io.elementary.appcenter.appdata.xml.in:80
+#: data/io.elementary.appcenter.appdata.xml.in:81
 msgid "Don't show uninstall buttons for essential system components"
 msgstr "לא יוצגו כפתורי הסרה לרכיבי מערכת חיוניים"
 
-#: data/io.elementary.appcenter.appdata.xml.in:81
+#: data/io.elementary.appcenter.appdata.xml.in:82
 msgid "Properly display proprietary licenses"
 msgstr "הצגת רישיונות קנייניים בצורה נכונה"
 
-#: data/io.elementary.appcenter.appdata.xml.in:82
+#: data/io.elementary.appcenter.appdata.xml.in:83
 msgid "Fix some layout issues"
 msgstr "תיקון מספר תקלות פריסה"
 
-#: data/io.elementary.appcenter.appdata.xml.in:83
+#: data/io.elementary.appcenter.appdata.xml.in:84
 msgid "Fix crashes"
 msgstr "תיקון קריסות"
 
-#: data/io.elementary.appcenter.appdata.xml.in:84
+#: data/io.elementary.appcenter.appdata.xml.in:85
 msgid "Performance improvements"
 msgstr "שיפורי ביצועים"
 
-#: data/io.elementary.appcenter.appdata.xml.in:92
+#: data/io.elementary.appcenter.appdata.xml.in:93
 msgid "Meson build system fixes"
 msgstr "תיקוני מערכת הבנייה Meson"
 
-#: data/io.elementary.appcenter.appdata.xml.in:93
+#: data/io.elementary.appcenter.appdata.xml.in:94
 msgid "Improve window state restoration"
 msgstr "שיפור שחזור מצב חלון"
 
-#: data/io.elementary.appcenter.appdata.xml.in:94
+#: data/io.elementary.appcenter.appdata.xml.in:95
 msgid "Prevent action buttons from jumping around"
 msgstr "מניעת קפיצה אקראית של כפתורי פעולה"
 
-#: data/io.elementary.appcenter.appdata.xml.in:95
+#: data/io.elementary.appcenter.appdata.xml.in:96
 msgid "Remove reset paid apps gsettings key"
 msgstr "הסרת מפתח איפוס יישומים ששילמת עליהם מ־gsettings"
 
-#: data/io.elementary.appcenter.appdata.xml.in:96
+#: data/io.elementary.appcenter.appdata.xml.in:97
 msgid "Memory management refinements"
 msgstr "רענונים לניהול הזיכרון"
 
-#: data/io.elementary.appcenter.appdata.xml.in:97
+#: data/io.elementary.appcenter.appdata.xml.in:98
 msgid ""
 "Add conditional compilation for disabling dynamic remote homepage content"
 msgstr "הוספת התניית הידור להשבתת תוכן דף בית מרוחק דינמי"
 
-#: data/io.elementary.appcenter.appdata.xml.in:98
+#: data/io.elementary.appcenter.appdata.xml.in:99
+#: data/io.elementary.appcenter.appdata.xml.in:111
+#: data/io.elementary.appcenter.appdata.xml.in:118
+#: data/io.elementary.appcenter.appdata.xml.in:131
+#: data/io.elementary.appcenter.appdata.xml.in:142
+#: data/io.elementary.appcenter.appdata.xml.in:151
+#: data/io.elementary.appcenter.appdata.xml.in:160
+#: data/io.elementary.appcenter.appdata.xml.in:169
+#: data/io.elementary.appcenter.appdata.xml.in:178
+#: data/io.elementary.appcenter.appdata.xml.in:187
+#: data/io.elementary.appcenter.appdata.xml.in:196
+#: data/io.elementary.appcenter.appdata.xml.in:205
+#: data/io.elementary.appcenter.appdata.xml.in:214
+#: data/io.elementary.appcenter.appdata.xml.in:223
+#: data/io.elementary.appcenter.appdata.xml.in:232
+#: data/io.elementary.appcenter.appdata.xml.in:242
+#: data/io.elementary.appcenter.appdata.xml.in:252
+msgid "New translations"
+msgstr "תרגומים חדשים"
+
+#: data/io.elementary.appcenter.appdata.xml.in:106
+msgid "New categories: Communication, Finance, Media Production"
+msgstr "קטגוריות חדשות: תקשורת, כלכלה, הפקת מדיה"
+
+#: data/io.elementary.appcenter.appdata.xml.in:107
+msgid "Add Math to Science category"
+msgstr "הוספת מתמטיקה לקטגוריית מדע"
+
+#: data/io.elementary.appcenter.appdata.xml.in:108
+msgid "Relax email address validator"
+msgstr "הקלה באימות כתובות הדוא״ל"
+
+#: data/io.elementary.appcenter.appdata.xml.in:109
+msgid "Present update availability more accurately"
+msgstr "הצגת זמינות של עדכונים בצורה יותר מהימנה"
+
 #: data/io.elementary.appcenter.appdata.xml.in:110
-#: data/io.elementary.appcenter.appdata.xml.in:117
+msgid "Category graphics revamped"
+msgstr "גרפיקת הקטגוריה שופצה"
+
+#: data/io.elementary.appcenter.appdata.xml.in:125
+#: data/io.elementary.appcenter.appdata.xml.in:137
+#: data/io.elementary.appcenter.appdata.xml.in:148
+#: data/io.elementary.appcenter.appdata.xml.in:157
+#: data/io.elementary.appcenter.appdata.xml.in:166
+#: data/io.elementary.appcenter.appdata.xml.in:175
+#: data/io.elementary.appcenter.appdata.xml.in:184
+#: data/io.elementary.appcenter.appdata.xml.in:193
+#: data/io.elementary.appcenter.appdata.xml.in:202
+#: data/io.elementary.appcenter.appdata.xml.in:211
+#: data/io.elementary.appcenter.appdata.xml.in:220
+#: data/io.elementary.appcenter.appdata.xml.in:229
+msgid "Bug fixes and improve performance."
+msgstr "תיקוני באגים ושיפור ביצועים."
+
+#: data/io.elementary.appcenter.appdata.xml.in:127
+msgid "Improve transaction success rate"
+msgstr "שיפור אחוזי הצלחת ההעברות"
+
+#: data/io.elementary.appcenter.appdata.xml.in:128
+msgid "Add Publishing to Office category"
+msgstr "הוספת כלי הפקה לקטגוריית הכלים המשרדיים"
+
+#: data/io.elementary.appcenter.appdata.xml.in:129
+msgid "Improve descriptions of OS Updates"
+msgstr "שיפור תיאורי עדכוני מערכת הפעלה"
+
 #: data/io.elementary.appcenter.appdata.xml.in:130
 #: data/io.elementary.appcenter.appdata.xml.in:141
 #: data/io.elementary.appcenter.appdata.xml.in:150
@@ -215,98 +285,34 @@ msgstr "הוספת התניית הידור להשבתת תוכן דף בית מ�
 #: data/io.elementary.appcenter.appdata.xml.in:204
 #: data/io.elementary.appcenter.appdata.xml.in:213
 #: data/io.elementary.appcenter.appdata.xml.in:222
-#: data/io.elementary.appcenter.appdata.xml.in:231
-#: data/io.elementary.appcenter.appdata.xml.in:241
-#: data/io.elementary.appcenter.appdata.xml.in:251
-msgid "New translations"
-msgstr "תרגומים חדשים"
-
-#: data/io.elementary.appcenter.appdata.xml.in:105
-msgid "New categories: Communication, Finance, Media Production"
-msgstr "קטגוריות חדשות: תקשורת, כלכלה, הפקת מדיה"
-
-#: data/io.elementary.appcenter.appdata.xml.in:106
-msgid "Add Math to Science category"
-msgstr "הוספת מתמטיקה לקטגוריית מדע"
-
-#: data/io.elementary.appcenter.appdata.xml.in:107
-msgid "Relax email address validator"
-msgstr "הקלה באימות כתובות הדוא״ל"
-
-#: data/io.elementary.appcenter.appdata.xml.in:108
-msgid "Present update availability more accurately"
-msgstr "הצגת זמינות של עדכונים בצורה יותר מהימנה"
-
-#: data/io.elementary.appcenter.appdata.xml.in:109
-msgid "Category graphics revamped"
-msgstr "גרפיקת הקטגוריה שופצה"
-
-#: data/io.elementary.appcenter.appdata.xml.in:124
-#: data/io.elementary.appcenter.appdata.xml.in:136
-#: data/io.elementary.appcenter.appdata.xml.in:147
-#: data/io.elementary.appcenter.appdata.xml.in:156
-#: data/io.elementary.appcenter.appdata.xml.in:165
-#: data/io.elementary.appcenter.appdata.xml.in:174
-#: data/io.elementary.appcenter.appdata.xml.in:183
-#: data/io.elementary.appcenter.appdata.xml.in:192
-#: data/io.elementary.appcenter.appdata.xml.in:201
-#: data/io.elementary.appcenter.appdata.xml.in:210
-#: data/io.elementary.appcenter.appdata.xml.in:219
-#: data/io.elementary.appcenter.appdata.xml.in:228
-msgid "Bug fixes and improve performance."
-msgstr "תיקוני באגים ושיפור ביצועים."
-
-#: data/io.elementary.appcenter.appdata.xml.in:126
-msgid "Improve transaction success rate"
-msgstr "שיפור אחוזי הצלחת ההעברות"
-
-#: data/io.elementary.appcenter.appdata.xml.in:127
-msgid "Add Publishing to Office category"
-msgstr "הוספת כלי הפקה לקטגוריית הכלים המשרדיים"
-
-#: data/io.elementary.appcenter.appdata.xml.in:128
-msgid "Improve descriptions of OS Updates"
-msgstr "שיפור תיאורי עדכוני מערכת הפעלה"
-
-#: data/io.elementary.appcenter.appdata.xml.in:129
-#: data/io.elementary.appcenter.appdata.xml.in:140
-#: data/io.elementary.appcenter.appdata.xml.in:149
-#: data/io.elementary.appcenter.appdata.xml.in:158
-#: data/io.elementary.appcenter.appdata.xml.in:167
-#: data/io.elementary.appcenter.appdata.xml.in:176
-#: data/io.elementary.appcenter.appdata.xml.in:185
-#: data/io.elementary.appcenter.appdata.xml.in:194
-#: data/io.elementary.appcenter.appdata.xml.in:203
-#: data/io.elementary.appcenter.appdata.xml.in:212
-#: data/io.elementary.appcenter.appdata.xml.in:221
 msgid "Various bug fixes and performance improvements"
 msgstr "מגוון תיקוני באגים ושיפורי ביצועים"
 
-#: data/io.elementary.appcenter.appdata.xml.in:138
+#: data/io.elementary.appcenter.appdata.xml.in:139
 msgid "Give details for Operating System Updates"
 msgstr "מתן פרטים על עדכוני מערכת הפעלה"
 
-#: data/io.elementary.appcenter.appdata.xml.in:139
+#: data/io.elementary.appcenter.appdata.xml.in:140
 msgid "Support mouse button navigation"
 msgstr "תמיכה בניווט עם כפתורי העכבר"
 
-#: data/io.elementary.appcenter.appdata.xml.in:230
+#: data/io.elementary.appcenter.appdata.xml.in:231
 msgid "Fix crash caused by entries with missing packages"
 msgstr "תיקון קריסה שנוצרה על ידי רשומות עם חבילות חסרות"
 
-#: data/io.elementary.appcenter.appdata.xml.in:237
+#: data/io.elementary.appcenter.appdata.xml.in:238
 msgid "Add capability to search by category and apply minor bug fixes."
 msgstr "הוספת תכונה לחיפוש לפי קטגוריה והחלת תיקוני באגים קטנים."
 
-#: data/io.elementary.appcenter.appdata.xml.in:239
+#: data/io.elementary.appcenter.appdata.xml.in:240
 msgid "It is now possible to search apps inside a category"
 msgstr "מעתה ניתן לחפש יישומים בתוך קטגוריה"
 
-#: data/io.elementary.appcenter.appdata.xml.in:240
+#: data/io.elementary.appcenter.appdata.xml.in:241
 msgid "Prevent multiple authentication dialogs when resuming from suspend"
 msgstr "חסימת מספר תיבות דו־שיח לאימות בעת יציאה ממצב השהיה"
 
-#: data/io.elementary.appcenter.appdata.xml.in:247
+#: data/io.elementary.appcenter.appdata.xml.in:248
 msgid ""
 "Search performance has beeen improved, the category name is now shown on the "
 "headbar and minor bugs have been fixed."
@@ -314,15 +320,15 @@ msgstr ""
 "ביצועי החיפוש השתפרו, שם הקטגוריה מופיע בסרגל הכותרת ומספר באגים מזעריים "
 "תוקנו."
 
-#: data/io.elementary.appcenter.appdata.xml.in:249
+#: data/io.elementary.appcenter.appdata.xml.in:250
 msgid "Fix Steam installation"
 msgstr "תיקון התקנת Steam"
 
-#: data/io.elementary.appcenter.appdata.xml.in:250
+#: data/io.elementary.appcenter.appdata.xml.in:251
 msgid "Make search asynchronous"
 msgstr "הפיכת החיפוש לאסינכרוני"
 
-#: data/io.elementary.appcenter.appdata.xml.in:305
+#: data/io.elementary.appcenter.appdata.xml.in:306
 msgid "elementary, Inc."
 msgstr "elementary בע״מ"
 
