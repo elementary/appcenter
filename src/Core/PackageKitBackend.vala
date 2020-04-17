@@ -641,7 +641,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
                 packages_ids += package.package_id;
             });
 
-            results = client.remove_packages_sync (packages_ids, true, true, cancellable, (progress, status) => {
+            results = client.remove_packages_sync (packages_ids, true, Build.PACKAGEKIT_AUTOREMOVE, cancellable, (progress, status) => {
                 update_progress_status (progress, status);
                 cb (can_cancel, Utils.pk_status_to_string (this.status), this.progress, pk_status_to_appcenter_status (this.status));
             });
