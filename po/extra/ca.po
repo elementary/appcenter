@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-16 19:48+0000\n"
-"PO-Revision-Date: 2020-04-16 18:57+0000\n"
+"PO-Revision-Date: 2020-04-18 02:07+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/extra/"
 "ca/>\n"
@@ -51,10 +51,12 @@ msgid ""
 "Clicking an extension on an app's info page now shows details for the "
 "extension"
 msgstr ""
+"Clicar en una extensió a la pàgina d'informació d'una aplicació mostra els "
+"detalls de l'extensió."
 
 #: data/io.elementary.appcenter.appdata.xml.in:24
 msgid "Reduce slowdowns when opening certain apps"
-msgstr ""
+msgstr "Reducció de desacceleracions en obrir determinades aplicacions"
 
 #: data/io.elementary.appcenter.appdata.xml.in:32
 msgid ""
