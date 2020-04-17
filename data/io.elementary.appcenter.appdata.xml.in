@@ -15,12 +15,14 @@
     </p>
   </description>
   <releases>
-    <release version="3.2.5" date="2020-04-28" urgency="medium">
+    <release version="3.2.5" date="2020-04-16" urgency="medium">
       <description>
         <p>Fixes</p>
         <ul>
           <li>AppCenter now uses configured network proxy settings for apt operations</li>
           <li>AppCenter no longer prompts for approval to update non-curated apps</li>
+          <li>Clicking an extension on an app's info page now shows details for the extension</li>
+          <li>Reduce slowdowns when opening certain apps</li>
         </ul>
       </description>
     </release>
