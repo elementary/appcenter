@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-18 15:59+0000\n"
+"POT-Creation-Date: 2020-04-18 17:50+0000\n"
 "PO-Revision-Date: 2019-10-02 11:23+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/appcenter/appcenter/zh_Hans/>\n"
@@ -34,16 +34,16 @@ msgstr "无法解析文件类型 %s"
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "无法找到定向连接 '%s' ，改为搜索"
 
-#: src/Application.vala:270
+#: src/Application.vala:273
 msgid "Application installed"
 msgstr "应用已安装"
 
-#: src/Application.vala:271
+#: src/Application.vala:274
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s 安装成功"
 
-#: src/Application.vala:283
+#: src/Application.vala:286
 #, c-format
 msgid "There Was An Error Installing %s."
 msgstr "安装 %s 时发生错误。"

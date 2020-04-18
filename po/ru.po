@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-18 15:59+0000\n"
+"POT-Creation-Date: 2020-04-18 17:50+0000\n"
 "PO-Revision-Date: 2019-01-07 00:02+0000\n"
 "Last-Translator: Kirill Romanov <djaler1@gmail.com>\n"
 "Language-Team: Russian <https://weblate.elementary.io/projects/appcenter/appcenter/ru/>\n"
@@ -30,16 +30,16 @@ msgstr "Не удалось распознать mime-тип %s"
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Указанная ссылка «%s» не найдена, поиск замены"
 
-#: src/Application.vala:270
+#: src/Application.vala:273
 msgid "Application installed"
 msgstr "Приложение установлено"
 
-#: src/Application.vala:271
+#: src/Application.vala:274
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "Приложение «%s» успешно установлено"
 
-#: src/Application.vala:283
+#: src/Application.vala:286
 #, c-format
 msgid "There Was An Error Installing %s."
 msgstr "Ошибка при установке %s."

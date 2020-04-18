@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-18 15:59+0000\n"
+"POT-Creation-Date: 2020-04-18 17:50+0000\n"
 "PO-Revision-Date: 2017-06-18 12:17+0000\n"
 "Last-Translator: Valentin Kirilov <val.kirilov@gmail.com>\n"
 "Language-Team: Bulgarian <https://l10n.elementary.io/projects/appcenter/appcenter/bg/>\n"
@@ -29,16 +29,16 @@ msgstr ""
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr ""
 
-#: src/Application.vala:270
+#: src/Application.vala:273
 msgid "Application installed"
 msgstr "Програмата е инсталирана"
 
-#: src/Application.vala:271
+#: src/Application.vala:274
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s беше успешно инсталирана"
 
-#: src/Application.vala:283
+#: src/Application.vala:286
 #, fuzzy, c-format
 msgid "There Was An Error Installing %s."
 msgstr "Настъпи грешки при инсталацията на %s"
