@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-18 13:52+0000\n"
+"POT-Creation-Date: 2020-04-18 15:59+0000\n"
 "PO-Revision-Date: 2017-06-18 12:17+0000\n"
 "Last-Translator: Valentin Kirilov <val.kirilov@gmail.com>\n"
 "Language-Team: Bulgarian <https://l10n.elementary.io/projects/appcenter/appcenter/bg/>\n"
@@ -43,21 +43,21 @@ msgstr "%s беше успешно инсталирана"
 msgid "There Was An Error Installing %s."
 msgstr "Настъпи грешки при инсталацията на %s"
 
-#: src/MainWindow.vala:141 src/Views/Homepage.vala:297
+#: src/MainWindow.vala:152 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
 #: src/Views/Homepage.vala:325
 #, fuzzy
 msgid "Home"
 msgstr "Начална страница"
 
-#: src/MainWindow.vala:142 src/Views/InstalledView.vala:33
+#: src/MainWindow.vala:153 src/Views/InstalledView.vala:33
 #: src/Views/InstalledView.vala:58
 #, fuzzy
 msgctxt "view"
 msgid "Installed"
 msgstr "Инсталиране"
 
-#: src/MainWindow.vala:169 src/MainWindow.vala:328 src/Views/SearchView.vala:55
+#: src/MainWindow.vala:180 src/MainWindow.vala:339 src/Views/SearchView.vala:55
 #: src/Views/SearchView.vala:82
 msgid "Search Apps"
 msgstr "Търсене из приложения"
