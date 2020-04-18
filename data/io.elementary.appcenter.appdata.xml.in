@@ -27,6 +27,10 @@
           <li>Pressing down in the search field moves the keyboard focus to the search results list</li>
           <li>Reduce slowdowns when opening certain apps</li>
         </ul>
+        <p>Features</p>
+        <ul>
+          <li>To de-clutter the updates view, plugins are now only shown if they require updates</li>
+        </ul>
       </description>
     </release>
     <release version="3.2.4" date="2020-04-08" urgency="medium">
