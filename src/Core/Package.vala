@@ -384,6 +384,12 @@ public class AppCenterCore.Package : Object {
         _author_title = null;
         backend_details = null;
 
+        // The version on a PackageKit package comes from the package not AppStream, so only reset the version
+        // on other backends
+        if (!(backend is PackageKitBackend)) {
+            _latest_version = null;
+        }
+
         this.component = component;
     }
 
