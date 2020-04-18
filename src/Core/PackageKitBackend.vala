@@ -274,7 +274,10 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
                 break;
             }
 
-            populate_basic_package_details (pk_package);
+            var package = populate_basic_package_details (pk_package);
+            if (package != null) {
+                packages.add (package);
+            }
         }
 
         return packages;
@@ -898,10 +901,10 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         }
     }
 
-    private void populate_basic_package_details (Pk.Package pk_package) {
+    private Package? populate_basic_package_details (Pk.Package pk_package) {
         var package = package_list[pk_package.get_name ()];
         if (package == null) {
-            return;
+            return null;
         }
 
         // The version, name and summary are required in the installed list view, cache these values
@@ -920,6 +923,8 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         if (pk_package.info == Pk.Info.INSTALLED) {
             package.mark_installed ();
         }
+
+        return package;
     }
 
     private void get_package_details_internal (Job job) {
