@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-18 15:59+0000\n"
+"POT-Creation-Date: 2020-04-18 18:09+0000\n"
 "PO-Revision-Date: 2019-04-12 00:57+0000\n"
 "Last-Translator: Cody Garver <cody@elementary.io>\n"
 "Language-Team: Hindi <https://l10n.elementary.io/projects/appcenter/appcenter/hi/>\n"
@@ -32,16 +32,16 @@ msgstr "%s मइम को पार्स नहीं किया जा स
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "दिए गए लिंक '%s' को खोजा नहीं जा सका,इसके बजाय खोजें"
 
-#: src/Application.vala:270
+#: src/Application.vala:273
 msgid "Application installed"
 msgstr "एप्लीकेशन इनस्टॉल हो गया"
 
-#: src/Application.vala:271
+#: src/Application.vala:274
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s सफलतापूर्वक इनस्टॉल हो गया"
 
-#: src/Application.vala:283
+#: src/Application.vala:286
 #, c-format
 msgid "There Was An Error Installing %s."
 msgstr "%s इनस्टॉल करने में चूक हुई है"
@@ -655,11 +655,11 @@ msgid "Restart Now"
 msgstr ""
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:180
+#: src/Views/AppListUpdateView.vala:201
 msgid "Update All"
 msgstr ""
 
-#: src/Views/AppListView.vala:128
+#: src/Views/AppListView.vala:138
 msgid "Non-Curated Apps"
 msgstr ""
 
