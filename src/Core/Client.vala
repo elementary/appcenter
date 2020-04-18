@@ -149,8 +149,10 @@ public class AppCenterCore.Client : Object {
 
                     seconds_since_last_refresh = 0;
                 } catch (Error e) {
-                    critical ("Update_cache: Refesh cache async failed - %s", e.message);
-                    cache_update_failed (e);
+                    if (!(e is GLib.IOError.CANCELLED)) {
+                        critical ("Update_cache: Refesh cache async failed - %s", e.message);
+                        cache_update_failed (e);
+                    }
                 } finally {
                     refresh_in_progress = false;
                 }
