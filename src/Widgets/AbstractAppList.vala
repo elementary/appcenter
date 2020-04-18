@@ -42,8 +42,8 @@ namespace AppCenter {
             );
 
             loading_view = new Granite.Widgets.AlertView (
-                _("Checking for updates"),
-                _("Verifying the installed apps and checking for updates to the OS and apps"),
+                _("Checking for Updates"),
+                _("Downloading a list of available updates to the OS and installed apps"),
                 "sync-synchronizing"
             );
             alert_view.show_all ();
