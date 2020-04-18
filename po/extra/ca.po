@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-18 13:52+0000\n"
-"PO-Revision-Date: 2020-04-18 02:07+0000\n"
+"PO-Revision-Date: 2020-04-18 15:58+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/extra/"
 "ca/>\n"
@@ -43,6 +43,8 @@ msgstr "Correccions"
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "AppCenter now uses configured network proxy settings for apt operations"
 msgstr ""
+"El Centre d'aplicacions ara usa els paràmetres de xarxa del servidor "
+"intermediari per a les operacions d'apt."
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "AppCenter no longer prompts for approval to update non-curated apps"
