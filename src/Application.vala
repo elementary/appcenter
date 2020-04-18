@@ -206,7 +206,6 @@ public class AppCenter.App : Gtk.Application {
         base.dbus_register (connection, object_path);
 
         if (silent) {
-            DBusServer.init ();
             try {
                 registration_id = connection.register_object ("/io/elementary/appcenter", DBusServer.get_default ());
             } catch (Error e) {

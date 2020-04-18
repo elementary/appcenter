@@ -141,11 +141,13 @@ public class AppCenterCore.Client : Object {
 
                 refresh_in_progress = true;
                 try {
-                    success = yield PackageKitBackend.get_default ().refresh_cache (cancellable);
-                    yield FlatpakBackend.get_default ().refresh_cache (cancellable);
-                    last_cache_update = new DateTime.now_utc ();
+                    success = yield BackendAggregator.get_default ().refresh_cache (cancellable);
+                    if (success) {
+                        last_cache_update = new DateTime.now_utc ();
+                        AppCenter.App.settings.set_int64 ("last-refresh-time", last_cache_update.to_unix ());
+                    }
+
                     seconds_since_last_refresh = 0;
-                    AppCenter.App.settings.set_int64 ("last-refresh-time", last_cache_update.to_unix ());
                 } catch (Error e) {
                     critical ("Update_cache: Refesh cache async failed - %s", e.message);
                     cache_update_failed (e);
