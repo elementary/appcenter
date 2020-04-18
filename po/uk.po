@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-16 19:48+0000\n"
+"POT-Creation-Date: 2020-04-18 13:52+0000\n"
 "PO-Revision-Date: 2020-03-22 13:09+0000\n"
 "Last-Translator: Andrii Priadko <mendeleev.ua@gmail.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/appcenter/uk/>\n"
@@ -277,7 +277,7 @@ msgstr "Невідоме походження (не курований)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Статус додатку не встановлено як інстальований в Центрі програм для пакету: %s"
 
-#: src/Core/PackageKitBackend.vala:220
+#: src/Core/PackageKitBackend.vala:251
 #, fuzzy, c-format
 #| msgid "%s (non-curated)"
 msgid "%s (local)"
@@ -654,11 +654,11 @@ msgstr "Перевірте %s в Центрі програм:"
 msgid "Share"
 msgstr "Поділитися"
 
-#: src/Views/AppInfoView.vala:813
+#: src/Views/AppInfoView.vala:812
 msgid "Fund"
 msgstr "Фінансувати"
 
-#: src/Views/AppInfoView.vala:835
+#: src/Views/AppInfoView.vala:834
 msgid "Fund the development of this app"
 msgstr "Профінансуйте розробку цього додатка"
 
