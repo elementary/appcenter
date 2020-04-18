@@ -259,7 +259,13 @@ namespace AppCenter.Views {
 
             if (package_component.get_addons ().length > 0) {
                 extension_box = new Gtk.ListBox ();
-                extension_box.selection_mode = Gtk.SelectionMode.NONE;
+                extension_box.selection_mode = Gtk.SelectionMode.SINGLE;
+                extension_box.row_activated.connect ((row) => {
+                    var extension_row = row as Widgets.PackageRow;
+                    if (extension_row != null) {
+                        show_other_package (extension_row.get_package (), true, Gtk.StackTransitionType.SLIDE_LEFT_RIGHT);
+                    }
+                });
 
                 var extension_label = new Gtk.Label (_("Extensions:"));
                 extension_label.margin_top = 12;
@@ -497,7 +503,6 @@ namespace AppCenter.Views {
 #endif
             view_entered ();
             set_up_package (128);
-            parse_description (package.get_description ());
 
             if (package.is_os_updates) {
                 package.notify["state"].connect (() => {
@@ -611,6 +616,8 @@ namespace AppCenter.Views {
                 if (package.is_os_updates) {
                     package_author.label = package.get_version ();
                 }
+
+                parse_description (package.get_description ());
 
                 get_app_download_size.begin ();
 
@@ -737,16 +744,22 @@ namespace AppCenter.Views {
 
         private void parse_description (string? description) {
             if (description != null) {
-                try {
-                    string[] lines = description.split ("\n");
-                    string stripped_description = lines[0].strip ();
-                    for (int i = 1; i < lines.length; i++) {
-                        stripped_description += " " + lines[i].strip ();
-                    }
-                    app_description.buffer.text = AppStream.markup_convert_simple (stripped_description);
-                } catch (Error e) {
-                    critical (e.message);
+                string[] lines = description.split ("\n");
+                string stripped_description = lines[0].strip ();
+                for (int i = 1; i < lines.length; i++) {
+                    stripped_description += " " + lines[i].strip ();
                 }
+
+                // This method may be called in a thread, pass back to GTK thread
+                Idle.add (() => {
+                    try {
+                        app_description.buffer.text = AppStream.markup_convert_simple (stripped_description);
+                    } catch (Error e) {
+                        warning ("Failed to parse appstream description: %s", e.message);
+                    }
+
+                    return false;
+                });
             }
         }
 

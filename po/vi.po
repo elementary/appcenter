@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-08 23:33+0000\n"
+"POT-Creation-Date: 2020-04-18 18:09+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Vietnamese <https://l10n.elementary.io/projects/appcenter/appcenter/vi/>\n"
@@ -32,35 +32,35 @@ msgstr "Không thể phân tích loại nội dung %s"
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Không tìm thấy liên kết cụ thể tới '%s', đang tìm kiếm thay thế"
 
-#: src/Application.vala:270
+#: src/Application.vala:273
 msgid "Application installed"
 msgstr "Ứng dụng đã được cài đặt"
 
-#: src/Application.vala:271
+#: src/Application.vala:274
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s đã được cài đặt thành công"
 
-#: src/Application.vala:283
+#: src/Application.vala:286
 #, c-format
 msgid "There Was An Error Installing %s."
 msgstr "Có lỗi trong quá trình cài đặt %s"
 
-#: src/MainWindow.vala:141 src/Views/Homepage.vala:297
+#: src/MainWindow.vala:152 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
 #: src/Views/Homepage.vala:325
 #, fuzzy
 msgid "Home"
 msgstr "Trang chủ"
 
-#: src/MainWindow.vala:142 src/Views/InstalledView.vala:33
+#: src/MainWindow.vala:153 src/Views/InstalledView.vala:33
 #: src/Views/InstalledView.vala:58
 #, fuzzy
 msgctxt "view"
 msgid "Installed"
 msgstr "Cài đặt"
 
-#: src/MainWindow.vala:169 src/MainWindow.vala:328 src/Views/SearchView.vala:55
+#: src/MainWindow.vala:180 src/MainWindow.vala:339 src/Views/SearchView.vala:55
 #: src/Views/SearchView.vala:82
 msgid "Search Apps"
 msgstr "Tìm kiếm ứng dụng"
@@ -275,7 +275,7 @@ msgstr ""
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
 
-#: src/Core/PackageKitBackend.vala:220
+#: src/Core/PackageKitBackend.vala:251
 #, fuzzy, c-format
 msgid "%s (local)"
 msgstr "%s (cục bộ)"
@@ -581,59 +581,59 @@ msgstr "Bỏ qua"
 msgid "Try Again"
 msgstr "Thử lại"
 
-#: src/Views/AppInfoView.vala:157
+#: src/Views/AppInfoView.vala:155
 msgid "Screenshot Not Available"
 msgstr "Không có ảnh chụp màn hình"
 
-#: src/Views/AppInfoView.vala:208
+#: src/Views/AppInfoView.vala:206
 msgid "Homepage"
 msgstr "Trang chủ"
 
-#: src/Views/AppInfoView.vala:214
+#: src/Views/AppInfoView.vala:212
 msgid "Suggest Translations"
 msgstr "Đề xuất dịch"
 
-#: src/Views/AppInfoView.vala:220
+#: src/Views/AppInfoView.vala:218
 msgid "Report a Problem"
 msgstr "Báo cáo một vấn đề"
 
-#: src/Views/AppInfoView.vala:226
+#: src/Views/AppInfoView.vala:224
 msgid "Help"
 msgstr "Trợ giúp"
 
-#: src/Views/AppInfoView.vala:253
+#: src/Views/AppInfoView.vala:235
 msgid "What's New:"
 msgstr "Tin tức mới:"
 
-#: src/Views/AppInfoView.vala:272
+#: src/Views/AppInfoView.vala:270
 msgid "Extensions:"
 msgstr "Tiện ích mở rộng:"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:366
+#: src/Views/AppInfoView.vala:359
 msgid "Public Domain"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:369
+#: src/Views/AppInfoView.vala:362
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr ""
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:374
+#: src/Views/AppInfoView.vala:367
 msgid "Free Software"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:377
+#: src/Views/AppInfoView.vala:370
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:381
+#: src/Views/AppInfoView.vala:374
 msgid "Proprietary"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:384
+#: src/Views/AppInfoView.vala:377
 #, fuzzy
 msgid "Unknown License"
 msgstr "Trạng thái không xác định"
@@ -643,24 +643,24 @@ msgstr "Trạng thái không xác định"
 msgid "Other Apps by %s"
 msgstr "Các ứng dụng khác %s"
 
-#: src/Views/AppInfoView.vala:460
+#: src/Views/AppInfoView.vala:463
 msgid "Link copied to clipboard"
 msgstr "Đường dẫn đã được sao chép lưu tạm thời"
 
-#: src/Views/AppInfoView.vala:471
+#: src/Views/AppInfoView.vala:474
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "Kiểm tra %s trên Trung tâm Ứng dụng:"
 
-#: src/Views/AppInfoView.vala:478
+#: src/Views/AppInfoView.vala:481
 msgid "Share"
 msgstr "Chia sẻ"
 
-#: src/Views/AppInfoView.vala:802
+#: src/Views/AppInfoView.vala:812
 msgid "Fund"
 msgstr "Tài trợ"
 
-#: src/Views/AppInfoView.vala:824
+#: src/Views/AppInfoView.vala:834
 msgid "Fund the development of this app"
 msgstr "Tài trợ cho sự phát triển của ứng dụng này"
 
@@ -673,11 +673,11 @@ msgid "Restart Now"
 msgstr "Khởi động lại ngay"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:180
+#: src/Views/AppListUpdateView.vala:201
 msgid "Update All"
 msgstr "Cập nhật tất cả"
 
-#: src/Views/AppListView.vala:128
+#: src/Views/AppListView.vala:138
 msgid "Non-Curated Apps"
 msgstr "Không được quản lý"
 

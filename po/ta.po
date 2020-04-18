@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-08 23:33+0000\n"
+"POT-Creation-Date: 2020-04-18 18:09+0000\n"
 "PO-Revision-Date: 2017-06-16 17:37+0000\n"
 "Last-Translator: Rajeev Kumar <irajeevankumar@gmail.com>\n"
 "Language-Team: Tamil <https://l10n.elementary.io/projects/appcenter/appcenter/ta/>\n"
@@ -29,34 +29,34 @@ msgstr ""
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "குறிப்பிடப்பட்ட இணைப்பு '%s'  கண்டுபிடிக்க முடியவில்லை, அதற்கு பதிலாக தேடுகிறது"
 
-#: src/Application.vala:270
+#: src/Application.vala:273
 msgid "Application installed"
 msgstr "மென்பொருள் நிறுவப்பட்டது"
 
-#: src/Application.vala:271
+#: src/Application.vala:274
 #, fuzzy, c-format
 msgid "%s has been successfully installed"
 msgstr "% வெற்றிகரமாக நிறுவப்பட்டது"
 
-#: src/Application.vala:283
+#: src/Application.vala:286
 #, fuzzy, c-format
 msgid "There Was An Error Installing %s."
 msgstr "%s நிறுவுவதில்  ஒரு  பிழை"
 
-#: src/MainWindow.vala:141 src/Views/Homepage.vala:297
+#: src/MainWindow.vala:152 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
 #: src/Views/Homepage.vala:325
 msgid "Home"
 msgstr "முதன்மை பக்கம்"
 
-#: src/MainWindow.vala:142 src/Views/InstalledView.vala:33
+#: src/MainWindow.vala:153 src/Views/InstalledView.vala:33
 #: src/Views/InstalledView.vala:58
 #, fuzzy
 msgctxt "view"
 msgid "Installed"
 msgstr "நிறுவுக"
 
-#: src/MainWindow.vala:169 src/MainWindow.vala:328 src/Views/SearchView.vala:55
+#: src/MainWindow.vala:180 src/MainWindow.vala:339 src/Views/SearchView.vala:55
 #: src/Views/SearchView.vala:82
 msgid "Search Apps"
 msgstr "பயன்பாடுகளை தேடு"
@@ -273,7 +273,7 @@ msgstr ""
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
 
-#: src/Core/PackageKitBackend.vala:220
+#: src/Core/PackageKitBackend.vala:251
 #, c-format
 msgid "%s (local)"
 msgstr ""
@@ -575,60 +575,60 @@ msgstr ""
 msgid "Try Again"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:157
+#: src/Views/AppInfoView.vala:155
 msgid "Screenshot Not Available"
 msgstr "ஸ்கிரீன்ஷாட் கிடைக்கவில்லை"
 
-#: src/Views/AppInfoView.vala:208
+#: src/Views/AppInfoView.vala:206
 msgid "Homepage"
 msgstr "முதன்மை-பக்கம்"
 
-#: src/Views/AppInfoView.vala:214
+#: src/Views/AppInfoView.vala:212
 msgid "Suggest Translations"
 msgstr "மொழிபெயர்ப்பு பரிந்துரைக்க"
 
-#: src/Views/AppInfoView.vala:220
+#: src/Views/AppInfoView.vala:218
 msgid "Report a Problem"
 msgstr "பிரச்சனையைப் புகாரளி"
 
-#: src/Views/AppInfoView.vala:226
+#: src/Views/AppInfoView.vala:224
 msgid "Help"
 msgstr "உதவி"
 
-#: src/Views/AppInfoView.vala:253
+#: src/Views/AppInfoView.vala:235
 msgid "What's New:"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:272
+#: src/Views/AppInfoView.vala:270
 msgid "Extensions:"
 msgstr "நீட்சிகள்:"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:366
+#: src/Views/AppInfoView.vala:359
 msgid "Public Domain"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:369
+#: src/Views/AppInfoView.vala:362
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr ""
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:374
+#: src/Views/AppInfoView.vala:367
 #, fuzzy
 msgid "Free Software"
 msgstr "ஆதார மென்பொருளை தொகு"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:377
+#: src/Views/AppInfoView.vala:370
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:381
+#: src/Views/AppInfoView.vala:374
 msgid "Proprietary"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:384
+#: src/Views/AppInfoView.vala:377
 #, fuzzy
 msgid "Unknown License"
 msgstr "தெரியாத நிலை"
@@ -638,24 +638,24 @@ msgstr "தெரியாத நிலை"
 msgid "Other Apps by %s"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:460
+#: src/Views/AppInfoView.vala:463
 msgid "Link copied to clipboard"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:471
+#: src/Views/AppInfoView.vala:474
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:478
+#: src/Views/AppInfoView.vala:481
 msgid "Share"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:802
+#: src/Views/AppInfoView.vala:812
 msgid "Fund"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:824
+#: src/Views/AppInfoView.vala:834
 msgid "Fund the development of this app"
 msgstr ""
 
@@ -668,11 +668,11 @@ msgid "Restart Now"
 msgstr "இப்போது மறுதொடக்கம் செய்க"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:180
+#: src/Views/AppListUpdateView.vala:201
 msgid "Update All"
 msgstr "அனைத்தையும் புதுப்பிக்கவும்"
 
-#: src/Views/AppListView.vala:128
+#: src/Views/AppListView.vala:138
 msgid "Non-Curated Apps"
 msgstr ""
 

@@ -74,20 +74,8 @@ namespace AppCenter {
 
         protected abstract Widgets.AppListRow construct_row_for_package (AppCenterCore.Package package);
 
-        public virtual void add_packages (Gee.Collection<AppCenterCore.Package> packages) {
-            foreach (var package in packages) {
-                var row = construct_row_for_package (package);
-                add_row (row);
-            }
-
-            on_list_changed ();
-        }
-
-        public virtual void add_package (AppCenterCore.Package package) {
-            var row = construct_row_for_package (package);
-            add_row (row);
-            on_list_changed ();
-        }
+        public abstract void add_packages (Gee.Collection<AppCenterCore.Package> packages);
+        public abstract void add_package (AppCenterCore.Package package);
 
         public void remove_package (AppCenterCore.Package package) {
             package.changing.disconnect (on_package_changing);

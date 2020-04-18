@@ -64,7 +64,13 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         var go_back = new SimpleAction ("go-back", null);
         go_back.activate.connect (view_return);
         add_action (go_back);
+
+        var focus_search = new SimpleAction ("focus-search", null);
+        focus_search.activate.connect (() => search_entry.grab_focus ());
+        add_action (focus_search);
+
         app.set_accels_for_action ("win.go-back", {"<Alt>Left", "Back"});
+        app.set_accels_for_action ("win.focus-search", {"<Ctrl>f"});
 
         button_release_event.connect ((event) => {
             // On back mouse button pressed
@@ -83,6 +89,11 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         search_entry.key_press_event.connect ((event) => {
             if (event.keyval == Gdk.Key.Escape) {
                 search_entry.text = "";
+                return true;
+            }
+
+            if (event.keyval == Gdk.Key.Down) {
+                search_entry.move_focus (Gtk.DirectionType.TAB_FORWARD);
                 return true;
             }
 

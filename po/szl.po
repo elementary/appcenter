@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-08 23:33+0000\n"
+"POT-Creation-Date: 2020-04-18 18:09+0000\n"
 "PO-Revision-Date: 2020-02-24 23:09+0000\n"
 "Last-Translator: gkkulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/appcenter/appcenter/szl/>\n"
@@ -28,33 +28,33 @@ msgstr "Niy szło przetworzić zorty mediōw %s"
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Ôkryślōny link „%s” niy bōł znojdziōny, wyszukowanie"
 
-#: src/Application.vala:270
+#: src/Application.vala:273
 msgid "Application installed"
 msgstr "Program zainstalowany"
 
-#: src/Application.vala:271
+#: src/Application.vala:274
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s było sprownie zainstalowane"
 
-#: src/Application.vala:283
+#: src/Application.vala:286
 #, c-format
 msgid "There Was An Error Installing %s."
 msgstr "Wystōmpiōł błōnd instalacyje %s."
 
-#: src/MainWindow.vala:141 src/Views/Homepage.vala:297
+#: src/MainWindow.vala:152 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
 #: src/Views/Homepage.vala:325
 msgid "Home"
 msgstr "Katalog dōmowy"
 
-#: src/MainWindow.vala:142 src/Views/InstalledView.vala:33
+#: src/MainWindow.vala:153 src/Views/InstalledView.vala:33
 #: src/Views/InstalledView.vala:58
 msgctxt "view"
 msgid "Installed"
 msgstr "Zainstalowane"
 
-#: src/MainWindow.vala:169 src/MainWindow.vala:328 src/Views/SearchView.vala:55
+#: src/MainWindow.vala:180 src/MainWindow.vala:339 src/Views/SearchView.vala:55
 #: src/Views/SearchView.vala:82
 msgid "Search Apps"
 msgstr "Wyszukej program"
@@ -271,7 +271,7 @@ msgstr "Niyznōmego pochodzynio (niynadzorowane)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Sztand programu niyma nasztelowany za zainstalowany we AppCenter dlo paketu: %s"
 
-#: src/Core/PackageKitBackend.vala:220
+#: src/Core/PackageKitBackend.vala:251
 #, fuzzy, c-format
 #| msgid "%s (non-curated)"
 msgid "%s (local)"
@@ -574,59 +574,59 @@ msgstr "Ignoruj"
 msgid "Try Again"
 msgstr "Sprōbuj zaś"
 
-#: src/Views/AppInfoView.vala:157
+#: src/Views/AppInfoView.vala:155
 msgid "Screenshot Not Available"
 msgstr "Przechyt ekranu niydostympny"
 
-#: src/Views/AppInfoView.vala:208
+#: src/Views/AppInfoView.vala:206
 msgid "Homepage"
 msgstr "Strōna WWW"
 
-#: src/Views/AppInfoView.vala:214
+#: src/Views/AppInfoView.vala:212
 msgid "Suggest Translations"
 msgstr "Zapropōnuj przekłod"
 
-#: src/Views/AppInfoView.vala:220
+#: src/Views/AppInfoView.vala:218
 msgid "Report a Problem"
 msgstr "Zgłoś problym"
 
-#: src/Views/AppInfoView.vala:226
+#: src/Views/AppInfoView.vala:224
 msgid "Help"
 msgstr "Pōmoc"
 
-#: src/Views/AppInfoView.vala:253
+#: src/Views/AppInfoView.vala:235
 msgid "What's New:"
 msgstr "Co nowego:"
 
-#: src/Views/AppInfoView.vala:272
+#: src/Views/AppInfoView.vala:270
 msgid "Extensions:"
 msgstr "Rozszyrzynia:"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:366
+#: src/Views/AppInfoView.vala:359
 msgid "Public Domain"
 msgstr "Dōmyna publiczno"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:369
+#: src/Views/AppInfoView.vala:362
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://pl.m.wikipedia.org/wiki/Dōmyna_publiczno"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:374
+#: src/Views/AppInfoView.vala:367
 msgid "Free Software"
 msgstr "Wolne ôprogramowanie"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:377
+#: src/Views/AppInfoView.vala:370
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw"
 
-#: src/Views/AppInfoView.vala:381
+#: src/Views/AppInfoView.vala:374
 msgid "Proprietary"
 msgstr "Włosnościowy"
 
-#: src/Views/AppInfoView.vala:384
+#: src/Views/AppInfoView.vala:377
 msgid "Unknown License"
 msgstr "Niyznōmo licyncyjo"
 
@@ -635,24 +635,24 @@ msgstr "Niyznōmo licyncyjo"
 msgid "Other Apps by %s"
 msgstr "Inksze programy autorstwa %s"
 
-#: src/Views/AppInfoView.vala:460
+#: src/Views/AppInfoView.vala:463
 msgid "Link copied to clipboard"
 msgstr "Link skopiowany do skrytki"
 
-#: src/Views/AppInfoView.vala:471
+#: src/Views/AppInfoView.vala:474
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "Wyprōbuj %s w AppCenter:"
 
-#: src/Views/AppInfoView.vala:478
+#: src/Views/AppInfoView.vala:481
 msgid "Share"
 msgstr "Udostympniōne"
 
-#: src/Views/AppInfoView.vala:802
+#: src/Views/AppInfoView.vala:812
 msgid "Fund"
 msgstr "Zafunduj"
 
-#: src/Views/AppInfoView.vala:824
+#: src/Views/AppInfoView.vala:834
 msgid "Fund the development of this app"
 msgstr "Zafunduj rozrost tego programu"
 
@@ -665,11 +665,11 @@ msgid "Restart Now"
 msgstr "Sztartnij zaś kōmputer"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:180
+#: src/Views/AppListUpdateView.vala:201
 msgid "Update All"
 msgstr "Aktualizuj wszyjsko"
 
-#: src/Views/AppListView.vala:128
+#: src/Views/AppListView.vala:138
 msgid "Non-Curated Apps"
 msgstr "Programy niynadzorowane"
 

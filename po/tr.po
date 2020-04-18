@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-08 23:33+0000\n"
-"PO-Revision-Date: 2020-02-02 18:08+0000\n"
+"POT-Creation-Date: 2020-04-18 18:09+0000\n"
+"PO-Revision-Date: 2020-04-12 13:10+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/appcenter/tr/>\n"
 "Language: tr\n"
@@ -39,33 +39,33 @@ msgstr "Medya türü %s ayrıştırılamadı"
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Belirtilen '%s' bağlantısı bulunamadı, bunun yerine arama yapılıyor"
 
-#: src/Application.vala:270
+#: src/Application.vala:273
 msgid "Application installed"
 msgstr "Uygulama yüklendi"
 
-#: src/Application.vala:271
+#: src/Application.vala:274
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s başarı ile yüklendi"
 
-#: src/Application.vala:283
+#: src/Application.vala:286
 #, c-format
 msgid "There Was An Error Installing %s."
 msgstr "%s Yüklenirken Bir Hata Oluştu."
 
-#: src/MainWindow.vala:141 src/Views/Homepage.vala:297
+#: src/MainWindow.vala:152 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
 #: src/Views/Homepage.vala:325
 msgid "Home"
 msgstr "Ana Sayfa"
 
-#: src/MainWindow.vala:142 src/Views/InstalledView.vala:33
+#: src/MainWindow.vala:153 src/Views/InstalledView.vala:33
 #: src/Views/InstalledView.vala:58
 msgctxt "view"
 msgid "Installed"
 msgstr "Yüklendi"
 
-#: src/MainWindow.vala:169 src/MainWindow.vala:328 src/Views/SearchView.vala:55
+#: src/MainWindow.vala:180 src/MainWindow.vala:339 src/Views/SearchView.vala:55
 #: src/Views/SearchView.vala:82
 msgid "Search Apps"
 msgstr "Uygulama Ara"
@@ -232,22 +232,16 @@ msgstr[0] "Sisteminiz için %u güncelleme var"
 msgstr[1] "Sisteminiz için %u güncelleme var"
 
 #: src/Core/FlatpakBackend.vala:795
-#, fuzzy
-#| msgid "Uninstall"
 msgid "Uninstalling"
-msgstr "Kaldır"
+msgstr "Kaldırılıyor"
 
 #: src/Core/FlatpakBackend.vala:800
-#, fuzzy
-#| msgid "Finished"
 msgid "Finishing"
-msgstr "Tamamlandı"
+msgstr "Bitiriliyor"
 
 #: src/Core/FlatpakBackend.vala:895
-#, fuzzy
-#| msgid "Update"
 msgid "Updating"
-msgstr "Güncelle"
+msgstr "Güncelleniyor"
 
 #: src/Core/Package.vala:300
 #, c-format
@@ -280,11 +274,10 @@ msgstr "Bilinmeyen Kaynak (doğrulanmamış)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "%s paketinin Uygulama Merkezindeki durumu yüklü olarak ayarlanmadı"
 
-#: src/Core/PackageKitBackend.vala:220
-#, fuzzy, c-format
-#| msgid "%s (non-curated)"
+#: src/Core/PackageKitBackend.vala:251
+#, c-format
 msgid "%s (local)"
-msgstr "%s (doğrulanmamış)"
+msgstr "%s (yerel)"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -356,35 +349,29 @@ msgid "Install Anyway"
 msgstr "Yine de Yükle"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
-#, fuzzy
-#| msgid "Content Warning"
 msgid "Non-Curated Warning"
-msgstr "İçerik Uyarısı"
+msgstr "Doğrulanmamış İçerik Uyarısı"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:37
-#, fuzzy
-#| msgid "%s (non-curated)"
 msgid "Install non-curated app?"
-msgstr "%s (doğrulanmamış)"
+msgstr "Doğrulanmamış uygulama yüklensin mi?"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
 msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-msgstr ""
+msgstr "\"%s\", elementary tarafından doğrulanmamış ve güvenlik, gizlilik veya sistem entegrasyonu açısından incelenmemiştir."
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
 msgid "It may not receive bug fix or feature updates"
-msgstr ""
+msgstr "Hata düzeltmeleri veya özellik güncellemeleri alamayabilir"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:60
 msgid "It may access or change system or personal files without permission"
-msgstr ""
+msgstr "Sistem veya kişisel dosyalarınıza izniniz olmadan erişebilir veya bunları değiştirebilir"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
-#, fuzzy
-#| msgid "Show content warnings"
 msgid "Show non-curated warnings"
-msgstr "İçerik uyarılarını göster"
+msgstr "Doğrulanmamış içerik uyarılarını göster"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -582,59 +569,59 @@ msgstr "Yoksay"
 msgid "Try Again"
 msgstr "Tekrar Dene"
 
-#: src/Views/AppInfoView.vala:157
+#: src/Views/AppInfoView.vala:155
 msgid "Screenshot Not Available"
 msgstr "Ekran Görüntüsü Yok"
 
-#: src/Views/AppInfoView.vala:208
+#: src/Views/AppInfoView.vala:206
 msgid "Homepage"
 msgstr "Ana Sayfa"
 
-#: src/Views/AppInfoView.vala:214
+#: src/Views/AppInfoView.vala:212
 msgid "Suggest Translations"
 msgstr "Çeviri Öner"
 
-#: src/Views/AppInfoView.vala:220
+#: src/Views/AppInfoView.vala:218
 msgid "Report a Problem"
 msgstr "Bir Sorun Bildirin"
 
-#: src/Views/AppInfoView.vala:226
+#: src/Views/AppInfoView.vala:224
 msgid "Help"
 msgstr "Yardım"
 
-#: src/Views/AppInfoView.vala:253
+#: src/Views/AppInfoView.vala:235
 msgid "What's New:"
 msgstr "Yenilikler:"
 
-#: src/Views/AppInfoView.vala:272
+#: src/Views/AppInfoView.vala:270
 msgid "Extensions:"
 msgstr "Eklentiler:"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:366
+#: src/Views/AppInfoView.vala:359
 msgid "Public Domain"
 msgstr "Kamu Malı"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:369
+#: src/Views/AppInfoView.vala:362
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://tr.wikipedia.org/wiki/Kamu_malı"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:374
+#: src/Views/AppInfoView.vala:367
 msgid "Free Software"
 msgstr "Özgür Yazılım"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:377
+#: src/Views/AppInfoView.vala:370
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw.tr.html"
 
-#: src/Views/AppInfoView.vala:381
+#: src/Views/AppInfoView.vala:374
 msgid "Proprietary"
 msgstr "Özel"
 
-#: src/Views/AppInfoView.vala:384
+#: src/Views/AppInfoView.vala:377
 msgid "Unknown License"
 msgstr "Bilinmeyen Lisans"
 
@@ -643,24 +630,24 @@ msgstr "Bilinmeyen Lisans"
 msgid "Other Apps by %s"
 msgstr "%s tarafından geliştirilen diğer uygulamalar"
 
-#: src/Views/AppInfoView.vala:460
+#: src/Views/AppInfoView.vala:463
 msgid "Link copied to clipboard"
 msgstr "Bağlantı panoya kopyalandı"
 
-#: src/Views/AppInfoView.vala:471
+#: src/Views/AppInfoView.vala:474
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "%s uygulamasına göz atın:"
 
-#: src/Views/AppInfoView.vala:478
+#: src/Views/AppInfoView.vala:481
 msgid "Share"
 msgstr "Paylaş"
 
-#: src/Views/AppInfoView.vala:802
+#: src/Views/AppInfoView.vala:812
 msgid "Fund"
 msgstr "Bağış yap"
 
-#: src/Views/AppInfoView.vala:824
+#: src/Views/AppInfoView.vala:834
 msgid "Fund the development of this app"
 msgstr "Bu uygulamanın geliştirilmesini destekle"
 
@@ -673,11 +660,11 @@ msgid "Restart Now"
 msgstr "Şimdi Yeniden Başlat"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:180
+#: src/Views/AppListUpdateView.vala:201
 msgid "Update All"
 msgstr "Tümünü Güncelle"
 
-#: src/Views/AppListView.vala:128
+#: src/Views/AppListView.vala:138
 msgid "Non-Curated Apps"
 msgstr "Doğrulanmamış Uygulamalar"
 
