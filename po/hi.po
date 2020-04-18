@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-18 13:52+0000\n"
+"POT-Creation-Date: 2020-04-18 17:50+0000\n"
 "PO-Revision-Date: 2019-04-12 00:57+0000\n"
 "Last-Translator: Cody Garver <cody@elementary.io>\n"
 "Language-Team: Hindi <https://l10n.elementary.io/projects/appcenter/appcenter/hi/>\n"
@@ -32,33 +32,33 @@ msgstr "%s मइम को पार्स नहीं किया जा स
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "दिए गए लिंक '%s' को खोजा नहीं जा सका,इसके बजाय खोजें"
 
-#: src/Application.vala:270
+#: src/Application.vala:273
 msgid "Application installed"
 msgstr "एप्लीकेशन इनस्टॉल हो गया"
 
-#: src/Application.vala:271
+#: src/Application.vala:274
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s सफलतापूर्वक इनस्टॉल हो गया"
 
-#: src/Application.vala:283
+#: src/Application.vala:286
 #, c-format
 msgid "There Was An Error Installing %s."
 msgstr "%s इनस्टॉल करने में चूक हुई है"
 
-#: src/MainWindow.vala:141 src/Views/Homepage.vala:297
+#: src/MainWindow.vala:152 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
 #: src/Views/Homepage.vala:325
 msgid "Home"
 msgstr "होम"
 
-#: src/MainWindow.vala:142 src/Views/InstalledView.vala:33
+#: src/MainWindow.vala:153 src/Views/InstalledView.vala:33
 #: src/Views/InstalledView.vala:58
 msgctxt "view"
 msgid "Installed"
 msgstr "स्थापित"
 
-#: src/MainWindow.vala:169 src/MainWindow.vala:328 src/Views/SearchView.vala:55
+#: src/MainWindow.vala:180 src/MainWindow.vala:339 src/Views/SearchView.vala:55
 #: src/Views/SearchView.vala:82
 msgid "Search Apps"
 msgstr "ऐप्स खोजें"
