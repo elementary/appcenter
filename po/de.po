@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-16 19:48+0000\n"
+"POT-Creation-Date: 2020-04-18 13:52+0000\n"
 "PO-Revision-Date: 2019-12-26 12:32+0000\n"
 "Last-Translator: Jörg Arnold <j.ar@mailbox.org>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/appcenter/appcenter/de/>\n"
@@ -277,7 +277,7 @@ msgstr "Unbekannte Quelle (nicht kuratiert)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Das Paket ist im AppCenter nicht als \"installiert\" markiert: %s"
 
-#: src/Core/PackageKitBackend.vala:220
+#: src/Core/PackageKitBackend.vala:251
 #, fuzzy, c-format
 #| msgid "%s (non-curated)"
 msgid "%s (local)"
@@ -653,11 +653,11 @@ msgstr "Sieh dir %s im AppCenter an:"
 msgid "Share"
 msgstr "Teilen"
 
-#: src/Views/AppInfoView.vala:813
+#: src/Views/AppInfoView.vala:812
 msgid "Fund"
 msgstr "Unterstützen"
 
-#: src/Views/AppInfoView.vala:835
+#: src/Views/AppInfoView.vala:834
 msgid "Fund the development of this app"
 msgstr "Entwicklung dieser App unterstützen"
 

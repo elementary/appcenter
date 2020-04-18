@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-16 19:48+0000\n"
+"POT-Creation-Date: 2020-04-18 13:52+0000\n"
 "PO-Revision-Date: 2016-03-04 13:30+0000\n"
 "Last-Translator: Pavel <aps7@tut.by>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -269,7 +269,7 @@ msgstr ""
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
 
-#: src/Core/PackageKitBackend.vala:220
+#: src/Core/PackageKitBackend.vala:251
 #, c-format
 msgid "%s (local)"
 msgstr ""
@@ -643,11 +643,11 @@ msgstr ""
 msgid "Share"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:813
+#: src/Views/AppInfoView.vala:812
 msgid "Fund"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:835
+#: src/Views/AppInfoView.vala:834
 msgid "Fund the development of this app"
 msgstr ""
 

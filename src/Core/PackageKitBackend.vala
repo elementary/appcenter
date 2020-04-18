@@ -154,6 +154,37 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 
         reload_appstream_pool ();
 
+        var proxy_resolver = GLib.ProxyResolver.get_default ();
+        string? http_proxy = null;
+        string? ftp_proxy = null;
+
+        try {
+            // We need an address of something on the internet to see if we need a proxy or not. It's not really
+            // important that this is launchpad, it could be google or fake-made-up-domain.com as it's not resolved
+            // at this point. May as well use a real address that PackageKit may need a proxy for though.
+            var possible_proxies = proxy_resolver.lookup ("http://ppa.launchpad.net");
+            if (possible_proxies.length > 0 && possible_proxies[0] != "direct://") {
+                http_proxy = possible_proxies[0];
+            }
+        } catch (Error e) {
+            warning ("Unable to lookup http proxy to use for PackageKit: %s", e.message);
+        }
+
+        try {
+            var possible_proxies = proxy_resolver.lookup ("ftp://ppa.launchpad.net");
+            if (possible_proxies.length > 0 && possible_proxies[0] != "direct://") {
+                ftp_proxy = possible_proxies[0];
+            }
+        } catch (Error e) {
+            warning ("Unable to lookup ftp proxy to use for PackageKit: %s", e.message);
+        }
+
+        try {
+            control.set_proxy (http_proxy, ftp_proxy);
+        } catch (Error e) {
+            warning ("Unable to set proxy for PackageKit to use: %s", e.message);
+        }
+
         control.updates_changed.connect (updates_changed_callback);
     }
 

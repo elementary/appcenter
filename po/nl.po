@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-16 19:48+0000\n"
+"POT-Creation-Date: 2020-04-18 13:52+0000\n"
 "PO-Revision-Date: 2019-12-31 06:14+0000\n"
 "Last-Translator: Jaimie85 <alsemgeest@gmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/appcenter/nl/>\n"
@@ -272,7 +272,7 @@ msgstr "Onbekende bron (niet beheerd)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Het volgende pakket is niet geïnstalleerd in AppCenter: %s"
 
-#: src/Core/PackageKitBackend.vala:220
+#: src/Core/PackageKitBackend.vala:251
 #, fuzzy, c-format
 #| msgid "%s (non-curated)"
 msgid "%s (local)"
@@ -648,11 +648,11 @@ msgstr "Ontdek %s in het AppCenter:"
 msgid "Share"
 msgstr "Deel"
 
-#: src/Views/AppInfoView.vala:813
+#: src/Views/AppInfoView.vala:812
 msgid "Fund"
 msgstr "Financier"
 
-#: src/Views/AppInfoView.vala:835
+#: src/Views/AppInfoView.vala:834
 msgid "Fund the development of this app"
 msgstr "Financier de ontwikkeling van deze app"
 

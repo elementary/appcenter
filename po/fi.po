@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-16 19:48+0000\n"
+"POT-Creation-Date: 2020-04-18 13:52+0000\n"
 "PO-Revision-Date: 2020-04-14 14:10+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/appcenter/appcenter/fi/>\n"
@@ -267,7 +267,7 @@ msgstr "Tuntematon alkuperä (kuratoimaton)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Sovellustilaa ei ole asetettu asennetuksi Sovelluskeskuksessa paketille %s"
 
-#: src/Core/PackageKitBackend.vala:220
+#: src/Core/PackageKitBackend.vala:251
 #, c-format
 msgid "%s (local)"
 msgstr "%s (paikallinen)"
@@ -636,11 +636,11 @@ msgstr "Tutustu sovellukseen %s AppCenterissä:"
 msgid "Share"
 msgstr "Jaa"
 
-#: src/Views/AppInfoView.vala:813
+#: src/Views/AppInfoView.vala:812
 msgid "Fund"
 msgstr "Rahoita"
 
-#: src/Views/AppInfoView.vala:835
+#: src/Views/AppInfoView.vala:834
 msgid "Fund the development of this app"
 msgstr "Rahoita tämän sovelluksen kehitystä"
 
