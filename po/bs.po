@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-18 13:52+0000\n"
+"POT-Creation-Date: 2020-04-18 15:59+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Alma Ibrašimović <belma.alma@hotmail.com>\n"
 "Language-Team: Bosnian <https://l10n.elementary.io/projects/appcenter/appcenter/bs/>\n"
@@ -45,19 +45,19 @@ msgstr "%s je uspješno instaliran"
 msgid "There Was An Error Installing %s."
 msgstr "Došlo je do greške prilikom instalacije %s."
 
-#: src/MainWindow.vala:141 src/Views/Homepage.vala:297
+#: src/MainWindow.vala:152 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
 #: src/Views/Homepage.vala:325
 msgid "Home"
 msgstr "Naslovnica"
 
-#: src/MainWindow.vala:142 src/Views/InstalledView.vala:33
+#: src/MainWindow.vala:153 src/Views/InstalledView.vala:33
 #: src/Views/InstalledView.vala:58
 msgctxt "view"
 msgid "Installed"
 msgstr "Instalirano"
 
-#: src/MainWindow.vala:169 src/MainWindow.vala:328 src/Views/SearchView.vala:55
+#: src/MainWindow.vala:180 src/MainWindow.vala:339 src/Views/SearchView.vala:55
 #: src/Views/SearchView.vala:82
 msgid "Search Apps"
 msgstr "Pretraži aplikacije"
