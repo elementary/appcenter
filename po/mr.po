@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-16 18:59+0000\n"
+"POT-Creation-Date: 2020-04-18 13:52+0000\n"
 "PO-Revision-Date: 2020-04-06 14:22+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/appcenter/mr/>\n"
@@ -266,7 +266,7 @@ msgstr "अज्ञात उत्पत्ति (नॉन-क्युर�
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "%s : पॅकेजसाठी AppCenter मध्ये स्थापित केल्यानुसार अनुप्रयोग स्थिती सेट केलेली नाही"
 
-#: src/Core/PackageKitBackend.vala:220
+#: src/Core/PackageKitBackend.vala:251
 #, c-format
 msgid "%s (local)"
 msgstr "%s (स्थानिक)"
@@ -635,11 +635,11 @@ msgstr "अॅप सेंटर वर %s  बघा:"
 msgid "Share"
 msgstr "शेअर करा"
 
-#: src/Views/AppInfoView.vala:805
+#: src/Views/AppInfoView.vala:812
 msgid "Fund"
 msgstr "निधी"
 
-#: src/Views/AppInfoView.vala:827
+#: src/Views/AppInfoView.vala:834
 msgid "Fund the development of this app"
 msgstr "या अॅपच्या विकासासाठी निधी द्या"
 

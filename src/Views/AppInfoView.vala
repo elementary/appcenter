@@ -744,23 +744,22 @@ namespace AppCenter.Views {
 
         private void parse_description (string? description) {
             if (description != null) {
-                try {
-                    string[] lines = description.split ("\n");
-                    string stripped_description = lines[0].strip ();
-                    for (int i = 1; i < lines.length; i++) {
-                        stripped_description += " " + lines[i].strip ();
+                string[] lines = description.split ("\n");
+                string stripped_description = lines[0].strip ();
+                for (int i = 1; i < lines.length; i++) {
+                    stripped_description += " " + lines[i].strip ();
+                }
+
+                // This method may be called in a thread, pass back to GTK thread
+                Idle.add (() => {
+                    try {
+                        app_description.buffer.text = AppStream.markup_convert_simple (stripped_description);
+                    } catch (Error e) {
+                        warning ("Failed to parse appstream description: %s", e.message);
                     }
 
-                    // This method may be called in a thread, pass back to GTK thread
-                    Idle.add (() => {
-                        app_description.buffer.text = AppStream.markup_convert_simple (stripped_description);
-
-                        return false;
-                    });
-
-                } catch (Error e) {
-                    critical (e.message);
-                }
+                    return false;
+                });
             }
         }
 

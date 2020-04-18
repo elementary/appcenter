@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-16 18:59+0000\n"
+"POT-Creation-Date: 2020-04-18 13:52+0000\n"
 "PO-Revision-Date: 2019-10-02 11:23+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/appcenter/appcenter/zh_Hans/>\n"
@@ -273,7 +273,7 @@ msgstr "未知来源"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
 
-#: src/Core/PackageKitBackend.vala:220
+#: src/Core/PackageKitBackend.vala:251
 #, fuzzy, c-format
 #| msgid "%s (non-curated)"
 msgid "%s (local)"
@@ -651,11 +651,11 @@ msgstr "在应用中心内查看 %s ："
 msgid "Share"
 msgstr "分享"
 
-#: src/Views/AppInfoView.vala:805
+#: src/Views/AppInfoView.vala:812
 msgid "Fund"
 msgstr "资助"
 
-#: src/Views/AppInfoView.vala:827
+#: src/Views/AppInfoView.vala:834
 msgid "Fund the development of this app"
 msgstr "资助此应用程序的开发"
 

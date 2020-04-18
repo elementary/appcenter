@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-16 18:59+0000\n"
+"POT-Creation-Date: 2020-04-18 13:52+0000\n"
 "PO-Revision-Date: 2018-06-21 00:08+0000\n"
 "Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
 "Language-Team: Hungarian <https://weblate.elementary.io/projects/appcenter/appcenter/hu/>\n"
@@ -273,7 +273,7 @@ msgstr ""
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
 
-#: src/Core/PackageKitBackend.vala:220
+#: src/Core/PackageKitBackend.vala:251
 #, fuzzy, c-format
 msgid "%s (local)"
 msgstr "%s (helyi)"
@@ -652,11 +652,11 @@ msgstr "Nézze meg AppKözpontban ezt: %s:"
 msgid "Share"
 msgstr "Megosztás"
 
-#: src/Views/AppInfoView.vala:805
+#: src/Views/AppInfoView.vala:812
 msgid "Fund"
 msgstr "Támogatás"
 
-#: src/Views/AppInfoView.vala:827
+#: src/Views/AppInfoView.vala:834
 msgid "Fund the development of this app"
 msgstr "Támogassa az alkalmazás fejlesztését"
 

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-16 18:59+0000\n"
+"POT-Creation-Date: 2020-04-18 13:52+0000\n"
 "PO-Revision-Date: 2018-10-28 09:52+0000\n"
 "Last-Translator: Fredrik B <frbo9002@gmail.com>\n"
 "Language-Team: Swedish <https://weblate.elementary.io/projects/appcenter/appcenter/sv/>\n"
@@ -273,7 +273,7 @@ msgstr ""
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
 
-#: src/Core/PackageKitBackend.vala:220
+#: src/Core/PackageKitBackend.vala:251
 #, fuzzy, c-format
 msgid "%s (local)"
 msgstr "%s (lokal)"
@@ -652,11 +652,11 @@ msgstr "Visa %s i AppCenter:"
 msgid "Share"
 msgstr "Dela"
 
-#: src/Views/AppInfoView.vala:805
+#: src/Views/AppInfoView.vala:812
 msgid "Fund"
 msgstr "Finansiera"
 
-#: src/Views/AppInfoView.vala:827
+#: src/Views/AppInfoView.vala:834
 msgid "Fund the development of this app"
 msgstr "Finansiera utvecklingen av den här appen"
 
