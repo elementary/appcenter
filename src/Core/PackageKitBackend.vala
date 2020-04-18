@@ -274,26 +274,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
                 break;
             }
 
-            var package = package_list[pk_package.get_name ()];
-            if (package != null) {
-                package.mark_installed ();
-
-                // The version, name and summary are required in the installed list view, cache these values
-                // here where necessary to avoid looking up each package individually later
-                package.latest_version = pk_package.get_version ();
-
-                // If there is no AppStream name for the component, use the debian package name instead
-                if (unlikely (package.component.get_name () == null)) {
-                    package.set_name (pk_package.get_name ());
-                }
-
-                if (package.component.get_summary () == null) {
-                    package.set_summary (pk_package.get_summary ());
-                }
-
-                package.update_state ();
-                packages.add (package);
-            }
+            populate_basic_package_details (pk_package);
         }
 
         return packages;
@@ -910,26 +891,34 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
             var results = yield client.search_names_async (filter, query, null, () => {});
             var array = results.get_package_array ();
             array.foreach ((pk_package) => {
-                var package = package_list[pk_package.get_name ()];
-                if (package == null) {
-                    return;
-                }
-
-                package.latest_version = pk_package.get_version ();
-                if (package.component.get_summary () == null) {
-                    package.set_summary (pk_package.get_summary ());
-                }
-
-                if (package.component.get_name () == null) {
-                    package.set_name (pk_package.get_name ());
-                }
-
-                if (pk_package.info == Pk.Info.INSTALLED) {
-                    package.mark_installed ();
-                }
+                populate_basic_package_details (pk_package);
             });
         } catch (Error e) {
             throw e;
+        }
+    }
+
+    private void populate_basic_package_details (Pk.Package pk_package) {
+        var package = package_list[pk_package.get_name ()];
+        if (package == null) {
+            return;
+        }
+
+        // The version, name and summary are required in the installed list view, cache these values
+        // here where necessary to avoid looking up each package individually later
+        package.latest_version = pk_package.get_version ();
+
+        // If there is no AppStream name for the component, use the debian package name instead
+        if (unlikely (package.component.get_name () == null)) {
+            package.set_name (pk_package.get_name ());
+        }
+
+        if (package.component.get_summary () == null) {
+            package.set_summary (pk_package.get_summary ());
+        }
+
+        if (pk_package.info == Pk.Info.INSTALLED) {
+            package.mark_installed ();
         }
     }
 
