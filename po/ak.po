@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Akan (AppCenter)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-18 15:59+0000\n"
+"POT-Creation-Date: 2020-04-18 17:50+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Lawrence Aberba <karabutaworld@gmail.com>\n"
 "Language-Team: Akan <https://l10n.elementary.io/projects/appcenter/appcenter/ak/>\n"
@@ -30,16 +30,16 @@ msgstr ""
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Antumi anhu '%s' enti wo ara hwehwɛ"
 
-#: src/Application.vala:270
+#: src/Application.vala:273
 msgid "Application installed"
 msgstr "Dwumadie a woatwe agu so"
 
-#: src/Application.vala:271
+#: src/Application.vala:274
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "Atwe %s agu so awie"
 
-#: src/Application.vala:283
+#: src/Application.vala:286
 #, fuzzy, c-format
 msgid "There Was An Error Installing %s."
 msgstr "Biribi sii ma antumi amfa %s angu so"
