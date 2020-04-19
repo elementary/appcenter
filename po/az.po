@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-19 04:23+0000\n"
+"POT-Creation-Date: 2020-04-19 04:28+0000\n"
 "PO-Revision-Date: 2018-06-17 00:06+0000\n"
 "Last-Translator: Musa Abbasov <abbasov13@outlook.com>\n"
 "Language-Team: Azerbaijani <https://weblate.elementary.io/projects/appcenter/appcenter/az/>\n"
@@ -645,11 +645,11 @@ msgstr ""
 msgid "Share"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:812
+#: src/Views/AppInfoView.vala:815
 msgid "Fund"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:834
+#: src/Views/AppInfoView.vala:837
 msgid "Fund the development of this app"
 msgstr ""
 
