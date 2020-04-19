@@ -6,9 +6,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-19 17:17+0000\n"
-"PO-Revision-Date: 2020-04-08 23:30+0000\n"
+"PO-Revision-Date: 2020-04-20 17:20+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
-"Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/appcenter/pt/>\n"
+"Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/pt/>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -693,14 +694,14 @@ msgid "No apps could be found. Try changing search terms."
 msgstr "Nenhuma aplicação foi encontrada. Tente mudar os termos de pesquisa."
 
 #: src/Widgets/AbstractAppList.vala:45
-#, fuzzy
-#| msgid "Searching for updates…"
 msgid "Checking for Updates"
-msgstr "A procurar por atualizações…"
+msgstr "A procurar por atualizações"
 
 #: src/Widgets/AbstractAppList.vala:46
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr ""
+"Transferir uma lista de atualizações disponíveis para o sistema operativo e "
+"aplicações instaladas"
 
 #: src/Widgets/Banner.vala:55
 msgid "An open, pay-what-you-want app store"
