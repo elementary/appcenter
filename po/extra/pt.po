@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-19 17:17+0000\n"
-"PO-Revision-Date: 2020-04-19 17:17+0000\n"
+"PO-Revision-Date: 2020-04-20 17:20+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
 "extra/pt/>\n"
@@ -66,6 +66,8 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:26
 msgid "Show a more informative loading screen when checking for updates"
 msgstr ""
+"Mostrar um ecrã de carregamento mais informativo ao verificar se há "
+"actualizações"
 
 #: data/io.elementary.appcenter.appdata.xml.in:28
 msgid "Other updates"
@@ -112,6 +114,8 @@ msgid ""
 "Swapped the main and overlay icons for plugins to more clearly associate "
 "plugins with their app"
 msgstr ""
+"Trocaram os ícones principais e de sobreposição dos plugins para associar de "
+"forma mais clara os plugins à aplicação"
 
 #: data/io.elementary.appcenter.appdata.xml.in:43
 msgid ""
