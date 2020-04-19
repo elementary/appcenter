@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-19 17:17+0000\n"
-"PO-Revision-Date: 2020-04-18 02:07+0000\n"
+"PO-Revision-Date: 2020-04-20 17:20+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/appcenter/extra/"
 "fr/>\n"
@@ -43,6 +43,8 @@ msgstr "Corrections"
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "AppCenter now uses configured network proxy settings for apt operations"
 msgstr ""
+"Le Centre d'Applications utilise désormais le proxy configuré dans les "
+"paramètres réseau pour les opérations apt"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "AppCenter no longer prompts for approval to update non-curated apps"
@@ -59,28 +61,34 @@ msgstr ""
 msgid ""
 "Ensure the OS updates subheading copy is correct after finishing updates"
 msgstr ""
+"Nous nous sommes assuré que le sous-titre des mises à jour du système soit "
+"correct après que les mises à jour aient été effectuées"
 
 #: data/io.elementary.appcenter.appdata.xml.in:26
 msgid "Show a more informative loading screen when checking for updates"
 msgstr ""
+"Affichage d'un écran de chargement plus informatif lors de la vérification "
+"des mises à jour"
 
 #: data/io.elementary.appcenter.appdata.xml.in:28
-#, fuzzy
-#| msgid "Check for Updates"
 msgid "Other updates"
-msgstr "Vérifier les mises à jour"
+msgstr "Autres mises à jour"
 
 #: data/io.elementary.appcenter.appdata.xml.in:30
 msgid ""
 "Only check for updates at computer startup if it's more than 24 hours since "
 "we last checked"
 msgstr ""
+"Recherche des mises à jour au démarrage de l'ordinateur uniquement si la "
+"dernière recherche à eu lieu il y a plus de 24 heures"
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
 msgid ""
 "Pressing down in the search field moves the keyboard focus to the search "
 "results list"
 msgstr ""
+"Appuyer sur la touche bas depuis le champ de recherche sélectionne les "
+"éléments de la liste des résultats de recherche"
 
 #: data/io.elementary.appcenter.appdata.xml.in:32
 msgid ""
@@ -92,19 +100,23 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:33
 msgid "Ctrl+F now moves the cursor to the search field"
-msgstr ""
+msgstr "Ctrl + F déplace désormais le curseur dans le champ de recherche"
 
 #: data/io.elementary.appcenter.appdata.xml.in:34
 msgid ""
 "To de-clutter the updates view, plugins are now only shown if they require "
 "updates"
 msgstr ""
+"Afin de désencombrer la vue des mises à jour, les plugins sont désormais "
+"affichés uniquement lorsqu'ils nécessitent une mise à jour"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
 msgid ""
 "Swapped the main and overlay icons for plugins to more clearly associate "
 "plugins with their app"
 msgstr ""
+"Remplacement des icônes principales et de superposition des plugins pour "
+"associer plus clairement les plugins à leur application"
 
 #: data/io.elementary.appcenter.appdata.xml.in:43
 msgid ""
