@@ -47,15 +47,10 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
         }
 
         working = true;
-        cached_packages = new Gee.TreeSet<Package> ();
-        string? command_output;
-        var result = yield get_drivers_output (cancellable, out command_output);
-        if (!result || command_output == null || cancellable.is_cancelled ()) {
-            working = false;
-            return cached_packages;
-        }
 
-        string[] tokens = command_output.split ("\n");
+        cached_packages = new Gee.TreeSet<Package> ();
+        var tokens = AppCenter.App.settings.get_strv ("cached-drivers");
+
         for (int i = 0; i < tokens.length; i++) {
             if (cancellable.is_cancelled ()) {
                 break;
@@ -130,14 +125,35 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
     }
 
     public async bool refresh_cache (Cancellable? cancellable) throws GLib.Error {
+        working = true;
+        string? command_output;
+        var result = yield get_drivers_output (cancellable, out command_output);
+        if (!result || command_output == null || cancellable.is_cancelled ()) {
+            working = false;
+            return false;
+        }
+
+        string[] tokens = command_output.split ("\n");
+        string[] pkgnames = {};
+        foreach (unowned string token in tokens) {
+            if (token.strip () != "") {
+                pkgnames += token;
+            }
+        }
+
+        AppCenter.App.settings.set_strv ("cached-drivers", pkgnames);
+
+        working = false;
         return true;
     }
 
     public async bool install_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+        cached_packages = null;
         return yield PackageKitBackend.get_default ().install_package (package, (owned)cb, cancellable);
     }
 
     public async bool remove_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
+        cached_packages = null;
         return yield PackageKitBackend.get_default ().remove_package (package, (owned)cb, cancellable);
     }
 

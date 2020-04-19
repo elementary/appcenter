@@ -25,22 +25,6 @@ public class DBusServer : Object {
         return instance.once (() => { return new DBusServer (); });
     }
 
-    public static void init () {
-        var client = AppCenterCore.Client.get_default ();
-        var loop = new MainLoop ();
-
-        client.get_installed_applications.begin (null, (obj, res) => {
-            client.get_installed_applications.end (res);
-            loop.quit ();
-        });
-
-        loop.run (); // wait until async method finishes
-    }
-
-    private DBusServer () {
-
-    }
-
     /**
      * Installs a package that's id is component_id and also
      * sends a notification when installation finishes or shows
