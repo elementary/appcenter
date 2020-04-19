@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-19 04:28+0000\n"
-"PO-Revision-Date: 2020-04-16 18:57+0000\n"
+"PO-Revision-Date: 2020-04-19 17:15+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
 "extra/pt/>\n"
@@ -43,6 +43,8 @@ msgstr "Correções"
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "AppCenter now uses configured network proxy settings for apt operations"
 msgstr ""
+"O Centro de Aplicações utiliza agora definições de proxy de rede "
+"configuradas para operações apt"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "AppCenter no longer prompts for approval to update non-curated apps"
@@ -52,30 +54,34 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:24
 msgid "Reduce slowdowns when opening certain apps"
-msgstr ""
+msgstr "Reduzir a lentidão na abertura de certas aplicações"
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
 msgid ""
 "Ensure the OS updates subheading copy is correct after finishing updates"
 msgstr ""
+"Certifique-se de que a cópia do subtítulo de atualização do SO está correta "
+"após a conclusão das actualizações"
 
 #: data/io.elementary.appcenter.appdata.xml.in:27
-#, fuzzy
-#| msgid "Check for Updates"
 msgid "Other updates"
-msgstr "Procurar por Atualizações"
+msgstr "Outras atualizações"
 
 #: data/io.elementary.appcenter.appdata.xml.in:29
 msgid ""
 "Only check for updates at computer startup if it's more than 24 hours since "
 "we last checked"
 msgstr ""
+"Apenas verifique se há atualizações no arranque do computador se passaram "
+"mais de 24 horas desde a última vez que verificou"
 
 #: data/io.elementary.appcenter.appdata.xml.in:30
 msgid ""
 "Pressing down in the search field moves the keyboard focus to the search "
 "results list"
 msgstr ""
+"Pressionar para baixo no campo de pesquisa move o foco do teclado para a "
+"lista de resultados da pesquisa"
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
 msgid ""
