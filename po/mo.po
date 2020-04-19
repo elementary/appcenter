@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-18 18:09+0000\n"
+"POT-Creation-Date: 2020-04-19 04:23+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Moldovan <https://l10n.elementary.io/projects/appcenter/appcenter/mo/>\n"
@@ -28,34 +28,34 @@ msgstr ""
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Linkul specificat '%s' nu a putut fi găsit, în loc de căutare"
 
-#: src/Application.vala:273
+#: src/Application.vala:272
 msgid "Application installed"
 msgstr "Aplicația este instalată"
 
-#: src/Application.vala:274
+#: src/Application.vala:273
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s a fost instalat cu succes"
 
-#: src/Application.vala:286
+#: src/Application.vala:285
 #, c-format
 msgid "There Was An Error Installing %s."
 msgstr "A apărut o eroare la instalarea%s."
 
-#: src/MainWindow.vala:152 src/Views/Homepage.vala:297
+#: src/MainWindow.vala:150 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
 #: src/Views/Homepage.vala:325
 msgid "Home"
 msgstr "Acasă"
 
-#: src/MainWindow.vala:153 src/Views/InstalledView.vala:33
+#: src/MainWindow.vala:151 src/Views/InstalledView.vala:33
 #: src/Views/InstalledView.vala:58
 #, fuzzy
 msgctxt "view"
 msgid "Installed"
 msgstr "Instalare"
 
-#: src/MainWindow.vala:180 src/MainWindow.vala:339 src/Views/SearchView.vala:55
+#: src/MainWindow.vala:178 src/MainWindow.vala:337 src/Views/SearchView.vala:55
 #: src/Views/SearchView.vala:82
 msgid "Search Apps"
 msgstr "Căutare Apps"
@@ -89,7 +89,7 @@ msgstr "Eliminarea pachetelor"
 msgid "Downloading"
 msgstr "Descărcare"
 
-#: src/Utils.vala:86 src/Core/FlatpakBackend.vala:698
+#: src/Utils.vala:86 src/Core/FlatpakBackend.vala:699
 msgid "Installing"
 msgstr "Instalare"
 
@@ -134,9 +134,9 @@ msgid "Finished"
 msgstr "Terminat"
 
 #: src/Utils.vala:108 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:707 src/Core/FlatpakBackend.vala:730
-#: src/Core/FlatpakBackend.vala:803 src/Core/FlatpakBackend.vala:904
-#: src/Core/FlatpakBackend.vala:930
+#: src/Core/FlatpakBackend.vala:708 src/Core/FlatpakBackend.vala:731
+#: src/Core/FlatpakBackend.vala:804 src/Core/FlatpakBackend.vala:905
+#: src/Core/FlatpakBackend.vala:931
 msgid "Cancelling"
 msgstr "Anulare"
 
@@ -229,19 +229,19 @@ msgstr[1] ""
 "Altu\n"
 "%u sunt disponibile actualizări pentru sistemul dvs"
 
-#: src/Core/FlatpakBackend.vala:795
+#: src/Core/FlatpakBackend.vala:796
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "Dezinstalați"
 
-#: src/Core/FlatpakBackend.vala:800
+#: src/Core/FlatpakBackend.vala:801
 #, fuzzy
 #| msgid "Finished"
 msgid "Finishing"
 msgstr "Terminat"
 
-#: src/Core/FlatpakBackend.vala:895
+#: src/Core/FlatpakBackend.vala:896
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -275,7 +275,7 @@ msgstr "Draivers"
 msgid "Unknown Origin (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:444
+#: src/Core/Package.vala:452
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-18 18:09+0000\n"
+"POT-Creation-Date: 2020-04-19 04:23+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/appcenter/appcenter/sk/>\n"
@@ -31,33 +31,33 @@ msgstr "Nepodarilo sa rozpoznať typ média %s"
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Zadaný odkaz '%s' sa nenašiel, spúšťa sa vyhľadávanie"
 
-#: src/Application.vala:273
+#: src/Application.vala:272
 msgid "Application installed"
 msgstr "Aplikácia bola nainštalovaná"
 
-#: src/Application.vala:274
+#: src/Application.vala:273
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "Aplikácia %s bola úspešne nainštalovaná"
 
-#: src/Application.vala:286
+#: src/Application.vala:285
 #, c-format
 msgid "There Was An Error Installing %s."
 msgstr "Pri inštalácii programu %s sa vyskytla chyba."
 
-#: src/MainWindow.vala:152 src/Views/Homepage.vala:297
+#: src/MainWindow.vala:150 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
 #: src/Views/Homepage.vala:325
 msgid "Home"
 msgstr "Úvodná stránka"
 
-#: src/MainWindow.vala:153 src/Views/InstalledView.vala:33
+#: src/MainWindow.vala:151 src/Views/InstalledView.vala:33
 #: src/Views/InstalledView.vala:58
 msgctxt "view"
 msgid "Installed"
 msgstr "Nainštalované"
 
-#: src/MainWindow.vala:180 src/MainWindow.vala:339 src/Views/SearchView.vala:55
+#: src/MainWindow.vala:178 src/MainWindow.vala:337 src/Views/SearchView.vala:55
 #: src/Views/SearchView.vala:82
 msgid "Search Apps"
 msgstr "Hľadať aplikácie"
@@ -91,7 +91,7 @@ msgstr "Odobranie balíkov"
 msgid "Downloading"
 msgstr "Sťahuje sa"
 
-#: src/Utils.vala:86 src/Core/FlatpakBackend.vala:698
+#: src/Utils.vala:86 src/Core/FlatpakBackend.vala:699
 msgid "Installing"
 msgstr "Inštalácia"
 
@@ -136,9 +136,9 @@ msgid "Finished"
 msgstr "Dokončené"
 
 #: src/Utils.vala:108 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:707 src/Core/FlatpakBackend.vala:730
-#: src/Core/FlatpakBackend.vala:803 src/Core/FlatpakBackend.vala:904
-#: src/Core/FlatpakBackend.vala:930
+#: src/Core/FlatpakBackend.vala:708 src/Core/FlatpakBackend.vala:731
+#: src/Core/FlatpakBackend.vala:804 src/Core/FlatpakBackend.vala:905
+#: src/Core/FlatpakBackend.vala:931
 msgid "Cancelling"
 msgstr "Rušenie"
 
@@ -225,19 +225,19 @@ msgstr[0] "%u aktualizácií je dostupných pre váš systém"
 msgstr[1] "%u aktualizácia je dostupná pre váš systém"
 msgstr[2] "%u aktualizácie sú dostupné pre váš systém"
 
-#: src/Core/FlatpakBackend.vala:795
+#: src/Core/FlatpakBackend.vala:796
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "Odinštalovať"
 
-#: src/Core/FlatpakBackend.vala:800
+#: src/Core/FlatpakBackend.vala:801
 #, fuzzy
 #| msgid "Finished"
 msgid "Finishing"
 msgstr "Dokončené"
 
-#: src/Core/FlatpakBackend.vala:895
+#: src/Core/FlatpakBackend.vala:896
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -271,7 +271,7 @@ msgstr "Ovládače"
 msgid "Unknown Origin (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:444
+#: src/Core/Package.vala:452
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""

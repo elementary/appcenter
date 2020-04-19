@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-18 18:09+0000\n"
+"POT-Creation-Date: 2020-04-19 04:23+0000\n"
 "PO-Revision-Date: 2019-12-23 11:07+0000\n"
 "Last-Translator: Marko <marko.dolar@gmail.com>\n"
 "Language-Team: Slovenian <https://l10n.elementary.io/projects/appcenter/appcenter/sl/>\n"
@@ -33,33 +33,33 @@ msgstr "Ni mogoče razpoznati vrste medija %s"
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Povezave '%s' ni bilo mogoče najti, iščem"
 
-#: src/Application.vala:273
+#: src/Application.vala:272
 msgid "Application installed"
 msgstr "Aplikacija nameščena"
 
-#: src/Application.vala:274
+#: src/Application.vala:273
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s je bila uspešno nameščena"
 
-#: src/Application.vala:286
+#: src/Application.vala:285
 #, c-format
 msgid "There Was An Error Installing %s."
 msgstr "Pri namestitvi %s je prišlo do napake."
 
-#: src/MainWindow.vala:152 src/Views/Homepage.vala:297
+#: src/MainWindow.vala:150 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
 #: src/Views/Homepage.vala:325
 msgid "Home"
 msgstr "Domača stran"
 
-#: src/MainWindow.vala:153 src/Views/InstalledView.vala:33
+#: src/MainWindow.vala:151 src/Views/InstalledView.vala:33
 #: src/Views/InstalledView.vala:58
 msgctxt "view"
 msgid "Installed"
 msgstr "Nameščeno"
 
-#: src/MainWindow.vala:180 src/MainWindow.vala:339 src/Views/SearchView.vala:55
+#: src/MainWindow.vala:178 src/MainWindow.vala:337 src/Views/SearchView.vala:55
 #: src/Views/SearchView.vala:82
 msgid "Search Apps"
 msgstr "Iskanje programov"
@@ -93,7 +93,7 @@ msgstr "Odstranjevanje paketov"
 msgid "Downloading"
 msgstr "Prenašanje"
 
-#: src/Utils.vala:86 src/Core/FlatpakBackend.vala:698
+#: src/Utils.vala:86 src/Core/FlatpakBackend.vala:699
 msgid "Installing"
 msgstr "Nameščanje"
 
@@ -138,9 +138,9 @@ msgid "Finished"
 msgstr "Dokončano"
 
 #: src/Utils.vala:108 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:707 src/Core/FlatpakBackend.vala:730
-#: src/Core/FlatpakBackend.vala:803 src/Core/FlatpakBackend.vala:904
-#: src/Core/FlatpakBackend.vala:930
+#: src/Core/FlatpakBackend.vala:708 src/Core/FlatpakBackend.vala:731
+#: src/Core/FlatpakBackend.vala:804 src/Core/FlatpakBackend.vala:905
+#: src/Core/FlatpakBackend.vala:931
 msgid "Cancelling"
 msgstr "Preklicevanje"
 
@@ -229,19 +229,19 @@ msgstr[1] "%u posodobitvi sta na voljo za vaš sistem"
 msgstr[2] "%u posodobitve so na voljo za vaš sistem"
 msgstr[3] "%u posodobitev je na voljo za vaš sistem"
 
-#: src/Core/FlatpakBackend.vala:795
+#: src/Core/FlatpakBackend.vala:796
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "Odstrani"
 
-#: src/Core/FlatpakBackend.vala:800
+#: src/Core/FlatpakBackend.vala:801
 #, fuzzy
 #| msgid "Finished"
 msgid "Finishing"
 msgstr "Dokončano"
 
-#: src/Core/FlatpakBackend.vala:895
+#: src/Core/FlatpakBackend.vala:896
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -273,7 +273,7 @@ msgstr "Ubuntu gonilniki"
 msgid "Unknown Origin (non-curated)"
 msgstr "Neznan vir (nepreverjeno)"
 
-#: src/Core/Package.vala:444
+#: src/Core/Package.vala:452
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Stanje aplikacije v Centru za programsko opremo ni nastavljeno kot nameščeno za pakete: %s"
