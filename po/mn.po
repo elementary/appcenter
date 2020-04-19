@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-19 04:28+0000\n"
+"POT-Creation-Date: 2020-04-19 17:17+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Mongolian <https://l10n.elementary.io/projects/appcenter/appcenter/mn/>\n"
@@ -53,13 +53,13 @@ msgid "Home"
 msgstr "Эхлэл"
 
 #: src/MainWindow.vala:151 src/Views/InstalledView.vala:33
-#: src/Views/InstalledView.vala:58
+#: src/Views/InstalledView.vala:60
 msgctxt "view"
 msgid "Installed"
 msgstr "Суулгагдсан"
 
 #: src/MainWindow.vala:178 src/MainWindow.vala:337 src/Views/SearchView.vala:55
-#: src/Views/SearchView.vala:82
+#: src/Views/SearchView.vala:86
 msgid "Search Apps"
 msgstr "Апп Хайх"
 
@@ -696,13 +696,23 @@ msgctxt "view"
 msgid "Search"
 msgstr "Хайх"
 
-#: src/Widgets/AbstractAppList.vala:36
+#: src/Widgets/AbstractAppList.vala:39
 msgid "No Results"
 msgstr "Илэрцгүй"
 
-#: src/Widgets/AbstractAppList.vala:36
+#: src/Widgets/AbstractAppList.vala:40
 msgid "No apps could be found. Try changing search terms."
 msgstr "Ямар ч аппууд олдсонгүй. Хайлтаа өөрчлөөд дахин оролдоорой."
+
+#: src/Widgets/AbstractAppList.vala:45
+#, fuzzy
+#| msgid "Searching for updates…"
+msgid "Checking for Updates"
+msgstr "Шинэчлэлтүүдийг хайж байна…"
+
+#: src/Widgets/AbstractAppList.vala:46
+msgid "Downloading a list of available updates to the OS and installed apps"
+msgstr ""
 
 #: src/Widgets/Banner.vala:55
 msgid "An open, pay-what-you-want app store"

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-19 04:28+0000\n"
+"POT-Creation-Date: 2020-04-19 17:17+0000\n"
 "PO-Revision-Date: 2020-04-06 14:22+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/appcenter/ja/>\n"
@@ -51,13 +51,13 @@ msgid "Home"
 msgstr "ホーム"
 
 #: src/MainWindow.vala:151 src/Views/InstalledView.vala:33
-#: src/Views/InstalledView.vala:58
+#: src/Views/InstalledView.vala:60
 msgctxt "view"
 msgid "Installed"
 msgstr "インストール済み"
 
 #: src/MainWindow.vala:178 src/MainWindow.vala:337 src/Views/SearchView.vala:55
-#: src/Views/SearchView.vala:82
+#: src/Views/SearchView.vala:86
 msgid "Search Apps"
 msgstr "アプリを検索"
 
@@ -679,13 +679,23 @@ msgctxt "view"
 msgid "Search"
 msgstr "検索"
 
-#: src/Widgets/AbstractAppList.vala:36
+#: src/Widgets/AbstractAppList.vala:39
 msgid "No Results"
 msgstr "検索結果はありません"
 
-#: src/Widgets/AbstractAppList.vala:36
+#: src/Widgets/AbstractAppList.vala:40
 msgid "No apps could be found. Try changing search terms."
 msgstr "アプリが見つかりませんでした。検索用語を変更してみてください。"
+
+#: src/Widgets/AbstractAppList.vala:45
+#, fuzzy
+#| msgid "Searching for updates…"
+msgid "Checking for Updates"
+msgstr "アップデートを確認しています…"
+
+#: src/Widgets/AbstractAppList.vala:46
+msgid "Downloading a list of available updates to the OS and installed apps"
+msgstr ""
 
 #: src/Widgets/Banner.vala:55
 msgid "An open, pay-what-you-want app store"

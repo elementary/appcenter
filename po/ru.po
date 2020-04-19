@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-19 04:28+0000\n"
+"POT-Creation-Date: 2020-04-19 17:17+0000\n"
 "PO-Revision-Date: 2019-01-07 00:02+0000\n"
 "Last-Translator: Kirill Romanov <djaler1@gmail.com>\n"
 "Language-Team: Russian <https://weblate.elementary.io/projects/appcenter/appcenter/ru/>\n"
@@ -51,13 +51,13 @@ msgid "Home"
 msgstr "Главная"
 
 #: src/MainWindow.vala:151 src/Views/InstalledView.vala:33
-#: src/Views/InstalledView.vala:58
+#: src/Views/InstalledView.vala:60
 msgctxt "view"
 msgid "Installed"
 msgstr "Установленные"
 
 #: src/MainWindow.vala:178 src/MainWindow.vala:337 src/Views/SearchView.vala:55
-#: src/Views/SearchView.vala:82
+#: src/Views/SearchView.vala:86
 msgid "Search Apps"
 msgstr "Поиск приложений"
 
@@ -703,13 +703,23 @@ msgctxt "view"
 msgid "Search"
 msgstr "Поиск"
 
-#: src/Widgets/AbstractAppList.vala:36
+#: src/Widgets/AbstractAppList.vala:39
 msgid "No Results"
 msgstr "Нет результатов"
 
-#: src/Widgets/AbstractAppList.vala:36
+#: src/Widgets/AbstractAppList.vala:40
 msgid "No apps could be found. Try changing search terms."
 msgstr "Приложения не найдены. Попробуйте изменить поисковый запрос."
+
+#: src/Widgets/AbstractAppList.vala:45
+#, fuzzy
+#| msgid "Searching for updates…"
+msgid "Checking for Updates"
+msgstr "Поиск обновлений…"
+
+#: src/Widgets/AbstractAppList.vala:46
+msgid "Downloading a list of available updates to the OS and installed apps"
+msgstr ""
 
 #: src/Widgets/Banner.vala:55
 msgid "An open, pay-what-you-want app store"

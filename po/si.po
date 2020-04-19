@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-19 04:28+0000\n"
+"POT-Creation-Date: 2020-04-19 17:17+0000\n"
 "PO-Revision-Date: 2018-06-12 06:39+0000\n"
 "Last-Translator: Janith Weerasinghe <janithweerasinghe@rocketmail.com>\n"
 "Language-Team: Sinhala <https://weblate.elementary.io/projects/appcenter/appcenter/si/>\n"
@@ -50,14 +50,14 @@ msgid "Home"
 msgstr "මුල් පිටුව"
 
 #: src/MainWindow.vala:151 src/Views/InstalledView.vala:33
-#: src/Views/InstalledView.vala:58
+#: src/Views/InstalledView.vala:60
 #, fuzzy
 msgctxt "view"
 msgid "Installed"
 msgstr "ස්ථාපනය කරන්න"
 
 #: src/MainWindow.vala:178 src/MainWindow.vala:337 src/Views/SearchView.vala:55
-#: src/Views/SearchView.vala:82
+#: src/Views/SearchView.vala:86
 msgid "Search Apps"
 msgstr "යෙදවුම් සෙවීම"
 
@@ -695,12 +695,20 @@ msgctxt "view"
 msgid "Search"
 msgstr "යෙදවුම් සෙවීම"
 
-#: src/Widgets/AbstractAppList.vala:36
+#: src/Widgets/AbstractAppList.vala:39
 msgid "No Results"
 msgstr ""
 
-#: src/Widgets/AbstractAppList.vala:36
+#: src/Widgets/AbstractAppList.vala:40
 msgid "No apps could be found. Try changing search terms."
+msgstr ""
+
+#: src/Widgets/AbstractAppList.vala:45
+msgid "Checking for Updates"
+msgstr ""
+
+#: src/Widgets/AbstractAppList.vala:46
+msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr ""
 
 #: src/Widgets/Banner.vala:55
