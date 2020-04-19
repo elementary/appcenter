@@ -154,6 +154,37 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 
         reload_appstream_pool ();
 
+        var proxy_resolver = GLib.ProxyResolver.get_default ();
+        string? http_proxy = null;
+        string? ftp_proxy = null;
+
+        try {
+            // We need an address of something on the internet to see if we need a proxy or not. It's not really
+            // important that this is launchpad, it could be google or fake-made-up-domain.com as it's not resolved
+            // at this point. May as well use a real address that PackageKit may need a proxy for though.
+            var possible_proxies = proxy_resolver.lookup ("http://ppa.launchpad.net");
+            if (possible_proxies.length > 0 && possible_proxies[0] != "direct://") {
+                http_proxy = possible_proxies[0];
+            }
+        } catch (Error e) {
+            warning ("Unable to lookup http proxy to use for PackageKit: %s", e.message);
+        }
+
+        try {
+            var possible_proxies = proxy_resolver.lookup ("ftp://ppa.launchpad.net");
+            if (possible_proxies.length > 0 && possible_proxies[0] != "direct://") {
+                ftp_proxy = possible_proxies[0];
+            }
+        } catch (Error e) {
+            warning ("Unable to lookup ftp proxy to use for PackageKit: %s", e.message);
+        }
+
+        try {
+            control.set_proxy (http_proxy, ftp_proxy);
+        } catch (Error e) {
+            warning ("Unable to set proxy for PackageKit to use: %s", e.message);
+        }
+
         control.updates_changed.connect (updates_changed_callback);
     }
 
@@ -164,7 +195,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
             var time_since_last_action = (new DateTime.now_local ()).difference (last_action) / GLib.TimeSpan.MILLISECOND;
             if (time_since_last_action >= PACKAGEKIT_ACTIVITY_TIMEOUT_MS) {
                 info ("packages possibly changed by external program, refreshing cache");
-                Client.get_default ().update_cache.begin (true);
+                refresh_cache.begin (null);
             }
         }
     }
@@ -243,20 +274,13 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
                 break;
             }
 
-            var package = package_list[pk_package.get_name ()];
+            var package = populate_basic_package_details (pk_package);
             if (package != null) {
-                populate_package (package, pk_package);
                 packages.add (package);
             }
         }
 
         return packages;
-    }
-
-    private static void populate_package (AppCenterCore.Package package, Pk.Package pk_package) {
-        package.mark_installed ();
-        package.latest_version = pk_package.get_version ();
-        package.update_state ();
     }
 
     public Package? get_package_for_component_id (string id) {
@@ -870,19 +894,37 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
             var results = yield client.search_names_async (filter, query, null, () => {});
             var array = results.get_package_array ();
             array.foreach ((pk_package) => {
-                var package = package_list[pk_package.get_name ()];
-                if (package == null) {
-                    return;
-                }
-
-                package.latest_version = pk_package.get_version ();
-                if (pk_package.info == Pk.Info.INSTALLED) {
-                    package.mark_installed ();
-                }
+                populate_basic_package_details (pk_package);
             });
         } catch (Error e) {
             throw e;
         }
+    }
+
+    private Package? populate_basic_package_details (Pk.Package pk_package) {
+        var package = package_list[pk_package.get_name ()];
+        if (package == null) {
+            return null;
+        }
+
+        // The version, name and summary are required in the installed list view, cache these values
+        // here where necessary to avoid looking up each package individually later
+        package.latest_version = pk_package.get_version ();
+
+        // If there is no AppStream name for the component, use the debian package name instead
+        if (unlikely (package.component.get_name () == null)) {
+            package.set_name (pk_package.get_name ());
+        }
+
+        if (package.component.get_summary () == null) {
+            package.set_summary (pk_package.get_summary ());
+        }
+
+        if (pk_package.info == Pk.Info.INSTALLED) {
+            package.mark_installed ();
+        }
+
+        return package;
     }
 
     private void get_package_details_internal (Job job) {

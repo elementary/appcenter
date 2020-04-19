@@ -130,13 +130,13 @@ namespace AppCenter {
             action_button_revealer.add (action_button);
 
             action_button.download_requested.connect (() => {
-                if (install_approved (package) == true) {
+                if (install_approved ()) {
                     action_clicked.begin ();
                 }
             });
 
             action_button.payment_requested.connect ((amount) => {
-                if (install_approved (package) == true) {
+                if (install_approved ()) {
                     show_stripe_dialog (amount);
                 }
             });
@@ -242,8 +242,8 @@ namespace AppCenter {
 
             var plugin_host_package = package.get_plugin_host_package ();
             if (package.is_plugin && plugin_host_package != null) {
-                inner_image.gicon = package.get_icon (icon_size, scale_factor);
-                var overlay_gicon = plugin_host_package.get_icon (icon_size / 2, scale_factor);
+                inner_image.gicon = plugin_host_package.get_icon (icon_size, scale_factor);
+                var overlay_gicon = package.get_icon (icon_size / 2, scale_factor);
 
                 var overlay_image = new Gtk.Image.from_gicon (overlay_gicon, badge_icon_size);
                 overlay_image.halign = overlay_image.valign = Gtk.Align.END;
@@ -459,10 +459,16 @@ namespace AppCenter {
             });
         }
 
-        private bool install_approved (AppCenterCore.Package package) {
+        private bool install_approved () {
             bool approved = true;
 
-            if (App.settings.get_boolean ("non-curated-warning") == true && !(package.is_native || is_os_updates)) {
+            var curated_dialog_allowed = App.settings.get_boolean ("non-curated-warning");
+            var app_installed = package.state != AppCenterCore.Package.State.NOT_INSTALLED;
+            var app_curated = package.is_native || is_os_updates;
+
+            // Only show the curated dialog if the user has left them enabled, the app isn't installed
+            // and it isn't a curated app
+            if (curated_dialog_allowed && !app_installed && !app_curated) {
                 approved = false;
 
                 non_curated_warning = new Widgets.NonCuratedWarningDialog (this.package_name.label);
@@ -487,6 +493,11 @@ namespace AppCenter {
 
                 non_curated_warning.run ();
                 non_curated_warning.destroy ();
+
+                // If the install has been rejected at this stage, return early
+                if (!approved) {
+                    return false;
+                }
             }
 
             if (App.settings.get_boolean ("content-warning") == true && package.is_explicit) {

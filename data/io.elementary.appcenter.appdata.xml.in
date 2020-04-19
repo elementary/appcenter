@@ -15,6 +15,41 @@
     </p>
   </description>
   <releases>
+    <release version="3.2.5" date="2020-04-16" urgency="medium">
+      <description>
+        <p>Fixes</p>
+        <ul>
+          <li>AppCenter now uses configured network proxy settings for apt operations</li>
+          <li>AppCenter no longer prompts for approval to update non-curated apps</li>
+          <li>Reduce slowdowns when opening certain apps</li>
+          <li>Ensure the OS updates subheading copy is correct after finishing updates</li>
+        </ul>
+        <p>Other updates</p>
+        <ul>
+          <li>Only check for updates at computer startup if it's more than 24 hours since we last checked</li>
+          <li>Pressing down in the search field moves the keyboard focus to the search results list</li>
+          <li>Clicking an extension on an app's info page now shows details for the extension</li>
+          <li>Ctrl+F now moves the cursor to the search field</li>
+          <li>To de-clutter the updates view, plugins are now only shown if they require updates</li>
+          <li>Swapped the main and overlay icons for plugins to more clearly associate plugins with their app</li>
+        </ul>
+      </description>
+    </release>
+    <release version="3.2.4" date="2020-04-08" urgency="medium">
+      <description>
+        <p>Fixes</p>
+        <ul>
+          <li>Prevent crashes when updating Flatpaks and system packages simultaneously</li>
+          <li>Prevent suspending when installing, updating, or removing packages</li>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
+    <release version="3.2.3" date="2020-04-01" urgency="medium">
+      <description>
+        <p>Updated translations</p>
+      </description>
+    </release>
     <release version="3.2.2" date="2020-02-28" urgency="medium">
       <description>
         <p>Minor fixes</p>

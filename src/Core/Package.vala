@@ -379,11 +379,16 @@ public class AppCenterCore.Package : Object {
         color_primary_text = null;
         payments_key = null;
         suggested_amount = null;
-        _latest_version = null;
         installed_cached = false;
         _author = null;
         _author_title = null;
         backend_details = null;
+
+        // The version on a PackageKit package comes from the package not AppStream, so only reset the version
+        // on other backends
+        if (!(backend is PackageKitBackend)) {
+            _latest_version = null;
+        }
 
         this.component = component;
     }
@@ -433,6 +438,9 @@ public class AppCenterCore.Package : Object {
     }
 
     public async bool uninstall () throws Error {
+        // We possibly don't know if this package is installed or not yet, so trigger that check first
+        update_state ();
+
         if (state == State.INSTALLED || state == State.UPDATE_AVAILABLE) {
             try {
                 return yield perform_operation (State.REMOVING, State.NOT_INSTALLED, state);
@@ -535,6 +543,10 @@ public class AppCenterCore.Package : Object {
         return name;
     }
 
+    public void set_name (string? new_name) {
+        name = new_name;
+    }
+
     public string? get_description () {
         if (description == null) {
             description = component.get_description ();
@@ -565,6 +577,10 @@ public class AppCenterCore.Package : Object {
         }
 
         return summary;
+    }
+
+    public void set_summary (string? new_summary) {
+        summary = new_summary;
     }
 
     public string get_progress_description () {

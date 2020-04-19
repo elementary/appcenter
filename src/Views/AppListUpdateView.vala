@@ -76,6 +76,27 @@ namespace AppCenter.Views {
             add (scrolled);
         }
 
+        public override void add_packages (Gee.Collection<AppCenterCore.Package> packages) {
+            foreach (var package in packages) {
+                add_row_for_package (package);
+            }
+
+            on_list_changed ();
+        }
+
+        public override void add_package (AppCenterCore.Package package) {
+            add_row_for_package (package);
+            on_list_changed ();
+        }
+
+        private void add_row_for_package (AppCenterCore.Package package) {
+            // Only add row if this isn't a plugin, or it's a plugin needing an update
+            if (!package.is_plugin || (package.is_plugin && package.state == AppCenterCore.Package.State.UPDATE_AVAILABLE)) {
+                var row = construct_row_for_package (package);
+                add_row (row);
+            }
+        }
+
         protected override void on_list_changed () {
             list_box.invalidate_sort ();
         }
@@ -243,9 +264,6 @@ namespace AppCenter.Views {
 
             // Update all updateable apps
             if (apps_to_update.size > 0) {
-                // Prevent computer from sleeping while updating apps
-                SuspendControl.get_default ().inhibit ();
-
                 first_package = apps_to_update[0];
                 first_package.info_changed.connect_after (after_first_package_info_changed);
                 first_package.update.begin (() => {
@@ -299,7 +317,6 @@ namespace AppCenter.Views {
             assert (updating_all_apps && packages_changing == 0);
 
             updating_all_apps = false;
-            SuspendControl.get_default ().uninhibit ();
 
             /* Set the action button sensitive and emit "changed" on each row in order to update
              * the sort order and headers (any change would have been ignored while updating) */
