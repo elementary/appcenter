@@ -27,9 +27,10 @@
           <li>Pressing down in the search field moves the keyboard focus to the search results list</li>
           <li>Reduce slowdowns when opening certain apps</li>
         </ul>
-        <p>Features</p>
+        <p>Other updates</p>
         <ul>
           <li>To de-clutter the updates view, plugins are now only shown if they require updates</li>
+          <li>Swapped the main and overlay icons for plugins to more clearly associate plugins with their app</li>
         </ul>
       </description>
     </release>
