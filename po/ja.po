@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-18 18:09+0000\n"
+"POT-Creation-Date: 2020-04-19 04:23+0000\n"
 "PO-Revision-Date: 2020-04-06 14:22+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/appcenter/ja/>\n"
@@ -30,33 +30,33 @@ msgstr "メディアタイプ %s を解析できませんでした"
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "指定されたリンク '%s' は見つかりませんでした。代わりを検索します"
 
-#: src/Application.vala:273
+#: src/Application.vala:272
 msgid "Application installed"
 msgstr "アプリケーションがインストールされました"
 
-#: src/Application.vala:274
+#: src/Application.vala:273
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s は正常にインストールされました"
 
-#: src/Application.vala:286
+#: src/Application.vala:285
 #, c-format
 msgid "There Was An Error Installing %s."
 msgstr "%s のインストール中にエラーが発生しました。"
 
-#: src/MainWindow.vala:152 src/Views/Homepage.vala:297
+#: src/MainWindow.vala:150 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
 #: src/Views/Homepage.vala:325
 msgid "Home"
 msgstr "ホーム"
 
-#: src/MainWindow.vala:153 src/Views/InstalledView.vala:33
+#: src/MainWindow.vala:151 src/Views/InstalledView.vala:33
 #: src/Views/InstalledView.vala:58
 msgctxt "view"
 msgid "Installed"
 msgstr "インストール済み"
 
-#: src/MainWindow.vala:180 src/MainWindow.vala:339 src/Views/SearchView.vala:55
+#: src/MainWindow.vala:178 src/MainWindow.vala:337 src/Views/SearchView.vala:55
 #: src/Views/SearchView.vala:82
 msgid "Search Apps"
 msgstr "アプリを検索"
@@ -90,7 +90,7 @@ msgstr "パッケージを削除しています"
 msgid "Downloading"
 msgstr "ダウンロードしています"
 
-#: src/Utils.vala:86 src/Core/FlatpakBackend.vala:698
+#: src/Utils.vala:86 src/Core/FlatpakBackend.vala:699
 msgid "Installing"
 msgstr "インストールしています"
 
@@ -135,9 +135,9 @@ msgid "Finished"
 msgstr "完了しました"
 
 #: src/Utils.vala:108 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:707 src/Core/FlatpakBackend.vala:730
-#: src/Core/FlatpakBackend.vala:803 src/Core/FlatpakBackend.vala:904
-#: src/Core/FlatpakBackend.vala:930
+#: src/Core/FlatpakBackend.vala:708 src/Core/FlatpakBackend.vala:731
+#: src/Core/FlatpakBackend.vala:804 src/Core/FlatpakBackend.vala:905
+#: src/Core/FlatpakBackend.vala:931
 msgid "Cancelling"
 msgstr "キャンセルしています"
 
@@ -220,15 +220,15 @@ msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "システムに %u 件のアップデートが利用可能です"
 
-#: src/Core/FlatpakBackend.vala:795
+#: src/Core/FlatpakBackend.vala:796
 msgid "Uninstalling"
 msgstr "アンインストールしています"
 
-#: src/Core/FlatpakBackend.vala:800
+#: src/Core/FlatpakBackend.vala:801
 msgid "Finishing"
 msgstr "完了しています"
 
-#: src/Core/FlatpakBackend.vala:895
+#: src/Core/FlatpakBackend.vala:896
 msgid "Updating"
 msgstr "アップデートしています"
 
@@ -258,7 +258,7 @@ msgstr "Ubuntu ドライバー"
 msgid "Unknown Origin (non-curated)"
 msgstr "提供元不明 (キュレーションされていないアプリ)"
 
-#: src/Core/Package.vala:444
+#: src/Core/Package.vala:452
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "以下のパッケージのアプリケーションは AppCenter でインストール済みの状態になっていません: %s"
