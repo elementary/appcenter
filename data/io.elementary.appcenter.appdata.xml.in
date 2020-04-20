@@ -19,7 +19,7 @@
       <description>
         <p>Performance improvements</p>
         <ul>
-          <li>Only check for updates at computer startup if it's more than 24 hours since we last checked</li>
+          <li>Only check for updates at device startup if it's more than 24 hours since we last checked</li>
           <li>Reduce slowdowns when opening certain apps</li>
         </ul>
         <p>Extension improvements</p>
