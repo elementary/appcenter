@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-18 15:59+0000\n"
+"POT-Creation-Date: 2020-04-19 17:17+0000\n"
 "PO-Revision-Date: 2020-03-11 18:09+0000\n"
 "Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/appcenter/ar/>\n"
@@ -34,34 +34,34 @@ msgstr "لا يمكن تحليل نوع الوسائط \"%s\""
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "الرابط المعطى '%s' غير موجود، إبحث عوضًا عن ذلك"
 
-#: src/Application.vala:270
+#: src/Application.vala:272
 msgid "Application installed"
 msgstr "تم تثبيت التطبيق"
 
-#: src/Application.vala:271
+#: src/Application.vala:273
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s تم تثبيته بنجاح"
 
-#: src/Application.vala:283
+#: src/Application.vala:285
 #, c-format
 msgid "There Was An Error Installing %s."
 msgstr "خطأ في تثبيت %s."
 
-#: src/MainWindow.vala:152 src/Views/Homepage.vala:297
+#: src/MainWindow.vala:150 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
 #: src/Views/Homepage.vala:325
 msgid "Home"
 msgstr "الرئيسية"
 
-#: src/MainWindow.vala:153 src/Views/InstalledView.vala:33
-#: src/Views/InstalledView.vala:58
+#: src/MainWindow.vala:151 src/Views/InstalledView.vala:33
+#: src/Views/InstalledView.vala:60
 msgctxt "view"
 msgid "Installed"
 msgstr "مثبت"
 
-#: src/MainWindow.vala:180 src/MainWindow.vala:339 src/Views/SearchView.vala:55
-#: src/Views/SearchView.vala:82
+#: src/MainWindow.vala:178 src/MainWindow.vala:337 src/Views/SearchView.vala:55
+#: src/Views/SearchView.vala:86
 msgid "Search Apps"
 msgstr "البحث عن التطبيقات"
 
@@ -94,7 +94,7 @@ msgstr "جاري حذف الحزم"
 msgid "Downloading"
 msgstr "تحميل"
 
-#: src/Utils.vala:86 src/Core/FlatpakBackend.vala:698
+#: src/Utils.vala:86 src/Core/FlatpakBackend.vala:699
 msgid "Installing"
 msgstr "جاري التثبيت"
 
@@ -139,9 +139,9 @@ msgid "Finished"
 msgstr "انتهى"
 
 #: src/Utils.vala:108 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:707 src/Core/FlatpakBackend.vala:730
-#: src/Core/FlatpakBackend.vala:803 src/Core/FlatpakBackend.vala:904
-#: src/Core/FlatpakBackend.vala:930
+#: src/Core/FlatpakBackend.vala:708 src/Core/FlatpakBackend.vala:731
+#: src/Core/FlatpakBackend.vala:804 src/Core/FlatpakBackend.vala:905
+#: src/Core/FlatpakBackend.vala:931
 msgid "Cancelling"
 msgstr "الغاء"
 
@@ -234,19 +234,19 @@ msgstr[3] "يوجد %u تحديثات لنظامك"
 msgstr[4] "يوجد %u تحديث لنظامك"
 msgstr[5] "يوجد %u تحديث لنظامك"
 
-#: src/Core/FlatpakBackend.vala:795
+#: src/Core/FlatpakBackend.vala:796
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "إلغاء التثبيت"
 
-#: src/Core/FlatpakBackend.vala:800
+#: src/Core/FlatpakBackend.vala:801
 #, fuzzy
 #| msgid "Finished"
 msgid "Finishing"
 msgstr "انتهى"
 
-#: src/Core/FlatpakBackend.vala:895
+#: src/Core/FlatpakBackend.vala:896
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -278,7 +278,7 @@ msgstr "تعريفات أوبونتو"
 msgid "Unknown Origin (non-curated)"
 msgstr "غير معروف الأصل (غير منظم)"
 
-#: src/Core/Package.vala:444
+#: src/Core/Package.vala:452
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "لم يتم تعيين حالة التطبيق كما هو مثبت في مركز التطبيقات للحزمة: %s"
@@ -663,11 +663,11 @@ msgstr "أنظر إلى %s في مركز التطبيقات:"
 msgid "Share"
 msgstr "شارك"
 
-#: src/Views/AppInfoView.vala:812
+#: src/Views/AppInfoView.vala:815
 msgid "Fund"
 msgstr "دعم"
 
-#: src/Views/AppInfoView.vala:834
+#: src/Views/AppInfoView.vala:837
 msgid "Fund the development of this app"
 msgstr "إدعم تطوير هذا التطبيق"
 
@@ -680,11 +680,11 @@ msgid "Restart Now"
 msgstr "اعادة تشغيل الآن"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:180
+#: src/Views/AppListUpdateView.vala:201
 msgid "Update All"
 msgstr "تحديث الكل"
 
-#: src/Views/AppListView.vala:128
+#: src/Views/AppListView.vala:138
 msgid "Non-Curated Apps"
 msgstr "تطبيقات غير مختارة"
 
@@ -711,13 +711,23 @@ msgctxt "view"
 msgid "Search"
 msgstr "نتائج البحث"
 
-#: src/Widgets/AbstractAppList.vala:36
+#: src/Widgets/AbstractAppList.vala:39
 msgid "No Results"
 msgstr "لاتوجد نتائج"
 
-#: src/Widgets/AbstractAppList.vala:36
+#: src/Widgets/AbstractAppList.vala:40
 msgid "No apps could be found. Try changing search terms."
 msgstr "لا يوجد تطبيقات بهذا الاسم حاول مرة اخرى."
+
+#: src/Widgets/AbstractAppList.vala:45
+#, fuzzy
+#| msgid "Searching for updates…"
+msgid "Checking for Updates"
+msgstr "البحث عن تحديثات…"
+
+#: src/Widgets/AbstractAppList.vala:46
+msgid "Downloading a list of available updates to the OS and installed apps"
+msgstr ""
 
 #: src/Widgets/Banner.vala:55
 msgid "An open, pay-what-you-want app store"

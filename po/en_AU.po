@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-18 15:59+0000\n"
+"POT-Creation-Date: 2020-04-19 17:17+0000\n"
 "PO-Revision-Date: 2018-06-16 00:08+0000\n"
 "Last-Translator: martin fromont <martin.fromont1@gmail.com>\n"
 "Language-Team: English (Australia) <https://weblate.elementary.io/projects/appcenter/appcenter/en_AU/>\n"
@@ -29,36 +29,36 @@ msgstr ""
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Specified link '%s' could not be found, searching instead"
 
-#: src/Application.vala:270
+#: src/Application.vala:272
 msgid "Application installed"
 msgstr "Application installed"
 
-#: src/Application.vala:271
+#: src/Application.vala:273
 #, c-format
 msgid "%s has been successfully installed"
 msgstr ""
 
-#: src/Application.vala:283
+#: src/Application.vala:285
 #, c-format
 msgid "There Was An Error Installing %s."
 msgstr ""
 
-#: src/MainWindow.vala:152 src/Views/Homepage.vala:297
+#: src/MainWindow.vala:150 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
 #: src/Views/Homepage.vala:325
 #, fuzzy
 msgid "Home"
 msgstr "Home Page"
 
-#: src/MainWindow.vala:153 src/Views/InstalledView.vala:33
-#: src/Views/InstalledView.vala:58
+#: src/MainWindow.vala:151 src/Views/InstalledView.vala:33
+#: src/Views/InstalledView.vala:60
 #, fuzzy
 msgctxt "view"
 msgid "Installed"
 msgstr "Install"
 
-#: src/MainWindow.vala:180 src/MainWindow.vala:339 src/Views/SearchView.vala:55
-#: src/Views/SearchView.vala:82
+#: src/MainWindow.vala:178 src/MainWindow.vala:337 src/Views/SearchView.vala:55
+#: src/Views/SearchView.vala:86
 msgid "Search Apps"
 msgstr "Search Apps"
 
@@ -91,7 +91,7 @@ msgstr ""
 msgid "Downloading"
 msgstr ""
 
-#: src/Utils.vala:86 src/Core/FlatpakBackend.vala:698
+#: src/Utils.vala:86 src/Core/FlatpakBackend.vala:699
 msgid "Installing"
 msgstr "Installing"
 
@@ -136,9 +136,9 @@ msgid "Finished"
 msgstr ""
 
 #: src/Utils.vala:108 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:707 src/Core/FlatpakBackend.vala:730
-#: src/Core/FlatpakBackend.vala:803 src/Core/FlatpakBackend.vala:904
-#: src/Core/FlatpakBackend.vala:930
+#: src/Core/FlatpakBackend.vala:708 src/Core/FlatpakBackend.vala:731
+#: src/Core/FlatpakBackend.vala:804 src/Core/FlatpakBackend.vala:905
+#: src/Core/FlatpakBackend.vala:931
 msgid "Cancelling"
 msgstr ""
 
@@ -223,17 +223,17 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Core/FlatpakBackend.vala:795
+#: src/Core/FlatpakBackend.vala:796
 #, fuzzy
 #| msgid "Installing"
 msgid "Uninstalling"
 msgstr "Installing"
 
-#: src/Core/FlatpakBackend.vala:800
+#: src/Core/FlatpakBackend.vala:801
 msgid "Finishing"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:895
+#: src/Core/FlatpakBackend.vala:896
 #, fuzzy
 #| msgid "Updates"
 msgid "Updating"
@@ -265,7 +265,7 @@ msgstr ""
 msgid "Unknown Origin (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:444
+#: src/Core/Package.vala:452
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
@@ -644,11 +644,11 @@ msgstr ""
 msgid "Share"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:812
+#: src/Views/AppInfoView.vala:815
 msgid "Fund"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:834
+#: src/Views/AppInfoView.vala:837
 msgid "Fund the development of this app"
 msgstr ""
 
@@ -661,11 +661,11 @@ msgid "Restart Now"
 msgstr ""
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:180
+#: src/Views/AppListUpdateView.vala:201
 msgid "Update All"
 msgstr ""
 
-#: src/Views/AppListView.vala:128
+#: src/Views/AppListView.vala:138
 msgid "Non-Curated Apps"
 msgstr ""
 
@@ -692,12 +692,20 @@ msgctxt "view"
 msgid "Search"
 msgstr ""
 
-#: src/Widgets/AbstractAppList.vala:36
+#: src/Widgets/AbstractAppList.vala:39
 msgid "No Results"
 msgstr ""
 
-#: src/Widgets/AbstractAppList.vala:36
+#: src/Widgets/AbstractAppList.vala:40
 msgid "No apps could be found. Try changing search terms."
+msgstr ""
+
+#: src/Widgets/AbstractAppList.vala:45
+msgid "Checking for Updates"
+msgstr ""
+
+#: src/Widgets/AbstractAppList.vala:46
+msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr ""
 
 #: src/Widgets/Banner.vala:55

@@ -21,10 +21,18 @@
         <ul>
           <li>AppCenter now uses configured network proxy settings for apt operations</li>
           <li>AppCenter no longer prompts for approval to update non-curated apps</li>
-          <li>Clicking an extension on an app's info page now shows details for the extension</li>
-          <li>CTRL+F now moves the cursor to the search field</li>
-          <li>Pressing down in the search field moves the keyboard focus to the search results list</li>
           <li>Reduce slowdowns when opening certain apps</li>
+          <li>Ensure the OS updates subheading copy is correct after finishing updates</li>
+          <li>Show a more informative loading screen when checking for updates</li>
+        </ul>
+        <p>Other updates</p>
+        <ul>
+          <li>Only check for updates at computer startup if it's more than 24 hours since we last checked</li>
+          <li>Pressing down in the search field moves the keyboard focus to the search results list</li>
+          <li>Clicking an extension on an app's info page now shows details for the extension</li>
+          <li>Ctrl+F now moves the cursor to the search field</li>
+          <li>To de-clutter the updates view, plugins are now only shown if they require updates</li>
+          <li>Swapped the main and overlay icons for plugins to more clearly associate plugins with their app</li>
         </ul>
       </description>
     </release>

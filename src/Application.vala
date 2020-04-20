@@ -153,7 +153,8 @@ public class AppCenter.App : Gtk.Application {
                 schedule_cache_update (!available);
             });
 
-            client.update_cache.begin (true);
+            // Don't force a cache refresh for the silent daemon, it'll run if it was >24 hours since the last one
+            client.update_cache.begin (false);
             silent = false;
             hold ();
             return;
@@ -172,12 +173,14 @@ public class AppCenter.App : Gtk.Application {
         if (main_window == null) {
             main_window = new MainWindow (this);
 
+
+            // Force a cache refresh when the window opens, so we get new apps
 #if HOMEPAGE
             main_window.homepage_loaded.connect (() => {
-                client.update_cache.begin ();
+                client.update_cache.begin (true);
             });
 #else
-            client.update_cache.begin ();
+            client.update_cache.begin (true);
 #endif
 
             main_window.destroy.connect (() => {
@@ -203,7 +206,6 @@ public class AppCenter.App : Gtk.Application {
         base.dbus_register (connection, object_path);
 
         if (silent) {
-            DBusServer.init ();
             try {
                 registration_id = connection.register_object ("/io/elementary/appcenter", DBusServer.get_default ());
             } catch (Error e) {

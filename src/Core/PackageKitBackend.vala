@@ -274,20 +274,13 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
                 break;
             }
 
-            var package = package_list[pk_package.get_name ()];
+            var package = populate_basic_package_details (pk_package);
             if (package != null) {
-                populate_package (package, pk_package);
                 packages.add (package);
             }
         }
 
         return packages;
-    }
-
-    private static void populate_package (AppCenterCore.Package package, Pk.Package pk_package) {
-        package.mark_installed ();
-        package.latest_version = pk_package.get_version ();
-        package.update_state ();
     }
 
     public Package? get_package_for_component_id (string id) {
@@ -901,19 +894,37 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
             var results = yield client.search_names_async (filter, query, null, () => {});
             var array = results.get_package_array ();
             array.foreach ((pk_package) => {
-                var package = package_list[pk_package.get_name ()];
-                if (package == null) {
-                    return;
-                }
-
-                package.latest_version = pk_package.get_version ();
-                if (pk_package.info == Pk.Info.INSTALLED) {
-                    package.mark_installed ();
-                }
+                populate_basic_package_details (pk_package);
             });
         } catch (Error e) {
             throw e;
         }
+    }
+
+    private Package? populate_basic_package_details (Pk.Package pk_package) {
+        var package = package_list[pk_package.get_name ()];
+        if (package == null) {
+            return null;
+        }
+
+        // The version, name and summary are required in the installed list view, cache these values
+        // here where necessary to avoid looking up each package individually later
+        package.latest_version = pk_package.get_version ();
+
+        // If there is no AppStream name for the component, use the debian package name instead
+        if (unlikely (package.component.get_name () == null)) {
+            package.set_name (pk_package.get_name ());
+        }
+
+        if (package.component.get_summary () == null) {
+            package.set_summary (pk_package.get_summary ());
+        }
+
+        if (pk_package.info == Pk.Info.INSTALLED) {
+            package.mark_installed ();
+        }
+
+        return package;
     }
 
     private void get_package_details_internal (Job job) {
