@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-19 17:17+0000\n"
-"PO-Revision-Date: 2020-04-19 17:15+0000\n"
+"PO-Revision-Date: 2020-04-20 17:20+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/extra/"
 "ca/>\n"
@@ -66,6 +66,7 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:26
 msgid "Show a more informative loading screen when checking for updates"
 msgstr ""
+"Es mostra una pantalla més informativa quan es comproven les actualitzacions."
 
 #: data/io.elementary.appcenter.appdata.xml.in:28
 msgid "Other updates"

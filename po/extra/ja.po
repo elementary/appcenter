@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-19 17:17+0000\n"
-"PO-Revision-Date: 2020-03-11 18:09+0000\n"
+"PO-Revision-Date: 2020-04-20 17:20+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/extra/"
 "ja/>\n"
@@ -37,77 +37,75 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:41
 msgid "Fixes"
-msgstr ""
+msgstr "修正点"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "AppCenter now uses configured network proxy settings for apt operations"
-msgstr ""
+msgstr "apt 操作に設定済みのネットワークプロキシ設定を使用するように変更"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "AppCenter no longer prompts for approval to update non-curated apps"
-msgstr ""
+msgstr "キューレートしていないアプリのアップデートの際に、インストール許可のダイアログを表示しないように修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:24
 msgid "Reduce slowdowns when opening certain apps"
-msgstr ""
+msgstr "特定のアプリを開く際に動作が遅くなる問題を軽減"
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
 msgid ""
 "Ensure the OS updates subheading copy is correct after finishing updates"
-msgstr ""
+msgstr "アップデート終了後に OS のアップデートの見出しに正しいテキストが表示されるように修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:26
 msgid "Show a more informative loading screen when checking for updates"
-msgstr ""
+msgstr "アップデートの確認中により有益な読み込み画面を表示するように修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:28
-#, fuzzy
-#| msgid "Check for Updates"
 msgid "Other updates"
-msgstr "アップデートを確認"
+msgstr "そのほかのアップデート"
 
 #: data/io.elementary.appcenter.appdata.xml.in:30
 msgid ""
 "Only check for updates at computer startup if it's more than 24 hours since "
 "we last checked"
-msgstr ""
+msgstr "直近のアップデート確認から 24 時間経過した場合は、コンピューターの起動時にのみアップデートを確認"
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
 msgid ""
 "Pressing down in the search field moves the keyboard focus to the search "
 "results list"
-msgstr ""
+msgstr "検索欄で下キーを押すと、検索結果の一覧にキーボードのフォーカスを移動するように変更"
 
 #: data/io.elementary.appcenter.appdata.xml.in:32
 msgid ""
 "Clicking an extension on an app's info page now shows details for the "
 "extension"
-msgstr ""
+msgstr "アプリの情報ページで拡張機能をクリックすると、拡張機能の詳細情報を表示するように変更"
 
 #: data/io.elementary.appcenter.appdata.xml.in:33
 msgid "Ctrl+F now moves the cursor to the search field"
-msgstr ""
+msgstr "Ctrl+F キーを押すと検索欄にカーソルを移動するように変更"
 
 #: data/io.elementary.appcenter.appdata.xml.in:34
 msgid ""
 "To de-clutter the updates view, plugins are now only shown if they require "
 "updates"
-msgstr ""
+msgstr "アップデートビューを整理するために、アップデートがある場合にのみ拡張機能を表示するように変更"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
 msgid ""
 "Swapped the main and overlay icons for plugins to more clearly associate "
 "plugins with their app"
-msgstr ""
+msgstr "より明確に拡張機能をアプリと関連付けるため、拡張機能のメインアイコンと重ねて表示するアイコンを入れ替え"
 
 #: data/io.elementary.appcenter.appdata.xml.in:43
 msgid ""
 "Prevent crashes when updating Flatpaks and system packages simultaneously"
-msgstr ""
+msgstr "Flatpak とシステムパッケージを同時にアップデートする際にクラッシュする問題を修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:44
 msgid "Prevent suspending when installing, updating, or removing packages"
-msgstr ""
+msgstr "パッケージのインストール・アップデート・削除中はサスペンドしないように修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:45
 #: data/io.elementary.appcenter.appdata.xml.in:51
@@ -268,7 +266,7 @@ msgstr "メモリー管理の改善"
 #: data/io.elementary.appcenter.appdata.xml.in:110
 msgid ""
 "Add conditional compilation for disabling dynamic remote homepage content"
-msgstr ""
+msgstr "動的なリモートホームページコンテンツを無効化するための動的なコンパイルオプションを追加"
 
 #: data/io.elementary.appcenter.appdata.xml.in:111
 #: data/io.elementary.appcenter.appdata.xml.in:123
