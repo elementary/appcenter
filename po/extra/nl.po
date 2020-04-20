@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-20 17:22+0000\n"
-"PO-Revision-Date: 2020-03-05 14:09+0000\n"
+"PO-Revision-Date: 2020-04-21 17:02+0000\n"
 "Last-Translator: Jaimie85 <alsemgeest@gmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/extra/nl/"
 ">\n"
@@ -51,10 +51,8 @@ msgid "Reduce slowdowns when opening certain apps"
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
-#, fuzzy
-#| msgid "Performance improvements"
 msgid "Extension improvements"
-msgstr "Prestaties zijn verbeterd"
+msgstr "Extensies zijn verbeterd"
 
 #: data/io.elementary.appcenter.appdata.xml.in:27
 msgid ""
@@ -75,10 +73,8 @@ msgid ""
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
-#, fuzzy
-#| msgid "Performance improvements"
 msgid "Keyboard improvements"
-msgstr "Prestaties zijn verbeterd"
+msgstr "Toetsenbord verbeteringen"
 
 #: data/io.elementary.appcenter.appdata.xml.in:33
 msgid ""
@@ -93,7 +89,7 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:36
 #: data/io.elementary.appcenter.appdata.xml.in:51
 msgid "Fixes"
-msgstr ""
+msgstr "Oplossingen"
 
 #: data/io.elementary.appcenter.appdata.xml.in:38
 msgid "Use configured network proxy settings for apt operations"
@@ -127,10 +123,14 @@ msgstr "Bijgewerkte vertalingen"
 msgid ""
 "Prevent crashes when updating Flatpaks and system packages simultaneously"
 msgstr ""
+"Voorkom crashes als Flatpaks en systeempakketten tegelijkertijd bijgewerkt "
+"worden"
 
 #: data/io.elementary.appcenter.appdata.xml.in:54
 msgid "Prevent suspending when installing, updating, or removing packages"
 msgstr ""
+"Voorkom slaapstand tijdens het installeren, bijwerken of verwijderen van "
+"pakketten"
 
 #: data/io.elementary.appcenter.appdata.xml.in:66
 #: data/io.elementary.appcenter.appdata.xml.in:83
