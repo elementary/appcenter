@@ -1,13 +1,14 @@
 # Dieter Debast <dieter_debast@hotmail.com>, 2018.
-# Jaimie85 <alsemgeest@gmail.com>, 2019.
+# Jaimie85 <alsemgeest@gmail.com>, 2019, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-19 17:17+0000\n"
-"PO-Revision-Date: 2019-12-31 06:14+0000\n"
+"PO-Revision-Date: 2020-04-21 17:02+0000\n"
 "Last-Translator: Jaimie85 <alsemgeest@gmail.com>\n"
-"Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/appcenter/nl/>\n"
+"Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -224,22 +225,16 @@ msgstr[0] "%u update is beschikbaar voor uw systeem"
 msgstr[1] "%u updates zijn beschikbaar voor uw systeem"
 
 #: src/Core/FlatpakBackend.vala:796
-#, fuzzy
-#| msgid "Uninstall"
 msgid "Uninstalling"
-msgstr "Verwijderen"
+msgstr "Deïnstalleren"
 
 #: src/Core/FlatpakBackend.vala:801
-#, fuzzy
-#| msgid "Finished"
 msgid "Finishing"
-msgstr "Klaar"
+msgstr "Voltooien"
 
 #: src/Core/FlatpakBackend.vala:896
-#, fuzzy
-#| msgid "Update"
 msgid "Updating"
-msgstr "Bijwerken"
+msgstr "Updaten"
 
 #: src/Core/Package.vala:300
 #, c-format
@@ -273,10 +268,9 @@ msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Het volgende pakket is niet geïnstalleerd in AppCenter: %s"
 
 #: src/Core/PackageKitBackend.vala:251
-#, fuzzy, c-format
-#| msgid "%s (non-curated)"
+#, c-format
 msgid "%s (local)"
-msgstr "%s (niet beheerd)"
+msgstr "%s (lokaal)"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -348,35 +342,33 @@ msgid "Install Anyway"
 msgstr "Toch installeren"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
-#, fuzzy
-#| msgid "Content Warning"
 msgid "Non-Curated Warning"
-msgstr "Inhoudswaarschuwing"
+msgstr "Waarschuwing"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:37
-#, fuzzy
-#| msgid "%s (non-curated)"
 msgid "Install non-curated app?"
-msgstr "%s (niet beheerd)"
+msgstr "Onbeheerde app installeren?"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
 msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
 msgstr ""
+"“%s” wordt niet beheerd door elementary en is nog niet beoordeeld op "
+"veiligheid, privacy of systeemintegratie."
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
 msgid "It may not receive bug fix or feature updates"
-msgstr ""
+msgstr "Mogelijk kan het geen bug fixes of functie-updates krijgen"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:60
 msgid "It may access or change system or personal files without permission"
 msgstr ""
+"Mogelijk kan het toegang hebben tot systeems- en persoonlijke bestanden of "
+"deze bestanden veranderen zonder toestemming"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
-#, fuzzy
-#| msgid "Show content warnings"
 msgid "Show non-curated warnings"
-msgstr "Toon inhoudswaarschuwingen"
+msgstr "Toon waarschuwingen bij onbeheerde applicaties"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -705,14 +697,14 @@ msgid "No apps could be found. Try changing search terms."
 msgstr "Kan geen applicaties vinden, probeer uw zoektermen te veranderen."
 
 #: src/Widgets/AbstractAppList.vala:45
-#, fuzzy
-#| msgid "Searching for updates…"
 msgid "Checking for Updates"
-msgstr "Updates zoeken…"
+msgstr "Updates zoeken"
 
 #: src/Widgets/AbstractAppList.vala:46
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr ""
+"Een lijst met beschikbare updates voor het systeem en geïnstalleerde apps "
+"downloaden"
 
 #: src/Widgets/Banner.vala:55
 msgid "An open, pay-what-you-want app store"
@@ -780,7 +772,7 @@ msgstr "Systeem"
 
 #: src/Widgets/CategoryFlowBox.vala:119
 msgid "Universal Access"
-msgstr "Universele toegang"
+msgstr "Toegankelijkheid"
 
 #: src/Widgets/CategoryFlowBox.vala:120
 msgid "Video"
