@@ -131,7 +131,6 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - Anonymous Backer
 - Anonymous Backer
 - Anonymous Backer
-- Anonymous Backer
 - Anthony Weathers
 - Antti Impiö
 - Arnaud Durif
@@ -278,6 +277,7 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - James Gordon
 - Jamie Phillips
 - Jan Kočí
+- Jan Lajka
 - Jason Jacobs
 - Javier Olguin
 - Jayant Moosad
