@@ -489,7 +489,7 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - Victor Kilikaev
 - Vinodh Moodley
 - Volker Thiel
-- Volodimir Biloshicky
+- Volodymyr Biloshytskyi
 - Vuk Boskovic
 - Wesley McCormick
 - Wesley Payne
