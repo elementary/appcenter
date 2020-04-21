@@ -422,6 +422,7 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - Quentin Ricci
 - Raj Sardhara
 - Randolph Murdock III
+- Raymond WT Leung
 - Reed Love
 - Rein Bentdal
 - Ricardo Rodrigues
@@ -494,7 +495,6 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - Wesley Payne
 - Will Barnard
 - Willi Mutschler
-- wtleung
 - Xavier Scheuer
 - Xiaoxuan He
 - Yasen Tzvetkov
