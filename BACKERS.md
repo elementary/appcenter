@@ -127,7 +127,6 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - Anonymous Backer
 - Anonymous Backer
 - Anonymous Backer
-- Anonymous Backer
 - Anthony Weathers
 - Antti Impiö
 - Arnaud Durif
@@ -223,6 +222,7 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - Eddie Ehlin
 - Emanuel Francisco Garcia Bautista
 - Emanuel Vitorino
+- Emma Blink
 - en15for
 - Eric Rogers
 - Érico Porto
