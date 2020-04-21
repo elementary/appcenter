@@ -143,7 +143,6 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - Benjamin Collet
 - Berger Rudolf
 - Bernardo Ferrari
-- binternagel
 - Bjarne Kristensen
 - Bobby Moss
 - Boris Mann
@@ -220,6 +219,7 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - dragonlich
 - Dustin Nguyen
 - Eddie Ehlin
+- Eike Binternagel
 - Emanuel Francisco Garcia Bautista
 - Emanuel Vitorino
 - Emma Blink
