@@ -296,7 +296,7 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - John Been
 - John Beers
 - John Cooper
-- John Ferguson
+- John Urquhart Ferguson
 - John Joseph Radecki
 - johnnie
 - Jonas Emil Sommer
