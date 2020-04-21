@@ -478,7 +478,7 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - Tim Bischoff
 - Timothy Byers
 - timz
-- TNG Entertainment
+- TNG
 - Tom Wor
 - Tommy Andrew Creuzer
 - Uncle Steve Fishing AB4EL
