@@ -178,7 +178,7 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - Cory DeVore
 - Craig Lovell
 - Craig Luchtefeld
-- crisconru
+- Cristóbal Contreras Rubio
 - Dan Livingston
 - Dan Mullen
 - Daniel Batsche
