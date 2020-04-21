@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-20 17:22+0000\n"
-"PO-Revision-Date: 2020-04-20 17:20+0000\n"
+"PO-Revision-Date: 2020-04-21 17:02+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/extra/"
 "ca/>\n"
@@ -41,15 +41,11 @@ msgid "Performance improvements"
 msgstr "Millores de rendiment"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
-#, fuzzy
-#| msgid ""
-#| "Only check for updates at computer startup if it's more than 24 hours "
-#| "since we last checked"
 msgid ""
 "Only check for updates at device startup if it's more than 24 hours since we "
 "last checked"
 msgstr ""
-"Només es comprova si hi ha actualitzacions a l’inici de l’ordinador si "
+"Només es comprova si hi ha actualitzacions a l’inici del dispositiu si "
 "passen més de 24 hores des de l’últim cop."
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
@@ -57,21 +53,15 @@ msgid "Reduce slowdowns when opening certain apps"
 msgstr "Reducció de desacceleracions en obrir determinades aplicacions"
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
-#, fuzzy
-#| msgid "Performance improvements"
 msgid "Extension improvements"
-msgstr "Millores de rendiment"
+msgstr "Millores de les extensions"
 
 #: data/io.elementary.appcenter.appdata.xml.in:27
-#, fuzzy
-#| msgid ""
-#| "To de-clutter the updates view, plugins are now only shown if they "
-#| "require updates"
 msgid ""
 "To de-clutter the updates view, extensions are now only shown if they "
 "require updates"
 msgstr ""
-"Per endreçar la vista de les actualitzacions, els connectors ara només es "
+"Per endreçar la vista de les actualitzacions, les extensions ara només es "
 "mostren si requereixen actualitzacions."
 
 #: data/io.elementary.appcenter.appdata.xml.in:28
@@ -83,22 +73,16 @@ msgstr ""
 "detalls de l'extensió."
 
 #: data/io.elementary.appcenter.appdata.xml.in:29
-#, fuzzy
-#| msgid ""
-#| "Swapped the main and overlay icons for plugins to more clearly associate "
-#| "plugins with their app"
 msgid ""
 "Swap the main and overlay icons for extensions to more clearly associate "
 "extensions with their app"
 msgstr ""
-"Canvi de les icones principals i superposades dels connectors per associar-"
-"los més clarament amb la seva aplicació."
+"Canvi de les icones principals i superposades de les extensions per associar-"
+"les més clarament amb la seva aplicació."
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
-#, fuzzy
-#| msgid "Performance improvements"
 msgid "Keyboard improvements"
-msgstr "Millores de rendiment"
+msgstr "Millores del teclat"
 
 #: data/io.elementary.appcenter.appdata.xml.in:33
 msgid ""
@@ -118,21 +102,14 @@ msgid "Fixes"
 msgstr "Correccions"
 
 #: data/io.elementary.appcenter.appdata.xml.in:38
-#, fuzzy
-#| msgid ""
-#| "AppCenter now uses configured network proxy settings for apt operations"
 msgid "Use configured network proxy settings for apt operations"
 msgstr ""
-"El Centre d'aplicacions ara usa els paràmetres de xarxa del servidor "
-"intermediari per a les operacions d'apt."
+"S'usen els paràmetres del servidor intermediari de xarxa configurats per a "
+"operacions d'apt."
 
 #: data/io.elementary.appcenter.appdata.xml.in:39
-#, fuzzy
-#| msgid "AppCenter no longer prompts for approval to update non-curated apps"
 msgid "No longer prompt for approval to update non-curated apps"
-msgstr ""
-"El Centre d'aplicacions ja no demana aprovació per actualitzar aplicacions "
-"sense cura."
+msgstr "Ja no es demana aprovació per actualitzar aplicacions sense cura."
 
 #: data/io.elementary.appcenter.appdata.xml.in:40
 msgid ""
@@ -143,7 +120,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:42
 msgid "And more"
-msgstr ""
+msgstr "I més coses"
 
 #: data/io.elementary.appcenter.appdata.xml.in:44
 msgid "Show a more informative loading screen when checking for updates"
