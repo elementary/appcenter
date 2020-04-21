@@ -338,7 +338,7 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - Leo Herzog
 - Leonardo Bertechini Stabile
 - Leszek Szczepański
-- lhanssen
+- Lieven Hanssen
 - Lin Hung-Shin
 - Lior Lobel
 - Logan Fouchet
