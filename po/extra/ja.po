@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-20 17:22+0000\n"
-"PO-Revision-Date: 2020-04-20 17:20+0000\n"
+"PO-Revision-Date: 2020-04-21 17:02+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/extra/"
 "ja/>\n"
@@ -40,38 +40,24 @@ msgid "Performance improvements"
 msgstr "パフォーマンスの改善"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
-#, fuzzy
-#| msgid ""
-#| "Only check for updates at computer startup if it's more than 24 hours "
-#| "since we last checked"
 msgid ""
 "Only check for updates at device startup if it's more than 24 hours since we "
 "last checked"
-msgstr ""
-"直近のアップデート確認から 24 時間経過した場合は、コンピューターの起動時にの"
-"みアップデートを確認"
+msgstr "直近のアップデート確認から 24 時間経過した場合は、デバイスの起動時にのみアップデートを確認"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Reduce slowdowns when opening certain apps"
 msgstr "特定のアプリを開く際に動作が遅くなる問題を軽減"
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
-#, fuzzy
-#| msgid "Performance improvements"
 msgid "Extension improvements"
-msgstr "パフォーマンスの改善"
+msgstr "拡張機能の改善"
 
 #: data/io.elementary.appcenter.appdata.xml.in:27
-#, fuzzy
-#| msgid ""
-#| "To de-clutter the updates view, plugins are now only shown if they "
-#| "require updates"
 msgid ""
 "To de-clutter the updates view, extensions are now only shown if they "
 "require updates"
-msgstr ""
-"アップデートビューを整理するために、アップデートがある場合にのみ拡張機能を表"
-"示するように変更"
+msgstr "アップデートビューを整理するために、アップデートがある場合にのみ拡張機能を表示するように変更"
 
 #: data/io.elementary.appcenter.appdata.xml.in:28
 msgid ""
@@ -82,22 +68,14 @@ msgstr ""
 "うに変更"
 
 #: data/io.elementary.appcenter.appdata.xml.in:29
-#, fuzzy
-#| msgid ""
-#| "Swapped the main and overlay icons for plugins to more clearly associate "
-#| "plugins with their app"
 msgid ""
 "Swap the main and overlay icons for extensions to more clearly associate "
 "extensions with their app"
-msgstr ""
-"より明確に拡張機能をアプリと関連付けるため、拡張機能のメインアイコンと重ねて"
-"表示するアイコンを入れ替え"
+msgstr "より明確に拡張機能をアプリと関連付けるため、拡張機能のメインアイコンと重ねて表示するアイコンを入れ替え"
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
-#, fuzzy
-#| msgid "Performance improvements"
 msgid "Keyboard improvements"
-msgstr "パフォーマンスの改善"
+msgstr "キーボードの改善"
 
 #: data/io.elementary.appcenter.appdata.xml.in:33
 msgid ""
@@ -117,19 +95,12 @@ msgid "Fixes"
 msgstr "修正点"
 
 #: data/io.elementary.appcenter.appdata.xml.in:38
-#, fuzzy
-#| msgid ""
-#| "AppCenter now uses configured network proxy settings for apt operations"
 msgid "Use configured network proxy settings for apt operations"
 msgstr "apt 操作に設定済みのネットワークプロキシ設定を使用するように変更"
 
 #: data/io.elementary.appcenter.appdata.xml.in:39
-#, fuzzy
-#| msgid "AppCenter no longer prompts for approval to update non-curated apps"
 msgid "No longer prompt for approval to update non-curated apps"
-msgstr ""
-"キューレートしていないアプリのアップデートの際に、インストール許可のダイアロ"
-"グを表示しないように修正"
+msgstr "キューレートしていないアプリのアップデートの際に、インストール許可のダイアログを表示しないように修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:40
 msgid ""
@@ -140,7 +111,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:42
 msgid "And more"
-msgstr ""
+msgstr "そのほかの修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:44
 msgid "Show a more informative loading screen when checking for updates"
