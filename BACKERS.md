@@ -125,7 +125,6 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - Anonymous Backer
 - Anonymous Backer
 - Anonymous Backer
-- Anonymous Backer
 - Anthony Weathers
 - Antti Impiö
 - Arnaud Durif
@@ -186,6 +185,7 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - Daniel Batsche
 - DANIEL J JAMES
 - Daniel Landau
+- Daniel Lindenfelser
 - Daniel Patton
 - Daniel Pontoriero
 - Daniel Rusek
