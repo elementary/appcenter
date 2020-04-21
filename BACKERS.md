@@ -128,7 +128,6 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - Anonymous Backer
 - Anonymous Backer
 - Anonymous Backer
-- Anonymous Backer
 - Anthony Weathers
 - Antti Impiö
 - Arnaud Durif
@@ -360,6 +359,7 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - Marco Bluethgen
 - Marco Marzillier
 - Mario Siqueira
+- Marius Meisenzahl
 - Martin Giger
 - Martin Kerz
 - Martin Untersteiner
