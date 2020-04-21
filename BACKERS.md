@@ -124,7 +124,6 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - Anonymous Backer
 - Anonymous Backer
 - Anonymous Backer
-- Anonymous Backer
 - Anthony Weathers
 - Antti Impiö
 - Arnaud Durif
@@ -372,6 +371,7 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - Matthew Crews
 - Max-Jonathan Luckow
 - mcronen
+- Mehrad Mahmoudian
 - Melf Christiansen
 - Micah Ilbery
 - Michael B Nielsen
