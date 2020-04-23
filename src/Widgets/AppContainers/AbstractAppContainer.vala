@@ -194,6 +194,7 @@ namespace AppCenter {
 
             action_stack = new Gtk.Stack ();
             action_stack.hexpand = true;
+            action_stack.hhomogeneous = false;
             action_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
             action_stack.add_named (button_grid, "buttons");
             action_stack.add_named (progress_grid, "progress");

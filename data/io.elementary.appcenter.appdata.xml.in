@@ -38,6 +38,7 @@
           <li>Use configured network proxy settings for apt operations</li>
           <li>No longer prompt for approval to update non-curated apps</li>
           <li>Ensure the OS updates subheading copy is correct after finishing updates</li>
+          <li>Ellipsize long app names in App Info views</li>
         </ul>
         <p>And more</p>
         <ul>
