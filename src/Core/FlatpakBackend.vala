@@ -673,6 +673,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             critical ("Error setting up transaction for flatpak install: %s", e.message);
             job.result = Value (typeof (bool));
             job.result.set_boolean (false);
+            job.error = e;
             job.results_ready ();
             return;
         }
@@ -709,8 +710,13 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 success = true;
             }
 
-            // Only stop if this is a fatal error
-            return detail == Flatpak.TransactionErrorDetails.NON_FATAL;
+            // Only cancel the transaction if this is fatal
+            var should_continue = detail == Flatpak.TransactionErrorDetails.NON_FATAL;
+            if (!should_continue) {
+                job.error = e;
+            }
+
+            return should_continue;
         });
 
         transaction.operation_done.connect ((operation, commit, details) => {
@@ -732,6 +738,10 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 success = true;
             } else {
                 success = false;
+                // Don't overwrite any previous errors as the first is probably most important
+                if (job.error != null) {
+                    job.error = e;
+                }
             }
         }
 
