@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-23 19:12+0000\n"
+"POT-Creation-Date: 2020-04-23 22:03+0000\n"
 "PO-Revision-Date: 2018-10-28 09:52+0000\n"
 "Last-Translator: Fredrik B <frbo9002@gmail.com>\n"
 "Language-Team: Swedish <https://weblate.elementary.io/projects/appcenter/appcenter/sv/>\n"
@@ -38,11 +38,6 @@ msgstr "Program installerat"
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s har installerats"
-
-#: src/Application.vala:285
-#, c-format
-msgid "There Was An Error Installing %s."
-msgstr "Ett fel uppstod vid installation av %s."
 
 #: src/MainWindow.vala:150 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
@@ -346,6 +341,21 @@ msgstr "Installera inte"
 #: src/Dialogs/NonCuratedWarningDialog.vala:82
 msgid "Install Anyway"
 msgstr "Installera ändå"
+
+#: src/Dialogs/InstallFailDialog.vala:26
+#, fuzzy
+msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
+msgstr "Detta kan ha orsakats av externa, manuellt tillagda programvaruarkiv eller en korrupt sources-fil."
+
+#: src/Dialogs/InstallFailDialog.vala:37
+#, fuzzy
+msgid "Failed to install app"
+msgstr "Sök och installera program"
+
+#: src/Dialogs/InstallFailDialog.vala:40
+#, fuzzy, c-format
+msgid "Failed to install “%s”"
+msgstr "Sök och installera program"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
 #, fuzzy
@@ -913,6 +923,9 @@ msgstr "Öppna"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:330
 msgid "Update"
 msgstr "Uppdatera"
+
+#~ msgid "There Was An Error Installing %s."
+#~ msgstr "Ett fel uppstod vid installation av %s."
 
 #~ msgid "Size: %s"
 #~ msgstr "Storlek: %s"

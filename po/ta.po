@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-23 19:12+0000\n"
+"POT-Creation-Date: 2020-04-23 22:03+0000\n"
 "PO-Revision-Date: 2017-06-16 17:37+0000\n"
 "Last-Translator: Rajeev Kumar <irajeevankumar@gmail.com>\n"
 "Language-Team: Tamil <https://l10n.elementary.io/projects/appcenter/appcenter/ta/>\n"
@@ -37,11 +37,6 @@ msgstr "மென்பொருள் நிறுவப்பட்டது"
 #, fuzzy, c-format
 msgid "%s has been successfully installed"
 msgstr "% வெற்றிகரமாக நிறுவப்பட்டது"
-
-#: src/Application.vala:285
-#, fuzzy, c-format
-msgid "There Was An Error Installing %s."
-msgstr "%s நிறுவுவதில்  ஒரு  பிழை"
 
 #: src/MainWindow.vala:150 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
@@ -347,6 +342,20 @@ msgstr ""
 #, fuzzy
 msgid "Install Anyway"
 msgstr "நிறுவுகிறது"
+
+#: src/Dialogs/InstallFailDialog.vala:26
+msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
+msgstr ""
+
+#: src/Dialogs/InstallFailDialog.vala:37
+#, fuzzy
+msgid "Failed to install app"
+msgstr "பயன்பாடுகளை கண்டறிந்து நிறுவு"
+
+#: src/Dialogs/InstallFailDialog.vala:40
+#, fuzzy, c-format
+msgid "Failed to install “%s”"
+msgstr "பயன்பாடுகளை கண்டறிந்து நிறுவு"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
 msgid "Non-Curated Warning"
@@ -915,6 +924,10 @@ msgstr "திற"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:330
 msgid "Update"
 msgstr "புதுப்பிக்கவும்"
+
+#, fuzzy
+#~ msgid "There Was An Error Installing %s."
+#~ msgstr "%s நிறுவுவதில்  ஒரு  பிழை"
 
 #~ msgid "Size: %s"
 #~ msgstr "அளவு: %s"

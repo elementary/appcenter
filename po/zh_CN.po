@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-23 19:12+0000\n"
+"POT-Creation-Date: 2020-04-23 22:03+0000\n"
 "PO-Revision-Date: 2019-10-02 11:23+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/appcenter/appcenter/zh_Hans/>\n"
@@ -42,11 +42,6 @@ msgstr "应用已安装"
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s 安装成功"
-
-#: src/Application.vala:285
-#, c-format
-msgid "There Was An Error Installing %s."
-msgstr "安装 %s 时发生错误。"
 
 #: src/MainWindow.vala:150 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
@@ -346,6 +341,21 @@ msgstr "不要安装"
 #: src/Dialogs/NonCuratedWarningDialog.vala:82
 msgid "Install Anyway"
 msgstr "仍然安装"
+
+#: src/Dialogs/InstallFailDialog.vala:26
+#, fuzzy
+msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
+msgstr "这可能是外部、手动添加的软件源或源文件损坏造成的。"
+
+#: src/Dialogs/InstallFailDialog.vala:37
+#, fuzzy
+msgid "Failed to install app"
+msgstr "查找和安装应用"
+
+#: src/Dialogs/InstallFailDialog.vala:40
+#, fuzzy, c-format
+msgid "Failed to install “%s”"
+msgstr "查找和安装应用"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
 #, fuzzy
@@ -907,6 +917,9 @@ msgstr "打开"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:330
 msgid "Update"
 msgstr "更新"
+
+#~ msgid "There Was An Error Installing %s."
+#~ msgstr "安装 %s 时发生错误。"
 
 #~ msgid "Size: %s"
 #~ msgstr "大小： %s"

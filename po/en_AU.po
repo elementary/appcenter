@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-23 19:12+0000\n"
+"POT-Creation-Date: 2020-04-23 22:03+0000\n"
 "PO-Revision-Date: 2018-06-16 00:08+0000\n"
 "Last-Translator: martin fromont <martin.fromont1@gmail.com>\n"
 "Language-Team: English (Australia) <https://weblate.elementary.io/projects/appcenter/appcenter/en_AU/>\n"
@@ -36,11 +36,6 @@ msgstr "Application installed"
 #: src/Application.vala:273
 #, c-format
 msgid "%s has been successfully installed"
-msgstr ""
-
-#: src/Application.vala:285
-#, c-format
-msgid "There Was An Error Installing %s."
 msgstr ""
 
 #: src/MainWindow.vala:150 src/Views/Homepage.vala:297
@@ -344,6 +339,20 @@ msgstr ""
 #, fuzzy
 msgid "Install Anyway"
 msgstr "Installing"
+
+#: src/Dialogs/InstallFailDialog.vala:26
+msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
+msgstr ""
+
+#: src/Dialogs/InstallFailDialog.vala:37
+#, fuzzy
+msgid "Failed to install app"
+msgstr "Find and install apps"
+
+#: src/Dialogs/InstallFailDialog.vala:40
+#, fuzzy, c-format
+msgid "Failed to install “%s”"
+msgstr "Find and install apps"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
 msgid "Non-Curated Warning"

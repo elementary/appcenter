@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-23 19:12+0000\n"
+"POT-Creation-Date: 2020-04-23 22:03+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Albanian <https://l10n.elementary.io/projects/appcenter/appcenter/sq/>\n"
@@ -39,11 +39,6 @@ msgstr "Programi u instalua"
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s është instaluar me sukses"
-
-#: src/Application.vala:285
-#, c-format
-msgid "There Was An Error Installing %s."
-msgstr ""
 
 #: src/MainWindow.vala:150 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
@@ -348,6 +343,20 @@ msgstr "Instalo"
 #, fuzzy
 msgid "Install Anyway"
 msgstr "Duke instaluar"
+
+#: src/Dialogs/InstallFailDialog.vala:26
+msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
+msgstr ""
+
+#: src/Dialogs/InstallFailDialog.vala:37
+#, fuzzy
+msgid "Failed to install app"
+msgstr "Gjeni dhe instaloni aplikacione"
+
+#: src/Dialogs/InstallFailDialog.vala:40
+#, fuzzy, c-format
+msgid "Failed to install “%s”"
+msgstr "Gjeni dhe instaloni aplikacione"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
 msgid "Non-Curated Warning"

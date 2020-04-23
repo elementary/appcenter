@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-23 19:12+0000\n"
+"POT-Creation-Date: 2020-04-23 22:03+0000\n"
 "PO-Revision-Date: 2020-03-26 18:09+0000\n"
 "Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/appcenter/appcenter/id/>\n"
@@ -39,11 +39,6 @@ msgstr "Aplikasi terpasang"
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s telah berhasil terpasang"
-
-#: src/Application.vala:285
-#, c-format
-msgid "There Was An Error Installing %s."
-msgstr "Terjadi Kesalahan Saat Pemasangan %s."
 
 #: src/MainWindow.vala:150 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
@@ -343,6 +338,24 @@ msgstr "Jangan Memasang"
 #: src/Dialogs/NonCuratedWarningDialog.vala:82
 msgid "Install Anyway"
 msgstr "Tetap Pasang"
+
+#: src/Dialogs/InstallFailDialog.vala:26
+#, fuzzy
+#| msgid "This may have been caused by external or manually compiled software."
+msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
+msgstr "Ini mungkin disebabkan oleh perangkat lunak eksternal atau perangkat lunak yang disusun secara manual."
+
+#: src/Dialogs/InstallFailDialog.vala:37
+#, fuzzy
+#| msgid "Failed to uninstall app"
+msgid "Failed to install app"
+msgstr "Gagal mencopot pemasangan aplikasi"
+
+#: src/Dialogs/InstallFailDialog.vala:40
+#, fuzzy, c-format
+#| msgid "Failed to uninstall “%s”"
+msgid "Failed to install “%s”"
+msgstr "Gagal mencopot pemasangan %s"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
 #, fuzzy
@@ -901,6 +914,9 @@ msgstr "Buka"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:330
 msgid "Update"
 msgstr "Perbarui"
+
+#~ msgid "There Was An Error Installing %s."
+#~ msgstr "Terjadi Kesalahan Saat Pemasangan %s."
 
 #~ msgid "Size: %s"
 #~ msgstr "Ukuran: %s"

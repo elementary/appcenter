@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-23 19:12+0000\n"
+"POT-Creation-Date: 2020-04-23 22:03+0000\n"
 "PO-Revision-Date: 2020-04-06 14:22+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/appcenter/mr/>\n"
@@ -39,11 +39,6 @@ msgstr "अनुप्रयोग स्थापित झाला"
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s यशस्वीरित्या इन्स्टॉल झाले"
-
-#: src/Application.vala:285
-#, c-format
-msgid "There Was An Error Installing %s."
-msgstr "%s इंन्स्टॉल करताना काही चूक झाली आहे."
 
 #: src/MainWindow.vala:150 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
@@ -339,6 +334,24 @@ msgstr "इन्स्टॉल करू नका"
 #: src/Dialogs/NonCuratedWarningDialog.vala:82
 msgid "Install Anyway"
 msgstr "तरीही इन्स्टॉल करा"
+
+#: src/Dialogs/InstallFailDialog.vala:26
+#, fuzzy
+#| msgid "This may have been caused by external or manually compiled software."
+msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
+msgstr "हे बाहेरील, मॅन्युअली जोडलेल्या सॉफ्टवेअरमुळे झाले असू शकते."
+
+#: src/Dialogs/InstallFailDialog.vala:37
+#, fuzzy
+#| msgid "Failed to uninstall app"
+msgid "Failed to install app"
+msgstr "अ‍ॅप विस्थापित करण्यात अयशस्वी"
+
+#: src/Dialogs/InstallFailDialog.vala:40
+#, fuzzy, c-format
+#| msgid "Failed to uninstall “%s”"
+msgid "Failed to install “%s”"
+msgstr "\"%s\" विस्थापित करण्यात अयशस्वी"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
 msgid "Non-Curated Warning"
@@ -892,6 +905,9 @@ msgstr "उघडा"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:330
 msgid "Update"
 msgstr "अद्ययावत (अपडेट) करा"
+
+#~ msgid "There Was An Error Installing %s."
+#~ msgstr "%s इंन्स्टॉल करताना काही चूक झाली आहे."
 
 #~ msgid "Size: %s"
 #~ msgstr "माप : %s"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-23 19:12+0000\n"
+"POT-Creation-Date: 2020-04-23 22:03+0000\n"
 "PO-Revision-Date: 2016-01-09 14:46+0000\n"
 "Last-Translator: nrao <nagamalli.s@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,11 +36,6 @@ msgstr ""
 #: src/Application.vala:273
 #, c-format
 msgid "%s has been successfully installed"
-msgstr ""
-
-#: src/Application.vala:285
-#, c-format
-msgid "There Was An Error Installing %s."
 msgstr ""
 
 #: src/MainWindow.vala:150 src/Views/Homepage.vala:297
@@ -345,6 +340,20 @@ msgstr "స్థాపించు"
 #, fuzzy
 msgid "Install Anyway"
 msgstr "స్థాపించు"
+
+#: src/Dialogs/InstallFailDialog.vala:26
+msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
+msgstr ""
+
+#: src/Dialogs/InstallFailDialog.vala:37
+#, fuzzy
+msgid "Failed to install app"
+msgstr "వ్యవస్థాపనను తీసివెయ్యి"
+
+#: src/Dialogs/InstallFailDialog.vala:40
+#, fuzzy, c-format
+msgid "Failed to install “%s”"
+msgstr "వ్యవస్థాపనను తీసివెయ్యి"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
 #, fuzzy

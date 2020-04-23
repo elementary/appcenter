@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-23 19:12+0000\n"
+"POT-Creation-Date: 2020-04-23 22:03+0000\n"
 "PO-Revision-Date: 2019-12-23 11:07+0000\n"
 "Last-Translator: Marko <marko.dolar@gmail.com>\n"
 "Language-Team: Slovenian <https://l10n.elementary.io/projects/appcenter/appcenter/sl/>\n"
@@ -41,11 +41,6 @@ msgstr "Aplikacija nameščena"
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s je bila uspešno nameščena"
-
-#: src/Application.vala:285
-#, c-format
-msgid "There Was An Error Installing %s."
-msgstr "Pri namestitvi %s je prišlo do napake."
 
 #: src/MainWindow.vala:150 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
@@ -354,6 +349,24 @@ msgstr "Ne namesti"
 #: src/Dialogs/NonCuratedWarningDialog.vala:82
 msgid "Install Anyway"
 msgstr "Vseeno namesti"
+
+#: src/Dialogs/InstallFailDialog.vala:26
+#, fuzzy
+#| msgid "This may have been caused by external or manually compiled software."
+msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
+msgstr "To je lahko povzročila zunanja ali ročno prevedena programke oprema."
+
+#: src/Dialogs/InstallFailDialog.vala:37
+#, fuzzy
+#| msgid "Failed to uninstall app"
+msgid "Failed to install app"
+msgstr "Ni bilo možno odstraniti aplikacijo"
+
+#: src/Dialogs/InstallFailDialog.vala:40
+#, fuzzy, c-format
+#| msgid "Failed to uninstall “%s”"
+msgid "Failed to install “%s”"
+msgstr "Ni bilo možno odstraniti “%s”"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
 #, fuzzy
@@ -915,6 +928,9 @@ msgstr "Odpri"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:330
 msgid "Update"
 msgstr "Posodobi"
+
+#~ msgid "There Was An Error Installing %s."
+#~ msgstr "Pri namestitvi %s je prišlo do napake."
 
 #~ msgid "Size: %s"
 #~ msgstr "Velikost: %s"

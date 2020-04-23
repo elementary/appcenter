@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-23 19:12+0000\n"
+"POT-Creation-Date: 2020-04-23 22:03+0000\n"
 "PO-Revision-Date: 2019-05-16 00:14+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Serbian <https://l10n.elementary.io/projects/appcenter/appcenter/sr/>\n"
@@ -40,11 +40,6 @@ msgstr "Програм је инсталиран"
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "„%s“ је успешно инсталиран"
-
-#: src/Application.vala:285
-#, fuzzy, c-format
-msgid "There Was An Error Installing %s."
-msgstr "Дошло је до грешке приликом инсталације %s"
 
 #: src/MainWindow.vala:150 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
@@ -353,6 +348,21 @@ msgstr ""
 #, fuzzy
 msgid "Install Anyway"
 msgstr "Инсталирам"
+
+#: src/Dialogs/InstallFailDialog.vala:26
+#, fuzzy
+msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
+msgstr "Ово се можда догодило због мануелно додате апликације или корумпиране датотеке."
+
+#: src/Dialogs/InstallFailDialog.vala:37
+#, fuzzy
+msgid "Failed to install app"
+msgstr "Пронађите и инсталирајте апликације"
+
+#: src/Dialogs/InstallFailDialog.vala:40
+#, fuzzy, c-format
+msgid "Failed to install “%s”"
+msgstr "Пронађите и инсталирајте апликације"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
 #, fuzzy
@@ -927,6 +937,10 @@ msgstr "Отвори"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:330
 msgid "Update"
 msgstr "Освежи"
+
+#, fuzzy
+#~ msgid "There Was An Error Installing %s."
+#~ msgstr "Дошло је до грешке приликом инсталације %s"
 
 #~ msgid "Size: %s"
 #~ msgstr "Величина: %s"

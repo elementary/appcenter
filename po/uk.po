@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-23 19:12+0000\n"
+"POT-Creation-Date: 2020-04-23 22:03+0000\n"
 "PO-Revision-Date: 2020-03-22 13:09+0000\n"
 "Last-Translator: Andrii Priadko <mendeleev.ua@gmail.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/appcenter/uk/>\n"
@@ -42,11 +42,6 @@ msgstr "Додаток встановлено"
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s був успішно встановлений"
-
-#: src/Application.vala:285
-#, c-format
-msgid "There Was An Error Installing %s."
-msgstr "Виникла помилка при встановленні %s."
 
 #: src/MainWindow.vala:150 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
@@ -352,6 +347,24 @@ msgstr "Не встановлювати"
 #: src/Dialogs/NonCuratedWarningDialog.vala:82
 msgid "Install Anyway"
 msgstr "Встановити у будь якому випадку"
+
+#: src/Dialogs/InstallFailDialog.vala:26
+#, fuzzy
+#| msgid "This may have been caused by external or manually compiled software."
+msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
+msgstr "Це може бути викликано програмним забезпеченням встановленим шляхом використання зовнішніх джерел або вручну."
+
+#: src/Dialogs/InstallFailDialog.vala:37
+#, fuzzy
+#| msgid "Failed to uninstall app"
+msgid "Failed to install app"
+msgstr "Не вдалося видалити додаток"
+
+#: src/Dialogs/InstallFailDialog.vala:40
+#, fuzzy, c-format
+#| msgid "Failed to uninstall “%s”"
+msgid "Failed to install “%s”"
+msgstr "Помилка при видаленні “%s”"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
 #, fuzzy
@@ -912,6 +925,9 @@ msgstr "Відкрити"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:330
 msgid "Update"
 msgstr "Оновлення"
+
+#~ msgid "There Was An Error Installing %s."
+#~ msgstr "Виникла помилка при встановленні %s."
 
 #~ msgid "Size: %s"
 #~ msgstr "Розмір: %s"
