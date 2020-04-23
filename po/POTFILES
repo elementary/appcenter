@@ -18,6 +18,7 @@ src/Core/Task.vala
 src/Core/UbuntuDriversBackend.vala
 src/Core/UpdateManager.vala
 src/Dialogs/ContentWarningDialog.vala
+src/Dialogs/InstallFailDialog.vala
 src/Dialogs/NonCuratedWarningDialog.vala
 src/Dialogs/RestartDialog.vala
 src/Dialogs/StripeDialog.vala
