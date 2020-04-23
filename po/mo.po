@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-23 07:36+0000\n"
+"POT-Creation-Date: 2020-04-23 19:12+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Moldovan <https://l10n.elementary.io/projects/appcenter/appcenter/mo/>\n"
@@ -14,7 +14,7 @@ msgstr ""
 "X-Generator: Weblate 3.7.1\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:330
+#: src/Application.vala:38 src/Core/Package.vala:336
 msgid "AppCenter"
 msgstr "Centru aplicații"
 
@@ -247,35 +247,35 @@ msgstr "Terminat"
 msgid "Updating"
 msgstr "Actualizați"
 
-#: src/Core/Package.vala:300
+#: src/Core/Package.vala:306
 #, c-format
 msgid "%s Developers"
 msgstr "%s Dezvoltatori"
 
-#: src/Core/Package.vala:332
+#: src/Core/Package.vala:338
 #, fuzzy
 msgid "elementary Updates"
 msgstr "Actualizat recent"
 
-#: src/Core/Package.vala:334
+#: src/Core/Package.vala:340
 msgid "Ubuntu (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:337
+#: src/Core/Package.vala:343
 #, fuzzy, c-format
 msgid "%s (non-curated)"
 msgstr "%s (local)"
 
-#: src/Core/Package.vala:339
+#: src/Core/Package.vala:345
 #, fuzzy
 msgid "Ubuntu Drivers"
 msgstr "Draivers"
 
-#: src/Core/Package.vala:342
+#: src/Core/Package.vala:348
 msgid "Unknown Origin (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:452
+#: src/Core/Package.vala:458
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
@@ -678,7 +678,7 @@ msgid "Restart Now"
 msgstr "Reporniți acum"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:201
+#: src/Views/AppListUpdateView.vala:203
 msgid "Update All"
 msgstr "Actualizați-le pe toate"
 

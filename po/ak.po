@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Akan (AppCenter)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-23 07:36+0000\n"
+"POT-Creation-Date: 2020-04-23 19:12+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Lawrence Aberba <karabutaworld@gmail.com>\n"
 "Language-Team: Akan <https://l10n.elementary.io/projects/appcenter/appcenter/ak/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:24+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:330
+#: src/Application.vala:38 src/Core/Package.vala:336
 msgid "AppCenter"
 msgstr "Dwumadie Twebea"
 
@@ -241,35 +241,35 @@ msgstr "Awie"
 msgid "Updating"
 msgstr "Twe nea aba"
 
-#: src/Core/Package.vala:300
+#: src/Core/Package.vala:306
 #, fuzzy, c-format
 msgid "%s Developers"
 msgstr "%s Dwumadieyɛfoɔ"
 
-#: src/Core/Package.vala:332
+#: src/Core/Package.vala:338
 #, fuzzy
 msgid "elementary Updates"
 msgstr "Nea Wode Guu So Nkyɛe"
 
-#: src/Core/Package.vala:334
+#: src/Core/Package.vala:340
 msgid "Ubuntu (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:337
+#: src/Core/Package.vala:343
 #, c-format
 msgid "%s (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:339
+#: src/Core/Package.vala:345
 #, fuzzy
 msgid "Ubuntu Drivers"
 msgstr "Drivers"
 
-#: src/Core/Package.vala:342
+#: src/Core/Package.vala:348
 msgid "Unknown Origin (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:452
+#: src/Core/Package.vala:458
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
@@ -667,7 +667,7 @@ msgid "Restart Now"
 msgstr "Dum Sɔ Siesie Ara"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:201
+#: src/Views/AppListUpdateView.vala:203
 msgid "Update All"
 msgstr "Twɛ Foforɔ No Nyinaa"
 

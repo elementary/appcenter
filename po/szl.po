@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-23 07:36+0000\n"
+"POT-Creation-Date: 2020-04-23 19:12+0000\n"
 "PO-Revision-Date: 2020-02-24 23:09+0000\n"
 "Last-Translator: gkkulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/appcenter/appcenter/szl/>\n"
@@ -14,7 +14,7 @@ msgstr ""
 "X-Generator: Weblate 3.9.1\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:330
+#: src/Application.vala:38 src/Core/Package.vala:336
 msgid "AppCenter"
 msgstr "AppCyntrum"
 
@@ -240,33 +240,33 @@ msgstr "Fertich"
 msgid "Updating"
 msgstr "Zaktualizuj"
 
-#: src/Core/Package.vala:300
+#: src/Core/Package.vala:306
 #, c-format
 msgid "%s Developers"
 msgstr "Programisty %s"
 
-#: src/Core/Package.vala:332
+#: src/Core/Package.vala:338
 msgid "elementary Updates"
 msgstr "Aktualizacyje elementary"
 
-#: src/Core/Package.vala:334
+#: src/Core/Package.vala:340
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (niynadzorowane)"
 
-#: src/Core/Package.vala:337
+#: src/Core/Package.vala:343
 #, c-format
 msgid "%s (non-curated)"
 msgstr "%s (niynadzorowane)"
 
-#: src/Core/Package.vala:339
+#: src/Core/Package.vala:345
 msgid "Ubuntu Drivers"
 msgstr "Kludzocze Ubuntu"
 
-#: src/Core/Package.vala:342
+#: src/Core/Package.vala:348
 msgid "Unknown Origin (non-curated)"
 msgstr "Niyznōmego pochodzynio (niynadzorowane)"
 
-#: src/Core/Package.vala:452
+#: src/Core/Package.vala:458
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Sztand programu niyma nasztelowany za zainstalowany we AppCenter dlo paketu: %s"
@@ -665,7 +665,7 @@ msgid "Restart Now"
 msgstr "Sztartnij zaś kōmputer"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:201
+#: src/Views/AppListUpdateView.vala:203
 msgid "Update All"
 msgstr "Aktualizuj wszyjsko"
 

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-23 07:36+0000\n"
+"POT-Creation-Date: 2020-04-23 19:12+0000\n"
 "PO-Revision-Date: 2018-06-18 00:03+0000\n"
 "Last-Translator: Aoibhe Ní Ghnímh <aoibhe.agnew@gmail.com>\n"
 "Language-Team: Irish <https://weblate.elementary.io/projects/appcenter/appcenter/ga/>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:330
+#: src/Application.vala:38 src/Core/Package.vala:336
 msgid "AppCenter"
 msgstr ""
 
@@ -238,33 +238,33 @@ msgstr ""
 msgid "Updating"
 msgstr "Ag fanacht"
 
-#: src/Core/Package.vala:300
+#: src/Core/Package.vala:306
 #, c-format
 msgid "%s Developers"
 msgstr ""
 
-#: src/Core/Package.vala:332
+#: src/Core/Package.vala:338
 msgid "elementary Updates"
 msgstr ""
 
-#: src/Core/Package.vala:334
+#: src/Core/Package.vala:340
 msgid "Ubuntu (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:337
+#: src/Core/Package.vala:343
 #, c-format
 msgid "%s (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:339
+#: src/Core/Package.vala:345
 msgid "Ubuntu Drivers"
 msgstr ""
 
-#: src/Core/Package.vala:342
+#: src/Core/Package.vala:348
 msgid "Unknown Origin (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:452
+#: src/Core/Package.vala:458
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
@@ -657,7 +657,7 @@ msgid "Restart Now"
 msgstr ""
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:201
+#: src/Views/AppListUpdateView.vala:203
 msgid "Update All"
 msgstr ""
 

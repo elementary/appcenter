@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-23 07:36+0000\n"
+"POT-Creation-Date: 2020-04-23 19:12+0000\n"
 "PO-Revision-Date: 2019-07-03 14:02+0000\n"
 "Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian <https://l10n.elementary.io/projects/appcenter/appcenter/it/>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:330
+#: src/Application.vala:38 src/Core/Package.vala:336
 msgid "AppCenter"
 msgstr "AppCenter"
 
@@ -245,33 +245,33 @@ msgstr "Completato"
 msgid "Updating"
 msgstr "Aggiorna"
 
-#: src/Core/Package.vala:300
+#: src/Core/Package.vala:306
 #, c-format
 msgid "%s Developers"
 msgstr "Sviluppatori di %s"
 
-#: src/Core/Package.vala:332
+#: src/Core/Package.vala:338
 msgid "elementary Updates"
 msgstr "Aggiornamenti di elementary"
 
-#: src/Core/Package.vala:334
+#: src/Core/Package.vala:340
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (non curato)"
 
-#: src/Core/Package.vala:337
+#: src/Core/Package.vala:343
 #, c-format
 msgid "%s (non-curated)"
 msgstr "%s (non curato)"
 
-#: src/Core/Package.vala:339
+#: src/Core/Package.vala:345
 msgid "Ubuntu Drivers"
 msgstr "Driver di Ubuntu"
 
-#: src/Core/Package.vala:342
+#: src/Core/Package.vala:348
 msgid "Unknown Origin (non-curated)"
 msgstr "Origini sconosciute (non curate)"
 
-#: src/Core/Package.vala:452
+#: src/Core/Package.vala:458
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
@@ -672,7 +672,7 @@ msgid "Restart Now"
 msgstr "Riavvia ora"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:201
+#: src/Views/AppListUpdateView.vala:203
 msgid "Update All"
 msgstr "Aggiorna tutto"
 

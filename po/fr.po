@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-23 07:36+0000\n"
+"POT-Creation-Date: 2020-04-23 19:12+0000\n"
 "PO-Revision-Date: 2020-04-20 17:20+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/appcenter/appcenter/fr/>\n"
@@ -23,7 +23,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:330
+#: src/Application.vala:38 src/Core/Package.vala:336
 msgid "AppCenter"
 msgstr "Centre d’Applications"
 
@@ -241,33 +241,33 @@ msgstr "Finalisation"
 msgid "Updating"
 msgstr "Mise à jour"
 
-#: src/Core/Package.vala:300
+#: src/Core/Package.vala:306
 #, c-format
 msgid "%s Developers"
 msgstr "Les développeurs de %s"
 
-#: src/Core/Package.vala:332
+#: src/Core/Package.vala:338
 msgid "elementary Updates"
 msgstr "Mises à jour d'elementary"
 
-#: src/Core/Package.vala:334
+#: src/Core/Package.vala:340
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (non-vérifié)"
 
-#: src/Core/Package.vala:337
+#: src/Core/Package.vala:343
 #, c-format
 msgid "%s (non-curated)"
 msgstr "%s (non vérifié)"
 
-#: src/Core/Package.vala:339
+#: src/Core/Package.vala:345
 msgid "Ubuntu Drivers"
 msgstr "Pilotes Ubuntu"
 
-#: src/Core/Package.vala:342
+#: src/Core/Package.vala:348
 msgid "Unknown Origin (non-curated)"
 msgstr "Origine inconnue (non-vérifiée)"
 
-#: src/Core/Package.vala:452
+#: src/Core/Package.vala:458
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "L'état de l'application n'est pas défini comme installé dans le Centre d'Applications pour le paquet : %s"
@@ -658,7 +658,7 @@ msgid "Restart Now"
 msgstr "Redémarrer maintenant"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:201
+#: src/Views/AppListUpdateView.vala:203
 msgid "Update All"
 msgstr "Tout mettre à jour"
 
