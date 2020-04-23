@@ -58,8 +58,8 @@ namespace AppCenter.Views {
         }
 
         private void add_row_for_package (AppCenterCore.Package package) {
-            // Don't show plugins in search and category views
-            if (!package.is_plugin) {
+            // Don't show plugins or fonts in search and category views
+            if (!package.is_plugin && !package.is_font) {
                 list_store.insert_sorted (package, (GLib.CompareDataFunc<AppCenterCore.Package>) compare_packages);
             }
         }

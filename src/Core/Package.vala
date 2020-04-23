@@ -192,6 +192,12 @@ public class AppCenterCore.Package : Object {
        }
     }
 
+    public bool is_font {
+        get {
+            return component.get_kind () == AppStream.ComponentKind.FONT;
+        }
+    }
+
     public bool is_local {
         get {
             return component.get_id ().has_suffix (LOCAL_ID_SUFFIX);
