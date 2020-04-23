@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-23 19:12+0000\n"
+"POT-Creation-Date: 2020-04-23 22:03+0000\n"
 "PO-Revision-Date: 2019-06-30 03:52+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/appcenter/appcenter/ko/>\n"
@@ -38,11 +38,6 @@ msgstr "설치한 애플리케이션"
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s의 설치를 마쳤습니다"
-
-#: src/Application.vala:285
-#, c-format
-msgid "There Was An Error Installing %s."
-msgstr "%s의 설치 도중에 오류가 생겼습니다."
 
 #: src/MainWindow.vala:150 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
@@ -342,6 +337,21 @@ msgstr "설치하지 마세요"
 #: src/Dialogs/NonCuratedWarningDialog.vala:82
 msgid "Install Anyway"
 msgstr "아무튼 설치합니다"
+
+#: src/Dialogs/InstallFailDialog.vala:26
+#, fuzzy
+msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
+msgstr "아마도 기본 시스템 이외의 외적인 요인이나, 수동으로 지정한 저장소 또는 망가진 소스 파일 때문으로 보입니다."
+
+#: src/Dialogs/InstallFailDialog.vala:37
+#, fuzzy
+msgid "Failed to install app"
+msgstr "앱을 검색하고 설치하기"
+
+#: src/Dialogs/InstallFailDialog.vala:40
+#, fuzzy, c-format
+msgid "Failed to install “%s”"
+msgstr "앱을 검색하고 설치하기"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
 #, fuzzy
@@ -905,6 +915,9 @@ msgstr "열기"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:330
 msgid "Update"
 msgstr "업데이트"
+
+#~ msgid "There Was An Error Installing %s."
+#~ msgstr "%s의 설치 도중에 오류가 생겼습니다."
 
 #~ msgid "Size: %s"
 #~ msgstr "크기: %s"

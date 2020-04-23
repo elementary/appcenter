@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-23 19:12+0000\n"
+"POT-Creation-Date: 2020-04-23 22:03+0000\n"
 "PO-Revision-Date: 2019-02-07 00:05+0000\n"
 "Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
 "Language-Team: Czech <https://weblate.elementary.io/projects/appcenter/appcenter/cs/>\n"
@@ -41,11 +41,6 @@ msgstr "Aplikace nainstalována"
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "Instalace %s byla úspěšná"
-
-#: src/Application.vala:285
-#, c-format
-msgid "There Was An Error Installing %s."
-msgstr "Při instalaci %s se vyskytla chyba."
 
 #: src/MainWindow.vala:150 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
@@ -352,6 +347,21 @@ msgstr "Neinstalovat"
 #: src/Dialogs/NonCuratedWarningDialog.vala:82
 msgid "Install Anyway"
 msgstr "Přesto instalovat"
+
+#: src/Dialogs/InstallFailDialog.vala:26
+#, fuzzy
+msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
+msgstr "Tohle mohlo být způsobeno externím, ručně přidaným repozitářem softwaru, nebo rozbitým zdrojovým souborem."
+
+#: src/Dialogs/InstallFailDialog.vala:37
+#, fuzzy
+msgid "Failed to install app"
+msgstr "Najít a instalovat aplikace"
+
+#: src/Dialogs/InstallFailDialog.vala:40
+#, fuzzy, c-format
+msgid "Failed to install “%s”"
+msgstr "Najít a instalovat aplikace"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
 #, fuzzy
@@ -917,6 +927,9 @@ msgstr "Otevřít"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:330
 msgid "Update"
 msgstr "Aktualizovat"
+
+#~ msgid "There Was An Error Installing %s."
+#~ msgstr "Při instalaci %s se vyskytla chyba."
 
 #~ msgid "Size: %s"
 #~ msgstr "Velikost: %s"

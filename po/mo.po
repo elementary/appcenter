@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-23 19:12+0000\n"
+"POT-Creation-Date: 2020-04-23 22:03+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Moldovan <https://l10n.elementary.io/projects/appcenter/appcenter/mo/>\n"
@@ -36,11 +36,6 @@ msgstr "Aplicația este instalată"
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s a fost instalat cu succes"
-
-#: src/Application.vala:285
-#, c-format
-msgid "There Was An Error Installing %s."
-msgstr "A apărut o eroare la instalarea%s."
 
 #: src/MainWindow.vala:150 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
@@ -358,6 +353,21 @@ msgstr ""
 #, fuzzy
 msgid "Install Anyway"
 msgstr "Instalare"
+
+#: src/Dialogs/InstallFailDialog.vala:26
+#, fuzzy
+msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
+msgstr "Acest lucru s-ar putea să fi fost cauzat de un depozit extern de programe software sau de un fișier de surse corupte."
+
+#: src/Dialogs/InstallFailDialog.vala:37
+#, fuzzy
+msgid "Failed to install app"
+msgstr "Dezinstalați"
+
+#: src/Dialogs/InstallFailDialog.vala:40
+#, fuzzy, c-format
+msgid "Failed to install “%s”"
+msgstr "Dezinstalați"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
 #, fuzzy
@@ -930,6 +940,9 @@ msgstr "Deschis"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:330
 msgid "Update"
 msgstr "Actualizați"
+
+#~ msgid "There Was An Error Installing %s."
+#~ msgstr "A apărut o eroare la instalarea%s."
 
 #~ msgid "Size: %s"
 #~ msgstr "Mărime: %s"

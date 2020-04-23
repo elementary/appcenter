@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-23 19:12+0000\n"
+"POT-Creation-Date: 2020-04-23 22:03+0000\n"
 "PO-Revision-Date: 2019-05-15 01:18+0000\n"
 "Last-Translator: Jimmy Sun <jimmysuncn@hotmail.com>\n"
 "Language-Team: Chinese <https://l10n.elementary.io/projects/appcenter/appcenter/zh/>\n"
@@ -40,11 +40,6 @@ msgstr "应用程序已安装"
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s已被安装成功"
-
-#: src/Application.vala:285
-#, c-format
-msgid "There Was An Error Installing %s."
-msgstr "在安装%s时遇到一个错误。"
 
 #: src/MainWindow.vala:150 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
@@ -347,6 +342,21 @@ msgstr "未安装"
 #, fuzzy
 msgid "Install Anyway"
 msgstr "正在安装"
+
+#: src/Dialogs/InstallFailDialog.vala:26
+#, fuzzy
+msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
+msgstr "这可能是由一个手动安装的扩展软件仓库或一个已损坏的源文件造成。"
+
+#: src/Dialogs/InstallFailDialog.vala:37
+#, fuzzy
+msgid "Failed to install app"
+msgstr "卸载"
+
+#: src/Dialogs/InstallFailDialog.vala:40
+#, fuzzy, c-format
+msgid "Failed to install “%s”"
+msgstr "卸载"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
 #, fuzzy
@@ -914,6 +924,9 @@ msgstr "打开"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:330
 msgid "Update"
 msgstr "更新"
+
+#~ msgid "There Was An Error Installing %s."
+#~ msgstr "在安装%s时遇到一个错误。"
 
 #~ msgid "Size: %s"
 #~ msgstr "大小：%s"

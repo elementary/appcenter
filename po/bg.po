@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-23 19:12+0000\n"
+"POT-Creation-Date: 2020-04-23 22:03+0000\n"
 "PO-Revision-Date: 2017-06-18 12:17+0000\n"
 "Last-Translator: Valentin Kirilov <val.kirilov@gmail.com>\n"
 "Language-Team: Bulgarian <https://l10n.elementary.io/projects/appcenter/appcenter/bg/>\n"
@@ -37,11 +37,6 @@ msgstr "Програмата е инсталирана"
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s беше успешно инсталирана"
-
-#: src/Application.vala:285
-#, fuzzy, c-format
-msgid "There Was An Error Installing %s."
-msgstr "Настъпи грешки при инсталацията на %s"
 
 #: src/MainWindow.vala:150 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
@@ -347,6 +342,20 @@ msgstr ""
 #, fuzzy
 msgid "Install Anyway"
 msgstr "Инсталиране"
+
+#: src/Dialogs/InstallFailDialog.vala:26
+msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
+msgstr ""
+
+#: src/Dialogs/InstallFailDialog.vala:37
+#, fuzzy
+msgid "Failed to install app"
+msgstr "Намиране и инсталиране на приложения"
+
+#: src/Dialogs/InstallFailDialog.vala:40
+#, fuzzy, c-format
+msgid "Failed to install “%s”"
+msgstr "Намиране и инсталиране на приложения"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
 msgid "Non-Curated Warning"
@@ -915,6 +924,10 @@ msgstr "Отвори"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:330
 msgid "Update"
 msgstr "Обновяване"
+
+#, fuzzy
+#~ msgid "There Was An Error Installing %s."
+#~ msgstr "Настъпи грешки при инсталацията на %s"
 
 #~ msgid "Size: %s"
 #~ msgstr "Размер: %s"

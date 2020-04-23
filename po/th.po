@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-23 19:12+0000\n"
+"POT-Creation-Date: 2020-04-23 22:03+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Cleiton Floss <cleitonfloss@gmail.com>\n"
 "Language-Team: Thai <https://l10n.elementary.io/projects/appcenter/appcenter/th/>\n"
@@ -40,11 +40,6 @@ msgstr "ติดตั้งโปรแกรมแล้ว"
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s ได้ถูกติดตั้งอย่างสมบูรณ์แล้ว"
-
-#: src/Application.vala:285
-#, c-format
-msgid "There Was An Error Installing %s."
-msgstr "มีปัญหาในการติดตั้ง %s"
 
 #: src/MainWindow.vala:150 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
@@ -345,6 +340,21 @@ msgstr ""
 #, fuzzy
 msgid "Install Anyway"
 msgstr "กำลังติดตั้ง"
+
+#: src/Dialogs/InstallFailDialog.vala:26
+#, fuzzy
+msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
+msgstr "นี่อาจจะเกิดขึ้นจากที่เก็บซอฟต์แวร์ภายนอดที่เพิ่มโดยผู้ใช้หรือไฟล์ที่เสียหาย"
+
+#: src/Dialogs/InstallFailDialog.vala:37
+#, fuzzy
+msgid "Failed to install app"
+msgstr "ถอนการติดตั้ง"
+
+#: src/Dialogs/InstallFailDialog.vala:40
+#, fuzzy, c-format
+msgid "Failed to install “%s”"
+msgstr "ถอนการติดตั้ง"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
 msgid "Non-Curated Warning"
@@ -907,6 +917,9 @@ msgstr ""
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:330
 msgid "Update"
 msgstr "การอัปเดต"
+
+#~ msgid "There Was An Error Installing %s."
+#~ msgstr "มีปัญหาในการติดตั้ง %s"
 
 #~ msgid "Size: %s"
 #~ msgstr "ขนาด: %s"

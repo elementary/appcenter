@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-23 19:12+0000\n"
+"POT-Creation-Date: 2020-04-23 22:03+0000\n"
 "PO-Revision-Date: 2018-02-27 19:11+0000\n"
 "Last-Translator: armoghaddam <armoghaddam24@gmail.com>\n"
 "Language-Team: Persian <https://weblate.elementary.io/projects/appcenter/appcenter/fa/>\n"
@@ -37,11 +37,6 @@ msgstr "برنامه های نصب شده"
 #, fuzzy, c-format
 msgid "%s has been successfully installed"
 msgstr "٪ s با موفقیت نصب شده است"
-
-#: src/Application.vala:285
-#, fuzzy, c-format
-msgid "There Was An Error Installing %s."
-msgstr "خطا در نصب٪ s وجود داشت."
 
 #: src/MainWindow.vala:150 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
@@ -344,6 +339,21 @@ msgstr ""
 #, fuzzy
 msgid "Install Anyway"
 msgstr "درحال نصب"
+
+#: src/Dialogs/InstallFailDialog.vala:26
+#, fuzzy
+msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
+msgstr "این ممکن است توسط مخزن نرم افزاری خارجی، دستی به وجود آمده یا یک فایل منبع خراب ایجاد شده باشد."
+
+#: src/Dialogs/InstallFailDialog.vala:37
+#, fuzzy
+msgid "Failed to install app"
+msgstr "پیدا کردن و نصب نرم افزار ها"
+
+#: src/Dialogs/InstallFailDialog.vala:40
+#, fuzzy, c-format
+msgid "Failed to install “%s”"
+msgstr "پیدا کردن و نصب نرم افزار ها"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
 msgid "Non-Curated Warning"
@@ -902,6 +912,10 @@ msgstr ""
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:330
 msgid "Update"
 msgstr ""
+
+#, fuzzy
+#~ msgid "There Was An Error Installing %s."
+#~ msgstr "خطا در نصب٪ s وجود داشت."
 
 #~ msgid "Details"
 #~ msgstr "جزئیات"
