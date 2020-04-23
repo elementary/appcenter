@@ -23,9 +23,14 @@ public class AppCenterCore.Houston : Object {
 
     construct {
         session = new Soup.Session ();
+        session.timeout = 15;
     }
 
-    private Json.Object process_response (string res) throws Error {
+    private Json.Object process_response (string? res) throws Error {
+        if (res == null) {
+            throw new IOError.FAILED ("Error while talking to Houston");
+        }
+
         var parser = new Json.Parser ();
         parser.load_from_data (res, -1);
 
@@ -35,9 +40,9 @@ public class AppCenterCore.Houston : Object {
             var err = root.get_array_member ("errors").get_object_element (0).get_string_member ("title");
 
             if (err != null) {
-                throw new Error (0, 0, err);
+                throw new IOError.FAILED (err);
             } else {
-                throw new Error (0, 0, "Error while talking to Houston");
+                throw new IOError.FAILED ("Error while talking to Houston");
             }
         }
 
