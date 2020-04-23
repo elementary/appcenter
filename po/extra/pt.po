@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-23 07:36+0000\n"
-"PO-Revision-Date: 2020-04-21 17:02+0000\n"
+"PO-Revision-Date: 2020-04-23 19:09+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
 "extra/pt/>\n"
@@ -119,6 +119,8 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:41
 msgid "Ellipsize long app names in App Info views"
 msgstr ""
+"Elipsar nomes longos de aplicações nas visualizações da informação da "
+"aplicação"
 
 #: data/io.elementary.appcenter.appdata.xml.in:43
 msgid "And more"
