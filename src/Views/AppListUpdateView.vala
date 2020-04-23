@@ -90,8 +90,10 @@ namespace AppCenter.Views {
         }
 
         private void add_row_for_package (AppCenterCore.Package package) {
-            // Only add row if this isn't a plugin, or it's a plugin needing an update
-            if (!package.is_plugin || (package.is_plugin && package.state == AppCenterCore.Package.State.UPDATE_AVAILABLE)) {
+            var needs_update = package.state == AppCenterCore.Package.State.UPDATE_AVAILABLE;
+
+            // Only add row if this package needs an update or it's not a font or plugin
+            if (needs_update || (!package.is_plugin && !package.is_font)) {
                 var row = construct_row_for_package (package);
                 add_row (row);
             }
