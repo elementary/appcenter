@@ -8,31 +8,39 @@
   <name>AppCenter</name>
   <summary>Browse and manage apps</summary>
   <description>
-    <p>
-    An app store for indie and open source developers. Browse by categories or
-    search and discover new apps. AppCenter is also used for updating your
-    system to the latest and greatest version for new features and fixes.
-    </p>
+    <p>An app store for indie and open source developers. Browse by categories or search and discover new apps. AppCenter is also used for updating your system to the latest and greatest version for new features and fixes.</p>
   </description>
   <releases>
     <release version="3.2.5" date="2020-04-16" urgency="medium">
       <description>
+        <p>Performance improvements</p>
+        <ul>
+          <li>Only check for updates at device startup if it's more than 24 hours since we last checked</li>
+          <li>Reduce slowdowns when opening certain apps</li>
+        </ul>
+        <p>Extension improvements</p>
+        <ul>
+          <li>To de-clutter the updates view, extensions are now only shown if they require updates</li>
+          <li>Clicking an extension on an app's info page now shows details for the extension</li>
+          <li>Swap the main and overlay icons for extensions to more clearly associate extensions with their app</li>
+        </ul>
+        <p>Keyboard improvements</p>
+        <ul>
+          <li>Pressing down in the search field moves the keyboard focus to the search results list</li>
+          <li>Ctrl+F now moves the cursor to the search field</li>
+        </ul>
         <p>Fixes</p>
         <ul>
-          <li>AppCenter now uses configured network proxy settings for apt operations</li>
-          <li>AppCenter no longer prompts for approval to update non-curated apps</li>
-          <li>Reduce slowdowns when opening certain apps</li>
+          <li>Use configured network proxy settings for apt operations</li>
+          <li>No longer prompt for approval to update non-curated apps</li>
           <li>Ensure the OS updates subheading copy is correct after finishing updates</li>
-          <li>Show a more informative loading screen when checking for updates</li>
+          <li>Ellipsize long app names in App Info views</li>
         </ul>
-        <p>Other updates</p>
+        <p>And more</p>
         <ul>
-          <li>Only check for updates at computer startup if it's more than 24 hours since we last checked</li>
-          <li>Pressing down in the search field moves the keyboard focus to the search results list</li>
-          <li>Clicking an extension on an app's info page now shows details for the extension</li>
-          <li>Ctrl+F now moves the cursor to the search field</li>
-          <li>To de-clutter the updates view, plugins are now only shown if they require updates</li>
-          <li>Swapped the main and overlay icons for plugins to more clearly associate plugins with their app</li>
+          <li>Show a more informative loading screen when checking for updates</li>
+          <li>Don't list fonts alongside apps</li>
+          <li>Updated translations</li>
         </ul>
       </description>
     </release>

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-19 17:17+0000\n"
+"POT-Creation-Date: 2020-04-23 22:03+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Frederik Lund <fln8203@gmail.com>\n"
 "Language-Team: Danish <https://l10n.elementary.io/projects/appcenter/appcenter/da/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:330
+#: src/Application.vala:38 src/Core/Package.vala:336
 msgid "AppCenter"
 msgstr "AppCenter"
 
@@ -39,11 +39,6 @@ msgstr "Applikationen er installeret"
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s blev succesfuldt installeret"
-
-#: src/Application.vala:285
-#, c-format
-msgid "There Was An Error Installing %s."
-msgstr "Der Opstod En Fejl under Installationen af %s."
 
 #: src/MainWindow.vala:150 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
@@ -241,35 +236,35 @@ msgstr "Færdig"
 msgid "Updating"
 msgstr "Opdater"
 
-#: src/Core/Package.vala:300
+#: src/Core/Package.vala:306
 #, c-format
 msgid "%s Developers"
 msgstr "%s Udviklere"
 
-#: src/Core/Package.vala:332
+#: src/Core/Package.vala:338
 #, fuzzy
 msgid "elementary Updates"
 msgstr "Nyligt Opdaterede"
 
-#: src/Core/Package.vala:334
+#: src/Core/Package.vala:340
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (Ikke-kurateret)"
 
-#: src/Core/Package.vala:337
+#: src/Core/Package.vala:343
 #, fuzzy, c-format
 msgid "%s (non-curated)"
 msgstr "%s (lokalt)"
 
-#: src/Core/Package.vala:339
+#: src/Core/Package.vala:345
 #, fuzzy
 msgid "Ubuntu Drivers"
 msgstr "Drivere"
 
-#: src/Core/Package.vala:342
+#: src/Core/Package.vala:348
 msgid "Unknown Origin (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:452
+#: src/Core/Package.vala:458
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
@@ -347,6 +342,21 @@ msgstr "Installer Ikke"
 #: src/Dialogs/NonCuratedWarningDialog.vala:82
 msgid "Install Anyway"
 msgstr "Installer Alligevel"
+
+#: src/Dialogs/InstallFailDialog.vala:26
+#, fuzzy
+msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
+msgstr "Dette kan have været forårsaget af eksterne manuelt tilføjede software repositories eller en beskadiget kilde fil."
+
+#: src/Dialogs/InstallFailDialog.vala:37
+#, fuzzy
+msgid "Failed to install app"
+msgstr "Find og installer apps"
+
+#: src/Dialogs/InstallFailDialog.vala:40
+#, fuzzy, c-format
+msgid "Failed to install “%s”"
+msgstr "Find og installer apps"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
 #, fuzzy
@@ -581,83 +591,83 @@ msgstr "Prøv Igen"
 msgid "Screenshot Not Available"
 msgstr "Skærmbillede er Ikke Tilgængeligt"
 
-#: src/Views/AppInfoView.vala:206
+#: src/Views/AppInfoView.vala:207
 msgid "Homepage"
 msgstr "Startside"
 
-#: src/Views/AppInfoView.vala:212
+#: src/Views/AppInfoView.vala:213
 msgid "Suggest Translations"
 msgstr "Foreslå Oversættelser"
 
-#: src/Views/AppInfoView.vala:218
+#: src/Views/AppInfoView.vala:219
 msgid "Report a Problem"
 msgstr "Rapporter et Problem"
 
-#: src/Views/AppInfoView.vala:224
+#: src/Views/AppInfoView.vala:225
 msgid "Help"
 msgstr "Hjælp"
 
-#: src/Views/AppInfoView.vala:235
+#: src/Views/AppInfoView.vala:236
 msgid "What's New:"
 msgstr "Hvad er Nyt:"
 
-#: src/Views/AppInfoView.vala:270
+#: src/Views/AppInfoView.vala:271
 msgid "Extensions:"
 msgstr "Udvidelser:"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:359
+#: src/Views/AppInfoView.vala:360
 msgid "Public Domain"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:362
+#: src/Views/AppInfoView.vala:363
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr ""
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:367
+#: src/Views/AppInfoView.vala:368
 #, fuzzy
 msgid "Free Software"
 msgstr "Rediger kilde-software"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:370
+#: src/Views/AppInfoView.vala:371
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:374
+#: src/Views/AppInfoView.vala:375
 msgid "Proprietary"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:377
+#: src/Views/AppInfoView.vala:378
 #, fuzzy
 msgid "Unknown License"
 msgstr "Ukendt tilstand"
 
-#: src/Views/AppInfoView.vala:426
+#: src/Views/AppInfoView.vala:427
 #, c-format
 msgid "Other Apps by %s"
 msgstr "Andre Apps af %s"
 
-#: src/Views/AppInfoView.vala:463
+#: src/Views/AppInfoView.vala:464
 msgid "Link copied to clipboard"
 msgstr "Link kopieret til udklipsholder"
 
-#: src/Views/AppInfoView.vala:474
+#: src/Views/AppInfoView.vala:475
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "Check %s ud på AppCenter:"
 
-#: src/Views/AppInfoView.vala:481
+#: src/Views/AppInfoView.vala:482
 msgid "Share"
 msgstr "Del"
 
-#: src/Views/AppInfoView.vala:815
+#: src/Views/AppInfoView.vala:816
 msgid "Fund"
 msgstr "Finansier"
 
-#: src/Views/AppInfoView.vala:837
+#: src/Views/AppInfoView.vala:838
 msgid "Fund the development of this app"
 msgstr "Finansier udviklingen af denne app"
 
@@ -670,7 +680,7 @@ msgid "Restart Now"
 msgstr "Genstart Nu"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:201
+#: src/Views/AppListUpdateView.vala:203
 msgid "Update All"
 msgstr "Opdatér alle"
 
@@ -800,12 +810,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "Kræver betaling, som ikke er aktiveret"
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:304
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:305
 msgid "Free"
 msgstr "Gratis"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:306
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:307
 msgid "Install"
 msgstr "Installer"
 
@@ -909,9 +919,12 @@ msgstr "Drivere"
 msgid "Open"
 msgstr "Åben"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:329
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:330
 msgid "Update"
 msgstr "Opdater"
+
+#~ msgid "There Was An Error Installing %s."
+#~ msgstr "Der Opstod En Fejl under Installationen af %s."
 
 #~ msgid "Size: %s"
 #~ msgstr "Størrelse: %s"

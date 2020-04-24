@@ -281,12 +281,8 @@ public class AppCenter.App : Gtk.Application {
                         break;
                     }
 
-                    var dialog = new Granite.MessageDialog.with_image_from_icon_name (
-                        _("There Was An Error Installing %s.").printf (package.get_name ()),
-                        format_error_message (error.message),
-                        "dialog-error",
-                        Gtk.ButtonsType.CLOSE
-                    );
+                    var dialog = new InstallFailDialog (package, error);
+
                     dialog.show_all ();
                     dialog.run ();
                     dialog.destroy ();

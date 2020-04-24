@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-19 17:17+0000\n"
+"POT-Creation-Date: 2020-04-23 22:03+0000\n"
 "PO-Revision-Date: 2019-12-23 11:07+0000\n"
 "Last-Translator: Marko <marko.dolar@gmail.com>\n"
 "Language-Team: Slovenian <https://l10n.elementary.io/projects/appcenter/appcenter/sl/>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:330
+#: src/Application.vala:38 src/Core/Package.vala:336
 msgid "AppCenter"
 msgstr "Center za programsko opremo"
 
@@ -41,11 +41,6 @@ msgstr "Aplikacija nameščena"
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s je bila uspešno nameščena"
-
-#: src/Application.vala:285
-#, c-format
-msgid "There Was An Error Installing %s."
-msgstr "Pri namestitvi %s je prišlo do napake."
 
 #: src/MainWindow.vala:150 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
@@ -247,33 +242,33 @@ msgstr "Dokončano"
 msgid "Updating"
 msgstr "Posodobi"
 
-#: src/Core/Package.vala:300
+#: src/Core/Package.vala:306
 #, c-format
 msgid "%s Developers"
 msgstr "Razvijalci %s"
 
-#: src/Core/Package.vala:332
+#: src/Core/Package.vala:338
 msgid "elementary Updates"
 msgstr "elementary posodobitve"
 
-#: src/Core/Package.vala:334
+#: src/Core/Package.vala:340
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (nepreverjeno)"
 
-#: src/Core/Package.vala:337
+#: src/Core/Package.vala:343
 #, c-format
 msgid "%s (non-curated)"
 msgstr "%s (nepreverjeno)"
 
-#: src/Core/Package.vala:339
+#: src/Core/Package.vala:345
 msgid "Ubuntu Drivers"
 msgstr "Ubuntu gonilniki"
 
-#: src/Core/Package.vala:342
+#: src/Core/Package.vala:348
 msgid "Unknown Origin (non-curated)"
 msgstr "Neznan vir (nepreverjeno)"
 
-#: src/Core/Package.vala:452
+#: src/Core/Package.vala:458
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Stanje aplikacije v Centru za programsko opremo ni nastavljeno kot nameščeno za pakete: %s"
@@ -354,6 +349,24 @@ msgstr "Ne namesti"
 #: src/Dialogs/NonCuratedWarningDialog.vala:82
 msgid "Install Anyway"
 msgstr "Vseeno namesti"
+
+#: src/Dialogs/InstallFailDialog.vala:26
+#, fuzzy
+#| msgid "This may have been caused by external or manually compiled software."
+msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
+msgstr "To je lahko povzročila zunanja ali ročno prevedena programke oprema."
+
+#: src/Dialogs/InstallFailDialog.vala:37
+#, fuzzy
+#| msgid "Failed to uninstall app"
+msgid "Failed to install app"
+msgstr "Ni bilo možno odstraniti aplikacijo"
+
+#: src/Dialogs/InstallFailDialog.vala:40
+#, fuzzy, c-format
+#| msgid "Failed to uninstall “%s”"
+msgid "Failed to install “%s”"
+msgstr "Ni bilo možno odstraniti “%s”"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
 #, fuzzy
@@ -586,81 +599,81 @@ msgstr "Poskusi znova"
 msgid "Screenshot Not Available"
 msgstr "Posnetek zaslona ni na voljo"
 
-#: src/Views/AppInfoView.vala:206
+#: src/Views/AppInfoView.vala:207
 msgid "Homepage"
 msgstr "Domača stran"
 
-#: src/Views/AppInfoView.vala:212
+#: src/Views/AppInfoView.vala:213
 msgid "Suggest Translations"
 msgstr "Predlagaj prevode"
 
-#: src/Views/AppInfoView.vala:218
+#: src/Views/AppInfoView.vala:219
 msgid "Report a Problem"
 msgstr "Prijavi težavo"
 
-#: src/Views/AppInfoView.vala:224
+#: src/Views/AppInfoView.vala:225
 msgid "Help"
 msgstr "Pomoč"
 
-#: src/Views/AppInfoView.vala:235
+#: src/Views/AppInfoView.vala:236
 msgid "What's New:"
 msgstr "Kaj je novega:"
 
-#: src/Views/AppInfoView.vala:270
+#: src/Views/AppInfoView.vala:271
 msgid "Extensions:"
 msgstr "Razširitve:"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:359
+#: src/Views/AppInfoView.vala:360
 msgid "Public Domain"
 msgstr "Javna last"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:362
+#: src/Views/AppInfoView.vala:363
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://sl.wikipedia.org/wiki/Javna_last"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:367
+#: src/Views/AppInfoView.vala:368
 msgid "Free Software"
 msgstr "Prosto programje"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:370
+#: src/Views/AppInfoView.vala:371
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "http://www.gnu.org/philosophy/free-sw.sl"
 
-#: src/Views/AppInfoView.vala:374
+#: src/Views/AppInfoView.vala:375
 msgid "Proprietary"
 msgstr "Lastniški"
 
-#: src/Views/AppInfoView.vala:377
+#: src/Views/AppInfoView.vala:378
 msgid "Unknown License"
 msgstr "Nepoznana licenca"
 
-#: src/Views/AppInfoView.vala:426
+#: src/Views/AppInfoView.vala:427
 #, c-format
 msgid "Other Apps by %s"
 msgstr "Druge aplikacije od %s"
 
-#: src/Views/AppInfoView.vala:463
+#: src/Views/AppInfoView.vala:464
 msgid "Link copied to clipboard"
 msgstr "Povezava je bila skopirana na odložišče"
 
-#: src/Views/AppInfoView.vala:474
+#: src/Views/AppInfoView.vala:475
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "Poiščite %s v centru za aplikacije:"
 
-#: src/Views/AppInfoView.vala:481
+#: src/Views/AppInfoView.vala:482
 msgid "Share"
 msgstr "Deli"
 
-#: src/Views/AppInfoView.vala:815
+#: src/Views/AppInfoView.vala:816
 msgid "Fund"
 msgstr "Podpri"
 
-#: src/Views/AppInfoView.vala:837
+#: src/Views/AppInfoView.vala:838
 msgid "Fund the development of this app"
 msgstr "Podpri razvoj te aplikacije"
 
@@ -673,7 +686,7 @@ msgid "Restart Now"
 msgstr "Ponovno zaženi zdaj"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:201
+#: src/Views/AppListUpdateView.vala:203
 msgid "Update All"
 msgstr "Posodobi vse"
 
@@ -803,12 +816,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "Zahteva plačila, ki niso omogočena"
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:304
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:305
 msgid "Free"
 msgstr "Brezplačno"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:306
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:307
 msgid "Install"
 msgstr "Namesti"
 
@@ -912,9 +925,12 @@ msgstr "Gonilniki"
 msgid "Open"
 msgstr "Odpri"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:329
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:330
 msgid "Update"
 msgstr "Posodobi"
+
+#~ msgid "There Was An Error Installing %s."
+#~ msgstr "Pri namestitvi %s je prišlo do napake."
 
 #~ msgid "Size: %s"
 #~ msgstr "Velikost: %s"
