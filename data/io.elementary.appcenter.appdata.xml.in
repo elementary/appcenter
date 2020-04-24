@@ -8,11 +8,7 @@
   <name>AppCenter</name>
   <summary>Browse and manage apps</summary>
   <description>
-    <p>
-    An app store for indie and open source developers. Browse by categories or
-    search and discover new apps. AppCenter is also used for updating your
-    system to the latest and greatest version for new features and fixes.
-    </p>
+    <p>An app store for indie and open source developers. Browse by categories or search and discover new apps. AppCenter is also used for updating your system to the latest and greatest version for new features and fixes.</p>
   </description>
   <releases>
     <release version="3.2.5" date="2020-04-16" urgency="medium">
@@ -38,10 +34,12 @@
           <li>Use configured network proxy settings for apt operations</li>
           <li>No longer prompt for approval to update non-curated apps</li>
           <li>Ensure the OS updates subheading copy is correct after finishing updates</li>
+          <li>Ellipsize long app names in App Info views</li>
         </ul>
         <p>And more</p>
         <ul>
           <li>Show a more informative loading screen when checking for updates</li>
+          <li>Don't list fonts alongside apps</li>
           <li>Updated translations</li>
         </ul>
       </description>

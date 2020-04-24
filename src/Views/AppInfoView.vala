@@ -168,6 +168,7 @@ namespace AppCenter.Views {
                 stack_context.add_provider (loading_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
             }
 
+            package_name.ellipsize = Pango.EllipsizeMode.MIDDLE;
             package_name.selectable = true;
             package_name.xalign = 0;
             package_name.get_style_context ().add_class (Granite.STYLE_CLASS_H1_LABEL);

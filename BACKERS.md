@@ -122,16 +122,6 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - Anonymous Backer
 - Anonymous Backer
 - Anonymous Backer
-- Anonymous Backer
-- Anonymous Backer
-- Anonymous Backer
-- Anonymous Backer
-- Anonymous Backer
-- Anonymous Backer
-- Anonymous Backer
-- Anonymous Backer
-- Anonymous Backer
-- Anonymous Backer
 - Anthony Weathers
 - Antti Impiö
 - Arnaud Durif
@@ -148,7 +138,6 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - Benjamin Collet
 - Berger Rudolf
 - Bernardo Ferrari
-- binternagel
 - Bjarne Kristensen
 - Bobby Moss
 - Boris Mann
@@ -158,6 +147,7 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - Brian Bohall
 - Brian Douglass
 - Brian Reading
+- Brian J Schreiner
 - Bryan Paget
 - Bryce Adam Prescott
 - Caio Vitor Hungria
@@ -167,6 +157,7 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - Carlos López
 - Carlos Soutullo
 - Carolos Foscolos
+- Cato Gaustad
 - cdnbigj
 - Chase Longmore
 - Chau Ngoc Duy Khuong
@@ -186,12 +177,13 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - Cory DeVore
 - Craig Lovell
 - Craig Luchtefeld
-- crisconru
+- Cristóbal Contreras Rubio
 - Dan Livingston
 - Dan Mullen
 - Daniel Batsche
 - DANIEL J JAMES
 - Daniel Landau
+- Daniel Lindenfelser
 - Daniel Patton
 - Daniel Pontoriero
 - Daniel Rusek
@@ -224,8 +216,10 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - dragonlich
 - Dustin Nguyen
 - Eddie Ehlin
+- Eike Binternagel
 - Emanuel Francisco Garcia Bautista
 - Emanuel Vitorino
+- Emma Blink
 - en15for
 - Eric Rogers
 - Érico Porto
@@ -245,6 +239,7 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - Gabor Czene
 - Gabriel Sieben
 - Gary Moore
+- Gaurav Satadeve
 - Gemeinde Wedemark
 - Gennaro Grieco
 - Georges-Emmanuel Pallud
@@ -252,6 +247,7 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - Geri Vahey
 - Gerphil Niebur
 - gffranco
+- Grant Ford
 - graygoats
 - Greg Hedin
 - Guillaume Deflaux
@@ -278,6 +274,7 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - James Gordon
 - Jamie Phillips
 - Jan Kočí
+- Jan Lajka
 - Jason Jacobs
 - Javier Olguin
 - Jayant Moosad
@@ -297,7 +294,7 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - John Been
 - John Beers
 - John Cooper
-- John Ferguson
+- John Urquhart Ferguson
 - John Joseph Radecki
 - johnnie
 - Jonas Emil Sommer
@@ -339,7 +336,7 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - Leo Herzog
 - Leonardo Bertechini Stabile
 - Leszek Szczepański
-- lhanssen
+- Lieven Hanssen
 - Lin Hung-Shin
 - Lior Lobel
 - Logan Fouchet
@@ -360,6 +357,7 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - Marco Bluethgen
 - Marco Marzillier
 - Mario Siqueira
+- Marius Meisenzahl
 - Martin Giger
 - Martin Kerz
 - Martin Untersteiner
@@ -372,6 +370,7 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - Matthew Crews
 - Max-Jonathan Luckow
 - mcronen
+- Mehrad Mahmoudian
 - Melf Christiansen
 - Micah Ilbery
 - Michael B Nielsen
@@ -399,6 +398,7 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - Patrick Griffis
 - Paul Demers
 - Paul Hibbitts
+- Paul Rabin
 - Paul Stephenson III
 - Pavel Dolgov
 - Pavel Dolinin
@@ -422,6 +422,7 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - Quentin Ricci
 - Raj Sardhara
 - Randolph Murdock III
+- Raymond WT Leung
 - Reed Love
 - Rein Bentdal
 - Ricardo Rodrigues
@@ -478,7 +479,7 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - Tim Bischoff
 - Timothy Byers
 - timz
-- TNG Entertainment
+- TNG
 - Tom Wor
 - Tommy Andrew Creuzer
 - Uncle Steve Fishing AB4EL
@@ -488,13 +489,12 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - Victor Kilikaev
 - Vinodh Moodley
 - Volker Thiel
-- Volodimir Biloshicky
+- Volodymyr Biloshytskyi
 - Vuk Boskovic
 - Wesley McCormick
 - Wesley Payne
 - Will Barnard
 - Willi Mutschler
-- wtleung
 - Xavier Scheuer
 - Xiaoxuan He
 - Yasen Tzvetkov
