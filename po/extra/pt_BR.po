@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-23 19:12+0000\n"
-"PO-Revision-Date: 2020-04-12 13:10+0000\n"
+"PO-Revision-Date: 2020-04-26 23:10+0000\n"
 "Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/extra/pt_BR/>\n"
@@ -45,50 +45,56 @@ msgid ""
 "Only check for updates at device startup if it's more than 24 hours since we "
 "last checked"
 msgstr ""
+"Apenas verificar se há atualizações na inicialização do dispositivo se "
+"houver mais de 24 horas desde a última verificação"
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
 msgid "Reduce slowdowns when opening certain apps"
-msgstr ""
+msgstr "Reduza a lentidão ao abrir determinados aplicativos"
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
-#, fuzzy
-#| msgid "Performance improvements"
 msgid "Extension improvements"
-msgstr "Melhorias de desempenho"
+msgstr "Melhorias na extensão"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid ""
 "To de-clutter the updates view, extensions are now only shown if they "
 "require updates"
 msgstr ""
+"Para desorganizar a exibição de atualizações, as extensões agora são "
+"mostradas apenas se exigirem atualizações"
 
 #: data/io.elementary.appcenter.appdata.xml.in:24
 msgid ""
 "Clicking an extension on an app's info page now shows details for the "
 "extension"
 msgstr ""
+"Clicar em uma extensão na página de informações de um aplicativo agora exibe "
+"detalhes da extensão"
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
 msgid ""
 "Swap the main and overlay icons for extensions to more clearly associate "
 "extensions with their app"
 msgstr ""
+"Troque os ícones principais e de sobreposição por extensões para associar "
+"mais claramente as extensões ao aplicativo"
 
 #: data/io.elementary.appcenter.appdata.xml.in:27
-#, fuzzy
-#| msgid "Performance improvements"
 msgid "Keyboard improvements"
-msgstr "Melhorias de desempenho"
+msgstr "Melhorias no teclado"
 
 #: data/io.elementary.appcenter.appdata.xml.in:29
 msgid ""
 "Pressing down in the search field moves the keyboard focus to the search "
 "results list"
 msgstr ""
+"Pressionar para baixo no campo de pesquisa move o foco do teclado para a "
+"lista de resultados da pesquisa"
 
 #: data/io.elementary.appcenter.appdata.xml.in:30
 msgid "Ctrl+F now moves the cursor to the search field"
-msgstr ""
+msgstr "Ctrl+F agora move o cursor para o campo de pesquisa"
 
 #: data/io.elementary.appcenter.appdata.xml.in:32
 #: data/io.elementary.appcenter.appdata.xml.in:49
@@ -97,32 +103,39 @@ msgstr "Correções"
 
 #: data/io.elementary.appcenter.appdata.xml.in:34
 msgid "Use configured network proxy settings for apt operations"
-msgstr ""
+msgstr "Use as configurações de proxy de rede definidas para operações apt"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
 msgid "No longer prompt for approval to update non-curated apps"
 msgstr ""
+"Não é mais necessário solicitar aprovação para atualizar aplicativos não "
+"selecionados"
 
 #: data/io.elementary.appcenter.appdata.xml.in:36
 msgid ""
 "Ensure the OS updates subheading copy is correct after finishing updates"
 msgstr ""
+"Certifica que a cópia do subtítulo de atualizações do sistema operacional "
+"está correta após o término das atualizações"
 
 #: data/io.elementary.appcenter.appdata.xml.in:37
 msgid "Ellipsize long app names in App Info views"
 msgstr ""
+"Retirar nomes longos de aplicativos nas visualizações de informações do "
+"aplicativo"
 
 #: data/io.elementary.appcenter.appdata.xml.in:39
 msgid "And more"
-msgstr ""
+msgstr "E mais"
 
 #: data/io.elementary.appcenter.appdata.xml.in:41
 msgid "Show a more informative loading screen when checking for updates"
 msgstr ""
+"Mostrar uma tela de carregamento mais informativa ao verificar atualizações"
 
 #: data/io.elementary.appcenter.appdata.xml.in:42
 msgid "Don't list fonts alongside apps"
-msgstr ""
+msgstr "Não listar fontes ao lado de aplicativos"
 
 #: data/io.elementary.appcenter.appdata.xml.in:43
 #: data/io.elementary.appcenter.appdata.xml.in:53

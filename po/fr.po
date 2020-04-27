@@ -11,9 +11,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-23 22:03+0000\n"
-"PO-Revision-Date: 2020-04-20 17:20+0000\n"
+"PO-Revision-Date: 2020-04-25 11:10+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
-"Language-Team: French <https://l10n.elementary.io/projects/appcenter/appcenter/fr/>\n"
+"Language-Team: French <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -342,22 +343,19 @@ msgid "Install Anyway"
 msgstr "Installer quand même"
 
 #: src/Dialogs/InstallFailDialog.vala:26
-#, fuzzy
-#| msgid "This may have been caused by external or manually compiled software."
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
-msgstr "Cela peut être dû à des logiciels externes ou compilés manuellement."
+msgstr ""
+"Cela peut être dû à un problème temporaire ou à des logiciels externes ou "
+"compilés manuellement."
 
 #: src/Dialogs/InstallFailDialog.vala:37
-#, fuzzy
-#| msgid "Failed to uninstall app"
 msgid "Failed to install app"
-msgstr "Échec de la désinstallation de l'application"
+msgstr "Échec de l'installation de l'application"
 
 #: src/Dialogs/InstallFailDialog.vala:40
-#, fuzzy, c-format
-#| msgid "Failed to uninstall “%s”"
+#, c-format
 msgid "Failed to install “%s”"
-msgstr "Échec de la désinstallation de « %s »"
+msgstr "Échec de l'installation de « %s »"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
 msgid "Non-Curated Warning"
