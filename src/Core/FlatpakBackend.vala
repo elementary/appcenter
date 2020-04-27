@@ -86,8 +86,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
             installation_changed_monitor.changed.connect (() => {
                 debug ("Flatpak installation changed.");
-                refresh_cache.begin (null);
-                get_installed_applications.begin (null);
+                trigger_update_check.begin ();
             });
         } else {
             warning ("Couldn't create Installation File Monitor due to no installation");
@@ -100,6 +99,16 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         );
 
         reload_appstream_pool ();
+    }
+
+    private async void trigger_update_check () {
+        try {
+            yield refresh_cache (null);
+        } catch (Error e) {
+            warning ("Unable to refresh cache after external change: %s", e.message);
+        }
+
+        yield Client.get_default ().refresh_updates ();
     }
 
     static construct {
