@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-23 19:12+0000\n"
-"PO-Revision-Date: 2020-04-23 19:09+0000\n"
+"PO-Revision-Date: 2020-04-26 23:10+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
 "extra/pt/>\n"
@@ -134,7 +134,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:42
 msgid "Don't list fonts alongside apps"
-msgstr ""
+msgstr "Não listar fontes ao lado de aplicações"
 
 #: data/io.elementary.appcenter.appdata.xml.in:43
 #: data/io.elementary.appcenter.appdata.xml.in:53
