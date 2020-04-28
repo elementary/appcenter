@@ -111,6 +111,7 @@ public class AppCenterCore.Package : Object {
 
     public void mark_installed () {
         installed_cached = true;
+        update_state ();
     }
 
     public bool update_available {
