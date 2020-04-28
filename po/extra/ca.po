@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-23 19:12+0000\n"
-"PO-Revision-Date: 2020-04-21 17:02+0000\n"
+"PO-Revision-Date: 2020-04-25 11:10+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/extra/"
 "ca/>\n"
@@ -120,7 +120,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:37
 msgid "Ellipsize long app names in App Info views"
-msgstr ""
+msgstr "El·lipsi de noms llargs d'aplicacions a la vista d'informació"
 
 #: data/io.elementary.appcenter.appdata.xml.in:39
 msgid "And more"
@@ -133,7 +133,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:42
 msgid "Don't list fonts alongside apps"
-msgstr ""
+msgstr "No es llisten lletres amb les aplicacions."
 
 #: data/io.elementary.appcenter.appdata.xml.in:43
 #: data/io.elementary.appcenter.appdata.xml.in:53

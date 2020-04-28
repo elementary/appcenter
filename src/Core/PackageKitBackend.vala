@@ -195,9 +195,19 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
             var time_since_last_action = (new DateTime.now_local ()).difference (last_action) / GLib.TimeSpan.MILLISECOND;
             if (time_since_last_action >= PACKAGEKIT_ACTIVITY_TIMEOUT_MS) {
                 info ("packages possibly changed by external program, refreshing cache");
-                refresh_cache.begin (null);
+                trigger_update_check.begin ();
             }
         }
+    }
+
+    private async void trigger_update_check () {
+        try {
+            yield refresh_cache (null);
+        } catch (Error e) {
+            warning ("Unable to refresh cache after external change: %s", e.message);
+        }
+
+        yield Client.get_default ().refresh_updates ();
     }
 
     ~PackageKitBackend () {
