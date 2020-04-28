@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-23 19:12+0000\n"
-"PO-Revision-Date: 2020-04-19 17:15+0000\n"
+"PO-Revision-Date: 2020-04-28 16:39+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/extra/"
 "he/>\n"
@@ -40,36 +40,26 @@ msgid "Performance improvements"
 msgstr "שיפורי ביצועים"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
-#, fuzzy
-#| msgid ""
-#| "Only check for updates at computer startup if it's more than 24 hours "
-#| "since we last checked"
 msgid ""
 "Only check for updates at device startup if it's more than 24 hours since we "
 "last checked"
 msgstr ""
-"בדיקת עדכונים עם הפעלת המחשב רק אם חלפו למעלה מ־24 שעות מאז הבדיקה האחרונה"
+"בדיקת עדכונים עם הפעלת המכשיר רק אם חלפו למעלה מ־24 שעות מאז הבדיקה האחרונה"
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
 msgid "Reduce slowdowns when opening certain apps"
 msgstr "הפחתת האטות בעת פתיחה של יישומים מסוימים"
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
-#, fuzzy
-#| msgid "Performance improvements"
 msgid "Extension improvements"
-msgstr "שיפורי ביצועים"
+msgstr "שיפורי הרחבה"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
-#, fuzzy
-#| msgid ""
-#| "To de-clutter the updates view, plugins are now only shown if they "
-#| "require updates"
 msgid ""
 "To de-clutter the updates view, extensions are now only shown if they "
 "require updates"
 msgstr ""
-"כדי להפחית את העומס בתצוגת העדכונים, התוספים מופיעים מעתה רק אם נדרשים עבורם "
+"כדי להפחית את העומס בתצוגת העדכונים, ההרחבות מופיעות מעתה רק אם נדרשים עבורן "
 "עדכונים"
 
 #: data/io.elementary.appcenter.appdata.xml.in:24
@@ -79,22 +69,16 @@ msgid ""
 msgstr "לחיצה על הרחבה בעמוד הפירוט על יישום מציגה מעתה את פרטי ההרחבה"
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
-#, fuzzy
-#| msgid ""
-#| "Swapped the main and overlay icons for plugins to more clearly associate "
-#| "plugins with their app"
 msgid ""
 "Swap the main and overlay icons for extensions to more clearly associate "
 "extensions with their app"
 msgstr ""
-"כפתור שכבת העל והכפתור הראשי הוחלפו עבור התוספים כדי לשייך בצורה ברורה יותר "
-"את התוספים ליישומים שלהם"
+"כפתור שכבת העל והכפתור הראשי הוחלפו עבור ההרחבות כדי לשייך בצורה ברורה יותר "
+"את ההרחבות ליישומים שלהן"
 
 #: data/io.elementary.appcenter.appdata.xml.in:27
-#, fuzzy
-#| msgid "Performance improvements"
 msgid "Keyboard improvements"
-msgstr "שיפורי ביצועים"
+msgstr "שיפורי מקלדת"
 
 #: data/io.elementary.appcenter.appdata.xml.in:29
 msgid ""
