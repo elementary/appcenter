@@ -4,9 +4,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-23 22:03+0000\n"
-"PO-Revision-Date: 2020-04-08 23:30+0000\n"
+"PO-Revision-Date: 2020-04-28 16:39+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
-"Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/appcenter/he/>\n"
+"Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/he/>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -335,22 +336,17 @@ msgid "Install Anyway"
 msgstr "להתקין בכל זאת"
 
 #: src/Dialogs/InstallFailDialog.vala:26
-#, fuzzy
-#| msgid "This may have been caused by external or manually compiled software."
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
-msgstr "יתכן שבעיה זו נגרמה עקב תכנה חיצונית או כזאת שהודרה ידנית."
+msgstr "יתכן שזו בעיה זמנית או שנגרמה עקב תכנה חיצונית או כזאת שהודרה ידנית."
 
 #: src/Dialogs/InstallFailDialog.vala:37
-#, fuzzy
-#| msgid "Failed to uninstall app"
 msgid "Failed to install app"
-msgstr "הסרת היישום נכשלה"
+msgstr "התקנת היישום נכשלה"
 
 #: src/Dialogs/InstallFailDialog.vala:40
-#, fuzzy, c-format
-#| msgid "Failed to uninstall “%s”"
+#, c-format
 msgid "Failed to install “%s”"
-msgstr "הסרת „%s” נכשלה"
+msgstr "התקנת „%s” נכשלה"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
 msgid "Non-Curated Warning"
@@ -704,14 +700,12 @@ msgid "No apps could be found. Try changing search terms."
 msgstr "לא נמצאו יישומים. כדאי לשנות את ביטוי החיפוש."
 
 #: src/Widgets/AbstractAppList.vala:45
-#, fuzzy
-#| msgid "Searching for updates…"
 msgid "Checking for Updates"
-msgstr "בחיפוש אחר עדכונים…"
+msgstr "בחיפוש אחר עדכונים"
 
 #: src/Widgets/AbstractAppList.vala:46
 msgid "Downloading a list of available updates to the OS and installed apps"
-msgstr ""
+msgstr "מתקבלת רשימת העדכונים הזמינים למערכת ההפעלה וליישומים המותקנים"
 
 #: src/Widgets/Banner.vala:55
 msgid "An open, pay-what-you-want app store"
