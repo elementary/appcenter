@@ -15,9 +15,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-23 22:03+0000\n"
-"PO-Revision-Date: 2020-04-12 13:10+0000\n"
+"PO-Revision-Date: 2020-04-29 21:46+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
-"Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/appcenter/es/>\n"
+"Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -229,22 +230,16 @@ msgstr[0] "Hay %u actualización disponible para el sistema"
 msgstr[1] "Hay %u actualizaciones disponibles para el sistema"
 
 #: src/Core/FlatpakBackend.vala:796
-#, fuzzy
-#| msgid "Uninstall"
 msgid "Uninstalling"
-msgstr "Desinstalar"
+msgstr "Desinstalando"
 
 #: src/Core/FlatpakBackend.vala:801
-#, fuzzy
-#| msgid "Finished"
 msgid "Finishing"
-msgstr "Terminado"
+msgstr "Terminando"
 
 #: src/Core/FlatpakBackend.vala:896
-#, fuzzy
-#| msgid "Update"
 msgid "Updating"
-msgstr "Actualizar"
+msgstr "Actualizando"
 
 #: src/Core/Package.vala:306
 #, c-format
@@ -278,10 +273,9 @@ msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "El paquete %s consta como aplicación no instalada en el Centro de Aplicaciones"
 
 #: src/Core/PackageKitBackend.vala:251
-#, fuzzy, c-format
-#| msgid "%s (non-curated)"
+#, c-format
 msgid "%s (local)"
-msgstr "%s (no verificadas)"
+msgstr "%s (local)"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -353,22 +347,19 @@ msgid "Install Anyway"
 msgstr "Instalar de todas formas"
 
 #: src/Dialogs/InstallFailDialog.vala:26
-#, fuzzy
-#| msgid "This may have been caused by external or manually compiled software."
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
-msgstr "Esto pudo haber sido causado por software compilado de forma externa o manual."
+msgstr ""
+"Puede tratarse de un problema temporal o un error causado por software "
+"externao o compilado manualmente."
 
 #: src/Dialogs/InstallFailDialog.vala:37
-#, fuzzy
-#| msgid "Failed to uninstall app"
 msgid "Failed to install app"
-msgstr "No se pudo desinstalar la aplicación"
+msgstr "No se pudo instalar la aplicación"
 
 #: src/Dialogs/InstallFailDialog.vala:40
-#, fuzzy, c-format
-#| msgid "Failed to uninstall “%s”"
+#, c-format
 msgid "Failed to install “%s”"
-msgstr "No se pudo desinstalar «%s»"
+msgstr "No se pudo instalar «%s»"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
 #, fuzzy
@@ -390,6 +381,7 @@ msgstr "“%s” no está revisada por elementary y no ha sido revisada por segu
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
 msgid "It may not receive bug fix or feature updates"
 msgstr ""
+"Podría no recibir correcciones de defectos o actualizaciones de funcionalidad"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:60
 msgid "It may access or change system or personal files without permission"
@@ -736,6 +728,8 @@ msgstr "Buscando actualizaciones…"
 #: src/Widgets/AbstractAppList.vala:46
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr ""
+"Descargando una lista de actualizaciones disponibles para el sistema y las "
+"aplicaciones"
 
 #: src/Widgets/Banner.vala:55
 msgid "An open, pay-what-you-want app store"
