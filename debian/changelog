@@ -1,3 +1,96 @@
+appcenter (3.3.0) bionic; urgency=medium
+
+  * Release 3.3.0 (#1293)
+  * Refresh state after marking package installed (#1291)
+  * Properly clear pending updates if they're done externally (#1276)
+  * Throw Flatpak errors (#1287)
+  * Update translation files
+  * Update translation template
+  * Improve installation failure dialog (#1286)
+  * Better handle Houston errors (#1288)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * Update io.elementary.appcenter.appdata.xml.in
+  * Hide fonts unless they need an update (#1285)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * AppInfoView: fix issues with long app titles (#1280)
+  * Backers: anon → Paul Rabin
+  * Backers: Volodimir Biloshicky → Volodymyr Biloshytskyi
+  * Backers: anon → Brian J Schreiner
+  * Backers: crisconru → Cristóbal Contreras Rubio
+  * Backers: anon → Mehrad Mahmoudian
+  * Backers: anon → Daniel Lindenfelser
+  * Backers: wtleung → Raymond WT Leung
+  * Backers: anon → Gaurav Satadeve
+  * Backers: binternagel → Eike Binternagel
+  * Backers: John Ferguson → John Urquhart Ferguson
+  * Backers: TNG Entertainment → TNG
+  * Backers: lhanssen → Lieven Hanssen
+  * Backers: anon → Emma Blink
+  * Backers: anon → Marius Meisenzahl
+  * Backers: anon → Grant Ford
+  * Backers: anon → Cato Gaustad
+  * BACKERS.md: anon → - Jan Lajka
+  * Update translation files
+  * Update translation template
+  * AppData: Organize 3.2.5 release notes (#1277)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * Show loading placeholder unless no results returned (#1260)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * Update OS Updates subheading after updates (#1264)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * AbstractAppContainer: switch overlay plugin icons (#1273)
+  * Don't throw cancelled errors to the user (#1274)
+  * Startup and loading optimisations (#1262)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * Only show plugins in installed view if they require updates (#1265)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * Prevent the daemon refreshing on every startup (#1272)
+  * PackageKitBackend: only refresh PK cache on changes (#1271)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * Better keyboard navigation for search (#1270)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * PackageKitBackend: Tell PackageKit about any system proxy config
+    (#1257)
+  * AppInfoView: parse_description reduce try/catch scope (#1269)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * AppData: Correct unreleased date to today
+  * AppInfoView: load description async (#1267)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * AppInfoView: allow opening plugins (#1266)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * Only ask for non-curated approval on installations, not updates
+    (#1254)
+  * AppInfoView: use Hdy.Column (#1217)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+
+ -- elementary Builds Team <builds@elementary.io>  Wed, 29 Apr 2020 21:47:52 +0000
+
 appcenter (3.2.4) bionic; urgency=medium
 
   * Release 3.2.4 (#1256)
