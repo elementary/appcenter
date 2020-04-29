@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-23 19:12+0000\n"
-"PO-Revision-Date: 2020-04-12 13:10+0000\n"
+"PO-Revision-Date: 2020-04-29 21:46+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/extra/"
 "es/>\n"
@@ -45,16 +45,16 @@ msgid ""
 "Only check for updates at device startup if it's more than 24 hours since we "
 "last checked"
 msgstr ""
+"Se buscan actualizaciones al arrancar el dispositivo solo si han "
+"transcurrido más de 24 horas desde la última comprobación"
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
 msgid "Reduce slowdowns when opening certain apps"
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
-#, fuzzy
-#| msgid "Performance improvements"
 msgid "Extension improvements"
-msgstr "Mejoras de rendimiento"
+msgstr "Mejoras en las extensiones"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid ""
