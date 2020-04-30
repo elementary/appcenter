@@ -66,9 +66,13 @@ public class AppCenterCore.Houston : Object {
                 if (res.has_member ("data")) {
                     var data = res.get_array_member ("data");
 
-                    var arr_builder = new VariantBuilder (new VariantType ("as"));
-                    foreach (var id in data.get_elements ()) {
-                        var val = (string)id.get_value ();
+                    var arr_builder = new VariantBuilder (GLib.VariantType.STRING_ARRAY);
+                    foreach (unowned Json.Node id in data.get_elements ()) {
+                        unowned string? val = id.get_string ();
+                        if (val == null) {
+                            continue;
+                        }
+
                         arr_builder.add ("s", val);
                         app_ids += val;
                     }
@@ -104,7 +108,7 @@ public class AppCenterCore.Houston : Object {
 
                 var caches = caches_store.get_value ("api-caches");
                 // Get the array of app IDs corresponding to this API endpoint from the dictionary
-                var cached_ids = caches.lookup_value (endpoint, new VariantType ("as"));
+                var cached_ids = caches.lookup_value (endpoint, GLib.VariantType.STRING_ARRAY);
 
                 if (cached_ids != null) {
                     app_ids = cached_ids.get_strv ();
