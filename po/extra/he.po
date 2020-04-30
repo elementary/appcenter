@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-23 19:12+0000\n"
-"PO-Revision-Date: 2020-04-28 16:39+0000\n"
+"PO-Revision-Date: 2020-04-30 21:59+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/extra/"
 "he/>\n"
@@ -97,17 +97,12 @@ msgid "Fixes"
 msgstr "תיקונים"
 
 #: data/io.elementary.appcenter.appdata.xml.in:34
-#, fuzzy
-#| msgid ""
-#| "AppCenter now uses configured network proxy settings for apt operations"
 msgid "Use configured network proxy settings for apt operations"
-msgstr "מרכז היישומים משתמש בהגדרות מתווך רשת של המערכת עבור פעילויות apt"
+msgstr "שימוש במתווך הרשת המוגדר של המערכת עבור פעילויות apt"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
-#, fuzzy
-#| msgid "AppCenter no longer prompts for approval to update non-curated apps"
 msgid "No longer prompt for approval to update non-curated apps"
-msgstr "מרכז היישומים אינו מבקש אישור לעדכן יישומים שמחוץ למאגר"
+msgstr "אין עוד בקשת אישור לעדכון יישומים שמחוץ למאגר"
 
 #: data/io.elementary.appcenter.appdata.xml.in:36
 msgid ""
@@ -116,19 +111,19 @@ msgstr "וידאו שעותק תת־כותרת עדכוני מערכת ההפע�
 
 #: data/io.elementary.appcenter.appdata.xml.in:37
 msgid "Ellipsize long app names in App Info views"
-msgstr ""
+msgstr "קיצור שמות ארוכים של יישומים בתצוגות פרטי היישומון"
 
 #: data/io.elementary.appcenter.appdata.xml.in:39
 msgid "And more"
-msgstr ""
+msgstr "ועוד"
 
 #: data/io.elementary.appcenter.appdata.xml.in:41
 msgid "Show a more informative loading screen when checking for updates"
-msgstr ""
+msgstr "להציג מסך טעינה מפורט יותר בעת חיפוש אחר עדכונים"
 
 #: data/io.elementary.appcenter.appdata.xml.in:42
 msgid "Don't list fonts alongside apps"
-msgstr ""
+msgstr "לא להציג גופנים לצד יישומים"
 
 #: data/io.elementary.appcenter.appdata.xml.in:43
 #: data/io.elementary.appcenter.appdata.xml.in:53
