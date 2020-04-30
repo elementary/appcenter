@@ -55,6 +55,7 @@ conf_data.set('BLACKLIST', get_option('blacklist_file'))
 conf_data.set('VERSION', meson.project_version())
 conf_data.set('CONFIGDIR', config_dir)
 conf_data.set('EXEC_PATH', join_paths (get_option('prefix'), get_option('bindir'), meson.project_name()))
+conf_data.set('HOUSTON_API_URL', get_option('api_url'))
 
 subdir('data')
 subdir('src')

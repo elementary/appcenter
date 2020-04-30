@@ -17,9 +17,13 @@
 */
 
 public class AppCenterCore.Houston : Object {
-    private const string HOUSTON_API_URL = "https://developer.elementary.io/api";
-
     private Soup.Session session;
+
+    private static GLib.Settings caches_store;
+
+    static construct {
+        caches_store = new GLib.Settings ("io.elementary.appcenter.caches");
+    }
 
     construct {
         session = new Soup.Session ();
@@ -50,7 +54,7 @@ public class AppCenterCore.Houston : Object {
     }
 
     public async string[] get_app_ids (string endpoint) {
-        var uri = HOUSTON_API_URL + endpoint;
+        var uri = Build.HOUSTON_API_URL + endpoint;
         string[] app_ids = {};
 
         debug ("Requesting newest applications from %s", uri);
@@ -62,12 +66,49 @@ public class AppCenterCore.Houston : Object {
                 if (res.has_member ("data")) {
                     var data = res.get_array_member ("data");
 
+                    var arr_builder = new VariantBuilder (new VariantType ("as"));
                     foreach (var id in data.get_elements ()) {
-                        app_ids += ((string) id.get_value ());
+                        var val = (string)id.get_value ();
+                        arr_builder.add ("s", val);
+                        app_ids += val;
                     }
+
+                    var caches = caches_store.get_value ("api-caches");
+
+                    var dict_builder = new VariantBuilder (new VariantType ("a{sas}"));
+
+                    // Iterate over the caches already in the GSetting
+                    var iter = caches.iterator ();
+                    Variant? existing_item = iter.next_value ();
+                    while (existing_item != null) {
+                        string? key = null;
+
+                        // Get the dict key of this existing item
+                        existing_item.@get ("{sas}", out key, null);
+
+                        // Don't add this item to the new dict if its the one we're replacing
+                        if (key != endpoint) {
+                            dict_builder.add_value (existing_item);
+                        }
+
+                        existing_item = iter.next_value ();
+                    }
+
+                    // Add the new list of apps to the cache dict
+                    dict_builder.add ("{sas}", endpoint, arr_builder);
+
+                    caches_store.set_value ("api-caches", dict_builder.end ());
                 }
             } catch (Error e) {
                 warning ("Houston: %s", e.message);
+
+                var caches = caches_store.get_value ("api-caches");
+                // Get the array of app IDs corresponding to this API endpoint from the dictionary
+                var cached_ids = caches.lookup_value (endpoint, new VariantType ("as"));
+
+                if (cached_ids != null) {
+                    app_ids = cached_ids.get_strv ();
+                }
             }
 
             Idle.add (get_app_ids.callback);
