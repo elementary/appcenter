@@ -86,7 +86,7 @@ public class AppCenterCore.Houston : Object {
                         // Get the dict key of this existing item
                         existing_item.@get ("{sas}", out key, null);
 
-                        // Don't add this item to the new dict if its the one we're replacing
+                        // Copy existing items to new dict, unless this is the item we're updating
                         if (key != endpoint) {
                             dict_builder.add_value (existing_item);
                         }
