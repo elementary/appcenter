@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-23 19:12+0000\n"
-"PO-Revision-Date: 2020-04-29 21:46+0000\n"
+"PO-Revision-Date: 2020-04-30 21:59+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/extra/"
 "es/>\n"
@@ -50,7 +50,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
 msgid "Reduce slowdowns when opening certain apps"
-msgstr ""
+msgstr "Se reducen las ralentizaciones al abrir determinadas aplicaciones"
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
 msgid "Extension improvements"
@@ -61,34 +61,41 @@ msgid ""
 "To de-clutter the updates view, extensions are now only shown if they "
 "require updates"
 msgstr ""
+"Para ordenar la vista de actualizaciones, las extensiones ahora se muestran "
+"solo si necesitan actualizarse"
 
 #: data/io.elementary.appcenter.appdata.xml.in:24
 msgid ""
 "Clicking an extension on an app's info page now shows details for the "
 "extension"
 msgstr ""
+"Si pulsa en la página de información de una extensión o una aplicación, "
+"ahora aparecen detalles sobre la extensión"
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
 msgid ""
 "Swap the main and overlay icons for extensions to more clearly associate "
 "extensions with their app"
 msgstr ""
+"Se intercambiaron los iconos principal y de superposición en las extensiones "
+"para asociar visualmente las extensiones con sus correspondientes "
+"aplicaciones"
 
 #: data/io.elementary.appcenter.appdata.xml.in:27
-#, fuzzy
-#| msgid "Performance improvements"
 msgid "Keyboard improvements"
-msgstr "Mejoras de rendimiento"
+msgstr "Mejoras de teclado"
 
 #: data/io.elementary.appcenter.appdata.xml.in:29
 msgid ""
 "Pressing down in the search field moves the keyboard focus to the search "
 "results list"
 msgstr ""
+"Al oprimir ↓ en el cuadro de búsqueda se traslada el foco a la lista de "
+"resultados de búsqueda"
 
 #: data/io.elementary.appcenter.appdata.xml.in:30
 msgid "Ctrl+F now moves the cursor to the search field"
-msgstr ""
+msgstr "Ctrl + F ahora mueve el cursor al campo de búsqueda"
 
 #: data/io.elementary.appcenter.appdata.xml.in:32
 #: data/io.elementary.appcenter.appdata.xml.in:49
@@ -98,31 +105,39 @@ msgstr "Correcciones"
 #: data/io.elementary.appcenter.appdata.xml.in:34
 msgid "Use configured network proxy settings for apt operations"
 msgstr ""
+"Se utiliza la configuración de «proxy» de red para las operaciones con apt"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
 msgid "No longer prompt for approval to update non-curated apps"
 msgstr ""
+"Ya no se pide su aprobación para actualizar aplicaciones no revisadas por "
+"los editores"
 
 #: data/io.elementary.appcenter.appdata.xml.in:36
 msgid ""
 "Ensure the OS updates subheading copy is correct after finishing updates"
 msgstr ""
+"Se garantiza que el texto del título secundario de actualizaciones del SO "
+"sea correcto tras finalizar las actualizaciones"
 
 #: data/io.elementary.appcenter.appdata.xml.in:37
 msgid "Ellipsize long app names in App Info views"
 msgstr ""
+"Se truncan los nombres extensos en las vistas de información de aplicación"
 
 #: data/io.elementary.appcenter.appdata.xml.in:39
 msgid "And more"
-msgstr ""
+msgstr "Y más"
 
 #: data/io.elementary.appcenter.appdata.xml.in:41
 msgid "Show a more informative loading screen when checking for updates"
 msgstr ""
+"Se muestra una pantalla de carga más informativa al comprobar si hay "
+"actualizaciones"
 
 #: data/io.elementary.appcenter.appdata.xml.in:42
 msgid "Don't list fonts alongside apps"
-msgstr ""
+msgstr "Los tipos de letra ya no figuran entre las aplicaciones"
 
 #: data/io.elementary.appcenter.appdata.xml.in:43
 #: data/io.elementary.appcenter.appdata.xml.in:53
@@ -140,7 +155,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:52
 msgid "Prevent suspending when installing, updating, or removing packages"
-msgstr ""
+msgstr "Se evita la suspensión al instalar, actualizar o desinstalar paquetes"
 
 #: data/io.elementary.appcenter.appdata.xml.in:64
 #: data/io.elementary.appcenter.appdata.xml.in:81
@@ -172,7 +187,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:70
 msgid "Load the \"Installed\" view faster"
-msgstr "Carga la vista \"Instalado\" más rápido"
+msgstr "Carga de la vista «Instaladas» más rápida"
 
 #: data/io.elementary.appcenter.appdata.xml.in:71
 msgid "Ensure flatpak applications show in the category views"
