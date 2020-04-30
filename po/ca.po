@@ -5,11 +5,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-23 22:03+0000\n"
+"POT-Creation-Date: 2020-04-30 22:00+0000\n"
 "PO-Revision-Date: 2020-04-25 11:10+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
-"Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/ca/>\n"
+"Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/appcenter/ca/>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,7 +18,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:336
+#: src/Application.vala:38 src/Core/Package.vala:337
 msgid "AppCenter"
 msgstr "Centre d'aplicacions"
 
@@ -88,7 +87,7 @@ msgstr "Se suprimeixen paquets"
 msgid "Downloading"
 msgstr "Es baixa"
 
-#: src/Utils.vala:86 src/Core/FlatpakBackend.vala:699
+#: src/Utils.vala:86 src/Core/FlatpakBackend.vala:709
 msgid "Installing"
 msgstr "S'instal·la"
 
@@ -133,9 +132,9 @@ msgid "Finished"
 msgstr "S'ha acabat"
 
 #: src/Utils.vala:108 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:708 src/Core/FlatpakBackend.vala:731
-#: src/Core/FlatpakBackend.vala:804 src/Core/FlatpakBackend.vala:905
-#: src/Core/FlatpakBackend.vala:931
+#: src/Core/FlatpakBackend.vala:718 src/Core/FlatpakBackend.vala:746
+#: src/Core/FlatpakBackend.vala:823 src/Core/FlatpakBackend.vala:924
+#: src/Core/FlatpakBackend.vala:950
 msgid "Cancelling"
 msgstr "Es cancel·la"
 
@@ -220,50 +219,50 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "Hi ha %u actualització disponible per al sistema"
 msgstr[1] "Hi ha %u actualitzacions disponibles per al sistema"
 
-#: src/Core/FlatpakBackend.vala:796
+#: src/Core/FlatpakBackend.vala:815
 msgid "Uninstalling"
 msgstr "Es desinstal·la"
 
-#: src/Core/FlatpakBackend.vala:801
+#: src/Core/FlatpakBackend.vala:820
 msgid "Finishing"
 msgstr "S'acaba"
 
-#: src/Core/FlatpakBackend.vala:896
+#: src/Core/FlatpakBackend.vala:915
 msgid "Updating"
 msgstr "S'actualitza"
 
-#: src/Core/Package.vala:306
+#: src/Core/Package.vala:307
 #, c-format
 msgid "%s Developers"
 msgstr "%s, els desenvolupadors"
 
-#: src/Core/Package.vala:338
+#: src/Core/Package.vala:339
 msgid "elementary Updates"
 msgstr "Actualitzacions de l'elementary"
 
-#: src/Core/Package.vala:340
+#: src/Core/Package.vala:341
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (sense cura)"
 
-#: src/Core/Package.vala:343
+#: src/Core/Package.vala:344
 #, c-format
 msgid "%s (non-curated)"
 msgstr "%s (sense cura)"
 
-#: src/Core/Package.vala:345
+#: src/Core/Package.vala:346
 msgid "Ubuntu Drivers"
 msgstr "Controladors de l'Ubuntu"
 
-#: src/Core/Package.vala:348
+#: src/Core/Package.vala:349
 msgid "Unknown Origin (non-curated)"
 msgstr "D'origen desconegut (sense cura)"
 
-#: src/Core/Package.vala:458
+#: src/Core/Package.vala:459
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "L'estat de l'aplicació no està establert com a instal·lada al Centre d'aplicacions per al paquet %s."
 
-#: src/Core/PackageKitBackend.vala:251
+#: src/Core/PackageKitBackend.vala:261
 #, c-format
 msgid "%s (local)"
 msgstr "%s (local)"
@@ -276,36 +275,36 @@ msgstr "Actualitzacions del sistema operatiu"
 msgid "Updates to system components"
 msgstr "Actualitzacions per als components del sistema"
 
-#: src/Core/UpdateManager.vala:81
+#: src/Core/UpdateManager.vala:87
 #, c-format
 msgid "Version: %s"
 msgstr "Versió: %s"
 
-#: src/Core/UpdateManager.vala:111
+#: src/Core/UpdateManager.vala:118
 msgid "Flatpak runtime"
 msgstr "Entorn d'execució del Flatpak"
 
-#: src/Core/UpdateManager.vala:128
+#: src/Core/UpdateManager.vala:135
 msgid "No components with updates"
 msgstr "No hi ha components amb actualitzacions."
 
-#: src/Core/UpdateManager.vala:133
+#: src/Core/UpdateManager.vala:140
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "%u component amb actualitzacions"
 msgstr[1] "%u components amb actualitzacions"
 
-#: src/Core/UpdateManager.vala:135
+#: src/Core/UpdateManager.vala:142
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:174
+#: src/Core/UpdateManager.vala:181
 msgid "Restart Required"
 msgstr "Cal reiniciar"
 
-#: src/Core/UpdateManager.vala:175
+#: src/Core/UpdateManager.vala:182
 msgid "Please restart your system to finalize updates"
 msgstr "Reinicieu el sistema per a acabar les actualitzacions"
 
@@ -339,9 +338,7 @@ msgstr "Instal·la-la tanmateix"
 
 #: src/Dialogs/InstallFailDialog.vala:26
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
-msgstr ""
-"Això pot ser un problema temporal o pot haver estat causat per programari "
-"extern o compilat manualment."
+msgstr "Això pot ser un problema temporal o pot haver estat causat per programari extern o compilat manualment."
 
 #: src/Dialogs/InstallFailDialog.vala:37
 msgid "Failed to install app"

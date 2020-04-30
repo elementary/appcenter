@@ -14,11 +14,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-23 22:03+0000\n"
+"POT-Creation-Date: 2020-04-30 22:00+0000\n"
 "PO-Revision-Date: 2020-04-30 21:59+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
-"Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/es/>\n"
+"Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/appcenter/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,7 +27,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:336
+#: src/Application.vala:38 src/Core/Package.vala:337
 msgid "AppCenter"
 msgstr "Centro de aplicaciones"
 
@@ -97,7 +96,7 @@ msgstr "Desinstalando paquetes"
 msgid "Downloading"
 msgstr "Descargando"
 
-#: src/Utils.vala:86 src/Core/FlatpakBackend.vala:699
+#: src/Utils.vala:86 src/Core/FlatpakBackend.vala:709
 msgid "Installing"
 msgstr "Instalando"
 
@@ -142,9 +141,9 @@ msgid "Finished"
 msgstr "Terminado"
 
 #: src/Utils.vala:108 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:708 src/Core/FlatpakBackend.vala:731
-#: src/Core/FlatpakBackend.vala:804 src/Core/FlatpakBackend.vala:905
-#: src/Core/FlatpakBackend.vala:931
+#: src/Core/FlatpakBackend.vala:718 src/Core/FlatpakBackend.vala:746
+#: src/Core/FlatpakBackend.vala:823 src/Core/FlatpakBackend.vala:924
+#: src/Core/FlatpakBackend.vala:950
 msgid "Cancelling"
 msgstr "Cancelando"
 
@@ -229,52 +228,50 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "Hay %u actualización disponible para el sistema"
 msgstr[1] "Hay %u actualizaciones disponibles para el sistema"
 
-#: src/Core/FlatpakBackend.vala:796
+#: src/Core/FlatpakBackend.vala:815
 msgid "Uninstalling"
 msgstr "Desinstalando"
 
-#: src/Core/FlatpakBackend.vala:801
+#: src/Core/FlatpakBackend.vala:820
 msgid "Finishing"
 msgstr "Terminando"
 
-#: src/Core/FlatpakBackend.vala:896
+#: src/Core/FlatpakBackend.vala:915
 msgid "Updating"
 msgstr "Actualizando"
 
-#: src/Core/Package.vala:306
+#: src/Core/Package.vala:307
 #, c-format
 msgid "%s Developers"
 msgstr "Desarrolladores de %s"
 
-#: src/Core/Package.vala:338
+#: src/Core/Package.vala:339
 msgid "elementary Updates"
 msgstr "Actualizaciones de elementary"
 
-#: src/Core/Package.vala:340
+#: src/Core/Package.vala:341
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (no revisadas)"
 
-#: src/Core/Package.vala:343
+#: src/Core/Package.vala:344
 #, c-format
 msgid "%s (non-curated)"
 msgstr "%s (no revisadas)"
 
-#: src/Core/Package.vala:345
+#: src/Core/Package.vala:346
 msgid "Ubuntu Drivers"
 msgstr "Controladores de Ubuntu"
 
-#: src/Core/Package.vala:348
+#: src/Core/Package.vala:349
 msgid "Unknown Origin (non-curated)"
 msgstr "Origen desconocido (no revisadas)"
 
-#: src/Core/Package.vala:458
+#: src/Core/Package.vala:459
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
-msgstr ""
-"El paquete %s consta como aplicación no instalada en el Centro de "
-"aplicaciones"
+msgstr "El paquete %s consta como aplicación no instalada en el Centro de aplicaciones"
 
-#: src/Core/PackageKitBackend.vala:251
+#: src/Core/PackageKitBackend.vala:261
 #, c-format
 msgid "%s (local)"
 msgstr "%s (local)"
@@ -287,36 +284,36 @@ msgstr "Actualizaciones del sistema operativo"
 msgid "Updates to system components"
 msgstr "Actualizaciones de los componentes del sistema"
 
-#: src/Core/UpdateManager.vala:81
+#: src/Core/UpdateManager.vala:87
 #, c-format
 msgid "Version: %s"
 msgstr "Version: %s"
 
-#: src/Core/UpdateManager.vala:111
+#: src/Core/UpdateManager.vala:118
 msgid "Flatpak runtime"
 msgstr "Entorno de ejecución de Flatpak"
 
-#: src/Core/UpdateManager.vala:128
+#: src/Core/UpdateManager.vala:135
 msgid "No components with updates"
 msgstr "Sin componentes para actualizar"
 
-#: src/Core/UpdateManager.vala:133
+#: src/Core/UpdateManager.vala:140
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "%u componente con actualizaciones"
 msgstr[1] "%u componentes con actualizaciones"
 
-#: src/Core/UpdateManager.vala:135
+#: src/Core/UpdateManager.vala:142
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:174
+#: src/Core/UpdateManager.vala:181
 msgid "Restart Required"
 msgstr "Es necesario reiniciar"
 
-#: src/Core/UpdateManager.vala:175
+#: src/Core/UpdateManager.vala:182
 msgid "Please restart your system to finalize updates"
 msgstr "Reinicie el sistema para finalizar las actualizaciones"
 
@@ -350,9 +347,7 @@ msgstr "Instalar de todas formas"
 
 #: src/Dialogs/InstallFailDialog.vala:26
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
-msgstr ""
-"Puede tratarse de un problema temporal o un error causado por software "
-"externo o compilado manualmente."
+msgstr "Puede tratarse de un problema temporal o un error causado por software externo o compilado manualmente."
 
 #: src/Dialogs/InstallFailDialog.vala:37
 msgid "Failed to install app"
@@ -374,14 +369,11 @@ msgstr "¿Quiere instalar una aplicación no revisada?"
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
 msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-msgstr ""
-"elementary no ha revisado «%s» para comprobar que sea segura, privada o "
-"integrable con el sistema."
+msgstr "elementary no ha revisado «%s» para comprobar que sea segura, privada o integrable con el sistema."
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
 msgid "It may not receive bug fix or feature updates"
-msgstr ""
-"Podría no recibir correcciones de defectos o actualizaciones de funcionalidad"
+msgstr "Podría no recibir correcciones de defectos o actualizaciones de funcionalidad"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:60
 msgid "It may access or change system or personal files without permission"
@@ -723,9 +715,7 @@ msgstr "Buscando actualizaciones"
 
 #: src/Widgets/AbstractAppList.vala:46
 msgid "Downloading a list of available updates to the OS and installed apps"
-msgstr ""
-"Descargando una lista de actualizaciones disponibles para el sistema y las "
-"aplicaciones"
+msgstr "Descargando una lista de actualizaciones disponibles para el sistema y las aplicaciones"
 
 #: src/Widgets/Banner.vala:55
 msgid "An open, pay-what-you-want app store"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-23 22:03+0000\n"
+"POT-Creation-Date: 2020-04-30 22:00+0000\n"
 "PO-Revision-Date: 2017-06-16 17:37+0000\n"
 "Last-Translator: Rajeev Kumar <irajeevankumar@gmail.com>\n"
 "Language-Team: Tamil <https://l10n.elementary.io/projects/appcenter/appcenter/ta/>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:336
+#: src/Application.vala:38 src/Core/Package.vala:337
 msgid "AppCenter"
 msgstr "மென்பொருள்-மையம்"
 
@@ -85,7 +85,7 @@ msgstr "தொகுப்புகளை நீக்குகிறது"
 msgid "Downloading"
 msgstr "பதிவிறக்குகிறது"
 
-#: src/Utils.vala:86 src/Core/FlatpakBackend.vala:699
+#: src/Utils.vala:86 src/Core/FlatpakBackend.vala:709
 msgid "Installing"
 msgstr "நிறுவுகிறது"
 
@@ -130,9 +130,9 @@ msgid "Finished"
 msgstr "முடிந்தது"
 
 #: src/Utils.vala:108 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:708 src/Core/FlatpakBackend.vala:731
-#: src/Core/FlatpakBackend.vala:804 src/Core/FlatpakBackend.vala:905
-#: src/Core/FlatpakBackend.vala:931
+#: src/Core/FlatpakBackend.vala:718 src/Core/FlatpakBackend.vala:746
+#: src/Core/FlatpakBackend.vala:823 src/Core/FlatpakBackend.vala:924
+#: src/Core/FlatpakBackend.vala:950
 msgid "Cancelling"
 msgstr "ரத்து செய்யப்படுகிறது"
 
@@ -217,58 +217,58 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "%u உங்கள் கணினிக்கு புதுப்பிப்பு உள்ளது"
 msgstr[1] "%u உங்கள் கணினிக்கு புதுப்பிப்புகள் உள்ளன"
 
-#: src/Core/FlatpakBackend.vala:796
+#: src/Core/FlatpakBackend.vala:815
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "நீக்குதல்"
 
-#: src/Core/FlatpakBackend.vala:801
+#: src/Core/FlatpakBackend.vala:820
 #, fuzzy
 #| msgid "Finished"
 msgid "Finishing"
 msgstr "முடிந்தது"
 
-#: src/Core/FlatpakBackend.vala:896
+#: src/Core/FlatpakBackend.vala:915
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
 msgstr "புதுப்பிக்கவும்"
 
-#: src/Core/Package.vala:306
+#: src/Core/Package.vala:307
 #, fuzzy, c-format
 msgid "%s Developers"
 msgstr "%s  டெவலப்பர்கள்"
 
-#: src/Core/Package.vala:338
+#: src/Core/Package.vala:339
 #, fuzzy
 msgid "elementary Updates"
 msgstr "சமீபத்தில் புதுப்பிக்கப்பட்டது"
 
-#: src/Core/Package.vala:340
+#: src/Core/Package.vala:341
 msgid "Ubuntu (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:343
+#: src/Core/Package.vala:344
 #, c-format
 msgid "%s (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:345
+#: src/Core/Package.vala:346
 #, fuzzy
 msgid "Ubuntu Drivers"
 msgstr "இயக்கிகள்"
 
-#: src/Core/Package.vala:348
+#: src/Core/Package.vala:349
 msgid "Unknown Origin (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:458
+#: src/Core/Package.vala:459
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
 
-#: src/Core/PackageKitBackend.vala:251
+#: src/Core/PackageKitBackend.vala:261
 #, c-format
 msgid "%s (local)"
 msgstr ""
@@ -281,36 +281,36 @@ msgstr "இயக்க முறைமைகள் மேம்படுத்�
 msgid "Updates to system components"
 msgstr "கணினி கூறுகளுக்கான புதுப்பிப்புகள்"
 
-#: src/Core/UpdateManager.vala:81
+#: src/Core/UpdateManager.vala:87
 #, c-format
 msgid "Version: %s"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:111
+#: src/Core/UpdateManager.vala:118
 msgid "Flatpak runtime"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:128
+#: src/Core/UpdateManager.vala:135
 msgid "No components with updates"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:133
+#: src/Core/UpdateManager.vala:140
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Core/UpdateManager.vala:135
+#: src/Core/UpdateManager.vala:142
 #, c-format
 msgid "%s:"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:174
+#: src/Core/UpdateManager.vala:181
 msgid "Restart Required"
 msgstr "மறுதொடக்கம் தேவை"
 
-#: src/Core/UpdateManager.vala:175
+#: src/Core/UpdateManager.vala:182
 msgid "Please restart your system to finalize updates"
 msgstr "புதுப்பிப்புகளை முடிக்க உங்கள் கணினியை மீண்டும் தொடங்கவும்"
 

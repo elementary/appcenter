@@ -3,11 +3,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-23 22:03+0000\n"
+"POT-Creation-Date: 2020-04-30 22:00+0000\n"
 "PO-Revision-Date: 2020-04-28 16:39+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
-"Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/he/>\n"
+"Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/appcenter/he/>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,7 +16,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:336
+#: src/Application.vala:38 src/Core/Package.vala:337
 msgid "AppCenter"
 msgstr "מרכז היישומים"
 
@@ -86,7 +85,7 @@ msgstr "חבילות בהסרה"
 msgid "Downloading"
 msgstr "מתבצעת הורדה"
 
-#: src/Utils.vala:86 src/Core/FlatpakBackend.vala:699
+#: src/Utils.vala:86 src/Core/FlatpakBackend.vala:709
 msgid "Installing"
 msgstr "בהליך התקנה"
 
@@ -131,9 +130,9 @@ msgid "Finished"
 msgstr "הסתיים"
 
 #: src/Utils.vala:108 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:708 src/Core/FlatpakBackend.vala:731
-#: src/Core/FlatpakBackend.vala:804 src/Core/FlatpakBackend.vala:905
-#: src/Core/FlatpakBackend.vala:931
+#: src/Core/FlatpakBackend.vala:718 src/Core/FlatpakBackend.vala:746
+#: src/Core/FlatpakBackend.vala:823 src/Core/FlatpakBackend.vala:924
+#: src/Core/FlatpakBackend.vala:950
 msgid "Cancelling"
 msgstr "מתבצע ביטול"
 
@@ -218,50 +217,50 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "עדכון אחד זמין עבור המערכת"
 msgstr[1] "%u עדכונים זמינים עבור המערכת"
 
-#: src/Core/FlatpakBackend.vala:796
+#: src/Core/FlatpakBackend.vala:815
 msgid "Uninstalling"
 msgstr "מתבצעת הסרה"
 
-#: src/Core/FlatpakBackend.vala:801
+#: src/Core/FlatpakBackend.vala:820
 msgid "Finishing"
 msgstr "בהליכי סיום"
 
-#: src/Core/FlatpakBackend.vala:896
+#: src/Core/FlatpakBackend.vala:915
 msgid "Updating"
 msgstr "מתבצע עדכון"
 
-#: src/Core/Package.vala:306
+#: src/Core/Package.vala:307
 #, c-format
 msgid "%s Developers"
 msgstr "המפתחים שמאחורי %s"
 
-#: src/Core/Package.vala:338
+#: src/Core/Package.vala:339
 msgid "elementary Updates"
 msgstr "עדכונים ל־elementary"
 
-#: src/Core/Package.vala:340
+#: src/Core/Package.vala:341
 msgid "Ubuntu (non-curated)"
 msgstr "אובונטו (לא מאורגן)"
 
-#: src/Core/Package.vala:343
+#: src/Core/Package.vala:344
 #, c-format
 msgid "%s (non-curated)"
 msgstr "%s (לא מאורגן)"
 
-#: src/Core/Package.vala:345
+#: src/Core/Package.vala:346
 msgid "Ubuntu Drivers"
 msgstr "מנהלי התקנים של אובונטו"
 
-#: src/Core/Package.vala:348
+#: src/Core/Package.vala:349
 msgid "Unknown Origin (non-curated)"
 msgstr "מקור לא ידוע (לא מאורגן)"
 
-#: src/Core/Package.vala:458
+#: src/Core/Package.vala:459
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "מצב היישום לא מוגדר כמותקן בחנות היישומים לחבילה: %s"
 
-#: src/Core/PackageKitBackend.vala:251
+#: src/Core/PackageKitBackend.vala:261
 #, c-format
 msgid "%s (local)"
 msgstr "%s (מקומי)"
@@ -274,36 +273,36 @@ msgstr "עדכוני מערכת הפעלה"
 msgid "Updates to system components"
 msgstr "עדכונים לרכיבי המערכת"
 
-#: src/Core/UpdateManager.vala:81
+#: src/Core/UpdateManager.vala:87
 #, c-format
 msgid "Version: %s"
 msgstr "גרסה: %s"
 
-#: src/Core/UpdateManager.vala:111
+#: src/Core/UpdateManager.vala:118
 msgid "Flatpak runtime"
 msgstr "סביבת הרצת Flatpak"
 
-#: src/Core/UpdateManager.vala:128
+#: src/Core/UpdateManager.vala:135
 msgid "No components with updates"
 msgstr "אין רכיבים עם עדכונים"
 
-#: src/Core/UpdateManager.vala:133
+#: src/Core/UpdateManager.vala:140
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "רכיב אחד עם עדכונים"
 msgstr[1] "%u רכיבים עם עדכונים"
 
-#: src/Core/UpdateManager.vala:135
+#: src/Core/UpdateManager.vala:142
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:174
+#: src/Core/UpdateManager.vala:181
 msgid "Restart Required"
 msgstr "נדרשת הפעלה מחדש"
 
-#: src/Core/UpdateManager.vala:175
+#: src/Core/UpdateManager.vala:182
 msgid "Please restart your system to finalize updates"
 msgstr "נא להפעיל את המערכת מחדש כדי לסיים את התקנת העדכונים"
 
