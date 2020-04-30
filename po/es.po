@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-23 22:03+0000\n"
-"PO-Revision-Date: 2020-04-29 21:46+0000\n"
+"PO-Revision-Date: 2020-04-30 21:59+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
@@ -55,7 +55,7 @@ msgstr "%s se instaló correctamente"
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
 #: src/Views/Homepage.vala:325
 msgid "Home"
-msgstr "Principal"
+msgstr "Inicio"
 
 #: src/MainWindow.vala:151 src/Views/InstalledView.vala:33
 #: src/Views/InstalledView.vala:60
@@ -178,15 +178,15 @@ msgstr "Reempaquetando archivos"
 
 #: src/Utils.vala:124
 msgid "Loading cache"
-msgstr "Cargando cache"
+msgstr "Cargando antememoria"
 
 #: src/Utils.vala:126
 msgid "Scanning applications"
-msgstr "Escaneando aplicaciones"
+msgstr "Analizando aplicaciones"
 
 #: src/Utils.vala:128
 msgid "Generating package lists"
-msgstr "Generando lista de paquetes"
+msgstr "Generando listas de paquetes"
 
 #: src/Utils.vala:130
 msgid "Waiting for package manager lock"
@@ -206,7 +206,7 @@ msgstr "Comprobando aplicaciones en uso"
 
 #: src/Utils.vala:138
 msgid "Checking libraries in use"
-msgstr "Comprobando librerías en uso"
+msgstr "Comprobando bibliotecas utilizadas"
 
 #: src/Utils.vala:140
 msgid "Copying files"
@@ -252,12 +252,12 @@ msgstr "Actualizaciones de elementary"
 
 #: src/Core/Package.vala:340
 msgid "Ubuntu (non-curated)"
-msgstr "Ubuntu (no verificadas)"
+msgstr "Ubuntu (no revisadas)"
 
 #: src/Core/Package.vala:343
 #, c-format
 msgid "%s (non-curated)"
-msgstr "%s (no verificadas)"
+msgstr "%s (no revisadas)"
 
 #: src/Core/Package.vala:345
 msgid "Ubuntu Drivers"
@@ -265,12 +265,14 @@ msgstr "Controladores de Ubuntu"
 
 #: src/Core/Package.vala:348
 msgid "Unknown Origin (non-curated)"
-msgstr "Origen desconocido (no verificadas)"
+msgstr "Origen desconocido (no revisadas)"
 
 #: src/Core/Package.vala:458
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
-msgstr "El paquete %s consta como aplicación no instalada en el Centro de Aplicaciones"
+msgstr ""
+"El paquete %s consta como aplicación no instalada en el Centro de "
+"aplicaciones"
 
 #: src/Core/PackageKitBackend.vala:251
 #, c-format
@@ -312,7 +314,7 @@ msgstr "%s:"
 
 #: src/Core/UpdateManager.vala:174
 msgid "Restart Required"
-msgstr "Se requiere reiniciar"
+msgstr "Es necesario reiniciar"
 
 #: src/Core/UpdateManager.vala:175
 msgid "Please restart your system to finalize updates"
@@ -320,7 +322,7 @@ msgstr "Reinicie el sistema para finalizar las actualizaciones"
 
 #: src/Dialogs/ContentWarningDialog.vala:25
 msgid "Content Warning"
-msgstr "Advertencia sobre el contenido"
+msgstr "Alerta sobre el contenido"
 
 #: src/Dialogs/ContentWarningDialog.vala:30
 #, c-format
@@ -334,7 +336,7 @@ msgstr "«%s» puede contener contenido solo adecuado para adultos o que pueda s
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 msgid "Show content warnings"
-msgstr "Mostrar advertencias sobre el contenido"
+msgstr "Mostrar alertas sobre el contenido"
 
 #: src/Dialogs/ContentWarningDialog.vala:37
 #: src/Dialogs/NonCuratedWarningDialog.vala:81
@@ -350,7 +352,7 @@ msgstr "Instalar de todas formas"
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
 msgstr ""
 "Puede tratarse de un problema temporal o un error causado por software "
-"externao o compilado manualmente."
+"externo o compilado manualmente."
 
 #: src/Dialogs/InstallFailDialog.vala:37
 msgid "Failed to install app"
@@ -362,21 +364,19 @@ msgid "Failed to install “%s”"
 msgstr "No se pudo instalar «%s»"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
-#, fuzzy
-#| msgid "Content Warning"
 msgid "Non-Curated Warning"
-msgstr "Advertencia sobre el contenido"
+msgstr "Alerta sobre contenido no revisado"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:37
-#, fuzzy
-#| msgid "%s (non-curated)"
 msgid "Install non-curated app?"
-msgstr "%s (no verificadas)"
+msgstr "¿Quiere instalar una aplicación no revisada?"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
 msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-msgstr "“%s” no está revisada por elementary y no ha sido revisada por seguridad, privacidad o integración de sistemas."
+msgstr ""
+"elementary no ha revisado «%s» para comprobar que sea segura, privada o "
+"integrable con el sistema."
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
 msgid "It may not receive bug fix or feature updates"
@@ -388,10 +388,8 @@ msgid "It may access or change system or personal files without permission"
 msgstr "Puede consultar o modificar archivos personales y del sistema sin autorización"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
-#, fuzzy
-#| msgid "Show content warnings"
 msgid "Show non-curated warnings"
-msgstr "Mostrar advertencias sobre el contenido"
+msgstr "Mostrar alertas sobre contenido no revisado"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -720,10 +718,8 @@ msgid "No apps could be found. Try changing search terms."
 msgstr "No se encontró ninguna aplicación. Pruebe a cambiar los términos de búsqueda."
 
 #: src/Widgets/AbstractAppList.vala:45
-#, fuzzy
-#| msgid "Searching for updates…"
 msgid "Checking for Updates"
-msgstr "Buscando actualizaciones…"
+msgstr "Buscando actualizaciones"
 
 #: src/Widgets/AbstractAppList.vala:46
 msgid "Downloading a list of available updates to the OS and installed apps"
