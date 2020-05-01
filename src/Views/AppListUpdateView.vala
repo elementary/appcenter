@@ -76,6 +76,29 @@ namespace AppCenter.Views {
             add (scrolled);
         }
 
+        public override void add_packages (Gee.Collection<AppCenterCore.Package> packages) {
+            foreach (var package in packages) {
+                add_row_for_package (package);
+            }
+
+            on_list_changed ();
+        }
+
+        public override void add_package (AppCenterCore.Package package) {
+            add_row_for_package (package);
+            on_list_changed ();
+        }
+
+        private void add_row_for_package (AppCenterCore.Package package) {
+            var needs_update = package.state == AppCenterCore.Package.State.UPDATE_AVAILABLE;
+
+            // Only add row if this package needs an update or it's not a font or plugin
+            if (needs_update || (!package.is_plugin && !package.is_font)) {
+                var row = construct_row_for_package (package);
+                add_row (row);
+            }
+        }
+
         protected override void on_list_changed () {
             list_box.invalidate_sort ();
         }

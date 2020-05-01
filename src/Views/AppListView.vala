@@ -40,17 +40,27 @@ namespace AppCenter.Views {
         }
 
         public override void add_packages (Gee.Collection<AppCenterCore.Package> packages) {
-            list_store.splice (0, 0, (GLib.Object[]) packages.to_array ());
-            list_store.sort ((GLib.CompareDataFunc<AppCenterCore.Package>) compare_packages);
+            foreach (var package in packages) {
+                add_row_for_package (package);
+            }
+
             if (current_visible_index < 20) {
                 show_more_apps ();
             }
         }
 
         public override void add_package (AppCenterCore.Package package) {
-            list_store.insert_sorted (package, (GLib.CompareDataFunc<AppCenterCore.Package>) compare_packages);
+            add_row_for_package (package);
+
             if (current_visible_index < 20) {
                 show_more_apps ();
+            }
+        }
+
+        private void add_row_for_package (AppCenterCore.Package package) {
+            // Don't show plugins or fonts in search and category views
+            if (!package.is_plugin && !package.is_font) {
+                list_store.insert_sorted (package, (GLib.CompareDataFunc<AppCenterCore.Package>) compare_packages);
             }
         }
 

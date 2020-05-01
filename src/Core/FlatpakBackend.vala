@@ -72,6 +72,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     construct {
         worker_thread = new Thread<bool> ("flatpak-worker", worker_func);
         appstream_pool = new AppStream.Pool ();
+        appstream_pool.set_flags (AppStream.PoolFlags.READ_COLLECTION);
         appstream_pool.set_cache_flags (AppStream.CacheFlags.NONE);
         package_list = new Gee.HashMap<string, Package> (null, null);
 
@@ -85,8 +86,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
             installation_changed_monitor.changed.connect (() => {
                 debug ("Flatpak installation changed.");
-                refresh_cache.begin (null);
-                get_installed_applications.begin (null);
+                trigger_update_check.begin ();
             });
         } else {
             warning ("Couldn't create Installation File Monitor due to no installation");
@@ -99,6 +99,16 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         );
 
         reload_appstream_pool ();
+    }
+
+    private async void trigger_update_check () {
+        try {
+            yield refresh_cache (null);
+        } catch (Error e) {
+            warning ("Unable to refresh cache after external change: %s", e.message);
+        }
+
+        yield Client.get_default ().refresh_updates ();
     }
 
     static construct {
@@ -672,6 +682,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             critical ("Error setting up transaction for flatpak install: %s", e.message);
             job.result = Value (typeof (bool));
             job.result.set_boolean (false);
+            job.error = e;
             job.results_ready ();
             return;
         }
@@ -708,8 +719,13 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 success = true;
             }
 
-            // Only stop if this is a fatal error
-            return detail == Flatpak.TransactionErrorDetails.NON_FATAL;
+            // Only cancel the transaction if this is fatal
+            var should_continue = detail == Flatpak.TransactionErrorDetails.NON_FATAL;
+            if (!should_continue) {
+                job.error = e;
+            }
+
+            return should_continue;
         });
 
         transaction.operation_done.connect ((operation, commit, details) => {
@@ -731,6 +747,10 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 success = true;
             } else {
                 success = false;
+                // Don't overwrite any previous errors as the first is probably most important
+                if (job.error != null) {
+                    job.error = e;
+                }
             }
         }
 

@@ -64,7 +64,13 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         var go_back = new SimpleAction ("go-back", null);
         go_back.activate.connect (view_return);
         add_action (go_back);
+
+        var focus_search = new SimpleAction ("focus-search", null);
+        focus_search.activate.connect (() => search_entry.grab_focus ());
+        add_action (focus_search);
+
         app.set_accels_for_action ("win.go-back", {"<Alt>Left", "Back"});
+        app.set_accels_for_action ("win.focus-search", {"<Ctrl>f"});
 
         button_release_event.connect ((event) => {
             // On back mouse button pressed
@@ -86,12 +92,15 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
                 return true;
             }
 
+            if (event.keyval == Gdk.Key.Down) {
+                search_entry.move_focus (Gtk.DirectionType.TAB_FORWARD);
+                return true;
+            }
+
             return false;
         });
 
         return_button.clicked.connect (view_return);
-
-        installed_view.get_apps.begin ();
 
         homepage.subview_entered.connect (view_opened);
         installed_view.subview_entered.connect (view_opened);
@@ -285,7 +294,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         if (query_valid) {
             search_view.search (query, homepage.currently_viewed_category, mimetype);
-            stack.visible_child = search_view;
+            stack.visible_child = search_view; // Only show search view after search completed.
         } else {
             if (stack.visible_child == search_view && homepage.currently_viewed_category != null) {
                 return_button_history.poll_head ();
