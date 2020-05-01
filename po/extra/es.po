@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-30 22:00+0000\n"
-"PO-Revision-Date: 2020-04-30 21:59+0000\n"
+"PO-Revision-Date: 2020-05-01 16:29+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/extra/"
 "es/>\n"
@@ -36,14 +36,13 @@ msgstr ""
 "versión más reciente y así obtener funcionalidades nuevas y correcciones."
 
 #: data/io.elementary.appcenter.appdata.xml.in:16
-#, fuzzy
-#| msgid "Check for Updates"
 msgid "Minor updates"
-msgstr "Buscar actualizaciones"
+msgstr "Actualizaciones menores"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Ensure apps on the homepage are more reliably displayed"
 msgstr ""
+"Las aplicaciones en la página principal se muestran con mayor fiabilidad"
 
 #: data/io.elementary.appcenter.appdata.xml.in:24
 #: data/io.elementary.appcenter.appdata.xml.in:113
