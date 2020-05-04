@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-30 22:00+0000\n"
-"PO-Revision-Date: 2020-04-26 23:10+0000\n"
+"PO-Revision-Date: 2020-05-02 18:10+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
 "extra/pt/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
 msgid "AppCenter"
-msgstr "Centro de aplicações"
+msgstr "Centro de Aplicações"
 
 #: data/io.elementary.appcenter.appdata.xml.in:9
 #: data/io.elementary.appcenter.desktop.in.in:4
@@ -32,18 +32,18 @@ msgid ""
 msgstr ""
 "Uma loja de aplicações para programadores indie e open source. Navegue por "
 "categorias ou pesquise e descubra novas aplicações. O Centro de Aplicações "
-"também é usado para atualizar o seu sistema para as últimas versões que "
+"também é utilizado para atualizar o sistema para as últimas versões que "
 "incluem novas funcionalidade e correções."
 
 #: data/io.elementary.appcenter.appdata.xml.in:16
-#, fuzzy
-#| msgid "Other updates"
 msgid "Minor updates"
-msgstr "Outras atualizações"
+msgstr "Pequenas atualizações"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Ensure apps on the homepage are more reliably displayed"
 msgstr ""
+"Assegurar que as aplicações na página inicial são apresentadas de forma mais "
+"fiável"
 
 #: data/io.elementary.appcenter.appdata.xml.in:24
 #: data/io.elementary.appcenter.appdata.xml.in:113
@@ -156,8 +156,7 @@ msgstr "Traduções atualizadas"
 #: data/io.elementary.appcenter.appdata.xml.in:59
 msgid ""
 "Prevent crashes when updating Flatpaks and system packages simultaneously"
-msgstr ""
-"Evita falhas ao actualizar Flatpaks e pacotes do sistema simultaneamente"
+msgstr "Evita falhas ao atualizar Flatpaks e pacotes do sistema simultaneamente"
 
 #: data/io.elementary.appcenter.appdata.xml.in:60
 msgid "Prevent suspending when installing, updating, or removing packages"
@@ -171,8 +170,8 @@ msgstr "Pequenas correções"
 #: data/io.elementary.appcenter.appdata.xml.in:74
 msgid "Update application details when changes happen outside of AppCenter"
 msgstr ""
-"Atualizar detalhes da aplicação quando as alterações acontecem fora da Loja "
-"de Aplicações"
+"Atualizar detalhes da aplicação quando as alterações acontecem fora do "
+"Centro de Aplicações"
 
 #: data/io.elementary.appcenter.appdata.xml.in:75
 msgid "Fix for notification not appearing when a restart is required"
@@ -187,11 +186,11 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:77
 msgid "Prevent unescaped XML entities from appearing in application names"
-msgstr "Evite que entidades XML inconclusivas apareçam em nomes de aplicações"
+msgstr "Evitar que entidades XML inconclusivas apareçam em nomes de aplicações"
 
 #: data/io.elementary.appcenter.appdata.xml.in:78
 msgid "Load the \"Installed\" view faster"
-msgstr "Carregar a visão \"Instalado\" mais rapidamente"
+msgstr "Carregar a vista \"Instalado\" mais rapidamente"
 
 #: data/io.elementary.appcenter.appdata.xml.in:79
 msgid "Ensure flatpak applications show in the category views"
@@ -215,15 +214,15 @@ msgid ""
 "Applications menu can now remove flatpaks that weren't installed by AppCenter"
 msgstr ""
 "O menu de aplicações pode agora remover os flatpaks que não foram instalados "
-"pela Loja de Aplicações"
+"pelo Centro de Aplicações"
 
 #: data/io.elementary.appcenter.appdata.xml.in:83
 msgid "Make download size estimates more accurate"
-msgstr "Faz estimativas do tamanho de transferência mais precisas"
+msgstr "Tornar as  estimativas do tamanho de transferência mais precisas"
 
 #: data/io.elementary.appcenter.appdata.xml.in:91
 msgid "Prevent AppCenter from opening on log in"
-msgstr "Impedir a abertura do Centro de aplicações no início da sessão"
+msgstr "Impedir a abertura do Centro de Aplicações no início da sessão"
 
 #: data/io.elementary.appcenter.appdata.xml.in:92
 msgid "Prevent ghost update notification when there are no updates available"
@@ -261,11 +260,11 @@ msgstr "Permite a navegação e desinstalação de aplicações enquanto offline
 
 #: data/io.elementary.appcenter.appdata.xml.in:105
 msgid "Fix twitter share URLs"
-msgstr "Corrige URLs de compartilhamento do twitter"
+msgstr "Corrige os URLs de partilha do twitter"
 
 #: data/io.elementary.appcenter.appdata.xml.in:106
 msgid "Drop Google+ from the share menu"
-msgstr "Solta o Google+ a partir do menu de partilha"
+msgstr "Larga o Google+ a partir do menu de partilha"
 
 #: data/io.elementary.appcenter.appdata.xml.in:107
 msgid "Animate screenshot background while loading"
@@ -290,7 +289,7 @@ msgstr "Corrije alguns problemas de disposição"
 
 #: data/io.elementary.appcenter.appdata.xml.in:112
 msgid "Fix crashes"
-msgstr "Corrigir falhas"
+msgstr "Corrige falhas"
 
 #: data/io.elementary.appcenter.appdata.xml.in:121
 msgid "Meson build system fixes"
@@ -380,7 +379,7 @@ msgstr "Melhora a taxa de sucesso das transações"
 
 #: data/io.elementary.appcenter.appdata.xml.in:156
 msgid "Add Publishing to Office category"
-msgstr "Adicionar categoria Publicar ao Escritório"
+msgstr "Adicionar Publicação à categoria Produtividade"
 
 #: data/io.elementary.appcenter.appdata.xml.in:157
 msgid "Improve descriptions of OS Updates"
@@ -462,7 +461,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
-msgstr "Procurar por Atualizações"
+msgstr "Procurar por atualizações"
 
 #: data/io.elementary.appcenter.desktop.in.in:19
 msgid "system-software-update"
