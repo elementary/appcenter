@@ -16,6 +16,7 @@
         <p>Minor updates</p>
         <ul>
           <li>Ensure apps on the homepage are more reliably displayed</li>
+          <li>More reliably set the Dock badge number</li>
         </ul>
       </description>
     </release>
