@@ -136,8 +136,8 @@ namespace AppCenter.Views {
             }
 #endif
 
-            int sp1 = search_priority(row1.get_name_label ());
-            int sp2 = search_priority(row2.get_name_label ());
+            int sp1 = search_priority (row1.get_name_label ());
+            int sp2 = search_priority (row2.get_name_label ());
             if (sp1 != sp2) {
                 return sp2 - sp1;
             }
