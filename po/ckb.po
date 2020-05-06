@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-23 22:03+0000\n"
+"POT-Creation-Date: 2020-04-30 22:00+0000\n"
 "PO-Revision-Date: 2016-09-13 07:28+0000\n"
 "Last-Translator: elementaryart (old) <Unknown>\n"
 "Language-Team: \n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Generator: Launchpad (build 18331)\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:336
+#: src/Application.vala:38 src/Core/Package.vala:337
 msgid "AppCenter"
 msgstr "ناوەندی نەرمەواڵەکان"
 
@@ -86,7 +86,7 @@ msgstr ""
 msgid "Downloading"
 msgstr ""
 
-#: src/Utils.vala:86 src/Core/FlatpakBackend.vala:699
+#: src/Utils.vala:86 src/Core/FlatpakBackend.vala:709
 msgid "Installing"
 msgstr "لەکاتی دامەزراندن"
 
@@ -131,9 +131,9 @@ msgid "Finished"
 msgstr ""
 
 #: src/Utils.vala:108 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:708 src/Core/FlatpakBackend.vala:731
-#: src/Core/FlatpakBackend.vala:804 src/Core/FlatpakBackend.vala:905
-#: src/Core/FlatpakBackend.vala:931
+#: src/Core/FlatpakBackend.vala:718 src/Core/FlatpakBackend.vala:746
+#: src/Core/FlatpakBackend.vala:823 src/Core/FlatpakBackend.vala:924
+#: src/Core/FlatpakBackend.vala:950
 msgid "Cancelling"
 msgstr ""
 
@@ -218,54 +218,54 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "بەڕۆژکردنی %u بەردەستە بۆ سیستەمەکەت"
 msgstr[1] "بەڕۆژکردنەکانی %u بەردەستە بۆ سیستەمەکەت"
 
-#: src/Core/FlatpakBackend.vala:796
+#: src/Core/FlatpakBackend.vala:815
 #, fuzzy
 #| msgid "Installing"
 msgid "Uninstalling"
 msgstr "لەکاتی دامەزراندن"
 
-#: src/Core/FlatpakBackend.vala:801
+#: src/Core/FlatpakBackend.vala:820
 msgid "Finishing"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:896
+#: src/Core/FlatpakBackend.vala:915
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
 msgstr "بەڕۆژکردن"
 
-#: src/Core/Package.vala:306
+#: src/Core/Package.vala:307
 #, fuzzy, c-format
 msgid "%s Developers"
 msgstr "په‌ره‌پێدان"
 
-#: src/Core/Package.vala:338
+#: src/Core/Package.vala:339
 msgid "elementary Updates"
 msgstr ""
 
-#: src/Core/Package.vala:340
+#: src/Core/Package.vala:341
 msgid "Ubuntu (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:343
+#: src/Core/Package.vala:344
 #, c-format
 msgid "%s (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:345
+#: src/Core/Package.vala:346
 msgid "Ubuntu Drivers"
 msgstr ""
 
-#: src/Core/Package.vala:348
+#: src/Core/Package.vala:349
 msgid "Unknown Origin (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:458
+#: src/Core/Package.vala:459
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
 
-#: src/Core/PackageKitBackend.vala:251
+#: src/Core/PackageKitBackend.vala:261
 #, c-format
 msgid "%s (local)"
 msgstr ""
@@ -278,36 +278,36 @@ msgstr "بەڕۆژکردنەکانی سیستەمی وەگەڕخستن"
 msgid "Updates to system components"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:81
+#: src/Core/UpdateManager.vala:87
 #, c-format
 msgid "Version: %s"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:111
+#: src/Core/UpdateManager.vala:118
 msgid "Flatpak runtime"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:128
+#: src/Core/UpdateManager.vala:135
 msgid "No components with updates"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:133
+#: src/Core/UpdateManager.vala:140
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Core/UpdateManager.vala:135
+#: src/Core/UpdateManager.vala:142
 #, c-format
 msgid "%s:"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:174
+#: src/Core/UpdateManager.vala:181
 msgid "Restart Required"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:175
+#: src/Core/UpdateManager.vala:182
 msgid "Please restart your system to finalize updates"
 msgstr ""
 

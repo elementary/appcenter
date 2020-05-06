@@ -47,4 +47,11 @@
       <description>Used to determine when AppCenter last refreshed its caches and checked for package updates</description>
     </key>
   </schema>
+  <schema path="/io/elementary/appcenter/caches/" id="io.elementary.appcenter.caches">
+    <key type="a{sas}" name="api-caches">
+      <default>{'/newest/project':[],'/newest/release':[],'/newest/downloads':[]}</default>
+      <summary>A dictionary of arrays of app IDs cached per API endpoint</summary>
+      <description>Updated automatically by AppCenter with the most recent successful API calls. Used as a backup when Houston is experiencing issues.</description>
+    </key>
+  </schema>
 </schemalist>
