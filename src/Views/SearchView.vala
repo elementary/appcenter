@@ -68,6 +68,7 @@ public class AppCenter.Views.SearchView : View {
         current_category = category;
 
         app_list_view.clear ();
+        app_list_view.current_search_term = current_search_term;
         unowned Client client = Client.get_default ();
 
         Gee.Collection<Package> found_apps;

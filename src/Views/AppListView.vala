@@ -22,6 +22,7 @@
 namespace AppCenter.Views {
     /** AppList for Category and Search Views.  Sorts by name and does not show Uninstall Button **/
     public class AppListView : AbstractAppList {
+        public string? current_search_term = null;
         private uint current_visible_index = 0U;
         private GLib.ListStore list_store;
 
@@ -67,6 +68,7 @@ namespace AppCenter.Views {
         public override void clear () {
             base.clear ();
             list_store.remove_all ();
+            current_search_term = null;
             current_visible_index = 0U;
         }
 
@@ -106,9 +108,22 @@ namespace AppCenter.Views {
             return p1.get_name ().collate (p2.get_name ());
         }
 
-#if CURATED
+        private int search_priority (string name) {
+            if (name != null && current_search_term != null) {
+                var name_lower = name.down ();
+                var term_lower = current_search_term.down ();
+                if (name_lower.has_prefix (term_lower)) {
+                    return 2;
+                } else if (name_lower.contains (term_lower)) {
+                    return 1;
+                }
+            }
+            return 0;
+        }
+
         [CCode (instance_pos = -1)]
         protected override int package_row_compare (Widgets.AppListRow row1, Widgets.AppListRow row2) {
+#if CURATED
             bool p1_is_elementary_native = row1.get_package ().is_native;
             bool p1_is_plugin = row1.get_package ().is_plugin;
 
@@ -119,10 +134,18 @@ namespace AppCenter.Views {
             if (p1_is_plugin != row2.get_package ().is_plugin) {
                 return p1_is_plugin ? 1 : -1;
             }
+#endif
+
+            int sp1 = search_priority(row1.get_name_label ());
+            int sp2 = search_priority(row2.get_name_label ());
+            if (sp1 != sp2) {
+                return sp2 - sp1;
+            }
 
             return base.package_row_compare (row1, row2);
         }
 
+#if CURATED
         [CCode (instance_pos = -1)]
         private void row_update_header (Widgets.AppListRow row, Widgets.AppListRow? before) {
             bool elementary_native = row.get_package ().is_native;
