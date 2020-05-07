@@ -61,7 +61,10 @@ namespace AppCenter.Views {
         private void add_row_for_package (AppCenterCore.Package package) {
             // Don't show plugins or fonts in search and category views
             if (!package.is_plugin && !package.is_font) {
-                list_store.insert_sorted (package, (GLib.CompareDataFunc<AppCenterCore.Package>) compare_packages);
+                GLib.CompareDataFunc<AppCenterCore.Package> sort_fn = (a, b) => {
+                    return compare_packages(a, b);
+                };
+                list_store.insert_sorted (package, sort_fn);
             }
         }
 
@@ -92,22 +95,6 @@ namespace AppCenter.Views {
             on_list_changed ();
         }
 
-        private static int compare_packages (AppCenterCore.Package p1, AppCenterCore.Package p2) {
-#if CURATED
-            bool p1_is_elementary_native = p1.is_native;
-
-            if (p1_is_elementary_native != p2.is_native) {
-                return p1_is_elementary_native ? -1 : 1;
-            }
-#endif
-
-            if (p1.is_plugin != p2.is_plugin) {
-                return p1.is_plugin ? 1 : -1;
-            }
-
-            return p1.get_name ().collate (p2.get_name ());
-        }
-
         private int search_priority (string name) {
             if (name != null && current_search_term != null) {
                 var name_lower = name.down ();
@@ -121,28 +108,31 @@ namespace AppCenter.Views {
             return 0;
         }
 
-        [CCode (instance_pos = -1)]
-        protected override int package_row_compare (Widgets.AppListRow row1, Widgets.AppListRow row2) {
+        private int compare_packages (AppCenterCore.Package p1, AppCenterCore.Package p2) {
 #if CURATED
-            bool p1_is_elementary_native = row1.get_package ().is_native;
-            bool p1_is_plugin = row1.get_package ().is_plugin;
+            bool p1_is_elementary_native = p1.is_native;
 
-            if (p1_is_elementary_native != row2.get_package ().is_native) {
+            if (p1_is_elementary_native != p2.is_native) {
                 return p1_is_elementary_native ? -1 : 1;
-            }
-
-            if (p1_is_plugin != row2.get_package ().is_plugin) {
-                return p1_is_plugin ? 1 : -1;
             }
 #endif
 
-            int sp1 = search_priority (row1.get_name_label ());
-            int sp2 = search_priority (row2.get_name_label ());
+            if (p1.is_plugin != p2.is_plugin) {
+                return p1.is_plugin ? 1 : -1;
+            }
+
+            int sp1 = search_priority (p1.get_name ());
+            int sp2 = search_priority (p2.get_name ());
             if (sp1 != sp2) {
                 return sp2 - sp1;
             }
 
-            return base.package_row_compare (row1, row2);
+            return p1.get_name ().collate (p2.get_name ());
+        }
+
+        [CCode (instance_pos = -1)]
+        protected override int package_row_compare (Widgets.AppListRow row1, Widgets.AppListRow row2) {
+            return compare_packages (row1.get_package (), row2.get_package ());
         }
 
 #if CURATED
