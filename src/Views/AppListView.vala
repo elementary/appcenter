@@ -62,8 +62,9 @@ namespace AppCenter.Views {
             // Don't show plugins or fonts in search and category views
             if (!package.is_plugin && !package.is_font) {
                 GLib.CompareDataFunc<AppCenterCore.Package> sort_fn = (a, b) => {
-                    return compare_packages(a, b);
+                    return compare_packages (a, b);
                 };
+
                 list_store.insert_sorted (package, sort_fn);
             }
         }
