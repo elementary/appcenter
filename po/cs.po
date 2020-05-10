@@ -2,26 +2,28 @@
 # Daniel Zvir <zvir.daniel@seznam.cz>, 2018.
 # Antonin Hablak <tondulin5@outlook.cz>, 2018.
 # Lukáš Kucharczyk <kucharczyk.lukas@gmail.com>, 2018.
+# p-bo <pavel.borecki@gmail.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-30 22:00+0000\n"
-"PO-Revision-Date: 2019-02-07 00:05+0000\n"
-"Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
-"Language-Team: Czech <https://weblate.elementary.io/projects/appcenter/appcenter/cs/>\n"
+"PO-Revision-Date: 2020-05-07 22:10+0000\n"
+"Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
+"Language-Team: Czech <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
 #: src/Application.vala:38 src/Core/Package.vala:337
 msgid "AppCenter"
-msgstr "AppCentrum"
+msgstr "Centrum Aplikací"
 
 #: src/Application.vala:112
 #, fuzzy, c-format
@@ -229,16 +231,12 @@ msgid "Uninstalling"
 msgstr "Odebrat"
 
 #: src/Core/FlatpakBackend.vala:820
-#, fuzzy
-#| msgid "Finished"
 msgid "Finishing"
-msgstr "Hotovo"
+msgstr "Dokončování"
 
 #: src/Core/FlatpakBackend.vala:915
-#, fuzzy
-#| msgid "Update"
 msgid "Updating"
-msgstr "Aktualizovat"
+msgstr "Aktualizování"
 
 #: src/Core/Package.vala:307
 #, c-format
@@ -246,32 +244,31 @@ msgid "%s Developers"
 msgstr "Vývojáři %s"
 
 #: src/Core/Package.vala:339
-#, fuzzy
 msgid "elementary Updates"
-msgstr "Nedávno aktualizované"
+msgstr "Aktualizace elementary"
 
 #: src/Core/Package.vala:341
 msgid "Ubuntu (non-curated)"
-msgstr ""
+msgstr "Ubuntu (nekurýrované)"
 
 #: src/Core/Package.vala:344
-#, fuzzy, c-format
+#, c-format
 msgid "%s (non-curated)"
-msgstr "%s (lokální)"
+msgstr "%s (nekurýrované)"
 
 #: src/Core/Package.vala:346
-#, fuzzy
 msgid "Ubuntu Drivers"
-msgstr "Ovladače"
+msgstr "Ovladače z Ubuntu"
 
 #: src/Core/Package.vala:349
 msgid "Unknown Origin (non-curated)"
-msgstr ""
+msgstr "Neznámý původ (neprověřené)"
 
 #: src/Core/Package.vala:459
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
+"Stav aplikace v Centru aplikací není nastaven jako instalovaná pro balíček:%s"
 
 #: src/Core/PackageKitBackend.vala:261
 #, fuzzy, c-format
@@ -293,7 +290,7 @@ msgstr "Verze: %s"
 
 #: src/Core/UpdateManager.vala:118
 msgid "Flatpak runtime"
-msgstr ""
+msgstr "Běhové prostředí v rámci Flatpak"
 
 #: src/Core/UpdateManager.vala:135
 msgid "No components with updates"
@@ -325,9 +322,9 @@ msgid "Content Warning"
 msgstr "Upozornění na citlivý obsah"
 
 #: src/Dialogs/ContentWarningDialog.vala:30
-#, fuzzy, c-format
+#, c-format
 msgid "“%s” contains explicit content"
-msgstr "%s Obsahuje Nevhodný Obsah"
+msgstr "„%s“ obsahuje nevhodný obsah"
 
 #: src/Dialogs/ContentWarningDialog.vala:31
 #, fuzzy, c-format
@@ -544,17 +541,16 @@ msgstr "Zadaná karta je testovací. Prosím, použijte normální kartu pro pok
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
-msgstr ""
+msgstr "Odinstalování této aplikace může také smazat její data."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:35
-#, fuzzy
 msgid "Uninstall app?"
-msgstr "Odebrat"
+msgstr "Odebrat aplikaci?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:38
-#, fuzzy, c-format
+#, c-format
 msgid "Uninstall “%s”?"
-msgstr "Odebrat"
+msgstr "Odebrat „%s“?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:144
@@ -562,19 +558,19 @@ msgid "Uninstall"
 msgstr "Odebrat"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
-#, fuzzy
 msgid "This may have been caused by external or manually compiled software."
-msgstr "Tohle mohlo být způsobeno externím, ručně přidaným repozitářem softwaru, nebo rozbitým zdrojovým souborem."
+msgstr ""
+"Toto mohlo být zapříčiněno softwarem, který pochází z externích zdrojů nebo "
+"byl zkompilován ručně."
 
 #: src/Dialogs/UninstallFailDialog.vala:37
-#, fuzzy
 msgid "Failed to uninstall app"
-msgstr "Najít a instalovat aplikace"
+msgstr "Odebírání aplikace se nezdařilo"
 
 #: src/Dialogs/UninstallFailDialog.vala:40
 #, c-format
 msgid "Failed to uninstall “%s”"
-msgstr ""
+msgstr "Odebírání „%s“ se nezdařilo"
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
@@ -623,31 +619,30 @@ msgstr "Rozšíření:"
 #. TRANSLATORS: See the Wikipedia page
 #: src/Views/AppInfoView.vala:360
 msgid "Public Domain"
-msgstr ""
+msgstr "Volné dílo"
 
 #. TRANSLATORS: Replace the link with the version for your language
 #: src/Views/AppInfoView.vala:363
 msgid "https://en.wikipedia.org/wiki/Public_domain"
-msgstr ""
+msgstr "https://cs.wikipedia.org/wiki/Volné_dílo"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
 #: src/Views/AppInfoView.vala:368
 msgid "Free Software"
-msgstr ""
+msgstr "Svobodný Software"
 
 #. TRANSLATORS: Replace the link with the version for your language
 #: src/Views/AppInfoView.vala:371
 msgid "https://www.gnu.org/philosophy/free-sw"
-msgstr ""
+msgstr "https://www.gnu.org/philosophy/free-sw.cs.html"
 
 #: src/Views/AppInfoView.vala:375
 msgid "Proprietary"
-msgstr ""
+msgstr "Proprietární"
 
 #: src/Views/AppInfoView.vala:378
-#, fuzzy
 msgid "Unknown License"
-msgstr "Neznámý stav"
+msgstr "Neznámá licence"
 
 #: src/Views/AppInfoView.vala:427
 #, c-format
@@ -836,14 +831,12 @@ msgid "$%d"
 msgstr "$%d"
 
 #: src/Widgets/NetworkInfoBar.vala:32
-#, fuzzy
 msgid "Network Not Available."
-msgstr "Síťové připojení není k dispozici"
+msgstr "Síťové připojení není k dispozici."
 
 #: src/Widgets/NetworkInfoBar.vala:33
-#, fuzzy
 msgid "Connect to the Internet to browse and install apps."
-msgstr "Pro instalaci nebo aktualizaci aplikací se připojte k internetu."
+msgstr "Pro procházení a instalaci aplikací se připojte k Internetu."
 
 #. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
 #: src/Widgets/NetworkInfoBar.vala:41
@@ -889,16 +882,16 @@ msgstr "Kopírovat odkaz"
 
 #: src/Widgets/SizeLabel.vala:35
 msgid "Actual Download Size Likely to Be Smaller"
-msgstr ""
+msgstr "Skutečná velikost stahování je pravděpodobně menší"
 
 #: src/Widgets/SizeLabel.vala:36
 msgid "Only the parts of apps and updates that are needed will be downloaded."
-msgstr ""
+msgstr "Stáhnou se pouze ty části aplikací a aktualizací, které jsou potřeba."
 
 #: src/Widgets/SizeLabel.vala:63
-#, fuzzy, c-format
+#, c-format
 msgid "Up to %s"
-msgstr "Aktuální"
+msgstr "Až do %s"
 
 #: src/Widgets/UpdateHeaderRow.vala:69
 #, c-format
