@@ -87,27 +87,41 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
     }
 
     public Gee.Collection<Package> get_applications_for_category (AppStream.Category category) {
-        var apps = new Gee.TreeSet<Package> ((a, b) => {
-            return a.normalized_component_id.collate (b.normalized_component_id);
-        });
-
+        var apps = new Gee.HashMap<string, Package> ();
         foreach (var backend in backends) {
-            apps.add_all (backend.get_applications_for_category (category));
+            var results = backend.get_applications_for_category (category);
+
+            foreach (var result in results) {
+                if (apps.has_key (result.normalized_component_id)) {
+                    if (result.origin_score > apps[result.normalized_component_id].origin_score) {
+                        apps[result.normalized_component_id] = result;
+                    }
+                } else {
+                    apps[result.normalized_component_id] = result;
+                }
+            }
         }
 
-        return apps;
+        return apps.values;
     }
 
     public Gee.Collection<Package> search_applications (string query, AppStream.Category? category) {
-        var apps = new Gee.TreeSet<Package> ((a, b) => {
-            return a.normalized_component_id.collate (b.normalized_component_id);
-        });
-
+        var apps = new Gee.HashMap<string, Package> ();
         foreach (var backend in backends) {
-            apps.add_all (backend.search_applications (query, category));
+            var results = backend.search_applications (query, category);
+
+            foreach (var result in results) {
+                if (apps.has_key (result.normalized_component_id)) {
+                    if (result.origin_score > apps[result.normalized_component_id].origin_score) {
+                        apps[result.normalized_component_id] = result;
+                    }
+                } else {
+                    apps[result.normalized_component_id] = result;
+                }
+            }
         }
 
-        return apps;
+        return apps.values;
     }
 
     public Gee.Collection<Package> search_applications_mime (string query) {
@@ -141,6 +155,10 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
         foreach (var backend in backends) {
             packages.add_all (backend.get_packages_for_component_id (package_id));
         }
+
+        packages.sort ((a, b) => {
+            return b.origin_score - a.origin_score;
+        });
 
         return packages;
     }

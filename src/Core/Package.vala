@@ -93,18 +93,13 @@ public class AppCenterCore.Package : Object {
         }
     }
 
-    private bool installed_cached;
+    private bool installed_cached = false;
     public bool installed {
         get {
-            if (installed_cached) {
-                return true;
-            }
-
             if (component.get_id () == OS_UPDATES_ID) {
                 return true;
             }
 
-            installed_cached = backend_reports_installed_sync ();
             return installed_cached;
         }
     }
@@ -352,6 +347,31 @@ public class AppCenterCore.Package : Object {
             }
 
             return _("Unknown Origin (non-curated)");
+        }
+    }
+
+    public int origin_score {
+        get {
+            int score = 0;
+
+            if (installed) {
+                score += 10;
+            }
+
+            if (is_native) {
+                score += 5;
+            }
+
+            if (is_flatpak) {
+                score++;
+
+                var fp_package = this as FlatpakPackage;
+                if (fp_package != null && fp_package.installation == FlatpakBackend.user_installation) {
+                    score++;
+                }
+            }
+
+            return score;
         }
     }
 
@@ -883,24 +903,6 @@ public class AppCenterCore.Package : Object {
         }
 
         return size;
-    }
-
-    private bool backend_reports_installed_sync () {
-        var loop = new MainLoop ();
-        bool result = false;
-        backend.is_package_installed.begin (this, (obj, res) => {
-            try {
-                result = backend.is_package_installed.end (res);
-            } catch (Error e) {
-                warning (e.message);
-                result = false;
-            } finally {
-                loop.quit ();
-            }
-        });
-
-        loop.run ();
-        return result;
     }
 
     private void populate_backend_details_sync () {

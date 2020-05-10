@@ -37,7 +37,8 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     private Thread<bool> worker_thread;
 
     private Gee.HashMap<string, Package> package_list;
-    private AppStream.Pool appstream_pool;
+    private AppStream.Pool user_appstream_pool;
+    private AppStream.Pool system_appstream_pool;
 
     // This is OK as we're only using a single thread
     // This would have to be done differently if there were multiple workers in the pool
@@ -86,9 +87,13 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
     construct {
         worker_thread = new Thread<bool> ("flatpak-worker", worker_func);
-        appstream_pool = new AppStream.Pool ();
-        appstream_pool.set_flags (AppStream.PoolFlags.READ_COLLECTION);
-        appstream_pool.set_cache_flags (AppStream.CacheFlags.NONE);
+        user_appstream_pool = new AppStream.Pool ();
+        user_appstream_pool.set_flags (AppStream.PoolFlags.READ_COLLECTION);
+        user_appstream_pool.set_cache_flags (AppStream.CacheFlags.NONE);
+
+        system_appstream_pool = new AppStream.Pool ();
+        system_appstream_pool.set_flags (AppStream.PoolFlags.READ_COLLECTION);
+        system_appstream_pool.set_cache_flags (AppStream.CacheFlags.NONE);
         package_list = new Gee.HashMap<string, Package> (null, null);
 
         // Monitor the FlatpakInstallation for changes (e.g. adding/removing remotes)
@@ -245,15 +250,14 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
         var category_array = new GLib.GenericArray<AppStream.Category> ();
         category_array.add (category);
-        AppStream.utils_sort_components_into_categories (appstream_pool.get_components (), category_array, true);
+        AppStream.utils_sort_components_into_categories (user_appstream_pool.get_components (), category_array, false);
+        AppStream.utils_sort_components_into_categories (system_appstream_pool.get_components (), category_array, false);
         components = category.get_components ();
 
         var apps = new Gee.TreeSet<AppCenterCore.Package> ();
         components.foreach ((comp) => {
-            var package = get_package_for_component_id (comp.get_id ());
-            if (package != null) {
-                apps.add (package);
-            }
+            var packages = get_packages_for_component_id (comp.get_id ());
+            apps.add_all (packages);
         });
 
         return apps;
@@ -261,20 +265,38 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
     public Gee.Collection<Package> search_applications (string query, AppStream.Category? category) {
         var apps = new Gee.TreeSet<AppCenterCore.Package> ();
-        GLib.GenericArray<weak AppStream.Component> comps = appstream_pool.search (query);
+        GLib.GenericArray<weak AppStream.Component> comps = user_appstream_pool.search (query);
         if (category == null) {
             comps.foreach ((comp) => {
-                var package = get_package_for_component_id (comp.get_id ());
-                if (package != null) {
-                    apps.add (package);
-                }
+                var packages = get_packages_for_component_id (comp.get_id ());
+                apps.add_all (packages);
             });
         } else {
             var cat_packages = get_applications_for_category (category);
             comps.foreach ((comp) => {
-                var package = get_package_for_component_id (comp.get_id ());
-                if (package != null && package in cat_packages) {
-                    apps.add (package);
+                var packages = get_packages_for_component_id (comp.get_id ());
+                foreach (var package in packages) {
+                    if (package in cat_packages) {
+                        apps.add (package);
+                    }
+                }
+            });
+        }
+
+        comps = system_appstream_pool.search (query);
+        if (category == null) {
+            comps.foreach ((comp) => {
+                var packages = get_packages_for_component_id (comp.get_id ());
+                apps.add_all (packages);
+            });
+        } else {
+            var cat_packages = get_applications_for_category (category);
+            comps.foreach ((comp) => {
+                var packages = get_packages_for_component_id (comp.get_id ());
+                foreach (var package in packages) {
+                    if (package in cat_packages) {
+                        apps.add (package);
+                    }
                 }
             });
         }
@@ -642,17 +664,17 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     private void reload_appstream_pool () {
         var new_package_list = new Gee.HashMap<string, Package> ();
 
-        appstream_pool.clear_metadata_locations ();
-        appstream_pool.add_metadata_location (user_metadata_path);
+        user_appstream_pool.clear_metadata_locations ();
+        user_appstream_pool.add_metadata_location (user_metadata_path);
 
         try {
             debug ("Loading flatpak user pool");
-            appstream_pool.load ();
+            user_appstream_pool.load ();
         } catch (Error e) {
             warning ("Errors found in flatpak appdata, some components may be incomplete/missing: %s", e.message);
         } finally {
             var comp_validator = ComponentValidator.get_default ();
-            appstream_pool.get_components ().foreach ((comp) => {
+            user_appstream_pool.get_components ().foreach ((comp) => {
                 if (!comp_validator.validate (comp)) {
                     return;
                 }
@@ -672,17 +694,17 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             });
         }
 
-        appstream_pool.clear_metadata_locations ();
-        appstream_pool.add_metadata_location (system_metadata_path);
+        system_appstream_pool.clear_metadata_locations ();
+        system_appstream_pool.add_metadata_location (system_metadata_path);
 
         try {
             debug ("Loading flatpak system pool");
-            appstream_pool.load ();
+            system_appstream_pool.load ();
         } catch (Error e) {
             warning ("Errors found in flatpak appdata, some components may be incomplete/missing: %s", e.message);
         } finally {
             var comp_validator = ComponentValidator.get_default ();
-            appstream_pool.get_components ().foreach ((comp) => {
+            system_appstream_pool.get_components ().foreach ((comp) => {
                 if (!comp_validator.validate (comp)) {
                     return;
                 }
