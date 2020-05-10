@@ -51,7 +51,8 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     public static Flatpak.Installation? user_installation { get; private set; }
     public static Flatpak.Installation? system_installation { get; private set; }
 
-    private static GLib.FileMonitor installation_changed_monitor;
+    private static GLib.FileMonitor user_installation_changed_monitor;
+    private static GLib.FileMonitor system_installation_changed_monitor;
 
     private uint total_operations;
     private int current_operation;
@@ -93,17 +94,32 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         // Monitor the FlatpakInstallation for changes (e.g. adding/removing remotes)
         if (user_installation != null) {
             try {
-                installation_changed_monitor = user_installation.create_monitor ();
+                user_installation_changed_monitor = user_installation.create_monitor ();
             } catch (Error e) {
-                warning ("Couldn't create Installation File Monitor : %s", e.message);
+                warning ("Couldn't user create Installation File Monitor : %s", e.message);
             }
 
-            installation_changed_monitor.changed.connect (() => {
-                debug ("Flatpak installation changed.");
+            user_installation_changed_monitor.changed.connect (() => {
+                debug ("Flatpak user installation changed.");
                 trigger_update_check.begin ();
             });
         } else {
-            warning ("Couldn't create Installation File Monitor due to no installation");
+            warning ("Couldn't create user Installation File Monitor due to no installation");
+        }
+
+        if (system_installation != null) {
+            try {
+                system_installation_changed_monitor = system_installation.create_monitor ();
+            } catch (Error e) {
+                warning ("Couldn't create system Installation File Monitor : %s", e.message);
+            }
+
+            system_installation_changed_monitor.changed.connect (() => {
+                debug ("Flatpak system installation changed.");
+                trigger_update_check.begin ();
+            });
+        } else {
+            warning ("Couldn't create system Installation File Monitor due to no installation");
         }
 
         user_metadata_path = Path.build_filename (
