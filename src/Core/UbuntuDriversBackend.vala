@@ -61,6 +61,12 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
                 continue;
             }
 
+            // ubuntu-drivers returns lines like the following for dkms packages:
+            // backport-iwlwifi-dkms, (kernel modules provided by backport-iwlwifi-dkms)
+            // we only want the bit before the comma
+            string[] parts = package_name.split (",");
+            package_name = parts[0];
+
             var driver_component = new AppStream.Component ();
             driver_component.set_kind (AppStream.ComponentKind.DRIVER);
             driver_component.set_pkgnames ({ package_name });
