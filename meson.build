@@ -28,6 +28,8 @@ libsoup = dependency ('libsoup-2.4')
 json = dependency ('json-glib-1.0')
 flatpak = dependency ('flatpak')
 xml = dependency ('libxml-2.0')
+polkit = dependency ('polkit-gobject-1')
+posix = meson.get_compiler('vala').find_library('posix')
 
 dbus = dependency ('dbus-1')
 
@@ -41,7 +43,9 @@ dependencies = [
     libsoup,
     json,
     flatpak,
-    xml
+    xml,
+    polkit,
+    posix
 ]
 
 config_dir = join_paths(get_option('sysconfdir'), meson.project_name())

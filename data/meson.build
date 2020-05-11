@@ -40,6 +40,14 @@ i18n.merge_file(
     install: true
 )
 
+i18n.merge_file(
+    input: 'io.elementary.appcenter.policy.in',
+    output: 'io.elementary.appcenter.policy',
+    po_dir: join_paths(meson.source_root (), 'po', 'extra'),
+    install_dir: join_paths(get_option('datadir'), 'polkit-1', 'actions'),
+    install: true
+)
+
 # Blacklist file
 install_data(
     'appcenter.blacklist',

@@ -42,6 +42,8 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 
     public bool working { public get; protected set; }
 
+    private static Polkit.Permission? update_permission = null;
+
     // The aptcc backend included in PackageKit < 1.1.10 wasn't able to support multiple packages
     // passed to the search_names method at once. If we have a new enough version we can enable
     // some optimisations when looking up packages
@@ -643,6 +645,17 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         job_args.package = package;
         job_args.cb = (owned)cb;
         job_args.cancellable = cancellable;
+
+        if (update_permission == null) {
+            try {
+                update_permission = yield new Polkit.Permission (
+                    "io.elementary.appcenter.update",
+                    new Polkit.UnixProcess (Posix.getpid ())
+                );
+            } catch (Error e) {
+                warning ("Can't get permission to update without prompting for admin: %s", e.message);
+            }
+        }
 
         var job = yield launch_job (Job.Type.UPDATE_PACKAGE, job_args);
         if (job.error != null) {

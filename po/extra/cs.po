@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-30 22:00+0000\n"
-"PO-Revision-Date: 2020-05-07 22:10+0000\n"
+"PO-Revision-Date: 2020-05-11 17:10+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/appcenter/extra/cs/"
 ">\n"
@@ -36,10 +36,8 @@ msgstr ""
 "funkcemi a opravami chyb."
 
 #: data/io.elementary.appcenter.appdata.xml.in:16
-#, fuzzy
-#| msgid "Check for Updates"
 msgid "Minor updates"
-msgstr "Zkontrolovat aktualizace"
+msgstr "Drobné aktualizace"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Ensure apps on the homepage are more reliably displayed"
@@ -55,15 +53,16 @@ msgid ""
 "Only check for updates at device startup if it's more than 24 hours since we "
 "last checked"
 msgstr ""
+"Zjistit aktualizace po zapnutí zařízení pokud uběhlo více jak 24hodin od "
+"posledního vyhledávání"
 
 #: data/io.elementary.appcenter.appdata.xml.in:27
 msgid "Reduce slowdowns when opening certain apps"
-msgstr ""
+msgstr "Zmenšit zpomalení při otevírání aplikací"
 
 #: data/io.elementary.appcenter.appdata.xml.in:29
-#, fuzzy
 msgid "Extension improvements"
-msgstr "Různé opravy chyb a vylepšení výkonu"
+msgstr "Vylepšení rozšíření"
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
 msgid ""
@@ -84,9 +83,8 @@ msgid ""
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
-#, fuzzy
 msgid "Keyboard improvements"
-msgstr "Různé opravy chyb a vylepšení výkonu"
+msgstr "Vylepšení klávesnice"
 
 #: data/io.elementary.appcenter.appdata.xml.in:37
 msgid ""
@@ -339,7 +337,6 @@ msgstr "Grafika kategorií vylepšena"
 #: data/io.elementary.appcenter.appdata.xml.in:239
 #: data/io.elementary.appcenter.appdata.xml.in:248
 #: data/io.elementary.appcenter.appdata.xml.in:257
-#, fuzzy
 msgid "Bug fixes and improve performance."
 msgstr "Opravy chyb a vylepšení výkonu."
 
@@ -411,9 +408,8 @@ msgid "Make search asynchronous"
 msgstr "Udělat vyhledání asynchroní"
 
 #: data/io.elementary.appcenter.appdata.xml.in:334
-#, fuzzy
 msgid "elementary, Inc."
-msgstr "elementary LLC."
+msgstr "elementary, Inc."
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
