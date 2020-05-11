@@ -2,14 +2,16 @@
 # Cheng-Chia Tseng <pswo10680@gmail.com>, 2018, 2020.
 # P.-H. Lin <cypressyew@gmail.com>, 2019.
 # Aefgh Threenine <aefgh39622@gmail.com>, 2019.
+# Nan-Hung Hsieh <nhsieh@cvm.tamu.edu>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-30 22:00+0000\n"
-"PO-Revision-Date: 2020-03-01 13:09+0000\n"
-"Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
-"Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/appcenter/appcenter/zh_Hant/>\n"
+"PO-Revision-Date: 2020-05-13 05:10+0000\n"
+"Last-Translator: Nan-Hung Hsieh <nhsieh@cvm.tamu.edu>\n"
+"Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
+"appcenter/appcenter/zh_Hant/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,7 +23,7 @@ msgstr ""
 #. Add "AppCenter" to the translation catalog
 #: src/Application.vala:38 src/Core/Package.vala:337
 msgid "AppCenter"
-msgstr "AppCenter"
+msgstr "應用程式中心"
 
 #: src/Application.vala:112
 #, c-format
@@ -57,7 +59,7 @@ msgstr "已安裝"
 #: src/MainWindow.vala:178 src/MainWindow.vala:337 src/Views/SearchView.vala:55
 #: src/Views/SearchView.vala:86
 msgid "Search Apps"
-msgstr "搜尋 App"
+msgstr "搜尋應用程式"
 
 #: src/Utils.vala:72 src/Core/ChangeInformation.vala:92
 msgid "Starting"
@@ -219,20 +221,14 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "您的系統有 %u 項更新可套用"
 
 #: src/Core/FlatpakBackend.vala:815
-#, fuzzy
-#| msgid "Uninstall"
 msgid "Uninstalling"
-msgstr "解除安裝"
+msgstr "解除安裝中"
 
 #: src/Core/FlatpakBackend.vala:820
-#, fuzzy
-#| msgid "Finished"
 msgid "Finishing"
-msgstr "已完成"
+msgstr "完成中"
 
 #: src/Core/FlatpakBackend.vala:915
-#, fuzzy
-#| msgid "Update"
 msgid "Updating"
 msgstr "更新"
 
@@ -250,9 +246,9 @@ msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (未整理)"
 
 #: src/Core/Package.vala:344
-#, fuzzy, c-format
+#, c-format
 msgid "%s (non-curated)"
-msgstr "%s (本地)"
+msgstr "%s (未整理)"
 
 #: src/Core/Package.vala:346
 msgid "Ubuntu Drivers"
@@ -265,12 +261,12 @@ msgstr "未知的來源 (未整理)"
 #: src/Core/Package.vala:459
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
-msgstr ""
+msgstr "未設定為安裝狀態的應用程式：%s"
 
 #: src/Core/PackageKitBackend.vala:261
-#, fuzzy, c-format
+#, c-format
 msgid "%s (local)"
-msgstr "%s (本地)"
+msgstr "%s (本機)"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -317,14 +313,14 @@ msgid "Content Warning"
 msgstr "內容警告"
 
 #: src/Dialogs/ContentWarningDialog.vala:30
-#, fuzzy, c-format
+#, c-format
 msgid "“%s” contains explicit content"
 msgstr "%s 包含特定內容"
 
 #: src/Dialogs/ContentWarningDialog.vala:31
-#, fuzzy, c-format
+#, c-format
 msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
-msgstr "%s 可能包含僅只適合成人的內容，或敏感議題及令人心神混亂的內容。一般而言，elementary 不會檢閱此程式的內容，也不讚許這類內容。"
+msgstr "%s 可能包含僅只適合成人的內容，或敏感議題及令人心神混亂的內容。一般而言，elementary 不會檢閱也不容許包含這類內容的應用程序。"
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 msgid "Show content warnings"
@@ -341,30 +337,25 @@ msgid "Install Anyway"
 msgstr "無論如何都要安裝"
 
 #: src/Dialogs/InstallFailDialog.vala:26
-#, fuzzy
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
-msgstr "這可能是因為外部原因、手動添加的軟體庫、或毀損的軟體來源檔造成。"
+msgstr "這可能是暫時性問題，或因為外部原因、手動添加的軟體庫、或毀損的軟體來源檔造成。"
 
 #: src/Dialogs/InstallFailDialog.vala:37
-#, fuzzy
 msgid "Failed to install app"
-msgstr "找尋、安裝程式"
+msgstr "安裝應用程序失敗"
 
 #: src/Dialogs/InstallFailDialog.vala:40
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to install “%s”"
-msgstr "找尋、安裝程式"
+msgstr "安裝“%s”失敗"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
-#, fuzzy
-#| msgid "Content Warning"
 msgid "Non-Curated Warning"
 msgstr "內容警告"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:37
-#, fuzzy
 msgid "Install non-curated app?"
-msgstr "%s (本地)"
+msgstr "是否安裝非AppCenter內的應用程序?"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
@@ -380,8 +371,6 @@ msgid "It may access or change system or personal files without permission"
 msgstr ""
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
-#, fuzzy
-#| msgid "Show content warnings"
 msgid "Show non-curated warnings"
 msgstr "顯示內容警告"
 
@@ -554,7 +543,6 @@ msgid "Uninstall"
 msgstr "解除安裝"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
-#, fuzzy
 msgid "This may have been caused by external or manually compiled software."
 msgstr "這可能是因為外部原因、手動添加的軟體庫、或毀損的軟體來源檔造成。"
 
@@ -715,14 +703,12 @@ msgid "No apps could be found. Try changing search terms."
 msgstr "找不到相關程式。請嘗試更改搜尋字詞。"
 
 #: src/Widgets/AbstractAppList.vala:45
-#, fuzzy
-#| msgid "Searching for updates…"
 msgid "Checking for Updates"
-msgstr "正在搜尋有無更新…"
+msgstr "正在檢查更新"
 
 #: src/Widgets/AbstractAppList.vala:46
 msgid "Downloading a list of available updates to the OS and installed apps"
-msgstr ""
+msgstr "下載並安裝應用程序"
 
 #: src/Widgets/Banner.vala:55
 msgid "An open, pay-what-you-want app store"
@@ -827,14 +813,12 @@ msgid "$%d"
 msgstr "$%d 美元"
 
 #: src/Widgets/NetworkInfoBar.vala:32
-#, fuzzy
 msgid "Network Not Available."
 msgstr "網路無法使用"
 
 #: src/Widgets/NetworkInfoBar.vala:33
-#, fuzzy
 msgid "Connect to the Internet to browse and install apps."
-msgstr "請連接至網際網路來安裝或更新程式。"
+msgstr "請連接至網際網路來安裝或更新應用程式。"
 
 #. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
 #: src/Widgets/NetworkInfoBar.vala:41
