@@ -338,10 +338,10 @@ public class AppCenterCore.Package : Object {
             } else if (backend is FlatpakBackend) {
                 var fp_package = this as FlatpakPackage;
                 if (fp_package != null && fp_package.installation == FlatpakBackend.system_installation) {
-                    return _("%s Systemwide (non-curated)").printf (origin);
+                    return _("%s (system-wide)").printf (origin);
                 }
 
-                return _("%s (non-curated)").printf (origin);
+                return origin;
             } else if (backend is UbuntuDriversBackend) {
                 return _("Ubuntu Drivers");
             }
