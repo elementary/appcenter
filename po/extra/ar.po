@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-30 22:00+0000\n"
-"PO-Revision-Date: 2020-04-08 23:30+0000\n"
+"PO-Revision-Date: 2020-05-13 05:10+0000\n"
 "Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/extra/"
 "ar/>\n"
@@ -35,119 +35,118 @@ msgstr ""
 "الجديدة..هذا التطبيق يستخدم لتحديث النظام والحصول على المميزات الجديدة."
 
 #: data/io.elementary.appcenter.appdata.xml.in:16
-#, fuzzy
-#| msgid "Check for Updates"
 msgid "Minor updates"
-msgstr "افحص وجود تحديثات"
+msgstr "تحسينات بسيطة"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Ensure apps on the homepage are more reliably displayed"
-msgstr ""
+msgstr "تأكد من أن التطبيقات على الصفحة الرئيسية معروضة بشكل جيد"
 
 #: data/io.elementary.appcenter.appdata.xml.in:24
 #: data/io.elementary.appcenter.appdata.xml.in:113
-#, fuzzy
 msgid "Performance improvements"
-msgstr "إصلاح العلل وتحسينات في الاداء"
+msgstr "تحسينات في الأداء"
 
 #: data/io.elementary.appcenter.appdata.xml.in:26
 msgid ""
 "Only check for updates at device startup if it's more than 24 hours since we "
 "last checked"
 msgstr ""
+"فقط تحقق من التحديثات عند تشغيل الجهاز اذا مضت أكثر من 24 ساعة من آخر عملية "
+"تحقق"
 
 #: data/io.elementary.appcenter.appdata.xml.in:27
 msgid "Reduce slowdowns when opening certain apps"
-msgstr ""
+msgstr "تقليل البطء عند فتح تطبيقات معينة"
 
 #: data/io.elementary.appcenter.appdata.xml.in:29
-#, fuzzy
 msgid "Extension improvements"
-msgstr "إصلاح العلل وتحسينات في الاداء"
+msgstr "تحسينات في الاضافات"
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
 msgid ""
 "To de-clutter the updates view, extensions are now only shown if they "
 "require updates"
 msgstr ""
+"لتقليل الفوضى في قائمة التحديثات، الاضافات الآن فقط تعرض عندما تتطلب تحديثًا"
 
 #: data/io.elementary.appcenter.appdata.xml.in:32
 msgid ""
 "Clicking an extension on an app's info page now shows details for the "
 "extension"
-msgstr ""
+msgstr "النقر على الاضافة من عند معلومات التطبيق سيظهر تفاصيل الاضافة"
 
 #: data/io.elementary.appcenter.appdata.xml.in:33
 msgid ""
 "Swap the main and overlay icons for extensions to more clearly associate "
 "extensions with their app"
 msgstr ""
+"بدل الاساس وغطي الايقونات الخاصة بالاضافات لجعل الاضافات مترابطة بشكل اصفى "
+"مع التطبيقات الخاصة بها"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
-#, fuzzy
 msgid "Keyboard improvements"
-msgstr "إصلاح العلل وتحسينات في الاداء"
+msgstr "تحسينات في لوحة المفاتيح"
 
 #: data/io.elementary.appcenter.appdata.xml.in:37
 msgid ""
 "Pressing down in the search field moves the keyboard focus to the search "
 "results list"
-msgstr ""
+msgstr "الضغط للاسفل عند مكان البحث يحرك تركيز لوحة المفاتيح لقائمة نتائج البحث"
 
 #: data/io.elementary.appcenter.appdata.xml.in:38
 msgid "Ctrl+F now moves the cursor to the search field"
-msgstr ""
+msgstr "Ctrl+f الآن يحرك المؤشر إلى منطقة البحث"
 
 #: data/io.elementary.appcenter.appdata.xml.in:40
 #: data/io.elementary.appcenter.appdata.xml.in:57
 msgid "Fixes"
-msgstr ""
+msgstr "يصلح"
 
 #: data/io.elementary.appcenter.appdata.xml.in:42
 msgid "Use configured network proxy settings for apt operations"
-msgstr ""
+msgstr "استخدم اعدادات البروكسي لعمليات apt"
 
 #: data/io.elementary.appcenter.appdata.xml.in:43
 msgid "No longer prompt for approval to update non-curated apps"
-msgstr ""
+msgstr "لا يجب بعد الان اصدار امر لتثبيت التحديثات الغير مدققة"
 
 #: data/io.elementary.appcenter.appdata.xml.in:44
 msgid ""
 "Ensure the OS updates subheading copy is correct after finishing updates"
-msgstr ""
+msgstr "تأكد بأن تحديثات النظام الفرعية صحيحة بعد انتهاء التحديث"
 
 #: data/io.elementary.appcenter.appdata.xml.in:45
 msgid "Ellipsize long app names in App Info views"
-msgstr ""
+msgstr "اخفاء اسماء التطبيقات الطويلة في معلومات التطبيق"
 
 #: data/io.elementary.appcenter.appdata.xml.in:47
 msgid "And more"
-msgstr ""
+msgstr "والمزيد"
 
 #: data/io.elementary.appcenter.appdata.xml.in:49
 msgid "Show a more informative loading screen when checking for updates"
-msgstr ""
+msgstr "اظهر شاشة تحميل بها معلومات اضافية عند البحث عن تحديث"
 
 #: data/io.elementary.appcenter.appdata.xml.in:50
 msgid "Don't list fonts alongside apps"
-msgstr ""
+msgstr "لا تظهر الخطوط بجانب التطبيقات"
 
 #: data/io.elementary.appcenter.appdata.xml.in:51
 #: data/io.elementary.appcenter.appdata.xml.in:61
 #: data/io.elementary.appcenter.appdata.xml.in:67
 #: data/io.elementary.appcenter.appdata.xml.in:114
-#, fuzzy
 msgid "Updated translations"
-msgstr "ترجمة جديدة"
+msgstr "ترجمة محدثة"
 
 #: data/io.elementary.appcenter.appdata.xml.in:59
 msgid ""
 "Prevent crashes when updating Flatpaks and system packages simultaneously"
-msgstr ""
+msgstr "تجنب تعطل البرمجيات عند تحديث flatpaks وحزم تحديثات النظام بنفس الوقت"
 
 #: data/io.elementary.appcenter.appdata.xml.in:60
 msgid "Prevent suspending when installing, updating, or removing packages"
-msgstr ""
+msgstr "تجنب التعطلات عند تثبيت، تحديث، او ازالة الحزم"
 
 #: data/io.elementary.appcenter.appdata.xml.in:72
 #: data/io.elementary.appcenter.appdata.xml.in:89
@@ -164,7 +163,7 @@ msgstr "اصلاح لعدم ظهور اشعار عندما يكون اعادة �
 
 #: data/io.elementary.appcenter.appdata.xml.in:76
 msgid "Apps in list views now load in the correct order when scrolling"
-msgstr ""
+msgstr "التطبيقات في القائمة الآن تظهر بشكل صحيح عند التنقل"
 
 #: data/io.elementary.appcenter.appdata.xml.in:77
 msgid "Prevent unescaped XML entities from appearing in application names"
@@ -172,11 +171,11 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:78
 msgid "Load the \"Installed\" view faster"
-msgstr ""
+msgstr "حمل ال”مثبته” بشكل اسرع"
 
 #: data/io.elementary.appcenter.appdata.xml.in:79
 msgid "Ensure flatpak applications show in the category views"
-msgstr ""
+msgstr "تأكد ان تطبيقات flatpak تظهر في القوائم"
 
 #: data/io.elementary.appcenter.appdata.xml.in:80
 msgid ""
