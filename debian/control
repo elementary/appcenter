@@ -17,6 +17,7 @@ Build-Depends: appstream,
                libunity-dev,
                libxml2-dev,
                libxml2-utils,
+               libpolkit-gobject-1-dev,
                meson,
                valac (>= 0.26)
 Standards-Version: 4.1.1
