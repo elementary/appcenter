@@ -22,17 +22,16 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : AbstractAppCont
     public signal void changed ();
     protected Gtk.Grid info_grid;
 
-    protected AbstractPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? info_size_group, Gtk.SizeGroup? action_size_group, bool show_uninstall = true) {
+    protected AbstractPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? info_size_group, Gtk.SizeGroup? action_size_group) {
         Object (
             package: package,
-            show_uninstall: show_uninstall,
+            show_uninstall: false,
             show_open: false
         );
 
         if (action_size_group != null) {
             action_size_group.add_widget (action_button);
             action_size_group.add_widget (cancel_button);
-            action_size_group.add_widget (uninstall_button);
         }
 
         if (info_size_group != null) {
