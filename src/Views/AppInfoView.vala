@@ -72,7 +72,6 @@ namespace AppCenter.Views {
 
             var uninstall_button_context = uninstall_button.get_style_context ();
             uninstall_button_context.add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
-            uninstall_button_context.add_class (Granite.STYLE_CLASS_H3_LABEL);
 
             var package_component = package.component;
 
@@ -178,7 +177,6 @@ namespace AppCenter.Views {
             package_author.xalign = 0;
             package_author.valign = Gtk.Align.START;
             package_author.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-            package_author.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
             package_summary.label = package.get_summary ();
             package_summary.selectable = true;
