@@ -534,7 +534,7 @@ namespace AppCenter.Views {
                     return;
                 }
 
-                var row = new Widgets.PackageRow.list (extension_package, null, null);
+                var row = new Widgets.PackageRow.list (extension_package, null);
                 if (extension_box != null) {
                     extension_box.add (row);
                 }
