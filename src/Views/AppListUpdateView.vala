@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2014-2016 elementary LLC. (https://elementary.io)
+ * Copyright (c) 2014-2020 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -48,7 +47,15 @@ namespace AppCenter.Views {
         }
 
         construct {
+            var loading_view = new Granite.Widgets.AlertView (
+                _("Checking for Updates"),
+                _("Downloading a list of available updates to the OS and installed apps"),
+                "sync-synchronizing"
+            );
+            loading_view.show_all ();
+
             list_box.set_header_func ((Gtk.ListBoxUpdateHeaderFunc) row_update_header);
+            list_box.set_placeholder (loading_view);
 
             update_mutex = GLib.Mutex ();
             apps_to_update = new Gee.LinkedList<AppCenterCore.Package> ();
