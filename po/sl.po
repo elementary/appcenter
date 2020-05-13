@@ -1,4 +1,4 @@
-# Jernej Virag <jernej@virag.si>, 2018.
+# Jernej Virag <jernej@virag.si>, 2018, 2020.
 # Leon C <leonleon102012@gmail.com>, 2019.
 # Daniel Foré <daniel@elementary.io>, 2019.
 # Marko <marko.dolar@gmail.com>, 2019.
@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-30 22:00+0000\n"
-"PO-Revision-Date: 2019-12-23 11:07+0000\n"
-"Last-Translator: Marko <marko.dolar@gmail.com>\n"
+"POT-Creation-Date: 2020-05-13 17:46+0000\n"
+"PO-Revision-Date: 2020-05-11 17:10+0000\n"
+"Last-Translator: Jernej Virag <jernej@virag.si>\n"
 "Language-Team: Slovenian <https://l10n.elementary.io/projects/appcenter/appcenter/sl/>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
@@ -207,7 +207,7 @@ msgstr "Kopiranje datotek"
 msgid "Unknown state"
 msgstr "Neznano stanje"
 
-#: src/Core/Client.vala:70
+#: src/Core/Client.vala:74
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Posodobitev je na voljo"
@@ -215,7 +215,7 @@ msgstr[1] "Posodobitvi sta na voljo"
 msgstr[2] "Posodobitve so na voljo"
 msgstr[3] "Posodobitve so na voljo"
 
-#: src/Core/Client.vala:71
+#: src/Core/Client.vala:75
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
@@ -225,22 +225,16 @@ msgstr[2] "%u posodobitve so na voljo za vaš sistem"
 msgstr[3] "%u posodobitev je na voljo za vaš sistem"
 
 #: src/Core/FlatpakBackend.vala:815
-#, fuzzy
-#| msgid "Uninstall"
 msgid "Uninstalling"
-msgstr "Odstrani"
+msgstr "Odstranjevanje"
 
 #: src/Core/FlatpakBackend.vala:820
-#, fuzzy
-#| msgid "Finished"
 msgid "Finishing"
-msgstr "Dokončano"
+msgstr "Zaključevanje"
 
 #: src/Core/FlatpakBackend.vala:915
-#, fuzzy
-#| msgid "Update"
 msgid "Updating"
-msgstr "Posodobi"
+msgstr "Posodabljanje"
 
 #: src/Core/Package.vala:307
 #, c-format
@@ -273,11 +267,10 @@ msgstr "Neznan vir (nepreverjeno)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Stanje aplikacije v Centru za programsko opremo ni nastavljeno kot nameščeno za pakete: %s"
 
-#: src/Core/PackageKitBackend.vala:261
-#, fuzzy, c-format
-#| msgid "%s (non-curated)"
+#: src/Core/PackageKitBackend.vala:263
+#, c-format
 msgid "%s (local)"
-msgstr "%s (nepreverjeno)"
+msgstr "%s (lokalno)"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -351,53 +344,42 @@ msgid "Install Anyway"
 msgstr "Vseeno namesti"
 
 #: src/Dialogs/InstallFailDialog.vala:26
-#, fuzzy
-#| msgid "This may have been caused by external or manually compiled software."
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
-msgstr "To je lahko povzročila zunanja ali ročno prevedena programke oprema."
+msgstr "To je lahko začasno ali pa je napako povzročila zunanja ali ročno prevedena programke oprema."
 
 #: src/Dialogs/InstallFailDialog.vala:37
-#, fuzzy
-#| msgid "Failed to uninstall app"
 msgid "Failed to install app"
-msgstr "Ni bilo možno odstraniti aplikacijo"
+msgstr "Ni bilo mogoče namestiti aplikacije"
 
 #: src/Dialogs/InstallFailDialog.vala:40
-#, fuzzy, c-format
-#| msgid "Failed to uninstall “%s”"
+#, c-format
 msgid "Failed to install “%s”"
-msgstr "Ni bilo možno odstraniti “%s”"
+msgstr "Ni bilo mogoče namestiti \"%s\""
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
-#, fuzzy
-#| msgid "Content Warning"
 msgid "Non-Curated Warning"
-msgstr "Opozorilo o vsebini"
+msgstr "Opozorilo: Aplikacija ni preverjena"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:37
-#, fuzzy
-#| msgid "%s (non-curated)"
 msgid "Install non-curated app?"
-msgstr "%s (nepreverjeno)"
+msgstr "Želite namestiti nepreverjeno aplikacijo?"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
 msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-msgstr ""
+msgstr "\"%s\" ni bila varnostno in zasebnostno preverjena s strani ekipe elementary."
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
 msgid "It may not receive bug fix or feature updates"
-msgstr ""
+msgstr "Morda ne bo prejemala popravkov"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:60
 msgid "It may access or change system or personal files without permission"
-msgstr ""
+msgstr "Morda bo dostopala do osebnih datotek brez dovoljenja ali spreminjala sistemske nastavitve"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
-#, fuzzy
-#| msgid "Show content warnings"
 msgid "Show non-curated warnings"
-msgstr "Prikaži opozorila o vsebini"
+msgstr "Prikaži opozorila o nepreverjenih aplikacijah"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -726,14 +708,12 @@ msgid "No apps could be found. Try changing search terms."
 msgstr "Noben program ni bil najden. Poiskusite z drugim iskalnim nizom."
 
 #: src/Widgets/AbstractAppList.vala:45
-#, fuzzy
-#| msgid "Searching for updates…"
 msgid "Checking for Updates"
-msgstr "Iskanje posodobitev…"
+msgstr "Iskanje posodobitev"
 
 #: src/Widgets/AbstractAppList.vala:46
 msgid "Downloading a list of available updates to the OS and installed apps"
-msgstr ""
+msgstr "Prenašanje seznama posodobitev"
 
 #: src/Widgets/Banner.vala:55
 msgid "An open, pay-what-you-want app store"
@@ -785,7 +765,7 @@ msgstr "Splet"
 
 #: src/Widgets/CategoryFlowBox.vala:82
 msgid "Math, Science, & Engineering"
-msgstr "Matematika, znanost in inženirstvo"
+msgstr "Matematika, znanost in inženiring"
 
 #: src/Widgets/CategoryFlowBox.vala:101
 msgid "Media Production"
@@ -813,7 +793,7 @@ msgstr "Pisanje in jezik"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
-msgstr "Zahteva plačila, ki niso omogočena"
+msgstr "Potrebno je plačilo, ki ni omogočeno"
 
 #: src/Widgets/HumbleButton.vala:105
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:305

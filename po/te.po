@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-30 22:00+0000\n"
+"POT-Creation-Date: 2020-05-13 17:46+0000\n"
 "PO-Revision-Date: 2016-01-09 14:46+0000\n"
 "Last-Translator: nrao <nagamalli.s@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -203,13 +203,13 @@ msgstr "దస్త్రములను నకలుతీయుచున్�
 msgid "Unknown state"
 msgstr "అజ్ఞాత స్థితి"
 
-#: src/Core/Client.vala:70
+#: src/Core/Client.vala:74
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "నవీకరణలు లభ్యం"
 msgstr[1] "నవీకరణలు లభ్యం"
 
-#: src/Core/Client.vala:71
+#: src/Core/Client.vala:75
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
@@ -265,7 +265,7 @@ msgstr ""
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
 
-#: src/Core/PackageKitBackend.vala:261
+#: src/Core/PackageKitBackend.vala:263
 #, c-format
 msgid "%s (local)"
 msgstr ""

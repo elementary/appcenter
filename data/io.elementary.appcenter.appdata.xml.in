@@ -11,11 +11,16 @@
     <p>An app store for indie and open source developers. Browse by categories or search and discover new apps. AppCenter is also used for updating your system to the latest and greatest version for new features and fixes.</p>
   </description>
   <releases>
-    <release version="3.3.1" date="2020-04-29" urgency="medium">
+    <release version="3.4.0" date="2020-04-29" urgency="medium">
       <description>
+        <p>New features</p>
+        <ul>
+          <li>Perform updates without administrator permissions</li>
+        </ul>
         <p>Minor updates</p>
         <ul>
           <li>Ensure apps on the homepage are more reliably displayed</li>
+          <li>More reliably set the Dock badge number</li>
         </ul>
       </description>
     </release>

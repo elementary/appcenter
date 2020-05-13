@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-30 22:00+0000\n"
+"POT-Creation-Date: 2020-05-13 17:46+0000\n"
 "PO-Revision-Date: 2019-12-26 12:32+0000\n"
 "Last-Translator: Jörg Arnold <j.ar@mailbox.org>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/appcenter/appcenter/de/>\n"
@@ -210,13 +210,13 @@ msgstr "Dateien werden kopiert"
 msgid "Unknown state"
 msgstr "Unbekannter Zustand"
 
-#: src/Core/Client.vala:70
+#: src/Core/Client.vala:74
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Aktualisierung verfügbar"
 msgstr[1] "Aktualisierungen verfügbar"
 
-#: src/Core/Client.vala:71
+#: src/Core/Client.vala:75
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
@@ -272,7 +272,7 @@ msgstr "Unbekannte Quelle (nicht kuratiert)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Das Paket ist im AppCenter nicht als \"installiert\" markiert: %s"
 
-#: src/Core/PackageKitBackend.vala:261
+#: src/Core/PackageKitBackend.vala:263
 #, fuzzy, c-format
 #| msgid "%s (non-curated)"
 msgid "%s (local)"

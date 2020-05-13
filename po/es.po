@@ -14,11 +14,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-30 22:00+0000\n"
+"POT-Creation-Date: 2020-05-13 17:46+0000\n"
 "PO-Revision-Date: 2020-05-05 07:10+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
-"Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/es/>\n"
+"Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/appcenter/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -216,13 +215,13 @@ msgstr "Copiando archivos"
 msgid "Unknown state"
 msgstr "Estado desconocido"
 
-#: src/Core/Client.vala:70
+#: src/Core/Client.vala:74
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Actualización disponible"
 msgstr[1] "Actualizaciones disponibles"
 
-#: src/Core/Client.vala:71
+#: src/Core/Client.vala:75
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
@@ -272,7 +271,7 @@ msgstr "Origen desconocido (no revisadas)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "El paquete %s consta como aplicación no instalada en el Centro de aplicaciones"
 
-#: src/Core/PackageKitBackend.vala:261
+#: src/Core/PackageKitBackend.vala:263
 #, c-format
 msgid "%s (local)"
 msgstr "%s (local)"
@@ -330,10 +329,7 @@ msgstr "«%s» contiene contenido explícito"
 #: src/Dialogs/ContentWarningDialog.vala:31
 #, c-format
 msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
-msgstr ""
-"«%s» puede contener contenido solo adecuado para adultos o que puede ser "
-"delicado o perturbador. Por lo general, elementary no revisa ni refrenda el "
-"contenido de esta aplicación."
+msgstr "«%s» puede contener contenido solo adecuado para adultos o que puede ser delicado o perturbador. Por lo general, elementary no revisa ni refrenda el contenido de esta aplicación."
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 msgid "Show content warnings"
@@ -407,9 +403,7 @@ msgstr "Cancelar"
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
-msgstr ""
-"Se produjo un error al procesar la tarjeta. Inténtelo de nuevo más tarde. "
-"Sentimos cualquier inconveniente causado."
+msgstr "Se produjo un error al procesar la tarjeta. Inténtelo de nuevo más tarde. Sentimos cualquier inconveniente causado."
 
 #: src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
@@ -492,9 +486,7 @@ msgstr "La tarjeta ha expirado. Intente de nuevo con una tarjeta diferente."
 
 #: src/Dialogs/StripeDialog.vala:542
 msgid "There are too many payment requests at the moment, please retry later."
-msgstr ""
-"Hay demasiadas solicitudes de pago en este momento. Vuelva a intentarlo más "
-"tarde."
+msgstr "Hay demasiadas solicitudes de pago en este momento. Vuelva a intentarlo más tarde."
 
 #: src/Dialogs/StripeDialog.vala:558
 msgid "This card does not support this kind of transaction. Please try again with a different card."
@@ -510,9 +502,7 @@ msgstr "Ya se ha procesado la transacción."
 
 #: src/Dialogs/StripeDialog.vala:566
 msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
-msgstr ""
-"El código postal es incorrecto. Pruebe de nuevo con el código postal "
-"correcto."
+msgstr "El código postal es incorrecto. Pruebe de nuevo con el código postal correcto."
 
 #: src/Dialogs/StripeDialog.vala:568
 msgid "You don't have enough funds. Please use an alternative payment method."
@@ -532,9 +522,7 @@ msgstr "Se intentó con ese NIP demasiadas veces. Pruebe una tarjeta distinta."
 
 #: src/Dialogs/StripeDialog.vala:603
 msgid "Unable to complete the transaction. Please contact your bank for further information."
-msgstr ""
-"No se pudo completar la transacción. Póngase en contacto con su banco para "
-"obtener más información."
+msgstr "No se pudo completar la transacción. Póngase en contacto con su banco para obtener más información."
 
 #: src/Dialogs/StripeDialog.vala:606
 msgid "The balance or credit limit on the card has been reached."

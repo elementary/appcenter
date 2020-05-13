@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-30 22:00+0000\n"
+"POT-Creation-Date: 2020-05-13 17:46+0000\n"
 "PO-Revision-Date: 2020-03-22 13:09+0000\n"
 "Last-Translator: Andrii Priadko <mendeleev.ua@gmail.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/appcenter/uk/>\n"
@@ -208,14 +208,14 @@ msgstr "Копіювання файлів"
 msgid "Unknown state"
 msgstr "Невідомий стан"
 
-#: src/Core/Client.vala:70
+#: src/Core/Client.vala:74
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Оновлення доступне"
 msgstr[1] "Оновлення доступні"
 msgstr[2] "Оновлень доступно"
 
-#: src/Core/Client.vala:71
+#: src/Core/Client.vala:75
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
@@ -272,7 +272,7 @@ msgstr "Невідоме походження (не курований)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Статус додатку не встановлено як інстальований в Центрі програм для пакету: %s"
 
-#: src/Core/PackageKitBackend.vala:261
+#: src/Core/PackageKitBackend.vala:263
 #, fuzzy, c-format
 #| msgid "%s (non-curated)"
 msgid "%s (local)"
