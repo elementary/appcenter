@@ -21,6 +21,7 @@
 namespace AppCenter.Views {
     /** AppList for Category and Search Views.  Sorts by name and does not show Uninstall Button **/
     public class AppListView : AbstractAppList {
+        public string? current_search_term = null;
         private uint current_visible_index = 0U;
         private GLib.ListStore list_store;
 
@@ -68,13 +69,18 @@ namespace AppCenter.Views {
         private void add_row_for_package (AppCenterCore.Package package) {
             // Don't show plugins or fonts in search and category views
             if (!package.is_plugin && !package.is_font) {
-                list_store.insert_sorted (package, (GLib.CompareDataFunc<AppCenterCore.Package>) compare_packages);
+                GLib.CompareDataFunc<AppCenterCore.Package> sort_fn = (a, b) => {
+                    return compare_packages (a, b);
+                };
+
+                list_store.insert_sorted (package, sort_fn);
             }
         }
 
         public override void clear () {
             base.clear ();
             list_store.remove_all ();
+            current_search_term = null;
             current_visible_index = 0U;
         }
 
@@ -98,7 +104,20 @@ namespace AppCenter.Views {
             on_list_changed ();
         }
 
-        private static int compare_packages (AppCenterCore.Package p1, AppCenterCore.Package p2) {
+        private int search_priority (string name) {
+            if (name != null && current_search_term != null) {
+                var name_lower = name.down ();
+                var term_lower = current_search_term.down ();
+                if (name_lower.has_prefix (term_lower)) {
+                    return 2;
+                } else if (name_lower.contains (term_lower)) {
+                    return 1;
+                }
+            }
+            return 0;
+        }
+
+        private int compare_packages (AppCenterCore.Package p1, AppCenterCore.Package p2) {
 #if CURATED
             bool p1_is_elementary_native = p1.is_native;
 
@@ -111,26 +130,21 @@ namespace AppCenter.Views {
                 return p1.is_plugin ? 1 : -1;
             }
 
+            int sp1 = search_priority (p1.get_name ());
+            int sp2 = search_priority (p2.get_name ());
+            if (sp1 != sp2) {
+                return sp2 - sp1;
+            }
+
             return p1.get_name ().collate (p2.get_name ());
         }
 
-#if CURATED
         [CCode (instance_pos = -1)]
         protected override int package_row_compare (Widgets.AppListRow row1, Widgets.AppListRow row2) {
-            bool p1_is_elementary_native = row1.get_package ().is_native;
-            bool p1_is_plugin = row1.get_package ().is_plugin;
-
-            if (p1_is_elementary_native != row2.get_package ().is_native) {
-                return p1_is_elementary_native ? -1 : 1;
-            }
-
-            if (p1_is_plugin != row2.get_package ().is_plugin) {
-                return p1_is_plugin ? 1 : -1;
-            }
-
-            return base.package_row_compare (row1, row2);
+            return compare_packages (row1.get_package (), row2.get_package ());
         }
 
+#if CURATED
         [CCode (instance_pos = -1)]
         private void row_update_header (Widgets.AppListRow row, Widgets.AppListRow? before) {
             bool elementary_native = row.get_package ().is_native;
