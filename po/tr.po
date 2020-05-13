@@ -12,11 +12,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-30 22:00+0000\n"
+"POT-Creation-Date: 2020-05-13 17:46+0000\n"
 "PO-Revision-Date: 2020-05-01 16:29+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
-"Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/tr/>\n"
+"Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/appcenter/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -214,13 +213,13 @@ msgstr "Dosyalar kopyalanıyor"
 msgid "Unknown state"
 msgstr "Bilinmeyen durum"
 
-#: src/Core/Client.vala:70
+#: src/Core/Client.vala:74
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Güncelleme Var"
 msgstr[1] "Güncellemeler Var"
 
-#: src/Core/Client.vala:71
+#: src/Core/Client.vala:75
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
@@ -270,7 +269,7 @@ msgstr "Bilinmeyen Kaynak (doğrulanmamış)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "%s paketinin Uygulama Merkezindeki durumu yüklü olarak ayarlanmadı"
 
-#: src/Core/PackageKitBackend.vala:261
+#: src/Core/PackageKitBackend.vala:263
 #, c-format
 msgid "%s (local)"
 msgstr "%s (yerel)"
@@ -346,9 +345,7 @@ msgstr "Yine de Yükle"
 
 #: src/Dialogs/InstallFailDialog.vala:26
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
-msgstr ""
-"Bu geçici bir sorun veya harici yada elle derlenmiş yazılımlardan "
-"kaynaklanmış olabilir."
+msgstr "Bu geçici bir sorun veya harici yada elle derlenmiş yazılımlardan kaynaklanmış olabilir."
 
 #: src/Dialogs/InstallFailDialog.vala:37
 msgid "Failed to install app"
@@ -716,9 +713,7 @@ msgstr "Güncellemeler Denetleniyor"
 
 #: src/Widgets/AbstractAppList.vala:46
 msgid "Downloading a list of available updates to the OS and installed apps"
-msgstr ""
-"İşletim sistemi ve yüklü uygulamalar için mevcut güncellemelerin bir listesi "
-"indiriliyor"
+msgstr "İşletim sistemi ve yüklü uygulamalar için mevcut güncellemelerin bir listesi indiriliyor"
 
 #: src/Widgets/Banner.vala:55
 msgid "An open, pay-what-you-want app store"

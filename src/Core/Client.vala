@@ -35,6 +35,8 @@ public class AppCenterCore.Client : Object {
 
     private const int SECONDS_BETWEEN_REFRESHES = 60 * 60 * 24;
 
+    private AsyncMutex update_notification_mutex = new AsyncMutex ();
+
     private Client () {
         Object (screenshot_cache: AppCenterCore.ScreenshotCache.new_cache ());
     }
@@ -62,6 +64,8 @@ public class AppCenterCore.Client : Object {
     }
 
     public async void refresh_updates () {
+        yield update_notification_mutex.lock ();
+
         bool was_empty = updates_number == 0U;
         updates_number = yield UpdateManager.get_default ().get_updates (null);
 
@@ -80,21 +84,14 @@ public class AppCenterCore.Client : Object {
             application.withdraw_notification ("updates");
         }
 
-        Granite.Services.Application.set_badge.begin (updates_number, (obj, res) => {
-            try {
-                Granite.Services.Application.set_badge.end (res);
-            } catch (GLib.Error e) {
-                critical (e.message);
-            }
-        });
+        try {
+            yield Granite.Services.Application.set_badge (updates_number);
+            yield Granite.Services.Application.set_badge_visible (updates_number != 0);
+        } catch (Error e) {
+            warning ("Error setting updates badge: %s", e.message);
+        }
 
-        Granite.Services.Application.set_badge_visible.begin (updates_number != 0U, (obj, res) => {
-            try {
-                Granite.Services.Application.set_badge_visible.end (res);
-            } catch (GLib.Error e) {
-                critical (e.message);
-            }
-        });
+        update_notification_mutex.unlock ();
 
         installed_apps_changed ();
     }

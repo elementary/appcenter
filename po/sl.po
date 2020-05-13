@@ -6,17 +6,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-30 22:00+0000\n"
+"POT-Creation-Date: 2020-05-13 17:46+0000\n"
 "PO-Revision-Date: 2020-05-11 17:10+0000\n"
 "Last-Translator: Jernej Virag <jernej@virag.si>\n"
-"Language-Team: Slovenian <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/sl/>\n"
+"Language-Team: Slovenian <https://l10n.elementary.io/projects/appcenter/appcenter/sl/>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
-"n%100==4 ? 2 : 3;\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3;\n"
 "X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
@@ -209,7 +207,7 @@ msgstr "Kopiranje datotek"
 msgid "Unknown state"
 msgstr "Neznano stanje"
 
-#: src/Core/Client.vala:70
+#: src/Core/Client.vala:74
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Posodobitev je na voljo"
@@ -217,7 +215,7 @@ msgstr[1] "Posodobitvi sta na voljo"
 msgstr[2] "Posodobitve so na voljo"
 msgstr[3] "Posodobitve so na voljo"
 
-#: src/Core/Client.vala:71
+#: src/Core/Client.vala:75
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
@@ -269,7 +267,7 @@ msgstr "Neznan vir (nepreverjeno)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Stanje aplikacije v Centru za programsko opremo ni nastavljeno kot nameščeno za pakete: %s"
 
-#: src/Core/PackageKitBackend.vala:261
+#: src/Core/PackageKitBackend.vala:263
 #, c-format
 msgid "%s (local)"
 msgstr "%s (lokalno)"
@@ -347,9 +345,7 @@ msgstr "Vseeno namesti"
 
 #: src/Dialogs/InstallFailDialog.vala:26
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
-msgstr ""
-"To je lahko začasno ali pa je napako povzročila zunanja ali ročno prevedena "
-"programke oprema."
+msgstr "To je lahko začasno ali pa je napako povzročila zunanja ali ročno prevedena programke oprema."
 
 #: src/Dialogs/InstallFailDialog.vala:37
 msgid "Failed to install app"
@@ -371,8 +367,7 @@ msgstr "Želite namestiti nepreverjeno aplikacijo?"
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
 msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-msgstr ""
-"\"%s\" ni bila varnostno in zasebnostno preverjena s strani ekipe elementary."
+msgstr "\"%s\" ni bila varnostno in zasebnostno preverjena s strani ekipe elementary."
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
 msgid "It may not receive bug fix or feature updates"
@@ -380,9 +375,7 @@ msgstr "Morda ne bo prejemala popravkov"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:60
 msgid "It may access or change system or personal files without permission"
-msgstr ""
-"Morda bo dostopala do osebnih datotek brez dovoljenja ali spreminjala "
-"sistemske nastavitve"
+msgstr "Morda bo dostopala do osebnih datotek brez dovoljenja ali spreminjala sistemske nastavitve"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
 msgid "Show non-curated warnings"
