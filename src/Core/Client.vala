@@ -23,8 +23,6 @@ public class AppCenterCore.Client : Object {
      */
     public signal void installed_apps_changed ();
 
-    public bool updating_cache { public get; private set; default = false; }
-
     public AppCenterCore.ScreenshotCache? screenshot_cache { get; construct; }
 
     private GLib.Cancellable cancellable;
@@ -37,12 +35,16 @@ public class AppCenterCore.Client : Object {
 
     private const int SECONDS_BETWEEN_REFRESHES = 60 * 60 * 24;
 
+    private AsyncMutex update_notification_mutex = new AsyncMutex ();
+
     private Client () {
         Object (screenshot_cache: AppCenterCore.ScreenshotCache.new_cache ());
     }
 
     construct {
         cancellable = new GLib.Cancellable ();
+
+        last_cache_update = new DateTime.from_unix_utc (AppCenter.App.settings.get_int64 ("last-refresh-time"));
     }
 
     public async Gee.Collection<AppCenterCore.Package> get_installed_applications (Cancellable? cancellable = null) {
@@ -62,6 +64,8 @@ public class AppCenterCore.Client : Object {
     }
 
     public async void refresh_updates () {
+        yield update_notification_mutex.lock ();
+
         bool was_empty = updates_number == 0U;
         updates_number = yield UpdateManager.get_default ().get_updates (null);
 
@@ -80,21 +84,14 @@ public class AppCenterCore.Client : Object {
             application.withdraw_notification ("updates");
         }
 
-        Granite.Services.Application.set_badge.begin (updates_number, (obj, res) => {
-            try {
-                Granite.Services.Application.set_badge.end (res);
-            } catch (GLib.Error e) {
-                critical (e.message);
-            }
-        });
+        try {
+            yield Granite.Services.Application.set_badge (updates_number);
+            yield Granite.Services.Application.set_badge_visible (updates_number != 0);
+        } catch (Error e) {
+            warning ("Error setting updates badge: %s", e.message);
+        }
 
-        Granite.Services.Application.set_badge_visible.begin (updates_number != 0U, (obj, res) => {
-            try {
-                Granite.Services.Application.set_badge_visible.end (res);
-            } catch (GLib.Error e) {
-                critical (e.message);
-            }
-        });
+        update_notification_mutex.unlock ();
 
         installed_apps_changed ();
     }
@@ -105,14 +102,12 @@ public class AppCenterCore.Client : Object {
         if (update_cache_timeout_id > 0 && cancel_timeout) {
             Source.remove (update_cache_timeout_id);
             update_cache_timeout_id = 0;
-            last_cache_update = null;
         }
-
-        cancellable = new GLib.Cancellable ();
-        refresh_in_progress = false;
     }
 
     public async void update_cache (bool force = false) {
+        cancellable.reset ();
+
         debug ("update cache called %s", force.to_string ());
         bool success = false;
 
@@ -129,52 +124,52 @@ public class AppCenterCore.Client : Object {
                 update_cache_timeout_id = 0;
             } else {
                 debug ("Refresh timeout running and not forced - returning");
-                refresh_in_progress = false;
                 return;
             }
         }
 
+        var nm = NetworkMonitor.get_default ();
+
         /* One cache update a day, keeps the doctor away! */
-        if (force || last_cache_update == null ||
-            (new DateTime.now_local ()).difference (last_cache_update) / GLib.TimeSpan.SECOND >= SECONDS_BETWEEN_REFRESHES) {
-            var nm = NetworkMonitor.get_default ();
+        var seconds_since_last_refresh = new DateTime.now_utc ().difference (last_cache_update) / GLib.TimeSpan.SECOND;
+        if (force || seconds_since_last_refresh >= SECONDS_BETWEEN_REFRESHES) {
             if (nm.get_network_available ()) {
                 debug ("New refresh task");
 
                 refresh_in_progress = true;
-                updating_cache = true;
                 try {
-                    success = yield PackageKitBackend.get_default ().refresh_cache (cancellable);
-                    yield FlatpakBackend.get_default ().refresh_cache (cancellable);
-                    last_cache_update = new DateTime.now_local ();
+                    success = yield BackendAggregator.get_default ().refresh_cache (cancellable);
+                    if (success) {
+                        last_cache_update = new DateTime.now_utc ();
+                        AppCenter.App.settings.set_int64 ("last-refresh-time", last_cache_update.to_unix ());
+                    }
+
+                    seconds_since_last_refresh = 0;
                 } catch (Error e) {
+                    if (!(e is GLib.IOError.CANCELLED)) {
+                        critical ("Update_cache: Refesh cache async failed - %s", e.message);
+                        cache_update_failed (e);
+                    }
+                } finally {
                     refresh_in_progress = false;
-                    updating_cache = false;
-
-                    critical ("Update_cache: Refesh cache async failed - %s", e.message);
-                    cache_update_failed (e);
-                }
-
-                if (success) {
-                    refresh_updates.begin ();
                 }
             }
-
-            refresh_in_progress = false; //Stops new timeout while no network.
-            updating_cache = false;
         } else {
             debug ("Too soon to refresh and not forced");
         }
 
-        if (refresh_in_progress) {
-            update_cache_timeout_id = GLib.Timeout.add_seconds (SECONDS_BETWEEN_REFRESHES, () => {
-                update_cache_timeout_id = 0;
-                update_cache.begin (true);
-                return GLib.Source.REMOVE;
-            });
+        if (nm.get_network_available ()) {
+            refresh_updates.begin ();
+        }
 
-            refresh_in_progress = success;
-        } // Otherwise updates and timeout were cancelled during refresh, or no network present.
+        var next_refresh = SECONDS_BETWEEN_REFRESHES - (uint)seconds_since_last_refresh;
+        debug ("Setting a timeout for a refresh in %f minutes", next_refresh / 60.0f);
+        update_cache_timeout_id = GLib.Timeout.add_seconds (next_refresh, () => {
+            update_cache_timeout_id = 0;
+            update_cache.begin (true);
+
+            return GLib.Source.REMOVE;
+        });
     }
 
     public Package? get_package_for_component_id (string id) {

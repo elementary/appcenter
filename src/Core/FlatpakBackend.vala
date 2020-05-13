@@ -37,6 +37,8 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
     private static Flatpak.Installation? installation;
 
+    private static GLib.FileMonitor installation_changed_monitor;
+
     private uint total_operations;
     private int current_operation;
 
@@ -70,8 +72,25 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     construct {
         worker_thread = new Thread<bool> ("flatpak-worker", worker_func);
         appstream_pool = new AppStream.Pool ();
+        appstream_pool.set_flags (AppStream.PoolFlags.READ_COLLECTION);
         appstream_pool.set_cache_flags (AppStream.CacheFlags.NONE);
         package_list = new Gee.HashMap<string, Package> (null, null);
+
+        // Monitor the FlatpakInstallation for changes (e.g. adding/removing remotes)
+        if (installation != null) {
+            try {
+                installation_changed_monitor = installation.create_monitor ();
+            } catch (Error e) {
+                warning ("Couldn't create Installation File Monitor : %s", e.message);
+            }
+
+            installation_changed_monitor.changed.connect (() => {
+                debug ("Flatpak installation changed.");
+                trigger_update_check.begin ();
+            });
+        } else {
+            warning ("Couldn't create Installation File Monitor due to no installation");
+        }
 
         local_metadata_path = Path.build_filename (
             Environment.get_user_cache_dir (),
@@ -80,6 +99,16 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         );
 
         reload_appstream_pool ();
+    }
+
+    private async void trigger_update_check () {
+        try {
+            yield refresh_cache (null);
+        } catch (Error e) {
+            warning ("Unable to refresh cache after external change: %s", e.message);
+        }
+
+        yield Client.get_default ().refresh_updates ();
     }
 
     static construct {
@@ -150,12 +179,15 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
     public Gee.Collection<Package> get_applications_for_category (AppStream.Category category) {
         unowned GLib.GenericArray<AppStream.Component> components = category.get_components ();
-        if (components.length == 0) {
-            var category_array = new GLib.GenericArray<AppStream.Category> ();
-            category_array.add (category);
-            AppStream.utils_sort_components_into_categories (appstream_pool.get_components (), category_array, true);
-            components = category.get_components ();
+        // Clear out any cached components that could be from other backends
+        if (components.length != 0) {
+            components.remove_range (0, components.length);
         }
+
+        var category_array = new GLib.GenericArray<AppStream.Category> ();
+        category_array.add (category);
+        AppStream.utils_sort_components_into_categories (appstream_pool.get_components (), category_array, true);
+        components = category.get_components ();
 
         var apps = new Gee.TreeSet<AppCenterCore.Package> ();
         components.foreach ((comp) => {
@@ -236,17 +268,17 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         return new Gee.ArrayList<Package> ();
     }
 
-    public async uint64 get_download_size (Package package, Cancellable? cancellable) throws GLib.Error {
+    public async uint64 get_download_size (Package package, Cancellable? cancellable, bool is_update = false) throws GLib.Error {
         var bundle = package.component.get_bundle (AppStream.BundleKind.FLATPAK);
         if (bundle == null) {
             return 0;
         }
 
         var id = "%s/%s".printf (package.component.get_origin (), bundle.get_id ());
-        return yield get_download_size_by_id (id, cancellable);
+        return yield get_download_size_by_id (id, cancellable, is_update);
     }
 
-    public async uint64 get_download_size_by_id (string id, Cancellable? cancellable) throws GLib.Error {
+    public async uint64 get_download_size_by_id (string id, Cancellable? cancellable, bool is_update = false) throws GLib.Error {
         if (installation == null) {
             return 0;
         }
@@ -257,14 +289,73 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         }
 
         var flatpak_ref = Flatpak.Ref.parse (parts[1]);
+        bool is_app = flatpak_ref.kind == Flatpak.RefKind.APP;
 
         uint64 download_size = 0;
-        installation.fetch_remote_size_sync (parts[0], flatpak_ref, out download_size, null);
-        if (download_size > 0) {
-            return download_size;
+
+        var added_remotes = new Gee.ArrayList<string> ();
+
+        try {
+            var transaction = new Flatpak.Transaction.for_installation (installation, cancellable);
+            if (is_update) {
+                transaction.add_update (parts[1], null, null);
+            } else {
+                transaction.add_install (parts[0], parts[1], null);
+            }
+
+            transaction.add_new_remote.connect ((reason, from_id, remote_name, url) => {
+                if (reason == Flatpak.TransactionRemoteReason.RUNTIME_DEPS) {
+                    added_remotes.add (url);
+                    return true;
+                }
+
+                return false;
+            });
+
+            transaction.ready.connect (() => {
+                var operations = transaction.get_operations ();
+                operations.foreach ((entry) => {
+
+                    Flatpak.Ref entry_ref;
+                    try {
+                        entry_ref = Flatpak.Ref.parse (entry.get_ref ());
+                    } catch (Error e) {
+                        return;
+                    }
+
+                    // Don't include runtime deps in download size for apps we're updating
+                    // as this is counted in the OS Updates package
+                    var entry_is_runtime_dep = entry_ref.kind == Flatpak.RefKind.RUNTIME;
+                    if (is_update && is_app && entry_is_runtime_dep) {
+                        return;
+                    }
+
+                    download_size += entry.get_download_size ();
+                });
+
+                // Do not allow the install to start, this is a dry run
+                return false;
+            });
+
+            transaction.run (cancellable);
+
+            // Cleanup any remotes we had to add while testing the transaction
+            installation.list_remotes ().foreach ((remote) => {
+                if (remote.get_url () in added_remotes) {
+                    try {
+                        installation.remove_remote (remote.get_name ());
+                    } catch (Error e) {
+                        warning ("Error while removing dry run remote: %s", e.message);
+                    }
+                }
+            });
+        } catch (Error e) {
+            if (!(e is Flatpak.Error.ABORTED)) {
+                throw e;
+            }
         }
 
-        return 0;
+        return download_size;
     }
 
     public async bool is_package_installed (Package package) throws GLib.Error {
@@ -341,14 +432,16 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
         for (int i = 0; i < remotes.length; i++) {
             unowned Flatpak.Remote remote = remotes[i];
-            if (remote.get_disabled ()) {
-                continue;
-            }
 
             bool cache_refresh_needed = false;
 
             unowned string origin_name = remote.get_name ();
             debug ("Found remote: %s", origin_name);
+
+            if (remote.get_disabled ()) {
+                debug ("%s is disabled, skipping.", origin_name);
+                continue;
+            }
 
             var timestamp_file = remote.get_appstream_timestamp (null);
             if (!timestamp_file.query_exists ()) {
@@ -431,6 +524,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         }
 
         reload_appstream_pool ();
+        BackendAggregator.get_default ().cache_flush_needed ();
 
         job.result = Value (typeof (bool));
         job.result.set_boolean (true);
@@ -588,6 +682,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             critical ("Error setting up transaction for flatpak install: %s", e.message);
             job.result = Value (typeof (bool));
             job.result.set_boolean (false);
+            job.error = e;
             job.results_ready ();
             return;
         }
@@ -624,8 +719,13 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 success = true;
             }
 
-            // Only stop if this is a fatal error
-            return detail == Flatpak.TransactionErrorDetails.NON_FATAL;
+            // Only cancel the transaction if this is fatal
+            var should_continue = detail == Flatpak.TransactionErrorDetails.NON_FATAL;
+            if (!should_continue) {
+                job.error = e;
+            }
+
+            return should_continue;
         });
 
         transaction.operation_done.connect ((operation, commit, details) => {
@@ -647,6 +747,10 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 success = true;
             } else {
                 success = false;
+                // Don't overwrite any previous errors as the first is probably most important
+                if (job.error != null) {
+                    job.error = e;
+                }
             }
         }
 

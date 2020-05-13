@@ -55,7 +55,7 @@ public class SuspendControl {
     public bool inhibit () {
         if (inhibited == false && supported) {
             try {
-                inhibit_cookie = sm.inhibit ("org.richardfairthorne.SuspendControl", 0, "Inhibit suspend during update", 4);
+                inhibit_cookie = sm.inhibit ("io.elementary.appcenter", 0, "Inhibit suspend during package operations", 4);
                 inhibited = true;
             } catch (GLib.Error e) {
                 critical (e.message);

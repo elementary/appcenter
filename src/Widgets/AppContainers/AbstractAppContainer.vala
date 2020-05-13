@@ -28,7 +28,7 @@ namespace AppCenter {
         }
     }
 
-    public abstract class AbstractAppContainer : Gtk.Grid {
+    public abstract class AbstractAppContainer : Gtk.Bin {
         public AppCenterCore.Package package { get; construct set; }
         protected bool show_uninstall { get; set; default = true; }
         protected bool show_open { get; set; default = true; }
@@ -37,7 +37,6 @@ namespace AppCenter {
         protected Gtk.Image inner_image;
         protected Gtk.Label package_name;
         protected Gtk.Label package_author;
-        protected Gtk.Label package_summary;
 
         protected Widgets.ContentWarningDialog content_warning;
         protected Widgets.NonCuratedWarningDialog non_curated_warning;
@@ -121,7 +120,6 @@ namespace AppCenter {
 
             package_author = new Gtk.Label (null);
             package_name = new Gtk.Label (null);
-            package_summary = new Gtk.Label (null);
 
             action_button = new Widgets.HumbleButton ();
 
@@ -130,13 +128,13 @@ namespace AppCenter {
             action_button_revealer.add (action_button);
 
             action_button.download_requested.connect (() => {
-                if (install_approved (package) == true) {
+                if (install_approved ()) {
                     action_clicked.begin ();
                 }
             });
 
             action_button.payment_requested.connect ((amount) => {
-                if (install_approved (package) == true) {
+                if (install_approved ()) {
                     show_stripe_dialog (amount);
                 }
             });
@@ -194,6 +192,7 @@ namespace AppCenter {
 
             action_stack = new Gtk.Stack ();
             action_stack.hexpand = true;
+            action_stack.hhomogeneous = false;
             action_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
             action_stack.add_named (button_grid, "buttons");
             action_stack.add_named (progress_grid, "progress");
@@ -225,7 +224,7 @@ namespace AppCenter {
         }
 
         protected virtual void set_up_package (uint icon_size = 48) {
-            package_name.label = package.get_name ();
+            package_name.label = Utils.unescape_markup (package.get_name ());
 
             if (package.component.get_id () != AppCenterCore.Package.OS_UPDATES_ID) {
                 package_author.label = package.author_title;
@@ -233,20 +232,32 @@ namespace AppCenter {
 
             var scale_factor = inner_image.get_scale_factor ();
 
+            var badge_icon_size = Gtk.IconSize.LARGE_TOOLBAR;
+            var badge_pixel_size = 24;
+            if (icon_size >= 128) {
+                badge_icon_size = Gtk.IconSize.DIALOG;
+                badge_pixel_size = 64;
+            }
+
             var plugin_host_package = package.get_plugin_host_package ();
             if (package.is_plugin && plugin_host_package != null) {
-                inner_image.gicon = package.get_icon (icon_size, scale_factor);
-                var overlay_gicon = plugin_host_package.get_icon (icon_size / 2, scale_factor);
-                var badge_icon_size = Gtk.IconSize.LARGE_TOOLBAR;
-                if (icon_size >= 128) {
-                    badge_icon_size = Gtk.IconSize.DIALOG;
-                }
+                inner_image.gicon = plugin_host_package.get_icon (icon_size, scale_factor);
+                var overlay_gicon = package.get_icon (icon_size / 2, scale_factor);
 
                 var overlay_image = new Gtk.Image.from_gicon (overlay_gicon, badge_icon_size);
                 overlay_image.halign = overlay_image.valign = Gtk.Align.END;
+                overlay_image.pixel_size = badge_pixel_size;
                 image.add_overlay (overlay_image);
             } else {
                 inner_image.gicon = package.get_icon (icon_size, scale_factor);
+
+                if (is_os_updates) {
+                    var overlay_image = new Gtk.Image.from_icon_name ("system-software-update", badge_icon_size);
+                    overlay_image.halign = overlay_image.valign = Gtk.Align.END;
+                    overlay_image.pixel_size = badge_pixel_size;
+
+                    image.add_overlay (overlay_image);
+                }
             }
 
             package.notify["state"].connect (on_package_state_changed);
@@ -447,10 +458,16 @@ namespace AppCenter {
             });
         }
 
-        private bool install_approved (AppCenterCore.Package package) {
+        private bool install_approved () {
             bool approved = true;
 
-            if (App.settings.get_boolean ("non-curated-warning") == true && !package.is_native) {
+            var curated_dialog_allowed = App.settings.get_boolean ("non-curated-warning");
+            var app_installed = package.state != AppCenterCore.Package.State.NOT_INSTALLED;
+            var app_curated = package.is_native || is_os_updates;
+
+            // Only show the curated dialog if the user has left them enabled, the app isn't installed
+            // and it isn't a curated app
+            if (curated_dialog_allowed && !app_installed && !app_curated) {
                 approved = false;
 
                 non_curated_warning = new Widgets.NonCuratedWarningDialog (this.package_name.label);
@@ -475,6 +492,11 @@ namespace AppCenter {
 
                 non_curated_warning.run ();
                 non_curated_warning.destroy ();
+
+                // If the install has been rejected at this stage, return early
+                if (!approved) {
+                    return false;
+                }
             }
 
             if (App.settings.get_boolean ("content-warning") == true && package.is_explicit) {

@@ -36,8 +36,10 @@ public class AppCenterCore.PackageDetails : Object {
 
 public class AppCenterCore.Package : Object {
     public const string APPCENTER_PACKAGE_ORIGIN = "appcenter-bionic-main";
-    private const string ELEMENTARY_STABLE_PACKAGE_ORIGIN = "stable-bionic-main";
-    private const string ELEMENTARY_DAILY_PACKAGE_ORIGIN = "daily-bionic-main";
+    // We stopped using this origin in elementary OS 5.1, references to this can be removed
+    // after everyone has had chance to update their appstream-data-pantheon package
+    private const string DEPRECATED_ELEMENTARY_STABLE_PACKAGE_ORIGIN = "stable-bionic-main";
+    private const string ELEMENTARY_STABLE_PACKAGE_ORIGIN = "elementary-stable-bionic-main";
 
     /* Note: These are just a stopgap, and are not a replacement for a more
      * fleshed out parental control system. We assume any of these "moderate"
@@ -109,6 +111,7 @@ public class AppCenterCore.Package : Object {
 
     public void mark_installed () {
         installed_cached = true;
+        update_state ();
     }
 
     public bool update_available {
@@ -190,6 +193,12 @@ public class AppCenterCore.Package : Object {
        }
     }
 
+    public bool is_font {
+        get {
+            return component.get_kind () == AppStream.ComponentKind.FONT;
+        }
+    }
+
     public bool is_local {
         get {
             return component.get_id ().has_suffix (LOCAL_ID_SUFFIX);
@@ -206,8 +215,8 @@ public class AppCenterCore.Package : Object {
         get {
             switch (component.get_origin ()) {
                 case APPCENTER_PACKAGE_ORIGIN:
+                case DEPRECATED_ELEMENTARY_STABLE_PACKAGE_ORIGIN:
                 case ELEMENTARY_STABLE_PACKAGE_ORIGIN:
-                case ELEMENTARY_DAILY_PACKAGE_ORIGIN:
                     return true;
                 default:
                     return false;
@@ -308,30 +317,31 @@ public class AppCenterCore.Package : Object {
         }
     }
 
-    public Gee.Collection<Package> versions {
+    public Gee.Collection<Package> origin_packages {
         owned get {
             return BackendAggregator.get_default ().get_packages_for_component_id (component.get_id ());
         }
     }
 
-    public bool has_multiple_versions {
+    public bool has_multiple_origins {
         get {
-            return versions.size > 1;
+            return origin_packages.size > 1;
         }
     }
 
     public string origin_description {
         owned get {
+            unowned string origin = component.get_origin ();
             if (backend is PackageKitBackend) {
-                if (component.get_origin () == APPCENTER_PACKAGE_ORIGIN) {
+                if (origin == APPCENTER_PACKAGE_ORIGIN) {
                     return _("AppCenter");
-                } else if (component.get_origin () == ELEMENTARY_STABLE_PACKAGE_ORIGIN || component.get_origin () == ELEMENTARY_DAILY_PACKAGE_ORIGIN) {
+                } else if (origin == DEPRECATED_ELEMENTARY_STABLE_PACKAGE_ORIGIN || origin == ELEMENTARY_STABLE_PACKAGE_ORIGIN) {
                     return _("elementary Updates");
-                } else if (component.get_origin ().has_prefix ("ubuntu-")) {
+                } else if (origin.has_prefix ("ubuntu-")) {
                     return _("Ubuntu (non-curated)");
                 }
             } else if (backend is FlatpakBackend) {
-                return _("%s (non-curated)").printf (component.get_origin ());
+                return _("%s (non-curated)").printf (origin);
             } else if (backend is UbuntuDriversBackend) {
                 return _("Ubuntu Drivers");
             }
@@ -376,11 +386,16 @@ public class AppCenterCore.Package : Object {
         color_primary_text = null;
         payments_key = null;
         suggested_amount = null;
-        _latest_version = null;
         installed_cached = false;
         _author = null;
         _author_title = null;
         backend_details = null;
+
+        // The version on a PackageKit package comes from the package not AppStream, so only reset the version
+        // on other backends
+        if (!(backend is PackageKitBackend)) {
+            _latest_version = null;
+        }
 
         this.component = component;
     }
@@ -430,6 +445,9 @@ public class AppCenterCore.Package : Object {
     }
 
     public async bool uninstall () throws Error {
+        // We possibly don't know if this package is installed or not yet, so trigger that check first
+        update_state ();
+
         if (state == State.INSTALLED || state == State.UPDATE_AVAILABLE) {
             try {
                 return yield perform_operation (State.REMOVING, State.NOT_INSTALLED, state);
@@ -532,6 +550,10 @@ public class AppCenterCore.Package : Object {
         return name;
     }
 
+    public void set_name (string? new_name) {
+        name = new_name;
+    }
+
     public string? get_description () {
         if (description == null) {
             description = component.get_description ();
@@ -562,6 +584,10 @@ public class AppCenterCore.Package : Object {
         }
 
         return summary;
+    }
+
+    public void set_summary (string? new_summary) {
+        summary = new_summary;
     }
 
     public string get_progress_description () {
@@ -714,6 +740,10 @@ public class AppCenterCore.Package : Object {
     public bool get_can_launch () {
         if (app_info_retrieved) {
             return app_info != null;
+        }
+
+        if (is_compulsory) {
+            return false;
         }
 
         var launchable = component.get_launchable (AppStream.LaunchableKind.DESKTOP_ID);

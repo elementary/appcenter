@@ -1,5 +1,6 @@
 appcenter_files = files(
     'Application.vala',
+    'AsyncMutex.vala',
     'MainWindow.vala',
     'SuspendControl.vala',
     'Utils.vala',
@@ -18,6 +19,7 @@ appcenter_files = files(
     'Core/UbuntuDriversBackend.vala',
     'Core/UpdateManager.vala',
     'Dialogs/ContentWarningDialog.vala',
+    'Dialogs/InstallFailDialog.vala',
     'Dialogs/NonCuratedWarningDialog.vala',
     'Dialogs/RestartDialog.vala',
     'Dialogs/StripeDialog.vala',

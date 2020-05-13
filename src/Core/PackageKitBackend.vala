@@ -42,6 +42,38 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 
     public bool working { public get; protected set; }
 
+    private static Polkit.Permission? update_permission = null;
+
+    // The aptcc backend included in PackageKit < 1.1.10 wasn't able to support multiple packages
+    // passed to the search_names method at once. If we have a new enough version we can enable
+    // some optimisations when looking up packages
+    public static bool supports_parallel_package_queries {
+        get {
+            if (control.backend_name != "aptcc") {
+                return true;
+            }
+
+            if (control.version_major >= 1 &&
+                control.version_minor >= 1 &&
+                control.version_micro >= 10) {
+                return true;
+            }
+
+            return false;
+        }
+    }
+
+    private static Pk.Control? _control;
+    private static unowned Pk.Control control {
+        get {
+            if (_control == null) {
+                _control = new Pk.Control ();
+            }
+
+            return _control;
+        }
+    }
+
     private bool can_cancel = true;
     private int current_progress = 0;
     private int last_progress = 0;
@@ -93,6 +125,24 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
     }
 
     static construct {
+        _control = new Pk.Control ();
+
+        // Work around an issue where if we call any synchronous method on PackageKit,
+        // we never receive signals from Pk.Control.Calling this here causes packagekit-glib2 to
+        // connect to the PackageKit DBus and fire signals on the right thread.
+        // See: https://github.com/hughsie/PackageKit/issues/207
+        var loop = new MainLoop ();
+        _control.get_properties_async.begin (null, (obj, res) => {
+            try {
+                _control.get_properties_async.end (res);
+            } catch (Error e) {
+                warning (e.message);
+            }
+
+            loop.quit ();
+        });
+
+        loop.run ();
         client = new Task ();
     }
 
@@ -106,7 +156,37 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 
         reload_appstream_pool ();
 
-        var control = new Pk.Control ();
+        var proxy_resolver = GLib.ProxyResolver.get_default ();
+        string? http_proxy = null;
+        string? ftp_proxy = null;
+
+        try {
+            // We need an address of something on the internet to see if we need a proxy or not. It's not really
+            // important that this is launchpad, it could be google or fake-made-up-domain.com as it's not resolved
+            // at this point. May as well use a real address that PackageKit may need a proxy for though.
+            var possible_proxies = proxy_resolver.lookup ("http://ppa.launchpad.net");
+            if (possible_proxies.length > 0 && possible_proxies[0] != "direct://") {
+                http_proxy = possible_proxies[0];
+            }
+        } catch (Error e) {
+            warning ("Unable to lookup http proxy to use for PackageKit: %s", e.message);
+        }
+
+        try {
+            var possible_proxies = proxy_resolver.lookup ("ftp://ppa.launchpad.net");
+            if (possible_proxies.length > 0 && possible_proxies[0] != "direct://") {
+                ftp_proxy = possible_proxies[0];
+            }
+        } catch (Error e) {
+            warning ("Unable to lookup ftp proxy to use for PackageKit: %s", e.message);
+        }
+
+        try {
+            control.set_proxy (http_proxy, ftp_proxy);
+        } catch (Error e) {
+            warning ("Unable to set proxy for PackageKit to use: %s", e.message);
+        }
+
         control.updates_changed.connect (updates_changed_callback);
     }
 
@@ -117,9 +197,19 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
             var time_since_last_action = (new DateTime.now_local ()).difference (last_action) / GLib.TimeSpan.MILLISECOND;
             if (time_since_last_action >= PACKAGEKIT_ACTIVITY_TIMEOUT_MS) {
                 info ("packages possibly changed by external program, refreshing cache");
-                Client.get_default ().update_cache.begin (true);
+                trigger_update_check.begin ();
             }
         }
+    }
+
+    private async void trigger_update_check () {
+        try {
+            yield refresh_cache (null);
+        } catch (Error e) {
+            warning ("Unable to refresh cache after external change: %s", e.message);
+        }
+
+        yield Client.get_default ().refresh_updates ();
     }
 
     ~PackageKitBackend () {
@@ -190,26 +280,19 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 
     public async Gee.Collection<AppCenterCore.Package> get_installed_applications (Cancellable? cancellable = null) {
         var packages = new Gee.TreeSet<AppCenterCore.Package> ();
-        var installed = yield get_installed_packages ();
+        var installed = yield get_installed_packages (cancellable);
         foreach (var pk_package in installed) {
             if (cancellable.is_cancelled ()) {
                 break;
             }
 
-            var package = package_list[pk_package.get_name ()];
+            var package = populate_basic_package_details (pk_package);
             if (package != null) {
-                populate_package (package, pk_package);
                 packages.add (package);
             }
         }
 
         return packages;
-    }
-
-    private static void populate_package (AppCenterCore.Package package, Pk.Package pk_package) {
-        package.mark_installed ();
-        package.latest_version = pk_package.get_version ();
-        package.update_state ();
     }
 
     public Package? get_package_for_component_id (string id) {
@@ -222,6 +305,18 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         }
 
         return null;
+    }
+
+    public Gee.HashMap<string, AppCenterCore.Package> get_packages_for_component_ids (string[] ids) {
+        var packages = new Gee.HashMap<string, AppCenterCore.Package> ();
+        foreach (var id in ids) {
+            var package = get_package_for_component_id (id);
+            if (package != null) {
+                packages.set (id, package);
+            }
+        }
+
+        return packages;
     }
 
     public Gee.Collection<Package> get_packages_for_component_id (string id) {
@@ -266,12 +361,15 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 
     public Gee.Collection<AppCenterCore.Package> get_applications_for_category (AppStream.Category category) {
         unowned GLib.GenericArray<AppStream.Component> components = category.get_components ();
-        if (components.length == 0) {
-            var category_array = new GLib.GenericArray<AppStream.Category> ();
-            category_array.add (category);
-            AppStream.utils_sort_components_into_categories (appstream_pool.get_components (), category_array, true);
-            components = category.get_components ();
+        // Clear out any cached components that could be from other backends
+        if (components.length != 0) {
+            components.remove_range (0, components.length);
         }
+
+        var category_array = new GLib.GenericArray<AppStream.Category> ();
+        category_array.add (category);
+        AppStream.utils_sort_components_into_categories (appstream_pool.get_components (), category_array, true);
+        components = category.get_components ();
 
         var apps = new Gee.TreeSet<AppCenterCore.Package> ();
         components.foreach ((comp) => {
@@ -421,7 +519,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         job.results_ready ();
     }
 
-    public async uint64 get_download_size (Package package, Cancellable? cancellable) throws GLib.Error {
+    public async uint64 get_download_size (Package package, Cancellable? cancellable, bool is_update = false) throws GLib.Error {
         var job_args = new GetDownloadSizeArgs ();
         job_args.package = package;
         job_args.cancellable = cancellable;
@@ -547,6 +645,17 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         job_args.package = package;
         job_args.cb = (owned)cb;
         job_args.cancellable = cancellable;
+
+        if (update_permission == null) {
+            try {
+                update_permission = yield new Polkit.Permission (
+                    "io.elementary.appcenter.update",
+                    new Polkit.UnixProcess (Posix.getpid ())
+                );
+            } catch (Error e) {
+                warning ("Can't get permission to update without prompting for admin: %s", e.message);
+            }
+        }
 
         var job = yield launch_job (Job.Type.UPDATE_PACKAGE, job_args);
         if (job.error != null) {
@@ -696,6 +805,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         var exit_status = results.get_exit_code ();
         if (exit_status == Pk.Exit.SUCCESS) {
             reload_appstream_pool ();
+            BackendAggregator.get_default ().cache_flush_needed ();
         }
 
         job.result = Value (typeof (bool));
@@ -785,6 +895,59 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         }
 
         return pk_package;
+    }
+
+    public async void update_multiple_package_state (Gee.Collection<Package> packages) throws GLib.Error {
+        string[] query = {};
+        foreach (var app in packages) {
+            if (app.backend == this) {
+                query += app.component.get_pkgnames ()[0];
+            }
+        }
+
+        if (query.length < 1) {
+            return;
+        }
+
+        query += null;
+
+        var filter = Pk.Bitfield.from_enums (Pk.Filter.NONE);
+
+        try {
+            var results = yield client.search_names_async (filter, query, null, () => {});
+            var array = results.get_package_array ();
+            array.foreach ((pk_package) => {
+                populate_basic_package_details (pk_package);
+            });
+        } catch (Error e) {
+            throw e;
+        }
+    }
+
+    private Package? populate_basic_package_details (Pk.Package pk_package) {
+        var package = package_list[pk_package.get_name ()];
+        if (package == null) {
+            return null;
+        }
+
+        // The version, name and summary are required in the installed list view, cache these values
+        // here where necessary to avoid looking up each package individually later
+        package.latest_version = pk_package.get_version ();
+
+        // If there is no AppStream name for the component, use the debian package name instead
+        if (unlikely (package.component.get_name () == null)) {
+            package.set_name (pk_package.get_name ());
+        }
+
+        if (package.component.get_summary () == null) {
+            package.set_summary (pk_package.get_summary ());
+        }
+
+        if (pk_package.info == Pk.Info.INSTALLED) {
+            package.mark_installed ();
+        }
+
+        return package;
     }
 
     private void get_package_details_internal (Job job) {

@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2014-2016 elementary LLC. (https://elementary.io)
+ * Copyright (c) 2014-2020 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -48,7 +47,15 @@ namespace AppCenter.Views {
         }
 
         construct {
+            var loading_view = new Granite.Widgets.AlertView (
+                _("Checking for Updates"),
+                _("Downloading a list of available updates to the OS and installed apps"),
+                "sync-synchronizing"
+            );
+            loading_view.show_all ();
+
             list_box.set_header_func ((Gtk.ListBoxUpdateHeaderFunc) row_update_header);
+            list_box.set_placeholder (loading_view);
 
             update_mutex = GLib.Mutex ();
             apps_to_update = new Gee.LinkedList<AppCenterCore.Package> ();
@@ -80,12 +87,35 @@ namespace AppCenter.Views {
             add (scrolled);
         }
 
+        public override void add_packages (Gee.Collection<AppCenterCore.Package> packages) {
+            foreach (var package in packages) {
+                add_row_for_package (package);
+            }
+
+            on_list_changed ();
+        }
+
+        public override void add_package (AppCenterCore.Package package) {
+            add_row_for_package (package);
+            on_list_changed ();
+        }
+
+        private void add_row_for_package (AppCenterCore.Package package) {
+            var needs_update = package.state == AppCenterCore.Package.State.UPDATE_AVAILABLE;
+
+            // Only add row if this package needs an update or it's not a font or plugin
+            if (needs_update || (!package.is_plugin && !package.is_font)) {
+                var row = construct_row_for_package (package);
+                add_row (row);
+            }
+        }
+
         protected override void on_list_changed () {
             list_box.invalidate_sort ();
         }
 
         protected override Widgets.AppListRow construct_row_for_package (AppCenterCore.Package package) {
-            return new Widgets.PackageRow.installed (package, info_grid_group, action_button_group, false);
+            return new Widgets.PackageRow.installed (package, info_grid_group, action_button_group);
         }
 
         protected override void on_package_changing (AppCenterCore.Package package, bool is_changing) {
@@ -247,9 +277,6 @@ namespace AppCenter.Views {
 
             // Update all updateable apps
             if (apps_to_update.size > 0) {
-                // Prevent computer from sleeping while updating apps
-                SuspendControl.get_default ().inhibit ();
-
                 first_package = apps_to_update[0];
                 first_package.info_changed.connect_after (after_first_package_info_changed);
                 first_package.update.begin (() => {
@@ -303,7 +330,6 @@ namespace AppCenter.Views {
             assert (updating_all_apps && packages_changing == 0);
 
             updating_all_apps = false;
-            SuspendControl.get_default ().uninhibit ();
 
             /* Set the action button sensitive and emit "changed" on each row in order to update
              * the sort order and headers (any change would have been ignored while updating) */

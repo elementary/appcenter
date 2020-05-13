@@ -27,8 +27,8 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
     Gtk.Label release_single_label;
     AppStream.Release? newest = null;
 
-    public InstalledPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? info_size_group, Gtk.SizeGroup? action_size_group, bool show_uninstall = true) {
-        base (package, info_size_group, action_size_group, show_uninstall);
+    public InstalledPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? info_size_group, Gtk.SizeGroup? action_size_group) {
+        base (package, info_size_group, action_size_group);
         set_up_package ();
     }
 
@@ -76,13 +76,14 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
 
         set_widget_visibility (release_stack, false);
 
-        info_grid.attach (app_version, 1, 1, 1, 1);
-        attach (release_stack, 2, 0, 1, 2);
+        info_grid.attach (app_version, 1, 1);
+
+        grid.attach (release_stack, 2, 0, 1, 2);
     }
 
     protected override void set_up_package (uint icon_size = 48) {
         if (package.get_version () != null) {
-            if (package.has_multiple_versions) {
+            if (package.has_multiple_origins) {
                 app_version.label = "%s - %s".printf (package.get_version (), package.origin_description);
             } else {
                 app_version.label = package.get_version ();
@@ -96,7 +97,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
 
     protected override void update_state (bool first_update = false) {
         if (!first_update && package.get_version != null) {
-            if (package.has_multiple_versions) {
+            if (package.has_multiple_origins) {
                 app_version.label = "%s - %s".printf (package.get_version (), package.origin_description);
             } else {
                 app_version.label = package.get_version ();

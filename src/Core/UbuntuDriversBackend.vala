@@ -47,15 +47,10 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
         }
 
         working = true;
-        cached_packages = new Gee.TreeSet<Package> ();
-        string? command_output;
-        var result = yield get_drivers_output (cancellable, out command_output);
-        if (!result || command_output == null || cancellable.is_cancelled ()) {
-            working = false;
-            return cached_packages;
-        }
 
-        string[] tokens = command_output.split ("\n");
+        cached_packages = new Gee.TreeSet<Package> ();
+        var tokens = AppCenter.App.settings.get_strv ("cached-drivers");
+
         for (int i = 0; i < tokens.length; i++) {
             if (cancellable.is_cancelled ()) {
                 break;
@@ -65,6 +60,12 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
             if (package_name.strip () == "") {
                 continue;
             }
+
+            // ubuntu-drivers returns lines like the following for dkms packages:
+            // backport-iwlwifi-dkms, (kernel modules provided by backport-iwlwifi-dkms)
+            // we only want the bit before the comma
+            string[] parts = package_name.split (",");
+            package_name = parts[0];
 
             var driver_component = new AppStream.Component ();
             driver_component.set_kind (AppStream.ComponentKind.DRIVER);
@@ -117,8 +118,8 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
         return new Gee.ArrayList<Package> ();
     }
 
-    public async uint64 get_download_size (Package package, Cancellable? cancellable) throws GLib.Error {
-        return yield PackageKitBackend.get_default ().get_download_size (package, cancellable);
+    public async uint64 get_download_size (Package package, Cancellable? cancellable, bool is_update = false) throws GLib.Error {
+        return yield PackageKitBackend.get_default ().get_download_size (package, cancellable, is_update);
     }
 
     public async bool is_package_installed (Package package) throws GLib.Error {
@@ -130,19 +131,40 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
     }
 
     public async bool refresh_cache (Cancellable? cancellable) throws GLib.Error {
+        working = true;
+        string? command_output;
+        var result = yield get_drivers_output (cancellable, out command_output);
+        if (!result || command_output == null || cancellable.is_cancelled ()) {
+            working = false;
+            return false;
+        }
+
+        string[] tokens = command_output.split ("\n");
+        string[] pkgnames = {};
+        foreach (unowned string token in tokens) {
+            if (token.strip () != "") {
+                pkgnames += token;
+            }
+        }
+
+        AppCenter.App.settings.set_strv ("cached-drivers", pkgnames);
+
+        working = false;
         return true;
     }
 
     public async bool install_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
-        return yield PackageKitBackend.get_default ().install_package (package, cb, cancellable);
+        cached_packages = null;
+        return yield PackageKitBackend.get_default ().install_package (package, (owned)cb, cancellable);
     }
 
     public async bool remove_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
-        return yield PackageKitBackend.get_default ().remove_package (package, cb, cancellable);
+        cached_packages = null;
+        return yield PackageKitBackend.get_default ().remove_package (package, (owned)cb, cancellable);
     }
 
     public async bool update_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
-        return yield PackageKitBackend.get_default ().update_package (package, cb, cancellable);
+        return yield PackageKitBackend.get_default ().update_package (package, (owned)cb, cancellable);
     }
 
     private static GLib.Once<UbuntuDriversBackend> instance;
