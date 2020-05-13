@@ -30,8 +30,8 @@ namespace AppCenter.Widgets {
             });
         }
 
-        public PackageRow.list (AppCenterCore.Package package, Gtk.SizeGroup? action_size_group) {
-            grid = new ListPackageRowGrid (package, action_size_group);
+        public PackageRow.list (AppCenterCore.Package package) {
+            grid = new ListPackageRowGrid (package);
             add (grid);
             grid.changed.connect (() => {
                 changed ();

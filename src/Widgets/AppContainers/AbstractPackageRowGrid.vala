@@ -21,17 +21,12 @@
 public abstract class AppCenter.Widgets.AbstractPackageRowGrid : AbstractAppContainer {
     public signal void changed ();
 
-    protected AbstractPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? action_size_group) {
+    protected AbstractPackageRowGrid (AppCenterCore.Package package) {
         Object (
             package: package,
             show_uninstall: false,
             show_open: false
         );
-
-        if (action_size_group != null) {
-            action_size_group.add_widget (action_button);
-            action_size_group.add_widget (cancel_button);
-        }
     }
 
     construct {

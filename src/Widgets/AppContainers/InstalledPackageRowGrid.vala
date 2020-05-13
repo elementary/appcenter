@@ -30,7 +30,12 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
     private Gtk.Grid info_grid;
 
     public InstalledPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? info_size_group, Gtk.SizeGroup? action_size_group) {
-        base (package, action_size_group);
+        base (package);
+
+        if (action_size_group != null) {
+            action_size_group.add_widget (action_button);
+            action_size_group.add_widget (cancel_button);
+        }
 
         if (info_size_group != null) {
             info_size_group.add_widget (info_grid);
