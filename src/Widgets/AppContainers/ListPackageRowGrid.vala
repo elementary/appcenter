@@ -21,7 +21,8 @@ public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
     private Gtk.Label package_summary;
 
     public ListPackageRowGrid (AppCenterCore.Package package) {
-        Object (package: package);
+        base (package);
+        set_up_package ();
     }
 
     construct {
@@ -40,8 +41,6 @@ public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
         grid.attach (action_stack, 2, 0, 1, 2);
 
         add (grid);
-
-        set_up_package ();
     }
 
     protected override void set_up_package (uint icon_size = 48) {
