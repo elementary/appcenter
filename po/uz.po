@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-13 05:12+0000\n"
+"POT-Creation-Date: 2020-05-13 17:46+0000\n"
 "PO-Revision-Date: 2015-11-06 16:06+0000\n"
 "Last-Translator: elementaryart (old) <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -205,13 +205,13 @@ msgstr ""
 msgid "Unknown state"
 msgstr ""
 
-#: src/Core/Client.vala:70
+#: src/Core/Client.vala:74
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Core/Client.vala:71
+#: src/Core/Client.vala:75
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"

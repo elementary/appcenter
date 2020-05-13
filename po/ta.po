@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-13 05:12+0000\n"
+"POT-Creation-Date: 2020-05-13 17:46+0000\n"
 "PO-Revision-Date: 2017-06-16 17:37+0000\n"
 "Last-Translator: Rajeev Kumar <irajeevankumar@gmail.com>\n"
 "Language-Team: Tamil <https://l10n.elementary.io/projects/appcenter/appcenter/ta/>\n"
@@ -204,13 +204,13 @@ msgstr "கோப்புகளை நகலெடுக்கிறது"
 msgid "Unknown state"
 msgstr "தெரியாத நிலை"
 
-#: src/Core/Client.vala:70
+#: src/Core/Client.vala:74
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "புதுப்பிப்பு உள்ளது"
 msgstr[1] "புதுப்பிப்புகள் உள்ளன"
 
-#: src/Core/Client.vala:71
+#: src/Core/Client.vala:75
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"

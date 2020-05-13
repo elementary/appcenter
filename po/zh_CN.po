@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-13 05:12+0000\n"
+"POT-Creation-Date: 2020-05-13 17:46+0000\n"
 "PO-Revision-Date: 2019-10-02 11:23+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/appcenter/appcenter/zh_Hans/>\n"
@@ -208,12 +208,12 @@ msgstr "正在复制文件"
 msgid "Unknown state"
 msgstr "未知状态"
 
-#: src/Core/Client.vala:70
+#: src/Core/Client.vala:74
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "有可用更新"
 
-#: src/Core/Client.vala:71
+#: src/Core/Client.vala:75
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"

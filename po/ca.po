@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-13 05:12+0000\n"
+"POT-Creation-Date: 2020-05-13 17:46+0000\n"
 "PO-Revision-Date: 2020-04-25 11:10+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/appcenter/ca/>\n"
@@ -206,13 +206,13 @@ msgstr "Es copien fitxers"
 msgid "Unknown state"
 msgstr "Estat desconegut"
 
-#: src/Core/Client.vala:70
+#: src/Core/Client.vala:74
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Hi ha una actualització disponible"
 msgstr[1] "Hi ha actualitzacions disponibles"
 
-#: src/Core/Client.vala:71
+#: src/Core/Client.vala:75
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
