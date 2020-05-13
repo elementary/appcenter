@@ -20,7 +20,9 @@
 
 public abstract class AppCenter.Widgets.AbstractPackageRowGrid : AbstractAppContainer {
     public signal void changed ();
+
     protected Gtk.Grid info_grid;
+    protected Gtk.Grid grid;
 
     protected AbstractPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? info_size_group, Gtk.SizeGroup? action_size_group, bool show_uninstall = true) {
         Object (
@@ -41,11 +43,6 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : AbstractAppCont
     }
 
     construct {
-        column_spacing = 24;
-        margin = 6;
-        margin_start = 12;
-        margin_end = 12;
-
         inner_image.icon_size = Gtk.IconSize.DIALOG;
         /* Needed to enforce size on icons from Filesystem/Remote */
         inner_image.pixel_size = 48;
@@ -65,7 +62,14 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : AbstractAppCont
         action_stack.margin_top = 10;
         action_stack.valign = Gtk.Align.START;
 
-        attach (info_grid, 0, 0, 1, 1);
-        attach (action_stack, 3, 0, 1, 1);
+        grid = new Gtk.Grid ();
+        grid.attach (info_grid, 0, 0);
+        grid.attach (action_stack, 3, 0);
+        grid.column_spacing = 24;
+
+        add (grid);
+        margin = 6;
+        margin_start = 12;
+        margin_end = 12;
     }
 }
