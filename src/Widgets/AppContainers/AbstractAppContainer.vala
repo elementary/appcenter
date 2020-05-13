@@ -37,7 +37,6 @@ namespace AppCenter {
         protected Gtk.Image inner_image;
         protected Gtk.Label package_name;
         protected Gtk.Label package_author;
-        protected Gtk.Label package_summary;
 
         protected Widgets.ContentWarningDialog content_warning;
         protected Widgets.NonCuratedWarningDialog non_curated_warning;
@@ -121,7 +120,6 @@ namespace AppCenter {
 
             package_author = new Gtk.Label (null);
             package_name = new Gtk.Label (null);
-            package_summary = new Gtk.Label (null);
 
             action_button = new Widgets.HumbleButton ();
 
