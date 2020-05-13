@@ -22,16 +22,16 @@ namespace AppCenter.Widgets {
     public class PackageRow : Gtk.ListBoxRow, AppListRow {
         AbstractPackageRowGrid grid;
 
-        public PackageRow.installed (AppCenterCore.Package package, Gtk.SizeGroup? info_size_group, Gtk.SizeGroup? action_size_group, bool show_uninstall = true) {
-            grid = new InstalledPackageRowGrid (package, info_size_group, action_size_group, show_uninstall);
+        public PackageRow.installed (AppCenterCore.Package package, Gtk.SizeGroup? info_size_group, Gtk.SizeGroup? action_size_group) {
+            grid = new InstalledPackageRowGrid (package, info_size_group, action_size_group);
             add (grid);
             grid.changed.connect (() => {
                 changed ();
             });
         }
 
-        public PackageRow.list (AppCenterCore.Package package, Gtk.SizeGroup? info_size_group, Gtk.SizeGroup? action_size_group, bool show_uninstall = true) {
-            grid = new ListPackageRowGrid (package, info_size_group, action_size_group, show_uninstall);
+        public PackageRow.list (AppCenterCore.Package package, Gtk.SizeGroup? action_size_group) {
+            grid = new ListPackageRowGrid (package, null, action_size_group);
             add (grid);
             grid.changed.connect (() => {
                 changed ();
