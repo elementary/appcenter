@@ -19,6 +19,8 @@
  */
 
 public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
+    private Gtk.Label package_summary;
+
     public ListPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? info_size_group, Gtk.SizeGroup? action_size_group, bool show_uninstall = true) {
         base (package, info_size_group, action_size_group, show_uninstall);
         set_up_package ();
