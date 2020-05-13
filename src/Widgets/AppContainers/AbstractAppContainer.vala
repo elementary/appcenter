@@ -129,6 +129,55 @@ namespace AppCenter {
             action_button_revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT;
             action_button_revealer.add (action_button);
 
+            uninstall_button = new Gtk.Button.with_label (_("Uninstall"));
+            uninstall_button.margin_end = 12;
+            uninstall_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+
+            uninstall_button_revealer = new Gtk.Revealer ();
+            uninstall_button_revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT;
+            uninstall_button_revealer.add (uninstall_button);
+
+            open_button = new Gtk.Button.with_label (_("Open"));
+
+            open_button_revealer = new Gtk.Revealer ();
+            open_button_revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT;
+            open_button_revealer.add (open_button);
+
+            button_grid = new Gtk.Grid ();
+            button_grid.valign = Gtk.Align.CENTER;
+            button_grid.hexpand = false;
+
+            button_grid.add (uninstall_button_revealer);
+            button_grid.add (action_button_revealer);
+            button_grid.add (open_button_revealer);
+
+            progress_bar = new Gtk.ProgressBar ();
+
+            cancel_button = new Gtk.Button.with_label (_("Cancel"));
+            cancel_button.valign = Gtk.Align.END;
+
+            progress_grid = new Gtk.Grid ();
+            progress_grid.valign = Gtk.Align.CENTER;
+            progress_grid.row_spacing = 3;
+            progress_grid.attach (cancel_button, 0, 0);
+            progress_grid.attach (progress_bar, 0, 1);
+
+            action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
+            action_button_group.add_widget (action_button);
+            action_button_group.add_widget (cancel_button);
+            action_button_group.add_widget (open_button);
+            action_button_group.add_widget (progress_bar);
+            action_button_group.add_widget (uninstall_button);
+
+            action_stack = new Gtk.Stack ();
+            action_stack.halign = Gtk.Align.END;
+            action_stack.hexpand = true;
+            action_stack.hhomogeneous = false;
+            action_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
+            action_stack.add_named (button_grid, "buttons");
+            action_stack.add_named (progress_grid, "progress");
+            action_stack.show_all ();
+
             action_button.download_requested.connect (() => {
                 if (install_approved ()) {
                     action_clicked.begin ();
@@ -141,70 +190,17 @@ namespace AppCenter {
                 }
             });
 
-            uninstall_button = new Gtk.Button.with_label (_("Uninstall"));
-            uninstall_button.margin_end = 12;
-
-            uninstall_button_revealer = new Gtk.Revealer ();
-            uninstall_button_revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT;
-            uninstall_button_revealer.add (uninstall_button);
-
-            uninstall_button.clicked.connect (() => uninstall_clicked.begin ());
-
-            open_button = new Gtk.Button.with_label (_("Open"));
-
-            open_button_revealer = new Gtk.Revealer ();
-            open_button_revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT;
-            open_button_revealer.add (open_button);
-
-            open_button.clicked.connect (launch_package_app);
-
-            button_grid = new Gtk.Grid ();
-            button_grid.valign = Gtk.Align.CENTER;
-            button_grid.halign = Gtk.Align.END;
-            button_grid.hexpand = false;
-
-            button_grid.add (uninstall_button_revealer);
-            button_grid.add (action_button_revealer);
-            button_grid.add (open_button_revealer);
-
-            progress_bar = new Gtk.ProgressBar ();
-            progress_bar.show_text = true;
-            progress_bar.valign = Gtk.Align.CENTER;
-            /* Request a width large enough for the longest text to stop width of
-             * progress bar jumping around, but allow space for long package names */
-            progress_bar.width_request = 250;
-
-            cancel_button = new Gtk.Button.with_label (_("Cancel"));
-            cancel_button.valign = Gtk.Align.END;
-            cancel_button.halign = Gtk.Align.END;
             cancel_button.clicked.connect (() => action_cancelled ());
-
-            progress_grid = new Gtk.Grid ();
-            progress_grid.halign = Gtk.Align.END;
-            progress_grid.valign = Gtk.Align.CENTER;
-            progress_grid.column_spacing = 12;
-            progress_grid.attach (progress_bar, 0, 0, 1, 1);
-            progress_grid.attach (cancel_button, 1, 0, 1, 1);
-
-            action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
-            action_button_group.add_widget (action_button);
-            action_button_group.add_widget (uninstall_button);
-            action_button_group.add_widget (cancel_button);
-            action_button_group.add_widget (open_button);
-
-            action_stack = new Gtk.Stack ();
-            action_stack.hexpand = true;
-            action_stack.hhomogeneous = false;
-            action_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
-            action_stack.add_named (button_grid, "buttons");
-            action_stack.add_named (progress_grid, "progress");
-            action_stack.show_all ();
 
             destroy.connect (() => {
                 if (state_source > 0) {
                     GLib.Source.remove (state_source);
                 }
             });
+
+            open_button.clicked.connect (launch_package_app);
+
+            uninstall_button.clicked.connect (() => uninstall_clicked.begin ());
         }
 
         private void show_stripe_dialog (int amount) {
@@ -356,7 +352,7 @@ namespace AppCenter {
 
         protected virtual void update_progress_status () {
             Idle.add (() => {
-                progress_bar.text = package.get_progress_description ();
+                progress_bar.tooltip_text = package.get_progress_description ();
                 cancel_button.sensitive = package.change_information.can_cancel && !package.changes_finished;
                 /* Ensure progress bar shows complete to match status (lp:1606902) */
                 if (package.changes_finished) {

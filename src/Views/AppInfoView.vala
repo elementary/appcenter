@@ -70,10 +70,6 @@ namespace AppCenter.Views {
 
             action_button.suggested_action = true;
 
-            var uninstall_button_context = uninstall_button.get_style_context ();
-            uninstall_button_context.add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
-            uninstall_button_context.add_class (Granite.STYLE_CLASS_H3_LABEL);
-
             var package_component = package.component;
 
             screenshots = package_component.get_screenshots ();
@@ -299,15 +295,7 @@ namespace AppCenter.Views {
             origin_combo.pack_start (renderer, true);
             origin_combo.add_attribute (renderer, "text", 1);
 
-            action_stack.valign = Gtk.Align.END;
-            action_stack.halign = Gtk.Align.END;
-            action_stack.hexpand = true;
-
-            /* This is required to stop any button movement when switch from button_grid to the
-             * progress grid */
-            progress_grid.margin_end = 6;
-            progress_grid.margin_top = 12;
-            button_grid.margin_top = progress_grid.margin_top;
+            // action_stack.valign = Gtk.Align.END;
 
             var header_grid = new Gtk.Grid ();
             header_grid.column_spacing = 12;
@@ -468,8 +456,6 @@ namespace AppCenter.Views {
             overlay.add_overlay (toast);
 
             add (overlay);
-
-            open_button.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 #if SHARING
             if (package.is_shareable) {
                 var body = _("Check out %s on AppCenter:").printf (package.get_name ());
