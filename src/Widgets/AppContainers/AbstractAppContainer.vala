@@ -28,7 +28,7 @@ namespace AppCenter {
         }
     }
 
-    public abstract class AbstractAppContainer : Gtk.Grid {
+    public abstract class AbstractAppContainer : Gtk.Bin {
         public AppCenterCore.Package package { get; construct set; }
         protected bool show_uninstall { get; set; default = true; }
         protected bool show_open { get; set; default = true; }
