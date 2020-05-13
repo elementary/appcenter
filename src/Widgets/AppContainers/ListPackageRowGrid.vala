@@ -27,30 +27,24 @@ public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
 
     construct {
         package_summary = new Gtk.Label (null);
-        package_summary.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-        package_summary.hexpand = true;
+        package_summary.ellipsize = Pango.EllipsizeMode.END;
         package_summary.valign = Gtk.Align.START;
-        ((Gtk.Misc) package_summary).xalign = 0;
-
-        var info_grid = new Gtk.Grid ();
-        info_grid.column_spacing = 12;
-        info_grid.row_spacing = 6;
-        info_grid.valign = Gtk.Align.START;
-        info_grid.attach (image, 0, 0, 1, 2);
-        info_grid.attach (package_name, 1, 0);
-        info_grid.attach (package_summary, 1, 1);
+        package_summary.xalign = 0;
+        package_summary.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
         var grid = new Gtk.Grid ();
-        grid.column_spacing = 24;
-        grid.attach (info_grid, 0, 0);
-        grid.attach (action_stack, 1, 0);
+        grid.column_spacing = 12;
+        grid.row_spacing = 3;
+        grid.attach (image, 0, 0, 1, 2);
+        grid.attach (package_name, 1, 0);
+        grid.attach (package_summary, 1, 1);
+        grid.attach (action_stack, 2, 0, 1, 2);
 
         add (grid);
     }
 
     protected override void set_up_package (uint icon_size = 48) {
         package_summary.label = package.get_summary ();
-        package_summary.ellipsize = Pango.EllipsizeMode.END;
 
         if (package.is_local) {
             action_stack.no_show_all = true;
