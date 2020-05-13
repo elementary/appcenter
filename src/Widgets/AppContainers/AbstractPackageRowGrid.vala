@@ -38,10 +38,6 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : AbstractAppCont
         package_name.valign = Gtk.Align.END;
         package_name.xalign = 0;
 
-        action_stack.homogeneous = false;
-        action_stack.margin_top = 10;
-        action_stack.valign = Gtk.Align.START;
-
         margin = 6;
         margin_start = 12;
         margin_end = 12;

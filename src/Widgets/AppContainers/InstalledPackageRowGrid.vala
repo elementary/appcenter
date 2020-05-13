@@ -96,6 +96,10 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         info_grid.attach (package_name, 1, 0);
         info_grid.attach (app_version, 1, 1);
 
+        action_stack.homogeneous = false;
+        action_stack.margin_top = 10;
+        action_stack.valign = Gtk.Align.START;
+
         var grid = new Gtk.Grid ();
         grid.column_spacing = 24;
         grid.attach (info_grid, 0, 0);
