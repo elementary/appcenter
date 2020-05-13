@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-13 05:12+0000\n"
+"POT-Creation-Date: 2020-05-13 21:12+0000\n"
 "PO-Revision-Date: 2020-04-06 14:22+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/appcenter/mr/>\n"
@@ -40,20 +40,20 @@ msgstr "अनुप्रयोग स्थापित झाला"
 msgid "%s has been successfully installed"
 msgstr "%s यशस्वीरित्या इन्स्टॉल झाले"
 
-#: src/MainWindow.vala:150 src/Views/Homepage.vala:297
+#: src/MainWindow.vala:151 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
 #: src/Views/Homepage.vala:325
 msgid "Home"
 msgstr "मुख्य पृष्ठ"
 
-#: src/MainWindow.vala:151 src/Views/InstalledView.vala:33
-#: src/Views/InstalledView.vala:60
+#: src/MainWindow.vala:152 src/Views/InstalledView.vala:32
+#: src/Views/InstalledView.vala:57
 msgctxt "view"
 msgid "Installed"
 msgstr "प्रस्थापित"
 
-#: src/MainWindow.vala:178 src/MainWindow.vala:337 src/Views/SearchView.vala:55
-#: src/Views/SearchView.vala:86
+#: src/MainWindow.vala:182 src/MainWindow.vala:341 src/Views/SearchView.vala:54
+#: src/Views/SearchView.vala:83
 msgid "Search Apps"
 msgstr "अनुप्रयोग शोधा"
 
@@ -205,13 +205,13 @@ msgstr "फाईल्स कॉपी करीत आहे"
 msgid "Unknown state"
 msgstr "अज्ञात परिस्थिती"
 
-#: src/Core/Client.vala:70
+#: src/Core/Client.vala:74
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "एक"
 msgstr[1] "अन्य"
 
-#: src/Core/Client.vala:71
+#: src/Core/Client.vala:75
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
@@ -574,102 +574,120 @@ msgstr "दुर्लक्ष करा"
 msgid "Try Again"
 msgstr "पुन्हा प्रयत्न करा"
 
-#: src/Views/AppInfoView.vala:155
+#: src/Views/AppInfoView.vala:154
 msgid "Screenshot Not Available"
 msgstr "स्क्रीनशॉट उपलब्ध नाही"
 
-#: src/Views/AppInfoView.vala:207
+#: src/Views/AppInfoView.vala:205
 msgid "Homepage"
 msgstr "मुख्य पृष्ठ"
 
-#: src/Views/AppInfoView.vala:213
+#: src/Views/AppInfoView.vala:211
 msgid "Suggest Translations"
 msgstr "अनुवाद सुचवा"
 
-#: src/Views/AppInfoView.vala:219
+#: src/Views/AppInfoView.vala:217
 msgid "Report a Problem"
 msgstr "अडचण कळवा"
 
-#: src/Views/AppInfoView.vala:225
+#: src/Views/AppInfoView.vala:223
 msgid "Help"
 msgstr "मदत"
 
-#: src/Views/AppInfoView.vala:236
+#: src/Views/AppInfoView.vala:234
 msgid "What's New:"
 msgstr "नवीन काय आहे:"
 
-#: src/Views/AppInfoView.vala:271
+#: src/Views/AppInfoView.vala:269
 msgid "Extensions:"
 msgstr "विस्तार :"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:360
+#: src/Views/AppInfoView.vala:358
 msgid "Public Domain"
 msgstr "सार्वजनिक डोमेन"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:363
+#: src/Views/AppInfoView.vala:361
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://mr.wikipedia.org/wiki/%E0%A4%B8%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%B5%E0%A4%9C%E0%A4%A8%E0%A4%BF%E0%A4%95_%E0%A4%85%E0%A4%A7%E0%A4%BF%E0%A4%95%E0%A5%8D%E0%A4%B7%E0%A5%87%E0%A4%A4%E0%A5%8D%E0%A4%B0"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:368
+#: src/Views/AppInfoView.vala:366
 msgid "Free Software"
 msgstr "फ्री सॉफ्टवेअर"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:371
+#: src/Views/AppInfoView.vala:369
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw"
 
-#: src/Views/AppInfoView.vala:375
+#: src/Views/AppInfoView.vala:373
 msgid "Proprietary"
 msgstr "मालकी"
 
-#: src/Views/AppInfoView.vala:378
+#: src/Views/AppInfoView.vala:376
 msgid "Unknown License"
 msgstr "अज्ञात परवाना"
 
-#: src/Views/AppInfoView.vala:427
+#: src/Views/AppInfoView.vala:425
 #, c-format
 msgid "Other Apps by %s"
 msgstr "%s प्रमाणे इतर अॅप्स"
 
-#: src/Views/AppInfoView.vala:464
+#: src/Views/AppInfoView.vala:462
 msgid "Link copied to clipboard"
 msgstr "दुवा क्लिपबोर्डवर कॉपी केला"
 
-#: src/Views/AppInfoView.vala:475
+#: src/Views/AppInfoView.vala:473
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "अॅप सेंटर वर %s  बघा:"
 
-#: src/Views/AppInfoView.vala:482
+#: src/Views/AppInfoView.vala:480
 msgid "Share"
 msgstr "शेअर करा"
 
-#: src/Views/AppInfoView.vala:816
+#: src/Views/AppInfoView.vala:814
 msgid "Fund"
 msgstr "निधी"
 
-#: src/Views/AppInfoView.vala:838
+#: src/Views/AppInfoView.vala:836
 msgid "Fund the development of this app"
 msgstr "या अॅपच्या विकासासाठी निधी द्या"
 
-#: src/Views/AppListUpdateView.vala:56
+#: src/Views/AppListUpdateView.vala:51
+#, fuzzy
+#| msgid "Searching for updates…"
+msgid "Checking for Updates"
+msgstr "अपडेट्स शोधत आहे …"
+
+#: src/Views/AppListUpdateView.vala:52
+msgid "Downloading a list of available updates to the OS and installed apps"
+msgstr ""
+
+#: src/Views/AppListUpdateView.vala:63
 msgid "A restart is required to complete the installation of updates"
 msgstr "अपडेट्स इन्स्टॉल करण्यासाठी हे अप्लिकेशन बंद करूंन पुन्हा सुरु करण्याची गरज आहे"
 
-#: src/Views/AppListUpdateView.vala:64
+#: src/Views/AppListUpdateView.vala:71
 msgid "Restart Now"
 msgstr "याक्षणी पुन्हा चालू करा"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:203
+#: src/Views/AppListUpdateView.vala:210
 msgid "Update All"
 msgstr "सर्व अपडेट करा"
 
-#: src/Views/AppListView.vala:138
+#: src/Views/AppListView.vala:29
+msgid "No Results"
+msgstr "परिणाम नाहीत"
+
+#: src/Views/AppListView.vala:30
+msgid "No apps could be found. Try changing search terms."
+msgstr "कोणतेही अॅप्स सापडले नाहीत. शोध संज्ञा बदलण्याचा प्रयत्न करा."
+
+#: src/Views/AppListView.vala:146
 msgid "Non-Curated Apps"
 msgstr "नॉन-क्युरेटेड अॅप्स"
 
@@ -691,28 +709,10 @@ msgid "Search %s"
 msgstr "%s शोधा"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/Views/SearchView.vala:39
+#: src/Views/SearchView.vala:38
 msgctxt "view"
 msgid "Search"
 msgstr "शोधा"
-
-#: src/Widgets/AbstractAppList.vala:39
-msgid "No Results"
-msgstr "परिणाम नाहीत"
-
-#: src/Widgets/AbstractAppList.vala:40
-msgid "No apps could be found. Try changing search terms."
-msgstr "कोणतेही अॅप्स सापडले नाहीत. शोध संज्ञा बदलण्याचा प्रयत्न करा."
-
-#: src/Widgets/AbstractAppList.vala:45
-#, fuzzy
-#| msgid "Searching for updates…"
-msgid "Checking for Updates"
-msgstr "अपडेट्स शोधत आहे …"
-
-#: src/Widgets/AbstractAppList.vala:46
-msgid "Downloading a list of available updates to the OS and installed apps"
-msgstr ""
 
 #: src/Widgets/Banner.vala:55
 msgid "An open, pay-what-you-want app store"
