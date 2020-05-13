@@ -39,6 +39,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     private ulong task_finished_connection = 0U;
     private Gee.LinkedList<string> return_button_history;
     private Gtk.Label updates_badge;
+    private Gtk.Revealer updates_badge_revealer;
 
     private uint configure_id;
     private int homepage_view_id;
@@ -151,14 +152,17 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         installed_view_id = view_mode.append_text (C_("view", "Installed"));
 
         updates_badge = new Gtk.Label ("!");
-        updates_badge.halign = Gtk.Align.END;
-        updates_badge.valign = Gtk.Align.START;
         updates_badge.get_style_context ().add_class ("badge");
-        set_widget_visibility (updates_badge, false);
+
+        updates_badge_revealer = new Gtk.Revealer ();
+        updates_badge_revealer.halign = Gtk.Align.END;
+        updates_badge_revealer.valign = Gtk.Align.START;
+        updates_badge_revealer.transition_type = Gtk.RevealerTransitionType.CROSSFADE;
+        updates_badge_revealer.add (updates_badge);
 
         var view_mode_overlay = new Gtk.Overlay ();
         view_mode_overlay.add (view_mode);
-        view_mode_overlay.add_overlay (updates_badge);
+        view_mode_overlay.add_overlay (updates_badge_revealer);
 
         view_mode_revealer = new Gtk.Revealer ();
         view_mode_revealer.reveal_child = true;
@@ -261,10 +265,10 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
     public void show_update_badge (uint updates_number) {
         if (updates_number == 0U) {
-            set_widget_visibility (updates_badge, false);
+            updates_badge_revealer.reveal_child = false;
         } else {
             updates_badge.label = updates_number.to_string ();
-            set_widget_visibility (updates_badge, true);
+            updates_badge_revealer.reveal_child = true;
         }
     }
 
