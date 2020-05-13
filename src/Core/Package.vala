@@ -93,18 +93,13 @@ public class AppCenterCore.Package : Object {
         }
     }
 
-    private bool installed_cached;
+    private bool installed_cached = false;
     public bool installed {
         get {
-            if (installed_cached) {
-                return true;
-            }
-
             if (component.get_id () == OS_UPDATES_ID) {
                 return true;
             }
 
-            installed_cached = backend_reports_installed_sync ();
             return installed_cached;
         }
     }
@@ -347,6 +342,26 @@ public class AppCenterCore.Package : Object {
             }
 
             return _("Unknown Origin (non-curated)");
+        }
+    }
+
+    public int origin_score {
+        get {
+            int score = 0;
+
+            if (installed) {
+                score += 10;
+            }
+
+            if (is_native) {
+                score += 5;
+            }
+
+            if (is_flatpak) {
+                score++;
+            }
+
+            return score;
         }
     }
 
