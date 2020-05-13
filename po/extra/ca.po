@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-13 05:12+0000\n"
-"PO-Revision-Date: 2020-05-01 16:29+0000\n"
+"PO-Revision-Date: 2020-05-13 17:44+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/extra/"
 "ca/>\n"
@@ -37,11 +37,11 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:16
 msgid "New features"
-msgstr ""
+msgstr "Funcions noves"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Perform updates without administrator permissions"
-msgstr ""
+msgstr "Es fan actualitzacions sense permisos d’administrador."
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 msgid "Minor updates"
@@ -481,11 +481,11 @@ msgstr "system-software-update"
 
 #: data/io.elementary.appcenter.policy.in:10
 msgid "Update software"
-msgstr ""
+msgstr "Actualitza el programari"
 
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to update software"
-msgstr ""
+msgstr "Cal autenticació per actualitzar programari."
 
 #~ msgid "About AppCenter"
 #~ msgstr "Quant al Centre d'aplicacions"
