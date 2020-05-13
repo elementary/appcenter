@@ -461,6 +461,8 @@ public class AppCenterCore.Package : Object {
 
     public async bool uninstall () throws Error {
         // We possibly don't know if this package is installed or not yet, so trigger that check first
+        installed_cached = yield backend.is_package_installed (this);
+
         update_state ();
 
         if (state == State.INSTALLED || state == State.UPDATE_AVAILABLE) {
@@ -874,24 +876,6 @@ public class AppCenterCore.Package : Object {
         }
 
         return size;
-    }
-
-    private bool backend_reports_installed_sync () {
-        var loop = new MainLoop ();
-        bool result = false;
-        backend.is_package_installed.begin (this, (obj, res) => {
-            try {
-                result = backend.is_package_installed.end (res);
-            } catch (Error e) {
-                warning (e.message);
-                result = false;
-            } finally {
-                loop.quit ();
-            }
-        });
-
-        loop.run ();
-        return result;
     }
 
     private void populate_backend_details_sync () {
