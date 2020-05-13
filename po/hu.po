@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-13 17:46+0000\n"
+"POT-Creation-Date: 2020-05-13 21:12+0000\n"
 "PO-Revision-Date: 2018-06-21 00:08+0000\n"
 "Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
 "Language-Team: Hungarian <https://weblate.elementary.io/projects/appcenter/appcenter/hu/>\n"
@@ -38,21 +38,21 @@ msgstr "Alkalmazás telepítve"
 msgid "%s has been successfully installed"
 msgstr "A(z) %s sikeresen telepítésre került"
 
-#: src/MainWindow.vala:150 src/Views/Homepage.vala:297
+#: src/MainWindow.vala:151 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
 #: src/Views/Homepage.vala:325
 msgid "Home"
 msgstr "Otthon"
 
-#: src/MainWindow.vala:151 src/Views/InstalledView.vala:33
-#: src/Views/InstalledView.vala:60
+#: src/MainWindow.vala:152 src/Views/InstalledView.vala:32
+#: src/Views/InstalledView.vala:57
 #, fuzzy
 msgctxt "view"
 msgid "Installed"
 msgstr "Telepítés"
 
-#: src/MainWindow.vala:178 src/MainWindow.vala:337 src/Views/SearchView.vala:55
-#: src/Views/SearchView.vala:86
+#: src/MainWindow.vala:182 src/MainWindow.vala:341 src/Views/SearchView.vala:54
+#: src/Views/SearchView.vala:83
 msgid "Search Apps"
 msgstr "Alkalmazások keresése"
 
@@ -586,104 +586,122 @@ msgstr "Mellőz"
 msgid "Try Again"
 msgstr "Próbálja újra"
 
-#: src/Views/AppInfoView.vala:155
+#: src/Views/AppInfoView.vala:154
 msgid "Screenshot Not Available"
 msgstr "Képernyőkép nem elérhető"
 
-#: src/Views/AppInfoView.vala:207
+#: src/Views/AppInfoView.vala:205
 msgid "Homepage"
 msgstr "Honlap"
 
-#: src/Views/AppInfoView.vala:213
+#: src/Views/AppInfoView.vala:211
 msgid "Suggest Translations"
 msgstr "Javasoljon fordításokat"
 
-#: src/Views/AppInfoView.vala:219
+#: src/Views/AppInfoView.vala:217
 msgid "Report a Problem"
 msgstr "Jelentse a problémát"
 
-#: src/Views/AppInfoView.vala:225
+#: src/Views/AppInfoView.vala:223
 msgid "Help"
 msgstr "Segítség"
 
-#: src/Views/AppInfoView.vala:236
+#: src/Views/AppInfoView.vala:234
 msgid "What's New:"
 msgstr "Újdonságok:"
 
-#: src/Views/AppInfoView.vala:271
+#: src/Views/AppInfoView.vala:269
 msgid "Extensions:"
 msgstr "Kiegészítések:"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:360
+#: src/Views/AppInfoView.vala:358
 msgid "Public Domain"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:363
+#: src/Views/AppInfoView.vala:361
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr ""
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:368
+#: src/Views/AppInfoView.vala:366
 #, fuzzy
 msgid "Free Software"
 msgstr "Forrásszoftver szerkesztése"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:371
+#: src/Views/AppInfoView.vala:369
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:375
+#: src/Views/AppInfoView.vala:373
 msgid "Proprietary"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:378
+#: src/Views/AppInfoView.vala:376
 #, fuzzy
 msgid "Unknown License"
 msgstr "Ismeretlen állapot"
 
-#: src/Views/AppInfoView.vala:427
+#: src/Views/AppInfoView.vala:425
 #, c-format
 msgid "Other Apps by %s"
 msgstr "%s további alkalmazásai"
 
-#: src/Views/AppInfoView.vala:464
+#: src/Views/AppInfoView.vala:462
 msgid "Link copied to clipboard"
 msgstr "Hivatkozás a vágólapra másolva"
 
-#: src/Views/AppInfoView.vala:475
+#: src/Views/AppInfoView.vala:473
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "Nézze meg AppKözpontban ezt: %s:"
 
-#: src/Views/AppInfoView.vala:482
+#: src/Views/AppInfoView.vala:480
 msgid "Share"
 msgstr "Megosztás"
 
-#: src/Views/AppInfoView.vala:816
+#: src/Views/AppInfoView.vala:814
 msgid "Fund"
 msgstr "Támogatás"
 
-#: src/Views/AppInfoView.vala:838
+#: src/Views/AppInfoView.vala:836
 msgid "Fund the development of this app"
 msgstr "Támogassa az alkalmazás fejlesztését"
 
-#: src/Views/AppListUpdateView.vala:56
+#: src/Views/AppListUpdateView.vala:51
+#, fuzzy
+#| msgid "Searching for updates…"
+msgid "Checking for Updates"
+msgstr "Frissítések keresése…"
+
+#: src/Views/AppListUpdateView.vala:52
+msgid "Downloading a list of available updates to the OS and installed apps"
+msgstr ""
+
+#: src/Views/AppListUpdateView.vala:63
 msgid "A restart is required to complete the installation of updates"
 msgstr "A frissítések telepítésének véglegesítéséhez újraindításra van szükség"
 
-#: src/Views/AppListUpdateView.vala:64
+#: src/Views/AppListUpdateView.vala:71
 msgid "Restart Now"
 msgstr "Újraindítás most"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:203
+#: src/Views/AppListUpdateView.vala:210
 msgid "Update All"
 msgstr "Összes frissítése"
 
-#: src/Views/AppListView.vala:138
+#: src/Views/AppListView.vala:29
+msgid "No Results"
+msgstr "Nincs találat"
+
+#: src/Views/AppListView.vala:30
+msgid "No apps could be found. Try changing search terms."
+msgstr "Nem találhatók alkalmazások. Próbálja megváltoztatni a keresési kifejezéseket."
+
+#: src/Views/AppListView.vala:146
 msgid "Non-Curated Apps"
 msgstr "Nem válogatott alkalmazások"
 
@@ -705,28 +723,10 @@ msgid "Search %s"
 msgstr "A(z) %s keresése"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/Views/SearchView.vala:39
+#: src/Views/SearchView.vala:38
 msgctxt "view"
 msgid "Search"
 msgstr "Keresés"
-
-#: src/Widgets/AbstractAppList.vala:39
-msgid "No Results"
-msgstr "Nincs találat"
-
-#: src/Widgets/AbstractAppList.vala:40
-msgid "No apps could be found. Try changing search terms."
-msgstr "Nem találhatók alkalmazások. Próbálja megváltoztatni a keresési kifejezéseket."
-
-#: src/Widgets/AbstractAppList.vala:45
-#, fuzzy
-#| msgid "Searching for updates…"
-msgid "Checking for Updates"
-msgstr "Frissítések keresése…"
-
-#: src/Widgets/AbstractAppList.vala:46
-msgid "Downloading a list of available updates to the OS and installed apps"
-msgstr ""
 
 #: src/Widgets/Banner.vala:55
 msgid "An open, pay-what-you-want app store"
