@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-30 22:00+0000\n"
+"POT-Creation-Date: 2020-05-13 05:12+0000\n"
 "PO-Revision-Date: 2020-01-16 16:07+0000\n"
 "Last-Translator: Daniel R. <riesp@pm.me>\n"
 "Language-Team: Galician <https://l10n.elementary.io/projects/appcenter/appcenter/gl/>\n"
@@ -269,7 +269,7 @@ msgstr "Orixe descoñecida (non verificadas)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "O paquete da aplicación non foi marcado como instalado no Centro de Aplicacións: %s"
 
-#: src/Core/PackageKitBackend.vala:261
+#: src/Core/PackageKitBackend.vala:263
 #, fuzzy, c-format
 #| msgid "%s (non-curated)"
 msgid "%s (local)"

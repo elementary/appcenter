@@ -5,11 +5,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-30 22:00+0000\n"
+"POT-Creation-Date: 2020-05-13 05:12+0000\n"
 "PO-Revision-Date: 2020-05-13 05:10+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
-"Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/pt/>\n"
+"Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/appcenter/pt/>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -261,11 +260,9 @@ msgstr "Origem desconhecida (não-curadas)"
 #: src/Core/Package.vala:459
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
-msgstr ""
-"Estado da aplicação não definido como instalado no Centro de Aplicações para "
-"o pacote: %s"
+msgstr "Estado da aplicação não definido como instalado no Centro de Aplicações para o pacote: %s"
 
-#: src/Core/PackageKitBackend.vala:261
+#: src/Core/PackageKitBackend.vala:263
 #, c-format
 msgid "%s (local)"
 msgstr "%s (local)"
@@ -516,9 +513,7 @@ msgstr "Foram usadas muitas tentativas para inserir o pin. Por favor tente novam
 
 #: src/Dialogs/StripeDialog.vala:603
 msgid "Unable to complete the transaction. Please contact your bank for further information."
-msgstr ""
-"Impossível concluir a transação. Por favor contacte o seu banco para mais "
-"informações."
+msgstr "Impossível concluir a transação. Por favor contacte o seu banco para mais informações."
 
 #: src/Dialogs/StripeDialog.vala:606
 msgid "The balance or credit limit on the card has been reached."

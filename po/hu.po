@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-30 22:00+0000\n"
+"POT-Creation-Date: 2020-05-13 05:12+0000\n"
 "PO-Revision-Date: 2018-06-21 00:08+0000\n"
 "Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
 "Language-Team: Hungarian <https://weblate.elementary.io/projects/appcenter/appcenter/hu/>\n"
@@ -268,7 +268,7 @@ msgstr ""
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
 
-#: src/Core/PackageKitBackend.vala:261
+#: src/Core/PackageKitBackend.vala:263
 #, fuzzy, c-format
 msgid "%s (local)"
 msgstr "%s (helyi)"
