@@ -21,10 +21,7 @@
 public abstract class AppCenter.Widgets.AbstractPackageRowGrid : AbstractAppContainer {
     public signal void changed ();
 
-    protected Gtk.Grid info_grid;
-    protected Gtk.Grid grid;
-
-    protected AbstractPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? info_size_group, Gtk.SizeGroup? action_size_group) {
+    protected AbstractPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? action_size_group) {
         Object (
             package: package,
             show_uninstall: false,
@@ -34,10 +31,6 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : AbstractAppCont
         if (action_size_group != null) {
             action_size_group.add_widget (action_button);
             action_size_group.add_widget (cancel_button);
-        }
-
-        if (info_size_group != null) {
-            info_size_group.add_widget (info_grid);
         }
     }
 
@@ -50,23 +43,10 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : AbstractAppCont
         package_name.valign = Gtk.Align.END;
         package_name.xalign = 0;
 
-        info_grid = new Gtk.Grid ();
-        info_grid.column_spacing = 12;
-        info_grid.row_spacing = 6;
-        info_grid.valign = Gtk.Align.START;
-        info_grid.attach (image, 0, 0, 1, 2);
-        info_grid.attach (package_name, 1, 0, 1, 1);
-
         action_stack.homogeneous = false;
         action_stack.margin_top = 10;
         action_stack.valign = Gtk.Align.START;
 
-        grid = new Gtk.Grid ();
-        grid.attach (info_grid, 0, 0);
-        grid.attach (action_stack, 3, 0);
-        grid.column_spacing = 24;
-
-        add (grid);
         margin = 6;
         margin_start = 12;
         margin_end = 12;

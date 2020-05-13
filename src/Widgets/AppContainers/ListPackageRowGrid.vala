@@ -19,8 +19,9 @@
  */
 
 public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
-    public ListPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? info_size_group, Gtk.SizeGroup? action_size_group) {
-        base (package, info_size_group, action_size_group);
+    public ListPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? action_size_group) {
+        base (package, action_size_group);
+
         set_up_package ();
     }
 
@@ -31,7 +32,20 @@ public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
         package_summary.valign = Gtk.Align.START;
         ((Gtk.Misc) package_summary).xalign = 0;
 
-        info_grid.attach (package_summary, 1, 1, 1, 1);
+        var info_grid = new Gtk.Grid ();
+        info_grid.column_spacing = 12;
+        info_grid.row_spacing = 6;
+        info_grid.valign = Gtk.Align.START;
+        info_grid.attach (image, 0, 0, 1, 2);
+        info_grid.attach (package_name, 1, 0);
+        info_grid.attach (package_summary, 1, 1);
+
+        var grid = new Gtk.Grid ();
+        grid.column_spacing = 24;
+        grid.attach (info_grid, 0, 0);
+        grid.attach (action_stack, 1, 0);
+
+        add (grid);
     }
 
     protected override void set_up_package (uint icon_size = 48) {

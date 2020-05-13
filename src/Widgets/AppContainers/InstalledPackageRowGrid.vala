@@ -27,8 +27,15 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
     Gtk.Label release_single_label;
     AppStream.Release? newest = null;
 
+    private Gtk.Grid info_grid;
+
     public InstalledPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? info_size_group, Gtk.SizeGroup? action_size_group) {
-        base (package, info_size_group, action_size_group);
+        base (package, action_size_group);
+
+        if (info_size_group != null) {
+            info_size_group.add_widget (info_grid);
+        }
+
         set_up_package ();
     }
 
@@ -76,9 +83,21 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
 
         set_widget_visibility (release_stack, false);
 
+        info_grid = new Gtk.Grid ();
+        info_grid.column_spacing = 12;
+        info_grid.row_spacing = 6;
+        info_grid.valign = Gtk.Align.START;
+        info_grid.attach (image, 0, 0, 1, 2);
+        info_grid.attach (package_name, 1, 0);
         info_grid.attach (app_version, 1, 1);
 
+        var grid = new Gtk.Grid ();
+        grid.column_spacing = 24;
+        grid.attach (info_grid, 0, 0);
         grid.attach (release_stack, 2, 0, 1, 2);
+        grid.attach (action_stack, 3, 0);
+
+        add (grid);
     }
 
     protected override void set_up_package (uint icon_size = 48) {
