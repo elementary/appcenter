@@ -33,21 +33,22 @@ namespace AppCenter.Views {
 
         GenericArray<AppStream.Screenshot> screenshots;
 
-        private Gtk.Label app_screenshot_not_found;
-        private Gtk.Stack app_screenshots;
-        private Widgets.SizeLabel size_label;
-        private Gtk.ListBox extension_box;
+        private Gtk.ComboBox origin_combo;
         private Gtk.Grid release_grid;
-        private Widgets.ReleaseListBox release_list_box;
-        private Gtk.Revealer origin_combo_revealer;
         private Gtk.Grid screenshot_arrows;
+        private Gtk.Label app_screenshot_not_found;
+        private Gtk.Label package_summary;
+        private Gtk.ListBox extension_box;
+        private Gtk.ListStore origin_liststore;
+        private Gtk.Overlay screenshot_overlay;
+        private Gtk.Revealer origin_combo_revealer;
+        private Gtk.Stack app_screenshots;
         private Gtk.Stack screenshot_stack;
         private Gtk.StyleContext stack_context;
-        private Gtk.Overlay screenshot_overlay;
         private Gtk.TextView app_description;
+        private Widgets.ReleaseListBox release_list_box;
+        private Widgets.SizeLabel size_label;
         private Widgets.Switcher screenshot_switcher;
-        private Gtk.ListStore origin_liststore;
-        private Gtk.ComboBox origin_combo;
 
         public bool to_recycle { public get; private set; default = false; }
 
@@ -178,6 +179,7 @@ namespace AppCenter.Views {
             package_author.valign = Gtk.Align.START;
             package_author.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
+            package_summary = new Gtk.Label (null);
             package_summary.label = package.get_summary ();
             package_summary.selectable = true;
             package_summary.xalign = 0;
@@ -532,7 +534,7 @@ namespace AppCenter.Views {
                     return;
                 }
 
-                var row = new Widgets.PackageRow.list (extension_package, null, null, false);
+                var row = new Widgets.PackageRow.list (extension_package, null);
                 if (extension_box != null) {
                     extension_box.add (row);
                 }
