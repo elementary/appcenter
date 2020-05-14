@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-13 17:46+0000\n"
-"PO-Revision-Date: 2020-05-01 16:29+0000\n"
+"PO-Revision-Date: 2020-05-14 17:54+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/extra/"
 "es/>\n"
@@ -37,11 +37,11 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:16
 msgid "New features"
-msgstr ""
+msgstr "Funcionalidades nuevas"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Perform updates without administrator permissions"
-msgstr ""
+msgstr "Puede efectuar actualizaciones sin permisos administrativos"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 msgid "Minor updates"
@@ -54,7 +54,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "More reliably set the Dock badge number"
-msgstr ""
+msgstr "Se define de forma más fiable el emblema numérico en el dock"
 
 #: data/io.elementary.appcenter.appdata.xml.in:29
 #: data/io.elementary.appcenter.appdata.xml.in:118
@@ -489,11 +489,11 @@ msgstr "system-software-update"
 
 #: data/io.elementary.appcenter.policy.in:10
 msgid "Update software"
-msgstr ""
+msgstr "Actualizar software"
 
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to update software"
-msgstr ""
+msgstr "Necesita autenticarse para actualizar el software"
 
 #~ msgid "About AppCenter"
 #~ msgstr "Acerca de AppCenter"
