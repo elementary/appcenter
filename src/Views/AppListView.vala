@@ -84,7 +84,7 @@ namespace AppCenter.Views {
             current_visible_index = 0U;
         }
 
-        protected override Widgets.AppListRow construct_row_for_package (AppCenterCore.Package package) {
+        protected override Widgets.PackageRow construct_row_for_package (AppCenterCore.Package package) {
             return new Widgets.PackageRow.list (package, action_button_group);
         }
 
@@ -140,13 +140,13 @@ namespace AppCenter.Views {
         }
 
         [CCode (instance_pos = -1)]
-        protected override int package_row_compare (Widgets.AppListRow row1, Widgets.AppListRow row2) {
+        protected override int package_row_compare (Widgets.PackageRow row1, Widgets.PackageRow row2) {
             return compare_packages (row1.get_package (), row2.get_package ());
         }
 
 #if CURATED
         [CCode (instance_pos = -1)]
-        private void row_update_header (Widgets.AppListRow row, Widgets.AppListRow? before) {
+        private void row_update_header (Widgets.PackageRow row, Widgets.PackageRow? before) {
             bool elementary_native = row.get_package ().is_native;
 
             if (!elementary_native) {
@@ -156,7 +156,7 @@ namespace AppCenter.Views {
             }
         }
 
-        private void mark_row_non_curated (Widgets.AppListRow row) {
+        private void mark_row_non_curated (Widgets.PackageRow row) {
             var header = new Gtk.Label (_("Non-Curated Apps"));
             header.margin = 12;
             header.margin_top = 18;

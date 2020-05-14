@@ -35,7 +35,7 @@ public abstract class AppCenter.AbstractAppList : Gtk.Box {
 
         list_box.set_sort_func ((Gtk.ListBoxSortFunc) package_row_compare);
         list_box.row_activated.connect ((r) => {
-            var row = (Widgets.AppListRow)r;
+            var row = (Widgets.PackageRow)r;
             show_app (row.get_package ());
         });
 
@@ -47,7 +47,7 @@ public abstract class AppCenter.AbstractAppList : Gtk.Box {
         info_grid_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
     }
 
-    protected abstract Widgets.AppListRow construct_row_for_package (AppCenterCore.Package package);
+    protected abstract Widgets.PackageRow construct_row_for_package (AppCenterCore.Package package);
 
     public abstract void add_packages (Gee.Collection<AppCenterCore.Package> packages);
     public abstract void add_package (AppCenterCore.Package package);
@@ -55,7 +55,7 @@ public abstract class AppCenter.AbstractAppList : Gtk.Box {
     public void remove_package (AppCenterCore.Package package) {
         package.changing.disconnect (on_package_changing);
         foreach (weak Gtk.Widget r in list_box.get_children ()) {
-            weak Widgets.AppListRow row = r as Widgets.AppListRow;
+            weak Widgets.PackageRow row = r as Widgets.PackageRow;
             if (!row.has_package ()) {
                 continue;
             }
@@ -71,7 +71,7 @@ public abstract class AppCenter.AbstractAppList : Gtk.Box {
 
     public virtual void clear () {
         foreach (weak Gtk.Widget r in list_box.get_children ()) {
-            weak Widgets.AppListRow row = r as Widgets.AppListRow;
+            weak Widgets.PackageRow row = r as Widgets.PackageRow;
             if (row == null) {
                 continue;
             }
@@ -86,7 +86,7 @@ public abstract class AppCenter.AbstractAppList : Gtk.Box {
         on_list_changed ();
     }
 
-    protected void add_row (Widgets.AppListRow row) {
+    protected void add_row (Widgets.PackageRow row) {
         row.show_all ();
         list_box.add (row);
         row.get_package ().changing.connect (on_package_changing);
@@ -95,7 +95,7 @@ public abstract class AppCenter.AbstractAppList : Gtk.Box {
     protected virtual Gee.Collection<AppCenterCore.Package> get_packages () {
         var tree_set = new Gee.TreeSet<AppCenterCore.Package> ();
         foreach (weak Gtk.Widget r in list_box.get_children ()) {
-            weak Widgets.AppListRow row = r as Widgets.AppListRow;
+            weak Widgets.PackageRow row = r as Widgets.PackageRow;
             if (row == null) {
                 continue;
             }
@@ -109,7 +109,7 @@ public abstract class AppCenter.AbstractAppList : Gtk.Box {
     }
 
     [CCode (instance_pos = -1)]
-    protected virtual int package_row_compare (Widgets.AppListRow row1, Widgets.AppListRow row2) {
+    protected virtual int package_row_compare (Widgets.PackageRow row1, Widgets.PackageRow row2) {
         return row1.get_name_label ().collate (row2.get_name_label ());
     }
 
