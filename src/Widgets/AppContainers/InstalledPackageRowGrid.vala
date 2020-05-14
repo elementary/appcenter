@@ -25,6 +25,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
     Gtk.Label release_expander_label;
     Gtk.Label release_description;
     Gtk.Label release_single_label;
+    private Gtk.Revealer release_stack_revealer;
     AppStream.Release? newest = null;
 
     private Gtk.Grid info_grid;
@@ -86,7 +87,9 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         release_stack.add (release_expander);
         release_stack.add (release_single_label);
 
-        set_widget_visibility (release_stack, false);
+        release_stack_revealer = new Gtk.Revealer ();
+        release_stack_revealer.transition_type = Gtk.RevealerTransitionType.CROSSFADE;
+        release_stack_revealer.add (release_stack);
 
         info_grid = new Gtk.Grid ();
         info_grid.column_spacing = 12;
@@ -103,7 +106,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         var grid = new Gtk.Grid ();
         grid.column_spacing = 24;
         grid.attach (info_grid, 0, 0);
-        grid.attach (release_stack, 2, 0, 1, 2);
+        grid.attach (release_stack_revealer, 2, 0, 1, 2);
         grid.attach (action_stack, 3, 0);
 
         add (grid);
@@ -142,15 +145,15 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
                         release_expander_label.label = lines[0];
                         release_description.set_text (lines[1]);
                         release_stack.visible_child = release_expander;
-                        set_widget_visibility (release_stack, true);
                     } else if (lines.length > 0) {
                         release_single_label.label = lines[0];
                         release_stack.visible_child = release_single_label;
-                        set_widget_visibility (release_stack, true);
                     }
+
+                    release_stack_revealer.reveal_child = true;
                 }
             } else {
-                set_widget_visibility (release_stack, true);
+                release_stack_revealer.reveal_child = true;
             }
         }
 
