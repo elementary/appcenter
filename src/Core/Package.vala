@@ -93,19 +93,24 @@ public class AppCenterCore.Package : Object {
         }
     }
 
-    private bool installed_cached = false;
+    private bool _installed = false;
     public bool installed {
         get {
             if (component.get_id () == OS_UPDATES_ID) {
                 return true;
             }
 
-            return installed_cached;
+            return _installed;
         }
     }
 
     public void mark_installed () {
-        installed_cached = true;
+        _installed = true;
+        update_state ();
+    }
+
+    public void clear_installed () {
+        _installed = false;
         update_state ();
     }
 
@@ -401,7 +406,7 @@ public class AppCenterCore.Package : Object {
         color_primary_text = null;
         payments_key = null;
         suggested_amount = null;
-        installed_cached = false;
+        _installed = false;
         _author = null;
         _author_title = null;
         backend_details = null;
@@ -461,7 +466,7 @@ public class AppCenterCore.Package : Object {
 
     public async bool uninstall () throws Error {
         // We possibly don't know if this package is installed or not yet, so trigger that check first
-        installed_cached = yield backend.is_package_installed (this);
+        _installed = yield backend.is_package_installed (this);
 
         update_state ();
 
@@ -526,11 +531,11 @@ public class AppCenterCore.Package : Object {
                 return success;
             case State.INSTALLING:
                 var success = yield backend.install_package (this, (owned)cb, action_cancellable);
-                installed_cached = success;
+                _installed = success;
                 return success;
             case State.REMOVING:
                 var success = yield backend.remove_package (this, (owned)cb, action_cancellable);
-                installed_cached = !success;
+                _installed = !success;
                 yield client.refresh_updates ();
                 return success;
             default:

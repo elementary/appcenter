@@ -154,6 +154,12 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             return installed_apps;
         }
 
+        foreach (var package in package_list.values) {
+            if (package.installed) {
+                package.clear_installed ();
+            }
+        }
+
         for (int i = 0; i < installed_refs.length; i++) {
             if (cancellable.is_cancelled ()) {
                 break;
