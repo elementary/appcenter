@@ -25,6 +25,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
     Gtk.Label release_expander_label;
     Gtk.Label release_description;
     Gtk.Label release_single_label;
+    private Gtk.Revealer release_stack_revealer;
     AppStream.Release? newest = null;
 
     public InstalledPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? info_size_group, Gtk.SizeGroup? action_size_group) {
@@ -74,7 +75,9 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         release_stack.add (release_expander);
         release_stack.add (release_single_label);
 
-        set_widget_visibility (release_stack, false);
+        release_stack_revealer = new Gtk.Revealer ();
+        release_stack_revealer.transition_type = Gtk.RevealerTransitionType.CROSSFADE;
+        release_stack_revealer.add (release_stack);
 
         info_grid.attach (app_version, 1, 1);
 
@@ -114,15 +117,15 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
                         release_expander_label.label = lines[0];
                         release_description.set_text (lines[1]);
                         release_stack.visible_child = release_expander;
-                        set_widget_visibility (release_stack, true);
                     } else if (lines.length > 0) {
                         release_single_label.label = lines[0];
                         release_stack.visible_child = release_single_label;
-                        set_widget_visibility (release_stack, true);
                     }
+
+                    release_stack_revealer.reveal_child = true;
                 }
             } else {
-                set_widget_visibility (release_stack, true);
+                release_stack_revealer.reveal_child = true;
             }
         }
 
