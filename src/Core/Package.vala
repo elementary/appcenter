@@ -150,7 +150,7 @@ public class AppCenterCore.Package : Object {
                 return false;
             }
 
-            if (component.get_id () in AppCenter.App.settings.get_strv ("paid-apps")) {
+            if (component.get_id () in settings.get_strv ("paid-apps")) {
                 return false;
             }
 
@@ -366,6 +366,12 @@ public class AppCenterCore.Package : Object {
     private PackageDetails? backend_details = null;
     private AppInfo? app_info;
     private bool app_info_retrieved = false;
+
+    public static GLib.Settings settings;
+
+    static construct {
+        settings = new GLib.Settings ("io.elementary.appcenter.settings");
+    }
 
     construct {
         change_information = new ChangeInformation ();

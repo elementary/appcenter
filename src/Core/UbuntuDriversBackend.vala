@@ -23,6 +23,12 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
 
     private Gee.TreeSet<Package>? cached_packages = null;
 
+    public static GLib.Settings settings;
+
+    static construct {
+        settings = new GLib.Settings ("io.elementary.appcenter.settings");
+    }
+
     private async bool get_drivers_output (Cancellable? cancellable = null, out string? output = null) {
         output = null;
         string? drivers_exec_path = Environment.find_program_in_path ("ubuntu-drivers");
@@ -49,7 +55,7 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
         working = true;
 
         cached_packages = new Gee.TreeSet<Package> ();
-        var tokens = AppCenter.App.settings.get_strv ("cached-drivers");
+        var tokens = settings.get_strv ("cached-drivers");
 
         for (int i = 0; i < tokens.length; i++) {
             if (cancellable.is_cancelled ()) {
@@ -147,7 +153,7 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
             }
         }
 
-        AppCenter.App.settings.set_strv ("cached-drivers", pkgnames);
+        settings.set_strv ("cached-drivers", pkgnames);
 
         working = false;
         return true;

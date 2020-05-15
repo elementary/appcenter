@@ -37,6 +37,12 @@ public class AppCenterCore.Client : Object {
 
     private AsyncMutex update_notification_mutex = new AsyncMutex ();
 
+    public static GLib.Settings settings;
+
+    static construct {
+        settings = new GLib.Settings ("io.elementary.appcenter.settings");
+    }
+
     private Client () {
         Object (screenshot_cache: AppCenterCore.ScreenshotCache.new_cache ());
     }
@@ -44,7 +50,7 @@ public class AppCenterCore.Client : Object {
     construct {
         cancellable = new GLib.Cancellable ();
 
-        last_cache_update = new DateTime.from_unix_utc (AppCenter.App.settings.get_int64 ("last-refresh-time"));
+        last_cache_update = new DateTime.from_unix_utc (settings.get_int64 ("last-refresh-time"));
     }
 
     public async Gee.Collection<AppCenterCore.Package> get_installed_applications (Cancellable? cancellable = null) {
@@ -141,7 +147,7 @@ public class AppCenterCore.Client : Object {
                     success = yield BackendAggregator.get_default ().refresh_cache (cancellable);
                     if (success) {
                         last_cache_update = new DateTime.now_utc ();
-                        AppCenter.App.settings.set_int64 ("last-refresh-time", last_cache_update.to_unix ());
+                        settings.set_int64 ("last-refresh-time", last_cache_update.to_unix ());
                     }
 
                     seconds_since_last_refresh = 0;
