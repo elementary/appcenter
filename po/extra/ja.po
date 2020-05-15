@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-13 17:46+0000\n"
-"PO-Revision-Date: 2020-05-02 18:10+0000\n"
+"PO-Revision-Date: 2020-05-15 16:29+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/extra/"
 "ja/>\n"
@@ -36,11 +36,11 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:16
 msgid "New features"
-msgstr ""
+msgstr "新機能"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Perform updates without administrator permissions"
-msgstr ""
+msgstr "管理者権限不要でアップデートを実行できるように修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 msgid "Minor updates"
@@ -52,7 +52,7 @@ msgstr "ホームページのアプリが確実に表示されるように修正
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "More reliably set the Dock badge number"
-msgstr ""
+msgstr "ドックのバッジの数値を正しく表示するように修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:29
 #: data/io.elementary.appcenter.appdata.xml.in:118
@@ -474,11 +474,11 @@ msgstr "system-software-update"
 
 #: data/io.elementary.appcenter.policy.in:10
 msgid "Update software"
-msgstr ""
+msgstr "ソフトウェアをアップデートします"
 
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to update software"
-msgstr ""
+msgstr "ソフトウェアをアップデートするには認証が必要です"
 
 #~ msgid "About AppCenter"
 #~ msgstr "AppCenter について"
