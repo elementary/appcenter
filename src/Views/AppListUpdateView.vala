@@ -76,7 +76,12 @@ namespace AppCenter.Views {
 
             infobar.response.connect ((response) => {
                 if (response == 0) {
-                    Utils.reboot ();
+                    try {
+                        SuspendControl.get_default ().reboot ();
+                    } catch (GLib.Error e) {
+                        var dialog = new AppCenter.Widgets.RestartDialog ();
+                        dialog.show_all ();
+                    }
                 }
             });
 

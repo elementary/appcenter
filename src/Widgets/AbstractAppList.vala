@@ -54,9 +54,6 @@ public abstract class AppCenter.AbstractAppList : Gtk.Box {
         package.changing.disconnect (on_package_changing);
         foreach (weak Gtk.Widget r in list_box.get_children ()) {
             weak Widgets.AppListRow row = r as Widgets.AppListRow;
-            if (!row.has_package ()) {
-                continue;
-            }
 
             if (row.get_package () == package) {
                 row.destroy ();
@@ -74,11 +71,9 @@ public abstract class AppCenter.AbstractAppList : Gtk.Box {
                 continue;
             }
 
-            if (row.has_package ()) {
-                var package = row.get_package ();
-                package.changing.disconnect (on_package_changing);
-                row.destroy ();
-            }
+            var package = row.get_package ();
+            package.changing.disconnect (on_package_changing);
+            row.destroy ();
         };
 
         on_list_changed ();
@@ -98,9 +93,7 @@ public abstract class AppCenter.AbstractAppList : Gtk.Box {
                 continue;
             }
 
-            if (row.has_package ()) {
-                tree_set.add (row.get_package ());
-            }
+            tree_set.add (row.get_package ());
         }
 
         return tree_set;
