@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-13 17:46+0000\n"
-"PO-Revision-Date: 2020-05-03 21:10+0000\n"
+"PO-Revision-Date: 2020-05-18 20:11+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/extra/"
 "tr/>\n"
@@ -44,10 +44,8 @@ msgid "Perform updates without administrator permissions"
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
-#, fuzzy
-#| msgid "Check for Updates"
 msgid "Minor updates"
-msgstr "Güncellemeleri Denetle"
+msgstr "Küçük düzeltmeler"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "Ensure apps on the homepage are more reliably displayed"
@@ -95,10 +93,8 @@ msgid ""
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:40
-#, fuzzy
-#| msgid "Performance improvements"
 msgid "Keyboard improvements"
-msgstr "Performans iyileştirmeleri"
+msgstr "Klavye iyileştirmeleri"
 
 #: data/io.elementary.appcenter.appdata.xml.in:42
 msgid ""
