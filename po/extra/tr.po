@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-13 17:46+0000\n"
-"PO-Revision-Date: 2020-05-18 20:11+0000\n"
+"PO-Revision-Date: 2020-05-22 13:11+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/extra/"
 "tr/>\n"
@@ -37,11 +37,11 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:16
 msgid "New features"
-msgstr ""
+msgstr "Yeni özellikler"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Perform updates without administrator permissions"
-msgstr ""
+msgstr "Güncellemeleri yönetici izni olmadan yükleyin"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 msgid "Minor updates"
@@ -79,18 +79,24 @@ msgid ""
 "To de-clutter the updates view, extensions are now only shown if they "
 "require updates"
 msgstr ""
+"Güncellemeler görünümünü dağıtmamak adına, artık eklentiler yalnızca "
+"güncelleme mevcutsa gösterilir"
 
 #: data/io.elementary.appcenter.appdata.xml.in:37
 msgid ""
 "Clicking an extension on an app's info page now shows details for the "
 "extension"
 msgstr ""
+"Bir uygulamanın sayfasında herhangi bir eklentiye tıklamak, artık o "
+"eklentinin detaylarını gösterir."
 
 #: data/io.elementary.appcenter.appdata.xml.in:38
 msgid ""
 "Swap the main and overlay icons for extensions to more clearly associate "
 "extensions with their app"
 msgstr ""
+"Eklentileri uygulamasıyla daha net bağdaştırmak için esas uygulama simgesi "
+"ile küçük simgelerinin yerleri değiştirildi"
 
 #: data/io.elementary.appcenter.appdata.xml.in:40
 msgid "Keyboard improvements"
@@ -100,24 +106,24 @@ msgstr "Klavye iyileştirmeleri"
 msgid ""
 "Pressing down in the search field moves the keyboard focus to the search "
 "results list"
-msgstr ""
+msgstr "Arama ekranında aşağı tuşa basmak odağı arama sonuçlarına geçirir"
 
 #: data/io.elementary.appcenter.appdata.xml.in:43
 msgid "Ctrl+F now moves the cursor to the search field"
-msgstr ""
+msgstr "Ctrl+F artık işaretçiyi arama alanına götürüyor"
 
 #: data/io.elementary.appcenter.appdata.xml.in:45
 #: data/io.elementary.appcenter.appdata.xml.in:62
 msgid "Fixes"
-msgstr ""
+msgstr "Düzeltmeler"
 
 #: data/io.elementary.appcenter.appdata.xml.in:47
 msgid "Use configured network proxy settings for apt operations"
-msgstr ""
+msgstr "apt işlemleri için yapılandırılmış ağ vekil ayarlarını kullan"
 
 #: data/io.elementary.appcenter.appdata.xml.in:48
 msgid "No longer prompt for approval to update non-curated apps"
-msgstr ""
+msgstr "Doğrulanmamış uygulamaları güncellemek için onay isteme"
 
 #: data/io.elementary.appcenter.appdata.xml.in:49
 msgid ""
