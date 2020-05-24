@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-13 17:46+0000\n"
-"PO-Revision-Date: 2020-04-26 23:10+0000\n"
+"PO-Revision-Date: 2020-05-21 01:11+0000\n"
 "Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/extra/pt_BR/>\n"
@@ -37,25 +37,25 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:16
 msgid "New features"
-msgstr ""
+msgstr "Novas funcionalidades"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Perform updates without administrator permissions"
-msgstr ""
+msgstr "Executar atualizações sem permissões de administrador"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
-#, fuzzy
-#| msgid "Check for Updates"
 msgid "Minor updates"
-msgstr "Verificar por Atualizações"
+msgstr "Pequenas atualizações"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "Ensure apps on the homepage are more reliably displayed"
 msgstr ""
+"Verifique se os aplicativos na página inicial são exibidos com mais "
+"confiabilidade"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "More reliably set the Dock badge number"
-msgstr ""
+msgstr "Define de maneira mais confiável o número do emblema na dock"
 
 #: data/io.elementary.appcenter.appdata.xml.in:29
 #: data/io.elementary.appcenter.appdata.xml.in:118
@@ -484,11 +484,11 @@ msgstr "system-software-update"
 
 #: data/io.elementary.appcenter.policy.in:10
 msgid "Update software"
-msgstr ""
+msgstr "Atualizar o software"
 
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to update software"
-msgstr ""
+msgstr "É necessária autenticação para atualizar o software"
 
 #~ msgid "About AppCenter"
 #~ msgstr "Sobre central de aplicativos"
