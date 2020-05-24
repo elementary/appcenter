@@ -26,9 +26,7 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : AbstractAppCont
 
     protected AbstractPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? info_size_group, Gtk.SizeGroup? action_size_group) {
         Object (
-            package: package,
-            show_uninstall: false,
-            show_open: false
+            package: package
         );
 
         if (action_size_group != null) {
@@ -70,5 +68,8 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : AbstractAppCont
         margin = 6;
         margin_start = 12;
         margin_end = 12;
+
+        show_uninstall = false;
+        show_open = false;
     }
 }
