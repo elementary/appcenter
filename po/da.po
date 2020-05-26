@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-13 21:12+0000\n"
-"PO-Revision-Date: 2020-05-26 13:11+0000\n"
+"PO-Revision-Date: 2020-05-27 18:11+0000\n"
 "Last-Translator: Rantyrant <diseasemonger@gmail.com>\n"
 "Language-Team: Danish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/da/>\n"
@@ -86,7 +86,7 @@ msgstr "Fjerner pakker"
 
 #: src/Utils.vala:84
 msgid "Downloading"
-msgstr "Downloader"
+msgstr "Henter"
 
 #: src/Utils.vala:86 src/Core/FlatpakBackend.vala:709
 msgid "Installing"
@@ -673,8 +673,8 @@ msgstr "Søger efter opdateringer"
 #: src/Views/AppListUpdateView.vala:52
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr ""
-"Downloader en liste af tilgængelige opdateringer til operativ systemet og "
-"dets installerede applikationer"
+"Henter en liste af tilgængelige opdateringer til operativ systemet og dets "
+"installerede applikationer"
 
 #: src/Views/AppListUpdateView.vala:63
 msgid "A restart is required to complete the installation of updates"
