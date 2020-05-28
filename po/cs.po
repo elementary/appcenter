@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-13 21:12+0000\n"
-"PO-Revision-Date: 2020-05-28 18:09+0000\n"
+"PO-Revision-Date: 2020-05-28 18:10+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/cs/>\n"
@@ -191,7 +191,7 @@ msgstr "Čeká se na ověření"
 
 #: src/Utils.vala:134
 msgid "Updating running applications"
-msgstr "Aktualizují se běžící aplikace"
+msgstr "Aktualizují se spuštěné aplikace"
 
 #: src/Utils.vala:136
 msgid "Checking applications in use"
@@ -247,12 +247,12 @@ msgstr "Aktualizace elementary"
 
 #: src/Core/Package.vala:341
 msgid "Ubuntu (non-curated)"
-msgstr "Ubuntu (nekurýrované)"
+msgstr "Ubuntu (nekontrolované)"
 
 #: src/Core/Package.vala:344
 #, c-format
 msgid "%s (non-curated)"
-msgstr "%s (nekurýrované)"
+msgstr "%s (nekontrolované)"
 
 #: src/Core/Package.vala:346
 msgid "Ubuntu Drivers"
