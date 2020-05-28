@@ -8,9 +8,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-28 18:10+0000\n"
-"PO-Revision-Date: 2020-05-28 18:10+0000\n"
+"PO-Revision-Date: 2020-05-29 19:11+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
-"Language-Team: Czech <https://l10n.elementary.io/projects/appcenter/appcenter/cs/>\n"
+"Language-Team: Czech <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,7 +28,7 @@ msgstr "Centrum Aplikací"
 #: src/Application.vala:112
 #, c-format
 msgid "Could not parse the media type %s"
-msgstr "Nedaří se zpracovat typ média %s"
+msgstr "Nedaří se rozpoznat typ média %s"
 
 #: src/Application.vala:132
 #, c-format
@@ -246,12 +247,12 @@ msgstr "Aktualizace elementary"
 
 #: src/Core/Package.vala:341
 msgid "Ubuntu (non-curated)"
-msgstr "Ubuntu (nekontrolované)"
+msgstr "Ubuntu (neprověřované)"
 
 #: src/Core/Package.vala:344
 #, c-format
 msgid "%s (non-curated)"
-msgstr "%s (nekontrolované)"
+msgstr "%s (neprověřované)"
 
 #: src/Core/Package.vala:346
 msgid "Ubuntu Drivers"
@@ -277,7 +278,7 @@ msgstr "Aktualizace operačního systému"
 
 #: src/Core/UpdateManager.vala:39
 msgid "Updates to system components"
-msgstr "Aktualizace systémových částí"
+msgstr "Aktualizace součástí systému"
 
 #: src/Core/UpdateManager.vala:87
 #, c-format
@@ -325,7 +326,10 @@ msgstr "„%s“ obsahuje nevhodný obsah"
 #: src/Dialogs/ContentWarningDialog.vala:31
 #, c-format
 msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
-msgstr "„%s“ může zahrnovat obsah vhodný pouze pro dospělé nebo může být citlivý či pohoršující. Společnost elementary obecně tento obsah nezkoumá či nepodoporučuje."
+msgstr ""
+"„%s“ může zahrnovat obsah, který je vhodný pouze pro dospělé, nebo který "
+"může být citlivý, či pohoršující. Obecně, společnost elementary tento obsah "
+"nekontroluje, či nepodporuje."
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 msgid "Show content warnings"
@@ -385,7 +389,7 @@ msgstr "Opravdu chcete restartovat?"
 
 #: src/Dialogs/RestartDialog.vala:41
 msgid "This will close all open applications and restart this device."
-msgstr "Zavře všechny běžící aplikace a restartuje zařízení."
+msgstr "Toto ukončí všechny spuštěné aplikace a počítač restartuje.."
 
 #: src/Dialogs/RestartDialog.vala:42
 msgid "Restart"
@@ -395,7 +399,7 @@ msgstr "Restartovat"
 #: src/Dialogs/StripeDialog.vala:315
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:165
 msgid "Cancel"
-msgstr "Zrušit"
+msgstr "Storno"
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
@@ -416,7 +420,7 @@ msgstr "Zaplať $%d za %s"
 
 #: src/Dialogs/StripeDialog.vala:96
 msgid "This is a one time payment. Your email address is only used to send you a receipt."
-msgstr "Toto je jednorázová platba. Na váš email bude zaslán účet."
+msgstr "Toto je jednorázová platba. Na váš e-mail bude zaslán daňový doklad."
 
 #: src/Dialogs/StripeDialog.vala:106 src/Widgets/SharePopover.vala:35
 msgid "Email"
@@ -424,7 +428,9 @@ msgstr "E-mail"
 
 #: src/Dialogs/StripeDialog.vala:108
 msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
-msgstr "Vaše emailová adresa se používá pro zaslání účtenky. Nebudete zapsán do žádného seznamu pro příjem pošty."
+msgstr ""
+"Vaše e-mailová adresa se používá pro zaslání účtenky. Nebudete zapsán do "
+"žádného seznamu pro příjem pošty."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127
@@ -462,23 +468,28 @@ msgstr "Zkusit znovu"
 
 #: src/Dialogs/StripeDialog.vala:513 src/Dialogs/StripeDialog.vala:578
 msgid "The card number is incorrect. Please try again using the correct card number."
-msgstr "Číslo karty je neplatné. Zkuste prosím znovu použít správné číslo karty."
+msgstr ""
+"Číslo karty není platné. Zkuste prosím znovu použít správné číslo karty."
 
 #: src/Dialogs/StripeDialog.vala:515
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
-msgstr "Měsíc konce platnosti je nesprávný. Zkuste prosím znovu použít správný měsíc konce platnosti."
+msgstr ""
+"Měsíc konce platnosti není správný. Zkuste prosím znovu použít správný měsíc "
+"konce platnosti."
 
 #: src/Dialogs/StripeDialog.vala:517 src/Dialogs/StripeDialog.vala:575
 msgid "The expiration year is invalid. Please try again using the correct expiration date."
-msgstr "Rok konce platnosti je nesprávný. Zkuste prosím znovu použít správné datum konce platnosti."
+msgstr ""
+"Rok konce platnosti není správný. Zkuste prosím znovu použít správné datum "
+"konce platnosti."
 
 #: src/Dialogs/StripeDialog.vala:520 src/Dialogs/StripeDialog.vala:573
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr "CVC číslo je nesprávné. Zkuste prosím znovu použít správné CVC."
+msgstr "CVC číslo není správné. Zkuste prosím znovu použít správné CVC."
 
 #: src/Dialogs/StripeDialog.vala:522 src/Dialogs/StripeDialog.vala:564
 msgid "The card has expired. Please try again with a different card."
-msgstr "Platnost karty vypršela. Zkuste to prosím znovu s jinou kartou."
+msgstr "Platnost karty skončila. Zkuste to prosím znovu s jinou kartou."
 
 #: src/Dialogs/StripeDialog.vala:542
 msgid "There are too many payment requests at the moment, please retry later."
@@ -506,11 +517,11 @@ msgstr "Nemáte dostatek peněžních prostředků. Prosím použijte jinou plat
 
 #: src/Dialogs/StripeDialog.vala:570
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr "Zadané množství není platné. Zkuste to znova s platným množstvím."
+msgstr "Zadaná částka není platná. Zkuste to znovu s platnou částkou."
 
 #: src/Dialogs/StripeDialog.vala:581
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr "CVC číslo je nesprávné. Zkuste to prosím znovu se správným CVC."
+msgstr "CVC číslo není správné. Zkuste to prosím znovu se správným CVC."
 
 #: src/Dialogs/StripeDialog.vala:583
 msgid "There has been too many PIN attempts. Please try again with a different card."
@@ -561,7 +572,7 @@ msgstr "Odebírání „%s“ se nezdařilo"
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
-msgstr "Kontrola aktualizací selhala"
+msgstr "Kontrola aktualizací se nezdařila"
 
 #: src/Dialogs/UpdateFailDialog.vala:26
 msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
@@ -577,7 +588,7 @@ msgstr "Zkuste to znova"
 
 #: src/Views/AppInfoView.vala:155
 msgid "Screenshot Not Available"
-msgstr "Screenshot není k dispozici"
+msgstr "Snímek obrazovky není k dispozici"
 
 #: src/Views/AppInfoView.vala:207
 msgid "Homepage"
@@ -643,7 +654,7 @@ msgstr "Odkaz zkopírován do schránky"
 #: src/Views/AppInfoView.vala:475
 #, c-format
 msgid "Check out %s on AppCenter:"
-msgstr "Prohlédněte si %s v AppCentru:"
+msgstr "Prohlédněte si %s v Centru aplikací:"
 
 #: src/Views/AppInfoView.vala:482
 msgid "Share"
@@ -688,7 +699,7 @@ msgstr "Nebyly nalezeny žádné aplikace. Zkuste změnit klíčová slova."
 
 #: src/Views/AppListView.vala:160
 msgid "Non-Curated Apps"
-msgstr "Ostatní aplikace"
+msgstr "Neprověřované aplikace"
 
 #: src/Views/Homepage.vala:67
 msgid "Recently Updated"
@@ -715,7 +726,7 @@ msgstr "Vyhledávání"
 
 #: src/Widgets/Banner.vala:55
 msgid "An open, pay-what-you-want app store"
-msgstr "Otevřený app store s dobrovolnými platbami"
+msgstr "Otevřený obchod s aplikacemi s dobrovolnými platbami"
 
 #: src/Widgets/Banner.vala:74
 msgid "Get the apps that you need at a price you can afford."
@@ -731,7 +742,7 @@ msgstr "Příslušenství"
 
 #: src/Widgets/CategoryFlowBox.vala:28
 msgid "Audio"
-msgstr "Audio"
+msgstr "Zvuk"
 
 #: src/Widgets/CategoryFlowBox.vala:29
 msgid "Communication"
@@ -763,7 +774,7 @@ msgstr "Internet"
 
 #: src/Widgets/CategoryFlowBox.vala:82
 msgid "Math, Science, & Engineering"
-msgstr "Věda a inženýrství"
+msgstr "Matematika, věda a technika"
 
 #: src/Widgets/CategoryFlowBox.vala:101
 msgid "Media Production"
@@ -791,7 +802,7 @@ msgstr "Psaní a jazyky"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
-msgstr "Vyžaduje platby, které nejsou povolené"
+msgstr "Vyžaduje platby, které nejsou zapnuté"
 
 #: src/Widgets/HumbleButton.vala:105
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:293
@@ -801,19 +812,19 @@ msgstr "Zdarma"
 #: src/Widgets/HumbleButton.vala:107
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:295
 msgid "Install"
-msgstr "Instalovat"
+msgstr "Nainstalovat"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:141
 #, c-format
 msgid "$%d.00"
-msgstr "$%d.00"
+msgstr "$%dUSD"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:144
 #, c-format
 msgid "$%d"
-msgstr "$%d"
+msgstr "$%dUSD"
 
 #: src/Widgets/NetworkInfoBar.vala:32
 msgid "Network Not Available."
@@ -839,7 +850,7 @@ msgstr "Neznámá verze"
 
 #: src/Widgets/ReleaseRow.vala:90 src/Widgets/ReleaseRow.vala:93
 msgid "No description available"
-msgstr "Žádný popis není dostupný"
+msgstr "Není k dispozici žádný popis"
 
 #: src/Widgets/SharePopover.vala:39
 msgid "Facebook"
@@ -863,7 +874,7 @@ msgstr "Telegram"
 
 #: src/Widgets/SharePopover.vala:59
 msgid "Copy link"
-msgstr "Kopírovat odkaz"
+msgstr "Zkopírovat odkaz"
 
 #: src/Widgets/SizeLabel.vala:35
 msgid "Actual Download Size Likely to Be Smaller"
@@ -876,7 +887,7 @@ msgstr "Stáhnou se pouze ty části aplikací a aktualizací, které jsou potř
 #: src/Widgets/SizeLabel.vala:63
 #, c-format
 msgid "Up to %s"
-msgstr "Až do %s"
+msgstr "Až po %s"
 
 #: src/Widgets/UpdateHeaderRow.vala:69
 #, c-format
