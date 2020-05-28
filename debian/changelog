@@ -1,3 +1,39 @@
+appcenter (3.4.0) bionic; urgency=medium
+
+  * Release 3.4.0 (#1343)
+  * AbstractPackageRowGrid: Set default properties in construct block
+    (#1326)
+  * Document the libpolkit-gobject-1-dev build dependency (#1340)
+  * Client: Use RDNN for notification ID (#1334)
+  * Move single-use reboot method out of utils (#1329)
+  * AppListRow: Remove unused has_package (#1328)
+  * InstalledPackageRowGrid: Use revealer for release stack (#1324)
+  * Sort search view using search term (#1301)
+  * Handle new ubuntu-drivers output for DKMS packages (#1307)
+  * AppInfoView: remove package_summary (#1315)
+  * Update translation files
+  * Update translation template
+  * AbstractAppList: move placeholders to subclasses (#1318)
+  * AbstractAppContainer: Subclass bin (#1316)
+  * AbstractPackageRowGrid: Reduce args where possible (#1313)
+  * AbstractAppList: inline namespace (#1317)
+  * MainWindow: Use a revealer to show/hide the updates badge (#1314)
+  * AppInfoView: Don't set h3 (#1312)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * Various update badge fixes (#1298)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * Add polkit action to allow updates without admin prompt (#1305)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * Cache Houston API results to GSettings (#1296)
+
+ -- elementary Builds Team <builds@elementary.io>  Thu, 28 May 2020 18:11:20 +0000
+
 appcenter (3.3.0) bionic; urgency=medium
 
   * Release 3.3.0 (#1293)
