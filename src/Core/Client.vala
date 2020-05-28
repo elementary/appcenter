@@ -79,9 +79,9 @@ public class AppCenterCore.Client : Object {
             notification.set_icon (new ThemedIcon ("system-software-install"));
             notification.set_default_action ("app.show-updates");
 
-            application.send_notification ("updates", notification);
+            application.send_notification ("io.elementary.appcenter.updates", notification);
         } else {
-            application.withdraw_notification ("updates");
+            application.withdraw_notification ("io.elementary.appcenter.updates");
         }
 
         try {

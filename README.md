@@ -18,6 +18,7 @@ You'll need the following dependencies:
 * libhandy-0.0-dev
 * libjson-glib-dev
 * libpackagekit-glib2-dev
+* libpolkit-gobject-1-dev
 * libsoup2.4-dev
 * libxml2-dev
 * libxml2-utils

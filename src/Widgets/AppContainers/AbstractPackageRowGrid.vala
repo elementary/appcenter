@@ -23,9 +23,7 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : AbstractAppCont
 
     protected AbstractPackageRowGrid (AppCenterCore.Package package) {
         Object (
-            package: package,
-            show_uninstall: false,
-            show_open: false
+            package: package
         );
     }
 
@@ -41,5 +39,8 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : AbstractAppCont
         margin = 6;
         margin_start = 12;
         margin_end = 12;
+
+        show_uninstall = false;
+        show_open = false;
     }
 }

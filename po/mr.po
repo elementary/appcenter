@@ -5,9 +5,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-13 21:12+0000\n"
-"PO-Revision-Date: 2020-04-06 14:22+0000\n"
+"PO-Revision-Date: 2020-05-27 18:11+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
-"Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/appcenter/mr/>\n"
+"Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/mr/>\n"
 "Language: mr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -336,22 +337,19 @@ msgid "Install Anyway"
 msgstr "तरीही इन्स्टॉल करा"
 
 #: src/Dialogs/InstallFailDialog.vala:26
-#, fuzzy
-#| msgid "This may have been caused by external or manually compiled software."
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
-msgstr "हे बाहेरील, मॅन्युअली जोडलेल्या सॉफ्टवेअरमुळे झाले असू शकते."
+msgstr ""
+"ही तात्पुरती समस्या असू शकते किंवा बाह्य किंवा व्यक्तिचलितपणे तयार केलेल्या "
+"सॉफ्टवेअरमुळे उद्भवली असू शकते."
 
 #: src/Dialogs/InstallFailDialog.vala:37
-#, fuzzy
-#| msgid "Failed to uninstall app"
 msgid "Failed to install app"
-msgstr "अ‍ॅप विस्थापित करण्यात अयशस्वी"
+msgstr "अ‍ॅप स्थापित करण्यात अयशस्वी"
 
 #: src/Dialogs/InstallFailDialog.vala:40
-#, fuzzy, c-format
-#| msgid "Failed to uninstall “%s”"
+#, c-format
 msgid "Failed to install “%s”"
-msgstr "\"%s\" विस्थापित करण्यात अयशस्वी"
+msgstr "\"%s\" स्थापित करण्यात अयशस्वी"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
 msgid "Non-Curated Warning"
@@ -657,14 +655,12 @@ msgid "Fund the development of this app"
 msgstr "या अॅपच्या विकासासाठी निधी द्या"
 
 #: src/Views/AppListUpdateView.vala:51
-#, fuzzy
-#| msgid "Searching for updates…"
 msgid "Checking for Updates"
-msgstr "अपडेट्स शोधत आहे …"
+msgstr "अद्यतनांसाठी तपासत आहे"
 
 #: src/Views/AppListUpdateView.vala:52
 msgid "Downloading a list of available updates to the OS and installed apps"
-msgstr ""
+msgstr "ओएस व स्थापित अ‍ॅप्ससाठी उपलब्ध अद्यतनांची सूची डाउनलोड करत आहे"
 
 #: src/Views/AppListUpdateView.vala:63
 msgid "A restart is required to complete the installation of updates"
