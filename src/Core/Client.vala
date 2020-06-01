@@ -23,7 +23,7 @@ public class AppCenterCore.Client : Object {
      */
     public signal void installed_apps_changed ();
 
-    public AppCenterCore.ScreenshotCache? screenshot_cache { get; construct; }
+    public unowned AppCenterCore.ScreenshotCache? screenshot_cache { get; construct; }
 
     private GLib.Cancellable cancellable;
 
@@ -38,7 +38,7 @@ public class AppCenterCore.Client : Object {
     private AsyncMutex update_notification_mutex = new AsyncMutex ();
 
     private Client () {
-        Object (screenshot_cache: AppCenterCore.ScreenshotCache.new_cache ());
+        Object (screenshot_cache: AppCenterCore.ScreenshotCache.get_default ());
     }
 
     construct {
