@@ -22,7 +22,7 @@ public class AppCenterCore.ScreenshotCache : GLib.Object {
     public string screenshot_path;
     private Soup.Session session;
 
-    private GLib.File? screenshot_folder;
+    private GLib.File screenshot_folder;
 
     private static ScreenshotCache? instance = null;
 
@@ -41,25 +41,21 @@ public class AppCenterCore.ScreenshotCache : GLib.Object {
         init ();
     }
 
-    private bool init () {
+    private void init () {
         screenshot_folder = GLib.File.new_for_path (screenshot_path);
 
         if (!screenshot_folder.query_exists ()) {
             try {
                 if (!screenshot_folder.make_directory_with_parents ()) {
-                    screenshot_folder = null;
-                    return false;
+                    return;
                 }
             } catch (Error e) {
                 warning ("Error creating screenshot cache folder: %s", e.message);
-                screenshot_folder = null;
-                return false;
+                return;
             }
         }
 
         maintain.begin ();
-
-        return true;
     }
 
     public static ScreenshotCache get_default () {
