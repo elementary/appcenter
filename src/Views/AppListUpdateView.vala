@@ -264,7 +264,7 @@ namespace AppCenter.Views {
             if (apps_to_update.size > 0) {
                 first_package = apps_to_update[0];
                 first_package.info_changed.connect_after (after_first_package_info_changed);
-                first_package.update.begin (() => {
+                first_package.update.begin (false, () => {
                     on_app_update_end ();
                 });
             } else {
@@ -287,7 +287,7 @@ namespace AppCenter.Views {
                 if (status != AppCenterCore.ChangeInformation.Status.CANCELLED) { /* must  be running */
                     apps_remaining_started = true;
                     for (int i = 1; i < apps_to_update.size; i++) {
-                        apps_to_update[i].update.begin (() => {
+                        apps_to_update[i].update.begin (false, () => {
                             on_app_update_end ();
                         });
                     }
@@ -322,19 +322,16 @@ namespace AppCenter.Views {
                 foreach (var row in list_box.get_children ()) {
                     if (row is Widgets.PackageRow) {
                         var pkg_row = ((Widgets.PackageRow)(row));
-                        var pkg = pkg_row.get_package ();
-
-                        /* clear update information if the package was successfully updated */
-                        /* This information is refreshed by Client on start up (log in) or at daily intervals */
-                        /* TODO: Implement refresh on demand (or on list display?) */
-                        if (pkg.state == AppCenterCore.Package.State.INSTALLED) {
-                            pkg.change_information.clear_update_info ();
-                        }
 
                         pkg_row.set_action_sensitive (true);
-                        pkg_row.changed ();
                     }
                 }
+
+                list_box.invalidate_sort ();
+
+                unowned AppCenterCore.Client client = AppCenterCore.Client.get_default ();
+                client.refresh_updates ();
+
                 return GLib.Source.REMOVE;
             });
         }
