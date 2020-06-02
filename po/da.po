@@ -1,19 +1,20 @@
 # Kaj Printz Madsen <kajprintz@gmail.com>, 2018, 2019.
 # Frederik Lund <fln8203@gmail.com>, 2019.
+# Rantyrant <diseasemonger@gmail.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-13 21:12+0000\n"
-"PO-Revision-Date: 2019-09-12 01:22+0000\n"
-"Last-Translator: Frederik Lund <fln8203@gmail.com>\n"
+"POT-Creation-Date: 2020-05-28 18:10+0000\n"
+"PO-Revision-Date: 2020-05-27 18:11+0000\n"
+"Last-Translator: Rantyrant <diseasemonger@gmail.com>\n"
 "Language-Team: Danish <https://l10n.elementary.io/projects/appcenter/appcenter/da/>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -50,158 +51,158 @@ msgstr "Hjem"
 #: src/Views/InstalledView.vala:57
 msgctxt "view"
 msgid "Installed"
-msgstr "Installerede"
+msgstr "Installeret"
 
 #: src/MainWindow.vala:182 src/MainWindow.vala:341 src/Views/SearchView.vala:54
-#: src/Views/SearchView.vala:83
+#: src/Views/SearchView.vala:84
 msgid "Search Apps"
 msgstr "Søg Apps"
 
-#: src/Utils.vala:72 src/Core/ChangeInformation.vala:92
+#: src/Utils.vala:62 src/Core/ChangeInformation.vala:92
 msgid "Starting"
 msgstr "Starter"
 
-#: src/Utils.vala:74 src/Core/ChangeInformation.vala:49
+#: src/Utils.vala:64 src/Core/ChangeInformation.vala:49
 #: src/Core/ChangeInformation.vala:64
 msgid "Waiting"
 msgstr "Venter"
 
-#: src/Utils.vala:76
+#: src/Utils.vala:66
 msgid "Running"
 msgstr "Kører"
 
-#: src/Utils.vala:78
+#: src/Utils.vala:68
 msgid "Querying"
 msgstr "Forespørger"
 
-#: src/Utils.vala:80
+#: src/Utils.vala:70
 msgid "Getting information"
 msgstr "Henter information"
 
-#: src/Utils.vala:82
+#: src/Utils.vala:72
 msgid "Removing packages"
 msgstr "Fjerner pakker"
 
-#: src/Utils.vala:84
+#: src/Utils.vala:74
 msgid "Downloading"
 msgstr "Henter"
 
-#: src/Utils.vala:86 src/Core/FlatpakBackend.vala:709
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:709
 msgid "Installing"
 msgstr "Installerer"
 
-#: src/Utils.vala:88
+#: src/Utils.vala:78
 msgid "Refreshing software list"
 msgstr "Genopfrisker softwarelisten"
 
-#: src/Utils.vala:90
+#: src/Utils.vala:80
 msgid "Installing updates"
 msgstr "Installerer opdateringer"
 
-#: src/Utils.vala:92
+#: src/Utils.vala:82
 msgid "Cleaning up packages"
 msgstr "Rydder op i pakker"
 
-#: src/Utils.vala:94
+#: src/Utils.vala:84
 msgid "Obsoleting packages"
 msgstr "Forælder pakker"
 
-#: src/Utils.vala:96
+#: src/Utils.vala:86
 msgid "Resolving dependencies"
 msgstr "Løser afhængigheder"
 
-#: src/Utils.vala:98
+#: src/Utils.vala:88
 msgid "Checking signatures"
 msgstr "Kontrollerer signaturer"
 
-#: src/Utils.vala:100
+#: src/Utils.vala:90
 msgid "Testing changes"
 msgstr "Tester ændringer"
 
-#: src/Utils.vala:102
+#: src/Utils.vala:92
 msgid "Committing changes"
 msgstr "Udfører ændringer"
 
-#: src/Utils.vala:104
+#: src/Utils.vala:94
 msgid "Requesting data"
 msgstr "Anmoder om data"
 
-#: src/Utils.vala:106 src/Core/ChangeInformation.vala:71
+#: src/Utils.vala:96 src/Core/ChangeInformation.vala:71
 msgid "Finished"
 msgstr "Færdig"
 
-#: src/Utils.vala:108 src/Core/ChangeInformation.vala:79
+#: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
 #: src/Core/FlatpakBackend.vala:718 src/Core/FlatpakBackend.vala:746
 #: src/Core/FlatpakBackend.vala:823 src/Core/FlatpakBackend.vala:924
 #: src/Core/FlatpakBackend.vala:950
 msgid "Cancelling"
 msgstr "Afbryder"
 
-#: src/Utils.vala:110
+#: src/Utils.vala:100
 msgid "Downloading repository information"
 msgstr "Henter information om pakkearkiv"
 
-#: src/Utils.vala:112
+#: src/Utils.vala:102
 msgid "Downloading list of packages"
 msgstr "Henter pakkeliste"
 
-#: src/Utils.vala:114
+#: src/Utils.vala:104
 msgid "Downloading file lists"
 msgstr "Henter fillister"
 
-#: src/Utils.vala:116
+#: src/Utils.vala:106
 msgid "Downloading lists of changes"
 msgstr "Henter liste over ændringer"
 
-#: src/Utils.vala:118
+#: src/Utils.vala:108
 msgid "Downloading groups"
 msgstr "Henter grupper"
 
-#: src/Utils.vala:120
+#: src/Utils.vala:110
 msgid "Downloading update information"
 msgstr "Henter opdateringsinformation"
 
-#: src/Utils.vala:122
+#: src/Utils.vala:112
 msgid "Repackaging files"
 msgstr "Genpakker filer"
 
-#: src/Utils.vala:124
+#: src/Utils.vala:114
 msgid "Loading cache"
 msgstr "Indlæser cache"
 
-#: src/Utils.vala:126
+#: src/Utils.vala:116
 msgid "Scanning applications"
 msgstr "Skanner applikationer"
 
-#: src/Utils.vala:128
+#: src/Utils.vala:118
 msgid "Generating package lists"
 msgstr "Genererer pakkelister"
 
-#: src/Utils.vala:130
+#: src/Utils.vala:120
 msgid "Waiting for package manager lock"
 msgstr "Venter på pakkehåndteringslås"
 
-#: src/Utils.vala:132
+#: src/Utils.vala:122
 msgid "Waiting for authentication"
 msgstr "Venter på godkendelse"
 
-#: src/Utils.vala:134
+#: src/Utils.vala:124
 msgid "Updating running applications"
 msgstr "Opdaterer kørende applikationer"
 
-#: src/Utils.vala:136
+#: src/Utils.vala:126
 msgid "Checking applications in use"
 msgstr "Kontrollerer applikationer i brug"
 
-#: src/Utils.vala:138
+#: src/Utils.vala:128
 msgid "Checking libraries in use"
 msgstr "Kontrollerer biblioteker som er i brug"
 
-#: src/Utils.vala:140
+#: src/Utils.vala:130
 msgid "Copying files"
 msgstr "Kopierer filer"
 
-#: src/Utils.vala:142
+#: src/Utils.vala:132
 msgid "Unknown state"
 msgstr "Ukendt tilstand"
 
@@ -219,22 +220,16 @@ msgstr[0] "%u opdatering tilgængelig til dit system"
 msgstr[1] "%u opdateringer tilgængelige til dit system"
 
 #: src/Core/FlatpakBackend.vala:815
-#, fuzzy
-#| msgid "Uninstall"
 msgid "Uninstalling"
-msgstr "Afinstaller"
+msgstr "Afinstallerer"
 
 #: src/Core/FlatpakBackend.vala:820
-#, fuzzy
-#| msgid "Finished"
 msgid "Finishing"
-msgstr "Færdig"
+msgstr "Færdiggører"
 
 #: src/Core/FlatpakBackend.vala:915
-#, fuzzy
-#| msgid "Update"
 msgid "Updating"
-msgstr "Opdater"
+msgstr "Opdaterer"
 
 #: src/Core/Package.vala:307
 #, c-format
@@ -242,35 +237,33 @@ msgid "%s Developers"
 msgstr "%s Udviklere"
 
 #: src/Core/Package.vala:339
-#, fuzzy
 msgid "elementary Updates"
-msgstr "Nyligt Opdaterede"
+msgstr "elementary Opdateringer"
 
 #: src/Core/Package.vala:341
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (Ikke-kurateret)"
 
 #: src/Core/Package.vala:344
-#, fuzzy, c-format
+#, c-format
 msgid "%s (non-curated)"
-msgstr "%s (lokalt)"
+msgstr "%s ((Ikke-kurateret))"
 
 #: src/Core/Package.vala:346
-#, fuzzy
 msgid "Ubuntu Drivers"
-msgstr "Drivere"
+msgstr "Ubuntu Drivere"
 
 #: src/Core/Package.vala:349
 msgid "Unknown Origin (non-curated)"
-msgstr ""
+msgstr "Ukendt Oprindelse (ikke-kurateret)"
 
 #: src/Core/Package.vala:459
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
-msgstr ""
+msgstr "Applikations tilstanden er ikke sat som installeret  i AppCenteret for pakken: %s"
 
 #: src/Core/PackageKitBackend.vala:263
-#, fuzzy, c-format
+#, c-format
 msgid "%s (local)"
 msgstr "%s (lokalt)"
 
@@ -289,7 +282,7 @@ msgstr "Version: %s"
 
 #: src/Core/UpdateManager.vala:118
 msgid "Flatpak runtime"
-msgstr ""
+msgstr "Flatpak runtime"
 
 #: src/Core/UpdateManager.vala:135
 msgid "No components with updates"
@@ -320,14 +313,14 @@ msgid "Content Warning"
 msgstr "Indholdsadvarsel"
 
 #: src/Dialogs/ContentWarningDialog.vala:30
-#, fuzzy, c-format
+#, c-format
 msgid "“%s” contains explicit content"
-msgstr "%s Indeholder Eksplicit Indhold"
+msgstr "\"%s\" indeholder eksplicit indhold"
 
 #: src/Dialogs/ContentWarningDialog.vala:31
-#, fuzzy, c-format
+#, c-format
 msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
-msgstr "%s kan have indhold, der kun er egnet for voksne, eller som kan være af en følsom eller stødende natur. Generelt vurderer eller støtter elementary ikke indholdet af denne app."
+msgstr "\"%s\" kan have indhold, der kun er egnet for voksne, eller som kan være af en følsom eller stødende natur. Generelt reviderer eller støtter elementary ikke indholdet af denne app."
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 msgid "Show content warnings"
@@ -344,47 +337,40 @@ msgid "Install Anyway"
 msgstr "Installer Alligevel"
 
 #: src/Dialogs/InstallFailDialog.vala:26
-#, fuzzy
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
-msgstr "Dette kan have været forårsaget af eksterne manuelt tilføjede software repositories eller en beskadiget kilde fil."
+msgstr "Dette kan være et midlertidigt problem eller være forårsaget af et eksternt eller manuelt kompileret software."
 
 #: src/Dialogs/InstallFailDialog.vala:37
-#, fuzzy
 msgid "Failed to install app"
-msgstr "Find og installer apps"
+msgstr "Appen kunne ikke installeres"
 
 #: src/Dialogs/InstallFailDialog.vala:40
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to install “%s”"
-msgstr "Find og installer apps"
+msgstr "\"%s\" kunne ikke installeres"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
-#, fuzzy
-#| msgid "Content Warning"
 msgid "Non-Curated Warning"
 msgstr "Indholdsadvarsel"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:37
-#, fuzzy
 msgid "Install non-curated app?"
-msgstr "%s (lokalt)"
+msgstr "Installere ikke-kurateret app?"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
 msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-msgstr ""
+msgstr "\"%s\" er ikke kurateret af elementary, og er ikke blevet revideret for sikkerhed, privatliv, eller system integration."
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
 msgid "It may not receive bug fix or feature updates"
-msgstr ""
+msgstr "Det modtager muligvis ikke bug fix eller funktionsopdateringer"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:60
 msgid "It may access or change system or personal files without permission"
-msgstr ""
+msgstr "Det kan få adgang til eller ændre system- eller personlige filer uden tilladelse"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
-#, fuzzy
-#| msgid "Show content warnings"
 msgid "Show non-curated warnings"
 msgstr "Vis indholds advarsler"
 
@@ -402,7 +388,7 @@ msgstr "Genstart"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:177
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:165
 msgid "Cancel"
 msgstr "Annuller"
 
@@ -539,37 +525,34 @@ msgstr "Det givne kort er et testkort. Brug venligst et gyldigt kort for at fort
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
-msgstr ""
+msgstr "Afinstallering af denne app sletter måske også dens data."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:35
-#, fuzzy
 msgid "Uninstall app?"
-msgstr "Afinstaller"
+msgstr "Afinstaller applikation?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:38
-#, fuzzy, c-format
+#, c-format
 msgid "Uninstall “%s”?"
-msgstr "Afinstaller"
+msgstr "Afinstaller \"%s\"?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:144
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:132
 msgid "Uninstall"
 msgstr "Afinstaller"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
-#, fuzzy
 msgid "This may have been caused by external or manually compiled software."
-msgstr "Dette kan have været forårsaget af eksterne manuelt tilføjede software repositories eller en beskadiget kilde fil."
+msgstr "Dette kan have været forårsaget af et eksternt tilføjet eller manuelt kompileret software."
 
 #: src/Dialogs/UninstallFailDialog.vala:37
-#, fuzzy
 msgid "Failed to uninstall app"
-msgstr "Find og installer apps"
+msgstr "Det lykkedes ikke at afinstallere applikationen"
 
 #: src/Dialogs/UninstallFailDialog.vala:40
 #, c-format
 msgid "Failed to uninstall “%s”"
-msgstr ""
+msgstr "Det lykkedes ikke at afinstallere \"%s\""
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
@@ -587,99 +570,95 @@ msgstr "Ignorér"
 msgid "Try Again"
 msgstr "Prøv Igen"
 
-#: src/Views/AppInfoView.vala:154
+#: src/Views/AppInfoView.vala:155
 msgid "Screenshot Not Available"
 msgstr "Skærmbillede er Ikke Tilgængeligt"
 
-#: src/Views/AppInfoView.vala:205
+#: src/Views/AppInfoView.vala:207
 msgid "Homepage"
 msgstr "Startside"
 
-#: src/Views/AppInfoView.vala:211
+#: src/Views/AppInfoView.vala:213
 msgid "Suggest Translations"
 msgstr "Foreslå Oversættelser"
 
-#: src/Views/AppInfoView.vala:217
+#: src/Views/AppInfoView.vala:219
 msgid "Report a Problem"
 msgstr "Rapporter et Problem"
 
-#: src/Views/AppInfoView.vala:223
+#: src/Views/AppInfoView.vala:225
 msgid "Help"
 msgstr "Hjælp"
 
-#: src/Views/AppInfoView.vala:234
+#: src/Views/AppInfoView.vala:236
 msgid "What's New:"
 msgstr "Hvad er Nyt:"
 
-#: src/Views/AppInfoView.vala:269
+#: src/Views/AppInfoView.vala:271
 msgid "Extensions:"
 msgstr "Udvidelser:"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:358
+#: src/Views/AppInfoView.vala:360
 msgid "Public Domain"
-msgstr ""
+msgstr "Offentligt Domæne"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:361
+#: src/Views/AppInfoView.vala:363
 msgid "https://en.wikipedia.org/wiki/Public_domain"
-msgstr ""
+msgstr "https://da.wikipedia.org/wiki/Offentligt_dom%C3%A6ne"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:366
-#, fuzzy
+#: src/Views/AppInfoView.vala:368
 msgid "Free Software"
-msgstr "Rediger kilde-software"
+msgstr "Fri Software"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:369
+#: src/Views/AppInfoView.vala:371
 msgid "https://www.gnu.org/philosophy/free-sw"
-msgstr ""
+msgstr "https://www.gnu.org/philosophy/free-sw.da.html"
 
-#: src/Views/AppInfoView.vala:373
+#: src/Views/AppInfoView.vala:375
 msgid "Proprietary"
-msgstr ""
+msgstr "Proprietær"
 
-#: src/Views/AppInfoView.vala:376
-#, fuzzy
+#: src/Views/AppInfoView.vala:378
 msgid "Unknown License"
-msgstr "Ukendt tilstand"
+msgstr "Ukendt Licens"
 
-#: src/Views/AppInfoView.vala:425
+#: src/Views/AppInfoView.vala:427
 #, c-format
 msgid "Other Apps by %s"
 msgstr "Andre Apps af %s"
 
-#: src/Views/AppInfoView.vala:462
+#: src/Views/AppInfoView.vala:464
 msgid "Link copied to clipboard"
 msgstr "Link kopieret til udklipsholder"
 
-#: src/Views/AppInfoView.vala:473
+#: src/Views/AppInfoView.vala:475
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "Check %s ud på AppCenter:"
 
-#: src/Views/AppInfoView.vala:480
+#: src/Views/AppInfoView.vala:482
 msgid "Share"
 msgstr "Del"
 
-#: src/Views/AppInfoView.vala:814
+#: src/Views/AppInfoView.vala:816
 msgid "Fund"
 msgstr "Finansier"
 
-#: src/Views/AppInfoView.vala:836
+#: src/Views/AppInfoView.vala:838
 msgid "Fund the development of this app"
 msgstr "Finansier udviklingen af denne app"
 
 #: src/Views/AppListUpdateView.vala:51
-#, fuzzy
-#| msgid "Searching for updates…"
 msgid "Checking for Updates"
-msgstr "Søger efter opdateringer…"
+msgstr "Søger efter opdateringer"
 
 #: src/Views/AppListUpdateView.vala:52
 msgid "Downloading a list of available updates to the OS and installed apps"
-msgstr ""
+msgstr "Henter en liste af tilgængelige opdateringer til operativ systemet og dets installerede applikationer"
 
 #: src/Views/AppListUpdateView.vala:63
 msgid "A restart is required to complete the installation of updates"
@@ -690,19 +669,19 @@ msgid "Restart Now"
 msgstr "Genstart Nu"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:210
+#: src/Views/AppListUpdateView.vala:215
 msgid "Update All"
 msgstr "Opdatér alle"
 
-#: src/Views/AppListView.vala:29
+#: src/Views/AppListView.vala:30
 msgid "No Results"
 msgstr "Ingen Resultater"
 
-#: src/Views/AppListView.vala:30
+#: src/Views/AppListView.vala:31
 msgid "No apps could be found. Try changing search terms."
 msgstr "Ingen apps blev fundet. Prøv at ændre søgeord."
 
-#: src/Views/AppListView.vala:146
+#: src/Views/AppListView.vala:160
 msgid "Non-Curated Apps"
 msgstr "Ikke-Kuraterede Apps"
 
@@ -810,12 +789,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "Kræver betaling, som ikke er aktiveret"
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:305
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:293
 msgid "Free"
 msgstr "Gratis"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:307
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:295
 msgid "Install"
 msgstr "Installer"
 
@@ -832,12 +811,10 @@ msgid "$%d"
 msgstr "$%d"
 
 #: src/Widgets/NetworkInfoBar.vala:32
-#, fuzzy
 msgid "Network Not Available."
-msgstr "Netværk er Ikke Tilgængeligt"
+msgstr "Netværket Er Utilgængeligt."
 
 #: src/Widgets/NetworkInfoBar.vala:33
-#, fuzzy
 msgid "Connect to the Internet to browse and install apps."
 msgstr "Forbind til internettet for at installere eller opdatere apps."
 
@@ -885,16 +862,16 @@ msgstr "Kopier link"
 
 #: src/Widgets/SizeLabel.vala:35
 msgid "Actual Download Size Likely to Be Smaller"
-msgstr ""
+msgstr "Den Virkelige Download Størrelse Er Sandsynligvis Mindrere"
 
 #: src/Widgets/SizeLabel.vala:36
 msgid "Only the parts of apps and updates that are needed will be downloaded."
-msgstr ""
+msgstr "Kun de dele af applikationer og opdateringer der skal bruge vil blive downloadet."
 
 #: src/Widgets/SizeLabel.vala:63
-#, fuzzy, c-format
+#, c-format
 msgid "Up to %s"
-msgstr "Up to Date"
+msgstr "Up to %s"
 
 #: src/Widgets/UpdateHeaderRow.vala:69
 #, c-format
@@ -915,11 +892,11 @@ msgstr "Up to Date"
 msgid "Drivers"
 msgstr "Drivere"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:153
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:141
 msgid "Open"
 msgstr "Åben"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:330
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:318
 msgid "Update"
 msgstr "Opdater"
 

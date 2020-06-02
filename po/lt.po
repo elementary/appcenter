@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-13 21:12+0000\n"
+"POT-Creation-Date: 2020-05-28 18:10+0000\n"
 "PO-Revision-Date: 2019-10-12 13:23+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://l10n.elementary.io/projects/appcenter/appcenter/lt/>\n"
@@ -52,155 +52,155 @@ msgid "Installed"
 msgstr "Įdiegtos"
 
 #: src/MainWindow.vala:182 src/MainWindow.vala:341 src/Views/SearchView.vala:54
-#: src/Views/SearchView.vala:83
+#: src/Views/SearchView.vala:84
 msgid "Search Apps"
 msgstr "Ieškoti programų"
 
-#: src/Utils.vala:72 src/Core/ChangeInformation.vala:92
+#: src/Utils.vala:62 src/Core/ChangeInformation.vala:92
 msgid "Starting"
 msgstr "Pradedama"
 
-#: src/Utils.vala:74 src/Core/ChangeInformation.vala:49
+#: src/Utils.vala:64 src/Core/ChangeInformation.vala:49
 #: src/Core/ChangeInformation.vala:64
 msgid "Waiting"
 msgstr "Laukiama"
 
-#: src/Utils.vala:76
+#: src/Utils.vala:66
 msgid "Running"
 msgstr "Vykdoma"
 
-#: src/Utils.vala:78
+#: src/Utils.vala:68
 msgid "Querying"
 msgstr "Užklausiama"
 
-#: src/Utils.vala:80
+#: src/Utils.vala:70
 msgid "Getting information"
 msgstr "Gaunama informacija"
 
-#: src/Utils.vala:82
+#: src/Utils.vala:72
 msgid "Removing packages"
 msgstr "Šalinami paketai"
 
-#: src/Utils.vala:84
+#: src/Utils.vala:74
 msgid "Downloading"
 msgstr "Atsiunčiama"
 
-#: src/Utils.vala:86 src/Core/FlatpakBackend.vala:709
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:709
 msgid "Installing"
 msgstr "Diegiama"
 
-#: src/Utils.vala:88
+#: src/Utils.vala:78
 msgid "Refreshing software list"
 msgstr "Iš naujo įkeliamas programinės įrangos sąrašas"
 
-#: src/Utils.vala:90
+#: src/Utils.vala:80
 msgid "Installing updates"
 msgstr "Įdiegiami atnaujinimai"
 
-#: src/Utils.vala:92
+#: src/Utils.vala:82
 msgid "Cleaning up packages"
 msgstr "Išvalomi paketai"
 
-#: src/Utils.vala:94
+#: src/Utils.vala:84
 msgid "Obsoleting packages"
 msgstr "Žymimi pasenę paketai"
 
-#: src/Utils.vala:96
+#: src/Utils.vala:86
 msgid "Resolving dependencies"
 msgstr "Tikrinamos priklausomybės"
 
-#: src/Utils.vala:98
+#: src/Utils.vala:88
 msgid "Checking signatures"
 msgstr "Tikrinami parašai"
 
-#: src/Utils.vala:100
+#: src/Utils.vala:90
 msgid "Testing changes"
 msgstr "Išbandomi pakeitimai"
 
-#: src/Utils.vala:102
+#: src/Utils.vala:92
 msgid "Committing changes"
 msgstr "Patvirtinami pakeitimai"
 
-#: src/Utils.vala:104
+#: src/Utils.vala:94
 msgid "Requesting data"
 msgstr "Užklausiami duomenys"
 
-#: src/Utils.vala:106 src/Core/ChangeInformation.vala:71
+#: src/Utils.vala:96 src/Core/ChangeInformation.vala:71
 msgid "Finished"
 msgstr "Užbaigta"
 
-#: src/Utils.vala:108 src/Core/ChangeInformation.vala:79
+#: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
 #: src/Core/FlatpakBackend.vala:718 src/Core/FlatpakBackend.vala:746
 #: src/Core/FlatpakBackend.vala:823 src/Core/FlatpakBackend.vala:924
 #: src/Core/FlatpakBackend.vala:950
 msgid "Cancelling"
 msgstr "Atšaukiama"
 
-#: src/Utils.vala:110
+#: src/Utils.vala:100
 msgid "Downloading repository information"
 msgstr "Atsiunčiama saugyklos informacija"
 
-#: src/Utils.vala:112
+#: src/Utils.vala:102
 msgid "Downloading list of packages"
 msgstr "Atsiunčiamas paketų sąrašas"
 
-#: src/Utils.vala:114
+#: src/Utils.vala:104
 msgid "Downloading file lists"
 msgstr "Atsiunčiami failų sąrašai"
 
-#: src/Utils.vala:116
+#: src/Utils.vala:106
 msgid "Downloading lists of changes"
 msgstr "Atsiunčiami pakeitimų sąrašai"
 
-#: src/Utils.vala:118
+#: src/Utils.vala:108
 msgid "Downloading groups"
 msgstr "Atsiunčiamos grupės"
 
-#: src/Utils.vala:120
+#: src/Utils.vala:110
 msgid "Downloading update information"
 msgstr "Atsiunčiama atnaujinimo informacija"
 
-#: src/Utils.vala:122
+#: src/Utils.vala:112
 msgid "Repackaging files"
 msgstr "Iš naujo pakuojami failai"
 
-#: src/Utils.vala:124
+#: src/Utils.vala:114
 msgid "Loading cache"
 msgstr "Įkeliamas podėlis"
 
-#: src/Utils.vala:126
+#: src/Utils.vala:116
 msgid "Scanning applications"
 msgstr "Peržvelgiamos programos"
 
-#: src/Utils.vala:128
+#: src/Utils.vala:118
 msgid "Generating package lists"
 msgstr "Kuriami paketų sąrašai"
 
-#: src/Utils.vala:130
+#: src/Utils.vala:120
 msgid "Waiting for package manager lock"
 msgstr "Laukiama paketų tvarkytuvės užrakto"
 
-#: src/Utils.vala:132
+#: src/Utils.vala:122
 msgid "Waiting for authentication"
 msgstr "Laukiama tapatybės nustatymo"
 
-#: src/Utils.vala:134
+#: src/Utils.vala:124
 msgid "Updating running applications"
 msgstr "Atnaujinamos vykdomos programos"
 
-#: src/Utils.vala:136
+#: src/Utils.vala:126
 msgid "Checking applications in use"
 msgstr "Tikrinamos naudojamos programos"
 
-#: src/Utils.vala:138
+#: src/Utils.vala:128
 msgid "Checking libraries in use"
 msgstr "Tikrinamos naudojamos bibliotekos"
 
-#: src/Utils.vala:140
+#: src/Utils.vala:130
 msgid "Copying files"
 msgstr "Kopijuojami failai"
 
-#: src/Utils.vala:142
+#: src/Utils.vala:132
 msgid "Unknown state"
 msgstr "Nežinoma būsena"
 
@@ -408,7 +408,7 @@ msgstr "Paleisti iš naujo"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:177
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:165
 msgid "Cancel"
 msgstr "Atsisakyti"
 
@@ -557,7 +557,7 @@ msgid "Uninstall “%s”?"
 msgstr "Pašalinti \"%s\"?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:144
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:132
 msgid "Uninstall"
 msgstr "Šalinti"
 
@@ -590,85 +590,85 @@ msgstr "Nepaisyti"
 msgid "Try Again"
 msgstr "Bandyti dar kartą"
 
-#: src/Views/AppInfoView.vala:154
+#: src/Views/AppInfoView.vala:155
 msgid "Screenshot Not Available"
 msgstr "Ekrano kopija neprieinama"
 
-#: src/Views/AppInfoView.vala:205
+#: src/Views/AppInfoView.vala:207
 msgid "Homepage"
 msgstr "Tinklalapis"
 
-#: src/Views/AppInfoView.vala:211
+#: src/Views/AppInfoView.vala:213
 msgid "Suggest Translations"
 msgstr "Siūlyti vertimus"
 
-#: src/Views/AppInfoView.vala:217
+#: src/Views/AppInfoView.vala:219
 msgid "Report a Problem"
 msgstr "Pranešti apie problemą"
 
-#: src/Views/AppInfoView.vala:223
+#: src/Views/AppInfoView.vala:225
 msgid "Help"
 msgstr "Žinynas"
 
-#: src/Views/AppInfoView.vala:234
+#: src/Views/AppInfoView.vala:236
 msgid "What's New:"
 msgstr "Kas naujo:"
 
-#: src/Views/AppInfoView.vala:269
+#: src/Views/AppInfoView.vala:271
 msgid "Extensions:"
 msgstr "Plėtiniai:"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:358
+#: src/Views/AppInfoView.vala:360
 msgid "Public Domain"
 msgstr "Viešojo naudojimo"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:361
+#: src/Views/AppInfoView.vala:363
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://lt.wikipedia.org/wiki/Vie%C5%A1o_naudojimo_k%C5%ABrinys"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:366
+#: src/Views/AppInfoView.vala:368
 msgid "Free Software"
 msgstr "Laisvoji programinė įranga"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:369
+#: src/Views/AppInfoView.vala:371
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw.lt.html"
 
-#: src/Views/AppInfoView.vala:373
+#: src/Views/AppInfoView.vala:375
 msgid "Proprietary"
 msgstr "Nuosavybinė"
 
-#: src/Views/AppInfoView.vala:376
+#: src/Views/AppInfoView.vala:378
 msgid "Unknown License"
 msgstr "Nežinoma licencija"
 
-#: src/Views/AppInfoView.vala:425
+#: src/Views/AppInfoView.vala:427
 #, c-format
 msgid "Other Apps by %s"
 msgstr "Kitos %s programos"
 
-#: src/Views/AppInfoView.vala:462
+#: src/Views/AppInfoView.vala:464
 msgid "Link copied to clipboard"
 msgstr "Nuoroda nukopijuota į iškarpinę"
 
-#: src/Views/AppInfoView.vala:473
+#: src/Views/AppInfoView.vala:475
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "Išbandyk %s iš Programų centro:"
 
-#: src/Views/AppInfoView.vala:480
+#: src/Views/AppInfoView.vala:482
 msgid "Share"
 msgstr "Dalintis"
 
-#: src/Views/AppInfoView.vala:814
+#: src/Views/AppInfoView.vala:816
 msgid "Fund"
 msgstr "Paremti"
 
-#: src/Views/AppInfoView.vala:836
+#: src/Views/AppInfoView.vala:838
 msgid "Fund the development of this app"
 msgstr "Paremti šios programos kūrėją"
 
@@ -691,19 +691,19 @@ msgid "Restart Now"
 msgstr "Paleisti iš naujo dabar"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:210
+#: src/Views/AppListUpdateView.vala:215
 msgid "Update All"
 msgstr "Atnaujinti viską"
 
-#: src/Views/AppListView.vala:29
+#: src/Views/AppListView.vala:30
 msgid "No Results"
 msgstr "Rezultatų nėra"
 
-#: src/Views/AppListView.vala:30
+#: src/Views/AppListView.vala:31
 msgid "No apps could be found. Try changing search terms."
 msgstr "Nepavyko rasti jokių programų. Pabandykite pakeisti paieškos žodžius."
 
-#: src/Views/AppListView.vala:146
+#: src/Views/AppListView.vala:160
 msgid "Non-Curated Apps"
 msgstr "Nekuruojamos programos"
 
@@ -811,12 +811,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "Reikalauja mokėjimų, kurie savo ruožtu nėra įjungti"
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:305
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:293
 msgid "Free"
 msgstr "Nemokamai"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:307
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:295
 msgid "Install"
 msgstr "Įdiegti"
 
@@ -915,11 +915,11 @@ msgstr "Atnaujintos"
 msgid "Drivers"
 msgstr "Tvarkyklės"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:153
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:141
 msgid "Open"
 msgstr "Atverti"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:330
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:318
 msgid "Update"
 msgstr "Atnaujinti"
 

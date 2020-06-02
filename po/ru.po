@@ -1,18 +1,19 @@
 # Kirill Romanov <djaler1@gmail.com>, 2018, 2019.
+# Navalnyan <mk9seven@gmail.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-13 21:12+0000\n"
-"PO-Revision-Date: 2019-01-07 00:02+0000\n"
-"Last-Translator: Kirill Romanov <djaler1@gmail.com>\n"
-"Language-Team: Russian <https://weblate.elementary.io/projects/appcenter/appcenter/ru/>\n"
+"POT-Creation-Date: 2020-05-28 18:10+0000\n"
+"PO-Revision-Date: 2020-05-26 13:11+0000\n"
+"Last-Translator: Navalnyan <mk9seven@gmail.com>\n"
+"Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/appcenter/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -21,9 +22,9 @@ msgid "AppCenter"
 msgstr "AppCenter"
 
 #: src/Application.vala:112
-#, fuzzy, c-format
+#, c-format
 msgid "Could not parse the media type %s"
-msgstr "Не удалось распознать mime-тип %s"
+msgstr "Не удалось распознать тип данных %s"
 
 #: src/Application.vala:132
 #, c-format
@@ -52,155 +53,155 @@ msgid "Installed"
 msgstr "Установленные"
 
 #: src/MainWindow.vala:182 src/MainWindow.vala:341 src/Views/SearchView.vala:54
-#: src/Views/SearchView.vala:83
+#: src/Views/SearchView.vala:84
 msgid "Search Apps"
 msgstr "Поиск приложений"
 
-#: src/Utils.vala:72 src/Core/ChangeInformation.vala:92
+#: src/Utils.vala:62 src/Core/ChangeInformation.vala:92
 msgid "Starting"
 msgstr "Запуск"
 
-#: src/Utils.vala:74 src/Core/ChangeInformation.vala:49
+#: src/Utils.vala:64 src/Core/ChangeInformation.vala:49
 #: src/Core/ChangeInformation.vala:64
 msgid "Waiting"
 msgstr "Ожидание"
 
-#: src/Utils.vala:76
+#: src/Utils.vala:66
 msgid "Running"
 msgstr "Выполнение"
 
-#: src/Utils.vala:78
+#: src/Utils.vala:68
 msgid "Querying"
 msgstr "Запрос"
 
-#: src/Utils.vala:80
+#: src/Utils.vala:70
 msgid "Getting information"
 msgstr "Получение информации"
 
-#: src/Utils.vala:82
+#: src/Utils.vala:72
 msgid "Removing packages"
 msgstr "Удаление пакетов"
 
-#: src/Utils.vala:84
+#: src/Utils.vala:74
 msgid "Downloading"
 msgstr "Загрузка"
 
-#: src/Utils.vala:86 src/Core/FlatpakBackend.vala:709
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:709
 msgid "Installing"
 msgstr "Установка"
 
-#: src/Utils.vala:88
+#: src/Utils.vala:78
 msgid "Refreshing software list"
 msgstr "Обновление списка программ"
 
-#: src/Utils.vala:90
+#: src/Utils.vala:80
 msgid "Installing updates"
 msgstr "Установка обновлений"
 
-#: src/Utils.vala:92
+#: src/Utils.vala:82
 msgid "Cleaning up packages"
 msgstr "Очистка пакетов"
 
-#: src/Utils.vala:94
+#: src/Utils.vala:84
 msgid "Obsoleting packages"
 msgstr "Замена пакетов"
 
-#: src/Utils.vala:96
+#: src/Utils.vala:86
 msgid "Resolving dependencies"
 msgstr "Разрешение зависимостей"
 
-#: src/Utils.vala:98
+#: src/Utils.vala:88
 msgid "Checking signatures"
 msgstr "Проверка подписей"
 
-#: src/Utils.vala:100
+#: src/Utils.vala:90
 msgid "Testing changes"
 msgstr "Проверка изменений"
 
-#: src/Utils.vala:102
+#: src/Utils.vala:92
 msgid "Committing changes"
 msgstr "Применение изменений"
 
-#: src/Utils.vala:104
+#: src/Utils.vala:94
 msgid "Requesting data"
 msgstr "Запрос данных"
 
-#: src/Utils.vala:106 src/Core/ChangeInformation.vala:71
+#: src/Utils.vala:96 src/Core/ChangeInformation.vala:71
 msgid "Finished"
 msgstr "Завершено"
 
-#: src/Utils.vala:108 src/Core/ChangeInformation.vala:79
+#: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
 #: src/Core/FlatpakBackend.vala:718 src/Core/FlatpakBackend.vala:746
 #: src/Core/FlatpakBackend.vala:823 src/Core/FlatpakBackend.vala:924
 #: src/Core/FlatpakBackend.vala:950
 msgid "Cancelling"
 msgstr "Отмена"
 
-#: src/Utils.vala:110
+#: src/Utils.vala:100
 msgid "Downloading repository information"
 msgstr "Загрузка информации из репозитория"
 
-#: src/Utils.vala:112
+#: src/Utils.vala:102
 msgid "Downloading list of packages"
 msgstr "Загрузка списка пакетов"
 
-#: src/Utils.vala:114
+#: src/Utils.vala:104
 msgid "Downloading file lists"
 msgstr "Загрузка списка файлов"
 
-#: src/Utils.vala:116
+#: src/Utils.vala:106
 msgid "Downloading lists of changes"
 msgstr "Загрузка списка изменений"
 
-#: src/Utils.vala:118
+#: src/Utils.vala:108
 msgid "Downloading groups"
 msgstr "Загрузка групп"
 
-#: src/Utils.vala:120
+#: src/Utils.vala:110
 msgid "Downloading update information"
 msgstr "Загрузка информации об обновлении"
 
-#: src/Utils.vala:122
+#: src/Utils.vala:112
 msgid "Repackaging files"
 msgstr "Перепаковка файлов"
 
-#: src/Utils.vala:124
+#: src/Utils.vala:114
 msgid "Loading cache"
 msgstr "Загрузка кэша"
 
-#: src/Utils.vala:126
+#: src/Utils.vala:116
 msgid "Scanning applications"
 msgstr "Сканирование приложений"
 
-#: src/Utils.vala:128
+#: src/Utils.vala:118
 msgid "Generating package lists"
 msgstr "Создание списка пакетов"
 
-#: src/Utils.vala:130
+#: src/Utils.vala:120
 msgid "Waiting for package manager lock"
 msgstr "Ожидание блокировки менеджера пакетов"
 
-#: src/Utils.vala:132
+#: src/Utils.vala:122
 msgid "Waiting for authentication"
 msgstr "Ожидание аутентификации"
 
-#: src/Utils.vala:134
+#: src/Utils.vala:124
 msgid "Updating running applications"
 msgstr "Обновление запущенных приложений"
 
-#: src/Utils.vala:136
+#: src/Utils.vala:126
 msgid "Checking applications in use"
 msgstr "Проверка используемых приложений"
 
-#: src/Utils.vala:138
+#: src/Utils.vala:128
 msgid "Checking libraries in use"
 msgstr "Проверка используемых библиотек"
 
-#: src/Utils.vala:140
+#: src/Utils.vala:130
 msgid "Copying files"
 msgstr "Копирование файлов"
 
-#: src/Utils.vala:142
+#: src/Utils.vala:132
 msgid "Unknown state"
 msgstr "Неизвестное состояние"
 
@@ -220,10 +221,8 @@ msgstr[1] "Для системы доступны %u обновления"
 msgstr[2] "Для системы доступны %u обновлений"
 
 #: src/Core/FlatpakBackend.vala:815
-#, fuzzy
-#| msgid "Uninstall"
 msgid "Uninstalling"
-msgstr "Удалить"
+msgstr "Деинсталляция"
 
 #: src/Core/FlatpakBackend.vala:820
 #, fuzzy
@@ -232,15 +231,13 @@ msgid "Finishing"
 msgstr "Завершено"
 
 #: src/Core/FlatpakBackend.vala:915
-#, fuzzy
-#| msgid "Update"
 msgid "Updating"
-msgstr "Обновить"
+msgstr "Обновление"
 
 #: src/Core/Package.vala:307
 #, c-format
 msgid "%s Developers"
-msgstr "Разработчики %s"
+msgstr "%s Разработчики"
 
 #: src/Core/Package.vala:339
 #, fuzzy
@@ -403,7 +400,7 @@ msgstr "Перезагрузить"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:177
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:165
 msgid "Cancel"
 msgstr "Отменить"
 
@@ -554,7 +551,7 @@ msgid "Uninstall “%s”?"
 msgstr "Удалить"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:144
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:132
 msgid "Uninstall"
 msgstr "Удалить"
 
@@ -589,87 +586,87 @@ msgstr "Игнорировать"
 msgid "Try Again"
 msgstr "Повторить попытку"
 
-#: src/Views/AppInfoView.vala:154
+#: src/Views/AppInfoView.vala:155
 msgid "Screenshot Not Available"
 msgstr "Скриншот недоступен"
 
-#: src/Views/AppInfoView.vala:205
+#: src/Views/AppInfoView.vala:207
 msgid "Homepage"
 msgstr "Домашняя страница"
 
-#: src/Views/AppInfoView.vala:211
+#: src/Views/AppInfoView.vala:213
 msgid "Suggest Translations"
 msgstr "Предложить перевод"
 
-#: src/Views/AppInfoView.vala:217
+#: src/Views/AppInfoView.vala:219
 msgid "Report a Problem"
 msgstr "Сообщить о проблеме"
 
-#: src/Views/AppInfoView.vala:223
+#: src/Views/AppInfoView.vala:225
 msgid "Help"
 msgstr "Помощь"
 
-#: src/Views/AppInfoView.vala:234
+#: src/Views/AppInfoView.vala:236
 msgid "What's New:"
 msgstr "Что нового:"
 
-#: src/Views/AppInfoView.vala:269
+#: src/Views/AppInfoView.vala:271
 msgid "Extensions:"
 msgstr "Расширения:"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:358
+#: src/Views/AppInfoView.vala:360
 msgid "Public Domain"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:361
+#: src/Views/AppInfoView.vala:363
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr ""
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:366
+#: src/Views/AppInfoView.vala:368
 #, fuzzy
 msgid "Free Software"
 msgstr "Редактировать источники приложений"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:369
+#: src/Views/AppInfoView.vala:371
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:373
+#: src/Views/AppInfoView.vala:375
 msgid "Proprietary"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:376
+#: src/Views/AppInfoView.vala:378
 #, fuzzy
 msgid "Unknown License"
 msgstr "Неизвестное состояние"
 
-#: src/Views/AppInfoView.vala:425
+#: src/Views/AppInfoView.vala:427
 #, c-format
 msgid "Other Apps by %s"
 msgstr "Другие приложения от %s"
 
-#: src/Views/AppInfoView.vala:462
+#: src/Views/AppInfoView.vala:464
 msgid "Link copied to clipboard"
 msgstr "Ссылка скопирована в буфер обмена"
 
-#: src/Views/AppInfoView.vala:473
+#: src/Views/AppInfoView.vala:475
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "%s в AppCenter:"
 
-#: src/Views/AppInfoView.vala:480
+#: src/Views/AppInfoView.vala:482
 msgid "Share"
 msgstr "Поделиться"
 
-#: src/Views/AppInfoView.vala:814
+#: src/Views/AppInfoView.vala:816
 msgid "Fund"
 msgstr "Поддержать"
 
-#: src/Views/AppInfoView.vala:836
+#: src/Views/AppInfoView.vala:838
 msgid "Fund the development of this app"
 msgstr "Поддержать разработку этого приложения"
 
@@ -692,19 +689,19 @@ msgid "Restart Now"
 msgstr "Перезагрузить сейчас"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:210
+#: src/Views/AppListUpdateView.vala:215
 msgid "Update All"
 msgstr "Обновить всё"
 
-#: src/Views/AppListView.vala:29
+#: src/Views/AppListView.vala:30
 msgid "No Results"
 msgstr "Нет результатов"
 
-#: src/Views/AppListView.vala:30
+#: src/Views/AppListView.vala:31
 msgid "No apps could be found. Try changing search terms."
 msgstr "Приложения не найдены. Попробуйте изменить поисковый запрос."
 
-#: src/Views/AppListView.vala:146
+#: src/Views/AppListView.vala:160
 msgid "Non-Curated Apps"
 msgstr "Не поддерживаемое сообществом elementary"
 
@@ -813,12 +810,12 @@ msgid "Requires payments, which are not enabled"
 msgstr ""
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:305
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:293
 msgid "Free"
 msgstr "Бесплатно"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:307
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:295
 #, fuzzy
 msgid "Install"
 msgstr "Установленные"
@@ -920,11 +917,11 @@ msgstr "Обновления не требуются"
 msgid "Drivers"
 msgstr "Драйверы"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:153
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:141
 msgid "Open"
 msgstr "Открыть"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:330
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:318
 msgid "Update"
 msgstr "Обновить"
 
