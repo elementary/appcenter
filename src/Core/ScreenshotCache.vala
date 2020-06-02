@@ -17,6 +17,9 @@
  */
 
 public class AppCenterCore.ScreenshotCache : GLib.Object {
+    private const int HTTP_HEAD_TIMEOUT = 3000;
+    private const int HTTP_DOWNLOAD_TIMEOUT = 5000;
+
     private const int MAX_CACHE_SIZE = 100000000;
 
     private GLib.File screenshot_folder;
@@ -149,14 +152,33 @@ public class AppCenterCore.ScreenshotCache : GLib.Object {
     public async bool fetch (string url, out string path) {
         path = generate_screenshot_path (url);
 
-        // GVFS handles HTTP URIs
+        // GVFS handles HTTP URIs for us
         var remote_file = File.new_for_uri (url);
         var local_file = File.new_for_path (path);
 
         GLib.DateTime? remote_mtime = null;
         try {
+            // Setup our own timeout for GVFS, the HTTP backend has no timeout
+            var cancellable = new GLib.Cancellable ();
+            uint cancel_source = 0;
+            cancel_source = Timeout.add (HTTP_HEAD_TIMEOUT, () => {
+                cancel_source = 0;
+                cancellable.cancel ();
+                return GLib.Source.REMOVE;
+            });
+
             // GVFS uses libsoup to get the mtime via a HEAD request
-            var file_info = yield remote_file.query_info_async (GLib.FileAttribute.TIME_MODIFIED, FileQueryInfoFlags.NONE);
+            var file_info = yield remote_file.query_info_async (
+                GLib.FileAttribute.TIME_MODIFIED,
+                FileQueryInfoFlags.NONE,
+                GLib.Priority.DEFAULT,
+                cancellable
+            );
+
+            if (cancel_source != 0) {
+                GLib.Source.remove (cancel_source);
+            }
+
             remote_mtime = file_info.get_modification_date_time ();
         } catch (Error e) {
             warning ("Error getting modification time of remote screenshot file: %s", e.message);
@@ -184,7 +206,24 @@ public class AppCenterCore.ScreenshotCache : GLib.Object {
 
         // We don't have the local copy, or it's not up to date, download it
         try {
-            yield remote_file.copy_async (local_file, FileCopyFlags.OVERWRITE | FileCopyFlags.TARGET_DEFAULT_PERMS);
+            var cancellable = new GLib.Cancellable ();
+            uint cancel_source = 0;
+            cancel_source = Timeout.add (HTTP_DOWNLOAD_TIMEOUT, () => {
+                cancel_source = 0;
+                cancellable.cancel ();
+                return GLib.Source.REMOVE;
+            });
+
+            yield remote_file.copy_async (
+                local_file,
+                FileCopyFlags.OVERWRITE | FileCopyFlags.TARGET_DEFAULT_PERMS,
+                GLib.Priority.DEFAULT,
+                cancellable
+            );
+
+            if (cancel_source != 0) {
+                GLib.Source.remove (cancel_source);
+            }
         } catch (Error e) {
             warning ("Unable to download screenshot from %s: %s", url, e.message);
             return false;
