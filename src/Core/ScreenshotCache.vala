@@ -71,19 +71,18 @@ public class AppCenterCore.ScreenshotCache : GLib.Object {
 
     // Delete the oldest files in the screenshot cache until the cache is less than the max size.
     private async void delete_oldest_files (uint64 screenshot_usage) {
-        const string[] needed_file_attributes = {
-            GLib.FileAttribute.STANDARD_NAME,
-            GLib.FileAttribute.STANDARD_TYPE,
-            GLib.FileAttribute.STANDARD_SIZE,
-            GLib.FileAttribute.TIME_CHANGED
-        };
-
         var file_list = new Gee.ArrayList<GLib.FileInfo> ();
 
         FileEnumerator enumerator;
         try {
             enumerator = yield screenshot_folder.enumerate_children_async (
-                string.join (",", needed_file_attributes),
+                string.join (",",
+                    GLib.FileAttribute.STANDARD_NAME,
+                    GLib.FileAttribute.STANDARD_TYPE,
+                    GLib.FileAttribute.STANDARD_SIZE,
+                    GLib.FileAttribute.STANDARD_ALLOCATED_SIZE,
+                    GLib.FileAttribute.TIME_CHANGED
+                ),
                 FileQueryInfoFlags.NONE
             );
         } catch (Error e) {
