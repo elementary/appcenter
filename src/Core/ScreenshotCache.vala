@@ -169,6 +169,13 @@ public class AppCenterCore.ScreenshotCache : GLib.Object {
 
         var modified = msg.response_headers.get_one ("Last-Modified");
 
+        if (msg.status_code != Soup.Status.OK || modified == null) {
+            warning ("HEAD request to get modified time of %s failed: %s", url, msg.reason_phrase);
+
+            // Use the cached file if it exists
+            return file.query_exists ();
+        }
+
         string? iso8601_string = null;
         GLib.DateTime? modified_time = null;
         // Parse the HTTP date format using Soup
@@ -182,8 +189,8 @@ public class AppCenterCore.ScreenshotCache : GLib.Object {
             }
         }
 
-        if (msg.status_code != Soup.Status.OK || modified == null || modified_time == null) {
-            warning ("HEAD request to get modified time of %s failed", url);
+        if (modified_time == null) {
+            warning ("Converting Last-Modified header (%s) of HEAD request to GLib.DateTime failed", modified);
 
             // Use the cached file if it exists
             return file.query_exists ();
