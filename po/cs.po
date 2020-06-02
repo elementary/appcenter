@@ -7,11 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-28 18:10+0000\n"
+"POT-Creation-Date: 2020-06-02 17:55+0000\n"
 "PO-Revision-Date: 2020-05-31 16:11+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
-"Language-Team: Czech <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/cs/>\n"
+"Language-Team: Czech <https://l10n.elementary.io/projects/appcenter/appcenter/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -90,7 +89,7 @@ msgstr "Odstraňování balíčků"
 msgid "Downloading"
 msgstr "Stahování"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:709
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:723
 msgid "Installing"
 msgstr "Instalace"
 
@@ -135,9 +134,9 @@ msgid "Finished"
 msgstr "Hotovo"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:718 src/Core/FlatpakBackend.vala:746
-#: src/Core/FlatpakBackend.vala:823 src/Core/FlatpakBackend.vala:924
-#: src/Core/FlatpakBackend.vala:950
+#: src/Core/FlatpakBackend.vala:732 src/Core/FlatpakBackend.vala:760
+#: src/Core/FlatpakBackend.vala:837 src/Core/FlatpakBackend.vala:938
+#: src/Core/FlatpakBackend.vala:964
 msgid "Cancelling"
 msgstr "Rušení"
 
@@ -224,15 +223,15 @@ msgstr[0] "%u aktualizace je pro váš systém k dispozici"
 msgstr[1] "%u aktualizace jsou pro váš systém k dispozici"
 msgstr[2] "%u aktualizací je pro váš systém k dispozici"
 
-#: src/Core/FlatpakBackend.vala:815
+#: src/Core/FlatpakBackend.vala:829
 msgid "Uninstalling"
 msgstr "Odebírání"
 
-#: src/Core/FlatpakBackend.vala:820
+#: src/Core/FlatpakBackend.vala:834
 msgid "Finishing"
 msgstr "Dokončování"
 
-#: src/Core/FlatpakBackend.vala:915
+#: src/Core/FlatpakBackend.vala:929
 msgid "Updating"
 msgstr "Aktualizování"
 
@@ -262,12 +261,12 @@ msgstr "Ovladače z Ubuntu"
 msgid "Unknown Origin (non-curated)"
 msgstr "Neznámý původ (neprověřené)"
 
-#: src/Core/Package.vala:459
+#: src/Core/Package.vala:482
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Stav aplikace v Centru aplikací není nastaven jako instalovaná pro balíček:%s"
 
-#: src/Core/PackageKitBackend.vala:263
+#: src/Core/PackageKitBackend.vala:272
 #, c-format
 msgid "%s (local)"
 msgstr "%s (lokální)"
@@ -326,10 +325,7 @@ msgstr "„%s“ obsahuje nevhodný obsah"
 #: src/Dialogs/ContentWarningDialog.vala:31
 #, c-format
 msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
-msgstr ""
-"„%s“ může zahrnovat obsah, který je vhodný pouze pro dospělé, nebo který "
-"může být citlivý, či pohoršující. Obecně, společnost elementary tento obsah "
-"nekontroluje ani nepodporuje."
+msgstr "„%s“ může zahrnovat obsah, který je vhodný pouze pro dospělé, nebo který může být citlivý, či pohoršující. Obecně, společnost elementary tento obsah nekontroluje ani nepodporuje."
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 msgid "Show content warnings"
@@ -428,9 +424,7 @@ msgstr "E-mail"
 
 #: src/Dialogs/StripeDialog.vala:108
 msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
-msgstr ""
-"Vaše e-mailová adresa je použita pouze pro zaslání účtenky. Nebudete zapsán "
-"do žádného seznamu pro příjem pošty."
+msgstr "Vaše e-mailová adresa je použita pouze pro zaslání účtenky. Nebudete zapsán do žádného seznamu pro příjem pošty."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127
@@ -468,21 +462,15 @@ msgstr "Zkusit znovu"
 
 #: src/Dialogs/StripeDialog.vala:513 src/Dialogs/StripeDialog.vala:578
 msgid "The card number is incorrect. Please try again using the correct card number."
-msgstr ""
-"Číslo karty není platné. Zkuste to prosím znovu s použitím platného čísla "
-"karty."
+msgstr "Číslo karty není platné. Zkuste to prosím znovu s použitím platného čísla karty."
 
 #: src/Dialogs/StripeDialog.vala:515
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
-msgstr ""
-"Měsíc konce platnosti není správný. Zkuste to prosím znovu s použitím "
-"správného data konce platnosti."
+msgstr "Měsíc konce platnosti není správný. Zkuste to prosím znovu s použitím správného data konce platnosti."
 
 #: src/Dialogs/StripeDialog.vala:517 src/Dialogs/StripeDialog.vala:575
 msgid "The expiration year is invalid. Please try again using the correct expiration date."
-msgstr ""
-"Rok konce platnosti není správný. Zkuste to prosím znovu s použitím "
-"správného data konce platnosti."
+msgstr "Rok konce platnosti není správný. Zkuste to prosím znovu s použitím správného data konce platnosti."
 
 #: src/Dialogs/StripeDialog.vala:520 src/Dialogs/StripeDialog.vala:573
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
@@ -526,14 +514,11 @@ msgstr "CVC kód není správný. Zkuste to prosím znovu se správným CVC."
 
 #: src/Dialogs/StripeDialog.vala:583
 msgid "There has been too many PIN attempts. Please try again with a different card."
-msgstr ""
-"Příliš mnoho pokusů o zadání CVC kódu. Zkuste to prosím znovu s jinou kartou."
+msgstr "Příliš mnoho pokusů o zadání CVC kódu. Zkuste to prosím znovu s jinou kartou."
 
 #: src/Dialogs/StripeDialog.vala:603
 msgid "Unable to complete the transaction. Please contact your bank for further information."
-msgstr ""
-"Transakce nemohla být provedena. Prosím obraťte se na banku, jejíchž služeb "
-"využíváte."
+msgstr "Transakce nemohla být provedena. Prosím obraťte se na banku, jejíchž služeb využíváte."
 
 #: src/Dialogs/StripeDialog.vala:606
 msgid "The balance or credit limit on the card has been reached."
@@ -580,9 +565,7 @@ msgstr "Kontrola aktualizací se nezdařila"
 
 #: src/Dialogs/UpdateFailDialog.vala:26
 msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
-msgstr ""
-"Toto mohlo být způsobeno externími, ručně přidanými repozitáři softwaru, "
-"nebo poškozeným souborem s  jejich seznamem (sources)."
+msgstr "Toto mohlo být způsobeno externími, ručně přidanými repozitáři softwaru, nebo poškozeným souborem s  jejich seznamem (sources)."
 
 #: src/Dialogs/UpdateFailDialog.vala:34
 msgid "Ignore"
@@ -674,24 +657,24 @@ msgstr "Financovat"
 msgid "Fund the development of this app"
 msgstr "Financovat vývoj této aplikace"
 
-#: src/Views/AppListUpdateView.vala:51
+#: src/Views/AppListUpdateView.vala:35
 msgid "Checking for Updates"
 msgstr "Hledají se aktualizace"
 
-#: src/Views/AppListUpdateView.vala:52
+#: src/Views/AppListUpdateView.vala:36
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr "Stahování seznamu aktualizací, které jsou k dispozici pro operační systém a nainstalované aplikace"
 
-#: src/Views/AppListUpdateView.vala:63
+#: src/Views/AppListUpdateView.vala:47
 msgid "A restart is required to complete the installation of updates"
 msgstr "Pro dokončení instalace aktualizací je vyžadován restart"
 
-#: src/Views/AppListUpdateView.vala:71
+#: src/Views/AppListUpdateView.vala:55
 msgid "Restart Now"
 msgstr "Restartovat nyní"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:215
+#: src/Views/AppListUpdateView.vala:199
 msgid "Update All"
 msgstr "Aktualizovat vše"
 
@@ -888,15 +871,14 @@ msgstr "Skutečná velikost stahování je pravděpodobně menší"
 
 #: src/Widgets/SizeLabel.vala:36
 msgid "Only the parts of apps and updates that are needed will be downloaded."
-msgstr ""
-"Stahovány budou pouze ty části aplikací a aktualizací, které jsou potřeba."
+msgstr "Stahovány budou pouze ty části aplikací a aktualizací, které jsou potřeba."
 
 #: src/Widgets/SizeLabel.vala:63
 #, c-format
 msgid "Up to %s"
 msgstr "Až po %s"
 
-#: src/Widgets/UpdateHeaderRow.vala:69
+#: src/Widgets/UpdateHeaderRow.vala:66
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
@@ -904,15 +886,11 @@ msgstr[0] "%u dostupná aktualizace"
 msgstr[1] "%u dostupné aktualizace"
 msgstr[2] "%u dostupných aktualizací"
 
-#: src/Widgets/UpdateHeaderRow.vala:107
-msgid "Searching for updates…"
-msgstr "Hledají se aktualizace…"
-
-#: src/Widgets/UpdateHeaderRow.vala:114
+#: src/Widgets/UpdateHeaderRow.vala:93
 msgid "Up to Date"
 msgstr "Aktuální"
 
-#: src/Widgets/UpdateHeaderRow.vala:122
+#: src/Widgets/UpdateHeaderRow.vala:100
 msgid "Drivers"
 msgstr "Ovladače"
 
@@ -923,6 +901,9 @@ msgstr "Otevřít"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:318
 msgid "Update"
 msgstr "Aktualizovat"
+
+#~ msgid "Searching for updates…"
+#~ msgstr "Hledají se aktualizace…"
 
 #~ msgid "There Was An Error Installing %s."
 #~ msgstr "Při instalaci %s se vyskytla chyba."

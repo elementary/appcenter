@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-28 18:10+0000\n"
+"POT-Creation-Date: 2020-06-02 17:55+0000\n"
 "PO-Revision-Date: 2020-05-19 18:43+0000\n"
 "Last-Translator: Jaimie85 <alsemgeest@gmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/appcenter/nl/>\n"
@@ -86,7 +86,7 @@ msgstr "Pakketten verwijderen"
 msgid "Downloading"
 msgstr "Downloaden"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:709
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:723
 msgid "Installing"
 msgstr "Installeren"
 
@@ -131,9 +131,9 @@ msgid "Finished"
 msgstr "Klaar"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:718 src/Core/FlatpakBackend.vala:746
-#: src/Core/FlatpakBackend.vala:823 src/Core/FlatpakBackend.vala:924
-#: src/Core/FlatpakBackend.vala:950
+#: src/Core/FlatpakBackend.vala:732 src/Core/FlatpakBackend.vala:760
+#: src/Core/FlatpakBackend.vala:837 src/Core/FlatpakBackend.vala:938
+#: src/Core/FlatpakBackend.vala:964
 msgid "Cancelling"
 msgstr "Annuleren"
 
@@ -218,15 +218,15 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "%u update is beschikbaar voor uw systeem"
 msgstr[1] "%u updates zijn beschikbaar voor uw systeem"
 
-#: src/Core/FlatpakBackend.vala:815
+#: src/Core/FlatpakBackend.vala:829
 msgid "Uninstalling"
 msgstr "Deïnstalleren"
 
-#: src/Core/FlatpakBackend.vala:820
+#: src/Core/FlatpakBackend.vala:834
 msgid "Finishing"
 msgstr "Voltooien"
 
-#: src/Core/FlatpakBackend.vala:915
+#: src/Core/FlatpakBackend.vala:929
 msgid "Updating"
 msgstr "Updaten"
 
@@ -256,12 +256,12 @@ msgstr "Ubuntu Stuurprogramma's"
 msgid "Unknown Origin (non-curated)"
 msgstr "Onbekende bron (niet beheerd)"
 
-#: src/Core/Package.vala:459
+#: src/Core/Package.vala:482
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Het volgende pakket is niet geïnstalleerd in AppCenter: %s"
 
-#: src/Core/PackageKitBackend.vala:263
+#: src/Core/PackageKitBackend.vala:272
 #, c-format
 msgid "%s (local)"
 msgstr "%s (lokaal)"
@@ -651,24 +651,24 @@ msgstr "Financier"
 msgid "Fund the development of this app"
 msgstr "Financier de ontwikkeling van deze app"
 
-#: src/Views/AppListUpdateView.vala:51
+#: src/Views/AppListUpdateView.vala:35
 msgid "Checking for Updates"
 msgstr "Updates zoeken"
 
-#: src/Views/AppListUpdateView.vala:52
+#: src/Views/AppListUpdateView.vala:36
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr "Een lijst met beschikbare updates voor het systeem en geïnstalleerde apps downloaden"
 
-#: src/Views/AppListUpdateView.vala:63
+#: src/Views/AppListUpdateView.vala:47
 msgid "A restart is required to complete the installation of updates"
 msgstr "Het is nodig om opnieuw op te starten om de installatie van de updates te voltooien"
 
-#: src/Views/AppListUpdateView.vala:71
+#: src/Views/AppListUpdateView.vala:55
 msgid "Restart Now"
 msgstr "Start nu opnieuw op"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:215
+#: src/Views/AppListUpdateView.vala:199
 msgid "Update All"
 msgstr "Alles bijwerken"
 
@@ -872,22 +872,18 @@ msgstr "Alleen de benodigde gegevens van de apps en updates worden gedownload."
 msgid "Up to %s"
 msgstr "Tot %s"
 
-#: src/Widgets/UpdateHeaderRow.vala:69
+#: src/Widgets/UpdateHeaderRow.vala:66
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "%u update beschikbaar"
 msgstr[1] "%u updates beschikbaar"
 
-#: src/Widgets/UpdateHeaderRow.vala:107
-msgid "Searching for updates…"
-msgstr "Updates zoeken…"
-
-#: src/Widgets/UpdateHeaderRow.vala:114
+#: src/Widgets/UpdateHeaderRow.vala:93
 msgid "Up to Date"
 msgstr "Actueel"
 
-#: src/Widgets/UpdateHeaderRow.vala:122
+#: src/Widgets/UpdateHeaderRow.vala:100
 msgid "Drivers"
 msgstr "Stuurprogramma's"
 
@@ -898,6 +894,9 @@ msgstr "Open"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:318
 msgid "Update"
 msgstr "Bijwerken"
+
+#~ msgid "Searching for updates…"
+#~ msgstr "Updates zoeken…"
 
 #~ msgid "There Was An Error Installing %s."
 #~ msgstr "Er is een fout opgetreden bij het installeren van %s."

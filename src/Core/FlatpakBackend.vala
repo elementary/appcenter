@@ -85,8 +85,22 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             }
 
             installation_changed_monitor.changed.connect (() => {
-                debug ("Flatpak installation changed.");
-                trigger_update_check.begin ();
+                // Only trigger a cache refresh if we're not doing anything (i.e. its an external change)
+                if (!working) {
+                    debug ("Flatpak installation changed.");
+
+                    // Clear the installed state of all packages as something may have changed we weren't
+                    // aware of
+                    foreach (var package in package_list.values) {
+                        if (package.state != Package.State.NOT_INSTALLED || package.installed) {
+                            package.clear_installed ();
+                        }
+                    }
+
+                    // Reloads the appstream data for enabled remotes and checks what applications are
+                    // installed/require updates
+                    trigger_update_check.begin ();
+                }
             });
         } else {
             warning ("Couldn't create Installation File Monitor due to no installation");

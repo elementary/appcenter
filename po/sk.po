@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-28 18:10+0000\n"
+"POT-Creation-Date: 2020-06-02 17:55+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/appcenter/appcenter/sk/>\n"
@@ -86,7 +86,7 @@ msgstr "Odobranie balíkov"
 msgid "Downloading"
 msgstr "Sťahuje sa"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:709
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:723
 msgid "Installing"
 msgstr "Inštalácia"
 
@@ -131,9 +131,9 @@ msgid "Finished"
 msgstr "Dokončené"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:718 src/Core/FlatpakBackend.vala:746
-#: src/Core/FlatpakBackend.vala:823 src/Core/FlatpakBackend.vala:924
-#: src/Core/FlatpakBackend.vala:950
+#: src/Core/FlatpakBackend.vala:732 src/Core/FlatpakBackend.vala:760
+#: src/Core/FlatpakBackend.vala:837 src/Core/FlatpakBackend.vala:938
+#: src/Core/FlatpakBackend.vala:964
 msgid "Cancelling"
 msgstr "Rušenie"
 
@@ -220,19 +220,19 @@ msgstr[0] "%u aktualizácií je dostupných pre váš systém"
 msgstr[1] "%u aktualizácia je dostupná pre váš systém"
 msgstr[2] "%u aktualizácie sú dostupné pre váš systém"
 
-#: src/Core/FlatpakBackend.vala:815
+#: src/Core/FlatpakBackend.vala:829
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "Odinštalovať"
 
-#: src/Core/FlatpakBackend.vala:820
+#: src/Core/FlatpakBackend.vala:834
 #, fuzzy
 #| msgid "Finished"
 msgid "Finishing"
 msgstr "Dokončené"
 
-#: src/Core/FlatpakBackend.vala:915
+#: src/Core/FlatpakBackend.vala:929
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -266,12 +266,12 @@ msgstr "Ovládače"
 msgid "Unknown Origin (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:459
+#: src/Core/Package.vala:482
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
 
-#: src/Core/PackageKitBackend.vala:263
+#: src/Core/PackageKitBackend.vala:272
 #, fuzzy, c-format
 msgid "%s (local)"
 msgstr "%s (lokálny)"
@@ -674,26 +674,26 @@ msgstr "Financovať"
 msgid "Fund the development of this app"
 msgstr "Financovať vývoj tejto aplikácie"
 
-#: src/Views/AppListUpdateView.vala:51
+#: src/Views/AppListUpdateView.vala:35
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Checking for Updates"
 msgstr "Vyhľadávajú sa aktualizácie…"
 
-#: src/Views/AppListUpdateView.vala:52
+#: src/Views/AppListUpdateView.vala:36
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:63
+#: src/Views/AppListUpdateView.vala:47
 msgid "A restart is required to complete the installation of updates"
 msgstr "Na dokončenie inštalácie aktualizácií je potrebný reštart"
 
-#: src/Views/AppListUpdateView.vala:71
+#: src/Views/AppListUpdateView.vala:55
 msgid "Restart Now"
 msgstr "Reštartovať teraz"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:215
+#: src/Views/AppListUpdateView.vala:199
 msgid "Update All"
 msgstr "Aktualizovať všetko"
 
@@ -899,7 +899,7 @@ msgstr ""
 msgid "Up to %s"
 msgstr "Aktuálne"
 
-#: src/Widgets/UpdateHeaderRow.vala:69
+#: src/Widgets/UpdateHeaderRow.vala:66
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
@@ -907,15 +907,11 @@ msgstr[0] "Je dostupná %u aktualizácia"
 msgstr[1] "Sú dostupné %u aktualizácie"
 msgstr[2] "Je dostupných %u aktualizácií"
 
-#: src/Widgets/UpdateHeaderRow.vala:107
-msgid "Searching for updates…"
-msgstr "Vyhľadávajú sa aktualizácie…"
-
-#: src/Widgets/UpdateHeaderRow.vala:114
+#: src/Widgets/UpdateHeaderRow.vala:93
 msgid "Up to Date"
 msgstr "Aktuálne"
 
-#: src/Widgets/UpdateHeaderRow.vala:122
+#: src/Widgets/UpdateHeaderRow.vala:100
 msgid "Drivers"
 msgstr "Ovládače"
 
@@ -926,6 +922,9 @@ msgstr "Otvoriť"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:318
 msgid "Update"
 msgstr "Aktualizácie"
+
+#~ msgid "Searching for updates…"
+#~ msgstr "Vyhľadávajú sa aktualizácie…"
 
 #~ msgid "There Was An Error Installing %s."
 #~ msgstr "Pri inštalácii programu %s sa vyskytla chyba."
