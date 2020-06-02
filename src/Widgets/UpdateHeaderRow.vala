@@ -77,26 +77,19 @@ namespace AppCenter.Widgets {
     /** Header to show above first package that is up to date, or if the cache is updating **/
     public class UpdatedGrid : AbstractHeaderGrid {
         private Gtk.Label label;
-        private Gtk.Spinner spinner;
 
         construct {
             label = new Gtk.Label (""); /* Should not be displayed before being updated */
             label.hexpand = true;
             ((Gtk.Misc)label).xalign = 0;
 
-            spinner = new Gtk.Spinner ();
-
             add (label);
-            add (spinner);
         }
 
         public override void update (uint _update_numbers, uint64 _update_real_size, bool _using_flatpak) {
             store_data (_update_numbers, _update_real_size, _using_flatpak);
 
             halign = Gtk.Align.FILL;
-            spinner.stop ();
-            spinner.no_show_all = true;
-            spinner.hide ();
             label.label = _("Up to Date");
             label.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
         }
