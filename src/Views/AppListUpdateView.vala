@@ -31,22 +31,6 @@ namespace AppCenter.Views {
         private Gee.LinkedList<AppCenterCore.Package> apps_to_update;
         private AppCenterCore.Package first_package;
 
-        private bool _updating_cache;
-        public bool updating_cache {
-            get {
-                if (packages_changing > 0) {
-                    return false;
-                }
-                return _updating_cache;
-            }
-            set {
-                if (_updating_cache != value) {
-                    _updating_cache = value;
-                    list_box.invalidate_headers ();
-                }
-            }
-        }
-
         construct {
             action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
 
@@ -211,10 +195,10 @@ namespace AppCenter.Views {
                     }
                 }
 
-                header.update (update_numbers, update_real_size, updating_cache, using_flatpak);
+                header.update (update_numbers, update_real_size, using_flatpak);
 
                 // Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-                if (!updating_cache && update_numbers > 0) {
+                if (update_numbers > 0) {
                     update_all_button = new Gtk.Button.with_label (_("Update All"));
                     if (update_numbers == nag_numbers) {
                         update_all_button.sensitive = false;
@@ -246,7 +230,7 @@ namespace AppCenter.Views {
                 }
 
                 var header = new Widgets.UpdatedGrid ();
-                header.update (0, 0, updating_cache, false);
+                header.update (0, 0, false);
                 header.show_all ();
                 row.set_header (header);
             }
@@ -283,7 +267,7 @@ namespace AppCenter.Views {
             if (apps_to_update.size > 0) {
                 first_package = apps_to_update[0];
                 first_package.info_changed.connect_after (after_first_package_info_changed);
-                first_package.update.begin (() => {
+                first_package.update.begin (false, () => {
                     on_app_update_end ();
                 });
             } else {
@@ -306,7 +290,7 @@ namespace AppCenter.Views {
                 if (status != AppCenterCore.ChangeInformation.Status.CANCELLED) { /* must  be running */
                     apps_remaining_started = true;
                     for (int i = 1; i < apps_to_update.size; i++) {
-                        apps_to_update[i].update.begin (() => {
+                        apps_to_update[i].update.begin (false, () => {
                             on_app_update_end ();
                         });
                     }
@@ -341,19 +325,16 @@ namespace AppCenter.Views {
                 foreach (var row in list_box.get_children ()) {
                     if (row is Widgets.PackageRow) {
                         var pkg_row = ((Widgets.PackageRow)(row));
-                        var pkg = pkg_row.get_package ();
-
-                        /* clear update information if the package was successfully updated */
-                        /* This information is refreshed by Client on start up (log in) or at daily intervals */
-                        /* TODO: Implement refresh on demand (or on list display?) */
-                        if (pkg.state == AppCenterCore.Package.State.INSTALLED) {
-                            pkg.change_information.clear_update_info ();
-                        }
 
                         pkg_row.set_action_sensitive (true);
-                        pkg_row.changed ();
                     }
                 }
+
+                list_box.invalidate_sort ();
+
+                unowned AppCenterCore.Client client = AppCenterCore.Client.get_default ();
+                client.refresh_updates ();
+
                 return GLib.Source.REMOVE;
             });
         }
