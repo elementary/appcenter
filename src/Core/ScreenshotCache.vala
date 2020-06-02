@@ -76,13 +76,10 @@ public class AppCenterCore.ScreenshotCache : GLib.Object {
         FileEnumerator enumerator;
         try {
             enumerator = yield screenshot_folder.enumerate_children_async (
-                string.join (",",
-                    GLib.FileAttribute.STANDARD_NAME,
-                    GLib.FileAttribute.STANDARD_TYPE,
-                    GLib.FileAttribute.STANDARD_SIZE,
-                    GLib.FileAttribute.STANDARD_ALLOCATED_SIZE,
-                    GLib.FileAttribute.TIME_CHANGED
-                ),
+                GLib.FileAttribute.STANDARD_NAME + "," +
+                GLib.FileAttribute.STANDARD_TYPE + "," +
+                GLib.FileAttribute.STANDARD_SIZE + "," +
+                GLib.FileAttribute.TIME_CHANGED,
                 FileQueryInfoFlags.NONE
             );
         } catch (Error e) {
