@@ -30,22 +30,6 @@ namespace AppCenter.Views {
         private Gee.LinkedList<AppCenterCore.Package> apps_to_update;
         private AppCenterCore.Package first_package;
 
-        private bool _updating_cache;
-        public bool updating_cache {
-            get {
-                if (packages_changing > 0) {
-                    return false;
-                }
-                return _updating_cache;
-            }
-            set {
-                if (_updating_cache != value) {
-                    _updating_cache = value;
-                    list_box.invalidate_headers ();
-                }
-            }
-        }
-
         construct {
             var loading_view = new Granite.Widgets.AlertView (
                 _("Checking for Updates"),
@@ -208,10 +192,10 @@ namespace AppCenter.Views {
                     }
                 }
 
-                header.update (update_numbers, update_real_size, updating_cache, using_flatpak);
+                header.update (update_numbers, update_real_size, using_flatpak);
 
                 // Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-                if (!updating_cache && update_numbers > 0) {
+                if (update_numbers > 0) {
                     update_all_button = new Gtk.Button.with_label (_("Update All"));
                     if (update_numbers == nag_numbers) {
                         update_all_button.sensitive = false;
@@ -243,7 +227,7 @@ namespace AppCenter.Views {
                 }
 
                 var header = new Widgets.UpdatedGrid ();
-                header.update (0, 0, updating_cache, false);
+                header.update (0, 0, false);
                 header.show_all ();
                 row.set_header (header);
             }
