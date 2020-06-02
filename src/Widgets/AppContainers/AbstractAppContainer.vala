@@ -384,7 +384,7 @@ namespace AppCenter {
                 if (package.installed && !package.update_available) {
                     result = ActionResult.HIDE_BUTTON;
                 } else if (package.update_available) {
-                    package.update.begin ((obj, res) => {
+                    package.update.begin (true, (obj, res) => {
                         package.update.end (res);
                         loop.quit ();
                     });

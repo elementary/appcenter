@@ -78,9 +78,13 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
             driver_component.add_icon (icon);
 
             var package = new Package (this, driver_component);
-            if (package.installed) {
-                package.mark_installed ();
-                package.update_state ();
+            try {
+                if (yield is_package_installed (package)) {
+                    package.mark_installed ();
+                    package.update_state ();
+                }
+            } catch (Error e) {
+                warning ("Unable to check if driver is installed: %s", e.message);
             }
 
             cached_packages.add (package);
