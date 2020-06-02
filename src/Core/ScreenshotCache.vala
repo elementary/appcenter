@@ -53,7 +53,15 @@ public class AppCenterCore.ScreenshotCache : GLib.Object {
     private async void maintain () {
         uint64 screenshot_usage = 0, dirs = 0, files = 0;
         try {
-            if (!yield screenshot_folder.measure_disk_usage_async (FileMeasureFlags.NONE, GLib.Priority.DEFAULT, null, null, out screenshot_usage, out dirs, out files)) {
+            if (!yield screenshot_folder.measure_disk_usage_async (
+                FileMeasureFlags.NONE,
+                GLib.Priority.DEFAULT,
+                null,
+                null,
+                out screenshot_usage,
+                out dirs,
+                out files
+            )) {
                 return;
             }
         } catch (Error e) {
@@ -158,7 +166,7 @@ public class AppCenterCore.ScreenshotCache : GLib.Object {
 
         GLib.DateTime? remote_mtime = null;
         try {
-            // Setup our own timeout for GVFS, the HTTP backend has no timeout
+            // Setup our own timeout for GVFS, as the HTTP backend has no timeout
             var cancellable = new GLib.Cancellable ();
             uint cancel_source = 0;
             cancel_source = Timeout.add (HTTP_HEAD_TIMEOUT, () => {
