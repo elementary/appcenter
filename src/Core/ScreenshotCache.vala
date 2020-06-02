@@ -207,7 +207,6 @@ public class AppCenterCore.ScreenshotCache : GLib.Object {
 
             // Local file is up to date
             if (file_time != null && file_time.equal (modified_time)) {
-                warning ("Local file is up to date");
                 return true;
             }
         }
