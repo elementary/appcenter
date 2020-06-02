@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-28 18:10+0000\n"
+"POT-Creation-Date: 2020-06-02 17:55+0000\n"
 "PO-Revision-Date: 2020-05-27 18:11+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/appcenter/mr/>\n"
@@ -86,7 +86,7 @@ msgstr "पॅकेज मिटवत आहे"
 msgid "Downloading"
 msgstr "डाउनलोड करित आहे"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:709
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:723
 msgid "Installing"
 msgstr "इन्स्टॉल  होत आहे"
 
@@ -131,9 +131,9 @@ msgid "Finished"
 msgstr "पूर्ण झाले"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:718 src/Core/FlatpakBackend.vala:746
-#: src/Core/FlatpakBackend.vala:823 src/Core/FlatpakBackend.vala:924
-#: src/Core/FlatpakBackend.vala:950
+#: src/Core/FlatpakBackend.vala:732 src/Core/FlatpakBackend.vala:760
+#: src/Core/FlatpakBackend.vala:837 src/Core/FlatpakBackend.vala:938
+#: src/Core/FlatpakBackend.vala:964
 msgid "Cancelling"
 msgstr "रद्द करीत आहे"
 
@@ -218,15 +218,15 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "%u अपडेट आपल्या सिस्टिम साठी उपलब्ध आहे"
 msgstr[1] "%u अपडेट आपल्या सिस्टिम साठी उपलब्ध आहेत"
 
-#: src/Core/FlatpakBackend.vala:815
+#: src/Core/FlatpakBackend.vala:829
 msgid "Uninstalling"
 msgstr "विस्थापित करीत आहे"
 
-#: src/Core/FlatpakBackend.vala:820
+#: src/Core/FlatpakBackend.vala:834
 msgid "Finishing"
 msgstr "पूर्ण करीत आहे"
 
-#: src/Core/FlatpakBackend.vala:915
+#: src/Core/FlatpakBackend.vala:929
 msgid "Updating"
 msgstr "अद्ययावत (अपडेट) करीत आहे"
 
@@ -256,12 +256,12 @@ msgstr "उबंटू ड्राइव्हर्स"
 msgid "Unknown Origin (non-curated)"
 msgstr "अज्ञात उत्पत्ति (नॉन-क्युरेटेड)"
 
-#: src/Core/Package.vala:459
+#: src/Core/Package.vala:482
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "%s : पॅकेजसाठी AppCenter मध्ये स्थापित केल्यानुसार अनुप्रयोग स्थिती सेट केलेली नाही"
 
-#: src/Core/PackageKitBackend.vala:263
+#: src/Core/PackageKitBackend.vala:272
 #, c-format
 msgid "%s (local)"
 msgstr "%s (स्थानिक)"
@@ -651,24 +651,24 @@ msgstr "निधी"
 msgid "Fund the development of this app"
 msgstr "या अॅपच्या विकासासाठी निधी द्या"
 
-#: src/Views/AppListUpdateView.vala:51
+#: src/Views/AppListUpdateView.vala:35
 msgid "Checking for Updates"
 msgstr "अद्यतनांसाठी तपासत आहे"
 
-#: src/Views/AppListUpdateView.vala:52
+#: src/Views/AppListUpdateView.vala:36
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr "ओएस व स्थापित अ‍ॅप्ससाठी उपलब्ध अद्यतनांची सूची डाउनलोड करत आहे"
 
-#: src/Views/AppListUpdateView.vala:63
+#: src/Views/AppListUpdateView.vala:47
 msgid "A restart is required to complete the installation of updates"
 msgstr "अपडेट्स इन्स्टॉल करण्यासाठी हे अप्लिकेशन बंद करूंन पुन्हा सुरु करण्याची गरज आहे"
 
-#: src/Views/AppListUpdateView.vala:71
+#: src/Views/AppListUpdateView.vala:55
 msgid "Restart Now"
 msgstr "याक्षणी पुन्हा चालू करा"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:215
+#: src/Views/AppListUpdateView.vala:199
 msgid "Update All"
 msgstr "सर्व अपडेट करा"
 
@@ -872,22 +872,18 @@ msgstr "केवळ अॅप्सचे आवश्यक भाग आण�
 msgid "Up to %s"
 msgstr "%s पर्यंत"
 
-#: src/Widgets/UpdateHeaderRow.vala:69
+#: src/Widgets/UpdateHeaderRow.vala:66
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "%u अपडेट उपलब्ध"
 msgstr[1] "%u अपडेट्स उपलब्ध"
 
-#: src/Widgets/UpdateHeaderRow.vala:107
-msgid "Searching for updates…"
-msgstr "अपडेट्स शोधत आहे …"
-
-#: src/Widgets/UpdateHeaderRow.vala:114
+#: src/Widgets/UpdateHeaderRow.vala:93
 msgid "Up to Date"
 msgstr "अद्ययावत"
 
-#: src/Widgets/UpdateHeaderRow.vala:122
+#: src/Widgets/UpdateHeaderRow.vala:100
 msgid "Drivers"
 msgstr "ड्राइव्हर्स"
 
@@ -898,6 +894,9 @@ msgstr "उघडा"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:318
 msgid "Update"
 msgstr "अद्ययावत (अपडेट) करा"
+
+#~ msgid "Searching for updates…"
+#~ msgstr "अपडेट्स शोधत आहे …"
 
 #~ msgid "There Was An Error Installing %s."
 #~ msgstr "%s इंन्स्टॉल करताना काही चूक झाली आहे."

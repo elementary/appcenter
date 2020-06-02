@@ -197,6 +197,15 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
             var time_since_last_action = (new DateTime.now_local ()).difference (last_action) / GLib.TimeSpan.MILLISECOND;
             if (time_since_last_action >= PACKAGEKIT_ACTIVITY_TIMEOUT_MS) {
                 info ("packages possibly changed by external program, refreshing cache");
+
+                // Clear the installed state of all packages as something may have changed we weren't
+                // aware of
+                foreach (var package in package_list.values) {
+                    if (package.state != Package.State.NOT_INSTALLED || package.installed) {
+                        package.clear_installed ();
+                    }
+                }
+
                 trigger_update_check.begin ();
             }
         }

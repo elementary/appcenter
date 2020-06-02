@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-28 18:10+0000\n"
+"POT-Creation-Date: 2020-06-02 17:55+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Moldovan <https://l10n.elementary.io/projects/appcenter/appcenter/mo/>\n"
@@ -84,7 +84,7 @@ msgstr "Eliminarea pachetelor"
 msgid "Downloading"
 msgstr "Descărcare"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:709
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:723
 msgid "Installing"
 msgstr "Instalare"
 
@@ -129,9 +129,9 @@ msgid "Finished"
 msgstr "Terminat"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:718 src/Core/FlatpakBackend.vala:746
-#: src/Core/FlatpakBackend.vala:823 src/Core/FlatpakBackend.vala:924
-#: src/Core/FlatpakBackend.vala:950
+#: src/Core/FlatpakBackend.vala:732 src/Core/FlatpakBackend.vala:760
+#: src/Core/FlatpakBackend.vala:837 src/Core/FlatpakBackend.vala:938
+#: src/Core/FlatpakBackend.vala:964
 msgid "Cancelling"
 msgstr "Anulare"
 
@@ -224,19 +224,19 @@ msgstr[1] ""
 "Altu\n"
 "%u sunt disponibile actualizări pentru sistemul dvs"
 
-#: src/Core/FlatpakBackend.vala:815
+#: src/Core/FlatpakBackend.vala:829
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "Dezinstalați"
 
-#: src/Core/FlatpakBackend.vala:820
+#: src/Core/FlatpakBackend.vala:834
 #, fuzzy
 #| msgid "Finished"
 msgid "Finishing"
 msgstr "Terminat"
 
-#: src/Core/FlatpakBackend.vala:915
+#: src/Core/FlatpakBackend.vala:929
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -270,12 +270,12 @@ msgstr "Draivers"
 msgid "Unknown Origin (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:459
+#: src/Core/Package.vala:482
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
 
-#: src/Core/PackageKitBackend.vala:263
+#: src/Core/PackageKitBackend.vala:272
 #, fuzzy, c-format
 msgid "%s (local)"
 msgstr "%s (local)"
@@ -679,26 +679,26 @@ msgstr "Fond"
 msgid "Fund the development of this app"
 msgstr "Finanțați dezvoltarea acestei aplicații"
 
-#: src/Views/AppListUpdateView.vala:51
+#: src/Views/AppListUpdateView.vala:35
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Checking for Updates"
 msgstr "Căutați actualizări …"
 
-#: src/Views/AppListUpdateView.vala:52
+#: src/Views/AppListUpdateView.vala:36
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:63
+#: src/Views/AppListUpdateView.vala:47
 msgid "A restart is required to complete the installation of updates"
 msgstr "Este necesară o repornire pentru a finaliza instalarea actualizărilor"
 
-#: src/Views/AppListUpdateView.vala:71
+#: src/Views/AppListUpdateView.vala:55
 msgid "Restart Now"
 msgstr "Reporniți acum"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:215
+#: src/Views/AppListUpdateView.vala:199
 msgid "Update All"
 msgstr "Actualizați-le pe toate"
 
@@ -910,7 +910,7 @@ msgstr ""
 msgid "Up to %s"
 msgstr "La zi"
 
-#: src/Widgets/UpdateHeaderRow.vala:69
+#: src/Widgets/UpdateHeaderRow.vala:66
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
@@ -921,15 +921,11 @@ msgstr[1] ""
 "2\n"
 "%u Actualizare disponibilă"
 
-#: src/Widgets/UpdateHeaderRow.vala:107
-msgid "Searching for updates…"
-msgstr "Căutați actualizări …"
-
-#: src/Widgets/UpdateHeaderRow.vala:114
+#: src/Widgets/UpdateHeaderRow.vala:93
 msgid "Up to Date"
 msgstr "La zi"
 
-#: src/Widgets/UpdateHeaderRow.vala:122
+#: src/Widgets/UpdateHeaderRow.vala:100
 msgid "Drivers"
 msgstr "Draivers"
 
@@ -940,6 +936,9 @@ msgstr "Deschis"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:318
 msgid "Update"
 msgstr "Actualizați"
+
+#~ msgid "Searching for updates…"
+#~ msgstr "Căutați actualizări …"
 
 #~ msgid "There Was An Error Installing %s."
 #~ msgstr "A apărut o eroare la instalarea%s."
