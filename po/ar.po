@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-28 18:10+0000\n"
+"POT-Creation-Date: 2020-06-02 17:55+0000\n"
 "PO-Revision-Date: 2020-05-15 16:29+0000\n"
 "Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/appcenter/ar/>\n"
@@ -89,7 +89,7 @@ msgstr "جاري حذف الحزم"
 msgid "Downloading"
 msgstr "تحميل"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:709
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:723
 msgid "Installing"
 msgstr "جاري التثبيت"
 
@@ -134,9 +134,9 @@ msgid "Finished"
 msgstr "انتهى"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:718 src/Core/FlatpakBackend.vala:746
-#: src/Core/FlatpakBackend.vala:823 src/Core/FlatpakBackend.vala:924
-#: src/Core/FlatpakBackend.vala:950
+#: src/Core/FlatpakBackend.vala:732 src/Core/FlatpakBackend.vala:760
+#: src/Core/FlatpakBackend.vala:837 src/Core/FlatpakBackend.vala:938
+#: src/Core/FlatpakBackend.vala:964
 msgid "Cancelling"
 msgstr "الغاء"
 
@@ -229,15 +229,15 @@ msgstr[3] "يوجد %u تحديثات لنظامك"
 msgstr[4] "يوجد %u تحديث لنظامك"
 msgstr[5] "يوجد %u تحديث لنظامك"
 
-#: src/Core/FlatpakBackend.vala:815
+#: src/Core/FlatpakBackend.vala:829
 msgid "Uninstalling"
 msgstr "جارٍ إلغاء التثبيت"
 
-#: src/Core/FlatpakBackend.vala:820
+#: src/Core/FlatpakBackend.vala:834
 msgid "Finishing"
 msgstr "اللمسات الأخيرة"
 
-#: src/Core/FlatpakBackend.vala:915
+#: src/Core/FlatpakBackend.vala:929
 msgid "Updating"
 msgstr "يتم التحديث"
 
@@ -267,12 +267,12 @@ msgstr "تعريفات أوبونتو"
 msgid "Unknown Origin (non-curated)"
 msgstr "غير معروف الأصل (غير منظم)"
 
-#: src/Core/Package.vala:459
+#: src/Core/Package.vala:482
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "لم يتم تعيين حالة التطبيق كما هو مثبت في مركز التطبيقات للحزمة: %s"
 
-#: src/Core/PackageKitBackend.vala:263
+#: src/Core/PackageKitBackend.vala:272
 #, c-format
 msgid "%s (local)"
 msgstr "%s (محلي)"
@@ -666,24 +666,24 @@ msgstr "دعم"
 msgid "Fund the development of this app"
 msgstr "إدعم تطوير هذا التطبيق"
 
-#: src/Views/AppListUpdateView.vala:51
+#: src/Views/AppListUpdateView.vala:35
 msgid "Checking for Updates"
 msgstr "جاري البحث عن تحديثات"
 
-#: src/Views/AppListUpdateView.vala:52
+#: src/Views/AppListUpdateView.vala:36
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr "جاري تحميل قائمة من التحديثات المتوفرة للنظام والتطبيقات المثبته"
 
-#: src/Views/AppListUpdateView.vala:63
+#: src/Views/AppListUpdateView.vala:47
 msgid "A restart is required to complete the installation of updates"
 msgstr "يتطلب اعادة تشغيل الجهاز لتثبيت التحديثات"
 
-#: src/Views/AppListUpdateView.vala:71
+#: src/Views/AppListUpdateView.vala:55
 msgid "Restart Now"
 msgstr "اعادة تشغيل الآن"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:215
+#: src/Views/AppListUpdateView.vala:199
 msgid "Update All"
 msgstr "تحديث الكل"
 
@@ -887,7 +887,7 @@ msgstr "سيتم تنزيل أجزاء التطبيقات والتحديثات �
 msgid "Up to %s"
 msgstr "تم تثبيت آخر التحديثات %s"
 
-#: src/Widgets/UpdateHeaderRow.vala:69
+#: src/Widgets/UpdateHeaderRow.vala:66
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
@@ -898,15 +898,11 @@ msgstr[3] "يتوفر بعض التحديثات (%u)"
 msgstr[4] "يتوفر الكثير من التحديثات (%u)"
 msgstr[5] "يتوفر %u تحديث"
 
-#: src/Widgets/UpdateHeaderRow.vala:107
-msgid "Searching for updates…"
-msgstr "البحث عن تحديثات…"
-
-#: src/Widgets/UpdateHeaderRow.vala:114
+#: src/Widgets/UpdateHeaderRow.vala:93
 msgid "Up to Date"
 msgstr "تم تثبيت آخر التحديثات"
 
-#: src/Widgets/UpdateHeaderRow.vala:122
+#: src/Widgets/UpdateHeaderRow.vala:100
 msgid "Drivers"
 msgstr "التعريفات"
 
@@ -917,6 +913,9 @@ msgstr "فتح"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:318
 msgid "Update"
 msgstr "تحديث"
+
+#~ msgid "Searching for updates…"
+#~ msgstr "البحث عن تحديثات…"
 
 #~ msgid "There Was An Error Installing %s."
 #~ msgstr "خطأ في تثبيت %s."

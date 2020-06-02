@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-28 18:10+0000\n"
+"POT-Creation-Date: 2020-06-02 17:55+0000\n"
 "PO-Revision-Date: 2020-05-13 05:10+0000\n"
 "Last-Translator: Nan-Hung Hsieh <nhsieh@cvm.tamu.edu>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/appcenter/appcenter/zh_Hant/>\n"
@@ -89,7 +89,7 @@ msgstr "正在移除軟體包"
 msgid "Downloading"
 msgstr "下載中"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:709
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:723
 msgid "Installing"
 msgstr "安裝中"
 
@@ -134,9 +134,9 @@ msgid "Finished"
 msgstr "已完成"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:718 src/Core/FlatpakBackend.vala:746
-#: src/Core/FlatpakBackend.vala:823 src/Core/FlatpakBackend.vala:924
-#: src/Core/FlatpakBackend.vala:950
+#: src/Core/FlatpakBackend.vala:732 src/Core/FlatpakBackend.vala:760
+#: src/Core/FlatpakBackend.vala:837 src/Core/FlatpakBackend.vala:938
+#: src/Core/FlatpakBackend.vala:964
 msgid "Cancelling"
 msgstr "正在取消"
 
@@ -219,15 +219,15 @@ msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "您的系統有 %u 項更新可套用"
 
-#: src/Core/FlatpakBackend.vala:815
+#: src/Core/FlatpakBackend.vala:829
 msgid "Uninstalling"
 msgstr "解除安裝中"
 
-#: src/Core/FlatpakBackend.vala:820
+#: src/Core/FlatpakBackend.vala:834
 msgid "Finishing"
 msgstr "完成中"
 
-#: src/Core/FlatpakBackend.vala:915
+#: src/Core/FlatpakBackend.vala:929
 msgid "Updating"
 msgstr "更新"
 
@@ -257,12 +257,12 @@ msgstr "Ubuntu 驅動程式"
 msgid "Unknown Origin (non-curated)"
 msgstr "未知的來源 (未整理)"
 
-#: src/Core/Package.vala:459
+#: src/Core/Package.vala:482
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "未設定為安裝狀態的應用程式：%s"
 
-#: src/Core/PackageKitBackend.vala:263
+#: src/Core/PackageKitBackend.vala:272
 #, c-format
 msgid "%s (local)"
 msgstr "%s (本機)"
@@ -653,24 +653,24 @@ msgstr "資助"
 msgid "Fund the development of this app"
 msgstr "資助此程式的開發"
 
-#: src/Views/AppListUpdateView.vala:51
+#: src/Views/AppListUpdateView.vala:35
 msgid "Checking for Updates"
 msgstr "正在檢查更新"
 
-#: src/Views/AppListUpdateView.vala:52
+#: src/Views/AppListUpdateView.vala:36
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr "下載並安裝應用程序"
 
-#: src/Views/AppListUpdateView.vala:63
+#: src/Views/AppListUpdateView.vala:47
 msgid "A restart is required to complete the installation of updates"
 msgstr "需要重新啟動才能完成更新的安裝"
 
-#: src/Views/AppListUpdateView.vala:71
+#: src/Views/AppListUpdateView.vala:55
 msgid "Restart Now"
 msgstr "立刻重新啟動"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:215
+#: src/Views/AppListUpdateView.vala:199
 msgid "Update All"
 msgstr "全部更新"
 
@@ -874,21 +874,17 @@ msgstr "僅部分程式或更新內容需要下載。"
 msgid "Up to %s"
 msgstr "最新狀態"
 
-#: src/Widgets/UpdateHeaderRow.vala:69
+#: src/Widgets/UpdateHeaderRow.vala:66
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "有 %u 項更新"
 
-#: src/Widgets/UpdateHeaderRow.vala:107
-msgid "Searching for updates…"
-msgstr "正在搜尋有無更新…"
-
-#: src/Widgets/UpdateHeaderRow.vala:114
+#: src/Widgets/UpdateHeaderRow.vala:93
 msgid "Up to Date"
 msgstr "最新狀態"
 
-#: src/Widgets/UpdateHeaderRow.vala:122
+#: src/Widgets/UpdateHeaderRow.vala:100
 msgid "Drivers"
 msgstr "驅動程式"
 
@@ -899,6 +895,9 @@ msgstr "開啟"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:318
 msgid "Update"
 msgstr "更新"
+
+#~ msgid "Searching for updates…"
+#~ msgstr "正在搜尋有無更新…"
 
 #~ msgid "There Was An Error Installing %s."
 #~ msgstr "安裝 %s 時發生錯誤。"

@@ -23,7 +23,6 @@ namespace AppCenter.Widgets {
     public abstract class AbstractHeaderGrid : Gtk.Grid {
         public uint update_numbers { get; protected set; default = 0; }
         public uint64 update_real_size { get; protected set; default = 0; }
-        public bool is_updating { get; protected set; default = false; }
         public bool using_flatpak { get; protected set; default = false; }
 
         construct {
@@ -31,14 +30,13 @@ namespace AppCenter.Widgets {
             column_spacing = 12;
         }
 
-        protected void store_data (uint _update_numbers, uint64 _update_real_size, bool _is_updating, bool _using_flatpak) {
+        protected void store_data (uint _update_numbers, uint64 _update_real_size, bool _using_flatpak) {
             update_numbers = _update_numbers;
             update_real_size = _update_real_size;
-            is_updating = _is_updating;
             using_flatpak = _using_flatpak;
         }
 
-        public abstract void update (uint _update_numbers, uint64 _update_real_size, bool _is_updating, bool _using_flatpak);
+        public abstract void update (uint _update_numbers, uint64 _update_real_size, bool _using_flatpak);
     }
 
     /** Header to show at top of list if there are updates available **/
@@ -62,20 +60,16 @@ namespace AppCenter.Widgets {
             add (size_label);
         }
 
-        public override void update (uint _update_numbers, uint64 _update_real_size, bool _is_updating, bool _using_flatpak) {
-            store_data (_update_numbers, _update_real_size, _is_updating, _using_flatpak);
+        public override void update (uint _update_numbers, uint64 _update_real_size, bool _using_flatpak) {
+            store_data (_update_numbers, _update_real_size, _using_flatpak);
 
-            if (!is_updating) {
-                updates_label.label = ngettext ("%u Update Available", "%u Updates Available", update_numbers).printf (update_numbers);
-                size_label.update (update_real_size, using_flatpak);
+            updates_label.label = ngettext ("%u Update Available", "%u Updates Available", update_numbers).printf (update_numbers);
+            size_label.update (update_real_size, using_flatpak);
 
-                if (update_numbers > 0) {
-                    show_all ();
-                } else {
-                    hide ();
-                }
+            if (update_numbers > 0) {
+                show_all ();
             } else {
-                hide (); /* Updated header shows updating spinner and message */
+                hide ();
             }
         }
     }
@@ -83,37 +77,21 @@ namespace AppCenter.Widgets {
     /** Header to show above first package that is up to date, or if the cache is updating **/
     public class UpdatedGrid : AbstractHeaderGrid {
         private Gtk.Label label;
-        private Gtk.Spinner spinner;
 
         construct {
             label = new Gtk.Label (""); /* Should not be displayed before being updated */
             label.hexpand = true;
             ((Gtk.Misc)label).xalign = 0;
 
-            spinner = new Gtk.Spinner ();
-
             add (label);
-            add (spinner);
         }
 
-        public override void update (uint _update_numbers, uint64 _update_real_size, bool _is_updating, bool _using_flatpak) {
-            store_data (_update_numbers, _update_real_size, _is_updating, _using_flatpak);
+        public override void update (uint _update_numbers, uint64 _update_real_size, bool _using_flatpak) {
+            store_data (_update_numbers, _update_real_size, _using_flatpak);
 
-            if (is_updating) {
-                halign = Gtk.Align.CENTER;
-                spinner.start ();
-                spinner.no_show_all = false;
-                spinner.show ();
-                label.label = _("Searching for updates…");
-                label.get_style_context ().remove_class (Granite.STYLE_CLASS_H4_LABEL);
-            } else {
-                halign = Gtk.Align.FILL;
-                spinner.stop ();
-                spinner.no_show_all = true;
-                spinner.hide ();
-                label.label = _("Up to Date");
-                label.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
-            }
+            halign = Gtk.Align.FILL;
+            label.label = _("Up to Date");
+            label.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
         }
     }
 
@@ -127,7 +105,7 @@ namespace AppCenter.Widgets {
             add (label);
         }
 
-        public override void update (uint _update_numbers, uint64 _update_real_size, bool _is_updating, bool _using_flatpak) {
+        public override void update (uint _update_numbers, uint64 _update_real_size, bool _using_flatpak) {
 
         }
     }
