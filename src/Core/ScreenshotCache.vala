@@ -19,14 +19,9 @@
 public class AppCenterCore.ScreenshotCache : GLib.Object {
     private const int MAX_CACHE_SIZE = 100000000;
 
-    private Soup.Session session;
-
     private GLib.File screenshot_folder;
 
     construct {
-        session = new Soup.Session ();
-        session.timeout = 5;
-
         var screenshot_path = Path.build_filename (
             GLib.Environment.get_user_cache_dir (),
             Build.PROJECT_NAME,
@@ -154,66 +149,40 @@ public class AppCenterCore.ScreenshotCache : GLib.Object {
     public async bool fetch (string url, out string path) {
         path = generate_screenshot_path (url);
 
-        var file = File.new_for_path (path);
+        var remote_file = File.new_for_uri (url);
+        var local_file = File.new_for_path (path);
 
-        var msg = new Soup.Message ("HEAD", url);
-
+        GLib.DateTime? remote_mtime = null;
         try {
-            yield session.send_async (msg);
+            var file_info = yield remote_file.query_info_async (GLib.FileAttribute.TIME_MODIFIED, FileQueryInfoFlags.NONE);
+            remote_mtime = file_info.get_modification_date_time ();
         } catch (Error e) {
-            warning ("HEAD request of %s failed: %s", url, e.message);
-
-            // Use the cached file if it exists
-            return file.query_exists ();
+            warning ("Error getting modification time of remote screenshot file: %s", e.message);
         }
 
-        var modified = msg.response_headers.get_one ("Last-Modified");
-
-        if (msg.status_code != Soup.Status.OK || modified == null) {
-            warning ("HEAD request to get modified time of %s failed: %s", url, msg.reason_phrase);
-
-            // Use the cached file if it exists
-            return file.query_exists ();
+        if (remote_mtime == null) {
+            // Used the locally cached version if it exists
+            return local_file.query_exists ();
         }
 
-        GLib.DateTime? modified_time = null;
-        // Parse the HTTP date format using Soup
-        var http_date = new Soup.Date.from_string (modified);
-        if (http_date != null) {
-            // Convert it to ISO8601
-            string? iso8601_string = http_date.to_string (Soup.DateFormat.ISO8601);
-            if (iso8601_string != null) {
-                // Now to a GLib.DateTime
-                modified_time = new GLib.DateTime.from_iso8601 (iso8601_string, null);
-            }
-        }
-
-        if (modified_time == null) {
-            warning ("Converting Last-Modified header (%s) of HEAD request to GLib.DateTime failed", modified);
-
-            // Use the cached file if it exists
-            return file.query_exists ();
-        }
-
-        if (file.query_exists ()) {
+        if (local_file.query_exists ()) {
             GLib.DateTime? file_time = null;
             try {
-                var file_info = yield file.query_info_async (GLib.FileAttribute.TIME_MODIFIED, FileQueryInfoFlags.NONE);
+                var file_info = yield local_file.query_info_async (GLib.FileAttribute.TIME_MODIFIED, FileQueryInfoFlags.NONE);
                 file_time = file_info.get_modification_date_time ();
             } catch (Error e) {
                 warning ("Error getting modification time of cached screenshot file: %s", e.message);
             }
 
             // Local file is up to date
-            if (file_time != null && file_time.equal (modified_time)) {
+            if (file_time != null && file_time.equal (remote_mtime)) {
                 return true;
             }
         }
 
-        var remote_file = File.new_for_uri (url);
+        // We don't have the local copy, or it's not up to date, download it
         try {
-            // We don't need to set the mtime on the downloaded file, GLib does this for us
-            yield remote_file.copy_async (file, FileCopyFlags.OVERWRITE | FileCopyFlags.TARGET_DEFAULT_PERMS);
+            yield remote_file.copy_async (local_file, FileCopyFlags.OVERWRITE | FileCopyFlags.TARGET_DEFAULT_PERMS);
         } catch (Error e) {
             warning ("Unable to download screenshot from %s: %s", url, e.message);
             return false;
