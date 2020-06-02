@@ -153,6 +153,7 @@ public class AppCenterCore.ScreenshotCache : GLib.Object {
     // Returns true if theres a screenshot to load in the out parameter @path
     public async bool fetch (string url, out string path) {
         path = generate_screenshot_path (url);
+
         var file = File.new_for_path (path);
 
         var msg = new Soup.Message ("HEAD", url);
@@ -168,18 +169,40 @@ public class AppCenterCore.ScreenshotCache : GLib.Object {
 
         var modified = msg.response_headers.get_one ("Last-Modified");
 
-        if (msg.status_code != Soup.Status.OK || modified == null) {
-            warning ("HEAD request of %s failed: %s", url, msg.reason_phrase);
+        string? iso8601_string = null;
+        GLib.DateTime? modified_time = null;
+        // Parse the HTTP date format using Soup
+        var http_date = new Soup.Date.from_string (modified);
+        if (http_date != null) {
+            // Convert it to ISO8601
+            iso8601_string = http_date.to_string (Soup.DateFormat.ISO8601);
+            if (iso8601_string != null) {
+                // Now to a GLib.DateTime
+                modified_time = new GLib.DateTime.from_iso8601 (iso8601_string, null);
+            }
+        }
+
+        if (msg.status_code != Soup.Status.OK || modified == null || modified_time == null) {
+            warning ("HEAD request to get modified time of %s failed", url);
 
             // Use the cached file if it exists
             return file.query_exists ();
         }
 
-        var time = new Soup.Date.from_string (modified).to_time_t ();
+        if (file.query_exists ()) {
+            GLib.DateTime? file_time = null;
+            try {
+                var file_info = yield file.query_info_async (GLib.FileAttribute.TIME_MODIFIED, FileQueryInfoFlags.NONE);
+                file_time = file_info.get_modification_date_time ();
+            } catch (Error e) {
+                warning ("Error getting modification time of cached screenshot file: %s", e.message);
+            }
 
-        // Local file is up to date
-        if (file.query_exists () && Stat (path).st_mtime == time) {
-            return true;
+            // Local file is up to date
+            if (file_time != null && file_time.equal (modified_time)) {
+                warning ("Local file is up to date");
+                return true;
+            }
         }
 
         var remote_file = File.new_for_uri (url);
@@ -190,20 +213,15 @@ public class AppCenterCore.ScreenshotCache : GLib.Object {
             return false;
         }
 
-        set_mtime (path, time);
+        try {
+            var file_info = yield file.query_info_async (GLib.FileAttribute.TIME_MODIFIED, FileQueryInfoFlags.NONE);
+            file_info.set_modification_date_time (modified_time);
+
+            yield file.set_attributes_async (file_info, FileQueryInfoFlags.NONE, GLib.Priority.DEFAULT, null, null);
+        } catch (Error e) {
+            warning ("Error setting mtime on cached screenshot: %s", e.message);
+        }
 
         return true;
-    }
-
-    // Used for setting the `Last-Modified` header's value to the screenshot that was downloaded.
-    private void set_mtime (string path, time_t mtime) {
-        Stat fstat = Stat (path);
-
-        var utimbuf = UTimBuf () {
-            actime = fstat.st_atime,
-            modtime = mtime
-        };
-
-        FileUtils.utime (path, utimbuf);
     }
 }
