@@ -38,7 +38,7 @@ public class AppCenterCore.Client : Object {
     private AsyncMutex update_notification_mutex = new AsyncMutex ();
 
     private Client () {
-        Object (screenshot_cache: AppCenterCore.ScreenshotCache.get_default ());
+        Object (screenshot_cache: new AppCenterCore.ScreenshotCache ());
     }
 
     construct {

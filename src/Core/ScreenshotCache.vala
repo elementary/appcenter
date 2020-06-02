@@ -19,18 +19,15 @@
 public class AppCenterCore.ScreenshotCache : GLib.Object {
     private const int MAX_CACHE_SIZE = 100000000;
 
-    public string screenshot_path;
     private Soup.Session session;
 
     private GLib.File screenshot_folder;
-
-    private static ScreenshotCache? instance = null;
 
     construct {
         session = new Soup.Session ();
         session.timeout = 5;
 
-        screenshot_path = Path.build_filename (
+        var screenshot_path = Path.build_filename (
             GLib.Environment.get_user_cache_dir (),
             Build.PROJECT_NAME,
             "screenshots"
@@ -38,10 +35,6 @@ public class AppCenterCore.ScreenshotCache : GLib.Object {
 
         debug ("screenshot path is at %s", screenshot_path);
 
-        init ();
-    }
-
-    private void init () {
         screenshot_folder = GLib.File.new_for_path (screenshot_path);
 
         if (!screenshot_folder.query_exists ()) {
@@ -56,14 +49,6 @@ public class AppCenterCore.ScreenshotCache : GLib.Object {
         }
 
         maintain.begin ();
-    }
-
-    public static ScreenshotCache get_default () {
-        if (instance == null) {
-            instance = new ScreenshotCache ();
-        }
-
-        return instance;
     }
 
     // Prune the cache directory if it exceeds the `MAX_CACHE_SIZE`.
@@ -86,12 +71,19 @@ public class AppCenterCore.ScreenshotCache : GLib.Object {
 
     // Delete the oldest files in the screenshot cache until the cache is less than the max size.
     private async void delete_oldest_files (uint64 screenshot_usage) {
+        const string[] needed_file_attributes = {
+            GLib.FileAttribute.STANDARD_NAME,
+            GLib.FileAttribute.STANDARD_TYPE,
+            GLib.FileAttribute.STANDARD_SIZE,
+            GLib.FileAttribute.TIME_CHANGED
+        };
+
         var file_list = new Gee.ArrayList<GLib.FileInfo> ();
 
         FileEnumerator enumerator;
         try {
             enumerator = yield screenshot_folder.enumerate_children_async (
-                string.join (",", "standard::*", GLib.FileAttribute.TIME_CHANGED),
+                string.join (",", needed_file_attributes),
                 FileQueryInfoFlags.NONE
             );
         } catch (Error e) {
@@ -139,7 +131,6 @@ public class AppCenterCore.ScreenshotCache : GLib.Object {
                 try {
                     yield file.delete_async (GLib.Priority.DEFAULT);
                     current_usage -= file_info.get_size ();
-                    warning (current_usage.to_string ());
                 } catch (Error e) {
                     warning ("Unable to delete cached screenshot file '%s': %s", file.get_path (), e.message);
                 }
@@ -158,7 +149,7 @@ public class AppCenterCore.ScreenshotCache : GLib.Object {
         }
 
         return Path.build_filename (
-            screenshot_path,
+            screenshot_folder.get_path (),
             "%02x".printf (url.hash ()) + extension
         );
     }
@@ -175,12 +166,8 @@ public class AppCenterCore.ScreenshotCache : GLib.Object {
         } catch (Error e) {
             warning ("HEAD request of %s failed: %s", url, e.message);
 
-            if (file.query_exists ()) {
-                // Just use the cached one anyway
-                return true;
-            }
-
-            return false;
+            // Use the cached file if it exists
+            return file.query_exists ();
         }
 
         var modified = msg.response_headers.get_one ("Last-Modified");
@@ -188,19 +175,14 @@ public class AppCenterCore.ScreenshotCache : GLib.Object {
         if (msg.status_code != Soup.Status.OK || modified == null) {
             warning ("HEAD request of %s failed: %s", url, msg.reason_phrase);
 
-            if (file.query_exists ()) {
-                // Just use the cached one anyway
-                return true;
-            }
-
-            return false;
+            // Use the cached file if it exists
+            return file.query_exists ();
         }
 
         var time = new Soup.Date.from_string (modified).to_time_t ();
 
         // Local file is up to date
         if (file.query_exists () && Stat (path).st_mtime == time) {
-            warning ("local file up to date");
             return true;
         }
 
