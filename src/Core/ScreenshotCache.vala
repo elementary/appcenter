@@ -149,11 +149,13 @@ public class AppCenterCore.ScreenshotCache : GLib.Object {
     public async bool fetch (string url, out string path) {
         path = generate_screenshot_path (url);
 
+        // GVFS handles HTTP URIs
         var remote_file = File.new_for_uri (url);
         var local_file = File.new_for_path (path);
 
         GLib.DateTime? remote_mtime = null;
         try {
+            // GVFS uses libsoup to get the mtime via a HEAD request
             var file_info = yield remote_file.query_info_async (GLib.FileAttribute.TIME_MODIFIED, FileQueryInfoFlags.NONE);
             remote_mtime = file_info.get_modification_date_time ();
         } catch (Error e) {
