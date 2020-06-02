@@ -23,7 +23,7 @@ public class AppCenterCore.Client : Object {
      */
     public signal void installed_apps_changed ();
 
-    public unowned AppCenterCore.ScreenshotCache? screenshot_cache { get; construct; }
+    public AppCenterCore.ScreenshotCache? screenshot_cache { get; construct; }
 
     private GLib.Cancellable cancellable;
 
