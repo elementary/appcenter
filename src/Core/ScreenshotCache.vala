@@ -176,13 +176,12 @@ public class AppCenterCore.ScreenshotCache : GLib.Object {
             return file.query_exists ();
         }
 
-        string? iso8601_string = null;
         GLib.DateTime? modified_time = null;
         // Parse the HTTP date format using Soup
         var http_date = new Soup.Date.from_string (modified);
         if (http_date != null) {
             // Convert it to ISO8601
-            iso8601_string = http_date.to_string (Soup.DateFormat.ISO8601);
+            string? iso8601_string = http_date.to_string (Soup.DateFormat.ISO8601);
             if (iso8601_string != null) {
                 // Now to a GLib.DateTime
                 modified_time = new GLib.DateTime.from_iso8601 (iso8601_string, null);
@@ -213,19 +212,11 @@ public class AppCenterCore.ScreenshotCache : GLib.Object {
 
         var remote_file = File.new_for_uri (url);
         try {
+            // We don't need to set the mtime on the downloaded file, GLib does this for us
             yield remote_file.copy_async (file, FileCopyFlags.OVERWRITE | FileCopyFlags.TARGET_DEFAULT_PERMS);
         } catch (Error e) {
             warning ("Unable to download screenshot from %s: %s", url, e.message);
             return false;
-        }
-
-        try {
-            var file_info = yield file.query_info_async (GLib.FileAttribute.TIME_MODIFIED, FileQueryInfoFlags.NONE);
-            file_info.set_modification_date_time (modified_time);
-
-            yield file.set_attributes_async (file_info, FileQueryInfoFlags.NONE, GLib.Priority.DEFAULT, null, null);
-        } catch (Error e) {
-            warning ("Error setting mtime on cached screenshot: %s", e.message);
         }
 
         return true;
