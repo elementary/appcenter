@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-28 18:10+0000\n"
-"PO-Revision-Date: 2020-05-15 16:29+0000\n"
+"PO-Revision-Date: 2020-06-07 13:11+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/extra/"
 "ja/>\n"
@@ -77,7 +77,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:33
 msgid "Reduce slowdowns when opening certain apps"
-msgstr "特定のアプリを開く際に動作が遅くなる問題を軽減"
+msgstr "特定のアプリを開く際に動作が遅くなる不具合を軽減"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
 msgid "Extension improvements"
@@ -164,9 +164,7 @@ msgstr "アプリと一緒にフォントを一覧表示しないように修正
 #: data/io.elementary.appcenter.appdata.xml.in:65
 msgid ""
 "Prevent crashes when updating Flatpaks and system packages simultaneously"
-msgstr ""
-"Flatpak とシステムパッケージを同時にアップデートする際にクラッシュする問題を"
-"修正"
+msgstr "Flatpak とシステムパッケージを同時にアップデートする際にクラッシュする不具合を修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:66
 msgid "Prevent suspending when installing, updating, or removing packages"
@@ -184,18 +182,15 @@ msgstr "AppCenter 以外で変更があった際にアプリケーションの�
 
 #: data/io.elementary.appcenter.appdata.xml.in:81
 msgid "Fix for notification not appearing when a restart is required"
-msgstr "再起動が必要な場合に通知が表示されない問題を修正"
+msgstr "再起動が必要な場合に通知が表示されない不具合を修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:82
 msgid "Apps in list views now load in the correct order when scrolling"
-msgstr ""
-"スクロール時にリストビューのアプリが正しい順番で読み込まれない問題を修正"
+msgstr "スクロール時にリストビューのアプリが正しい順番で読み込まれない不具合を修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:83
 msgid "Prevent unescaped XML entities from appearing in application names"
-msgstr ""
-"エスケープされていない XML エントリーがアプリケーション名に表示される問題を修"
-"正"
+msgstr "エスケープされていない XML エントリーがアプリケーション名に表示される不具合を修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:84
 msgid "Load the \"Installed\" view faster"
@@ -233,7 +228,7 @@ msgstr "ログイン時に AppCenter が勝手に開かないように修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:98
 msgid "Prevent ghost update notification when there are no updates available"
-msgstr "アップデートがないのに通知が表示される問題を修正"
+msgstr "アップデートがないのに通知が表示される不具合を修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:99
 msgid "Show correct installation state for extensions"
@@ -256,8 +251,7 @@ msgstr "インストールの失敗時にエラーダイアログを表示する
 msgid ""
 "Fix an issue where some apps couldn't be uninstalled from the Applications "
 "Menu"
-msgstr ""
-"一部のアプリがアプリケーションメニューからアンインストールできない問題を修正"
+msgstr "一部のアプリがアプリケーションメニューからアンインストールできない不具合を修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:110
 msgid "Allow browsing and uninstalling apps while offline"
@@ -293,7 +287,7 @@ msgstr "プロプライエタリーなライセンスを適切に表示するよ
 
 #: data/io.elementary.appcenter.appdata.xml.in:117
 msgid "Fix some layout issues"
-msgstr "レイアウトの問題を修正"
+msgstr "レイアウトの不具合を修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:118
 msgid "Fix crashes"
@@ -309,7 +303,7 @@ msgstr "ウィンドウの状態の復元を改善"
 
 #: data/io.elementary.appcenter.appdata.xml.in:129
 msgid "Prevent action buttons from jumping around"
-msgstr "アクションボタンが移動する問題を修正"
+msgstr "アクションボタンが移動する不具合を修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:130
 msgid "Remove reset paid apps gsettings key"
