@@ -187,7 +187,7 @@ public class AppCenterCore.ScreenshotCache : GLib.Object {
                 GLib.Source.remove (cancel_source);
             }
 
-            remote_mtime = file_info.get_modification_date_time ();
+            remote_mtime = get_modification_time (file_info);
         } catch (Error e) {
             warning ("Error getting modification time of remote screenshot file: %s", e.message);
         }
@@ -201,7 +201,7 @@ public class AppCenterCore.ScreenshotCache : GLib.Object {
             GLib.DateTime? file_time = null;
             try {
                 var file_info = yield local_file.query_info_async (GLib.FileAttribute.TIME_MODIFIED, FileQueryInfoFlags.NONE);
-                file_time = file_info.get_modification_date_time ();
+                file_time = get_modification_time (file_info);
             } catch (Error e) {
                 warning ("Error getting modification time of cached screenshot file: %s", e.message);
             }
@@ -238,5 +238,25 @@ public class AppCenterCore.ScreenshotCache : GLib.Object {
         }
 
         return true;
+    }
+
+    private static GLib.DateTime? get_modification_time (GLib.FileInfo info) {
+        GLib.DateTime? datetime = null;
+
+#if GLIB_2_62
+        datetime = info.get_modification_date_time ();
+#else
+        var mtime = info.get_attribute_uint64 (GLib.FileAttribute.TIME_MODIFIED);
+        if (mtime != 0) {
+            datetime = new DateTime.from_unix_utc ((int64)mtime);
+
+            var usec = info.get_attribute_uint32 (GLib.FileAttribute.TIME_MODIFIED_USEC);
+            if (usec != 0) {
+                datetime = datetime.add (usec);
+            }
+        }
+#endif
+
+        return datetime;
     }
 }
