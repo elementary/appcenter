@@ -187,7 +187,19 @@ public class AppCenterCore.ScreenshotCache : GLib.Object {
                 GLib.Source.remove (cancel_source);
             }
 
+#if GLIB_2_62
             remote_mtime = file_info.get_modification_date_time ();
+#else
+            var mtime = file_info.get_attribute_uint64 (GLib.FileAttribute.TIME_MODIFIED);
+            if (mtime != 0) {
+                remote_mtime = new DateTime.from_unix_utc ((int64)mtime);
+
+                var usec = file_info.get_attribute_uint32 (GLib.FileAttribute.TIME_MODIFIED_USEC);
+                if (usec != 0) {
+                    remote_mtime = remote_mtime.add (usec);
+                }
+            }
+#endif
         } catch (Error e) {
             warning ("Error getting modification time of remote screenshot file: %s", e.message);
         }
