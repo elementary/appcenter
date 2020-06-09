@@ -199,7 +199,7 @@ namespace AppCenter {
             var stripe = new Widgets.StripeDialog (
                 amount,
                 package_name.label,
-                package.component.id.replace (".desktop", ""),
+                package.normalized_component_id,
                 package.get_payments_key ()
             );
 
