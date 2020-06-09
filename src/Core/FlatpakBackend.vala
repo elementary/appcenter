@@ -175,10 +175,6 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
             unowned Flatpak.InstalledRef installed_ref = installed_refs[i];
 
-            if (installed_ref.kind == Flatpak.RefKind.RUNTIME) {
-                continue;
-            }
-
             var bundle_id = "%s/%s".printf (installed_ref.origin, installed_ref.format_ref ());
             var package = package_list[bundle_id];
             if (package != null) {
@@ -389,10 +385,6 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         for (int j = 0; j < installed_refs.length; j++) {
             unowned Flatpak.InstalledRef installed_ref = installed_refs[j];
 
-            if (installed_ref.kind == Flatpak.RefKind.RUNTIME) {
-                continue;
-            }
-
             var bundle_id = "%s/%s".printf (installed_ref.origin, installed_ref.format_ref ());
             if (key == bundle_id) {
                 return true;
@@ -558,7 +550,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             var new_package_list = new Gee.HashMap<string, Package> ();
             var comp_validator = ComponentValidator.get_default ();
             appstream_pool.get_components ().foreach ((comp) => {
-                if (!comp_validator.validate (comp)) {
+                if (comp.get_kind () == AppStream.ComponentKind.RUNTIME || !comp_validator.validate (comp)) {
                     return;
                 }
 
