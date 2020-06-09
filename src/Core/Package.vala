@@ -133,7 +133,8 @@ public class AppCenterCore.Package : Object {
 
             _component_id = component.id;
             if (_component_id.has_suffix (".desktop")) {
-                _component_id = _component_id.substring (0, _component_id.length + _component_id.index_of_nth_char (-8));
+                // ".desktop" is always 8 bytes in UTF-8 so we can just chop 8 bytes off the end
+                _component_id = _component_id.substring (0, _component_id.length - 8);
             }
 
             return _component_id;
