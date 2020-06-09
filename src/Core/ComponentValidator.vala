@@ -48,6 +48,10 @@ public class AppCenterCore.ComponentValidator : Object {
             return false;
         }
 
+        if (component.get_kind () == AppStream.ComponentKind.RUNTIME) {
+            return false;
+        }
+
         if (component.get_id () in blacklist) {
             return false;
         }

@@ -550,7 +550,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             var new_package_list = new Gee.HashMap<string, Package> ();
             var comp_validator = ComponentValidator.get_default ();
             appstream_pool.get_components ().foreach ((comp) => {
-                if (comp.get_kind () == AppStream.ComponentKind.RUNTIME || !comp_validator.validate (comp)) {
+                if (!comp_validator.validate (comp)) {
                     return;
                 }
 
