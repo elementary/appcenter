@@ -370,8 +370,6 @@ namespace AppCenter {
                     MainWindow.installed_view.add_app.begin (package);
                 }
             }
-
-            action_stack.set_visible_child_name ("progress");
         }
 
         private async void uninstall_clicked () {
