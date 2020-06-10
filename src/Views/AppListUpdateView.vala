@@ -171,8 +171,6 @@ namespace AppCenter.Views {
                     return;
                 }
 
-                var header = new Widgets.UpdatesGrid ();
-
                 uint update_numbers = 0U;
                 uint nag_numbers = 0U;
                 uint64 update_real_size = 0ULL;
@@ -192,7 +190,7 @@ namespace AppCenter.Views {
                     }
                 }
 
-                header.update (update_numbers, update_real_size, using_flatpak);
+                var header = new Widgets.UpdateHeaderRow.updatable (update_numbers, update_real_size, using_flatpak);
 
                 // Unfortunately the update all button needs to be recreated everytime the header needs to be updated
                 if (update_numbers > 0) {
@@ -217,7 +215,7 @@ namespace AppCenter.Views {
                     return;
                 }
 
-                var header = new Widgets.DriverGrid ();
+                var header = new Widgets.UpdateHeaderRow.drivers ();
                 header.show_all ();
                 row.set_header (header);
             } else {
@@ -226,8 +224,7 @@ namespace AppCenter.Views {
                     return;
                 }
 
-                var header = new Widgets.UpdatedGrid ();
-                header.update (0, 0, false);
+                var header = new Widgets.UpdateHeaderRow.up_to_date ();
                 header.show_all ();
                 row.set_header (header);
             }

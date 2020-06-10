@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2016 elementary LLC. (https://elementary.io)
+ * Copyright (c) 2016-2020 elementary LLC. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,94 +19,43 @@
  */
 
 namespace AppCenter.Widgets {
-    /** Base class for Grids in Header Rows **/
-    public abstract class AbstractHeaderGrid : Gtk.Grid {
-        public uint update_numbers { get; protected set; default = 0; }
-        public uint64 update_real_size { get; protected set; default = 0; }
-        public bool using_flatpak { get; protected set; default = false; }
+    public class UpdateHeaderRow : Gtk.Grid {
+        public string label_text { get; construct; }
+
+        private Gtk.Label label;
 
         construct {
             margin = 12;
             column_spacing = 12;
+
+            label = new Gtk.Label (label_text);
+            label.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
+            label.hexpand = true;
+            label.halign = Gtk.Align.START;
+
+            add (label);
         }
 
-        protected void store_data (uint _update_numbers, uint64 _update_real_size, bool _using_flatpak) {
-            update_numbers = _update_numbers;
-            update_real_size = _update_real_size;
-            using_flatpak = _using_flatpak;
-        }
+        public UpdateHeaderRow.updatable (uint num_updates, uint64 update_size, bool using_flatpak) {
+            Object (
+                label_text: ngettext ("%u Update Available", "%u Updates Available", num_updates).printf (num_updates)
+            );
 
-        public abstract void update (uint _update_numbers, uint64 _update_real_size, bool _using_flatpak);
-    }
-
-    /** Header to show at top of list if there are updates available **/
-    public class UpdatesGrid : AbstractHeaderGrid {
-        private SizeLabel size_label;
-        private Gtk.Label updates_label;
-
-        construct {
-            margin_top = 18;
-
-            updates_label = new Gtk.Label (null);
-            ((Gtk.Misc) updates_label).xalign = 0;
-            updates_label.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
-            updates_label.hexpand = true;
-
-            size_label = new SizeLabel ();
+            var size_label = new SizeLabel ();
             size_label.halign = Gtk.Align.END;
             size_label.valign = Gtk.Align.CENTER;
 
-            add (updates_label);
+            size_label.update (update_size, using_flatpak);
+
             add (size_label);
         }
 
-        public override void update (uint _update_numbers, uint64 _update_real_size, bool _using_flatpak) {
-            store_data (_update_numbers, _update_real_size, _using_flatpak);
-
-            updates_label.label = ngettext ("%u Update Available", "%u Updates Available", update_numbers).printf (update_numbers);
-            size_label.update (update_real_size, using_flatpak);
-
-            if (update_numbers > 0) {
-                show_all ();
-            } else {
-                hide ();
-            }
-        }
-    }
-
-    /** Header to show above first package that is up to date, or if the cache is updating **/
-    public class UpdatedGrid : AbstractHeaderGrid {
-        private Gtk.Label label;
-
-        construct {
-            label = new Gtk.Label (""); /* Should not be displayed before being updated */
-            label.hexpand = true;
-            ((Gtk.Misc)label).xalign = 0;
-
-            add (label);
+        public UpdateHeaderRow.drivers () {
+            Object (label_text: _("Drivers"));
         }
 
-        public override void update (uint _update_numbers, uint64 _update_real_size, bool _using_flatpak) {
-            store_data (_update_numbers, _update_real_size, _using_flatpak);
-
-            halign = Gtk.Align.FILL;
-            label.label = _("Up to Date");
-            label.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
-        }
-    }
-
-    public class DriverGrid : AbstractHeaderGrid {
-        construct {
-            var label = new Gtk.Label (_("Drivers"));
-            label.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
-            label.hexpand = true;
-            ((Gtk.Misc)label).xalign = 0;
-
-            add (label);
-        }
-
-        public override void update (uint _update_numbers, uint64 _update_real_size, bool _using_flatpak) {
-
+        public UpdateHeaderRow.up_to_date () {
+            Object (label_text: _("Up to Date"));
         }
     }
 }
