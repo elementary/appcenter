@@ -817,7 +817,7 @@ namespace AppCenter.Views {
                 selection.payment_requested.connect ((amount) => {
                     var stripe = new Widgets.StripeDialog (amount,
                                                            package.get_name (),
-                                                           package.component.id.replace (".desktop", ""),
+                                                           package.normalized_component_id,
                                                            package.get_payments_key ()
                                                           );
 
