@@ -428,22 +428,18 @@ public class AppCenterCore.Package : Object {
      * multiple packages in a loop.
      *
      */
-    public async bool update (bool refresh_updates_after = true) {
+    public async bool update (bool refresh_updates_after = true) throws GLib.Error {
         if (state != State.UPDATE_AVAILABLE) {
             return false;
         }
 
-        try {
-            var success = yield perform_operation (State.UPDATING, State.INSTALLED, State.UPDATE_AVAILABLE);
-            if (success && refresh_updates_after) {
-                unowned Client client = Client.get_default ();
-                yield client.refresh_updates ();
-            }
-
-            return success;
-        } catch (Error e) {
-            return false;
+        var success = yield perform_operation (State.UPDATING, State.INSTALLED, State.UPDATE_AVAILABLE);
+        if (success && refresh_updates_after) {
+            unowned Client client = Client.get_default ();
+            yield client.refresh_updates ();
         }
+
+        return success;
     }
 
     public async bool install () {

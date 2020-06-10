@@ -23,11 +23,6 @@ namespace AppCenter.Views {
       * Does not show Uninstall Button **/
     public class AppListUpdateView : AbstractAppList {
         private bool updating_all_apps = false;
-        private bool apps_remaining_started = false;
-        private GLib.Mutex update_mutex;
-        private uint apps_done = 0;
-        private Gee.LinkedList<AppCenterCore.Package> apps_to_update;
-        private AppCenterCore.Package first_package;
 
         construct {
             var loading_view = new Granite.Widgets.AlertView (
@@ -39,9 +34,6 @@ namespace AppCenter.Views {
 
             list_box.set_header_func ((Gtk.ListBoxUpdateHeaderFunc) row_update_header);
             list_box.set_placeholder (loading_view);
-
-            update_mutex = GLib.Mutex ();
-            apps_to_update = new Gee.LinkedList<AppCenterCore.Package> ();
 
             var info_label = new Gtk.Label (_("A restart is required to complete the installation of updates"));
             info_label.show ();
@@ -230,97 +222,27 @@ namespace AppCenter.Views {
             }
 
             updating_all_apps = true;
-            apps_done = 0; // Cancelled or updated apps
-            apps_remaining_started = false;
 
-            apps_to_update.clear ();
-            // Collect all ready to update apps
             foreach (var package in get_packages ()) {
                 if (package.update_available && !package.should_nag_update) {
-                    apps_to_update.add (package);
-                }
-            }
-
-            foreach (var row in list_box.get_children ()) {
-                if (row is Widgets.PackageRow) {
-                    ((Widgets.PackageRow) row).set_action_sensitive (false);
-                }
-            };
-
-            // Update all updateable apps
-            if (apps_to_update.size > 0) {
-                first_package = apps_to_update[0];
-                first_package.info_changed.connect_after (after_first_package_info_changed);
-                first_package.update.begin (false, () => {
-                    on_app_update_end ();
-                });
-            } else {
-                updating_all_apps = false;
-            }
-        }
-
-        private void after_first_package_info_changed (AppCenterCore.ChangeInformation.Status status) {
-            assert (!apps_remaining_started);
-
-            /* Only interested if the first package has started running or has been cancelled (before starting) */
-            if (status != AppCenterCore.ChangeInformation.Status.CANCELLED && status != AppCenterCore.ChangeInformation.Status.RUNNING) {
-                return;
-            }
-
-            /* Not interested in any future changes for first_package */
-            first_package.info_changed.disconnect (after_first_package_info_changed);
-
-            Idle.add (() => {
-                if (status != AppCenterCore.ChangeInformation.Status.CANCELLED) { /* must  be running */
-                    apps_remaining_started = true;
-                    for (int i = 1; i < apps_to_update.size; i++) {
-                        apps_to_update[i].update.begin (false, () => {
-                            on_app_update_end ();
-                        });
+                    try {
+                        yield package.update (false);
+                    } catch (Error e) {
+                        // If one package update was cancelled, drop out of the loop of updating the rest
+                        if (e is GLib.IOError.CANCELLED) {
+                            break;
+                        } else {
+                            new UpgradeFailDialog (package, e).present ();
+                            break;
+                        }
                     }
-                } else { /* it was aborted - do not start updating the rest */
-                    finish_updating_all_apps ();
-                }
-
-                return GLib.Source.REMOVE;
-            });
-        }
-
-        private void on_app_update_end () {
-            update_mutex.@lock ();
-            if (updating_all_apps) {
-                apps_done++;
-
-                if (apps_done >= apps_to_update.size) {
-                    finish_updating_all_apps ();
                 }
             }
-            update_mutex.unlock ();
-        }
 
-        private void finish_updating_all_apps () {
-            assert (updating_all_apps && packages_changing == 0);
+            unowned AppCenterCore.Client client = AppCenterCore.Client.get_default ();
+            yield client.refresh_updates ();
 
             updating_all_apps = false;
-
-            /* Set the action button sensitive and emit "changed" on each row in order to update
-             * the sort order and headers (any change would have been ignored while updating) */
-            Idle.add_full (GLib.Priority.LOW, () => {
-                foreach (var row in list_box.get_children ()) {
-                    if (row is Widgets.PackageRow) {
-                        var pkg_row = ((Widgets.PackageRow)(row));
-
-                        pkg_row.set_action_sensitive (true);
-                    }
-                }
-
-                list_box.invalidate_sort ();
-
-                unowned AppCenterCore.Client client = AppCenterCore.Client.get_default ();
-                client.refresh_updates ();
-
-                return GLib.Source.REMOVE;
-            });
         }
     }
 }

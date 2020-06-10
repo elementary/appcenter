@@ -364,7 +364,13 @@ namespace AppCenter {
             if (package.installed && !package.update_available) {
                 action_button_revealer.reveal_child = false;
             } else if (package.update_available) {
-                yield package.update ();
+                try {
+                    yield package.update ();
+                } catch (Error e) {
+                    if (!(e is GLib.IOError.CANCELLED)) {
+                        new UpgradeFailDialog (package, e).present ();
+                    }
+                }
             } else {
                 if (yield package.install ()) {
                     MainWindow.installed_view.add_app.begin (package);
