@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-02 17:55+0000\n"
+"POT-Creation-Date: 2020-06-10 19:36+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/appcenter/appcenter/sk/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:337
+#: src/Application.vala:38 src/Core/Package.vala:338
 msgid "AppCenter"
 msgstr "AppCentrum"
 
@@ -205,14 +205,14 @@ msgstr "Kopírujú sa súbory"
 msgid "Unknown state"
 msgstr "Neznámy stav"
 
-#: src/Core/Client.vala:74
+#: src/Core/Client.vala:72
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Aktualizácií je dostupných"
 msgstr[1] "Aktualizácia je dostupná"
 msgstr[2] "Aktualizácie sú dostupné"
 
-#: src/Core/Client.vala:75
+#: src/Core/Client.vala:73
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
@@ -238,35 +238,35 @@ msgstr "Dokončené"
 msgid "Updating"
 msgstr "Aktualizácie"
 
-#: src/Core/Package.vala:307
+#: src/Core/Package.vala:308
 #, c-format
 msgid "%s Developers"
 msgstr "Vývojári projektu %s"
 
-#: src/Core/Package.vala:339
+#: src/Core/Package.vala:340
 #, fuzzy
 msgid "elementary Updates"
 msgstr "Nedávne aktualizácie"
 
-#: src/Core/Package.vala:341
+#: src/Core/Package.vala:342
 msgid "Ubuntu (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:344
+#: src/Core/Package.vala:345
 #, fuzzy, c-format
 msgid "%s (non-curated)"
 msgstr "%s (lokálny)"
 
-#: src/Core/Package.vala:346
+#: src/Core/Package.vala:347
 #, fuzzy
 msgid "Ubuntu Drivers"
 msgstr "Ovládače"
 
-#: src/Core/Package.vala:349
+#: src/Core/Package.vala:350
 msgid "Unknown Origin (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:482
+#: src/Core/Package.vala:483
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
@@ -666,11 +666,11 @@ msgstr "Pozrite si %s v AppCenter:"
 msgid "Share"
 msgstr "Zdieľať"
 
-#: src/Views/AppInfoView.vala:816
+#: src/Views/AppInfoView.vala:809
 msgid "Fund"
 msgstr "Financovať"
 
-#: src/Views/AppInfoView.vala:838
+#: src/Views/AppInfoView.vala:831
 msgid "Fund the development of this app"
 msgstr "Financovať vývoj tejto aplikácie"
 
@@ -693,7 +693,7 @@ msgid "Restart Now"
 msgstr "Reštartovať teraz"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:199
+#: src/Views/AppListUpdateView.vala:197
 msgid "Update All"
 msgstr "Aktualizovať všetko"
 
@@ -899,7 +899,7 @@ msgstr ""
 msgid "Up to %s"
 msgstr "Aktuálne"
 
-#: src/Widgets/UpdateHeaderRow.vala:66
+#: src/Widgets/UpdateHeaderRow.vala:41
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
@@ -907,13 +907,13 @@ msgstr[0] "Je dostupná %u aktualizácia"
 msgstr[1] "Sú dostupné %u aktualizácie"
 msgstr[2] "Je dostupných %u aktualizácií"
 
-#: src/Widgets/UpdateHeaderRow.vala:93
-msgid "Up to Date"
-msgstr "Aktuálne"
-
-#: src/Widgets/UpdateHeaderRow.vala:100
+#: src/Widgets/UpdateHeaderRow.vala:54
 msgid "Drivers"
 msgstr "Ovládače"
+
+#: src/Widgets/UpdateHeaderRow.vala:58
+msgid "Up to Date"
+msgstr "Aktuálne"
 
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:141
 msgid "Open"
