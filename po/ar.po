@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-02 17:55+0000\n"
+"POT-Creation-Date: 2020-06-10 19:36+0000\n"
 "PO-Revision-Date: 2020-05-15 16:29+0000\n"
 "Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/appcenter/ar/>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:24+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:337
+#: src/Application.vala:38 src/Core/Package.vala:338
 msgid "AppCenter"
 msgstr "مركز التطبيقات"
 
@@ -208,7 +208,7 @@ msgstr "جاري نسخ الملفات"
 msgid "Unknown state"
 msgstr "حالة غير معلومة"
 
-#: src/Core/Client.vala:74
+#: src/Core/Client.vala:72
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "لا يتوفر تحديثات"
@@ -218,7 +218,7 @@ msgstr[3] "يتوفر بعض التحديثات"
 msgstr[4] "يتوفر تحديثات"
 msgstr[5] "يتوفر تحديثات"
 
-#: src/Core/Client.vala:75
+#: src/Core/Client.vala:73
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
@@ -241,33 +241,33 @@ msgstr "اللمسات الأخيرة"
 msgid "Updating"
 msgstr "يتم التحديث"
 
-#: src/Core/Package.vala:307
+#: src/Core/Package.vala:308
 #, c-format
 msgid "%s Developers"
 msgstr "المطورون %s"
 
-#: src/Core/Package.vala:339
+#: src/Core/Package.vala:340
 msgid "elementary Updates"
 msgstr "تحديثات المنتري"
 
-#: src/Core/Package.vala:341
+#: src/Core/Package.vala:342
 msgid "Ubuntu (non-curated)"
 msgstr "اوبونتو (غير المنسقة)"
 
-#: src/Core/Package.vala:344
+#: src/Core/Package.vala:345
 #, c-format
 msgid "%s (non-curated)"
 msgstr "%s (غير منسق)"
 
-#: src/Core/Package.vala:346
+#: src/Core/Package.vala:347
 msgid "Ubuntu Drivers"
 msgstr "تعريفات أوبونتو"
 
-#: src/Core/Package.vala:349
+#: src/Core/Package.vala:350
 msgid "Unknown Origin (non-curated)"
 msgstr "غير معروف الأصل (غير منظم)"
 
-#: src/Core/Package.vala:482
+#: src/Core/Package.vala:483
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "لم يتم تعيين حالة التطبيق كما هو مثبت في مركز التطبيقات للحزمة: %s"
@@ -658,11 +658,11 @@ msgstr "أنظر إلى %s في مركز التطبيقات:"
 msgid "Share"
 msgstr "شارك"
 
-#: src/Views/AppInfoView.vala:816
+#: src/Views/AppInfoView.vala:809
 msgid "Fund"
 msgstr "دعم"
 
-#: src/Views/AppInfoView.vala:838
+#: src/Views/AppInfoView.vala:831
 msgid "Fund the development of this app"
 msgstr "إدعم تطوير هذا التطبيق"
 
@@ -683,7 +683,7 @@ msgid "Restart Now"
 msgstr "اعادة تشغيل الآن"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:199
+#: src/Views/AppListUpdateView.vala:197
 msgid "Update All"
 msgstr "تحديث الكل"
 
@@ -887,7 +887,7 @@ msgstr "سيتم تنزيل أجزاء التطبيقات والتحديثات �
 msgid "Up to %s"
 msgstr "تم تثبيت آخر التحديثات %s"
 
-#: src/Widgets/UpdateHeaderRow.vala:66
+#: src/Widgets/UpdateHeaderRow.vala:41
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
@@ -898,13 +898,13 @@ msgstr[3] "يتوفر بعض التحديثات (%u)"
 msgstr[4] "يتوفر الكثير من التحديثات (%u)"
 msgstr[5] "يتوفر %u تحديث"
 
-#: src/Widgets/UpdateHeaderRow.vala:93
-msgid "Up to Date"
-msgstr "تم تثبيت آخر التحديثات"
-
-#: src/Widgets/UpdateHeaderRow.vala:100
+#: src/Widgets/UpdateHeaderRow.vala:54
 msgid "Drivers"
 msgstr "التعريفات"
+
+#: src/Widgets/UpdateHeaderRow.vala:58
+msgid "Up to Date"
+msgstr "تم تثبيت آخر التحديثات"
 
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:141
 msgid "Open"
