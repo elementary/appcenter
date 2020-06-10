@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-02 17:55+0000\n"
+"POT-Creation-Date: 2020-06-10 19:36+0000\n"
 "PO-Revision-Date: 2020-03-22 13:09+0000\n"
 "Last-Translator: Andrii Priadko <mendeleev.ua@gmail.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/appcenter/uk/>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:337
+#: src/Application.vala:38 src/Core/Package.vala:338
 msgid "AppCenter"
 msgstr "Центр програм"
 
@@ -208,14 +208,14 @@ msgstr "Копіювання файлів"
 msgid "Unknown state"
 msgstr "Невідомий стан"
 
-#: src/Core/Client.vala:74
+#: src/Core/Client.vala:72
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Оновлення доступне"
 msgstr[1] "Оновлення доступні"
 msgstr[2] "Оновлень доступно"
 
-#: src/Core/Client.vala:75
+#: src/Core/Client.vala:73
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
@@ -241,33 +241,33 @@ msgstr "Завершено"
 msgid "Updating"
 msgstr "Оновлення"
 
-#: src/Core/Package.vala:307
+#: src/Core/Package.vala:308
 #, c-format
 msgid "%s Developers"
 msgstr "%s Розробників"
 
-#: src/Core/Package.vala:339
+#: src/Core/Package.vala:340
 msgid "elementary Updates"
 msgstr "Оновлення elementary OS"
 
-#: src/Core/Package.vala:341
+#: src/Core/Package.vala:342
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (не курований)"
 
-#: src/Core/Package.vala:344
+#: src/Core/Package.vala:345
 #, c-format
 msgid "%s (non-curated)"
 msgstr "%s (не курований)"
 
-#: src/Core/Package.vala:346
+#: src/Core/Package.vala:347
 msgid "Ubuntu Drivers"
 msgstr "Драйвери Ubuntu"
 
-#: src/Core/Package.vala:349
+#: src/Core/Package.vala:350
 msgid "Unknown Origin (non-curated)"
 msgstr "Невідоме походження (не курований)"
 
-#: src/Core/Package.vala:482
+#: src/Core/Package.vala:483
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Статус додатку не встановлено як інстальований в Центрі програм для пакету: %s"
@@ -667,11 +667,11 @@ msgstr "Перевірте %s в Центрі програм:"
 msgid "Share"
 msgstr "Поділитися"
 
-#: src/Views/AppInfoView.vala:816
+#: src/Views/AppInfoView.vala:809
 msgid "Fund"
 msgstr "Фінансувати"
 
-#: src/Views/AppInfoView.vala:838
+#: src/Views/AppInfoView.vala:831
 msgid "Fund the development of this app"
 msgstr "Профінансуйте розробку цього додатка"
 
@@ -694,7 +694,7 @@ msgid "Restart Now"
 msgstr "Перезавантажити зараз"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:199
+#: src/Views/AppListUpdateView.vala:197
 msgid "Update All"
 msgstr "Оновити все"
 
@@ -898,7 +898,7 @@ msgstr "Лише необхідні частини застосунків чи �
 msgid "Up to %s"
 msgstr "До %s"
 
-#: src/Widgets/UpdateHeaderRow.vala:66
+#: src/Widgets/UpdateHeaderRow.vala:41
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
@@ -906,13 +906,13 @@ msgstr[0] "Доступне %u оновлення"
 msgstr[1] "Доступно %u оновлення"
 msgstr[2] "Доступно %u оновлень"
 
-#: src/Widgets/UpdateHeaderRow.vala:93
-msgid "Up to Date"
-msgstr "Найновіші"
-
-#: src/Widgets/UpdateHeaderRow.vala:100
+#: src/Widgets/UpdateHeaderRow.vala:54
 msgid "Drivers"
 msgstr "Драйвери"
+
+#: src/Widgets/UpdateHeaderRow.vala:58
+msgid "Up to Date"
+msgstr "Найновіші"
 
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:141
 msgid "Open"
