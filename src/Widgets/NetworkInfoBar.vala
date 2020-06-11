@@ -18,8 +18,6 @@
 */
 
 public class AppCenter.Widgets.NetworkInfoBar : Gtk.InfoBar {
-    private GLib.Settings settings;
-
     public NetworkInfoBar () {
         Object (
             message_type: Gtk.MessageType.WARNING
@@ -27,8 +25,6 @@ public class AppCenter.Widgets.NetworkInfoBar : Gtk.InfoBar {
     }
 
     construct {
-        settings = new GLib.Settings ("io.elementary.appcenter.settings");
-
         string title = _("Network Not Available.");
         string details = _("Connect to the Internet to browse and install apps.");
 
