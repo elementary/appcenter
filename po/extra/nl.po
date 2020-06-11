@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-28 18:10+0000\n"
-"PO-Revision-Date: 2020-04-21 17:02+0000\n"
+"PO-Revision-Date: 2020-06-12 16:40+0000\n"
 "Last-Translator: Jaimie85 <alsemgeest@gmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/extra/nl/"
 ">\n"
@@ -37,25 +37,23 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:16
 msgid "New features"
-msgstr ""
+msgstr "Nieuwe functies"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Perform updates without administrator permissions"
-msgstr ""
+msgstr "Voer updates uit zonder toestemming van de beheerder"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
-#, fuzzy
-#| msgid "Check for Updates"
 msgid "Minor updates"
-msgstr "Controleer op updates"
+msgstr "Kleine verbeteringen"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "Ensure apps on the homepage are more reliably displayed"
-msgstr ""
+msgstr "Zorg ervoor dat apps op de startpagina beter worden weergegeven"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "More reliably set the Dock badge number"
-msgstr ""
+msgstr "Verbeterde weergave van het Dock notificatie nummer"
 
 #: data/io.elementary.appcenter.appdata.xml.in:24
 #: data/io.elementary.appcenter.appdata.xml.in:57
@@ -75,10 +73,12 @@ msgid ""
 "Only check for updates at device startup if it's more than 24 hours since we "
 "last checked"
 msgstr ""
+"Zoek alleen naar updates tijdens het opstarten als dat langer dan 24 uur "
+"geleden voor het laatst is gedaan"
 
 #: data/io.elementary.appcenter.appdata.xml.in:33
 msgid "Reduce slowdowns when opening certain apps"
-msgstr ""
+msgstr "De vertraging bij het openen van bepaalde apps is verminderd"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
 msgid "Extension improvements"
@@ -89,18 +89,24 @@ msgid ""
 "To de-clutter the updates view, extensions are now only shown if they "
 "require updates"
 msgstr ""
+"Om het updates scherm minder rommelig te laten ogen, worden extensies alleen "
+"weergegeven als een update nodig is"
 
 #: data/io.elementary.appcenter.appdata.xml.in:38
 msgid ""
 "Clicking an extension on an app's info page now shows details for the "
 "extension"
 msgstr ""
+"Door het klikken op een extensie op de info pagina van een app wordt "
+"informatie over de extensie getoond"
 
 #: data/io.elementary.appcenter.appdata.xml.in:39
 msgid ""
 "Swap the main and overlay icons for extensions to more clearly associate "
 "extensions with their app"
 msgstr ""
+"De hoofd- en overlay iconen voor extensies zijn verwisseld om duidelijker de "
+"relatie tussen extensies en hun app te tonen"
 
 #: data/io.elementary.appcenter.appdata.xml.in:41
 msgid "Keyboard improvements"
