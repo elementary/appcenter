@@ -223,6 +223,12 @@ namespace AppCenter.Views {
 
             updating_all_apps = true;
 
+            foreach (var row in list_box.get_children ()) {
+                if (row is Widgets.PackageRow) {
+                    ((Widgets.PackageRow) row).set_action_sensitive (false);
+                }
+            };
+
             foreach (var package in get_packages ()) {
                 if (package.update_available && !package.should_nag_update) {
                     try {
