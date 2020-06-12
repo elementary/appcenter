@@ -50,7 +50,7 @@ i18n.merge_file(
 
 # Hidden app list file
 install_data(
-    'appcenter.denylist',
+    'appcenter.hiddenapps',
     install_dir: config_dir,
 )
 

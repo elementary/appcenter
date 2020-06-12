@@ -1,4 +1,4 @@
-option('hidden_app_list_file', type : 'string', value : 'appcenter.denylist', description : 'The name of the file listing applications to not be shown in AppCenter')
+option('hidden_app_list_file', type : 'string', value : 'appcenter.hiddenapps', description : 'The name of the file listing applications to not be shown in AppCenter')
 option('curated', type : 'boolean', value : true, description : 'Differentiate between apps created for elementary and not')
 option('homepage', type : 'boolean', value : true, description: 'Dynamic homepage using remote server data')
 option('icon', type : 'string', value : 'system-software-install', description : 'The name of the icon')

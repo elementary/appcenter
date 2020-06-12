@@ -31,7 +31,7 @@ public class AppCenterCore.ComponentValidator : Object {
         string hidden_app_list_path = Path.build_filename (Path.DIR_SEPARATOR_S, Build.CONFIGDIR, Build.HIDDEN_APP_LIST);
         var file = GLib.File.new_for_path (hidden_app_list_path);
         if (!file.query_exists ()) {
-            hidden_app_list_path = hidden_app_list_path.replace (".denylist", ".blacklist");
+            hidden_app_list_path = hidden_app_list_path.replace (".hiddenapps", ".blacklist");
             file = GLib.File.new_for_path (hidden_app_list_path);
             if (file.query_exists ()) {
                 critical ("Using .blacklist files is deprecated and will be removed in next version, please use .denylist instead");
