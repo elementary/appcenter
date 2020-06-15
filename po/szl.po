@@ -1,16 +1,19 @@
 # gkkulik <g.kulik@o2.pl>, 2020.
+# Grzegorz Kulik <g.kulik@o2.pl>, 2020.
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-10 19:36+0000\n"
-"PO-Revision-Date: 2020-02-24 23:09+0000\n"
-"Last-Translator: gkkulik <g.kulik@o2.pl>\n"
-"Language-Team: Silesian <https://l10n.elementary.io/projects/appcenter/appcenter/szl/>\n"
+"PO-Revision-Date: 2020-06-12 16:40+0000\n"
+"Last-Translator: Grzegorz Kulik <g.kulik@o2.pl>\n"
+"Language-Team: Silesian <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/szl/>\n"
 "Language: szl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 3.9.1\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -218,22 +221,16 @@ msgstr[1] "Sōm dostympne %u aktualizacyje dlo tego systymu"
 msgstr[2] "Je dostympne %u aktualizacyji dlo tego systymu"
 
 #: src/Core/FlatpakBackend.vala:829
-#, fuzzy
-#| msgid "Uninstall"
 msgid "Uninstalling"
-msgstr "Ôdinstaluj"
+msgstr "Ôdinstalowowanie"
 
 #: src/Core/FlatpakBackend.vala:834
-#, fuzzy
-#| msgid "Finished"
 msgid "Finishing"
-msgstr "Fertich"
+msgstr "Kōńczynie"
 
 #: src/Core/FlatpakBackend.vala:929
-#, fuzzy
-#| msgid "Update"
 msgid "Updating"
-msgstr "Zaktualizuj"
+msgstr "Aktualizowanie"
 
 #: src/Core/Package.vala:308
 #, c-format
@@ -267,10 +264,9 @@ msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Sztand programu niyma nasztelowany za zainstalowany we AppCenter dlo paketu: %s"
 
 #: src/Core/PackageKitBackend.vala:272
-#, fuzzy, c-format
-#| msgid "%s (non-curated)"
+#, c-format
 msgid "%s (local)"
-msgstr "%s (niynadzorowane)"
+msgstr "%s (lokalne)"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -343,53 +339,47 @@ msgid "Install Anyway"
 msgstr "Zainstaluj i tak"
 
 #: src/Dialogs/InstallFailDialog.vala:26
-#, fuzzy
-#| msgid "This may have been caused by external or manually compiled software."
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
-msgstr "To może być skirz zewnyntrznego abo ryncznie skōmpilowanego ôprogramowanio."
+msgstr ""
+"To może być tymczasowy problym abo skirz zewnyntrznego abo ryncznie "
+"skōmpilowanego ôprogramowanio."
 
 #: src/Dialogs/InstallFailDialog.vala:37
-#, fuzzy
-#| msgid "Failed to uninstall app"
 msgid "Failed to install app"
-msgstr "Niy szło ôdinstalować programu"
+msgstr "Niy szło zainstalować programu"
 
 #: src/Dialogs/InstallFailDialog.vala:40
-#, fuzzy, c-format
-#| msgid "Failed to uninstall “%s”"
+#, c-format
 msgid "Failed to install “%s”"
 msgstr "Niy szło ôdinstalować „%s”"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
-#, fuzzy
-#| msgid "Content Warning"
 msgid "Non-Curated Warning"
-msgstr "Ôstrzeżynie ô zawartości"
+msgstr "Ôstrzyżynie ô niynadzorowanyj zawartości"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:37
-#, fuzzy
-#| msgid "%s (non-curated)"
 msgid "Install non-curated app?"
-msgstr "%s (niynadzorowane)"
+msgstr "Zainstalować niynzadzorowano aplikacyjo?"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
 msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
 msgstr ""
+"elementary niy nadzoruje „%s” i niy sprawdziōł jij ôd strōny bezpieczyństwa, "
+"prywatności abo integracyje ze systymym."
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
 msgid "It may not receive bug fix or feature updates"
-msgstr ""
+msgstr "Może niy dostować poprowek felerōw ani aktualizacyji funkcyji"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:60
 msgid "It may access or change system or personal files without permission"
 msgstr ""
+"Może mieć dostymp do systymowych abo ôsobistych zbiorōw bez przizwolynio"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
-#, fuzzy
-#| msgid "Show content warnings"
 msgid "Show non-curated warnings"
-msgstr "Pokoż ôstrzeżynia ô zawartości"
+msgstr "Pokoż ôstrzyżynia ô niynadzorowaniu"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -670,14 +660,14 @@ msgid "Fund the development of this app"
 msgstr "Zafunduj rozrost tego programu"
 
 #: src/Views/AppListUpdateView.vala:35
-#, fuzzy
-#| msgid "Searching for updates…"
 msgid "Checking for Updates"
-msgstr "Szukanie aktualizacyji…"
+msgstr "Wybadowanie aktualizacyji"
 
 #: src/Views/AppListUpdateView.vala:36
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr ""
+"Ściōnganie listy wszyjskich dostympnych aktualizacyji systymu ôperacyjnego i "
+"zainstalowanych aplikcayji"
 
 #: src/Views/AppListUpdateView.vala:47
 msgid "A restart is required to complete the installation of updates"
