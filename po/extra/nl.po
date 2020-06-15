@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-28 18:10+0000\n"
-"PO-Revision-Date: 2020-06-12 16:40+0000\n"
+"PO-Revision-Date: 2020-06-16 18:24+0000\n"
 "Last-Translator: Jaimie85 <alsemgeest@gmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/extra/nl/"
 ">\n"
@@ -117,10 +117,12 @@ msgid ""
 "Pressing down in the search field moves the keyboard focus to the search "
 "results list"
 msgstr ""
+"Door op pijl naar beneden te drukken in het zoekveld, wordt de focus verlegd "
+"naar de zoekresultaten"
 
 #: data/io.elementary.appcenter.appdata.xml.in:44
 msgid "Ctrl+F now moves the cursor to the search field"
-msgstr ""
+msgstr "Ctrl-toets + F verplaatst de cursor naar het zoekveld"
 
 #: data/io.elementary.appcenter.appdata.xml.in:46
 #: data/io.elementary.appcenter.appdata.xml.in:63
@@ -129,32 +131,36 @@ msgstr "Oplossingen"
 
 #: data/io.elementary.appcenter.appdata.xml.in:48
 msgid "Use configured network proxy settings for apt operations"
-msgstr ""
+msgstr "Gebruikt geconfigureerde netwerk proxy instellingen bij apt operaties"
 
 #: data/io.elementary.appcenter.appdata.xml.in:49
 msgid "No longer prompt for approval to update non-curated apps"
-msgstr ""
+msgstr "Vraagt niet langer om toestemming om niet-beheerde apps te updaten"
 
 #: data/io.elementary.appcenter.appdata.xml.in:50
 msgid ""
 "Ensure the OS updates subheading copy is correct after finishing updates"
 msgstr ""
+"Zorg ervoor dat de OS updates ondertitel juist is na het voltooien van "
+"updates"
 
 #: data/io.elementary.appcenter.appdata.xml.in:51
 msgid "Ellipsize long app names in App Info views"
-msgstr ""
+msgstr "Lange namen van apps worden afgekort in de App Info weergave"
 
 #: data/io.elementary.appcenter.appdata.xml.in:53
 msgid "And more"
-msgstr ""
+msgstr "En meer"
 
 #: data/io.elementary.appcenter.appdata.xml.in:55
 msgid "Show a more informative loading screen when checking for updates"
 msgstr ""
+"Er wordt meer informatie op het laadscherm getoond tijdens het zoeken naar "
+"updates"
 
 #: data/io.elementary.appcenter.appdata.xml.in:56
 msgid "Don't list fonts alongside apps"
-msgstr ""
+msgstr "Toon lettertypen niet samen met apps"
 
 #: data/io.elementary.appcenter.appdata.xml.in:65
 msgid ""
@@ -479,11 +485,11 @@ msgstr "system-software-update"
 
 #: data/io.elementary.appcenter.policy.in:10
 msgid "Update software"
-msgstr ""
+msgstr "Update software"
 
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to update software"
-msgstr ""
+msgstr "Inloggen is vereist om software te updaten"
 
 #~ msgid "About AppCenter"
 #~ msgstr "Over AppCenter"
