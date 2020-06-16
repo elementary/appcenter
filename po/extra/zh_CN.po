@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-28 18:10+0000\n"
-"PO-Revision-Date: 2020-05-28 18:09+0000\n"
+"PO-Revision-Date: 2020-06-12 16:40+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "appcenter/extra/zh_Hans/>\n"
@@ -57,15 +57,13 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:67
 #: data/io.elementary.appcenter.appdata.xml.in:73
 #: data/io.elementary.appcenter.appdata.xml.in:120
-#, fuzzy
 msgid "Updated translations"
 msgstr "更新翻译"
 
 #: data/io.elementary.appcenter.appdata.xml.in:30
 #: data/io.elementary.appcenter.appdata.xml.in:119
-#, fuzzy
 msgid "Performance improvements"
-msgstr "多处 Bug 修复及性能改进"
+msgstr "性能改进"
 
 #: data/io.elementary.appcenter.appdata.xml.in:32
 msgid ""
@@ -78,9 +76,8 @@ msgid "Reduce slowdowns when opening certain apps"
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
-#, fuzzy
 msgid "Extension improvements"
-msgstr "多处 Bug 修复及性能改进"
+msgstr "插件优化"
 
 #: data/io.elementary.appcenter.appdata.xml.in:37
 msgid ""
@@ -101,9 +98,8 @@ msgid ""
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:41
-#, fuzzy
 msgid "Keyboard improvements"
-msgstr "多处 Bug 修复及性能改进"
+msgstr "键位改进"
 
 #: data/io.elementary.appcenter.appdata.xml.in:43
 msgid ""
@@ -348,7 +344,6 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:245
 #: data/io.elementary.appcenter.appdata.xml.in:254
 #: data/io.elementary.appcenter.appdata.xml.in:263
-#, fuzzy
 msgid "Bug fixes and improve performance."
 msgstr "问题修复和性能改进。"
 
@@ -403,11 +398,10 @@ msgid "Prevent multiple authentication dialogs when resuming from suspend"
 msgstr "阻止从挂起状态唤醒设备时弹出的多个验证对话框"
 
 #: data/io.elementary.appcenter.appdata.xml.in:282
-#, fuzzy
 msgid ""
 "Search performance has beeen improved, the category name is now shown on the "
 "headbar and minor bugs have been fixed."
-msgstr "修复少量问题、改进搜索性能，顶栏显示分类名称。"
+msgstr "改进搜索性能、顶栏显示分类名称、修复某些次要问题。"
 
 #: data/io.elementary.appcenter.appdata.xml.in:284
 msgid "Fix Steam installation"
@@ -418,7 +412,6 @@ msgid "Make search asynchronous"
 msgstr "实现异步搜索"
 
 #: data/io.elementary.appcenter.appdata.xml.in:340
-#, fuzzy
 msgid "elementary, Inc."
 msgstr "elementary LLC."
 
@@ -431,9 +424,8 @@ msgid "@DESKTOP_ICON@"
 msgstr "@DESKTOP_ICON@"
 
 #: data/io.elementary.appcenter.desktop.in.in:7
-#, fuzzy
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
-msgstr "安装;卸载;移除;分类;商店;应用;更新;软件;"
+msgstr "安装;卸载;移除;分类;商店;应用;软件;"
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
