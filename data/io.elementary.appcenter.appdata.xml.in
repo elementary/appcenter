@@ -11,6 +11,14 @@
     <p>An app store for indie and open source developers. Browse by categories or search and discover new apps. AppCenter is also used for updating your system to the latest and greatest version for new features and fixes.</p>
   </description>
   <releases>
+    <release version="3.4.1" date="2020-06-09" urgency="medium">
+      <description>
+        <p>Fixes</p>
+        <ul>
+          <li>Ensure all updatable Flatpak runtimes are listed for update</li>
+        </ul>
+      </description>
+    </release>
     <release version="3.4.0" date="2020-05-28" urgency="medium">
       <description>
         <p>New features</p>
