@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-10 19:36+0000\n"
+"POT-Creation-Date: 2020-06-16 18:26+0000\n"
 "PO-Revision-Date: 2019-05-15 01:18+0000\n"
 "Last-Translator: Jimmy Sun <jimmysuncn@hotmail.com>\n"
 "Language-Team: Chinese <https://l10n.elementary.io/projects/appcenter/appcenter/zh/>\n"
@@ -88,7 +88,7 @@ msgstr "正在移除软件包"
 msgid "Downloading"
 msgstr "正在下载"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:723
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:715
 msgid "Installing"
 msgstr "正在安装"
 
@@ -133,9 +133,9 @@ msgid "Finished"
 msgstr "已完成"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:732 src/Core/FlatpakBackend.vala:760
-#: src/Core/FlatpakBackend.vala:837 src/Core/FlatpakBackend.vala:938
-#: src/Core/FlatpakBackend.vala:964
+#: src/Core/FlatpakBackend.vala:724 src/Core/FlatpakBackend.vala:752
+#: src/Core/FlatpakBackend.vala:829 src/Core/FlatpakBackend.vala:930
+#: src/Core/FlatpakBackend.vala:956
 msgid "Cancelling"
 msgstr "正在取消"
 
@@ -218,19 +218,19 @@ msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "您的系统有%u的可用更新"
 
-#: src/Core/FlatpakBackend.vala:829
+#: src/Core/FlatpakBackend.vala:821
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "卸载"
 
-#: src/Core/FlatpakBackend.vala:834
+#: src/Core/FlatpakBackend.vala:826
 #, fuzzy
 #| msgid "Finished"
 msgid "Finishing"
 msgstr "已完成"
 
-#: src/Core/FlatpakBackend.vala:929
+#: src/Core/FlatpakBackend.vala:921
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -402,7 +402,7 @@ msgstr "重启"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:165
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
 msgid "Cancel"
 msgstr "取消"
 
@@ -553,7 +553,7 @@ msgid "Uninstall “%s”?"
 msgstr "卸载"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:132
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:124
 msgid "Uninstall"
 msgstr "卸载"
 
@@ -670,26 +670,26 @@ msgstr "金额"
 msgid "Fund the development of this app"
 msgstr "资助这个应用程序的开发"
 
-#: src/Views/AppListUpdateView.vala:35
+#: src/Views/AppListUpdateView.vala:34
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Checking for Updates"
 msgstr "正在搜索更新…"
 
-#: src/Views/AppListUpdateView.vala:36
+#: src/Views/AppListUpdateView.vala:35
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:47
+#: src/Views/AppListUpdateView.vala:46
 msgid "A restart is required to complete the installation of updates"
 msgstr "需要重启以完成更新的安装"
 
-#: src/Views/AppListUpdateView.vala:55
+#: src/Views/AppListUpdateView.vala:54
 msgid "Restart Now"
 msgstr "现在重启"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:197
+#: src/Views/AppListUpdateView.vala:188
 msgid "Update All"
 msgstr "全部更新"
 
@@ -728,11 +728,11 @@ msgctxt "view"
 msgid "Search"
 msgstr "搜索"
 
-#: src/Widgets/Banner.vala:55
+#: src/Widgets/Banner.vala:57
 msgid "An open, pay-what-you-want app store"
 msgstr "一个开放的，可以买您所想的应用程序商店"
 
-#: src/Widgets/Banner.vala:74
+#: src/Widgets/Banner.vala:76
 msgid "Get the apps that you need at a price you can afford."
 msgstr "以可承受的价格获得您需要的应用程序。"
 
@@ -812,12 +812,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "尚未设置付款信息"
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:293
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:285
 msgid "Free"
 msgstr "清空"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:295
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:287
 #, fuzzy
 msgid "Install"
 msgstr "正在安装"
@@ -834,18 +834,18 @@ msgstr "%d.00美元"
 msgid "$%d"
 msgstr "%d美元"
 
-#: src/Widgets/NetworkInfoBar.vala:32
+#: src/Widgets/NetworkInfoBar.vala:28
 #, fuzzy
 msgid "Network Not Available."
 msgstr "网络不可用"
 
-#: src/Widgets/NetworkInfoBar.vala:33
+#: src/Widgets/NetworkInfoBar.vala:29
 #, fuzzy
 msgid "Connect to the Internet to browse and install apps."
 msgstr "连接到互联网以安装或更新应用。"
 
 #. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
-#: src/Widgets/NetworkInfoBar.vala:41
+#: src/Widgets/NetworkInfoBar.vala:37
 msgid "Network Settings…"
 msgstr "网络设置…"
 
@@ -913,11 +913,11 @@ msgstr "驱动"
 msgid "Up to Date"
 msgstr "最新"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:141
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:133
 msgid "Open"
 msgstr "打开"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:318
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "更新"
 

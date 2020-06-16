@@ -3,17 +3,15 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-10 19:36+0000\n"
+"POT-Creation-Date: 2020-06-16 18:26+0000\n"
 "PO-Revision-Date: 2020-06-12 16:40+0000\n"
 "Last-Translator: Grzegorz Kulik <g.kulik@o2.pl>\n"
-"Language-Team: Silesian <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/szl/>\n"
+"Language-Team: Silesian <https://l10n.elementary.io/projects/appcenter/appcenter/szl/>\n"
 "Language: szl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 3.9.1\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -86,7 +84,7 @@ msgstr "Kasowanie paketōw"
 msgid "Downloading"
 msgstr "Pobiyranie"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:723
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:715
 msgid "Installing"
 msgstr "Instalowanie"
 
@@ -131,9 +129,9 @@ msgid "Finished"
 msgstr "Fertich"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:732 src/Core/FlatpakBackend.vala:760
-#: src/Core/FlatpakBackend.vala:837 src/Core/FlatpakBackend.vala:938
-#: src/Core/FlatpakBackend.vala:964
+#: src/Core/FlatpakBackend.vala:724 src/Core/FlatpakBackend.vala:752
+#: src/Core/FlatpakBackend.vala:829 src/Core/FlatpakBackend.vala:930
+#: src/Core/FlatpakBackend.vala:956
 msgid "Cancelling"
 msgstr "Pociepowanie"
 
@@ -220,15 +218,15 @@ msgstr[0] "Je dostympno %u aktualizacyjo dlo tego systymu"
 msgstr[1] "Sōm dostympne %u aktualizacyje dlo tego systymu"
 msgstr[2] "Je dostympne %u aktualizacyji dlo tego systymu"
 
-#: src/Core/FlatpakBackend.vala:829
+#: src/Core/FlatpakBackend.vala:821
 msgid "Uninstalling"
 msgstr "Ôdinstalowowanie"
 
-#: src/Core/FlatpakBackend.vala:834
+#: src/Core/FlatpakBackend.vala:826
 msgid "Finishing"
 msgstr "Kōńczynie"
 
-#: src/Core/FlatpakBackend.vala:929
+#: src/Core/FlatpakBackend.vala:921
 msgid "Updating"
 msgstr "Aktualizowanie"
 
@@ -340,9 +338,7 @@ msgstr "Zainstaluj i tak"
 
 #: src/Dialogs/InstallFailDialog.vala:26
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
-msgstr ""
-"To może być tymczasowy problym abo skirz zewnyntrznego abo ryncznie "
-"skōmpilowanego ôprogramowanio."
+msgstr "To może być tymczasowy problym abo skirz zewnyntrznego abo ryncznie skōmpilowanego ôprogramowanio."
 
 #: src/Dialogs/InstallFailDialog.vala:37
 msgid "Failed to install app"
@@ -364,9 +360,7 @@ msgstr "Zainstalować niynzadzorowano aplikacyjo?"
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
 msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-msgstr ""
-"elementary niy nadzoruje „%s” i niy sprawdziōł jij ôd strōny bezpieczyństwa, "
-"prywatności abo integracyje ze systymym."
+msgstr "elementary niy nadzoruje „%s” i niy sprawdziōł jij ôd strōny bezpieczyństwa, prywatności abo integracyje ze systymym."
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
 msgid "It may not receive bug fix or feature updates"
@@ -374,8 +368,7 @@ msgstr "Może niy dostować poprowek felerōw ani aktualizacyji funkcyji"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:60
 msgid "It may access or change system or personal files without permission"
-msgstr ""
-"Może mieć dostymp do systymowych abo ôsobistych zbiorōw bez przizwolynio"
+msgstr "Może mieć dostymp do systymowych abo ôsobistych zbiorōw bez przizwolynio"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
 msgid "Show non-curated warnings"
@@ -395,7 +388,7 @@ msgstr "Zresztartuj"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:165
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
 msgid "Cancel"
 msgstr "Pociep"
 
@@ -544,7 +537,7 @@ msgid "Uninstall “%s”?"
 msgstr "Ôdinstalować „%s”?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:132
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:124
 msgid "Uninstall"
 msgstr "Ôdinstaluj"
 
@@ -659,26 +652,24 @@ msgstr "Zafunduj"
 msgid "Fund the development of this app"
 msgstr "Zafunduj rozrost tego programu"
 
-#: src/Views/AppListUpdateView.vala:35
+#: src/Views/AppListUpdateView.vala:34
 msgid "Checking for Updates"
 msgstr "Wybadowanie aktualizacyji"
 
-#: src/Views/AppListUpdateView.vala:36
+#: src/Views/AppListUpdateView.vala:35
 msgid "Downloading a list of available updates to the OS and installed apps"
-msgstr ""
-"Ściōnganie listy wszyjskich dostympnych aktualizacyji systymu ôperacyjnego i "
-"zainstalowanych aplikcayji"
+msgstr "Ściōnganie listy wszyjskich dostympnych aktualizacyji systymu ôperacyjnego i zainstalowanych aplikcayji"
 
-#: src/Views/AppListUpdateView.vala:47
+#: src/Views/AppListUpdateView.vala:46
 msgid "A restart is required to complete the installation of updates"
 msgstr "Potrzebny resztart, coby dokōńczyć instalacyjo aktualizacyji"
 
-#: src/Views/AppListUpdateView.vala:55
+#: src/Views/AppListUpdateView.vala:54
 msgid "Restart Now"
 msgstr "Sztartnij zaś kōmputer"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:197
+#: src/Views/AppListUpdateView.vala:188
 msgid "Update All"
 msgstr "Aktualizuj wszyjsko"
 
@@ -717,11 +708,11 @@ msgctxt "view"
 msgid "Search"
 msgstr "Szukej"
 
-#: src/Widgets/Banner.vala:55
+#: src/Widgets/Banner.vala:57
 msgid "An open, pay-what-you-want app store"
 msgstr "Ôtwarty sklep ze programami „płać wiela chcesz”"
 
-#: src/Widgets/Banner.vala:74
+#: src/Widgets/Banner.vala:76
 msgid "Get the apps that you need at a price you can afford."
 msgstr "Pobier programy, co potrzebujesz, za tyla, na wiela cie stać."
 
@@ -798,12 +789,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "Wymogo płatności, co niy sōm włōnczōne"
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:293
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:285
 msgid "Free"
 msgstr "Wolny"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:295
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:287
 msgid "Install"
 msgstr "Instalacyjo"
 
@@ -819,16 +810,16 @@ msgstr "$%d,00"
 msgid "$%d"
 msgstr "$%d"
 
-#: src/Widgets/NetworkInfoBar.vala:32
+#: src/Widgets/NetworkInfoBar.vala:28
 msgid "Network Not Available."
 msgstr "Nec je niydostympny."
 
-#: src/Widgets/NetworkInfoBar.vala:33
+#: src/Widgets/NetworkInfoBar.vala:29
 msgid "Connect to the Internet to browse and install apps."
 msgstr "Połōncz sie z Internetym, coby przeglōndać i instalować programy."
 
 #. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
-#: src/Widgets/NetworkInfoBar.vala:41
+#: src/Widgets/NetworkInfoBar.vala:37
 msgid "Network Settings…"
 msgstr "Sztelōnki necu…"
 
@@ -898,11 +889,11 @@ msgstr "Kludzocze"
 msgid "Up to Date"
 msgstr "Teroźne"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:141
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:133
 msgid "Open"
 msgstr "Ôtwōrz"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:318
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "Zaktualizuj"
 

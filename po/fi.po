@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-10 19:36+0000\n"
+"POT-Creation-Date: 2020-06-16 18:26+0000\n"
 "PO-Revision-Date: 2020-04-14 14:10+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/appcenter/appcenter/fi/>\n"
@@ -87,7 +87,7 @@ msgstr "Poistetaan paketteja"
 msgid "Downloading"
 msgstr "Ladataan"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:723
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:715
 msgid "Installing"
 msgstr "Asennetaan"
 
@@ -132,9 +132,9 @@ msgid "Finished"
 msgstr "Valmis"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:732 src/Core/FlatpakBackend.vala:760
-#: src/Core/FlatpakBackend.vala:837 src/Core/FlatpakBackend.vala:938
-#: src/Core/FlatpakBackend.vala:964
+#: src/Core/FlatpakBackend.vala:724 src/Core/FlatpakBackend.vala:752
+#: src/Core/FlatpakBackend.vala:829 src/Core/FlatpakBackend.vala:930
+#: src/Core/FlatpakBackend.vala:956
 msgid "Cancelling"
 msgstr "Perutaan"
 
@@ -219,15 +219,15 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "Järjestelmälle on saatavilla %u päivitys"
 msgstr[1] "Järjestelmälle on saatavilla %u päivitystä"
 
-#: src/Core/FlatpakBackend.vala:829
+#: src/Core/FlatpakBackend.vala:821
 msgid "Uninstalling"
 msgstr "Poistetaan"
 
-#: src/Core/FlatpakBackend.vala:834
+#: src/Core/FlatpakBackend.vala:826
 msgid "Finishing"
 msgstr "Valmistellaan"
 
-#: src/Core/FlatpakBackend.vala:929
+#: src/Core/FlatpakBackend.vala:921
 msgid "Updating"
 msgstr "Päivitetään"
 
@@ -393,7 +393,7 @@ msgstr "Käynnistä uudelleen"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:165
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
 msgid "Cancel"
 msgstr "Peru"
 
@@ -542,7 +542,7 @@ msgid "Uninstall “%s”?"
 msgstr "Poistetaanko “%s”?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:132
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:124
 msgid "Uninstall"
 msgstr "Poista asennus"
 
@@ -657,26 +657,26 @@ msgstr "Rahoita"
 msgid "Fund the development of this app"
 msgstr "Rahoita tämän sovelluksen kehitystä"
 
-#: src/Views/AppListUpdateView.vala:35
+#: src/Views/AppListUpdateView.vala:34
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Checking for Updates"
 msgstr "Etsitään päivityksiä…"
 
-#: src/Views/AppListUpdateView.vala:36
+#: src/Views/AppListUpdateView.vala:35
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:47
+#: src/Views/AppListUpdateView.vala:46
 msgid "A restart is required to complete the installation of updates"
 msgstr "Päivitysten asentamisen viimeistely vaatii uudelleenkäynnistämisen"
 
-#: src/Views/AppListUpdateView.vala:55
+#: src/Views/AppListUpdateView.vala:54
 msgid "Restart Now"
 msgstr "Käynnistä uudelleen nyt"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:197
+#: src/Views/AppListUpdateView.vala:188
 msgid "Update All"
 msgstr "Päivitä kaikki"
 
@@ -715,11 +715,11 @@ msgctxt "view"
 msgid "Search"
 msgstr "Haku"
 
-#: src/Widgets/Banner.vala:55
+#: src/Widgets/Banner.vala:57
 msgid "An open, pay-what-you-want app store"
 msgstr "Avoin sovelluskauppa, jossa päätät itse mitä haluat maksaa"
 
-#: src/Widgets/Banner.vala:74
+#: src/Widgets/Banner.vala:76
 msgid "Get the apps that you need at a price you can afford."
 msgstr "Tarvitsemasi ohjelmat hinnalla joka sopii sinulle."
 
@@ -796,12 +796,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "Maksuja vaaditaan. Niitä ei ole kytketty päälle"
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:293
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:285
 msgid "Free"
 msgstr "Ilmainen"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:295
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:287
 msgid "Install"
 msgstr "Asenna"
 
@@ -817,16 +817,16 @@ msgstr "$%d.00"
 msgid "$%d"
 msgstr "$%d"
 
-#: src/Widgets/NetworkInfoBar.vala:32
+#: src/Widgets/NetworkInfoBar.vala:28
 msgid "Network Not Available."
 msgstr "Verkkoyhteys ei ole käytettävissä."
 
-#: src/Widgets/NetworkInfoBar.vala:33
+#: src/Widgets/NetworkInfoBar.vala:29
 msgid "Connect to the Internet to browse and install apps."
 msgstr "Yhdistä internetiin selataksesi ja asentaaksesi sovelluksia."
 
 #. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
-#: src/Widgets/NetworkInfoBar.vala:41
+#: src/Widgets/NetworkInfoBar.vala:37
 msgid "Network Settings…"
 msgstr "Verkon asetukset…"
 
@@ -895,11 +895,11 @@ msgstr "Ajurit"
 msgid "Up to Date"
 msgstr "Ajan tasalla"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:141
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:133
 msgid "Open"
 msgstr "Avaa"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:318
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "Päivitä"
 
