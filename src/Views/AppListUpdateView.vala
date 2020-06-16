@@ -22,7 +22,6 @@ namespace AppCenter.Views {
 /** AppList for the Updates View. Sorts update_available first and shows headers.
       * Does not show Uninstall Button **/
     public class AppListUpdateView : AbstractAppList {
-        private Gtk.Button? update_all_button;
         private Gtk.SizeGroup action_button_group;
         private bool updating_all_apps = false;
         private bool apps_remaining_started = false;
@@ -104,13 +103,6 @@ namespace AppCenter.Views {
 
         protected override Widgets.AppListRow construct_row_for_package (AppCenterCore.Package package) {
             return new Widgets.PackageRow.installed (package, info_grid_group, action_button_group);
-        }
-
-        protected override void on_package_changing (AppCenterCore.Package package, bool is_changing) {
-            base.on_package_changing (package, is_changing);
-            if (update_all_button != null) {
-                update_all_button.sensitive = packages_changing == 0;
-            }
         }
 
         [CCode (instance_pos = -1)]
@@ -196,19 +188,17 @@ namespace AppCenter.Views {
                 var header = new Widgets.UpdateHeaderRow.updatable (update_numbers, update_real_size, using_flatpak);
 
                 // Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-                if (update_numbers > 0) {
-                    update_all_button = new Gtk.Button.with_label (_("Update All"));
-                    if (update_numbers == nag_numbers) {
-                        update_all_button.sensitive = false;
-                    }
-
-                    update_all_button.valign = Gtk.Align.CENTER;
-                    update_all_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
-                    update_all_button.clicked.connect (on_update_all);
-                    action_button_group.add_widget (update_all_button);
-
-                    header.add (update_all_button);
+                var update_all_button = new Gtk.Button.with_label (_("Update All"));
+                if (update_numbers == nag_numbers || updating_all_apps) {
+                    update_all_button.sensitive = false;
                 }
+
+                update_all_button.valign = Gtk.Align.CENTER;
+                update_all_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+                update_all_button.clicked.connect (on_update_all);
+                action_button_group.add_widget (update_all_button);
+
+                header.add (update_all_button);
 
                 header.show_all ();
                 row.set_header (header);
