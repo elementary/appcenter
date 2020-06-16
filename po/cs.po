@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-10 19:36+0000\n"
+"POT-Creation-Date: 2020-06-16 18:26+0000\n"
 "PO-Revision-Date: 2020-05-31 16:11+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/appcenter/appcenter/cs/>\n"
@@ -89,7 +89,7 @@ msgstr "Odstraňování balíčků"
 msgid "Downloading"
 msgstr "Stahování"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:723
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:715
 msgid "Installing"
 msgstr "Instalace"
 
@@ -134,9 +134,9 @@ msgid "Finished"
 msgstr "Hotovo"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:732 src/Core/FlatpakBackend.vala:760
-#: src/Core/FlatpakBackend.vala:837 src/Core/FlatpakBackend.vala:938
-#: src/Core/FlatpakBackend.vala:964
+#: src/Core/FlatpakBackend.vala:724 src/Core/FlatpakBackend.vala:752
+#: src/Core/FlatpakBackend.vala:829 src/Core/FlatpakBackend.vala:930
+#: src/Core/FlatpakBackend.vala:956
 msgid "Cancelling"
 msgstr "Rušení"
 
@@ -223,15 +223,15 @@ msgstr[0] "%u aktualizace je pro váš systém k dispozici"
 msgstr[1] "%u aktualizace jsou pro váš systém k dispozici"
 msgstr[2] "%u aktualizací je pro váš systém k dispozici"
 
-#: src/Core/FlatpakBackend.vala:829
+#: src/Core/FlatpakBackend.vala:821
 msgid "Uninstalling"
 msgstr "Odebírání"
 
-#: src/Core/FlatpakBackend.vala:834
+#: src/Core/FlatpakBackend.vala:826
 msgid "Finishing"
 msgstr "Dokončování"
 
-#: src/Core/FlatpakBackend.vala:929
+#: src/Core/FlatpakBackend.vala:921
 msgid "Updating"
 msgstr "Aktualizování"
 
@@ -393,7 +393,7 @@ msgstr "Restartovat"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:165
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
 msgid "Cancel"
 msgstr "Storno"
 
@@ -542,7 +542,7 @@ msgid "Uninstall “%s”?"
 msgstr "Odinstalovat „%s“?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:132
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:124
 msgid "Uninstall"
 msgstr "Odinstalovat"
 
@@ -657,24 +657,24 @@ msgstr "Financovat"
 msgid "Fund the development of this app"
 msgstr "Financovat vývoj této aplikace"
 
-#: src/Views/AppListUpdateView.vala:35
+#: src/Views/AppListUpdateView.vala:34
 msgid "Checking for Updates"
 msgstr "Hledají se aktualizace"
 
-#: src/Views/AppListUpdateView.vala:36
+#: src/Views/AppListUpdateView.vala:35
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr "Stahování seznamu aktualizací, které jsou k dispozici pro operační systém a nainstalované aplikace"
 
-#: src/Views/AppListUpdateView.vala:47
+#: src/Views/AppListUpdateView.vala:46
 msgid "A restart is required to complete the installation of updates"
 msgstr "Pro dokončení instalace aktualizací je vyžadován restart"
 
-#: src/Views/AppListUpdateView.vala:55
+#: src/Views/AppListUpdateView.vala:54
 msgid "Restart Now"
 msgstr "Restartovat nyní"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:197
+#: src/Views/AppListUpdateView.vala:188
 msgid "Update All"
 msgstr "Aktualizovat vše"
 
@@ -713,11 +713,11 @@ msgctxt "view"
 msgid "Search"
 msgstr "Vyhledávání"
 
-#: src/Widgets/Banner.vala:55
+#: src/Widgets/Banner.vala:57
 msgid "An open, pay-what-you-want app store"
 msgstr "Otevřený obchod s aplikacemi s dobrovolnými platbami"
 
-#: src/Widgets/Banner.vala:74
+#: src/Widgets/Banner.vala:76
 msgid "Get the apps that you need at a price you can afford."
 msgstr "Získejte aplikace které potřebujete, za cenu kterou si můžete dovolit."
 
@@ -794,12 +794,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "Vyžaduje platby a ty nejsou zapnuté"
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:293
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:285
 msgid "Free"
 msgstr "Zdarma"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:295
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:287
 msgid "Install"
 msgstr "Nainstalovat"
 
@@ -815,16 +815,16 @@ msgstr "$%dUSD"
 msgid "$%d"
 msgstr "$%dUSD"
 
-#: src/Widgets/NetworkInfoBar.vala:32
+#: src/Widgets/NetworkInfoBar.vala:28
 msgid "Network Not Available."
 msgstr "Síťové připojení není k dispozici."
 
-#: src/Widgets/NetworkInfoBar.vala:33
+#: src/Widgets/NetworkInfoBar.vala:29
 msgid "Connect to the Internet to browse and install apps."
 msgstr "Pro procházení a instalaci aplikací se připojte k Internetu."
 
 #. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
-#: src/Widgets/NetworkInfoBar.vala:41
+#: src/Widgets/NetworkInfoBar.vala:37
 msgid "Network Settings…"
 msgstr "Nastavení sítě…"
 
@@ -894,11 +894,11 @@ msgstr "Ovladače"
 msgid "Up to Date"
 msgstr "Aktuální"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:141
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:133
 msgid "Open"
 msgstr "Otevřít"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:318
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "Aktualizovat"
 

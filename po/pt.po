@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-10 19:36+0000\n"
+"POT-Creation-Date: 2020-06-16 18:26+0000\n"
 "PO-Revision-Date: 2020-05-13 05:10+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/appcenter/pt/>\n"
@@ -87,7 +87,7 @@ msgstr "A remover pacotes"
 msgid "Downloading"
 msgstr "A transferir"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:723
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:715
 msgid "Installing"
 msgstr "A instalar"
 
@@ -132,9 +132,9 @@ msgid "Finished"
 msgstr "Concluído"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:732 src/Core/FlatpakBackend.vala:760
-#: src/Core/FlatpakBackend.vala:837 src/Core/FlatpakBackend.vala:938
-#: src/Core/FlatpakBackend.vala:964
+#: src/Core/FlatpakBackend.vala:724 src/Core/FlatpakBackend.vala:752
+#: src/Core/FlatpakBackend.vala:829 src/Core/FlatpakBackend.vala:930
+#: src/Core/FlatpakBackend.vala:956
 msgid "Cancelling"
 msgstr "A cancelar"
 
@@ -219,15 +219,15 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "%u atualização disponível para o seu sistema"
 msgstr[1] "%u atualizações disponíveis para o seu sistema"
 
-#: src/Core/FlatpakBackend.vala:829
+#: src/Core/FlatpakBackend.vala:821
 msgid "Uninstalling"
 msgstr "A desinstalar"
 
-#: src/Core/FlatpakBackend.vala:834
+#: src/Core/FlatpakBackend.vala:826
 msgid "Finishing"
 msgstr "A concluir"
 
-#: src/Core/FlatpakBackend.vala:929
+#: src/Core/FlatpakBackend.vala:921
 msgid "Updating"
 msgstr "A atualizar"
 
@@ -388,7 +388,7 @@ msgstr "Reiniciar"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:165
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -537,7 +537,7 @@ msgid "Uninstall “%s”?"
 msgstr "Desinstalar “%s”?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:132
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:124
 msgid "Uninstall"
 msgstr "Desinstalar"
 
@@ -652,24 +652,24 @@ msgstr "Finanças"
 msgid "Fund the development of this app"
 msgstr "Apoie o desenvolvimento desta aplicação"
 
-#: src/Views/AppListUpdateView.vala:35
+#: src/Views/AppListUpdateView.vala:34
 msgid "Checking for Updates"
 msgstr "A procurar por atualizações"
 
-#: src/Views/AppListUpdateView.vala:36
+#: src/Views/AppListUpdateView.vala:35
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr "Transferir uma lista de atualizações disponíveis para o sistema operativo e aplicações instaladas"
 
-#: src/Views/AppListUpdateView.vala:47
+#: src/Views/AppListUpdateView.vala:46
 msgid "A restart is required to complete the installation of updates"
 msgstr "É necessário reiniciar para concluir a instalação de atualizações"
 
-#: src/Views/AppListUpdateView.vala:55
+#: src/Views/AppListUpdateView.vala:54
 msgid "Restart Now"
 msgstr "Reiniciar agora"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:197
+#: src/Views/AppListUpdateView.vala:188
 msgid "Update All"
 msgstr "Atualizar tudo"
 
@@ -708,11 +708,11 @@ msgctxt "view"
 msgid "Search"
 msgstr "Procurar"
 
-#: src/Widgets/Banner.vala:55
+#: src/Widgets/Banner.vala:57
 msgid "An open, pay-what-you-want app store"
 msgstr "Uma loja de aplicações aberta e onde paga o que quiser"
 
-#: src/Widgets/Banner.vala:74
+#: src/Widgets/Banner.vala:76
 msgid "Get the apps that you need at a price you can afford."
 msgstr "Obtenha as aplicações que precisa ao preço que pode dar por elas."
 
@@ -789,12 +789,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "Requer pagamentos, que não estão ativados"
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:293
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:285
 msgid "Free"
 msgstr "Gratuito"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:295
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:287
 msgid "Install"
 msgstr "Instalar"
 
@@ -810,16 +810,16 @@ msgstr "$%dUSD"
 msgid "$%d"
 msgstr "$%dUSD"
 
-#: src/Widgets/NetworkInfoBar.vala:32
+#: src/Widgets/NetworkInfoBar.vala:28
 msgid "Network Not Available."
 msgstr "Sem ligação à rede."
 
-#: src/Widgets/NetworkInfoBar.vala:33
+#: src/Widgets/NetworkInfoBar.vala:29
 msgid "Connect to the Internet to browse and install apps."
 msgstr "Ligue-se à Internet para navegar ou atualizar aplicações."
 
 #. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
-#: src/Widgets/NetworkInfoBar.vala:41
+#: src/Widgets/NetworkInfoBar.vala:37
 msgid "Network Settings…"
 msgstr "Definições de Rede…"
 
@@ -888,11 +888,11 @@ msgstr "Controladores"
 msgid "Up to Date"
 msgstr "Atualizado"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:141
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:133
 msgid "Open"
 msgstr "Abrir"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:318
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "Atualizar"
 
