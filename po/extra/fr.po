@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-16 18:26+0000\n"
-"PO-Revision-Date: 2020-05-14 17:54+0000\n"
+"PO-Revision-Date: 2020-06-18 11:11+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/appcenter/extra/"
 "fr/>\n"
@@ -44,6 +44,8 @@ msgstr "Corrections"
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Ensure all updatable Flatpak runtimes are listed for update"
 msgstr ""
+"Nous nous sommes assurés que tous les exécutables Flatpak soient listés "
+"lorsqu'il y a des mises à jour"
 
 #: data/io.elementary.appcenter.appdata.xml.in:24
 msgid "New features"
