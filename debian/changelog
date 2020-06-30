@@ -1,3 +1,34 @@
+appcenter (3.4.1) bionic; urgency=medium
+
+  * Release 3.4.1 (#1376)
+  * Un-anonymize Matt Miller (#1374)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * Exclude Flatpak runtimes from package pool (#1359)
+  * Move to hiddenapps terminology (#1367)
+  * AppListUpdateView: Reduce update all button scope and simplify logic
+    (#1364)
+  * Bannner: Fix warnings with casts, GObject style (#1363)
+  * NetworkInfoBar: Remove unused settings (#1362)
+  * AbstractAppContainer: remove threading and locking (#1346)
+  * Update translation files
+  * Update translation template
+  * Remove abstraction from update header rows (#1361)
+  * Simplify substring calculations for component (#1358)
+  * Don't replace .desktop in component ID (#1357)
+  * ScreenshotCache: support older GLib (#1356)
+  * Rewrite ScreenshotCache (#1350)
+  * Update translation files
+  * Update translation template
+  * Remove broken spinner in update view header (#1348)
+  * Installed state optimisations (#1349)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+
+ -- elementary Builds Team <builds@elementary.io>  Tue, 30 Jun 2020 23:56:59 +0000
+
 appcenter (3.4.0) bionic; urgency=medium
 
   * Release 3.4.0 (#1343)
