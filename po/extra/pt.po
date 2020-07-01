@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-30 23:56+0000\n"
-"PO-Revision-Date: 2020-06-21 15:11+0000\n"
+"PO-Revision-Date: 2020-07-01 23:02+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
 "extra/pt/>\n"
@@ -53,8 +53,6 @@ msgid "Minor updates"
 msgstr "Pequenas atualizações"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
-#, fuzzy
-#| msgid "Performance improvements"
 msgid "Performance improvments"
 msgstr "Melhorias de desempenho"
 
