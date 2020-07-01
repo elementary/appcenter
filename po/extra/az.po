@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-30 23:56+0000\n"
+"POT-Creation-Date: 2020-07-01 23:04+0000\n"
 "PO-Revision-Date: 2017-12-20 00:11+0000\n"
 "Last-Translator: Вагиф Кязым <vaqif134@gmail.com>\n"
 "Language-Team: Azerbaijani <https://weblate.elementary.io/projects/appcenter/"
@@ -47,8 +47,10 @@ msgid "Minor updates"
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
+#: data/io.elementary.appcenter.appdata.xml.in:43
+#: data/io.elementary.appcenter.appdata.xml.in:132
 #, fuzzy
-msgid "Performance improvments"
+msgid "Performance improvements"
 msgstr "Cürbəcür səhv düzəltmələri və səmərəlilik təkmilləşmələri"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
@@ -76,12 +78,6 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:36
 msgid "More reliably set the Dock badge number"
 msgstr ""
-
-#: data/io.elementary.appcenter.appdata.xml.in:43
-#: data/io.elementary.appcenter.appdata.xml.in:132
-#, fuzzy
-msgid "Performance improvements"
-msgstr "Cürbəcür səhv düzəltmələri və səmərəlilik təkmilləşmələri"
 
 #: data/io.elementary.appcenter.appdata.xml.in:45
 msgid ""
@@ -460,6 +456,10 @@ msgstr ""
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to update software"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Performance improvments"
+#~ msgstr "Cürbəcür səhv düzəltmələri və səmərəlilik təkmilləşmələri"
 
 #~ msgid "About AppCenter"
 #~ msgstr "Proqram mərkəzi haqqında"

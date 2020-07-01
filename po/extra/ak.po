@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Akan (AppCenter)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-30 23:56+0000\n"
+"POT-Creation-Date: 2020-07-01 23:04+0000\n"
 "PO-Revision-Date: 2019-02-10 00:06+0000\n"
 "Last-Translator: Rico Tzschichholz <ricotz@ubuntu.com>\n"
 "Language-Team: Akan <https://weblate.elementary.io/projects/appcenter/extra/"
@@ -51,8 +51,10 @@ msgid "Minor updates"
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
+#: data/io.elementary.appcenter.appdata.xml.in:43
+#: data/io.elementary.appcenter.appdata.xml.in:132
 #, fuzzy
-msgid "Performance improvments"
+msgid "Performance improvements"
 msgstr "Wɔayɛ nsiesie ɛna wɔasan nso ayɛ ama ɛyɛ adwuma yie sen kan no"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
@@ -80,12 +82,6 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:36
 msgid "More reliably set the Dock badge number"
 msgstr ""
-
-#: data/io.elementary.appcenter.appdata.xml.in:43
-#: data/io.elementary.appcenter.appdata.xml.in:132
-#, fuzzy
-msgid "Performance improvements"
-msgstr "Wɔayɛ nsiesie ɛna wɔasan nso ayɛ ama ɛyɛ adwuma yie sen kan no"
 
 #: data/io.elementary.appcenter.appdata.xml.in:45
 msgid ""
@@ -468,6 +464,10 @@ msgstr ""
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to update software"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Performance improvments"
+#~ msgstr "Wɔayɛ nsiesie ɛna wɔasan nso ayɛ ama ɛyɛ adwuma yie sen kan no"
 
 #~ msgid "About AppCenter"
 #~ msgstr "AppCenter Ho Nsɛm"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-30 23:56+0000\n"
+"POT-Creation-Date: 2020-07-01 23:04+0000\n"
 "PO-Revision-Date: 2020-07-01 23:02+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/extra/"
@@ -53,7 +53,9 @@ msgid "Minor updates"
 msgstr "Actualitzacions menors"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
-msgid "Performance improvments"
+#: data/io.elementary.appcenter.appdata.xml.in:43
+#: data/io.elementary.appcenter.appdata.xml.in:132
+msgid "Performance improvements"
 msgstr "Millores de rendiment"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
@@ -82,11 +84,6 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:36
 msgid "More reliably set the Dock badge number"
 msgstr "Definició més fiable del número d'insígnia de l'acoblador"
-
-#: data/io.elementary.appcenter.appdata.xml.in:43
-#: data/io.elementary.appcenter.appdata.xml.in:132
-msgid "Performance improvements"
-msgstr "Millores de rendiment"
 
 #: data/io.elementary.appcenter.appdata.xml.in:45
 msgid ""
@@ -504,6 +501,9 @@ msgstr "Actualitza el programari"
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to update software"
 msgstr "Cal autenticació per actualitzar programari."
+
+#~ msgid "Performance improvments"
+#~ msgstr "Millores de rendiment"
 
 #~ msgid "About AppCenter"
 #~ msgstr "Quant al Centre d'aplicacions"

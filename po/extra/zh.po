@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-30 23:56+0000\n"
+"POT-Creation-Date: 2020-07-01 23:04+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Jimmy Sun <jimmysuncn@hotmail.com>\n"
 "Language-Team: Chinese <https://l10n.elementary.io/projects/appcenter/extra/"
@@ -49,8 +49,10 @@ msgid "Minor updates"
 msgstr "检查更新"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
+#: data/io.elementary.appcenter.appdata.xml.in:43
+#: data/io.elementary.appcenter.appdata.xml.in:132
 #, fuzzy
-msgid "Performance improvments"
+msgid "Performance improvements"
 msgstr "各种错误修复和性能提升"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
@@ -78,12 +80,6 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:36
 msgid "More reliably set the Dock badge number"
 msgstr ""
-
-#: data/io.elementary.appcenter.appdata.xml.in:43
-#: data/io.elementary.appcenter.appdata.xml.in:132
-#, fuzzy
-msgid "Performance improvements"
-msgstr "各种错误修复和性能提升"
 
 #: data/io.elementary.appcenter.appdata.xml.in:45
 msgid ""
@@ -462,6 +458,10 @@ msgstr ""
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to update software"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Performance improvments"
+#~ msgstr "各种错误修复和性能提升"
 
 #~ msgid "About AppCenter"
 #~ msgstr "关于应用中心"

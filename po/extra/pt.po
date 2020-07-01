@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-30 23:56+0000\n"
+"POT-Creation-Date: 2020-07-01 23:04+0000\n"
 "PO-Revision-Date: 2020-07-01 23:02+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
@@ -53,7 +53,9 @@ msgid "Minor updates"
 msgstr "Pequenas atualizações"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
-msgid "Performance improvments"
+#: data/io.elementary.appcenter.appdata.xml.in:43
+#: data/io.elementary.appcenter.appdata.xml.in:132
+msgid "Performance improvements"
 msgstr "Melhorias de desempenho"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
@@ -82,11 +84,6 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:36
 msgid "More reliably set the Dock badge number"
 msgstr "Definir de forma mais fiável o número do emblema da doca"
-
-#: data/io.elementary.appcenter.appdata.xml.in:43
-#: data/io.elementary.appcenter.appdata.xml.in:132
-msgid "Performance improvements"
-msgstr "Melhorias de desempenho"
 
 #: data/io.elementary.appcenter.appdata.xml.in:45
 msgid ""
@@ -501,6 +498,9 @@ msgstr "Atualizar software"
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to update software"
 msgstr "É necessária a autenticação para atualizar o software"
+
+#~ msgid "Performance improvments"
+#~ msgstr "Melhorias de desempenho"
 
 #~ msgid "About AppCenter"
 #~ msgstr "Sobre o AppCenter"

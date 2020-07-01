@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-30 23:56+0000\n"
+"POT-Creation-Date: 2020-07-01 23:04+0000\n"
 "PO-Revision-Date: 2020-02-24 23:09+0000\n"
 "Last-Translator: gkkulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/appcenter/extra/"
@@ -46,7 +46,9 @@ msgid "Minor updates"
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
-msgid "Performance improvments"
+#: data/io.elementary.appcenter.appdata.xml.in:43
+#: data/io.elementary.appcenter.appdata.xml.in:132
+msgid "Performance improvements"
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
@@ -72,11 +74,6 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:36
 msgid "More reliably set the Dock badge number"
-msgstr ""
-
-#: data/io.elementary.appcenter.appdata.xml.in:43
-#: data/io.elementary.appcenter.appdata.xml.in:132
-msgid "Performance improvements"
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:45

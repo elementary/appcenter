@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-30 23:56+0000\n"
+"POT-Creation-Date: 2020-07-01 23:04+0000\n"
 "PO-Revision-Date: 2020-02-28 20:49+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/extra/"
@@ -52,9 +52,9 @@ msgid "Minor updates"
 msgstr "अपडेट्ससाठी तपासा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
-#, fuzzy
-#| msgid "Performance improvements"
-msgid "Performance improvments"
+#: data/io.elementary.appcenter.appdata.xml.in:43
+#: data/io.elementary.appcenter.appdata.xml.in:132
+msgid "Performance improvements"
 msgstr "कार्यक्षमता सुधारणा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
@@ -81,11 +81,6 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:36
 msgid "More reliably set the Dock badge number"
 msgstr ""
-
-#: data/io.elementary.appcenter.appdata.xml.in:43
-#: data/io.elementary.appcenter.appdata.xml.in:132
-msgid "Performance improvements"
-msgstr "कार्यक्षमता सुधारणा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:45
 msgid ""
@@ -465,6 +460,11 @@ msgstr ""
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to update software"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Performance improvements"
+#~ msgid "Performance improvments"
+#~ msgstr "कार्यक्षमता सुधारणा"
 
 #~ msgid "About AppCenter"
 #~ msgstr "अॅप सेंटर विषयी"

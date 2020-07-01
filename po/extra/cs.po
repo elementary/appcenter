@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-30 23:56+0000\n"
+"POT-Creation-Date: 2020-07-01 23:04+0000\n"
 "PO-Revision-Date: 2020-05-31 16:11+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/appcenter/extra/cs/"
@@ -51,9 +51,9 @@ msgid "Minor updates"
 msgstr "Drobné aktualizace"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
-#, fuzzy
-#| msgid "Performance improvements"
-msgid "Performance improvments"
+#: data/io.elementary.appcenter.appdata.xml.in:43
+#: data/io.elementary.appcenter.appdata.xml.in:132
+msgid "Performance improvements"
 msgstr "Vylepšení výkonu"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
@@ -81,11 +81,6 @@ msgstr "Zajištěno spolehlivější zobrazování aplikací na domovské strán
 #: data/io.elementary.appcenter.appdata.xml.in:36
 msgid "More reliably set the Dock badge number"
 msgstr "Spolehlivější nastavení čísla znaku doku"
-
-#: data/io.elementary.appcenter.appdata.xml.in:43
-#: data/io.elementary.appcenter.appdata.xml.in:132
-msgid "Performance improvements"
-msgstr "Vylepšení výkonu"
 
 #: data/io.elementary.appcenter.appdata.xml.in:45
 msgid ""
@@ -499,6 +494,11 @@ msgstr "Aktualizovat software"
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to update software"
 msgstr "Pro aktualizaci software je zapotřebí ověření se"
+
+#, fuzzy
+#~| msgid "Performance improvements"
+#~ msgid "Performance improvments"
+#~ msgstr "Vylepšení výkonu"
 
 #~ msgid "About AppCenter"
 #~ msgstr "O aplikaci AppCentrum"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-30 23:56+0000\n"
+"POT-Creation-Date: 2020-07-01 23:04+0000\n"
 "PO-Revision-Date: 2019-07-03 14:02+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/appcenter/extra/"
@@ -52,8 +52,10 @@ msgid "Minor updates"
 msgstr "업데이트 확인"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
+#: data/io.elementary.appcenter.appdata.xml.in:43
+#: data/io.elementary.appcenter.appdata.xml.in:132
 #, fuzzy
-msgid "Performance improvments"
+msgid "Performance improvements"
 msgstr "여러 가지 버그 해결 및 성능 향상"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
@@ -81,12 +83,6 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:36
 msgid "More reliably set the Dock badge number"
 msgstr ""
-
-#: data/io.elementary.appcenter.appdata.xml.in:43
-#: data/io.elementary.appcenter.appdata.xml.in:132
-#, fuzzy
-msgid "Performance improvements"
-msgstr "여러 가지 버그 해결 및 성능 향상"
 
 #: data/io.elementary.appcenter.appdata.xml.in:45
 msgid ""
@@ -467,6 +463,10 @@ msgstr ""
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to update software"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Performance improvments"
+#~ msgstr "여러 가지 버그 해결 및 성능 향상"
 
 #~ msgid "About AppCenter"
 #~ msgstr "앱센터 소개"
