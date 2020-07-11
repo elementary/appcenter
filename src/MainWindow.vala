@@ -154,11 +154,15 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         updates_badge = new Gtk.Label ("!");
         updates_badge.get_style_context ().add_class ("badge");
 
+        var eventbox_badge = new Gtk.EventBox ();
+        eventbox_badge.add (updates_badge);
+        eventbox_badge.button_press_event.connect (badge_event);
+
         updates_badge_revealer = new Gtk.Revealer ();
         updates_badge_revealer.halign = Gtk.Align.END;
         updates_badge_revealer.valign = Gtk.Align.START;
         updates_badge_revealer.transition_type = Gtk.RevealerTransitionType.CROSSFADE;
-        updates_badge_revealer.add (updates_badge);
+        updates_badge_revealer.add (eventbox_badge);
 
         var view_mode_overlay = new Gtk.Overlay ();
         view_mode_overlay.add (view_mode);
@@ -270,6 +274,11 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             updates_badge.label = updates_number.to_string ();
             updates_badge_revealer.reveal_child = true;
         }
+    }
+
+    bool badge_event (Gtk.Widget sender, Gdk.EventButton evt) {
+        go_to_installed ();
+        return (true);
     }
 
     public void show_package (AppCenterCore.Package package) {
