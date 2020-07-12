@@ -81,7 +81,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         var image = new Gtk.Image.from_icon_name ("payment-card", Gtk.IconSize.DIALOG);
         image.valign = Gtk.Align.START;
 
-        var overlay_image = new Gtk.Image.from_icon_name ("system-software-install", Gtk.IconSize.LARGE_TOOLBAR);
+        var overlay_image = new Gtk.Image.from_icon_name ("io.elementary.appcenter", Gtk.IconSize.LARGE_TOOLBAR);
         overlay_image.halign = overlay_image.valign = Gtk.Align.END;
 
         var overlay = new Gtk.Overlay ();
@@ -276,7 +276,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
             secondary_error_label.wrap = true;
             secondary_error_label.xalign = 0;
 
-            var icon = new Gtk.Image.from_icon_name ("system-software-install", Gtk.IconSize.DIALOG);
+            var icon = new Gtk.Image.from_icon_name ("io.elementary.appcenter", Gtk.IconSize.DIALOG);
 
             var overlay_icon = new Gtk.Image.from_icon_name ("dialog-warning", Gtk.IconSize.LARGE_TOOLBAR);
             overlay_icon.halign = Gtk.Align.END;
