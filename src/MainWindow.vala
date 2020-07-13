@@ -156,7 +156,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         var eventbox_badge = new Gtk.EventBox ();
         eventbox_badge.add (updates_badge);
-        eventbox_badge.button_press_event.connect (badge_event);
+        eventbox_badge.button_release_event.connect (badge_event);
 
         updates_badge_revealer = new Gtk.Revealer ();
         updates_badge_revealer.halign = Gtk.Align.END;
