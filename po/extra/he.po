@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-01 23:04+0000\n"
-"PO-Revision-Date: 2020-04-30 21:59+0000\n"
+"PO-Revision-Date: 2020-07-07 09:12+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/extra/"
 "he/>\n"
@@ -42,14 +42,12 @@ msgstr "תיקונים"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Ensure all updatable Flatpak runtimes are listed for update"
-msgstr ""
+msgstr "וידוא שכל סביבות ההרצה של Flatpak מופיעות לעדכון"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:33
-#, fuzzy
-#| msgid "Other updates"
 msgid "Minor updates"
-msgstr "עדכונים אחרים"
+msgstr "עדכונים מזעריים"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 #: data/io.elementary.appcenter.appdata.xml.in:43
@@ -68,19 +66,19 @@ msgstr "תרגומים עודכנו"
 
 #: data/io.elementary.appcenter.appdata.xml.in:29
 msgid "New features"
-msgstr ""
+msgstr "תכונות חדשות"
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
 msgid "Perform updates without administrator permissions"
-msgstr ""
+msgstr "ביצוע עדכונים ללא הרשאות ניהול"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
 msgid "Ensure apps on the homepage are more reliably displayed"
-msgstr ""
+msgstr "וידוא שהיישומים בדף הבית מוצגים בצורה יותר אמינה"
 
 #: data/io.elementary.appcenter.appdata.xml.in:36
 msgid "More reliably set the Dock badge number"
-msgstr ""
+msgstr "שיפור אמינות מונה ההודעות בלוח היישומים"
 
 #: data/io.elementary.appcenter.appdata.xml.in:45
 msgid ""
@@ -460,11 +458,11 @@ msgstr "system-software-update"
 
 #: data/io.elementary.appcenter.policy.in:10
 msgid "Update software"
-msgstr ""
+msgstr "עדכון תוכנה"
 
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to update software"
-msgstr ""
+msgstr "נדרש אימות כדי לבצע עדכון תוכנה"
 
 #, fuzzy
 #~| msgid "Performance improvements"
