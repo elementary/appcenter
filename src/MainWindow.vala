@@ -276,7 +276,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         }
     }
 
-    bool badge_event (Gtk.Widget sender, Gdk.EventButton evt) {
+    private bool badge_event (Gtk.Widget sender, Gdk.EventButton evt) {
         go_to_installed ();
         return (true);
     }
