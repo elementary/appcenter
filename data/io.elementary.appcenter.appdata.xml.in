@@ -16,6 +16,7 @@
         <p>Fixes</p>
         <ul>
           <li>Ensure AppCenter is reopened at the correct position</li>
+          <li>Clicking the updates badge in the header navigates to the updates view</li>
         </ul>
         <p>Minor updates</p>
         <ul>
