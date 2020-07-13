@@ -278,7 +278,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
     private bool badge_event (Gtk.Widget sender, Gdk.EventButton evt) {
         go_to_installed ();
-        return (true);
+        return Gdk.EVENT_STOP;
     }
 
     public void show_package (AppCenterCore.Package package) {
