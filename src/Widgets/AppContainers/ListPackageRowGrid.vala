@@ -26,15 +26,17 @@ public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
     }
 
     construct {
-        package_summary = new Gtk.Label (null);
-        package_summary.ellipsize = Pango.EllipsizeMode.END;
-        package_summary.valign = Gtk.Align.START;
-        package_summary.xalign = 0;
+        package_summary = new Gtk.Label (null) {
+            ellipsize = Pango.EllipsizeMode.END,
+            valign = Gtk.Align.START,
+            xalign = 0
+        };
         package_summary.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
-        var grid = new Gtk.Grid ();
-        grid.column_spacing = 12;
-        grid.row_spacing = 3;
+        var grid = new Gtk.Grid () {
+            column_spacing = 12,
+            row_spacing = 3
+        };
         grid.attach (image, 0, 0, 1, 2);
         grid.attach (package_name, 1, 0);
         grid.attach (package_summary, 1, 1);

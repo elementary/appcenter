@@ -91,10 +91,11 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         release_stack_revealer.transition_type = Gtk.RevealerTransitionType.CROSSFADE;
         release_stack_revealer.add (release_stack);
 
-        info_grid = new Gtk.Grid ();
-        info_grid.column_spacing = 12;
-        info_grid.row_spacing = 6;
-        info_grid.valign = Gtk.Align.START;
+        info_grid = new Gtk.Grid () {
+            column_spacing = 12,
+            row_spacing = 6,
+            valign = Gtk.Align.START
+        };
         info_grid.attach (image, 0, 0, 1, 2);
         info_grid.attach (package_name, 1, 0);
         info_grid.attach (app_version, 1, 1);
@@ -103,8 +104,9 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         action_stack.margin_top = 10;
         action_stack.valign = Gtk.Align.START;
 
-        var grid = new Gtk.Grid ();
-        grid.column_spacing = 24;
+        var grid = new Gtk.Grid () {
+            column_spacing = 24
+        };
         grid.attach (info_grid, 0, 0);
         grid.attach (release_stack_revealer, 2, 0, 1, 2);
         grid.attach (action_stack, 3, 0);
