@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-01 23:04+0000\n"
-"PO-Revision-Date: 2020-07-07 09:12+0000\n"
-"Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
+"PO-Revision-Date: 2020-07-15 14:46+0000\n"
+"Last-Translator: Sinan Decron <intenfinitia@gmail.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/extra/"
 "tr/>\n"
 "Language: tr\n"
@@ -78,20 +78,24 @@ msgstr "Güncellemeleri yönetici izni olmadan yükleyin"
 #: data/io.elementary.appcenter.appdata.xml.in:35
 msgid "Ensure apps on the homepage are more reliably displayed"
 msgstr ""
+"Ana sayfadaki uygulamaların daha güvenilir bir şekilde görüntülendiğinden "
+"emin olundu"
 
 #: data/io.elementary.appcenter.appdata.xml.in:36
 msgid "More reliably set the Dock badge number"
-msgstr ""
+msgstr "Dock rozet numarasını daha güvenilir bir şekilde ayarlandı"
 
 #: data/io.elementary.appcenter.appdata.xml.in:45
 msgid ""
 "Only check for updates at device startup if it's more than 24 hours since we "
 "last checked"
 msgstr ""
+"Yalnızca son taramanın ardından 24 saat geçtiyse, cihaz başladığında "
+"güncellemeleri kontrol et"
 
 #: data/io.elementary.appcenter.appdata.xml.in:46
 msgid "Reduce slowdowns when opening certain apps"
-msgstr ""
+msgstr "Belirli uygulamaları açarken yavaşlamaları azalt"
 
 #: data/io.elementary.appcenter.appdata.xml.in:48
 msgid "Extension improvements"
@@ -111,7 +115,7 @@ msgid ""
 "extension"
 msgstr ""
 "Bir uygulamanın sayfasında herhangi bir eklentiye tıklamak, artık o "
-"eklentinin detaylarını gösterir."
+"eklentinin detaylarını gösterir"
 
 #: data/io.elementary.appcenter.appdata.xml.in:52
 msgid ""
@@ -147,31 +151,36 @@ msgstr "Doğrulanmamış uygulamaları güncellemek için onay isteme"
 msgid ""
 "Ensure the OS updates subheading copy is correct after finishing updates"
 msgstr ""
+"Güncelleştirmeleri bitirdikten sonra OS güncellemeleri alt başlığı "
+"kopyasının doğru olduğundan emin olun"
 
 #: data/io.elementary.appcenter.appdata.xml.in:64
 msgid "Ellipsize long app names in App Info views"
 msgstr ""
+"Uygulama Bilgisi görünümlerinde uzun uygulama adlarını ellipsis ile kısalt"
 
 #: data/io.elementary.appcenter.appdata.xml.in:66
 msgid "And more"
-msgstr ""
+msgstr "Ve dahası"
 
 #: data/io.elementary.appcenter.appdata.xml.in:68
 msgid "Show a more informative loading screen when checking for updates"
 msgstr ""
+"Güncellemeleri kontrol ederken daha bilgilendirici bir yükleme ekranı göster"
 
 #: data/io.elementary.appcenter.appdata.xml.in:69
 msgid "Don't list fonts alongside apps"
-msgstr ""
+msgstr "Yazı tiplerini uygulamaların yanında listeleme"
 
 #: data/io.elementary.appcenter.appdata.xml.in:78
 msgid ""
 "Prevent crashes when updating Flatpaks and system packages simultaneously"
 msgstr ""
+"Flatpak'leri ve sistem paketlerini aynı anda güncellerken çökmeleri önle"
 
 #: data/io.elementary.appcenter.appdata.xml.in:79
 msgid "Prevent suspending when installing, updating, or removing packages"
-msgstr ""
+msgstr "Paketleri kurarken, güncellerken veya kaldırırken askıya almayı önle"
 
 #: data/io.elementary.appcenter.appdata.xml.in:91
 #: data/io.elementary.appcenter.appdata.xml.in:108
@@ -181,60 +190,67 @@ msgstr "Küçük düzeltmeler"
 #: data/io.elementary.appcenter.appdata.xml.in:93
 msgid "Update application details when changes happen outside of AppCenter"
 msgstr ""
+"AppCenter dışında değişiklikler olduğunda uygulama ayrıntılarını güncelle"
 
 #: data/io.elementary.appcenter.appdata.xml.in:94
 msgid "Fix for notification not appearing when a restart is required"
-msgstr ""
+msgstr "Yeniden başlatma gerektiğinde görünmeyen bildirim düzeltildi"
 
 #: data/io.elementary.appcenter.appdata.xml.in:95
 msgid "Apps in list views now load in the correct order when scrolling"
 msgstr ""
+"Liste görünümlerindeki uygulamalar artık kaydırma sırasında doğru sırada "
+"yükleniyor"
 
 #: data/io.elementary.appcenter.appdata.xml.in:96
 msgid "Prevent unescaped XML entities from appearing in application names"
-msgstr ""
+msgstr "XML varlıklarının uygulama adlarında görünmesini engelle"
 
 #: data/io.elementary.appcenter.appdata.xml.in:97
 msgid "Load the \"Installed\" view faster"
-msgstr ""
+msgstr "\"Yüklü\" görünümü daha hızlı yükleyin"
 
 #: data/io.elementary.appcenter.appdata.xml.in:98
 msgid "Ensure flatpak applications show in the category views"
-msgstr ""
+msgstr "Flatpak uygulamalarının kategori görünümlerinde gösterilmesini sağlayın"
 
 #: data/io.elementary.appcenter.appdata.xml.in:99
 msgid ""
 "Save some bandwidth by downloading smaller screenshots where appropriate"
 msgstr ""
+"Uygun olduğunda daha küçük ekran görüntüleri indirerek bant genişliğinden "
+"tasarruf et"
 
 #: data/io.elementary.appcenter.appdata.xml.in:100
 msgid "System components no longer have an \"Open\" button"
-msgstr ""
+msgstr "Sistem bileşenlerinde artık \"Aç\" düğmesi yok"
 
 #: data/io.elementary.appcenter.appdata.xml.in:101
 msgid ""
 "Applications menu can now remove flatpaks that weren't installed by AppCenter"
 msgstr ""
+"Uygulamalar menüsü artık AppCenter tarafından yüklenmemiş Flatpack'leri "
+"kaldırabilir"
 
 #: data/io.elementary.appcenter.appdata.xml.in:102
 msgid "Make download size estimates more accurate"
-msgstr ""
+msgstr "İndirme boyutu tahminlerini daha doğru hale getir"
 
 #: data/io.elementary.appcenter.appdata.xml.in:110
 msgid "Prevent AppCenter from opening on log in"
-msgstr ""
+msgstr "Oturum açıldığında Uygulama Merkezinin açılmasını engelle"
 
 #: data/io.elementary.appcenter.appdata.xml.in:111
 msgid "Prevent ghost update notification when there are no updates available"
-msgstr ""
+msgstr "Mevcut yükseltme olmadığında hayalet yükseltme bildirimini engelle"
 
 #: data/io.elementary.appcenter.appdata.xml.in:112
 msgid "Show correct installation state for extensions"
-msgstr ""
+msgstr "Eklentiler için doğru yükleme durumunu göster"
 
 #: data/io.elementary.appcenter.appdata.xml.in:119
 msgid "Add support for Flatpak apps"
-msgstr ""
+msgstr "Flatpak uygulamaları için destek ekle"
 
 #: data/io.elementary.appcenter.appdata.xml.in:120
 msgid "Warn about non-curated apps"
@@ -242,74 +258,77 @@ msgstr "Doğrulanmamış uygulamalar için uyar"
 
 #: data/io.elementary.appcenter.appdata.xml.in:121
 msgid "Show an error dialog if an installation fails"
-msgstr ""
+msgstr "Bir yükleme başarısız olursa bir hata iletişim kutusu göster"
 
 #: data/io.elementary.appcenter.appdata.xml.in:122
 msgid ""
 "Fix an issue where some apps couldn't be uninstalled from the Applications "
 "Menu"
 msgstr ""
+"Bazı uygulamaların Uygulamalar Menüsünden kaldırılamaması sorununu gider"
 
 #: data/io.elementary.appcenter.appdata.xml.in:123
 msgid "Allow browsing and uninstalling apps while offline"
-msgstr ""
+msgstr "Çevrimdışıyken uygulamalara göz atıp uygulamaları kaldırmaya izin ver"
 
 #: data/io.elementary.appcenter.appdata.xml.in:124
 msgid "Fix twitter share URLs"
-msgstr ""
+msgstr "Twitter paylaşım URL'lerini düzelt"
 
 #: data/io.elementary.appcenter.appdata.xml.in:125
 msgid "Drop Google+ from the share menu"
-msgstr ""
+msgstr "Paylaşım menüsünden Google+'yı çıkart"
 
 #: data/io.elementary.appcenter.appdata.xml.in:126
 msgid "Animate screenshot background while loading"
-msgstr ""
+msgstr "Yüklerken ekran görüntüsünün arka planına animasyon uygula"
 
 #: data/io.elementary.appcenter.appdata.xml.in:127
 msgid "Add navigation arrows for screenshots"
-msgstr ""
+msgstr "Ekran görüntüleri için gezinme okları ekle"
 
 #: data/io.elementary.appcenter.appdata.xml.in:128
 msgid "Don't show uninstall buttons for essential system components"
-msgstr ""
+msgstr "Temel sistem bileşenleri için kaldırma düğmelerini gösterme"
 
 #: data/io.elementary.appcenter.appdata.xml.in:129
 msgid "Properly display proprietary licenses"
-msgstr ""
+msgstr "Tescilli lisansları uygun şekilde görüntüle"
 
 #: data/io.elementary.appcenter.appdata.xml.in:130
 msgid "Fix some layout issues"
-msgstr ""
+msgstr "Bazı yerleşim sorunlarını düzelt"
 
 #: data/io.elementary.appcenter.appdata.xml.in:131
 msgid "Fix crashes"
-msgstr ""
+msgstr "Çökmeleri düzelt"
 
 #: data/io.elementary.appcenter.appdata.xml.in:140
 msgid "Meson build system fixes"
-msgstr ""
+msgstr "Meson derleme sistemi düzeltmeleri"
 
 #: data/io.elementary.appcenter.appdata.xml.in:141
 msgid "Improve window state restoration"
-msgstr ""
+msgstr "Pencere durumu geri yüklemesini iyileştir"
 
 #: data/io.elementary.appcenter.appdata.xml.in:142
 msgid "Prevent action buttons from jumping around"
-msgstr ""
+msgstr "İşlem düğmelerinin etrafa zıplamasını önleyin"
 
 #: data/io.elementary.appcenter.appdata.xml.in:143
 msgid "Remove reset paid apps gsettings key"
-msgstr ""
+msgstr "Ücretli uygulamaları sıfırlama anahtarı kaldırıldı"
 
 #: data/io.elementary.appcenter.appdata.xml.in:144
 msgid "Memory management refinements"
-msgstr ""
+msgstr "Bellek yönetimi iyileştirmeleri"
 
 #: data/io.elementary.appcenter.appdata.xml.in:145
 msgid ""
 "Add conditional compilation for disabling dynamic remote homepage content"
 msgstr ""
+"Dinamik uzak ana sayfa içeriğini devre dışı bırakmak için koşullu derleme "
+"ekle"
 
 #: data/io.elementary.appcenter.appdata.xml.in:146
 #: data/io.elementary.appcenter.appdata.xml.in:158
@@ -333,23 +352,23 @@ msgstr "Yeni çeviriler"
 
 #: data/io.elementary.appcenter.appdata.xml.in:153
 msgid "New categories: Communication, Finance, Media Production"
-msgstr ""
+msgstr "Yeni kategoriler: İletişim, Finans, Medya Üretimi"
 
 #: data/io.elementary.appcenter.appdata.xml.in:154
 msgid "Add Math to Science category"
-msgstr ""
+msgstr "Matematiği Bilim kategorisine ekle"
 
 #: data/io.elementary.appcenter.appdata.xml.in:155
 msgid "Relax email address validator"
-msgstr ""
+msgstr "E-posta adresi doğrulayıcıyı gevşet"
 
 #: data/io.elementary.appcenter.appdata.xml.in:156
 msgid "Present update availability more accurately"
-msgstr ""
+msgstr "Güncelleme kullanılabilirliğini daha doğru sunun"
 
 #: data/io.elementary.appcenter.appdata.xml.in:157
 msgid "Category graphics revamped"
-msgstr ""
+msgstr "Kategori grafikleri yenilendi"
 
 #: data/io.elementary.appcenter.appdata.xml.in:172
 #: data/io.elementary.appcenter.appdata.xml.in:184
@@ -364,19 +383,19 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:267
 #: data/io.elementary.appcenter.appdata.xml.in:276
 msgid "Bug fixes and improve performance."
-msgstr "Bug düzeltmeleri ve performans iyileştirmeleri."
+msgstr "Hata düzeltmeleri ve performans iyileştirmeleri."
 
 #: data/io.elementary.appcenter.appdata.xml.in:174
 msgid "Improve transaction success rate"
-msgstr ""
+msgstr "İşlem başarı oranını artırın"
 
 #: data/io.elementary.appcenter.appdata.xml.in:175
 msgid "Add Publishing to Office category"
-msgstr ""
+msgstr "Office kategorisine Yayınlamayı ekle"
 
 #: data/io.elementary.appcenter.appdata.xml.in:176
 msgid "Improve descriptions of OS Updates"
-msgstr ""
+msgstr "İşletim Sistemi Güncellemelerinin açıklamalarını iyileştir"
 
 #: data/io.elementary.appcenter.appdata.xml.in:177
 #: data/io.elementary.appcenter.appdata.xml.in:188
@@ -390,15 +409,15 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:260
 #: data/io.elementary.appcenter.appdata.xml.in:269
 msgid "Various bug fixes and performance improvements"
-msgstr "Çeşitli bug düzeltmeleri ve performans iyileştirmeleri"
+msgstr "Çeşitli hata düzeltmeleri ve performans iyileştirmeleri"
 
 #: data/io.elementary.appcenter.appdata.xml.in:186
 msgid "Give details for Operating System Updates"
-msgstr ""
+msgstr "İşletim Sistemi Güncellemeleri için ayrıntı ver"
 
 #: data/io.elementary.appcenter.appdata.xml.in:187
 msgid "Support mouse button navigation"
-msgstr ""
+msgstr "Fare düğmesi gezinme desteği"
 
 #: data/io.elementary.appcenter.appdata.xml.in:278
 msgid "Fix crash caused by entries with missing packages"
@@ -414,13 +433,15 @@ msgstr "Artık bir kategori içindeki uygulamaları aramak mümkün"
 
 #: data/io.elementary.appcenter.appdata.xml.in:288
 msgid "Prevent multiple authentication dialogs when resuming from suspend"
-msgstr "Askıya aldıktan sonra birden çok kimlik doğrulama kutusunu engelleme"
+msgstr "Askıya aldıktan sonra birden çok kimlik doğrulama kutusunu engelle"
 
 #: data/io.elementary.appcenter.appdata.xml.in:295
 msgid ""
 "Search performance has beeen improved, the category name is now shown on the "
 "headbar and minor bugs have been fixed."
 msgstr ""
+"Arama performansı iyileştirildi, kategori adı şimdi başlıkta gösteriliyor ve "
+"küçük hatalar düzeltildi."
 
 #: data/io.elementary.appcenter.appdata.xml.in:297
 msgid "Fix Steam installation"
@@ -428,7 +449,7 @@ msgstr "Steam kurulumu düzeltildi"
 
 #: data/io.elementary.appcenter.appdata.xml.in:298
 msgid "Make search asynchronous"
-msgstr "Eş zamanlı olmayan arama yapmak"
+msgstr "Aramayı  eş zamansız olarak yap"
 
 #: data/io.elementary.appcenter.appdata.xml.in:353
 msgid "elementary, Inc."
@@ -458,11 +479,11 @@ msgstr "system-software-update"
 
 #: data/io.elementary.appcenter.policy.in:10
 msgid "Update software"
-msgstr ""
+msgstr "Yazılımı güncelle"
 
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to update software"
-msgstr ""
+msgstr "Yazılımı güncellemek için kimlik doğrulama gerekiyor"
 
 #, fuzzy
 #~| msgid "Performance improvements"
