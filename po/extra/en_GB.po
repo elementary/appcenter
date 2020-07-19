@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-01 23:04+0000\n"
-"PO-Revision-Date: 2020-03-19 17:09+0000\n"
+"PO-Revision-Date: 2020-07-15 14:46+0000\n"
 "Last-Translator: Ciarán Ainsworth <ciaranainsworth@posteo.net>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "appcenter/extra/en_GB/>\n"
@@ -38,18 +38,16 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:59
 #: data/io.elementary.appcenter.appdata.xml.in:76
 msgid "Fixes"
-msgstr ""
+msgstr "Fixes"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Ensure all updatable Flatpak runtimes are listed for update"
-msgstr ""
+msgstr "Ensure all updatable Flatpak runtimes are listed for update"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:33
-#, fuzzy
-#| msgid "Check for Updates"
 msgid "Minor updates"
-msgstr "Check for Updates"
+msgstr "Minor updates"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 #: data/io.elementary.appcenter.appdata.xml.in:43
@@ -68,107 +66,115 @@ msgstr "Updated translations"
 
 #: data/io.elementary.appcenter.appdata.xml.in:29
 msgid "New features"
-msgstr ""
+msgstr "New features"
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
 msgid "Perform updates without administrator permissions"
-msgstr ""
+msgstr "Perform updates without administrator permissions"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
 msgid "Ensure apps on the homepage are more reliably displayed"
-msgstr ""
+msgstr "Ensure apps on the homepage are more reliably displayed"
 
 #: data/io.elementary.appcenter.appdata.xml.in:36
 msgid "More reliably set the Dock badge number"
-msgstr ""
+msgstr "More reliably set the Dock badge number"
 
 #: data/io.elementary.appcenter.appdata.xml.in:45
 msgid ""
 "Only check for updates at device startup if it's more than 24 hours since we "
 "last checked"
 msgstr ""
+"Only check for updates at device startup if it's more than 24 hours since we "
+"last checked"
 
 #: data/io.elementary.appcenter.appdata.xml.in:46
 msgid "Reduce slowdowns when opening certain apps"
-msgstr ""
+msgstr "Reduce slowdowns when opening certain apps"
 
 #: data/io.elementary.appcenter.appdata.xml.in:48
-#, fuzzy
-#| msgid "Performance improvements"
 msgid "Extension improvements"
-msgstr "Performance improvements"
+msgstr "Extension improvements"
 
 #: data/io.elementary.appcenter.appdata.xml.in:50
 msgid ""
 "To de-clutter the updates view, extensions are now only shown if they "
 "require updates"
 msgstr ""
+"To de-clutter the updates view, extensions are now only shown if they "
+"require updates"
 
 #: data/io.elementary.appcenter.appdata.xml.in:51
 msgid ""
 "Clicking an extension on an app's info page now shows details for the "
 "extension"
 msgstr ""
+"Clicking an extension on an app's info page now shows details for the "
+"extension"
 
 #: data/io.elementary.appcenter.appdata.xml.in:52
 msgid ""
 "Swap the main and overlay icons for extensions to more clearly associate "
 "extensions with their app"
 msgstr ""
+"Swap the main and overlay icons for extensions to more clearly associate "
+"extensions with their app"
 
 #: data/io.elementary.appcenter.appdata.xml.in:54
-#, fuzzy
-#| msgid "Performance improvements"
 msgid "Keyboard improvements"
-msgstr "Performance improvements"
+msgstr "Keyboard improvements"
 
 #: data/io.elementary.appcenter.appdata.xml.in:56
 msgid ""
 "Pressing down in the search field moves the keyboard focus to the search "
 "results list"
 msgstr ""
+"Pressing down in the search field moves the keyboard focus to the search "
+"results list"
 
 #: data/io.elementary.appcenter.appdata.xml.in:57
 msgid "Ctrl+F now moves the cursor to the search field"
-msgstr ""
+msgstr "Ctrl+F now moves the cursor to the search field"
 
 #: data/io.elementary.appcenter.appdata.xml.in:61
 msgid "Use configured network proxy settings for apt operations"
-msgstr ""
+msgstr "Use configured network proxy settings for apt operations"
 
 #: data/io.elementary.appcenter.appdata.xml.in:62
 msgid "No longer prompt for approval to update non-curated apps"
-msgstr ""
+msgstr "No longer prompt for approval to update non-curated apps"
 
 #: data/io.elementary.appcenter.appdata.xml.in:63
 msgid ""
 "Ensure the OS updates subheading copy is correct after finishing updates"
 msgstr ""
+"Ensure the OS updates subheading copy is correct after finishing updates"
 
 #: data/io.elementary.appcenter.appdata.xml.in:64
 msgid "Ellipsize long app names in App Info views"
-msgstr ""
+msgstr "Ellipsise long app names in App Info views"
 
 #: data/io.elementary.appcenter.appdata.xml.in:66
 msgid "And more"
-msgstr ""
+msgstr "And more"
 
 #: data/io.elementary.appcenter.appdata.xml.in:68
 msgid "Show a more informative loading screen when checking for updates"
-msgstr ""
+msgstr "Show a more informative loading screen when checking for updates"
 
 #: data/io.elementary.appcenter.appdata.xml.in:69
 msgid "Don't list fonts alongside apps"
-msgstr ""
+msgstr "Don't list fonts alongside apps"
 
 #: data/io.elementary.appcenter.appdata.xml.in:78
 msgid ""
 "Prevent crashes when updating Flatpaks and system packages simultaneously"
 msgstr ""
+"Prevent crashes when updating Flatpaks and system packages simultaneously"
 
 #: data/io.elementary.appcenter.appdata.xml.in:79
 msgid "Prevent suspending when installing, updating, or removing packages"
-msgstr ""
+msgstr "Prevent suspending when installing, updating, or removing packages"
 
 #: data/io.elementary.appcenter.appdata.xml.in:91
 #: data/io.elementary.appcenter.appdata.xml.in:108
@@ -460,11 +466,11 @@ msgstr "system-software-update"
 
 #: data/io.elementary.appcenter.policy.in:10
 msgid "Update software"
-msgstr ""
+msgstr "Update software"
 
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to update software"
-msgstr ""
+msgstr "Authentication is required to update software"
 
 #, fuzzy
 #~| msgid "Performance improvements"
