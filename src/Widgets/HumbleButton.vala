@@ -112,7 +112,7 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
 
         selection = new HumblePopover (arrow_button);
         selection.position = Gtk.PositionType.BOTTOM;
-        selection.download_requested.connect (() => download_requested);
+        selection.download_requested.connect (() => download_requested ());
         selection.payment_requested.connect ((amount) => payment_requested (amount));
         selection.amount_changed.connect ((new_amount) => { amount = new_amount; });
         selection.closed.connect (() => {

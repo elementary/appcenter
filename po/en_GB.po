@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-16 18:26+0000\n"
-"PO-Revision-Date: 2020-04-06 14:22+0000\n"
+"POT-Creation-Date: 2020-07-21 19:09+0000\n"
+"PO-Revision-Date: 2020-07-15 14:46+0000\n"
 "Last-Translator: Ciarán Ainsworth <ciaranainsworth@posteo.net>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/appcenter/appcenter/en_GB/>\n"
 "Language: en_GB\n"
@@ -41,19 +41,19 @@ msgstr "Application installed"
 msgid "%s has been successfully installed"
 msgstr "%s has been successfully installed"
 
-#: src/MainWindow.vala:151 src/Views/Homepage.vala:297
+#: src/MainWindow.vala:136 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
 #: src/Views/Homepage.vala:325
 msgid "Home"
 msgstr "Home"
 
-#: src/MainWindow.vala:152 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:137 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 msgctxt "view"
 msgid "Installed"
 msgstr "Installed"
 
-#: src/MainWindow.vala:182 src/MainWindow.vala:341 src/Views/SearchView.vala:54
+#: src/MainWindow.vala:171 src/MainWindow.vala:350 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:84
 msgid "Search Apps"
 msgstr "Search Apps"
@@ -337,22 +337,17 @@ msgid "Install Anyway"
 msgstr "Install Anyway"
 
 #: src/Dialogs/InstallFailDialog.vala:26
-#, fuzzy
-#| msgid "This may have been caused by external or manually compiled software."
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
-msgstr "This may have been caused by external or manually compiled software."
+msgstr "This may be a temporary issue or could have been caused by external or manually compiled software."
 
 #: src/Dialogs/InstallFailDialog.vala:37
-#, fuzzy
-#| msgid "Failed to uninstall app"
 msgid "Failed to install app"
-msgstr "Failed to uninstall app"
+msgstr "Failed to install app"
 
 #: src/Dialogs/InstallFailDialog.vala:40
-#, fuzzy, c-format
-#| msgid "Failed to uninstall “%s”"
+#, c-format
 msgid "Failed to install “%s”"
-msgstr "Failed to uninstall “%s”"
+msgstr "Failed to install “%s”"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
 msgid "Non-Curated Warning"
@@ -658,14 +653,12 @@ msgid "Fund the development of this app"
 msgstr "Fund the development of this app"
 
 #: src/Views/AppListUpdateView.vala:34
-#, fuzzy
-#| msgid "Searching for updates…"
 msgid "Checking for Updates"
-msgstr "Searching for updates…"
+msgstr "Checking for Updates"
 
 #: src/Views/AppListUpdateView.vala:35
 msgid "Downloading a list of available updates to the OS and installed apps"
-msgstr ""
+msgstr "Downloading a list of available updates to the OS and installed apps"
 
 #: src/Views/AppListUpdateView.vala:46
 msgid "A restart is required to complete the installation of updates"
