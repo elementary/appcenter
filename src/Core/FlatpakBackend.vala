@@ -85,8 +85,22 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             }
 
             installation_changed_monitor.changed.connect (() => {
-                debug ("Flatpak installation changed.");
-                trigger_update_check.begin ();
+                // Only trigger a cache refresh if we're not doing anything (i.e. its an external change)
+                if (!working) {
+                    debug ("Flatpak installation changed.");
+
+                    // Clear the installed state of all packages as something may have changed we weren't
+                    // aware of
+                    foreach (var package in package_list.values) {
+                        if (package.state != Package.State.NOT_INSTALLED || package.installed) {
+                            package.clear_installed ();
+                        }
+                    }
+
+                    // Reloads the appstream data for enabled remotes and checks what applications are
+                    // installed/require updates
+                    trigger_update_check.begin ();
+                }
             });
         } else {
             warning ("Couldn't create Installation File Monitor due to no installation");
@@ -160,10 +174,6 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             }
 
             unowned Flatpak.InstalledRef installed_ref = installed_refs[i];
-
-            if (installed_ref.kind == Flatpak.RefKind.RUNTIME) {
-                continue;
-            }
 
             var bundle_id = "%s/%s".printf (installed_ref.origin, installed_ref.format_ref ());
             var package = package_list[bundle_id];
@@ -374,10 +384,6 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         var installed_refs = installation.list_installed_refs ();
         for (int j = 0; j < installed_refs.length; j++) {
             unowned Flatpak.InstalledRef installed_ref = installed_refs[j];
-
-            if (installed_ref.kind == Flatpak.RefKind.RUNTIME) {
-                continue;
-            }
 
             var bundle_id = "%s/%s".printf (installed_ref.origin, installed_ref.format_ref ());
             if (key == bundle_id) {

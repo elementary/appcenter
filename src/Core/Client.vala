@@ -23,7 +23,7 @@ public class AppCenterCore.Client : Object {
      */
     public signal void installed_apps_changed ();
 
-    public AppCenterCore.ScreenshotCache? screenshot_cache { get; construct; }
+    public AppCenterCore.ScreenshotCache? screenshot_cache { get; private set; default = new ScreenshotCache (); }
 
     private GLib.Cancellable cancellable;
 
@@ -37,9 +37,7 @@ public class AppCenterCore.Client : Object {
 
     private AsyncMutex update_notification_mutex = new AsyncMutex ();
 
-    private Client () {
-        Object (screenshot_cache: AppCenterCore.ScreenshotCache.new_cache ());
-    }
+    private Client () { }
 
     construct {
         cancellable = new GLib.Cancellable ();
@@ -79,9 +77,9 @@ public class AppCenterCore.Client : Object {
             notification.set_icon (new ThemedIcon ("system-software-install"));
             notification.set_default_action ("app.show-updates");
 
-            application.send_notification ("updates", notification);
+            application.send_notification ("io.elementary.appcenter.updates", notification);
         } else {
-            application.withdraw_notification ("updates");
+            application.withdraw_notification ("io.elementary.appcenter.updates");
         }
 
         try {

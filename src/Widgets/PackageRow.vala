@@ -65,9 +65,5 @@ namespace AppCenter.Widgets {
         public void set_action_sensitive (bool is_sensitive) {
             grid.action_sensitive = is_sensitive;
         }
-
-        public bool has_package () {
-            return true;
-        }
     }
 }

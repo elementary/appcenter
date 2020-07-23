@@ -48,9 +48,9 @@ i18n.merge_file(
     install: true
 )
 
-# Blacklist file
+# Hidden app list file
 install_data(
-    'appcenter.blacklist',
+    'appcenter.hiddenapps',
     install_dir: config_dir,
 )
 

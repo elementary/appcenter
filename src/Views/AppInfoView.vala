@@ -582,12 +582,7 @@ namespace AppCenter.Views {
             }
         }
 
-        public void load_more_content (AppCenterCore.ScreenshotCache? cache) {
-            if (cache == null) {
-                warning ("screenshots cannot be loaded, because the cache could not be created.\n");
-                return;
-            }
-
+        public void load_more_content (AppCenterCore.ScreenshotCache cache) {
             Gtk.TreeIter iter;
             uint count = 0;
             foreach (var origin_package in package.origin_packages) {
@@ -657,7 +652,7 @@ namespace AppCenter.Views {
                 });
 
                 string?[] screenshot_files = new string?[urls.length ()];
-                int[] results = new int[urls.length ()];
+                bool[] results = new bool[urls.length ()];
                 int completed = 0;
 
                 // Fetch each screenshot in parallel.
@@ -673,8 +668,6 @@ namespace AppCenter.Views {
                     });
                 }
 
-                cache.maintain ();
-
                 // TODO: dynamically load screenshots as they become available.
                 while (urls.length () != completed) {
                     Thread.usleep (100000);
@@ -682,7 +675,7 @@ namespace AppCenter.Views {
 
                 // Load screenshots that were successfully obtained.
                 for (int i = 0; i < urls.length (); i++) {
-                    if (0 == results[i]) {
+                    if (results[i] == true) {
                         load_screenshot (screenshot_files[i]);
                     }
                 }
@@ -811,7 +804,7 @@ namespace AppCenter.Views {
                 selection.payment_requested.connect ((amount) => {
                     var stripe = new Widgets.StripeDialog (amount,
                                                            package.get_name (),
-                                                           package.component.id.replace (".desktop", ""),
+                                                           package.normalized_component_id,
                                                            package.get_payments_key ()
                                                           );
 

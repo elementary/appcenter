@@ -122,21 +122,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         icon_name = "system-software-install";
         set_size_request (910, 640);
 
-        int window_x, window_y;
-        int window_width, window_height;
-        App.settings.get ("window-position", "(ii)", out window_x, out window_y);
-        App.settings.get ("window-size", "(ii)", out window_width, out window_height);
-
-        if (window_x != -1 || window_y != -1) {
-            move (window_x, window_y);
-        }
-
-        resize (window_width, window_height);
-
-        if (App.settings.get_boolean ("window-maximized")) {
-            maximize ();
-        }
-
         title = _(Build.APP_NAME);
 
         return_button = new Gtk.Button ();
@@ -154,11 +139,15 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         updates_badge = new Gtk.Label ("!");
         updates_badge.get_style_context ().add_class ("badge");
 
+        var eventbox_badge = new Gtk.EventBox ();
+        eventbox_badge.add (updates_badge);
+        eventbox_badge.button_release_event.connect (badge_event);
+
         updates_badge_revealer = new Gtk.Revealer ();
         updates_badge_revealer.halign = Gtk.Align.END;
         updates_badge_revealer.valign = Gtk.Align.START;
         updates_badge_revealer.transition_type = Gtk.RevealerTransitionType.CROSSFADE;
-        updates_badge_revealer.add (updates_badge);
+        updates_badge_revealer.add (eventbox_badge);
 
         var view_mode_overlay = new Gtk.Overlay ();
         view_mode_overlay.add (view_mode);
@@ -211,6 +200,21 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         grid.add (stack);
 
         add (grid);
+
+        int window_x, window_y;
+        int window_width, window_height;
+        App.settings.get ("window-position", "(ii)", out window_x, out window_y);
+        App.settings.get ("window-size", "(ii)", out window_width, out window_height);
+
+        if (window_x != -1 || window_y != -1) {
+            move (window_x, window_y);
+        }
+
+        resize (window_width, window_height);
+
+        if (App.settings.get_boolean ("window-maximized")) {
+            maximize ();
+        }
 
         homepage.page_loaded.connect (() => homepage_loaded ());
     }
@@ -270,6 +274,11 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             updates_badge.label = updates_number.to_string ();
             updates_badge_revealer.reveal_child = true;
         }
+    }
+
+    private bool badge_event (Gtk.Widget sender, Gdk.EventButton evt) {
+        go_to_installed ();
+        return Gdk.EVENT_STOP;
     }
 
     public void show_package (AppCenterCore.Package package) {
