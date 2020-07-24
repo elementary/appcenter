@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-21 19:09+0000\n"
-"PO-Revision-Date: 2020-07-01 23:02+0000\n"
+"PO-Revision-Date: 2020-07-25 17:12+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/extra/"
 "es/>\n"
@@ -45,10 +45,13 @@ msgstr "Correcciones"
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Ensure AppCenter is reopened at the correct position"
 msgstr ""
+"Se asegura de que el Centro de aplicaciones se reabra en la posición correcta"
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
 msgid "Clicking the updates badge in the header navigates to the updates view"
 msgstr ""
+"Una pulsación en el número de actualizaciones en la cabecera lleva a la "
+"vista de actualizaciones"
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
 #: data/io.elementary.appcenter.appdata.xml.in:33
@@ -208,13 +211,14 @@ msgstr "Correcciones menores"
 #: data/io.elementary.appcenter.appdata.xml.in:106
 msgid "Update application details when changes happen outside of AppCenter"
 msgstr ""
-"Actualizar los detalles de la aplicación cuando ocurran cambios fuera del "
-"Centro de Aplicaciones"
+"Se actualizan los detalles de las aplicaciones cuando ocurren cambios fuera "
+"del Centro de aplicaciones"
 
 #: data/io.elementary.appcenter.appdata.xml.in:107
 msgid "Fix for notification not appearing when a restart is required"
 msgstr ""
-"Solución para que la notificación no aparezca cuando se requiere un reinicio"
+"Se solucionó un problema por el cual la notificación de reinicio necesario "
+"no aparecía"
 
 #: data/io.elementary.appcenter.appdata.xml.in:108
 msgid "Apps in list views now load in the correct order when scrolling"
@@ -258,7 +262,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:115
 msgid "Make download size estimates more accurate"
-msgstr "Hacer que las estimaciones de tamaño de descarga sean más precisas"
+msgstr "Las estimaciones de tamaño de descarga son más precisas"
 
 #: data/io.elementary.appcenter.appdata.xml.in:123
 msgid "Prevent AppCenter from opening on log in"
@@ -276,7 +280,7 @@ msgstr "Mostrar el estado de instalación correcto para las extensiones"
 
 #: data/io.elementary.appcenter.appdata.xml.in:132
 msgid "Add support for Flatpak apps"
-msgstr "Agregar soporte para aplicaciones Flatpak"
+msgstr "Se añadió compatibilidad con aplicaciones Flatpak"
 
 #: data/io.elementary.appcenter.appdata.xml.in:133
 msgid "Warn about non-curated apps"
@@ -304,7 +308,7 @@ msgstr "Corrección de las URL de compartición de Twitter"
 
 #: data/io.elementary.appcenter.appdata.xml.in:138
 msgid "Drop Google+ from the share menu"
-msgstr "Eliminar Google+ del menú de compartir"
+msgstr "Se eliminó Google+ del menú de compartición"
 
 #: data/io.elementary.appcenter.appdata.xml.in:139
 msgid "Animate screenshot background while loading"
@@ -447,7 +451,7 @@ msgstr "Dar detalles de las actualizaciones del sistema operativo"
 
 #: data/io.elementary.appcenter.appdata.xml.in:200
 msgid "Support mouse button navigation"
-msgstr "Soportar navegación con el botón del ratón"
+msgstr "Se permite la navegación con el botón del ratón"
 
 #: data/io.elementary.appcenter.appdata.xml.in:291
 msgid "Fix crash caused by entries with missing packages"
