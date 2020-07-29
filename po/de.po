@@ -9,11 +9,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-16 18:26+0000\n"
+"POT-Creation-Date: 2020-07-21 19:09+0000\n"
 "PO-Revision-Date: 2020-07-09 13:12+0000\n"
 "Last-Translator: Jörg Arnold <j.ar@mailbox.org>\n"
-"Language-Team: German <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/de/>\n"
+"Language-Team: German <https://l10n.elementary.io/projects/appcenter/appcenter/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -35,9 +34,7 @@ msgstr "Der Medientyp %s wurde nicht erkannt"
 #: src/Application.vala:132
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr ""
-"Der angegebene Link '%s' konnte nicht ermittelt werden, stattdessen wird "
-"gesucht"
+msgstr "Der angegebene Link '%s' konnte nicht ermittelt werden, stattdessen wird gesucht"
 
 #: src/Application.vala:272
 msgid "Application installed"
@@ -48,19 +45,19 @@ msgstr "Anwendung installiert"
 msgid "%s has been successfully installed"
 msgstr "%s wurde erfolgreich installiert"
 
-#: src/MainWindow.vala:151 src/Views/Homepage.vala:297
+#: src/MainWindow.vala:136 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
 #: src/Views/Homepage.vala:325
 msgid "Home"
 msgstr "Startseite"
 
-#: src/MainWindow.vala:152 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:137 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 msgctxt "view"
 msgid "Installed"
 msgstr "Installiert"
 
-#: src/MainWindow.vala:182 src/MainWindow.vala:341 src/Views/SearchView.vala:54
+#: src/MainWindow.vala:171 src/MainWindow.vala:350 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:84
 msgid "Search Apps"
 msgstr "Suche Apps"
@@ -327,10 +324,7 @@ msgstr "“%s” enthält explizite Inhalte"
 #: src/Dialogs/ContentWarningDialog.vala:31
 #, c-format
 msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
-msgstr ""
-"“%s” kann sensible oder verstörende Inhalte aufweisen, die nur für "
-"Erwachsene geeignet sind. Die Inhalte dieser App werden von elementary "
-"grundsätzlich nicht überprüft oder befürwortet."
+msgstr "“%s” kann sensible oder verstörende Inhalte aufweisen, die nur für Erwachsene geeignet sind. Die Inhalte dieser App werden von elementary grundsätzlich nicht überprüft oder befürwortet."
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 msgid "Show content warnings"
@@ -348,9 +342,7 @@ msgstr "Trotzdem installieren"
 
 #: src/Dialogs/InstallFailDialog.vala:26
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
-msgstr ""
-"Dies kann ein vorübergehendes Problem sein oder durch externe oder manuell "
-"kompilierte Software verursacht worden sein."
+msgstr "Dies kann ein vorübergehendes Problem sein oder durch externe oder manuell kompilierte Software verursacht worden sein."
 
 #: src/Dialogs/InstallFailDialog.vala:37
 msgid "Failed to install app"
@@ -372,21 +364,15 @@ msgstr "Unbetreutes Programm installieren?"
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
 msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-msgstr ""
-"“%s”  wird nicht von elementary betreut und wurde nicht auf Sicherheit, "
-"Privatsphäre oder System-Integration überprüft."
+msgstr "“%s”  wird nicht von elementary betreut und wurde nicht auf Sicherheit, Privatsphäre oder System-Integration überprüft."
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
 msgid "It may not receive bug fix or feature updates"
-msgstr ""
-"Möglicherweise erhält es keine Fehlerbehebungen oder "
-"Funktionsaktualisierungen"
+msgstr "Möglicherweise erhält es keine Fehlerbehebungen oder Funktionsaktualisierungen"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:60
 msgid "It may access or change system or personal files without permission"
-msgstr ""
-"Möglicherweise verursacht es Zugriffe auf oder Veränderungen an System-"
-"Dateien oder persönlichen Dateien ohne Berechtigung"
+msgstr "Möglicherweise verursacht es Zugriffe auf oder Veränderungen an System-Dateien oder persönlichen Dateien ohne Berechtigung"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
 msgid "Show non-curated warnings"
@@ -412,10 +398,7 @@ msgstr "Abbrechen"
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
-msgstr ""
-"Bei der Verarbeitung der Kartendaten ist ein Fehler aufgetreten. Versuche es "
-"später erneut. Wir entschuldigen uns für eventuell verursachte "
-"Unannehmlichkeiten."
+msgstr "Bei der Verarbeitung der Kartendaten ist ein Fehler aufgetreten. Versuche es später erneut. Wir entschuldigen uns für eventuell verursachte Unannehmlichkeiten."
 
 #: src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
@@ -432,9 +415,7 @@ msgstr "Zahle %d USD für %s"
 
 #: src/Dialogs/StripeDialog.vala:96
 msgid "This is a one time payment. Your email address is only used to send you a receipt."
-msgstr ""
-"Dies ist eine einmalige Zahlung. Die E-Mail-Adresse wird ausschließlich für "
-"die Zustellung des Kaufbelegs verwendet."
+msgstr "Dies ist eine einmalige Zahlung. Die E-Mail-Adresse wird ausschließlich für die Zustellung des Kaufbelegs verwendet."
 
 #: src/Dialogs/StripeDialog.vala:106 src/Widgets/SharePopover.vala:35
 msgid "Email"
@@ -442,9 +423,7 @@ msgstr "E-Mail"
 
 #: src/Dialogs/StripeDialog.vala:108
 msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
-msgstr ""
-"Ihre E-Mail-Adresse wird nur für den Versand einer Quittung verwendet. Sie "
-"werden nicht in eine E-Mail-Verteilerliste eingetragen."
+msgstr "Ihre E-Mail-Adresse wird nur für den Versand einer Quittung verwendet. Sie werden nicht in eine E-Mail-Verteilerliste eingetragen."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127
@@ -486,44 +465,31 @@ msgstr "Die Kartennummer ist nicht korrekt. Bitte geben Sie die richtige Kartenn
 
 #: src/Dialogs/StripeDialog.vala:515
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
-msgstr ""
-"Der angegebene Monat im Ablaufdatum ist ungültig. Bitte versuche  es erneut "
-"mit dem korrekten Ablaufdatum."
+msgstr "Der angegebene Monat im Ablaufdatum ist ungültig. Bitte versuche  es erneut mit dem korrekten Ablaufdatum."
 
 #: src/Dialogs/StripeDialog.vala:517 src/Dialogs/StripeDialog.vala:575
 msgid "The expiration year is invalid. Please try again using the correct expiration date."
-msgstr ""
-"Das angegebene Jahr im Ablaufdatum ist ungültig. Bitte versuche es erneut "
-"mit dem korrekten Ablaufdatum."
+msgstr "Das angegebene Jahr im Ablaufdatum ist ungültig. Bitte versuche es erneut mit dem korrekten Ablaufdatum."
 
 #: src/Dialogs/StripeDialog.vala:520 src/Dialogs/StripeDialog.vala:573
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr ""
-"Die CVC-Prüfnummer ist ungültig. Versuche es  bitte mit der korrekten Nummer "
-"erneut."
+msgstr "Die CVC-Prüfnummer ist ungültig. Versuche es  bitte mit der korrekten Nummer erneut."
 
 #: src/Dialogs/StripeDialog.vala:522 src/Dialogs/StripeDialog.vala:564
 msgid "The card has expired. Please try again with a different card."
-msgstr ""
-"Die Karte ist abgelaufen. Versuch es bitte mit einer anderen Karte erneut."
+msgstr "Die Karte ist abgelaufen. Versuch es bitte mit einer anderen Karte erneut."
 
 #: src/Dialogs/StripeDialog.vala:542
 msgid "There are too many payment requests at the moment, please retry later."
-msgstr ""
-"Im Augenblick sind zu viele Zahlungsanfragen in Bearbeitung. Versuche es "
-"bitte später erneut."
+msgstr "Im Augenblick sind zu viele Zahlungsanfragen in Bearbeitung. Versuche es bitte später erneut."
 
 #: src/Dialogs/StripeDialog.vala:558
 msgid "This card does not support this kind of transaction. Please try again with a different card."
-msgstr ""
-"Die Karte unterstützt diese Transaktionsart nicht. Versuche es bitte  mit "
-"einer anderen Karte erneut."
+msgstr "Die Karte unterstützt diese Transaktionsart nicht. Versuche es bitte  mit einer anderen Karte erneut."
 
 #: src/Dialogs/StripeDialog.vala:560
 msgid "The currency is not supported by this card. Please try again with a different card."
-msgstr ""
-"Zahlungen in dieser Währung sind mit dieser Karte nicht möglich. Versuche es "
-"bitte mit einer anderen Karte erneut."
+msgstr "Zahlungen in dieser Währung sind mit dieser Karte nicht möglich. Versuche es bitte mit einer anderen Karte erneut."
 
 #: src/Dialogs/StripeDialog.vala:562
 msgid "The transaction has already been processed."
@@ -531,9 +497,7 @@ msgstr "Diese Transaktion wurde bereits verarbeitet."
 
 #: src/Dialogs/StripeDialog.vala:566
 msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
-msgstr ""
-"Die Postleitzahl ist nicht korrekt. Versuche es bitte mit Angabe der "
-"korrekten Postleitzahl erneut."
+msgstr "Die Postleitzahl ist nicht korrekt. Versuche es bitte mit Angabe der korrekten Postleitzahl erneut."
 
 #: src/Dialogs/StripeDialog.vala:568
 msgid "You don't have enough funds. Please use an alternative payment method."
@@ -541,8 +505,7 @@ msgstr "Das Guthaben reicht nicht aus. Nutze bitte eine andere Zahlungsweise."
 
 #: src/Dialogs/StripeDialog.vala:570
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr ""
-"Der Betrag ist ungültig.  Versuche es bitte  mit einem korrekten Wert erneut."
+msgstr "Der Betrag ist ungültig.  Versuche es bitte  mit einem korrekten Wert erneut."
 
 #: src/Dialogs/StripeDialog.vala:581
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
@@ -550,9 +513,7 @@ msgstr "Die PIN ist falsch. Versuche es bitte mit der richtigen PIN erneut."
 
 #: src/Dialogs/StripeDialog.vala:583
 msgid "There has been too many PIN attempts. Please try again with a different card."
-msgstr ""
-"Die PIN wurde zu oft falsch eingegeben. Versuche es bitte mit einer anderen "
-"Karte erneut."
+msgstr "Die PIN wurde zu oft falsch eingegeben. Versuche es bitte mit einer anderen Karte erneut."
 
 #: src/Dialogs/StripeDialog.vala:603
 msgid "Unable to complete the transaction. Please contact your bank for further information."
@@ -564,9 +525,7 @@ msgstr "Das Kartenlimit ist erreicht."
 
 #: src/Dialogs/StripeDialog.vala:609
 msgid "The given card is a test card. Please use a real card to proceed."
-msgstr ""
-"Die angegebene Karte ist eine Testkarte. Verwende bitte eine echte Karte, um "
-"den Prozess abzuschließen."
+msgstr "Die angegebene Karte ist eine Testkarte. Verwende bitte eine echte Karte, um den Prozess abzuschließen."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
@@ -703,15 +662,11 @@ msgstr "Auf Aktualisierungen prüfen"
 
 #: src/Views/AppListUpdateView.vala:35
 msgid "Downloading a list of available updates to the OS and installed apps"
-msgstr ""
-"Herunterladen einer Liste mit verfügbaren Aktualisierungen für das "
-"Betriebssystem und den installierten Anwendungen"
+msgstr "Herunterladen einer Liste mit verfügbaren Aktualisierungen für das Betriebssystem und den installierten Anwendungen"
 
 #: src/Views/AppListUpdateView.vala:46
 msgid "A restart is required to complete the installation of updates"
-msgstr ""
-"Ein Neustart ist erforderlich, um die Installation der Aktualisierungen "
-"abzuschließen"
+msgstr "Ein Neustart ist erforderlich, um die Installation der Aktualisierungen abzuschließen"
 
 #: src/Views/AppListUpdateView.vala:54
 msgid "Restart Now"
@@ -763,8 +718,7 @@ msgstr "Ein offener, zahl-was-du-willst App-Store"
 
 #: src/Widgets/Banner.vala:76
 msgid "Get the apps that you need at a price you can afford."
-msgstr ""
-"Erhalte Apps, die du benötigst, zu einem Preis, den du dir leisten kannst."
+msgstr "Erhalte Apps, die du benötigst, zu einem Preis, den du dir leisten kannst."
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
@@ -866,9 +820,7 @@ msgstr "Netzwerk nicht verfügbar."
 
 #: src/Widgets/NetworkInfoBar.vala:29
 msgid "Connect to the Internet to browse and install apps."
-msgstr ""
-"Verbindung mit dem Internet herstellen, um Apps zu durchsuchen und zu "
-"installieren."
+msgstr "Verbindung mit dem Internet herstellen, um Apps zu durchsuchen und zu installieren."
 
 #. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
 #: src/Widgets/NetworkInfoBar.vala:37
@@ -918,9 +870,7 @@ msgstr "Tatsächliche Größe des Downloads wahrscheinlich kleiner"
 
 #: src/Widgets/SizeLabel.vala:36
 msgid "Only the parts of apps and updates that are needed will be downloaded."
-msgstr ""
-"Es werden nur die Teilkomponenten der Anwendungen und Updates "
-"heruntergeladen, die benötigt werden."
+msgstr "Es werden nur die Teilkomponenten der Anwendungen und Updates heruntergeladen, die benötigt werden."
 
 #: src/Widgets/SizeLabel.vala:63
 #, c-format

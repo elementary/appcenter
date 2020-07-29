@@ -122,21 +122,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         icon_name = "io.elementary.appcenter";
         set_size_request (910, 640);
 
-        int window_x, window_y;
-        int window_width, window_height;
-        App.settings.get ("window-position", "(ii)", out window_x, out window_y);
-        App.settings.get ("window-size", "(ii)", out window_width, out window_height);
-
-        if (window_x != -1 || window_y != -1) {
-            move (window_x, window_y);
-        }
-
-        resize (window_width, window_height);
-
-        if (App.settings.get_boolean ("window-maximized")) {
-            maximize ();
-        }
-
         title = _(Build.APP_NAME);
 
         return_button = new Gtk.Button ();
@@ -215,6 +200,21 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         grid.add (stack);
 
         add (grid);
+
+        int window_x, window_y;
+        int window_width, window_height;
+        App.settings.get ("window-position", "(ii)", out window_x, out window_y);
+        App.settings.get ("window-size", "(ii)", out window_width, out window_height);
+
+        if (window_x != -1 || window_y != -1) {
+            move (window_x, window_y);
+        }
+
+        resize (window_width, window_height);
+
+        if (App.settings.get_boolean ("window-maximized")) {
+            maximize ();
+        }
 
         homepage.page_loaded.connect (() => homepage_loaded ());
     }
