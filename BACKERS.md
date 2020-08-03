@@ -120,7 +120,6 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - Anonymous Backer
 - Anonymous Backer
 - Anonymous Backer
-- Anonymous Backer
 - Anthony Weathers
 - Antti Impiö
 - Arnaud Durif
@@ -210,6 +209,7 @@ Thanks again to all of the backers of our [March, 2020 Indiegogo campaign](https
 - Dirk Bauer
 - dlocasci
 - Domenico Lamberti
+- Donald Morris
 - Donald  Ricci
 - Dork Farm GmbH
 - dragonlich
