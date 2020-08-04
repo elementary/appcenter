@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-21 19:09+0000\n"
-"PO-Revision-Date: 2020-07-15 14:46+0000\n"
+"PO-Revision-Date: 2020-07-28 14:12+0000\n"
 "Last-Translator: Sinan Decron <intenfinitia@gmail.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/extra/"
 "tr/>\n"
@@ -44,11 +44,12 @@ msgstr "Düzeltmeler"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Ensure AppCenter is reopened at the correct position"
-msgstr ""
+msgstr "AppCenter'ın doğru konumda yeniden açılması sağlandı"
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
 msgid "Clicking the updates badge in the header navigates to the updates view"
 msgstr ""
+"Üst bilgideki güncellemeler rozetine tıklamak güncellemeler görünümüne gider"
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
 #: data/io.elementary.appcenter.appdata.xml.in:33

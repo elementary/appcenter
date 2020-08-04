@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-21 19:09+0000\n"
-"PO-Revision-Date: 2020-07-01 23:02+0000\n"
+"PO-Revision-Date: 2020-07-24 13:12+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/appcenter/extra/"
 "fr/>\n"
@@ -45,10 +45,14 @@ msgstr "Corrections"
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Ensure AppCenter is reopened at the correct position"
 msgstr ""
+"Nous nous sommes assurés que le Centre d'Application soit à la bonne "
+"position lors de son ouverture"
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
 msgid "Clicking the updates badge in the header navigates to the updates view"
 msgstr ""
+"Cliquer sur le badge des mises à jour dans l'entête renvoie vers la vue des "
+"mises à jour"
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
 #: data/io.elementary.appcenter.appdata.xml.in:33
