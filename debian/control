@@ -23,7 +23,7 @@ Homepage: https://github.com/elementary/appcenter
 Package: io.elementary.appcenter
 Architecture: any
 Priority: extra
-Conflicts: appcenter-daemon, appcenter
+Breaks: appcenter-daemon, appcenter
 Replaces: appcenter-daemon, appcenter
 Depends: appstream (>= 0.12),
          apt-config-icons,
