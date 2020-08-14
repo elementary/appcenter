@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-21 19:09+0000\n"
-"PO-Revision-Date: 2020-08-02 21:44+0000\n"
+"PO-Revision-Date: 2020-08-15 19:13+0000\n"
 "Last-Translator: Lieven Hanssen <lhanssen@freedommail.co>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/nl/>\n"
@@ -40,7 +40,7 @@ msgstr "Toepassing geïnstalleerd"
 #: src/Application.vala:273
 #, c-format
 msgid "%s has been successfully installed"
-msgstr "%s is succesvol geïnstalleerd"
+msgstr "%s is met succes geïnstalleerd"
 
 #: src/MainWindow.vala:136 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
@@ -189,7 +189,7 @@ msgstr "Wachten op authenticatie"
 
 #: src/Utils.vala:124
 msgid "Updating running applications"
-msgstr "Geopende programma's bijwerken"
+msgstr "Geopende toepassingen bijwerken"
 
 #: src/Utils.vala:126
 msgid "Checking applications in use"
@@ -293,8 +293,8 @@ msgstr "Geen onderdelen met updates"
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
-msgstr[0] "%u component met updates"
-msgstr[1] "%u componenten met updates"
+msgstr[0] "%u onderdeel met updates"
+msgstr[1] "%u onderdelen met updates"
 
 #: src/Core/UpdateManager.vala:142
 #, c-format
@@ -536,7 +536,8 @@ msgstr ""
 #: src/Dialogs/StripeDialog.vala:581
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr ""
-"De pincode is onjuist. Gelieve opnieuw te proberen met de juiste pincode."
+"Het CVC-nummer is onjuist. Gelieve het opnieuw te proberen met het juiste "
+"CVC-nummer."
 
 #: src/Dialogs/StripeDialog.vala:583
 msgid "There has been too many PIN attempts. Please try again with a different card."
@@ -545,7 +546,6 @@ msgstr ""
 "opnieuw te proberen met een andere kaart."
 
 #: src/Dialogs/StripeDialog.vala:603
-#, fuzzy
 msgid "Unable to complete the transaction. Please contact your bank for further information."
 msgstr ""
 "Het is niet mogelijk om de transactie af te ronden. Gelieve uw bank te "
@@ -752,7 +752,7 @@ msgstr "Zoeken"
 
 #: src/Widgets/Banner.vala:57
 msgid "An open, pay-what-you-want app store"
-msgstr "Een open appstore zonder vastgelegde prijzen"
+msgstr "Een open toepassingenwinkel waarbij u de prijzen bepaalt"
 
 #: src/Widgets/Banner.vala:76
 msgid "Get the apps that you need at a price you can afford."
