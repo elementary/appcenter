@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-21 19:09+0000\n"
-"PO-Revision-Date: 2020-08-15 19:13+0000\n"
+"PO-Revision-Date: 2020-08-19 12:13+0000\n"
 "Last-Translator: Lieven Hanssen <lhanssen@freedommail.co>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/nl/>\n"
@@ -181,7 +181,7 @@ msgstr "Genereren van pakketlijsten"
 
 #: src/Utils.vala:120
 msgid "Waiting for package manager lock"
-msgstr "Wachten op vergrendeling van pakketbeheerder"
+msgstr "Wachten op ontgrendeling van pakketbeheerder"
 
 #: src/Utils.vala:122
 msgid "Waiting for authentication"
