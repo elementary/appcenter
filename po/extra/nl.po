@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-21 19:09+0000\n"
-"PO-Revision-Date: 2020-06-18 11:11+0000\n"
-"Last-Translator: Jaimie85 <alsemgeest@gmail.com>\n"
+"PO-Revision-Date: 2020-08-15 19:13+0000\n"
+"Last-Translator: Lieven Hanssen <lhanssen@freedommail.co>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/extra/nl/"
 ">\n"
 "Language: nl\n"
@@ -44,7 +44,7 @@ msgstr "Oplossingen"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Ensure AppCenter is reopened at the correct position"
-msgstr ""
+msgstr "Zorg dat AppCenter op de juiste positie heropend wordt"
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
 msgid "Clicking the updates badge in the header navigates to the updates view"
@@ -339,7 +339,7 @@ msgstr "Buttons verspringen niet meer"
 
 #: data/io.elementary.appcenter.appdata.xml.in:156
 msgid "Remove reset paid apps gsettings key"
-msgstr "De gsettings key om betaalde apps te resetten is verwijderd"
+msgstr "Verwijder de gsettingssleutel om betaalde toepassingen te resetten"
 
 #: data/io.elementary.appcenter.appdata.xml.in:157
 msgid "Memory management refinements"
@@ -466,7 +466,7 @@ msgid ""
 "headbar and minor bugs have been fixed."
 msgstr ""
 "Zoekprestaties zijn verbeterd, de categorienaam wordt nu getoond in de "
-"titelbalk en kleine bugs werden opgelost."
+"titelbalk en kleine bugs zijn verholpen."
 
 #: data/io.elementary.appcenter.appdata.xml.in:310
 msgid "Fix Steam installation"

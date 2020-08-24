@@ -28,8 +28,20 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
     private Gtk.Revealer release_stack_revealer;
     AppStream.Release? newest = null;
 
+    private Gtk.Grid info_grid;
+
     public InstalledPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? info_size_group, Gtk.SizeGroup? action_size_group) {
-        base (package, info_size_group, action_size_group);
+        base (package);
+
+        if (action_size_group != null) {
+            action_size_group.add_widget (action_button);
+            action_size_group.add_widget (cancel_button);
+        }
+
+        if (info_size_group != null) {
+            info_size_group.add_widget (info_grid);
+        }
+
         set_up_package ();
     }
 
@@ -79,9 +91,27 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         release_stack_revealer.transition_type = Gtk.RevealerTransitionType.CROSSFADE;
         release_stack_revealer.add (release_stack);
 
+        info_grid = new Gtk.Grid () {
+            column_spacing = 12,
+            row_spacing = 6,
+            valign = Gtk.Align.START
+        };
+        info_grid.attach (image, 0, 0, 1, 2);
+        info_grid.attach (package_name, 1, 0);
         info_grid.attach (app_version, 1, 1);
 
+        action_stack.homogeneous = false;
+        action_stack.margin_top = 10;
+        action_stack.valign = Gtk.Align.START;
+
+        var grid = new Gtk.Grid () {
+            column_spacing = 24
+        };
+        grid.attach (info_grid, 0, 0);
         grid.attach (release_stack_revealer, 2, 0, 1, 2);
+        grid.attach (action_stack, 3, 0);
+
+        add (grid);
     }
 
     protected override void set_up_package (uint icon_size = 48) {
