@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-01 23:04+0000\n"
+"POT-Creation-Date: 2020-07-21 19:09+0000\n"
 "PO-Revision-Date: 2020-05-31 16:11+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/appcenter/extra/cs/"
@@ -36,53 +36,64 @@ msgstr ""
 "novými funkcemi a opravami."
 
 #: data/io.elementary.appcenter.appdata.xml.in:16
-#: data/io.elementary.appcenter.appdata.xml.in:59
-#: data/io.elementary.appcenter.appdata.xml.in:76
+#: data/io.elementary.appcenter.appdata.xml.in:29
+#: data/io.elementary.appcenter.appdata.xml.in:72
+#: data/io.elementary.appcenter.appdata.xml.in:89
 msgid "Fixes"
 msgstr "Opravy"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
-msgid "Ensure all updatable Flatpak runtimes are listed for update"
+msgid "Ensure AppCenter is reopened at the correct position"
 msgstr ""
 
-#: data/io.elementary.appcenter.appdata.xml.in:20
+#: data/io.elementary.appcenter.appdata.xml.in:19
+msgid "Clicking the updates badge in the header navigates to the updates view"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:21
 #: data/io.elementary.appcenter.appdata.xml.in:33
+#: data/io.elementary.appcenter.appdata.xml.in:46
 msgid "Minor updates"
 msgstr "Drobné aktualizace"
 
-#: data/io.elementary.appcenter.appdata.xml.in:22
-#: data/io.elementary.appcenter.appdata.xml.in:43
-#: data/io.elementary.appcenter.appdata.xml.in:132
-msgid "Performance improvements"
-msgstr "Vylepšení výkonu"
-
 #: data/io.elementary.appcenter.appdata.xml.in:23
-#: data/io.elementary.appcenter.appdata.xml.in:37
-#: data/io.elementary.appcenter.appdata.xml.in:70
-#: data/io.elementary.appcenter.appdata.xml.in:80
-#: data/io.elementary.appcenter.appdata.xml.in:86
-#: data/io.elementary.appcenter.appdata.xml.in:133
+#: data/io.elementary.appcenter.appdata.xml.in:36
+#: data/io.elementary.appcenter.appdata.xml.in:50
+#: data/io.elementary.appcenter.appdata.xml.in:83
+#: data/io.elementary.appcenter.appdata.xml.in:93
+#: data/io.elementary.appcenter.appdata.xml.in:99
+#: data/io.elementary.appcenter.appdata.xml.in:146
 msgid "Updated translations"
 msgstr "Aktualizovány překlady"
 
-#: data/io.elementary.appcenter.appdata.xml.in:29
+#: data/io.elementary.appcenter.appdata.xml.in:31
+msgid "Ensure all updatable Flatpak runtimes are listed for update"
+msgstr ""
+
+#: data/io.elementary.appcenter.appdata.xml.in:35
+#: data/io.elementary.appcenter.appdata.xml.in:56
+#: data/io.elementary.appcenter.appdata.xml.in:145
+msgid "Performance improvements"
+msgstr "Vylepšení výkonu"
+
+#: data/io.elementary.appcenter.appdata.xml.in:42
 msgid "New features"
 msgstr "Nové funkce"
 
-#: data/io.elementary.appcenter.appdata.xml.in:31
+#: data/io.elementary.appcenter.appdata.xml.in:44
 msgid "Perform updates without administrator permissions"
 msgstr ""
 "Provádění aktualizací bez vyžadování oprávnění na úrovni správce systému"
 
-#: data/io.elementary.appcenter.appdata.xml.in:35
+#: data/io.elementary.appcenter.appdata.xml.in:48
 msgid "Ensure apps on the homepage are more reliably displayed"
 msgstr "Zajištěno spolehlivější zobrazování aplikací na domovské stránce"
 
-#: data/io.elementary.appcenter.appdata.xml.in:36
+#: data/io.elementary.appcenter.appdata.xml.in:49
 msgid "More reliably set the Dock badge number"
 msgstr "Spolehlivější nastavení čísla znaku doku"
 
-#: data/io.elementary.appcenter.appdata.xml.in:45
+#: data/io.elementary.appcenter.appdata.xml.in:58
 msgid ""
 "Only check for updates at device startup if it's more than 24 hours since we "
 "last checked"
@@ -90,15 +101,15 @@ msgstr ""
 "Aktualizace jsou při startu počítače zjišťovány pouze pokud od minulého "
 "zjišťování uplynulo alespoň 24 hodin"
 
-#: data/io.elementary.appcenter.appdata.xml.in:46
+#: data/io.elementary.appcenter.appdata.xml.in:59
 msgid "Reduce slowdowns when opening certain apps"
 msgstr "Omezeno zpomalování při otevírání určitých aplikací"
 
-#: data/io.elementary.appcenter.appdata.xml.in:48
+#: data/io.elementary.appcenter.appdata.xml.in:61
 msgid "Extension improvements"
 msgstr "Vylepšení rozšíření"
 
-#: data/io.elementary.appcenter.appdata.xml.in:50
+#: data/io.elementary.appcenter.appdata.xml.in:63
 msgid ""
 "To de-clutter the updates view, extensions are now only shown if they "
 "require updates"
@@ -106,7 +117,7 @@ msgstr ""
 "Pro zpřehlednění zobrazení aktualizací, rozšíření jsou nyní zobrazována "
 "pouze pokud je zapotřebí je aktualizovat"
 
-#: data/io.elementary.appcenter.appdata.xml.in:51
+#: data/io.elementary.appcenter.appdata.xml.in:64
 msgid ""
 "Clicking an extension on an app's info page now shows details for the "
 "extension"
@@ -114,7 +125,7 @@ msgstr ""
 "Kliknutí na rozšíření na stránce s informacemi o aplikaci nyní zobrazí "
 "podrobnosti o rozšíření"
 
-#: data/io.elementary.appcenter.appdata.xml.in:52
+#: data/io.elementary.appcenter.appdata.xml.in:65
 msgid ""
 "Swap the main and overlay icons for extensions to more clearly associate "
 "extensions with their app"
@@ -122,11 +133,11 @@ msgstr ""
 "Prohození hlavní hlavní a překryvné ikony pro rozšíření, pro zřejmější "
 "přiřazení rozšíření k jejich aplikaci"
 
-#: data/io.elementary.appcenter.appdata.xml.in:54
+#: data/io.elementary.appcenter.appdata.xml.in:67
 msgid "Keyboard improvements"
 msgstr "Vylepšení ovládání klávesnicí"
 
-#: data/io.elementary.appcenter.appdata.xml.in:56
+#: data/io.elementary.appcenter.appdata.xml.in:69
 msgid ""
 "Pressing down in the search field moves the keyboard focus to the search "
 "results list"
@@ -134,143 +145,143 @@ msgstr ""
 "Stisk klávesy v kolonce pro hledání přesune zaměření klávesnice na seznam "
 "výsledků vyhledání"
 
-#: data/io.elementary.appcenter.appdata.xml.in:57
+#: data/io.elementary.appcenter.appdata.xml.in:70
 msgid "Ctrl+F now moves the cursor to the search field"
 msgstr "Ctrl+F nyní přesune kurzor do kolonky pro hledání"
 
-#: data/io.elementary.appcenter.appdata.xml.in:61
+#: data/io.elementary.appcenter.appdata.xml.in:74
 msgid "Use configured network proxy settings for apt operations"
 msgstr "Pro operace nástroje apt je nyní používána nastavená síťová proxy"
 
-#: data/io.elementary.appcenter.appdata.xml.in:62
+#: data/io.elementary.appcenter.appdata.xml.in:75
 msgid "No longer prompt for approval to update non-curated apps"
 msgstr ""
 "Už nezobrazována výzva pro schvalování aktualizací neprověřených aplikací"
 
-#: data/io.elementary.appcenter.appdata.xml.in:63
+#: data/io.elementary.appcenter.appdata.xml.in:76
 msgid ""
 "Ensure the OS updates subheading copy is correct after finishing updates"
 msgstr ""
 "Zajištěno, že kopie podnadpisu aktualizací operačního systému je po "
 "dokončení aktualizací správná"
 
-#: data/io.elementary.appcenter.appdata.xml.in:64
+#: data/io.elementary.appcenter.appdata.xml.in:77
 msgid "Ellipsize long app names in App Info views"
 msgstr ""
 "Dlouhé názvy aplikací jsou nyní v pohledech informací o aplikaci zkracovány "
 "za použití výpustky"
 
-#: data/io.elementary.appcenter.appdata.xml.in:66
+#: data/io.elementary.appcenter.appdata.xml.in:79
 msgid "And more"
 msgstr "A další"
 
-#: data/io.elementary.appcenter.appdata.xml.in:68
+#: data/io.elementary.appcenter.appdata.xml.in:81
 msgid "Show a more informative loading screen when checking for updates"
 msgstr ""
 "Na obrazovce načítání při zjišťování aktualizací je nyní zobrazováno více "
 "informací"
 
-#: data/io.elementary.appcenter.appdata.xml.in:69
+#: data/io.elementary.appcenter.appdata.xml.in:82
 msgid "Don't list fonts alongside apps"
 msgstr "Aplikace a písma už nejsou smíchané dohromady"
 
-#: data/io.elementary.appcenter.appdata.xml.in:78
+#: data/io.elementary.appcenter.appdata.xml.in:91
 msgid ""
 "Prevent crashes when updating Flatpaks and system packages simultaneously"
 msgstr ""
 "Předcházeno pádům při aktualizování flatpak a systémových balíčků naráz"
 
-#: data/io.elementary.appcenter.appdata.xml.in:79
+#: data/io.elementary.appcenter.appdata.xml.in:92
 msgid "Prevent suspending when installing, updating, or removing packages"
 msgstr ""
 "Zabráněno uspání počítači při instalování, aktualizování či odebírání balíčků"
 
-#: data/io.elementary.appcenter.appdata.xml.in:91
-#: data/io.elementary.appcenter.appdata.xml.in:108
+#: data/io.elementary.appcenter.appdata.xml.in:104
+#: data/io.elementary.appcenter.appdata.xml.in:121
 msgid "Minor fixes"
 msgstr "Drobné opravy"
 
-#: data/io.elementary.appcenter.appdata.xml.in:93
+#: data/io.elementary.appcenter.appdata.xml.in:106
 msgid "Update application details when changes happen outside of AppCenter"
 msgstr ""
 "Podrobnosti o aplikaci jsou zaktualizovány, i když dojde ke změně mimo "
 "Centrum aplikací"
 
-#: data/io.elementary.appcenter.appdata.xml.in:94
+#: data/io.elementary.appcenter.appdata.xml.in:107
 msgid "Fix for notification not appearing when a restart is required"
 msgstr "Opraveno nezobrazování upozornění na potřebu restartu"
 
-#: data/io.elementary.appcenter.appdata.xml.in:95
+#: data/io.elementary.appcenter.appdata.xml.in:108
 msgid "Apps in list views now load in the correct order when scrolling"
 msgstr ""
 "Při posouvání v seznamech s aplikacemi už jsou položky načítány ve správném "
 "pořadí"
 
-#: data/io.elementary.appcenter.appdata.xml.in:96
+#: data/io.elementary.appcenter.appdata.xml.in:109
 msgid "Prevent unescaped XML entities from appearing in application names"
 msgstr ""
 "Zabráněno tomu, aby se v názvech aplikací objevovaly XML entity, nezbavené "
 "významu (escape)"
 
-#: data/io.elementary.appcenter.appdata.xml.in:97
+#: data/io.elementary.appcenter.appdata.xml.in:110
 msgid "Load the \"Installed\" view faster"
 msgstr "Rychlejší načítání pohledu „Nainstalované“"
 
-#: data/io.elementary.appcenter.appdata.xml.in:98
+#: data/io.elementary.appcenter.appdata.xml.in:111
 msgid "Ensure flatpak applications show in the category views"
 msgstr "Zajištěno, že se flatpak aplikace objevují v zobrazení kategorií"
 
-#: data/io.elementary.appcenter.appdata.xml.in:99
+#: data/io.elementary.appcenter.appdata.xml.in:112
 msgid ""
 "Save some bandwidth by downloading smaller screenshots where appropriate"
 msgstr ""
 "Ušetření objemu přenášených dat stahováním menších snímků obrazovky, kde se "
 "to hodí"
 
-#: data/io.elementary.appcenter.appdata.xml.in:100
+#: data/io.elementary.appcenter.appdata.xml.in:113
 msgid "System components no longer have an \"Open\" button"
 msgstr "U součástí systému už se nezobrazuje tlačítko „Otevřít“"
 
-#: data/io.elementary.appcenter.appdata.xml.in:101
+#: data/io.elementary.appcenter.appdata.xml.in:114
 msgid ""
 "Applications menu can now remove flatpaks that weren't installed by AppCenter"
 msgstr ""
 "Nabídka s aplikacemi nyní může odebírat flatpak balíčky, které nebyly "
 "nainstalovány z Centra aplikací"
 
-#: data/io.elementary.appcenter.appdata.xml.in:102
+#: data/io.elementary.appcenter.appdata.xml.in:115
 msgid "Make download size estimates more accurate"
 msgstr "Zpřesněny odhady velikostí stahování"
 
-#: data/io.elementary.appcenter.appdata.xml.in:110
+#: data/io.elementary.appcenter.appdata.xml.in:123
 msgid "Prevent AppCenter from opening on log in"
 msgstr ""
 "Zabráněno tomu, aby se Centrum aplikací otevíralo samo od sebe při "
 "přihlášení se"
 
-#: data/io.elementary.appcenter.appdata.xml.in:111
+#: data/io.elementary.appcenter.appdata.xml.in:124
 msgid "Prevent ghost update notification when there are no updates available"
 msgstr ""
 "Zabráněno chybně zobrazovaným upozorňováním na aktualizace, když žádné "
 "nejsou k dispozici"
 
-#: data/io.elementary.appcenter.appdata.xml.in:112
+#: data/io.elementary.appcenter.appdata.xml.in:125
 msgid "Show correct installation state for extensions"
 msgstr "V případě rozšíření (aplikací) už zobrazován správný stav instalace"
 
-#: data/io.elementary.appcenter.appdata.xml.in:119
+#: data/io.elementary.appcenter.appdata.xml.in:132
 msgid "Add support for Flatpak apps"
 msgstr "Přidána podpora pro Flatpak aplikace"
 
-#: data/io.elementary.appcenter.appdata.xml.in:120
+#: data/io.elementary.appcenter.appdata.xml.in:133
 msgid "Warn about non-curated apps"
 msgstr "Přidáno varování ohledně neprověřovaných aplikací"
 
-#: data/io.elementary.appcenter.appdata.xml.in:121
+#: data/io.elementary.appcenter.appdata.xml.in:134
 msgid "Show an error dialog if an installation fails"
 msgstr "Zobraván chybový dialog, pokud se instalace nezdaří"
 
-#: data/io.elementary.appcenter.appdata.xml.in:122
+#: data/io.elementary.appcenter.appdata.xml.in:135
 msgid ""
 "Fix an issue where some apps couldn't be uninstalled from the Applications "
 "Menu"
@@ -278,176 +289,176 @@ msgstr ""
 "Opravena chyba, pro kterou některé aplikace nešly odinstalovat z nabídky s "
 "aplikacemi"
 
-#: data/io.elementary.appcenter.appdata.xml.in:123
+#: data/io.elementary.appcenter.appdata.xml.in:136
 msgid "Allow browsing and uninstalling apps while offline"
 msgstr "Umožněno prohlížení a odinstalace aplikací i bez připojení k Internetu"
 
-#: data/io.elementary.appcenter.appdata.xml.in:124
+#: data/io.elementary.appcenter.appdata.xml.in:137
 msgid "Fix twitter share URLs"
 msgstr "Opraveny URL adresy pro sdílení přes službu twitter"
 
-#: data/io.elementary.appcenter.appdata.xml.in:125
+#: data/io.elementary.appcenter.appdata.xml.in:138
 msgid "Drop Google+ from the share menu"
 msgstr "Z nabídky sdílení odebráno Google+"
 
-#: data/io.elementary.appcenter.appdata.xml.in:126
+#: data/io.elementary.appcenter.appdata.xml.in:139
 msgid "Animate screenshot background while loading"
 msgstr "Při jeho načítání, animováno pozadí snímku obrazovky"
 
-#: data/io.elementary.appcenter.appdata.xml.in:127
+#: data/io.elementary.appcenter.appdata.xml.in:140
 msgid "Add navigation arrows for screenshots"
 msgstr "Ke snímkům obrazovky přidány navigační šipky"
 
-#: data/io.elementary.appcenter.appdata.xml.in:128
+#: data/io.elementary.appcenter.appdata.xml.in:141
 msgid "Don't show uninstall buttons for essential system components"
 msgstr "Nezobrazuje už se tlačítko odinstalace u nezbytných součásti systému"
 
-#: data/io.elementary.appcenter.appdata.xml.in:129
+#: data/io.elementary.appcenter.appdata.xml.in:142
 msgid "Properly display proprietary licenses"
 msgstr "Správné zobrazování proprietárních licencí"
 
-#: data/io.elementary.appcenter.appdata.xml.in:130
+#: data/io.elementary.appcenter.appdata.xml.in:143
 msgid "Fix some layout issues"
 msgstr "Opraveny některé problémy s rozložením obsahu okna"
 
-#: data/io.elementary.appcenter.appdata.xml.in:131
+#: data/io.elementary.appcenter.appdata.xml.in:144
 msgid "Fix crashes"
 msgstr "Opraveny pády"
 
-#: data/io.elementary.appcenter.appdata.xml.in:140
+#: data/io.elementary.appcenter.appdata.xml.in:153
 msgid "Meson build system fixes"
 msgstr "Opravy v systému pro sestavování Meson"
 
-#: data/io.elementary.appcenter.appdata.xml.in:141
+#: data/io.elementary.appcenter.appdata.xml.in:154
 msgid "Improve window state restoration"
 msgstr "Vylepšeno obnovení stavu okna"
 
-#: data/io.elementary.appcenter.appdata.xml.in:142
+#: data/io.elementary.appcenter.appdata.xml.in:155
 msgid "Prevent action buttons from jumping around"
 msgstr "Zabráněno tomu, aby tlačítka akcí poskakovala"
 
-#: data/io.elementary.appcenter.appdata.xml.in:143
+#: data/io.elementary.appcenter.appdata.xml.in:156
 msgid "Remove reset paid apps gsettings key"
 msgstr "Z gsettings odebrán klíč nastavení pro reset placených aplikací"
 
-#: data/io.elementary.appcenter.appdata.xml.in:144
+#: data/io.elementary.appcenter.appdata.xml.in:157
 msgid "Memory management refinements"
 msgstr "Zdokonalena správa paměti"
 
-#: data/io.elementary.appcenter.appdata.xml.in:145
+#: data/io.elementary.appcenter.appdata.xml.in:158
 msgid ""
 "Add conditional compilation for disabling dynamic remote homepage content"
 msgstr ""
 "Přidána podmíněná kompilace pro vypnutí dynamického obsahu vzdálené domovské "
 "stránky"
 
-#: data/io.elementary.appcenter.appdata.xml.in:146
-#: data/io.elementary.appcenter.appdata.xml.in:158
-#: data/io.elementary.appcenter.appdata.xml.in:165
+#: data/io.elementary.appcenter.appdata.xml.in:159
+#: data/io.elementary.appcenter.appdata.xml.in:171
 #: data/io.elementary.appcenter.appdata.xml.in:178
-#: data/io.elementary.appcenter.appdata.xml.in:189
-#: data/io.elementary.appcenter.appdata.xml.in:198
-#: data/io.elementary.appcenter.appdata.xml.in:207
-#: data/io.elementary.appcenter.appdata.xml.in:216
-#: data/io.elementary.appcenter.appdata.xml.in:225
-#: data/io.elementary.appcenter.appdata.xml.in:234
-#: data/io.elementary.appcenter.appdata.xml.in:243
-#: data/io.elementary.appcenter.appdata.xml.in:252
-#: data/io.elementary.appcenter.appdata.xml.in:261
-#: data/io.elementary.appcenter.appdata.xml.in:270
-#: data/io.elementary.appcenter.appdata.xml.in:279
-#: data/io.elementary.appcenter.appdata.xml.in:289
-#: data/io.elementary.appcenter.appdata.xml.in:299
+#: data/io.elementary.appcenter.appdata.xml.in:191
+#: data/io.elementary.appcenter.appdata.xml.in:202
+#: data/io.elementary.appcenter.appdata.xml.in:211
+#: data/io.elementary.appcenter.appdata.xml.in:220
+#: data/io.elementary.appcenter.appdata.xml.in:229
+#: data/io.elementary.appcenter.appdata.xml.in:238
+#: data/io.elementary.appcenter.appdata.xml.in:247
+#: data/io.elementary.appcenter.appdata.xml.in:256
+#: data/io.elementary.appcenter.appdata.xml.in:265
+#: data/io.elementary.appcenter.appdata.xml.in:274
+#: data/io.elementary.appcenter.appdata.xml.in:283
+#: data/io.elementary.appcenter.appdata.xml.in:292
+#: data/io.elementary.appcenter.appdata.xml.in:302
+#: data/io.elementary.appcenter.appdata.xml.in:312
 msgid "New translations"
 msgstr "Nové překlady"
 
-#: data/io.elementary.appcenter.appdata.xml.in:153
+#: data/io.elementary.appcenter.appdata.xml.in:166
 msgid "New categories: Communication, Finance, Media Production"
 msgstr "Nové kategorie: Komunikace, Finance, Vytváření médií"
 
-#: data/io.elementary.appcenter.appdata.xml.in:154
+#: data/io.elementary.appcenter.appdata.xml.in:167
 msgid "Add Math to Science category"
 msgstr "Přidání Matematiky do kategorie Věda"
 
-#: data/io.elementary.appcenter.appdata.xml.in:155
+#: data/io.elementary.appcenter.appdata.xml.in:168
 msgid "Relax email address validator"
 msgstr "Uvolnění pravidel ověřování správnosti e-mailové adresy"
 
-#: data/io.elementary.appcenter.appdata.xml.in:156
+#: data/io.elementary.appcenter.appdata.xml.in:169
 msgid "Present update availability more accurately"
 msgstr "Dostupnost aktualizací je nyní představována přesněji"
 
-#: data/io.elementary.appcenter.appdata.xml.in:157
+#: data/io.elementary.appcenter.appdata.xml.in:170
 msgid "Category graphics revamped"
 msgstr "Vylepšena grafika kategorí"
 
-#: data/io.elementary.appcenter.appdata.xml.in:172
-#: data/io.elementary.appcenter.appdata.xml.in:184
-#: data/io.elementary.appcenter.appdata.xml.in:195
-#: data/io.elementary.appcenter.appdata.xml.in:204
-#: data/io.elementary.appcenter.appdata.xml.in:213
-#: data/io.elementary.appcenter.appdata.xml.in:222
-#: data/io.elementary.appcenter.appdata.xml.in:231
-#: data/io.elementary.appcenter.appdata.xml.in:240
-#: data/io.elementary.appcenter.appdata.xml.in:249
-#: data/io.elementary.appcenter.appdata.xml.in:258
-#: data/io.elementary.appcenter.appdata.xml.in:267
-#: data/io.elementary.appcenter.appdata.xml.in:276
+#: data/io.elementary.appcenter.appdata.xml.in:185
+#: data/io.elementary.appcenter.appdata.xml.in:197
+#: data/io.elementary.appcenter.appdata.xml.in:208
+#: data/io.elementary.appcenter.appdata.xml.in:217
+#: data/io.elementary.appcenter.appdata.xml.in:226
+#: data/io.elementary.appcenter.appdata.xml.in:235
+#: data/io.elementary.appcenter.appdata.xml.in:244
+#: data/io.elementary.appcenter.appdata.xml.in:253
+#: data/io.elementary.appcenter.appdata.xml.in:262
+#: data/io.elementary.appcenter.appdata.xml.in:271
+#: data/io.elementary.appcenter.appdata.xml.in:280
+#: data/io.elementary.appcenter.appdata.xml.in:289
 msgid "Bug fixes and improve performance."
 msgstr "Opravy chyb a vylepšení výkonu."
 
-#: data/io.elementary.appcenter.appdata.xml.in:174
+#: data/io.elementary.appcenter.appdata.xml.in:187
 msgid "Improve transaction success rate"
 msgstr "Zvýšena úspěšnost provádění platebních transakcí"
 
-#: data/io.elementary.appcenter.appdata.xml.in:175
+#: data/io.elementary.appcenter.appdata.xml.in:188
 msgid "Add Publishing to Office category"
 msgstr "Do kategorie Kancelář přidáno Publikování"
 
-#: data/io.elementary.appcenter.appdata.xml.in:176
+#: data/io.elementary.appcenter.appdata.xml.in:189
 msgid "Improve descriptions of OS Updates"
 msgstr "Zlepšen popis aktualizací systému"
 
-#: data/io.elementary.appcenter.appdata.xml.in:177
-#: data/io.elementary.appcenter.appdata.xml.in:188
-#: data/io.elementary.appcenter.appdata.xml.in:197
-#: data/io.elementary.appcenter.appdata.xml.in:206
-#: data/io.elementary.appcenter.appdata.xml.in:215
-#: data/io.elementary.appcenter.appdata.xml.in:224
-#: data/io.elementary.appcenter.appdata.xml.in:233
-#: data/io.elementary.appcenter.appdata.xml.in:242
-#: data/io.elementary.appcenter.appdata.xml.in:251
-#: data/io.elementary.appcenter.appdata.xml.in:260
-#: data/io.elementary.appcenter.appdata.xml.in:269
+#: data/io.elementary.appcenter.appdata.xml.in:190
+#: data/io.elementary.appcenter.appdata.xml.in:201
+#: data/io.elementary.appcenter.appdata.xml.in:210
+#: data/io.elementary.appcenter.appdata.xml.in:219
+#: data/io.elementary.appcenter.appdata.xml.in:228
+#: data/io.elementary.appcenter.appdata.xml.in:237
+#: data/io.elementary.appcenter.appdata.xml.in:246
+#: data/io.elementary.appcenter.appdata.xml.in:255
+#: data/io.elementary.appcenter.appdata.xml.in:264
+#: data/io.elementary.appcenter.appdata.xml.in:273
+#: data/io.elementary.appcenter.appdata.xml.in:282
 msgid "Various bug fixes and performance improvements"
 msgstr "Různé opravy chyb a zrychlení"
 
-#: data/io.elementary.appcenter.appdata.xml.in:186
+#: data/io.elementary.appcenter.appdata.xml.in:199
 msgid "Give details for Operating System Updates"
 msgstr "Zobrazovány podrobnosti o aktualizacích operačního systému"
 
-#: data/io.elementary.appcenter.appdata.xml.in:187
+#: data/io.elementary.appcenter.appdata.xml.in:200
 msgid "Support mouse button navigation"
 msgstr "Přidána podporu pro navigaci tlačítky na myši"
 
-#: data/io.elementary.appcenter.appdata.xml.in:278
+#: data/io.elementary.appcenter.appdata.xml.in:291
 msgid "Fix crash caused by entries with missing packages"
 msgstr "Opraveno padání způsobené položkami s chybějícími balíčky"
 
-#: data/io.elementary.appcenter.appdata.xml.in:285
+#: data/io.elementary.appcenter.appdata.xml.in:298
 msgid "Add capability to search by category and apply minor bug fixes."
 msgstr "Přidána schopnost hledání pomocí kategorie a opraveny drobné chyby."
 
-#: data/io.elementary.appcenter.appdata.xml.in:287
+#: data/io.elementary.appcenter.appdata.xml.in:300
 msgid "It is now possible to search apps inside a category"
 msgstr "Nyní lze vyhledávat aplikace uvnitř konkrétní kategorie"
 
-#: data/io.elementary.appcenter.appdata.xml.in:288
+#: data/io.elementary.appcenter.appdata.xml.in:301
 msgid "Prevent multiple authentication dialogs when resuming from suspend"
 msgstr ""
 "Zamezeno vytváření více ověřovacích dialogů při probuzení z režimu spánku"
 
-#: data/io.elementary.appcenter.appdata.xml.in:295
+#: data/io.elementary.appcenter.appdata.xml.in:308
 msgid ""
 "Search performance has beeen improved, the category name is now shown on the "
 "headbar and minor bugs have been fixed."
@@ -455,15 +466,15 @@ msgstr ""
 "Byla vylepšena rychlost vyhledávání, název kategorie se nyní zobrazuje v "
 "horním panelu a byly opraveny drobné chyby."
 
-#: data/io.elementary.appcenter.appdata.xml.in:297
+#: data/io.elementary.appcenter.appdata.xml.in:310
 msgid "Fix Steam installation"
 msgstr "Opravena instalace klienta služby Steam"
 
-#: data/io.elementary.appcenter.appdata.xml.in:298
+#: data/io.elementary.appcenter.appdata.xml.in:311
 msgid "Make search asynchronous"
 msgstr "Vyhledávání je nyní asynchronní"
 
-#: data/io.elementary.appcenter.appdata.xml.in:353
+#: data/io.elementary.appcenter.appdata.xml.in:366
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 

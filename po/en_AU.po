@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-16 18:26+0000\n"
+"POT-Creation-Date: 2020-07-21 19:09+0000\n"
 "PO-Revision-Date: 2018-06-16 00:08+0000\n"
 "Last-Translator: martin fromont <martin.fromont1@gmail.com>\n"
 "Language-Team: English (Australia) <https://weblate.elementary.io/projects/appcenter/appcenter/en_AU/>\n"
@@ -38,21 +38,21 @@ msgstr "Application installed"
 msgid "%s has been successfully installed"
 msgstr ""
 
-#: src/MainWindow.vala:151 src/Views/Homepage.vala:297
+#: src/MainWindow.vala:136 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
 #: src/Views/Homepage.vala:325
 #, fuzzy
 msgid "Home"
 msgstr "Home Page"
 
-#: src/MainWindow.vala:152 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:137 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 #, fuzzy
 msgctxt "view"
 msgid "Installed"
 msgstr "Install"
 
-#: src/MainWindow.vala:182 src/MainWindow.vala:341 src/Views/SearchView.vala:54
+#: src/MainWindow.vala:171 src/MainWindow.vala:350 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:84
 msgid "Search Apps"
 msgstr "Search Apps"
