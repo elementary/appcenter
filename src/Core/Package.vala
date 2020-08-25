@@ -351,6 +351,26 @@ public class AppCenterCore.Package : Object {
         }
     }
 
+    public int origin_score {
+        get {
+            int score = 0;
+
+            if (installed) {
+                score += 10;
+            }
+
+            if (is_native) {
+                score += 5;
+            }
+
+            if (is_flatpak) {
+                score++;
+            }
+
+            return score;
+        }
+    }
+
     private string? name = null;
     public string? description = null;
     private string? summary = null;
