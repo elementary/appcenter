@@ -6,9 +6,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-21 19:09+0000\n"
-"PO-Revision-Date: 2020-05-13 05:10+0000\n"
+"PO-Revision-Date: 2020-08-27 17:13+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
-"Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/appcenter/pt/>\n"
+"Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/pt/>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -242,12 +243,12 @@ msgstr "Atualizações do elementary"
 
 #: src/Core/Package.vala:342
 msgid "Ubuntu (non-curated)"
-msgstr "Ubuntu (não-curadas)"
+msgstr "Ubuntu (não-categorizado)"
 
 #: src/Core/Package.vala:345
 #, c-format
 msgid "%s (non-curated)"
-msgstr "%s (não-curadas)"
+msgstr "%s (não-categorizada)"
 
 #: src/Core/Package.vala:347
 msgid "Ubuntu Drivers"
@@ -255,7 +256,7 @@ msgstr "Drivers Ubuntu"
 
 #: src/Core/Package.vala:350
 msgid "Unknown Origin (non-curated)"
-msgstr "Origem desconhecida (não-curadas)"
+msgstr "Origem desconhecida (não-categorizada)"
 
 #: src/Core/Package.vala:483
 #, c-format
@@ -351,16 +352,18 @@ msgstr "Falha ao instalar “%s”"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
 msgid "Non-Curated Warning"
-msgstr "Aviso de não-curada"
+msgstr "Aviso de não-categorizada"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:37
 msgid "Install non-curated app?"
-msgstr "Instalar aplicação não-curada?"
+msgstr "Instalar aplicação não-categorizada?"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
 msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-msgstr "“%s” não é curada pelo elementary e não foi revista quanto à segurança, privacidade ou integração do sistema."
+msgstr ""
+"“%s” não é categorizada pelo elementary e não foi revista quanto à "
+"segurança, privacidade ou integração do sistema."
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
 msgid "It may not receive bug fix or feature updates"
@@ -372,7 +375,7 @@ msgstr "Pode aceder ou alterar o sistema ou ficheiros pessoais sem autorização
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
 msgid "Show non-curated warnings"
-msgstr "Mostrar avisos de não-curadas"
+msgstr "Mostrar avisos de não-categorizadas"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -629,7 +632,7 @@ msgstr "Licença Desconhecida"
 #: src/Views/AppInfoView.vala:427
 #, c-format
 msgid "Other Apps by %s"
-msgstr "Outras aplicações por %s"
+msgstr "Outras aplicações do %s"
 
 #: src/Views/AppInfoView.vala:464
 msgid "Link copied to clipboard"
@@ -638,7 +641,7 @@ msgstr "Ligação copiada para a área de transferência"
 #: src/Views/AppInfoView.vala:475
 #, c-format
 msgid "Check out %s on AppCenter:"
-msgstr "Aceder agora no %s Centro de Aplicações:"
+msgstr "Confira %s no Centro de Aplicações:"
 
 #: src/Views/AppInfoView.vala:482
 msgid "Share"
