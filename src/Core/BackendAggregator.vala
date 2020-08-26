@@ -148,7 +148,8 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
     public Gee.Collection<Package> get_packages_for_component_id (string id) {
         string package_id = id;
         if (package_id.has_suffix (".desktop")) {
-            package_id = package_id.substring (0, package_id.length + package_id.index_of_nth_char (-8));
+            // ".desktop" is always 8 bytes in UTF-8 so we can just chop 8 bytes off the end
+            package_id = package_id.substring (0, package_id.length - 8);
         }
 
         var packages = new Gee.ArrayList<Package> ();

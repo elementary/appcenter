@@ -93,19 +93,24 @@ public class AppCenterCore.Package : Object {
         }
     }
 
-    private bool installed_cached = false;
+    private bool _installed = false;
     public bool installed {
         get {
             if (component.get_id () == OS_UPDATES_ID) {
                 return true;
             }
 
-            return installed_cached;
+            return _installed;
         }
     }
 
     public void mark_installed () {
-        installed_cached = true;
+        _installed = true;
+        update_state ();
+    }
+
+    public void clear_installed () {
+        _installed = false;
         update_state ();
     }
 
@@ -128,7 +133,8 @@ public class AppCenterCore.Package : Object {
 
             _component_id = component.id;
             if (_component_id.has_suffix (".desktop")) {
-                _component_id = _component_id.substring (0, _component_id.length + _component_id.index_of_nth_char (-8));
+                // ".desktop" is always 8 bytes in UTF-8 so we can just chop 8 bytes off the end
+                _component_id = _component_id.substring (0, _component_id.length - 8);
             }
 
             return _component_id;
@@ -430,7 +436,6 @@ public class AppCenterCore.Package : Object {
         color_primary_text = null;
         payments_key = null;
         suggested_amount = null;
-        installed_cached = false;
         _author = null;
         _author_title = null;
         backend_details = null;
@@ -445,24 +450,46 @@ public class AppCenterCore.Package : Object {
     }
 
     public void update_state () {
+        State new_state;
+
         if (installed) {
             if (change_information.has_changes ()) {
-                state = State.UPDATE_AVAILABLE;
+                new_state = State.UPDATE_AVAILABLE;
             } else {
-                state = State.INSTALLED;
+                new_state = State.INSTALLED;
             }
         } else {
-            state = State.NOT_INSTALLED;
+            new_state = State.NOT_INSTALLED;
+        }
+
+        // Only trigger a notify if the state has changed, quite a lot of things listen to this
+        if (state != new_state) {
+            state = new_state;
         }
     }
 
-    public async bool update () {
+    /**
+     * Instructs the backend to update this package
+     *
+     * @refresh_updates_after: Whether to run the check for updates (and update the badges etc...) after
+     * this method succeeds. This is fine after updating a single package, but for efficiency, it's better to
+     * do this only once at the end of updating a batch of packages, so this should be set to false if updating
+     * multiple packages in a loop.
+     *
+     */
+    public async bool update (bool refresh_updates_after = true) {
         if (state != State.UPDATE_AVAILABLE) {
             return false;
         }
 
         try {
-            return yield perform_operation (State.UPDATING, State.INSTALLED, State.UPDATE_AVAILABLE);
+            var success = yield perform_operation (State.UPDATING, State.INSTALLED, State.UPDATE_AVAILABLE);
+            if (success && refresh_updates_after) {
+                unowned Client client = Client.get_default ();
+                yield client.refresh_updates ();
+            }
+
+            return success;
         } catch (Error e) {
             return false;
         }
@@ -490,6 +517,8 @@ public class AppCenterCore.Package : Object {
 
     public async bool uninstall () throws Error {
         // We possibly don't know if this package is installed or not yet, so trigger that check first
+        _installed = yield backend.is_package_installed (this);
+
         update_state ();
 
         if (state == State.INSTALLED || state == State.UPDATE_AVAILABLE) {
@@ -547,17 +576,19 @@ public class AppCenterCore.Package : Object {
                 var success = yield backend.update_package (this, (owned)cb, action_cancellable);
                 if (success) {
                     change_information.clear_update_info ();
+                    update_state ();
                 }
 
-                yield client.refresh_updates ();
                 return success;
             case State.INSTALLING:
                 var success = yield backend.install_package (this, (owned)cb, action_cancellable);
-                installed_cached = success;
+                _installed = success;
+                update_state ();
                 return success;
             case State.REMOVING:
                 var success = yield backend.remove_package (this, (owned)cb, action_cancellable);
-                installed_cached = !success;
+                _installed = !success;
+                update_state ();
                 yield client.refresh_updates ();
                 return success;
             default:

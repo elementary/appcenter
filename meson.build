@@ -1,7 +1,7 @@
 project(
     'io.elementary.appcenter',
     'vala', 'c',
-    version: '3.3.0'
+    version: '3.4.2'
 )
 
 gettext_name = meson.project_name()
@@ -18,6 +18,7 @@ add_project_arguments(
 vapi_dir = join_paths(meson.current_source_dir(), 'vapi')
 add_project_arguments(['--vapidir', vapi_dir], language: 'vala')
 
+glib = dependency ('glib-2.0')
 gee = dependency ('gee-0.8')
 gtk = dependency ('gtk+-3.0', version: '>=3.10')
 granite = dependency ('granite', version: '>=5.2.5')
@@ -34,6 +35,7 @@ posix = meson.get_compiler('vala').find_library('posix')
 dbus = dependency ('dbus-1')
 
 dependencies = [
+    glib,
     gee,
     gtk,
     granite,
@@ -55,7 +57,7 @@ conf_data.set('DESKTOP_ICON', get_option('icon'))
 conf_data.set('EXEC_NAME', meson.project_name())
 conf_data.set('GETTEXT_PACKAGE', meson.project_name())
 conf_data.set('APP_NAME', get_option('name'))
-conf_data.set('BLACKLIST', get_option('blacklist_file'))
+conf_data.set('HIDDEN_APP_LIST', get_option('hidden_app_list_file'))
 conf_data.set('VERSION', meson.project_version())
 conf_data.set('CONFIGDIR', config_dir)
 conf_data.set('EXEC_PATH', join_paths (get_option('prefix'), get_option('bindir'), meson.project_name()))

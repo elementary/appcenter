@@ -1,13 +1,15 @@
 # Dieter Debast <dieter_debast@hotmail.com>, 2018.
 # Jaimie85 <alsemgeest@gmail.com>, 2019, 2020.
+# Lieven Hanssen <lhanssen@freedommail.co>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-13 17:46+0000\n"
-"PO-Revision-Date: 2020-04-21 17:02+0000\n"
-"Last-Translator: Jaimie85 <alsemgeest@gmail.com>\n"
-"Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/appcenter/nl/>\n"
+"POT-Creation-Date: 2020-07-21 19:09+0000\n"
+"PO-Revision-Date: 2020-08-19 12:13+0000\n"
+"Last-Translator: Lieven Hanssen <lhanssen@freedommail.co>\n"
+"Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,7 +19,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:337
+#: src/Application.vala:38 src/Core/Package.vala:338
 msgid "AppCenter"
 msgstr "AppCenter"
 
@@ -38,230 +40,230 @@ msgstr "Toepassing geïnstalleerd"
 #: src/Application.vala:273
 #, c-format
 msgid "%s has been successfully installed"
-msgstr "%s is succesvol geïnstalleerd"
+msgstr "%s is met succes geïnstalleerd"
 
-#: src/MainWindow.vala:150 src/Views/Homepage.vala:297
+#: src/MainWindow.vala:136 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
 #: src/Views/Homepage.vala:325
 msgid "Home"
 msgstr "Startpagina"
 
-#: src/MainWindow.vala:151 src/Views/InstalledView.vala:33
-#: src/Views/InstalledView.vala:60
+#: src/MainWindow.vala:137 src/Views/InstalledView.vala:32
+#: src/Views/InstalledView.vala:57
 msgctxt "view"
 msgid "Installed"
 msgstr "Geïnstalleerd"
 
-#: src/MainWindow.vala:178 src/MainWindow.vala:337 src/Views/SearchView.vala:55
-#: src/Views/SearchView.vala:86
+#: src/MainWindow.vala:171 src/MainWindow.vala:350 src/Views/SearchView.vala:54
+#: src/Views/SearchView.vala:84
 msgid "Search Apps"
 msgstr "Zoek Apps"
 
-#: src/Utils.vala:72 src/Core/ChangeInformation.vala:92
+#: src/Utils.vala:62 src/Core/ChangeInformation.vala:92
 msgid "Starting"
 msgstr "Starten"
 
-#: src/Utils.vala:74 src/Core/ChangeInformation.vala:49
+#: src/Utils.vala:64 src/Core/ChangeInformation.vala:49
 #: src/Core/ChangeInformation.vala:64
 msgid "Waiting"
 msgstr "Wachten"
 
-#: src/Utils.vala:76
+#: src/Utils.vala:66
 msgid "Running"
 msgstr "In behandeling"
 
-#: src/Utils.vala:78
+#: src/Utils.vala:68
 msgid "Querying"
 msgstr "Informatie ophalen"
 
-#: src/Utils.vala:80
+#: src/Utils.vala:70
 msgid "Getting information"
 msgstr "Informatie ophalen"
 
-#: src/Utils.vala:82
+#: src/Utils.vala:72
 msgid "Removing packages"
 msgstr "Pakketten verwijderen"
 
-#: src/Utils.vala:84
+#: src/Utils.vala:74
 msgid "Downloading"
 msgstr "Downloaden"
 
-#: src/Utils.vala:86 src/Core/FlatpakBackend.vala:709
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:715
 msgid "Installing"
 msgstr "Installeren"
 
-#: src/Utils.vala:88
+#: src/Utils.vala:78
 msgid "Refreshing software list"
 msgstr "Softwarelijst vernieuwen"
 
-#: src/Utils.vala:90
+#: src/Utils.vala:80
 msgid "Installing updates"
 msgstr "Updates installeren"
 
-#: src/Utils.vala:92
+#: src/Utils.vala:82
 msgid "Cleaning up packages"
 msgstr "Pakketten opschonen"
 
-#: src/Utils.vala:94
+#: src/Utils.vala:84
 msgid "Obsoleting packages"
 msgstr "Oude pakketten vervangen"
 
-#: src/Utils.vala:96
+#: src/Utils.vala:86
 msgid "Resolving dependencies"
 msgstr "Afhankelijkheden oplossen"
 
-#: src/Utils.vala:98
+#: src/Utils.vala:88
 msgid "Checking signatures"
 msgstr "Ondertekeningen controleren"
 
-#: src/Utils.vala:100
+#: src/Utils.vala:90
 msgid "Testing changes"
 msgstr "Wijzigingen testen"
 
-#: src/Utils.vala:102
+#: src/Utils.vala:92
 msgid "Committing changes"
 msgstr "Wijzigingen vastleggen"
 
-#: src/Utils.vala:104
+#: src/Utils.vala:94
 msgid "Requesting data"
 msgstr "Gegevens opvragen"
 
-#: src/Utils.vala:106 src/Core/ChangeInformation.vala:71
+#: src/Utils.vala:96 src/Core/ChangeInformation.vala:71
 msgid "Finished"
 msgstr "Klaar"
 
-#: src/Utils.vala:108 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:718 src/Core/FlatpakBackend.vala:746
-#: src/Core/FlatpakBackend.vala:823 src/Core/FlatpakBackend.vala:924
-#: src/Core/FlatpakBackend.vala:950
+#: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
+#: src/Core/FlatpakBackend.vala:724 src/Core/FlatpakBackend.vala:752
+#: src/Core/FlatpakBackend.vala:829 src/Core/FlatpakBackend.vala:930
+#: src/Core/FlatpakBackend.vala:956
 msgid "Cancelling"
 msgstr "Annuleren"
 
-#: src/Utils.vala:110
+#: src/Utils.vala:100
 msgid "Downloading repository information"
 msgstr "Informatie van installatiebron downloaden"
 
-#: src/Utils.vala:112
+#: src/Utils.vala:102
 msgid "Downloading list of packages"
 msgstr "Lijst van pakketten downloaden"
 
-#: src/Utils.vala:114
+#: src/Utils.vala:104
 msgid "Downloading file lists"
 msgstr "Bestandslijsten downloaden"
 
-#: src/Utils.vala:116
+#: src/Utils.vala:106
 msgid "Downloading lists of changes"
 msgstr "Lijst van veranderingen downloaden"
 
-#: src/Utils.vala:118
+#: src/Utils.vala:108
 msgid "Downloading groups"
 msgstr "Groepen downloaden"
 
-#: src/Utils.vala:120
+#: src/Utils.vala:110
 msgid "Downloading update information"
 msgstr "Update-informatie downloaden"
 
-#: src/Utils.vala:122
+#: src/Utils.vala:112
 msgid "Repackaging files"
-msgstr "Bestanden opnieuw inpakken"
+msgstr "Bestanden opnieuw verpakken"
 
-#: src/Utils.vala:124
+#: src/Utils.vala:114
 msgid "Loading cache"
 msgstr "Laden van cache"
 
-#: src/Utils.vala:126
+#: src/Utils.vala:116
 msgid "Scanning applications"
 msgstr "Toepassingen doorzoeken"
 
-#: src/Utils.vala:128
+#: src/Utils.vala:118
 msgid "Generating package lists"
 msgstr "Genereren van pakketlijsten"
 
-#: src/Utils.vala:130
+#: src/Utils.vala:120
 msgid "Waiting for package manager lock"
-msgstr "Wachten op vergrendeling van pakketbeheerder"
+msgstr "Wachten op ontgrendeling van pakketbeheerder"
 
-#: src/Utils.vala:132
+#: src/Utils.vala:122
 msgid "Waiting for authentication"
-msgstr "Wachten op autorisatie"
+msgstr "Wachten op authenticatie"
 
-#: src/Utils.vala:134
+#: src/Utils.vala:124
 msgid "Updating running applications"
-msgstr "Draaiende toepassingen vernieuwen"
+msgstr "Geopende toepassingen bijwerken"
 
-#: src/Utils.vala:136
+#: src/Utils.vala:126
 msgid "Checking applications in use"
 msgstr "Applicaties in gebruik controleren"
 
-#: src/Utils.vala:138
+#: src/Utils.vala:128
 msgid "Checking libraries in use"
 msgstr "Softwarebibliotheken in gebruik controleren"
 
-#: src/Utils.vala:140
+#: src/Utils.vala:130
 msgid "Copying files"
 msgstr "Bestanden kopiëren"
 
-#: src/Utils.vala:142
+#: src/Utils.vala:132
 msgid "Unknown state"
 msgstr "Onbekende toestand"
 
-#: src/Core/Client.vala:74
+#: src/Core/Client.vala:72
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Update beschikbaar"
 msgstr[1] "Updates beschikbaar"
 
-#: src/Core/Client.vala:75
+#: src/Core/Client.vala:73
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "%u update is beschikbaar voor uw systeem"
 msgstr[1] "%u updates zijn beschikbaar voor uw systeem"
 
-#: src/Core/FlatpakBackend.vala:815
+#: src/Core/FlatpakBackend.vala:821
 msgid "Uninstalling"
 msgstr "Deïnstalleren"
 
-#: src/Core/FlatpakBackend.vala:820
+#: src/Core/FlatpakBackend.vala:826
 msgid "Finishing"
 msgstr "Voltooien"
 
-#: src/Core/FlatpakBackend.vala:915
+#: src/Core/FlatpakBackend.vala:921
 msgid "Updating"
 msgstr "Updaten"
 
-#: src/Core/Package.vala:307
+#: src/Core/Package.vala:308
 #, c-format
 msgid "%s Developers"
 msgstr "Ontwikkelaars van %s"
 
-#: src/Core/Package.vala:339
+#: src/Core/Package.vala:340
 msgid "elementary Updates"
 msgstr "elementary Updates"
 
-#: src/Core/Package.vala:341
+#: src/Core/Package.vala:342
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (niet beheerd)"
 
-#: src/Core/Package.vala:344
+#: src/Core/Package.vala:345
 #, c-format
 msgid "%s (non-curated)"
 msgstr "%s (niet beheerd)"
 
-#: src/Core/Package.vala:346
+#: src/Core/Package.vala:347
 msgid "Ubuntu Drivers"
 msgstr "Ubuntu Stuurprogramma's"
 
-#: src/Core/Package.vala:349
+#: src/Core/Package.vala:350
 msgid "Unknown Origin (non-curated)"
 msgstr "Onbekende bron (niet beheerd)"
 
-#: src/Core/Package.vala:459
+#: src/Core/Package.vala:483
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Het volgende pakket is niet geïnstalleerd in AppCenter: %s"
 
-#: src/Core/PackageKitBackend.vala:263
+#: src/Core/PackageKitBackend.vala:272
 #, c-format
 msgid "%s (local)"
 msgstr "%s (lokaal)"
@@ -285,14 +287,14 @@ msgstr "Flatpak runtime"
 
 #: src/Core/UpdateManager.vala:135
 msgid "No components with updates"
-msgstr "Geen componenten met updates"
+msgstr "Geen onderdelen met updates"
 
 #: src/Core/UpdateManager.vala:140
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
-msgstr[0] "%u component met updates"
-msgstr[1] "%u componenten met updates"
+msgstr[0] "%u onderdeel met updates"
+msgstr[1] "%u onderdelen met updates"
 
 #: src/Core/UpdateManager.vala:142
 #, c-format
@@ -336,22 +338,19 @@ msgid "Install Anyway"
 msgstr "Toch installeren"
 
 #: src/Dialogs/InstallFailDialog.vala:26
-#, fuzzy
-#| msgid "This may have been caused by external or manually compiled software."
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
-msgstr "Dit is mogelijk veroorzaakt door externe software of handmatig gecompileerde software."
+msgstr ""
+"Dit kan een tijdelijk probleem zijn of veroorzaakt worden door externe of "
+"handmatig gecompileerde software."
 
 #: src/Dialogs/InstallFailDialog.vala:37
-#, fuzzy
-#| msgid "Failed to uninstall app"
 msgid "Failed to install app"
-msgstr "Verwijderen van de app is mislukt"
+msgstr "Installeren van de app is mislukt"
 
 #: src/Dialogs/InstallFailDialog.vala:40
-#, fuzzy, c-format
-#| msgid "Failed to uninstall “%s”"
+#, c-format
 msgid "Failed to install “%s”"
-msgstr "Het verwijderen van “%s” is mislukt"
+msgstr "Het installeren van “%s” is mislukt"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
 msgid "Non-Curated Warning"
@@ -364,15 +363,19 @@ msgstr "Onbeheerde app installeren?"
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
 msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-msgstr "“%s” wordt niet beheerd door elementary en is nog niet beoordeeld op veiligheid, privacy of systeemintegratie."
+msgstr ""
+"“%s” wordt niet beheerd door elementary en is niet beoordeeld op veiligheid, "
+"privacy of systeemintegratie."
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
 msgid "It may not receive bug fix or feature updates"
-msgstr "Mogelijk kan het geen bug fixes of functie-updates krijgen"
+msgstr "Mogelijk kan het geen bugfixes of functie-updates krijgen"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:60
 msgid "It may access or change system or personal files without permission"
-msgstr "Mogelijk kan het toegang hebben tot systeems- en persoonlijke bestanden of deze bestanden veranderen zonder toestemming"
+msgstr ""
+"Mogelijkerwijs kan het zonder toestemming toegang krijgen tot systeem- en "
+"persoonlijke bestanden of ze aanpassen"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
 msgid "Show non-curated warnings"
@@ -380,7 +383,7 @@ msgstr "Toon waarschuwingen bij onbeheerde applicaties"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
-msgstr "Weet u zeker dat u opnieuw op wilt starten?"
+msgstr "Weet u zeker dat u opnieuw wilt opstarten?"
 
 #: src/Dialogs/RestartDialog.vala:41
 msgid "This will close all open applications and restart this device."
@@ -392,17 +395,20 @@ msgstr "Opnieuw opstarten"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:177
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
 msgid "Cancel"
 msgstr "Annuleren"
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
-msgstr "Bij het verwerken van de kaart is er een fout opgetreden. Probeer het later nogmaals. Onze excuses voor het ongemak."
+msgstr ""
+"Er is een fout opgetreden bij het verwerken van de kaart. Probeer het later "
+"opnieuw. Onze excuses voor het ongemak."
 
 #: src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
-msgstr "Controleer alstublieft uw betalingsinformatie en probeer opnieuw."
+msgstr ""
+"Gelieve uw betaalgegevens te controleren en daarna het opnieuw te proberen."
 
 #: src/Dialogs/StripeDialog.vala:76
 msgid "Payment"
@@ -423,7 +429,9 @@ msgstr "E-mail"
 
 #: src/Dialogs/StripeDialog.vala:108
 msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
-msgstr "Uw e-mailadres wordt uitsluitend gebruikt om u een betalingsbewijs te verzenden. Uw e-mailadres wordt niet toegevoegd aan een mail lijst."
+msgstr ""
+"Uw e-mailadres wordt uitsluitend gebruikt om u een betalingsbewijs te "
+"sturen. Uw e-mailadres wordt niet toegevoegd aan een mailingslijst."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127
@@ -461,35 +469,50 @@ msgstr "Probeer opnieuw"
 
 #: src/Dialogs/StripeDialog.vala:513 src/Dialogs/StripeDialog.vala:578
 msgid "The card number is incorrect. Please try again using the correct card number."
-msgstr "Het kaartnummer is onjuist. Probeert u het nogmaals met het juiste kaartnummer."
+msgstr ""
+"Het kaartnummer is onjuist. Gelieve het opnieuw te proberen met het juiste "
+"kaartnummer."
 
 #: src/Dialogs/StripeDialog.vala:515
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
-msgstr "De maand van de uiterste geldigheidsdatum is onjuist. Probeert u het later nogmaals met de juiste vervaldatum."
+msgstr ""
+"De maand van de uiterste geldigheidsdatum is onjuist. Gelieve het opnieuw te "
+"proberen met de juiste vervaldatum."
 
 #: src/Dialogs/StripeDialog.vala:517 src/Dialogs/StripeDialog.vala:575
 msgid "The expiration year is invalid. Please try again using the correct expiration date."
-msgstr "Het jaar van de uiterste geldigheidsdatum is onjuist. Probeert u het later nogmaals met de juiste vervaldatum."
+msgstr ""
+"Het jaar van de uiterste geldigheidsdatum is onjuist. Gelieve het opnieuw te "
+"proberen met de juiste vervaldatum."
 
 #: src/Dialogs/StripeDialog.vala:520 src/Dialogs/StripeDialog.vala:573
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr "Het CVC-nummer is onjuist. Probeert u het later nogmaals met het juiste CVC-nummer."
+msgstr ""
+"Het CVC-nummer is onjuist. Gelieve het opnieuw te proberen met het juiste "
+"CVC-nummer."
 
 #: src/Dialogs/StripeDialog.vala:522 src/Dialogs/StripeDialog.vala:564
 msgid "The card has expired. Please try again with a different card."
-msgstr "De kaart is vervallen. Probeert u het nogmaals met een andere kaart."
+msgstr ""
+"De kaart is vervallen. Gelieve het opnieuw te proberen met een andere kaart."
 
 #: src/Dialogs/StripeDialog.vala:542
 msgid "There are too many payment requests at the moment, please retry later."
-msgstr "Er zijn momenteel te veel betaalverzoeken, probeert u het later nogmaals."
+msgstr ""
+"Er zijn momenteel te veel betaalverzoeken, gelieve het later opnieuw te "
+"proberen."
 
 #: src/Dialogs/StripeDialog.vala:558
 msgid "This card does not support this kind of transaction. Please try again with a different card."
-msgstr "Deze kaart ondersteunt dergelijke transacties niet. Probeert u het nogmaals met een andere kaart."
+msgstr ""
+"Deze kaart ondersteunt dit soort transacties niet. Gelieve het opnieuw te "
+"proberen met een andere kaart."
 
 #: src/Dialogs/StripeDialog.vala:560
 msgid "The currency is not supported by this card. Please try again with a different card."
-msgstr "De valuta wordt niet ondersteunt door deze kaart. Probeert u het nogmaals met een andere kaart."
+msgstr ""
+"De valuta wordt niet ondersteund door deze kaart. Gelieve het opnieuw te "
+"proberen met een andere kaart."
 
 #: src/Dialogs/StripeDialog.vala:562
 msgid "The transaction has already been processed."
@@ -497,7 +520,9 @@ msgstr "De transactie is reeds verwerkt."
 
 #: src/Dialogs/StripeDialog.vala:566
 msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
-msgstr "De postcode is onjuist. Probeert u het nogmaals met de juiste postcode."
+msgstr ""
+"De postcode is onjuist. Gelieve het opnieuw te proberen met de juiste "
+"postcode."
 
 #: src/Dialogs/StripeDialog.vala:568
 msgid "You don't have enough funds. Please use an alternative payment method."
@@ -505,31 +530,40 @@ msgstr "U heeft onvoldoende krediet. Gelieve een andere betaalmethode te gebruik
 
 #: src/Dialogs/StripeDialog.vala:570
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr "Het bedrag is onjuist. Probeert u het nogmaals met een geldig bedrag."
+msgstr ""
+"Het bedrag is onjuist. Gelieve het opnieuw te proberen met een geldig bedrag."
 
 #: src/Dialogs/StripeDialog.vala:581
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr "De pincode is onjuist. Probeert u het later nogmaals met de juiste pincode."
+msgstr ""
+"Het CVC-nummer is onjuist. Gelieve het opnieuw te proberen met het juiste "
+"CVC-nummer."
 
 #: src/Dialogs/StripeDialog.vala:583
 msgid "There has been too many PIN attempts. Please try again with a different card."
-msgstr "U heeft te veel pogingen gedaan om uw pincode in te voeren. Probeert u het nogmaals met een andere kaart."
+msgstr ""
+"U heeft te veel pogingen gedaan om uw pincode in te voeren. Gelieve het "
+"opnieuw te proberen met een andere kaart."
 
 #: src/Dialogs/StripeDialog.vala:603
 msgid "Unable to complete the transaction. Please contact your bank for further information."
-msgstr "Het is niet mogelijk om de transactie af te ronden. Contacteer uw bank voor aanvullende informatie."
+msgstr ""
+"Het is niet mogelijk om de transactie af te ronden. Gelieve uw bank te "
+"contacteren voor meer informatie."
 
 #: src/Dialogs/StripeDialog.vala:606
 msgid "The balance or credit limit on the card has been reached."
-msgstr "Onvoldoende saldo of het limiet van uw kaart werd bereikt."
+msgstr "U heeft onvoldoende saldo of de limiet van uw kaart is bereikt."
 
 #: src/Dialogs/StripeDialog.vala:609
 msgid "The given card is a test card. Please use a real card to proceed."
-msgstr "De ingevoerde kaart is een proefkaart. Gebruik alstublieft een geldige kaart om verder te gaan."
+msgstr ""
+"De ingevoerde kaart is een proefkaart. Gelieve een geldige kaart te "
+"gebruiken om verder te gaan."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
-msgstr "Als u deze app verwijdert, wordt de data mogelijk ook gewist."
+msgstr "Als u deze toepassing verwijdert, wordt haar data mogelijk ook gewist."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:35
 msgid "Uninstall app?"
@@ -541,13 +575,14 @@ msgid "Uninstall “%s”?"
 msgstr "“%s” verwijderen?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:144
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:124
 msgid "Uninstall"
 msgstr "Verwijderen"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
 msgid "This may have been caused by external or manually compiled software."
-msgstr "Dit is mogelijk veroorzaakt door externe software of handmatig gecompileerde software."
+msgstr ""
+"Dit is mogelijk veroorzaakt door externe of handmatig gecompileerde software."
 
 #: src/Dialogs/UninstallFailDialog.vala:37
 msgid "Failed to uninstall app"
@@ -564,7 +599,9 @@ msgstr "De updates konden niet worden opgehaald"
 
 #: src/Dialogs/UpdateFailDialog.vala:26
 msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
-msgstr "Dit is mogelijk veroorzaakt door externe, handmatig toegevoegde software bibliotheken of een corrupt bronbestand."
+msgstr ""
+"Dit is mogelijk veroorzaakt door externe, handmatig toegevoegde "
+"softwarebronnen of een gecorrumpeerd bronnenbestand."
 
 #: src/Dialogs/UpdateFailDialog.vala:34
 msgid "Ignore"
@@ -584,11 +621,11 @@ msgstr "Startpagina"
 
 #: src/Views/AppInfoView.vala:213
 msgid "Suggest Translations"
-msgstr "Suggereer vertalingen"
+msgstr "Stel vertalingen voor"
 
 #: src/Views/AppInfoView.vala:219
 msgid "Report a Problem"
-msgstr "Rapporteer een probleem"
+msgstr "Meld een probleem"
 
 #: src/Views/AppInfoView.vala:225
 msgid "Help"
@@ -624,7 +661,7 @@ msgstr "https://www.gnu.org/philosophy/free-sw"
 
 #: src/Views/AppInfoView.vala:375
 msgid "Proprietary"
-msgstr "Eigendom"
+msgstr "Propriëtair"
 
 #: src/Views/AppInfoView.vala:378
 msgid "Unknown License"
@@ -648,28 +685,45 @@ msgstr "Ontdek %s in het AppCenter:"
 msgid "Share"
 msgstr "Deel"
 
-#: src/Views/AppInfoView.vala:816
+#: src/Views/AppInfoView.vala:809
 msgid "Fund"
 msgstr "Financier"
 
-#: src/Views/AppInfoView.vala:838
+#: src/Views/AppInfoView.vala:831
 msgid "Fund the development of this app"
 msgstr "Financier de ontwikkeling van deze app"
 
-#: src/Views/AppListUpdateView.vala:56
-msgid "A restart is required to complete the installation of updates"
-msgstr "Het is nodig om opnieuw op te starten om de installatie van de updates te voltooien"
+#: src/Views/AppListUpdateView.vala:34
+msgid "Checking for Updates"
+msgstr "Updates zoeken"
 
-#: src/Views/AppListUpdateView.vala:64
+#: src/Views/AppListUpdateView.vala:35
+msgid "Downloading a list of available updates to the OS and installed apps"
+msgstr "Een lijst met beschikbare updates voor het systeem en geïnstalleerde apps downloaden"
+
+#: src/Views/AppListUpdateView.vala:46
+msgid "A restart is required to complete the installation of updates"
+msgstr ""
+"U zult opnieuw moeten opstarten om de installatie van de updates te voltooien"
+
+#: src/Views/AppListUpdateView.vala:54
 msgid "Restart Now"
 msgstr "Start nu opnieuw op"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:203
+#: src/Views/AppListUpdateView.vala:188
 msgid "Update All"
 msgstr "Alles bijwerken"
 
-#: src/Views/AppListView.vala:138
+#: src/Views/AppListView.vala:30
+msgid "No Results"
+msgstr "Geen resultaten"
+
+#: src/Views/AppListView.vala:31
+msgid "No apps could be found. Try changing search terms."
+msgstr "Kan geen toepassingen vinden. Probeer uw zoektermen te veranderen."
+
+#: src/Views/AppListView.vala:160
 msgid "Non-Curated Apps"
 msgstr "Onbeheerde Apps"
 
@@ -691,32 +745,16 @@ msgid "Search %s"
 msgstr "Zoek %s"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/Views/SearchView.vala:39
+#: src/Views/SearchView.vala:38
 msgctxt "view"
 msgid "Search"
 msgstr "Zoeken"
 
-#: src/Widgets/AbstractAppList.vala:39
-msgid "No Results"
-msgstr "Geen resultaten"
-
-#: src/Widgets/AbstractAppList.vala:40
-msgid "No apps could be found. Try changing search terms."
-msgstr "Kan geen applicaties vinden, probeer uw zoektermen te veranderen."
-
-#: src/Widgets/AbstractAppList.vala:45
-msgid "Checking for Updates"
-msgstr "Updates zoeken"
-
-#: src/Widgets/AbstractAppList.vala:46
-msgid "Downloading a list of available updates to the OS and installed apps"
-msgstr "Een lijst met beschikbare updates voor het systeem en geïnstalleerde apps downloaden"
-
-#: src/Widgets/Banner.vala:55
+#: src/Widgets/Banner.vala:57
 msgid "An open, pay-what-you-want app store"
-msgstr "Een open, betaal-wat-u-wilt applicatiewinkel"
+msgstr "Een open toepassingenwinkel waarbij u de prijzen bepaalt"
 
-#: src/Widgets/Banner.vala:74
+#: src/Widgets/Banner.vala:76
 msgid "Get the apps that you need at a price you can afford."
 msgstr "Krijg de applicaties die u nodig heeft aan de prijs die u zich kunt veroorloven."
 
@@ -793,12 +831,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "Vereist betalingen, die niet ingeschakeld zijn"
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:305
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:285
 msgid "Free"
 msgstr "Gratis"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:307
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:287
 msgid "Install"
 msgstr "Installeren"
 
@@ -814,16 +852,18 @@ msgstr "$ %d.00"
 msgid "$%d"
 msgstr "$ %d"
 
-#: src/Widgets/NetworkInfoBar.vala:32
+#: src/Widgets/NetworkInfoBar.vala:28
 msgid "Network Not Available."
 msgstr "Geen netwerkverbinding."
 
-#: src/Widgets/NetworkInfoBar.vala:33
+#: src/Widgets/NetworkInfoBar.vala:29
 msgid "Connect to the Internet to browse and install apps."
-msgstr "Verbind de computer met het internet om toepassingen te updaten of te installeren."
+msgstr ""
+"Maak verbinding met het internet om toepassingen te ontdekken en te "
+"installeren."
 
 #. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
-#: src/Widgets/NetworkInfoBar.vala:41
+#: src/Widgets/NetworkInfoBar.vala:37
 msgid "Network Settings…"
 msgstr "Netwerkinstellingen…"
 
@@ -877,32 +917,31 @@ msgstr "Alleen de benodigde gegevens van de apps en updates worden gedownload."
 msgid "Up to %s"
 msgstr "Tot %s"
 
-#: src/Widgets/UpdateHeaderRow.vala:69
+#: src/Widgets/UpdateHeaderRow.vala:41
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "%u update beschikbaar"
 msgstr[1] "%u updates beschikbaar"
 
-#: src/Widgets/UpdateHeaderRow.vala:107
-msgid "Searching for updates…"
-msgstr "Updates zoeken…"
-
-#: src/Widgets/UpdateHeaderRow.vala:114
-msgid "Up to Date"
-msgstr "Actueel"
-
-#: src/Widgets/UpdateHeaderRow.vala:122
+#: src/Widgets/UpdateHeaderRow.vala:54
 msgid "Drivers"
 msgstr "Stuurprogramma's"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:153
+#: src/Widgets/UpdateHeaderRow.vala:58
+msgid "Up to Date"
+msgstr "Actueel"
+
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:133
 msgid "Open"
 msgstr "Open"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:330
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "Bijwerken"
+
+#~ msgid "Searching for updates…"
+#~ msgstr "Updates zoeken…"
 
 #~ msgid "There Was An Error Installing %s."
 #~ msgstr "Er is een fout opgetreden bij het installeren van %s."

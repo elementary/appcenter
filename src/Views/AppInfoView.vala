@@ -33,21 +33,22 @@ namespace AppCenter.Views {
 
         GenericArray<AppStream.Screenshot> screenshots;
 
-        private Gtk.Label app_screenshot_not_found;
-        private Gtk.Stack app_screenshots;
-        private Widgets.SizeLabel size_label;
-        private Gtk.ListBox extension_box;
+        private Gtk.ComboBox origin_combo;
         private Gtk.Grid release_grid;
-        private Widgets.ReleaseListBox release_list_box;
-        private Gtk.Revealer origin_combo_revealer;
         private Gtk.Grid screenshot_arrows;
+        private Gtk.Label app_screenshot_not_found;
+        private Gtk.Label package_summary;
+        private Gtk.ListBox extension_box;
+        private Gtk.ListStore origin_liststore;
+        private Gtk.Overlay screenshot_overlay;
+        private Gtk.Revealer origin_combo_revealer;
+        private Gtk.Stack app_screenshots;
         private Gtk.Stack screenshot_stack;
         private Gtk.StyleContext stack_context;
-        private Gtk.Overlay screenshot_overlay;
         private Gtk.TextView app_description;
+        private Widgets.ReleaseListBox release_list_box;
+        private Widgets.SizeLabel size_label;
         private Widgets.Switcher screenshot_switcher;
-        private Gtk.ListStore origin_liststore;
-        private Gtk.ComboBox origin_combo;
 
         public bool to_recycle { public get; private set; default = false; }
 
@@ -178,6 +179,7 @@ namespace AppCenter.Views {
             package_author.valign = Gtk.Align.START;
             package_author.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
+            package_summary = new Gtk.Label (null);
             package_summary.label = package.get_summary ();
             package_summary.selectable = true;
             package_summary.xalign = 0;
@@ -532,7 +534,7 @@ namespace AppCenter.Views {
                     return;
                 }
 
-                var row = new Widgets.PackageRow.list (extension_package, null, null, false);
+                var row = new Widgets.PackageRow.list (extension_package);
                 if (extension_box != null) {
                     extension_box.add (row);
                 }
@@ -593,12 +595,7 @@ namespace AppCenter.Views {
             }
         }
 
-        public void load_more_content (AppCenterCore.ScreenshotCache? cache) {
-            if (cache == null) {
-                warning ("screenshots cannot be loaded, because the cache could not be created.\n");
-                return;
-            }
-
+        public void load_more_content (AppCenterCore.ScreenshotCache cache) {
             Gtk.TreeIter iter;
             uint count = 0;
             foreach (var origin_package in package.origin_packages) {
@@ -668,7 +665,7 @@ namespace AppCenter.Views {
                 });
 
                 string?[] screenshot_files = new string?[urls.length ()];
-                int[] results = new int[urls.length ()];
+                bool[] results = new bool[urls.length ()];
                 int completed = 0;
 
                 // Fetch each screenshot in parallel.
@@ -684,8 +681,6 @@ namespace AppCenter.Views {
                     });
                 }
 
-                cache.maintain ();
-
                 // TODO: dynamically load screenshots as they become available.
                 while (urls.length () != completed) {
                     Thread.usleep (100000);
@@ -693,7 +688,7 @@ namespace AppCenter.Views {
 
                 // Load screenshots that were successfully obtained.
                 for (int i = 0; i < urls.length (); i++) {
-                    if (0 == results[i]) {
+                    if (results[i] == true) {
                         load_screenshot (screenshot_files[i]);
                     }
                 }
@@ -822,7 +817,7 @@ namespace AppCenter.Views {
                 selection.payment_requested.connect ((amount) => {
                     var stripe = new Widgets.StripeDialog (amount,
                                                            package.get_name (),
-                                                           package.component.id.replace (".desktop", ""),
+                                                           package.normalized_component_id,
                                                            package.get_payments_key ()
                                                           );
 

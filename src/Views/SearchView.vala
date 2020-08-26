@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2014-2015 elementary LLC. (https://elementary.io)
+ * Copyright (c) 2014-2020 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -68,6 +67,7 @@ public class AppCenter.Views.SearchView : View {
         current_category = category;
 
         app_list_view.clear ();
+        app_list_view.current_search_term = current_search_term;
         unowned Client client = Client.get_default ();
 
         Gee.Collection<Package> found_apps;
@@ -79,8 +79,6 @@ public class AppCenter.Views.SearchView : View {
             found_apps = client.search_applications (current_search_term, current_category);
             app_list_view.add_packages (found_apps);
         }
-
-        app_list_view.set_placeholder_no_results (); //will only be visible if no packages found
 
         if (current_category != null) {
             subview_entered (_("Search Apps"), true, current_category.name);
