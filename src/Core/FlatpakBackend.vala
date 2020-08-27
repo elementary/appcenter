@@ -559,7 +559,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     private void preprocess_metadata (bool system, GLib.GenericArray<weak Flatpak.Remote> remotes, Cancellable? cancellable) {
         unowned Flatpak.Installation installation;
 
-        string dest_path;
+        unowned string dest_path;
         if (system) {
             dest_path = system_metadata_path;
             installation = system_installation;
@@ -745,7 +745,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     }
 
     private string generate_package_list_key (bool system, string origin, string bundle_id) {
-        string installation = system ? "system" : "user";
+        unowned string installation = system ? "system" : "user";
         return "%s/%s/%s".printf (installation, origin, bundle_id);
     }
 
