@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-21 19:09+0000\n"
+"POT-Creation-Date: 2020-08-29 01:49+0000\n"
 "PO-Revision-Date: 2020-05-27 18:11+0000\n"
 "Last-Translator: Rantyrant <diseasemonger@gmail.com>\n"
 "Language-Team: Danish <https://l10n.elementary.io/projects/appcenter/appcenter/da/>\n"
@@ -87,7 +87,7 @@ msgstr "Fjerner pakker"
 msgid "Downloading"
 msgstr "Henter"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:715
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:910
 msgid "Installing"
 msgstr "Installerer"
 
@@ -132,9 +132,9 @@ msgid "Finished"
 msgstr "Færdig"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:724 src/Core/FlatpakBackend.vala:752
-#: src/Core/FlatpakBackend.vala:829 src/Core/FlatpakBackend.vala:930
-#: src/Core/FlatpakBackend.vala:956
+#: src/Core/FlatpakBackend.vala:919 src/Core/FlatpakBackend.vala:947
+#: src/Core/FlatpakBackend.vala:1025 src/Core/FlatpakBackend.vala:1161
+#: src/Core/FlatpakBackend.vala:1187
 msgid "Cancelling"
 msgstr "Afbryder"
 
@@ -219,15 +219,15 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "%u opdatering tilgængelig til dit system"
 msgstr[1] "%u opdateringer tilgængelige til dit system"
 
-#: src/Core/FlatpakBackend.vala:821
+#: src/Core/FlatpakBackend.vala:1017
 msgid "Uninstalling"
 msgstr "Afinstallerer"
 
-#: src/Core/FlatpakBackend.vala:826
+#: src/Core/FlatpakBackend.vala:1022
 msgid "Finishing"
 msgstr "Færdiggører"
 
-#: src/Core/FlatpakBackend.vala:921
+#: src/Core/FlatpakBackend.vala:1152
 msgid "Updating"
 msgstr "Opdaterer"
 
@@ -244,20 +244,20 @@ msgstr "elementary Opdateringer"
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (Ikke-kurateret)"
 
-#: src/Core/Package.vala:345
-#, c-format
-msgid "%s (non-curated)"
-msgstr "%s ((Ikke-kurateret))"
-
 #: src/Core/Package.vala:347
+#, c-format
+msgid "%s (system-wide)"
+msgstr ""
+
+#: src/Core/Package.vala:352
 msgid "Ubuntu Drivers"
 msgstr "Ubuntu Drivere"
 
-#: src/Core/Package.vala:350
+#: src/Core/Package.vala:355
 msgid "Unknown Origin (non-curated)"
 msgstr "Ukendt Oprindelse (ikke-kurateret)"
 
-#: src/Core/Package.vala:483
+#: src/Core/Package.vala:532
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Applikations tilstanden er ikke sat som installeret  i AppCenteret for pakken: %s"
@@ -652,24 +652,24 @@ msgstr "Finansier"
 msgid "Fund the development of this app"
 msgstr "Finansier udviklingen af denne app"
 
-#: src/Views/AppListUpdateView.vala:34
+#: src/Views/AppListUpdateView.vala:37
 msgid "Checking for Updates"
 msgstr "Søger efter opdateringer"
 
-#: src/Views/AppListUpdateView.vala:35
+#: src/Views/AppListUpdateView.vala:38
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr "Henter en liste af tilgængelige opdateringer til operativ systemet og dets installerede applikationer"
 
-#: src/Views/AppListUpdateView.vala:46
+#: src/Views/AppListUpdateView.vala:49
 msgid "A restart is required to complete the installation of updates"
 msgstr "Genstart af computeren er nødvendig for at fuldføre installationen af opdateringer"
 
-#: src/Views/AppListUpdateView.vala:54
+#: src/Views/AppListUpdateView.vala:57
 msgid "Restart Now"
 msgstr "Genstart Nu"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:188
+#: src/Views/AppListUpdateView.vala:191
 msgid "Update All"
 msgstr "Opdatér alle"
 
@@ -895,6 +895,9 @@ msgstr "Åben"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "Opdater"
+
+#~ msgid "%s (non-curated)"
+#~ msgstr "%s ((Ikke-kurateret))"
 
 #~ msgid "Searching for updates…"
 #~ msgstr "Søger efter opdateringer…"

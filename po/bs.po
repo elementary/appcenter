@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-21 19:09+0000\n"
+"POT-Creation-Date: 2020-08-29 01:49+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Alma Ibrašimović <belma.alma@hotmail.com>\n"
 "Language-Team: Bosnian <https://l10n.elementary.io/projects/appcenter/appcenter/bs/>\n"
@@ -86,7 +86,7 @@ msgstr "Uklanjanje paketa"
 msgid "Downloading"
 msgstr "Preuzimanje"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:715
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:910
 msgid "Installing"
 msgstr "Instaliranje"
 
@@ -131,9 +131,9 @@ msgid "Finished"
 msgstr "Završeno"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:724 src/Core/FlatpakBackend.vala:752
-#: src/Core/FlatpakBackend.vala:829 src/Core/FlatpakBackend.vala:930
-#: src/Core/FlatpakBackend.vala:956
+#: src/Core/FlatpakBackend.vala:919 src/Core/FlatpakBackend.vala:947
+#: src/Core/FlatpakBackend.vala:1025 src/Core/FlatpakBackend.vala:1161
+#: src/Core/FlatpakBackend.vala:1187
 msgid "Cancelling"
 msgstr "Otkazivanje"
 
@@ -220,19 +220,19 @@ msgstr[0] "%u ažuriranje je dostupno za Vaš sistem"
 msgstr[1] "%u ažuriranja su dostupna za Vaš sistem"
 msgstr[2] "%u ažuriranja je dostupno za Vaš sistem"
 
-#: src/Core/FlatpakBackend.vala:821
+#: src/Core/FlatpakBackend.vala:1017
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "Deinstaliraj"
 
-#: src/Core/FlatpakBackend.vala:826
+#: src/Core/FlatpakBackend.vala:1022
 #, fuzzy
 #| msgid "Finished"
 msgid "Finishing"
 msgstr "Završeno"
 
-#: src/Core/FlatpakBackend.vala:921
+#: src/Core/FlatpakBackend.vala:1152
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -252,21 +252,21 @@ msgstr "Nedavno ažurirano"
 msgid "Ubuntu (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:345
-#, fuzzy, c-format
-msgid "%s (non-curated)"
-msgstr "%s (lokalno)"
-
 #: src/Core/Package.vala:347
+#, c-format
+msgid "%s (system-wide)"
+msgstr ""
+
+#: src/Core/Package.vala:352
 #, fuzzy
 msgid "Ubuntu Drivers"
 msgstr "Upravljački programi"
 
-#: src/Core/Package.vala:350
+#: src/Core/Package.vala:355
 msgid "Unknown Origin (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:483
+#: src/Core/Package.vala:532
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
@@ -674,26 +674,26 @@ msgstr "Podrži"
 msgid "Fund the development of this app"
 msgstr "Podrži razvoj ove aplikacije"
 
-#: src/Views/AppListUpdateView.vala:34
+#: src/Views/AppListUpdateView.vala:37
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Checking for Updates"
 msgstr "Pretraživanje ažuriranja…"
 
-#: src/Views/AppListUpdateView.vala:35
+#: src/Views/AppListUpdateView.vala:38
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:46
+#: src/Views/AppListUpdateView.vala:49
 msgid "A restart is required to complete the installation of updates"
 msgstr "Ponovno pokretanje računara je potrebno kako bi se završila instalacija ažuriranja"
 
-#: src/Views/AppListUpdateView.vala:54
+#: src/Views/AppListUpdateView.vala:57
 msgid "Restart Now"
 msgstr "Ponovo pokreni sada"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:188
+#: src/Views/AppListUpdateView.vala:191
 msgid "Update All"
 msgstr "Ažuriraj sve"
 
@@ -922,6 +922,10 @@ msgstr "Otvori"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "Ažuriraj"
+
+#, fuzzy
+#~ msgid "%s (non-curated)"
+#~ msgstr "%s (lokalno)"
 
 #~ msgid "Searching for updates…"
 #~ msgstr "Pretraživanje ažuriranja…"

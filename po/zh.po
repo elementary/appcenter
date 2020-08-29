@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-21 19:09+0000\n"
+"POT-Creation-Date: 2020-08-29 01:49+0000\n"
 "PO-Revision-Date: 2019-05-15 01:18+0000\n"
 "Last-Translator: Jimmy Sun <jimmysuncn@hotmail.com>\n"
 "Language-Team: Chinese <https://l10n.elementary.io/projects/appcenter/appcenter/zh/>\n"
@@ -88,7 +88,7 @@ msgstr "正在移除软件包"
 msgid "Downloading"
 msgstr "正在下载"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:715
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:910
 msgid "Installing"
 msgstr "正在安装"
 
@@ -133,9 +133,9 @@ msgid "Finished"
 msgstr "已完成"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:724 src/Core/FlatpakBackend.vala:752
-#: src/Core/FlatpakBackend.vala:829 src/Core/FlatpakBackend.vala:930
-#: src/Core/FlatpakBackend.vala:956
+#: src/Core/FlatpakBackend.vala:919 src/Core/FlatpakBackend.vala:947
+#: src/Core/FlatpakBackend.vala:1025 src/Core/FlatpakBackend.vala:1161
+#: src/Core/FlatpakBackend.vala:1187
 msgid "Cancelling"
 msgstr "正在取消"
 
@@ -218,19 +218,19 @@ msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "您的系统有%u的可用更新"
 
-#: src/Core/FlatpakBackend.vala:821
+#: src/Core/FlatpakBackend.vala:1017
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "卸载"
 
-#: src/Core/FlatpakBackend.vala:826
+#: src/Core/FlatpakBackend.vala:1022
 #, fuzzy
 #| msgid "Finished"
 msgid "Finishing"
 msgstr "已完成"
 
-#: src/Core/FlatpakBackend.vala:921
+#: src/Core/FlatpakBackend.vala:1152
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -250,21 +250,21 @@ msgstr "最近更新"
 msgid "Ubuntu (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:345
-#, fuzzy, c-format
-msgid "%s (non-curated)"
-msgstr "%s（本地）"
-
 #: src/Core/Package.vala:347
+#, c-format
+msgid "%s (system-wide)"
+msgstr ""
+
+#: src/Core/Package.vala:352
 #, fuzzy
 msgid "Ubuntu Drivers"
 msgstr "驱动"
 
-#: src/Core/Package.vala:350
+#: src/Core/Package.vala:355
 msgid "Unknown Origin (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:483
+#: src/Core/Package.vala:532
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
@@ -670,26 +670,26 @@ msgstr "金额"
 msgid "Fund the development of this app"
 msgstr "资助这个应用程序的开发"
 
-#: src/Views/AppListUpdateView.vala:34
+#: src/Views/AppListUpdateView.vala:37
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Checking for Updates"
 msgstr "正在搜索更新…"
 
-#: src/Views/AppListUpdateView.vala:35
+#: src/Views/AppListUpdateView.vala:38
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:46
+#: src/Views/AppListUpdateView.vala:49
 msgid "A restart is required to complete the installation of updates"
 msgstr "需要重启以完成更新的安装"
 
-#: src/Views/AppListUpdateView.vala:54
+#: src/Views/AppListUpdateView.vala:57
 msgid "Restart Now"
 msgstr "现在重启"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:188
+#: src/Views/AppListUpdateView.vala:191
 msgid "Update All"
 msgstr "全部更新"
 
@@ -920,6 +920,10 @@ msgstr "打开"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "更新"
+
+#, fuzzy
+#~ msgid "%s (non-curated)"
+#~ msgstr "%s（本地）"
 
 #~ msgid "Searching for updates…"
 #~ msgstr "正在搜索更新…"
