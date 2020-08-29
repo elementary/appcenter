@@ -342,7 +342,12 @@ public class AppCenterCore.Package : Object {
                     return _("Ubuntu (non-curated)");
                 }
             } else if (backend is FlatpakBackend) {
-                return _("%s (non-curated)").printf (origin);
+                var fp_package = this as FlatpakPackage;
+                if (fp_package != null && fp_package.installation == FlatpakBackend.system_installation) {
+                    return _("%s (system-wide)").printf (origin);
+                }
+
+                return origin;
             } else if (backend is UbuntuDriversBackend) {
                 return _("Ubuntu Drivers");
             }
@@ -365,9 +370,33 @@ public class AppCenterCore.Package : Object {
 
             if (is_flatpak) {
                 score++;
+
+                var fp_package = this as FlatpakPackage;
+                if (fp_package != null && fp_package.installation == FlatpakBackend.user_installation) {
+                    score++;
+                }
             }
 
             return score;
+        }
+    }
+
+    public string hash {
+        owned get {
+            string key = "";
+            if (backend is FlatpakBackend) {
+                var fp_package = this as FlatpakPackage;
+                if (fp_package.installation != null && fp_package.installation == FlatpakBackend.system_installation) {
+                    key += "system/";
+                } else {
+                    key += "user/";
+                }
+            }
+
+            key += component.get_origin () + "/";
+            key += component.get_id ();
+
+            return key;
         }
     }
 
