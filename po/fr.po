@@ -10,10 +10,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-21 19:09+0000\n"
-"PO-Revision-Date: 2020-06-09 18:41+0000\n"
+"POT-Creation-Date: 2020-08-29 01:49+0000\n"
+"PO-Revision-Date: 2020-09-03 18:13+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
-"Language-Team: French <https://l10n.elementary.io/projects/appcenter/appcenter/fr/>\n"
+"Language-Team: French <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -92,7 +93,7 @@ msgstr "Suppression des paquets"
 msgid "Downloading"
 msgstr "Téléchargement"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:715
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:910
 msgid "Installing"
 msgstr "Installation"
 
@@ -137,9 +138,9 @@ msgid "Finished"
 msgstr "Terminé"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:724 src/Core/FlatpakBackend.vala:752
-#: src/Core/FlatpakBackend.vala:829 src/Core/FlatpakBackend.vala:930
-#: src/Core/FlatpakBackend.vala:956
+#: src/Core/FlatpakBackend.vala:919 src/Core/FlatpakBackend.vala:947
+#: src/Core/FlatpakBackend.vala:1025 src/Core/FlatpakBackend.vala:1161
+#: src/Core/FlatpakBackend.vala:1187
 msgid "Cancelling"
 msgstr "Annulation"
 
@@ -224,15 +225,15 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "%u mise à jour est disponible pour votre système"
 msgstr[1] "%u mises à jour sont disponibles pour votre système"
 
-#: src/Core/FlatpakBackend.vala:821
+#: src/Core/FlatpakBackend.vala:1017
 msgid "Uninstalling"
 msgstr "Désinstallation"
 
-#: src/Core/FlatpakBackend.vala:826
+#: src/Core/FlatpakBackend.vala:1022
 msgid "Finishing"
 msgstr "Finalisation"
 
-#: src/Core/FlatpakBackend.vala:921
+#: src/Core/FlatpakBackend.vala:1152
 msgid "Updating"
 msgstr "Mise à jour"
 
@@ -249,20 +250,20 @@ msgstr "Mises à jour d'elementary"
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (non-vérifié)"
 
-#: src/Core/Package.vala:345
-#, c-format
-msgid "%s (non-curated)"
-msgstr "%s (non vérifié)"
-
 #: src/Core/Package.vala:347
+#, c-format
+msgid "%s (system-wide)"
+msgstr "%s (système)"
+
+#: src/Core/Package.vala:352
 msgid "Ubuntu Drivers"
 msgstr "Pilotes Ubuntu"
 
-#: src/Core/Package.vala:350
+#: src/Core/Package.vala:355
 msgid "Unknown Origin (non-curated)"
 msgstr "Origine inconnue (non-vérifiée)"
 
-#: src/Core/Package.vala:483
+#: src/Core/Package.vala:532
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "L'état de l'application n'est pas défini comme installé dans le Centre d'Applications pour le paquet : %s"
@@ -657,24 +658,24 @@ msgstr "Financer"
 msgid "Fund the development of this app"
 msgstr "Financer le développement de cette application"
 
-#: src/Views/AppListUpdateView.vala:34
+#: src/Views/AppListUpdateView.vala:37
 msgid "Checking for Updates"
 msgstr "Recherche de mises à jour"
 
-#: src/Views/AppListUpdateView.vala:35
+#: src/Views/AppListUpdateView.vala:38
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr "Téléchargement d'une liste des mises à jour disponibles pour le système et les applications installées"
 
-#: src/Views/AppListUpdateView.vala:46
+#: src/Views/AppListUpdateView.vala:49
 msgid "A restart is required to complete the installation of updates"
 msgstr "Un redémarrage est nécessaire pour terminer l’installation des mises à jour"
 
-#: src/Views/AppListUpdateView.vala:54
+#: src/Views/AppListUpdateView.vala:57
 msgid "Restart Now"
 msgstr "Redémarrer maintenant"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:188
+#: src/Views/AppListUpdateView.vala:191
 msgid "Update All"
 msgstr "Tout mettre à jour"
 
@@ -900,6 +901,9 @@ msgstr "Ouvrir"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "Mettre à jour"
+
+#~ msgid "%s (non-curated)"
+#~ msgstr "%s (non vérifié)"
 
 #~ msgid "Searching for updates…"
 #~ msgstr "Recherche de mises à jour…"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-21 19:09+0000\n"
+"POT-Creation-Date: 2020-08-29 01:49+0000\n"
 "PO-Revision-Date: 2019-11-15 21:24+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/appcenter/appcenter/pl/>\n"
@@ -88,7 +88,7 @@ msgstr "Usuwanie pakietów"
 msgid "Downloading"
 msgstr "Pobieranie"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:715
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:910
 msgid "Installing"
 msgstr "Instalowanie"
 
@@ -133,9 +133,9 @@ msgid "Finished"
 msgstr "Zakończono"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:724 src/Core/FlatpakBackend.vala:752
-#: src/Core/FlatpakBackend.vala:829 src/Core/FlatpakBackend.vala:930
-#: src/Core/FlatpakBackend.vala:956
+#: src/Core/FlatpakBackend.vala:919 src/Core/FlatpakBackend.vala:947
+#: src/Core/FlatpakBackend.vala:1025 src/Core/FlatpakBackend.vala:1161
+#: src/Core/FlatpakBackend.vala:1187
 msgid "Cancelling"
 msgstr "Anulowanie"
 
@@ -222,19 +222,19 @@ msgstr[0] "Dostępna jest %u aktualizacja dla Twojego systemu"
 msgstr[1] "Dostępne są %u aktualizacje dla Twojego systemu"
 msgstr[2] "Dostępnych jest %u aktualizacji dla Twojego systemu"
 
-#: src/Core/FlatpakBackend.vala:821
+#: src/Core/FlatpakBackend.vala:1017
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "Odinstaluj"
 
-#: src/Core/FlatpakBackend.vala:826
+#: src/Core/FlatpakBackend.vala:1022
 #, fuzzy
 #| msgid "Finished"
 msgid "Finishing"
 msgstr "Zakończono"
 
-#: src/Core/FlatpakBackend.vala:921
+#: src/Core/FlatpakBackend.vala:1152
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -254,21 +254,21 @@ msgstr "Aktualizacje elementary"
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (bez przeglądu)"
 
-#: src/Core/Package.vala:345
-#, fuzzy, c-format
-msgid "%s (non-curated)"
-msgstr "%s (bez przeglądu)"
-
 #: src/Core/Package.vala:347
+#, c-format
+msgid "%s (system-wide)"
+msgstr ""
+
+#: src/Core/Package.vala:352
 #, fuzzy
 msgid "Ubuntu Drivers"
 msgstr "Sterowniki Ubuntu"
 
-#: src/Core/Package.vala:350
+#: src/Core/Package.vala:355
 msgid "Unknown Origin (non-curated)"
 msgstr "Nieznanego pochodzenia (bez przeglądu)"
 
-#: src/Core/Package.vala:483
+#: src/Core/Package.vala:532
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Stan programu nie jest ustawiony jako zainstalowany w AppCenter dla pakietu: %s"
@@ -674,26 +674,26 @@ msgstr "Zafunduj"
 msgid "Fund the development of this app"
 msgstr "Zafunduj rozwój tego programu"
 
-#: src/Views/AppListUpdateView.vala:34
+#: src/Views/AppListUpdateView.vala:37
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Checking for Updates"
 msgstr "Szukanie aktualizacji…"
 
-#: src/Views/AppListUpdateView.vala:35
+#: src/Views/AppListUpdateView.vala:38
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:46
+#: src/Views/AppListUpdateView.vala:49
 msgid "A restart is required to complete the installation of updates"
 msgstr "Ponowne uruchomienie jest wymagane, aby dokończyć instalację aktualizacji"
 
-#: src/Views/AppListUpdateView.vala:54
+#: src/Views/AppListUpdateView.vala:57
 msgid "Restart Now"
 msgstr "Uruchom ponownie teraz"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:188
+#: src/Views/AppListUpdateView.vala:191
 msgid "Update All"
 msgstr "Aktualizuj wszystko"
 
@@ -920,6 +920,10 @@ msgstr "Otwórz"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "Zaktualizuj"
+
+#, fuzzy
+#~ msgid "%s (non-curated)"
+#~ msgstr "%s (bez przeglądu)"
 
 #~ msgid "Searching for updates…"
 #~ msgstr "Szukanie aktualizacji…"

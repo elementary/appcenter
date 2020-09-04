@@ -22,6 +22,7 @@ namespace AppCenter.Views {
 /** AppList for the Updates View. Sorts update_available first and shows headers.
       * Does not show Uninstall Button **/
     public class AppListUpdateView : AbstractAppList {
+        private Gtk.SizeGroup action_button_group;
         private bool updating_all_apps = false;
         private bool apps_remaining_started = false;
         private GLib.Mutex update_mutex;
@@ -30,6 +31,8 @@ namespace AppCenter.Views {
         private AppCenterCore.Package first_package;
 
         construct {
+            action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
+
             var loading_view = new Granite.Widgets.AlertView (
                 _("Checking for Updates"),
                 _("Downloading a list of available updates to the OS and installed apps"),
