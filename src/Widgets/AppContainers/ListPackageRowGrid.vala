@@ -33,6 +33,9 @@ public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
         };
         package_summary.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
+        // Pop!_OS
+        ((Gtk.Misc) package_summary).xalign = 0;
+
         var grid = new Gtk.Grid () {
             column_spacing = 12,
             row_spacing = 3

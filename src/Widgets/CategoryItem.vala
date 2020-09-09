@@ -59,7 +59,11 @@ public class AppCenter.Widgets.CategoryItem : Gtk.FlowBoxChild {
 
         var expanded_grid = new Gtk.Grid ();
         expanded_grid.expand = true;
+#if POP_OS
+        expanded_grid.margin = 6;
+#else
         expanded_grid.margin = 12;
+#endif
 
         themed_grid = new Gtk.Grid ();
         themed_grid.attach (grid, 0, 0, 1, 1);

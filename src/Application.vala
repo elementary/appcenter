@@ -374,6 +374,9 @@ public class AppCenter.App : Gtk.Application {
 }
 
 public static int main (string[] args) {
+#if POP_OS
+    GLib.Environment.set_application_name ("Pop!_Shop");
+#endif
     var application = new AppCenter.App ();
     return application.run (args);
 }

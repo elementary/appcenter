@@ -9,5 +9,6 @@
     <file alias="fallback.css" compressed="true">styles/fallback.css</file>
     <file alias="loading.css" compressed="true">styles/loading.css</file>
     <file alias="NonCuratedWarningDialog.css" compressed="true">styles/NonCuratedWarningDialog.css</file>
+    <file alias="pop-banner.png" compressed="true">images/pop-banner.png</file>
   </gresource>
 </gresources>

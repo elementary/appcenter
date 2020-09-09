@@ -121,7 +121,7 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         card_number_entry.bind_property ("has-focus", card_number_entry, "visibility");
 
         card_expiration_entry = new Gtk.Entry ();
-        card_expiration_entry.hexpand = true;
+        //  card_expiration_entry.hexpand = true;
         card_expiration_entry.max_length = 5;
         /// TRANSLATORS: Don't change the order, only transliterate
         card_expiration_entry.placeholder_text = _("MM / YY");

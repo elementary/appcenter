@@ -22,7 +22,7 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
     construct {
         activate_on_single_click = true;
         homogeneous = true;
-        min_children_per_line = 2;
+        min_children_per_line = 1;
 
         add (get_category (_("Accessories"), "applications-accessories", {"Utility"}, "accessories"));
         add (get_category (_("Audio"), "applications-audio-symbolic", {"Audio", "Music"}, "audio"));

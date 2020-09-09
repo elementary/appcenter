@@ -99,7 +99,7 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
 
     construct {
         amount_button = new Gtk.Button ();
-        amount_button.hexpand = true;
+        amount_button.width_request = 95;
 
 #if PAYMENTS
         amount_button.label = _("Free");

@@ -30,12 +30,11 @@ public class AppCenter.Widgets.CarouselItem : Gtk.FlowBoxChild {
         icon.pixel_size = 64;
 
         var name_label = new Gtk.Label (package.get_name ());
-        name_label.valign = Gtk.Align.END;
+        name_label.wrap = true;
         name_label.xalign = 0;
         name_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
         var category_label = new Gtk.Label (package.component.developer_name);
-        category_label.valign = Gtk.Align.START;
         category_label.xalign = 0;
         category_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 

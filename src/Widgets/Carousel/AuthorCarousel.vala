@@ -23,6 +23,7 @@ public class AppCenter.Widgets.AuthorCarousel : Carousel {
     public AppCenterCore.Package target { get; construct; }
 
     construct {
+        hexpand = true;
         var author_packages = AppCenterCore.Client.get_default ().get_packages_by_author (target.author, AUTHOR_OTHER_APPS_MAX);
         foreach (var author_package in author_packages) {
             if (author_package.component.get_id () == target.component.get_id ()) {

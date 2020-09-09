@@ -373,6 +373,12 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         // Clear out any cached components that could be from other backends
         if (components.length != 0) {
             components.remove_range (0, components.length);
+        } else {
+            var category_array = new GLib.GenericArray<AppStream.Category> ();
+            category_array.add (category);
+            GLib.GenericArray<AppStream.Component> pool_components = (GLib.GenericArray<AppStream.Component>) appstream_pool.get_components ();
+            AppStream.utils_sort_components_into_categories (pool_components, category_array, true);
+            components = category.get_components ();
         }
 
         var category_array = new GLib.GenericArray<AppStream.Category> ();

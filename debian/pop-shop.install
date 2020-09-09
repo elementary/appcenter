@@ -1,0 +1,9 @@
+etc/
+usr/bin/
+usr/share/applications/
+usr/share/glib-2.0/
+usr/share/gnome-shell/search-providers/
+usr/share/icons/
+usr/share/locale/
+usr/share/metainfo/
+usr/share/polkit-1/actions/

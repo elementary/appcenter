@@ -35,6 +35,7 @@ namespace AppCenter.Views {
             );
             loading_view.show_all ();
 
+            hexpand = true;
             list_box.set_header_func ((Gtk.ListBoxUpdateHeaderFunc) row_update_header);
             list_box.set_placeholder (loading_view);
 

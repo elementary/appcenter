@@ -5,10 +5,10 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_group>elementary</project_group>
   <project_license>GPL-3.0+</project_license>
-  <name>AppCenter</name>
+  <name>Pop!_Shop</name>
   <summary>Browse and manage apps</summary>
   <description>
-    <p>An app store for indie and open source developers. Browse by categories or search and discover new apps. AppCenter is also used for updating your system to the latest and greatest version for new features and fixes.</p>
+    <p>An app store for indie and open source developers. Browse by categories or search and discover new apps. Pop!_Shop is also used for updating your system to the latest and greatest version for new features and fixes.</p>
   </description>
   <releases>
     <release version="3.5.1" date="2020-10-08" urgency="medium">
@@ -394,14 +394,13 @@
     <content_attribute id="money-purchasing">intense</content_attribute>
     <content_attribute id="money-gambling">none</content_attribute>
   </content_rating>
-  <compulsory_for_desktop>Pantheon</compulsory_for_desktop>
-  <developer_name>elementary, Inc.</developer_name>
-  <url type="homepage">http://elementary.io/</url>
-  <url type="bugtracker">https://github.com/elementary/appcenter/issues</url>
-  <url type="donation">https://elementary.io/get-involved#funding</url>
+  <developer_name>System76</developer_name>
+  <url type="homepage">https://github.com/pop-os/shop</url>
+  <url type="bugtracker">https://github.com/pop-os/shop/issues</url>
   <url type="help">https://elementaryos.stackexchange.com/questions/tagged/appcenter</url>
   <url type="translate">https://l10n.elementary.io/projects/desktop/appcenter</url>
-  <update_contact>contact_at_elementary.io</update_contact>
+  <update_contact>info_at_system76.com</update_contact>
+
   <custom>
     <value key="x-appcenter-color-primary">#665888</value>
   </custom>

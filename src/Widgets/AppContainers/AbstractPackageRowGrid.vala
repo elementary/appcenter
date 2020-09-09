@@ -33,12 +33,21 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : AbstractAppCont
         inner_image.pixel_size = 48;
 
         package_name.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
-        package_name.valign = Gtk.Align.END;
+        package_name.wrap = true;
+        package_name.hexpand = true;
         package_name.xalign = 0;
 
         margin = 6;
         margin_start = 12;
         margin_end = 12;
+        
+        // <- Pop!_Shop
+
+        hexpand = true;
+
+        action_stack.homogeneous = false;
+
+        // ->
 
         show_uninstall = false;
         show_open = false;

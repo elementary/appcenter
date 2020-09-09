@@ -168,7 +168,6 @@ namespace AppCenter.Views {
             header.margin = 12;
             header.margin_top = 18;
             header.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
-            header.hexpand = true;
             header.xalign = 0;
             row.set_header (header);
         }

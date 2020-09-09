@@ -30,7 +30,7 @@ public class AppCenter.Widgets.Carousel : Gtk.FlowBox {
         row_spacing = 12;
         hexpand = true;
         max_children_per_line = 5;
-        min_children_per_line = 2;
+        min_children_per_line = 1;
         selection_mode = Gtk.SelectionMode.NONE;
         child_activated.connect (on_child_activated);
     }
