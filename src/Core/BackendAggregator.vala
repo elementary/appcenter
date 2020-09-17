@@ -22,6 +22,7 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
 
     private Gee.ArrayList<unowned Backend> backends;
     private uint remove_inhibit_timeout = 0;
+    private uint inhibit_token = 0;
 
     construct {
         backends = new Gee.ArrayList<unowned Backend> ();
@@ -29,6 +30,7 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
         backends.add (UbuntuDriversBackend.get_default ());
         backends.add (FlatpakBackend.get_default ());
 
+        unowned Gtk.Application app = (Gtk.Application) GLib.Application.get_default ();
         foreach (var backend in backends) {
             backend.notify["working"].connect (() => {
                 if (working) {
@@ -37,13 +39,25 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
                         remove_inhibit_timeout = 0;
                     }
 
-                    SuspendControl.get_default ().inhibit ();
+                    if (inhibit_token != 0) {
+                        app.uninhibit (inhibit_token);
+                    }
+
+                    inhibit_token = app.inhibit (
+                        app.get_active_window (),
+                        Gtk.ApplicationInhibitFlags.IDLE | Gtk.ApplicationInhibitFlags.SUSPEND,
+                        _("package operations are being performed")
+                    );
                 } else {
                     // Wait for 5 seconds of inactivity before uninhibiting as we may be
                     // rapidly switching between working states on different backends etc...
                     if (remove_inhibit_timeout == 0) {
                         remove_inhibit_timeout = Timeout.add_seconds (5, () => {
-                            SuspendControl.get_default ().uninhibit ();
+                            if (inhibit_token != 0) {
+                                app.uninhibit (inhibit_token);
+                                inhibit_token = 0;
+                            }
+
                             remove_inhibit_timeout = 0;
 
                             return false;
