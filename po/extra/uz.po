@@ -3,24 +3,26 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-21 19:09+0000\n"
-"PO-Revision-Date: 2015-12-16 06:51+0000\n"
-"Last-Translator: Corentin Noël <corentin@elementaryos.org>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2020-09-22 07:14+0000\n"
+"Last-Translator: Shukrullo <shukrullo@umail.uz>\n"
+"Language-Team: Uzbek <https://l10n.elementary.io/projects/appcenter/extra/uz/"
+">\n"
+"Language: uz\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
-"X-Generator: Launchpad (build 18331)\n"
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
 msgid "AppCenter"
-msgstr ""
+msgstr "AppCenter"
 
 #: data/io.elementary.appcenter.appdata.xml.in:9
 #: data/io.elementary.appcenter.desktop.in.in:4
 msgid "Browse and manage apps"
-msgstr ""
+msgstr "Ilovalarni ko'rish va boshqarish"
 
 #: data/io.elementary.appcenter.appdata.xml.in:11
 msgid ""
@@ -28,27 +30,34 @@ msgid ""
 "search and discover new apps. AppCenter is also used for updating your "
 "system to the latest and greatest version for new features and fixes."
 msgstr ""
+"Ochiq kodli ilovalar ishlab chiquvchilar va indi-dasturchilar uchun ilovalar "
+"do'koni. Bo'limlarni ko'ring yoki izlash bo'limidan o'zingiz uchun yangi "
+"ilovalarni izlab toping. AppCenter bundan tashqari Operatsion tizimni va "
+"unga o'rnatilgan ilovalarni eng oxirgi talqinigicha yangilab xatoliklari "
+"bartaraf etilgan va yangi imkoniyatlarni qo'shadi."
 
 #: data/io.elementary.appcenter.appdata.xml.in:16
 #: data/io.elementary.appcenter.appdata.xml.in:29
 #: data/io.elementary.appcenter.appdata.xml.in:72
 #: data/io.elementary.appcenter.appdata.xml.in:89
 msgid "Fixes"
-msgstr ""
+msgstr "To'g'rilashlar"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Ensure AppCenter is reopened at the correct position"
-msgstr ""
+msgstr "AppCenter to'g'ri va kerakli joyda qayta ochilganini tekshiring"
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
 msgid "Clicking the updates badge in the header navigates to the updates view"
 msgstr ""
+"Yuqori paneldagi Yangilanishlarga bosish orqali yangilanishlarni ko'rish "
+"mumkin"
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
 #: data/io.elementary.appcenter.appdata.xml.in:33
 #: data/io.elementary.appcenter.appdata.xml.in:46
 msgid "Minor updates"
-msgstr ""
+msgstr "Kichik yangilanishlar"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 #: data/io.elementary.appcenter.appdata.xml.in:36
@@ -58,7 +67,7 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:99
 #: data/io.elementary.appcenter.appdata.xml.in:146
 msgid "Updated translations"
-msgstr ""
+msgstr "Yangilangan tarjimalar"
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
 msgid "Ensure all updatable Flatpak runtimes are listed for update"
@@ -68,15 +77,15 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:56
 #: data/io.elementary.appcenter.appdata.xml.in:145
 msgid "Performance improvements"
-msgstr ""
+msgstr "Samaradorlikdagi qo'shimchalar"
 
 #: data/io.elementary.appcenter.appdata.xml.in:42
 msgid "New features"
-msgstr ""
+msgstr "Yangi imkoniyatlar"
 
 #: data/io.elementary.appcenter.appdata.xml.in:44
 msgid "Perform updates without administrator permissions"
-msgstr ""
+msgstr "Administrator imkoniyatlarisiz yangilanishlarni amalga oshirish"
 
 #: data/io.elementary.appcenter.appdata.xml.in:48
 msgid "Ensure apps on the homepage are more reliably displayed"
