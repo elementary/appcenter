@@ -1131,7 +1131,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         }
 
         try {
-            foreach (var bundle_id in ids) {
+            foreach (unowned string bundle_id in ids) {
                 transaction.add_update (bundle_id, null, null);
             }
         } catch (Error e) {
