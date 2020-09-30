@@ -116,6 +116,9 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
                 case Job.Type.GET_PACKAGE_DETAILS:
                     get_package_details_internal (job);
                     break;
+                case Job.Type.LOOKUP_CODECS:
+                    lookup_codecs_internal (job);
+                    break;
                 default:
                     assert_not_reached ();
             }
@@ -904,6 +907,46 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         }
 
         return pk_package;
+    }
+
+    public async Pk.Results lookup_codecs (string[] gstreamer_resources) throws GLib.Error {
+        var job_args = new LookupCodecsArgs ();
+        job_args.gstreamer_resources = gstreamer_resources;
+
+        var job = yield launch_job (Job.Type.LOOKUP_CODECS, job_args);
+        if (job.error != null) {
+            throw job.error;
+        }
+
+        return (Pk.Results)job.result.get_object ();
+    }
+
+    private void lookup_codecs_internal (Job job) {
+        var args = (LookupCodecsArgs)job.args;
+        var resources = args.gstreamer_resources;
+
+        string[] parsed_resources = {};
+        foreach (var resource in resources) {
+            var split_resource = resource.split("|");
+            if (split_resource.length > 1) {
+                parsed_resources += split_resource[1].replace ("(64bit)", "");
+            } else {
+                parsed_resources += split_resource[0].replace ("(64bit)", "");
+            }
+        }
+
+        warning (string.joinv(",", parsed_resources));
+
+        Pk.Results? results = null;
+        try {
+            results = client.what_provides (Pk.Bitfield.from_enums (Pk.Filter.ARCH), parsed_resources, null, (prog, type) => { });
+        } catch (Error e) {
+            warning ("Error while looking up codec: %s", e.message);
+        }
+
+        job.result = Value (typeof (Object));
+        job.result.take_object (results);
+        job.results_ready ();
     }
 
     public async void update_multiple_package_state (Gee.Collection<Package> packages) throws GLib.Error {

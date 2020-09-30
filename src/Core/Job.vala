@@ -36,7 +36,8 @@ public class AppCenterCore.Job : Object {
         UPDATE_PACKAGE,
         REMOVE_PACKAGE,
         IS_PACKAGE_INSTALLED,
-        GET_PACKAGE_DETAILS
+        GET_PACKAGE_DETAILS,
+        LOOKUP_CODECS
     }
 
     public Job (Type type) {
@@ -87,4 +88,8 @@ public class AppCenterCore.IsPackageInstalledArgs : JobArgs {
 
 public class AppCenterCore.GetPackageDetailsArgs : JobArgs {
     public Package package;
+}
+
+public class AppCenterCore.LookupCodecsArgs : JobArgs {
+    public string[] gstreamer_resources;
 }

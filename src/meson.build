@@ -28,6 +28,7 @@ appcenter_files = files(
     'Dialogs/UpdateFailDialog.vala',
     'Services/DBusInterfaces.vala',
     'Services/DBusServer.vala',
+    'Services/PackageKitSessionBus.vala',
     'Services/SearchProvider.vala',
     'Views/AppInfoView.vala',
     'Views/AppListUpdateView.vala',

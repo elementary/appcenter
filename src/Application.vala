@@ -224,6 +224,15 @@ public class AppCenter.App : Gtk.Application {
                 warning (e.message);
             }
 
+            Bus.own_name (
+                BusType.SESSION,
+                "org.freedesktop.PackageKit",
+                BusNameOwnerFlags.NONE,
+                on_packagekit_bus_acquired,
+                () => {},
+                () => {}
+            );
+
             try {
                 search_provider_id = connection.register_object ("/io/elementary/appcenter/SearchProvider", search_provider);
             } catch (Error e) {
@@ -232,6 +241,14 @@ public class AppCenter.App : Gtk.Application {
         }
 
         return true;
+    }
+
+    private void on_packagekit_bus_acquired (DBusConnection connection) {
+        try {
+            connection.register_object ("/org/freedesktop/PackageKit", new PackageKitSessionBus ());
+        } catch (Error e) {
+            warning (e.message);
+        }
     }
 
     public override void dbus_unregister (DBusConnection connection, string object_path) {
