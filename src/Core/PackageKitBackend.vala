@@ -927,7 +927,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 
         string[] parsed_resources = {};
         foreach (var resource in resources) {
-            var split_resource = resource.split("|");
+            var split_resource = resource.split ("|");
             if (split_resource.length > 1) {
                 parsed_resources += split_resource[1].replace ("(64bit)", "");
             } else {
@@ -935,7 +935,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
             }
         }
 
-        warning (string.joinv(",", parsed_resources));
+        warning (string.joinv (",", parsed_resources));
 
         Pk.Results? results = null;
         try {
