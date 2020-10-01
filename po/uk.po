@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-29 01:49+0000\n"
-"PO-Revision-Date: 2020-09-12 21:14+0000\n"
+"PO-Revision-Date: 2020-09-20 09:14+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/uk/>\n"
@@ -30,12 +30,12 @@ msgstr "Центр застосунків"
 #: src/Application.vala:112
 #, c-format
 msgid "Could not parse the media type %s"
-msgstr "Не вдалось визначити MIME тип %s"
+msgstr "Не вдалося визначити медіа тип %s"
 
 #: src/Application.vala:132
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr "Вказане посилання «%s» не знайдено, пошук заміни"
+msgstr "Вказане посилання '%s' не знайдено, пошук заміни"
 
 #: src/Application.vala:272
 msgid "Application installed"
@@ -82,7 +82,7 @@ msgstr "Виконання запиту"
 
 #: src/Utils.vala:70
 msgid "Getting information"
-msgstr "Отримання інформації"
+msgstr "Отримання відомостей"
 
 #: src/Utils.vala:72
 msgid "Removing packages"
@@ -145,7 +145,7 @@ msgstr "Скасування"
 
 #: src/Utils.vala:100
 msgid "Downloading repository information"
-msgstr "Звантаження інформації про сховище"
+msgstr "Звантаження відомостей про сховище"
 
 #: src/Utils.vala:102
 msgid "Downloading list of packages"
@@ -165,7 +165,7 @@ msgstr "Звантаження груп"
 
 #: src/Utils.vala:110
 msgid "Downloading update information"
-msgstr "Звантаження інформації про оновлення"
+msgstr "Звантаження відомостей про оновлення"
 
 #: src/Utils.vala:112
 msgid "Repackaging files"
@@ -227,27 +227,21 @@ msgstr[1] "%u оновлення доступні для вашої систем
 msgstr[2] "%u оновлень доступно для вашої системи"
 
 #: src/Core/FlatpakBackend.vala:1017
-#, fuzzy
-#| msgid "Uninstall"
 msgid "Uninstalling"
-msgstr "Вилучити"
+msgstr "Видалення"
 
 #: src/Core/FlatpakBackend.vala:1022
-#, fuzzy
-#| msgid "Finished"
 msgid "Finishing"
-msgstr "Завершено"
+msgstr "Завершення"
 
 #: src/Core/FlatpakBackend.vala:1152
-#, fuzzy
-#| msgid "Update"
 msgid "Updating"
 msgstr "Оновлення"
 
 #: src/Core/Package.vala:308
 #, c-format
 msgid "%s Developers"
-msgstr "%s Розробників"
+msgstr "%s розробників"
 
 #: src/Core/Package.vala:340
 msgid "elementary Updates"
@@ -255,12 +249,12 @@ msgstr "Оновлення elementary OS"
 
 #: src/Core/Package.vala:342
 msgid "Ubuntu (non-curated)"
-msgstr "Ubuntu (не курований)"
+msgstr "Ubuntu (не куровано)"
 
 #: src/Core/Package.vala:347
 #, c-format
 msgid "%s (system-wide)"
-msgstr ""
+msgstr "%s (загальносистемне)"
 
 #: src/Core/Package.vala:352
 msgid "Ubuntu Drivers"
@@ -268,7 +262,7 @@ msgstr "Драйвери Ubuntu"
 
 #: src/Core/Package.vala:355
 msgid "Unknown Origin (non-curated)"
-msgstr "Невідоме походження (не курований)"
+msgstr "Невідоме походження (не куровано)"
 
 #: src/Core/Package.vala:532
 #, c-format
@@ -284,7 +278,7 @@ msgstr "%s (локальний)"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
-msgstr "Оновлення Операційної Системи"
+msgstr "Оновлення операційної системи"
 
 #: src/Core/UpdateManager.vala:39
 msgid "Updates to system components"
@@ -297,7 +291,7 @@ msgstr "Версія: %s"
 
 #: src/Core/UpdateManager.vala:118
 msgid "Flatpak runtime"
-msgstr "Час виконання Flatpak"
+msgstr "Середовище виконання Flatpak"
 
 #: src/Core/UpdateManager.vala:135
 msgid "No components with updates"
@@ -331,7 +325,7 @@ msgstr "Попередження про вміст"
 #: src/Dialogs/ContentWarningDialog.vala:30
 #, c-format
 msgid "“%s” contains explicit content"
-msgstr "%s містить контент для дорослих"
+msgstr "%s містить вміст для дорослих"
 
 #: src/Dialogs/ContentWarningDialog.vala:31
 #, c-format
@@ -371,35 +365,31 @@ msgid "Failed to install “%s”"
 msgstr "Не вдалося встановити “%s”"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
-#, fuzzy
-#| msgid "Content Warning"
 msgid "Non-Curated Warning"
-msgstr "Попередження про вміст"
+msgstr "Попередження про не куровані застосунки"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:37
-#, fuzzy
-#| msgid "%s (non-curated)"
 msgid "Install non-curated app?"
-msgstr "%s (не курований)"
+msgstr "Встановити не курований застосунок?"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
 msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
 msgstr ""
+"“%s” не курується elementary та не було перевірено на безпечність, "
+"приватність, чи сумісність з системою."
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
 msgid "It may not receive bug fix or feature updates"
-msgstr ""
+msgstr "Може не отримувати виправлення вад або оновлень"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:60
 msgid "It may access or change system or personal files without permission"
-msgstr ""
+msgstr "Може отримати доступ чи змінити системні або особисті файли без дозволу"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
-#, fuzzy
-#| msgid "Show content warnings"
 msgid "Show non-curated warnings"
-msgstr "Показати попередження про вміст"
+msgstr "Показувати попередження про не куровані застосунки"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -422,7 +412,7 @@ msgstr "Скасувати"
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
 msgstr ""
-"Під час обробки картки сталася помилка. Будь-ласка, спробуйте пізніше. "
+"Під час обробки картки сталася помилка. Будь ласка, спробуйте пізніше. "
 "Перепрошуємо за незручності."
 
 #: src/Dialogs/StripeDialog.vala:42
@@ -431,12 +421,12 @@ msgstr "Будь ласка, перевірте дані платежу та с�
 
 #: src/Dialogs/StripeDialog.vala:76
 msgid "Payment"
-msgstr "Платіж"
+msgstr "Оплата"
 
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
 msgid "Pay $%d for %s"
-msgstr "Оплатити $%d за %s"
+msgstr "Сплатити $%d за %s"
 
 #: src/Dialogs/StripeDialog.vala:96
 msgid "This is a one time payment. Your email address is only used to send you a receipt."
@@ -450,7 +440,9 @@ msgstr "Пошта"
 
 #: src/Dialogs/StripeDialog.vala:108
 msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
-msgstr "Ваша електронна адреса буде використана лише для відправки квитанції. Не для розсилок."
+msgstr ""
+"Вашу електронну адресу буде використано лише для надсилання квитанції. Не "
+"для розсилок."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127
@@ -463,7 +455,7 @@ msgstr "CVC"
 
 #: src/Dialogs/StripeDialog.vala:189
 msgid "Privacy Policy"
-msgstr "Політика конфіденційності"
+msgstr "Політика приватності"
 
 #: src/Dialogs/StripeDialog.vala:200 src/Dialogs/StripeDialog.vala:314
 #, c-format
@@ -488,7 +480,9 @@ msgstr "Спробувати ще раз"
 
 #: src/Dialogs/StripeDialog.vala:513 src/Dialogs/StripeDialog.vala:578
 msgid "The card number is incorrect. Please try again using the correct card number."
-msgstr "Номер картки не вірний. Будь ласка, спробуйте ще раз з коректним номером картки."
+msgstr ""
+"Номер картки не правильний. Будь ласка, спробуйте ще раз з правильним "
+"номером картки."
 
 #: src/Dialogs/StripeDialog.vala:515
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
@@ -514,24 +508,29 @@ msgstr "Картка нечинна. Будь ласка, спробуйте з�
 
 #: src/Dialogs/StripeDialog.vala:542
 msgid "There are too many payment requests at the moment, please retry later."
-msgstr "Забагато платіжних запитів у даний момент. Спробуйте будь ласка пізніше."
+msgstr ""
+"Наразі забагато запитів на оплату. Будь ласка, повторіть спробу пізніше."
 
 #: src/Dialogs/StripeDialog.vala:558
 msgid "This card does not support this kind of transaction. Please try again with a different card."
-msgstr "Ця картка не підтримує даний вид транзакції. Будь ласка, спробуйте знову, з іншою карткою."
+msgstr ""
+"Ця картка не підтримує цей вид транзакції. Будь ласка, спробуйте знову з "
+"іншою карткою."
 
 #: src/Dialogs/StripeDialog.vala:560
 msgid "The currency is not supported by this card. Please try again with a different card."
-msgstr "Цей тип валюти не підтримується цією карткою. Будь ласка, спробуйте знову, з іншою карткою."
+msgstr ""
+"Цей тип валюти не підтримується цією карткою. Будь ласка, спробуйте знову з "
+"іншою карткою."
 
 #: src/Dialogs/StripeDialog.vala:562
 msgid "The transaction has already been processed."
-msgstr "Цей платіж вже опрацьований."
+msgstr "Цей платіж вже опрацьовано."
 
 #: src/Dialogs/StripeDialog.vala:566
 msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
 msgstr ""
-"Поштовий індекс неправильний. Будь ласка, спробуйте знову використавши "
+"ZIP/Поштовий індекс неправильний. Будь ласка, спробуйте знову використавши "
 "правильний ZIP/поштовий код."
 
 #: src/Dialogs/StripeDialog.vala:568
@@ -548,13 +547,15 @@ msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:581
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr "PIN-код не правильний. Повторіть спробу, ввівши правильний PIN-код."
+msgstr ""
+"PIN-код не правильний. Будь ласка, повторіть спробу ввівши правильний "
+"PIN-код."
 
 #: src/Dialogs/StripeDialog.vala:583
 msgid "There has been too many PIN attempts. Please try again with a different card."
 msgstr ""
-"Кількість спроб для введення PIN-коду вичерпано. Будь ласка, спробуйте ще "
-"раз, використавши іншу картку."
+"Кількість спроб введення PIN-коду вичерпано. Будь ласка, спробуйте ще раз, "
+"використавши іншу картку."
 
 #: src/Dialogs/StripeDialog.vala:603
 msgid "Unable to complete the transaction. Please contact your bank for further information."
@@ -588,11 +589,13 @@ msgstr "Видалити “%s”?"
 #: src/Dialogs/UninstallConfirmDialog.vala:42
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:124
 msgid "Uninstall"
-msgstr "Вилучити"
+msgstr "Видалити"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
 msgid "This may have been caused by external or manually compiled software."
-msgstr "Це може бути викликано програмним забезпеченням встановленим шляхом використання зовнішніх джерел або вручну."
+msgstr ""
+"Це може бути викликано програмним забезпеченням встановленим шляхом "
+"використання зовнішніх джерел або власноруч."
 
 #: src/Dialogs/UninstallFailDialog.vala:37
 msgid "Failed to uninstall app"
@@ -609,23 +612,25 @@ msgstr "Не вдалося отримати оновлення"
 
 #: src/Dialogs/UpdateFailDialog.vala:26
 msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
-msgstr "Це може бути викликано зовнішньо, вручну доданими сховищами програмного забезпечення або файлом з пошкодженими джерелами."
+msgstr ""
+"Це може бути викликано зовнішніми, власноруч доданими сховищами програмного "
+"забезпечення або файлом з пошкодженими джерелами."
 
 #: src/Dialogs/UpdateFailDialog.vala:34
 msgid "Ignore"
-msgstr "Ігнорувати"
+msgstr "Знехтувати"
 
 #: src/Dialogs/UpdateFailDialog.vala:35
 msgid "Try Again"
-msgstr "Спробуйте знову"
+msgstr "Спробувати знову"
 
 #: src/Views/AppInfoView.vala:155
 msgid "Screenshot Not Available"
-msgstr "Скріншот недоступний"
+msgstr "Знімок екрана недоступний"
 
 #: src/Views/AppInfoView.vala:207
 msgid "Homepage"
-msgstr "Домашня сторінка"
+msgstr "Домівка"
 
 #: src/Views/AppInfoView.vala:213
 msgid "Suggest Translations"
@@ -650,7 +655,7 @@ msgstr "Розширення:"
 #. TRANSLATORS: See the Wikipedia page
 #: src/Views/AppInfoView.vala:360
 msgid "Public Domain"
-msgstr "Загальнодоступний домен"
+msgstr "Суспільне надбання"
 
 #. TRANSLATORS: Replace the link with the version for your language
 #: src/Views/AppInfoView.vala:363
@@ -671,7 +676,7 @@ msgstr "https://www.gnu.org/philosophy/free-sw"
 
 #: src/Views/AppInfoView.vala:375
 msgid "Proprietary"
-msgstr "Право власності"
+msgstr "Власницьке"
 
 #: src/Views/AppInfoView.vala:378
 msgid "Unknown License"
@@ -684,7 +689,7 @@ msgstr "Інші застосунки від %s"
 
 #: src/Views/AppInfoView.vala:464
 msgid "Link copied to clipboard"
-msgstr "Посилання скопійовано до буфера обміну"
+msgstr "Посилання копійовано до буфера обміну"
 
 #: src/Views/AppInfoView.vala:475
 #, c-format
@@ -731,11 +736,11 @@ msgstr "Немає результатів"
 
 #: src/Views/AppListView.vala:31
 msgid "No apps could be found. Try changing search terms."
-msgstr "Застосунків не знайдено. Спробуйте змінити пошуковий термін."
+msgstr "Застосунків не знайдено. Спробуйте змінити ключові слова."
 
 #: src/Views/AppListView.vala:160
 msgid "Non-Curated Apps"
-msgstr "Застосунки без підтримки"
+msgstr "Не куровані застосунки"
 
 #: src/Views/Homepage.vala:67
 msgid "Recently Updated"
@@ -762,7 +767,7 @@ msgstr "Знайти"
 
 #: src/Widgets/Banner.vala:57
 msgid "An open, pay-what-you-want app store"
-msgstr "Вільний \"Плати за що хочеш\" магазин"
+msgstr "Вільна крамниця застосунків, у якій \"Плати скільки хочеш\""
 
 #: src/Widgets/Banner.vala:76
 msgid "Get the apps that you need at a price you can afford."
@@ -783,7 +788,7 @@ msgstr "Аудіо"
 
 #: src/Widgets/CategoryFlowBox.vala:29
 msgid "Communication"
-msgstr "Комунікація"
+msgstr "Спілкування"
 
 #: src/Widgets/CategoryFlowBox.vala:38
 msgid "Development"
@@ -815,7 +820,7 @@ msgstr "Математика, Наука та Інженерія"
 
 #: src/Widgets/CategoryFlowBox.vala:101
 msgid "Media Production"
-msgstr "Медіавиробництво"
+msgstr "Медіа виробництво"
 
 #: src/Widgets/CategoryFlowBox.vala:108
 msgid "Office"
@@ -839,12 +844,12 @@ msgstr "Мова і написання"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
-msgstr "Вимагає платежі, які не включено"
+msgstr "Вимагає платежі, які не увімкнено"
 
 #: src/Widgets/HumbleButton.vala:105
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:285
 msgid "Free"
-msgstr "Безкоштовно"
+msgstr "Безплатно"
 
 #: src/Widgets/HumbleButton.vala:107
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:287
@@ -912,11 +917,11 @@ msgstr "Telegram"
 
 #: src/Widgets/SharePopover.vala:59
 msgid "Copy link"
-msgstr "Скопіювати посилання"
+msgstr "Копіювати посилання"
 
 #: src/Widgets/SizeLabel.vala:35
 msgid "Actual Download Size Likely to Be Smaller"
-msgstr "Фактичний розмір завантаження імовірно буде меншим"
+msgstr "Фактичний розмір завантаження, ймовірно, буде меншим"
 
 #: src/Widgets/SizeLabel.vala:36
 msgid "Only the parts of apps and updates that are needed will be downloaded."

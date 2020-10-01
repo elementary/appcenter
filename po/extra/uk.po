@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-21 19:09+0000\n"
-"PO-Revision-Date: 2020-09-12 21:14+0000\n"
+"PO-Revision-Date: 2020-09-20 09:14+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/"
 "extra/uk/>\n"
@@ -23,7 +23,7 @@ msgstr "Центр застосунків"
 #: data/io.elementary.appcenter.appdata.xml.in:9
 #: data/io.elementary.appcenter.desktop.in.in:4
 msgid "Browse and manage apps"
-msgstr "Керування застосунками"
+msgstr "Керуйте та переглядайте застосунки"
 
 #: data/io.elementary.appcenter.appdata.xml.in:11
 msgid ""
@@ -47,18 +47,17 @@ msgstr "Виправлення"
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Ensure AppCenter is reopened at the correct position"
 msgstr ""
+"Переконайтеся, що центр застосунків знову відкрито у правильному положенні"
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
 msgid "Clicking the updates badge in the header navigates to the updates view"
-msgstr ""
+msgstr "Натискання значка оновлень у заголовку перемикає до подання оновлень"
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
 #: data/io.elementary.appcenter.appdata.xml.in:33
 #: data/io.elementary.appcenter.appdata.xml.in:46
-#, fuzzy
-#| msgid "Check for Updates"
 msgid "Minor updates"
-msgstr "Перевірте оновлення"
+msgstr "Незначні оновлення"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 #: data/io.elementary.appcenter.appdata.xml.in:36
@@ -73,115 +72,132 @@ msgstr "Оновлено переклади"
 #: data/io.elementary.appcenter.appdata.xml.in:31
 msgid "Ensure all updatable Flatpak runtimes are listed for update"
 msgstr ""
+"Будьте певні, що всі застосунки Flatpak, які можна оновити, буде перелічено "
+"у списку для оновлення"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
 #: data/io.elementary.appcenter.appdata.xml.in:56
 #: data/io.elementary.appcenter.appdata.xml.in:145
-#, fuzzy
 msgid "Performance improvements"
-msgstr "Різні виправлення помилок і поліпшення продуктивності"
+msgstr "Поліпшено швидкодію"
 
 #: data/io.elementary.appcenter.appdata.xml.in:42
 msgid "New features"
-msgstr ""
+msgstr "Нові функції"
 
 #: data/io.elementary.appcenter.appdata.xml.in:44
 msgid "Perform updates without administrator permissions"
-msgstr ""
+msgstr "Виконання оновлень без дозволу адміністратора"
 
 #: data/io.elementary.appcenter.appdata.xml.in:48
 msgid "Ensure apps on the homepage are more reliably displayed"
-msgstr ""
+msgstr "Будьте певні, що застосунки на домашній сторінці показано відповідніше"
 
 #: data/io.elementary.appcenter.appdata.xml.in:49
 msgid "More reliably set the Dock badge number"
-msgstr ""
+msgstr "Покращено показ значків кількості у Dock"
 
 #: data/io.elementary.appcenter.appdata.xml.in:58
 msgid ""
 "Only check for updates at device startup if it's more than 24 hours since we "
 "last checked"
 msgstr ""
+"Перевірка наявності оновлень під час запуску пристрою, лише якщо минуло "
+"понад 24 годин з моменту останньої перевірки"
 
 #: data/io.elementary.appcenter.appdata.xml.in:59
 msgid "Reduce slowdowns when opening certain apps"
-msgstr ""
+msgstr "Зменшено сповільнення під час відкриття певних застосунків"
 
 #: data/io.elementary.appcenter.appdata.xml.in:61
-#, fuzzy
 msgid "Extension improvements"
-msgstr "Різні виправлення помилок і поліпшення продуктивності"
+msgstr "Поліпшено розширення"
 
 #: data/io.elementary.appcenter.appdata.xml.in:63
 msgid ""
 "To de-clutter the updates view, extensions are now only shown if they "
 "require updates"
 msgstr ""
+"Для спрощення подання оновлень, розширення тепер показано лише якщо вони "
+"потребують оновлення"
 
 #: data/io.elementary.appcenter.appdata.xml.in:64
 msgid ""
 "Clicking an extension on an app's info page now shows details for the "
 "extension"
 msgstr ""
+"Натискання на розширення на сторінці відомостей про застосунок тепер показує "
+"деталі розширення"
 
 #: data/io.elementary.appcenter.appdata.xml.in:65
 msgid ""
 "Swap the main and overlay icons for extensions to more clearly associate "
 "extensions with their app"
 msgstr ""
+"Замінено основні й накладені піктограми для розширень, щоб чіткіше пов’язати "
+"розширення з їхнім застосунком"
 
 #: data/io.elementary.appcenter.appdata.xml.in:67
-#, fuzzy
 msgid "Keyboard improvements"
-msgstr "Різні виправлення помилок і поліпшення продуктивності"
+msgstr "Поліпшення для клавіатури"
 
 #: data/io.elementary.appcenter.appdata.xml.in:69
 msgid ""
 "Pressing down in the search field moves the keyboard focus to the search "
 "results list"
 msgstr ""
+"Натискання вниз у полі пошуку перенесе фокус клавіатури до списку "
+"результатів пошуку"
 
 #: data/io.elementary.appcenter.appdata.xml.in:70
 msgid "Ctrl+F now moves the cursor to the search field"
-msgstr ""
+msgstr "Ctrl + F тепер переміщує курсор до поля пошуку"
 
 #: data/io.elementary.appcenter.appdata.xml.in:74
 msgid "Use configured network proxy settings for apt operations"
-msgstr ""
+msgstr "Використання налаштувань мережних параметрів проксі для операцій apt"
 
 #: data/io.elementary.appcenter.appdata.xml.in:75
 msgid "No longer prompt for approval to update non-curated apps"
-msgstr ""
+msgstr "Більше не вимагається схвалення для оновлення не курованих застосунків"
 
 #: data/io.elementary.appcenter.appdata.xml.in:76
 msgid ""
 "Ensure the OS updates subheading copy is correct after finishing updates"
 msgstr ""
+"Після завершення оновлення переконайтеся, що копія підзаголовка оновлення ОС "
+"правильна"
 
 #: data/io.elementary.appcenter.appdata.xml.in:77
 msgid "Ellipsize long app names in App Info views"
 msgstr ""
+"Частково приховано довгі назви застосунків у вікнах відомостей про застосунок"
 
 #: data/io.elementary.appcenter.appdata.xml.in:79
 msgid "And more"
-msgstr ""
+msgstr "І навіть більше"
 
 #: data/io.elementary.appcenter.appdata.xml.in:81
 msgid "Show a more informative loading screen when checking for updates"
 msgstr ""
+"Показ інформативнішого екрана завантаження під час перевірки наявності "
+"оновлень"
 
 #: data/io.elementary.appcenter.appdata.xml.in:82
 msgid "Don't list fonts alongside apps"
-msgstr ""
+msgstr "Шрифти більше не показано поряд із застосунками"
 
 #: data/io.elementary.appcenter.appdata.xml.in:91
 msgid ""
 "Prevent crashes when updating Flatpaks and system packages simultaneously"
 msgstr ""
+"Запобігання збоям за одночасного оновлення Flatpak та системних пакунків"
 
 #: data/io.elementary.appcenter.appdata.xml.in:92
 msgid "Prevent suspending when installing, updating, or removing packages"
 msgstr ""
+"Запобігання призупиненню під час встановлення, оновлення або вилучення "
+"пакунків"
 
 #: data/io.elementary.appcenter.appdata.xml.in:104
 #: data/io.elementary.appcenter.appdata.xml.in:121
@@ -191,126 +207,136 @@ msgstr "Незначні виправлення"
 #: data/io.elementary.appcenter.appdata.xml.in:106
 msgid "Update application details when changes happen outside of AppCenter"
 msgstr ""
+"Оновлення даних застосунку, коли зміни завершено поза центром застосунків"
 
 #: data/io.elementary.appcenter.appdata.xml.in:107
 msgid "Fix for notification not appearing when a restart is required"
-msgstr ""
+msgstr "Виправлено помилку відсутності сповіщень про необхідність перезапуску"
 
 #: data/io.elementary.appcenter.appdata.xml.in:108
 msgid "Apps in list views now load in the correct order when scrolling"
 msgstr ""
+"Застосунки завантажуються до переліку огляду в правильній послідовності під "
+"час прокручування"
 
 #: data/io.elementary.appcenter.appdata.xml.in:109
 msgid "Prevent unescaped XML entities from appearing in application names"
-msgstr ""
+msgstr "Запобігання появі незахищених елементів XML у назвах застосунків"
 
 #: data/io.elementary.appcenter.appdata.xml.in:110
 msgid "Load the \"Installed\" view faster"
-msgstr ""
+msgstr "Швидше завантаження подання \"Встановлені\""
 
 #: data/io.elementary.appcenter.appdata.xml.in:111
 msgid "Ensure flatpak applications show in the category views"
-msgstr ""
+msgstr "Відтепер, застосунки flatpak показано в поданнях категорій"
 
 #: data/io.elementary.appcenter.appdata.xml.in:112
 msgid ""
 "Save some bandwidth by downloading smaller screenshots where appropriate"
 msgstr ""
+"Збереження пропускної здатности, завантаженням знімків екрана менших "
+"розмірів, де це доречно"
 
 #: data/io.elementary.appcenter.appdata.xml.in:113
 msgid "System components no longer have an \"Open\" button"
-msgstr ""
+msgstr "Системні компоненти більше не мають кнопки \"Відкрити\""
 
 #: data/io.elementary.appcenter.appdata.xml.in:114
 msgid ""
 "Applications menu can now remove flatpaks that weren't installed by AppCenter"
 msgstr ""
+"Меню застосунків тепер може вилучити flatpak, які не було встановлено центрі "
+"застосунків"
 
 #: data/io.elementary.appcenter.appdata.xml.in:115
 msgid "Make download size estimates more accurate"
-msgstr ""
+msgstr "Точніша оцінка розміру завантаження"
 
 #: data/io.elementary.appcenter.appdata.xml.in:123
 msgid "Prevent AppCenter from opening on log in"
-msgstr ""
+msgstr "Запобігання відкриванню центра застосунків під час входу"
 
 #: data/io.elementary.appcenter.appdata.xml.in:124
 msgid "Prevent ghost update notification when there are no updates available"
 msgstr ""
+"Запобігання несправжнім сповіщенням про оновлення, коли їх насправді немає"
 
 #: data/io.elementary.appcenter.appdata.xml.in:125
 msgid "Show correct installation state for extensions"
-msgstr ""
+msgstr "Показ правильного стану встановлення розширень"
 
 #: data/io.elementary.appcenter.appdata.xml.in:132
 msgid "Add support for Flatpak apps"
-msgstr ""
+msgstr "Додано підтримку застосунків Flatpak"
 
 #: data/io.elementary.appcenter.appdata.xml.in:133
 msgid "Warn about non-curated apps"
-msgstr ""
+msgstr "Попередження про не куровані застосунки"
 
 #: data/io.elementary.appcenter.appdata.xml.in:134
 msgid "Show an error dialog if an installation fails"
-msgstr ""
+msgstr "Показ діалогового вікна помилки за невдалого встановлення"
 
 #: data/io.elementary.appcenter.appdata.xml.in:135
 msgid ""
 "Fix an issue where some apps couldn't be uninstalled from the Applications "
 "Menu"
 msgstr ""
+"Виправлено проблему, коли деякі застосунки не вдавалося видалити з меню "
+"застосунків"
 
 #: data/io.elementary.appcenter.appdata.xml.in:136
 msgid "Allow browsing and uninstalling apps while offline"
-msgstr ""
+msgstr "Дозволено переглядати та видаляти застосунки в автономному режимі"
 
 #: data/io.elementary.appcenter.appdata.xml.in:137
 msgid "Fix twitter share URLs"
-msgstr ""
+msgstr "Виправлено URL-адресу поділитися в twitter"
 
 #: data/io.elementary.appcenter.appdata.xml.in:138
 msgid "Drop Google+ from the share menu"
-msgstr ""
+msgstr "Прибрано Google+ з меню надсилання"
 
 #: data/io.elementary.appcenter.appdata.xml.in:139
 msgid "Animate screenshot background while loading"
-msgstr ""
+msgstr "Анімація тла знімка екрана під час завантаження"
 
 #: data/io.elementary.appcenter.appdata.xml.in:140
 msgid "Add navigation arrows for screenshots"
-msgstr ""
+msgstr "Додано стрілки гортання знімків екрана"
 
 #: data/io.elementary.appcenter.appdata.xml.in:141
 msgid "Don't show uninstall buttons for essential system components"
-msgstr ""
+msgstr "Прибрано кнопки видалення для основних системних компонентів"
 
 #: data/io.elementary.appcenter.appdata.xml.in:142
 msgid "Properly display proprietary licenses"
-msgstr ""
+msgstr "Правильний показ власницьких ліцензій"
 
 #: data/io.elementary.appcenter.appdata.xml.in:143
 msgid "Fix some layout issues"
-msgstr ""
+msgstr "Виправлено проблеми з макетом"
 
 #: data/io.elementary.appcenter.appdata.xml.in:144
 msgid "Fix crashes"
-msgstr ""
+msgstr "Виправлення збоїв"
 
 #: data/io.elementary.appcenter.appdata.xml.in:153
 msgid "Meson build system fixes"
-msgstr "Система виправлень Meson"
+msgstr "Виправлення системи збирання Meson"
 
 #: data/io.elementary.appcenter.appdata.xml.in:154
 msgid "Improve window state restoration"
-msgstr "Поліпшити відновлення стану вікна"
+msgstr "Поліпшено відновлення стану вікна"
 
 #: data/io.elementary.appcenter.appdata.xml.in:155
 msgid "Prevent action buttons from jumping around"
-msgstr "Запобігти стрибанню дійових кнопок"
+msgstr "Запобігання стрибанню кнопок дій"
 
 #: data/io.elementary.appcenter.appdata.xml.in:156
 msgid "Remove reset paid apps gsettings key"
-msgstr "Вилучити ключ gsettings для скидання платних застосунків"
+msgstr "Вилучено ключ gsettings для скидання платних застосунків"
 
 #: data/io.elementary.appcenter.appdata.xml.in:157
 msgid "Memory management refinements"
@@ -320,7 +346,7 @@ msgstr "Управління налаштуваннями пам'яті"
 msgid ""
 "Add conditional compilation for disabling dynamic remote homepage content"
 msgstr ""
-"Додати умовне компілювання для відключення динамічного віддаленого контенту "
+"Додано умовне компілювання для вимкнення динамічного зовнішнього вмісту "
 "головної сторінки"
 
 #: data/io.elementary.appcenter.appdata.xml.in:159
@@ -345,19 +371,19 @@ msgstr "Нові переклади"
 
 #: data/io.elementary.appcenter.appdata.xml.in:166
 msgid "New categories: Communication, Finance, Media Production"
-msgstr "Нові категорії: Комунікація, Фінанси, Медіавиробництво"
+msgstr "Нові категорії: Спілкування, Фінанси, Медіа виробництво"
 
 #: data/io.elementary.appcenter.appdata.xml.in:167
 msgid "Add Math to Science category"
-msgstr "Додати математику до категорії «Наука»"
+msgstr "Додано математику до категорії «Наука»"
 
 #: data/io.elementary.appcenter.appdata.xml.in:168
 msgid "Relax email address validator"
-msgstr "Послабити валідацію email адреси"
+msgstr "Послаблено перевірку адреси електронної пошти"
 
 #: data/io.elementary.appcenter.appdata.xml.in:169
 msgid "Present update availability more accurately"
-msgstr "Ретельніше представити можливість оновлення"
+msgstr "Точніше подання доступності оновлень"
 
 #: data/io.elementary.appcenter.appdata.xml.in:170
 msgid "Category graphics revamped"
@@ -376,19 +402,19 @@ msgstr "Категорію «Графіка» оновлено"
 #: data/io.elementary.appcenter.appdata.xml.in:280
 #: data/io.elementary.appcenter.appdata.xml.in:289
 msgid "Bug fixes and improve performance."
-msgstr "Виправлення помилок і поліпшення продуктивності."
+msgstr "Виправлено помилки і поліпшено швидкодію."
 
 #: data/io.elementary.appcenter.appdata.xml.in:187
 msgid "Improve transaction success rate"
-msgstr "Покращити рівень успішних транзакцій"
+msgstr "Покращення рівня успішності транзакцій"
 
 #: data/io.elementary.appcenter.appdata.xml.in:188
 msgid "Add Publishing to Office category"
-msgstr "Додати публікацію до категорії \"Офіс\""
+msgstr "Додано публікацію до категорії \"Офіс\""
 
 #: data/io.elementary.appcenter.appdata.xml.in:189
 msgid "Improve descriptions of OS Updates"
-msgstr "Покращити опис до оновлень ОС"
+msgstr "Покращено описи до оновлень ОС"
 
 #: data/io.elementary.appcenter.appdata.xml.in:190
 #: data/io.elementary.appcenter.appdata.xml.in:201
@@ -402,11 +428,11 @@ msgstr "Покращити опис до оновлень ОС"
 #: data/io.elementary.appcenter.appdata.xml.in:273
 #: data/io.elementary.appcenter.appdata.xml.in:282
 msgid "Various bug fixes and performance improvements"
-msgstr "Різні виправлення помилок і поліпшення продуктивності"
+msgstr "Різні виправлення помилок і поліпшення швидкодії"
 
 #: data/io.elementary.appcenter.appdata.xml.in:199
 msgid "Give details for Operating System Updates"
-msgstr "Надайте деталі щодо оновлення операційної системи"
+msgstr "Надання докладніших відомостей щодо оновлення операційної системи"
 
 #: data/io.elementary.appcenter.appdata.xml.in:200
 msgid "Support mouse button navigation"
@@ -414,7 +440,7 @@ msgstr "Підтримка кнопки миші для навігації"
 
 #: data/io.elementary.appcenter.appdata.xml.in:291
 msgid "Fix crash caused by entries with missing packages"
-msgstr "Виправити збій, що був викликаний через відсутність пакетів"
+msgstr "Подолано виникнення збою за відсутності пакунків"
 
 #: data/io.elementary.appcenter.appdata.xml.in:298
 msgid "Add capability to search by category and apply minor bug fixes."
@@ -429,29 +455,28 @@ msgstr "Тепер можливо здійснювати пошук застос
 #: data/io.elementary.appcenter.appdata.xml.in:301
 msgid "Prevent multiple authentication dialogs when resuming from suspend"
 msgstr ""
-"Виправлено проблему кількох діалогів аутентифікації при відновленні з режиму "
-"очікування"
+"Виправлено проблему кількох діалогів автентифікації під час відновлення з "
+"режиму очікування"
 
 #: data/io.elementary.appcenter.appdata.xml.in:308
 msgid ""
 "Search performance has beeen improved, the category name is now shown on the "
 "headbar and minor bugs have been fixed."
 msgstr ""
-"Продуктивність пошуку була поліпшена, назва категорії відтепер "
-"відображається на заголовку вікна та виправлення незначних помилок."
+"Поліпшено швидкодію пошуку, назву категорії відтепер показано в заголовку "
+"вікна та виправлення незначних помилок."
 
 #: data/io.elementary.appcenter.appdata.xml.in:310
 msgid "Fix Steam installation"
-msgstr "Виправлено проблему при встановленні Steam"
+msgstr "Виправлено проблему встановлення Steam"
 
 #: data/io.elementary.appcenter.appdata.xml.in:311
 msgid "Make search asynchronous"
 msgstr "Відтепер пошук працює асинхронно"
 
 #: data/io.elementary.appcenter.appdata.xml.in:366
-#, fuzzy
 msgid "elementary, Inc."
-msgstr "elementary LLC."
+msgstr "elementary, Inc."
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
@@ -462,26 +487,25 @@ msgid "@DESKTOP_ICON@"
 msgstr "@DESKTOP_ICON@"
 
 #: data/io.elementary.appcenter.desktop.in.in:7
-#, fuzzy
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
 msgstr ""
 "встановити;вилучити;видалити;каталог;магазин;застосунки;оновлення;програми;"
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
-msgstr "Перевірте оновлення"
+msgstr "Перевірка наявності оновлень"
 
 #: data/io.elementary.appcenter.desktop.in.in:19
 msgid "system-software-update"
-msgstr ""
+msgstr "system-software-update"
 
 #: data/io.elementary.appcenter.policy.in:10
 msgid "Update software"
-msgstr ""
+msgstr "Оновити програмне забезпечення"
 
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to update software"
-msgstr ""
+msgstr "Для оновлення програмного забезпечення потрібна автентифікація"
 
 #, fuzzy
 #~ msgid "Performance improvments"
