@@ -1,56 +1,56 @@
+# Shukrullo <shukrullo@umail.uz>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-29 01:49+0000\n"
-"PO-Revision-Date: 2015-11-06 16:06+0000\n"
-"Last-Translator: elementaryart (old) <Unknown>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2020-09-22 07:14+0000\n"
+"Last-Translator: Shukrullo <shukrullo@umail.uz>\n"
+"Language-Team: Uzbek <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/uz/>\n"
+"Language: uz\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
-"X-Generator: Launchpad (build 18331)\n"
 
 #. Add "AppCenter" to the translation catalog
 #: src/Application.vala:38 src/Core/Package.vala:338
 msgid "AppCenter"
-msgstr ""
+msgstr "AppCenter"
 
 #: src/Application.vala:112
 #, c-format
 msgid "Could not parse the media type %s"
-msgstr ""
+msgstr "%s ning ma'lumoti turini aniqlab bo'lmadi"
 
 #: src/Application.vala:132
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr ""
+msgstr "Ko'rsatilgan %s bog' topilmadi, o'rniga boshqasini izlash"
 
 #: src/Application.vala:272
 msgid "Application installed"
-msgstr ""
+msgstr "Ilova o'rnatildi"
 
 #: src/Application.vala:273
 #, c-format
 msgid "%s has been successfully installed"
-msgstr ""
+msgstr "%s ilovasi muvaffaqiyatli o'rnatildi"
 
 #: src/MainWindow.vala:136 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
 #: src/Views/Homepage.vala:325
-#, fuzzy
 msgid "Home"
-msgstr "Уй саҳифасига"
+msgstr "Bosh sahifa"
 
 #: src/MainWindow.vala:137 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
-#, fuzzy
 msgctxt "view"
 msgid "Installed"
-msgstr "Ўрнатиш"
+msgstr "O'rnatilgan"
 
 #: src/MainWindow.vala:171 src/MainWindow.vala:350 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:84
@@ -59,32 +59,32 @@ msgstr "Дастурларни қидириш"
 
 #: src/Utils.vala:62 src/Core/ChangeInformation.vala:92
 msgid "Starting"
-msgstr ""
+msgstr "Ishga tushirilmoqda"
 
 #: src/Utils.vala:64 src/Core/ChangeInformation.vala:49
 #: src/Core/ChangeInformation.vala:64
 msgid "Waiting"
-msgstr ""
+msgstr "Kuting"
 
 #: src/Utils.vala:66
 msgid "Running"
-msgstr ""
+msgstr "Bajarilmoqda"
 
 #: src/Utils.vala:68
 msgid "Querying"
-msgstr ""
+msgstr "So'rov amalga oshirilmoqda"
 
 #: src/Utils.vala:70
 msgid "Getting information"
-msgstr ""
+msgstr "Ma'lumotlar olinmoqda"
 
 #: src/Utils.vala:72
 msgid "Removing packages"
-msgstr ""
+msgstr "Paketlarni o'chirish"
 
 #: src/Utils.vala:74
 msgid "Downloading"
-msgstr ""
+msgstr "Yuklanmoqda"
 
 #: src/Utils.vala:76 src/Core/FlatpakBackend.vala:910
 msgid "Installing"
@@ -92,173 +92,167 @@ msgstr "Ўрнатилмоқда"
 
 #: src/Utils.vala:78
 msgid "Refreshing software list"
-msgstr ""
+msgstr "Dasturlar ro'yxati yangilanmoqda"
 
 #: src/Utils.vala:80
 msgid "Installing updates"
-msgstr ""
+msgstr "Yangilanishlarni o'rnatish"
 
 #: src/Utils.vala:82
 msgid "Cleaning up packages"
-msgstr ""
+msgstr "Ilovalarni tozalash"
 
 #: src/Utils.vala:84
 msgid "Obsoleting packages"
-msgstr ""
+msgstr "Paketlarni almashtirish"
 
 #: src/Utils.vala:86
 msgid "Resolving dependencies"
-msgstr ""
+msgstr "Talab etiladigan paketlarni aniqlash"
 
 #: src/Utils.vala:88
 msgid "Checking signatures"
-msgstr ""
+msgstr "Imzolarni tekshirish"
 
 #: src/Utils.vala:90
 msgid "Testing changes"
-msgstr ""
+msgstr "O'zgarishlarni tekshirish"
 
 #: src/Utils.vala:92
 msgid "Committing changes"
-msgstr ""
+msgstr "O'zgarishlarni amalga oshirish"
 
 #: src/Utils.vala:94
 msgid "Requesting data"
-msgstr ""
+msgstr "Ma'lumotlarni so'rash"
 
 #: src/Utils.vala:96 src/Core/ChangeInformation.vala:71
 msgid "Finished"
-msgstr ""
+msgstr "Yakunlandi"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
 #: src/Core/FlatpakBackend.vala:919 src/Core/FlatpakBackend.vala:947
 #: src/Core/FlatpakBackend.vala:1025 src/Core/FlatpakBackend.vala:1161
 #: src/Core/FlatpakBackend.vala:1187
 msgid "Cancelling"
-msgstr ""
+msgstr "Bekor qilish"
 
 #: src/Utils.vala:100
 msgid "Downloading repository information"
-msgstr ""
+msgstr "Repozitoriyadan ma'lumotlar yuklab olinmoqda"
 
 #: src/Utils.vala:102
 msgid "Downloading list of packages"
-msgstr ""
+msgstr "Paketlar ro'yxatini yuklab olinmoqda"
 
 #: src/Utils.vala:104
 msgid "Downloading file lists"
-msgstr ""
+msgstr "Fayllar ro'yxati yuklab olinmoqda"
 
 #: src/Utils.vala:106
 msgid "Downloading lists of changes"
-msgstr ""
+msgstr "O'zgarishlar ro'yxati yuklab olinmoqda"
 
 #: src/Utils.vala:108
 msgid "Downloading groups"
-msgstr ""
+msgstr "Guruhlar yuklab olinmoqda"
 
 #: src/Utils.vala:110
 msgid "Downloading update information"
-msgstr ""
+msgstr "Yangilanishlar haqidagi ma'lumotlar yuklab olinmoqda"
 
 #: src/Utils.vala:112
 msgid "Repackaging files"
-msgstr ""
+msgstr "Fayllar qaytayig'ilmoqda"
 
 #: src/Utils.vala:114
 msgid "Loading cache"
-msgstr ""
+msgstr "Kesh yuklanmoqda"
 
 #: src/Utils.vala:116
 msgid "Scanning applications"
-msgstr ""
+msgstr "Ilovalarni skanerlash"
 
 #: src/Utils.vala:118
 msgid "Generating package lists"
-msgstr ""
+msgstr "Paketlar ro'yxatini yaratish"
 
 #: src/Utils.vala:120
 msgid "Waiting for package manager lock"
-msgstr ""
+msgstr "Paketlar menejeri bloklanishi kutilmoqda"
 
 #: src/Utils.vala:122
 msgid "Waiting for authentication"
-msgstr ""
+msgstr "Autentifikatsiyalash kutilmoqda"
 
 #: src/Utils.vala:124
 msgid "Updating running applications"
-msgstr ""
+msgstr "Ishga tushirilgan ilovalar yangilanmoqda"
 
 #: src/Utils.vala:126
 msgid "Checking applications in use"
-msgstr ""
+msgstr "Foydalaniladigan ilovalar tekshirilmoqda"
 
 #: src/Utils.vala:128
 msgid "Checking libraries in use"
-msgstr ""
+msgstr "Foydalaniladigan kutubxonalar tekshirilmoqda"
 
 #: src/Utils.vala:130
 msgid "Copying files"
-msgstr ""
+msgstr "Fayllar nusxalanmoqda"
 
 #: src/Utils.vala:132
 msgid "Unknown state"
-msgstr ""
+msgstr "Noma'lum holat"
 
 #: src/Core/Client.vala:72
 msgid "Update Available"
 msgid_plural "Updates Available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Mavjud yangilanishlar"
 
 #: src/Core/Client.vala:73
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Tizim uchun %u yangilanishlar mavjud"
 
 #: src/Core/FlatpakBackend.vala:1017
-#, fuzzy
-#| msgid "Installing"
 msgid "Uninstalling"
-msgstr "Ўрнатилмоқда"
+msgstr "O'chirish"
 
 #: src/Core/FlatpakBackend.vala:1022
 msgid "Finishing"
-msgstr ""
+msgstr "Yakunlanmoqda"
 
 #: src/Core/FlatpakBackend.vala:1152
-#, fuzzy
-#| msgid "Updates"
 msgid "Updating"
-msgstr "Янгиланишлар"
+msgstr "Yangilanishlar"
 
 #: src/Core/Package.vala:308
 #, c-format
 msgid "%s Developers"
-msgstr ""
+msgstr "%s ishlab chiquvchilar"
 
 #: src/Core/Package.vala:340
 msgid "elementary Updates"
-msgstr ""
+msgstr "elementary yangilanishlari"
 
 #: src/Core/Package.vala:342
 msgid "Ubuntu (non-curated)"
-msgstr ""
+msgstr "Ubuntu (non-curated)"
 
 #: src/Core/Package.vala:347
 #, c-format
 msgid "%s (system-wide)"
-msgstr ""
+msgstr "%s (tizim bo'ylab)"
 
 #: src/Core/Package.vala:352
 msgid "Ubuntu Drivers"
-msgstr ""
+msgstr "Ubuntu drayverlari"
 
 #: src/Core/Package.vala:355
 msgid "Unknown Origin (non-curated)"
-msgstr ""
+msgstr "Kelib chiqishi noma'lum (non-curated)"
 
 #: src/Core/Package.vala:532
 #, c-format
@@ -272,43 +266,43 @@ msgstr ""
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
-msgstr ""
+msgstr "Operatsion tizim yangilanishlari"
 
 #: src/Core/UpdateManager.vala:39
 msgid "Updates to system components"
-msgstr ""
+msgstr "Tizim komponentlari yangilanishlari"
 
 #: src/Core/UpdateManager.vala:87
 #, c-format
 msgid "Version: %s"
-msgstr ""
+msgstr "Talqin: %s"
 
 #: src/Core/UpdateManager.vala:118
 msgid "Flatpak runtime"
-msgstr ""
+msgstr "Flatpak runtime"
 
 #: src/Core/UpdateManager.vala:135
 msgid "No components with updates"
-msgstr ""
+msgstr "Yangilanishlar kerak bo'lgan ilovalar yo'q"
 
 #: src/Core/UpdateManager.vala:140
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
-msgstr[0] ""
+msgstr[0] "%u komponentlar uchun yangilanishlar bor"
 
 #: src/Core/UpdateManager.vala:142
 #, c-format
 msgid "%s:"
-msgstr ""
+msgstr "%s:"
 
 #: src/Core/UpdateManager.vala:181
 msgid "Restart Required"
-msgstr ""
+msgstr "Kompyuterni o'chirib yoqish talab etiladi"
 
 #: src/Core/UpdateManager.vala:182
 msgid "Please restart your system to finalize updates"
-msgstr ""
+msgstr "Yangilanishlarni yakunlash uchun, tizimni o'chirib yoqing"
 
 #: src/Dialogs/ContentWarningDialog.vala:25
 msgid "Content Warning"
@@ -331,27 +325,25 @@ msgstr ""
 #: src/Dialogs/ContentWarningDialog.vala:37
 #: src/Dialogs/NonCuratedWarningDialog.vala:81
 msgid "Don’t Install"
-msgstr ""
+msgstr "O'rnatmang"
 
 #: src/Dialogs/ContentWarningDialog.vala:38
 #: src/Dialogs/NonCuratedWarningDialog.vala:82
-#, fuzzy
 msgid "Install Anyway"
-msgstr "Ўрнатилмоқда"
+msgstr "Baribir o'rnatish"
 
 #: src/Dialogs/InstallFailDialog.vala:26
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
 msgstr ""
 
 #: src/Dialogs/InstallFailDialog.vala:37
-#, fuzzy
 msgid "Failed to install app"
-msgstr "Дастурларни топиш ва ўрнатиш"
+msgstr "Ilovani o'rnatishda xatolik yuz berdi"
 
 #: src/Dialogs/InstallFailDialog.vala:40
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to install “%s”"
-msgstr "Дастурларни топиш ва ўрнатиш"
+msgstr "“%s” ni o'rnatishda xatolik yuz berdi"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
 msgid "Non-Curated Warning"
@@ -532,9 +524,8 @@ msgid "Uninstalling this app may also delete its data."
 msgstr ""
 
 #: src/Dialogs/UninstallConfirmDialog.vala:35
-#, fuzzy
 msgid "Uninstall app?"
-msgstr "Дастурларни топиш ва ўрнатиш"
+msgstr "Ilova o'chirilsinmi?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:38
 #, c-format
@@ -551,9 +542,8 @@ msgid "This may have been caused by external or manually compiled software."
 msgstr ""
 
 #: src/Dialogs/UninstallFailDialog.vala:37
-#, fuzzy
 msgid "Failed to uninstall app"
-msgstr "Дастурларни топиш ва ўрнатиш"
+msgstr "Ilovani o'chirishda xatolik yuz berdi"
 
 #: src/Dialogs/UninstallFailDialog.vala:40
 #, c-format
@@ -581,9 +571,8 @@ msgid "Screenshot Not Available"
 msgstr ""
 
 #: src/Views/AppInfoView.vala:207
-#, fuzzy
 msgid "Homepage"
-msgstr "Уй саҳифасига"
+msgstr "Bosh sahifa"
 
 #: src/Views/AppInfoView.vala:213
 msgid "Suggest Translations"
@@ -617,9 +606,8 @@ msgstr ""
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
 #: src/Views/AppInfoView.vala:368
-#, fuzzy
 msgid "Free Software"
-msgstr "Дастур кодларини таҳрирлаш"
+msgstr "Erkin tarqatiladigan dasturlar"
 
 #. TRANSLATORS: Replace the link with the version for your language
 #: src/Views/AppInfoView.vala:371
@@ -803,9 +791,8 @@ msgstr ""
 
 #: src/Widgets/HumbleButton.vala:107
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:287
-#, fuzzy
 msgid "Install"
-msgstr "Ўрнатиш"
+msgstr "O'rnatish"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:141

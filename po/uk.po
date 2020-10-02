@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-29 01:49+0000\n"
-"PO-Revision-Date: 2020-09-17 01:14+0000\n"
+"PO-Revision-Date: 2020-09-20 09:14+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/uk/>\n"
@@ -82,7 +82,7 @@ msgstr "Виконання запиту"
 
 #: src/Utils.vala:70
 msgid "Getting information"
-msgstr "Отримання інформації"
+msgstr "Отримання відомостей"
 
 #: src/Utils.vala:72
 msgid "Removing packages"
@@ -145,7 +145,7 @@ msgstr "Скасування"
 
 #: src/Utils.vala:100
 msgid "Downloading repository information"
-msgstr "Звантаження інформації про сховище"
+msgstr "Звантаження відомостей про сховище"
 
 #: src/Utils.vala:102
 msgid "Downloading list of packages"
@@ -165,7 +165,7 @@ msgstr "Звантаження груп"
 
 #: src/Utils.vala:110
 msgid "Downloading update information"
-msgstr "Звантаження інформації про оновлення"
+msgstr "Звантаження відомостей про оновлення"
 
 #: src/Utils.vala:112
 msgid "Repackaging files"
@@ -412,7 +412,7 @@ msgstr "Скасувати"
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
 msgstr ""
-"Під час обробки картки сталася помилка. Будь-ласка, спробуйте пізніше. "
+"Під час обробки картки сталася помилка. Будь ласка, спробуйте пізніше. "
 "Перепрошуємо за незручності."
 
 #: src/Dialogs/StripeDialog.vala:42
@@ -547,7 +547,9 @@ msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:581
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr "PIN-код не правильний. Повторіть спробу, ввівши правильний PIN-код."
+msgstr ""
+"PIN-код не правильний. Будь ласка, повторіть спробу ввівши правильний "
+"PIN-код."
 
 #: src/Dialogs/StripeDialog.vala:583
 msgid "There has been too many PIN attempts. Please try again with a different card."
