@@ -106,6 +106,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         homepage.subview_entered.connect (view_opened);
         installed_view.subview_entered.connect (view_opened);
         search_view.subview_entered.connect (view_opened);
+        search_view.home_return_clicked.connect (show_homepage);
 
         unowned AppCenterCore.BackendAggregator client = AppCenterCore.BackendAggregator.get_default ();
         client.notify["working"].connect (() => {
@@ -390,5 +391,12 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
                 search_entry.sensitive = false;
             }
         }
+    }
+
+    private void show_homepage () {
+        search ("");
+        search_view.reset ();
+        stack.visible_child = homepage;
+        view_mode_revealer.reveal_child = true;
     }
 }
