@@ -1094,7 +1094,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         }
 
         if (user_updates.length > 0) {
-            run_user = false;
+            run_user = true;
             transactions++;
         }
 
@@ -1128,6 +1128,14 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         } catch (Error e) {
             critical ("Error creating transaction for flatpak updates: %s", e.message);
             return false;
+        }
+
+        try {
+            foreach (unowned string bundle_id in ids) {
+                transaction.add_update (bundle_id, null, null);
+            }
+        } catch (Error e) {
+            critical ("Error adding update to flatpak transaction: %s", e.message);
         }
 
         transaction.choose_remote_for_ref.connect ((@ref, runtime_ref, remotes) => {

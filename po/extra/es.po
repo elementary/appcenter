@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-21 19:09+0000\n"
-"PO-Revision-Date: 2020-07-25 17:12+0000\n"
+"PO-Revision-Date: 2020-09-17 01:14+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/extra/"
 "es/>\n"
@@ -325,11 +325,11 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:142
 msgid "Properly display proprietary licenses"
-msgstr "Mostrar correctamente las licencias propietarias"
+msgstr "Se muestran correctamente las licencias privativas"
 
 #: data/io.elementary.appcenter.appdata.xml.in:143
 msgid "Fix some layout issues"
-msgstr "Corrección de algunos problemas de diseño"
+msgstr "Se arreglaron algunos problemas de disposición"
 
 #: data/io.elementary.appcenter.appdata.xml.in:144
 msgid "Fix crashes"
@@ -341,7 +341,7 @@ msgstr "Correcciones del sistema de armado Meson"
 
 #: data/io.elementary.appcenter.appdata.xml.in:154
 msgid "Improve window state restoration"
-msgstr "Mejore la restauración de estado de las ventanas"
+msgstr "Se mejoró la restauración del estado de las ventanas"
 
 #: data/io.elementary.appcenter.appdata.xml.in:155
 msgid "Prevent action buttons from jumping around"
@@ -361,8 +361,8 @@ msgstr "Refinamientos de la gestión de memoria"
 msgid ""
 "Add conditional compilation for disabling dynamic remote homepage content"
 msgstr ""
-"Agregar compilación condicional para deshabilitar el contenido dinámico y "
-"remoto de la página de inicio"
+"Se añadió compilación condicional para desactivar el contenido dinámico y "
+"remoto de la página inicial"
 
 #: data/io.elementary.appcenter.appdata.xml.in:159
 #: data/io.elementary.appcenter.appdata.xml.in:171
@@ -382,15 +382,15 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:302
 #: data/io.elementary.appcenter.appdata.xml.in:312
 msgid "New translations"
-msgstr "Nuevas traducciones"
+msgstr "Traducciones nuevas"
 
 #: data/io.elementary.appcenter.appdata.xml.in:166
 msgid "New categories: Communication, Finance, Media Production"
-msgstr "Nuevas categorías: Comunicación, Finanzas, Producción de Medios"
+msgstr "Categorías nuevas: Comunicación, Finanzas, Producción multimedia"
 
 #: data/io.elementary.appcenter.appdata.xml.in:167
 msgid "Add Math to Science category"
-msgstr "Agregar Matemáticas a la categoría Ciencia"
+msgstr "Se añadió Matemáticas a la categoría Ciencia"
 
 #: data/io.elementary.appcenter.appdata.xml.in:168
 msgid "Relax email address validator"

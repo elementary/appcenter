@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-21 19:09+0000\n"
-"PO-Revision-Date: 2020-02-28 20:49+0000\n"
+"PO-Revision-Date: 2020-09-12 21:14+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/extra/"
 "mr/>\n"
@@ -39,23 +39,23 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:72
 #: data/io.elementary.appcenter.appdata.xml.in:89
 msgid "Fixes"
-msgstr ""
+msgstr "निराकारणे"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Ensure AppCenter is reopened at the correct position"
-msgstr ""
+msgstr "अ‍ॅप सेंटर योग्य ठिकाणी पुन्हा सुरू केले आहे याची खात्री करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
 msgid "Clicking the updates badge in the header navigates to the updates view"
 msgstr ""
+"शीर्षलेखातील अद्यतनांचा बॅज क्लिक करणे \"अद्ययावत करा\" दृश्यावर नेव्हिगेट "
+"करते"
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
 #: data/io.elementary.appcenter.appdata.xml.in:33
 #: data/io.elementary.appcenter.appdata.xml.in:46
-#, fuzzy
-#| msgid "Check for Updates"
 msgid "Minor updates"
-msgstr "अपडेट्ससाठी तपासा"
+msgstr "किरकोळ अद्यतने"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 #: data/io.elementary.appcenter.appdata.xml.in:36
@@ -70,6 +70,7 @@ msgstr "अद्ययावत भाषांतर"
 #: data/io.elementary.appcenter.appdata.xml.in:31
 msgid "Ensure all updatable Flatpak runtimes are listed for update"
 msgstr ""
+"अद्यतनासाठी सर्व अद्ययावत फ्लॅटपाक रनटाइम सूचीबद्ध असल्याचे सुनिश्चित करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
 #: data/io.elementary.appcenter.appdata.xml.in:56
@@ -79,35 +80,36 @@ msgstr "कार्यक्षमता सुधारणा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:42
 msgid "New features"
-msgstr ""
+msgstr "नवीन वैशिष्टये"
 
 #: data/io.elementary.appcenter.appdata.xml.in:44
 msgid "Perform updates without administrator permissions"
-msgstr ""
+msgstr "प्रशासकाच्या परवानगीशिवाय अद्यतने करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:48
 msgid "Ensure apps on the homepage are more reliably displayed"
 msgstr ""
+"मुख्यपृष्ठावरील अ‍ॅप्स अधिक विश्वासार्हपणे प्रदर्शित केल्याची खात्री करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:49
 msgid "More reliably set the Dock badge number"
-msgstr ""
+msgstr "अधिक विश्वसनीयरित्या डॉक बॅज क्रमांक सेट करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:58
 msgid ""
 "Only check for updates at device startup if it's more than 24 hours since we "
 "last checked"
 msgstr ""
+"आम्ही शेवटच्या वेळी तपासणी केल्यापासून 24 तासांपेक्षा जास्त वेळ असल्यास केवळ "
+"डिव्हाइस स्टार्टअपवरील अद्यतनांसाठी तपासणी करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:59
 msgid "Reduce slowdowns when opening certain apps"
-msgstr ""
+msgstr "विशिष्ट अ‍ॅप्‍स उघडताना येणारी मंदी कमी करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:61
-#, fuzzy
-#| msgid "Performance improvements"
 msgid "Extension improvements"
-msgstr "कार्यक्षमता सुधारणा"
+msgstr "विस्तार सुधारणा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:63
 msgid ""
