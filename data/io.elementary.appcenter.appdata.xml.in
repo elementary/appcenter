@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2015 elementary, LLC <contact@elementary.io> -->
+<!-- Copyright 2015–2020 elementary, Inc. <contact@elementary.io> -->
 <component type="desktop-application">
   <id>io.elementary.appcenter</id>
   <metadata_license>CC0-1.0</metadata_license>
