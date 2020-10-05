@@ -13,13 +13,20 @@
   <releases>
     <release version="3.5.0" date="2020-09-02" urgency="medium">
       <description>
-        <p>Fixes</p>
+        <p>New features</p>
         <ul>
           <li>Support system-wide Flatpak remotes</li>
-          <li>When apps are available from multiple sources, prefer Flatpak</li>
+        </ul>
+        <p>Fixes</p>
+        <ul>
+          <li>Fix Flatpak runtime updates getting stuck</li>
+          <li>Fix long origin comboboxes breaking the header layout</li>
         </ul>
         <p>Minor updates</p>
         <ul>
+          <li>When apps are available from multiple sources, prefer installed version, then prefer Flatpak</li>
+          <li>Improve search performance</li>
+          <li>Improve update badge styling and category styling</li>
           <li>Updated translations</li>
         </ul>
       </description>
