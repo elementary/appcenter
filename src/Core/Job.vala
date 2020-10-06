@@ -92,4 +92,5 @@ public class AppCenterCore.GetPackageDetailsArgs : JobArgs {
 
 public class AppCenterCore.LookupCodecsArgs : JobArgs {
     public string[] gstreamer_resources;
+    public Cancellable cancellable;
 }

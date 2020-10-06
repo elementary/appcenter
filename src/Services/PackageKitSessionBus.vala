@@ -24,10 +24,9 @@ public class PackageKitSessionBus : Object {
         string desktop_id,
         GLib.HashTable<string, Variant> platform_data
     ) throws GLib.Error {
-        var codecs = yield AppCenterCore.PackageKitBackend.get_default ().lookup_codecs (resources);
-        var packages = codecs.get_package_array ();
-        for (int i = 0; i < packages.length; i++) {
-            warning (packages[i].get_name ());
-        }
+        var notification = new Notification (_("Additional Multimedia Codecs Required"));
+        notification.set_body (_("Videos is requesting additional codecs"));
+        notification.set_default_action_and_target_value ("app.install-codecs", resources);
+        Application.get_default ().send_notification ("install-resources", notification);
     }
 }

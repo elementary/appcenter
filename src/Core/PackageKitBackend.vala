@@ -909,9 +909,10 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         return pk_package;
     }
 
-    public async Pk.Results lookup_codecs (string[] gstreamer_resources) throws GLib.Error {
+    public async Pk.Results lookup_codecs (string[] gstreamer_resources, Cancellable cancellable) throws GLib.Error {
         var job_args = new LookupCodecsArgs ();
         job_args.gstreamer_resources = gstreamer_resources;
+        job_args.cancellable = cancellable;
 
         var job = yield launch_job (Job.Type.LOOKUP_CODECS, job_args);
         if (job.error != null) {
@@ -924,6 +925,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
     private void lookup_codecs_internal (Job job) {
         var args = (LookupCodecsArgs)job.args;
         var resources = args.gstreamer_resources;
+        var cancellable = args.cancellable;
 
         string[] parsed_resources = {};
         foreach (var resource in resources) {
@@ -939,7 +941,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 
         Pk.Results? results = null;
         try {
-            results = client.what_provides (Pk.Bitfield.from_enums (Pk.Filter.ARCH), parsed_resources, null, (prog, type) => { });
+            results = client.what_provides (Pk.Bitfield.from_enums (Pk.Filter.ARCH), parsed_resources, cancellable, (prog, type) => { });
         } catch (Error e) {
             warning ("Error while looking up codec: %s", e.message);
         }

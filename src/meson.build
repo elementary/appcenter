@@ -20,6 +20,7 @@ appcenter_files = files(
     'Core/UpdateManager.vala',
     'Dialogs/ContentWarningDialog.vala',
     'Dialogs/InstallFailDialog.vala',
+    'Dialogs/InstallGStreamerPluginsDialog.vala',
     'Dialogs/NonCuratedWarningDialog.vala',
     'Dialogs/RestartDialog.vala',
     'Dialogs/StripeDialog.vala',
