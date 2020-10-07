@@ -108,12 +108,19 @@ namespace AppCenter.Views {
             if (name != null && current_search_term != null) {
                 var name_lower = name.down ();
                 var term_lower = current_search_term.down ();
-                if (name_lower.has_prefix (term_lower)) {
+
+                var term_position = name_lower.index_of (term_lower);
+
+                // App name starts with our search term, highest priority
+                if (term_position == 0) {
                     return 2;
-                } else if (name_lower.contains (term_lower)) {
+                // App name contains our search term, high priority
+                } else if (term_position != -1) {
                     return 1;
                 }
             }
+
+            // Otherwise, normal appstream search ranking order
             return 0;
         }
 

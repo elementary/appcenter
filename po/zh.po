@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-29 01:49+0000\n"
+"POT-Creation-Date: 2020-10-07 03:59+0000\n"
 "PO-Revision-Date: 2019-05-15 01:18+0000\n"
 "Last-Translator: Jimmy Sun <jimmysuncn@hotmail.com>\n"
 "Language-Team: Chinese <https://l10n.elementary.io/projects/appcenter/appcenter/zh/>\n"
@@ -32,11 +32,11 @@ msgstr "无法解析 %s 的文件类型"
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "未找到指定的链接'%s'，请使用搜索"
 
-#: src/Application.vala:272
+#: src/Application.vala:284
 msgid "Application installed"
 msgstr "应用程序已安装"
 
-#: src/Application.vala:273
+#: src/Application.vala:285
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s已被安装成功"
@@ -54,7 +54,7 @@ msgctxt "view"
 msgid "Installed"
 msgstr "正在安装"
 
-#: src/MainWindow.vala:171 src/MainWindow.vala:350 src/Views/SearchView.vala:54
+#: src/MainWindow.vala:177 src/MainWindow.vala:356 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:84
 msgid "Search Apps"
 msgstr "搜索应用"
@@ -134,8 +134,8 @@ msgstr "已完成"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
 #: src/Core/FlatpakBackend.vala:919 src/Core/FlatpakBackend.vala:947
-#: src/Core/FlatpakBackend.vala:1025 src/Core/FlatpakBackend.vala:1161
-#: src/Core/FlatpakBackend.vala:1187
+#: src/Core/FlatpakBackend.vala:1025 src/Core/FlatpakBackend.vala:1169
+#: src/Core/FlatpakBackend.vala:1195
 msgid "Cancelling"
 msgstr "正在取消"
 
@@ -230,7 +230,7 @@ msgstr "卸载"
 msgid "Finishing"
 msgstr "已完成"
 
-#: src/Core/FlatpakBackend.vala:1152
+#: src/Core/FlatpakBackend.vala:1160
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -701,7 +701,7 @@ msgstr "无结果"
 msgid "No apps could be found. Try changing search terms."
 msgstr "找不到应用。请更改搜索条件。"
 
-#: src/Views/AppListView.vala:160
+#: src/Views/AppListView.vala:167
 msgid "Non-Curated Apps"
 msgstr "非策略性应用程序"
 

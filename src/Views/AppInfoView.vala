@@ -342,7 +342,7 @@ namespace AppCenter.Views {
             header_grid.attach (image, 0, 0, 1, 3);
             header_grid.attach (package_name, 1, 0);
             header_grid.attach (package_author, 1, 1);
-            header_grid.attach (origin_combo_revealer, 1, 2);
+            header_grid.attach (origin_combo_revealer, 1, 2, 3);
             header_grid.attach (action_stack, 3, 0);
 
             if (!package.is_local) {

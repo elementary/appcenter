@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-29 01:49+0000\n"
+"POT-Creation-Date: 2020-10-07 03:59+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Bengali <https://l10n.elementary.io/projects/appcenter/appcenter/bn/>\n"
@@ -31,11 +31,11 @@ msgstr "কোনো ধরন নির্ধারিত হয়নি %s"
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "লিংকটি '%s' পাওয়া যাচ্ছে না, সার্চ করা হচ্ছে"
 
-#: src/Application.vala:272
+#: src/Application.vala:284
 msgid "Application installed"
 msgstr "অ্যাপলিকেশনটি ইনস্টল করা হয়েছে"
 
-#: src/Application.vala:273
+#: src/Application.vala:285
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s সফলভাবে ইনস্টল করা হয়েছে"
@@ -52,7 +52,7 @@ msgctxt "view"
 msgid "Installed"
 msgstr "ইনস্টল হয়েছে"
 
-#: src/MainWindow.vala:171 src/MainWindow.vala:350 src/Views/SearchView.vala:54
+#: src/MainWindow.vala:177 src/MainWindow.vala:356 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:84
 msgid "Search Apps"
 msgstr "অ্যাপ খুজুন"
@@ -132,8 +132,8 @@ msgstr "শেষ হয়েছে"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
 #: src/Core/FlatpakBackend.vala:919 src/Core/FlatpakBackend.vala:947
-#: src/Core/FlatpakBackend.vala:1025 src/Core/FlatpakBackend.vala:1161
-#: src/Core/FlatpakBackend.vala:1187
+#: src/Core/FlatpakBackend.vala:1025 src/Core/FlatpakBackend.vala:1169
+#: src/Core/FlatpakBackend.vala:1195
 msgid "Cancelling"
 msgstr "বাতিল করা হচ্ছে"
 
@@ -230,7 +230,7 @@ msgstr "ইনস্টল হচ্ছে"
 msgid "Finishing"
 msgstr "শেষ হয়েছে"
 
-#: src/Core/FlatpakBackend.vala:1152
+#: src/Core/FlatpakBackend.vala:1160
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -688,7 +688,7 @@ msgstr ""
 msgid "No apps could be found. Try changing search terms."
 msgstr ""
 
-#: src/Views/AppListView.vala:160
+#: src/Views/AppListView.vala:167
 msgid "Non-Curated Apps"
 msgstr ""
 

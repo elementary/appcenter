@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-29 01:49+0000\n"
+"POT-Creation-Date: 2020-10-07 03:59+0000\n"
 "PO-Revision-Date: 2017-06-16 17:37+0000\n"
 "Last-Translator: Rajeev Kumar <irajeevankumar@gmail.com>\n"
 "Language-Team: Tamil <https://l10n.elementary.io/projects/appcenter/appcenter/ta/>\n"
@@ -29,11 +29,11 @@ msgstr ""
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "குறிப்பிடப்பட்ட இணைப்பு '%s'  கண்டுபிடிக்க முடியவில்லை, அதற்கு பதிலாக தேடுகிறது"
 
-#: src/Application.vala:272
+#: src/Application.vala:284
 msgid "Application installed"
 msgstr "மென்பொருள் நிறுவப்பட்டது"
 
-#: src/Application.vala:273
+#: src/Application.vala:285
 #, fuzzy, c-format
 msgid "%s has been successfully installed"
 msgstr "% வெற்றிகரமாக நிறுவப்பட்டது"
@@ -51,7 +51,7 @@ msgctxt "view"
 msgid "Installed"
 msgstr "நிறுவுக"
 
-#: src/MainWindow.vala:171 src/MainWindow.vala:350 src/Views/SearchView.vala:54
+#: src/MainWindow.vala:177 src/MainWindow.vala:356 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:84
 msgid "Search Apps"
 msgstr "பயன்பாடுகளை தேடு"
@@ -131,8 +131,8 @@ msgstr "முடிந்தது"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
 #: src/Core/FlatpakBackend.vala:919 src/Core/FlatpakBackend.vala:947
-#: src/Core/FlatpakBackend.vala:1025 src/Core/FlatpakBackend.vala:1161
-#: src/Core/FlatpakBackend.vala:1187
+#: src/Core/FlatpakBackend.vala:1025 src/Core/FlatpakBackend.vala:1169
+#: src/Core/FlatpakBackend.vala:1195
 msgid "Cancelling"
 msgstr "ரத்து செய்யப்படுகிறது"
 
@@ -229,7 +229,7 @@ msgstr "நீக்குதல்"
 msgid "Finishing"
 msgstr "முடிந்தது"
 
-#: src/Core/FlatpakBackend.vala:1152
+#: src/Core/FlatpakBackend.vala:1160
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -699,7 +699,7 @@ msgstr "முடிவுகள் இல்லை"
 msgid "No apps could be found. Try changing search terms."
 msgstr "எந்த மென்பொருளும் கிடைக்கவில்லை. தேடல் சொற்களை மாற்ற முயற்சிக்கவும்."
 
-#: src/Views/AppListView.vala:160
+#: src/Views/AppListView.vala:167
 msgid "Non-Curated Apps"
 msgstr ""
 
