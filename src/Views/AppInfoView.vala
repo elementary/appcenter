@@ -49,6 +49,7 @@ namespace AppCenter.Views {
         private Widgets.ReleaseListBox release_list_box;
         private Widgets.SizeLabel size_label;
         private Hdy.CarouselIndicatorDots screenshot_switcher;
+        private ArrowButton screenshot_next;
 
         public bool to_recycle { public get; private set; default = false; }
 
@@ -93,7 +94,8 @@ namespace AppCenter.Views {
                     }
                 });
 
-                var screenshot_next = new ArrowButton ("go-next-symbolic", Gtk.Align.END);
+                screenshot_next = new ArrowButton ("go-next-symbolic", Gtk.Align.END);
+                screenshot_next.sensitive = false;
                 screenshot_next.clicked.connect (() => {
                     GLib.List<unowned Gtk.Widget> screenshot_children = app_screenshots.get_children ();
                     var index = app_screenshots.get_position ();
@@ -733,6 +735,7 @@ namespace AppCenter.Views {
                         if (number_of_screenshots > 1) {
                             screenshot_arrows.no_show_all = false;
                             screenshot_arrows.show_all ();
+                            screenshot_next.sensitive = true;
                         }
                     } else {
                         screenshot_stack.visible_child = app_screenshot_not_found;
