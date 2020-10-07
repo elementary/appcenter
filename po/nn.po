@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-29 01:49+0000\n"
+"POT-Creation-Date: 2020-10-07 03:59+0000\n"
 "PO-Revision-Date: 2020-07-04 12:12+0000\n"
 "Last-Translator: Martin Myrvold <myrvold.martin@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <https://l10n.elementary.io/projects/appcenter/appcenter/nn/>\n"
@@ -31,11 +31,11 @@ msgstr "Kunne ikkje tolke mediatypen %s"
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Lenka '%s vart ikkje funne. Prøv eit søk i staden"
 
-#: src/Application.vala:272
+#: src/Application.vala:284
 msgid "Application installed"
 msgstr "Applikasjonen er installert"
 
-#: src/Application.vala:273
+#: src/Application.vala:285
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s har blitt installert utan problem"
@@ -52,7 +52,7 @@ msgctxt "view"
 msgid "Installed"
 msgstr "Installerte"
 
-#: src/MainWindow.vala:171 src/MainWindow.vala:350 src/Views/SearchView.vala:54
+#: src/MainWindow.vala:177 src/MainWindow.vala:356 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:84
 msgid "Search Apps"
 msgstr "Søk etter applikasjonar"
@@ -132,8 +132,8 @@ msgstr "Ferdig"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
 #: src/Core/FlatpakBackend.vala:919 src/Core/FlatpakBackend.vala:947
-#: src/Core/FlatpakBackend.vala:1025 src/Core/FlatpakBackend.vala:1161
-#: src/Core/FlatpakBackend.vala:1187
+#: src/Core/FlatpakBackend.vala:1025 src/Core/FlatpakBackend.vala:1169
+#: src/Core/FlatpakBackend.vala:1195
 msgid "Cancelling"
 msgstr "Avbryt"
 
@@ -226,7 +226,7 @@ msgstr "Avinstaller"
 msgid "Finishing"
 msgstr "Gjer ferdig"
 
-#: src/Core/FlatpakBackend.vala:1152
+#: src/Core/FlatpakBackend.vala:1160
 msgid "Updating"
 msgstr "Oppdaterar"
 
@@ -680,7 +680,7 @@ msgstr "Ingen treff"
 msgid "No apps could be found. Try changing search terms."
 msgstr "Ingen appar vart funne. Prøv eit anna søk."
 
-#: src/Views/AppListView.vala:160
+#: src/Views/AppListView.vala:167
 msgid "Non-Curated Apps"
 msgstr "Applikasjonar som ikkje er bekrefta"
 
