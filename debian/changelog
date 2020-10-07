@@ -1,3 +1,21 @@
+appcenter (3.5.0) bionic; urgency=medium
+
+  * Release 3.5.0 (#1401)
+  * Optimise search rank algorithm (#1421)
+  * Fix badge color in dark style (#1408)
+  * AppInfoView: Fix layout for overly wide origin combobox (#1417)
+  * FlatpackBackend: avoid string copy for bundle_id (#1415)
+  * FlatpakBackend: Fix stuck updates issue (#1414)
+  * Styles: Add fallbacks for downstreams (#1411)
+  * build: bump appstream requirement (#1402)
+  * Update translation files
+  * Update translation template
+  * Support systemwide flatpaks (#1308)
+  * Sort package origins (#1319)
+  * AbstractPackageRowGrid: Move grid and info_grid to subclass (#1320)
+
+ -- elementary Builds Team <builds@elementary.io>  Wed, 07 Oct 2020 03:59:19 +0000
+
 appcenter (3.4.2) bionic; urgency=medium
 
   * Release 3.4.2 (#1388)
