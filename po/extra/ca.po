@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-07 03:59+0000\n"
-"PO-Revision-Date: 2020-07-22 08:13+0000\n"
+"PO-Revision-Date: 2020-10-08 06:57+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/extra/"
 "ca/>\n"
@@ -42,7 +42,7 @@ msgstr "Funcions noves"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Support system-wide Flatpak remotes"
-msgstr ""
+msgstr "Admet distància de Flatpak a tot el sistema."
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:36
@@ -55,10 +55,14 @@ msgstr "Correccions"
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "Fix Flatpak runtime updates getting stuck"
 msgstr ""
+"Correcció de les actualitzacions de temps d'execució de Flatpak que es "
+"quedaven blocades"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Fix long origin comboboxes breaking the header layout"
 msgstr ""
+"Correcció de les caselles d'origen llarg que trencaven el disseny de la "
+"capçalera"
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
 #: data/io.elementary.appcenter.appdata.xml.in:41
@@ -72,16 +76,17 @@ msgid ""
 "When apps are available from multiple sources, prefer installed version, "
 "then prefer Flatpak"
 msgstr ""
+"Quan les aplicacions estiguin disponibles en diverses fonts, es prefereix la "
+"versió instal·lada i després la de Flatpak."
 
 #: data/io.elementary.appcenter.appdata.xml.in:28
-#, fuzzy
-#| msgid "Bug fixes and improve performance."
 msgid "Improve search performance"
-msgstr "Correcció d'errors i millora del rendiment."
+msgstr "Millora del rendiment de la cerca"
 
 #: data/io.elementary.appcenter.appdata.xml.in:29
 msgid "Improve update badge styling and category styling"
 msgstr ""
+"Millora de l'estil de la insígnia d'actualització i l'estil de categoria"
 
 #: data/io.elementary.appcenter.appdata.xml.in:30
 #: data/io.elementary.appcenter.appdata.xml.in:43
