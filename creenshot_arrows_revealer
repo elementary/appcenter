@@ -1,0 +1,192 @@
+[1mdiff --git a/meson.build b/meson.build[m
+[1mindex dd2fbdce..0d525151 100644[m
+[1m--- a/meson.build[m
+[1m+++ b/meson.build[m
+[36m@@ -22,7 +22,7 @@[m [mglib = dependency ('glib-2.0')[m
+ gee = dependency ('gee-0.8')[m
+ gtk = dependency ('gtk+-3.0', version: '>=3.10')[m
+ granite = dependency ('granite', version: '>=5.2.5')[m
+[31m-handy = dependency('libhandy-0.0', version: '>=0.0.11')[m
+[32m+[m[32mhandy = dependency('libhandy-1')[m
+ packagekit = dependency ('packagekit-glib2')[m
+ appstream = dependency ('appstream', version: '>=0.12.10')[m
+ libsoup = dependency ('libsoup-2.4')[m
+[1mdiff --git a/src/Views/AppInfoView.vala b/src/Views/AppInfoView.vala[m
+[1mindex dec00948..0223f255 100644[m
+[1m--- a/src/Views/AppInfoView.vala[m
+[1m+++ b/src/Views/AppInfoView.vala[m
+[36m@@ -42,13 +42,13 @@[m [mnamespace AppCenter.Views {[m
+         private Gtk.ListStore origin_liststore;[m
+         private Gtk.Overlay screenshot_overlay;[m
+         private Gtk.Revealer origin_combo_revealer;[m
+[31m-        private Gtk.Stack app_screenshots;[m
+[32m+[m[32m        private Hdy.Carousel app_screenshots;[m
+         private Gtk.Stack screenshot_stack;[m
+         private Gtk.StyleContext stack_context;[m
+         private Gtk.TextView app_description;[m
+         private Widgets.ReleaseListBox release_list_box;[m
+         private Widgets.SizeLabel size_label;[m
+[31m-        private Widgets.Switcher screenshot_switcher;[m
+[32m+[m[32m        private Hdy.CarouselIndicatorDots screenshot_switcher;[m
+ [m
+         public bool to_recycle { public get; private set; default = false; }[m
+ [m
+[36m@@ -79,25 +79,26 @@[m [mnamespace AppCenter.Views {[m
+             screenshots = package_component.get_screenshots ();[m
+ [m
+             if (screenshots.length > 0) {[m
+[31m-                app_screenshots = new Gtk.Stack ();[m
+[31m-                app_screenshots.height_request = 500;[m
+[31m-                app_screenshots.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;[m
+[32m+[m[32m                app_screenshots = new Hdy.Carousel () {[m
+[32m+[m[32m                    height_request = 500[m
+[32m+[m[32m                };[m
+ [m
+                 var screenshot_previous = new ArrowButton ("go-previous-symbolic", Gtk.Align.START);[m
+[32m+[m[32m                screenshot_previous.no_show_all = true;[m
+                 screenshot_previous.clicked.connect (() => {[m
+                     GLib.List<unowned Gtk.Widget> screenshot_children = app_screenshots.get_children ();[m
+[31m-                    var index = screenshot_children.index (app_screenshots.visible_child);[m
+[32m+[m[32m                    var index = app_screenshots.get_position ();[m
+                     if (index > 0) {[m
+[31m-                        app_screenshots.visible_child = screenshot_children.nth_data (index - 1);[m
+[32m+[m[32m                        app_screenshots.scroll_to (screenshot_children.nth_data ((uint) index - 1));[m
+                     }[m
+                 });[m
+ [m
+                 var screenshot_next = new ArrowButton ("go-next-symbolic", Gtk.Align.END);[m
+                 screenshot_next.clicked.connect (() => {[m
+                     GLib.List<unowned Gtk.Widget> screenshot_children = app_screenshots.get_children ();[m
+[31m-                    var index = screenshot_children.index (app_screenshots.visible_child);[m
+[32m+[m[32m                    var index = app_screenshots.get_position ();[m
+                     if (index < screenshot_children.length () - 1) {[m
+[31m-                        app_screenshots.visible_child = screenshot_children.nth_data (index + 1);[m
+[32m+[m[32m                        app_screenshots.scroll_to (screenshot_children.nth_data ((uint) index + 1));[m
+                     }[m
+                 });[m
+ [m
+[36m@@ -105,7 +106,7 @@[m [mnamespace AppCenter.Views {[m
+                     screenshot_previous.sensitive = screenshot_next.sensitive = true;[m
+ [m
+                     GLib.List<unowned Gtk.Widget> screenshot_children = app_screenshots.get_children ();[m
+[31m-                    var index = screenshot_children.index (app_screenshots.visible_child);[m
+[32m+[m[32m                    var index = app_screenshots.get_position ();[m
+ [m
+                     if (index == 0) {[m
+                         screenshot_previous.sensitive = false;[m
+[36m@@ -114,20 +115,25 @@[m [mnamespace AppCenter.Views {[m
+                     }[m
+                 });[m
+ [m
+[31m-                screenshot_arrows = new Gtk.Grid ();[m
+[31m-                screenshot_arrows.add (screenshot_previous);[m
+[31m-                screenshot_arrows.add (screenshot_next);[m
+[31m-                screenshot_arrows.no_show_all = true;[m
+[32m+[m[32m                //screenshot_arrows = new Gtk.Grid ();[m
+[32m+[m[32m                //screenshot_arrows.add (screenshot_previous);[m
+[32m+[m[32m                //screenshot_arrows.add (screenshot_next);[m
+[32m+[m[32m                //screenshot_arrows.no_show_all = true;[m
+[32m+[m[32m             //   screenshot_arrow_previous = new Gtk.[m
+ [m
+                 var screenshot_arrows_revealer = new Gtk.Revealer ();[m
+                 screenshot_arrows_revealer.transition_type = Gtk.RevealerTransitionType.CROSSFADE;[m
+[31m-                screenshot_arrows_revealer.add (screenshot_arrows);[m
+[32m+[m[32m                screenshot_arrows_revealer.add (screenshot_previous);[m
+ [m
+                 screenshot_overlay = new Gtk.Overlay ();[m
+                 screenshot_overlay.add_events (Gdk.EventMask.ENTER_NOTIFY_MASK);[m
+                 screenshot_overlay.add_events (Gdk.EventMask.LEAVE_NOTIFY_MASK);[m
+[32m+[m[32m                //app_screenshots.notify[""].connect (() => {[m
+[32m+[m[41m                    [m
+[32m+[m[32m                //});[m
+                 screenshot_overlay.add (app_screenshots);[m
+                 screenshot_overlay.add_overlay (screenshot_arrows_revealer);[m
+[32m+[m[32m                screenshot_overlay.add_overlay (screenshot_next);[m
+ [m
+                 screenshot_overlay.enter_notify_event.connect (() => {[m
+                     screenshot_arrows_revealer.reveal_child = true;[m
+[36m@@ -143,9 +149,9 @@[m [mnamespace AppCenter.Views {[m
+                     return false;[m
+                 });[m
+ [m
+[31m-                screenshot_switcher = new Widgets.Switcher ();[m
+[31m-                screenshot_switcher.halign = Gtk.Align.CENTER;[m
+[31m-                screenshot_switcher.set_stack (app_screenshots);[m
+[32m+[m[32m                screenshot_switcher = new Hdy.CarouselIndicatorDots () {[m
+[32m+[m[32m                    carousel = app_screenshots[m
+[32m+[m[32m                };[m
+ [m
+                 var app_screenshot_spinner = new Gtk.Spinner ();[m
+                 app_screenshot_spinner.halign = Gtk.Align.CENTER;[m
+[36m@@ -330,15 +336,16 @@[m [mnamespace AppCenter.Views {[m
+                 header_grid.attach (size_label, 3, 1);[m
+             }[m
+ [m
+[31m-            var header_column = new Hdy.Column ();[m
+[31m-            header_column.margin = 24;[m
+[31m-            header_column.maximum_width = MAX_WIDTH;[m
+[31m-            header_column.add (header_grid);[m
+[32m+[m[32m            var header_clamp = new Hdy.Clamp () {[m
+[32m+[m[32m                margin = 24,[m
+[32m+[m[32m                maximum_size = MAX_WIDTH[m
+[32m+[m[32m            };[m
+[32m+[m[32m            header_clamp.add (header_grid);[m
+ [m
+             var header_box = new Gtk.Grid ();[m
+             header_box.get_style_context ().add_class ("banner");[m
+             header_box.hexpand = true;[m
+[31m-            header_box.add (header_column);[m
+[32m+[m[32m            header_box.add (header_clamp);[m
+ [m
+             var project_license = package.component.project_license;[m
+             if (project_license != null) {[m
+[36m@@ -413,15 +420,16 @@[m [mnamespace AppCenter.Views {[m
+ [m
+             content_grid.attach (links_grid, 1, 7);[m
+ [m
+[31m-            var body_column = new Hdy.Column ();[m
+[31m-            body_column.margin = 24;[m
+[31m-            body_column.maximum_width = MAX_WIDTH;[m
+[31m-            body_column.add (content_grid);[m
+[32m+[m[32m            var body_clamp = new Hdy.Clamp () {[m
+[32m+[m[32m                margin = 24,[m
+[32m+[m[32m                maximum_size = MAX_WIDTH[m
+[32m+[m[32m            };[m
+[32m+[m[32m            body_clamp.add (content_grid);[m
+ [m
+             var grid = new Gtk.Grid ();[m
+             grid.row_spacing = 12;[m
+             grid.attach (header_box, 0, 0, 1, 1);[m
+[31m-            grid.attach (body_column, 0, 1);[m
+[32m+[m[32m            grid.attach (body_clamp, 0, 1);[m
+ [m
+             if (package.author != null) {[m
+                 var other_apps_header = new Gtk.Label (_("Other Apps by %s").printf (package.author_title));[m
+[36m@@ -438,13 +446,14 @@[m [mnamespace AppCenter.Views {[m
+                 other_apps_grid.add (other_apps_header);[m
+                 other_apps_grid.add (other_apps_carousel);[m
+ [m
+[31m-                var other_apps_column = new Hdy.Column ();[m
+[31m-                other_apps_column.margin = 24;[m
+[31m-                other_apps_column.maximum_width = MAX_WIDTH;[m
+[31m-                other_apps_column.add (other_apps_grid);[m
+[32m+[m[32m                var other_apps_clamp = new Hdy.Clamp () {[m
+[32m+[m[32m                    margin = 24,[m
+[32m+[m[32m                    maximum_size = MAX_WIDTH[m
+[32m+[m[32m                };[m
+[32m+[m[32m                other_apps_clamp.add (other_apps_grid);[m
+ [m
+                 var other_apps_bar = new Gtk.Grid ();[m
+[31m-                other_apps_bar.add (other_apps_column);[m
+[32m+[m[32m                other_apps_bar.add (other_apps_clamp);[m
+ [m
+                 unowned Gtk.StyleContext other_apps_style_context = other_apps_bar.get_style_context ();[m
+                 other_apps_style_context.add_class (Gtk.STYLE_CLASS_TOOLBAR);[m
+[36m@@ -699,7 +708,6 @@[m [mnamespace AppCenter.Views {[m
+                     if (number_of_screenshots > 0) {[m
+                         screenshot_stack.visible_child = screenshot_overlay;[m
+                         stack_context.remove_class ("loading");[m
+[31m-                        screenshot_switcher.update_selected ();[m
+ [m
+                         if (number_of_screenshots > 1) {[m
+                             screenshot_arrows.no_show_all = false;[m
