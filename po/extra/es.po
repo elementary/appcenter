@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-07 03:59+0000\n"
-"PO-Revision-Date: 2020-09-17 01:14+0000\n"
+"PO-Revision-Date: 2020-10-08 06:57+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/extra/"
 "es/>\n"
@@ -42,7 +42,7 @@ msgstr "Funcionalidades nuevas"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Support system-wide Flatpak remotes"
-msgstr ""
+msgstr "Se admiten repositorios remotos Flatpak para todo el sistema"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:36
@@ -54,7 +54,7 @@ msgstr "Correcciones"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "Fix Flatpak runtime updates getting stuck"
-msgstr ""
+msgstr "Ya no se atascan las actualizaciones de entorno de ejecución de Flatpak"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Fix long origin comboboxes breaking the header layout"
@@ -74,10 +74,8 @@ msgid ""
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:28
-#, fuzzy
-#| msgid "Bug fixes and improve performance."
 msgid "Improve search performance"
-msgstr "Correcciones de errores y mejora de rendimiento."
+msgstr "Se mejoró el rendimiento de las búsquedas"
 
 #: data/io.elementary.appcenter.appdata.xml.in:29
 msgid "Improve update badge styling and category styling"
