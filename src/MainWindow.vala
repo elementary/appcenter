@@ -136,8 +136,14 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         homepage_view_id = view_mode.append_text (_("Home"));
         installed_view_id = view_mode.append_text (C_("view", "Installed"));
 
+        var badge_provider = new Gtk.CssProvider ();
+        badge_provider.load_from_resource ("io/elementary/appcenter/badge.css");
+
         updates_badge = new Gtk.Label ("!");
-        updates_badge.get_style_context ().add_class ("badge");
+
+        unowned Gtk.StyleContext badge_context = updates_badge.get_style_context ();
+        badge_context.add_class ("badge");
+        badge_context.add_provider (badge_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         var eventbox_badge = new Gtk.EventBox ();
         eventbox_badge.add (updates_badge);

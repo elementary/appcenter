@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-29 01:49+0000\n"
+"POT-Creation-Date: 2020-10-07 03:59+0000\n"
 "PO-Revision-Date: 2016-11-24 12:37+0000\n"
 "Last-Translator: Waqar Ahmed <waqar.17a@gmail.com>\n"
 "Language-Team: \n"
@@ -29,11 +29,11 @@ msgstr ""
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr ""
 
-#: src/Application.vala:272
+#: src/Application.vala:284
 msgid "Application installed"
 msgstr "ایپ نصب کر دی گئی"
 
-#: src/Application.vala:273
+#: src/Application.vala:285
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "پیکج %s کامیابی کے ساتھ انسٹال کر دیا گیا ہے"
@@ -50,7 +50,7 @@ msgctxt "view"
 msgid "Installed"
 msgstr "نصب شُدہ"
 
-#: src/MainWindow.vala:171 src/MainWindow.vala:350 src/Views/SearchView.vala:54
+#: src/MainWindow.vala:177 src/MainWindow.vala:356 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:84
 msgid "Search Apps"
 msgstr "اطلاقیےتلاش کریں"
@@ -130,8 +130,8 @@ msgstr "ختم شد"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
 #: src/Core/FlatpakBackend.vala:919 src/Core/FlatpakBackend.vala:947
-#: src/Core/FlatpakBackend.vala:1025 src/Core/FlatpakBackend.vala:1161
-#: src/Core/FlatpakBackend.vala:1187
+#: src/Core/FlatpakBackend.vala:1025 src/Core/FlatpakBackend.vala:1169
+#: src/Core/FlatpakBackend.vala:1195
 msgid "Cancelling"
 msgstr "منسوخ کیا جا رھا ھے"
 
@@ -228,7 +228,7 @@ msgstr "غیر تنصیب"
 msgid "Finishing"
 msgstr "ختم شد"
 
-#: src/Core/FlatpakBackend.vala:1152
+#: src/Core/FlatpakBackend.vala:1160
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -693,7 +693,7 @@ msgstr "کو نتائج نہیں"
 msgid "No apps could be found. Try changing search terms."
 msgstr "کو اطلاقیہ نہیں ملا۔ کسی اور لفظ سے تلاش کریں۔"
 
-#: src/Views/AppListView.vala:160
+#: src/Views/AppListView.vala:167
 #, fuzzy
 msgid "Non-Curated Apps"
 msgstr "کوءی ایپلِی کیشن نہیں"
