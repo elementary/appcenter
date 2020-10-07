@@ -35,7 +35,6 @@ namespace AppCenter.Views {
 
         private Gtk.ComboBox origin_combo;
         private Gtk.Grid release_grid;
-        private Gtk.Grid screenshot_arrows;
         private Gtk.Label app_screenshot_not_found;
         private Gtk.Label package_summary;
         private Gtk.ListBox extension_box;
@@ -50,6 +49,7 @@ namespace AppCenter.Views {
         private Widgets.SizeLabel size_label;
         private Hdy.CarouselIndicatorDots screenshot_switcher;
         private ArrowButton screenshot_next;
+        private ArrowButton screenshot_previous;
 
         public bool to_recycle { public get; private set; default = false; }
 
@@ -84,8 +84,10 @@ namespace AppCenter.Views {
                     height_request = 500
                 };
 
-                var screenshot_previous = new ArrowButton ("go-previous-symbolic", Gtk.Align.START);
-                screenshot_previous.sensitive = false;
+                screenshot_previous = new ArrowButton ("go-previous-symbolic", Gtk.Align.START) {
+                    sensitive = false,
+                    no_show_all = true
+                };
                 screenshot_previous.clicked.connect (() => {
                     GLib.List<unowned Gtk.Widget> screenshot_children = app_screenshots.get_children ();
                     var index = app_screenshots.get_position ();
@@ -94,8 +96,9 @@ namespace AppCenter.Views {
                     }
                 });
 
-                screenshot_next = new ArrowButton ("go-next-symbolic", Gtk.Align.END);
-                screenshot_next.sensitive = false;
+                screenshot_next = new ArrowButton ("go-next-symbolic", Gtk.Align.END) {
+                    no_show_all = true
+                };
                 screenshot_next.clicked.connect (() => {
                     GLib.List<unowned Gtk.Widget> screenshot_children = app_screenshots.get_children ();
                     var index = app_screenshots.get_position ();
@@ -733,9 +736,10 @@ namespace AppCenter.Views {
                         stack_context.remove_class ("loading");
 
                         if (number_of_screenshots > 1) {
-                            screenshot_arrows.no_show_all = false;
-                            screenshot_arrows.show_all ();
-                            screenshot_next.sensitive = true;
+                            screenshot_next.no_show_all = false;
+                            screenshot_next.show_all ();
+                            screenshot_previous.no_show_all = false;
+                            screenshot_previous.show_all ();
                         }
                     } else {
                         screenshot_stack.visible_child = app_screenshot_not_found;
