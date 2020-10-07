@@ -84,6 +84,7 @@ namespace AppCenter.Views {
                 };
 
                 var screenshot_previous = new ArrowButton ("go-previous-symbolic", Gtk.Align.START);
+                screenshot_previous.sensitive = false;
                 screenshot_previous.clicked.connect (() => {
                     GLib.List<unowned Gtk.Widget> screenshot_children = app_screenshots.get_children ();
                     var index = app_screenshots.get_position ();
@@ -101,7 +102,7 @@ namespace AppCenter.Views {
                     }
                 });
 
-                app_screenshots.child_switched.connect ((index) => {
+                app_screenshots.page_changed.connect ((index) => {
                     screenshot_previous.sensitive = screenshot_next.sensitive = true;
 
                     GLib.List<unowned Gtk.Widget> screenshot_children = app_screenshots.get_children ();
