@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-07 03:59+0000\n"
+"POT-Creation-Date: 2020-10-08 15:53+0000\n"
 "PO-Revision-Date: 2019-11-15 21:24+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/appcenter/appcenter/pl/>\n"
@@ -291,15 +291,15 @@ msgstr "Aktualizacje elementów systemu"
 msgid "Version: %s"
 msgstr "Wersja: %s"
 
-#: src/Core/UpdateManager.vala:118
+#: src/Core/UpdateManager.vala:130
 msgid "Flatpak runtime"
 msgstr "Biblioteka uruchomieniowa Flatpak"
 
-#: src/Core/UpdateManager.vala:135
+#: src/Core/UpdateManager.vala:147
 msgid "No components with updates"
 msgstr "Brak komponentów z aktualizacjami"
 
-#: src/Core/UpdateManager.vala:140
+#: src/Core/UpdateManager.vala:152
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
@@ -307,16 +307,16 @@ msgstr[0] "Jeden komponent z aktualizacją"
 msgstr[1] "%u komponenty z aktualizacją"
 msgstr[2] "%u komponentów z aktualizacją"
 
-#: src/Core/UpdateManager.vala:142
+#: src/Core/UpdateManager.vala:154
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:181
+#: src/Core/UpdateManager.vala:193
 msgid "Restart Required"
 msgstr "Wymagane ponowne uruchomienie"
 
-#: src/Core/UpdateManager.vala:182
+#: src/Core/UpdateManager.vala:194
 msgid "Please restart your system to finalize updates"
 msgstr "Uruchom ponownie system, aby dokończyć aktualizacje"
 
