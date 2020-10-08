@@ -1,3 +1,18 @@
+appcenter (3.5.1) bionic; urgency=medium
+
+  * Release 3.5.1 (#1429)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+  * Update io.elementary.appcenter.appdata.xml.in
+  * Correctly display names of flatpak runtimes in OS updates (#1428)
+  * BackendAggregator: Re-use component ID (#1427)
+  * Update translation files
+  * Update translation files
+  * Update translation template
+
+ -- elementary Builds Team <builds@elementary.io>  Thu, 08 Oct 2020 17:28:12 +0000
+
 appcenter (3.5.0) bionic; urgency=medium
 
   * Release 3.5.0 (#1401)
