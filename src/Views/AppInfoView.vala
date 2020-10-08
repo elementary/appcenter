@@ -84,7 +84,7 @@ namespace AppCenter.Views {
                     height_request = 500
                 };
 
-                screenshot_previous = new ArrowButton ("go-previous-symbolic", Gtk.Align.START) {
+                screenshot_previous = new ArrowButton ("go-previous-symbolic") {
                     sensitive = false,
                     no_show_all = true
                 };
@@ -96,7 +96,7 @@ namespace AppCenter.Views {
                     }
                 });
 
-                screenshot_next = new ArrowButton ("go-next-symbolic", Gtk.Align.END) {
+                screenshot_next = new ArrowButton ("go-next-symbolic") {
                     no_show_all = true
                 };
                 screenshot_next.clicked.connect (() => {
@@ -876,9 +876,8 @@ namespace AppCenter.Views {
         private class ArrowButton : Gtk.Button {
             private static Gtk.CssProvider arrow_provider;
 
-            public ArrowButton (string icon_name, Gtk.Align halign) {
+            public ArrowButton (string icon_name) {
                 Object (
-                    halign: halign,
                     image: new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.LARGE_TOOLBAR)
                 );
             }
