@@ -749,7 +749,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         return "%s/%s/%s".printf (installation, origin, bundle_id);
     }
 
-    private bool get_package_list_key_parts (string key, out bool? system, out string? origin, out string? bundle_id) {
+    public static bool get_package_list_key_parts (string key, out bool? system, out string? origin, out string? bundle_id) {
         system = null;
         origin = null;
         bundle_id = null;
