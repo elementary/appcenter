@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-07 03:59+0000\n"
-"PO-Revision-Date: 2020-07-24 13:12+0000\n"
+"PO-Revision-Date: 2020-10-08 06:57+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/extra/"
 "ja/>\n"
@@ -41,7 +41,7 @@ msgstr "新機能"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Support system-wide Flatpak remotes"
-msgstr ""
+msgstr "全ユーザーが利用可能な Flatpak リモートに対応"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:36
@@ -53,11 +53,11 @@ msgstr "修正点"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "Fix Flatpak runtime updates getting stuck"
-msgstr ""
+msgstr "Flatpak ランタイムのアップデートが固まる不具合を修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Fix long origin comboboxes breaking the header layout"
-msgstr ""
+msgstr "提供元を選択するコンボボックスのテキストが長い場合に、ヘッダーのレイアウトが崩れる不具合を修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
 #: data/io.elementary.appcenter.appdata.xml.in:41
@@ -70,17 +70,15 @@ msgstr "軽微なアップデート"
 msgid ""
 "When apps are available from multiple sources, prefer installed version, "
 "then prefer Flatpak"
-msgstr ""
+msgstr "アプリが複数の提供元から利用可能な場合、まずインストールされたバージョンを選択し、その次に Flatpak バージョンを選択するように修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:28
-#, fuzzy
-#| msgid "Bug fixes and improve performance."
 msgid "Improve search performance"
-msgstr "バグ修正とパフォーマンスの改善。"
+msgstr "検索のパフォーマンスを改善"
 
 #: data/io.elementary.appcenter.appdata.xml.in:29
 msgid "Improve update badge styling and category styling"
-msgstr ""
+msgstr "アップデート数を表示するバッジのスタイルと、カテゴリーのスタイルを改善"
 
 #: data/io.elementary.appcenter.appdata.xml.in:30
 #: data/io.elementary.appcenter.appdata.xml.in:43
