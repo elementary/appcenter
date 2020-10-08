@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-07 03:59+0000\n"
-"PO-Revision-Date: 2020-07-28 14:12+0000\n"
+"PO-Revision-Date: 2020-10-08 13:21+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
 "extra/pt/>\n"
@@ -42,7 +42,7 @@ msgstr "Novas funcionalidades"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Support system-wide Flatpak remotes"
-msgstr ""
+msgstr "Suporte a Flatpak remotos em todo o sistema"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:36
@@ -55,10 +55,13 @@ msgstr "Correções"
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "Fix Flatpak runtime updates getting stuck"
 msgstr ""
+"Corrige as atualizações do tempo de execução Flatpak de ficarem bloqueadas"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Fix long origin comboboxes breaking the header layout"
 msgstr ""
+"Corrige as caixas de combinação de origem comprida de quebrar a disposição "
+"do cabeçalho"
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
 #: data/io.elementary.appcenter.appdata.xml.in:41
@@ -72,16 +75,16 @@ msgid ""
 "When apps are available from multiple sources, prefer installed version, "
 "then prefer Flatpak"
 msgstr ""
+"Quando as aplicações estão disponíveis em várias fontes, dê preferência à "
+"versão instalada e, a seguir, ao Flatpak"
 
 #: data/io.elementary.appcenter.appdata.xml.in:28
-#, fuzzy
-#| msgid "Bug fixes and improve performance."
 msgid "Improve search performance"
-msgstr "Correção de problemas e melhorar o desempenho."
+msgstr "Melhora o desempenho da pesquisa"
 
 #: data/io.elementary.appcenter.appdata.xml.in:29
 msgid "Improve update badge styling and category styling"
-msgstr ""
+msgstr "Melhora o estilo do emblema de atualização e estilo da categoria"
 
 #: data/io.elementary.appcenter.appdata.xml.in:30
 #: data/io.elementary.appcenter.appdata.xml.in:43
