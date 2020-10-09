@@ -6,9 +6,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-08 15:53+0000\n"
-"PO-Revision-Date: 2020-09-03 18:13+0000\n"
+"PO-Revision-Date: 2020-10-10 13:25+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
-"Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/appcenter/pt/>\n"
+"Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/pt/>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -242,7 +243,7 @@ msgstr "Atualizações do elementary"
 
 #: src/Core/Package.vala:342
 msgid "Ubuntu (non-curated)"
-msgstr "Ubuntu (não-categorizado)"
+msgstr "Ubuntu (não categorizada)"
 
 #: src/Core/Package.vala:347
 #, c-format
@@ -255,7 +256,7 @@ msgstr "Drivers Ubuntu"
 
 #: src/Core/Package.vala:355
 msgid "Unknown Origin (non-curated)"
-msgstr "Origem desconhecida (não-categorizada)"
+msgstr "Origem desconhecida (não categorizada)"
 
 #: src/Core/Package.vala:532
 #, c-format
@@ -351,11 +352,11 @@ msgstr "Falha ao instalar “%s”"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
 msgid "Non-Curated Warning"
-msgstr "Aviso de não-categorizada"
+msgstr "Aviso de não categorizada"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:37
 msgid "Install non-curated app?"
-msgstr "Instalar aplicação não-categorizada?"
+msgstr "Instalar aplicação não categorizada?"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
@@ -372,7 +373,7 @@ msgstr "Pode aceder ou alterar o sistema ou ficheiros pessoais sem autorização
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
 msgid "Show non-curated warnings"
-msgstr "Mostrar avisos de não-categorizadas"
+msgstr "Mostrar avisos de não categorizadas"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
