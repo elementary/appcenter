@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-08 15:53+0000\n"
-"PO-Revision-Date: 2020-10-08 13:21+0000\n"
+"PO-Revision-Date: 2020-10-10 13:25+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
 "extra/pt/>\n"
@@ -47,6 +47,8 @@ msgstr "Correções"
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Correctly display names of Flatpak runtime updates"
 msgstr ""
+"Mostrar corretamente os nomes das atualizações de tempo de execução do "
+"Flatpak"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:37
@@ -202,19 +204,19 @@ msgstr "Utiliza definições de proxy de rede configuradas para operações apt"
 
 #: data/io.elementary.appcenter.appdata.xml.in:107
 msgid "No longer prompt for approval to update non-curated apps"
-msgstr "Já não solicita a aprovação para atualizar aplicações não-curadas"
+msgstr "Já não solicita a aprovação para atualizar aplicações não categorizadas"
 
 #: data/io.elementary.appcenter.appdata.xml.in:108
 msgid ""
 "Ensure the OS updates subheading copy is correct after finishing updates"
 msgstr ""
 "Certifique-se de que a cópia do subtítulo de atualização do SO está correta "
-"após a conclusão das actualizações"
+"após a conclusão das atualizações"
 
 #: data/io.elementary.appcenter.appdata.xml.in:109
 msgid "Ellipsize long app names in App Info views"
 msgstr ""
-"Elipsar nomes longos de aplicações nas visualizações da informação da "
+"Elipsar nomes compridos de aplicações nas visualizações da informação da "
 "aplicação"
 
 #: data/io.elementary.appcenter.appdata.xml.in:111
@@ -319,7 +321,7 @@ msgstr "Adiciona suporte para aplicações Flatpak"
 
 #: data/io.elementary.appcenter.appdata.xml.in:165
 msgid "Warn about non-curated apps"
-msgstr "Avisa sobre aplicações não curadas"
+msgstr "Avisa sobre aplicações não categorizadas"
 
 #: data/io.elementary.appcenter.appdata.xml.in:166
 msgid "Show an error dialog if an installation fails"
