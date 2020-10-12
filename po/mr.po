@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-29 01:49+0000\n"
-"PO-Revision-Date: 2020-05-27 18:11+0000\n"
+"POT-Creation-Date: 2020-10-08 15:53+0000\n"
+"PO-Revision-Date: 2020-09-12 21:14+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/appcenter/mr/>\n"
 "Language: mr\n"
@@ -31,11 +31,11 @@ msgstr "मीडिया टाईप %s पार्स होऊ शकल�
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "दिलेली लिंक '%s ' मिळाली नाही, त्याऐवजी शोध सुरु आहे"
 
-#: src/Application.vala:272
+#: src/Application.vala:284
 msgid "Application installed"
 msgstr "अनुप्रयोग स्थापित झाला"
 
-#: src/Application.vala:273
+#: src/Application.vala:285
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s यशस्वीरित्या इन्स्टॉल झाले"
@@ -52,7 +52,7 @@ msgctxt "view"
 msgid "Installed"
 msgstr "प्रस्थापित"
 
-#: src/MainWindow.vala:171 src/MainWindow.vala:350 src/Views/SearchView.vala:54
+#: src/MainWindow.vala:177 src/MainWindow.vala:356 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:84
 msgid "Search Apps"
 msgstr "अनुप्रयोग शोधा"
@@ -132,8 +132,8 @@ msgstr "पूर्ण झाले"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
 #: src/Core/FlatpakBackend.vala:919 src/Core/FlatpakBackend.vala:947
-#: src/Core/FlatpakBackend.vala:1025 src/Core/FlatpakBackend.vala:1161
-#: src/Core/FlatpakBackend.vala:1187
+#: src/Core/FlatpakBackend.vala:1025 src/Core/FlatpakBackend.vala:1169
+#: src/Core/FlatpakBackend.vala:1195
 msgid "Cancelling"
 msgstr "रद्द करीत आहे"
 
@@ -226,7 +226,7 @@ msgstr "विस्थापित करीत आहे"
 msgid "Finishing"
 msgstr "पूर्ण करीत आहे"
 
-#: src/Core/FlatpakBackend.vala:1152
+#: src/Core/FlatpakBackend.vala:1160
 msgid "Updating"
 msgstr "अद्ययावत (अपडेट) करीत आहे"
 
@@ -246,7 +246,7 @@ msgstr "उबंटू (नॉन-क्युरेटेड)"
 #: src/Core/Package.vala:347
 #, c-format
 msgid "%s (system-wide)"
-msgstr ""
+msgstr "%s (सिस्टम-व्यापी)"
 
 #: src/Core/Package.vala:352
 msgid "Ubuntu Drivers"
@@ -279,31 +279,31 @@ msgstr "सिस्टिमच्या भागांचे अपडेट�
 msgid "Version: %s"
 msgstr "आवृत्ती: %s"
 
-#: src/Core/UpdateManager.vala:118
+#: src/Core/UpdateManager.vala:130
 msgid "Flatpak runtime"
 msgstr "फ्लॅटपॅक रनटाइम"
 
-#: src/Core/UpdateManager.vala:135
+#: src/Core/UpdateManager.vala:147
 msgid "No components with updates"
 msgstr "कोणत्याही भागांचे अपडेट्स उपलब्ध नाहीत"
 
-#: src/Core/UpdateManager.vala:140
+#: src/Core/UpdateManager.vala:152
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "%u अपडेट्स उपलब्ध असलेला भाग"
 msgstr[1] "%u अपडेट्स उपलब्ध असलेले भाग"
 
-#: src/Core/UpdateManager.vala:142
+#: src/Core/UpdateManager.vala:154
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:181
+#: src/Core/UpdateManager.vala:193
 msgid "Restart Required"
 msgstr "पुन्हा सुरु करणे आवश्यक"
 
-#: src/Core/UpdateManager.vala:182
+#: src/Core/UpdateManager.vala:194
 msgid "Please restart your system to finalize updates"
 msgstr "अपडेट्सना अंतिम स्वरूप देण्यासाठी कृपया आपली सिस्टिम पुन्हा सुरु करा"
 
@@ -680,7 +680,7 @@ msgstr "परिणाम नाहीत"
 msgid "No apps could be found. Try changing search terms."
 msgstr "कोणतेही अॅप्स सापडले नाहीत. शोध संज्ञा बदलण्याचा प्रयत्न करा."
 
-#: src/Views/AppListView.vala:160
+#: src/Views/AppListView.vala:167
 msgid "Non-Curated Apps"
 msgstr "नॉन-क्युरेटेड अॅप्स"
 
