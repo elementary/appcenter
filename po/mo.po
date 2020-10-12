@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-29 01:49+0000\n"
+"POT-Creation-Date: 2020-10-08 15:53+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Moldovan <https://l10n.elementary.io/projects/appcenter/appcenter/mo/>\n"
@@ -28,11 +28,11 @@ msgstr ""
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Linkul specificat '%s' nu a putut fi găsit, în loc de căutare"
 
-#: src/Application.vala:272
+#: src/Application.vala:284
 msgid "Application installed"
 msgstr "Aplicația este instalată"
 
-#: src/Application.vala:273
+#: src/Application.vala:285
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s a fost instalat cu succes"
@@ -50,7 +50,7 @@ msgctxt "view"
 msgid "Installed"
 msgstr "Instalare"
 
-#: src/MainWindow.vala:171 src/MainWindow.vala:350 src/Views/SearchView.vala:54
+#: src/MainWindow.vala:177 src/MainWindow.vala:356 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:84
 msgid "Search Apps"
 msgstr "Căutare Apps"
@@ -130,8 +130,8 @@ msgstr "Terminat"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
 #: src/Core/FlatpakBackend.vala:919 src/Core/FlatpakBackend.vala:947
-#: src/Core/FlatpakBackend.vala:1025 src/Core/FlatpakBackend.vala:1161
-#: src/Core/FlatpakBackend.vala:1187
+#: src/Core/FlatpakBackend.vala:1025 src/Core/FlatpakBackend.vala:1169
+#: src/Core/FlatpakBackend.vala:1195
 msgid "Cancelling"
 msgstr "Anulare"
 
@@ -236,7 +236,7 @@ msgstr "Dezinstalați"
 msgid "Finishing"
 msgstr "Terminat"
 
-#: src/Core/FlatpakBackend.vala:1152
+#: src/Core/FlatpakBackend.vala:1160
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -293,15 +293,15 @@ msgstr "Actualizări ale componentelor sistemului"
 msgid "Version: %s"
 msgstr "Versiune:%s"
 
-#: src/Core/UpdateManager.vala:118
+#: src/Core/UpdateManager.vala:130
 msgid "Flatpak runtime"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:135
+#: src/Core/UpdateManager.vala:147
 msgid "No components with updates"
 msgstr "Nu există componente cu actualizări"
 
-#: src/Core/UpdateManager.vala:140
+#: src/Core/UpdateManager.vala:152
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
@@ -312,16 +312,16 @@ msgstr[1] ""
 "2\n"
 "%u componente cu actualizări"
 
-#: src/Core/UpdateManager.vala:142
+#: src/Core/UpdateManager.vala:154
 #, c-format
 msgid "%s:"
 msgstr "%s :"
 
-#: src/Core/UpdateManager.vala:181
+#: src/Core/UpdateManager.vala:193
 msgid "Restart Required"
 msgstr "Restart necesar"
 
-#: src/Core/UpdateManager.vala:182
+#: src/Core/UpdateManager.vala:194
 msgid "Please restart your system to finalize updates"
 msgstr "Reporniți-vă sistemul pentru a finaliza actualizările"
 
@@ -710,7 +710,7 @@ msgstr "Fără rezultate"
 msgid "No apps could be found. Try changing search terms."
 msgstr "Nu s-au găsit aplicații. Încercați să modificați termenii de căutare."
 
-#: src/Views/AppListView.vala:160
+#: src/Views/AppListView.vala:167
 msgid "Non-Curated Apps"
 msgstr "Aplicații suspecte"
 

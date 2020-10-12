@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-29 01:49+0000\n"
+"POT-Creation-Date: 2020-10-08 15:53+0000\n"
 "PO-Revision-Date: 2018-06-21 00:08+0000\n"
 "Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
 "Language-Team: Hungarian <https://weblate.elementary.io/projects/appcenter/appcenter/hu/>\n"
@@ -29,11 +29,11 @@ msgstr ""
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "A(z) '%s' hivatkozás nem található, keresés helyette"
 
-#: src/Application.vala:272
+#: src/Application.vala:284
 msgid "Application installed"
 msgstr "Alkalmazás telepítve"
 
-#: src/Application.vala:273
+#: src/Application.vala:285
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "A(z) %s sikeresen telepítésre került"
@@ -51,7 +51,7 @@ msgctxt "view"
 msgid "Installed"
 msgstr "Telepítés"
 
-#: src/MainWindow.vala:171 src/MainWindow.vala:350 src/Views/SearchView.vala:54
+#: src/MainWindow.vala:177 src/MainWindow.vala:356 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:84
 msgid "Search Apps"
 msgstr "Alkalmazások keresése"
@@ -131,8 +131,8 @@ msgstr "Befejeződött"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
 #: src/Core/FlatpakBackend.vala:919 src/Core/FlatpakBackend.vala:947
-#: src/Core/FlatpakBackend.vala:1025 src/Core/FlatpakBackend.vala:1161
-#: src/Core/FlatpakBackend.vala:1187
+#: src/Core/FlatpakBackend.vala:1025 src/Core/FlatpakBackend.vala:1169
+#: src/Core/FlatpakBackend.vala:1195
 msgid "Cancelling"
 msgstr "Megszakítás"
 
@@ -229,7 +229,7 @@ msgstr "Eltávolítás"
 msgid "Finishing"
 msgstr "Befejeződött"
 
-#: src/Core/FlatpakBackend.vala:1152
+#: src/Core/FlatpakBackend.vala:1160
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -286,31 +286,31 @@ msgstr "Rendszerösszetevők frissítése"
 msgid "Version: %s"
 msgstr "Verzió: %s"
 
-#: src/Core/UpdateManager.vala:118
+#: src/Core/UpdateManager.vala:130
 msgid "Flatpak runtime"
 msgstr ""
 
-#: src/Core/UpdateManager.vala:135
+#: src/Core/UpdateManager.vala:147
 msgid "No components with updates"
 msgstr "Nincsenek frissíthető összetevők"
 
-#: src/Core/UpdateManager.vala:140
+#: src/Core/UpdateManager.vala:152
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "%u frissíthető összetevő"
 msgstr[1] "%u frissíthető összetevő"
 
-#: src/Core/UpdateManager.vala:142
+#: src/Core/UpdateManager.vala:154
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:181
+#: src/Core/UpdateManager.vala:193
 msgid "Restart Required"
 msgstr "Újraindítás szükséges"
 
-#: src/Core/UpdateManager.vala:182
+#: src/Core/UpdateManager.vala:194
 msgid "Please restart your system to finalize updates"
 msgstr "Indítsa újra a rendszert a frissítések véglegesítéséhez"
 
@@ -701,7 +701,7 @@ msgstr "Nincs találat"
 msgid "No apps could be found. Try changing search terms."
 msgstr "Nem találhatók alkalmazások. Próbálja megváltoztatni a keresési kifejezéseket."
 
-#: src/Views/AppListView.vala:160
+#: src/Views/AppListView.vala:167
 msgid "Non-Curated Apps"
 msgstr "Nem válogatott alkalmazások"
 
