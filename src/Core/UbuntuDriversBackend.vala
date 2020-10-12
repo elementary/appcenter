@@ -18,6 +18,11 @@
  */
 
 public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
+
+    public bool working { public get; protected set; }
+
+    private Gee.TreeSet<Package>? cached_packages = null;
+
     private async bool get_drivers_output (Cancellable? cancellable = null, out string? output = null) {
         output = null;
         string? drivers_exec_path = Environment.find_program_in_path ("ubuntu-drivers");
@@ -37,14 +42,15 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
     }
 
     public async Gee.Collection<Package> get_installed_applications (Cancellable? cancellable = null) {
-        var driver_list = new Gee.TreeSet<Package> ();
-        string? command_output;
-        var result = yield get_drivers_output (cancellable, out command_output);
-        if (!result || command_output == null || cancellable.is_cancelled ()) {
-            return driver_list;
+        if (cached_packages != null) {
+            return cached_packages;
         }
 
-        string[] tokens = command_output.split ("\n");
+        working = true;
+
+        cached_packages = new Gee.TreeSet<Package> ();
+        var tokens = AppCenter.App.settings.get_strv ("cached-drivers");
+
         for (int i = 0; i < tokens.length; i++) {
             if (cancellable.is_cancelled ()) {
                 break;
@@ -54,6 +60,12 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
             if (package_name.strip () == "") {
                 continue;
             }
+
+            // ubuntu-drivers returns lines like the following for dkms packages:
+            // backport-iwlwifi-dkms, (kernel modules provided by backport-iwlwifi-dkms)
+            // we only want the bit before the comma
+            string[] parts = package_name.split (",");
+            package_name = parts[0];
 
             var driver_component = new AppStream.Component ();
             driver_component.set_kind (AppStream.ComponentKind.DRIVER);
@@ -66,15 +78,20 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
             driver_component.add_icon (icon);
 
             var package = new Package (this, driver_component);
-            if (package.installed) {
-                package.mark_installed ();
-                package.update_state ();
+            try {
+                if (yield is_package_installed (package)) {
+                    package.mark_installed ();
+                    package.update_state ();
+                }
+            } catch (Error e) {
+                warning ("Unable to check if driver is installed: %s", e.message);
             }
 
-            driver_list.add (package);
+            cached_packages.add (package);
         }
 
-        return driver_list;
+        working = false;
+        return cached_packages;
     }
 
     public Gee.Collection<Package> get_applications_for_category (AppStream.Category category) {
@@ -93,6 +110,10 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
         return null;
     }
 
+    public Gee.Collection<Package> get_packages_for_component_id (string id) {
+        return new Gee.ArrayList<Package> ();
+    }
+
     public Package? get_package_for_desktop_id (string id) {
         return null;
     }
@@ -101,8 +122,8 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
         return new Gee.ArrayList<Package> ();
     }
 
-    public async uint64 get_download_size (Package package, Cancellable? cancellable) throws GLib.Error {
-        return yield PackageKitBackend.get_default ().get_download_size (package, cancellable);
+    public async uint64 get_download_size (Package package, Cancellable? cancellable, bool is_update = false) throws GLib.Error {
+        return yield PackageKitBackend.get_default ().get_download_size (package, cancellable, is_update);
     }
 
     public async bool is_package_installed (Package package) throws GLib.Error {
@@ -114,19 +135,40 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
     }
 
     public async bool refresh_cache (Cancellable? cancellable) throws GLib.Error {
+        working = true;
+        string? command_output;
+        var result = yield get_drivers_output (cancellable, out command_output);
+        if (!result || command_output == null || cancellable.is_cancelled ()) {
+            working = false;
+            return false;
+        }
+
+        string[] tokens = command_output.split ("\n");
+        string[] pkgnames = {};
+        foreach (unowned string token in tokens) {
+            if (token.strip () != "") {
+                pkgnames += token;
+            }
+        }
+
+        AppCenter.App.settings.set_strv ("cached-drivers", pkgnames);
+
+        working = false;
         return true;
     }
 
     public async bool install_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
-        return yield PackageKitBackend.get_default ().install_package (package, cb, cancellable);
+        cached_packages = null;
+        return yield PackageKitBackend.get_default ().install_package (package, (owned)cb, cancellable);
     }
 
     public async bool remove_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
-        return yield PackageKitBackend.get_default ().remove_package (package, cb, cancellable);
+        cached_packages = null;
+        return yield PackageKitBackend.get_default ().remove_package (package, (owned)cb, cancellable);
     }
 
     public async bool update_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
-        return yield PackageKitBackend.get_default ().update_package (package, cb, cancellable);
+        return yield PackageKitBackend.get_default ().update_package (package, (owned)cb, cancellable);
     }
 
     private static GLib.Once<UbuntuDriversBackend> instance;

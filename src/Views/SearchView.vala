@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2014-2015 elementary LLC. (https://elementary.io)
+ * Copyright (c) 2014-2020 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -47,6 +46,7 @@ public class AppCenter.Views.SearchView : View {
             if (previous_package != null) {
                 show_package (previous_package);
             } else {
+                transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
                 set_visible_child (app_list_view);
                 viewing_package = false;
 
@@ -67,16 +67,19 @@ public class AppCenter.Views.SearchView : View {
         current_category = category;
 
         app_list_view.clear ();
+        app_list_view.current_search_term = current_search_term;
         unowned Client client = Client.get_default ();
 
+        Gee.Collection<Package> found_apps;
+
         if (mimetype) {
-            var found_apps = client.search_applications_mime (current_search_term);
+            found_apps = client.search_applications_mime (current_search_term);
             app_list_view.add_packages (found_apps);
         } else {
-            var found_apps = client.search_applications (current_search_term, current_category);
+            found_apps = client.search_applications (current_search_term, current_category);
             app_list_view.add_packages (found_apps);
         }
-        
+
         if (current_category != null) {
             subview_entered (_("Search Apps"), true, current_category.name);
         } else {

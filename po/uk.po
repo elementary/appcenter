@@ -1,232 +1,221 @@
+# Andrii Priadko <mendeleev.ua@gmail.com>, 2019, 2020.
+# Denis Papushaev <denqxotl@gmail.com>, 2019.
+# Andrii Alforov <andrevpost@gmail.com>, 2019.
+# Daniel Foré <daniel@elementary.io>, 2019.
+# pandreyko <andrii.pavloshchuk@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-17 11:14-0700\n"
-"PO-Revision-Date: 2017-09-11 20:46+0000\n"
-"Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
-"Language-Team: Ukrainian <https://weblate.elementary.io/projects/appcenter/"
-"appcenter/uk/>\n"
+"POT-Creation-Date: 2020-08-29 01:49+0000\n"
+"PO-Revision-Date: 2020-03-22 13:09+0000\n"
+"Last-Translator: Andrii Priadko <mendeleev.ua@gmail.com>\n"
+"Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/appcenter/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.16\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38
+#: src/Application.vala:38 src/Core/Package.vala:338
 msgid "AppCenter"
 msgstr "Центр програм"
 
-#: src/Application.vala:106
+#: src/Application.vala:112
 #, c-format
-msgid "Could not parse mimetype %s"
-msgstr ""
+msgid "Could not parse the media type %s"
+msgstr "Не вдалось визначити MIME тип %s"
 
-#: src/Application.vala:126
+#: src/Application.vala:132
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Вказане посилання «%s» не знайдено, пошук заміни"
 
-#: src/Application.vala:264
+#: src/Application.vala:272
 msgid "Application installed"
 msgstr "Додаток встановлено"
 
-#: src/Application.vala:265
+#: src/Application.vala:273
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s був успішно встановлений"
 
-#: src/Application.vala:277
-#, fuzzy, c-format
-msgid "There Was An Error Installing %s."
-msgstr "Помилка встановлення %s"
-
-#: src/MainWindow.vala:157 src/Views/Homepage.vala:277
-#: src/Views/Homepage.vala:286 src/Views/Homepage.vala:291
-#: src/Views/Homepage.vala:302
+#: src/MainWindow.vala:136 src/Views/Homepage.vala:297
+#: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
+#: src/Views/Homepage.vala:325
 msgid "Home"
-msgstr "Домашня сторінка"
+msgstr "Головна"
 
-#: src/MainWindow.vala:158 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:137 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 msgctxt "view"
 msgid "Installed"
 msgstr "Встановлені"
 
-#: src/MainWindow.vala:185 src/MainWindow.vala:348 src/Views/SearchView.vala:54
-#: src/Views/SearchView.vala:81
+#: src/MainWindow.vala:171 src/MainWindow.vala:350 src/Views/SearchView.vala:54
+#: src/Views/SearchView.vala:84
 msgid "Search Apps"
 msgstr "Шукати додатки"
 
-#: src/MainWindow.vala:203
-#, fuzzy
-msgid "Network Is Not Available"
-msgstr "Скріншот недоступний"
-
-#: src/MainWindow.vala:204
-msgid "Connect to the Internet to install or update apps."
-msgstr ""
-
-#: src/MainWindow.vala:207
-msgid "Network Settings…"
-msgstr ""
-
-#: src/Core/ChangeInformation.vala:63
+#: src/Utils.vala:62 src/Core/ChangeInformation.vala:92
 msgid "Starting"
 msgstr "Запускається"
 
-#: src/Core/ChangeInformation.vala:65
+#: src/Utils.vala:64 src/Core/ChangeInformation.vala:49
+#: src/Core/ChangeInformation.vala:64
 msgid "Waiting"
 msgstr "Очікування"
 
-#: src/Core/ChangeInformation.vala:67
+#: src/Utils.vala:66
 msgid "Running"
 msgstr "Виконання"
 
-#: src/Core/ChangeInformation.vala:69
+#: src/Utils.vala:68
 msgid "Querying"
 msgstr "Виконання запиту"
 
-#: src/Core/ChangeInformation.vala:71
+#: src/Utils.vala:70
 msgid "Getting information"
 msgstr "Отримання інформації"
 
-#: src/Core/ChangeInformation.vala:73
+#: src/Utils.vala:72
 msgid "Removing packages"
 msgstr "Вилучення пакунків"
 
-#: src/Core/ChangeInformation.vala:75
+#: src/Utils.vala:74
 msgid "Downloading"
 msgstr "Завантаження"
 
-#: src/Core/ChangeInformation.vala:77
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:910
 msgid "Installing"
 msgstr "Встановлення"
 
-#: src/Core/ChangeInformation.vala:79
+#: src/Utils.vala:78
 msgid "Refreshing software list"
 msgstr "Оновлення списку програм"
 
-#: src/Core/ChangeInformation.vala:81
+#: src/Utils.vala:80
 msgid "Installing updates"
 msgstr "Встановлення оновлень"
 
-#: src/Core/ChangeInformation.vala:83
+#: src/Utils.vala:82
 msgid "Cleaning up packages"
 msgstr "Вилучення зайвих пакунків"
 
-#: src/Core/ChangeInformation.vala:85
+#: src/Utils.vala:84
 msgid "Obsoleting packages"
 msgstr "Вилучення застарілих пакунків"
 
-#: src/Core/ChangeInformation.vala:87
+#: src/Utils.vala:86
 msgid "Resolving dependencies"
 msgstr "Розв’язання залежностей"
 
-#: src/Core/ChangeInformation.vala:89
+#: src/Utils.vala:88
 msgid "Checking signatures"
 msgstr "Перевірка підписів"
 
-#: src/Core/ChangeInformation.vala:91
+#: src/Utils.vala:90
 msgid "Testing changes"
 msgstr "Випробування змін"
 
-#: src/Core/ChangeInformation.vala:93
+#: src/Utils.vala:92
 msgid "Committing changes"
 msgstr "Застосування змін"
 
-#: src/Core/ChangeInformation.vala:95
+#: src/Utils.vala:94
 msgid "Requesting data"
 msgstr "Запит данних"
 
-#: src/Core/ChangeInformation.vala:97
+#: src/Utils.vala:96 src/Core/ChangeInformation.vala:71
 msgid "Finished"
 msgstr "Завершено"
 
-#: src/Core/ChangeInformation.vala:99
+#: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
+#: src/Core/FlatpakBackend.vala:919 src/Core/FlatpakBackend.vala:947
+#: src/Core/FlatpakBackend.vala:1025 src/Core/FlatpakBackend.vala:1161
+#: src/Core/FlatpakBackend.vala:1187
 msgid "Cancelling"
 msgstr "Скасування"
 
-#: src/Core/ChangeInformation.vala:101
+#: src/Utils.vala:100
 msgid "Downloading repository information"
 msgstr "Звантаження інформації про сховище"
 
-#: src/Core/ChangeInformation.vala:103
+#: src/Utils.vala:102
 msgid "Downloading list of packages"
 msgstr "Звантаження списку пакунків"
 
-#: src/Core/ChangeInformation.vala:105
+#: src/Utils.vala:104
 msgid "Downloading file lists"
 msgstr "Звантаження списків файлів"
 
-#: src/Core/ChangeInformation.vala:107
+#: src/Utils.vala:106
 msgid "Downloading lists of changes"
 msgstr "Звантаження списків змін"
 
-#: src/Core/ChangeInformation.vala:109
+#: src/Utils.vala:108
 msgid "Downloading groups"
 msgstr "Звантаження груп"
 
-#: src/Core/ChangeInformation.vala:111
+#: src/Utils.vala:110
 msgid "Downloading update information"
 msgstr "Звантаження інформації про оновлення"
 
-#: src/Core/ChangeInformation.vala:113
+#: src/Utils.vala:112
 msgid "Repackaging files"
 msgstr "Перепакування файлів"
 
-#: src/Core/ChangeInformation.vala:115
+#: src/Utils.vala:114
 msgid "Loading cache"
 msgstr "Завантаження кешу"
 
-#: src/Core/ChangeInformation.vala:117
+#: src/Utils.vala:116
 msgid "Scanning applications"
 msgstr "Пошук програм"
 
-#: src/Core/ChangeInformation.vala:119
+#: src/Utils.vala:118
 msgid "Generating package lists"
 msgstr "Створення списків пакунків"
 
-#: src/Core/ChangeInformation.vala:121
+#: src/Utils.vala:120
 msgid "Waiting for package manager lock"
 msgstr "Очікування на блокування менеджера пакунків"
 
-#: src/Core/ChangeInformation.vala:123
+#: src/Utils.vala:122
 msgid "Waiting for authentication"
 msgstr "Очікується завершення автентифікації"
 
-#: src/Core/ChangeInformation.vala:125
+#: src/Utils.vala:124
 msgid "Updating running applications"
 msgstr "Оновлення списку запущенний програм"
 
-#: src/Core/ChangeInformation.vala:127
+#: src/Utils.vala:126
 msgid "Checking applications in use"
 msgstr "Виявлення програм, що використовуються"
 
-#: src/Core/ChangeInformation.vala:129
+#: src/Utils.vala:128
 msgid "Checking libraries in use"
 msgstr "Виявлення бібліотек, що використовуються"
 
-#: src/Core/ChangeInformation.vala:131
+#: src/Utils.vala:130
 msgid "Copying files"
 msgstr "Копіювання файлів"
 
-#: src/Core/ChangeInformation.vala:133
+#: src/Utils.vala:132
 msgid "Unknown state"
 msgstr "Невідомий стан"
 
-#: src/Core/Client.vala:100
+#: src/Core/Client.vala:72
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Оновлення доступне"
 msgstr[1] "Оновлення доступні"
 msgstr[2] "Оновлень доступно"
 
-#: src/Core/Client.vala:101
+#: src/Core/Client.vala:73
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
@@ -234,10 +223,60 @@ msgstr[0] "%u оновлення доступне для вашої систем
 msgstr[1] "%u оновлення доступні для вашої системи"
 msgstr[2] "%u оновлень доступно для вашої системи"
 
-#: src/Core/Package.vala:248
-#, fuzzy, c-format
+#: src/Core/FlatpakBackend.vala:1017
+#, fuzzy
+#| msgid "Uninstall"
+msgid "Uninstalling"
+msgstr "Вилучити"
+
+#: src/Core/FlatpakBackend.vala:1022
+#, fuzzy
+#| msgid "Finished"
+msgid "Finishing"
+msgstr "Завершено"
+
+#: src/Core/FlatpakBackend.vala:1152
+#, fuzzy
+#| msgid "Update"
+msgid "Updating"
+msgstr "Оновлення"
+
+#: src/Core/Package.vala:308
+#, c-format
 msgid "%s Developers"
-msgstr "Розробники %s"
+msgstr "%s Розробників"
+
+#: src/Core/Package.vala:340
+msgid "elementary Updates"
+msgstr "Оновлення elementary OS"
+
+#: src/Core/Package.vala:342
+msgid "Ubuntu (non-curated)"
+msgstr "Ubuntu (не курований)"
+
+#: src/Core/Package.vala:347
+#, c-format
+msgid "%s (system-wide)"
+msgstr ""
+
+#: src/Core/Package.vala:352
+msgid "Ubuntu Drivers"
+msgstr "Драйвери Ubuntu"
+
+#: src/Core/Package.vala:355
+msgid "Unknown Origin (non-curated)"
+msgstr "Невідоме походження (не курований)"
+
+#: src/Core/Package.vala:532
+#, c-format
+msgid "Application state not set as installed in AppCenter for package: %s"
+msgstr "Статус додатку не встановлено як інстальований в Центрі програм для пакету: %s"
+
+#: src/Core/PackageKitBackend.vala:272
+#, fuzzy, c-format
+#| msgid "%s (non-curated)"
+msgid "%s (local)"
+msgstr "%s (не курований)"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -247,66 +286,116 @@ msgstr "Оновлення Операційної Системи"
 msgid "Updates to system components"
 msgstr "Оновлення системних компонетів"
 
-#: src/Core/UpdateManager.vala:76
+#: src/Core/UpdateManager.vala:87
 #, c-format
 msgid "Version: %s"
-msgstr ""
+msgstr "Версія: %s"
 
-#: src/Core/UpdateManager.vala:82
+#: src/Core/UpdateManager.vala:118
+msgid "Flatpak runtime"
+msgstr "Час виконання Flatpak"
+
+#: src/Core/UpdateManager.vala:135
 msgid "No components with updates"
-msgstr ""
+msgstr "Компоненти з оновленнями відсутні"
 
-#: src/Core/UpdateManager.vala:86
+#: src/Core/UpdateManager.vala:140
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%u компонент з оновленнями"
+msgstr[1] "%u компоненти з оновленнями"
+msgstr[2] "%u компонентів з оновленнями"
 
-#: src/Core/UpdateManager.vala:88
+#: src/Core/UpdateManager.vala:142
 #, c-format
 msgid "%s:"
-msgstr ""
+msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:129
+#: src/Core/UpdateManager.vala:181
 msgid "Restart Required"
 msgstr "Потрібно перезапуск"
 
-#: src/Core/UpdateManager.vala:130
+#: src/Core/UpdateManager.vala:182
 msgid "Please restart your system to finalize updates"
 msgstr "Будь-ласка, перезавантажте систему для завершення оновлення"
 
-#: src/Dialogs/ContentWarningDialog.vala:27
+#: src/Dialogs/ContentWarningDialog.vala:25
 msgid "Content Warning"
-msgstr ""
+msgstr "Попередження про вміст"
 
-#: src/Dialogs/ContentWarningDialog.vala:32
+#: src/Dialogs/ContentWarningDialog.vala:30
 #, c-format
-msgid "%s Contains Explicit Content"
-msgstr ""
+msgid "“%s” contains explicit content"
+msgstr "%s містить контент для дорослих"
+
+#: src/Dialogs/ContentWarningDialog.vala:31
+#, c-format
+msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
+msgstr "“%s” може мати вразливий чи тривожний вміст, або такий, що призначений лише для дорослих. Elementary як правило не переглядає та не схвалює вміст цього додатку."
 
 #: src/Dialogs/ContentWarningDialog.vala:33
-#, c-format
-msgid ""
-"%s may contain content only suitable for adults or that may be sensitive or "
-"disturbing. In general, elementary does not review or endorse the contents "
-"of this app."
-msgstr ""
-
-#: src/Dialogs/ContentWarningDialog.vala:35
 msgid "Show content warnings"
+msgstr "Показати попередження про вміст"
+
+#: src/Dialogs/ContentWarningDialog.vala:37
+#: src/Dialogs/NonCuratedWarningDialog.vala:81
+msgid "Don’t Install"
+msgstr "Не встановлювати"
+
+#: src/Dialogs/ContentWarningDialog.vala:38
+#: src/Dialogs/NonCuratedWarningDialog.vala:82
+msgid "Install Anyway"
+msgstr "Встановити у будь якому випадку"
+
+#: src/Dialogs/InstallFailDialog.vala:26
+#, fuzzy
+#| msgid "This may have been caused by external or manually compiled software."
+msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
+msgstr "Це може бути викликано програмним забезпеченням встановленим шляхом використання зовнішніх джерел або вручну."
+
+#: src/Dialogs/InstallFailDialog.vala:37
+#, fuzzy
+#| msgid "Failed to uninstall app"
+msgid "Failed to install app"
+msgstr "Не вдалося видалити додаток"
+
+#: src/Dialogs/InstallFailDialog.vala:40
+#, fuzzy, c-format
+#| msgid "Failed to uninstall “%s”"
+msgid "Failed to install “%s”"
+msgstr "Помилка при видаленні “%s”"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:27
+#, fuzzy
+#| msgid "Content Warning"
+msgid "Non-Curated Warning"
+msgstr "Попередження про вміст"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:37
+#, fuzzy
+#| msgid "%s (non-curated)"
+msgid "Install non-curated app?"
+msgstr "%s (не курований)"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:38
+#, c-format
+msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
 msgstr ""
 
-#: src/Dialogs/ContentWarningDialog.vala:40
-#, fuzzy
-msgid "Don’t Install"
-msgstr "Встановити"
+#: src/Dialogs/NonCuratedWarningDialog.vala:47
+msgid "It may not receive bug fix or feature updates"
+msgstr ""
 
-#: src/Dialogs/ContentWarningDialog.vala:41
+#: src/Dialogs/NonCuratedWarningDialog.vala:60
+msgid "It may access or change system or personal files without permission"
+msgstr ""
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:66
 #, fuzzy
-msgid "Install Anyway"
-msgstr "Встановлення"
+#| msgid "Show content warnings"
+msgid "Show non-curated warnings"
+msgstr "Показати попередження про вміст"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -322,15 +411,13 @@ msgstr "Перезавантажити"
 
 #: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
 #: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:205
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
 msgid "Cancel"
 msgstr "Скасувати"
 
 #: src/Dialogs/StripeDialog.vala:41
-msgid ""
-"An error occurred while processing the card. Please try again later. We "
-"apologize for any inconvenience caused."
-msgstr ""
+msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
+msgstr "Сталась помилка при обробці картки. Будь ласка, спробуйте пізніше ще раз. Просимо вибачення за незручності."
 
 #: src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
@@ -338,28 +425,24 @@ msgstr "Будь-ласка перегляньте інформацію вашо
 
 #: src/Dialogs/StripeDialog.vala:76
 msgid "Payment"
-msgstr ""
+msgstr "Платіж"
 
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
 msgid "Pay $%d for %s"
-msgstr ""
+msgstr "Оплатити $%d за %s"
 
 #: src/Dialogs/StripeDialog.vala:96
-msgid ""
-"This is a one time payment. Your email address is only used to send you a "
-"receipt."
-msgstr ""
+msgid "This is a one time payment. Your email address is only used to send you a receipt."
+msgstr "Це є одноразовий платіж. Ваша email-адреса буде використана лише для відправки квитанції."
 
 #: src/Dialogs/StripeDialog.vala:106 src/Widgets/SharePopover.vala:35
 msgid "Email"
-msgstr "Email"
+msgstr "Пошта"
 
 #: src/Dialogs/StripeDialog.vala:108
-msgid ""
-"Your email address is only used to send a receipt. You will not be "
-"subscribed to any mailing list."
-msgstr ""
+msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
+msgstr "Ваша електронна адреса буде використана лише для відправки квитанції. Не для розсилок."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127
@@ -375,9 +458,9 @@ msgid "Privacy Policy"
 msgstr "Політика конфіденційності"
 
 #: src/Dialogs/StripeDialog.vala:200 src/Dialogs/StripeDialog.vala:314
-#, fuzzy, c-format
+#, c-format
 msgid "Pay $%d.00"
-msgstr "Оплатити $%d.00"
+msgstr "Сплатити $%d.00"
 
 #: src/Dialogs/StripeDialog.vala:243
 msgid "Processing"
@@ -396,27 +479,20 @@ msgid "Retry"
 msgstr "Спробувати ще раз"
 
 #: src/Dialogs/StripeDialog.vala:513 src/Dialogs/StripeDialog.vala:578
-msgid ""
-"The card number is incorrect. Please try again using the correct card number."
-msgstr ""
-"Номер картки не вірний. Будь ласка, спробуйте ще раз з коректним номером "
-"картки."
+msgid "The card number is incorrect. Please try again using the correct card number."
+msgstr "Номер картки не вірний. Будь ласка, спробуйте ще раз з коректним номером картки."
 
 #: src/Dialogs/StripeDialog.vala:515
-msgid ""
-"The expiration month is invalid. Please try again using the correct "
-"expiration date."
-msgstr ""
+msgid "The expiration month is invalid. Please try again using the correct expiration date."
+msgstr "Місяць не дійсний. Спробуйте будь ласка ще раз, використовуючи коректний термін закінчення дії."
 
 #: src/Dialogs/StripeDialog.vala:517 src/Dialogs/StripeDialog.vala:575
-msgid ""
-"The expiration year is invalid. Please try again using the correct "
-"expiration date."
-msgstr ""
+msgid "The expiration year is invalid. Please try again using the correct expiration date."
+msgstr "Рік не дійсний. Спробуйте будь ласка ще раз, використовуючи коректний термін закінчення дії."
 
 #: src/Dialogs/StripeDialog.vala:520 src/Dialogs/StripeDialog.vala:573
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr ""
+msgstr "CVC номер не вірний. Спробуйте будь ласка ще раз, використовуючи коректний CVC."
 
 #: src/Dialogs/StripeDialog.vala:522 src/Dialogs/StripeDialog.vala:564
 msgid "The card has expired. Please try again with a different card."
@@ -424,227 +500,246 @@ msgstr "Ця картка прострочена. Будь ласка, спро�
 
 #: src/Dialogs/StripeDialog.vala:542
 msgid "There are too many payment requests at the moment, please retry later."
-msgstr ""
+msgstr "Забагато платіжних запитів у даний момент. Спробуйте будь ласка пізніше."
 
 #: src/Dialogs/StripeDialog.vala:558
-msgid ""
-"This card does not support this kind of transaction. Please try again with a "
-"different card."
-msgstr ""
+msgid "This card does not support this kind of transaction. Please try again with a different card."
+msgstr "Ця картка не підтримує даний вид транзакції. Будь ласка, спробуйте знову, з іншою карткою."
 
 #: src/Dialogs/StripeDialog.vala:560
-msgid ""
-"The currency is not supported by this card. Please try again with a "
-"different card."
-msgstr ""
+msgid "The currency is not supported by this card. Please try again with a different card."
+msgstr "Цей тип валюти не підтримується цією карткою. Будь ласка, спробуйте знову, з іншою карткою."
 
 #: src/Dialogs/StripeDialog.vala:562
 msgid "The transaction has already been processed."
 msgstr "Цей платіж вже опрацьований."
 
 #: src/Dialogs/StripeDialog.vala:566
-#, fuzzy
-msgid ""
-"The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
-"postal code."
-msgstr ""
-"Поштовий код не вірний. Будь ласка, спробуйте знову використовуючи вірний "
-"поштовий код."
+msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
+msgstr "Поштовий індекс вказано не вірно. Будь ласка перевірте індекс та спробуйте знову."
 
 #: src/Dialogs/StripeDialog.vala:568
 msgid "You don't have enough funds. Please use an alternative payment method."
-msgstr ""
+msgstr "Не достатньо коштів на рахунку. Спробуйте будь ласка інший платіжний метод."
 
 #: src/Dialogs/StripeDialog.vala:570
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr ""
+msgstr "Не коректно вказана сума. Спробуйте будь ласка ще раз, вказавши коректну суму."
 
 #: src/Dialogs/StripeDialog.vala:581
-#, fuzzy
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr ""
-"Номер картки не вірний. Будь ласка, спробуйте ще раз з коректним номером "
-"картки."
+msgstr "PIN-код не вірний. Будь ласка, спробуйте ще раз з коректним номером PIN."
 
 #: src/Dialogs/StripeDialog.vala:583
-#, fuzzy
-msgid ""
-"There has been too many PIN attempts. Please try again with a different card."
-msgstr "Ця картка прострочена. Будь ласка, спробуйте знову з іншою карткою."
+msgid "There has been too many PIN attempts. Please try again with a different card."
+msgstr "Кількість спроб для введення PIN-коду вичерпано. Спробуйте будь ласка скористатись іншою карткою."
 
 #: src/Dialogs/StripeDialog.vala:603
-msgid ""
-"Unable to complete the transaction. Please contact your bank for further "
-"information."
-msgstr ""
+msgid "Unable to complete the transaction. Please contact your bank for further information."
+msgstr "Транзакцію не вдалось завершити. Зверніться будь ласка до вашого банку для інформації."
 
 #: src/Dialogs/StripeDialog.vala:606
 msgid "The balance or credit limit on the card has been reached."
-msgstr ""
+msgstr "Баланс або кредитний ліміт картки перевищений."
 
 #: src/Dialogs/StripeDialog.vala:609
 msgid "The given card is a test card. Please use a real card to proceed."
-msgstr ""
+msgstr "Дана картка є тестовою карткою. Будь ласка, використовуйте реальну картку, щоб продовжити."
+
+#: src/Dialogs/UninstallConfirmDialog.vala:25
+msgid "Uninstalling this app may also delete its data."
+msgstr "Видалення цього додатку також може видалити його дані."
+
+#: src/Dialogs/UninstallConfirmDialog.vala:35
+msgid "Uninstall app?"
+msgstr "Видалили додаток?"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:38
+#, c-format
+msgid "Uninstall “%s”?"
+msgstr "Видалити “%s”?"
+
+#: src/Dialogs/UninstallConfirmDialog.vala:42
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:124
+msgid "Uninstall"
+msgstr "Вилучити"
+
+#: src/Dialogs/UninstallFailDialog.vala:26
+msgid "This may have been caused by external or manually compiled software."
+msgstr "Це може бути викликано програмним забезпеченням встановленим шляхом використання зовнішніх джерел або вручну."
+
+#: src/Dialogs/UninstallFailDialog.vala:37
+msgid "Failed to uninstall app"
+msgstr "Не вдалося видалити додаток"
+
+#: src/Dialogs/UninstallFailDialog.vala:40
+#, c-format
+msgid "Failed to uninstall “%s”"
+msgstr "Помилка при видаленні “%s”"
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
-msgstr ""
+msgstr "Не вдалося отримати оновлення"
 
 #: src/Dialogs/UpdateFailDialog.vala:26
-msgid ""
-"This may have been caused by external, manually added software repositories "
-"or a corrupted sources file."
-msgstr ""
+msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
+msgstr "Це може бути викликано зовнішньо, вручну доданими сховищами програмного забезпечення або файлом з пошкодженими джерелами."
 
 #: src/Dialogs/UpdateFailDialog.vala:34
 msgid "Ignore"
-msgstr ""
+msgstr "Ігнорувати"
 
 #: src/Dialogs/UpdateFailDialog.vala:35
 msgid "Try Again"
-msgstr ""
+msgstr "Спробуйте знову"
 
-#: src/Views/AppInfoView.vala:75
+#: src/Views/AppInfoView.vala:155
 msgid "Screenshot Not Available"
 msgstr "Скріншот недоступний"
 
-#: src/Views/AppInfoView.vala:130
+#: src/Views/AppInfoView.vala:207
 msgid "Homepage"
 msgstr "Домашня сторінка"
 
-#: src/Views/AppInfoView.vala:136
+#: src/Views/AppInfoView.vala:213
 msgid "Suggest Translations"
 msgstr "Запропонувати переклад"
 
-#: src/Views/AppInfoView.vala:142
+#: src/Views/AppInfoView.vala:219
 msgid "Report a Problem"
 msgstr "Повідомити про проблему"
 
-#: src/Views/AppInfoView.vala:148
+#: src/Views/AppInfoView.vala:225
 msgid "Help"
 msgstr "Допомога"
 
-#: src/Views/AppInfoView.vala:178
+#: src/Views/AppInfoView.vala:236
 msgid "What's New:"
-msgstr ""
+msgstr "Що нового:"
 
-#: src/Views/AppInfoView.vala:197
+#: src/Views/AppInfoView.vala:271
 msgid "Extensions:"
 msgstr "Розширення:"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:284
+#: src/Views/AppInfoView.vala:360
 msgid "Public Domain"
-msgstr ""
+msgstr "Домен верхнього рівня"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:287
+#: src/Views/AppInfoView.vala:363
 msgid "https://en.wikipedia.org/wiki/Public_domain"
-msgstr ""
+msgstr "https://uk.wikipedia.org/wiki/%D0%94%D0%BE%D0%BC%D0%B5%D0%BD_%D0%B2%D0%B5%D1%80%D1%85%D0%BD%D1%8C%D0%BE%D0%B3%D0%BE_%D1%80%D1%96%D0%B2%D0%BD%D1%8F"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:292
-#, fuzzy
+#: src/Views/AppInfoView.vala:368
 msgid "Free Software"
-msgstr "Редагувати джерела ПЗ"
+msgstr "Вільне програмне забезпечення"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:295
+#: src/Views/AppInfoView.vala:371
 msgid "https://www.gnu.org/philosophy/free-sw"
-msgstr ""
+msgstr "https://uk.wikipedia.org/wiki/%D0%92%D1%96%D0%BB%D1%8C%D0%BD%D0%B5_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BD%D0%B5_%D0%B7%D0%B0%D0%B1%D0%B5%D0%B7%D0%BF%D0%B5%D1%87%D0%B5%D0%BD%D0%BD%D1%8F"
 
-#: src/Views/AppInfoView.vala:299
+#: src/Views/AppInfoView.vala:375
 msgid "Proprietary"
-msgstr ""
-
-#: src/Views/AppInfoView.vala:302
-#, fuzzy
-msgid "Unknown License"
-msgstr "Невідомий стан"
-
-#: src/Views/AppInfoView.vala:344
-#, c-format
-msgid "Other Apps by %s"
-msgstr ""
+msgstr "Право власності"
 
 #: src/Views/AppInfoView.vala:378
-msgid "Link copied to clipboard"
-msgstr ""
+msgid "Unknown License"
+msgstr "Ліцензія не відома"
 
-#: src/Views/AppInfoView.vala:389
+#: src/Views/AppInfoView.vala:427
+#, c-format
+msgid "Other Apps by %s"
+msgstr "Інші додатки від %s"
+
+#: src/Views/AppInfoView.vala:464
+msgid "Link copied to clipboard"
+msgstr "Посилання скопійовано до буферу обміну"
+
+#: src/Views/AppInfoView.vala:475
 #, c-format
 msgid "Check out %s on AppCenter:"
-msgstr ""
+msgstr "Перевірте %s в Центрі програм:"
 
-#: src/Views/AppInfoView.vala:396
+#: src/Views/AppInfoView.vala:482
 msgid "Share"
-msgstr ""
+msgstr "Поділитися"
 
-#: src/Views/AppInfoView.vala:665
+#: src/Views/AppInfoView.vala:809
 msgid "Fund"
-msgstr ""
+msgstr "Фінансувати"
 
-#: src/Views/AppInfoView.vala:687
+#: src/Views/AppInfoView.vala:831
 msgid "Fund the development of this app"
+msgstr "Профінансуйте розробку цього додатка"
+
+#: src/Views/AppListUpdateView.vala:37
+#, fuzzy
+#| msgid "Searching for updates…"
+msgid "Checking for Updates"
+msgstr "Пошук оновлень…"
+
+#: src/Views/AppListUpdateView.vala:38
+msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:56
+#: src/Views/AppListUpdateView.vala:49
 msgid "A restart is required to complete the installation of updates"
 msgstr "Перезавантаження необхідне для завершення встановлення оновлень"
 
-#: src/Views/AppListUpdateView.vala:64
+#: src/Views/AppListUpdateView.vala:57
 msgid "Restart Now"
 msgstr "Перезавантажити зараз"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:158
+#: src/Views/AppListUpdateView.vala:191
 msgid "Update All"
 msgstr "Оновити все"
 
-#: src/Views/AppListView.vala:128
-#, fuzzy
+#: src/Views/AppListView.vala:30
+msgid "No Results"
+msgstr "Немає результатів"
+
+#: src/Views/AppListView.vala:31
+msgid "No apps could be found. Try changing search terms."
+msgstr "Додатки не знайдені. Спробуйте змінити умови пошуку."
+
+#: src/Views/AppListView.vala:160
 msgid "Non-Curated Apps"
-msgstr "Немає додатків"
+msgstr "Застосунки без підтримки"
 
 #: src/Views/Homepage.vala:67
 msgid "Recently Updated"
-msgstr ""
+msgstr "Нещодавно оновлені"
 
 #: src/Views/Homepage.vala:83
 msgid "Trending"
-msgstr ""
+msgstr "Популярне"
 
 #: src/Views/Homepage.vala:99
 msgid "Categories"
 msgstr "Категорії"
 
-#: src/Views/Homepage.vala:291 src/Views/Homepage.vala:302
+#: src/Views/Homepage.vala:314 src/Views/Homepage.vala:325
 #, c-format
 msgid "Search %s"
 msgstr "Пошук %s"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/Views/SearchView.vala:39
+#: src/Views/SearchView.vala:38
 msgctxt "view"
 msgid "Search"
 msgstr "Знайти"
 
-#: src/Widgets/AbstractAppList.vala:36
-msgid "No Results"
-msgstr "Немає результатів"
-
-#: src/Widgets/AbstractAppList.vala:36
-msgid "No apps could be found. Try changing search terms."
-msgstr "Додатки не знайдені. Спробуйте змінити умови пошуку."
-
-#: src/Widgets/Banner.vala:55
+#: src/Widgets/Banner.vala:57
 msgid "An open, pay-what-you-want app store"
 msgstr "Вільний \"Плати за що хочеш\" магазин"
 
-#: src/Widgets/Banner.vala:68
+#: src/Widgets/Banner.vala:76
 msgid "Get the apps that you need at a price you can afford."
-msgstr ""
-"Отримуй додатки які тобі необхідно, за ціну, яку ти можеш запропонувати."
+msgstr "Отримуй додатки які тобі необхідно, за ціну, яку ти можеш запропонувати."
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
@@ -659,9 +754,8 @@ msgid "Audio"
 msgstr "Аудіо"
 
 #: src/Widgets/CategoryFlowBox.vala:29
-#, fuzzy
 msgid "Communication"
-msgstr "Освіта"
+msgstr "Комунікація"
 
 #: src/Widgets/CategoryFlowBox.vala:38
 msgid "Development"
@@ -672,9 +766,8 @@ msgid "Education"
 msgstr "Освіта"
 
 #: src/Widgets/CategoryFlowBox.vala:49
-#, fuzzy
 msgid "Finance"
-msgstr "Скасувати"
+msgstr "Фінанси"
 
 #: src/Widgets/CategoryFlowBox.vala:53
 msgid "Games"
@@ -689,13 +782,12 @@ msgid "Internet"
 msgstr "Інтернет"
 
 #: src/Widgets/CategoryFlowBox.vala:82
-#, fuzzy
 msgid "Math, Science, & Engineering"
-msgstr "Наука та інженерна справа"
+msgstr "Математика, Наука та Інженерія"
 
 #: src/Widgets/CategoryFlowBox.vala:101
 msgid "Media Production"
-msgstr ""
+msgstr "Медіавиробництво"
 
 #: src/Widgets/CategoryFlowBox.vala:108
 msgid "Office"
@@ -715,113 +807,135 @@ msgstr "Відео"
 
 #: src/Widgets/CategoryFlowBox.vala:125
 msgid "Writing & Language"
-msgstr ""
+msgstr "Мова і написання"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
-msgstr ""
+msgstr "Вимагає платежі, які не включено"
 
-#: src/Widgets/HumbleButton.vala:106
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:323
+#: src/Widgets/HumbleButton.vala:105
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:285
 msgid "Free"
 msgstr "Безкоштовно"
 
-#: src/Widgets/HumbleButton.vala:108
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:325
-#, fuzzy
+#: src/Widgets/HumbleButton.vala:107
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:287
 msgid "Install"
-msgstr "Встановлені"
+msgstr "Встановити"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:142
+#: src/Widgets/HumbleButton.vala:141
 #, c-format
 msgid "$%d.00"
 msgstr "%d.00$"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
-#: src/Widgets/HumbleButton.vala:145
+#: src/Widgets/HumbleButton.vala:144
 #, c-format
 msgid "$%d"
 msgstr "%d$"
 
+#: src/Widgets/NetworkInfoBar.vala:28
+msgid "Network Not Available."
+msgstr "Мережа не доступна."
+
+#: src/Widgets/NetworkInfoBar.vala:29
+msgid "Connect to the Internet to browse and install apps."
+msgstr "Необхідне підключення до мережі Internet для встановлення чи оновлення застосунків."
+
+#. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
+#: src/Widgets/NetworkInfoBar.vala:37
+msgid "Network Settings…"
+msgstr "Налаштування мережі…"
+
 #: src/Widgets/ReleaseRow.vala:67
 #, c-format
 msgid "<b>%s</b> – %s"
-msgstr ""
+msgstr "<b>%s</b> – %s"
 
 #: src/Widgets/ReleaseRow.vala:74
-#, fuzzy
 msgid "Unknown version"
-msgstr "Невідомий стан"
+msgstr "Версія не відома"
 
 #: src/Widgets/ReleaseRow.vala:90 src/Widgets/ReleaseRow.vala:93
 msgid "No description available"
-msgstr ""
+msgstr "Опис відсутній"
 
 #: src/Widgets/SharePopover.vala:39
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #: src/Widgets/SharePopover.vala:43
-msgid "Google+"
-msgstr ""
+msgid "Twitter"
+msgstr "Twitter"
 
 #: src/Widgets/SharePopover.vala:47
-msgid "Twitter"
-msgstr ""
+msgid "Reddit"
+msgstr "Reddit"
 
 #: src/Widgets/SharePopover.vala:51
-msgid "Reddit"
-msgstr ""
+msgid "Tumblr"
+msgstr "Tumblr"
 
 #: src/Widgets/SharePopover.vala:55
-msgid "Tumblr"
-msgstr ""
+msgid "Telegram"
+msgstr "Telegram"
 
 #: src/Widgets/SharePopover.vala:59
-msgid "Telegram"
-msgstr ""
-
-#: src/Widgets/SharePopover.vala:63
 msgid "Copy link"
-msgstr ""
+msgstr "Скопіювати посилання"
 
-#: src/Widgets/UpdateHeaderRow.vala:68
+#: src/Widgets/SizeLabel.vala:35
+msgid "Actual Download Size Likely to Be Smaller"
+msgstr "Фактичний розмір завантаження імовірно буде меншим"
+
+#: src/Widgets/SizeLabel.vala:36
+msgid "Only the parts of apps and updates that are needed will be downloaded."
+msgstr "Лише необхідні частини застосунків чи оновлень буде завантажено."
+
+#: src/Widgets/SizeLabel.vala:63
+#, c-format
+msgid "Up to %s"
+msgstr "До %s"
+
+#: src/Widgets/UpdateHeaderRow.vala:41
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
-msgstr[0] "%u оновлення доступне"
-msgstr[1] "%u оновлення доступні"
-msgstr[2] "%u оновлень доступно"
+msgstr[0] "Доступне %u оновлення"
+msgstr[1] "Доступно %u оновлення"
+msgstr[2] "Доступно %u оновлень"
 
-#: src/Widgets/UpdateHeaderRow.vala:69
-#, c-format
-msgid "Size: %s"
-msgstr "Розмір: %s"
+#: src/Widgets/UpdateHeaderRow.vala:54
+msgid "Drivers"
+msgstr "Драйвери"
 
-#: src/Widgets/UpdateHeaderRow.vala:105
-msgid "Searching for updates…"
-msgstr "Пошук оновлень…"
-
-#: src/Widgets/UpdateHeaderRow.vala:112
+#: src/Widgets/UpdateHeaderRow.vala:58
 msgid "Up to Date"
 msgstr "Найновіші"
 
-#: src/Widgets/UpdateHeaderRow.vala:120
-msgid "Drivers"
-msgstr ""
-
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:172
-msgid "Uninstall"
-msgstr "Вилучити"
-
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:180
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:133
 msgid "Open"
 msgstr "Відкрити"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:348
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "Оновлення"
+
+#~ msgid "%s (non-curated)"
+#~ msgstr "%s (не курований)"
+
+#~ msgid "Searching for updates…"
+#~ msgstr "Пошук оновлень…"
+
+#~ msgid "There Was An Error Installing %s."
+#~ msgstr "Виникла помилка при встановленні %s."
+
+#~ msgid "Size: %s"
+#~ msgstr "Розмір: %s"
+
+#~ msgid "Google+"
+#~ msgstr "Google+"
 
 #~ msgctxt "view"
 #~ msgid "Updates"
@@ -893,9 +1007,6 @@ msgstr "Оновлення"
 
 #~ msgid "Removing"
 #~ msgstr "Вилучення"
-
-#~ msgid "Find and install apps"
-#~ msgstr "Пошук та встановлення додатків"
 
 #~ msgid "application download center"
 #~ msgstr "центр завантаження додатків"

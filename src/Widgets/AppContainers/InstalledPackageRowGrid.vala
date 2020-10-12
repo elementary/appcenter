@@ -22,12 +22,26 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
     Gtk.Label app_version;
     Gtk.Stack release_stack;
     Gtk.Expander release_expander;
+    Gtk.Label release_expander_label;
     Gtk.Label release_description;
     Gtk.Label release_single_label;
+    private Gtk.Revealer release_stack_revealer;
     AppStream.Release? newest = null;
 
-    public InstalledPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? info_size_group, Gtk.SizeGroup? action_size_group, bool show_uninstall = true) {
-        base (package, info_size_group, action_size_group, show_uninstall);
+    private Gtk.Grid info_grid;
+
+    public InstalledPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? info_size_group, Gtk.SizeGroup? action_size_group) {
+        base (package);
+
+        if (action_size_group != null) {
+            action_size_group.add_widget (action_button);
+            action_size_group.add_widget (cancel_button);
+        }
+
+        if (info_size_group != null) {
+            info_size_group.add_widget (info_grid);
+        }
+
         set_up_package ();
     }
 
@@ -46,7 +60,6 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         release_description.xalign = 0;
 
         release_expander = new Gtk.Expander ("");
-        release_expander.use_markup = true;
         release_expander.halign = release_expander.valign = Gtk.Align.START;
         release_expander.add (release_description);
         release_expander.visible = true;
@@ -55,6 +68,11 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
             release_expander.expanded = !release_expander.expanded;
             return true;
         });
+
+        release_expander_label = new Gtk.Label ("");
+        release_expander_label.wrap = true;
+        release_expander_label.use_markup = true;
+        release_expander.set_label_widget (release_expander_label);
 
         release_single_label = new Gtk.Label (null);
         release_single_label.selectable = true;
@@ -69,22 +87,54 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         release_stack.add (release_expander);
         release_stack.add (release_single_label);
 
-        set_widget_visibility (release_stack, false);
+        release_stack_revealer = new Gtk.Revealer ();
+        release_stack_revealer.transition_type = Gtk.RevealerTransitionType.CROSSFADE;
+        release_stack_revealer.add (release_stack);
 
-        info_grid.attach (app_version, 1, 1, 1, 1);
-        attach (release_stack, 2, 0, 1, 2);
+        info_grid = new Gtk.Grid () {
+            column_spacing = 12,
+            row_spacing = 6,
+            valign = Gtk.Align.START
+        };
+        info_grid.attach (image, 0, 0, 1, 2);
+        info_grid.attach (package_name, 1, 0);
+        info_grid.attach (app_version, 1, 1);
+
+        action_stack.homogeneous = false;
+        action_stack.margin_top = 10;
+        action_stack.valign = Gtk.Align.START;
+
+        var grid = new Gtk.Grid () {
+            column_spacing = 24
+        };
+        grid.attach (info_grid, 0, 0);
+        grid.attach (release_stack_revealer, 2, 0, 1, 2);
+        grid.attach (action_stack, 3, 0);
+
+        add (grid);
     }
 
     protected override void set_up_package (uint icon_size = 48) {
-        app_version.label = package.get_version ();
+        if (package.get_version () != null) {
+            if (package.has_multiple_origins) {
+                app_version.label = "%s - %s".printf (package.get_version (), package.origin_description);
+            } else {
+                app_version.label = package.get_version ();
+            }
+        }
+
         app_version.ellipsize = Pango.EllipsizeMode.END;
 
         base.set_up_package (icon_size);
     }
 
     protected override void update_state (bool first_update = false) {
-        if (!first_update) {
-            app_version.label = package.get_version ();
+        if (!first_update && package.get_version != null) {
+            if (package.has_multiple_origins) {
+                app_version.label = "%s - %s".printf (package.get_version (), package.origin_description);
+            } else {
+                app_version.label = package.get_version ();
+            }
         }
 
         if (package.state == AppCenterCore.Package.State.UPDATE_AVAILABLE) {
@@ -94,18 +144,18 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
                     string description = ReleaseRow.format_release_description (newest);
                     string[] lines = description.split ("\n", 2);
                     if (lines.length > 1) {
-                        release_expander.label = lines[0];
+                        release_expander_label.label = lines[0];
                         release_description.set_text (lines[1]);
                         release_stack.visible_child = release_expander;
-                        set_widget_visibility (release_stack, true);
                     } else if (lines.length > 0) {
                         release_single_label.label = lines[0];
                         release_stack.visible_child = release_single_label;
-                        set_widget_visibility (release_stack, true);
                     }
+
+                    release_stack_revealer.reveal_child = true;
                 }
             } else {
-                set_widget_visibility (release_stack, true);
+                release_stack_revealer.reveal_child = true;
             }
         }
 

@@ -23,6 +23,10 @@ public errordomain PackageLaunchError {
     APP_INFO_NOT_FOUND
 }
 
+public errordomain PackageUninstallError {
+    APP_STATE_NOT_INSTALLED
+}
+
 public class AppCenterCore.PackageDetails : Object {
     public string? name { get; set; }
     public string? description { get; set; }
@@ -32,8 +36,10 @@ public class AppCenterCore.PackageDetails : Object {
 
 public class AppCenterCore.Package : Object {
     public const string APPCENTER_PACKAGE_ORIGIN = "appcenter-bionic-main";
-    private const string ELEMENTARY_STABLE_PACKAGE_ORIGIN = "stable-bionic-main";
-    private const string ELEMENTARY_DAILY_PACKAGE_ORIGIN = "daily-bionic-main";
+    // We stopped using this origin in elementary OS 5.1, references to this can be removed
+    // after everyone has had chance to update their appstream-data-pantheon package
+    private const string DEPRECATED_ELEMENTARY_STABLE_PACKAGE_ORIGIN = "stable-bionic-main";
+    private const string ELEMENTARY_STABLE_PACKAGE_ORIGIN = "elementary-stable-bionic-main";
 
     /* Note: These are just a stopgap, and are not a replacement for a more
      * fleshed out parental control system. We assume any of these "moderate"
@@ -87,29 +93,51 @@ public class AppCenterCore.Package : Object {
         }
     }
 
-    private bool installed_cached;
+    private bool _installed = false;
     public bool installed {
         get {
-            if (installed_cached) {
-                return true;
-            }
-
             if (component.get_id () == OS_UPDATES_ID) {
                 return true;
             }
 
-            installed_cached = backend_reports_installed_sync ();
-            return installed_cached;
+            return _installed;
         }
     }
 
     public void mark_installed () {
-        installed_cached = true;
+        _installed = true;
+        update_state ();
+    }
+
+    public void clear_installed () {
+        _installed = false;
+        update_state ();
     }
 
     public bool update_available {
         get {
             return state == State.UPDATE_AVAILABLE;
+        }
+    }
+
+    /**
+     * The component ID of the package with the .desktop suffix removed if it exists.
+     * This is used for comparing two packages to see if they have a matching ID
+     */
+    private string? _component_id = null;
+    public string normalized_component_id {
+        get {
+            if (_component_id != null) {
+                return _component_id;
+            }
+
+            _component_id = component.id;
+            if (_component_id.has_suffix (".desktop")) {
+                // ".desktop" is always 8 bytes in UTF-8 so we can just chop 8 bytes off the end
+                _component_id = _component_id.substring (0, _component_id.length - 8);
+            }
+
+            return _component_id;
         }
     }
 
@@ -123,7 +151,7 @@ public class AppCenterCore.Package : Object {
                 return false;
             }
 
-            if (component.get_id () in AppCenter.Settings.get_default ().paid_apps) {
+            if (component.get_id () in AppCenter.App.settings.get_strv ("paid-apps")) {
                 return false;
             }
 
@@ -166,6 +194,12 @@ public class AppCenterCore.Package : Object {
        }
     }
 
+    public bool is_font {
+        get {
+            return component.get_kind () == AppStream.ComponentKind.FONT;
+        }
+    }
+
     public bool is_local {
         get {
             return component.get_id ().has_suffix (LOCAL_ID_SUFFIX);
@@ -182,12 +216,31 @@ public class AppCenterCore.Package : Object {
         get {
             switch (component.get_origin ()) {
                 case APPCENTER_PACKAGE_ORIGIN:
+                case DEPRECATED_ELEMENTARY_STABLE_PACKAGE_ORIGIN:
                 case ELEMENTARY_STABLE_PACKAGE_ORIGIN:
-                case ELEMENTARY_DAILY_PACKAGE_ORIGIN:
                     return true;
                 default:
                     return false;
             }
+        }
+    }
+
+    public bool is_compulsory {
+        get {
+            unowned string? _current = Environment.get_variable ("XDG_SESSION_DESKTOP");
+            if (_current == null) {
+                return false;
+            }
+
+            string current = _current.down ();
+            unowned GenericArray<string> compulsory = component.get_compulsory_for_desktops ();
+            for (int i = 0; i < compulsory.length; i++) {
+                if (current == compulsory[i].down ()) {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 
@@ -212,6 +265,13 @@ public class AppCenterCore.Package : Object {
             }
 
             return _explicit;
+        }
+    }
+
+    public bool is_flatpak {
+        get {
+            return (backend is FlatpakBackend)
+                || change_information.updatable_packages.contains (FlatpakBackend.get_default ());
         }
     }
 
@@ -258,6 +318,88 @@ public class AppCenterCore.Package : Object {
         }
     }
 
+    public Gee.Collection<Package> origin_packages {
+        owned get {
+            return BackendAggregator.get_default ().get_packages_for_component_id (component.get_id ());
+        }
+    }
+
+    public bool has_multiple_origins {
+        get {
+            return origin_packages.size > 1;
+        }
+    }
+
+    public string origin_description {
+        owned get {
+            unowned string origin = component.get_origin ();
+            if (backend is PackageKitBackend) {
+                if (origin == APPCENTER_PACKAGE_ORIGIN) {
+                    return _("AppCenter");
+                } else if (origin == DEPRECATED_ELEMENTARY_STABLE_PACKAGE_ORIGIN || origin == ELEMENTARY_STABLE_PACKAGE_ORIGIN) {
+                    return _("elementary Updates");
+                } else if (origin.has_prefix ("ubuntu-")) {
+                    return _("Ubuntu (non-curated)");
+                }
+            } else if (backend is FlatpakBackend) {
+                var fp_package = this as FlatpakPackage;
+                if (fp_package != null && fp_package.installation == FlatpakBackend.system_installation) {
+                    return _("%s (system-wide)").printf (origin);
+                }
+
+                return origin;
+            } else if (backend is UbuntuDriversBackend) {
+                return _("Ubuntu Drivers");
+            }
+
+            return _("Unknown Origin (non-curated)");
+        }
+    }
+
+    public int origin_score {
+        get {
+            int score = 0;
+
+            if (installed) {
+                score += 10;
+            }
+
+            if (is_native) {
+                score += 5;
+            }
+
+            if (is_flatpak) {
+                score++;
+
+                var fp_package = this as FlatpakPackage;
+                if (fp_package != null && fp_package.installation == FlatpakBackend.user_installation) {
+                    score++;
+                }
+            }
+
+            return score;
+        }
+    }
+
+    public string hash {
+        owned get {
+            string key = "";
+            if (backend is FlatpakBackend) {
+                var fp_package = this as FlatpakPackage;
+                if (fp_package.installation != null && fp_package.installation == FlatpakBackend.system_installation) {
+                    key += "system/";
+                } else {
+                    key += "user/";
+                }
+            }
+
+            key += component.get_origin () + "/";
+            key += component.get_id ();
+
+            return key;
+        }
+    }
+
     private string? name = null;
     public string? description = null;
     private string? summary = null;
@@ -294,34 +436,60 @@ public class AppCenterCore.Package : Object {
         color_primary_text = null;
         payments_key = null;
         suggested_amount = null;
-        _latest_version = null;
-        installed_cached = false;
         _author = null;
         _author_title = null;
         backend_details = null;
+
+        // The version on a PackageKit package comes from the package not AppStream, so only reset the version
+        // on other backends
+        if (!(backend is PackageKitBackend)) {
+            _latest_version = null;
+        }
 
         this.component = component;
     }
 
     public void update_state () {
+        State new_state;
+
         if (installed) {
             if (change_information.has_changes ()) {
-                state = State.UPDATE_AVAILABLE;
+                new_state = State.UPDATE_AVAILABLE;
             } else {
-                state = State.INSTALLED;
+                new_state = State.INSTALLED;
             }
         } else {
-            state = State.NOT_INSTALLED;
+            new_state = State.NOT_INSTALLED;
+        }
+
+        // Only trigger a notify if the state has changed, quite a lot of things listen to this
+        if (state != new_state) {
+            state = new_state;
         }
     }
 
-    public async bool update () {
+    /**
+     * Instructs the backend to update this package
+     *
+     * @refresh_updates_after: Whether to run the check for updates (and update the badges etc...) after
+     * this method succeeds. This is fine after updating a single package, but for efficiency, it's better to
+     * do this only once at the end of updating a batch of packages, so this should be set to false if updating
+     * multiple packages in a loop.
+     *
+     */
+    public async bool update (bool refresh_updates_after = true) {
         if (state != State.UPDATE_AVAILABLE) {
             return false;
         }
 
         try {
-            return yield perform_operation (State.UPDATING, State.INSTALLED, State.UPDATE_AVAILABLE);
+            var success = yield perform_operation (State.UPDATING, State.INSTALLED, State.UPDATE_AVAILABLE);
+            if (success && refresh_updates_after) {
+                unowned Client client = Client.get_default ();
+                yield client.refresh_updates ();
+            }
+
+            return success;
         } catch (Error e) {
             return false;
         }
@@ -347,16 +515,21 @@ public class AppCenterCore.Package : Object {
         }
     }
 
-    public async bool uninstall () {
+    public async bool uninstall () throws Error {
+        // We possibly don't know if this package is installed or not yet, so trigger that check first
+        _installed = yield backend.is_package_installed (this);
+
+        update_state ();
+
         if (state == State.INSTALLED || state == State.UPDATE_AVAILABLE) {
             try {
                 return yield perform_operation (State.REMOVING, State.NOT_INSTALLED, state);
             } catch (Error e) {
-                return false;
+                throw e;
             }
         }
 
-        return false;
+        throw new PackageUninstallError.APP_STATE_NOT_INSTALLED (_("Application state not set as installed in AppCenter for package: %s".printf (get_name ())));
     }
 
     public void launch () throws Error {
@@ -395,7 +568,7 @@ public class AppCenterCore.Package : Object {
     }
 
     private async bool perform_package_operation () throws GLib.Error {
-        ChangeInformation.ProgressCallback cb = change_information.Callback;
+        ChangeInformation.ProgressCallback cb = change_information.callback;
         var client = AppCenterCore.Client.get_default ();
 
         switch (state) {
@@ -403,17 +576,19 @@ public class AppCenterCore.Package : Object {
                 var success = yield backend.update_package (this, (owned)cb, action_cancellable);
                 if (success) {
                     change_information.clear_update_info ();
+                    update_state ();
                 }
 
-                yield client.refresh_updates ();
                 return success;
             case State.INSTALLING:
                 var success = yield backend.install_package (this, (owned)cb, action_cancellable);
-                installed_cached = success;
+                _installed = success;
+                update_state ();
                 return success;
             case State.REMOVING:
                 var success = yield backend.remove_package (this, (owned)cb, action_cancellable);
-                installed_cached = !success;
+                _installed = !success;
+                update_state ();
                 yield client.refresh_updates ();
                 return success;
             default:
@@ -450,6 +625,10 @@ public class AppCenterCore.Package : Object {
         return name;
     }
 
+    public void set_name (string? new_name) {
+        name = new_name;
+    }
+
     public string? get_description () {
         if (description == null) {
             description = component.get_description ();
@@ -480,6 +659,10 @@ public class AppCenterCore.Package : Object {
         }
 
         return summary;
+    }
+
+    public void set_summary (string? new_summary) {
+        summary = new_summary;
     }
 
     public string get_progress_description () {
@@ -634,6 +817,10 @@ public class AppCenterCore.Package : Object {
             return app_info != null;
         }
 
+        if (is_compulsory) {
+            return false;
+        }
+
         var launchable = component.get_launchable (AppStream.LaunchableKind.DESKTOP_ID);
         if (launchable != null) {
             var launchables = launchable.get_entries ();
@@ -747,24 +934,6 @@ public class AppCenterCore.Package : Object {
         }
 
         return size;
-    }
-
-    private bool backend_reports_installed_sync () {
-        var loop = new MainLoop ();
-        bool result = false;
-        backend.is_package_installed.begin (this, (obj, res) => {
-            try {
-                result = backend.is_package_installed.end (res);
-            } catch (Error e) {
-                warning (e.message);
-                result = false;
-            } finally {
-                loop.quit ();
-            }
-        });
-
-        loop.run ();
-        return result;
     }
 
     private void populate_backend_details_sync () {

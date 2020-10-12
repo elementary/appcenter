@@ -25,22 +25,6 @@ public class DBusServer : Object {
         return instance.once (() => { return new DBusServer (); });
     }
 
-    public static void init () {
-        var client = AppCenterCore.Client.get_default ();
-        var loop = new MainLoop ();
-
-        client.get_installed_applications.begin (null, (obj, res) => {
-            client.get_installed_applications.end (res);
-            loop.quit ();
-        });
-
-        loop.run (); // wait until async method finishes
-    }
-
-    private DBusServer () {
-
-    }
-
     /**
      * Installs a package that's id is component_id and also
      * sends a notification when installation finishes or shows
@@ -66,11 +50,30 @@ public class DBusServer : Object {
     public void uninstall (string component_id) throws Error {
         var client = AppCenterCore.Client.get_default ();
         var package = client.get_package_for_component_id (component_id);
+
         if (package == null) {
-            throw new IOError.FAILED ("Failed to find package for '%s' component ID".printf (component_id));
+            var error = new IOError.FAILED ("Failed to find package for '%s' component ID".printf (component_id));
+            new UninstallFailDialog (package, error).present ();
+            throw error;
         }
 
-        package.uninstall.begin ();
+        var uninstall_confirm_dialog = new UninstallConfirmDialog (package);
+
+        if (uninstall_confirm_dialog.run () == Gtk.ResponseType.ACCEPT) {
+            package.uninstall.begin ((obj, res) => {
+                try {
+                    package.uninstall.end (res);
+                } catch (Error e) {
+                    // Disable error dialog for if user clicks cancel. Reason: Failed to obtain authentication
+                    // Pk ErrorEnums are mapped to the error code at an offset of 0xFF (see packagekit-glib2/pk-client.h)
+                    if (!(e is Pk.ClientError) || e.code != Pk.ErrorEnum.NOT_AUTHORIZED + 0xFF) {
+                        new UninstallFailDialog (package, e).present ();
+                    }
+                }
+            });
+        }
+
+        uninstall_confirm_dialog.destroy ();
     }
 
     /**

@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2014-2016 elementary LLC. (https://elementary.io)
+ * Copyright (c) 2014-2020 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,9 +19,10 @@
 
 public class AppCenter.Views.InstalledView : View {
     private Cancellable refresh_cancellable;
-    private bool refresh_running = false;
 
     private AppListUpdateView app_list_view;
+
+    private AsyncMutex refresh_mutex = new AsyncMutex ();
 
     construct {
         refresh_cancellable = new Cancellable ();
@@ -62,15 +62,16 @@ public class AppCenter.Views.InstalledView : View {
     }
 
     public async void get_apps () {
-        if (refresh_running) {
-            refresh_cancellable.cancel ();
-        }
+        refresh_cancellable.cancel ();
 
-        refresh_running = true;
+        yield refresh_mutex.lock ();
+
+        refresh_cancellable.reset ();
 
         unowned AppCenterCore.Client client = AppCenterCore.Client.get_default ();
 
         var installed_apps = yield client.get_installed_applications (refresh_cancellable);
+
         if (!refresh_cancellable.is_cancelled ()) {
             app_list_view.clear ();
 
@@ -79,8 +80,7 @@ public class AppCenter.Views.InstalledView : View {
             app_list_view.add_packages (installed_apps);
         }
 
-        refresh_cancellable.reset ();
-        refresh_running = false;
+        refresh_mutex.unlock ();
     }
 
     public async void add_app (AppCenterCore.Package package) {

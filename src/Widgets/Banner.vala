@@ -33,6 +33,8 @@ const int MILLISECONDS_BETWEEN_BANNER_ITEMS = 5000;
 
 namespace AppCenter.Widgets {
     public class Banner : Gtk.Button {
+        public Switcher switcher { get; construct; }
+
         public const int TRANSITION_DURATION_MILLISECONDS = 500;
 
         private class BannerWidget : Gtk.Grid {
@@ -61,7 +63,13 @@ namespace AppCenter.Widgets {
 
                 string description;
                 if (has_package) {
-                    description = package.get_description ();
+                    string[] lines = package.get_description ().split ("\n");
+                    description = lines[0].strip ();
+
+                    for (int i = 1; i < lines.length; i++) {
+                        description += " " + lines[i].strip ();
+                    }
+
                     int close_paragraph_index = description.index_of ("</p>", 0);
                     description = description.slice (3, close_paragraph_index);
                 } else {
@@ -119,10 +127,13 @@ namespace AppCenter.Widgets {
 
         private BannerWidget? brand_widget;
         private Gtk.Stack stack;
-        private Switcher switcher;
         private int current_package_index;
         private int next_free_package_index = 1;
         private uint timer_id;
+
+        public Banner (Switcher switcher) {
+            Object (switcher: switcher);
+        }
 
         construct {
             height_request = 300;
@@ -131,6 +142,9 @@ namespace AppCenter.Widgets {
             stack.valign = Gtk.Align.CENTER;
             stack.transition_duration = TRANSITION_DURATION_MILLISECONDS;
             stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
+
+            switcher.set_stack (stack);
+
             add (stack);
 
             set_default_brand ();
@@ -140,13 +154,9 @@ namespace AppCenter.Widgets {
                    timer_id = 0;
                }
             });
-        }
 
-        public Banner (Switcher switcher) {
-            this.switcher = switcher;
-            this.switcher.set_stack (stack);
-            this.switcher.on_stack_changed.connect (() => {
-                set_background ((stack.visible_child as BannerWidget).package);
+            switcher.on_stack_changed.connect (() => {
+                set_background (((BannerWidget) stack.visible_child).package);
                 if (timer_id > 0) {
                     Source.remove (timer_id);
                     timer_id = 0;
@@ -200,7 +210,7 @@ namespace AppCenter.Widgets {
             }
 
             stack.set_visible_child_name (current_package_index.to_string ());
-            set_background ((stack.visible_child as BannerWidget).package);
+            set_background (((BannerWidget) stack.visible_child).package);
             switcher.update_selected ();
         }
 
@@ -211,7 +221,7 @@ namespace AppCenter.Widgets {
 
             current_package_index = 1;
             stack.set_visible_child_name (current_package_index.to_string ());
-            set_background ((stack.visible_child as BannerWidget).package);
+            set_background (((BannerWidget) stack.visible_child).package);
             switcher.update_selected ();
 
             if (timer_id > 0) {
@@ -266,4 +276,3 @@ namespace AppCenter.Widgets {
         }
     }
 }
-

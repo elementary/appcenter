@@ -38,11 +38,8 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     private Gtk.Button return_button;
     private ulong task_finished_connection = 0U;
     private Gee.LinkedList<string> return_button_history;
-    private Granite.Widgets.AlertView network_alert_view;
-    private Gtk.Grid network_view;
     private Gtk.Label updates_badge;
-
-    private GLib.Settings settings;
+    private Gtk.Revealer updates_badge_revealer;
 
     private uint configure_id;
     private int homepage_view_id;
@@ -68,7 +65,13 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         var go_back = new SimpleAction ("go-back", null);
         go_back.activate.connect (view_return);
         add_action (go_back);
+
+        var focus_search = new SimpleAction ("focus-search", null);
+        focus_search.activate.connect (() => search_entry.grab_focus ());
+        add_action (focus_search);
+
         app.set_accels_for_action ("win.go-back", {"<Alt>Left", "Back"});
+        app.set_accels_for_action ("win.focus-search", {"<Ctrl>f"});
 
         button_release_event.connect ((event) => {
             // On back mouse button pressed
@@ -90,28 +93,21 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
                 return true;
             }
 
+            if (event.keyval == Gdk.Key.Down) {
+                search_entry.move_focus (Gtk.DirectionType.TAB_FORWARD);
+                return true;
+            }
+
             return false;
         });
 
         return_button.clicked.connect (view_return);
 
-        installed_view.get_apps.begin ();
-
         homepage.subview_entered.connect (view_opened);
         installed_view.subview_entered.connect (view_opened);
         search_view.subview_entered.connect (view_opened);
 
-        NetworkMonitor.get_default ().network_changed.connect (on_view_mode_changed);
-
-        network_alert_view.action_activated.connect (() => {
-            try {
-                AppInfo.launch_default_for_uri ("settings://network", null);
-            } catch (Error e) {
-                warning (e.message);
-            }
-        });
-
-        unowned AppCenterCore.PackageKitBackend client = AppCenterCore.PackageKitBackend.get_default ();
+        unowned AppCenterCore.BackendAggregator client = AppCenterCore.BackendAggregator.get_default ();
         client.notify["working"].connect (() => {
             Idle.add (() => {
                 working = client.working;
@@ -125,23 +121,6 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     construct {
         icon_name = "system-software-install";
         set_size_request (910, 640);
-
-        settings = new GLib.Settings ("io.elementary.appcenter.settings");
-
-        int window_x, window_y;
-        int window_width, window_height;
-        settings.get ("window-position", "(ii)", out window_x, out window_y);
-        settings.get ("window-size", "(ii)", out window_width, out window_height);
-
-        if (window_x != -1 ||  window_y != -1) {
-            move (window_x, window_y);
-        }
-
-        resize (window_width, window_height);
-
-        if (settings.get_boolean ("window-maximized")) {
-            maximize ();
-        }
 
         title = _(Build.APP_NAME);
 
@@ -158,14 +137,21 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         installed_view_id = view_mode.append_text (C_("view", "Installed"));
 
         updates_badge = new Gtk.Label ("!");
-        updates_badge.halign = Gtk.Align.END;
-        updates_badge.valign = Gtk.Align.START;
         updates_badge.get_style_context ().add_class ("badge");
-        set_widget_visibility (updates_badge, false);
+
+        var eventbox_badge = new Gtk.EventBox ();
+        eventbox_badge.add (updates_badge);
+        eventbox_badge.button_release_event.connect (badge_event);
+
+        updates_badge_revealer = new Gtk.Revealer ();
+        updates_badge_revealer.halign = Gtk.Align.END;
+        updates_badge_revealer.valign = Gtk.Align.START;
+        updates_badge_revealer.transition_type = Gtk.RevealerTransitionType.CROSSFADE;
+        updates_badge_revealer.add (eventbox_badge);
 
         var view_mode_overlay = new Gtk.Overlay ();
         view_mode_overlay.add (view_mode);
-        view_mode_overlay.add_overlay (updates_badge);
+        view_mode_overlay.add_overlay (updates_badge_revealer);
 
         view_mode_revealer = new Gtk.Revealer ();
         view_mode_revealer.reveal_child = true;
@@ -200,24 +186,35 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         installed_view = new Views.InstalledView ();
         search_view = new Views.SearchView ();
 
-        network_alert_view = new Granite.Widgets.AlertView (_("Network Is Not Available"),
-                                                            _("Connect to the Internet to install or update apps."),
-                                                            "network-error");
-        network_alert_view.get_style_context ().remove_class (Gtk.STYLE_CLASS_VIEW);
-        network_alert_view.show_action (_("Network Settings…"));
-
-        network_view = new Gtk.Grid ();
-        network_view.margin = 24;
-        network_view.attach (network_alert_view, 0, 0, 1, 1);
-
         stack = new Gtk.Stack ();
         stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
         stack.add (homepage);
         stack.add (installed_view);
         stack.add (search_view);
-        stack.add (network_view);
 
-        add (stack);
+        var network_info_bar = new AppCenter.Widgets.NetworkInfoBar ();
+
+        var grid = new Gtk.Grid ();
+        grid.orientation = Gtk.Orientation.VERTICAL;
+        grid.add (network_info_bar);
+        grid.add (stack);
+
+        add (grid);
+
+        int window_x, window_y;
+        int window_width, window_height;
+        App.settings.get ("window-position", "(ii)", out window_x, out window_y);
+        App.settings.get ("window-size", "(ii)", out window_width, out window_height);
+
+        if (window_x != -1 || window_y != -1) {
+            move (window_x, window_y);
+        }
+
+        resize (window_width, window_height);
+
+        if (App.settings.get_boolean ("window-maximized")) {
+            maximize ();
+        }
 
         homepage.page_loaded.connect (() => homepage_loaded ());
     }
@@ -229,17 +226,17 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
                 configure_id = 0;
 
                 if (is_maximized) {
-                    settings.set_boolean ("window-maximized", true);
+                    App.settings.set_boolean ("window-maximized", true);
                 } else {
-                    settings.set_boolean ("window-maximized", false);
+                    App.settings.set_boolean ("window-maximized", false);
 
                     int width, height;
                     get_size (out width, out height);
-                    settings.set ("window-size", "(ii)", width, height);
+                    App.settings.set ("window-size", "(ii)", width, height);
 
                     int root_x, root_y;
                     get_position (out root_x, out root_y);
-                    settings.set ("window-position", "(ii)", root_x, root_y);
+                    App.settings.set ("window-position", "(ii)", root_x, root_y);
                 }
 
                 return GLib.Source.REMOVE;
@@ -272,11 +269,16 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
     public void show_update_badge (uint updates_number) {
         if (updates_number == 0U) {
-            set_widget_visibility (updates_badge, false);
+            updates_badge_revealer.reveal_child = false;
         } else {
             updates_badge.label = updates_number.to_string ();
-            set_widget_visibility (updates_badge, true);
+            updates_badge_revealer.reveal_child = true;
         }
+    }
+
+    private bool badge_event (Gtk.Widget sender, Gdk.EventButton evt) {
+        go_to_installed ();
+        return Gdk.EVENT_STOP;
     }
 
     public void show_package (AppCenterCore.Package package) {
@@ -305,7 +307,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         if (query_valid) {
             search_view.search (query, homepage.currently_viewed_category, mimetype);
-            stack.visible_child = search_view;
+            stack.visible_child = search_view; // Only show search view after search completed.
         } else {
             if (stack.visible_child == search_view && homepage.currently_viewed_category != null) {
                 return_button_history.poll_head ();
@@ -376,26 +378,17 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     }
 
     private void on_view_mode_changed () {
-        var connection_available = NetworkMonitor.get_default ().get_network_available ();
-        if (connection_available) {
-            if (search_entry.text.length >= VALID_QUERY_LENGTH) {
-                stack.visible_child = search_view;
-                search_entry.sensitive = !search_view.viewing_package;
-            } else {
-                if (view_mode.selected == homepage_view_id) {
-                    stack.visible_child = homepage;
-                    search_entry.sensitive = !homepage.viewing_package;
-                } else if (view_mode.selected == installed_view_id) {
-                    stack.visible_child = installed_view;
-                    search_entry.sensitive = false;
-                }
-            }
+        if (search_entry.text.length >= VALID_QUERY_LENGTH) {
+            stack.visible_child = search_view;
+            search_entry.sensitive = !search_view.viewing_package;
         } else {
-            stack.visible_child = network_view;
-            search_entry.sensitive = false;
+            if (view_mode.selected == homepage_view_id) {
+                stack.visible_child = homepage;
+                search_entry.sensitive = !homepage.viewing_package;
+            } else if (view_mode.selected == installed_view_id) {
+                stack.visible_child = installed_view;
+                search_entry.sensitive = false;
+            }
         }
-
-        custom_title_stack.sensitive = connection_available;
-        return_button.sensitive = connection_available;
     }
 }

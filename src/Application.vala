@@ -15,7 +15,7 @@
 */
 
 public class AppCenter.App : Gtk.Application {
-    public const OptionEntry[] APPCENTER_OPTIONS =  {
+    public const OptionEntry[] APPCENTER_OPTIONS = {
         { "show-updates", 'u', 0, OptionArg.NONE, out show_updates,
         "Display the Installed Panel", null},
         { "silent", 's', 0, OptionArg.NONE, out silent,
@@ -23,7 +23,7 @@ public class AppCenter.App : Gtk.Application {
         { "load-local", 'l', 0, OptionArg.FILENAME, out local_path,
         "Add a local AppStream XML file to the package list", "FILENAME" },
         { "fake-package-update", 'f', 0, OptionArg.STRING_ARRAY, out fake_update_packages,
-        "Add the package name to update results so that it is shown as an update", "PACKAGES..." },
+        "Add the package name to update results so that it is shown as an update", "PACKAGES…" },
         { null }
     };
 
@@ -46,6 +46,12 @@ public class AppCenter.App : Gtk.Application {
 
     private SearchProvider search_provider;
     private uint search_provider_id = 0;
+
+    public static GLib.Settings settings;
+
+    static construct {
+        settings = new GLib.Settings ("io.elementary.appcenter.settings");
+    }
 
     construct {
         application_id = Build.PROJECT_NAME;
@@ -103,7 +109,7 @@ public class AppCenter.App : Gtk.Application {
             if (mimetype != null) {
                 main_window.search (mimetype, true);
             } else {
-                info (_("Could not parse mimetype %s").printf (mimetype));
+                info (_("Could not parse the media type %s").printf (mimetype));
             }
 
             return;
@@ -158,7 +164,8 @@ public class AppCenter.App : Gtk.Application {
                 schedule_cache_update (!available);
             });
 
-            client.update_cache.begin (true);
+            // Don't force a cache refresh for the silent daemon, it'll run if it was >24 hours since the last one
+            client.update_cache.begin (false);
             silent = false;
             hold ();
             return;
@@ -177,12 +184,14 @@ public class AppCenter.App : Gtk.Application {
         if (main_window == null) {
             main_window = new MainWindow (this);
 
+
+            // Force a cache refresh when the window opens, so we get new apps
 #if HOMEPAGE
             main_window.homepage_loaded.connect (() => {
-                client.update_cache.begin ();
+                client.update_cache.begin (true);
             });
 #else
-            client.update_cache.begin ();
+            client.update_cache.begin (true);
 #endif
 
             main_window.destroy.connect (() => {
@@ -208,7 +217,6 @@ public class AppCenter.App : Gtk.Application {
         base.dbus_register (connection, object_path);
 
         if (silent) {
-            DBusServer.init ();
             try {
                 registration_id = connection.register_object ("/io/elementary/appcenter", DBusServer.get_default ());
             } catch (Error e) {
@@ -284,12 +292,8 @@ public class AppCenter.App : Gtk.Application {
                         break;
                     }
 
-                    var dialog = new Granite.MessageDialog.with_image_from_icon_name (
-                        _("There Was An Error Installing %s.").printf (package.get_name ()),
-                        format_error_message (error.message),
-                        "dialog-error",
-                        Gtk.ButtonsType.CLOSE
-                    );
+                    var dialog = new InstallFailDialog (package, error);
+
                     dialog.show_all ();
                     dialog.run ();
                     dialog.destroy ();
@@ -346,6 +350,14 @@ public class AppCenter.App : Gtk.Application {
         }
 
         return "%s/%s".printf (tokens[tokens.length - 2], tokens[tokens.length - 1]);
+    }
+
+    public static void add_paid_app (string id) {
+        var paid_apps = settings.get_strv ("paid-apps");
+        if (!(id in paid_apps)) {
+            paid_apps += id;
+            settings.set_strv ("paid-apps", paid_apps);
+        }
     }
 }
 

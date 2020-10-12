@@ -91,7 +91,6 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
     public bool suggested_action {
         set {
             if (value) {
-                amount_button.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
                 amount_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
                 arrow_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
             }
@@ -113,7 +112,7 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
 
         selection = new HumblePopover (arrow_button);
         selection.position = Gtk.PositionType.BOTTOM;
-        selection.download_requested.connect (() => download_requested);
+        selection.download_requested.connect (() => download_requested ());
         selection.payment_requested.connect ((amount) => payment_requested (amount));
         selection.amount_changed.connect ((new_amount) => { amount = new_amount; });
         selection.closed.connect (() => {
@@ -146,4 +145,3 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
         }
     }
 }
-

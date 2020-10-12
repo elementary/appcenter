@@ -19,7 +19,7 @@ namespace Utils {
         // https://gitlab.gnome.org/GNOME/vala/issues/7
         var rand = new GLib.Rand ();
         for (int i = 0; i < array.length * 3; i++) {
-            swap (&array[0], &array[rand.int_range(1, array.length)]);
+            swap (&array[0], &array[rand.int_range (1, array.length)]);
         }
     }
 
@@ -29,14 +29,31 @@ namespace Utils {
         *y = tmp;
     }
 
-
-    public void reboot () {
+    public static uint get_file_age (GLib.File file) {
+        FileInfo info;
         try {
-            SuspendControl.get_default ().reboot ();
-        } catch (GLib.Error e) {
-            var dialog = new AppCenter.Widgets.RestartDialog ();
-            dialog.show_all ();
+            info = file.query_info (FileAttribute.TIME_MODIFIED, FileQueryInfoFlags.NONE);
+        } catch (Error e) {
+            warning ("Error while getting file age: %s", e.message);
+            return uint.MAX;
         }
+
+        if (info == null) {
+            return uint.MAX;
+        }
+
+        uint64 mtime = info.get_attribute_uint64 (FileAttribute.TIME_MODIFIED);
+        uint64 now = (uint64) time_t ();
+
+        if (mtime > now) {
+            return uint.MAX;
+        }
+
+        if (now - mtime > uint.MAX) {
+            return uint.MAX;
+        }
+
+        return (uint) (now - mtime);
     }
 
     public static unowned string pk_status_to_string (Pk.Status status) {
@@ -115,5 +132,11 @@ namespace Utils {
                 return _("Unknown state");
         }
     }
-}
 
+    public static string unescape_markup (string escaped_text) {
+        return escaped_text.replace ("&amp;", "&")
+                           .replace ("&lt;", "<")
+                           .replace ("&gt;", ">")
+                           .replace ("&#39;", "'");
+    }
+}

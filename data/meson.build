@@ -6,14 +6,6 @@ configure_file(
     install_dir: join_paths(get_option('datadir'), 'applications')
 )
 
-# D-Bus Service
-configure_file(
-    input: meson.project_name() + '.service.in',
-    output: meson.project_name() + '.service',
-    configuration: conf_data,
-    install_dir: dbus.get_pkgconfig_variable('session_bus_services_dir')
-)
-
 # GNOME Shell Search Provider
 configure_file(
     input: meson.project_name() + '.search-provider.ini.in',
@@ -48,9 +40,17 @@ i18n.merge_file(
     install: true
 )
 
-# Blacklist file
+i18n.merge_file(
+    input: 'io.elementary.appcenter.policy.in',
+    output: 'io.elementary.appcenter.policy',
+    po_dir: join_paths(meson.source_root (), 'po', 'extra'),
+    install_dir: join_paths(get_option('datadir'), 'polkit-1', 'actions'),
+    install: true
+)
+
+# Hidden app list file
 install_data(
-    'appcenter.blacklist',
+    'appcenter.hiddenapps',
     install_dir: config_dir,
 )
 
