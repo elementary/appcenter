@@ -3,21 +3,22 @@
 # Marco De Paolini <marco.depaolini@gmail.com>, 2018.
 # Fabio Rifici <fabio.rifici@microtechsrl.com>, 2018.
 # icyc0re <tiziano.signo@gmail.com>, 2018.
-# Fabio Zaramella <fabiozaramella@hotmail.it>, 2019.
+# Fabio Zaramella <fabiozaramella@hotmail.it>, 2019, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-08 15:53+0000\n"
-"PO-Revision-Date: 2019-07-03 14:02+0000\n"
+"PO-Revision-Date: 2020-10-13 21:14+0000\n"
 "Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
-"Language-Team: Italian <https://l10n.elementary.io/projects/appcenter/appcenter/it/>\n"
+"Language-Team: Italian <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/it/>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -54,7 +55,7 @@ msgstr "Pagina principale"
 #: src/Views/InstalledView.vala:57
 msgctxt "view"
 msgid "Installed"
-msgstr "Installato"
+msgstr "Installate"
 
 #: src/MainWindow.vala:177 src/MainWindow.vala:356 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:84
@@ -223,22 +224,16 @@ msgstr[0] "%u aggiornamento è disponibile per il tuo sistema"
 msgstr[1] "%u aggiornamenti sono disponibili per il tuo sistema"
 
 #: src/Core/FlatpakBackend.vala:1017
-#, fuzzy
-#| msgid "Uninstall"
 msgid "Uninstalling"
-msgstr "Rimuovi"
+msgstr "Rimozione in corso"
 
 #: src/Core/FlatpakBackend.vala:1022
-#, fuzzy
-#| msgid "Finished"
 msgid "Finishing"
-msgstr "Completato"
+msgstr "Completamento"
 
 #: src/Core/FlatpakBackend.vala:1160
-#, fuzzy
-#| msgid "Update"
 msgid "Updating"
-msgstr "Aggiorna"
+msgstr "Aggiornamento"
 
 #: src/Core/Package.vala:308
 #, c-format
@@ -256,7 +251,7 @@ msgstr "Ubuntu (non curato)"
 #: src/Core/Package.vala:347
 #, c-format
 msgid "%s (system-wide)"
-msgstr ""
+msgstr "%s (a livello di sistema)"
 
 #: src/Core/Package.vala:352
 msgid "Ubuntu Drivers"
@@ -270,12 +265,13 @@ msgstr "Origini sconosciute (non curate)"
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
+"Stato dell'applicazione non impostato come installato in AppCenter per il "
+"pacchetto: %s"
 
 #: src/Core/PackageKitBackend.vala:272
-#, fuzzy, c-format
-#| msgid "%s (non-curated)"
+#, c-format
 msgid "%s (local)"
-msgstr "%s (non curato)"
+msgstr "%s (locale)"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -323,14 +319,17 @@ msgid "Content Warning"
 msgstr "Avvertenze sul contenuto"
 
 #: src/Dialogs/ContentWarningDialog.vala:30
-#, fuzzy, c-format
+#, c-format
 msgid "“%s” contains explicit content"
-msgstr "%s contiene materiali espliciti"
+msgstr "\"%s\" contiene materiali espliciti"
 
 #: src/Dialogs/ContentWarningDialog.vala:31
-#, fuzzy, c-format
+#, c-format
 msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
-msgstr "%s potrebbe contenere contenuti adatti solamente a un pubblico adulto. In generale, elementary non supervisiona né approva i contenuti di questa applicazione."
+msgstr ""
+"\"%s\" potrebbe contenere contenuti adatti solamente a un pubblico adulto. "
+"In generale, elementary non supervisiona né approva i contenuti di questa "
+"applicazione."
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 msgid "Show content warnings"
@@ -347,54 +346,54 @@ msgid "Install Anyway"
 msgstr "Installa comunque"
 
 #: src/Dialogs/InstallFailDialog.vala:26
-#, fuzzy
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
-msgstr "Ciò potrebbe essere stato causato da repository software esterni aggiunti manualmente o da un file sorgente danneggiato."
+msgstr ""
+"Ciò potrebbe essere stato causato da un problema temporaneo o da software "
+"esterno o compilato manualmente."
 
 #: src/Dialogs/InstallFailDialog.vala:37
-#, fuzzy
 msgid "Failed to install app"
-msgstr "Trova e installa Applicazioni"
+msgstr "Impossibile installare l'applicazione"
 
 #: src/Dialogs/InstallFailDialog.vala:40
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to install “%s”"
-msgstr "Trova e installa Applicazioni"
+msgstr "Impossibile installare “%s”"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
-#, fuzzy
-#| msgid "Content Warning"
 msgid "Non-Curated Warning"
-msgstr "Avvertenze sul contenuto"
+msgstr "Avvertenze sul contenuto non curato"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:37
-#, fuzzy
-#| msgid "%s (non-curated)"
 msgid "Install non-curated app?"
-msgstr "%s (non curato)"
+msgstr "Installare applicazioni non curate?"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
 msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
 msgstr ""
+"\"%s\" non è curata da elementary e non è stata sottoposta a revisione per "
+"quanto riguarda la sicurezza, la privacy o l'integrazione nel sistema."
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
 msgid "It may not receive bug fix or feature updates"
 msgstr ""
+"Potrebbe non ricevere aggiornamenti di correzione degli errori o delle "
+"funzionalità"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:60
 msgid "It may access or change system or personal files without permission"
 msgstr ""
+"Potrebbe aver accesso o modificare file di sistema o personali senza "
+"autorizzazione"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
-#, fuzzy
-#| msgid "Show content warnings"
 msgid "Show non-curated warnings"
-msgstr "Mostra avvisi sul contenuto"
+msgstr "Mostra avvisi sul contenuto non curato"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
-msgstr "Sei sicuro di voler riavviare?"
+msgstr "Vuoi davvero riavviare?"
 
 #: src/Dialogs/RestartDialog.vala:41
 msgid "This will close all open applications and restart this device."
@@ -543,17 +542,16 @@ msgstr "La carta fornita è una carta di prova. Utilizza una carta reale per pro
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
-msgstr ""
+msgstr "Rimuovere questa applicazione potrebbe eliminare anche i suoi dati."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:35
-#, fuzzy
 msgid "Uninstall app?"
-msgstr "Rimuovi"
+msgstr "Rimuovere l'applicazione?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:38
-#, fuzzy, c-format
+#, c-format
 msgid "Uninstall “%s”?"
-msgstr "Rimuovi"
+msgstr "Rimuovere \"%s\"?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:124
@@ -561,19 +559,19 @@ msgid "Uninstall"
 msgstr "Rimuovi"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
-#, fuzzy
 msgid "This may have been caused by external or manually compiled software."
-msgstr "Ciò potrebbe essere stato causato da repository software esterni aggiunti manualmente o da un file sorgente danneggiato."
+msgstr ""
+"Ciò potrebbe essere stato causato da software esterno o compilato "
+"manualmente."
 
 #: src/Dialogs/UninstallFailDialog.vala:37
-#, fuzzy
 msgid "Failed to uninstall app"
-msgstr "Trova e installa Applicazioni"
+msgstr "Impossibile rimuovere l'applicazione"
 
 #: src/Dialogs/UninstallFailDialog.vala:40
 #, c-format
 msgid "Failed to uninstall “%s”"
-msgstr ""
+msgstr "impossibile rimuovere “%s”"
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
@@ -674,14 +672,14 @@ msgid "Fund the development of this app"
 msgstr "Finanzia lo sviluppo di questa applicazione"
 
 #: src/Views/AppListUpdateView.vala:37
-#, fuzzy
-#| msgid "Searching for updates…"
 msgid "Checking for Updates"
-msgstr "Ricerca di aggiornamenti…"
+msgstr "Ricerca di aggiornamenti in corso"
 
 #: src/Views/AppListUpdateView.vala:38
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr ""
+"Scaricamento di un elenco di aggiornamenti disponibili per il sistema "
+"operativo e le applicazioni installate"
 
 #: src/Views/AppListUpdateView.vala:49
 msgid "A restart is required to complete the installation of updates"
@@ -834,12 +832,10 @@ msgid "$%d"
 msgstr "$%d USD"
 
 #: src/Widgets/NetworkInfoBar.vala:28
-#, fuzzy
 msgid "Network Not Available."
-msgstr "Rete non disponibile"
+msgstr "Rete non disponibile."
 
 #: src/Widgets/NetworkInfoBar.vala:29
-#, fuzzy
 msgid "Connect to the Internet to browse and install apps."
 msgstr "Connettiti a Internet per installare o aggiornare le applicazioni."
 
@@ -887,16 +883,16 @@ msgstr "Copia collegamento"
 
 #: src/Widgets/SizeLabel.vala:35
 msgid "Actual Download Size Likely to Be Smaller"
-msgstr ""
+msgstr "Le dimensioni effettive del download potrebbero essere inferiori"
 
 #: src/Widgets/SizeLabel.vala:36
 msgid "Only the parts of apps and updates that are needed will be downloaded."
-msgstr ""
+msgstr "Verranno scaricate solo le componenti e gli aggiornamenti necessari."
 
 #: src/Widgets/SizeLabel.vala:63
-#, fuzzy, c-format
+#, c-format
 msgid "Up to %s"
-msgstr "Aggiornato"
+msgstr "Aggiornato a %s"
 
 #: src/Widgets/UpdateHeaderRow.vala:41
 #, c-format
