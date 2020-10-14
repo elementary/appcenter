@@ -12,11 +12,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-29 01:49+0000\n"
+"POT-Creation-Date: 2020-10-08 15:53+0000\n"
 "PO-Revision-Date: 2020-09-01 05:13+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
-"Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/tr/>\n"
+"Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/appcenter/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -40,11 +39,11 @@ msgstr "Medya türü %s ayrıştırılamadı"
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Belirtilen '%s' bağlantısı bulunamadı, bunun yerine arama yapılıyor"
 
-#: src/Application.vala:272
+#: src/Application.vala:284
 msgid "Application installed"
 msgstr "Uygulama yüklendi"
 
-#: src/Application.vala:273
+#: src/Application.vala:285
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s başarı ile yüklendi"
@@ -61,7 +60,7 @@ msgctxt "view"
 msgid "Installed"
 msgstr "Yüklendi"
 
-#: src/MainWindow.vala:171 src/MainWindow.vala:350 src/Views/SearchView.vala:54
+#: src/MainWindow.vala:177 src/MainWindow.vala:356 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:84
 msgid "Search Apps"
 msgstr "Uygulama Ara"
@@ -141,8 +140,8 @@ msgstr "Tamamlandı"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
 #: src/Core/FlatpakBackend.vala:919 src/Core/FlatpakBackend.vala:947
-#: src/Core/FlatpakBackend.vala:1025 src/Core/FlatpakBackend.vala:1161
-#: src/Core/FlatpakBackend.vala:1187
+#: src/Core/FlatpakBackend.vala:1025 src/Core/FlatpakBackend.vala:1169
+#: src/Core/FlatpakBackend.vala:1195
 msgid "Cancelling"
 msgstr "İptal ediliyor"
 
@@ -235,7 +234,7 @@ msgstr "Kaldırılıyor"
 msgid "Finishing"
 msgstr "Bitiriliyor"
 
-#: src/Core/FlatpakBackend.vala:1152
+#: src/Core/FlatpakBackend.vala:1160
 msgid "Updating"
 msgstr "Güncelleniyor"
 
@@ -288,31 +287,31 @@ msgstr "Sistem bileşenleri için güncellemeler"
 msgid "Version: %s"
 msgstr "Sürüm: %s"
 
-#: src/Core/UpdateManager.vala:118
+#: src/Core/UpdateManager.vala:130
 msgid "Flatpak runtime"
 msgstr "Flatpak runtime"
 
-#: src/Core/UpdateManager.vala:135
+#: src/Core/UpdateManager.vala:147
 msgid "No components with updates"
 msgstr "Güncellenecek bileşen yok"
 
-#: src/Core/UpdateManager.vala:140
+#: src/Core/UpdateManager.vala:152
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "%u bileşenin güncellemesi var"
 msgstr[1] "%u bileşenin güncellemesi var"
 
-#: src/Core/UpdateManager.vala:142
+#: src/Core/UpdateManager.vala:154
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:181
+#: src/Core/UpdateManager.vala:193
 msgid "Restart Required"
 msgstr "Yeniden Başlatma Gerekli"
 
-#: src/Core/UpdateManager.vala:182
+#: src/Core/UpdateManager.vala:194
 msgid "Please restart your system to finalize updates"
 msgstr "Lütfen güncellemeler bittikten sonra sisteminizi yeniden başlatın"
 
@@ -689,7 +688,7 @@ msgstr "Sonuç Yok"
 msgid "No apps could be found. Try changing search terms."
 msgstr "Uygulama bulunamadı. Arama terimlerini değiştirmeyi deneyin."
 
-#: src/Views/AppListView.vala:160
+#: src/Views/AppListView.vala:167
 msgid "Non-Curated Apps"
 msgstr "Doğrulanmamış Uygulamalar"
 

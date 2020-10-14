@@ -106,12 +106,13 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
             var results = backend.get_applications_for_category (category);
 
             foreach (var result in results) {
-                if (apps.has_key (result.normalized_component_id)) {
-                    if (result.origin_score > apps[result.normalized_component_id].origin_score) {
-                        apps[result.normalized_component_id] = result;
+                var result_component_id = result.normalized_component_id;
+                if (apps.has_key (result_component_id)) {
+                    if (result.origin_score > apps[result_component_id].origin_score) {
+                        apps[result_component_id] = result;
                     }
                 } else {
-                    apps[result.normalized_component_id] = result;
+                    apps[result_component_id] = result;
                 }
             }
         }
@@ -125,12 +126,13 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
             var results = backend.search_applications (query, category);
 
             foreach (var result in results) {
-                if (apps.has_key (result.normalized_component_id)) {
-                    if (result.origin_score > apps[result.normalized_component_id].origin_score) {
-                        apps[result.normalized_component_id] = result;
+                var result_component_id = result.normalized_component_id;
+                if (apps.has_key (result_component_id)) {
+                    if (result.origin_score > apps[result_component_id].origin_score) {
+                        apps[result_component_id] = result;
                     }
                 } else {
-                    apps[result.normalized_component_id] = result;
+                    apps[result_component_id] = result;
                 }
             }
         }
