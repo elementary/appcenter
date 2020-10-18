@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-08 15:53+0000\n"
-"PO-Revision-Date: 2020-10-13 21:14+0000\n"
+"PO-Revision-Date: 2020-10-19 18:15+0000\n"
 "Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/it/>\n"
@@ -907,7 +907,7 @@ msgstr "Driver"
 
 #: src/Widgets/UpdateHeaderRow.vala:58
 msgid "Up to Date"
-msgstr "Aggiornato"
+msgstr "Aggiornate"
 
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:133
 msgid "Open"
