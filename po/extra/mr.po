@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-08 15:53+0000\n"
-"PO-Revision-Date: 2020-09-12 21:14+0000\n"
+"PO-Revision-Date: 2020-10-13 21:14+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/extra/"
 "mr/>\n"
@@ -45,7 +45,7 @@ msgstr "निराकारणे"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Correctly display names of Flatpak runtime updates"
-msgstr ""
+msgstr "फ्लॅटपाक रनटाइम अद्यतनांची नावे योग्यरित्या प्रदर्शित करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:37
@@ -74,21 +74,25 @@ msgstr "नवीन वैशिष्टये"
 
 #: data/io.elementary.appcenter.appdata.xml.in:30
 msgid "Support system-wide Flatpak remotes"
-msgstr ""
+msgstr "सिस्टम-व्यापी फ्लॅटपाक रीमोट समर्थन"
 
 #: data/io.elementary.appcenter.appdata.xml.in:34
 msgid "Fix Flatpak runtime updates getting stuck"
-msgstr ""
+msgstr "फ्लॅटपाक रनटाइम अद्यतने अडकल्याची निराकरण करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
 msgid "Fix long origin comboboxes breaking the header layout"
 msgstr ""
+"शीर्षलेख लेआउट ब्रेकिंग लाँग ओरिजन कॉम्बोबॉक्सेसशी संबंधित समस्यांचे निराकरण "
+"करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:39
 msgid ""
 "When apps are available from multiple sources, prefer installed version, "
 "then prefer Flatpak"
 msgstr ""
+"जेव्हा अ‍ॅप एकाधिक स्रोतांकडून उपलब्ध असतात, तेव्हा स्थापित केलेली आवृत्ती "
+"पसंत करा, नंतर फ्लॅटपॅकला प्राधान्य द्या"
 
 #: data/io.elementary.appcenter.appdata.xml.in:40
 #, fuzzy
