@@ -17,7 +17,7 @@
  * Authored by: Corentin Noël <corentin@elementaryos.org>
  */
 
-public abstract class AppCenter.AbstractView : Gtk.Stack {
+public abstract class AppCenter.AbstractView : Hdy.Deck {
     public signal void subview_entered (string? return_name, bool allow_search, string? custom_header = null, string? custom_search_placeholder = null);
 
     protected AppCenterCore.Package? previous_package = null;
@@ -59,7 +59,7 @@ public abstract class AppCenter.AbstractView : Gtk.Stack {
         var app_info_view = new Views.AppInfoView (package);
         app_info_view.show_all ();
 
-        add_named (app_info_view, package_hash);
+        add (app_info_view);
         set_visible_child (app_info_view);
 
         var cache = AppCenterCore.Client.get_default ().screenshot_cache;

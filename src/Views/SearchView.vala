@@ -46,7 +46,6 @@ public class AppCenter.Views.SearchView : AbstractView {
             if (previous_package != null) {
                 show_package (previous_package);
             } else {
-                transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
                 set_visible_child (app_list_view);
                 viewing_package = false;
 
