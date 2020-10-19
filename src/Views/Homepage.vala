@@ -25,7 +25,7 @@ const int NUM_PACKAGES_IN_BANNER = 5;
 const int NUM_PACKAGES_IN_CAROUSEL = 5;
 
 namespace AppCenter {
-    public class Homepage : View {
+    public class Homepage : AbstractView {
         private Gtk.FlowBox category_flow;
         private Gtk.ScrolledWindow category_scrolled;
         private string current_category;

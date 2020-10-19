@@ -17,7 +17,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class AppCenter.Views.InstalledView : View {
+public class AppCenter.Views.InstalledView : AbstractView {
     private Cancellable refresh_cancellable;
 
     private AppListUpdateView app_list_view;

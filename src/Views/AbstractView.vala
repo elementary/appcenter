@@ -18,7 +18,7 @@
  * Authored by: Corentin Noël <corentin@elementaryos.org>
  */
 
-public abstract class AppCenter.View : Gtk.Stack {
+public abstract class AppCenter.AbstractView : Gtk.Stack {
     public signal void subview_entered (string? return_name, bool allow_search, string? custom_header = null, string? custom_search_placeholder = null);
 
     protected AppCenterCore.Package? previous_package = null;

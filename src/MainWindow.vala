@@ -380,7 +380,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             return_button.visible = false;
         }
 
-        View view = (View) stack.visible_child;
+        var view = (AbstractView) stack.visible_child;
         view.return_clicked ();
     }
 

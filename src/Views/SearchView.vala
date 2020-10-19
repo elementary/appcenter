@@ -19,7 +19,7 @@
 
 using AppCenterCore;
 
-public class AppCenter.Views.SearchView : View {
+public class AppCenter.Views.SearchView : AbstractView {
     AppListView app_list_view;
 
     public bool viewing_package { get; private set; default = false; }
