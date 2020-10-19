@@ -286,10 +286,9 @@ namespace AppCenter {
 
         public override void show_package (
             AppCenterCore.Package package,
-            bool remember_history = true,
-            Gtk.StackTransitionType transition = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT
+            bool remember_history = true
         ) {
-            base.show_package (package, remember_history, transition);
+            base.show_package (package, remember_history);
             viewing_package = true;
             if (remember_history) {
                 current_category = null;
