@@ -3,11 +3,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-29 01:49+0000\n"
+"POT-Creation-Date: 2020-10-08 15:53+0000\n"
 "PO-Revision-Date: 2020-08-31 04:13+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/ja/>\n"
+"Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/appcenter/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,11 +30,11 @@ msgstr "メディアタイプ %s を解析できませんでした"
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "指定されたリンク '%s' は見つかりませんでした。代わりを検索します"
 
-#: src/Application.vala:272
+#: src/Application.vala:284
 msgid "Application installed"
 msgstr "アプリケーションがインストールされました"
 
-#: src/Application.vala:273
+#: src/Application.vala:285
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s は正常にインストールされました"
@@ -52,7 +51,7 @@ msgctxt "view"
 msgid "Installed"
 msgstr "インストール済み"
 
-#: src/MainWindow.vala:171 src/MainWindow.vala:350 src/Views/SearchView.vala:54
+#: src/MainWindow.vala:177 src/MainWindow.vala:356 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:84
 msgid "Search Apps"
 msgstr "アプリを検索"
@@ -132,8 +131,8 @@ msgstr "完了しました"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
 #: src/Core/FlatpakBackend.vala:919 src/Core/FlatpakBackend.vala:947
-#: src/Core/FlatpakBackend.vala:1025 src/Core/FlatpakBackend.vala:1161
-#: src/Core/FlatpakBackend.vala:1187
+#: src/Core/FlatpakBackend.vala:1025 src/Core/FlatpakBackend.vala:1169
+#: src/Core/FlatpakBackend.vala:1195
 msgid "Cancelling"
 msgstr "キャンセルしています"
 
@@ -224,7 +223,7 @@ msgstr "アンインストールしています"
 msgid "Finishing"
 msgstr "完了しています"
 
-#: src/Core/FlatpakBackend.vala:1152
+#: src/Core/FlatpakBackend.vala:1160
 msgid "Updating"
 msgstr "アップデートしています"
 
@@ -277,30 +276,30 @@ msgstr "システムコンポーネントのアップデート"
 msgid "Version: %s"
 msgstr "バージョン: %s"
 
-#: src/Core/UpdateManager.vala:118
+#: src/Core/UpdateManager.vala:130
 msgid "Flatpak runtime"
 msgstr "Flatpak ランタイム"
 
-#: src/Core/UpdateManager.vala:135
+#: src/Core/UpdateManager.vala:147
 msgid "No components with updates"
 msgstr "アップデートのあるコンポーネントはありません"
 
-#: src/Core/UpdateManager.vala:140
+#: src/Core/UpdateManager.vala:152
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "アップデートのあるコンポーネントが %u 個あります"
 
-#: src/Core/UpdateManager.vala:142
+#: src/Core/UpdateManager.vala:154
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:181
+#: src/Core/UpdateManager.vala:193
 msgid "Restart Required"
 msgstr "再起動が必要です"
 
-#: src/Core/UpdateManager.vala:182
+#: src/Core/UpdateManager.vala:194
 msgid "Please restart your system to finalize updates"
 msgstr "アップデートを完了するには再起動してください"
 
@@ -677,7 +676,7 @@ msgstr "検索結果はありません"
 msgid "No apps could be found. Try changing search terms."
 msgstr "アプリが見つかりませんでした。検索用語を変更してみてください。"
 
-#: src/Views/AppListView.vala:160
+#: src/Views/AppListView.vala:167
 msgid "Non-Curated Apps"
 msgstr "キュレーションされていないアプリ"
 

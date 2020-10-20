@@ -1,20 +1,21 @@
 # AMONK <anandahanuman@gmail.com>, 2019.
 # Pomi Not <uspomai@gmail.com>, 2019.
 # Daniel Foré <daniel@elementary.io>, 2019.
+# Trkien618 <hacngoctrungkien@gmail.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-29 01:49+0000\n"
-"PO-Revision-Date: 2019-09-12 01:22+0000\n"
-"Last-Translator: Daniel Foré <daniel@elementary.io>\n"
+"POT-Creation-Date: 2020-10-08 15:53+0000\n"
+"PO-Revision-Date: 2020-10-07 03:57+0000\n"
+"Last-Translator: Trkien618 <hacngoctrungkien@gmail.com>\n"
 "Language-Team: Vietnamese <https://l10n.elementary.io/projects/appcenter/appcenter/vi/>\n"
 "Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -23,20 +24,20 @@ msgid "AppCenter"
 msgstr "Trung tâm Ứng dụng"
 
 #: src/Application.vala:112
-#, fuzzy, c-format
+#, c-format
 msgid "Could not parse the media type %s"
-msgstr "Không thể phân tích loại nội dung %s"
+msgstr "Không thể phân tích kiểu nội dung %s"
 
 #: src/Application.vala:132
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Không tìm thấy liên kết cụ thể tới '%s', đang tìm kiếm thay thế"
 
-#: src/Application.vala:272
+#: src/Application.vala:284
 msgid "Application installed"
 msgstr "Ứng dụng đã được cài đặt"
 
-#: src/Application.vala:273
+#: src/Application.vala:285
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s đã được cài đặt thành công"
@@ -50,12 +51,11 @@ msgstr "Trang chủ"
 
 #: src/MainWindow.vala:137 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
-#, fuzzy
 msgctxt "view"
 msgid "Installed"
-msgstr "Cài đặt"
+msgstr "Đã cài đặt"
 
-#: src/MainWindow.vala:171 src/MainWindow.vala:350 src/Views/SearchView.vala:54
+#: src/MainWindow.vala:177 src/MainWindow.vala:356 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:84
 msgid "Search Apps"
 msgstr "Tìm kiếm ứng dụng"
@@ -135,8 +135,8 @@ msgstr "Đã hoàn tất"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
 #: src/Core/FlatpakBackend.vala:919 src/Core/FlatpakBackend.vala:947
-#: src/Core/FlatpakBackend.vala:1025 src/Core/FlatpakBackend.vala:1161
-#: src/Core/FlatpakBackend.vala:1187
+#: src/Core/FlatpakBackend.vala:1025 src/Core/FlatpakBackend.vala:1169
+#: src/Core/FlatpakBackend.vala:1195
 msgid "Cancelling"
 msgstr "Đang hủy"
 
@@ -231,7 +231,7 @@ msgstr "Gỡ cài đặt"
 msgid "Finishing"
 msgstr "Đã hoàn tất"
 
-#: src/Core/FlatpakBackend.vala:1152
+#: src/Core/FlatpakBackend.vala:1160
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -243,18 +243,17 @@ msgid "%s Developers"
 msgstr "%s Nhà phát triển"
 
 #: src/Core/Package.vala:340
-#, fuzzy
 msgid "elementary Updates"
-msgstr "Đã cập nhật gần đây"
+msgstr "Cập nhật cơ bản"
 
 #: src/Core/Package.vala:342
 msgid "Ubuntu (non-curated)"
-msgstr ""
+msgstr "Ubuntu (Không quản lý)"
 
 #: src/Core/Package.vala:347
 #, c-format
 msgid "%s (system-wide)"
-msgstr ""
+msgstr "%s (system-wide)"
 
 #: src/Core/Package.vala:352
 #, fuzzy
@@ -263,12 +262,12 @@ msgstr "Các trình điều khiển"
 
 #: src/Core/Package.vala:355
 msgid "Unknown Origin (non-curated)"
-msgstr ""
+msgstr "Nguồn gốc không xác định (không được quản lý)"
 
 #: src/Core/Package.vala:532
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
-msgstr ""
+msgstr "Trạng thái ứng dụng không được đặt như ứng dụng đã cài đặt trong AppCenter cho package: %s"
 
 #: src/Core/PackageKitBackend.vala:272
 #, fuzzy, c-format
@@ -288,30 +287,30 @@ msgstr "Cập nhật cho các thành phần hệ thống"
 msgid "Version: %s"
 msgstr "Phiên bản: %s"
 
-#: src/Core/UpdateManager.vala:118
+#: src/Core/UpdateManager.vala:130
 msgid "Flatpak runtime"
-msgstr ""
+msgstr "Thời gian chạy Flatpak"
 
-#: src/Core/UpdateManager.vala:135
+#: src/Core/UpdateManager.vala:147
 msgid "No components with updates"
-msgstr "Không thành phần nào có cập nhật"
+msgstr "Không hợp phần nào có cập nhật"
 
-#: src/Core/UpdateManager.vala:140
+#: src/Core/UpdateManager.vala:152
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "Các thành phần %u có cập nhật"
 
-#: src/Core/UpdateManager.vala:142
+#: src/Core/UpdateManager.vala:154
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:181
+#: src/Core/UpdateManager.vala:193
 msgid "Restart Required"
 msgstr "Yêu cầu khởi động lại"
 
-#: src/Core/UpdateManager.vala:182
+#: src/Core/UpdateManager.vala:194
 msgid "Please restart your system to finalize updates"
 msgstr "Vui lòng khởi động lại hệ thống của bạn để hoàn tất cập nhật"
 
@@ -327,7 +326,7 @@ msgstr "%s chứa nội dung nhạy cảm"
 #: src/Dialogs/ContentWarningDialog.vala:31
 #, c-format
 msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
-msgstr ""
+msgstr "%s có thể chứa nội dung có thể chứa nội dung nhạy cảm hoặc chỉ phù hợp với người lớn.  Elementary không đánh giá hoặc xác nhận nội dung của ứng dụng này."
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 msgid "Show content warnings"
@@ -340,9 +339,8 @@ msgstr "Đừng cài đặt"
 
 #: src/Dialogs/ContentWarningDialog.vala:38
 #: src/Dialogs/NonCuratedWarningDialog.vala:82
-#, fuzzy
 msgid "Install Anyway"
-msgstr "Đang cài đặt"
+msgstr "Vẫn cài đặt"
 
 #: src/Dialogs/InstallFailDialog.vala:26
 #, fuzzy
@@ -705,7 +703,7 @@ msgstr "Không có kết quả"
 msgid "No apps could be found. Try changing search terms."
 msgstr "Không tìm thấy ứng dụng nào. Hãy thử thay đổi cụm từ tìm kiếm."
 
-#: src/Views/AppListView.vala:160
+#: src/Views/AppListView.vala:167
 msgid "Non-Curated Apps"
 msgstr "Không được quản lý"
 

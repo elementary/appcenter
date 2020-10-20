@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-29 01:49+0000\n"
+"POT-Creation-Date: 2020-10-08 15:53+0000\n"
 "PO-Revision-Date: 2020-03-26 18:09+0000\n"
 "Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/appcenter/appcenter/id/>\n"
@@ -31,11 +31,11 @@ msgstr "Tidak dapat mengurai tipe media %s"
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Tautan yang ditentukan '%s' tidak dapat ditemukan, cari sebagai gantinya"
 
-#: src/Application.vala:272
+#: src/Application.vala:284
 msgid "Application installed"
 msgstr "Aplikasi terpasang"
 
-#: src/Application.vala:273
+#: src/Application.vala:285
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s telah berhasil terpasang"
@@ -52,7 +52,7 @@ msgctxt "view"
 msgid "Installed"
 msgstr "Terpasang"
 
-#: src/MainWindow.vala:171 src/MainWindow.vala:350 src/Views/SearchView.vala:54
+#: src/MainWindow.vala:177 src/MainWindow.vala:356 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:84
 msgid "Search Apps"
 msgstr "Cari Aplikasi"
@@ -132,8 +132,8 @@ msgstr "Selesai"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
 #: src/Core/FlatpakBackend.vala:919 src/Core/FlatpakBackend.vala:947
-#: src/Core/FlatpakBackend.vala:1025 src/Core/FlatpakBackend.vala:1161
-#: src/Core/FlatpakBackend.vala:1187
+#: src/Core/FlatpakBackend.vala:1025 src/Core/FlatpakBackend.vala:1169
+#: src/Core/FlatpakBackend.vala:1195
 msgid "Cancelling"
 msgstr "Membatalkan"
 
@@ -228,7 +228,7 @@ msgstr "Hapus Pemasangan"
 msgid "Finishing"
 msgstr "Selesai"
 
-#: src/Core/FlatpakBackend.vala:1152
+#: src/Core/FlatpakBackend.vala:1160
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -284,30 +284,30 @@ msgstr "Pembaruan untuk komponen sistem"
 msgid "Version: %s"
 msgstr "Versi: %s"
 
-#: src/Core/UpdateManager.vala:118
+#: src/Core/UpdateManager.vala:130
 msgid "Flatpak runtime"
 msgstr "Runtime Flatpak"
 
-#: src/Core/UpdateManager.vala:135
+#: src/Core/UpdateManager.vala:147
 msgid "No components with updates"
 msgstr "Tidak ada komponen yang perlu diperbarui"
 
-#: src/Core/UpdateManager.vala:140
+#: src/Core/UpdateManager.vala:152
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "%u komponen perlu diperbarui"
 
-#: src/Core/UpdateManager.vala:142
+#: src/Core/UpdateManager.vala:154
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:181
+#: src/Core/UpdateManager.vala:193
 msgid "Restart Required"
 msgstr "Mulai Ulang Dibutuhkan"
 
-#: src/Core/UpdateManager.vala:182
+#: src/Core/UpdateManager.vala:194
 msgid "Please restart your system to finalize updates"
 msgstr "Silakan mulai ulang sistem Anda untuk menyelesaikan pembaruan"
 
@@ -697,7 +697,7 @@ msgstr "Tidak Ada Hasil"
 msgid "No apps could be found. Try changing search terms."
 msgstr "Tidak ada aplikasi yang bisa ditemukan. Coba ganti kata penelusuran."
 
-#: src/Views/AppListView.vala:160
+#: src/Views/AppListView.vala:167
 msgid "Non-Curated Apps"
 msgstr "Aplikasi Tidak-Dikuratori"
 
