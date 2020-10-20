@@ -67,6 +67,8 @@ public class AppCenter.Widgets.CategoryItem : Gtk.FlowBoxChild {
         themed_grid.margin = 12;
 
         themed_grid_context = themed_grid.get_style_context ();
+        themed_grid_context.add_class (Granite.STYLE_CLASS_CARD);
+        themed_grid_context.add_class (Granite.STYLE_CLASS_ROUNDED);
         themed_grid_context.add_class ("category");
         themed_grid_context.add_provider (category_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
