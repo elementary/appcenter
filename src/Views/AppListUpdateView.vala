@@ -320,7 +320,7 @@ namespace AppCenter.Views {
                 list_box.invalidate_sort ();
 
                 unowned AppCenterCore.Client client = AppCenterCore.Client.get_default ();
-                client.refresh_updates ();
+                client.refresh_updates.begin ();
 
                 return GLib.Source.REMOVE;
             });
