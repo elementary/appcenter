@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-08 15:53+0000\n"
-"PO-Revision-Date: 2020-10-13 21:14+0000\n"
+"PO-Revision-Date: 2020-10-23 17:15+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/extra/"
 "mr/>\n"
@@ -95,14 +95,12 @@ msgstr ""
 "पसंत करा, नंतर फ्लॅटपॅकला प्राधान्य द्या"
 
 #: data/io.elementary.appcenter.appdata.xml.in:40
-#, fuzzy
-#| msgid "Bug fixes and improve performance."
 msgid "Improve search performance"
-msgstr "दोष निराकरण आणि कार्यप्रदर्शन सुधारित करा."
+msgstr "शोध कार्यप्रदर्शन सुधारित करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:41
 msgid "Improve update badge styling and category styling"
-msgstr ""
+msgstr "अद्यतन बॅज स्टाईलिंग आणि श्रेणी शैली सुधारित करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:50
 msgid "Ensure AppCenter is reopened at the correct position"
