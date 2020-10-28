@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-08 15:53+0000\n"
-"PO-Revision-Date: 2020-10-23 17:15+0000\n"
+"PO-Revision-Date: 2020-10-30 00:15+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/extra/"
 "mr/>\n"
@@ -153,38 +153,41 @@ msgid ""
 "To de-clutter the updates view, extensions are now only shown if they "
 "require updates"
 msgstr ""
+"अद्यतनांचे दृश्य अ-गोंधळ करण्यासाठी, विस्तारांना केवळ अद्यतनांची आवश्यकता "
+"असल्यासच ते दर्शविले जातात"
 
 #: data/io.elementary.appcenter.appdata.xml.in:96
 msgid ""
 "Clicking an extension on an app's info page now shows details for the "
 "extension"
 msgstr ""
+"अ‍ॅपच्या माहिती पृष्ठावर विस्तार क्लिक करणे आता विस्तारासाठी तपशील दर्शविते"
 
 #: data/io.elementary.appcenter.appdata.xml.in:97
 msgid ""
 "Swap the main and overlay icons for extensions to more clearly associate "
 "extensions with their app"
 msgstr ""
+"विस्तारासाठी त्यांच्या अ‍ॅपसह अधिक स्पष्टपणे संबद्ध करण्यासाठी मुख्य आणि "
+"आच्छादित चिन्हे स्वॅप करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:99
-#, fuzzy
-#| msgid "Performance improvements"
 msgid "Keyboard improvements"
-msgstr "कार्यक्षमता सुधारणा"
+msgstr "कीबोर्ड सुधारणा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:101
 msgid ""
 "Pressing down in the search field moves the keyboard focus to the search "
 "results list"
-msgstr ""
+msgstr "शोध फील्डमध्ये डाउन की दाबल्याने कीबोर्ड फोकस शोध परिणाम सूचीकडे जाईल"
 
 #: data/io.elementary.appcenter.appdata.xml.in:102
 msgid "Ctrl+F now moves the cursor to the search field"
-msgstr ""
+msgstr "Ctrl + F आता कर्सरला शोध क्षेत्रामध्ये हलवते"
 
 #: data/io.elementary.appcenter.appdata.xml.in:106
 msgid "Use configured network proxy settings for apt operations"
-msgstr ""
+msgstr "योग्य ऑपरेशन्ससाठी कॉन्फिगर केलेली नेटवर्क प्रॉक्सी सेटिंग्ज वापरा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:107
 msgid "No longer prompt for approval to update non-curated apps"
