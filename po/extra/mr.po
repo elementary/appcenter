@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-08 15:53+0000\n"
-"PO-Revision-Date: 2020-09-12 21:14+0000\n"
+"PO-Revision-Date: 2020-10-30 00:15+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/extra/"
 "mr/>\n"
@@ -45,7 +45,7 @@ msgstr "निराकारणे"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Correctly display names of Flatpak runtime updates"
-msgstr ""
+msgstr "फ्लॅटपाक रनटाइम अद्यतनांची नावे योग्यरित्या प्रदर्शित करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:37
@@ -74,31 +74,33 @@ msgstr "नवीन वैशिष्टये"
 
 #: data/io.elementary.appcenter.appdata.xml.in:30
 msgid "Support system-wide Flatpak remotes"
-msgstr ""
+msgstr "सिस्टम-व्यापी फ्लॅटपाक रीमोट समर्थन"
 
 #: data/io.elementary.appcenter.appdata.xml.in:34
 msgid "Fix Flatpak runtime updates getting stuck"
-msgstr ""
+msgstr "फ्लॅटपाक रनटाइम अद्यतने अडकल्याची निराकरण करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
 msgid "Fix long origin comboboxes breaking the header layout"
 msgstr ""
+"शीर्षलेख लेआउट ब्रेकिंग लाँग ओरिजन कॉम्बोबॉक्सेसशी संबंधित समस्यांचे निराकरण "
+"करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:39
 msgid ""
 "When apps are available from multiple sources, prefer installed version, "
 "then prefer Flatpak"
 msgstr ""
+"जेव्हा अ‍ॅप एकाधिक स्रोतांकडून उपलब्ध असतात, तेव्हा स्थापित केलेली आवृत्ती "
+"पसंत करा, नंतर फ्लॅटपॅकला प्राधान्य द्या"
 
 #: data/io.elementary.appcenter.appdata.xml.in:40
-#, fuzzy
-#| msgid "Bug fixes and improve performance."
 msgid "Improve search performance"
-msgstr "दोष निराकरण आणि कार्यप्रदर्शन सुधारित करा."
+msgstr "शोध कार्यप्रदर्शन सुधारित करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:41
 msgid "Improve update badge styling and category styling"
-msgstr ""
+msgstr "अद्यतन बॅज स्टाईलिंग आणि श्रेणी शैली सुधारित करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:50
 msgid "Ensure AppCenter is reopened at the correct position"
@@ -151,38 +153,41 @@ msgid ""
 "To de-clutter the updates view, extensions are now only shown if they "
 "require updates"
 msgstr ""
+"अद्यतनांचे दृश्य अ-गोंधळ करण्यासाठी, विस्तारांना केवळ अद्यतनांची आवश्यकता "
+"असल्यासच ते दर्शविले जातात"
 
 #: data/io.elementary.appcenter.appdata.xml.in:96
 msgid ""
 "Clicking an extension on an app's info page now shows details for the "
 "extension"
 msgstr ""
+"अ‍ॅपच्या माहिती पृष्ठावर विस्तार क्लिक करणे आता विस्तारासाठी तपशील दर्शविते"
 
 #: data/io.elementary.appcenter.appdata.xml.in:97
 msgid ""
 "Swap the main and overlay icons for extensions to more clearly associate "
 "extensions with their app"
 msgstr ""
+"विस्तारासाठी त्यांच्या अ‍ॅपसह अधिक स्पष्टपणे संबद्ध करण्यासाठी मुख्य आणि "
+"आच्छादित चिन्हे स्वॅप करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:99
-#, fuzzy
-#| msgid "Performance improvements"
 msgid "Keyboard improvements"
-msgstr "कार्यक्षमता सुधारणा"
+msgstr "कीबोर्ड सुधारणा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:101
 msgid ""
 "Pressing down in the search field moves the keyboard focus to the search "
 "results list"
-msgstr ""
+msgstr "शोध फील्डमध्ये डाउन की दाबल्याने कीबोर्ड फोकस शोध परिणाम सूचीकडे जाईल"
 
 #: data/io.elementary.appcenter.appdata.xml.in:102
 msgid "Ctrl+F now moves the cursor to the search field"
-msgstr ""
+msgstr "Ctrl + F आता कर्सरला शोध क्षेत्रामध्ये हलवते"
 
 #: data/io.elementary.appcenter.appdata.xml.in:106
 msgid "Use configured network proxy settings for apt operations"
-msgstr ""
+msgstr "योग्य ऑपरेशन्ससाठी कॉन्फिगर केलेली नेटवर्क प्रॉक्सी सेटिंग्ज वापरा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:107
 msgid "No longer prompt for approval to update non-curated apps"

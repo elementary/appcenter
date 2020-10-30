@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-08 15:53+0000\n"
-"PO-Revision-Date: 2020-10-08 06:57+0000\n"
+"PO-Revision-Date: 2020-10-12 10:14+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/extra/"
 "es/>\n"
@@ -47,6 +47,8 @@ msgstr "Correcciones"
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Correctly display names of Flatpak runtime updates"
 msgstr ""
+"Se muestran correctamente los nombres de las actualizaciones de entornos de "
+"ejecución Flatpak"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:37
@@ -85,12 +87,16 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:35
 msgid "Fix long origin comboboxes breaking the header layout"
 msgstr ""
+"Se corrigió la disposición de elementos incorrecta en la cabecera cuando los "
+"cuadros de lista de origen son largos"
 
 #: data/io.elementary.appcenter.appdata.xml.in:39
 msgid ""
 "When apps are available from multiple sources, prefer installed version, "
 "then prefer Flatpak"
 msgstr ""
+"Cuando las aplicaciones están disponibles en varias fuentes, se prefiere la "
+"versión instalada y después Flatpak"
 
 #: data/io.elementary.appcenter.appdata.xml.in:40
 msgid "Improve search performance"
@@ -98,7 +104,7 @@ msgstr "Se mejoró el rendimiento de las búsquedas"
 
 #: data/io.elementary.appcenter.appdata.xml.in:41
 msgid "Improve update badge styling and category styling"
-msgstr ""
+msgstr "Se mejoró el estilo del emblema de actualizaciones y las categorías"
 
 #: data/io.elementary.appcenter.appdata.xml.in:50
 msgid "Ensure AppCenter is reopened at the correct position"
@@ -157,7 +163,7 @@ msgid ""
 "To de-clutter the updates view, extensions are now only shown if they "
 "require updates"
 msgstr ""
-"Para ordenar la vista de actualizaciones, las extensiones ahora se muestran "
+"Para despejar la vista de actualizaciones, las extensiones ahora se muestran "
 "solo si necesitan actualizarse"
 
 #: data/io.elementary.appcenter.appdata.xml.in:96

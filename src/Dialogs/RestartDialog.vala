@@ -77,11 +77,6 @@ namespace AppCenter.Widgets {
             set_default (confirm);
 
             get_content_area ().add (grid);
-
-            var action_area = get_action_area ();
-            action_area.margin_end = 6;
-            action_area.margin_start = 6;
-            action_area.margin_bottom = 6;
         }
     }
 }
