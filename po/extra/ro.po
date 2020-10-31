@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-08 15:53+0000\n"
-"PO-Revision-Date: 2019-09-12 01:22+0000\n"
-"Last-Translator: Daniel Foré <daniel@elementary.io>\n"
+"PO-Revision-Date: 2020-10-31 10:15+0000\n"
+"Last-Translator: Silviu Popescu <teodorspopescu@gmail.com>\n"
 "Language-Team: Romanian <https://l10n.elementary.io/projects/appcenter/extra/"
 "ro/>\n"
 "Language: ro\n"
@@ -13,12 +13,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
 msgid "AppCenter"
-msgstr "AppCenter"
+msgstr "Centru de Aplicații"
 
 #: data/io.elementary.appcenter.appdata.xml.in:9
 #: data/io.elementary.appcenter.desktop.in.in:4
@@ -43,21 +43,20 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:104
 #: data/io.elementary.appcenter.appdata.xml.in:121
 msgid "Fixes"
-msgstr ""
+msgstr "Remedieri"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Correctly display names of Flatpak runtime updates"
 msgstr ""
+"Afișează corect numele actualizărilor pentru mediile de rulare pentru Flatpak"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:37
 #: data/io.elementary.appcenter.appdata.xml.in:53
 #: data/io.elementary.appcenter.appdata.xml.in:65
 #: data/io.elementary.appcenter.appdata.xml.in:78
-#, fuzzy
-#| msgid "Check for Updates"
 msgid "Minor updates"
-msgstr "Verifică pentru actualizări"
+msgstr "Actualizări minore"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 #: data/io.elementary.appcenter.appdata.xml.in:42
@@ -68,22 +67,25 @@ msgstr "Verifică pentru actualizări"
 #: data/io.elementary.appcenter.appdata.xml.in:125
 #: data/io.elementary.appcenter.appdata.xml.in:131
 #: data/io.elementary.appcenter.appdata.xml.in:178
-#, fuzzy
 msgid "Updated translations"
-msgstr "Traduceri noi"
+msgstr "Traduceri actualizate"
 
 #: data/io.elementary.appcenter.appdata.xml.in:28
 #: data/io.elementary.appcenter.appdata.xml.in:74
 msgid "New features"
-msgstr ""
+msgstr "Noi funcții"
 
 #: data/io.elementary.appcenter.appdata.xml.in:30
 msgid "Support system-wide Flatpak remotes"
 msgstr ""
+"Sprijină depozite Flatpak de la distanță cu software pentru instalări pe "
+"întreg sistemul"
 
 #: data/io.elementary.appcenter.appdata.xml.in:34
 msgid "Fix Flatpak runtime updates getting stuck"
 msgstr ""
+"Repară actualizările care se blochează pentru mediile de rulare pentru "
+"Flatpak"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
 msgid "Fix long origin comboboxes breaking the header layout"

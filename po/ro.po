@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-08 15:53+0000\n"
-"PO-Revision-Date: 2020-10-27 10:15+0000\n"
+"PO-Revision-Date: 2020-10-31 10:15+0000\n"
 "Last-Translator: Silviu Popescu <teodorspopescu@gmail.com>\n"
 "Language-Team: Romanian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ro/>\n"
@@ -23,7 +23,7 @@ msgstr ""
 #. Add "AppCenter" to the translation catalog
 #: src/Application.vala:38 src/Core/Package.vala:338
 msgid "AppCenter"
-msgstr "AppCenter"
+msgstr "Centru de Aplicații"
 
 #: src/Application.vala:112
 #, c-format
@@ -237,7 +237,7 @@ msgid "Updating"
 msgstr "Actualizare"
 
 #: src/Core/Package.vala:308
-#, fuzzy, c-format
+#, c-format
 msgid "%s Developers"
 msgstr "Dezvoltatorii %s"
 
@@ -299,9 +299,9 @@ msgstr "Nici un component cu o actualizare"
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
-msgstr[0] "%u componente cu actualizari"
-msgstr[1] ""
-msgstr[2] "%u componente cu actualizari"
+msgstr[0] "%u componentă cu actualizări"
+msgstr[1] "%u componente cu actualizări"
+msgstr[2] "%u componente cu actualizări"
 
 #: src/Core/UpdateManager.vala:154
 #, c-format
@@ -837,9 +837,8 @@ msgid "$%d"
 msgstr "$%dUSD"
 
 #: src/Widgets/NetworkInfoBar.vala:28
-#, fuzzy
 msgid "Network Not Available."
-msgstr "Lipsă conexiune la internet"
+msgstr "Lipsă conexiune la internet."
 
 #: src/Widgets/NetworkInfoBar.vala:29
 msgid "Connect to the Internet to browse and install apps."
@@ -853,53 +852,52 @@ msgstr "Setări de rețea…"
 #: src/Widgets/ReleaseRow.vala:67
 #, c-format
 msgid "<b>%s</b> – %s"
-msgstr ""
+msgstr "<b>%s</b> – %s"
 
 #: src/Widgets/ReleaseRow.vala:74
-#, fuzzy
 msgid "Unknown version"
-msgstr "Stare necunoscută"
+msgstr "Versiune necunoscută"
 
 #: src/Widgets/ReleaseRow.vala:90 src/Widgets/ReleaseRow.vala:93
 msgid "No description available"
-msgstr ""
+msgstr "Lipsă descriere"
 
 #: src/Widgets/SharePopover.vala:39
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #: src/Widgets/SharePopover.vala:43
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 #: src/Widgets/SharePopover.vala:47
 msgid "Reddit"
-msgstr ""
+msgstr "Reddit"
 
 #: src/Widgets/SharePopover.vala:51
 msgid "Tumblr"
-msgstr ""
+msgstr "Tumblr"
 
 #: src/Widgets/SharePopover.vala:55
 msgid "Telegram"
-msgstr ""
+msgstr "Telegram"
 
 #: src/Widgets/SharePopover.vala:59
 msgid "Copy link"
-msgstr ""
+msgstr "Copiere link"
 
 #: src/Widgets/SizeLabel.vala:35
 msgid "Actual Download Size Likely to Be Smaller"
-msgstr ""
+msgstr "Spațiul ocupat de descărcare este probabil mai mic"
 
 #: src/Widgets/SizeLabel.vala:36
 msgid "Only the parts of apps and updates that are needed will be downloaded."
-msgstr ""
+msgstr "Numai părțile necesare din aplicații și actualizări vor fi descărcate."
 
 #: src/Widgets/SizeLabel.vala:63
-#, fuzzy, c-format
+#, c-format
 msgid "Up to %s"
-msgstr "Aplicații la zi"
+msgstr "Până la %s"
 
 #: src/Widgets/UpdateHeaderRow.vala:41
 #, c-format
