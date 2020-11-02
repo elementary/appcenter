@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-08 15:53+0000\n"
-"PO-Revision-Date: 2020-10-30 00:15+0000\n"
+"PO-Revision-Date: 2020-11-02 17:15+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/extra/"
 "mr/>\n"
@@ -192,36 +192,44 @@ msgstr "योग्य ऑपरेशन्ससाठी कॉन्फि�
 #: data/io.elementary.appcenter.appdata.xml.in:107
 msgid "No longer prompt for approval to update non-curated apps"
 msgstr ""
+"यापुढे नॉन-क्युरेटेड अ‍ॅप्स अद्यतनित करण्यासाठी लागणाऱ्या मंजूरीसाठी प्रॉमप्"
+"ट नाही"
 
 #: data/io.elementary.appcenter.appdata.xml.in:108
 msgid ""
 "Ensure the OS updates subheading copy is correct after finishing updates"
 msgstr ""
+"अद्यतने पूर्ण केल्यावर ओएस अद्यतनांची उपशीर्षक कॉपी योग्य असल्याचे सुनिश्चित "
+"करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:109
 msgid "Ellipsize long app names in App Info views"
-msgstr ""
+msgstr "अ‍ॅप माहिती दृश्यांमधील अ‍ॅप्सची मोठी असलेली नावे लंबवर्तुळाकार करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:111
 msgid "And more"
-msgstr ""
+msgstr "आणि अधिक"
 
 #: data/io.elementary.appcenter.appdata.xml.in:113
 msgid "Show a more informative loading screen when checking for updates"
-msgstr ""
+msgstr "अद्यतनांची तपासणी करताना अधिक माहितीपूर्ण लोडिंग स्क्रीन दर्शवा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:114
 msgid "Don't list fonts alongside apps"
-msgstr ""
+msgstr "अ‍ॅप्ससह फॉन्टची यादी करू नका"
 
 #: data/io.elementary.appcenter.appdata.xml.in:123
 msgid ""
 "Prevent crashes when updating Flatpaks and system packages simultaneously"
 msgstr ""
+"फ्लॅटपॅक्स आणि सिस्टम पॅकेजेस एकाचवेळी अद्यतनित करताना क्रॅश होण्यापासून "
+"प्रतिबंधित करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:124
 msgid "Prevent suspending when installing, updating, or removing packages"
 msgstr ""
+"पॅकेजेस स्थापित करताना, अद्यतनित करताना किंवा काढून टाकताना निलंबन प्रतिबंधि"
+"त करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:136
 #: data/io.elementary.appcenter.appdata.xml.in:153
@@ -508,11 +516,11 @@ msgstr "system-software-update"
 
 #: data/io.elementary.appcenter.policy.in:10
 msgid "Update software"
-msgstr ""
+msgstr "सॉफ्टवेअर अद्यतनित करा"
 
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to update software"
-msgstr ""
+msgstr "सॉफ्टवेअर अद्यतनित करण्यासाठी प्रमाणीकरण आवश्यक आहे"
 
 #, fuzzy
 #~| msgid "Performance improvements"
