@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-08 15:53+0000\n"
-"PO-Revision-Date: 2020-10-19 18:15+0000\n"
+"PO-Revision-Date: 2020-11-04 07:15+0000\n"
 "Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/it/>\n"
@@ -892,7 +892,7 @@ msgstr "Verranno scaricate solo le componenti e gli aggiornamenti necessari."
 #: src/Widgets/SizeLabel.vala:63
 #, c-format
 msgid "Up to %s"
-msgstr "Aggiornato a %s"
+msgstr "Fino a %s"
 
 #: src/Widgets/UpdateHeaderRow.vala:41
 #, c-format
