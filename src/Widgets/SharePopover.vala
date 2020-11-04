@@ -92,21 +92,21 @@ public class SharePopover : Gtk.Popover {
 
         add (grid);
 
-        email_button.clicked.connect (() => {
-            try {
-                AppInfo.launch_default_for_uri ("mailto:?body=%s %s".printf (body, uri), null);
-            } catch (Error e) {
-                warning ("%s", e.message);
-            }
-            hide ();
-        });
-
         copy_link_button.clicked.connect (() => {
             var clipboard = Gtk.Clipboard.get_for_display (get_display (), Gdk.SELECTION_CLIPBOARD);
             clipboard.set_text (uri, -1);
 
             link_copied ();
 
+            hide ();
+        });
+
+        email_button.clicked.connect (() => {
+            try {
+                AppInfo.launch_default_for_uri ("mailto:?body=%s %s".printf (body, uri), null);
+            } catch (Error e) {
+                warning ("%s", e.message);
+            }
             hide ();
         });
 
