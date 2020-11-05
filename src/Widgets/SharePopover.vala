@@ -36,7 +36,7 @@ public class SharePopover : Gtk.Popover {
         var mail_appinfo = AppInfo.get_default_for_uri_scheme ("mailto");
         if (mail_appinfo != null) {
             email_button.image = new Gtk.Image.from_gicon (mail_appinfo.get_icon (), Gtk.IconSize.DND);
-            email_button.tooltip_text = _(mail_appinfo.get_display_name ());
+            email_button.tooltip_text = mail_appinfo.get_display_name ();
             email_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
         }
 
