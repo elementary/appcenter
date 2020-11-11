@@ -151,7 +151,6 @@ namespace AppCenter.Widgets {
             style_context.add_class ("banner");
             style_context.add_class (Granite.STYLE_CLASS_CARD);
             style_context.add_class (Granite.STYLE_CLASS_ROUNDED);
-            style_context.add_class ("home");
             style_context.remove_class (Gtk.STYLE_CLASS_BUTTON);
 
             stack = new Gtk.Stack ();
