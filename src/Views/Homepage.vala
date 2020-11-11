@@ -58,11 +58,6 @@ namespace AppCenter {
                 margin = 12
             };
 
-            unowned Gtk.StyleContext newest_banner_context = newest_banner.get_style_context ();
-            newest_banner_context.add_class (Granite.STYLE_CLASS_CARD);
-            newest_banner_context.add_class (Granite.STYLE_CLASS_ROUNDED);
-            newest_banner_context.add_class ("home");
-
             newest_banner.clicked.connect (() => {
                 var package = newest_banner.get_package ();
                 if (package != null) {
