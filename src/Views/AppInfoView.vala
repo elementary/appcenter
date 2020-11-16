@@ -28,6 +28,7 @@ namespace AppCenter.Views {
             Gtk.StackTransitionType transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT
         );
 
+        private static Gtk.CssProvider banner_provider;
         private static Gtk.CssProvider loading_provider;
         private static Gtk.CssProvider? previous_css_provider = null;
 
@@ -58,6 +59,9 @@ namespace AppCenter.Views {
         }
 
         static construct {
+            banner_provider = new Gtk.CssProvider ();
+            banner_provider.load_from_resource ("io/elementary/appcenter/banner.css");
+
             loading_provider = new Gtk.CssProvider ();
             loading_provider.load_from_resource ("io/elementary/appcenter/loading.css");
         }
@@ -372,6 +376,13 @@ namespace AppCenter.Views {
             header_box.get_style_context ().add_class ("banner");
             header_box.hexpand = true;
             header_box.add (header_clamp);
+
+            // FIXME: should be for context, not for screen
+            Gtk.StyleContext.add_provider_for_screen (
+                Gdk.Screen.get_default (),
+                banner_provider,
+                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+            );
 
             var project_license = package.component.project_license;
             if (project_license != null) {

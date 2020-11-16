@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-08 15:53+0000\n"
-"PO-Revision-Date: 2020-10-13 21:14+0000\n"
+"PO-Revision-Date: 2020-11-02 17:15+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/extra/"
 "mr/>\n"
@@ -95,14 +95,12 @@ msgstr ""
 "पसंत करा, नंतर फ्लॅटपॅकला प्राधान्य द्या"
 
 #: data/io.elementary.appcenter.appdata.xml.in:40
-#, fuzzy
-#| msgid "Bug fixes and improve performance."
 msgid "Improve search performance"
-msgstr "दोष निराकरण आणि कार्यप्रदर्शन सुधारित करा."
+msgstr "शोध कार्यप्रदर्शन सुधारित करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:41
 msgid "Improve update badge styling and category styling"
-msgstr ""
+msgstr "अद्यतन बॅज स्टाईलिंग आणि श्रेणी शैली सुधारित करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:50
 msgid "Ensure AppCenter is reopened at the correct position"
@@ -155,72 +153,83 @@ msgid ""
 "To de-clutter the updates view, extensions are now only shown if they "
 "require updates"
 msgstr ""
+"अद्यतनांचे दृश्य अ-गोंधळ करण्यासाठी, विस्तारांना केवळ अद्यतनांची आवश्यकता "
+"असल्यासच ते दर्शविले जातात"
 
 #: data/io.elementary.appcenter.appdata.xml.in:96
 msgid ""
 "Clicking an extension on an app's info page now shows details for the "
 "extension"
 msgstr ""
+"अ‍ॅपच्या माहिती पृष्ठावर विस्तार क्लिक करणे आता विस्तारासाठी तपशील दर्शविते"
 
 #: data/io.elementary.appcenter.appdata.xml.in:97
 msgid ""
 "Swap the main and overlay icons for extensions to more clearly associate "
 "extensions with their app"
 msgstr ""
+"विस्तारासाठी त्यांच्या अ‍ॅपसह अधिक स्पष्टपणे संबद्ध करण्यासाठी मुख्य आणि "
+"आच्छादित चिन्हे स्वॅप करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:99
-#, fuzzy
-#| msgid "Performance improvements"
 msgid "Keyboard improvements"
-msgstr "कार्यक्षमता सुधारणा"
+msgstr "कीबोर्ड सुधारणा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:101
 msgid ""
 "Pressing down in the search field moves the keyboard focus to the search "
 "results list"
-msgstr ""
+msgstr "शोध फील्डमध्ये डाउन की दाबल्याने कीबोर्ड फोकस शोध परिणाम सूचीकडे जाईल"
 
 #: data/io.elementary.appcenter.appdata.xml.in:102
 msgid "Ctrl+F now moves the cursor to the search field"
-msgstr ""
+msgstr "Ctrl + F आता कर्सरला शोध क्षेत्रामध्ये हलवते"
 
 #: data/io.elementary.appcenter.appdata.xml.in:106
 msgid "Use configured network proxy settings for apt operations"
-msgstr ""
+msgstr "योग्य ऑपरेशन्ससाठी कॉन्फिगर केलेली नेटवर्क प्रॉक्सी सेटिंग्ज वापरा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:107
 msgid "No longer prompt for approval to update non-curated apps"
 msgstr ""
+"यापुढे नॉन-क्युरेटेड अ‍ॅप्स अद्यतनित करण्यासाठी लागणाऱ्या मंजूरीसाठी प्रॉमप्"
+"ट नाही"
 
 #: data/io.elementary.appcenter.appdata.xml.in:108
 msgid ""
 "Ensure the OS updates subheading copy is correct after finishing updates"
 msgstr ""
+"अद्यतने पूर्ण केल्यावर ओएस अद्यतनांची उपशीर्षक कॉपी योग्य असल्याचे सुनिश्चित "
+"करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:109
 msgid "Ellipsize long app names in App Info views"
-msgstr ""
+msgstr "अ‍ॅप माहिती दृश्यांमधील अ‍ॅप्सची मोठी असलेली नावे लंबवर्तुळाकार करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:111
 msgid "And more"
-msgstr ""
+msgstr "आणि अधिक"
 
 #: data/io.elementary.appcenter.appdata.xml.in:113
 msgid "Show a more informative loading screen when checking for updates"
-msgstr ""
+msgstr "अद्यतनांची तपासणी करताना अधिक माहितीपूर्ण लोडिंग स्क्रीन दर्शवा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:114
 msgid "Don't list fonts alongside apps"
-msgstr ""
+msgstr "अ‍ॅप्ससह फॉन्टची यादी करू नका"
 
 #: data/io.elementary.appcenter.appdata.xml.in:123
 msgid ""
 "Prevent crashes when updating Flatpaks and system packages simultaneously"
 msgstr ""
+"फ्लॅटपॅक्स आणि सिस्टम पॅकेजेस एकाचवेळी अद्यतनित करताना क्रॅश होण्यापासून "
+"प्रतिबंधित करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:124
 msgid "Prevent suspending when installing, updating, or removing packages"
 msgstr ""
+"पॅकेजेस स्थापित करताना, अद्यतनित करताना किंवा काढून टाकताना निलंबन प्रतिबंधि"
+"त करा"
 
 #: data/io.elementary.appcenter.appdata.xml.in:136
 #: data/io.elementary.appcenter.appdata.xml.in:153
@@ -507,11 +516,11 @@ msgstr "system-software-update"
 
 #: data/io.elementary.appcenter.policy.in:10
 msgid "Update software"
-msgstr ""
+msgstr "सॉफ्टवेअर अद्यतनित करा"
 
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to update software"
-msgstr ""
+msgstr "सॉफ्टवेअर अद्यतनित करण्यासाठी प्रमाणीकरण आवश्यक आहे"
 
 #, fuzzy
 #~| msgid "Performance improvements"

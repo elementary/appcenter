@@ -106,6 +106,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         homepage.subview_entered.connect (view_opened);
         installed_view.subview_entered.connect (view_opened);
         search_view.subview_entered.connect (view_opened);
+        search_view.home_return_clicked.connect (show_homepage);
 
         unowned AppCenterCore.BackendAggregator client = AppCenterCore.BackendAggregator.get_default ();
         client.notify["working"].connect (() => {
@@ -316,9 +317,15 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             search_view.search (query, homepage.currently_viewed_category, mimetype);
             stack.visible_child = search_view; // Only show search view after search completed.
         } else {
-            if (stack.visible_child == search_view && homepage.currently_viewed_category != null) {
-                return_button_history.poll_head ();
-                return_button.label = return_button_history.peek_head ();
+            if (stack.visible_child == search_view) {
+                if (homepage.currently_viewed_category != null) {
+                    return_button_history.poll_head ();
+                    return_button.label = return_button_history.peek_head ();
+                } else {
+                    return_button_history.clear ();
+                    return_button.no_show_all = true;
+                    return_button.visible = false;
+                }
             }
 
             search_view.reset ();
@@ -397,5 +404,12 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
                 search_entry.sensitive = false;
             }
         }
+    }
+
+    private void show_homepage () {
+        search ("");
+        search_view.reset ();
+        stack.visible_child = homepage;
+        view_mode_revealer.reveal_child = true;
     }
 }

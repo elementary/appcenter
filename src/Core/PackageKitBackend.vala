@@ -417,7 +417,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
     public Gee.Collection<AppCenterCore.Package> search_applications_mime (string query) {
         var apps = new Gee.TreeSet<AppCenterCore.Package> ();
         foreach (var package in package_list.values) {
-            weak AppStream.Provided? provided = package.component.get_provided_for_kind (AppStream.ProvidedKind.MIMETYPE);
+            weak AppStream.Provided? provided = package.component.get_provided_for_kind (AppStream.ProvidedKind.MEDIATYPE);
             if (provided != null && provided.has_item (query)) {
                 apps.add (package);
             }
