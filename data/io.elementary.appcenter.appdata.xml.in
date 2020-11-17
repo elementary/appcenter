@@ -337,7 +337,7 @@
     </release>
     <release version="0.1.1" date="2016-09-26" urgency="medium">
       <description>
-        <p>Search performance has beeen improved, the category name is now shown on the headbar and minor bugs have been fixed.</p>
+        <p>Search performance has been improved, the category name is now shown on the headbar and minor bugs have been fixed.</p>
         <ul>
           <li>Fix Steam installation</li>
           <li>Make search asynchronous</li>

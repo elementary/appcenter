@@ -14,7 +14,7 @@
 * with this program. If not, see http://www.gnu.org/licenses/.
 */
 
-public class AppCenter.MainWindow : Gtk.ApplicationWindow {
+public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     public bool working {
         set {
             if (value) {
@@ -29,7 +29,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     private Gtk.Stack custom_title_stack;
     private Gtk.Label homepage_header;
     private Granite.Widgets.ModeButton view_mode;
-    private Gtk.HeaderBar headerbar;
+    private Hdy.HeaderBar headerbar;
     private Gtk.Stack stack;
     private Gtk.SearchEntry search_entry;
     private Gtk.Spinner spinner;
@@ -106,6 +106,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         homepage.subview_entered.connect (view_opened);
         installed_view.subview_entered.connect (view_opened);
         search_view.subview_entered.connect (view_opened);
+        search_view.home_return_clicked.connect (show_homepage);
 
         unowned AppCenterCore.BackendAggregator client = AppCenterCore.BackendAggregator.get_default ();
         client.notify["working"].connect (() => {
@@ -119,6 +120,7 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
     }
 
     construct {
+        Hdy.init ();
         icon_name = "system-software-install";
         set_size_request (910, 640);
 
@@ -179,14 +181,12 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
         spinner = new Gtk.Spinner ();
 
         /* HeaderBar */
-        headerbar = new Gtk.HeaderBar ();
+        headerbar = new Hdy.HeaderBar ();
         headerbar.show_close_button = true;
         headerbar.set_custom_title (custom_title_stack);
         headerbar.pack_start (return_button);
         headerbar.pack_end (search_entry);
         headerbar.pack_end (spinner);
-
-        set_titlebar (headerbar);
 
         homepage = new Homepage ();
         installed_view = new Views.InstalledView ();
@@ -200,8 +200,10 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
 
         var network_info_bar = new AppCenter.Widgets.NetworkInfoBar ();
 
-        var grid = new Gtk.Grid ();
-        grid.orientation = Gtk.Orientation.VERTICAL;
+        var grid = new Gtk.Grid () {
+            orientation = Gtk.Orientation.VERTICAL
+        };
+        grid.add (headerbar);
         grid.add (network_info_bar);
         grid.add (stack);
 
@@ -315,9 +317,15 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
             search_view.search (query, homepage.currently_viewed_category, mimetype);
             stack.visible_child = search_view; // Only show search view after search completed.
         } else {
-            if (stack.visible_child == search_view && homepage.currently_viewed_category != null) {
-                return_button_history.poll_head ();
-                return_button.label = return_button_history.peek_head ();
+            if (stack.visible_child == search_view) {
+                if (homepage.currently_viewed_category != null) {
+                    return_button_history.poll_head ();
+                    return_button.label = return_button_history.peek_head ();
+                } else {
+                    return_button_history.clear ();
+                    return_button.no_show_all = true;
+                    return_button.visible = false;
+                }
             }
 
             search_view.reset ();
@@ -396,5 +404,12 @@ public class AppCenter.MainWindow : Gtk.ApplicationWindow {
                 search_entry.sensitive = false;
             }
         }
+    }
+
+    private void show_homepage () {
+        search ("");
+        search_view.reset ();
+        stack.visible_child = homepage;
+        view_mode_revealer.reveal_child = true;
     }
 }

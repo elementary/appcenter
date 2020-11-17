@@ -31,9 +31,14 @@ public class SharePopover : Gtk.Popover {
     }
 
     construct {
-        var email_button = new Gtk.Button.from_icon_name ("internet-mail", Gtk.IconSize.DND);
-        email_button.tooltip_text = _("Email");
-        email_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        var email_button = new Gtk.Button ();
+
+        var mail_appinfo = AppInfo.get_default_for_uri_scheme ("mailto");
+        if (mail_appinfo != null) {
+            email_button.image = new Gtk.Image.from_gicon (mail_appinfo.get_icon (), Gtk.IconSize.DND);
+            email_button.tooltip_text = mail_appinfo.get_display_name ();
+            email_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+        }
 
         var facebook_button = new Gtk.Button.from_icon_name ("online-account-facebook", Gtk.IconSize.DND);
         facebook_button.tooltip_text = _("Facebook");
@@ -65,7 +70,9 @@ public class SharePopover : Gtk.Popover {
 
         var service_grid = new Gtk.Grid ();
         service_grid.margin = 6;
-        service_grid.add (email_button);
+        if (mail_appinfo != null) {
+            service_grid.add (email_button);
+        }
         service_grid.add (facebook_button);
         service_grid.add (twitter_button);
         service_grid.add (reddit_button);

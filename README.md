@@ -15,7 +15,7 @@ You'll need the following dependencies:
 * libgee-0.8-dev
 * libgranite-dev (>=5.2.5)
 * libgtk-3-dev
-* libhandy-0.0-dev
+* libhandy-1-dev
 * libjson-glib-dev
 * libpackagekit-glib2-dev
 * libpolkit-gobject-1-dev

@@ -54,9 +54,10 @@ namespace AppCenter {
             switcher_revealer.set_transition_duration (Widgets.Banner.TRANSITION_DURATION_MILLISECONDS);
             switcher_revealer.add (switcher);
 
-            newest_banner = new Widgets.Banner (switcher);
-            newest_banner.get_style_context ().add_class ("home");
-            newest_banner.margin = 12;
+            newest_banner = new Widgets.Banner (switcher) {
+                margin = 12
+            };
+
             newest_banner.clicked.connect (() => {
                 var package = newest_banner.get_package ();
                 if (package != null) {

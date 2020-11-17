@@ -8,9 +8,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-08 15:53+0000\n"
-"PO-Revision-Date: 2020-10-01 19:26+0000\n"
+"PO-Revision-Date: 2020-11-12 02:15+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
-"Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/appcenter/appcenter/zh_Hans/>\n"
+"Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
+"appcenter/appcenter/zh_Hans/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -790,7 +791,7 @@ msgstr "需要付款，但付款方式还未启用"
 #: src/Widgets/HumbleButton.vala:105
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:285
 msgid "Free"
-msgstr "免费"
+msgstr "安装"
 
 #: src/Widgets/HumbleButton.vala:107
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:287
@@ -870,7 +871,7 @@ msgstr "仅下载更新所需的部分。"
 #: src/Widgets/SizeLabel.vala:63
 #, c-format
 msgid "Up to %s"
-msgstr "已更新至 %s"
+msgstr "约 %s"
 
 #: src/Widgets/UpdateHeaderRow.vala:41
 #, c-format
