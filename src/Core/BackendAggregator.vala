@@ -39,15 +39,13 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
                         remove_inhibit_timeout = 0;
                     }
 
-                    if (inhibit_token != 0) {
-                        app.uninhibit (inhibit_token);
+                    if (inhibit_token == 0) {
+                        inhibit_token = app.inhibit (
+                            app.get_active_window (),
+                            Gtk.ApplicationInhibitFlags.IDLE | Gtk.ApplicationInhibitFlags.SUSPEND,
+                            _("package operations are being performed")
+                        );
                     }
-
-                    inhibit_token = app.inhibit (
-                        app.get_active_window (),
-                        Gtk.ApplicationInhibitFlags.IDLE | Gtk.ApplicationInhibitFlags.SUSPEND,
-                        _("package operations are being performed")
-                    );
                 } else {
                     // Wait for 5 seconds of inactivity before uninhibiting as we may be
                     // rapidly switching between working states on different backends etc...
