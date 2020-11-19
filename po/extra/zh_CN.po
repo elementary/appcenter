@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-08 15:53+0000\n"
+"POT-Creation-Date: 2020-11-19 21:36+0000\n"
 "PO-Revision-Date: 2020-09-01 05:13+0000\n"
 "Last-Translator: imgradeone Yan <imgradeone@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -456,8 +456,12 @@ msgid "Prevent multiple authentication dialogs when resuming from suspend"
 msgstr "阻止从挂起状态唤醒设备时弹出的多个验证对话框"
 
 #: data/io.elementary.appcenter.appdata.xml.in:340
+#, fuzzy
+#| msgid ""
+#| "Search performance has beeen improved, the category name is now shown on "
+#| "the headbar and minor bugs have been fixed."
 msgid ""
-"Search performance has beeen improved, the category name is now shown on the "
+"Search performance has been improved, the category name is now shown on the "
 "headbar and minor bugs have been fixed."
 msgstr "改进搜索性能、顶栏显示分类名称、修复某些次要问题。"
 
