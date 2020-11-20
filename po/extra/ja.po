@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-19 21:36+0000\n"
-"PO-Revision-Date: 2020-10-21 01:44+0000\n"
+"PO-Revision-Date: 2020-11-21 12:15+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/extra/"
 "ja/>\n"
@@ -498,16 +498,10 @@ msgid "Prevent multiple authentication dialogs when resuming from suspend"
 msgstr "サスペンドからの復帰時に複数の認証ダイアログが出るのを防止"
 
 #: data/io.elementary.appcenter.appdata.xml.in:340
-#, fuzzy
-#| msgid ""
-#| "Search performance has beeen improved, the category name is now shown on "
-#| "the headbar and minor bugs have been fixed."
 msgid ""
 "Search performance has been improved, the category name is now shown on the "
 "headbar and minor bugs have been fixed."
-msgstr ""
-"検索能力が向上し、カテゴリーの名前がヘッドバーに表示されます。また、軽微なバ"
-"グも修正しました。"
+msgstr "検索能力が向上し、カテゴリーの名前がヘッドバーに表示されます。また、軽微なバグも修正しました。"
 
 #: data/io.elementary.appcenter.appdata.xml.in:342
 msgid "Fix Steam installation"
