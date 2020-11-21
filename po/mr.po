@@ -5,9 +5,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-19 21:36+0000\n"
-"PO-Revision-Date: 2020-09-12 21:14+0000\n"
+"PO-Revision-Date: 2020-11-22 20:15+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
-"Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/appcenter/mr/>\n"
+"Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/mr/>\n"
 "Language: mr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -207,7 +208,7 @@ msgstr "अज्ञात परिस्थिती"
 
 #: src/Core/BackendAggregator.vala:46
 msgid "package operations are being performed"
-msgstr ""
+msgstr "पॅकेज ऑपरेशन्स सुरू आहेत"
 
 #: src/Core/Client.vala:72
 msgid "Update Available"
