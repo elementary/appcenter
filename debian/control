@@ -38,7 +38,7 @@ Depends: appstream (>= 0.12),
          libflatpak-dev (>= 1.0.7),
          ${misc:Depends},
          ${shlibs:Depends}
-Recommends: appstream-data-pop, python3-pyflatpak
+Recommends: appstream-data-pop
 Description: Fast application store
  Install, update and remove apps with ease.
  Helps independent developers.
