@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-08 15:53+0000\n"
+"POT-Creation-Date: 2020-11-19 21:36+0000\n"
 "PO-Revision-Date: 2020-02-24 23:09+0000\n"
 "Last-Translator: gkkulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/appcenter/extra/"
@@ -453,7 +453,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:340
 msgid ""
-"Search performance has beeen improved, the category name is now shown on the "
+"Search performance has been improved, the category name is now shown on the "
 "headbar and minor bugs have been fixed."
 msgstr ""
 

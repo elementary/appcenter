@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-08 15:53+0000\n"
-"PO-Revision-Date: 2020-10-10 13:25+0000\n"
+"POT-Creation-Date: 2020-11-19 21:36+0000\n"
+"PO-Revision-Date: 2020-11-22 20:15+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
 "extra/pt/>\n"
@@ -204,7 +204,8 @@ msgstr "Utiliza definições de proxy de rede configuradas para operações apt"
 
 #: data/io.elementary.appcenter.appdata.xml.in:107
 msgid "No longer prompt for approval to update non-curated apps"
-msgstr "Já não solicita a aprovação para atualizar aplicações não categorizadas"
+msgstr ""
+"Já não solicita a aprovação para atualizar aplicações não categorizadas"
 
 #: data/io.elementary.appcenter.appdata.xml.in:108
 msgid ""
@@ -508,7 +509,7 @@ msgstr "Prevenidos múltiplas janelas de diálgo quando sai do estado suspenso"
 
 #: data/io.elementary.appcenter.appdata.xml.in:340
 msgid ""
-"Search performance has beeen improved, the category name is now shown on the "
+"Search performance has been improved, the category name is now shown on the "
 "headbar and minor bugs have been fixed."
 msgstr ""
 "O desempenho de pesquisa foi melhorado, o nome da categoria agora aparece na "

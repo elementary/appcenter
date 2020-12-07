@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-08 15:53+0000\n"
+"POT-Creation-Date: 2020-11-19 21:36+0000\n"
 "PO-Revision-Date: 2018-05-27 00:03+0000\n"
 "Last-Translator: Romanic Ion Nicușor <contact.romanic@gmail.com>\n"
 "Language-Team: Moldovan <https://weblate.elementary.io/projects/appcenter/"
@@ -466,7 +466,7 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:340
 #, fuzzy
 msgid ""
-"Search performance has beeen improved, the category name is now shown on the "
+"Search performance has been improved, the category name is now shown on the "
 "headbar and minor bugs have been fixed."
 msgstr ""
 "Performanța căutării a fost îmbunătățită, numele categoriei este afișat acum "

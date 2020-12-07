@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-08 15:53+0000\n"
+"POT-Creation-Date: 2020-11-19 21:36+0000\n"
 "PO-Revision-Date: 2020-10-07 03:57+0000\n"
 "Last-Translator: Trkien618 <hacngoctrungkien@gmail.com>\n"
 "Language-Team: Vietnamese <https://l10n.elementary.io/projects/appcenter/appcenter/vi/>\n"
@@ -33,30 +33,30 @@ msgstr "Không thể phân tích kiểu nội dung %s"
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Không tìm thấy liên kết cụ thể tới '%s', đang tìm kiếm thay thế"
 
-#: src/Application.vala:284
+#: src/Application.vala:293
 msgid "Application installed"
 msgstr "Ứng dụng đã được cài đặt"
 
-#: src/Application.vala:285
+#: src/Application.vala:294
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s đã được cài đặt thành công"
 
-#: src/MainWindow.vala:136 src/Views/Homepage.vala:297
-#: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
-#: src/Views/Homepage.vala:325
+#: src/MainWindow.vala:138 src/Views/Homepage.vala:298
+#: src/Views/Homepage.vala:310 src/Views/Homepage.vala:315
+#: src/Views/Homepage.vala:326 src/Views/SearchView.vala:90
 #, fuzzy
 msgid "Home"
 msgstr "Trang chủ"
 
-#: src/MainWindow.vala:137 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:139 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 msgctxt "view"
 msgid "Installed"
 msgstr "Đã cài đặt"
 
-#: src/MainWindow.vala:177 src/MainWindow.vala:356 src/Views/SearchView.vala:54
-#: src/Views/SearchView.vala:84
+#: src/MainWindow.vala:179 src/MainWindow.vala:364 src/Views/SearchView.vala:55
+#: src/Views/SearchView.vala:88
 msgid "Search Apps"
 msgstr "Tìm kiếm ứng dụng"
 
@@ -207,6 +207,10 @@ msgstr "Đang sao chép các tập tin"
 #: src/Utils.vala:132
 msgid "Unknown state"
 msgstr "Trạng thái không xác định"
+
+#: src/Core/BackendAggregator.vala:46
+msgid "package operations are being performed"
+msgstr ""
 
 #: src/Core/Client.vala:72
 msgid "Update Available"
@@ -399,8 +403,8 @@ msgstr "Điều này sẽ đóng tất cả các ứng dụng đang mở và kh�
 msgid "Restart"
 msgstr "Khởi động lại"
 
-#: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
-#: src/Dialogs/StripeDialog.vala:315
+#: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:196
+#: src/Dialogs/StripeDialog.vala:313
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:157
 msgid "Cancel"
 msgstr "Hủy bỏ"
@@ -426,7 +430,7 @@ msgstr "Thanh toán $%d cho %s"
 msgid "This is a one time payment. Your email address is only used to send you a receipt."
 msgstr "Đây là phương thức một lần. Email của bạn chỉ được sử dụng để gửi hóa đơn."
 
-#: src/Dialogs/StripeDialog.vala:106 src/Widgets/SharePopover.vala:35
+#: src/Dialogs/StripeDialog.vala:106
 msgid "Email"
 msgstr "Email"
 
@@ -448,95 +452,95 @@ msgstr "CVC"
 msgid "Privacy Policy"
 msgstr "Chính sách bảo mật"
 
-#: src/Dialogs/StripeDialog.vala:200 src/Dialogs/StripeDialog.vala:314
+#: src/Dialogs/StripeDialog.vala:198 src/Dialogs/StripeDialog.vala:312
 #, c-format
 msgid "Pay $%d.00"
 msgstr "Thanh toán $%d.00"
 
-#: src/Dialogs/StripeDialog.vala:243
+#: src/Dialogs/StripeDialog.vala:241
 msgid "Processing"
 msgstr "Đang xử lý"
 
-#: src/Dialogs/StripeDialog.vala:268
+#: src/Dialogs/StripeDialog.vala:266
 msgid "There Was a Problem Processing Your Payment"
 msgstr "Có một vấn đề trong quá trình thanh toán của bạn"
 
-#: src/Dialogs/StripeDialog.vala:306
+#: src/Dialogs/StripeDialog.vala:304
 msgid "Pay Later"
 msgstr "Thanh toán sau"
 
-#: src/Dialogs/StripeDialog.vala:307
+#: src/Dialogs/StripeDialog.vala:305
 msgid "Retry"
 msgstr "Thử lại"
 
-#: src/Dialogs/StripeDialog.vala:513 src/Dialogs/StripeDialog.vala:578
+#: src/Dialogs/StripeDialog.vala:511 src/Dialogs/StripeDialog.vala:576
 msgid "The card number is incorrect. Please try again using the correct card number."
 msgstr "Số thẻ bị sai. Vui lòng thử lại bằng số thẻ chính xác."
 
-#: src/Dialogs/StripeDialog.vala:515
+#: src/Dialogs/StripeDialog.vala:513
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
 msgstr "Tháng hết hạn không hợp lệ. Hãy thử lại bằng cách sử dụng ngày hết hạn chính xác."
 
-#: src/Dialogs/StripeDialog.vala:517 src/Dialogs/StripeDialog.vala:575
+#: src/Dialogs/StripeDialog.vala:515 src/Dialogs/StripeDialog.vala:573
 msgid "The expiration year is invalid. Please try again using the correct expiration date."
 msgstr "Năm hết hạn không hợp lệ. Hãy thử lại bằng cách sử dụng ngày hết hạn chính xác."
 
-#: src/Dialogs/StripeDialog.vala:520 src/Dialogs/StripeDialog.vala:573
+#: src/Dialogs/StripeDialog.vala:518 src/Dialogs/StripeDialog.vala:571
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr "Số CVC bị sai. Vui lòng thử lại bằng số CVC chính xác."
 
-#: src/Dialogs/StripeDialog.vala:522 src/Dialogs/StripeDialog.vala:564
+#: src/Dialogs/StripeDialog.vala:520 src/Dialogs/StripeDialog.vala:562
 msgid "The card has expired. Please try again with a different card."
 msgstr "Thẻ đã hết hạn. Vui lòng thử lại với một thẻ khác."
 
-#: src/Dialogs/StripeDialog.vala:542
+#: src/Dialogs/StripeDialog.vala:540
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr "Có quá nhiều yêu cầu thanh toán vào lúc này, vui lòng thử lại sau."
 
-#: src/Dialogs/StripeDialog.vala:558
+#: src/Dialogs/StripeDialog.vala:556
 msgid "This card does not support this kind of transaction. Please try again with a different card."
 msgstr "Thẻ này không hỗ trợ loại giao dịch này. Vui lòng thử lại bằng thẻ khác."
 
-#: src/Dialogs/StripeDialog.vala:560
+#: src/Dialogs/StripeDialog.vala:558
 msgid "The currency is not supported by this card. Please try again with a different card."
 msgstr "Đơn vị tiền tệ không được hỗ trợ bởi thẻ này. Vui lòng thử lại bằng thẻ khác."
 
-#: src/Dialogs/StripeDialog.vala:562
+#: src/Dialogs/StripeDialog.vala:560
 msgid "The transaction has already been processed."
 msgstr "Giao dịch đã được xử lý."
 
-#: src/Dialogs/StripeDialog.vala:566
+#: src/Dialogs/StripeDialog.vala:564
 #, fuzzy
 msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
 msgstr "Mã bưu chính bị sai. Vui lòng thử lại bằng mã bưu chính chính xác."
 
-#: src/Dialogs/StripeDialog.vala:568
+#: src/Dialogs/StripeDialog.vala:566
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "Bạn không có đủ tiền. Hãy sử dụng một phương thức thanh toán khác."
 
-#: src/Dialogs/StripeDialog.vala:570
+#: src/Dialogs/StripeDialog.vala:568
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "Số tiền không chính xác. Vui lòng thử lại bằng cách sử dụng số tiền hợp lệ."
 
-#: src/Dialogs/StripeDialog.vala:581
+#: src/Dialogs/StripeDialog.vala:579
 #, fuzzy
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "Số CVC bị sai. Vui lòng thử lại bằng số CVC chính xác."
 
-#: src/Dialogs/StripeDialog.vala:583
+#: src/Dialogs/StripeDialog.vala:581
 #, fuzzy
 msgid "There has been too many PIN attempts. Please try again with a different card."
 msgstr "Có quá nhiều lần thử số PIN. Vui lòng thử lại bằng thẻ khác."
 
-#: src/Dialogs/StripeDialog.vala:603
+#: src/Dialogs/StripeDialog.vala:601
 msgid "Unable to complete the transaction. Please contact your bank for further information."
 msgstr "Không thể hoàn thành giao dịch. Vui lòng liên hệ với ngân hàng của bạn để biết thêm thông tin."
 
-#: src/Dialogs/StripeDialog.vala:606
+#: src/Dialogs/StripeDialog.vala:604
 msgid "The balance or credit limit on the card has been reached."
 msgstr "Số dư hoặc hạn mức tín dụng trên thẻ đã đạt được."
 
-#: src/Dialogs/StripeDialog.vala:609
+#: src/Dialogs/StripeDialog.vala:607
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "Thẻ được cấp là thẻ kiểm tra. Vui lòng sử dụng một thẻ thực để tiếp tục."
 
@@ -589,86 +593,86 @@ msgstr "Bỏ qua"
 msgid "Try Again"
 msgstr "Thử lại"
 
-#: src/Views/AppInfoView.vala:155
+#: src/Views/AppInfoView.vala:191
 msgid "Screenshot Not Available"
 msgstr "Không có ảnh chụp màn hình"
 
-#: src/Views/AppInfoView.vala:207
+#: src/Views/AppInfoView.vala:243
 msgid "Homepage"
 msgstr "Trang chủ"
 
-#: src/Views/AppInfoView.vala:213
+#: src/Views/AppInfoView.vala:249
 msgid "Suggest Translations"
 msgstr "Đề xuất dịch"
 
-#: src/Views/AppInfoView.vala:219
+#: src/Views/AppInfoView.vala:255
 msgid "Report a Problem"
 msgstr "Báo cáo một vấn đề"
 
-#: src/Views/AppInfoView.vala:225
+#: src/Views/AppInfoView.vala:261
 msgid "Help"
 msgstr "Trợ giúp"
 
-#: src/Views/AppInfoView.vala:236
+#: src/Views/AppInfoView.vala:272
 msgid "What's New:"
 msgstr "Tin tức mới:"
 
-#: src/Views/AppInfoView.vala:271
+#: src/Views/AppInfoView.vala:307
 msgid "Extensions:"
 msgstr "Tiện ích mở rộng:"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:360
+#: src/Views/AppInfoView.vala:404
 msgid "Public Domain"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:363
+#: src/Views/AppInfoView.vala:407
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr ""
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:368
+#: src/Views/AppInfoView.vala:412
 msgid "Free Software"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:371
+#: src/Views/AppInfoView.vala:415
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:375
+#: src/Views/AppInfoView.vala:419
 msgid "Proprietary"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:378
+#: src/Views/AppInfoView.vala:422
 #, fuzzy
 msgid "Unknown License"
 msgstr "Trạng thái không xác định"
 
-#: src/Views/AppInfoView.vala:427
+#: src/Views/AppInfoView.vala:472
 #, c-format
 msgid "Other Apps by %s"
 msgstr "Các ứng dụng khác %s"
 
-#: src/Views/AppInfoView.vala:464
+#: src/Views/AppInfoView.vala:510
 msgid "Link copied to clipboard"
 msgstr "Đường dẫn đã được sao chép lưu tạm thời"
 
-#: src/Views/AppInfoView.vala:475
+#: src/Views/AppInfoView.vala:521
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "Kiểm tra %s trên Trung tâm Ứng dụng:"
 
-#: src/Views/AppInfoView.vala:482
+#: src/Views/AppInfoView.vala:528
 msgid "Share"
 msgstr "Chia sẻ"
 
-#: src/Views/AppInfoView.vala:809
+#: src/Views/AppInfoView.vala:856
 msgid "Fund"
 msgstr "Tài trợ"
 
-#: src/Views/AppInfoView.vala:831
+#: src/Views/AppInfoView.vala:878
 msgid "Fund the development of this app"
 msgstr "Tài trợ cho sự phát triển của ứng dụng này"
 
@@ -707,25 +711,25 @@ msgstr "Không tìm thấy ứng dụng nào. Hãy thử thay đổi cụm từ 
 msgid "Non-Curated Apps"
 msgstr "Không được quản lý"
 
-#: src/Views/Homepage.vala:67
+#: src/Views/Homepage.vala:68
 msgid "Recently Updated"
 msgstr "Đã cập nhật gần đây"
 
-#: src/Views/Homepage.vala:83
+#: src/Views/Homepage.vala:84
 msgid "Trending"
 msgstr "Nổi bật"
 
-#: src/Views/Homepage.vala:99
+#: src/Views/Homepage.vala:100
 msgid "Categories"
 msgstr "Danh mục"
 
-#: src/Views/Homepage.vala:314 src/Views/Homepage.vala:325
+#: src/Views/Homepage.vala:315 src/Views/Homepage.vala:326
 #, c-format
 msgid "Search %s"
 msgstr "Tìm %s"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/Views/SearchView.vala:38
+#: src/Views/SearchView.vala:39
 msgctxt "view"
 msgid "Search"
 msgstr "Tìm kiếm"
@@ -865,27 +869,27 @@ msgstr "Trạng thái không xác định"
 msgid "No description available"
 msgstr "Không có mô tả"
 
-#: src/Widgets/SharePopover.vala:39
+#: src/Widgets/SharePopover.vala:44
 msgid "Facebook"
 msgstr ""
 
-#: src/Widgets/SharePopover.vala:43
+#: src/Widgets/SharePopover.vala:48
 msgid "Twitter"
 msgstr ""
 
-#: src/Widgets/SharePopover.vala:47
+#: src/Widgets/SharePopover.vala:52
 msgid "Reddit"
 msgstr ""
 
-#: src/Widgets/SharePopover.vala:51
+#: src/Widgets/SharePopover.vala:56
 msgid "Tumblr"
 msgstr ""
 
-#: src/Widgets/SharePopover.vala:55
+#: src/Widgets/SharePopover.vala:60
 msgid "Telegram"
 msgstr ""
 
-#: src/Widgets/SharePopover.vala:59
+#: src/Widgets/SharePopover.vala:64
 msgid "Copy link"
 msgstr "Sao chép liên kết"
 

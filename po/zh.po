@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-08 15:53+0000\n"
+"POT-Creation-Date: 2020-11-19 21:36+0000\n"
 "PO-Revision-Date: 2019-05-15 01:18+0000\n"
 "Last-Translator: Jimmy Sun <jimmysuncn@hotmail.com>\n"
 "Language-Team: Chinese <https://l10n.elementary.io/projects/appcenter/appcenter/zh/>\n"
@@ -32,30 +32,30 @@ msgstr "无法解析 %s 的文件类型"
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "未找到指定的链接'%s'，请使用搜索"
 
-#: src/Application.vala:284
+#: src/Application.vala:293
 msgid "Application installed"
 msgstr "应用程序已安装"
 
-#: src/Application.vala:285
+#: src/Application.vala:294
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s已被安装成功"
 
-#: src/MainWindow.vala:136 src/Views/Homepage.vala:297
-#: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
-#: src/Views/Homepage.vala:325
+#: src/MainWindow.vala:138 src/Views/Homepage.vala:298
+#: src/Views/Homepage.vala:310 src/Views/Homepage.vala:315
+#: src/Views/Homepage.vala:326 src/Views/SearchView.vala:90
 msgid "Home"
 msgstr "首页"
 
-#: src/MainWindow.vala:137 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:139 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 #, fuzzy
 msgctxt "view"
 msgid "Installed"
 msgstr "正在安装"
 
-#: src/MainWindow.vala:177 src/MainWindow.vala:356 src/Views/SearchView.vala:54
-#: src/Views/SearchView.vala:84
+#: src/MainWindow.vala:179 src/MainWindow.vala:364 src/Views/SearchView.vala:55
+#: src/Views/SearchView.vala:88
 msgid "Search Apps"
 msgstr "搜索应用"
 
@@ -206,6 +206,10 @@ msgstr "正在复制文件"
 #: src/Utils.vala:132
 msgid "Unknown state"
 msgstr "未知状态"
+
+#: src/Core/BackendAggregator.vala:46
+msgid "package operations are being performed"
+msgstr ""
 
 #: src/Core/Client.vala:72
 msgid "Update Available"
@@ -400,8 +404,8 @@ msgstr "这会关闭所有已打开的应用程序并重启本设备。"
 msgid "Restart"
 msgstr "重启"
 
-#: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
-#: src/Dialogs/StripeDialog.vala:315
+#: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:196
+#: src/Dialogs/StripeDialog.vala:313
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:157
 msgid "Cancel"
 msgstr "取消"
@@ -427,7 +431,7 @@ msgstr "为%2$s支付%1$d美元"
 msgid "This is a one time payment. Your email address is only used to send you a receipt."
 msgstr "这是一次性支付。您的电子邮件地址只会被用于给您发送收据。"
 
-#: src/Dialogs/StripeDialog.vala:106 src/Widgets/SharePopover.vala:35
+#: src/Dialogs/StripeDialog.vala:106
 msgid "Email"
 msgstr "电子邮件"
 
@@ -449,92 +453,92 @@ msgstr "CVC号码"
 msgid "Privacy Policy"
 msgstr "隐私策略"
 
-#: src/Dialogs/StripeDialog.vala:200 src/Dialogs/StripeDialog.vala:314
+#: src/Dialogs/StripeDialog.vala:198 src/Dialogs/StripeDialog.vala:312
 #, c-format
 msgid "Pay $%d.00"
 msgstr "支付%d.00美元"
 
-#: src/Dialogs/StripeDialog.vala:243
+#: src/Dialogs/StripeDialog.vala:241
 msgid "Processing"
 msgstr "正在处理"
 
-#: src/Dialogs/StripeDialog.vala:268
+#: src/Dialogs/StripeDialog.vala:266
 msgid "There Was a Problem Processing Your Payment"
 msgstr "在处理您的支付时遇到了一个问题"
 
-#: src/Dialogs/StripeDialog.vala:306
+#: src/Dialogs/StripeDialog.vala:304
 msgid "Pay Later"
 msgstr "稍后再支付"
 
-#: src/Dialogs/StripeDialog.vala:307
+#: src/Dialogs/StripeDialog.vala:305
 msgid "Retry"
 msgstr "重试"
 
-#: src/Dialogs/StripeDialog.vala:513 src/Dialogs/StripeDialog.vala:578
+#: src/Dialogs/StripeDialog.vala:511 src/Dialogs/StripeDialog.vala:576
 msgid "The card number is incorrect. Please try again using the correct card number."
 msgstr "信用卡卡号有误。请使用正确的信用卡卡号再次尝试。"
 
-#: src/Dialogs/StripeDialog.vala:515
+#: src/Dialogs/StripeDialog.vala:513
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
 msgstr "到期月份无效。请使用正确的到期月份再次尝试。"
 
-#: src/Dialogs/StripeDialog.vala:517 src/Dialogs/StripeDialog.vala:575
+#: src/Dialogs/StripeDialog.vala:515 src/Dialogs/StripeDialog.vala:573
 msgid "The expiration year is invalid. Please try again using the correct expiration date."
 msgstr "到期年份无效。请使用正确的到期年份再次尝试。"
 
-#: src/Dialogs/StripeDialog.vala:520 src/Dialogs/StripeDialog.vala:573
+#: src/Dialogs/StripeDialog.vala:518 src/Dialogs/StripeDialog.vala:571
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr "CVC号码有误。请使用正确的CVC再次尝试。"
 
-#: src/Dialogs/StripeDialog.vala:522 src/Dialogs/StripeDialog.vala:564
+#: src/Dialogs/StripeDialog.vala:520 src/Dialogs/StripeDialog.vala:562
 msgid "The card has expired. Please try again with a different card."
 msgstr "信用卡已过期。请使用其他信用卡再次尝试。"
 
-#: src/Dialogs/StripeDialog.vala:542
+#: src/Dialogs/StripeDialog.vala:540
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr "当前支付请求过多，请稍后重试。"
 
-#: src/Dialogs/StripeDialog.vala:558
+#: src/Dialogs/StripeDialog.vala:556
 msgid "This card does not support this kind of transaction. Please try again with a different card."
 msgstr "该卡不支付这类交易。请使用其他信用卡再次尝试。"
 
-#: src/Dialogs/StripeDialog.vala:560
+#: src/Dialogs/StripeDialog.vala:558
 msgid "The currency is not supported by this card. Please try again with a different card."
 msgstr "该卡不支持这种货币。请使用其他信用卡再次尝试。"
 
-#: src/Dialogs/StripeDialog.vala:562
+#: src/Dialogs/StripeDialog.vala:560
 msgid "The transaction has already been processed."
 msgstr "交易已经被处理了。"
 
-#: src/Dialogs/StripeDialog.vala:566
+#: src/Dialogs/StripeDialog.vala:564
 msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
 msgstr "邮政编码有误。请使用正确的邮政编码再次尝试。"
 
-#: src/Dialogs/StripeDialog.vala:568
+#: src/Dialogs/StripeDialog.vala:566
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "您的资金不足。请使用其他支持方式。"
 
-#: src/Dialogs/StripeDialog.vala:570
+#: src/Dialogs/StripeDialog.vala:568
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "数量有误。请使用一个有效的数量再次尝试。"
 
-#: src/Dialogs/StripeDialog.vala:581
+#: src/Dialogs/StripeDialog.vala:579
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "PIN码有误。请使用正确的PIN码再次尝试。"
 
-#: src/Dialogs/StripeDialog.vala:583
+#: src/Dialogs/StripeDialog.vala:581
 msgid "There has been too many PIN attempts. Please try again with a different card."
 msgstr "该PIN码尝试次数过多。请使用其他信用卡再次尝试。"
 
-#: src/Dialogs/StripeDialog.vala:603
+#: src/Dialogs/StripeDialog.vala:601
 msgid "Unable to complete the transaction. Please contact your bank for further information."
 msgstr "无法未完成交易。请联系您的银行获取更多信息。"
 
-#: src/Dialogs/StripeDialog.vala:606
+#: src/Dialogs/StripeDialog.vala:604
 msgid "The balance or credit limit on the card has been reached."
 msgstr "已超过信用卡余额或限额。"
 
-#: src/Dialogs/StripeDialog.vala:609
+#: src/Dialogs/StripeDialog.vala:607
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "给出的信用卡是一张测试卡。请使用一张真正的信用卡继续。"
 
@@ -587,86 +591,86 @@ msgstr "忽略"
 msgid "Try Again"
 msgstr "重试"
 
-#: src/Views/AppInfoView.vala:155
+#: src/Views/AppInfoView.vala:191
 msgid "Screenshot Not Available"
 msgstr "截图不可用"
 
-#: src/Views/AppInfoView.vala:207
+#: src/Views/AppInfoView.vala:243
 msgid "Homepage"
 msgstr "主页"
 
-#: src/Views/AppInfoView.vala:213
+#: src/Views/AppInfoView.vala:249
 msgid "Suggest Translations"
 msgstr "译文建议"
 
-#: src/Views/AppInfoView.vala:219
+#: src/Views/AppInfoView.vala:255
 msgid "Report a Problem"
 msgstr "报告一个问题"
 
-#: src/Views/AppInfoView.vala:225
+#: src/Views/AppInfoView.vala:261
 msgid "Help"
 msgstr "帮助"
 
-#: src/Views/AppInfoView.vala:236
+#: src/Views/AppInfoView.vala:272
 msgid "What's New:"
 msgstr "最新动态："
 
-#: src/Views/AppInfoView.vala:271
+#: src/Views/AppInfoView.vala:307
 msgid "Extensions:"
 msgstr "扩展："
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:360
+#: src/Views/AppInfoView.vala:404
 msgid "Public Domain"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:363
+#: src/Views/AppInfoView.vala:407
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr ""
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:368
+#: src/Views/AppInfoView.vala:412
 msgid "Free Software"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:371
+#: src/Views/AppInfoView.vala:415
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:375
+#: src/Views/AppInfoView.vala:419
 msgid "Proprietary"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:378
+#: src/Views/AppInfoView.vala:422
 #, fuzzy
 msgid "Unknown License"
 msgstr "未知状态"
 
-#: src/Views/AppInfoView.vala:427
+#: src/Views/AppInfoView.vala:472
 #, c-format
 msgid "Other Apps by %s"
 msgstr "其他%s的应用"
 
-#: src/Views/AppInfoView.vala:464
+#: src/Views/AppInfoView.vala:510
 msgid "Link copied to clipboard"
 msgstr "链接已复制到剪贴板"
 
-#: src/Views/AppInfoView.vala:475
+#: src/Views/AppInfoView.vala:521
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "到应用中心查看%s："
 
-#: src/Views/AppInfoView.vala:482
+#: src/Views/AppInfoView.vala:528
 msgid "Share"
 msgstr "分享"
 
-#: src/Views/AppInfoView.vala:809
+#: src/Views/AppInfoView.vala:856
 msgid "Fund"
 msgstr "金额"
 
-#: src/Views/AppInfoView.vala:831
+#: src/Views/AppInfoView.vala:878
 msgid "Fund the development of this app"
 msgstr "资助这个应用程序的开发"
 
@@ -705,25 +709,25 @@ msgstr "找不到应用。请更改搜索条件。"
 msgid "Non-Curated Apps"
 msgstr "非策略性应用程序"
 
-#: src/Views/Homepage.vala:67
+#: src/Views/Homepage.vala:68
 msgid "Recently Updated"
 msgstr "最近更新"
 
-#: src/Views/Homepage.vala:83
+#: src/Views/Homepage.vala:84
 msgid "Trending"
 msgstr "趋向"
 
-#: src/Views/Homepage.vala:99
+#: src/Views/Homepage.vala:100
 msgid "Categories"
 msgstr "类别"
 
-#: src/Views/Homepage.vala:314 src/Views/Homepage.vala:325
+#: src/Views/Homepage.vala:315 src/Views/Homepage.vala:326
 #, c-format
 msgid "Search %s"
 msgstr "搜索%s"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/Views/SearchView.vala:38
+#: src/Views/SearchView.vala:39
 msgctxt "view"
 msgid "Search"
 msgstr "搜索"
@@ -862,27 +866,27 @@ msgstr "未知版本"
 msgid "No description available"
 msgstr "没有描述可用"
 
-#: src/Widgets/SharePopover.vala:39
+#: src/Widgets/SharePopover.vala:44
 msgid "Facebook"
 msgstr "Facebook"
 
-#: src/Widgets/SharePopover.vala:43
+#: src/Widgets/SharePopover.vala:48
 msgid "Twitter"
 msgstr "Twitter"
 
-#: src/Widgets/SharePopover.vala:47
+#: src/Widgets/SharePopover.vala:52
 msgid "Reddit"
 msgstr "Reddit社区"
 
-#: src/Widgets/SharePopover.vala:51
+#: src/Widgets/SharePopover.vala:56
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: src/Widgets/SharePopover.vala:55
+#: src/Widgets/SharePopover.vala:60
 msgid "Telegram"
 msgstr "Telegram"
 
-#: src/Widgets/SharePopover.vala:59
+#: src/Widgets/SharePopover.vala:64
 msgid "Copy link"
 msgstr "复制链接"
 

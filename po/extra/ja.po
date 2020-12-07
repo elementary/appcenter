@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-08 15:53+0000\n"
-"PO-Revision-Date: 2020-10-21 01:44+0000\n"
+"POT-Creation-Date: 2020-11-19 21:36+0000\n"
+"PO-Revision-Date: 2020-11-21 12:15+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/extra/"
 "ja/>\n"
@@ -45,7 +45,8 @@ msgstr "修正点"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Correctly display names of Flatpak runtime updates"
-msgstr "アップデートされる Flatpak ランタイムの名前が正しく表示されるように修正"
+msgstr ""
+"アップデートされる Flatpak ランタイムの名前が正しく表示されるように修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:37
@@ -498,7 +499,7 @@ msgstr "サスペンドからの復帰時に複数の認証ダイアログが出
 
 #: data/io.elementary.appcenter.appdata.xml.in:340
 msgid ""
-"Search performance has beeen improved, the category name is now shown on the "
+"Search performance has been improved, the category name is now shown on the "
 "headbar and minor bugs have been fixed."
 msgstr "検索能力が向上し、カテゴリーの名前がヘッドバーに表示されます。また、軽微なバグも修正しました。"
 

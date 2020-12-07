@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-08 15:53+0000\n"
+"POT-Creation-Date: 2020-11-19 21:36+0000\n"
 "PO-Revision-Date: 2019-10-12 13:23+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://l10n.elementary.io/projects/appcenter/appcenter/lt/>\n"
@@ -30,29 +30,29 @@ msgstr "Nepavyko išnagrinėti medijos tipo %s"
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Nurodytos nuorodos \"%s\" rasti nepavyko, vietoj to, atliekama paieška"
 
-#: src/Application.vala:284
+#: src/Application.vala:293
 msgid "Application installed"
 msgstr "Programa įdiegta"
 
-#: src/Application.vala:285
+#: src/Application.vala:294
 #, c-format
 msgid "%s has been successfully installed"
 msgstr "%s buvo sėkmingai įdiegta"
 
-#: src/MainWindow.vala:136 src/Views/Homepage.vala:297
-#: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
-#: src/Views/Homepage.vala:325
+#: src/MainWindow.vala:138 src/Views/Homepage.vala:298
+#: src/Views/Homepage.vala:310 src/Views/Homepage.vala:315
+#: src/Views/Homepage.vala:326 src/Views/SearchView.vala:90
 msgid "Home"
 msgstr "Pradžia"
 
-#: src/MainWindow.vala:137 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:139 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 msgctxt "view"
 msgid "Installed"
 msgstr "Įdiegtos"
 
-#: src/MainWindow.vala:177 src/MainWindow.vala:356 src/Views/SearchView.vala:54
-#: src/Views/SearchView.vala:84
+#: src/MainWindow.vala:179 src/MainWindow.vala:364 src/Views/SearchView.vala:55
+#: src/Views/SearchView.vala:88
 msgid "Search Apps"
 msgstr "Ieškoti programų"
 
@@ -203,6 +203,10 @@ msgstr "Kopijuojami failai"
 #: src/Utils.vala:132
 msgid "Unknown state"
 msgstr "Nežinoma būsena"
+
+#: src/Core/BackendAggregator.vala:46
+msgid "package operations are being performed"
+msgstr ""
 
 #: src/Core/Client.vala:72
 msgid "Update Available"
@@ -406,8 +410,8 @@ msgstr "Tai užvers visas atvertas programas ir paleis šį įrenginį iš naujo
 msgid "Restart"
 msgstr "Paleisti iš naujo"
 
-#: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
-#: src/Dialogs/StripeDialog.vala:315
+#: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:196
+#: src/Dialogs/StripeDialog.vala:313
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:157
 msgid "Cancel"
 msgstr "Atsisakyti"
@@ -433,7 +437,7 @@ msgstr "Mokėti %d$ už %s"
 msgid "This is a one time payment. Your email address is only used to send you a receipt."
 msgstr "Tai yra vienkartinis apmokėjimas. Jūsų el. pašto adresas yra naudojamas tik kvitui išsiųsti."
 
-#: src/Dialogs/StripeDialog.vala:106 src/Widgets/SharePopover.vala:35
+#: src/Dialogs/StripeDialog.vala:106
 msgid "Email"
 msgstr "El. paštas"
 
@@ -454,92 +458,92 @@ msgstr "CVC saugos kodas"
 msgid "Privacy Policy"
 msgstr "Privatumo politika"
 
-#: src/Dialogs/StripeDialog.vala:200 src/Dialogs/StripeDialog.vala:314
+#: src/Dialogs/StripeDialog.vala:198 src/Dialogs/StripeDialog.vala:312
 #, c-format
 msgid "Pay $%d.00"
 msgstr "Mokėti $%d,00"
 
-#: src/Dialogs/StripeDialog.vala:243
+#: src/Dialogs/StripeDialog.vala:241
 msgid "Processing"
 msgstr "Apdorojama"
 
-#: src/Dialogs/StripeDialog.vala:268
+#: src/Dialogs/StripeDialog.vala:266
 msgid "There Was a Problem Processing Your Payment"
 msgstr "Apdorojant jūsų apmokėjimą, įvyko klaida"
 
-#: src/Dialogs/StripeDialog.vala:306
+#: src/Dialogs/StripeDialog.vala:304
 msgid "Pay Later"
 msgstr "Mokėti vėliau"
 
-#: src/Dialogs/StripeDialog.vala:307
+#: src/Dialogs/StripeDialog.vala:305
 msgid "Retry"
 msgstr "Bandyti dar kartą"
 
-#: src/Dialogs/StripeDialog.vala:513 src/Dialogs/StripeDialog.vala:578
+#: src/Dialogs/StripeDialog.vala:511 src/Dialogs/StripeDialog.vala:576
 msgid "The card number is incorrect. Please try again using the correct card number."
 msgstr "Kortelės numeris yra neteisingas. Prašome bandyti dar kartą, naudojant teisingą kortelės numerį."
 
-#: src/Dialogs/StripeDialog.vala:515
+#: src/Dialogs/StripeDialog.vala:513
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
 msgstr "Galiojimo datos mėnuo yra neteisingas. Prašome bandyti dar kartą, naudojant teisingą galiojimo datą."
 
-#: src/Dialogs/StripeDialog.vala:517 src/Dialogs/StripeDialog.vala:575
+#: src/Dialogs/StripeDialog.vala:515 src/Dialogs/StripeDialog.vala:573
 msgid "The expiration year is invalid. Please try again using the correct expiration date."
 msgstr "Galiojimo datos metai yra neteisingi. Prašome bandyti dar kartą, naudojant teisingą galiojimo datą."
 
-#: src/Dialogs/StripeDialog.vala:520 src/Dialogs/StripeDialog.vala:573
+#: src/Dialogs/StripeDialog.vala:518 src/Dialogs/StripeDialog.vala:571
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr "CVC saugumo kodas yra neteisingas. Prašome bandyti dar kartą, naudojant teisingą CVC saugumo kodą."
 
-#: src/Dialogs/StripeDialog.vala:522 src/Dialogs/StripeDialog.vala:564
+#: src/Dialogs/StripeDialog.vala:520 src/Dialogs/StripeDialog.vala:562
 msgid "The card has expired. Please try again with a different card."
 msgstr "Kortelės galiojimas yra pasibaigęs. Prašome bandyti dar kartą, naudojant kitą kortelę."
 
-#: src/Dialogs/StripeDialog.vala:542
+#: src/Dialogs/StripeDialog.vala:540
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr "Šiuo metu yra pernelyg daug apmokėjimo užklausų, prašome vėliau bandyti dar kartą."
 
-#: src/Dialogs/StripeDialog.vala:558
+#: src/Dialogs/StripeDialog.vala:556
 msgid "This card does not support this kind of transaction. Please try again with a different card."
 msgstr "Ši kortelė nepalaiko tokio tipo operacijos. Prašome bandyti dar kartą, naudojant kitą kortelę."
 
-#: src/Dialogs/StripeDialog.vala:560
+#: src/Dialogs/StripeDialog.vala:558
 msgid "The currency is not supported by this card. Please try again with a different card."
 msgstr "Ši valiuta nėra palaikoma šios kortelės. Prašome bandyti dar kartą, naudojant kitą kortelę."
 
-#: src/Dialogs/StripeDialog.vala:562
+#: src/Dialogs/StripeDialog.vala:560
 msgid "The transaction has already been processed."
 msgstr "Operacija jau buvo apdorota."
 
-#: src/Dialogs/StripeDialog.vala:566
+#: src/Dialogs/StripeDialog.vala:564
 msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
 msgstr "Pašto kodas yra neteisingas. Prašome bandyti dar kartą, naudojant teisingą pašto kodą."
 
-#: src/Dialogs/StripeDialog.vala:568
+#: src/Dialogs/StripeDialog.vala:566
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "Jūs neturite pakankamai lėšų. Prašome naudoti alternatyvų apmokėjimo metodą."
 
-#: src/Dialogs/StripeDialog.vala:570
+#: src/Dialogs/StripeDialog.vala:568
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "Suma yra neteisinga. Prašome bandyti dar kartą, naudojant teisingą sumą."
 
-#: src/Dialogs/StripeDialog.vala:581
+#: src/Dialogs/StripeDialog.vala:579
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "PIN numeris yra neteisingas. Prašome bandyti dar kartą, naudojant teisingą PIN."
 
-#: src/Dialogs/StripeDialog.vala:583
+#: src/Dialogs/StripeDialog.vala:581
 msgid "There has been too many PIN attempts. Please try again with a different card."
 msgstr "Buvo atlikta per daug PIN bandymų. Prašome bandyti dar kartą, naudojant kitą kortelę."
 
-#: src/Dialogs/StripeDialog.vala:603
+#: src/Dialogs/StripeDialog.vala:601
 msgid "Unable to complete the transaction. Please contact your bank for further information."
 msgstr "Nepavyko užbaigti operacijos. Prašome dėl tolimesnės informacijos susisiekti su savo banku."
 
-#: src/Dialogs/StripeDialog.vala:606
+#: src/Dialogs/StripeDialog.vala:604
 msgid "The balance or credit limit on the card has been reached."
 msgstr "Kortelėje yra pasiekta balanso ar kredito riba."
 
-#: src/Dialogs/StripeDialog.vala:609
+#: src/Dialogs/StripeDialog.vala:607
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "Nurodyta kortelė yra bandomoji kortelė. Norint tęsti, prašome naudoti tikrą kortelę."
 
@@ -590,85 +594,85 @@ msgstr "Nepaisyti"
 msgid "Try Again"
 msgstr "Bandyti dar kartą"
 
-#: src/Views/AppInfoView.vala:155
+#: src/Views/AppInfoView.vala:191
 msgid "Screenshot Not Available"
 msgstr "Ekrano kopija neprieinama"
 
-#: src/Views/AppInfoView.vala:207
+#: src/Views/AppInfoView.vala:243
 msgid "Homepage"
 msgstr "Tinklalapis"
 
-#: src/Views/AppInfoView.vala:213
+#: src/Views/AppInfoView.vala:249
 msgid "Suggest Translations"
 msgstr "Siūlyti vertimus"
 
-#: src/Views/AppInfoView.vala:219
+#: src/Views/AppInfoView.vala:255
 msgid "Report a Problem"
 msgstr "Pranešti apie problemą"
 
-#: src/Views/AppInfoView.vala:225
+#: src/Views/AppInfoView.vala:261
 msgid "Help"
 msgstr "Žinynas"
 
-#: src/Views/AppInfoView.vala:236
+#: src/Views/AppInfoView.vala:272
 msgid "What's New:"
 msgstr "Kas naujo:"
 
-#: src/Views/AppInfoView.vala:271
+#: src/Views/AppInfoView.vala:307
 msgid "Extensions:"
 msgstr "Plėtiniai:"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:360
+#: src/Views/AppInfoView.vala:404
 msgid "Public Domain"
 msgstr "Viešojo naudojimo"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:363
+#: src/Views/AppInfoView.vala:407
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://lt.wikipedia.org/wiki/Vie%C5%A1o_naudojimo_k%C5%ABrinys"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:368
+#: src/Views/AppInfoView.vala:412
 msgid "Free Software"
 msgstr "Laisvoji programinė įranga"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:371
+#: src/Views/AppInfoView.vala:415
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw.lt.html"
 
-#: src/Views/AppInfoView.vala:375
+#: src/Views/AppInfoView.vala:419
 msgid "Proprietary"
 msgstr "Nuosavybinė"
 
-#: src/Views/AppInfoView.vala:378
+#: src/Views/AppInfoView.vala:422
 msgid "Unknown License"
 msgstr "Nežinoma licencija"
 
-#: src/Views/AppInfoView.vala:427
+#: src/Views/AppInfoView.vala:472
 #, c-format
 msgid "Other Apps by %s"
 msgstr "Kitos %s programos"
 
-#: src/Views/AppInfoView.vala:464
+#: src/Views/AppInfoView.vala:510
 msgid "Link copied to clipboard"
 msgstr "Nuoroda nukopijuota į iškarpinę"
 
-#: src/Views/AppInfoView.vala:475
+#: src/Views/AppInfoView.vala:521
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "Išbandyk %s iš Programų centro:"
 
-#: src/Views/AppInfoView.vala:482
+#: src/Views/AppInfoView.vala:528
 msgid "Share"
 msgstr "Dalintis"
 
-#: src/Views/AppInfoView.vala:809
+#: src/Views/AppInfoView.vala:856
 msgid "Fund"
 msgstr "Paremti"
 
-#: src/Views/AppInfoView.vala:831
+#: src/Views/AppInfoView.vala:878
 msgid "Fund the development of this app"
 msgstr "Paremti šios programos kūrėją"
 
@@ -707,25 +711,25 @@ msgstr "Nepavyko rasti jokių programų. Pabandykite pakeisti paieškos žodžiu
 msgid "Non-Curated Apps"
 msgstr "Nekuruojamos programos"
 
-#: src/Views/Homepage.vala:67
+#: src/Views/Homepage.vala:68
 msgid "Recently Updated"
 msgstr "Neseniai atnaujintos"
 
-#: src/Views/Homepage.vala:83
+#: src/Views/Homepage.vala:84
 msgid "Trending"
 msgstr "Populiarėjančios"
 
-#: src/Views/Homepage.vala:99
+#: src/Views/Homepage.vala:100
 msgid "Categories"
 msgstr "Kategorijos"
 
-#: src/Views/Homepage.vala:314 src/Views/Homepage.vala:325
+#: src/Views/Homepage.vala:315 src/Views/Homepage.vala:326
 #, c-format
 msgid "Search %s"
 msgstr "Ieškoti %s"
 
 #. / TRANSLATORS: the name of the Search view
-#: src/Views/SearchView.vala:38
+#: src/Views/SearchView.vala:39
 msgctxt "view"
 msgid "Search"
 msgstr "Ieškoti"
@@ -858,27 +862,27 @@ msgstr "Nežinoma versija"
 msgid "No description available"
 msgstr "Aprašas neprieinamas"
 
-#: src/Widgets/SharePopover.vala:39
+#: src/Widgets/SharePopover.vala:44
 msgid "Facebook"
 msgstr "Facebook"
 
-#: src/Widgets/SharePopover.vala:43
+#: src/Widgets/SharePopover.vala:48
 msgid "Twitter"
 msgstr "Twitter"
 
-#: src/Widgets/SharePopover.vala:47
+#: src/Widgets/SharePopover.vala:52
 msgid "Reddit"
 msgstr "Reddit"
 
-#: src/Widgets/SharePopover.vala:51
+#: src/Widgets/SharePopover.vala:56
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: src/Widgets/SharePopover.vala:55
+#: src/Widgets/SharePopover.vala:60
 msgid "Telegram"
 msgstr "Telegram"
 
-#: src/Widgets/SharePopover.vala:59
+#: src/Widgets/SharePopover.vala:64
 msgid "Copy link"
 msgstr "Kopijuoti nuorodą"
 
