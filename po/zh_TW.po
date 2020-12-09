@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-09 18:51+0000\n"
+"POT-Creation-Date: 2020-12-09 19:00+0000\n"
 "PO-Revision-Date: 2020-07-01 23:02+0000\n"
 "Last-Translator: Nan-Hung Hsieh <nhsieh@cvm.tamu.edu>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/appcenter/appcenter/zh_Hant/>\n"
@@ -35,13 +35,15 @@ msgid "Specified link '%s' could not be found, searching instead"
 msgstr "找不到「%s」，而在尋找中"
 
 #: src/Application.vala:293
-msgid "Application installed"
-msgstr "應用程式已安裝"
+#, fuzzy
+#| msgid "%s has been successfully installed"
+msgid "The app has been installed"
+msgstr "％s 已成功安裝"
 
 #: src/Application.vala:294
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
-msgid "%s has been installed"
+msgid "“%s” has been installed"
 msgstr "％s 已成功安裝"
 
 #: src/MainWindow.vala:138 src/Views/Homepage.vala:298
@@ -900,6 +902,9 @@ msgstr "開啟"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "更新"
+
+#~ msgid "Application installed"
+#~ msgstr "應用程式已安裝"
 
 #~ msgid "%s (non-curated)"
 #~ msgstr "%s (未整理)"
