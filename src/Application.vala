@@ -287,7 +287,7 @@ public class AppCenter.App : Gtk.Application {
                         var win = main_window.get_window ();
                         if (win != null && (win.get_state () & Gdk.WindowState.FOCUSED) != 0) {
                             var toast = main_window.toast;
-                            toast.title = _("%s has been installed").printf (package.get_name ());
+                            toast.title = _("“%s” has been installed").printf (package.get_name ());
                             toast.set_default_action (_("Open"));
 
                             toast.default_action.connect (() => {
