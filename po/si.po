@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-19 21:36+0000\n"
+"POT-Creation-Date: 2020-12-09 18:51+0000\n"
 "PO-Revision-Date: 2018-06-12 06:39+0000\n"
 "Last-Translator: Janith Weerasinghe <janithweerasinghe@rocketmail.com>\n"
 "Language-Team: Sinhala <https://weblate.elementary.io/projects/appcenter/appcenter/si/>\n"
@@ -34,8 +34,9 @@ msgid "Application installed"
 msgstr "යෙදවුම ස්ථාපිතයි"
 
 #: src/Application.vala:294
-#, c-format
-msgid "%s has been successfully installed"
+#, fuzzy, c-format
+#| msgid "%s has been successfully installed"
+msgid "%s has been installed"
 msgstr "%s සාර්ථකව ස්ථාපිත විය"
 
 #: src/MainWindow.vala:138 src/Views/Homepage.vala:298

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-19 21:36+0000\n"
+"POT-Creation-Date: 2020-12-09 18:51+0000\n"
 "PO-Revision-Date: 2020-11-12 02:15+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/appcenter/appcenter/zh_Hans/>\n"
@@ -39,8 +39,9 @@ msgid "Application installed"
 msgstr "应用已安装"
 
 #: src/Application.vala:294
-#, c-format
-msgid "%s has been successfully installed"
+#, fuzzy, c-format
+#| msgid "%s has been successfully installed"
+msgid "%s has been installed"
 msgstr "%s 安装成功"
 
 #: src/MainWindow.vala:138 src/Views/Homepage.vala:298

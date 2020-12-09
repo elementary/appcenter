@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-19 21:36+0000\n"
+"POT-Creation-Date: 2020-12-09 18:51+0000\n"
 "PO-Revision-Date: 2016-01-09 14:46+0000\n"
 "Last-Translator: nrao <nagamalli.s@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,7 +35,7 @@ msgstr ""
 
 #: src/Application.vala:294
 #, c-format
-msgid "%s has been successfully installed"
+msgid "%s has been installed"
 msgstr ""
 
 #: src/MainWindow.vala:138 src/Views/Homepage.vala:298
