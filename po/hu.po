@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-09 18:51+0000\n"
+"POT-Creation-Date: 2020-12-09 19:00+0000\n"
 "PO-Revision-Date: 2018-06-21 00:08+0000\n"
 "Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
 "Language-Team: Hungarian <https://weblate.elementary.io/projects/appcenter/appcenter/hu/>\n"
@@ -30,13 +30,15 @@ msgid "Specified link '%s' could not be found, searching instead"
 msgstr "A(z) '%s' hivatkozás nem található, keresés helyette"
 
 #: src/Application.vala:293
-msgid "Application installed"
-msgstr "Alkalmazás telepítve"
+#, fuzzy
+#| msgid "%s has been successfully installed"
+msgid "The app has been installed"
+msgstr "A(z) %s sikeresen telepítésre került"
 
 #: src/Application.vala:294
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
-msgid "%s has been installed"
+msgid "“%s” has been installed"
 msgstr "A(z) %s sikeresen telepítésre került"
 
 #: src/MainWindow.vala:138 src/Views/Homepage.vala:298
@@ -927,6 +929,9 @@ msgstr "Megnyitás"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "Frissítés"
+
+#~ msgid "Application installed"
+#~ msgstr "Alkalmazás telepítve"
 
 #, fuzzy
 #~ msgid "%s (non-curated)"

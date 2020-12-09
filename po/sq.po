@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-09 18:51+0000\n"
+"POT-Creation-Date: 2020-12-09 19:00+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Albanian <https://l10n.elementary.io/projects/appcenter/appcenter/sq/>\n"
@@ -32,13 +32,15 @@ msgid "Specified link '%s' could not be found, searching instead"
 msgstr ""
 
 #: src/Application.vala:293
-msgid "Application installed"
-msgstr "Programi u instalua"
+#, fuzzy
+#| msgid "%s has been successfully installed"
+msgid "The app has been installed"
+msgstr "%s është instaluar me sukses"
 
 #: src/Application.vala:294
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
-msgid "%s has been installed"
+msgid "“%s” has been installed"
 msgstr "%s është instaluar me sukses"
 
 #: src/MainWindow.vala:138 src/Views/Homepage.vala:298
@@ -921,6 +923,9 @@ msgstr ""
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "Përditëso"
+
+#~ msgid "Application installed"
+#~ msgstr "Programi u instalua"
 
 #~ msgid "Searching for updates…"
 #~ msgstr "Duke kërkuar përditësime…"

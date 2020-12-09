@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-09 18:51+0000\n"
+"POT-Creation-Date: 2020-12-09 19:00+0000\n"
 "PO-Revision-Date: 2018-06-12 06:39+0000\n"
 "Last-Translator: Janith Weerasinghe <janithweerasinghe@rocketmail.com>\n"
 "Language-Team: Sinhala <https://weblate.elementary.io/projects/appcenter/appcenter/si/>\n"
@@ -30,13 +30,15 @@ msgid "Specified link '%s' could not be found, searching instead"
 msgstr "විශේශිත සබැදුම '%s' සොයා ගැනීමට නොහැකියි, ඒ වෙනුවට මෙසේ සොයන්න"
 
 #: src/Application.vala:293
-msgid "Application installed"
-msgstr "යෙදවුම ස්ථාපිතයි"
+#, fuzzy
+#| msgid "%s has been successfully installed"
+msgid "The app has been installed"
+msgstr "%s සාර්ථකව ස්ථාපිත විය"
 
 #: src/Application.vala:294
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
-msgid "%s has been installed"
+msgid "“%s” has been installed"
 msgstr "%s සාර්ථකව ස්ථාපිත විය"
 
 #: src/MainWindow.vala:138 src/Views/Homepage.vala:298
@@ -916,6 +918,9 @@ msgstr ""
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr ""
+
+#~ msgid "Application installed"
+#~ msgstr "යෙදවුම ස්ථාපිතයි"
 
 #~ msgid "There Was An Error Installing %s."
 #~ msgstr "%s  ස්ථාපිත කිරීමේදී වරදක් සිදුවිය"
