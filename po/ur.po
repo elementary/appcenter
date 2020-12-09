@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-19 21:36+0000\n"
+"POT-Creation-Date: 2020-12-09 18:51+0000\n"
 "PO-Revision-Date: 2016-11-24 12:37+0000\n"
 "Last-Translator: Waqar Ahmed <waqar.17a@gmail.com>\n"
 "Language-Team: \n"
@@ -34,8 +34,9 @@ msgid "Application installed"
 msgstr "ایپ نصب کر دی گئی"
 
 #: src/Application.vala:294
-#, c-format
-msgid "%s has been successfully installed"
+#, fuzzy, c-format
+#| msgid "%s has been successfully installed"
+msgid "%s has been installed"
 msgstr "پیکج %s کامیابی کے ساتھ انسٹال کر دیا گیا ہے"
 
 #: src/MainWindow.vala:138 src/Views/Homepage.vala:298
