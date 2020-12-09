@@ -129,6 +129,18 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         title = _(Build.APP_NAME);
 
         toast = new Granite.Widgets.Toast ("");
+        toast.set_default_action (_("Open"));
+
+        toast.default_action.connect (() => {
+            var package = AppCenter.App.last_installed_package;
+            if (package != null) {
+                try {
+                    package.launch ();
+                } catch (Error e) {
+                    warning ("Failed to launch %s: %s".printf (package.get_name (), e.message));
+                }
+            }
+        });
 
         return_button = new Gtk.Button ();
         return_button.no_show_all = true;

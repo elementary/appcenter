@@ -33,6 +33,7 @@ public class AppCenter.App : Gtk.Application {
     public static bool silent;
     public static string? local_path;
     public static AppCenterCore.Package? local_package;
+    public static AppCenterCore.Package? last_installed_package;
 
     // Add "AppCenter" to the translation catalog
     public const string APPCENTER = N_("AppCenter");
@@ -282,21 +283,14 @@ public class AppCenter.App : Gtk.Application {
         switch (operation) {
             case AppCenterCore.Package.State.INSTALLING:
                 if (error == null) {
+                    last_installed_package = package;
+
                     // Check if window is focused
                     if (main_window != null) {
                         var win = main_window.get_window ();
                         if (win != null && (win.get_state () & Gdk.WindowState.FOCUSED) != 0) {
                             var toast = main_window.toast;
                             toast.title = _("“%s” has been installed").printf (package.get_name ());
-                            toast.set_default_action (_("Open"));
-
-                            toast.default_action.connect (() => {
-                                try {
-                                    package.launch ();
-                                } catch (Error e) {
-                                    warning ("Failed to launch %s: %s".printf (package.get_name (), e.message));
-                                }
-                            });
 
                             toast.send_notification ();
 
