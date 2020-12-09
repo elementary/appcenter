@@ -40,6 +40,8 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     private Gee.LinkedList<string> return_button_history;
     private Gtk.Label updates_badge;
     private Gtk.Revealer updates_badge_revealer;
+    private Gtk.Overlay overlay;
+    public Granite.Widgets.Toast toast;
 
     private uint configure_id;
     private int homepage_view_id;
@@ -126,6 +128,8 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
         title = _(Build.APP_NAME);
 
+        toast = new Granite.Widgets.Toast ("");
+
         return_button = new Gtk.Button ();
         return_button.no_show_all = true;
         return_button.valign = Gtk.Align.CENTER;
@@ -198,6 +202,10 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         stack.add (installed_view);
         stack.add (search_view);
 
+        overlay = new Gtk.Overlay ();
+        overlay.add_overlay (toast);
+        overlay.add (stack);
+
         var network_info_bar = new AppCenter.Widgets.NetworkInfoBar ();
 
         var grid = new Gtk.Grid () {
@@ -205,7 +213,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         };
         grid.add (headerbar);
         grid.add (network_info_bar);
-        grid.add (stack);
+        grid.add (overlay);
 
         add (grid);
 

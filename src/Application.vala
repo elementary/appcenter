@@ -286,6 +286,11 @@ public class AppCenter.App : Gtk.Application {
                     if (main_window != null) {
                         var win = main_window.get_window ();
                         if (win != null && (win.get_state () & Gdk.WindowState.FOCUSED) != 0) {
+                            main_window.toast.title = _("%s has been successfully installed").printf (package.get_name ());
+                            main_window.toast.set_default_action (_("Open"));
+
+                            main_window.toast.send_notification ();
+
                             break;
                         }
                     }
