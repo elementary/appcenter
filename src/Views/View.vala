@@ -47,6 +47,7 @@ public abstract class AppCenter.View : Gtk.Stack {
         transition_type = transition;
 
         previous_package = null;
+        AppCenter.App.selected_package = package;
 
         var package_hash = package.hash;
 

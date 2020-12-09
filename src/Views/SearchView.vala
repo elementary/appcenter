@@ -43,6 +43,7 @@ public class AppCenter.Views.SearchView : View {
     }
 
     public override void return_clicked () {
+        AppCenter.App.selected_package = null;
         if (viewing_package) {
             if (previous_package != null) {
                 show_package (previous_package);
