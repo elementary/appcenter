@@ -301,7 +301,6 @@ namespace AppCenter {
 
         public override void return_clicked () {
             transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
-            AppCenter.App.selected_package = null;
 
             if (previous_package != null) {
                 show_package (previous_package);

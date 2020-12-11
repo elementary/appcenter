@@ -43,6 +43,9 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     private Gtk.Overlay overlay;
     public Granite.Widgets.Toast toast;
 
+    private AppCenterCore.Package? last_installed_package;
+    public static AppCenterCore.Package? selected_package;
+
     private uint configure_id;
     private int homepage_view_id;
     private int installed_view_id;
@@ -132,12 +135,11 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         toast.set_default_action (_("Open"));
 
         toast.default_action.connect (() => {
-            var package = AppCenter.App.last_installed_package;
-            if (package != null) {
+            if (last_installed_package != null) {
                 try {
-                    package.launch ();
+                    last_installed_package.launch ();
                 } catch (Error e) {
-                    warning ("Failed to launch %s: %s".printf (package.get_name (), e.message));
+                    warning ("Failed to launch %s: %s".printf (last_installed_package.get_name (), e.message));
                 }
             }
         });
@@ -326,6 +328,16 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         search_entry.text = term;
     }
 
+    public void send_installed_toast (AppCenterCore.Package package) {
+        last_installed_package = package;
+
+        if (selected_package == null || (selected_package != null && selected_package.get_name () != package.get_name ())) {
+            toast.title = _("“%s” has been installed").printf (package.get_name ());
+
+            toast.send_notification ();
+        }
+    }
+
     private void trigger_search () {
         unowned string query = search_entry.text;
         uint query_length = query.length;
@@ -389,6 +401,8 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     }
 
     private void view_return () {
+        selected_package = null;
+
         if (stack.visible_child == search_view && !search_view.viewing_package && homepage.currently_viewed_category != null) {
             homepage.return_clicked ();
 
