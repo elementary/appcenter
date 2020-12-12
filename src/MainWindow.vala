@@ -44,7 +44,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     public Granite.Widgets.Toast toast;
 
     private AppCenterCore.Package? last_installed_package;
-    public static AppCenterCore.Package? selected_package;
+    private AppCenterCore.Package? selected_package;
 
     private uint configure_id;
     private int homepage_view_id;
@@ -108,8 +108,11 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
         return_button.clicked.connect (view_return);
 
+        homepage.package_selected.connect (package_selected);
         homepage.subview_entered.connect (view_opened);
+        installed_view.package_selected.connect (package_selected);
         installed_view.subview_entered.connect (view_opened);
+        search_view.package_selected.connect (package_selected);
         search_view.subview_entered.connect (view_opened);
         search_view.home_return_clicked.connect (show_homepage);
 
@@ -367,6 +370,10 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         if (mimetype) {
             mimetype = false;
         }
+    }
+
+    private void package_selected (AppCenterCore.Package package) {
+        selected_package = package;
     }
 
     private void view_opened (string? return_name, bool allow_search, string? custom_header = null, string? custom_search_placeholder = null) {

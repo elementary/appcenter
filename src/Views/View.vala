@@ -20,6 +20,7 @@
 
 public abstract class AppCenter.View : Gtk.Stack {
     public signal void subview_entered (string? return_name, bool allow_search, string? custom_header = null, string? custom_search_placeholder = null);
+    public signal void package_selected (AppCenterCore.Package package);
 
     protected AppCenterCore.Package? previous_package = null;
 
@@ -47,7 +48,8 @@ public abstract class AppCenter.View : Gtk.Stack {
         transition_type = transition;
 
         previous_package = null;
-        AppCenter.MainWindow.selected_package = package;
+
+        package_selected (package);
 
         var package_hash = package.hash;
 
