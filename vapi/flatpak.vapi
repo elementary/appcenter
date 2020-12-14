@@ -451,10 +451,9 @@ namespace Flatpak {
 		MMC,
 		NETWORK
 	}
-	[CCode (cheader_filename = "flatpak.h", cprefix = "FLATPAK_TRANSACTION_ERROR_DETAILS_NON_", type_id = "flatpak_transaction_error_details_get_type ()")]
+	[CCode (cheader_filename = "flatpak.h", cprefix = "FLATPAK_TRANSACTION_ERROR_DETAILS_", type_id = "flatpak_transaction_error_details_get_type ()")]
 	[Flags]
 	public enum TransactionErrorDetails {
-		[CCode (cname = "FLATPAK_TRANSACTION_ERROR_DETAILS_NON_FATAL")]
 		NON_FATAL
 	}
 	[CCode (cheader_filename = "flatpak.h", cprefix = "FLATPAK_TRANSACTION_OPERATION_", type_id = "flatpak_transaction_operation_type_get_type ()")]
