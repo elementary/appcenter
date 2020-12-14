@@ -1007,33 +1007,91 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             return;
         }
 
+        Flatpak.Transaction transaction;
         try {
-            fp_package.installation.uninstall (
-                Flatpak.RefKind.APP,
-                flatpak_ref.name,
-                flatpak_ref.arch,
-                flatpak_ref.branch,
-                (status, progress, estimating) => {
-                    cb (true, _("Uninstalling"), (double)progress / 100.0f, ChangeInformation.Status.RUNNING);
-                },
-                cancellable
-            );
+            transaction = new Flatpak.Transaction.for_installation (fp_package.installation, cancellable);
+        } catch (Error e) {
+            critical ("Error creating transaction for flatpak removal: %s", e.message);
+            job.result = Value (typeof (bool));
+            job.result.set_boolean (false);
+            job.results_ready ();
+            return;
+        }
 
-            cb (false, _("Finishing"), 1.0f, ChangeInformation.Status.FINISHED);
+        try {
+            transaction.add_uninstall (bundle.get_id ());
+        } catch (Error e) {
+            critical ("Error setting up transaction for flatpak removal: %s", e.message);
+            job.result = Value (typeof (bool));
+            job.result.set_boolean (false);
+            job.error = e;
+            job.results_ready ();
+            return;
+        }
+
+        transaction.set_no_pull (true);
+
+        transaction.new_operation.connect ((operation, progress) => {
+            current_operation++;
+
+            progress.changed.connect (() => {
+                if (cancellable.is_cancelled ()) {
+                    return;
+                }
+
+                // Calculate the progress contribution of the previous operations not including the current, hence -1
+                double existing_progress = (double)(current_operation - 1) / (double)total_operations;
+                double this_op_progress = (double)progress.get_progress () / 100.0f / (double)total_operations;
+                cb (true, _("Uninstalling"), existing_progress + this_op_progress, ChangeInformation.Status.RUNNING);
+            });
+        });
+
+        bool success = false;
+
+        transaction.operation_error.connect ((operation, e, detail) => {
+            warning ("Flatpak removal failed: %s (detail: %d)", e.message, detail);
+            if (e is GLib.IOError.CANCELLED) {
+                cb (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);
+                success = true;
+            }
+
+            // Only cancel the transaction if this is fatal
+            var should_continue = detail == Flatpak.TransactionErrorDetails.NON_FATAL;
+            if (!should_continue) {
+                job.error = e;
+            }
+
+            return should_continue;
+        });
+
+        transaction.operation_done.connect ((operation, commit, details) => {
+            success = true;
+        });
+
+        transaction.ready.connect (() => {
+            total_operations = transaction.get_operations ().length ();
+            return true;
+        });
+
+        current_operation = 0;
+
+        try {
+            transaction.run (cancellable);
         } catch (Error e) {
             if (e is GLib.IOError.CANCELLED) {
                 cb (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);
+                success = true;
             } else {
-                warning ("Flatpak removal failed: %s", e.message);
-                job.result = Value (typeof (bool));
-                job.result.set_boolean (false);
-                job.results_ready ();
-                return;
+                success = false;
+                // Don't overwrite any previous errors as the first is probably most important
+                if (job.error != null) {
+                    job.error = e;
+                }
             }
         }
 
         job.result = Value (typeof (bool));
-        job.result.set_boolean (true);
+        job.result.set_boolean (success);
         job.results_ready ();
     }
 

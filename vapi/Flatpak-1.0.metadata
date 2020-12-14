@@ -1,0 +1,2 @@
+Transaction.operation_done.commit nullable
+TransactionErrorDetails.fatal name="non_fatal"
