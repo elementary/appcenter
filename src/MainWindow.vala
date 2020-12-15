@@ -41,7 +41,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     private Gtk.Label updates_badge;
     private Gtk.Revealer updates_badge_revealer;
     private Gtk.Overlay overlay;
-    public Granite.Widgets.Toast toast;
+    private Granite.Widgets.Toast toast;
 
     private AppCenterCore.Package? last_installed_package;
     private AppCenterCore.Package? selected_package;
