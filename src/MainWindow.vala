@@ -40,7 +40,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     private Gee.LinkedList<string> return_button_history;
     private Gtk.Label updates_badge;
     private Gtk.Revealer updates_badge_revealer;
-    private Gtk.Overlay overlay;
     private Granite.Widgets.Toast toast;
 
     private AppCenterCore.Package? last_installed_package;
@@ -219,7 +218,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         stack.add (installed_view);
         stack.add (search_view);
 
-        overlay = new Gtk.Overlay ();
+        var overlay = new Gtk.Overlay ();
         overlay.add_overlay (toast);
         overlay.add (stack);
 
