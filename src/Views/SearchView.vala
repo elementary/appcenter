@@ -19,7 +19,7 @@
 
 using AppCenterCore;
 
-public class AppCenter.Views.SearchView : View {
+public class AppCenter.Views.SearchView : AbstractView {
     AppListView app_list_view;
 
     public bool viewing_package { get; private set; default = false; }
@@ -47,7 +47,6 @@ public class AppCenter.Views.SearchView : View {
             if (previous_package != null) {
                 show_package (previous_package);
             } else {
-                transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
                 set_visible_child (app_list_view);
                 viewing_package = false;
 
