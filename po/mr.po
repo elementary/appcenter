@@ -4,11 +4,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-19 21:36+0000\n"
+"POT-Creation-Date: 2020-12-09 19:00+0000\n"
 "PO-Revision-Date: 2020-11-22 20:15+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
-"Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/mr/>\n"
+"Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/appcenter/mr/>\n"
 "Language: mr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -33,12 +32,15 @@ msgid "Specified link '%s' could not be found, searching instead"
 msgstr "दिलेली लिंक '%s ' मिळाली नाही, त्याऐवजी शोध सुरु आहे"
 
 #: src/Application.vala:293
-msgid "Application installed"
-msgstr "अनुप्रयोग स्थापित झाला"
+#, fuzzy
+#| msgid "%s has been successfully installed"
+msgid "The app has been installed"
+msgstr "%s यशस्वीरित्या इन्स्टॉल झाले"
 
 #: src/Application.vala:294
-#, c-format
-msgid "%s has been successfully installed"
+#, fuzzy, c-format
+#| msgid "%s has been successfully installed"
+msgid "“%s” has been installed"
 msgstr "%s यशस्वीरित्या इन्स्टॉल झाले"
 
 #: src/MainWindow.vala:138 src/Views/Homepage.vala:298
@@ -899,6 +901,9 @@ msgstr "उघडा"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "अद्ययावत (अपडेट) करा"
+
+#~ msgid "Application installed"
+#~ msgstr "अनुप्रयोग स्थापित झाला"
 
 #~ msgid "%s (non-curated)"
 #~ msgstr "%s (नॉन-क्युरेटेड)"

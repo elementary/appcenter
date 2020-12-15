@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-19 21:36+0000\n"
-"PO-Revision-Date: 2020-11-21 12:15+0000\n"
+"POT-Creation-Date: 2020-12-09 19:00+0000\n"
+"PO-Revision-Date: 2020-12-12 14:16+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ca/>\n"
@@ -34,13 +34,13 @@ msgid "Specified link '%s' could not be found, searching instead"
 msgstr "No s'ha pogut trobar l'enllaç especificat «%s». En lloc d'això, se cerca"
 
 #: src/Application.vala:293
-msgid "Application installed"
-msgstr "Aplicació instal·lada"
+msgid "The app has been installed"
+msgstr "L'aplicació s'ha instal·lat"
 
 #: src/Application.vala:294
 #, c-format
-msgid "%s has been successfully installed"
-msgstr "%s s'ha instal·lat correctament"
+msgid "“%s” has been installed"
+msgstr "%s s'ha instal·lat"
 
 #: src/MainWindow.vala:138 src/Views/Homepage.vala:298
 #: src/Views/Homepage.vala:310 src/Views/Homepage.vala:315
@@ -900,6 +900,9 @@ msgstr "Obre"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "Actualitza"
+
+#~ msgid "Application installed"
+#~ msgstr "Aplicació instal·lada"
 
 #~ msgid "%s (non-curated)"
 #~ msgstr "%s (sense cura)"

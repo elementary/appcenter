@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-19 21:36+0000\n"
+"POT-Creation-Date: 2020-12-09 19:00+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/appcenter/appcenter/sk/>\n"
@@ -32,12 +32,15 @@ msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Zadaný odkaz '%s' sa nenašiel, spúšťa sa vyhľadávanie"
 
 #: src/Application.vala:293
-msgid "Application installed"
-msgstr "Aplikácia bola nainštalovaná"
+#, fuzzy
+#| msgid "%s has been successfully installed"
+msgid "The app has been installed"
+msgstr "Aplikácia %s bola úspešne nainštalovaná"
 
 #: src/Application.vala:294
-#, c-format
-msgid "%s has been successfully installed"
+#, fuzzy, c-format
+#| msgid "%s has been successfully installed"
+msgid "“%s” has been installed"
 msgstr "Aplikácia %s bola úspešne nainštalovaná"
 
 #: src/MainWindow.vala:138 src/Views/Homepage.vala:298
@@ -926,6 +929,9 @@ msgstr "Otvoriť"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "Aktualizácie"
+
+#~ msgid "Application installed"
+#~ msgstr "Aplikácia bola nainštalovaná"
 
 #, fuzzy
 #~ msgid "%s (non-curated)"

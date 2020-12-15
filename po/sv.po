@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-19 21:36+0000\n"
+"POT-Creation-Date: 2020-12-09 19:00+0000\n"
 "PO-Revision-Date: 2018-10-28 09:52+0000\n"
 "Last-Translator: Fredrik B <frbo9002@gmail.com>\n"
 "Language-Team: Swedish <https://weblate.elementary.io/projects/appcenter/appcenter/sv/>\n"
@@ -31,12 +31,15 @@ msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Specificerade länken '% s' kunde inte hittas, söker i stället"
 
 #: src/Application.vala:293
-msgid "Application installed"
-msgstr "Program installerat"
+#, fuzzy
+#| msgid "%s has been successfully installed"
+msgid "The app has been installed"
+msgstr "%s har installerats"
 
 #: src/Application.vala:294
-#, c-format
-msgid "%s has been successfully installed"
+#, fuzzy, c-format
+#| msgid "%s has been successfully installed"
+msgid "“%s” has been installed"
 msgstr "%s har installerats"
 
 #: src/MainWindow.vala:138 src/Views/Homepage.vala:298
@@ -923,6 +926,9 @@ msgstr "Öppna"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "Uppdatera"
+
+#~ msgid "Application installed"
+#~ msgstr "Program installerat"
 
 #, fuzzy
 #~ msgid "%s (non-curated)"

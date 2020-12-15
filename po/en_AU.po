@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-19 21:36+0000\n"
+"POT-Creation-Date: 2020-12-09 19:00+0000\n"
 "PO-Revision-Date: 2018-06-16 00:08+0000\n"
 "Last-Translator: martin fromont <martin.fromont1@gmail.com>\n"
 "Language-Team: English (Australia) <https://weblate.elementary.io/projects/appcenter/appcenter/en_AU/>\n"
@@ -30,12 +30,12 @@ msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Specified link '%s' could not be found, searching instead"
 
 #: src/Application.vala:293
-msgid "Application installed"
-msgstr "Application installed"
+msgid "The app has been installed"
+msgstr ""
 
 #: src/Application.vala:294
 #, c-format
-msgid "%s has been successfully installed"
+msgid "“%s” has been installed"
 msgstr ""
 
 #: src/MainWindow.vala:138 src/Views/Homepage.vala:298
@@ -909,6 +909,9 @@ msgstr ""
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr ""
+
+#~ msgid "Application installed"
+#~ msgstr "Application installed"
 
 #~ msgid "translator-credits"
 #~ msgstr ""

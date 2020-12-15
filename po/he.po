@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-19 21:36+0000\n"
+"POT-Creation-Date: 2020-12-09 19:00+0000\n"
 "PO-Revision-Date: 2020-09-28 16:14+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/appcenter/he/>\n"
@@ -31,12 +31,15 @@ msgid "Specified link '%s' could not be found, searching instead"
 msgstr "לא ניתן למצוא את הקישור שצוין ‚%s’, מתבצע חיפוש במקום"
 
 #: src/Application.vala:293
-msgid "Application installed"
-msgstr "יישום הותקן"
+#, fuzzy
+#| msgid "%s has been successfully installed"
+msgid "The app has been installed"
+msgstr "%s הותקן בהצלחה"
 
 #: src/Application.vala:294
-#, c-format
-msgid "%s has been successfully installed"
+#, fuzzy, c-format
+#| msgid "%s has been successfully installed"
+msgid "“%s” has been installed"
 msgstr "%s הותקן בהצלחה"
 
 #: src/MainWindow.vala:138 src/Views/Homepage.vala:298
@@ -897,6 +900,9 @@ msgstr "פתיחה"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "עדכון"
+
+#~ msgid "Application installed"
+#~ msgstr "יישום הותקן"
 
 #~ msgid "%s (non-curated)"
 #~ msgstr "%s (לא מאורגן)"

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-19 21:36+0000\n"
-"PO-Revision-Date: 2020-04-26 23:10+0000\n"
+"POT-Creation-Date: 2020-12-09 19:00+0000\n"
+"PO-Revision-Date: 2020-12-09 04:16+0000\n"
 "Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -36,12 +36,15 @@ msgid "Specified link '%s' could not be found, searching instead"
 msgstr "O link especificado '%s' não pôde ser encontrado, buscando"
 
 #: src/Application.vala:293
-msgid "Application installed"
-msgstr "Aplicativo instalado"
+#, fuzzy
+#| msgid "%s has been successfully installed"
+msgid "The app has been installed"
+msgstr "%s foi instalado com sucesso"
 
 #: src/Application.vala:294
-#, c-format
-msgid "%s has been successfully installed"
+#, fuzzy, c-format
+#| msgid "%s has been successfully installed"
+msgid "“%s” has been installed"
 msgstr "%s foi instalado com sucesso"
 
 #: src/MainWindow.vala:138 src/Views/Homepage.vala:298
@@ -211,7 +214,7 @@ msgstr "Status desconhecido"
 
 #: src/Core/BackendAggregator.vala:46
 msgid "package operations are being performed"
-msgstr ""
+msgstr "operações de pacote estão sendo realizadas"
 
 #: src/Core/Client.vala:72
 msgid "Update Available"
@@ -254,7 +257,7 @@ msgstr "Ubuntu (não supervisionado)"
 #: src/Core/Package.vala:347
 #, c-format
 msgid "%s (system-wide)"
-msgstr ""
+msgstr "%s (todo o sistema)"
 
 #: src/Core/Package.vala:352
 msgid "Ubuntu Drivers"
@@ -902,6 +905,9 @@ msgstr "Abrir"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "Atualizar"
+
+#~ msgid "Application installed"
+#~ msgstr "Aplicativo instalado"
 
 #~ msgid "%s (non-curated)"
 #~ msgstr "%s (não supervisionado)"

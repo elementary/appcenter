@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-19 21:36+0000\n"
-"PO-Revision-Date: 2020-11-22 20:15+0000\n"
+"POT-Creation-Date: 2020-12-09 19:00+0000\n"
+"PO-Revision-Date: 2020-12-12 14:16+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/pt/>\n"
@@ -34,13 +34,13 @@ msgid "Specified link '%s' could not be found, searching instead"
 msgstr "O link especificado '%s' não pôde ser encontrado. A pesquisar, em alternativa"
 
 #: src/Application.vala:293
-msgid "Application installed"
-msgstr "Aplicação instalada"
+msgid "The app has been installed"
+msgstr "A aplicação foi instalada"
 
 #: src/Application.vala:294
 #, c-format
-msgid "%s has been successfully installed"
-msgstr "%s foi instalado com sucesso"
+msgid "“%s” has been installed"
+msgstr "\"%s\" foi instalada"
 
 #: src/MainWindow.vala:138 src/Views/Homepage.vala:298
 #: src/Views/Homepage.vala:310 src/Views/Homepage.vala:315
@@ -900,6 +900,9 @@ msgstr "Abrir"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "Atualizar"
+
+#~ msgid "Application installed"
+#~ msgstr "Aplicação instalada"
 
 #~ msgid "%s (non-curated)"
 #~ msgstr "%s (não-categorizada)"

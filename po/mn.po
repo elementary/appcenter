@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-19 21:36+0000\n"
+"POT-Creation-Date: 2020-12-09 19:00+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Mongolian <https://l10n.elementary.io/projects/appcenter/appcenter/mn/>\n"
@@ -33,12 +33,15 @@ msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Онцгойлон '%s' холбоос олдсонгүй, хайлтын үр дүнд"
 
 #: src/Application.vala:293
-msgid "Application installed"
-msgstr "Програм суулгагдсан"
+#, fuzzy
+#| msgid "%s has been successfully installed"
+msgid "The app has been installed"
+msgstr "%s амжилттай суулгагдлаа"
 
 #: src/Application.vala:294
-#, c-format
-msgid "%s has been successfully installed"
+#, fuzzy, c-format
+#| msgid "%s has been successfully installed"
+msgid "“%s” has been installed"
 msgstr "%s амжилттай суулгагдлаа"
 
 #: src/MainWindow.vala:138 src/Views/Homepage.vala:298
@@ -916,6 +919,9 @@ msgstr "Нээх"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "Шиэнчлэх"
+
+#~ msgid "Application installed"
+#~ msgstr "Програм суулгагдсан"
 
 #~ msgid "Searching for updates…"
 #~ msgstr "Шинэчлэлтүүдийг хайж байна…"

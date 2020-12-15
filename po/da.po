@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-19 21:36+0000\n"
+"POT-Creation-Date: 2020-12-09 19:00+0000\n"
 "PO-Revision-Date: 2020-11-02 17:15+0000\n"
 "Last-Translator: Rantyrant <diseasemonger@gmail.com>\n"
 "Language-Team: Danish <https://l10n.elementary.io/projects/appcenter/appcenter/da/>\n"
@@ -33,12 +33,15 @@ msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Det angivne link '%s' kunne ikke findes, søger i stedet for"
 
 #: src/Application.vala:293
-msgid "Application installed"
-msgstr "Programmet er installeret"
+#, fuzzy
+#| msgid "%s has been successfully installed"
+msgid "The app has been installed"
+msgstr "%s blev succesfuldt installeret"
 
 #: src/Application.vala:294
-#, c-format
-msgid "%s has been successfully installed"
+#, fuzzy, c-format
+#| msgid "%s has been successfully installed"
+msgid "“%s” has been installed"
 msgstr "%s blev succesfuldt installeret"
 
 #: src/MainWindow.vala:138 src/Views/Homepage.vala:298
@@ -899,6 +902,9 @@ msgstr "Åben"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "Opdater"
+
+#~ msgid "Application installed"
+#~ msgstr "Programmet er installeret"
 
 #~ msgid "%s (non-curated)"
 #~ msgstr "%s ((Ikke-kurateret))"

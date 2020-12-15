@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-19 21:36+0000\n"
+"POT-Creation-Date: 2020-12-09 19:00+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Alma Ibrašimović <belma.alma@hotmail.com>\n"
 "Language-Team: Bosnian <https://l10n.elementary.io/projects/appcenter/appcenter/bs/>\n"
@@ -32,12 +32,15 @@ msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Navedeni link %s nije pronađen, traži se"
 
 #: src/Application.vala:293
-msgid "Application installed"
-msgstr "Aplikacija instalirana"
+#, fuzzy
+#| msgid "%s has been successfully installed"
+msgid "The app has been installed"
+msgstr "%s je uspješno instaliran"
 
 #: src/Application.vala:294
-#, c-format
-msgid "%s has been successfully installed"
+#, fuzzy, c-format
+#| msgid "%s has been successfully installed"
+msgid "“%s” has been installed"
 msgstr "%s je uspješno instaliran"
 
 #: src/MainWindow.vala:138 src/Views/Homepage.vala:298
@@ -926,6 +929,9 @@ msgstr "Otvori"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "Ažuriraj"
+
+#~ msgid "Application installed"
+#~ msgstr "Aplikacija instalirana"
 
 #, fuzzy
 #~ msgid "%s (non-curated)"

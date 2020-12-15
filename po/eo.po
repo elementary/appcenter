@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-19 21:36+0000\n"
+"POT-Creation-Date: 2020-12-09 19:00+0000\n"
 "PO-Revision-Date: 2019-12-12 19:07+0000\n"
 "Last-Translator: Augusto Fornitani <augusto.fornitani@outlook.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/appcenter/appcenter/eo/>\n"
@@ -35,12 +35,15 @@ msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Specifita ligo „%s“ ne troveblas, nun serĉanta"
 
 #: src/Application.vala:293
-msgid "Application installed"
-msgstr "Aplikaĵo instalita"
+#, fuzzy
+#| msgid "%s has been successfully installed"
+msgid "The app has been installed"
+msgstr "%s estis sukcese instalita"
 
 #: src/Application.vala:294
-#, c-format
-msgid "%s has been successfully installed"
+#, fuzzy, c-format
+#| msgid "%s has been successfully installed"
+msgid "“%s” has been installed"
 msgstr "%s estis sukcese instalita"
 
 #: src/MainWindow.vala:138 src/Views/Homepage.vala:298
@@ -921,6 +924,9 @@ msgstr "Malfermi"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "Ĝisdatigi"
+
+#~ msgid "Application installed"
+#~ msgstr "Aplikaĵo instalita"
 
 #~ msgid "%s (non-curated)"
 #~ msgstr "%s (ne kontrolita)"

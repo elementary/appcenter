@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-19 21:36+0000\n"
+"POT-Creation-Date: 2020-12-09 19:00+0000\n"
 "PO-Revision-Date: 2016-06-26 17:02+0000\n"
 "Last-Translator: Bone Pyae Sone <bone.burma@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,12 +30,15 @@ msgid "Specified link '%s' could not be found, searching instead"
 msgstr ""
 
 #: src/Application.vala:293
-msgid "Application installed"
-msgstr "ထည့်သွင်းပြီး အပ္ပလီကေးရှင်းများ"
+#, fuzzy
+#| msgid "%s has been successfully installed"
+msgid "The app has been installed"
+msgstr "%s အားအောင်မြင်စွာ ထည့်သွင်းပြီးပါပြီ"
 
 #: src/Application.vala:294
-#, c-format
-msgid "%s has been successfully installed"
+#, fuzzy, c-format
+#| msgid "%s has been successfully installed"
+msgid "“%s” has been installed"
 msgstr "%s အားအောင်မြင်စွာ ထည့်သွင်းပြီးပါပြီ"
 
 #: src/MainWindow.vala:138 src/Views/Homepage.vala:298
@@ -910,6 +913,9 @@ msgstr ""
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "မြှင့်တင်မွမ်းမံမှု"
+
+#~ msgid "Application installed"
+#~ msgstr "ထည့်သွင်းပြီး အပ္ပလီကေးရှင်းများ"
 
 #~ msgid "Searching for updates…"
 #~ msgstr "ထပ်တိုးမြှင့်တင်မှုများအား ရှာဖွေနေသည်..."

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-19 21:36+0000\n"
+"POT-Creation-Date: 2020-12-09 19:00+0000\n"
 "PO-Revision-Date: 2018-02-27 19:11+0000\n"
 "Last-Translator: armoghaddam <armoghaddam24@gmail.com>\n"
 "Language-Team: Persian <https://weblate.elementary.io/projects/appcenter/appcenter/fa/>\n"
@@ -30,12 +30,13 @@ msgid "Specified link '%s' could not be found, searching instead"
 msgstr "لینک مشخص شده '٪ s' یافت نشد، در عوض جستجو می شود"
 
 #: src/Application.vala:293
-msgid "Application installed"
-msgstr "برنامه های نصب شده"
+#, fuzzy
+msgid "The app has been installed"
+msgstr "٪ s با موفقیت نصب شده است"
 
 #: src/Application.vala:294
 #, fuzzy, c-format
-msgid "%s has been successfully installed"
+msgid "“%s” has been installed"
 msgstr "٪ s با موفقیت نصب شده است"
 
 #: src/MainWindow.vala:138 src/Views/Homepage.vala:298
@@ -912,6 +913,9 @@ msgstr ""
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr ""
+
+#~ msgid "Application installed"
+#~ msgstr "برنامه های نصب شده"
 
 #, fuzzy
 #~ msgid "There Was An Error Installing %s."

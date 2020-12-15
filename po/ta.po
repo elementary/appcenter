@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-19 21:36+0000\n"
+"POT-Creation-Date: 2020-12-09 19:00+0000\n"
 "PO-Revision-Date: 2017-06-16 17:37+0000\n"
 "Last-Translator: Rajeev Kumar <irajeevankumar@gmail.com>\n"
 "Language-Team: Tamil <https://l10n.elementary.io/projects/appcenter/appcenter/ta/>\n"
@@ -30,12 +30,13 @@ msgid "Specified link '%s' could not be found, searching instead"
 msgstr "குறிப்பிடப்பட்ட இணைப்பு '%s'  கண்டுபிடிக்க முடியவில்லை, அதற்கு பதிலாக தேடுகிறது"
 
 #: src/Application.vala:293
-msgid "Application installed"
-msgstr "மென்பொருள் நிறுவப்பட்டது"
+#, fuzzy
+msgid "The app has been installed"
+msgstr "% வெற்றிகரமாக நிறுவப்பட்டது"
 
 #: src/Application.vala:294
 #, fuzzy, c-format
-msgid "%s has been successfully installed"
+msgid "“%s” has been installed"
 msgstr "% வெற்றிகரமாக நிறுவப்பட்டது"
 
 #: src/MainWindow.vala:138 src/Views/Homepage.vala:298
@@ -924,6 +925,9 @@ msgstr "திற"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "புதுப்பிக்கவும்"
+
+#~ msgid "Application installed"
+#~ msgstr "மென்பொருள் நிறுவப்பட்டது"
 
 #~ msgid "Searching for updates…"
 #~ msgstr "புதுப்பிப்புகளுக்குத் தேடுகிறது …"
