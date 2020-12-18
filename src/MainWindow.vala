@@ -333,11 +333,9 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     public void send_installed_toast (AppCenterCore.Package package) {
         last_installed_package = package;
 
-        // Show a toast if
-        // no package is selected --> we are not on an app page
-        // or
-        // a package is selected --> we are on an app page
-        // but the app's name is not equal to the package's name that should be installed
+        // Only show a toast when we're not on the installed app's page, i.e if
+        // no package is selected (we are not on an app page), or a package is 
+        // selected but it's not the app we're installing.
         if (selected_package == null || (selected_package != null && selected_package.get_name () != package.get_name ())) {
             toast.title = _("“%s” has been installed").printf (package.get_name ());
 
