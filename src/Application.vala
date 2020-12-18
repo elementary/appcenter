@@ -286,6 +286,8 @@ public class AppCenter.App : Gtk.Application {
                     if (main_window != null) {
                         var win = main_window.get_window ();
                         if (win != null && (win.get_state () & Gdk.WindowState.FOCUSED) != 0) {
+                            main_window.send_installed_toast (package);
+
                             break;
                         }
                     }

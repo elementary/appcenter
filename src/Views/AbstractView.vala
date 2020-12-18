@@ -19,6 +19,7 @@
 
 public abstract class AppCenter.AbstractView : Hdy.Deck {
     public signal void subview_entered (string? return_name, bool allow_search, string? custom_header = null, string? custom_search_placeholder = null);
+    public signal void package_selected (AppCenterCore.Package package);
 
     protected AppCenterCore.Package? previous_package = null;
 
@@ -40,6 +41,8 @@ public abstract class AppCenter.AbstractView : Hdy.Deck {
 
     public virtual void show_package (AppCenterCore.Package package, bool remember_history = true) {
         previous_package = null;
+
+        package_selected (package);
 
         var package_hash = package.hash;
 
