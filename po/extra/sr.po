@@ -3,15 +3,18 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-19 21:36+0000\n"
-"PO-Revision-Date: 2017-01-06 07:01+0000\n"
+"PO-Revision-Date: 2020-12-18 19:39+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language-Team: Serbian <https://l10n.elementary.io/projects/appcenter/extra/"
+"sr/>\n"
+"Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
-"X-Generator: Launchpad (build 18331)\n"
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
 msgid "AppCenter"
@@ -40,11 +43,11 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:104
 #: data/io.elementary.appcenter.appdata.xml.in:121
 msgid "Fixes"
-msgstr ""
+msgstr "Исправке"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Correctly display names of Flatpak runtime updates"
-msgstr ""
+msgstr "Исправно приказује називе освежавања извршног времена Флатпака"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:37
@@ -52,7 +55,7 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:65
 #: data/io.elementary.appcenter.appdata.xml.in:78
 msgid "Minor updates"
-msgstr ""
+msgstr "Мања освежења"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 #: data/io.elementary.appcenter.appdata.xml.in:42
@@ -64,290 +67,314 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:131
 #: data/io.elementary.appcenter.appdata.xml.in:178
 msgid "Updated translations"
-msgstr ""
+msgstr "Освежени преводи"
 
 #: data/io.elementary.appcenter.appdata.xml.in:28
 #: data/io.elementary.appcenter.appdata.xml.in:74
 msgid "New features"
-msgstr ""
+msgstr "Нове функције"
 
 #: data/io.elementary.appcenter.appdata.xml.in:30
 msgid "Support system-wide Flatpak remotes"
-msgstr ""
+msgstr "Подржава свеопште-системске Флатпакове удаљене"
 
 #: data/io.elementary.appcenter.appdata.xml.in:34
 msgid "Fix Flatpak runtime updates getting stuck"
-msgstr ""
+msgstr "Поправља заглављивања освежавања извршног времена Флатпака"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
 msgid "Fix long origin comboboxes breaking the header layout"
-msgstr ""
+msgstr "Поправља дуге прекиде распореда заглавља од стране штиклирпоља порекла"
 
 #: data/io.elementary.appcenter.appdata.xml.in:39
 msgid ""
 "When apps are available from multiple sources, prefer installed version, "
 "then prefer Flatpak"
 msgstr ""
+"Када су програми доступни из више извора, даје предност инсталираном издању, "
+"затим Флатпаку"
 
 #: data/io.elementary.appcenter.appdata.xml.in:40
 msgid "Improve search performance"
-msgstr ""
+msgstr "Побољшава учинковитост претраге"
 
 #: data/io.elementary.appcenter.appdata.xml.in:41
 msgid "Improve update badge styling and category styling"
-msgstr ""
+msgstr "Побољшава стилирање значке освежења и стилирање категорије"
 
 #: data/io.elementary.appcenter.appdata.xml.in:50
 msgid "Ensure AppCenter is reopened at the correct position"
-msgstr ""
+msgstr "Осигурава да се Програмски центар поново отвори на исправном положају"
 
 #: data/io.elementary.appcenter.appdata.xml.in:51
 msgid "Clicking the updates badge in the header navigates to the updates view"
-msgstr ""
+msgstr "Клик на значку освежавања у заглављу одлази на преглед освежења"
 
 #: data/io.elementary.appcenter.appdata.xml.in:63
 msgid "Ensure all updatable Flatpak runtimes are listed for update"
 msgstr ""
+"Осигурава да су сва освежива извршна времена Флатпака на списку за освежења"
 
 #: data/io.elementary.appcenter.appdata.xml.in:67
 #: data/io.elementary.appcenter.appdata.xml.in:88
 #: data/io.elementary.appcenter.appdata.xml.in:177
 msgid "Performance improvements"
-msgstr ""
+msgstr "Побољшања учинковитости"
 
 #: data/io.elementary.appcenter.appdata.xml.in:76
 msgid "Perform updates without administrator permissions"
-msgstr ""
+msgstr "Обавља освежавања без овлашћења администратора"
 
 #: data/io.elementary.appcenter.appdata.xml.in:80
 msgid "Ensure apps on the homepage are more reliably displayed"
-msgstr ""
+msgstr "Осигурава да се програми на почетној страници приказују поузданије"
 
 #: data/io.elementary.appcenter.appdata.xml.in:81
 msgid "More reliably set the Dock badge number"
-msgstr ""
+msgstr "Поузданије поставите број значке луке"
 
 #: data/io.elementary.appcenter.appdata.xml.in:90
 msgid ""
 "Only check for updates at device startup if it's more than 24 hours since we "
 "last checked"
 msgstr ""
+"Само врши проверу за освежењима при покретању уређаја ако је прошло више од "
+"24 сата од последње провере"
 
 #: data/io.elementary.appcenter.appdata.xml.in:91
 msgid "Reduce slowdowns when opening certain apps"
-msgstr ""
+msgstr "Смањује успоравања приликом отварања одређених програма"
 
 #: data/io.elementary.appcenter.appdata.xml.in:93
 msgid "Extension improvements"
-msgstr ""
+msgstr "Побољшања проширења"
 
 #: data/io.elementary.appcenter.appdata.xml.in:95
 msgid ""
 "To de-clutter the updates view, extensions are now only shown if they "
 "require updates"
 msgstr ""
+"Да бисте уклонили приказ освежавања, проширења се сада приказују само ако "
+"захтевају освежавања"
 
 #: data/io.elementary.appcenter.appdata.xml.in:96
 msgid ""
 "Clicking an extension on an app's info page now shows details for the "
 "extension"
 msgstr ""
+"Клик проширења на инфо страници програма сада показује детаље за проширење"
 
 #: data/io.elementary.appcenter.appdata.xml.in:97
 msgid ""
 "Swap the main and overlay icons for extensions to more clearly associate "
 "extensions with their app"
 msgstr ""
+"Размењује главне и преклопне иконице за проширења да би јасније придружио "
+"проширења са њиховим програмима"
 
 #: data/io.elementary.appcenter.appdata.xml.in:99
 msgid "Keyboard improvements"
-msgstr ""
+msgstr "Побољшања тастатуре"
 
 #: data/io.elementary.appcenter.appdata.xml.in:101
 msgid ""
 "Pressing down in the search field moves the keyboard focus to the search "
 "results list"
 msgstr ""
+"Притисак на доле у пољу претраге премешта фокус тастатуре на списак "
+"резултата претраге"
 
 #: data/io.elementary.appcenter.appdata.xml.in:102
 msgid "Ctrl+F now moves the cursor to the search field"
-msgstr ""
+msgstr "Ктрл+Ф сада премешта курзор у поље претраге"
 
 #: data/io.elementary.appcenter.appdata.xml.in:106
 msgid "Use configured network proxy settings for apt operations"
-msgstr ""
+msgstr "Користи подешене поставке мрежног посредника за радње апт-а"
 
 #: data/io.elementary.appcenter.appdata.xml.in:107
 msgid "No longer prompt for approval to update non-curated apps"
-msgstr ""
+msgstr "Више не поставља упит за одобравањем освежавања неодржаваних програма"
 
 #: data/io.elementary.appcenter.appdata.xml.in:108
 msgid ""
 "Ensure the OS updates subheading copy is correct after finishing updates"
 msgstr ""
+"Уверите се да је умножак поднаслова освежавања ОС-а исправан након завршетка "
+"освежавања"
 
 #: data/io.elementary.appcenter.appdata.xml.in:109
 msgid "Ellipsize long app names in App Info views"
-msgstr ""
+msgstr "Скраћује дуге називе програма у прегледима информација програма"
 
 #: data/io.elementary.appcenter.appdata.xml.in:111
 msgid "And more"
-msgstr ""
+msgstr "И још тога"
 
 #: data/io.elementary.appcenter.appdata.xml.in:113
 msgid "Show a more informative loading screen when checking for updates"
-msgstr ""
+msgstr "Показује информативнији екран учитавања приликом проверавања освежавања"
 
 #: data/io.elementary.appcenter.appdata.xml.in:114
 msgid "Don't list fonts alongside apps"
-msgstr ""
+msgstr "Не исписује словне ликове поред програма"
 
 #: data/io.elementary.appcenter.appdata.xml.in:123
 msgid ""
 "Prevent crashes when updating Flatpaks and system packages simultaneously"
 msgstr ""
+"Спречава урушавања приликом истовременог освежавања Флатпака и системских "
+"пакета"
 
 #: data/io.elementary.appcenter.appdata.xml.in:124
 msgid "Prevent suspending when installing, updating, or removing packages"
 msgstr ""
+"Спречава обустављање приликом инсталације, освежавања или уклањања пакета"
 
 #: data/io.elementary.appcenter.appdata.xml.in:136
 #: data/io.elementary.appcenter.appdata.xml.in:153
 msgid "Minor fixes"
-msgstr ""
+msgstr "Мање исправке"
 
 #: data/io.elementary.appcenter.appdata.xml.in:138
 msgid "Update application details when changes happen outside of AppCenter"
-msgstr ""
+msgstr "Освежава детаље програма када дође до промена ван Програмског центра"
 
 #: data/io.elementary.appcenter.appdata.xml.in:139
 msgid "Fix for notification not appearing when a restart is required"
 msgstr ""
+"Поправке за обавештења се не појављују када се захтева поновно покретање"
 
 #: data/io.elementary.appcenter.appdata.xml.in:140
 msgid "Apps in list views now load in the correct order when scrolling"
-msgstr ""
+msgstr "Програми у прегледу списком се сада учитавају исправним редом"
 
 #: data/io.elementary.appcenter.appdata.xml.in:141
 msgid "Prevent unescaped XML entities from appearing in application names"
-msgstr ""
+msgstr "Спречава XML ентитете без промене реда да се појаве у називима програма"
 
 #: data/io.elementary.appcenter.appdata.xml.in:142
 msgid "Load the \"Installed\" view faster"
-msgstr ""
+msgstr "Брже учитава преглед инсталраних"
 
 #: data/io.elementary.appcenter.appdata.xml.in:143
 msgid "Ensure flatpak applications show in the category views"
-msgstr ""
+msgstr "Осигурава да се флатпак програми приказују у прегледима категорија"
 
 #: data/io.elementary.appcenter.appdata.xml.in:144
 msgid ""
 "Save some bandwidth by downloading smaller screenshots where appropriate"
 msgstr ""
+"Штеди пропусни опсег преузимањем мањих снимака екрана када су одговарајући"
 
 #: data/io.elementary.appcenter.appdata.xml.in:145
 msgid "System components no longer have an \"Open\" button"
-msgstr ""
+msgstr "Системске компоненте немају више дугме „Отвори“"
 
 #: data/io.elementary.appcenter.appdata.xml.in:146
 msgid ""
 "Applications menu can now remove flatpaks that weren't installed by AppCenter"
 msgstr ""
+"Изборник програма сада може да уклони флатпакове који нису инсталирани "
+"Програмским центром"
 
 #: data/io.elementary.appcenter.appdata.xml.in:147
 msgid "Make download size estimates more accurate"
-msgstr ""
+msgstr "Чини процену величине преузимања тачнијом"
 
 #: data/io.elementary.appcenter.appdata.xml.in:155
 msgid "Prevent AppCenter from opening on log in"
-msgstr ""
+msgstr "Спречава отварање Програмског центра при пријављивању"
 
 #: data/io.elementary.appcenter.appdata.xml.in:156
 msgid "Prevent ghost update notification when there are no updates available"
-msgstr ""
+msgstr "Спречава невидљиво обавештење освежења када нема доступних освежења"
 
 #: data/io.elementary.appcenter.appdata.xml.in:157
 msgid "Show correct installation state for extensions"
-msgstr ""
+msgstr "Показује исправно стање инсталације за проширења"
 
 #: data/io.elementary.appcenter.appdata.xml.in:164
 msgid "Add support for Flatpak apps"
-msgstr ""
+msgstr "Додаје подршку за Флатпак програме"
 
 #: data/io.elementary.appcenter.appdata.xml.in:165
 msgid "Warn about non-curated apps"
-msgstr ""
+msgstr "Упозорава о неодржаваним програмима"
 
 #: data/io.elementary.appcenter.appdata.xml.in:166
 msgid "Show an error dialog if an installation fails"
-msgstr ""
+msgstr "Приказује прозорче грешке ако инсталација не успе"
 
 #: data/io.elementary.appcenter.appdata.xml.in:167
 msgid ""
 "Fix an issue where some apps couldn't be uninstalled from the Applications "
 "Menu"
 msgstr ""
+"Поправља проблем када се програми не могу уклонити из изборника програма"
 
 #: data/io.elementary.appcenter.appdata.xml.in:168
 msgid "Allow browsing and uninstalling apps while offline"
-msgstr ""
+msgstr "Допушта разгледање и уклањање програма када је ван мреже"
 
 #: data/io.elementary.appcenter.appdata.xml.in:169
 msgid "Fix twitter share URLs"
-msgstr ""
+msgstr "Поправља адресу твитер дељења"
 
 #: data/io.elementary.appcenter.appdata.xml.in:170
 msgid "Drop Google+ from the share menu"
-msgstr ""
+msgstr "Одбацује Гугл+ из изборника дељења"
 
 #: data/io.elementary.appcenter.appdata.xml.in:171
 msgid "Animate screenshot background while loading"
-msgstr ""
+msgstr "Анимира позадину снимка екрана приликом учитавања"
 
 #: data/io.elementary.appcenter.appdata.xml.in:172
 msgid "Add navigation arrows for screenshots"
-msgstr ""
+msgstr "Додаје стрелице навигације за снимке екрана"
 
 #: data/io.elementary.appcenter.appdata.xml.in:173
 msgid "Don't show uninstall buttons for essential system components"
-msgstr ""
+msgstr "Не приказује дугмад уклањања за важне системске компоненте"
 
 #: data/io.elementary.appcenter.appdata.xml.in:174
 msgid "Properly display proprietary licenses"
-msgstr ""
+msgstr "Исправно приказује власничке лиценце"
 
 #: data/io.elementary.appcenter.appdata.xml.in:175
 msgid "Fix some layout issues"
-msgstr ""
+msgstr "Поправља неке проблеме распореда"
 
 #: data/io.elementary.appcenter.appdata.xml.in:176
 msgid "Fix crashes"
-msgstr ""
+msgstr "Поправља урушавања"
 
 #: data/io.elementary.appcenter.appdata.xml.in:185
 msgid "Meson build system fixes"
-msgstr ""
+msgstr "Поправке Месона система изградње"
 
 #: data/io.elementary.appcenter.appdata.xml.in:186
 msgid "Improve window state restoration"
-msgstr ""
+msgstr "Побољшава враћање стања прозора"
 
 #: data/io.elementary.appcenter.appdata.xml.in:187
 msgid "Prevent action buttons from jumping around"
-msgstr ""
+msgstr "Спречава дугмад радње да скачка унаоколо"
 
 #: data/io.elementary.appcenter.appdata.xml.in:188
 msgid "Remove reset paid apps gsettings key"
-msgstr ""
+msgstr "Уклања тастер г-поставки враћања плаћених програма"
 
 #: data/io.elementary.appcenter.appdata.xml.in:189
 msgid "Memory management refinements"
-msgstr ""
+msgstr "Истанчаност управљања меморијом"
 
 #: data/io.elementary.appcenter.appdata.xml.in:190
 msgid ""
 "Add conditional compilation for disabling dynamic remote homepage content"
 msgstr ""
+"Додаје условну компилацију за искључивање динамичког садржаја удаљене "
+"матичне странице"
 
 #: data/io.elementary.appcenter.appdata.xml.in:191
 #: data/io.elementary.appcenter.appdata.xml.in:203
@@ -367,27 +394,27 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:334
 #: data/io.elementary.appcenter.appdata.xml.in:344
 msgid "New translations"
-msgstr ""
+msgstr "Нови преводи"
 
 #: data/io.elementary.appcenter.appdata.xml.in:198
 msgid "New categories: Communication, Finance, Media Production"
-msgstr ""
+msgstr "Нове категорије: комуникација, финансије, медијска продукција"
 
 #: data/io.elementary.appcenter.appdata.xml.in:199
 msgid "Add Math to Science category"
-msgstr ""
+msgstr "Додаје математику у категорију науке"
 
 #: data/io.elementary.appcenter.appdata.xml.in:200
 msgid "Relax email address validator"
-msgstr ""
+msgstr "Одмара потврђивача адресе е-поште"
 
 #: data/io.elementary.appcenter.appdata.xml.in:201
 msgid "Present update availability more accurately"
-msgstr ""
+msgstr "Представља тачнију доступност освежавања"
 
 #: data/io.elementary.appcenter.appdata.xml.in:202
 msgid "Category graphics revamped"
-msgstr ""
+msgstr "Прерађена графика категорија"
 
 #: data/io.elementary.appcenter.appdata.xml.in:217
 #: data/io.elementary.appcenter.appdata.xml.in:229
@@ -402,19 +429,19 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:312
 #: data/io.elementary.appcenter.appdata.xml.in:321
 msgid "Bug fixes and improve performance."
-msgstr ""
+msgstr "Исправке грешака и побољшана учинковитост."
 
 #: data/io.elementary.appcenter.appdata.xml.in:219
 msgid "Improve transaction success rate"
-msgstr ""
+msgstr "Побољшава просек успеха преноса"
 
 #: data/io.elementary.appcenter.appdata.xml.in:220
 msgid "Add Publishing to Office category"
-msgstr ""
+msgstr "Додаје објављивање у категорију „Канцеларија“"
 
 #: data/io.elementary.appcenter.appdata.xml.in:221
 msgid "Improve descriptions of OS Updates"
-msgstr ""
+msgstr "Побољшава описе освежавања ОС-а"
 
 #: data/io.elementary.appcenter.appdata.xml.in:222
 #: data/io.elementary.appcenter.appdata.xml.in:233
@@ -428,79 +455,81 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:305
 #: data/io.elementary.appcenter.appdata.xml.in:314
 msgid "Various bug fixes and performance improvements"
-msgstr ""
+msgstr "Разне исправке грешака и побољшања учинковитости"
 
 #: data/io.elementary.appcenter.appdata.xml.in:231
 msgid "Give details for Operating System Updates"
-msgstr ""
+msgstr "Даје појединости за освежавања оперативног система"
 
 #: data/io.elementary.appcenter.appdata.xml.in:232
 msgid "Support mouse button navigation"
-msgstr ""
+msgstr "Подржава навигацију дугметом миша"
 
 #: data/io.elementary.appcenter.appdata.xml.in:323
 msgid "Fix crash caused by entries with missing packages"
-msgstr ""
+msgstr "Поправља урушавање изазвано уносима са недостајућим пакетима"
 
 #: data/io.elementary.appcenter.appdata.xml.in:330
 msgid "Add capability to search by category and apply minor bug fixes."
 msgstr ""
+"Додаје могућност претраге по категорији и примењује мање исправке грешака."
 
 #: data/io.elementary.appcenter.appdata.xml.in:332
 msgid "It is now possible to search apps inside a category"
-msgstr ""
+msgstr "Сада је могуће тражити програме унутар категорије"
 
 #: data/io.elementary.appcenter.appdata.xml.in:333
 msgid "Prevent multiple authentication dialogs when resuming from suspend"
 msgstr ""
+"Спречава више прозорчића потврђивања идентитета приликом враћања из обуставе"
 
 #: data/io.elementary.appcenter.appdata.xml.in:340
 msgid ""
 "Search performance has been improved, the category name is now shown on the "
 "headbar and minor bugs have been fixed."
 msgstr ""
+"Учинковитост претраге је побољшана, назив категорије се сада приказује на "
+"траци заглавља а испарвљене су и неке мање грешке."
 
 #: data/io.elementary.appcenter.appdata.xml.in:342
 msgid "Fix Steam installation"
-msgstr ""
+msgstr "Поправи инсталацију „Steam“-а"
 
 #: data/io.elementary.appcenter.appdata.xml.in:343
 msgid "Make search asynchronous"
-msgstr ""
+msgstr "Учини претрагу неусаглашеном"
 
 #: data/io.elementary.appcenter.appdata.xml.in:398
 msgid "elementary, Inc."
-msgstr ""
+msgstr "elementary, Inc."
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
-msgstr ""
+msgstr "@APP_NAME@"
 
 #: data/io.elementary.appcenter.desktop.in.in:6
 msgid "@DESKTOP_ICON@"
-msgstr ""
+msgstr "@DESKTOP_ICON@"
 
 #: data/io.elementary.appcenter.desktop.in.in:7
-#, fuzzy
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
-msgstr ""
-"инсталирај;дизинсталирај;уклони;збирка;радња;програми;освежавања;софтвер;"
+msgstr "инсталирај;дизинсталирај;уклони;збирка;радња;програми;софтвер;"
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
-msgstr ""
+msgstr "Потражи освежења"
 
 #: data/io.elementary.appcenter.desktop.in.in:19
 msgid "system-software-update"
-msgstr ""
+msgstr "освежење-софтвера-система"
 
 #: data/io.elementary.appcenter.policy.in:10
 msgid "Update software"
-msgstr ""
+msgstr "Освежи софтвер"
 
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to update software"
-msgstr ""
+msgstr "Потврђивање идентитета је потребно за освежавање софтвера"
 
 #~ msgid "About AppCenter"
 #~ msgstr "О Програмском центру"

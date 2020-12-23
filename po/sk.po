@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-09 19:00+0000\n"
+"POT-Creation-Date: 2020-12-18 19:41+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/appcenter/appcenter/sk/>\n"
@@ -31,32 +31,40 @@ msgstr "Nepodarilo sa rozpoznať typ média %s"
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Zadaný odkaz '%s' sa nenašiel, spúšťa sa vyhľadávanie"
 
-#: src/Application.vala:293
+#: src/Application.vala:295
 #, fuzzy
 #| msgid "%s has been successfully installed"
 msgid "The app has been installed"
 msgstr "Aplikácia %s bola úspešne nainštalovaná"
 
-#: src/Application.vala:294
+#. Only show a toast when we're not on the installed app's page, i.e if
+#. no package is selected (we are not on an app page), or a package is
+#. selected but it's not the app we're installing.
+#: src/Application.vala:296 src/MainWindow.vala:340
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
 msgstr "Aplikácia %s bola úspešne nainštalovaná"
 
-#: src/MainWindow.vala:138 src/Views/Homepage.vala:298
-#: src/Views/Homepage.vala:310 src/Views/Homepage.vala:315
-#: src/Views/Homepage.vala:326 src/Views/SearchView.vala:90
+#: src/MainWindow.vala:137
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:133
+msgid "Open"
+msgstr "Otvoriť"
+
+#: src/MainWindow.vala:158 src/Views/Homepage.vala:297
+#: src/Views/Homepage.vala:307 src/Views/Homepage.vala:312
+#: src/Views/Homepage.vala:323 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "Úvodná stránka"
 
-#: src/MainWindow.vala:139 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:159 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 msgctxt "view"
 msgid "Installed"
 msgstr "Nainštalované"
 
-#: src/MainWindow.vala:179 src/MainWindow.vala:364 src/Views/SearchView.vala:55
-#: src/Views/SearchView.vala:88
+#: src/MainWindow.vala:199 src/MainWindow.vala:405 src/Views/SearchView.vala:54
+#: src/Views/SearchView.vala:87
 msgid "Search Apps"
 msgstr "Hľadať aplikácie"
 
@@ -728,7 +736,7 @@ msgstr "Obľúbené"
 msgid "Categories"
 msgstr "Kategórie"
 
-#: src/Views/Homepage.vala:315 src/Views/Homepage.vala:326
+#: src/Views/Homepage.vala:312 src/Views/Homepage.vala:323
 #, c-format
 msgid "Search %s"
 msgstr "Prehľadávať %s"
@@ -921,10 +929,6 @@ msgstr "Ovládače"
 #: src/Widgets/UpdateHeaderRow.vala:58
 msgid "Up to Date"
 msgstr "Aktuálne"
-
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:133
-msgid "Open"
-msgstr "Otvoriť"
 
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
