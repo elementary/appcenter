@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-19 21:36+0000\n"
-"PO-Revision-Date: 2020-07-24 13:12+0000\n"
+"PO-Revision-Date: 2020-12-25 14:16+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/extra/"
 "he/>\n"
@@ -45,7 +45,7 @@ msgstr "תיקונים"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Correctly display names of Flatpak runtime updates"
-msgstr ""
+msgstr "הצגת שמות עדכוני סביבות Flatpak בצורה נכונה"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:37
@@ -74,31 +74,31 @@ msgstr "תכונות חדשות"
 
 #: data/io.elementary.appcenter.appdata.xml.in:30
 msgid "Support system-wide Flatpak remotes"
-msgstr ""
+msgstr "תמיכה ב־Flatpaks שולטים כלל מערכתיים"
 
 #: data/io.elementary.appcenter.appdata.xml.in:34
 msgid "Fix Flatpak runtime updates getting stuck"
-msgstr ""
+msgstr "תיקון עדכוני סביבת Flatpak נתקעים"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
 msgid "Fix long origin comboboxes breaking the header layout"
-msgstr ""
+msgstr "תיקון תיבות משולבות ששוברות את פריסת הכותרת"
 
 #: data/io.elementary.appcenter.appdata.xml.in:39
 msgid ""
 "When apps are available from multiple sources, prefer installed version, "
 "then prefer Flatpak"
 msgstr ""
+"כאשר יישומים זמינים ממגוון מקורות, להעדיף את הגרסה המותקנת ולאחר מכן את "
+"Flatpak"
 
 #: data/io.elementary.appcenter.appdata.xml.in:40
-#, fuzzy
-#| msgid "Bug fixes and improve performance."
 msgid "Improve search performance"
-msgstr "תיקוני באגים ושיפור ביצועים."
+msgstr "שיפור ביצועי חיפוש"
 
 #: data/io.elementary.appcenter.appdata.xml.in:41
 msgid "Improve update badge styling and category styling"
-msgstr ""
+msgstr "שיפור עיצוב עיטורי עדכון ועיצוב קטגוריות"
 
 #: data/io.elementary.appcenter.appdata.xml.in:50
 msgid "Ensure AppCenter is reopened at the correct position"
@@ -465,15 +465,11 @@ msgid "Prevent multiple authentication dialogs when resuming from suspend"
 msgstr "חסימת מספר תיבות דו־שיח לאימות בעת יציאה ממצב השהיה"
 
 #: data/io.elementary.appcenter.appdata.xml.in:340
-#, fuzzy
-#| msgid ""
-#| "Search performance has beeen improved, the category name is now shown on "
-#| "the headbar and minor bugs have been fixed."
 msgid ""
 "Search performance has been improved, the category name is now shown on the "
 "headbar and minor bugs have been fixed."
 msgstr ""
-"ביצועי החיפוש השתפרו, שם הקטגוריה מופיע בסרגל הכותרת ומספר באגים מזעריים "
+"ביצועי החיפוש השתפרו, שם הקטגוריה מופיע בסרגל הכותרת ומספר תקלות מזעריות "
 "תוקנו."
 
 #: data/io.elementary.appcenter.appdata.xml.in:342
