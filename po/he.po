@@ -4,9 +4,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-18 19:41+0000\n"
-"PO-Revision-Date: 2020-09-28 16:14+0000\n"
+"PO-Revision-Date: 2020-12-25 14:16+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
-"Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/appcenter/he/>\n"
+"Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/he/>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,19 +32,16 @@ msgid "Specified link '%s' could not be found, searching instead"
 msgstr "לא ניתן למצוא את הקישור שצוין ‚%s’, מתבצע חיפוש במקום"
 
 #: src/Application.vala:295
-#, fuzzy
-#| msgid "%s has been successfully installed"
 msgid "The app has been installed"
-msgstr "%s הותקן בהצלחה"
+msgstr "היישום הותקן"
 
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
 #: src/Application.vala:296 src/MainWindow.vala:340
-#, fuzzy, c-format
-#| msgid "%s has been successfully installed"
+#, c-format
 msgid "“%s” has been installed"
-msgstr "%s הותקן בהצלחה"
+msgstr "„%s” הותקן"
 
 #: src/MainWindow.vala:137
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:133
@@ -217,7 +215,7 @@ msgstr "מצב לא ידוע"
 
 #: src/Core/BackendAggregator.vala:46
 msgid "package operations are being performed"
-msgstr ""
+msgstr "מתבצעות פעולות על החבילה"
 
 #: src/Core/Client.vala:72
 msgid "Update Available"
