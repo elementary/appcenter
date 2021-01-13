@@ -232,7 +232,6 @@ namespace AppCenter {
                 image.add_overlay (overlay_image);
             } else {
                 inner_image.gicon = package.get_icon (icon_size, scale_factor);
-                inner_image.get_style_context ().add_class ("icon-dropshadow");
 
                 if (is_os_updates) {
                     var overlay_image = new Gtk.Image.from_icon_name ("system-software-update", badge_icon_size);
