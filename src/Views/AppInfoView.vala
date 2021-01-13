@@ -73,7 +73,6 @@ namespace AppCenter.Views {
 
             inner_image.margin_top = 12;
             inner_image.pixel_size = 128;
-            inner_image.get_style_context ().add_class ("icon-dropshadow");
 
             action_button.suggested_action = true;
 
