@@ -91,8 +91,6 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         release_stack_revealer.transition_type = Gtk.RevealerTransitionType.CROSSFADE;
         release_stack_revealer.add (release_stack);
 
-        image.get_style_context ().add_class ("icon-dropshadow");
-
         info_grid = new Gtk.Grid () {
             column_spacing = 12,
             row_spacing = 6,
