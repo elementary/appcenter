@@ -31,7 +31,6 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : AbstractAppCont
         inner_image.icon_size = Gtk.IconSize.DIALOG;
         /* Needed to enforce size on icons from Filesystem/Remote */
         inner_image.pixel_size = 64;
-        inner_image.get_style_context ().add_class ("icon-dropshadow");
 
         package_name.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
         package_name.valign = Gtk.Align.END;
