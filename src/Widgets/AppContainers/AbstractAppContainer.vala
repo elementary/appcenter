@@ -215,7 +215,7 @@ namespace AppCenter {
             var scale_factor = inner_image.get_scale_factor ();
 
             var badge_icon_size = Gtk.IconSize.LARGE_TOOLBAR;
-            var badge_pixel_size = 24;
+            var badge_pixel_size = 32;
             if (icon_size >= 128) {
                 badge_icon_size = Gtk.IconSize.DIALOG;
                 badge_pixel_size = 64;
@@ -224,6 +224,7 @@ namespace AppCenter {
             var plugin_host_package = package.get_plugin_host_package ();
             if (package.is_plugin && plugin_host_package != null) {
                 inner_image.gicon = plugin_host_package.get_icon (icon_size, scale_factor);
+                inner_image.get_style_context ().add_class ("icon-dropshadow");
                 var overlay_gicon = package.get_icon (icon_size / 2, scale_factor);
 
                 var overlay_image = new Gtk.Image.from_gicon (overlay_gicon, badge_icon_size);
@@ -232,6 +233,7 @@ namespace AppCenter {
                 image.add_overlay (overlay_image);
             } else {
                 inner_image.gicon = package.get_icon (icon_size, scale_factor);
+                inner_image.get_style_context ().add_class ("icon-dropshadow");
 
                 if (is_os_updates) {
                     var overlay_image = new Gtk.Image.from_icon_name ("system-software-update", badge_icon_size);

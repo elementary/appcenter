@@ -41,7 +41,9 @@
     font-size: 24px;
     font-weight: 600;
     text-shadow: 0 1px 0 alpha(black, 0.3);
-    -gtk-icon-shadow: 0 1px 0 alpha(black, 0.3);
+    -gtk-icon-shadow: 0 1px 1px transparent,
+                      0 2px 2px rgba(black, 0.2),
+                      0 3px 3px transparent;
 }
 
 .category.accessories {
@@ -54,6 +56,9 @@
         0 3px 2px -1px alpha(black, 0.15),
         0 3px 5px alpha(black, 0.1);
     font-size: 24px;
+    -gtk-icon-shadow: 0 1px 1px transparent,
+                      0 2px 2px rgba(black, 0.2),
+                      0 3px 3px transparent;
 }
 
 .category.audio {
@@ -378,6 +383,9 @@
     text-shadow:
         0 1px 1px alpha(black, 0.3),
         0 2px 3px alpha(black, 0.3);
+    -gtk-icon-shadow: 0 1px 1px transparent,
+                      0 2px 2px rgba(black, 0.2),
+                      0 3px 3px transparent;
 }
 
 .category.internet label {
@@ -658,4 +666,5 @@
     background-size: 100% 1em;
     color: @BLACK_300;
     font-size: 24px;
+    
 }

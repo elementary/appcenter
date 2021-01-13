@@ -76,7 +76,9 @@
 .banner button arrow,
 .banner button image {
     color: @banner_bg_color;
-    -gtk-icon-shadow: 0 1px 1px alpha(@banner_fg_color, 0.1);
+    -gtk-icon-shadow: 0 1px 1px transparent,
+                      0 2px 2px rgba(@banner_fg_color, 0.2),
+                      0 3px 3px transparent;
 }
 
 .banner button cellview,
