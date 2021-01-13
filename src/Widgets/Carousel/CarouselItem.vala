@@ -28,7 +28,6 @@ public class AppCenter.Widgets.CarouselItem : Gtk.FlowBoxChild {
         var icon = new Gtk.Image ();
         icon.gicon = package.get_icon (64, get_scale_factor ());
         icon.pixel_size = 64;
-        icon.get_style_context ().add_class ("icon-dropshadow");
 
         var name_label = new Gtk.Label (package.get_name ());
         name_label.valign = Gtk.Align.END;
