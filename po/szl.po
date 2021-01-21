@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-18 19:41+0000\n"
+"POT-Creation-Date: 2021-01-21 17:05+0000\n"
 "PO-Revision-Date: 2020-06-12 16:40+0000\n"
 "Last-Translator: Grzegorz Kulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/appcenter/appcenter/szl/>\n"
@@ -141,8 +141,8 @@ msgstr "Fertich"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
 #: src/Core/FlatpakBackend.vala:919 src/Core/FlatpakBackend.vala:947
-#: src/Core/FlatpakBackend.vala:1025 src/Core/FlatpakBackend.vala:1169
-#: src/Core/FlatpakBackend.vala:1195
+#: src/Core/FlatpakBackend.vala:1054 src/Core/FlatpakBackend.vala:1082
+#: src/Core/FlatpakBackend.vala:1227 src/Core/FlatpakBackend.vala:1253
 msgid "Cancelling"
 msgstr "Pociepowanie"
 
@@ -233,15 +233,11 @@ msgstr[0] "Je dostympno %u aktualizacyjo dlo tego systymu"
 msgstr[1] "Sōm dostympne %u aktualizacyje dlo tego systymu"
 msgstr[2] "Je dostympne %u aktualizacyji dlo tego systymu"
 
-#: src/Core/FlatpakBackend.vala:1017
+#: src/Core/FlatpakBackend.vala:1045
 msgid "Uninstalling"
 msgstr "Ôdinstalowowanie"
 
-#: src/Core/FlatpakBackend.vala:1022
-msgid "Finishing"
-msgstr "Kōńczynie"
-
-#: src/Core/FlatpakBackend.vala:1160
+#: src/Core/FlatpakBackend.vala:1218
 msgid "Updating"
 msgstr "Aktualizowanie"
 
@@ -907,6 +903,9 @@ msgstr "Teroźne"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "Zaktualizuj"
+
+#~ msgid "Finishing"
+#~ msgstr "Kōńczynie"
 
 #~ msgid "Application installed"
 #~ msgstr "Program zainstalowany"

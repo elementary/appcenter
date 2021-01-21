@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-18 19:41+0000\n"
+"POT-Creation-Date: 2021-01-21 17:05+0000\n"
 "PO-Revision-Date: 2020-08-23 18:13+0000\n"
 "Last-Translator: Nils K <slx@nilsk.net>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/appcenter/appcenter/nb/>\n"
@@ -143,8 +143,8 @@ msgstr "Ferdig"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
 #: src/Core/FlatpakBackend.vala:919 src/Core/FlatpakBackend.vala:947
-#: src/Core/FlatpakBackend.vala:1025 src/Core/FlatpakBackend.vala:1169
-#: src/Core/FlatpakBackend.vala:1195
+#: src/Core/FlatpakBackend.vala:1054 src/Core/FlatpakBackend.vala:1082
+#: src/Core/FlatpakBackend.vala:1227 src/Core/FlatpakBackend.vala:1253
 msgid "Cancelling"
 msgstr "Avbryter"
 
@@ -233,15 +233,11 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "%u oppdatering er tilgjengelig for ditt system"
 msgstr[1] "%u oppdateringer er tilgjengelige for ditt system"
 
-#: src/Core/FlatpakBackend.vala:1017
+#: src/Core/FlatpakBackend.vala:1045
 msgid "Uninstalling"
 msgstr "Avinstaller"
 
-#: src/Core/FlatpakBackend.vala:1022
-msgid "Finishing"
-msgstr "Ferdiggjør"
-
-#: src/Core/FlatpakBackend.vala:1160
+#: src/Core/FlatpakBackend.vala:1218
 msgid "Updating"
 msgstr "Oppdaterer"
 
@@ -919,6 +915,9 @@ msgstr "Oppdatert"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "Oppdater"
+
+#~ msgid "Finishing"
+#~ msgstr "Ferdiggjør"
 
 #~ msgid "Application installed"
 #~ msgstr "Applikasjon installert"

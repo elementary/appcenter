@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-18 19:41+0000\n"
+"POT-Creation-Date: 2021-01-21 17:05+0000\n"
 "PO-Revision-Date: 2020-12-12 14:16+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/appcenter/ca/>\n"
@@ -141,8 +141,8 @@ msgstr "S'ha acabat"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
 #: src/Core/FlatpakBackend.vala:919 src/Core/FlatpakBackend.vala:947
-#: src/Core/FlatpakBackend.vala:1025 src/Core/FlatpakBackend.vala:1169
-#: src/Core/FlatpakBackend.vala:1195
+#: src/Core/FlatpakBackend.vala:1054 src/Core/FlatpakBackend.vala:1082
+#: src/Core/FlatpakBackend.vala:1227 src/Core/FlatpakBackend.vala:1253
 msgid "Cancelling"
 msgstr "Es cancel·la"
 
@@ -231,15 +231,11 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "Hi ha %u actualització disponible per al sistema"
 msgstr[1] "Hi ha %u actualitzacions disponibles per al sistema"
 
-#: src/Core/FlatpakBackend.vala:1017
+#: src/Core/FlatpakBackend.vala:1045
 msgid "Uninstalling"
 msgstr "Es desinstal·la"
 
-#: src/Core/FlatpakBackend.vala:1022
-msgid "Finishing"
-msgstr "S'acaba"
-
-#: src/Core/FlatpakBackend.vala:1160
+#: src/Core/FlatpakBackend.vala:1218
 msgid "Updating"
 msgstr "S'actualitza"
 
@@ -903,6 +899,9 @@ msgstr "Al dia"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "Actualitza"
+
+#~ msgid "Finishing"
+#~ msgstr "S'acaba"
 
 #~ msgid "Application installed"
 #~ msgstr "Aplicació instal·lada"

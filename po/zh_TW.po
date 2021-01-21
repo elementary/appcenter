@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-18 19:41+0000\n"
+"POT-Creation-Date: 2021-01-21 17:05+0000\n"
 "PO-Revision-Date: 2020-07-01 23:02+0000\n"
 "Last-Translator: Nan-Hung Hsieh <nhsieh@cvm.tamu.edu>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/appcenter/appcenter/zh_Hant/>\n"
@@ -146,8 +146,8 @@ msgstr "已完成"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
 #: src/Core/FlatpakBackend.vala:919 src/Core/FlatpakBackend.vala:947
-#: src/Core/FlatpakBackend.vala:1025 src/Core/FlatpakBackend.vala:1169
-#: src/Core/FlatpakBackend.vala:1195
+#: src/Core/FlatpakBackend.vala:1054 src/Core/FlatpakBackend.vala:1082
+#: src/Core/FlatpakBackend.vala:1227 src/Core/FlatpakBackend.vala:1253
 msgid "Cancelling"
 msgstr "正在取消"
 
@@ -234,15 +234,11 @@ msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "您的系統有 %u 項更新可套用"
 
-#: src/Core/FlatpakBackend.vala:1017
+#: src/Core/FlatpakBackend.vala:1045
 msgid "Uninstalling"
 msgstr "解除安裝中"
 
-#: src/Core/FlatpakBackend.vala:1022
-msgid "Finishing"
-msgstr "完成中"
-
-#: src/Core/FlatpakBackend.vala:1160
+#: src/Core/FlatpakBackend.vala:1218
 msgid "Updating"
 msgstr "更新"
 
@@ -906,6 +902,9 @@ msgstr "最新狀態"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "更新"
+
+#~ msgid "Finishing"
+#~ msgstr "完成中"
 
 #~ msgid "Application installed"
 #~ msgstr "應用程式已安裝"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-18 19:41+0000\n"
+"POT-Creation-Date: 2021-01-21 17:05+0000\n"
 "PO-Revision-Date: 2018-06-16 00:08+0000\n"
 "Last-Translator: martin fromont <martin.fromont1@gmail.com>\n"
 "Language-Team: French (Canada) <https://weblate.elementary.io/projects/appcenter/appcenter/fr_CA/>\n"
@@ -143,8 +143,8 @@ msgstr "Terminé"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
 #: src/Core/FlatpakBackend.vala:919 src/Core/FlatpakBackend.vala:947
-#: src/Core/FlatpakBackend.vala:1025 src/Core/FlatpakBackend.vala:1169
-#: src/Core/FlatpakBackend.vala:1195
+#: src/Core/FlatpakBackend.vala:1054 src/Core/FlatpakBackend.vala:1082
+#: src/Core/FlatpakBackend.vala:1227 src/Core/FlatpakBackend.vala:1253
 msgid "Cancelling"
 msgstr "Annulation"
 
@@ -233,19 +233,13 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Core/FlatpakBackend.vala:1017
+#: src/Core/FlatpakBackend.vala:1045
 #, fuzzy
 #| msgid "Installing"
 msgid "Uninstalling"
 msgstr "Installation en cours"
 
-#: src/Core/FlatpakBackend.vala:1022
-#, fuzzy
-#| msgid "Finished"
-msgid "Finishing"
-msgstr "Terminé"
-
-#: src/Core/FlatpakBackend.vala:1160
+#: src/Core/FlatpakBackend.vala:1218
 #, fuzzy
 #| msgid "Updates"
 msgid "Updating"
@@ -923,6 +917,11 @@ msgstr ""
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgid "Finishing"
+#~ msgstr "Terminé"
 
 #~ msgid "Application installed"
 #~ msgstr "Application installée"

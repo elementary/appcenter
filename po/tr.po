@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-18 19:41+0000\n"
+"POT-Creation-Date: 2021-01-21 17:05+0000\n"
 "PO-Revision-Date: 2020-12-18 19:39+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/appcenter/tr/>\n"
@@ -148,8 +148,8 @@ msgstr "Tamamlandı"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
 #: src/Core/FlatpakBackend.vala:919 src/Core/FlatpakBackend.vala:947
-#: src/Core/FlatpakBackend.vala:1025 src/Core/FlatpakBackend.vala:1169
-#: src/Core/FlatpakBackend.vala:1195
+#: src/Core/FlatpakBackend.vala:1054 src/Core/FlatpakBackend.vala:1082
+#: src/Core/FlatpakBackend.vala:1227 src/Core/FlatpakBackend.vala:1253
 msgid "Cancelling"
 msgstr "İptal ediliyor"
 
@@ -238,15 +238,11 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "Sisteminiz için %u güncelleme var"
 msgstr[1] "Sisteminiz için %u güncelleme var"
 
-#: src/Core/FlatpakBackend.vala:1017
+#: src/Core/FlatpakBackend.vala:1045
 msgid "Uninstalling"
 msgstr "Kaldırılıyor"
 
-#: src/Core/FlatpakBackend.vala:1022
-msgid "Finishing"
-msgstr "Bitiriliyor"
-
-#: src/Core/FlatpakBackend.vala:1160
+#: src/Core/FlatpakBackend.vala:1218
 msgid "Updating"
 msgstr "Güncelleniyor"
 
@@ -910,6 +906,9 @@ msgstr "Güncel"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "Güncelle"
+
+#~ msgid "Finishing"
+#~ msgstr "Bitiriliyor"
 
 #~ msgid "Application installed"
 #~ msgstr "Uygulama yüklendi"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-18 19:41+0000\n"
+"POT-Creation-Date: 2021-01-21 17:05+0000\n"
 "PO-Revision-Date: 2020-05-15 16:29+0000\n"
 "Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/appcenter/ar/>\n"
@@ -146,8 +146,8 @@ msgstr "انتهى"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
 #: src/Core/FlatpakBackend.vala:919 src/Core/FlatpakBackend.vala:947
-#: src/Core/FlatpakBackend.vala:1025 src/Core/FlatpakBackend.vala:1169
-#: src/Core/FlatpakBackend.vala:1195
+#: src/Core/FlatpakBackend.vala:1054 src/Core/FlatpakBackend.vala:1082
+#: src/Core/FlatpakBackend.vala:1227 src/Core/FlatpakBackend.vala:1253
 msgid "Cancelling"
 msgstr "الغاء"
 
@@ -244,15 +244,11 @@ msgstr[3] "يوجد %u تحديثات لنظامك"
 msgstr[4] "يوجد %u تحديث لنظامك"
 msgstr[5] "يوجد %u تحديث لنظامك"
 
-#: src/Core/FlatpakBackend.vala:1017
+#: src/Core/FlatpakBackend.vala:1045
 msgid "Uninstalling"
 msgstr "جارٍ إلغاء التثبيت"
 
-#: src/Core/FlatpakBackend.vala:1022
-msgid "Finishing"
-msgstr "اللمسات الأخيرة"
-
-#: src/Core/FlatpakBackend.vala:1160
+#: src/Core/FlatpakBackend.vala:1218
 msgid "Updating"
 msgstr "يتم التحديث"
 
@@ -924,6 +920,9 @@ msgstr "تم تثبيت آخر التحديثات"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "تحديث"
+
+#~ msgid "Finishing"
+#~ msgstr "اللمسات الأخيرة"
 
 #~ msgid "Application installed"
 #~ msgstr "تم تثبيت التطبيق"

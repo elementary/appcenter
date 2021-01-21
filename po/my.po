@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-18 19:41+0000\n"
+"POT-Creation-Date: 2021-01-21 17:05+0000\n"
 "PO-Revision-Date: 2016-06-26 17:02+0000\n"
 "Last-Translator: Bone Pyae Sone <bone.burma@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -142,8 +142,8 @@ msgstr "ပြီးပါပြီ"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
 #: src/Core/FlatpakBackend.vala:919 src/Core/FlatpakBackend.vala:947
-#: src/Core/FlatpakBackend.vala:1025 src/Core/FlatpakBackend.vala:1169
-#: src/Core/FlatpakBackend.vala:1195
+#: src/Core/FlatpakBackend.vala:1054 src/Core/FlatpakBackend.vala:1082
+#: src/Core/FlatpakBackend.vala:1227 src/Core/FlatpakBackend.vala:1253
 msgid "Cancelling"
 msgstr "မလုပ်တော့"
 
@@ -230,19 +230,13 @@ msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "သင့်စနစ်အတွက် မြှင့်တင်မွမ်းမံမှု %u ခု လုပ်ဆောင်နိုင်ပါတယ်"
 
-#: src/Core/FlatpakBackend.vala:1017
+#: src/Core/FlatpakBackend.vala:1045
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "ဖယ်ထုတ်မယ်"
 
-#: src/Core/FlatpakBackend.vala:1022
-#, fuzzy
-#| msgid "Finished"
-msgid "Finishing"
-msgstr "ပြီးပါပြီ"
-
-#: src/Core/FlatpakBackend.vala:1160
+#: src/Core/FlatpakBackend.vala:1218
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -917,6 +911,11 @@ msgstr "နောက်ဆုံးပေါ် ခေတ်မီ ပြင်�
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "မြှင့်တင်မွမ်းမံမှု"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgid "Finishing"
+#~ msgstr "ပြီးပါပြီ"
 
 #~ msgid "Application installed"
 #~ msgstr "ထည့်သွင်းပြီး အပ္ပလီကေးရှင်းများ"
