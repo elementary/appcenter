@@ -1,19 +1,20 @@
 # Nils K <slx@nilsk.net>, 2018, 2019, 2020.
-# Allan Nordhøy <epost@anotheragency.no>, 2018, 2019.
+# Allan Nordhøy <epost@anotheragency.no>, 2018, 2019, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-21 17:05+0000\n"
-"PO-Revision-Date: 2020-08-23 18:13+0000\n"
-"Last-Translator: Nils K <slx@nilsk.net>\n"
-"Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/appcenter/appcenter/nb/>\n"
+"PO-Revision-Date: 2021-01-21 18:51+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
+"appcenter/appcenter/nb/>\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -218,7 +219,7 @@ msgstr "Ukjent tilstand"
 
 #: src/Core/BackendAggregator.vala:46
 msgid "package operations are being performed"
-msgstr ""
+msgstr "pakkeoperasjoner utføres"
 
 #: src/Core/Client.vala:72
 msgid "Update Available"
@@ -257,7 +258,7 @@ msgstr "Ubuntu (ikke-bekreftet)"
 #: src/Core/Package.vala:347
 #, c-format
 msgid "%s (system-wide)"
-msgstr ""
+msgstr "%s (på hele systemet)"
 
 #: src/Core/Package.vala:352
 msgid "Ubuntu Drivers"
@@ -268,9 +269,9 @@ msgid "Unknown Origin (non-curated)"
 msgstr "Ukjent opprinnelse (ikke-bekreftet)"
 
 #: src/Core/Package.vala:532
-#, c-format
+#, c-format, fuzzy
 msgid "Application state not set as installed in AppCenter for package: %s"
-msgstr ""
+msgstr "Programtilstand ikke satt som «Installert» i AppSenter for pakken: %s"
 
 #: src/Core/PackageKitBackend.vala:272
 #, fuzzy, c-format
@@ -375,20 +376,22 @@ msgstr "Innholdsadvarsel"
 #, fuzzy
 #| msgid "%s (non-curated)"
 msgid "Install non-curated app?"
-msgstr "%s (ikke-bekreftet)"
+msgstr "Installer ikke-gjennomsett program?"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
 msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
 msgstr ""
+"«%s» er ikke gjennomsett av elementary og har ikke blitt vurdert mht. "
+"sikkerhet, personvern, eller systemintegrasjon."
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
 msgid "It may not receive bug fix or feature updates"
-msgstr ""
+msgstr "Det kan ikke motta feilrettinger eller funksjonsoppdateringer"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:60
 msgid "It may access or change system or personal files without permission"
-msgstr ""
+msgstr "Det kan endre systemet eller personlige filer uten tillatelse"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
 #, fuzzy
@@ -683,6 +686,8 @@ msgstr "Søker etter oppdateringer…"
 #: src/Views/AppListUpdateView.vala:38
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr ""
+"Laster ned en liste over tilgjengelige oppdateringer til OS-et og "
+"installerte programmer"
 
 #: src/Views/AppListUpdateView.vala:49
 msgid "A restart is required to complete the installation of updates"
