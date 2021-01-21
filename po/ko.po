@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-09 19:00+0000\n"
+"POT-Creation-Date: 2020-12-18 19:41+0000\n"
 "PO-Revision-Date: 2019-06-30 03:52+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/appcenter/appcenter/ko/>\n"
@@ -30,32 +30,40 @@ msgstr "미디어 형식 %s의 구문을 분석할 수 없습니다"
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "'%s' 를 찾을 수 없네요, 검색으로 대신하겠습니다"
 
-#: src/Application.vala:293
+#: src/Application.vala:295
 #, fuzzy
 #| msgid "%s has been successfully installed"
 msgid "The app has been installed"
 msgstr "%s의 설치를 마쳤습니다"
 
-#: src/Application.vala:294
+#. Only show a toast when we're not on the installed app's page, i.e if
+#. no package is selected (we are not on an app page), or a package is
+#. selected but it's not the app we're installing.
+#: src/Application.vala:296 src/MainWindow.vala:340
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
 msgstr "%s의 설치를 마쳤습니다"
 
-#: src/MainWindow.vala:138 src/Views/Homepage.vala:298
-#: src/Views/Homepage.vala:310 src/Views/Homepage.vala:315
-#: src/Views/Homepage.vala:326 src/Views/SearchView.vala:90
+#: src/MainWindow.vala:137
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:133
+msgid "Open"
+msgstr "열기"
+
+#: src/MainWindow.vala:158 src/Views/Homepage.vala:297
+#: src/Views/Homepage.vala:307 src/Views/Homepage.vala:312
+#: src/Views/Homepage.vala:323 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "홈"
 
-#: src/MainWindow.vala:139 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:159 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 msgctxt "view"
 msgid "Installed"
 msgstr "설치함"
 
-#: src/MainWindow.vala:179 src/MainWindow.vala:364 src/Views/SearchView.vala:55
-#: src/Views/SearchView.vala:88
+#: src/MainWindow.vala:199 src/MainWindow.vala:405 src/Views/SearchView.vala:54
+#: src/Views/SearchView.vala:87
 msgid "Search Apps"
 msgstr "앱 검색"
 
@@ -719,7 +727,7 @@ msgstr "인기 좋은 앱"
 msgid "Categories"
 msgstr "카테고리"
 
-#: src/Views/Homepage.vala:315 src/Views/Homepage.vala:326
+#: src/Views/Homepage.vala:312 src/Views/Homepage.vala:323
 #, c-format
 msgid "Search %s"
 msgstr "%s 찾기"
@@ -910,10 +918,6 @@ msgstr "드라이버"
 #: src/Widgets/UpdateHeaderRow.vala:58
 msgid "Up to Date"
 msgstr "최신 버전입니다"
-
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:133
-msgid "Open"
-msgstr "열기"
 
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"

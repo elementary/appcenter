@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-19 21:36+0000\n"
-"PO-Revision-Date: 2020-03-28 16:09+0000\n"
+"PO-Revision-Date: 2020-12-23 23:11+0000\n"
 "Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/appcenter/"
 "extra/id/>\n"
@@ -42,21 +42,19 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:104
 #: data/io.elementary.appcenter.appdata.xml.in:121
 msgid "Fixes"
-msgstr ""
+msgstr "Perbaikan"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Correctly display names of Flatpak runtime updates"
-msgstr ""
+msgstr "Menampilkan nama dari waktu proses pembaruan Flatpak dengan benar"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:37
 #: data/io.elementary.appcenter.appdata.xml.in:53
 #: data/io.elementary.appcenter.appdata.xml.in:65
 #: data/io.elementary.appcenter.appdata.xml.in:78
-#, fuzzy
-#| msgid "Check for Updates"
 msgid "Minor updates"
-msgstr "Memeriksa Pembaruan"
+msgstr "Pembaruan kecil"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 #: data/io.elementary.appcenter.appdata.xml.in:42
@@ -73,47 +71,50 @@ msgstr "Terjemahan diperbarui"
 #: data/io.elementary.appcenter.appdata.xml.in:28
 #: data/io.elementary.appcenter.appdata.xml.in:74
 msgid "New features"
-msgstr ""
+msgstr "Fitur baru"
 
 #: data/io.elementary.appcenter.appdata.xml.in:30
 msgid "Support system-wide Flatpak remotes"
-msgstr ""
+msgstr "Mendukung seluruh sistem kendali jarak jauh Flatpak"
 
 #: data/io.elementary.appcenter.appdata.xml.in:34
 msgid "Fix Flatpak runtime updates getting stuck"
-msgstr ""
+msgstr "Perbaikan waktu proses pembaruan Flatpak yang macet"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
 msgid "Fix long origin comboboxes breaking the header layout"
-msgstr ""
+msgstr "Perbaikan kotak kombo panjang yang merusak tata letak header"
 
 #: data/io.elementary.appcenter.appdata.xml.in:39
 msgid ""
 "When apps are available from multiple sources, prefer installed version, "
 "then prefer Flatpak"
 msgstr ""
+"Saat aplikasi tersedia dari berbagai sumber, pilih versi yang terpasang, "
+"lalu pilih Flatpak"
 
 #: data/io.elementary.appcenter.appdata.xml.in:40
-#, fuzzy
-#| msgid "Bug fixes and improve performance."
 msgid "Improve search performance"
-msgstr "Perbaikan kesalahan dan peningkatan performa."
+msgstr "Peningkatan performa penelusuran"
 
 #: data/io.elementary.appcenter.appdata.xml.in:41
 msgid "Improve update badge styling and category styling"
-msgstr ""
+msgstr "Peningkatan pembaruan gaya lencana dan ketegori"
 
 #: data/io.elementary.appcenter.appdata.xml.in:50
 msgid "Ensure AppCenter is reopened at the correct position"
-msgstr ""
+msgstr "Memastikan AppCenter dibuka kembali pada posisi yang benar"
 
 #: data/io.elementary.appcenter.appdata.xml.in:51
 msgid "Clicking the updates badge in the header navigates to the updates view"
 msgstr ""
+"Mengeklik lencana pembaruan pada header mengarahkan pada tampilan pembaruan"
 
 #: data/io.elementary.appcenter.appdata.xml.in:63
 msgid "Ensure all updatable Flatpak runtimes are listed for update"
 msgstr ""
+"Memastikan semua waktu proses Flatpak yang dapat diperbarui terdaftar untuk "
+"pembaruan"
 
 #: data/io.elementary.appcenter.appdata.xml.in:67
 #: data/io.elementary.appcenter.appdata.xml.in:88
@@ -123,103 +124,116 @@ msgstr "Peningkatan performa"
 
 #: data/io.elementary.appcenter.appdata.xml.in:76
 msgid "Perform updates without administrator permissions"
-msgstr ""
+msgstr "Melakukan pembaruan tanpa izin administrator"
 
 #: data/io.elementary.appcenter.appdata.xml.in:80
 msgid "Ensure apps on the homepage are more reliably displayed"
-msgstr ""
+msgstr "Memastikan tampilan aplikasi pada beranda lebih andal"
 
 #: data/io.elementary.appcenter.appdata.xml.in:81
 msgid "More reliably set the Dock badge number"
-msgstr ""
+msgstr "Lebih andal mengatur nomor lencana Dock"
 
 #: data/io.elementary.appcenter.appdata.xml.in:90
 msgid ""
 "Only check for updates at device startup if it's more than 24 hours since we "
 "last checked"
 msgstr ""
+"Hanya periksa pembaruan saat memulai perangkat jika sudah lebih dari 24 jam "
+"sejak terakhir kali diperiksa"
 
 #: data/io.elementary.appcenter.appdata.xml.in:91
 msgid "Reduce slowdowns when opening certain apps"
-msgstr ""
+msgstr "Mengurangi waktu jeda saat membuka aplikasi tertentu"
 
 #: data/io.elementary.appcenter.appdata.xml.in:93
-#, fuzzy
-#| msgid "Performance improvements"
 msgid "Extension improvements"
-msgstr "Peningkatan performa"
+msgstr "Peningkatan Ekstensi"
 
 #: data/io.elementary.appcenter.appdata.xml.in:95
 msgid ""
 "To de-clutter the updates view, extensions are now only shown if they "
 "require updates"
 msgstr ""
+"Untuk merapikan tampilan pembaruan, sekarang ekstensi hanya ditampilkan jika "
+"memerlukan pembaruan"
 
 #: data/io.elementary.appcenter.appdata.xml.in:96
 msgid ""
 "Clicking an extension on an app's info page now shows details for the "
 "extension"
 msgstr ""
+"Mengeklik ekstensi pada laman info aplikasi, sekarang menampilkan detail "
+"ekstensi"
 
 #: data/io.elementary.appcenter.appdata.xml.in:97
 msgid ""
 "Swap the main and overlay icons for extensions to more clearly associate "
 "extensions with their app"
 msgstr ""
+"Tukar ikon utama dan overlay untuk ekstensi agar lebih jelas mengaitkan "
+"ekstensi dengan aplikasinya"
 
 #: data/io.elementary.appcenter.appdata.xml.in:99
-#, fuzzy
-#| msgid "Performance improvements"
 msgid "Keyboard improvements"
-msgstr "Peningkatan performa"
+msgstr "Peningkatan papan tik"
 
 #: data/io.elementary.appcenter.appdata.xml.in:101
 msgid ""
 "Pressing down in the search field moves the keyboard focus to the search "
 "results list"
 msgstr ""
+"Mengeklik pada bidang penelusuran akan memindahkan fokus papan tik ke daftar "
+"hasil penelusuran"
 
 #: data/io.elementary.appcenter.appdata.xml.in:102
 msgid "Ctrl+F now moves the cursor to the search field"
-msgstr ""
+msgstr "Sekarang Ctrl+F memindahkan kursor pada bidang penelusuran"
 
 #: data/io.elementary.appcenter.appdata.xml.in:106
 msgid "Use configured network proxy settings for apt operations"
 msgstr ""
+"Gunakan pengaturan proxy jaringan yang sudah terkonfigurasi untuk operasi apt"
 
 #: data/io.elementary.appcenter.appdata.xml.in:107
 msgid "No longer prompt for approval to update non-curated apps"
 msgstr ""
+"Tidak lagi menampilkan persetujuan untuk pembaruan aplikasi yang tidak "
+"dikurasi"
 
 #: data/io.elementary.appcenter.appdata.xml.in:108
 msgid ""
 "Ensure the OS updates subheading copy is correct after finishing updates"
 msgstr ""
+"Pastikan salinan subpos pembaruan OS sudah benar setelah menyelesaikan "
+"pembaruan"
 
 #: data/io.elementary.appcenter.appdata.xml.in:109
 msgid "Ellipsize long app names in App Info views"
-msgstr ""
+msgstr "Nama aplikasi yang panjang pada tampilan info App akan dielipskan"
 
 #: data/io.elementary.appcenter.appdata.xml.in:111
 msgid "And more"
-msgstr ""
+msgstr "Dan masih banyak lagi"
 
 #: data/io.elementary.appcenter.appdata.xml.in:113
 msgid "Show a more informative loading screen when checking for updates"
 msgstr ""
+"Menampilkan layar pemuatan yang lebih informatif saat memeriksa pembaruan"
 
 #: data/io.elementary.appcenter.appdata.xml.in:114
 msgid "Don't list fonts alongside apps"
-msgstr ""
+msgstr "Jangan mencantumkan huruf-huruf di samping aplikasi"
 
 #: data/io.elementary.appcenter.appdata.xml.in:123
 msgid ""
 "Prevent crashes when updating Flatpaks and system packages simultaneously"
 msgstr ""
+"Mencegah tabrakan saat memperbarui Flatpaks dan paket sistem secara bersamaan"
 
 #: data/io.elementary.appcenter.appdata.xml.in:124
 msgid "Prevent suspending when installing, updating, or removing packages"
-msgstr ""
+msgstr "Mencegah penangguhan saat memasang, memperbarui, atau menghapus paket"
 
 #: data/io.elementary.appcenter.appdata.xml.in:136
 #: data/io.elementary.appcenter.appdata.xml.in:153
@@ -480,16 +494,12 @@ msgid "Prevent multiple authentication dialogs when resuming from suspend"
 msgstr "Mencegah beberapa dialog otentikasi saat melanjutkan dari keadaan jeda"
 
 #: data/io.elementary.appcenter.appdata.xml.in:340
-#, fuzzy
-#| msgid ""
-#| "Search performance has beeen improved, the category name is now shown on "
-#| "the headbar and minor bugs have been fixed."
 msgid ""
 "Search performance has been improved, the category name is now shown on the "
 "headbar and minor bugs have been fixed."
 msgstr ""
-"Performa pencarian telah diimprovisasi, nama kategori sekarang ditampilkan "
-"pada bilah atas dan kesalahan kecil telah diperbaiki."
+"Performa penelusuran sudah ditingkatkan, nama kategori sekarang ditampilkan "
+"pada bilah atas dan kesalahan kecil sudah diperbaiki."
 
 #: data/io.elementary.appcenter.appdata.xml.in:342
 msgid "Fix Steam installation"
@@ -525,11 +535,11 @@ msgstr "pembaruan-sistem-perangkat-lunak"
 
 #: data/io.elementary.appcenter.policy.in:10
 msgid "Update software"
-msgstr ""
+msgstr "Pembaruan perangkat lunak"
 
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to update software"
-msgstr ""
+msgstr "Otentikasi diperlukan untuk pembaruan perangkat lunak"
 
 #, fuzzy
 #~| msgid "Performance improvements"

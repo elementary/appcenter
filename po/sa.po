@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-09 19:00+0000\n"
+"POT-Creation-Date: 2020-12-18 19:41+0000\n"
 "PO-Revision-Date: 2015-11-04 14:21+0000\n"
 "Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,29 +29,37 @@ msgstr ""
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr ""
 
-#: src/Application.vala:293
+#: src/Application.vala:295
 msgid "The app has been installed"
 msgstr ""
 
-#: src/Application.vala:294
+#. Only show a toast when we're not on the installed app's page, i.e if
+#. no package is selected (we are not on an app page), or a package is
+#. selected but it's not the app we're installing.
+#: src/Application.vala:296 src/MainWindow.vala:340
 #, c-format
 msgid "“%s” has been installed"
 msgstr ""
 
-#: src/MainWindow.vala:138 src/Views/Homepage.vala:298
-#: src/Views/Homepage.vala:310 src/Views/Homepage.vala:315
-#: src/Views/Homepage.vala:326 src/Views/SearchView.vala:90
+#: src/MainWindow.vala:137
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:133
+msgid "Open"
+msgstr ""
+
+#: src/MainWindow.vala:158 src/Views/Homepage.vala:297
+#: src/Views/Homepage.vala:307 src/Views/Homepage.vala:312
+#: src/Views/Homepage.vala:323 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr ""
 
-#: src/MainWindow.vala:139 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:159 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 msgctxt "view"
 msgid "Installed"
 msgstr ""
 
-#: src/MainWindow.vala:179 src/MainWindow.vala:364 src/Views/SearchView.vala:55
-#: src/Views/SearchView.vala:88
+#: src/MainWindow.vala:199 src/MainWindow.vala:405 src/Views/SearchView.vala:54
+#: src/Views/SearchView.vala:87
 msgid "Search Apps"
 msgstr ""
 
@@ -699,7 +707,7 @@ msgstr ""
 msgid "Categories"
 msgstr ""
 
-#: src/Views/Homepage.vala:315 src/Views/Homepage.vala:326
+#: src/Views/Homepage.vala:312 src/Views/Homepage.vala:323
 #, c-format
 msgid "Search %s"
 msgstr ""
@@ -888,10 +896,6 @@ msgstr ""
 
 #: src/Widgets/UpdateHeaderRow.vala:58
 msgid "Up to Date"
-msgstr ""
-
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:133
-msgid "Open"
 msgstr ""
 
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310

@@ -40,6 +40,10 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     private Gee.LinkedList<string> return_button_history;
     private Gtk.Label updates_badge;
     private Gtk.Revealer updates_badge_revealer;
+    private Granite.Widgets.Toast toast;
+
+    private AppCenterCore.Package? last_installed_package;
+    private AppCenterCore.Package? selected_package;
 
     private uint configure_id;
     private int homepage_view_id;
@@ -103,8 +107,11 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
         return_button.clicked.connect (view_return);
 
+        homepage.package_selected.connect (package_selected);
         homepage.subview_entered.connect (view_opened);
+        installed_view.package_selected.connect (package_selected);
         installed_view.subview_entered.connect (view_opened);
+        search_view.package_selected.connect (package_selected);
         search_view.subview_entered.connect (view_opened);
         search_view.home_return_clicked.connect (show_homepage);
 
@@ -125,6 +132,19 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         set_size_request (910, 640);
 
         title = _(Build.APP_NAME);
+
+        toast = new Granite.Widgets.Toast ("");
+        toast.set_default_action (_("Open"));
+
+        toast.default_action.connect (() => {
+            if (last_installed_package != null) {
+                try {
+                    last_installed_package.launch ();
+                } catch (Error e) {
+                    warning ("Failed to launch %s: %s".printf (last_installed_package.get_name (), e.message));
+                }
+            }
+        });
 
         return_button = new Gtk.Button ();
         return_button.no_show_all = true;
@@ -198,6 +218,10 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         stack.add (installed_view);
         stack.add (search_view);
 
+        var overlay = new Gtk.Overlay ();
+        overlay.add_overlay (toast);
+        overlay.add (stack);
+
         var network_info_bar = new AppCenter.Widgets.NetworkInfoBar ();
 
         var grid = new Gtk.Grid () {
@@ -205,7 +229,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         };
         grid.add (headerbar);
         grid.add (network_info_bar);
-        grid.add (stack);
+        grid.add (overlay);
 
         add (grid);
 
@@ -306,6 +330,19 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         search_entry.text = term;
     }
 
+    public void send_installed_toast (AppCenterCore.Package package) {
+        last_installed_package = package;
+
+        // Only show a toast when we're not on the installed app's page, i.e if
+        // no package is selected (we are not on an app page), or a package is 
+        // selected but it's not the app we're installing.
+        if (selected_package == null || (selected_package != null && selected_package.get_name () != package.get_name ())) {
+            toast.title = _("“%s” has been installed").printf (package.get_name ());
+
+            toast.send_notification ();
+        }
+    }
+
     private void trigger_search () {
         unowned string query = search_entry.text;
         uint query_length = query.length;
@@ -335,6 +372,10 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         if (mimetype) {
             mimetype = false;
         }
+    }
+
+    private void package_selected (AppCenterCore.Package package) {
+        selected_package = package;
     }
 
     private void view_opened (string? return_name, bool allow_search, string? custom_header = null, string? custom_search_placeholder = null) {
@@ -369,6 +410,8 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     }
 
     private void view_return () {
+        selected_package = null;
+
         if (stack.visible_child == search_view && !search_view.viewing_package && homepage.currently_viewed_category != null) {
             homepage.return_clicked ();
 
@@ -387,7 +430,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             return_button.visible = false;
         }
 
-        View view = (View) stack.visible_child;
+        var view = (AbstractView) stack.visible_child;
         view.return_clicked ();
     }
 
