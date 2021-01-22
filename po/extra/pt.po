@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-21 17:05+0000\n"
-"PO-Revision-Date: 2020-11-22 20:15+0000\n"
+"PO-Revision-Date: 2021-01-22 17:13+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
 "extra/pt/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
@@ -300,7 +300,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:147
 msgid "Make download size estimates more accurate"
-msgstr "Tornar as  estimativas do tamanho de transferência mais precisas"
+msgstr "Tornar as estimativas do tamanho de transferência mais precisas"
 
 #: data/io.elementary.appcenter.appdata.xml.in:155
 msgid "Prevent AppCenter from opening on log in"
