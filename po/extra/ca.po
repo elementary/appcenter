@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-21 17:05+0000\n"
-"PO-Revision-Date: 2020-11-21 12:15+0000\n"
+"PO-Revision-Date: 2021-01-24 16:47+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/extra/"
 "ca/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
@@ -277,7 +277,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:142
 msgid "Load the \"Installed\" view faster"
-msgstr "Es carrega més ràpidament la vista \"Instal·lada\"."
+msgstr "Es carrega més ràpidament la vista \"Instal·lat\"."
 
 #: data/io.elementary.appcenter.appdata.xml.in:143
 msgid "Ensure flatpak applications show in the category views"
