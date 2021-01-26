@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-21 17:05+0000\n"
-"PO-Revision-Date: 2020-10-27 10:15+0000\n"
-"Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
+"PO-Revision-Date: 2021-01-26 07:32+0000\n"
+"Last-Translator: Marco De Paolini <marco.depaolini@gmail.com>\n"
 "Language-Team: Italian <https://l10n.elementary.io/projects/appcenter/extra/"
 "it/>\n"
 "Language: it\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
@@ -150,53 +150,63 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:91
 msgid "Reduce slowdowns when opening certain apps"
-msgstr ""
+msgstr "Riduce i rallentamenti quando aprono certe applicazioni"
 
 #: data/io.elementary.appcenter.appdata.xml.in:93
-#, fuzzy
 msgid "Extension improvements"
-msgstr "Correzione di problemi vari e miglioramenti"
+msgstr "Miglioramenti delle estensioni"
 
 #: data/io.elementary.appcenter.appdata.xml.in:95
 msgid ""
 "To de-clutter the updates view, extensions are now only shown if they "
 "require updates"
 msgstr ""
+"Per semplificare la vista degli aggiornamenti, adesso le estensioni vengono "
+"mostrate solo quando è necessario aggiornarle"
 
 #: data/io.elementary.appcenter.appdata.xml.in:96
 msgid ""
 "Clicking an extension on an app's info page now shows details for the "
 "extension"
 msgstr ""
+"Cliccando su un'estensione nella pagina d'informazioni di un'applicazione "
+"ora mostra i dettagli sull'estensione"
 
 #: data/io.elementary.appcenter.appdata.xml.in:97
 msgid ""
 "Swap the main and overlay icons for extensions to more clearly associate "
 "extensions with their app"
 msgstr ""
+"Cambio delle icone principali e di sovrapposizione delle estensioni per "
+"associare visualmente in modo più chiaro le estensioni con le rispettive "
+"applicazioni"
 
 #: data/io.elementary.appcenter.appdata.xml.in:99
-#, fuzzy
 msgid "Keyboard improvements"
-msgstr "Correzione di problemi vari e miglioramenti"
+msgstr "Miglioramenti della tastiera"
 
 #: data/io.elementary.appcenter.appdata.xml.in:101
 msgid ""
 "Pressing down in the search field moves the keyboard focus to the search "
 "results list"
 msgstr ""
+"Schiacciando la freccia verso il basso nel riquadro di ricerca si passa alla "
+"lista di risultati della ricerca"
 
 #: data/io.elementary.appcenter.appdata.xml.in:102
 msgid "Ctrl+F now moves the cursor to the search field"
-msgstr ""
+msgstr "Adesso Ctrl+F sposta il cursore al campo di ricerca"
 
 #: data/io.elementary.appcenter.appdata.xml.in:106
 msgid "Use configured network proxy settings for apt operations"
 msgstr ""
+"Uso delle impostazioni configurate del proxy di rete per le operazioni di apt"
 
 #: data/io.elementary.appcenter.appdata.xml.in:107
 msgid "No longer prompt for approval to update non-curated apps"
 msgstr ""
+"No viene più richiesta l'approvazione per l'aggiornamento delle applicazioni "
+"non verificate"
 
 #: data/io.elementary.appcenter.appdata.xml.in:108
 msgid ""
