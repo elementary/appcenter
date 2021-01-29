@@ -5,13 +5,14 @@
 # Tim Krueger <t@timkrueger.me>, 2019.
 # Uwe S <saabisto@gmx.de>, 2019, 2020, 2021.
 # Christoph Matthies <c.matthies.mail+github@gmail.com>, 2019.
+# Allan Nordhøy <epost@anotheragency.no>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-21 17:05+0000\n"
 "PO-Revision-Date: 2021-01-30 02:47+0000\n"
-"Last-Translator: Uwe S <saabisto@gmx.de>\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/de/>\n"
 "Language: de\n"
@@ -374,7 +375,9 @@ msgstr "Unbetreutes Programm installieren?"
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
 msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-msgstr "»%s«  wird nicht von elementary betreut und wurde nicht auf Sicherheit, Datenschutz oder Systemintegration überprüft."
+msgstr ""
+"»%s« wird nicht von elementary betreut und wurde nicht auf Sicherheit, "
+"Datenschutz oder Systemintegration überprüft."
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
 msgid "It may not receive bug fix or feature updates"
