@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-21 17:05+0000\n"
-"PO-Revision-Date: 2021-01-25 21:07+0000\n"
-"Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
+"PO-Revision-Date: 2021-01-30 15:07+0000\n"
+"Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/"
 "extra/uk/>\n"
 "Language: uk\n"
@@ -295,7 +295,7 @@ msgstr "Точніша оцінка розміру завантаження"
 
 #: data/io.elementary.appcenter.appdata.xml.in:155
 msgid "Prevent AppCenter from opening on log in"
-msgstr "Запобігання відкриванню центра застосунків під час входу"
+msgstr "Запобігання відкриванню Центра застосунків під час входу у систему"
 
 #: data/io.elementary.appcenter.appdata.xml.in:156
 msgid "Prevent ghost update notification when there are no updates available"
