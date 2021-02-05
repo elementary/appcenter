@@ -47,44 +47,35 @@
         0 8px 12px alpha(shade(@banner_bg_color, 0.8), 0.6);
 }
 
+/* FIXME: handle borders? Especially with dark bg colors */
 .banner button {
-    background-color: alpha(@banner_fg_color, 0.6);
-    background-image: none;
-    border-color: alpha(@banner_fg_color, 0.7);
-    box-shadow: none;
-    font-size: 11pt;
-    font-weight: 600;
+    background-color: @banner_fg_color;
+    border: none;
+    box-shadow:
+        inset -1px 0 0 0 alpha(@banner_bg_color, 0.25),
+        inset 1px 0 0 0 alpha(@banner_bg_color, 0.25),
+        inset 0 -1px 0 0 alpha(@banner_bg_color, 0.25),
+        inset 0 1px 0 0 alpha(@banner_bg_color, 0.25);
+    color: @banner_bg_color;
 }
 
-.banner button.destructive-action,
-.banner button.suggested-action {
-    background-color: alpha(@banner_fg_color, 0.8);
-    border-color: alpha(@banner_fg_color, 0.9);
-}
-
-.banner button:focus {
-    background-color: alpha(@banner_fg_color, 0.9);
-    border-color: @banner_fg_color;
+.banner .linked button:last-child {
+    box-shadow:
+        inset -1px 0 0 0 alpha(@banner_bg_color, 0.25),
+        inset 0 -1px 0 0 alpha(@banner_bg_color, 0.25),
+        inset 0 1px 0 0 alpha(@banner_bg_color, 0.25);
 }
 
 .banner button:active,
 .banner button:checked {
-    background-color: alpha(@banner_fg_color, 0.5);
-    border-color: alpha(@banner_fg_color, 0.6);
+  opacity: 0.9;
 }
 
-.banner button arrow,
+.banner button label,
 .banner button image {
-    color: @banner_bg_color;
-    -gtk-icon-shadow: 0 1px 1px alpha(@banner_fg_color, 0.1);
+    color: inherit;
 }
 
-.banner button cellview,
-.banner button label {
-    color: @banner_bg_color;
-    text-shadow: 0 1px 1px alpha(@banner_fg_color, 0.1);
-}
-
-.banner button:disabled {
-    opacity: 0.33;
+.banner button:not(.suggested-action) {
+    opacity: 0.8;
 }

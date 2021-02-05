@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
-/*-
- * Copyright (c) 2014–2018 elementary, Inc. (https://elementary.io)
+/*
+ * Copyright (c) 2014–2021 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -75,9 +74,6 @@ namespace AppCenter.Views {
             inner_image.pixel_size = 128;
 
             action_button.suggested_action = true;
-
-            var uninstall_button_context = uninstall_button.get_style_context ();
-            uninstall_button_context.add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
 
             var package_component = package.component;
 
@@ -515,7 +511,7 @@ namespace AppCenter.Views {
 
             add (overlay);
 
-            open_button.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+            open_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 #if SHARING
             if (package.is_shareable) {
                 var body = _("Check out %s on AppCenter:").printf (package.get_name ());
