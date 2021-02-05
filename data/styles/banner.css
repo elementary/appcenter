@@ -56,6 +56,8 @@
         inset 0 -1px 0 0 alpha(@banner_bg_color, 0.25),
         inset 0 1px 0 0 alpha(@banner_bg_color, 0.25);
     color: @banner_bg_color;
+    font-size: 11pt;
+    font-weight: 600;
 }
 
 .banner .linked button:last-child {
@@ -73,6 +75,7 @@
 .banner button label,
 .banner button image {
     color: inherit;
+    font-weight: inherit;
 }
 
 .banner button:not(.suggested-action) {
