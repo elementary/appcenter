@@ -1,5 +1,5 @@
 /*
- * Copyright 2017–2020 elementary, Inc. (https://elementary.io)
+ * Copyright 2017–2021 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -47,7 +47,6 @@
         0 8px 12px alpha(shade(@banner_bg_color, 0.8), 0.6);
 }
 
-/* FIXME: handle borders? Especially with dark bg colors */
 .banner button {
     background-color: @banner_fg_color;
     border: none;
@@ -78,4 +77,8 @@
 
 .banner button:not(.suggested-action) {
     opacity: 0.8;
+}
+
+.banner button:disabled {
+    opacity: 0.33;
 }
