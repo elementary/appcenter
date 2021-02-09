@@ -1,20 +1,21 @@
 # Veli-Pekka Samuli Finnilä <vpf@tuta.io>, 2018, 2019.
-# Jiri Grönroos <jiri.gronroos@iki.fi>, 2018, 2019, 2020.
+# Jiri Grönroos <jiri.gronroos@iki.fi>, 2018, 2019, 2020, 2021.
 # Kimmo Vänttinen <kvanttinen72@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-21 17:05+0000\n"
-"PO-Revision-Date: 2020-09-03 18:13+0000\n"
+"PO-Revision-Date: 2021-02-09 16:26+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
-"Language-Team: Finnish <https://l10n.elementary.io/projects/appcenter/appcenter/fi/>\n"
+"Language-Team: Finnish <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -33,19 +34,16 @@ msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Linkkiä '%s' ei löytynyt, haetaan sen sijaan"
 
 #: src/Application.vala:295
-#, fuzzy
-#| msgid "%s has been successfully installed"
 msgid "The app has been installed"
-msgstr "%s asennettiin onnistuneesti"
+msgstr "Sovellus on asennettu"
 
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
 #: src/Application.vala:296 src/MainWindow.vala:340
-#, fuzzy, c-format
-#| msgid "%s has been successfully installed"
+#, c-format
 msgid "“%s” has been installed"
-msgstr "%s asennettiin onnistuneesti"
+msgstr "“%s” on asennettu"
 
 #: src/MainWindow.vala:137
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:133
@@ -219,7 +217,7 @@ msgstr "Tuntematon tila"
 
 #: src/Core/BackendAggregator.vala:46
 msgid "package operations are being performed"
-msgstr ""
+msgstr "pakettitoimenpiteitä suoritetaan"
 
 #: src/Core/Client.vala:72
 msgid "Update Available"
@@ -258,7 +256,7 @@ msgstr "Ubuntu (kuratoimaton)"
 #: src/Core/Package.vala:347
 #, c-format
 msgid "%s (system-wide)"
-msgstr ""
+msgstr "%s (järjestelmänlaajuinen)"
 
 #: src/Core/Package.vala:352
 msgid "Ubuntu Drivers"
@@ -348,10 +346,10 @@ msgid "Install Anyway"
 msgstr "Asenna silti"
 
 #: src/Dialogs/InstallFailDialog.vala:26
-#, fuzzy
-#| msgid "This may have been caused by external or manually compiled software."
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
-msgstr "Tämän on saattanut aiheuttaa ulkopuolinen tai käsin käännetty ohjelmisto."
+msgstr ""
+"Tämä saattaa olla väliaikainen ongelma tai saattanut aiheutua ulkopuolisen "
+"tai käsin käännetyn ohjelmiston vuoksi."
 
 #: src/Dialogs/InstallFailDialog.vala:37
 msgid "Failed to install app"
