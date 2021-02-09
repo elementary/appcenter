@@ -17,7 +17,7 @@
 * Boston, MA 02110-1301 USA
 */
 
-public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
+public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
     public signal void download_requested ();
 
     private const string HOUSTON_URI = "https://developer.elementary.io/api/payment/%s";

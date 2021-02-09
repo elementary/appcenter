@@ -17,7 +17,7 @@
  */
 
 namespace AppCenter.Widgets {
-    public class RestartDialog : Granite.Dialog {
+    public class RestartDialog : Gtk.Dialog {
         private SystemInterface system_interface;
 
         public RestartDialog () {
