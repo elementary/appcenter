@@ -98,10 +98,9 @@ namespace AppCenter {
             featured_revealer = new Gtk.Revealer ();
             featured_revealer.add (featured_grid );
 #endif
-            newest_banner = new Widgets.Banner (switcher) {
-                margin = 12
-            };
-
+            newest_banner = new Widgets.Banner (switcher);
+            newest_banner.get_style_context ().add_class ("home");
+            newest_banner.margin = 12;
             newest_banner.clicked.connect (() => {
                 var package = newest_banner.get_package ();
                 if (package != null) {

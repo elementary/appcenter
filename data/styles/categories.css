@@ -1,5 +1,5 @@
 /*
- * Copyright 2017–2020 elementary, Inc. (https://elementary.io)
+ * Copyright (c) 2017–2018 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,15 +16,24 @@
  */
 
 .category {
+    background-color: @bg_color;
+    background-image:
+        linear-gradient(
+            to bottom,
+            alpha(white, 0.05),
+            alpha(black, 0.05)
+        );
     background-position: center center;
     background-repeat: no-repeat;
     border: 1px solid alpha(black, 0.15);
+    border-radius: 3px;
     box-shadow:
         inset 0 0 0 1px alpha(white, 0.05),
         inset 0 1px 0 0 alpha(white, 0.45),
         inset 0 -1px 0 0 alpha(white, 0.15),
         0 3px 2px -1px alpha(black, 0.15),
         0 3px 5px alpha(black, 0.1);
+    color: @fg_color;
     font-size: 32px;
     font-weight: 300;
 }
