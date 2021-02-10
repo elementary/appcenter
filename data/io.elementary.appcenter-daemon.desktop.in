@@ -2,7 +2,7 @@
 Name=@APP_NAME@ Daemon
 Comment=Browse and manage apps
 Exec=@EXEC_NAME@ -s
-Icon=@DESKTOP_ICON@
+Icon=@PROJECT_NAME@
 Terminal=false
 Type=Application
 NoDisplay=true

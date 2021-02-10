@@ -91,7 +91,7 @@ namespace AppCenter.Widgets {
                 if (has_package) {
                     icon.gicon = package.get_icon (128, icon.get_scale_factor ());
                 } else {
-                    icon.icon_name = "system-software-install";
+                    icon.icon_name = Build.PROJECT_NAME;
                 }
 
                 attach (icon, 0, 0, 1, 3);
