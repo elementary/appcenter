@@ -2,7 +2,7 @@
 Name=@APP_NAME@
 Comment=Browse and manage apps
 Exec=@EXEC_NAME@ %U
-Icon=@DESKTOP_ICON@
+Icon=@PROJECT_NAME@
 Keywords=install;uninstall;remove;catalogue;store;apps;software;
 Actions=ShowUpdates;
 Terminal=false
