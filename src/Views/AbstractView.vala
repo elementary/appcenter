@@ -17,13 +17,14 @@
  * Authored by: Corentin Noël <corentin@elementaryos.org>
  */
 
-public abstract class AppCenter.AbstractView : Hdy.Deck {
+public abstract class AppCenter.AbstractView : Gtk.Stack {
     public signal void subview_entered (string? return_name, bool allow_search, string? custom_header = null, string? custom_search_placeholder = null);
     public signal void package_selected (AppCenterCore.Package package);
 
     protected AppCenterCore.Package? previous_package = null;
 
     construct {
+        transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
         get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
         expand = true;
 

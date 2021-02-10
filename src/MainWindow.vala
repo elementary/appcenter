@@ -128,7 +128,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
     construct {
         Hdy.init ();
-        icon_name = "system-software-install";
+        icon_name = Build.PROJECT_NAME;
         set_size_request (910, 640);
 
         title = _(Build.APP_NAME);
