@@ -74,7 +74,7 @@ public class AppCenterCore.Client : Object {
 
             var notification = new Notification (title);
             notification.set_body (body);
-            notification.set_icon (new ThemedIcon ("io.elementary.appcenter"));
+            notification.set_icon (new ThemedIcon (Build.PROJECT_NAME));
             notification.set_default_action ("app.show-updates");
 
             application.send_notification ("io.elementary.appcenter.updates", notification);
