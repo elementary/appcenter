@@ -110,11 +110,23 @@ public class AppCenterCore.UpdateManager : Object {
                 }
             } else {
                 debug ("Added %s to OS updates", flatpak_update);
-                var name = flatpak_update.split ("/")[2];
+                string bundle_id;
+                if (!FlatpakBackend.get_package_list_key_parts (flatpak_update, null, null, out bundle_id)) {
+                    continue;
+                }
+
+                Flatpak.Ref @ref;
+                try {
+                    @ref = Flatpak.Ref.parse (bundle_id);
+                } catch (Error e) {
+                    warning ("Error parsing flatpak bundle ID: %s", e.message);
+                    continue;
+                }
+
                 os_count++;
                 os_desc += Markup.printf_escaped (
                     "<li>%s\n\t%s</li>",
-                    name,
+                    @ref.get_name (),
                     _("Flatpak runtime")
                 );
 

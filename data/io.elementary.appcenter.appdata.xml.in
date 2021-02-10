@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2015 elementary, LLC <contact@elementary.io> -->
+<!-- Copyright 2015–2020 elementary, Inc. <contact@elementary.io> -->
 <component type="desktop-application">
   <id>io.elementary.appcenter</id>
   <metadata_license>CC0-1.0</metadata_license>
@@ -11,6 +11,38 @@
     <p>An app store for indie and open source developers. Browse by categories or search and discover new apps. AppCenter is also used for updating your system to the latest and greatest version for new features and fixes.</p>
   </description>
   <releases>
+    <release version="3.5.1" date="2020-10-08" urgency="medium">
+      <description>
+        <p>Fixes</p>
+        <ul>
+          <li>Correctly display names of Flatpak runtime updates</li>
+        </ul>
+        <p>Minor updates</p>
+        <ul>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
+    <release version="3.5.0" date="2020-09-05" urgency="medium">
+      <description>
+        <p>New features</p>
+        <ul>
+          <li>Support system-wide Flatpak remotes</li>
+        </ul>
+        <p>Fixes</p>
+        <ul>
+          <li>Fix Flatpak runtime updates getting stuck</li>
+          <li>Fix long origin comboboxes breaking the header layout</li>
+        </ul>
+        <p>Minor updates</p>
+        <ul>
+          <li>When apps are available from multiple sources, prefer installed version, then prefer Flatpak</li>
+          <li>Improve search performance</li>
+          <li>Improve update badge styling and category styling</li>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
     <release version="3.4.2" date="2020-08-07" urgency="medium">
       <description>
         <p>Fixes</p>
@@ -305,7 +337,7 @@
     </release>
     <release version="0.1.1" date="2016-09-26" urgency="medium">
       <description>
-        <p>Search performance has beeen improved, the category name is now shown on the headbar and minor bugs have been fixed.</p>
+        <p>Search performance has been improved, the category name is now shown on the headbar and minor bugs have been fixed.</p>
         <ul>
           <li>Fix Steam installation</li>
           <li>Make search asynchronous</li>

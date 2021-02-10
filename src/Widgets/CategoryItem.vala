@@ -22,9 +22,16 @@ public class AppCenter.Widgets.CategoryItem : Gtk.FlowBoxChild {
     public AppStream.Category app_category { get; construct; }
     private Gtk.Label name_label;
     private Gtk.Grid themed_grid;
+    private unowned Gtk.StyleContext themed_grid_context;
+    private static Gtk.CssProvider category_provider;
 
     public CategoryItem (AppStream.Category app_category) {
         Object (app_category: app_category);
+    }
+
+    static construct {
+        category_provider = new Gtk.CssProvider ();
+        category_provider.load_from_resource ("io/elementary/appcenter/categories.css");
     }
 
     construct {
@@ -36,6 +43,7 @@ public class AppCenter.Widgets.CategoryItem : Gtk.FlowBoxChild {
         name_label = new Gtk.Label (null);
         name_label.wrap = true;
         name_label.max_width_chars = 15;
+        name_label.get_style_context ().add_provider (category_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         var grid = new Gtk.Grid ();
         grid.orientation = Gtk.Orientation.HORIZONTAL;
@@ -54,10 +62,15 @@ public class AppCenter.Widgets.CategoryItem : Gtk.FlowBoxChild {
         expanded_grid.margin = 12;
 
         themed_grid = new Gtk.Grid ();
-        themed_grid.get_style_context ().add_class ("category");
         themed_grid.attach (grid, 0, 0, 1, 1);
         themed_grid.attach (expanded_grid, 0, 0, 1, 1);
         themed_grid.margin = 12;
+
+        themed_grid_context = themed_grid.get_style_context ();
+        themed_grid_context.add_class (Granite.STYLE_CLASS_CARD);
+        themed_grid_context.add_class (Granite.STYLE_CLASS_ROUNDED);
+        themed_grid_context.add_class ("category");
+        themed_grid_context.add_provider (category_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         child = themed_grid;
 
@@ -76,7 +89,7 @@ public class AppCenter.Widgets.CategoryItem : Gtk.FlowBoxChild {
     }
 
     public void add_category_class (string theme_name) {
-        themed_grid.get_style_context ().add_class (theme_name);
+        themed_grid_context.add_class (theme_name);
 
         if (theme_name == "games" || theme_name == "accessibility") {
             name_label.label = app_category.name.up ();

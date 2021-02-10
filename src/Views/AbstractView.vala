@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
-/*-
- * Copyright (c) 2014-2015 elementary LLC. (https://elementary.io)
+/*
+ * Copyright 2014-2020 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,12 +17,14 @@
  * Authored by: Corentin Noël <corentin@elementaryos.org>
  */
 
-public abstract class AppCenter.View : Gtk.Stack {
+public abstract class AppCenter.AbstractView : Gtk.Stack {
     public signal void subview_entered (string? return_name, bool allow_search, string? custom_header = null, string? custom_search_placeholder = null);
+    public signal void package_selected (AppCenterCore.Package package);
 
     protected AppCenterCore.Package? previous_package = null;
 
     construct {
+        transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
         get_style_context ().add_class (Gtk.STYLE_CLASS_VIEW);
         expand = true;
 
@@ -39,14 +40,10 @@ public abstract class AppCenter.View : Gtk.Stack {
         });
     }
 
-    public virtual void show_package (
-        AppCenterCore.Package package,
-        bool remember_history = true,
-        Gtk.StackTransitionType transition = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT
-    ) {
-        transition_type = transition;
-
+    public virtual void show_package (AppCenterCore.Package package, bool remember_history = true) {
         previous_package = null;
+
+        package_selected (package);
 
         var package_hash = package.hash;
 
@@ -64,21 +61,23 @@ public abstract class AppCenter.View : Gtk.Stack {
         }
 
         var app_info_view = new Views.AppInfoView (package);
-        app_info_view.show_other_package.connect ((_package, remember_history, transition) => {
-            show_package (_package, remember_history, transition);
-            if (remember_history) {
-                previous_package = package;
-                subview_entered (package.get_name (), false, "", null);
-            }
-        });
-
         app_info_view.show_all ();
-        add_named (app_info_view, package_hash);
+
+        add (app_info_view);
         set_visible_child (app_info_view);
+
         var cache = AppCenterCore.Client.get_default ().screenshot_cache;
         Timeout.add (transition_duration, () => {
             app_info_view.load_more_content (cache);
             return Source.REMOVE;
+        });
+
+        app_info_view.show_other_package.connect ((_package, remember_history) => {
+            show_package (_package, remember_history);
+            if (remember_history) {
+                previous_package = package;
+                subview_entered (package.get_name (), false, "", null);
+            }
         });
     }
 

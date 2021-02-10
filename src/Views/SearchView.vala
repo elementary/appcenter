@@ -19,10 +19,11 @@
 
 using AppCenterCore;
 
-public class AppCenter.Views.SearchView : View {
+public class AppCenter.Views.SearchView : AbstractView {
     AppListView app_list_view;
 
     public bool viewing_package { get; private set; default = false; }
+    public signal void home_return_clicked ();
     private AppStream.Category? current_category;
     private string current_search_term;
 
@@ -46,7 +47,6 @@ public class AppCenter.Views.SearchView : View {
             if (previous_package != null) {
                 show_package (previous_package);
             } else {
-                transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
                 set_visible_child (app_list_view);
                 viewing_package = false;
 
@@ -57,8 +57,11 @@ public class AppCenter.Views.SearchView : View {
                 }
             }
         } else {
-            search (current_search_term, null);
-            subview_entered (null, true);
+            if (current_category != null) {
+                search (current_search_term, null);
+            } else {
+                home_return_clicked ();
+            }
         }
     }
 
@@ -83,7 +86,7 @@ public class AppCenter.Views.SearchView : View {
         if (current_category != null) {
             subview_entered (_("Search Apps"), true, current_category.name);
         } else {
-            subview_entered (null, true);
+            subview_entered (_("Home"), true);
         }
     }
 
