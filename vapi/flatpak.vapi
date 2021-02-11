@@ -35,6 +35,12 @@ namespace Flatpak {
 		public Installation.for_path (GLib.File path, bool user, GLib.Cancellable? cancellable = null) throws GLib.Error;
 		public string get_config (string key, GLib.Cancellable? cancellable = null) throws GLib.Error;
 		public Flatpak.InstalledRef get_current_installed_app (string name, GLib.Cancellable? cancellable = null) throws GLib.Error;
+		[CCode (array_length = false, array_null_terminated = true)]
+		[Version (since = "1.5.0")]
+		public string[] get_default_languages () throws GLib.Error;
+		[CCode (array_length = false, array_null_terminated = true)]
+		[Version (since = "1.5.1")]
+		public string[] get_default_locales () throws GLib.Error;
 		[Version (since = "0.8")]
 		public unowned string get_display_name ();
 		[Version (since = "0.8")]
@@ -43,6 +49,7 @@ namespace Flatpak {
 		public bool get_is_user ();
 		[Version (since = "1.1")]
 		public bool get_min_free_space_bytes (out uint64 out_bytes) throws GLib.Error;
+		[Version (since = "1.1.1")]
 		public bool get_no_interaction ();
 		public GLib.File get_path ();
 		[Version (since = "0.8")]
@@ -50,10 +57,13 @@ namespace Flatpak {
 		public Flatpak.Remote get_remote_by_name (string name, GLib.Cancellable? cancellable = null) throws GLib.Error;
 		[Version (since = "0.8")]
 		public Flatpak.StorageType get_storage_type ();
-		public Flatpak.InstalledRef install (string remote_name, Flatpak.RefKind kind, string name, string? arch, string? branch, ProgressCallback cb, GLib.Cancellable? cancellable = null) throws GLib.Error;
+		[Version (deprecated = true, deprecated_since = "1.7.0")]
+		public Flatpak.InstalledRef install (string remote_name, Flatpak.RefKind kind, string name, string? arch, string? branch, GLib.Cancellable? cancellable = null) throws GLib.Error;
+		[Version (deprecated = true, deprecated_since = "1.7.0")]
 		public Flatpak.InstalledRef install_bundle (GLib.File file, GLib.Cancellable? cancellable = null) throws GLib.Error;
+		[Version (deprecated = true, deprecated_since = "1.7.0")]
 		public Flatpak.InstalledRef install_full (Flatpak.InstallFlags flags, string remote_name, Flatpak.RefKind kind, string name, string? arch, string? branch, [CCode (array_length = false, array_null_terminated = true)] string[]? subpaths, GLib.Cancellable? cancellable = null) throws GLib.Error;
-		[Version (since = "0.6.10")]
+		[Version (deprecated = true, deprecated_since = "1.7.0", since = "0.6.10")]
 		public Flatpak.RemoteRef install_ref_file (GLib.Bytes ref_file_data, GLib.Cancellable? cancellable = null) throws GLib.Error;
 		public bool launch (string name, string? arch, string? branch, string? commit, GLib.Cancellable? cancellable = null) throws GLib.Error;
 		[Version (since = "1.1")]
@@ -89,12 +99,15 @@ namespace Flatpak {
 		[CCode (has_construct_function = false)]
 		[Version (since = "0.8")]
 		public Installation.system_with_id (string? id, GLib.Cancellable? cancellable = null) throws GLib.Error;
-		public bool uninstall (Flatpak.RefKind kind, string name, string? arch, string? branch, ProgressCallback cb, GLib.Cancellable? cancellable = null) throws GLib.Error;
-		[Version (since = "0.11.8")]
+		[Version (deprecated = true, deprecated_since = "1.7.0")]
+		public bool uninstall (Flatpak.RefKind kind, string name, string? arch, string? branch, GLib.Cancellable? cancellable = null) throws GLib.Error;
+		[Version (deprecated = true, deprecated_since = "1.7.0", since = "0.11.8")]
 		public bool uninstall_full (Flatpak.UninstallFlags flags, Flatpak.RefKind kind, string name, string? arch, string? branch, GLib.Cancellable? cancellable = null) throws GLib.Error;
-		public Flatpak.InstalledRef update (Flatpak.UpdateFlags flags, Flatpak.RefKind kind, string name, string? arch, string? branch, ProgressCallback cb, GLib.Cancellable? cancellable = null) throws GLib.Error;
+		[Version (deprecated = true, deprecated_since = "1.7.0")]
+		public Flatpak.InstalledRef update (Flatpak.UpdateFlags flags, Flatpak.RefKind kind, string name, string? arch, string? branch, GLib.Cancellable? cancellable = null) throws GLib.Error;
 		public bool update_appstream_full_sync (string remote_name, string? arch, bool? out_changed, GLib.Cancellable? cancellable = null) throws GLib.Error;
 		public bool update_appstream_sync (string remote_name, string? arch, bool? out_changed, GLib.Cancellable? cancellable = null) throws GLib.Error;
+		[Version (deprecated = true, deprecated_since = "1.7.0")]
 		public Flatpak.InstalledRef update_full (Flatpak.UpdateFlags flags, Flatpak.RefKind kind, string name, string? arch, string? branch, [CCode (array_length = false, array_null_terminated = true)] string[]? subpaths, GLib.Cancellable? cancellable = null) throws GLib.Error;
 		[Version (since = "0.6.13")]
 		public bool update_remote_sync (string name, GLib.Cancellable? cancellable = null) throws GLib.Error;
@@ -105,6 +118,10 @@ namespace Flatpak {
 	public class InstalledRef : Flatpak.Ref {
 		[CCode (has_construct_function = false)]
 		protected InstalledRef ();
+		[Version (since = "1.4.2")]
+		public unowned GLib.HashTable<void*,void*>? get_appdata_content_rating ();
+		[Version (since = "1.4.2")]
+		public unowned string? get_appdata_content_rating_type ();
 		[Version (since = "1.1.2")]
 		public unowned string get_appdata_license ();
 		[Version (since = "1.1.2")]
@@ -125,6 +142,8 @@ namespace Flatpak {
 		[Version (since = "1.1.2")]
 		public GLib.Bytes load_appdata (GLib.Cancellable? cancellable = null) throws GLib.Error;
 		public GLib.Bytes load_metadata (GLib.Cancellable? cancellable = null) throws GLib.Error;
+		public GLib.HashTable<void*,void*> appdata_content_rating { get; construct; }
+		public string appdata_content_rating_type { get; construct; }
 		public string appdata_license { get; construct; }
 		public string appdata_name { get; construct; }
 		public string appdata_summary { get; construct; }
@@ -296,20 +315,32 @@ namespace Flatpak {
 	public class Transaction : GLib.Object, GLib.Initable {
 		[CCode (has_construct_function = false)]
 		protected Transaction ();
+		[Version (since = "1.5.1")]
+		public void abort_webflow (uint id);
 		public void add_default_dependency_sources ();
 		public void add_dependency_source (Flatpak.Installation installation);
 		public bool add_install (string remote, string @ref, [CCode (array_length = false, array_null_terminated = true)] string[]? subpaths) throws GLib.Error;
 		public bool add_install_bundle (GLib.File file, GLib.Bytes? gpg_data) throws GLib.Error;
 		public bool add_install_flatpakref (GLib.Bytes flatpakref_data) throws GLib.Error;
 		[Version (since = "1.3.3.")]
-		public bool add_rebase (string remote, string @ref, string subpaths, [CCode (array_length = false, array_null_terminated = true)] string[]? previous_ids) throws GLib.Error;
+		public bool add_rebase (string remote, string @ref, string? subpaths, [CCode (array_length = false, array_null_terminated = true)] string[]? previous_ids) throws GLib.Error;
+		[Version (since = "1.7.1")]
+		public void add_sideload_repo (string path);
 		public bool add_uninstall (string @ref) throws GLib.Error;
 		public bool add_update (string @ref, [CCode (array_length = false, array_null_terminated = true)] string[]? subpaths, string? commit) throws GLib.Error;
+		[Version (since = "1.5.2")]
+		public void complete_basic_auth (uint id, string user, string password, GLib.Variant options);
 		[CCode (has_construct_function = false)]
 		public Transaction.for_installation (Flatpak.Installation installation, GLib.Cancellable? cancellable = null) throws GLib.Error;
 		public Flatpak.TransactionOperation get_current_operation ();
 		public Flatpak.Installation get_installation ();
+		[Version (since = "1.5.1")]
+		public bool get_no_deploy ();
+		[Version (since = "1.5.1")]
+		public bool get_no_pull ();
 		public GLib.List<Flatpak.TransactionOperation> get_operations ();
+		[Version (since = "1.5.1")]
+		public unowned string get_parent_window ();
 		public bool is_empty ();
 		public virtual bool run (GLib.Cancellable? cancellable = null) throws GLib.Error;
 		public void set_default_arch (string arch);
@@ -319,17 +350,29 @@ namespace Flatpak {
 		public void set_disable_static_deltas (bool disable_static_deltas);
 		public void set_force_uninstall (bool force_uninstall);
 		public void set_no_deploy (bool no_deploy);
+		[Version (since = "1.7.3")]
+		public void set_no_interaction (bool no_interaction);
 		public void set_no_pull (bool no_pull);
+		[Version (since = "1.5.1")]
+		public void set_parent_window (string parent_window);
 		public void set_reinstall (bool reinstall);
 		public Flatpak.Installation installation { owned get; construct; }
-		public virtual signal bool add_new_remote (TransactionRemoteReason reason, string from_id, string remote_name, string url);
+		public virtual signal bool add_new_remote (Flatpak.TransactionRemoteReason reason, string from_id, string remote_name, string url);
+		[Version (since = "1.5.2")]
+		public virtual signal bool basic_auth_start (string remote, string realm, GLib.Variant options, int id);
 		public virtual signal int choose_remote_for_ref (string for_ref, string runtime_ref, [CCode (array_length = false, array_null_terminated = true)] string[] remotes);
 		public virtual signal void end_of_lifed (string @ref, string reason, string rebase);
 		public virtual signal bool end_of_lifed_with_rebase (string remote, string @ref, string reason, string rebased_to_ref, [CCode (array_length = false, array_null_terminated = true)] string[] previous_ids);
+		[Version (since = "1.7.4")]
+		public virtual signal void install_authenticator (string remote, string authenticator_ref);
 		public virtual signal void new_operation (Flatpak.TransactionOperation operation, Flatpak.TransactionProgress progress);
-		public virtual signal void operation_done (Flatpak.TransactionOperation operation, string commit, int details);
-		public virtual signal bool operation_error (Flatpak.TransactionOperation operation, GLib.Error error, TransactionErrorDetails detail);
+		public virtual signal void operation_done (Flatpak.TransactionOperation operation, string? commit, Flatpak.TransactionResult details);
+		public virtual signal bool operation_error (Flatpak.TransactionOperation operation, GLib.Error error, Flatpak.TransactionErrorDetails detail);
 		public virtual signal bool ready ();
+		[Version (since = "1.5.1")]
+		public virtual signal void webflow_done (GLib.Variant options, int id);
+		[Version (since = "1.5.1")]
+		public virtual signal bool webflow_start (string remote, string url, GLib.Variant options, int id);
 	}
 	[CCode (cheader_filename = "flatpak.h", type_id = "flatpak_transaction_operation_get_type ()")]
 	public class TransactionOperation : GLib.Object {
@@ -341,10 +384,14 @@ namespace Flatpak {
 		public uint64 get_download_size ();
 		[Version (since = "1.1.2")]
 		public uint64 get_installed_size ();
+		[Version (since = "1.7.3")]
+		public bool get_is_skipped ();
 		public unowned GLib.KeyFile get_metadata ();
 		public unowned GLib.KeyFile get_old_metadata ();
 		public Flatpak.TransactionOperationType get_operation_type ();
 		public unowned string get_ref ();
+		[Version (since = "1.7.3")]
+		public unowned GLib.GenericArray<Flatpak.TransactionOperation>? get_related_to_ops ();
 		public unowned string get_remote ();
 	}
 	[CCode (cheader_filename = "flatpak.h", type_id = "flatpak_transaction_progress_get_type ()")]
@@ -357,8 +404,8 @@ namespace Flatpak {
 		public int get_progress ();
 		[Version (since = "1.1.2")]
 		public uint64 get_start_time ();
-		public unowned string get_status ();
-		public void set_update_frequency (uint update_frequency);
+		public string get_status ();
+		public void set_update_frequency (uint update_interval);
 		public signal void changed ();
 	}
 	[CCode (cheader_filename = "flatpak.h", cprefix = "FLATPAK_INSTALL_FLAGS_", type_id = "flatpak_install_flags_get_type ()")]
@@ -381,7 +428,8 @@ namespace Flatpak {
 	[Version (since = "1.3.3")]
 	public enum QueryFlags {
 		NONE,
-		ONLY_CACHED
+		ONLY_CACHED,
+		ONLY_SIDELOADED
 	}
 	[CCode (cheader_filename = "flatpak.h", cprefix = "FLATPAK_REF_KIND_", type_id = "flatpak_ref_kind_get_type ()")]
 	public enum RefKind {
@@ -468,7 +516,10 @@ namespace Flatpak {
 		OUT_OF_SPACE,
 		WRONG_USER,
 		NOT_CACHED,
-		REF_NOT_FOUND;
+		REF_NOT_FOUND,
+		PERMISSION_DENIED,
+		AUTHENTICATION_FAILED,
+		NOT_AUTHORIZED;
 		public static GLib.Quark quark ();
 	}
 	[CCode (cheader_filename = "flatpak.h", cprefix = "FLATPAK_PORTAL_ERROR_")]

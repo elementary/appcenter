@@ -17,6 +17,18 @@
  * Authored by: David Hewitt <davidmhewitt@gmail.com>
  */
 
+public class AppCenterCore.FlatpakPackage : Package {
+    public weak Flatpak.Installation installation { public get; construct; }
+
+    public FlatpakPackage (Flatpak.Installation installation, Backend backend, AppStream.Component component) {
+        Object (
+            installation: installation,
+            backend: backend,
+            component: component
+        );
+    }
+}
+
 public class AppCenterCore.FlatpakBackend : Backend, Object {
     // AppStream data has to be 1 hour old before it's refreshed
     public const uint MAX_APPSTREAM_AGE = 3600;
@@ -25,7 +37,8 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     private Thread<bool> worker_thread;
 
     private Gee.HashMap<string, Package> package_list;
-    private AppStream.Pool appstream_pool;
+    private AppStream.Pool user_appstream_pool;
+    private AppStream.Pool system_appstream_pool;
 
     // This is OK as we're only using a single thread
     // This would have to be done differently if there were multiple workers in the pool
@@ -33,11 +46,14 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
     public bool working { public get; protected set; }
 
-    private string local_metadata_path;
+    private string user_metadata_path;
+    private string system_metadata_path;
 
-    private static Flatpak.Installation? installation;
+    public static Flatpak.Installation? user_installation { get; private set; }
+    public static Flatpak.Installation? system_installation { get; private set; }
 
-    private static GLib.FileMonitor installation_changed_monitor;
+    private static GLib.FileMonitor user_installation_changed_monitor;
+    private static GLib.FileMonitor system_installation_changed_monitor;
 
     private uint total_operations;
     private int current_operation;
@@ -71,23 +87,53 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
     construct {
         worker_thread = new Thread<bool> ("flatpak-worker", worker_func);
-        appstream_pool = new AppStream.Pool ();
-        appstream_pool.set_flags (AppStream.PoolFlags.READ_COLLECTION);
-        appstream_pool.set_cache_flags (AppStream.CacheFlags.NONE);
+        user_appstream_pool = new AppStream.Pool ();
+        user_appstream_pool.set_flags (AppStream.PoolFlags.READ_COLLECTION);
+        user_appstream_pool.set_cache_flags (AppStream.CacheFlags.NONE);
+
+        system_appstream_pool = new AppStream.Pool ();
+        system_appstream_pool.set_flags (AppStream.PoolFlags.READ_COLLECTION);
+        system_appstream_pool.set_cache_flags (AppStream.CacheFlags.NONE);
         package_list = new Gee.HashMap<string, Package> (null, null);
 
         // Monitor the FlatpakInstallation for changes (e.g. adding/removing remotes)
-        if (installation != null) {
+        if (user_installation != null) {
             try {
-                installation_changed_monitor = installation.create_monitor ();
+                user_installation_changed_monitor = user_installation.create_monitor ();
             } catch (Error e) {
-                warning ("Couldn't create Installation File Monitor : %s", e.message);
+                warning ("Couldn't user create Installation File Monitor : %s", e.message);
             }
 
-            installation_changed_monitor.changed.connect (() => {
+            user_installation_changed_monitor.changed.connect (() => {
+                if (!working) {
+                    debug ("Flatpak user installation changed.");
+
+                    // Clear the installed state of all packages as something may have changed we weren't
+                    // aware of
+                    foreach (var package in package_list.values) {
+                        if (package.state != Package.State.NOT_INSTALLED || package.installed) {
+                            package.clear_installed ();
+                        }
+                    }
+
+                    trigger_update_check.begin ();
+                }
+            });
+        } else {
+            warning ("Couldn't create user Installation File Monitor due to no installation");
+        }
+
+        if (system_installation != null) {
+            try {
+                system_installation_changed_monitor = system_installation.create_monitor ();
+            } catch (Error e) {
+                warning ("Couldn't create system Installation File Monitor : %s", e.message);
+            }
+
+            system_installation_changed_monitor.changed.connect (() => {
                 // Only trigger a cache refresh if we're not doing anything (i.e. its an external change)
                 if (!working) {
-                    debug ("Flatpak installation changed.");
+                    debug ("Flatpak system installation changed.");
 
                     // Clear the installed state of all packages as something may have changed we weren't
                     // aware of
@@ -103,13 +149,21 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 }
             });
         } else {
-            warning ("Couldn't create Installation File Monitor due to no installation");
+            warning ("Couldn't create system Installation File Monitor due to no installation");
         }
 
-        local_metadata_path = Path.build_filename (
+        user_metadata_path = Path.build_filename (
             Environment.get_user_cache_dir (),
             "io.elementary.appcenter",
-            "flatpak-metadata"
+            "flatpak-metadata",
+            "user"
+        );
+
+        system_metadata_path = Path.build_filename (
+            Environment.get_user_cache_dir (),
+            "io.elementary.appcenter",
+            "flatpak-metadata",
+            "system"
         );
 
         reload_appstream_pool ();
@@ -127,9 +181,15 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
     static construct {
         try {
-            installation = new Flatpak.Installation.user ();
+            user_installation = new Flatpak.Installation.user ();
         } catch (Error e) {
-            critical ("Unable to get flatpak installation : %s", e.message);
+            critical ("Unable to get flatpak user installation : %s", e.message);
+        }
+
+        try {
+            system_installation = new Flatpak.Installation.system ();
+        } catch (Error e) {
+            warning ("Unable to get flatpak system installation : %s", e.message);
         }
     }
 
@@ -155,18 +215,33 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     public async Gee.Collection<Package> get_installed_applications (Cancellable? cancellable = null) {
         var installed_apps = new Gee.HashSet<Package> ();
 
-        if (installation == null) {
+        if (user_installation == null && system_installation == null) {
             critical ("Couldn't get installed apps due to no flatpak installation");
             return installed_apps;
         }
 
         GLib.GenericArray<weak Flatpak.InstalledRef> installed_refs;
         try {
-            installed_refs = installation.list_installed_refs ();
+            installed_refs = user_installation.list_installed_refs ();
+            installed_apps.add_all (get_installed_apps_from_refs (false, installed_refs, cancellable));
         } catch (Error e) {
             critical ("Unable to get installed flatpaks: %s", e.message);
             return installed_apps;
         }
+
+        try {
+            installed_refs = system_installation.list_installed_refs ();
+            installed_apps.add_all (get_installed_apps_from_refs (true, installed_refs, cancellable));
+        } catch (Error e) {
+            critical ("Unable to get installed flatpaks: %s", e.message);
+            return installed_apps;
+        }
+
+        return installed_apps;
+    }
+
+    private Gee.Collection<Package> get_installed_apps_from_refs (bool system, GLib.GenericArray<weak Flatpak.InstalledRef> installed_refs, Cancellable? cancellable) {
+        var installed_apps = new Gee.HashSet<Package> ();
 
         for (int i = 0; i < installed_refs.length; i++) {
             if (cancellable.is_cancelled ()) {
@@ -175,7 +250,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
             unowned Flatpak.InstalledRef installed_ref = installed_refs[i];
 
-            var bundle_id = "%s/%s".printf (installed_ref.origin, installed_ref.format_ref ());
+            var bundle_id = generate_package_list_key (system, installed_ref.origin, installed_ref.format_ref ());
             var package = package_list[bundle_id];
             if (package != null) {
                 package.mark_installed ();
@@ -196,15 +271,14 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
         var category_array = new GLib.GenericArray<AppStream.Category> ();
         category_array.add (category);
-        AppStream.utils_sort_components_into_categories (appstream_pool.get_components (), category_array, true);
+        AppStream.utils_sort_components_into_categories (user_appstream_pool.get_components (), category_array, false);
+        AppStream.utils_sort_components_into_categories (system_appstream_pool.get_components (), category_array, false);
         components = category.get_components ();
 
         var apps = new Gee.TreeSet<AppCenterCore.Package> ();
         components.foreach ((comp) => {
-            var package = get_package_for_component_id (comp.get_id ());
-            if (package != null) {
-                apps.add (package);
-            }
+            var packages = get_packages_for_component_id (comp.get_id ());
+            apps.add_all (packages);
         });
 
         return apps;
@@ -212,20 +286,38 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
     public Gee.Collection<Package> search_applications (string query, AppStream.Category? category) {
         var apps = new Gee.TreeSet<AppCenterCore.Package> ();
-        GLib.GenericArray<weak AppStream.Component> comps = appstream_pool.search (query);
+        GLib.GenericArray<weak AppStream.Component> comps = user_appstream_pool.search (query);
         if (category == null) {
             comps.foreach ((comp) => {
-                var package = get_package_for_component_id (comp.get_id ());
-                if (package != null) {
-                    apps.add (package);
-                }
+                var packages = get_packages_for_component_id (comp.get_id ());
+                apps.add_all (packages);
             });
         } else {
             var cat_packages = get_applications_for_category (category);
             comps.foreach ((comp) => {
-                var package = get_package_for_component_id (comp.get_id ());
-                if (package != null && package in cat_packages) {
-                    apps.add (package);
+                var packages = get_packages_for_component_id (comp.get_id ());
+                foreach (var package in packages) {
+                    if (package in cat_packages) {
+                        apps.add (package);
+                    }
+                }
+            });
+        }
+
+        comps = system_appstream_pool.search (query);
+        if (category == null) {
+            comps.foreach ((comp) => {
+                var packages = get_packages_for_component_id (comp.get_id ());
+                apps.add_all (packages);
+            });
+        } else {
+            var cat_packages = get_applications_for_category (category);
+            comps.foreach ((comp) => {
+                var packages = get_packages_for_component_id (comp.get_id ());
+                foreach (var package in packages) {
+                    if (package in cat_packages) {
+                        apps.add (package);
+                    }
                 }
             });
         }
@@ -284,21 +376,37 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             return 0;
         }
 
-        var id = "%s/%s".printf (package.component.get_origin (), bundle.get_id ());
+        var fp_package = package as FlatpakPackage;
+        if (fp_package == null) {
+            return 0;
+        }
+
+        bool system = fp_package.installation == system_installation;
+
+        var id = generate_package_list_key (system, package.component.get_origin (), bundle.get_id ());
         return yield get_download_size_by_id (id, cancellable, is_update);
     }
 
     public async uint64 get_download_size_by_id (string id, Cancellable? cancellable, bool is_update = false) throws GLib.Error {
+        bool system;
+        string origin, bundle_id;
+        var split_success = get_package_list_key_parts (id, out system, out origin, out bundle_id);
+        if (!split_success) {
+            return 0;
+        }
+
+        unowned Flatpak.Installation? installation = null;
+        if (system) {
+            installation = system_installation;
+        } else {
+            installation = user_installation;
+        }
+
         if (installation == null) {
             return 0;
         }
 
-        var parts = id.split ("/", 2);
-        if (parts.length != 2) {
-            return 0;
-        }
-
-        var flatpak_ref = Flatpak.Ref.parse (parts[1]);
+        var flatpak_ref = Flatpak.Ref.parse (bundle_id);
         bool is_app = flatpak_ref.kind == Flatpak.RefKind.APP;
 
         uint64 download_size = 0;
@@ -308,9 +416,9 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         try {
             var transaction = new Flatpak.Transaction.for_installation (installation, cancellable);
             if (is_update) {
-                transaction.add_update (parts[1], null, null);
+                transaction.add_update (bundle_id, null, null);
             } else {
-                transaction.add_install (parts[0], parts[1], null);
+                transaction.add_install (origin, bundle_id, null);
             }
 
             transaction.add_new_remote.connect ((reason, from_id, remote_name, url) => {
@@ -369,7 +477,8 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     }
 
     public async bool is_package_installed (Package package) throws GLib.Error {
-        if (installation == null) {
+        var fp_package = package as FlatpakPackage;
+        if (fp_package == null || fp_package.installation == null) {
             critical ("Could not check installed state of package due to no flatpak installation");
             return false;
         }
@@ -379,13 +488,15 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             return false;
         }
 
-        var key = "%s/%s".printf (package.component.get_origin (), bundle.get_id ());
+        bool system = fp_package.installation == system_installation;
 
-        var installed_refs = installation.list_installed_refs ();
+        var key = generate_package_list_key (system, package.component.get_origin (), bundle.get_id ());
+
+        var installed_refs = fp_package.installation.list_installed_refs ();
         for (int j = 0; j < installed_refs.length; j++) {
             unowned Flatpak.InstalledRef installed_ref = installed_refs[j];
 
-            var bundle_id = "%s/%s".printf (installed_ref.origin, installed_ref.format_ref ());
+            var bundle_id = generate_package_list_key (system, installed_ref.origin, installed_ref.format_ref ());
             if (key == bundle_id) {
                 return true;
             }
@@ -412,7 +523,56 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         var args = (RefreshCacheArgs)job.args;
         var cancellable = args.cancellable;
 
-        var dest_folder = File.new_for_path (local_metadata_path);
+        if (user_installation == null && system_installation == null) {
+            critical ("Error refreshing flatpak cache due to no installation");
+            return;
+        }
+
+        GLib.GenericArray<weak Flatpak.Remote> remotes = null;
+
+        if (user_installation != null) {
+            try {
+                remotes = user_installation.list_remotes ();
+                preprocess_metadata (false, remotes, cancellable);
+            } catch (Error e) {
+                critical ("Error getting user flatpak remotes: %s", e.message);
+            }
+        }
+
+        if (system_installation != null) {
+            try {
+                remotes = system_installation.list_remotes ();
+                preprocess_metadata (true, remotes, cancellable);
+            } catch (Error e) {
+                warning ("Error getting system flatpak remotes: %s", e.message);
+            }
+        }
+
+        reload_appstream_pool ();
+        BackendAggregator.get_default ().cache_flush_needed ();
+
+        job.result = Value (typeof (bool));
+        job.result.set_boolean (true);
+        job.results_ready ();
+    }
+
+    private void preprocess_metadata (bool system, GLib.GenericArray<weak Flatpak.Remote> remotes, Cancellable? cancellable) {
+        unowned Flatpak.Installation installation;
+
+        unowned string dest_path;
+        if (system) {
+            dest_path = system_metadata_path;
+            installation = system_installation;
+        } else {
+            dest_path = user_metadata_path;
+            installation = user_installation;
+        }
+
+        if (installation == null) {
+            return;
+        }
+
+        var dest_folder = File.new_for_path (dest_path);
         if (!dest_folder.query_exists ()) {
             try {
                 dest_folder.make_directory_with_parents ();
@@ -422,19 +582,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             }
         }
 
-        delete_folder_contents (dest_folder, cancellable);
-
-        if (installation == null) {
-            critical ("Error refreshing flatpak cache due to no installation");
-            return;
-        }
-
-        GLib.GenericArray<weak Flatpak.Remote> remotes = null;
-        try {
-            remotes = installation.list_remotes ();
-        } catch (Error e) {
-            critical ("Error getting flatpak remotes: %s", e.message);
-        }
+        delete_folder_contents (dest_folder);
 
         for (int i = 0; i < remotes.length; i++) {
             unowned Flatpak.Remote remote = remotes[i];
@@ -528,48 +676,94 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 continue;
             }
         }
-
-        reload_appstream_pool ();
-        BackendAggregator.get_default ().cache_flush_needed ();
-
-        job.result = Value (typeof (bool));
-        job.result.set_boolean (true);
-        job.results_ready ();
     }
 
     private void reload_appstream_pool () {
-        appstream_pool.clear_metadata_locations ();
-        appstream_pool.add_metadata_location (local_metadata_path);
-        debug ("Loading pool");
+        var new_package_list = new Gee.HashMap<string, Package> ();
+
+        user_appstream_pool.clear_metadata_locations ();
+        user_appstream_pool.add_metadata_location (user_metadata_path);
 
         try {
-            appstream_pool.load ();
+            debug ("Loading flatpak user pool");
+            user_appstream_pool.load ();
         } catch (Error e) {
             warning ("Errors found in flatpak appdata, some components may be incomplete/missing: %s", e.message);
         } finally {
-            var new_package_list = new Gee.HashMap<string, Package> ();
             var comp_validator = ComponentValidator.get_default ();
-            appstream_pool.get_components ().foreach ((comp) => {
+            user_appstream_pool.get_components ().foreach ((comp) => {
                 if (!comp_validator.validate (comp)) {
                     return;
                 }
 
                 var bundle = comp.get_bundle (AppStream.BundleKind.FLATPAK);
                 if (bundle != null) {
-                    var key = "%s/%s".printf (comp.get_origin (), bundle.get_id ());
+                    var key = generate_package_list_key (false, comp.get_origin (), bundle.get_id ());
                     var package = package_list[key];
                     if (package != null) {
                         package.replace_component (comp);
                     } else {
-                        package = new Package (this, comp);
+                        package = new FlatpakPackage (user_installation, this, comp);
                     }
 
                     new_package_list[key] = package;
                 }
             });
-
-            package_list = new_package_list;
         }
+
+        system_appstream_pool.clear_metadata_locations ();
+        system_appstream_pool.add_metadata_location (system_metadata_path);
+
+        try {
+            debug ("Loading flatpak system pool");
+            system_appstream_pool.load ();
+        } catch (Error e) {
+            warning ("Errors found in flatpak appdata, some components may be incomplete/missing: %s", e.message);
+        } finally {
+            var comp_validator = ComponentValidator.get_default ();
+            system_appstream_pool.get_components ().foreach ((comp) => {
+                if (!comp_validator.validate (comp)) {
+                    return;
+                }
+
+                var bundle = comp.get_bundle (AppStream.BundleKind.FLATPAK);
+                if (bundle != null) {
+                    var key = generate_package_list_key (true, comp.get_origin (), bundle.get_id ());
+                    var package = package_list[key];
+                    if (package != null) {
+                        package.replace_component (comp);
+                    } else {
+                        package = new FlatpakPackage (system_installation, this, comp);
+                    }
+
+                    new_package_list[key] = package;
+                }
+            });
+        }
+
+        package_list = new_package_list;
+    }
+
+    private string generate_package_list_key (bool system, string origin, string bundle_id) {
+        unowned string installation = system ? "system" : "user";
+        return "%s/%s/%s".printf (installation, origin, bundle_id);
+    }
+
+    public static bool get_package_list_key_parts (string key, out bool? system, out string? origin, out string? bundle_id) {
+        system = null;
+        origin = null;
+        bundle_id = null;
+
+        string[] parts = key.split ("/", 3);
+        if (parts.length != 3) {
+            return false;
+        }
+
+        system = parts[0] == "system";
+        origin = parts[1];
+        bundle_id = parts[2];
+
+        return true;
     }
 
     private void delete_folder_contents (File folder, Cancellable? cancellable = null) {
@@ -653,6 +847,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     private void install_package_internal (Job job) {
         var args = (InstallPackageArgs)job.args;
         var package = args.package;
+        var fp_package = package as FlatpakPackage;
         unowned ChangeInformation.ProgressCallback cb = args.cb;
         var cancellable = args.cancellable;
 
@@ -664,8 +859,8 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             return;
         }
 
-        if (installation == null) {
-            critical ("Error getting default flatpak installation");
+        if (fp_package == null || fp_package.installation == null) {
+            critical ("Error getting flatpak installation");
             job.result = false;
             job.results_ready ();
             return;
@@ -673,7 +868,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
         Flatpak.Transaction transaction;
         try {
-            transaction = new Flatpak.Transaction.for_installation (installation, cancellable);
+            transaction = new Flatpak.Transaction.for_installation (fp_package.installation, cancellable);
         } catch (Error e) {
             critical ("Error creating transaction for flatpak install: %s", e.message);
             job.result = Value (typeof (bool));
@@ -782,6 +977,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     private void remove_package_internal (Job job) {
         var args = (RemovePackageArgs)job.args;
         var package = args.package;
+        var fp_package = package as FlatpakPackage;
         unowned ChangeInformation.ProgressCallback cb = args.cb;
         var cancellable = args.cancellable;
 
@@ -804,40 +1000,98 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             return;
         }
 
-        if (installation == null) {
-            critical ("Error getting default flatpak installation for removal");
+        if (fp_package == null || fp_package.installation == null) {
+            critical ("Error getting flatpak installation for removal");
             job.result = false;
             job.results_ready ();
             return;
         }
 
+        Flatpak.Transaction transaction;
         try {
-            installation.uninstall (
-                Flatpak.RefKind.APP,
-                flatpak_ref.name,
-                flatpak_ref.arch,
-                flatpak_ref.branch,
-                (status, progress, estimating) => {
-                    cb (true, _("Uninstalling"), (double)progress / 100.0f, ChangeInformation.Status.RUNNING);
-                },
-                cancellable
-            );
+            transaction = new Flatpak.Transaction.for_installation (fp_package.installation, cancellable);
+        } catch (Error e) {
+            critical ("Error creating transaction for flatpak removal: %s", e.message);
+            job.result = Value (typeof (bool));
+            job.result.set_boolean (false);
+            job.results_ready ();
+            return;
+        }
 
-            cb (false, _("Finishing"), 1.0f, ChangeInformation.Status.FINISHED);
+        try {
+            transaction.add_uninstall (bundle.get_id ());
+        } catch (Error e) {
+            critical ("Error setting up transaction for flatpak removal: %s", e.message);
+            job.result = Value (typeof (bool));
+            job.result.set_boolean (false);
+            job.error = e;
+            job.results_ready ();
+            return;
+        }
+
+        transaction.set_no_pull (true);
+
+        transaction.new_operation.connect ((operation, progress) => {
+            current_operation++;
+
+            progress.changed.connect (() => {
+                if (cancellable.is_cancelled ()) {
+                    return;
+                }
+
+                // Calculate the progress contribution of the previous operations not including the current, hence -1
+                double existing_progress = (double)(current_operation - 1) / (double)total_operations;
+                double this_op_progress = (double)progress.get_progress () / 100.0f / (double)total_operations;
+                cb (true, _("Uninstalling"), existing_progress + this_op_progress, ChangeInformation.Status.RUNNING);
+            });
+        });
+
+        bool success = false;
+
+        transaction.operation_error.connect ((operation, e, detail) => {
+            warning ("Flatpak removal failed: %s (detail: %d)", e.message, detail);
+            if (e is GLib.IOError.CANCELLED) {
+                cb (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);
+                success = true;
+            }
+
+            // Only cancel the transaction if this is fatal
+            var should_continue = detail == Flatpak.TransactionErrorDetails.NON_FATAL;
+            if (!should_continue) {
+                job.error = e;
+            }
+
+            return should_continue;
+        });
+
+        transaction.operation_done.connect ((operation, commit, details) => {
+            success = true;
+        });
+
+        transaction.ready.connect (() => {
+            total_operations = transaction.get_operations ().length ();
+            return true;
+        });
+
+        current_operation = 0;
+
+        try {
+            transaction.run (cancellable);
         } catch (Error e) {
             if (e is GLib.IOError.CANCELLED) {
                 cb (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);
+                success = true;
             } else {
-                warning ("Flatpak removal failed: %s", e.message);
-                job.result = Value (typeof (bool));
-                job.result.set_boolean (false);
-                job.results_ready ();
-                return;
+                success = false;
+                // Don't overwrite any previous errors as the first is probably most important
+                if (job.error != null) {
+                    job.error = e;
+                }
             }
         }
 
         job.result = Value (typeof (bool));
-        job.result.set_boolean (true);
+        job.result.set_boolean (success);
         job.results_ready ();
     }
 
@@ -858,45 +1112,88 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     private void update_package_internal (Job job) {
         var args = (UpdatePackageArgs)job.args;
         var package = args.package;
-        unowned ChangeInformation.ProgressCallback cb = args.cb;
+        ChangeInformation.ProgressCallback cb = (owned)args.cb;
         var cancellable = args.cancellable;
 
-        if (installation == null) {
-            critical ("Error getting default flatpak installation");
+        if (user_installation == null && system_installation == null) {
+            critical ("Error getting flatpak installation");
             job.result = false;
             job.results_ready ();
             return;
         }
 
-        Flatpak.Transaction transaction;
-        try {
-            transaction = new Flatpak.Transaction.for_installation (installation, cancellable);
-        } catch (Error e) {
-            critical ("Error creating transaction for flatpak updates: %s", e.message);
-            job.result = Value (typeof (bool));
-            job.result.set_boolean (false);
-            job.results_ready ();
-            return;
-        }
+        string[] user_updates = {};
+        string[] system_updates = {};
 
         foreach (var updatable in package.change_information.updatable_packages[this]) {
-            var parts = updatable.split ("/", 2);
-            if (parts.length != 2) {
+            bool system = false;
+            string bundle_id = "";
+
+            var split_success = get_package_list_key_parts (updatable, out system, null, out bundle_id);
+            if (!split_success) {
                 job.result = Value (typeof (bool));
                 job.result.set_boolean (false);
                 job.results_ready ();
                 return;
             }
 
-            try {
-                transaction.add_update (parts[1], null, null);
-            } catch (Error e) {
-                critical ("Error setting up transaction for flatpak update: %s", e.message);
-                job.result = Value (typeof (bool));
-                job.result.set_boolean (false);
-                job.results_ready ();
-                return;
+            if (system) {
+                system_updates += bundle_id;
+            } else {
+                user_updates += bundle_id;
             }
+        }
+
+        uint transactions = 0;
+        bool run_system = false, run_user = false;
+        if (system_updates.length > 0) {
+            run_system = true;
+            transactions++;
+        }
+
+        if (user_updates.length > 0) {
+            run_user = true;
+            transactions++;
+        }
+
+        bool success = true;
+
+        if (run_system) {
+            if (!run_updates_transaction (true, system_updates, (owned)cb, cancellable)) {
+                success = false;
+            }
+        }
+
+        if (run_user) {
+            if (!run_updates_transaction (false, user_updates, (owned)cb, cancellable)) {
+                success = false;
+            }
+        }
+
+        job.result = Value (typeof (bool));
+        job.result.set_boolean (success);
+        job.results_ready ();
+    }
+
+    private bool run_updates_transaction (bool system, string[] ids, owned ChangeInformation.ProgressCallback cb, Cancellable? cancellable) {
+        Flatpak.Transaction transaction;
+        try {
+            if (system) {
+                transaction = new Flatpak.Transaction.for_installation (system_installation, cancellable);
+            } else {
+                transaction = new Flatpak.Transaction.for_installation (user_installation, cancellable);
+            }
+        } catch (Error e) {
+            critical ("Error creating transaction for flatpak updates: %s", e.message);
+            return false;
+        }
+
+        try {
+            foreach (unowned string bundle_id in ids) {
+                transaction.add_update (bundle_id, null, null);
+            }
+        } catch (Error e) {
+            critical ("Error adding update to flatpak transaction: %s", e.message);
         }
 
         transaction.choose_remote_for_ref.connect ((@ref, runtime_ref, remotes) => {
@@ -960,9 +1257,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             }
         }
 
-        job.result = Value (typeof (bool));
-        job.result.set_boolean (success);
-        job.results_ready ();
+        return success;
     }
 
     public async bool update_package (Package package, owned ChangeInformation.ProgressCallback cb, Cancellable cancellable) throws GLib.Error {
@@ -982,22 +1277,38 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     public async Gee.ArrayList<string> get_updates (Cancellable? cancellable = null) {
         var updatable_ids = new Gee.ArrayList<string> ();
 
-        if (installation == null) {
-            critical ("Unable to get default flatpak installation when checking for updates");
+        if (user_installation == null && system_installation == null) {
+            critical ("Unable to get flatpak installation when checking for updates");
             return updatable_ids;
         }
 
         GLib.GenericArray<weak Flatpak.InstalledRef> update_refs;
-        try {
-            update_refs = installation.list_installed_refs_for_update (cancellable);
-        } catch (Error e) {
-            critical ("Unable to get list of updatable flatpaks: %s", e.message);
-            return updatable_ids;
+
+        if (user_installation != null) {
+            try {
+                update_refs = user_installation.list_installed_refs_for_update (cancellable);
+                for (int i = 0; i < update_refs.length; i++) {
+                    unowned Flatpak.InstalledRef updatable_ref = update_refs[i];
+                    updatable_ids.add (generate_package_list_key (false, updatable_ref.origin, updatable_ref.format_ref ()));
+                }
+            } catch (Error e) {
+                critical ("Unable to get list of updatable flatpaks: %s", e.message);
+                return updatable_ids;
+            }
         }
 
-        for (int i = 0; i < update_refs.length; i++) {
-            unowned Flatpak.InstalledRef updatable_ref = update_refs[i];
-            updatable_ids.add ("%s/%s".printf (updatable_ref.origin, updatable_ref.format_ref ()));
+        if (system_installation != null) {
+            try {
+                update_refs = system_installation.list_installed_refs_for_update (cancellable);
+
+                for (int i = 0; i < update_refs.length; i++) {
+                    unowned Flatpak.InstalledRef updatable_ref = update_refs[i];
+                    updatable_ids.add (generate_package_list_key (true, updatable_ref.origin, updatable_ref.format_ref ()));
+                }
+            } catch (Error e) {
+                critical ("Unable to get list of updatable flatpaks: %s", e.message);
+                return updatable_ids;
+            }
         }
 
         return updatable_ids;

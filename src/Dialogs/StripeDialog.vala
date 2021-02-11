@@ -17,7 +17,7 @@
 * Boston, MA 02110-1301 USA
 */
 
-public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
+public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
     public signal void download_requested ();
 
     private const string HOUSTON_URI = "https://developer.elementary.io/api/payment/%s";
@@ -186,14 +186,12 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         content_area.add (layouts);
         content_area.show_all ();
 
-        var privacy_policy_link = new Gtk.LinkButton.with_label ("https://stripe.com/privacy", _("Privacy Policy"));
-        privacy_policy_link.show ();
+        var privacy_policy_link = new Gtk.LinkButton.with_label ("https://stripe.com/privacy", _("Privacy Policy")) {
+            halign = Gtk.Align.START,
+            hexpand = true
+        };
 
-        var action_area = (Gtk.ButtonBox) get_action_area ();
-        action_area.margin = 5;
-        action_area.margin_top = 14;
-        action_area.add (privacy_policy_link);
-        action_area.set_child_secondary (privacy_policy_link, true);
+        add_action_widget (privacy_policy_link, Gtk.ResponseType.NONE);
 
         cancel_button = (Gtk.Button) add_button (_("Cancel"), Gtk.ResponseType.CLOSE);
 

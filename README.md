@@ -1,6 +1,5 @@
 # AppCenter
 [![Translation status](https://l10n.elementary.io/widgets/appcenter/-/svg-badge.svg)](https://l10n.elementary.io/projects/appcenter/?utm_source=widget)
-[![Bountysource](https://www.bountysource.com/badge/tracker?tracker_id=57667267)](https://www.bountysource.com/teams/elementary/issues?tracker_ids=57667267)
 
 An open, pay-what-you-want app store for indie developers.
 
@@ -15,7 +14,7 @@ You'll need the following dependencies:
 * libgee-0.8-dev
 * libgranite-dev (>=5.2.5)
 * libgtk-3-dev
-* libhandy-0.0-dev
+* libhandy-1-dev
 * libjson-glib-dev
 * libpackagekit-glib2-dev
 * libpolkit-gobject-1-dev
