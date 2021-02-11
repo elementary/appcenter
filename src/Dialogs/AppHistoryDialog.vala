@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public class AppCenter.Widgets.AppHistoryDialog : Gtk.Dialog {
+public class AppCenter.Widgets.AppHistoryDialog : Granite.Dialog {
     public AppHistoryDialog () {
         Object (
             deletable: false,
@@ -88,9 +88,6 @@ public class AppCenter.Widgets.AppHistoryDialog : Gtk.Dialog {
         grid.add (frame);
         grid.add (filter_check_button);
         grid.show_all ();
-
-        var action_area = (Gtk.ButtonBox) get_action_area ();
-        action_area.margin = 6;
 
         get_content_area ().add (grid);
         add_button (_("Cancel"), Gtk.ResponseType.CANCEL);
