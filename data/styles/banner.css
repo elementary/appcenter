@@ -49,23 +49,14 @@
 
 .banner button {
     background-color: @banner_fg_color;
+    background-image: none;
     border: none;
-    box-shadow:
-        inset -1px 0 0 0 alpha(@banner_bg_color, 0.25),
-        inset 1px 0 0 0 alpha(@banner_bg_color, 0.25),
-        inset 0 -1px 0 0 alpha(@banner_bg_color, 0.25),
-        inset 0 1px 0 0 alpha(@banner_bg_color, 0.25);
+    box-shadow: none;
     color: @banner_bg_color;
     font-size: 11pt;
     font-weight: 600;
 }
 
-.banner .linked button:last-child {
-    box-shadow:
-        inset -1px 0 0 0 alpha(@banner_bg_color, 0.25),
-        inset 0 -1px 0 0 alpha(@banner_bg_color, 0.25),
-        inset 0 1px 0 0 alpha(@banner_bg_color, 0.25);
-}
 
 .banner button:active,
 .banner button:checked {
