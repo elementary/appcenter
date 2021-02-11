@@ -53,7 +53,6 @@ dependencies = [
 config_dir = join_paths(get_option('sysconfdir'), meson.project_name())
 conf_data = configuration_data()
 conf_data.set('PROJECT_NAME', meson.project_name())
-conf_data.set('DESKTOP_ICON', get_option('icon'))
 conf_data.set('EXEC_NAME', meson.project_name())
 conf_data.set('GETTEXT_PACKAGE', meson.project_name())
 conf_data.set('APP_NAME', get_option('name'))
