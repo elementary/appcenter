@@ -138,9 +138,30 @@ public class AppCenter.App : Gtk.Application {
     }
 
     public override void activate () {
+        var granite_settings = Granite.Settings.get_default ();
+        var gtk_settings = Gtk.Settings.get_default ();
+
+        gtk_settings.gtk_application_prefer_dark_theme = granite_settings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK;
+
+        granite_settings.notify["prefers-color-scheme"].connect (() => {
+            gtk_settings.gtk_application_prefer_dark_theme = granite_settings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK;
+        });
+
         var provider = new Gtk.CssProvider ();
         provider.load_from_resource ("io/elementary/appcenter/application.css");
-        Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        Gtk.StyleContext.add_provider_for_screen (
+          Gdk.Screen.get_default (),
+          provider,
+          Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+        );
+
+        var fallback_provider = new Gtk.CssProvider ();
+        fallback_provider.load_from_resource ("io/elementary/appcenter/fallback.css");
+        Gtk.StyleContext.add_provider_for_screen (
+          Gdk.Screen.get_default (),
+          fallback_provider,
+          Gtk.STYLE_PROVIDER_PRIORITY_FALLBACK
+        );
 
         var client = AppCenterCore.Client.get_default ();
 
@@ -265,13 +286,15 @@ public class AppCenter.App : Gtk.Application {
                     if (main_window != null) {
                         var win = main_window.get_window ();
                         if (win != null && (win.get_state () & Gdk.WindowState.FOCUSED) != 0) {
+                            main_window.send_installed_toast (package);
+
                             break;
                         }
                     }
 
-                    var notification = new Notification (_("Application installed"));
-                    notification.set_body (_("%s has been successfully installed").printf (package.get_name ()));
-                    notification.set_icon (new ThemedIcon ("system-software-install"));
+                    var notification = new Notification (_("The app has been installed"));
+                    notification.set_body (_("“%s” has been installed").printf (package.get_name ()));
+                    notification.set_icon (new ThemedIcon (Build.PROJECT_NAME));
                     notification.set_default_action ("app.open-application");
 
                     send_notification ("installed", notification);
@@ -281,12 +304,8 @@ public class AppCenter.App : Gtk.Application {
                         break;
                     }
 
-                    var dialog = new Granite.MessageDialog.with_image_from_icon_name (
-                        _("There Was An Error Installing %s.").printf (package.get_name ()),
-                        format_error_message (error.message),
-                        "dialog-error",
-                        Gtk.ButtonsType.CLOSE
-                    );
+                    var dialog = new InstallFailDialog (package, error);
+
                     dialog.show_all ();
                     dialog.run ();
                     dialog.destroy ();

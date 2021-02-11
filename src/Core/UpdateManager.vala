@@ -46,6 +46,13 @@ public class AppCenterCore.UpdateManager : Object {
         var apps_with_updates = new Gee.TreeSet<Package> ();
         uint count = 0;
 
+        // Clear any packages previously marked as updatable
+        var installed_packages = yield BackendAggregator.get_default ().get_installed_applications ();
+        foreach (var installed_package in installed_packages) {
+            installed_package.change_information.clear_update_info ();
+            installed_package.update_state ();
+        }
+
         Pk.Results pk_updates;
         unowned PackageKitBackend client = PackageKitBackend.get_default ();
         try {
@@ -68,7 +75,6 @@ public class AppCenterCore.UpdateManager : Object {
                 debug ("Added %s to app updates", pkg_name);
                 apps_with_updates.add (appcenter_package);
                 appcenter_package.latest_version = pk_package.get_version ();
-                appcenter_package.change_information.clear_update_info ();
             } else {
                 debug ("Added %s to OS updates", pkg_name);
                 os_count++;
@@ -96,6 +102,7 @@ public class AppCenterCore.UpdateManager : Object {
                 debug ("Added %s to app updates", flatpak_update);
                 apps_with_updates.add (appcenter_package);
                 appcenter_package.change_information.updatable_packages.@set (fp_client, flatpak_update);
+                appcenter_package.update_state ();
                 try {
                     appcenter_package.change_information.size = yield fp_client.get_download_size (appcenter_package, null, true);
                 } catch (Error e) {
@@ -103,11 +110,23 @@ public class AppCenterCore.UpdateManager : Object {
                 }
             } else {
                 debug ("Added %s to OS updates", flatpak_update);
-                var name = flatpak_update.split ("/")[2];
+                string bundle_id;
+                if (!FlatpakBackend.get_package_list_key_parts (flatpak_update, null, null, out bundle_id)) {
+                    continue;
+                }
+
+                Flatpak.Ref @ref;
+                try {
+                    @ref = Flatpak.Ref.parse (bundle_id);
+                } catch (Error e) {
+                    warning ("Error parsing flatpak bundle ID: %s", e.message);
+                    continue;
+                }
+
                 os_count++;
                 os_desc += Markup.printf_escaped (
                     "<li>%s\n\t%s</li>",
-                    name,
+                    @ref.get_name (),
                     _("Flatpak runtime")
                 );
 
@@ -175,7 +194,7 @@ public class AppCenterCore.UpdateManager : Object {
                 string body = _("Please restart your system to finalize updates");
                 var notification = new Notification (title);
                 notification.set_body (body);
-                notification.set_icon (new ThemedIcon ("system-software-install"));
+                notification.set_icon (new ThemedIcon (Build.PROJECT_NAME));
                 notification.set_priority (NotificationPriority.URGENT);
                 notification.set_default_action ("app.open-application");
                 Application.get_default ().send_notification ("restart", notification);

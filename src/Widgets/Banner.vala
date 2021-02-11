@@ -33,6 +33,8 @@ const int MILLISECONDS_BETWEEN_BANNER_ITEMS = 5000;
 
 namespace AppCenter.Widgets {
     public class Banner : Gtk.Button {
+        public Switcher switcher { get; construct; }
+
         public const int TRANSITION_DURATION_MILLISECONDS = 500;
 
         private class BannerWidget : Gtk.Grid {
@@ -89,7 +91,7 @@ namespace AppCenter.Widgets {
                 if (has_package) {
                     icon.gicon = package.get_icon (128, icon.get_scale_factor ());
                 } else {
-                    icon.icon_name = "system-software-install";
+                    icon.icon_name = Build.PROJECT_NAME;
                 }
 
                 attach (icon, 0, 0, 1, 3);
@@ -125,18 +127,39 @@ namespace AppCenter.Widgets {
 
         private BannerWidget? brand_widget;
         private Gtk.Stack stack;
-        private Switcher switcher;
         private int current_package_index;
         private int next_free_package_index = 1;
         private uint timer_id;
 
+        private static Gtk.CssProvider style_provider;
+        private unowned Gtk.StyleContext style_context;
+
+        public Banner (Switcher switcher) {
+            Object (switcher: switcher);
+        }
+
+        static construct {
+            style_provider = new Gtk.CssProvider ();
+            style_provider.load_from_resource ("io/elementary/appcenter/banner.css");
+        }
+
         construct {
             height_request = 300;
+
+            style_context = get_style_context ();
+            style_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            style_context.add_class ("banner");
+            style_context.add_class (Granite.STYLE_CLASS_CARD);
+            style_context.add_class (Granite.STYLE_CLASS_ROUNDED);
+            style_context.remove_class (Gtk.STYLE_CLASS_BUTTON);
 
             stack = new Gtk.Stack ();
             stack.valign = Gtk.Align.CENTER;
             stack.transition_duration = TRANSITION_DURATION_MILLISECONDS;
             stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
+
+            switcher.set_stack (stack);
+
             add (stack);
 
             set_default_brand ();
@@ -146,13 +169,9 @@ namespace AppCenter.Widgets {
                    timer_id = 0;
                }
             });
-        }
 
-        public Banner (Switcher switcher) {
-            this.switcher = switcher;
-            this.switcher.set_stack (stack);
-            this.switcher.on_stack_changed.connect (() => {
-                set_background ((stack.visible_child as BannerWidget).package);
+            switcher.on_stack_changed.connect (() => {
+                set_background (((BannerWidget) stack.visible_child).package);
                 if (timer_id > 0) {
                     Source.remove (timer_id);
                     timer_id = 0;
@@ -206,7 +225,7 @@ namespace AppCenter.Widgets {
             }
 
             stack.set_visible_child_name (current_package_index.to_string ());
-            set_background ((stack.visible_child as BannerWidget).package);
+            set_background (((BannerWidget) stack.visible_child).package);
             switcher.update_selected ();
         }
 
@@ -217,7 +236,7 @@ namespace AppCenter.Widgets {
 
             current_package_index = 1;
             stack.set_visible_child_name (current_package_index.to_string ());
-            set_background ((stack.visible_child as BannerWidget).package);
+            set_background (((BannerWidget) stack.visible_child).package);
             switcher.update_selected ();
 
             if (timer_id > 0) {
@@ -262,10 +281,7 @@ namespace AppCenter.Widgets {
                 var colored_css = BANNER_STYLE_CSS.printf (background_color, foreground_color, stack.transition_duration);
                 provider.load_from_data (colored_css, colored_css.length);
 
-                var context = get_style_context ();
-                context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-                context.add_class ("banner");
-                context.remove_class ("button");
+                style_context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
             } catch (GLib.Error e) {
                 critical (e.message);
             }

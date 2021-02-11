@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2014-2016 elementary LLC. (https://elementary.io)
+ * Copyright (c) 2014-2020 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,7 +17,7 @@
  * Authored by: Corentin Noël <corentin@elementary.io>
  */
 
-public class AppCenter.Views.InstalledView : View {
+public class AppCenter.Views.InstalledView : AbstractView {
     private Cancellable refresh_cancellable;
 
     private AppListUpdateView app_list_view;

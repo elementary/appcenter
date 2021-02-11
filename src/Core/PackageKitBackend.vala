@@ -42,6 +42,8 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 
     public bool working { public get; protected set; }
 
+    private static Polkit.Permission? update_permission = null;
+
     // The aptcc backend included in PackageKit < 1.1.10 wasn't able to support multiple packages
     // passed to the search_names method at once. If we have a new enough version we can enable
     // some optimisations when looking up packages
@@ -195,9 +197,28 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
             var time_since_last_action = (new DateTime.now_local ()).difference (last_action) / GLib.TimeSpan.MILLISECOND;
             if (time_since_last_action >= PACKAGEKIT_ACTIVITY_TIMEOUT_MS) {
                 info ("packages possibly changed by external program, refreshing cache");
-                refresh_cache.begin (null);
+
+                // Clear the installed state of all packages as something may have changed we weren't
+                // aware of
+                foreach (var package in package_list.values) {
+                    if (package.state != Package.State.NOT_INSTALLED || package.installed) {
+                        package.clear_installed ();
+                    }
+                }
+
+                trigger_update_check.begin ();
             }
         }
+    }
+
+    private async void trigger_update_check () {
+        try {
+            yield refresh_cache (null);
+        } catch (Error e) {
+            warning ("Unable to refresh cache after external change: %s", e.message);
+        }
+
+        yield Client.get_default ().refresh_updates ();
     }
 
     ~PackageKitBackend () {
@@ -396,7 +417,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
     public Gee.Collection<AppCenterCore.Package> search_applications_mime (string query) {
         var apps = new Gee.TreeSet<AppCenterCore.Package> ();
         foreach (var package in package_list.values) {
-            weak AppStream.Provided? provided = package.component.get_provided_for_kind (AppStream.ProvidedKind.MIMETYPE);
+            weak AppStream.Provided? provided = package.component.get_provided_for_kind (AppStream.ProvidedKind.MEDIATYPE);
             if (provided != null && provided.has_item (query)) {
                 apps.add (package);
             }
@@ -633,6 +654,17 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         job_args.package = package;
         job_args.cb = (owned)cb;
         job_args.cancellable = cancellable;
+
+        if (update_permission == null) {
+            try {
+                update_permission = yield new Polkit.Permission (
+                    "io.elementary.appcenter.update",
+                    new Polkit.UnixProcess (Posix.getpid ())
+                );
+            } catch (Error e) {
+                warning ("Can't get permission to update without prompting for admin: %s", e.message);
+            }
+        }
 
         var job = yield launch_job (Job.Type.UPDATE_PACKAGE, job_args);
         if (job.error != null) {

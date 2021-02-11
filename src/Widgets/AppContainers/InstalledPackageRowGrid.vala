@@ -25,10 +25,23 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
     Gtk.Label release_expander_label;
     Gtk.Label release_description;
     Gtk.Label release_single_label;
+    private Gtk.Revealer release_stack_revealer;
     AppStream.Release? newest = null;
 
-    public InstalledPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? info_size_group, Gtk.SizeGroup? action_size_group, bool show_uninstall = true) {
-        base (package, info_size_group, action_size_group, show_uninstall);
+    private Gtk.Grid info_grid;
+
+    public InstalledPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? info_size_group, Gtk.SizeGroup? action_size_group) {
+        base (package);
+
+        if (action_size_group != null) {
+            action_size_group.add_widget (action_button);
+            action_size_group.add_widget (cancel_button);
+        }
+
+        if (info_size_group != null) {
+            info_size_group.add_widget (info_grid);
+        }
+
         set_up_package ();
     }
 
@@ -74,10 +87,31 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         release_stack.add (release_expander);
         release_stack.add (release_single_label);
 
-        set_widget_visibility (release_stack, false);
+        release_stack_revealer = new Gtk.Revealer ();
+        release_stack_revealer.transition_type = Gtk.RevealerTransitionType.CROSSFADE;
+        release_stack_revealer.add (release_stack);
 
-        info_grid.attach (app_version, 1, 1, 1, 1);
-        attach (release_stack, 2, 0, 1, 2);
+        info_grid = new Gtk.Grid () {
+            column_spacing = 12,
+            row_spacing = 6,
+            valign = Gtk.Align.START
+        };
+        info_grid.attach (image, 0, 0, 1, 2);
+        info_grid.attach (package_name, 1, 0);
+        info_grid.attach (app_version, 1, 1);
+
+        action_stack.homogeneous = false;
+        action_stack.margin_top = 10;
+        action_stack.valign = Gtk.Align.START;
+
+        var grid = new Gtk.Grid () {
+            column_spacing = 24
+        };
+        grid.attach (info_grid, 0, 0);
+        grid.attach (release_stack_revealer, 2, 0, 1, 2);
+        grid.attach (action_stack, 3, 0);
+
+        add (grid);
     }
 
     protected override void set_up_package (uint icon_size = 48) {
@@ -113,15 +147,15 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
                         release_expander_label.label = lines[0];
                         release_description.set_text (lines[1]);
                         release_stack.visible_child = release_expander;
-                        set_widget_visibility (release_stack, true);
                     } else if (lines.length > 0) {
                         release_single_label.label = lines[0];
                         release_stack.visible_child = release_single_label;
-                        set_widget_visibility (release_stack, true);
                     }
+
+                    release_stack_revealer.reveal_child = true;
                 }
             } else {
-                set_widget_visibility (release_stack, true);
+                release_stack_revealer.reveal_child = true;
             }
         }
 

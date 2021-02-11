@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2015 elementary, LLC <contact@elementary.io> -->
+<!-- Copyright 2015–2020 elementary, Inc. <contact@elementary.io> -->
 <component type="desktop-application">
   <id>io.elementary.appcenter</id>
   <metadata_license>CC0-1.0</metadata_license>
@@ -8,30 +8,111 @@
   <name>AppCenter</name>
   <summary>Browse and manage apps</summary>
   <description>
-    <p>
-    An app store for indie and open source developers. Browse by categories or
-    search and discover new apps. AppCenter is also used for updating your
-    system to the latest and greatest version for new features and fixes.
-    </p>
+    <p>An app store for indie and open source developers. Browse by categories or search and discover new apps. AppCenter is also used for updating your system to the latest and greatest version for new features and fixes.</p>
   </description>
   <releases>
-    <release version="3.2.5" date="2020-04-16" urgency="medium">
+    <release version="3.5.1" date="2020-10-08" urgency="medium">
       <description>
         <p>Fixes</p>
         <ul>
-          <li>AppCenter now uses configured network proxy settings for apt operations</li>
-          <li>AppCenter no longer prompts for approval to update non-curated apps</li>
-          <li>Reduce slowdowns when opening certain apps</li>
-          <li>Ensure the OS updates subheading copy is correct after finishing updates</li>
+          <li>Correctly display names of Flatpak runtime updates</li>
         </ul>
-        <p>Other updates</p>
+        <p>Minor updates</p>
         <ul>
-          <li>Only check for updates at computer startup if it's more than 24 hours since we last checked</li>
-          <li>Pressing down in the search field moves the keyboard focus to the search results list</li>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
+    <release version="3.5.0" date="2020-09-05" urgency="medium">
+      <description>
+        <p>New features</p>
+        <ul>
+          <li>Support system-wide Flatpak remotes</li>
+        </ul>
+        <p>Fixes</p>
+        <ul>
+          <li>Fix Flatpak runtime updates getting stuck</li>
+          <li>Fix long origin comboboxes breaking the header layout</li>
+        </ul>
+        <p>Minor updates</p>
+        <ul>
+          <li>When apps are available from multiple sources, prefer installed version, then prefer Flatpak</li>
+          <li>Improve search performance</li>
+          <li>Improve update badge styling and category styling</li>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
+    <release version="3.4.2" date="2020-08-07" urgency="medium">
+      <description>
+        <p>Fixes</p>
+        <ul>
+          <li>Ensure AppCenter is reopened at the correct position</li>
+          <li>Clicking the updates badge in the header navigates to the updates view</li>
+        </ul>
+        <p>Minor updates</p>
+        <ul>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
+    <release version="3.4.1" date="2020-06-30" urgency="medium">
+      <description>
+        <p>Fixes</p>
+        <ul>
+          <li>Ensure all updatable Flatpak runtimes are listed for update</li>
+        </ul>
+        <p>Minor updates</p>
+        <ul>
+          <li>Performance improvements</li>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
+    <release version="3.4.0" date="2020-05-28" urgency="medium">
+      <description>
+        <p>New features</p>
+        <ul>
+          <li>Perform updates without administrator permissions</li>
+        </ul>
+        <p>Minor updates</p>
+        <ul>
+          <li>Ensure apps on the homepage are more reliably displayed</li>
+          <li>More reliably set the Dock badge number</li>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
+    <release version="3.3.0" date="2020-04-29" urgency="medium">
+      <description>
+        <p>Performance improvements</p>
+        <ul>
+          <li>Only check for updates at device startup if it's more than 24 hours since we last checked</li>
+          <li>Reduce slowdowns when opening certain apps</li>
+        </ul>
+        <p>Extension improvements</p>
+        <ul>
+          <li>To de-clutter the updates view, extensions are now only shown if they require updates</li>
           <li>Clicking an extension on an app's info page now shows details for the extension</li>
+          <li>Swap the main and overlay icons for extensions to more clearly associate extensions with their app</li>
+        </ul>
+        <p>Keyboard improvements</p>
+        <ul>
+          <li>Pressing down in the search field moves the keyboard focus to the search results list</li>
           <li>Ctrl+F now moves the cursor to the search field</li>
-          <li>To de-clutter the updates view, plugins are now only shown if they require updates</li>
-          <li>Swapped the main and overlay icons for plugins to more clearly associate plugins with their app</li>
+        </ul>
+        <p>Fixes</p>
+        <ul>
+          <li>Use configured network proxy settings for apt operations</li>
+          <li>No longer prompt for approval to update non-curated apps</li>
+          <li>Ensure the OS updates subheading copy is correct after finishing updates</li>
+          <li>Ellipsize long app names in App Info views</li>
+        </ul>
+        <p>And more</p>
+        <ul>
+          <li>Show a more informative loading screen when checking for updates</li>
+          <li>Don't list fonts alongside apps</li>
+          <li>Updated translations</li>
         </ul>
       </description>
     </release>
@@ -256,7 +337,7 @@
     </release>
     <release version="0.1.1" date="2016-09-26" urgency="medium">
       <description>
-        <p>Search performance has beeen improved, the category name is now shown on the headbar and minor bugs have been fixed.</p>
+        <p>Search performance has been improved, the category name is now shown on the headbar and minor bugs have been fixed.</p>
         <ul>
           <li>Fix Steam installation</li>
           <li>Make search asynchronous</li>

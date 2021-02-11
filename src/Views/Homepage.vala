@@ -25,10 +25,10 @@ const int NUM_PACKAGES_IN_BANNER = 5;
 const int NUM_PACKAGES_IN_CAROUSEL = 5;
 
 namespace AppCenter {
-    public class Homepage : View {
+    public class Homepage : AbstractView {
         private Gtk.FlowBox category_flow;
         private Gtk.ScrolledWindow category_scrolled;
-        private string current_category;
+        private AppStream.Category current_category;
 
         public signal void page_loaded ();
 
@@ -54,9 +54,10 @@ namespace AppCenter {
             switcher_revealer.set_transition_duration (Widgets.Banner.TRANSITION_DURATION_MILLISECONDS);
             switcher_revealer.add (switcher);
 
-            newest_banner = new Widgets.Banner (switcher);
-            newest_banner.get_style_context ().add_class ("home");
-            newest_banner.margin = 12;
+            newest_banner = new Widgets.Banner (switcher) {
+                margin = 12
+            };
+
             newest_banner.clicked.connect (() => {
                 var package = newest_banner.get_package ();
                 if (package != null) {
@@ -286,10 +287,9 @@ namespace AppCenter {
 
         public override void show_package (
             AppCenterCore.Package package,
-            bool remember_history = true,
-            Gtk.StackTransitionType transition = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT
+            bool remember_history = true
         ) {
-            base.show_package (package, remember_history, transition);
+            base.show_package (package, remember_history);
             viewing_package = true;
             if (remember_history) {
                 current_category = null;
@@ -299,19 +299,17 @@ namespace AppCenter {
         }
 
         public override void return_clicked () {
-            transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
-
             if (previous_package != null) {
                 show_package (previous_package);
                 if (current_category != null) {
-                    subview_entered (current_category, false, "");
+                    subview_entered (current_category.name, false, "");
                 } else {
                     subview_entered (_("Home"), false, "");
                 }
             } else if (viewing_package && current_category != null) {
-                set_visible_child_name (current_category);
+                visible_child = get_child_by_name (current_category.name);
                 viewing_package = false;
-                subview_entered (_("Home"), true, current_category, _("Search %s").printf (current_category));
+                subview_entered (_("Home"), true, current_category.name, _("Search %s").printf (current_category.name));
             } else {
                 set_visible_child (category_scrolled);
                 viewing_package = false;
@@ -323,16 +321,16 @@ namespace AppCenter {
 
         private void show_app_list_for_category (AppStream.Category category) {
             subview_entered (_("Home"), true, category.name, _("Search %s").printf (category.name));
-            current_category = category.name;
+            current_category = category;
             var child = get_child_by_name (category.name);
             if (child != null) {
-                set_visible_child (child);
+                visible_child = child;
                 return;
             }
 
             var app_list_view = new Views.AppListView ();
             app_list_view.show_all ();
-            add_named (app_list_view, category.name);
+            add (app_list_view);
             set_visible_child (app_list_view);
 
             app_list_view.show_app.connect ((package) => {

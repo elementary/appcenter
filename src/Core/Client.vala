@@ -23,7 +23,7 @@ public class AppCenterCore.Client : Object {
      */
     public signal void installed_apps_changed ();
 
-    public AppCenterCore.ScreenshotCache? screenshot_cache { get; construct; }
+    public AppCenterCore.ScreenshotCache? screenshot_cache { get; private set; default = new ScreenshotCache (); }
 
     private GLib.Cancellable cancellable;
 
@@ -35,9 +35,9 @@ public class AppCenterCore.Client : Object {
 
     private const int SECONDS_BETWEEN_REFRESHES = 60 * 60 * 24;
 
-    private Client () {
-        Object (screenshot_cache: AppCenterCore.ScreenshotCache.new_cache ());
-    }
+    private AsyncMutex update_notification_mutex = new AsyncMutex ();
+
+    private Client () { }
 
     construct {
         cancellable = new GLib.Cancellable ();
@@ -62,6 +62,8 @@ public class AppCenterCore.Client : Object {
     }
 
     public async void refresh_updates () {
+        yield update_notification_mutex.lock ();
+
         bool was_empty = updates_number == 0U;
         updates_number = yield UpdateManager.get_default ().get_updates (null);
 
@@ -72,29 +74,22 @@ public class AppCenterCore.Client : Object {
 
             var notification = new Notification (title);
             notification.set_body (body);
-            notification.set_icon (new ThemedIcon ("system-software-install"));
+            notification.set_icon (new ThemedIcon (Build.PROJECT_NAME));
             notification.set_default_action ("app.show-updates");
 
-            application.send_notification ("updates", notification);
+            application.send_notification ("io.elementary.appcenter.updates", notification);
         } else {
-            application.withdraw_notification ("updates");
+            application.withdraw_notification ("io.elementary.appcenter.updates");
         }
 
-        Granite.Services.Application.set_badge.begin (updates_number, (obj, res) => {
-            try {
-                Granite.Services.Application.set_badge.end (res);
-            } catch (GLib.Error e) {
-                critical (e.message);
-            }
-        });
+        try {
+            yield Granite.Services.Application.set_badge (updates_number);
+            yield Granite.Services.Application.set_badge_visible (updates_number != 0);
+        } catch (Error e) {
+            warning ("Error setting updates badge: %s", e.message);
+        }
 
-        Granite.Services.Application.set_badge_visible.begin (updates_number != 0U, (obj, res) => {
-            try {
-                Granite.Services.Application.set_badge_visible.end (res);
-            } catch (GLib.Error e) {
-                critical (e.message);
-            }
-        });
+        update_notification_mutex.unlock ();
 
         installed_apps_changed ();
     }

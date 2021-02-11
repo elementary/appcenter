@@ -61,6 +61,12 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
                 continue;
             }
 
+            // ubuntu-drivers returns lines like the following for dkms packages:
+            // backport-iwlwifi-dkms, (kernel modules provided by backport-iwlwifi-dkms)
+            // we only want the bit before the comma
+            string[] parts = package_name.split (",");
+            package_name = parts[0];
+
             var driver_component = new AppStream.Component ();
             driver_component.set_kind (AppStream.ComponentKind.DRIVER);
             driver_component.set_pkgnames ({ package_name });
@@ -72,9 +78,13 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
             driver_component.add_icon (icon);
 
             var package = new Package (this, driver_component);
-            if (package.installed) {
-                package.mark_installed ();
-                package.update_state ();
+            try {
+                if (yield is_package_installed (package)) {
+                    package.mark_installed ();
+                    package.update_state ();
+                }
+            } catch (Error e) {
+                warning ("Unable to check if driver is installed: %s", e.message);
             }
 
             cached_packages.add (package);

@@ -21,25 +21,17 @@
 
 [DBus (name = "org.gnome.SessionManager")]
 public interface SessionManager : Object {
-    public abstract uint32 inhibit (string app_id, uint32 toplevel_xid, string reason, uint32 flags) throws GLib.Error;
-    public abstract void uninhibit (uint32 inhibit_cookie) throws GLib.Error;
     public abstract void reboot () throws GLib.Error;
 }
 
 public class SuspendControl {
-
-    SessionManager sm;
-    bool inhibited = false;
-    uint32 inhibit_cookie = 0;
-    bool supported = true;
-
+    private SessionManager sm;
     private static SuspendControl? sc = null;
 
     public SuspendControl () {
         try {
             sm = Bus.get_proxy_sync (BusType.SESSION, "org.gnome.SessionManager", "/org/gnome/SessionManager");
         } catch (GLib.Error e) {
-            supported = false;
             critical (e.message);
         }
     }
@@ -50,32 +42,6 @@ public class SuspendControl {
         }
 
         return sc;
-    }
-
-    public bool inhibit () {
-        if (inhibited == false && supported) {
-            try {
-                inhibit_cookie = sm.inhibit ("io.elementary.appcenter", 0, "Inhibit suspend during package operations", 4);
-                inhibited = true;
-            } catch (GLib.Error e) {
-                critical (e.message);
-            }
-        }
-
-        return inhibited;
-    }
-
-    public bool uninhibit () {
-        try {
-            if (inhibited == true && supported) {
-                sm.uninhibit (inhibit_cookie);
-                inhibited = false;
-            }
-        } catch (GLib.Error e) {
-            critical (e.message);
-        }
-
-        return !inhibited;
     }
 
     public void reboot () throws GLib.Error {

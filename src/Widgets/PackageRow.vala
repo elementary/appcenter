@@ -22,16 +22,16 @@ namespace AppCenter.Widgets {
     public class PackageRow : Gtk.ListBoxRow, AppListRow {
         AbstractPackageRowGrid grid;
 
-        public PackageRow.installed (AppCenterCore.Package package, Gtk.SizeGroup? info_size_group, Gtk.SizeGroup? action_size_group, bool show_uninstall = true) {
-            grid = new InstalledPackageRowGrid (package, info_size_group, action_size_group, show_uninstall);
+        public PackageRow.installed (AppCenterCore.Package package, Gtk.SizeGroup? info_size_group, Gtk.SizeGroup? action_size_group) {
+            grid = new InstalledPackageRowGrid (package, info_size_group, action_size_group);
             add (grid);
             grid.changed.connect (() => {
                 changed ();
             });
         }
 
-        public PackageRow.list (AppCenterCore.Package package, Gtk.SizeGroup? info_size_group, Gtk.SizeGroup? action_size_group, bool show_uninstall = true) {
-            grid = new ListPackageRowGrid (package, info_size_group, action_size_group, show_uninstall);
+        public PackageRow.list (AppCenterCore.Package package) {
+            grid = new ListPackageRowGrid (package);
             add (grid);
             grid.changed.connect (() => {
                 changed ();
@@ -64,10 +64,6 @@ namespace AppCenter.Widgets {
 
         public void set_action_sensitive (bool is_sensitive) {
             grid.action_sensitive = is_sensitive;
-        }
-
-        public bool has_package () {
-            return true;
         }
     }
 }

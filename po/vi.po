@@ -1,281 +1,284 @@
 # AMONK <anandahanuman@gmail.com>, 2019.
 # Pomi Not <uspomai@gmail.com>, 2019.
 # Daniel Foré <daniel@elementary.io>, 2019.
+# Trkien618 <hacngoctrungkien@gmail.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-19 04:28+0000\n"
-"PO-Revision-Date: 2019-09-12 01:22+0000\n"
-"Last-Translator: Daniel Foré <daniel@elementary.io>\n"
+"POT-Creation-Date: 2021-01-21 17:05+0000\n"
+"PO-Revision-Date: 2020-10-07 03:57+0000\n"
+"Last-Translator: Trkien618 <hacngoctrungkien@gmail.com>\n"
 "Language-Team: Vietnamese <https://l10n.elementary.io/projects/appcenter/appcenter/vi/>\n"
 "Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:330
+#: src/Application.vala:38 src/Core/Package.vala:338
 msgid "AppCenter"
 msgstr "Trung tâm Ứng dụng"
 
 #: src/Application.vala:112
-#, fuzzy, c-format
+#, c-format
 msgid "Could not parse the media type %s"
-msgstr "Không thể phân tích loại nội dung %s"
+msgstr "Không thể phân tích kiểu nội dung %s"
 
 #: src/Application.vala:132
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Không tìm thấy liên kết cụ thể tới '%s', đang tìm kiếm thay thế"
 
-#: src/Application.vala:272
-msgid "Application installed"
-msgstr "Ứng dụng đã được cài đặt"
-
-#: src/Application.vala:273
-#, c-format
-msgid "%s has been successfully installed"
+#: src/Application.vala:295
+#, fuzzy
+#| msgid "%s has been successfully installed"
+msgid "The app has been installed"
 msgstr "%s đã được cài đặt thành công"
 
-#: src/Application.vala:285
-#, c-format
-msgid "There Was An Error Installing %s."
-msgstr "Có lỗi trong quá trình cài đặt %s"
+#. Only show a toast when we're not on the installed app's page, i.e if
+#. no package is selected (we are not on an app page), or a package is
+#. selected but it's not the app we're installing.
+#: src/Application.vala:296 src/MainWindow.vala:340
+#, fuzzy, c-format
+#| msgid "%s has been successfully installed"
+msgid "“%s” has been installed"
+msgstr "%s đã được cài đặt thành công"
 
-#: src/MainWindow.vala:150 src/Views/Homepage.vala:297
-#: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
-#: src/Views/Homepage.vala:325
+#: src/MainWindow.vala:137
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:133
+msgid "Open"
+msgstr "Mở"
+
+#: src/MainWindow.vala:158 src/Views/Homepage.vala:297
+#: src/Views/Homepage.vala:307 src/Views/Homepage.vala:312
+#: src/Views/Homepage.vala:323 src/Views/SearchView.vala:89
 #, fuzzy
 msgid "Home"
 msgstr "Trang chủ"
 
-#: src/MainWindow.vala:151 src/Views/InstalledView.vala:33
-#: src/Views/InstalledView.vala:58
-#, fuzzy
+#: src/MainWindow.vala:159 src/Views/InstalledView.vala:32
+#: src/Views/InstalledView.vala:57
 msgctxt "view"
 msgid "Installed"
-msgstr "Cài đặt"
+msgstr "Đã cài đặt"
 
-#: src/MainWindow.vala:178 src/MainWindow.vala:337 src/Views/SearchView.vala:55
-#: src/Views/SearchView.vala:82
+#: src/MainWindow.vala:199 src/MainWindow.vala:405 src/Views/SearchView.vala:54
+#: src/Views/SearchView.vala:87
 msgid "Search Apps"
 msgstr "Tìm kiếm ứng dụng"
 
-#: src/Utils.vala:72 src/Core/ChangeInformation.vala:92
+#: src/Utils.vala:62 src/Core/ChangeInformation.vala:92
 msgid "Starting"
 msgstr "Đang bắt đầu"
 
-#: src/Utils.vala:74 src/Core/ChangeInformation.vala:49
+#: src/Utils.vala:64 src/Core/ChangeInformation.vala:49
 #: src/Core/ChangeInformation.vala:64
 msgid "Waiting"
 msgstr "Đang chờ"
 
-#: src/Utils.vala:76
+#: src/Utils.vala:66
 msgid "Running"
 msgstr "Đang thực hiện"
 
-#: src/Utils.vala:78
+#: src/Utils.vala:68
 msgid "Querying"
 msgstr "Đang truy vấn"
 
-#: src/Utils.vala:80
+#: src/Utils.vala:70
 msgid "Getting information"
 msgstr "Đang lấy thông tin"
 
-#: src/Utils.vala:82
+#: src/Utils.vala:72
 msgid "Removing packages"
 msgstr "Đang xóa gói"
 
-#: src/Utils.vala:84
+#: src/Utils.vala:74
 msgid "Downloading"
 msgstr "Đang tải về"
 
-#: src/Utils.vala:86 src/Core/FlatpakBackend.vala:699
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:910
 msgid "Installing"
 msgstr "Đang cài đặt"
 
-#: src/Utils.vala:88
+#: src/Utils.vala:78
 msgid "Refreshing software list"
 msgstr "Đang làm mới danh sách phần mềm"
 
-#: src/Utils.vala:90
+#: src/Utils.vala:80
 msgid "Installing updates"
 msgstr "Đang cài đặt cập nhật"
 
-#: src/Utils.vala:92
+#: src/Utils.vala:82
 msgid "Cleaning up packages"
 msgstr "Đang dọn dẹp các gói"
 
-#: src/Utils.vala:94
+#: src/Utils.vala:84
 msgid "Obsoleting packages"
 msgstr "Đang loại bỏ những gói cũ"
 
-#: src/Utils.vala:96
+#: src/Utils.vala:86
 msgid "Resolving dependencies"
 msgstr "Đang xử lý những thành phần phụ thuộc"
 
-#: src/Utils.vala:98
+#: src/Utils.vala:88
 msgid "Checking signatures"
 msgstr "Đang kiểm tra chữ ký"
 
-#: src/Utils.vala:100
+#: src/Utils.vala:90
 msgid "Testing changes"
 msgstr "Đang kiểm tra các thay đổi"
 
-#: src/Utils.vala:102
+#: src/Utils.vala:92
 msgid "Committing changes"
 msgstr "Đang áp dụng các thay đổi"
 
-#: src/Utils.vala:104
+#: src/Utils.vala:94
 msgid "Requesting data"
 msgstr "Đang yêu cầu dữ liệu"
 
-#: src/Utils.vala:106 src/Core/ChangeInformation.vala:71
+#: src/Utils.vala:96 src/Core/ChangeInformation.vala:71
 msgid "Finished"
 msgstr "Đã hoàn tất"
 
-#: src/Utils.vala:108 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:708 src/Core/FlatpakBackend.vala:731
-#: src/Core/FlatpakBackend.vala:804 src/Core/FlatpakBackend.vala:905
-#: src/Core/FlatpakBackend.vala:931
+#: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
+#: src/Core/FlatpakBackend.vala:919 src/Core/FlatpakBackend.vala:947
+#: src/Core/FlatpakBackend.vala:1054 src/Core/FlatpakBackend.vala:1082
+#: src/Core/FlatpakBackend.vala:1227 src/Core/FlatpakBackend.vala:1253
 msgid "Cancelling"
 msgstr "Đang hủy"
 
-#: src/Utils.vala:110
+#: src/Utils.vala:100
 msgid "Downloading repository information"
 msgstr "Đang tải về thông tin kho chứa"
 
-#: src/Utils.vala:112
+#: src/Utils.vala:102
 msgid "Downloading list of packages"
 msgstr "Đang tải về danh sách các gói"
 
-#: src/Utils.vala:114
+#: src/Utils.vala:104
 msgid "Downloading file lists"
 msgstr "Đang tải về danh sách các tệp"
 
-#: src/Utils.vala:116
+#: src/Utils.vala:106
 msgid "Downloading lists of changes"
 msgstr "Đang tải về danh sách các thay đổi"
 
-#: src/Utils.vala:118
+#: src/Utils.vala:108
 msgid "Downloading groups"
 msgstr "Đang tải về các nhóm"
 
-#: src/Utils.vala:120
+#: src/Utils.vala:110
 msgid "Downloading update information"
 msgstr "Đang tải về các thông tin cập nhật"
 
-#: src/Utils.vala:122
+#: src/Utils.vala:112
 msgid "Repackaging files"
 msgstr "Đang đóng gói lại các tệp"
 
-#: src/Utils.vala:124
+#: src/Utils.vala:114
 msgid "Loading cache"
 msgstr "Đang đọc cache"
 
-#: src/Utils.vala:126
+#: src/Utils.vala:116
 msgid "Scanning applications"
 msgstr "Đang quét các ứng dụng"
 
-#: src/Utils.vala:128
+#: src/Utils.vala:118
 msgid "Generating package lists"
 msgstr "Đang tạo danh sách các gói"
 
-#: src/Utils.vala:130
+#: src/Utils.vala:120
 msgid "Waiting for package manager lock"
 msgstr "Đang đợi khóa trình quản lý gói"
 
-#: src/Utils.vala:132
+#: src/Utils.vala:122
 msgid "Waiting for authentication"
 msgstr "Đang đợi xác thực"
 
-#: src/Utils.vala:134
+#: src/Utils.vala:124
 msgid "Updating running applications"
 msgstr "Đang cập nhật các ứng dụng đang chạy"
 
-#: src/Utils.vala:136
+#: src/Utils.vala:126
 msgid "Checking applications in use"
 msgstr "Kiểm tra các ứng dụng đang sử dụng"
 
-#: src/Utils.vala:138
+#: src/Utils.vala:128
 msgid "Checking libraries in use"
 msgstr "Kiểm tra các thư viện đang sử dụng"
 
-#: src/Utils.vala:140
+#: src/Utils.vala:130
 msgid "Copying files"
 msgstr "Đang sao chép các tập tin"
 
-#: src/Utils.vala:142
+#: src/Utils.vala:132
 msgid "Unknown state"
 msgstr "Trạng thái không xác định"
 
-#: src/Core/Client.vala:70
+#: src/Core/BackendAggregator.vala:46
+msgid "package operations are being performed"
+msgstr ""
+
+#: src/Core/Client.vala:72
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "Bản cập nhật khả dụng"
 
-#: src/Core/Client.vala:71
+#: src/Core/Client.vala:73
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "%u bản cập nhật khả dụng cho hệ thống của bạn"
 
-#: src/Core/FlatpakBackend.vala:796
+#: src/Core/FlatpakBackend.vala:1045
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "Gỡ cài đặt"
 
-#: src/Core/FlatpakBackend.vala:801
-#, fuzzy
-#| msgid "Finished"
-msgid "Finishing"
-msgstr "Đã hoàn tất"
-
-#: src/Core/FlatpakBackend.vala:896
+#: src/Core/FlatpakBackend.vala:1218
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
 msgstr "Cập nhật"
 
-#: src/Core/Package.vala:300
+#: src/Core/Package.vala:308
 #, c-format
 msgid "%s Developers"
 msgstr "%s Nhà phát triển"
 
-#: src/Core/Package.vala:332
-#, fuzzy
+#: src/Core/Package.vala:340
 msgid "elementary Updates"
-msgstr "Đã cập nhật gần đây"
+msgstr "Cập nhật cơ bản"
 
-#: src/Core/Package.vala:334
+#: src/Core/Package.vala:342
 msgid "Ubuntu (non-curated)"
-msgstr ""
+msgstr "Ubuntu (Không quản lý)"
 
-#: src/Core/Package.vala:337
-#, fuzzy, c-format
-msgid "%s (non-curated)"
-msgstr "%s (cục bộ)"
+#: src/Core/Package.vala:347
+#, c-format
+msgid "%s (system-wide)"
+msgstr "%s (system-wide)"
 
-#: src/Core/Package.vala:339
+#: src/Core/Package.vala:352
 #, fuzzy
 msgid "Ubuntu Drivers"
 msgstr "Các trình điều khiển"
 
-#: src/Core/Package.vala:342
+#: src/Core/Package.vala:355
 msgid "Unknown Origin (non-curated)"
-msgstr ""
+msgstr "Nguồn gốc không xác định (không được quản lý)"
 
-#: src/Core/Package.vala:452
+#: src/Core/Package.vala:532
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
-msgstr ""
+msgstr "Trạng thái ứng dụng không được đặt như ứng dụng đã cài đặt trong AppCenter cho package: %s"
 
-#: src/Core/PackageKitBackend.vala:251
+#: src/Core/PackageKitBackend.vala:272
 #, fuzzy, c-format
 msgid "%s (local)"
 msgstr "%s (cục bộ)"
@@ -288,35 +291,35 @@ msgstr "Cập nhật hệ điều hành"
 msgid "Updates to system components"
 msgstr "Cập nhật cho các thành phần hệ thống"
 
-#: src/Core/UpdateManager.vala:81
+#: src/Core/UpdateManager.vala:87
 #, c-format
 msgid "Version: %s"
 msgstr "Phiên bản: %s"
 
-#: src/Core/UpdateManager.vala:111
+#: src/Core/UpdateManager.vala:130
 msgid "Flatpak runtime"
-msgstr ""
+msgstr "Thời gian chạy Flatpak"
 
-#: src/Core/UpdateManager.vala:128
+#: src/Core/UpdateManager.vala:147
 msgid "No components with updates"
-msgstr "Không thành phần nào có cập nhật"
+msgstr "Không hợp phần nào có cập nhật"
 
-#: src/Core/UpdateManager.vala:133
+#: src/Core/UpdateManager.vala:152
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
 msgstr[0] "Các thành phần %u có cập nhật"
 
-#: src/Core/UpdateManager.vala:135
+#: src/Core/UpdateManager.vala:154
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:174
+#: src/Core/UpdateManager.vala:193
 msgid "Restart Required"
 msgstr "Yêu cầu khởi động lại"
 
-#: src/Core/UpdateManager.vala:175
+#: src/Core/UpdateManager.vala:194
 msgid "Please restart your system to finalize updates"
 msgstr "Vui lòng khởi động lại hệ thống của bạn để hoàn tất cập nhật"
 
@@ -332,7 +335,7 @@ msgstr "%s chứa nội dung nhạy cảm"
 #: src/Dialogs/ContentWarningDialog.vala:31
 #, c-format
 msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
-msgstr ""
+msgstr "%s có thể chứa nội dung có thể chứa nội dung nhạy cảm hoặc chỉ phù hợp với người lớn.  Elementary không đánh giá hoặc xác nhận nội dung của ứng dụng này."
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 msgid "Show content warnings"
@@ -345,9 +348,23 @@ msgstr "Đừng cài đặt"
 
 #: src/Dialogs/ContentWarningDialog.vala:38
 #: src/Dialogs/NonCuratedWarningDialog.vala:82
-#, fuzzy
 msgid "Install Anyway"
-msgstr "Đang cài đặt"
+msgstr "Vẫn cài đặt"
+
+#: src/Dialogs/InstallFailDialog.vala:26
+#, fuzzy
+msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
+msgstr "Điều này có thể gây ra bởi các nguồn ngoài hoặc file nguồn bị lỗi"
+
+#: src/Dialogs/InstallFailDialog.vala:37
+#, fuzzy
+msgid "Failed to install app"
+msgstr "Gỡ cài đặt"
+
+#: src/Dialogs/InstallFailDialog.vala:40
+#, fuzzy, c-format
+msgid "Failed to install “%s”"
+msgstr "Gỡ cài đặt"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
 #, fuzzy
@@ -391,9 +408,9 @@ msgstr "Điều này sẽ đóng tất cả các ứng dụng đang mở và kh�
 msgid "Restart"
 msgstr "Khởi động lại"
 
-#: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
-#: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:177
+#: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:196
+#: src/Dialogs/StripeDialog.vala:313
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
 msgid "Cancel"
 msgstr "Hủy bỏ"
 
@@ -418,7 +435,7 @@ msgstr "Thanh toán $%d cho %s"
 msgid "This is a one time payment. Your email address is only used to send you a receipt."
 msgstr "Đây là phương thức một lần. Email của bạn chỉ được sử dụng để gửi hóa đơn."
 
-#: src/Dialogs/StripeDialog.vala:106 src/Widgets/SharePopover.vala:35
+#: src/Dialogs/StripeDialog.vala:106
 msgid "Email"
 msgstr "Email"
 
@@ -440,95 +457,95 @@ msgstr "CVC"
 msgid "Privacy Policy"
 msgstr "Chính sách bảo mật"
 
-#: src/Dialogs/StripeDialog.vala:200 src/Dialogs/StripeDialog.vala:314
+#: src/Dialogs/StripeDialog.vala:198 src/Dialogs/StripeDialog.vala:312
 #, c-format
 msgid "Pay $%d.00"
 msgstr "Thanh toán $%d.00"
 
-#: src/Dialogs/StripeDialog.vala:243
+#: src/Dialogs/StripeDialog.vala:241
 msgid "Processing"
 msgstr "Đang xử lý"
 
-#: src/Dialogs/StripeDialog.vala:268
+#: src/Dialogs/StripeDialog.vala:266
 msgid "There Was a Problem Processing Your Payment"
 msgstr "Có một vấn đề trong quá trình thanh toán của bạn"
 
-#: src/Dialogs/StripeDialog.vala:306
+#: src/Dialogs/StripeDialog.vala:304
 msgid "Pay Later"
 msgstr "Thanh toán sau"
 
-#: src/Dialogs/StripeDialog.vala:307
+#: src/Dialogs/StripeDialog.vala:305
 msgid "Retry"
 msgstr "Thử lại"
 
-#: src/Dialogs/StripeDialog.vala:513 src/Dialogs/StripeDialog.vala:578
+#: src/Dialogs/StripeDialog.vala:511 src/Dialogs/StripeDialog.vala:576
 msgid "The card number is incorrect. Please try again using the correct card number."
 msgstr "Số thẻ bị sai. Vui lòng thử lại bằng số thẻ chính xác."
 
-#: src/Dialogs/StripeDialog.vala:515
+#: src/Dialogs/StripeDialog.vala:513
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
 msgstr "Tháng hết hạn không hợp lệ. Hãy thử lại bằng cách sử dụng ngày hết hạn chính xác."
 
-#: src/Dialogs/StripeDialog.vala:517 src/Dialogs/StripeDialog.vala:575
+#: src/Dialogs/StripeDialog.vala:515 src/Dialogs/StripeDialog.vala:573
 msgid "The expiration year is invalid. Please try again using the correct expiration date."
 msgstr "Năm hết hạn không hợp lệ. Hãy thử lại bằng cách sử dụng ngày hết hạn chính xác."
 
-#: src/Dialogs/StripeDialog.vala:520 src/Dialogs/StripeDialog.vala:573
+#: src/Dialogs/StripeDialog.vala:518 src/Dialogs/StripeDialog.vala:571
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr "Số CVC bị sai. Vui lòng thử lại bằng số CVC chính xác."
 
-#: src/Dialogs/StripeDialog.vala:522 src/Dialogs/StripeDialog.vala:564
+#: src/Dialogs/StripeDialog.vala:520 src/Dialogs/StripeDialog.vala:562
 msgid "The card has expired. Please try again with a different card."
 msgstr "Thẻ đã hết hạn. Vui lòng thử lại với một thẻ khác."
 
-#: src/Dialogs/StripeDialog.vala:542
+#: src/Dialogs/StripeDialog.vala:540
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr "Có quá nhiều yêu cầu thanh toán vào lúc này, vui lòng thử lại sau."
 
-#: src/Dialogs/StripeDialog.vala:558
+#: src/Dialogs/StripeDialog.vala:556
 msgid "This card does not support this kind of transaction. Please try again with a different card."
 msgstr "Thẻ này không hỗ trợ loại giao dịch này. Vui lòng thử lại bằng thẻ khác."
 
-#: src/Dialogs/StripeDialog.vala:560
+#: src/Dialogs/StripeDialog.vala:558
 msgid "The currency is not supported by this card. Please try again with a different card."
 msgstr "Đơn vị tiền tệ không được hỗ trợ bởi thẻ này. Vui lòng thử lại bằng thẻ khác."
 
-#: src/Dialogs/StripeDialog.vala:562
+#: src/Dialogs/StripeDialog.vala:560
 msgid "The transaction has already been processed."
 msgstr "Giao dịch đã được xử lý."
 
-#: src/Dialogs/StripeDialog.vala:566
+#: src/Dialogs/StripeDialog.vala:564
 #, fuzzy
 msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
 msgstr "Mã bưu chính bị sai. Vui lòng thử lại bằng mã bưu chính chính xác."
 
-#: src/Dialogs/StripeDialog.vala:568
+#: src/Dialogs/StripeDialog.vala:566
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "Bạn không có đủ tiền. Hãy sử dụng một phương thức thanh toán khác."
 
-#: src/Dialogs/StripeDialog.vala:570
+#: src/Dialogs/StripeDialog.vala:568
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "Số tiền không chính xác. Vui lòng thử lại bằng cách sử dụng số tiền hợp lệ."
 
-#: src/Dialogs/StripeDialog.vala:581
+#: src/Dialogs/StripeDialog.vala:579
 #, fuzzy
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "Số CVC bị sai. Vui lòng thử lại bằng số CVC chính xác."
 
-#: src/Dialogs/StripeDialog.vala:583
+#: src/Dialogs/StripeDialog.vala:581
 #, fuzzy
 msgid "There has been too many PIN attempts. Please try again with a different card."
 msgstr "Có quá nhiều lần thử số PIN. Vui lòng thử lại bằng thẻ khác."
 
-#: src/Dialogs/StripeDialog.vala:603
+#: src/Dialogs/StripeDialog.vala:601
 msgid "Unable to complete the transaction. Please contact your bank for further information."
 msgstr "Không thể hoàn thành giao dịch. Vui lòng liên hệ với ngân hàng của bạn để biết thêm thông tin."
 
-#: src/Dialogs/StripeDialog.vala:606
+#: src/Dialogs/StripeDialog.vala:604
 msgid "The balance or credit limit on the card has been reached."
 msgstr "Số dư hoặc hạn mức tín dụng trên thẻ đã đạt được."
 
-#: src/Dialogs/StripeDialog.vala:609
+#: src/Dialogs/StripeDialog.vala:607
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "Thẻ được cấp là thẻ kiểm tra. Vui lòng sử dụng một thẻ thực để tiếp tục."
 
@@ -547,7 +564,7 @@ msgid "Uninstall “%s”?"
 msgstr "Gỡ cài đặt"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:144
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:124
 msgid "Uninstall"
 msgstr "Gỡ cài đặt"
 
@@ -581,119 +598,137 @@ msgstr "Bỏ qua"
 msgid "Try Again"
 msgstr "Thử lại"
 
-#: src/Views/AppInfoView.vala:155
+#: src/Views/AppInfoView.vala:191
 msgid "Screenshot Not Available"
 msgstr "Không có ảnh chụp màn hình"
 
-#: src/Views/AppInfoView.vala:206
+#: src/Views/AppInfoView.vala:243
 msgid "Homepage"
 msgstr "Trang chủ"
 
-#: src/Views/AppInfoView.vala:212
+#: src/Views/AppInfoView.vala:249
 msgid "Suggest Translations"
 msgstr "Đề xuất dịch"
 
-#: src/Views/AppInfoView.vala:218
+#: src/Views/AppInfoView.vala:255
 msgid "Report a Problem"
 msgstr "Báo cáo một vấn đề"
 
-#: src/Views/AppInfoView.vala:224
+#: src/Views/AppInfoView.vala:261
 msgid "Help"
 msgstr "Trợ giúp"
 
-#: src/Views/AppInfoView.vala:235
+#: src/Views/AppInfoView.vala:272
 msgid "What's New:"
 msgstr "Tin tức mới:"
 
-#: src/Views/AppInfoView.vala:270
+#: src/Views/AppInfoView.vala:307
 msgid "Extensions:"
 msgstr "Tiện ích mở rộng:"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:359
+#: src/Views/AppInfoView.vala:404
 msgid "Public Domain"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:362
+#: src/Views/AppInfoView.vala:407
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr ""
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:367
+#: src/Views/AppInfoView.vala:412
 msgid "Free Software"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:370
+#: src/Views/AppInfoView.vala:415
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:374
+#: src/Views/AppInfoView.vala:419
 msgid "Proprietary"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:377
+#: src/Views/AppInfoView.vala:422
 #, fuzzy
 msgid "Unknown License"
 msgstr "Trạng thái không xác định"
 
-#: src/Views/AppInfoView.vala:426
+#: src/Views/AppInfoView.vala:472
 #, c-format
 msgid "Other Apps by %s"
 msgstr "Các ứng dụng khác %s"
 
-#: src/Views/AppInfoView.vala:463
+#: src/Views/AppInfoView.vala:510
 msgid "Link copied to clipboard"
 msgstr "Đường dẫn đã được sao chép lưu tạm thời"
 
-#: src/Views/AppInfoView.vala:474
+#: src/Views/AppInfoView.vala:521
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "Kiểm tra %s trên Trung tâm Ứng dụng:"
 
-#: src/Views/AppInfoView.vala:481
+#: src/Views/AppInfoView.vala:528
 msgid "Share"
 msgstr "Chia sẻ"
 
-#: src/Views/AppInfoView.vala:815
+#: src/Views/AppInfoView.vala:856
 msgid "Fund"
 msgstr "Tài trợ"
 
-#: src/Views/AppInfoView.vala:837
+#: src/Views/AppInfoView.vala:878
 msgid "Fund the development of this app"
 msgstr "Tài trợ cho sự phát triển của ứng dụng này"
 
-#: src/Views/AppListUpdateView.vala:56
+#: src/Views/AppListUpdateView.vala:37
+#, fuzzy
+#| msgid "Searching for updates…"
+msgid "Checking for Updates"
+msgstr "Đang tìm kiếm bản cập nhật…"
+
+#: src/Views/AppListUpdateView.vala:38
+msgid "Downloading a list of available updates to the OS and installed apps"
+msgstr ""
+
+#: src/Views/AppListUpdateView.vala:49
 msgid "A restart is required to complete the installation of updates"
 msgstr "Yêu cầu khởi động lại để hoàn tất quá trình cài đặt bản cập nhật"
 
-#: src/Views/AppListUpdateView.vala:64
+#: src/Views/AppListUpdateView.vala:57
 msgid "Restart Now"
 msgstr "Khởi động lại ngay"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:201
+#: src/Views/AppListUpdateView.vala:191
 msgid "Update All"
 msgstr "Cập nhật tất cả"
 
-#: src/Views/AppListView.vala:138
+#: src/Views/AppListView.vala:30
+msgid "No Results"
+msgstr "Không có kết quả"
+
+#: src/Views/AppListView.vala:31
+msgid "No apps could be found. Try changing search terms."
+msgstr "Không tìm thấy ứng dụng nào. Hãy thử thay đổi cụm từ tìm kiếm."
+
+#: src/Views/AppListView.vala:167
 msgid "Non-Curated Apps"
 msgstr "Không được quản lý"
 
-#: src/Views/Homepage.vala:67
+#: src/Views/Homepage.vala:68
 msgid "Recently Updated"
 msgstr "Đã cập nhật gần đây"
 
-#: src/Views/Homepage.vala:83
+#: src/Views/Homepage.vala:84
 msgid "Trending"
 msgstr "Nổi bật"
 
-#: src/Views/Homepage.vala:99
+#: src/Views/Homepage.vala:100
 msgid "Categories"
 msgstr "Danh mục"
 
-#: src/Views/Homepage.vala:314 src/Views/Homepage.vala:325
+#: src/Views/Homepage.vala:312 src/Views/Homepage.vala:323
 #, c-format
 msgid "Search %s"
 msgstr "Tìm %s"
@@ -704,19 +739,11 @@ msgctxt "view"
 msgid "Search"
 msgstr "Tìm kiếm"
 
-#: src/Widgets/AbstractAppList.vala:36
-msgid "No Results"
-msgstr "Không có kết quả"
-
-#: src/Widgets/AbstractAppList.vala:36
-msgid "No apps could be found. Try changing search terms."
-msgstr "Không tìm thấy ứng dụng nào. Hãy thử thay đổi cụm từ tìm kiếm."
-
-#: src/Widgets/Banner.vala:55
+#: src/Widgets/Banner.vala:57
 msgid "An open, pay-what-you-want app store"
 msgstr "Một cửa hàng ứng dụng mở, trả tiền theo ý bạn"
 
-#: src/Widgets/Banner.vala:74
+#: src/Widgets/Banner.vala:76
 msgid "Get the apps that you need at a price you can afford."
 msgstr "Nhận các ứng dụng mà bạn cần ở một mức giá bạn có thể mua được."
 
@@ -796,12 +823,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "Yêu cầu thanh toán, nhưng không được bật"
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:304
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:285
 msgid "Free"
 msgstr "Miễn phí"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:306
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:287
 #, fuzzy
 msgid "Install"
 msgstr "Cài đặt"
@@ -818,18 +845,18 @@ msgstr "$%d.00USD"
 msgid "$%d"
 msgstr "$%dUSD"
 
-#: src/Widgets/NetworkInfoBar.vala:32
+#: src/Widgets/NetworkInfoBar.vala:28
 #, fuzzy
 msgid "Network Not Available."
 msgstr "Mạng không khả dụng"
 
-#: src/Widgets/NetworkInfoBar.vala:33
+#: src/Widgets/NetworkInfoBar.vala:29
 #, fuzzy
 msgid "Connect to the Internet to browse and install apps."
 msgstr "Kết nối đến internet để cài đặt hoặc cập nhật ứng dụng."
 
 #. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
-#: src/Widgets/NetworkInfoBar.vala:41
+#: src/Widgets/NetworkInfoBar.vala:37
 msgid "Network Settings…"
 msgstr "Cài đặt truy cập mạng…"
 
@@ -847,27 +874,27 @@ msgstr "Trạng thái không xác định"
 msgid "No description available"
 msgstr "Không có mô tả"
 
-#: src/Widgets/SharePopover.vala:39
+#: src/Widgets/SharePopover.vala:44
 msgid "Facebook"
 msgstr ""
 
-#: src/Widgets/SharePopover.vala:43
+#: src/Widgets/SharePopover.vala:48
 msgid "Twitter"
 msgstr ""
 
-#: src/Widgets/SharePopover.vala:47
+#: src/Widgets/SharePopover.vala:52
 msgid "Reddit"
 msgstr ""
 
-#: src/Widgets/SharePopover.vala:51
+#: src/Widgets/SharePopover.vala:56
 msgid "Tumblr"
 msgstr ""
 
-#: src/Widgets/SharePopover.vala:55
+#: src/Widgets/SharePopover.vala:60
 msgid "Telegram"
 msgstr ""
 
-#: src/Widgets/SharePopover.vala:59
+#: src/Widgets/SharePopover.vala:64
 msgid "Copy link"
 msgstr "Sao chép liên kết"
 
@@ -884,31 +911,41 @@ msgstr ""
 msgid "Up to %s"
 msgstr "Mới nhất"
 
-#: src/Widgets/UpdateHeaderRow.vala:69
+#: src/Widgets/UpdateHeaderRow.vala:41
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "%u bản cập nhật khả dụng"
 
-#: src/Widgets/UpdateHeaderRow.vala:107
-msgid "Searching for updates…"
-msgstr "Đang tìm kiếm bản cập nhật…"
-
-#: src/Widgets/UpdateHeaderRow.vala:114
-msgid "Up to Date"
-msgstr "Mới nhất"
-
-#: src/Widgets/UpdateHeaderRow.vala:122
+#: src/Widgets/UpdateHeaderRow.vala:54
 msgid "Drivers"
 msgstr "Các trình điều khiển"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:153
-msgid "Open"
-msgstr "Mở"
+#: src/Widgets/UpdateHeaderRow.vala:58
+msgid "Up to Date"
+msgstr "Mới nhất"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:329
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "Cập nhật"
+
+#, fuzzy
+#~| msgid "Finished"
+#~ msgid "Finishing"
+#~ msgstr "Đã hoàn tất"
+
+#~ msgid "Application installed"
+#~ msgstr "Ứng dụng đã được cài đặt"
+
+#, fuzzy
+#~ msgid "%s (non-curated)"
+#~ msgstr "%s (cục bộ)"
+
+#~ msgid "Searching for updates…"
+#~ msgstr "Đang tìm kiếm bản cập nhật…"
+
+#~ msgid "There Was An Error Installing %s."
+#~ msgstr "Có lỗi trong quá trình cài đặt %s"
 
 #~ msgid "Size: %s"
 #~ msgstr "Kích thước: %s"

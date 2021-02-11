@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-19 04:28+0000\n"
-"PO-Revision-Date: 2020-03-11 18:09+0000\n"
+"POT-Creation-Date: 2021-01-21 17:05+0000\n"
+"PO-Revision-Date: 2020-05-15 16:29+0000\n"
 "Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/appcenter/ar/>\n"
 "Language: ar\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:24+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:330
+#: src/Application.vala:38 src/Core/Package.vala:338
 msgid "AppCenter"
 msgstr "مركز التطبيقات"
 
@@ -34,186 +34,196 @@ msgstr "لا يمكن تحليل نوع الوسائط \"%s\""
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "الرابط المعطى '%s' غير موجود، إبحث عوضًا عن ذلك"
 
-#: src/Application.vala:272
-msgid "Application installed"
-msgstr "تم تثبيت التطبيق"
-
-#: src/Application.vala:273
-#, c-format
-msgid "%s has been successfully installed"
+#: src/Application.vala:295
+#, fuzzy
+#| msgid "%s has been successfully installed"
+msgid "The app has been installed"
 msgstr "%s تم تثبيته بنجاح"
 
-#: src/Application.vala:285
-#, c-format
-msgid "There Was An Error Installing %s."
-msgstr "خطأ في تثبيت %s."
+#. Only show a toast when we're not on the installed app's page, i.e if
+#. no package is selected (we are not on an app page), or a package is
+#. selected but it's not the app we're installing.
+#: src/Application.vala:296 src/MainWindow.vala:340
+#, fuzzy, c-format
+#| msgid "%s has been successfully installed"
+msgid "“%s” has been installed"
+msgstr "%s تم تثبيته بنجاح"
 
-#: src/MainWindow.vala:150 src/Views/Homepage.vala:297
-#: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
-#: src/Views/Homepage.vala:325
+#: src/MainWindow.vala:137
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:133
+msgid "Open"
+msgstr "فتح"
+
+#: src/MainWindow.vala:158 src/Views/Homepage.vala:297
+#: src/Views/Homepage.vala:307 src/Views/Homepage.vala:312
+#: src/Views/Homepage.vala:323 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "الرئيسية"
 
-#: src/MainWindow.vala:151 src/Views/InstalledView.vala:33
-#: src/Views/InstalledView.vala:58
+#: src/MainWindow.vala:159 src/Views/InstalledView.vala:32
+#: src/Views/InstalledView.vala:57
 msgctxt "view"
 msgid "Installed"
 msgstr "مثبت"
 
-#: src/MainWindow.vala:178 src/MainWindow.vala:337 src/Views/SearchView.vala:55
-#: src/Views/SearchView.vala:82
+#: src/MainWindow.vala:199 src/MainWindow.vala:405 src/Views/SearchView.vala:54
+#: src/Views/SearchView.vala:87
 msgid "Search Apps"
 msgstr "البحث عن التطبيقات"
 
-#: src/Utils.vala:72 src/Core/ChangeInformation.vala:92
+#: src/Utils.vala:62 src/Core/ChangeInformation.vala:92
 msgid "Starting"
 msgstr "يتم البدء"
 
-#: src/Utils.vala:74 src/Core/ChangeInformation.vala:49
+#: src/Utils.vala:64 src/Core/ChangeInformation.vala:49
 #: src/Core/ChangeInformation.vala:64
 msgid "Waiting"
 msgstr "إنتظار"
 
-#: src/Utils.vala:76
+#: src/Utils.vala:66
 msgid "Running"
 msgstr "مشغل"
 
-#: src/Utils.vala:78
+#: src/Utils.vala:68
 msgid "Querying"
 msgstr "استعلام"
 
-#: src/Utils.vala:80
+#: src/Utils.vala:70
 msgid "Getting information"
 msgstr "الحصول على معلومة"
 
-#: src/Utils.vala:82
+#: src/Utils.vala:72
 msgid "Removing packages"
 msgstr "جاري حذف الحزم"
 
-#: src/Utils.vala:84
+#: src/Utils.vala:74
 msgid "Downloading"
 msgstr "تحميل"
 
-#: src/Utils.vala:86 src/Core/FlatpakBackend.vala:699
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:910
 msgid "Installing"
 msgstr "جاري التثبيت"
 
-#: src/Utils.vala:88
+#: src/Utils.vala:78
 msgid "Refreshing software list"
 msgstr "تحديث قائمة البرامج"
 
-#: src/Utils.vala:90
+#: src/Utils.vala:80
 msgid "Installing updates"
 msgstr "تثبيت التحديثات"
 
-#: src/Utils.vala:92
+#: src/Utils.vala:82
 msgid "Cleaning up packages"
 msgstr "جاري تنظيف الحزم"
 
-#: src/Utils.vala:94
+#: src/Utils.vala:84
 msgid "Obsoleting packages"
 msgstr "إهمال الباكيجز"
 
-#: src/Utils.vala:96
+#: src/Utils.vala:86
 msgid "Resolving dependencies"
 msgstr "حل التبعيات"
 
-#: src/Utils.vala:98
+#: src/Utils.vala:88
 msgid "Checking signatures"
 msgstr "جاري فحص التواقيع"
 
-#: src/Utils.vala:100
+#: src/Utils.vala:90
 msgid "Testing changes"
 msgstr "فحص التغييرات"
 
-#: src/Utils.vala:102
+#: src/Utils.vala:92
 msgid "Committing changes"
 msgstr "اتمام التغييرات"
 
-#: src/Utils.vala:104
+#: src/Utils.vala:94
 msgid "Requesting data"
 msgstr "طلب المعلومات"
 
-#: src/Utils.vala:106 src/Core/ChangeInformation.vala:71
+#: src/Utils.vala:96 src/Core/ChangeInformation.vala:71
 msgid "Finished"
 msgstr "انتهى"
 
-#: src/Utils.vala:108 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:708 src/Core/FlatpakBackend.vala:731
-#: src/Core/FlatpakBackend.vala:804 src/Core/FlatpakBackend.vala:905
-#: src/Core/FlatpakBackend.vala:931
+#: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
+#: src/Core/FlatpakBackend.vala:919 src/Core/FlatpakBackend.vala:947
+#: src/Core/FlatpakBackend.vala:1054 src/Core/FlatpakBackend.vala:1082
+#: src/Core/FlatpakBackend.vala:1227 src/Core/FlatpakBackend.vala:1253
 msgid "Cancelling"
 msgstr "الغاء"
 
-#: src/Utils.vala:110
+#: src/Utils.vala:100
 msgid "Downloading repository information"
 msgstr "تحميل معلومات المخزن"
 
-#: src/Utils.vala:112
+#: src/Utils.vala:102
 msgid "Downloading list of packages"
 msgstr "تحميل قائمة الحزم"
 
-#: src/Utils.vala:114
+#: src/Utils.vala:104
 msgid "Downloading file lists"
 msgstr "تنزيل قائمة الملفات"
 
-#: src/Utils.vala:116
+#: src/Utils.vala:106
 msgid "Downloading lists of changes"
 msgstr "تنزيل قائمة بالتغيرات"
 
-#: src/Utils.vala:118
+#: src/Utils.vala:108
 msgid "Downloading groups"
 msgstr "تنزيل المجموعات"
 
-#: src/Utils.vala:120
+#: src/Utils.vala:110
 msgid "Downloading update information"
 msgstr "تنزيل معلومات التحديث"
 
-#: src/Utils.vala:122
+#: src/Utils.vala:112
 msgid "Repackaging files"
 msgstr "إعادة تحزيم الملفات"
 
-#: src/Utils.vala:124
+#: src/Utils.vala:114
 msgid "Loading cache"
 msgstr "تحمبل الملفات المؤقتة"
 
-#: src/Utils.vala:126
+#: src/Utils.vala:116
 msgid "Scanning applications"
 msgstr "جاري فحص التطبيقات"
 
-#: src/Utils.vala:128
+#: src/Utils.vala:118
 msgid "Generating package lists"
 msgstr "توليد قائمة الحزم"
 
-#: src/Utils.vala:130
+#: src/Utils.vala:120
 msgid "Waiting for package manager lock"
 msgstr "في انتظار قفل مدير الحزم"
 
-#: src/Utils.vala:132
+#: src/Utils.vala:122
 msgid "Waiting for authentication"
 msgstr "في انتظار المصادقة"
 
-#: src/Utils.vala:134
+#: src/Utils.vala:124
 msgid "Updating running applications"
 msgstr "تحديث التطبيقات الشغالة"
 
-#: src/Utils.vala:136
+#: src/Utils.vala:126
 msgid "Checking applications in use"
 msgstr "فحص التطبيقات المستخدمة"
 
-#: src/Utils.vala:138
+#: src/Utils.vala:128
 msgid "Checking libraries in use"
 msgstr "فحص المكتبات المستخدمة"
 
-#: src/Utils.vala:140
+#: src/Utils.vala:130
 msgid "Copying files"
 msgstr "جاري نسخ الملفات"
 
-#: src/Utils.vala:142
+#: src/Utils.vala:132
 msgid "Unknown state"
 msgstr "حالة غير معلومة"
 
-#: src/Core/Client.vala:70
+#: src/Core/BackendAggregator.vala:46
+msgid "package operations are being performed"
+msgstr ""
+
+#: src/Core/Client.vala:72
 msgid "Update Available"
 msgid_plural "Updates Available"
 msgstr[0] "لا يتوفر تحديثات"
@@ -223,7 +233,7 @@ msgstr[3] "يتوفر بعض التحديثات"
 msgstr[4] "يتوفر تحديثات"
 msgstr[5] "يتوفر تحديثات"
 
-#: src/Core/Client.vala:71
+#: src/Core/Client.vala:73
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
@@ -234,60 +244,49 @@ msgstr[3] "يوجد %u تحديثات لنظامك"
 msgstr[4] "يوجد %u تحديث لنظامك"
 msgstr[5] "يوجد %u تحديث لنظامك"
 
-#: src/Core/FlatpakBackend.vala:796
-#, fuzzy
-#| msgid "Uninstall"
+#: src/Core/FlatpakBackend.vala:1045
 msgid "Uninstalling"
-msgstr "إلغاء التثبيت"
+msgstr "جارٍ إلغاء التثبيت"
 
-#: src/Core/FlatpakBackend.vala:801
-#, fuzzy
-#| msgid "Finished"
-msgid "Finishing"
-msgstr "انتهى"
-
-#: src/Core/FlatpakBackend.vala:896
-#, fuzzy
-#| msgid "Update"
+#: src/Core/FlatpakBackend.vala:1218
 msgid "Updating"
-msgstr "تحديث"
+msgstr "يتم التحديث"
 
-#: src/Core/Package.vala:300
+#: src/Core/Package.vala:308
 #, c-format
 msgid "%s Developers"
 msgstr "المطورون %s"
 
-#: src/Core/Package.vala:332
+#: src/Core/Package.vala:340
 msgid "elementary Updates"
 msgstr "تحديثات المنتري"
 
-#: src/Core/Package.vala:334
+#: src/Core/Package.vala:342
 msgid "Ubuntu (non-curated)"
 msgstr "اوبونتو (غير المنسقة)"
 
-#: src/Core/Package.vala:337
+#: src/Core/Package.vala:347
 #, c-format
-msgid "%s (non-curated)"
-msgstr "%s (غير منسق)"
+msgid "%s (system-wide)"
+msgstr ""
 
-#: src/Core/Package.vala:339
+#: src/Core/Package.vala:352
 msgid "Ubuntu Drivers"
 msgstr "تعريفات أوبونتو"
 
-#: src/Core/Package.vala:342
+#: src/Core/Package.vala:355
 msgid "Unknown Origin (non-curated)"
 msgstr "غير معروف الأصل (غير منظم)"
 
-#: src/Core/Package.vala:452
+#: src/Core/Package.vala:532
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "لم يتم تعيين حالة التطبيق كما هو مثبت في مركز التطبيقات للحزمة: %s"
 
-#: src/Core/PackageKitBackend.vala:251
-#, fuzzy, c-format
-#| msgid "%s (non-curated)"
+#: src/Core/PackageKitBackend.vala:272
+#, c-format
 msgid "%s (local)"
-msgstr "%s (غير منسق)"
+msgstr "%s (محلي)"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -297,20 +296,20 @@ msgstr "تحديثات نظام التشغيل"
 msgid "Updates to system components"
 msgstr "تحديثات اجزاء النظام"
 
-#: src/Core/UpdateManager.vala:81
+#: src/Core/UpdateManager.vala:87
 #, c-format
 msgid "Version: %s"
 msgstr "نسخة : %s"
 
-#: src/Core/UpdateManager.vala:111
+#: src/Core/UpdateManager.vala:130
 msgid "Flatpak runtime"
 msgstr "وقت التشغيل Flatpak"
 
-#: src/Core/UpdateManager.vala:128
+#: src/Core/UpdateManager.vala:147
 msgid "No components with updates"
 msgstr "لا يوجد عناصر تحتاج تحديث"
 
-#: src/Core/UpdateManager.vala:133
+#: src/Core/UpdateManager.vala:152
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
@@ -321,16 +320,16 @@ msgstr[3] "%u عناصر تحتاج للتحديث"
 msgstr[4] "%u عنصر يحتاج للتحديث"
 msgstr[5] "%u عنصر يحتاج للتحديث"
 
-#: src/Core/UpdateManager.vala:135
+#: src/Core/UpdateManager.vala:154
 #, c-format
 msgid "%s:"
 msgstr "%s:"
 
-#: src/Core/UpdateManager.vala:174
+#: src/Core/UpdateManager.vala:193
 msgid "Restart Required"
 msgstr "يتطلب اعادة تشغيل"
 
-#: src/Core/UpdateManager.vala:175
+#: src/Core/UpdateManager.vala:194
 msgid "Please restart your system to finalize updates"
 msgstr "الرجاء اعادة التشغيل لكي يتم التثبيت"
 
@@ -362,36 +361,43 @@ msgstr "لا تثبت"
 msgid "Install Anyway"
 msgstr "ثبت على أي حال"
 
+#: src/Dialogs/InstallFailDialog.vala:26
+msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
+msgstr "يمكن ان تكون هذه مشكلة مؤقتة او قد تكون بسبب برامج خارجية او برامج تم تكوينها يدويا."
+
+#: src/Dialogs/InstallFailDialog.vala:37
+msgid "Failed to install app"
+msgstr "فشل تثبيت التطبيق"
+
+#: src/Dialogs/InstallFailDialog.vala:40
+#, c-format
+msgid "Failed to install “%s”"
+msgstr "فشل تثبيت\"%s\""
+
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
-#, fuzzy
-#| msgid "Content Warning"
 msgid "Non-Curated Warning"
-msgstr "تحذير المحتوى"
+msgstr "تحذير محتوى لم يتم تدقيقه"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:37
-#, fuzzy
-#| msgid "%s (non-curated)"
 msgid "Install non-curated app?"
-msgstr "%s (غير منسق)"
+msgstr "تثبيت تطبيق لم يتم التحقق منه؟"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
 msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-msgstr ""
+msgstr "“%s” لم يتم التدقيق عليه من قبل اليمينتري ولم يتم تقييم امنه او خصوصيته او كيفية اندماجه مع النظام."
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
 msgid "It may not receive bug fix or feature updates"
-msgstr ""
+msgstr "قد لا يصل إليه اصلاحات للأخطاء أو تحديثات مستقبلية"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:60
 msgid "It may access or change system or personal files without permission"
-msgstr ""
+msgstr "قد يستطيع الدخول أو التعديل على ملفات النظام او الملفات الشخصية دون صلاحيات"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
-#, fuzzy
-#| msgid "Show content warnings"
 msgid "Show non-curated warnings"
-msgstr "أظهر تحذيرات المحتوى"
+msgstr "اظهر تحذيرات المحتوى الذي لم يتم التحقق منه"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -405,9 +411,9 @@ msgstr "هذا سوف يغلق كل التطبيقات وإعادة تشغيل �
 msgid "Restart"
 msgstr "إعادة تشغيل"
 
-#: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:198
-#: src/Dialogs/StripeDialog.vala:315
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:177
+#: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:196
+#: src/Dialogs/StripeDialog.vala:313
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
 msgid "Cancel"
 msgstr "إنهاء"
 
@@ -432,7 +438,7 @@ msgstr "إدفع $%d لـ %s"
 msgid "This is a one time payment. Your email address is only used to send you a receipt."
 msgstr "هذه دفعة لمرة واحد. سوف يستخدم بريدك الإلكتروني لإرسال الفاتورة فقط."
 
-#: src/Dialogs/StripeDialog.vala:106 src/Widgets/SharePopover.vala:35
+#: src/Dialogs/StripeDialog.vala:106
 msgid "Email"
 msgstr "البريد"
 
@@ -453,92 +459,92 @@ msgstr "CVC"
 msgid "Privacy Policy"
 msgstr "سياسة الخصوصية"
 
-#: src/Dialogs/StripeDialog.vala:200 src/Dialogs/StripeDialog.vala:314
+#: src/Dialogs/StripeDialog.vala:198 src/Dialogs/StripeDialog.vala:312
 #, c-format
 msgid "Pay $%d.00"
 msgstr "ادفع $%d.00"
 
-#: src/Dialogs/StripeDialog.vala:243
+#: src/Dialogs/StripeDialog.vala:241
 msgid "Processing"
 msgstr "العملية"
 
-#: src/Dialogs/StripeDialog.vala:268
+#: src/Dialogs/StripeDialog.vala:266
 msgid "There Was a Problem Processing Your Payment"
 msgstr "كان هناك خطأ في عملية الدفع"
 
-#: src/Dialogs/StripeDialog.vala:306
+#: src/Dialogs/StripeDialog.vala:304
 msgid "Pay Later"
 msgstr "ادفع لاحقاً"
 
-#: src/Dialogs/StripeDialog.vala:307
+#: src/Dialogs/StripeDialog.vala:305
 msgid "Retry"
 msgstr "إعادة"
 
-#: src/Dialogs/StripeDialog.vala:513 src/Dialogs/StripeDialog.vala:578
+#: src/Dialogs/StripeDialog.vala:511 src/Dialogs/StripeDialog.vala:576
 msgid "The card number is incorrect. Please try again using the correct card number."
 msgstr "رقم البطاقة خاطئ. من فضلك حاول مرة أخرى بإستخدم الرقم الصحيح."
 
-#: src/Dialogs/StripeDialog.vala:515
+#: src/Dialogs/StripeDialog.vala:513
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
 msgstr "شهر الإنتهاء غير صحيح. من فضلك حاول مرة أخرى باستخدام تاريخ الإنتهاء الصحيح."
 
-#: src/Dialogs/StripeDialog.vala:517 src/Dialogs/StripeDialog.vala:575
+#: src/Dialogs/StripeDialog.vala:515 src/Dialogs/StripeDialog.vala:573
 msgid "The expiration year is invalid. Please try again using the correct expiration date."
 msgstr "سنة الإنتهاء غير صحيحة. من فضلك حاول مرة أخرى باستخدام تاريخ الإنتهاء الصحيح."
 
-#: src/Dialogs/StripeDialog.vala:520 src/Dialogs/StripeDialog.vala:573
+#: src/Dialogs/StripeDialog.vala:518 src/Dialogs/StripeDialog.vala:571
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr "رقم الـ CVC غير صحيح. من فضلك حاول مرة أخرى بإستخدام الرقم الصحيح."
 
-#: src/Dialogs/StripeDialog.vala:522 src/Dialogs/StripeDialog.vala:564
+#: src/Dialogs/StripeDialog.vala:520 src/Dialogs/StripeDialog.vala:562
 msgid "The card has expired. Please try again with a different card."
 msgstr "البطاقة منتهية الصلاحية. من فضلك حاول مرة أخرى ببطاقة مختلفة."
 
-#: src/Dialogs/StripeDialog.vala:542
+#: src/Dialogs/StripeDialog.vala:540
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr "يوجد العديد من طلبات الدفع حاليًا, من فضلك حاول في وقت آخر."
 
-#: src/Dialogs/StripeDialog.vala:558
+#: src/Dialogs/StripeDialog.vala:556
 msgid "This card does not support this kind of transaction. Please try again with a different card."
 msgstr "هذه البطاقة لا تدعم هذا النوع من العمليات. من فضلك حاول بإستخدام بطاقة أخرى."
 
-#: src/Dialogs/StripeDialog.vala:560
+#: src/Dialogs/StripeDialog.vala:558
 msgid "The currency is not supported by this card. Please try again with a different card."
 msgstr "هذه العملة غير مدعومة على هذه البطاقة. من فضلك حاول بإستخدام بطاقة أخرى."
 
-#: src/Dialogs/StripeDialog.vala:562
+#: src/Dialogs/StripeDialog.vala:560
 msgid "The transaction has already been processed."
 msgstr "تم معاجلة العملية سابقًا."
 
-#: src/Dialogs/StripeDialog.vala:566
+#: src/Dialogs/StripeDialog.vala:564
 msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
 msgstr "العنوان غير صحيح. من فضلك حاول مرة أخرى بإستخدام العنوان الصحيح."
 
-#: src/Dialogs/StripeDialog.vala:568
+#: src/Dialogs/StripeDialog.vala:566
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "لا تملك المال الكافي. من فضلك حاول بإستخدام طريقة دفع أخرى."
 
-#: src/Dialogs/StripeDialog.vala:570
+#: src/Dialogs/StripeDialog.vala:568
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "المبلغ غير صحيح. من فضلك حاول بإستخدام مبلغ صحيح."
 
-#: src/Dialogs/StripeDialog.vala:581
+#: src/Dialogs/StripeDialog.vala:579
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "رقم الـ PIN غير صحيح. من فضلك حاول بإستخدام رقم صحيح."
 
-#: src/Dialogs/StripeDialog.vala:583
+#: src/Dialogs/StripeDialog.vala:581
 msgid "There has been too many PIN attempts. Please try again with a different card."
 msgstr "تم محاولة وضع الـ PIN اكثر من مرة. من فضلك حاول بإستخدام بطاقة أخرى."
 
-#: src/Dialogs/StripeDialog.vala:603
+#: src/Dialogs/StripeDialog.vala:601
 msgid "Unable to complete the transaction. Please contact your bank for further information."
 msgstr "لم نتمكن من إتمام العملية. من فضلك قم بالتواصل مع بنك لتحصل على معلومات أكثر."
 
-#: src/Dialogs/StripeDialog.vala:606
+#: src/Dialogs/StripeDialog.vala:604
 msgid "The balance or credit limit on the card has been reached."
 msgstr "الرصيد او الحد على البطاقة وصل إليه."
 
-#: src/Dialogs/StripeDialog.vala:609
+#: src/Dialogs/StripeDialog.vala:607
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "البطاقة المودة هيا بطاقة تجريب. من فضلك حاول بإستخدام بطاقة حقيقية."
 
@@ -556,7 +562,7 @@ msgid "Uninstall “%s”?"
 msgstr "إلغاء تثبيت \"%s\"؟"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:144
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:124
 msgid "Uninstall"
 msgstr "إلغاء التثبيت"
 
@@ -589,118 +595,134 @@ msgstr "تجاهل"
 msgid "Try Again"
 msgstr "حاول مرة أخرى"
 
-#: src/Views/AppInfoView.vala:155
+#: src/Views/AppInfoView.vala:191
 msgid "Screenshot Not Available"
 msgstr "لقطات الشاشة غير متوفرة"
 
-#: src/Views/AppInfoView.vala:206
+#: src/Views/AppInfoView.vala:243
 msgid "Homepage"
 msgstr "الرئيسية"
 
-#: src/Views/AppInfoView.vala:212
+#: src/Views/AppInfoView.vala:249
 msgid "Suggest Translations"
 msgstr "إقتراح ترجمة"
 
-#: src/Views/AppInfoView.vala:218
+#: src/Views/AppInfoView.vala:255
 msgid "Report a Problem"
 msgstr "تقرير المشكلة"
 
-#: src/Views/AppInfoView.vala:224
+#: src/Views/AppInfoView.vala:261
 msgid "Help"
 msgstr "مساعدة"
 
-#: src/Views/AppInfoView.vala:235
+#: src/Views/AppInfoView.vala:272
 msgid "What's New:"
 msgstr "ما الجديد:"
 
-#: src/Views/AppInfoView.vala:270
+#: src/Views/AppInfoView.vala:307
 msgid "Extensions:"
 msgstr "الإضافات:"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:359
+#: src/Views/AppInfoView.vala:404
 msgid "Public Domain"
 msgstr "ملكية عامة"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:362
+#: src/Views/AppInfoView.vala:407
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://ar.wikipedia.org/wiki/%D9%85%D9%84%D9%83%D9%8A%D8%A9_%D8%B9%D8%A7%D9%85%D8%A9"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:367
+#: src/Views/AppInfoView.vala:412
 msgid "Free Software"
 msgstr "برمجيات حرة"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:370
+#: src/Views/AppInfoView.vala:415
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw.ar.html"
 
-#: src/Views/AppInfoView.vala:374
+#: src/Views/AppInfoView.vala:419
 msgid "Proprietary"
 msgstr "محتكر"
 
-#: src/Views/AppInfoView.vala:377
+#: src/Views/AppInfoView.vala:422
 msgid "Unknown License"
 msgstr "ترخيص غير معروف"
 
-#: src/Views/AppInfoView.vala:426
+#: src/Views/AppInfoView.vala:472
 #, c-format
 msgid "Other Apps by %s"
 msgstr "تطبيقات أخرى من %s"
 
-#: src/Views/AppInfoView.vala:463
+#: src/Views/AppInfoView.vala:510
 msgid "Link copied to clipboard"
 msgstr "تم نسخ الرابط للحافظة"
 
-#: src/Views/AppInfoView.vala:474
+#: src/Views/AppInfoView.vala:521
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "أنظر إلى %s في مركز التطبيقات:"
 
-#: src/Views/AppInfoView.vala:481
+#: src/Views/AppInfoView.vala:528
 msgid "Share"
 msgstr "شارك"
 
-#: src/Views/AppInfoView.vala:815
+#: src/Views/AppInfoView.vala:856
 msgid "Fund"
 msgstr "دعم"
 
-#: src/Views/AppInfoView.vala:837
+#: src/Views/AppInfoView.vala:878
 msgid "Fund the development of this app"
 msgstr "إدعم تطوير هذا التطبيق"
 
-#: src/Views/AppListUpdateView.vala:56
+#: src/Views/AppListUpdateView.vala:37
+msgid "Checking for Updates"
+msgstr "جاري البحث عن تحديثات"
+
+#: src/Views/AppListUpdateView.vala:38
+msgid "Downloading a list of available updates to the OS and installed apps"
+msgstr "جاري تحميل قائمة من التحديثات المتوفرة للنظام والتطبيقات المثبته"
+
+#: src/Views/AppListUpdateView.vala:49
 msgid "A restart is required to complete the installation of updates"
 msgstr "يتطلب اعادة تشغيل الجهاز لتثبيت التحديثات"
 
-#: src/Views/AppListUpdateView.vala:64
+#: src/Views/AppListUpdateView.vala:57
 msgid "Restart Now"
 msgstr "اعادة تشغيل الآن"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:201
+#: src/Views/AppListUpdateView.vala:191
 msgid "Update All"
 msgstr "تحديث الكل"
 
-#: src/Views/AppListView.vala:138
+#: src/Views/AppListView.vala:30
+msgid "No Results"
+msgstr "لاتوجد نتائج"
+
+#: src/Views/AppListView.vala:31
+msgid "No apps could be found. Try changing search terms."
+msgstr "لا يوجد تطبيقات بهذا الاسم حاول مرة اخرى."
+
+#: src/Views/AppListView.vala:167
 msgid "Non-Curated Apps"
 msgstr "تطبيقات غير مختارة"
 
-#: src/Views/Homepage.vala:67
+#: src/Views/Homepage.vala:68
 msgid "Recently Updated"
 msgstr "محديثة جديدًا"
 
-#: src/Views/Homepage.vala:83
+#: src/Views/Homepage.vala:84
 msgid "Trending"
 msgstr "الشائع"
 
-#: src/Views/Homepage.vala:99
+#: src/Views/Homepage.vala:100
 msgid "Categories"
 msgstr "التصنيفات"
 
-#: src/Views/Homepage.vala:314 src/Views/Homepage.vala:325
+#: src/Views/Homepage.vala:312 src/Views/Homepage.vala:323
 #, c-format
 msgid "Search %s"
 msgstr "بحث %s"
@@ -711,19 +733,11 @@ msgctxt "view"
 msgid "Search"
 msgstr "نتائج البحث"
 
-#: src/Widgets/AbstractAppList.vala:36
-msgid "No Results"
-msgstr "لاتوجد نتائج"
-
-#: src/Widgets/AbstractAppList.vala:36
-msgid "No apps could be found. Try changing search terms."
-msgstr "لا يوجد تطبيقات بهذا الاسم حاول مرة اخرى."
-
-#: src/Widgets/Banner.vala:55
+#: src/Widgets/Banner.vala:57
 msgid "An open, pay-what-you-want app store"
 msgstr "متجر مفتوح المصدر ادفع ماشئت للمطورين"
 
-#: src/Widgets/Banner.vala:74
+#: src/Widgets/Banner.vala:76
 msgid "Get the apps that you need at a price you can afford."
 msgstr "احصل على التطبيقات التي تريديها بالسعر الذي تريده."
 
@@ -800,12 +814,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "تحتاج لطريقة دفع, وهي غير مفعلة"
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:304
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:285
 msgid "Free"
 msgstr "مجاني"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:306
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:287
 msgid "Install"
 msgstr "تثبيت"
 
@@ -821,16 +835,16 @@ msgstr "$%d.00"
 msgid "$%d"
 msgstr "دولار$%d"
 
-#: src/Widgets/NetworkInfoBar.vala:32
+#: src/Widgets/NetworkInfoBar.vala:28
 msgid "Network Not Available."
 msgstr "الشبكة غير متوفرة."
 
-#: src/Widgets/NetworkInfoBar.vala:33
+#: src/Widgets/NetworkInfoBar.vala:29
 msgid "Connect to the Internet to browse and install apps."
 msgstr "إتصل بالإنترنت لتصفح و تحميل التطبيقات."
 
 #. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
-#: src/Widgets/NetworkInfoBar.vala:41
+#: src/Widgets/NetworkInfoBar.vala:37
 msgid "Network Settings…"
 msgstr "إعدادات الشبكة…"
 
@@ -847,27 +861,27 @@ msgstr "نسخة غير معروفة"
 msgid "No description available"
 msgstr "لا يوجد وصف"
 
-#: src/Widgets/SharePopover.vala:39
+#: src/Widgets/SharePopover.vala:44
 msgid "Facebook"
 msgstr "فيسبوك"
 
-#: src/Widgets/SharePopover.vala:43
+#: src/Widgets/SharePopover.vala:48
 msgid "Twitter"
 msgstr "تويتر"
 
-#: src/Widgets/SharePopover.vala:47
+#: src/Widgets/SharePopover.vala:52
 msgid "Reddit"
 msgstr "ريديت"
 
-#: src/Widgets/SharePopover.vala:51
+#: src/Widgets/SharePopover.vala:56
 msgid "Tumblr"
 msgstr "تمبلر"
 
-#: src/Widgets/SharePopover.vala:55
+#: src/Widgets/SharePopover.vala:60
 msgid "Telegram"
 msgstr "تيليجرام"
 
-#: src/Widgets/SharePopover.vala:59
+#: src/Widgets/SharePopover.vala:64
 msgid "Copy link"
 msgstr "نسخ الرابط"
 
@@ -884,36 +898,43 @@ msgstr "سيتم تنزيل أجزاء التطبيقات والتحديثات �
 msgid "Up to %s"
 msgstr "تم تثبيت آخر التحديثات %s"
 
-#: src/Widgets/UpdateHeaderRow.vala:69
+#: src/Widgets/UpdateHeaderRow.vala:41
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
-msgstr[0] "لا يتوفر تحديثات"
-msgstr[1] "يتوفر تحديث"
+msgstr[0] "لا تحديثات متوفرة"
+msgstr[1] "يتوفر تحديث واحد"
 msgstr[2] "يتوفر تحديثان"
-msgstr[3] "يتوفر %u تحديثات"
-msgstr[4] "يتوفر %u تحديث"
+msgstr[3] "يتوفر بعض التحديثات (%u)"
+msgstr[4] "يتوفر الكثير من التحديثات (%u)"
 msgstr[5] "يتوفر %u تحديث"
 
-#: src/Widgets/UpdateHeaderRow.vala:107
-msgid "Searching for updates…"
-msgstr "البحث عن تحديثات…"
-
-#: src/Widgets/UpdateHeaderRow.vala:114
-msgid "Up to Date"
-msgstr "تم تثبيت آخر التحديثات"
-
-#: src/Widgets/UpdateHeaderRow.vala:122
+#: src/Widgets/UpdateHeaderRow.vala:54
 msgid "Drivers"
 msgstr "التعريفات"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:153
-msgid "Open"
-msgstr "فتح"
+#: src/Widgets/UpdateHeaderRow.vala:58
+msgid "Up to Date"
+msgstr "تم تثبيت آخر التحديثات"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:329
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "تحديث"
+
+#~ msgid "Finishing"
+#~ msgstr "اللمسات الأخيرة"
+
+#~ msgid "Application installed"
+#~ msgstr "تم تثبيت التطبيق"
+
+#~ msgid "%s (non-curated)"
+#~ msgstr "%s (غير منسق)"
+
+#~ msgid "Searching for updates…"
+#~ msgstr "البحث عن تحديثات…"
+
+#~ msgid "There Was An Error Installing %s."
+#~ msgstr "خطأ في تثبيت %s."
 
 #~ msgid "Size: %s"
 #~ msgstr "حجم التطبيق : %s"

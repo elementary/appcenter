@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2014-2017 elementary LLC. (https://elementary.io)
+ * Copyright (c) 2014-2020 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,24 +18,35 @@
  */
 
 public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
-    public ListPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? info_size_group, Gtk.SizeGroup? action_size_group, bool show_uninstall = true) {
-        base (package, info_size_group, action_size_group, show_uninstall);
+    private Gtk.Label package_summary;
+
+    public ListPackageRowGrid (AppCenterCore.Package package) {
+        base (package);
         set_up_package ();
     }
 
     construct {
-        package_summary = new Gtk.Label (null);
+        package_summary = new Gtk.Label (null) {
+            ellipsize = Pango.EllipsizeMode.END,
+            valign = Gtk.Align.START,
+            xalign = 0
+        };
         package_summary.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
-        package_summary.hexpand = true;
-        package_summary.valign = Gtk.Align.START;
-        ((Gtk.Misc) package_summary).xalign = 0;
 
-        info_grid.attach (package_summary, 1, 1, 1, 1);
+        var grid = new Gtk.Grid () {
+            column_spacing = 12,
+            row_spacing = 3
+        };
+        grid.attach (image, 0, 0, 1, 2);
+        grid.attach (package_name, 1, 0);
+        grid.attach (package_summary, 1, 1);
+        grid.attach (action_stack, 2, 0, 1, 2);
+
+        add (grid);
     }
 
     protected override void set_up_package (uint icon_size = 48) {
         package_summary.label = package.get_summary ();
-        package_summary.ellipsize = Pango.EllipsizeMode.END;
 
         if (package.is_local) {
             action_stack.no_show_all = true;

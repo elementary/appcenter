@@ -22,6 +22,7 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
 
     private Gee.ArrayList<unowned Backend> backends;
     private uint remove_inhibit_timeout = 0;
+    private uint inhibit_token = 0;
 
     construct {
         backends = new Gee.ArrayList<unowned Backend> ();
@@ -29,6 +30,7 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
         backends.add (UbuntuDriversBackend.get_default ());
         backends.add (FlatpakBackend.get_default ());
 
+        unowned Gtk.Application app = (Gtk.Application) GLib.Application.get_default ();
         foreach (var backend in backends) {
             backend.notify["working"].connect (() => {
                 if (working) {
@@ -37,13 +39,23 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
                         remove_inhibit_timeout = 0;
                     }
 
-                    SuspendControl.get_default ().inhibit ();
+                    if (inhibit_token == 0) {
+                        inhibit_token = app.inhibit (
+                            app.get_active_window (),
+                            Gtk.ApplicationInhibitFlags.IDLE | Gtk.ApplicationInhibitFlags.SUSPEND,
+                            _("package operations are being performed")
+                        );
+                    }
                 } else {
                     // Wait for 5 seconds of inactivity before uninhibiting as we may be
                     // rapidly switching between working states on different backends etc...
                     if (remove_inhibit_timeout == 0) {
                         remove_inhibit_timeout = Timeout.add_seconds (5, () => {
-                            SuspendControl.get_default ().uninhibit ();
+                            if (inhibit_token != 0) {
+                                app.uninhibit (inhibit_token);
+                                inhibit_token = 0;
+                            }
+
                             remove_inhibit_timeout = 0;
 
                             return false;
@@ -87,27 +99,43 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
     }
 
     public Gee.Collection<Package> get_applications_for_category (AppStream.Category category) {
-        var apps = new Gee.TreeSet<Package> ((a, b) => {
-            return a.normalized_component_id.collate (b.normalized_component_id);
-        });
-
+        var apps = new Gee.HashMap<string, Package> ();
         foreach (var backend in backends) {
-            apps.add_all (backend.get_applications_for_category (category));
+            var results = backend.get_applications_for_category (category);
+
+            foreach (var result in results) {
+                var result_component_id = result.normalized_component_id;
+                if (apps.has_key (result_component_id)) {
+                    if (result.origin_score > apps[result_component_id].origin_score) {
+                        apps[result_component_id] = result;
+                    }
+                } else {
+                    apps[result_component_id] = result;
+                }
+            }
         }
 
-        return apps;
+        return apps.values;
     }
 
     public Gee.Collection<Package> search_applications (string query, AppStream.Category? category) {
-        var apps = new Gee.TreeSet<Package> ((a, b) => {
-            return a.normalized_component_id.collate (b.normalized_component_id);
-        });
-
+        var apps = new Gee.HashMap<string, Package> ();
         foreach (var backend in backends) {
-            apps.add_all (backend.search_applications (query, category));
+            var results = backend.search_applications (query, category);
+
+            foreach (var result in results) {
+                var result_component_id = result.normalized_component_id;
+                if (apps.has_key (result_component_id)) {
+                    if (result.origin_score > apps[result_component_id].origin_score) {
+                        apps[result_component_id] = result;
+                    }
+                } else {
+                    apps[result_component_id] = result;
+                }
+            }
         }
 
-        return apps;
+        return apps.values;
     }
 
     public Gee.Collection<Package> search_applications_mime (string query) {
@@ -134,13 +162,18 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
     public Gee.Collection<Package> get_packages_for_component_id (string id) {
         string package_id = id;
         if (package_id.has_suffix (".desktop")) {
-            package_id = package_id.substring (0, package_id.length + package_id.index_of_nth_char (-8));
+            // ".desktop" is always 8 bytes in UTF-8 so we can just chop 8 bytes off the end
+            package_id = package_id.substring (0, package_id.length - 8);
         }
 
         var packages = new Gee.ArrayList<Package> ();
         foreach (var backend in backends) {
             packages.add_all (backend.get_packages_for_component_id (package_id));
         }
+
+        packages.sort ((a, b) => {
+            return b.origin_score - a.origin_score;
+        });
 
         return packages;
     }
