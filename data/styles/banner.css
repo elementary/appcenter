@@ -57,7 +57,6 @@
     font-weight: 600;
 }
 
-
 .banner button:active,
 .banner button:checked {
   opacity: 0.9;
@@ -75,4 +74,8 @@
 
 .banner button:disabled {
     opacity: 0.33;
+}
+
+.banner .linked button:first-child {
+    border-right: 1px solid alpha(@banner_bg_color, 0.5);
 }
