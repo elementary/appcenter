@@ -15,22 +15,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/* To account for badge styling */
-.titlebar {
-    padding-bottom: 0;
-    padding-top: 0;
-}
-
-/* To account for no headerbar padding due to badge styling */
-.titlebar .view-switcher {
-    margin: 12px 0 11px;
-}
-
-/* To get the slimmer headerbar on tile/maximize */
-.tiled .titlebar .view-switcher {
-    margin: 8px 0;
-}
-
 .switcher {
     background-color: transparent;
     border: none;

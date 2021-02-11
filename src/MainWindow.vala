@@ -154,9 +154,13 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         return_button.get_style_context ().add_class ("back-button");
         return_button_history = new Gee.LinkedList<string> ();
 
-        view_mode = new Granite.Widgets.ModeButton ();
-        view_mode.margin_end = view_mode.margin_start = 12;
+        view_mode = new Granite.Widgets.ModeButton () {
+            margin_end = 12,
+            margin_start = 12,
+            valign = Gtk.Align.CENTER
+        };
         view_mode.get_style_context ().add_class ("view-switcher");
+
         homepage_view_id = view_mode.append_text (_("Home"));
         installed_view_id = view_mode.append_text (C_("view", "Installed"));
 
@@ -173,10 +177,11 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         eventbox_badge.add (updates_badge);
         eventbox_badge.button_release_event.connect (badge_event);
 
-        updates_badge_revealer = new Gtk.Revealer ();
-        updates_badge_revealer.halign = Gtk.Align.END;
-        updates_badge_revealer.valign = Gtk.Align.START;
-        updates_badge_revealer.transition_type = Gtk.RevealerTransitionType.CROSSFADE;
+        updates_badge_revealer = new Gtk.Revealer () {
+            halign = Gtk.Align.END,
+            transition_type = Gtk.RevealerTransitionType.CROSSFADE,
+            valign = Gtk.Align.START
+        };
         updates_badge_revealer.add (eventbox_badge);
 
         var view_mode_overlay = new Gtk.Overlay ();
@@ -251,7 +256,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
         spinner = new Gtk.Spinner ();
 
-        /* HeaderBar */
         headerbar = new Hdy.HeaderBar ();
         headerbar.show_close_button = true;
         headerbar.set_custom_title (custom_title_stack);
@@ -386,7 +390,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         last_installed_package = package;
 
         // Only show a toast when we're not on the installed app's page, i.e if
-        // no package is selected (we are not on an app page), or a package is 
+        // no package is selected (we are not on an app page), or a package is
         // selected but it's not the app we're installing.
         if (selected_package == null || (selected_package != null && selected_package.get_name () != package.get_name ())) {
             toast.title = _("“%s” has been installed").printf (package.get_name ());
