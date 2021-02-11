@@ -26,6 +26,7 @@ appcenter_files = files(
     'Dialogs/UninstallConfirmDialog.vala',
     'Dialogs/UninstallFailDialog.vala',
     'Dialogs/UpdateFailDialog.vala',
+    'Dialogs/UpgradeFailDialog.vala',
     'Services/DBusInterfaces.vala',
     'Services/DBusServer.vala',
     'Services/SearchProvider.vala',
