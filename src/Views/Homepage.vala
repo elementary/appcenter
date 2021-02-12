@@ -330,7 +330,7 @@ namespace AppCenter {
 
             var app_list_view = new Views.AppListView ();
             app_list_view.show_all ();
-            add (app_list_view);
+            add_named (app_list_view, category.name);
             set_visible_child (app_list_view);
 
             app_list_view.show_app.connect ((package) => {
