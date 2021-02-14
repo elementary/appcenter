@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-21 17:05+0000\n"
-"PO-Revision-Date: 2020-07-24 13:12+0000\n"
-"Last-Translator: Ciarán Ainsworth <ciaranainsworth@posteo.net>\n"
+"PO-Revision-Date: 2021-02-14 23:19+0000\n"
+"Last-Translator: Ciarán Ainsworth <ciaranainsworth@outlook.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "appcenter/extra/en_GB/>\n"
 "Language: en_GB\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
@@ -45,7 +45,7 @@ msgstr "Fixes"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Correctly display names of Flatpak runtime updates"
-msgstr ""
+msgstr "Correctly display names of Flatpak runtime updates"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:37
@@ -74,31 +74,31 @@ msgstr "New features"
 
 #: data/io.elementary.appcenter.appdata.xml.in:30
 msgid "Support system-wide Flatpak remotes"
-msgstr ""
+msgstr "Support system-wide Flatpak remotes"
 
 #: data/io.elementary.appcenter.appdata.xml.in:34
 msgid "Fix Flatpak runtime updates getting stuck"
-msgstr ""
+msgstr "Fix Flatpak runtime updates getting stuck"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
 msgid "Fix long origin comboboxes breaking the header layout"
-msgstr ""
+msgstr "Fix long origin comboboxes breaking the header layout"
 
 #: data/io.elementary.appcenter.appdata.xml.in:39
 msgid ""
 "When apps are available from multiple sources, prefer installed version, "
 "then prefer Flatpak"
 msgstr ""
+"When apps are available from multiple sources, prefer installed version, "
+"then prefer Flatpak"
 
 #: data/io.elementary.appcenter.appdata.xml.in:40
-#, fuzzy
-#| msgid "Bug fixes and improve performance."
 msgid "Improve search performance"
-msgstr "Bug fixes and improve performance."
+msgstr "Improve search performance"
 
 #: data/io.elementary.appcenter.appdata.xml.in:41
 msgid "Improve update badge styling and category styling"
-msgstr ""
+msgstr "Improve update badge styling and category styling"
 
 #: data/io.elementary.appcenter.appdata.xml.in:50
 msgid "Ensure AppCenter is reopened at the correct position"
@@ -475,10 +475,6 @@ msgid "Prevent multiple authentication dialogs when resuming from suspend"
 msgstr "Prevent multiple authentication dialogues when resuming from suspend"
 
 #: data/io.elementary.appcenter.appdata.xml.in:340
-#, fuzzy
-#| msgid ""
-#| "Search performance has beeen improved, the category name is now shown on "
-#| "the headbar and minor bugs have been fixed."
 msgid ""
 "Search performance has been improved, the category name is now shown on the "
 "headbar and minor bugs have been fixed."
