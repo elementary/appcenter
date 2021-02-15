@@ -874,7 +874,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         Pk.Package? pk_package = null;
         var filter = Pk.Bitfield.from_enums (Pk.Filter.NEWEST);
         try {
-            var results = client.search_names_sync (filter, { name, null }, null, () => {});
+            var results = client.resolve_sync (filter, { name, null }, null, () => {});
             var array = results.get_package_array ();
             if (array.length > 0) {
                 pk_package = array.get (0);
