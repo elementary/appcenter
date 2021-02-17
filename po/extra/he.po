@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-17 01:03+0000\n"
-"PO-Revision-Date: 2020-12-25 14:16+0000\n"
+"PO-Revision-Date: 2021-02-17 06:30+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/extra/"
 "he/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
@@ -489,10 +489,8 @@ msgid "@APP_NAME@"
 msgstr "@APP_NAME@"
 
 #: data/io.elementary.appcenter.desktop.in.in:6
-#, fuzzy
-#| msgid "@APP_NAME@"
 msgid "@PROJECT_NAME@"
-msgstr "@APP_NAME@"
+msgstr "@PROJECT_NAME@"
 
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
