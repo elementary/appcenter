@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-21 17:05+0000\n"
+"POT-Creation-Date: 2021-02-17 01:03+0000\n"
 "PO-Revision-Date: 2020-11-22 20:15+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/extra/"
@@ -490,8 +490,10 @@ msgid "@APP_NAME@"
 msgstr "@APP_NAME@"
 
 #: data/io.elementary.appcenter.desktop.in.in:6
-msgid "@DESKTOP_ICON@"
-msgstr "@DESKTOP_ICON@"
+#, fuzzy
+#| msgid "@APP_NAME@"
+msgid "@PROJECT_NAME@"
+msgstr "@APP_NAME@"
 
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
@@ -512,6 +514,9 @@ msgstr "सॉफ्टवेअर अद्यतनित करा"
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to update software"
 msgstr "सॉफ्टवेअर अद्यतनित करण्यासाठी प्रमाणीकरण आवश्यक आहे"
+
+#~ msgid "@DESKTOP_ICON@"
+#~ msgstr "@DESKTOP_ICON@"
 
 #, fuzzy
 #~| msgid "Performance improvements"

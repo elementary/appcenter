@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-21 17:05+0000\n"
+"POT-Creation-Date: 2021-02-17 01:03+0000\n"
 "PO-Revision-Date: 2017-06-18 12:23+0000\n"
 "Last-Translator: Valentin Kirilov <val.kirilov@gmail.com>\n"
 "Language-Team: Bulgarian <https://l10n.elementary.io/projects/appcenter/"
@@ -480,7 +480,7 @@ msgid "@APP_NAME@"
 msgstr ""
 
 #: data/io.elementary.appcenter.desktop.in.in:6
-msgid "@DESKTOP_ICON@"
+msgid "@PROJECT_NAME@"
 msgstr ""
 
 #: data/io.elementary.appcenter.desktop.in.in:7

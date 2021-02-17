@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Akan (AppCenter)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-21 17:05+0000\n"
+"POT-Creation-Date: 2021-02-17 01:03+0000\n"
 "PO-Revision-Date: 2019-02-10 00:06+0000\n"
 "Last-Translator: Rico Tzschichholz <ricotz@ubuntu.com>\n"
 "Language-Team: Akan <https://weblate.elementary.io/projects/appcenter/extra/"
@@ -490,7 +490,7 @@ msgid "@APP_NAME@"
 msgstr ""
 
 #: data/io.elementary.appcenter.desktop.in.in:6
-msgid "@DESKTOP_ICON@"
+msgid "@PROJECT_NAME@"
 msgstr ""
 
 #: data/io.elementary.appcenter.desktop.in.in:7

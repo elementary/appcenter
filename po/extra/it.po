@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-21 17:05+0000\n"
+"POT-Creation-Date: 2021-02-17 01:03+0000\n"
 "PO-Revision-Date: 2021-01-26 20:02+0000\n"
 "Last-Translator: Marco De Paolini <marco.depaolini@gmail.com>\n"
 "Language-Team: Italian <https://l10n.elementary.io/projects/appcenter/extra/"
@@ -554,14 +554,16 @@ msgid "@APP_NAME@"
 msgstr "@NOME_APP@"
 
 #: data/io.elementary.appcenter.desktop.in.in:6
-msgid "@DESKTOP_ICON@"
-msgstr "@ICONA_DESKTOP@"
+#, fuzzy
+#| msgid "@APP_NAME@"
+msgid "@PROJECT_NAME@"
+msgstr "@NOME_APP@"
 
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
 msgstr ""
-"installa;disinstalla;rimuovi;catalogo;negozio;applicazioni;programmi;aggiorna"
-"menti; software;app;"
+"installa;disinstalla;rimuovi;catalogo;negozio;applicazioni;programmi;"
+"aggiornamenti; software;app;"
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
@@ -578,6 +580,9 @@ msgstr "Aggiornamento software"
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to update software"
 msgstr "È necessario autentificarsi per aggiornare il software"
+
+#~ msgid "@DESKTOP_ICON@"
+#~ msgstr "@ICONA_DESKTOP@"
 
 #, fuzzy
 #~ msgid "Performance improvments"

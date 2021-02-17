@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-21 17:05+0000\n"
+"POT-Creation-Date: 2021-02-17 01:03+0000\n"
 "PO-Revision-Date: 2020-12-23 23:11+0000\n"
 "Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/appcenter/"
@@ -518,8 +518,10 @@ msgid "@APP_NAME@"
 msgstr "@NAMA_APLIKASI@"
 
 #: data/io.elementary.appcenter.desktop.in.in:6
-msgid "@DESKTOP_ICON@"
-msgstr "@IKON_DESKTOP@"
+#, fuzzy
+#| msgid "@APP_NAME@"
+msgid "@PROJECT_NAME@"
+msgstr "@NAMA_APLIKASI@"
 
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
@@ -540,6 +542,9 @@ msgstr "Pembaruan perangkat lunak"
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to update software"
 msgstr "Otentikasi diperlukan untuk pembaruan perangkat lunak"
+
+#~ msgid "@DESKTOP_ICON@"
+#~ msgstr "@IKON_DESKTOP@"
 
 #, fuzzy
 #~| msgid "Performance improvements"
