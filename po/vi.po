@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-21 17:05+0000\n"
+"POT-Creation-Date: 2021-02-17 01:03+0000\n"
 "PO-Revision-Date: 2020-10-07 03:57+0000\n"
 "Last-Translator: Trkien618 <hacngoctrungkien@gmail.com>\n"
 "Language-Team: Vietnamese <https://l10n.elementary.io/projects/appcenter/appcenter/vi/>\n"
@@ -273,7 +273,7 @@ msgstr "Các trình điều khiển"
 msgid "Unknown Origin (non-curated)"
 msgstr "Nguồn gốc không xác định (không được quản lý)"
 
-#: src/Core/Package.vala:532
+#: src/Core/Package.vala:528
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Trạng thái ứng dụng không được đặt như ứng dụng đã cài đặt trong AppCenter cho package: %s"
@@ -569,6 +569,7 @@ msgid "Uninstall"
 msgstr "Gỡ cài đặt"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
+#: src/Dialogs/UpgradeFailDialog.vala:26
 #, fuzzy
 msgid "This may have been caused by external or manually compiled software."
 msgstr "Điều này có thể gây ra bởi các nguồn ngoài hoặc file nguồn bị lỗi"
@@ -598,109 +599,119 @@ msgstr "Bỏ qua"
 msgid "Try Again"
 msgstr "Thử lại"
 
-#: src/Views/AppInfoView.vala:191
+#: src/Dialogs/UpgradeFailDialog.vala:37
+#, fuzzy
+msgid "Failed to update app"
+msgstr "Gỡ cài đặt"
+
+#: src/Dialogs/UpgradeFailDialog.vala:40
+#, fuzzy, c-format
+msgid "Failed to update “%s”"
+msgstr "Gỡ cài đặt"
+
+#: src/Views/AppInfoView.vala:187
 msgid "Screenshot Not Available"
 msgstr "Không có ảnh chụp màn hình"
 
-#: src/Views/AppInfoView.vala:243
+#: src/Views/AppInfoView.vala:239
 msgid "Homepage"
 msgstr "Trang chủ"
 
-#: src/Views/AppInfoView.vala:249
+#: src/Views/AppInfoView.vala:245
 msgid "Suggest Translations"
 msgstr "Đề xuất dịch"
 
-#: src/Views/AppInfoView.vala:255
+#: src/Views/AppInfoView.vala:251
 msgid "Report a Problem"
 msgstr "Báo cáo một vấn đề"
 
-#: src/Views/AppInfoView.vala:261
+#: src/Views/AppInfoView.vala:257
 msgid "Help"
 msgstr "Trợ giúp"
 
-#: src/Views/AppInfoView.vala:272
+#: src/Views/AppInfoView.vala:268
 msgid "What's New:"
 msgstr "Tin tức mới:"
 
-#: src/Views/AppInfoView.vala:307
+#: src/Views/AppInfoView.vala:303
 msgid "Extensions:"
 msgstr "Tiện ích mở rộng:"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:404
+#: src/Views/AppInfoView.vala:400
 msgid "Public Domain"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:407
+#: src/Views/AppInfoView.vala:403
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr ""
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:412
+#: src/Views/AppInfoView.vala:408
 msgid "Free Software"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:415
+#: src/Views/AppInfoView.vala:411
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:419
+#: src/Views/AppInfoView.vala:415
 msgid "Proprietary"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:422
+#: src/Views/AppInfoView.vala:418
 #, fuzzy
 msgid "Unknown License"
 msgstr "Trạng thái không xác định"
 
-#: src/Views/AppInfoView.vala:472
+#: src/Views/AppInfoView.vala:468
 #, c-format
 msgid "Other Apps by %s"
 msgstr "Các ứng dụng khác %s"
 
-#: src/Views/AppInfoView.vala:510
+#: src/Views/AppInfoView.vala:506
 msgid "Link copied to clipboard"
 msgstr "Đường dẫn đã được sao chép lưu tạm thời"
 
-#: src/Views/AppInfoView.vala:521
+#: src/Views/AppInfoView.vala:517
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "Kiểm tra %s trên Trung tâm Ứng dụng:"
 
-#: src/Views/AppInfoView.vala:528
+#: src/Views/AppInfoView.vala:524
 msgid "Share"
 msgstr "Chia sẻ"
 
-#: src/Views/AppInfoView.vala:856
+#: src/Views/AppInfoView.vala:852
 msgid "Fund"
 msgstr "Tài trợ"
 
-#: src/Views/AppInfoView.vala:878
+#: src/Views/AppInfoView.vala:874
 msgid "Fund the development of this app"
 msgstr "Tài trợ cho sự phát triển của ứng dụng này"
 
-#: src/Views/AppListUpdateView.vala:37
+#: src/Views/AppListUpdateView.vala:32
 #, fuzzy
 #| msgid "Searching for updates…"
 msgid "Checking for Updates"
 msgstr "Đang tìm kiếm bản cập nhật…"
 
-#: src/Views/AppListUpdateView.vala:38
+#: src/Views/AppListUpdateView.vala:33
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr ""
 
-#: src/Views/AppListUpdateView.vala:49
+#: src/Views/AppListUpdateView.vala:41
 msgid "A restart is required to complete the installation of updates"
 msgstr "Yêu cầu khởi động lại để hoàn tất quá trình cài đặt bản cập nhật"
 
-#: src/Views/AppListUpdateView.vala:57
+#: src/Views/AppListUpdateView.vala:49
 msgid "Restart Now"
 msgstr "Khởi động lại ngay"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:191
+#: src/Views/AppListUpdateView.vala:183
 msgid "Update All"
 msgstr "Cập nhật tất cả"
 
