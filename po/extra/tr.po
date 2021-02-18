@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-17 01:03+0000\n"
-"PO-Revision-Date: 2021-01-30 02:47+0000\n"
+"PO-Revision-Date: 2021-02-19 12:12+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/extra/"
 "tr/>\n"
@@ -512,10 +512,8 @@ msgid "@APP_NAME@"
 msgstr "@APP_NAME@"
 
 #: data/io.elementary.appcenter.desktop.in.in:6
-#, fuzzy
-#| msgid "@APP_NAME@"
 msgid "@PROJECT_NAME@"
-msgstr "@APP_NAME@"
+msgstr "@PROJECT_NAME@"
 
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
