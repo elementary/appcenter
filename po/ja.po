@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-17 01:03+0000\n"
-"PO-Revision-Date: 2021-02-17 06:14+0000\n"
+"PO-Revision-Date: 2021-02-19 12:12+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ja/>\n"
@@ -319,12 +319,14 @@ msgstr "コンテンツの警告"
 #: src/Dialogs/ContentWarningDialog.vala:30
 #, c-format
 msgid "“%s” contains explicit content"
-msgstr "“%s”は不適切なコンテンツを含んでいます"
+msgstr "“%s” は不適切なコンテンツを含んでいます"
 
 #: src/Dialogs/ContentWarningDialog.vala:31
 #, c-format
 msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
-msgstr "“%s”には、成人向けの内容、不適切な内容、あるいは動揺させる内容が含まれている可能性があります。一般的に、elementary はこのアプリのコンテンツを審査・保証していません。"
+msgstr ""
+"“%s” には、成人向けの内容、不適切な内容、あるいは動揺させる内容が含まれている可能性があります。一般的に、elementary "
+"はこのアプリのコンテンツを審査・保証していません。"
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 msgid "Show content warnings"
@@ -538,7 +540,7 @@ msgstr "アプリをアンインストールしますか？"
 #: src/Dialogs/UninstallConfirmDialog.vala:38
 #, c-format
 msgid "Uninstall “%s”?"
-msgstr "“%s”をアンインストールしますか?"
+msgstr "“%s” をアンインストールしますか？"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:124
