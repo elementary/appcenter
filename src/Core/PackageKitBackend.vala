@@ -240,6 +240,11 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
                 }
 
                 foreach (unowned string pkg_name in comp.get_pkgnames ()) {
+                    // Hide apps from the Ubuntu repos
+                    if (comp.get_origin ().has_prefix ("ubuntu-")) {
+                        continue;
+                    }
+
                     var package = package_list[pkg_name];
                     if (package != null) {
                         package.replace_component (comp);
