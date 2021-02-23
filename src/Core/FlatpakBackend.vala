@@ -286,7 +286,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
     public Gee.Collection<Package> search_applications (string query, AppStream.Category? category) {
         var apps = new Gee.TreeSet<AppCenterCore.Package> ();
-        GLib.GenericArray<weak AppStream.Component> comps = user_appstream_pool.search (query);
+        var comps = user_appstream_pool.search (query);
         if (category == null) {
             comps.foreach ((comp) => {
                 var packages = get_packages_for_component_id (comp.get_id ());
