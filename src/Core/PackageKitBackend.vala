@@ -393,7 +393,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 
     public Gee.Collection<AppCenterCore.Package> search_applications (string query, AppStream.Category? category) {
         var apps = new Gee.TreeSet<AppCenterCore.Package> ();
-        GLib.GenericArray<weak AppStream.Component> comps = appstream_pool.search (query);
+        var comps = appstream_pool.search (query);
         if (category == null) {
             comps.foreach ((comp) => {
                 var package = get_package_for_component_id (comp.get_id ());
