@@ -85,6 +85,10 @@ if get_option('sharing')
     args += '--define=SHARING'
 endif
 
+if get_option('hide_ubuntu_apps')
+    args += '--define=HIDE_UBUNTU_APPS'
+endif
+
 executable(
     meson.project_name(),
     appcenter_files,
