@@ -151,6 +151,15 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 
         package_list = new Gee.HashMap<string, AppCenterCore.Package> (null, null);
         appstream_pool = new AppStream.Pool ();
+
+        // Only use a user cache, the system cache probably contains all the Ubuntu components
+        appstream_pool.set_cache_flags (AppStream.CacheFlags.USE_USER);
+
+        // Clear out the default set of metadata locations and only use the folder that gets populated
+        // with elementary's AppStream data.
+        appstream_pool.clear_metadata_locations ();
+        appstream_pool.add_metadata_location ("/usr/share/app-info");
+
         // We don't want to show installed desktop files here
         appstream_pool.set_flags (appstream_pool.get_flags () & ~AppStream.PoolFlags.READ_DESKTOP_FILES);
 
@@ -240,11 +249,6 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
                 }
 
                 foreach (unowned string pkg_name in comp.get_pkgnames ()) {
-                    // Hide apps from the Ubuntu repos
-                    if (comp.get_origin ().has_prefix ("ubuntu-")) {
-                        continue;
-                    }
-
                     var package = package_list[pkg_name];
                     if (package != null) {
                         package.replace_component (comp);
