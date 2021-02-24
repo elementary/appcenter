@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-17 01:03+0000\n"
-"PO-Revision-Date: 2021-02-19 12:12+0000\n"
+"PO-Revision-Date: 2021-02-21 21:48+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/de/>\n"
@@ -221,7 +221,6 @@ msgid "Unknown state"
 msgstr "Unbekannter Status"
 
 #: src/Core/BackendAggregator.vala:46
-#, fuzzy
 msgid "package operations are being performed"
 msgstr "Pakete werden verarbeitet"
 
@@ -484,7 +483,9 @@ msgstr "Das angegebene Jahr im Ablaufdatum ist ungültig. Bitte versuche es erne
 
 #: src/Dialogs/StripeDialog.vala:518 src/Dialogs/StripeDialog.vala:571
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr "Die CVC-Prüfnummer ist ungültig. Versuche es  bitte mit der korrekten Nummer erneut."
+msgstr ""
+"Die CVC-Prüfnummer ist ungültig. Versuchen Sie es bitte mit der korrekten "
+"Nummer erneut."
 
 #: src/Dialogs/StripeDialog.vala:520 src/Dialogs/StripeDialog.vala:562
 msgid "The card has expired. Please try again with a different card."
@@ -496,7 +497,9 @@ msgstr "Im Augenblick sind zu viele Zahlungsanfragen in Bearbeitung. Versuche es
 
 #: src/Dialogs/StripeDialog.vala:556
 msgid "This card does not support this kind of transaction. Please try again with a different card."
-msgstr "Die Karte unterstützt diese Transaktionsart nicht. Versuche es bitte  mit einer anderen Karte erneut."
+msgstr ""
+"Die Karte unterstützt diese Transaktionsart nicht. Versuchen Sie es bitte "
+"mit einer anderen Karte erneut."
 
 #: src/Dialogs/StripeDialog.vala:558
 msgid "The currency is not supported by this card. Please try again with a different card."
@@ -516,7 +519,8 @@ msgstr "Das Guthaben reicht nicht aus. Nutze bitte eine andere Zahlungsweise."
 
 #: src/Dialogs/StripeDialog.vala:568
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr "Der Betrag ist ungültig.  Versuche es bitte  mit einem korrekten Wert erneut."
+msgstr ""
+"Der Betrag ist ungültig. Versuchen Sie bitte mit einem korrekten Wert erneut."
 
 #: src/Dialogs/StripeDialog.vala:579
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
