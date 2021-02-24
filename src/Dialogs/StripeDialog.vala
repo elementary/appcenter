@@ -17,7 +17,7 @@
 * Boston, MA 02110-1301 USA
 */
 
-public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
+public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
     public signal void download_requested ();
 
     private const string HOUSTON_URI = "https://developer.elementary.io/api/payment/%s";
@@ -81,7 +81,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         var image = new Gtk.Image.from_icon_name ("payment-card", Gtk.IconSize.DIALOG);
         image.valign = Gtk.Align.START;
 
-        var overlay_image = new Gtk.Image.from_icon_name ("system-software-install", Gtk.IconSize.LARGE_TOOLBAR);
+        var overlay_image = new Gtk.Image.from_icon_name (Build.PROJECT_NAME, Gtk.IconSize.LARGE_TOOLBAR);
         overlay_image.halign = overlay_image.valign = Gtk.Align.END;
 
         var overlay = new Gtk.Overlay ();
@@ -186,14 +186,12 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
         content_area.add (layouts);
         content_area.show_all ();
 
-        var privacy_policy_link = new Gtk.LinkButton.with_label ("https://stripe.com/privacy", _("Privacy Policy"));
-        privacy_policy_link.show ();
+        var privacy_policy_link = new Gtk.LinkButton.with_label ("https://stripe.com/privacy", _("Privacy Policy")) {
+            halign = Gtk.Align.START,
+            hexpand = true
+        };
 
-        var action_area = (Gtk.ButtonBox) get_action_area ();
-        action_area.margin = 5;
-        action_area.margin_top = 14;
-        action_area.add (privacy_policy_link);
-        action_area.set_child_secondary (privacy_policy_link, true);
+        add_action_widget (privacy_policy_link, Gtk.ResponseType.NONE);
 
         cancel_button = (Gtk.Button) add_button (_("Cancel"), Gtk.ResponseType.CLOSE);
 
@@ -276,7 +274,7 @@ public class AppCenter.Widgets.StripeDialog : Gtk.Dialog {
             secondary_error_label.wrap = true;
             secondary_error_label.xalign = 0;
 
-            var icon = new Gtk.Image.from_icon_name ("system-software-install", Gtk.IconSize.DIALOG);
+            var icon = new Gtk.Image.from_icon_name (Build.PROJECT_NAME, Gtk.IconSize.DIALOG);
 
             var overlay_icon = new Gtk.Image.from_icon_name ("dialog-warning", Gtk.IconSize.LARGE_TOOLBAR);
             overlay_icon.halign = Gtk.Align.END;

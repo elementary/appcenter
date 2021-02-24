@@ -396,7 +396,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
 
     public Gee.Collection<AppCenterCore.Package> search_applications (string query, AppStream.Category? category) {
         var apps = new Gee.TreeSet<AppCenterCore.Package> ();
-        GLib.GenericArray<weak AppStream.Component> comps = appstream_pool.search (query);
+        var comps = appstream_pool.search (query);
         if (category == null) {
             comps.foreach ((comp) => {
                 var package = get_package_for_component_id (comp.get_id ());
@@ -420,7 +420,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
     public Gee.Collection<AppCenterCore.Package> search_applications_mime (string query) {
         var apps = new Gee.TreeSet<AppCenterCore.Package> ();
         foreach (var package in package_list.values) {
-            weak AppStream.Provided? provided = package.component.get_provided_for_kind (AppStream.ProvidedKind.MIMETYPE);
+            weak AppStream.Provided? provided = package.component.get_provided_for_kind (AppStream.ProvidedKind.MEDIATYPE);
             if (provided != null && provided.has_item (query)) {
                 apps.add (package);
             }
@@ -877,7 +877,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         Pk.Package? pk_package = null;
         var filter = Pk.Bitfield.from_enums (Pk.Filter.NEWEST);
         try {
-            var results = client.search_names_sync (filter, { name, null }, null, () => {});
+            var results = client.resolve_sync (filter, { name, null }, null, () => {});
             var array = results.get_package_array ();
             if (array.length > 0) {
                 pk_package = array.get (0);
