@@ -3,13 +3,14 @@
 # Daniel R. <riesp@pm.me>, 2019, 2020.
 # Xurxo Guerra <xguerrap@gmail.com>, 2019.
 # J.Doval <dovaldev@gmail.com>, 2021.
+# david <dcardelleg@gmail.com>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-17 01:03+0000\n"
 "PO-Revision-Date: 2021-02-26 09:59+0000\n"
-"Last-Translator: J.Doval <dovaldev@gmail.com>\n"
+"Last-Translator: david <dcardelleg@gmail.com>\n"
 "Language-Team: Galician <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/gl/>\n"
 "Language: gl\n"
@@ -36,19 +37,16 @@ msgid "Specified link '%s' could not be found, searching instead"
 msgstr "A ligazón '%s' non pode ser atopada, procurando alternativas"
 
 #: src/Application.vala:295
-#, fuzzy
-#| msgid "%s has been successfully installed"
 msgid "The app has been installed"
-msgstr "%s foi instalado con éxito"
+msgstr "Instalouse a aplicación"
 
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
 #: src/Application.vala:296 src/MainWindow.vala:340
-#, fuzzy, c-format
-#| msgid "%s has been successfully installed"
+#, c-format
 msgid "“%s” has been installed"
-msgstr "%s foi instalado con éxito"
+msgstr "Instalouse “%s”"
 
 #: src/MainWindow.vala:137
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:133
@@ -259,9 +257,9 @@ msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (non verificadas)"
 
 #: src/Core/Package.vala:347
-#, c-format
+#, c-format, fuzzy
 msgid "%s (system-wide)"
-msgstr ""
+msgstr "%s (todo o sistema)"
 
 #: src/Core/Package.vala:352
 msgid "Ubuntu Drivers"
@@ -357,16 +355,13 @@ msgstr ""
 "ou compilados manualmente."
 
 #: src/Dialogs/InstallFailDialog.vala:37
-#, fuzzy
-#| msgid "Failed to uninstall app"
 msgid "Failed to install app"
-msgstr "Non se puido desinstalar a aplicación"
+msgstr "Non se puido instalar a aplicación"
 
 #: src/Dialogs/InstallFailDialog.vala:40
-#, fuzzy, c-format
-#| msgid "Failed to uninstall “%s”"
+#, c-format
 msgid "Failed to install “%s”"
-msgstr "Fallou ó desinstalar \"%s\""
+msgstr "Non se puido instalar \"%s\""
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
 msgid "Non-Curated Warning"
