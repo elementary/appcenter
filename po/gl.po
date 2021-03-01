@@ -1,7 +1,7 @@
 # Daniel <riesp@protonmail.com>, 2019.
 # Pablo Varela <pablovarela182@gmail.com>, 2019.
 # Daniel R. <riesp@pm.me>, 2019, 2020.
-# Xurxo Guerra <xguerrap@gmail.com>, 2019.
+# Xurxo Guerra <xguerrap@gmail.com>, 2019, 2021.
 # J.Doval <dovaldev@gmail.com>, 2021.
 # david <dcardelleg@gmail.com>, 2021.
 msgid ""
@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-17 01:03+0000\n"
-"PO-Revision-Date: 2021-02-27 00:32+0000\n"
-"Last-Translator: david <dcardelleg@gmail.com>\n"
+"PO-Revision-Date: 2021-03-01 13:42+0000\n"
+"Last-Translator: Xurxo Guerra <xguerrap@gmail.com>\n"
 "Language-Team: Galician <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/gl/>\n"
 "Language: gl\n"
@@ -686,10 +686,8 @@ msgid "Fund the development of this app"
 msgstr "Financiar o desenvolvemento desta aplicación"
 
 #: src/Views/AppListUpdateView.vala:32
-#, fuzzy
-#| msgid "Searching for updates…"
 msgid "Checking for Updates"
-msgstr "Buscando actualizacións…"
+msgstr "Buscando actualizacións"
 
 #: src/Views/AppListUpdateView.vala:33
 msgid "Downloading a list of available updates to the OS and installed apps"
