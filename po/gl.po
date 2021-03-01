@@ -1,7 +1,7 @@
 # Daniel <riesp@protonmail.com>, 2019.
 # Pablo Varela <pablovarela182@gmail.com>, 2019.
 # Daniel R. <riesp@pm.me>, 2019, 2020.
-# Xurxo Guerra <xguerrap@gmail.com>, 2019.
+# Xurxo Guerra <xguerrap@gmail.com>, 2019, 2021.
 # J.Doval <dovaldev@gmail.com>, 2021.
 # david <dcardelleg@gmail.com>, 2021.
 msgid ""
@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-17 01:03+0000\n"
-"PO-Revision-Date: 2021-02-27 00:32+0000\n"
-"Last-Translator: david <dcardelleg@gmail.com>\n"
+"PO-Revision-Date: 2021-03-01 13:42+0000\n"
+"Last-Translator: J.Doval <dovaldev@gmail.com>\n"
 "Language-Team: Galician <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/gl/>\n"
 "Language: gl\n"
@@ -387,12 +387,11 @@ msgstr ""
 #: src/Dialogs/NonCuratedWarningDialog.vala:60
 msgid "It may access or change system or personal files without permission"
 msgstr ""
+"Pode consultar ou modificar ficheiros personais e do sistema sen autorización"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
-#, fuzzy
-#| msgid "Show content warnings"
 msgid "Show non-curated warnings"
-msgstr "Mostrar advertencias sobre o contido"
+msgstr "Mostrar advertencias sobre o contido non verificado"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -592,16 +591,13 @@ msgid "Try Again"
 msgstr "Ténteo de novo"
 
 #: src/Dialogs/UpgradeFailDialog.vala:37
-#, fuzzy
-#| msgid "Failed to uninstall app"
 msgid "Failed to update app"
-msgstr "Non se puido desinstalar a aplicación"
+msgstr "Non se puido actualizar a aplicación"
 
 #: src/Dialogs/UpgradeFailDialog.vala:40
-#, fuzzy, c-format
-#| msgid "Failed to uninstall “%s”"
+#, c-format
 msgid "Failed to update “%s”"
-msgstr "Fallou ó desinstalar \"%s\""
+msgstr "Fallou ó actualizar \"%s\""
 
 #: src/Views/AppInfoView.vala:187
 msgid "Screenshot Not Available"
@@ -686,10 +682,8 @@ msgid "Fund the development of this app"
 msgstr "Financiar o desenvolvemento desta aplicación"
 
 #: src/Views/AppListUpdateView.vala:32
-#, fuzzy
-#| msgid "Searching for updates…"
 msgid "Checking for Updates"
-msgstr "Buscando actualizacións…"
+msgstr "Buscando actualizacións"
 
 #: src/Views/AppListUpdateView.vala:33
 msgid "Downloading a list of available updates to the OS and installed apps"
