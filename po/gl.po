@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-17 01:03+0000\n"
 "PO-Revision-Date: 2021-03-01 19:09+0000\n"
-"Last-Translator: david <dcardelleg@gmail.com>\n"
+"Last-Translator: J.Doval <dovaldev@gmail.com>\n"
 "Language-Team: Galician <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/gl/>\n"
 "Language: gl\n"
@@ -690,6 +690,8 @@ msgstr "Buscando actualizacións"
 #: src/Views/AppListUpdateView.vala:33
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr ""
+"Descargando a lista das actualizacións do sistema operativo e das "
+"aplicacións instaladas"
 
 #: src/Views/AppListUpdateView.vala:41
 msgid "A restart is required to complete the installation of updates"
