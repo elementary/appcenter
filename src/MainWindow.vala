@@ -142,6 +142,20 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
                     last_installed_package.launch ();
                 } catch (Error e) {
                     warning ("Failed to launch %s: %s".printf (last_installed_package.get_name (), e.message));
+
+                    var message_dialog = new Granite.MessageDialog.with_image_from_icon_name (
+                        _("Failed to launch “%s“").printf (last_installed_package.get_name ()),
+                        e.message,
+                        "system-software-install",
+                        Gtk.ButtonsType.CLOSE
+                    );
+                    message_dialog.badge_icon = new ThemedIcon ("dialog-error");
+                    message_dialog.transient_for = this;
+
+                    message_dialog.show_all ();
+                    message_dialog.response.connect ((response_id) => {
+                        message_dialog.destroy ();
+                    });
                 }
             }
         });
