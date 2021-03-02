@@ -3,22 +3,22 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-17 01:03+0000\n"
-"PO-Revision-Date: 2018-05-30 16:06+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
-"Language-Team: Russian <https://weblate.elementary.io/projects/appcenter/"
-"extra/ru/>\n"
+"PO-Revision-Date: 2021-03-02 20:46+0000\n"
+"Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
+"Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/extra/"
+"ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
 msgid "AppCenter"
-msgstr "AppCenter"
+msgstr "Центр приложений"
 
 #: data/io.elementary.appcenter.appdata.xml.in:9
 #: data/io.elementary.appcenter.desktop.in.in:4
@@ -31,11 +31,11 @@ msgid ""
 "search and discover new apps. AppCenter is also used for updating your "
 "system to the latest and greatest version for new features and fixes."
 msgstr ""
-"Магазин приложений для инди-разработчиков и разработчиков приложений с "
-"открытым исходным кодом. Просматривайте категории или воспользуйтесь поиском "
-"и откройте для себя новые приложения. AppCenter также используется для "
-"обновления системы до последней и самой лучшей версии с новыми функциями и "
-"исправлениями."
+"Магазин приложений для инди-разработчиков и разработчиков свободного "
+"программного обеспечения. Просматривайте приложения по категориям или "
+"открывайте для себя новые. Центр приложений также используется для "
+"обновления системы до последней версии, чтобы вы получали новые функции и "
+"исправления ошибок."
 
 #: data/io.elementary.appcenter.appdata.xml.in:16
 #: data/io.elementary.appcenter.appdata.xml.in:32
@@ -44,7 +44,7 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:104
 #: data/io.elementary.appcenter.appdata.xml.in:121
 msgid "Fixes"
-msgstr ""
+msgstr "Исправления"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Correctly display names of Flatpak runtime updates"
@@ -107,7 +107,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:50
 msgid "Ensure AppCenter is reopened at the correct position"
-msgstr ""
+msgstr "Убедитесь, что Центр приложений вновь открыт в правильном положении"
 
 #: data/io.elementary.appcenter.appdata.xml.in:51
 msgid "Clicking the updates badge in the header navigates to the updates view"
@@ -230,6 +230,8 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:138
 msgid "Update application details when changes happen outside of AppCenter"
 msgstr ""
+"Обновляйте детали приложения, когда изменения происходят вне Центра "
+"приложений."
 
 #: data/io.elementary.appcenter.appdata.xml.in:139
 msgid "Fix for notification not appearing when a restart is required"
@@ -264,18 +266,22 @@ msgstr ""
 msgid ""
 "Applications menu can now remove flatpaks that weren't installed by AppCenter"
 msgstr ""
+"Меню приложений теперь может удалять flatpak пакеты, которые не были "
+"установлены в Центре приложений"
 
 #: data/io.elementary.appcenter.appdata.xml.in:147
 msgid "Make download size estimates more accurate"
-msgstr ""
+msgstr "Более точная оценка размера загрузки"
 
 #: data/io.elementary.appcenter.appdata.xml.in:155
 msgid "Prevent AppCenter from opening on log in"
-msgstr ""
+msgstr "Предотвращение открытия Центра приложений при входе в систему"
 
 #: data/io.elementary.appcenter.appdata.xml.in:156
 msgid "Prevent ghost update notification when there are no updates available"
 msgstr ""
+"Предотвращение ненастоящих уведомлений об обновлении, когда их на самом деле "
+"нет"
 
 #: data/io.elementary.appcenter.appdata.xml.in:157
 msgid "Show correct installation state for extensions"
