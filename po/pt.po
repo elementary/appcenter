@@ -5,11 +5,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-17 01:03+0000\n"
+"POT-Creation-Date: 2021-03-02 20:46+0000\n"
 "PO-Revision-Date: 2021-02-17 19:19+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
-"Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/pt/>\n"
+"Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/appcenter/pt/>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,9 +30,7 @@ msgstr "Não foi possível analisar o tipo de média %s"
 #: src/Application.vala:132
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr ""
-"Não foi possível encontrar a ligação especificada '%s'. A pesquisar, em "
-"alternativa"
+msgstr "Não foi possível encontrar a ligação especificada '%s'. A pesquisar, em alternativa"
 
 #: src/Application.vala:295
 msgid "The app has been installed"
@@ -42,7 +39,7 @@ msgstr "A aplicação foi instalada"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:296 src/MainWindow.vala:340
+#: src/Application.vala:296 src/MainWindow.vala:354
 #, c-format
 msgid "“%s” has been installed"
 msgstr "\"%s\" foi instalada"
@@ -52,19 +49,25 @@ msgstr "\"%s\" foi instalada"
 msgid "Open"
 msgstr "Abrir"
 
-#: src/MainWindow.vala:158 src/Views/Homepage.vala:297
+#: src/MainWindow.vala:147
+#, fuzzy, c-format
+#| msgid "Failed to update “%s”"
+msgid "Failed to launch “%s“"
+msgstr "Falha ao atualizar “%s”"
+
+#: src/MainWindow.vala:172 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:307 src/Views/Homepage.vala:312
 #: src/Views/Homepage.vala:323 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "Página inicial"
 
-#: src/MainWindow.vala:159 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:173 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 msgctxt "view"
 msgid "Installed"
 msgstr "Instalado"
 
-#: src/MainWindow.vala:199 src/MainWindow.vala:405 src/Views/SearchView.vala:54
+#: src/MainWindow.vala:213 src/MainWindow.vala:419 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:87
 msgid "Search Apps"
 msgstr "Procurar aplicações"
@@ -422,9 +425,7 @@ msgstr "Pagar %d$ por %s"
 
 #: src/Dialogs/StripeDialog.vala:96
 msgid "This is a one time payment. Your email address is only used to send you a receipt."
-msgstr ""
-"Este é um pagamento único. O seu e-mail será utilizado apenas para enviar o "
-"recibo."
+msgstr "Este é um pagamento único. O seu e-mail será utilizado apenas para enviar o recibo."
 
 #: src/Dialogs/StripeDialog.vala:106
 msgid "Email"
@@ -432,9 +433,7 @@ msgstr "E-mail"
 
 #: src/Dialogs/StripeDialog.vala:108
 msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
-msgstr ""
-"O seu endereço de e-mail é utilizado apenas para envio de um recibo. Nunca "
-"será inscrito em nenhuma lista de correio."
+msgstr "O seu endereço de e-mail é utilizado apenas para envio de um recibo. Nunca será inscrito em nenhuma lista de correio."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127
@@ -476,15 +475,11 @@ msgstr "O número do cartão está incorreto. Por favor tente novamente com um n
 
 #: src/Dialogs/StripeDialog.vala:513
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
-msgstr ""
-"O mês de expiração é inválido. Por favor tente novamente com a data de "
-"validade correta."
+msgstr "O mês de expiração é inválido. Por favor tente novamente com a data de validade correta."
 
 #: src/Dialogs/StripeDialog.vala:515 src/Dialogs/StripeDialog.vala:573
 msgid "The expiration year is invalid. Please try again using the correct expiration date."
-msgstr ""
-"O ano de expiração é inválido. Por favor tente novamente com a data de "
-"validade correta."
+msgstr "O ano de expiração é inválido. Por favor tente novamente com a data de validade correta."
 
 #: src/Dialogs/StripeDialog.vala:518 src/Dialogs/StripeDialog.vala:571
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
@@ -496,9 +491,7 @@ msgstr "O cartão está expirado. Por favor tente novamente com um cartão difer
 
 #: src/Dialogs/StripeDialog.vala:540
 msgid "There are too many payment requests at the moment, please retry later."
-msgstr ""
-"Existem demasiados pedidos para pagamento neste momento, por favor tente "
-"novamente mais tarde."
+msgstr "Existem demasiados pedidos para pagamento neste momento, por favor tente novamente mais tarde."
 
 #: src/Dialogs/StripeDialog.vala:556
 msgid "This card does not support this kind of transaction. Please try again with a different card."
@@ -514,9 +507,7 @@ msgstr "A transação já foi processada."
 
 #: src/Dialogs/StripeDialog.vala:564
 msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
-msgstr ""
-"O código postal está incorreto. Por favor tente novamente utilizando um "
-"código postal válido."
+msgstr "O código postal está incorreto. Por favor tente novamente utilizando um código postal válido."
 
 #: src/Dialogs/StripeDialog.vala:566
 msgid "You don't have enough funds. Please use an alternative payment method."
@@ -528,14 +519,11 @@ msgstr "O montante está incorreto. Por favor tente de novo com um montante vál
 
 #: src/Dialogs/StripeDialog.vala:579
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr ""
-"O número PIN está incorreto. Por favor tente novamente com o PIN correto."
+msgstr "O número PIN está incorreto. Por favor tente novamente com o PIN correto."
 
 #: src/Dialogs/StripeDialog.vala:581
 msgid "There has been too many PIN attempts. Please try again with a different card."
-msgstr ""
-"Foram usadas muitas tentativas para inserir o PIN. Por favor tente novamente "
-"com um cartão diferente."
+msgstr "Foram usadas muitas tentativas para inserir o PIN. Por favor tente novamente com um cartão diferente."
 
 #: src/Dialogs/StripeDialog.vala:601
 msgid "Unable to complete the transaction. Please contact your bank for further information."
@@ -547,9 +535,7 @@ msgstr "O saldo ou limite de crédito do cartão foi atingido."
 
 #: src/Dialogs/StripeDialog.vala:607
 msgid "The given card is a test card. Please use a real card to proceed."
-msgstr ""
-"O cartão fornecido é um cartão provisório. Por favor, use um cartão "
-"verdadeiro para prosseguir."
+msgstr "O cartão fornecido é um cartão provisório. Por favor, use um cartão verdadeiro para prosseguir."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."

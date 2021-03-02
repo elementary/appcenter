@@ -3,11 +3,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-17 01:03+0000\n"
+"POT-Creation-Date: 2021-03-02 20:46+0000\n"
 "PO-Revision-Date: 2021-02-27 00:32+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
-"Language-Team: French (Canada) <https://l10n.elementary.io/projects/"
-"appcenter/appcenter/fr_CA/>\n"
+"Language-Team: French (Canada) <https://l10n.elementary.io/projects/appcenter/appcenter/fr_CA/>\n"
 "Language: fr_CA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -40,7 +39,7 @@ msgstr "L'application %s  a été installée avec succès"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:296 src/MainWindow.vala:340
+#: src/Application.vala:296 src/MainWindow.vala:354
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
@@ -51,21 +50,26 @@ msgstr "L'application %s  a été installée avec succès"
 msgid "Open"
 msgstr ""
 
-#: src/MainWindow.vala:158 src/Views/Homepage.vala:297
+#: src/MainWindow.vala:147
+#, c-format
+msgid "Failed to launch “%s“"
+msgstr ""
+
+#: src/MainWindow.vala:172 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:307 src/Views/Homepage.vala:312
 #: src/Views/Homepage.vala:323 src/Views/SearchView.vala:89
 #, fuzzy
 msgid "Home"
 msgstr "Page d'accueil"
 
-#: src/MainWindow.vala:159 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:173 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 #, fuzzy
 msgctxt "view"
 msgid "Installed"
 msgstr "Installer"
 
-#: src/MainWindow.vala:199 src/MainWindow.vala:405 src/Views/SearchView.vala:54
+#: src/MainWindow.vala:213 src/MainWindow.vala:419 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:87
 msgid "Search Apps"
 msgstr "Rechercher des Applications"

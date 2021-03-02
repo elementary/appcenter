@@ -14,11 +14,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-17 01:03+0000\n"
+"POT-Creation-Date: 2021-03-02 20:46+0000\n"
 "PO-Revision-Date: 2021-02-19 12:12+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
-"Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/es/>\n"
+"Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/appcenter/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -49,7 +48,7 @@ msgstr "Se instaló la aplicación"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:296 src/MainWindow.vala:340
+#: src/Application.vala:296 src/MainWindow.vala:354
 #, c-format
 msgid "“%s” has been installed"
 msgstr "Se instaló «%s»"
@@ -59,19 +58,25 @@ msgstr "Se instaló «%s»"
 msgid "Open"
 msgstr "Abrir"
 
-#: src/MainWindow.vala:158 src/Views/Homepage.vala:297
+#: src/MainWindow.vala:147
+#, fuzzy, c-format
+#| msgid "Failed to update “%s”"
+msgid "Failed to launch “%s“"
+msgstr "No se pudo actualizar «%s»"
+
+#: src/MainWindow.vala:172 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:307 src/Views/Homepage.vala:312
 #: src/Views/Homepage.vala:323 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "Inicio"
 
-#: src/MainWindow.vala:159 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:173 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 msgctxt "view"
 msgid "Installed"
 msgstr "Instaladas"
 
-#: src/MainWindow.vala:199 src/MainWindow.vala:405 src/Views/SearchView.vala:54
+#: src/MainWindow.vala:213 src/MainWindow.vala:419 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:87
 msgid "Search Apps"
 msgstr "Buscar aplicaciones"
@@ -437,9 +442,7 @@ msgstr "Correo electrónico"
 
 #: src/Dialogs/StripeDialog.vala:108
 msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
-msgstr ""
-"Su dirección de correo electrónico se utiliza solo para enviarle un recibo. "
-"No se le suscribirá a ninguna lista de correo."
+msgstr "Su dirección de correo electrónico se utiliza solo para enviarle un recibo. No se le suscribirá a ninguna lista de correo."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127

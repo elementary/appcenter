@@ -10,11 +10,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-17 01:03+0000\n"
+"POT-Creation-Date: 2021-03-02 20:46+0000\n"
 "PO-Revision-Date: 2021-02-24 18:39+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
-"Language-Team: German <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/de/>\n"
+"Language-Team: German <https://l10n.elementary.io/projects/appcenter/appcenter/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -45,7 +44,7 @@ msgstr "Die Anwendung wurde installiert"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:296 src/MainWindow.vala:340
+#: src/Application.vala:296 src/MainWindow.vala:354
 #, c-format
 msgid "“%s” has been installed"
 msgstr "»%s« wurde installiert"
@@ -55,19 +54,25 @@ msgstr "»%s« wurde installiert"
 msgid "Open"
 msgstr "Öffnen"
 
-#: src/MainWindow.vala:158 src/Views/Homepage.vala:297
+#: src/MainWindow.vala:147
+#, fuzzy, c-format
+#| msgid "Failed to update “%s”"
+msgid "Failed to launch “%s“"
+msgstr "»%s« konnte nicht aktualisiert werden"
+
+#: src/MainWindow.vala:172 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:307 src/Views/Homepage.vala:312
 #: src/Views/Homepage.vala:323 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "Startseite"
 
-#: src/MainWindow.vala:159 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:173 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 msgctxt "view"
 msgid "Installed"
 msgstr "Installiert"
 
-#: src/MainWindow.vala:199 src/MainWindow.vala:405 src/Views/SearchView.vala:54
+#: src/MainWindow.vala:213 src/MainWindow.vala:419 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:87
 msgid "Search Apps"
 msgstr "Apps suchen"
@@ -334,11 +339,7 @@ msgstr "»%s« enthält anstößige Inhalte"
 #: src/Dialogs/ContentWarningDialog.vala:31
 #, c-format
 msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
-msgstr ""
-"»%s« weist möglicherweise Inhalte auf, die nur für Erwachsene geeignet sind, "
-"oder ganz allgemein belastend oder verstörend sind. elementary überprüft "
-"grundsätzlich keine Anwendungsinhalte und befürwortet diese prinzipiell "
-"nicht."
+msgstr "»%s« weist möglicherweise Inhalte auf, die nur für Erwachsene geeignet sind, oder ganz allgemein belastend oder verstörend sind. elementary überprüft grundsätzlich keine Anwendungsinhalte und befürwortet diese prinzipiell nicht."
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 msgid "Show content warnings"
@@ -412,9 +413,7 @@ msgstr "Abbrechen"
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
-msgstr ""
-"Bei der Verarbeitung der Kartendaten ist ein Fehler aufgetreten. Versuchen "
-"Sie es später erneut. Wir bedauern eventuell verursachte Unannehmlichkeiten."
+msgstr "Bei der Verarbeitung der Kartendaten ist ein Fehler aufgetreten. Versuchen Sie es später erneut. Wir bedauern eventuell verursachte Unannehmlichkeiten."
 
 #: src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
@@ -489,33 +488,23 @@ msgstr "Das angegebene Jahr im Ablaufdatum ist ungültig. Bitte versuche es erne
 
 #: src/Dialogs/StripeDialog.vala:518 src/Dialogs/StripeDialog.vala:571
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr ""
-"Die CVC-Prüfnummer ist ungültig. Versuchen Sie es bitte mit der korrekten "
-"Nummer erneut."
+msgstr "Die CVC-Prüfnummer ist ungültig. Versuchen Sie es bitte mit der korrekten Nummer erneut."
 
 #: src/Dialogs/StripeDialog.vala:520 src/Dialogs/StripeDialog.vala:562
 msgid "The card has expired. Please try again with a different card."
-msgstr ""
-"Die Karte ist abgelaufen. Versuchen Sie es bitte mit einer anderen Karte "
-"erneut."
+msgstr "Die Karte ist abgelaufen. Versuchen Sie es bitte mit einer anderen Karte erneut."
 
 #: src/Dialogs/StripeDialog.vala:540
 msgid "There are too many payment requests at the moment, please retry later."
-msgstr ""
-"Im Augenblick sind zu viele Zahlungsanfragen in Bearbeitung. Versuchen Sie "
-"bitte später erneut."
+msgstr "Im Augenblick sind zu viele Zahlungsanfragen in Bearbeitung. Versuchen Sie bitte später erneut."
 
 #: src/Dialogs/StripeDialog.vala:556
 msgid "This card does not support this kind of transaction. Please try again with a different card."
-msgstr ""
-"Die Karte unterstützt diese Transaktionsart nicht. Versuchen Sie es bitte "
-"mit einer anderen Karte erneut."
+msgstr "Die Karte unterstützt diese Transaktionsart nicht. Versuchen Sie es bitte mit einer anderen Karte erneut."
 
 #: src/Dialogs/StripeDialog.vala:558
 msgid "The currency is not supported by this card. Please try again with a different card."
-msgstr ""
-"Zahlungen in dieser Währung sind mit dieser Karte nicht möglich. Versuchen "
-"Sie es bitte mit einer anderen Karte erneut."
+msgstr "Zahlungen in dieser Währung sind mit dieser Karte nicht möglich. Versuchen Sie es bitte mit einer anderen Karte erneut."
 
 #: src/Dialogs/StripeDialog.vala:560
 msgid "The transaction has already been processed."
@@ -523,31 +512,23 @@ msgstr "Diese Transaktion wurde bereits verarbeitet."
 
 #: src/Dialogs/StripeDialog.vala:564
 msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
-msgstr ""
-"Die Postleitzahl ist nicht korrekt. Versuchen Sie es bitte mit Angabe der "
-"korrekten Postleitzahl erneut."
+msgstr "Die Postleitzahl ist nicht korrekt. Versuchen Sie es bitte mit Angabe der korrekten Postleitzahl erneut."
 
 #: src/Dialogs/StripeDialog.vala:566
 msgid "You don't have enough funds. Please use an alternative payment method."
-msgstr ""
-"Das Guthaben reicht nicht aus. Nutzen Sie bitte eine andere Zahlungsweise."
+msgstr "Das Guthaben reicht nicht aus. Nutzen Sie bitte eine andere Zahlungsweise."
 
 #: src/Dialogs/StripeDialog.vala:568
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr ""
-"Der Betrag ist ungültig. Versuchen Sie es bitte mit einem korrekten Wert "
-"erneut."
+msgstr "Der Betrag ist ungültig. Versuchen Sie es bitte mit einem korrekten Wert erneut."
 
 #: src/Dialogs/StripeDialog.vala:579
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr ""
-"Die PIN ist falsch. Versuchen Sie es bitte mit der richtigen PIN erneut."
+msgstr "Die PIN ist falsch. Versuchen Sie es bitte mit der richtigen PIN erneut."
 
 #: src/Dialogs/StripeDialog.vala:581
 msgid "There has been too many PIN attempts. Please try again with a different card."
-msgstr ""
-"Die PIN wurde zu oft falsch eingegeben. Versuchen Sie es bitte mit einer "
-"anderen Karte erneut."
+msgstr "Die PIN wurde zu oft falsch eingegeben. Versuchen Sie es bitte mit einer anderen Karte erneut."
 
 #: src/Dialogs/StripeDialog.vala:601
 msgid "Unable to complete the transaction. Please contact your bank for further information."
@@ -559,15 +540,11 @@ msgstr "Das Kartenlimit ist erreicht."
 
 #: src/Dialogs/StripeDialog.vala:607
 msgid "The given card is a test card. Please use a real card to proceed."
-msgstr ""
-"Die angegebene Karte ist eine Testkarte. Verwenden Sie bitte eine echte "
-"Karte, um den Prozess abzuschließen."
+msgstr "Die angegebene Karte ist eine Testkarte. Verwenden Sie bitte eine echte Karte, um den Prozess abzuschließen."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
-msgstr ""
-"Bei der Deinstallation dieser Anwendung werden möglicherweise auch die "
-"zugehörigen Daten gelöscht."
+msgstr "Bei der Deinstallation dieser Anwendung werden möglicherweise auch die zugehörigen Daten gelöscht."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:35
 msgid "Uninstall app?"
@@ -710,9 +687,7 @@ msgstr "Auf Aktualisierungen prüfen"
 
 #: src/Views/AppListUpdateView.vala:33
 msgid "Downloading a list of available updates to the OS and installed apps"
-msgstr ""
-"Liste mit verfügbaren Aktualisierungen für Betriebssystem und installierte "
-"Anwendungen herunterladen"
+msgstr "Liste mit verfügbaren Aktualisierungen für Betriebssystem und installierte Anwendungen herunterladen"
 
 #: src/Views/AppListUpdateView.vala:41
 msgid "A restart is required to complete the installation of updates"
@@ -768,9 +743,7 @@ msgstr "Ein offener, Zahl-was-du-willst-App-Store"
 
 #: src/Widgets/Banner.vala:76
 msgid "Get the apps that you need at a price you can afford."
-msgstr ""
-"Hier gibt es die Anwendungen, die Sie brauchen – zu Preisen, die Sie sich "
-"leisten können."
+msgstr "Hier gibt es die Anwendungen, die Sie brauchen – zu Preisen, die Sie sich leisten können."
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
@@ -872,9 +845,7 @@ msgstr "Netzwerk nicht verfügbar."
 
 #: src/Widgets/NetworkInfoBar.vala:29
 msgid "Connect to the Internet to browse and install apps."
-msgstr ""
-"Verbindung mit dem Internet herstellen, um Anwendungen zu durchsuchen und zu "
-"installieren."
+msgstr "Verbindung mit dem Internet herstellen, um Anwendungen zu durchsuchen und zu installieren."
 
 #. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
 #: src/Widgets/NetworkInfoBar.vala:37
@@ -920,14 +891,11 @@ msgstr "Verweis kopieren"
 
 #: src/Widgets/SizeLabel.vala:35
 msgid "Actual Download Size Likely to Be Smaller"
-msgstr ""
-"Tatsächlicher Umfang der herunterzuladenden Daten wahrscheinlich kleiner"
+msgstr "Tatsächlicher Umfang der herunterzuladenden Daten wahrscheinlich kleiner"
 
 #: src/Widgets/SizeLabel.vala:36
 msgid "Only the parts of apps and updates that are needed will be downloaded."
-msgstr ""
-"Es werden nur diejenigen Komponenten der Anwendungen und Aktualisjerungen "
-"heruntergeladen, die benötigt werden."
+msgstr "Es werden nur diejenigen Komponenten der Anwendungen und Aktualisjerungen heruntergeladen, die benötigt werden."
 
 #: src/Widgets/SizeLabel.vala:63
 #, c-format
