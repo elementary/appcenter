@@ -15,8 +15,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 20:46+0000\n"
-"PO-Revision-Date: 2021-03-03 01:34+0000\n"
-"Last-Translator: Alvaro <alvaroaraoz_92@hotmail.com>\n"
+"PO-Revision-Date: 2021-03-03 07:35+0000\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
 "Language: es\n"
@@ -62,7 +62,7 @@ msgstr "Abrir"
 #: src/MainWindow.vala:147
 #, c-format
 msgid "Failed to launch “%s“"
-msgstr "Error al iniciar “%s“"
+msgstr "No se pudo iniciar «%s»"
 
 #: src/MainWindow.vala:172 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:307 src/Views/Homepage.vala:312
@@ -116,7 +116,7 @@ msgstr "Instalando"
 
 #: src/Utils.vala:78
 msgid "Refreshing software list"
-msgstr "Actualizando la lista de software"
+msgstr "Actualizando lista de programas"
 
 #: src/Utils.vala:80
 msgid "Installing updates"
@@ -203,7 +203,7 @@ msgstr "Generando listas de paquetes"
 
 #: src/Utils.vala:120
 msgid "Waiting for package manager lock"
-msgstr "Esperando por el bloqueo del gestor de paquetes"
+msgstr "Esperando el bloqueo del gestor de paquetes"
 
 #: src/Utils.vala:122
 msgid "Waiting for authentication"
@@ -544,7 +544,7 @@ msgstr "Se ha alcanzado el saldo límite de la tarjeta."
 
 #: src/Dialogs/StripeDialog.vala:607
 msgid "The given card is a test card. Please use a real card to proceed."
-msgstr "La tarjeta usada es de pruebas, ingrese una real para proceder."
+msgstr "La tarjeta proporcionada es de pruebas. Utilice una real para proceder."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
@@ -584,7 +584,9 @@ msgstr "No se pudieron recuperar las actualizaciones"
 
 #: src/Dialogs/UpdateFailDialog.vala:26
 msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
-msgstr "Esto pudo haber sido causado por agregar repositorios externos manualmente o algún archivo de código fuente corrupto."
+msgstr ""
+"Esto pudo haberlo causado la adición manual de repositorios de programas o "
+"un daño en el archivo «sources»."
 
 #: src/Dialogs/UpdateFailDialog.vala:34
 msgid "Ignore"
@@ -629,7 +631,7 @@ msgstr "Novedades:"
 
 #: src/Views/AppInfoView.vala:303
 msgid "Extensions:"
-msgstr "Complementos:"
+msgstr "Extensiones:"
 
 #. TRANSLATORS: See the Wikipedia page
 #: src/Views/AppInfoView.vala:400
