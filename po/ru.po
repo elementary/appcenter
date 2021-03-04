@@ -6,14 +6,16 @@ msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 20:46+0000\n"
-"PO-Revision-Date: 2021-03-02 20:46+0000\n"
+"PO-Revision-Date: 2021-03-04 18:20+0000\n"
 "Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
-"Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/appcenter/ru/>\n"
+"Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
@@ -33,19 +35,16 @@ msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Указанная ссылка «%s» не найдена, поиск замены"
 
 #: src/Application.vala:295
-#, fuzzy
-#| msgid "%s has been successfully installed"
 msgid "The app has been installed"
-msgstr "Приложение «%s» успешно установлено"
+msgstr "Приложение установлено"
 
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
 #: src/Application.vala:296 src/MainWindow.vala:354
-#, fuzzy, c-format
-#| msgid "%s has been successfully installed"
+#, c-format
 msgid "“%s” has been installed"
-msgstr "Приложение «%s» успешно установлено"
+msgstr "«%s» установлено"
 
 #: src/MainWindow.vala:137
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:133
@@ -53,9 +52,9 @@ msgid "Open"
 msgstr "Открыть"
 
 #: src/MainWindow.vala:147
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to launch “%s“"
-msgstr "Поиск и установка приложений"
+msgstr "Не удалось запустить «%s»"
 
 #: src/MainWindow.vala:172 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:307 src/Views/Homepage.vala:312
@@ -367,9 +366,9 @@ msgid "Failed to install app"
 msgstr "Поиск и установка приложений"
 
 #: src/Dialogs/InstallFailDialog.vala:40
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to install “%s”"
-msgstr "Поиск и установка приложений"
+msgstr "Не удалось установить «%s»"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
 #, fuzzy
@@ -378,9 +377,8 @@ msgid "Non-Curated Warning"
 msgstr "Не поддерживаемое сообществом elementary"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:37
-#, fuzzy
 msgid "Install non-curated app?"
-msgstr "%s (local)"
+msgstr "Установить не курируемое приложение?"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
@@ -554,14 +552,13 @@ msgid "Uninstalling this app may also delete its data."
 msgstr ""
 
 #: src/Dialogs/UninstallConfirmDialog.vala:35
-#, fuzzy
 msgid "Uninstall app?"
-msgstr "Удалить"
+msgstr "Удалить приложение?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:38
-#, fuzzy, c-format
+#, c-format
 msgid "Uninstall “%s”?"
-msgstr "Удалить"
+msgstr "Удалить «%s»?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:124
@@ -606,9 +603,9 @@ msgid "Failed to update app"
 msgstr "Поиск и установка приложений"
 
 #: src/Dialogs/UpgradeFailDialog.vala:40
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to update “%s”"
-msgstr "Поиск и установка приложений"
+msgstr "Не удалось обновить «%s»"
 
 #: src/Views/AppInfoView.vala:187
 msgid "Screenshot Not Available"
@@ -695,10 +692,8 @@ msgid "Fund the development of this app"
 msgstr "Поддержать разработку этого приложения"
 
 #: src/Views/AppListUpdateView.vala:32
-#, fuzzy
-#| msgid "Searching for updates…"
 msgid "Checking for Updates"
-msgstr "Поиск обновлений…"
+msgstr "Проверка обновлений"
 
 #: src/Views/AppListUpdateView.vala:33
 msgid "Downloading a list of available updates to the OS and installed apps"
@@ -857,9 +852,8 @@ msgid "$%d"
 msgstr "%d USD"
 
 #: src/Widgets/NetworkInfoBar.vala:28
-#, fuzzy
 msgid "Network Not Available."
-msgstr "Подключение к сети недоступно"
+msgstr "Сеть недоступна."
 
 #: src/Widgets/NetworkInfoBar.vala:29
 #, fuzzy
@@ -917,9 +911,9 @@ msgid "Only the parts of apps and updates that are needed will be downloaded."
 msgstr ""
 
 #: src/Widgets/SizeLabel.vala:63
-#, fuzzy, c-format
+#, c-format
 msgid "Up to %s"
-msgstr "Обновления не требуются"
+msgstr "До %s"
 
 #: src/Widgets/UpdateHeaderRow.vala:41
 #, c-format
