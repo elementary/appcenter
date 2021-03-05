@@ -3,7 +3,7 @@
 # Eliott Lavier <eliott.lavier@gmail.com>, 2018.
 # David Marcel BAUM <david.baum@tuta.io>, 2018.
 # Lucas Ruffieux <lucasruffieux@gmail.com>, 2018.
-# Nathan <bonnemainsnathan@gmail.com>, 2018, 2019, 2020.
+# Nathan <bonnemainsnathan@gmail.com>, 2018, 2019, 2020, 2021.
 # Franck STAUFFER <franck.stauffer@e.email>, 2019.
 # Kristien <kristien@mailo.com>, 2019.
 msgid ""
@@ -11,9 +11,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 20:46+0000\n"
-"PO-Revision-Date: 2021-02-19 12:12+0000\n"
-"Last-Translator: Corentin Noël <corentin@elementary.io>\n"
-"Language-Team: French <https://l10n.elementary.io/projects/appcenter/appcenter/fr/>\n"
+"PO-Revision-Date: 2021-03-05 12:09+0000\n"
+"Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
+"Language-Team: French <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -55,10 +56,9 @@ msgid "Open"
 msgstr "Ouvrir"
 
 #: src/MainWindow.vala:147
-#, fuzzy, c-format
-#| msgid "Failed to update “%s”"
+#, c-format
 msgid "Failed to launch “%s“"
-msgstr "Échec de la mise à jour de « %s »"
+msgstr "Échec du lancement de « %s »"
 
 #: src/MainWindow.vala:172 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:307 src/Views/Homepage.vala:312
