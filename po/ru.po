@@ -8,7 +8,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 20:46+0000\n"
 "PO-Revision-Date: 2021-03-07 23:16+0000\n"
-"Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
+"Last-Translator: Viacheslav <superslavik24@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ru/>\n"
 "Language: ru\n"
@@ -350,9 +350,8 @@ msgstr "Показывать предупреждения о содержани�
 
 #: src/Dialogs/ContentWarningDialog.vala:37
 #: src/Dialogs/NonCuratedWarningDialog.vala:81
-#, fuzzy
 msgid "Don’t Install"
-msgstr "Установить"
+msgstr "Не устанавливать"
 
 #: src/Dialogs/ContentWarningDialog.vala:38
 #: src/Dialogs/NonCuratedWarningDialog.vala:82
@@ -391,11 +390,12 @@ msgstr ""
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
 msgid "It may not receive bug fix or feature updates"
-msgstr ""
+msgstr "Может не получать обновлений или исправлений"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:60
 msgid "It may access or change system or personal files without permission"
 msgstr ""
+"Может иметь доступ или изменять системные или личные файлы без разрешения"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
 msgid "Show non-curated warnings"
@@ -429,7 +429,7 @@ msgstr "Проверьте информацию о платеже и попро�
 
 #: src/Dialogs/StripeDialog.vala:76
 msgid "Payment"
-msgstr ""
+msgstr "Оплата"
 
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
