@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 20:46+0000\n"
-"PO-Revision-Date: 2021-03-07 14:36+0000\n"
+"PO-Revision-Date: 2021-03-07 23:16+0000\n"
 "Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ru/>\n"
@@ -346,7 +346,7 @@ msgstr ""
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 msgid "Show content warnings"
-msgstr "Показывать предупреждения"
+msgstr "Показывать предупреждения о содержании"
 
 #: src/Dialogs/ContentWarningDialog.vala:37
 #: src/Dialogs/NonCuratedWarningDialog.vala:81
@@ -360,14 +360,14 @@ msgid "Install Anyway"
 msgstr "Всё равно установить"
 
 #: src/Dialogs/InstallFailDialog.vala:26
-#, fuzzy
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
-msgstr "Это может быть вызвано внешними (добавленными вручную) репозиториями или поврежденным файлом с источниками."
+msgstr ""
+"Это может быть временной проблемой, вызванной программным обеспечением "
+"установленным из внешних источников или собранным вручную."
 
 #: src/Dialogs/InstallFailDialog.vala:37
-#, fuzzy
 msgid "Failed to install app"
-msgstr "Поиск и установка приложений"
+msgstr "Не удалось установить приложение"
 
 #: src/Dialogs/InstallFailDialog.vala:40
 #, c-format
@@ -375,10 +375,8 @@ msgid "Failed to install “%s”"
 msgstr "Не удалось установить «%s»"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
-#, fuzzy
-#| msgid "Non-Curated Apps"
 msgid "Non-Curated Warning"
-msgstr "Не поддерживаемое сообществом elementary"
+msgstr "Предупреждение, не курируемое"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:37
 msgid "Install non-curated app?"
@@ -388,6 +386,8 @@ msgstr "Установить не курируемое приложение?"
 #, c-format
 msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
 msgstr ""
+"«%s» не курируется elementary и не проверяется на безопасность, "
+"конфиденциальность или совместимость с системой."
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
 msgid "It may not receive bug fix or feature updates"
@@ -399,7 +399,7 @@ msgstr ""
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
 msgid "Show non-curated warnings"
-msgstr ""
+msgstr "Показывать предупреждения про не курируемые приложения"
 
 #: src/Dialogs/RestartDialog.vala:40
 msgid "Are you sure you want to Restart?"
@@ -445,9 +445,10 @@ msgid "Email"
 msgstr "Почта"
 
 #: src/Dialogs/StripeDialog.vala:108
-#, fuzzy
 msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
-msgstr "Ваш электронная почта используется для отправки чека. Она нигде не сохраняется и вы не будете подписаны на рассылки."
+msgstr ""
+"Ваш адрес электронной почты используется только для отправки квитанции. Вы "
+"не будете подписаны ни на один список рассылки."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127
@@ -553,7 +554,7 @@ msgstr "Данная карта является тестовой. Исполь�
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
-msgstr ""
+msgstr "Удаление этого приложения также может привести к удалению его данных."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:35
 msgid "Uninstall app?"
@@ -571,19 +572,19 @@ msgstr "Удалить"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
 #: src/Dialogs/UpgradeFailDialog.vala:26
-#, fuzzy
 msgid "This may have been caused by external or manually compiled software."
-msgstr "Это может быть вызвано внешними (добавленными вручную) репозиториями или поврежденным файлом с источниками."
+msgstr ""
+"Это могло быть вызвано внешним или скомпилированным вручную программным "
+"обеспечением."
 
 #: src/Dialogs/UninstallFailDialog.vala:37
-#, fuzzy
 msgid "Failed to uninstall app"
-msgstr "Поиск и установка приложений"
+msgstr "Не удалось удалить приложение"
 
 #: src/Dialogs/UninstallFailDialog.vala:40
 #, c-format
 msgid "Failed to uninstall “%s”"
-msgstr ""
+msgstr "Не удалось удалить «%s»"
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
@@ -602,9 +603,8 @@ msgid "Try Again"
 msgstr "Повторить попытку"
 
 #: src/Dialogs/UpgradeFailDialog.vala:37
-#, fuzzy
 msgid "Failed to update app"
-msgstr "Поиск и установка приложений"
+msgstr "Не удалось обновить приложение"
 
 #: src/Dialogs/UpgradeFailDialog.vala:40
 #, c-format
@@ -642,32 +642,33 @@ msgstr "Расширения:"
 #. TRANSLATORS: See the Wikipedia page
 #: src/Views/AppInfoView.vala:400
 msgid "Public Domain"
-msgstr ""
+msgstr "Общественное достояние"
 
 #. TRANSLATORS: Replace the link with the version for your language
 #: src/Views/AppInfoView.vala:403
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr ""
+"https://ru.wikipedia.org/wiki/%D0%9E%D0%B1%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%B"
+"5%D0%BD%D0%BD%D0%BE%D0%B5_%D0%B4%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D0"
+"%B5"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
 #: src/Views/AppInfoView.vala:408
-#, fuzzy
 msgid "Free Software"
-msgstr "Редактировать источники приложений"
+msgstr "Свободное программное обеспечение"
 
 #. TRANSLATORS: Replace the link with the version for your language
 #: src/Views/AppInfoView.vala:411
 msgid "https://www.gnu.org/philosophy/free-sw"
-msgstr ""
+msgstr "https://www.gnu.org/philosophy/free-sw.ru.html"
 
 #: src/Views/AppInfoView.vala:415
 msgid "Proprietary"
-msgstr ""
+msgstr "Проприетарное"
 
 #: src/Views/AppInfoView.vala:418
-#, fuzzy
 msgid "Unknown License"
-msgstr "Неизвестное состояние"
+msgstr "Неизвестная лицензия"
 
 #: src/Views/AppInfoView.vala:468
 #, c-format
@@ -702,6 +703,8 @@ msgstr "Проверка обновлений"
 #: src/Views/AppListUpdateView.vala:33
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr ""
+"Загрузка списка доступных обновлений операционной системы и установленных "
+"приложений"
 
 #: src/Views/AppListUpdateView.vala:41
 msgid "A restart is required to complete the installation of updates"
@@ -772,9 +775,8 @@ msgid "Audio"
 msgstr "Аудио"
 
 #: src/Widgets/CategoryFlowBox.vala:29
-#, fuzzy
 msgid "Communication"
-msgstr "Образование"
+msgstr "Общение"
 
 #: src/Widgets/CategoryFlowBox.vala:38
 msgid "Development"
@@ -806,7 +808,7 @@ msgstr "Математика, наука и инженерия"
 
 #: src/Widgets/CategoryFlowBox.vala:101
 msgid "Media Production"
-msgstr ""
+msgstr "Производство медиа"
 
 #: src/Widgets/CategoryFlowBox.vala:108
 msgid "Office"
@@ -826,11 +828,11 @@ msgstr "Видео"
 
 #: src/Widgets/CategoryFlowBox.vala:125
 msgid "Writing & Language"
-msgstr ""
+msgstr "Писание и язык"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
-msgstr ""
+msgstr "Требует платежи, которые не включены"
 
 #: src/Widgets/HumbleButton.vala:105
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:285
@@ -839,9 +841,8 @@ msgstr "Бесплатно"
 
 #: src/Widgets/HumbleButton.vala:107
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:287
-#, fuzzy
 msgid "Install"
-msgstr "Установленные"
+msgstr "Установить"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:141
@@ -860,9 +861,9 @@ msgid "Network Not Available."
 msgstr "Сеть недоступна."
 
 #: src/Widgets/NetworkInfoBar.vala:29
-#, fuzzy
 msgid "Connect to the Internet to browse and install apps."
-msgstr "Подключитесь к интернету, чтобы установить или обновить приложения."
+msgstr ""
+"Необходимо соединение с Интернетом для просмотра или установки приложений."
 
 #. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
 #: src/Widgets/NetworkInfoBar.vala:37
@@ -908,11 +909,11 @@ msgstr "Скопировать ссылку"
 
 #: src/Widgets/SizeLabel.vala:35
 msgid "Actual Download Size Likely to Be Smaller"
-msgstr ""
+msgstr "Фактический размер загрузки, вероятно, будет меньше"
 
 #: src/Widgets/SizeLabel.vala:36
 msgid "Only the parts of apps and updates that are needed will be downloaded."
-msgstr ""
+msgstr "Будут загружены только необходимые части приложений и обновлений."
 
 #: src/Widgets/SizeLabel.vala:63
 #, c-format
