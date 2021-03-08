@@ -3,7 +3,7 @@
 # Carlos Cañellas <ratiosu.cct@gmail.com>, 2018.
 # Cristian Molina <megatux@gmail.com>, 2018.
 # alexis holguin <wholguinmor@uniminuto.edu.co>, 2018.
-# Alvaro <alvaroaraoz_92@hotmail.com>, 2019.
+# Alvaro <alvaroaraoz_92@hotmail.com>, 2019, 2021.
 # felipe andres gomez villar <felipe.gomez.villar@gmail.com>, 2019.
 # Gabriel De Jesus Gomez Peña <gabrieljgp012@gmail.com>, 2019.
 # Daniel Foré <daniel@elementary.io>, 2019.
@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-17 01:03+0000\n"
-"PO-Revision-Date: 2021-02-19 12:12+0000\n"
+"POT-Creation-Date: 2021-03-02 20:46+0000\n"
+"PO-Revision-Date: 2021-03-03 07:35+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/es/>\n"
@@ -49,7 +49,7 @@ msgstr "Se instaló la aplicación"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:296 src/MainWindow.vala:340
+#: src/Application.vala:296 src/MainWindow.vala:354
 #, c-format
 msgid "“%s” has been installed"
 msgstr "Se instaló «%s»"
@@ -59,19 +59,24 @@ msgstr "Se instaló «%s»"
 msgid "Open"
 msgstr "Abrir"
 
-#: src/MainWindow.vala:158 src/Views/Homepage.vala:297
+#: src/MainWindow.vala:147
+#, c-format
+msgid "Failed to launch “%s“"
+msgstr "No se pudo iniciar «%s»"
+
+#: src/MainWindow.vala:172 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:307 src/Views/Homepage.vala:312
 #: src/Views/Homepage.vala:323 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "Inicio"
 
-#: src/MainWindow.vala:159 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:173 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 msgctxt "view"
 msgid "Installed"
 msgstr "Instaladas"
 
-#: src/MainWindow.vala:199 src/MainWindow.vala:405 src/Views/SearchView.vala:54
+#: src/MainWindow.vala:213 src/MainWindow.vala:419 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:87
 msgid "Search Apps"
 msgstr "Buscar aplicaciones"
@@ -111,7 +116,7 @@ msgstr "Instalando"
 
 #: src/Utils.vala:78
 msgid "Refreshing software list"
-msgstr "Actualizando la lista de software"
+msgstr "Actualizando lista de programas"
 
 #: src/Utils.vala:80
 msgid "Installing updates"
@@ -198,7 +203,7 @@ msgstr "Generando listas de paquetes"
 
 #: src/Utils.vala:120
 msgid "Waiting for package manager lock"
-msgstr "Esperando por el bloqueo del gestor de paquetes"
+msgstr "Esperando el bloqueo del gestor de paquetes"
 
 #: src/Utils.vala:122
 msgid "Waiting for authentication"
@@ -437,9 +442,7 @@ msgstr "Correo electrónico"
 
 #: src/Dialogs/StripeDialog.vala:108
 msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
-msgstr ""
-"Su dirección de correo electrónico se utiliza solo para enviarle un recibo. "
-"No se le suscribirá a ninguna lista de correo."
+msgstr "Su dirección de correo electrónico se utiliza solo para enviarle un recibo. No se le suscribirá a ninguna lista de correo."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:127
@@ -541,7 +544,7 @@ msgstr "Se ha alcanzado el saldo límite de la tarjeta."
 
 #: src/Dialogs/StripeDialog.vala:607
 msgid "The given card is a test card. Please use a real card to proceed."
-msgstr "La tarjeta usada es de pruebas, ingrese una real para proceder."
+msgstr "La tarjeta proporcionada es de pruebas. Utilice una real para proceder."
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
@@ -581,7 +584,9 @@ msgstr "No se pudieron recuperar las actualizaciones"
 
 #: src/Dialogs/UpdateFailDialog.vala:26
 msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
-msgstr "Esto pudo haber sido causado por agregar repositorios externos manualmente o algún archivo de código fuente corrupto."
+msgstr ""
+"Esto pudo haberlo causado la adición manual de repositorios de programas o "
+"un daño en el archivo «sources»."
 
 #: src/Dialogs/UpdateFailDialog.vala:34
 msgid "Ignore"
@@ -626,7 +631,7 @@ msgstr "Novedades:"
 
 #: src/Views/AppInfoView.vala:303
 msgid "Extensions:"
-msgstr "Complementos:"
+msgstr "Extensiones:"
 
 #. TRANSLATORS: See the Wikipedia page
 #: src/Views/AppInfoView.vala:400

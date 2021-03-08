@@ -8,11 +8,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-17 01:03+0000\n"
+"POT-Creation-Date: 2021-03-02 20:46+0000\n"
 "PO-Revision-Date: 2021-03-01 19:09+0000\n"
 "Last-Translator: J.Doval <dovaldev@gmail.com>\n"
-"Language-Team: Galician <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/gl/>\n"
+"Language-Team: Galician <https://l10n.elementary.io/projects/appcenter/appcenter/gl/>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -43,7 +42,7 @@ msgstr "Instalouse a aplicación"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:296 src/MainWindow.vala:340
+#: src/Application.vala:296 src/MainWindow.vala:354
 #, c-format
 msgid "“%s” has been installed"
 msgstr "Instalouse “%s”"
@@ -53,19 +52,25 @@ msgstr "Instalouse “%s”"
 msgid "Open"
 msgstr "Abrir"
 
-#: src/MainWindow.vala:158 src/Views/Homepage.vala:297
+#: src/MainWindow.vala:147
+#, fuzzy, c-format
+#| msgid "Failed to update “%s”"
+msgid "Failed to launch “%s“"
+msgstr "Fallou ó actualizar \"%s\""
+
+#: src/MainWindow.vala:172 src/Views/Homepage.vala:297
 #: src/Views/Homepage.vala:307 src/Views/Homepage.vala:312
 #: src/Views/Homepage.vala:323 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "Páxina principal"
 
-#: src/MainWindow.vala:159 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:173 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 msgctxt "view"
 msgid "Installed"
 msgstr "Instalado"
 
-#: src/MainWindow.vala:199 src/MainWindow.vala:405 src/Views/SearchView.vala:54
+#: src/MainWindow.vala:213 src/MainWindow.vala:419 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:87
 msgid "Search Apps"
 msgstr "Busca de aplicacións"
@@ -350,9 +355,7 @@ msgstr "Instalar de todos os xeitos"
 
 #: src/Dialogs/InstallFailDialog.vala:26
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
-msgstr ""
-"Pode ser un problema temporal ou podría ser causado por programas externos "
-"ou compilados manualmente."
+msgstr "Pode ser un problema temporal ou podría ser causado por programas externos ou compilados manualmente."
 
 #: src/Dialogs/InstallFailDialog.vala:37
 msgid "Failed to install app"
@@ -374,20 +377,15 @@ msgstr "¿Instalar aplicacións non revisadas?"
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
 msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-msgstr ""
-"“%s” non está revisada por elementary e non foi comprobada a sua seguridade, "
-"privacidade, ou integración co sistema."
+msgstr "“%s” non está revisada por elementary e non foi comprobada a sua seguridade, privacidade, ou integración co sistema."
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
 msgid "It may not receive bug fix or feature updates"
-msgstr ""
-"É posible que non se reciban correcións dos erros ou actualizacións de "
-"funcionalidade"
+msgstr "É posible que non se reciban correcións dos erros ou actualizacións de funcionalidade"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:60
 msgid "It may access or change system or personal files without permission"
-msgstr ""
-"Pode consultar ou modificar ficheiros personais e do sistema sen autorización"
+msgstr "Pode consultar ou modificar ficheiros personais e do sistema sen autorización"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
 msgid "Show non-curated warnings"
@@ -488,9 +486,7 @@ msgstr "O ano de expiración non é válido, Por favor, inténteo de novo utiliz
 
 #: src/Dialogs/StripeDialog.vala:518 src/Dialogs/StripeDialog.vala:571
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr ""
-"O código de seguridade da tarxeta é incorrecto. Por favor, inténteo de novo "
-"utilizando o código de seguridade correcto."
+msgstr "O código de seguridade da tarxeta é incorrecto. Por favor, inténteo de novo utilizando o código de seguridade correcto."
 
 #: src/Dialogs/StripeDialog.vala:520 src/Dialogs/StripeDialog.vala:562
 msgid "The card has expired. Please try again with a different card."
@@ -689,9 +685,7 @@ msgstr "Buscando actualizacións"
 
 #: src/Views/AppListUpdateView.vala:33
 msgid "Downloading a list of available updates to the OS and installed apps"
-msgstr ""
-"Descargando a lista das actualizacións do sistema operativo e das "
-"aplicacións instaladas"
+msgstr "Descargando a lista das actualizacións do sistema operativo e das aplicacións instaladas"
 
 #: src/Views/AppListUpdateView.vala:41
 msgid "A restart is required to complete the installation of updates"
