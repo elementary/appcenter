@@ -152,7 +152,7 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         package_list = new Gee.HashMap<string, AppCenterCore.Package> (null, null);
         appstream_pool = new AppStream.Pool ();
 
-#if ONLY_USE_USER_CACHE
+#if HIDE_UPSTREAM_DISTRO_APPS
         // Only use a user cache, the system cache probably contains all the Ubuntu components
         appstream_pool.set_cache_flags (AppStream.CacheFlags.USE_USER);
 

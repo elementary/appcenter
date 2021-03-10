@@ -5,4 +5,4 @@ option('name', type : 'string', value : 'AppCenter', description : 'The name of 
 option('payments', type : 'boolean', value : true, description : 'Enable payment features and display paid apps')
 option('sharing', type : 'boolean', value : true, description : 'Display sharing features, i.e. copyable URLs to apps')
 option('api_url', type : 'string', value : 'https://developer.elementary.io/api', description : 'The base URL of the API to get app lists for the homepage banners')
-option('only_use_user_cache', type : 'boolean', value : true, description : 'Only use user cache and hide packages from system cache')
+option('hide_upstream_distro_apps', type : 'boolean', value : true, description : 'Used for hiding Ubuntu apps on elementary')

@@ -85,8 +85,8 @@ if get_option('sharing')
     args += '--define=SHARING'
 endif
 
-if get_option('only_use_user_cache')
-    args += '--define=ONLY_USE_USER_CACHE'
+if get_option('hide_upstream_distro_apps')
+    args += '--define=HIDE_UPSTREAM_DISTRO_APPS'
 endif
 
 executable(
