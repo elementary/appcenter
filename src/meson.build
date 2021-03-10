@@ -21,7 +21,6 @@ appcenter_files = files(
     'Dialogs/ContentWarningDialog.vala',
     'Dialogs/InstallFailDialog.vala',
     'Dialogs/NonCuratedWarningDialog.vala',
-    'Dialogs/RestartDialog.vala',
     'Dialogs/StripeDialog.vala',
     'Dialogs/UninstallConfirmDialog.vala',
     'Dialogs/UninstallFailDialog.vala',

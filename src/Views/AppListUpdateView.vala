@@ -54,9 +54,11 @@ namespace AppCenter.Views {
                     try {
                         SuspendControl.get_default ().reboot ();
                     } catch (GLib.Error e) {
-                        info_label.label = _("Requesting a restart failed. Restart manually to finish installing updates");
-                        infobar.message_type = Gtk.MessageType.ERROR;
-                        restart_button.visible = false;
+                        if (!(e is IOError.CANCELLED)) {
+                            info_label.label = _("Requesting a restart failed. Restart manually to finish installing updates");
+                            infobar.message_type = Gtk.MessageType.ERROR;
+                            restart_button.visible = false;
+                        }
                     }
                 }
             });
