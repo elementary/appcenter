@@ -25,7 +25,6 @@ src/Dialogs/UninstallConfirmDialog.vala
 src/Dialogs/UninstallFailDialog.vala
 src/Dialogs/UpdateFailDialog.vala
 src/Dialogs/UpgradeFailDialog.vala
-src/Services/DBusInterfaces.vala
 src/Services/DBusServer.vala
 src/Services/SearchProvider.vala
 src/Views/AbstractView.vala
