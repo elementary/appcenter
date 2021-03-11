@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 20:46+0000\n"
-"PO-Revision-Date: 2021-03-02 20:46+0000\n"
+"PO-Revision-Date: 2021-03-11 00:50+0000\n"
 "Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/extra/"
 "ru/>\n"
@@ -76,7 +76,7 @@ msgstr "Новые переводы"
 #: data/io.elementary.appcenter.appdata.xml.in:28
 #: data/io.elementary.appcenter.appdata.xml.in:74
 msgid "New features"
-msgstr ""
+msgstr "Новые функции"
 
 #: data/io.elementary.appcenter.appdata.xml.in:30
 msgid "Support system-wide Flatpak remotes"
@@ -97,9 +97,8 @@ msgid ""
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:40
-#, fuzzy
 msgid "Improve search performance"
-msgstr "Исправления ошибок и улучшения производительности."
+msgstr "Улучшена скорость поиска"
 
 #: data/io.elementary.appcenter.appdata.xml.in:41
 msgid "Improve update badge styling and category styling"
@@ -230,8 +229,8 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:138
 msgid "Update application details when changes happen outside of AppCenter"
 msgstr ""
-"Обновляйте детали приложения, когда изменения происходят вне Центра "
-"приложений."
+"Обновление данных приложения, когда изменения происходят за пределами Центра "
+"приложений"
 
 #: data/io.elementary.appcenter.appdata.xml.in:139
 msgid "Fix for notification not appearing when a restart is required"
