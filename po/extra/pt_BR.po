@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 20:46+0000\n"
-"PO-Revision-Date: 2021-03-12 17:56+0000\n"
+"PO-Revision-Date: 2021-03-12 21:21+0000\n"
 "Last-Translator: Leonardo <leonardo@elementary.io>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/extra/pt_BR/>\n"
@@ -75,7 +75,7 @@ msgstr "Novas funcionalidades"
 
 #: data/io.elementary.appcenter.appdata.xml.in:30
 msgid "Support system-wide Flatpak remotes"
-msgstr ""
+msgstr "Suporte a Flatpaks remotos em todo o sistema"
 
 #: data/io.elementary.appcenter.appdata.xml.in:34
 msgid "Fix Flatpak runtime updates getting stuck"
@@ -83,7 +83,7 @@ msgstr "Conserta travamento do executável do Flatpak"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
 msgid "Fix long origin comboboxes breaking the header layout"
-msgstr ""
+msgstr "Conserta longa origem de comboboxes quebrando o layout do cabeçalho"
 
 #: data/io.elementary.appcenter.appdata.xml.in:39
 msgid ""
@@ -99,15 +99,17 @@ msgstr "Melhora performance de busca"
 
 #: data/io.elementary.appcenter.appdata.xml.in:41
 msgid "Improve update badge styling and category styling"
-msgstr ""
+msgstr "Melhora estilo do emblema de atualização e categoria"
 
 #: data/io.elementary.appcenter.appdata.xml.in:50
 msgid "Ensure AppCenter is reopened at the correct position"
-msgstr ""
+msgstr "Garante que a Central de Aplicativos reabre na posição correta"
 
 #: data/io.elementary.appcenter.appdata.xml.in:51
 msgid "Clicking the updates badge in the header navigates to the updates view"
 msgstr ""
+"Clicar no emblema de atualizações no cabeçalho navega para a tela de "
+"atualizações"
 
 #: data/io.elementary.appcenter.appdata.xml.in:63
 msgid "Ensure all updatable Flatpak runtimes are listed for update"
