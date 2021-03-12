@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 20:46+0000\n"
-"PO-Revision-Date: 2021-03-11 00:50+0000\n"
+"PO-Revision-Date: 2021-03-12 00:59+0000\n"
 "Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/extra/"
 "ru/>\n"
@@ -48,17 +48,15 @@ msgstr "Исправления"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Correctly display names of Flatpak runtime updates"
-msgstr ""
+msgstr "Правильное отображение имён для обновлений среды выполнения Flatpak"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:37
 #: data/io.elementary.appcenter.appdata.xml.in:53
 #: data/io.elementary.appcenter.appdata.xml.in:65
 #: data/io.elementary.appcenter.appdata.xml.in:78
-#, fuzzy
-#| msgid "Check for Updates"
 msgid "Minor updates"
-msgstr "Проверить наличие обновлений"
+msgstr "Незначительные обновления"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 #: data/io.elementary.appcenter.appdata.xml.in:42
@@ -69,9 +67,8 @@ msgstr "Проверить наличие обновлений"
 #: data/io.elementary.appcenter.appdata.xml.in:125
 #: data/io.elementary.appcenter.appdata.xml.in:131
 #: data/io.elementary.appcenter.appdata.xml.in:178
-#, fuzzy
 msgid "Updated translations"
-msgstr "Новые переводы"
+msgstr "Обновлены переводы"
 
 #: data/io.elementary.appcenter.appdata.xml.in:28
 #: data/io.elementary.appcenter.appdata.xml.in:74
@@ -84,7 +81,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:34
 msgid "Fix Flatpak runtime updates getting stuck"
-msgstr ""
+msgstr "Обновления среды выполнения Flatpak больше не застревают"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
 msgid "Fix long origin comboboxes breaking the header layout"
@@ -95,6 +92,8 @@ msgid ""
 "When apps are available from multiple sources, prefer installed version, "
 "then prefer Flatpak"
 msgstr ""
+"Если приложения доступны из нескольких источников, предпочтение отдается "
+"установленной версии, а затем - Flatpak"
 
 #: data/io.elementary.appcenter.appdata.xml.in:40
 msgid "Improve search performance"
@@ -102,7 +101,7 @@ msgstr "Улучшена скорость поиска"
 
 #: data/io.elementary.appcenter.appdata.xml.in:41
 msgid "Improve update badge styling and category styling"
-msgstr ""
+msgstr "Улучшен стиль значков обновления и стиль категорий"
 
 #: data/io.elementary.appcenter.appdata.xml.in:50
 msgid "Ensure AppCenter is reopened at the correct position"
@@ -111,17 +110,19 @@ msgstr "Убедитесь, что Центр приложений вновь о
 #: data/io.elementary.appcenter.appdata.xml.in:51
 msgid "Clicking the updates badge in the header navigates to the updates view"
 msgstr ""
+"Нажатие на значок обновлений в заголовке переходит к просмотру обновлений"
 
 #: data/io.elementary.appcenter.appdata.xml.in:63
 msgid "Ensure all updatable Flatpak runtimes are listed for update"
 msgstr ""
+"Будьте уверены, что все приложения Flatpak, которые можно обновить, будут "
+"перечислены в списке для обновления"
 
 #: data/io.elementary.appcenter.appdata.xml.in:67
 #: data/io.elementary.appcenter.appdata.xml.in:88
 #: data/io.elementary.appcenter.appdata.xml.in:177
-#, fuzzy
 msgid "Performance improvements"
-msgstr "Различные исправления ошибок и улучшения производительности"
+msgstr "Улучшения производительности"
 
 #: data/io.elementary.appcenter.appdata.xml.in:76
 msgid "Perform updates without administrator permissions"
