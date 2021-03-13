@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 20:46+0000\n"
-"PO-Revision-Date: 2020-06-18 11:11+0000\n"
-"Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
+"PO-Revision-Date: 2021-03-12 21:21+0000\n"
+"Last-Translator: Leonardo <leonardo@elementary.io>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/extra/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
@@ -46,7 +46,7 @@ msgstr "Correções"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Correctly display names of Flatpak runtime updates"
-msgstr ""
+msgstr "Exibe as atualizações do executável do Flatpak corretamente"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:37
@@ -75,39 +75,41 @@ msgstr "Novas funcionalidades"
 
 #: data/io.elementary.appcenter.appdata.xml.in:30
 msgid "Support system-wide Flatpak remotes"
-msgstr ""
+msgstr "Suporte a Flatpaks remotos em todo o sistema"
 
 #: data/io.elementary.appcenter.appdata.xml.in:34
 msgid "Fix Flatpak runtime updates getting stuck"
-msgstr ""
+msgstr "Conserta travamento do executável do Flatpak"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
 msgid "Fix long origin comboboxes breaking the header layout"
-msgstr ""
+msgstr "Conserta longa origem de comboboxes quebrando o layout do cabeçalho"
 
 #: data/io.elementary.appcenter.appdata.xml.in:39
 msgid ""
 "When apps are available from multiple sources, prefer installed version, "
 "then prefer Flatpak"
 msgstr ""
+"Quando aplicativos estiverem disponíveis de múltiplas fontes, preferir a "
+"versão instalada, depois preferir o Flatpak"
 
 #: data/io.elementary.appcenter.appdata.xml.in:40
-#, fuzzy
-#| msgid "Bug fixes and improve performance."
 msgid "Improve search performance"
-msgstr "Correções de erros e melhora no desempenho."
+msgstr "Melhora performance de busca"
 
 #: data/io.elementary.appcenter.appdata.xml.in:41
 msgid "Improve update badge styling and category styling"
-msgstr ""
+msgstr "Melhora estilo do emblema de atualização e categoria"
 
 #: data/io.elementary.appcenter.appdata.xml.in:50
 msgid "Ensure AppCenter is reopened at the correct position"
-msgstr ""
+msgstr "Garante que a Central de Aplicativos reabre na posição correta"
 
 #: data/io.elementary.appcenter.appdata.xml.in:51
 msgid "Clicking the updates badge in the header navigates to the updates view"
 msgstr ""
+"Clicar no emblema de atualizações no cabeçalho navega para a tela de "
+"atualizações"
 
 #: data/io.elementary.appcenter.appdata.xml.in:63
 msgid "Ensure all updatable Flatpak runtimes are listed for update"
