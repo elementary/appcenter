@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 20:46+0000\n"
-"PO-Revision-Date: 2021-03-12 00:59+0000\n"
+"PO-Revision-Date: 2021-03-13 19:48+0000\n"
 "Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/extra/"
 "ru/>\n"
@@ -86,6 +86,7 @@ msgstr "Обновления среды выполнения Flatpak больш�
 #: data/io.elementary.appcenter.appdata.xml.in:35
 msgid "Fix long origin comboboxes breaking the header layout"
 msgstr ""
+"Исправлено нарушающие компоновки заголовков у длинных выпадающих списков"
 
 #: data/io.elementary.appcenter.appdata.xml.in:39
 msgid ""
@@ -126,15 +127,16 @@ msgstr "Улучшения производительности"
 
 #: data/io.elementary.appcenter.appdata.xml.in:76
 msgid "Perform updates without administrator permissions"
-msgstr ""
+msgstr "Выполнение обновлений без разрешения администратора"
 
 #: data/io.elementary.appcenter.appdata.xml.in:80
 msgid "Ensure apps on the homepage are more reliably displayed"
 msgstr ""
+"Будьте уверены, что приложения на домашней странице отображаются более точно"
 
 #: data/io.elementary.appcenter.appdata.xml.in:81
 msgid "More reliably set the Dock badge number"
-msgstr ""
+msgstr "Улучшено отображение значков с номером в доке"
 
 #: data/io.elementary.appcenter.appdata.xml.in:90
 msgid ""
