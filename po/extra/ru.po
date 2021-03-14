@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 20:46+0000\n"
-"PO-Revision-Date: 2021-03-13 19:48+0000\n"
+"PO-Revision-Date: 2021-03-14 16:30+0000\n"
 "Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/extra/"
 "ru/>\n"
@@ -143,48 +143,56 @@ msgid ""
 "Only check for updates at device startup if it's more than 24 hours since we "
 "last checked"
 msgstr ""
+"Проверка обновлений при запуске устройства, только в том случае, если с "
+"момента последней проверки прошло более 24 часов"
 
 #: data/io.elementary.appcenter.appdata.xml.in:91
 msgid "Reduce slowdowns when opening certain apps"
-msgstr ""
+msgstr "Уменьшено замедление работы при открытии определенных приложений"
 
 #: data/io.elementary.appcenter.appdata.xml.in:93
-#, fuzzy
 msgid "Extension improvements"
-msgstr "Различные исправления ошибок и улучшения производительности"
+msgstr "Улучшения расширений"
 
 #: data/io.elementary.appcenter.appdata.xml.in:95
 msgid ""
 "To de-clutter the updates view, extensions are now only shown if they "
 "require updates"
 msgstr ""
+"Для упрощения представления обновлений, расширения теперь отображаются "
+"только, если они требуют обновлений"
 
 #: data/io.elementary.appcenter.appdata.xml.in:96
 msgid ""
 "Clicking an extension on an app's info page now shows details for the "
 "extension"
 msgstr ""
+"Нажатие на расширение на странице сведений о приложении, теперь показывает "
+"подробности о расширении"
 
 #: data/io.elementary.appcenter.appdata.xml.in:97
 msgid ""
 "Swap the main and overlay icons for extensions to more clearly associate "
 "extensions with their app"
 msgstr ""
+"Заменены основные и наложенные пиктограммы для расширений, чтобы более четко "
+"ассоциировать расширения со своим приложением"
 
 #: data/io.elementary.appcenter.appdata.xml.in:99
-#, fuzzy
 msgid "Keyboard improvements"
-msgstr "Различные исправления ошибок и улучшения производительности"
+msgstr "Улучшения для клавиатуры"
 
 #: data/io.elementary.appcenter.appdata.xml.in:101
 msgid ""
 "Pressing down in the search field moves the keyboard focus to the search "
 "results list"
 msgstr ""
+"Нажатие на поле поиска перемещает фокус клавиатуры в список результатов "
+"поиска"
 
 #: data/io.elementary.appcenter.appdata.xml.in:102
 msgid "Ctrl+F now moves the cursor to the search field"
-msgstr ""
+msgstr "Ctrl+F теперь перемещает курсор в поле поиска"
 
 #: data/io.elementary.appcenter.appdata.xml.in:106
 msgid "Use configured network proxy settings for apt operations"
@@ -193,6 +201,7 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:107
 msgid "No longer prompt for approval to update non-curated apps"
 msgstr ""
+"Больше нет запроса на подтверждение для обновления не курируемых приложений"
 
 #: data/io.elementary.appcenter.appdata.xml.in:108
 msgid ""
@@ -227,7 +236,7 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:136
 #: data/io.elementary.appcenter.appdata.xml.in:153
 msgid "Minor fixes"
-msgstr ""
+msgstr "Незначительные изменения"
 
 #: data/io.elementary.appcenter.appdata.xml.in:138
 msgid "Update application details when changes happen outside of AppCenter"
