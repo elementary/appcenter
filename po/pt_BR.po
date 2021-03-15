@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 20:46+0000\n"
-"PO-Revision-Date: 2021-03-11 20:07+0000\n"
+"PO-Revision-Date: 2021-03-13 06:59+0000\n"
 "Last-Translator: Leonardo <leonardo@elementary.io>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/pt_BR/>\n"
@@ -231,8 +231,8 @@ msgstr "operações de pacote estão sendo realizadas"
 #: src/Core/Client.vala:72
 msgid "Update Available"
 msgid_plural "Updates Available"
-msgstr[0] "Atualização Disponível"
-msgstr[1] "Atualizações Disponíveis"
+msgstr[0] "Atualização disponível"
+msgstr[1] "Atualizações disponíveis"
 
 #: src/Core/Client.vala:73
 #, c-format
@@ -590,16 +590,13 @@ msgid "Try Again"
 msgstr "Tentar Novamente"
 
 #: src/Dialogs/UpgradeFailDialog.vala:37
-#, fuzzy
-#| msgid "Failed to uninstall app"
 msgid "Failed to update app"
-msgstr "Falha ao desinstalar o aplicativo"
+msgstr "Falha ao atualizar o aplicativo"
 
 #: src/Dialogs/UpgradeFailDialog.vala:40
-#, fuzzy, c-format
-#| msgid "Failed to uninstall “%s”"
+#, c-format
 msgid "Failed to update “%s”"
-msgstr "Falha ao desinstalar “%s”"
+msgstr "Falha ao atualizar “%s”"
 
 #: src/Views/AppInfoView.vala:187
 msgid "Screenshot Not Available"
@@ -702,7 +699,7 @@ msgstr "Reiniciar Agora"
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
 #: src/Views/AppListUpdateView.vala:183
 msgid "Update All"
-msgstr "Atualizar Todos"
+msgstr "Atualizar tudo"
 
 #: src/Views/AppListView.vala:30
 msgid "No Results"
@@ -893,7 +890,7 @@ msgstr "Copiar link"
 
 #: src/Widgets/SizeLabel.vala:35
 msgid "Actual Download Size Likely to Be Smaller"
-msgstr "O Tamanho Real do Download Poderá Ser Menor"
+msgstr "O tamanho real do download pode ser menor"
 
 #: src/Widgets/SizeLabel.vala:36
 msgid "Only the parts of apps and updates that are needed will be downloaded."
