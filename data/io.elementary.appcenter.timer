@@ -1,0 +1,9 @@
+[Unit]
+Description=Check for package updates daily
+
+[Timer]
+OnCalendar=daily
+OnActiveSec=10
+
+[Install]
+WantedBy=timers.target

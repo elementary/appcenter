@@ -19,12 +19,26 @@ install_data(
     rename: meson.project_name() + '-symbolic.svg'
 )
 
-# Daemon Desktop file (for GNOME Session autostart)
+# Script to check for updates
 configure_file(
-    input: meson.project_name() + '-daemon.desktop.in',
-    output: meson.project_name() + '-daemon.desktop',
+    input: meson.project_name() + '.update-check.sh.in',
+    output: 'update-check.sh',
     configuration: conf_data,
-    install_dir: join_paths(get_option('datadir'), 'applications')
+    install_dir: join_paths (get_option('prefix'), '/usr/lib', meson.project_name())
+)
+
+# Systemd service for that script
+configure_file(
+    input: meson.project_name() + '.service.in',
+    output: meson.project_name() + '.service',
+    configuration: conf_data,
+    install_dir: join_paths (get_option('prefix'), '/usr/lib/systemd/user')
+)
+
+# Systemd timer for that service
+install_data(
+    meson.project_name() + '.timer',
+    install_dir: join_paths (get_option('prefix'), '/usr/lib/systemd/user')
 )
 
 # GNOME Shell Search Provider

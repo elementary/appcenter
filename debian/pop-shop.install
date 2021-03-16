@@ -1,5 +1,6 @@
 etc/
 usr/bin/
+usr/lib/
 usr/share/applications/
 usr/share/glib-2.0/
 usr/share/gnome-shell/search-providers/

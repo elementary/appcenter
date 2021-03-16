@@ -34,6 +34,7 @@ Depends: appstream (>= 0.12),
          apt-config-icons-large,
          apt-config-icons-large-hidpi,
          packagekit,
+         packagekit-tools,
          repoman,
          ${misc:Depends},
          ${shlibs:Depends}

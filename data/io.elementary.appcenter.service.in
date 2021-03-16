@@ -1,0 +1,8 @@
+[Unit]
+Description=Check for package updates, and notify that updates are available
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/lib/@PROJECT_NAME@/update-check.sh

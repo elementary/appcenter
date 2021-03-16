@@ -1,0 +1,36 @@
+#!/bin/sh
+
+flatpak update --appstream
+
+UPDATES_AVAILABLE=0
+
+if pkcon get-updates -p | grep 'Package:' > /dev/null; then
+    UPDATES_AVAILABLE=1
+fi
+
+if ! flatpak remote-ls --updates > /dev/null; then
+    UPDATES_AVAILABLE=1
+fi
+
+if test "${UPDATES_AVAILABLE}" = 1; then
+    gdbus call --session \
+        --dest=org.freedesktop.Notifications \
+        --object-path=/org/freedesktop/Notifications \
+        --method=org.freedesktop.Notifications.Notify \
+        "system-software-install" 0 "" "Updates available to install" \
+        "Install system and application updates for Pop!_OS" \
+        "['default', '']" \
+        '{"urgency": <1>}' \
+        5000
+
+    timeout 5 gdbus monitor --session \
+        --dest=org.freedesktop.Notifications \
+        --object-path=/org/freedesktop/Notifications | {
+            while IFS= read -r line; do
+                if echo $line | grep ActionInvoked; then
+                    @EXEC_NAME@ --show-updates
+                    break
+                fi
+            done
+        }
+fi
