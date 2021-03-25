@@ -368,6 +368,8 @@ namespace AppCenter {
         }
 
         private async void action_clicked () {
+            action_stack.set_visible_child_name ("progress");
+
             if (package.installed && !package.update_available) {
                 action_button_revealer.reveal_child = false;
             } else if (package.update_available) {
