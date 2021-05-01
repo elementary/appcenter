@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 20:46+0000\n"
-"PO-Revision-Date: 2021-02-17 06:14+0000\n"
+"PO-Revision-Date: 2021-05-01 20:32+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/"
 "extra/uk/>\n"
@@ -411,7 +411,7 @@ msgstr "Нові переклади"
 
 #: data/io.elementary.appcenter.appdata.xml.in:198
 msgid "New categories: Communication, Finance, Media Production"
-msgstr "Нові категорії: Спілкування, Фінанси, Медіа виробництво"
+msgstr "Нові категорії: Спілкування, Фінанси, Медіавиробництво"
 
 #: data/io.elementary.appcenter.appdata.xml.in:199
 msgid "Add Math to Science category"
