@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 20:46+0000\n"
-"PO-Revision-Date: 2021-03-16 08:10+0000\n"
+"PO-Revision-Date: 2021-05-06 15:44+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ja/>\n"
@@ -470,11 +470,11 @@ msgstr "カード番号が違います。正しいカード番号を使用して
 
 #: src/Dialogs/StripeDialog.vala:513
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
-msgstr "有効期限の月が無効です。正しい有効期限を使用して、もう一度お試しください。"
+msgstr "有効期限の月が不適切です。正しい有効期限を使用して、もう一度お試しください。"
 
 #: src/Dialogs/StripeDialog.vala:515 src/Dialogs/StripeDialog.vala:573
 msgid "The expiration year is invalid. Please try again using the correct expiration date."
-msgstr "有効期限の年が無効です。正しい有効期限を使用して、もう一度お試しください。"
+msgstr "有効期限の年が不適切です。正しい有効期限を使用して、もう一度お試しください。"
 
 #: src/Dialogs/StripeDialog.vala:518 src/Dialogs/StripeDialog.vala:571
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
