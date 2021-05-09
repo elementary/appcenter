@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 20:46+0000\n"
-"PO-Revision-Date: 2021-05-04 10:58+0000\n"
+"PO-Revision-Date: 2021-05-09 13:20+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/fi/>\n"
@@ -296,7 +296,7 @@ msgstr "Versio: %s"
 
 #: src/Core/UpdateManager.vala:130
 msgid "Flatpak runtime"
-msgstr ""
+msgstr "Flatpak-suoritusympäristö"
 
 #: src/Core/UpdateManager.vala:147
 msgid "No components with updates"
