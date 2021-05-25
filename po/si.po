@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 20:46+0000\n"
-"PO-Revision-Date: 2021-03-05 12:09+0000\n"
+"PO-Revision-Date: 2021-05-26 01:55+0000\n"
 "Last-Translator: HelaBasa <R45XvezA@pm.me>\n"
 "Language-Team: Sinhala <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/si/>\n"
@@ -64,10 +64,9 @@ msgstr "මුල් පිටුව"
 
 #: src/MainWindow.vala:173 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
-#, fuzzy
 msgctxt "view"
 msgid "Installed"
-msgstr "ස්ථාපනය කරන්න"
+msgstr "ස්ථාපිතයි"
 
 #: src/MainWindow.vala:213 src/MainWindow.vala:419 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:87
@@ -250,11 +249,11 @@ msgstr "යාවත්කාලින වෙමින්"
 #: src/Core/Package.vala:308
 #, c-format
 msgid "%s Developers"
-msgstr ""
+msgstr "සංවර්ධකයින් %s"
 
 #: src/Core/Package.vala:340
 msgid "elementary Updates"
-msgstr ""
+msgstr "ඉලමෙන්ටරි යාවත්කාල"
 
 #: src/Core/Package.vala:342
 msgid "Ubuntu (non-curated)"
