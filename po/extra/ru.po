@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 20:46+0000\n"
 "PO-Revision-Date: 2021-06-01 10:22+0000\n"
-"Last-Translator: Andrey <max352516@gmail.com>\n"
+"Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/extra/"
 "ru/>\n"
 "Language: ru\n"
@@ -220,7 +220,8 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:113
 msgid "Show a more informative loading screen when checking for updates"
-msgstr "Показывать более информативный экран проверки при проверке обновлений"
+msgstr ""
+"Отображение более информативного экрана загрузки при проверке обновлений"
 
 #: data/io.elementary.appcenter.appdata.xml.in:114
 msgid "Don't list fonts alongside apps"
