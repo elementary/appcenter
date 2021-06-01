@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 20:46+0000\n"
-"PO-Revision-Date: 2021-06-01 10:24+0000\n"
+"PO-Revision-Date: 2021-06-01 12:03+0000\n"
 "Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/extra/"
 "ru/>\n"
@@ -231,12 +231,13 @@ msgstr "Шрифты больше не отображаются рядом с п
 msgid ""
 "Prevent crashes when updating Flatpaks and system packages simultaneously"
 msgstr ""
-"Предотвращать сбои при одновременном обновлении Flatpak и системных пакетов"
+"Предотвращение сбоев при одновременном обновлении Flatpak и системных пакетов"
 
 #: data/io.elementary.appcenter.appdata.xml.in:124
 msgid "Prevent suspending when installing, updating, or removing packages"
 msgstr ""
-"Предотвращать приостановку при установке, обновлении или удалении пакетов"
+"Предотвращение приостановки во время установки, обновления или удаления "
+"пакетов"
 
 #: data/io.elementary.appcenter.appdata.xml.in:136
 #: data/io.elementary.appcenter.appdata.xml.in:153
