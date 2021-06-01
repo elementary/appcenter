@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 20:46+0000\n"
-"PO-Revision-Date: 2021-06-01 10:21+0000\n"
-"Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
+"PO-Revision-Date: 2021-06-01 10:22+0000\n"
+"Last-Translator: Andrey <max352516@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/extra/"
 "ru/>\n"
 "Language: ru\n"
@@ -224,7 +224,7 @@ msgstr "Показывать более информативный экран п
 
 #: data/io.elementary.appcenter.appdata.xml.in:114
 msgid "Don't list fonts alongside apps"
-msgstr ""
+msgstr "Не показывать шрифты рядом с приложениями"
 
 #: data/io.elementary.appcenter.appdata.xml.in:123
 msgid ""
