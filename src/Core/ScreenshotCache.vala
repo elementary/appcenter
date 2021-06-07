@@ -192,11 +192,6 @@ public class AppCenterCore.ScreenshotCache : GLib.Object {
             warning ("Error getting modification time of remote screenshot file: %s", e.message);
         }
 
-        if (remote_mtime == null) {
-            // Used the locally cached version if it exists
-            return local_file.query_exists ();
-        }
-
         if (local_file.query_exists ()) {
             GLib.DateTime? file_time = null;
             try {
@@ -207,7 +202,7 @@ public class AppCenterCore.ScreenshotCache : GLib.Object {
             }
 
             // Local file is up to date
-            if (file_time != null && file_time.equal (remote_mtime)) {
+            if (file_time != null && remote_mtime != null && file_time.equal (remote_mtime)) {
                 return true;
             }
         }
