@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 20:46+0000\n"
-"PO-Revision-Date: 2021-06-01 12:03+0000\n"
+"PO-Revision-Date: 2021-06-12 00:15+0000\n"
 "Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/extra/"
 "ru/>\n"
@@ -212,7 +212,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:109
 msgid "Ellipsize long app names in App Info views"
-msgstr ""
+msgstr "Сокращение длинных имен приложений в информации о приложении"
 
 #: data/io.elementary.appcenter.appdata.xml.in:111
 msgid "And more"
@@ -252,11 +252,13 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:139
 msgid "Fix for notification not appearing when a restart is required"
-msgstr ""
+msgstr "Исправление не появляющегося уведомления о необходимости перезагрузки"
 
 #: data/io.elementary.appcenter.appdata.xml.in:140
 msgid "Apps in list views now load in the correct order when scrolling"
 msgstr ""
+"Приложения в списочных представлениях теперь загружаются в правильном "
+"порядке при прокрутке"
 
 #: data/io.elementary.appcenter.appdata.xml.in:141
 msgid "Prevent unescaped XML entities from appearing in application names"
