@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 20:46+0000\n"
-"PO-Revision-Date: 2021-03-03 07:35+0000\n"
+"PO-Revision-Date: 2021-05-06 15:44+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ja/>\n"
@@ -231,7 +231,7 @@ msgstr[0] "アップデートが利用可能です"
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
-msgstr[0] "システムに %u 件のアップデートが利用可能です"
+msgstr[0] "システムに%u件のアップデートが利用可能です"
 
 #: src/Core/FlatpakBackend.vala:1045
 msgid "Uninstalling"
@@ -302,7 +302,7 @@ msgstr "アップデートのあるコンポーネントはありません"
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
-msgstr[0] "アップデートのあるコンポーネントが %u 個あります"
+msgstr[0] "アップデートのあるコンポーネントが%u項目あります"
 
 #: src/Core/UpdateManager.vala:154
 #, c-format
@@ -416,7 +416,7 @@ msgstr "支払い"
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
 msgid "Pay $%d for %s"
-msgstr "%d ドルを %s に払う"
+msgstr "%dドルを %s に払う"
 
 #: src/Dialogs/StripeDialog.vala:96
 msgid "This is a one time payment. Your email address is only used to send you a receipt."
@@ -446,7 +446,7 @@ msgstr "プライバシーポリシー"
 #: src/Dialogs/StripeDialog.vala:198 src/Dialogs/StripeDialog.vala:312
 #, c-format
 msgid "Pay $%d.00"
-msgstr "%d.00 ドル払う"
+msgstr "%d.00ドル払う"
 
 #: src/Dialogs/StripeDialog.vala:241
 msgid "Processing"
@@ -470,11 +470,11 @@ msgstr "カード番号が違います。正しいカード番号を使用して
 
 #: src/Dialogs/StripeDialog.vala:513
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
-msgstr "有効期限の月が無効です。正しい有効期限を使用して、もう一度お試しください。"
+msgstr "有効期限の月が不適切です。正しい有効期限を使用して、もう一度お試しください。"
 
 #: src/Dialogs/StripeDialog.vala:515 src/Dialogs/StripeDialog.vala:573
 msgid "The expiration year is invalid. Please try again using the correct expiration date."
-msgstr "有効期限の年が無効です。正しい有効期限を使用して、もう一度お試しください。"
+msgstr "有効期限の年が不適切です。正しい有効期限を使用して、もう一度お試しください。"
 
 #: src/Dialogs/StripeDialog.vala:518 src/Dialogs/StripeDialog.vala:571
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
@@ -821,13 +821,13 @@ msgstr "インストール"
 #: src/Widgets/HumbleButton.vala:141
 #, c-format
 msgid "$%d.00"
-msgstr "%d.00 ドル"
+msgstr "%d.00ドル"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:144
 #, c-format
 msgid "$%d"
-msgstr "%d ドル"
+msgstr "%dドル"
 
 #: src/Widgets/NetworkInfoBar.vala:28
 msgid "Network Not Available."
@@ -896,7 +896,7 @@ msgstr "最大 %s"
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
-msgstr[0] "%u 件のアップデートが利用可能です"
+msgstr[0] "%u件のアップデートが利用可能です"
 
 #: src/Widgets/UpdateHeaderRow.vala:54
 msgid "Drivers"

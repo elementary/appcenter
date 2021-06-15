@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 20:46+0000\n"
-"PO-Revision-Date: 2021-03-11 06:26+0000\n"
+"PO-Revision-Date: 2021-05-09 13:20+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/fi/>\n"
@@ -296,7 +296,7 @@ msgstr "Versio: %s"
 
 #: src/Core/UpdateManager.vala:130
 msgid "Flatpak runtime"
-msgstr ""
+msgstr "Flatpak-suoritusympäristö"
 
 #: src/Core/UpdateManager.vala:147
 msgid "No components with updates"
@@ -892,12 +892,12 @@ msgstr "Varsinainen latauskoko on todennäköisesti pienempi"
 
 #: src/Widgets/SizeLabel.vala:36
 msgid "Only the parts of apps and updates that are needed will be downloaded."
-msgstr "Vain tarvittavat osat sovelluksia ja päivityksiä tullaan lataamaan."
+msgstr "Vain tarvittavat osat sovelluksista ja päivityksistä ladataan."
 
 #: src/Widgets/SizeLabel.vala:63
 #, c-format
 msgid "Up to %s"
-msgstr "%s asti"
+msgstr "Noin %s"
 
 #: src/Widgets/UpdateHeaderRow.vala:41
 #, c-format

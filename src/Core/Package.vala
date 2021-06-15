@@ -35,7 +35,7 @@ public class AppCenterCore.PackageDetails : Object {
 }
 
 public class AppCenterCore.Package : Object {
-    public const string APPCENTER_PACKAGE_ORIGIN = "appcenter-bionic-main";
+    public const string APPCENTER_PACKAGE_ORIGIN = "appcenter";
     // We stopped using this origin in elementary OS 5.1, references to this can be removed
     // after everyone has had chance to update their appstream-data-pantheon package
     private const string DEPRECATED_ELEMENTARY_STABLE_PACKAGE_ORIGIN = "stable-bionic-main";
