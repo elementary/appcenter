@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-02 20:46+0000\n"
+"POT-Creation-Date: 2021-06-15 21:03+0000\n"
 "PO-Revision-Date: 2020-07-04 12:12+0000\n"
 "Last-Translator: Martin Myrvold <myrvold.martin@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <https://l10n.elementary.io/projects/appcenter/appcenter/nn/>\n"
@@ -278,7 +278,7 @@ msgstr "Ukjend opphav (ikkje-bekrefta)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Tilstanden til appen står som ikkje installert i AppCenter for pakken: %s"
 
-#: src/Core/PackageKitBackend.vala:272
+#: src/Core/PackageKitBackend.vala:283
 #, c-format
 msgid "%s (local)"
 msgstr "%s (lokal)"
@@ -390,24 +390,6 @@ msgstr "Den kan få tilgong til å endra system- eller personlige filer utan god
 msgid "Show non-curated warnings"
 msgstr "Vis innhaldsåtvaringar"
 
-#: src/Dialogs/RestartDialog.vala:40
-msgid "Are you sure you want to Restart?"
-msgstr "Er du sikker på at du ønsker å omstarte?"
-
-#: src/Dialogs/RestartDialog.vala:41
-msgid "This will close all open applications and restart this device."
-msgstr "Dette vil lukke alle opne applikasjonar og omstarte maskina."
-
-#: src/Dialogs/RestartDialog.vala:42
-msgid "Restart"
-msgstr "Omstart"
-
-#: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:196
-#: src/Dialogs/StripeDialog.vala:313
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
-msgid "Cancel"
-msgstr "Avbryt"
-
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
 msgstr "Ein feil skjedde under prosessering av kortet. Prøv igjen seinare. Vi ber om orsak for eventuelle ulemper det medfører."
@@ -449,6 +431,11 @@ msgstr "CVC"
 #: src/Dialogs/StripeDialog.vala:189
 msgid "Privacy Policy"
 msgstr "Personvernreglar"
+
+#: src/Dialogs/StripeDialog.vala:196 src/Dialogs/StripeDialog.vala:313
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
+msgid "Cancel"
+msgstr "Avbryt"
 
 #: src/Dialogs/StripeDialog.vala:198 src/Dialogs/StripeDialog.vala:312
 #, c-format
@@ -690,15 +677,21 @@ msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr "Hentar ei liste med tilgjengelege oppdateringar for operativsystemet og installerte appar"
 
 #: src/Views/AppListUpdateView.vala:41
-msgid "A restart is required to complete the installation of updates"
+#, fuzzy
+#| msgid "A restart is required to complete the installation of updates"
+msgid "A restart is required to finish installing updates"
 msgstr "Ein omstart er naudsynt for å fullføre installeringa av oppdateringane"
 
 #: src/Views/AppListUpdateView.vala:49
 msgid "Restart Now"
 msgstr "Omstart no"
 
+#: src/Views/AppListUpdateView.vala:58
+msgid "Requesting a restart failed. Restart manually to finish installing updates"
+msgstr ""
+
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:183
+#: src/Views/AppListUpdateView.vala:186
 msgid "Update All"
 msgstr "Oppdater alle"
 
@@ -920,6 +913,15 @@ msgstr "Alt er oppdatert"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "Oppdater"
+
+#~ msgid "Are you sure you want to Restart?"
+#~ msgstr "Er du sikker på at du ønsker å omstarte?"
+
+#~ msgid "This will close all open applications and restart this device."
+#~ msgstr "Dette vil lukke alle opne applikasjonar og omstarte maskina."
+
+#~ msgid "Restart"
+#~ msgstr "Omstart"
 
 #~ msgid "Finishing"
 #~ msgstr "Gjer ferdig"

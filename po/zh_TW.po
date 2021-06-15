@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-02 20:46+0000\n"
+"POT-Creation-Date: 2021-06-15 21:03+0000\n"
 "PO-Revision-Date: 2020-07-01 23:02+0000\n"
 "Last-Translator: Nan-Hung Hsieh <nhsieh@cvm.tamu.edu>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/appcenter/appcenter/zh_Hant/>\n"
@@ -279,7 +279,7 @@ msgstr "未知的來源 (未整理)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "未設定為安裝狀態的應用程式：%s"
 
-#: src/Core/PackageKitBackend.vala:272
+#: src/Core/PackageKitBackend.vala:283
 #, c-format
 msgid "%s (local)"
 msgstr "%s (本機)"
@@ -390,24 +390,6 @@ msgstr ""
 msgid "Show non-curated warnings"
 msgstr "顯示內容警告"
 
-#: src/Dialogs/RestartDialog.vala:40
-msgid "Are you sure you want to Restart?"
-msgstr "確定要重新啟動嗎？"
-
-#: src/Dialogs/RestartDialog.vala:41
-msgid "This will close all open applications and restart this device."
-msgstr "這會使全部的應用程式關閉和使電腦重新啟動。"
-
-#: src/Dialogs/RestartDialog.vala:42
-msgid "Restart"
-msgstr "重新啟動"
-
-#: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:196
-#: src/Dialogs/StripeDialog.vala:313
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
-msgid "Cancel"
-msgstr "取消"
-
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
 msgstr "處理卡片時出了問題，請等下再試一次。我們為任何不方便而道歉。"
@@ -449,6 +431,11 @@ msgstr "CVC"
 #: src/Dialogs/StripeDialog.vala:189
 msgid "Privacy Policy"
 msgstr "隱私權政策"
+
+#: src/Dialogs/StripeDialog.vala:196 src/Dialogs/StripeDialog.vala:313
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
+msgid "Cancel"
+msgstr "取消"
 
 #: src/Dialogs/StripeDialog.vala:198 src/Dialogs/StripeDialog.vala:312
 #, c-format
@@ -691,15 +678,21 @@ msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr "下載並安裝應用程序"
 
 #: src/Views/AppListUpdateView.vala:41
-msgid "A restart is required to complete the installation of updates"
+#, fuzzy
+#| msgid "A restart is required to complete the installation of updates"
+msgid "A restart is required to finish installing updates"
 msgstr "需要重新啟動才能完成更新的安裝"
 
 #: src/Views/AppListUpdateView.vala:49
 msgid "Restart Now"
 msgstr "立刻重新啟動"
 
+#: src/Views/AppListUpdateView.vala:58
+msgid "Requesting a restart failed. Restart manually to finish installing updates"
+msgstr ""
+
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:183
+#: src/Views/AppListUpdateView.vala:186
 msgid "Update All"
 msgstr "全部更新"
 
@@ -920,6 +913,15 @@ msgstr "最新狀態"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "更新"
+
+#~ msgid "Are you sure you want to Restart?"
+#~ msgstr "確定要重新啟動嗎？"
+
+#~ msgid "This will close all open applications and restart this device."
+#~ msgstr "這會使全部的應用程式關閉和使電腦重新啟動。"
+
+#~ msgid "Restart"
+#~ msgstr "重新啟動"
 
 #~ msgid "Finishing"
 #~ msgstr "完成中"

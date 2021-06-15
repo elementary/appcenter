@@ -4,11 +4,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-02 20:46+0000\n"
+"POT-Creation-Date: 2021-06-15 21:03+0000\n"
 "PO-Revision-Date: 2021-03-21 01:40+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
-"Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/mr/>\n"
+"Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/appcenter/mr/>\n"
 "Language: mr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -275,7 +274,7 @@ msgstr "अज्ञात उत्पत्ति (नॉन-क्युर�
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "%s : पॅकेजसाठी AppCenter मध्ये स्थापित केल्यानुसार अनुप्रयोग स्थिती सेट केलेली नाही"
 
-#: src/Core/PackageKitBackend.vala:272
+#: src/Core/PackageKitBackend.vala:283
 #, c-format
 msgid "%s (local)"
 msgstr "%s (स्थानिक)"
@@ -387,29 +386,9 @@ msgstr "हे परवानगीशिवाय सिस्टम किं
 msgid "Show non-curated warnings"
 msgstr "नॉन-क्युरेटेड चेतावण्या दाखवा"
 
-#: src/Dialogs/RestartDialog.vala:40
-msgid "Are you sure you want to Restart?"
-msgstr "पुन्हा सुरु करायचे अशी आपली खात्री आहे का?"
-
-#: src/Dialogs/RestartDialog.vala:41
-msgid "This will close all open applications and restart this device."
-msgstr "याने सर्व चालू अप्लिकेशन्स बंद होऊन हे डिव्हाईस पुन्हा सुरु होईल."
-
-#: src/Dialogs/RestartDialog.vala:42
-msgid "Restart"
-msgstr "पुन्हा सुरु करा"
-
-#: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:196
-#: src/Dialogs/StripeDialog.vala:313
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
-msgid "Cancel"
-msgstr "रद्द करा"
-
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
-msgstr ""
-"ह्या कार्डावरुन प्रक्रिया करतांना काही चूक झाली आहे. कृपया पुन्हा प्रयत्न करा"
-". आपणांस होणाऱ्या असुविधेबद्दल क्षमा असावी."
+msgstr "ह्या कार्डावरुन प्रक्रिया करतांना काही चूक झाली आहे. कृपया पुन्हा प्रयत्न करा. आपणांस होणाऱ्या असुविधेबद्दल क्षमा असावी."
 
 #: src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
@@ -448,6 +427,11 @@ msgstr "CVC"
 #: src/Dialogs/StripeDialog.vala:189
 msgid "Privacy Policy"
 msgstr "गोपनीयता धोरण"
+
+#: src/Dialogs/StripeDialog.vala:196 src/Dialogs/StripeDialog.vala:313
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
+msgid "Cancel"
+msgstr "रद्द करा"
 
 #: src/Dialogs/StripeDialog.vala:198 src/Dialogs/StripeDialog.vala:312
 #, c-format
@@ -686,15 +670,21 @@ msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr "ओएस व स्थापित अ‍ॅप्ससाठी उपलब्ध अद्यतनांची सूची डाउनलोड करत आहे"
 
 #: src/Views/AppListUpdateView.vala:41
-msgid "A restart is required to complete the installation of updates"
+#, fuzzy
+#| msgid "A restart is required to complete the installation of updates"
+msgid "A restart is required to finish installing updates"
 msgstr "अपडेट्स इन्स्टॉल करण्यासाठी हे अप्लिकेशन बंद करूंन पुन्हा सुरु करण्याची गरज आहे"
 
 #: src/Views/AppListUpdateView.vala:49
 msgid "Restart Now"
 msgstr "याक्षणी पुन्हा चालू करा"
 
+#: src/Views/AppListUpdateView.vala:58
+msgid "Requesting a restart failed. Restart manually to finish installing updates"
+msgstr ""
+
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:183
+#: src/Views/AppListUpdateView.vala:186
 msgid "Update All"
 msgstr "सर्व अपडेट करा"
 
@@ -916,6 +906,15 @@ msgstr "अद्ययावत"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "अद्ययावत (अपडेट) करा"
+
+#~ msgid "Are you sure you want to Restart?"
+#~ msgstr "पुन्हा सुरु करायचे अशी आपली खात्री आहे का?"
+
+#~ msgid "This will close all open applications and restart this device."
+#~ msgstr "याने सर्व चालू अप्लिकेशन्स बंद होऊन हे डिव्हाईस पुन्हा सुरु होईल."
+
+#~ msgid "Restart"
+#~ msgstr "पुन्हा सुरु करा"
 
 #~ msgid "Finishing"
 #~ msgstr "पूर्ण करीत आहे"
