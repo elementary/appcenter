@@ -11,9 +11,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-15 21:03+0000\n"
-"PO-Revision-Date: 2021-03-05 12:09+0000\n"
+"PO-Revision-Date: 2021-06-16 19:29+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
-"Language-Team: French <https://l10n.elementary.io/projects/appcenter/appcenter/fr/>\n"
+"Language-Team: French <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -676,10 +677,9 @@ msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr "Téléchargement d'une liste des mises à jour disponibles pour le système et les applications installées"
 
 #: src/Views/AppListUpdateView.vala:41
-#, fuzzy
-#| msgid "A restart is required to complete the installation of updates"
 msgid "A restart is required to finish installing updates"
-msgstr "Un redémarrage est nécessaire pour terminer l’installation des mises à jour"
+msgstr ""
+"Un redémarrage est nécessaire pour terminer l’installation des mises à jour"
 
 #: src/Views/AppListUpdateView.vala:49
 msgid "Restart Now"
@@ -688,6 +688,8 @@ msgstr "Redémarrer maintenant"
 #: src/Views/AppListUpdateView.vala:58
 msgid "Requesting a restart failed. Restart manually to finish installing updates"
 msgstr ""
+"Le redémarrage automatique a échoué. Redémarrez manuellement pour terminer "
+"l'installation des mises à jour"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
 #: src/Views/AppListUpdateView.vala:186
