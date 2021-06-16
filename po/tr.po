@@ -8,14 +8,16 @@
 # Turker <turkerbol@gmail.com>, 2018, 2019.
 # Mehmet Zahit Yılmaz <darkmehmet3@gmail.com>, 2018, 2019.
 # Ozgur Baskin <bebeto_baskin@yahoo.com>, 2019, 2020, 2021.
+# Özgür Baskin <queeup@zoho.com>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-15 21:03+0000\n"
-"PO-Revision-Date: 2021-03-04 21:00+0000\n"
-"Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
-"Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/appcenter/tr/>\n"
+"PO-Revision-Date: 2021-06-16 19:29+0000\n"
+"Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
+"Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -678,10 +680,8 @@ msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr "İşletim sistemi ve yüklü uygulamalar için mevcut güncellemelerin bir listesi indiriliyor"
 
 #: src/Views/AppListUpdateView.vala:41
-#, fuzzy
-#| msgid "A restart is required to complete the installation of updates"
 msgid "A restart is required to finish installing updates"
-msgstr "Güncellemelerin yüklenmesini tamamlamak için yeniden başlatma gerekiyor"
+msgstr "Güncellemelerin tamamlanması için yeniden başlatma gerekiyor"
 
 #: src/Views/AppListUpdateView.vala:49
 msgid "Restart Now"
@@ -690,6 +690,8 @@ msgstr "Şimdi Yeniden Başlat"
 #: src/Views/AppListUpdateView.vala:58
 msgid "Requesting a restart failed. Restart manually to finish installing updates"
 msgstr ""
+"Yeniden başlatma isteği başarısız oldu. Güncellemeleri tamamlamak için el "
+"ile yeniden başlatın"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
 #: src/Views/AppListUpdateView.vala:186
