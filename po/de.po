@@ -11,9 +11,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-15 21:03+0000\n"
-"PO-Revision-Date: 2021-03-03 02:31+0000\n"
+"PO-Revision-Date: 2021-06-16 01:20+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
-"Language-Team: German <https://l10n.elementary.io/projects/appcenter/appcenter/de/>\n"
+"Language-Team: German <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -676,10 +677,10 @@ msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr "Liste mit verfügbaren Aktualisierungen für Betriebssystem und installierte Anwendungen herunterladen"
 
 #: src/Views/AppListUpdateView.vala:41
-#, fuzzy
-#| msgid "A restart is required to complete the installation of updates"
 msgid "A restart is required to finish installing updates"
-msgstr "Ein Neustart ist erforderlich, um die Installation der Aktualisierungen abzuschließen"
+msgstr ""
+"Ein Neustart ist erforderlich, um die Installation der Aktualisierungen "
+"abzuschließen"
 
 #: src/Views/AppListUpdateView.vala:49
 msgid "Restart Now"
@@ -688,6 +689,8 @@ msgstr "Jetzt neu starten"
 #: src/Views/AppListUpdateView.vala:58
 msgid "Requesting a restart failed. Restart manually to finish installing updates"
 msgstr ""
+"Neustart fehlgeschlagen. Starten Sie das Gerät zum Abschluss der "
+"Aktualisierungen manuell neu"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
 #: src/Views/AppListUpdateView.vala:186
