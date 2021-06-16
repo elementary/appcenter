@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-02 20:46+0000\n"
+"POT-Creation-Date: 2021-06-15 21:03+0000\n"
 "PO-Revision-Date: 2019-06-30 03:52+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/appcenter/appcenter/ko/>\n"
@@ -278,7 +278,7 @@ msgstr "알려지지 않은 소스 (검수 안 함)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
 
-#: src/Core/PackageKitBackend.vala:272
+#: src/Core/PackageKitBackend.vala:283
 #, fuzzy, c-format
 #| msgid "%s (non-curated)"
 msgid "%s (local)"
@@ -398,24 +398,6 @@ msgstr ""
 msgid "Show non-curated warnings"
 msgstr "콘텐츠 주의 알림 보이기"
 
-#: src/Dialogs/RestartDialog.vala:40
-msgid "Are you sure you want to Restart?"
-msgstr "정말 다시 시작하시겠나요?"
-
-#: src/Dialogs/RestartDialog.vala:41
-msgid "This will close all open applications and restart this device."
-msgstr "모든 애플리케이션을 닫고 컴퓨터를 다시 시작하게 됩니다."
-
-#: src/Dialogs/RestartDialog.vala:42
-msgid "Restart"
-msgstr "다시 시작"
-
-#: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:196
-#: src/Dialogs/StripeDialog.vala:313
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
-msgid "Cancel"
-msgstr "취소"
-
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
 msgstr "카드 결제 도중 오류가 생겼습니다. 다시 시도해 주세요. 불편을 끼쳐 드려 죄송합니다."
@@ -457,6 +439,11 @@ msgstr "CVC"
 #: src/Dialogs/StripeDialog.vala:189
 msgid "Privacy Policy"
 msgstr "개인 정보 보호 정책"
+
+#: src/Dialogs/StripeDialog.vala:196 src/Dialogs/StripeDialog.vala:313
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
+msgid "Cancel"
+msgstr "취소"
 
 #: src/Dialogs/StripeDialog.vala:198 src/Dialogs/StripeDialog.vala:312
 #, c-format
@@ -701,15 +688,21 @@ msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr ""
 
 #: src/Views/AppListUpdateView.vala:41
-msgid "A restart is required to complete the installation of updates"
+#, fuzzy
+#| msgid "A restart is required to complete the installation of updates"
+msgid "A restart is required to finish installing updates"
 msgstr "업데이트를 마무리하려면 다시 시작해야 합니다"
 
 #: src/Views/AppListUpdateView.vala:49
 msgid "Restart Now"
 msgstr "지금 다시 시작하기"
 
+#: src/Views/AppListUpdateView.vala:58
+msgid "Requesting a restart failed. Restart manually to finish installing updates"
+msgstr ""
+
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:183
+#: src/Views/AppListUpdateView.vala:186
 msgid "Update All"
 msgstr "모두 업데이트하기"
 
@@ -932,6 +925,15 @@ msgstr "최신 버전입니다"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "업데이트"
+
+#~ msgid "Are you sure you want to Restart?"
+#~ msgstr "정말 다시 시작하시겠나요?"
+
+#~ msgid "This will close all open applications and restart this device."
+#~ msgstr "모든 애플리케이션을 닫고 컴퓨터를 다시 시작하게 됩니다."
+
+#~ msgid "Restart"
+#~ msgstr "다시 시작"
 
 #, fuzzy
 #~| msgid "Finished"

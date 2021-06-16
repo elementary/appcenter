@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-02 20:46+0000\n"
+"POT-Creation-Date: 2021-06-15 21:03+0000\n"
 "PO-Revision-Date: 2020-11-02 17:15+0000\n"
 "Last-Translator: Rantyrant <diseasemonger@gmail.com>\n"
 "Language-Team: Danish <https://l10n.elementary.io/projects/appcenter/appcenter/da/>\n"
@@ -279,7 +279,7 @@ msgstr "Ukendt Oprindelse (ikke-kurateret)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Applikations tilstanden er ikke sat som installeret  i AppCenteret for pakken: %s"
 
-#: src/Core/PackageKitBackend.vala:272
+#: src/Core/PackageKitBackend.vala:283
 #, c-format
 msgid "%s (local)"
 msgstr "%s (lokalt)"
@@ -391,24 +391,6 @@ msgstr "Det kan få adgang til eller ændre system- eller personlige filer uden 
 msgid "Show non-curated warnings"
 msgstr "Vis indholds advarsler"
 
-#: src/Dialogs/RestartDialog.vala:40
-msgid "Are you sure you want to Restart?"
-msgstr "Er du sikker på, at du vil genstarte?"
-
-#: src/Dialogs/RestartDialog.vala:41
-msgid "This will close all open applications and restart this device."
-msgstr "Dette lukker alle applikationer og genstarter denne enhed."
-
-#: src/Dialogs/RestartDialog.vala:42
-msgid "Restart"
-msgstr "Genstart"
-
-#: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:196
-#: src/Dialogs/StripeDialog.vala:313
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
-msgid "Cancel"
-msgstr "Annuller"
-
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
 msgstr "Der opstod en fejl under behandlingen af kortet. Prøv igen senere. Vi beklager ulejligheden."
@@ -450,6 +432,11 @@ msgstr "CVC"
 #: src/Dialogs/StripeDialog.vala:189
 msgid "Privacy Policy"
 msgstr "Fortrolighedspolitik"
+
+#: src/Dialogs/StripeDialog.vala:196 src/Dialogs/StripeDialog.vala:313
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
+msgid "Cancel"
+msgstr "Annuller"
 
 #: src/Dialogs/StripeDialog.vala:198 src/Dialogs/StripeDialog.vala:312
 #, c-format
@@ -691,15 +678,21 @@ msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr "Henter en liste af tilgængelige opdateringer til operativ systemet og dets installerede applikationer"
 
 #: src/Views/AppListUpdateView.vala:41
-msgid "A restart is required to complete the installation of updates"
+#, fuzzy
+#| msgid "A restart is required to complete the installation of updates"
+msgid "A restart is required to finish installing updates"
 msgstr "Genstart af computeren er nødvendig for at fuldføre installationen af opdateringer"
 
 #: src/Views/AppListUpdateView.vala:49
 msgid "Restart Now"
 msgstr "Genstart Nu"
 
+#: src/Views/AppListUpdateView.vala:58
+msgid "Requesting a restart failed. Restart manually to finish installing updates"
+msgstr ""
+
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:183
+#: src/Views/AppListUpdateView.vala:186
 msgid "Update All"
 msgstr "Opdatér alle"
 
@@ -921,6 +914,15 @@ msgstr "Up to Date"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "Opdater"
+
+#~ msgid "Are you sure you want to Restart?"
+#~ msgstr "Er du sikker på, at du vil genstarte?"
+
+#~ msgid "This will close all open applications and restart this device."
+#~ msgstr "Dette lukker alle applikationer og genstarter denne enhed."
+
+#~ msgid "Restart"
+#~ msgstr "Genstart"
 
 #~ msgid "Finishing"
 #~ msgstr "Færdiggører"

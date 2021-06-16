@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-02 20:46+0000\n"
+"POT-Creation-Date: 2021-06-15 21:03+0000\n"
 "PO-Revision-Date: 2017-06-16 17:37+0000\n"
 "Last-Translator: Rajeev Kumar <irajeevankumar@gmail.com>\n"
 "Language-Team: Tamil <https://l10n.elementary.io/projects/appcenter/appcenter/ta/>\n"
@@ -280,7 +280,7 @@ msgstr ""
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
 
-#: src/Core/PackageKitBackend.vala:272
+#: src/Core/PackageKitBackend.vala:283
 #, c-format
 msgid "%s (local)"
 msgstr ""
@@ -394,24 +394,6 @@ msgstr ""
 msgid "Show non-curated warnings"
 msgstr ""
 
-#: src/Dialogs/RestartDialog.vala:40
-msgid "Are you sure you want to Restart?"
-msgstr "நிச்சயமாக நீங்கள் மறுதொடக்கம் செய்ய விரும்புகிறீர்களா?"
-
-#: src/Dialogs/RestartDialog.vala:41
-msgid "This will close all open applications and restart this device."
-msgstr "இது எல்லா திறந்த பயன்பாடுகளையும் மூடிவிட்டு இந்த சாதனத்தை மறுதொடக்கம் செய்யும்."
-
-#: src/Dialogs/RestartDialog.vala:42
-msgid "Restart"
-msgstr "மறுதொடக்கம்"
-
-#: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:196
-#: src/Dialogs/StripeDialog.vala:313
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
-msgid "Cancel"
-msgstr "ரத்துசெய்"
-
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
 msgstr "கார்டைச் செயலாக்குகையில் பிழை ஏற்பட்டது. தயவுசெய்து பின்னர் முயற்சிக்கவும். எந்த சிரமத்திற்கும் நாங்கள் மன்னிப்பு கோருகிறோம்."
@@ -454,6 +436,11 @@ msgstr "சிவிசி"
 #: src/Dialogs/StripeDialog.vala:189
 msgid "Privacy Policy"
 msgstr "தனியுரிமை கொள்கை"
+
+#: src/Dialogs/StripeDialog.vala:196 src/Dialogs/StripeDialog.vala:313
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
+msgid "Cancel"
+msgstr "ரத்துசெய்"
 
 #: src/Dialogs/StripeDialog.vala:198 src/Dialogs/StripeDialog.vala:312
 #, c-format
@@ -702,15 +689,21 @@ msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr ""
 
 #: src/Views/AppListUpdateView.vala:41
-msgid "A restart is required to complete the installation of updates"
+#, fuzzy
+#| msgid "A restart is required to complete the installation of updates"
+msgid "A restart is required to finish installing updates"
 msgstr "புதுப்பிப்புகளை நிறுவுவதற்கு மறுதொடக்கம் தேவைப்படுகிறது"
 
 #: src/Views/AppListUpdateView.vala:49
 msgid "Restart Now"
 msgstr "இப்போது மறுதொடக்கம் செய்க"
 
+#: src/Views/AppListUpdateView.vala:58
+msgid "Requesting a restart failed. Restart manually to finish installing updates"
+msgstr ""
+
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:183
+#: src/Views/AppListUpdateView.vala:186
 msgid "Update All"
 msgstr "அனைத்தையும் புதுப்பிக்கவும்"
 
@@ -939,6 +932,15 @@ msgstr "இது வரை புதுப்பிக்கப்பட்ட�
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "புதுப்பிக்கவும்"
+
+#~ msgid "Are you sure you want to Restart?"
+#~ msgstr "நிச்சயமாக நீங்கள் மறுதொடக்கம் செய்ய விரும்புகிறீர்களா?"
+
+#~ msgid "This will close all open applications and restart this device."
+#~ msgstr "இது எல்லா திறந்த பயன்பாடுகளையும் மூடிவிட்டு இந்த சாதனத்தை மறுதொடக்கம் செய்யும்."
+
+#~ msgid "Restart"
+#~ msgstr "மறுதொடக்கம்"
 
 #, fuzzy
 #~| msgid "Finished"

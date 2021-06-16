@@ -48,7 +48,6 @@ public class SuspendControl {
         try {
             sm.reboot ();
         } catch (GLib.Error e) {
-            critical ("failed to request a reboot from GNOME: %s\n", e.message);
             throw e;
         }
     }

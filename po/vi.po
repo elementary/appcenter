@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-02 20:46+0000\n"
+"POT-Creation-Date: 2021-06-15 21:03+0000\n"
 "PO-Revision-Date: 2020-10-07 03:57+0000\n"
 "Last-Translator: Trkien618 <hacngoctrungkien@gmail.com>\n"
 "Language-Team: Vietnamese <https://l10n.elementary.io/projects/appcenter/appcenter/vi/>\n"
@@ -283,7 +283,7 @@ msgstr "Nguồn gốc không xác định (không được quản lý)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Trạng thái ứng dụng không được đặt như ứng dụng đã cài đặt trong AppCenter cho package: %s"
 
-#: src/Core/PackageKitBackend.vala:272
+#: src/Core/PackageKitBackend.vala:283
 #, fuzzy, c-format
 msgid "%s (local)"
 msgstr "%s (cục bộ)"
@@ -401,24 +401,6 @@ msgstr ""
 msgid "Show non-curated warnings"
 msgstr "Hiện cảnh báo nội dung"
 
-#: src/Dialogs/RestartDialog.vala:40
-msgid "Are you sure you want to Restart?"
-msgstr "Bạn có chắc chắn muốn khởi động lại?"
-
-#: src/Dialogs/RestartDialog.vala:41
-msgid "This will close all open applications and restart this device."
-msgstr "Điều này sẽ đóng tất cả các ứng dụng đang mở và khởi động lại thiết bị."
-
-#: src/Dialogs/RestartDialog.vala:42
-msgid "Restart"
-msgstr "Khởi động lại"
-
-#: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:196
-#: src/Dialogs/StripeDialog.vala:313
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
-msgid "Cancel"
-msgstr "Hủy bỏ"
-
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
 msgstr "Có một lỗi xảy ra trong quá trình hoàn tất thẻ. Vui lòng thử lại sau. Chúng tôi xin lỗi về sự bất tiện này."
@@ -461,6 +443,11 @@ msgstr "CVC"
 #: src/Dialogs/StripeDialog.vala:189
 msgid "Privacy Policy"
 msgstr "Chính sách bảo mật"
+
+#: src/Dialogs/StripeDialog.vala:196 src/Dialogs/StripeDialog.vala:313
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
+msgid "Cancel"
+msgstr "Hủy bỏ"
 
 #: src/Dialogs/StripeDialog.vala:198 src/Dialogs/StripeDialog.vala:312
 #, c-format
@@ -708,15 +695,21 @@ msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr ""
 
 #: src/Views/AppListUpdateView.vala:41
-msgid "A restart is required to complete the installation of updates"
+#, fuzzy
+#| msgid "A restart is required to complete the installation of updates"
+msgid "A restart is required to finish installing updates"
 msgstr "Yêu cầu khởi động lại để hoàn tất quá trình cài đặt bản cập nhật"
 
 #: src/Views/AppListUpdateView.vala:49
 msgid "Restart Now"
 msgstr "Khởi động lại ngay"
 
+#: src/Views/AppListUpdateView.vala:58
+msgid "Requesting a restart failed. Restart manually to finish installing updates"
+msgstr ""
+
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:183
+#: src/Views/AppListUpdateView.vala:186
 msgid "Update All"
 msgstr "Cập nhật tất cả"
 
@@ -944,6 +937,15 @@ msgstr "Mới nhất"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "Cập nhật"
+
+#~ msgid "Are you sure you want to Restart?"
+#~ msgstr "Bạn có chắc chắn muốn khởi động lại?"
+
+#~ msgid "This will close all open applications and restart this device."
+#~ msgstr "Điều này sẽ đóng tất cả các ứng dụng đang mở và khởi động lại thiết bị."
+
+#~ msgid "Restart"
+#~ msgstr "Khởi động lại"
 
 #, fuzzy
 #~| msgid "Finished"

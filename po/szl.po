@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-02 20:46+0000\n"
+"POT-Creation-Date: 2021-06-15 21:03+0000\n"
 "PO-Revision-Date: 2020-06-12 16:40+0000\n"
 "Last-Translator: Grzegorz Kulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/appcenter/appcenter/szl/>\n"
@@ -278,7 +278,7 @@ msgstr "Niyznōmego pochodzynio (niynadzorowane)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Sztand programu niyma nasztelowany za zainstalowany we AppCenter dlo paketu: %s"
 
-#: src/Core/PackageKitBackend.vala:272
+#: src/Core/PackageKitBackend.vala:283
 #, c-format
 msgid "%s (local)"
 msgstr "%s (lokalne)"
@@ -391,24 +391,6 @@ msgstr "Może mieć dostymp do systymowych abo ôsobistych zbiorōw bez przizwol
 msgid "Show non-curated warnings"
 msgstr "Pokoż ôstrzyżynia ô niynadzorowaniu"
 
-#: src/Dialogs/RestartDialog.vala:40
-msgid "Are you sure you want to Restart?"
-msgstr "Na zicher sztartnōńć na nowo?"
-
-#: src/Dialogs/RestartDialog.vala:41
-msgid "This will close all open applications and restart this device."
-msgstr "Wszyjske ôtwarte aplikacyje bydōm zawarte, a maszina zresztartowano."
-
-#: src/Dialogs/RestartDialog.vala:42
-msgid "Restart"
-msgstr "Zresztartuj"
-
-#: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:196
-#: src/Dialogs/StripeDialog.vala:313
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
-msgid "Cancel"
-msgstr "Pociep"
-
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
 msgstr "Przi przetworzaniu karty trefiōł sie feler. Sprōbuj zaś niyskorzij. Przeproszōmy za wszyjske niywygody."
@@ -450,6 +432,11 @@ msgstr "CVC"
 #: src/Dialogs/StripeDialog.vala:189
 msgid "Privacy Policy"
 msgstr "Polityka prywatności"
+
+#: src/Dialogs/StripeDialog.vala:196 src/Dialogs/StripeDialog.vala:313
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
+msgid "Cancel"
+msgstr "Pociep"
 
 #: src/Dialogs/StripeDialog.vala:198 src/Dialogs/StripeDialog.vala:312
 #, c-format
@@ -691,15 +678,21 @@ msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr "Ściōnganie listy wszyjskich dostympnych aktualizacyji systymu ôperacyjnego i zainstalowanych aplikcayji"
 
 #: src/Views/AppListUpdateView.vala:41
-msgid "A restart is required to complete the installation of updates"
+#, fuzzy
+#| msgid "A restart is required to complete the installation of updates"
+msgid "A restart is required to finish installing updates"
 msgstr "Potrzebny resztart, coby dokōńczyć instalacyjo aktualizacyji"
 
 #: src/Views/AppListUpdateView.vala:49
 msgid "Restart Now"
 msgstr "Sztartnij zaś kōmputer"
 
+#: src/Views/AppListUpdateView.vala:58
+msgid "Requesting a restart failed. Restart manually to finish installing updates"
+msgstr ""
+
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:183
+#: src/Views/AppListUpdateView.vala:186
 msgid "Update All"
 msgstr "Aktualizuj wszyjsko"
 
@@ -922,6 +915,15 @@ msgstr "Teroźne"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "Zaktualizuj"
+
+#~ msgid "Are you sure you want to Restart?"
+#~ msgstr "Na zicher sztartnōńć na nowo?"
+
+#~ msgid "This will close all open applications and restart this device."
+#~ msgstr "Wszyjske ôtwarte aplikacyje bydōm zawarte, a maszina zresztartowano."
+
+#~ msgid "Restart"
+#~ msgstr "Zresztartuj"
 
 #~ msgid "Finishing"
 #~ msgstr "Kōńczynie"
