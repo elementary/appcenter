@@ -185,3 +185,7 @@ flowboxchild grid image,
 row grid image {
   -gtk-icon-shadow: 0 2px 3px alpha(black, 0.3);
 }
+
+row.activatable button.text-button > label {
+    color: @theme_fg_color;
+  }
