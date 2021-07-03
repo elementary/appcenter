@@ -5,9 +5,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-15 21:03+0000\n"
-"PO-Revision-Date: 2021-06-03 11:06+0000\n"
+"PO-Revision-Date: 2021-07-03 08:24+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
-"Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/appcenter/appcenter/nb/>\n"
+"Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
+"appcenter/appcenter/nb/>\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -682,8 +683,11 @@ msgid "Restart Now"
 msgstr "Omstart nå"
 
 #: src/Views/AppListUpdateView.vala:58
+#, fuzzy
 msgid "Requesting a restart failed. Restart manually to finish installing updates"
 msgstr ""
+"Kunne ikke forespørre omstart. Start på nytt manuelt for å fullføre "
+"installasjonen."
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
 #: src/Views/AppListUpdateView.vala:186
