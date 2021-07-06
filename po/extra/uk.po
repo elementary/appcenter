@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-15 21:03+0000\n"
-"PO-Revision-Date: 2021-07-03 17:02+0000\n"
+"PO-Revision-Date: 2021-07-06 17:26+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/"
 "extra/uk/>\n"
@@ -266,7 +266,7 @@ msgstr "Запобігання появі незахищених елемент�
 
 #: data/io.elementary.appcenter.appdata.xml.in:142
 msgid "Load the \"Installed\" view faster"
-msgstr "Швидше завантаження подання \"Встановлені\""
+msgstr "Швидше завантаження подання «Встановлені»"
 
 #: data/io.elementary.appcenter.appdata.xml.in:143
 msgid "Ensure flatpak applications show in the category views"
@@ -281,7 +281,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:145
 msgid "System components no longer have an \"Open\" button"
-msgstr "Системні компоненти більше не мають кнопки \"Відкрити\""
+msgstr "Системні компоненти більше не мають кнопки «Відкрити»"
 
 #: data/io.elementary.appcenter.appdata.xml.in:146
 msgid ""
@@ -451,7 +451,7 @@ msgstr "Покращення рівня успішності транзакці�
 
 #: data/io.elementary.appcenter.appdata.xml.in:220
 msgid "Add Publishing to Office category"
-msgstr "Додано публікацію до категорії \"Офіс\""
+msgstr "Додано публікацію до категорії «Офіс»"
 
 #: data/io.elementary.appcenter.appdata.xml.in:221
 msgid "Improve descriptions of OS Updates"
