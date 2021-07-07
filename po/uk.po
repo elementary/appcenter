@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-15 21:03+0000\n"
-"PO-Revision-Date: 2021-07-06 17:26+0000\n"
+"PO-Revision-Date: 2021-07-07 23:06+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/uk/>\n"
@@ -240,9 +240,9 @@ msgstr[2] "Оновлень доступно"
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
-msgstr[0] "%u оновлення доступне для вашої системи"
-msgstr[1] "%u оновлення доступні для вашої системи"
-msgstr[2] "%u оновлень доступно для вашої системи"
+msgstr[0] "Доступне %u оновлення для вашої системи"
+msgstr[1] "Доступні %u оновлення для вашої системи"
+msgstr[2] "Доступні %u оновлень для вашої системи"
 
 #: src/Core/FlatpakBackend.vala:1045
 msgid "Uninstalling"
@@ -259,7 +259,7 @@ msgstr "%s розробників"
 
 #: src/Core/Package.vala:340
 msgid "elementary Updates"
-msgstr "Оновлення elementary OS"
+msgstr "Оновлення elementary"
 
 #: src/Core/Package.vala:342
 msgid "Ubuntu (non-curated)"
@@ -903,8 +903,8 @@ msgstr "До %s"
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "Доступне %u оновлення"
-msgstr[1] "Доступно %u оновлення"
-msgstr[2] "Доступно %u оновлень"
+msgstr[1] "Доступні %u оновлення"
+msgstr[2] "Доступні %u оновлень"
 
 #: src/Widgets/UpdateHeaderRow.vala:54
 msgid "Drivers"
@@ -916,7 +916,7 @@ msgstr "Найновіші"
 
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
-msgstr "Оновлення"
+msgstr "Оновити"
 
 #~ msgid "Are you sure you want to Restart?"
 #~ msgstr "Ви впевнені що хочете перезапустити?"
