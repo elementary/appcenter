@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-15 21:03+0000\n"
-"PO-Revision-Date: 2021-07-07 23:06+0000\n"
+"PO-Revision-Date: 2021-07-08 17:07+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/uk/>\n"
@@ -735,7 +735,7 @@ msgstr "Знайти"
 
 #: src/Widgets/Banner.vala:57
 msgid "An open, pay-what-you-want app store"
-msgstr "Вільна крамниця застосунків, у якій «Плати скільки хочеш»"
+msgstr "Вільна крамниця застосунків у якій «Плати скільки хочеш»"
 
 #: src/Widgets/Banner.vala:76
 msgid "Get the apps that you need at a price you can afford."
