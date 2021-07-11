@@ -3,8 +3,9 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-15 21:03+0000\n"
-"PO-Revision-Date: 2021-03-12 21:21+0000\n"
-"Last-Translator: Leonardo <leonardo@elementary.io>\n"
+"PO-Revision-Date: 2021-07-11 20:02+0000\n"
+"Last-Translator: Guilherme Vinícius Rosa Cristóvão <guilherme.vinicius."
+"cristovao@hotmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/extra/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -505,10 +506,6 @@ msgid "Prevent multiple authentication dialogs when resuming from suspend"
 msgstr "Prevenir múltiplas janelas de autenticação ao resumir da suspensão"
 
 #: data/io.elementary.appcenter.appdata.xml.in:340
-#, fuzzy
-#| msgid ""
-#| "Search performance has beeen improved, the category name is now shown on "
-#| "the headbar and minor bugs have been fixed."
 msgid ""
 "Search performance has been improved, the category name is now shown on the "
 "headbar and minor bugs have been fixed."
@@ -533,10 +530,8 @@ msgid "@APP_NAME@"
 msgstr "@APP_NAME@"
 
 #: data/io.elementary.appcenter.desktop.in.in:6
-#, fuzzy
-#| msgid "@APP_NAME@"
 msgid "@PROJECT_NAME@"
-msgstr "@APP_NAME@"
+msgstr "@PROJECT_NAME@"
 
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
