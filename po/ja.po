@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-15 21:03+0000\n"
-"PO-Revision-Date: 2021-06-17 11:01+0000\n"
+"PO-Revision-Date: 2021-07-12 02:27+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ja/>\n"
@@ -517,7 +517,7 @@ msgstr "カードの残高か与信限度額に達しました。"
 
 #: src/Dialogs/StripeDialog.vala:607
 msgid "The given card is a test card. Please use a real card to proceed."
-msgstr "所定のカードはテスト用のカードです。続行するには本物のカードを使用してください。"
+msgstr "指定されたカードはテスト用です。続行するには本物のカードを使用してください。"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
