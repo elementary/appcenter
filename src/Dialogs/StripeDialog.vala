@@ -41,12 +41,14 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
     private const string INTERNAL_ERROR_MESSAGE = N_("An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused.");
     private const string DEFAULT_ERROR_MESSAGE = N_("Please review your payment info and try again.");
 
-    private Gtk.Grid card_layout;
     private Gtk.Grid? processing_layout = null;
     private Gtk.Grid? error_layout = null;
     private Gtk.Stack layouts;
 
     private Gtk.Entry email_entry;
+    private AppCenter.Widgets.PaymentMethodButton existing_payment_method;
+    private AppCenter.Widgets.PaymentMethodButton another_existing_payment_method;
+    private AppCenter.Widgets.PaymentMethodButton new_payment_method;
     private AppCenter.Widgets.CardNumberEntry card_number_entry;
     private Gtk.Entry card_expiration_entry;
     private Gtk.Entry card_cvc_entry;
@@ -99,10 +101,10 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         secondary_label.wrap = true;
         secondary_label.xalign = 0;
 
+        // TODO: Save/restore email
         email_entry = new Gtk.Entry ();
         email_entry.hexpand = true;
         email_entry.input_purpose = Gtk.InputPurpose.EMAIL;
-        email_entry.margin_bottom = 6;
         email_entry.placeholder_text = _("Email");
         email_entry.primary_icon_name = "internet-mail-symbolic";
         email_entry.tooltip_text = _("Your email address is only used to send a receipt. You will not be subscribed to any mailing list.");
@@ -111,6 +113,38 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
            email_entry.text = email_entry.text.replace (" ", "").down ();
            validate (0, email_entry.text);
         });
+
+        // TODO: Hide if no existing methods
+        new_payment_method = new AppCenter.Widgets.PaymentMethodButton ("New Payment Method…");
+
+        // TODO: Loop through existing payment methods
+        existing_payment_method = new AppCenter.Widgets.PaymentMethodButton ("Visa 1234", "payment-card-visa", true);
+        existing_payment_method.radio.join_group (new_payment_method.radio);
+
+        // TODO: Add a payment method being selected as valid for `is_payment_sensitive ()`
+        existing_payment_method.radio.active = true;
+        pay_button.sensitive = true;
+
+        existing_payment_method.radio.clicked.connect (() => {
+            if (existing_payment_method.radio.active) {
+                pay_button.sensitive = true;
+            }
+        });
+
+        another_existing_payment_method = new AppCenter.Widgets.PaymentMethodButton ("Mastercard 5678", "payment-card-mastercard", true);
+        another_existing_payment_method.radio.join_group (new_payment_method.radio);
+
+        another_existing_payment_method.radio.clicked.connect (() => {
+            if (another_existing_payment_method.radio.active) {
+                pay_button.sensitive = true;
+            }
+        });
+
+        var payment_methods = new Gtk.Grid ();
+        payment_methods.orientation = Gtk.Orientation.VERTICAL;
+        payment_methods.add (existing_payment_method);
+        payment_methods.add (another_existing_payment_method);
+        payment_methods.add (new_payment_method);
 
         card_number_entry = new AppCenter.Widgets.CardNumberEntry ();
         card_number_entry.hexpand = true;
@@ -165,7 +199,21 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         card_grid.add (card_number_entry);
         card_grid.add (card_grid_bottom);
 
-        card_layout = new Gtk.Grid ();
+        var remember_check = new Gtk.CheckButton.with_label (_("Remember payment method"));
+        remember_check.margin_start = 8;
+
+        var card_remember_grid = new Gtk.Grid ();
+        card_remember_grid.row_spacing = 12;
+
+        card_remember_grid.attach (card_grid, 0, 0);
+        card_remember_grid.attach (remember_check, 0, 1);
+
+        var new_card_revealer = new Gtk.Revealer ();
+        new_card_revealer.add (card_remember_grid);
+
+        new_payment_method.radio.bind_property ("active", new_card_revealer, "reveal_child");
+
+        var card_layout = new Gtk.Grid ();
         card_layout.get_style_context ().add_class ("login");
         card_layout.column_spacing = 12;
         card_layout.row_spacing = 6;
@@ -173,7 +221,8 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         card_layout.attach (primary_label, 1, 0);
         card_layout.attach (secondary_label, 1, 1);
         card_layout.attach (email_entry, 1, 2);
-        card_layout.attach (card_grid, 1, 3);
+        card_layout.attach (payment_methods, 1, 3);
+        card_layout.attach (new_card_revealer, 1, 4);
 
         layouts = new Gtk.Stack ();
         layouts.vhomogeneous = false;
@@ -205,6 +254,14 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         email_entry.activate.connect (() => {
             if (pay_button.sensitive) {
                 pay_button.activate ();
+            }
+        });
+
+        new_payment_method.radio.clicked.connect (() => {
+            if (new_payment_method.radio.active) {
+                card_number_entry.grab_focus ();
+
+                is_payment_sensitive ();
             }
         });
 
@@ -616,3 +673,4 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         }
     }
 }
+
