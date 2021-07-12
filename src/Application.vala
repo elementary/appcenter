@@ -75,6 +75,13 @@ public class AppCenter.App : Gtk.Application {
             activate ();
         });
 
+        var install_codecs_action = new SimpleAction ("install-codecs", new VariantType ("as"));
+        install_codecs_action.activate.connect ((variant) => {
+            var resources = variant.dup_strv ();
+            var dialog = new InstallGStreamerPluginsDialog (resources);
+            dialog.offer_installation.begin ();
+        });
+
         var client = AppCenterCore.Client.get_default ();
         client.operation_finished.connect (on_operation_finished);
         client.cache_update_failed.connect (on_cache_update_failed);
@@ -91,6 +98,7 @@ public class AppCenter.App : Gtk.Application {
 
         add_action (quit_action);
         add_action (show_updates_action);
+        add_action (install_codecs_action);
         set_accels_for_action ("app.quit", {"<Control>q"});
 
         search_provider = new SearchProvider ();
@@ -233,6 +241,15 @@ public class AppCenter.App : Gtk.Application {
                 warning (e.message);
             }
 
+            Bus.own_name (
+                BusType.SESSION,
+                "org.freedesktop.PackageKit",
+                BusNameOwnerFlags.NONE,
+                on_packagekit_bus_acquired,
+                () => {},
+                () => {}
+            );
+
             try {
                 search_provider_id = connection.register_object ("/io/elementary/appcenter/SearchProvider", search_provider);
             } catch (Error e) {
@@ -241,6 +258,14 @@ public class AppCenter.App : Gtk.Application {
         }
 
         return true;
+    }
+
+    private void on_packagekit_bus_acquired (DBusConnection connection) {
+        try {
+            connection.register_object ("/org/freedesktop/PackageKit", new PackageKitSessionBus ());
+        } catch (Error e) {
+            warning (e.message);
+        }
     }
 
     public override void dbus_unregister (DBusConnection connection, string object_path) {
