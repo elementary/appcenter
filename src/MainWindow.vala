@@ -1,18 +1,20 @@
-/* Copyright 2015 Marvin Beckers <beckersmarvin@gmail.com>
-*
-* This program is free software: you can redistribute it
-* and/or modify it under the terms of the GNU General Public License as
-* published by the Free Software Foundation, either version 3 of the
-* License, or (at your option) any later version.
-*
-* This program is distributed in the hope that it will be
-* useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
-* Public License for more details.
-*
-* You should have received a copy of the GNU General Public License along
-* with this program. If not, see http://www.gnu.org/licenses/.
-*/
+/*
+ * Copyright © 2020 elementary, Inc. (https://elementary.io)
+ *             2015 Marvin Beckers <beckersmarvin@gmail.com>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 
 public class AppCenter.MainWindow : Hdy.ApplicationWindow {
     public bool working {
@@ -166,9 +168,13 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         return_button.get_style_context ().add_class ("back-button");
         return_button_history = new Gee.LinkedList<string> ();
 
-        view_mode = new Granite.Widgets.ModeButton ();
-        view_mode.margin_end = view_mode.margin_start = 12;
-        view_mode.margin_bottom = view_mode.margin_top = 7;
+        view_mode = new Granite.Widgets.ModeButton () {
+            margin_end = 12,
+            margin_start = 12,
+            valign = Gtk.Align.CENTER
+        };
+        view_mode.get_style_context ().add_class ("view-switcher");
+
         homepage_view_id = view_mode.append_text (_("Home"));
         installed_view_id = view_mode.append_text (C_("view", "Installed"));
 
@@ -185,10 +191,11 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         eventbox_badge.add (updates_badge);
         eventbox_badge.button_release_event.connect (badge_event);
 
-        updates_badge_revealer = new Gtk.Revealer ();
-        updates_badge_revealer.halign = Gtk.Align.END;
-        updates_badge_revealer.valign = Gtk.Align.START;
-        updates_badge_revealer.transition_type = Gtk.RevealerTransitionType.CROSSFADE;
+        updates_badge_revealer = new Gtk.Revealer () {
+            halign = Gtk.Align.END,
+            transition_type = Gtk.RevealerTransitionType.CROSSFADE,
+            valign = Gtk.Align.START
+        };
         updates_badge_revealer.add (eventbox_badge);
 
         var view_mode_overlay = new Gtk.Overlay ();
@@ -208,17 +215,66 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         custom_title_stack.add (homepage_header);
         custom_title_stack.set_visible_child (view_mode_revealer);
 
+        var app_history_model_button = new Gtk.ModelButton ();
+        app_history_model_button.text = _("App History…");
+
+        app_history_model_button.clicked.connect (() => {
+            var app_history_dialog = new AppCenter.Widgets.AppHistoryDialog ();
+            app_history_dialog.transient_for = (Gtk.Window) get_toplevel ();
+            app_history_dialog.show_all ();
+        });
+
+        var wallet_model_button = new Gtk.ModelButton ();
+        wallet_model_button.text = _("Wallet…");
+
+        wallet_model_button.clicked.connect (() => {
+            try {
+                AppInfo.launch_default_for_uri ("settings://personal/payments", null);
+            } catch (Error e) {
+                critical (e.message);
+            }
+        });
+
+        var account_settings_model_button = new Gtk.ModelButton ();
+        account_settings_model_button.text = _("Online Accounts Settings…");
+
+        account_settings_model_button.clicked.connect (() => {
+            try {
+                AppInfo.launch_default_for_uri ("settings://accounts/online", null);
+            } catch (Error e) {
+                critical (e.message);
+            }
+        });
+
+        var account_popover_grid = new Gtk.Grid ();
+        account_popover_grid.margin_bottom = account_popover_grid.margin_top = 3;
+        account_popover_grid.orientation = Gtk.Orientation.VERTICAL;
+
+        account_popover_grid.add (app_history_model_button);
+        account_popover_grid.add (wallet_model_button);
+        account_popover_grid.add (account_settings_model_button);
+        account_popover_grid.show_all ();
+
+        var account_popover = new Gtk.Popover (null);
+        account_popover.add (account_popover_grid);
+
+        var account_button = new Gtk.MenuButton ();
+        account_button.image = new Gtk.Image.from_icon_name ("avatar-default", Gtk.IconSize.LARGE_TOOLBAR);
+        account_button.popover = account_popover;
+        account_button.tooltip_text = _("Account");
+        account_button.valign = Gtk.Align.CENTER;
+
         search_entry = new Gtk.SearchEntry ();
         search_entry.valign = Gtk.Align.CENTER;
         search_entry.placeholder_text = _("Search Apps");
 
         spinner = new Gtk.Spinner ();
 
-        /* HeaderBar */
         headerbar = new Hdy.HeaderBar ();
         headerbar.show_close_button = true;
         headerbar.set_custom_title (custom_title_stack);
         headerbar.pack_start (return_button);
+        headerbar.pack_end (account_button);
         headerbar.pack_end (search_entry);
         headerbar.pack_end (spinner);
 
@@ -348,7 +404,7 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         last_installed_package = package;
 
         // Only show a toast when we're not on the installed app's page, i.e if
-        // no package is selected (we are not on an app page), or a package is 
+        // no package is selected (we are not on an app page), or a package is
         // selected but it's not the app we're installing.
         if (selected_package == null || (selected_package != null && selected_package.get_name () != package.get_name ())) {
             toast.title = _("“%s” has been installed").printf (package.get_name ());
