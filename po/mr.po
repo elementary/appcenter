@@ -5,9 +5,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-15 21:03+0000\n"
-"PO-Revision-Date: 2021-03-21 01:40+0000\n"
+"PO-Revision-Date: 2021-06-19 21:50+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
-"Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/appcenter/mr/>\n"
+"Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/mr/>\n"
 "Language: mr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -670,10 +671,8 @@ msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr "ओएस व स्थापित अ‍ॅप्ससाठी उपलब्ध अद्यतनांची सूची डाउनलोड करत आहे"
 
 #: src/Views/AppListUpdateView.vala:41
-#, fuzzy
-#| msgid "A restart is required to complete the installation of updates"
 msgid "A restart is required to finish installing updates"
-msgstr "अपडेट्स इन्स्टॉल करण्यासाठी हे अप्लिकेशन बंद करूंन पुन्हा सुरु करण्याची गरज आहे"
+msgstr "अद्यतने स्थापित करणे पूर्ण करण्यासाठी रीस्टार्ट आवश्यक आहे"
 
 #: src/Views/AppListUpdateView.vala:49
 msgid "Restart Now"

@@ -2,16 +2,17 @@
 # YISH <mokeyish@163.com>, 2018, 2019.
 # David Hewitt <davidmhewitt@gmail.com>, 2018.
 # WANG, Wei <ww460160885@gmail.com>, 2019.
-# imgradeone Yan <imgradeone@outlook.com>, 2019, 2020.
+# imgradeone Yan <imgradeone@outlook.com>, 2019, 2020, 2021.
 # Zang Jiucheng <zangjiucheng@gmail.com>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-15 21:03+0000\n"
-"PO-Revision-Date: 2021-04-13 07:18+0000\n"
-"Last-Translator: colindemian <colindemian@outlook.com>\n"
-"Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/appcenter/appcenter/zh_Hans/>\n"
+"PO-Revision-Date: 2021-06-20 08:32+0000\n"
+"Last-Translator: imgradeone Yan <imgradeone@outlook.com>\n"
+"Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
+"appcenter/appcenter/zh_Hans/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -671,8 +672,6 @@ msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr "正在获取可用系统更新及已安装应用程序列表"
 
 #: src/Views/AppListUpdateView.vala:41
-#, fuzzy
-#| msgid "A restart is required to complete the installation of updates"
 msgid "A restart is required to finish installing updates"
 msgstr "请重启设备以完成更新"
 
@@ -682,7 +681,7 @@ msgstr "现在重启"
 
 #: src/Views/AppListUpdateView.vala:58
 msgid "Requesting a restart failed. Restart manually to finish installing updates"
-msgstr ""
+msgstr "请求重新启动失败，请手动重启以完成更新"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
 #: src/Views/AppListUpdateView.vala:186
