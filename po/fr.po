@@ -10,11 +10,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-15 21:03+0000\n"
+"POT-Creation-Date: 2021-07-16 15:45+0000\n"
 "PO-Revision-Date: 2021-06-16 19:29+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
-"Language-Team: French <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/fr/>\n"
+"Language-Team: French <https://l10n.elementary.io/projects/appcenter/appcenter/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -590,81 +589,81 @@ msgstr "Échec de la mise à jour de « %s »"
 msgid "Screenshot Not Available"
 msgstr "Capture d’écran non disponible"
 
-#: src/Views/AppInfoView.vala:239
+#: src/Views/AppInfoView.vala:252
 msgid "Homepage"
 msgstr "Accueil"
 
-#: src/Views/AppInfoView.vala:245
-msgid "Suggest Translations"
-msgstr "Suggérer des traductions"
+#: src/Views/AppInfoView.vala:258
+msgid "Translate"
+msgstr ""
 
-#: src/Views/AppInfoView.vala:251
-msgid "Report a Problem"
-msgstr "Signaler un problème"
+#: src/Views/AppInfoView.vala:264
+msgid "Send Feedback"
+msgstr ""
 
-#: src/Views/AppInfoView.vala:257
+#: src/Views/AppInfoView.vala:270
 msgid "Help"
 msgstr "Aide"
 
-#: src/Views/AppInfoView.vala:268
+#: src/Views/AppInfoView.vala:281
 msgid "What's New:"
 msgstr "Nouveautés :"
 
-#: src/Views/AppInfoView.vala:303
+#: src/Views/AppInfoView.vala:316
 msgid "Extensions:"
 msgstr "Extensions :"
 
-#. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:400
-msgid "Public Domain"
-msgstr "Domaine public"
-
-#. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:403
-msgid "https://en.wikipedia.org/wiki/Public_domain"
-msgstr "https://fr.wikipedia.org/wiki/Domaine_public_(propri%C3%A9t%C3%A9_intellectuelle)"
-
-#. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:408
-msgid "Free Software"
-msgstr "Logiciel Libre"
-
-#. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:411
-msgid "https://www.gnu.org/philosophy/free-sw"
-msgstr "https://www.gnu.org/philosophy/free-sw.fr.html"
-
-#: src/Views/AppInfoView.vala:415
-msgid "Proprietary"
-msgstr "Propriétaire"
-
-#: src/Views/AppInfoView.vala:418
-msgid "Unknown License"
-msgstr "licence inconnue"
-
-#: src/Views/AppInfoView.vala:468
+#: src/Views/AppInfoView.vala:410
 #, c-format
 msgid "Other Apps by %s"
 msgstr "Autres applications par %s"
 
-#: src/Views/AppInfoView.vala:506
+#: src/Views/AppInfoView.vala:448
 msgid "Link copied to clipboard"
 msgstr "Lien copié dans le presse-papier"
 
-#: src/Views/AppInfoView.vala:517
+#: src/Views/AppInfoView.vala:459
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "Regarder %s dans le Centre d'Applications :"
 
-#: src/Views/AppInfoView.vala:524
+#: src/Views/AppInfoView.vala:466
 msgid "Share"
 msgstr "Partager"
 
-#: src/Views/AppInfoView.vala:852
+#. TRANSLATORS: See the Wikipedia page
+#: src/Views/AppInfoView.vala:764
+msgid "Public Domain"
+msgstr "Domaine public"
+
+#. TRANSLATORS: Replace the link with the version for your language
+#: src/Views/AppInfoView.vala:767
+msgid "https://en.wikipedia.org/wiki/Public_domain"
+msgstr "https://fr.wikipedia.org/wiki/Domaine_public_(propri%C3%A9t%C3%A9_intellectuelle)"
+
+#. TRANSLATORS: Freedom, not price. See the GNU page.
+#: src/Views/AppInfoView.vala:772
+msgid "Free Software"
+msgstr "Logiciel Libre"
+
+#. TRANSLATORS: Replace the link with the version for your language
+#: src/Views/AppInfoView.vala:775
+msgid "https://www.gnu.org/philosophy/free-sw"
+msgstr "https://www.gnu.org/philosophy/free-sw.fr.html"
+
+#: src/Views/AppInfoView.vala:779
+msgid "Proprietary"
+msgstr "Propriétaire"
+
+#: src/Views/AppInfoView.vala:782
+msgid "Unknown License"
+msgstr "licence inconnue"
+
+#: src/Views/AppInfoView.vala:860
 msgid "Fund"
 msgstr "Financer"
 
-#: src/Views/AppInfoView.vala:874
+#: src/Views/AppInfoView.vala:882
 msgid "Fund the development of this app"
 msgstr "Financer le développement de cette application"
 
@@ -678,8 +677,7 @@ msgstr "Téléchargement d'une liste des mises à jour disponibles pour le syst�
 
 #: src/Views/AppListUpdateView.vala:41
 msgid "A restart is required to finish installing updates"
-msgstr ""
-"Un redémarrage est nécessaire pour terminer l’installation des mises à jour"
+msgstr "Un redémarrage est nécessaire pour terminer l’installation des mises à jour"
 
 #: src/Views/AppListUpdateView.vala:49
 msgid "Restart Now"
@@ -687,9 +685,7 @@ msgstr "Redémarrer maintenant"
 
 #: src/Views/AppListUpdateView.vala:58
 msgid "Requesting a restart failed. Restart manually to finish installing updates"
-msgstr ""
-"Le redémarrage automatique a échoué. Redémarrez manuellement pour terminer "
-"l'installation des mises à jour"
+msgstr "Le redémarrage automatique a échoué. Redémarrez manuellement pour terminer l'installation des mises à jour"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
 #: src/Views/AppListUpdateView.vala:186
@@ -914,6 +910,12 @@ msgstr "À jour"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "Mettre à jour"
+
+#~ msgid "Suggest Translations"
+#~ msgstr "Suggérer des traductions"
+
+#~ msgid "Report a Problem"
+#~ msgstr "Signaler un problème"
 
 #~ msgid "Are you sure you want to Restart?"
 #~ msgstr "Voulez-vous vraiment redémarrer ?"
