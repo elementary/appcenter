@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-16 16:12+0000\n"
-"PO-Revision-Date: 2021-07-06 17:26+0000\n"
+"PO-Revision-Date: 2021-07-17 02:15+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/"
 "extra/uk/>\n"
@@ -26,11 +26,6 @@ msgid "Browse and manage apps"
 msgstr "Керуйте та переглядайте застосунки"
 
 #: data/io.elementary.appcenter.appdata.xml.in:11
-#, fuzzy
-#| msgid ""
-#| "An app store for indie and open source developers. Browse by categories "
-#| "or search and discover new apps. AppCenter is also used for updating your "
-#| "system to the latest and greatest version for new features and fixes."
 msgid ""
 "The open source, pay-what-you-want app store from elementary. Reviewed and "
 "curated by elementary to ensure a native, privacy-respecting, and secure "
@@ -38,49 +33,45 @@ msgid ""
 "is also used for updating your system to the latest and greatest version for "
 "new features and fixes."
 msgstr ""
-"Крамниця застосунків для творчих розробників та розробників відкритого "
-"програмного забезпечення. Шукайте застосунки за категоріями або відкривайте "
-"для себе нові. Центр застосунків також використовується для оновлення "
-"системи до найновішої версії, щоб ви отримували нові функції та виправлення "
-"вад."
+"Крамниця застосунків від elementary з відкритим кодом, у якій плати як "
+"хочеш. Переглянута та курована elementary, щоб забезпечити узгоджену, з "
+"повагою до приватності та безпечну роботу застосунків. Переглядайте "
+"застосунки за категоріями або відкривайте для себе нові. Центр застосунків "
+"також використовується для оновлення системи до найновішої версії, щоб ви "
+"отримували нові можливості та виправлення."
 
 #: data/io.elementary.appcenter.appdata.xml.in:16
-#, fuzzy
-#| msgid "New features"
 msgid "New features:"
-msgstr "Нові функції"
+msgstr "Нові можливості:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Show in-app notification when an app is installed"
-msgstr ""
+msgstr "Показ внутрішніх сповіщень, коли застосунок встановлено"
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
 msgid "Add contextual badges to notifications"
-msgstr ""
+msgstr "Додано контекстні значки до сповіщень"
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
-#, fuzzy
-#| msgid "Keyboard improvements"
 msgid "Improvements:"
-msgstr "Поліпшення для клавіатури"
+msgstr "Вдосконалення:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Ensure Home button is usable during search"
-msgstr ""
+msgstr "Перевірено, щоб кнопка «Домашня сторінка» була працювала під час пошуку"
 
 #: data/io.elementary.appcenter.appdata.xml.in:24
 msgid "Ask the user to manually restart if we can't ask the session to prompt"
 msgstr ""
+"Запит перезапуску користувачем вручну, якщо неможливо надіслати запит сеансу"
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
-#, fuzzy
-#| msgid "Improve update badge styling and category styling"
 msgid "Improve styling and contrast of buttons"
-msgstr "Покращено стиль значків оновлення та стиль категорій"
+msgstr "Покращено зовнішній вигляд та контрастність кнопок"
 
 #: data/io.elementary.appcenter.appdata.xml.in:26
 msgid "More concise and consistent language"
-msgstr ""
+msgstr "Стисліша та послідовніша мова"
 
 #: data/io.elementary.appcenter.appdata.xml.in:27
 #: data/io.elementary.appcenter.appdata.xml.in:48
@@ -96,36 +87,35 @@ msgid "Updated translations"
 msgstr "Оновлено переклади"
 
 #: data/io.elementary.appcenter.appdata.xml.in:29
-#, fuzzy
-#| msgid "Fixes"
 msgid "Fixes:"
-msgstr "Виправлення"
+msgstr "Виправлення:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
 msgid "Fully uninstall Flatpaks, including locales"
 msgstr ""
+"Можливість повного видалення застосунків Flatpak, разом з їхніми мовними "
+"пакунками"
 
 #: data/io.elementary.appcenter.appdata.xml.in:32
 msgid "Still fetch screenshots from remotes that don't include proper headers"
-msgstr ""
+msgstr "Віддалене отримання знімків екрана, які не включають належні заголовки"
 
 #: data/io.elementary.appcenter.appdata.xml.in:33
 msgid "Fix truncated footer buttons"
-msgstr ""
+msgstr "Виправлено обрізання кнопок колонтитулів"
 
 #: data/io.elementary.appcenter.appdata.xml.in:34
 msgid "Only show Mail button when a usable mail app is installed"
-msgstr ""
+msgstr "Кнопка «Пошта» з'являється лише якщо встановлено застосунок пошти"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
 msgid "Fix some apps incorrectly showing as not installed during search"
 msgstr ""
+"Виправлено показ встановлених застосунків не встановленими під час пошуку"
 
 #: data/io.elementary.appcenter.appdata.xml.in:36
-#, fuzzy
-#| msgid "Show an error dialog if an installation fails"
 msgid "Show an error dialog when opening an app fails"
-msgstr "Показ діалогового вікна помилки за невдалого встановлення"
+msgstr "Показ діалогового вікна помилки за невдалого відкриття застосунку"
 
 #: data/io.elementary.appcenter.appdata.xml.in:42
 #: data/io.elementary.appcenter.appdata.xml.in:58
