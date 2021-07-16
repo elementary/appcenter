@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2015–2020 elementary, Inc. <contact@elementary.io> -->
+<!-- Copyright 2015–2021 elementary, Inc. <contact@elementary.io> -->
 <component type="desktop-application">
   <id>io.elementary.appcenter</id>
   <metadata_license>CC0-1.0</metadata_license>
@@ -8,9 +8,35 @@
   <name>AppCenter</name>
   <summary>Browse and manage apps</summary>
   <description>
-    <p>An app store for indie and open source developers. Browse by categories or search and discover new apps. AppCenter is also used for updating your system to the latest and greatest version for new features and fixes.</p>
+    <p>The open source, pay-what-you-want app store from elementary. Reviewed and curated by elementary to ensure a native, privacy-respecting, and secure experience. Browse by categories or search and discover new apps. AppCenter is also used for updating your system to the latest and greatest version for new features and fixes.</p>
   </description>
   <releases>
+    <release version="3.5.2" date="2021-07-15" urgency="medium">
+      <description>
+        <p>New features:</p>
+        <ul>
+          <li>Show in-app notification when an app is installed</li>
+          <li>Add contextual badges to notifications</li>
+        </ul>
+        <p>Improvements:</p>
+        <ul>
+          <li>Ensure Home button is usable during search</li>
+          <li>Ask the user to manually restart if we can't ask the session to prompt</li>
+          <li>Improve styling and contrast of buttons</li>
+          <li>More concise and consistent language</li>
+          <li>Updated translations</li>
+        </ul>
+        <p>Fixes:</p>
+        <ul>
+          <li>Fully uninstall Flatpaks, including locales</li>
+          <li>Still fetch screenshots from remotes that don't include proper headers</li>
+          <li>Fix truncated footer buttons</li>
+          <li>Only show Mail button when a usable mail app is installed</li>
+          <li>Fix some apps incorrectly showing as not installed during search</li>
+          <li>Show an error dialog when opening an app fails</li>
+        </ul>
+      </description>
+    </release>
     <release version="3.5.1" date="2020-10-08" urgency="medium">
       <description>
         <p>Fixes</p>
