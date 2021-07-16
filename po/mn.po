@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-02 20:46+0000\n"
+"POT-Creation-Date: 2021-06-15 21:03+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Mongolian <https://l10n.elementary.io/projects/appcenter/appcenter/mn/>\n"
@@ -281,7 +281,7 @@ msgstr ""
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
 
-#: src/Core/PackageKitBackend.vala:272
+#: src/Core/PackageKitBackend.vala:283
 #, c-format
 msgid "%s (local)"
 msgstr ""
@@ -400,24 +400,6 @@ msgstr ""
 msgid "Show non-curated warnings"
 msgstr "Агуулгын анхааруулгыг харах"
 
-#: src/Dialogs/RestartDialog.vala:40
-msgid "Are you sure you want to Restart?"
-msgstr "Та системийн унтрааж асаахдаа итгэлтэй байна уу?"
-
-#: src/Dialogs/RestartDialog.vala:41
-msgid "This will close all open applications and restart this device."
-msgstr "Төхөөрөмжийг унтрааж асаах үед одоо ажиллаж байгаа бүх програмуудаас гарах болно."
-
-#: src/Dialogs/RestartDialog.vala:42
-msgid "Restart"
-msgstr "Дахин эхлүүлэх"
-
-#: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:196
-#: src/Dialogs/StripeDialog.vala:313
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
-msgid "Cancel"
-msgstr "Цуцлах"
-
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
 msgstr ""
@@ -459,6 +441,11 @@ msgstr "CVC"
 #: src/Dialogs/StripeDialog.vala:189
 msgid "Privacy Policy"
 msgstr "Нууцлалын бодлого"
+
+#: src/Dialogs/StripeDialog.vala:196 src/Dialogs/StripeDialog.vala:313
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
+msgid "Cancel"
+msgstr "Цуцлах"
 
 #: src/Dialogs/StripeDialog.vala:198 src/Dialogs/StripeDialog.vala:312
 #, c-format
@@ -702,15 +689,21 @@ msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr ""
 
 #: src/Views/AppListUpdateView.vala:41
-msgid "A restart is required to complete the installation of updates"
+#, fuzzy
+#| msgid "A restart is required to complete the installation of updates"
+msgid "A restart is required to finish installing updates"
 msgstr "Шинэчлэлүүдийг бүрэн суулгахын тулд системийг дахин эхлүүлэх шаардлагатай"
 
 #: src/Views/AppListUpdateView.vala:49
 msgid "Restart Now"
 msgstr "Дахин эхлүүлэх"
 
+#: src/Views/AppListUpdateView.vala:58
+msgid "Requesting a restart failed. Restart manually to finish installing updates"
+msgstr ""
+
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:183
+#: src/Views/AppListUpdateView.vala:186
 msgid "Update All"
 msgstr "Бүгдийг шинэчлэх"
 
@@ -933,6 +926,15 @@ msgstr "Огноо хүртэл"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "Шиэнчлэх"
+
+#~ msgid "Are you sure you want to Restart?"
+#~ msgstr "Та системийн унтрааж асаахдаа итгэлтэй байна уу?"
+
+#~ msgid "This will close all open applications and restart this device."
+#~ msgstr "Төхөөрөмжийг унтрааж асаах үед одоо ажиллаж байгаа бүх програмуудаас гарах болно."
+
+#~ msgid "Restart"
+#~ msgstr "Дахин эхлүүлэх"
 
 #, fuzzy
 #~| msgid "Finished"

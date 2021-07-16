@@ -38,7 +38,7 @@ namespace AppCenter.Views {
             list_box.set_header_func ((Gtk.ListBoxUpdateHeaderFunc) row_update_header);
             list_box.set_placeholder (loading_view);
 
-            var info_label = new Gtk.Label (_("A restart is required to complete the installation of updates"));
+            var info_label = new Gtk.Label (_("A restart is required to finish installing updates"));
             info_label.show ();
 
             var infobar = new Gtk.InfoBar ();
@@ -54,8 +54,11 @@ namespace AppCenter.Views {
                     try {
                         SuspendControl.get_default ().reboot ();
                     } catch (GLib.Error e) {
-                        var dialog = new AppCenter.Widgets.RestartDialog ();
-                        dialog.show_all ();
+                        if (!(e is IOError.CANCELLED)) {
+                            info_label.label = _("Requesting a restart failed. Restart manually to finish installing updates");
+                            infobar.message_type = Gtk.MessageType.ERROR;
+                            restart_button.visible = false;
+                        }
                     }
                 }
             });

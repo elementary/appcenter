@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-02 20:46+0000\n"
+"POT-Creation-Date: 2021-06-15 21:03+0000\n"
 "PO-Revision-Date: 2021-01-26 20:02+0000\n"
 "Last-Translator: Marco De Paolini <marco.depaolini@gmail.com>\n"
 "Language-Team: Italian <https://l10n.elementary.io/projects/appcenter/appcenter/it/>\n"
@@ -279,7 +279,7 @@ msgstr "Origini sconosciute (non curate)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Stato dell'applicazione non impostato come installato in AppCenter per il pacchetto: %s"
 
-#: src/Core/PackageKitBackend.vala:272
+#: src/Core/PackageKitBackend.vala:283
 #, c-format
 msgid "%s (local)"
 msgstr "%s (locale)"
@@ -391,24 +391,6 @@ msgstr "Potrebbe aver accesso o modificare file di sistema o personali senza aut
 msgid "Show non-curated warnings"
 msgstr "Mostra avvisi sul contenuto non curato"
 
-#: src/Dialogs/RestartDialog.vala:40
-msgid "Are you sure you want to Restart?"
-msgstr "Vuoi davvero riavviare?"
-
-#: src/Dialogs/RestartDialog.vala:41
-msgid "This will close all open applications and restart this device."
-msgstr "Ciò comporterà la chiusura di tutte le applicazioni aperte e il riavvio del dispositivo."
-
-#: src/Dialogs/RestartDialog.vala:42
-msgid "Restart"
-msgstr "Riavvia"
-
-#: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:196
-#: src/Dialogs/StripeDialog.vala:313
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
-msgid "Cancel"
-msgstr "Annulla"
-
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
 msgstr "Si è verificato un errore durante il processamento della carta. Riprova più tardi. Ci scusiamo per l'inconveniente causato."
@@ -450,6 +432,11 @@ msgstr "CVC"
 #: src/Dialogs/StripeDialog.vala:189
 msgid "Privacy Policy"
 msgstr "Politica sulla privacy"
+
+#: src/Dialogs/StripeDialog.vala:196 src/Dialogs/StripeDialog.vala:313
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
+msgid "Cancel"
+msgstr "Annulla"
 
 #: src/Dialogs/StripeDialog.vala:198 src/Dialogs/StripeDialog.vala:312
 #, c-format
@@ -691,15 +678,21 @@ msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr "Scaricamento di un elenco di aggiornamenti disponibili per il sistema operativo e le applicazioni installate"
 
 #: src/Views/AppListUpdateView.vala:41
-msgid "A restart is required to complete the installation of updates"
+#, fuzzy
+#| msgid "A restart is required to complete the installation of updates"
+msgid "A restart is required to finish installing updates"
 msgstr "Un riavvio è necessario per completare l'installazione degli aggiornamenti"
 
 #: src/Views/AppListUpdateView.vala:49
 msgid "Restart Now"
 msgstr "Riavvia ora"
 
+#: src/Views/AppListUpdateView.vala:58
+msgid "Requesting a restart failed. Restart manually to finish installing updates"
+msgstr ""
+
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:183
+#: src/Views/AppListUpdateView.vala:186
 msgid "Update All"
 msgstr "Aggiorna tutto"
 
@@ -921,6 +914,15 @@ msgstr "Aggiornate"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "Aggiorna"
+
+#~ msgid "Are you sure you want to Restart?"
+#~ msgstr "Vuoi davvero riavviare?"
+
+#~ msgid "This will close all open applications and restart this device."
+#~ msgstr "Ciò comporterà la chiusura di tutte le applicazioni aperte e il riavvio del dispositivo."
+
+#~ msgid "Restart"
+#~ msgstr "Riavvia"
 
 #~ msgid "Finishing"
 #~ msgstr "Completamento"

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-02 20:46+0000\n"
+"POT-Creation-Date: 2021-06-15 21:03+0000\n"
 "PO-Revision-Date: 2019-10-12 13:23+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://l10n.elementary.io/projects/appcenter/appcenter/lt/>\n"
@@ -283,7 +283,7 @@ msgstr "Nežinoma kilmė (nekuruojama)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Programos būsena Programų centre nėra nustatyta kaip įdiegta šiam paketui: %s"
 
-#: src/Core/PackageKitBackend.vala:272
+#: src/Core/PackageKitBackend.vala:283
 #, fuzzy, c-format
 #| msgid "%s (non-curated)"
 msgid "%s (local)"
@@ -409,24 +409,6 @@ msgstr ""
 msgid "Show non-curated warnings"
 msgstr "Rodyti įspėjimus dėl turinio"
 
-#: src/Dialogs/RestartDialog.vala:40
-msgid "Are you sure you want to Restart?"
-msgstr "Ar tikrai norite paleisti iš naujo?"
-
-#: src/Dialogs/RestartDialog.vala:41
-msgid "This will close all open applications and restart this device."
-msgstr "Tai užvers visas atvertas programas ir paleis šį įrenginį iš naujo."
-
-#: src/Dialogs/RestartDialog.vala:42
-msgid "Restart"
-msgstr "Paleisti iš naujo"
-
-#: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:196
-#: src/Dialogs/StripeDialog.vala:313
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
-msgid "Cancel"
-msgstr "Atsisakyti"
-
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
 msgstr "Apdorojant kortelę, įvyko klaida. Prašome vėliau bandyti dar kartą. Atsiprašome už sukeltus nepatogumus."
@@ -468,6 +450,11 @@ msgstr "CVC saugos kodas"
 #: src/Dialogs/StripeDialog.vala:189
 msgid "Privacy Policy"
 msgstr "Privatumo politika"
+
+#: src/Dialogs/StripeDialog.vala:196 src/Dialogs/StripeDialog.vala:313
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
+msgid "Cancel"
+msgstr "Atsisakyti"
 
 #: src/Dialogs/StripeDialog.vala:198 src/Dialogs/StripeDialog.vala:312
 #, c-format
@@ -711,15 +698,21 @@ msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr ""
 
 #: src/Views/AppListUpdateView.vala:41
-msgid "A restart is required to complete the installation of updates"
+#, fuzzy
+#| msgid "A restart is required to complete the installation of updates"
+msgid "A restart is required to finish installing updates"
 msgstr "Norint užbaigti įdiegti atnaujinimus, reikia paleisti kompiuterį iš naujo"
 
 #: src/Views/AppListUpdateView.vala:49
 msgid "Restart Now"
 msgstr "Paleisti iš naujo dabar"
 
+#: src/Views/AppListUpdateView.vala:58
+msgid "Requesting a restart failed. Restart manually to finish installing updates"
+msgstr ""
+
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:183
+#: src/Views/AppListUpdateView.vala:186
 msgid "Update All"
 msgstr "Atnaujinti viską"
 
@@ -942,6 +935,15 @@ msgstr "Atnaujintos"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "Atnaujinti"
+
+#~ msgid "Are you sure you want to Restart?"
+#~ msgstr "Ar tikrai norite paleisti iš naujo?"
+
+#~ msgid "This will close all open applications and restart this device."
+#~ msgstr "Tai užvers visas atvertas programas ir paleis šį įrenginį iš naujo."
+
+#~ msgid "Restart"
+#~ msgstr "Paleisti iš naujo"
 
 #, fuzzy
 #~| msgid "Finished"

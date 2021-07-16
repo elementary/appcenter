@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-02 20:46+0000\n"
+"POT-Creation-Date: 2021-06-15 21:03+0000\n"
 "PO-Revision-Date: 2020-12-23 23:11+0000\n"
 "Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/appcenter/appcenter/id/>\n"
@@ -273,7 +273,7 @@ msgstr "Sumber tidak diketahui (tidak dikurasi)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Status aplikasi tidak ditetapkan sebagai terpasang di AppCenter untuk paket: %s"
 
-#: src/Core/PackageKitBackend.vala:272
+#: src/Core/PackageKitBackend.vala:283
 #, c-format
 msgid "%s (local)"
 msgstr "%s (lokal)"
@@ -384,24 +384,6 @@ msgstr "Ini dapat mengakses atau mengubah sistem atau file pribadi tanpa izin"
 msgid "Show non-curated warnings"
 msgstr "Tampilkan peringatan yang tidak terkelola"
 
-#: src/Dialogs/RestartDialog.vala:40
-msgid "Are you sure you want to Restart?"
-msgstr "Apakah Anda yakin untuk Mulai Ulang?"
-
-#: src/Dialogs/RestartDialog.vala:41
-msgid "This will close all open applications and restart this device."
-msgstr "Ini akan menutup semua aplikasi yang terbuka dan memulai ulang perangkat ini."
-
-#: src/Dialogs/RestartDialog.vala:42
-msgid "Restart"
-msgstr "Mulai Ulang"
-
-#: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:196
-#: src/Dialogs/StripeDialog.vala:313
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
-msgid "Cancel"
-msgstr "Batal"
-
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
 msgstr "Terjadi kesalahan saat mengolah kartu. Silakan ulangi kembali. Kami mohon maaf atas ketidaknyamanan yang terjadi."
@@ -443,6 +425,11 @@ msgstr "CVC"
 #: src/Dialogs/StripeDialog.vala:189
 msgid "Privacy Policy"
 msgstr "Kebijakan Privasi"
+
+#: src/Dialogs/StripeDialog.vala:196 src/Dialogs/StripeDialog.vala:313
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
+msgid "Cancel"
+msgstr "Batal"
 
 #: src/Dialogs/StripeDialog.vala:198 src/Dialogs/StripeDialog.vala:312
 #, c-format
@@ -684,15 +671,21 @@ msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr "Mengunduh daftar pembaruan yang tersedia untuk OS dan aplikasi yang dipasang"
 
 #: src/Views/AppListUpdateView.vala:41
-msgid "A restart is required to complete the installation of updates"
+#, fuzzy
+#| msgid "A restart is required to complete the installation of updates"
+msgid "A restart is required to finish installing updates"
 msgstr "Mulai ulang diperlukan untuk menyelesaikan pemasangan pembaruan"
 
 #: src/Views/AppListUpdateView.vala:49
 msgid "Restart Now"
 msgstr "Mulai Ulang Sekarang"
 
+#: src/Views/AppListUpdateView.vala:58
+msgid "Requesting a restart failed. Restart manually to finish installing updates"
+msgstr ""
+
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:183
+#: src/Views/AppListUpdateView.vala:186
 msgid "Update All"
 msgstr "Perbarui Semua"
 
@@ -913,6 +906,15 @@ msgstr "Terbaru"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "Perbarui"
+
+#~ msgid "Are you sure you want to Restart?"
+#~ msgstr "Apakah Anda yakin untuk Mulai Ulang?"
+
+#~ msgid "This will close all open applications and restart this device."
+#~ msgstr "Ini akan menutup semua aplikasi yang terbuka dan memulai ulang perangkat ini."
+
+#~ msgid "Restart"
+#~ msgstr "Mulai Ulang"
 
 #~ msgid "Finishing"
 #~ msgstr "Menyelesaikan"

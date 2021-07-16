@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-02 20:46+0000\n"
-"PO-Revision-Date: 2021-05-21 18:11+0000\n"
+"POT-Creation-Date: 2021-06-15 21:03+0000\n"
+"PO-Revision-Date: 2021-07-08 17:07+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/uk/>\n"
@@ -36,7 +36,7 @@ msgstr "Не вдалося визначити медіа тип %s"
 #: src/Application.vala:132
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr "Вказане посилання '%s' не знайдено, пошук заміни"
+msgstr "Вказане посилання «%s» не знайдено, пошук заміни"
 
 #: src/Application.vala:295
 msgid "The app has been installed"
@@ -240,9 +240,9 @@ msgstr[2] "Оновлень доступно"
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
-msgstr[0] "%u оновлення доступне для вашої системи"
-msgstr[1] "%u оновлення доступні для вашої системи"
-msgstr[2] "%u оновлень доступно для вашої системи"
+msgstr[0] "Доступне %u оновлення для вашої системи"
+msgstr[1] "Доступні %u оновлення для вашої системи"
+msgstr[2] "Доступні %u оновлень для вашої системи"
 
 #: src/Core/FlatpakBackend.vala:1045
 msgid "Uninstalling"
@@ -259,7 +259,7 @@ msgstr "%s розробників"
 
 #: src/Core/Package.vala:340
 msgid "elementary Updates"
-msgstr "Оновлення elementary OS"
+msgstr "Оновлення elementary"
 
 #: src/Core/Package.vala:342
 msgid "Ubuntu (non-curated)"
@@ -283,7 +283,7 @@ msgstr "Невідоме походження (не куровано)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Стан застосунку не визначено як встановлений в Центрі застосунків для пакунка: %s"
 
-#: src/Core/PackageKitBackend.vala:272
+#: src/Core/PackageKitBackend.vala:283
 #, c-format
 msgid "%s (local)"
 msgstr "%s (локальний)"
@@ -382,9 +382,7 @@ msgstr "Встановити не курований застосунок?"
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
 msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-msgstr ""
-"«%s» не курується elementary та не перевіряється щодо безпечності, "
-"приватності чи сумісності з системою."
+msgstr "«%s» не курується elementary та не перевіряється щодо безпечності, приватності чи сумісності з системою."
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
 msgid "It may not receive bug fix or feature updates"
@@ -397,24 +395,6 @@ msgstr "Може отримати доступ чи змінити систем�
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
 msgid "Show non-curated warnings"
 msgstr "Показувати попередження про не куровані застосунки"
-
-#: src/Dialogs/RestartDialog.vala:40
-msgid "Are you sure you want to Restart?"
-msgstr "Ви впевнені що хочете перезапустити?"
-
-#: src/Dialogs/RestartDialog.vala:41
-msgid "This will close all open applications and restart this device."
-msgstr "Всі застосунки буде закрито, а пристрій перезапущено."
-
-#: src/Dialogs/RestartDialog.vala:42
-msgid "Restart"
-msgstr "Перезапустити"
-
-#: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:196
-#: src/Dialogs/StripeDialog.vala:313
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
-msgid "Cancel"
-msgstr "Скасувати"
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
@@ -457,6 +437,11 @@ msgstr "CVC"
 #: src/Dialogs/StripeDialog.vala:189
 msgid "Privacy Policy"
 msgstr "Політика приватності"
+
+#: src/Dialogs/StripeDialog.vala:196 src/Dialogs/StripeDialog.vala:313
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
+msgid "Cancel"
+msgstr "Скасувати"
 
 #: src/Dialogs/StripeDialog.vala:198 src/Dialogs/StripeDialog.vala:312
 #, c-format
@@ -695,15 +680,21 @@ msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr "Завантаження переліку доступних оновлень для ОС та встановлених застосунків"
 
 #: src/Views/AppListUpdateView.vala:41
-msgid "A restart is required to complete the installation of updates"
+msgid "A restart is required to finish installing updates"
 msgstr "Перезапуск необхідний для завершення встановлення оновлень"
 
 #: src/Views/AppListUpdateView.vala:49
 msgid "Restart Now"
 msgstr "Перезапустити зараз"
 
+#: src/Views/AppListUpdateView.vala:58
+msgid "Requesting a restart failed. Restart manually to finish installing updates"
+msgstr ""
+"Помилка запиту на перезапуск. Перезапустіть власноруч, щоб завершити "
+"встановлення оновлень"
+
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:183
+#: src/Views/AppListUpdateView.vala:186
 msgid "Update All"
 msgstr "Оновити все"
 
@@ -744,7 +735,7 @@ msgstr "Знайти"
 
 #: src/Widgets/Banner.vala:57
 msgid "An open, pay-what-you-want app store"
-msgstr "Вільна крамниця застосунків, у якій \"Плати скільки хочеш\""
+msgstr "Вільна крамниця застосунків у якій «Плати скільки хочеш»"
 
 #: src/Widgets/Banner.vala:76
 msgid "Get the apps that you need at a price you can afford."
@@ -912,8 +903,8 @@ msgstr "До %s"
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
 msgstr[0] "Доступне %u оновлення"
-msgstr[1] "Доступно %u оновлення"
-msgstr[2] "Доступно %u оновлень"
+msgstr[1] "Доступні %u оновлення"
+msgstr[2] "Доступні %u оновлень"
 
 #: src/Widgets/UpdateHeaderRow.vala:54
 msgid "Drivers"
@@ -925,7 +916,16 @@ msgstr "Найновіші"
 
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
-msgstr "Оновлення"
+msgstr "Оновити"
+
+#~ msgid "Are you sure you want to Restart?"
+#~ msgstr "Ви впевнені що хочете перезапустити?"
+
+#~ msgid "This will close all open applications and restart this device."
+#~ msgstr "Всі застосунки буде закрито, а пристрій перезапущено."
+
+#~ msgid "Restart"
+#~ msgstr "Перезапустити"
 
 #~ msgid "Finishing"
 #~ msgstr "Завершення"

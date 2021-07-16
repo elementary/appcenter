@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-02 20:46+0000\n"
-"PO-Revision-Date: 2021-03-05 23:56+0000\n"
+"POT-Creation-Date: 2021-06-15 21:03+0000\n"
+"PO-Revision-Date: 2021-06-17 14:05+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ca/>\n"
@@ -276,7 +276,7 @@ msgstr "D'origen desconegut (sense cura)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "L'estat de l'aplicació no està establert com a instal·lada al Centre d'aplicacions per al paquet %s."
 
-#: src/Core/PackageKitBackend.vala:272
+#: src/Core/PackageKitBackend.vala:283
 #, c-format
 msgid "%s (local)"
 msgstr "%s (local)"
@@ -388,24 +388,6 @@ msgstr "Podria accedir o canviar fitxers personals del sistema sense permís."
 msgid "Show non-curated warnings"
 msgstr "Mostra els avisos de manca de cura"
 
-#: src/Dialogs/RestartDialog.vala:40
-msgid "Are you sure you want to Restart?"
-msgstr "Segur que el voleu reiniciar?"
-
-#: src/Dialogs/RestartDialog.vala:41
-msgid "This will close all open applications and restart this device."
-msgstr "Això tancarà totes les aplicacions obertes i reiniciarà aquest dispositiu."
-
-#: src/Dialogs/RestartDialog.vala:42
-msgid "Restart"
-msgstr "Reinicia'l"
-
-#: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:196
-#: src/Dialogs/StripeDialog.vala:313
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
-msgid "Cancel"
-msgstr "Cancel·la"
-
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
 msgstr "Hi ha hagut un error mentre es processava la targeta. Torneu-ho a provar més tard. Disculpeu les molèsties."
@@ -447,6 +429,11 @@ msgstr "CVC"
 #: src/Dialogs/StripeDialog.vala:189
 msgid "Privacy Policy"
 msgstr "Política de privadesa"
+
+#: src/Dialogs/StripeDialog.vala:196 src/Dialogs/StripeDialog.vala:313
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
+msgid "Cancel"
+msgstr "Cancel·la"
 
 #: src/Dialogs/StripeDialog.vala:198 src/Dialogs/StripeDialog.vala:312
 #, c-format
@@ -685,15 +672,21 @@ msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr "Es baixa una llista d'actualitzacions disponibles per al sistema operatiu i les aplicacions instal·lades."
 
 #: src/Views/AppListUpdateView.vala:41
-msgid "A restart is required to complete the installation of updates"
-msgstr "Cal un reinici per completar la instal·lació de les actualitzacions"
+msgid "A restart is required to finish installing updates"
+msgstr "Cal un reinici per acabar la instal·lació de les actualitzacions."
 
 #: src/Views/AppListUpdateView.vala:49
 msgid "Restart Now"
 msgstr "Reincia ara"
 
+#: src/Views/AppListUpdateView.vala:58
+msgid "Requesting a restart failed. Restart manually to finish installing updates"
+msgstr ""
+"Ha fallat la sol·licitud de reinici. Reinicieu manualment el sistema per "
+"acabar d'instal·lar les actualitzacions."
+
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:183
+#: src/Views/AppListUpdateView.vala:186
 msgid "Update All"
 msgstr "Actualitza-ho tot"
 
@@ -915,6 +908,15 @@ msgstr "Al dia"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "Actualitza"
+
+#~ msgid "Are you sure you want to Restart?"
+#~ msgstr "Segur que el voleu reiniciar?"
+
+#~ msgid "This will close all open applications and restart this device."
+#~ msgstr "Això tancarà totes les aplicacions obertes i reiniciarà aquest dispositiu."
+
+#~ msgid "Restart"
+#~ msgstr "Reinicia'l"
 
 #~ msgid "Finishing"
 #~ msgstr "S'acaba"

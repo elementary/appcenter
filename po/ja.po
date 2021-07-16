@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-02 20:46+0000\n"
-"PO-Revision-Date: 2021-05-06 15:44+0000\n"
+"POT-Creation-Date: 2021-06-15 21:03+0000\n"
+"PO-Revision-Date: 2021-07-12 02:27+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ja/>\n"
@@ -272,7 +272,7 @@ msgstr "提供元不明 (キュレーションされていないアプリ)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "以下のパッケージのアプリケーションは AppCenter でインストール済みの状態になっていません: %s"
 
-#: src/Core/PackageKitBackend.vala:272
+#: src/Core/PackageKitBackend.vala:283
 #, c-format
 msgid "%s (local)"
 msgstr "%s (ローカル)"
@@ -383,24 +383,6 @@ msgstr "権限不要でシステムや個人ファイルへアクセス・改変
 msgid "Show non-curated warnings"
 msgstr "キュレーションに関する警告を表示"
 
-#: src/Dialogs/RestartDialog.vala:40
-msgid "Are you sure you want to Restart?"
-msgstr "再起動してもよろしいですか？"
-
-#: src/Dialogs/RestartDialog.vala:41
-msgid "This will close all open applications and restart this device."
-msgstr "続行すると、開いているすべてのアプリケーションを閉じてこのデバイスを再起動します。"
-
-#: src/Dialogs/RestartDialog.vala:42
-msgid "Restart"
-msgstr "再起動"
-
-#: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:196
-#: src/Dialogs/StripeDialog.vala:313
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
-msgid "Cancel"
-msgstr "キャンセル"
-
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
 msgstr "カードの処理中にエラーが発生しました。後ほどもう一度お試しください。ご迷惑おかけして申し訳ありません。"
@@ -442,6 +424,11 @@ msgstr "CVC"
 #: src/Dialogs/StripeDialog.vala:189
 msgid "Privacy Policy"
 msgstr "プライバシーポリシー"
+
+#: src/Dialogs/StripeDialog.vala:196 src/Dialogs/StripeDialog.vala:313
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
+msgid "Cancel"
+msgstr "キャンセル"
 
 #: src/Dialogs/StripeDialog.vala:198 src/Dialogs/StripeDialog.vala:312
 #, c-format
@@ -530,7 +517,7 @@ msgstr "カードの残高か与信限度額に達しました。"
 
 #: src/Dialogs/StripeDialog.vala:607
 msgid "The given card is a test card. Please use a real card to proceed."
-msgstr "所定のカードはテスト用のカードです。続行するには本物のカードを使用してください。"
+msgstr "指定されたカードはテスト用です。続行するには本物のカードを使用してください。"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
@@ -680,15 +667,19 @@ msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr "OS とインストール済みアプリの、利用可能なアップデートの一覧をダウンロードしています"
 
 #: src/Views/AppListUpdateView.vala:41
-msgid "A restart is required to complete the installation of updates"
+msgid "A restart is required to finish installing updates"
 msgstr "アップデートのインストールを完了するには再起動が必要です"
 
 #: src/Views/AppListUpdateView.vala:49
 msgid "Restart Now"
 msgstr "今すぐ再起動"
 
+#: src/Views/AppListUpdateView.vala:58
+msgid "Requesting a restart failed. Restart manually to finish installing updates"
+msgstr "再起動できませんでした。アップデートのインストールを完了するには、セッションインジケーターから再起動してください"
+
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:183
+#: src/Views/AppListUpdateView.vala:186
 msgid "Update All"
 msgstr "すべてアップデート"
 
@@ -909,6 +900,15 @@ msgstr "最新の状態"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "アップデート"
+
+#~ msgid "Are you sure you want to Restart?"
+#~ msgstr "再起動してもよろしいですか？"
+
+#~ msgid "This will close all open applications and restart this device."
+#~ msgstr "続行すると、開いているすべてのアプリケーションを閉じてこのデバイスを再起動します。"
+
+#~ msgid "Restart"
+#~ msgstr "再起動"
 
 #~ msgid "Finishing"
 #~ msgstr "完了しています"

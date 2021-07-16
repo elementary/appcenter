@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-02 20:46+0000\n"
-"PO-Revision-Date: 2021-03-04 18:20+0000\n"
+"POT-Creation-Date: 2021-06-15 21:03+0000\n"
+"PO-Revision-Date: 2021-07-11 17:55+0000\n"
 "Last-Translator: HelaBasa <R45XvezA@pm.me>\n"
 "Language-Team: Sinhala <https://l10n.elementary.io/projects/appcenter/extra/"
 "si/>\n"
@@ -67,7 +67,7 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:28
 #: data/io.elementary.appcenter.appdata.xml.in:74
 msgid "New features"
-msgstr ""
+msgstr "නව විශේෂාංග"
 
 #: data/io.elementary.appcenter.appdata.xml.in:30
 msgid "Support system-wide Flatpak remotes"
@@ -159,7 +159,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:99
 msgid "Keyboard improvements"
-msgstr ""
+msgstr "යතුරු පුවරු වැඩිදියුණු කිරීම්"
 
 #: data/io.elementary.appcenter.appdata.xml.in:101
 msgid ""
@@ -190,7 +190,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:111
 msgid "And more"
-msgstr ""
+msgstr "සහ තව"
 
 #: data/io.elementary.appcenter.appdata.xml.in:113
 msgid "Show a more informative loading screen when checking for updates"
@@ -270,7 +270,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:164
 msgid "Add support for Flatpak apps"
-msgstr ""
+msgstr "ෆ්ලැට්පැක් යෙදුම් සඳහා සහාය එකතු කරන්න"
 
 #: data/io.elementary.appcenter.appdata.xml.in:165
 msgid "Warn about non-curated apps"
@@ -365,7 +365,7 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:334
 #: data/io.elementary.appcenter.appdata.xml.in:344
 msgid "New translations"
-msgstr ""
+msgstr "නව පරිවර්තන"
 
 #: data/io.elementary.appcenter.appdata.xml.in:198
 msgid "New categories: Communication, Finance, Media Production"
@@ -412,7 +412,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:221
 msgid "Improve descriptions of OS Updates"
-msgstr ""
+msgstr "මෙ.පද්. යාවත්කාල සවිස්තර වැඩිදියුණු කිරීම"
 
 #: data/io.elementary.appcenter.appdata.xml.in:222
 #: data/io.elementary.appcenter.appdata.xml.in:233
@@ -430,7 +430,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:231
 msgid "Give details for Operating System Updates"
-msgstr ""
+msgstr "මෙහෙයුම් පද්ධතියේ යාවත්කාල සඳහා විස්තර දෙන්න"
 
 #: data/io.elementary.appcenter.appdata.xml.in:232
 msgid "Support mouse button navigation"
@@ -472,11 +472,11 @@ msgstr ""
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
-msgstr ""
+msgstr "@APP_NAME@"
 
 #: data/io.elementary.appcenter.desktop.in.in:6
 msgid "@PROJECT_NAME@"
-msgstr ""
+msgstr "@PROJECT_NAME@"
 
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
@@ -492,7 +492,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.policy.in:10
 msgid "Update software"
-msgstr ""
+msgstr "මෘදුකාංග යාවත්කාල කරන්න"
 
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to update software"

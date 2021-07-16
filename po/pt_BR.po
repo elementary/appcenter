@@ -5,13 +5,15 @@
 # Cleiton Floss <cleitonfloss@gmail.com>, 2019.
 # Michael Leocádio <leocadiomichael@outlook.com>, 2019.
 # Leonardo <leonardo@elementary.io>, 2021.
+# lucaspifonseca <lucaspifonseca@gmail.com>, 2021.
+# DanielPonte01 <daniel98ponte@gmail.com>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-02 20:46+0000\n"
-"PO-Revision-Date: 2021-03-13 06:59+0000\n"
-"Last-Translator: Leonardo <leonardo@elementary.io>\n"
+"POT-Creation-Date: 2021-06-15 21:03+0000\n"
+"PO-Revision-Date: 2021-07-11 20:02+0000\n"
+"Last-Translator: lucaspifonseca <lucaspifonseca@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -280,7 +282,7 @@ msgstr "Origem Desconhecida (não supervisionado)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Estado do aplicativo não definido como instalado no AppCenter para o pacote: %s"
 
-#: src/Core/PackageKitBackend.vala:272
+#: src/Core/PackageKitBackend.vala:283
 #, c-format
 msgid "%s (local)"
 msgstr "%s (local)"
@@ -392,24 +394,6 @@ msgstr "Pode acessar ou alterar arquivos pessoais ou do sistema sem permissão"
 msgid "Show non-curated warnings"
 msgstr "Mostrar avisos de não curados"
 
-#: src/Dialogs/RestartDialog.vala:40
-msgid "Are you sure you want to Restart?"
-msgstr "Você tem certeza que deseja reiniciar?"
-
-#: src/Dialogs/RestartDialog.vala:41
-msgid "This will close all open applications and restart this device."
-msgstr "Isto irá fechar todos os aplicativos abertos e reiniciar este dispositivo."
-
-#: src/Dialogs/RestartDialog.vala:42
-msgid "Restart"
-msgstr "Reiniciar"
-
-#: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:196
-#: src/Dialogs/StripeDialog.vala:313
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
-msgid "Cancel"
-msgstr "Cancelar"
-
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
 msgstr "Um erro ocorreu ao processar o cartão. Por favor tente novamente mais tarde. Pedimos desculpas por qualquer inconveniente causado."
@@ -451,6 +435,11 @@ msgstr "CVC (Código de Verificação do Cartão)"
 #: src/Dialogs/StripeDialog.vala:189
 msgid "Privacy Policy"
 msgstr "Política de Privacidade"
+
+#: src/Dialogs/StripeDialog.vala:196 src/Dialogs/StripeDialog.vala:313
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
+msgid "Cancel"
+msgstr "Cancelar"
 
 #: src/Dialogs/StripeDialog.vala:198 src/Dialogs/StripeDialog.vala:312
 #, c-format
@@ -689,15 +678,21 @@ msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr "Download de uma lista de atualizações disponíveis para o SO e aplicativos instalados"
 
 #: src/Views/AppListUpdateView.vala:41
-msgid "A restart is required to complete the installation of updates"
+msgid "A restart is required to finish installing updates"
 msgstr "É necessário reiniciar para completar a instalação das atualizações"
 
 #: src/Views/AppListUpdateView.vala:49
 msgid "Restart Now"
 msgstr "Reiniciar Agora"
 
+#: src/Views/AppListUpdateView.vala:58
+msgid "Requesting a restart failed. Restart manually to finish installing updates"
+msgstr ""
+"A solicitação de reinicialização automática falhou. Para finalizar as "
+"atualizações reinicie o sistema manualmente"
+
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:183
+#: src/Views/AppListUpdateView.vala:186
 msgid "Update All"
 msgstr "Atualizar tudo"
 
@@ -919,6 +914,15 @@ msgstr "Atualizado"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "Atualizar"
+
+#~ msgid "Are you sure you want to Restart?"
+#~ msgstr "Você tem certeza que deseja reiniciar?"
+
+#~ msgid "This will close all open applications and restart this device."
+#~ msgstr "Isto irá fechar todos os aplicativos abertos e reiniciar este dispositivo."
+
+#~ msgid "Restart"
+#~ msgstr "Reiniciar"
 
 #~ msgid "Finishing"
 #~ msgstr "Finalizando"

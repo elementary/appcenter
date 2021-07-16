@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-02 20:46+0000\n"
-"PO-Revision-Date: 2021-06-03 11:06+0000\n"
+"POT-Creation-Date: 2021-06-15 21:03+0000\n"
+"PO-Revision-Date: 2021-07-03 08:24+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/nb/>\n"
@@ -275,7 +275,7 @@ msgstr "Ukjent opprinnelse (ikke-bekreftet)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Programtilstand ikke satt som «Installert» i AppSenter for pakken: %s"
 
-#: src/Core/PackageKitBackend.vala:272
+#: src/Core/PackageKitBackend.vala:283
 #, c-format
 msgid "%s (local)"
 msgstr "%s (lokal)"
@@ -351,9 +351,7 @@ msgstr "Installer likevel"
 
 #: src/Dialogs/InstallFailDialog.vala:26
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
-msgstr ""
-"Dette kan være et midlertidig problem, eller ha sitt opphav i eksterne eller "
-"manuelt tillagte programvarepakkebrønner."
+msgstr "Dette kan være et midlertidig problem, eller ha sitt opphav i eksterne eller manuelt tillagte programvarepakkebrønner."
 
 #: src/Dialogs/InstallFailDialog.vala:37
 msgid "Failed to install app"
@@ -388,24 +386,6 @@ msgstr "Det kan endre systemet eller personlige filer uten tillatelse"
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
 msgid "Show non-curated warnings"
 msgstr "Vis ikke-gjennomsette innholdsadvarsler"
-
-#: src/Dialogs/RestartDialog.vala:40
-msgid "Are you sure you want to Restart?"
-msgstr "Er du sikker på at du vil ta en omstart?"
-
-#: src/Dialogs/RestartDialog.vala:41
-msgid "This will close all open applications and restart this device."
-msgstr "Dette vil lukke alle åpne programmer og starte denne enheten på ny."
-
-#: src/Dialogs/RestartDialog.vala:42
-msgid "Restart"
-msgstr "Omstart"
-
-#: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:196
-#: src/Dialogs/StripeDialog.vala:313
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
-msgid "Cancel"
-msgstr "Avbryt"
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
@@ -448,6 +428,11 @@ msgstr "CVC"
 #: src/Dialogs/StripeDialog.vala:189
 msgid "Privacy Policy"
 msgstr "Personvernspraksis"
+
+#: src/Dialogs/StripeDialog.vala:196 src/Dialogs/StripeDialog.vala:313
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
+msgid "Cancel"
+msgstr "Avbryt"
 
 #: src/Dialogs/StripeDialog.vala:198 src/Dialogs/StripeDialog.vala:312
 #, c-format
@@ -688,15 +673,24 @@ msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr "Laster ned en liste over tilgjengelige oppdateringer til OS-et og installerte programmer"
 
 #: src/Views/AppListUpdateView.vala:41
-msgid "A restart is required to complete the installation of updates"
+#, fuzzy
+#| msgid "A restart is required to complete the installation of updates"
+msgid "A restart is required to finish installing updates"
 msgstr "En omstart er påkrevd for å fullføre installasjonen av oppdateringer"
 
 #: src/Views/AppListUpdateView.vala:49
 msgid "Restart Now"
 msgstr "Omstart nå"
 
+#: src/Views/AppListUpdateView.vala:58
+#, fuzzy
+msgid "Requesting a restart failed. Restart manually to finish installing updates"
+msgstr ""
+"Kunne ikke forespørre omstart. Start på nytt manuelt for å fullføre "
+"installasjonen."
+
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:183
+#: src/Views/AppListUpdateView.vala:186
 msgid "Update All"
 msgstr "Oppdater alt"
 
@@ -918,6 +912,15 @@ msgstr "Oppdatert"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "Oppdater"
+
+#~ msgid "Are you sure you want to Restart?"
+#~ msgstr "Er du sikker på at du vil ta en omstart?"
+
+#~ msgid "This will close all open applications and restart this device."
+#~ msgstr "Dette vil lukke alle åpne programmer og starte denne enheten på ny."
+
+#~ msgid "Restart"
+#~ msgstr "Omstart"
 
 #~ msgid "Finishing"
 #~ msgstr "Ferdiggjør"

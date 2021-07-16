@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-02 20:46+0000\n"
+"POT-Creation-Date: 2021-06-15 21:03+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Alma Ibrašimović <belma.alma@hotmail.com>\n"
 "Language-Team: Bosnian <https://l10n.elementary.io/projects/appcenter/appcenter/bs/>\n"
@@ -285,7 +285,7 @@ msgstr ""
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
 
-#: src/Core/PackageKitBackend.vala:272
+#: src/Core/PackageKitBackend.vala:283
 #, fuzzy, c-format
 msgid "%s (local)"
 msgstr "%s (lokalno)"
@@ -405,24 +405,6 @@ msgstr ""
 msgid "Show non-curated warnings"
 msgstr "Prikaži upozorenja o sadržaju"
 
-#: src/Dialogs/RestartDialog.vala:40
-msgid "Are you sure you want to Restart?"
-msgstr "Jeste li sigurni da želite ponovo pokrenuti računar?"
-
-#: src/Dialogs/RestartDialog.vala:41
-msgid "This will close all open applications and restart this device."
-msgstr "Ovime će biti zatvorene sve otvorene aplikacije te će ovaj uređaj biti ponovo pokrenut."
-
-#: src/Dialogs/RestartDialog.vala:42
-msgid "Restart"
-msgstr "Ponovo pokreni"
-
-#: src/Dialogs/RestartDialog.vala:62 src/Dialogs/StripeDialog.vala:196
-#: src/Dialogs/StripeDialog.vala:313
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
-msgid "Cancel"
-msgstr "Otkaži"
-
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
 msgstr "Došlo je do greške prilikom obrade kartice. Molimo, pokušajte opet kasnije. Izvinjavamo se na nastalim neugodnostima."
@@ -464,6 +446,11 @@ msgstr "CVC kod"
 #: src/Dialogs/StripeDialog.vala:189
 msgid "Privacy Policy"
 msgstr "Politika privatnosti"
+
+#: src/Dialogs/StripeDialog.vala:196 src/Dialogs/StripeDialog.vala:313
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
+msgid "Cancel"
+msgstr "Otkaži"
 
 #: src/Dialogs/StripeDialog.vala:198 src/Dialogs/StripeDialog.vala:312
 #, c-format
@@ -710,15 +697,21 @@ msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr ""
 
 #: src/Views/AppListUpdateView.vala:41
-msgid "A restart is required to complete the installation of updates"
+#, fuzzy
+#| msgid "A restart is required to complete the installation of updates"
+msgid "A restart is required to finish installing updates"
 msgstr "Ponovno pokretanje računara je potrebno kako bi se završila instalacija ažuriranja"
 
 #: src/Views/AppListUpdateView.vala:49
 msgid "Restart Now"
 msgstr "Ponovo pokreni sada"
 
+#: src/Views/AppListUpdateView.vala:58
+msgid "Requesting a restart failed. Restart manually to finish installing updates"
+msgstr ""
+
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
-#: src/Views/AppListUpdateView.vala:183
+#: src/Views/AppListUpdateView.vala:186
 msgid "Update All"
 msgstr "Ažuriraj sve"
 
@@ -943,6 +936,15 @@ msgstr "Ažurno"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
 msgstr "Ažuriraj"
+
+#~ msgid "Are you sure you want to Restart?"
+#~ msgstr "Jeste li sigurni da želite ponovo pokrenuti računar?"
+
+#~ msgid "This will close all open applications and restart this device."
+#~ msgstr "Ovime će biti zatvorene sve otvorene aplikacije te će ovaj uređaj biti ponovo pokrenut."
+
+#~ msgid "Restart"
+#~ msgstr "Ponovo pokreni"
 
 #, fuzzy
 #~| msgid "Finished"
