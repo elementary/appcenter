@@ -1,3 +1,49 @@
+appcenter (3.6.0) bionic; urgency=medium
+
+  * Release 3.6.0 (#1552)
+  * Update translation files
+  * Update translation template
+  * AppData: Update release notes (#1551)
+  * AppInfoView: Fix truncated footer links (#1542)
+  * Set contextual icons in notifications (#1384)
+  * AppListUpdateView: Inform instead of throwing restart dialog (#1502)
+  * ScreenshotCache: don't bail if modified time is null (#1539)
+  * Package: Update APPCENTER_PACKAGE_ORIGIN (#1525)
+  * Hide apps from the Ubuntu repos (#1492)
+  * Throw a dialog on failure (#1496)
+  * Allow build with appstream 0.14.x (#1493)
+  * Use `client.resolve_sync` in `get_package_internal` (#1491)
+  * Fix using back button to return to category (#1490)
+  * AppListUpdateView: Remove "update all" complexity (#1366)
+  * Update banner buttons for greenfield (#1483)
+  * Include RDNN'd icon (#1383)
+  * README: Remove Bountysource badge
+  * Gtk.Dialog → Granite.Dialog (#1481)
+  * AbstractView: Use Gtk.Stack instead of Hdy.Deck (#1485)
+  * Perform flatpak uninstalls with a transaction (#1460)
+  * LINGUAS: sort, remove en_US
+  * Arrow: use insensitive_bg_color (#1464)
+  * Throw toast when app is installed (#1456)
+  * POTFILES: View → AbstractView
+  * AbstractView: Use Deck instead of Stack (#1436)
+  * Application: Consistent copy with Sideload (#1458)
+  * Application: "successfully" is redundant (#1457)
+  * BackendAggregator: Use Gtk.App inhibit (#1409)
+  * Remove 'Back to Home' button on clearing the search entry (#1449)
+  * Isolate banner CSS (#1447)
+  * SharePopover: Get appinfo for mailto (#1443)
+  * README.md: List libhandy dependency as libhandy-1-dev (#1441)
+  * Allow returning to home from search (#1424)
+  * Replace deprecated code (#1418)
+  * AppData: Fix a typo "beeen" to "been" (#1437)
+  * Use Granite rounded card styles (#1435)
+  * MainWindow: Use Hdy.Window and Hdy.Headerbar (#1434)
+  * AppInfoView: Use libhandy for screenshots (#1426)
+  * Prefer dark (#1289)
+  * Backers: Anonymous → Kyle Steere
+
+ -- elementary Builds Team <builds@elementary.io>  Fri, 16 Jul 2021 19:01:34 +0000
+
 appcenter (3.5.1) bionic; urgency=medium
 
   * Release 3.5.1 (#1429)
