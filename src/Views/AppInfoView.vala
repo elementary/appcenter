@@ -229,10 +229,23 @@ namespace AppCenter.Views {
             app_description.pixels_inside_wrap = 3;
             app_description.wrap_mode = Gtk.WrapMode.WORD_CHAR;
 
-            var links_grid = new Gtk.Grid ();
-            links_grid.column_spacing = 12;
-            links_grid.halign = Gtk.Align.END;
-            links_grid.hexpand = true;
+            var links_grid = new Gtk.Grid () {
+                column_spacing = 12
+            };
+
+            var project_license = package.component.project_license;
+            if (project_license != null) {
+                string? license_copy = null;
+                string? license_url = null;
+
+                parse_license (project_license, out license_copy, out license_url);
+
+                var license_button = new UrlButton (_(license_copy), license_url, "text-x-copying-symbolic") {
+                    hexpand = true
+                };
+
+                links_grid.add (license_button);
+            }
 
             var homepage_url = package_component.get_url (AppStream.UrlKind.HOMEPAGE);
             if (homepage_url != null) {
@@ -242,13 +255,13 @@ namespace AppCenter.Views {
 
             var translate_url = package_component.get_url (AppStream.UrlKind.TRANSLATE);
             if (translate_url != null) {
-                var translate_button = new UrlButton (_("Suggest Translations"), translate_url, "preferences-desktop-locale-symbolic");
+                var translate_button = new UrlButton (_("Translate"), translate_url, "preferences-desktop-locale-symbolic");
                 links_grid.add (translate_button);
             }
 
             var bugtracker_url = package_component.get_url (AppStream.UrlKind.BUGTRACKER);
             if (bugtracker_url != null) {
-                var bugtracker_button = new UrlButton (_("Report a Problem"), bugtracker_url, "bug-symbolic");
+                var bugtracker_button = new UrlButton (_("Send Feedback"), bugtracker_url, "bug-symbolic");
                 links_grid.add (bugtracker_button);
             }
 
@@ -379,77 +392,6 @@ namespace AppCenter.Views {
                 banner_provider,
                 Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
             );
-
-            var project_license = package.component.project_license;
-            if (project_license != null) {
-                string? license_copy = null;
-                string? license_url = null;
-
-                // NOTE: Ideally this would be handled in AppStream: https://github.com/ximion/appstream/issues/107
-                if (project_license.has_prefix ("LicenseRef")) {
-                    // i.e. `LicenseRef-proprietary=https://example.com`
-                    string[] split_license = project_license.split_set ("=", 2);
-                    if (split_license[1] != null) {
-                        license_url = split_license[1];
-                    }
-
-                    string license_type = split_license[0].split_set ("-", 2)[1].down ();
-                    switch (license_type) {
-                        case "public-domain":
-                            // TRANSLATORS: See the Wikipedia page
-                            license_copy = _("Public Domain");
-                            if (license_url == null) {
-                                // TRANSLATORS: Replace the link with the version for your language
-                                license_url = _("https://en.wikipedia.org/wiki/Public_domain");
-                            }
-                            break;
-                        case "free":
-                            // TRANSLATORS: Freedom, not price. See the GNU page.
-                            license_copy = _("Free Software");
-                            if (license_url == null) {
-                                // TRANSLATORS: Replace the link with the version for your language
-                                license_url = _("https://www.gnu.org/philosophy/free-sw");
-                            }
-                            break;
-                        case "proprietary":
-                            license_copy = _("Proprietary");
-                            break;
-                        default:
-                            license_copy = _("Unknown License");
-                    }
-                } else {
-                    license_copy = project_license;
-                    license_url = "https://choosealicense.com/licenses/";
-
-                    switch (project_license) {
-                        case "Apache-2.0":
-                            license_url = license_url + "apache-2.0";
-                            break;
-                        case "GPL-2":
-                        case "GPL-2.0":
-                        case "GPL-2.0+":
-                            license_url = license_url + "gpl-2.0";
-                            break;
-                        case "GPL-3":
-                        case "GPL-3.0":
-                        case "GPL-3.0+":
-                            license_url = license_url + "gpl-3.0";
-                            break;
-                        case "LGPL-2.1":
-                        case "LGPL-2.1+":
-                            license_url = license_url + "lgpl-2.1";
-                            break;
-                        case "MIT":
-                            license_url = license_url + "mit";
-                            break;
-                    }
-                }
-
-                var license_button = new UrlButton (_(license_copy), license_url, "text-x-copying-symbolic");
-                license_button.hexpand = true;
-
-                content_grid.attach (license_button, 0, 7);
-            }
 
             content_grid.attach (links_grid, 1, 7);
 
@@ -800,6 +742,72 @@ namespace AppCenter.Views {
 
                     return false;
                 });
+            }
+        }
+
+        private void parse_license (string project_license, out string license_copy, out string license_url) {
+            license_copy = null;
+            license_url = null;
+
+            // NOTE: Ideally this would be handled in AppStream: https://github.com/ximion/appstream/issues/107
+            if (project_license.has_prefix ("LicenseRef")) {
+                // i.e. `LicenseRef-proprietary=https://example.com`
+                string[] split_license = project_license.split_set ("=", 2);
+                if (split_license[1] != null) {
+                    license_url = split_license[1];
+                }
+
+                string license_type = split_license[0].split_set ("-", 2)[1].down ();
+                switch (license_type) {
+                    case "public-domain":
+                        // TRANSLATORS: See the Wikipedia page
+                        license_copy = _("Public Domain");
+                        if (license_url == null) {
+                            // TRANSLATORS: Replace the link with the version for your language
+                            license_url = _("https://en.wikipedia.org/wiki/Public_domain");
+                        }
+                        break;
+                    case "free":
+                        // TRANSLATORS: Freedom, not price. See the GNU page.
+                        license_copy = _("Free Software");
+                        if (license_url == null) {
+                            // TRANSLATORS: Replace the link with the version for your language
+                            license_url = _("https://www.gnu.org/philosophy/free-sw");
+                        }
+                        break;
+                    case "proprietary":
+                        license_copy = _("Proprietary");
+                        break;
+                    default:
+                        license_copy = _("Unknown License");
+                        break;
+                }
+            } else {
+                license_copy = project_license;
+                license_url = "https://choosealicense.com/licenses/";
+
+                switch (project_license) {
+                    case "Apache-2.0":
+                        license_url = license_url + "apache-2.0";
+                        break;
+                    case "GPL-2":
+                    case "GPL-2.0":
+                    case "GPL-2.0+":
+                        license_url = license_url + "gpl-2.0";
+                        break;
+                    case "GPL-3":
+                    case "GPL-3.0":
+                    case "GPL-3.0+":
+                        license_url = license_url + "gpl-3.0";
+                        break;
+                    case "LGPL-2.1":
+                    case "LGPL-2.1+":
+                        license_url = license_url + "lgpl-2.1";
+                        break;
+                    case "MIT":
+                        license_url = license_url + "mit";
+                        break;
+                }
             }
         }
 
