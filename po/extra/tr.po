@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-16 16:12+0000\n"
-"PO-Revision-Date: 2021-07-19 20:20+0000\n"
+"PO-Revision-Date: 2021-07-20 00:37+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/extra/"
 "tr/>\n"
@@ -72,7 +72,7 @@ msgstr "Düğmelerin stili ve kontrastı iyileştirildi"
 
 #: data/io.elementary.appcenter.appdata.xml.in:26
 msgid "More concise and consistent language"
-msgstr ""
+msgstr "Daha özlü ve tutarlı bir dil"
 
 #: data/io.elementary.appcenter.appdata.xml.in:27
 #: data/io.elementary.appcenter.appdata.xml.in:48
@@ -88,36 +88,37 @@ msgid "Updated translations"
 msgstr "Çeviriler güncellendi"
 
 #: data/io.elementary.appcenter.appdata.xml.in:29
-#, fuzzy
-#| msgid "Fixes"
 msgid "Fixes:"
-msgstr "Düzeltmeler"
+msgstr "Düzeltmeler:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
 msgid "Fully uninstall Flatpaks, including locales"
-msgstr ""
+msgstr "Yerel ayarlar dahil olmak üzere Flatpak uygulamaları tamamen kaldırılır"
 
 #: data/io.elementary.appcenter.appdata.xml.in:32
 msgid "Still fetch screenshots from remotes that don't include proper headers"
 msgstr ""
+"Uygun başlıklar içermeyen ekran görüntülerini yine de uzak sunuculardan alın"
 
 #: data/io.elementary.appcenter.appdata.xml.in:33
 msgid "Fix truncated footer buttons"
-msgstr ""
+msgstr "Kesilmiş altbilgi düğmeleri düzeltildi"
 
 #: data/io.elementary.appcenter.appdata.xml.in:34
 msgid "Only show Mail button when a usable mail app is installed"
 msgstr ""
+"Posta düğmesini yalnızca kullanılabilir bir posta uygulaması yüklendiğinde "
+"göster"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
 msgid "Fix some apps incorrectly showing as not installed during search"
 msgstr ""
+"Arama sırasında hatalı olarak yüklenmemiş olarak gösterilen bazı uygulamalar "
+"düzeltildi"
 
 #: data/io.elementary.appcenter.appdata.xml.in:36
-#, fuzzy
-#| msgid "Show an error dialog if an installation fails"
 msgid "Show an error dialog when opening an app fails"
-msgstr "Bir yükleme başarısız olursa bir hata iletişim kutusu göster"
+msgstr "Bir uygulamayı açma başarısız olursa bir hata iletişim kutusu göster"
 
 #: data/io.elementary.appcenter.appdata.xml.in:42
 #: data/io.elementary.appcenter.appdata.xml.in:58
