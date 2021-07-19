@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-16 16:12+0000\n"
-"PO-Revision-Date: 2021-01-30 02:47+0000\n"
-"Last-Translator: Uwe S <saabisto@gmx.de>\n"
+"PO-Revision-Date: 2021-07-20 00:37+0000\n"
+"Last-Translator: supaeasy <ismo+github@wolffson.ch>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/appcenter/extra/"
 "de/>\n"
 "Language: de\n"
@@ -25,11 +25,6 @@ msgid "Browse and manage apps"
 msgstr "Apps durchsuchen und verwalten"
 
 #: data/io.elementary.appcenter.appdata.xml.in:11
-#, fuzzy
-#| msgid ""
-#| "An app store for indie and open source developers. Browse by categories "
-#| "or search and discover new apps. AppCenter is also used for updating your "
-#| "system to the latest and greatest version for new features and fixes."
 msgid ""
 "The open source, pay-what-you-want app store from elementary. Reviewed and "
 "curated by elementary to ensure a native, privacy-respecting, and secure "
@@ -37,48 +32,46 @@ msgid ""
 "is also used for updating your system to the latest and greatest version for "
 "new features and fixes."
 msgstr ""
-"Ein App Store für Indie- und Open-Source-Entwickler. Durchstöbern Sie die "
-"Kategorien oder suchen und entdecken Sie neue Anwendungen. AppCenter wird "
-"außerdem zum Aktualisieren des Systems genutzt. Somit erhalten Sie die "
-"aktuellste und beste Software mit allen neuen Funktionen und Verbesserungen."
+"Der Open Source, pay-what-you-want AppStore von elementary. Gepflegt und "
+"kuratiert von elementary um eine native, datenschutzfreundliche und sichere "
+"Erfahrung zu bieten. Stöbern Sie durch Kategorien oder Suchen und Entdecken "
+"Sie neue Apps. AppCenter wird außerdem zum Aktualisieren Ihres Systems "
+"genutzt. Somit erhalten Sie die aktuellste und beste Software mit allen "
+"neuen Funktionen und Verbesserungen."
 
 #: data/io.elementary.appcenter.appdata.xml.in:16
-#, fuzzy
-#| msgid "New features"
 msgid "New features:"
-msgstr "Neue Funktionen"
+msgstr "Neue Funktionen:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Show in-app notification when an app is installed"
-msgstr ""
+msgstr "Zeige in-App Benachrichtigung, wenn die App installiert ist"
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
 msgid "Add contextual badges to notifications"
-msgstr ""
+msgstr "Fügt kontextbezogene Badges zu Benachrichtigungen hinzu"
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
-#, fuzzy
-#| msgid "Keyboard improvements"
 msgid "Improvements:"
-msgstr "Verbesserungen an der Tastatur"
+msgstr "Verbesserungen:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Ensure Home button is usable during search"
-msgstr ""
+msgstr "Sicherstellen, dass der Home-Button während der Suche benutzbar bleibt"
 
 #: data/io.elementary.appcenter.appdata.xml.in:24
 msgid "Ask the user to manually restart if we can't ask the session to prompt"
 msgstr ""
+"User nach manuellem Neustart fragen, falls wir dies nicht in der Session tun "
+"können"
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
-#, fuzzy
-#| msgid "Improve update badge styling and category styling"
 msgid "Improve styling and contrast of buttons"
-msgstr "Gestaltung von Aktualisierungsemblems und Kategorie optimiert"
+msgstr "Gestaltung und Kontrast von Buttons verbessert"
 
 #: data/io.elementary.appcenter.appdata.xml.in:26
 msgid "More concise and consistent language"
-msgstr ""
+msgstr "Gekürzte und einheitlichere Sprachgebung"
 
 #: data/io.elementary.appcenter.appdata.xml.in:27
 #: data/io.elementary.appcenter.appdata.xml.in:48
@@ -94,36 +87,35 @@ msgid "Updated translations"
 msgstr "Aktualisierte Übersetzungen"
 
 #: data/io.elementary.appcenter.appdata.xml.in:29
-#, fuzzy
-#| msgid "Fixes"
 msgid "Fixes:"
-msgstr "Fehlerbehebungen"
+msgstr "Fehlerbehebungen:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
 msgid "Fully uninstall Flatpaks, including locales"
-msgstr ""
+msgstr "Deinstalliert Flatpacks vollständig, inklusive locales"
 
 #: data/io.elementary.appcenter.appdata.xml.in:32
 msgid "Still fetch screenshots from remotes that don't include proper headers"
 msgstr ""
+"Auch Screenshots von Remotes erhalten, die keine korrekten Header enthalten"
 
 #: data/io.elementary.appcenter.appdata.xml.in:33
 msgid "Fix truncated footer buttons"
-msgstr ""
+msgstr "Beheben eines Fehlers, der zu angeschnittenen Footer Buttons führte"
 
 #: data/io.elementary.appcenter.appdata.xml.in:34
 msgid "Only show Mail button when a usable mail app is installed"
-msgstr ""
+msgstr "Zeige Mail-Button nur, wenn eine verwendbare Mail-App installiert ist"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
 msgid "Fix some apps incorrectly showing as not installed during search"
 msgstr ""
+"Fehler behoben, der dazu führte, dass Apps in der Suche fälschlicherweise "
+"als nicht installiert angezeigt wurden"
 
 #: data/io.elementary.appcenter.appdata.xml.in:36
-#, fuzzy
-#| msgid "Show an error dialog if an installation fails"
 msgid "Show an error dialog when opening an app fails"
-msgstr "Zeige einen Fehlerdialog, falls eine Installation fehlschlägt"
+msgstr "Zeige einen Fehlerdialog, falls das Öffnen einer App fehlschlägt"
 
 #: data/io.elementary.appcenter.appdata.xml.in:42
 #: data/io.elementary.appcenter.appdata.xml.in:58
@@ -136,7 +128,7 @@ msgstr "Fehlerbehebungen"
 
 #: data/io.elementary.appcenter.appdata.xml.in:44
 msgid "Correctly display names of Flatpak runtime updates"
-msgstr ""
+msgstr "Namen von Flatpak runtime Updates korrekt anzeigen"
 
 #: data/io.elementary.appcenter.appdata.xml.in:46
 #: data/io.elementary.appcenter.appdata.xml.in:63
@@ -153,27 +145,31 @@ msgstr "Neue Funktionen"
 
 #: data/io.elementary.appcenter.appdata.xml.in:56
 msgid "Support system-wide Flatpak remotes"
-msgstr ""
+msgstr "Unterstützung systemweiter Flatpak Remotes"
 
 #: data/io.elementary.appcenter.appdata.xml.in:60
 msgid "Fix Flatpak runtime updates getting stuck"
 msgstr ""
+"Behebung eines Fehlers, der dazu führte, dass Flatpak runtime Updates "
+"steckenblieben"
 
 #: data/io.elementary.appcenter.appdata.xml.in:61
 msgid "Fix long origin comboboxes breaking the header layout"
 msgstr ""
+"Fehler behoben, der dazu führte, dass lange comboboxen das Header-Layout "
+"beeinträchtigten"
 
 #: data/io.elementary.appcenter.appdata.xml.in:65
 msgid ""
 "When apps are available from multiple sources, prefer installed version, "
 "then prefer Flatpak"
 msgstr ""
+"Falls Apps aus mehreren Quellen verfügbar sind, bevorzuge installierte "
+"Version, dann Flatpak"
 
 #: data/io.elementary.appcenter.appdata.xml.in:66
-#, fuzzy
-#| msgid "Bug fixes and improve performance."
 msgid "Improve search performance"
-msgstr "Fehlerbehebungen und Leistungsverbesserungen"
+msgstr "Leistungsverbesserungen in der Suche"
 
 #: data/io.elementary.appcenter.appdata.xml.in:67
 msgid "Improve update badge styling and category styling"
@@ -182,10 +178,12 @@ msgstr "Gestaltung von Aktualisierungsemblems und Kategorie optimiert"
 #: data/io.elementary.appcenter.appdata.xml.in:76
 msgid "Ensure AppCenter is reopened at the correct position"
 msgstr ""
+"Sicherstellen, dass das AppCenter an der korrekten Stelle erneut geöffnet "
+"wird"
 
 #: data/io.elementary.appcenter.appdata.xml.in:77
 msgid "Clicking the updates badge in the header navigates to the updates view"
-msgstr ""
+msgstr "Klick auf das Updates-Badge im Header navigiert zur Update-Ansicht"
 
 #: data/io.elementary.appcenter.appdata.xml.in:89
 msgid "Ensure all updatable Flatpak runtimes are listed for update"
@@ -588,10 +586,6 @@ msgstr ""
 "Authentifizierungsdialog angezeigt"
 
 #: data/io.elementary.appcenter.appdata.xml.in:366
-#, fuzzy
-#| msgid ""
-#| "Search performance has beeen improved, the category name is now shown on "
-#| "the headbar and minor bugs have been fixed."
 msgid ""
 "Search performance has been improved, the category name is now shown on the "
 "headbar and minor bugs have been fixed."
@@ -616,10 +610,8 @@ msgid "@APP_NAME@"
 msgstr "@APP_NAME@"
 
 #: data/io.elementary.appcenter.desktop.in.in:6
-#, fuzzy
-#| msgid "@APP_NAME@"
 msgid "@PROJECT_NAME@"
-msgstr "@APP_NAME@"
+msgstr "@PROJECT_NAME@"
 
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
