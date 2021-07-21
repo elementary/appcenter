@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-16 16:12+0000\n"
-"PO-Revision-Date: 2021-07-20 00:37+0000\n"
+"PO-Revision-Date: 2021-07-21 09:38+0000\n"
 "Last-Translator: supaeasy <ismo+github@wolffson.ch>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/appcenter/extra/"
 "de/>\n"
@@ -335,7 +335,7 @@ msgstr ""
 msgid "Apps in list views now load in the correct order when scrolling"
 msgstr ""
 "Apps in der Listenansicht werden jetzt beim Scrollen in der korrekten "
-"Reihenfolge  geladen"
+"Reihenfolge geladen"
 
 #: data/io.elementary.appcenter.appdata.xml.in:167
 msgid "Prevent unescaped XML entities from appearing in application names"
@@ -456,7 +456,7 @@ msgstr "Verbesserung an der Wiederherstellung des Fensterzustands"
 
 #: data/io.elementary.appcenter.appdata.xml.in:213
 msgid "Prevent action buttons from jumping around"
-msgstr "Verhindern von herumspringenden  Aktionsschaltflächen"
+msgstr "Verhindern von herumspringenden Aktionsschaltflächen"
 
 #: data/io.elementary.appcenter.appdata.xml.in:214
 msgid "Remove reset paid apps gsettings key"
@@ -503,7 +503,7 @@ msgstr "Mathematik zur Kategorie \"Wissenschaft\" hinzufügen"
 
 #: data/io.elementary.appcenter.appdata.xml.in:226
 msgid "Relax email address validator"
-msgstr "Relax email address validator"
+msgstr "Email Addressen weniger streng validieren"
 
 #: data/io.elementary.appcenter.appdata.xml.in:227
 msgid "Present update availability more accurately"
@@ -526,7 +526,7 @@ msgstr "Kategorie Grafik überarbeitet"
 #: data/io.elementary.appcenter.appdata.xml.in:338
 #: data/io.elementary.appcenter.appdata.xml.in:347
 msgid "Bug fixes and improve performance."
-msgstr "Fehlerbehebungen und Leistungsverbesserungen"
+msgstr "Fehlerbehebungen und Leistungsverbesserungen."
 
 #: data/io.elementary.appcenter.appdata.xml.in:245
 msgid "Improve transaction success rate"
