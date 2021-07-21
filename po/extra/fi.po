@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-16 16:12+0000\n"
-"PO-Revision-Date: 2020-01-10 14:07+0000\n"
-"Last-Translator: Veli-Pekka Samuli Finnilä <vpf@tuta.io>\n"
+"PO-Revision-Date: 2021-07-21 18:50+0000\n"
+"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/appcenter/extra/"
 "fi/>\n"
 "Language: fi\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
@@ -43,7 +43,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:16
 msgid "New features:"
-msgstr ""
+msgstr "Uudet ominaisuudet:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Show in-app notification when an app is installed"
@@ -90,7 +90,7 @@ msgstr "Uusia kielikäännöksiä"
 
 #: data/io.elementary.appcenter.appdata.xml.in:29
 msgid "Fixes:"
-msgstr ""
+msgstr "Korjaukset:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
 msgid "Fully uninstall Flatpaks, including locales"
@@ -142,7 +142,7 @@ msgstr "Tarkista päivitykset"
 #: data/io.elementary.appcenter.appdata.xml.in:54
 #: data/io.elementary.appcenter.appdata.xml.in:100
 msgid "New features"
-msgstr ""
+msgstr "Uudet ominaisuudet"
 
 #: data/io.elementary.appcenter.appdata.xml.in:56
 msgid "Support system-wide Flatpak remotes"
@@ -352,7 +352,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:190
 msgid "Add support for Flatpak apps"
-msgstr ""
+msgstr "Tuki Flatpak-sovelluksille"
 
 #: data/io.elementary.appcenter.appdata.xml.in:191
 msgid "Warn about non-curated apps"
@@ -581,11 +581,11 @@ msgstr ""
 
 #: data/io.elementary.appcenter.policy.in:10
 msgid "Update software"
-msgstr ""
+msgstr "Päivitä ohjelmisto"
 
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to update software"
-msgstr ""
+msgstr "Ohjelmiston päivittäminen vaatii tunnistautumisen"
 
 #~ msgid "@DESKTOP_ICON@"
 #~ msgstr "@DESKTOP_ICON@"
