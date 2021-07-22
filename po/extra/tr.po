@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-22 17:26+0000\n"
-"PO-Revision-Date: 2021-07-20 00:37+0000\n"
+"PO-Revision-Date: 2021-07-23 00:20+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/extra/"
 "tr/>\n"
@@ -45,18 +45,16 @@ msgid "Fixes:"
 msgstr "Düzeltmeler:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
-#, fuzzy
-#| msgid "Add support for Flatpak apps"
 msgid "Show brand colors and support payments for Flatpak apps"
-msgstr "Flatpak uygulamaları için destek ekle"
+msgstr " "
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
 msgid "Fix missing mail icon in payments dialog"
-msgstr ""
+msgstr " "
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 msgid "Fix missing privacy policy in payments dialog"
-msgstr ""
+msgstr " "
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 #: data/io.elementary.appcenter.appdata.xml.in:35
