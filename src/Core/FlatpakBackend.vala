@@ -827,6 +827,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
         root->set_prop ("origin", origin_name);
 
+        // FIXME: This is a workaround for https://github.com/ximion/appstream/issues/339
         // Remap the <metadata> tag that contains the custom x-appcenter-xxx values to
         // <custom> as expected by the AppStream parser
         Xml.XPath.Context cntx = new Xml.XPath.Context (doc);
