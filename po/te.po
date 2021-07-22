@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-16 16:12+0000\n"
+"POT-Creation-Date: 2021-07-22 16:59+0000\n"
 "PO-Revision-Date: 2016-01-09 14:46+0000\n"
 "Last-Translator: nrao <nagamalli.s@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -97,7 +97,7 @@ msgstr "ప్యాకేజీలు తొలగించబడుతున�
 msgid "Downloading"
 msgstr ""
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:910
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:925
 msgid "Installing"
 msgstr ""
 
@@ -142,9 +142,9 @@ msgid "Finished"
 msgstr "పూర్తయింది"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:919 src/Core/FlatpakBackend.vala:947
-#: src/Core/FlatpakBackend.vala:1054 src/Core/FlatpakBackend.vala:1082
-#: src/Core/FlatpakBackend.vala:1227 src/Core/FlatpakBackend.vala:1253
+#: src/Core/FlatpakBackend.vala:934 src/Core/FlatpakBackend.vala:962
+#: src/Core/FlatpakBackend.vala:1069 src/Core/FlatpakBackend.vala:1097
+#: src/Core/FlatpakBackend.vala:1242 src/Core/FlatpakBackend.vala:1268
 msgid "Cancelling"
 msgstr "రద్దుచేస్తోంది"
 
@@ -233,13 +233,13 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "%u నిర్వహణ పద్ధతి భాగములకు సవరణ లభ్యం"
 msgstr[1] "%u నిర్వహణ పద్ధతి భాగములకు సవరణలు లభ్యం"
 
-#: src/Core/FlatpakBackend.vala:1045
+#: src/Core/FlatpakBackend.vala:1060
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "వ్యవస్థాపనను తీసివెయ్యి"
 
-#: src/Core/FlatpakBackend.vala:1218
+#: src/Core/FlatpakBackend.vala:1233
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"

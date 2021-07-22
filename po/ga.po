@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-16 16:12+0000\n"
+"POT-Creation-Date: 2021-07-22 16:59+0000\n"
 "PO-Revision-Date: 2018-06-18 00:03+0000\n"
 "Last-Translator: Aoibhe Ní Ghnímh <aoibhe.agnew@gmail.com>\n"
 "Language-Team: Irish <https://weblate.elementary.io/projects/appcenter/appcenter/ga/>\n"
@@ -98,7 +98,7 @@ msgstr "Pacáistí á mbaint"
 msgid "Downloading"
 msgstr "Á Íoslódáil"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:910
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:925
 msgid "Installing"
 msgstr "Á Shuiteáil"
 
@@ -143,9 +143,9 @@ msgid "Finished"
 msgstr ""
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:919 src/Core/FlatpakBackend.vala:947
-#: src/Core/FlatpakBackend.vala:1054 src/Core/FlatpakBackend.vala:1082
-#: src/Core/FlatpakBackend.vala:1227 src/Core/FlatpakBackend.vala:1253
+#: src/Core/FlatpakBackend.vala:934 src/Core/FlatpakBackend.vala:962
+#: src/Core/FlatpakBackend.vala:1069 src/Core/FlatpakBackend.vala:1097
+#: src/Core/FlatpakBackend.vala:1242 src/Core/FlatpakBackend.vala:1268
 msgid "Cancelling"
 msgstr ""
 
@@ -234,13 +234,13 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Core/FlatpakBackend.vala:1045
+#: src/Core/FlatpakBackend.vala:1060
 #, fuzzy
 #| msgid "Installing"
 msgid "Uninstalling"
 msgstr "Á Shuiteáil"
 
-#: src/Core/FlatpakBackend.vala:1218
+#: src/Core/FlatpakBackend.vala:1233
 #, fuzzy
 #| msgid "Waiting"
 msgid "Updating"

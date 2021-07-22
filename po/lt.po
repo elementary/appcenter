@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-16 16:12+0000\n"
+"POT-Creation-Date: 2021-07-22 16:59+0000\n"
 "PO-Revision-Date: 2019-10-12 13:23+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://l10n.elementary.io/projects/appcenter/appcenter/lt/>\n"
@@ -102,7 +102,7 @@ msgstr "Šalinami paketai"
 msgid "Downloading"
 msgstr "Atsiunčiama"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:910
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:925
 msgid "Installing"
 msgstr "Diegiama"
 
@@ -147,9 +147,9 @@ msgid "Finished"
 msgstr "Užbaigta"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:919 src/Core/FlatpakBackend.vala:947
-#: src/Core/FlatpakBackend.vala:1054 src/Core/FlatpakBackend.vala:1082
-#: src/Core/FlatpakBackend.vala:1227 src/Core/FlatpakBackend.vala:1253
+#: src/Core/FlatpakBackend.vala:934 src/Core/FlatpakBackend.vala:962
+#: src/Core/FlatpakBackend.vala:1069 src/Core/FlatpakBackend.vala:1097
+#: src/Core/FlatpakBackend.vala:1242 src/Core/FlatpakBackend.vala:1268
 msgid "Cancelling"
 msgstr "Atšaukiama"
 
@@ -240,13 +240,13 @@ msgstr[0] "Jūsų sistemai prieinamas %u atnaujinimas"
 msgstr[1] "Jūsų sistemai prieinami %u atnaujinimai"
 msgstr[2] "Jūsų sistemai prieinama %u atnaujinimų"
 
-#: src/Core/FlatpakBackend.vala:1045
+#: src/Core/FlatpakBackend.vala:1060
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "Šalinti"
 
-#: src/Core/FlatpakBackend.vala:1218
+#: src/Core/FlatpakBackend.vala:1233
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
