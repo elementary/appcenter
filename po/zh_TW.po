@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-22 17:23+0000\n"
+"POT-Creation-Date: 2021-07-22 17:26+0000\n"
 "PO-Revision-Date: 2020-07-01 23:02+0000\n"
 "Last-Translator: Nan-Hung Hsieh <nhsieh@cvm.tamu.edu>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/appcenter/appcenter/zh_Hant/>\n"
@@ -407,122 +407,122 @@ msgstr "支付"
 msgid "Pay $%d for %s"
 msgstr "為 %2$s 支付 $%1$d 元"
 
-#: src/Dialogs/StripeDialog.vala:96
+#: src/Dialogs/StripeDialog.vala:97
 msgid "This is a one time payment. Your email address is only used to send you a receipt."
 msgstr "這是一次性付款。您的電子信箱位址記錄僅用於收據之寄送。"
 
-#: src/Dialogs/StripeDialog.vala:106
+#: src/Dialogs/StripeDialog.vala:98
+msgid "Privacy Policy"
+msgstr "隱私權政策"
+
+#: src/Dialogs/StripeDialog.vala:111
 msgid "Email"
 msgstr "電子郵件"
 
-#: src/Dialogs/StripeDialog.vala:108
+#: src/Dialogs/StripeDialog.vala:113
 msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
 msgstr "您的電子郵件位址只會用來傳送收據。我們不會自行為您訂閱任何郵遞論壇。"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
-#: src/Dialogs/StripeDialog.vala:127
+#: src/Dialogs/StripeDialog.vala:132
 msgid "MM / YY"
 msgstr "月／年"
 
-#: src/Dialogs/StripeDialog.vala:147
+#: src/Dialogs/StripeDialog.vala:152
 msgid "CVC"
 msgstr "CVC"
 
-#: src/Dialogs/StripeDialog.vala:189
-msgid "Privacy Policy"
-msgstr "隱私權政策"
-
-#: src/Dialogs/StripeDialog.vala:196 src/Dialogs/StripeDialog.vala:313
+#: src/Dialogs/StripeDialog.vala:194 src/Dialogs/StripeDialog.vala:311
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:157
 msgid "Cancel"
 msgstr "取消"
 
-#: src/Dialogs/StripeDialog.vala:198 src/Dialogs/StripeDialog.vala:312
+#: src/Dialogs/StripeDialog.vala:196 src/Dialogs/StripeDialog.vala:310
 #, c-format
 msgid "Pay $%d.00"
 msgstr "支付 $%d.00"
 
-#: src/Dialogs/StripeDialog.vala:241
+#: src/Dialogs/StripeDialog.vala:239
 msgid "Processing"
 msgstr "處理中"
 
-#: src/Dialogs/StripeDialog.vala:266
+#: src/Dialogs/StripeDialog.vala:264
 msgid "There Was a Problem Processing Your Payment"
 msgstr "處理您的支付時遭遇問題"
 
-#: src/Dialogs/StripeDialog.vala:304
+#: src/Dialogs/StripeDialog.vala:302
 msgid "Pay Later"
 msgstr "稍後支付"
 
-#: src/Dialogs/StripeDialog.vala:305
+#: src/Dialogs/StripeDialog.vala:303
 msgid "Retry"
 msgstr "重試"
 
-#: src/Dialogs/StripeDialog.vala:511 src/Dialogs/StripeDialog.vala:576
+#: src/Dialogs/StripeDialog.vala:509 src/Dialogs/StripeDialog.vala:574
 msgid "The card number is incorrect. Please try again using the correct card number."
 msgstr "卡號不正確。請使用正確卡號重試一次。"
 
-#: src/Dialogs/StripeDialog.vala:513
+#: src/Dialogs/StripeDialog.vala:511
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
 msgstr "過期月份無效。請使用正確的過期資訊重試。"
 
-#: src/Dialogs/StripeDialog.vala:515 src/Dialogs/StripeDialog.vala:573
+#: src/Dialogs/StripeDialog.vala:513 src/Dialogs/StripeDialog.vala:571
 msgid "The expiration year is invalid. Please try again using the correct expiration date."
 msgstr "過期年份無效。請使用正確的過期資訊重試。"
 
-#: src/Dialogs/StripeDialog.vala:518 src/Dialogs/StripeDialog.vala:571
+#: src/Dialogs/StripeDialog.vala:516 src/Dialogs/StripeDialog.vala:569
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr "CVC 碼不正確。請使用正確的 CVC 碼重試。"
 
-#: src/Dialogs/StripeDialog.vala:520 src/Dialogs/StripeDialog.vala:562
+#: src/Dialogs/StripeDialog.vala:518 src/Dialogs/StripeDialog.vala:560
 msgid "The card has expired. Please try again with a different card."
 msgstr "卡片已過期。請使用其他卡片重試。"
 
-#: src/Dialogs/StripeDialog.vala:540
+#: src/Dialogs/StripeDialog.vala:538
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr "此時有太多支付請求，請稍後重試。"
 
-#: src/Dialogs/StripeDialog.vala:556
+#: src/Dialogs/StripeDialog.vala:554
 msgid "This card does not support this kind of transaction. Please try again with a different card."
 msgstr "這張卡片不支援此類交易。請使用其他卡片重試。"
 
-#: src/Dialogs/StripeDialog.vala:558
+#: src/Dialogs/StripeDialog.vala:556
 msgid "The currency is not supported by this card. Please try again with a different card."
 msgstr "此卡片尚未支援該貨幣。請使用其他卡片重試。"
 
-#: src/Dialogs/StripeDialog.vala:560
+#: src/Dialogs/StripeDialog.vala:558
 msgid "The transaction has already been processed."
 msgstr "交易已經處理。"
 
-#: src/Dialogs/StripeDialog.vala:564
+#: src/Dialogs/StripeDialog.vala:562
 msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
 msgstr "郵遞區號不正確。請使用正確的郵遞區號重試。"
 
-#: src/Dialogs/StripeDialog.vala:566
+#: src/Dialogs/StripeDialog.vala:564
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "您的餘額不足。請使用其他支付方式。"
 
-#: src/Dialogs/StripeDialog.vala:568
+#: src/Dialogs/StripeDialog.vala:566
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "金額不正確。請使用有效的金額重試。"
 
-#: src/Dialogs/StripeDialog.vala:579
+#: src/Dialogs/StripeDialog.vala:577
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "PIN 碼不正確。請使用正確的 PIN 碼重試。"
 
-#: src/Dialogs/StripeDialog.vala:581
+#: src/Dialogs/StripeDialog.vala:579
 msgid "There has been too many PIN attempts. Please try again with a different card."
 msgstr "已經嘗試太多次 PIN 碼。請使用其他卡片重試。"
 
-#: src/Dialogs/StripeDialog.vala:601
+#: src/Dialogs/StripeDialog.vala:599
 msgid "Unable to complete the transaction. Please contact your bank for further information."
 msgstr "無法完成交易。請聯絡您的銀行瞭解更多資訊。"
 
-#: src/Dialogs/StripeDialog.vala:604
+#: src/Dialogs/StripeDialog.vala:602
 msgid "The balance or credit limit on the card has been reached."
 msgstr "已達卡片之餘額或信用額度。"
 
-#: src/Dialogs/StripeDialog.vala:607
+#: src/Dialogs/StripeDialog.vala:605
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "給予的卡片是張測試卡。請使用真實卡片繼續。"
 
