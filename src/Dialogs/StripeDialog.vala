@@ -93,11 +93,16 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         primary_label.get_style_context ().add_class ("primary");
         primary_label.xalign = 0;
 
-        var secondary_label = new Gtk.Label (_("This is a one time payment. Your email address is only used to send you a receipt."));
-        secondary_label.margin_bottom = 18;
-        secondary_label.max_width_chars = 50;
-        secondary_label.wrap = true;
-        secondary_label.xalign = 0;
+        var secondary_label = new Gtk.Label (
+            _("This is a one time payment. Your email address is only used to send you a receipt.") +
+            " <a href=\"https://stripe.com/privacy\">%s</a>".printf (_("Privacy Policy"))
+        ) {
+            margin_bottom = 18,
+            max_width_chars = 50,
+            use_markup = true,
+            wrap = true,
+            xalign = 0
+        };
 
         email_entry = new Gtk.Entry ();
         email_entry.hexpand = true;
@@ -185,13 +190,6 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         var content_area = get_content_area ();
         content_area.add (layouts);
         content_area.show_all ();
-
-        var privacy_policy_link = new Gtk.LinkButton.with_label ("https://stripe.com/privacy", _("Privacy Policy")) {
-            halign = Gtk.Align.START,
-            hexpand = true
-        };
-
-        add_action_widget (privacy_policy_link, Gtk.ResponseType.NONE);
 
         cancel_button = (Gtk.Button) add_button (_("Cancel"), Gtk.ResponseType.CLOSE);
 

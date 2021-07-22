@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-22 16:59+0000\n"
+"POT-Creation-Date: 2021-07-22 17:26+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/appcenter/appcenter/sk/>\n"
@@ -422,122 +422,122 @@ msgstr "Platba"
 msgid "Pay $%d for %s"
 msgstr "Zaplatiť $%d za %s"
 
-#: src/Dialogs/StripeDialog.vala:96
+#: src/Dialogs/StripeDialog.vala:97
 msgid "This is a one time payment. Your email address is only used to send you a receipt."
 msgstr "Toto je jednorázová platba. Vaša emailová adresa bude použitá len na odoslanie potvrdenia o platbe."
 
-#: src/Dialogs/StripeDialog.vala:106
+#: src/Dialogs/StripeDialog.vala:98
+msgid "Privacy Policy"
+msgstr "Zásady ochrany osobných údajov"
+
+#: src/Dialogs/StripeDialog.vala:111
 msgid "Email"
 msgstr "E-mail"
 
-#: src/Dialogs/StripeDialog.vala:108
+#: src/Dialogs/StripeDialog.vala:113
 msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
 msgstr "Vaša e-mailová adresa sa použije na odoslanie účtenky. Neukladá sa a nebude použitá na prihlásenie do odberu informačných e-mailov."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
-#: src/Dialogs/StripeDialog.vala:127
+#: src/Dialogs/StripeDialog.vala:132
 msgid "MM / YY"
 msgstr "MM / RR"
 
-#: src/Dialogs/StripeDialog.vala:147
+#: src/Dialogs/StripeDialog.vala:152
 msgid "CVC"
 msgstr "CVC"
 
-#: src/Dialogs/StripeDialog.vala:189
-msgid "Privacy Policy"
-msgstr "Zásady ochrany osobných údajov"
-
-#: src/Dialogs/StripeDialog.vala:196 src/Dialogs/StripeDialog.vala:313
+#: src/Dialogs/StripeDialog.vala:194 src/Dialogs/StripeDialog.vala:311
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:157
 msgid "Cancel"
 msgstr "Zrušiť"
 
-#: src/Dialogs/StripeDialog.vala:198 src/Dialogs/StripeDialog.vala:312
+#: src/Dialogs/StripeDialog.vala:196 src/Dialogs/StripeDialog.vala:310
 #, c-format
 msgid "Pay $%d.00"
 msgstr "Zaplatiť  $%d,00"
 
-#: src/Dialogs/StripeDialog.vala:241
+#: src/Dialogs/StripeDialog.vala:239
 msgid "Processing"
 msgstr "Spracováva sa"
 
-#: src/Dialogs/StripeDialog.vala:266
+#: src/Dialogs/StripeDialog.vala:264
 msgid "There Was a Problem Processing Your Payment"
 msgstr "Pri spracovávaní platby sa vyskytla chyba"
 
-#: src/Dialogs/StripeDialog.vala:304
+#: src/Dialogs/StripeDialog.vala:302
 msgid "Pay Later"
 msgstr "Zaplatiť neskôr"
 
-#: src/Dialogs/StripeDialog.vala:305
+#: src/Dialogs/StripeDialog.vala:303
 msgid "Retry"
 msgstr "Skúsiť znova"
 
-#: src/Dialogs/StripeDialog.vala:511 src/Dialogs/StripeDialog.vala:576
+#: src/Dialogs/StripeDialog.vala:509 src/Dialogs/StripeDialog.vala:574
 msgid "The card number is incorrect. Please try again using the correct card number."
 msgstr "Číslo karty je nesprávne. Skúste to znova pomocou správneho čísla karty."
 
-#: src/Dialogs/StripeDialog.vala:513
+#: src/Dialogs/StripeDialog.vala:511
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
 msgstr "Mesiac vypršania platnosti je nesprávny. Skúste to znova použitím správneho dátumu vypršania platnosti."
 
-#: src/Dialogs/StripeDialog.vala:515 src/Dialogs/StripeDialog.vala:573
+#: src/Dialogs/StripeDialog.vala:513 src/Dialogs/StripeDialog.vala:571
 msgid "The expiration year is invalid. Please try again using the correct expiration date."
 msgstr "Rok vypršania platnosti je nesprávny. Skúste to znova použitím správneho dátumu vypršania platnosti."
 
-#: src/Dialogs/StripeDialog.vala:518 src/Dialogs/StripeDialog.vala:571
+#: src/Dialogs/StripeDialog.vala:516 src/Dialogs/StripeDialog.vala:569
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr "CVC číslo je nesprávne. Skúste to znova použitím správneho CVC čísla."
 
-#: src/Dialogs/StripeDialog.vala:520 src/Dialogs/StripeDialog.vala:562
+#: src/Dialogs/StripeDialog.vala:518 src/Dialogs/StripeDialog.vala:560
 msgid "The card has expired. Please try again with a different card."
 msgstr "Platnosť karty vypršala. Skúste to znova s inou kartou."
 
-#: src/Dialogs/StripeDialog.vala:540
+#: src/Dialogs/StripeDialog.vala:538
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr "V súčasnosti je príliš veľa žiadostí o platbu, skúste to zopakovať neskôr."
 
-#: src/Dialogs/StripeDialog.vala:556
+#: src/Dialogs/StripeDialog.vala:554
 msgid "This card does not support this kind of transaction. Please try again with a different card."
 msgstr "Táto karta nepodporuje tento druh transakcie. Skúste to znova s inou kartou."
 
-#: src/Dialogs/StripeDialog.vala:558
+#: src/Dialogs/StripeDialog.vala:556
 msgid "The currency is not supported by this card. Please try again with a different card."
 msgstr "Mena nie je podporovaná touto kartou. Skúste to znovu s inou kartou."
 
-#: src/Dialogs/StripeDialog.vala:560
+#: src/Dialogs/StripeDialog.vala:558
 msgid "The transaction has already been processed."
 msgstr "Transakcia už bola spracovaná."
 
-#: src/Dialogs/StripeDialog.vala:564
+#: src/Dialogs/StripeDialog.vala:562
 msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
 msgstr "Poštové smerovacie číslo je nesprávne. Skúste to znovu so správnym PSČ."
 
-#: src/Dialogs/StripeDialog.vala:566
+#: src/Dialogs/StripeDialog.vala:564
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "Nemáte dostatok finančných prostriedkov. Použite alternatívny spôsob platby."
 
-#: src/Dialogs/StripeDialog.vala:568
+#: src/Dialogs/StripeDialog.vala:566
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "Zadané množstvo je nesprávne. Prosím, skúste znova so správne zadaným množstvom."
 
-#: src/Dialogs/StripeDialog.vala:579
+#: src/Dialogs/StripeDialog.vala:577
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "CVC číslo je nesprávne. Skúste to znova s použitím správneho CVC čísla."
 
-#: src/Dialogs/StripeDialog.vala:581
+#: src/Dialogs/StripeDialog.vala:579
 msgid "There has been too many PIN attempts. Please try again with a different card."
 msgstr "S kartou prebehlo príliš veľa pokusov o autentifikáciu pomocou PIN. Skúste to znova s inou kartou."
 
-#: src/Dialogs/StripeDialog.vala:601
+#: src/Dialogs/StripeDialog.vala:599
 msgid "Unable to complete the transaction. Please contact your bank for further information."
 msgstr "Transakciu sa nepodarilo dokončit. Pre bližšie informácie, prosím, kontaktujte Vašu banku."
 
-#: src/Dialogs/StripeDialog.vala:604
+#: src/Dialogs/StripeDialog.vala:602
 msgid "The balance or credit limit on the card has been reached."
 msgstr "Kreditný limit na Vašej karte bol už presiahnutý."
 
-#: src/Dialogs/StripeDialog.vala:607
+#: src/Dialogs/StripeDialog.vala:605
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "Poskýtnutá karta je testovacia. Prosím, použite kartu skutočnú."
 

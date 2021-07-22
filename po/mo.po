@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-22 16:59+0000\n"
+"POT-Creation-Date: 2021-07-22 17:26+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Moldovan <https://l10n.elementary.io/projects/appcenter/appcenter/mo/>\n"
@@ -428,123 +428,123 @@ msgstr ""
 msgid "Pay $%d for %s"
 msgstr "Plătește %d pentru %s"
 
-#: src/Dialogs/StripeDialog.vala:96
+#: src/Dialogs/StripeDialog.vala:97
 msgid "This is a one time payment. Your email address is only used to send you a receipt."
 msgstr "Aceasta este o plată unică. Adresa dvs. de e-mail este utilizată numai pentru a vă trimite o chitanță."
 
-#: src/Dialogs/StripeDialog.vala:106
+#: src/Dialogs/StripeDialog.vala:98
+msgid "Privacy Policy"
+msgstr "Politica de confidențialitate"
+
+#: src/Dialogs/StripeDialog.vala:111
 msgid "Email"
 msgstr "Poșta"
 
-#: src/Dialogs/StripeDialog.vala:108
+#: src/Dialogs/StripeDialog.vala:113
 #, fuzzy
 msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
 msgstr "Adresa dvs. de e-mail este utilizată pentru a trimite o chitanță. Nu va fii stocată și nu veți fi abonat la o listă de corespondență."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
-#: src/Dialogs/StripeDialog.vala:127
+#: src/Dialogs/StripeDialog.vala:132
 msgid "MM / YY"
 msgstr "LUNĂ / AN"
 
-#: src/Dialogs/StripeDialog.vala:147
+#: src/Dialogs/StripeDialog.vala:152
 msgid "CVC"
 msgstr "CVC"
 
-#: src/Dialogs/StripeDialog.vala:189
-msgid "Privacy Policy"
-msgstr "Politica de confidențialitate"
-
-#: src/Dialogs/StripeDialog.vala:196 src/Dialogs/StripeDialog.vala:313
+#: src/Dialogs/StripeDialog.vala:194 src/Dialogs/StripeDialog.vala:311
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:157
 msgid "Cancel"
 msgstr "Anulare"
 
-#: src/Dialogs/StripeDialog.vala:198 src/Dialogs/StripeDialog.vala:312
+#: src/Dialogs/StripeDialog.vala:196 src/Dialogs/StripeDialog.vala:310
 #, c-format
 msgid "Pay $%d.00"
 msgstr "Plătește %d .00"
 
-#: src/Dialogs/StripeDialog.vala:241
+#: src/Dialogs/StripeDialog.vala:239
 msgid "Processing"
 msgstr "Procesare"
 
-#: src/Dialogs/StripeDialog.vala:266
+#: src/Dialogs/StripeDialog.vala:264
 msgid "There Was a Problem Processing Your Payment"
 msgstr "A apărut o problemă în procesarea plății"
 
-#: src/Dialogs/StripeDialog.vala:304
+#: src/Dialogs/StripeDialog.vala:302
 msgid "Pay Later"
 msgstr "Plătește mai târziu"
 
-#: src/Dialogs/StripeDialog.vala:305
+#: src/Dialogs/StripeDialog.vala:303
 msgid "Retry"
 msgstr "Reîncercați"
 
-#: src/Dialogs/StripeDialog.vala:511 src/Dialogs/StripeDialog.vala:576
+#: src/Dialogs/StripeDialog.vala:509 src/Dialogs/StripeDialog.vala:574
 msgid "The card number is incorrect. Please try again using the correct card number."
 msgstr "Numărul cardului este incorect. Încercați din nou utilizând numărul corect al cardului."
 
-#: src/Dialogs/StripeDialog.vala:513
+#: src/Dialogs/StripeDialog.vala:511
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
 msgstr "Luna de expirare este nevalidă. Încercați din nou utilizând data de expirare corectă."
 
-#: src/Dialogs/StripeDialog.vala:515 src/Dialogs/StripeDialog.vala:573
+#: src/Dialogs/StripeDialog.vala:513 src/Dialogs/StripeDialog.vala:571
 msgid "The expiration year is invalid. Please try again using the correct expiration date."
 msgstr "Anul de expirare este incorect. Încercați din nou utilizând data de expirare corectă."
 
-#: src/Dialogs/StripeDialog.vala:518 src/Dialogs/StripeDialog.vala:571
+#: src/Dialogs/StripeDialog.vala:516 src/Dialogs/StripeDialog.vala:569
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr "Numărul CVC este incorect. Încercați din nou utilizând codul CVC corect."
 
-#: src/Dialogs/StripeDialog.vala:520 src/Dialogs/StripeDialog.vala:562
+#: src/Dialogs/StripeDialog.vala:518 src/Dialogs/StripeDialog.vala:560
 msgid "The card has expired. Please try again with a different card."
 msgstr "Cardul a expirat. Încearcă din nou cu un alt card."
 
-#: src/Dialogs/StripeDialog.vala:540
+#: src/Dialogs/StripeDialog.vala:538
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr "În prezent există prea multe solicitări de plată, încercați din nou mai târziu."
 
-#: src/Dialogs/StripeDialog.vala:556
+#: src/Dialogs/StripeDialog.vala:554
 msgid "This card does not support this kind of transaction. Please try again with a different card."
 msgstr "Aceast card nu acceptă acest tip de tranzacție. Încearcă din nou cu un alt card."
 
-#: src/Dialogs/StripeDialog.vala:558
+#: src/Dialogs/StripeDialog.vala:556
 msgid "The currency is not supported by this card. Please try again with a different card."
 msgstr "Moneda de acest card nu este acceptată . Încearcă din nou cu un alt card."
 
-#: src/Dialogs/StripeDialog.vala:560
+#: src/Dialogs/StripeDialog.vala:558
 msgid "The transaction has already been processed."
 msgstr "Tranzacția a fost procesată cu succes."
 
-#: src/Dialogs/StripeDialog.vala:564
+#: src/Dialogs/StripeDialog.vala:562
 msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
 msgstr "Cod poștal incorect. Încercați din nou folosind / codul poștal corect."
 
-#: src/Dialogs/StripeDialog.vala:566
+#: src/Dialogs/StripeDialog.vala:564
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "Nu aveți suficiente fonduri. Utilizați o metodă de plată alternativă."
 
-#: src/Dialogs/StripeDialog.vala:568
+#: src/Dialogs/StripeDialog.vala:566
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "Cantitate incorectă. Încercați din nou utilizând o sumă validă."
 
-#: src/Dialogs/StripeDialog.vala:579
+#: src/Dialogs/StripeDialog.vala:577
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "Codul PIN este incorect. Vă rugăm introduceți codul PIN corect."
 
-#: src/Dialogs/StripeDialog.vala:581
+#: src/Dialogs/StripeDialog.vala:579
 msgid "There has been too many PIN attempts. Please try again with a different card."
 msgstr "Au fost prea multe încercări de cod PIN. Încearcă din nou cu un alt card."
 
-#: src/Dialogs/StripeDialog.vala:601
+#: src/Dialogs/StripeDialog.vala:599
 msgid "Unable to complete the transaction. Please contact your bank for further information."
 msgstr "Imposibil de completat tranzacția. Contactați cu banca pentru informații suplimentare."
 
-#: src/Dialogs/StripeDialog.vala:604
+#: src/Dialogs/StripeDialog.vala:602
 msgid "The balance or credit limit on the card has been reached."
 msgstr "S-a atins cantitatea limită de credit de pe card."
 
-#: src/Dialogs/StripeDialog.vala:607
+#: src/Dialogs/StripeDialog.vala:605
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "Cardul dat este un card de probă. Utilizați o carte reală pentru a continua."
 
