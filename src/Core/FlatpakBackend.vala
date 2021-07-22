@@ -279,19 +279,18 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     }
 
     private int compare_packages_by_release_date (AppCenterCore.Package a, AppCenterCore.Package b) {
-        var a_newest_release = a.get_newest_release ();
-        var b_newest_release = b.get_newest_release ();
+        uint64 a_timestamp = 0;
+        uint64 b_timestamp = 0;
 
-        if (a_newest_release == null && b_newest_release == null) {
-            return 0;
-        } else if (a_newest_release == null) {
-            return 1;
-        } else if (b_newest_release == null) {
-            return -1;
+        var a_newest_release = a.get_newest_release ();
+        if (a_newest_release != null) {
+            a_timestamp = a_newest_release.get_timestamp ();
         }
 
-        var a_timestamp = a_newest_release.get_timestamp ();
-        var b_timestamp = b_newest_release.get_timestamp ();
+        var b_newest_release = b.get_newest_release ();
+        if (b_newest_release != null) {
+            b_timestamp = b_newest_release.get_timestamp ();
+        }
 
         if (a_timestamp == 0 && b_timestamp == 0) {
             return 0;
