@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-22 16:59+0000\n"
+"POT-Creation-Date: 2021-07-22 17:26+0000\n"
 "PO-Revision-Date: 2019-11-15 21:24+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/appcenter/appcenter/pl/>\n"
@@ -428,122 +428,122 @@ msgstr "Płatność"
 msgid "Pay $%d for %s"
 msgstr "Zapłać $%d za %s"
 
-#: src/Dialogs/StripeDialog.vala:96
+#: src/Dialogs/StripeDialog.vala:97
 msgid "This is a one time payment. Your email address is only used to send you a receipt."
 msgstr "To jest jednorazowa płatność. Twój adres e-mail jest używany tylko po to, by wysłać Ci paragon."
 
-#: src/Dialogs/StripeDialog.vala:106
+#: src/Dialogs/StripeDialog.vala:98
+msgid "Privacy Policy"
+msgstr "Polityka prywatności"
+
+#: src/Dialogs/StripeDialog.vala:111
 msgid "Email"
 msgstr "E-mail"
 
-#: src/Dialogs/StripeDialog.vala:108
+#: src/Dialogs/StripeDialog.vala:113
 msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
 msgstr "Twój adres e-mail służy do wysłania potwierdzenia opłaty. Nie zostaniesz zapisany do żadnej subskrypcji listy dyskusyjnej."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
-#: src/Dialogs/StripeDialog.vala:127
+#: src/Dialogs/StripeDialog.vala:132
 msgid "MM / YY"
 msgstr "MM / RR"
 
-#: src/Dialogs/StripeDialog.vala:147
+#: src/Dialogs/StripeDialog.vala:152
 msgid "CVC"
 msgstr "CVC"
 
-#: src/Dialogs/StripeDialog.vala:189
-msgid "Privacy Policy"
-msgstr "Polityka prywatności"
-
-#: src/Dialogs/StripeDialog.vala:196 src/Dialogs/StripeDialog.vala:313
+#: src/Dialogs/StripeDialog.vala:194 src/Dialogs/StripeDialog.vala:311
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:157
 msgid "Cancel"
 msgstr "Anuluj"
 
-#: src/Dialogs/StripeDialog.vala:198 src/Dialogs/StripeDialog.vala:312
+#: src/Dialogs/StripeDialog.vala:196 src/Dialogs/StripeDialog.vala:310
 #, c-format
 msgid "Pay $%d.00"
 msgstr "Zapłać $%d,00"
 
-#: src/Dialogs/StripeDialog.vala:241
+#: src/Dialogs/StripeDialog.vala:239
 msgid "Processing"
 msgstr "Przetwarzanie"
 
-#: src/Dialogs/StripeDialog.vala:266
+#: src/Dialogs/StripeDialog.vala:264
 msgid "There Was a Problem Processing Your Payment"
 msgstr "Wystąpił problem podczas przetwarzania twojej płatności"
 
-#: src/Dialogs/StripeDialog.vala:304
+#: src/Dialogs/StripeDialog.vala:302
 msgid "Pay Later"
 msgstr "Zapłać później"
 
-#: src/Dialogs/StripeDialog.vala:305
+#: src/Dialogs/StripeDialog.vala:303
 msgid "Retry"
 msgstr "Ponów"
 
-#: src/Dialogs/StripeDialog.vala:511 src/Dialogs/StripeDialog.vala:576
+#: src/Dialogs/StripeDialog.vala:509 src/Dialogs/StripeDialog.vala:574
 msgid "The card number is incorrect. Please try again using the correct card number."
 msgstr "Numer karty jest nieprawidłowy. Spróbuj ponownie, używając prawidłowego numeru karty."
 
-#: src/Dialogs/StripeDialog.vala:513
+#: src/Dialogs/StripeDialog.vala:511
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
 msgstr "Miesiąc w dacie wygaśnięcia jest nieprawidłowy. Spróbuj ponownie, używając właściwej daty wygaśnięcia."
 
-#: src/Dialogs/StripeDialog.vala:515 src/Dialogs/StripeDialog.vala:573
+#: src/Dialogs/StripeDialog.vala:513 src/Dialogs/StripeDialog.vala:571
 msgid "The expiration year is invalid. Please try again using the correct expiration date."
 msgstr "Rok w dacie wygaśnięcia jest nieprawidłowy. Spróbuj ponownie, używając właściwej daty wygaśnięcia."
 
-#: src/Dialogs/StripeDialog.vala:518 src/Dialogs/StripeDialog.vala:571
+#: src/Dialogs/StripeDialog.vala:516 src/Dialogs/StripeDialog.vala:569
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr "Numer CVC jest nieprawidłowy. Spróbuj ponownie, używając właściwego numeru CVC."
 
-#: src/Dialogs/StripeDialog.vala:520 src/Dialogs/StripeDialog.vala:562
+#: src/Dialogs/StripeDialog.vala:518 src/Dialogs/StripeDialog.vala:560
 msgid "The card has expired. Please try again with a different card."
 msgstr "Ważność karty wygasła. Spróbuj ponownie z inną kartą."
 
-#: src/Dialogs/StripeDialog.vala:540
+#: src/Dialogs/StripeDialog.vala:538
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr "W tej chwili jest zbyt wiele próśb o płatność, proszę spróbować później."
 
-#: src/Dialogs/StripeDialog.vala:556
+#: src/Dialogs/StripeDialog.vala:554
 msgid "This card does not support this kind of transaction. Please try again with a different card."
 msgstr "Ta karta nie obsługuje tego typu transakcji. Spróbuj ponownie z inną kartą."
 
-#: src/Dialogs/StripeDialog.vala:558
+#: src/Dialogs/StripeDialog.vala:556
 msgid "The currency is not supported by this card. Please try again with a different card."
 msgstr "Waluta nie jest obsługiwana przez tę kartę. Spróbuj ponownie z inną kartą."
 
-#: src/Dialogs/StripeDialog.vala:560
+#: src/Dialogs/StripeDialog.vala:558
 msgid "The transaction has already been processed."
 msgstr "Transakcja została już przetworzona."
 
-#: src/Dialogs/StripeDialog.vala:564
+#: src/Dialogs/StripeDialog.vala:562
 msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
 msgstr "Kod pocztowy jest niepoprawny. Spróbuj ponownie, używając poprawnego kodu pocztowego."
 
-#: src/Dialogs/StripeDialog.vala:566
+#: src/Dialogs/StripeDialog.vala:564
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "Nie masz wystarczających środków. Proszę użyć alternatywnej metody płatności."
 
-#: src/Dialogs/StripeDialog.vala:568
+#: src/Dialogs/StripeDialog.vala:566
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "Kwota jest nieprawidłowa. Spróbuj ponownie, używając prawidłowej kwoty."
 
-#: src/Dialogs/StripeDialog.vala:579
+#: src/Dialogs/StripeDialog.vala:577
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "Kod PIN jest nieprawidłowy. Spróbuj ponownie, używając właściwego kodu PIN."
 
-#: src/Dialogs/StripeDialog.vala:581
+#: src/Dialogs/StripeDialog.vala:579
 msgid "There has been too many PIN attempts. Please try again with a different card."
 msgstr "Za dużo prób wprowadzenia kodu PIN. Spróbuj ponownie z inną kartą."
 
-#: src/Dialogs/StripeDialog.vala:601
+#: src/Dialogs/StripeDialog.vala:599
 msgid "Unable to complete the transaction. Please contact your bank for further information."
 msgstr "Nie można zakończyć transakcji. Aby uzyskać dodatkowe informacje, skontaktuj się ze swoim bankiem."
 
-#: src/Dialogs/StripeDialog.vala:604
+#: src/Dialogs/StripeDialog.vala:602
 msgid "The balance or credit limit on the card has been reached."
 msgstr "Osiągnięto saldo lub limit kredytowy na karcie."
 
-#: src/Dialogs/StripeDialog.vala:607
+#: src/Dialogs/StripeDialog.vala:605
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "Podana karta jest kartą testową. Proszę użyć prawdziwej karty, aby kontynuować."
 

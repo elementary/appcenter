@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-22 16:59+0000\n"
+"POT-Creation-Date: 2021-07-22 17:26+0000\n"
 "PO-Revision-Date: 2020-05-15 16:29+0000\n"
 "Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/appcenter/ar/>\n"
@@ -422,122 +422,122 @@ msgstr "الدفع"
 msgid "Pay $%d for %s"
 msgstr "إدفع $%d لـ %s"
 
-#: src/Dialogs/StripeDialog.vala:96
+#: src/Dialogs/StripeDialog.vala:97
 msgid "This is a one time payment. Your email address is only used to send you a receipt."
 msgstr "هذه دفعة لمرة واحد. سوف يستخدم بريدك الإلكتروني لإرسال الفاتورة فقط."
 
-#: src/Dialogs/StripeDialog.vala:106
+#: src/Dialogs/StripeDialog.vala:98
+msgid "Privacy Policy"
+msgstr "سياسة الخصوصية"
+
+#: src/Dialogs/StripeDialog.vala:111
 msgid "Email"
 msgstr "البريد"
 
-#: src/Dialogs/StripeDialog.vala:108
+#: src/Dialogs/StripeDialog.vala:113
 msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
 msgstr "عنوان بريند سوف يستخدم فقط لإرسال الفاتورة. لن يتم إضافتك لأي قائمة بريدية."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
-#: src/Dialogs/StripeDialog.vala:127
+#: src/Dialogs/StripeDialog.vala:132
 msgid "MM / YY"
 msgstr "MM / YY"
 
-#: src/Dialogs/StripeDialog.vala:147
+#: src/Dialogs/StripeDialog.vala:152
 msgid "CVC"
 msgstr "CVC"
 
-#: src/Dialogs/StripeDialog.vala:189
-msgid "Privacy Policy"
-msgstr "سياسة الخصوصية"
-
-#: src/Dialogs/StripeDialog.vala:196 src/Dialogs/StripeDialog.vala:313
+#: src/Dialogs/StripeDialog.vala:194 src/Dialogs/StripeDialog.vala:311
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:157
 msgid "Cancel"
 msgstr "إنهاء"
 
-#: src/Dialogs/StripeDialog.vala:198 src/Dialogs/StripeDialog.vala:312
+#: src/Dialogs/StripeDialog.vala:196 src/Dialogs/StripeDialog.vala:310
 #, c-format
 msgid "Pay $%d.00"
 msgstr "ادفع $%d.00"
 
-#: src/Dialogs/StripeDialog.vala:241
+#: src/Dialogs/StripeDialog.vala:239
 msgid "Processing"
 msgstr "العملية"
 
-#: src/Dialogs/StripeDialog.vala:266
+#: src/Dialogs/StripeDialog.vala:264
 msgid "There Was a Problem Processing Your Payment"
 msgstr "كان هناك خطأ في عملية الدفع"
 
-#: src/Dialogs/StripeDialog.vala:304
+#: src/Dialogs/StripeDialog.vala:302
 msgid "Pay Later"
 msgstr "ادفع لاحقاً"
 
-#: src/Dialogs/StripeDialog.vala:305
+#: src/Dialogs/StripeDialog.vala:303
 msgid "Retry"
 msgstr "إعادة"
 
-#: src/Dialogs/StripeDialog.vala:511 src/Dialogs/StripeDialog.vala:576
+#: src/Dialogs/StripeDialog.vala:509 src/Dialogs/StripeDialog.vala:574
 msgid "The card number is incorrect. Please try again using the correct card number."
 msgstr "رقم البطاقة خاطئ. من فضلك حاول مرة أخرى بإستخدم الرقم الصحيح."
 
-#: src/Dialogs/StripeDialog.vala:513
+#: src/Dialogs/StripeDialog.vala:511
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
 msgstr "شهر الإنتهاء غير صحيح. من فضلك حاول مرة أخرى باستخدام تاريخ الإنتهاء الصحيح."
 
-#: src/Dialogs/StripeDialog.vala:515 src/Dialogs/StripeDialog.vala:573
+#: src/Dialogs/StripeDialog.vala:513 src/Dialogs/StripeDialog.vala:571
 msgid "The expiration year is invalid. Please try again using the correct expiration date."
 msgstr "سنة الإنتهاء غير صحيحة. من فضلك حاول مرة أخرى باستخدام تاريخ الإنتهاء الصحيح."
 
-#: src/Dialogs/StripeDialog.vala:518 src/Dialogs/StripeDialog.vala:571
+#: src/Dialogs/StripeDialog.vala:516 src/Dialogs/StripeDialog.vala:569
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr "رقم الـ CVC غير صحيح. من فضلك حاول مرة أخرى بإستخدام الرقم الصحيح."
 
-#: src/Dialogs/StripeDialog.vala:520 src/Dialogs/StripeDialog.vala:562
+#: src/Dialogs/StripeDialog.vala:518 src/Dialogs/StripeDialog.vala:560
 msgid "The card has expired. Please try again with a different card."
 msgstr "البطاقة منتهية الصلاحية. من فضلك حاول مرة أخرى ببطاقة مختلفة."
 
-#: src/Dialogs/StripeDialog.vala:540
+#: src/Dialogs/StripeDialog.vala:538
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr "يوجد العديد من طلبات الدفع حاليًا, من فضلك حاول في وقت آخر."
 
-#: src/Dialogs/StripeDialog.vala:556
+#: src/Dialogs/StripeDialog.vala:554
 msgid "This card does not support this kind of transaction. Please try again with a different card."
 msgstr "هذه البطاقة لا تدعم هذا النوع من العمليات. من فضلك حاول بإستخدام بطاقة أخرى."
 
-#: src/Dialogs/StripeDialog.vala:558
+#: src/Dialogs/StripeDialog.vala:556
 msgid "The currency is not supported by this card. Please try again with a different card."
 msgstr "هذه العملة غير مدعومة على هذه البطاقة. من فضلك حاول بإستخدام بطاقة أخرى."
 
-#: src/Dialogs/StripeDialog.vala:560
+#: src/Dialogs/StripeDialog.vala:558
 msgid "The transaction has already been processed."
 msgstr "تم معاجلة العملية سابقًا."
 
-#: src/Dialogs/StripeDialog.vala:564
+#: src/Dialogs/StripeDialog.vala:562
 msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
 msgstr "العنوان غير صحيح. من فضلك حاول مرة أخرى بإستخدام العنوان الصحيح."
 
-#: src/Dialogs/StripeDialog.vala:566
+#: src/Dialogs/StripeDialog.vala:564
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "لا تملك المال الكافي. من فضلك حاول بإستخدام طريقة دفع أخرى."
 
-#: src/Dialogs/StripeDialog.vala:568
+#: src/Dialogs/StripeDialog.vala:566
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "المبلغ غير صحيح. من فضلك حاول بإستخدام مبلغ صحيح."
 
-#: src/Dialogs/StripeDialog.vala:579
+#: src/Dialogs/StripeDialog.vala:577
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "رقم الـ PIN غير صحيح. من فضلك حاول بإستخدام رقم صحيح."
 
-#: src/Dialogs/StripeDialog.vala:581
+#: src/Dialogs/StripeDialog.vala:579
 msgid "There has been too many PIN attempts. Please try again with a different card."
 msgstr "تم محاولة وضع الـ PIN اكثر من مرة. من فضلك حاول بإستخدام بطاقة أخرى."
 
-#: src/Dialogs/StripeDialog.vala:601
+#: src/Dialogs/StripeDialog.vala:599
 msgid "Unable to complete the transaction. Please contact your bank for further information."
 msgstr "لم نتمكن من إتمام العملية. من فضلك قم بالتواصل مع بنك لتحصل على معلومات أكثر."
 
-#: src/Dialogs/StripeDialog.vala:604
+#: src/Dialogs/StripeDialog.vala:602
 msgid "The balance or credit limit on the card has been reached."
 msgstr "الرصيد او الحد على البطاقة وصل إليه."
 
-#: src/Dialogs/StripeDialog.vala:607
+#: src/Dialogs/StripeDialog.vala:605
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "البطاقة المودة هيا بطاقة تجريب. من فضلك حاول بإستخدام بطاقة حقيقية."
 
