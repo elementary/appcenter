@@ -827,8 +827,22 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
         root->set_prop ("origin", origin_name);
 
+        // Remap the <metadata> tag that contains the custom x-appcenter-xxx values to
+        // <custom> as expected by the AppStream parser
+        Xml.XPath.Context cntx = new Xml.XPath.Context (doc);
+        Xml.XPath.Object* res = cntx.eval_expression ("/components/component/metadata");
+
+        if (res != null && res->type == Xml.XPath.ObjectType.NODESET && res->nodesetval != null) {
+            for (int i = 0; i < res->nodesetval->length (); i++) {
+                Xml.Node* node = res->nodesetval->item (i);
+                node->set_name ("custom");
+            }
+        }
+
         doc->set_compress_mode (7);
         doc->save_file (dest_file.get_path ());
+
+        delete res;
         delete doc;
     }
 
