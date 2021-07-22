@@ -262,6 +262,51 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         return installed_apps;
     }
 
+    public Gee.Collection<Package> get_packages_by_release_date () {
+        var apps = new Gee.TreeSet<AppCenterCore.Package> (compare_packages_by_release_date);
+
+        user_appstream_pool.get_components ().foreach ((comp) => {
+            var packages = get_packages_for_component_id (comp.get_id ());
+            apps.add_all (packages);
+        });
+
+        system_appstream_pool.get_components ().foreach ((comp) => {
+            var packages = get_packages_for_component_id (comp.get_id ());
+            apps.add_all (packages);
+        });
+
+        return apps;
+    }
+
+    private int compare_packages_by_release_date (AppCenterCore.Package a, AppCenterCore.Package b) {
+        var a_newest_release = a.get_newest_release ();
+        var b_newest_release = b.get_newest_release ();
+
+        if (a_newest_release == null && b_newest_release == null) {
+            return 0;
+        } else if (a_newest_release == null) {
+            return -1;
+        } else if (b_newest_release == null) {
+            return 1;
+        }
+
+        var a_timestamp = a_newest_release.get_timestamp ();
+        var b_timestamp = b_newest_release.get_timestamp ();
+
+        if (a_timestamp == 0 && b_timestamp == 0) {
+            return 0;
+        } else if (a_timestamp == 0) {
+            return -1;
+        } else if (b_timestamp == 0) {
+            return 1;
+        }
+
+        var a_datetime = new DateTime.from_unix_utc ((int64) a_timestamp);
+        var b_datetime = new DateTime.from_unix_utc ((int64) b_timestamp);
+
+        return b_datetime.compare (a_datetime);
+    }
+
     public Gee.Collection<Package> get_applications_for_category (AppStream.Category category) {
         unowned GLib.GenericArray<AppStream.Component> components = category.get_components ();
         // Clear out any cached components that could be from other backends
