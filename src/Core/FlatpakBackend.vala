@@ -285,9 +285,9 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         if (a_newest_release == null && b_newest_release == null) {
             return 0;
         } else if (a_newest_release == null) {
-            return -1;
-        } else if (b_newest_release == null) {
             return 1;
+        } else if (b_newest_release == null) {
+            return -1;
         }
 
         var a_timestamp = a_newest_release.get_timestamp ();
@@ -296,9 +296,9 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         if (a_timestamp == 0 && b_timestamp == 0) {
             return 0;
         } else if (a_timestamp == 0) {
-            return -1;
-        } else if (b_timestamp == 0) {
             return 1;
+        } else if (b_timestamp == 0) {
+            return -1;
         }
 
         var a_datetime = new DateTime.from_unix_utc ((int64) a_timestamp);

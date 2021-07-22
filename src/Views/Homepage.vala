@@ -192,7 +192,7 @@ namespace AppCenter {
                     break;
                 }
 
-                if (package.state == AppCenterCore.Package.State.NOT_INSTALLED && package.is_native) {
+                if (package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
                     recently_updated_carousel.add_package (package);
                 }
             }
