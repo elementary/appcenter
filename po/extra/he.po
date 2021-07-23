@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-22 17:26+0000\n"
-"PO-Revision-Date: 2021-07-21 09:38+0000\n"
+"PO-Revision-Date: 2021-07-23 09:32+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/extra/"
 "he/>\n"
@@ -47,10 +47,8 @@ msgid "Fixes:"
 msgstr "תיקונים:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
-#, fuzzy
-#| msgid "Add support for Flatpak apps"
 msgid "Show brand colors and support payments for Flatpak apps"
-msgstr "הוספת תמיכה ליישומים שנארזו ב־Flatpak"
+msgstr "הצגת צבעי מותגים ותמיכה בתשלומים ליישומי Flatpak"
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
 msgid "Fix missing mail icon in payments dialog"
