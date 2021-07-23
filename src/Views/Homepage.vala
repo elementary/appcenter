@@ -185,14 +185,22 @@ namespace AppCenter {
 
         private async void load_banners () {
             unowned FlatpakBackend fp_client = FlatpakBackend.get_default ();
-            var packages_by_release_date = fp_client.get_packages_by_release_date ();
+            var packages_by_release_date = fp_client.get_native_packages_by_release_date ();
 
             foreach (var package in packages_by_release_date) {
                 if (recently_updated_carousel.get_children ().length () >= NUM_PACKAGES_IN_CAROUSEL) {
                     break;
                 }
 
-                if (package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
+                var installed = false;
+                foreach (var origin_package in package.origin_packages) {
+                    if (origin_package.state == AppCenterCore.Package.State.INSTALLED) {
+                        installed = true;
+                        continue;
+                    }
+                }
+
+                if (!installed) {
                     recently_updated_carousel.add_package (package);
                 }
             }
