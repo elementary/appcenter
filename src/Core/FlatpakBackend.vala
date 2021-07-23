@@ -262,17 +262,25 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         return installed_apps;
     }
 
-    public Gee.Collection<Package> get_packages_by_release_date () {
+    public Gee.Collection<Package> get_native_packages_by_release_date () {
         var apps = new Gee.TreeSet<AppCenterCore.Package> (compare_packages_by_release_date);
 
         user_appstream_pool.get_components ().foreach ((comp) => {
             var packages = get_packages_for_component_id (comp.get_id ());
-            apps.add_all (packages);
+            foreach (var package in packages) {
+                if (package.is_native) {
+                    apps.add (package);
+                }
+            }
         });
 
         system_appstream_pool.get_components ().foreach ((comp) => {
             var packages = get_packages_for_component_id (comp.get_id ());
-            apps.add_all (packages);
+            foreach (var package in packages) {
+                if (package.is_native) {
+                    apps.add (package);
+                }
+            }
         });
 
         return apps;
