@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-22 17:26+0000\n"
-"PO-Revision-Date: 2021-07-19 19:50+0000\n"
+"PO-Revision-Date: 2021-07-23 08:29+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/extra/"
 "ca/>\n"
@@ -45,18 +45,21 @@ msgid "Fixes:"
 msgstr "Correccions:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
-#, fuzzy
-#| msgid "Add support for Flatpak apps"
 msgid "Show brand colors and support payments for Flatpak apps"
-msgstr "Addició de suport per a aplicacions de Flatpak"
+msgstr ""
+"Es mostren els colors de la marca i els pagaments d'assistència per a les "
+"aplicacions de Flatpak."
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
 msgid "Fix missing mail icon in payments dialog"
 msgstr ""
+"Correcció de la icona de correu que faltava al quadre de diàleg de pagaments"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 msgid "Fix missing privacy policy in payments dialog"
 msgstr ""
+"Correcció de la falta de política de privadesa al quadre de diàleg de "
+"pagaments"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 #: data/io.elementary.appcenter.appdata.xml.in:35
