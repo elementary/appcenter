@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-22 17:26+0000\n"
-"PO-Revision-Date: 2021-07-23 00:20+0000\n"
+"PO-Revision-Date: 2021-07-24 18:09+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/extra/"
 "tr/>\n"
@@ -281,7 +281,7 @@ msgstr "Ctrl+F artık işaretçiyi arama alanına götürüyor"
 
 #: data/io.elementary.appcenter.appdata.xml.in:146
 msgid "Use configured network proxy settings for apt operations"
-msgstr "apt işlemleri için yapılandırılmış ağ vekil ayarlarını kullan"
+msgstr "apt işlemleri için yapılandırılmış ağ vekil sunucu ayarlarını kullan"
 
 #: data/io.elementary.appcenter.appdata.xml.in:147
 msgid "No longer prompt for approval to update non-curated apps"
