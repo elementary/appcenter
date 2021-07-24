@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-22 17:26+0000\n"
-"PO-Revision-Date: 2021-02-17 19:19+0000\n"
+"PO-Revision-Date: 2021-07-24 18:09+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
 "extra/pt/>\n"
@@ -25,11 +25,6 @@ msgid "Browse and manage apps"
 msgstr "Procurar e gerir aplicações"
 
 #: data/io.elementary.appcenter.appdata.xml.in:11
-#, fuzzy
-#| msgid ""
-#| "An app store for indie and open source developers. Browse by categories "
-#| "or search and discover new apps. AppCenter is also used for updating your "
-#| "system to the latest and greatest version for new features and fixes."
 msgid ""
 "The open source, pay-what-you-want app store from elementary. Reviewed and "
 "curated by elementary to ensure a native, privacy-respecting, and secure "
@@ -37,27 +32,25 @@ msgid ""
 "is also used for updating your system to the latest and greatest version for "
 "new features and fixes."
 msgstr ""
-"Uma loja de aplicações para programadores indie e open source. Navegue por "
-"categorias ou pesquise e descubra novas aplicações. O Centro de Aplicações "
-"também é utilizado para atualizar o sistema para as últimas versões que "
-"incluem novas funcionalidade e correções."
+"A loja de aplicações de código aberto, pague-o-que-quiser da elementary. "
+"Revista e categorizada pela elementary para assegurar uma experiência "
+"nativa, respeitadora da privacidade e segura. Navegue por categorias ou "
+"pesquise e descubra novas aplicações. O Centro de Aplicações também é "
+"utilizado para atualizar o sistema para as últimas versões que incluem novas "
+"funcionalidade e correções."
 
 #: data/io.elementary.appcenter.appdata.xml.in:16
 #: data/io.elementary.appcenter.appdata.xml.in:43
-#, fuzzy
-#| msgid "Fixes"
 msgid "Fixes:"
-msgstr "Correções"
+msgstr "Correções:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
-#, fuzzy
-#| msgid "Add support for Flatpak apps"
 msgid "Show brand colors and support payments for Flatpak apps"
-msgstr "Adiciona suporte para aplicações Flatpak"
+msgstr "Mostra cores da marca e suporta pagamentos para aplicações Flatpak"
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
 msgid "Fix missing mail icon in payments dialog"
-msgstr ""
+msgstr "Corrige o ícone do correio em falta na janela de diálogo dos pagamentos"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 msgid "Fix missing privacy policy in payments dialog"
