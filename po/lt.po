@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-22 17:26+0000\n"
+"POT-Creation-Date: 2021-07-27 17:04+0000\n"
 "PO-Revision-Date: 2019-10-12 13:23+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://l10n.elementary.io/projects/appcenter/appcenter/lt/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:338
+#: src/Application.vala:38 src/Core/Package.vala:334
 msgid "AppCenter"
 msgstr "Programų centras"
 
@@ -56,9 +56,9 @@ msgstr "Atverti"
 msgid "Failed to launch “%s“"
 msgstr "Nepavyko pašalinti \"%s\""
 
-#: src/MainWindow.vala:172 src/Views/Homepage.vala:297
-#: src/Views/Homepage.vala:307 src/Views/Homepage.vala:312
-#: src/Views/Homepage.vala:323 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:172 src/Views/Homepage.vala:299
+#: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
+#: src/Views/Homepage.vala:325 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "Pradžia"
 
@@ -102,7 +102,7 @@ msgstr "Šalinami paketai"
 msgid "Downloading"
 msgstr "Atsiunčiama"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:925
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:969
 msgid "Installing"
 msgstr "Diegiama"
 
@@ -147,9 +147,9 @@ msgid "Finished"
 msgstr "Užbaigta"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:934 src/Core/FlatpakBackend.vala:962
-#: src/Core/FlatpakBackend.vala:1069 src/Core/FlatpakBackend.vala:1097
-#: src/Core/FlatpakBackend.vala:1242 src/Core/FlatpakBackend.vala:1268
+#: src/Core/FlatpakBackend.vala:978 src/Core/FlatpakBackend.vala:1006
+#: src/Core/FlatpakBackend.vala:1113 src/Core/FlatpakBackend.vala:1141
+#: src/Core/FlatpakBackend.vala:1286 src/Core/FlatpakBackend.vala:1312
 msgid "Cancelling"
 msgstr "Atšaukiama"
 
@@ -240,45 +240,45 @@ msgstr[0] "Jūsų sistemai prieinamas %u atnaujinimas"
 msgstr[1] "Jūsų sistemai prieinami %u atnaujinimai"
 msgstr[2] "Jūsų sistemai prieinama %u atnaujinimų"
 
-#: src/Core/FlatpakBackend.vala:1060
+#: src/Core/FlatpakBackend.vala:1104
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "Šalinti"
 
-#: src/Core/FlatpakBackend.vala:1233
+#: src/Core/FlatpakBackend.vala:1277
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
 msgstr "Atnaujinti"
 
-#: src/Core/Package.vala:308
+#: src/Core/Package.vala:304
 #, c-format
 msgid "%s Developers"
 msgstr "%s kūrėjai"
 
-#: src/Core/Package.vala:340
+#: src/Core/Package.vala:336
 msgid "elementary Updates"
 msgstr "elementary atnaujinimai"
 
-#: src/Core/Package.vala:342
+#: src/Core/Package.vala:338
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (nekuruojama)"
 
-#: src/Core/Package.vala:347
+#: src/Core/Package.vala:343
 #, c-format
 msgid "%s (system-wide)"
 msgstr ""
 
-#: src/Core/Package.vala:352
+#: src/Core/Package.vala:348
 msgid "Ubuntu Drivers"
 msgstr "Ubuntu tvarkyklės"
 
-#: src/Core/Package.vala:355
+#: src/Core/Package.vala:351
 msgid "Unknown Origin (non-curated)"
 msgstr "Nežinoma kilmė (nekuruojama)"
 
-#: src/Core/Package.vala:528
+#: src/Core/Package.vala:524
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Programos būsena Programų centre nėra nustatyta kaip įdiegta šiam paketui: %s"
@@ -740,7 +740,7 @@ msgstr "Populiarėjančios"
 msgid "Categories"
 msgstr "Kategorijos"
 
-#: src/Views/Homepage.vala:312 src/Views/Homepage.vala:323
+#: src/Views/Homepage.vala:314 src/Views/Homepage.vala:325
 #, c-format
 msgid "Search %s"
 msgstr "Ieškoti %s"
