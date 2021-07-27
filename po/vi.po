@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-22 17:26+0000\n"
+"POT-Creation-Date: 2021-07-27 17:04+0000\n"
 "PO-Revision-Date: 2020-10-07 03:57+0000\n"
 "Last-Translator: Trkien618 <hacngoctrungkien@gmail.com>\n"
 "Language-Team: Vietnamese <https://l10n.elementary.io/projects/appcenter/appcenter/vi/>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:338
+#: src/Application.vala:38 src/Core/Package.vala:334
 msgid "AppCenter"
 msgstr "Trung tâm Ứng dụng"
 
@@ -58,9 +58,9 @@ msgstr "Mở"
 msgid "Failed to launch “%s“"
 msgstr "Gỡ cài đặt"
 
-#: src/MainWindow.vala:172 src/Views/Homepage.vala:297
-#: src/Views/Homepage.vala:307 src/Views/Homepage.vala:312
-#: src/Views/Homepage.vala:323 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:172 src/Views/Homepage.vala:299
+#: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
+#: src/Views/Homepage.vala:325 src/Views/SearchView.vala:89
 #, fuzzy
 msgid "Home"
 msgstr "Trang chủ"
@@ -105,7 +105,7 @@ msgstr "Đang xóa gói"
 msgid "Downloading"
 msgstr "Đang tải về"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:925
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:969
 msgid "Installing"
 msgstr "Đang cài đặt"
 
@@ -150,9 +150,9 @@ msgid "Finished"
 msgstr "Đã hoàn tất"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:934 src/Core/FlatpakBackend.vala:962
-#: src/Core/FlatpakBackend.vala:1069 src/Core/FlatpakBackend.vala:1097
-#: src/Core/FlatpakBackend.vala:1242 src/Core/FlatpakBackend.vala:1268
+#: src/Core/FlatpakBackend.vala:978 src/Core/FlatpakBackend.vala:1006
+#: src/Core/FlatpakBackend.vala:1113 src/Core/FlatpakBackend.vala:1141
+#: src/Core/FlatpakBackend.vala:1286 src/Core/FlatpakBackend.vala:1312
 msgid "Cancelling"
 msgstr "Đang hủy"
 
@@ -239,46 +239,46 @@ msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "%u bản cập nhật khả dụng cho hệ thống của bạn"
 
-#: src/Core/FlatpakBackend.vala:1060
+#: src/Core/FlatpakBackend.vala:1104
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "Gỡ cài đặt"
 
-#: src/Core/FlatpakBackend.vala:1233
+#: src/Core/FlatpakBackend.vala:1277
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
 msgstr "Cập nhật"
 
-#: src/Core/Package.vala:308
+#: src/Core/Package.vala:304
 #, c-format
 msgid "%s Developers"
 msgstr "%s Nhà phát triển"
 
-#: src/Core/Package.vala:340
+#: src/Core/Package.vala:336
 msgid "elementary Updates"
 msgstr "Cập nhật cơ bản"
 
-#: src/Core/Package.vala:342
+#: src/Core/Package.vala:338
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (Không quản lý)"
 
-#: src/Core/Package.vala:347
+#: src/Core/Package.vala:343
 #, c-format
 msgid "%s (system-wide)"
 msgstr "%s (system-wide)"
 
-#: src/Core/Package.vala:352
+#: src/Core/Package.vala:348
 #, fuzzy
 msgid "Ubuntu Drivers"
 msgstr "Các trình điều khiển"
 
-#: src/Core/Package.vala:355
+#: src/Core/Package.vala:351
 msgid "Unknown Origin (non-curated)"
 msgstr "Nguồn gốc không xác định (không được quản lý)"
 
-#: src/Core/Package.vala:528
+#: src/Core/Package.vala:524
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Trạng thái ứng dụng không được đặt như ứng dụng đã cài đặt trong AppCenter cho package: %s"
@@ -737,7 +737,7 @@ msgstr "Nổi bật"
 msgid "Categories"
 msgstr "Danh mục"
 
-#: src/Views/Homepage.vala:312 src/Views/Homepage.vala:323
+#: src/Views/Homepage.vala:314 src/Views/Homepage.vala:325
 #, c-format
 msgid "Search %s"
 msgstr "Tìm %s"

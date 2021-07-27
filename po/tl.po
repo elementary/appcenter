@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-22 17:26+0000\n"
+"POT-Creation-Date: 2021-07-27 17:04+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Tagalog <https://l10n.elementary.io/projects/appcenter/appcenter/tl/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:338
+#: src/Application.vala:38 src/Core/Package.vala:334
 msgid "AppCenter"
 msgstr "AppCenter"
 
@@ -54,9 +54,9 @@ msgstr ""
 msgid "Failed to launch “%s“"
 msgstr "I-uninstall"
 
-#: src/MainWindow.vala:172 src/Views/Homepage.vala:297
-#: src/Views/Homepage.vala:307 src/Views/Homepage.vala:312
-#: src/Views/Homepage.vala:323 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:172 src/Views/Homepage.vala:299
+#: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
+#: src/Views/Homepage.vala:325 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr ""
 
@@ -100,7 +100,7 @@ msgstr "Nagtatangal ng mga package"
 msgid "Downloading"
 msgstr ""
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:925
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:969
 msgid "Installing"
 msgstr ""
 
@@ -145,9 +145,9 @@ msgid "Finished"
 msgstr "Tapos na"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:934 src/Core/FlatpakBackend.vala:962
-#: src/Core/FlatpakBackend.vala:1069 src/Core/FlatpakBackend.vala:1097
-#: src/Core/FlatpakBackend.vala:1242 src/Core/FlatpakBackend.vala:1268
+#: src/Core/FlatpakBackend.vala:978 src/Core/FlatpakBackend.vala:1006
+#: src/Core/FlatpakBackend.vala:1113 src/Core/FlatpakBackend.vala:1141
+#: src/Core/FlatpakBackend.vala:1286 src/Core/FlatpakBackend.vala:1312
 msgid "Cancelling"
 msgstr "Kinakansela"
 
@@ -236,45 +236,45 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "May %u update na pwedeng kunin para sa iyong sistema"
 msgstr[1] "May mga %u na update na pwedeng kunin para sa iyong sistema"
 
-#: src/Core/FlatpakBackend.vala:1060
+#: src/Core/FlatpakBackend.vala:1104
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "I-uninstall"
 
-#: src/Core/FlatpakBackend.vala:1233
+#: src/Core/FlatpakBackend.vala:1277
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
 msgstr "I-update"
 
-#: src/Core/Package.vala:308
+#: src/Core/Package.vala:304
 #, c-format
 msgid "%s Developers"
 msgstr ""
 
-#: src/Core/Package.vala:340
+#: src/Core/Package.vala:336
 msgid "elementary Updates"
 msgstr ""
 
-#: src/Core/Package.vala:342
+#: src/Core/Package.vala:338
 msgid "Ubuntu (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:347
+#: src/Core/Package.vala:343
 #, c-format
 msgid "%s (system-wide)"
 msgstr ""
 
-#: src/Core/Package.vala:352
+#: src/Core/Package.vala:348
 msgid "Ubuntu Drivers"
 msgstr ""
 
-#: src/Core/Package.vala:355
+#: src/Core/Package.vala:351
 msgid "Unknown Origin (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:528
+#: src/Core/Package.vala:524
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
@@ -723,7 +723,7 @@ msgstr ""
 msgid "Categories"
 msgstr "Mga Kategorya"
 
-#: src/Views/Homepage.vala:312 src/Views/Homepage.vala:323
+#: src/Views/Homepage.vala:314 src/Views/Homepage.vala:325
 #, c-format
 msgid "Search %s"
 msgstr ""

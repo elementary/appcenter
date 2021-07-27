@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-22 17:26+0000\n"
+"POT-Creation-Date: 2021-07-27 17:04+0000\n"
 "PO-Revision-Date: 2020-06-12 16:40+0000\n"
 "Last-Translator: Grzegorz Kulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/appcenter/appcenter/szl/>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Generator: Weblate 3.9.1\n"
 
 #. Add "AppCenter" to the translation catalog
-#: src/Application.vala:38 src/Core/Package.vala:338
+#: src/Application.vala:38 src/Core/Package.vala:334
 msgid "AppCenter"
 msgstr "AppCyntrum"
 
@@ -55,9 +55,9 @@ msgstr "Ôtwōrz"
 msgid "Failed to launch “%s“"
 msgstr "Niy szło ôdinstalować „%s”"
 
-#: src/MainWindow.vala:172 src/Views/Homepage.vala:297
-#: src/Views/Homepage.vala:307 src/Views/Homepage.vala:312
-#: src/Views/Homepage.vala:323 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:172 src/Views/Homepage.vala:299
+#: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
+#: src/Views/Homepage.vala:325 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "Katalog dōmowy"
 
@@ -101,7 +101,7 @@ msgstr "Kasowanie paketōw"
 msgid "Downloading"
 msgstr "Pobiyranie"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:925
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:969
 msgid "Installing"
 msgstr "Instalowanie"
 
@@ -146,9 +146,9 @@ msgid "Finished"
 msgstr "Fertich"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:934 src/Core/FlatpakBackend.vala:962
-#: src/Core/FlatpakBackend.vala:1069 src/Core/FlatpakBackend.vala:1097
-#: src/Core/FlatpakBackend.vala:1242 src/Core/FlatpakBackend.vala:1268
+#: src/Core/FlatpakBackend.vala:978 src/Core/FlatpakBackend.vala:1006
+#: src/Core/FlatpakBackend.vala:1113 src/Core/FlatpakBackend.vala:1141
+#: src/Core/FlatpakBackend.vala:1286 src/Core/FlatpakBackend.vala:1312
 msgid "Cancelling"
 msgstr "Pociepowanie"
 
@@ -239,41 +239,41 @@ msgstr[0] "Je dostympno %u aktualizacyjo dlo tego systymu"
 msgstr[1] "Sōm dostympne %u aktualizacyje dlo tego systymu"
 msgstr[2] "Je dostympne %u aktualizacyji dlo tego systymu"
 
-#: src/Core/FlatpakBackend.vala:1060
+#: src/Core/FlatpakBackend.vala:1104
 msgid "Uninstalling"
 msgstr "Ôdinstalowowanie"
 
-#: src/Core/FlatpakBackend.vala:1233
+#: src/Core/FlatpakBackend.vala:1277
 msgid "Updating"
 msgstr "Aktualizowanie"
 
-#: src/Core/Package.vala:308
+#: src/Core/Package.vala:304
 #, c-format
 msgid "%s Developers"
 msgstr "Programisty %s"
 
-#: src/Core/Package.vala:340
+#: src/Core/Package.vala:336
 msgid "elementary Updates"
 msgstr "Aktualizacyje elementary"
 
-#: src/Core/Package.vala:342
+#: src/Core/Package.vala:338
 msgid "Ubuntu (non-curated)"
 msgstr "Ubuntu (niynadzorowane)"
 
-#: src/Core/Package.vala:347
+#: src/Core/Package.vala:343
 #, c-format
 msgid "%s (system-wide)"
 msgstr ""
 
-#: src/Core/Package.vala:352
+#: src/Core/Package.vala:348
 msgid "Ubuntu Drivers"
 msgstr "Kludzocze Ubuntu"
 
-#: src/Core/Package.vala:355
+#: src/Core/Package.vala:351
 msgid "Unknown Origin (non-curated)"
 msgstr "Niyznōmego pochodzynio (niynadzorowane)"
 
-#: src/Core/Package.vala:528
+#: src/Core/Package.vala:524
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Sztand programu niyma nasztelowany za zainstalowany we AppCenter dlo paketu: %s"
@@ -720,7 +720,7 @@ msgstr "Coroz popularniyjsze"
 msgid "Categories"
 msgstr "Kategoryje"
 
-#: src/Views/Homepage.vala:312 src/Views/Homepage.vala:323
+#: src/Views/Homepage.vala:314 src/Views/Homepage.vala:325
 #, c-format
 msgid "Search %s"
 msgstr "Wyszukej %s"
