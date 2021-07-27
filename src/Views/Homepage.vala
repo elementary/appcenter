@@ -184,19 +184,43 @@ namespace AppCenter {
         }
 
         private async void load_banners () {
+            unowned FlatpakBackend fp_client = FlatpakBackend.get_default ();
+            var packages_by_release_date = fp_client.get_native_packages_by_release_date ();
+
+            foreach (var package in packages_by_release_date) {
+                if (recently_updated_carousel.get_children ().length () >= NUM_PACKAGES_IN_CAROUSEL) {
+                    break;
+                }
+
+                var installed = false;
+                foreach (var origin_package in package.origin_packages) {
+                    try {
+                        if (yield origin_package.backend.is_package_installed (origin_package)) {
+                            installed = true;
+                            break;
+                        }
+                    } catch (Error e) {
+                        continue;
+                    }
+                }
+
+                if (!installed) {
+                    recently_updated_carousel.add_package (package);
+                }
+            }
+
+            recently_updated_revealer.reveal_child = recently_updated_carousel.get_children ().length () > 0;
+
             var houston = AppCenterCore.Houston.get_default ();
             var pk_client = AppCenterCore.PackageKitBackend.get_default ();
             var packages_for_banner = new Gee.LinkedList<AppCenterCore.Package> ();
 
             var newest_ids = yield houston.get_app_ids ("/newest/project");
-            var updated_ids = yield houston.get_app_ids ("/newest/release");
-            Utils.shuffle_array (updated_ids);
             var trending_ids = yield houston.get_app_ids ("/newest/downloads");
             Utils.shuffle_array (trending_ids);
 
             var packages = new Gee.HashMap<string, AppCenterCore.Package> ();
             packages.set_all (pk_client.get_packages_for_component_ids (newest_ids));
-            packages.set_all (pk_client.get_packages_for_component_ids (updated_ids));
             packages.set_all (pk_client.get_packages_for_component_ids (trending_ids));
 
             if (!AppCenterCore.PackageKitBackend.supports_parallel_package_queries) {
@@ -232,28 +256,6 @@ namespace AppCenter {
             newest_banner.go_to_first ();
             switcher.show_all ();
             switcher_revealer.set_reveal_child (true);
-
-            packages_for_banner = new Gee.LinkedList<AppCenterCore.Package> ();
-            foreach (var package in updated_ids) {
-                if (packages_for_banner.size >= NUM_PACKAGES_IN_CAROUSEL) {
-                    break;
-                }
-
-                var candidate_package = packages[package];
-
-                if (candidate_package != null) {
-                    if (candidate_package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
-                        packages_for_banner.add (candidate_package);
-                    }
-                }
-            }
-
-            if (!packages_for_banner.is_empty) {
-                foreach (var banner_package in packages_for_banner) {
-                    recently_updated_carousel.add_package (banner_package);
-                }
-                recently_updated_revealer.reveal_child = true;
-            }
 
             packages_for_banner = new Gee.LinkedList<AppCenterCore.Package> ();
             foreach (var package in trending_ids) {
