@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-27 17:04+0000\n"
-"PO-Revision-Date: 2021-07-23 00:20+0000\n"
+"PO-Revision-Date: 2021-07-27 18:22+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/"
 "extra/uk/>\n"
@@ -47,7 +47,7 @@ msgstr "Виправлення:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Show Recently Updated Flatpak apps on home page"
-msgstr ""
+msgstr "Показ нещодавно оновлених застосунків Flatpak на домашній сторінці"
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
 msgid "Show brand colors and support payments for Flatpak apps"
