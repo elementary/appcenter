@@ -194,12 +194,8 @@ namespace AppCenter {
 
                 var installed = false;
                 foreach (var origin_package in package.origin_packages) {
-                    if (origin_package.backend != fp_client) {
-                        continue;
-                    }
-
                     try {
-                        if (yield fp_client.is_package_installed (origin_package)) {
+                        if (yield origin_package.backend.is_package_installed (origin_package)) {
                             installed = true;
                             break;
                         }
