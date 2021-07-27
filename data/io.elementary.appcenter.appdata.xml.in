@@ -15,6 +15,7 @@
       <description>
         <p>Fixes:</p>
         <ul>
+          <li>Show Recently Updated Flatpak apps on home page</li>
           <li>Show brand colors and support payments for Flatpak apps</li>
           <li>Fix missing mail icon in payments dialog</li>
           <li>Fix missing privacy policy in payments dialog</li>
