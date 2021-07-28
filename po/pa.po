@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.elementary.appcenter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-27 17:04+0000\n"
-"PO-Revision-Date: 2021-07-28 16:43+0000\n"
+"PO-Revision-Date: 2021-07-28 19:06+0000\n"
 "Last-Translator: elSolus <tumbleweed@tuta.io>\n"
 "Language-Team: Punjabi <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/pa/>\n"
@@ -549,66 +549,70 @@ msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:566
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr ""
+msgstr "ਰਕਮ ਗ਼ਲਤ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਜਾਇਜ਼ ਰਕਮ ਭਰ ਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
 #: src/Dialogs/StripeDialog.vala:577
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr ""
+msgstr "ਪਿੰਨ ਨੰਬਰ ਗ਼ਲਤ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਸਹੀ ਪਿੰਨ ਨੰਬਰ ਭਰ ਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
 #: src/Dialogs/StripeDialog.vala:579
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
 msgstr ""
+"ਪਿੰਨ ਨੰਬਰ ਲਈ ਬਹੁਤ ਜ਼ਿਆਦਾ ਕੋਸ਼ਿਸ਼ਾਂ ਹੋ ਚੁੱਕੀਆਂ ਹਨ। ਕਿਰਪਾ ਕਰਕੇ ਕੋਈ ਹੋਰ ਕਾਰਡ "
+"ਵਰਤ ਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
 #: src/Dialogs/StripeDialog.vala:599
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
 msgstr ""
+"ਲੈਣ-ਦੇਣ ਪੂਰਾ ਨਹੀਂ ਹੋ ਸਕਿਆ। ਜ਼ਿਆਦਾ ਜਾਣਕਾਰੀ ਲਈ ਕਿਰਪਾ ਕਰਕੇ ਆਪਣੇ ਬੈਂਕ ਨਾਲ਼ ਰਾਬਤਾ "
+"ਕਰੋ।"
 
 #: src/Dialogs/StripeDialog.vala:602
 msgid "The balance or credit limit on the card has been reached."
-msgstr ""
+msgstr "ਕਾਰਡ ਦੀ ਖ਼ਰਚ ਹੱਦ ਪੂਰੀ ਹੋ ਚੁੱਕੀ ਹੈ।"
 
 #: src/Dialogs/StripeDialog.vala:605
 msgid "The given card is a test card. Please use a real card to proceed."
-msgstr ""
+msgstr "ਇਹ ਕਾਰਡ ਇੱਕ ਟੈਸਟ ਕਾਰਡ ਹੈ। ਅੱਗੇ ਵਧਣ ਲਈ ਕਿਰਪਾ ਕਰਕੇ ਕੋਈ ਅਸਲੀ ਕਾਰਡ ਵਰਤੋ।"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
-msgstr ""
+msgstr "ਇਸ ਐਪ ਦਾ ਅਣ-ਸਥਾਪਨ ਕਰਨ ਨਾਲ਼ ਇਸਦਾ ਡੇਟਾ ਵੀ ਮਿਟ ਸਕਦੈ।"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:35
 msgid "Uninstall app?"
-msgstr ""
+msgstr "ਅਣ-ਸਥਾਪਨ ਕਰਨਾ (ਐਪ ਹਟਾਉਣੀ) ਚਾਹੁੰਦੇ ਹੋ?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:38
 #, c-format
 msgid "Uninstall “%s”?"
-msgstr ""
+msgstr "“%s” ਹਟਾਉਣੀ ਚਾਹੁੰਦੇ ਹੋ?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:124
 msgid "Uninstall"
-msgstr ""
+msgstr "ਅਣ-ਸਥਾਪਨ ਕਰੋ (ਐਪ ਹਟਾਓ)"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
 #: src/Dialogs/UpgradeFailDialog.vala:26
 msgid "This may have been caused by external or manually compiled software."
-msgstr ""
+msgstr "ਇਹ ਕਿਸੇ ਬਾਹਰੀ ਜਾਂ ਹੱਥੀਂ ਕੰਪਾਇਲ ਕੀਤੇ ਸਾਫ਼ਟਵੇਅਰ ਕਰਕੇ ਹੋ ਸਕਦੈ।"
 
 #: src/Dialogs/UninstallFailDialog.vala:37
 msgid "Failed to uninstall app"
-msgstr ""
+msgstr "ਐਪ ਹਟਾਉਣਾ ਨਾਕਾਮ ਰਿਹਾ"
 
 #: src/Dialogs/UninstallFailDialog.vala:40
 #, c-format
 msgid "Failed to uninstall “%s”"
-msgstr ""
+msgstr "“%s” ਨੂੰ ਹਟਾਉਣਾ (ਅਣ-ਸਥਾਪਨ) ਨਾਕਾਮ ਰਿਹਾ"
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
-msgstr ""
+msgstr "ਅਪਡੇਟਾਂ ਲਿਆਉਣਾ ਨਾਕਾਮ ਰਿਹਾ"
 
 #: src/Dialogs/UpdateFailDialog.vala:26
 msgid ""
