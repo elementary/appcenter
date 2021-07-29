@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: io.elementary.appcenter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-27 17:04+0000\n"
-"PO-Revision-Date: 2021-07-29 01:14+0000\n"
+"PO-Revision-Date: 2021-07-29 06:15+0000\n"
 "Last-Translator: elSolus <tumbleweed@tuta.io>\n"
 "Language-Team: Punjabi <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/pa/>\n"
@@ -420,7 +420,7 @@ msgstr "ਅਦਾਇਗੀ"
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
 msgid "Pay $%d for %s"
-msgstr "%s ਲਈ %d ਰੁਪਏ ਅਦਾ ਕਰੋ"
+msgstr "%s ਲਈ $%d ਅਮਰੀਕੀ ਡਾਲਰ ਅਦਾ ਕਰੋ"
 
 #: src/Dialogs/StripeDialog.vala:97
 msgid ""
@@ -693,275 +693,278 @@ msgstr "ਪਬਲਿਕ ਡੋਮੇਨ ਵਿੱਚ"
 #. TRANSLATORS: Replace the link with the version for your language
 #: src/Views/AppInfoView.vala:767
 msgid "https://en.wikipedia.org/wiki/Public_domain"
-msgstr ""
+msgstr "https://simple.wikipedia.org/wiki/Public_domain"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
 #: src/Views/AppInfoView.vala:772
 msgid "Free Software"
-msgstr ""
+msgstr "ਅਜ਼ਾਦ ਸਾਫ਼ਟਵੇਅਰ"
 
 #. TRANSLATORS: Replace the link with the version for your language
 #: src/Views/AppInfoView.vala:775
 msgid "https://www.gnu.org/philosophy/free-sw"
-msgstr ""
+msgstr "https://www.gnu.org/philosophy/free-sw"
 
 #: src/Views/AppInfoView.vala:779
 msgid "Proprietary"
-msgstr ""
+msgstr "ਮਲਕੀਅਤੀ ਸਾਫ਼ਟਵੇਅਰ"
 
 #: src/Views/AppInfoView.vala:782
 msgid "Unknown License"
-msgstr ""
+msgstr "ਅਣਜਾਣ ਲਾਇਸੰਸ"
 
 #: src/Views/AppInfoView.vala:860
 msgid "Fund"
-msgstr ""
+msgstr "ਫੰਡ"
 
 #: src/Views/AppInfoView.vala:882
 msgid "Fund the development of this app"
-msgstr ""
+msgstr "ਇਸ ਐਪ ਦੀ ਉੱਨਤੀ ਲਈ ਆਰਥਿਕ ਮਦਦ ਕਰੋ"
 
 #: src/Views/AppListUpdateView.vala:32
 msgid "Checking for Updates"
-msgstr ""
+msgstr "ਅਪਡੇਟਾਂ ਲੱਭੀਆਂ ਜਾ ਰਹੀਆਂ ਹਨ"
 
 #: src/Views/AppListUpdateView.vala:33
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr ""
+"ਅਪਰੇਟਿੰਗ ਸਿਸਟਮ ਅਤੇ ਸਥਾਪਤ ਐਪਾਂ ਲਈ ਉਪਲਬਧ ਅਪਡੇਟਾਂ ਦੀ ਸੂਚੀ ਡਾਊਨਲੋਡ ਹੋ ਰਹੀ ਹੈ"
 
 #: src/Views/AppListUpdateView.vala:41
 msgid "A restart is required to finish installing updates"
-msgstr ""
+msgstr "ਸਥਾਪਨ ਮੁਕੰਮਲ ਕਰਨ ਲਈ ਸਿਸਟਮ ਬੰਦ ਕਰਕੇ ਦੁਬਾਰਾ ਚਲਾਉਣਾ ਲਾਜ਼ਮੀ ਹੈ"
 
 #: src/Views/AppListUpdateView.vala:49
 msgid "Restart Now"
-msgstr ""
+msgstr "ਹੁਣੇ ਬੰਦ ਕਰਕੇ ਦੁਬਾਰਾ ਚਲਾਓ"
 
 #: src/Views/AppListUpdateView.vala:58
 msgid ""
 "Requesting a restart failed. Restart manually to finish installing updates"
 msgstr ""
+"ਆਪਣੇ-ਆਪ ਦੁਬਾਰਾ ਚਲਾਉਣਾ ਨਾਕਾਮ ਰਿਹਾ। ਸਥਾਪਨ ਮੁਕੰਮਲ ਕਰਨ ਲਈ ਖ਼ੁਦ ਹੱਥੀਂ ਬੰਦ ਕਰ ਕੇ "
+"ਚਲਾਓ"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
 #: src/Views/AppListUpdateView.vala:186
 msgid "Update All"
-msgstr ""
+msgstr "ਸਾਰੀਆਂ ਨੂੰ ਅਪਡੇਟ ਕਰੋ"
 
 #: src/Views/AppListView.vala:30
 msgid "No Results"
-msgstr ""
+msgstr "ਕੋਈ ਨਤੀਜੇ ਨਹੀਂ"
 
 #: src/Views/AppListView.vala:31
 msgid "No apps could be found. Try changing search terms."
-msgstr ""
+msgstr "ਕੋਈ ਐਪਾਂ ਨਹੀਂ ਮਿਲੀਆਂ। ਖੋਜ-ਸ਼ਬਦ ਬਦਲ ਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋੋ।"
 
 #: src/Views/AppListView.vala:167
 msgid "Non-Curated Apps"
-msgstr ""
+msgstr "ਅਣ ਸੰਵਾਰੀਆਂ ਐਪਾਂ"
 
 #: src/Views/Homepage.vala:68
 msgid "Recently Updated"
-msgstr ""
+msgstr "ਹਾਲ ਹੀ ਵਿੱਚ ਅਪਡੇਟ ਕੀਤੀਆਂ ਹੋਈਆਂ"
 
 #: src/Views/Homepage.vala:84
 msgid "Trending"
-msgstr ""
+msgstr "ਅੱਜ-ਕੱਲ੍ਹ ਰੁਝਾਨ ਵਿੱਚ"
 
 #: src/Views/Homepage.vala:100
 msgid "Categories"
-msgstr ""
+msgstr "ਵਰਗ"
 
 #: src/Views/Homepage.vala:314 src/Views/Homepage.vala:325
 #, c-format
 msgid "Search %s"
-msgstr ""
+msgstr "%s ਖੋਜੋ"
 
 #. / TRANSLATORS: the name of the Search view
 #: src/Views/SearchView.vala:39
 msgctxt "view"
 msgid "Search"
-msgstr ""
+msgstr "ਖੋਜਣਾ/ਲੱਭਣਾ"
 
 #: src/Widgets/Banner.vala:57
 msgid "An open, pay-what-you-want app store"
-msgstr ""
+msgstr "ਇੱਕ ਖੁੱਲ੍ਹਾ, ਜੋ-ਮਰਜ਼ੀ-ਅਦਾ-ਕਰੋ ਵਾਲ਼ਾ ਐਪ ਭੰਡਾਰ"
 
 #: src/Widgets/Banner.vala:76
 msgid "Get the apps that you need at a price you can afford."
-msgstr ""
+msgstr "ਐਪਾਂ ਜੋ ਤੁਹਾਨੂੰ ਚਾਹੀਦੀਆਂ ਹਨ ਅਤੇ ਕੀਮਤ ਵੀ ਉਹ ਜਿਹੜੀ ਤੁਹਾਨੂੰ ਪਸੰਦ ਹੋਵੇ।"
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
-msgstr ""
+msgstr "ਕਾਰਡ ਨੰਬਰ"
 
 #: src/Widgets/CategoryFlowBox.vala:27
 msgid "Accessories"
-msgstr ""
+msgstr "ਸੰਗੀ"
 
 #: src/Widgets/CategoryFlowBox.vala:28
 msgid "Audio"
-msgstr ""
+msgstr "ਆਡੀਓ"
 
 #: src/Widgets/CategoryFlowBox.vala:29
 msgid "Communication"
-msgstr ""
+msgstr "ਗੱਲਬਾਤ"
 
 #: src/Widgets/CategoryFlowBox.vala:38
 msgid "Development"
-msgstr ""
+msgstr "ਸਾਫ਼ਟਵੇਅਰ ਉੱਨਤੀ"
 
 #: src/Widgets/CategoryFlowBox.vala:48
 msgid "Education"
-msgstr ""
+msgstr "ਸਿੱਖਿਆ"
 
 #: src/Widgets/CategoryFlowBox.vala:49
 msgid "Finance"
-msgstr ""
+msgstr "ਵਿੱਤੀ"
 
 #: src/Widgets/CategoryFlowBox.vala:53
 msgid "Games"
-msgstr ""
+msgstr "ਗੇਮਾਂ"
 
 #: src/Widgets/CategoryFlowBox.vala:69
 msgid "Graphics"
-msgstr ""
+msgstr "ਗ੍ਰਾਫ਼ਿਕਸ"
 
 #: src/Widgets/CategoryFlowBox.vala:78
 msgid "Internet"
-msgstr ""
+msgstr "ਇੰਟਰਨੈੱਟ"
 
 #: src/Widgets/CategoryFlowBox.vala:82
 msgid "Math, Science, & Engineering"
-msgstr ""
+msgstr "ਹਿਸਾਬ, ਸਾਇੰਸ, ਅਤੇ ਇੰਜੀਨੀਅਰਿੰਗ"
 
 #: src/Widgets/CategoryFlowBox.vala:101
 msgid "Media Production"
-msgstr ""
+msgstr "ਮੀਡੀਆ ਪ੍ਰੋਡਕਸ਼ਨ"
 
 #: src/Widgets/CategoryFlowBox.vala:108
 msgid "Office"
-msgstr ""
+msgstr "ਦਫ਼ਤਰੀ"
 
 #: src/Widgets/CategoryFlowBox.vala:115
 msgid "System"
-msgstr ""
+msgstr "ਸਿਸਟਮ"
 
 #: src/Widgets/CategoryFlowBox.vala:119
 msgid "Universal Access"
-msgstr ""
+msgstr "ਸਰਬ-ਸਾਂਝਾ"
 
 #: src/Widgets/CategoryFlowBox.vala:120
 msgid "Video"
-msgstr ""
+msgstr "ਵਿਡੀਓ"
 
 #: src/Widgets/CategoryFlowBox.vala:125
 msgid "Writing & Language"
-msgstr ""
+msgstr "ਲੇਖਣ ਅਤੇ ਭਾਸ਼ਾ"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
-msgstr ""
+msgstr "ਇਹਦੇ ਨਹੀਂ ਅਦਾਇਗੀ ਲੋੜੀਂਦੀ ਹੈ, ਜਿਹੜੇ ਕਿ ਚਾਲੂ ਨਹੀਂ ਕੀਤੀ ਹੋਈ"
 
 #: src/Widgets/HumbleButton.vala:105
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:285
 msgid "Free"
-msgstr ""
+msgstr "ਮੁਫ਼ਤ"
 
 #: src/Widgets/HumbleButton.vala:107
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:287
 msgid "Install"
-msgstr ""
+msgstr "ਸਥਾਪਤ ਕਰੋ"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:141
 #, c-format
 msgid "$%d.00"
-msgstr ""
+msgstr "$%d.00 ਅਮਰੀਕੀ ਡਾਲਰ"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:144
 #, c-format
 msgid "$%d"
-msgstr ""
+msgstr "$%d ਅਮਰੀਕੀ ਡਾਲਰ"
 
 #: src/Widgets/NetworkInfoBar.vala:28
 msgid "Network Not Available."
-msgstr ""
+msgstr "ਨੈੱਟਵਰਕ ਉਪਲਬਧ ਨਹੀਂ ਹੈ।"
 
 #: src/Widgets/NetworkInfoBar.vala:29
 msgid "Connect to the Internet to browse and install apps."
-msgstr ""
+msgstr "ਐਪ ਭੰਡਾਰ ਫਰੋਲਣ ਅਤੇ ਐਪਾਂ ਸਥਾਪਤ ਕਰਨ ਲਈ ਨੈੱਟਵਰਕ ਨਾਲ਼ ਜੁੜੋ।"
 
 #. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
 #: src/Widgets/NetworkInfoBar.vala:37
 msgid "Network Settings…"
-msgstr ""
+msgstr "ਨੈੱਟਵਰਕ ਸੈਟਿੰਗਾਂ…"
 
 #: src/Widgets/ReleaseRow.vala:67
 #, c-format
 msgid "<b>%s</b> – %s"
-msgstr ""
+msgstr "<b>%s</b> – %s"
 
 #: src/Widgets/ReleaseRow.vala:74
 msgid "Unknown version"
-msgstr ""
+msgstr "ਅਣਜਾਣ ਵਰਜਨ"
 
 #: src/Widgets/ReleaseRow.vala:90 src/Widgets/ReleaseRow.vala:93
 msgid "No description available"
-msgstr ""
+msgstr "ਵੇਰਵਾ ਉਪਲਬਧ ਨਹੀਂ ਹੈ"
 
 #: src/Widgets/SharePopover.vala:44
 msgid "Facebook"
-msgstr ""
+msgstr "ਫੇਸਬੁੱਕ"
 
 #: src/Widgets/SharePopover.vala:48
 msgid "Twitter"
-msgstr ""
+msgstr "ਟਵਿੱਟਰ"
 
 #: src/Widgets/SharePopover.vala:52
 msgid "Reddit"
-msgstr ""
+msgstr "ਰੈੱਡਿਟ"
 
 #: src/Widgets/SharePopover.vala:56
 msgid "Tumblr"
-msgstr ""
+msgstr "ਟਮਲਰ"
 
 #: src/Widgets/SharePopover.vala:60
 msgid "Telegram"
-msgstr ""
+msgstr "ਟੈਲੀਗ੍ਰਾਮ"
 
 #: src/Widgets/SharePopover.vala:64
 msgid "Copy link"
-msgstr ""
+msgstr "ਲਿੰਕ ਨਕਲ ਕਰੋ"
 
 #: src/Widgets/SizeLabel.vala:35
 msgid "Actual Download Size Likely to Be Smaller"
-msgstr ""
+msgstr "ਲੱਗਦੈ ਕਿ ਅਸਲੀ ਡਾਊਨਲੋਡ ਸਾਈਜ਼ ਇਸਤੋਂ ਛੋਟਾ ਹੀ ਹੋਵੇਗਾ"
 
 #: src/Widgets/SizeLabel.vala:36
 msgid "Only the parts of apps and updates that are needed will be downloaded."
-msgstr ""
+msgstr "ਸਿਰਫ਼ ਲੋੜੀਂਦੀਆਂ ਅਪਡੇਟਾਂ ਅਤੇ ਐਪਾਂ ਦੇ ਹਿੱਸੇ ਹੀ ਡਾਊਨਲੋਡ ਹੋਣਗੇ।"
 
 #: src/Widgets/SizeLabel.vala:63
 #, c-format
 msgid "Up to %s"
-msgstr ""
+msgstr "%s ਤੱਕ"
 
 #: src/Widgets/UpdateHeaderRow.vala:41
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u ਅਪਡੇਟ ਉਪਲਬਧ ਹੈ"
+msgstr[1] "%u ਅਪਡੇਟਾਂ ਉਪਲਬਧ ਹਨ"
 
 #: src/Widgets/UpdateHeaderRow.vala:54
 msgid "Drivers"
-msgstr ""
+msgstr "ਡਰਾਇਵਰ"
 
 #: src/Widgets/UpdateHeaderRow.vala:58
 msgid "Up to Date"
-msgstr ""
+msgstr "ਤਰੋ-ਤਾਜ਼ਾ (ਅਪ ਟੂ ਡੇਟ)"
 
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
-msgstr ""
+msgstr "ਅਪਡੇਟ"
