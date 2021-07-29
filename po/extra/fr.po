@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-27 17:04+0000\n"
-"PO-Revision-Date: 2021-02-19 12:12+0000\n"
-"Last-Translator: Corentin Noël <corentin@elementary.io>\n"
+"PO-Revision-Date: 2021-07-29 18:10+0000\n"
+"Last-Translator: Corentin Noël <tintou@noel.tf>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/appcenter/extra/"
 "fr/>\n"
 "Language: fr\n"
@@ -44,10 +44,8 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:16
 #: data/io.elementary.appcenter.appdata.xml.in:44
-#, fuzzy
-#| msgid "Fixes"
 msgid "Fixes:"
-msgstr "Corrections"
+msgstr "Corrections :"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Show Recently Updated Flatpak apps on home page"
@@ -69,10 +67,8 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 #: data/io.elementary.appcenter.appdata.xml.in:36
-#, fuzzy
-#| msgid "Keyboard improvements"
 msgid "Improvements:"
-msgstr "Améliorations de la navigation au clavier"
+msgstr "Améliorations :"
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
 #: data/io.elementary.appcenter.appdata.xml.in:42
@@ -89,10 +85,8 @@ msgid "Updated translations"
 msgstr "Mise à jour des traductions"
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
-#, fuzzy
-#| msgid "New features"
 msgid "New features:"
-msgstr "Nouvelles fonctionnalités"
+msgstr "Nouvelles fonctionnalités :"
 
 #: data/io.elementary.appcenter.appdata.xml.in:33
 msgid "Show in-app notification when an app is installed"
