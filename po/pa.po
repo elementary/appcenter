@@ -2,38 +2,41 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the io.elementary.appcenter package.
 # Ryo Nakano <ryonakaknock3@gmail.com>, 2021.
+# elSolus <tumbleweed@tuta.io>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.appcenter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-27 17:04+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2021-07-29 06:15+0000\n"
+"Last-Translator: elSolus <tumbleweed@tuta.io>\n"
+"Language-Team: Punjabi <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/pa/>\n"
 "Language: pa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.4.2\n"
 
 #. Add "AppCenter" to the translation catalog
 #: src/Application.vala:38 src/Core/Package.vala:334
 msgid "AppCenter"
-msgstr ""
+msgstr "ਐਪ-ਸੈਂਟਰ"
 
 #: src/Application.vala:112
 #, c-format
 msgid "Could not parse the media type %s"
-msgstr ""
+msgstr "ਮੀਡੀਆ ਕਿਸਮ %s ਦੀ ਪੜਚੋਲ ਕੀਤੀ ਨਹੀਂ ਜਾ ਸਕੀ"
 
 #: src/Application.vala:132
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
-msgstr ""
+msgstr "ਦਿੱਤਾ ਹੋਇਆ ਲਿੰਕ '%s' ਲੱਭਿਆ ਨਹੀਂ ਜਾ ਸਕਿਆ, ਇਸਦੀ ਬਜਾਇ ਖੋਜ ਕਰ ਰਿਹੈ"
 
 #: src/Application.vala:295
 msgid "The app has been installed"
-msgstr ""
+msgstr "ਐਪ ਸਥਾਪਤ ਹੋ ਚੁੱਕੀ ਹੈ"
 
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
@@ -41,293 +44,293 @@ msgstr ""
 #: src/Application.vala:296 src/MainWindow.vala:354
 #, c-format
 msgid "“%s” has been installed"
-msgstr ""
+msgstr "“%s” ਸਥਾਪਤ ਹੋ ਚੁੱਕੀ ਹੈ"
 
 #: src/MainWindow.vala:137
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:133
 msgid "Open"
-msgstr ""
+msgstr "ਖੋਲ੍ਹੋ"
 
 #: src/MainWindow.vala:147
 #, c-format
 msgid "Failed to launch “%s“"
-msgstr ""
+msgstr "“%s“ ਨੂੰ ਲਾਂਚ ਕਰਨ ਨਾਕਾਮ ਰਿਹਾ"
 
 #: src/MainWindow.vala:172 src/Views/Homepage.vala:299
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
 #: src/Views/Homepage.vala:325 src/Views/SearchView.vala:89
 msgid "Home"
-msgstr ""
+msgstr "ਮੁੱਖ ਪੰਨਾ"
 
 #: src/MainWindow.vala:173 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 msgctxt "view"
 msgid "Installed"
-msgstr ""
+msgstr "ਸਥਾਪਤ ਕੀਤੇ ਹੋਏ"
 
 #: src/MainWindow.vala:213 src/MainWindow.vala:419 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:87
 msgid "Search Apps"
-msgstr ""
+msgstr "ਐਪਾਂ ਖੋਜੋ"
 
 #: src/Utils.vala:62 src/Core/ChangeInformation.vala:92
 msgid "Starting"
-msgstr ""
+msgstr "ਸ਼ੁਰੂ ਕਰ ਰਿਹੈ"
 
 #: src/Utils.vala:64 src/Core/ChangeInformation.vala:49
 #: src/Core/ChangeInformation.vala:64
 msgid "Waiting"
-msgstr ""
+msgstr "ਉਡੀਕ ਰਿਹੈ"
 
 #: src/Utils.vala:66
 msgid "Running"
-msgstr ""
+msgstr "ਚੱਲ ਰਿਹੈ"
 
 #: src/Utils.vala:68
 msgid "Querying"
-msgstr ""
+msgstr "ਪੜਤਾਲ ਕਰ ਰਿਹੈ"
 
 #: src/Utils.vala:70
 msgid "Getting information"
-msgstr ""
+msgstr "ਜਾਣਕਾਰੀ ਲਿਆ ਰਿਹੈ"
 
 #: src/Utils.vala:72
 msgid "Removing packages"
-msgstr ""
+msgstr "ਪੈਕੇਜ ਹਟਾ ਰਿਹੈ"
 
 #: src/Utils.vala:74
 msgid "Downloading"
-msgstr ""
+msgstr "ਡਾਊਨਲੋਡ ਕਰ ਰਿਹੈ"
 
 #: src/Utils.vala:76 src/Core/FlatpakBackend.vala:969
 msgid "Installing"
-msgstr ""
+msgstr "ਸਥਾਪਤ ਕਰ ਰਿਹੈ"
 
 #: src/Utils.vala:78
 msgid "Refreshing software list"
-msgstr ""
+msgstr "ਸਾਫ਼ਟਵੇਅਰ ਸੂਚੀ ਤਾਜ਼ੀ ਕਰ ਰਿਹੈ"
 
 #: src/Utils.vala:80
 msgid "Installing updates"
-msgstr ""
+msgstr "ਅਪਡੇਟਾਂ ਸਥਾਪਤ ਹੋ ਰਹੀਆਂ ਹਨ"
 
 #: src/Utils.vala:82
 msgid "Cleaning up packages"
-msgstr ""
+msgstr "ਪੈਕੇਜਾਂ ਦੀ ਸਫ਼ਾਈ ਹੋ ਰਹੀ ਹੈ"
 
 #: src/Utils.vala:84
 msgid "Obsoleting packages"
-msgstr ""
+msgstr "ਘਸੇ-ਪੁਰਾਣੇ ਪੈਕੇਜ"
 
 #: src/Utils.vala:86
 msgid "Resolving dependencies"
-msgstr ""
+msgstr "ਮੁਥਾਜੀਆਂ ਸੁਲਝਾਈਆਂ ਜਾ ਰਹੀਆਂ ਹਨ"
 
 #: src/Utils.vala:88
 msgid "Checking signatures"
-msgstr ""
+msgstr "ਦਸਤਖ਼ਤ ਜਾਂਚੇ ਜਾ ਰਹੇ ਹਨ"
 
 #: src/Utils.vala:90
 msgid "Testing changes"
-msgstr ""
+msgstr "ਤਬਦੀਲੀਆਂ ਪਰਖੀਆਂ ਜਾ ਰਹੀਆਂ ਹਨ"
 
 #: src/Utils.vala:92
 msgid "Committing changes"
-msgstr ""
+msgstr "ਤਬਦੀਲੀਆਂ ਪੱਕੀਆਂ ਕੀਤੀਆਂ ਜਾ ਰਹੀਆਂ ਹਨ"
 
 #: src/Utils.vala:94
 msgid "Requesting data"
-msgstr ""
+msgstr "ਡੇਟਾ ਮੰਗਿਆ ਜਾ ਰਿਹੈ"
 
 #: src/Utils.vala:96 src/Core/ChangeInformation.vala:71
 msgid "Finished"
-msgstr ""
+msgstr "ਖ਼ਤਮ ਹੋਇਆ"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
 #: src/Core/FlatpakBackend.vala:978 src/Core/FlatpakBackend.vala:1006
 #: src/Core/FlatpakBackend.vala:1113 src/Core/FlatpakBackend.vala:1141
 #: src/Core/FlatpakBackend.vala:1286 src/Core/FlatpakBackend.vala:1312
 msgid "Cancelling"
-msgstr ""
+msgstr "ਰੱਦ ਹੋ ਰਿਹੈ"
 
 #: src/Utils.vala:100
 msgid "Downloading repository information"
-msgstr ""
+msgstr "ਭੰਡਾਰ ਦੀ ਜਾਣਕਾਰੀ ਡਾਊਨਲੋਡ ਹੋ ਰਹੀ ਹੈ"
 
 #: src/Utils.vala:102
 msgid "Downloading list of packages"
-msgstr ""
+msgstr "ਪੈਕੇਜਾਂ ਦੀ ਸੂਚੀ ਡਾਊਨਲੋਡ ਹੋ ਰਹੀ ਹੈ"
 
 #: src/Utils.vala:104
 msgid "Downloading file lists"
-msgstr ""
+msgstr "ਫ਼ਾਇਲਾਂ ਦੀਆਂ ਸੂਚੀਆਂ ਡਾਊਨਲੋਡ ਹੋ ਰਹੀਆਂ ਹਨ"
 
 #: src/Utils.vala:106
 msgid "Downloading lists of changes"
-msgstr ""
+msgstr "ਤਬਦੀਲੀਆਂ ਦੀਆਂ ਸੂਚੀਆਂ ਡਾਊਨਲੋਡ ਹੋ ਰਹੀਆਂ ਹਨ"
 
 #: src/Utils.vala:108
 msgid "Downloading groups"
-msgstr ""
+msgstr "ਗਰੁੱਪ ਡਾਊਨਲੋਡ ਹੋ ਰਹੇ ਹਨ"
 
 #: src/Utils.vala:110
 msgid "Downloading update information"
-msgstr ""
+msgstr "ਅਪਡੇਟ ਜਾਣਕਾਰੀ ਡਾਊਨਲੋਡ ਹੋ ਰਹੀ ਹੈ"
 
 #: src/Utils.vala:112
 msgid "Repackaging files"
-msgstr ""
+msgstr "ਫ਼ਾਇਲਾਂ ਰੀਪੈਕਿਜ ਹੋ ਰਹੀਆਂ ਹਨ"
 
 #: src/Utils.vala:114
 msgid "Loading cache"
-msgstr ""
+msgstr "ਕੈਸ਼ ਲੋਡ ਹੋ ਰਿਹੈ"
 
 #: src/Utils.vala:116
 msgid "Scanning applications"
-msgstr ""
+msgstr "ਐਪਾਂ ਸਕੈਨ ਕਰ ਰਿਹੈ"
 
 #: src/Utils.vala:118
 msgid "Generating package lists"
-msgstr ""
+msgstr "ਪੈਕੇਜ ਸੂਚੀਆਂ ਬਣ ਰਹੀਆਂ ਹਨ"
 
 #: src/Utils.vala:120
 msgid "Waiting for package manager lock"
-msgstr ""
+msgstr "ਪੈਕੇਜ ਪ੍ਰਬੰਧਕ ਦੇ ਜਿੰਦਰੇ ਦੀ ਉਡੀਕ ਹੋ ਰਹੀ ਹੈ"
 
 #: src/Utils.vala:122
 msgid "Waiting for authentication"
-msgstr ""
+msgstr "ਇਜਾਜ਼ਤ ਮਿਲਣ ਦੀ ਉਡੀਕ ਹੋ ਰਹੀ ਹੈ"
 
 #: src/Utils.vala:124
 msgid "Updating running applications"
-msgstr ""
+msgstr "ਚੱਲ ਰਹੀਆਂ ਐਪਾਂ ਅਪਡੇਟ ਹੋ ਰਹੀਆਂ ਹਨ"
 
 #: src/Utils.vala:126
 msgid "Checking applications in use"
-msgstr ""
+msgstr "ਵਰਤੋਂ ਵਿਚਲੀਆਂ ਐਪਾਂ ਦਾ ਪਤਾ ਲਾਇਆ ਜਾ ਰਿਹੈ"
 
 #: src/Utils.vala:128
 msgid "Checking libraries in use"
-msgstr ""
+msgstr "ਵਰਤੋਂ ਵਿਚਲੀਆਂ ਲਾਇਬ੍ਰੇਰੀਆਂ ਦਾ ਪਤਾ ਲਾਇਆ ਜਾ ਰਿਹੈ"
 
 #: src/Utils.vala:130
 msgid "Copying files"
-msgstr ""
+msgstr "ਫ਼ਾਇਲਾਂ ਨਕਲ ਹੋ ਰਹੀਆਂ ਹਨ"
 
 #: src/Utils.vala:132
 msgid "Unknown state"
-msgstr ""
+msgstr "ਅਣਜਾਣ ਹਾਲਤ"
 
 #: src/Core/BackendAggregator.vala:46
 msgid "package operations are being performed"
-msgstr ""
+msgstr "ਪੈਕੇਜ ਕਾਰਵਾਈਆਂ ਦੀ ਤਾਮੀਲ ਹੋ ਰਹੀ ਹੈ"
 
 #: src/Core/Client.vala:72
 msgid "Update Available"
 msgid_plural "Updates Available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "ਅਪਡੇਟ ਉਪਲਬਧ ਹੈ"
+msgstr[1] "ਅਪਡੇਟਾਂ ਉਪਲਬਧ ਹਨ"
 
 #: src/Core/Client.vala:73
 #, c-format
 msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "ਤੁਹਾਡੇ ਸਿਸਟਮ ਲਈ %u ਅਪਡੇਟ ਉਪਲਬਧ ਹੈ"
+msgstr[1] "ਤੁਹਾਡੇ ਸਿਸਟਮ ਲਈ %u ਅਪਡੇਟਾਂ ਉਪਲਬਧ ਹਨ"
 
 #: src/Core/FlatpakBackend.vala:1104
 msgid "Uninstalling"
-msgstr ""
+msgstr "ਅਣ-ਸਥਾਪਨ ਹੋ ਰਿਹੈ"
 
 #: src/Core/FlatpakBackend.vala:1277
 msgid "Updating"
-msgstr ""
+msgstr "ਅਪਡੇਟ ਕੀਤਾ ਜਾ ਰਿਹੈ"
 
 #: src/Core/Package.vala:304
 #, c-format
 msgid "%s Developers"
-msgstr ""
+msgstr "%s ਡਿਵੈਲਪਰ"
 
 #: src/Core/Package.vala:336
 msgid "elementary Updates"
-msgstr ""
+msgstr "ਐਲੀਮੈਂਟਰੀ ਅਪਡੇਟਾਂ"
 
 #: src/Core/Package.vala:338
 msgid "Ubuntu (non-curated)"
-msgstr ""
+msgstr "ਉਬੂੰਟੂ (ਅਣ-ਘੜੀਆਂ)"
 
 #: src/Core/Package.vala:343
 #, c-format
 msgid "%s (system-wide)"
-msgstr ""
+msgstr "%s (ਸਾਰੇ ਸਿਸਟਮ 'ਤੇ)"
 
 #: src/Core/Package.vala:348
 msgid "Ubuntu Drivers"
-msgstr ""
+msgstr "ਉਬੂੰਟੂ ਡਰਾਇਵਰ"
 
 #: src/Core/Package.vala:351
 msgid "Unknown Origin (non-curated)"
-msgstr ""
+msgstr "ਅਣਜਾਣ ਸਰੋਤ ਤੋਂ (ਅਣ- ਘੜੀ/ਘੜੀਆਂ)"
 
 #: src/Core/Package.vala:524
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
-msgstr ""
+msgstr "ਇਹਨਾ ਪੈਕੇਜਾਂ ਲਈ ਐਪ-ਸੈਂਟਰ ਵਿੱਚ ਐਪ ਹਾਲਾਤ ਬਤੌਰ ਸਥਾਪਤ ਨਹੀਂ ਤੈਅ ਕੀਤੇ ਹੋਈ: %s"
 
 #: src/Core/PackageKitBackend.vala:283
 #, c-format
 msgid "%s (local)"
-msgstr ""
+msgstr "%s (ਮਕਾਮੀ)"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
-msgstr ""
+msgstr "ਅਪਰੇਟਿੰਗ ਸਿਸਟਮ ਅਪਡੇਟਾਂ"
 
 #: src/Core/UpdateManager.vala:39
 msgid "Updates to system components"
-msgstr ""
+msgstr "ਸਿਸਟਮ-ਅੰਗਾਂ ਦੀਆਂ ਅਪਡੇਟਾਂ"
 
 #: src/Core/UpdateManager.vala:87
 #, c-format
 msgid "Version: %s"
-msgstr ""
+msgstr "ਵਰਜਨ: %s"
 
 #: src/Core/UpdateManager.vala:130
 msgid "Flatpak runtime"
-msgstr ""
+msgstr "ਫ਼ਲੈਟਪੈਕ ਰਨਟਾਇਮ"
 
 #: src/Core/UpdateManager.vala:147
 msgid "No components with updates"
-msgstr ""
+msgstr "ਕਿਸੇ ਵੀ ਸਿਸਟਮ-ਅੰਗ ਲਈ ਅਪਡੇਟਾਂ ਨਹੀਂ ਹਨ"
 
 #: src/Core/UpdateManager.vala:152
 #, c-format
 msgid "%u component with updates"
 msgid_plural "%u components with updates"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "ਅਪਡੇਟਾਂ ਵਾਲ਼ਾ %u ਸਿਸਟਮ-ਅੰਗ"
+msgstr[1] "ਅਪਡੇਟਾਂ ਵਾਲ਼ੇ %u ਸਿਸਟਮ-ਅੰਗ"
 
 #: src/Core/UpdateManager.vala:154
 #, c-format
 msgid "%s:"
-msgstr ""
+msgstr "%s:"
 
 #: src/Core/UpdateManager.vala:193
 msgid "Restart Required"
-msgstr ""
+msgstr "ਸਿਸਟਮ ਰੀਸਟਾਰਟ ਕਰਨਾ ਜ਼ਰੂਰੀ ਹੈ"
 
 #: src/Core/UpdateManager.vala:194
 msgid "Please restart your system to finalize updates"
-msgstr ""
+msgstr "ਅਪਡੇਟਾਂ ਪੱਕੀਆਂ ਕਰਨ ਲਈ ਮਿਹਰਬਾਨੀ ਕਰਕੇ ਆਪਣੇ ਸਿਸਟਮ ਨੂੰ ਰੀਸਟਾਰਟ ਕਰੋ"
 
 #: src/Dialogs/ContentWarningDialog.vala:25
 msgid "Content Warning"
-msgstr ""
+msgstr "ਸਮੱਗਰੀ ਚਿਤਾਵਨੀ"
 
 #: src/Dialogs/ContentWarningDialog.vala:30
 #, c-format
 msgid "“%s” contains explicit content"
-msgstr ""
+msgstr "“%s” ਵਿੱਚ ਸਪਸ਼ਟ ਸਮੱਗਰੀ ਹੈ"
 
 #: src/Dialogs/ContentWarningDialog.vala:31
 #, c-format
@@ -336,43 +339,47 @@ msgid ""
 "or disturbing. In general, elementary does not review or endorse the "
 "contents of this app."
 msgstr ""
+"ਹੋ ਸਕਦੈ “%s” ਵਿੱਚ ਉਹ ਸਮੱਗਰੀ ਹੋਵੇ ਜੋ ਮਾੜੇ ਦਿਲ ਵਾਲ਼ਿਆਂ ਲਈ ਨਾ ਹੋਵੇ, ਜਾਂ ਜੋ ਸਿਰਫ਼"
+" ਬਾਲਗ਼ ਲੋਕਾਂ ਲਈ ਮੁਨਾਸਿਬ ਹੋਵੇ। ਆਮ ਕਰਕੇ ਐਲਮੈਂਟਰੀ ਇਸ ਐਪ ਦੀ ਸਮੱਗਰੀ ਜਾਂਚਦਾ ਨਹੀਂ।"
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 msgid "Show content warnings"
-msgstr ""
+msgstr "ਸਮੱਗਰੀ ਚਿਤਾਵਨੀਆਂ ਵਿਖਾਓ"
 
 #: src/Dialogs/ContentWarningDialog.vala:37
 #: src/Dialogs/NonCuratedWarningDialog.vala:81
 msgid "Don’t Install"
-msgstr ""
+msgstr "ਸਥਾਪਤ ਨਾ ਕਰੋ"
 
 #: src/Dialogs/ContentWarningDialog.vala:38
 #: src/Dialogs/NonCuratedWarningDialog.vala:82
 msgid "Install Anyway"
-msgstr ""
+msgstr "ਕੋਈ ਗੱਲ ਨਹੀਂ, ਸਥਾਪਤ ਕਰੋ"
 
 #: src/Dialogs/InstallFailDialog.vala:26
 msgid ""
 "This may be a temporary issue or could have been caused by external or "
 "manually compiled software."
 msgstr ""
+"ਇਹ ਸ਼ਾਇਦ ਆਰਜ਼ੀ ਮਸਲਾ ਹੋਵੇ ਜਾਂ ਕਿਸੇ ਬਾਹਰੀ ਜਾਂ ਹੱਥੀਂ ਕੰਪਾਇਲ ਕੀਤੇ ਸਾਫ਼ਟਵੇਅਰ ਦੇ "
+"ਕਰਕੇ ਹੋਵੇ।"
 
 #: src/Dialogs/InstallFailDialog.vala:37
 msgid "Failed to install app"
-msgstr ""
+msgstr "ਐਪ ਸਥਾਪਤ ਕਰਨਾ ਨਾਕਾਮ ਰਿਹਾ"
 
 #: src/Dialogs/InstallFailDialog.vala:40
 #, c-format
 msgid "Failed to install “%s”"
-msgstr ""
+msgstr "“%s” ਨੂੰ ਸਥਾਪਤ ਕਰਨਾ ਨਾਕਾਮ ਰਿਹਾ"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
 msgid "Non-Curated Warning"
-msgstr ""
+msgstr "ਅਣ-ਸੰਵਾਰੀਆਂ ਲਈ ਚਿਤਾਵਨੀ"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:37
 msgid "Install non-curated app?"
-msgstr ""
+msgstr "ਅਣ-ਸੰਵਾਰੀ ਐਪ ਸਥਾਪਤ ਕਰਨੀ ਹੈ?"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
@@ -380,557 +387,584 @@ msgid ""
 "“%s” is not curated by elementary and has not been reviewed for security, "
 "privacy, or system integration."
 msgstr ""
+"“%s” ਨੂੰ ਐਲੀਮੈਂਟਰੀ ਨੇ ਸੰਵਾਰਿਆ ਨਹੀਂ ਹੈ ਅਤੇ ਨਾ ਹੀ ਸੁਰੱਖਿਆ, ਪਰਦੇਦਾਰੀ ਜਾਂ ਸਿਸਟਮ "
+"ਅਨੁਕੂਲਤਾ ਵੇਖਣ ਲਈ ਇਸਦਾ ਮੁਆਇਨਾ ਕੀਤੈ।"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
 msgid "It may not receive bug fix or feature updates"
-msgstr ""
+msgstr "ਹੋ ਸਕਦੈ ਇਸਨੂੰ ਅਪਡੇਟਾਂ ਜਾਂ ਸੁਧਾਰ ਨਾ ਮਿਲਣ"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:60
 msgid "It may access or change system or personal files without permission"
-msgstr ""
+msgstr "ਇਹ ਸਿਸਟਮ ਜਾਂ ਨਿੱਜੀ ਫ਼ਾਇਲਾਂ ਨੂੰ ਬਿਨਾਂ ਇਜਾਜ਼ਤ ਪੜ੍ਹ ਸਕਦਾ/ਸਕਦੀ ਹੈ"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
 msgid "Show non-curated warnings"
-msgstr ""
+msgstr "ਅਣ-ਸੰਵਾਰੀਆਂ ਲਈ ਚਿਤਾਵਨੀਆਂ ਵਿਖਾਓ"
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid ""
 "An error occurred while processing the card. Please try again later. We "
 "apologize for any inconvenience caused."
 msgstr ""
+"ਕਾਰਡ ਪ੍ਰੋਸੈਸਿੰਗ ਦੌਰਾਨ ਖ਼ਰਾਬੀ ਰਹੀ। ਕਿਸੇ ਵੀ ਤਕਲੀਫ਼ ਲਈ ਅਸੀਂ ਮਾਫ਼ੀ ਚਾਹੁੰਦੇ ਹਾਂ।"
 
 #: src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
-msgstr ""
+msgstr "ਮਿਹਰਬਾਨੀ ਕਰਕੇ ਅਦਾਇਗੀ ਦੀ ਜਾਣਕਾਰੀ ਦਾ ਮੁਆਇਨਾ ਕਰੋ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
 #: src/Dialogs/StripeDialog.vala:76
 msgid "Payment"
-msgstr ""
+msgstr "ਅਦਾਇਗੀ"
 
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
 msgid "Pay $%d for %s"
-msgstr ""
+msgstr "%s ਲਈ $%d ਅਮਰੀਕੀ ਡਾਲਰ ਅਦਾ ਕਰੋ"
 
 #: src/Dialogs/StripeDialog.vala:97
 msgid ""
 "This is a one time payment. Your email address is only used to send you a "
 "receipt."
 msgstr ""
+"ਇਹ ਸਿਰਫ਼ ਇੱਕ ਵਾਰੀ ਹੀ ਅਦਾ ਕਰਨੀ ਹੈ। ਤੁਹਾਡਾ ਈਮੇਲ ਪਤਾ ਸਿਰਫ਼ ਤੁਹਾਨੂੰ ਰਸੀਦ ਭੇਜਣ ਲਈ "
+"ਵਰਤਿਆ ਜਾਂਦੈ।"
 
 #: src/Dialogs/StripeDialog.vala:98
 msgid "Privacy Policy"
-msgstr ""
+msgstr "ਪਰਦੇਦਾਰੀ ਨੀਤੀ"
 
 #: src/Dialogs/StripeDialog.vala:111
 msgid "Email"
-msgstr ""
+msgstr "ਈਮੇਲ"
 
 #: src/Dialogs/StripeDialog.vala:113
 msgid ""
 "Your email address is only used to send a receipt. You will not be "
 "subscribed to any mailing list."
 msgstr ""
+"ਤੁਹਾਡਾ ਈਮੇਲ ਪਤਾ ਸਿਰਫ਼ ਤੁਹਾਨੂੰ ਰਸੀਦ ਭੇਜਣ ਲਈ ਵਰਤਿਆ ਜਾਂਦੈ। ਤੁਹਾਨੂੰ ਕਿਸੇ ਸੂਚਨਾਵਾਂ"
+" ਆਦਿ ਲਈ ਗਾਹਕ ਨਹੀਂ ਬਣਾਇਆ ਜਾਵੇਗਾ।"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:132
 msgid "MM / YY"
-msgstr ""
+msgstr "ਮਹੀਨਾ / ਸਾਲ"
 
 #: src/Dialogs/StripeDialog.vala:152
 msgid "CVC"
-msgstr ""
+msgstr "ਸੀਵੀਸੀ"
 
 #: src/Dialogs/StripeDialog.vala:194 src/Dialogs/StripeDialog.vala:311
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:157
 msgid "Cancel"
-msgstr ""
+msgstr "ਰੱਦ ਕਰੋ"
 
 #: src/Dialogs/StripeDialog.vala:196 src/Dialogs/StripeDialog.vala:310
 #, c-format
 msgid "Pay $%d.00"
-msgstr ""
+msgstr "%d.00 ਰੁਪਏ ਅਦਾ ਕਰੋ"
 
 #: src/Dialogs/StripeDialog.vala:239
 msgid "Processing"
-msgstr ""
+msgstr "ਅਮਲ ਹੋ ਰਿਹੈ"
 
 #: src/Dialogs/StripeDialog.vala:264
 msgid "There Was a Problem Processing Your Payment"
-msgstr ""
+msgstr "ਤੁਹਾਡੀ ਅਦਾਇਗੀ ਨੂੰ ਅਮਲ ਕਰਨ ਵਿੱਚ ਮੁਸ਼ਕਲ ਆਈ"
 
 #: src/Dialogs/StripeDialog.vala:302
 msgid "Pay Later"
-msgstr ""
+msgstr "ਬਾਅਦ ਵਿੱਚ ਅਦਾ ਕਰੋ"
 
 #: src/Dialogs/StripeDialog.vala:303
 msgid "Retry"
-msgstr ""
+msgstr "ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ"
 
 #: src/Dialogs/StripeDialog.vala:509 src/Dialogs/StripeDialog.vala:574
 msgid ""
 "The card number is incorrect. Please try again using the correct card number."
-msgstr ""
+msgstr "ਕਾਰਡ ਦਾ ਨੰਬਰ ਗ਼ਲਤ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਸਹੀ ਕਾਰਡ ਨੰਬਰ ਨਾਲ਼ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
 #: src/Dialogs/StripeDialog.vala:511
 msgid ""
 "The expiration month is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"ਖ਼ਤਮ ਹੋਣ ਦਾ ਮਹੀਨਾ ਜਾਇਜ਼ ਨਹੀਂ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਸਹੀ ਮਿਤੀ ਭਰ ਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ "
+"ਕਰੋ।"
 
 #: src/Dialogs/StripeDialog.vala:513 src/Dialogs/StripeDialog.vala:571
 msgid ""
 "The expiration year is invalid. Please try again using the correct "
 "expiration date."
 msgstr ""
+"ਖ਼ਤਮ ਹੋਣ ਦਾ ਸਾਲ ਜਾਇਜ਼ ਨਹੀਂ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਸਹੀ ਮਿਤੀ ਭਰ ਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
 #: src/Dialogs/StripeDialog.vala:516 src/Dialogs/StripeDialog.vala:569
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr ""
+"ਸੀਵੀਸੀ ਨੰਬਰ ਗ਼ਲਤ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਸਹੀ ਸੀਵੀਸੀ ਨੰਬਰ ਭਰ ਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
 #: src/Dialogs/StripeDialog.vala:518 src/Dialogs/StripeDialog.vala:560
 msgid "The card has expired. Please try again with a different card."
-msgstr ""
+msgstr "ਕਾਰਡ ਖ਼ਤਮ ਹੋ ਚੁੱਕਿਐ। ਕਿਰਪਾ ਕਰਕੇ ਹੋਰ ਕਾਰਡ ਨਾਲ਼ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
 #: src/Dialogs/StripeDialog.vala:538
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr ""
+"ਇਸ ਵੇਲ਼ੇ ਅਦਾਇਗੀ ਲਈ ਬਹੁਤ ਜ਼ਿਆਦਾ ਬੇਨਤੀਆਂ ਆ ਰਹੀਆਂ ਹਨ, ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ "
+"ਕਰੋ।"
 
 #: src/Dialogs/StripeDialog.vala:554
 msgid ""
 "This card does not support this kind of transaction. Please try again with a "
 "different card."
 msgstr ""
+"ਇਹ ਕਾਰਡ ਇਸ ਤਰ੍ਹਾਂ ਦੇ ਲੈਣ-ਦੇਣ ਲਈ ਨਹੀਂ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਕਿਸੇ ਹੋਰ ਕਾਰਡ ਨਾਲ਼ "
+"ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
 #: src/Dialogs/StripeDialog.vala:556
 msgid ""
 "The currency is not supported by this card. Please try again with a "
 "different card."
 msgstr ""
+"ਇਹ ਕਾਰਡ ਇਸ ਮੁਦਰਾ (ਕਰੰਸੀ) ਨਾਲ਼ ਕੰਮ ਨਹੀਂ ਕਰਦਾ। ਕਿਰਪਾ ਕਰਕੇ ਕਿਸੇ ਹੋਰ ਕਾਰਡ ਨਾਲ਼ "
+"ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
 #: src/Dialogs/StripeDialog.vala:558
 msgid "The transaction has already been processed."
-msgstr ""
+msgstr "ਇਹ ਲੈਣ-ਦੇਣ ਪਹਿਲਾਂ ਹੀ ਹੋ ਚੁੱਕਿਆ ਹੈ।"
 
 #: src/Dialogs/StripeDialog.vala:562
 msgid ""
 "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
 "postal code."
-msgstr ""
+msgstr "ਪਿੰਨ/ਜ਼ਿਪ ਕੋਡ ਗ਼ਲਤ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਸਹੀ ਕੋਡ ਭਰ ਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
 #: src/Dialogs/StripeDialog.vala:564
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr ""
+"ਤੁਹਾਡੇ ਕੋਲ਼ ਮੌਜੂਦ ਰਕਮ ਕਾਫ਼ੀ ਨਹੀਂ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਅਦਾਇਗੀ ਦਾ ਕੋਈ ਹੋਰ ਤਰੀਕਾ ਵਰਤੋ।"
 
 #: src/Dialogs/StripeDialog.vala:566
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr ""
+msgstr "ਰਕਮ ਗ਼ਲਤ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਜਾਇਜ਼ ਰਕਮ ਭਰ ਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
 #: src/Dialogs/StripeDialog.vala:577
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr ""
+msgstr "ਪਿੰਨ ਨੰਬਰ ਗ਼ਲਤ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਸਹੀ ਪਿੰਨ ਨੰਬਰ ਭਰ ਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
 #: src/Dialogs/StripeDialog.vala:579
 msgid ""
 "There has been too many PIN attempts. Please try again with a different card."
 msgstr ""
+"ਪਿੰਨ ਨੰਬਰ ਲਈ ਬਹੁਤ ਜ਼ਿਆਦਾ ਕੋਸ਼ਿਸ਼ਾਂ ਹੋ ਚੁੱਕੀਆਂ ਹਨ। ਕਿਰਪਾ ਕਰਕੇ ਕੋਈ ਹੋਰ ਕਾਰਡ "
+"ਵਰਤ ਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
 #: src/Dialogs/StripeDialog.vala:599
 msgid ""
 "Unable to complete the transaction. Please contact your bank for further "
 "information."
 msgstr ""
+"ਲੈਣ-ਦੇਣ ਪੂਰਾ ਨਹੀਂ ਹੋ ਸਕਿਆ। ਜ਼ਿਆਦਾ ਜਾਣਕਾਰੀ ਲਈ ਕਿਰਪਾ ਕਰਕੇ ਆਪਣੇ ਬੈਂਕ ਨਾਲ਼ ਰਾਬਤਾ "
+"ਕਰੋ।"
 
 #: src/Dialogs/StripeDialog.vala:602
 msgid "The balance or credit limit on the card has been reached."
-msgstr ""
+msgstr "ਕਾਰਡ ਦੀ ਖ਼ਰਚ ਹੱਦ ਪੂਰੀ ਹੋ ਚੁੱਕੀ ਹੈ।"
 
 #: src/Dialogs/StripeDialog.vala:605
 msgid "The given card is a test card. Please use a real card to proceed."
-msgstr ""
+msgstr "ਇਹ ਕਾਰਡ ਇੱਕ ਟੈਸਟ ਕਾਰਡ ਹੈ। ਅੱਗੇ ਵਧਣ ਲਈ ਕਿਰਪਾ ਕਰਕੇ ਕੋਈ ਅਸਲੀ ਕਾਰਡ ਵਰਤੋ।"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:25
 msgid "Uninstalling this app may also delete its data."
-msgstr ""
+msgstr "ਇਸ ਐਪ ਦਾ ਅਣ-ਸਥਾਪਨ ਕਰਨ ਨਾਲ਼ ਇਸਦਾ ਡੇਟਾ ਵੀ ਮਿਟ ਸਕਦੈ।"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:35
 msgid "Uninstall app?"
-msgstr ""
+msgstr "ਅਣ-ਸਥਾਪਨ ਕਰਨਾ (ਐਪ ਹਟਾਉਣੀ) ਚਾਹੁੰਦੇ ਹੋ?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:38
 #, c-format
 msgid "Uninstall “%s”?"
-msgstr ""
+msgstr "“%s” ਹਟਾਉਣੀ ਚਾਹੁੰਦੇ ਹੋ?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:124
 msgid "Uninstall"
-msgstr ""
+msgstr "ਅਣ-ਸਥਾਪਨ ਕਰੋ (ਐਪ ਹਟਾਓ)"
 
 #: src/Dialogs/UninstallFailDialog.vala:26
 #: src/Dialogs/UpgradeFailDialog.vala:26
 msgid "This may have been caused by external or manually compiled software."
-msgstr ""
+msgstr "ਇਹ ਕਿਸੇ ਬਾਹਰੀ ਜਾਂ ਹੱਥੀਂ ਕੰਪਾਇਲ ਕੀਤੇ ਸਾਫ਼ਟਵੇਅਰ ਕਰਕੇ ਹੋ ਸਕਦੈ।"
 
 #: src/Dialogs/UninstallFailDialog.vala:37
 msgid "Failed to uninstall app"
-msgstr ""
+msgstr "ਐਪ ਹਟਾਉਣਾ ਨਾਕਾਮ ਰਿਹਾ"
 
 #: src/Dialogs/UninstallFailDialog.vala:40
 #, c-format
 msgid "Failed to uninstall “%s”"
-msgstr ""
+msgstr "“%s” ਨੂੰ ਹਟਾਉਣਾ (ਅਣ-ਸਥਾਪਨ) ਨਾਕਾਮ ਰਿਹਾ"
 
 #: src/Dialogs/UpdateFailDialog.vala:25
 msgid "Failed to Fetch Updates"
-msgstr ""
+msgstr "ਅਪਡੇਟਾਂ ਲਿਆਉਣਾ ਨਾਕਾਮ ਰਿਹਾ"
 
 #: src/Dialogs/UpdateFailDialog.vala:26
 msgid ""
 "This may have been caused by external, manually added software repositories "
 "or a corrupted sources file."
 msgstr ""
+"ਇਹ ਕਿਸੇ ਬਾਹਰੀ, ਹੱਥੀਂ ਜੋੜੇ ਸਾਫ਼ਟਵੇਅਰ ਭੰਡਾਰਾਂ ਜਾਂ ਖ਼ਰਾਬ ਸਰੋਤ ਫ਼ਾਇਲ ਕਰਕੇ ਹੋਇਆ ਹੋ"
+" ਸਕਦੈ।"
 
 #: src/Dialogs/UpdateFailDialog.vala:34
 msgid "Ignore"
-msgstr ""
+msgstr "ਨਜ਼ਰਅੰਦਾਜ਼ ਕਰੋ"
 
 #: src/Dialogs/UpdateFailDialog.vala:35
 msgid "Try Again"
-msgstr ""
+msgstr "ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ"
 
 #: src/Dialogs/UpgradeFailDialog.vala:37
 msgid "Failed to update app"
-msgstr ""
+msgstr "ਐਪ ਅਪਡੇਟ ਕਰਨਾ ਨਾਕਾਮ ਰਿਹਾ"
 
 #: src/Dialogs/UpgradeFailDialog.vala:40
 #, c-format
 msgid "Failed to update “%s”"
-msgstr ""
+msgstr "“%s” ਨੂੰ ਅਪਡੇਟ ਕਰਨਾ ਨਾਕਾਮ ਰਿਹਾ"
 
 #: src/Views/AppInfoView.vala:187
 msgid "Screenshot Not Available"
-msgstr ""
+msgstr "ਸਕਰੀਨਸ਼ਾਟ ਉਪਲਬਧ ਨਹੀਂ ਹੈ"
 
 #: src/Views/AppInfoView.vala:252
 msgid "Homepage"
-msgstr ""
+msgstr "ਮੁੱਖ-ਪੰਨਾ"
 
 #: src/Views/AppInfoView.vala:258
 msgid "Translate"
-msgstr ""
+msgstr "ਤਰਜਮਾ ਕਰੋ"
 
 #: src/Views/AppInfoView.vala:264
 msgid "Send Feedback"
-msgstr ""
+msgstr "ਹੁੰਗਾਰਾ ਭੇਜੋ"
 
 #: src/Views/AppInfoView.vala:270
 msgid "Help"
-msgstr ""
+msgstr "ਮਦਦ"
 
 #: src/Views/AppInfoView.vala:281
 msgid "What's New:"
-msgstr ""
+msgstr "ਇਹਦੇ ਵਿੱਚ ਨਵਾਂ ਕੀ ਹੈ:"
 
 #: src/Views/AppInfoView.vala:316
 msgid "Extensions:"
-msgstr ""
+msgstr "ਵਾਧਕ:"
 
 #: src/Views/AppInfoView.vala:410
 #, c-format
 msgid "Other Apps by %s"
-msgstr ""
+msgstr "%s ਦੁਆਰਾ ਬਣਾਈਆਂ ਹੋਰ ਐਪਾਂ"
 
 #: src/Views/AppInfoView.vala:448
 msgid "Link copied to clipboard"
-msgstr ""
+msgstr "ਲਿੰਕ ਕਲਿਪਬੋਰਡ 'ਤੇ ਨਕਲ ਹੋ ਚੁੱਕਿਐ"
 
 #: src/Views/AppInfoView.vala:459
 #, c-format
 msgid "Check out %s on AppCenter:"
-msgstr ""
+msgstr "%s ਨੂੰ ਐਪ-ਸੈਂਟਰ ਵਿੱਚ ਵੇਖੋ:"
 
 #: src/Views/AppInfoView.vala:466
 msgid "Share"
-msgstr ""
+msgstr "ਸਾਂਝਾ ਕਰੋ"
 
 #. TRANSLATORS: See the Wikipedia page
 #: src/Views/AppInfoView.vala:764
 msgid "Public Domain"
-msgstr ""
+msgstr "ਪਬਲਿਕ ਡੋਮੇਨ ਵਿੱਚ"
 
 #. TRANSLATORS: Replace the link with the version for your language
 #: src/Views/AppInfoView.vala:767
 msgid "https://en.wikipedia.org/wiki/Public_domain"
-msgstr ""
+msgstr "https://simple.wikipedia.org/wiki/Public_domain"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
 #: src/Views/AppInfoView.vala:772
 msgid "Free Software"
-msgstr ""
+msgstr "ਅਜ਼ਾਦ ਸਾਫ਼ਟਵੇਅਰ"
 
 #. TRANSLATORS: Replace the link with the version for your language
 #: src/Views/AppInfoView.vala:775
 msgid "https://www.gnu.org/philosophy/free-sw"
-msgstr ""
+msgstr "https://www.gnu.org/philosophy/free-sw"
 
 #: src/Views/AppInfoView.vala:779
 msgid "Proprietary"
-msgstr ""
+msgstr "ਮਲਕੀਅਤੀ ਸਾਫ਼ਟਵੇਅਰ"
 
 #: src/Views/AppInfoView.vala:782
 msgid "Unknown License"
-msgstr ""
+msgstr "ਅਣਜਾਣ ਲਾਇਸੰਸ"
 
 #: src/Views/AppInfoView.vala:860
 msgid "Fund"
-msgstr ""
+msgstr "ਫੰਡ"
 
 #: src/Views/AppInfoView.vala:882
 msgid "Fund the development of this app"
-msgstr ""
+msgstr "ਇਸ ਐਪ ਦੀ ਉੱਨਤੀ ਲਈ ਆਰਥਿਕ ਮਦਦ ਕਰੋ"
 
 #: src/Views/AppListUpdateView.vala:32
 msgid "Checking for Updates"
-msgstr ""
+msgstr "ਅਪਡੇਟਾਂ ਲੱਭੀਆਂ ਜਾ ਰਹੀਆਂ ਹਨ"
 
 #: src/Views/AppListUpdateView.vala:33
 msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr ""
+"ਅਪਰੇਟਿੰਗ ਸਿਸਟਮ ਅਤੇ ਸਥਾਪਤ ਐਪਾਂ ਲਈ ਉਪਲਬਧ ਅਪਡੇਟਾਂ ਦੀ ਸੂਚੀ ਡਾਊਨਲੋਡ ਹੋ ਰਹੀ ਹੈ"
 
 #: src/Views/AppListUpdateView.vala:41
 msgid "A restart is required to finish installing updates"
-msgstr ""
+msgstr "ਸਥਾਪਨ ਮੁਕੰਮਲ ਕਰਨ ਲਈ ਸਿਸਟਮ ਬੰਦ ਕਰਕੇ ਦੁਬਾਰਾ ਚਲਾਉਣਾ ਲਾਜ਼ਮੀ ਹੈ"
 
 #: src/Views/AppListUpdateView.vala:49
 msgid "Restart Now"
-msgstr ""
+msgstr "ਹੁਣੇ ਬੰਦ ਕਰਕੇ ਦੁਬਾਰਾ ਚਲਾਓ"
 
 #: src/Views/AppListUpdateView.vala:58
 msgid ""
 "Requesting a restart failed. Restart manually to finish installing updates"
 msgstr ""
+"ਆਪਣੇ-ਆਪ ਦੁਬਾਰਾ ਚਲਾਉਣਾ ਨਾਕਾਮ ਰਿਹਾ। ਸਥਾਪਨ ਮੁਕੰਮਲ ਕਰਨ ਲਈ ਖ਼ੁਦ ਹੱਥੀਂ ਬੰਦ ਕਰ ਕੇ "
+"ਚਲਾਓ"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
 #: src/Views/AppListUpdateView.vala:186
 msgid "Update All"
-msgstr ""
+msgstr "ਸਾਰੀਆਂ ਨੂੰ ਅਪਡੇਟ ਕਰੋ"
 
 #: src/Views/AppListView.vala:30
 msgid "No Results"
-msgstr ""
+msgstr "ਕੋਈ ਨਤੀਜੇ ਨਹੀਂ"
 
 #: src/Views/AppListView.vala:31
 msgid "No apps could be found. Try changing search terms."
-msgstr ""
+msgstr "ਕੋਈ ਐਪਾਂ ਨਹੀਂ ਮਿਲੀਆਂ। ਖੋਜ-ਸ਼ਬਦ ਬਦਲ ਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋੋ।"
 
 #: src/Views/AppListView.vala:167
 msgid "Non-Curated Apps"
-msgstr ""
+msgstr "ਅਣ ਸੰਵਾਰੀਆਂ ਐਪਾਂ"
 
 #: src/Views/Homepage.vala:68
 msgid "Recently Updated"
-msgstr ""
+msgstr "ਹਾਲ ਹੀ ਵਿੱਚ ਅਪਡੇਟ ਕੀਤੀਆਂ ਹੋਈਆਂ"
 
 #: src/Views/Homepage.vala:84
 msgid "Trending"
-msgstr ""
+msgstr "ਅੱਜ-ਕੱਲ੍ਹ ਰੁਝਾਨ ਵਿੱਚ"
 
 #: src/Views/Homepage.vala:100
 msgid "Categories"
-msgstr ""
+msgstr "ਵਰਗ"
 
 #: src/Views/Homepage.vala:314 src/Views/Homepage.vala:325
 #, c-format
 msgid "Search %s"
-msgstr ""
+msgstr "%s ਖੋਜੋ"
 
 #. / TRANSLATORS: the name of the Search view
 #: src/Views/SearchView.vala:39
 msgctxt "view"
 msgid "Search"
-msgstr ""
+msgstr "ਖੋਜਣਾ/ਲੱਭਣਾ"
 
 #: src/Widgets/Banner.vala:57
 msgid "An open, pay-what-you-want app store"
-msgstr ""
+msgstr "ਇੱਕ ਖੁੱਲ੍ਹਾ, ਜੋ-ਮਰਜ਼ੀ-ਅਦਾ-ਕਰੋ ਵਾਲ਼ਾ ਐਪ ਭੰਡਾਰ"
 
 #: src/Widgets/Banner.vala:76
 msgid "Get the apps that you need at a price you can afford."
-msgstr ""
+msgstr "ਐਪਾਂ ਜੋ ਤੁਹਾਨੂੰ ਚਾਹੀਦੀਆਂ ਹਨ ਅਤੇ ਕੀਮਤ ਵੀ ਉਹ ਜਿਹੜੀ ਤੁਹਾਨੂੰ ਪਸੰਦ ਹੋਵੇ।"
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
-msgstr ""
+msgstr "ਕਾਰਡ ਨੰਬਰ"
 
 #: src/Widgets/CategoryFlowBox.vala:27
 msgid "Accessories"
-msgstr ""
+msgstr "ਸੰਗੀ"
 
 #: src/Widgets/CategoryFlowBox.vala:28
 msgid "Audio"
-msgstr ""
+msgstr "ਆਡੀਓ"
 
 #: src/Widgets/CategoryFlowBox.vala:29
 msgid "Communication"
-msgstr ""
+msgstr "ਗੱਲਬਾਤ"
 
 #: src/Widgets/CategoryFlowBox.vala:38
 msgid "Development"
-msgstr ""
+msgstr "ਸਾਫ਼ਟਵੇਅਰ ਉੱਨਤੀ"
 
 #: src/Widgets/CategoryFlowBox.vala:48
 msgid "Education"
-msgstr ""
+msgstr "ਸਿੱਖਿਆ"
 
 #: src/Widgets/CategoryFlowBox.vala:49
 msgid "Finance"
-msgstr ""
+msgstr "ਵਿੱਤੀ"
 
 #: src/Widgets/CategoryFlowBox.vala:53
 msgid "Games"
-msgstr ""
+msgstr "ਗੇਮਾਂ"
 
 #: src/Widgets/CategoryFlowBox.vala:69
 msgid "Graphics"
-msgstr ""
+msgstr "ਗ੍ਰਾਫ਼ਿਕਸ"
 
 #: src/Widgets/CategoryFlowBox.vala:78
 msgid "Internet"
-msgstr ""
+msgstr "ਇੰਟਰਨੈੱਟ"
 
 #: src/Widgets/CategoryFlowBox.vala:82
 msgid "Math, Science, & Engineering"
-msgstr ""
+msgstr "ਹਿਸਾਬ, ਸਾਇੰਸ, ਅਤੇ ਇੰਜੀਨੀਅਰਿੰਗ"
 
 #: src/Widgets/CategoryFlowBox.vala:101
 msgid "Media Production"
-msgstr ""
+msgstr "ਮੀਡੀਆ ਪ੍ਰੋਡਕਸ਼ਨ"
 
 #: src/Widgets/CategoryFlowBox.vala:108
 msgid "Office"
-msgstr ""
+msgstr "ਦਫ਼ਤਰੀ"
 
 #: src/Widgets/CategoryFlowBox.vala:115
 msgid "System"
-msgstr ""
+msgstr "ਸਿਸਟਮ"
 
 #: src/Widgets/CategoryFlowBox.vala:119
 msgid "Universal Access"
-msgstr ""
+msgstr "ਸਰਬ-ਸਾਂਝਾ"
 
 #: src/Widgets/CategoryFlowBox.vala:120
 msgid "Video"
-msgstr ""
+msgstr "ਵਿਡੀਓ"
 
 #: src/Widgets/CategoryFlowBox.vala:125
 msgid "Writing & Language"
-msgstr ""
+msgstr "ਲੇਖਣ ਅਤੇ ਭਾਸ਼ਾ"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
-msgstr ""
+msgstr "ਇਹਦੇ ਨਹੀਂ ਅਦਾਇਗੀ ਲੋੜੀਂਦੀ ਹੈ, ਜਿਹੜੇ ਕਿ ਚਾਲੂ ਨਹੀਂ ਕੀਤੀ ਹੋਈ"
 
 #: src/Widgets/HumbleButton.vala:105
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:285
 msgid "Free"
-msgstr ""
+msgstr "ਮੁਫ਼ਤ"
 
 #: src/Widgets/HumbleButton.vala:107
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:287
 msgid "Install"
-msgstr ""
+msgstr "ਸਥਾਪਤ ਕਰੋ"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:141
 #, c-format
 msgid "$%d.00"
-msgstr ""
+msgstr "$%d.00 ਅਮਰੀਕੀ ਡਾਲਰ"
 
 #. / This amount will be US Dollars. Some languages might need a "$%dUSD"
 #: src/Widgets/HumbleButton.vala:144
 #, c-format
 msgid "$%d"
-msgstr ""
+msgstr "$%d ਅਮਰੀਕੀ ਡਾਲਰ"
 
 #: src/Widgets/NetworkInfoBar.vala:28
 msgid "Network Not Available."
-msgstr ""
+msgstr "ਨੈੱਟਵਰਕ ਉਪਲਬਧ ਨਹੀਂ ਹੈ।"
 
 #: src/Widgets/NetworkInfoBar.vala:29
 msgid "Connect to the Internet to browse and install apps."
-msgstr ""
+msgstr "ਐਪ ਭੰਡਾਰ ਫਰੋਲਣ ਅਤੇ ਐਪਾਂ ਸਥਾਪਤ ਕਰਨ ਲਈ ਨੈੱਟਵਰਕ ਨਾਲ਼ ਜੁੜੋ।"
 
 #. TRANSLATORS: Includes an ellipsis (…) in English to signify the action will be performed in a new window
 #: src/Widgets/NetworkInfoBar.vala:37
 msgid "Network Settings…"
-msgstr ""
+msgstr "ਨੈੱਟਵਰਕ ਸੈਟਿੰਗਾਂ…"
 
 #: src/Widgets/ReleaseRow.vala:67
 #, c-format
 msgid "<b>%s</b> – %s"
-msgstr ""
+msgstr "<b>%s</b> – %s"
 
 #: src/Widgets/ReleaseRow.vala:74
 msgid "Unknown version"
-msgstr ""
+msgstr "ਅਣਜਾਣ ਵਰਜਨ"
 
 #: src/Widgets/ReleaseRow.vala:90 src/Widgets/ReleaseRow.vala:93
 msgid "No description available"
-msgstr ""
+msgstr "ਵੇਰਵਾ ਉਪਲਬਧ ਨਹੀਂ ਹੈ"
 
 #: src/Widgets/SharePopover.vala:44
 msgid "Facebook"
-msgstr ""
+msgstr "ਫੇਸਬੁੱਕ"
 
 #: src/Widgets/SharePopover.vala:48
 msgid "Twitter"
-msgstr ""
+msgstr "ਟਵਿੱਟਰ"
 
 #: src/Widgets/SharePopover.vala:52
 msgid "Reddit"
-msgstr ""
+msgstr "ਰੈੱਡਿਟ"
 
 #: src/Widgets/SharePopover.vala:56
 msgid "Tumblr"
-msgstr ""
+msgstr "ਟਮਲਰ"
 
 #: src/Widgets/SharePopover.vala:60
 msgid "Telegram"
-msgstr ""
+msgstr "ਟੈਲੀਗ੍ਰਾਮ"
 
 #: src/Widgets/SharePopover.vala:64
 msgid "Copy link"
-msgstr ""
+msgstr "ਲਿੰਕ ਨਕਲ ਕਰੋ"
 
 #: src/Widgets/SizeLabel.vala:35
 msgid "Actual Download Size Likely to Be Smaller"
-msgstr ""
+msgstr "ਲੱਗਦੈ ਕਿ ਅਸਲੀ ਡਾਊਨਲੋਡ ਸਾਈਜ਼ ਇਸਤੋਂ ਛੋਟਾ ਹੀ ਹੋਵੇਗਾ"
 
 #: src/Widgets/SizeLabel.vala:36
 msgid "Only the parts of apps and updates that are needed will be downloaded."
-msgstr ""
+msgstr "ਸਿਰਫ਼ ਲੋੜੀਂਦੀਆਂ ਅਪਡੇਟਾਂ ਅਤੇ ਐਪਾਂ ਦੇ ਹਿੱਸੇ ਹੀ ਡਾਊਨਲੋਡ ਹੋਣਗੇ।"
 
 #: src/Widgets/SizeLabel.vala:63
 #, c-format
 msgid "Up to %s"
-msgstr ""
+msgstr "%s ਤੱਕ"
 
 #: src/Widgets/UpdateHeaderRow.vala:41
 #, c-format
 msgid "%u Update Available"
 msgid_plural "%u Updates Available"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u ਅਪਡੇਟ ਉਪਲਬਧ ਹੈ"
+msgstr[1] "%u ਅਪਡੇਟਾਂ ਉਪਲਬਧ ਹਨ"
 
 #: src/Widgets/UpdateHeaderRow.vala:54
 msgid "Drivers"
-msgstr ""
+msgstr "ਡਰਾਇਵਰ"
 
 #: src/Widgets/UpdateHeaderRow.vala:58
 msgid "Up to Date"
-msgstr ""
+msgstr "ਤਰੋ-ਤਾਜ਼ਾ (ਅਪ ਟੂ ਡੇਟ)"
 
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:310
 msgid "Update"
-msgstr ""
+msgstr "ਅਪਡੇਟ"
