@@ -3,15 +3,16 @@
 # Marco De Paolini <marco.depaolini@gmail.com>, 2018, 2021.
 # Fabio Rifici <fabio.rifici@microtechsrl.com>, 2018.
 # icyc0re <tiziano.signo@gmail.com>, 2018.
-# Fabio Zaramella <fabiozaramella@hotmail.it>, 2019, 2020.
+# Fabio Zaramella <fabiozaramella@hotmail.it>, 2019, 2020, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-27 17:04+0000\n"
-"PO-Revision-Date: 2021-01-26 20:02+0000\n"
-"Last-Translator: Marco De Paolini <marco.depaolini@gmail.com>\n"
-"Language-Team: Italian <https://l10n.elementary.io/projects/appcenter/appcenter/it/>\n"
+"PO-Revision-Date: 2021-07-29 12:40+0000\n"
+"Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
+"Language-Team: Italian <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/it/>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -53,10 +54,9 @@ msgid "Open"
 msgstr "Apri"
 
 #: src/MainWindow.vala:147
-#, fuzzy, c-format
-#| msgid "Failed to uninstall “%s”"
+#, c-format
 msgid "Failed to launch “%s“"
-msgstr "impossibile rimuovere “%s”"
+msgstr "impossibile eseguire “%s”"
 
 #: src/MainWindow.vala:172 src/Views/Homepage.vala:299
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
@@ -576,16 +576,13 @@ msgid "Try Again"
 msgstr "Riprova"
 
 #: src/Dialogs/UpgradeFailDialog.vala:37
-#, fuzzy
-#| msgid "Failed to uninstall app"
 msgid "Failed to update app"
-msgstr "Impossibile rimuovere l'applicazione"
+msgstr "Impossibile aggiornare l'applicazione"
 
 #: src/Dialogs/UpgradeFailDialog.vala:40
-#, fuzzy, c-format
-#| msgid "Failed to uninstall “%s”"
+#, c-format
 msgid "Failed to update “%s”"
-msgstr "impossibile rimuovere “%s”"
+msgstr "Impossibile aggiornare “%s”"
 
 #: src/Views/AppInfoView.vala:187
 msgid "Screenshot Not Available"
@@ -597,11 +594,11 @@ msgstr "Pagina principale"
 
 #: src/Views/AppInfoView.vala:258
 msgid "Translate"
-msgstr ""
+msgstr "Traduci"
 
 #: src/Views/AppInfoView.vala:264
 msgid "Send Feedback"
-msgstr ""
+msgstr "Invia riscontro"
 
 #: src/Views/AppInfoView.vala:270
 msgid "Help"
@@ -678,10 +675,9 @@ msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr "Scaricamento di un elenco di aggiornamenti disponibili per il sistema operativo e le applicazioni installate"
 
 #: src/Views/AppListUpdateView.vala:41
-#, fuzzy
-#| msgid "A restart is required to complete the installation of updates"
 msgid "A restart is required to finish installing updates"
-msgstr "Un riavvio è necessario per completare l'installazione degli aggiornamenti"
+msgstr ""
+"Un riavvio è necessario per completare l'installazione degli aggiornamenti"
 
 #: src/Views/AppListUpdateView.vala:49
 msgid "Restart Now"
@@ -690,6 +686,8 @@ msgstr "Riavvia ora"
 #: src/Views/AppListUpdateView.vala:58
 msgid "Requesting a restart failed. Restart manually to finish installing updates"
 msgstr ""
+"Il riavvio aumatico non è andato a buon fine. Riavvia manualmente per "
+"completare l'installazione degli aggiornamenti."
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
 #: src/Views/AppListUpdateView.vala:186
