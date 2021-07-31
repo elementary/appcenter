@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-27 17:04+0000\n"
-"PO-Revision-Date: 2021-07-24 18:09+0000\n"
+"PO-Revision-Date: 2021-08-01 00:05+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
 "extra/pt/>\n"
@@ -63,10 +63,8 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 #: data/io.elementary.appcenter.appdata.xml.in:36
-#, fuzzy
-#| msgid "Keyboard improvements"
 msgid "Improvements:"
-msgstr "Melhorias do teclado"
+msgstr "Melhorias:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
 #: data/io.elementary.appcenter.appdata.xml.in:42
@@ -83,10 +81,8 @@ msgid "Updated translations"
 msgstr "Traduções atualizadas"
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
-#, fuzzy
-#| msgid "New features"
 msgid "New features:"
-msgstr "Novas funcionalidades"
+msgstr "Novas funcionalidades:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:33
 msgid "Show in-app notification when an app is installed"
