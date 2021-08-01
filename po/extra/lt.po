@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-27 17:04+0000\n"
-"PO-Revision-Date: 2019-06-30 03:52+0000\n"
-"Last-Translator: Moo <hazap@hotmail.com>\n"
+"PO-Revision-Date: 2021-08-01 13:33+0000\n"
+"Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Lithuanian <https://l10n.elementary.io/projects/appcenter/"
 "extra/lt/>\n"
 "Language: lt\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
 #: data/io.elementary.appcenter.appdata.xml.in:8
@@ -588,10 +588,8 @@ msgid "@APP_NAME@"
 msgstr "@APP_NAME@"
 
 #: data/io.elementary.appcenter.desktop.in.in:6
-#, fuzzy
-#| msgid "@APP_NAME@"
 msgid "@PROJECT_NAME@"
-msgstr "@APP_NAME@"
+msgstr "@PROJECT_NAME@"
 
 #: data/io.elementary.appcenter.desktop.in.in:7
 #, fuzzy
