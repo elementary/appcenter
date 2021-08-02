@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-27 17:04+0000\n"
-"PO-Revision-Date: 2021-07-29 18:10+0000\n"
-"Last-Translator: Corentin Noël <tintou@noel.tf>\n"
+"PO-Revision-Date: 2021-08-02 11:55+0000\n"
+"Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/appcenter/extra/"
 "fr/>\n"
 "Language: fr\n"
@@ -50,20 +50,26 @@ msgstr "Corrections :"
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Show Recently Updated Flatpak apps on home page"
 msgstr ""
+"Affichage des applications Flatpak récemment mises à jour sur la page "
+"d'accueil"
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
-#, fuzzy
-#| msgid "Add support for Flatpak apps"
 msgid "Show brand colors and support payments for Flatpak apps"
-msgstr "Ajout de la prise en charge des applications Flatpak"
+msgstr ""
+"Affichage des couleurs et prise en charge des paiements pour les "
+"applications Flatpak"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 msgid "Fix missing mail icon in payments dialog"
 msgstr ""
+"Correction de l'icône d'e-mail manquante dans la boîte de dialogue de "
+"paiement"
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
 msgid "Fix missing privacy policy in payments dialog"
 msgstr ""
+"Correction de la politique de confidentialité manquante dans la boîte de "
+"dialogue de paiement"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 #: data/io.elementary.appcenter.appdata.xml.in:36
@@ -91,24 +97,26 @@ msgstr "Nouvelles fonctionnalités :"
 #: data/io.elementary.appcenter.appdata.xml.in:33
 msgid "Show in-app notification when an app is installed"
 msgstr ""
+"Affichage d'une notification dans l'application lorsqu'une application est "
+"installée"
 
 #: data/io.elementary.appcenter.appdata.xml.in:34
 msgid "Add contextual badges to notifications"
-msgstr ""
+msgstr "Ajout de badges contextuels aux notifications"
 
 #: data/io.elementary.appcenter.appdata.xml.in:38
 msgid "Ensure Home button is usable during search"
 msgstr ""
+"Nous nous sommes assurés que le bouton Accueil soit utilisable pendant la "
+"recherche"
 
 #: data/io.elementary.appcenter.appdata.xml.in:39
 msgid "Ask the user to manually restart if we can't ask the session to prompt"
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:40
-#, fuzzy
-#| msgid "Improve update badge styling and category styling"
 msgid "Improve styling and contrast of buttons"
-msgstr "Amélioration du style du badge de mise à jour et de catégorie"
+msgstr "Amélioration du style et du contraste des boutons"
 
 #: data/io.elementary.appcenter.appdata.xml.in:41
 msgid "More concise and consistent language"
@@ -117,29 +125,36 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:46
 msgid "Fully uninstall Flatpaks, including locales"
 msgstr ""
+"Prise en charge de la désinstallation complète des applications Flatpak, y "
+"compris les fichiers de traduction"
 
 #: data/io.elementary.appcenter.appdata.xml.in:47
 msgid "Still fetch screenshots from remotes that don't include proper headers"
 msgstr ""
+"Récupération des captures d'écran depuis les dépôts distants pour ceux qui "
+"n'ont pas d'entêtes appropriés"
 
 #: data/io.elementary.appcenter.appdata.xml.in:48
 msgid "Fix truncated footer buttons"
-msgstr ""
+msgstr "Correction des boutons du pied de page tronqués"
 
 #: data/io.elementary.appcenter.appdata.xml.in:49
 msgid "Only show Mail button when a usable mail app is installed"
 msgstr ""
+"Affichage du bouton d'e-mail uniquement si une application de messagerie est "
+"installée"
 
 #: data/io.elementary.appcenter.appdata.xml.in:50
 msgid "Fix some apps incorrectly showing as not installed during search"
 msgstr ""
+"Correction de certaines applications qui n'apparaissaient pas comme étant "
+"installées lors de la recherche"
 
 #: data/io.elementary.appcenter.appdata.xml.in:51
-#, fuzzy
-#| msgid "Show an error dialog if an installation fails"
 msgid "Show an error dialog when opening an app fails"
 msgstr ""
-"Affichage d'une boîte de dialogue d'erreur lorsque une installation échoue"
+"Affichage d'une boîte de dialogue lorsque l'ouverture d'une application "
+"échoue"
 
 #: data/io.elementary.appcenter.appdata.xml.in:57
 #: data/io.elementary.appcenter.appdata.xml.in:73
