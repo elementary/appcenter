@@ -1,3 +1,17 @@
+appcenter (3.6.1) bionic; urgency=medium
+
+  * Release 3.6.1 (#1566)
+  * Update translation files
+  * LINGUAS: Add Panjabi and sort (#1567)
+  * Update translation template
+  * Homepage: Use flatpak for recently updated packages (#1563)
+  * Fixup package origins for focal (#1565)
+  * StripeDialog: Move privacy policy to secondary text (#1562)
+  * Gresource symbolic mail icon (#1561)
+  * Remap AppStream 'metadata' tag to 'custom' (#1558)
+
+ -- elementary Builds Team <builds@elementary.io>  Tue, 03 Aug 2021 00:32:24 +0000
+
 appcenter (3.6.0) bionic; urgency=medium
 
   * Release 3.6.0 (#1552)
