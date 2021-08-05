@@ -242,7 +242,7 @@ namespace AppCenter {
 
         protected void update_action () {
             if (package == null || package.component == null || !package.is_native || package.is_os_updates) {
-                action_button.can_purchase =  false;
+                action_button.can_purchase = false;
             } else {
                 var can_purchase = package.get_payments_key () != null;
                 action_button.can_purchase = can_purchase;
