@@ -19,8 +19,6 @@
  */
 
 public abstract class AppCenter.Widgets.AbstractPackageRowGrid : AbstractAppContainer {
-    public signal void changed ();
-
     protected AbstractPackageRowGrid (AppCenterCore.Package package) {
         Object (
             package: package
