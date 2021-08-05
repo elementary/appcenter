@@ -81,7 +81,8 @@ namespace AppCenter.Views {
 
             if (screenshots.length > 0) {
                 app_screenshots = new Hdy.Carousel () {
-                    height_request = 500
+                    height_request = 500,
+                    spacing = 128
                 };
 
                 screenshot_previous = new ArrowButton ("go-previous-symbolic") {
@@ -188,14 +189,14 @@ namespace AppCenter.Views {
                 app_screenshot_not_found.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
                 app_screenshot_not_found.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
-                screenshot_stack = new Gtk.Stack ();
-                screenshot_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
+                screenshot_stack = new Gtk.Stack () {
+                    transition_type = Gtk.StackTransitionType.CROSSFADE
+                };
                 screenshot_stack.add (app_screenshot_spinner);
                 screenshot_stack.add (screenshot_overlay);
                 screenshot_stack.add (app_screenshot_not_found);
 
                 stack_context = screenshot_stack.get_style_context ();
-                stack_context.add_class (Gtk.STYLE_CLASS_BACKGROUND);
                 stack_context.add_class ("loading");
                 stack_context.add_provider (loading_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
             }
@@ -291,14 +292,9 @@ namespace AppCenter.Views {
             release_grid.no_show_all = true;
             release_grid.hide ();
 
-            var content_grid = new Gtk.Grid ();
-            content_grid.row_spacing = 24;
-
-            if (screenshots.length > 0) {
-                content_grid.attach (screenshot_stack, 0, 0, 2);
-                content_grid.attach (screenshot_switcher, 0, 1, 2);
-            }
-
+            var content_grid = new Gtk.Grid () {
+                row_spacing = 24
+            };
             content_grid.attach (package_summary, 0, 2, 2);
             content_grid.attach (app_description, 0, 3, 2);
             content_grid.attach (release_grid, 0, 4, 2);
@@ -403,8 +399,14 @@ namespace AppCenter.Views {
 
             var grid = new Gtk.Grid ();
             grid.row_spacing = 12;
-            grid.attach (header_box, 0, 0, 1, 1);
-            grid.attach (body_clamp, 0, 1);
+            grid.attach (header_box, 0, 0);
+
+            if (screenshots.length > 0) {
+                grid.attach (screenshot_stack, 0, 1);
+                grid.attach (screenshot_switcher, 0, 2);
+            }
+
+            grid.attach (body_clamp, 0, 3);
 
             if (package.author != null) {
                 var other_apps_header = new Gtk.Label (_("Other Apps by %s").printf (package.author_title));
@@ -707,11 +709,13 @@ namespace AppCenter.Views {
             var scale_factor = get_scale_factor ();
             try {
                 var pixbuf = new Gdk.Pixbuf.from_file_at_scale (path, MAX_WIDTH * scale_factor, 600 * scale_factor, true);
-                var image = new Gtk.Image ();
-                image.width_request = MAX_WIDTH;
-                image.height_request = 500;
-                image.icon_name = "image-x-generic";
-                image.halign = Gtk.Align.CENTER;
+
+                var image = new Gtk.Image () {
+                    halign = Gtk.Align.CENTER,
+                    height_request = 500,
+                    icon_name = "image-x-generic"
+                };
+
                 image.gicon = pixbuf;
 
                 Idle.add (() => {
