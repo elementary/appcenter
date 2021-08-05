@@ -53,24 +53,6 @@ namespace AppCenter {
             }
         }
 
-        public bool is_driver {
-            get {
-                return package.is_driver;
-            }
-        }
-
-        public bool update_available {
-            get {
-                return package.update_available || package.is_updating;
-            }
-        }
-
-        public bool is_updating {
-            get {
-                return package.is_updating;
-            }
-        }
-
         public string name_label {
             get {
                 return package_name.label;
@@ -80,16 +62,6 @@ namespace AppCenter {
         public bool action_sensitive {
             set {
                 action_button.sensitive = value;
-            }
-        }
-
-        public bool payments_enabled {
-            get {
-                if (package == null || package.component == null || !package.is_native || package.is_os_updates) {
-                    return false;
-                }
-
-                return package.get_payments_key () != null;
             }
         }
 
@@ -269,11 +241,18 @@ namespace AppCenter {
         }
 
         protected void update_action () {
-            action_button.can_purchase = payments_enabled;
-            action_button.allow_free = true;
-            if (payments_enabled) {
-                action_button.amount = int.parse (this.package.get_suggested_amount ());
+            if (package == null || package.component == null || !package.is_native || package.is_os_updates) {
+                action_button.can_purchase =  false;
+            } else {
+                var can_purchase = package.get_payments_key () != null;
+                action_button.can_purchase = can_purchase;
+
+                if (can_purchase) {
+                    action_button.amount = int.parse (package.get_suggested_amount ());
+                }
             }
+
+            action_button.allow_free = true;
 
             if (action_stack.get_child_by_name ("buttons") != null) {
                 action_stack.visible_child_name = "buttons";
