@@ -96,12 +96,12 @@ namespace AppCenter.Views {
             list_box.invalidate_sort ();
         }
 
-        protected override Widgets.AppListRow construct_row_for_package (AppCenterCore.Package package) {
+        protected override AppRowInterface construct_row_for_package (AppCenterCore.Package package) {
             return new Widgets.PackageRow.installed (package, info_grid_group, action_button_group);
         }
 
         [CCode (instance_pos = -1)]
-        protected override int package_row_compare (Widgets.AppListRow row1, Widgets.AppListRow row2) {
+        protected override int package_row_compare (AppRowInterface row1, AppRowInterface row2) {
             bool a_is_updating = row1.get_is_updating ();
             bool b_is_updating = row2.get_is_updating ();
 
@@ -151,7 +151,7 @@ namespace AppCenter.Views {
         }
 
         [CCode (instance_pos = -1)]
-        private void row_update_header (Widgets.AppListRow row, Widgets.AppListRow? before) {
+        private void row_update_header (AppRowInterface row, AppRowInterface? before) {
             bool update_available = row.get_update_available ();
             bool is_driver = row.get_is_driver ();
 

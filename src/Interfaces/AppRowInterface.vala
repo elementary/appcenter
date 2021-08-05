@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2016 elementary LLC. (https://elementary.io)
+ * Copyright 2016 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,15 +17,13 @@
  * Authored by: Jeremy Wootten <jeremy@elementaryos.org>
  */
 
-namespace AppCenter.Widgets {
-    /** Interface implemented by PackageRow and HeaderRow and used to
-      * determine sort order **/
-    public interface AppListRow : Gtk.ListBoxRow {
-        public abstract bool get_update_available ();
-        public abstract bool get_is_os_updates ();
-        public abstract bool get_is_driver ();
-        public abstract bool get_is_updating ();
-        public abstract string get_name_label ();
-        public abstract AppCenterCore.Package? get_package ();
-    }
+/** Interface implemented by PackageRow and used to
+  * determine sort order **/
+public interface AppCenter.AppRowInterface : Gtk.ListBoxRow {
+    public abstract bool get_update_available ();
+    public abstract bool get_is_os_updates ();
+    public abstract bool get_is_driver ();
+    public abstract bool get_is_updating ();
+    public abstract string get_name_label ();
+    public abstract AppCenterCore.Package? get_package ();
 }
