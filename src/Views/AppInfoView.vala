@@ -397,16 +397,21 @@ namespace AppCenter.Views {
             };
             body_clamp.add (content_grid);
 
-            var grid = new Gtk.Grid ();
-            grid.row_spacing = 12;
-            grid.attach (header_box, 0, 0);
+            var grid = new Gtk.Grid () {
+                orientation = Gtk.Orientation.VERTICAL,
+                row_spacing = 12
+            };
+            grid.add (header_box);
 
             if (screenshots.length > 0) {
-                grid.attach (screenshot_stack, 0, 1);
-                grid.attach (screenshot_switcher, 0, 2);
+                grid.add (screenshot_stack);
+
+                if (screenshots.length > 1) {
+                    grid.add (screenshot_switcher);
+                }
             }
 
-            grid.attach (body_clamp, 0, 3);
+            grid.add (body_clamp);
 
             if (package.author != null) {
                 var other_apps_header = new Gtk.Label (_("Other Apps by %s").printf (package.author_title));
@@ -432,13 +437,11 @@ namespace AppCenter.Views {
                 var other_apps_bar = new Gtk.Grid ();
                 other_apps_bar.add (other_apps_clamp);
 
-                unowned Gtk.StyleContext other_apps_style_context = other_apps_bar.get_style_context ();
-                other_apps_style_context.add_class (Gtk.STYLE_CLASS_TOOLBAR);
+                unowned var other_apps_style_context = other_apps_bar.get_style_context ();
                 other_apps_style_context.add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
-                other_apps_style_context.add_class (Gtk.STYLE_CLASS_SIDEBAR);
 
                 if (other_apps_carousel.get_children ().length () > 0) {
-                    grid.attach (other_apps_bar, 0, 3);
+                    grid.add (other_apps_bar);
                 }
             }
 
