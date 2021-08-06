@@ -141,6 +141,7 @@ namespace AppCenter.Views {
 
                 app_screenshots.add_events (Gdk.EventMask.ENTER_NOTIFY_MASK);
                 app_screenshots.add_events (Gdk.EventMask.LEAVE_NOTIFY_MASK);
+                app_screenshots.add_events (Gdk.EventMask.SCROLL_MASK);
                 screenshot_overlay.add_events (Gdk.EventMask.ENTER_NOTIFY_MASK);
                 screenshot_overlay.add_events (Gdk.EventMask.LEAVE_NOTIFY_MASK);
 
@@ -174,6 +175,10 @@ namespace AppCenter.Views {
                     }
 
                     return false;
+                });
+
+                app_screenshots.scroll_event.connect (() => {
+                    return Gdk.EVENT_STOP;
                 });
 
                 screenshot_switcher = new Hdy.CarouselIndicatorDots () {
