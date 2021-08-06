@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-27 17:04+0000\n"
+"POT-Creation-Date: 2021-08-05 21:59+0000\n"
 "PO-Revision-Date: 2018-06-16 00:08+0000\n"
 "Last-Translator: martin fromont <martin.fromont1@gmail.com>\n"
 "Language-Team: English (Australia) <https://weblate.elementary.io/projects/appcenter/appcenter/en_AU/>\n"
@@ -36,39 +36,40 @@ msgstr ""
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:296 src/MainWindow.vala:354
+#: src/Application.vala:296 src/MainWindow.vala:353
 #, c-format
 msgid "“%s” has been installed"
 msgstr ""
 
-#: src/MainWindow.vala:137
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:133
-msgid "Open"
-msgstr ""
-
-#: src/MainWindow.vala:147
+#: src/MainWindow.vala:146
 #, fuzzy, c-format
 msgid "Failed to launch “%s“"
 msgstr "Find and install apps"
 
-#: src/MainWindow.vala:172 src/Views/Homepage.vala:299
+#: src/MainWindow.vala:171 src/Views/Homepage.vala:299
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
 #: src/Views/Homepage.vala:325 src/Views/SearchView.vala:89
 #, fuzzy
 msgid "Home"
 msgstr "Home Page"
 
-#: src/MainWindow.vala:173 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:172 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 #, fuzzy
 msgctxt "view"
 msgid "Installed"
 msgstr "Install"
 
-#: src/MainWindow.vala:213 src/MainWindow.vala:419 src/Views/SearchView.vala:54
+#: src/MainWindow.vala:212 src/MainWindow.vala:424 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:87
 msgid "Search Apps"
 msgstr "Search Apps"
+
+#. Show Open only when a desktop app is installed
+#: src/MainWindow.vala:356
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:133
+msgid "Open"
+msgstr ""
 
 #: src/Utils.vala:62 src/Core/ChangeInformation.vala:92
 msgid "Starting"

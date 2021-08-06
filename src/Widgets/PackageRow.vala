@@ -25,7 +25,7 @@ namespace AppCenter.Widgets {
         public PackageRow.installed (AppCenterCore.Package package, Gtk.SizeGroup? info_size_group, Gtk.SizeGroup? action_size_group) {
             grid = new InstalledPackageRowGrid (package, info_size_group, action_size_group);
             add (grid);
-            grid.changed.connect (() => {
+            ((InstalledPackageRowGrid) grid).changed.connect (() => {
                 changed ();
             });
         }
@@ -33,9 +33,6 @@ namespace AppCenter.Widgets {
         public PackageRow.list (AppCenterCore.Package package) {
             grid = new ListPackageRowGrid (package);
             add (grid);
-            grid.changed.connect (() => {
-                changed ();
-            });
         }
 
         public bool get_update_available () {

@@ -7,11 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.appcenter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-27 17:04+0000\n"
+"POT-Creation-Date: 2021-08-05 21:59+0000\n"
 "PO-Revision-Date: 2021-07-29 06:15+0000\n"
 "Last-Translator: elSolus <tumbleweed@tuta.io>\n"
-"Language-Team: Punjabi <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/pa/>\n"
+"Language-Team: Punjabi <https://l10n.elementary.io/projects/appcenter/appcenter/pa/>\n"
 "Language: pa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -41,37 +40,38 @@ msgstr "ਐਪ ਸਥਾਪਤ ਹੋ ਚੁੱਕੀ ਹੈ"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:296 src/MainWindow.vala:354
+#: src/Application.vala:296 src/MainWindow.vala:353
 #, c-format
 msgid "“%s” has been installed"
 msgstr "“%s” ਸਥਾਪਤ ਹੋ ਚੁੱਕੀ ਹੈ"
 
-#: src/MainWindow.vala:137
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:133
-msgid "Open"
-msgstr "ਖੋਲ੍ਹੋ"
-
-#: src/MainWindow.vala:147
+#: src/MainWindow.vala:146
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "“%s“ ਨੂੰ ਲਾਂਚ ਕਰਨ ਨਾਕਾਮ ਰਿਹਾ"
 
-#: src/MainWindow.vala:172 src/Views/Homepage.vala:299
+#: src/MainWindow.vala:171 src/Views/Homepage.vala:299
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
 #: src/Views/Homepage.vala:325 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "ਮੁੱਖ ਪੰਨਾ"
 
-#: src/MainWindow.vala:173 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:172 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 msgctxt "view"
 msgid "Installed"
 msgstr "ਸਥਾਪਤ ਕੀਤੇ ਹੋਏ"
 
-#: src/MainWindow.vala:213 src/MainWindow.vala:419 src/Views/SearchView.vala:54
+#: src/MainWindow.vala:212 src/MainWindow.vala:424 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:87
 msgid "Search Apps"
 msgstr "ਐਪਾਂ ਖੋਜੋ"
+
+#. Show Open only when a desktop app is installed
+#: src/MainWindow.vala:356
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:133
+msgid "Open"
+msgstr "ਖੋਲ੍ਹੋ"
 
 #: src/Utils.vala:62 src/Core/ChangeInformation.vala:92
 msgid "Starting"
@@ -334,13 +334,8 @@ msgstr "“%s” ਵਿੱਚ ਸਪਸ਼ਟ ਸਮੱਗਰੀ ਹੈ"
 
 #: src/Dialogs/ContentWarningDialog.vala:31
 #, c-format
-msgid ""
-"“%s” may contain content only suitable for adults or that may be sensitive "
-"or disturbing. In general, elementary does not review or endorse the "
-"contents of this app."
-msgstr ""
-"ਹੋ ਸਕਦੈ “%s” ਵਿੱਚ ਉਹ ਸਮੱਗਰੀ ਹੋਵੇ ਜੋ ਮਾੜੇ ਦਿਲ ਵਾਲ਼ਿਆਂ ਲਈ ਨਾ ਹੋਵੇ, ਜਾਂ ਜੋ ਸਿਰਫ਼"
-" ਬਾਲਗ਼ ਲੋਕਾਂ ਲਈ ਮੁਨਾਸਿਬ ਹੋਵੇ। ਆਮ ਕਰਕੇ ਐਲਮੈਂਟਰੀ ਇਸ ਐਪ ਦੀ ਸਮੱਗਰੀ ਜਾਂਚਦਾ ਨਹੀਂ।"
+msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
+msgstr "ਹੋ ਸਕਦੈ “%s” ਵਿੱਚ ਉਹ ਸਮੱਗਰੀ ਹੋਵੇ ਜੋ ਮਾੜੇ ਦਿਲ ਵਾਲ਼ਿਆਂ ਲਈ ਨਾ ਹੋਵੇ, ਜਾਂ ਜੋ ਸਿਰਫ਼ ਬਾਲਗ਼ ਲੋਕਾਂ ਲਈ ਮੁਨਾਸਿਬ ਹੋਵੇ। ਆਮ ਕਰਕੇ ਐਲਮੈਂਟਰੀ ਇਸ ਐਪ ਦੀ ਸਮੱਗਰੀ ਜਾਂਚਦਾ ਨਹੀਂ।"
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 msgid "Show content warnings"
@@ -357,12 +352,8 @@ msgid "Install Anyway"
 msgstr "ਕੋਈ ਗੱਲ ਨਹੀਂ, ਸਥਾਪਤ ਕਰੋ"
 
 #: src/Dialogs/InstallFailDialog.vala:26
-msgid ""
-"This may be a temporary issue or could have been caused by external or "
-"manually compiled software."
-msgstr ""
-"ਇਹ ਸ਼ਾਇਦ ਆਰਜ਼ੀ ਮਸਲਾ ਹੋਵੇ ਜਾਂ ਕਿਸੇ ਬਾਹਰੀ ਜਾਂ ਹੱਥੀਂ ਕੰਪਾਇਲ ਕੀਤੇ ਸਾਫ਼ਟਵੇਅਰ ਦੇ "
-"ਕਰਕੇ ਹੋਵੇ।"
+msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
+msgstr "ਇਹ ਸ਼ਾਇਦ ਆਰਜ਼ੀ ਮਸਲਾ ਹੋਵੇ ਜਾਂ ਕਿਸੇ ਬਾਹਰੀ ਜਾਂ ਹੱਥੀਂ ਕੰਪਾਇਲ ਕੀਤੇ ਸਾਫ਼ਟਵੇਅਰ ਦੇ ਕਰਕੇ ਹੋਵੇ।"
 
 #: src/Dialogs/InstallFailDialog.vala:37
 msgid "Failed to install app"
@@ -383,12 +374,8 @@ msgstr "ਅਣ-ਸੰਵਾਰੀ ਐਪ ਸਥਾਪਤ ਕਰਨੀ ਹੈ?"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
-msgid ""
-"“%s” is not curated by elementary and has not been reviewed for security, "
-"privacy, or system integration."
-msgstr ""
-"“%s” ਨੂੰ ਐਲੀਮੈਂਟਰੀ ਨੇ ਸੰਵਾਰਿਆ ਨਹੀਂ ਹੈ ਅਤੇ ਨਾ ਹੀ ਸੁਰੱਖਿਆ, ਪਰਦੇਦਾਰੀ ਜਾਂ ਸਿਸਟਮ "
-"ਅਨੁਕੂਲਤਾ ਵੇਖਣ ਲਈ ਇਸਦਾ ਮੁਆਇਨਾ ਕੀਤੈ।"
+msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
+msgstr "“%s” ਨੂੰ ਐਲੀਮੈਂਟਰੀ ਨੇ ਸੰਵਾਰਿਆ ਨਹੀਂ ਹੈ ਅਤੇ ਨਾ ਹੀ ਸੁਰੱਖਿਆ, ਪਰਦੇਦਾਰੀ ਜਾਂ ਸਿਸਟਮ ਅਨੁਕੂਲਤਾ ਵੇਖਣ ਲਈ ਇਸਦਾ ਮੁਆਇਨਾ ਕੀਤੈ।"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
 msgid "It may not receive bug fix or feature updates"
@@ -403,11 +390,8 @@ msgid "Show non-curated warnings"
 msgstr "ਅਣ-ਸੰਵਾਰੀਆਂ ਲਈ ਚਿਤਾਵਨੀਆਂ ਵਿਖਾਓ"
 
 #: src/Dialogs/StripeDialog.vala:41
-msgid ""
-"An error occurred while processing the card. Please try again later. We "
-"apologize for any inconvenience caused."
-msgstr ""
-"ਕਾਰਡ ਪ੍ਰੋਸੈਸਿੰਗ ਦੌਰਾਨ ਖ਼ਰਾਬੀ ਰਹੀ। ਕਿਸੇ ਵੀ ਤਕਲੀਫ਼ ਲਈ ਅਸੀਂ ਮਾਫ਼ੀ ਚਾਹੁੰਦੇ ਹਾਂ।"
+msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
+msgstr "ਕਾਰਡ ਪ੍ਰੋਸੈਸਿੰਗ ਦੌਰਾਨ ਖ਼ਰਾਬੀ ਰਹੀ। ਕਿਸੇ ਵੀ ਤਕਲੀਫ਼ ਲਈ ਅਸੀਂ ਮਾਫ਼ੀ ਚਾਹੁੰਦੇ ਹਾਂ।"
 
 #: src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
@@ -423,12 +407,8 @@ msgid "Pay $%d for %s"
 msgstr "%s ਲਈ $%d ਅਮਰੀਕੀ ਡਾਲਰ ਅਦਾ ਕਰੋ"
 
 #: src/Dialogs/StripeDialog.vala:97
-msgid ""
-"This is a one time payment. Your email address is only used to send you a "
-"receipt."
-msgstr ""
-"ਇਹ ਸਿਰਫ਼ ਇੱਕ ਵਾਰੀ ਹੀ ਅਦਾ ਕਰਨੀ ਹੈ। ਤੁਹਾਡਾ ਈਮੇਲ ਪਤਾ ਸਿਰਫ਼ ਤੁਹਾਨੂੰ ਰਸੀਦ ਭੇਜਣ ਲਈ "
-"ਵਰਤਿਆ ਜਾਂਦੈ।"
+msgid "This is a one time payment. Your email address is only used to send you a receipt."
+msgstr "ਇਹ ਸਿਰਫ਼ ਇੱਕ ਵਾਰੀ ਹੀ ਅਦਾ ਕਰਨੀ ਹੈ। ਤੁਹਾਡਾ ਈਮੇਲ ਪਤਾ ਸਿਰਫ਼ ਤੁਹਾਨੂੰ ਰਸੀਦ ਭੇਜਣ ਲਈ ਵਰਤਿਆ ਜਾਂਦੈ।"
 
 #: src/Dialogs/StripeDialog.vala:98
 msgid "Privacy Policy"
@@ -439,12 +419,8 @@ msgid "Email"
 msgstr "ਈਮੇਲ"
 
 #: src/Dialogs/StripeDialog.vala:113
-msgid ""
-"Your email address is only used to send a receipt. You will not be "
-"subscribed to any mailing list."
-msgstr ""
-"ਤੁਹਾਡਾ ਈਮੇਲ ਪਤਾ ਸਿਰਫ਼ ਤੁਹਾਨੂੰ ਰਸੀਦ ਭੇਜਣ ਲਈ ਵਰਤਿਆ ਜਾਂਦੈ। ਤੁਹਾਨੂੰ ਕਿਸੇ ਸੂਚਨਾਵਾਂ"
-" ਆਦਿ ਲਈ ਗਾਹਕ ਨਹੀਂ ਬਣਾਇਆ ਜਾਵੇਗਾ।"
+msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
+msgstr "ਤੁਹਾਡਾ ਈਮੇਲ ਪਤਾ ਸਿਰਫ਼ ਤੁਹਾਨੂੰ ਰਸੀਦ ਭੇਜਣ ਲਈ ਵਰਤਿਆ ਜਾਂਦੈ। ਤੁਹਾਨੂੰ ਕਿਸੇ ਸੂਚਨਾਵਾਂ ਆਦਿ ਲਈ ਗਾਹਕ ਨਹੀਂ ਬਣਾਇਆ ਜਾਵੇਗਾ।"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:132
@@ -482,29 +458,20 @@ msgid "Retry"
 msgstr "ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ"
 
 #: src/Dialogs/StripeDialog.vala:509 src/Dialogs/StripeDialog.vala:574
-msgid ""
-"The card number is incorrect. Please try again using the correct card number."
+msgid "The card number is incorrect. Please try again using the correct card number."
 msgstr "ਕਾਰਡ ਦਾ ਨੰਬਰ ਗ਼ਲਤ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਸਹੀ ਕਾਰਡ ਨੰਬਰ ਨਾਲ਼ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
 #: src/Dialogs/StripeDialog.vala:511
-msgid ""
-"The expiration month is invalid. Please try again using the correct "
-"expiration date."
-msgstr ""
-"ਖ਼ਤਮ ਹੋਣ ਦਾ ਮਹੀਨਾ ਜਾਇਜ਼ ਨਹੀਂ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਸਹੀ ਮਿਤੀ ਭਰ ਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ "
-"ਕਰੋ।"
+msgid "The expiration month is invalid. Please try again using the correct expiration date."
+msgstr "ਖ਼ਤਮ ਹੋਣ ਦਾ ਮਹੀਨਾ ਜਾਇਜ਼ ਨਹੀਂ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਸਹੀ ਮਿਤੀ ਭਰ ਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
 #: src/Dialogs/StripeDialog.vala:513 src/Dialogs/StripeDialog.vala:571
-msgid ""
-"The expiration year is invalid. Please try again using the correct "
-"expiration date."
-msgstr ""
-"ਖ਼ਤਮ ਹੋਣ ਦਾ ਸਾਲ ਜਾਇਜ਼ ਨਹੀਂ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਸਹੀ ਮਿਤੀ ਭਰ ਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
+msgid "The expiration year is invalid. Please try again using the correct expiration date."
+msgstr "ਖ਼ਤਮ ਹੋਣ ਦਾ ਸਾਲ ਜਾਇਜ਼ ਨਹੀਂ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਸਹੀ ਮਿਤੀ ਭਰ ਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
 #: src/Dialogs/StripeDialog.vala:516 src/Dialogs/StripeDialog.vala:569
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr ""
-"ਸੀਵੀਸੀ ਨੰਬਰ ਗ਼ਲਤ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਸਹੀ ਸੀਵੀਸੀ ਨੰਬਰ ਭਰ ਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
+msgstr "ਸੀਵੀਸੀ ਨੰਬਰ ਗ਼ਲਤ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਸਹੀ ਸੀਵੀਸੀ ਨੰਬਰ ਭਰ ਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
 #: src/Dialogs/StripeDialog.vala:518 src/Dialogs/StripeDialog.vala:560
 msgid "The card has expired. Please try again with a different card."
@@ -512,40 +479,27 @@ msgstr "ਕਾਰਡ ਖ਼ਤਮ ਹੋ ਚੁੱਕਿਐ। ਕਿਰਪਾ �
 
 #: src/Dialogs/StripeDialog.vala:538
 msgid "There are too many payment requests at the moment, please retry later."
-msgstr ""
-"ਇਸ ਵੇਲ਼ੇ ਅਦਾਇਗੀ ਲਈ ਬਹੁਤ ਜ਼ਿਆਦਾ ਬੇਨਤੀਆਂ ਆ ਰਹੀਆਂ ਹਨ, ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ "
-"ਕਰੋ।"
+msgstr "ਇਸ ਵੇਲ਼ੇ ਅਦਾਇਗੀ ਲਈ ਬਹੁਤ ਜ਼ਿਆਦਾ ਬੇਨਤੀਆਂ ਆ ਰਹੀਆਂ ਹਨ, ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
 #: src/Dialogs/StripeDialog.vala:554
-msgid ""
-"This card does not support this kind of transaction. Please try again with a "
-"different card."
-msgstr ""
-"ਇਹ ਕਾਰਡ ਇਸ ਤਰ੍ਹਾਂ ਦੇ ਲੈਣ-ਦੇਣ ਲਈ ਨਹੀਂ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਕਿਸੇ ਹੋਰ ਕਾਰਡ ਨਾਲ਼ "
-"ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
+msgid "This card does not support this kind of transaction. Please try again with a different card."
+msgstr "ਇਹ ਕਾਰਡ ਇਸ ਤਰ੍ਹਾਂ ਦੇ ਲੈਣ-ਦੇਣ ਲਈ ਨਹੀਂ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਕਿਸੇ ਹੋਰ ਕਾਰਡ ਨਾਲ਼ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
 #: src/Dialogs/StripeDialog.vala:556
-msgid ""
-"The currency is not supported by this card. Please try again with a "
-"different card."
-msgstr ""
-"ਇਹ ਕਾਰਡ ਇਸ ਮੁਦਰਾ (ਕਰੰਸੀ) ਨਾਲ਼ ਕੰਮ ਨਹੀਂ ਕਰਦਾ। ਕਿਰਪਾ ਕਰਕੇ ਕਿਸੇ ਹੋਰ ਕਾਰਡ ਨਾਲ਼ "
-"ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
+msgid "The currency is not supported by this card. Please try again with a different card."
+msgstr "ਇਹ ਕਾਰਡ ਇਸ ਮੁਦਰਾ (ਕਰੰਸੀ) ਨਾਲ਼ ਕੰਮ ਨਹੀਂ ਕਰਦਾ। ਕਿਰਪਾ ਕਰਕੇ ਕਿਸੇ ਹੋਰ ਕਾਰਡ ਨਾਲ਼ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
 #: src/Dialogs/StripeDialog.vala:558
 msgid "The transaction has already been processed."
 msgstr "ਇਹ ਲੈਣ-ਦੇਣ ਪਹਿਲਾਂ ਹੀ ਹੋ ਚੁੱਕਿਆ ਹੈ।"
 
 #: src/Dialogs/StripeDialog.vala:562
-msgid ""
-"The ZIP/Postal code is incorrect. Please try again using the correct ZIP/"
-"postal code."
+msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
 msgstr "ਪਿੰਨ/ਜ਼ਿਪ ਕੋਡ ਗ਼ਲਤ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਸਹੀ ਕੋਡ ਭਰ ਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
 #: src/Dialogs/StripeDialog.vala:564
 msgid "You don't have enough funds. Please use an alternative payment method."
-msgstr ""
-"ਤੁਹਾਡੇ ਕੋਲ਼ ਮੌਜੂਦ ਰਕਮ ਕਾਫ਼ੀ ਨਹੀਂ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਅਦਾਇਗੀ ਦਾ ਕੋਈ ਹੋਰ ਤਰੀਕਾ ਵਰਤੋ।"
+msgstr "ਤੁਹਾਡੇ ਕੋਲ਼ ਮੌਜੂਦ ਰਕਮ ਕਾਫ਼ੀ ਨਹੀਂ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਅਦਾਇਗੀ ਦਾ ਕੋਈ ਹੋਰ ਤਰੀਕਾ ਵਰਤੋ।"
 
 #: src/Dialogs/StripeDialog.vala:566
 msgid "The amount is incorrect. Please try again using a valid amount."
@@ -556,19 +510,12 @@ msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "ਪਿੰਨ ਨੰਬਰ ਗ਼ਲਤ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਸਹੀ ਪਿੰਨ ਨੰਬਰ ਭਰ ਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
 #: src/Dialogs/StripeDialog.vala:579
-msgid ""
-"There has been too many PIN attempts. Please try again with a different card."
-msgstr ""
-"ਪਿੰਨ ਨੰਬਰ ਲਈ ਬਹੁਤ ਜ਼ਿਆਦਾ ਕੋਸ਼ਿਸ਼ਾਂ ਹੋ ਚੁੱਕੀਆਂ ਹਨ। ਕਿਰਪਾ ਕਰਕੇ ਕੋਈ ਹੋਰ ਕਾਰਡ "
-"ਵਰਤ ਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
+msgid "There has been too many PIN attempts. Please try again with a different card."
+msgstr "ਪਿੰਨ ਨੰਬਰ ਲਈ ਬਹੁਤ ਜ਼ਿਆਦਾ ਕੋਸ਼ਿਸ਼ਾਂ ਹੋ ਚੁੱਕੀਆਂ ਹਨ। ਕਿਰਪਾ ਕਰਕੇ ਕੋਈ ਹੋਰ ਕਾਰਡ ਵਰਤ ਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
 #: src/Dialogs/StripeDialog.vala:599
-msgid ""
-"Unable to complete the transaction. Please contact your bank for further "
-"information."
-msgstr ""
-"ਲੈਣ-ਦੇਣ ਪੂਰਾ ਨਹੀਂ ਹੋ ਸਕਿਆ। ਜ਼ਿਆਦਾ ਜਾਣਕਾਰੀ ਲਈ ਕਿਰਪਾ ਕਰਕੇ ਆਪਣੇ ਬੈਂਕ ਨਾਲ਼ ਰਾਬਤਾ "
-"ਕਰੋ।"
+msgid "Unable to complete the transaction. Please contact your bank for further information."
+msgstr "ਲੈਣ-ਦੇਣ ਪੂਰਾ ਨਹੀਂ ਹੋ ਸਕਿਆ। ਜ਼ਿਆਦਾ ਜਾਣਕਾਰੀ ਲਈ ਕਿਰਪਾ ਕਰਕੇ ਆਪਣੇ ਬੈਂਕ ਨਾਲ਼ ਰਾਬਤਾ ਕਰੋ।"
 
 #: src/Dialogs/StripeDialog.vala:602
 msgid "The balance or credit limit on the card has been reached."
@@ -615,12 +562,8 @@ msgid "Failed to Fetch Updates"
 msgstr "ਅਪਡੇਟਾਂ ਲਿਆਉਣਾ ਨਾਕਾਮ ਰਿਹਾ"
 
 #: src/Dialogs/UpdateFailDialog.vala:26
-msgid ""
-"This may have been caused by external, manually added software repositories "
-"or a corrupted sources file."
-msgstr ""
-"ਇਹ ਕਿਸੇ ਬਾਹਰੀ, ਹੱਥੀਂ ਜੋੜੇ ਸਾਫ਼ਟਵੇਅਰ ਭੰਡਾਰਾਂ ਜਾਂ ਖ਼ਰਾਬ ਸਰੋਤ ਫ਼ਾਇਲ ਕਰਕੇ ਹੋਇਆ ਹੋ"
-" ਸਕਦੈ।"
+msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
+msgstr "ਇਹ ਕਿਸੇ ਬਾਹਰੀ, ਹੱਥੀਂ ਜੋੜੇ ਸਾਫ਼ਟਵੇਅਰ ਭੰਡਾਰਾਂ ਜਾਂ ਖ਼ਰਾਬ ਸਰੋਤ ਫ਼ਾਇਲ ਕਰਕੇ ਹੋਇਆ ਹੋ ਸਕਦੈ।"
 
 #: src/Dialogs/UpdateFailDialog.vala:34
 msgid "Ignore"
@@ -727,8 +670,7 @@ msgstr "ਅਪਡੇਟਾਂ ਲੱਭੀਆਂ ਜਾ ਰਹੀਆਂ ਹਨ"
 
 #: src/Views/AppListUpdateView.vala:33
 msgid "Downloading a list of available updates to the OS and installed apps"
-msgstr ""
-"ਅਪਰੇਟਿੰਗ ਸਿਸਟਮ ਅਤੇ ਸਥਾਪਤ ਐਪਾਂ ਲਈ ਉਪਲਬਧ ਅਪਡੇਟਾਂ ਦੀ ਸੂਚੀ ਡਾਊਨਲੋਡ ਹੋ ਰਹੀ ਹੈ"
+msgstr "ਅਪਰੇਟਿੰਗ ਸਿਸਟਮ ਅਤੇ ਸਥਾਪਤ ਐਪਾਂ ਲਈ ਉਪਲਬਧ ਅਪਡੇਟਾਂ ਦੀ ਸੂਚੀ ਡਾਊਨਲੋਡ ਹੋ ਰਹੀ ਹੈ"
 
 #: src/Views/AppListUpdateView.vala:41
 msgid "A restart is required to finish installing updates"
@@ -739,11 +681,8 @@ msgid "Restart Now"
 msgstr "ਹੁਣੇ ਬੰਦ ਕਰਕੇ ਦੁਬਾਰਾ ਚਲਾਓ"
 
 #: src/Views/AppListUpdateView.vala:58
-msgid ""
-"Requesting a restart failed. Restart manually to finish installing updates"
-msgstr ""
-"ਆਪਣੇ-ਆਪ ਦੁਬਾਰਾ ਚਲਾਉਣਾ ਨਾਕਾਮ ਰਿਹਾ। ਸਥਾਪਨ ਮੁਕੰਮਲ ਕਰਨ ਲਈ ਖ਼ੁਦ ਹੱਥੀਂ ਬੰਦ ਕਰ ਕੇ "
-"ਚਲਾਓ"
+msgid "Requesting a restart failed. Restart manually to finish installing updates"
+msgstr "ਆਪਣੇ-ਆਪ ਦੁਬਾਰਾ ਚਲਾਉਣਾ ਨਾਕਾਮ ਰਿਹਾ। ਸਥਾਪਨ ਮੁਕੰਮਲ ਕਰਨ ਲਈ ਖ਼ੁਦ ਹੱਥੀਂ ਬੰਦ ਕਰ ਕੇ ਚਲਾਓ"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
 #: src/Views/AppListUpdateView.vala:186

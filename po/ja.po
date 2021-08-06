@@ -3,11 +3,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-27 17:04+0000\n"
+"POT-Creation-Date: 2021-08-05 21:59+0000\n"
 "PO-Revision-Date: 2021-07-31 12:32+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/ja/>\n"
+"Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/appcenter/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -38,37 +37,38 @@ msgstr "アプリをインストールしました"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:296 src/MainWindow.vala:354
+#: src/Application.vala:296 src/MainWindow.vala:353
 #, c-format
 msgid "“%s” has been installed"
 msgstr "“%s” をインストールしました"
 
-#: src/MainWindow.vala:137
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:133
-msgid "Open"
-msgstr "開く"
-
-#: src/MainWindow.vala:147
+#: src/MainWindow.vala:146
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "“%s” を起動できませんでした"
 
-#: src/MainWindow.vala:172 src/Views/Homepage.vala:299
+#: src/MainWindow.vala:171 src/Views/Homepage.vala:299
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
 #: src/Views/Homepage.vala:325 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "ホーム"
 
-#: src/MainWindow.vala:173 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:172 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 msgctxt "view"
 msgid "Installed"
 msgstr "インストール済み"
 
-#: src/MainWindow.vala:213 src/MainWindow.vala:419 src/Views/SearchView.vala:54
+#: src/MainWindow.vala:212 src/MainWindow.vala:424 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:87
 msgid "Search Apps"
 msgstr "アプリを検索"
+
+#. Show Open only when a desktop app is installed
+#: src/MainWindow.vala:356
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:133
+msgid "Open"
+msgstr "開く"
 
 #: src/Utils.vala:62 src/Core/ChangeInformation.vala:92
 msgid "Starting"
@@ -329,9 +329,7 @@ msgstr "“%s” は不適切なコンテンツを含んでいます"
 #: src/Dialogs/ContentWarningDialog.vala:31
 #, c-format
 msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
-msgstr ""
-"“%s” には、成人向けの内容、扱いに注意を要する内容、あるいは衝撃を与える内容が含まれている可能性があります。一般的に、elementary "
-"はこのアプリの内容までは審査・保証していません。"
+msgstr "“%s” には、成人向けの内容、扱いに注意を要する内容、あるいは衝撃を与える内容が含まれている可能性があります。一般的に、elementary はこのアプリの内容までは審査・保証していません。"
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 msgid "Show content warnings"
