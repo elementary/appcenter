@@ -8,11 +8,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-27 17:04+0000\n"
+"POT-Creation-Date: 2021-08-05 21:59+0000\n"
 "PO-Revision-Date: 2021-07-29 12:40+0000\n"
 "Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
-"Language-Team: Italian <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/it/>\n"
+"Language-Team: Italian <https://l10n.elementary.io/projects/appcenter/appcenter/it/>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -43,37 +42,38 @@ msgstr "L'applicazione è stata installata"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:296 src/MainWindow.vala:354
+#: src/Application.vala:296 src/MainWindow.vala:353
 #, c-format
 msgid "“%s” has been installed"
 msgstr "“%s” è stata installata"
 
-#: src/MainWindow.vala:137
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:133
-msgid "Open"
-msgstr "Apri"
-
-#: src/MainWindow.vala:147
+#: src/MainWindow.vala:146
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "impossibile eseguire “%s”"
 
-#: src/MainWindow.vala:172 src/Views/Homepage.vala:299
+#: src/MainWindow.vala:171 src/Views/Homepage.vala:299
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
 #: src/Views/Homepage.vala:325 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "Pagina principale"
 
-#: src/MainWindow.vala:173 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:172 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 msgctxt "view"
 msgid "Installed"
 msgstr "Installate"
 
-#: src/MainWindow.vala:213 src/MainWindow.vala:419 src/Views/SearchView.vala:54
+#: src/MainWindow.vala:212 src/MainWindow.vala:424 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:87
 msgid "Search Apps"
 msgstr "Cerca applicazioni"
+
+#. Show Open only when a desktop app is installed
+#: src/MainWindow.vala:356
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:133
+msgid "Open"
+msgstr "Apri"
 
 #: src/Utils.vala:62 src/Core/ChangeInformation.vala:92
 msgid "Starting"
@@ -676,8 +676,7 @@ msgstr "Scaricamento di un elenco di aggiornamenti disponibili per il sistema op
 
 #: src/Views/AppListUpdateView.vala:41
 msgid "A restart is required to finish installing updates"
-msgstr ""
-"Un riavvio è necessario per completare l'installazione degli aggiornamenti"
+msgstr "Un riavvio è necessario per completare l'installazione degli aggiornamenti"
 
 #: src/Views/AppListUpdateView.vala:49
 msgid "Restart Now"
@@ -685,9 +684,7 @@ msgstr "Riavvia ora"
 
 #: src/Views/AppListUpdateView.vala:58
 msgid "Requesting a restart failed. Restart manually to finish installing updates"
-msgstr ""
-"Il riavvio aumatico non è andato a buon fine. Riavvia manualmente per "
-"completare l'installazione degli aggiornamenti."
+msgstr "Il riavvio aumatico non è andato a buon fine. Riavvia manualmente per completare l'installazione degli aggiornamenti."
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
 #: src/Views/AppListUpdateView.vala:186

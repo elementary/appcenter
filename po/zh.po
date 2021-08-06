@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-27 17:04+0000\n"
+"POT-Creation-Date: 2021-08-05 21:59+0000\n"
 "PO-Revision-Date: 2019-05-15 01:18+0000\n"
 "Last-Translator: Jimmy Sun <jimmysuncn@hotmail.com>\n"
 "Language-Team: Chinese <https://l10n.elementary.io/projects/appcenter/appcenter/zh/>\n"
@@ -41,39 +41,40 @@ msgstr "%s已被安装成功"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:296 src/MainWindow.vala:354
+#: src/Application.vala:296 src/MainWindow.vala:353
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
 msgstr "%s已被安装成功"
 
-#: src/MainWindow.vala:137
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:133
-msgid "Open"
-msgstr "打开"
-
-#: src/MainWindow.vala:147
+#: src/MainWindow.vala:146
 #, fuzzy, c-format
 msgid "Failed to launch “%s“"
 msgstr "卸载"
 
-#: src/MainWindow.vala:172 src/Views/Homepage.vala:299
+#: src/MainWindow.vala:171 src/Views/Homepage.vala:299
 #: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
 #: src/Views/Homepage.vala:325 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "首页"
 
-#: src/MainWindow.vala:173 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:172 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 #, fuzzy
 msgctxt "view"
 msgid "Installed"
 msgstr "正在安装"
 
-#: src/MainWindow.vala:213 src/MainWindow.vala:419 src/Views/SearchView.vala:54
+#: src/MainWindow.vala:212 src/MainWindow.vala:424 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:87
 msgid "Search Apps"
 msgstr "搜索应用"
+
+#. Show Open only when a desktop app is installed
+#: src/MainWindow.vala:356
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:133
+msgid "Open"
+msgstr "打开"
 
 #: src/Utils.vala:62 src/Core/ChangeInformation.vala:92
 msgid "Starting"
