@@ -19,8 +19,6 @@
  */
 
 public abstract class AppCenter.Widgets.AbstractPackageRowGrid : AbstractAppContainer {
-    public signal void changed ();
-
     protected Gtk.Label package_name;
 
     protected AbstractPackageRowGrid (AppCenterCore.Package package) {

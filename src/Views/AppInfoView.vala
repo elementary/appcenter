@@ -505,7 +505,10 @@ namespace AppCenter.Views {
         }
 
         protected override void update_state (bool first_update = false) {
-            size_label.update ();
+            if (!package.is_local) {
+                size_label.update ();
+            }
+
             if (package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
                 get_app_download_size.begin ();
             }
@@ -528,7 +531,7 @@ namespace AppCenter.Views {
         }
 
         private async void get_app_download_size () {
-            if (package.state == AppCenterCore.Package.State.INSTALLED) {
+            if (package.state == AppCenterCore.Package.State.INSTALLED || package.is_local) {
                 return;
             }
 
