@@ -19,6 +19,8 @@
  */
 
 public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid {
+    public signal void changed ();
+
     Gtk.Label app_version;
     Gtk.Stack release_stack;
     Gtk.Expander release_expander;
