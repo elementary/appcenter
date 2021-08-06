@@ -134,7 +134,6 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         title = _(Build.APP_NAME);
 
         toast = new Granite.Widgets.Toast ("");
-        toast.set_default_action (_("Open"));
 
         toast.default_action.connect (() => {
             if (last_installed_package != null) {
@@ -352,6 +351,12 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         // selected but it's not the app we're installing.
         if (selected_package == null || (selected_package != null && selected_package.get_name () != package.get_name ())) {
             toast.title = _("“%s” has been installed").printf (package.get_name ());
+            // Show Open only when a desktop app is installed
+            if (package.component.get_kind () == AppStream.ComponentKind.DESKTOP_APP) {
+                toast.set_default_action (_("Open"));
+            } else {
+                toast.set_default_action (null);
+            }
 
             toast.send_notification ();
         }
