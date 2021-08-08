@@ -90,7 +90,7 @@ msgstr "Mostrar notificações na aplicação quando uma aplicação for instala
 
 #: data/io.elementary.appcenter.appdata.xml.in:34
 msgid "Add contextual badges to notifications"
-msgstr ""
+msgstr "Adicionar ícones contextuais às notificações"
 
 #: data/io.elementary.appcenter.appdata.xml.in:38
 msgid "Ensure Home button is usable during search"
