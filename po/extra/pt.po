@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-05 21:59+0000\n"
-"PO-Revision-Date: 2021-08-08 13:49+0000\n"
-"Last-Translator: André Martins <martins2759@protonmail.com>\n"
+"PO-Revision-Date: 2021-08-08 19:05+0000\n"
+"Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
 "extra/pt/>\n"
 "Language: pt\n"
@@ -104,40 +104,42 @@ msgstr ""
 "que a sessão reinicie"
 
 #: data/io.elementary.appcenter.appdata.xml.in:40
-#, fuzzy
-#| msgid "Improve update badge styling and category styling"
 msgid "Improve styling and contrast of buttons"
-msgstr "Melhora o estilo do emblema de atualização e estilo da categoria"
+msgstr "Melhora o estilo e o contraste dos botões"
 
 #: data/io.elementary.appcenter.appdata.xml.in:41
 msgid "More concise and consistent language"
-msgstr ""
+msgstr "Linguagem mais concisa e consistente"
 
 #: data/io.elementary.appcenter.appdata.xml.in:46
 msgid "Fully uninstall Flatpaks, including locales"
-msgstr ""
+msgstr "Desinstala totalmente os Flatpaks, incluindo localizações do idioma"
 
 #: data/io.elementary.appcenter.appdata.xml.in:47
 msgid "Still fetch screenshots from remotes that don't include proper headers"
 msgstr ""
+"Ainda busca capturas de ecrã de controlos remotos que não incluem cabeçalhos "
+"adequados"
 
 #: data/io.elementary.appcenter.appdata.xml.in:48
 msgid "Fix truncated footer buttons"
-msgstr ""
+msgstr "Corrige botões de rodapé truncados"
 
 #: data/io.elementary.appcenter.appdata.xml.in:49
 msgid "Only show Mail button when a usable mail app is installed"
 msgstr ""
+"Mostrar apenas o botão de Correio quando uma aplicação de correio utilizável "
+"é instalada"
 
 #: data/io.elementary.appcenter.appdata.xml.in:50
 msgid "Fix some apps incorrectly showing as not installed during search"
 msgstr ""
+"Corrige algumas aplicações incorretamente apresentadas como não instaladas "
+"durante a pesquisa"
 
 #: data/io.elementary.appcenter.appdata.xml.in:51
-#, fuzzy
-#| msgid "Show an error dialog if an installation fails"
 msgid "Show an error dialog when opening an app fails"
-msgstr "Mostrar uma caixa de diálogo de erro se uma instalação falhar"
+msgstr "Mostrar uma janela de erro quando falha ao abrir uma aplicação"
 
 #: data/io.elementary.appcenter.appdata.xml.in:57
 #: data/io.elementary.appcenter.appdata.xml.in:73
