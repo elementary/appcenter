@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-05 21:59+0000\n"
-"PO-Revision-Date: 2021-08-08 13:46+0000\n"
-"Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
+"PO-Revision-Date: 2021-08-08 13:47+0000\n"
+"Last-Translator: André Martins <martins2759@protonmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
 "extra/pt/>\n"
 "Language: pt\n"
@@ -86,7 +86,7 @@ msgstr "Novas funcionalidades:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:33
 msgid "Show in-app notification when an app is installed"
-msgstr ""
+msgstr "Mostrar notificações na aplicação quando uma aplicação for instalada"
 
 #: data/io.elementary.appcenter.appdata.xml.in:34
 msgid "Add contextual badges to notifications"
