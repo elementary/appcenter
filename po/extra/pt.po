@@ -59,7 +59,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
 msgid "Fix missing privacy policy in payments dialog"
-msgstr ""
+msgstr "Corrigir política de privacidade em falta no ecrã de pagamentos"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 #: data/io.elementary.appcenter.appdata.xml.in:36
