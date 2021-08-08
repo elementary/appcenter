@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-05 21:59+0000\n"
-"PO-Revision-Date: 2021-08-08 13:47+0000\n"
+"PO-Revision-Date: 2021-08-08 13:48+0000\n"
 "Last-Translator: André Martins <martins2759@protonmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/appcenter/"
 "extra/pt/>\n"
@@ -95,6 +95,7 @@ msgstr "Adicionar ícones contextuais às notificações"
 #: data/io.elementary.appcenter.appdata.xml.in:38
 msgid "Ensure Home button is usable during search"
 msgstr ""
+"Garantir que o botão para voltar ao Início está disponível durante a pesquisa"
 
 #: data/io.elementary.appcenter.appdata.xml.in:39
 msgid "Ask the user to manually restart if we can't ask the session to prompt"
