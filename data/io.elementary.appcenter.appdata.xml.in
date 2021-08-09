@@ -11,6 +11,18 @@
     <p>The open source, pay-what-you-want app store from elementary. Reviewed and curated by elementary to ensure a native, privacy-respecting, and secure experience. Browse by categories or search and discover new apps. AppCenter is also used for updating your system to the latest and greatest version for new features and fixes.</p>
   </description>
   <releases>
+    <release version="3.6.2" date="2021-08-09" urgency="medium">
+      <description>
+        <p>Fixes:</p>
+        <ul>
+          <li>Install Linux kernel headers with NVIDIA drivers</li>
+        </ul>
+        <p>Improvements:</p>
+        <ul>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
     <release version="3.6.1" date="2021-08-02" urgency="medium">
       <description>
         <p>Fixes:</p>
