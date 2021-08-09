@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-09 18:09+0000\n"
-"PO-Revision-Date: 2021-07-27 21:16+0000\n"
+"PO-Revision-Date: 2021-08-09 23:43+0000\n"
 "Last-Translator: supaeasy <ismo+github@wolffson.ch>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/appcenter/extra/"
 "de/>\n"
@@ -47,7 +47,7 @@ msgstr "Fehlerbehebungen:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Install Linux kernel headers with NVIDIA drivers"
-msgstr ""
+msgstr "Linux Kernel Header mit NVIDIA-Treibern installieren"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:35
