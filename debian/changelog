@@ -1,3 +1,18 @@
+appcenter (3.6.2) bionic; urgency=medium
+
+  * Release 3.6.2 (#1582)
+  * UbuntuDrivers: Also install related kernel modules (#1581)
+  * AbstractPackageRowGrid: Rmove changed signal to
+    InstalledPackageRowGrid (#1577)
+  * AppInfoView: Don't try to update size info in case of local packages
+    (#1579)
+  * Update translation files
+  * Update translation template
+  * MainWindow: Don't show Open for extension (#1569)
+  * Package: Fix gettext syntax (#1570)
+
+ -- elementary Builds Team <builds@elementary.io>  Mon, 09 Aug 2021 18:09:33 +0000
+
 appcenter (3.6.1) bionic; urgency=medium
 
   * Release 3.6.1 (#1566)
