@@ -58,6 +58,8 @@ public class AppCenter.App : Gtk.Application {
         flags |= ApplicationFlags.HANDLES_OPEN;
         Intl.setlocale (LocaleCategory.ALL, "");
         Intl.textdomain (Build.GETTEXT_PACKAGE);
+        Intl.bindtextdomain (Build.GETTEXT_PACKAGE, Build.LOCALEDIR);
+        Intl.bind_textdomain_codeset (Build.GETTEXT_PACKAGE, "UTF-8");
 
         add_main_option_entries (APPCENTER_OPTIONS);
 
