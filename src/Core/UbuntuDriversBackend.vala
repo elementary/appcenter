@@ -61,15 +61,41 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
                 continue;
             }
 
+            // Filter out the nvidia server drivers
+            if (package_name.contains ("nvidia") && package_name.contains ("-server")) {
+                continue;
+            }
+
+            string[] pkgnames = {};
+
             // ubuntu-drivers returns lines like the following for dkms packages:
             // backport-iwlwifi-dkms, (kernel modules provided by backport-iwlwifi-dkms)
-            // we only want the bit before the comma
+            // nvidia-driver-470, (kernel modules provided by linux-modules-nvidia-470-generic-hwe-20.04)
+            // we want to install both packages if they're different
+
             string[] parts = package_name.split (",");
-            package_name = parts[0];
+            // Get the driver part (before the comma)
+            pkgnames += parts[0];
+
+            if (parts.length > 1) {
+                if (parts[1].contains ("kernel modules provided by")) {
+                    string[] kernel_module_parts = parts[1].split (" ");
+                    // Get the remainder of the string after the last space
+                    var last_part = kernel_module_parts[kernel_module_parts.length - 1];
+                    // Strip off the trailing bracket
+                    last_part = last_part.replace (")", "");
+
+                    if (!(last_part in pkgnames)) {
+                        pkgnames += last_part;
+                    }
+                } else {
+                    warning ("Unrecognised line from ubuntu-drivers, needs checking: %s", package_name);
+                }
+            }
 
             var driver_component = new AppStream.Component ();
             driver_component.set_kind (AppStream.ComponentKind.DRIVER);
-            driver_component.set_pkgnames ({ package_name });
+            driver_component.set_pkgnames (pkgnames);
             driver_component.set_id (package_name);
 
             var icon = new AppStream.Icon ();
