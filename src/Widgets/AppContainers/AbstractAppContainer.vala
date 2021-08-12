@@ -45,12 +45,6 @@ namespace AppCenter {
 
         private uint state_source = 0U;
 
-        public bool is_os_updates {
-            get {
-                return package.is_os_updates;
-            }
-        }
-
         private string _name_label = null;
         public string name_label {
             get {
@@ -199,7 +193,7 @@ namespace AppCenter {
             } else {
                 inner_image.gicon = package.get_icon (icon_size, scale_factor);
 
-                if (is_os_updates) {
+                if (package.is_os_updates) {
                     var overlay_image = new Gtk.Image.from_icon_name ("system-software-update", badge_icon_size);
                     overlay_image.halign = overlay_image.valign = Gtk.Align.END;
                     overlay_image.pixel_size = badge_pixel_size;
@@ -269,7 +263,7 @@ namespace AppCenter {
 
                     break;
                 case AppCenterCore.Package.State.INSTALLED:
-                    uninstall_button_revealer.reveal_child = show_uninstall && !is_os_updates && !package.is_compulsory;
+                    uninstall_button_revealer.reveal_child = show_uninstall && !package.is_os_updates && !package.is_compulsory;
                     action_button_revealer.reveal_child = package.should_pay && updates_view;
                     open_button_revealer.reveal_child = show_open && package.get_can_launch ();
 
@@ -282,7 +276,7 @@ namespace AppCenter {
 
                     action_button.label = _("Update");
 
-                    uninstall_button_revealer.reveal_child = show_uninstall && !is_os_updates && !package.is_compulsory;
+                    uninstall_button_revealer.reveal_child = show_uninstall && !package.is_os_updates && !package.is_compulsory;
                     action_button_revealer.reveal_child = true;
                     open_button_revealer.reveal_child = false;
 
@@ -372,7 +366,7 @@ namespace AppCenter {
 
             var curated_dialog_allowed = App.settings.get_boolean ("non-curated-warning");
             var app_installed = package.state != AppCenterCore.Package.State.NOT_INSTALLED;
-            var app_curated = package.is_native || is_os_updates;
+            var app_curated = package.is_native || package.is_os_updates;
 
             // Only show the curated dialog if the user has left them enabled, the app isn't installed
             // and it isn't a curated app
