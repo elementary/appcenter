@@ -51,6 +51,7 @@ namespace AppCenter {
             }
         }
 
+        private string _name_label = null;
         public string name_label {
             get {
                 if (_name_label == null) {
