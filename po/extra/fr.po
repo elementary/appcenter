@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-09 18:09+0000\n"
-"PO-Revision-Date: 2021-08-12 14:14+0000\n"
+"PO-Revision-Date: 2021-08-12 20:19+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/appcenter/extra/"
 "fr/>\n"
@@ -32,7 +32,7 @@ msgid ""
 "is also used for updating your system to the latest and greatest version for "
 "new features and fixes."
 msgstr ""
-"Le magasin d'applications open source, à prix libre, d'elementary. Revu et "
+"Le magasin d'applications open source et à prix libre d'elementary. Revu et "
 "corrigé par elementary pour assurer une expérience native, respectueuse de "
 "la vie privée et sécurisée. Parcourez par catégories ou recherchez et "
 "découvrez de nouvelles applications. Le centre d’applications est aussi "
@@ -47,7 +47,7 @@ msgstr "Corrections :"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Install Linux kernel headers with NVIDIA drivers"
-msgstr ""
+msgstr "Installation des en-têtes du noyau Linux avec les pilotes NVIDIA"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:35
