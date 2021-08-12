@@ -201,7 +201,7 @@ namespace AppCenter.Views {
                 stack_context.add_provider (loading_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
             }
 
-            var package_name = new Gtk.Label (name_label) {
+            var package_name = new Gtk.Label (package.get_name ()) {
                 ellipsize = Pango.EllipsizeMode.MIDDLE,
                 selectable = true,
                 valign = Gtk.Align.END,
