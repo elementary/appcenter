@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-09 18:09+0000\n"
-"PO-Revision-Date: 2021-08-03 16:02+0000\n"
+"PO-Revision-Date: 2021-08-12 12:32+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/appcenter/extra/"
 "fr/>\n"
@@ -561,7 +561,7 @@ msgstr "Ajout de la catégorie Maths dans Sciences"
 
 #: data/io.elementary.appcenter.appdata.xml.in:253
 msgid "Relax email address validator"
-msgstr "Validation d'adresse e-mail rendu plus souple"
+msgstr "Validation de l'adresse e-mail rendue plus souple"
 
 #: data/io.elementary.appcenter.appdata.xml.in:254
 msgid "Present update availability more accurately"
