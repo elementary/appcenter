@@ -37,6 +37,7 @@ namespace AppCenter.Views {
         private Gtk.Grid release_grid;
         private Gtk.Label app_screenshot_not_found;
         private Gtk.Label package_summary;
+        private Gtk.Label author_label;
         private Gtk.ListBox extension_box;
         private Gtk.ListStore origin_liststore;
         private Gtk.Overlay screenshot_overlay;
@@ -200,16 +201,20 @@ namespace AppCenter.Views {
                 stack_context.add_provider (loading_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
             }
 
-            package_name.ellipsize = Pango.EllipsizeMode.MIDDLE;
-            package_name.selectable = true;
-            package_name.xalign = 0;
+            var package_name = new Gtk.Label (name_label) {
+                ellipsize = Pango.EllipsizeMode.MIDDLE,
+                selectable = true,
+                valign = Gtk.Align.END,
+                xalign = 0
+            };
             package_name.get_style_context ().add_class (Granite.STYLE_CLASS_H1_LABEL);
-            package_name.valign = Gtk.Align.END;
 
-            package_author.selectable = true;
-            package_author.xalign = 0;
-            package_author.valign = Gtk.Align.START;
-            package_author.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+            author_label = new Gtk.Label (null) {
+                selectable = true,
+                valign = Gtk.Align.START,
+                xalign = 0
+            };
+            author_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
             package_summary = new Gtk.Label (null);
             package_summary.label = package.get_summary ();
@@ -360,7 +365,7 @@ namespace AppCenter.Views {
             header_grid.hexpand = true;
             header_grid.attach (image, 0, 0, 1, 3);
             header_grid.attach (package_name, 1, 0);
-            header_grid.attach (package_author, 1, 1);
+            header_grid.attach (author_label, 1, 1);
             header_grid.attach (origin_combo_revealer, 1, 2, 3);
             header_grid.attach (action_stack, 3, 0);
 
@@ -493,7 +498,7 @@ namespace AppCenter.Views {
                 package.notify["state"].connect (() => {
                     Idle.add (() => {
                         // For the OS updates component, this is the "x components with updates" text
-                        package_author.label = package.get_version ();
+                        author_label.label = package.get_version ();
 
                         parse_description (package.get_description ());
                         return false;
@@ -600,7 +605,9 @@ namespace AppCenter.Views {
 
             new Thread<void*> ("content-loading", () => {
                 if (package.is_os_updates) {
-                    package_author.label = package.get_version ();
+                    author_label.label = package.get_version ();
+                } else {
+                    author_label.label = package.author_title;
                 }
 
                 parse_description (package.get_description ());
