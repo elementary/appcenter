@@ -21,6 +21,9 @@
 public abstract class AppCenter.Widgets.AbstractPackageRowGrid : AbstractAppContainer {
     protected Gtk.Label package_name;
 
+    protected Gtk.Overlay image;
+    private Gtk.Image inner_image;
+
     protected AbstractPackageRowGrid (AppCenterCore.Package package) {
         Object (
             package: package
@@ -28,9 +31,27 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : AbstractAppCont
     }
 
     construct {
-        inner_image.icon_size = Gtk.IconSize.DIALOG;
-        /* Needed to enforce size on icons from Filesystem/Remote */
-        inner_image.pixel_size = 48;
+        set_up_package ();
+
+        inner_image = new Gtk.Image () {
+            icon_size = Gtk.IconSize.DIALOG,
+            pixel_size = 48,
+            gicon = icon
+        };
+
+        image = new Gtk.Overlay ();
+        image.add (inner_image);
+
+        if (badge_icon != null) {
+            var overlay_image = new Gtk.Image () {
+                gicon = badge_icon,
+                halign = Gtk.Align.END,
+                valign = Gtk.Align.END,
+                pixel_size = 24
+            };
+
+            image.add_overlay (overlay_image);
+        }
 
         package_name = new Gtk.Label (name_label) {
             valign = Gtk.Align.END,

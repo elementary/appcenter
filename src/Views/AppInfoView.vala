@@ -71,8 +71,27 @@ namespace AppCenter.Views {
                 to_recycle = true;
             });
 
-            inner_image.margin_top = 12;
-            inner_image.pixel_size = 128;
+            set_up_package (128);
+
+            var inner_image = new Gtk.Image () {
+                margin_top = 12,
+                pixel_size = 128,
+                gicon = icon
+            };
+
+            var image = new Gtk.Overlay ();
+            image.add (inner_image);
+
+            if (badge_icon != null) {
+                var overlay_image = new Gtk.Image () {
+                    gicon = badge_icon,
+                    halign = Gtk.Align.END,
+                    valign = Gtk.Align.END,
+                    pixel_size = 64
+                };
+
+                image.add_overlay (overlay_image);
+            }
 
             action_button.suggested_action = true;
 
@@ -492,7 +511,6 @@ namespace AppCenter.Views {
             }
 #endif
             view_entered ();
-            set_up_package (128);
 
             if (package.is_os_updates) {
                 package.notify["state"].connect (() => {

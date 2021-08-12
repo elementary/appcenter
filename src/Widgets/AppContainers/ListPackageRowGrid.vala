@@ -22,7 +22,6 @@ public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
 
     public ListPackageRowGrid (AppCenterCore.Package package) {
         base (package);
-        set_up_package ();
     }
 
     construct {

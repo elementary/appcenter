@@ -43,8 +43,6 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         if (info_size_group != null) {
             info_size_group.add_widget (info_grid);
         }
-
-        set_up_package ();
     }
 
     construct {
