@@ -26,7 +26,6 @@ namespace AppCenter {
         protected Gtk.Overlay image;
         protected Gtk.Image inner_image;
         protected Gtk.Label package_name;
-        protected Gtk.Label package_author;
 
         protected Widgets.ContentWarningDialog content_warning;
         protected Widgets.NonCuratedWarningDialog non_curated_warning;
@@ -100,7 +99,6 @@ namespace AppCenter {
             inner_image = new Gtk.Image ();
             image.add (inner_image);
 
-            package_author = new Gtk.Label (null);
             package_name = new Gtk.Label (null);
 
             action_button = new Widgets.HumbleButton ();
@@ -207,10 +205,6 @@ namespace AppCenter {
 
         protected virtual void set_up_package (uint icon_size = 48) {
             package_name.label = Utils.unescape_markup (package.get_name ());
-
-            if (package.component.get_id () != AppCenterCore.Package.OS_UPDATES_ID) {
-                package_author.label = package.author_title;
-            }
 
             var scale_factor = inner_image.get_scale_factor ();
 
