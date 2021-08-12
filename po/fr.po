@@ -12,9 +12,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-09 18:09+0000\n"
-"PO-Revision-Date: 2021-07-20 20:53+0000\n"
-"Last-Translator: Corentin Noël <tintou@noel.tf>\n"
-"Language-Team: French <https://l10n.elementary.io/projects/appcenter/appcenter/fr/>\n"
+"PO-Revision-Date: 2021-08-12 12:32+0000\n"
+"Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
+"Language-Team: French <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -421,7 +422,7 @@ msgstr "Politique de confidentialité"
 
 #: src/Dialogs/StripeDialog.vala:111
 msgid "Email"
-msgstr "E-mail"
+msgstr "Adresse e-mail"
 
 #: src/Dialogs/StripeDialog.vala:113
 msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
