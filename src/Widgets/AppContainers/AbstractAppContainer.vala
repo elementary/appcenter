@@ -25,7 +25,6 @@ namespace AppCenter {
 
         protected Gtk.Overlay image;
         protected Gtk.Image inner_image;
-        protected Gtk.Label package_name;
 
         protected Widgets.ContentWarningDialog content_warning;
         protected Widgets.NonCuratedWarningDialog non_curated_warning;
@@ -70,9 +69,14 @@ namespace AppCenter {
             }
         }
 
+        private string _name_label = null;
         public string name_label {
             get {
-                return package_name.label;
+                if (_name_label == null) {
+                    _name_label = Utils.unescape_markup (package.get_name ());
+                }
+
+                return _name_label;
             }
         }
 
@@ -98,8 +102,6 @@ namespace AppCenter {
             image = new Gtk.Overlay ();
             inner_image = new Gtk.Image ();
             image.add (inner_image);
-
-            package_name = new Gtk.Label (null);
 
             action_button = new Widgets.HumbleButton ();
 
@@ -188,7 +190,7 @@ namespace AppCenter {
         private void show_stripe_dialog (int amount) {
             var stripe = new Widgets.StripeDialog (
                 amount,
-                package_name.label,
+                name_label,
                 package.normalized_component_id,
                 package.get_payments_key ()
             );
@@ -204,8 +206,6 @@ namespace AppCenter {
         }
 
         protected virtual void set_up_package (uint icon_size = 48) {
-            package_name.label = Utils.unescape_markup (package.get_name ());
-
             var scale_factor = inner_image.get_scale_factor ();
 
             var badge_icon_size = Gtk.IconSize.LARGE_TOOLBAR;
@@ -400,7 +400,7 @@ namespace AppCenter {
             if (curated_dialog_allowed && !app_installed && !app_curated) {
                 approved = false;
 
-                non_curated_warning = new Widgets.NonCuratedWarningDialog (this.package_name.label);
+                non_curated_warning = new Widgets.NonCuratedWarningDialog (name_label);
                 non_curated_warning.transient_for = (Gtk.Window) get_toplevel ();
 
                 non_curated_warning.response.connect ((response_id) => {
@@ -432,7 +432,7 @@ namespace AppCenter {
             if (App.settings.get_boolean ("content-warning") == true && package.is_explicit) {
                 approved = false;
 
-                content_warning = new Widgets.ContentWarningDialog (this.package_name.label);
+                content_warning = new Widgets.ContentWarningDialog (name_label);
                 content_warning.transient_for = (Gtk.Window) get_toplevel ();
 
                 content_warning.response.connect ((response_id) => {
