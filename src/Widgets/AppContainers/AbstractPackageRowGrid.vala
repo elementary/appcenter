@@ -19,6 +19,8 @@
  */
 
 public abstract class AppCenter.Widgets.AbstractPackageRowGrid : AbstractAppContainer {
+    protected Gtk.Label package_name;
+
     protected AbstractPackageRowGrid (AppCenterCore.Package package) {
         Object (
             package: package
@@ -30,9 +32,11 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : AbstractAppCont
         /* Needed to enforce size on icons from Filesystem/Remote */
         inner_image.pixel_size = 48;
 
+        package_name = new Gtk.Label (name_label) {
+            valign = Gtk.Align.END,
+            xalign = 0
+        };
         package_name.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
-        package_name.valign = Gtk.Align.END;
-        package_name.xalign = 0;
 
         margin = 6;
         margin_start = 12;

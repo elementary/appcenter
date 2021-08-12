@@ -201,11 +201,13 @@ namespace AppCenter.Views {
                 stack_context.add_provider (loading_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
             }
 
-            package_name.ellipsize = Pango.EllipsizeMode.MIDDLE;
-            package_name.selectable = true;
-            package_name.xalign = 0;
+            var package_name = new Gtk.Label (name_label) {
+                ellipsize = Pango.EllipsizeMode.MIDDLE,
+                selectable = true,
+                valign = Gtk.Align.END,
+                xalign = 0
+            };
             package_name.get_style_context ().add_class (Granite.STYLE_CLASS_H1_LABEL);
-            package_name.valign = Gtk.Align.END;
 
             author_label = new Gtk.Label (null) {
                 selectable = true,
