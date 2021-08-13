@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-09 18:09+0000\n"
 "PO-Revision-Date: 2021-08-13 15:47+0000\n"
-"Last-Translator: Andrey <max352516@gmail.com>\n"
+"Last-Translator: DartDeaDia <DartDeaDia@protonmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/extra/"
 "ru/>\n"
 "Language: ru\n"
@@ -26,11 +26,6 @@ msgid "Browse and manage apps"
 msgstr "Просмотр и управление приложениями"
 
 #: data/io.elementary.appcenter.appdata.xml.in:11
-#, fuzzy
-#| msgid ""
-#| "An app store for indie and open source developers. Browse by categories "
-#| "or search and discover new apps. AppCenter is also used for updating your "
-#| "system to the latest and greatest version for new features and fixes."
 msgid ""
 "The open source, pay-what-you-want app store from elementary. Reviewed and "
 "curated by elementary to ensure a native, privacy-respecting, and secure "
@@ -38,11 +33,13 @@ msgid ""
 "is also used for updating your system to the latest and greatest version for "
 "new features and fixes."
 msgstr ""
-"Магазин приложений для инди-разработчиков и разработчиков свободного "
-"программного обеспечения. Просматривайте приложения по категориям или "
-"открывайте для себя новые. Центр приложений также используется для "
-"обновления системы до последней версии, чтобы вы получали новые функции и "
-"исправления ошибок."
+"Магазин приложений от elementary с открытым кодом, использующий модель «"
+"платите, сколько сможете». Проверяется и курируется elementary, чтобы "
+"обеспечить согласованную, с уважением к конфиденциальности и безопасностью "
+"работу приложений. Просматривайте приложения по категориям или ищите и "
+"открывайте для себя новые приложения. Центр приложений также используется "
+"для обновления системы до новой версии, чтобы Вы получали новые функции и "
+"исправления."
 
 #: data/io.elementary.appcenter.appdata.xml.in:16
 #: data/io.elementary.appcenter.appdata.xml.in:28
@@ -52,7 +49,7 @@ msgstr "Исправления:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Install Linux kernel headers with NVIDIA drivers"
-msgstr ""
+msgstr "Установка ядра Linux с драйверами NVIDIA"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:35
@@ -77,7 +74,7 @@ msgstr "Обновлены переводы"
 
 #: data/io.elementary.appcenter.appdata.xml.in:30
 msgid "Show Recently Updated Flatpak apps on home page"
-msgstr ""
+msgstr "Отображение недавно обновленных Flatpak приложений на главной странице"
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
 msgid "Show brand colors and support payments for Flatpak apps"
@@ -98,7 +95,7 @@ msgstr "Новые возможности:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:45
 msgid "Show in-app notification when an app is installed"
-msgstr ""
+msgstr "Отображение уведомлений в приложении, когда приложение установлено"
 
 #: data/io.elementary.appcenter.appdata.xml.in:46
 msgid "Add contextual badges to notifications"
@@ -118,7 +115,7 @@ msgstr "Улучшен внешний виид и контрастность к�
 
 #: data/io.elementary.appcenter.appdata.xml.in:53
 msgid "More concise and consistent language"
-msgstr ""
+msgstr "Более лаконичный и последовательный язык"
 
 #: data/io.elementary.appcenter.appdata.xml.in:58
 msgid "Fully uninstall Flatpaks, including locales"
@@ -136,11 +133,13 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:61
 msgid "Only show Mail button when a usable mail app is installed"
-msgstr ""
+msgstr "Кнопка «Почта» появляется только если установлено приложение почты"
 
 #: data/io.elementary.appcenter.appdata.xml.in:62
 msgid "Fix some apps incorrectly showing as not installed during search"
 msgstr ""
+"Исправлено отображение установленных приложений как не установленными при "
+"поиске"
 
 #: data/io.elementary.appcenter.appdata.xml.in:63
 msgid "Show an error dialog when opening an app fails"
@@ -364,7 +363,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:195
 msgid "Load the \"Installed\" view faster"
-msgstr ""
+msgstr "Более быстрая загрузка представления «Установленные»"
 
 #: data/io.elementary.appcenter.appdata.xml.in:196
 msgid "Ensure flatpak applications show in the category views"
@@ -374,6 +373,8 @@ msgstr ""
 msgid ""
 "Save some bandwidth by downloading smaller screenshots where appropriate"
 msgstr ""
+"Экономия трафика за счет загрузки снимков экрана меньшего размера там, где "
+"это уместно"
 
 #: data/io.elementary.appcenter.appdata.xml.in:198
 msgid "System components no longer have an \"Open\" button"
