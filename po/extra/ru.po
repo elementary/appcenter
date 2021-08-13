@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-09 18:09+0000\n"
 "PO-Revision-Date: 2021-08-13 15:50+0000\n"
-"Last-Translator: Andrey <max352516@gmail.com>\n"
+"Last-Translator: DartDeaDia <DartDeaDia@protonmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/extra/"
 "ru/>\n"
 "Language: ru\n"
@@ -378,7 +378,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:198
 msgid "System components no longer have an \"Open\" button"
-msgstr "Компоненты системы больше не имеют кнопки \"Открыть\""
+msgstr "Компоненты системы больше не имеют кнопки «Открыть»"
 
 #: data/io.elementary.appcenter.appdata.xml.in:199
 msgid ""
