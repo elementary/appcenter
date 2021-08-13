@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-09 18:09+0000\n"
 "PO-Revision-Date: 2021-08-13 20:45+0000\n"
-"Last-Translator: Andrey <max352516@gmail.com>\n"
+"Last-Translator: DartDeaDia <DartDeaDia@protonmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/extra/"
 "ru/>\n"
 "Language: ru\n"
@@ -103,7 +103,7 @@ msgstr "Добавлены контекстные значки к уведомл
 
 #: data/io.elementary.appcenter.appdata.xml.in:50
 msgid "Ensure Home button is usable during search"
-msgstr "Обеспечение возможности использования кнопки домой во время поиска"
+msgstr "Обеспечение возможности использования кнопки «Главная» во время поиска"
 
 #: data/io.elementary.appcenter.appdata.xml.in:51
 msgid "Ask the user to manually restart if we can't ask the session to prompt"
@@ -429,7 +429,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:221
 msgid "Allow browsing and uninstalling apps while offline"
-msgstr ""
+msgstr "Разрешен просмотр и удаление приложений в автономном режиме"
 
 #: data/io.elementary.appcenter.appdata.xml.in:222
 msgid "Fix twitter share URLs"
