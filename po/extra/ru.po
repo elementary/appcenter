@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-09 18:09+0000\n"
-"PO-Revision-Date: 2021-08-13 20:46+0000\n"
+"PO-Revision-Date: 2021-08-13 21:27+0000\n"
 "Last-Translator: DartDeaDia <DartDeaDia@protonmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/extra/"
 "ru/>\n"
@@ -437,7 +437,7 @@ msgstr "Исправлена URL-ссылка поделиться в Twitter"
 
 #: data/io.elementary.appcenter.appdata.xml.in:223
 msgid "Drop Google+ from the share menu"
-msgstr "Перетащите Google+ из меню публикации"
+msgstr "Убран Google+ из меню публикации"
 
 #: data/io.elementary.appcenter.appdata.xml.in:224
 msgid "Animate screenshot background while loading"
