@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-09 18:09+0000\n"
 "PO-Revision-Date: 2021-08-13 18:34+0000\n"
-"Last-Translator: asdffdsdaf <useruseruser1233211@gmail.com>\n"
+"Last-Translator: DartDeaDia <DartDeaDia@protonmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/extra/"
 "ru/>\n"
 "Language: ru\n"
@@ -113,7 +113,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:52
 msgid "Improve styling and contrast of buttons"
-msgstr "Улучшен внешний виид и контрастность кнопок"
+msgstr "Улучшен внешний вид и контрастность кнопок"
 
 #: data/io.elementary.appcenter.appdata.xml.in:53
 msgid "More concise and consistent language"
