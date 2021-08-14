@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-09 18:09+0000\n"
-"PO-Revision-Date: 2021-08-14 12:06+0000\n"
+"PO-Revision-Date: 2021-08-14 12:39+0000\n"
 "Last-Translator: DartDeaDia <DartDeaDia@protonmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/extra/"
 "ru/>\n"
@@ -479,11 +479,11 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:241
 msgid "Remove reset paid apps gsettings key"
-msgstr "Удалить ключ настроек сброса платных приложений"
+msgstr "Удален ключ gsettings для сброса платных приложений"
 
 #: data/io.elementary.appcenter.appdata.xml.in:242
 msgid "Memory management refinements"
-msgstr ""
+msgstr "Усовершенствования в управлении памятью"
 
 #: data/io.elementary.appcenter.appdata.xml.in:243
 msgid ""
@@ -512,11 +512,11 @@ msgstr "Новые переводы"
 
 #: data/io.elementary.appcenter.appdata.xml.in:251
 msgid "New categories: Communication, Finance, Media Production"
-msgstr ""
+msgstr "Новые категории: Общение, Финансы, Медиапроизводство"
 
 #: data/io.elementary.appcenter.appdata.xml.in:252
 msgid "Add Math to Science category"
-msgstr ""
+msgstr "Добавлена категория «Математика» в категорию «Наука»"
 
 #: data/io.elementary.appcenter.appdata.xml.in:253
 msgid "Relax email address validator"
@@ -528,7 +528,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:255
 msgid "Category graphics revamped"
-msgstr ""
+msgstr "Обновлена категория «Графика»"
 
 #: data/io.elementary.appcenter.appdata.xml.in:270
 #: data/io.elementary.appcenter.appdata.xml.in:282
@@ -547,11 +547,11 @@ msgstr "Исправлены ошибки и улучшена производи
 
 #: data/io.elementary.appcenter.appdata.xml.in:272
 msgid "Improve transaction success rate"
-msgstr ""
+msgstr "Повышение коэффициента успешности транзакций"
 
 #: data/io.elementary.appcenter.appdata.xml.in:273
 msgid "Add Publishing to Office category"
-msgstr ""
+msgstr "Добавлена категория «Публикация» в категорию «Офис»"
 
 #: data/io.elementary.appcenter.appdata.xml.in:274
 msgid "Improve descriptions of OS Updates"
@@ -574,6 +574,7 @@ msgstr "Различные исправления ошибок и улучшен
 #: data/io.elementary.appcenter.appdata.xml.in:284
 msgid "Give details for Operating System Updates"
 msgstr ""
+"Предоставление дополнительных сведений для обновлений операционной системы"
 
 #: data/io.elementary.appcenter.appdata.xml.in:285
 msgid "Support mouse button navigation"
@@ -645,7 +646,7 @@ msgstr "Обновить программное обеспечение"
 
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to update software"
-msgstr ""
+msgstr "Для обновления программного обеспечения требуется аутентификация"
 
 #~ msgid "@DESKTOP_ICON@"
 #~ msgstr "@DESKTOP_ICON@"
