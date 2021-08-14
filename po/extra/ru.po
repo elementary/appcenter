@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-09 18:09+0000\n"
 "PO-Revision-Date: 2021-08-14 14:26+0000\n"
-"Last-Translator: asdffdsdaf <useruseruser1233211@gmail.com>\n"
+"Last-Translator: DartDeaDia <DartDeaDia@protonmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/extra/"
 "ru/>\n"
 "Language: ru\n"
@@ -475,7 +475,7 @@ msgstr "Улучшение восстановления состояния ок�
 
 #: data/io.elementary.appcenter.appdata.xml.in:240
 msgid "Prevent action buttons from jumping around"
-msgstr ""
+msgstr "Предотвращено скакание кнопок действий"
 
 #: data/io.elementary.appcenter.appdata.xml.in:241
 msgid "Remove reset paid apps gsettings key"
