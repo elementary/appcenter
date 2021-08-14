@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-09 18:09+0000\n"
-"PO-Revision-Date: 2021-08-14 14:26+0000\n"
+"PO-Revision-Date: 2021-08-14 16:49+0000\n"
 "Last-Translator: DartDeaDia <DartDeaDia@protonmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/extra/"
 "ru/>\n"
@@ -524,7 +524,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:254
 msgid "Present update availability more accurately"
-msgstr "Более точное представление доступности обновлений"
+msgstr "Более точное представление доступных обновлений"
 
 #: data/io.elementary.appcenter.appdata.xml.in:255
 msgid "Category graphics revamped"
