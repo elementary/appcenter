@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-09 18:09+0000\n"
-"PO-Revision-Date: 2021-08-14 16:49+0000\n"
+"PO-Revision-Date: 2021-08-14 19:05+0000\n"
 "Last-Translator: DartDeaDia <DartDeaDia@protonmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/extra/"
 "ru/>\n"
@@ -489,6 +489,8 @@ msgstr "Усовершенствования в управлении памят�
 msgid ""
 "Add conditional compilation for disabling dynamic remote homepage content"
 msgstr ""
+"Добавлена условная компиляция для отключения динамического удаленного "
+"содержимого главной страницы"
 
 #: data/io.elementary.appcenter.appdata.xml.in:244
 #: data/io.elementary.appcenter.appdata.xml.in:256
@@ -520,7 +522,7 @@ msgstr "Добавлена категория «Математика» в кат
 
 #: data/io.elementary.appcenter.appdata.xml.in:253
 msgid "Relax email address validator"
-msgstr ""
+msgstr "Ослаблено проверку адреса электронной почты"
 
 #: data/io.elementary.appcenter.appdata.xml.in:254
 msgid "Present update availability more accurately"
