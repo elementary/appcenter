@@ -32,7 +32,7 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : AbstractAppCont
         /* Needed to enforce size on icons from Filesystem/Remote */
         inner_image.pixel_size = 48;
 
-        package_name = new Gtk.Label (name_label) {
+        package_name = new Gtk.Label (package.get_name ()) {
             valign = Gtk.Align.END,
             xalign = 0
         };
