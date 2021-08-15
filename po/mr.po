@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-09 18:09+0000\n"
+"POT-Creation-Date: 2021-08-15 03:55+0000\n"
 "PO-Revision-Date: 2021-06-19 21:50+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/appcenter/mr/>\n"
@@ -31,14 +31,14 @@ msgstr "मीडिया टाईप %s पार्स होऊ शकल�
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "दिलेली लिंक '%s ' मिळाली नाही, त्याऐवजी शोध सुरु आहे"
 
-#: src/Application.vala:295
+#: src/Application.vala:296
 msgid "The app has been installed"
 msgstr "अ‍ॅप स्थापित केले गेले आहे"
 
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:296 src/MainWindow.vala:353
+#: src/Application.vala:297 src/MainWindow.vala:353
 #, c-format
 msgid "“%s” has been installed"
 msgstr "\"%s\" इन्स्टॉल झाले"
@@ -67,7 +67,7 @@ msgstr "अनुप्रयोग शोधा"
 
 #. Show Open only when a desktop app is installed
 #: src/MainWindow.vala:356
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:133
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:105
 msgid "Open"
 msgstr "उघडा"
 
@@ -430,7 +430,7 @@ msgid "CVC"
 msgstr "CVC"
 
 #: src/Dialogs/StripeDialog.vala:194 src/Dialogs/StripeDialog.vala:311
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:129
 msgid "Cancel"
 msgstr "रद्द करा"
 
@@ -537,7 +537,7 @@ msgid "Uninstall “%s”?"
 msgstr "\"%s\" विस्थापित करायचा?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:124
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:96
 msgid "Uninstall"
 msgstr "विस्थापित करा"
 
@@ -580,85 +580,85 @@ msgstr "अ‍ॅप अपडेट करण्यात अयशस्वी
 msgid "Failed to update “%s”"
 msgstr "\"%s\" अपडेट करण्यात अयशस्वी"
 
-#: src/Views/AppInfoView.vala:187
+#: src/Views/AppInfoView.vala:188
 msgid "Screenshot Not Available"
 msgstr "स्क्रीनशॉट उपलब्ध नाही"
 
-#: src/Views/AppInfoView.vala:252
+#: src/Views/AppInfoView.vala:257
 msgid "Homepage"
 msgstr "मुख्य पृष्ठ"
 
-#: src/Views/AppInfoView.vala:258
+#: src/Views/AppInfoView.vala:263
 msgid "Translate"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:264
+#: src/Views/AppInfoView.vala:269
 msgid "Send Feedback"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:270
+#: src/Views/AppInfoView.vala:275
 msgid "Help"
 msgstr "मदत"
 
-#: src/Views/AppInfoView.vala:281
+#: src/Views/AppInfoView.vala:286
 msgid "What's New:"
 msgstr "नवीन काय आहे:"
 
-#: src/Views/AppInfoView.vala:316
+#: src/Views/AppInfoView.vala:321
 msgid "Extensions:"
 msgstr "विस्तार :"
 
-#: src/Views/AppInfoView.vala:410
+#: src/Views/AppInfoView.vala:415
 #, c-format
 msgid "Other Apps by %s"
 msgstr "%s प्रमाणे इतर अॅप्स"
 
-#: src/Views/AppInfoView.vala:448
+#: src/Views/AppInfoView.vala:453
 msgid "Link copied to clipboard"
 msgstr "दुवा क्लिपबोर्डवर कॉपी केला"
 
-#: src/Views/AppInfoView.vala:459
+#: src/Views/AppInfoView.vala:464
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "अँप सेंटर वर %s बघा:"
 
-#: src/Views/AppInfoView.vala:466
+#: src/Views/AppInfoView.vala:471
 msgid "Share"
 msgstr "शेअर करा"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:767
+#: src/Views/AppInfoView.vala:774
 msgid "Public Domain"
 msgstr "सार्वजनिक डोमेन"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:770
+#: src/Views/AppInfoView.vala:777
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://mr.wikipedia.org/wiki/%E0%A4%B8%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%B5%E0%A4%9C%E0%A4%A8%E0%A4%BF%E0%A4%95_%E0%A4%85%E0%A4%A7%E0%A4%BF%E0%A4%95%E0%A5%8D%E0%A4%B7%E0%A5%87%E0%A4%A4%E0%A5%8D%E0%A4%B0"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:775
+#: src/Views/AppInfoView.vala:782
 msgid "Free Software"
 msgstr "फ्री सॉफ्टवेअर"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:778
+#: src/Views/AppInfoView.vala:785
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw"
 
-#: src/Views/AppInfoView.vala:782
+#: src/Views/AppInfoView.vala:789
 msgid "Proprietary"
 msgstr "मालकी"
 
-#: src/Views/AppInfoView.vala:785
+#: src/Views/AppInfoView.vala:792
 msgid "Unknown License"
 msgstr "अज्ञात परवाना"
 
-#: src/Views/AppInfoView.vala:863
+#: src/Views/AppInfoView.vala:870
 msgid "Fund"
 msgstr "निधी"
 
-#: src/Views/AppInfoView.vala:885
+#: src/Views/AppInfoView.vala:892
 msgid "Fund the development of this app"
 msgstr "या अॅपच्या विकासासाठी निधी द्या"
 
@@ -803,12 +803,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "जे सक्षम नाहीत, त्यांसाठी पेमेंट आवश्यक आहे"
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:285
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:258
 msgid "Free"
 msgstr "विनामुल्य"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:287
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:260
 msgid "Install"
 msgstr "प्रस्थापित"
 
@@ -902,7 +902,7 @@ msgstr "ड्राइव्हर्स"
 msgid "Up to Date"
 msgstr "अद्ययावत"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:310
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:283
 msgid "Update"
 msgstr "अद्ययावत (अपडेट) करा"
 
