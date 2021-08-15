@@ -48,7 +48,7 @@ namespace AppCenter.Widgets {
         }
 
         public bool get_is_os_updates () {
-            return grid.is_os_updates;
+            return grid.package.is_os_updates;
         }
 
         public string get_name_label () {
