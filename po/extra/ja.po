@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-15 03:55+0000\n"
-"PO-Revision-Date: 2021-08-10 00:51+0000\n"
+"PO-Revision-Date: 2021-08-15 05:18+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/extra/"
 "ja/>\n"
@@ -48,7 +48,7 @@ msgstr "修正点:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Fix opening apps from app installed toasts"
-msgstr ""
+msgstr "アプリインストール完了時の通知トーストからアプリを開けない不具合を修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:32
