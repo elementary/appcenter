@@ -396,7 +396,6 @@ public class AppCenterCore.Package : Object {
         }
     }
 
-    private string? name = null;
     public string? description = null;
     private string? summary = null;
     private string? color_primary = null;
@@ -600,6 +599,7 @@ public class AppCenterCore.Package : Object {
         }
     }
 
+    private string? name = null;
     public string? get_name () {
         if (name != null) {
             return name;
@@ -614,11 +614,13 @@ public class AppCenterCore.Package : Object {
             name = backend_details.name;
         }
 
+        name = Utils.unescape_markup (name);
+
         return name;
     }
 
     public void set_name (string? new_name) {
-        name = new_name;
+        name = Utils.unescape_markup (new_name);
     }
 
     public string? get_description () {

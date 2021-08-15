@@ -45,17 +45,6 @@ namespace AppCenter {
 
         private uint state_source = 0U;
 
-        private string _name_label = null;
-        public string name_label {
-            get {
-                if (_name_label == null) {
-                    _name_label = Utils.unescape_markup (package.get_name ());
-                }
-
-                return _name_label;
-            }
-        }
-
         public bool action_sensitive {
             set {
                 action_button.sensitive = value;
@@ -156,7 +145,7 @@ namespace AppCenter {
         private void show_stripe_dialog (int amount) {
             var stripe = new Widgets.StripeDialog (
                 amount,
-                name_label,
+                package.get_name (),
                 package.normalized_component_id,
                 package.get_payments_key ()
             );
@@ -373,7 +362,7 @@ namespace AppCenter {
             if (curated_dialog_allowed && !app_installed && !app_curated) {
                 approved = false;
 
-                non_curated_warning = new Widgets.NonCuratedWarningDialog (name_label);
+                non_curated_warning = new Widgets.NonCuratedWarningDialog (package.get_name ());
                 non_curated_warning.transient_for = (Gtk.Window) get_toplevel ();
 
                 non_curated_warning.response.connect ((response_id) => {
@@ -405,7 +394,7 @@ namespace AppCenter {
             if (App.settings.get_boolean ("content-warning") == true && package.is_explicit) {
                 approved = false;
 
-                content_warning = new Widgets.ContentWarningDialog (name_label);
+                content_warning = new Widgets.ContentWarningDialog (package.get_name ());
                 content_warning.transient_for = (Gtk.Window) get_toplevel ();
 
                 content_warning.response.connect ((response_id) => {

@@ -52,7 +52,7 @@ namespace AppCenter.Widgets {
         }
 
         public string get_name_label () {
-            return grid.name_label;
+            return grid.package.get_name ();
         }
 
         public AppCenterCore.Package? get_package () {
