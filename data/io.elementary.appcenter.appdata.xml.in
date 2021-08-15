@@ -11,7 +11,7 @@
     <p>The open source, pay-what-you-want app store from elementary. Reviewed and curated by elementary to ensure a native, privacy-respecting, and secure experience. Browse by categories or search and discover new apps. AppCenter is also used for updating your system to the latest and greatest version for new features and fixes.</p>
   </description>
   <releases>
-    <release version="3.6.3" date="2021-08-13" urgency="medium">
+    <release version="3.6.3" date="2021-08-14" urgency="medium">
       <description>
         <p>Fixes:</p>
         <ul>
@@ -465,6 +465,7 @@
   <url type="translate">https://l10n.elementary.io/projects/desktop/appcenter</url>
   <update_contact>contact_at_elementary.io</update_contact>
   <custom>
-    <value key="x-appcenter-color-primary">#665888</value>
+    <value key="x-appcenter-color-primary">#7239b3</value>
+    <value key="x-appcenter-color-primary-text">#fff</value>
   </custom>
 </component>
