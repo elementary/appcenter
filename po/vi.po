@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-09 18:09+0000\n"
+"POT-Creation-Date: 2021-08-15 03:55+0000\n"
 "PO-Revision-Date: 2020-10-07 03:57+0000\n"
 "Last-Translator: Trkien618 <hacngoctrungkien@gmail.com>\n"
 "Language-Team: Vietnamese <https://l10n.elementary.io/projects/appcenter/appcenter/vi/>\n"
@@ -33,7 +33,7 @@ msgstr "Không thể phân tích kiểu nội dung %s"
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Không tìm thấy liên kết cụ thể tới '%s', đang tìm kiếm thay thế"
 
-#: src/Application.vala:295
+#: src/Application.vala:296
 #, fuzzy
 #| msgid "%s has been successfully installed"
 msgid "The app has been installed"
@@ -42,7 +42,7 @@ msgstr "%s đã được cài đặt thành công"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:296 src/MainWindow.vala:353
+#: src/Application.vala:297 src/MainWindow.vala:353
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
@@ -73,7 +73,7 @@ msgstr "Tìm kiếm ứng dụng"
 
 #. Show Open only when a desktop app is installed
 #: src/MainWindow.vala:356
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:133
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:105
 msgid "Open"
 msgstr "Mở"
 
@@ -446,7 +446,7 @@ msgid "CVC"
 msgstr "CVC"
 
 #: src/Dialogs/StripeDialog.vala:194 src/Dialogs/StripeDialog.vala:311
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:129
 msgid "Cancel"
 msgstr "Hủy bỏ"
 
@@ -557,7 +557,7 @@ msgid "Uninstall “%s”?"
 msgstr "Gỡ cài đặt"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:124
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:96
 msgid "Uninstall"
 msgstr "Gỡ cài đặt"
 
@@ -602,86 +602,86 @@ msgstr "Gỡ cài đặt"
 msgid "Failed to update “%s”"
 msgstr "Gỡ cài đặt"
 
-#: src/Views/AppInfoView.vala:187
+#: src/Views/AppInfoView.vala:188
 msgid "Screenshot Not Available"
 msgstr "Không có ảnh chụp màn hình"
 
-#: src/Views/AppInfoView.vala:252
+#: src/Views/AppInfoView.vala:257
 msgid "Homepage"
 msgstr "Trang chủ"
 
-#: src/Views/AppInfoView.vala:258
+#: src/Views/AppInfoView.vala:263
 msgid "Translate"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:264
+#: src/Views/AppInfoView.vala:269
 msgid "Send Feedback"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:270
+#: src/Views/AppInfoView.vala:275
 msgid "Help"
 msgstr "Trợ giúp"
 
-#: src/Views/AppInfoView.vala:281
+#: src/Views/AppInfoView.vala:286
 msgid "What's New:"
 msgstr "Tin tức mới:"
 
-#: src/Views/AppInfoView.vala:316
+#: src/Views/AppInfoView.vala:321
 msgid "Extensions:"
 msgstr "Tiện ích mở rộng:"
 
-#: src/Views/AppInfoView.vala:410
+#: src/Views/AppInfoView.vala:415
 #, c-format
 msgid "Other Apps by %s"
 msgstr "Các ứng dụng khác %s"
 
-#: src/Views/AppInfoView.vala:448
+#: src/Views/AppInfoView.vala:453
 msgid "Link copied to clipboard"
 msgstr "Đường dẫn đã được sao chép lưu tạm thời"
 
-#: src/Views/AppInfoView.vala:459
+#: src/Views/AppInfoView.vala:464
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "Kiểm tra %s trên Trung tâm Ứng dụng:"
 
-#: src/Views/AppInfoView.vala:466
+#: src/Views/AppInfoView.vala:471
 msgid "Share"
 msgstr "Chia sẻ"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:767
+#: src/Views/AppInfoView.vala:774
 msgid "Public Domain"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:770
+#: src/Views/AppInfoView.vala:777
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr ""
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:775
+#: src/Views/AppInfoView.vala:782
 msgid "Free Software"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:778
+#: src/Views/AppInfoView.vala:785
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:782
+#: src/Views/AppInfoView.vala:789
 msgid "Proprietary"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:785
+#: src/Views/AppInfoView.vala:792
 #, fuzzy
 msgid "Unknown License"
 msgstr "Trạng thái không xác định"
 
-#: src/Views/AppInfoView.vala:863
+#: src/Views/AppInfoView.vala:870
 msgid "Fund"
 msgstr "Tài trợ"
 
-#: src/Views/AppInfoView.vala:885
+#: src/Views/AppInfoView.vala:892
 msgid "Fund the development of this app"
 msgstr "Tài trợ cho sự phát triển của ứng dụng này"
 
@@ -833,12 +833,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "Yêu cầu thanh toán, nhưng không được bật"
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:285
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:258
 msgid "Free"
 msgstr "Miễn phí"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:287
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:260
 #, fuzzy
 msgid "Install"
 msgstr "Cài đặt"
@@ -935,7 +935,7 @@ msgstr "Các trình điều khiển"
 msgid "Up to Date"
 msgstr "Mới nhất"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:310
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:283
 msgid "Update"
 msgstr "Cập nhật"
 

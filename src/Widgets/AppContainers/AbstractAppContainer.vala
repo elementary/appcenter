@@ -42,23 +42,6 @@ namespace AppCenter {
 
         private uint state_source = 0U;
 
-        public bool is_os_updates {
-            get {
-                return package.is_os_updates;
-            }
-        }
-
-        private string _name_label = null;
-        public string name_label {
-            get {
-                if (_name_label == null) {
-                    _name_label = Utils.unescape_markup (package.get_name ());
-                }
-
-                return _name_label;
-            }
-        }
-
         public bool action_sensitive {
             set {
                 action_button.sensitive = value;
@@ -160,7 +143,7 @@ namespace AppCenter {
         private void show_stripe_dialog (int amount) {
             var stripe = new Widgets.StripeDialog (
                 amount,
-                name_label,
+                package.get_name (),
                 package.normalized_component_id,
                 package.get_payments_key ()
             );
@@ -197,7 +180,7 @@ namespace AppCenter {
             } else {
                 inner_image.gicon = package.get_icon (icon_size, scale_factor);
 
-                if (is_os_updates) {
+                if (package.is_os_updates) {
                     var overlay_image = new Gtk.Image.from_icon_name ("system-software-update", badge_icon_size);
                     overlay_image.halign = overlay_image.valign = Gtk.Align.END;
                     overlay_image.pixel_size = badge_pixel_size;
@@ -267,7 +250,7 @@ namespace AppCenter {
 
                     break;
                 case AppCenterCore.Package.State.INSTALLED:
-                    uninstall_button_revealer.reveal_child = show_uninstall && !is_os_updates && !package.is_compulsory;
+                    uninstall_button_revealer.reveal_child = show_uninstall && !package.is_os_updates && !package.is_compulsory;
                     action_button_revealer.reveal_child = package.should_pay && updates_view;
                     open_button_revealer.reveal_child = show_open && package.get_can_launch ();
 
@@ -280,7 +263,7 @@ namespace AppCenter {
 
                     action_button.label = _("Update");
 
-                    uninstall_button_revealer.reveal_child = show_uninstall && !is_os_updates && !package.is_compulsory;
+                    uninstall_button_revealer.reveal_child = show_uninstall && !package.is_os_updates && !package.is_compulsory;
                     action_button_revealer.reveal_child = true;
                     open_button_revealer.reveal_child = false;
 
@@ -370,14 +353,14 @@ namespace AppCenter {
 
             var curated_dialog_allowed = App.settings.get_boolean ("non-curated-warning");
             var app_installed = package.state != AppCenterCore.Package.State.NOT_INSTALLED;
-            var app_curated = package.is_native || is_os_updates;
+            var app_curated = package.is_native || package.is_os_updates;
 
             // Only show the curated dialog if the user has left them enabled, the app isn't installed
             // and it isn't a curated app
             if (curated_dialog_allowed && !app_installed && !app_curated) {
                 approved = false;
 
-                var non_curated_warning = new Widgets.NonCuratedWarningDialog (name_label);
+                var non_curated_warning = new Widgets.NonCuratedWarningDialog (package.get_name ());
                 non_curated_warning.transient_for = (Gtk.Window) get_toplevel ();
 
                 non_curated_warning.response.connect ((response_id) => {
@@ -409,7 +392,7 @@ namespace AppCenter {
             if (App.settings.get_boolean ("content-warning") == true && package.is_explicit) {
                 approved = false;
 
-                var content_warning = new Widgets.ContentWarningDialog (name_label);
+                var content_warning = new Widgets.ContentWarningDialog (package.get_name ());
                 content_warning.transient_for = (Gtk.Window) get_toplevel ();
 
                 content_warning.response.connect ((response_id) => {

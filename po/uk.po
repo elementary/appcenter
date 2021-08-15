@@ -5,12 +5,13 @@
 # pandreyko <andrii.pavloshchuk@gmail.com>, 2019.
 # Ihor Hordiichuk <igor_ck@outlook.com>, 2020, 2021.
 # DartDeaDia <jorydit@gmail.com>, 2021.
+# DartDeaDia <DartDeaDia@protonmail.com>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-09 18:09+0000\n"
-"PO-Revision-Date: 2021-07-17 05:26+0000\n"
+"POT-Creation-Date: 2021-08-15 03:55+0000\n"
+"PO-Revision-Date: 2021-08-13 17:30+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/appcenter/uk/>\n"
 "Language: uk\n"
@@ -36,14 +37,14 @@ msgstr "Не вдалося визначити медіа тип %s"
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Вказане посилання «%s» не знайдено, пошук заміни"
 
-#: src/Application.vala:295
+#: src/Application.vala:296
 msgid "The app has been installed"
 msgstr "Застосунок було встановлено"
 
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:296 src/MainWindow.vala:353
+#: src/Application.vala:297 src/MainWindow.vala:353
 #, c-format
 msgid "“%s” has been installed"
 msgstr "«%s» було встановлено"
@@ -72,7 +73,7 @@ msgstr "Шукати застосунки"
 
 #. Show Open only when a desktop app is installed
 #: src/MainWindow.vala:356
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:133
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:105
 msgid "Open"
 msgstr "Відкрити"
 
@@ -438,7 +439,7 @@ msgid "CVC"
 msgstr "CVC"
 
 #: src/Dialogs/StripeDialog.vala:194 src/Dialogs/StripeDialog.vala:311
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:157
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:129
 msgid "Cancel"
 msgstr "Скасувати"
 
@@ -545,7 +546,7 @@ msgid "Uninstall “%s”?"
 msgstr "Видалити «%s»?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:124
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:96
 msgid "Uninstall"
 msgstr "Видалити"
 
@@ -588,85 +589,85 @@ msgstr "Не вдалося оновити застосунок"
 msgid "Failed to update “%s”"
 msgstr "Не вдалося оновити «%s»"
 
-#: src/Views/AppInfoView.vala:187
+#: src/Views/AppInfoView.vala:188
 msgid "Screenshot Not Available"
 msgstr "Знімок екрана недоступний"
 
-#: src/Views/AppInfoView.vala:252
+#: src/Views/AppInfoView.vala:257
 msgid "Homepage"
 msgstr "Домівка"
 
-#: src/Views/AppInfoView.vala:258
+#: src/Views/AppInfoView.vala:263
 msgid "Translate"
 msgstr "Перекласти"
 
-#: src/Views/AppInfoView.vala:264
+#: src/Views/AppInfoView.vala:269
 msgid "Send Feedback"
 msgstr "Надіслати відгук"
 
-#: src/Views/AppInfoView.vala:270
+#: src/Views/AppInfoView.vala:275
 msgid "Help"
 msgstr "Допомога"
 
-#: src/Views/AppInfoView.vala:281
+#: src/Views/AppInfoView.vala:286
 msgid "What's New:"
 msgstr "Що нового:"
 
-#: src/Views/AppInfoView.vala:316
+#: src/Views/AppInfoView.vala:321
 msgid "Extensions:"
 msgstr "Розширення:"
 
-#: src/Views/AppInfoView.vala:410
+#: src/Views/AppInfoView.vala:415
 #, c-format
 msgid "Other Apps by %s"
 msgstr "Інші застосунки від %s"
 
-#: src/Views/AppInfoView.vala:448
+#: src/Views/AppInfoView.vala:453
 msgid "Link copied to clipboard"
 msgstr "Посилання копійовано до буфера обміну"
 
-#: src/Views/AppInfoView.vala:459
+#: src/Views/AppInfoView.vala:464
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "Перевірити %s в Центрі застосунків:"
 
-#: src/Views/AppInfoView.vala:466
+#: src/Views/AppInfoView.vala:471
 msgid "Share"
 msgstr "Поділитися"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:767
+#: src/Views/AppInfoView.vala:774
 msgid "Public Domain"
 msgstr "Суспільне надбання"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:770
+#: src/Views/AppInfoView.vala:777
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://uk.wikipedia.org/wiki/%D0%A1%D1%83%D1%81%D0%BF%D1%96%D0%BB%D1%8C%D0%BD%D0%B5_%D0%BD%D0%B0%D0%B4%D0%B1%D0%B0%D0%BD%D0%BD%D1%8F"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:775
+#: src/Views/AppInfoView.vala:782
 msgid "Free Software"
 msgstr "Вільне програмне забезпечення"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:778
+#: src/Views/AppInfoView.vala:785
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw.uk.html"
 
-#: src/Views/AppInfoView.vala:782
+#: src/Views/AppInfoView.vala:789
 msgid "Proprietary"
 msgstr "Власницьке"
 
-#: src/Views/AppInfoView.vala:785
+#: src/Views/AppInfoView.vala:792
 msgid "Unknown License"
 msgstr "Невідома ліцензія"
 
-#: src/Views/AppInfoView.vala:863
+#: src/Views/AppInfoView.vala:870
 msgid "Fund"
 msgstr "Фінансувати"
 
-#: src/Views/AppInfoView.vala:885
+#: src/Views/AppInfoView.vala:892
 msgid "Fund the development of this app"
 msgstr "Профінансуйте розробку цього застосунку"
 
@@ -811,12 +812,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "Вимагає платежі, які не увімкнено"
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:285
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:258
 msgid "Free"
 msgstr "Безплатно"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:287
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:260
 msgid "Install"
 msgstr "Встановити"
 
@@ -911,7 +912,7 @@ msgstr "Драйвери"
 msgid "Up to Date"
 msgstr "Найновіші"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:310
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:283
 msgid "Update"
 msgstr "Оновити"
 
