@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-15 03:55+0000\n"
-"PO-Revision-Date: 2021-08-14 23:23+0000\n"
+"PO-Revision-Date: 2021-08-15 11:08+0000\n"
 "Last-Translator: asdffdsdaf <useruseruser1233211@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/extra/"
 "ru/>\n"
@@ -50,7 +50,7 @@ msgstr "Исправления:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Fix opening apps from app installed toasts"
-msgstr ""
+msgstr "Исправлено открытие приложений из уведомлений об установке приложения"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:32
