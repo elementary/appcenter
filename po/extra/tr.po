@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-15 03:55+0000\n"
-"PO-Revision-Date: 2021-08-13 21:27+0000\n"
+"PO-Revision-Date: 2021-08-15 23:11+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/extra/"
 "tr/>\n"
@@ -48,7 +48,7 @@ msgstr "Düzeltmeler:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Fix opening apps from app installed toasts"
-msgstr ""
+msgstr " "
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:32
