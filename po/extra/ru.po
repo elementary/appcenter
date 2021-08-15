@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-09 18:09+0000\n"
-"PO-Revision-Date: 2021-08-14 04:38+0000\n"
+"PO-Revision-Date: 2021-08-14 23:23+0000\n"
 "Last-Translator: asdffdsdaf <useruseruser1233211@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/extra/"
 "ru/>\n"
@@ -371,7 +371,7 @@ msgstr "Более быстрая загрузка представления «
 
 #: data/io.elementary.appcenter.appdata.xml.in:196
 msgid "Ensure flatpak applications show in the category views"
-msgstr ""
+msgstr "Обеспечение показа Flatpak приложений в представлении категорий"
 
 #: data/io.elementary.appcenter.appdata.xml.in:197
 msgid ""
@@ -451,7 +451,7 @@ msgstr "Добавлены навигационные стрелки для сн
 
 #: data/io.elementary.appcenter.appdata.xml.in:226
 msgid "Don't show uninstall buttons for essential system components"
-msgstr ""
+msgstr "Убраны кнопки удаления для основных системных компонентов"
 
 #: data/io.elementary.appcenter.appdata.xml.in:227
 msgid "Properly display proprietary licenses"
@@ -475,20 +475,22 @@ msgstr "Улучшение восстановления состояния ок�
 
 #: data/io.elementary.appcenter.appdata.xml.in:240
 msgid "Prevent action buttons from jumping around"
-msgstr ""
+msgstr "Предотвращено скакание кнопок действий"
 
 #: data/io.elementary.appcenter.appdata.xml.in:241
 msgid "Remove reset paid apps gsettings key"
-msgstr ""
+msgstr "Удален ключ gsettings для сброса платных приложений"
 
 #: data/io.elementary.appcenter.appdata.xml.in:242
 msgid "Memory management refinements"
-msgstr ""
+msgstr "Усовершенствования в управлении памятью"
 
 #: data/io.elementary.appcenter.appdata.xml.in:243
 msgid ""
 "Add conditional compilation for disabling dynamic remote homepage content"
 msgstr ""
+"Добавлена условная компиляция для отключения динамического удаленного "
+"содержимого главной страницы"
 
 #: data/io.elementary.appcenter.appdata.xml.in:244
 #: data/io.elementary.appcenter.appdata.xml.in:256
@@ -512,23 +514,23 @@ msgstr "Новые переводы"
 
 #: data/io.elementary.appcenter.appdata.xml.in:251
 msgid "New categories: Communication, Finance, Media Production"
-msgstr ""
+msgstr "Новые категории: Общение, Финансы, Медиапроизводство"
 
 #: data/io.elementary.appcenter.appdata.xml.in:252
 msgid "Add Math to Science category"
-msgstr ""
+msgstr "Добавлена категория «Математика» в категорию «Наука»"
 
 #: data/io.elementary.appcenter.appdata.xml.in:253
 msgid "Relax email address validator"
-msgstr ""
+msgstr "Ослаблена проверка адреса электронной почты"
 
 #: data/io.elementary.appcenter.appdata.xml.in:254
 msgid "Present update availability more accurately"
-msgstr ""
+msgstr "Более точное представление доступных обновлений"
 
 #: data/io.elementary.appcenter.appdata.xml.in:255
 msgid "Category graphics revamped"
-msgstr ""
+msgstr "Обновлена категория «Графика»"
 
 #: data/io.elementary.appcenter.appdata.xml.in:270
 #: data/io.elementary.appcenter.appdata.xml.in:282
@@ -547,11 +549,11 @@ msgstr "Исправлены ошибки и улучшена производи
 
 #: data/io.elementary.appcenter.appdata.xml.in:272
 msgid "Improve transaction success rate"
-msgstr ""
+msgstr "Повышение коэффициента успешности транзакций"
 
 #: data/io.elementary.appcenter.appdata.xml.in:273
 msgid "Add Publishing to Office category"
-msgstr ""
+msgstr "Добавлена категория «Публикация» в категорию «Офис»"
 
 #: data/io.elementary.appcenter.appdata.xml.in:274
 msgid "Improve descriptions of OS Updates"
@@ -574,10 +576,11 @@ msgstr "Различные исправления ошибок и улучшен
 #: data/io.elementary.appcenter.appdata.xml.in:284
 msgid "Give details for Operating System Updates"
 msgstr ""
+"Предоставление дополнительных сведений для обновлений операционной системы"
 
 #: data/io.elementary.appcenter.appdata.xml.in:285
 msgid "Support mouse button navigation"
-msgstr ""
+msgstr "Поддержка навигации с помощью кнопок мыши"
 
 #: data/io.elementary.appcenter.appdata.xml.in:376
 msgid "Fix crash caused by entries with missing packages"
@@ -645,7 +648,7 @@ msgstr "Обновить программное обеспечение"
 
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to update software"
-msgstr ""
+msgstr "Для обновления программного обеспечения требуется аутентификация"
 
 #~ msgid "@DESKTOP_ICON@"
 #~ msgstr "@DESKTOP_ICON@"
