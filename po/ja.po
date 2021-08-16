@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-15 03:55+0000\n"
+"POT-Creation-Date: 2021-08-16 06:41+0000\n"
 "PO-Revision-Date: 2021-08-09 10:54+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/appcenter/ja/>\n"
@@ -20,24 +20,24 @@ msgstr ""
 msgid "AppCenter"
 msgstr "AppCenter"
 
-#: src/Application.vala:112
+#: src/Application.vala:114
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr "メディアタイプ %s を解析できませんでした"
 
-#: src/Application.vala:132
+#: src/Application.vala:134
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "指定されたリンク '%s' が見つからなかったので、代わりに検索しています"
 
-#: src/Application.vala:296
+#: src/Application.vala:298
 msgid "The app has been installed"
 msgstr "アプリをインストールしました"
 
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:297 src/MainWindow.vala:353
+#: src/Application.vala:299 src/MainWindow.vala:353
 #, c-format
 msgid "“%s” has been installed"
 msgstr "“%s” をインストールしました"
@@ -66,7 +66,7 @@ msgstr "アプリを検索"
 
 #. Show Open only when a desktop app is installed
 #: src/MainWindow.vala:356
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:105
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:86
 msgid "Open"
 msgstr "開く"
 
@@ -99,7 +99,7 @@ msgstr "パッケージを削除しています"
 msgid "Downloading"
 msgstr "ダウンロードしています"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:969
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:963
 msgid "Installing"
 msgstr "インストールしています"
 
@@ -144,9 +144,9 @@ msgid "Finished"
 msgstr "完了しました"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:978 src/Core/FlatpakBackend.vala:1006
-#: src/Core/FlatpakBackend.vala:1113 src/Core/FlatpakBackend.vala:1141
-#: src/Core/FlatpakBackend.vala:1286 src/Core/FlatpakBackend.vala:1312
+#: src/Core/FlatpakBackend.vala:972 src/Core/FlatpakBackend.vala:1000
+#: src/Core/FlatpakBackend.vala:1107 src/Core/FlatpakBackend.vala:1135
+#: src/Core/FlatpakBackend.vala:1280 src/Core/FlatpakBackend.vala:1306
 msgid "Cancelling"
 msgstr "キャンセルしています"
 
@@ -233,11 +233,11 @@ msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "システムに%u件のアップデートが利用可能です"
 
-#: src/Core/FlatpakBackend.vala:1104
+#: src/Core/FlatpakBackend.vala:1098
 msgid "Uninstalling"
 msgstr "アンインストールしています"
 
-#: src/Core/FlatpakBackend.vala:1277
+#: src/Core/FlatpakBackend.vala:1271
 msgid "Updating"
 msgstr "アップデートしています"
 
@@ -267,7 +267,7 @@ msgstr "Ubuntu ドライバー"
 msgid "Unknown Origin (non-curated)"
 msgstr "提供元不明 (キュレーションされていないアプリ)"
 
-#: src/Core/Package.vala:524
+#: src/Core/Package.vala:523
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "以下のパッケージのアプリケーションは AppCenter でインストール済みの状態になっていません: %s"
@@ -426,7 +426,7 @@ msgid "CVC"
 msgstr "CVC"
 
 #: src/Dialogs/StripeDialog.vala:194 src/Dialogs/StripeDialog.vala:311
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:129
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:110
 msgid "Cancel"
 msgstr "キャンセル"
 
@@ -533,7 +533,7 @@ msgid "Uninstall “%s”?"
 msgstr "“%s” をアンインストールしますか？"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:96
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:76
 msgid "Uninstall"
 msgstr "アンインストール"
 
@@ -799,12 +799,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "支払いが必要ですが、有効になっていません"
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:258
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:239
 msgid "Free"
 msgstr "無料"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:260
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:241
 msgid "Install"
 msgstr "インストール"
 
@@ -897,7 +897,7 @@ msgstr "ドライバー"
 msgid "Up to Date"
 msgstr "最新の状態"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:283
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:264
 msgid "Update"
 msgstr "アップデート"
 

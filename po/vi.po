@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-15 03:55+0000\n"
+"POT-Creation-Date: 2021-08-16 06:41+0000\n"
 "PO-Revision-Date: 2020-10-07 03:57+0000\n"
 "Last-Translator: Trkien618 <hacngoctrungkien@gmail.com>\n"
 "Language-Team: Vietnamese <https://l10n.elementary.io/projects/appcenter/appcenter/vi/>\n"
@@ -23,17 +23,17 @@ msgstr ""
 msgid "AppCenter"
 msgstr "Trung tâm Ứng dụng"
 
-#: src/Application.vala:112
+#: src/Application.vala:114
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr "Không thể phân tích kiểu nội dung %s"
 
-#: src/Application.vala:132
+#: src/Application.vala:134
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Không tìm thấy liên kết cụ thể tới '%s', đang tìm kiếm thay thế"
 
-#: src/Application.vala:296
+#: src/Application.vala:298
 #, fuzzy
 #| msgid "%s has been successfully installed"
 msgid "The app has been installed"
@@ -42,7 +42,7 @@ msgstr "%s đã được cài đặt thành công"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:297 src/MainWindow.vala:353
+#: src/Application.vala:299 src/MainWindow.vala:353
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
@@ -73,7 +73,7 @@ msgstr "Tìm kiếm ứng dụng"
 
 #. Show Open only when a desktop app is installed
 #: src/MainWindow.vala:356
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:105
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:86
 msgid "Open"
 msgstr "Mở"
 
@@ -106,7 +106,7 @@ msgstr "Đang xóa gói"
 msgid "Downloading"
 msgstr "Đang tải về"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:969
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:963
 msgid "Installing"
 msgstr "Đang cài đặt"
 
@@ -151,9 +151,9 @@ msgid "Finished"
 msgstr "Đã hoàn tất"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:978 src/Core/FlatpakBackend.vala:1006
-#: src/Core/FlatpakBackend.vala:1113 src/Core/FlatpakBackend.vala:1141
-#: src/Core/FlatpakBackend.vala:1286 src/Core/FlatpakBackend.vala:1312
+#: src/Core/FlatpakBackend.vala:972 src/Core/FlatpakBackend.vala:1000
+#: src/Core/FlatpakBackend.vala:1107 src/Core/FlatpakBackend.vala:1135
+#: src/Core/FlatpakBackend.vala:1280 src/Core/FlatpakBackend.vala:1306
 msgid "Cancelling"
 msgstr "Đang hủy"
 
@@ -240,13 +240,13 @@ msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "%u bản cập nhật khả dụng cho hệ thống của bạn"
 
-#: src/Core/FlatpakBackend.vala:1104
+#: src/Core/FlatpakBackend.vala:1098
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "Gỡ cài đặt"
 
-#: src/Core/FlatpakBackend.vala:1277
+#: src/Core/FlatpakBackend.vala:1271
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -279,7 +279,7 @@ msgstr "Các trình điều khiển"
 msgid "Unknown Origin (non-curated)"
 msgstr "Nguồn gốc không xác định (không được quản lý)"
 
-#: src/Core/Package.vala:524
+#: src/Core/Package.vala:523
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Trạng thái ứng dụng không được đặt như ứng dụng đã cài đặt trong AppCenter cho package: %s"
@@ -446,7 +446,7 @@ msgid "CVC"
 msgstr "CVC"
 
 #: src/Dialogs/StripeDialog.vala:194 src/Dialogs/StripeDialog.vala:311
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:129
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:110
 msgid "Cancel"
 msgstr "Hủy bỏ"
 
@@ -557,7 +557,7 @@ msgid "Uninstall “%s”?"
 msgstr "Gỡ cài đặt"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:96
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:76
 msgid "Uninstall"
 msgstr "Gỡ cài đặt"
 
@@ -833,12 +833,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "Yêu cầu thanh toán, nhưng không được bật"
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:258
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:239
 msgid "Free"
 msgstr "Miễn phí"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:260
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:241
 #, fuzzy
 msgid "Install"
 msgstr "Cài đặt"
@@ -935,7 +935,7 @@ msgstr "Các trình điều khiển"
 msgid "Up to Date"
 msgstr "Mới nhất"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:283
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:264
 msgid "Update"
 msgstr "Cập nhật"
 

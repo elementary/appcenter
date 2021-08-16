@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-15 03:55+0000\n"
+"POT-Creation-Date: 2021-08-16 06:41+0000\n"
 "PO-Revision-Date: 2021-06-20 08:32+0000\n"
 "Last-Translator: imgradeone Yan <imgradeone@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/appcenter/appcenter/zh_Hans/>\n"
@@ -25,24 +25,24 @@ msgstr ""
 msgid "AppCenter"
 msgstr "应用中心"
 
-#: src/Application.vala:112
+#: src/Application.vala:114
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr "无法解析文件类型 %s"
 
-#: src/Application.vala:132
+#: src/Application.vala:134
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "无法找到定向连接 '%s' ，改为搜索"
 
-#: src/Application.vala:296
+#: src/Application.vala:298
 msgid "The app has been installed"
 msgstr "应用已安装"
 
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:297 src/MainWindow.vala:353
+#: src/Application.vala:299 src/MainWindow.vala:353
 #, c-format
 msgid "“%s” has been installed"
 msgstr "“%s” 已安装"
@@ -71,7 +71,7 @@ msgstr "搜索应用"
 
 #. Show Open only when a desktop app is installed
 #: src/MainWindow.vala:356
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:105
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:86
 msgid "Open"
 msgstr "打开"
 
@@ -104,7 +104,7 @@ msgstr "正在删除软件包"
 msgid "Downloading"
 msgstr "下载中"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:969
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:963
 msgid "Installing"
 msgstr "正在安装"
 
@@ -149,9 +149,9 @@ msgid "Finished"
 msgstr "已完成"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:978 src/Core/FlatpakBackend.vala:1006
-#: src/Core/FlatpakBackend.vala:1113 src/Core/FlatpakBackend.vala:1141
-#: src/Core/FlatpakBackend.vala:1286 src/Core/FlatpakBackend.vala:1312
+#: src/Core/FlatpakBackend.vala:972 src/Core/FlatpakBackend.vala:1000
+#: src/Core/FlatpakBackend.vala:1107 src/Core/FlatpakBackend.vala:1135
+#: src/Core/FlatpakBackend.vala:1280 src/Core/FlatpakBackend.vala:1306
 msgid "Cancelling"
 msgstr "取消中"
 
@@ -238,11 +238,11 @@ msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "您的系统有 %u 个可用更新"
 
-#: src/Core/FlatpakBackend.vala:1104
+#: src/Core/FlatpakBackend.vala:1098
 msgid "Uninstalling"
 msgstr "正在卸载"
 
-#: src/Core/FlatpakBackend.vala:1277
+#: src/Core/FlatpakBackend.vala:1271
 msgid "Updating"
 msgstr "正在更新"
 
@@ -272,7 +272,7 @@ msgstr "Ubuntu 驱动程序"
 msgid "Unknown Origin (non-curated)"
 msgstr "未知来源（非官方源）"
 
-#: src/Core/Package.vala:524
+#: src/Core/Package.vala:523
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "应用程序在 AppCenter 中的状态未标记为已安装：%s"
@@ -431,7 +431,7 @@ msgid "CVC"
 msgstr "CVC 号码"
 
 #: src/Dialogs/StripeDialog.vala:194 src/Dialogs/StripeDialog.vala:311
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:129
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:110
 msgid "Cancel"
 msgstr "取消"
 
@@ -538,7 +538,7 @@ msgid "Uninstall “%s”?"
 msgstr "卸载 “%s”？"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:96
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:76
 msgid "Uninstall"
 msgstr "卸载"
 
@@ -804,12 +804,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "需要付款，但付款方式还未启用"
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:258
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:239
 msgid "Free"
 msgstr "安装"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:260
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:241
 msgid "Install"
 msgstr "安装"
 
@@ -902,7 +902,7 @@ msgstr "驱动程序"
 msgid "Up to Date"
 msgstr "已是最新"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:283
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:264
 msgid "Update"
 msgstr "更新"
 

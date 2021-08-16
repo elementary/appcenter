@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-15 03:55+0000\n"
+"POT-Creation-Date: 2021-08-16 06:41+0000\n"
 "PO-Revision-Date: 2020-12-23 23:11+0000\n"
 "Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/appcenter/appcenter/id/>\n"
@@ -21,24 +21,24 @@ msgstr ""
 msgid "AppCenter"
 msgstr "Pusat Aplikasi"
 
-#: src/Application.vala:112
+#: src/Application.vala:114
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr "Tidak dapat mengurai tipe media %s"
 
-#: src/Application.vala:132
+#: src/Application.vala:134
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Tautan yang ditentukan '%s' tidak dapat ditemukan, cari sebagai gantinya"
 
-#: src/Application.vala:296
+#: src/Application.vala:298
 msgid "The app has been installed"
 msgstr "Aplikasi sudah terpasang"
 
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:297 src/MainWindow.vala:353
+#: src/Application.vala:299 src/MainWindow.vala:353
 #, c-format
 msgid "“%s” has been installed"
 msgstr "\"%s\" sudah terpasang"
@@ -68,7 +68,7 @@ msgstr "Cari Aplikasi"
 
 #. Show Open only when a desktop app is installed
 #: src/MainWindow.vala:356
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:105
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:86
 msgid "Open"
 msgstr "Buka"
 
@@ -101,7 +101,7 @@ msgstr "Menghapus paket"
 msgid "Downloading"
 msgstr "Mengunduh"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:969
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:963
 msgid "Installing"
 msgstr "Memasang"
 
@@ -146,9 +146,9 @@ msgid "Finished"
 msgstr "Selesai"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:978 src/Core/FlatpakBackend.vala:1006
-#: src/Core/FlatpakBackend.vala:1113 src/Core/FlatpakBackend.vala:1141
-#: src/Core/FlatpakBackend.vala:1286 src/Core/FlatpakBackend.vala:1312
+#: src/Core/FlatpakBackend.vala:972 src/Core/FlatpakBackend.vala:1000
+#: src/Core/FlatpakBackend.vala:1107 src/Core/FlatpakBackend.vala:1135
+#: src/Core/FlatpakBackend.vala:1280 src/Core/FlatpakBackend.vala:1306
 msgid "Cancelling"
 msgstr "Membatalkan"
 
@@ -235,11 +235,11 @@ msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "%u pembaruan tersedia untuk sistem Anda"
 
-#: src/Core/FlatpakBackend.vala:1104
+#: src/Core/FlatpakBackend.vala:1098
 msgid "Uninstalling"
 msgstr "Menghapus pemasangan"
 
-#: src/Core/FlatpakBackend.vala:1277
+#: src/Core/FlatpakBackend.vala:1271
 msgid "Updating"
 msgstr "Memperbarui"
 
@@ -269,7 +269,7 @@ msgstr "Driver Ubuntu"
 msgid "Unknown Origin (non-curated)"
 msgstr "Sumber tidak diketahui (tidak dikurasi)"
 
-#: src/Core/Package.vala:524
+#: src/Core/Package.vala:523
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Status aplikasi tidak ditetapkan sebagai terpasang di AppCenter untuk paket: %s"
@@ -428,7 +428,7 @@ msgid "CVC"
 msgstr "CVC"
 
 #: src/Dialogs/StripeDialog.vala:194 src/Dialogs/StripeDialog.vala:311
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:129
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:110
 msgid "Cancel"
 msgstr "Batal"
 
@@ -535,7 +535,7 @@ msgid "Uninstall “%s”?"
 msgstr "Mencopot pemasangan %s?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:96
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:76
 msgid "Uninstall"
 msgstr "Hapus Pemasangan"
 
@@ -806,12 +806,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "Memerlukan pembayaran, mode belum diaktifkan"
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:258
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:239
 msgid "Free"
 msgstr "Gratis"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:260
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:241
 msgid "Install"
 msgstr "Pasang"
 
@@ -904,7 +904,7 @@ msgstr "Driver"
 msgid "Up to Date"
 msgstr "Terbaru"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:283
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:264
 msgid "Update"
 msgstr "Perbarui"
 

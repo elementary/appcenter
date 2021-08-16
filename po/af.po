@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-15 03:55+0000\n"
+"POT-Creation-Date: 2021-08-16 06:41+0000\n"
 "PO-Revision-Date: 2019-05-07 22:55+0000\n"
 "Last-Translator: Tiaan Scheepers <scheepers.tiaan@gmail.com>\n"
 "Language-Team: Afrikaans <https://l10n.elementary.io/projects/appcenter/appcenter/af/>\n"
@@ -21,17 +21,17 @@ msgstr ""
 msgid "AppCenter"
 msgstr ""
 
-#: src/Application.vala:112
+#: src/Application.vala:114
 #, fuzzy, c-format
 msgid "Could not parse the media type %s"
 msgstr "Kon nie mimetipe %s ontleed nie"
 
-#: src/Application.vala:132
+#: src/Application.vala:134
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Spesifieke skakel '% s' kon nie gevind word nie, soek eerder"
 
-#: src/Application.vala:296
+#: src/Application.vala:298
 #, fuzzy
 #| msgid "%s has been successfully installed"
 msgid "The app has been installed"
@@ -40,7 +40,7 @@ msgstr "%s is suksesvol geïnstalleer"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:297 src/MainWindow.vala:353
+#: src/Application.vala:299 src/MainWindow.vala:353
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
@@ -72,7 +72,7 @@ msgstr "Soek programme"
 
 #. Show Open only when a desktop app is installed
 #: src/MainWindow.vala:356
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:105
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:86
 msgid "Open"
 msgstr ""
 
@@ -105,7 +105,7 @@ msgstr ""
 msgid "Downloading"
 msgstr ""
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:969
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:963
 msgid "Installing"
 msgstr "Besig om te installeer"
 
@@ -150,9 +150,9 @@ msgid "Finished"
 msgstr ""
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:978 src/Core/FlatpakBackend.vala:1006
-#: src/Core/FlatpakBackend.vala:1113 src/Core/FlatpakBackend.vala:1141
-#: src/Core/FlatpakBackend.vala:1286 src/Core/FlatpakBackend.vala:1312
+#: src/Core/FlatpakBackend.vala:972 src/Core/FlatpakBackend.vala:1000
+#: src/Core/FlatpakBackend.vala:1107 src/Core/FlatpakBackend.vala:1135
+#: src/Core/FlatpakBackend.vala:1280 src/Core/FlatpakBackend.vala:1306
 msgid "Cancelling"
 msgstr ""
 
@@ -241,13 +241,13 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Core/FlatpakBackend.vala:1104
+#: src/Core/FlatpakBackend.vala:1098
 #, fuzzy
 #| msgid "Installing"
 msgid "Uninstalling"
 msgstr "Besig om te installeer"
 
-#: src/Core/FlatpakBackend.vala:1277
+#: src/Core/FlatpakBackend.vala:1271
 #, fuzzy
 #| msgid "Updates"
 msgid "Updating"
@@ -279,7 +279,7 @@ msgstr ""
 msgid "Unknown Origin (non-curated)"
 msgstr ""
 
-#: src/Core/Package.vala:524
+#: src/Core/Package.vala:523
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
@@ -441,7 +441,7 @@ msgid "CVC"
 msgstr ""
 
 #: src/Dialogs/StripeDialog.vala:194 src/Dialogs/StripeDialog.vala:311
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:129
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:110
 msgid "Cancel"
 msgstr ""
 
@@ -549,7 +549,7 @@ msgid "Uninstall “%s”?"
 msgstr ""
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:96
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:76
 msgid "Uninstall"
 msgstr ""
 
@@ -820,12 +820,12 @@ msgid "Requires payments, which are not enabled"
 msgstr ""
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:258
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:239
 msgid "Free"
 msgstr ""
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:260
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:241
 #, fuzzy
 msgid "Install"
 msgstr "Installeer"
@@ -921,7 +921,7 @@ msgstr ""
 msgid "Up to Date"
 msgstr ""
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:283
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:264
 msgid "Update"
 msgstr ""
 

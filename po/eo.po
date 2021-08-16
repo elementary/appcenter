@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-15 03:55+0000\n"
+"POT-Creation-Date: 2021-08-16 06:41+0000\n"
 "PO-Revision-Date: 2019-12-12 19:07+0000\n"
 "Last-Translator: Augusto Fornitani <augusto.fornitani@outlook.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/appcenter/appcenter/eo/>\n"
@@ -24,17 +24,17 @@ msgstr ""
 msgid "AppCenter"
 msgstr "Aplikaĵa Centro"
 
-#: src/Application.vala:112
+#: src/Application.vala:114
 #, c-format
 msgid "Could not parse the media type %s"
 msgstr "Ne eblas analizi la aŭdovidaĵan tipon %s"
 
-#: src/Application.vala:132
+#: src/Application.vala:134
 #, c-format
 msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Specifita ligo „%s“ ne troveblas, nun serĉanta"
 
-#: src/Application.vala:296
+#: src/Application.vala:298
 #, fuzzy
 #| msgid "%s has been successfully installed"
 msgid "The app has been installed"
@@ -43,7 +43,7 @@ msgstr "%s estis sukcese instalita"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:297 src/MainWindow.vala:353
+#: src/Application.vala:299 src/MainWindow.vala:353
 #, fuzzy, c-format
 #| msgid "%s has been successfully installed"
 msgid "“%s” has been installed"
@@ -74,7 +74,7 @@ msgstr "Serĉi Aplikaĵojn"
 
 #. Show Open only when a desktop app is installed
 #: src/MainWindow.vala:356
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:105
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:86
 msgid "Open"
 msgstr "Malfermi"
 
@@ -107,7 +107,7 @@ msgstr "Foriganta pakaĵojn"
 msgid "Downloading"
 msgstr "Elŝutanta"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:969
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:963
 msgid "Installing"
 msgstr "Instalanta"
 
@@ -152,9 +152,9 @@ msgid "Finished"
 msgstr "Finita"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:978 src/Core/FlatpakBackend.vala:1006
-#: src/Core/FlatpakBackend.vala:1113 src/Core/FlatpakBackend.vala:1141
-#: src/Core/FlatpakBackend.vala:1286 src/Core/FlatpakBackend.vala:1312
+#: src/Core/FlatpakBackend.vala:972 src/Core/FlatpakBackend.vala:1000
+#: src/Core/FlatpakBackend.vala:1107 src/Core/FlatpakBackend.vala:1135
+#: src/Core/FlatpakBackend.vala:1280 src/Core/FlatpakBackend.vala:1306
 msgid "Cancelling"
 msgstr "Rezignanta"
 
@@ -243,13 +243,13 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "%u ĝisdatigo disponeblas por via sistemo"
 msgstr[1] "%u ĝisdatigoj disponeblas por via sistemo"
 
-#: src/Core/FlatpakBackend.vala:1104
+#: src/Core/FlatpakBackend.vala:1098
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "Malinstali"
 
-#: src/Core/FlatpakBackend.vala:1277
+#: src/Core/FlatpakBackend.vala:1271
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -281,7 +281,7 @@ msgstr "Peliloj de Ubuntu"
 msgid "Unknown Origin (non-curated)"
 msgstr "Nekonata Deveno (ne kontrolita)"
 
-#: src/Core/Package.vala:524
+#: src/Core/Package.vala:523
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Aplikaĵa stato ne difinita kiel instalita en la Aplikaĵa Centro, rilate la pakaĵon: %s"
@@ -453,7 +453,7 @@ msgid "CVC"
 msgstr "CVC-kodo malantaŭ la bankokarto"
 
 #: src/Dialogs/StripeDialog.vala:194 src/Dialogs/StripeDialog.vala:311
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:129
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:110
 msgid "Cancel"
 msgstr "Rezigni"
 
@@ -560,7 +560,7 @@ msgid "Uninstall “%s”?"
 msgstr "Ĉu malinstali „%s“?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:96
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:76
 msgid "Uninstall"
 msgstr "Malinstali"
 
@@ -833,12 +833,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "Postulas pagadon, kio ne estas ebligita"
 
 #: src/Widgets/HumbleButton.vala:105
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:258
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:239
 msgid "Free"
 msgstr "Senpaga"
 
 #: src/Widgets/HumbleButton.vala:107
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:260
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:241
 msgid "Install"
 msgstr "Instali"
 
@@ -932,7 +932,7 @@ msgstr "Peliloj"
 msgid "Up to Date"
 msgstr "Ĝisdata"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:283
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:264
 msgid "Update"
 msgstr "Ĝisdatigi"
 
