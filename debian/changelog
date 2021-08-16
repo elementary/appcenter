@@ -1,3 +1,21 @@
+appcenter (3.6.3) bionic; urgency=medium
+
+  * Release 3.6.3 (#1599)
+  * Sort user installation first on homepage (#1600)
+  * l10n: Correctly setup the locales (#1586)
+  * AppListRow → AppRowInterface (#1576)
+  * AbstractAppContainer: Reduce variable scope (#1592)
+  * AbstractAppContainer: Remove is_os_updates property (#1591)
+  * Package: unescape name (#1594)
+  * Update translation files
+  * Update translation template
+  * Application: Fix open button in toasts (#1597)
+  * AbstractAppContainer: move properties to PackageRow (#1575)
+  * AbstractAppContainer: remove package_name (#1573)
+  * AbstractAppContainer: Remove package_author (#1574)
+
+ -- elementary Builds Team <builds@elementary.io>  Mon, 16 Aug 2021 18:21:42 +0000
+
 appcenter (3.6.2) bionic; urgency=medium
 
   * Release 3.6.2 (#1582)
