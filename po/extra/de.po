@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-16 06:41+0000\n"
-"PO-Revision-Date: 2021-08-16 12:07+0000\n"
+"PO-Revision-Date: 2021-08-16 14:09+0000\n"
 "Last-Translator: supaeasy <ismo+github@wolffson.ch>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/appcenter/extra/"
 "de/>\n"
@@ -57,6 +57,8 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:19
 msgid "Fix opening apps from app installed toasts"
 msgstr ""
+"Behebt einen Fehler beim Öffnen von Anwendungen, die über Toasts installiert "
+"wurden"
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
 #: data/io.elementary.appcenter.appdata.xml.in:33
