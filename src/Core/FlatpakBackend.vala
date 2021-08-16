@@ -265,28 +265,22 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     public Gee.Collection<Package> get_native_packages_by_release_date () {
         var apps = new Gee.TreeSet<AppCenterCore.Package> (compare_packages_by_release_date);
 
-        user_appstream_pool.get_components ().foreach ((comp) => {
-            var packages = get_packages_for_component_id (comp.get_id ());
-            foreach (var package in packages) {
-                if (package.is_native) {
-                    apps.add (package);
-                }
+        foreach (var package in package_list.values) {
+            if (package.is_native) {
+                apps.add (package);
             }
-        });
-
-        system_appstream_pool.get_components ().foreach ((comp) => {
-            var packages = get_packages_for_component_id (comp.get_id ());
-            foreach (var package in packages) {
-                if (package.is_native) {
-                    apps.add (package);
-                }
-            }
-        });
+        }
 
         return apps;
     }
 
     private int compare_packages_by_release_date (AppCenterCore.Package a, AppCenterCore.Package b) {
+        // Sort packages from user remotes higher
+        if (((FlatpakPackage)a).installation != ((FlatpakPackage)b).installation) {
+            return ((FlatpakPackage)a).installation == user_installation ? -1 : 1;
+        }
+
+        // Then sort by release timestamp
         uint64 a_timestamp = 0;
         uint64 b_timestamp = 0;
 
