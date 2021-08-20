@@ -1,5 +1,5 @@
 /*-
- * Copyright 2019 elementary, Inc. (https://elementary.io)
+ * Copyright 2019-2021 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -36,7 +36,8 @@ public class AppCenterCore.Job : Object {
         UPDATE_PACKAGE,
         REMOVE_PACKAGE,
         IS_PACKAGE_INSTALLED,
-        GET_PACKAGE_DETAILS
+        GET_PACKAGE_DETAILS,
+        GET_PACKAGE_DEPENDENCIES
     }
 
     public Job (Type type) {
@@ -87,4 +88,9 @@ public class AppCenterCore.IsPackageInstalledArgs : JobArgs {
 
 public class AppCenterCore.GetPackageDetailsArgs : JobArgs {
     public Package package;
+}
+
+public class AppCenterCore.GetPackageDependenciesArgs : JobArgs {
+    public Package package;
+    public Cancellable cancellable;
 }
