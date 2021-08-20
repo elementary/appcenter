@@ -1,5 +1,5 @@
 /*-
- * Copyright 2019 elementary, Inc. (https://elementary.io)
+ * Copyright 2019-2021 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -111,6 +111,21 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
                 }
             } catch (Error e) {
                 warning ("Unable to check if driver is installed: %s", e.message);
+            }
+
+            var depends = yield PackageKitBackend.get_default ().get_package_dependencies (package, cancellable);
+            // If the driver depends on dkms, it means we need to build some kernel modules for it, so we need kernel headers
+            if ("dkms" in depends) {
+                // Ensure we have matching kernel headers installed for our installed `linux-image-generic` metapackages.
+                // Sometimes Ubuntu drivers depend on non-HWE headers and the module doesn't get built for the running kernel
+                var installed = yield PackageKitBackend.get_default ().get_installed_packages (cancellable);
+                foreach (var pkg in installed) {
+                    unowned string pkgname = pkg.get_name ();
+                    if (pkgname.has_prefix ("linux-image-generic")) {
+                        pkgnames += pkgname.replace ("linux-image", "linux-headers");
+                        package.component.set_pkgnames (pkgnames);
+                    }
+                }
             }
 
             cached_packages.add (package);

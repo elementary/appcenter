@@ -1,5 +1,5 @@
 /*-
- * Copyright 2019 elementary, Inc. (https://elementary.io)
+ * Copyright 2019-2021 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -115,6 +115,9 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
                     break;
                 case Job.Type.GET_PACKAGE_DETAILS:
                     get_package_details_internal (job);
+                    break;
+                case Job.Type.GET_PACKAGE_DEPENDENCIES:
+                    get_package_dependencies_internal (job);
                     break;
                 default:
                     assert_not_reached ();
@@ -1004,6 +1007,55 @@ public class AppCenterCore.PackageKitBackend : Backend, Object {
         }
 
         return (PackageDetails)job.result.get_object ();
+    }
+
+    private void get_package_dependencies_internal (Job job) {
+        var args = (GetPackageDependenciesArgs)job.args;
+        var package = args.package;
+        var cancellable = args.cancellable;
+
+        Pk.Package pk_package;
+        try {
+            pk_package = get_package_internal (package);
+        } catch (Error e) {
+            job.error = e;
+            job.results_ready ();
+            return;
+        }
+
+        string[] package_array = { pk_package.package_id, null };
+        var filters = Pk.Bitfield.from_enums (Pk.Filter.ARCH, Pk.Filter.NEWEST);
+        try {
+            var deps_result = client.depends_on (filters, package_array, true, cancellable, (p, t) => {});
+            package_array = {};
+            deps_result.get_package_array ().foreach ((dep_package) => {
+                package_array += dep_package.get_name ();
+            });
+        } catch (Error e) {
+            job.error = e;
+            job.results_ready ();
+            return;
+        }
+
+        var result = new Gee.ArrayList<string>.wrap (package_array);
+
+        job.result = Value (typeof (Object));
+        job.result.take_object (result);
+        job.results_ready ();
+    }
+
+    public async Gee.ArrayList<string> get_package_dependencies (Package package, Cancellable? cancellable) throws GLib.Error {
+        var job_args = new GetPackageDependenciesArgs () {
+            package = package,
+            cancellable = cancellable
+        };
+
+        var job = yield launch_job (Job.Type.GET_PACKAGE_DEPENDENCIES, job_args);
+        if (job.error != null) {
+            throw job.error;
+        }
+
+        return (Gee.ArrayList<string>)job.result.get_object ();
     }
 
     private void update_progress_status (Pk.Progress progress, Pk.ProgressType type) {
