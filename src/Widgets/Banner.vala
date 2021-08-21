@@ -162,7 +162,12 @@ namespace AppCenter.Widgets {
 
             add (stack);
 
-            set_default_brand ();
+            background_color = "#7E45BE";
+            foreground_color = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
+
+            brand_widget = new BannerWidget (null);
+            stack.add_named (brand_widget, "brand");
+
             destroy.connect (() => {
                if (timer_id > 0) {
                    Source.remove (timer_id);
@@ -177,14 +182,6 @@ namespace AppCenter.Widgets {
                     timer_id = 0;
                 }
             });
-        }
-
-        public void set_default_brand () {
-            background_color = "#7E45BE";
-            foreground_color = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
-
-            brand_widget = new BannerWidget (null);
-            stack.add_named (brand_widget, "brand");
         }
 
         public AppCenterCore.Package? get_package () {
@@ -215,7 +212,7 @@ namespace AppCenter.Widgets {
             }
         }
 
-        public void next_package () {
+        private void next_package () {
             if (next_free_package_index <= 1) {
                 return;
             }
@@ -249,7 +246,7 @@ namespace AppCenter.Widgets {
             });
         }
 
-        public void set_background (AppCenterCore.Package? package) {
+        private void set_background (AppCenterCore.Package? package) {
             if (package == null) {
                 background_color = DEFAULT_BANNER_COLOR_PRIMARY;
                 foreground_color = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
