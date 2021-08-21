@@ -37,75 +37,6 @@ namespace AppCenter.Widgets {
 
         public const int TRANSITION_DURATION_MILLISECONDS = 500;
 
-        private class BannerWidget : Gtk.Grid {
-            public AppCenterCore.Package? package { get; construct; }
-
-            construct {
-                column_spacing = 24;
-                halign = Gtk.Align.CENTER;
-                valign = Gtk.Align.CENTER;
-
-                bool has_package = package != null;
-
-                var name_label = new Gtk.Label (has_package ? package.get_name () : _(Build.APP_NAME));
-                name_label.get_style_context ().add_class (Granite.STYLE_CLASS_H1_LABEL);
-                name_label.xalign = 0;
-                name_label.use_markup = true;
-                name_label.wrap = true;
-                name_label.max_width_chars = 50;
-
-                var summary_label = new Gtk.Label (has_package ? package.get_summary () : _("An open, pay-what-you-want app store"));
-                summary_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
-                summary_label.xalign = 0;
-                summary_label.use_markup = true;
-                summary_label.wrap = true;
-                summary_label.max_width_chars = 50;
-
-                string description;
-                if (has_package) {
-                    string[] lines = package.get_description ().split ("\n");
-                    description = lines[0].strip ();
-
-                    for (int i = 1; i < lines.length; i++) {
-                        description += " " + lines[i].strip ();
-                    }
-
-                    int close_paragraph_index = description.index_of ("</p>", 0);
-                    description = description.slice (3, close_paragraph_index);
-                } else {
-                    description = _("Get the apps that you need at a price you can afford.");
-                }
-
-                var description_label = new Gtk.Label (description);
-                description_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
-                description_label.ellipsize = Pango.EllipsizeMode.END;
-                description_label.lines = 2;
-                description_label.margin_top = 12;
-                description_label.max_width_chars = 50;
-                description_label.use_markup = true;
-                description_label.wrap = true;
-                description_label.xalign = 0;
-
-                var icon = new Gtk.Image ();
-                icon.pixel_size = 128;
-                if (has_package) {
-                    icon.gicon = package.get_icon (128, icon.get_scale_factor ());
-                } else {
-                    icon.icon_name = Build.PROJECT_NAME;
-                }
-
-                attach (icon, 0, 0, 1, 3);
-                attach (name_label, 1, 0, 1, 1);
-                attach (summary_label, 1, 1, 1, 1);
-                attach (description_label, 1, 2, 1, 1);
-                show_all ();
-            }
-
-            public BannerWidget (AppCenterCore.Package? package) {
-                Object (package: package);
-            }
-        }
-
         private string _background_color = "#68758e";
         public string background_color {
             get {
@@ -284,6 +215,74 @@ namespace AppCenter.Widgets {
                 style_context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
             } catch (GLib.Error e) {
                 critical (e.message);
+            }
+        }
+
+        private class BannerWidget : Gtk.Grid {
+            public AppCenterCore.Package? package { get; construct; }
+
+            public BannerWidget (AppCenterCore.Package? package) {
+                Object (package: package);
+            }
+
+            construct {
+                var icon = new Gtk.Image () {
+                    gicon = new ThemedIcon (Build.PROJECT_NAME),
+                    pixel_size = 128
+                };
+
+                var name_label = new Gtk.Label (_(Build.APP_NAME)) {
+                    max_width_chars = 50,
+                    use_markup = true,
+                    wrap = true,
+                    xalign = 0
+                };
+                name_label.get_style_context ().add_class (Granite.STYLE_CLASS_H1_LABEL);
+
+                var summary_label = new Gtk.Label (_("An open, pay-what-you-want app store")) {
+                    max_width_chars = 50,
+                    use_markup = true,
+                    wrap = true,
+                    xalign = 0
+                };
+                summary_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
+
+                var description_label = new Gtk.Label (_("Get the apps that you need at a price you can afford.")) {
+                    ellipsize = Pango.EllipsizeMode.END,
+                    lines = 2,
+                    margin_top = 12,
+                    max_width_chars = 50,
+                    use_markup = true,
+                    wrap = true,
+                    xalign = 0
+                };
+
+                if (package != null) {
+                    name_label.label = package.get_name ();
+
+                    summary_label.label = package.get_summary ();
+
+                    string[] lines = package.get_description ().split ("\n");
+                    var description = lines[0].strip ();
+
+                    for (int i = 1; i < lines.length; i++) {
+                        description += " " + lines[i].strip ();
+                    }
+
+                    int close_paragraph_index = description.index_of ("</p>", 0);
+                    description_label.label = description.slice (3, close_paragraph_index);
+
+                    icon.gicon = package.get_icon (128, icon.get_scale_factor ());
+                }
+
+                column_spacing = 24;
+                halign = Gtk.Align.CENTER;
+                valign = Gtk.Align.CENTER;
+                attach (icon, 0, 0, 1, 3);
+                attach (name_label, 1, 0);
+                attach (summary_label, 1, 1);
+                attach (description_label, 1, 2);
+                show_all ();
             }
         }
     }
