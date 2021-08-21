@@ -112,7 +112,7 @@ namespace AppCenter.Widgets {
                 return _background_color;
             } set {
                 _background_color = value;
-                on_any_color_change ();
+                reload_css ();
             }
         }
         private string _foreground_color = "white";
@@ -121,7 +121,7 @@ namespace AppCenter.Widgets {
                 return _foreground_color;
             } set {
                 _foreground_color = value;
-                on_any_color_change ();
+                reload_css ();
             }
         }
 
@@ -269,10 +269,6 @@ namespace AppCenter.Widgets {
             } else {
                 foreground_color = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
             }
-        }
-
-        private void on_any_color_change () {
-            reload_css ();
         }
 
         private void reload_css () {
