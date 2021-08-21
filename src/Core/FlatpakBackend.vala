@@ -453,6 +453,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
         try {
             var transaction = new Flatpak.Transaction.for_installation (installation, cancellable);
+            transaction.add_default_dependency_sources ();
             if (is_update) {
                 transaction.add_update (bundle_id, null, null);
             } else {
@@ -922,6 +923,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         Flatpak.Transaction transaction;
         try {
             transaction = new Flatpak.Transaction.for_installation (fp_package.installation, cancellable);
+            transaction.add_default_dependency_sources ();
         } catch (Error e) {
             critical ("Error creating transaction for flatpak install: %s", e.message);
             job.result = Value (typeof (bool));
@@ -1063,6 +1065,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         Flatpak.Transaction transaction;
         try {
             transaction = new Flatpak.Transaction.for_installation (fp_package.installation, cancellable);
+            transaction.add_default_dependency_sources ();
         } catch (Error e) {
             critical ("Error creating transaction for flatpak removal: %s", e.message);
             job.result = Value (typeof (bool));
@@ -1235,6 +1238,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                 transaction = new Flatpak.Transaction.for_installation (system_installation, cancellable);
             } else {
                 transaction = new Flatpak.Transaction.for_installation (user_installation, cancellable);
+                transaction.add_default_dependency_sources ();
             }
         } catch (Error e) {
             critical ("Error creating transaction for flatpak updates: %s", e.message);
