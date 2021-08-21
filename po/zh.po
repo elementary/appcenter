@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-16 06:41+0000\n"
+"POT-Creation-Date: 2021-08-21 22:55+0000\n"
 "PO-Revision-Date: 2019-05-15 01:18+0000\n"
 "Last-Translator: Jimmy Sun <jimmysuncn@hotmail.com>\n"
 "Language-Team: Chinese <https://l10n.elementary.io/projects/appcenter/appcenter/zh/>\n"
@@ -105,7 +105,7 @@ msgstr "正在移除软件包"
 msgid "Downloading"
 msgstr "正在下载"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:963
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:965
 msgid "Installing"
 msgstr "正在安装"
 
@@ -150,9 +150,9 @@ msgid "Finished"
 msgstr "已完成"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:972 src/Core/FlatpakBackend.vala:1000
-#: src/Core/FlatpakBackend.vala:1107 src/Core/FlatpakBackend.vala:1135
-#: src/Core/FlatpakBackend.vala:1280 src/Core/FlatpakBackend.vala:1306
+#: src/Core/FlatpakBackend.vala:974 src/Core/FlatpakBackend.vala:1002
+#: src/Core/FlatpakBackend.vala:1110 src/Core/FlatpakBackend.vala:1138
+#: src/Core/FlatpakBackend.vala:1284 src/Core/FlatpakBackend.vala:1310
 msgid "Cancelling"
 msgstr "正在取消"
 
@@ -239,13 +239,13 @@ msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "您的系统有%u的可用更新"
 
-#: src/Core/FlatpakBackend.vala:1098
+#: src/Core/FlatpakBackend.vala:1101
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "卸载"
 
-#: src/Core/FlatpakBackend.vala:1271
+#: src/Core/FlatpakBackend.vala:1275
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -284,7 +284,7 @@ msgstr ""
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
 
-#: src/Core/PackageKitBackend.vala:283
+#: src/Core/PackageKitBackend.vala:286
 #, fuzzy, c-format
 msgid "%s (local)"
 msgstr "%s（本地）"
@@ -712,15 +712,20 @@ msgstr ""
 msgid "Update All"
 msgstr "全部更新"
 
-#: src/Views/AppListView.vala:30
-msgid "No Results"
-msgstr "无结果"
+#: src/Views/AppListView.vala:29
+msgid "Flathub"
+msgstr ""
 
 #: src/Views/AppListView.vala:31
-msgid "No apps could be found. Try changing search terms."
-msgstr "找不到应用。请更改搜索条件。"
+msgid "No Apps Found"
+msgstr ""
 
-#: src/Views/AppListView.vala:167
+#: src/Views/AppListView.vala:32
+#, c-format
+msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
+msgstr ""
+
+#: src/Views/AppListView.vala:168
 msgid "Non-Curated Apps"
 msgstr "非策略性应用程序"
 
@@ -935,6 +940,12 @@ msgstr "最新"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:264
 msgid "Update"
 msgstr "更新"
+
+#~ msgid "No Results"
+#~ msgstr "无结果"
+
+#~ msgid "No apps could be found. Try changing search terms."
+#~ msgstr "找不到应用。请更改搜索条件。"
 
 #~ msgid "Suggest Translations"
 #~ msgstr "译文建议"

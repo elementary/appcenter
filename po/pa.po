@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.appcenter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-16 06:41+0000\n"
+"POT-Creation-Date: 2021-08-21 22:55+0000\n"
 "PO-Revision-Date: 2021-07-29 06:15+0000\n"
 "Last-Translator: elSolus <tumbleweed@tuta.io>\n"
 "Language-Team: Punjabi <https://l10n.elementary.io/projects/appcenter/appcenter/pa/>\n"
@@ -102,7 +102,7 @@ msgstr "ਪੈਕੇਜ ਹਟਾ ਰਿਹੈ"
 msgid "Downloading"
 msgstr "ਡਾਊਨਲੋਡ ਕਰ ਰਿਹੈ"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:963
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:965
 msgid "Installing"
 msgstr "ਸਥਾਪਤ ਕਰ ਰਿਹੈ"
 
@@ -147,9 +147,9 @@ msgid "Finished"
 msgstr "ਖ਼ਤਮ ਹੋਇਆ"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:972 src/Core/FlatpakBackend.vala:1000
-#: src/Core/FlatpakBackend.vala:1107 src/Core/FlatpakBackend.vala:1135
-#: src/Core/FlatpakBackend.vala:1280 src/Core/FlatpakBackend.vala:1306
+#: src/Core/FlatpakBackend.vala:974 src/Core/FlatpakBackend.vala:1002
+#: src/Core/FlatpakBackend.vala:1110 src/Core/FlatpakBackend.vala:1138
+#: src/Core/FlatpakBackend.vala:1284 src/Core/FlatpakBackend.vala:1310
 msgid "Cancelling"
 msgstr "ਰੱਦ ਹੋ ਰਿਹੈ"
 
@@ -238,11 +238,11 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "ਤੁਹਾਡੇ ਸਿਸਟਮ ਲਈ %u ਅਪਡੇਟ ਉਪਲਬਧ ਹੈ"
 msgstr[1] "ਤੁਹਾਡੇ ਸਿਸਟਮ ਲਈ %u ਅਪਡੇਟਾਂ ਉਪਲਬਧ ਹਨ"
 
-#: src/Core/FlatpakBackend.vala:1098
+#: src/Core/FlatpakBackend.vala:1101
 msgid "Uninstalling"
 msgstr "ਅਣ-ਸਥਾਪਨ ਹੋ ਰਿਹੈ"
 
-#: src/Core/FlatpakBackend.vala:1271
+#: src/Core/FlatpakBackend.vala:1275
 msgid "Updating"
 msgstr "ਅਪਡੇਟ ਕੀਤਾ ਜਾ ਰਿਹੈ"
 
@@ -277,7 +277,7 @@ msgstr "ਅਣਜਾਣ ਸਰੋਤ ਤੋਂ (ਅਣ- ਘੜੀ/ਘੜੀਆ�
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "ਇਹਨਾ ਪੈਕੇਜਾਂ ਲਈ ਐਪ-ਸੈਂਟਰ ਵਿੱਚ ਐਪ ਹਾਲਾਤ ਬਤੌਰ ਸਥਾਪਤ ਨਹੀਂ ਤੈਅ ਕੀਤੇ ਹੋਈ: %s"
 
-#: src/Core/PackageKitBackend.vala:283
+#: src/Core/PackageKitBackend.vala:286
 #, c-format
 msgid "%s (local)"
 msgstr "%s (ਮਕਾਮੀ)"
@@ -689,15 +689,20 @@ msgstr "ਆਪਣੇ-ਆਪ ਦੁਬਾਰਾ ਚਲਾਉਣਾ ਨਾਕਾ�
 msgid "Update All"
 msgstr "ਸਾਰੀਆਂ ਨੂੰ ਅਪਡੇਟ ਕਰੋ"
 
-#: src/Views/AppListView.vala:30
-msgid "No Results"
-msgstr "ਕੋਈ ਨਤੀਜੇ ਨਹੀਂ"
+#: src/Views/AppListView.vala:29
+msgid "Flathub"
+msgstr ""
 
 #: src/Views/AppListView.vala:31
-msgid "No apps could be found. Try changing search terms."
-msgstr "ਕੋਈ ਐਪਾਂ ਨਹੀਂ ਮਿਲੀਆਂ। ਖੋਜ-ਸ਼ਬਦ ਬਦਲ ਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋੋ।"
+msgid "No Apps Found"
+msgstr ""
 
-#: src/Views/AppListView.vala:167
+#: src/Views/AppListView.vala:32
+#, c-format
+msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
+msgstr ""
+
+#: src/Views/AppListView.vala:168
 msgid "Non-Curated Apps"
 msgstr "ਅਣ ਸੰਵਾਰੀਆਂ ਐਪਾਂ"
 
@@ -907,3 +912,9 @@ msgstr "ਤਰੋ-ਤਾਜ਼ਾ (ਅਪ ਟੂ ਡੇਟ)"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:264
 msgid "Update"
 msgstr "ਅਪਡੇਟ"
+
+#~ msgid "No Results"
+#~ msgstr "ਕੋਈ ਨਤੀਜੇ ਨਹੀਂ"
+
+#~ msgid "No apps could be found. Try changing search terms."
+#~ msgstr "ਕੋਈ ਐਪਾਂ ਨਹੀਂ ਮਿਲੀਆਂ। ਖੋਜ-ਸ਼ਬਦ ਬਦਲ ਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋੋ।"
