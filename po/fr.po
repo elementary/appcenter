@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-16 06:41+0000\n"
+"POT-Creation-Date: 2021-08-21 22:55+0000\n"
 "PO-Revision-Date: 2021-08-12 20:19+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/appcenter/appcenter/fr/>\n"
@@ -107,7 +107,7 @@ msgstr "Suppression des paquets"
 msgid "Downloading"
 msgstr "Téléchargement"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:963
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:965
 msgid "Installing"
 msgstr "Installation"
 
@@ -152,9 +152,9 @@ msgid "Finished"
 msgstr "Terminé"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:972 src/Core/FlatpakBackend.vala:1000
-#: src/Core/FlatpakBackend.vala:1107 src/Core/FlatpakBackend.vala:1135
-#: src/Core/FlatpakBackend.vala:1280 src/Core/FlatpakBackend.vala:1306
+#: src/Core/FlatpakBackend.vala:974 src/Core/FlatpakBackend.vala:1002
+#: src/Core/FlatpakBackend.vala:1110 src/Core/FlatpakBackend.vala:1138
+#: src/Core/FlatpakBackend.vala:1284 src/Core/FlatpakBackend.vala:1310
 msgid "Cancelling"
 msgstr "Annulation"
 
@@ -243,11 +243,11 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "%u mise à jour est disponible pour votre système"
 msgstr[1] "%u mises à jour sont disponibles pour votre système"
 
-#: src/Core/FlatpakBackend.vala:1098
+#: src/Core/FlatpakBackend.vala:1101
 msgid "Uninstalling"
 msgstr "Désinstallation"
 
-#: src/Core/FlatpakBackend.vala:1271
+#: src/Core/FlatpakBackend.vala:1275
 msgid "Updating"
 msgstr "Mise à jour"
 
@@ -282,7 +282,7 @@ msgstr "Origine inconnue (non-vérifiée)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "L'état de l'application n'est pas défini comme installé dans le Centre d'Applications pour le paquet : %s"
 
-#: src/Core/PackageKitBackend.vala:283
+#: src/Core/PackageKitBackend.vala:286
 #, c-format
 msgid "%s (local)"
 msgstr "%s (local)"
@@ -694,15 +694,20 @@ msgstr "Le redémarrage automatique a échoué. Redémarrez manuellement pour te
 msgid "Update All"
 msgstr "Tout mettre à jour"
 
-#: src/Views/AppListView.vala:30
-msgid "No Results"
-msgstr "Aucun résultat"
+#: src/Views/AppListView.vala:29
+msgid "Flathub"
+msgstr ""
 
 #: src/Views/AppListView.vala:31
-msgid "No apps could be found. Try changing search terms."
-msgstr "Aucune application n’a été trouvée. Essayez de modifier les termes de la recherche."
+msgid "No Apps Found"
+msgstr ""
 
-#: src/Views/AppListView.vala:167
+#: src/Views/AppListView.vala:32
+#, c-format
+msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
+msgstr ""
+
+#: src/Views/AppListView.vala:168
 msgid "Non-Curated Apps"
 msgstr "Applications non vérifiées"
 
@@ -912,6 +917,12 @@ msgstr "À jour"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:264
 msgid "Update"
 msgstr "Mettre à jour"
+
+#~ msgid "No Results"
+#~ msgstr "Aucun résultat"
+
+#~ msgid "No apps could be found. Try changing search terms."
+#~ msgstr "Aucune application n’a été trouvée. Essayez de modifier les termes de la recherche."
 
 #~ msgid "Suggest Translations"
 #~ msgstr "Suggérer des traductions"

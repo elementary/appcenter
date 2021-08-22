@@ -5,11 +5,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-16 06:41+0000\n"
+"POT-Creation-Date: 2021-08-21 22:55+0000\n"
 "PO-Revision-Date: 2021-08-20 19:49+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
-"Language-Team: Slovak <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/sk/>\n"
+"Language-Team: Slovak <https://l10n.elementary.io/projects/appcenter/appcenter/sk/>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -102,7 +101,7 @@ msgstr "Odstraňujú sa balíčky"
 msgid "Downloading"
 msgstr "Sťahuje sa"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:963
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:965
 msgid "Installing"
 msgstr "Inštaluje sa"
 
@@ -147,9 +146,9 @@ msgid "Finished"
 msgstr "Dokončené"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:972 src/Core/FlatpakBackend.vala:1000
-#: src/Core/FlatpakBackend.vala:1107 src/Core/FlatpakBackend.vala:1135
-#: src/Core/FlatpakBackend.vala:1280 src/Core/FlatpakBackend.vala:1306
+#: src/Core/FlatpakBackend.vala:974 src/Core/FlatpakBackend.vala:1002
+#: src/Core/FlatpakBackend.vala:1110 src/Core/FlatpakBackend.vala:1138
+#: src/Core/FlatpakBackend.vala:1284 src/Core/FlatpakBackend.vala:1310
 msgid "Cancelling"
 msgstr "Ruší sa"
 
@@ -240,11 +239,11 @@ msgstr[0] "%u aktualizácia je dostupná pre váš systém"
 msgstr[1] "%u aktualizácie sú dostupné pre váš systém"
 msgstr[2] "%u aktualizácií je dostupných pre váš systém"
 
-#: src/Core/FlatpakBackend.vala:1098
+#: src/Core/FlatpakBackend.vala:1101
 msgid "Uninstalling"
 msgstr "Odinštalovanie"
 
-#: src/Core/FlatpakBackend.vala:1271
+#: src/Core/FlatpakBackend.vala:1275
 msgid "Updating"
 msgstr "Aktualizovanie"
 
@@ -277,10 +276,9 @@ msgstr "Neznámy pôvod (nepreverené)"
 #: src/Core/Package.vala:523
 #, c-format
 msgid "Application state not set as installed in AppCenter for package: %s"
-msgstr ""
-"Stav aplikácie v AppCentre nie je nastavený ako inštalovaný pre balíček: %s"
+msgstr "Stav aplikácie v AppCentre nie je nastavený ako inštalovaný pre balíček: %s"
 
-#: src/Core/PackageKitBackend.vala:283
+#: src/Core/PackageKitBackend.vala:286
 #, c-format
 msgid "%s (local)"
 msgstr "%s (miestny)"
@@ -339,10 +337,7 @@ msgstr "„%s“ obsahuje nevhodný obsah"
 #: src/Dialogs/ContentWarningDialog.vala:31
 #, c-format
 msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
-msgstr ""
-"„%s“ môže obsahovať obsah, ktorý je vhodný len pre dospelých, alebo ktorý "
-"môže byť citlivý či pohoršujúci. Vo všeobecnosti, spoločnosť elementary "
-"tento obsah nekontroluje ani nepodporuje."
+msgstr "„%s“ môže obsahovať obsah, ktorý je vhodný len pre dospelých, alebo ktorý môže byť citlivý či pohoršujúci. Vo všeobecnosti, spoločnosť elementary tento obsah nekontroluje ani nepodporuje."
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 msgid "Show content warnings"
@@ -360,9 +355,7 @@ msgstr "Napriek tomu inštalovať"
 
 #: src/Dialogs/InstallFailDialog.vala:26
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
-msgstr ""
-"Toto môže byť dočasný problém alebo mohol byť spôsobený externým, či ručne "
-"skompilovaným softvérom."
+msgstr "Toto môže byť dočasný problém alebo mohol byť spôsobený externým, či ručne skompilovaným softvérom."
 
 #: src/Dialogs/InstallFailDialog.vala:37
 msgid "Failed to install app"
@@ -384,9 +377,7 @@ msgstr "Nainštalovať nepreverenú aplikáciu?"
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
 msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-msgstr ""
-"„%s“ nie je preverená spoločnosťou elementary a nebola skontrolovaná ohľadom "
-"zabezpečenia, rešpektovania súkromia či začlenenia do systému."
+msgstr "„%s“ nie je preverená spoločnosťou elementary a nebola skontrolovaná ohľadom zabezpečenia, rešpektovania súkromia či začlenenia do systému."
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
 msgid "It may not receive bug fix or feature updates"
@@ -394,8 +385,7 @@ msgstr "Môže sa stať, že nebude dostávať opravy chýb a aktualizácie funk
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:60
 msgid "It may access or change system or personal files without permission"
-msgstr ""
-"Môže pristupovať k alebo meniť systémové, či osobné súbory bez povolenia"
+msgstr "Môže pristupovať k alebo meniť systémové, či osobné súbory bez povolenia"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
 msgid "Show non-curated warnings"
@@ -403,9 +393,7 @@ msgstr "Zobrazovať varovania ohľadom nepreverených aplikácií"
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
-msgstr ""
-"Počas spracovávania karty sa vyskytla chyba. Skúste to prosím znova neskôr. "
-"Ospravedlňujeme sa za akékoľvek komplikácie."
+msgstr "Počas spracovávania karty sa vyskytla chyba. Skúste to prosím znova neskôr. Ospravedlňujeme sa za akékoľvek komplikácie."
 
 #: src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
@@ -422,9 +410,7 @@ msgstr "Zaplatiť $%d za %s"
 
 #: src/Dialogs/StripeDialog.vala:97
 msgid "This is a one time payment. Your email address is only used to send you a receipt."
-msgstr ""
-"Toto je jednorazová platba. Vaša emailová adresa bude použitá len na "
-"odoslanie potvrdenia o platbe."
+msgstr "Toto je jednorazová platba. Vaša emailová adresa bude použitá len na odoslanie potvrdenia o platbe."
 
 #: src/Dialogs/StripeDialog.vala:98
 msgid "Privacy Policy"
@@ -436,9 +422,7 @@ msgstr "E-mail"
 
 #: src/Dialogs/StripeDialog.vala:113
 msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
-msgstr ""
-"Vaša e-mailová adresa sa použije iba na odoslanie účtenky. Nebudete zapísaný "
-"do žiadneho zoznamu na príjem pošty."
+msgstr "Vaša e-mailová adresa sa použije iba na odoslanie účtenky. Nebudete zapísaný do žiadneho zoznamu na príjem pošty."
 
 #. / TRANSLATORS: Don't change the order, only transliterate
 #: src/Dialogs/StripeDialog.vala:132
@@ -477,20 +461,15 @@ msgstr "Skúsiť znova"
 
 #: src/Dialogs/StripeDialog.vala:509 src/Dialogs/StripeDialog.vala:574
 msgid "The card number is incorrect. Please try again using the correct card number."
-msgstr ""
-"Číslo karty je nesprávne. Skúste to znova s použitím správneho čísla karty."
+msgstr "Číslo karty je nesprávne. Skúste to znova s použitím správneho čísla karty."
 
 #: src/Dialogs/StripeDialog.vala:511
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
-msgstr ""
-"Mesiac konca platnosti je nesprávny. Skúste to znova použitím správneho "
-"dátumu konca platnosti."
+msgstr "Mesiac konca platnosti je nesprávny. Skúste to znova použitím správneho dátumu konca platnosti."
 
 #: src/Dialogs/StripeDialog.vala:513 src/Dialogs/StripeDialog.vala:571
 msgid "The expiration year is invalid. Please try again using the correct expiration date."
-msgstr ""
-"Rok konca platnosti je nesprávny. Skúste to znova použitím správneho dátumu "
-"konca platnosti."
+msgstr "Rok konca platnosti je nesprávny. Skúste to znova použitím správneho dátumu konca platnosti."
 
 #: src/Dialogs/StripeDialog.vala:516 src/Dialogs/StripeDialog.vala:569
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
@@ -502,8 +481,7 @@ msgstr "Platnosť karty vypršala. Skúste to znova s inou kartou."
 
 #: src/Dialogs/StripeDialog.vala:538
 msgid "There are too many payment requests at the moment, please retry later."
-msgstr ""
-"Práve spracovávame príliš veľa žiadostí o platbu, skúste to prosím neskôr."
+msgstr "Práve spracovávame príliš veľa žiadostí o platbu, skúste to prosím neskôr."
 
 #: src/Dialogs/StripeDialog.vala:554
 msgid "This card does not support this kind of transaction. Please try again with a different card."
@@ -511,8 +489,7 @@ msgstr "Táto karta nepodporuje tento typ platby. Skúste to znova s inou kartou
 
 #: src/Dialogs/StripeDialog.vala:556
 msgid "The currency is not supported by this card. Please try again with a different card."
-msgstr ""
-"Táto mena nie je podporovaná touto kartou. Skúste to znovu s inou kartou."
+msgstr "Táto mena nie je podporovaná touto kartou. Skúste to znovu s inou kartou."
 
 #: src/Dialogs/StripeDialog.vala:558
 msgid "The transaction has already been processed."
@@ -528,8 +505,7 @@ msgstr "Nemáte dostatok finančných prostriedkov. Použite iný spôsob platby
 
 #: src/Dialogs/StripeDialog.vala:566
 msgid "The amount is incorrect. Please try again using a valid amount."
-msgstr ""
-"Zadaná čiastka je nesprávna. Prosím, skúste to znova so správnou čiastkou."
+msgstr "Zadaná čiastka je nesprávna. Prosím, skúste to znova so správnou čiastkou."
 
 #: src/Dialogs/StripeDialog.vala:577
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
@@ -537,15 +513,11 @@ msgstr "PIN kód je nesprávny. Skúste to znova s použitím správneho PIN kó
 
 #: src/Dialogs/StripeDialog.vala:579
 msgid "There has been too many PIN attempts. Please try again with a different card."
-msgstr ""
-"Príliš veľa pokusov o autentifikáciu pomocou PIN. Skúste to znova s inou "
-"kartou."
+msgstr "Príliš veľa pokusov o autentifikáciu pomocou PIN. Skúste to znova s inou kartou."
 
 #: src/Dialogs/StripeDialog.vala:599
 msgid "Unable to complete the transaction. Please contact your bank for further information."
-msgstr ""
-"Transakciu sa nepodarilo dokončiť. Pre bližšie informácie, prosím, "
-"kontaktujte vašu banku."
+msgstr "Transakciu sa nepodarilo dokončiť. Pre bližšie informácie, prosím, kontaktujte vašu banku."
 
 #: src/Dialogs/StripeDialog.vala:602
 msgid "The balance or credit limit on the card has been reached."
@@ -593,9 +565,7 @@ msgstr "Nepodarilo sa získať aktualizácie"
 
 #: src/Dialogs/UpdateFailDialog.vala:26
 msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
-msgstr ""
-"Toto mohlo byť spôsobené externými, ručne pridanými repozitármi softvéru "
-"alebo poškodeným zdrojovým súborom."
+msgstr "Toto mohlo byť spôsobené externými, ručne pridanými repozitármi softvéru alebo poškodeným zdrojovým súborom."
 
 #: src/Dialogs/UpdateFailDialog.vala:34
 msgid "Ignore"
@@ -702,9 +672,7 @@ msgstr "Kontrolujú sa aktualizácie"
 
 #: src/Views/AppListUpdateView.vala:33
 msgid "Downloading a list of available updates to the OS and installed apps"
-msgstr ""
-"Sťahovanie zoznamu aktualizácií, ktoré sú dostupné pre operačný systém a "
-"nainštalované aplikácie"
+msgstr "Sťahovanie zoznamu aktualizácií, ktoré sú dostupné pre operačný systém a nainštalované aplikácie"
 
 #: src/Views/AppListUpdateView.vala:41
 msgid "A restart is required to finish installing updates"
@@ -716,24 +684,27 @@ msgstr "Reštartovať teraz"
 
 #: src/Views/AppListUpdateView.vala:58
 msgid "Requesting a restart failed. Restart manually to finish installing updates"
-msgstr ""
-"Žiadosť o reštart sa nepodarila. Reštartujte ručne pre dokončenie inštalácie "
-"aktualizácií"
+msgstr "Žiadosť o reštart sa nepodarila. Reštartujte ručne pre dokončenie inštalácie aktualizácií"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
 #: src/Views/AppListUpdateView.vala:186
 msgid "Update All"
 msgstr "Aktualizovať všetko"
 
-#: src/Views/AppListView.vala:30
-msgid "No Results"
-msgstr "Žiadne výsledky"
+#: src/Views/AppListView.vala:29
+msgid "Flathub"
+msgstr ""
 
 #: src/Views/AppListView.vala:31
-msgid "No apps could be found. Try changing search terms."
-msgstr "Nenašli sa žiadne aplikácie. Skúste zmeniť kľúčové slová."
+msgid "No Apps Found"
+msgstr ""
 
-#: src/Views/AppListView.vala:167
+#: src/Views/AppListView.vala:32
+#, c-format
+msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
+msgstr ""
+
+#: src/Views/AppListView.vala:168
 msgid "Non-Curated Apps"
 msgstr "Nepreverené aplikácie"
 
@@ -918,8 +889,7 @@ msgstr "Skutočná veľkosť sťahovania je pravdepodobne menšia"
 
 #: src/Widgets/SizeLabel.vala:36
 msgid "Only the parts of apps and updates that are needed will be downloaded."
-msgstr ""
-"Budú stiahnuté iba tie časti aplikácií a aktualizácií, ktoré sú potrebné."
+msgstr "Budú stiahnuté iba tie časti aplikácií a aktualizácií, ktoré sú potrebné."
 
 #: src/Widgets/SizeLabel.vala:63
 #, c-format
@@ -945,6 +915,12 @@ msgstr "Aktuálne"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:264
 msgid "Update"
 msgstr "Aktualizovať"
+
+#~ msgid "No Results"
+#~ msgstr "Žiadne výsledky"
+
+#~ msgid "No apps could be found. Try changing search terms."
+#~ msgstr "Nenašli sa žiadne aplikácie. Skúste zmeniť kľúčové slová."
 
 #~ msgid "Suggest Translations"
 #~ msgstr "Navrhnúť preklady"

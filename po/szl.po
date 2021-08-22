@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-16 06:41+0000\n"
+"POT-Creation-Date: 2021-08-21 22:55+0000\n"
 "PO-Revision-Date: 2020-06-12 16:40+0000\n"
 "Last-Translator: Grzegorz Kulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/appcenter/appcenter/szl/>\n"
@@ -102,7 +102,7 @@ msgstr "Kasowanie paketōw"
 msgid "Downloading"
 msgstr "Pobiyranie"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:963
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:965
 msgid "Installing"
 msgstr "Instalowanie"
 
@@ -147,9 +147,9 @@ msgid "Finished"
 msgstr "Fertich"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:972 src/Core/FlatpakBackend.vala:1000
-#: src/Core/FlatpakBackend.vala:1107 src/Core/FlatpakBackend.vala:1135
-#: src/Core/FlatpakBackend.vala:1280 src/Core/FlatpakBackend.vala:1306
+#: src/Core/FlatpakBackend.vala:974 src/Core/FlatpakBackend.vala:1002
+#: src/Core/FlatpakBackend.vala:1110 src/Core/FlatpakBackend.vala:1138
+#: src/Core/FlatpakBackend.vala:1284 src/Core/FlatpakBackend.vala:1310
 msgid "Cancelling"
 msgstr "Pociepowanie"
 
@@ -240,11 +240,11 @@ msgstr[0] "Je dostympno %u aktualizacyjo dlo tego systymu"
 msgstr[1] "Sōm dostympne %u aktualizacyje dlo tego systymu"
 msgstr[2] "Je dostympne %u aktualizacyji dlo tego systymu"
 
-#: src/Core/FlatpakBackend.vala:1098
+#: src/Core/FlatpakBackend.vala:1101
 msgid "Uninstalling"
 msgstr "Ôdinstalowowanie"
 
-#: src/Core/FlatpakBackend.vala:1271
+#: src/Core/FlatpakBackend.vala:1275
 msgid "Updating"
 msgstr "Aktualizowanie"
 
@@ -279,7 +279,7 @@ msgstr "Niyznōmego pochodzynio (niynadzorowane)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Sztand programu niyma nasztelowany za zainstalowany we AppCenter dlo paketu: %s"
 
-#: src/Core/PackageKitBackend.vala:283
+#: src/Core/PackageKitBackend.vala:286
 #, c-format
 msgid "%s (local)"
 msgstr "%s (lokalne)"
@@ -697,15 +697,20 @@ msgstr ""
 msgid "Update All"
 msgstr "Aktualizuj wszyjsko"
 
-#: src/Views/AppListView.vala:30
-msgid "No Results"
-msgstr "Brak wynikōw"
+#: src/Views/AppListView.vala:29
+msgid "Flathub"
+msgstr ""
 
 #: src/Views/AppListView.vala:31
-msgid "No apps could be found. Try changing search terms."
-msgstr "Niy szło znojś żodnych programōw. Sprōbuj zmiynić kryteria wyszukowanio."
+msgid "No Apps Found"
+msgstr ""
 
-#: src/Views/AppListView.vala:167
+#: src/Views/AppListView.vala:32
+#, c-format
+msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
+msgstr ""
+
+#: src/Views/AppListView.vala:168
 msgid "Non-Curated Apps"
 msgstr "Programy niynadzorowane"
 
@@ -916,6 +921,12 @@ msgstr "Teroźne"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:264
 msgid "Update"
 msgstr "Zaktualizuj"
+
+#~ msgid "No Results"
+#~ msgstr "Brak wynikōw"
+
+#~ msgid "No apps could be found. Try changing search terms."
+#~ msgstr "Niy szło znojś żodnych programōw. Sprōbuj zmiynić kryteria wyszukowanio."
 
 #~ msgid "Suggest Translations"
 #~ msgstr "Zapropōnuj przekłod"

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-16 06:41+0000\n"
+"POT-Creation-Date: 2021-08-21 22:55+0000\n"
 "PO-Revision-Date: 2020-11-02 17:15+0000\n"
 "Last-Translator: Rantyrant <diseasemonger@gmail.com>\n"
 "Language-Team: Danish <https://l10n.elementary.io/projects/appcenter/appcenter/da/>\n"
@@ -105,7 +105,7 @@ msgstr "Fjerner pakker"
 msgid "Downloading"
 msgstr "Henter"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:963
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:965
 msgid "Installing"
 msgstr "Installerer"
 
@@ -150,9 +150,9 @@ msgid "Finished"
 msgstr "Færdig"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:972 src/Core/FlatpakBackend.vala:1000
-#: src/Core/FlatpakBackend.vala:1107 src/Core/FlatpakBackend.vala:1135
-#: src/Core/FlatpakBackend.vala:1280 src/Core/FlatpakBackend.vala:1306
+#: src/Core/FlatpakBackend.vala:974 src/Core/FlatpakBackend.vala:1002
+#: src/Core/FlatpakBackend.vala:1110 src/Core/FlatpakBackend.vala:1138
+#: src/Core/FlatpakBackend.vala:1284 src/Core/FlatpakBackend.vala:1310
 msgid "Cancelling"
 msgstr "Afbryder"
 
@@ -241,11 +241,11 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "%u opdatering tilgængelig til dit system"
 msgstr[1] "%u opdateringer tilgængelige til dit system"
 
-#: src/Core/FlatpakBackend.vala:1098
+#: src/Core/FlatpakBackend.vala:1101
 msgid "Uninstalling"
 msgstr "Afinstallerer"
 
-#: src/Core/FlatpakBackend.vala:1271
+#: src/Core/FlatpakBackend.vala:1275
 msgid "Updating"
 msgstr "Opdaterer"
 
@@ -280,7 +280,7 @@ msgstr "Ukendt Oprindelse (ikke-kurateret)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Applikations tilstanden er ikke sat som installeret  i AppCenteret for pakken: %s"
 
-#: src/Core/PackageKitBackend.vala:283
+#: src/Core/PackageKitBackend.vala:286
 #, c-format
 msgid "%s (local)"
 msgstr "%s (lokalt)"
@@ -697,15 +697,20 @@ msgstr ""
 msgid "Update All"
 msgstr "Opdatér alle"
 
-#: src/Views/AppListView.vala:30
-msgid "No Results"
-msgstr "Ingen Resultater"
+#: src/Views/AppListView.vala:29
+msgid "Flathub"
+msgstr ""
 
 #: src/Views/AppListView.vala:31
-msgid "No apps could be found. Try changing search terms."
-msgstr "Ingen apps blev fundet. Prøv at ændre søgeord."
+msgid "No Apps Found"
+msgstr ""
 
-#: src/Views/AppListView.vala:167
+#: src/Views/AppListView.vala:32
+#, c-format
+msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
+msgstr ""
+
+#: src/Views/AppListView.vala:168
 msgid "Non-Curated Apps"
 msgstr "Ikke-Kuraterede Apps"
 
@@ -915,6 +920,12 @@ msgstr "Up to Date"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:264
 msgid "Update"
 msgstr "Opdater"
+
+#~ msgid "No Results"
+#~ msgstr "Ingen Resultater"
+
+#~ msgid "No apps could be found. Try changing search terms."
+#~ msgstr "Ingen apps blev fundet. Prøv at ændre søgeord."
 
 #~ msgid "Suggest Translations"
 #~ msgstr "Foreslå Oversættelser"

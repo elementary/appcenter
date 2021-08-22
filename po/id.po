@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-16 06:41+0000\n"
+"POT-Creation-Date: 2021-08-21 22:55+0000\n"
 "PO-Revision-Date: 2020-12-23 23:11+0000\n"
 "Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/appcenter/appcenter/id/>\n"
@@ -101,7 +101,7 @@ msgstr "Menghapus paket"
 msgid "Downloading"
 msgstr "Mengunduh"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:963
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:965
 msgid "Installing"
 msgstr "Memasang"
 
@@ -146,9 +146,9 @@ msgid "Finished"
 msgstr "Selesai"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:972 src/Core/FlatpakBackend.vala:1000
-#: src/Core/FlatpakBackend.vala:1107 src/Core/FlatpakBackend.vala:1135
-#: src/Core/FlatpakBackend.vala:1280 src/Core/FlatpakBackend.vala:1306
+#: src/Core/FlatpakBackend.vala:974 src/Core/FlatpakBackend.vala:1002
+#: src/Core/FlatpakBackend.vala:1110 src/Core/FlatpakBackend.vala:1138
+#: src/Core/FlatpakBackend.vala:1284 src/Core/FlatpakBackend.vala:1310
 msgid "Cancelling"
 msgstr "Membatalkan"
 
@@ -235,11 +235,11 @@ msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "%u pembaruan tersedia untuk sistem Anda"
 
-#: src/Core/FlatpakBackend.vala:1098
+#: src/Core/FlatpakBackend.vala:1101
 msgid "Uninstalling"
 msgstr "Menghapus pemasangan"
 
-#: src/Core/FlatpakBackend.vala:1271
+#: src/Core/FlatpakBackend.vala:1275
 msgid "Updating"
 msgstr "Memperbarui"
 
@@ -274,7 +274,7 @@ msgstr "Sumber tidak diketahui (tidak dikurasi)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Status aplikasi tidak ditetapkan sebagai terpasang di AppCenter untuk paket: %s"
 
-#: src/Core/PackageKitBackend.vala:283
+#: src/Core/PackageKitBackend.vala:286
 #, c-format
 msgid "%s (local)"
 msgstr "%s (lokal)"
@@ -690,15 +690,20 @@ msgstr ""
 msgid "Update All"
 msgstr "Perbarui Semua"
 
-#: src/Views/AppListView.vala:30
-msgid "No Results"
-msgstr "Tidak Ada Hasil"
+#: src/Views/AppListView.vala:29
+msgid "Flathub"
+msgstr ""
 
 #: src/Views/AppListView.vala:31
-msgid "No apps could be found. Try changing search terms."
-msgstr "Tidak ada aplikasi yang bisa ditemukan. Coba ganti kata penelusuran."
+msgid "No Apps Found"
+msgstr ""
 
-#: src/Views/AppListView.vala:167
+#: src/Views/AppListView.vala:32
+#, c-format
+msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
+msgstr ""
+
+#: src/Views/AppListView.vala:168
 msgid "Non-Curated Apps"
 msgstr "Aplikasi Tidak-Dikuratori"
 
@@ -907,6 +912,12 @@ msgstr "Terbaru"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:264
 msgid "Update"
 msgstr "Perbarui"
+
+#~ msgid "No Results"
+#~ msgstr "Tidak Ada Hasil"
+
+#~ msgid "No apps could be found. Try changing search terms."
+#~ msgstr "Tidak ada aplikasi yang bisa ditemukan. Coba ganti kata penelusuran."
 
 #~ msgid "Suggest Translations"
 #~ msgstr "Sarankan Terjemahan"

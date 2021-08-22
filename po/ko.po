@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-16 06:41+0000\n"
+"POT-Creation-Date: 2021-08-21 22:55+0000\n"
 "PO-Revision-Date: 2019-06-30 03:52+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/appcenter/appcenter/ko/>\n"
@@ -102,7 +102,7 @@ msgstr "패키지를 제거하고 있습니다"
 msgid "Downloading"
 msgstr "내려받고 있습니다"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:963
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:965
 msgid "Installing"
 msgstr "설치중"
 
@@ -147,9 +147,9 @@ msgid "Finished"
 msgstr "마쳤습니다"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:972 src/Core/FlatpakBackend.vala:1000
-#: src/Core/FlatpakBackend.vala:1107 src/Core/FlatpakBackend.vala:1135
-#: src/Core/FlatpakBackend.vala:1280 src/Core/FlatpakBackend.vala:1306
+#: src/Core/FlatpakBackend.vala:974 src/Core/FlatpakBackend.vala:1002
+#: src/Core/FlatpakBackend.vala:1110 src/Core/FlatpakBackend.vala:1138
+#: src/Core/FlatpakBackend.vala:1284 src/Core/FlatpakBackend.vala:1310
 msgid "Cancelling"
 msgstr "취소하고 있습니다"
 
@@ -236,13 +236,13 @@ msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "시스템에 %u개의 업데이트할 항목이 있습니다"
 
-#: src/Core/FlatpakBackend.vala:1098
+#: src/Core/FlatpakBackend.vala:1101
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "제거"
 
-#: src/Core/FlatpakBackend.vala:1271
+#: src/Core/FlatpakBackend.vala:1275
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -279,7 +279,7 @@ msgstr "알려지지 않은 소스 (검수 안 함)"
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
 
-#: src/Core/PackageKitBackend.vala:283
+#: src/Core/PackageKitBackend.vala:286
 #, fuzzy, c-format
 #| msgid "%s (non-curated)"
 msgid "%s (local)"
@@ -707,15 +707,20 @@ msgstr ""
 msgid "Update All"
 msgstr "모두 업데이트하기"
 
-#: src/Views/AppListView.vala:30
-msgid "No Results"
-msgstr "없습니다"
+#: src/Views/AppListView.vala:29
+msgid "Flathub"
+msgstr ""
 
 #: src/Views/AppListView.vala:31
-msgid "No apps could be found. Try changing search terms."
-msgstr "찾는 앱이 없습니다. 검색어를 바꿔 보세요."
+msgid "No Apps Found"
+msgstr ""
 
-#: src/Views/AppListView.vala:167
+#: src/Views/AppListView.vala:32
+#, c-format
+msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
+msgstr ""
+
+#: src/Views/AppListView.vala:168
 msgid "Non-Curated Apps"
 msgstr "값을 매기지 않는 앱"
 
@@ -926,6 +931,12 @@ msgstr "최신 버전입니다"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:264
 msgid "Update"
 msgstr "업데이트"
+
+#~ msgid "No Results"
+#~ msgstr "없습니다"
+
+#~ msgid "No apps could be found. Try changing search terms."
+#~ msgstr "찾는 앱이 없습니다. 검색어를 바꿔 보세요."
 
 #~ msgid "Suggest Translations"
 #~ msgstr "번역 제안하기"

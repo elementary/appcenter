@@ -113,26 +113,38 @@ public class AppCenterCore.UbuntuDriversBackend : Backend, Object {
                 warning ("Unable to check if driver is installed: %s", e.message);
             }
 
-            var depends = yield PackageKitBackend.get_default ().get_package_dependencies (package, cancellable);
-            // If the driver depends on dkms, it means we need to build some kernel modules for it, so we need kernel headers
-            if ("dkms" in depends) {
-                // Ensure we have matching kernel headers installed for our installed `linux-image-generic` metapackages.
-                // Sometimes Ubuntu drivers depend on non-HWE headers and the module doesn't get built for the running kernel
-                var installed = yield PackageKitBackend.get_default ().get_installed_packages (cancellable);
-                foreach (var pkg in installed) {
-                    unowned string pkgname = pkg.get_name ();
-                    if (pkgname.has_prefix ("linux-image-generic")) {
-                        pkgnames += pkgname.replace ("linux-image", "linux-headers");
-                        package.component.set_pkgnames (pkgnames);
-                    }
-                }
-            }
+            yield add_kernel_headers_if_necessary (package, cancellable);
 
             cached_packages.add (package);
         }
 
         working = false;
         return cached_packages;
+    }
+
+    private static async void add_kernel_headers_if_necessary (Package package, Cancellable? cancellable) {
+        Gee.ArrayList<string>? depends = null;
+
+        try {
+            depends = yield PackageKitBackend.get_default ().get_package_dependencies (package, cancellable);
+        } catch (Error e) {
+            warning ("Unable to get dependencies of driver package, kernel headers may not be installed");
+            return;
+        }
+
+        if (depends != null && "dkms" in depends) {
+            // Ensure we have matching kernel headers installed for our installed `linux-image-generic` metapackages.
+            // Sometimes Ubuntu drivers depend on non-HWE headers and the module doesn't get built for the running kernel
+            var installed = yield PackageKitBackend.get_default ().get_installed_packages (cancellable);
+            foreach (var pkg in installed) {
+                unowned string pkgname = pkg.get_name ();
+                if (pkgname.has_prefix ("linux-image-generic")) {
+                    var pkgnames = package.component.get_pkgnames ();
+                    pkgnames += pkgname.replace ("linux-image", "linux-headers");
+                    package.component.set_pkgnames (pkgnames);
+                }
+            }
+        }
     }
 
     public Gee.Collection<Package> get_applications_for_category (AppStream.Category category) {

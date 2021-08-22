@@ -3,19 +3,23 @@
 # DartDeaDia <jorydit@gmail.com>, 2021.
 # Viacheslav <superslavik24@gmail.com>, 2021.
 # DartDeaDia <DartDeaDia@protonmail.com>, 2021.
+# asdffdsdaf <asdffdsdaf@gmail.com>, 2021.
+# DartDeaDia <dartdeadia@protonmail.com>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-16 06:41+0000\n"
-"PO-Revision-Date: 2021-08-14 12:39+0000\n"
-"Last-Translator: DartDeaDia <DartDeaDia@protonmail.com>\n"
-"Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/appcenter/ru/>\n"
+"POT-Creation-Date: 2021-08-21 22:55+0000\n"
+"PO-Revision-Date: 2021-08-22 08:39+0000\n"
+"Last-Translator: DartDeaDia <dartdeadia@protonmail.com>\n"
+"Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
@@ -103,7 +107,7 @@ msgstr "Удаление пакетов"
 msgid "Downloading"
 msgstr "Загрузка"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:963
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:965
 msgid "Installing"
 msgstr "Установка"
 
@@ -148,9 +152,9 @@ msgid "Finished"
 msgstr "Завершено"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:972 src/Core/FlatpakBackend.vala:1000
-#: src/Core/FlatpakBackend.vala:1107 src/Core/FlatpakBackend.vala:1135
-#: src/Core/FlatpakBackend.vala:1280 src/Core/FlatpakBackend.vala:1306
+#: src/Core/FlatpakBackend.vala:974 src/Core/FlatpakBackend.vala:1002
+#: src/Core/FlatpakBackend.vala:1110 src/Core/FlatpakBackend.vala:1138
+#: src/Core/FlatpakBackend.vala:1284 src/Core/FlatpakBackend.vala:1310
 msgid "Cancelling"
 msgstr "Отмена"
 
@@ -241,11 +245,11 @@ msgstr[0] "%u доступно обновление для вашей систе
 msgstr[1] "%u доступны обновления для вашей системы"
 msgstr[2] "%u доступно обновлений для вашей системы"
 
-#: src/Core/FlatpakBackend.vala:1098
+#: src/Core/FlatpakBackend.vala:1101
 msgid "Uninstalling"
 msgstr "Удаление"
 
-#: src/Core/FlatpakBackend.vala:1271
+#: src/Core/FlatpakBackend.vala:1275
 msgid "Updating"
 msgstr "Обновление"
 
@@ -280,7 +284,7 @@ msgstr "Неизвестное происхождение (не курируем
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Состояние приложения не определено как установленное в Центре приложений для пакета: %s"
 
-#: src/Core/PackageKitBackend.vala:283
+#: src/Core/PackageKitBackend.vala:286
 #, c-format
 msgid "%s (local)"
 msgstr "%s (локальный)"
@@ -693,17 +697,24 @@ msgstr "Запрос на перезапуск не удался. Перезап
 msgid "Update All"
 msgstr "Обновить всё"
 
-#: src/Views/AppListView.vala:30
-msgid "No Results"
-msgstr "Нет результатов"
+#: src/Views/AppListView.vala:29
+msgid "Flathub"
+msgstr "Flathub"
 
 #: src/Views/AppListView.vala:31
-msgid "No apps could be found. Try changing search terms."
-msgstr "Приложения не найдены. Попробуйте изменить поисковый запрос."
+msgid "No Apps Found"
+msgstr "Приложения не найдены"
 
-#: src/Views/AppListView.vala:167
+#: src/Views/AppListView.vala:32
+#, c-format
+msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
+msgstr ""
+"Попробуйте перефразировать запрос. Вы также можете загрузить приложения "
+"Flatpak, например с %s"
+
+#: src/Views/AppListView.vala:168
 msgid "Non-Curated Apps"
-msgstr "Не поддерживаемое сообществом elementary"
+msgstr "Не курируемые приложения"
 
 #: src/Views/Homepage.vala:68
 msgid "Recently Updated"
@@ -912,6 +923,12 @@ msgstr "Обновления не требуются"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:264
 msgid "Update"
 msgstr "Обновить"
+
+#~ msgid "No Results"
+#~ msgstr "Нет результатов"
+
+#~ msgid "No apps could be found. Try changing search terms."
+#~ msgstr "Приложения не найдены. Попробуйте изменить поисковый запрос."
 
 #~ msgid "Suggest Translations"
 #~ msgstr "Предложить перевод"
