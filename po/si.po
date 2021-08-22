@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-16 06:41+0000\n"
+"POT-Creation-Date: 2021-08-21 22:55+0000\n"
 "PO-Revision-Date: 2021-07-11 16:58+0000\n"
 "Last-Translator: HelaBasa <R45XvezA@pm.me>\n"
 "Language-Team: Sinhala <https://l10n.elementary.io/projects/appcenter/appcenter/si/>\n"
@@ -99,7 +99,7 @@ msgstr ""
 msgid "Downloading"
 msgstr "බාගත වෙමින්"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:963
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:965
 msgid "Installing"
 msgstr "ස්ථාපනය වෙමින්"
 
@@ -144,9 +144,9 @@ msgid "Finished"
 msgstr "අවසානයි"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:972 src/Core/FlatpakBackend.vala:1000
-#: src/Core/FlatpakBackend.vala:1107 src/Core/FlatpakBackend.vala:1135
-#: src/Core/FlatpakBackend.vala:1280 src/Core/FlatpakBackend.vala:1306
+#: src/Core/FlatpakBackend.vala:974 src/Core/FlatpakBackend.vala:1002
+#: src/Core/FlatpakBackend.vala:1110 src/Core/FlatpakBackend.vala:1138
+#: src/Core/FlatpakBackend.vala:1284 src/Core/FlatpakBackend.vala:1310
 msgid "Cancelling"
 msgstr "අවලංගු වෙමින්"
 
@@ -235,11 +235,11 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Core/FlatpakBackend.vala:1098
+#: src/Core/FlatpakBackend.vala:1101
 msgid "Uninstalling"
 msgstr "අස්ථාපනය වෙමින්"
 
-#: src/Core/FlatpakBackend.vala:1271
+#: src/Core/FlatpakBackend.vala:1275
 msgid "Updating"
 msgstr "යාවත්කාලින වෙමින්"
 
@@ -274,7 +274,7 @@ msgstr ""
 msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr ""
 
-#: src/Core/PackageKitBackend.vala:283
+#: src/Core/PackageKitBackend.vala:286
 #, c-format
 msgid "%s (local)"
 msgstr "%s (ස්ථානීය)"
@@ -686,15 +686,20 @@ msgstr ""
 msgid "Update All"
 msgstr "සියල්ල යාවත්කාල කරන්න"
 
-#: src/Views/AppListView.vala:30
-msgid "No Results"
-msgstr "ප්‍රතිඵල නැත"
-
-#: src/Views/AppListView.vala:31
-msgid "No apps could be found. Try changing search terms."
+#: src/Views/AppListView.vala:29
+msgid "Flathub"
 msgstr ""
 
-#: src/Views/AppListView.vala:167
+#: src/Views/AppListView.vala:31
+msgid "No Apps Found"
+msgstr ""
+
+#: src/Views/AppListView.vala:32
+#, c-format
+msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
+msgstr ""
+
+#: src/Views/AppListView.vala:168
 msgid "Non-Curated Apps"
 msgstr ""
 
@@ -904,6 +909,9 @@ msgstr ""
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:264
 msgid "Update"
 msgstr ""
+
+#~ msgid "No Results"
+#~ msgstr "ප්‍රතිඵල නැත"
 
 #~ msgid "Suggest Translations"
 #~ msgstr "පරිවර්තන යෝජනා කරන්න"
