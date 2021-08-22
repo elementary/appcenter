@@ -4,9 +4,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-21 22:55+0000\n"
-"PO-Revision-Date: 2021-07-16 21:36+0000\n"
+"PO-Revision-Date: 2021-08-23 00:11+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
-"Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/appcenter/he/>\n"
+"Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/he/>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -688,16 +689,17 @@ msgstr "עדכון הכול"
 
 #: src/Views/AppListView.vala:29
 msgid "Flathub"
-msgstr ""
+msgstr "Flathub"
 
 #: src/Views/AppListView.vala:31
 msgid "No Apps Found"
-msgstr ""
+msgstr "לא נמצאו יישומים"
 
 #: src/Views/AppListView.vala:32
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr ""
+"נא לנסות לשנות את תנאי החיפוש. ניתן גם לטעון יישומי Flatpak מהצד למשל דרך %s"
 
 #: src/Views/AppListView.vala:168
 msgid "Non-Curated Apps"
