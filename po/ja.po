@@ -4,9 +4,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-21 22:55+0000\n"
-"PO-Revision-Date: 2021-08-09 10:54+0000\n"
+"PO-Revision-Date: 2021-08-22 06:54+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/appcenter/ja/>\n"
+"Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -685,16 +686,16 @@ msgstr "すべてアップデート"
 
 #: src/Views/AppListView.vala:29
 msgid "Flathub"
-msgstr ""
+msgstr "Flathub"
 
 #: src/Views/AppListView.vala:31
 msgid "No Apps Found"
-msgstr ""
+msgstr "アプリが見つかりません"
 
 #: src/Views/AppListView.vala:32
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
-msgstr ""
+msgstr "検索用語を変更してみてください。%s などから、AppCenter を経由せずに Flatpak アプリをインストールすることもできます"
 
 #: src/Views/AppListView.vala:168
 msgid "Non-Curated Apps"
