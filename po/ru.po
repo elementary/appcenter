@@ -4,13 +4,14 @@
 # Viacheslav <superslavik24@gmail.com>, 2021.
 # DartDeaDia <DartDeaDia@protonmail.com>, 2021.
 # asdffdsdaf <asdffdsdaf@gmail.com>, 2021.
+# DartDeaDia <dartdeadia@protonmail.com>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-21 22:55+0000\n"
-"PO-Revision-Date: 2021-08-22 08:27+0000\n"
-"Last-Translator: asdffdsdaf <asdffdsdaf@gmail.com>\n"
+"PO-Revision-Date: 2021-08-22 08:39+0000\n"
+"Last-Translator: DartDeaDia <dartdeadia@protonmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ru/>\n"
 "Language: ru\n"
@@ -709,11 +710,11 @@ msgstr "Приложения не найдены"
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr ""
 "Попробуйте перефразировать запрос. Вы также можете загрузить приложения "
-"Flatpak с %s"
+"Flatpak, например с %s"
 
 #: src/Views/AppListView.vala:168
 msgid "Non-Curated Apps"
-msgstr "Не поддерживаемое сообществом elementary"
+msgstr "Не курируемые приложения"
 
 #: src/Views/Homepage.vala:68
 msgid "Recently Updated"
