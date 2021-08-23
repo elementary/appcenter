@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-23 18:56+0000\n"
-"PO-Revision-Date: 2021-08-16 12:07+0000\n"
+"PO-Revision-Date: 2021-08-23 19:47+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/"
 "extra/uk/>\n"
@@ -49,14 +49,15 @@ msgid "Fixes:"
 msgstr "Виправлення:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
-#, fuzzy
-#| msgid "Install Linux kernel headers with NVIDIA drivers"
 msgid "Install Linux kernel headers for device drivers that use DKMS"
-msgstr "Встановлення хедера ядра Linux з драйверами NVIDIA"
+msgstr ""
+"Встановлення хедера ядра для пристроїв з драйверами, які застосовують DKMS"
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
 msgid "Use system Flatpak runtimes for locally installed apps"
 msgstr ""
+"Застосовується системні середовища виконання Flatpak для локально "
+"встановлених застосунків"
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
 #: data/io.elementary.appcenter.appdata.xml.in:35
@@ -69,6 +70,7 @@ msgstr "Вдосконалення:"
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Mention Sideload when search returns no results"
 msgstr ""
+"Згадка про можливість стороннього завантаження після безрезультатного пошуку"
 
 #: data/io.elementary.appcenter.appdata.xml.in:24
 #: data/io.elementary.appcenter.appdata.xml.in:37
