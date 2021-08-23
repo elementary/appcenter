@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-23 18:56+0000\n"
-"PO-Revision-Date: 2021-08-17 02:14+0000\n"
+"PO-Revision-Date: 2021-08-23 19:47+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/extra/"
 "he/>\n"
@@ -46,14 +46,13 @@ msgid "Fixes:"
 msgstr "תיקונים:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
-#, fuzzy
-#| msgid "Install Linux kernel headers with NVIDIA drivers"
 msgid "Install Linux kernel headers for device drivers that use DKMS"
-msgstr "התקנת קובצי כותרות (headers) של ליבת לינוקס עם מנהלי התקני NVIDIA"
+msgstr ""
+"התקנת קובצי כותרות (headers) של ליבת לינוקס למנהלי התקנים שמשתמשים ב־DKMS"
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
 msgid "Use system Flatpak runtimes for locally installed apps"
-msgstr ""
+msgstr "להשתמש בסביבות ההרצה של Flatpak ליישומים שהותקנו מקומית"
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
 #: data/io.elementary.appcenter.appdata.xml.in:35
@@ -65,7 +64,7 @@ msgstr "שיפורים:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Mention Sideload when search returns no results"
-msgstr ""
+msgstr "מופיע אזכור של טעינה צדית כשהחיפוש לא מחזיר תוצאות"
 
 #: data/io.elementary.appcenter.appdata.xml.in:24
 #: data/io.elementary.appcenter.appdata.xml.in:37
