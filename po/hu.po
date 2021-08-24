@@ -1,11 +1,12 @@
 # TomiOhl <ohlslager.tom@gmail.com>, 2021.
+# Sziráki Bálint <blntsziraki@gmail.com>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-23 18:56+0000\n"
 "PO-Revision-Date: 2021-08-24 10:35+0000\n"
-"Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
+"Last-Translator: Sziráki Bálint <blntsziraki@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/hu/>\n"
 "Language: hu\n"
@@ -365,7 +366,7 @@ msgstr "Alkalmazás telepítése sikertelen"
 #: src/Dialogs/InstallFailDialog.vala:40
 #, c-format
 msgid "Failed to install “%s”"
-msgstr "“%s” telepítése sikertelen"
+msgstr "%s telepítése sikertelen"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
 msgid "Non-Curated Warning"
