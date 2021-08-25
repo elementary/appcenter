@@ -4,9 +4,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-23 18:56+0000\n"
-"PO-Revision-Date: 2021-08-22 06:54+0000\n"
+"PO-Revision-Date: 2021-08-23 23:46+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/appcenter/ja/>\n"
+"Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -257,7 +258,7 @@ msgstr "Ubuntu (キュレーションされていないアプリ)"
 #: src/Core/Package.vala:343
 #, c-format
 msgid "%s (system-wide)"
-msgstr "%s (全ユーザーが利用可能)"
+msgstr "%s (システム全体で利用可能)"
 
 #: src/Core/Package.vala:348
 msgid "Ubuntu Drivers"

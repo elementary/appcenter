@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-23 18:56+0000\n"
-"PO-Revision-Date: 2021-08-18 13:28+0000\n"
+"PO-Revision-Date: 2021-08-24 12:04+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/appcenter/extra/"
 "fr/>\n"
@@ -48,14 +48,16 @@ msgid "Fixes:"
 msgstr "Corrections :"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
-#, fuzzy
-#| msgid "Install Linux kernel headers with NVIDIA drivers"
 msgid "Install Linux kernel headers for device drivers that use DKMS"
-msgstr "Installation des en-têtes du noyau Linux avec les pilotes NVIDIA"
+msgstr ""
+"Installation des en-têtes du noyau Linux pour les pilotes de périphériques "
+"utilisant DKMS"
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
 msgid "Use system Flatpak runtimes for locally installed apps"
 msgstr ""
+"Utilisation des exécutables Flatpak du système pour les applications "
+"installées en local"
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
 #: data/io.elementary.appcenter.appdata.xml.in:35
@@ -68,6 +70,8 @@ msgstr "Améliorations :"
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Mention Sideload when search returns no results"
 msgstr ""
+"Information sur l'installation d'applications tierces lorsque la recherche "
+"ne donne aucun résultat"
 
 #: data/io.elementary.appcenter.appdata.xml.in:24
 #: data/io.elementary.appcenter.appdata.xml.in:37
