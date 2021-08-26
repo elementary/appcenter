@@ -1,3 +1,18 @@
+appcenter (3.7.0) bionic; urgency=medium
+
+  * Release 3.7.0 (#1626)
+  * Update translation files
+  * Update translation template
+  * Appdata: add release data for 3.7.0 (#1625)
+  * UbuntuDrivers: Error handling for kernel headers install (#1621)
+  * AppListView: Mention Flathub in search copy (#1616)
+  * FlatpakBackend: add default deps sources to transactions (#1620)
+  * Banner: on_any_color_change → reload_css (#1617)
+  * Banner: reduce method scope (#1619)
+  * Drivers: Ensure headers are installed for dkms drivers (#1615)
+
+ -- elementary Builds Team <builds@elementary.io>  Thu, 26 Aug 2021 02:20:22 +0000
+
 appcenter (3.6.3) bionic; urgency=medium
 
   * Release 3.6.3 (#1599)
