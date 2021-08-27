@@ -406,44 +406,17 @@ namespace AppCenter.Views {
             };
             body_clamp.add (content_grid);
 
+            var other_apps_bar = new OtherAppsBar (package, MAX_WIDTH);
+
+            other_apps_bar.show_other_package.connect ((package) => {
+                show_other_package (package);
+            });
+
             var grid = new Gtk.Grid ();
             grid.row_spacing = 12;
             grid.attach (header_box, 0, 0, 1, 1);
             grid.attach (body_clamp, 0, 1);
-
-            if (package.author != null) {
-                var other_apps_header = new Gtk.Label (_("Other Apps by %s").printf (package.author_title));
-                other_apps_header.xalign = 0;
-                other_apps_header.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
-
-                var other_apps_carousel = new AuthorCarousel (package);
-                other_apps_carousel.package_activated.connect ((package) => show_other_package (package));
-
-                var other_apps_grid = new Gtk.Grid ();
-                other_apps_grid.orientation = Gtk.Orientation.VERTICAL;
-                other_apps_grid.row_spacing = 12;
-                other_apps_grid.width_request = MAX_WIDTH;
-                other_apps_grid.add (other_apps_header);
-                other_apps_grid.add (other_apps_carousel);
-
-                var other_apps_clamp = new Hdy.Clamp () {
-                    margin = 24,
-                    maximum_size = MAX_WIDTH
-                };
-                other_apps_clamp.add (other_apps_grid);
-
-                var other_apps_bar = new Gtk.Grid ();
-                other_apps_bar.add (other_apps_clamp);
-
-                unowned Gtk.StyleContext other_apps_style_context = other_apps_bar.get_style_context ();
-                other_apps_style_context.add_class (Gtk.STYLE_CLASS_TOOLBAR);
-                other_apps_style_context.add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
-                other_apps_style_context.add_class (Gtk.STYLE_CLASS_SIDEBAR);
-
-                if (other_apps_carousel.get_children ().length () > 0) {
-                    grid.attach (other_apps_bar, 0, 3);
-                }
-            }
+            grid.attach (other_apps_bar, 0, 3);
 
             var scrolled = new Gtk.ScrolledWindow (null, null);
             scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
@@ -925,24 +898,64 @@ namespace AppCenter.Views {
         }
     }
 
-    private class AuthorCarousel : AppCenter.Widgets.Carousel {
-        private const int AUTHOR_OTHER_APPS_MAX = 10;
+    private class OtherAppsBar : Gtk.Grid {
+        public signal void show_other_package (AppCenterCore.Package package);
 
         public AppCenterCore.Package package { get; construct; }
+        public int max_width { get; construct; }
 
-        public AuthorCarousel (AppCenterCore.Package package) {
-            Object (package: package);
+        private const int AUTHOR_OTHER_APPS_MAX = 10;
+
+        public OtherAppsBar (AppCenterCore.Package package, int max_width) {
+            Object (
+                package: package,
+                max_width: max_width
+            );
         }
 
         construct {
+            if (package.author == null) {
+                return;
+            }
+
             var author_packages = AppCenterCore.Client.get_default ().get_packages_by_author (package.author, AUTHOR_OTHER_APPS_MAX);
+            if (author_packages.is_empty) {
+                return;
+            }
+
+            var header = new Granite.HeaderLabel (_("Other Apps by %s").printf (package.author_title));
+
+            var carousel = new AppCenter.Widgets.Carousel ();
             foreach (var author_package in author_packages) {
                 if (author_package.component.get_id () == package.component.get_id ()) {
                     continue;
                 }
 
-                add_package (author_package);
+                carousel.add_package (author_package);
             }
+
+            var grid = new Gtk.Grid () {
+                orientation = Gtk.Orientation.VERTICAL,
+                row_spacing = 12,
+                width_request = max_width
+            };
+            grid.add (header);
+            grid.add (carousel);
+
+            var clamp = new Hdy.Clamp () {
+                margin = 24,
+                maximum_size = max_width
+            };
+            clamp.add (grid);
+
+            add (clamp);
+
+            unowned var style_context = get_style_context ();
+            style_context.add_class (Gtk.STYLE_CLASS_TOOLBAR);
+            style_context.add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
+            style_context.add_class (Gtk.STYLE_CLASS_SIDEBAR);
+
+            carousel.package_activated.connect ((package) => show_other_package (package));
         }
     }
 }
