@@ -314,7 +314,7 @@ namespace AppCenter.Views {
                 extension_box.row_activated.connect ((row) => {
                     var extension_row = row as Widgets.PackageRow;
                     if (extension_row != null) {
-                        show_other_package (extension_row.get_package (), true, Gtk.StackTransitionType.SLIDE_LEFT_RIGHT);
+                        show_other_package (extension_row.get_package ());
                     }
                 });
 
