@@ -19,8 +19,6 @@
 *              Dane Henson <thegreatdane@gmail.com>
 */
 
-using AppCenterCore;
-
 const int NUM_PACKAGES_IN_BANNER = 5;
 const int NUM_PACKAGES_IN_CAROUSEL = 5;
 
@@ -165,7 +163,7 @@ namespace AppCenter {
                                 var list_view = child as Views.AppListView;
                                 list_view.clear ();
 
-                                unowned Client client = Client.get_default ();
+                                unowned var client = AppCenterCore.Client.get_default ();
                                 var apps = client.get_applications_for_category (currently_viewed_category);
                                 list_view.add_packages (apps);
                             }
@@ -187,7 +185,7 @@ namespace AppCenter {
         }
 
         private async void load_banners () {
-            unowned FlatpakBackend fp_client = FlatpakBackend.get_default ();
+            unowned var fp_client = AppCenterCore.FlatpakBackend.get_default ();
             var packages_by_release_date = fp_client.get_native_packages_by_release_date ();
 
             foreach (var package in packages_by_release_date) {
@@ -344,7 +342,7 @@ namespace AppCenter {
                 subview_entered (category.name, false, "");
             });
 
-            unowned Client client = Client.get_default ();
+            unowned var client = AppCenterCore.Client.get_default ();
             var apps = client.get_applications_for_category (category);
             app_list_view.add_packages (apps);
         }
