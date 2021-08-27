@@ -236,9 +236,9 @@ namespace AppCenter {
             switch (package.state) {
                 case AppCenterCore.Package.State.NOT_INSTALLED:
 #if PAYMENTS
-                    action_button.label = _("Free");
+                    action_button.free_string = _("Free");
 #else
-                    action_button.label = _("Install");
+                    action_button.free_string = _("Install");
 #endif
                     if (package.component.get_id () in App.settings.get_strv ("paid-apps")) {
                         action_button.amount = 0;
@@ -257,11 +257,11 @@ namespace AppCenter {
                     action_button.allow_free = false;
                     break;
                 case AppCenterCore.Package.State.UPDATE_AVAILABLE:
+                    action_button.free_string = _("Update");
+
                     if (!package.should_nag_update) {
                        action_button.amount = 0;
                     }
-
-                    action_button.label = _("Update");
 
                     uninstall_button_revealer.reveal_child = show_uninstall && !package.is_os_updates && !package.is_compulsory;
                     action_button_revealer.reveal_child = true;

@@ -40,16 +40,7 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
         }
     }
 
-    private string free_string;
-    public string label {
-        set {
-            free_string = value;
-
-            if (amount == 0) {
-               amount_button.label = free_string;
-            }
-        }
-    }
+    public string free_string;
 
     public bool _allow_free = true;
     public bool allow_free {
@@ -93,9 +84,9 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
         amount_button.hexpand = true;
 
 #if PAYMENTS
-        amount_button.label = _("Free");
+        free_string = _("Free");
 #else
-        amount_button.label = _("Install");
+        free_string = _("Install");
 #endif
 
         amount_button.clicked.connect (() => {
