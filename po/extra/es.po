@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-23 18:56+0000\n"
-"PO-Revision-Date: 2021-02-19 12:12+0000\n"
+"PO-Revision-Date: 2021-08-27 12:30+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/extra/"
 "es/>\n"
@@ -25,11 +25,6 @@ msgid "Browse and manage apps"
 msgstr "Explorar y gestionar aplicaciones"
 
 #: data/io.elementary.appcenter.appdata.xml.in:11
-#, fuzzy
-#| msgid ""
-#| "An app store for indie and open source developers. Browse by categories "
-#| "or search and discover new apps. AppCenter is also used for updating your "
-#| "system to the latest and greatest version for new features and fixes."
 msgid ""
 "The open source, pay-what-you-want app store from elementary. Reviewed and "
 "curated by elementary to ensure a native, privacy-respecting, and secure "
@@ -37,20 +32,20 @@ msgid ""
 "is also used for updating your system to the latest and greatest version for "
 "new features and fixes."
 msgstr ""
-"Una tienda de aplicaciones para desarrolladores independientes y de código "
-"abierto. Explore las categorías o busque y descubra nuevas aplicaciones. El "
-"centro de aplicaciones también es utilizado para actualizar su sistema a la "
-"versión más reciente y así obtener funcionalidades nuevas y correcciones."
+"La tienda de aplicaciones de código abierto y precio libre de elementary. "
+"Revisada y examinada por elementary para garantizar una experiencia nativa, "
+"respetuosa de la privacidad y segura. Explore las categorías o efectúe "
+"búsquedas para descubrir aplicaciones. El Centro de aplicaciones también se "
+"utiliza para actualizar el sistema a la versión más reciente y así obtener "
+"funcionalidades y arreglos nuevos."
 
 #: data/io.elementary.appcenter.appdata.xml.in:16
 #: data/io.elementary.appcenter.appdata.xml.in:30
 #: data/io.elementary.appcenter.appdata.xml.in:43
 #: data/io.elementary.appcenter.appdata.xml.in:55
 #: data/io.elementary.appcenter.appdata.xml.in:83
-#, fuzzy
-#| msgid "Fixes"
 msgid "Fixes:"
-msgstr "Correcciones"
+msgstr "Correcciones:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Install Linux kernel headers for device drivers that use DKMS"
