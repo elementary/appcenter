@@ -949,11 +949,7 @@ namespace AppCenter.Views {
             clamp.add (grid);
 
             add (clamp);
-
-            unowned var style_context = get_style_context ();
-            style_context.add_class (Gtk.STYLE_CLASS_TOOLBAR);
-            style_context.add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
-            style_context.add_class (Gtk.STYLE_CLASS_SIDEBAR);
+            get_style_context ().add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
 
             carousel.package_activated.connect ((package) => show_other_package (package));
         }
