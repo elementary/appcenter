@@ -72,12 +72,14 @@ public abstract class AppCenter.AbstractView : Gtk.Stack {
             return Source.REMOVE;
         });
 
-        app_info_view.show_other_package.connect ((_package, remember_history) => {
+        app_info_view.show_other_package.connect ((_package, remember_history, _transition_type) => {
+            transition_type = _transition_type;
             show_package (_package, remember_history);
             if (remember_history) {
                 previous_package = package;
                 subview_entered (package.get_name (), false, "", null);
             }
+            transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
         });
     }
 
