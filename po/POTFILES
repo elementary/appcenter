@@ -52,6 +52,5 @@ src/Widgets/AppContainers/AbstractAppContainer.vala
 src/Widgets/AppContainers/AbstractPackageRowGrid.vala
 src/Widgets/AppContainers/InstalledPackageRowGrid.vala
 src/Widgets/AppContainers/ListPackageRowGrid.vala
-src/Widgets/Carousel/AuthorCarousel.vala
 src/Widgets/Carousel/Carousel.vala
 src/Widgets/Carousel/CarouselItem.vala
