@@ -46,12 +46,14 @@ namespace AppCenter {
         private Gtk.Revealer trending_revealer;
 
         construct {
-            switcher = new Widgets.Switcher ();
-            switcher.halign = Gtk.Align.CENTER;
+            switcher = new Widgets.Switcher () {
+                halign = Gtk.Align.CENTER
+            };
 
-            switcher_revealer = new Gtk.Revealer ();
-            switcher_revealer.set_transition_type (Gtk.RevealerTransitionType.SLIDE_DOWN);
-            switcher_revealer.set_transition_duration (Widgets.Banner.TRANSITION_DURATION_MILLISECONDS);
+            switcher_revealer = new Gtk.Revealer () {
+                transition_type = Gtk.RevealerTransitionType.SLIDE_DOWN,
+                transition_duration = Widgets.Banner.TRANSITION_DURATION_MILLISECONDS
+            };
             switcher_revealer.add (switcher);
 
             newest_banner = new Widgets.Banner (switcher) {
@@ -65,51 +67,52 @@ namespace AppCenter {
                 }
             });
 
-            var recently_updated_label = new Gtk.Label (_("Recently Updated"));
-            recently_updated_label.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
-            recently_updated_label.xalign = 0;
-            recently_updated_label.margin_start = 10;
+            var recently_updated_label = new Granite.HeaderLabel (_("Recently Updated")) {
+                margin_start = 10
+            };
 
             recently_updated_carousel = new Widgets.Carousel ();
 
-            var recently_updated_grid = new Gtk.Grid ();
-            recently_updated_grid.margin = 2;
-            recently_updated_grid.margin_top = 12;
-            recently_updated_grid.attach (recently_updated_label, 0, 0, 1, 1);
-            recently_updated_grid.attach (recently_updated_carousel, 0, 1, 1, 1);
+            var recently_updated_grid = new Gtk.Grid () {
+                margin = 2,
+                margin_top = 12
+            };
+            recently_updated_grid.attach (recently_updated_label, 0, 0);
+            recently_updated_grid.attach (recently_updated_carousel, 0, 1);
 
             recently_updated_revealer = new Gtk.Revealer ();
             recently_updated_revealer.add (recently_updated_grid );
 
-            var trending_label = new Gtk.Label (_("Trending"));
-            trending_label.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
-            trending_label.xalign = 0;
-            trending_label.margin_start = 10;
+            var trending_label = new Granite.HeaderLabel (_("Trending")) {
+                margin_start = 10
+            };
 
             trending_carousel = new Widgets.Carousel ();
 
-            var trending_grid = new Gtk.Grid ();
-            trending_grid.margin = 2;
-            trending_grid.margin_top = 12;
-            trending_grid.attach (trending_label, 0, 0, 1, 1);
-            trending_grid.attach (trending_carousel, 0, 1, 1, 1);
+            var trending_grid = new Gtk.Grid () {
+                margin = 2,
+                margin_top = 12
+            };
+            trending_grid.attach (trending_label, 0, 0);
+            trending_grid.attach (trending_carousel, 0, 1);
 
             trending_revealer = new Gtk.Revealer ();
             trending_revealer.add (trending_grid );
 
-            var categories_label = new Gtk.Label (_("Categories"));
-            categories_label.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
-            categories_label.xalign = 0;
-            categories_label.margin_start = 12;
-            categories_label.margin_top = 24;
+            var categories_label = new Granite.HeaderLabel (_("Categories")) {
+                margin_start = 12,
+                margin_top = 24
+            };
 #else
         construct {
 #endif
-            category_flow = new Widgets.CategoryFlowBox ();
-            category_flow.valign = Gtk.Align.START;
+            category_flow = new Widgets.CategoryFlowBox () {
+                valign = Gtk.Align.START
+            };
 
-            var grid = new Gtk.Grid ();
-            grid.margin = 12;
+            var grid = new Gtk.Grid () {
+                margin = 12
+            };
 #if HOMEPAGE
             grid.attach (newest_banner, 0, 0, 1, 1);
             grid.attach (switcher_revealer, 0, 1, 1, 1);
