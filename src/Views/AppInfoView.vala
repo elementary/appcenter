@@ -44,13 +44,14 @@ namespace AppCenter.Views {
         private Gtk.Revealer origin_combo_revealer;
         private Hdy.Carousel app_screenshots;
         private Gtk.Stack screenshot_stack;
-        private Gtk.StyleContext stack_context;
         private Gtk.TextView app_description;
         private Widgets.ReleaseListBox release_list_box;
         private Widgets.SizeLabel size_label;
         private Hdy.CarouselIndicatorDots screenshot_switcher;
         private ArrowButton screenshot_next;
         private ArrowButton screenshot_previous;
+
+        private unowned Gtk.StyleContext stack_context;
 
         public bool to_recycle { public get; private set; default = false; }
 
@@ -122,16 +123,16 @@ namespace AppCenter.Views {
 
                 var screenshot_arrow_revealer_p = new Gtk.Revealer () {
                     halign = Gtk.Align.START,
-                    valign = Gtk.Align.CENTER
+                    valign = Gtk.Align.CENTER,
+                    transition_type = Gtk.RevealerTransitionType.CROSSFADE
                 };
-                screenshot_arrow_revealer_p.transition_type = Gtk.RevealerTransitionType.CROSSFADE;
                 screenshot_arrow_revealer_p.add (screenshot_previous);
 
                 var screenshot_arrow_revealer_n = new Gtk.Revealer () {
                     halign = Gtk.Align.END,
-                    valign = Gtk.Align.CENTER
+                    valign = Gtk.Align.CENTER,
+                    transition_type = Gtk.RevealerTransitionType.CROSSFADE
                 };
-                screenshot_arrow_revealer_n.transition_type = Gtk.RevealerTransitionType.CROSSFADE;
                 screenshot_arrow_revealer_n.add (screenshot_next);
 
                 screenshot_overlay = new Gtk.Overlay ();
@@ -180,17 +181,19 @@ namespace AppCenter.Views {
                     carousel = app_screenshots
                 };
 
-                var app_screenshot_spinner = new Gtk.Spinner ();
-                app_screenshot_spinner.halign = Gtk.Align.CENTER;
-                app_screenshot_spinner.valign = Gtk.Align.CENTER;
-                app_screenshot_spinner.active = true;
+                var app_screenshot_spinner = new Gtk.Spinner () {
+                    active = true,
+                    halign = Gtk.Align.CENTER,
+                    valign = Gtk.Align.CENTER
+                };
 
                 app_screenshot_not_found = new Gtk.Label (_("Screenshot Not Available"));
                 app_screenshot_not_found.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
                 app_screenshot_not_found.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
-                screenshot_stack = new Gtk.Stack ();
-                screenshot_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
+                screenshot_stack = new Gtk.Stack () {
+                    transition_type = Gtk.StackTransitionType.CROSSFADE
+                };
                 screenshot_stack.add (app_screenshot_spinner);
                 screenshot_stack.add (screenshot_overlay);
                 screenshot_stack.add (app_screenshot_not_found);
@@ -216,23 +219,25 @@ namespace AppCenter.Views {
             };
             author_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
-            package_summary = new Gtk.Label (null);
-            package_summary.label = package.get_summary ();
-            package_summary.selectable = true;
-            package_summary.xalign = 0;
+            package_summary = new Gtk.Label (null) {
+                label = package.get_summary (),
+                selectable = true,
+                wrap = true,
+                wrap_mode = Pango.WrapMode.WORD_CHAR,
+                valign = Gtk.Align.CENTER,
+                xalign = 0
+            };
             package_summary.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
-            package_summary.wrap = true;
-            package_summary.wrap_mode = Pango.WrapMode.WORD_CHAR;
-            package_summary.valign = Gtk.Align.CENTER;
 
-            app_description = new Gtk.TextView ();
-            app_description.expand = true;
-            app_description.editable = false;
+            app_description = new Gtk.TextView () {
+                cursor_visible = false,
+                editable = false,
+                expand = true,
+                pixels_below_lines = 3,
+                pixels_inside_wrap = 3,
+                wrap_mode = Gtk.WrapMode.WORD_CHAR
+            };
             app_description.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
-            app_description.cursor_visible = false;
-            app_description.pixels_below_lines = 3;
-            app_description.pixels_inside_wrap = 3;
-            app_description.wrap_mode = Gtk.WrapMode.WORD_CHAR;
 
             var links_grid = new Gtk.Grid () {
                 column_spacing = 12
@@ -283,21 +288,24 @@ namespace AppCenter.Views {
             }
 #endif
 
-            var whats_new_label = new Gtk.Label (_("What's New:"));
+            var whats_new_label = new Gtk.Label (_("What's New:")) {
+                xalign = 0
+            };
             whats_new_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
-            whats_new_label.xalign = 0;
 
             release_list_box = new Widgets.ReleaseListBox (package);
 
-            release_grid = new Gtk.Grid ();
-            release_grid.row_spacing = 12;
-            release_grid.attach (whats_new_label, 0, 0, 1, 1);
-            release_grid.attach (release_list_box, 0, 1, 1, 1);
-            release_grid.no_show_all = true;
+            release_grid = new Gtk.Grid () {
+                no_show_all = true,
+                row_spacing = 12
+            };
+            release_grid.attach (whats_new_label, 0, 0);
+            release_grid.attach (release_list_box, 0, 1);
             release_grid.hide ();
 
-            var content_grid = new Gtk.Grid ();
-            content_grid.row_spacing = 24;
+            var content_grid = new Gtk.Grid () {
+                row_spacing = 24
+            };
 
             if (screenshots.length > 0) {
                 content_grid.attach (screenshot_stack, 0, 0, 2);
@@ -309,19 +317,22 @@ namespace AppCenter.Views {
             content_grid.attach (release_grid, 0, 4, 2);
 
             if (package_component.get_addons ().length > 0) {
-                extension_box = new Gtk.ListBox ();
-                extension_box.selection_mode = Gtk.SelectionMode.SINGLE;
+                extension_box = new Gtk.ListBox () {
+                    selection_mode = Gtk.SelectionMode.SINGLE
+                };
+
                 extension_box.row_activated.connect ((row) => {
                     var extension_row = row as Widgets.PackageRow;
                     if (extension_row != null) {
-                        show_other_package (extension_row.get_package (), true, Gtk.StackTransitionType.SLIDE_LEFT_RIGHT);
+                        show_other_package (extension_row.get_package ());
                     }
                 });
 
-                var extension_label = new Gtk.Label (_("Extensions:"));
-                extension_label.margin_top = 12;
+                var extension_label = new Gtk.Label (_("Extensions:")) {
+                    halign = Gtk.Align.START,
+                    margin_top = 12
+                };
                 extension_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
-                extension_label.halign = Gtk.Align.START;
 
                 content_grid.attach (extension_label, 0, 5, 2);
                 content_grid.attach (extension_box, 0, 6, 2);
@@ -329,18 +340,10 @@ namespace AppCenter.Views {
             }
 
             origin_liststore = new Gtk.ListStore (2, typeof (AppCenterCore.Package), typeof (string));
-            origin_combo = new Gtk.ComboBox.with_model (origin_liststore);
-            origin_combo.halign = Gtk.Align.START;
-            origin_combo.valign = Gtk.Align.START;
-            origin_combo.changed.connect (() => {
-                Gtk.TreeIter iter;
-                AppCenterCore.Package selected_origin_package;
-                origin_combo.get_active_iter (out iter);
-                origin_liststore.@get (iter, 0, out selected_origin_package);
-                if (selected_origin_package != null && selected_origin_package != package) {
-                    show_other_package (selected_origin_package, false, Gtk.StackTransitionType.CROSSFADE);
-                }
-            });
+            origin_combo = new Gtk.ComboBox.with_model (origin_liststore) {
+                halign = Gtk.Align.START,
+                valign = Gtk.Align.START
+            };
 
             origin_combo_revealer = new Gtk.Revealer ();
             origin_combo_revealer.add (origin_combo);
@@ -359,10 +362,11 @@ namespace AppCenter.Views {
             progress_grid.margin_top = 12;
             button_grid.margin_top = progress_grid.margin_top;
 
-            var header_grid = new Gtk.Grid ();
-            header_grid.column_spacing = 12;
-            header_grid.row_spacing = 6;
-            header_grid.hexpand = true;
+            var header_grid = new Gtk.Grid () {
+                column_spacing = 12,
+                row_spacing = 6,
+                hexpand = true
+            };
             header_grid.attach (image, 0, 0, 1, 3);
             header_grid.attach (package_name, 1, 0);
             header_grid.attach (author_label, 1, 1);
@@ -370,9 +374,10 @@ namespace AppCenter.Views {
             header_grid.attach (action_stack, 3, 0);
 
             if (!package.is_local) {
-                size_label = new Widgets.SizeLabel ();
-                size_label.halign = Gtk.Align.END;
-                size_label.valign = Gtk.Align.START;
+                size_label = new Widgets.SizeLabel () {
+                    halign = Gtk.Align.END,
+                    valign = Gtk.Align.START
+                };
                 size_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
                 action_button_group.add_widget (size_label);
@@ -386,9 +391,10 @@ namespace AppCenter.Views {
             };
             header_clamp.add (header_grid);
 
-            var header_box = new Gtk.Grid ();
+            var header_box = new Gtk.Grid () {
+                hexpand = true
+            };
             header_box.get_style_context ().add_class ("banner");
-            header_box.hexpand = true;
             header_box.add (header_clamp);
 
             // FIXME: should be for context, not for screen
@@ -412,15 +418,17 @@ namespace AppCenter.Views {
                 show_other_package (package);
             });
 
-            var grid = new Gtk.Grid ();
-            grid.row_spacing = 12;
-            grid.attach (header_box, 0, 0, 1, 1);
+            var grid = new Gtk.Grid () {
+                row_spacing = 12
+            };
+            grid.attach (header_box, 0, 0);
             grid.attach (body_clamp, 0, 1);
             grid.attach (other_apps_bar, 0, 3);
 
-            var scrolled = new Gtk.ScrolledWindow (null, null);
-            scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
-            scrolled.expand = true;
+            var scrolled = new Gtk.ScrolledWindow (null, null) {
+                hscrollbar_policy = Gtk.PolicyType.NEVER,
+                expand = true
+            };
             scrolled.add (grid);
 
             var toast = new Granite.Widgets.Toast (_("Link copied to clipboard"));
@@ -438,22 +446,25 @@ namespace AppCenter.Views {
                 var uri = "https://appcenter.elementary.io/%s".printf (package.component.get_id ());
                 var share_popover = new SharePopover (body, uri);
 
-                var share_icon = new Gtk.Image.from_icon_name ("send-to-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
-                share_icon.valign = Gtk.Align.CENTER;
+                var share_icon = new Gtk.Image.from_icon_name ("send-to-symbolic", Gtk.IconSize.SMALL_TOOLBAR) {
+                    valign = Gtk.Align.CENTER
+                };
 
                 var share_label = new Gtk.Label (_("Share"));
 
-                var share_grid = new Gtk.Grid ();
-                share_grid.column_spacing = 6;
+                var share_grid = new Gtk.Grid () {
+                    column_spacing = 6
+                };
                 share_grid.add (share_icon);
                 share_grid.add (share_label);
 
-                var share_button = new Gtk.MenuButton ();
-                share_button.direction = Gtk.ArrowType.UP;
-                share_button.popover = share_popover;
+                var share_button = new Gtk.MenuButton () {
+                    direction = Gtk.ArrowType.UP,
+                    popover = share_popover
+                };
                 share_button.add (share_grid);
 
-                var share_button_context = share_button.get_style_context ();
+                unowned var share_button_context = share_button.get_style_context ();
                 share_button_context.add_class (Gtk.STYLE_CLASS_DIM_LABEL);
                 share_button_context.add_class (Gtk.STYLE_CLASS_FLAT);
 
@@ -466,6 +477,16 @@ namespace AppCenter.Views {
 #endif
             view_entered ();
             set_up_package (128);
+
+            origin_combo.changed.connect (() => {
+                Gtk.TreeIter iter;
+                AppCenterCore.Package selected_origin_package;
+                origin_combo.get_active_iter (out iter);
+                origin_liststore.@get (iter, 0, out selected_origin_package);
+                if (selected_origin_package != null && selected_origin_package != package) {
+                    show_other_package (selected_origin_package, false, Gtk.StackTransitionType.CROSSFADE);
+                }
+            });
 
             if (package.is_os_updates) {
                 package.notify["state"].connect (() => {
@@ -799,14 +820,17 @@ namespace AppCenter.Views {
                 get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
                 tooltip_text = uri;
 
-                var icon = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.SMALL_TOOLBAR);
-                icon.valign = Gtk.Align.CENTER;
+                var icon = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.SMALL_TOOLBAR) {
+                    valign = Gtk.Align.CENTER
+                };
 
-                var title = new Gtk.Label (label);
-                title.ellipsize = Pango.EllipsizeMode.END;
+                var title = new Gtk.Label (label) {
+                    ellipsize = Pango.EllipsizeMode.END
+                };
 
-                var grid = new Gtk.Grid ();
-                grid.column_spacing = 6;
+                var grid = new Gtk.Grid () {
+                    column_spacing = 6
+                };
                 grid.add (icon);
                 grid.add (title);
 
@@ -837,13 +861,15 @@ namespace AppCenter.Views {
                 get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
                 get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
-                var icon = new Gtk.Image.from_icon_name ("credit-card-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
-                icon.valign = Gtk.Align.CENTER;
+                var icon = new Gtk.Image.from_icon_name ("credit-card-symbolic", Gtk.IconSize.SMALL_TOOLBAR) {
+                    valign = Gtk.Align.CENTER
+                };
 
                 var title = new Gtk.Label (_("Fund"));
 
-                var grid = new Gtk.Grid ();
-                grid.column_spacing = 6;
+                var grid = new Gtk.Grid () {
+                    column_spacing = 6
+                };
                 grid.add (icon);
                 grid.add (title);
 
@@ -889,7 +915,7 @@ namespace AppCenter.Views {
                 expand = true;
                 valign = Gtk.Align.CENTER;
 
-                unowned Gtk.StyleContext context = get_style_context ();
+                unowned var context = get_style_context ();
                 context.add_class (Gtk.STYLE_CLASS_FLAT);
                 context.add_class ("circular");
                 context.add_class ("arrow");
