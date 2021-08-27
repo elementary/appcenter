@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-23 18:56+0000\n"
+"POT-Creation-Date: 2021-08-27 23:22+0000\n"
 "PO-Revision-Date: 2021-08-23 23:46+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/extra/"
@@ -49,11 +49,15 @@ msgstr "修正点:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Install Linux kernel headers for device drivers that use DKMS"
-msgstr "DKMS を使用するデバイスドライバー用に、Linux カーネルヘッダーもインストールするように修正"
+msgstr ""
+"DKMS を使用するデバイスドライバー用に、Linux カーネルヘッダーもインストールす"
+"るように修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
 msgid "Use system Flatpak runtimes for locally installed apps"
-msgstr "ローカルにインストールされたアプリがシステム全体で利用可能な Flatpak ランタイムを使用するように修正"
+msgstr ""
+"ローカルにインストールされたアプリがシステム全体で利用可能な Flatpak ランタイ"
+"ムを使用するように修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
 #: data/io.elementary.appcenter.appdata.xml.in:35
@@ -65,7 +69,9 @@ msgstr "改善:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Mention Sideload when search returns no results"
-msgstr "検索結果に何も出てこない場合、AppCenter を経由しないインストール方法を説明するように修正"
+msgstr ""
+"検索結果に何も出てこない場合、AppCenter を経由しないインストール方法を説明す"
+"るように修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:24
 #: data/io.elementary.appcenter.appdata.xml.in:37
