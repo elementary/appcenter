@@ -55,7 +55,7 @@ appcenter_files = files(
     'Widgets/AppContainers/AbstractPackageRowGrid.vala',
     'Widgets/AppContainers/InstalledPackageRowGrid.vala',
     'Widgets/AppContainers/ListPackageRowGrid.vala',
-    'Widgets/Carousel/AuthorCarousel.vala',
+    # 'Widgets/Carousel/AuthorCarousel.vala',
     'Widgets/Carousel/Carousel.vala',
     'Widgets/Carousel/CarouselItem.vala'
 )

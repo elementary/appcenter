@@ -416,7 +416,7 @@ namespace AppCenter.Views {
                 other_apps_header.xalign = 0;
                 other_apps_header.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
 
-                var other_apps_carousel = new AppCenter.Widgets.AuthorCarousel (package);
+                var other_apps_carousel = new AuthorCarousel (package);
                 other_apps_carousel.package_activated.connect ((package) => show_other_package (package));
 
                 var other_apps_grid = new Gtk.Grid ();
@@ -921,6 +921,27 @@ namespace AppCenter.Views {
                 context.add_class ("circular");
                 context.add_class ("arrow");
                 context.add_provider (arrow_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            }
+        }
+    }
+
+    private class AuthorCarousel : AppCenter.Widgets.Carousel {
+        private const int AUTHOR_OTHER_APPS_MAX = 10;
+
+        public AppCenterCore.Package package { get; construct; }
+
+        public AuthorCarousel (AppCenterCore.Package package) {
+            Object (package: package);
+        }
+
+        construct {
+            var author_packages = AppCenterCore.Client.get_default ().get_packages_by_author (package.author, AUTHOR_OTHER_APPS_MAX);
+            foreach (var author_package in author_packages) {
+                if (author_package.component.get_id () == package.component.get_id ()) {
+                    continue;
+                }
+
+                add_package (author_package);
             }
         }
     }
