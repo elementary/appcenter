@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-23 18:56+0000\n"
-"PO-Revision-Date: 2021-08-26 16:57+0000\n"
+"PO-Revision-Date: 2021-08-27 23:22+0000\n"
 "Last-Translator: DartDeaDia <dartdeadia@protonmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ru/>\n"
@@ -739,11 +739,14 @@ msgstr "Поиск"
 
 #: src/Widgets/Banner.vala:57
 msgid "An open, pay-what-you-want app store"
-msgstr "Открытый магазин приложений, использующий модель «плати, сколько хочешь»"
+msgstr ""
+"Открытый магазин приложений, использующий модель «платите, сколько хотите»"
 
 #: src/Widgets/Banner.vala:76
 msgid "Get the apps that you need at a price you can afford."
-msgstr "Получите приложения, которые вам нужны, за ту цену, которую вы готовы предложить."
+msgstr ""
+"Получайте приложения, которые Вам нужны, за цену, которую Вы готовы "
+"предложить."
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
@@ -811,7 +814,7 @@ msgstr "Видео"
 
 #: src/Widgets/CategoryFlowBox.vala:125
 msgid "Writing & Language"
-msgstr "Писание и язык"
+msgstr "Писательство и язык"
 
 #: src/Widgets/HumbleButton.vala:85
 msgid "Requires payments, which are not enabled"
