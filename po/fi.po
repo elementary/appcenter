@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-21 22:55+0000\n"
-"PO-Revision-Date: 2021-07-19 19:50+0000\n"
+"POT-Creation-Date: 2021-08-23 18:56+0000\n"
+"PO-Revision-Date: 2021-08-23 14:40+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/appcenter/appcenter/fi/>\n"
 "Language: fi\n"
@@ -690,16 +690,16 @@ msgstr "Päivitä kaikki"
 
 #: src/Views/AppListView.vala:29
 msgid "Flathub"
-msgstr ""
+msgstr "Flathubista"
 
 #: src/Views/AppListView.vala:31
 msgid "No Apps Found"
-msgstr ""
+msgstr "Sovelluksia ei löytynyt"
 
 #: src/Views/AppListView.vala:32
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
-msgstr ""
+msgstr "Yritä hakea eri hakuehdoilla. Voit myös sivuladata Flatpak-sovelluksia esimerkiksi %s"
 
 #: src/Views/AppListView.vala:168
 msgid "Non-Curated Apps"

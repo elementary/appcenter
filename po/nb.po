@@ -4,10 +4,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-21 22:55+0000\n"
-"PO-Revision-Date: 2021-07-22 16:59+0000\n"
+"POT-Creation-Date: 2021-08-23 18:56+0000\n"
+"PO-Revision-Date: 2021-08-26 16:57+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
-"Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/appcenter/appcenter/nb/>\n"
+"Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
+"appcenter/appcenter/nb/>\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -673,10 +674,8 @@ msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr "Laster ned en liste over tilgjengelige oppdateringer til OS-et og installerte programmer"
 
 #: src/Views/AppListUpdateView.vala:41
-#, fuzzy
-#| msgid "A restart is required to complete the installation of updates"
 msgid "A restart is required to finish installing updates"
-msgstr "En omstart er påkrevd for å fullføre installasjonen av oppdateringer"
+msgstr "Omstart kreves for å fullføre installasjon av oppgraderinger"
 
 #: src/Views/AppListUpdateView.vala:49
 msgid "Restart Now"
@@ -694,16 +693,17 @@ msgstr "Oppdater alt"
 
 #: src/Views/AppListView.vala:29
 msgid "Flathub"
-msgstr ""
+msgstr "Flathub"
 
 #: src/Views/AppListView.vala:31
 msgid "No Apps Found"
-msgstr ""
+msgstr "Fant ingen programmer"
 
 #: src/Views/AppListView.vala:32
-#, c-format
+#, c-format, fuzzy
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr ""
+"Prøv å endre søket. Du kan også sideinnlaste Flatpak-programmer fra f.eks. %s"
 
 #: src/Views/AppListView.vala:168
 msgid "Non-Curated Apps"
