@@ -104,6 +104,37 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
             xalign = 0
         };
 
+        var one_dollar = new Gtk.Button.with_label (HumbleButton.get_amount_formatted (1, false)) {
+            hexpand = true
+        };
+
+        var five_dollar = new Gtk.Button.with_label (HumbleButton.get_amount_formatted (5, false)) {
+            hexpand = true
+        };
+
+        var ten_dollar = new Gtk.Button.with_label (HumbleButton.get_amount_formatted (10, false)) {
+            hexpand = true
+        };
+
+        var custom_label = new Gtk.Label ("$") {
+            margin_start = 12
+        };
+
+        var custom_amount = new Gtk.SpinButton.with_range (0, 100, 1) {
+            hexpand = true,
+            value = amount
+        };
+
+        var selection_list = new Gtk.Grid () {
+            column_spacing = 6,
+            margin_bottom = 12
+        };
+        selection_list.add (one_dollar);
+        selection_list.add (five_dollar);
+        selection_list.add (ten_dollar);
+        selection_list.add (custom_label);
+        selection_list.add (custom_amount);
+
         email_entry = new Gtk.Entry ();
         email_entry.hexpand = true;
         email_entry.input_purpose = Gtk.InputPurpose.EMAIL;
@@ -177,8 +208,10 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         card_layout.attach (overlay, 0, 0, 1, 2);
         card_layout.attach (primary_label, 1, 0);
         card_layout.attach (secondary_label, 1, 1);
-        card_layout.attach (email_entry, 1, 2);
-        card_layout.attach (card_grid, 1, 3);
+        card_layout.attach (new Granite.HeaderLabel (_("Pay What You Can")), 1, 2);
+        card_layout.attach (selection_list, 1, 3);
+        card_layout.attach (email_entry, 1, 4);
+        card_layout.attach (card_grid, 1, 5);
 
         layouts = new Gtk.Stack ();
         layouts.vhomogeneous = false;
@@ -199,6 +232,26 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         pay_button.sensitive = false;
 
         response.connect (on_response);
+
+        bind_property ("amount", custom_amount, "value", BindingFlags.BIDIRECTIONAL);
+
+        notify["amount"].connect (() => {
+            primary_label.label = _("Pay $%d for %s").printf (amount, app_name);
+            pay_button.label = _("Pay $%d.00").printf (amount);
+        });
+
+        one_dollar.clicked.connect (() => {
+            amount = 1;
+        });
+
+        five_dollar.clicked.connect (() => {
+            amount = 5;
+        });
+
+
+        ten_dollar.clicked.connect (() => {
+            amount = 10;
+        });
 
         email_entry.activate.connect (() => {
             if (pay_button.sensitive) {
