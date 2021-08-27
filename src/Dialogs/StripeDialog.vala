@@ -248,7 +248,6 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
             amount = 5;
         });
 
-
         ten_dollar.clicked.connect (() => {
             amount = 10;
         });
