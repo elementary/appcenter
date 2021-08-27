@@ -68,14 +68,6 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Button {
         }
     }
 
-    public bool suggested_action {
-        set {
-            if (value) {
-                get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
-            }
-        }
-    }
-
     construct {
         hexpand = true;
 

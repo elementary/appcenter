@@ -74,7 +74,7 @@ namespace AppCenter.Views {
             inner_image.margin_top = 12;
             inner_image.pixel_size = 128;
 
-            action_button.suggested_action = true;
+            action_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
             var package_component = package.component;
 
