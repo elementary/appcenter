@@ -176,8 +176,8 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
 
         updates_badge = new Gtk.Label ("!");
 
-        unowned Gtk.StyleContext badge_context = updates_badge.get_style_context ();
-        badge_context.add_class ("badge");
+        unowned var badge_context = updates_badge.get_style_context ();
+        badge_context.add_class (Granite.STYLE_CLASS_BADGE);
         badge_context.add_provider (badge_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         var eventbox_badge = new Gtk.EventBox ();
