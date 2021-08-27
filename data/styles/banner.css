@@ -75,7 +75,3 @@
 .banner button:disabled {
     opacity: 0.33;
 }
-
-.banner .linked button:first-child {
-    border-right: 1px solid alpha(@banner_bg_color, 0.5);
-}
