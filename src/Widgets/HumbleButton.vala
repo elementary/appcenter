@@ -17,11 +17,9 @@
 * Boston, MA 02110-1301 USA
 */
 
-public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
+public class AppCenter.Widgets.HumbleButton : Gtk.Button {
     public signal void download_requested ();
     public signal void payment_requested (int amount);
-
-    private Gtk.Button amount_button;
 
     private int _amount = 1;
     public int amount {
@@ -30,12 +28,11 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
         }
         set {
             _amount = value;
-            amount_button.label = get_amount_formatted (value, true);
 
-            if (_amount != 0) {
-                amount_button.label = get_amount_formatted (_amount, true);
+            if (value != 0) {
+                label = get_amount_formatted (value, true);
             } else {
-                amount_button.label = free_string;
+                label = free_string;
             }
         }
     }
@@ -74,14 +71,13 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
     public bool suggested_action {
         set {
             if (value) {
-                amount_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+                get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
             }
         }
     }
 
     construct {
-        amount_button = new Gtk.Button ();
-        amount_button.hexpand = true;
+        hexpand = true;
 
 #if PAYMENTS
         free_string = _("Free");
@@ -89,15 +85,13 @@ public class AppCenter.Widgets.HumbleButton : Gtk.Grid {
         free_string = _("Install");
 #endif
 
-        amount_button.clicked.connect (() => {
-            if (this.amount != 0) {
-                payment_requested (this.amount);
+        clicked.connect (() => {
+            if (amount != 0) {
+                payment_requested (amount);
             } else {
                 download_requested ();
             }
         });
-
-        add (amount_button);
     }
 
     public static string get_amount_formatted (int _amount, bool with_short_part = true) {
