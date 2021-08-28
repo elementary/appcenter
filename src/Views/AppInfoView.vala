@@ -504,7 +504,7 @@ namespace AppCenter.Views {
             }
 #endif
             view_entered ();
-            set_up_package (128);
+            set_up_package ();
 
             origin_combo.changed.connect (() => {
                 Gtk.TreeIter iter;
