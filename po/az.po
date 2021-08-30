@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-27 23:22+0000\n"
+"POT-Creation-Date: 2021-08-30 18:38+0000\n"
 "PO-Revision-Date: 2018-06-17 00:06+0000\n"
 "Last-Translator: Musa Abbasov <abbasov13@outlook.com>\n"
 "Language-Team: Azerbaijani <https://weblate.elementary.io/projects/appcenter/appcenter/az/>\n"
@@ -101,7 +101,7 @@ msgstr "Paketlər silinir"
 msgid "Downloading"
 msgstr "Yüklənilir"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:965
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:967
 msgid "Installing"
 msgstr "Qurulur"
 
@@ -146,9 +146,9 @@ msgid "Finished"
 msgstr "Bitdi"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:974 src/Core/FlatpakBackend.vala:1002
-#: src/Core/FlatpakBackend.vala:1110 src/Core/FlatpakBackend.vala:1138
-#: src/Core/FlatpakBackend.vala:1284 src/Core/FlatpakBackend.vala:1310
+#: src/Core/FlatpakBackend.vala:976 src/Core/FlatpakBackend.vala:1004
+#: src/Core/FlatpakBackend.vala:1112 src/Core/FlatpakBackend.vala:1140
+#: src/Core/FlatpakBackend.vala:1286 src/Core/FlatpakBackend.vala:1312
 msgid "Cancelling"
 msgstr "Ləğv edilir"
 
@@ -238,13 +238,13 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "Sisteminiz üçün %u yeniləmə mövcuddur"
 msgstr[1] "Sisteminiz üçün %u yeniləmələr mövcuddur"
 
-#: src/Core/FlatpakBackend.vala:1101
+#: src/Core/FlatpakBackend.vala:1103
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "Sil"
 
-#: src/Core/FlatpakBackend.vala:1275
+#: src/Core/FlatpakBackend.vala:1277
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -721,15 +721,15 @@ msgstr ""
 msgid "Non-Curated Apps"
 msgstr ""
 
-#: src/Views/Homepage.vala:68
+#: src/Views/Homepage.vala:67
 msgid "Recently Updated"
 msgstr ""
 
-#: src/Views/Homepage.vala:84
+#: src/Views/Homepage.vala:83
 msgid "Trending"
 msgstr ""
 
-#: src/Views/Homepage.vala:100
+#: src/Views/Homepage.vala:99
 msgid "Categories"
 msgstr "Kateqoriyalar"
 

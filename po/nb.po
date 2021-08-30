@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-27 23:22+0000\n"
+"POT-Creation-Date: 2021-08-30 18:38+0000\n"
 "PO-Revision-Date: 2021-08-26 16:57+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/appcenter/appcenter/nb/>\n"
@@ -100,7 +100,7 @@ msgstr "Fjerner pakker"
 msgid "Downloading"
 msgstr "Laster ned"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:965
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:967
 msgid "Installing"
 msgstr "Installerer"
 
@@ -145,9 +145,9 @@ msgid "Finished"
 msgstr "Ferdig"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:974 src/Core/FlatpakBackend.vala:1002
-#: src/Core/FlatpakBackend.vala:1110 src/Core/FlatpakBackend.vala:1138
-#: src/Core/FlatpakBackend.vala:1284 src/Core/FlatpakBackend.vala:1310
+#: src/Core/FlatpakBackend.vala:976 src/Core/FlatpakBackend.vala:1004
+#: src/Core/FlatpakBackend.vala:1112 src/Core/FlatpakBackend.vala:1140
+#: src/Core/FlatpakBackend.vala:1286 src/Core/FlatpakBackend.vala:1312
 msgid "Cancelling"
 msgstr "Avbryter"
 
@@ -236,11 +236,11 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "%u oppdatering er tilgjengelig for ditt system"
 msgstr[1] "%u oppdateringer er tilgjengelige for ditt system"
 
-#: src/Core/FlatpakBackend.vala:1101
+#: src/Core/FlatpakBackend.vala:1103
 msgid "Uninstalling"
 msgstr "Avinstaller"
 
-#: src/Core/FlatpakBackend.vala:1275
+#: src/Core/FlatpakBackend.vala:1277
 msgid "Updating"
 msgstr "Oppdaterer"
 
@@ -707,15 +707,15 @@ msgstr "Prøv å endre søket. Du kan også sideinnlaste Flatpak-programmer fra 
 msgid "Non-Curated Apps"
 msgstr "Ikke-bekreftede programmer"
 
-#: src/Views/Homepage.vala:68
+#: src/Views/Homepage.vala:67
 msgid "Recently Updated"
 msgstr "Nylig oppdatert"
 
-#: src/Views/Homepage.vala:84
+#: src/Views/Homepage.vala:83
 msgid "Trending"
 msgstr "Populært nå"
 
-#: src/Views/Homepage.vala:100
+#: src/Views/Homepage.vala:99
 msgid "Categories"
 msgstr "Kategorier"
 
