@@ -8,17 +8,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-27 23:22+0000\n"
+"POT-Creation-Date: 2021-08-30 18:38+0000\n"
 "PO-Revision-Date: 2021-08-28 11:11+0000\n"
 "Last-Translator: aalhaif <aalhaif@hotmail.com>\n"
-"Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/ar/>\n"
+"Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/appcenter/ar/>\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:24+0000\n"
 
@@ -106,7 +104,7 @@ msgstr "جاري حذف الحزم"
 msgid "Downloading"
 msgstr "تحميل"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:965
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:967
 msgid "Installing"
 msgstr "جاري التثبيت"
 
@@ -151,9 +149,9 @@ msgid "Finished"
 msgstr "انتهى"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:974 src/Core/FlatpakBackend.vala:1002
-#: src/Core/FlatpakBackend.vala:1110 src/Core/FlatpakBackend.vala:1138
-#: src/Core/FlatpakBackend.vala:1284 src/Core/FlatpakBackend.vala:1310
+#: src/Core/FlatpakBackend.vala:976 src/Core/FlatpakBackend.vala:1004
+#: src/Core/FlatpakBackend.vala:1112 src/Core/FlatpakBackend.vala:1140
+#: src/Core/FlatpakBackend.vala:1286 src/Core/FlatpakBackend.vala:1312
 msgid "Cancelling"
 msgstr "الغاء"
 
@@ -250,11 +248,11 @@ msgstr[3] "يوجد %u تحديثات لنظامك"
 msgstr[4] "يوجد %u تحديث لنظامك"
 msgstr[5] "يوجد %u تحديث لنظامك"
 
-#: src/Core/FlatpakBackend.vala:1101
+#: src/Core/FlatpakBackend.vala:1103
 msgid "Uninstalling"
 msgstr "جارٍ إلغاء التثبيت"
 
-#: src/Core/FlatpakBackend.vala:1275
+#: src/Core/FlatpakBackend.vala:1277
 msgid "Updating"
 msgstr "يتم التحديث"
 
@@ -527,9 +525,7 @@ msgstr "رقم ال PIN غير صحيح. من فضلك حاول بإستخدام
 
 #: src/Dialogs/StripeDialog.vala:579
 msgid "There has been too many PIN attempts. Please try again with a different card."
-msgstr ""
-"تم محاولة إدخال رقم PIN عدة مرات. من فضلك حاول مرة أخرى باستخدام بطاقة "
-"مختلفة."
+msgstr "تم محاولة إدخال رقم PIN عدة مرات. من فضلك حاول مرة أخرى باستخدام بطاقة مختلفة."
 
 #: src/Dialogs/StripeDialog.vala:599
 msgid "Unable to complete the transaction. Please contact your bank for further information."
@@ -718,23 +714,21 @@ msgstr "لم يتم العثور على تطبيقات"
 #: src/Views/AppListView.vala:32
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
-msgstr ""
-"حاول تغيير كلمات البحث. يمكنك أيضًا تنزيل تطبيقات Flatpak بشكل جانبي على "
-"سبيل المثال من %s"
+msgstr "حاول تغيير كلمات البحث. يمكنك أيضًا تنزيل تطبيقات Flatpak بشكل جانبي على سبيل المثال من %s"
 
 #: src/Views/AppListView.vala:168
 msgid "Non-Curated Apps"
 msgstr "التطبيقات الغير موصى بها"
 
-#: src/Views/Homepage.vala:68
+#: src/Views/Homepage.vala:67
 msgid "Recently Updated"
 msgstr "المحدثة مؤّخراً"
 
-#: src/Views/Homepage.vala:84
+#: src/Views/Homepage.vala:83
 msgid "Trending"
 msgstr "الشائع"
 
-#: src/Views/Homepage.vala:100
+#: src/Views/Homepage.vala:99
 msgid "Categories"
 msgstr "التصنيفات"
 
