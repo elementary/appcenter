@@ -11,6 +11,15 @@
     <p>The open source, pay-what-you-want app store from elementary. Reviewed and curated by elementary to ensure a native, privacy-respecting, and secure experience. Browse by categories or search and discover new apps. AppCenter is also used for updating your system to the latest and greatest version for new features and fixes.</p>
   </description>
   <releases>
+    <release version="3.7.1" date="2021-08-30" urgency="medium">
+        <p>Improvements:</p>
+        <ul>
+          <li>Show apps from newly sideloaded remotes without requiring a restart</li>
+          <li>Less abrupt transition when changing app sources</li>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
     <release version="3.7.0" date="2021-08-24" urgency="medium">
       <description>
         <p>Fixes:</p>
