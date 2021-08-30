@@ -1,3 +1,18 @@
+appcenter (3.7.1) bionic; urgency=medium
+
+  * Release 3.7.1 (#1639)
+  * FlatpakBackend: drop caches on refresh (#1638)
+  * Homepage: clean up code style (#1634)
+  * Update translation files
+  * Update translation template
+  * Appinfoview otherappsbar (#1633)
+  * AppInfoView: clean up code style (#1632)
+  * MainWindow: use system badge styles (#1630)
+  * Banner: rewrite BannerWidget with modern code style (#1618)
+  * AbstractView: fix transition_type for show_other_package (#1631)
+
+ -- elementary Builds Team <builds@elementary.io>  Mon, 30 Aug 2021 18:38:41 +0000
+
 appcenter (3.7.0) bionic; urgency=medium
 
   * Release 3.7.0 (#1626)
