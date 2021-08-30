@@ -571,6 +571,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
         if (user_installation != null) {
             try {
+                user_installation.drop_caches ();
                 remotes = user_installation.list_remotes ();
                 preprocess_metadata (false, remotes, cancellable);
             } catch (Error e) {
@@ -580,6 +581,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
         if (system_installation != null) {
             try {
+                system_installation.drop_caches ();
                 remotes = system_installation.list_remotes ();
                 preprocess_metadata (true, remotes, cancellable);
             } catch (Error e) {
