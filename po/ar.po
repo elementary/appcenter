@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-23 18:56+0000\n"
-"PO-Revision-Date: 2021-08-27 01:28+0000\n"
+"POT-Creation-Date: 2021-08-27 23:22+0000\n"
+"PO-Revision-Date: 2021-08-28 11:11+0000\n"
 "Last-Translator: aalhaif <aalhaif@hotmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/ar/>\n"
@@ -420,7 +420,7 @@ msgstr "الدفع"
 #: src/Dialogs/StripeDialog.vala:92
 #, c-format
 msgid "Pay $%d for %s"
-msgstr "إدفع $%d لـ %s"
+msgstr "إدفع $%d ل %s"
 
 #: src/Dialogs/StripeDialog.vala:97
 msgid "This is a one time payment. Your email address is only used to send you a receipt."
@@ -487,7 +487,7 @@ msgstr "سنة الإنتهاء غير صحيحة. من فضلك حاول مرة
 
 #: src/Dialogs/StripeDialog.vala:516 src/Dialogs/StripeDialog.vala:569
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
-msgstr "رقم الـ CVC غير صحيح. من فضلك حاول مرة أخرى بإستخدام الرقم الصحيح."
+msgstr "رقم ال CVC غير صحيح. من فضلك حاول مرة أخرى بإستخدام الرقم الصحيح."
 
 #: src/Dialogs/StripeDialog.vala:518 src/Dialogs/StripeDialog.vala:560
 msgid "The card has expired. Please try again with a different card."
@@ -523,11 +523,13 @@ msgstr "المبلغ غير صحيح. من فضلك حاول بإستخدام م
 
 #: src/Dialogs/StripeDialog.vala:577
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
-msgstr "رقم الـ PIN غير صحيح. من فضلك حاول بإستخدام رقم صحيح."
+msgstr "رقم ال PIN غير صحيح. من فضلك حاول بإستخدام رقم صحيح."
 
 #: src/Dialogs/StripeDialog.vala:579
 msgid "There has been too many PIN attempts. Please try again with a different card."
-msgstr "تم محاولة وضع الـ PIN اكثر من مرة. من فضلك حاول بإستخدام بطاقة أخرى."
+msgstr ""
+"تم محاولة إدخال رقم PIN عدة مرات. من فضلك حاول مرة أخرى باستخدام بطاقة "
+"مختلفة."
 
 #: src/Dialogs/StripeDialog.vala:599
 msgid "Unable to complete the transaction. Please contact your bank for further information."
@@ -598,87 +600,87 @@ msgstr "فشل في تحديث للتطبيق"
 msgid "Failed to update “%s”"
 msgstr "فشل في التحديث \"%s\""
 
-#: src/Views/AppInfoView.vala:188
+#: src/Views/AppInfoView.vala:190
 msgid "Screenshot Not Available"
 msgstr "لقطات الشاشة غير متوفرة"
 
-#: src/Views/AppInfoView.vala:257
+#: src/Views/AppInfoView.vala:262
 msgid "Homepage"
 msgstr "الرئيسية"
 
-#: src/Views/AppInfoView.vala:263
+#: src/Views/AppInfoView.vala:268
 msgid "Translate"
 msgstr "ترجم"
 
-#: src/Views/AppInfoView.vala:269
+#: src/Views/AppInfoView.vala:274
 msgid "Send Feedback"
 msgstr "أرسل ملاحظاتك"
 
-#: src/Views/AppInfoView.vala:275
+#: src/Views/AppInfoView.vala:280
 msgid "Help"
 msgstr "مساعدة"
 
-#: src/Views/AppInfoView.vala:286
+#: src/Views/AppInfoView.vala:291
 msgid "What's New:"
 msgstr "ما الجديد:"
 
-#: src/Views/AppInfoView.vala:321
+#: src/Views/AppInfoView.vala:331
 msgid "Extensions:"
 msgstr "الإضافات:"
 
-#: src/Views/AppInfoView.vala:415
-#, c-format
-msgid "Other Apps by %s"
-msgstr "تطبيقات أخرى من %s"
-
-#: src/Views/AppInfoView.vala:453
+#: src/Views/AppInfoView.vala:434
 msgid "Link copied to clipboard"
 msgstr "تم نسخ الرابط للحافظة"
 
-#: src/Views/AppInfoView.vala:464
+#: src/Views/AppInfoView.vala:445
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "أنظر إلى %s في مركز التطبيقات:"
 
-#: src/Views/AppInfoView.vala:471
+#: src/Views/AppInfoView.vala:453
 msgid "Share"
 msgstr "شارك"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:774
+#: src/Views/AppInfoView.vala:768
 msgid "Public Domain"
 msgstr "ملكية عامة"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:777
+#: src/Views/AppInfoView.vala:771
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://ar.wikipedia.org/wiki/%D9%85%D9%84%D9%83%D9%8A%D8%A9_%D8%B9%D8%A7%D9%85%D8%A9"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:782
+#: src/Views/AppInfoView.vala:776
 msgid "Free Software"
 msgstr "برمجيات حرة"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:785
+#: src/Views/AppInfoView.vala:779
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw.ar.html"
 
-#: src/Views/AppInfoView.vala:789
+#: src/Views/AppInfoView.vala:783
 msgid "Proprietary"
 msgstr "محتكر"
 
-#: src/Views/AppInfoView.vala:792
+#: src/Views/AppInfoView.vala:786
 msgid "Unknown License"
 msgstr "ترخيص غير معروف"
 
-#: src/Views/AppInfoView.vala:870
+#: src/Views/AppInfoView.vala:868
 msgid "Fund"
-msgstr "دعم"
+msgstr "تمويل"
 
-#: src/Views/AppInfoView.vala:892
+#: src/Views/AppInfoView.vala:891
 msgid "Fund the development of this app"
 msgstr "إدعم تطوير هذا التطبيق"
+
+#: src/Views/AppInfoView.vala:952
+#, c-format
+msgid "Other Apps by %s"
+msgstr "تطبيقات أخرى من %s"
 
 #: src/Views/AppListUpdateView.vala:32
 msgid "Checking for Updates"
@@ -698,8 +700,7 @@ msgstr "اعادة تشغيل الآن"
 
 #: src/Views/AppListUpdateView.vala:58
 msgid "Requesting a restart failed. Restart manually to finish installing updates"
-msgstr ""
-"فشل إعادة التشغيل. الرجاء إعادة التشغيل بشكل يدوي لإنهاء تثبيت التحديثات"
+msgstr "فشل إعادة التشغيل. الرجاء إعادة التشغيل بشكل يدوي لإنهاء تثبيت التحديثات"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
 #: src/Views/AppListUpdateView.vala:186
@@ -707,7 +708,6 @@ msgid "Update All"
 msgstr "تحديث الكل"
 
 #: src/Views/AppListView.vala:29
-#, fuzzy
 msgid "Flathub"
 msgstr "Flathub"
 
@@ -719,14 +719,16 @@ msgstr "لم يتم العثور على تطبيقات"
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr ""
+"حاول تغيير كلمات البحث. يمكنك أيضًا تنزيل تطبيقات Flatpak بشكل جانبي على "
+"سبيل المثال من %s"
 
 #: src/Views/AppListView.vala:168
 msgid "Non-Curated Apps"
-msgstr "تطبيقات غير مختارة"
+msgstr "التطبيقات الغير موصى بها"
 
 #: src/Views/Homepage.vala:68
 msgid "Recently Updated"
-msgstr "محديثة جديدًا"
+msgstr "المحدثة مؤّخراً"
 
 #: src/Views/Homepage.vala:84
 msgid "Trending"
@@ -747,11 +749,11 @@ msgctxt "view"
 msgid "Search"
 msgstr "نتائج البحث"
 
-#: src/Widgets/Banner.vala:57
+#: src/Widgets/Banner.vala:235
 msgid "An open, pay-what-you-want app store"
 msgstr "متجر مفتوح المصدر ادفع ماشئت للمطورين"
 
-#: src/Widgets/Banner.vala:76
+#: src/Widgets/Banner.vala:243
 msgid "Get the apps that you need at a price you can afford."
 msgstr "احصل على التطبيقات التي تريديها بالسعر الذي تريده."
 

@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-23 18:56+0000\n"
-"PO-Revision-Date: 2021-08-01 16:45+0000\n"
-"Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
+"POT-Creation-Date: 2021-08-27 23:22+0000\n"
+"PO-Revision-Date: 2021-08-28 11:11+0000\n"
+"Last-Translator: aalhaif <aalhaif@hotmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/extra/"
 "ar/>\n"
 "Language: ar\n"
@@ -26,11 +26,6 @@ msgid "Browse and manage apps"
 msgstr "ادارة التطبيقات"
 
 #: data/io.elementary.appcenter.appdata.xml.in:11
-#, fuzzy
-#| msgid ""
-#| "An app store for indie and open source developers. Browse by categories "
-#| "or search and discover new apps. AppCenter is also used for updating your "
-#| "system to the latest and greatest version for new features and fixes."
 msgid ""
 "The open source, pay-what-you-want app store from elementary. Reviewed and "
 "curated by elementary to ensure a native, privacy-respecting, and secure "
@@ -38,36 +33,35 @@ msgid ""
 "is also used for updating your system to the latest and greatest version for "
 "new features and fixes."
 msgstr ""
-"تطبيق مفتوح المصدر للمطورين المستقلين..تصفح أو ابحث و أكتشف التطبيقات "
-"الجديدة..هذا التطبيق يستخدم لتحديث النظام والحصول على المميزات الجديدة."
+"متجر التطبيقات مفتوحة المصدر من إليمنتري والذي عن طريقه يمكن دفع ما تريد "
+"لدعم المطورين. تم مراجعة التطبيقات وانتقائها بعناية لضمان تجربة حرة، آمنة "
+"ومحترمة للخصوصية. تصفح عن طريق التصنيفات أو ابحث واستكشف تطبيقات جديدة. "
+"AppCenter يُستخدم أيضًا لتحديث نظامك إلى آخر التحديثات وللحصول على المميزات "
+"جديدة والإصلاحات."
 
 #: data/io.elementary.appcenter.appdata.xml.in:16
 #: data/io.elementary.appcenter.appdata.xml.in:30
 #: data/io.elementary.appcenter.appdata.xml.in:43
 #: data/io.elementary.appcenter.appdata.xml.in:55
 #: data/io.elementary.appcenter.appdata.xml.in:83
-#, fuzzy
-#| msgid "Fixes"
 msgid "Fixes:"
-msgstr "يصلح"
+msgstr "الإصلاحات:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Install Linux kernel headers for device drivers that use DKMS"
-msgstr ""
+msgstr "نزل \"Linux Kernel Headers\" لتعريفات الجهاز التي تستخدم DKMS"
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
 msgid "Use system Flatpak runtimes for locally installed apps"
-msgstr ""
+msgstr "استخدم system Flatpak runtimes للتطبيقات المثبتة محليًا"
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
 #: data/io.elementary.appcenter.appdata.xml.in:35
 #: data/io.elementary.appcenter.appdata.xml.in:47
 #: data/io.elementary.appcenter.appdata.xml.in:62
 #: data/io.elementary.appcenter.appdata.xml.in:75
-#, fuzzy
-#| msgid "Keyboard improvements"
 msgid "Improvements:"
-msgstr "تحسينات في لوحة المفاتيح"
+msgstr "التحسينات:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Mention Sideload when search returns no results"
@@ -123,10 +117,8 @@ msgid "Fix missing privacy policy in payments dialog"
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:70
-#, fuzzy
-#| msgid "New features"
 msgid "New features:"
-msgstr "مميزات جديدة"
+msgstr "مميزات جديدة:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:72
 msgid "Show in-app notification when an app is installed"
