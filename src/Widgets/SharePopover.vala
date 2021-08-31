@@ -60,7 +60,7 @@ public class SharePopover : Gtk.Popover {
         telegram_button.tooltip_text = _("Telegram");
         telegram_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
-        var copy_link_button = new Gtk.Button.from_icon_name ("edit-copy-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+        var copy_link_button = new Gtk.Button.from_icon_name ("edit-copy", Gtk.IconSize.LARGE_TOOLBAR);
         copy_link_button.tooltip_text = _("Copy link");
         copy_link_button.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
 
