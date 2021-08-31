@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-30 18:38+0000\n"
-"PO-Revision-Date: 2021-08-23 23:46+0000\n"
+"PO-Revision-Date: 2021-08-31 06:19+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/extra/"
 "ja/>\n"
@@ -50,7 +50,7 @@ msgstr "改善:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Show apps from newly sideloaded remotes without requiring a restart"
-msgstr ""
+msgstr "デバイスを再起動しなくても、新しく追加された Flatpak リモートが提供するアプリが表示されるように修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
 msgid "Less abrupt transition when changing app sources"
