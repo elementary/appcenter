@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-27 23:22+0000\n"
+"POT-Creation-Date: 2021-08-30 18:38+0000\n"
 "PO-Revision-Date: 2021-08-27 23:22+0000\n"
 "Last-Translator: DartDeaDia <dartdeadia@protonmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/appcenter/ru/>\n"
@@ -105,7 +105,7 @@ msgstr "Удаление пакетов"
 msgid "Downloading"
 msgstr "Загрузка"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:965
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:967
 msgid "Installing"
 msgstr "Установка"
 
@@ -150,9 +150,9 @@ msgid "Finished"
 msgstr "Завершено"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:974 src/Core/FlatpakBackend.vala:1002
-#: src/Core/FlatpakBackend.vala:1110 src/Core/FlatpakBackend.vala:1138
-#: src/Core/FlatpakBackend.vala:1284 src/Core/FlatpakBackend.vala:1310
+#: src/Core/FlatpakBackend.vala:976 src/Core/FlatpakBackend.vala:1004
+#: src/Core/FlatpakBackend.vala:1112 src/Core/FlatpakBackend.vala:1140
+#: src/Core/FlatpakBackend.vala:1286 src/Core/FlatpakBackend.vala:1312
 msgid "Cancelling"
 msgstr "Отмена"
 
@@ -243,11 +243,11 @@ msgstr[0] "%u доступно обновление для вашей систе
 msgstr[1] "%u доступны обновления для вашей системы"
 msgstr[2] "%u доступно обновлений для вашей системы"
 
-#: src/Core/FlatpakBackend.vala:1101
+#: src/Core/FlatpakBackend.vala:1103
 msgid "Uninstalling"
 msgstr "Удаление"
 
-#: src/Core/FlatpakBackend.vala:1275
+#: src/Core/FlatpakBackend.vala:1277
 msgid "Updating"
 msgstr "Обновление"
 
@@ -712,15 +712,15 @@ msgstr "Попробуйте перефразировать запрос. Вы �
 msgid "Non-Curated Apps"
 msgstr "Не курируемые приложения"
 
-#: src/Views/Homepage.vala:68
+#: src/Views/Homepage.vala:67
 msgid "Recently Updated"
 msgstr "Недавно обновлённые"
 
-#: src/Views/Homepage.vala:84
+#: src/Views/Homepage.vala:83
 msgid "Trending"
 msgstr "В тренде"
 
-#: src/Views/Homepage.vala:100
+#: src/Views/Homepage.vala:99
 msgid "Categories"
 msgstr "Категории"
 

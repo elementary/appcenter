@@ -979,22 +979,29 @@ namespace AppCenter.Views {
 
             var header = new Granite.HeaderLabel (_("Other Apps by %s").printf (package.author_title));
 
-            var carousel = new AppCenter.Widgets.Carousel ();
+            var flowbox = new Gtk.FlowBox () {
+                activate_on_single_click = true,
+                column_spacing = 12,
+                row_spacing = 12,
+                homogeneous = true,
+                min_children_per_line = 2
+            };
+
             foreach (var author_package in author_packages) {
                 if (author_package.component.get_id () == package.component.get_id ()) {
                     continue;
                 }
 
-                carousel.add_package (author_package);
+                var other_app = new AppCenter.Widgets.ListPackageRowGrid (author_package);
+                flowbox.add (other_app);
             }
 
             var grid = new Gtk.Grid () {
                 orientation = Gtk.Orientation.VERTICAL,
-                row_spacing = 12,
-                width_request = max_width
+                row_spacing = 12
             };
             grid.add (header);
-            grid.add (carousel);
+            grid.add (flowbox);
 
             var clamp = new Hdy.Clamp () {
                 margin = 24,
@@ -1005,7 +1012,11 @@ namespace AppCenter.Views {
             add (clamp);
             get_style_context ().add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
 
-            carousel.package_activated.connect ((package) => show_other_package (package));
+            flowbox.child_activated.connect ((child) => {
+                var package_row_grid = (AppCenter.Widgets.ListPackageRowGrid) child.get_child ();
+
+                show_other_package (package_row_grid.package);
+            });
         }
     }
 }

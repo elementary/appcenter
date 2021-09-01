@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-27 23:22+0000\n"
+"POT-Creation-Date: 2021-08-30 18:38+0000\n"
 "PO-Revision-Date: 2021-08-23 00:11+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/appcenter/he/>\n"
@@ -99,7 +99,7 @@ msgstr "חבילות בהסרה"
 msgid "Downloading"
 msgstr "מתבצעת הורדה"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:965
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:967
 msgid "Installing"
 msgstr "בהליך התקנה"
 
@@ -144,9 +144,9 @@ msgid "Finished"
 msgstr "הסתיים"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:974 src/Core/FlatpakBackend.vala:1002
-#: src/Core/FlatpakBackend.vala:1110 src/Core/FlatpakBackend.vala:1138
-#: src/Core/FlatpakBackend.vala:1284 src/Core/FlatpakBackend.vala:1310
+#: src/Core/FlatpakBackend.vala:976 src/Core/FlatpakBackend.vala:1004
+#: src/Core/FlatpakBackend.vala:1112 src/Core/FlatpakBackend.vala:1140
+#: src/Core/FlatpakBackend.vala:1286 src/Core/FlatpakBackend.vala:1312
 msgid "Cancelling"
 msgstr "מתבצע ביטול"
 
@@ -235,11 +235,11 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "עדכון אחד זמין עבור המערכת"
 msgstr[1] "%u עדכונים זמינים עבור המערכת"
 
-#: src/Core/FlatpakBackend.vala:1101
+#: src/Core/FlatpakBackend.vala:1103
 msgid "Uninstalling"
 msgstr "מתבצעת הסרה"
 
-#: src/Core/FlatpakBackend.vala:1275
+#: src/Core/FlatpakBackend.vala:1277
 msgid "Updating"
 msgstr "מתבצע עדכון"
 
@@ -703,15 +703,15 @@ msgstr "נא לנסות לשנות את תנאי החיפוש. ניתן גם ל�
 msgid "Non-Curated Apps"
 msgstr "יישומים שלא נאספו"
 
-#: src/Views/Homepage.vala:68
+#: src/Views/Homepage.vala:67
 msgid "Recently Updated"
 msgstr "עודכנו לאחרונה"
 
-#: src/Views/Homepage.vala:84
+#: src/Views/Homepage.vala:83
 msgid "Trending"
 msgstr "מובילים לאחרונה"
 
-#: src/Views/Homepage.vala:100
+#: src/Views/Homepage.vala:99
 msgid "Categories"
 msgstr "קטגוריות"
 

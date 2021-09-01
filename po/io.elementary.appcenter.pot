@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.appcenter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-27 23:22+0000\n"
+"POT-Creation-Date: 2021-09-01 22:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,9 +50,9 @@ msgstr ""
 msgid "Failed to launch “%s“"
 msgstr ""
 
-#: src/MainWindow.vala:171 src/Views/Homepage.vala:299
-#: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
-#: src/Views/Homepage.vala:325 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:171 src/Views/Homepage.vala:243
+#: src/Views/Homepage.vala:253 src/Views/Homepage.vala:258
+#: src/Views/Homepage.vala:269 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr ""
 
@@ -102,7 +102,7 @@ msgstr ""
 msgid "Downloading"
 msgstr ""
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:965
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:967
 msgid "Installing"
 msgstr ""
 
@@ -147,9 +147,9 @@ msgid "Finished"
 msgstr ""
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:974 src/Core/FlatpakBackend.vala:1002
-#: src/Core/FlatpakBackend.vala:1110 src/Core/FlatpakBackend.vala:1138
-#: src/Core/FlatpakBackend.vala:1284 src/Core/FlatpakBackend.vala:1310
+#: src/Core/FlatpakBackend.vala:976 src/Core/FlatpakBackend.vala:1004
+#: src/Core/FlatpakBackend.vala:1112 src/Core/FlatpakBackend.vala:1140
+#: src/Core/FlatpakBackend.vala:1286 src/Core/FlatpakBackend.vala:1312
 msgid "Cancelling"
 msgstr ""
 
@@ -238,11 +238,11 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/Core/FlatpakBackend.vala:1101
+#: src/Core/FlatpakBackend.vala:1103
 msgid "Uninstalling"
 msgstr ""
 
-#: src/Core/FlatpakBackend.vala:1275
+#: src/Core/FlatpakBackend.vala:1277
 msgid "Updating"
 msgstr ""
 
@@ -737,19 +737,15 @@ msgstr ""
 msgid "Non-Curated Apps"
 msgstr ""
 
-#: src/Views/Homepage.vala:68
+#: src/Views/Homepage.vala:64
 msgid "Recently Updated"
 msgstr ""
 
-#: src/Views/Homepage.vala:84
-msgid "Trending"
-msgstr ""
-
-#: src/Views/Homepage.vala:100
+#: src/Views/Homepage.vala:80
 msgid "Categories"
 msgstr ""
 
-#: src/Views/Homepage.vala:314 src/Views/Homepage.vala:325
+#: src/Views/Homepage.vala:258 src/Views/Homepage.vala:269
 #, c-format
 msgid "Search %s"
 msgstr ""
