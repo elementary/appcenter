@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
-/*-
- * Copyright (c) 2016–2018 elementary, Inc. (https://elementary.io)
+/*
+ * Copyright 2016–2021 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,8 +26,8 @@ const string BANNER_STYLE_CSS = """
     }
 """;
 
-const string DEFAULT_BANNER_COLOR_PRIMARY = "#68758e";
-const string DEFAULT_BANNER_COLOR_PRIMARY_TEXT = "white";
+const string DEFAULT_BANNER_COLOR_PRIMARY = "mix(@accent_color, @bg_color, 0.8)";
+const string DEFAULT_BANNER_COLOR_PRIMARY_TEXT = "mix(@accent_color, @text_color, 0.85)";
 const int MILLISECONDS_BETWEEN_BANNER_ITEMS = 5000;
 
 namespace AppCenter.Widgets {
@@ -94,7 +93,7 @@ namespace AppCenter.Widgets {
             add (stack);
 
             background_color = "#7E45BE";
-            foreground_color = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
+            foreground_color = "white";
 
             brand_widget = new BannerWidget (null);
             stack.add_named (brand_widget, "brand");
@@ -232,7 +231,7 @@ namespace AppCenter.Widgets {
                 };
                 name_label.get_style_context ().add_class (Granite.STYLE_CLASS_H1_LABEL);
 
-                var summary_label = new Gtk.Label (_("An open, pay-what-you-want app store")) {
+                var summary_label = new Gtk.Label (_("The open source, pay-what-you-can app store")) {
                     max_width_chars = 50,
                     use_markup = true,
                     wrap = true,
@@ -240,7 +239,7 @@ namespace AppCenter.Widgets {
                 };
                 summary_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
-                var description_label = new Gtk.Label (_("Get the apps that you need at a price you can afford.")) {
+                var description_label = new Gtk.Label (_("Reviewed and curated for a native, privacy-respecting, and secure experience.")) {
                     ellipsize = Pango.EllipsizeMode.END,
                     lines = 2,
                     margin_top = 12,
@@ -271,10 +270,12 @@ namespace AppCenter.Widgets {
                 column_spacing = 24;
                 halign = Gtk.Align.CENTER;
                 valign = Gtk.Align.CENTER;
+
                 attach (icon, 0, 0, 1, 3);
                 attach (name_label, 1, 0);
                 attach (summary_label, 1, 1);
                 attach (description_label, 1, 2);
+
                 show_all ();
             }
         }

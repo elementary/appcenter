@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-30 18:38+0000\n"
+"POT-Creation-Date: 2021-09-01 22:59+0000\n"
 "PO-Revision-Date: 2021-08-27 23:22+0000\n"
 "Last-Translator: DartDeaDia <dartdeadia@protonmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/appcenter/ru/>\n"
@@ -53,9 +53,9 @@ msgstr "«%s» установлено"
 msgid "Failed to launch “%s“"
 msgstr "Не удалось запустить «%s»"
 
-#: src/MainWindow.vala:171 src/Views/Homepage.vala:299
-#: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
-#: src/Views/Homepage.vala:325 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:171 src/Views/Homepage.vala:243
+#: src/Views/Homepage.vala:253 src/Views/Homepage.vala:258
+#: src/Views/Homepage.vala:269 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "Главная"
 
@@ -712,19 +712,15 @@ msgstr "Попробуйте перефразировать запрос. Вы �
 msgid "Non-Curated Apps"
 msgstr "Не курируемые приложения"
 
-#: src/Views/Homepage.vala:67
+#: src/Views/Homepage.vala:64
 msgid "Recently Updated"
 msgstr "Недавно обновлённые"
 
-#: src/Views/Homepage.vala:83
-msgid "Trending"
-msgstr "В тренде"
-
-#: src/Views/Homepage.vala:99
+#: src/Views/Homepage.vala:80
 msgid "Categories"
 msgstr "Категории"
 
-#: src/Views/Homepage.vala:314 src/Views/Homepage.vala:325
+#: src/Views/Homepage.vala:258 src/Views/Homepage.vala:269
 #, c-format
 msgid "Search %s"
 msgstr "Поиск %s"
@@ -919,6 +915,9 @@ msgstr "Обновления не требуются"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:264
 msgid "Update"
 msgstr "Обновить"
+
+#~ msgid "Trending"
+#~ msgstr "В тренде"
 
 #~ msgid "No Results"
 #~ msgstr "Нет результатов"

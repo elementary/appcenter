@@ -6,17 +6,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-30 18:38+0000\n"
+"POT-Creation-Date: 2021-09-01 22:59+0000\n"
 "PO-Revision-Date: 2021-08-31 15:13+0000\n"
 "Last-Translator: Silviu Popescu <teodorspopescu@gmail.com>\n"
-"Language-Team: Romanian <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/ro/>\n"
+"Language-Team: Romanian <https://l10n.elementary.io/projects/appcenter/appcenter/ro/>\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
-"20)) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2;\n"
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
@@ -52,9 +50,9 @@ msgstr "\"%s\" s-a instalat"
 msgid "Failed to launch “%s“"
 msgstr "S-a eșuat în pornirea “%s“"
 
-#: src/MainWindow.vala:171 src/Views/Homepage.vala:299
-#: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
-#: src/Views/Homepage.vala:325 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:171 src/Views/Homepage.vala:243
+#: src/Views/Homepage.vala:253 src/Views/Homepage.vala:258
+#: src/Views/Homepage.vala:269 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "Pagina principală"
 
@@ -705,27 +703,21 @@ msgstr "Nicio aplicație găsită"
 #: src/Views/AppListView.vala:32
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
-msgstr ""
-"Încearcă să schimbi cuvintele de căutare. Poți de asemenea să instalezi "
-"aplicații Flatpak de exemplu de la %s"
+msgstr "Încearcă să schimbi cuvintele de căutare. Poți de asemenea să instalezi aplicații Flatpak de exemplu de la %s"
 
 #: src/Views/AppListView.vala:168
 msgid "Non-Curated Apps"
 msgstr "Aplicații neverificate"
 
-#: src/Views/Homepage.vala:67
+#: src/Views/Homepage.vala:64
 msgid "Recently Updated"
 msgstr "Actualizate recent"
 
-#: src/Views/Homepage.vala:83
-msgid "Trending"
-msgstr "Populare"
-
-#: src/Views/Homepage.vala:99
+#: src/Views/Homepage.vala:80
 msgid "Categories"
 msgstr "Categorii"
 
-#: src/Views/Homepage.vala:314 src/Views/Homepage.vala:325
+#: src/Views/Homepage.vala:258 src/Views/Homepage.vala:269
 #, c-format
 msgid "Search %s"
 msgstr "Caută %s"
@@ -920,6 +912,9 @@ msgstr "Aplicații la zi"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:264
 msgid "Update"
 msgstr "Actualizează"
+
+#~ msgid "Trending"
+#~ msgstr "Populare"
 
 #~ msgid "No Results"
 #~ msgstr "Niciun rezultat"

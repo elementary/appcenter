@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-30 18:38+0000\n"
+"POT-Creation-Date: 2021-09-01 22:59+0000\n"
 "PO-Revision-Date: 2021-08-28 11:11+0000\n"
 "Last-Translator: aalhaif <aalhaif@hotmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/appcenter/ar/>\n"
@@ -52,9 +52,9 @@ msgstr "“%s” تم تثبيته"
 msgid "Failed to launch “%s“"
 msgstr "فشل في الإطلاق \"%s\""
 
-#: src/MainWindow.vala:171 src/Views/Homepage.vala:299
-#: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
-#: src/Views/Homepage.vala:325 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:171 src/Views/Homepage.vala:243
+#: src/Views/Homepage.vala:253 src/Views/Homepage.vala:258
+#: src/Views/Homepage.vala:269 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "الرئيسية"
 
@@ -720,19 +720,15 @@ msgstr "حاول تغيير كلمات البحث. يمكنك أيضًا تنز�
 msgid "Non-Curated Apps"
 msgstr "التطبيقات الغير موصى بها"
 
-#: src/Views/Homepage.vala:67
+#: src/Views/Homepage.vala:64
 msgid "Recently Updated"
 msgstr "المحدثة مؤّخراً"
 
-#: src/Views/Homepage.vala:83
-msgid "Trending"
-msgstr "الشائع"
-
-#: src/Views/Homepage.vala:99
+#: src/Views/Homepage.vala:80
 msgid "Categories"
 msgstr "التصنيفات"
 
-#: src/Views/Homepage.vala:314 src/Views/Homepage.vala:325
+#: src/Views/Homepage.vala:258 src/Views/Homepage.vala:269
 #, c-format
 msgid "Search %s"
 msgstr "بحث %s"
@@ -930,6 +926,9 @@ msgstr "تم تثبيت آخر التحديثات"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:264
 msgid "Update"
 msgstr "تحديث"
+
+#~ msgid "Trending"
+#~ msgstr "الشائع"
 
 #~ msgid "No Results"
 #~ msgstr "لاتوجد نتائج"

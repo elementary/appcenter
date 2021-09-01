@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-30 18:38+0000\n"
+"POT-Creation-Date: 2021-09-01 22:59+0000\n"
 "PO-Revision-Date: 2019-12-12 19:07+0000\n"
 "Last-Translator: Augusto Fornitani <augusto.fornitani@outlook.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/appcenter/appcenter/eo/>\n"
@@ -55,9 +55,9 @@ msgstr "%s estis sukcese instalita"
 msgid "Failed to launch “%s“"
 msgstr "Fiaskis la malinstalo de „%s“"
 
-#: src/MainWindow.vala:171 src/Views/Homepage.vala:299
-#: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
-#: src/Views/Homepage.vala:325 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:171 src/Views/Homepage.vala:243
+#: src/Views/Homepage.vala:253 src/Views/Homepage.vala:258
+#: src/Views/Homepage.vala:269 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "Ĉefpaĝo"
 
@@ -734,19 +734,15 @@ msgstr ""
 msgid "Non-Curated Apps"
 msgstr "Ne-kontrolitaj Aplikaĵoj"
 
-#: src/Views/Homepage.vala:67
+#: src/Views/Homepage.vala:64
 msgid "Recently Updated"
 msgstr "Freŝe Ĝisdatigita"
 
-#: src/Views/Homepage.vala:83
-msgid "Trending"
-msgstr "Laŭmoda"
-
-#: src/Views/Homepage.vala:99
+#: src/Views/Homepage.vala:80
 msgid "Categories"
 msgstr "Kategorioj"
 
-#: src/Views/Homepage.vala:314 src/Views/Homepage.vala:325
+#: src/Views/Homepage.vala:258 src/Views/Homepage.vala:269
 #, c-format
 msgid "Search %s"
 msgstr "Serĉi %s"
@@ -940,6 +936,9 @@ msgstr "Ĝisdata"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:264
 msgid "Update"
 msgstr "Ĝisdatigi"
+
+#~ msgid "Trending"
+#~ msgstr "Laŭmoda"
 
 #~ msgid "No Results"
 #~ msgstr "Neniu Rezultato"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.appcenter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-30 18:38+0000\n"
+"POT-Creation-Date: 2021-09-01 22:59+0000\n"
 "PO-Revision-Date: 2021-07-29 06:15+0000\n"
 "Last-Translator: elSolus <tumbleweed@tuta.io>\n"
 "Language-Team: Punjabi <https://l10n.elementary.io/projects/appcenter/appcenter/pa/>\n"
@@ -50,9 +50,9 @@ msgstr "“%s” ਸਥਾਪਤ ਹੋ ਚੁੱਕੀ ਹੈ"
 msgid "Failed to launch “%s“"
 msgstr "“%s“ ਨੂੰ ਲਾਂਚ ਕਰਨ ਨਾਕਾਮ ਰਿਹਾ"
 
-#: src/MainWindow.vala:171 src/Views/Homepage.vala:299
-#: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
-#: src/Views/Homepage.vala:325 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:171 src/Views/Homepage.vala:243
+#: src/Views/Homepage.vala:253 src/Views/Homepage.vala:258
+#: src/Views/Homepage.vala:269 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "ਮੁੱਖ ਪੰਨਾ"
 
@@ -706,19 +706,15 @@ msgstr ""
 msgid "Non-Curated Apps"
 msgstr "ਅਣ ਸੰਵਾਰੀਆਂ ਐਪਾਂ"
 
-#: src/Views/Homepage.vala:67
+#: src/Views/Homepage.vala:64
 msgid "Recently Updated"
 msgstr "ਹਾਲ ਹੀ ਵਿੱਚ ਅਪਡੇਟ ਕੀਤੀਆਂ ਹੋਈਆਂ"
 
-#: src/Views/Homepage.vala:83
-msgid "Trending"
-msgstr "ਅੱਜ-ਕੱਲ੍ਹ ਰੁਝਾਨ ਵਿੱਚ"
-
-#: src/Views/Homepage.vala:99
+#: src/Views/Homepage.vala:80
 msgid "Categories"
 msgstr "ਵਰਗ"
 
-#: src/Views/Homepage.vala:314 src/Views/Homepage.vala:325
+#: src/Views/Homepage.vala:258 src/Views/Homepage.vala:269
 #, c-format
 msgid "Search %s"
 msgstr "%s ਖੋਜੋ"
@@ -912,6 +908,9 @@ msgstr "ਤਰੋ-ਤਾਜ਼ਾ (ਅਪ ਟੂ ਡੇਟ)"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:264
 msgid "Update"
 msgstr "ਅਪਡੇਟ"
+
+#~ msgid "Trending"
+#~ msgstr "ਅੱਜ-ਕੱਲ੍ਹ ਰੁਝਾਨ ਵਿੱਚ"
 
 #~ msgid "No Results"
 #~ msgstr "ਕੋਈ ਨਤੀਜੇ ਨਹੀਂ"
