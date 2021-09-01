@@ -94,10 +94,10 @@ public class AppCenter.Homepage : AbstractView {
 #if HOMEPAGE
         grid.attach (newest_banner, 0, 0);
         grid.attach (switcher_revealer, 0, 1);
-        grid.attach (recently_updated_revealer, 0, 3);
-        grid.attach (categories_label, 0, 4);
+        grid.attach (recently_updated_revealer, 0, 2);
+        grid.attach (categories_label, 0, 3);
 #endif
-        grid.attach (category_flow, 0, 5);
+        grid.attach (category_flow, 0, 4);
 
         category_scrolled = new Gtk.ScrolledWindow (null, null);
         category_scrolled.add (grid);
@@ -165,10 +165,11 @@ public class AppCenter.Homepage : AbstractView {
     private async void load_banners_and_carousels () {
         unowned var fp_client = AppCenterCore.FlatpakBackend.get_default ();
         var packages_by_release_date = fp_client.get_native_packages_by_release_date ();
+        var packages_in_banner = new Gee.LinkedList<AppCenterCore.Package> ();
 
-        int packages_in_banner = 0;
+        int package_count = 0;
         foreach (var package in packages_by_release_date) {
-            if (packages_in_banner >= MAX_PACKAGES_IN_BANNER) {
+            if (package_count >= MAX_PACKAGES_IN_BANNER) {
                 break;
             }
 
@@ -185,10 +186,13 @@ public class AppCenter.Homepage : AbstractView {
             }
 
             if (!installed) {
-                newest_banner.add_package (package);
-                // packages_by_release_date.remove (package);
-                packages_in_banner++;
+                packages_in_banner.add (package);
+                package_count++;
             }
+        }
+
+        foreach (var package in packages_in_banner) {
+            newest_banner.add_package (package);
         }
 
         foreach (var package in packages_by_release_date) {
@@ -208,80 +212,16 @@ public class AppCenter.Homepage : AbstractView {
                 }
             }
 
-            if (!installed) {
+            if (!installed && !(package in packages_in_banner)) {
                 recently_updated_carousel.add_package (package);
             }
         }
 
         recently_updated_revealer.reveal_child = recently_updated_carousel.get_children ().length () > 0;
 
-        // var houston = AppCenterCore.Houston.get_default ();
-        // var pk_client = AppCenterCore.PackageKitBackend.get_default ();
-        // var packages_for_banner = new Gee.LinkedList<AppCenterCore.Package> ();
-
-        // var newest_ids = yield houston.get_app_ids ("/newest/project");
-        // var trending_ids = yield houston.get_app_ids ("/newest/downloads");
-        // Utils.shuffle_array (trending_ids);
-
-        // var packages = new Gee.HashMap<string, AppCenterCore.Package> ();
-        // packages.set_all (pk_client.get_packages_for_component_ids (newest_ids));
-        // packages.set_all (pk_client.get_packages_for_component_ids (trending_ids));
-
-        // if (!AppCenterCore.PackageKitBackend.supports_parallel_package_queries) {
-        //     foreach (var package in packages.values) {
-        //         package.update_state ();
-        //     }
-        // } else {
-        //     try {
-        //         yield pk_client.update_multiple_package_state (packages.values);
-        //     } catch (Error e) {
-        //         warning ("Error while getting installed state of banner packages: %s", e.message);
-        //     }
-        // }
-
-        // foreach (var package in newest_ids) {
-        //     if (packages_for_banner.size >= MAX_PACKAGES_IN_BANNER) {
-        //         break;
-        //     }
-
-        //     var candidate_package = packages[package];
-
-        //     if (candidate_package != null) {
-        //         if (candidate_package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
-        //             packages_for_banner.add (candidate_package);
-        //         }
-        //     }
-        // }
-
-        // foreach (var banner_package in packages_for_banner) {
-        //     newest_banner.add_package (banner_package);
-        // }
-
         newest_banner.go_to_first ();
         switcher.show_all ();
         switcher_revealer.set_reveal_child (true);
-
-        // packages_for_banner = new Gee.LinkedList<AppCenterCore.Package> ();
-        // foreach (var package in trending_ids) {
-        //     if (packages_for_banner.size >= MAX_PACKAGES_IN_CAROUSEL) {
-        //         break;
-        //     }
-
-        //     var candidate_package = packages[package];
-
-        //     if (candidate_package != null) {
-        //         if (candidate_package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
-        //             packages_for_banner.add (candidate_package);
-        //         }
-        //     }
-        // }
-
-        // if (!packages_for_banner.is_empty) {
-        //     foreach (var trending_package in packages_for_banner) {
-        //         trending_carousel.add_package (trending_package);
-        //     }
-        //     trending_revealer.reveal_child = true;
-        // }
 
         page_loaded ();
     }
