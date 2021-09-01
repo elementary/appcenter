@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-27 23:22+0000\n"
+"POT-Creation-Date: 2021-08-30 18:38+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Alma Ibrašimović <belma.alma@hotmail.com>\n"
 "Language-Team: Bosnian <https://l10n.elementary.io/projects/appcenter/appcenter/bs/>\n"
@@ -103,7 +103,7 @@ msgstr "Uklanjanje paketa"
 msgid "Downloading"
 msgstr "Preuzimanje"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:965
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:967
 msgid "Installing"
 msgstr "Instaliranje"
 
@@ -148,9 +148,9 @@ msgid "Finished"
 msgstr "Završeno"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:974 src/Core/FlatpakBackend.vala:1002
-#: src/Core/FlatpakBackend.vala:1110 src/Core/FlatpakBackend.vala:1138
-#: src/Core/FlatpakBackend.vala:1284 src/Core/FlatpakBackend.vala:1310
+#: src/Core/FlatpakBackend.vala:976 src/Core/FlatpakBackend.vala:1004
+#: src/Core/FlatpakBackend.vala:1112 src/Core/FlatpakBackend.vala:1140
+#: src/Core/FlatpakBackend.vala:1286 src/Core/FlatpakBackend.vala:1312
 msgid "Cancelling"
 msgstr "Otkazivanje"
 
@@ -241,13 +241,13 @@ msgstr[0] "%u ažuriranje je dostupno za Vaš sistem"
 msgstr[1] "%u ažuriranja su dostupna za Vaš sistem"
 msgstr[2] "%u ažuriranja je dostupno za Vaš sistem"
 
-#: src/Core/FlatpakBackend.vala:1101
+#: src/Core/FlatpakBackend.vala:1103
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "Deinstaliraj"
 
-#: src/Core/FlatpakBackend.vala:1275
+#: src/Core/FlatpakBackend.vala:1277
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -733,15 +733,15 @@ msgstr ""
 msgid "Non-Curated Apps"
 msgstr "Druge eksterne aplikacije"
 
-#: src/Views/Homepage.vala:68
+#: src/Views/Homepage.vala:67
 msgid "Recently Updated"
 msgstr "Nedavno ažurirano"
 
-#: src/Views/Homepage.vala:84
+#: src/Views/Homepage.vala:83
 msgid "Trending"
 msgstr "Trenutno popularno"
 
-#: src/Views/Homepage.vala:100
+#: src/Views/Homepage.vala:99
 msgid "Categories"
 msgstr "Kategorije"
 

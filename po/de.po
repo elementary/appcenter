@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-27 23:22+0000\n"
+"POT-Creation-Date: 2021-08-30 18:38+0000\n"
 "PO-Revision-Date: 2021-08-22 11:25+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/appcenter/appcenter/de/>\n"
@@ -106,7 +106,7 @@ msgstr "Pakete entfernen"
 msgid "Downloading"
 msgstr "Herunterladen"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:965
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:967
 msgid "Installing"
 msgstr "Installieren"
 
@@ -151,9 +151,9 @@ msgid "Finished"
 msgstr "Beendet"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:974 src/Core/FlatpakBackend.vala:1002
-#: src/Core/FlatpakBackend.vala:1110 src/Core/FlatpakBackend.vala:1138
-#: src/Core/FlatpakBackend.vala:1284 src/Core/FlatpakBackend.vala:1310
+#: src/Core/FlatpakBackend.vala:976 src/Core/FlatpakBackend.vala:1004
+#: src/Core/FlatpakBackend.vala:1112 src/Core/FlatpakBackend.vala:1140
+#: src/Core/FlatpakBackend.vala:1286 src/Core/FlatpakBackend.vala:1312
 msgid "Cancelling"
 msgstr "Abbrechen"
 
@@ -242,11 +242,11 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "%u Aktualisierung ist für Ihr System verfügbar"
 msgstr[1] "%u Aktualisierungen sind für Ihr System verfügbar"
 
-#: src/Core/FlatpakBackend.vala:1101
+#: src/Core/FlatpakBackend.vala:1103
 msgid "Uninstalling"
 msgstr "Deinstallation"
 
-#: src/Core/FlatpakBackend.vala:1275
+#: src/Core/FlatpakBackend.vala:1277
 msgid "Updating"
 msgstr "Aktualisierung"
 
@@ -710,15 +710,15 @@ msgstr "Versuchen Sie es mit anderen Suchbegriffen. Sie können auch per Sideloa
 msgid "Non-Curated Apps"
 msgstr "Unbetreute Anwendungen"
 
-#: src/Views/Homepage.vala:68
+#: src/Views/Homepage.vala:67
 msgid "Recently Updated"
 msgstr "Kürzlich aktualisiert"
 
-#: src/Views/Homepage.vala:84
+#: src/Views/Homepage.vala:83
 msgid "Trending"
 msgstr "Derzeit beliebt"
 
-#: src/Views/Homepage.vala:100
+#: src/Views/Homepage.vala:99
 msgid "Categories"
 msgstr "Kategorien"
 

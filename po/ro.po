@@ -6,15 +6,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-27 23:22+0000\n"
-"PO-Revision-Date: 2021-08-02 17:28+0000\n"
+"POT-Creation-Date: 2021-08-30 18:38+0000\n"
+"PO-Revision-Date: 2021-08-31 15:13+0000\n"
 "Last-Translator: Silviu Popescu <teodorspopescu@gmail.com>\n"
-"Language-Team: Romanian <https://l10n.elementary.io/projects/appcenter/appcenter/ro/>\n"
+"Language-Team: Romanian <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/ro/>\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"20)) ? 1 : 2;\n"
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
@@ -102,7 +104,7 @@ msgstr "Se elimină pachetele"
 msgid "Downloading"
 msgstr "Se descarcă"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:965
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:967
 msgid "Installing"
 msgstr "Se instalează"
 
@@ -147,9 +149,9 @@ msgid "Finished"
 msgstr "Finalizat"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:974 src/Core/FlatpakBackend.vala:1002
-#: src/Core/FlatpakBackend.vala:1110 src/Core/FlatpakBackend.vala:1138
-#: src/Core/FlatpakBackend.vala:1284 src/Core/FlatpakBackend.vala:1310
+#: src/Core/FlatpakBackend.vala:976 src/Core/FlatpakBackend.vala:1004
+#: src/Core/FlatpakBackend.vala:1112 src/Core/FlatpakBackend.vala:1140
+#: src/Core/FlatpakBackend.vala:1286 src/Core/FlatpakBackend.vala:1312
 msgid "Cancelling"
 msgstr "În curs de anulare"
 
@@ -240,11 +242,11 @@ msgstr[0] "%u actualizare de sistem este disponibilă"
 msgstr[1] "%u actualizări de sistem sunt disponibile"
 msgstr[2] "%u de actualizări de sistem sunt disponibile"
 
-#: src/Core/FlatpakBackend.vala:1101
+#: src/Core/FlatpakBackend.vala:1103
 msgid "Uninstalling"
 msgstr "Dezinstalare"
 
-#: src/Core/FlatpakBackend.vala:1275
+#: src/Core/FlatpakBackend.vala:1277
 msgid "Updating"
 msgstr "Actualizare"
 
@@ -694,30 +696,32 @@ msgstr "Actualizează totul"
 
 #: src/Views/AppListView.vala:29
 msgid "Flathub"
-msgstr ""
+msgstr "Flathub"
 
 #: src/Views/AppListView.vala:31
 msgid "No Apps Found"
-msgstr ""
+msgstr "Nicio aplicație găsită"
 
 #: src/Views/AppListView.vala:32
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr ""
+"Încearcă să schimbi cuvintele de căutare. Poți de asemenea să instalezi "
+"aplicații Flatpak de exemplu de la %s"
 
 #: src/Views/AppListView.vala:168
 msgid "Non-Curated Apps"
 msgstr "Aplicații neverificate"
 
-#: src/Views/Homepage.vala:68
+#: src/Views/Homepage.vala:67
 msgid "Recently Updated"
 msgstr "Actualizate recent"
 
-#: src/Views/Homepage.vala:84
+#: src/Views/Homepage.vala:83
 msgid "Trending"
 msgstr "Populare"
 
-#: src/Views/Homepage.vala:100
+#: src/Views/Homepage.vala:99
 msgid "Categories"
 msgstr "Categorii"
 
