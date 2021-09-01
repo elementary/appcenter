@@ -9,7 +9,6 @@ src/Core/ChangeInformation.vala
 src/Core/Client.vala
 src/Core/ComponentValidator.vala
 src/Core/FlatpakBackend.vala
-src/Core/Houston.vala
 src/Core/Job.vala
 src/Core/Package.vala
 src/Core/PackageKitBackend.vala
