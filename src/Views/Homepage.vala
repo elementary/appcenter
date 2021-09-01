@@ -19,8 +19,8 @@
 */
 
 public class AppCenter.Homepage : AbstractView {
-    private const int NUM_PACKAGES_IN_BANNER = 5;
-    private const int NUM_PACKAGES_IN_CAROUSEL = 5;
+    private const int MAX_PACKAGES_IN_BANNER = 5;
+    private const int MAX_PACKAGES_IN_CAROUSEL = 10;
 
     private Gtk.FlowBox category_flow;
     private Gtk.ScrolledWindow category_scrolled;
@@ -37,9 +37,7 @@ public class AppCenter.Homepage : AbstractView {
 
     private Widgets.Switcher switcher;
     private Widgets.Carousel recently_updated_carousel;
-    private Widgets.Carousel trending_carousel;
     private Gtk.Revealer recently_updated_revealer;
-    private Gtk.Revealer trending_revealer;
 
     construct {
         switcher = new Widgets.Switcher () {
@@ -79,22 +77,6 @@ public class AppCenter.Homepage : AbstractView {
         recently_updated_revealer = new Gtk.Revealer ();
         recently_updated_revealer.add (recently_updated_grid );
 
-        var trending_label = new Granite.HeaderLabel (_("Trending")) {
-            margin_start = 10
-        };
-
-        trending_carousel = new Widgets.Carousel ();
-
-        var trending_grid = new Gtk.Grid () {
-            margin = 2,
-            margin_top = 12
-        };
-        trending_grid.attach (trending_label, 0, 0);
-        trending_grid.attach (trending_carousel, 0, 1);
-
-        trending_revealer = new Gtk.Revealer ();
-        trending_revealer.add (trending_grid );
-
         var categories_label = new Granite.HeaderLabel (_("Categories")) {
             margin_start = 12,
             margin_top = 24
@@ -112,7 +94,6 @@ public class AppCenter.Homepage : AbstractView {
 #if HOMEPAGE
         grid.attach (newest_banner, 0, 0);
         grid.attach (switcher_revealer, 0, 1);
-        grid.attach (trending_revealer, 0, 2);
         grid.attach (recently_updated_revealer, 0, 3);
         grid.attach (categories_label, 0, 4);
 #endif
@@ -129,7 +110,7 @@ public class AppCenter.Homepage : AbstractView {
             newest_banner.add_package (local_package);
         }
 
-        load_banners.begin ();
+        load_banners_and_carousels.begin ();
 #endif
 
         category_flow.child_activated.connect ((child) => {
@@ -170,8 +151,8 @@ public class AppCenter.Homepage : AbstractView {
 
 #if HOMEPAGE
                 // If the banners weren't populated, try again to populate them
-                if (!recently_updated_revealer.reveal_child && !trending_revealer.reveal_child && !switcher_revealer.reveal_child) {
-                    load_banners.begin ();
+                if (!recently_updated_revealer.reveal_child && !switcher_revealer.reveal_child) {
+                    load_banners_and_carousels.begin ();
                 }
 
                 return GLib.Source.REMOVE;
@@ -179,15 +160,39 @@ public class AppCenter.Homepage : AbstractView {
         });
 
         recently_updated_carousel.package_activated.connect ((package) => show_package (package));
-        trending_carousel.package_activated.connect ((package) => show_package (package));
     }
 
-    private async void load_banners () {
+    private async void load_banners_and_carousels () {
         unowned var fp_client = AppCenterCore.FlatpakBackend.get_default ();
         var packages_by_release_date = fp_client.get_native_packages_by_release_date ();
 
+        int packages_in_banner = 0;
         foreach (var package in packages_by_release_date) {
-            if (recently_updated_carousel.get_children ().length () >= NUM_PACKAGES_IN_CAROUSEL) {
+            if (packages_in_banner >= MAX_PACKAGES_IN_BANNER) {
+                break;
+            }
+
+            var installed = false;
+            foreach (var origin_package in package.origin_packages) {
+                try {
+                    if (yield origin_package.backend.is_package_installed (origin_package)) {
+                        installed = true;
+                        break;
+                    }
+                } catch (Error e) {
+                    continue;
+                }
+            }
+
+            if (!installed) {
+                newest_banner.add_package (package);
+                // packages_by_release_date.remove (package);
+                packages_in_banner++;
+            }
+        }
+
+        foreach (var package in packages_by_release_date) {
+            if (recently_updated_carousel.get_children ().length () >= MAX_PACKAGES_IN_CAROUSEL) {
                 break;
             }
 
@@ -210,73 +215,73 @@ public class AppCenter.Homepage : AbstractView {
 
         recently_updated_revealer.reveal_child = recently_updated_carousel.get_children ().length () > 0;
 
-        var houston = AppCenterCore.Houston.get_default ();
-        var pk_client = AppCenterCore.PackageKitBackend.get_default ();
-        var packages_for_banner = new Gee.LinkedList<AppCenterCore.Package> ();
+        // var houston = AppCenterCore.Houston.get_default ();
+        // var pk_client = AppCenterCore.PackageKitBackend.get_default ();
+        // var packages_for_banner = new Gee.LinkedList<AppCenterCore.Package> ();
 
-        var newest_ids = yield houston.get_app_ids ("/newest/project");
-        var trending_ids = yield houston.get_app_ids ("/newest/downloads");
-        Utils.shuffle_array (trending_ids);
+        // var newest_ids = yield houston.get_app_ids ("/newest/project");
+        // var trending_ids = yield houston.get_app_ids ("/newest/downloads");
+        // Utils.shuffle_array (trending_ids);
 
-        var packages = new Gee.HashMap<string, AppCenterCore.Package> ();
-        packages.set_all (pk_client.get_packages_for_component_ids (newest_ids));
-        packages.set_all (pk_client.get_packages_for_component_ids (trending_ids));
+        // var packages = new Gee.HashMap<string, AppCenterCore.Package> ();
+        // packages.set_all (pk_client.get_packages_for_component_ids (newest_ids));
+        // packages.set_all (pk_client.get_packages_for_component_ids (trending_ids));
 
-        if (!AppCenterCore.PackageKitBackend.supports_parallel_package_queries) {
-            foreach (var package in packages.values) {
-                package.update_state ();
-            }
-        } else {
-            try {
-                yield pk_client.update_multiple_package_state (packages.values);
-            } catch (Error e) {
-                warning ("Error while getting installed state of banner packages: %s", e.message);
-            }
-        }
+        // if (!AppCenterCore.PackageKitBackend.supports_parallel_package_queries) {
+        //     foreach (var package in packages.values) {
+        //         package.update_state ();
+        //     }
+        // } else {
+        //     try {
+        //         yield pk_client.update_multiple_package_state (packages.values);
+        //     } catch (Error e) {
+        //         warning ("Error while getting installed state of banner packages: %s", e.message);
+        //     }
+        // }
 
-        foreach (var package in newest_ids) {
-            if (packages_for_banner.size >= NUM_PACKAGES_IN_BANNER) {
-                break;
-            }
+        // foreach (var package in newest_ids) {
+        //     if (packages_for_banner.size >= MAX_PACKAGES_IN_BANNER) {
+        //         break;
+        //     }
 
-            var candidate_package = packages[package];
+        //     var candidate_package = packages[package];
 
-            if (candidate_package != null) {
-                if (candidate_package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
-                    packages_for_banner.add (candidate_package);
-                }
-            }
-        }
+        //     if (candidate_package != null) {
+        //         if (candidate_package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
+        //             packages_for_banner.add (candidate_package);
+        //         }
+        //     }
+        // }
 
-        foreach (var banner_package in packages_for_banner) {
-            newest_banner.add_package (banner_package);
-        }
+        // foreach (var banner_package in packages_for_banner) {
+        //     newest_banner.add_package (banner_package);
+        // }
 
         newest_banner.go_to_first ();
         switcher.show_all ();
         switcher_revealer.set_reveal_child (true);
 
-        packages_for_banner = new Gee.LinkedList<AppCenterCore.Package> ();
-        foreach (var package in trending_ids) {
-            if (packages_for_banner.size >= NUM_PACKAGES_IN_CAROUSEL) {
-                break;
-            }
+        // packages_for_banner = new Gee.LinkedList<AppCenterCore.Package> ();
+        // foreach (var package in trending_ids) {
+        //     if (packages_for_banner.size >= MAX_PACKAGES_IN_CAROUSEL) {
+        //         break;
+        //     }
 
-            var candidate_package = packages[package];
+        //     var candidate_package = packages[package];
 
-            if (candidate_package != null) {
-                if (candidate_package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
-                    packages_for_banner.add (candidate_package);
-                }
-            }
-        }
+        //     if (candidate_package != null) {
+        //         if (candidate_package.state == AppCenterCore.Package.State.NOT_INSTALLED) {
+        //             packages_for_banner.add (candidate_package);
+        //         }
+        //     }
+        // }
 
-        if (!packages_for_banner.is_empty) {
-            foreach (var trending_package in packages_for_banner) {
-                trending_carousel.add_package (trending_package);
-            }
-            trending_revealer.reveal_child = true;
-        }
+        // if (!packages_for_banner.is_empty) {
+        //     foreach (var trending_package in packages_for_banner) {
+        //         trending_carousel.add_package (trending_package);
+        //     }
+        //     trending_revealer.reveal_child = true;
+        // }
 
         page_loaded ();
     }

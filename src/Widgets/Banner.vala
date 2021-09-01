@@ -36,7 +36,7 @@ namespace AppCenter.Widgets {
 
         public const int TRANSITION_DURATION_MILLISECONDS = 500;
 
-        private string _background_color = "#68758e";
+        private string _background_color = "#667885";
         public string background_color {
             get {
                 return _background_color;
