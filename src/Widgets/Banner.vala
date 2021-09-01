@@ -27,8 +27,8 @@ const string BANNER_STYLE_CSS = """
     }
 """;
 
-const string DEFAULT_BANNER_COLOR_PRIMARY = "@base_color";
-const string DEFAULT_BANNER_COLOR_PRIMARY_TEXT = "@text_color";
+const string DEFAULT_BANNER_COLOR_PRIMARY = "mix(@accent_color, @bg_color, 0.8)";
+const string DEFAULT_BANNER_COLOR_PRIMARY_TEXT = "mix(@accent_color, @text_color, 0.85)";
 const int MILLISECONDS_BETWEEN_BANNER_ITEMS = 5000;
 
 namespace AppCenter.Widgets {
