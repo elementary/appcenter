@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-01 22:59+0000\n"
+"POT-Creation-Date: 2021-09-01 23:27+0000\n"
 "PO-Revision-Date: 2018-05-18 16:09+0000\n"
 "Last-Translator: Shawn <syst3mfailur3@gmail.com>\n"
 "Language-Team: English (Canada) <https://weblate.elementary.io/projects/appcenter/appcenter/en_CA/>\n"
@@ -640,43 +640,43 @@ msgid "Share"
 msgstr "Share"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:768
+#: src/Views/AppInfoView.vala:763
 msgid "Public Domain"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:771
+#: src/Views/AppInfoView.vala:766
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr ""
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:776
+#: src/Views/AppInfoView.vala:771
 msgid "Free Software"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:779
+#: src/Views/AppInfoView.vala:774
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:783
+#: src/Views/AppInfoView.vala:778
 msgid "Proprietary"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:786
+#: src/Views/AppInfoView.vala:781
 #, fuzzy
 msgid "Unknown License"
 msgstr "Unknown state"
 
-#: src/Views/AppInfoView.vala:868
+#: src/Views/AppInfoView.vala:863
 msgid "Fund"
 msgstr "Fund"
 
-#: src/Views/AppInfoView.vala:891
+#: src/Views/AppInfoView.vala:886
 msgid "Fund the development of this app"
 msgstr "Fund the development of this app"
 
-#: src/Views/AppInfoView.vala:952
+#: src/Views/AppInfoView.vala:947
 #, c-format
 msgid "Other Apps by %s"
 msgstr "Other Apps by %s"
@@ -746,13 +746,15 @@ msgctxt "view"
 msgid "Search"
 msgstr "Search"
 
-#: src/Widgets/Banner.vala:235
-msgid "An open, pay-what-you-want app store"
+#: src/Widgets/Banner.vala:234
+#, fuzzy
+#| msgid "An open, pay-what-you-want app store"
+msgid "The open source, pay-what-you-can app store"
 msgstr "An open, pay-what-you-want app store"
 
-#: src/Widgets/Banner.vala:243
-msgid "Get the apps that you need at a price you can afford."
-msgstr "Get the apps that you need at a price you can afford."
+#: src/Widgets/Banner.vala:242
+msgid "Reviewed and curated for a native, privacy-respecting, and secure experience."
+msgstr ""
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
@@ -936,6 +938,9 @@ msgstr "Up to Date"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:264
 msgid "Update"
 msgstr "Update"
+
+#~ msgid "Get the apps that you need at a price you can afford."
+#~ msgstr "Get the apps that you need at a price you can afford."
 
 #~ msgid "Trending"
 #~ msgstr "Trending"

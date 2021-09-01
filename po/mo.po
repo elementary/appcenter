@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-01 22:59+0000\n"
+"POT-Creation-Date: 2021-09-01 23:27+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Moldovan <https://l10n.elementary.io/projects/appcenter/appcenter/mo/>\n"
@@ -651,43 +651,43 @@ msgid "Share"
 msgstr "Distribuiți"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:768
+#: src/Views/AppInfoView.vala:763
 msgid "Public Domain"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:771
+#: src/Views/AppInfoView.vala:766
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr ""
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:776
+#: src/Views/AppInfoView.vala:771
 msgid "Free Software"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:779
+#: src/Views/AppInfoView.vala:774
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:783
+#: src/Views/AppInfoView.vala:778
 msgid "Proprietary"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:786
+#: src/Views/AppInfoView.vala:781
 #, fuzzy
 msgid "Unknown License"
 msgstr "Stagiul necunoscut"
 
-#: src/Views/AppInfoView.vala:868
+#: src/Views/AppInfoView.vala:863
 msgid "Fund"
 msgstr "Fond"
 
-#: src/Views/AppInfoView.vala:891
+#: src/Views/AppInfoView.vala:886
 msgid "Fund the development of this app"
 msgstr "Finanțați dezvoltarea acestei aplicații"
 
-#: src/Views/AppInfoView.vala:952
+#: src/Views/AppInfoView.vala:947
 #, c-format
 msgid "Other Apps by %s"
 msgstr "Alte aplicații de %s"
@@ -758,13 +758,15 @@ msgctxt "view"
 msgid "Search"
 msgstr "Căutare %s"
 
-#: src/Widgets/Banner.vala:235
-msgid "An open, pay-what-you-want app store"
+#: src/Widgets/Banner.vala:234
+#, fuzzy
+#| msgid "An open, pay-what-you-want app store"
+msgid "The open source, pay-what-you-can app store"
 msgstr "Un magazin de aplicații deschisă, cumpără ce dorești"
 
-#: src/Widgets/Banner.vala:243
-msgid "Get the apps that you need at a price you can afford."
-msgstr "Obțineți aplicațiile de care aveți nevoie la un preț pe care vă puteți permite."
+#: src/Widgets/Banner.vala:242
+msgid "Reviewed and curated for a native, privacy-respecting, and secure experience."
+msgstr ""
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
@@ -952,6 +954,9 @@ msgstr "La zi"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:264
 msgid "Update"
 msgstr "Actualizați"
+
+#~ msgid "Get the apps that you need at a price you can afford."
+#~ msgstr "Obțineți aplicațiile de care aveți nevoie la un preț pe care vă puteți permite."
 
 #~ msgid "Trending"
 #~ msgstr "Tendință"
