@@ -37,7 +37,7 @@ public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
             column_spacing = 12,
             row_spacing = 3
         };
-        grid.attach (image, 0, 0, 1, 2);
+        grid.attach (app_icon_overlay, 0, 0, 1, 2);
         grid.attach (package_name, 1, 0);
         grid.attach (package_summary, 1, 1);
         grid.attach (action_stack, 2, 0, 1, 2);
@@ -45,7 +45,7 @@ public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
         add (grid);
     }
 
-    protected override void set_up_package (uint icon_size = 48) {
+    protected override void set_up_package () {
         package_summary.label = package.get_summary ();
 
         if (package.is_local) {
@@ -53,6 +53,6 @@ public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
             action_stack.visible = false;
         }
 
-        base.set_up_package (icon_size);
+        base.set_up_package ();
     }
 }

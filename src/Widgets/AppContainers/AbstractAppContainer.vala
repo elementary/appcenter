@@ -23,9 +23,6 @@ namespace AppCenter {
         protected bool show_uninstall { get; set; default = true; }
         protected bool show_open { get; set; default = true; }
 
-        protected Gtk.Overlay image;
-        protected Gtk.Image inner_image;
-
         protected Widgets.HumbleButton action_button;
         protected Gtk.Button open_button;
 
@@ -51,10 +48,6 @@ namespace AppCenter {
         protected bool updates_view = false;
 
         construct {
-            image = new Gtk.Overlay ();
-            inner_image = new Gtk.Image ();
-            image.add (inner_image);
-
             action_button = new Widgets.HumbleButton ();
 
             action_button_revealer = new Gtk.Revealer ();
@@ -158,37 +151,7 @@ namespace AppCenter {
             stripe.show ();
         }
 
-        protected virtual void set_up_package (uint icon_size = 48) {
-            var scale_factor = inner_image.get_scale_factor ();
-
-            var badge_icon_size = Gtk.IconSize.LARGE_TOOLBAR;
-            var badge_pixel_size = 24;
-            if (icon_size >= 128) {
-                badge_icon_size = Gtk.IconSize.DIALOG;
-                badge_pixel_size = 64;
-            }
-
-            var plugin_host_package = package.get_plugin_host_package ();
-            if (package.is_plugin && plugin_host_package != null) {
-                inner_image.gicon = plugin_host_package.get_icon (icon_size, scale_factor);
-                var overlay_gicon = package.get_icon (icon_size / 2, scale_factor);
-
-                var overlay_image = new Gtk.Image.from_gicon (overlay_gicon, badge_icon_size);
-                overlay_image.halign = overlay_image.valign = Gtk.Align.END;
-                overlay_image.pixel_size = badge_pixel_size;
-                image.add_overlay (overlay_image);
-            } else {
-                inner_image.gicon = package.get_icon (icon_size, scale_factor);
-
-                if (package.is_os_updates) {
-                    var overlay_image = new Gtk.Image.from_icon_name ("system-software-update", badge_icon_size);
-                    overlay_image.halign = overlay_image.valign = Gtk.Align.END;
-                    overlay_image.pixel_size = badge_pixel_size;
-
-                    image.add_overlay (overlay_image);
-                }
-            }
-
+        protected virtual void set_up_package () {
             package.notify["state"].connect (on_package_state_changed);
 
             package.change_information.progress_changed.connect (update_progress);

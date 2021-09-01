@@ -98,7 +98,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
             row_spacing = 6,
             valign = Gtk.Align.START
         };
-        info_grid.attach (image, 0, 0, 1, 2);
+        info_grid.attach (app_icon_overlay, 0, 0, 1, 2);
         info_grid.attach (package_name, 1, 0);
         info_grid.attach (app_version, 1, 1);
 
@@ -116,7 +116,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         add (grid);
     }
 
-    protected override void set_up_package (uint icon_size = 48) {
+    protected override void set_up_package () {
         if (package.get_version () != null) {
             if (package.has_multiple_origins) {
                 app_version.label = "%s - %s".printf (package.get_version (), package.origin_description);
@@ -127,7 +127,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
 
         app_version.ellipsize = Pango.EllipsizeMode.END;
 
-        base.set_up_package (icon_size);
+        base.set_up_package ();
     }
 
     protected override void update_state (bool first_update = false) {
