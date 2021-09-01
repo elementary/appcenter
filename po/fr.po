@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-30 18:38+0000\n"
+"POT-Creation-Date: 2021-09-01 22:59+0000\n"
 "PO-Revision-Date: 2021-08-23 14:40+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/appcenter/appcenter/fr/>\n"
@@ -55,9 +55,9 @@ msgstr "L’application « %s » a été installée"
 msgid "Failed to launch “%s“"
 msgstr "Échec du lancement de « %s »"
 
-#: src/MainWindow.vala:171 src/Views/Homepage.vala:299
-#: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
-#: src/Views/Homepage.vala:325 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:171 src/Views/Homepage.vala:243
+#: src/Views/Homepage.vala:253 src/Views/Homepage.vala:258
+#: src/Views/Homepage.vala:269 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "Accueil"
 
@@ -711,19 +711,15 @@ msgstr "Essayez de modifier vos termes de recherche. Vous pouvez également inst
 msgid "Non-Curated Apps"
 msgstr "Applications non vérifiées"
 
-#: src/Views/Homepage.vala:67
+#: src/Views/Homepage.vala:64
 msgid "Recently Updated"
 msgstr "Mises à jour récentes"
 
-#: src/Views/Homepage.vala:83
-msgid "Trending"
-msgstr "Tendances"
-
-#: src/Views/Homepage.vala:99
+#: src/Views/Homepage.vala:80
 msgid "Categories"
 msgstr "Catégories"
 
-#: src/Views/Homepage.vala:314 src/Views/Homepage.vala:325
+#: src/Views/Homepage.vala:258 src/Views/Homepage.vala:269
 #, c-format
 msgid "Search %s"
 msgstr "Rechercher %s"
@@ -917,6 +913,9 @@ msgstr "À jour"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:264
 msgid "Update"
 msgstr "Mettre à jour"
+
+#~ msgid "Trending"
+#~ msgstr "Tendances"
 
 #~ msgid "No Results"
 #~ msgstr "Aucun résultat"

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-30 18:38+0000\n"
+"POT-Creation-Date: 2021-09-01 22:59+0000\n"
 "PO-Revision-Date: 2018-10-28 09:52+0000\n"
 "Last-Translator: Fredrik B <frbo9002@gmail.com>\n"
 "Language-Team: Swedish <https://weblate.elementary.io/projects/appcenter/appcenter/sv/>\n"
@@ -50,9 +50,9 @@ msgstr "%s har installerats"
 msgid "Failed to launch “%s“"
 msgstr "Sök och installera program"
 
-#: src/MainWindow.vala:171 src/Views/Homepage.vala:299
-#: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
-#: src/Views/Homepage.vala:325 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:171 src/Views/Homepage.vala:243
+#: src/Views/Homepage.vala:253 src/Views/Homepage.vala:258
+#: src/Views/Homepage.vala:269 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "Hem"
 
@@ -729,19 +729,15 @@ msgstr ""
 msgid "Non-Curated Apps"
 msgstr "Fler appar"
 
-#: src/Views/Homepage.vala:67
+#: src/Views/Homepage.vala:64
 msgid "Recently Updated"
 msgstr "Nyligen uppdaterad"
 
-#: src/Views/Homepage.vala:83
-msgid "Trending"
-msgstr "Populärt"
-
-#: src/Views/Homepage.vala:99
+#: src/Views/Homepage.vala:80
 msgid "Categories"
 msgstr "Kategorier"
 
-#: src/Views/Homepage.vala:314 src/Views/Homepage.vala:325
+#: src/Views/Homepage.vala:258 src/Views/Homepage.vala:269
 #, c-format
 msgid "Search %s"
 msgstr "Sök efter %s"
@@ -939,6 +935,9 @@ msgstr "Uppdaterad"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:264
 msgid "Update"
 msgstr "Uppdatera"
+
+#~ msgid "Trending"
+#~ msgstr "Populärt"
 
 #~ msgid "No Results"
 #~ msgstr "Inga resultat"

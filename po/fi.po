@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-30 18:38+0000\n"
+"POT-Creation-Date: 2021-09-01 22:59+0000\n"
 "PO-Revision-Date: 2021-08-23 14:40+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/appcenter/appcenter/fi/>\n"
@@ -49,9 +49,9 @@ msgstr "“%s” on asennettu"
 msgid "Failed to launch “%s“"
 msgstr "Sovelluksen “%s“ käynnistäminen epäonnistui"
 
-#: src/MainWindow.vala:171 src/Views/Homepage.vala:299
-#: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
-#: src/Views/Homepage.vala:325 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:171 src/Views/Homepage.vala:243
+#: src/Views/Homepage.vala:253 src/Views/Homepage.vala:258
+#: src/Views/Homepage.vala:269 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "Etusivu"
 
@@ -705,19 +705,15 @@ msgstr "Yritä hakea eri hakuehdoilla. Voit myös sivuladata Flatpak-sovelluksia
 msgid "Non-Curated Apps"
 msgstr "Kuratoimattomat sovellukset"
 
-#: src/Views/Homepage.vala:67
+#: src/Views/Homepage.vala:64
 msgid "Recently Updated"
 msgstr "Äskettäin päivitetty"
 
-#: src/Views/Homepage.vala:83
-msgid "Trending"
-msgstr "Nousussa"
-
-#: src/Views/Homepage.vala:99
+#: src/Views/Homepage.vala:80
 msgid "Categories"
 msgstr "Luokat"
 
-#: src/Views/Homepage.vala:314 src/Views/Homepage.vala:325
+#: src/Views/Homepage.vala:258 src/Views/Homepage.vala:269
 #, c-format
 msgid "Search %s"
 msgstr "Etsi %s"
@@ -911,6 +907,9 @@ msgstr "Ajan tasalla"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:264
 msgid "Update"
 msgstr "Päivitä"
+
+#~ msgid "Trending"
+#~ msgstr "Nousussa"
 
 #~ msgid "No Results"
 #~ msgstr "Ei tuloksia"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-30 18:38+0000\n"
+"POT-Creation-Date: 2021-09-01 22:59+0000\n"
 "PO-Revision-Date: 2020-05-31 16:11+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/appcenter/appcenter/cs/>\n"
@@ -55,9 +55,9 @@ msgstr "%s úspěšně nainstalováno"
 msgid "Failed to launch “%s“"
 msgstr "Odebrání „%s“ se nezdařilo"
 
-#: src/MainWindow.vala:171 src/Views/Homepage.vala:299
-#: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
-#: src/Views/Homepage.vala:325 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:171 src/Views/Homepage.vala:243
+#: src/Views/Homepage.vala:253 src/Views/Homepage.vala:258
+#: src/Views/Homepage.vala:269 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "Domů"
 
@@ -719,19 +719,15 @@ msgstr ""
 msgid "Non-Curated Apps"
 msgstr "Neprověřované aplikace"
 
-#: src/Views/Homepage.vala:67
+#: src/Views/Homepage.vala:64
 msgid "Recently Updated"
 msgstr "Nedávno aktualizované"
 
-#: src/Views/Homepage.vala:83
-msgid "Trending"
-msgstr "Aktuální trendy"
-
-#: src/Views/Homepage.vala:99
+#: src/Views/Homepage.vala:80
 msgid "Categories"
 msgstr "Kategorie"
 
-#: src/Views/Homepage.vala:314 src/Views/Homepage.vala:325
+#: src/Views/Homepage.vala:258 src/Views/Homepage.vala:269
 #, c-format
 msgid "Search %s"
 msgstr "Hledat %s"
@@ -926,6 +922,9 @@ msgstr "Aktuální"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:264
 msgid "Update"
 msgstr "Aktualizovat"
+
+#~ msgid "Trending"
+#~ msgstr "Aktuální trendy"
 
 #~ msgid "No Results"
 #~ msgstr "Žádné výsledky"

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-30 18:38+0000\n"
+"POT-Creation-Date: 2021-09-01 22:59+0000\n"
 "PO-Revision-Date: 2019-10-12 13:23+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://l10n.elementary.io/projects/appcenter/appcenter/lt/>\n"
@@ -51,9 +51,9 @@ msgstr "%s buvo sėkmingai įdiegta"
 msgid "Failed to launch “%s“"
 msgstr "Nepavyko pašalinti \"%s\""
 
-#: src/MainWindow.vala:171 src/Views/Homepage.vala:299
-#: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
-#: src/Views/Homepage.vala:325 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:171 src/Views/Homepage.vala:243
+#: src/Views/Homepage.vala:253 src/Views/Homepage.vala:258
+#: src/Views/Homepage.vala:269 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "Pradžia"
 
@@ -734,19 +734,15 @@ msgstr ""
 msgid "Non-Curated Apps"
 msgstr "Nekuruojamos programos"
 
-#: src/Views/Homepage.vala:67
+#: src/Views/Homepage.vala:64
 msgid "Recently Updated"
 msgstr "Neseniai atnaujintos"
 
-#: src/Views/Homepage.vala:83
-msgid "Trending"
-msgstr "Populiarėjančios"
-
-#: src/Views/Homepage.vala:99
+#: src/Views/Homepage.vala:80
 msgid "Categories"
 msgstr "Kategorijos"
 
-#: src/Views/Homepage.vala:314 src/Views/Homepage.vala:325
+#: src/Views/Homepage.vala:258 src/Views/Homepage.vala:269
 #, c-format
 msgid "Search %s"
 msgstr "Ieškoti %s"
@@ -941,6 +937,9 @@ msgstr "Atnaujintos"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:264
 msgid "Update"
 msgstr "Atnaujinti"
+
+#~ msgid "Trending"
+#~ msgstr "Populiarėjančios"
 
 #~ msgid "No Results"
 #~ msgstr "Rezultatų nėra"
