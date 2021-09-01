@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
-/*-
-* Copyright (c) 2016-2017 elementary LLC. (https://elementary.io)
+/*
+* Copyright 2016–2021 elementary, Inc. (https://elementary.io)
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -111,13 +110,13 @@ public class AppCenter.Homepage : AbstractView {
             margin = 12
         };
 #if HOMEPAGE
-        grid.attach (newest_banner, 0, 0, 1, 1);
-        grid.attach (switcher_revealer, 0, 1, 1, 1);
-        grid.attach (trending_revealer, 0, 2, 1, 1);
-        grid.attach (recently_updated_revealer, 0, 3, 1, 1);
-        grid.attach (categories_label, 0, 4, 1, 1);
+        grid.attach (newest_banner, 0, 0);
+        grid.attach (switcher_revealer, 0, 1);
+        grid.attach (trending_revealer, 0, 2);
+        grid.attach (recently_updated_revealer, 0, 3);
+        grid.attach (categories_label, 0, 4);
 #endif
-        grid.attach (category_flow, 0, 5, 1, 1);
+        grid.attach (category_flow, 0, 5);
 
         category_scrolled = new Gtk.ScrolledWindow (null, null);
         category_scrolled.add (grid);
