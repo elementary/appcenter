@@ -36,7 +36,7 @@ namespace AppCenter.Widgets {
 
         public const int TRANSITION_DURATION_MILLISECONDS = 500;
 
-        private string _background_color = DEFAULT_BANNER_COLOR_PRIMARY;
+        private string _background_color = "#667885";
         public string background_color {
             get {
                 return _background_color;
@@ -92,7 +92,7 @@ namespace AppCenter.Widgets {
 
             add (stack);
 
-            background_color = "#7239b3";
+            background_color = "#7E45BE";
             foreground_color = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
 
             brand_widget = new BannerWidget (null);
