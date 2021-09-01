@@ -57,7 +57,7 @@ namespace AppCenter.Widgets {
         }
 
         private BannerWidget? brand_widget;
-        private Gtk.Stack stack;
+        public Gtk.Stack stack { get; private set; }
         private int current_package_index;
         private int next_free_package_index = 1;
         private uint timer_id;
