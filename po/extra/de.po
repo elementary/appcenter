@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-30 18:38+0000\n"
-"PO-Revision-Date: 2021-08-24 12:04+0000\n"
+"PO-Revision-Date: 2021-09-01 07:52+0000\n"
 "Last-Translator: supaeasy <ismo+github@wolffson.ch>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/appcenter/extra/"
 "de/>\n"
@@ -51,10 +51,12 @@ msgstr "Verbesserungen:"
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Show apps from newly sideloaded remotes without requiring a restart"
 msgstr ""
+"Anwendungen aus neuen Sideload-Quellen anzeigen ohne einen Neustart zu "
+"erfordern"
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
 msgid "Less abrupt transition when changing app sources"
-msgstr ""
+msgstr "Weniger abrupte Übergänge beim Wechsel der Anwendungsquellen"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:34
