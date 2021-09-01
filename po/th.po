@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-30 18:38+0000\n"
+"POT-Creation-Date: 2021-09-01 22:59+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Cleiton Floss <cleitonfloss@gmail.com>\n"
 "Language-Team: Thai <https://l10n.elementary.io/projects/appcenter/appcenter/th/>\n"
@@ -52,9 +52,9 @@ msgstr "%s ได้ถูกติดตั้งอย่างสมบูร
 msgid "Failed to launch “%s“"
 msgstr "ถอนการติดตั้ง"
 
-#: src/MainWindow.vala:171 src/Views/Homepage.vala:299
-#: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
-#: src/Views/Homepage.vala:325 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:171 src/Views/Homepage.vala:243
+#: src/Views/Homepage.vala:253 src/Views/Homepage.vala:258
+#: src/Views/Homepage.vala:269 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "หน้าหลัก"
 
@@ -720,19 +720,15 @@ msgstr ""
 msgid "Non-Curated Apps"
 msgstr ""
 
-#: src/Views/Homepage.vala:67
+#: src/Views/Homepage.vala:64
 msgid "Recently Updated"
 msgstr ""
 
-#: src/Views/Homepage.vala:83
-msgid "Trending"
-msgstr ""
-
-#: src/Views/Homepage.vala:99
+#: src/Views/Homepage.vala:80
 msgid "Categories"
 msgstr "หมวดหมู่"
 
-#: src/Views/Homepage.vala:314 src/Views/Homepage.vala:325
+#: src/Views/Homepage.vala:258 src/Views/Homepage.vala:269
 #, c-format
 msgid "Search %s"
 msgstr "ค้นหา %s"

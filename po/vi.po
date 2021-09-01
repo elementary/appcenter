@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-30 18:38+0000\n"
+"POT-Creation-Date: 2021-09-01 22:59+0000\n"
 "PO-Revision-Date: 2020-10-07 03:57+0000\n"
 "Last-Translator: Trkien618 <hacngoctrungkien@gmail.com>\n"
 "Language-Team: Vietnamese <https://l10n.elementary.io/projects/appcenter/appcenter/vi/>\n"
@@ -53,9 +53,9 @@ msgstr "%s đã được cài đặt thành công"
 msgid "Failed to launch “%s“"
 msgstr "Gỡ cài đặt"
 
-#: src/MainWindow.vala:171 src/Views/Homepage.vala:299
-#: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
-#: src/Views/Homepage.vala:325 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:171 src/Views/Homepage.vala:243
+#: src/Views/Homepage.vala:253 src/Views/Homepage.vala:258
+#: src/Views/Homepage.vala:269 src/Views/SearchView.vala:89
 #, fuzzy
 msgid "Home"
 msgstr "Trang chủ"
@@ -731,19 +731,15 @@ msgstr ""
 msgid "Non-Curated Apps"
 msgstr "Không được quản lý"
 
-#: src/Views/Homepage.vala:67
+#: src/Views/Homepage.vala:64
 msgid "Recently Updated"
 msgstr "Đã cập nhật gần đây"
 
-#: src/Views/Homepage.vala:83
-msgid "Trending"
-msgstr "Nổi bật"
-
-#: src/Views/Homepage.vala:99
+#: src/Views/Homepage.vala:80
 msgid "Categories"
 msgstr "Danh mục"
 
-#: src/Views/Homepage.vala:314 src/Views/Homepage.vala:325
+#: src/Views/Homepage.vala:258 src/Views/Homepage.vala:269
 #, c-format
 msgid "Search %s"
 msgstr "Tìm %s"
@@ -943,6 +939,9 @@ msgstr "Mới nhất"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:264
 msgid "Update"
 msgstr "Cập nhật"
+
+#~ msgid "Trending"
+#~ msgstr "Nổi bật"
 
 #~ msgid "No Results"
 #~ msgstr "Không có kết quả"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-30 18:38+0000\n"
+"POT-Creation-Date: 2021-09-01 22:59+0000\n"
 "PO-Revision-Date: 2020-07-01 23:02+0000\n"
 "Last-Translator: Nan-Hung Hsieh <nhsieh@cvm.tamu.edu>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/appcenter/appcenter/zh_Hant/>\n"
@@ -55,9 +55,9 @@ msgstr "％s 已成功安裝"
 msgid "Failed to launch “%s“"
 msgstr "安裝“%s”失敗"
 
-#: src/MainWindow.vala:171 src/Views/Homepage.vala:299
-#: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
-#: src/Views/Homepage.vala:325 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:171 src/Views/Homepage.vala:243
+#: src/Views/Homepage.vala:253 src/Views/Homepage.vala:258
+#: src/Views/Homepage.vala:269 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "首頁"
 
@@ -714,19 +714,15 @@ msgstr ""
 msgid "Non-Curated Apps"
 msgstr "非策劃應用程式"
 
-#: src/Views/Homepage.vala:67
+#: src/Views/Homepage.vala:64
 msgid "Recently Updated"
 msgstr "最近更新"
 
-#: src/Views/Homepage.vala:83
-msgid "Trending"
-msgstr "熱門"
-
-#: src/Views/Homepage.vala:99
+#: src/Views/Homepage.vala:80
 msgid "Categories"
 msgstr "類別"
 
-#: src/Views/Homepage.vala:314 src/Views/Homepage.vala:325
+#: src/Views/Homepage.vala:258 src/Views/Homepage.vala:269
 #, c-format
 msgid "Search %s"
 msgstr "搜尋 %s"
@@ -919,6 +915,9 @@ msgstr "最新狀態"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:264
 msgid "Update"
 msgstr "更新"
+
+#~ msgid "Trending"
+#~ msgstr "熱門"
 
 #~ msgid "No Results"
 #~ msgstr "沒有結果"

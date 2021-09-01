@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-30 18:38+0000\n"
+"POT-Creation-Date: 2021-09-01 22:59+0000\n"
 "PO-Revision-Date: 2019-05-15 01:18+0000\n"
 "Last-Translator: Jimmy Sun <jimmysuncn@hotmail.com>\n"
 "Language-Team: Chinese <https://l10n.elementary.io/projects/appcenter/appcenter/zh/>\n"
@@ -52,9 +52,9 @@ msgstr "%s已被安装成功"
 msgid "Failed to launch “%s“"
 msgstr "卸载"
 
-#: src/MainWindow.vala:171 src/Views/Homepage.vala:299
-#: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
-#: src/Views/Homepage.vala:325 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:171 src/Views/Homepage.vala:243
+#: src/Views/Homepage.vala:253 src/Views/Homepage.vala:258
+#: src/Views/Homepage.vala:269 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "首页"
 
@@ -729,19 +729,15 @@ msgstr ""
 msgid "Non-Curated Apps"
 msgstr "非策略性应用程序"
 
-#: src/Views/Homepage.vala:67
+#: src/Views/Homepage.vala:64
 msgid "Recently Updated"
 msgstr "最近更新"
 
-#: src/Views/Homepage.vala:83
-msgid "Trending"
-msgstr "趋向"
-
-#: src/Views/Homepage.vala:99
+#: src/Views/Homepage.vala:80
 msgid "Categories"
 msgstr "类别"
 
-#: src/Views/Homepage.vala:314 src/Views/Homepage.vala:325
+#: src/Views/Homepage.vala:258 src/Views/Homepage.vala:269
 #, c-format
 msgid "Search %s"
 msgstr "搜索%s"
@@ -940,6 +936,9 @@ msgstr "最新"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:264
 msgid "Update"
 msgstr "更新"
+
+#~ msgid "Trending"
+#~ msgstr "趋向"
 
 #~ msgid "No Results"
 #~ msgstr "无结果"

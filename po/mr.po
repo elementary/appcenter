@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-30 18:38+0000\n"
+"POT-Creation-Date: 2021-09-01 22:59+0000\n"
 "PO-Revision-Date: 2021-06-19 21:50+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/appcenter/mr/>\n"
@@ -48,9 +48,9 @@ msgstr "\"%s\" इन्स्टॉल झाले"
 msgid "Failed to launch “%s“"
 msgstr "\"%s\" लाँच करण्यात अयशस्वी"
 
-#: src/MainWindow.vala:171 src/Views/Homepage.vala:299
-#: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
-#: src/Views/Homepage.vala:325 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:171 src/Views/Homepage.vala:243
+#: src/Views/Homepage.vala:253 src/Views/Homepage.vala:258
+#: src/Views/Homepage.vala:269 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "मुख्य पृष्ठ"
 
@@ -704,19 +704,15 @@ msgstr ""
 msgid "Non-Curated Apps"
 msgstr "नॉन-क्युरेटेड अॅप्स"
 
-#: src/Views/Homepage.vala:67
+#: src/Views/Homepage.vala:64
 msgid "Recently Updated"
 msgstr "अलीकडे अपडेट केलेले"
 
-#: src/Views/Homepage.vala:83
-msgid "Trending"
-msgstr "ट्रेन्डिंग"
-
-#: src/Views/Homepage.vala:99
+#: src/Views/Homepage.vala:80
 msgid "Categories"
 msgstr "श्रेणी"
 
-#: src/Views/Homepage.vala:314 src/Views/Homepage.vala:325
+#: src/Views/Homepage.vala:258 src/Views/Homepage.vala:269
 #, c-format
 msgid "Search %s"
 msgstr "%s शोधा"
@@ -910,6 +906,9 @@ msgstr "अद्ययावत"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:264
 msgid "Update"
 msgstr "अद्ययावत (अपडेट) करा"
+
+#~ msgid "Trending"
+#~ msgstr "ट्रेन्डिंग"
 
 #~ msgid "No Results"
 #~ msgstr "परिणाम नाहीत"
