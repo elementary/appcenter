@@ -6,17 +6,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-30 18:38+0000\n"
+"POT-Creation-Date: 2021-09-01 23:27+0000\n"
 "PO-Revision-Date: 2021-08-31 15:13+0000\n"
 "Last-Translator: Silviu Popescu <teodorspopescu@gmail.com>\n"
-"Language-Team: Romanian <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/ro/>\n"
+"Language-Team: Romanian <https://l10n.elementary.io/projects/appcenter/appcenter/ro/>\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
-"20)) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2;\n"
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
@@ -52,9 +50,9 @@ msgstr "\"%s\" s-a instalat"
 msgid "Failed to launch “%s“"
 msgstr "S-a eșuat în pornirea “%s“"
 
-#: src/MainWindow.vala:171 src/Views/Homepage.vala:299
-#: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
-#: src/Views/Homepage.vala:325 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:171 src/Views/Homepage.vala:243
+#: src/Views/Homepage.vala:253 src/Views/Homepage.vala:258
+#: src/Views/Homepage.vala:269 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "Pagina principală"
 
@@ -629,42 +627,42 @@ msgid "Share"
 msgstr "Partajează"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:768
+#: src/Views/AppInfoView.vala:763
 msgid "Public Domain"
 msgstr "Domeniu Public"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:771
+#: src/Views/AppInfoView.vala:766
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://ro.wikipedia.org/wiki/Domeniul_public"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:776
+#: src/Views/AppInfoView.vala:771
 msgid "Free Software"
 msgstr "Software Liber"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:779
+#: src/Views/AppInfoView.vala:774
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw.ro.html"
 
-#: src/Views/AppInfoView.vala:783
+#: src/Views/AppInfoView.vala:778
 msgid "Proprietary"
 msgstr "Patentat"
 
-#: src/Views/AppInfoView.vala:786
+#: src/Views/AppInfoView.vala:781
 msgid "Unknown License"
 msgstr "Licență necunoscută"
 
-#: src/Views/AppInfoView.vala:868
+#: src/Views/AppInfoView.vala:863
 msgid "Fund"
 msgstr "Susţine"
 
-#: src/Views/AppInfoView.vala:891
+#: src/Views/AppInfoView.vala:886
 msgid "Fund the development of this app"
 msgstr "Susţine dezvoltarea acestei aplicaţii"
 
-#: src/Views/AppInfoView.vala:952
+#: src/Views/AppInfoView.vala:947
 #, c-format
 msgid "Other Apps by %s"
 msgstr "Alte aplicaţii de %s"
@@ -705,27 +703,21 @@ msgstr "Nicio aplicație găsită"
 #: src/Views/AppListView.vala:32
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
-msgstr ""
-"Încearcă să schimbi cuvintele de căutare. Poți de asemenea să instalezi "
-"aplicații Flatpak de exemplu de la %s"
+msgstr "Încearcă să schimbi cuvintele de căutare. Poți de asemenea să instalezi aplicații Flatpak de exemplu de la %s"
 
 #: src/Views/AppListView.vala:168
 msgid "Non-Curated Apps"
 msgstr "Aplicații neverificate"
 
-#: src/Views/Homepage.vala:67
+#: src/Views/Homepage.vala:64
 msgid "Recently Updated"
 msgstr "Actualizate recent"
 
-#: src/Views/Homepage.vala:83
-msgid "Trending"
-msgstr "Populare"
-
-#: src/Views/Homepage.vala:99
+#: src/Views/Homepage.vala:80
 msgid "Categories"
 msgstr "Categorii"
 
-#: src/Views/Homepage.vala:314 src/Views/Homepage.vala:325
+#: src/Views/Homepage.vala:258 src/Views/Homepage.vala:269
 #, c-format
 msgid "Search %s"
 msgstr "Caută %s"
@@ -736,13 +728,15 @@ msgctxt "view"
 msgid "Search"
 msgstr "Căutare"
 
-#: src/Widgets/Banner.vala:235
-msgid "An open, pay-what-you-want app store"
+#: src/Widgets/Banner.vala:234
+#, fuzzy
+#| msgid "An open, pay-what-you-want app store"
+msgid "The open source, pay-what-you-can app store"
 msgstr "Un magazin de aplicații în care plătești cât vrei"
 
-#: src/Widgets/Banner.vala:243
-msgid "Get the apps that you need at a price you can afford."
-msgstr "Obține aplicațiile de care ai nevoie, la un preț accesibil."
+#: src/Widgets/Banner.vala:242
+msgid "Reviewed and curated for a native, privacy-respecting, and secure experience."
+msgstr ""
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
@@ -920,6 +914,12 @@ msgstr "Aplicații la zi"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:264
 msgid "Update"
 msgstr "Actualizează"
+
+#~ msgid "Get the apps that you need at a price you can afford."
+#~ msgstr "Obține aplicațiile de care ai nevoie, la un preț accesibil."
+
+#~ msgid "Trending"
+#~ msgstr "Populare"
 
 #~ msgid "No Results"
 #~ msgstr "Niciun rezultat"

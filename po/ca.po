@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-30 18:38+0000\n"
+"POT-Creation-Date: 2021-09-01 23:27+0000\n"
 "PO-Revision-Date: 2021-08-22 08:03+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/appcenter/ca/>\n"
@@ -49,9 +49,9 @@ msgstr "%s s'ha instal·lat"
 msgid "Failed to launch “%s“"
 msgstr "Ha fallat executar «%s»."
 
-#: src/MainWindow.vala:171 src/Views/Homepage.vala:299
-#: src/Views/Homepage.vala:309 src/Views/Homepage.vala:314
-#: src/Views/Homepage.vala:325 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:171 src/Views/Homepage.vala:243
+#: src/Views/Homepage.vala:253 src/Views/Homepage.vala:258
+#: src/Views/Homepage.vala:269 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "Pàgina principal"
 
@@ -623,42 +623,42 @@ msgid "Share"
 msgstr "Comparteix"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:768
+#: src/Views/AppInfoView.vala:763
 msgid "Public Domain"
 msgstr "Domini públic"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:771
+#: src/Views/AppInfoView.vala:766
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://ca.wikipedia.org/wiki/Domini_p%C3%BAblic"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:776
+#: src/Views/AppInfoView.vala:771
 msgid "Free Software"
 msgstr "Programari lliure"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:779
+#: src/Views/AppInfoView.vala:774
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw.ca.html"
 
-#: src/Views/AppInfoView.vala:783
+#: src/Views/AppInfoView.vala:778
 msgid "Proprietary"
 msgstr "De propietat"
 
-#: src/Views/AppInfoView.vala:786
+#: src/Views/AppInfoView.vala:781
 msgid "Unknown License"
 msgstr "Llicència desconeguda"
 
-#: src/Views/AppInfoView.vala:868
+#: src/Views/AppInfoView.vala:863
 msgid "Fund"
 msgstr "Finançament"
 
-#: src/Views/AppInfoView.vala:891
+#: src/Views/AppInfoView.vala:886
 msgid "Fund the development of this app"
 msgstr "Financeu el desenvolupament d'aquesta aplicació"
 
-#: src/Views/AppInfoView.vala:952
+#: src/Views/AppInfoView.vala:947
 #, c-format
 msgid "Other Apps by %s"
 msgstr "Altres aplicacions de %s"
@@ -705,19 +705,15 @@ msgstr "Preveu de canviar els termes de la cerca. També podeu carregar lateralm
 msgid "Non-Curated Apps"
 msgstr "Aplicacions sense cura"
 
-#: src/Views/Homepage.vala:67
+#: src/Views/Homepage.vala:64
 msgid "Recently Updated"
 msgstr "Actualitzat recentment"
 
-#: src/Views/Homepage.vala:83
-msgid "Trending"
-msgstr "Tendència"
-
-#: src/Views/Homepage.vala:99
+#: src/Views/Homepage.vala:80
 msgid "Categories"
 msgstr "Categories"
 
-#: src/Views/Homepage.vala:314 src/Views/Homepage.vala:325
+#: src/Views/Homepage.vala:258 src/Views/Homepage.vala:269
 #, c-format
 msgid "Search %s"
 msgstr "Cerca %s"
@@ -728,13 +724,15 @@ msgctxt "view"
 msgid "Search"
 msgstr "Cerca"
 
-#: src/Widgets/Banner.vala:235
-msgid "An open, pay-what-you-want app store"
+#: src/Widgets/Banner.vala:234
+#, fuzzy
+#| msgid "An open, pay-what-you-want app store"
+msgid "The open source, pay-what-you-can app store"
 msgstr "Una botiga d'aplicacions oberta, que permet pagar el que vulgueu"
 
-#: src/Widgets/Banner.vala:243
-msgid "Get the apps that you need at a price you can afford."
-msgstr "Obtingueu les aplicacions que necessiteu al preu que podeu pagar."
+#: src/Widgets/Banner.vala:242
+msgid "Reviewed and curated for a native, privacy-respecting, and secure experience."
+msgstr ""
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
@@ -911,6 +909,12 @@ msgstr "Al dia"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:264
 msgid "Update"
 msgstr "Actualitza"
+
+#~ msgid "Get the apps that you need at a price you can afford."
+#~ msgstr "Obtingueu les aplicacions que necessiteu al preu que podeu pagar."
+
+#~ msgid "Trending"
+#~ msgstr "Tendència"
 
 #~ msgid "No Results"
 #~ msgstr "Sense resultats"

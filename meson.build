@@ -60,7 +60,6 @@ conf_data.set('HIDDEN_APP_LIST', get_option('hidden_app_list_file'))
 conf_data.set('VERSION', meson.project_version())
 conf_data.set('CONFIGDIR', config_dir)
 conf_data.set('EXEC_PATH', join_paths (get_option('prefix'), get_option('bindir'), meson.project_name()))
-conf_data.set('HOUSTON_API_URL', get_option('api_url'))
 conf_data.set('LOCALEDIR', join_paths(get_option('prefix'), get_option('localedir')))
 
 subdir('data')
