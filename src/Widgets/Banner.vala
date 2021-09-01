@@ -27,8 +27,8 @@ const string BANNER_STYLE_CSS = """
     }
 """;
 
-const string DEFAULT_BANNER_COLOR_PRIMARY = "#68758e";
-const string DEFAULT_BANNER_COLOR_PRIMARY_TEXT = "white";
+const string DEFAULT_BANNER_COLOR_PRIMARY = "@base_color";
+const string DEFAULT_BANNER_COLOR_PRIMARY_TEXT = "@text_color";
 const int MILLISECONDS_BETWEEN_BANNER_ITEMS = 5000;
 
 namespace AppCenter.Widgets {
@@ -94,7 +94,7 @@ namespace AppCenter.Widgets {
             add (stack);
 
             background_color = "#7E45BE";
-            foreground_color = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
+            foreground_color = "white";
 
             brand_widget = new BannerWidget (null);
             stack.add_named (brand_widget, "brand");
