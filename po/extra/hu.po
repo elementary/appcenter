@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-01 23:27+0000\n"
-"PO-Revision-Date: 2021-09-01 11:20+0000\n"
+"PO-Revision-Date: 2021-09-03 04:22+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/appcenter/"
 "extra/hu/>\n"
@@ -44,9 +44,8 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:57
 #: data/io.elementary.appcenter.appdata.xml.in:72
 #: data/io.elementary.appcenter.appdata.xml.in:85
-#, fuzzy
 msgid "Improvements:"
-msgstr "Különböző hibajavítások és teljesítmény fejlesztések"
+msgstr "Fejlesztések:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Show apps from newly sideloaded remotes without requiring a restart"
@@ -71,9 +70,8 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:215
 #: data/io.elementary.appcenter.appdata.xml.in:221
 #: data/io.elementary.appcenter.appdata.xml.in:268
-#, fuzzy
 msgid "Updated translations"
-msgstr "Új fordítások"
+msgstr "Frissített fordítások"
 
 #: data/io.elementary.appcenter.appdata.xml.in:26
 #: data/io.elementary.appcenter.appdata.xml.in:40
@@ -195,10 +193,8 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:143
 #: data/io.elementary.appcenter.appdata.xml.in:155
 #: data/io.elementary.appcenter.appdata.xml.in:168
-#, fuzzy
-#| msgid "Check for Updates"
 msgid "Minor updates"
-msgstr "Frissítések keresése"
+msgstr "Kisebb frissítések"
 
 #: data/io.elementary.appcenter.appdata.xml.in:118
 #: data/io.elementary.appcenter.appdata.xml.in:164
@@ -224,9 +220,8 @@ msgid ""
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:130
-#, fuzzy
 msgid "Improve search performance"
-msgstr "Hibajavítások és teljesítmény növelése."
+msgstr "A keresés teljesítményének javítása"
 
 #: data/io.elementary.appcenter.appdata.xml.in:131
 msgid "Improve update badge styling and category styling"
@@ -247,9 +242,8 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:157
 #: data/io.elementary.appcenter.appdata.xml.in:178
 #: data/io.elementary.appcenter.appdata.xml.in:267
-#, fuzzy
 msgid "Performance improvements"
-msgstr "Különböző hibajavítások és teljesítmény fejlesztések"
+msgstr "Teljesítmény-fejlesztések"
 
 #: data/io.elementary.appcenter.appdata.xml.in:166
 msgid "Perform updates without administrator permissions"
@@ -274,9 +268,8 @@ msgid "Reduce slowdowns when opening certain apps"
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:183
-#, fuzzy
 msgid "Extension improvements"
-msgstr "Különböző hibajavítások és teljesítmény fejlesztések"
+msgstr "Bővítmények fejlesztése"
 
 #: data/io.elementary.appcenter.appdata.xml.in:185
 msgid ""
@@ -297,9 +290,8 @@ msgid ""
 msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:189
-#, fuzzy
 msgid "Keyboard improvements"
-msgstr "Különböző hibajavítások és teljesítmény fejlesztések"
+msgstr "Billentyűzet fejlesztése"
 
 #: data/io.elementary.appcenter.appdata.xml.in:191
 msgid ""
@@ -539,7 +531,6 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:393
 #: data/io.elementary.appcenter.appdata.xml.in:402
 #: data/io.elementary.appcenter.appdata.xml.in:411
-#, fuzzy
 msgid "Bug fixes and improve performance."
 msgstr "Hibajavítások és teljesítmény növelése."
 
@@ -594,13 +585,12 @@ msgid "Prevent multiple authentication dialogs when resuming from suspend"
 msgstr "Több hitelesítési ablak megelőzése felfüggesztés és folytatás után"
 
 #: data/io.elementary.appcenter.appdata.xml.in:430
-#, fuzzy
 msgid ""
 "Search performance has been improved, the category name is now shown on the "
 "headbar and minor bugs have been fixed."
 msgstr ""
-"A keresés teljesítménye fejlesztve lett, a kategória neve látszik a "
-"fejlécen, és kisebb hibák javításra kerültek."
+"A keresés teljesítménye fejlesztve lett, a kategória neve látszik a fejlécen "
+"és kisebb hibák javításra kerültek."
 
 #: data/io.elementary.appcenter.appdata.xml.in:432
 msgid "Fix Steam installation"
@@ -611,9 +601,8 @@ msgid "Make search asynchronous"
 msgstr "Keresés aszinkronná tétele"
 
 #: data/io.elementary.appcenter.appdata.xml.in:485
-#, fuzzy
 msgid "elementary, Inc."
-msgstr "elementary LLC."
+msgstr "elementary, Inc."
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
@@ -624,11 +613,10 @@ msgid "@PROJECT_NAME@"
 msgstr "@PROJECT_NAME@"
 
 #: data/io.elementary.appcenter.desktop.in.in:7
-#, fuzzy
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
 msgstr ""
-"install;uninstall;remove;catalogue;store;apps;updates;software;telepítés;"
-"eltávolítás;törlés;katalógus;bolt;alkalmazások;frissítések;szoftver;"
+"install;uninstall;remove;catalogue;store;apps;updates;software;telepítés;eltá"
+"volítás;törlés;katalógus;bolt;alkalmazások;frissítések;szoftver;"
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
