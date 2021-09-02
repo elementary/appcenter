@@ -20,7 +20,7 @@
 
 public class AppCenter.Homepage : AbstractView {
     private const int MAX_PACKAGES_IN_BANNER = 5;
-    private const int MAX_PACKAGES_IN_CAROUSEL = 10;
+    private const int MAX_PACKAGES_IN_CAROUSEL = 12;
 
     private Gtk.FlowBox category_flow;
     private Gtk.ScrolledWindow category_scrolled;
