@@ -125,10 +125,10 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
             column_spacing = 6,
             margin_bottom = 24
         };
+        selection_list.add (custom_amount);
         selection_list.add (one_dollar);
         selection_list.add (five_dollar);
         selection_list.add (ten_dollar);
-        selection_list.add (custom_amount);
 
         email_entry = new Gtk.Entry ();
         email_entry.hexpand = true;
