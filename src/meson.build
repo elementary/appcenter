@@ -52,9 +52,7 @@ appcenter_files = files(
     'Widgets/AppContainers/AbstractAppContainer.vala',
     'Widgets/AppContainers/AbstractPackageRowGrid.vala',
     'Widgets/AppContainers/InstalledPackageRowGrid.vala',
-    'Widgets/AppContainers/ListPackageRowGrid.vala',
-    'Widgets/Carousel/Carousel.vala',
-    'Widgets/Carousel/CarouselItem.vala'
+    'Widgets/AppContainers/ListPackageRowGrid.vala'
 )
 
 config_file = configure_file(

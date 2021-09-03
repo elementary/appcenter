@@ -4,14 +4,16 @@
 # WANG, Wei <ww460160885@gmail.com>, 2019.
 # imgradeone Yan <imgradeone@outlook.com>, 2019, 2020, 2021.
 # Zang Jiucheng <zangjiucheng@gmail.com>, 2021.
+# Yuchen Deng <loaden@gmail.com>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-01 23:27+0000\n"
-"PO-Revision-Date: 2021-06-20 08:32+0000\n"
-"Last-Translator: imgradeone Yan <imgradeone@outlook.com>\n"
-"Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/appcenter/appcenter/zh_Hans/>\n"
+"PO-Revision-Date: 2021-09-02 14:36+0000\n"
+"Last-Translator: Yuchen Deng <loaden@gmail.com>\n"
+"Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
+"appcenter/appcenter/zh_Hans/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -690,11 +692,11 @@ msgstr "全部更新"
 
 #: src/Views/AppListView.vala:29
 msgid "Flathub"
-msgstr ""
+msgstr "Flathub"
 
 #: src/Views/AppListView.vala:31
 msgid "No Apps Found"
-msgstr ""
+msgstr "未发现应用"
 
 #: src/Views/AppListView.vala:32
 #, c-format

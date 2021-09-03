@@ -7,14 +7,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-01 23:27+0000\n"
-"PO-Revision-Date: 2021-08-31 15:13+0000\n"
+"PO-Revision-Date: 2021-09-03 14:35+0000\n"
 "Last-Translator: Silviu Popescu <teodorspopescu@gmail.com>\n"
-"Language-Team: Romanian <https://l10n.elementary.io/projects/appcenter/appcenter/ro/>\n"
+"Language-Team: Romanian <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/ro/>\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"20)) ? 1 : 2;\n"
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:25+0000\n"
 
@@ -729,14 +731,14 @@ msgid "Search"
 msgstr "Căutare"
 
 #: src/Widgets/Banner.vala:234
-#, fuzzy
-#| msgid "An open, pay-what-you-want app store"
 msgid "The open source, pay-what-you-can app store"
-msgstr "Un magazin de aplicații în care plătești cât vrei"
+msgstr "Magazinul de aplicații în cod deschis în care plătești cât poți"
 
 #: src/Widgets/Banner.vala:242
 msgid "Reviewed and curated for a native, privacy-respecting, and secure experience."
 msgstr ""
+"Revizuit și îngrijit pentru o experiență nativă, în siguranță, cu "
+"intimitatea respectată."
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"

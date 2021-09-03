@@ -20,7 +20,7 @@
 
 public class AppCenter.Homepage : AbstractView {
     private const int MAX_PACKAGES_IN_BANNER = 5;
-    private const int MAX_PACKAGES_IN_CAROUSEL = 10;
+    private const int MAX_PACKAGES_IN_CAROUSEL = 12;
 
     private Gtk.FlowBox category_flow;
     private Gtk.ScrolledWindow category_scrolled;
@@ -36,7 +36,7 @@ public class AppCenter.Homepage : AbstractView {
     public Gtk.Revealer switcher_revealer;
 
     private Widgets.Switcher switcher;
-    private Widgets.Carousel recently_updated_carousel;
+    private Gtk.FlowBox recently_updated_carousel;
     private Gtk.Revealer recently_updated_revealer;
 
     construct {
@@ -65,7 +65,14 @@ public class AppCenter.Homepage : AbstractView {
             margin_start = 10
         };
 
-        recently_updated_carousel = new Widgets.Carousel ();
+        recently_updated_carousel = new Gtk.FlowBox () {
+            activate_on_single_click = true,
+            column_spacing = 12,
+            row_spacing = 12,
+            homogeneous = true,
+            max_children_per_line = 5,
+            min_children_per_line = 3
+        };
 
         var recently_updated_grid = new Gtk.Grid () {
             margin = 2,
@@ -159,7 +166,11 @@ public class AppCenter.Homepage : AbstractView {
             });
         });
 
-        recently_updated_carousel.package_activated.connect ((package) => show_package (package));
+        recently_updated_carousel.child_activated.connect ((child) => {
+            var package_row_grid = (AppCenter.Widgets.ListPackageRowGrid) child.get_child ();
+
+            show_package (package_row_grid.package);
+        });
     }
 
     private async void load_banners_and_carousels () {
@@ -212,11 +223,12 @@ public class AppCenter.Homepage : AbstractView {
                 }
             }
 
-            if (!installed && !(package in packages_in_banner)) {
-                recently_updated_carousel.add_package (package);
+            if (!installed && !(package in packages_in_banner) && !package.is_explicit) {
+                var package_row = new AppCenter.Widgets.ListPackageRowGrid (package);
+                recently_updated_carousel.add (package_row);
             }
         }
-
+        recently_updated_carousel.show_all ();
         recently_updated_revealer.reveal_child = recently_updated_carousel.get_children ().length () > 0;
 
         newest_banner.go_to_first ();
