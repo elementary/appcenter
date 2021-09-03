@@ -115,6 +115,11 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         dollar_button_group.add_widget (five_dollar);
         dollar_button_group.add_widget (ten_dollar);
 
+        var or_label = new Gtk.Label (_("or")) {
+            margin_start = 3,
+            margin_end = 3
+        };
+
         var custom_amount = new Gtk.SpinButton.with_range (0, 100, 1) {
             hexpand = true,
             primary_icon_name = "currency-dollar-symbolic",
@@ -126,6 +131,7 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
             margin_bottom = 24
         };
         selection_list.add (custom_amount);
+        selection_list.add (or_label);
         selection_list.add (one_dollar);
         selection_list.add (five_dollar);
         selection_list.add (ten_dollar);
