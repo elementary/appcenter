@@ -8,6 +8,7 @@
     <file alias="applications-video-rtl-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-video-rtl-symbolic.svg</file>
     <file alias="applications-video-symbolic-rtl.svg" compressed="true" preprocess="xml-stripblanks">applications-video-rtl-symbolic.svg</file>
     <file alias="applications-video-symbolic.svg" compressed="true" preprocess="xml-stripblanks">applications-video-symbolic.svg</file>
+    <file compressed="true" preprocess="xml-stripblanks">currency-dollar-symbolic.svg</file>
     <file alias="online-account-facebook.svg" compressed="true" preprocess="xml-stripblanks">online-account-facebook.svg</file>
     <file compressed="true" preprocess="xml-stripblanks">internet-mail-symbolic.svg</file>
     <file alias="online-account-reddit.svg" compressed="true" preprocess="xml-stripblanks">online-account-reddit.svg</file>
