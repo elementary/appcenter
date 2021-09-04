@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-04 07:43+0000\n"
-"PO-Revision-Date: 2021-09-04 21:54+0000\n"
-"Last-Translator: Muhammad Al-Jayyousi <m7md.j99@protonmail.com>\n"
+"PO-Revision-Date: 2021-09-05 00:54+0000\n"
+"Last-Translator: aalhaif <aalhaif@hotmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/extra/"
 "ar/>\n"
 "Language: ar\n"
@@ -128,7 +128,7 @@ msgstr "إصلاح سياسة الخصوصية المفقودة في رسالة 
 
 #: data/io.elementary.appcenter.appdata.xml.in:80
 msgid "New features:"
-msgstr "الميزات الجديدة:"
+msgstr "مميزات جديدة:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:82
 msgid "Show in-app notification when an app is installed"
@@ -189,7 +189,7 @@ msgstr "إصلاحات"
 
 #: data/io.elementary.appcenter.appdata.xml.in:108
 msgid "Correctly display names of Flatpak runtime updates"
-msgstr "إظهار أسماء تحديثات برامج تشغيل Flatpak بشكل صحيح"
+msgstr "عرض أسماء التحديثات وقت تشغيل Flatpak بشكل صحيح"
 
 #: data/io.elementary.appcenter.appdata.xml.in:110
 #: data/io.elementary.appcenter.appdata.xml.in:127
@@ -202,7 +202,7 @@ msgstr "تحديثات طفيفة"
 #: data/io.elementary.appcenter.appdata.xml.in:118
 #: data/io.elementary.appcenter.appdata.xml.in:164
 msgid "New features"
-msgstr "ميزات جديدة"
+msgstr "مميزات جديدة"
 
 #: data/io.elementary.appcenter.appdata.xml.in:120
 msgid "Support system-wide Flatpak remotes"
