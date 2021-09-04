@@ -94,7 +94,7 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         primary_label.xalign = 0;
 
         var secondary_label = new Gtk.Label (
-            _("This is a one time payment. You can also choose to pay a more affordable price.")
+            _("This is a one time payment suggested by the developer. You can also choose your own price.")
         ) {
             margin_bottom = 12,
             margin_top = 6,
