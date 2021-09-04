@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-04 07:43+0000\n"
-"PO-Revision-Date: 2021-09-04 16:52+0000\n"
+"PO-Revision-Date: 2021-09-04 21:54+0000\n"
 "Last-Translator: Muhammad Al-Jayyousi <m7md.j99@protonmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/extra/"
 "ar/>\n"
@@ -23,7 +23,7 @@ msgstr "آب سنتر"
 #: data/io.elementary.appcenter.appdata.xml.in:9
 #: data/io.elementary.appcenter.desktop.in.in:4
 msgid "Browse and manage apps"
-msgstr "ادارة التطبيقات"
+msgstr "ابحث عن التطبيقات وقم بإدارتها"
 
 #: data/io.elementary.appcenter.appdata.xml.in:11
 msgid ""
@@ -33,11 +33,10 @@ msgid ""
 "is also used for updating your system to the latest and greatest version for "
 "new features and fixes."
 msgstr ""
-"متجر التطبيقات مفتوحة المصدر من إليمنتري والذي عن طريقه يمكن دفع ما تريد "
-"لدعم المطورين. تم مراجعة التطبيقات وانتقائها بعناية لضمان تجربة حرة، آمنة "
-"ومحترمة للخصوصية. تصفح عن طريق التصنيفات أو ابحث واستكشف تطبيقات جديدة. "
-"AppCenter يُستخدم أيضًا لتحديث نظامك إلى آخر التحديثات وللحصول على المميزات "
-"جديدة والإصلاحات."
+"متجر التطبيقات مفتوح المصدر وعلى طريقة \"ادفع ما تستطيع\" من elementary. "
+"التطبيقات مراجعة ومختارة من elementary لضمان تجربة أصلية وطبيعية، ومحترمة "
+"للخصوصية، وآمنة. تصفح من خلال الفئات أو ابحث واستكشف تطبيقات جديدة. آب سنتر "
+"يستخدم أيضاً لتحديث نظامك لآخر إصدار للحصول على ميزات وإصلاحات جديدة."
 
 #: data/io.elementary.appcenter.appdata.xml.in:16
 #: data/io.elementary.appcenter.appdata.xml.in:31
@@ -51,10 +50,11 @@ msgstr "التحسينات:"
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Show apps from newly sideloaded remotes without requiring a restart"
 msgstr ""
+"إظهار التطبيقات من المتحكمات المحملة بشكل متواز دون الحاجة لإعادة التشغيل"
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
 msgid "Less abrupt transition when changing app sources"
-msgstr ""
+msgstr "تنقلات أقل فجائية عند تغيير مصادر التطبيقات"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:34
@@ -72,7 +72,7 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:221
 #: data/io.elementary.appcenter.appdata.xml.in:268
 msgid "Updated translations"
-msgstr "ترجمة محدثة"
+msgstr "تحديثات على الترجمة"
 
 #: data/io.elementary.appcenter.appdata.xml.in:26
 #: data/io.elementary.appcenter.appdata.xml.in:40
@@ -84,101 +84,99 @@ msgstr "الإصلاحات:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:28
 msgid "Install Linux kernel headers for device drivers that use DKMS"
-msgstr "نزل \"Linux Kernel Headers\" لتعريفات الجهاز التي تستخدم DKMS"
+msgstr "تنزيل ال Headers الخاصة بنواة Linux للتعريفات التي تستخدم DKMS"
 
 #: data/io.elementary.appcenter.appdata.xml.in:29
 msgid "Use system Flatpak runtimes for locally installed apps"
-msgstr "استخدم system Flatpak runtimes للتطبيقات المثبتة محليًا"
+msgstr "استخدام برامج تشغيل Flatpak الخاصة بالنظام للتطبيقات المثبتة محلياً"
 
 #: data/io.elementary.appcenter.appdata.xml.in:33
 msgid "Mention Sideload when search returns no results"
-msgstr ""
+msgstr "ذكر التحميل المتوازي عندما لا تظهر نتائج للبحث"
 
 #: data/io.elementary.appcenter.appdata.xml.in:42
 msgid ""
 "Ensure user installation is selected by default when navigating from the "
 "homepage"
 msgstr ""
+"التأكد بأن التثبيت الخاص بالمستخدم هو الخيار الافتراضي عند التنقل من الصفحة "
+"الرئيسية"
 
 #: data/io.elementary.appcenter.appdata.xml.in:43
 msgid "Fix opening apps from app installed toasts"
-msgstr ""
+msgstr "إصلاح فتح التطبيقات من الإشعارات الصغيرة التي تظهر تثبيت التطبيق بنجاح"
 
 #: data/io.elementary.appcenter.appdata.xml.in:55
 msgid "Install Linux kernel headers with NVIDIA drivers"
-msgstr ""
+msgstr "تثبيت ال Headers الخاصة بالنواة Linux مع تعريفات NVIDIA"
 
 #: data/io.elementary.appcenter.appdata.xml.in:67
 msgid "Show Recently Updated Flatpak apps on home page"
-msgstr ""
+msgstr "إظهار تطبيقات Flatpak المحدثة مؤخراً على الصفحة الرئيسية"
 
 #: data/io.elementary.appcenter.appdata.xml.in:68
-#, fuzzy
-#| msgid "Add support for Flatpak apps"
 msgid "Show brand colors and support payments for Flatpak apps"
-msgstr "اضافة دعم لتطبيقات flatpak"
+msgstr "إظهار ألوان العلامة التجارية ومدفوعات الدعم لتطبيقات Flatpak"
 
 #: data/io.elementary.appcenter.appdata.xml.in:69
 msgid "Fix missing mail icon in payments dialog"
-msgstr ""
+msgstr "إصلاح أيقونة البريد المفقودة في رسالة الدفع"
 
 #: data/io.elementary.appcenter.appdata.xml.in:70
 msgid "Fix missing privacy policy in payments dialog"
-msgstr ""
+msgstr "إصلاح سياسة الخصوصية المفقودة في رسالة الدفع"
 
 #: data/io.elementary.appcenter.appdata.xml.in:80
 msgid "New features:"
-msgstr "مميزات جديدة:"
+msgstr "الميزات الجديدة:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:82
 msgid "Show in-app notification when an app is installed"
-msgstr "عرض تنبيه عند إتمام تثبيت تطبيق معين"
+msgstr "إظهار إشعار داخل التطبيق عندما يتم تثبيت أحد التطبيقات"
 
 #: data/io.elementary.appcenter.appdata.xml.in:83
 msgid "Add contextual badges to notifications"
-msgstr ""
+msgstr "إضافة أوسمة سياقية للإشعارات"
 
 #: data/io.elementary.appcenter.appdata.xml.in:87
 msgid "Ensure Home button is usable during search"
-msgstr ""
+msgstr "التأكد بأن زر \"الرئيسية\" قابل للاستخدام عند البحث"
 
 #: data/io.elementary.appcenter.appdata.xml.in:88
 msgid "Ask the user to manually restart if we can't ask the session to prompt"
-msgstr ""
+msgstr "الطلب من المستخدم إعادة التشغيل يدوياً إذا تعذر الطلب من الجلسة فعل ذلك"
 
 #: data/io.elementary.appcenter.appdata.xml.in:89
 msgid "Improve styling and contrast of buttons"
-msgstr ""
+msgstr "تحسين تصميم وتباين ألوان الأزرار"
 
 #: data/io.elementary.appcenter.appdata.xml.in:90
 msgid "More concise and consistent language"
-msgstr ""
+msgstr "لغة أكثر دقة وتناسقاً"
 
 #: data/io.elementary.appcenter.appdata.xml.in:95
 msgid "Fully uninstall Flatpaks, including locales"
-msgstr ""
+msgstr "التمكن من إلغاء تطبيقات Flatpak بالكامل، ويشمل ذلك ملفات اللغة"
 
 #: data/io.elementary.appcenter.appdata.xml.in:96
 msgid "Still fetch screenshots from remotes that don't include proper headers"
-msgstr ""
+msgstr "جلب لقطات الشاشة من المتحكمات حتى لو لم تكن تحتوي على ترويسات صحيحة"
 
 #: data/io.elementary.appcenter.appdata.xml.in:97
 msgid "Fix truncated footer buttons"
-msgstr ""
+msgstr "إصلاح أزرار التذييلات المقطوعة"
 
 #: data/io.elementary.appcenter.appdata.xml.in:98
 msgid "Only show Mail button when a usable mail app is installed"
-msgstr ""
+msgstr "إظهار أيقونة البريد فقط عندما يكون هناك تطبيق بريد قابل للاستخدام"
 
 #: data/io.elementary.appcenter.appdata.xml.in:99
 msgid "Fix some apps incorrectly showing as not installed during search"
-msgstr ""
+msgstr "إصلاح ظهور بعض التطبيقات المثبتة كأنها غير مثبتة عند البحث"
 
 #: data/io.elementary.appcenter.appdata.xml.in:100
-#, fuzzy
-#| msgid "Show an error dialog if an installation fails"
 msgid "Show an error dialog when opening an app fails"
-msgstr "اظهر تفاصيل الخطا اذا فشل التثبيت"
+msgstr "إظهار رسالة خطأ عند فشل تشغيل أحد التطبيقات"
 
 #: data/io.elementary.appcenter.appdata.xml.in:106
 #: data/io.elementary.appcenter.appdata.xml.in:122
@@ -191,7 +189,7 @@ msgstr "إصلاحات"
 
 #: data/io.elementary.appcenter.appdata.xml.in:108
 msgid "Correctly display names of Flatpak runtime updates"
-msgstr "عرض أسماء التحديثات وقت تشغيل Flatpak بشكل صحيح"
+msgstr "إظهار أسماء تحديثات برامج تشغيل Flatpak بشكل صحيح"
 
 #: data/io.elementary.appcenter.appdata.xml.in:110
 #: data/io.elementary.appcenter.appdata.xml.in:127
@@ -199,30 +197,32 @@ msgstr "عرض أسماء التحديثات وقت تشغيل Flatpak بشكل 
 #: data/io.elementary.appcenter.appdata.xml.in:155
 #: data/io.elementary.appcenter.appdata.xml.in:168
 msgid "Minor updates"
-msgstr "تحسينات بسيطة"
+msgstr "تحديثات طفيفة"
 
 #: data/io.elementary.appcenter.appdata.xml.in:118
 #: data/io.elementary.appcenter.appdata.xml.in:164
 msgid "New features"
-msgstr "مميزات جديدة"
+msgstr "ميزات جديدة"
 
 #: data/io.elementary.appcenter.appdata.xml.in:120
 msgid "Support system-wide Flatpak remotes"
-msgstr ""
+msgstr "دعم إضافة متحكمات Flatpak على صعيد النظام بأكمله"
 
 #: data/io.elementary.appcenter.appdata.xml.in:124
 msgid "Fix Flatpak runtime updates getting stuck"
-msgstr ""
+msgstr "إصلاح توقف تحديثات برامج تشغيل Flatpak عن العمل"
 
 #: data/io.elementary.appcenter.appdata.xml.in:125
 msgid "Fix long origin comboboxes breaking the header layout"
-msgstr ""
+msgstr "إصلاح تخريب تنسيق الترويسة من قبل الصناديق المركبة الطويلة"
 
 #: data/io.elementary.appcenter.appdata.xml.in:129
 msgid ""
 "When apps are available from multiple sources, prefer installed version, "
 "then prefer Flatpak"
 msgstr ""
+"عندما تتوفر نفس التطبيقات من أكثر من مصدر، يتم تفضيل الإصدار المثبت، ومن ثم "
+"تفضيل تطبيق Flatpak"
 
 #: data/io.elementary.appcenter.appdata.xml.in:130
 msgid "Improve search performance"
@@ -230,11 +230,11 @@ msgstr "تحسين أداء البحث"
 
 #: data/io.elementary.appcenter.appdata.xml.in:131
 msgid "Improve update badge styling and category styling"
-msgstr ""
+msgstr "تحسين تحديث تصميم الأوسمة وتصميم الفئات"
 
 #: data/io.elementary.appcenter.appdata.xml.in:140
 msgid "Ensure AppCenter is reopened at the correct position"
-msgstr ""
+msgstr "التأكد بأن آب سنتر تمت إعادة فتحه في المكان الصحيح"
 
 #: data/io.elementary.appcenter.appdata.xml.in:141
 msgid "Clicking the updates badge in the header navigates to the updates view"
@@ -248,7 +248,7 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:178
 #: data/io.elementary.appcenter.appdata.xml.in:267
 msgid "Performance improvements"
-msgstr "تحسينات في الأداء"
+msgstr "تحسينات على الأداء"
 
 #: data/io.elementary.appcenter.appdata.xml.in:166
 msgid "Perform updates without administrator permissions"
