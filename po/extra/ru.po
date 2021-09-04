@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-04 07:43+0000\n"
-"PO-Revision-Date: 2021-08-23 23:46+0000\n"
-"Last-Translator: asdffdsdaf <asdffdsdaf@gmail.com>\n"
+"PO-Revision-Date: 2021-09-04 16:52+0000\n"
+"Last-Translator: DartDeaDia <dartdeadia@protonmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/extra/"
 "ru/>\n"
 "Language: ru\n"
@@ -52,11 +52,11 @@ msgstr "Улучшения:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Show apps from newly sideloaded remotes without requiring a restart"
-msgstr ""
+msgstr "Отображение приложений из новых репозиториев без перезапуска"
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
 msgid "Less abrupt transition when changing app sources"
-msgstr ""
+msgstr "Менее резкий переход при смене источников приложения"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:34
