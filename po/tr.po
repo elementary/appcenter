@@ -14,9 +14,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-04 07:43+0000\n"
-"PO-Revision-Date: 2021-08-22 06:54+0000\n"
+"PO-Revision-Date: 2021-09-04 12:16+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
-"Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/appcenter/tr/>\n"
+"Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -414,14 +415,14 @@ msgid "Pay $%d for %s"
 msgstr "%s için %d$ öde"
 
 #: src/Dialogs/StripeDialog.vala:97
-#, fuzzy
-#| msgid "This is a one time payment. Your email address is only used to send you a receipt."
 msgid "This is a one time payment suggested by the developer. You can also choose your own price."
-msgstr "Bu tek seferlik bir ödemedir. E-posta adresiniz sadece size makbuz göndermek için kullanılır."
+msgstr ""
+"Bu, geliştirici tarafından önerilen tek seferlik bir ödemedir. Ayrıca kendi "
+"fiyatınızı da seçebilirsiniz."
 
 #: src/Dialogs/StripeDialog.vala:118
 msgid "or"
-msgstr ""
+msgstr "veya"
 
 #: src/Dialogs/StripeDialog.vala:143
 msgid "Email"
@@ -433,7 +434,7 @@ msgstr "E-posta adresiniz makbuz göndermek için kullanılır. Hiçbir e-posta 
 
 #: src/Dialogs/StripeDialog.vala:148
 msgid "Only used to send you a receipt."
-msgstr ""
+msgstr "Sadece size bir makbuz göndermek için kullanılır."
 
 #: src/Dialogs/StripeDialog.vala:149
 msgid "Privacy Policy"
@@ -744,14 +745,16 @@ msgid "Search"
 msgstr "Ara"
 
 #: src/Widgets/Banner.vala:234
-#, fuzzy
-#| msgid "An open, pay-what-you-want app store"
 msgid "The open source, pay-what-you-can app store"
-msgstr "Açık kaynak kodlu ve istediğine, istediğin kadar ödeyebileceğin bir uygulama mağazası"
+msgstr ""
+"Açık kaynak kodlu ve istediğine, istediğin kadar ödeyebileceğin bir uygulama "
+"mağazası"
 
 #: src/Widgets/Banner.vala:242
 msgid "Reviewed and curated for a native, privacy-respecting, and secure experience."
 msgstr ""
+"Yerel, gizliliğe saygılı ve güvenli bir deneyim için gözden geçirilmiş ve "
+"seçilmiştir."
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
