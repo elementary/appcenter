@@ -4,9 +4,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-04 07:43+0000\n"
-"PO-Revision-Date: 2021-09-02 00:05+0000\n"
+"PO-Revision-Date: 2021-09-04 14:53+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/appcenter/ja/>\n"
+"Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -401,14 +402,12 @@ msgid "Pay $%d for %s"
 msgstr "%dドルを %s に払う"
 
 #: src/Dialogs/StripeDialog.vala:97
-#, fuzzy
-#| msgid "This is a one time payment. Your email address is only used to send you a receipt."
 msgid "This is a one time payment suggested by the developer. You can also choose your own price."
-msgstr "これは一括払いです。メールアドレスは領収書を送るためだけに使用されます。"
+msgstr "開発者の提案した価格を一括で支払います。ご自身で価格を決めることもできます。"
 
 #: src/Dialogs/StripeDialog.vala:118
 msgid "or"
-msgstr ""
+msgstr "または"
 
 #: src/Dialogs/StripeDialog.vala:143
 msgid "Email"
@@ -420,7 +419,7 @@ msgstr "メールアドレスは領収書を送信するためだけに使用さ
 
 #: src/Dialogs/StripeDialog.vala:148
 msgid "Only used to send you a receipt."
-msgstr ""
+msgstr "領収書をお送りするためだけに使用されます。"
 
 #: src/Dialogs/StripeDialog.vala:149
 msgid "Privacy Policy"
