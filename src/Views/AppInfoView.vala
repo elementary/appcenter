@@ -72,7 +72,7 @@ namespace AppCenter.Views {
                 to_recycle = true;
             });
 
-            action_button.suggested_action = true;
+            action_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
             var package_component = package.component;
 
@@ -877,9 +877,7 @@ namespace AppCenter.Views {
             }
         }
 
-        class FundButton : Gtk.MenuButton {
-            private Widgets.HumblePopover selection;
-
+        class FundButton : Gtk.Button {
             public FundButton (AppCenterCore.Package package) {
                 get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
                 get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
@@ -896,13 +894,18 @@ namespace AppCenter.Views {
                 grid.add (icon);
                 grid.add (title);
 
-                selection = new Widgets.HumblePopover (this, true);
-                selection.payment_requested.connect ((amount) => {
-                    var stripe = new Widgets.StripeDialog (amount,
-                                                           package.get_name (),
-                                                           package.normalized_component_id,
-                                                           package.get_payments_key ()
-                                                          );
+                tooltip_text = _("Fund the development of this app");
+
+                add (grid);
+
+                clicked.connect (() => {
+                    var stripe = new Widgets.StripeDialog (
+                        1,
+                        package.get_name (),
+                        package.normalized_component_id,
+                        package.get_payments_key ()
+                    );
+                    stripe.transient_for = (Gtk.Window) get_toplevel ();
 
                     stripe.download_requested.connect (() => {
                         App.add_paid_app (package.component.get_id ());
@@ -910,13 +913,6 @@ namespace AppCenter.Views {
 
                     stripe.show ();
                 });
-
-                tooltip_text = _("Fund the development of this app");
-
-                direction = Gtk.ArrowType.UP;
-                popover = selection;
-
-                add (grid);
             }
         }
 

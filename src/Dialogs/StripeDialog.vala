@@ -94,15 +94,47 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         primary_label.xalign = 0;
 
         var secondary_label = new Gtk.Label (
-            _("This is a one time payment. Your email address is only used to send you a receipt.") +
-            " <a href=\"https://stripe.com/privacy\">%s</a>".printf (_("Privacy Policy"))
+            _("This is a one time payment suggested by the developer. You can also choose your own price.")
         ) {
-            margin_bottom = 18,
+            margin_bottom = 12,
+            margin_top = 6,
             max_width_chars = 50,
             use_markup = true,
             wrap = true,
             xalign = 0
         };
+
+        var one_dollar = new Gtk.Button.with_label (HumbleButton.get_amount_formatted (1, false));
+
+        var five_dollar = new Gtk.Button.with_label (HumbleButton.get_amount_formatted (5, false));
+
+        var ten_dollar = new Gtk.Button.with_label (HumbleButton.get_amount_formatted (10, false));
+
+        var dollar_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
+        dollar_button_group.add_widget (one_dollar);
+        dollar_button_group.add_widget (five_dollar);
+        dollar_button_group.add_widget (ten_dollar);
+
+        var or_label = new Gtk.Label (_("or")) {
+            margin_start = 3,
+            margin_end = 3
+        };
+
+        var custom_amount = new Gtk.SpinButton.with_range (0, 100, 1) {
+            hexpand = true,
+            primary_icon_name = "currency-dollar-symbolic",
+            value = amount
+        };
+
+        var selection_list = new Gtk.Grid () {
+            column_spacing = 6,
+            margin_bottom = 24
+        };
+        selection_list.add (custom_amount);
+        selection_list.add (or_label);
+        selection_list.add (one_dollar);
+        selection_list.add (five_dollar);
+        selection_list.add (ten_dollar);
 
         email_entry = new Gtk.Entry ();
         email_entry.hexpand = true;
@@ -111,6 +143,17 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         email_entry.placeholder_text = _("Email");
         email_entry.primary_icon_name = "internet-mail-symbolic";
         email_entry.tooltip_text = _("Your email address is only used to send a receipt. You will not be subscribed to any mailing list.");
+
+        var email_label = new Gtk.Label (
+            _("Only used to send you a receipt.") +
+            " <a href=\"https://stripe.com/privacy\">%s</a>".printf (_("Privacy Policy"))
+        ) {
+            use_markup = true,
+            wrap = true,
+            margin_bottom = 12,
+            xalign = 0
+        };
+        email_label.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
 
         email_entry.changed.connect (() => {
            email_entry.text = email_entry.text.replace (" ", "").down ();
@@ -159,37 +202,40 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
 
         card_cvc_entry.bind_property ("has-focus", card_cvc_entry, "visibility");
 
-        var card_grid_bottom = new Gtk.Grid ();
-        card_grid_bottom.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
-        card_grid_bottom.add (card_expiration_entry);
-        card_grid_bottom.add (card_cvc_entry);
-
-        var card_grid = new Gtk.Grid ();
-        card_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
-        card_grid.orientation = Gtk.Orientation.VERTICAL;
-        card_grid.add (card_number_entry);
-        card_grid.add (card_grid_bottom);
+        var card_grid = new Gtk.Grid () {
+            orientation = Gtk.Orientation.VERTICAL,
+            column_spacing = 6,
+            row_spacing = 6
+        };
+        card_grid.attach (card_number_entry, 0, 0, 2);
+        card_grid.attach (card_expiration_entry, 0, 1);
+        card_grid.attach (card_cvc_entry, 1, 1);
 
         card_layout = new Gtk.Grid ();
         card_layout.get_style_context ().add_class ("login");
         card_layout.column_spacing = 12;
-        card_layout.row_spacing = 6;
         card_layout.attach (overlay, 0, 0, 1, 2);
         card_layout.attach (primary_label, 1, 0);
         card_layout.attach (secondary_label, 1, 1);
-        card_layout.attach (email_entry, 1, 2);
-        card_layout.attach (card_grid, 1, 3);
+        card_layout.attach (selection_list, 1, 2);
+        card_layout.attach (email_entry, 1, 3);
+        card_layout.attach (email_label, 1, 4);
+        card_layout.attach (card_grid, 1, 5);
 
-        layouts = new Gtk.Stack ();
-        layouts.vhomogeneous = false;
-        layouts.margin_start = layouts.margin_end = 12;
-        layouts.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
+        layouts = new Gtk.Stack () {
+            margin = 12,
+            margin_top = 0,
+            transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT,
+            vhomogeneous = false
+        };
         layouts.add_named (card_layout, "card");
         layouts.set_visible_child_name ("card");
 
         var content_area = get_content_area ();
         content_area.add (layouts);
         content_area.show_all ();
+
+        custom_amount.grab_focus ();
 
         cancel_button = (Gtk.Button) add_button (_("Cancel"), Gtk.ResponseType.CLOSE);
 
@@ -199,6 +245,25 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         pay_button.sensitive = false;
 
         response.connect (on_response);
+
+        bind_property ("amount", custom_amount, "value", BindingFlags.BIDIRECTIONAL);
+
+        notify["amount"].connect (() => {
+            primary_label.label = _("Pay $%d for %s").printf (amount, app_name);
+            pay_button.label = _("Pay $%d.00").printf (amount);
+        });
+
+        one_dollar.clicked.connect (() => {
+            amount = 1;
+        });
+
+        five_dollar.clicked.connect (() => {
+            amount = 5;
+        });
+
+        ten_dollar.clicked.connect (() => {
+            amount = 10;
+        });
 
         email_entry.activate.connect (() => {
             if (pay_button.sensitive) {
