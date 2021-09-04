@@ -145,7 +145,7 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         email_entry.tooltip_text = _("Your email address is only used to send a receipt. You will not be subscribed to any mailing list.");
 
         var email_label = new Gtk.Label (
-            _("Your email address is only used to send you a receipt.") +
+            _("Only used to send you a receipt.") +
             " <a href=\"https://stripe.com/privacy\">%s</a>".printf (_("Privacy Policy"))
         ) {
             use_markup = true,
