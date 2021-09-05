@@ -6,9 +6,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-04 07:43+0000\n"
-"PO-Revision-Date: 2021-09-02 17:03+0000\n"
+"PO-Revision-Date: 2021-09-05 12:47+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
-"Language-Team: Finnish <https://l10n.elementary.io/projects/appcenter/appcenter/fi/>\n"
+"Language-Team: Finnish <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -406,14 +407,14 @@ msgid "Pay $%d for %s"
 msgstr "Maksa $%d kohteesta %s"
 
 #: src/Dialogs/StripeDialog.vala:97
-#, fuzzy
-#| msgid "This is a one time payment. Your email address is only used to send you a receipt."
 msgid "This is a one time payment suggested by the developer. You can also choose your own price."
-msgstr "Tämä on kertamaksu. Sähköpostiosoitettasi käytetään vain kuitin lähettämiseen."
+msgstr ""
+"Tämä on kertamaksu, jonka summaa on ehdottanut kehittäjä. Voit valita itse "
+"maksun suuruuden."
 
 #: src/Dialogs/StripeDialog.vala:118
 msgid "or"
-msgstr ""
+msgstr "tai"
 
 #: src/Dialogs/StripeDialog.vala:143
 msgid "Email"
@@ -425,7 +426,7 @@ msgstr "Sähköpostiosoitettasi käytetään vain kuitin lähettämiseen. Sitä 
 
 #: src/Dialogs/StripeDialog.vala:148
 msgid "Only used to send you a receipt."
-msgstr ""
+msgstr "Käytetään vain kuitin lähettämiseksi."
 
 #: src/Dialogs/StripeDialog.vala:149
 msgid "Privacy Policy"
