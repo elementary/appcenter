@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-04 07:43+0000\n"
-"PO-Revision-Date: 2021-09-05 00:54+0000\n"
-"Last-Translator: aalhaif <aalhaif@hotmail.com>\n"
+"PO-Revision-Date: 2021-09-05 09:18+0000\n"
+"Last-Translator: Muhammad Al-Jayyousi <m7md.j99@protonmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/extra/"
 "ar/>\n"
 "Language: ar\n"
@@ -238,11 +238,12 @@ msgstr "التأكد بأن آب سنتر تمت إعادة فتحه في الم
 
 #: data/io.elementary.appcenter.appdata.xml.in:141
 msgid "Clicking the updates badge in the header navigates to the updates view"
-msgstr ""
+msgstr "الضغط على وسم التحديثات في الترويسة ينقل إلى منظور التحديثات"
 
 #: data/io.elementary.appcenter.appdata.xml.in:153
 msgid "Ensure all updatable Flatpak runtimes are listed for update"
 msgstr ""
+"التأكد بأن جميع برامج التشغيل الخاصة ب Flatpak موجودة على قائمة التحديثات"
 
 #: data/io.elementary.appcenter.appdata.xml.in:157
 #: data/io.elementary.appcenter.appdata.xml.in:178
@@ -252,23 +253,23 @@ msgstr "تحسينات على الأداء"
 
 #: data/io.elementary.appcenter.appdata.xml.in:166
 msgid "Perform updates without administrator permissions"
-msgstr ""
+msgstr "إجراء التحديثات دون الحاجة لصلاحيات المدير"
 
 #: data/io.elementary.appcenter.appdata.xml.in:170
 msgid "Ensure apps on the homepage are more reliably displayed"
-msgstr "تأكد من أن التطبيقات على الصفحة الرئيسية معروضة بشكل جيد"
+msgstr "التأكد بأن التطبيقات على الصفحة الرئيسية ظاهرة بشكل أفضل"
 
 #: data/io.elementary.appcenter.appdata.xml.in:171
 msgid "More reliably set the Dock badge number"
-msgstr ""
+msgstr "ضبط الرقم على المرسى بشكل أفضل"
 
 #: data/io.elementary.appcenter.appdata.xml.in:180
 msgid ""
 "Only check for updates at device startup if it's more than 24 hours since we "
 "last checked"
 msgstr ""
-"فقط تحقق من التحديثات عند تشغيل الجهاز اذا مضت أكثر من 24 ساعة من آخر عملية "
-"تحقق"
+"التحقق من التحديثات عند بدء تشغيل الجهاز فقط إذا مضت أكثر من 24 ساعة على آخر "
+"عملية تحقق"
 
 #: data/io.elementary.appcenter.appdata.xml.in:181
 msgid "Reduce slowdowns when opening certain apps"
@@ -276,60 +277,61 @@ msgstr "تقليل البطء عند فتح تطبيقات معينة"
 
 #: data/io.elementary.appcenter.appdata.xml.in:183
 msgid "Extension improvements"
-msgstr "تحسينات في الاضافات"
+msgstr "تحسينات على الإضافات"
 
 #: data/io.elementary.appcenter.appdata.xml.in:185
 msgid ""
 "To de-clutter the updates view, extensions are now only shown if they "
 "require updates"
 msgstr ""
-"لتقليل الفوضى في قائمة التحديثات، الاضافات الآن فقط تعرض عندما تتطلب تحديثًا"
+"لتقليل الفوضى في منظور التحديثات، الإضافات الآن تعرض فقط عندما تتطلب تحديثاً"
 
 #: data/io.elementary.appcenter.appdata.xml.in:186
 msgid ""
 "Clicking an extension on an app's info page now shows details for the "
 "extension"
-msgstr "النقر على الاضافة من عند معلومات التطبيق سيظهر تفاصيل الاضافة"
+msgstr "الضغط على الإضافة من صفحة معلومات تطبيق معين سيظهر تفاصيل الإضافة"
 
 #: data/io.elementary.appcenter.appdata.xml.in:187
 msgid ""
 "Swap the main and overlay icons for extensions to more clearly associate "
 "extensions with their app"
 msgstr ""
-"بدل الاساس وغطي الايقونات الخاصة بالاضافات لجعل الاضافات مترابطة بشكل اصفى "
-"مع التطبيقات الخاصة بها"
+"التبديل بين الأيقونات الرئيسية والأيقونات المركبة لربط الإضافات بشكل أوضح مع "
+"التطبيقات الخاصة بها"
 
 #: data/io.elementary.appcenter.appdata.xml.in:189
 msgid "Keyboard improvements"
-msgstr "تحسينات في لوحة المفاتيح"
+msgstr "تحسينات على لوحة المفاتيح"
 
 #: data/io.elementary.appcenter.appdata.xml.in:191
 msgid ""
 "Pressing down in the search field moves the keyboard focus to the search "
 "results list"
-msgstr ""
-"الضغط للاسفل عند مكان البحث يحرك تركيز لوحة المفاتيح لقائمة نتائج البحث"
+msgstr "الضغط للأسفل عند خانة البحث يحرك تركيز لوحة المفاتيح لقائمة نتائج البحث"
 
 #: data/io.elementary.appcenter.appdata.xml.in:192
 msgid "Ctrl+F now moves the cursor to the search field"
-msgstr "Ctrl+f الآن يحرك المؤشر إلى منطقة البحث"
+msgstr "تقوم Ctrl+F الآن بتحريك المؤشر إلى خانة البحث"
 
 #: data/io.elementary.appcenter.appdata.xml.in:196
 msgid "Use configured network proxy settings for apt operations"
-msgstr "استخدم اعدادات البروكسي لعمليات apt"
+msgstr "استخدام إعدادات الوكيل للشبكة لعمليات apt"
 
 #: data/io.elementary.appcenter.appdata.xml.in:197
 msgid "No longer prompt for approval to update non-curated apps"
-msgstr "لا يجب بعد الان اصدار امر لتثبيت التحديثات الغير مدققة"
+msgstr "لن يتم طلب الإذن لتحديث التطبيقات غير المختارة بعد الآن"
 
 #: data/io.elementary.appcenter.appdata.xml.in:198
 msgid ""
 "Ensure the OS updates subheading copy is correct after finishing updates"
-msgstr "تأكد بأن تحديثات النظام الفرعية صحيحة بعد انتهاء التحديث"
+msgstr ""
+"التأكد بأن العنوان الفرعي لتحديثات نظام التشغيل مكتوب بشكل صحيح بعد إنهاء "
+"التحديثات"
 
 #: data/io.elementary.appcenter.appdata.xml.in:199
 msgid "Ellipsize long app names in App Info views"
-msgstr "اخفاء اسماء التطبيقات الطويلة في معلومات التطبيق"
+msgstr "اقتطاع أسماء التطبيقات الطويلة في معلومات التطبيق"
 
 #: data/io.elementary.appcenter.appdata.xml.in:201
 msgid "And more"
@@ -337,29 +339,29 @@ msgstr "والمزيد"
 
 #: data/io.elementary.appcenter.appdata.xml.in:203
 msgid "Show a more informative loading screen when checking for updates"
-msgstr "اظهر شاشة تحميل بها معلومات اضافية عند البحث عن تحديث"
+msgstr "إظهار شاشة تحميل بها معلومات إضافية عند التحقق من التحديثات"
 
 #: data/io.elementary.appcenter.appdata.xml.in:204
 msgid "Don't list fonts alongside apps"
-msgstr "لا تظهر الخطوط بجانب التطبيقات"
+msgstr "عدم إظهار الخطوط بجانب التطبيقات"
 
 #: data/io.elementary.appcenter.appdata.xml.in:213
 msgid ""
 "Prevent crashes when updating Flatpaks and system packages simultaneously"
-msgstr "تجنب تعطل البرمجيات عند تحديث flatpaks وحزم تحديثات النظام بنفس الوقت"
+msgstr "منع التعطل عند تحديث تطبيقات Flatpak وحزم النظام في نفس الوقت"
 
 #: data/io.elementary.appcenter.appdata.xml.in:214
 msgid "Prevent suspending when installing, updating, or removing packages"
-msgstr "تجنب التعطلات عند تثبيت، تحديث، او ازالة الحزم"
+msgstr "منع إغلاق الجهاز عند تثبيت، أو تحديث، أو إزالة الحزم"
 
 #: data/io.elementary.appcenter.appdata.xml.in:226
 #: data/io.elementary.appcenter.appdata.xml.in:243
 msgid "Minor fixes"
-msgstr "إصلاحات ثانوية"
+msgstr "إصلاحات طفيفة"
 
 #: data/io.elementary.appcenter.appdata.xml.in:228
 msgid "Update application details when changes happen outside of AppCenter"
-msgstr "حدث تفاصيل التطبيق عندما تحصل التغييرات خارج مركز التطبيقات"
+msgstr "تحديثات تفاصيل التطبيق عند حدوث تغييرات خارج آب سنتر"
 
 #: data/io.elementary.appcenter.appdata.xml.in:229
 msgid "Fix for notification not appearing when a restart is required"
