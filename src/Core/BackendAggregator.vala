@@ -29,6 +29,7 @@ public class AppCenterCore.BackendAggregator : Backend, Object {
         backends.add (PackageKitBackend.get_default ());
         backends.add (UbuntuDriversBackend.get_default ());
         backends.add (FlatpakBackend.get_default ());
+        backends.add (FlatpakDriversBackend.get_default ());
 
         unowned Gtk.Application app = (Gtk.Application) GLib.Application.get_default ();
         foreach (var backend in backends) {
