@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-04 07:43+0000\n"
-"PO-Revision-Date: 2021-09-05 09:18+0000\n"
+"PO-Revision-Date: 2021-09-05 12:47+0000\n"
 "Last-Translator: Muhammad Al-Jayyousi <m7md.j99@protonmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/extra/"
 "ar/>\n"
@@ -365,113 +365,114 @@ msgstr "تحديثات تفاصيل التطبيق عند حدوث تغييرا�
 
 #: data/io.elementary.appcenter.appdata.xml.in:229
 msgid "Fix for notification not appearing when a restart is required"
-msgstr "اصلاح لعدم ظهور اشعار عندما يكون اعادة التشغيل مطلوبا"
+msgstr "إصلاح عدم ظهور الإشعار عندما تكون إعادة التشغيل مطلوبة"
 
 #: data/io.elementary.appcenter.appdata.xml.in:230
 msgid "Apps in list views now load in the correct order when scrolling"
-msgstr "التطبيقات في القائمة الآن تظهر بشكل صحيح عند التنقل"
+msgstr "التطبيقات في القوائم أصبحت تظهر بالترتيب الصحيح عند التنقل"
 
 #: data/io.elementary.appcenter.appdata.xml.in:231
 msgid "Prevent unescaped XML entities from appearing in application names"
-msgstr "تجنب اظهار تسميات XML الخاطئة من الظهور في اسماء التطبيقات"
+msgstr "منع إظهار تسميات XML الخاطئة من الظهور في أسماء التطبيقات"
 
 #: data/io.elementary.appcenter.appdata.xml.in:232
 msgid "Load the \"Installed\" view faster"
-msgstr "حمل ال”مثبته” بشكل اسرع"
+msgstr "تحميل قائمة \"مثبت\" بشكل أسرع"
 
 #: data/io.elementary.appcenter.appdata.xml.in:233
 msgid "Ensure flatpak applications show in the category views"
-msgstr "تأكد ان تطبيقات flatpak تظهر في القوائم"
+msgstr "التأكد بأن تطبيقات Flatpak تظهر في الفئات"
 
 #: data/io.elementary.appcenter.appdata.xml.in:234
 msgid ""
 "Save some bandwidth by downloading smaller screenshots where appropriate"
-msgstr "وفر بعض البيانات بتحميل صور اصغر بشكل مناسب"
+msgstr "توفير بعض البيانات بتحميل صور أصغر عند الحاجة"
 
 #: data/io.elementary.appcenter.appdata.xml.in:235
 msgid "System components no longer have an \"Open\" button"
-msgstr "مكونات النظام لم يعد لديها زر “فتح” بعد الان"
+msgstr "مكونات النظام لم تعد لديها زر \"افتح\" بعد الآن"
 
 #: data/io.elementary.appcenter.appdata.xml.in:236
 msgid ""
 "Applications menu can now remove flatpaks that weren't installed by AppCenter"
 msgstr ""
-"قائمة التطبيقات يمكن بها الان ازالة برامج flatpak التي لم يتم تنزيلها من "
-"مركز التطبيقات"
+"قائمة التطبيقات يمكن لها الآن إزالة تطبيقات Flatpak التي لم يتم تثبيتها من "
+"آب سنتر"
 
 #: data/io.elementary.appcenter.appdata.xml.in:237
 msgid "Make download size estimates more accurate"
-msgstr "جعل مساحة التحميل أكثر دقة"
+msgstr "تقدير حجم التنزيل بشكل أدق"
 
 #: data/io.elementary.appcenter.appdata.xml.in:245
 msgid "Prevent AppCenter from opening on log in"
-msgstr "منع مركز التطبيقات من العمل أثناء تسجيل الدخول"
+msgstr "منع آب سنتر من العمل أثناء تسجيل الدخول"
 
 #: data/io.elementary.appcenter.appdata.xml.in:246
 msgid "Prevent ghost update notification when there are no updates available"
-msgstr "تجنب اشعارات التحديثات الوهمية عندما لا يكون هناك تحديث فعلي"
+msgstr "منع إشعارات التحديثات الوهمية عندما لا يكون هناك تحديث فعلي"
 
 #: data/io.elementary.appcenter.appdata.xml.in:247
 msgid "Show correct installation state for extensions"
-msgstr "اظهر حالة التثبيت الصحيحة للاضافات"
+msgstr "إظهار حالة التثبيت الصحيحة للإضافات"
 
 #: data/io.elementary.appcenter.appdata.xml.in:254
 msgid "Add support for Flatpak apps"
-msgstr "اضافة دعم لتطبيقات flatpak"
+msgstr "دعم تطبيقات Flatpak"
 
 #: data/io.elementary.appcenter.appdata.xml.in:255
 msgid "Warn about non-curated apps"
-msgstr "حذرني عن التطبيقات التي لم يتم التحقق منها"
+msgstr "إظهار تحذير للتطبيقات غير المختارة"
 
 #: data/io.elementary.appcenter.appdata.xml.in:256
 msgid "Show an error dialog if an installation fails"
-msgstr "اظهر تفاصيل الخطا اذا فشل التثبيت"
+msgstr "إظهار تفاصيل الخطأ إذا فشل التثبيت"
 
 #: data/io.elementary.appcenter.appdata.xml.in:257
 msgid ""
 "Fix an issue where some apps couldn't be uninstalled from the Applications "
 "Menu"
-msgstr "تم اصلاح خطا جعل بعض التطبيقات غير قابلة للازالة من قائمة التطبيقات"
+msgstr ""
+"إصلاح مشكلة التطبيقات التي لا تظهر خيار إلغاء التثبيت من قائمة التطبيقات"
 
 #: data/io.elementary.appcenter.appdata.xml.in:258
 msgid "Allow browsing and uninstalling apps while offline"
-msgstr "السماح بالتصفح وازالة التطبيقات في حال عدم الاتصال بالانترنت"
+msgstr "السماح بتصفح التطبيقات وإزالتها في حال عدم الاتصال بالإنترنت"
 
 #: data/io.elementary.appcenter.appdata.xml.in:259
 msgid "Fix twitter share URLs"
-msgstr "اصلاح خطأ في مشاركة روابط تويتر"
+msgstr "إصلاح مشكلة روابط المشاركة لتويتر"
 
 #: data/io.elementary.appcenter.appdata.xml.in:260
 msgid "Drop Google+ from the share menu"
-msgstr "اسقاط قوقل+ من قائمة المشاركة"
+msgstr "إزالة جوجل+ من قائمة المشاركة"
 
 #: data/io.elementary.appcenter.appdata.xml.in:261
 msgid "Animate screenshot background while loading"
-msgstr "تحرك صور الخلفية خلال التحميل"
+msgstr "تحريك صور الخلفية الخاصة بلقطات الشاشة خلال التحميل"
 
 #: data/io.elementary.appcenter.appdata.xml.in:262
 msgid "Add navigation arrows for screenshots"
-msgstr "اضافة اسهم للتنقل من اجل الصور"
+msgstr "إضافة أسهم التنقل للقطات الصور"
 
 #: data/io.elementary.appcenter.appdata.xml.in:263
 msgid "Don't show uninstall buttons for essential system components"
-msgstr "عدم اظهار زر ازالة التثبيت لمكونات النظام الاساسية"
+msgstr "عدم إظهار زر إلغاء التثبيت لمكونات النظام الأساسية"
 
 #: data/io.elementary.appcenter.appdata.xml.in:264
 msgid "Properly display proprietary licenses"
-msgstr "اظهار التراخيص الشخصية بشكل افضل"
+msgstr "إظهار الرخص الاحتكارية بشكل أفضل"
 
 #: data/io.elementary.appcenter.appdata.xml.in:265
 msgid "Fix some layout issues"
-msgstr "اصلاح بعض مشاكل تخطيط الصفحات"
+msgstr "إصلاح بعض مشاكل التنسيق"
 
 #: data/io.elementary.appcenter.appdata.xml.in:266
 msgid "Fix crashes"
-msgstr "اصلاح بعض المشاكل المسببة للتعطل"
+msgstr "إصلاح بعض التعطلات"
 
 #: data/io.elementary.appcenter.appdata.xml.in:275
 msgid "Meson build system fixes"
-msgstr "إصلاح نظام بناء Meson"
+msgstr "إصلاحات لنظام البناء Meson"
 
 #: data/io.elementary.appcenter.appdata.xml.in:276
 msgid "Improve window state restoration"
@@ -479,20 +480,21 @@ msgstr "تحسين استعادة حالة النافذة"
 
 #: data/io.elementary.appcenter.appdata.xml.in:277
 msgid "Prevent action buttons from jumping around"
-msgstr "منع أزرار الإجراءات من القفز حولها"
+msgstr "منع أزرار الإجراءات من تغيير مكانها"
 
 #: data/io.elementary.appcenter.appdata.xml.in:278
 msgid "Remove reset paid apps gsettings key"
-msgstr "ازالة زر اعادة تعيين اعدادات التطبيقات المدفوعة"
+msgstr "إزالة زر إعادة تعيين إعدادات التطبيقات المدفوعة ل gsettings"
 
 #: data/io.elementary.appcenter.appdata.xml.in:279
 msgid "Memory management refinements"
-msgstr "تحسين ادارة الذاكرة"
+msgstr "تحسين إدارة الذاكرة"
 
 #: data/io.elementary.appcenter.appdata.xml.in:280
 msgid ""
 "Add conditional compilation for disabling dynamic remote homepage content"
-msgstr "اضافة تصنيف شرطي للتحكم بمنع عملية التحكم بالصفحة الرئيسية عن بعد"
+msgstr ""
+"إضافة بناء شرطي للكود المصدري لتعطيل محتويات الصفحة الرئيسية المتغيرة عن بعد"
 
 #: data/io.elementary.appcenter.appdata.xml.in:281
 #: data/io.elementary.appcenter.appdata.xml.in:293
@@ -512,27 +514,27 @@ msgstr "اضافة تصنيف شرطي للتحكم بمنع عملية التح
 #: data/io.elementary.appcenter.appdata.xml.in:424
 #: data/io.elementary.appcenter.appdata.xml.in:434
 msgid "New translations"
-msgstr "ترجمة جديدة"
+msgstr "ترجمات جديدة"
 
 #: data/io.elementary.appcenter.appdata.xml.in:288
 msgid "New categories: Communication, Finance, Media Production"
-msgstr "قوائم جديدة: للتواصل، للمالية، لانشاء الوسائط المتعددة"
+msgstr "فئات جديدة: التواصل، والمال، وإنتاج الوسائط"
 
 #: data/io.elementary.appcenter.appdata.xml.in:289
 msgid "Add Math to Science category"
-msgstr "اضافة الرياضيات الى قسم العلوم"
+msgstr "إضافة الرياضيات إلى فئة العلوم"
 
 #: data/io.elementary.appcenter.appdata.xml.in:290
 msgid "Relax email address validator"
-msgstr ""
+msgstr "إراحة المتحقق من عناوين البريد الإلكتروني"
 
 #: data/io.elementary.appcenter.appdata.xml.in:291
 msgid "Present update availability more accurately"
-msgstr "اظهار توفر التحديثات بشكل ادق"
+msgstr "إظهار توفر التحديثات بشكل أدق"
 
 #: data/io.elementary.appcenter.appdata.xml.in:292
 msgid "Category graphics revamped"
-msgstr "تجديد قسم التصميم"
+msgstr "تجديد تصاميم الفئات"
 
 #: data/io.elementary.appcenter.appdata.xml.in:307
 #: data/io.elementary.appcenter.appdata.xml.in:319
@@ -547,19 +549,19 @@ msgstr "تجديد قسم التصميم"
 #: data/io.elementary.appcenter.appdata.xml.in:402
 #: data/io.elementary.appcenter.appdata.xml.in:411
 msgid "Bug fixes and improve performance."
-msgstr "اصلاح الاخطاء وتعزيز الاداء."
+msgstr "إصلاحات للأخطاء وتحسين الأداء."
 
 #: data/io.elementary.appcenter.appdata.xml.in:309
 msgid "Improve transaction success rate"
-msgstr "تحسين معدل نجاح عملية النقل"
+msgstr "تحسين معدل نجاح عمليات الدفع"
 
 #: data/io.elementary.appcenter.appdata.xml.in:310
 msgid "Add Publishing to Office category"
-msgstr "اضافة نشر الى قسم الاوفيس"
+msgstr "إضافة النشر لفئة \"المكتب\""
 
 #: data/io.elementary.appcenter.appdata.xml.in:311
 msgid "Improve descriptions of OS Updates"
-msgstr "تحسين وصف تحديثات النظام"
+msgstr "تحسين وصف تحديثات نظام التشغيل"
 
 #: data/io.elementary.appcenter.appdata.xml.in:312
 #: data/io.elementary.appcenter.appdata.xml.in:323
@@ -573,55 +575,51 @@ msgstr "تحسين وصف تحديثات النظام"
 #: data/io.elementary.appcenter.appdata.xml.in:395
 #: data/io.elementary.appcenter.appdata.xml.in:404
 msgid "Various bug fixes and performance improvements"
-msgstr "إصلاح العلل وتحسينات في الاداء"
+msgstr "إصلاحات مختلفة للمشاكل وتحسينات على الأداء"
 
 #: data/io.elementary.appcenter.appdata.xml.in:321
 msgid "Give details for Operating System Updates"
-msgstr "اعطاء تفاصيل عن تحديثات نظام التشغيل"
+msgstr "إعطاء تفاصيل عن تحديثات نظام التشغيل"
 
 #: data/io.elementary.appcenter.appdata.xml.in:322
 msgid "Support mouse button navigation"
-msgstr "دعم زر التنقل بالفأرة"
+msgstr "دعم التنقل بأزرار الفأرة"
 
 #: data/io.elementary.appcenter.appdata.xml.in:413
 msgid "Fix crash caused by entries with missing packages"
-msgstr "اصلاح مشاكل التعطل التي تحدث بسبب المدخلات التي تحوي حزم ناقصة"
+msgstr "إصلاح التعطل الناتج بسبب العناصر التي لها حزم مفقودة"
 
 #: data/io.elementary.appcenter.appdata.xml.in:420
 msgid "Add capability to search by category and apply minor bug fixes."
-msgstr "اضافة القابلية للبحث عبر التصنيفات.."
+msgstr "إضافة القابلية للبحث عبر الفئات وإصلاحات طفيفة لبعض المشاكل."
 
 #: data/io.elementary.appcenter.appdata.xml.in:422
 msgid "It is now possible to search apps inside a category"
-msgstr "الآن من الممكن البحث عن أي برنامج عبر التصنيفات"
+msgstr "أصبح من الممكن البحث عن البرامج داخل الفئات"
 
 #: data/io.elementary.appcenter.appdata.xml.in:423
 msgid "Prevent multiple authentication dialogs when resuming from suspend"
-msgstr "تجنب التحقق بشكل متعدد عند العودة بعد الاسبات"
+msgstr "منع تكرر ظهور نوافذ التوثيق عند فتح الجهاز بعد إغلاقه"
 
 #: data/io.elementary.appcenter.appdata.xml.in:430
-#, fuzzy
-#| msgid ""
-#| "Search performance has beeen improved, the category name is now shown on "
-#| "the headbar and minor bugs have been fixed."
 msgid ""
 "Search performance has been improved, the category name is now shown on the "
 "headbar and minor bugs have been fixed."
 msgstr ""
-"تم تحسين اداء البحث، اسم القسم يظهر الان في الاعلى وتم اصلاح بعض الاخطاء "
-"الثانوية."
+"تم تحسين أداء البحث، اسم القسم يظهر الآن في شريط الترويسة وتم إصلاح العديد "
+"من المشاكل الطفيفة."
 
 #: data/io.elementary.appcenter.appdata.xml.in:432
 msgid "Fix Steam installation"
-msgstr "تحسين خاصية التثبيت"
+msgstr "إصلاح تثبيت Steam"
 
 #: data/io.elementary.appcenter.appdata.xml.in:433
 msgid "Make search asynchronous"
-msgstr "جعل البحث يجري بشكل غير متزامن ( asynchronous )"
+msgstr "إجراء البحث بشكل غير متزامن"
 
 #: data/io.elementary.appcenter.appdata.xml.in:485
 msgid "elementary, Inc."
-msgstr "اليمينتري المتحدة."
+msgstr "elementary, Inc."
 
 #: data/io.elementary.appcenter.desktop.in.in:3
 msgid "@APP_NAME@"
@@ -633,11 +631,11 @@ msgstr "@PROJECT_NAME@"
 
 #: data/io.elementary.appcenter.desktop.in.in:7
 msgid "install;uninstall;remove;catalogue;store;apps;software;"
-msgstr "تثبيت;ازالة تثبيت;حذف;التصنيف;المتجر:التطبيقات;برامج;"
+msgstr "تثبيت;إلغاء التثبيت;إزالة;المتجر;التطبيقات;البرمجيات;"
 
 #: data/io.elementary.appcenter.desktop.in.in:18
 msgid "Check for Updates"
-msgstr "افحص وجود تحديثات"
+msgstr "تحقق من وجود تحديثات"
 
 #: data/io.elementary.appcenter.desktop.in.in:19
 msgid "system-software-update"
@@ -645,11 +643,11 @@ msgstr "تحديث-نظام-التشغيل"
 
 #: data/io.elementary.appcenter.policy.in:10
 msgid "Update software"
-msgstr ""
+msgstr "تحديث البرمجيات"
 
 #: data/io.elementary.appcenter.policy.in:11
 msgid "Authentication is required to update software"
-msgstr ""
+msgstr "التوثيق مطلوب لتحديث البرمجيات"
 
 #~ msgid "@DESKTOP_ICON@"
 #~ msgstr "@DESKTOP_ICON@"
