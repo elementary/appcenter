@@ -12,9 +12,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-04 07:43+0000\n"
-"PO-Revision-Date: 2021-09-02 10:21+0000\n"
-"Last-Translator: supaeasy <ismo+github@wolffson.ch>\n"
-"Language-Team: German <https://l10n.elementary.io/projects/appcenter/appcenter/de/>\n"
+"PO-Revision-Date: 2021-09-05 01:28+0000\n"
+"Last-Translator: Uwe S <saabisto@gmx.de>\n"
+"Language-Team: German <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -412,14 +413,14 @@ msgid "Pay $%d for %s"
 msgstr "%d USD für %s zahlen"
 
 #: src/Dialogs/StripeDialog.vala:97
-#, fuzzy
-#| msgid "This is a one time payment. Your email address is only used to send you a receipt."
 msgid "This is a one time payment suggested by the developer. You can also choose your own price."
-msgstr "Dies ist eine einmalige Zahlung. Die E-Mail-Adresse wird ausschließlich für die Zustellung des Kaufbelegs verwendet."
+msgstr ""
+"Dies ist eine einmalige Zahlung nach Vorschlag des Entwicklers. Sie können "
+"die Höhe nach Belieben ändern."
 
 #: src/Dialogs/StripeDialog.vala:118
 msgid "or"
-msgstr ""
+msgstr "oder"
 
 #: src/Dialogs/StripeDialog.vala:143
 msgid "Email"
@@ -431,7 +432,7 @@ msgstr "Ihre E-Mail-Adresse wird nur für den Versand einer Quittung verwendet. 
 
 #: src/Dialogs/StripeDialog.vala:148
 msgid "Only used to send you a receipt."
-msgstr ""
+msgstr "Nur dazu verwendet, Ihnen eine Bestätigung zu senden."
 
 #: src/Dialogs/StripeDialog.vala:149
 msgid "Privacy Policy"
