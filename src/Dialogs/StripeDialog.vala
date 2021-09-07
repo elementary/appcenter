@@ -125,8 +125,7 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         };
 
         var selection_list = new Gtk.Grid () {
-            column_spacing = 6,
-            margin_bottom = 24
+            column_spacing = 6
         };
         selection_list.add (custom_amount);
         selection_list.add (or_label);
@@ -169,7 +168,8 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
 
         card_number_entry = new AppCenter.Widgets.CardNumberEntry () {
             activates_default = true,
-            hexpand = true
+            hexpand = true,
+            margin_bottom = 6
         };
         card_number_entry.bind_property ("has-focus", card_number_entry, "visibility");
 
@@ -195,11 +195,16 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         var card_grid = new Gtk.Grid () {
             orientation = Gtk.Orientation.VERTICAL,
             column_spacing = 6,
-            row_spacing = 6
+            margin_top = 24
         };
-        card_grid.attach (card_number_entry, 0, 0, 2);
-        card_grid.attach (card_expiration_entry, 0, 1);
-        card_grid.attach (card_cvc_entry, 1, 1);
+        card_grid.attach (email_entry, 0, 0, 2);
+        card_grid.attach (email_label, 0, 1, 2);
+        card_grid.attach (card_number_entry, 0, 2, 2);
+        card_grid.attach (card_expiration_entry, 0, 3);
+        card_grid.attach (card_cvc_entry, 1, 3);
+
+        var card_grid_revealer = new Gtk.Revealer ();
+        card_grid_revealer.add (card_grid);
 
         card_layout = new Gtk.Grid ();
         card_layout.get_style_context ().add_class ("login");
@@ -208,9 +213,7 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         card_layout.attach (primary_label, 1, 0);
         card_layout.attach (secondary_label, 1, 1);
         card_layout.attach (selection_list, 1, 2);
-        card_layout.attach (email_entry, 1, 3);
-        card_layout.attach (email_label, 1, 4);
-        card_layout.attach (card_grid, 1, 5);
+        card_layout.attach (card_grid_revealer, 1, 3);
 
         layouts = new Gtk.Stack () {
             margin = 12,
@@ -243,9 +246,7 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
             pay_button.label = _("Pay $%d.00").printf (amount);
             is_payment_sensitive ();
 
-            email_entry.sensitive = amount != 0;
-            email_label.sensitive = amount != 0;
-            card_grid.sensitive = amount != 0;
+            card_grid_revealer.reveal_child = amount != 0;
         });
 
         one_dollar.clicked.connect (() => {
