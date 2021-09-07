@@ -11,17 +11,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-04 07:43+0000\n"
+"POT-Creation-Date: 2021-09-07 20:23+0000\n"
 "PO-Revision-Date: 2021-09-05 00:54+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
-"Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/uk/>\n"
+"Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/appcenter/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:26+0000\n"
 
@@ -407,142 +405,138 @@ msgstr "Під час обробки картки сталася помилка.
 msgid "Please review your payment info and try again."
 msgstr "Будь ласка, перевірте дані платежу та спробуйте ще раз."
 
-#: src/Dialogs/StripeDialog.vala:76
+#: src/Dialogs/StripeDialog.vala:73
 msgid "Payment"
 msgstr "Оплата"
 
-#: src/Dialogs/StripeDialog.vala:92 src/Dialogs/StripeDialog.vala:252
+#: src/Dialogs/StripeDialog.vala:89 src/Dialogs/StripeDialog.vala:245
 #, c-format
 msgid "Pay $%d for %s"
 msgstr "Сплатити $%d за %s"
 
-#: src/Dialogs/StripeDialog.vala:97
+#: src/Dialogs/StripeDialog.vala:94
 msgid "This is a one time payment suggested by the developer. You can also choose your own price."
-msgstr ""
-"Це одноразовий платіж, запропонований розробником. Ви також можете обрати "
-"власну ціну."
+msgstr "Це одноразовий платіж, запропонований розробником. Ви також можете обрати власну ціну."
 
-#: src/Dialogs/StripeDialog.vala:118
+#: src/Dialogs/StripeDialog.vala:115
 msgid "or"
 msgstr "або"
 
-#: src/Dialogs/StripeDialog.vala:143
+#: src/Dialogs/StripeDialog.vala:152
 msgid "Email"
 msgstr "Пошта"
 
-#: src/Dialogs/StripeDialog.vala:145
-msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
+#: src/Dialogs/StripeDialog.vala:157
+#, fuzzy
+#| msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
+msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
 msgstr "Вашу електронну адресу буде використано лише для надсилання квитанції. Не для розсилок."
 
-#: src/Dialogs/StripeDialog.vala:148
-msgid "Only used to send you a receipt."
-msgstr "Використовується лише для надсилання вам квитанції."
-
-#: src/Dialogs/StripeDialog.vala:149
+#: src/Dialogs/StripeDialog.vala:158
 msgid "Privacy Policy"
 msgstr "Політика приватності"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
-#: src/Dialogs/StripeDialog.vala:175
+#: src/Dialogs/StripeDialog.vala:182
 msgid "MM / YY"
 msgstr "ММ / РР"
 
-#: src/Dialogs/StripeDialog.vala:195
+#: src/Dialogs/StripeDialog.vala:190
 msgid "CVC"
 msgstr "CVC"
 
-#: src/Dialogs/StripeDialog.vala:240 src/Dialogs/StripeDialog.vala:376
+#: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:380
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:103
 msgid "Cancel"
 msgstr "Скасувати"
 
-#: src/Dialogs/StripeDialog.vala:242 src/Dialogs/StripeDialog.vala:253
-#: src/Dialogs/StripeDialog.vala:375
+#: src/Dialogs/StripeDialog.vala:235 src/Dialogs/StripeDialog.vala:246
+#: src/Dialogs/StripeDialog.vala:379
 #, c-format
 msgid "Pay $%d.00"
 msgstr "Сплатити $%d.00"
 
-#: src/Dialogs/StripeDialog.vala:304
+#: src/Dialogs/StripeDialog.vala:308
 msgid "Processing"
 msgstr "Обробка"
 
-#: src/Dialogs/StripeDialog.vala:329
+#: src/Dialogs/StripeDialog.vala:333
 msgid "There Was a Problem Processing Your Payment"
 msgstr "Виникла проблема під час обробки вашого платежу"
 
-#: src/Dialogs/StripeDialog.vala:367
+#: src/Dialogs/StripeDialog.vala:371
 msgid "Pay Later"
 msgstr "Оплатити пізніше"
 
-#: src/Dialogs/StripeDialog.vala:368
+#: src/Dialogs/StripeDialog.vala:372
 msgid "Retry"
 msgstr "Спробувати ще раз"
 
-#: src/Dialogs/StripeDialog.vala:574 src/Dialogs/StripeDialog.vala:639
+#: src/Dialogs/StripeDialog.vala:553 src/Dialogs/StripeDialog.vala:618
 msgid "The card number is incorrect. Please try again using the correct card number."
 msgstr "Номер картки не правильний. Будь ласка, спробуйте ще раз з правильним номером картки."
 
-#: src/Dialogs/StripeDialog.vala:576
+#: src/Dialogs/StripeDialog.vala:555
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
 msgstr "Місяць закінчення терміну дії неправильний. Будь ласка, спробуйте знову використавши правильну дату закінчення терміну дії."
 
-#: src/Dialogs/StripeDialog.vala:578 src/Dialogs/StripeDialog.vala:636
+#: src/Dialogs/StripeDialog.vala:557 src/Dialogs/StripeDialog.vala:615
 msgid "The expiration year is invalid. Please try again using the correct expiration date."
 msgstr "Рік закінчення терміну дії неправильний. Будь ласка, спробуйте ще раз використавши правильну дату закінчення терміну дії."
 
-#: src/Dialogs/StripeDialog.vala:581 src/Dialogs/StripeDialog.vala:634
+#: src/Dialogs/StripeDialog.vala:560 src/Dialogs/StripeDialog.vala:613
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr "CVC номер не правильний. Будь ласка, спробуйте ще раз, використавши правильний CVC."
 
-#: src/Dialogs/StripeDialog.vala:583 src/Dialogs/StripeDialog.vala:625
+#: src/Dialogs/StripeDialog.vala:562 src/Dialogs/StripeDialog.vala:604
 msgid "The card has expired. Please try again with a different card."
 msgstr "Картка нечинна. Будь ласка, спробуйте знову з іншою карткою."
 
-#: src/Dialogs/StripeDialog.vala:603
+#: src/Dialogs/StripeDialog.vala:582
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr "Наразі забагато запитів на оплату. Будь ласка, повторіть спробу пізніше."
 
-#: src/Dialogs/StripeDialog.vala:619
+#: src/Dialogs/StripeDialog.vala:598
 msgid "This card does not support this kind of transaction. Please try again with a different card."
 msgstr "Ця картка не підтримує цей вид транзакції. Будь ласка, спробуйте знову з іншою карткою."
 
-#: src/Dialogs/StripeDialog.vala:621
+#: src/Dialogs/StripeDialog.vala:600
 msgid "The currency is not supported by this card. Please try again with a different card."
 msgstr "Цей тип валюти не підтримується цією карткою. Будь ласка, спробуйте знову з іншою карткою."
 
-#: src/Dialogs/StripeDialog.vala:623
+#: src/Dialogs/StripeDialog.vala:602
 msgid "The transaction has already been processed."
 msgstr "Цей платіж вже опрацьовано."
 
-#: src/Dialogs/StripeDialog.vala:627
+#: src/Dialogs/StripeDialog.vala:606
 msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
 msgstr "ZIP/Поштовий індекс неправильний. Будь ласка, спробуйте знову використавши правильний ZIP/поштовий код."
 
-#: src/Dialogs/StripeDialog.vala:629
+#: src/Dialogs/StripeDialog.vala:608
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "Недостатньо коштів на рахунку. Будь ласка, скористайтеся іншим платіжним методом."
 
-#: src/Dialogs/StripeDialog.vala:631
+#: src/Dialogs/StripeDialog.vala:610
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "Не правильно вказано суму. Будь ласка, спробуйте ще раз, вказавши дійсну суму."
 
-#: src/Dialogs/StripeDialog.vala:642
+#: src/Dialogs/StripeDialog.vala:621
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "PIN-код не правильний. Будь ласка, повторіть спробу ввівши правильний PIN-код."
 
-#: src/Dialogs/StripeDialog.vala:644
+#: src/Dialogs/StripeDialog.vala:623
 msgid "There has been too many PIN attempts. Please try again with a different card."
 msgstr "Кількість спроб введення PIN-коду вичерпано. Будь ласка, спробуйте ще раз, використавши іншу картку."
 
-#: src/Dialogs/StripeDialog.vala:664
+#: src/Dialogs/StripeDialog.vala:643
 msgid "Unable to complete the transaction. Please contact your bank for further information."
 msgstr "Не вдалося завершити транзакцію. Будь ласка, зверніться до вашого банку за деталями."
 
-#: src/Dialogs/StripeDialog.vala:667
+#: src/Dialogs/StripeDialog.vala:646
 msgid "The balance or credit limit on the card has been reached."
 msgstr "Баланс або кредитний ліміт картки вичерпано."
 
-#: src/Dialogs/StripeDialog.vala:670
+#: src/Dialogs/StripeDialog.vala:649
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "Ця картка є тестовою карткою. Будь ласка, використайте справжню картку, щоб продовжити."
 
@@ -930,6 +924,9 @@ msgstr "Найновіші"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:223
 msgid "Update"
 msgstr "Оновити"
+
+#~ msgid "Only used to send you a receipt."
+#~ msgstr "Використовується лише для надсилання вам квитанції."
 
 #~ msgid "Get the apps that you need at a price you can afford."
 #~ msgstr "Отримуй застосунки, які тобі потрібні, за ціну, яку ти можеш запропонувати."

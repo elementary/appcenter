@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.appcenter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-04 07:43+0000\n"
+"POT-Creation-Date: 2021-09-07 20:23+0000\n"
 "PO-Revision-Date: 2021-07-29 06:15+0000\n"
 "Last-Translator: elSolus <tumbleweed@tuta.io>\n"
 "Language-Team: Punjabi <https://l10n.elementary.io/projects/appcenter/appcenter/pa/>\n"
@@ -397,142 +397,140 @@ msgstr "ਕਾਰਡ ਪ੍ਰੋਸੈਸਿੰਗ ਦੌਰਾਨ ਖ਼ਰਾ
 msgid "Please review your payment info and try again."
 msgstr "ਮਿਹਰਬਾਨੀ ਕਰਕੇ ਅਦਾਇਗੀ ਦੀ ਜਾਣਕਾਰੀ ਦਾ ਮੁਆਇਨਾ ਕਰੋ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
-#: src/Dialogs/StripeDialog.vala:76
+#: src/Dialogs/StripeDialog.vala:73
 msgid "Payment"
 msgstr "ਅਦਾਇਗੀ"
 
-#: src/Dialogs/StripeDialog.vala:92 src/Dialogs/StripeDialog.vala:252
+#: src/Dialogs/StripeDialog.vala:89 src/Dialogs/StripeDialog.vala:245
 #, c-format
 msgid "Pay $%d for %s"
 msgstr "%s ਲਈ $%d ਅਮਰੀਕੀ ਡਾਲਰ ਅਦਾ ਕਰੋ"
 
-#: src/Dialogs/StripeDialog.vala:97
+#: src/Dialogs/StripeDialog.vala:94
 #, fuzzy
 #| msgid "This is a one time payment. Your email address is only used to send you a receipt."
 msgid "This is a one time payment suggested by the developer. You can also choose your own price."
 msgstr "ਇਹ ਸਿਰਫ਼ ਇੱਕ ਵਾਰੀ ਹੀ ਅਦਾ ਕਰਨੀ ਹੈ। ਤੁਹਾਡਾ ਈਮੇਲ ਪਤਾ ਸਿਰਫ਼ ਤੁਹਾਨੂੰ ਰਸੀਦ ਭੇਜਣ ਲਈ ਵਰਤਿਆ ਜਾਂਦੈ।"
 
-#: src/Dialogs/StripeDialog.vala:118
+#: src/Dialogs/StripeDialog.vala:115
 msgid "or"
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:143
+#: src/Dialogs/StripeDialog.vala:152
 msgid "Email"
 msgstr "ਈਮੇਲ"
 
-#: src/Dialogs/StripeDialog.vala:145
-msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
+#: src/Dialogs/StripeDialog.vala:157
+#, fuzzy
+#| msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
+msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
 msgstr "ਤੁਹਾਡਾ ਈਮੇਲ ਪਤਾ ਸਿਰਫ਼ ਤੁਹਾਨੂੰ ਰਸੀਦ ਭੇਜਣ ਲਈ ਵਰਤਿਆ ਜਾਂਦੈ। ਤੁਹਾਨੂੰ ਕਿਸੇ ਸੂਚਨਾਵਾਂ ਆਦਿ ਲਈ ਗਾਹਕ ਨਹੀਂ ਬਣਾਇਆ ਜਾਵੇਗਾ।"
 
-#: src/Dialogs/StripeDialog.vala:148
-msgid "Only used to send you a receipt."
-msgstr ""
-
-#: src/Dialogs/StripeDialog.vala:149
+#: src/Dialogs/StripeDialog.vala:158
 msgid "Privacy Policy"
 msgstr "ਪਰਦੇਦਾਰੀ ਨੀਤੀ"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
-#: src/Dialogs/StripeDialog.vala:175
+#: src/Dialogs/StripeDialog.vala:182
 msgid "MM / YY"
 msgstr "ਮਹੀਨਾ / ਸਾਲ"
 
-#: src/Dialogs/StripeDialog.vala:195
+#: src/Dialogs/StripeDialog.vala:190
 msgid "CVC"
 msgstr "ਸੀਵੀਸੀ"
 
-#: src/Dialogs/StripeDialog.vala:240 src/Dialogs/StripeDialog.vala:376
+#: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:380
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:103
 msgid "Cancel"
 msgstr "ਰੱਦ ਕਰੋ"
 
-#: src/Dialogs/StripeDialog.vala:242 src/Dialogs/StripeDialog.vala:253
-#: src/Dialogs/StripeDialog.vala:375
+#: src/Dialogs/StripeDialog.vala:235 src/Dialogs/StripeDialog.vala:246
+#: src/Dialogs/StripeDialog.vala:379
 #, c-format
 msgid "Pay $%d.00"
 msgstr "%d.00 ਰੁਪਏ ਅਦਾ ਕਰੋ"
 
-#: src/Dialogs/StripeDialog.vala:304
+#: src/Dialogs/StripeDialog.vala:308
 msgid "Processing"
 msgstr "ਅਮਲ ਹੋ ਰਿਹੈ"
 
-#: src/Dialogs/StripeDialog.vala:329
+#: src/Dialogs/StripeDialog.vala:333
 msgid "There Was a Problem Processing Your Payment"
 msgstr "ਤੁਹਾਡੀ ਅਦਾਇਗੀ ਨੂੰ ਅਮਲ ਕਰਨ ਵਿੱਚ ਮੁਸ਼ਕਲ ਆਈ"
 
-#: src/Dialogs/StripeDialog.vala:367
+#: src/Dialogs/StripeDialog.vala:371
 msgid "Pay Later"
 msgstr "ਬਾਅਦ ਵਿੱਚ ਅਦਾ ਕਰੋ"
 
-#: src/Dialogs/StripeDialog.vala:368
+#: src/Dialogs/StripeDialog.vala:372
 msgid "Retry"
 msgstr "ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ"
 
-#: src/Dialogs/StripeDialog.vala:574 src/Dialogs/StripeDialog.vala:639
+#: src/Dialogs/StripeDialog.vala:553 src/Dialogs/StripeDialog.vala:618
 msgid "The card number is incorrect. Please try again using the correct card number."
 msgstr "ਕਾਰਡ ਦਾ ਨੰਬਰ ਗ਼ਲਤ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਸਹੀ ਕਾਰਡ ਨੰਬਰ ਨਾਲ਼ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
-#: src/Dialogs/StripeDialog.vala:576
+#: src/Dialogs/StripeDialog.vala:555
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
 msgstr "ਖ਼ਤਮ ਹੋਣ ਦਾ ਮਹੀਨਾ ਜਾਇਜ਼ ਨਹੀਂ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਸਹੀ ਮਿਤੀ ਭਰ ਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
-#: src/Dialogs/StripeDialog.vala:578 src/Dialogs/StripeDialog.vala:636
+#: src/Dialogs/StripeDialog.vala:557 src/Dialogs/StripeDialog.vala:615
 msgid "The expiration year is invalid. Please try again using the correct expiration date."
 msgstr "ਖ਼ਤਮ ਹੋਣ ਦਾ ਸਾਲ ਜਾਇਜ਼ ਨਹੀਂ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਸਹੀ ਮਿਤੀ ਭਰ ਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
-#: src/Dialogs/StripeDialog.vala:581 src/Dialogs/StripeDialog.vala:634
+#: src/Dialogs/StripeDialog.vala:560 src/Dialogs/StripeDialog.vala:613
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr "ਸੀਵੀਸੀ ਨੰਬਰ ਗ਼ਲਤ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਸਹੀ ਸੀਵੀਸੀ ਨੰਬਰ ਭਰ ਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
-#: src/Dialogs/StripeDialog.vala:583 src/Dialogs/StripeDialog.vala:625
+#: src/Dialogs/StripeDialog.vala:562 src/Dialogs/StripeDialog.vala:604
 msgid "The card has expired. Please try again with a different card."
 msgstr "ਕਾਰਡ ਖ਼ਤਮ ਹੋ ਚੁੱਕਿਐ। ਕਿਰਪਾ ਕਰਕੇ ਹੋਰ ਕਾਰਡ ਨਾਲ਼ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
-#: src/Dialogs/StripeDialog.vala:603
+#: src/Dialogs/StripeDialog.vala:582
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr "ਇਸ ਵੇਲ਼ੇ ਅਦਾਇਗੀ ਲਈ ਬਹੁਤ ਜ਼ਿਆਦਾ ਬੇਨਤੀਆਂ ਆ ਰਹੀਆਂ ਹਨ, ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
-#: src/Dialogs/StripeDialog.vala:619
+#: src/Dialogs/StripeDialog.vala:598
 msgid "This card does not support this kind of transaction. Please try again with a different card."
 msgstr "ਇਹ ਕਾਰਡ ਇਸ ਤਰ੍ਹਾਂ ਦੇ ਲੈਣ-ਦੇਣ ਲਈ ਨਹੀਂ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਕਿਸੇ ਹੋਰ ਕਾਰਡ ਨਾਲ਼ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
-#: src/Dialogs/StripeDialog.vala:621
+#: src/Dialogs/StripeDialog.vala:600
 msgid "The currency is not supported by this card. Please try again with a different card."
 msgstr "ਇਹ ਕਾਰਡ ਇਸ ਮੁਦਰਾ (ਕਰੰਸੀ) ਨਾਲ਼ ਕੰਮ ਨਹੀਂ ਕਰਦਾ। ਕਿਰਪਾ ਕਰਕੇ ਕਿਸੇ ਹੋਰ ਕਾਰਡ ਨਾਲ਼ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
-#: src/Dialogs/StripeDialog.vala:623
+#: src/Dialogs/StripeDialog.vala:602
 msgid "The transaction has already been processed."
 msgstr "ਇਹ ਲੈਣ-ਦੇਣ ਪਹਿਲਾਂ ਹੀ ਹੋ ਚੁੱਕਿਆ ਹੈ।"
 
-#: src/Dialogs/StripeDialog.vala:627
+#: src/Dialogs/StripeDialog.vala:606
 msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
 msgstr "ਪਿੰਨ/ਜ਼ਿਪ ਕੋਡ ਗ਼ਲਤ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਸਹੀ ਕੋਡ ਭਰ ਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
-#: src/Dialogs/StripeDialog.vala:629
+#: src/Dialogs/StripeDialog.vala:608
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "ਤੁਹਾਡੇ ਕੋਲ਼ ਮੌਜੂਦ ਰਕਮ ਕਾਫ਼ੀ ਨਹੀਂ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਅਦਾਇਗੀ ਦਾ ਕੋਈ ਹੋਰ ਤਰੀਕਾ ਵਰਤੋ।"
 
-#: src/Dialogs/StripeDialog.vala:631
+#: src/Dialogs/StripeDialog.vala:610
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "ਰਕਮ ਗ਼ਲਤ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਜਾਇਜ਼ ਰਕਮ ਭਰ ਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
-#: src/Dialogs/StripeDialog.vala:642
+#: src/Dialogs/StripeDialog.vala:621
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "ਪਿੰਨ ਨੰਬਰ ਗ਼ਲਤ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਸਹੀ ਪਿੰਨ ਨੰਬਰ ਭਰ ਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
-#: src/Dialogs/StripeDialog.vala:644
+#: src/Dialogs/StripeDialog.vala:623
 msgid "There has been too many PIN attempts. Please try again with a different card."
 msgstr "ਪਿੰਨ ਨੰਬਰ ਲਈ ਬਹੁਤ ਜ਼ਿਆਦਾ ਕੋਸ਼ਿਸ਼ਾਂ ਹੋ ਚੁੱਕੀਆਂ ਹਨ। ਕਿਰਪਾ ਕਰਕੇ ਕੋਈ ਹੋਰ ਕਾਰਡ ਵਰਤ ਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
-#: src/Dialogs/StripeDialog.vala:664
+#: src/Dialogs/StripeDialog.vala:643
 msgid "Unable to complete the transaction. Please contact your bank for further information."
 msgstr "ਲੈਣ-ਦੇਣ ਪੂਰਾ ਨਹੀਂ ਹੋ ਸਕਿਆ। ਜ਼ਿਆਦਾ ਜਾਣਕਾਰੀ ਲਈ ਕਿਰਪਾ ਕਰਕੇ ਆਪਣੇ ਬੈਂਕ ਨਾਲ਼ ਰਾਬਤਾ ਕਰੋ।"
 
-#: src/Dialogs/StripeDialog.vala:667
+#: src/Dialogs/StripeDialog.vala:646
 msgid "The balance or credit limit on the card has been reached."
 msgstr "ਕਾਰਡ ਦੀ ਖ਼ਰਚ ਹੱਦ ਪੂਰੀ ਹੋ ਚੁੱਕੀ ਹੈ।"
 
-#: src/Dialogs/StripeDialog.vala:670
+#: src/Dialogs/StripeDialog.vala:649
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "ਇਹ ਕਾਰਡ ਇੱਕ ਟੈਸਟ ਕਾਰਡ ਹੈ। ਅੱਗੇ ਵਧਣ ਲਈ ਕਿਰਪਾ ਕਰਕੇ ਕੋਈ ਅਸਲੀ ਕਾਰਡ ਵਰਤੋ।"
 

@@ -9,17 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-04 07:43+0000\n"
+"POT-Creation-Date: 2021-09-07 20:23+0000\n"
 "PO-Revision-Date: 2021-09-05 00:54+0000\n"
 "Last-Translator: aalhaif <aalhaif@hotmail.com>\n"
-"Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/ar/>\n"
+"Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/appcenter/ar/>\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-14 06:24+0000\n"
 
@@ -352,10 +350,7 @@ msgstr "يحتوي ”%s“ على محتوى صريح"
 #: src/Dialogs/ContentWarningDialog.vala:31
 #, c-format
 msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
-msgstr ""
-"يمكن أن يحتوي ”%s“ على محتوى قد يكون مناسباً فقط للبالغين أو قد يكون حساساً "
-"أو مزعجاً. بشكل عام، لا تقوم elementary بمراجعة محتوى هذه التطبيقات أو حتى "
-"المصادقة عليه."
+msgstr "يمكن أن يحتوي ”%s“ على محتوى قد يكون مناسباً فقط للبالغين أو قد يكون حساساً أو مزعجاً. بشكل عام، لا تقوم elementary بمراجعة محتوى هذه التطبيقات أو حتى المصادقة عليه."
 
 #: src/Dialogs/ContentWarningDialog.vala:33
 msgid "Show content warnings"
@@ -373,9 +368,7 @@ msgstr "ثبت على أي حال"
 
 #: src/Dialogs/InstallFailDialog.vala:26
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
-msgstr ""
-"يمكن أن تكون هذه مشكلة مؤقتة أو قد تكون بسبب برامج خارجية أو برامج تم بناؤها "
-"من الكود المصدري يدوياً."
+msgstr "يمكن أن تكون هذه مشكلة مؤقتة أو قد تكون بسبب برامج خارجية أو برامج تم بناؤها من الكود المصدري يدوياً."
 
 #: src/Dialogs/InstallFailDialog.vala:37
 msgid "Failed to install app"
@@ -397,9 +390,7 @@ msgstr "هل تريد تثبيت التطبيق غير المختار؟"
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
 msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
-msgstr ""
-"”%s“ هو تطبيق غير مختار من قبل elementary ولم تتم مراجعته بخصوص الحماية، أو "
-"الخصوصية، أو التكامل مع النظام."
+msgstr "”%s“ هو تطبيق غير مختار من قبل elementary ولم تتم مراجعته بخصوص الحماية، أو الخصوصية، أو التكامل مع النظام."
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:47
 msgid "It may not receive bug fix or feature updates"
@@ -415,157 +406,144 @@ msgstr "أظهر تحذيرات التطبيقات غير المختارة"
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
-msgstr ""
-"حصل خطأ في معالجة البطاقة. الرجاء المحاولة مرة أخرى. نعتذر عن أي إزعاج حاصل."
+msgstr "حصل خطأ في معالجة البطاقة. الرجاء المحاولة مرة أخرى. نعتذر عن أي إزعاج حاصل."
 
 #: src/Dialogs/StripeDialog.vala:42
 msgid "Please review your payment info and try again."
 msgstr "من فضلك تأكد من معلومات الدفع وحاول مرة أخرى."
 
-#: src/Dialogs/StripeDialog.vala:76
+#: src/Dialogs/StripeDialog.vala:73
 msgid "Payment"
 msgstr "الدفع"
 
-#: src/Dialogs/StripeDialog.vala:92 src/Dialogs/StripeDialog.vala:252
+#: src/Dialogs/StripeDialog.vala:89 src/Dialogs/StripeDialog.vala:245
 #, c-format
 msgid "Pay $%d for %s"
 msgstr "ادفع %d$ ل %s"
 
-#: src/Dialogs/StripeDialog.vala:97
+#: src/Dialogs/StripeDialog.vala:94
 msgid "This is a one time payment suggested by the developer. You can also choose your own price."
-msgstr ""
-"هذه عبارة عن دفعة لمرة واحدة مقترحة من قبل المطور. بإمكانك أيضاً اختيار "
-"السعر الذي تريده."
+msgstr "هذه عبارة عن دفعة لمرة واحدة مقترحة من قبل المطور. بإمكانك أيضاً اختيار السعر الذي تريده."
 
-#: src/Dialogs/StripeDialog.vala:118
+#: src/Dialogs/StripeDialog.vala:115
 msgid "or"
 msgstr "أو"
 
-#: src/Dialogs/StripeDialog.vala:143
+#: src/Dialogs/StripeDialog.vala:152
 msgid "Email"
 msgstr "البريد الإلكتروني"
 
-#: src/Dialogs/StripeDialog.vala:145
-msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
-msgstr ""
-"عنوان البريد الخاص بك سيتم استخدامه فقط لإرسال الفاتورة. لن يتم إضافتك لأي "
-"قائمة بريدية."
+#: src/Dialogs/StripeDialog.vala:157
+#, fuzzy
+#| msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
+msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
+msgstr "عنوان البريد الخاص بك سيتم استخدامه فقط لإرسال الفاتورة. لن يتم إضافتك لأي قائمة بريدية."
 
-#: src/Dialogs/StripeDialog.vala:148
-msgid "Only used to send you a receipt."
-msgstr "يستخدم فقط لإرسال فاتورة لك."
-
-#: src/Dialogs/StripeDialog.vala:149
+#: src/Dialogs/StripeDialog.vala:158
 msgid "Privacy Policy"
 msgstr "سياسة الخصوصية"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
-#: src/Dialogs/StripeDialog.vala:175
+#: src/Dialogs/StripeDialog.vala:182
 msgid "MM / YY"
 msgstr "MM / YY"
 
-#: src/Dialogs/StripeDialog.vala:195
+#: src/Dialogs/StripeDialog.vala:190
 msgid "CVC"
 msgstr "CVC"
 
-#: src/Dialogs/StripeDialog.vala:240 src/Dialogs/StripeDialog.vala:376
+#: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:380
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:103
 msgid "Cancel"
 msgstr "ألغ"
 
-#: src/Dialogs/StripeDialog.vala:242 src/Dialogs/StripeDialog.vala:253
-#: src/Dialogs/StripeDialog.vala:375
+#: src/Dialogs/StripeDialog.vala:235 src/Dialogs/StripeDialog.vala:246
+#: src/Dialogs/StripeDialog.vala:379
 #, c-format
 msgid "Pay $%d.00"
 msgstr "ادفع %d.00$"
 
-#: src/Dialogs/StripeDialog.vala:304
+#: src/Dialogs/StripeDialog.vala:308
 msgid "Processing"
 msgstr "قيد المعالجة"
 
-#: src/Dialogs/StripeDialog.vala:329
+#: src/Dialogs/StripeDialog.vala:333
 msgid "There Was a Problem Processing Your Payment"
 msgstr "حصل خطأ في معالجة عملية الدفع الخاصة بك"
 
-#: src/Dialogs/StripeDialog.vala:367
+#: src/Dialogs/StripeDialog.vala:371
 msgid "Pay Later"
 msgstr "ادفع لاحقاً"
 
-#: src/Dialogs/StripeDialog.vala:368
+#: src/Dialogs/StripeDialog.vala:372
 msgid "Retry"
 msgstr "أعد المحاولة"
 
-#: src/Dialogs/StripeDialog.vala:574 src/Dialogs/StripeDialog.vala:639
+#: src/Dialogs/StripeDialog.vala:553 src/Dialogs/StripeDialog.vala:618
 msgid "The card number is incorrect. Please try again using the correct card number."
 msgstr "رقم البطاقة خاطئ. من فضلك حاول مرة أخرى باستخدام رقم البطاقة الصحيح."
 
-#: src/Dialogs/StripeDialog.vala:576
+#: src/Dialogs/StripeDialog.vala:555
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
-msgstr ""
-"شهر الانتهاء غير صحيح. من فضلك حاول مرة أخرى باستخدام تاريخ الانتهاء الصحيح."
+msgstr "شهر الانتهاء غير صحيح. من فضلك حاول مرة أخرى باستخدام تاريخ الانتهاء الصحيح."
 
-#: src/Dialogs/StripeDialog.vala:578 src/Dialogs/StripeDialog.vala:636
+#: src/Dialogs/StripeDialog.vala:557 src/Dialogs/StripeDialog.vala:615
 msgid "The expiration year is invalid. Please try again using the correct expiration date."
-msgstr ""
-"سنة الانتهاء غير صحيحة. من فضلك حاول مرة أخرى باستخدام تاريخ الانتهاء الصحيح."
+msgstr "سنة الانتهاء غير صحيحة. من فضلك حاول مرة أخرى باستخدام تاريخ الانتهاء الصحيح."
 
-#: src/Dialogs/StripeDialog.vala:581 src/Dialogs/StripeDialog.vala:634
+#: src/Dialogs/StripeDialog.vala:560 src/Dialogs/StripeDialog.vala:613
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr "رمز الأمان CVC غير صحيح. من فضلك حاول مرة أخرى باستخدام الرمز الصحيح."
 
-#: src/Dialogs/StripeDialog.vala:583 src/Dialogs/StripeDialog.vala:625
+#: src/Dialogs/StripeDialog.vala:562 src/Dialogs/StripeDialog.vala:604
 msgid "The card has expired. Please try again with a different card."
 msgstr "البطاقة منتهية الصلاحية. من فضلك حاول مرة أخرى ببطاقة مختلفة."
 
-#: src/Dialogs/StripeDialog.vala:603
+#: src/Dialogs/StripeDialog.vala:582
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr "يوجد العديد من طلبات الدفع حالياً. من فضلك حاول لاحقاً."
 
-#: src/Dialogs/StripeDialog.vala:619
+#: src/Dialogs/StripeDialog.vala:598
 msgid "This card does not support this kind of transaction. Please try again with a different card."
-msgstr ""
-"هذه البطاقة لا تدعم هذا النوع من العمليات. من فضلك حاول باستخدام بطاقة أخرى."
+msgstr "هذه البطاقة لا تدعم هذا النوع من العمليات. من فضلك حاول باستخدام بطاقة أخرى."
 
-#: src/Dialogs/StripeDialog.vala:621
+#: src/Dialogs/StripeDialog.vala:600
 msgid "The currency is not supported by this card. Please try again with a different card."
 msgstr "العملة غير مدعومة على هذه البطاقة. من فضلك حاول باستخدام بطاقة أخرى."
 
-#: src/Dialogs/StripeDialog.vala:623
+#: src/Dialogs/StripeDialog.vala:602
 msgid "The transaction has already been processed."
 msgstr "هذه العملية تمت معالجتها من قبل."
 
-#: src/Dialogs/StripeDialog.vala:627
+#: src/Dialogs/StripeDialog.vala:606
 msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
-msgstr ""
-"الرمز البريدي غير صحيح. من فضلك حاول مرة أخرى باستخدام الرمز البريدي الصحيح."
+msgstr "الرمز البريدي غير صحيح. من فضلك حاول مرة أخرى باستخدام الرمز البريدي الصحيح."
 
-#: src/Dialogs/StripeDialog.vala:629
+#: src/Dialogs/StripeDialog.vala:608
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "لا تملك رصيداً كاف. من فضلك استخدم طريقة دفع أخرى."
 
-#: src/Dialogs/StripeDialog.vala:631
+#: src/Dialogs/StripeDialog.vala:610
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "المبلغ غير صحيح. من فضلك حاول مرة أخرى باستخدام مبلغ صحيح."
 
-#: src/Dialogs/StripeDialog.vala:642
+#: src/Dialogs/StripeDialog.vala:621
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "رمز PIN غير صحيح. من فضلك حاول مرة أخرى باستخدام الرمز الصحيح."
 
-#: src/Dialogs/StripeDialog.vala:644
+#: src/Dialogs/StripeDialog.vala:623
 msgid "There has been too many PIN attempts. Please try again with a different card."
-msgstr ""
-"هناك محاولات عديدة لإدخال رمز PIN. من فضلك حاول مرة أخرى باستخدام بطاقة "
-"مختلفة."
+msgstr "هناك محاولات عديدة لإدخال رمز PIN. من فضلك حاول مرة أخرى باستخدام بطاقة مختلفة."
 
-#: src/Dialogs/StripeDialog.vala:664
+#: src/Dialogs/StripeDialog.vala:643
 msgid "Unable to complete the transaction. Please contact your bank for further information."
 msgstr "تعذر إتمام العملية. من فضلك تواصل مع البنك الخاص بك لمزيد من المعلومات."
 
-#: src/Dialogs/StripeDialog.vala:667
+#: src/Dialogs/StripeDialog.vala:646
 msgid "The balance or credit limit on the card has been reached."
 msgstr "تم الوصول للحد الأقصى للرصيد أو الائتمان على بطاقتك."
 
-#: src/Dialogs/StripeDialog.vala:670
+#: src/Dialogs/StripeDialog.vala:649
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "البطاقة المستخدمة هي بطاقة اختبار. من فضلك استخدم بطاقة حقيقية للإكمال."
 
@@ -590,9 +568,7 @@ msgstr "ألغ التثبيت"
 #: src/Dialogs/UninstallFailDialog.vala:26
 #: src/Dialogs/UpgradeFailDialog.vala:26
 msgid "This may have been caused by external or manually compiled software."
-msgstr ""
-"يمكن أن يحدث هذا بسبب برامج خارجية أو برامج تم بناؤها من الكود المصدري "
-"يدوياً."
+msgstr "يمكن أن يحدث هذا بسبب برامج خارجية أو برامج تم بناؤها من الكود المصدري يدوياً."
 
 #: src/Dialogs/UninstallFailDialog.vala:37
 msgid "Failed to uninstall app"
@@ -609,9 +585,7 @@ msgstr "فشل في جلب التحديثات"
 
 #: src/Dialogs/UpdateFailDialog.vala:26
 msgid "This may have been caused by external, manually added software repositories or a corrupted sources file."
-msgstr ""
-"يمكن أن يحدث هذا بسبب برامج خارجية أو مستودعات برامج مضافة بشكل يدوي أو ملف "
-"مصادر تالف."
+msgstr "يمكن أن يحدث هذا بسبب برامج خارجية أو مستودعات برامج مضافة بشكل يدوي أو ملف مصادر تالف."
 
 #: src/Dialogs/UpdateFailDialog.vala:34
 msgid "Ignore"
@@ -748,9 +722,7 @@ msgstr "لم يتم العثور على تطبيقات"
 #: src/Views/AppListView.vala:32
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
-msgstr ""
-"حاول تغيير عبارات البحث. يمكنك أيضا تحميل تطبيقات Flatpak بشكل متواز، مثلاً "
-"من %s"
+msgstr "حاول تغيير عبارات البحث. يمكنك أيضا تحميل تطبيقات Flatpak بشكل متواز، مثلاً من %s"
 
 #: src/Views/AppListView.vala:168
 msgid "Non-Curated Apps"
@@ -962,6 +934,9 @@ msgstr "محدث بالكامل"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:223
 msgid "Update"
 msgstr "حدث"
+
+#~ msgid "Only used to send you a receipt."
+#~ msgstr "يستخدم فقط لإرسال فاتورة لك."
 
 #~ msgid "Get the apps that you need at a price you can afford."
 #~ msgstr "احصل على التطبيقات التي تريديها بالسعر الذي تريده."

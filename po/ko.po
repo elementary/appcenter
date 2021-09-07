@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-04 07:43+0000\n"
+"POT-Creation-Date: 2021-09-07 20:23+0000\n"
 "PO-Revision-Date: 2019-06-30 03:52+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/appcenter/appcenter/ko/>\n"
@@ -407,142 +407,140 @@ msgstr "카드 결제 도중 오류가 생겼습니다. 다시 시도해 주세�
 msgid "Please review your payment info and try again."
 msgstr "지불 정보를 다시 한번 확인하신 후에 다시 진행해주세요."
 
-#: src/Dialogs/StripeDialog.vala:76
+#: src/Dialogs/StripeDialog.vala:73
 msgid "Payment"
 msgstr "지불"
 
-#: src/Dialogs/StripeDialog.vala:92 src/Dialogs/StripeDialog.vala:252
+#: src/Dialogs/StripeDialog.vala:89 src/Dialogs/StripeDialog.vala:245
 #, c-format
 msgid "Pay $%d for %s"
 msgstr "%d$를 %s에 지급합니다"
 
-#: src/Dialogs/StripeDialog.vala:97
+#: src/Dialogs/StripeDialog.vala:94
 #, fuzzy
 #| msgid "This is a one time payment. Your email address is only used to send you a receipt."
 msgid "This is a one time payment suggested by the developer. You can also choose your own price."
 msgstr "이것은 한 번 결제입니다. 여러분의 이메일은 오직 영수증을 보내기 위한 용도로만 이용됩니다."
 
-#: src/Dialogs/StripeDialog.vala:118
+#: src/Dialogs/StripeDialog.vala:115
 msgid "or"
 msgstr ""
 
-#: src/Dialogs/StripeDialog.vala:143
+#: src/Dialogs/StripeDialog.vala:152
 msgid "Email"
 msgstr "이메일"
 
-#: src/Dialogs/StripeDialog.vala:145
-msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
+#: src/Dialogs/StripeDialog.vala:157
+#, fuzzy
+#| msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
+msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
 msgstr "여러분의 이메일 주소는 영수증을 보내는 데 사용됩니다. 어떤 메일링 리스트에도 가입되지 않습니다."
 
-#: src/Dialogs/StripeDialog.vala:148
-msgid "Only used to send you a receipt."
-msgstr ""
-
-#: src/Dialogs/StripeDialog.vala:149
+#: src/Dialogs/StripeDialog.vala:158
 msgid "Privacy Policy"
 msgstr "개인 정보 보호 정책"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
-#: src/Dialogs/StripeDialog.vala:175
+#: src/Dialogs/StripeDialog.vala:182
 msgid "MM / YY"
 msgstr "MM / YY"
 
-#: src/Dialogs/StripeDialog.vala:195
+#: src/Dialogs/StripeDialog.vala:190
 msgid "CVC"
 msgstr "CVC"
 
-#: src/Dialogs/StripeDialog.vala:240 src/Dialogs/StripeDialog.vala:376
+#: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:380
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:103
 msgid "Cancel"
 msgstr "취소"
 
-#: src/Dialogs/StripeDialog.vala:242 src/Dialogs/StripeDialog.vala:253
-#: src/Dialogs/StripeDialog.vala:375
+#: src/Dialogs/StripeDialog.vala:235 src/Dialogs/StripeDialog.vala:246
+#: src/Dialogs/StripeDialog.vala:379
 #, c-format
 msgid "Pay $%d.00"
 msgstr "$%d.00 지불"
 
-#: src/Dialogs/StripeDialog.vala:304
+#: src/Dialogs/StripeDialog.vala:308
 msgid "Processing"
 msgstr "처리하고 있습니다"
 
-#: src/Dialogs/StripeDialog.vala:329
+#: src/Dialogs/StripeDialog.vala:333
 msgid "There Was a Problem Processing Your Payment"
 msgstr "결제 처리 과정에서 문제가 있었습니다"
 
-#: src/Dialogs/StripeDialog.vala:367
+#: src/Dialogs/StripeDialog.vala:371
 msgid "Pay Later"
 msgstr "나중에 지불하겠습니다"
 
-#: src/Dialogs/StripeDialog.vala:368
+#: src/Dialogs/StripeDialog.vala:372
 msgid "Retry"
 msgstr "다시 시도"
 
-#: src/Dialogs/StripeDialog.vala:574 src/Dialogs/StripeDialog.vala:639
+#: src/Dialogs/StripeDialog.vala:553 src/Dialogs/StripeDialog.vala:618
 msgid "The card number is incorrect. Please try again using the correct card number."
 msgstr "카드 번호가 맞지 않습니다. 올바른 카드 번호로 다시 시도해 주세요."
 
-#: src/Dialogs/StripeDialog.vala:576
+#: src/Dialogs/StripeDialog.vala:555
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
 msgstr "유효기간 중 월(MM)이  맞지 않습니다. 올바른 유효 기간으로 다시 시도해 주세요."
 
-#: src/Dialogs/StripeDialog.vala:578 src/Dialogs/StripeDialog.vala:636
+#: src/Dialogs/StripeDialog.vala:557 src/Dialogs/StripeDialog.vala:615
 msgid "The expiration year is invalid. Please try again using the correct expiration date."
 msgstr "유효기간 중 년(YY)이  맞지 않습니다. 올바른 유효 기간으로 다시 시도해 주세요."
 
-#: src/Dialogs/StripeDialog.vala:581 src/Dialogs/StripeDialog.vala:634
+#: src/Dialogs/StripeDialog.vala:560 src/Dialogs/StripeDialog.vala:613
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr "CVC번호가  맞지 않습니다. 올바른 CVC 번호로 다시 시도해 주세요."
 
-#: src/Dialogs/StripeDialog.vala:583 src/Dialogs/StripeDialog.vala:625
+#: src/Dialogs/StripeDialog.vala:562 src/Dialogs/StripeDialog.vala:604
 msgid "The card has expired. Please try again with a different card."
 msgstr "카드의 유효기간이 지났습니다. 다른 카드로 다시 시도해 주세요."
 
-#: src/Dialogs/StripeDialog.vala:603
+#: src/Dialogs/StripeDialog.vala:582
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr "지금 결제 요청이 너무 많아 결제가 어렵습니다, 다음에 다시 시도해 주세요."
 
-#: src/Dialogs/StripeDialog.vala:619
+#: src/Dialogs/StripeDialog.vala:598
 msgid "This card does not support this kind of transaction. Please try again with a different card."
 msgstr "이 카드는 이런 방식의 거래를 지원하지 않습니다. 다른 카드로 다시 시도해 주세요."
 
-#: src/Dialogs/StripeDialog.vala:621
+#: src/Dialogs/StripeDialog.vala:600
 msgid "The currency is not supported by this card. Please try again with a different card."
 msgstr "이 카드에서 지원하지 않는 통용화폐입니다. 다른 카드로 다시 시도해 주세요."
 
-#: src/Dialogs/StripeDialog.vala:623
+#: src/Dialogs/StripeDialog.vala:602
 msgid "The transaction has already been processed."
 msgstr "이미 거래가 진행 중입니다."
 
-#: src/Dialogs/StripeDialog.vala:627
+#: src/Dialogs/StripeDialog.vala:606
 msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
 msgstr "우편번호가 맞지 않습니다. 다른 우편번호를 이용해서 다시 시도해 주세요."
 
-#: src/Dialogs/StripeDialog.vala:629
+#: src/Dialogs/StripeDialog.vala:608
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "잔고가 부족합니다. 다른 지불 방식을 이용해 주세요."
 
-#: src/Dialogs/StripeDialog.vala:631
+#: src/Dialogs/StripeDialog.vala:610
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "수량이 틀렸습니다. 올바른 수량으로 다시 시도해 주세요."
 
-#: src/Dialogs/StripeDialog.vala:642
+#: src/Dialogs/StripeDialog.vala:621
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "PIN 번호가  맞지 않습니다. 올바른 PIN 번호로 다시 시도해 주세요."
 
-#: src/Dialogs/StripeDialog.vala:644
+#: src/Dialogs/StripeDialog.vala:623
 msgid "There has been too many PIN attempts. Please try again with a different card."
 msgstr "PIN 번호 입력 시도를 초과했습니다. 다른 카드로 시도해 주세요."
 
-#: src/Dialogs/StripeDialog.vala:664
+#: src/Dialogs/StripeDialog.vala:643
 msgid "Unable to complete the transaction. Please contact your bank for further information."
 msgstr "거래를 마무리할 수 없습니다. 자세한 내용은 은행에 연락해서 알아보시기 바랍니다."
 
-#: src/Dialogs/StripeDialog.vala:667
+#: src/Dialogs/StripeDialog.vala:646
 msgid "The balance or credit limit on the card has been reached."
 msgstr "신용 한도 또는 신용 카드 한도에 다다랐습니다."
 
-#: src/Dialogs/StripeDialog.vala:670
+#: src/Dialogs/StripeDialog.vala:649
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "지금 사용하신 카드는 테스트용 카드입니다. 실제 거래 가능한 카드로 다시 시도해주세요."
 

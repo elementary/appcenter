@@ -13,11 +13,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-04 07:43+0000\n"
+"POT-Creation-Date: 2021-09-07 20:23+0000\n"
 "PO-Revision-Date: 2021-09-04 12:16+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
-"Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/tr/>\n"
+"Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/appcenter/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -405,142 +404,138 @@ msgstr "Kart işlenirken hata oluştu. Lütfen daha sonra tekrar deneyiniz. Verd
 msgid "Please review your payment info and try again."
 msgstr "Lütfen ödeme bilgilerinizi gözden geçirin ve tekrar deneyin."
 
-#: src/Dialogs/StripeDialog.vala:76
+#: src/Dialogs/StripeDialog.vala:73
 msgid "Payment"
 msgstr "Ödeme"
 
-#: src/Dialogs/StripeDialog.vala:92 src/Dialogs/StripeDialog.vala:252
+#: src/Dialogs/StripeDialog.vala:89 src/Dialogs/StripeDialog.vala:245
 #, c-format
 msgid "Pay $%d for %s"
 msgstr "%s için %d$ öde"
 
-#: src/Dialogs/StripeDialog.vala:97
+#: src/Dialogs/StripeDialog.vala:94
 msgid "This is a one time payment suggested by the developer. You can also choose your own price."
-msgstr ""
-"Bu, geliştirici tarafından önerilen tek seferlik bir ödemedir. Ayrıca kendi "
-"fiyatınızı da seçebilirsiniz."
+msgstr "Bu, geliştirici tarafından önerilen tek seferlik bir ödemedir. Ayrıca kendi fiyatınızı da seçebilirsiniz."
 
-#: src/Dialogs/StripeDialog.vala:118
+#: src/Dialogs/StripeDialog.vala:115
 msgid "or"
 msgstr "veya"
 
-#: src/Dialogs/StripeDialog.vala:143
+#: src/Dialogs/StripeDialog.vala:152
 msgid "Email"
 msgstr "E-posta"
 
-#: src/Dialogs/StripeDialog.vala:145
-msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
+#: src/Dialogs/StripeDialog.vala:157
+#, fuzzy
+#| msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
+msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
 msgstr "E-posta adresiniz makbuz göndermek için kullanılır. Hiçbir e-posta listesine abone edilmeyeceksiniz."
 
-#: src/Dialogs/StripeDialog.vala:148
-msgid "Only used to send you a receipt."
-msgstr "Sadece size bir makbuz göndermek için kullanılır."
-
-#: src/Dialogs/StripeDialog.vala:149
+#: src/Dialogs/StripeDialog.vala:158
 msgid "Privacy Policy"
 msgstr "Gizlilik Politikası"
 
 #. / TRANSLATORS: Don't change the order, only transliterate
-#: src/Dialogs/StripeDialog.vala:175
+#: src/Dialogs/StripeDialog.vala:182
 msgid "MM / YY"
 msgstr "AA / YY"
 
-#: src/Dialogs/StripeDialog.vala:195
+#: src/Dialogs/StripeDialog.vala:190
 msgid "CVC"
 msgstr "CVC (Güvenlik Kodu)"
 
-#: src/Dialogs/StripeDialog.vala:240 src/Dialogs/StripeDialog.vala:376
+#: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:380
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:103
 msgid "Cancel"
 msgstr "Vazgeç"
 
-#: src/Dialogs/StripeDialog.vala:242 src/Dialogs/StripeDialog.vala:253
-#: src/Dialogs/StripeDialog.vala:375
+#: src/Dialogs/StripeDialog.vala:235 src/Dialogs/StripeDialog.vala:246
+#: src/Dialogs/StripeDialog.vala:379
 #, c-format
 msgid "Pay $%d.00"
 msgstr "%d.00$ Öde"
 
-#: src/Dialogs/StripeDialog.vala:304
+#: src/Dialogs/StripeDialog.vala:308
 msgid "Processing"
 msgstr "İşleniyor"
 
-#: src/Dialogs/StripeDialog.vala:329
+#: src/Dialogs/StripeDialog.vala:333
 msgid "There Was a Problem Processing Your Payment"
 msgstr "Ödemenizi İşleme Sırasında Bir Sorun Oluştu"
 
-#: src/Dialogs/StripeDialog.vala:367
+#: src/Dialogs/StripeDialog.vala:371
 msgid "Pay Later"
 msgstr "Daha Sonra Öde"
 
-#: src/Dialogs/StripeDialog.vala:368
+#: src/Dialogs/StripeDialog.vala:372
 msgid "Retry"
 msgstr "Tekrar Dene"
 
-#: src/Dialogs/StripeDialog.vala:574 src/Dialogs/StripeDialog.vala:639
+#: src/Dialogs/StripeDialog.vala:553 src/Dialogs/StripeDialog.vala:618
 msgid "The card number is incorrect. Please try again using the correct card number."
 msgstr "Kart numarası yanlış. Lütfen doğru kart numarasını kullanarak tekrar deneyin."
 
-#: src/Dialogs/StripeDialog.vala:576
+#: src/Dialogs/StripeDialog.vala:555
 msgid "The expiration month is invalid. Please try again using the correct expiration date."
 msgstr "Son kullanma tarihi geçersiz. Lütfen doğru son kullanma tarihini kullanarak tekrar deneyin."
 
-#: src/Dialogs/StripeDialog.vala:578 src/Dialogs/StripeDialog.vala:636
+#: src/Dialogs/StripeDialog.vala:557 src/Dialogs/StripeDialog.vala:615
 msgid "The expiration year is invalid. Please try again using the correct expiration date."
 msgstr "Son kullanma tarihi geçersiz. Lütfen doğru son kullanma tarihini kullanarak tekrar deneyin."
 
-#: src/Dialogs/StripeDialog.vala:581 src/Dialogs/StripeDialog.vala:634
+#: src/Dialogs/StripeDialog.vala:560 src/Dialogs/StripeDialog.vala:613
 msgid "The CVC number is incorrect. Please try again using the correct CVC."
 msgstr "CVC numarası yanlış. Lütfen doğru CVC numarasını kullanarak tekrar deneyin."
 
-#: src/Dialogs/StripeDialog.vala:583 src/Dialogs/StripeDialog.vala:625
+#: src/Dialogs/StripeDialog.vala:562 src/Dialogs/StripeDialog.vala:604
 msgid "The card has expired. Please try again with a different card."
 msgstr "Kartın kullanım süresi dolmuş. Lütfen farklı bir kartla tekrar deneyin."
 
-#: src/Dialogs/StripeDialog.vala:603
+#: src/Dialogs/StripeDialog.vala:582
 msgid "There are too many payment requests at the moment, please retry later."
 msgstr "Şu anda çok fazla ödeme talebi var, lütfen daha sonra tekrar deneyiniz."
 
-#: src/Dialogs/StripeDialog.vala:619
+#: src/Dialogs/StripeDialog.vala:598
 msgid "This card does not support this kind of transaction. Please try again with a different card."
 msgstr "Bu kart bu tür bir işlemi desteklemiyor. Lütfen farklı bir kartla tekrar deneyin."
 
-#: src/Dialogs/StripeDialog.vala:621
+#: src/Dialogs/StripeDialog.vala:600
 msgid "The currency is not supported by this card. Please try again with a different card."
 msgstr "Para birimi bu kart tarafından desteklenmiyor. Lütfen farklı bir kartla tekrar deneyin."
 
-#: src/Dialogs/StripeDialog.vala:623
+#: src/Dialogs/StripeDialog.vala:602
 msgid "The transaction has already been processed."
 msgstr "Bu işlem zaten işlendi."
 
-#: src/Dialogs/StripeDialog.vala:627
+#: src/Dialogs/StripeDialog.vala:606
 msgid "The ZIP/Postal code is incorrect. Please try again using the correct ZIP/postal code."
 msgstr "Posta kodu hatalıdır. Lütfen doğru posta koduyla tekrar deneyiniz."
 
-#: src/Dialogs/StripeDialog.vala:629
+#: src/Dialogs/StripeDialog.vala:608
 msgid "You don't have enough funds. Please use an alternative payment method."
 msgstr "Yeterli bakiyeniz yok. Lütfen alternatif bir ödeme yöntemi kullanın."
 
-#: src/Dialogs/StripeDialog.vala:631
+#: src/Dialogs/StripeDialog.vala:610
 msgid "The amount is incorrect. Please try again using a valid amount."
 msgstr "Bu miktar yanlış. Lütfen geçerli bir miktar kullanarak tekrar deneyin."
 
-#: src/Dialogs/StripeDialog.vala:642
+#: src/Dialogs/StripeDialog.vala:621
 msgid "The PIN number is incorrect. Please try again using the correct PIN."
 msgstr "PIN numarası yanlış. Lütfen doğru PIN numarasını kullanarak tekrar deneyin."
 
-#: src/Dialogs/StripeDialog.vala:644
+#: src/Dialogs/StripeDialog.vala:623
 msgid "There has been too many PIN attempts. Please try again with a different card."
 msgstr "Çok fazla PIN denemesi yapıldı. Lütfen farklı bir kartla tekrar deneyin."
 
-#: src/Dialogs/StripeDialog.vala:664
+#: src/Dialogs/StripeDialog.vala:643
 msgid "Unable to complete the transaction. Please contact your bank for further information."
 msgstr "İşlem tamamlanamadı. Daha fazla bilgi için lütfen bankanıza başvurun."
 
-#: src/Dialogs/StripeDialog.vala:667
+#: src/Dialogs/StripeDialog.vala:646
 msgid "The balance or credit limit on the card has been reached."
 msgstr "Karttaki bakiye veya kredi limitine ulaşılmıştır."
 
-#: src/Dialogs/StripeDialog.vala:670
+#: src/Dialogs/StripeDialog.vala:649
 msgid "The given card is a test card. Please use a real card to proceed."
 msgstr "Kullanılan kart test kartıdır. Devam etmek için lütfen gerçek bir kart kullanınız."
 
@@ -746,15 +741,11 @@ msgstr "Ara"
 
 #: src/Widgets/Banner.vala:234
 msgid "The open source, pay-what-you-can app store"
-msgstr ""
-"Açık kaynak kodlu ve istediğine, istediğin kadar ödeyebileceğin bir uygulama "
-"mağazası"
+msgstr "Açık kaynak kodlu ve istediğine, istediğin kadar ödeyebileceğin bir uygulama mağazası"
 
 #: src/Widgets/Banner.vala:242
 msgid "Reviewed and curated for a native, privacy-respecting, and secure experience."
-msgstr ""
-"Yerel, gizliliğe saygılı ve güvenli bir deneyim için gözden geçirilmiş ve "
-"seçilmiştir."
+msgstr "Yerel, gizliliğe saygılı ve güvenli bir deneyim için gözden geçirilmiş ve seçilmiştir."
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
@@ -931,6 +922,9 @@ msgstr "Güncel"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:223
 msgid "Update"
 msgstr "Güncelle"
+
+#~ msgid "Only used to send you a receipt."
+#~ msgstr "Sadece size bir makbuz göndermek için kullanılır."
 
 #~ msgid "Get the apps that you need at a price you can afford."
 #~ msgstr "İhtiyacınız olan uygulamaları, karşılayabileceğiniz bir fiyata alın."
