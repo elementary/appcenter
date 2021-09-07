@@ -4,9 +4,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-07 20:23+0000\n"
-"PO-Revision-Date: 2021-09-04 12:16+0000\n"
+"PO-Revision-Date: 2021-09-07 23:21+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
-"Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/appcenter/he/>\n"
+"Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/he/>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -416,10 +417,8 @@ msgid "Email"
 msgstr "דוא״ל"
 
 #: src/Dialogs/StripeDialog.vala:157
-#, fuzzy
-#| msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
 msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
-msgstr "כתובת הדוא״ל שלך משמשת לשליחת קבלה בלבד. לא נרשום אותך לרשימות דיוור בלא הסכמתך."
+msgstr "משמשת לשליחת קבלה בלבד. לא נרשום אותך לרשימות דיוור בלא הסכמתך."
 
 #: src/Dialogs/StripeDialog.vala:158
 msgid "Privacy Policy"
