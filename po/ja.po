@@ -4,9 +4,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-07 20:23+0000\n"
-"PO-Revision-Date: 2021-09-06 22:35+0000\n"
+"PO-Revision-Date: 2021-09-08 01:58+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/appcenter/ja/>\n"
+"Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -413,10 +414,8 @@ msgid "Email"
 msgstr "メール"
 
 #: src/Dialogs/StripeDialog.vala:157
-#, fuzzy
-#| msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
 msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
-msgstr "メールアドレスは領収書を送信するためだけに使用されます。メーリングリストに追加されることはありません。"
+msgstr "領収書を送信するためだけに使用されます。メーリングリストには一切追加されません。"
 
 #: src/Dialogs/StripeDialog.vala:158
 msgid "Privacy Policy"
