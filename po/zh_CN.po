@@ -5,13 +5,14 @@
 # imgradeone Yan <imgradeone@outlook.com>, 2019, 2020, 2021.
 # Zang Jiucheng <zangjiucheng@gmail.com>, 2021.
 # Yuchen Deng <loaden@gmail.com>, 2021.
+# Yuchen Deng <inbz@qq.com>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-07 20:23+0000\n"
 "PO-Revision-Date: 2021-09-08 19:50+0000\n"
-"Last-Translator: colindemian <colindemian@outlook.com>\n"
+"Last-Translator: Yuchen Deng <inbz@qq.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "appcenter/appcenter/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -604,7 +605,7 @@ msgstr ""
 
 #: src/Views/AppInfoView.vala:302
 msgid "Send Feedback"
-msgstr ""
+msgstr "发送反馈"
 
 #: src/Views/AppInfoView.vala:308
 msgid "Help"
