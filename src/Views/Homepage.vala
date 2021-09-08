@@ -33,13 +33,20 @@ public class AppCenter.Homepage : AbstractView {
     public AppStream.Category currently_viewed_category;
 #if HOMEPAGE
     // public Widgets.Banner newest_banner;
-    public Gtk.Revealer switcher_revealer;
+    public Hdy.Carousel banner;
+    // public Gtk.Revealer switcher_revealer;
 
-    private Widgets.Switcher switcher;
+    // private Widgets.Switcher switcher;
     private Gtk.FlowBox recently_updated_carousel;
     private Gtk.Revealer recently_updated_revealer;
 
     construct {
+        banner = new Hdy.Carousel () {
+            spacing = 24
+        };
+        var banner_dots = new Hdy.CarouselIndicatorDots () {
+            carousel = banner
+        };
         // switcher = new Widgets.Switcher () {
         //     halign = Gtk.Align.CENTER
         // };
@@ -99,8 +106,9 @@ public class AppCenter.Homepage : AbstractView {
             margin = 12
         };
 #if HOMEPAGE
-        // grid.attach (newest_banner, 0, 0);
-        grid.attach (switcher_revealer, 0, 1);
+        grid.attach (banner, 0, 0);
+        grid.attach (banner_dots, 0, 1);
+        // grid.attach (switcher_revealer, 0, 1);
         grid.attach (recently_updated_revealer, 0, 2);
         grid.attach (categories_label, 0, 3);
 #endif
@@ -158,9 +166,9 @@ public class AppCenter.Homepage : AbstractView {
 
 #if HOMEPAGE
                 // If the banners weren't populated, try again to populate them
-                if (!recently_updated_revealer.reveal_child && !switcher_revealer.reveal_child) {
-                    load_banners_and_carousels.begin ();
-                }
+                // if (!recently_updated_revealer.reveal_child && !switcher_revealer.reveal_child) {
+                //     load_banners_and_carousels.begin ();
+                // }
 
                 return GLib.Source.REMOVE;
             });
@@ -203,8 +211,29 @@ public class AppCenter.Homepage : AbstractView {
         }
 
         foreach (var package in packages_in_banner) {
-            // newest_banner.add_package (package);
+            var package_label = new Gtk.Label (package.get_name ());
+            package_label.get_style_context ().add_class (Granite.STYLE_CLASS_H1_LABEL);
+
+            var author_label = new Gtk.Label (package.author);
+
+            var package_grid = new Gtk.Grid () {
+                column_spacing = 12,
+                halign = Gtk.Align.CENTER,
+                row_spacing = 12,
+                valign = Gtk.Align.CENTER
+            };
+            package_grid.attach (package_label, 0, 0);
+            package_grid.attach (author_label, 0, 1);
+
+            var package_button = new Gtk.Button () {
+                expand = true,
+                height_request = 256
+            };
+            package_button.add (package_grid);
+
+            banner.add (package_button);
         }
+        banner.show_all ();
 
         foreach (var package in packages_by_release_date) {
             if (recently_updated_carousel.get_children ().length () >= MAX_PACKAGES_IN_CAROUSEL) {
@@ -233,7 +262,7 @@ public class AppCenter.Homepage : AbstractView {
 
         // newest_banner.go_to_first ();
         // switcher.show_all ();
-        switcher_revealer.set_reveal_child (true);
+        // switcher_revealer.set_reveal_child (true);
 
         page_loaded ();
     }
