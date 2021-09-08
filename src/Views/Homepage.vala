@@ -32,7 +32,7 @@ public class AppCenter.Homepage : AbstractView {
 
     public AppStream.Category currently_viewed_category;
 #if HOMEPAGE
-    public Widgets.Banner newest_banner;
+    // public Widgets.Banner newest_banner;
     public Gtk.Revealer switcher_revealer;
 
     private Widgets.Switcher switcher;
@@ -40,26 +40,26 @@ public class AppCenter.Homepage : AbstractView {
     private Gtk.Revealer recently_updated_revealer;
 
     construct {
-        switcher = new Widgets.Switcher () {
-            halign = Gtk.Align.CENTER
-        };
+        // switcher = new Widgets.Switcher () {
+        //     halign = Gtk.Align.CENTER
+        // };
 
-        switcher_revealer = new Gtk.Revealer () {
-            transition_type = Gtk.RevealerTransitionType.SLIDE_DOWN,
-            transition_duration = Widgets.Banner.TRANSITION_DURATION_MILLISECONDS
-        };
-        switcher_revealer.add (switcher);
+        // switcher_revealer = new Gtk.Revealer () {
+        //     transition_type = Gtk.RevealerTransitionType.SLIDE_DOWN,
+        //     transition_duration = Widgets.Banner.TRANSITION_DURATION_MILLISECONDS
+        // };
+        // switcher_revealer.add (switcher);
 
-        newest_banner = new Widgets.Banner (switcher) {
-            margin = 12
-        };
+        // newest_banner = new Widgets.Banner (switcher) {
+        //     margin = 12
+        // };
 
-        newest_banner.clicked.connect (() => {
-            var package = newest_banner.get_package ();
-            if (package != null) {
-                show_package (package);
-            }
-        });
+        // newest_banner.clicked.connect (() => {
+        //     var package = newest_banner.get_package ();
+        //     if (package != null) {
+        //         show_package (package);
+        //     }
+        // });
 
         var recently_updated_label = new Granite.HeaderLabel (_("Recently Updated")) {
             margin_start = 10
@@ -99,7 +99,7 @@ public class AppCenter.Homepage : AbstractView {
             margin = 12
         };
 #if HOMEPAGE
-        grid.attach (newest_banner, 0, 0);
+        // grid.attach (newest_banner, 0, 0);
         grid.attach (switcher_revealer, 0, 1);
         grid.attach (recently_updated_revealer, 0, 2);
         grid.attach (categories_label, 0, 3);
@@ -114,7 +114,7 @@ public class AppCenter.Homepage : AbstractView {
 #if HOMEPAGE
         var local_package = App.local_package;
         if (local_package != null) {
-            newest_banner.add_package (local_package);
+            // newest_banner.add_package (local_package);
         }
 
         load_banners_and_carousels.begin ();
@@ -203,7 +203,7 @@ public class AppCenter.Homepage : AbstractView {
         }
 
         foreach (var package in packages_in_banner) {
-            newest_banner.add_package (package);
+            // newest_banner.add_package (package);
         }
 
         foreach (var package in packages_by_release_date) {
@@ -231,8 +231,8 @@ public class AppCenter.Homepage : AbstractView {
         recently_updated_carousel.show_all ();
         recently_updated_revealer.reveal_child = recently_updated_carousel.get_children ().length () > 0;
 
-        newest_banner.go_to_first ();
-        switcher.show_all ();
+        // newest_banner.go_to_first ();
+        // switcher.show_all ();
         switcher_revealer.set_reveal_child (true);
 
         page_loaded ();
