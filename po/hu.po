@@ -6,8 +6,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-07 20:23+0000\n"
-"PO-Revision-Date: 2021-09-08 14:47+0000\n"
-"Last-Translator: Adam Szatyin <szatyinadam@gmail.com>\n"
+"PO-Revision-Date: 2021-09-08 19:50+0000\n"
+"Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/hu/>\n"
 "Language: hu\n"
@@ -409,21 +409,21 @@ msgstr "%d$ fizetése %s alkalmazásért"
 #: src/Dialogs/StripeDialog.vala:94
 msgid "This is a one time payment suggested by the developer. You can also choose your own price."
 msgstr ""
-"Ez egy fejlesztő által javasolt egyszeri kifizetés. Választhat saját árat is."
+"Ez a fejlesztő által javasolt egyszeri kifizetés. Választhat saját árat is."
 
 #: src/Dialogs/StripeDialog.vala:115
 msgid "or"
-msgstr ""
+msgstr "vagy"
 
 #: src/Dialogs/StripeDialog.vala:152
 msgid "Email"
 msgstr "E-mail"
 
 #: src/Dialogs/StripeDialog.vala:157
-#, fuzzy
-#| msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
 msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
-msgstr "Az e-mail cím kizárólag a bizonylat elküldésére szolgál. Nem iratkozik fel semmilyen levelezőlistára."
+msgstr ""
+"Kizárólag a bizonylat elküldésére szolgál. Nem iratkoztat fel semmilyen "
+"levelezőlistára."
 
 #: src/Dialogs/StripeDialog.vala:158
 msgid "Privacy Policy"
