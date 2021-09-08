@@ -405,7 +405,26 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
     }
 
     public Gee.Collection<Package> get_packages_by_author (string author, int max) {
-        return new Gee.ArrayList<Package> ();
+        var packages = new Gee.ArrayList<AppCenterCore.Package> ();
+        foreach (var package in package_list.values) {
+            if (packages.size > max) {
+                break;
+            }
+
+            bool included = false;
+            foreach (var pkg in packages) {
+                if (package.component.id == pkg.component.id) {
+                    included = true;
+                    continue;
+                }
+            }
+
+            if (package.component.developer_name == author && !included) {
+                packages.add (package);
+            }
+        }
+
+        return packages;
     }
 
     public async uint64 get_download_size (Package package, Cancellable? cancellable, bool is_update = false) throws GLib.Error {
