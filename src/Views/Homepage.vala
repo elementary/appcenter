@@ -108,7 +108,6 @@ public class AppCenter.Homepage : AbstractView {
 #if HOMEPAGE
         grid.attach (banner, 0, 0);
         grid.attach (banner_dots, 0, 1);
-        // grid.attach (switcher_revealer, 0, 1);
         grid.attach (recently_updated_revealer, 0, 2);
         grid.attach (categories_label, 0, 3);
 #endif
@@ -122,6 +121,7 @@ public class AppCenter.Homepage : AbstractView {
 #if HOMEPAGE
         var local_package = App.local_package;
         if (local_package != null) {
+            // FIXME: Handle local package
             // newest_banner.add_package (local_package);
         }
 
@@ -230,6 +230,9 @@ public class AppCenter.Homepage : AbstractView {
                 height_request = 256
             };
             package_button.add (package_grid);
+            package_button.clicked.connect (() => {
+                show_package (package);
+            });
 
             banner.add (package_button);
         }
