@@ -406,21 +406,33 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
 
     public Gee.Collection<Package> get_packages_by_author (string author, int max) {
         var packages = new Gee.ArrayList<AppCenterCore.Package> ();
+        var package_ids = new Gee.ArrayList<string> ();
+
         foreach (var package in package_list.values) {
             if (packages.size > max) {
                 break;
             }
 
-            bool included = false;
-            foreach (var pkg in packages) {
-                if (package.component.id == pkg.component.id) {
-                    included = true;
-                    continue;
-                }
+            if (package.component.id in package_ids) {
+                break;
             }
 
-            if (package.component.developer_name == author && !included) {
-                packages.add (package);
+            if (package.component.developer_name == author) {
+                package_ids.add (package.component.id);
+
+                AppCenterCore.Package? user_package = null;
+                foreach (var origin_package in package.origin_packages) {
+                    if (((FlatpakPackage) origin_package).installation == user_installation) {
+                        user_package = origin_package;
+                        break;
+                    }
+                }
+
+                if (user_package != null) {
+                    packages.add (user_package);
+                } else {
+                    packages.add (package);
+                }
             }
         }
 
