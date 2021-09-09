@@ -32,9 +32,7 @@ public class AppCenter.Homepage : AbstractView {
 
     public AppStream.Category currently_viewed_category;
 #if HOMEPAGE
-    public Widgets.Banner banner;
-    public Hdy.Carousel banner_carousel;
-
+    private Hdy.Carousel banner_carousel;
     private Gtk.FlowBox recently_updated_carousel;
     private Gtk.Revealer recently_updated_revealer;
 
