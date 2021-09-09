@@ -299,22 +299,61 @@ public class AppCenter.Homepage : AbstractView {
         }
 
         construct {
-            var package_label = new Gtk.Label (package.get_name ());
-            package_label.get_style_context ().add_class (Granite.STYLE_CLASS_H1_LABEL);
+            var name_label = new Gtk.Label (package.get_name ()) {
+                max_width_chars = 50,
+                use_markup = true,
+                wrap = true,
+                xalign = 0
+            };
+            name_label.get_style_context ().add_class (Granite.STYLE_CLASS_H1_LABEL);
 
-            var author_label = new Gtk.Label (package.author);
+            var summary_label = new Gtk.Label (package.get_summary ()) {
+                max_width_chars = 50,
+                use_markup = true,
+                wrap = true,
+                xalign = 0
+            };
+            summary_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
+
+            string[] lines = package.get_description ().split ("\n");
+            var description = lines[0].strip ();
+
+            for (int i = 1; i < lines.length; i++) {
+                description += " " + lines[i].strip ();
+            }
+
+            int close_paragraph_index = description.index_of ("</p>", 0);
+            var description_label = new Gtk.Label (description.slice (3, close_paragraph_index)) {
+                ellipsize = Pango.EllipsizeMode.END,
+                lines = 2,
+                margin_top = 12,
+                max_width_chars = 50,
+                use_markup = true,
+                wrap = true,
+                xalign = 0
+            };
+
+            var icon_image = new Gtk.Image.from_gicon (
+                package.get_icon (128, get_scale_factor ()),
+                Gtk.IconSize.INVALID
+            ) {
+                pixel_size = 128
+            };
 
             var package_grid = new Gtk.Grid () {
-                column_spacing = 12,
+                column_spacing = 24,
                 halign = Gtk.Align.CENTER,
-                row_spacing = 12,
                 valign = Gtk.Align.CENTER
             };
-            package_grid.attach (package_label, 0, 0);
-            package_grid.attach (author_label, 0, 1);
+
+            package_grid.attach (icon_image, 0, 0, 1, 3);
+            package_grid.attach (name_label, 1, 0);
+            package_grid.attach (summary_label, 1, 1);
+            package_grid.attach (description_label, 1, 2);
 
             expand = true;
             height_request = 256;
+            get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
             add (package_grid);
         }
