@@ -76,42 +76,36 @@ namespace AppCenter.Views {
 
             var package_component = package.component;
 
-            // This covers cartoon and fantasy violence as well as realistic violence and violence-related concepts like slavery and desecrating religious symbols, buildings, etc.
             var violence = new ContentType (
                 _("Violence"),
                 _("Cartoon, fantasy, or realistic violence"),
                 "application-content-violence-symbolic"
             );
 
-            // This includes both the presence of or references to alcohol, narcotics, or tobacco. This might be better defined as "illicit substances" or some such other since depending on your locale you might not consider all of these to be "drugs" in the traditional sense of the word. If we iconify here it might be worth depicting alcohol and tobacco to make sure it's understood that these are included.
             var drugs = new ContentType (
                 _("Illicit Substances"),
                 _("Presence of or references to alcohol, narcotics, or tobacco"),
                 "application-content-illicit-substance-symbolic"
             );
 
-            // This oddly includes references to homosexuality and the vague "sexual appearance" with the provided example being women's swimwear. This one might need some special casing to make sure it's useful as a broad category. I wouldn't expect a game like Pokémon to contain a content warning for "Sex & Nudity" because some characters are in swimwear.
             var sex_nudity = new ContentType (
                 _("Sex & Nudity"),
                 _("Adult nudity or sexual themes"),
                 "application-content-sex-nudity-symbolic"
             );
 
-            // This includes the obvious profanity, but also discrimination and humor. Again might need some filtering since I don't think a "Language" content warning makes sense if your app contains "slapstick humor".
             var language = new ContentType (
                 _("Offensive Language"),
                 _("Profanity, discriminatory language, or adult humor"),
                 "application-content-offensive-language-symbolic"
             );
 
-            // This includes advertising, gambling, and in-app purchases. In this context advertising goes so far as to refer to "banners showing the Coca-Cola logo shown in a Soccer game". Since we don't allow what most people would consider advertising in AppCenter, maybe we should just look for gambling and in-app purchases here. iOS places a warning about in-app purchases right next to the price button, which I think is an interesting choice especially when the app shows as free. It's kind of a nice way to say "Free, but here's the catch". If we did something like that, then we could just warn about gambling on its own.
             var gambling = new ContentType (
                 _("Gambling"),
                 _("Realistic or participatory gambling"),
                 "application-content-gambling-symbolic"
             );
 
-            // This basically covers anything where you send data to the internet for other humans to see.
             var social = new ContentType (
                 _("Online Interactions"),
                 _("Communication or data is sent to the Internet for other humans to see"),
@@ -125,14 +119,59 @@ namespace AppCenter.Views {
                 row_spacing = 12,
                 margin_bottom = 24
             };
-            oars_flowbox.add (violence);
-            oars_flowbox.add (drugs);
-            oars_flowbox.add (sex_nudity);
-            oars_flowbox.add (language);
-            oars_flowbox.add (gambling);
-            oars_flowbox.add (social);
 
-            var oars
+            var ratings = package_component.get_content_ratings ();
+            for (int i = 0; i < ratings.length; i++) {
+                var rating = ratings[i];
+
+                if (
+                    rating.get_value ("violence-realistic") > AppStream.ContentRatingValue.NONE ||
+                    rating.get_value ("violence-bloodshed") > AppStream.ContentRatingValue.NONE ||
+                    rating.get_value ("violence-sexual") > AppStream.ContentRatingValue.NONE
+                ) {
+                    oars_flowbox.add (violence);
+                }
+
+                if (
+                    rating.get_value ("drugs-narcotics") > AppStream.ContentRatingValue.NONE
+                ) {
+                    oars_flowbox.add (drugs);
+                }
+
+                if (
+                    rating.get_value ("sex-nudity") > AppStream.ContentRatingValue.NONE ||
+                    rating.get_value ("sex-themes") > AppStream.ContentRatingValue.NONE ||
+                    rating.get_value ("sex-prostitution") > AppStream.ContentRatingValue.NONE
+                ) {
+                    oars_flowbox.add (sex_nudity);
+                }
+
+                if (
+                    // Mild is considered things like "Dufus"
+                    rating.get_value ("language-profanity") > AppStream.ContentRatingValue.MILD ||
+                    // Mild is considered things like slapstick humor
+                    rating.get_value ("language-humor") > AppStream.ContentRatingValue.MILD ||
+                    rating.get_value ("language-discrimination") > AppStream.ContentRatingValue.NONE
+                ) {
+                    oars_flowbox.add (language);
+                }
+
+                if (
+                    rating.get_value ("money-gambling") > AppStream.ContentRatingValue.NONE
+                ) {
+                    oars_flowbox.add (gambling);
+                }
+
+                if (
+                    rating.get_value ("social-chat") > AppStream.ContentRatingValue.NONE ||
+                    rating.get_value ("social-info") > AppStream.ContentRatingValue.NONE ||
+                    rating.get_value ("social-audio") > AppStream.ContentRatingValue.NONE ||
+                    rating.get_value ("social-location") > AppStream.ContentRatingValue.NONE ||
+                    rating.get_value ("social-contacts") > AppStream.ContentRatingValue.NONE
+                ) {
+                    oars_flowbox.add (social);
+                }
+            }
 
             screenshots = package_component.get_screenshots ();
 
