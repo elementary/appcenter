@@ -360,7 +360,7 @@ public class AppCenter.Homepage : AbstractView {
 
             var css_class = package.normalized_component_id.replace (".", "-");
 
-            var style_context = get_style_context ();
+            unowned var style_context = get_style_context ();
             style_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
             style_context.add_class (css_class);
 
