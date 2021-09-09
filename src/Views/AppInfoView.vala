@@ -585,13 +585,13 @@ namespace AppCenter.Views {
                     color_primary_text = package.get_color_primary_text ();
                 }
 
-                // if (color_primary == null || color_primary_text == null) {
-                //     color_primary = DEFAULT_BANNER_COLOR_PRIMARY;
-                //     color_primary_text = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
-                // }
+                if (color_primary == null || color_primary_text == null) {
+                    color_primary = DEFAULT_BANNER_COLOR_PRIMARY;
+                    color_primary_text = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
+                }
 
-                // var colored_css = BANNER_STYLE_CSS.printf (color_primary, color_primary_text);
-                // provider.load_from_data (colored_css, colored_css.length);
+                var colored_css = BANNER_STYLE_CSS.printf (color_primary, color_primary_text);
+                provider.load_from_data (colored_css, colored_css.length);
 
                 if (previous_css_provider != null) {
                     Gtk.StyleContext.remove_provider_for_screen (Gdk.Screen.get_default (), previous_css_provider);

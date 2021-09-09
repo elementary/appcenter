@@ -32,41 +32,20 @@ public class AppCenter.Homepage : AbstractView {
 
     public AppStream.Category currently_viewed_category;
 #if HOMEPAGE
-    // public Widgets.Banner newest_banner;
     public Hdy.Carousel banner;
-    // public Gtk.Revealer switcher_revealer;
 
-    // private Widgets.Switcher switcher;
     private Gtk.FlowBox recently_updated_carousel;
     private Gtk.Revealer recently_updated_revealer;
 
     construct {
         banner = new Hdy.Carousel () {
+            allow_long_swipes = true,
             spacing = 24
         };
+
         var banner_dots = new Hdy.CarouselIndicatorDots () {
             carousel = banner
         };
-        // switcher = new Widgets.Switcher () {
-        //     halign = Gtk.Align.CENTER
-        // };
-
-        // switcher_revealer = new Gtk.Revealer () {
-        //     transition_type = Gtk.RevealerTransitionType.SLIDE_DOWN,
-        //     transition_duration = Widgets.Banner.TRANSITION_DURATION_MILLISECONDS
-        // };
-        // switcher_revealer.add (switcher);
-
-        // newest_banner = new Widgets.Banner (switcher) {
-        //     margin = 12
-        // };
-
-        // newest_banner.clicked.connect (() => {
-        //     var package = newest_banner.get_package ();
-        //     if (package != null) {
-        //         show_package (package);
-        //     }
-        // });
 
         var recently_updated_label = new Granite.HeaderLabel (_("Recently Updated")) {
             margin_start = 10
@@ -121,11 +100,16 @@ public class AppCenter.Homepage : AbstractView {
 #if HOMEPAGE
         var local_package = App.local_package;
         if (local_package != null) {
-            // FIXME: Handle local package
-            // newest_banner.add_package (local_package);
+            var package_button = new PackageButton (local_package);
+
+            banner.prepend (package_button);
+
+            package_button.clicked.connect (() => {
+                show_package (local_package);
+            });
         }
 
-        load_banners_and_carousels.begin ();
+        load_banner_and_carousels.begin ();
 #endif
 
         category_flow.child_activated.connect ((child) => {
@@ -165,11 +149,6 @@ public class AppCenter.Homepage : AbstractView {
                 }
 
 #if HOMEPAGE
-                // If the banners weren't populated, try again to populate them
-                // if (!recently_updated_revealer.reveal_child && !switcher_revealer.reveal_child) {
-                //     load_banners_and_carousels.begin ();
-                // }
-
                 return GLib.Source.REMOVE;
             });
         });
@@ -181,7 +160,7 @@ public class AppCenter.Homepage : AbstractView {
         });
     }
 
-    private async void load_banners_and_carousels () {
+    private async void load_banner_and_carousels () {
         unowned var fp_client = AppCenterCore.FlatpakBackend.get_default ();
         var packages_by_release_date = fp_client.get_native_packages_by_release_date ();
         var packages_in_banner = new Gee.LinkedList<AppCenterCore.Package> ();
@@ -211,25 +190,7 @@ public class AppCenter.Homepage : AbstractView {
         }
 
         foreach (var package in packages_in_banner) {
-            var package_label = new Gtk.Label (package.get_name ());
-            package_label.get_style_context ().add_class (Granite.STYLE_CLASS_H1_LABEL);
-
-            var author_label = new Gtk.Label (package.author);
-
-            var package_grid = new Gtk.Grid () {
-                column_spacing = 12,
-                halign = Gtk.Align.CENTER,
-                row_spacing = 12,
-                valign = Gtk.Align.CENTER
-            };
-            package_grid.attach (package_label, 0, 0);
-            package_grid.attach (author_label, 0, 1);
-
-            var package_button = new Gtk.Button () {
-                expand = true,
-                height_request = 256
-            };
-            package_button.add (package_grid);
+            var package_button = new PackageButton (package);
             package_button.clicked.connect (() => {
                 show_package (package);
             });
@@ -262,10 +223,6 @@ public class AppCenter.Homepage : AbstractView {
         }
         recently_updated_carousel.show_all ();
         recently_updated_revealer.reveal_child = recently_updated_carousel.get_children ().length () > 0;
-
-        // newest_banner.go_to_first ();
-        // switcher.show_all ();
-        // switcher_revealer.set_reveal_child (true);
 
         page_loaded ();
     }
@@ -332,5 +289,34 @@ public class AppCenter.Homepage : AbstractView {
         unowned var client = AppCenterCore.Client.get_default ();
         var apps = client.get_applications_for_category (category);
         app_list_view.add_packages (apps);
+    }
+
+    private class PackageButton : Gtk.Button {
+        public AppCenterCore.Package package { get; construct; }
+
+        public PackageButton (AppCenterCore.Package package) {
+            Object (package: package);
+        }
+
+        construct {
+            var package_label = new Gtk.Label (package.get_name ());
+            package_label.get_style_context ().add_class (Granite.STYLE_CLASS_H1_LABEL);
+
+            var author_label = new Gtk.Label (package.author);
+
+            var package_grid = new Gtk.Grid () {
+                column_spacing = 12,
+                halign = Gtk.Align.CENTER,
+                row_spacing = 12,
+                valign = Gtk.Align.CENTER
+            };
+            package_grid.attach (package_label, 0, 0);
+            package_grid.attach (author_label, 0, 1);
+
+            expand = true;
+            height_request = 256;
+
+            add (package_grid);
+        }
     }
 }

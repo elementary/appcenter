@@ -32,7 +32,7 @@ const int MILLISECONDS_BETWEEN_BANNER_ITEMS = 5000;
 
 namespace AppCenter.Widgets {
     public class Banner : Gtk.Button {
-        public Switcher switcher { get; construct; }
+        // public Switcher switcher { get; construct; }
 
         public const int TRANSITION_DURATION_MILLISECONDS = 500;
 
@@ -64,9 +64,9 @@ namespace AppCenter.Widgets {
         private static Gtk.CssProvider style_provider;
         private unowned Gtk.StyleContext style_context;
 
-        public Banner (Switcher switcher) {
-            Object (switcher: switcher);
-        }
+        // public Banner (Switcher switcher) {
+        //     Object (switcher: switcher);
+        // }
 
         static construct {
             style_provider = new Gtk.CssProvider ();
@@ -88,7 +88,7 @@ namespace AppCenter.Widgets {
             stack.transition_duration = TRANSITION_DURATION_MILLISECONDS;
             stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
 
-            switcher.set_stack (stack);
+            // switcher.set_stack (stack);
 
             add (stack);
 
@@ -105,13 +105,13 @@ namespace AppCenter.Widgets {
                }
             });
 
-            switcher.on_stack_changed.connect (() => {
-                set_background (((BannerWidget) stack.visible_child).package);
-                if (timer_id > 0) {
-                    Source.remove (timer_id);
-                    timer_id = 0;
-                }
-            });
+            // switcher.on_stack_changed.connect (() => {
+            //     set_background (((BannerWidget) stack.visible_child).package);
+            //     if (timer_id > 0) {
+            //         Source.remove (timer_id);
+            //         timer_id = 0;
+            //     }
+            // });
         }
 
         public AppCenterCore.Package? get_package () {
@@ -133,7 +133,7 @@ namespace AppCenter.Widgets {
             stack.add_named (widget, next_free_package_index.to_string ());
             next_free_package_index++;
             stack.set_visible_child (widget);
-            switcher.update_selected ();
+            // switcher.update_selected ();
             set_background (package);
 
             if (brand_widget != null) {
@@ -153,7 +153,7 @@ namespace AppCenter.Widgets {
 
             stack.set_visible_child_name (current_package_index.to_string ());
             set_background (((BannerWidget) stack.visible_child).package);
-            switcher.update_selected ();
+            // switcher.update_selected ();
         }
 
         public void go_to_first () {
@@ -164,7 +164,7 @@ namespace AppCenter.Widgets {
             current_package_index = 1;
             stack.set_visible_child_name (current_package_index.to_string ());
             set_background (((BannerWidget) stack.visible_child).package);
-            switcher.update_selected ();
+            // switcher.update_selected ();
 
             if (timer_id > 0) {
                 Source.remove (timer_id);
