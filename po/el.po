@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-07 20:23+0000\n"
+"POT-Creation-Date: 2021-09-09 18:16+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Greek <https://l10n.elementary.io/projects/appcenter/appcenter/el/>\n"
@@ -103,7 +103,7 @@ msgstr "Γίνεται αφαίρεση πακέτων"
 msgid "Downloading"
 msgstr "Πραγματοποιείται λήψη"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:967
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:998
 msgid "Installing"
 msgstr "Γίνεται εγκατάσταση"
 
@@ -148,9 +148,9 @@ msgid "Finished"
 msgstr "Ολοκληρώθηκε"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:976 src/Core/FlatpakBackend.vala:1004
-#: src/Core/FlatpakBackend.vala:1112 src/Core/FlatpakBackend.vala:1140
-#: src/Core/FlatpakBackend.vala:1286 src/Core/FlatpakBackend.vala:1312
+#: src/Core/FlatpakBackend.vala:1007 src/Core/FlatpakBackend.vala:1035
+#: src/Core/FlatpakBackend.vala:1143 src/Core/FlatpakBackend.vala:1171
+#: src/Core/FlatpakBackend.vala:1317 src/Core/FlatpakBackend.vala:1343
 msgid "Cancelling"
 msgstr "Γίνεται ακύρωση"
 
@@ -239,13 +239,13 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "%u ενημέρωση είναι διαθέσιμη για το σύστημα σας"
 msgstr[1] "%u ενημερώσεις είναι διαθέσιμες για το σύστημα σας"
 
-#: src/Core/FlatpakBackend.vala:1103
+#: src/Core/FlatpakBackend.vala:1134
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "Απεγκατάσταση"
 
-#: src/Core/FlatpakBackend.vala:1277
+#: src/Core/FlatpakBackend.vala:1308
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"

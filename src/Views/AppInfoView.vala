@@ -964,7 +964,7 @@ namespace AppCenter.Views {
             }
 
             var author_packages = AppCenterCore.Client.get_default ().get_packages_by_author (package.author, AUTHOR_OTHER_APPS_MAX);
-            if (author_packages.is_empty) {
+            if (author_packages.size <= 1) {
                 return;
             }
 
