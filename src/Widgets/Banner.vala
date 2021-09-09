@@ -100,7 +100,7 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
 
         // Use margins instead of the containing Carousel's spacing to avoid
         // clipping the hover shadow styles
-        margin = 20;
+        margin = 22;
         margin_bottom = 32;
 
         add (package_grid);
