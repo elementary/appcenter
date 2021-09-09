@@ -61,10 +61,13 @@ public class AppCenter.Widgets.CategoryItem : Gtk.FlowBoxChild {
         expanded_grid.expand = true;
         expanded_grid.margin = 12;
 
-        themed_grid = new Gtk.Grid ();
+        themed_grid = new Gtk.Grid () {
+            margin = 12,
+            margin_bottom = 24,
+            margin_top = 0
+        };
         themed_grid.attach (grid, 0, 0, 1, 1);
         themed_grid.attach (expanded_grid, 0, 0, 1, 1);
-        themed_grid.margin = 12;
 
         themed_grid_context = themed_grid.get_style_context ();
         themed_grid_context.add_class (Granite.STYLE_CLASS_CARD);
