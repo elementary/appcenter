@@ -414,7 +414,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             }
 
             if (package.component.id in package_ids) {
-                break;
+                continue;
             }
 
             if (package.component.developer_name == author) {
