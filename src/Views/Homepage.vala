@@ -40,8 +40,7 @@ public class AppCenter.Homepage : AbstractView {
 
     construct {
         banner_carousel = new Hdy.Carousel () {
-            allow_long_swipes = true,
-            spacing = 24
+            allow_long_swipes = true
         };
 
         var banner_dots = new Hdy.CarouselIndicatorDots () {

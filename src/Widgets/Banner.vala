@@ -98,6 +98,11 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
         style_context.add_class (Granite.STYLE_CLASS_ROUNDED);
         style_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
+        // Use margins instead of the containing Carousel's spacing to avoid
+        // clipping the hover shadow styles
+        margin = 20;
+        margin_bottom = 32;
+
         add (package_grid);
 
         var provider = new Gtk.CssProvider ();
