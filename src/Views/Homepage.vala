@@ -349,6 +349,7 @@ public class AppCenter.Homepage : AbstractView {
             var package_grid = new Gtk.Grid () {
                 column_spacing = 24,
                 halign = Gtk.Align.CENTER,
+                margin = 64,
                 valign = Gtk.Align.CENTER
             };
 
@@ -358,9 +359,6 @@ public class AppCenter.Homepage : AbstractView {
             package_grid.attach (description_label, 1, 2);
 
             var css_class = package.normalized_component_id.replace (".", "-");
-
-            expand = true;
-            height_request = 256;
 
             var style_context = get_style_context ();
             style_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
