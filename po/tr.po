@@ -14,9 +14,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-09 18:16+0000\n"
-"PO-Revision-Date: 2021-09-04 12:16+0000\n"
+"PO-Revision-Date: 2021-09-09 21:46+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
-"Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/appcenter/tr/>\n"
+"Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -426,10 +427,10 @@ msgid "Email"
 msgstr "E-posta"
 
 #: src/Dialogs/StripeDialog.vala:157
-#, fuzzy
-#| msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
 msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
-msgstr "E-posta adresiniz makbuz göndermek için kullanılır. Hiçbir e-posta listesine abone edilmeyeceksiniz."
+msgstr ""
+"Sadece size makbuz göndermek için kullanılır. Hiçbir e-posta listesine abone "
+"edilmeyeceksiniz."
 
 #: src/Dialogs/StripeDialog.vala:158
 msgid "Privacy Policy"
