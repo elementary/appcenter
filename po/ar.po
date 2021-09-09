@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-07 20:23+0000\n"
+"POT-Creation-Date: 2021-09-09 18:16+0000\n"
 "PO-Revision-Date: 2021-09-05 00:54+0000\n"
 "Last-Translator: aalhaif <aalhaif@hotmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/appcenter/ar/>\n"
@@ -105,7 +105,7 @@ msgstr "قيد حذف الحزم"
 msgid "Downloading"
 msgstr "قيد التحميل"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:967
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:998
 msgid "Installing"
 msgstr "قيد التثبيت"
 
@@ -150,9 +150,9 @@ msgid "Finished"
 msgstr "انتهى"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:976 src/Core/FlatpakBackend.vala:1004
-#: src/Core/FlatpakBackend.vala:1112 src/Core/FlatpakBackend.vala:1140
-#: src/Core/FlatpakBackend.vala:1286 src/Core/FlatpakBackend.vala:1312
+#: src/Core/FlatpakBackend.vala:1007 src/Core/FlatpakBackend.vala:1035
+#: src/Core/FlatpakBackend.vala:1143 src/Core/FlatpakBackend.vala:1171
+#: src/Core/FlatpakBackend.vala:1317 src/Core/FlatpakBackend.vala:1343
 msgid "Cancelling"
 msgstr "قيد الإلغاء"
 
@@ -249,11 +249,11 @@ msgstr[3] "تتوفر %u تحديثات لنظامك"
 msgstr[4] "يتوفر %u تحديثاً لنظامك"
 msgstr[5] "يتوفر %u تحديث لنظامك"
 
-#: src/Core/FlatpakBackend.vala:1103
+#: src/Core/FlatpakBackend.vala:1134
 msgid "Uninstalling"
 msgstr "قيد إلغاء التثبيت"
 
-#: src/Core/FlatpakBackend.vala:1277
+#: src/Core/FlatpakBackend.vala:1308
 msgid "Updating"
 msgstr "قيد التحديث"
 
