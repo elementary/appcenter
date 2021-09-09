@@ -41,7 +41,7 @@
     we match the maximum size of the hover shadow to avoid clipping. */
 
     /* TODO: Can we better calculate these instead of eyeballing? */
-    margin: 22px;
+    margin: 24px;
     margin-bottom: 32px;
 }
 
