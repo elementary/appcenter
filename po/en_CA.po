@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-07 20:23+0000\n"
+"POT-Creation-Date: 2021-09-09 18:16+0000\n"
 "PO-Revision-Date: 2018-05-18 16:09+0000\n"
 "Last-Translator: Shawn <syst3mfailur3@gmail.com>\n"
 "Language-Team: English (Canada) <https://weblate.elementary.io/projects/appcenter/appcenter/en_CA/>\n"
@@ -101,7 +101,7 @@ msgstr "Removing packages"
 msgid "Downloading"
 msgstr "Downloading"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:967
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:998
 msgid "Installing"
 msgstr "Installing"
 
@@ -146,9 +146,9 @@ msgid "Finished"
 msgstr "Finished"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:976 src/Core/FlatpakBackend.vala:1004
-#: src/Core/FlatpakBackend.vala:1112 src/Core/FlatpakBackend.vala:1140
-#: src/Core/FlatpakBackend.vala:1286 src/Core/FlatpakBackend.vala:1312
+#: src/Core/FlatpakBackend.vala:1007 src/Core/FlatpakBackend.vala:1035
+#: src/Core/FlatpakBackend.vala:1143 src/Core/FlatpakBackend.vala:1171
+#: src/Core/FlatpakBackend.vala:1317 src/Core/FlatpakBackend.vala:1343
 msgid "Cancelling"
 msgstr "Cancelling"
 
@@ -237,13 +237,13 @@ msgid_plural "%u updates are available for your system"
 msgstr[0] "%u update is available for your system"
 msgstr[1] "%u updates are available for your system"
 
-#: src/Core/FlatpakBackend.vala:1103
+#: src/Core/FlatpakBackend.vala:1134
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "Uninstall"
 
-#: src/Core/FlatpakBackend.vala:1277
+#: src/Core/FlatpakBackend.vala:1308
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
