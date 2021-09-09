@@ -298,6 +298,13 @@ public class AppCenter.Homepage : AbstractView {
             Object (package: package);
         }
 
+        private const string CSS = """
+            .%s {
+                background-color: %s;
+                color: %s;
+            }
+        """;
+
         construct {
             var name_label = new Gtk.Label (package.get_name ()) {
                 max_width_chars = 50,
@@ -313,7 +320,7 @@ public class AppCenter.Homepage : AbstractView {
                 wrap = true,
                 xalign = 0
             };
-            summary_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
+            summary_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
             string[] lines = package.get_description ().split ("\n");
             var description = lines[0].strip ();
@@ -326,7 +333,6 @@ public class AppCenter.Homepage : AbstractView {
             var description_label = new Gtk.Label (description.slice (3, close_paragraph_index)) {
                 ellipsize = Pango.EllipsizeMode.END,
                 lines = 2,
-                margin_top = 12,
                 max_width_chars = 50,
                 use_markup = true,
                 wrap = true,
@@ -351,11 +357,31 @@ public class AppCenter.Homepage : AbstractView {
             package_grid.attach (summary_label, 1, 1);
             package_grid.attach (description_label, 1, 2);
 
+            var css_class = package.normalized_component_id.replace (".", "-");
+
             expand = true;
             height_request = 256;
-            get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+
+            var style_context = get_style_context ();
+            style_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+            style_context.add_class (css_class);
 
             add (package_grid);
+
+            var provider = new Gtk.CssProvider ();
+            var background_color = package.get_color_primary ();
+            var foreground_color = package.get_color_primary_text ();
+
+            if (background_color != null && foreground_color != null) {
+                var css = CSS.printf (
+                    css_class,
+                    background_color,
+                    foreground_color
+                );
+                provider.load_from_data (css, css.length);
+
+                get_style_context ().add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+            }
         }
     }
 }
