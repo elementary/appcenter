@@ -197,7 +197,21 @@ public class AppCenter.Homepage : AbstractView {
 
             banner_carousel.add (banner);
         }
+
         banner_carousel.show_all ();
+
+        Timeout.add (MILLISECONDS_BETWEEN_BANNER_ITEMS, () => {
+            var new_index = (uint) banner_carousel.position + 1;
+            var max_index = banner_carousel.n_pages - 1; // 0-based index
+
+            if (banner_carousel.position >= max_index) {
+                new_index = 0;
+            }
+
+            banner_carousel.switch_child (new_index, Granite.TRANSITION_DURATION_OPEN);
+
+            return true;
+        });
 
         foreach (var package in packages_by_release_date) {
             if (recently_updated_carousel.get_children ().length () >= MAX_PACKAGES_IN_CAROUSEL) {
