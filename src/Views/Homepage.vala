@@ -32,19 +32,20 @@ public class AppCenter.Homepage : AbstractView {
 
     public AppStream.Category currently_viewed_category;
 #if HOMEPAGE
-    public Hdy.Carousel banner;
+    public Widgets.Banner banner;
+    public Hdy.Carousel banner_carousel;
 
     private Gtk.FlowBox recently_updated_carousel;
     private Gtk.Revealer recently_updated_revealer;
 
     construct {
-        banner = new Hdy.Carousel () {
+        banner_carousel = new Hdy.Carousel () {
             allow_long_swipes = true,
             spacing = 24
         };
 
         var banner_dots = new Hdy.CarouselIndicatorDots () {
-            carousel = banner
+            carousel = banner_carousel
         };
 
         var recently_updated_label = new Granite.HeaderLabel (_("Recently Updated")) {
@@ -85,7 +86,7 @@ public class AppCenter.Homepage : AbstractView {
             margin = 12
         };
 #if HOMEPAGE
-        grid.attach (banner, 0, 0);
+        grid.attach (banner_carousel, 0, 0);
         grid.attach (banner_dots, 0, 1);
         grid.attach (recently_updated_revealer, 0, 2);
         grid.attach (categories_label, 0, 3);
@@ -100,16 +101,16 @@ public class AppCenter.Homepage : AbstractView {
 #if HOMEPAGE
         var local_package = App.local_package;
         if (local_package != null) {
-            var package_button = new PackageButton (local_package);
+            var banner = new Widgets.Banner (local_package);
 
-            banner.prepend (package_button);
+            banner_carousel.prepend (banner);
 
-            package_button.clicked.connect (() => {
+            banner.clicked.connect (() => {
                 show_package (local_package);
             });
         }
 
-        load_banner_and_carousels.begin ();
+        load_carousels.begin ();
 #endif
 
         category_flow.child_activated.connect ((child) => {
@@ -160,7 +161,7 @@ public class AppCenter.Homepage : AbstractView {
         });
     }
 
-    private async void load_banner_and_carousels () {
+    private async void load_carousels () {
         unowned var fp_client = AppCenterCore.FlatpakBackend.get_default ();
         var packages_by_release_date = fp_client.get_native_packages_by_release_date ();
         var packages_in_banner = new Gee.LinkedList<AppCenterCore.Package> ();
@@ -190,14 +191,14 @@ public class AppCenter.Homepage : AbstractView {
         }
 
         foreach (var package in packages_in_banner) {
-            var package_button = new PackageButton (package);
-            package_button.clicked.connect (() => {
+            var banner = new Widgets.Banner (package);
+            banner.clicked.connect (() => {
                 show_package (package);
             });
 
-            banner.add (package_button);
+            banner_carousel.add (banner);
         }
-        banner.show_all ();
+        banner_carousel.show_all ();
 
         foreach (var package in packages_by_release_date) {
             if (recently_updated_carousel.get_children ().length () >= MAX_PACKAGES_IN_CAROUSEL) {
@@ -289,97 +290,5 @@ public class AppCenter.Homepage : AbstractView {
         unowned var client = AppCenterCore.Client.get_default ();
         var apps = client.get_applications_for_category (category);
         app_list_view.add_packages (apps);
-    }
-
-    private class PackageButton : Gtk.Button {
-        public AppCenterCore.Package package { get; construct; }
-
-        public PackageButton (AppCenterCore.Package package) {
-            Object (package: package);
-        }
-
-        private const string CSS = """
-            .%s {
-                background-color: %s;
-                color: %s;
-            }
-        """;
-
-        construct {
-            var name_label = new Gtk.Label (package.get_name ()) {
-                max_width_chars = 50,
-                use_markup = true,
-                wrap = true,
-                xalign = 0
-            };
-            name_label.get_style_context ().add_class (Granite.STYLE_CLASS_H1_LABEL);
-
-            var summary_label = new Gtk.Label (package.get_summary ()) {
-                max_width_chars = 50,
-                use_markup = true,
-                wrap = true,
-                xalign = 0
-            };
-            summary_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
-
-            string[] lines = package.get_description ().split ("\n");
-            var description = lines[0].strip ();
-
-            for (int i = 1; i < lines.length; i++) {
-                description += " " + lines[i].strip ();
-            }
-
-            int close_paragraph_index = description.index_of ("</p>", 0);
-            var description_label = new Gtk.Label (description.slice (3, close_paragraph_index)) {
-                ellipsize = Pango.EllipsizeMode.END,
-                lines = 2,
-                max_width_chars = 50,
-                use_markup = true,
-                wrap = true,
-                xalign = 0
-            };
-
-            var icon_image = new Gtk.Image.from_gicon (
-                package.get_icon (128, get_scale_factor ()),
-                Gtk.IconSize.INVALID
-            ) {
-                pixel_size = 128
-            };
-
-            var package_grid = new Gtk.Grid () {
-                column_spacing = 24,
-                halign = Gtk.Align.CENTER,
-                margin = 64,
-                valign = Gtk.Align.CENTER
-            };
-
-            package_grid.attach (icon_image, 0, 0, 1, 3);
-            package_grid.attach (name_label, 1, 0);
-            package_grid.attach (summary_label, 1, 1);
-            package_grid.attach (description_label, 1, 2);
-
-            var css_class = package.normalized_component_id.replace (".", "-");
-
-            unowned var style_context = get_style_context ();
-            style_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
-            style_context.add_class (css_class);
-
-            add (package_grid);
-
-            var provider = new Gtk.CssProvider ();
-            var background_color = package.get_color_primary ();
-            var foreground_color = package.get_color_primary_text ();
-
-            if (background_color != null && foreground_color != null) {
-                var css = CSS.printf (
-                    css_class,
-                    background_color,
-                    foreground_color
-                );
-                provider.load_from_data (css, css.length);
-
-                get_style_context ().add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-            }
-        }
     }
 }

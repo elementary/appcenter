@@ -53,18 +53,6 @@ namespace AppCenter.Views {
 
         private unowned Gtk.StyleContext stack_context;
 
-        private const string BANNER_STYLE_CSS = """
-            @define-color banner_bg_color %s;
-            @define-color banner_fg_color %s;
-
-            .banner {
-                transition: all %ums ease-in-out;
-            }
-        """;
-
-        private const string DEFAULT_BANNER_COLOR_PRIMARY = "mix(@accent_color, @bg_color, 0.8)";
-        private const string DEFAULT_BANNER_COLOR_PRIMARY_TEXT = "mix(@accent_color, @text_color, 0.85)";
-
         public bool to_recycle { public get; private set; default = false; }
 
         public AppInfoView (AppCenterCore.Package package) {
