@@ -120,9 +120,15 @@ public class AppCenter.Widgets.StripeDialog : Granite.Dialog {
         var custom_amount = new Gtk.SpinButton.with_range (0, 100, 1) {
             activates_default = true,
             hexpand = true,
-            primary_icon_name = "currency-dollar-symbolic",
             value = amount
         };
+
+        // Account for languages that places the monetary sign after the number
+        if (_("$%d").split ("%d", 2)[0]._strip ().length > 0) {
+            custom_amount.primary_icon_name = "currency-dollar-symbolic";
+        } else {
+            custom_amount.secondary_icon_name = "currency-dollar-symbolic";
+        }
 
         var selection_list = new Gtk.Grid () {
             column_spacing = 6
