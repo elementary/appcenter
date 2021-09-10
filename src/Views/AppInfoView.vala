@@ -115,6 +115,7 @@ namespace AppCenter.Views {
             var oars_header = new Granite.HeaderLabel (_("Content Warnings"));
 
             var oars_flowbox = new Gtk.FlowBox () {
+                halign = Gtk.Align.START,
                 column_spacing = 6,
                 row_spacing = 12,
                 margin_bottom = 24
