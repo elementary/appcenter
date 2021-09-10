@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-09 18:16+0000\n"
-"PO-Revision-Date: 2021-08-31 07:47+0000\n"
+"PO-Revision-Date: 2021-09-10 05:51+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/extra/"
 "ja/>\n"
@@ -50,7 +50,7 @@ msgstr "修正点:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Show other apps by an author for Flatpak sources"
-msgstr ""
+msgstr "Flatpak で提供されているアプリでも、同じ開発者のアプリを表示できるように修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:28
