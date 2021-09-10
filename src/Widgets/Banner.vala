@@ -84,7 +84,8 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
         var package_grid = new Gtk.Grid () {
             column_spacing = 24,
             halign = Gtk.Align.CENTER,
-            margin = 64,
+            margin_bottom = 64,
+            margin_top = 64,
             valign = Gtk.Align.CENTER
         };
 
@@ -99,6 +100,7 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
         style_context.add_class (Granite.STYLE_CLASS_ROUNDED);
         style_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
+        hexpand = true;
         add (package_grid);
 
         var provider = new Gtk.CssProvider ();
