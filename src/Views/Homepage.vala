@@ -25,6 +25,7 @@ public class AppCenter.Homepage : AbstractView {
     private Gtk.FlowBox category_flow;
     private Gtk.ScrolledWindow category_scrolled;
     private AppStream.Category current_category;
+    private uint banner_timeout_id;
 
     public signal void page_loaded ();
 
@@ -199,19 +200,7 @@ public class AppCenter.Homepage : AbstractView {
         }
 
         banner_carousel.show_all ();
-
-        Timeout.add (MILLISECONDS_BETWEEN_BANNER_ITEMS, () => {
-            var new_index = (uint) banner_carousel.position + 1;
-            var max_index = banner_carousel.n_pages - 1; // 0-based index
-
-            if (banner_carousel.position >= max_index) {
-                new_index = 0;
-            }
-
-            banner_carousel.switch_child (new_index, Granite.TRANSITION_DURATION_OPEN);
-
-            return true;
-        });
+        banner_timeout_start ();
 
         foreach (var package in packages_by_release_date) {
             if (recently_updated_carousel.get_children ().length () >= MAX_PACKAGES_IN_CAROUSEL) {
@@ -303,5 +292,29 @@ public class AppCenter.Homepage : AbstractView {
         unowned var client = AppCenterCore.Client.get_default ();
         var apps = client.get_applications_for_category (category);
         app_list_view.add_packages (apps);
+    }
+
+    private void banner_timeout_start () {
+        uint duration;
+
+        banner_timeout_id = Timeout.add (MILLISECONDS_BETWEEN_BANNER_ITEMS, () => {
+            var new_index = (uint) banner_carousel.position + 1;
+            var max_index = banner_carousel.n_pages - 1; // 0-based index
+
+            if (banner_carousel.position >= max_index) {
+                new_index = 0;
+            }
+
+            banner_carousel.switch_child (new_index, Granite.TRANSITION_DURATION_OPEN);
+
+            return Source.CONTINUE;
+        });
+    }
+
+    private void banner_timeout_stop () {
+        if (banner_timeout_id != 0) {
+            Source.remove (banner_timeout_id);
+            banner_timeout_id = 0;
+        }
     }
 }
