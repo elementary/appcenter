@@ -42,6 +42,11 @@ public class AppCenter.Homepage : AbstractView {
             allow_long_swipes = true
         };
 
+        var banner_event_box = new Gtk.EventBox ();
+        banner_event_box.events |= Gdk.EventMask.ENTER_NOTIFY_MASK;
+        banner_event_box.events |= Gdk.EventMask.LEAVE_NOTIFY_MASK;
+        banner_event_box.add (banner_carousel);
+
         var banner_dots = new Hdy.CarouselIndicatorDots () {
             carousel = banner_carousel
         };
@@ -86,7 +91,7 @@ public class AppCenter.Homepage : AbstractView {
             row_spacing = 12
         };
 #if HOMEPAGE
-        grid.attach (banner_carousel, 0, 0);
+        grid.attach (banner_event_box, 0, 0);
         grid.attach (banner_dots, 0, 1);
         grid.attach (recently_updated_revealer, 0, 2);
         grid.attach (categories_label, 0, 3);
@@ -152,6 +157,14 @@ public class AppCenter.Homepage : AbstractView {
 #if HOMEPAGE
                 return GLib.Source.REMOVE;
             });
+        });
+
+        banner_event_box.enter_notify_event.connect (() => {
+            banner_timeout_stop ();
+        });
+
+        banner_event_box.leave_notify_event.connect (() => {
+            banner_timeout_start ();
         });
 
         recently_updated_carousel.child_activated.connect ((child) => {
@@ -295,8 +308,6 @@ public class AppCenter.Homepage : AbstractView {
     }
 
     private void banner_timeout_start () {
-        uint duration;
-
         banner_timeout_id = Timeout.add (MILLISECONDS_BETWEEN_BANNER_ITEMS, () => {
             var new_index = (uint) banner_carousel.position + 1;
             var max_index = banner_carousel.n_pages - 1; // 0-based index
