@@ -34,8 +34,10 @@ public class AppCenter.Homepage : AbstractView {
     public AppStream.Category currently_viewed_category;
 #if HOMEPAGE
     private Hdy.Carousel banner_carousel;
+    private Gtk.Revealer banner_revealer;
     private Gtk.FlowBox recently_updated_carousel;
     private Gtk.Revealer recently_updated_revealer;
+
 
     construct {
         banner_carousel = new Hdy.Carousel () {
@@ -51,6 +53,15 @@ public class AppCenter.Homepage : AbstractView {
             carousel = banner_carousel
         };
 
+        var banner_grid = new Gtk.Grid () {
+            orientation = Gtk.Orientation.VERTICAL
+        };
+        banner_grid.add (banner_event_box);
+        banner_grid.add (banner_dots);
+
+        banner_revealer = new Gtk.Revealer ();
+        banner_revealer.add (banner_grid);
+
         var recently_updated_label = new Granite.HeaderLabel (_("Recently Updated")) {
             margin_start = 12
         };
@@ -60,7 +71,6 @@ public class AppCenter.Homepage : AbstractView {
             column_spacing = 12,
             row_spacing = 12,
             homogeneous = true,
-            margin_bottom = 12,
             max_children_per_line = 5,
             min_children_per_line = 3
         };
@@ -88,15 +98,16 @@ public class AppCenter.Homepage : AbstractView {
         };
 
         var grid = new Gtk.Grid () {
+            column_spacing = 24,
+            orientation = Gtk.Orientation.VERTICAL,
             row_spacing = 12
         };
 #if HOMEPAGE
-        grid.attach (banner_event_box, 0, 0);
-        grid.attach (banner_dots, 0, 1);
-        grid.attach (recently_updated_revealer, 0, 2);
-        grid.attach (categories_label, 0, 3);
+        grid.add (banner_revealer);
+        grid.add (recently_updated_revealer);
+        grid.add (categories_label);
 #endif
-        grid.attach (category_flow, 0, 4);
+        grid.add (category_flow);
 
         category_scrolled = new Gtk.ScrolledWindow (null, null);
         category_scrolled.add (grid);
@@ -213,6 +224,7 @@ public class AppCenter.Homepage : AbstractView {
         }
 
         banner_carousel.show_all ();
+        banner_revealer.reveal_child = true;
         banner_timeout_start ();
 
         foreach (var package in packages_by_release_date) {
