@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-09 18:16+0000\n"
+"POT-Creation-Date: 2021-09-11 17:16+0000\n"
 "PO-Revision-Date: 2018-10-28 09:52+0000\n"
 "Last-Translator: Fredrik B <frbo9002@gmail.com>\n"
 "Language-Team: Swedish <https://weblate.elementary.io/projects/appcenter/appcenter/sv/>\n"
@@ -50,9 +50,9 @@ msgstr "%s har installerats"
 msgid "Failed to launch “%s“"
 msgstr "Sök och installera program"
 
-#: src/MainWindow.vala:171 src/Views/Homepage.vala:255
-#: src/Views/Homepage.vala:265 src/Views/Homepage.vala:270
-#: src/Views/Homepage.vala:281 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:171 src/Views/Homepage.vala:272
+#: src/Views/Homepage.vala:282 src/Views/Homepage.vala:287
+#: src/Views/Homepage.vala:298 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "Hem"
 
@@ -738,15 +738,15 @@ msgstr ""
 msgid "Non-Curated Apps"
 msgstr "Fler appar"
 
-#: src/Views/Homepage.vala:64
+#: src/Views/Homepage.vala:65
 msgid "Recently Updated"
 msgstr "Nyligen uppdaterad"
 
-#: src/Views/Homepage.vala:87
+#: src/Views/Homepage.vala:88
 msgid "Categories"
 msgstr "Kategorier"
 
-#: src/Views/Homepage.vala:270 src/Views/Homepage.vala:281
+#: src/Views/Homepage.vala:287 src/Views/Homepage.vala:298
 #, c-format
 msgid "Search %s"
 msgstr "Sök efter %s"
@@ -756,16 +756,6 @@ msgstr "Sök efter %s"
 msgctxt "view"
 msgid "Search"
 msgstr "Sök"
-
-#: src/Widgets/Banner.vala:234
-#, fuzzy
-#| msgid "An open, pay-what-you-want app store"
-msgid "The open source, pay-what-you-can app store"
-msgstr "En öppen, betala-vad-du-vill appbutik"
-
-#: src/Widgets/Banner.vala:242
-msgid "Reviewed and curated for a native, privacy-respecting, and secure experience."
-msgstr ""
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
@@ -946,6 +936,11 @@ msgstr "Uppdaterad"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:223
 msgid "Update"
 msgstr "Uppdatera"
+
+#, fuzzy
+#~| msgid "An open, pay-what-you-want app store"
+#~ msgid "The open source, pay-what-you-can app store"
+#~ msgstr "En öppen, betala-vad-du-vill appbutik"
 
 #~ msgid "Get the apps that you need at a price you can afford."
 #~ msgstr "Få de appar som du behöver till ett pris du har råd med."

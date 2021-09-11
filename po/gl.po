@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-09 18:16+0000\n"
+"POT-Creation-Date: 2021-09-11 17:16+0000\n"
 "PO-Revision-Date: 2021-03-01 19:09+0000\n"
 "Last-Translator: J.Doval <dovaldev@gmail.com>\n"
 "Language-Team: Galician <https://l10n.elementary.io/projects/appcenter/appcenter/gl/>\n"
@@ -53,9 +53,9 @@ msgstr "Instalouse “%s”"
 msgid "Failed to launch “%s“"
 msgstr "Fallou ó actualizar \"%s\""
 
-#: src/MainWindow.vala:171 src/Views/Homepage.vala:255
-#: src/Views/Homepage.vala:265 src/Views/Homepage.vala:270
-#: src/Views/Homepage.vala:281 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:171 src/Views/Homepage.vala:272
+#: src/Views/Homepage.vala:282 src/Views/Homepage.vala:287
+#: src/Views/Homepage.vala:298 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "Páxina principal"
 
@@ -720,15 +720,15 @@ msgstr ""
 msgid "Non-Curated Apps"
 msgstr "Aplicacións non revisadas polos editores"
 
-#: src/Views/Homepage.vala:64
+#: src/Views/Homepage.vala:65
 msgid "Recently Updated"
 msgstr "Actualizadas recentemente"
 
-#: src/Views/Homepage.vala:87
+#: src/Views/Homepage.vala:88
 msgid "Categories"
 msgstr "Categorías"
 
-#: src/Views/Homepage.vala:270 src/Views/Homepage.vala:281
+#: src/Views/Homepage.vala:287 src/Views/Homepage.vala:298
 #, c-format
 msgid "Search %s"
 msgstr "Buscar %s"
@@ -738,16 +738,6 @@ msgstr "Buscar %s"
 msgctxt "view"
 msgid "Search"
 msgstr "Procura"
-
-#: src/Widgets/Banner.vala:234
-#, fuzzy
-#| msgid "An open, pay-what-you-want app store"
-msgid "The open source, pay-what-you-can app store"
-msgstr "Unha tenda de aplicacións aberta na que paga o que quere"
-
-#: src/Widgets/Banner.vala:242
-msgid "Reviewed and curated for a native, privacy-respecting, and secure experience."
-msgstr ""
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
@@ -924,6 +914,11 @@ msgstr "Actualizado"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:223
 msgid "Update"
 msgstr "Actualizar"
+
+#, fuzzy
+#~| msgid "An open, pay-what-you-want app store"
+#~ msgid "The open source, pay-what-you-can app store"
+#~ msgstr "Unha tenda de aplicacións aberta na que paga o que quere"
 
 #~ msgid "Get the apps that you need at a price you can afford."
 #~ msgstr "Consiga as aplicacións que necesita a un módico prezo."

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-09 18:16+0000\n"
+"POT-Creation-Date: 2021-09-11 17:16+0000\n"
 "PO-Revision-Date: 2021-07-18 01:07+0000\n"
 "Last-Translator: Ciarán Ainsworth <ciaranainsworth@outlook.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/appcenter/appcenter/en_GB/>\n"
@@ -49,9 +49,9 @@ msgstr "“%s” has been installed"
 msgid "Failed to launch “%s“"
 msgstr "Failed to launch “%s“"
 
-#: src/MainWindow.vala:171 src/Views/Homepage.vala:255
-#: src/Views/Homepage.vala:265 src/Views/Homepage.vala:270
-#: src/Views/Homepage.vala:281 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:171 src/Views/Homepage.vala:272
+#: src/Views/Homepage.vala:282 src/Views/Homepage.vala:287
+#: src/Views/Homepage.vala:298 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "Home"
 
@@ -714,15 +714,15 @@ msgstr ""
 msgid "Non-Curated Apps"
 msgstr "Non-Curated Apps"
 
-#: src/Views/Homepage.vala:64
+#: src/Views/Homepage.vala:65
 msgid "Recently Updated"
 msgstr "Recently Updated"
 
-#: src/Views/Homepage.vala:87
+#: src/Views/Homepage.vala:88
 msgid "Categories"
 msgstr "Categories"
 
-#: src/Views/Homepage.vala:270 src/Views/Homepage.vala:281
+#: src/Views/Homepage.vala:287 src/Views/Homepage.vala:298
 #, c-format
 msgid "Search %s"
 msgstr "Search %s"
@@ -732,16 +732,6 @@ msgstr "Search %s"
 msgctxt "view"
 msgid "Search"
 msgstr "Search"
-
-#: src/Widgets/Banner.vala:234
-#, fuzzy
-#| msgid "An open, pay-what-you-want app store"
-msgid "The open source, pay-what-you-can app store"
-msgstr "An open, pay-what-you-want app store"
-
-#: src/Widgets/Banner.vala:242
-msgid "Reviewed and curated for a native, privacy-respecting, and secure experience."
-msgstr ""
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
@@ -918,6 +908,11 @@ msgstr "Up to Date"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:223
 msgid "Update"
 msgstr "Update"
+
+#, fuzzy
+#~| msgid "An open, pay-what-you-want app store"
+#~ msgid "The open source, pay-what-you-can app store"
+#~ msgstr "An open, pay-what-you-want app store"
 
 #~ msgid "Get the apps that you need at a price you can afford."
 #~ msgstr "Get the apps that you need at a price you can afford."

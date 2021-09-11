@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-09 18:16+0000\n"
+"POT-Creation-Date: 2021-09-11 17:16+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Latvian <https://l10n.elementary.io/projects/appcenter/appcenter/lv/>\n"
@@ -47,9 +47,9 @@ msgstr ""
 msgid "Failed to launch “%s“"
 msgstr "Atrast un uzstādīt aplikācijas"
 
-#: src/MainWindow.vala:171 src/Views/Homepage.vala:255
-#: src/Views/Homepage.vala:265 src/Views/Homepage.vala:270
-#: src/Views/Homepage.vala:281 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:171 src/Views/Homepage.vala:272
+#: src/Views/Homepage.vala:282 src/Views/Homepage.vala:287
+#: src/Views/Homepage.vala:298 src/Views/SearchView.vala:89
 #, fuzzy
 msgid "Home"
 msgstr "Mājas lapa"
@@ -722,15 +722,15 @@ msgstr ""
 msgid "Non-Curated Apps"
 msgstr ""
 
-#: src/Views/Homepage.vala:64
+#: src/Views/Homepage.vala:65
 msgid "Recently Updated"
 msgstr ""
 
-#: src/Views/Homepage.vala:87
+#: src/Views/Homepage.vala:88
 msgid "Categories"
 msgstr "Kategorijas"
 
-#: src/Views/Homepage.vala:270 src/Views/Homepage.vala:281
+#: src/Views/Homepage.vala:287 src/Views/Homepage.vala:298
 #, c-format
 msgid "Search %s"
 msgstr ""
@@ -741,14 +741,6 @@ msgstr ""
 msgctxt "view"
 msgid "Search"
 msgstr "Meklēt aplikācijas"
-
-#: src/Widgets/Banner.vala:234
-msgid "The open source, pay-what-you-can app store"
-msgstr ""
-
-#: src/Widgets/Banner.vala:242
-msgid "Reviewed and curated for a native, privacy-respecting, and secure experience."
-msgstr ""
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-09 18:16+0000\n"
+"POT-Creation-Date: 2021-09-11 17:16+0000\n"
 "PO-Revision-Date: 2021-07-11 16:58+0000\n"
 "Last-Translator: HelaBasa <R45XvezA@pm.me>\n"
 "Language-Team: Sinhala <https://l10n.elementary.io/projects/appcenter/appcenter/si/>\n"
@@ -47,9 +47,9 @@ msgstr "%s ස්ථාපිත වී ඇත"
 msgid "Failed to launch “%s“"
 msgstr "“%s“ දියත් කිරීමට අසමත්විය"
 
-#: src/MainWindow.vala:171 src/Views/Homepage.vala:255
-#: src/Views/Homepage.vala:265 src/Views/Homepage.vala:270
-#: src/Views/Homepage.vala:281 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:171 src/Views/Homepage.vala:272
+#: src/Views/Homepage.vala:282 src/Views/Homepage.vala:287
+#: src/Views/Homepage.vala:298 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "මුල් පිටුව"
 
@@ -708,15 +708,15 @@ msgstr ""
 msgid "Non-Curated Apps"
 msgstr ""
 
-#: src/Views/Homepage.vala:64
+#: src/Views/Homepage.vala:65
 msgid "Recently Updated"
 msgstr ""
 
-#: src/Views/Homepage.vala:87
+#: src/Views/Homepage.vala:88
 msgid "Categories"
 msgstr "ප්‍රවර්ග"
 
-#: src/Views/Homepage.vala:270 src/Views/Homepage.vala:281
+#: src/Views/Homepage.vala:287 src/Views/Homepage.vala:298
 #, c-format
 msgid "Search %s"
 msgstr ""
@@ -726,14 +726,6 @@ msgstr ""
 msgctxt "view"
 msgid "Search"
 msgstr "සොයන්න"
-
-#: src/Widgets/Banner.vala:234
-msgid "The open source, pay-what-you-can app store"
-msgstr ""
-
-#: src/Widgets/Banner.vala:242
-msgid "Reviewed and curated for a native, privacy-respecting, and secure experience."
-msgstr ""
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
