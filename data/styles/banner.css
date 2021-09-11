@@ -36,6 +36,13 @@
         inset 0 -1px 0 0 alpha(shade(@banner_bg_color, 1.7), 0.15),
         0 3px 2px -1px alpha(shade(@banner_bg_color, 0.5), 0.2),
         0 3px 5px alpha(shade(@banner_bg_color, 0.5), 0.15);
+
+    /* Set in CSS instead of the Hdy.Carousel spacing or Banner margin to ensure
+    we match the maximum size of the hover shadow to avoid clipping. */
+
+    /* TODO: Can we better calculate these instead of eyeballing? */
+    margin: 24px;
+    margin-bottom: 32px;
 }
 
 .banner.card:hover {
@@ -59,7 +66,7 @@
 
 .banner button:active,
 .banner button:checked {
-  opacity: 0.9;
+    opacity: 0.9;
 }
 
 .banner button label,

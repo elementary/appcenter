@@ -20,264 +20,108 @@
 const string BANNER_STYLE_CSS = """
     @define-color banner_bg_color %s;
     @define-color banner_fg_color %s;
-
-    .banner {
-        transition: all %ums ease-in-out;
-    }
 """;
 
 const string DEFAULT_BANNER_COLOR_PRIMARY = "mix(@accent_color, @bg_color, 0.8)";
 const string DEFAULT_BANNER_COLOR_PRIMARY_TEXT = "mix(@accent_color, @text_color, 0.85)";
 const int MILLISECONDS_BETWEEN_BANNER_ITEMS = 5000;
 
-namespace AppCenter.Widgets {
-    public class Banner : Gtk.Button {
-        public Switcher switcher { get; construct; }
+public class AppCenter.Widgets.Banner : Gtk.Button {
+    public AppCenterCore.Package package { get; construct; }
 
-        public const int TRANSITION_DURATION_MILLISECONDS = 500;
+    public Banner (AppCenterCore.Package package) {
+        Object (package: package);
+    }
 
-        private string _background_color = "#667885";
-        public string background_color {
-            get {
-                return _background_color;
-            } set {
-                _background_color = value;
-                reload_css ();
-            }
-        }
-        private string _foreground_color = "white";
-        public string foreground_color {
-            get {
-                return _foreground_color;
-            } set {
-                _foreground_color = value;
-                reload_css ();
-            }
-        }
+    private static Gtk.CssProvider style_provider;
 
-        private BannerWidget? brand_widget;
-        private Gtk.Stack stack;
-        private int current_package_index;
-        private int next_free_package_index = 1;
-        private uint timer_id;
+    static construct {
+        style_provider = new Gtk.CssProvider ();
+        style_provider.load_from_resource ("io/elementary/appcenter/banner.css");
+    }
 
-        private static Gtk.CssProvider style_provider;
-        private unowned Gtk.StyleContext style_context;
+    construct {
+        var name_label = new Gtk.Label (package.get_name ()) {
+            max_width_chars = 50,
+            use_markup = true,
+            wrap = true,
+            xalign = 0
+        };
+        name_label.get_style_context ().add_class (Granite.STYLE_CLASS_H1_LABEL);
 
-        public Banner (Switcher switcher) {
-            Object (switcher: switcher);
-        }
+        var summary_label = new Gtk.Label (package.get_summary ()) {
+            max_width_chars = 50,
+            use_markup = true,
+            wrap = true,
+            xalign = 0
+        };
+        summary_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
-        static construct {
-            style_provider = new Gtk.CssProvider ();
-            style_provider.load_from_resource ("io/elementary/appcenter/banner.css");
+        string[] lines = package.get_description ().split ("\n");
+        var description = lines[0].strip ();
+
+        for (int i = 1; i < lines.length; i++) {
+            description += " " + lines[i].strip ();
         }
 
-        construct {
-            height_request = 300;
+        int close_paragraph_index = description.index_of ("</p>", 0);
+        var description_label = new Gtk.Label (description.slice (3, close_paragraph_index)) {
+            ellipsize = Pango.EllipsizeMode.END,
+            lines = 2,
+            max_width_chars = 50,
+            use_markup = true,
+            wrap = true,
+            xalign = 0
+        };
 
-            style_context = get_style_context ();
-            style_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-            style_context.add_class ("banner");
-            style_context.add_class (Granite.STYLE_CLASS_CARD);
-            style_context.add_class (Granite.STYLE_CLASS_ROUNDED);
-            style_context.remove_class (Gtk.STYLE_CLASS_BUTTON);
+        var icon_image = new Gtk.Image.from_gicon (
+            package.get_icon (128, get_scale_factor ()),
+            Gtk.IconSize.INVALID
+        ) {
+            pixel_size = 128
+        };
 
-            stack = new Gtk.Stack ();
-            stack.valign = Gtk.Align.CENTER;
-            stack.transition_duration = TRANSITION_DURATION_MILLISECONDS;
-            stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
+        var package_grid = new Gtk.Grid () {
+            column_spacing = 24,
+            halign = Gtk.Align.CENTER,
+            margin_bottom = 64,
+            margin_top = 64,
+            valign = Gtk.Align.CENTER
+        };
 
-            switcher.set_stack (stack);
+        package_grid.attach (icon_image, 0, 0, 1, 3);
+        package_grid.attach (name_label, 1, 0);
+        package_grid.attach (summary_label, 1, 1);
+        package_grid.attach (description_label, 1, 2);
 
-            add (stack);
+        unowned var style_context = get_style_context ();
+        style_context.add_class ("banner");
+        style_context.add_class (Granite.STYLE_CLASS_CARD);
+        style_context.add_class (Granite.STYLE_CLASS_ROUNDED);
+        style_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-            background_color = "#7E45BE";
-            foreground_color = "white";
+        hexpand = true;
+        add (package_grid);
 
-            brand_widget = new BannerWidget (null);
-            stack.add_named (brand_widget, "brand");
+        var provider = new Gtk.CssProvider ();
+        var background_color = package.get_color_primary ();
+        var foreground_color = package.get_color_primary_text ();
 
-            destroy.connect (() => {
-               if (timer_id > 0) {
-                   Source.remove (timer_id);
-                   timer_id = 0;
-               }
-            });
-
-            switcher.on_stack_changed.connect (() => {
-                set_background (((BannerWidget) stack.visible_child).package);
-                if (timer_id > 0) {
-                    Source.remove (timer_id);
-                    timer_id = 0;
-                }
-            });
+        if (background_color == null || foreground_color == null) {
+            background_color = DEFAULT_BANNER_COLOR_PRIMARY;
+            foreground_color = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
         }
 
-        public AppCenterCore.Package? get_package () {
-            var current = stack.visible_child as BannerWidget;
-            if (current != null) {
-                return current.package;
-            }
+        var colored_css = BANNER_STYLE_CSS.printf (
+            background_color,
+            foreground_color
+        );
 
-            return null;
-        }
-
-        public void add_package (AppCenterCore.Package? package) {
-            if (package.is_explicit) {
-                debug ("%s is explicit, not adding to banner", package.component.id);
-                return;
-            }
-
-            var widget = new BannerWidget (package);
-            stack.add_named (widget, next_free_package_index.to_string ());
-            next_free_package_index++;
-            stack.set_visible_child (widget);
-            switcher.update_selected ();
-            set_background (package);
-
-            if (brand_widget != null) {
-                brand_widget.destroy ();
-                brand_widget = null;
-            }
-        }
-
-        private void next_package () {
-            if (next_free_package_index <= 1) {
-                return;
-            }
-
-            if (++current_package_index >= next_free_package_index) {
-                current_package_index = 1;
-            }
-
-            stack.set_visible_child_name (current_package_index.to_string ());
-            set_background (((BannerWidget) stack.visible_child).package);
-            switcher.update_selected ();
-        }
-
-        public void go_to_first () {
-            if (next_free_package_index <= 1) {
-                return;
-            }
-
-            current_package_index = 1;
-            stack.set_visible_child_name (current_package_index.to_string ());
-            set_background (((BannerWidget) stack.visible_child).package);
-            switcher.update_selected ();
-
-            if (timer_id > 0) {
-                Source.remove (timer_id);
-                timer_id = 0;
-            }
-            timer_id = Timeout.add (MILLISECONDS_BETWEEN_BANNER_ITEMS, () => {
-                next_package ();
-                return true;
-            });
-        }
-
-        private void set_background (AppCenterCore.Package? package) {
-            if (package == null) {
-                background_color = DEFAULT_BANNER_COLOR_PRIMARY;
-                foreground_color = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
-                return;
-            }
-
-            var color_primary = package.get_color_primary ();
-            if (color_primary != null) {
-                background_color = color_primary;
-            } else {
-                background_color = DEFAULT_BANNER_COLOR_PRIMARY;
-            }
-
-            var color_primary_text = package.get_color_primary_text ();
-            if (color_primary_text != null) {
-                foreground_color = color_primary_text;
-            } else {
-                foreground_color = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
-            }
-        }
-
-        private void reload_css () {
-            var provider = new Gtk.CssProvider ();
-            try {
-                var colored_css = BANNER_STYLE_CSS.printf (background_color, foreground_color, stack.transition_duration);
-                provider.load_from_data (colored_css, colored_css.length);
-
-                style_context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-            } catch (GLib.Error e) {
-                critical (e.message);
-            }
-        }
-
-        private class BannerWidget : Gtk.Grid {
-            public AppCenterCore.Package? package { get; construct; }
-
-            public BannerWidget (AppCenterCore.Package? package) {
-                Object (package: package);
-            }
-
-            construct {
-                var icon = new Gtk.Image () {
-                    gicon = new ThemedIcon (Build.PROJECT_NAME),
-                    pixel_size = 128
-                };
-
-                var name_label = new Gtk.Label (_(Build.APP_NAME)) {
-                    max_width_chars = 50,
-                    use_markup = true,
-                    wrap = true,
-                    xalign = 0
-                };
-                name_label.get_style_context ().add_class (Granite.STYLE_CLASS_H1_LABEL);
-
-                var summary_label = new Gtk.Label (_("The open source, pay-what-you-can app store")) {
-                    max_width_chars = 50,
-                    use_markup = true,
-                    wrap = true,
-                    xalign = 0
-                };
-                summary_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
-
-                var description_label = new Gtk.Label (_("Reviewed and curated for a native, privacy-respecting, and secure experience.")) {
-                    ellipsize = Pango.EllipsizeMode.END,
-                    lines = 2,
-                    margin_top = 12,
-                    max_width_chars = 50,
-                    use_markup = true,
-                    wrap = true,
-                    xalign = 0
-                };
-
-                if (package != null) {
-                    name_label.label = package.get_name ();
-
-                    summary_label.label = package.get_summary ();
-
-                    string[] lines = package.get_description ().split ("\n");
-                    var description = lines[0].strip ();
-
-                    for (int i = 1; i < lines.length; i++) {
-                        description += " " + lines[i].strip ();
-                    }
-
-                    int close_paragraph_index = description.index_of ("</p>", 0);
-                    description_label.label = description.slice (3, close_paragraph_index);
-
-                    icon.gicon = package.get_icon (128, icon.get_scale_factor ());
-                }
-
-                column_spacing = 24;
-                halign = Gtk.Align.CENTER;
-                valign = Gtk.Align.CENTER;
-
-                attach (icon, 0, 0, 1, 3);
-                attach (name_label, 1, 0);
-                attach (summary_label, 1, 1);
-                attach (description_label, 1, 2);
-
-                show_all ();
-            }
+        try {
+            provider.load_from_data (colored_css, colored_css.length);
+            style_context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        } catch (Error e) {
+            critical (e.message);
         }
     }
 }
