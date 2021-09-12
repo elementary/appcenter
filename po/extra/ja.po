@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-11 17:16+0000\n"
-"PO-Revision-Date: 2021-09-10 05:51+0000\n"
+"PO-Revision-Date: 2021-09-12 08:47+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/extra/"
 "ja/>\n"
@@ -65,7 +65,7 @@ msgstr "改善:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "Navigate banners on the home page with multitouch gestures"
-msgstr ""
+msgstr "“ホーム”ページのバナーをマルチタッチジェスチャーで切り替えられるように修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 #: data/io.elementary.appcenter.appdata.xml.in:33
