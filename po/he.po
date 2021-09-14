@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-11 17:16+0000\n"
+"POT-Creation-Date: 2021-09-14 20:59+0000\n"
 "PO-Revision-Date: 2021-09-07 23:21+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/appcenter/he/>\n"
@@ -584,84 +584,138 @@ msgstr "עדכון היישומון נכשל"
 msgid "Failed to update “%s”"
 msgstr "העדכון של „%s” נכשל"
 
-#: src/Views/AppInfoView.vala:187
+#: src/Views/AppInfoView.vala:80
+msgid "Violence"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:81
+msgid "Cartoon, fantasy, or realistic violence"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:86
+msgid "Illicit Substances"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:87
+msgid "Presence of or references to alcohol, narcotics, or tobacco"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:92
+msgid "Sex & Nudity"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:93
+msgid "Adult nudity or sexual themes"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:98
+msgid "Offensive Language"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:99
+msgid "Profanity, discriminatory language, or adult humor"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:104
+msgid "Gambling"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:105
+msgid "Realistic or participatory gambling"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:110
+msgid "Online Interactions"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:111
+msgid "Communication or data is sent to the Internet for other humans to see"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:115
+#, fuzzy
+#| msgid "Content Warning"
+msgid "Content Warnings"
+msgstr "אזהרת תוכן"
+
+#: src/Views/AppInfoView.vala:285
 msgid "Screenshot Not Available"
 msgstr "אין צילום מסך"
 
-#: src/Views/AppInfoView.vala:290
+#: src/Views/AppInfoView.vala:388
 msgid "Homepage"
 msgstr "דף הבית"
 
-#: src/Views/AppInfoView.vala:296
+#: src/Views/AppInfoView.vala:394
 msgid "Translate"
 msgstr "תרגום"
 
-#: src/Views/AppInfoView.vala:302
+#: src/Views/AppInfoView.vala:400
 msgid "Send Feedback"
 msgstr "שליחת משוב"
 
-#: src/Views/AppInfoView.vala:308
+#: src/Views/AppInfoView.vala:406
 msgid "Help"
 msgstr "עזרה"
 
-#: src/Views/AppInfoView.vala:319
+#: src/Views/AppInfoView.vala:417
 msgid "What's New:"
 msgstr "מה חדש:"
 
-#: src/Views/AppInfoView.vala:359
+#: src/Views/AppInfoView.vala:463
 msgid "Extensions:"
 msgstr "הרחבות:"
 
-#: src/Views/AppInfoView.vala:462
+#: src/Views/AppInfoView.vala:566
 msgid "Link copied to clipboard"
 msgstr "הקישור הועתק ללוח הגזירים"
 
-#: src/Views/AppInfoView.vala:473
+#: src/Views/AppInfoView.vala:577
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "מומלץ לבדוק את %s במרכז היישומים:"
 
-#: src/Views/AppInfoView.vala:481
+#: src/Views/AppInfoView.vala:585
 msgid "Share"
 msgstr "שיתוף"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:791
+#: src/Views/AppInfoView.vala:895
 msgid "Public Domain"
 msgstr "רשות הציבור"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:794
+#: src/Views/AppInfoView.vala:898
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://he.wikipedia.org/wiki/רשות_הציבור"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:799
+#: src/Views/AppInfoView.vala:903
 msgid "Free Software"
 msgstr "תכנה חופשית"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:802
+#: src/Views/AppInfoView.vala:906
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw.he.html"
 
-#: src/Views/AppInfoView.vala:806
+#: src/Views/AppInfoView.vala:910
 msgid "Proprietary"
 msgstr "קנייני"
 
-#: src/Views/AppInfoView.vala:809
+#: src/Views/AppInfoView.vala:913
 msgid "Unknown License"
 msgstr "רישיון לא ידוע"
 
-#: src/Views/AppInfoView.vala:889
+#: src/Views/AppInfoView.vala:993
 msgid "Fund"
 msgstr "מימון"
 
-#: src/Views/AppInfoView.vala:897
+#: src/Views/AppInfoView.vala:1001
 msgid "Fund the development of this app"
 msgstr "מימון המפתחים שעומדים מאחורי היישום הזה"
 
-#: src/Views/AppInfoView.vala:971
+#: src/Views/AppInfoView.vala:1091
 #, c-format
 msgid "Other Apps by %s"
 msgstr "יישום אחרים מאת %s"
