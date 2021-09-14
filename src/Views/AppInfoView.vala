@@ -165,12 +165,32 @@ namespace AppCenter.Views {
 
                 if (
                     rating.get_value ("social-chat") > AppStream.ContentRatingValue.NONE ||
-                    rating.get_value ("social-info") > AppStream.ContentRatingValue.NONE ||
                     rating.get_value ("social-audio") > AppStream.ContentRatingValue.NONE ||
                     rating.get_value ("social-location") > AppStream.ContentRatingValue.NONE ||
                     rating.get_value ("social-contacts") > AppStream.ContentRatingValue.NONE
                 ) {
                     oars_flowbox.add (social);
+                }
+
+                var social_info_value = rating.get_value ("social-info");
+                if (social_info_value > AppStream.ContentRatingValue.MILD) {
+                    string? description = null;
+                    switch (social_info_value) {
+                        case AppStream.ContentRatingValue.MODERATE:
+                            description = _("Collects anonymous usage data");
+                            break;
+                        case AppStream.ContentRatingValue.INTENSE:
+                            description = _("Collects usage data that could be used to identify you");
+                            break;
+                    }
+
+                    var social_info = new ContentType (
+                        _("Info Sharing"),
+                        description,
+                        "application-content-socal-info-symbolic"
+                    );
+
+                    oars_flowbox.add (social_info);
                 }
             }
 
@@ -1049,17 +1069,24 @@ namespace AppCenter.Views {
 
     class ContentType : Gtk.Grid {
         public ContentType (string title, string description, string icon_name) {
-            row_spacing = 6;
-            tooltip_text = description;
-
             var icon = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.DND) {
+                margin_bottom = 6,
                 hexpand = true
             };
 
             var label = new Gtk.Label (title);
 
+            var description_label = new Gtk.Label (description) {
+                wrap = true,
+                max_width_chars = 25,
+                justify = Gtk.Justification.CENTER
+            };
+            description_label.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
+            description_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+
             attach (icon, 0, 0);
             attach (label, 0, 1);
+            attach (description_label, 0, 2);
         }
     }
 
