@@ -13,11 +13,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-09 18:16+0000\n"
+"POT-Creation-Date: 2021-09-11 17:16+0000\n"
 "PO-Revision-Date: 2021-09-09 21:46+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
-"Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/tr/>\n"
+"Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/appcenter/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -58,9 +57,9 @@ msgstr "\"%s\" yüklendi"
 msgid "Failed to launch “%s“"
 msgstr "\"%s\" başlatılamadı"
 
-#: src/MainWindow.vala:171 src/Views/Homepage.vala:255
-#: src/Views/Homepage.vala:265 src/Views/Homepage.vala:270
-#: src/Views/Homepage.vala:281 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:171 src/Views/Homepage.vala:272
+#: src/Views/Homepage.vala:282 src/Views/Homepage.vala:287
+#: src/Views/Homepage.vala:298 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "Ana Sayfa"
 
@@ -428,9 +427,7 @@ msgstr "E-posta"
 
 #: src/Dialogs/StripeDialog.vala:157
 msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
-msgstr ""
-"Sadece size makbuz göndermek için kullanılır. Hiçbir e-posta listesine abone "
-"edilmeyeceksiniz."
+msgstr "Sadece size makbuz göndermek için kullanılır. Hiçbir e-posta listesine abone edilmeyeceksiniz."
 
 #: src/Dialogs/StripeDialog.vala:158
 msgid "Privacy Policy"
@@ -721,15 +718,15 @@ msgstr "Arama terimlerini değiştirmeyi deneyin. %s adresinden Flatpak uygulama
 msgid "Non-Curated Apps"
 msgstr "Doğrulanmamış Uygulamalar"
 
-#: src/Views/Homepage.vala:64
+#: src/Views/Homepage.vala:65
 msgid "Recently Updated"
 msgstr "Son Güncellenenler"
 
-#: src/Views/Homepage.vala:87
+#: src/Views/Homepage.vala:88
 msgid "Categories"
 msgstr "Kategoriler"
 
-#: src/Views/Homepage.vala:270 src/Views/Homepage.vala:281
+#: src/Views/Homepage.vala:287 src/Views/Homepage.vala:298
 #, c-format
 msgid "Search %s"
 msgstr "%s içinde ara"
@@ -739,14 +736,6 @@ msgstr "%s içinde ara"
 msgctxt "view"
 msgid "Search"
 msgstr "Ara"
-
-#: src/Widgets/Banner.vala:234
-msgid "The open source, pay-what-you-can app store"
-msgstr "Açık kaynak kodlu ve istediğine, istediğin kadar ödeyebileceğin bir uygulama mağazası"
-
-#: src/Widgets/Banner.vala:242
-msgid "Reviewed and curated for a native, privacy-respecting, and secure experience."
-msgstr "Yerel, gizliliğe saygılı ve güvenli bir deneyim için gözden geçirilmiş ve seçilmiştir."
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
@@ -923,6 +912,12 @@ msgstr "Güncel"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:223
 msgid "Update"
 msgstr "Güncelle"
+
+#~ msgid "The open source, pay-what-you-can app store"
+#~ msgstr "Açık kaynak kodlu ve istediğine, istediğin kadar ödeyebileceğin bir uygulama mağazası"
+
+#~ msgid "Reviewed and curated for a native, privacy-respecting, and secure experience."
+#~ msgstr "Yerel, gizliliğe saygılı ve güvenli bir deneyim için gözden geçirilmiş ve seçilmiştir."
 
 #~ msgid "Only used to send you a receipt."
 #~ msgstr "Sadece size bir makbuz göndermek için kullanılır."

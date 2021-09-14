@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-09 18:16+0000\n"
+"POT-Creation-Date: 2021-09-11 17:16+0000\n"
 "PO-Revision-Date: 2021-09-08 19:50+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/appcenter/appcenter/hu/>\n"
@@ -49,9 +49,9 @@ msgstr "A(z) \"%s\" telepítésre került"
 msgid "Failed to launch “%s“"
 msgstr "\"%s\" indítása sikertelen"
 
-#: src/MainWindow.vala:171 src/Views/Homepage.vala:255
-#: src/Views/Homepage.vala:265 src/Views/Homepage.vala:270
-#: src/Views/Homepage.vala:281 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:171 src/Views/Homepage.vala:272
+#: src/Views/Homepage.vala:282 src/Views/Homepage.vala:287
+#: src/Views/Homepage.vala:298 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "Kezdőlap"
 
@@ -710,15 +710,15 @@ msgstr "Próbálja megváltoztatni a keresési kifejezéseket. Lehetősége van 
 msgid "Non-Curated Apps"
 msgstr "Nem ellenőrzött alkalmazások"
 
-#: src/Views/Homepage.vala:64
+#: src/Views/Homepage.vala:65
 msgid "Recently Updated"
 msgstr "Nemrég frissített"
 
-#: src/Views/Homepage.vala:87
+#: src/Views/Homepage.vala:88
 msgid "Categories"
 msgstr "Kategóriák"
 
-#: src/Views/Homepage.vala:270 src/Views/Homepage.vala:281
+#: src/Views/Homepage.vala:287 src/Views/Homepage.vala:298
 #, c-format
 msgid "Search %s"
 msgstr "A(z) %s keresése"
@@ -728,14 +728,6 @@ msgstr "A(z) %s keresése"
 msgctxt "view"
 msgid "Search"
 msgstr "Keresés"
-
-#: src/Widgets/Banner.vala:234
-msgid "The open source, pay-what-you-can app store"
-msgstr "A nyílt, fizessen-amennyit-tud alkalmazásüzlet"
-
-#: src/Widgets/Banner.vala:242
-msgid "Reviewed and curated for a native, privacy-respecting, and secure experience."
-msgstr "Jóváhagyott és ellenőrzött egy natív, adatvédelmet szem előtt tartó és biztonságos élmény érdekében."
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
@@ -912,6 +904,12 @@ msgstr "Naprakész"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:223
 msgid "Update"
 msgstr "Frissítés"
+
+#~ msgid "The open source, pay-what-you-can app store"
+#~ msgstr "A nyílt, fizessen-amennyit-tud alkalmazásüzlet"
+
+#~ msgid "Reviewed and curated for a native, privacy-respecting, and secure experience."
+#~ msgstr "Jóváhagyott és ellenőrzött egy natív, adatvédelmet szem előtt tartó és biztonságos élmény érdekében."
 
 #~ msgid "Get the apps that you need at a price you can afford."
 #~ msgstr "Szerezzen be alkalmazásokat, olyan áron, amelyet megengedhet magának."

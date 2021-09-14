@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-09 18:16+0000\n"
+"POT-Creation-Date: 2021-09-11 17:16+0000\n"
 "PO-Revision-Date: 2019-05-15 01:18+0000\n"
 "Last-Translator: Jimmy Sun <jimmysuncn@hotmail.com>\n"
 "Language-Team: Chinese <https://l10n.elementary.io/projects/appcenter/appcenter/zh/>\n"
@@ -52,9 +52,9 @@ msgstr "%s已被安装成功"
 msgid "Failed to launch “%s“"
 msgstr "卸载"
 
-#: src/MainWindow.vala:171 src/Views/Homepage.vala:255
-#: src/Views/Homepage.vala:265 src/Views/Homepage.vala:270
-#: src/Views/Homepage.vala:281 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:171 src/Views/Homepage.vala:272
+#: src/Views/Homepage.vala:282 src/Views/Homepage.vala:287
+#: src/Views/Homepage.vala:298 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "首页"
 
@@ -736,15 +736,15 @@ msgstr ""
 msgid "Non-Curated Apps"
 msgstr "非策略性应用程序"
 
-#: src/Views/Homepage.vala:64
+#: src/Views/Homepage.vala:65
 msgid "Recently Updated"
 msgstr "最近更新"
 
-#: src/Views/Homepage.vala:87
+#: src/Views/Homepage.vala:88
 msgid "Categories"
 msgstr "类别"
 
-#: src/Views/Homepage.vala:270 src/Views/Homepage.vala:281
+#: src/Views/Homepage.vala:287 src/Views/Homepage.vala:298
 #, c-format
 msgid "Search %s"
 msgstr "搜索%s"
@@ -754,16 +754,6 @@ msgstr "搜索%s"
 msgctxt "view"
 msgid "Search"
 msgstr "搜索"
-
-#: src/Widgets/Banner.vala:234
-#, fuzzy
-#| msgid "An open, pay-what-you-want app store"
-msgid "The open source, pay-what-you-can app store"
-msgstr "一个开放的，可以买您所想的应用程序商店"
-
-#: src/Widgets/Banner.vala:242
-msgid "Reviewed and curated for a native, privacy-respecting, and secure experience."
-msgstr ""
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
@@ -945,6 +935,11 @@ msgstr "最新"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:223
 msgid "Update"
 msgstr "更新"
+
+#, fuzzy
+#~| msgid "An open, pay-what-you-want app store"
+#~ msgid "The open source, pay-what-you-can app store"
+#~ msgstr "一个开放的，可以买您所想的应用程序商店"
 
 #~ msgid "Get the apps that you need at a price you can afford."
 #~ msgstr "以可承受的价格获得您需要的应用程序。"

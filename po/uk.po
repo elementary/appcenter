@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-09 18:16+0000\n"
+"POT-Creation-Date: 2021-09-11 17:16+0000\n"
 "PO-Revision-Date: 2021-09-07 20:36+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/appcenter/uk/>\n"
@@ -55,9 +55,9 @@ msgstr "«%s» було встановлено"
 msgid "Failed to launch “%s“"
 msgstr "Не вдалося запустити «%s»"
 
-#: src/MainWindow.vala:171 src/Views/Homepage.vala:255
-#: src/Views/Homepage.vala:265 src/Views/Homepage.vala:270
-#: src/Views/Homepage.vala:281 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:171 src/Views/Homepage.vala:272
+#: src/Views/Homepage.vala:282 src/Views/Homepage.vala:287
+#: src/Views/Homepage.vala:298 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "Головна"
 
@@ -719,15 +719,15 @@ msgstr "Спробуйте змінити пошукові терміни. Ви 
 msgid "Non-Curated Apps"
 msgstr "Не куровані застосунки"
 
-#: src/Views/Homepage.vala:64
+#: src/Views/Homepage.vala:65
 msgid "Recently Updated"
 msgstr "Нещодавно оновлені"
 
-#: src/Views/Homepage.vala:87
+#: src/Views/Homepage.vala:88
 msgid "Categories"
 msgstr "Категорії"
 
-#: src/Views/Homepage.vala:270 src/Views/Homepage.vala:281
+#: src/Views/Homepage.vala:287 src/Views/Homepage.vala:298
 #, c-format
 msgid "Search %s"
 msgstr "Пошук %s"
@@ -737,14 +737,6 @@ msgstr "Пошук %s"
 msgctxt "view"
 msgid "Search"
 msgstr "Знайти"
-
-#: src/Widgets/Banner.vala:234
-msgid "The open source, pay-what-you-can app store"
-msgstr "Крамниця застосунків з відкритим кодом у якій «Плати що можеш»"
-
-#: src/Widgets/Banner.vala:242
-msgid "Reviewed and curated for a native, privacy-respecting, and secure experience."
-msgstr "Перевірено та підготовано для злагодженої з системою, приватної та безпечної роботи."
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
@@ -922,6 +914,12 @@ msgstr "Найновіші"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:223
 msgid "Update"
 msgstr "Оновити"
+
+#~ msgid "The open source, pay-what-you-can app store"
+#~ msgstr "Крамниця застосунків з відкритим кодом у якій «Плати що можеш»"
+
+#~ msgid "Reviewed and curated for a native, privacy-respecting, and secure experience."
+#~ msgstr "Перевірено та підготовано для злагодженої з системою, приватної та безпечної роботи."
 
 #~ msgid "Only used to send you a receipt."
 #~ msgstr "Використовується лише для надсилання вам квитанції."

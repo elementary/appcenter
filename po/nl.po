@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-09 18:16+0000\n"
+"POT-Creation-Date: 2021-09-11 17:16+0000\n"
 "PO-Revision-Date: 2020-09-20 09:14+0000\n"
 "Last-Translator: Jaimie85 <alsemgeest@gmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/appcenter/appcenter/nl/>\n"
@@ -53,9 +53,9 @@ msgstr "%s is met succes geïnstalleerd"
 msgid "Failed to launch “%s“"
 msgstr "Het verwijderen van “%s” is mislukt"
 
-#: src/MainWindow.vala:171 src/Views/Homepage.vala:255
-#: src/Views/Homepage.vala:265 src/Views/Homepage.vala:270
-#: src/Views/Homepage.vala:281 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:171 src/Views/Homepage.vala:272
+#: src/Views/Homepage.vala:282 src/Views/Homepage.vala:287
+#: src/Views/Homepage.vala:298 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "Startpagina"
 
@@ -723,15 +723,15 @@ msgstr ""
 msgid "Non-Curated Apps"
 msgstr "Onbeheerde Apps"
 
-#: src/Views/Homepage.vala:64
+#: src/Views/Homepage.vala:65
 msgid "Recently Updated"
 msgstr "Onlangs bijgewerkt"
 
-#: src/Views/Homepage.vala:87
+#: src/Views/Homepage.vala:88
 msgid "Categories"
 msgstr "Categorieën"
 
-#: src/Views/Homepage.vala:270 src/Views/Homepage.vala:281
+#: src/Views/Homepage.vala:287 src/Views/Homepage.vala:298
 #, c-format
 msgid "Search %s"
 msgstr "Zoek %s"
@@ -741,16 +741,6 @@ msgstr "Zoek %s"
 msgctxt "view"
 msgid "Search"
 msgstr "Zoeken"
-
-#: src/Widgets/Banner.vala:234
-#, fuzzy
-#| msgid "An open, pay-what-you-want app store"
-msgid "The open source, pay-what-you-can app store"
-msgstr "Een open toepassingenwinkel waarbij u de prijzen bepaalt"
-
-#: src/Widgets/Banner.vala:242
-msgid "Reviewed and curated for a native, privacy-respecting, and secure experience."
-msgstr ""
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
@@ -927,6 +917,11 @@ msgstr "Actueel"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:223
 msgid "Update"
 msgstr "Bijwerken"
+
+#, fuzzy
+#~| msgid "An open, pay-what-you-want app store"
+#~ msgid "The open source, pay-what-you-can app store"
+#~ msgstr "Een open toepassingenwinkel waarbij u de prijzen bepaalt"
 
 #~ msgid "Get the apps that you need at a price you can afford."
 #~ msgstr "Krijg de applicaties die u nodig heeft aan de prijs die u zich kunt veroorloven."

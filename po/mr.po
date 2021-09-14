@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-09 18:16+0000\n"
+"POT-Creation-Date: 2021-09-11 17:16+0000\n"
 "PO-Revision-Date: 2021-06-19 21:50+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/appcenter/mr/>\n"
@@ -48,9 +48,9 @@ msgstr "\"%s\" इन्स्टॉल झाले"
 msgid "Failed to launch “%s“"
 msgstr "\"%s\" लाँच करण्यात अयशस्वी"
 
-#: src/MainWindow.vala:171 src/Views/Homepage.vala:255
-#: src/Views/Homepage.vala:265 src/Views/Homepage.vala:270
-#: src/Views/Homepage.vala:281 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:171 src/Views/Homepage.vala:272
+#: src/Views/Homepage.vala:282 src/Views/Homepage.vala:287
+#: src/Views/Homepage.vala:298 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "मुख्य पृष्ठ"
 
@@ -713,15 +713,15 @@ msgstr ""
 msgid "Non-Curated Apps"
 msgstr "नॉन-क्युरेटेड अॅप्स"
 
-#: src/Views/Homepage.vala:64
+#: src/Views/Homepage.vala:65
 msgid "Recently Updated"
 msgstr "अलीकडे अपडेट केलेले"
 
-#: src/Views/Homepage.vala:87
+#: src/Views/Homepage.vala:88
 msgid "Categories"
 msgstr "श्रेणी"
 
-#: src/Views/Homepage.vala:270 src/Views/Homepage.vala:281
+#: src/Views/Homepage.vala:287 src/Views/Homepage.vala:298
 #, c-format
 msgid "Search %s"
 msgstr "%s शोधा"
@@ -731,16 +731,6 @@ msgstr "%s शोधा"
 msgctxt "view"
 msgid "Search"
 msgstr "शोधा"
-
-#: src/Widgets/Banner.vala:234
-#, fuzzy
-#| msgid "An open, pay-what-you-want app store"
-msgid "The open source, pay-what-you-can app store"
-msgstr "एक खुला, इच्छेनुसार पैसे द्या अॅप स्टोअर"
-
-#: src/Widgets/Banner.vala:242
-msgid "Reviewed and curated for a native, privacy-respecting, and secure experience."
-msgstr ""
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
@@ -917,6 +907,11 @@ msgstr "अद्ययावत"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:223
 msgid "Update"
 msgstr "अद्ययावत (अपडेट) करा"
+
+#, fuzzy
+#~| msgid "An open, pay-what-you-want app store"
+#~ msgid "The open source, pay-what-you-can app store"
+#~ msgstr "एक खुला, इच्छेनुसार पैसे द्या अॅप स्टोअर"
 
 #~ msgid "Get the apps that you need at a price you can afford."
 #~ msgstr "आपल्याला आवश्यक असलेल्या किंमतीवर आपल्याला आवश्यक असलेले अॅप्स मिळवा."
