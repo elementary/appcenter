@@ -6,9 +6,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-11 17:16+0000\n"
-"PO-Revision-Date: 2021-08-20 19:49+0000\n"
+"PO-Revision-Date: 2021-09-14 20:59+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
-"Language-Team: Slovak <https://l10n.elementary.io/projects/appcenter/appcenter/sk/>\n"
+"Language-Team: Slovak <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/sk/>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -409,24 +410,24 @@ msgid "Pay $%d for %s"
 msgstr "Zaplatiť $%d za %s"
 
 #: src/Dialogs/StripeDialog.vala:94
-#, fuzzy
-#| msgid "This is a one time payment. Your email address is only used to send you a receipt."
 msgid "This is a one time payment suggested by the developer. You can also choose your own price."
-msgstr "Toto je jednorazová platba. Vaša emailová adresa bude použitá len na odoslanie potvrdenia o platbe."
+msgstr ""
+"Toto je jednorazová platba navrhovaná vývojárom. Ak vám nevyhovuje cena, "
+"môžete si vybrať vlastnú."
 
 #: src/Dialogs/StripeDialog.vala:115
 msgid "or"
-msgstr ""
+msgstr "alebo"
 
 #: src/Dialogs/StripeDialog.vala:152
 msgid "Email"
 msgstr "E-mail"
 
 #: src/Dialogs/StripeDialog.vala:157
-#, fuzzy
-#| msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
 msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
-msgstr "Vaša e-mailová adresa sa použije iba na odoslanie účtenky. Nebudete zapísaný do žiadneho zoznamu na príjem pošty."
+msgstr ""
+"Použije sa iba na odoslanie účtenky. Nebudete zapísaný do žiadneho zoznamu "
+"na príjem pošty."
 
 #: src/Dialogs/StripeDialog.vala:158
 msgid "Privacy Policy"
@@ -702,16 +703,18 @@ msgstr "Aktualizovať všetko"
 
 #: src/Views/AppListView.vala:29
 msgid "Flathub"
-msgstr ""
+msgstr "Flathub"
 
 #: src/Views/AppListView.vala:31
 msgid "No Apps Found"
-msgstr ""
+msgstr "Neboli nájdené žiadne aplikácie"
 
 #: src/Views/AppListView.vala:32
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr ""
+"Skúste pozmeniť vyhľadávaný výraz. Prípadne môžete nainštalovať Flatpak "
+"aplikácie z iného zdroja, napríklad z %s"
 
 #: src/Views/AppListView.vala:168
 msgid "Non-Curated Apps"
