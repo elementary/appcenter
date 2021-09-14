@@ -76,12 +76,6 @@ namespace AppCenter.Views {
 
             var package_component = package.component;
 
-            var violence = new ContentType (
-                _("Violence"),
-                _("Cartoon, fantasy, or realistic violence"),
-                "application-content-violence-symbolic"
-            );
-
             var drugs = new ContentType (
                 _("Illicit Substances"),
                 _("Presence of or references to alcohol, narcotics, or tobacco"),
@@ -125,11 +119,36 @@ namespace AppCenter.Views {
             for (int i = 0; i < ratings.length; i++) {
                 var rating = ratings[i];
 
+                var fantasy_violence_value = rating.get_value ("violence-fantasy");
+                var realistic_violence_value = rating.get_value ("violence-realistic");
+
                 if (
-                    rating.get_value ("violence-realistic") > AppStream.ContentRatingValue.NONE ||
+                    fantasy_violence_value == AppStream.ContentRatingValue.MILD ||
+                    fantasy_violence_value == AppStream.ContentRatingValue.MODERATE ||
+                    realistic_violence_value == AppStream.ContentRatingValue.MILD ||
+                    realistic_violence_value == AppStream.ContentRatingValue.MODERATE
+                ) {
+                    var conflict = new ContentType (
+                        _("Conflict"),
+                        _("Depictions of unsafe situations or aggressive conflict"),
+                        "application-content-conflict-symbolic"
+                    );
+
+                    oars_flowbox.add (conflict);
+                }
+
+                if (
+                    fantasy_violence_value == AppStream.ContentRatingValue.INTENSE ||
+                    realistic_violence_value == AppStream.ContentRatingValue.INTENSE ||
                     rating.get_value ("violence-bloodshed") > AppStream.ContentRatingValue.NONE ||
                     rating.get_value ("violence-sexual") > AppStream.ContentRatingValue.NONE
                 ) {
+                    var violence = new ContentType (
+                        _("Violence"),
+                        _("Graphic violence, bloodshed, or death"),
+                        "application-content-violence-symbolic"
+                    );
+
                     oars_flowbox.add (violence);
                 }
 
