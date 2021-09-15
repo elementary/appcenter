@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-15 18:16+0000\n"
+"POT-Creation-Date: 2021-09-15 18:52+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Bengali <https://l10n.elementary.io/projects/appcenter/appcenter/bn/>\n"
@@ -624,124 +624,136 @@ msgstr ""
 msgid "Realistic or participatory gambling"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:104
-msgid "Online Interactions"
-msgstr ""
-
-#: src/Views/AppInfoView.vala:105
-msgid "Communication or data is sent to the Internet for other humans to see"
-msgstr ""
-
-#: src/Views/AppInfoView.vala:109
+#: src/Views/AppInfoView.vala:103
 msgid "Content Warnings"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:131
+#: src/Views/AppInfoView.vala:125
 msgid "Conflict"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:132
+#: src/Views/AppInfoView.vala:126
 msgid "Depictions of unsafe situations or aggressive conflict"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:146
+#: src/Views/AppInfoView.vala:140
 msgid "Violence"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:147
+#: src/Views/AppInfoView.vala:141
 msgid "Graphic violence, bloodshed, or death"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:198
-msgid "Collects anonymous usage data"
+#: src/Views/AppInfoView.vala:189
+msgid "Unmoderated Audio, Video, or Text messaging with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:201
-msgid "Collects usage data that could be used to identify you"
+#: src/Views/AppInfoView.vala:191
+msgid "Moderated Audio, Video, or Text messaging with other people"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:195
+msgid "Online Interactions"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:205
+msgid "Location Sharing"
 msgstr ""
 
 #: src/Views/AppInfoView.vala:206
+msgid "Other people can see your real-world location"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:218
+msgid "Collects anonymous usage data"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:221
+msgid "Collects usage data that could be used to identify you"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:226
 msgid "Info Sharing"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:323
+#: src/Views/AppInfoView.vala:343
 msgid "Screenshot Not Available"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:426
+#: src/Views/AppInfoView.vala:446
 msgid "Homepage"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:432
+#: src/Views/AppInfoView.vala:452
 msgid "Translate"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:438
+#: src/Views/AppInfoView.vala:458
 msgid "Send Feedback"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:444
+#: src/Views/AppInfoView.vala:464
 msgid "Help"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:455
+#: src/Views/AppInfoView.vala:475
 msgid "What's New:"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:501
+#: src/Views/AppInfoView.vala:521
 msgid "Extensions:"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:604
+#: src/Views/AppInfoView.vala:624
 msgid "Link copied to clipboard"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:615
+#: src/Views/AppInfoView.vala:635
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:623
+#: src/Views/AppInfoView.vala:643
 msgid "Share"
 msgstr ""
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:933
+#: src/Views/AppInfoView.vala:953
 msgid "Public Domain"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:936
+#: src/Views/AppInfoView.vala:956
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr ""
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:941
+#: src/Views/AppInfoView.vala:961
 msgid "Free Software"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:944
+#: src/Views/AppInfoView.vala:964
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:948
+#: src/Views/AppInfoView.vala:968
 msgid "Proprietary"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:951
+#: src/Views/AppInfoView.vala:971
 msgid "Unknown License"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1031
+#: src/Views/AppInfoView.vala:1051
 msgid "Fund"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1039
+#: src/Views/AppInfoView.vala:1059
 msgid "Fund the development of this app"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1143
+#: src/Views/AppInfoView.vala:1163
 #, c-format
 msgid "Other Apps by %s"
 msgstr ""
