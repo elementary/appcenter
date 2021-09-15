@@ -1068,25 +1068,31 @@ namespace AppCenter.Views {
 
     class ContentType : Gtk.Grid {
         public ContentType (string title, string description, string icon_name) {
+            orientation = Gtk.Orientation.VERTICAL;
             row_spacing = 3;
 
             var icon = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.DND) {
+                halign = Gtk.Align.START,
                 margin_bottom = 6
             };
 
-            var label = new Gtk.Label (title);
+            var label = new Gtk.Label (title) {
+                xalign = 0
+            };
 
             var description_label = new Gtk.Label (description) {
-                wrap = true,
                 max_width_chars = 25,
-                justify = Gtk.Justification.CENTER
+                wrap = true,
+                xalign = 0
             };
-            description_label.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
-            description_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
-            attach (icon, 0, 0);
-            attach (label, 0, 1);
-            attach (description_label, 0, 2);
+            unowned var description_label_context = description_label.get_style_context ();
+            description_label_context.add_class (Granite.STYLE_CLASS_SMALL_LABEL);
+            description_label_context.add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+
+            add (icon);
+            add (label);
+            add (description_label);
         }
     }
 
