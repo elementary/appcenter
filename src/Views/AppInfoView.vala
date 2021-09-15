@@ -176,7 +176,7 @@ namespace AppCenter.Views {
                 }
 
                 var social_chat_value = rating.get_value ("social-chat");
-                var social_audio_value = rating.get_value ("social-chat");
+                var social_audio_value = rating.get_value ("social-audio");
                 if (
                     // NONE is defined as multi-player period, no chat
                     social_chat_value > AppStream.ContentRatingValue.MILD ||
