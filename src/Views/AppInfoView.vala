@@ -102,7 +102,7 @@ namespace AppCenter.Views {
 
             var oars_flowbox = new Gtk.FlowBox () {
                 column_spacing = 24,
-                row_spacing = 12,
+                row_spacing = 24,
                 margin_bottom = 24
             };
 
@@ -238,6 +238,16 @@ namespace AppCenter.Views {
 
                     oars_flowbox.add (social_info);
                 }
+            }
+
+            if (!package.is_native) {
+                var uncurated = new ContentType (
+                    _("Not Reviewed"),
+                    _("Available from a sideloaded remote. Not reviewed by elementary for security, privacy, or system integration"),
+                    "security-low-symbolic"
+                );
+
+                oars_flowbox.add (uncurated);
             }
 
             screenshots = package_component.get_screenshots ();
