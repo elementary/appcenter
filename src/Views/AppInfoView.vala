@@ -176,9 +176,19 @@ namespace AppCenter.Views {
                 }
 
                 var social_chat_value = rating.get_value ("social-chat");
+                // MILD is defined as multi-player period, no chat
+                if (social_chat_value > AppStream.ContentRatingValue.NONE) {
+                    var multiplayer = new ContentType (
+                        _("Multiplayer"),
+                        _("Online play with other people"),
+                        "system-users-symbolic"
+                    );
+
+                    oars_flowbox.add (multiplayer);
+                }
+
                 var social_audio_value = rating.get_value ("social-audio");
                 if (
-                    // NONE is defined as multi-player period, no chat
                     social_chat_value > AppStream.ContentRatingValue.MILD ||
                     social_audio_value > AppStream.ContentRatingValue.NONE
                 ) {
