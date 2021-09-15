@@ -22,6 +22,7 @@ public class AppCenter.Widgets.CategoryFlowBox : Gtk.FlowBox {
     construct {
         activate_on_single_click = true;
         homogeneous = true;
+        margin_bottom = 12;
         min_children_per_line = 2;
 
         add (get_category (_("Accessories"), "applications-accessories", {"Utility"}, "accessories"));
