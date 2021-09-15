@@ -115,8 +115,7 @@ namespace AppCenter.Views {
             var oars_header = new Granite.HeaderLabel (_("Content Warnings"));
 
             var oars_flowbox = new Gtk.FlowBox () {
-                halign = Gtk.Align.START,
-                column_spacing = 6,
+                column_spacing = 24,
                 row_spacing = 12,
                 margin_bottom = 24
             };
@@ -1052,9 +1051,7 @@ namespace AppCenter.Views {
             row_spacing = 6;
             tooltip_text = description;
 
-            var icon = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.DND) {
-                hexpand = true
-            };
+            var icon = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.DND);
 
             var label = new Gtk.Label (title);
 
