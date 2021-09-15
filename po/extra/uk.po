@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-14 20:59+0000\n"
-"PO-Revision-Date: 2021-09-11 20:18+0000\n"
+"PO-Revision-Date: 2021-09-15 03:06+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/"
 "extra/uk/>\n"
@@ -69,7 +69,7 @@ msgstr "Переміщення банерів на головній сторін
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Show content warnings on app info pages"
-msgstr ""
+msgstr "Показ попереджень про вміст на сторінках відомостей про застосунок"
 
 #: data/io.elementary.appcenter.appdata.xml.in:24
 #: data/io.elementary.appcenter.appdata.xml.in:34
