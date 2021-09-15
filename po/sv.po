@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-15 19:34+0000\n"
+"POT-Creation-Date: 2021-09-15 19:39+0000\n"
 "PO-Revision-Date: 2018-10-28 09:52+0000\n"
 "Last-Translator: Fredrik B <frbo9002@gmail.com>\n"
 "Language-Team: Swedish <https://weblate.elementary.io/projects/appcenter/appcenter/sv/>\n"
@@ -329,34 +329,6 @@ msgstr "Omstart krävs"
 msgid "Please restart your system to finalize updates"
 msgstr "Vänligen starta om ditt system för att slutföra uppdateringarna"
 
-#: src/Dialogs/ContentWarningDialog.vala:25
-msgid "Content Warning"
-msgstr "Innehållsvarning"
-
-#: src/Dialogs/ContentWarningDialog.vala:30
-#, fuzzy, c-format
-msgid "“%s” contains explicit content"
-msgstr "%s innehåller stötande innehåll"
-
-#: src/Dialogs/ContentWarningDialog.vala:31
-#, fuzzy, c-format
-msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
-msgstr "%s kan ha innehåll som bara passar för vuxna, eller som på annat sätt är känsligt. Generellt sett varken recenserar eller rekommenderar elementary innehållet i detta program."
-
-#: src/Dialogs/ContentWarningDialog.vala:33
-msgid "Show content warnings"
-msgstr "Visa innehållsvarningar"
-
-#: src/Dialogs/ContentWarningDialog.vala:37
-#: src/Dialogs/NonCuratedWarningDialog.vala:81
-msgid "Don’t Install"
-msgstr "Installera inte"
-
-#: src/Dialogs/ContentWarningDialog.vala:38
-#: src/Dialogs/NonCuratedWarningDialog.vala:82
-msgid "Install Anyway"
-msgstr "Installera ändå"
-
 #: src/Dialogs/InstallFailDialog.vala:26
 #, fuzzy
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
@@ -401,6 +373,14 @@ msgstr ""
 #| msgid "Show content warnings"
 msgid "Show non-curated warnings"
 msgstr "Visa innehållsvarningar"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:81
+msgid "Don’t Install"
+msgstr "Installera inte"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:82
+msgid "Install Anyway"
+msgstr "Installera ändå"
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
@@ -1024,6 +1004,20 @@ msgstr "Uppdaterad"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:223
 msgid "Update"
 msgstr "Uppdatera"
+
+#~ msgid "Content Warning"
+#~ msgstr "Innehållsvarning"
+
+#, fuzzy
+#~ msgid "“%s” contains explicit content"
+#~ msgstr "%s innehåller stötande innehåll"
+
+#, fuzzy
+#~ msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
+#~ msgstr "%s kan ha innehåll som bara passar för vuxna, eller som på annat sätt är känsligt. Generellt sett varken recenserar eller rekommenderar elementary innehållet i detta program."
+
+#~ msgid "Show content warnings"
+#~ msgstr "Visa innehållsvarningar"
 
 #, fuzzy
 #~| msgid "Content Warning"

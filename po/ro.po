@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-15 19:34+0000\n"
+"POT-Creation-Date: 2021-09-15 19:39+0000\n"
 "PO-Revision-Date: 2021-09-03 14:35+0000\n"
 "Last-Translator: Silviu Popescu <teodorspopescu@gmail.com>\n"
 "Language-Team: Romanian <https://l10n.elementary.io/projects/appcenter/appcenter/ro/>\n"
@@ -326,34 +326,6 @@ msgstr "Sistemul trebuie repornit"
 msgid "Please restart your system to finalize updates"
 msgstr "Reporniți sistemul pentru a finaliza instalarea"
 
-#: src/Dialogs/ContentWarningDialog.vala:25
-msgid "Content Warning"
-msgstr "Avertisment privind conținutul"
-
-#: src/Dialogs/ContentWarningDialog.vala:30
-#, c-format
-msgid "“%s” contains explicit content"
-msgstr "“%s” are conținut explicit"
-
-#: src/Dialogs/ContentWarningDialog.vala:31
-#, c-format
-msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
-msgstr "“%s” poate avea conținut adecvat numai pentru adulți sau care poate fi sensibil sau deranjant. În general, elementary nu revizuie sau aprobă conținutul acestei aplicații."
-
-#: src/Dialogs/ContentWarningDialog.vala:33
-msgid "Show content warnings"
-msgstr "Arată avertizări pentru conținut"
-
-#: src/Dialogs/ContentWarningDialog.vala:37
-#: src/Dialogs/NonCuratedWarningDialog.vala:81
-msgid "Don’t Install"
-msgstr "Nu instala"
-
-#: src/Dialogs/ContentWarningDialog.vala:38
-#: src/Dialogs/NonCuratedWarningDialog.vala:82
-msgid "Install Anyway"
-msgstr "Instalează oricum"
-
 #: src/Dialogs/InstallFailDialog.vala:26
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
 msgstr "Aceasta poate fi o problemă temporară sau ar putea fi cauzată de software extern sau compilat manual."
@@ -391,6 +363,14 @@ msgstr "Poate accesa sau schimba fișiere personale sau de sistem fără permisi
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
 msgid "Show non-curated warnings"
 msgstr "Arată avertismente pentru aplicații neverificate"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:81
+msgid "Don’t Install"
+msgstr "Nu instala"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:82
+msgid "Install Anyway"
+msgstr "Instalează oricum"
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
@@ -1001,6 +981,18 @@ msgstr "Aplicații la zi"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:223
 msgid "Update"
 msgstr "Actualizează"
+
+#~ msgid "Content Warning"
+#~ msgstr "Avertisment privind conținutul"
+
+#~ msgid "“%s” contains explicit content"
+#~ msgstr "“%s” are conținut explicit"
+
+#~ msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
+#~ msgstr "“%s” poate avea conținut adecvat numai pentru adulți sau care poate fi sensibil sau deranjant. În general, elementary nu revizuie sau aprobă conținutul acestei aplicații."
+
+#~ msgid "Show content warnings"
+#~ msgstr "Arată avertizări pentru conținut"
 
 #, fuzzy
 #~| msgid "Content Warning"

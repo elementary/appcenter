@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-15 19:34+0000\n"
+"POT-Creation-Date: 2021-09-15 19:39+0000\n"
 "PO-Revision-Date: 2021-09-15 09:01+0000\n"
 "Last-Translator: supaeasy <ismo+github@wolffson.ch>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/appcenter/appcenter/de/>\n"
@@ -328,34 +328,6 @@ msgstr "Neustart erforderlich"
 msgid "Please restart your system to finalize updates"
 msgstr "System neu starten, um die Aktualisierungen abzuschließen"
 
-#: src/Dialogs/ContentWarningDialog.vala:25
-msgid "Content Warning"
-msgstr "Inhaltswarnung"
-
-#: src/Dialogs/ContentWarningDialog.vala:30
-#, c-format
-msgid "“%s” contains explicit content"
-msgstr "»%s« enthält anstößige Inhalte"
-
-#: src/Dialogs/ContentWarningDialog.vala:31
-#, c-format
-msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
-msgstr "»%s« weist möglicherweise Inhalte auf, die nur für Erwachsene geeignet sind, oder ganz allgemein belastend oder verstörend sind. elementary überprüft grundsätzlich keine Anwendungsinhalte und befürwortet diese prinzipiell nicht."
-
-#: src/Dialogs/ContentWarningDialog.vala:33
-msgid "Show content warnings"
-msgstr "Warnungen zum Inhalt anzeigen"
-
-#: src/Dialogs/ContentWarningDialog.vala:37
-#: src/Dialogs/NonCuratedWarningDialog.vala:81
-msgid "Don’t Install"
-msgstr "Nicht installieren"
-
-#: src/Dialogs/ContentWarningDialog.vala:38
-#: src/Dialogs/NonCuratedWarningDialog.vala:82
-msgid "Install Anyway"
-msgstr "Trotzdem installieren"
-
 #: src/Dialogs/InstallFailDialog.vala:26
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
 msgstr "Dies kann ein vorübergehendes Problem sein oder durch externe oder manuell kompilierte Software verursacht worden sein."
@@ -393,6 +365,14 @@ msgstr "Möglicherweise verursacht es ohne Erlaubnis Zugriffe auf oder Veränder
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
 msgid "Show non-curated warnings"
 msgstr "Warnungen zu unbetreuter Software anzeigen"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:81
+msgid "Don’t Install"
+msgstr "Nicht installieren"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:82
+msgid "Install Anyway"
+msgstr "Trotzdem installieren"
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
@@ -998,6 +978,18 @@ msgstr "Aktuell"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:223
 msgid "Update"
 msgstr "Aktualisieren"
+
+#~ msgid "Content Warning"
+#~ msgstr "Inhaltswarnung"
+
+#~ msgid "“%s” contains explicit content"
+#~ msgstr "»%s« enthält anstößige Inhalte"
+
+#~ msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
+#~ msgstr "»%s« weist möglicherweise Inhalte auf, die nur für Erwachsene geeignet sind, oder ganz allgemein belastend oder verstörend sind. elementary überprüft grundsätzlich keine Anwendungsinhalte und befürwortet diese prinzipiell nicht."
+
+#~ msgid "Show content warnings"
+#~ msgstr "Warnungen zum Inhalt anzeigen"
 
 #~ msgid "Content Warnings"
 #~ msgstr "Inhaltswarnungen"

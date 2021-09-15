@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-15 19:34+0000\n"
+"POT-Creation-Date: 2021-09-15 19:39+0000\n"
 "PO-Revision-Date: 2021-09-05 00:54+0000\n"
 "Last-Translator: aalhaif <aalhaif@hotmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/appcenter/ar/>\n"
@@ -338,34 +338,6 @@ msgstr "إعادة التشغيل مطلوبة"
 msgid "Please restart your system to finalize updates"
 msgstr "الرجاء إعادة تشغيل نظامك لإنهاء التحديثات"
 
-#: src/Dialogs/ContentWarningDialog.vala:25
-msgid "Content Warning"
-msgstr "تحذير محتوى"
-
-#: src/Dialogs/ContentWarningDialog.vala:30
-#, c-format
-msgid "“%s” contains explicit content"
-msgstr "يحتوي ”%s“ على محتوى صريح"
-
-#: src/Dialogs/ContentWarningDialog.vala:31
-#, c-format
-msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
-msgstr "يمكن أن يحتوي ”%s“ على محتوى قد يكون مناسباً فقط للبالغين أو قد يكون حساساً أو مزعجاً. بشكل عام، لا تقوم elementary بمراجعة محتوى هذه التطبيقات أو حتى المصادقة عليه."
-
-#: src/Dialogs/ContentWarningDialog.vala:33
-msgid "Show content warnings"
-msgstr "أظهر تحذيرات المحتوى"
-
-#: src/Dialogs/ContentWarningDialog.vala:37
-#: src/Dialogs/NonCuratedWarningDialog.vala:81
-msgid "Don’t Install"
-msgstr "لا تثبت"
-
-#: src/Dialogs/ContentWarningDialog.vala:38
-#: src/Dialogs/NonCuratedWarningDialog.vala:82
-msgid "Install Anyway"
-msgstr "ثبت على أي حال"
-
 #: src/Dialogs/InstallFailDialog.vala:26
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
 msgstr "يمكن أن تكون هذه مشكلة مؤقتة أو قد تكون بسبب برامج خارجية أو برامج تم بناؤها من الكود المصدري يدوياً."
@@ -403,6 +375,14 @@ msgstr "قد يستطيع الوصول إلى ملفات النظام والمل
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
 msgid "Show non-curated warnings"
 msgstr "أظهر تحذيرات التطبيقات غير المختارة"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:81
+msgid "Don’t Install"
+msgstr "لا تثبت"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:82
+msgid "Install Anyway"
+msgstr "ثبت على أي حال"
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
@@ -1014,6 +994,18 @@ msgstr "محدث بالكامل"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:223
 msgid "Update"
 msgstr "حدث"
+
+#~ msgid "Content Warning"
+#~ msgstr "تحذير محتوى"
+
+#~ msgid "“%s” contains explicit content"
+#~ msgstr "يحتوي ”%s“ على محتوى صريح"
+
+#~ msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
+#~ msgstr "يمكن أن يحتوي ”%s“ على محتوى قد يكون مناسباً فقط للبالغين أو قد يكون حساساً أو مزعجاً. بشكل عام، لا تقوم elementary بمراجعة محتوى هذه التطبيقات أو حتى المصادقة عليه."
+
+#~ msgid "Show content warnings"
+#~ msgstr "أظهر تحذيرات المحتوى"
 
 #, fuzzy
 #~| msgid "Content Warning"

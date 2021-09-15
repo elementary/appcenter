@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-15 19:34+0000\n"
+"POT-Creation-Date: 2021-09-15 19:39+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Daniel Foré <daniel@elementary.io>\n"
 "Language-Team: Greek <https://l10n.elementary.io/projects/appcenter/appcenter/el/>\n"
@@ -328,35 +328,6 @@ msgstr "Απαιτείται επανεκκίνηση"
 msgid "Please restart your system to finalize updates"
 msgstr "Παρακαλώ κάντε επανεκκίνηση του συστήματός σας για να ολοκληρώσετε τις ενημερώσεις"
 
-#: src/Dialogs/ContentWarningDialog.vala:25
-msgid "Content Warning"
-msgstr "Προειδοποίηση περιεχομένου"
-
-#: src/Dialogs/ContentWarningDialog.vala:30
-#, fuzzy, c-format
-msgid "“%s” contains explicit content"
-msgstr "%s Περιλαμβάνει ακατάλληλο περιεχόμενο για ορισμένους χρήστες"
-
-#: src/Dialogs/ContentWarningDialog.vala:31
-#, fuzzy, c-format
-msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
-msgstr "%s περιλαμβάνει περιεχόμενο για ενήλικους που μπορεί να είναι ευαίσθητο ή ενοχλητικό. Γενικά, τα elementary δεν ελέγχουν ή επικυρώνουν τα περιεχόμενα αυτής της εφαρμογής."
-
-#: src/Dialogs/ContentWarningDialog.vala:33
-msgid "Show content warnings"
-msgstr "Προβολή ειδοποιήσεων περιεχομένου"
-
-#: src/Dialogs/ContentWarningDialog.vala:37
-#: src/Dialogs/NonCuratedWarningDialog.vala:81
-msgid "Don’t Install"
-msgstr "Μην κάνεις εγκατάσταση"
-
-#: src/Dialogs/ContentWarningDialog.vala:38
-#: src/Dialogs/NonCuratedWarningDialog.vala:82
-#, fuzzy
-msgid "Install Anyway"
-msgstr "Γίνεται εγκατάσταση"
-
 #: src/Dialogs/InstallFailDialog.vala:26
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
 msgstr ""
@@ -399,6 +370,15 @@ msgstr ""
 #| msgid "Show content warnings"
 msgid "Show non-curated warnings"
 msgstr "Προβολή ειδοποιήσεων περιεχομένου"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:81
+msgid "Don’t Install"
+msgstr "Μην κάνεις εγκατάσταση"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:82
+#, fuzzy
+msgid "Install Anyway"
+msgstr "Γίνεται εγκατάσταση"
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
@@ -1024,6 +1004,20 @@ msgstr "Ενημερωμένες"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:223
 msgid "Update"
 msgstr "Ενημέρωση"
+
+#~ msgid "Content Warning"
+#~ msgstr "Προειδοποίηση περιεχομένου"
+
+#, fuzzy
+#~ msgid "“%s” contains explicit content"
+#~ msgstr "%s Περιλαμβάνει ακατάλληλο περιεχόμενο για ορισμένους χρήστες"
+
+#, fuzzy
+#~ msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
+#~ msgstr "%s περιλαμβάνει περιεχόμενο για ενήλικους που μπορεί να είναι ευαίσθητο ή ενοχλητικό. Γενικά, τα elementary δεν ελέγχουν ή επικυρώνουν τα περιεχόμενα αυτής της εφαρμογής."
+
+#~ msgid "Show content warnings"
+#~ msgstr "Προβολή ειδοποιήσεων περιεχομένου"
 
 #, fuzzy
 #~| msgid "Content Warning"

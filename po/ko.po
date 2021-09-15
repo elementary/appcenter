@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-15 19:34+0000\n"
+"POT-Creation-Date: 2021-09-15 19:39+0000\n"
 "PO-Revision-Date: 2019-06-30 03:52+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/appcenter/appcenter/ko/>\n"
@@ -325,34 +325,6 @@ msgstr "다시 시작해야 합니다"
 msgid "Please restart your system to finalize updates"
 msgstr "업데이트를 마무리하시려면 컴퓨터를 다시 시작해주세요"
 
-#: src/Dialogs/ContentWarningDialog.vala:25
-msgid "Content Warning"
-msgstr "콘텐츠 주의 알림"
-
-#: src/Dialogs/ContentWarningDialog.vala:30
-#, fuzzy, c-format
-msgid "“%s” contains explicit content"
-msgstr "%s에는 노골적인 내용이 있습니다"
-
-#: src/Dialogs/ContentWarningDialog.vala:31
-#, fuzzy, c-format
-msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
-msgstr "%s에는 성인에게만 적합하거나 민감한 또는 불편한 내용이 있을 수 있습니다. 통상적으로, elementary는 이 앱을 검토하거나 승인하지 않습니다."
-
-#: src/Dialogs/ContentWarningDialog.vala:33
-msgid "Show content warnings"
-msgstr "콘텐츠 주의 알림 보이기"
-
-#: src/Dialogs/ContentWarningDialog.vala:37
-#: src/Dialogs/NonCuratedWarningDialog.vala:81
-msgid "Don’t Install"
-msgstr "설치하지 마세요"
-
-#: src/Dialogs/ContentWarningDialog.vala:38
-#: src/Dialogs/NonCuratedWarningDialog.vala:82
-msgid "Install Anyway"
-msgstr "아무튼 설치합니다"
-
 #: src/Dialogs/InstallFailDialog.vala:26
 #, fuzzy
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
@@ -398,6 +370,14 @@ msgstr ""
 #| msgid "Show content warnings"
 msgid "Show non-curated warnings"
 msgstr "콘텐츠 주의 알림 보이기"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:81
+msgid "Don’t Install"
+msgstr "설치하지 마세요"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:82
+msgid "Install Anyway"
+msgstr "아무튼 설치합니다"
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
@@ -1016,6 +996,20 @@ msgstr "최신 버전입니다"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:223
 msgid "Update"
 msgstr "업데이트"
+
+#~ msgid "Content Warning"
+#~ msgstr "콘텐츠 주의 알림"
+
+#, fuzzy
+#~ msgid "“%s” contains explicit content"
+#~ msgstr "%s에는 노골적인 내용이 있습니다"
+
+#, fuzzy
+#~ msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
+#~ msgstr "%s에는 성인에게만 적합하거나 민감한 또는 불편한 내용이 있을 수 있습니다. 통상적으로, elementary는 이 앱을 검토하거나 승인하지 않습니다."
+
+#~ msgid "Show content warnings"
+#~ msgstr "콘텐츠 주의 알림 보이기"
 
 #, fuzzy
 #~| msgid "Content Warning"

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-15 19:34+0000\n"
+"POT-Creation-Date: 2021-09-15 19:39+0000\n"
 "PO-Revision-Date: 2021-03-11 10:09+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <https://l10n.elementary.io/projects/appcenter/appcenter/sr/>\n"
@@ -325,34 +325,6 @@ msgstr "Потребно је поновно покретање система"
 msgid "Please restart your system to finalize updates"
 msgstr "Поново покрените систем да завршите са освежењима"
 
-#: src/Dialogs/ContentWarningDialog.vala:25
-msgid "Content Warning"
-msgstr "Упозорење садржаја"
-
-#: src/Dialogs/ContentWarningDialog.vala:30
-#, c-format
-msgid "“%s” contains explicit content"
-msgstr "„%s“ садржи изричити садржај"
-
-#: src/Dialogs/ContentWarningDialog.vala:31
-#, c-format
-msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
-msgstr "„%s“ може садржати садржај пригодан само за одрасле или може бити осетљив или узнемирујући. Уопштено, елементари не прегледа нити оверава садржај овог програма."
-
-#: src/Dialogs/ContentWarningDialog.vala:33
-msgid "Show content warnings"
-msgstr "Прикажи упозорења садржаја"
-
-#: src/Dialogs/ContentWarningDialog.vala:37
-#: src/Dialogs/NonCuratedWarningDialog.vala:81
-msgid "Don’t Install"
-msgstr "Немој инсталирати"
-
-#: src/Dialogs/ContentWarningDialog.vala:38
-#: src/Dialogs/NonCuratedWarningDialog.vala:82
-msgid "Install Anyway"
-msgstr "Инсталирај ипак"
-
 #: src/Dialogs/InstallFailDialog.vala:26
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
 msgstr "Ово може бити привремени проблем или га је проузроковао спољни или ручно преведени софтвер."
@@ -390,6 +362,14 @@ msgstr "Може приступити или изменити систем ил�
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
 msgid "Show non-curated warnings"
 msgstr "Прикажи упозорења неодржаваних"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:81
+msgid "Don’t Install"
+msgstr "Немој инсталирати"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:82
+msgid "Install Anyway"
+msgstr "Инсталирај ипак"
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
@@ -1002,6 +982,18 @@ msgstr "Освежено је"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:223
 msgid "Update"
 msgstr "Освежи"
+
+#~ msgid "Content Warning"
+#~ msgstr "Упозорење садржаја"
+
+#~ msgid "“%s” contains explicit content"
+#~ msgstr "„%s“ садржи изричити садржај"
+
+#~ msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
+#~ msgstr "„%s“ може садржати садржај пригодан само за одрасле или може бити осетљив или узнемирујући. Уопштено, елементари не прегледа нити оверава садржај овог програма."
+
+#~ msgid "Show content warnings"
+#~ msgstr "Прикажи упозорења садржаја"
 
 #, fuzzy
 #~| msgid "Content Warning"

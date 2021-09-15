@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-15 19:34+0000\n"
+"POT-Creation-Date: 2021-09-15 19:39+0000\n"
 "PO-Revision-Date: 2020-05-31 16:11+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/appcenter/appcenter/cs/>\n"
@@ -331,34 +331,6 @@ msgstr "Vyžadován restart"
 msgid "Please restart your system to finalize updates"
 msgstr "Pro dokončení aktualizací prosím restartujte váš systém"
 
-#: src/Dialogs/ContentWarningDialog.vala:25
-msgid "Content Warning"
-msgstr "Upozornění na citlivý obsah"
-
-#: src/Dialogs/ContentWarningDialog.vala:30
-#, c-format
-msgid "“%s” contains explicit content"
-msgstr "„%s“ obsahuje nevhodný obsah"
-
-#: src/Dialogs/ContentWarningDialog.vala:31
-#, c-format
-msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
-msgstr "„%s“ může zahrnovat obsah, který je vhodný pouze pro dospělé, nebo který může být citlivý, či pohoršující. Obecně, společnost elementary tento obsah nekontroluje ani nepodporuje."
-
-#: src/Dialogs/ContentWarningDialog.vala:33
-msgid "Show content warnings"
-msgstr "Zobrazit upozornění ohledně obsahu"
-
-#: src/Dialogs/ContentWarningDialog.vala:37
-#: src/Dialogs/NonCuratedWarningDialog.vala:81
-msgid "Don’t Install"
-msgstr "Neinstalovat"
-
-#: src/Dialogs/ContentWarningDialog.vala:38
-#: src/Dialogs/NonCuratedWarningDialog.vala:82
-msgid "Install Anyway"
-msgstr "Přesto instalovat"
-
 #: src/Dialogs/InstallFailDialog.vala:26
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
 msgstr "Toto může být dočasný problém nebo může být způsobeno softwarem, pocházejícím z externího repozitáře nebo z ruční kompilace."
@@ -396,6 +368,14 @@ msgstr "Může přistupovat k nebo měnit systémové či osobní soubory bez do
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
 msgid "Show non-curated warnings"
 msgstr "Zobrazovat varování ohledně neprověřených aplikací"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:81
+msgid "Don’t Install"
+msgstr "Neinstalovat"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:82
+msgid "Install Anyway"
+msgstr "Přesto instalovat"
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
@@ -1011,6 +991,18 @@ msgstr "Aktuální"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:223
 msgid "Update"
 msgstr "Aktualizovat"
+
+#~ msgid "Content Warning"
+#~ msgstr "Upozornění na citlivý obsah"
+
+#~ msgid "“%s” contains explicit content"
+#~ msgstr "„%s“ obsahuje nevhodný obsah"
+
+#~ msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
+#~ msgstr "„%s“ může zahrnovat obsah, který je vhodný pouze pro dospělé, nebo který může být citlivý, či pohoršující. Obecně, společnost elementary tento obsah nekontroluje ani nepodporuje."
+
+#~ msgid "Show content warnings"
+#~ msgstr "Zobrazit upozornění ohledně obsahu"
 
 #, fuzzy
 #~| msgid "Content Warning"

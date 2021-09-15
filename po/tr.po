@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-15 19:34+0000\n"
+"POT-Creation-Date: 2021-09-15 19:39+0000\n"
 "PO-Revision-Date: 2021-09-15 12:46+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/appcenter/appcenter/tr/>\n"
@@ -330,34 +330,6 @@ msgstr "Yeniden Başlatma Gerekli"
 msgid "Please restart your system to finalize updates"
 msgstr "Lütfen güncellemeler bittikten sonra sisteminizi yeniden başlatın"
 
-#: src/Dialogs/ContentWarningDialog.vala:25
-msgid "Content Warning"
-msgstr "İçerik Uyarısı"
-
-#: src/Dialogs/ContentWarningDialog.vala:30
-#, c-format
-msgid "“%s” contains explicit content"
-msgstr "\"%s\" müstehcen içerik barındırır"
-
-#: src/Dialogs/ContentWarningDialog.vala:31
-#, c-format
-msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
-msgstr "\"%s\" yetişkinlere yönelik, rahatsız edici veya hassas içerik barındırabilir. Genel olarak, elementary bu uygulama içindeki içerikleri gözden geçirmez veya kontrol etmez."
-
-#: src/Dialogs/ContentWarningDialog.vala:33
-msgid "Show content warnings"
-msgstr "İçerik uyarılarını göster"
-
-#: src/Dialogs/ContentWarningDialog.vala:37
-#: src/Dialogs/NonCuratedWarningDialog.vala:81
-msgid "Don’t Install"
-msgstr "Yüklemeyin"
-
-#: src/Dialogs/ContentWarningDialog.vala:38
-#: src/Dialogs/NonCuratedWarningDialog.vala:82
-msgid "Install Anyway"
-msgstr "Yine de Yükle"
-
 #: src/Dialogs/InstallFailDialog.vala:26
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
 msgstr "Bu geçici bir sorun veya harici ya da elle derlenmiş yazılımlardan kaynaklanmış olabilir."
@@ -395,6 +367,14 @@ msgstr "Sistem veya kişisel dosyalarınıza izniniz olmadan erişebilir veya bu
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
 msgid "Show non-curated warnings"
 msgstr "Doğrulanmamış içerik uyarılarını göster"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:81
+msgid "Don’t Install"
+msgstr "Yüklemeyin"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:82
+msgid "Install Anyway"
+msgstr "Yine de Yükle"
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
@@ -1000,6 +980,18 @@ msgstr "Güncel"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:223
 msgid "Update"
 msgstr "Güncelle"
+
+#~ msgid "Content Warning"
+#~ msgstr "İçerik Uyarısı"
+
+#~ msgid "“%s” contains explicit content"
+#~ msgstr "\"%s\" müstehcen içerik barındırır"
+
+#~ msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
+#~ msgstr "\"%s\" yetişkinlere yönelik, rahatsız edici veya hassas içerik barındırabilir. Genel olarak, elementary bu uygulama içindeki içerikleri gözden geçirmez veya kontrol etmez."
+
+#~ msgid "Show content warnings"
+#~ msgstr "İçerik uyarılarını göster"
 
 #~ msgid "Content Warnings"
 #~ msgstr "İçerik Uyarıları"

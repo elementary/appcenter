@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.elementary.appcenter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-15 19:34+0000\n"
+"POT-Creation-Date: 2021-09-15 19:39+0000\n"
 "PO-Revision-Date: 2021-07-29 06:15+0000\n"
 "Last-Translator: elSolus <tumbleweed@tuta.io>\n"
 "Language-Team: Punjabi <https://l10n.elementary.io/projects/appcenter/appcenter/pa/>\n"
@@ -323,34 +323,6 @@ msgstr "ਸਿਸਟਮ ਰੀਸਟਾਰਟ ਕਰਨਾ ਜ਼ਰੂਰੀ �
 msgid "Please restart your system to finalize updates"
 msgstr "ਅਪਡੇਟਾਂ ਪੱਕੀਆਂ ਕਰਨ ਲਈ ਮਿਹਰਬਾਨੀ ਕਰਕੇ ਆਪਣੇ ਸਿਸਟਮ ਨੂੰ ਰੀਸਟਾਰਟ ਕਰੋ"
 
-#: src/Dialogs/ContentWarningDialog.vala:25
-msgid "Content Warning"
-msgstr "ਸਮੱਗਰੀ ਚਿਤਾਵਨੀ"
-
-#: src/Dialogs/ContentWarningDialog.vala:30
-#, c-format
-msgid "“%s” contains explicit content"
-msgstr "“%s” ਵਿੱਚ ਸਪਸ਼ਟ ਸਮੱਗਰੀ ਹੈ"
-
-#: src/Dialogs/ContentWarningDialog.vala:31
-#, c-format
-msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
-msgstr "ਹੋ ਸਕਦੈ “%s” ਵਿੱਚ ਉਹ ਸਮੱਗਰੀ ਹੋਵੇ ਜੋ ਮਾੜੇ ਦਿਲ ਵਾਲ਼ਿਆਂ ਲਈ ਨਾ ਹੋਵੇ, ਜਾਂ ਜੋ ਸਿਰਫ਼ ਬਾਲਗ਼ ਲੋਕਾਂ ਲਈ ਮੁਨਾਸਿਬ ਹੋਵੇ। ਆਮ ਕਰਕੇ ਐਲਮੈਂਟਰੀ ਇਸ ਐਪ ਦੀ ਸਮੱਗਰੀ ਜਾਂਚਦਾ ਨਹੀਂ।"
-
-#: src/Dialogs/ContentWarningDialog.vala:33
-msgid "Show content warnings"
-msgstr "ਸਮੱਗਰੀ ਚਿਤਾਵਨੀਆਂ ਵਿਖਾਓ"
-
-#: src/Dialogs/ContentWarningDialog.vala:37
-#: src/Dialogs/NonCuratedWarningDialog.vala:81
-msgid "Don’t Install"
-msgstr "ਸਥਾਪਤ ਨਾ ਕਰੋ"
-
-#: src/Dialogs/ContentWarningDialog.vala:38
-#: src/Dialogs/NonCuratedWarningDialog.vala:82
-msgid "Install Anyway"
-msgstr "ਕੋਈ ਗੱਲ ਨਹੀਂ, ਸਥਾਪਤ ਕਰੋ"
-
 #: src/Dialogs/InstallFailDialog.vala:26
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
 msgstr "ਇਹ ਸ਼ਾਇਦ ਆਰਜ਼ੀ ਮਸਲਾ ਹੋਵੇ ਜਾਂ ਕਿਸੇ ਬਾਹਰੀ ਜਾਂ ਹੱਥੀਂ ਕੰਪਾਇਲ ਕੀਤੇ ਸਾਫ਼ਟਵੇਅਰ ਦੇ ਕਰਕੇ ਹੋਵੇ।"
@@ -388,6 +360,14 @@ msgstr "ਇਹ ਸਿਸਟਮ ਜਾਂ ਨਿੱਜੀ ਫ਼ਾਇਲਾਂ �
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
 msgid "Show non-curated warnings"
 msgstr "ਅਣ-ਸੰਵਾਰੀਆਂ ਲਈ ਚਿਤਾਵਨੀਆਂ ਵਿਖਾਓ"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:81
+msgid "Don’t Install"
+msgstr "ਸਥਾਪਤ ਨਾ ਕਰੋ"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:82
+msgid "Install Anyway"
+msgstr "ਕੋਈ ਗੱਲ ਨਹੀਂ, ਸਥਾਪਤ ਕਰੋ"
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
@@ -997,6 +977,18 @@ msgstr "ਤਰੋ-ਤਾਜ਼ਾ (ਅਪ ਟੂ ਡੇਟ)"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:223
 msgid "Update"
 msgstr "ਅਪਡੇਟ"
+
+#~ msgid "Content Warning"
+#~ msgstr "ਸਮੱਗਰੀ ਚਿਤਾਵਨੀ"
+
+#~ msgid "“%s” contains explicit content"
+#~ msgstr "“%s” ਵਿੱਚ ਸਪਸ਼ਟ ਸਮੱਗਰੀ ਹੈ"
+
+#~ msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
+#~ msgstr "ਹੋ ਸਕਦੈ “%s” ਵਿੱਚ ਉਹ ਸਮੱਗਰੀ ਹੋਵੇ ਜੋ ਮਾੜੇ ਦਿਲ ਵਾਲ਼ਿਆਂ ਲਈ ਨਾ ਹੋਵੇ, ਜਾਂ ਜੋ ਸਿਰਫ਼ ਬਾਲਗ਼ ਲੋਕਾਂ ਲਈ ਮੁਨਾਸਿਬ ਹੋਵੇ। ਆਮ ਕਰਕੇ ਐਲਮੈਂਟਰੀ ਇਸ ਐਪ ਦੀ ਸਮੱਗਰੀ ਜਾਂਚਦਾ ਨਹੀਂ।"
+
+#~ msgid "Show content warnings"
+#~ msgstr "ਸਮੱਗਰੀ ਚਿਤਾਵਨੀਆਂ ਵਿਖਾਓ"
 
 #, fuzzy
 #~| msgid "Content Warning"

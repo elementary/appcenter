@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-15 19:34+0000\n"
+"POT-Creation-Date: 2021-09-15 19:39+0000\n"
 "PO-Revision-Date: 2021-09-11 15:43+0000\n"
 "Last-Translator: Camellan <camellan@yandex.ru>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/appcenter/ru/>\n"
@@ -330,34 +330,6 @@ msgstr "Требуется перезагрузка"
 msgid "Please restart your system to finalize updates"
 msgstr "Перезагрузите систему, чтобы завершить обновление"
 
-#: src/Dialogs/ContentWarningDialog.vala:25
-msgid "Content Warning"
-msgstr "Предупреждение о содержании"
-
-#: src/Dialogs/ContentWarningDialog.vala:30
-#, c-format
-msgid "“%s” contains explicit content"
-msgstr "«%s» содержит откровенный контент"
-
-#: src/Dialogs/ContentWarningDialog.vala:31
-#, c-format
-msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
-msgstr "«%s» может иметь беспокоящий или тревожный контент, или подходящий только для взрослых. elementary не просматривает и не одобряет содержимое этого приложения."
-
-#: src/Dialogs/ContentWarningDialog.vala:33
-msgid "Show content warnings"
-msgstr "Показывать предупреждения о содержании"
-
-#: src/Dialogs/ContentWarningDialog.vala:37
-#: src/Dialogs/NonCuratedWarningDialog.vala:81
-msgid "Don’t Install"
-msgstr "Не устанавливать"
-
-#: src/Dialogs/ContentWarningDialog.vala:38
-#: src/Dialogs/NonCuratedWarningDialog.vala:82
-msgid "Install Anyway"
-msgstr "Всё равно установить"
-
 #: src/Dialogs/InstallFailDialog.vala:26
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
 msgstr "Это может быть временной проблемой, вызванной программным обеспечением установленным из внешних источников или собранным вручную."
@@ -395,6 +367,14 @@ msgstr "Может иметь доступ или изменять систем�
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
 msgid "Show non-curated warnings"
 msgstr "Показывать предупреждения про не курируемые приложения"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:81
+msgid "Don’t Install"
+msgstr "Не устанавливать"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:82
+msgid "Install Anyway"
+msgstr "Всё равно установить"
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
@@ -1001,6 +981,18 @@ msgstr "Обновления не требуются"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:223
 msgid "Update"
 msgstr "Обновить"
+
+#~ msgid "Content Warning"
+#~ msgstr "Предупреждение о содержании"
+
+#~ msgid "“%s” contains explicit content"
+#~ msgstr "«%s» содержит откровенный контент"
+
+#~ msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
+#~ msgstr "«%s» может иметь беспокоящий или тревожный контент, или подходящий только для взрослых. elementary не просматривает и не одобряет содержимое этого приложения."
+
+#~ msgid "Show content warnings"
+#~ msgstr "Показывать предупреждения о содержании"
 
 #, fuzzy
 #~| msgid "Content Warning"

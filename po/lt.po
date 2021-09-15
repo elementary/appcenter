@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-15 19:34+0000\n"
+"POT-Creation-Date: 2021-09-15 19:39+0000\n"
 "PO-Revision-Date: 2019-10-12 13:23+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://l10n.elementary.io/projects/appcenter/appcenter/lt/>\n"
@@ -333,34 +333,6 @@ msgstr "Reikalingas paleidimas iš naujo"
 msgid "Please restart your system to finalize updates"
 msgstr "Norėdami užbaigti atnaujinimus, paleiskite savo sistemą iš naujo"
 
-#: src/Dialogs/ContentWarningDialog.vala:25
-msgid "Content Warning"
-msgstr "Įspėjimas dėl turinio"
-
-#: src/Dialogs/ContentWarningDialog.vala:30
-#, fuzzy, c-format
-msgid "“%s” contains explicit content"
-msgstr "Programoje %s yra turinio suaugusiems"
-
-#: src/Dialogs/ContentWarningDialog.vala:31
-#, fuzzy, c-format
-msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
-msgstr "Programoje %s gali būti turinys, kuris yra skirtas suaugusiems arba, kuris gali būti intymus ar keliantis nerimą. Apskritai, elementary neperžiūri arba nepritaria šios programos turiniui."
-
-#: src/Dialogs/ContentWarningDialog.vala:33
-msgid "Show content warnings"
-msgstr "Rodyti įspėjimus dėl turinio"
-
-#: src/Dialogs/ContentWarningDialog.vala:37
-#: src/Dialogs/NonCuratedWarningDialog.vala:81
-msgid "Don’t Install"
-msgstr "Neįdiegti"
-
-#: src/Dialogs/ContentWarningDialog.vala:38
-#: src/Dialogs/NonCuratedWarningDialog.vala:82
-msgid "Install Anyway"
-msgstr "Vis tiek įdiegti"
-
 #: src/Dialogs/InstallFailDialog.vala:26
 #, fuzzy
 #| msgid "This may have been caused by external or manually compiled software."
@@ -409,6 +381,14 @@ msgstr ""
 #| msgid "Show content warnings"
 msgid "Show non-curated warnings"
 msgstr "Rodyti įspėjimus dėl turinio"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:81
+msgid "Don’t Install"
+msgstr "Neįdiegti"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:82
+msgid "Install Anyway"
+msgstr "Vis tiek įdiegti"
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
@@ -1026,6 +1006,20 @@ msgstr "Atnaujintos"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:223
 msgid "Update"
 msgstr "Atnaujinti"
+
+#~ msgid "Content Warning"
+#~ msgstr "Įspėjimas dėl turinio"
+
+#, fuzzy
+#~ msgid "“%s” contains explicit content"
+#~ msgstr "Programoje %s yra turinio suaugusiems"
+
+#, fuzzy
+#~ msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
+#~ msgstr "Programoje %s gali būti turinys, kuris yra skirtas suaugusiems arba, kuris gali būti intymus ar keliantis nerimą. Apskritai, elementary neperžiūri arba nepritaria šios programos turiniui."
+
+#~ msgid "Show content warnings"
+#~ msgstr "Rodyti įspėjimus dėl turinio"
 
 #, fuzzy
 #~| msgid "Content Warning"

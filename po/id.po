@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-15 19:34+0000\n"
+"POT-Creation-Date: 2021-09-15 19:39+0000\n"
 "PO-Revision-Date: 2020-12-23 23:11+0000\n"
 "Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/appcenter/appcenter/id/>\n"
@@ -319,34 +319,6 @@ msgstr "Mulai Ulang Dibutuhkan"
 msgid "Please restart your system to finalize updates"
 msgstr "Silakan mulai ulang sistem Anda untuk menyelesaikan pembaruan"
 
-#: src/Dialogs/ContentWarningDialog.vala:25
-msgid "Content Warning"
-msgstr "Peringatan Konten"
-
-#: src/Dialogs/ContentWarningDialog.vala:30
-#, c-format
-msgid "“%s” contains explicit content"
-msgstr "%s berisi konten eksplisit"
-
-#: src/Dialogs/ContentWarningDialog.vala:31
-#, c-format
-msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
-msgstr "%s mungkin berisi konten yang hanya cocok untuk orang dewasa atau sensitif atau mengganggu. Secara umum, elementary tidak meninjau atau mendukung konten aplikasi ini."
-
-#: src/Dialogs/ContentWarningDialog.vala:33
-msgid "Show content warnings"
-msgstr "Tampilkan peringatan konten"
-
-#: src/Dialogs/ContentWarningDialog.vala:37
-#: src/Dialogs/NonCuratedWarningDialog.vala:81
-msgid "Don’t Install"
-msgstr "Jangan Memasang"
-
-#: src/Dialogs/ContentWarningDialog.vala:38
-#: src/Dialogs/NonCuratedWarningDialog.vala:82
-msgid "Install Anyway"
-msgstr "Tetap Pasang"
-
 #: src/Dialogs/InstallFailDialog.vala:26
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
 msgstr "Ini mungkin masalah sementara atau bisa jadi disebabkan oleh perangkat lunak eksternal atau yang dikompilasi secara manual."
@@ -384,6 +356,14 @@ msgstr "Ini dapat mengakses atau mengubah sistem atau file pribadi tanpa izin"
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
 msgid "Show non-curated warnings"
 msgstr "Tampilkan peringatan yang tidak terkelola"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:81
+msgid "Don’t Install"
+msgstr "Jangan Memasang"
+
+#: src/Dialogs/NonCuratedWarningDialog.vala:82
+msgid "Install Anyway"
+msgstr "Tetap Pasang"
 
 #: src/Dialogs/StripeDialog.vala:41
 msgid "An error occurred while processing the card. Please try again later. We apologize for any inconvenience caused."
@@ -997,6 +977,18 @@ msgstr "Terbaru"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:223
 msgid "Update"
 msgstr "Perbarui"
+
+#~ msgid "Content Warning"
+#~ msgstr "Peringatan Konten"
+
+#~ msgid "“%s” contains explicit content"
+#~ msgstr "%s berisi konten eksplisit"
+
+#~ msgid "“%s” may contain content only suitable for adults or that may be sensitive or disturbing. In general, elementary does not review or endorse the contents of this app."
+#~ msgstr "%s mungkin berisi konten yang hanya cocok untuk orang dewasa atau sensitif atau mengganggu. Secara umum, elementary tidak meninjau atau mendukung konten aplikasi ini."
+
+#~ msgid "Show content warnings"
+#~ msgstr "Tampilkan peringatan konten"
 
 #, fuzzy
 #~| msgid "Content Warning"
