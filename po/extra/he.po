@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-15 18:52+0000\n"
-"PO-Revision-Date: 2021-09-12 03:48+0000\n"
+"PO-Revision-Date: 2021-09-15 19:20+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/extra/"
 "he/>\n"
@@ -66,7 +66,7 @@ msgstr "כרזות ניווט בעמוד הבית עם מחוות עם כמה א
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Show content warnings on app info pages"
-msgstr ""
+msgstr "אזהרות תוכן תוצגנה בעמודי פירוט של היישומים"
 
 #: data/io.elementary.appcenter.appdata.xml.in:24
 #: data/io.elementary.appcenter.appdata.xml.in:34
