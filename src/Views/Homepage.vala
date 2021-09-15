@@ -25,7 +25,6 @@ public class AppCenter.Homepage : AbstractView {
     private Gtk.FlowBox category_flow;
     private Gtk.ScrolledWindow category_scrolled;
     private AppStream.Category current_category;
-    private uint banner_timeout_id;
 
     public signal void page_loaded ();
 
@@ -38,6 +37,7 @@ public class AppCenter.Homepage : AbstractView {
     private Gtk.FlowBox recently_updated_carousel;
     private Gtk.Revealer recently_updated_revealer;
 
+    private uint banner_timeout_id;
 
     construct {
         banner_carousel = new Hdy.Carousel () {
@@ -319,6 +319,7 @@ public class AppCenter.Homepage : AbstractView {
         app_list_view.add_packages (apps);
     }
 
+#if HOMEPAGE
     private void banner_timeout_start () {
         banner_timeout_id = Timeout.add (MILLISECONDS_BETWEEN_BANNER_ITEMS, () => {
             var new_index = (uint) banner_carousel.position + 1;
@@ -340,4 +341,5 @@ public class AppCenter.Homepage : AbstractView {
             banner_timeout_id = 0;
         }
     }
+#endif
 }
