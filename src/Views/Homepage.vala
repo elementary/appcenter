@@ -86,7 +86,8 @@ public class AppCenter.Homepage : AbstractView {
         recently_updated_revealer.add (recently_updated_grid );
 
         var categories_label = new Granite.HeaderLabel (_("Categories")) {
-            margin_start = 24
+            margin_start = 24,
+            margin_top = 24
         };
 #else
     construct {
@@ -94,18 +95,21 @@ public class AppCenter.Homepage : AbstractView {
         category_flow = new Widgets.CategoryFlowBox () {
             margin_start = 12,
             margin_end =12,
+            margin_top = 12,
             valign = Gtk.Align.START
         };
 
         var grid = new Gtk.Grid () {
             column_spacing = 24,
-            orientation = Gtk.Orientation.VERTICAL,
-            row_spacing = 12
+            orientation = Gtk.Orientation.VERTICAL
         };
 #if HOMEPAGE
         grid.add (banner_revealer);
         grid.add (recently_updated_revealer);
         grid.add (categories_label);
+
+        // Remove since we have the label with its margin
+        category_flow.margin_top = 0;
 #endif
         grid.add (category_flow);
 
