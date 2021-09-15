@@ -104,7 +104,6 @@ public class AppCenter.Homepage : AbstractView {
             orientation = Gtk.Orientation.VERTICAL
         };
 #if HOMEPAGE
-
         grid.add (banner_revealer);
         grid.add (recently_updated_revealer);
         grid.add (categories_label);
