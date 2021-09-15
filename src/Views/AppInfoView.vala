@@ -187,7 +187,6 @@ namespace AppCenter.Views {
                     oars_flowbox.add (multiplayer);
                 }
 
-
                 var social_audio_value = rating.get_value ("social-audio");
                 if (
                     // NONE is defined as multi-player period, no chat
