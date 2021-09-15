@@ -12,9 +12,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-14 20:59+0000\n"
-"PO-Revision-Date: 2021-09-08 01:58+0000\n"
-"Last-Translator: Uwe S <saabisto@gmx.de>\n"
-"Language-Team: German <https://l10n.elementary.io/projects/appcenter/appcenter/de/>\n"
+"PO-Revision-Date: 2021-09-15 09:01+0000\n"
+"Last-Translator: supaeasy <ismo+github@wolffson.ch>\n"
+"Language-Team: German <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -594,57 +595,57 @@ msgstr "»%s« konnte nicht aktualisiert werden"
 
 #: src/Views/AppInfoView.vala:80
 msgid "Violence"
-msgstr ""
+msgstr "Gewalt"
 
 #: src/Views/AppInfoView.vala:81
 msgid "Cartoon, fantasy, or realistic violence"
-msgstr ""
+msgstr "Cartoon-, Fantasy- oder realistische Gewaltdarstellung"
 
 #: src/Views/AppInfoView.vala:86
 msgid "Illicit Substances"
-msgstr ""
+msgstr "Illegale Substanzen"
 
 #: src/Views/AppInfoView.vala:87
 msgid "Presence of or references to alcohol, narcotics, or tobacco"
-msgstr ""
+msgstr "Darstellung oder Referenzen zu Alkohol, Betäubungsmitteln oder Tabak"
 
 #: src/Views/AppInfoView.vala:92
 msgid "Sex & Nudity"
-msgstr ""
+msgstr "Sex & Nacktheit"
 
 #: src/Views/AppInfoView.vala:93
 msgid "Adult nudity or sexual themes"
-msgstr ""
+msgstr "Pornografische Nacktheit oder sexuelle Themen"
 
 #: src/Views/AppInfoView.vala:98
 msgid "Offensive Language"
-msgstr ""
+msgstr "Anstößige Sprache"
 
 #: src/Views/AppInfoView.vala:99
 msgid "Profanity, discriminatory language, or adult humor"
-msgstr ""
+msgstr "Schimpfwörter, Diskriminierung oder Erwachsenenhumor"
 
 #: src/Views/AppInfoView.vala:104
 msgid "Gambling"
-msgstr ""
+msgstr "Glücksspiel"
 
 #: src/Views/AppInfoView.vala:105
 msgid "Realistic or participatory gambling"
-msgstr ""
+msgstr "Realistisches oder eingebundenes Glücksspiel"
 
 #: src/Views/AppInfoView.vala:110
 msgid "Online Interactions"
-msgstr ""
+msgstr "Online Interaktionen"
 
 #: src/Views/AppInfoView.vala:111
 msgid "Communication or data is sent to the Internet for other humans to see"
 msgstr ""
+"Kommunikation oder Daten werden für andere Menschen sichtbar in das Internet "
+"gesendet"
 
 #: src/Views/AppInfoView.vala:115
-#, fuzzy
-#| msgid "Content Warning"
 msgid "Content Warnings"
-msgstr "Inhaltswarnung"
+msgstr "Inhaltswarnungen"
 
 #: src/Views/AppInfoView.vala:285
 msgid "Screenshot Not Available"
