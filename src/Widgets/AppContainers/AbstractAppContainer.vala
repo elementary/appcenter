@@ -352,33 +352,6 @@ namespace AppCenter {
                 }
             }
 
-            if (App.settings.get_boolean ("content-warning") == true && package.is_explicit) {
-                approved = false;
-
-                var content_warning = new Widgets.ContentWarningDialog (package.get_name ());
-                content_warning.transient_for = (Gtk.Window) get_toplevel ();
-
-                content_warning.response.connect ((response_id) => {
-                    switch (response_id) {
-                        case Gtk.ResponseType.OK:
-                            approved = true;
-                            break;
-                        case Gtk.ResponseType.CANCEL:
-                        case Gtk.ResponseType.CLOSE:
-                        case Gtk.ResponseType.DELETE_EVENT:
-                            approved = false;
-                            break;
-                        default:
-                            assert_not_reached ();
-                    }
-
-                    content_warning.close ();
-                });
-
-                content_warning.run ();
-                content_warning.destroy ();
-            }
-
             return approved;
         }
     }
