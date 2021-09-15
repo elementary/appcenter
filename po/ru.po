@@ -5,21 +5,20 @@
 # DartDeaDia <DartDeaDia@protonmail.com>, 2021.
 # asdffdsdaf <asdffdsdaf@gmail.com>, 2021.
 # DartDeaDia <dartdeadia@protonmail.com>, 2021.
+# Camellan <camellan@yandex.ru>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: Russian (Desktop)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-07 20:23+0000\n"
-"PO-Revision-Date: 2021-09-09 15:51+0000\n"
-"Last-Translator: DartDeaDia <dartdeadia@protonmail.com>\n"
-"Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/"
-"appcenter/ru/>\n"
+"POT-Creation-Date: 2021-09-14 20:59+0000\n"
+"PO-Revision-Date: 2021-09-11 15:43+0000\n"
+"Last-Translator: Camellan <camellan@yandex.ru>\n"
+"Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/appcenter/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
@@ -55,9 +54,9 @@ msgstr "«%s» установлено"
 msgid "Failed to launch “%s“"
 msgstr "Не удалось запустить «%s»"
 
-#: src/MainWindow.vala:171 src/Views/Homepage.vala:255
-#: src/Views/Homepage.vala:265 src/Views/Homepage.vala:270
-#: src/Views/Homepage.vala:281 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:171 src/Views/Homepage.vala:272
+#: src/Views/Homepage.vala:282 src/Views/Homepage.vala:287
+#: src/Views/Homepage.vala:298 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "Главная"
 
@@ -107,7 +106,7 @@ msgstr "Удаление пакетов"
 msgid "Downloading"
 msgstr "Загрузка"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:967
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:998
 msgid "Installing"
 msgstr "Установка"
 
@@ -152,9 +151,9 @@ msgid "Finished"
 msgstr "Завершено"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:976 src/Core/FlatpakBackend.vala:1004
-#: src/Core/FlatpakBackend.vala:1112 src/Core/FlatpakBackend.vala:1140
-#: src/Core/FlatpakBackend.vala:1286 src/Core/FlatpakBackend.vala:1312
+#: src/Core/FlatpakBackend.vala:1007 src/Core/FlatpakBackend.vala:1035
+#: src/Core/FlatpakBackend.vala:1143 src/Core/FlatpakBackend.vala:1171
+#: src/Core/FlatpakBackend.vala:1317 src/Core/FlatpakBackend.vala:1343
 msgid "Cancelling"
 msgstr "Отмена"
 
@@ -245,11 +244,11 @@ msgstr[0] "%u доступно обновление для вашей систе
 msgstr[1] "%u доступны обновления для вашей системы"
 msgstr[2] "%u доступно обновлений для вашей системы"
 
-#: src/Core/FlatpakBackend.vala:1103
+#: src/Core/FlatpakBackend.vala:1134
 msgid "Uninstalling"
 msgstr "Удаление"
 
-#: src/Core/FlatpakBackend.vala:1277
+#: src/Core/FlatpakBackend.vala:1308
 msgid "Updating"
 msgstr "Обновление"
 
@@ -428,9 +427,7 @@ msgstr "Почта"
 
 #: src/Dialogs/StripeDialog.vala:157
 msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
-msgstr ""
-"Будет использован только для отправки вам квитанции. Вы не будете подписаны "
-"ни на один список рассылки."
+msgstr "Будет использован только для отправки вам квитанции. Вы не будете подписаны ни на один список рассылки."
 
 #: src/Dialogs/StripeDialog.vala:158
 msgid "Privacy Policy"
@@ -597,84 +594,138 @@ msgstr "Не удалось обновить приложение"
 msgid "Failed to update “%s”"
 msgstr "Не удалось обновить «%s»"
 
-#: src/Views/AppInfoView.vala:187
+#: src/Views/AppInfoView.vala:80
+msgid "Violence"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:81
+msgid "Cartoon, fantasy, or realistic violence"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:86
+msgid "Illicit Substances"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:87
+msgid "Presence of or references to alcohol, narcotics, or tobacco"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:92
+msgid "Sex & Nudity"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:93
+msgid "Adult nudity or sexual themes"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:98
+msgid "Offensive Language"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:99
+msgid "Profanity, discriminatory language, or adult humor"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:104
+msgid "Gambling"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:105
+msgid "Realistic or participatory gambling"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:110
+msgid "Online Interactions"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:111
+msgid "Communication or data is sent to the Internet for other humans to see"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:115
+#, fuzzy
+#| msgid "Content Warning"
+msgid "Content Warnings"
+msgstr "Предупреждение о содержании"
+
+#: src/Views/AppInfoView.vala:285
 msgid "Screenshot Not Available"
 msgstr "Скриншот недоступен"
 
-#: src/Views/AppInfoView.vala:290
+#: src/Views/AppInfoView.vala:388
 msgid "Homepage"
 msgstr "Домашняя страница"
 
-#: src/Views/AppInfoView.vala:296
+#: src/Views/AppInfoView.vala:394
 msgid "Translate"
 msgstr "Перевести"
 
-#: src/Views/AppInfoView.vala:302
+#: src/Views/AppInfoView.vala:400
 msgid "Send Feedback"
 msgstr "Отправить отзыв"
 
-#: src/Views/AppInfoView.vala:308
+#: src/Views/AppInfoView.vala:406
 msgid "Help"
 msgstr "Помощь"
 
-#: src/Views/AppInfoView.vala:319
+#: src/Views/AppInfoView.vala:417
 msgid "What's New:"
 msgstr "Что нового:"
 
-#: src/Views/AppInfoView.vala:359
+#: src/Views/AppInfoView.vala:463
 msgid "Extensions:"
 msgstr "Расширения:"
 
-#: src/Views/AppInfoView.vala:462
+#: src/Views/AppInfoView.vala:566
 msgid "Link copied to clipboard"
 msgstr "Ссылка скопирована в буфер обмена"
 
-#: src/Views/AppInfoView.vala:473
+#: src/Views/AppInfoView.vala:577
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "Проверить %s в Центре приложений:"
 
-#: src/Views/AppInfoView.vala:481
+#: src/Views/AppInfoView.vala:585
 msgid "Share"
 msgstr "Поделиться"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:791
+#: src/Views/AppInfoView.vala:895
 msgid "Public Domain"
 msgstr "Общественное достояние"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:794
+#: src/Views/AppInfoView.vala:898
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://ru.wikipedia.org/wiki/%D0%9E%D0%B1%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B5_%D0%B4%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D0%B5"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:799
+#: src/Views/AppInfoView.vala:903
 msgid "Free Software"
 msgstr "Свободное программное обеспечение"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:802
+#: src/Views/AppInfoView.vala:906
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw.ru.html"
 
-#: src/Views/AppInfoView.vala:806
+#: src/Views/AppInfoView.vala:910
 msgid "Proprietary"
 msgstr "Проприетарное"
 
-#: src/Views/AppInfoView.vala:809
+#: src/Views/AppInfoView.vala:913
 msgid "Unknown License"
 msgstr "Неизвестная лицензия"
 
-#: src/Views/AppInfoView.vala:889
+#: src/Views/AppInfoView.vala:993
 msgid "Fund"
 msgstr "Поддержать"
 
-#: src/Views/AppInfoView.vala:897
+#: src/Views/AppInfoView.vala:1001
 msgid "Fund the development of this app"
 msgstr "Поддержать разработку этого приложения"
 
-#: src/Views/AppInfoView.vala:971
+#: src/Views/AppInfoView.vala:1091
 #, c-format
 msgid "Other Apps by %s"
 msgstr "Другие приложения от %s"
@@ -721,15 +772,15 @@ msgstr "Попробуйте перефразировать запрос. Вы �
 msgid "Non-Curated Apps"
 msgstr "Не курируемые приложения"
 
-#: src/Views/Homepage.vala:64
+#: src/Views/Homepage.vala:65
 msgid "Recently Updated"
 msgstr "Недавно обновлённые"
 
-#: src/Views/Homepage.vala:87
+#: src/Views/Homepage.vala:88
 msgid "Categories"
 msgstr "Категории"
 
-#: src/Views/Homepage.vala:270 src/Views/Homepage.vala:281
+#: src/Views/Homepage.vala:287 src/Views/Homepage.vala:298
 #, c-format
 msgid "Search %s"
 msgstr "Поиск %s"
@@ -739,14 +790,6 @@ msgstr "Поиск %s"
 msgctxt "view"
 msgid "Search"
 msgstr "Поиск"
-
-#: src/Widgets/Banner.vala:234
-msgid "The open source, pay-what-you-can app store"
-msgstr "Открытый магазин приложений, использующий модель «Платите, сколько сможете»"
-
-#: src/Widgets/Banner.vala:242
-msgid "Reviewed and curated for a native, privacy-respecting, and secure experience."
-msgstr ""
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
@@ -924,6 +967,12 @@ msgstr "Обновления не требуются"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:223
 msgid "Update"
 msgstr "Обновить"
+
+#~ msgid "The open source, pay-what-you-can app store"
+#~ msgstr "Открытый магазин приложений, использующий модель «Платите, сколько сможете»"
+
+#~ msgid "Reviewed and curated for a native, privacy-respecting, and secure experience."
+#~ msgstr "Проверяется и курируется для того, чтобы обеспечить оригинальный, уважающий конфиденциальность и безопасный опыт использования."
 
 #~ msgid "Only used to send you a receipt."
 #~ msgstr "Используется только для отправки Вам квитанции."

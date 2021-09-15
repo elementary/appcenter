@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-07 20:23+0000\n"
+"POT-Creation-Date: 2021-09-14 20:59+0000\n"
 "PO-Revision-Date: 2021-09-05 00:54+0000\n"
 "Last-Translator: aalhaif <aalhaif@hotmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/appcenter/ar/>\n"
@@ -53,9 +53,9 @@ msgstr "تم تثبيت ”%s“"
 msgid "Failed to launch “%s“"
 msgstr "فشل تشغيل ”%s“"
 
-#: src/MainWindow.vala:171 src/Views/Homepage.vala:255
-#: src/Views/Homepage.vala:265 src/Views/Homepage.vala:270
-#: src/Views/Homepage.vala:281 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:171 src/Views/Homepage.vala:272
+#: src/Views/Homepage.vala:282 src/Views/Homepage.vala:287
+#: src/Views/Homepage.vala:298 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "الرئيسية"
 
@@ -105,7 +105,7 @@ msgstr "قيد حذف الحزم"
 msgid "Downloading"
 msgstr "قيد التحميل"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:967
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:998
 msgid "Installing"
 msgstr "قيد التثبيت"
 
@@ -150,9 +150,9 @@ msgid "Finished"
 msgstr "انتهى"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:976 src/Core/FlatpakBackend.vala:1004
-#: src/Core/FlatpakBackend.vala:1112 src/Core/FlatpakBackend.vala:1140
-#: src/Core/FlatpakBackend.vala:1286 src/Core/FlatpakBackend.vala:1312
+#: src/Core/FlatpakBackend.vala:1007 src/Core/FlatpakBackend.vala:1035
+#: src/Core/FlatpakBackend.vala:1143 src/Core/FlatpakBackend.vala:1171
+#: src/Core/FlatpakBackend.vala:1317 src/Core/FlatpakBackend.vala:1343
 msgid "Cancelling"
 msgstr "قيد الإلغاء"
 
@@ -249,11 +249,11 @@ msgstr[3] "تتوفر %u تحديثات لنظامك"
 msgstr[4] "يتوفر %u تحديثاً لنظامك"
 msgstr[5] "يتوفر %u تحديث لنظامك"
 
-#: src/Core/FlatpakBackend.vala:1103
+#: src/Core/FlatpakBackend.vala:1134
 msgid "Uninstalling"
 msgstr "قيد إلغاء التثبيت"
 
-#: src/Core/FlatpakBackend.vala:1277
+#: src/Core/FlatpakBackend.vala:1308
 msgid "Updating"
 msgstr "قيد التحديث"
 
@@ -604,84 +604,138 @@ msgstr "فشل في تحديث التطبيق"
 msgid "Failed to update “%s”"
 msgstr "فشل في تحديث ”%s“"
 
-#: src/Views/AppInfoView.vala:187
+#: src/Views/AppInfoView.vala:80
+msgid "Violence"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:81
+msgid "Cartoon, fantasy, or realistic violence"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:86
+msgid "Illicit Substances"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:87
+msgid "Presence of or references to alcohol, narcotics, or tobacco"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:92
+msgid "Sex & Nudity"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:93
+msgid "Adult nudity or sexual themes"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:98
+msgid "Offensive Language"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:99
+msgid "Profanity, discriminatory language, or adult humor"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:104
+msgid "Gambling"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:105
+msgid "Realistic or participatory gambling"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:110
+msgid "Online Interactions"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:111
+msgid "Communication or data is sent to the Internet for other humans to see"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:115
+#, fuzzy
+#| msgid "Content Warning"
+msgid "Content Warnings"
+msgstr "تحذير محتوى"
+
+#: src/Views/AppInfoView.vala:285
 msgid "Screenshot Not Available"
 msgstr "لقطات الشاشة غير متوفرة"
 
-#: src/Views/AppInfoView.vala:290
+#: src/Views/AppInfoView.vala:388
 msgid "Homepage"
 msgstr "الصفحة الرئيسية"
 
-#: src/Views/AppInfoView.vala:296
+#: src/Views/AppInfoView.vala:394
 msgid "Translate"
 msgstr "ترجم"
 
-#: src/Views/AppInfoView.vala:302
+#: src/Views/AppInfoView.vala:400
 msgid "Send Feedback"
 msgstr "أرسل ملاحظاتك"
 
-#: src/Views/AppInfoView.vala:308
+#: src/Views/AppInfoView.vala:406
 msgid "Help"
 msgstr "المساعدة"
 
-#: src/Views/AppInfoView.vala:319
+#: src/Views/AppInfoView.vala:417
 msgid "What's New:"
 msgstr "ما الجديد:"
 
-#: src/Views/AppInfoView.vala:359
+#: src/Views/AppInfoView.vala:463
 msgid "Extensions:"
 msgstr "الإضافات:"
 
-#: src/Views/AppInfoView.vala:462
+#: src/Views/AppInfoView.vala:566
 msgid "Link copied to clipboard"
 msgstr "تم نسخ الرابط للحافظة"
 
-#: src/Views/AppInfoView.vala:473
+#: src/Views/AppInfoView.vala:577
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "شاهد %s على آب سنتر:"
 
-#: src/Views/AppInfoView.vala:481
+#: src/Views/AppInfoView.vala:585
 msgid "Share"
 msgstr "شارك"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:791
+#: src/Views/AppInfoView.vala:895
 msgid "Public Domain"
 msgstr "ملكية عامة"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:794
+#: src/Views/AppInfoView.vala:898
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://ar.wikipedia.org/wiki/%D9%85%D9%84%D9%83%D9%8A%D8%A9_%D8%B9%D8%A7%D9%85%D8%A9"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:799
+#: src/Views/AppInfoView.vala:903
 msgid "Free Software"
 msgstr "برمجية حرة"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:802
+#: src/Views/AppInfoView.vala:906
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw.ar.html"
 
-#: src/Views/AppInfoView.vala:806
+#: src/Views/AppInfoView.vala:910
 msgid "Proprietary"
 msgstr "احتكاري"
 
-#: src/Views/AppInfoView.vala:809
+#: src/Views/AppInfoView.vala:913
 msgid "Unknown License"
 msgstr "رخصة غير معروفة"
 
-#: src/Views/AppInfoView.vala:889
+#: src/Views/AppInfoView.vala:993
 msgid "Fund"
 msgstr "قم بالتمويل"
 
-#: src/Views/AppInfoView.vala:897
+#: src/Views/AppInfoView.vala:1001
 msgid "Fund the development of this app"
 msgstr "ادعم عملية تطوير هذا التطبيق"
 
-#: src/Views/AppInfoView.vala:971
+#: src/Views/AppInfoView.vala:1091
 #, c-format
 msgid "Other Apps by %s"
 msgstr "تطبيقات أخرى من %s"
@@ -728,15 +782,15 @@ msgstr "حاول تغيير عبارات البحث. يمكنك أيضا تحم�
 msgid "Non-Curated Apps"
 msgstr "التطبيقات غير المختارة"
 
-#: src/Views/Homepage.vala:64
+#: src/Views/Homepage.vala:65
 msgid "Recently Updated"
 msgstr "المحدثة مؤخراً"
 
-#: src/Views/Homepage.vala:87
+#: src/Views/Homepage.vala:88
 msgid "Categories"
 msgstr "الفئات"
 
-#: src/Views/Homepage.vala:270 src/Views/Homepage.vala:281
+#: src/Views/Homepage.vala:287 src/Views/Homepage.vala:298
 #, c-format
 msgid "Search %s"
 msgstr "ابحث في %s"
@@ -746,14 +800,6 @@ msgstr "ابحث في %s"
 msgctxt "view"
 msgid "Search"
 msgstr "البحث"
-
-#: src/Widgets/Banner.vala:234
-msgid "The open source, pay-what-you-can app store"
-msgstr "متجر التطبيقات مفتوح المصدر وعلى طريقة \"ادفع ما تستطيع\""
-
-#: src/Widgets/Banner.vala:242
-msgid "Reviewed and curated for a native, privacy-respecting, and secure experience."
-msgstr "مراجعة ومختارة بعناية لتجربة أصيلة، محترمة للخصوصية، وآمنة."
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"
@@ -934,6 +980,12 @@ msgstr "محدث بالكامل"
 #: src/Widgets/AppContainers/AbstractAppContainer.vala:223
 msgid "Update"
 msgstr "حدث"
+
+#~ msgid "The open source, pay-what-you-can app store"
+#~ msgstr "متجر التطبيقات مفتوح المصدر وعلى طريقة \"ادفع ما تستطيع\""
+
+#~ msgid "Reviewed and curated for a native, privacy-respecting, and secure experience."
+#~ msgstr "مراجعة ومختارة بعناية لتجربة أصيلة، محترمة للخصوصية، وآمنة."
 
 #~ msgid "Only used to send you a receipt."
 #~ msgstr "يستخدم فقط لإرسال فاتورة لك."

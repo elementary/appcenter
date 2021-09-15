@@ -25,6 +25,7 @@ public class AppCenter.Homepage : AbstractView {
     private Gtk.FlowBox category_flow;
     private Gtk.ScrolledWindow category_scrolled;
     private AppStream.Category current_category;
+    private uint banner_timeout_id;
 
     public signal void page_loaded ();
 
@@ -32,37 +33,37 @@ public class AppCenter.Homepage : AbstractView {
 
     public AppStream.Category currently_viewed_category;
 #if HOMEPAGE
-    public Widgets.Banner newest_banner;
-    public Gtk.Revealer switcher_revealer;
-
-    private Widgets.Switcher switcher;
+    private Hdy.Carousel banner_carousel;
+    private Gtk.Revealer banner_revealer;
     private Gtk.FlowBox recently_updated_carousel;
     private Gtk.Revealer recently_updated_revealer;
 
+
     construct {
-        switcher = new Widgets.Switcher () {
-            halign = Gtk.Align.CENTER
+        banner_carousel = new Hdy.Carousel () {
+            allow_long_swipes = true
         };
 
-        switcher_revealer = new Gtk.Revealer () {
-            transition_type = Gtk.RevealerTransitionType.SLIDE_DOWN,
-            transition_duration = Widgets.Banner.TRANSITION_DURATION_MILLISECONDS
-        };
-        switcher_revealer.add (switcher);
+        var banner_event_box = new Gtk.EventBox ();
+        banner_event_box.events |= Gdk.EventMask.ENTER_NOTIFY_MASK;
+        banner_event_box.events |= Gdk.EventMask.LEAVE_NOTIFY_MASK;
+        banner_event_box.add (banner_carousel);
 
-        newest_banner = new Widgets.Banner (switcher) {
-            margin = 12
+        var banner_dots = new Hdy.CarouselIndicatorDots () {
+            carousel = banner_carousel
         };
 
-        newest_banner.clicked.connect (() => {
-            var package = newest_banner.get_package ();
-            if (package != null) {
-                show_package (package);
-            }
-        });
+        var banner_grid = new Gtk.Grid () {
+            orientation = Gtk.Orientation.VERTICAL
+        };
+        banner_grid.add (banner_event_box);
+        banner_grid.add (banner_dots);
+
+        banner_revealer = new Gtk.Revealer ();
+        banner_revealer.add (banner_grid);
 
         var recently_updated_label = new Granite.HeaderLabel (_("Recently Updated")) {
-            margin_start = 10
+            margin_start = 12
         };
 
         recently_updated_carousel = new Gtk.FlowBox () {
@@ -75,8 +76,8 @@ public class AppCenter.Homepage : AbstractView {
         };
 
         var recently_updated_grid = new Gtk.Grid () {
-            margin = 2,
-            margin_top = 12
+            margin_end = 12,
+            margin_start = 12
         };
         recently_updated_grid.attach (recently_updated_label, 0, 0);
         recently_updated_grid.attach (recently_updated_carousel, 0, 1);
@@ -85,26 +86,28 @@ public class AppCenter.Homepage : AbstractView {
         recently_updated_revealer.add (recently_updated_grid );
 
         var categories_label = new Granite.HeaderLabel (_("Categories")) {
-            margin_start = 12,
-            margin_top = 24
+            margin_start = 24
         };
 #else
     construct {
 #endif
         category_flow = new Widgets.CategoryFlowBox () {
+            margin_start = 12,
+            margin_end =12,
             valign = Gtk.Align.START
         };
 
         var grid = new Gtk.Grid () {
-            margin = 12
+            column_spacing = 24,
+            orientation = Gtk.Orientation.VERTICAL,
+            row_spacing = 12
         };
 #if HOMEPAGE
-        grid.attach (newest_banner, 0, 0);
-        grid.attach (switcher_revealer, 0, 1);
-        grid.attach (recently_updated_revealer, 0, 2);
-        grid.attach (categories_label, 0, 3);
+        grid.add (banner_revealer);
+        grid.add (recently_updated_revealer);
+        grid.add (categories_label);
 #endif
-        grid.attach (category_flow, 0, 4);
+        grid.add (category_flow);
 
         category_scrolled = new Gtk.ScrolledWindow (null, null);
         category_scrolled.add (grid);
@@ -114,7 +117,13 @@ public class AppCenter.Homepage : AbstractView {
 #if HOMEPAGE
         var local_package = App.local_package;
         if (local_package != null) {
-            newest_banner.add_package (local_package);
+            var banner = new Widgets.Banner (local_package);
+
+            banner_carousel.prepend (banner);
+
+            banner.clicked.connect (() => {
+                show_package (local_package);
+            });
         }
 
         load_banners_and_carousels.begin ();
@@ -157,13 +166,16 @@ public class AppCenter.Homepage : AbstractView {
                 }
 
 #if HOMEPAGE
-                // If the banners weren't populated, try again to populate them
-                if (!recently_updated_revealer.reveal_child && !switcher_revealer.reveal_child) {
-                    load_banners_and_carousels.begin ();
-                }
-
                 return GLib.Source.REMOVE;
             });
+        });
+
+        banner_event_box.enter_notify_event.connect (() => {
+            banner_timeout_stop ();
+        });
+
+        banner_event_box.leave_notify_event.connect (() => {
+            banner_timeout_start ();
         });
 
         recently_updated_carousel.child_activated.connect ((child) => {
@@ -203,8 +215,17 @@ public class AppCenter.Homepage : AbstractView {
         }
 
         foreach (var package in packages_in_banner) {
-            newest_banner.add_package (package);
+            var banner = new Widgets.Banner (package);
+            banner.clicked.connect (() => {
+                show_package (package);
+            });
+
+            banner_carousel.add (banner);
         }
+
+        banner_carousel.show_all ();
+        banner_revealer.reveal_child = true;
+        banner_timeout_start ();
 
         foreach (var package in packages_by_release_date) {
             if (recently_updated_carousel.get_children ().length () >= MAX_PACKAGES_IN_CAROUSEL) {
@@ -230,10 +251,6 @@ public class AppCenter.Homepage : AbstractView {
         }
         recently_updated_carousel.show_all ();
         recently_updated_revealer.reveal_child = recently_updated_carousel.get_children ().length () > 0;
-
-        newest_banner.go_to_first ();
-        switcher.show_all ();
-        switcher_revealer.set_reveal_child (true);
 
         page_loaded ();
     }
@@ -300,5 +317,27 @@ public class AppCenter.Homepage : AbstractView {
         unowned var client = AppCenterCore.Client.get_default ();
         var apps = client.get_applications_for_category (category);
         app_list_view.add_packages (apps);
+    }
+
+    private void banner_timeout_start () {
+        banner_timeout_id = Timeout.add (MILLISECONDS_BETWEEN_BANNER_ITEMS, () => {
+            var new_index = (uint) banner_carousel.position + 1;
+            var max_index = banner_carousel.n_pages - 1; // 0-based index
+
+            if (banner_carousel.position >= max_index) {
+                new_index = 0;
+            }
+
+            banner_carousel.switch_child (new_index, Granite.TRANSITION_DURATION_OPEN);
+
+            return Source.CONTINUE;
+        });
+    }
+
+    private void banner_timeout_stop () {
+        if (banner_timeout_id != 0) {
+            Source.remove (banner_timeout_id);
+            banner_timeout_id = 0;
+        }
     }
 }

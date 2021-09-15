@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-07 20:23+0000\n"
+"POT-Creation-Date: 2021-09-14 20:59+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Cleiton Floss <cleitonfloss@gmail.com>\n"
 "Language-Team: Thai <https://l10n.elementary.io/projects/appcenter/appcenter/th/>\n"
@@ -52,9 +52,9 @@ msgstr "%s ได้ถูกติดตั้งอย่างสมบูร
 msgid "Failed to launch “%s“"
 msgstr "ถอนการติดตั้ง"
 
-#: src/MainWindow.vala:171 src/Views/Homepage.vala:255
-#: src/Views/Homepage.vala:265 src/Views/Homepage.vala:270
-#: src/Views/Homepage.vala:281 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:171 src/Views/Homepage.vala:272
+#: src/Views/Homepage.vala:282 src/Views/Homepage.vala:287
+#: src/Views/Homepage.vala:298 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "หน้าหลัก"
 
@@ -105,7 +105,7 @@ msgstr "กำลังถอดถอนแพกเกจ"
 msgid "Downloading"
 msgstr "กำลังดาวน์โหลด"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:967
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:998
 msgid "Installing"
 msgstr "กำลังติดตั้ง"
 
@@ -150,9 +150,9 @@ msgid "Finished"
 msgstr "สำเร็จแล้ว"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:976 src/Core/FlatpakBackend.vala:1004
-#: src/Core/FlatpakBackend.vala:1112 src/Core/FlatpakBackend.vala:1140
-#: src/Core/FlatpakBackend.vala:1286 src/Core/FlatpakBackend.vala:1312
+#: src/Core/FlatpakBackend.vala:1007 src/Core/FlatpakBackend.vala:1035
+#: src/Core/FlatpakBackend.vala:1143 src/Core/FlatpakBackend.vala:1171
+#: src/Core/FlatpakBackend.vala:1317 src/Core/FlatpakBackend.vala:1343
 msgid "Cancelling"
 msgstr "กำลังยกเลิก"
 
@@ -239,13 +239,13 @@ msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "การอัปเดต %u รายการพร้อมใช้งานสำหรับระบบของคุณแล้ว"
 
-#: src/Core/FlatpakBackend.vala:1103
+#: src/Core/FlatpakBackend.vala:1134
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "ถอนการติดตั้ง"
 
-#: src/Core/FlatpakBackend.vala:1277
+#: src/Core/FlatpakBackend.vala:1308
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
@@ -598,85 +598,137 @@ msgstr "ถอนการติดตั้ง"
 msgid "Failed to update “%s”"
 msgstr "ถอนการติดตั้ง"
 
-#: src/Views/AppInfoView.vala:187
+#: src/Views/AppInfoView.vala:80
+msgid "Violence"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:81
+msgid "Cartoon, fantasy, or realistic violence"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:86
+msgid "Illicit Substances"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:87
+msgid "Presence of or references to alcohol, narcotics, or tobacco"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:92
+msgid "Sex & Nudity"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:93
+msgid "Adult nudity or sexual themes"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:98
+msgid "Offensive Language"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:99
+msgid "Profanity, discriminatory language, or adult humor"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:104
+msgid "Gambling"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:105
+msgid "Realistic or participatory gambling"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:110
+msgid "Online Interactions"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:111
+msgid "Communication or data is sent to the Internet for other humans to see"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:115
+msgid "Content Warnings"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:285
 msgid "Screenshot Not Available"
 msgstr "ภาพตัวอย่างยังไม่สามารถใช้งานได้"
 
-#: src/Views/AppInfoView.vala:290
+#: src/Views/AppInfoView.vala:388
 msgid "Homepage"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:296
+#: src/Views/AppInfoView.vala:394
 msgid "Translate"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:302
+#: src/Views/AppInfoView.vala:400
 msgid "Send Feedback"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:308
+#: src/Views/AppInfoView.vala:406
 msgid "Help"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:319
+#: src/Views/AppInfoView.vala:417
 msgid "What's New:"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:359
+#: src/Views/AppInfoView.vala:463
 msgid "Extensions:"
 msgstr "ส่วนขยาย:"
 
-#: src/Views/AppInfoView.vala:462
+#: src/Views/AppInfoView.vala:566
 msgid "Link copied to clipboard"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:473
+#: src/Views/AppInfoView.vala:577
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:481
+#: src/Views/AppInfoView.vala:585
 msgid "Share"
 msgstr ""
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:791
+#: src/Views/AppInfoView.vala:895
 msgid "Public Domain"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:794
+#: src/Views/AppInfoView.vala:898
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr ""
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:799
+#: src/Views/AppInfoView.vala:903
 msgid "Free Software"
 msgstr ""
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:802
+#: src/Views/AppInfoView.vala:906
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:806
+#: src/Views/AppInfoView.vala:910
 msgid "Proprietary"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:809
+#: src/Views/AppInfoView.vala:913
 #, fuzzy
 msgid "Unknown License"
 msgstr "สถานะที่ไม่รู้จัก"
 
-#: src/Views/AppInfoView.vala:889
+#: src/Views/AppInfoView.vala:993
 msgid "Fund"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:897
+#: src/Views/AppInfoView.vala:1001
 msgid "Fund the development of this app"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:971
+#: src/Views/AppInfoView.vala:1091
 #, c-format
 msgid "Other Apps by %s"
 msgstr ""
@@ -725,15 +777,15 @@ msgstr ""
 msgid "Non-Curated Apps"
 msgstr ""
 
-#: src/Views/Homepage.vala:64
+#: src/Views/Homepage.vala:65
 msgid "Recently Updated"
 msgstr ""
 
-#: src/Views/Homepage.vala:87
+#: src/Views/Homepage.vala:88
 msgid "Categories"
 msgstr "หมวดหมู่"
 
-#: src/Views/Homepage.vala:270 src/Views/Homepage.vala:281
+#: src/Views/Homepage.vala:287 src/Views/Homepage.vala:298
 #, c-format
 msgid "Search %s"
 msgstr "ค้นหา %s"
@@ -743,14 +795,6 @@ msgstr "ค้นหา %s"
 msgctxt "view"
 msgid "Search"
 msgstr "ค้นหา"
-
-#: src/Widgets/Banner.vala:234
-msgid "The open source, pay-what-you-can app store"
-msgstr ""
-
-#: src/Widgets/Banner.vala:242
-msgid "Reviewed and curated for a native, privacy-respecting, and secure experience."
-msgstr ""
 
 #: src/Widgets/CardNumberEntry.vala:41
 msgid "Card Number"

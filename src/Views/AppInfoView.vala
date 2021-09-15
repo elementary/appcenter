@@ -76,6 +76,104 @@ namespace AppCenter.Views {
 
             var package_component = package.component;
 
+            var violence = new ContentType (
+                _("Violence"),
+                _("Cartoon, fantasy, or realistic violence"),
+                "application-content-violence-symbolic"
+            );
+
+            var drugs = new ContentType (
+                _("Illicit Substances"),
+                _("Presence of or references to alcohol, narcotics, or tobacco"),
+                "application-content-illicit-substance-symbolic"
+            );
+
+            var sex_nudity = new ContentType (
+                _("Sex & Nudity"),
+                _("Adult nudity or sexual themes"),
+                "application-content-sex-nudity-symbolic"
+            );
+
+            var language = new ContentType (
+                _("Offensive Language"),
+                _("Profanity, discriminatory language, or adult humor"),
+                "application-content-offensive-language-symbolic"
+            );
+
+            var gambling = new ContentType (
+                _("Gambling"),
+                _("Realistic or participatory gambling"),
+                "application-content-gambling-symbolic"
+            );
+
+            var social = new ContentType (
+                _("Online Interactions"),
+                _("Communication or data is sent to the Internet for other humans to see"),
+                "internet-chat-symbolic"
+            );
+
+            var oars_header = new Granite.HeaderLabel (_("Content Warnings"));
+
+            var oars_flowbox = new Gtk.FlowBox () {
+                halign = Gtk.Align.START,
+                column_spacing = 6,
+                row_spacing = 12,
+                margin_bottom = 24
+            };
+
+            var ratings = package_component.get_content_ratings ();
+            for (int i = 0; i < ratings.length; i++) {
+                var rating = ratings[i];
+
+                if (
+                    rating.get_value ("violence-realistic") > AppStream.ContentRatingValue.NONE ||
+                    rating.get_value ("violence-bloodshed") > AppStream.ContentRatingValue.NONE ||
+                    rating.get_value ("violence-sexual") > AppStream.ContentRatingValue.NONE
+                ) {
+                    oars_flowbox.add (violence);
+                }
+
+                if (
+                    rating.get_value ("drugs-narcotics") > AppStream.ContentRatingValue.NONE
+                ) {
+                    oars_flowbox.add (drugs);
+                }
+
+                if (
+                    rating.get_value ("sex-nudity") > AppStream.ContentRatingValue.NONE ||
+                    rating.get_value ("sex-themes") > AppStream.ContentRatingValue.NONE ||
+                    rating.get_value ("sex-prostitution") > AppStream.ContentRatingValue.NONE
+                ) {
+                    oars_flowbox.add (sex_nudity);
+                }
+
+                if (
+                    // Mild is considered things like "Dufus"
+                    rating.get_value ("language-profanity") > AppStream.ContentRatingValue.MILD ||
+                    // Mild is considered things like slapstick humor
+                    rating.get_value ("language-humor") > AppStream.ContentRatingValue.MILD ||
+                    rating.get_value ("language-discrimination") > AppStream.ContentRatingValue.NONE
+                ) {
+                    oars_flowbox.add (language);
+                }
+
+                if (
+                    rating.get_value ("money-gambling") > AppStream.ContentRatingValue.NONE
+                ) {
+                    oars_flowbox.add (gambling);
+                }
+
+                if (
+                    rating.get_value ("social-chat") > AppStream.ContentRatingValue.NONE ||
+                    rating.get_value ("social-info") > AppStream.ContentRatingValue.NONE ||
+                    rating.get_value ("social-audio") > AppStream.ContentRatingValue.NONE ||
+                    rating.get_value ("social-location") > AppStream.ContentRatingValue.NONE ||
+                    rating.get_value ("social-contacts") > AppStream.ContentRatingValue.NONE
+                ) {
+                    oars_flowbox.add (social);
+                }
+            }
+
             screenshots = package_component.get_screenshots ();
 
             if (screenshots.length > 0) {
@@ -332,17 +430,23 @@ namespace AppCenter.Views {
             release_grid.hide ();
 
             var content_grid = new Gtk.Grid () {
+                orientation = Gtk.Orientation.VERTICAL,
                 row_spacing = 24
             };
 
-            if (screenshots.length > 0) {
-                content_grid.attach (screenshot_stack, 0, 0, 2);
-                content_grid.attach (screenshot_switcher, 0, 1, 2);
+            if (oars_flowbox.get_children ().length () > 0) {
+                content_grid.add (oars_header);
+                content_grid.add (oars_flowbox);
             }
 
-            content_grid.attach (package_summary, 0, 2, 2);
-            content_grid.attach (app_description, 0, 3, 2);
-            content_grid.attach (release_grid, 0, 4, 2);
+            if (screenshots.length > 0) {
+                content_grid.add (screenshot_stack);
+                content_grid.add (screenshot_switcher);
+            }
+
+            content_grid.add (package_summary);
+            content_grid.add (app_description);
+            content_grid.add (release_grid);
 
             if (package_component.get_addons ().length > 0) {
                 extension_box = new Gtk.ListBox () {
@@ -362,10 +466,12 @@ namespace AppCenter.Views {
                 };
                 extension_label.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
-                content_grid.attach (extension_label, 0, 5, 2);
-                content_grid.attach (extension_box, 0, 6, 2);
+                content_grid.add (extension_label);
+                content_grid.add (extension_box);
                 load_extensions.begin ();
             }
+
+            content_grid.add (links_grid);
 
             origin_liststore = new Gtk.ListStore (2, typeof (AppCenterCore.Package), typeof (string));
             origin_combo = new Gtk.ComboBox.with_model (origin_liststore) {
@@ -431,8 +537,6 @@ namespace AppCenter.Views {
                 banner_provider,
                 Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
             );
-
-            content_grid.attach (links_grid, 1, 7);
 
             var body_clamp = new Hdy.Clamp () {
                 margin = 24,
@@ -940,6 +1044,22 @@ namespace AppCenter.Views {
                 context.add_class ("arrow");
                 context.add_provider (arrow_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
             }
+        }
+    }
+
+    class ContentType : Gtk.Grid {
+        public ContentType (string title, string description, string icon_name) {
+            row_spacing = 6;
+            tooltip_text = description;
+
+            var icon = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.DND) {
+                hexpand = true
+            };
+
+            var label = new Gtk.Label (title);
+
+            attach (icon, 0, 0);
+            attach (label, 0, 1);
         }
     }
 

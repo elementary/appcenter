@@ -19,6 +19,8 @@
         </ul>
         <p>Improvements:</p>
         <ul>
+          <li>Navigate banners on the home page with multitouch gestures</li>
+          <li>Show content warnings on app info pages</li>
           <li>Updated translations</li>
         </ul>
       </description>
