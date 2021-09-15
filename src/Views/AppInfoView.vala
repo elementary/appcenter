@@ -76,12 +76,6 @@ namespace AppCenter.Views {
 
             var package_component = package.component;
 
-            var violence = new ContentType (
-                _("Violence"),
-                _("Cartoon, fantasy, or realistic violence"),
-                "application-content-violence-symbolic"
-            );
-
             var drugs = new ContentType (
                 _("Illicit Substances"),
                 _("Presence of or references to alcohol, narcotics, or tobacco"),
@@ -106,17 +100,8 @@ namespace AppCenter.Views {
                 "application-content-gambling-symbolic"
             );
 
-            var social = new ContentType (
-                _("Online Interactions"),
-                _("Communication or data is sent to the Internet for other humans to see"),
-                "internet-chat-symbolic"
-            );
-
-            var oars_header = new Granite.HeaderLabel (_("Content Warnings"));
-
             var oars_flowbox = new Gtk.FlowBox () {
-                halign = Gtk.Align.START,
-                column_spacing = 6,
+                column_spacing = 24,
                 row_spacing = 12,
                 margin_bottom = 24
             };
@@ -125,11 +110,36 @@ namespace AppCenter.Views {
             for (int i = 0; i < ratings.length; i++) {
                 var rating = ratings[i];
 
+                var fantasy_violence_value = rating.get_value ("violence-fantasy");
+                var realistic_violence_value = rating.get_value ("violence-realistic");
+
                 if (
-                    rating.get_value ("violence-realistic") > AppStream.ContentRatingValue.NONE ||
+                    fantasy_violence_value == AppStream.ContentRatingValue.MILD ||
+                    fantasy_violence_value == AppStream.ContentRatingValue.MODERATE ||
+                    realistic_violence_value == AppStream.ContentRatingValue.MILD ||
+                    realistic_violence_value == AppStream.ContentRatingValue.MODERATE
+                ) {
+                    var conflict = new ContentType (
+                        _("Conflict"),
+                        _("Depictions of unsafe situations or aggressive conflict"),
+                        "application-content-conflict-symbolic"
+                    );
+
+                    oars_flowbox.add (conflict);
+                }
+
+                if (
+                    fantasy_violence_value == AppStream.ContentRatingValue.INTENSE ||
+                    realistic_violence_value == AppStream.ContentRatingValue.INTENSE ||
                     rating.get_value ("violence-bloodshed") > AppStream.ContentRatingValue.NONE ||
                     rating.get_value ("violence-sexual") > AppStream.ContentRatingValue.NONE
                 ) {
+                    var violence = new ContentType (
+                        _("Violence"),
+                        _("Graphic violence, bloodshed, or death"),
+                        "application-content-violence-symbolic"
+                    );
+
                     oars_flowbox.add (violence);
                 }
 
@@ -163,14 +173,70 @@ namespace AppCenter.Views {
                     oars_flowbox.add (gambling);
                 }
 
+                var social_chat_value = rating.get_value ("social-chat");
+                // MILD is defined as multi-player period, no chat
+                if (social_chat_value > AppStream.ContentRatingValue.NONE) {
+                    var multiplayer = new ContentType (
+                        _("Multiplayer"),
+                        _("Online play with other people"),
+                        "system-users-symbolic"
+                    );
+
+                    oars_flowbox.add (multiplayer);
+                }
+
+                var social_audio_value = rating.get_value ("social-audio");
                 if (
-                    rating.get_value ("social-chat") > AppStream.ContentRatingValue.NONE ||
-                    rating.get_value ("social-info") > AppStream.ContentRatingValue.NONE ||
-                    rating.get_value ("social-audio") > AppStream.ContentRatingValue.NONE ||
-                    rating.get_value ("social-location") > AppStream.ContentRatingValue.NONE ||
-                    rating.get_value ("social-contacts") > AppStream.ContentRatingValue.NONE
+                    social_chat_value > AppStream.ContentRatingValue.MILD ||
+                    social_audio_value > AppStream.ContentRatingValue.NONE
                 ) {
+
+                    // social-audio in OARS includes video as well
+                    string? description = null;
+                    if (social_chat_value == AppStream.ContentRatingValue.INTENSE || social_audio_value == AppStream.ContentRatingValue.INTENSE) {
+                        description = _("Unmoderated Audio, Video, or Text messaging with other people");
+                    } else if (social_chat_value == AppStream.ContentRatingValue.MODERATE || social_audio_value == AppStream.ContentRatingValue.MODERATE) {
+                        description = _("Moderated Audio, Video, or Text messaging with other people");
+                    }
+
+                    var social = new ContentType (
+                        _("Online Interactions"),
+                        description,
+                        "application-content-chat-symbolic"
+                    );
+
                     oars_flowbox.add (social);
+                }
+
+                if (rating.get_value ("social-location") > AppStream.ContentRatingValue.NONE) {
+                    var location = new ContentType (
+                        _("Location Sharing"),
+                        _("Other people can see your real-world location"),
+                        "find-location-symbolic"
+                    );
+
+                    oars_flowbox.add (location);
+                }
+
+                var social_info_value = rating.get_value ("social-info");
+                if (social_info_value > AppStream.ContentRatingValue.MILD) {
+                    string? description = null;
+                    switch (social_info_value) {
+                        case AppStream.ContentRatingValue.MODERATE:
+                            description = _("Collects anonymous usage data");
+                            break;
+                        case AppStream.ContentRatingValue.INTENSE:
+                            description = _("Collects usage data that could be used to identify you");
+                            break;
+                    }
+
+                    var social_info = new ContentType (
+                        _("Info Sharing"),
+                        description,
+                        "application-content-socal-info-symbolic"
+                    );
+
+                    oars_flowbox.add (social_info);
                 }
             }
 
@@ -435,7 +501,6 @@ namespace AppCenter.Views {
             };
 
             if (oars_flowbox.get_children ().length () > 0) {
-                content_grid.add (oars_header);
                 content_grid.add (oars_flowbox);
             }
 
@@ -1049,17 +1114,31 @@ namespace AppCenter.Views {
 
     class ContentType : Gtk.Grid {
         public ContentType (string title, string description, string icon_name) {
-            row_spacing = 6;
-            tooltip_text = description;
+            orientation = Gtk.Orientation.VERTICAL;
+            row_spacing = 3;
 
             var icon = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.DND) {
-                hexpand = true
+                halign = Gtk.Align.START,
+                margin_bottom = 6
             };
 
-            var label = new Gtk.Label (title);
+            var label = new Gtk.Label (title) {
+                xalign = 0
+            };
 
-            attach (icon, 0, 0);
-            attach (label, 0, 1);
+            var description_label = new Gtk.Label (description) {
+                max_width_chars = 25,
+                wrap = true,
+                xalign = 0
+            };
+
+            unowned var description_label_context = description_label.get_style_context ();
+            description_label_context.add_class (Granite.STYLE_CLASS_SMALL_LABEL);
+            description_label_context.add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+
+            add (icon);
+            add (label);
+            add (description_label);
         }
     }
 
