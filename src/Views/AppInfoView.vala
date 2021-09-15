@@ -1068,7 +1068,7 @@ namespace AppCenter.Views {
 
     class ContentType : Gtk.Grid {
         public ContentType (string title, string description, string icon_name) {
-            row_spacing = 6;
+            row_spacing = 3;
 
             var icon = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.DND) {
                 margin_bottom = 6
