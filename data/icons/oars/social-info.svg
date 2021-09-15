@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="svg6"
+   version="1.1"
+   width="32"
+   height="32"
+   sodipodi:docname="social-info.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="38.03125"
+     inkscape:cx="15.986853"
+     inkscape:cy="12.21364"
+     inkscape:window-width="2560"
+     inkscape:window-height="1379"
+     inkscape:window-x="0"
+     inkscape:window-y="30"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg6" />
+  <metadata
+     id="metadata12">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs10" />
+  <path
+     id="rect1280"
+     style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#555761;fill-opacity:1;stroke:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
+     d="M 5,1 C 2.784,1 1,2.8084335 1,5 V 9 H 3 V 5 C 3,3.892 3.892,3 5,3 H 9 V 1 Z m 18,0 v 2 h 4 c 1.108,0 1.731271,0.9250821 2,2 v 4 h 2 V 5 C 31,2.784 29.216,1 27,1 Z m -7,4 c -3.313708,0 -6,2.6862915 -6,6 0,3.313708 2.686292,6 6,6 3.313708,0 6,-2.686292 6,-6 C 22,7.6862915 19.313708,5 16,5 Z M 15.53125,18 C 11.795857,18.112913 8,19.973012 8,22.791016 8,24.568679 9.4264188,26 11.199219,26 h 9.601562 C 22.573581,26 24,24.568679 24,22.791016 23.91899,20.100989 20.282321,18.148265 16.441406,18.005859 Z M 1,23 v 4 c 0,2.216 1.784,4 4,4 H 9 V 29 H 5 C 3.892,29 3,28.108 3,27 v -4 z m 28,0 v 4 c 0,1.108 -0.892,2 -2,2 h -4 v 2 h 4 c 2.216,0 4,-1.759599 4,-4 v -4 z"
+     sodipodi:nodetypes="scccssccsccscccsscssssscsssccccssccsscccssccsccc" />
+  <g
+     id="g4"
+     transform="translate(-872,-552)"
+     color="#000000" />
+</svg>

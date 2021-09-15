@@ -21,6 +21,7 @@
     <file alias="application-content-gambling-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/gambling.svg</file>
     <file alias="application-content-offensive-language-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/language.svg</file>
     <file alias="application-content-sex-nudity-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/nudity.svg</file>
+    <file alias="application-content-socal-info-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/social-info.svg</file>
     <file alias="application-content-illicit-substance-symbolic" compressed="true" preprocess="xml-stripblanks">oars/substance.svg</file>
     <file alias="application-content-violence-symbolic.svg" compressed="true" preprocess="xml-stripblanks">oars/violence.svg</file>
   </gresource>
