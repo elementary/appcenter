@@ -1086,7 +1086,7 @@ namespace AppCenter.Views {
                 xalign = 0
             };
 
-            var description_label_context = description_label.get_style_context ();
+            unowned var description_label_context = description_label.get_style_context ();
             description_label_context.add_class (Granite.STYLE_CLASS_SMALL_LABEL);
             description_label_context.add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
