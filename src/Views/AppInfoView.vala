@@ -100,12 +100,6 @@ namespace AppCenter.Views {
                 "application-content-gambling-symbolic"
             );
 
-            var social = new ContentType (
-                _("Online Interactions"),
-                _("Communication or data is sent to the Internet for other humans to see"),
-                "internet-chat-symbolic"
-            );
-
             var oars_header = new Granite.HeaderLabel (_("Content Warnings"));
 
             var oars_flowbox = new Gtk.FlowBox () {
@@ -181,13 +175,39 @@ namespace AppCenter.Views {
                     oars_flowbox.add (gambling);
                 }
 
+                var social_chat_value = rating.get_value ("social-chat");
+                var social_audio_value = rating.get_value ("social-chat");
                 if (
-                    rating.get_value ("social-chat") > AppStream.ContentRatingValue.NONE ||
-                    rating.get_value ("social-audio") > AppStream.ContentRatingValue.NONE ||
-                    rating.get_value ("social-location") > AppStream.ContentRatingValue.NONE ||
-                    rating.get_value ("social-contacts") > AppStream.ContentRatingValue.NONE
+                    // NONE is defined as multi-player period, no chat
+                    social_chat_value > AppStream.ContentRatingValue.MILD ||
+                    social_audio_value > AppStream.ContentRatingValue.NONE
                 ) {
+
+                    // social-audio in OARS includes video as well
+                    string? description = null;
+                    if (social_chat_value == AppStream.ContentRatingValue.INTENSE || social_audio_value == AppStream.ContentRatingValue.INTENSE) {
+                        description = _("Unmoderated Audio, Video, or Text messaging with other people");
+                    } else if (social_chat_value == AppStream.ContentRatingValue.MODERATE || social_audio_value == AppStream.ContentRatingValue.MODERATE) {
+                        description = _("Moderated Audio, Video, or Text messaging with other people");
+                    }
+
+                    var social = new ContentType (
+                        _("Online Interactions"),
+                        description,
+                        "application-content-chat-symbolic"
+                    );
+
                     oars_flowbox.add (social);
+                }
+
+                if (rating.get_value ("social-location") > AppStream.ContentRatingValue.NONE) {
+                    var location = new ContentType (
+                        _("Location Sharing"),
+                        _("Other people can see your real-world location"),
+                        "find-location-symbolic"
+                    );
+
+                    oars_flowbox.add (location);
                 }
 
                 var social_info_value = rating.get_value ("social-info");
