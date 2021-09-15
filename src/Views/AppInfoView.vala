@@ -100,8 +100,6 @@ namespace AppCenter.Views {
                 "application-content-gambling-symbolic"
             );
 
-            var oars_header = new Granite.HeaderLabel (_("Content Warnings"));
-
             var oars_flowbox = new Gtk.FlowBox () {
                 column_spacing = 24,
                 row_spacing = 12,
@@ -503,7 +501,6 @@ namespace AppCenter.Views {
             };
 
             if (oars_flowbox.get_children ().length () > 0) {
-                content_grid.add (oars_header);
                 content_grid.add (oars_flowbox);
             }
 
