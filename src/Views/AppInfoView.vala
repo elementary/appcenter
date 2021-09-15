@@ -117,9 +117,7 @@ namespace AppCenter.Views {
             var oars_flowbox = new Gtk.FlowBox () {
                 column_spacing = 24,
                 row_spacing = 12,
-                margin_bottom = 24,
-                // Workaround for Flowbox preserving space around for items that don't exist
-                max_children_per_line = 1000
+                margin_bottom = 24
             };
 
             var ratings = package_component.get_content_ratings ();
@@ -1053,9 +1051,7 @@ namespace AppCenter.Views {
             row_spacing = 6;
             tooltip_text = description;
 
-            var icon = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.DND) {
-                hexpand = true
-            };
+            var icon = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.DND);
 
             var label = new Gtk.Label (title);
 
