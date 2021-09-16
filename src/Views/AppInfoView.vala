@@ -106,6 +106,7 @@ namespace AppCenter.Views {
                 margin_bottom = 24
             };
 
+#if CURATED
             if (!package.is_native) {
                 var uncurated = new ContentType (
                     _("Non-Curated"),
@@ -115,6 +116,7 @@ namespace AppCenter.Views {
 
                 oars_flowbox.add (uncurated);
             }
+#endif
 
             var ratings = package_component.get_content_ratings ();
             for (int i = 0; i < ratings.length; i++) {
