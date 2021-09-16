@@ -179,7 +179,7 @@ public class AppCenter.Homepage : AbstractView {
 
     private async void load_banners_and_carousels () {
         unowned var fp_client = AppCenterCore.FlatpakBackend.get_default ();
-        var packages_by_release_date = fp_client.get_native_packages_by_release_date ();
+        var packages_by_release_date = fp_client.get_featured_packages_by_release_date ();
         var packages_in_banner = new Gee.LinkedList<AppCenterCore.Package> ();
 
         int package_count = 0;
