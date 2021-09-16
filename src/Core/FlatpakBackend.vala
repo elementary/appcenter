@@ -1,5 +1,5 @@
-/*-
- * Copyright 2019 elementary, Inc. (https://elementary.io)
+/*
+ * Copyright 2019–2021 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -262,13 +262,17 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         return installed_apps;
     }
 
-    public Gee.Collection<Package> get_native_packages_by_release_date () {
+    public Gee.Collection<Package> get_featured_packages_by_release_date () {
         var apps = new Gee.TreeSet<AppCenterCore.Package> (compare_packages_by_release_date);
 
         foreach (var package in package_list.values) {
+#if CURATED
             if (package.is_native) {
                 apps.add (package);
             }
+#else
+            apps.add (package);
+#endif
         }
 
         return apps;
