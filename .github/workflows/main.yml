@@ -32,7 +32,7 @@ jobs:
       env:
         DESTDIR: out
       run: |
-        meson configure -Dhomepage=false build
+        meson configure -Dcurated=false -Dhomepage=false -Dpayments=false  build
         ninja -C build install
 
     - name: Build (Pop!_Shop)
