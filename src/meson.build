@@ -64,10 +64,6 @@ if get_option('curated')
     args += '--define=CURATED'
 endif
 
-if get_option('homepage')
-    args += '--define=HOMEPAGE'
-endif
-
 if get_option('payments')
     args += '--define=PAYMENTS'
 endif
