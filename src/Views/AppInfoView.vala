@@ -144,8 +144,16 @@ namespace AppCenter.Views {
                     rating.get_value ("violence-bloodshed") > AppStream.ContentRatingValue.NONE ||
                     rating.get_value ("violence-sexual") > AppStream.ContentRatingValue.NONE
                 ) {
+                    string? title = _("Violence");
+                    if (
+                        fantasy_violence_value == AppStream.ContentRatingValue.INTENSE &&
+                        realistic_violence_value < AppStream.ContentRatingValue.INTENSE
+                    ) {
+                        title = _("Fantasy Violence");
+                    }
+
                     var violence = new ContentType (
-                        _("Violence"),
+                        title,
                         _("Graphic violence, bloodshed, or death"),
                         "oars-violence-symbolic"
                     );
