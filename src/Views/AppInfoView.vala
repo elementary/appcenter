@@ -79,32 +79,42 @@ namespace AppCenter.Views {
             var drugs = new ContentType (
                 _("Illicit Substances"),
                 _("Presence of or references to alcohol, narcotics, or tobacco"),
-                "application-content-illicit-substance-symbolic"
+                "oars-illicit-substance-symbolic"
             );
 
             var sex_nudity = new ContentType (
                 _("Sex & Nudity"),
                 _("Adult nudity or sexual themes"),
-                "application-content-sex-nudity-symbolic"
+                "oars-sex-nudity-symbolic"
             );
 
             var language = new ContentType (
                 _("Offensive Language"),
                 _("Profanity, discriminatory language, or adult humor"),
-                "application-content-offensive-language-symbolic"
+                "oars-offensive-language-symbolic"
             );
 
             var gambling = new ContentType (
                 _("Gambling"),
                 _("Realistic or participatory gambling"),
-                "application-content-gambling-symbolic"
+                "oars-gambling-symbolic"
             );
 
             var oars_flowbox = new Gtk.FlowBox () {
                 column_spacing = 24,
-                row_spacing = 12,
+                row_spacing = 24,
                 margin_bottom = 24
             };
+
+            if (!package.is_native) {
+                var uncurated = new ContentType (
+                    _("Non-Curated"),
+                    _("Not reviewed by elementary for security, privacy, or system integration"),
+                    "security-low-symbolic"
+                );
+
+                oars_flowbox.add (uncurated);
+            }
 
             var ratings = package_component.get_content_ratings ();
             for (int i = 0; i < ratings.length; i++) {
@@ -122,7 +132,7 @@ namespace AppCenter.Views {
                     var conflict = new ContentType (
                         _("Conflict"),
                         _("Depictions of unsafe situations or aggressive conflict"),
-                        "application-content-conflict-symbolic"
+                        "oars-conflict-symbolic"
                     );
 
                     oars_flowbox.add (conflict);
@@ -145,7 +155,7 @@ namespace AppCenter.Views {
                     var violence = new ContentType (
                         title,
                         _("Graphic violence, bloodshed, or death"),
-                        "application-content-violence-symbolic"
+                        "oars-violence-symbolic"
                     );
 
                     oars_flowbox.add (violence);
@@ -210,7 +220,7 @@ namespace AppCenter.Views {
                     var social = new ContentType (
                         _("Online Interactions"),
                         description,
-                        "application-content-chat-symbolic"
+                        "oars-chat-symbolic"
                     );
 
                     oars_flowbox.add (social);
@@ -241,7 +251,7 @@ namespace AppCenter.Views {
                     var social_info = new ContentType (
                         _("Info Sharing"),
                         description,
-                        "application-content-socal-info-symbolic"
+                        "oars-socal-info-symbolic"
                     );
 
                     oars_flowbox.add (social_info);
