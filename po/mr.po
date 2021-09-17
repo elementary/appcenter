@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-15 19:39+0000\n"
+"POT-Creation-Date: 2021-09-16 04:37+0000\n"
 "PO-Revision-Date: 2021-06-19 21:50+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/appcenter/mr/>\n"
@@ -48,9 +48,9 @@ msgstr "\"%s\" इन्स्टॉल झाले"
 msgid "Failed to launch “%s“"
 msgstr "\"%s\" लाँच करण्यात अयशस्वी"
 
-#: src/MainWindow.vala:171 src/Views/Homepage.vala:272
-#: src/Views/Homepage.vala:282 src/Views/Homepage.vala:287
-#: src/Views/Homepage.vala:298 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:171 src/Views/Homepage.vala:276
+#: src/Views/Homepage.vala:286 src/Views/Homepage.vala:291
+#: src/Views/Homepage.vala:302 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "मुख्य पृष्ठ"
 
@@ -601,140 +601,156 @@ msgstr ""
 msgid "Realistic or participatory gambling"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:123
+#: src/Views/AppInfoView.vala:111
+#, fuzzy
+#| msgid "Non-Curated Apps"
+msgid "Non-Curated"
+msgstr "नॉन-क्युरेटेड अॅप्स"
+
+#: src/Views/AppInfoView.vala:112
+#, fuzzy
+#| msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
+msgid "Not reviewed by elementary for security, privacy, or system integration"
+msgstr "\"%s\" एलिमेंटरी द्वारे क्युरेट केलेले नाही आणि सुरक्षितता, गोपनीयता किंवा सिस्टम एकीकरणासाठी त्याचे पुनरावलोकन केले गेले नाही."
+
+#: src/Views/AppInfoView.vala:133
 msgid "Conflict"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:124
+#: src/Views/AppInfoView.vala:134
 msgid "Depictions of unsafe situations or aggressive conflict"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:138
+#: src/Views/AppInfoView.vala:147
 msgid "Violence"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:139
+#: src/Views/AppInfoView.vala:152
+msgid "Fantasy Violence"
+msgstr ""
+
+#: src/Views/AppInfoView.vala:157
 msgid "Graphic violence, bloodshed, or death"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:180
+#: src/Views/AppInfoView.vala:198
 msgid "Multiplayer"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:181
+#: src/Views/AppInfoView.vala:199
 msgid "Online play with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:197
+#: src/Views/AppInfoView.vala:215
 msgid "Unmoderated Audio, Video, or Text messaging with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:199
+#: src/Views/AppInfoView.vala:217
 msgid "Moderated Audio, Video, or Text messaging with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:203
+#: src/Views/AppInfoView.vala:221
 msgid "Online Interactions"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:213
+#: src/Views/AppInfoView.vala:231
 msgid "Location Sharing"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:214
+#: src/Views/AppInfoView.vala:232
 msgid "Other people can see your real-world location"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:226
+#: src/Views/AppInfoView.vala:244
 msgid "Collects anonymous usage data"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:229
+#: src/Views/AppInfoView.vala:247
 msgid "Collects usage data that could be used to identify you"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:234
+#: src/Views/AppInfoView.vala:252
 msgid "Info Sharing"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:351
+#: src/Views/AppInfoView.vala:369
 msgid "Screenshot Not Available"
 msgstr "स्क्रीनशॉट उपलब्ध नाही"
 
-#: src/Views/AppInfoView.vala:454
+#: src/Views/AppInfoView.vala:472
 msgid "Homepage"
 msgstr "मुख्य पृष्ठ"
 
-#: src/Views/AppInfoView.vala:460
+#: src/Views/AppInfoView.vala:478
 msgid "Translate"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:466
+#: src/Views/AppInfoView.vala:484
 msgid "Send Feedback"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:472
+#: src/Views/AppInfoView.vala:490
 msgid "Help"
 msgstr "मदत"
 
-#: src/Views/AppInfoView.vala:483
+#: src/Views/AppInfoView.vala:501
 msgid "What's New:"
 msgstr "नवीन काय आहे:"
 
-#: src/Views/AppInfoView.vala:528
+#: src/Views/AppInfoView.vala:546
 msgid "Extensions:"
 msgstr "विस्तार :"
 
-#: src/Views/AppInfoView.vala:631
+#: src/Views/AppInfoView.vala:649
 msgid "Link copied to clipboard"
 msgstr "दुवा क्लिपबोर्डवर कॉपी केला"
 
-#: src/Views/AppInfoView.vala:642
+#: src/Views/AppInfoView.vala:660
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "अँप सेंटर वर %s बघा:"
 
-#: src/Views/AppInfoView.vala:650
+#: src/Views/AppInfoView.vala:668
 msgid "Share"
 msgstr "शेअर करा"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:960
+#: src/Views/AppInfoView.vala:978
 msgid "Public Domain"
 msgstr "सार्वजनिक डोमेन"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:963
+#: src/Views/AppInfoView.vala:981
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://mr.wikipedia.org/wiki/%E0%A4%B8%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%B5%E0%A4%9C%E0%A4%A8%E0%A4%BF%E0%A4%95_%E0%A4%85%E0%A4%A7%E0%A4%BF%E0%A4%95%E0%A5%8D%E0%A4%B7%E0%A5%87%E0%A4%A4%E0%A5%8D%E0%A4%B0"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:968
+#: src/Views/AppInfoView.vala:986
 msgid "Free Software"
 msgstr "फ्री सॉफ्टवेअर"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:971
+#: src/Views/AppInfoView.vala:989
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sw"
 
-#: src/Views/AppInfoView.vala:975
+#: src/Views/AppInfoView.vala:993
 msgid "Proprietary"
 msgstr "मालकी"
 
-#: src/Views/AppInfoView.vala:978
+#: src/Views/AppInfoView.vala:996
 msgid "Unknown License"
 msgstr "अज्ञात परवाना"
 
-#: src/Views/AppInfoView.vala:1058
+#: src/Views/AppInfoView.vala:1076
 msgid "Fund"
 msgstr "निधी"
 
-#: src/Views/AppInfoView.vala:1066
+#: src/Views/AppInfoView.vala:1084
 msgid "Fund the development of this app"
 msgstr "या अॅपच्या विकासासाठी निधी द्या"
 
-#: src/Views/AppInfoView.vala:1170
+#: src/Views/AppInfoView.vala:1188
 #, c-format
 msgid "Other Apps by %s"
 msgstr "%s प्रमाणे इतर अॅप्स"
@@ -789,7 +805,7 @@ msgstr "अलीकडे अपडेट केलेले"
 msgid "Categories"
 msgstr "श्रेणी"
 
-#: src/Views/Homepage.vala:287 src/Views/Homepage.vala:298
+#: src/Views/Homepage.vala:291 src/Views/Homepage.vala:302
 #, c-format
 msgid "Search %s"
 msgstr "%s शोधा"
@@ -804,67 +820,67 @@ msgstr "शोधा"
 msgid "Card Number"
 msgstr "कार्ड नंबर"
 
-#: src/Widgets/CategoryFlowBox.vala:27
+#: src/Widgets/CategoryFlowBox.vala:28
 msgid "Accessories"
 msgstr "अॅक्सेसरीज"
 
-#: src/Widgets/CategoryFlowBox.vala:28
+#: src/Widgets/CategoryFlowBox.vala:29
 msgid "Audio"
 msgstr "ध्वनी"
 
-#: src/Widgets/CategoryFlowBox.vala:29
+#: src/Widgets/CategoryFlowBox.vala:30
 msgid "Communication"
 msgstr "संप्रेषण"
 
-#: src/Widgets/CategoryFlowBox.vala:38
+#: src/Widgets/CategoryFlowBox.vala:39
 msgid "Development"
 msgstr "विकास"
 
-#: src/Widgets/CategoryFlowBox.vala:48
+#: src/Widgets/CategoryFlowBox.vala:49
 msgid "Education"
 msgstr "शिक्षण"
 
-#: src/Widgets/CategoryFlowBox.vala:49
+#: src/Widgets/CategoryFlowBox.vala:50
 msgid "Finance"
 msgstr "अर्थ व्यवस्था"
 
-#: src/Widgets/CategoryFlowBox.vala:53
+#: src/Widgets/CategoryFlowBox.vala:54
 msgid "Games"
 msgstr "खेळ"
 
-#: src/Widgets/CategoryFlowBox.vala:69
+#: src/Widgets/CategoryFlowBox.vala:70
 msgid "Graphics"
 msgstr "ग्राफिक"
 
-#: src/Widgets/CategoryFlowBox.vala:78
+#: src/Widgets/CategoryFlowBox.vala:79
 msgid "Internet"
 msgstr "इंटरनेट"
 
-#: src/Widgets/CategoryFlowBox.vala:82
+#: src/Widgets/CategoryFlowBox.vala:83
 msgid "Math, Science, & Engineering"
 msgstr "विज्ञान आणि अभियांत्रिकी"
 
-#: src/Widgets/CategoryFlowBox.vala:101
+#: src/Widgets/CategoryFlowBox.vala:102
 msgid "Media Production"
 msgstr "माध्यम उत्पादन"
 
-#: src/Widgets/CategoryFlowBox.vala:108
+#: src/Widgets/CategoryFlowBox.vala:109
 msgid "Office"
 msgstr "कार्यालय"
 
-#: src/Widgets/CategoryFlowBox.vala:115
+#: src/Widgets/CategoryFlowBox.vala:116
 msgid "System"
 msgstr "सिस्टिम"
 
-#: src/Widgets/CategoryFlowBox.vala:119
+#: src/Widgets/CategoryFlowBox.vala:120
 msgid "Universal Access"
 msgstr "सार्वत्रिक प्रवेश"
 
-#: src/Widgets/CategoryFlowBox.vala:120
+#: src/Widgets/CategoryFlowBox.vala:121
 msgid "Video"
 msgstr "व्हिडिओ"
 
-#: src/Widgets/CategoryFlowBox.vala:125
+#: src/Widgets/CategoryFlowBox.vala:126
 msgid "Writing & Language"
 msgstr "लेखन आणि भाषा"
 

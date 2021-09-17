@@ -31,7 +31,6 @@ public class AppCenter.Homepage : AbstractView {
     public bool viewing_package { get; private set; default = false; }
 
     public AppStream.Category currently_viewed_category;
-#if HOMEPAGE
     private Hdy.Carousel banner_carousel;
     private Gtk.Revealer banner_revealer;
     private Gtk.FlowBox recently_updated_carousel;
@@ -89,13 +88,10 @@ public class AppCenter.Homepage : AbstractView {
             margin_start = 24,
             margin_top = 24
         };
-#else
-    construct {
-#endif
+
         category_flow = new Widgets.CategoryFlowBox () {
             margin_start = 12,
             margin_end =12,
-            margin_top = 12,
             valign = Gtk.Align.START
         };
 
@@ -103,14 +99,9 @@ public class AppCenter.Homepage : AbstractView {
             column_spacing = 24,
             orientation = Gtk.Orientation.VERTICAL
         };
-#if HOMEPAGE
         grid.add (banner_revealer);
         grid.add (recently_updated_revealer);
         grid.add (categories_label);
-
-        // Remove since we have the label with its margin
-        category_flow.margin_top = 0;
-#endif
         grid.add (category_flow);
 
         category_scrolled = new Gtk.ScrolledWindow (null, null);
@@ -118,7 +109,6 @@ public class AppCenter.Homepage : AbstractView {
 
         add (category_scrolled);
 
-#if HOMEPAGE
         var local_package = App.local_package;
         if (local_package != null) {
             var banner = new Widgets.Banner (local_package);
@@ -131,7 +121,6 @@ public class AppCenter.Homepage : AbstractView {
         }
 
         load_banners_and_carousels.begin ();
-#endif
 
         category_flow.child_activated.connect ((child) => {
             var item = child as Widgets.CategoryItem;
@@ -169,7 +158,6 @@ public class AppCenter.Homepage : AbstractView {
                     }
                 }
 
-#if HOMEPAGE
                 return GLib.Source.REMOVE;
             });
         });
@@ -191,7 +179,7 @@ public class AppCenter.Homepage : AbstractView {
 
     private async void load_banners_and_carousels () {
         unowned var fp_client = AppCenterCore.FlatpakBackend.get_default ();
-        var packages_by_release_date = fp_client.get_native_packages_by_release_date ();
+        var packages_by_release_date = fp_client.get_featured_packages_by_release_date ();
         var packages_in_banner = new Gee.LinkedList<AppCenterCore.Package> ();
 
         int package_count = 0;
@@ -258,11 +246,6 @@ public class AppCenter.Homepage : AbstractView {
 
         page_loaded ();
     }
-#else
-            });
-        });
-    }
-#endif
 
     public override void show_package (
         AppCenterCore.Package package,
@@ -323,7 +306,6 @@ public class AppCenter.Homepage : AbstractView {
         app_list_view.add_packages (apps);
     }
 
-#if HOMEPAGE
     private void banner_timeout_start () {
         banner_timeout_id = Timeout.add (MILLISECONDS_BETWEEN_BANNER_ITEMS, () => {
             var new_index = (uint) banner_carousel.position + 1;
@@ -345,5 +327,4 @@ public class AppCenter.Homepage : AbstractView {
             banner_timeout_id = 0;
         }
     }
-#endif
 }
