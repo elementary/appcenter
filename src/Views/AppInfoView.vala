@@ -72,7 +72,9 @@ namespace AppCenter.Views {
                 to_recycle = true;
             });
 
-            action_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+            unowned var action_button_context = action_button.get_style_context ();
+            action_button_context.add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+            action_button_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             var package_component = package.component;
 
@@ -614,15 +616,11 @@ namespace AppCenter.Views {
             var header_box = new Gtk.Grid () {
                 hexpand = true
             };
-            header_box.get_style_context ().add_class ("banner");
             header_box.add (header_clamp);
 
-            // FIXME: should be for context, not for screen
-            Gtk.StyleContext.add_provider_for_screen (
-                Gdk.Screen.get_default (),
-                banner_provider,
-                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
-            );
+            unowned var header_box_context = header_box.get_style_context ();
+            header_box_context.add_class ("banner");
+            header_box_context.add_provider (banner_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             var body_clamp = new Hdy.Clamp () {
                 margin = 24,
