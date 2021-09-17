@@ -102,8 +102,9 @@ namespace AppCenter.Views {
 
             var oars_flowbox = new Gtk.FlowBox () {
                 column_spacing = 24,
+                margin_bottom = 24,
                 row_spacing = 24,
-                margin_bottom = 24
+                selection_mode = Gtk.SelectionMode.NONE
             };
 
 #if CURATED
@@ -1132,10 +1133,9 @@ namespace AppCenter.Views {
         }
     }
 
-    class ContentType : Gtk.Grid {
+    class ContentType : Gtk.FlowBoxChild {
         public ContentType (string title, string description, string icon_name) {
-            orientation = Gtk.Orientation.VERTICAL;
-            row_spacing = 3;
+            can_focus = false;
 
             var icon = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.DND) {
                 halign = Gtk.Align.START,
@@ -1156,9 +1156,16 @@ namespace AppCenter.Views {
             description_label_context.add_class (Granite.STYLE_CLASS_SMALL_LABEL);
             description_label_context.add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
-            add (icon);
-            add (label);
-            add (description_label);
+            var grid = new Gtk.Grid () {
+                orientation = Gtk.Orientation.VERTICAL,
+                row_spacing = 3
+            };
+
+            grid.add (icon);
+            grid.add (label);
+            grid.add (description_label);
+
+            add (grid);
         }
     }
 
