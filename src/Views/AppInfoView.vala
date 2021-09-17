@@ -717,6 +717,8 @@ namespace AppCenter.Views {
                     });
                 });
             }
+
+            realize.connect (load_more_content);
         }
 
         protected override void update_state (bool first_update = false) {
@@ -794,7 +796,9 @@ namespace AppCenter.Views {
             }
         }
 
-        public void load_more_content (AppCenterCore.ScreenshotCache cache) {
+        private void load_more_content () {
+            var cache = AppCenterCore.Client.get_default ().screenshot_cache;
+
             Gtk.TreeIter iter;
             uint count = 0;
             foreach (var origin_package in package.origin_packages) {
