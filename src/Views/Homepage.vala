@@ -23,7 +23,7 @@ public class AppCenter.Homepage : AbstractView {
     private const int MAX_PACKAGES_IN_CAROUSEL = 12;
 
     private Gtk.FlowBox category_flow;
-    private Gtk.ScrolledWindow category_scrolled;
+    private Gtk.ScrolledWindow scrolled_window;
     private AppStream.Category current_category;
 
     public signal void page_loaded ();
@@ -104,10 +104,12 @@ public class AppCenter.Homepage : AbstractView {
         grid.add (categories_label);
         grid.add (category_flow);
 
-        category_scrolled = new Gtk.ScrolledWindow (null, null);
-        category_scrolled.add (grid);
+        scrolled_window = new Gtk.ScrolledWindow (null, null) {
+            hscrollbar_policy = Gtk.PolicyType.NEVER
+        };
+        scrolled_window.add (grid);
 
-        add (category_scrolled);
+        add (scrolled_window);
 
         var local_package = App.local_package;
         if (local_package != null) {
@@ -273,7 +275,7 @@ public class AppCenter.Homepage : AbstractView {
             viewing_package = false;
             subview_entered (_("Home"), true, current_category.name, _("Search %s").printf (current_category.name));
         } else {
-            set_visible_child (category_scrolled);
+            set_visible_child (scrolled_window);
             viewing_package = false;
             currently_viewed_category = null;
             current_category = null;
