@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-16 04:37+0000\n"
-"PO-Revision-Date: 2021-09-20 19:56+0000\n"
-"Last-Translator: DartDeaDia <dartdeadia@protonmail.com>\n"
+"PO-Revision-Date: 2021-09-20 23:46+0000\n"
+"Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/uk/>\n"
 "Language: uk\n"
@@ -631,7 +631,7 @@ msgstr "Жорстокість"
 
 #: src/Views/AppInfoView.vala:152
 msgid "Fantasy Violence"
-msgstr "Насильство у фантазіях"
+msgstr "Фантазії про насильство"
 
 #: src/Views/AppInfoView.vala:157
 msgid "Graphic violence, bloodshed, or death"
