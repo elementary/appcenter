@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-21 21:50+0000\n"
-"PO-Revision-Date: 2021-09-15 19:20+0000\n"
+"PO-Revision-Date: 2021-09-22 03:11+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/extra/"
 "he/>\n"
@@ -61,7 +61,7 @@ msgstr "הצגת יישומים אחרים לפי יוצריהם למקורות 
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Populate banner on home locally instead of relying on an external API"
-msgstr ""
+msgstr "אכלוס הכרזה בדף הבית עם תוכן מקומי במקום להסתמך על API חיצוני"
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
 #: data/io.elementary.appcenter.appdata.xml.in:35
@@ -75,7 +75,7 @@ msgstr "שיפורים:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:27
 msgid "Greatly increased number of recently-updated apps shown on home page"
-msgstr ""
+msgstr "מספר גדול משמעותית של יישומים שעודכנו לאחרונה מופיעים בדף הבית"
 
 #: data/io.elementary.appcenter.appdata.xml.in:28
 msgid "Navigate banners on the home page with multitouch gestures"
