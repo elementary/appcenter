@@ -108,7 +108,7 @@ namespace AppCenter.Views {
             };
 
 #if CURATED
-            if (!package.is_native) {
+            if (!package.is_native && !package.is_os_updates) {
                 var uncurated = new ContentType (
                     _("Non-Curated"),
                     _("Not reviewed by elementary for security, privacy, or system integration"),
