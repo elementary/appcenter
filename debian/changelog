@@ -1,3 +1,46 @@
+appcenter (3.8.0) bionic; urgency=medium
+
+  * Release 3.8.0 (#1697)
+  * AppInfoView: disable non-curated badge on OS updates (#1696)
+  * AppInfoView: load_more_content on realize (#1693)
+  * Homepage: don't horizontally scroll (#1694)
+  * Workflows: Test for Fedora and Pop configurations (#1679)
+  * AppInfoView: Prevent focusing OARS ContentTypes (#1689)
+  * meson: require libhandy-1 >= 1.1.90 (#1690)
+  * Remove `homepage` flag in favor of `curated` (#1686)
+  * AppInfoView: only show non-curated badge when CURATED option is true
+    (#1687)
+  * Update translation files
+  * Update translation template
+  * AppInfoView: Distinguish between fantasy violence (#1685)
+  * Change OARS icons namespace (#1684)
+  * AppInfoView: Show an icon for uncurated apps (#1683)
+  * CategoryFlowBox: fix margins (#1681)
+  * Homepage: Fix building with homepage=false (#1677)
+  * Remove content warning dialog (#1674)
+  * AppInfoView: Remove oars_header (#1675)
+  * AppInfoView: Indicate multiplayer (#1673)
+  * AppInfoView: more specific info for oars chat (#1672)
+  * AppInfoView: Indicate conflict vs violence (#1670)
+  * AppInfoView: provide more specific OARS data
+  * AppInfoView: fix content warning wrap (#1668)
+  * GResource OARS icons (#1667)
+  * AppInfoView: Add content warnings (#1664)
+  * Homepage: Use Hdy.Carousel for banner (#1662)
+  * FlatpakBackend: implement get_packages_by_author (#1661)
+  * StripeDialog: rewrite entry validation (#1655)
+  * StripeDialog: move pay-what-you-can flow here (#1629)
+  * Homepage: replace carousel with PackageRowGrid (#1648)
+  * AbstractAppContainer: Remove icon construction (#1636)
+  * Banner: tweak copy (#1647)
+  * Banner: use accent for default colors (#1646)
+  * Update POTFILES
+  * Homepage: Add recently-updated apps to banner (#1645)
+  * AppInfoView: replace Carousel with Flowbox of ListPackageRowGrids
+    (#1637)
+
+ -- elementary Builds Team <builds@elementary.io>  Tue, 21 Sep 2021 21:49:50 +0000
+
 appcenter (3.7.1) bionic; urgency=medium
 
   * Release 3.7.1 (#1639)
