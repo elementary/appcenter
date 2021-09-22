@@ -6,9 +6,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-21 21:50+0000\n"
-"PO-Revision-Date: 2021-07-18 01:07+0000\n"
+"PO-Revision-Date: 2021-09-23 03:07+0000\n"
 "Last-Translator: Ciarán Ainsworth <ciaranainsworth@outlook.com>\n"
-"Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/appcenter/appcenter/en_GB/>\n"
+"Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
+"appcenter/appcenter/en_GB/>\n"
 "Language: en_GB\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -386,24 +387,24 @@ msgid "Pay $%d for %s"
 msgstr "Pay $%d for %s"
 
 #: src/Dialogs/StripeDialog.vala:94
-#, fuzzy
-#| msgid "This is a one time payment. Your email address is only used to send you a receipt."
 msgid "This is a one time payment suggested by the developer. You can also choose your own price."
-msgstr "This is a one time payment. Your email address is only used to send you a receipt."
+msgstr ""
+"This is a one time payment suggested by the developer. You can also choose "
+"your own price."
 
 #: src/Dialogs/StripeDialog.vala:115
 msgid "or"
-msgstr ""
+msgstr "or"
 
 #: src/Dialogs/StripeDialog.vala:152
 msgid "Email"
 msgstr "Email"
 
 #: src/Dialogs/StripeDialog.vala:157
-#, fuzzy
-#| msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
 msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
-msgstr "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
+msgstr ""
+"Only used to send you a receipt. You will not be subscribed to any mailing "
+"list."
 
 #: src/Dialogs/StripeDialog.vala:158
 msgid "Privacy Policy"
@@ -572,107 +573,103 @@ msgstr "Failed to update “%s”"
 
 #: src/Views/AppInfoView.vala:80
 msgid "Illicit Substances"
-msgstr ""
+msgstr "Illicit Substances"
 
 #: src/Views/AppInfoView.vala:81
 msgid "Presence of or references to alcohol, narcotics, or tobacco"
-msgstr ""
+msgstr "Presence of or references to alcohol, narcotics, or tobacco"
 
 #: src/Views/AppInfoView.vala:86
 msgid "Sex & Nudity"
-msgstr ""
+msgstr "Sex & Nudity"
 
 #: src/Views/AppInfoView.vala:87
 msgid "Adult nudity or sexual themes"
-msgstr ""
+msgstr "Adult nudity or sexual themes"
 
 #: src/Views/AppInfoView.vala:92
 msgid "Offensive Language"
-msgstr ""
+msgstr "Offensive Language"
 
 #: src/Views/AppInfoView.vala:93
 msgid "Profanity, discriminatory language, or adult humor"
-msgstr ""
+msgstr "Profanity, discriminatory language, or adult humour"
 
 #: src/Views/AppInfoView.vala:98
 msgid "Gambling"
-msgstr ""
+msgstr "Gambling"
 
 #: src/Views/AppInfoView.vala:99
 msgid "Realistic or participatory gambling"
-msgstr ""
+msgstr "Realistic or participatory gambling"
 
 #: src/Views/AppInfoView.vala:113
-#, fuzzy
-#| msgid "Non-Curated Apps"
 msgid "Non-Curated"
-msgstr "Non-Curated Apps"
+msgstr "Non-Curated"
 
 #: src/Views/AppInfoView.vala:114
-#, fuzzy
-#| msgid "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
 msgid "Not reviewed by elementary for security, privacy, or system integration"
-msgstr "“%s” is not curated by elementary and has not been reviewed for security, privacy, or system integration."
+msgstr "Not reviewed by elementary for security, privacy, or system integration"
 
 #: src/Views/AppInfoView.vala:136
 msgid "Conflict"
-msgstr ""
+msgstr "Conflict"
 
 #: src/Views/AppInfoView.vala:137
 msgid "Depictions of unsafe situations or aggressive conflict"
-msgstr ""
+msgstr "Depictions of unsafe situations or aggressive conflict"
 
 #: src/Views/AppInfoView.vala:150
 msgid "Violence"
-msgstr ""
+msgstr "Violence"
 
 #: src/Views/AppInfoView.vala:155
 msgid "Fantasy Violence"
-msgstr ""
+msgstr "Fantasy Violence"
 
 #: src/Views/AppInfoView.vala:160
 msgid "Graphic violence, bloodshed, or death"
-msgstr ""
+msgstr "Graphic violence, bloodshed, or death"
 
 #: src/Views/AppInfoView.vala:201
 msgid "Multiplayer"
-msgstr ""
+msgstr "Multiplayer"
 
 #: src/Views/AppInfoView.vala:202
 msgid "Online play with other people"
-msgstr ""
+msgstr "Online play with other people"
 
 #: src/Views/AppInfoView.vala:218
 msgid "Unmoderated Audio, Video, or Text messaging with other people"
-msgstr ""
+msgstr "Unmoderated Audio, Video, or Text messaging with other people"
 
 #: src/Views/AppInfoView.vala:220
 msgid "Moderated Audio, Video, or Text messaging with other people"
-msgstr ""
+msgstr "Moderated Audio, Video, or Text messaging with other people"
 
 #: src/Views/AppInfoView.vala:224
 msgid "Online Interactions"
-msgstr ""
+msgstr "Online Interactions"
 
 #: src/Views/AppInfoView.vala:234
 msgid "Location Sharing"
-msgstr ""
+msgstr "Location Sharing"
 
 #: src/Views/AppInfoView.vala:235
 msgid "Other people can see your real-world location"
-msgstr ""
+msgstr "Other people can see your real-world location"
 
 #: src/Views/AppInfoView.vala:247
 msgid "Collects anonymous usage data"
-msgstr ""
+msgstr "Collects anonymous usage data"
 
 #: src/Views/AppInfoView.vala:250
 msgid "Collects usage data that could be used to identify you"
-msgstr ""
+msgstr "Collects usage data that could be used to identify you"
 
 #: src/Views/AppInfoView.vala:255
 msgid "Info Sharing"
-msgstr ""
+msgstr "Info Sharing"
 
 #: src/Views/AppInfoView.vala:372
 msgid "Screenshot Not Available"
@@ -783,16 +780,17 @@ msgstr "Update All"
 
 #: src/Views/AppListView.vala:29
 msgid "Flathub"
-msgstr ""
+msgstr "Flathub"
 
 #: src/Views/AppListView.vala:31
 msgid "No Apps Found"
-msgstr ""
+msgstr "No Apps Found"
 
 #: src/Views/AppListView.vala:32
 #, c-format
 msgid "Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 msgstr ""
+"Try changing search terms. You can also sideload Flatpak apps e.g. from %s"
 
 #: src/Views/AppListView.vala:168
 msgid "Non-Curated Apps"
