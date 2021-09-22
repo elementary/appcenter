@@ -13,8 +13,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-21 21:50+0000\n"
-"PO-Revision-Date: 2021-09-22 09:32+0000\n"
-"Last-Translator: Corentin Noël <tintou@noel.tf>\n"
+"PO-Revision-Date: 2021-09-22 09:35+0000\n"
+"Last-Translator: Léo Bidot <toonbunny@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/fr/>\n"
 "Language: fr\n"
@@ -592,19 +592,19 @@ msgstr "Nudité adulte ou thèmes sexuel"
 
 #: src/Views/AppInfoView.vala:92
 msgid "Offensive Language"
-msgstr ""
+msgstr "Langage offensant"
 
 #: src/Views/AppInfoView.vala:93
 msgid "Profanity, discriminatory language, or adult humor"
-msgstr ""
+msgstr "Grossièretés, langage discriminatoire ou humour mature"
 
 #: src/Views/AppInfoView.vala:98
 msgid "Gambling"
-msgstr ""
+msgstr "Jeux d'argent"
 
 #: src/Views/AppInfoView.vala:99
 msgid "Realistic or participatory gambling"
-msgstr ""
+msgstr "Jeu réaliste ou participatif"
 
 #: src/Views/AppInfoView.vala:113
 #, fuzzy
@@ -620,43 +620,43 @@ msgstr "« %s » n'a pas été vérifiée par elementary, notamment au regard de
 
 #: src/Views/AppInfoView.vala:136
 msgid "Conflict"
-msgstr ""
+msgstr "Conflit"
 
 #: src/Views/AppInfoView.vala:137
 msgid "Depictions of unsafe situations or aggressive conflict"
-msgstr ""
+msgstr "Représentations de situations dangereuses ou de conflits agressifs"
 
 #: src/Views/AppInfoView.vala:150
 msgid "Violence"
-msgstr ""
+msgstr "Violence"
 
 #: src/Views/AppInfoView.vala:155
 msgid "Fantasy Violence"
-msgstr ""
+msgstr "Violence fictive"
 
 #: src/Views/AppInfoView.vala:160
 msgid "Graphic violence, bloodshed, or death"
-msgstr ""
+msgstr "Violence graphique, effusion sang ou mort"
 
 #: src/Views/AppInfoView.vala:201
 msgid "Multiplayer"
-msgstr ""
+msgstr "Multijoueur"
 
 #: src/Views/AppInfoView.vala:202
 msgid "Online play with other people"
-msgstr ""
+msgstr "Jouer en ligne avec d'autres personnes"
 
 #: src/Views/AppInfoView.vala:218
 msgid "Unmoderated Audio, Video, or Text messaging with other people"
-msgstr ""
+msgstr "Messagerie audio, vidéo ou texte non modérée avec d'autres personnes"
 
 #: src/Views/AppInfoView.vala:220
 msgid "Moderated Audio, Video, or Text messaging with other people"
-msgstr ""
+msgstr "Messagerie audio, vidéo ou texte modérée avec d'autres personnes"
 
 #: src/Views/AppInfoView.vala:224
 msgid "Online Interactions"
-msgstr ""
+msgstr "Interactions en ligne"
 
 #: src/Views/AppInfoView.vala:234
 msgid "Location Sharing"
