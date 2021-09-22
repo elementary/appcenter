@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-21 21:50+0000\n"
-"PO-Revision-Date: 2021-08-10 09:36+0000\n"
+"PO-Revision-Date: 2021-09-23 03:07+0000\n"
 "Last-Translator: Ciarán Ainsworth <ciaranainsworth@outlook.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "appcenter/extra/en_GB/>\n"
@@ -45,7 +45,7 @@ msgstr "New features:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Show content warnings on app info pages"
-msgstr ""
+msgstr "Show content warnings on app info pages"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:45
@@ -58,11 +58,11 @@ msgstr "Fixes:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:22
 msgid "Show other apps by an author for Flatpak sources"
-msgstr ""
+msgstr "Show other apps by an author for Flatpak sources"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Populate banner on home locally instead of relying on an external API"
-msgstr ""
+msgstr "Populate banner on home locally instead of relying on an external API"
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
 #: data/io.elementary.appcenter.appdata.xml.in:35
@@ -76,11 +76,11 @@ msgstr "Improvements:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:27
 msgid "Greatly increased number of recently-updated apps shown on home page"
-msgstr ""
+msgstr "Greatly increased number of recently-updated apps shown on home page"
 
 #: data/io.elementary.appcenter.appdata.xml.in:28
 msgid "Navigate banners on the home page with multitouch gestures"
-msgstr ""
+msgstr "Navigate banners on the home page with multitouch gestures"
 
 #: data/io.elementary.appcenter.appdata.xml.in:29
 #: data/io.elementary.appcenter.appdata.xml.in:39
@@ -103,35 +103,35 @@ msgstr "Updated translations"
 
 #: data/io.elementary.appcenter.appdata.xml.in:37
 msgid "Show apps from newly sideloaded remotes without requiring a restart"
-msgstr ""
+msgstr "Show apps from newly sideloaded remotes without requiring a restart"
 
 #: data/io.elementary.appcenter.appdata.xml.in:38
 msgid "Less abrupt transition when changing app sources"
-msgstr ""
+msgstr "Less abrupt transition when changing app sources"
 
 #: data/io.elementary.appcenter.appdata.xml.in:47
-#, fuzzy
-#| msgid "Install Linux kernel headers with NVIDIA drivers"
 msgid "Install Linux kernel headers for device drivers that use DKMS"
-msgstr "Install Linux kernel headers with NVIDIA drivers"
+msgstr "Install Linux kernel headers for device drivers that use DKMS"
 
 #: data/io.elementary.appcenter.appdata.xml.in:48
 msgid "Use system Flatpak runtimes for locally installed apps"
-msgstr ""
+msgstr "Use system Flatpak runtimes for locally installed apps"
 
 #: data/io.elementary.appcenter.appdata.xml.in:52
 msgid "Mention Sideload when search returns no results"
-msgstr ""
+msgstr "Mention Sideload when search returns no results"
 
 #: data/io.elementary.appcenter.appdata.xml.in:61
 msgid ""
 "Ensure user installation is selected by default when navigating from the "
 "homepage"
 msgstr ""
+"Ensure user installation is selected by default when navigating from the "
+"homepage"
 
 #: data/io.elementary.appcenter.appdata.xml.in:62
 msgid "Fix opening apps from app installed toasts"
-msgstr ""
+msgstr "Fix opening apps from app installed toasts"
 
 #: data/io.elementary.appcenter.appdata.xml.in:74
 msgid "Install Linux kernel headers with NVIDIA drivers"
