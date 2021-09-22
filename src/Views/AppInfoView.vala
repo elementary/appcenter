@@ -110,7 +110,7 @@ namespace AppCenter.Views {
             };
 
 #if CURATED
-            if (!package.is_native) {
+            if (!package.is_native && !package.is_os_updates) {
                 var uncurated = new ContentType (
                     _("Non-Curated"),
                     _("Not reviewed by elementary for security, privacy, or system integration"),
@@ -715,6 +715,8 @@ namespace AppCenter.Views {
                     });
                 });
             }
+
+            realize.connect (load_more_content);
         }
 
         protected override void update_state (bool first_update = false) {
@@ -792,7 +794,9 @@ namespace AppCenter.Views {
             }
         }
 
-        public void load_more_content (AppCenterCore.ScreenshotCache cache) {
+        private void load_more_content () {
+            var cache = AppCenterCore.Client.get_default ().screenshot_cache;
+
             Gtk.TreeIter iter;
             uint count = 0;
             foreach (var origin_package in package.origin_packages) {
