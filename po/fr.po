@@ -14,7 +14,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-21 21:50+0000\n"
 "PO-Revision-Date: 2021-09-22 09:32+0000\n"
-"Last-Translator: Léo Bidot <toonbunny@gmail.com>\n"
+"Last-Translator: Corentin Noël <tintou@noel.tf>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/fr/>\n"
 "Language: fr\n"
@@ -580,7 +580,7 @@ msgstr "Substances illicites"
 
 #: src/Views/AppInfoView.vala:81
 msgid "Presence of or references to alcohol, narcotics, or tobacco"
-msgstr "Présence ou référence à l'alcool, stupéfiants ou tabac."
+msgstr "Présence ou référence à l'alcool, stupéfiants ou tabac"
 
 #: src/Views/AppInfoView.vala:86
 msgid "Sex & Nudity"
