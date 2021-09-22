@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-21 21:50+0000\n"
-"PO-Revision-Date: 2021-09-16 19:44+0000\n"
+"PO-Revision-Date: 2021-09-22 20:21+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/appcenter/extra/"
 "ca/>\n"
@@ -64,7 +64,7 @@ msgstr "Es mostren altres aplicacions per autor de les fonts de Flatpak."
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Populate banner on home locally instead of relying on an external API"
-msgstr ""
+msgstr "S'emplena el bàner localment en lloc de confiar en una API externa."
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
 #: data/io.elementary.appcenter.appdata.xml.in:35
@@ -79,6 +79,8 @@ msgstr "Millores:"
 #: data/io.elementary.appcenter.appdata.xml.in:27
 msgid "Greatly increased number of recently-updated apps shown on home page"
 msgstr ""
+"Es mostra un gran nombre d'aplicacions actualitzades recentment a la pàgina "
+"d'inici."
 
 #: data/io.elementary.appcenter.appdata.xml.in:28
 msgid "Navigate banners on the home page with multitouch gestures"
