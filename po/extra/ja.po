@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-21 21:50+0000\n"
-"PO-Revision-Date: 2021-09-16 04:37+0000\n"
+"PO-Revision-Date: 2021-09-22 03:11+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/extra/"
 "ja/>\n"
@@ -64,7 +64,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Populate banner on home locally instead of relying on an external API"
-msgstr ""
+msgstr "“ホーム”ページのバナーを、外部 API に依存するのではなくローカルで作成し表示するように修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
 #: data/io.elementary.appcenter.appdata.xml.in:35
@@ -74,11 +74,11 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:91
 #: data/io.elementary.appcenter.appdata.xml.in:104
 msgid "Improvements:"
-msgstr "改善:"
+msgstr "改善点:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:27
 msgid "Greatly increased number of recently-updated apps shown on home page"
-msgstr ""
+msgstr "“ホーム”ページに表示される“最近アップデートされたアプリ”の項目数を大幅に増加"
 
 #: data/io.elementary.appcenter.appdata.xml.in:28
 msgid "Navigate banners on the home page with multitouch gestures"
