@@ -13,8 +13,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-21 21:50+0000\n"
-"PO-Revision-Date: 2021-09-22 09:35+0000\n"
-"Last-Translator: Corentin Noël <tintou@noel.tf>\n"
+"PO-Revision-Date: 2021-09-22 15:33+0000\n"
+"Last-Translator: Léo Bidot <toonbunny@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/fr/>\n"
 "Language: fr\n"
@@ -658,23 +658,25 @@ msgstr "Interactions en ligne"
 
 #: src/Views/AppInfoView.vala:234
 msgid "Location Sharing"
-msgstr ""
+msgstr "Partage de localisation"
 
 #: src/Views/AppInfoView.vala:235
 msgid "Other people can see your real-world location"
-msgstr ""
+msgstr "D'autres personnes peuvent voir votre localisation réelle"
 
 #: src/Views/AppInfoView.vala:247
 msgid "Collects anonymous usage data"
-msgstr ""
+msgstr "Collecte des données d'utilisation anonymes"
 
 #: src/Views/AppInfoView.vala:250
 msgid "Collects usage data that could be used to identify you"
 msgstr ""
+"Collecte des données d'utilisation qui pourraient être utilisées pour vous "
+"identifier"
 
 #: src/Views/AppInfoView.vala:255
 msgid "Info Sharing"
-msgstr ""
+msgstr "Partage d'info"
 
 #: src/Views/AppInfoView.vala:372
 msgid "Screenshot Not Available"
