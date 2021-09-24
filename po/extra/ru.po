@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-21 21:50+0000\n"
-"PO-Revision-Date: 2021-09-18 15:37+0000\n"
+"PO-Revision-Date: 2021-09-24 20:13+0000\n"
 "Last-Translator: DartDeaDia <dartdeadia@protonmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/appcenter/extra/"
 "ru/>\n"
@@ -67,6 +67,8 @@ msgstr "Отображение других приложений автора д
 #: data/io.elementary.appcenter.appdata.xml.in:23
 msgid "Populate banner on home locally instead of relying on an external API"
 msgstr ""
+"Баннер главной страницы размещен локально, вместо того, чтобы полагаться на "
+"внешний API"
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
 #: data/io.elementary.appcenter.appdata.xml.in:35
@@ -81,6 +83,8 @@ msgstr "Улучшения:"
 #: data/io.elementary.appcenter.appdata.xml.in:27
 msgid "Greatly increased number of recently-updated apps shown on home page"
 msgstr ""
+"Значительно увеличено количество недавно обновленных приложений, "
+"отображаемых на главной странице"
 
 #: data/io.elementary.appcenter.appdata.xml.in:28
 msgid "Navigate banners on the home page with multitouch gestures"
