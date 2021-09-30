@@ -57,11 +57,14 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
         };
         summary_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
-        string[] lines = package.get_description ().split ("\n");
-        var description = lines[0].strip ();
+        var description = "";
+        if (package.get_description () != null) {
+            string[] lines = package.get_description ().split ("\n");
+            description = lines[0].strip ();
 
-        for (int i = 1; i < lines.length; i++) {
-            description += " " + lines[i].strip ();
+            for (int i = 1; i < lines.length; i++) {
+                description += " " + lines[i].strip ();
+            }
         }
 
         int close_paragraph_index = description.index_of ("</p>", 0);
