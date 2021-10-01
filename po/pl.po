@@ -11,7 +11,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-21 21:50+0000\n"
 "PO-Revision-Date: 2021-10-01 05:58+0000\n"
-"Last-Translator: DarkKnightComes <darkknightcomes@gmail.com>\n"
+"Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/pl/>\n"
 "Language: pl\n"
@@ -48,13 +48,12 @@ msgstr "%s Aplikacja została zainstalowana"
 #: src/Application.vala:299 src/MainWindow.vala:353
 #, c-format
 msgid "“%s” has been installed"
-msgstr "\"%s\" zostało zainstalowane"
+msgstr "„%s” zostało zainstalowane"
 
 #: src/MainWindow.vala:146
-#, fuzzy, c-format
-#| msgid "Failed to uninstall “%s”"
+#, c-format
 msgid "Failed to launch “%s“"
-msgstr "Nie udało się odinstalować „%s”"
+msgstr "Nie udało się uruchomić „%s”"
 
 #: src/MainWindow.vala:171 src/Views/Homepage.vala:261
 #: src/Views/Homepage.vala:271 src/Views/Homepage.vala:276
@@ -229,7 +228,7 @@ msgstr "Nieznany stan"
 
 #: src/Core/BackendAggregator.vala:46
 msgid "package operations are being performed"
-msgstr ""
+msgstr "operacje na pakietach są wykonywane"
 
 #: src/Core/Client.vala:72
 msgid "Update Available"
@@ -270,7 +269,7 @@ msgstr "Ubuntu (bez przeglądu)"
 #: src/Core/Package.vala:343
 #, c-format
 msgid "%s (system-wide)"
-msgstr ""
+msgstr "%s (systemowy)"
 
 #: src/Core/Package.vala:348
 msgid "Ubuntu Drivers"
@@ -286,9 +285,9 @@ msgid "Application state not set as installed in AppCenter for package: %s"
 msgstr "Stan programu nie jest ustawiony jako zainstalowany w AppCenter dla pakietu: %s"
 
 #: src/Core/PackageKitBackend.vala:286
-#, fuzzy, c-format
+#, c-format
 msgid "%s (local)"
-msgstr "%s (bez przeglądu)"
+msgstr "%s (lokalny)"
 
 #: src/Core/UpdateManager.vala:38
 msgid "Operating System Updates"
@@ -339,10 +338,8 @@ msgstr ""
 "ręcznie skompilowane oprogramowanie."
 
 #: src/Dialogs/InstallFailDialog.vala:37
-#, fuzzy
-#| msgid "Failed to uninstall app"
 msgid "Failed to install app"
-msgstr "Błąd odinstalowania programu"
+msgstr "Nie udało się zainstalować aplikacji"
 
 #: src/Dialogs/InstallFailDialog.vala:40
 #, c-format
