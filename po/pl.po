@@ -4,13 +4,14 @@
 # Deleted User <noreply+917@weblate.org>, 2019.
 # Oskar Rygasiewicz <fleepgames@gmail.com>, 2021.
 # Marcin Serwin <marcin.serwin0@protonmail.com>, 2021.
+# DarkKnightComes <darkknightcomes@gmail.com>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-21 21:50+0000\n"
 "PO-Revision-Date: 2021-10-01 05:58+0000\n"
-"Last-Translator: Oskar Rygasiewicz <fleepgames@gmail.com>\n"
+"Last-Translator: DarkKnightComes <darkknightcomes@gmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/pl/>\n"
 "Language: pl\n"
@@ -332,10 +333,10 @@ msgid "Please restart your system to finalize updates"
 msgstr "Uruchom ponownie system, aby dokończyć aktualizacje"
 
 #: src/Dialogs/InstallFailDialog.vala:26
-#, fuzzy
-#| msgid "This may have been caused by external or manually compiled software."
 msgid "This may be a temporary issue or could have been caused by external or manually compiled software."
-msgstr "Przyczyną może być zewnętrznie lub ręcznie skompilowane oprogramowanie."
+msgstr ""
+"To może być chwilowy błąd lub mógł być spowodowany przez zewnętrznie lub "
+"ręcznie skompilowane oprogramowanie."
 
 #: src/Dialogs/InstallFailDialog.vala:37
 #, fuzzy
@@ -349,15 +350,12 @@ msgid "Failed to install “%s”"
 msgstr "Nie udało się zainstalować „%s”"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:27
-#, fuzzy
-#| msgid "Content Warning"
 msgid "Non-Curated Warning"
-msgstr "Ostrzeżenie o zawartości"
+msgstr "Ostrzeżenie o braku przeglądu"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:37
-#, fuzzy
 msgid "Install non-curated app?"
-msgstr "%s (bez przeglądu)"
+msgstr "Zainstalować aplikację bez przeglądu?"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:38
 #, c-format
