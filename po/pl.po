@@ -5,13 +5,14 @@
 # Oskar Rygasiewicz <fleepgames@gmail.com>, 2021.
 # Marcin Serwin <marcin.serwin0@protonmail.com>, 2021.
 # DarkKnightComes <darkknightcomes@gmail.com>, 2021.
+# Janek Pastuszka <windainspektor@gmail.com>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-21 21:50+0000\n"
-"PO-Revision-Date: 2021-10-01 05:58+0000\n"
-"Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
+"PO-Revision-Date: 2021-10-01 05:59+0000\n"
+"Last-Translator: Janek Pastuszka <windainspektor@gmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/pl/>\n"
 "Language: pl\n"
@@ -368,6 +369,8 @@ msgstr ""
 #: src/Dialogs/NonCuratedWarningDialog.vala:60
 msgid "It may access or change system or personal files without permission"
 msgstr ""
+"Może mieć dostęp do plików systemowych i personalnych, a także je zmieniać "
+"bez bez pozwolenia."
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
 #, fuzzy
