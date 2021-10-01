@@ -12,7 +12,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-21 21:50+0000\n"
 "PO-Revision-Date: 2021-10-01 14:08+0000\n"
-"Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
+"Last-Translator: DarkKnightComes <darkknightcomes@gmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/pl/>\n"
 "Language: pl\n"
@@ -373,10 +373,8 @@ msgstr ""
 "bez pozwolenia"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:66
-#, fuzzy
-#| msgid "Show content warnings"
 msgid "Show non-curated warnings"
-msgstr "Pokaż ostrzeżenie o zawartości"
+msgstr "Pokaż ostrzeżenia o braku przeglądu"
 
 #: src/Dialogs/NonCuratedWarningDialog.vala:81
 msgid "Don’t Install"
@@ -708,7 +706,7 @@ msgstr ""
 
 #: src/Views/AppInfoView.vala:487
 msgid "Send Feedback"
-msgstr ""
+msgstr "Wyślij opinię"
 
 #: src/Views/AppInfoView.vala:493
 msgid "Help"
@@ -785,10 +783,9 @@ msgid "Downloading a list of available updates to the OS and installed apps"
 msgstr ""
 
 #: src/Views/AppListUpdateView.vala:41
-#, fuzzy
-#| msgid "A restart is required to complete the installation of updates"
 msgid "A restart is required to finish installing updates"
-msgstr "Ponowne uruchomienie jest wymagane, aby dokończyć instalację aktualizacji"
+msgstr ""
+"Ponowne uruchomienie jest wymagane, aby dokończyć instalację aktualizacji"
 
 #: src/Views/AppListUpdateView.vala:49
 msgid "Restart Now"
@@ -797,6 +794,8 @@ msgstr "Uruchom ponownie teraz"
 #: src/Views/AppListUpdateView.vala:58
 msgid "Requesting a restart failed. Restart manually to finish installing updates"
 msgstr ""
+"Żądanie restartu nieudane. Uruchom ponownie ręcznie, aby dokończyć "
+"instalowanie aktualizacji"
 
 #. Unfortunately the update all button needs to be recreated everytime the header needs to be updated
 #: src/Views/AppListUpdateView.vala:186
