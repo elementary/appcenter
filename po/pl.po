@@ -3,13 +3,14 @@
 # Daniel Foré <daniel@elementary.io>, 2019.
 # Deleted User <noreply+917@weblate.org>, 2019.
 # Oskar Rygasiewicz <fleepgames@gmail.com>, 2021.
+# Marcin Serwin <marcin.serwin0@protonmail.com>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-21 21:50+0000\n"
 "PO-Revision-Date: 2021-10-01 05:56+0000\n"
-"Last-Translator: Oskar Rygasiewicz <fleepgames@gmail.com>\n"
+"Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/appcenter/"
 "appcenter/pl/>\n"
 "Language: pl\n"
@@ -37,10 +38,8 @@ msgid "Specified link '%s' could not be found, searching instead"
 msgstr "Określony odnośnik '%s' nie został odnaleziony, wyszukiwanie"
 
 #: src/Application.vala:298
-#, fuzzy
-#| msgid "%s has been successfully installed"
 msgid "The app has been installed"
-msgstr "%s zostało pomyślnie zainstalowane"
+msgstr "%s Aplikacja została zainstalowana"
 
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
