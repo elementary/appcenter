@@ -26,7 +26,7 @@ Standards-Version: 4.1.1
 Homepage: https://github.com/pop/shop
 
 Package: pop-shop
-Architecture: amd64
+Architecture: amd64 arm64
 Priority: extra
 Depends: appstream (>= 0.12),
          apt-config-icons,
@@ -43,7 +43,7 @@ Description: Fast application store
  Helps independent developers.
 
 Package: pop-shop-casper
-Architecture: amd64
+Architecture: amd64 arm64
 Priority: extra
 Depends: casper
 Description: Disable pop-shop in casper
