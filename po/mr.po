@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-21 21:50+0000\n"
+"POT-Creation-Date: 2021-10-05 18:59+0000\n"
 "PO-Revision-Date: 2021-06-19 21:50+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/appcenter/appcenter/mr/>\n"
@@ -750,7 +750,7 @@ msgstr "निधी"
 msgid "Fund the development of this app"
 msgstr "या अॅपच्या विकासासाठी निधी द्या"
 
-#: src/Views/AppInfoView.vala:1201
+#: src/Views/AppInfoView.vala:1203
 #, c-format
 msgid "Other Apps by %s"
 msgstr "%s प्रमाणे इतर अॅप्स"
@@ -889,12 +889,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "जे सक्षम नाहीत, त्यांसाठी पेमेंट आवश्यक आहे"
 
 #: src/Widgets/HumbleButton.vala:75
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:202
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:205
 msgid "Free"
 msgstr "विनामुल्य"
 
 #: src/Widgets/HumbleButton.vala:77
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:204
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:207
 msgid "Install"
 msgstr "प्रस्थापित"
 
@@ -988,7 +988,7 @@ msgstr "ड्राइव्हर्स"
 msgid "Up to Date"
 msgstr "अद्ययावत"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:223
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:226
 msgid "Update"
 msgstr "अद्ययावत (अपडेट) करा"
 

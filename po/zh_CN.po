@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-21 21:50+0000\n"
+"POT-Creation-Date: 2021-10-05 18:59+0000\n"
 "PO-Revision-Date: 2021-09-08 19:50+0000\n"
 "Last-Translator: Guochengjie <i@guoch.xyz>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/appcenter/appcenter/zh_Hans/>\n"
@@ -752,7 +752,7 @@ msgstr "资助"
 msgid "Fund the development of this app"
 msgstr "资助此应用程序的开发"
 
-#: src/Views/AppInfoView.vala:1201
+#: src/Views/AppInfoView.vala:1203
 #, c-format
 msgid "Other Apps by %s"
 msgstr "来自 %s 的其他应用"
@@ -891,12 +891,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "需要付款，但付款方式还未启用"
 
 #: src/Widgets/HumbleButton.vala:75
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:202
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:205
 msgid "Free"
 msgstr "安装"
 
 #: src/Widgets/HumbleButton.vala:77
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:204
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:207
 msgid "Install"
 msgstr "安装"
 
@@ -989,7 +989,7 @@ msgstr "驱动程序"
 msgid "Up to Date"
 msgstr "已是最新"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:223
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:226
 msgid "Update"
 msgstr "更新"
 
