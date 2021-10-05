@@ -1102,7 +1102,9 @@ namespace AppCenter.Views {
                     stripe.transient_for = (Gtk.Window) get_toplevel ();
 
                     stripe.download_requested.connect (() => {
-                        App.add_paid_app (package.component.get_id ());
+                        if (stripe.amount != 0) {
+                            App.add_paid_app (package.component.get_id ());
+                        }
                     });
 
                     stripe.show ();
