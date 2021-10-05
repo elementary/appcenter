@@ -145,7 +145,10 @@ namespace AppCenter {
 
             stripe.download_requested.connect (() => {
                 action_clicked.begin ();
-                App.add_paid_app (package.component.get_id ());
+
+                if (stripe.amount != 0) {
+                    App.add_paid_app (package.component.get_id ());
+                }
             });
 
             stripe.show ();
