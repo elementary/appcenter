@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2016–2019 elementary, Inc. (https://elementary.io)
+* Copyright 2016–2021 elementary, Inc. (https://elementary.io)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public
@@ -28,7 +28,7 @@ namespace AppCenter {
 
         protected Gtk.Grid progress_grid;
         protected Gtk.Grid button_grid;
-        protected Gtk.ProgressBar progress_bar;
+        protected CustomProgressBar progress_bar;
         protected Gtk.Button cancel_button;
         protected Gtk.SizeGroup action_button_group;
         protected Gtk.Stack action_stack;
@@ -93,24 +93,21 @@ namespace AppCenter {
             button_grid.add (action_button_revealer);
             button_grid.add (open_button_revealer);
 
-            progress_bar = new Gtk.ProgressBar ();
-            progress_bar.show_text = true;
+            progress_bar = new CustomProgressBar ();
             progress_bar.valign = Gtk.Align.CENTER;
-            /* Request a width large enough for the longest text to stop width of
-             * progress bar jumping around, but allow space for long package names */
-            progress_bar.width_request = 250;
 
-            cancel_button = new Gtk.Button.with_label (_("Cancel"));
-            cancel_button.valign = Gtk.Align.END;
-            cancel_button.halign = Gtk.Align.END;
+            cancel_button = new Gtk.Button.with_label (_("Cancel")) {
+                halign = Gtk.Align.END,
+                valign = Gtk.Align.END
+            };
             cancel_button.clicked.connect (() => action_cancelled ());
 
             progress_grid = new Gtk.Grid ();
             progress_grid.halign = Gtk.Align.END;
             progress_grid.valign = Gtk.Align.CENTER;
             progress_grid.column_spacing = 12;
-            progress_grid.attach (progress_bar, 0, 0, 1, 1);
-            progress_grid.attach (cancel_button, 1, 0, 1, 1);
+            progress_grid.attach (progress_bar, 0, 0);
+            progress_grid.attach (cancel_button, 1, 0);
 
             action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
             action_button_group.add_widget (action_button);
@@ -131,6 +128,57 @@ namespace AppCenter {
                     GLib.Source.remove (state_source);
                 }
             });
+        }
+
+        protected class CustomProgressBar : Gtk.Grid {
+            public double fraction { get; set; }
+            public string text { get; set; }
+
+            private const string CSS = """
+                .custom-progress {
+                    min-height: 0.25em;
+                    min-width: 1em;
+                    background-image: linear-gradient(
+                        90deg,
+                        @accent_color,
+                        @accent_color %s%,
+                        alpha(@accent_color, 0.33) %s%,
+                        alpha(@accent_color, 0.33)
+                    );
+                }
+            """;
+
+            public CustomProgressBar (double? fraction = 0.0, string? text = null) {
+                Object (
+                    fraction: fraction,
+                    text: text
+                );
+            }
+
+            construct {
+                tooltip_text = text;
+
+                var percent = (int) (fraction * 100);
+
+                var css = CSS.printf (
+                    percent, percent
+                );
+
+                unowned var style_context = get_style_context ();
+                style_context.add_class ("custom-progress");
+
+                var provider = new Gtk.CssProvider ();
+
+                try {
+                    provider.load_from_data (css, css.length);
+                    style_context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+                } catch (Error e) {
+                    critical (e.message);
+                }
+
+                // add (new Gtk.Label ("%f".printf (fraction)));
+                show_all ();
+            }
         }
 
         private void show_stripe_dialog (int amount) {
