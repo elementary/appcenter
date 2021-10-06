@@ -28,7 +28,6 @@ namespace AppCenter {
 
         protected Gtk.Grid progress_grid;
         protected Gtk.Grid button_grid;
-        // protected Gtk.ProgressBar progress_bar;
         protected ProgressButton cancel_button;
         protected Gtk.SizeGroup action_button_group;
         protected Gtk.Stack action_stack;
@@ -93,8 +92,6 @@ namespace AppCenter {
             button_grid.add (action_button_revealer);
             button_grid.add (open_button_revealer);
 
-            // progress_bar = new Gtk.ProgressBar ();
-
             cancel_button = new ProgressButton () {
                 halign = Gtk.Align.END,
                 label = _("Cancel"),
@@ -106,8 +103,7 @@ namespace AppCenter {
             progress_grid.halign = Gtk.Align.END;
             progress_grid.valign = Gtk.Align.CENTER;
             progress_grid.column_spacing = 12;
-            // progress_grid.attach (progress_bar, 0, 0);
-            progress_grid.attach (cancel_button, 1, 0);
+            progress_grid.add (cancel_button);
 
             action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
             action_button_group.add_widget (action_button);
@@ -120,7 +116,7 @@ namespace AppCenter {
             action_stack.hhomogeneous = false;
             action_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
             action_stack.add_named (button_grid, "buttons");
-            action_stack.add_named (progress_grid, "progress");
+            action_stack.add_named (cancel_button, "progress");
             action_stack.show_all ();
 
             destroy.connect (() => {
