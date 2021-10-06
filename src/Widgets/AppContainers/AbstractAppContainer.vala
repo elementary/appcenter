@@ -102,7 +102,6 @@ namespace AppCenter {
             progress_grid = new Gtk.Grid ();
             progress_grid.halign = Gtk.Align.END;
             progress_grid.valign = Gtk.Align.CENTER;
-            progress_grid.column_spacing = 12;
             progress_grid.add (cancel_button);
 
             action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
@@ -151,15 +150,13 @@ namespace AppCenter {
             }
 
             construct {
-                var css = CSS.printf ((int) (fraction * 100));
-
                 unowned var style_context = get_style_context ();
                 style_context.add_class ("progress-button");
 
                 var provider = new Gtk.CssProvider ();
 
                 notify["fraction"].connect (() => {
-                    css = CSS.printf ((int) (fraction * 100));
+                    var css = CSS.printf ((int) (fraction * 100));
 
                     try {
                         provider.load_from_data (css, css.length);
