@@ -115,7 +115,7 @@ namespace AppCenter {
             action_stack.hhomogeneous = false;
             action_stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
             action_stack.add_named (button_grid, "buttons");
-            action_stack.add_named (cancel_button, "progress");
+            action_stack.add_named (progress_grid, "progress");
             action_stack.show_all ();
 
             destroy.connect (() => {
