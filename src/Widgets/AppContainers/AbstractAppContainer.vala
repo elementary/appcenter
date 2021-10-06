@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2016–2019 elementary, Inc. (https://elementary.io)
+* Copyright 2016–2021 elementary, Inc. (https://elementary.io)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public
@@ -29,7 +29,7 @@ namespace AppCenter {
         protected Gtk.Grid progress_grid;
         protected Gtk.Grid button_grid;
         // protected Gtk.ProgressBar progress_bar;
-        protected Dazzle.ProgressButton cancel_button;
+        protected ProgressButton cancel_button;
         protected Gtk.SizeGroup action_button_group;
         protected Gtk.Stack action_stack;
 
@@ -95,10 +95,9 @@ namespace AppCenter {
 
             // progress_bar = new Gtk.ProgressBar ();
 
-            cancel_button = new Dazzle.ProgressButton () {
+            cancel_button = new ProgressButton () {
                 halign = Gtk.Align.END,
                 label = _("Cancel"),
-                show_progress = true,
                 valign = Gtk.Align.END
             };
             cancel_button.clicked.connect (() => action_cancelled ());
@@ -129,6 +128,51 @@ namespace AppCenter {
                     GLib.Source.remove (state_source);
                 }
             });
+        }
+
+        protected class ProgressButton : Gtk.Button {
+            public double fraction { get; set; }
+
+            private const string CSS = """
+                .progress-button {
+                    background-image: linear-gradient(
+                        0deg,
+                        @accent_color 0.125em,
+                        transparent 0.125em
+                    );
+                    background-position: 2px;
+                    background-repeat: no-repeat;
+
+                    /* 2px spacing on each side; otherwise it looks weird with button borders */
+                    background-size: calc(%i%% - 4px) calc(100%% - 4px);
+                }
+            """;
+
+            public ProgressButton (double fraction = 0.0) {
+                Object (
+                    fraction: fraction
+                );
+            }
+
+            construct {
+                var css = CSS.printf ((int) (fraction * 100));
+
+                unowned var style_context = get_style_context ();
+                style_context.add_class ("progress-button");
+
+                var provider = new Gtk.CssProvider ();
+
+                notify["fraction"].connect (() => {
+                    css = CSS.printf ((int) (fraction * 100));
+
+                    try {
+                        provider.load_from_data (css, css.length);
+                        style_context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+                    } catch (Error e) {
+                        critical (e.message);
+                    }
+                });
+            }
         }
 
         private void show_stripe_dialog (int amount) {
@@ -247,7 +291,7 @@ namespace AppCenter {
 
         protected void update_progress () {
             Idle.add (() => {
-                cancel_button.progress = (int) (package.progress * 100);
+                cancel_button.fraction = package.progress;
                 return GLib.Source.REMOVE;
             });
         }
@@ -258,7 +302,7 @@ namespace AppCenter {
                 cancel_button.sensitive = package.change_information.can_cancel && !package.changes_finished;
                 /* Ensure progress bar shows complete to match status (lp:1606902) */
                 if (package.changes_finished) {
-                    cancel_button.progress = 100;
+                    cancel_button.fraction = 1;
                 }
 
                 return GLib.Source.REMOVE;
