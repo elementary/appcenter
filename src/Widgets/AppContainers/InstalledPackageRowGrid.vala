@@ -166,14 +166,10 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
     }
 
     protected override void update_progress_status () {
-        if (package.change_information.status == AppCenterCore.ChangeInformation.Status.WAITING ||
-            package.change_information.status == AppCenterCore.ChangeInformation.Status.FINISHED) {
-            progress_bar.no_show_all = true;
-            progress_bar.hide ();
-        } else {
-            progress_bar.no_show_all = false;
-            progress_bar.show_all ();
-        }
+        cancel_button.show_progress = !(
+            package.change_information.status == AppCenterCore.ChangeInformation.Status.WAITING ||
+            package.change_information.status == AppCenterCore.ChangeInformation.Status.FINISHED
+        );
 
         base.update_progress_status ();
     }

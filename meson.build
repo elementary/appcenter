@@ -18,6 +18,7 @@ add_project_arguments(
 vapi_dir = join_paths(meson.current_source_dir(), 'vapi')
 add_project_arguments(['--vapidir', vapi_dir], language: 'vala')
 
+dazzle = dependency ('libdazzle-1.0', version: '>=3.36')
 glib = dependency ('glib-2.0')
 gee = dependency ('gee-0.8')
 gtk = dependency ('gtk+-3.0', version: '>=3.10')
@@ -35,6 +36,7 @@ posix = meson.get_compiler('vala').find_library('posix')
 dbus = dependency ('dbus-1')
 
 dependencies = [
+    dazzle,
     glib,
     gee,
     gtk,
