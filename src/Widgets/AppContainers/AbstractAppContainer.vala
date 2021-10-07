@@ -128,20 +128,13 @@ namespace AppCenter {
         protected class ProgressButton : Gtk.Button {
             public double fraction { get; set; }
 
+            // 2px spacing on each side; otherwise it looks weird with button borders
             private const string CSS = """
                 .progress-button {
-                    background-image: linear-gradient(
-                        0deg,
-                        @accent_color 0.125em,
-                        transparent 0.125em
-                    );
-                    background-position: 2px;
-                    background-repeat: no-repeat;
-
-                    /* 2px spacing on each side; otherwise it looks weird with button borders */
                     background-size: calc(%i%% - 4px) calc(100%% - 4px);
                 }
             """;
+            private static Gtk.CssProvider style_provider;
 
             public ProgressButton (double fraction = 0.0) {
                 Object (
@@ -149,9 +142,15 @@ namespace AppCenter {
                 );
             }
 
+            static construct {
+                style_provider = new Gtk.CssProvider ();
+                style_provider.load_from_resource ("io/elementary/appcenter/ProgressButton.css");
+            }
+
             construct {
                 unowned var style_context = get_style_context ();
                 style_context.add_class ("progress-button");
+                style_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
                 var provider = new Gtk.CssProvider ();
 
