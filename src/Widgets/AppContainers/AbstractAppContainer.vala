@@ -294,7 +294,7 @@ namespace AppCenter {
                 cancel_button.sensitive = package.change_information.can_cancel && !package.changes_finished;
                 /* Ensure progress bar shows complete to match status (lp:1606902) */
                 if (package.changes_finished) {
-                    cancel_button.fraction = 1;
+                    cancel_button.fraction = 1.0f;
                 }
 
                 return GLib.Source.REMOVE;
