@@ -59,7 +59,13 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
 
         string description = "";
         if (package.get_description () != null) {
-            string markup = AppStream.markup_convert_simple (package.get_description ());
+            string markup = "";
+            try {
+                markup = AppStream.markup_convert_simple (package.get_description ());
+            } catch (Error e) {
+                warning ("Failed to parse appstream description: %s", e.message);
+            }
+
             // We only want the first line/paragraph
             description = markup.split ("\n")[0];
         }
