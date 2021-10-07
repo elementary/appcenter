@@ -196,7 +196,10 @@ namespace AppCenter.Views {
 
                 var social_chat_value = rating.get_value ("social-chat");
                 // MILD is defined as multi-player period, no chat
-                if (social_chat_value > AppStream.ContentRatingValue.NONE) {
+                if (
+                    social_chat_value > AppStream.ContentRatingValue.NONE &&
+                    package.component.has_category ("Game")
+                ) {
                     var multiplayer = new ContentType (
                         _("Multiplayer"),
                         _("Online play with other people"),
