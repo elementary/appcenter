@@ -350,7 +350,7 @@ namespace AppCenter {
 
         private bool install_approved () {
             bool approved = true;
-
+#if CURATED
             var curated_dialog_allowed = App.settings.get_boolean ("non-curated-warning");
             var app_installed = package.state != AppCenterCore.Package.State.NOT_INSTALLED;
             var app_curated = package.is_native || package.is_os_updates;
@@ -388,7 +388,7 @@ namespace AppCenter {
                     return false;
                 }
             }
-
+#endif
             return approved;
         }
     }
