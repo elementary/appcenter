@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-21 21:50+0000\n"
+"POT-Creation-Date: 2021-10-05 18:59+0000\n"
 "PO-Revision-Date: 2016-11-24 12:37+0000\n"
 "Last-Translator: Waqar Ahmed <waqar.17a@gmail.com>\n"
 "Language-Team: \n"
@@ -756,7 +756,7 @@ msgstr ""
 msgid "Fund the development of this app"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:1201
+#: src/Views/AppInfoView.vala:1203
 #, c-format
 msgid "Other Apps by %s"
 msgstr ""
@@ -901,12 +901,12 @@ msgid "Requires payments, which are not enabled"
 msgstr ""
 
 #: src/Widgets/HumbleButton.vala:75
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:202
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:205
 msgid "Free"
 msgstr ""
 
 #: src/Widgets/HumbleButton.vala:77
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:204
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:207
 msgid "Install"
 msgstr "نصب کریں"
 
@@ -1002,7 +1002,7 @@ msgstr ""
 msgid "Up to Date"
 msgstr "بلکل جدید ہے"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:223
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:226
 msgid "Update"
 msgstr "تجدید-"
 

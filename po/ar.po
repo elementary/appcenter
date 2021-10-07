@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-21 21:50+0000\n"
+"POT-Creation-Date: 2021-10-05 18:59+0000\n"
 "PO-Revision-Date: 2021-09-05 00:54+0000\n"
 "Last-Translator: aalhaif <aalhaif@hotmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/appcenter/appcenter/ar/>\n"
@@ -765,7 +765,7 @@ msgstr "قم بالتمويل"
 msgid "Fund the development of this app"
 msgstr "ادعم عملية تطوير هذا التطبيق"
 
-#: src/Views/AppInfoView.vala:1201
+#: src/Views/AppInfoView.vala:1203
 #, c-format
 msgid "Other Apps by %s"
 msgstr "تطبيقات أخرى من %s"
@@ -904,12 +904,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "تتطلب مدفوعات، وهي الآن غير مفعلة"
 
 #: src/Widgets/HumbleButton.vala:75
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:202
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:205
 msgid "Free"
 msgstr "مجاني"
 
 #: src/Widgets/HumbleButton.vala:77
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:204
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:207
 msgid "Install"
 msgstr "ثبت"
 
@@ -1007,7 +1007,7 @@ msgstr "التعريفات"
 msgid "Up to Date"
 msgstr "محدث بالكامل"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:223
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:226
 msgid "Update"
 msgstr "حدث"
 

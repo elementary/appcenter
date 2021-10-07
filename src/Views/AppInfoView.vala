@@ -196,7 +196,10 @@ namespace AppCenter.Views {
 
                 var social_chat_value = rating.get_value ("social-chat");
                 // MILD is defined as multi-player period, no chat
-                if (social_chat_value > AppStream.ContentRatingValue.NONE) {
+                if (
+                    social_chat_value > AppStream.ContentRatingValue.NONE &&
+                    package.component.has_category ("Game")
+                ) {
                     var multiplayer = new ContentType (
                         _("Multiplayer"),
                         _("Online play with other people"),
@@ -1102,7 +1105,9 @@ namespace AppCenter.Views {
                     stripe.transient_for = (Gtk.Window) get_toplevel ();
 
                     stripe.download_requested.connect (() => {
-                        App.add_paid_app (package.component.get_id ());
+                        if (stripe.amount != 0) {
+                            App.add_paid_app (package.component.get_id ());
+                        }
                     });
 
                     stripe.show ();

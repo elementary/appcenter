@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-21 21:50+0000\n"
+"POT-Creation-Date: 2021-10-05 18:59+0000\n"
 "PO-Revision-Date: 2020-05-31 16:11+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/appcenter/appcenter/cs/>\n"
@@ -763,7 +763,7 @@ msgstr "Financovat"
 msgid "Fund the development of this app"
 msgstr "Financovat vývoj této aplikace"
 
-#: src/Views/AppInfoView.vala:1201
+#: src/Views/AppInfoView.vala:1203
 #, c-format
 msgid "Other Apps by %s"
 msgstr "Ostatní aplikace od %s"
@@ -904,12 +904,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "Vyžaduje platby a ty nejsou zapnuté"
 
 #: src/Widgets/HumbleButton.vala:75
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:202
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:205
 msgid "Free"
 msgstr "Zdarma"
 
 #: src/Widgets/HumbleButton.vala:77
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:204
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:207
 msgid "Install"
 msgstr "Nainstalovat"
 
@@ -1004,7 +1004,7 @@ msgstr "Ovladače"
 msgid "Up to Date"
 msgstr "Aktuální"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:223
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:226
 msgid "Update"
 msgstr "Aktualizovat"
 

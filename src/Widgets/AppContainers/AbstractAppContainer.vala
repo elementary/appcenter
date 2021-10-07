@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2016–2019 elementary, Inc. (https://elementary.io)
+* Copyright 2016–2021 elementary, Inc. (https://elementary.io)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public
@@ -28,8 +28,7 @@ namespace AppCenter {
 
         protected Gtk.Grid progress_grid;
         protected Gtk.Grid button_grid;
-        protected Gtk.ProgressBar progress_bar;
-        protected Gtk.Button cancel_button;
+        protected ProgressButton cancel_button;
         protected Gtk.SizeGroup action_button_group;
         protected Gtk.Stack action_stack;
 
@@ -93,24 +92,17 @@ namespace AppCenter {
             button_grid.add (action_button_revealer);
             button_grid.add (open_button_revealer);
 
-            progress_bar = new Gtk.ProgressBar ();
-            progress_bar.show_text = true;
-            progress_bar.valign = Gtk.Align.CENTER;
-            /* Request a width large enough for the longest text to stop width of
-             * progress bar jumping around, but allow space for long package names */
-            progress_bar.width_request = 250;
-
-            cancel_button = new Gtk.Button.with_label (_("Cancel"));
-            cancel_button.valign = Gtk.Align.END;
-            cancel_button.halign = Gtk.Align.END;
+            cancel_button = new ProgressButton () {
+                halign = Gtk.Align.END,
+                label = _("Cancel"),
+                valign = Gtk.Align.END
+            };
             cancel_button.clicked.connect (() => action_cancelled ());
 
             progress_grid = new Gtk.Grid ();
             progress_grid.halign = Gtk.Align.END;
             progress_grid.valign = Gtk.Align.CENTER;
-            progress_grid.column_spacing = 12;
-            progress_grid.attach (progress_bar, 0, 0, 1, 1);
-            progress_grid.attach (cancel_button, 1, 0, 1, 1);
+            progress_grid.add (cancel_button);
 
             action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
             action_button_group.add_widget (action_button);
@@ -133,6 +125,48 @@ namespace AppCenter {
             });
         }
 
+        protected class ProgressButton : Gtk.Button {
+            public double fraction { get; set; }
+
+            // 2px spacing on each side; otherwise it looks weird with button borders
+            private const string CSS = """
+                .progress-button {
+                    background-size: calc(%i%% - 4px) calc(100%% - 4px);
+                }
+            """;
+            private static Gtk.CssProvider style_provider;
+
+            public ProgressButton (double fraction = 0.0) {
+                Object (
+                    fraction: fraction
+                );
+            }
+
+            static construct {
+                style_provider = new Gtk.CssProvider ();
+                style_provider.load_from_resource ("io/elementary/appcenter/ProgressButton.css");
+            }
+
+            construct {
+                unowned var style_context = get_style_context ();
+                style_context.add_class ("progress-button");
+                style_context.add_provider (style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+                var provider = new Gtk.CssProvider ();
+
+                notify["fraction"].connect (() => {
+                    var css = CSS.printf ((int) (fraction * 100));
+
+                    try {
+                        provider.load_from_data (css, css.length);
+                        style_context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+                    } catch (Error e) {
+                        critical (e.message);
+                    }
+                });
+            }
+        }
+
         private void show_stripe_dialog (int amount) {
             var stripe = new Widgets.StripeDialog (
                 amount,
@@ -145,7 +179,10 @@ namespace AppCenter {
 
             stripe.download_requested.connect (() => {
                 action_clicked.begin ();
-                App.add_paid_app (package.component.get_id ());
+
+                if (stripe.amount != 0) {
+                    App.add_paid_app (package.component.get_id ());
+                }
             });
 
             stripe.show ();
@@ -246,18 +283,18 @@ namespace AppCenter {
 
         protected void update_progress () {
             Idle.add (() => {
-                progress_bar.fraction = package.progress;
+                cancel_button.fraction = package.progress;
                 return GLib.Source.REMOVE;
             });
         }
 
         protected virtual void update_progress_status () {
             Idle.add (() => {
-                progress_bar.text = package.get_progress_description ();
+                cancel_button.tooltip_text = package.get_progress_description ();
                 cancel_button.sensitive = package.change_information.can_cancel && !package.changes_finished;
                 /* Ensure progress bar shows complete to match status (lp:1606902) */
                 if (package.changes_finished) {
-                    progress_bar.fraction = 1.0f;
+                    cancel_button.fraction = 1.0f;
                 }
 
                 return GLib.Source.REMOVE;
@@ -313,7 +350,7 @@ namespace AppCenter {
 
         private bool install_approved () {
             bool approved = true;
-
+#if CURATED
             var curated_dialog_allowed = App.settings.get_boolean ("non-curated-warning");
             var app_installed = package.state != AppCenterCore.Package.State.NOT_INSTALLED;
             var app_curated = package.is_native || package.is_os_updates;
@@ -351,7 +388,7 @@ namespace AppCenter {
                     return false;
                 }
             }
-
+#endif
             return approved;
         }
     }
