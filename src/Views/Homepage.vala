@@ -238,7 +238,7 @@ public class AppCenter.Homepage : AbstractView {
                 }
             }
 
-            if (!installed && !(package in packages_in_banner) && !package.is_explicit && !package.is_plugin) {
+            if (!installed && !(package in packages_in_banner)) {
                 var package_row = new AppCenter.Widgets.ListPackageRowGrid (package);
                 recently_updated_carousel.add (package_row);
             }

@@ -266,13 +266,15 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         var apps = new Gee.TreeSet<AppCenterCore.Package> (compare_packages_by_release_date);
 
         foreach (var package in package_list.values) {
+            if (!package.is_explicit && !package.is_plugin) {
 #if CURATED
-            if (package.is_native) {
-                apps.add (package);
-            }
+                if (package.is_native) {
+                    apps.add (package);
+                }
 #else
-            apps.add (package);
+                apps.add (package);
 #endif
+            }
         }
 
         return apps;
