@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-05 18:59+0000\n"
-"PO-Revision-Date: 2021-09-22 03:11+0000\n"
+"PO-Revision-Date: 2021-10-08 17:16+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/extra/"
 "ja/>\n"
@@ -51,7 +51,7 @@ msgstr "修正点:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Don't store $0 app installs as paid"
-msgstr ""
+msgstr "支払わずにインストールしたアプリを支払い済みとして記録しないように修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:37
