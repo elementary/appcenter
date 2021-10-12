@@ -59,15 +59,8 @@ public class AppCenter.Widgets.Banner : Gtk.Button {
 
         string description = "";
         if (package.get_description () != null) {
-            string markup = "";
-            try {
-                markup = AppStream.markup_convert_simple (package.get_description ());
-            } catch (Error e) {
-                warning ("Failed to parse appstream description: %s", e.message);
-            }
-
             // We only want the first line/paragraph
-            description = markup.split ("\n")[0];
+            description = package.get_description ().split ("\n")[0];
         }
 
         var description_label = new Gtk.Label (description) {

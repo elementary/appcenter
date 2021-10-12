@@ -633,6 +633,20 @@ public class AppCenterCore.Package : Object {
 
                 description = backend_details.description;
             }
+
+            try {
+                // Condense double spaces
+                var space_regex = new Regex ("\\s+");
+                description = space_regex.replace (description, description.length, 0, " ");
+            } catch (Error e) {
+               warning ("Failed to condense spaces: %s", e.message);
+            }
+
+            try {
+                description = AppStream.markup_convert_simple (description);
+            } catch (Error e) {
+                warning ("Failed to convert description to markup: %s", e.message);
+            }
         }
 
         return description;

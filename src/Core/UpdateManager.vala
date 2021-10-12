@@ -81,7 +81,7 @@ public class AppCenterCore.UpdateManager : Object {
                 unowned string pkg_summary = pk_package.get_summary ();
                 unowned string pkg_version = pk_package.get_version ();
                 os_desc += Markup.printf_escaped (
-                    "<li>%s\n\t%s\n\t%s</li>\n",
+                    " • %s\n\t%s\n\t%s\n",
                     pkg_name,
                     pkg_summary,
                     _("Version: %s").printf (pkg_version)
@@ -125,7 +125,7 @@ public class AppCenterCore.UpdateManager : Object {
 
                 os_count++;
                 os_desc += Markup.printf_escaped (
-                    "<li>%s\n\t%s</li>",
+                    " • %s\n\t%s\n",
                     @ref.get_name (),
                     _("Flatpak runtime")
                 );
@@ -146,12 +146,12 @@ public class AppCenterCore.UpdateManager : Object {
             debug ("No OS updates found");
             var latest_version = _("No components with updates");
             os_updates.latest_version = latest_version;
-            os_updates.description = GLib.Markup.printf_escaped ("<p>%s</p>\n", latest_version);
+            os_updates.description = GLib.Markup.printf_escaped ("%s\n", latest_version);
         } else {
             debug ("%u OS updates found", os_count);
             var latest_version = ngettext ("%u component with updates", "%u components with updates", os_count).printf (os_count);
             os_updates.latest_version = latest_version;
-            os_updates.description = "<p>%s</p>\n<ul>\n%s</ul>\n".printf (GLib.Markup.printf_escaped (_("%s:"), latest_version), os_desc);
+            os_updates.description = "%s\n%s\n".printf (GLib.Markup.printf_escaped (_("%s:"), latest_version), os_desc);
         }
 
         count = apps_with_updates.size;
