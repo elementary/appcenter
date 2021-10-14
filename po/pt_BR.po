@@ -1,3 +1,4 @@
+# Cap <caaapp@outlook.com>, 2021
 # Rodrigo Oliveira <rod.oliveira@gmail.com>, 2018, 2019, 2020, 2021.
 # Deyvison Rocha <deyvison@gmail.com>, 2018.
 # Henrique Andrade <henrique.coelho@gmail.com>, 2019.
@@ -9,15 +10,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 20:46+0000\n"
-"PO-Revision-Date: 2021-01-23 23:08+0000\n"
-"Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
+"PO-Revision-Date: 2021-07-29 16:49-0300\n"
+"Last-Translator: Cap <caaapp@outlook.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/appcenter/appcenter/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Poedit 3.0\n"
 "X-Launchpad-Export-Date: 2017-03-15 06:27+0000\n"
 
 #. Add "AppCenter" to the translation catalog
@@ -69,6 +70,10 @@ msgstr "Início"
 msgctxt "view"
 msgid "Installed"
 msgstr "Instalado"
+
+#: src/MainWindow.vala:232
+msgid "Edit Software Sources…"
+msgstr "Editar Fontes de Software…"
 
 #: src/MainWindow.vala:213 src/MainWindow.vala:419 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:87
