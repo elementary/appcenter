@@ -774,18 +774,22 @@ namespace AppCenter.Views {
             var provider = new Gtk.CssProvider ();
             try {
                 string? color_primary = null;
-                string? color_primary_text = null;
+
                 if (package != null) {
                     color_primary = package.get_color_primary ();
-                    color_primary_text = package.get_color_primary_text ();
                 }
 
-                if (color_primary == null || color_primary_text == null) {
+                if (color_primary == null) {
                     color_primary = DEFAULT_BANNER_COLOR_PRIMARY;
-                    color_primary_text = DEFAULT_BANNER_COLOR_PRIMARY_TEXT;
                 }
 
-                var colored_css = BANNER_STYLE_CSS.printf (color_primary, color_primary_text);
+                var primary_rgba = Gdk.RGBA ();
+                primary_rgba.parse (color_primary);
+
+                var colored_css = BANNER_STYLE_CSS.printf (
+                    color_primary,
+                    Granite.contrasting_foreground_color (primary_rgba).to_string ()
+                );
                 provider.load_from_data (colored_css, colored_css.length);
 
                 if (previous_css_provider != null) {
