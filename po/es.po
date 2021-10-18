@@ -15,9 +15,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-05 18:59+0000\n"
-"PO-Revision-Date: 2021-09-21 21:50+0000\n"
-"Last-Translator: Rafael Bautista Martínez <iuninefrendor@gmail.com>\n"
-"Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/appcenter/es/>\n"
+"PO-Revision-Date: 2021-10-18 14:46+0000\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"Language-Team: Spanish <https://l10n.elementary.io/projects/appcenter/"
+"appcenter/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -395,10 +396,10 @@ msgid "Pay $%d for %s"
 msgstr "Pagar %d USD por %s"
 
 #: src/Dialogs/StripeDialog.vala:94
-#, fuzzy
-#| msgid "This is a one time payment. Your email address is only used to send you a receipt."
 msgid "This is a one time payment suggested by the developer. You can also choose your own price."
-msgstr "Este es un pago único. Su dirección de correo electrónico se utilizará solo para enviarle un recibo."
+msgstr ""
+"Este es un pago único sugerido por los desarrolladores. También puede elegir "
+"su propio monto."
 
 #: src/Dialogs/StripeDialog.vala:115
 msgid "or"
@@ -409,10 +410,10 @@ msgid "Email"
 msgstr "Correo electrónico"
 
 #: src/Dialogs/StripeDialog.vala:157
-#, fuzzy
-#| msgid "Your email address is only used to send a receipt. You will not be subscribed to any mailing list."
 msgid "Only used to send you a receipt. You will not be subscribed to any mailing list."
-msgstr "Su dirección de correo electrónico se utiliza solo para enviarle un recibo. No se le suscribirá a ninguna lista de correo."
+msgstr ""
+"Se utiliza solo para enviarle un recibo. No se le suscribirá a ninguna lista "
+"de correo."
 
 #: src/Dialogs/StripeDialog.vala:158
 msgid "Privacy Policy"
