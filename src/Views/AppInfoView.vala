@@ -28,7 +28,7 @@ namespace AppCenter.Views {
         );
 
         private static Gtk.CssProvider banner_provider;
-        private static Gtk.CssProvider loading_provider;
+        private static Gtk.CssProvider screenshots_provider;
         private static Gtk.CssProvider? previous_css_provider = null;
 
         GenericArray<AppStream.Screenshot> screenshots;
@@ -63,8 +63,8 @@ namespace AppCenter.Views {
             banner_provider = new Gtk.CssProvider ();
             banner_provider.load_from_resource ("io/elementary/appcenter/banner.css");
 
-            loading_provider = new Gtk.CssProvider ();
-            loading_provider.load_from_resource ("io/elementary/appcenter/loading.css");
+            screenshots_provider = new Gtk.CssProvider ();
+            screenshots_provider.load_from_resource ("io/elementary/appcenter/screenshots.css");
         }
 
         construct {
@@ -386,7 +386,7 @@ namespace AppCenter.Views {
                 stack_context = screenshot_stack.get_style_context ();
                 stack_context.add_class (Gtk.STYLE_CLASS_BACKGROUND);
                 stack_context.add_class ("loading");
-                stack_context.add_provider (loading_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+                stack_context.add_provider (screenshots_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
             }
 
             var app_icon = new Gtk.Image () {

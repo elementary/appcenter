@@ -19,7 +19,7 @@
 
 const string BANNER_STYLE_CSS = """
     @define-color banner_bg_color %s;
-    @define-color banner_fg_color %s;
+    @define-color banner_fg_color mix(@banner_bg_color, %s, 0.9);
 """;
 
 const string DEFAULT_BANNER_COLOR_PRIMARY = "mix(@accent_color, @bg_color, 0.8)";

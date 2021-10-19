@@ -15,6 +15,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+.background {
+    background-color: mix(@banner_bg_color, @base_color, 0.85);
+}
+
 .loading {
     animation: loading 1.5s ease-in infinite;
     background-image: linear-gradient(
@@ -34,4 +38,3 @@
         background-position: 600px center;
     }
 }
-
