@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-05 18:59+0000\n"
-"PO-Revision-Date: 2021-08-31 07:47+0000\n"
+"PO-Revision-Date: 2021-10-21 16:33+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/appcenter/extra/"
 "fr/>\n"
@@ -52,6 +52,8 @@ msgstr "Corrections :"
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Don't store $0 app installs as paid"
 msgstr ""
+"Les installations d'application à 0$ ne sont désormais plus enregistrées "
+"comme étant payées"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 #: data/io.elementary.appcenter.appdata.xml.in:37
@@ -92,22 +94,30 @@ msgstr "Nouvelles fonctionnalités :"
 #: data/io.elementary.appcenter.appdata.xml.in:30
 msgid "Show content warnings on app info pages"
 msgstr ""
+"Affichage des avertissements sur le contenu sur la page d'information des "
+"applications"
 
 #: data/io.elementary.appcenter.appdata.xml.in:34
 msgid "Show other apps by an author for Flatpak sources"
-msgstr ""
+msgstr "Affichage des autres applications de l'auteur pour les sources Flatpak"
 
 #: data/io.elementary.appcenter.appdata.xml.in:35
 msgid "Populate banner on home locally instead of relying on an external API"
 msgstr ""
+"Chargement de la bannière sur la page d'accueil localement plutôt qu'en "
+"dépendant d'une API externe"
 
 #: data/io.elementary.appcenter.appdata.xml.in:39
 msgid "Greatly increased number of recently-updated apps shown on home page"
 msgstr ""
+"Augmentation du nombre d'applications récemment mises à jour affichées sur "
+"la page d'accueil"
 
 #: data/io.elementary.appcenter.appdata.xml.in:40
 msgid "Navigate banners on the home page with multitouch gestures"
 msgstr ""
+"Faites défiler les bannières sur la page d'accueil à l'aide de gestes multi-"
+"touch"
 
 #: data/io.elementary.appcenter.appdata.xml.in:49
 msgid "Show apps from newly sideloaded remotes without requiring a restart"
