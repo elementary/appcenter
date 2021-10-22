@@ -446,6 +446,7 @@ namespace AppCenter.Views {
             package_summary.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
             app_description = new Gtk.Label (null) {
+                // Allow wrapping but prevent expanding the parent
                 width_request = 1,
                 wrap = true,
                 xalign = 0
@@ -956,7 +957,7 @@ namespace AppCenter.Views {
                 // This method may be called in a thread, pass back to GTK thread
                 Idle.add (() => {
                     try {
-                        app_description.set_text (AppStream.markup_convert_simple (stripped_description));
+                        app_description.text = AppStream.markup_convert_simple (stripped_description);
                     } catch (Error e) {
                         warning ("Failed to parse appstream description: %s", e.message);
                     }
