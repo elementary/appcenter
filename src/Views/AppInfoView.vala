@@ -446,6 +446,7 @@ namespace AppCenter.Views {
             package_summary.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
             app_description = new Gtk.Label (null) {
+                // Allow wrapping but prevent expanding the parent
                 width_request = 1,
                 wrap = true,
                 xalign = 0
