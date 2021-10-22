@@ -16,6 +16,7 @@
         <p>Fixes:</p>
         <ul>
           <li>Don't store $0 app installs as paid</li>
+          <li>Improve wrapping at narrow window sizes</li>
         </ul>
         <p>Improvements:</p>
         <ul>
