@@ -956,7 +956,7 @@ namespace AppCenter.Views {
                 // This method may be called in a thread, pass back to GTK thread
                 Idle.add (() => {
                     try {
-                        app_description.set_text(AppStream.markup_convert_simple (stripped_description));
+                        app_description.set_text (AppStream.markup_convert_simple (stripped_description));
                     } catch (Error e) {
                         warning ("Failed to parse appstream description: %s", e.message);
                     }
