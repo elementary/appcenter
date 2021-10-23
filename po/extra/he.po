@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-22 23:20+0000\n"
-"PO-Revision-Date: 2021-10-05 20:22+0000\n"
+"PO-Revision-Date: 2021-10-23 15:39+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/extra/"
 "he/>\n"
@@ -52,18 +52,16 @@ msgid "Don't store $0 app installs as paid"
 msgstr "לא לאחסן התקנות של $0 כאילו שולמו"
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
-#, fuzzy
-#| msgid "Fix missing mail icon in payments dialog"
 msgid "Fix missing illicit substances icon"
-msgstr "תוקן סמל הדוא״ל החסר בחלונית התשלומים"
+msgstr "סמל החומרים האסורים שהיה חסר תוקן"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 msgid "Don't show plugins on the homepage"
-msgstr ""
+msgstr "לא מוצגים תוספים בעמוד הבית"
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
 msgid "Only show \"Multiplayer\" badge for games"
-msgstr ""
+msgstr "עיטור „ריבוי שחקנים” יוצג רק עבור משחקים"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 #: data/io.elementary.appcenter.appdata.xml.in:41
@@ -78,7 +76,7 @@ msgstr "שיפורים:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
 msgid "Show installation progress in a more compact way"
-msgstr ""
+msgstr "תהליך ההתקנה יוצג בצורה יותר מצומצמת"
 
 #: data/io.elementary.appcenter.appdata.xml.in:26
 #: data/io.elementary.appcenter.appdata.xml.in:45
