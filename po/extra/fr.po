@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-22 23:20+0000\n"
-"PO-Revision-Date: 2021-10-21 16:33+0000\n"
+"PO-Revision-Date: 2021-10-25 14:04+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/appcenter/extra/"
 "fr/>\n"
@@ -56,20 +56,16 @@ msgstr ""
 "comme étant payées"
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
-#, fuzzy
-#| msgid "Fix missing mail icon in payments dialog"
 msgid "Fix missing illicit substances icon"
-msgstr ""
-"Correction de l'icône d'e-mail manquante dans la boîte de dialogue de "
-"paiement"
+msgstr "Correction de l'icône manquante pour les substances illicites"
 
 #: data/io.elementary.appcenter.appdata.xml.in:20
 msgid "Don't show plugins on the homepage"
-msgstr ""
+msgstr "Les extensions ne sont désormais plus affichées sur la page d'accueil"
 
 #: data/io.elementary.appcenter.appdata.xml.in:21
 msgid "Only show \"Multiplayer\" badge for games"
-msgstr ""
+msgstr "Seul le badge « Multijoueur » est affiché pour les jeux"
 
 #: data/io.elementary.appcenter.appdata.xml.in:23
 #: data/io.elementary.appcenter.appdata.xml.in:41
@@ -84,7 +80,7 @@ msgstr "Améliorations :"
 
 #: data/io.elementary.appcenter.appdata.xml.in:25
 msgid "Show installation progress in a more compact way"
-msgstr ""
+msgstr "Affichage plus compact de la progression de l'installation"
 
 #: data/io.elementary.appcenter.appdata.xml.in:26
 #: data/io.elementary.appcenter.appdata.xml.in:45
