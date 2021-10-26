@@ -30,7 +30,8 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : AbstractAppCont
 
     construct {
         var app_icon = new Gtk.Image () {
-            pixel_size = 48
+            pixel_size = 48,
+            valign = Gtk.Align.START
         };
 
         var badge_image = new Gtk.Image () {
@@ -60,8 +61,9 @@ public abstract class AppCenter.Widgets.AbstractPackageRowGrid : AbstractAppCont
         }
 
         package_name = new Gtk.Label (package.get_name ()) {
-            valign = Gtk.Align.END,
-            xalign = 0
+            valign = Gtk.Align.START,
+            xalign = 0,
+            hexpand = true
         };
         package_name.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 

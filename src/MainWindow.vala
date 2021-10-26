@@ -124,12 +124,25 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         });
 
         show.connect (on_view_mode_changed);
+
+        size_allocate.connect (() => {
+            int width = 0;
+            get_size (out width, null);
+            if (width > 550) {
+                search_entry.width_chars = 22;
+                search_entry.placeholder_text = _("Search Apps");
+            } else {
+                search_entry.width_chars = 9;
+                search_entry.placeholder_text = _("Search");
+            }
+        });
     }
 
     construct {
         Hdy.init ();
         icon_name = Build.PROJECT_NAME;
-        set_size_request (910, 640);
+        set_default_size (910, 640);
+        set_size_request (500, 500);
 
         title = _(Build.APP_NAME);
 

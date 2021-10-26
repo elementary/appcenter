@@ -19,7 +19,8 @@
 
 namespace AppCenter.Views {
     public class AppInfoView : AppCenter.AbstractAppContainer {
-        public const int MAX_WIDTH = 800;
+        public const int MAX_WIDTH = 400;
+        public const int CLAMP_WIDTH = 800;
 
         public signal void show_other_package (
             AppCenterCore.Package package,
@@ -41,6 +42,7 @@ namespace AppCenter.Views {
         private Gtk.ListBox extension_box;
         private Gtk.ListStore origin_liststore;
         private Gtk.Overlay screenshot_overlay;
+        private Hdy.Clamp screenshot_clamp;
         private Gtk.Revealer origin_combo_revealer;
         private Hdy.Carousel app_screenshots;
         private Gtk.Stack screenshot_stack;
@@ -268,7 +270,9 @@ namespace AppCenter.Views {
 
             if (screenshots.length > 0) {
                 app_screenshots = new Hdy.Carousel () {
-                    height_request = 500
+                    height_request = 100,
+                    spacing = 128,
+                    allow_long_swipes = true
                 };
 
                 screenshot_previous = new ArrowButton ("go-previous-symbolic") {
@@ -320,8 +324,14 @@ namespace AppCenter.Views {
                 };
                 screenshot_arrow_revealer_n.add (screenshot_next);
 
+                screenshot_clamp = new Hdy.Clamp () {
+                    margin = 6,
+                    maximum_size = CLAMP_WIDTH
+                };
+                screenshot_clamp.add (app_screenshots);
+
                 screenshot_overlay = new Gtk.Overlay ();
-                screenshot_overlay.add (app_screenshots);
+                screenshot_overlay.add (screenshot_clamp);
                 screenshot_overlay.add_overlay (screenshot_arrow_revealer_p);
                 screenshot_overlay.add_overlay (screenshot_arrow_revealer_n);
 
@@ -526,11 +536,6 @@ namespace AppCenter.Views {
                 content_grid.add (oars_flowbox);
             }
 
-            if (screenshots.length > 0) {
-                content_grid.add (screenshot_stack);
-                content_grid.add (screenshot_switcher);
-            }
-
             content_grid.add (package_summary);
             content_grid.add (app_description);
             content_grid.add (release_grid);
@@ -583,16 +588,32 @@ namespace AppCenter.Views {
             progress_grid.margin_top = 12;
             button_grid.margin_top = progress_grid.margin_top;
 
-            var header_grid = new Gtk.Grid () {
+            var header_flow = new Gtk.FlowBox (){
+                column_spacing = 12,
+                row_spacing = 12,
+                hexpand = true,
+                max_children_per_line = 2,
+                min_children_per_line = 1
+            };
+
+            var meta_grid = new Gtk.Grid () {
                 column_spacing = 12,
                 row_spacing = 6,
                 hexpand = true
             };
-            header_grid.attach (app_icon_overlay, 0, 0, 1, 3);
-            header_grid.attach (package_name, 1, 0);
-            header_grid.attach (author_label, 1, 1);
-            header_grid.attach (origin_combo_revealer, 1, 2, 3);
-            header_grid.attach (action_stack, 3, 0);
+            meta_grid.attach (app_icon_overlay, 0, 0, 1, 3);
+            meta_grid.attach (package_name, 1, 0);
+            meta_grid.attach (author_label, 1, 1);
+            meta_grid.attach (origin_combo_revealer, 1, 2, 3);
+
+            var action_grid = new Gtk.Grid () {
+                column_spacing = 12,
+                row_spacing = 6,
+                hexpand = true,
+                halign = Gtk.Align.END
+            };
+
+            action_grid.attach (action_stack, 3, 0);
 
             if (!package.is_local) {
                 size_label = new Widgets.SizeLabel () {
@@ -603,14 +624,17 @@ namespace AppCenter.Views {
 
                 action_button_group.add_widget (size_label);
 
-                header_grid.attach (size_label, 3, 1);
+                action_grid.attach (size_label, 3, 1);
             }
+
+            header_flow.add (meta_grid);
+            header_flow.add (action_grid);
 
             var header_clamp = new Hdy.Clamp () {
                 margin = 24,
-                maximum_size = MAX_WIDTH
+                maximum_size = CLAMP_WIDTH
             };
-            header_clamp.add (header_grid);
+            header_clamp.add (header_flow);
 
             var header_box = new Gtk.Grid () {
                 hexpand = true
@@ -627,7 +651,7 @@ namespace AppCenter.Views {
 
             var body_clamp = new Hdy.Clamp () {
                 margin = 24,
-                maximum_size = MAX_WIDTH
+                maximum_size = CLAMP_WIDTH
             };
             body_clamp.add (content_grid);
 
@@ -638,11 +662,20 @@ namespace AppCenter.Views {
             });
 
             var grid = new Gtk.Grid () {
+                orientation = Gtk.Orientation.VERTICAL,
                 row_spacing = 12
             };
-            grid.attach (header_box, 0, 0);
-            grid.attach (body_clamp, 0, 1);
-            grid.attach (other_apps_bar, 0, 3);
+            grid.add (header_box);
+
+            if (screenshots.length > 0) {
+                grid.add (screenshot_stack);
+
+                if (screenshots.length > 1) {
+                    grid.add (screenshot_switcher);
+                }
+            }
+
+            grid.add (body_clamp);
 
             var scrolled = new Gtk.ScrolledWindow (null, null) {
                 hscrollbar_policy = Gtk.PolicyType.NEVER,
@@ -926,15 +959,9 @@ namespace AppCenter.Views {
 
         // We need to first download the screenshot locally so that it doesn't freeze the interface.
         private void load_screenshot (string path) {
-            var scale_factor = get_scale_factor ();
             try {
-                var pixbuf = new Gdk.Pixbuf.from_file_at_scale (path, MAX_WIDTH * scale_factor, 600 * scale_factor, true);
-                var image = new Gtk.Image ();
-                image.width_request = MAX_WIDTH;
-                image.height_request = 500;
-                image.icon_name = "image-x-generic";
-                image.halign = Gtk.Align.CENTER;
-                image.gicon = pixbuf;
+                AppCenter.Widgets.AppScreenshot image = new AppCenter.Widgets.AppScreenshot ();
+                image.set_path (path);
 
                 Idle.add (() => {
                     image.show ();
