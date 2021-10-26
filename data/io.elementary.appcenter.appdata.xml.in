@@ -11,15 +11,19 @@
     <p>The open source, pay-what-you-want app store from elementary. Reviewed and curated by elementary to ensure a native, privacy-respecting, and secure experience. Browse by categories or search and discover new apps. AppCenter is also used for updating your system to the latest and greatest version for new features and fixes.</p>
   </description>
   <releases>
-    <release version="3.8.1" date="2021-10-04" urgency="medium">
+    <release version="3.8.1" date="2021-10-22" urgency="medium">
       <description>
         <p>Fixes:</p>
         <ul>
           <li>Don't store $0 app installs as paid</li>
           <li>Improve wrapping at narrow window sizes</li>
+          <li>Fix missing illicit substances icon</li>
+          <li>Don't show plugins on the homepage</li>
+          <li>Only show "Multiplayer" badge for games</li>
         </ul>
         <p>Improvements:</p>
         <ul>
+          <li>Show installation progress in a more compact way</li>
           <li>Updated translations</li>
         </ul>
       </description>
@@ -485,33 +489,8 @@
     </screenshot>
   </screenshots>
   <content_rating type="oars-1.1">
-    <content_attribute id="violence-cartoon">none</content_attribute>
-    <content_attribute id="violence-fantasy">none</content_attribute>
-    <content_attribute id="violence-realistic">none</content_attribute>
-    <content_attribute id="violence-bloodshed">none</content_attribute>
-    <content_attribute id="violence-sexual">none</content_attribute>
-    <content_attribute id="violence-desecration">none</content_attribute>
-    <content_attribute id="violence-slavery">none</content_attribute>
-    <content_attribute id="violence-worship">none</content_attribute>
-    <content_attribute id="drugs-alcohol">none</content_attribute>
-    <content_attribute id="drugs-narcotics">none</content_attribute>
-    <content_attribute id="drugs-tobacco">none</content_attribute>
-    <content_attribute id="sex-nudity">none</content_attribute>
-    <content_attribute id="sex-themes">none</content_attribute>
-    <content_attribute id="sex-homosexuality">none</content_attribute>
-    <content_attribute id="sex-prostitution">none</content_attribute>
-    <content_attribute id="sex-adultery">none</content_attribute>
-    <content_attribute id="sex-appearance">none</content_attribute>
-    <content_attribute id="language-profanity">none</content_attribute>
-    <content_attribute id="language-humor">none</content_attribute>
-    <content_attribute id="language-discrimination">none</content_attribute>
-    <content_attribute id="social-chat">none</content_attribute>
     <content_attribute id="social-info">mild</content_attribute>
-    <content_attribute id="social-audio">none</content_attribute>
-    <content_attribute id="social-location">none</content_attribute>
-    <content_attribute id="social-contacts">none</content_attribute>
     <content_attribute id="money-purchasing">intense</content_attribute>
-    <content_attribute id="money-gambling">none</content_attribute>
   </content_rating>
   <compulsory_for_desktop>Pantheon</compulsory_for_desktop>
   <developer_name>elementary, Inc.</developer_name>
