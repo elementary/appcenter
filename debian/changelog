@@ -1,3 +1,19 @@
+appcenter (3.8.1) bionic; urgency=medium
+
+  * Release 3.8.1 (#1724)
+  * AbstractView: Safely cast to AppInfoView (#1725)
+  * Update translation files
+  * Update translation template
+  * AbstractAppContainer: Use ProgressButton (#1708)
+  * AppInfoView: Only show 'multiplayer' badge on games (#1713)
+  * Homepage: Disallow plugins in banner and carousel (#1711)
+  * AbstractAppContainer: check build flag for noncurated dialog (#1712)
+  * GResource: Fix substance icon (#1710)
+  * AppData: Start adding 3.8.1 data (#1706)
+  * Don't store 0 price paid app (#1705)
+
+ -- elementary Builds Team <builds@elementary.io>  Tue, 26 Oct 2021 17:03:39 +0000
+
 appcenter (3.8.0) bionic; urgency=medium
 
   * Release 3.8.0 (#1697)
