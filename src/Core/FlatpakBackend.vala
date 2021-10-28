@@ -1068,10 +1068,6 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             return should_continue;
         });
 
-        transaction.operation_done.connect ((operation, commit, details) => {
-            success = true;
-        });
-
         transaction.ready.connect (() => {
             total_operations = transaction.get_operations ().length ();
             return true;
@@ -1080,7 +1076,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         current_operation = 0;
 
         try {
-            transaction.run (cancellable);
+            success = transaction.run (cancellable);
         } catch (Error e) {
             if (e is GLib.IOError.CANCELLED) {
                 cb (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);
@@ -1204,10 +1200,6 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             return should_continue;
         });
 
-        transaction.operation_done.connect ((operation, commit, details) => {
-            success = true;
-        });
-
         transaction.ready.connect (() => {
             total_operations = transaction.get_operations ().length ();
             return true;
@@ -1216,7 +1208,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         current_operation = 0;
 
         try {
-            transaction.run (cancellable);
+            success = transaction.run (cancellable);
         } catch (Error e) {
             if (e is GLib.IOError.CANCELLED) {
                 cb (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);
@@ -1376,10 +1368,6 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             }
         });
 
-        transaction.operation_done.connect ((operation, commit, details) => {
-            success = true;
-        });
-
         transaction.ready.connect (() => {
             total_operations = transaction.get_operations ().length ();
             return true;
@@ -1388,7 +1376,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
         current_operation = 0;
 
         try {
-            transaction.run (cancellable);
+            success = transaction.run (cancellable);
         } catch (Error e) {
             if (e is GLib.IOError.CANCELLED) {
                 cb (false, _("Cancelling"), 1.0f, ChangeInformation.Status.CANCELLED);
