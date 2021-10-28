@@ -21,10 +21,10 @@
     private string file_path;
     private Gdk.Pixbuf? pixbuf;
     private int pixbuf_width {
-	get { return pixbuf != null ? pixbuf.width : 1; }
+    get { return pixbuf != null ? pixbuf.width : 1; }
     }
     private int pixbuf_height {
-	get { return pixbuf != null ? pixbuf.height : 1; }
+    get { return pixbuf != null ? pixbuf.height : 1; }
     }
     
     public void set_path (string path_text) {
@@ -58,22 +58,22 @@
     }
 
     protected override void get_preferred_width (out int min, out int nat) {
-	min = 0;
-	nat = pixbuf_width;
+    min = 0;
+    nat = pixbuf_width;
     }
     
     protected override void get_preferred_height (out int min, out int nat) {
-	min = 0;
-	nat = pixbuf_height;
+    min = 0;
+    nat = pixbuf_height;
     }
     
     protected override void get_preferred_height_for_width (int width, out int min, out int nat) {
         min = width * pixbuf_height / pixbuf_width;
-	nat = min;
+    nat = min;
     }
 
     protected override void get_preferred_width_for_height (int height, out int min, out int nat) {
         min = height * pixbuf_width / pixbuf_height;
-	nat = min;
+    nat = min;
     }
 }

@@ -588,7 +588,7 @@ namespace AppCenter.Views {
             progress_grid.margin_top = 12;
             button_grid.margin_top = progress_grid.margin_top;
 
-            var header_flow = new Gtk.FlowBox (){
+            var header_flow = new Gtk.FlowBox () {
                 column_spacing = 12,
                 row_spacing = 12,
                 hexpand = true,
