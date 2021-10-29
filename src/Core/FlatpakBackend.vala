@@ -948,6 +948,8 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                     } else {
                         sorted_components.add (component);
                     }
+                    
+                    break;
                 }
             }
         }
