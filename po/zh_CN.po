@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-22 23:20+0000\n"
+"POT-Creation-Date: 2021-10-29 03:45+0000\n"
 "PO-Revision-Date: 2021-09-08 19:50+0000\n"
 "Last-Translator: Guochengjie <i@guoch.xyz>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/appcenter/appcenter/zh_Hans/>\n"
@@ -107,7 +107,7 @@ msgstr "正在删除软件包"
 msgid "Downloading"
 msgstr "下载中"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1004
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1049
 msgid "Installing"
 msgstr "正在安装"
 
@@ -152,9 +152,9 @@ msgid "Finished"
 msgstr "已完成"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:1013 src/Core/FlatpakBackend.vala:1041
-#: src/Core/FlatpakBackend.vala:1149 src/Core/FlatpakBackend.vala:1177
-#: src/Core/FlatpakBackend.vala:1323 src/Core/FlatpakBackend.vala:1349
+#: src/Core/FlatpakBackend.vala:1058 src/Core/FlatpakBackend.vala:1082
+#: src/Core/FlatpakBackend.vala:1190 src/Core/FlatpakBackend.vala:1214
+#: src/Core/FlatpakBackend.vala:1360 src/Core/FlatpakBackend.vala:1382
 msgid "Cancelling"
 msgstr "取消中"
 
@@ -241,11 +241,11 @@ msgid "%u update is available for your system"
 msgid_plural "%u updates are available for your system"
 msgstr[0] "您的系统有 %u 个可用更新"
 
-#: src/Core/FlatpakBackend.vala:1140
+#: src/Core/FlatpakBackend.vala:1181
 msgid "Uninstalling"
 msgstr "正在卸载"
 
-#: src/Core/FlatpakBackend.vala:1314
+#: src/Core/FlatpakBackend.vala:1351
 msgid "Updating"
 msgstr "正在更新"
 
