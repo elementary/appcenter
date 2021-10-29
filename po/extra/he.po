@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-29 03:45+0000\n"
-"PO-Revision-Date: 2021-10-23 15:39+0000\n"
+"PO-Revision-Date: 2021-10-29 08:32+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/appcenter/extra/"
 "he/>\n"
@@ -50,7 +50,7 @@ msgstr "תיקונים:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Correctly show the installed status of first-party applications"
-msgstr ""
+msgstr "הצגת מצב ההתקנה של יישומי צד־שלישי בצורה נכונה"
 
 #: data/io.elementary.appcenter.appdata.xml.in:26
 msgid "Don't store $0 app installs as paid"
