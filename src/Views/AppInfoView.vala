@@ -709,18 +709,6 @@ namespace AppCenter.Views {
                 }
             });
 
-            if (package.is_os_updates) {
-                package.notify["state"].connect (() => {
-                    Idle.add (() => {
-                        // For the OS updates component, this is the "x components with updates" text
-                        author_label.label = package.get_version ();
-
-                        update_description ();
-                        return false;
-                    });
-                });
-            }
-
             realize.connect (load_more_content);
         }
 
@@ -818,6 +806,7 @@ namespace AppCenter.Views {
             }
 
             new Thread<void*> ("content-loading", () => {
+                var description = package.get_description ();
                 Idle.add (() => {
                     if (package.is_os_updates) {
                         author_label.label = package.get_version ();
@@ -825,7 +814,9 @@ namespace AppCenter.Views {
                         author_label.label = package.author_title;
                     }
 
-                    update_description ();
+                    if (description != null) {
+                        app_description.buffer.text = description;
+                    }
                     return false;
                 });
 
@@ -948,13 +939,6 @@ namespace AppCenter.Views {
                 });
             } catch (Error e) {
                 critical (e.message);
-            }
-        }
-
-        private void update_description () {
-            var description = package.get_description ();
-            if (description != null) {
-                app_description.buffer.text = description;
             }
         }
 
