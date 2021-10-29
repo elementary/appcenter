@@ -709,18 +709,6 @@ namespace AppCenter.Views {
                 }
             });
 
-            if (package.is_os_updates) {
-                package.notify["state"].connect (() => {
-                    Idle.add (() => {
-                        // For the OS updates component, this is the "x components with updates" text
-                        author_label.label = package.get_version ();
-
-                        parse_description (package.get_description ());
-                        return false;
-                    });
-                });
-            }
-
             realize.connect (load_more_content);
         }
 
@@ -818,13 +806,19 @@ namespace AppCenter.Views {
             }
 
             new Thread<void*> ("content-loading", () => {
-                if (package.is_os_updates) {
-                    author_label.label = package.get_version ();
-                } else {
-                    author_label.label = package.author_title;
-                }
+                var description = package.get_description ();
+                Idle.add (() => {
+                    if (package.is_os_updates) {
+                        author_label.label = package.get_version ();
+                    } else {
+                        author_label.label = package.author_title;
+                    }
 
-                parse_description (package.get_description ());
+                    if (description != null) {
+                        app_description.buffer.text = description;
+                    }
+                    return false;
+                });
 
                 get_app_download_size.begin ();
 
@@ -945,17 +939,6 @@ namespace AppCenter.Views {
                 });
             } catch (Error e) {
                 critical (e.message);
-            }
-        }
-
-        private void parse_description (string? description) {
-            if (description != null) {
-                // This method may be called in a thread, pass back to GTK thread
-                Idle.add (() => {
-                    app_description.buffer.text = description;
-
-                    return false;
-                });
             }
         }
 
