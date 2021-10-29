@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-22 23:20+0000\n"
+"POT-Creation-Date: 2021-10-29 03:45+0000\n"
 "PO-Revision-Date: 2019-09-12 01:22+0000\n"
 "Last-Translator: Alma Ibrašimović <belma.alma@hotmail.com>\n"
 "Language-Team: Bosnian <https://l10n.elementary.io/projects/appcenter/appcenter/bs/>\n"
@@ -103,7 +103,7 @@ msgstr "Uklanjanje paketa"
 msgid "Downloading"
 msgstr "Preuzimanje"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1004
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1049
 msgid "Installing"
 msgstr "Instaliranje"
 
@@ -148,9 +148,9 @@ msgid "Finished"
 msgstr "Završeno"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:1013 src/Core/FlatpakBackend.vala:1041
-#: src/Core/FlatpakBackend.vala:1149 src/Core/FlatpakBackend.vala:1177
-#: src/Core/FlatpakBackend.vala:1323 src/Core/FlatpakBackend.vala:1349
+#: src/Core/FlatpakBackend.vala:1058 src/Core/FlatpakBackend.vala:1082
+#: src/Core/FlatpakBackend.vala:1190 src/Core/FlatpakBackend.vala:1214
+#: src/Core/FlatpakBackend.vala:1360 src/Core/FlatpakBackend.vala:1382
 msgid "Cancelling"
 msgstr "Otkazivanje"
 
@@ -241,13 +241,13 @@ msgstr[0] "%u ažuriranje je dostupno za Vaš sistem"
 msgstr[1] "%u ažuriranja su dostupna za Vaš sistem"
 msgstr[2] "%u ažuriranja je dostupno za Vaš sistem"
 
-#: src/Core/FlatpakBackend.vala:1140
+#: src/Core/FlatpakBackend.vala:1181
 #, fuzzy
 #| msgid "Uninstall"
 msgid "Uninstalling"
 msgstr "Deinstaliraj"
 
-#: src/Core/FlatpakBackend.vala:1314
+#: src/Core/FlatpakBackend.vala:1351
 #, fuzzy
 #| msgid "Update"
 msgid "Updating"
