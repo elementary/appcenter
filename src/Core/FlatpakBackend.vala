@@ -938,7 +938,7 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                     string bundle_id = iter->get_content ();
                     // If it's not an app, we don't care about sorting it
                     if (!bundle_id.has_prefix ("app/")) {
-                        continue;
+                        break;
                     }
 
                     // If it's a stable branch of an app, put it on top of the array
@@ -948,6 +948,8 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
                     } else {
                         sorted_components.add (component);
                     }
+
+                    break;
                 }
             }
         }
