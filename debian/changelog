@@ -1,3 +1,14 @@
+appcenter (3.8.2) bionic; urgency=medium
+
+  * Release 3.8.2 (#1734)
+  * FlatpakBackend: Improve XML parsing efficiency (#1733)
+  * Update translation files
+  * Update translation template
+  * FlatpakBackend: Sort stable apps in XML first (#1731)
+  * FlatpakBackend: Handle transaction done correctly (#1730)
+
+ -- elementary Builds Team <builds@elementary.io>  Fri, 29 Oct 2021 17:37:08 +0000
+
 appcenter (3.8.1) bionic; urgency=medium
 
   * Release 3.8.1 (#1724)
