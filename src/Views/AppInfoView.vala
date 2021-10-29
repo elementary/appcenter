@@ -715,7 +715,7 @@ namespace AppCenter.Views {
                         // For the OS updates component, this is the "x components with updates" text
                         author_label.label = package.get_version ();
 
-                        parse_description (package.get_description ());
+                        update_description ();
                         return false;
                     });
                 });
@@ -818,13 +818,16 @@ namespace AppCenter.Views {
             }
 
             new Thread<void*> ("content-loading", () => {
-                if (package.is_os_updates) {
-                    author_label.label = package.get_version ();
-                } else {
-                    author_label.label = package.author_title;
-                }
+                Idle.add (() => {
+                    if (package.is_os_updates) {
+                        author_label.label = package.get_version ();
+                    } else {
+                        author_label.label = package.author_title;
+                    }
 
-                parse_description (package.get_description ());
+                    update_description ();
+                    return false;
+                });
 
                 get_app_download_size.begin ();
 
@@ -948,14 +951,10 @@ namespace AppCenter.Views {
             }
         }
 
-        private void parse_description (string? description) {
+        private void update_description () {
+            var description = package.get_description ();
             if (description != null) {
-                // This method may be called in a thread, pass back to GTK thread
-                Idle.add (() => {
-                    app_description.buffer.text = description;
-
-                    return false;
-                });
+                app_description.buffer.text = description;
             }
         }
 
