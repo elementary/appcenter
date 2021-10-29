@@ -918,6 +918,51 @@ public class AppCenterCore.FlatpakBackend : Backend, Object {
             }
         }
 
+        /* The below sorting is a workaround for the fact that libappstream uses app ID + remote as a unique
+         * key for an app, and any subsequent duplicates found in the XML are discarded. So if there's a "stable"
+         * branch and a "daily" branch for an application from the same remote, and the daily branch happens to come
+         * first in the file, libappstream throws away the AppData for the stable version.
+         *
+         * See https://github.com/elementary/appcenter/issues/1612 for details
+         */
+        var sorted_components = new Gee.ArrayList<Xml.Node*> ();
+        // Iterate through all components in the appstream XML
+        for (Xml.Node* component = root->children; component != null; component = component->next) {
+            if (component->name != "component") {
+                continue;
+            }
+
+            // Find their bundle tag
+            for (Xml.Node* iter = component->children; iter != null; iter = iter->next) {
+                if (iter->name == "bundle") {
+                    string bundle_id = iter->get_content ();
+                    // If it's not an app, we don't care about sorting it
+                    if (!bundle_id.has_prefix ("app/")) {
+                        continue;
+                    }
+
+                    // If it's a stable branch of an app, put it on top of the array
+                    if (bundle_id.has_suffix ("/stable")) {
+                        sorted_components.insert (0, component);
+                    // Otherwise add it to the end
+                    } else {
+                        sorted_components.add (component);
+                    }
+                }
+            }
+        }
+
+        // Unlink all of the components we sorted, so we can re-attach them in their new positions
+        // Can't do this during the loop above as it breaks the iterator
+        foreach (var component in sorted_components) {
+            component->unlink ();
+        }
+
+        // Re-attach them in the new order
+        foreach (var component in sorted_components) {
+            root->add_child (component);
+        }
+
         doc->set_compress_mode (7);
         doc->save_file (dest_file.get_path ());
 
