@@ -4,3 +4,4 @@ option('name', type : 'string', value : 'AppCenter', description : 'The name of 
 option('payments', type : 'boolean', value : true, description : 'Enable payment features and display paid apps')
 option('sharing', type : 'boolean', value : true, description : 'Display sharing features, i.e. copyable URLs to appcenter.elementary.io')
 option('hide_upstream_distro_apps', type : 'boolean', value : true, description : 'Used for hiding Ubuntu repo apps on elementary OS')
+option('packagekit_backend', type : 'boolean', value : true, description : 'Enable PackageKit backend')

@@ -12,10 +12,8 @@ appcenter_files = files(
     'Core/FlatpakBackend.vala',
     'Core/Job.vala',
     'Core/Package.vala',
-    'Core/PackageKitBackend.vala',
     'Core/ScreenshotCache.vala',
     'Core/Task.vala',
-    'Core/UbuntuDriversBackend.vala',
     'Core/UpdateManager.vala',
     'Dialogs/InstallFailDialog.vala',
     'Dialogs/NonCuratedWarningDialog.vala',
@@ -74,6 +72,14 @@ endif
 
 if get_option('hide_upstream_distro_apps')
     args += '--define=HIDE_UPSTREAM_DISTRO_APPS'
+endif
+
+if get_option('packagekit_backend')
+    args += '--define=PACKAGEKIT_BACKEND'
+    appcenter_files += files(
+        'Core/PackageKitBackend.vala',
+        'Core/UbuntuDriversBackend.vala',
+    )
 endif
 
 executable(
