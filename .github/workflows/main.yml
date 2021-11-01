@@ -42,6 +42,13 @@ jobs:
         meson configure -Dcurated=false -Dpayments=false -Dsharing=false -Dname=Pop\!_Shop build
         ninja -C build install
 
+    - name: Build (NixOS)
+      env:
+        DESTDIR: out
+      run: |
+        meson configure -Dcurated=false -Dpayments=false -Dpackagekit_backend=false build
+        ninja -C build install
+
   lint:
 
     runs-on: ubuntu-latest
