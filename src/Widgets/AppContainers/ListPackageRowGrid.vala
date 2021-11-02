@@ -29,7 +29,11 @@ public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
         package_summary = new Gtk.Label (null) {
             ellipsize = Pango.EllipsizeMode.END,
             valign = Gtk.Align.START,
-            xalign = 0
+            xalign = 0,
+            yalign = 0,
+            max_width_chars = 1,
+            wrap = true,
+            lines = 3
         };
         package_summary.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
 
