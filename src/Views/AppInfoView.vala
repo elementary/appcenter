@@ -41,6 +41,7 @@ namespace AppCenter.Views {
         private Gtk.ListBox extension_box;
         private Gtk.ListStore origin_liststore;
         private Gtk.Overlay screenshot_overlay;
+        private Hdy.Clamp screenshot_clamp;
         private Gtk.Revealer origin_combo_revealer;
         private Hdy.Carousel app_screenshots;
         private Gtk.Stack screenshot_stack;
@@ -268,7 +269,9 @@ namespace AppCenter.Views {
 
             if (screenshots.length > 0) {
                 app_screenshots = new Hdy.Carousel () {
-                    height_request = 500
+                    height_request = 100,
+                    spacing = 128,
+                    allow_long_swipes = true
                 };
 
                 screenshot_previous = new ArrowButton ("go-previous-symbolic") {
@@ -320,8 +323,14 @@ namespace AppCenter.Views {
                 };
                 screenshot_arrow_revealer_n.add (screenshot_next);
 
+                screenshot_clamp = new Hdy.Clamp () {
+                    margin = 6,
+                    maximum_size = MAX_WIDTH
+                };
+                screenshot_clamp.add (app_screenshots);
+
                 screenshot_overlay = new Gtk.Overlay ();
-                screenshot_overlay.add (app_screenshots);
+                screenshot_overlay.add (screenshot_clamp);
                 screenshot_overlay.add_overlay (screenshot_arrow_revealer_p);
                 screenshot_overlay.add_overlay (screenshot_arrow_revealer_n);
 
@@ -526,11 +535,6 @@ namespace AppCenter.Views {
                 content_grid.add (oars_flowbox);
             }
 
-            if (screenshots.length > 0) {
-                content_grid.add (screenshot_stack);
-                content_grid.add (screenshot_switcher);
-            }
-
             content_grid.add (package_summary);
             content_grid.add (app_description);
             content_grid.add (release_grid);
@@ -638,11 +642,21 @@ namespace AppCenter.Views {
             });
 
             var grid = new Gtk.Grid () {
+                orientation = Gtk.Orientation.VERTICAL,
                 row_spacing = 12
             };
-            grid.attach (header_box, 0, 0);
-            grid.attach (body_clamp, 0, 1);
-            grid.attach (other_apps_bar, 0, 3);
+            grid.add (header_box);
+
+            if (screenshots.length > 0) {
+                grid.add (screenshot_stack);
+                grid.add (screenshot_switcher);
+
+                //  if (screenshots.length > 1) {
+                //  }
+            }
+
+            grid.add (body_clamp);
+            grid.add (other_apps_bar);
 
             var scrolled = new Gtk.ScrolledWindow (null, null) {
                 hscrollbar_policy = Gtk.PolicyType.NEVER,
@@ -902,15 +916,33 @@ namespace AppCenter.Views {
                 Idle.add (() => {
                     var number_of_screenshots = app_screenshots.get_children ().length ();
 
+                    
                     if (number_of_screenshots > 0) {
                         screenshot_stack.visible_child = screenshot_overlay;
                         stack_context.remove_class ("loading");
-
+                        
+                        
                         if (number_of_screenshots > 1) {
                             screenshot_next.no_show_all = false;
                             screenshot_next.show_all ();
                             screenshot_previous.no_show_all = false;
                             screenshot_previous.show_all ();
+                        }
+
+                        /* 
+                        * There's some weird bug where Apps with just one
+                        * screenshot load the screenshot very small. For some
+                        * reason, hiding and re-showing the screenhot makes it
+                        * large again, but it only happens with one screenshot
+                        * in the carousel. As a workaround, we can add an
+                        * extra copy of the first screenshot and disable all 
+                        * navigation to make it look/work like a single 
+                        * screenshot. 
+                        */
+                        if (number_of_screenshots == 1) {
+                            load_screenshot (screenshot_files[0]);
+                            app_screenshots.interactive = false;
+                            screenshot_switcher.visible = false;
                         }
                     } else {
                         screenshot_stack.visible_child = app_screenshot_not_found;
@@ -926,19 +958,15 @@ namespace AppCenter.Views {
 
         // We need to first download the screenshot locally so that it doesn't freeze the interface.
         private void load_screenshot (string path) {
-            var scale_factor = get_scale_factor ();
             try {
-                var pixbuf = new Gdk.Pixbuf.from_file_at_scale (path, MAX_WIDTH * scale_factor, 600 * scale_factor, true);
-                var image = new Gtk.Image ();
-                image.width_request = MAX_WIDTH;
-                image.height_request = 500;
-                image.icon_name = "image-x-generic";
-                image.halign = Gtk.Align.CENTER;
-                image.gicon = pixbuf;
+                AppCenter.Widgets.AppScreenshot image = new AppCenter.Widgets.AppScreenshot ();
+                image.set_path (path);
+                
 
                 Idle.add (() => {
                     image.show ();
                     app_screenshots.add (image);
+                    image.halign = Gtk.Align.CENTER;
                     return GLib.Source.REMOVE;
                 });
             } catch (Error e) {
