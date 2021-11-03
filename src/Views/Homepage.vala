@@ -107,13 +107,9 @@ public class AppCenter.Homepage : AbstractView {
             column_spacing = 24,
             orientation = Gtk.Orientation.VERTICAL
         };
-#if PACKAGEKIT_BACKEND
         grid.add (banner_revealer);
         grid.add (recently_updated_revealer);
         grid.add (categories_label);
-#else
-        category_flow.margin_top = 12;
-#endif
         grid.add (category_flow);
 
         scrolled_window = new Gtk.ScrolledWindow (null, null) {
