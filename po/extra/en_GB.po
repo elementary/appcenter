@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-29 03:45+0000\n"
-"PO-Revision-Date: 2021-10-26 04:15+0000\n"
+"PO-Revision-Date: 2021-11-03 06:36+0000\n"
 "Last-Translator: Ciarán Ainsworth <ciaranainsworth@outlook.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "appcenter/extra/en_GB/>\n"
@@ -51,7 +51,7 @@ msgstr "Fixes:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Correctly show the installed status of first-party applications"
-msgstr ""
+msgstr "Correctly show the installed status of first-party applications"
 
 #: data/io.elementary.appcenter.appdata.xml.in:26
 msgid "Don't store $0 app installs as paid"
