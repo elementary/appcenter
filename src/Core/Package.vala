@@ -634,6 +634,10 @@ public class AppCenterCore.Package : Object {
                 description = backend_details.description;
             }
 
+            if (description == null) {
+                return null;
+            }
+
             try {
                 // Condense double spaces
                 var space_regex = new Regex ("\\s+");
