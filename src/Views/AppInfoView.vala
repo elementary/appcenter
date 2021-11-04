@@ -813,7 +813,7 @@ namespace AppCenter.Views {
                     }
 
                     if (description != null) {
-                        app_description.buffer.text = description;
+                        app_description.label = description;
                     }
                     return false;
                 });
