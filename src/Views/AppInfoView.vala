@@ -44,7 +44,7 @@ namespace AppCenter.Views {
         private Gtk.Revealer origin_combo_revealer;
         private Hdy.Carousel app_screenshots;
         private Gtk.Stack screenshot_stack;
-        private Gtk.TextView app_description;
+        private Gtk.Label app_description;
         private Widgets.ReleaseListBox release_list_box;
         private Widgets.SizeLabel size_label;
         private Hdy.CarouselIndicatorDots screenshot_switcher;
@@ -445,13 +445,11 @@ namespace AppCenter.Views {
             };
             package_summary.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
-            app_description = new Gtk.TextView () {
-                cursor_visible = false,
-                editable = false,
-                expand = true,
-                pixels_below_lines = 3,
-                pixels_inside_wrap = 3,
-                wrap_mode = Gtk.WrapMode.WORD_CHAR
+            app_description = new Gtk.Label (null) {
+                // Allow wrapping but prevent expanding the parent
+                width_request = 1,
+                wrap = true,
+                xalign = 0
             };
             app_description.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
