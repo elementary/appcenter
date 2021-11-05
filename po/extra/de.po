@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-29 03:45+0000\n"
-"PO-Revision-Date: 2021-09-23 11:47+0000\n"
+"PO-Revision-Date: 2021-11-05 16:10+0000\n"
 "Last-Translator: supaeasy <ismo+github@wolffson.ch>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/appcenter/extra/"
 "de/>\n"
@@ -52,25 +52,23 @@ msgstr "Fehlerbehebungen:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Correctly show the installed status of first-party applications"
-msgstr ""
+msgstr "Installationsstatus von Erstanbieter-Anwendungen korrekt darstellen"
 
 #: data/io.elementary.appcenter.appdata.xml.in:26
 msgid "Don't store $0 app installs as paid"
-msgstr ""
+msgstr "Kostenlose Apps nicht in gekauften Apps anzeigen"
 
 #: data/io.elementary.appcenter.appdata.xml.in:27
-#, fuzzy
-#| msgid "Fix missing mail icon in payments dialog"
 msgid "Fix missing illicit substances icon"
-msgstr "Mail Icon im Zahlungsdialog hinzugefügt"
+msgstr "Fehlendes Icon für illegale Substanzen hinzugefügt"
 
 #: data/io.elementary.appcenter.appdata.xml.in:28
 msgid "Don't show plugins on the homepage"
-msgstr ""
+msgstr "Plugins nicht auf der Startseite anzeigen"
 
 #: data/io.elementary.appcenter.appdata.xml.in:29
 msgid "Only show \"Multiplayer\" badge for games"
-msgstr ""
+msgstr "Nur \"Multiplayer\"-Badge für Spiele anzeigen"
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
 #: data/io.elementary.appcenter.appdata.xml.in:49
@@ -85,7 +83,7 @@ msgstr "Verbesserungen:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:33
 msgid "Show installation progress in a more compact way"
-msgstr ""
+msgstr "Installationsprozess kompakter darstellen"
 
 #: data/io.elementary.appcenter.appdata.xml.in:34
 #: data/io.elementary.appcenter.appdata.xml.in:53
