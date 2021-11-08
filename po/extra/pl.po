@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-29 03:45+0000\n"
 "PO-Revision-Date: 2021-11-08 16:32+0000\n"
-"Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
+"Last-Translator: Oskar Rygasiewicz <fleepgames@gmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/appcenter/extra/"
 "pl/>\n"
 "Language: pl\n"
@@ -104,7 +104,7 @@ msgstr "Pokaż postęp instalacji w bardziej zwięzły sposób"
 #: data/io.elementary.appcenter.appdata.xml.in:264
 #: data/io.elementary.appcenter.appdata.xml.in:311
 msgid "Updated translations"
-msgstr "Zaktualizowane tłumaczenia"
+msgstr "Zaktualizowano tłumaczenia"
 
 #: data/io.elementary.appcenter.appdata.xml.in:40
 #: data/io.elementary.appcenter.appdata.xml.in:123
