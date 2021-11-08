@@ -95,6 +95,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
 
         info_grid = new Gtk.Grid () {
             column_spacing = 12,
+            hexpand = true,
             row_spacing = 6,
             valign = Gtk.Align.START
         };
