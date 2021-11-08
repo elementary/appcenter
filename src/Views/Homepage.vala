@@ -70,8 +70,7 @@ public class AppCenter.Homepage : AbstractView {
             column_spacing = 12,
             row_spacing = 12,
             homogeneous = true,
-            max_children_per_line = 5,
-            min_children_per_line = 1
+            max_children_per_line = 5
         };
 
         var recently_updated_grid = new Gtk.Grid () {
