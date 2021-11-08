@@ -75,7 +75,7 @@ public class AppCenter.CategoryView : Gtk.ScrolledWindow {
         var grid = new Gtk.Grid () {
             margin = 12,
             margin_top = 24,
-            margin_bottom = 24
+            margin_bottom = 24,
             orientation = Gtk.Orientation.VERTICAL,
             row_spacing = 48
         };
