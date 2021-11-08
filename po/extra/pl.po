@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-29 03:45+0000\n"
-"PO-Revision-Date: 2021-08-01 16:45+0000\n"
-"Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
+"PO-Revision-Date: 2021-11-08 10:34+0000\n"
+"Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/appcenter/extra/"
 "pl/>\n"
 "Language: pl\n"
@@ -26,11 +26,6 @@ msgid "Browse and manage apps"
 msgstr "Przeglądaj i zarządzaj programami"
 
 #: data/io.elementary.appcenter.appdata.xml.in:11
-#, fuzzy
-#| msgid ""
-#| "An app store for indie and open source developers. Browse by categories "
-#| "or search and discover new apps. AppCenter is also used for updating your "
-#| "system to the latest and greatest version for new features and fixes."
 msgid ""
 "The open source, pay-what-you-want app store from elementary. Reviewed and "
 "curated by elementary to ensure a native, privacy-respecting, and secure "
@@ -38,10 +33,12 @@ msgid ""
 "is also used for updating your system to the latest and greatest version for "
 "new features and fixes."
 msgstr ""
-"Sklep z programami dla niezależnych i otwartoźródłowych programistów. "
-"Przeglądaj według kategorii lub wyszukuj i odkrywaj nowe programy. AppCenter "
-"jest także używane do aktualizowania systemu do najnowszej wersji, celem "
-"uzyskiwania nowych wspaniałych funkcji i niezbędnych poprawek."
+"Otwartoźródłowy sklep na zasadzie zapłać-ile-chcesz od elementary. "
+"Sprawdzany i selekcjonowany przez elementary by zapewnić natywne, "
+"respektujące prywatność i bezpieczne doświadczenie. Przeglądaj według "
+"kategorii lub wyszukuj i odkrywaj nowe programy. AppCenter jest także "
+"używane do aktualizowania systemu do najnowszej wersji, celem uzyskiwania "
+"nowych wspaniałych funkcji i niezbędnych poprawek."
 
 #: data/io.elementary.appcenter.appdata.xml.in:16
 #: data/io.elementary.appcenter.appdata.xml.in:24
@@ -52,27 +49,27 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:108
 #: data/io.elementary.appcenter.appdata.xml.in:136
 msgid "Fixes:"
-msgstr ""
+msgstr "Poprawki:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Correctly show the installed status of first-party applications"
-msgstr ""
+msgstr "Poprawnie pokazuj status instalacji dla aplikacji z pierwszej ręki"
 
 #: data/io.elementary.appcenter.appdata.xml.in:26
 msgid "Don't store $0 app installs as paid"
-msgstr ""
+msgstr "Nie trzymaj aplikacji zainstalowanych za 0$ jako opłaconych"
 
 #: data/io.elementary.appcenter.appdata.xml.in:27
 msgid "Fix missing illicit substances icon"
-msgstr ""
+msgstr "Napraw brakującą ikonę nielegalnych substancji"
 
 #: data/io.elementary.appcenter.appdata.xml.in:28
 msgid "Don't show plugins on the homepage"
-msgstr ""
+msgstr "Wtyczki nie są już pokazywane na stronie głównej"
 
 #: data/io.elementary.appcenter.appdata.xml.in:29
 msgid "Only show \"Multiplayer\" badge for games"
-msgstr ""
+msgstr "Pokazuj tylko odznakę „Wielu graczy” dla gier"
 
 #: data/io.elementary.appcenter.appdata.xml.in:31
 #: data/io.elementary.appcenter.appdata.xml.in:49
@@ -82,13 +79,12 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:100
 #: data/io.elementary.appcenter.appdata.xml.in:115
 #: data/io.elementary.appcenter.appdata.xml.in:128
-#, fuzzy
 msgid "Improvements:"
-msgstr "Poprawki wydajności"
+msgstr "Ulepszenia:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:33
 msgid "Show installation progress in a more compact way"
-msgstr ""
+msgstr "Pokaż postęp instalacji w bardziej zwięzły sposób"
 
 #: data/io.elementary.appcenter.appdata.xml.in:34
 #: data/io.elementary.appcenter.appdata.xml.in:53
@@ -107,14 +103,13 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:258
 #: data/io.elementary.appcenter.appdata.xml.in:264
 #: data/io.elementary.appcenter.appdata.xml.in:311
-#, fuzzy
 msgid "Updated translations"
 msgstr "Zaktualizowane tłumaczenia"
 
 #: data/io.elementary.appcenter.appdata.xml.in:40
 #: data/io.elementary.appcenter.appdata.xml.in:123
 msgid "New features:"
-msgstr ""
+msgstr "Nowe funkcje:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:42
 msgid "Show content warnings on app info pages"
