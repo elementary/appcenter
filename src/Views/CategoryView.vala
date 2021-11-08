@@ -26,6 +26,7 @@ public class AppCenter.CategoryView : Gtk.ScrolledWindow {
         var paid_header = new Granite.HeaderLabel (_("Paid Apps")) {
             margin_start = 12
         };
+        paid_header.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
         var paid_flowbox = new SubcategoryFlowbox ();
 
@@ -36,6 +37,7 @@ public class AppCenter.CategoryView : Gtk.ScrolledWindow {
         var free_header = new Granite.HeaderLabel (_("Free Apps")) {
             margin_start = 12
         };
+        free_header.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
         var free_flowbox = new SubcategoryFlowbox ();
 
@@ -46,6 +48,7 @@ public class AppCenter.CategoryView : Gtk.ScrolledWindow {
         var uncurated_header = new Granite.HeaderLabel (_("Non-Curated Apps")) {
             margin_start = 12
         };
+        uncurated_header.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
         var uncurated_flowbox = new SubcategoryFlowbox ();
 
@@ -74,7 +77,6 @@ public class AppCenter.CategoryView : Gtk.ScrolledWindow {
 
         var grid = new Gtk.Grid () {
             margin = 12,
-            margin_top = 24,
             margin_bottom = 24,
             orientation = Gtk.Orientation.VERTICAL,
             row_spacing = 48
