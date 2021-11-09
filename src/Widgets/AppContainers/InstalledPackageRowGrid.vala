@@ -107,14 +107,12 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         action_stack.margin_top = 10;
         action_stack.valign = Gtk.Align.START;
 
-        var grid = new Gtk.Grid () {
-            column_spacing = 24
-        };
-        grid.attach (info_grid, 0, 0);
-        grid.attach (release_stack_revealer, 2, 0, 1, 2);
-        grid.attach (action_stack, 3, 0);
+        var box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 24);
+        box.pack_start (info_grid);
+        box.pack_end (action_stack);
+        box.set_center_widget (release_stack_revealer);
 
-        add (grid);
+        add (box);
     }
 
     protected override void set_up_package () {
