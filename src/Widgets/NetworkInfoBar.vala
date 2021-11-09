@@ -42,7 +42,8 @@ public class AppCenter.Widgets.NetworkInfoBar : Gtk.InfoBar {
             switch (response_id) {
                 case Gtk.ResponseType.ACCEPT:
                     try {
-                        AppInfo.launch_default_for_uri ("settings://network", null);
+                        AppInfo settings = AppInfo.create_from_commandline ("gnome-control-center wifi", "Settings", NONE);
+                        settings.launch (null, null);
                     } catch (GLib.Error e) {
                         critical (e.message);
                     }
