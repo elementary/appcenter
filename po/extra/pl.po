@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-29 03:45+0000\n"
-"PO-Revision-Date: 2021-11-08 16:32+0000\n"
+"PO-Revision-Date: 2021-11-10 10:49+0000\n"
 "Last-Translator: Oskar Rygasiewicz <fleepgames@gmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/appcenter/extra/"
 "pl/>\n"
@@ -248,11 +248,11 @@ msgstr ""
 #: data/io.elementary.appcenter.appdata.xml.in:237
 #: data/io.elementary.appcenter.appdata.xml.in:254
 msgid "Fixes"
-msgstr ""
+msgstr "Poprawki"
 
 #: data/io.elementary.appcenter.appdata.xml.in:151
 msgid "Correctly display names of Flatpak runtime updates"
-msgstr ""
+msgstr "Poprawnie wyświetlaj nazwy aktualizacji biblioteki Flatpak"
 
 #: data/io.elementary.appcenter.appdata.xml.in:153
 #: data/io.elementary.appcenter.appdata.xml.in:170
@@ -267,11 +267,11 @@ msgstr "Sprawdź aktualizacje"
 #: data/io.elementary.appcenter.appdata.xml.in:161
 #: data/io.elementary.appcenter.appdata.xml.in:207
 msgid "New features"
-msgstr ""
+msgstr "Nowe funkcje"
 
 #: data/io.elementary.appcenter.appdata.xml.in:163
 msgid "Support system-wide Flatpak remotes"
-msgstr ""
+msgstr "Wsparcie dla systemowych bibliotek zdalnych Flatpak"
 
 #: data/io.elementary.appcenter.appdata.xml.in:167
 msgid "Fix Flatpak runtime updates getting stuck"
@@ -286,11 +286,12 @@ msgid ""
 "When apps are available from multiple sources, prefer installed version, "
 "then prefer Flatpak"
 msgstr ""
+"Gdy aplikacje są dostępne z wielu źródeł, preferuj zainstalowaną wersję, "
+"potem preferuj Flatpak"
 
 #: data/io.elementary.appcenter.appdata.xml.in:173
-#, fuzzy
 msgid "Improve search performance"
-msgstr "Poprawki błędów i ulepszenia wydajności."
+msgstr "Popraw wydajność wyszukiwania"
 
 #: data/io.elementary.appcenter.appdata.xml.in:174
 msgid "Improve update badge styling and category styling"
