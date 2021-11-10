@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-29 03:45+0000\n"
 "PO-Revision-Date: 2021-11-10 10:49+0000\n"
-"Last-Translator: Oskar Rygasiewicz <fleepgames@gmail.com>\n"
+"Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/appcenter/extra/"
 "pl/>\n"
 "Language: pl\n"
@@ -215,31 +215,36 @@ msgstr "Poprawiono styl oraz kontrast przycisków"
 
 #: data/io.elementary.appcenter.appdata.xml.in:133
 msgid "More concise and consistent language"
-msgstr ""
+msgstr "Bardziej zwięzły i spójny język"
 
 #: data/io.elementary.appcenter.appdata.xml.in:138
 msgid "Fully uninstall Flatpaks, including locales"
-msgstr ""
+msgstr "Pełne usunięcie Flatpaków, włączając w to pliki lokalizacji"
 
 #: data/io.elementary.appcenter.appdata.xml.in:139
 msgid "Still fetch screenshots from remotes that don't include proper headers"
 msgstr ""
+"Nadal pobieraj zrzuty ekranów ze źródeł niezawierających poprawnych nagłówków"
 
 #: data/io.elementary.appcenter.appdata.xml.in:140
 msgid "Fix truncated footer buttons"
-msgstr ""
+msgstr "Naprawiono przycięte przyciski w stopce"
 
 #: data/io.elementary.appcenter.appdata.xml.in:141
 msgid "Only show Mail button when a usable mail app is installed"
 msgstr ""
+"Pokazuj przycisk poczty tylko gdy działająca aplikacja poczty jest "
+"zainstalowana"
 
 #: data/io.elementary.appcenter.appdata.xml.in:142
 msgid "Fix some apps incorrectly showing as not installed during search"
 msgstr ""
+"Naprawiono niektóre aplikacje niepoprawnie oznaczone jako niezainstalowane "
+"podczas wyszukiwania"
 
 #: data/io.elementary.appcenter.appdata.xml.in:143
 msgid "Show an error dialog when opening an app fails"
-msgstr ""
+msgstr "Pokaż okno błędu gdy otwieranie aplikacji się nie powiedzie"
 
 #: data/io.elementary.appcenter.appdata.xml.in:149
 #: data/io.elementary.appcenter.appdata.xml.in:165
@@ -259,10 +264,8 @@ msgstr "Poprawnie wyświetlaj nazwy aktualizacji biblioteki Flatpak"
 #: data/io.elementary.appcenter.appdata.xml.in:186
 #: data/io.elementary.appcenter.appdata.xml.in:198
 #: data/io.elementary.appcenter.appdata.xml.in:211
-#, fuzzy
-#| msgid "Check for Updates"
 msgid "Minor updates"
-msgstr "Sprawdź aktualizacje"
+msgstr "Mniejsze aktualizacje"
 
 #: data/io.elementary.appcenter.appdata.xml.in:161
 #: data/io.elementary.appcenter.appdata.xml.in:207
@@ -275,11 +278,11 @@ msgstr "Wsparcie dla systemowych bibliotek zdalnych Flatpak"
 
 #: data/io.elementary.appcenter.appdata.xml.in:167
 msgid "Fix Flatpak runtime updates getting stuck"
-msgstr ""
+msgstr "Naprawiono zawieszające się aktualizacje bibliotek Flatpak"
 
 #: data/io.elementary.appcenter.appdata.xml.in:168
 msgid "Fix long origin comboboxes breaking the header layout"
-msgstr ""
+msgstr "Naprawiono comboboxy z długimi źródłami psujące układ nagłówka"
 
 #: data/io.elementary.appcenter.appdata.xml.in:172
 msgid ""
