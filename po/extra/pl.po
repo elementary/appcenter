@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-29 03:45+0000\n"
 "PO-Revision-Date: 2021-11-10 13:03+0000\n"
-"Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
+"Last-Translator: Oskar Rygasiewicz <fleepgames@gmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/appcenter/extra/"
 "pl/>\n"
 "Language: pl\n"
@@ -324,7 +324,7 @@ msgstr "Poprawki wydajności"
 
 #: data/io.elementary.appcenter.appdata.xml.in:209
 msgid "Perform updates without administrator permissions"
-msgstr ""
+msgstr "Wykonaj aktualizację bez uprawnień administratora"
 
 #: data/io.elementary.appcenter.appdata.xml.in:213
 msgid "Ensure apps on the homepage are more reliably displayed"
@@ -340,10 +340,12 @@ msgid ""
 "Only check for updates at device startup if it's more than 24 hours since we "
 "last checked"
 msgstr ""
+"Sprawdzaj aktualizacje tylko podczas uruchamiania urządzenia, jeśli minęło "
+"więcej niż 24 godziny od ostatniego razu"
 
 #: data/io.elementary.appcenter.appdata.xml.in:224
 msgid "Reduce slowdowns when opening certain apps"
-msgstr ""
+msgstr "Zredukuj spowolnienia przy otwieraniu poszczególnych aplikacji"
 
 #: data/io.elementary.appcenter.appdata.xml.in:226
 msgid "Extension improvements"
@@ -354,6 +356,8 @@ msgid ""
 "To de-clutter the updates view, extensions are now only shown if they "
 "require updates"
 msgstr ""
+"Rozszerzenia są teraz pokazywane tylko gdy wymagają aktualizacji aby widok "
+"aktualizacji był przejrzysty"
 
 #: data/io.elementary.appcenter.appdata.xml.in:229
 msgid ""
@@ -372,9 +376,8 @@ msgstr ""
 "aplikacjami a rozszerzeniami było przejrzystsze"
 
 #: data/io.elementary.appcenter.appdata.xml.in:232
-#, fuzzy
 msgid "Keyboard improvements"
-msgstr "Poprawki wydajności"
+msgstr "Poprawki klawiatury"
 
 #: data/io.elementary.appcenter.appdata.xml.in:234
 msgid ""
@@ -386,7 +389,7 @@ msgstr ""
 
 #: data/io.elementary.appcenter.appdata.xml.in:235
 msgid "Ctrl+F now moves the cursor to the search field"
-msgstr ""
+msgstr "Ctrl+F od teraz przenosi kursor na pole wyszukiwania"
 
 #: data/io.elementary.appcenter.appdata.xml.in:239
 msgid "Use configured network proxy settings for apt operations"
