@@ -297,11 +297,11 @@ public class AppCenter.Homepage : AbstractView {
         add_named (category_view, category.name);
         visible_child = category_view;
 
-        // app_list_view.show_app.connect ((package) => {
-        //     viewing_package = true;
-        //     base.show_package (package);
-        //     subview_entered (category.name, false, "");
-        // });
+        category_view.show_app.connect ((package) => {
+            viewing_package = true;
+            base.show_package (package);
+            subview_entered (category.name, false, "");
+        });
     }
 
     private void banner_timeout_start () {

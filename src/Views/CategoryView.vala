@@ -16,6 +16,8 @@
  */
 
 public class AppCenter.CategoryView : Gtk.ScrolledWindow {
+    public signal void show_app (AppCenterCore.Package package);
+
     public AppStream.Category category { get; construct; }
 
     public CategoryView (AppStream.Category category) {
@@ -98,9 +100,30 @@ public class AppCenter.CategoryView : Gtk.ScrolledWindow {
         add (grid);
 
         show_all ();
+
+        paid_flowbox.child_activated.connect ((child) => {
+            var row = (Widgets.ListPackageRowGrid) child.get_child ();
+            show_app (row.package);
+        });
+
+        free_flowbox.child_activated.connect ((child) => {
+            var row = (Widgets.ListPackageRowGrid) child.get_child ();
+            show_app (row.package);
+        });
+
+        uncurated_flowbox.child_activated.connect ((child) => {
+            var row = (Widgets.ListPackageRowGrid) child.get_child ();
+            show_app (row.package);
+        });
     }
 
     private class SubcategoryFlowbox : Gtk.FlowBox {
+        private static Gtk.SizeGroup size_group;
+
+        static construct {
+            size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
+        }
+
         construct {
             column_spacing = 24;
             homogeneous = true;
@@ -108,6 +131,20 @@ public class AppCenter.CategoryView : Gtk.ScrolledWindow {
             min_children_per_line = 3;
             row_spacing = 12;
             valign = Gtk.Align.START;
+
+            set_sort_func ((Gtk.FlowBoxSortFunc) package_row_compare);
+
+            add.connect ((widget) => {
+                size_group.add_widget (widget);
+            });
+        }
+
+        [CCode (instance_pos = -1)]
+        protected virtual int package_row_compare (Gtk.FlowBoxChild child1, Gtk.FlowBoxChild child2) {
+            var row1 = (Widgets.ListPackageRowGrid) child1.get_child ();
+            var row2 = (Widgets.ListPackageRowGrid) child2.get_child ();
+
+            return row1.package.get_name ().collate (row2.package.get_name ());
         }
     }
 }
