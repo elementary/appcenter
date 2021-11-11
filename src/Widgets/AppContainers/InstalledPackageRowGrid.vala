@@ -32,7 +32,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
 
     private Gtk.Grid info_grid;
 
-    public InstalledPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? info_size_group, Gtk.SizeGroup? action_size_group) {
+    public InstalledPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? info_size_group, Gtk.SizeGroup? action_size_group, Gtk.SizeGroup? release_size_group) {
         base (package);
 
         if (action_size_group != null) {
@@ -42,6 +42,10 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
 
         if (info_size_group != null) {
             info_size_group.add_widget (info_grid);
+        }
+
+        if (release_size_group != null) {
+            release_size_group.add_widget (release_stack_revealer);
         }
 
         set_up_package ();
@@ -91,11 +95,11 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
 
         release_stack_revealer = new Gtk.Revealer ();
         release_stack_revealer.transition_type = Gtk.RevealerTransitionType.CROSSFADE;
+        release_stack_revealer.hexpand = true;
         release_stack_revealer.add (release_stack);
 
         info_grid = new Gtk.Grid () {
             column_spacing = 12,
-            hexpand = true,
             row_spacing = 6,
             valign = Gtk.Align.START
         };
@@ -107,12 +111,14 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         action_stack.margin_top = 10;
         action_stack.valign = Gtk.Align.START;
 
-        var box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 24);
-        box.pack_start (info_grid);
-        box.pack_end (action_stack);
-        box.set_center_widget (release_stack_revealer);
+        var grid = new Gtk.Grid () {
+            column_spacing = 24
+        };
+        grid.attach (info_grid, 0, 0);
+        grid.attach (release_stack_revealer, 2, 0, 1, 2);
+        grid.attach (action_stack, 3, 0);
 
-        add (box);
+        add (grid);
     }
 
     protected override void set_up_package () {

@@ -23,10 +23,12 @@ namespace AppCenter.Views {
       * Does not show Uninstall Button **/
     public class AppListUpdateView : AbstractAppList {
         private Gtk.SizeGroup action_button_group;
+        private Gtk.SizeGroup release_size_group;
         private bool updating_all_apps = false;
 
         construct {
             action_button_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.BOTH);
+            release_size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
 
             var loading_view = new Granite.Widgets.AlertView (
                 _("Checking for Updates"),
@@ -97,7 +99,7 @@ namespace AppCenter.Views {
         }
 
         protected override AppRowInterface construct_row_for_package (AppCenterCore.Package package) {
-            return new Widgets.PackageRow.installed (package, info_grid_group, action_button_group);
+            return new Widgets.PackageRow.installed (package, info_grid_group, action_button_group, release_size_group);
         }
 
         [CCode (instance_pos = -1)]
