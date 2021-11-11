@@ -28,7 +28,11 @@ public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
     construct {
         package_summary = new Gtk.Label (null) {
             ellipsize = Pango.EllipsizeMode.END,
+            hexpand = true,
+            lines = 2,
+            max_width_chars = 1,
             valign = Gtk.Align.START,
+            wrap = true,
             xalign = 0
         };
         package_summary.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
@@ -40,9 +44,12 @@ public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
         grid.attach (app_icon_overlay, 0, 0, 1, 2);
         grid.attach (package_name, 1, 0);
         grid.attach (package_summary, 1, 1);
-        grid.attach (action_stack, 2, 0, 1, 2);
 
-        add (grid);
+        var box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 12);
+        box.pack_start (grid);
+        box.pack_end (action_stack);
+
+        add (box);
     }
 
     protected override void set_up_package () {

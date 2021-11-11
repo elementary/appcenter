@@ -32,7 +32,9 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
 
     private Gtk.Grid info_grid;
 
-    public InstalledPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? info_size_group, Gtk.SizeGroup? action_size_group) {
+    private static Gtk.SizeGroup info_size_group;
+
+    public InstalledPackageRowGrid (AppCenterCore.Package package, Gtk.SizeGroup? action_size_group) {
         base (package);
 
         if (action_size_group != null) {
@@ -40,11 +42,11 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
             action_size_group.add_widget (cancel_button);
         }
 
-        if (info_size_group != null) {
-            info_size_group.add_widget (info_grid);
-        }
-
         set_up_package ();
+    }
+
+    static construct {
+        info_size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
     }
 
     construct {
@@ -105,6 +107,7 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         action_stack.homogeneous = false;
         action_stack.margin_top = 10;
         action_stack.valign = Gtk.Align.START;
+        action_stack.hexpand = true;
 
         var grid = new Gtk.Grid () {
             column_spacing = 24
@@ -114,6 +117,8 @@ public class AppCenter.Widgets.InstalledPackageRowGrid : AbstractPackageRowGrid 
         grid.attach (action_stack, 3, 0);
 
         add (grid);
+
+        info_size_group.add_widget (info_grid);
     }
 
     protected override void set_up_package () {

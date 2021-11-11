@@ -22,7 +22,6 @@ public abstract class AppCenter.AbstractAppList : Gtk.Box {
 
     protected Gtk.ScrolledWindow scrolled;
     protected Gtk.ListBox list_box;
-    protected Gtk.SizeGroup info_grid_group;
     protected uint packages_changing = 0;
 
     construct {
@@ -41,8 +40,6 @@ public abstract class AppCenter.AbstractAppList : Gtk.Box {
         scrolled = new Gtk.ScrolledWindow (null, null);
         scrolled.hscrollbar_policy = Gtk.PolicyType.NEVER;
         scrolled.add (list_box);
-
-        info_grid_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.HORIZONTAL);
     }
 
     protected abstract AppRowInterface construct_row_for_package (AppCenterCore.Package package);
