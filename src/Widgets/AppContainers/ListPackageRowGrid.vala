@@ -32,6 +32,7 @@ public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
             lines = 2,
             max_width_chars = 1,
             valign = Gtk.Align.START,
+            width_chars = 20,
             wrap = true,
             xalign = 0
         };
