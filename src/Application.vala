@@ -298,8 +298,18 @@ public class AppCenter.App : Gtk.Application {
                     var dialog = new InstallFailDialog (package, error);
 
                     dialog.show_all ();
+		    dialog.response.connect ((response_id) => {
+		    	switch (response_id) {
+			    case Gtk.ResponseType.CLOSE:
+			    	dialog.destroy ();
+				break;
+			    case Gtk.ResponseType.OK:
+			    	dialog.destroy ();
+				    main_window.go_to_installed_clear ();
+				break;
+			}
+		    });
                     dialog.run ();
-                    dialog.destroy ();
                 }
 
                 break;

@@ -377,6 +377,14 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
         view_mode.selected = installed_view_id;
     }
 
+    public void go_to_installed_clear () {
+        go_to_installed ();
+        homepage.return_clicked ();
+	    return_button_history.clear ();
+        return_button.no_show_all = true;
+        return_button.visible = false;
+    }
+
     public void search (string term, bool mimetype = false) {
         this.mimetype = mimetype;
         search_entry.text = term;
