@@ -137,7 +137,6 @@ public class AppCenter.CategoryView : Gtk.ScrolledWindow {
             column_spacing = 24;
             homogeneous = true;
             max_children_per_line = 5;
-            min_children_per_line = 3;
             row_spacing = 12;
             valign = Gtk.Align.START;
 
