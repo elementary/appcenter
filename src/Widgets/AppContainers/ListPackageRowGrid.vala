@@ -44,12 +44,9 @@ public class AppCenter.Widgets.ListPackageRowGrid : AbstractPackageRowGrid {
         grid.attach (app_icon_overlay, 0, 0, 1, 2);
         grid.attach (package_name, 1, 0);
         grid.attach (package_summary, 1, 1);
+        grid.attach (action_stack, 2, 0, 1, 2);
 
-        var box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 12);
-        box.pack_start (grid);
-        box.pack_end (action_stack);
-
-        add (box);
+        add (grid);
     }
 
     protected override void set_up_package () {
