@@ -105,6 +105,18 @@ public class AppCenter.MainWindow : Hdy.ApplicationWindow {
             return false;
         });
 
+        size_allocate.connect (() => {
+            int width = 0;
+            get_size (out width, null);
+            if (width > 550) {
+                search_entry.width_chars = 22;
+                search_entry.placeholder_text = _("Search Apps");
+            } else {
+                search_entry.width_chars = 9;
+                search_entry.placeholder_text = _("Search");
+            }
+        });
+
         return_button.clicked.connect (view_return);
 
         homepage.package_selected.connect (package_selected);
