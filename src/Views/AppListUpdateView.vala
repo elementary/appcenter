@@ -74,12 +74,12 @@ namespace AppCenter.Views {
                 add_row_for_package (package);
             }
 
-            on_list_changed ();
+            list_box.invalidate_sort ();
         }
 
         public override void add_package (AppCenterCore.Package package) {
             add_row_for_package (package);
-            on_list_changed ();
+            list_box.invalidate_sort ();
         }
 
         private void add_row_for_package (AppCenterCore.Package package) {
@@ -87,17 +87,9 @@ namespace AppCenter.Views {
 
             // Only add row if this package needs an update or it's not a font or plugin
             if (needs_update || (!package.is_plugin && !package.is_font)) {
-                var row = construct_row_for_package (package);
-                add_row (row);
+                var row = new Widgets.PackageRow.installed (package, action_button_group);
+                list_box.add (row);
             }
-        }
-
-        protected override void on_list_changed () {
-            list_box.invalidate_sort ();
-        }
-
-        protected override AppRowInterface construct_row_for_package (AppCenterCore.Package package) {
-            return new Widgets.PackageRow.installed (package, action_button_group);
         }
 
         [CCode (instance_pos = -1)]
