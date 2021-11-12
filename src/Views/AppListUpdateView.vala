@@ -97,7 +97,7 @@ namespace AppCenter.Views {
         }
 
         protected override AppRowInterface construct_row_for_package (AppCenterCore.Package package) {
-            return new Widgets.PackageRow.installed (package, info_grid_group, action_button_group);
+            return new Widgets.PackageRow.installed (package, action_button_group);
         }
 
         [CCode (instance_pos = -1)]

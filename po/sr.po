@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-21 21:50+0000\n"
+"POT-Creation-Date: 2021-11-11 23:01+0000\n"
 "PO-Revision-Date: 2021-03-11 10:09+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <https://l10n.elementary.io/projects/appcenter/appcenter/sr/>\n"
@@ -39,36 +39,36 @@ msgstr "Програм је инсталиран"
 #. Only show a toast when we're not on the installed app's page, i.e if
 #. no package is selected (we are not on an app page), or a package is
 #. selected but it's not the app we're installing.
-#: src/Application.vala:299 src/MainWindow.vala:353
+#: src/Application.vala:299 src/MainWindow.vala:354
 #, c-format
 msgid "“%s” has been installed"
 msgstr "„%s“ је инсталиран"
 
-#: src/MainWindow.vala:146
+#: src/MainWindow.vala:147
 #, c-format
 msgid "Failed to launch “%s“"
 msgstr "Нисам успео да покренем „%s“"
 
-#: src/MainWindow.vala:171 src/Views/Homepage.vala:261
-#: src/Views/Homepage.vala:271 src/Views/Homepage.vala:276
-#: src/Views/Homepage.vala:287 src/Views/SearchView.vala:89
+#: src/MainWindow.vala:172 src/Views/Homepage.vala:260
+#: src/Views/Homepage.vala:270 src/Views/Homepage.vala:275
+#: src/Views/Homepage.vala:286 src/Views/SearchView.vala:89
 msgid "Home"
 msgstr "Матична страница"
 
-#: src/MainWindow.vala:172 src/Views/InstalledView.vala:32
+#: src/MainWindow.vala:173 src/Views/InstalledView.vala:32
 #: src/Views/InstalledView.vala:57
 msgctxt "view"
 msgid "Installed"
 msgstr "Инсталиран"
 
-#: src/MainWindow.vala:212 src/MainWindow.vala:424 src/Views/SearchView.vala:54
+#: src/MainWindow.vala:213 src/MainWindow.vala:425 src/Views/SearchView.vala:54
 #: src/Views/SearchView.vala:87
 msgid "Search Apps"
 msgstr "Тражи програме"
 
 #. Show Open only when a desktop app is installed
-#: src/MainWindow.vala:356
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:79
+#: src/MainWindow.vala:357
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:78
 msgid "Open"
 msgstr "Отвори"
 
@@ -101,7 +101,7 @@ msgstr "Уклањам пакете"
 msgid "Downloading"
 msgstr "Преузимам"
 
-#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1002
+#: src/Utils.vala:76 src/Core/FlatpakBackend.vala:1051
 msgid "Installing"
 msgstr "Инсталирам"
 
@@ -146,9 +146,9 @@ msgid "Finished"
 msgstr "Завршено"
 
 #: src/Utils.vala:98 src/Core/ChangeInformation.vala:79
-#: src/Core/FlatpakBackend.vala:1011 src/Core/FlatpakBackend.vala:1039
-#: src/Core/FlatpakBackend.vala:1147 src/Core/FlatpakBackend.vala:1175
-#: src/Core/FlatpakBackend.vala:1321 src/Core/FlatpakBackend.vala:1347
+#: src/Core/FlatpakBackend.vala:1060 src/Core/FlatpakBackend.vala:1084
+#: src/Core/FlatpakBackend.vala:1192 src/Core/FlatpakBackend.vala:1216
+#: src/Core/FlatpakBackend.vala:1362 src/Core/FlatpakBackend.vala:1384
 msgid "Cancelling"
 msgstr "Отказујем"
 
@@ -239,11 +239,11 @@ msgstr[0] "%u освежење је доступно за ваш систем"
 msgstr[1] "%u освежења су доступна за ваш систем"
 msgstr[2] "%u освежења је доступно за ваш систем"
 
-#: src/Core/FlatpakBackend.vala:1138
+#: src/Core/FlatpakBackend.vala:1183
 msgid "Uninstalling"
 msgstr "Уклањам"
 
-#: src/Core/FlatpakBackend.vala:1312
+#: src/Core/FlatpakBackend.vala:1353
 msgid "Updating"
 msgstr "Освежавам"
 
@@ -422,7 +422,7 @@ msgid "CVC"
 msgstr "Сигурносни код (CVC)"
 
 #: src/Dialogs/StripeDialog.vala:233 src/Dialogs/StripeDialog.vala:380
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:103
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:97
 msgid "Cancel"
 msgstr "Откажи"
 
@@ -530,7 +530,7 @@ msgid "Uninstall “%s”?"
 msgstr "Да уклоним „%s“?"
 
 #: src/Dialogs/UninstallConfirmDialog.vala:42
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:69
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:68
 msgid "Uninstall"
 msgstr "Уклони"
 
@@ -637,124 +637,124 @@ msgstr ""
 msgid "Graphic violence, bloodshed, or death"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:201
+#: src/Views/AppInfoView.vala:204
 msgid "Multiplayer"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:202
+#: src/Views/AppInfoView.vala:205
 msgid "Online play with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:218
+#: src/Views/AppInfoView.vala:221
 msgid "Unmoderated Audio, Video, or Text messaging with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:220
+#: src/Views/AppInfoView.vala:223
 msgid "Moderated Audio, Video, or Text messaging with other people"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:224
+#: src/Views/AppInfoView.vala:227
 msgid "Online Interactions"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:234
+#: src/Views/AppInfoView.vala:237
 msgid "Location Sharing"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:235
+#: src/Views/AppInfoView.vala:238
 msgid "Other people can see your real-world location"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:247
+#: src/Views/AppInfoView.vala:250
 msgid "Collects anonymous usage data"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:250
+#: src/Views/AppInfoView.vala:253
 msgid "Collects usage data that could be used to identify you"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:255
+#: src/Views/AppInfoView.vala:258
 msgid "Info Sharing"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:372
+#: src/Views/AppInfoView.vala:375
 msgid "Screenshot Not Available"
 msgstr "Снимак екрана није доступан"
 
-#: src/Views/AppInfoView.vala:475
+#: src/Views/AppInfoView.vala:476
 msgid "Homepage"
 msgstr "Матична страница"
 
-#: src/Views/AppInfoView.vala:481
+#: src/Views/AppInfoView.vala:482
 msgid "Translate"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:487
+#: src/Views/AppInfoView.vala:488
 msgid "Send Feedback"
 msgstr ""
 
-#: src/Views/AppInfoView.vala:493
+#: src/Views/AppInfoView.vala:494
 msgid "Help"
 msgstr "Помоћ"
 
-#: src/Views/AppInfoView.vala:504
+#: src/Views/AppInfoView.vala:505
 msgid "What's New:"
 msgstr "Новости:"
 
-#: src/Views/AppInfoView.vala:549
+#: src/Views/AppInfoView.vala:550
 msgid "Extensions:"
 msgstr "Проширења:"
 
-#: src/Views/AppInfoView.vala:652
+#: src/Views/AppInfoView.vala:653
 msgid "Link copied to clipboard"
 msgstr "Веза је умножена у оставу"
 
-#: src/Views/AppInfoView.vala:663
+#: src/Views/AppInfoView.vala:664
 #, c-format
 msgid "Check out %s on AppCenter:"
 msgstr "Потражи „%s“ у Програмском центру:"
 
-#: src/Views/AppInfoView.vala:671
+#: src/Views/AppInfoView.vala:672
 msgid "Share"
 msgstr "Подели"
 
 #. TRANSLATORS: See the Wikipedia page
-#: src/Views/AppInfoView.vala:985
+#: src/Views/AppInfoView.vala:986
 msgid "Public Domain"
 msgstr "Јавни домен"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:988
+#: src/Views/AppInfoView.vala:989
 msgid "https://en.wikipedia.org/wiki/Public_domain"
 msgstr "https://en.wikipedia.org/wiki/Public_domain"
 
 #. TRANSLATORS: Freedom, not price. See the GNU page.
-#: src/Views/AppInfoView.vala:993
+#: src/Views/AppInfoView.vala:994
 msgid "Free Software"
 msgstr "Слободни софтвер"
 
 #. TRANSLATORS: Replace the link with the version for your language
-#: src/Views/AppInfoView.vala:996
+#: src/Views/AppInfoView.vala:997
 msgid "https://www.gnu.org/philosophy/free-sw"
 msgstr "https://www.gnu.org/philosophy/free-sr"
 
-#: src/Views/AppInfoView.vala:1000
+#: src/Views/AppInfoView.vala:1001
 msgid "Proprietary"
 msgstr "Власнички"
 
-#: src/Views/AppInfoView.vala:1003
+#: src/Views/AppInfoView.vala:1004
 msgid "Unknown License"
 msgstr "Непозната лиценца"
 
-#: src/Views/AppInfoView.vala:1083
+#: src/Views/AppInfoView.vala:1084
 msgid "Fund"
 msgstr "Финансирај"
 
-#: src/Views/AppInfoView.vala:1091
+#: src/Views/AppInfoView.vala:1092
 msgid "Fund the development of this app"
 msgstr "Финансирајте развој овог програма"
 
-#: src/Views/AppInfoView.vala:1201
+#: src/Views/AppInfoView.vala:1204
 #, c-format
 msgid "Other Apps by %s"
 msgstr "Други програми од %s"
@@ -807,11 +807,11 @@ msgstr "Неодржавани програми"
 msgid "Recently Updated"
 msgstr "Скоро ажурирани"
 
-#: src/Views/Homepage.vala:87
+#: src/Views/Homepage.vala:86
 msgid "Categories"
 msgstr "Категорије"
 
-#: src/Views/Homepage.vala:276 src/Views/Homepage.vala:287
+#: src/Views/Homepage.vala:275 src/Views/Homepage.vala:286
 #, c-format
 msgid "Search %s"
 msgstr "Тражи „%s“"
@@ -826,67 +826,67 @@ msgstr "Тражи"
 msgid "Card Number"
 msgstr "Број картице"
 
-#: src/Widgets/CategoryFlowBox.vala:28
+#: src/Widgets/CategoryFlowBox.vala:27
 msgid "Accessories"
 msgstr "Алатке"
 
-#: src/Widgets/CategoryFlowBox.vala:29
+#: src/Widgets/CategoryFlowBox.vala:28
 msgid "Audio"
 msgstr "Звук"
 
-#: src/Widgets/CategoryFlowBox.vala:30
+#: src/Widgets/CategoryFlowBox.vala:29
 msgid "Communication"
 msgstr "Комуникација"
 
-#: src/Widgets/CategoryFlowBox.vala:39
+#: src/Widgets/CategoryFlowBox.vala:38
 msgid "Development"
 msgstr "Програмирање"
 
-#: src/Widgets/CategoryFlowBox.vala:49
+#: src/Widgets/CategoryFlowBox.vala:48
 msgid "Education"
 msgstr "Образовање"
 
-#: src/Widgets/CategoryFlowBox.vala:50
+#: src/Widgets/CategoryFlowBox.vala:49
 msgid "Finance"
 msgstr "Финансије"
 
-#: src/Widgets/CategoryFlowBox.vala:54
+#: src/Widgets/CategoryFlowBox.vala:53
 msgid "Games"
 msgstr "Игре"
 
-#: src/Widgets/CategoryFlowBox.vala:70
+#: src/Widgets/CategoryFlowBox.vala:69
 msgid "Graphics"
 msgstr "Графика"
 
-#: src/Widgets/CategoryFlowBox.vala:79
+#: src/Widgets/CategoryFlowBox.vala:78
 msgid "Internet"
 msgstr "Интернет"
 
-#: src/Widgets/CategoryFlowBox.vala:83
+#: src/Widgets/CategoryFlowBox.vala:82
 msgid "Math, Science, & Engineering"
 msgstr "Математика, наука и инжењерство"
 
-#: src/Widgets/CategoryFlowBox.vala:102
+#: src/Widgets/CategoryFlowBox.vala:101
 msgid "Media Production"
 msgstr "Медијска продукција"
 
-#: src/Widgets/CategoryFlowBox.vala:109
+#: src/Widgets/CategoryFlowBox.vala:108
 msgid "Office"
 msgstr "Канцеларија"
 
-#: src/Widgets/CategoryFlowBox.vala:116
+#: src/Widgets/CategoryFlowBox.vala:115
 msgid "System"
 msgstr "Систем"
 
-#: src/Widgets/CategoryFlowBox.vala:120
+#: src/Widgets/CategoryFlowBox.vala:119
 msgid "Universal Access"
 msgstr "Универзални приступ"
 
-#: src/Widgets/CategoryFlowBox.vala:121
+#: src/Widgets/CategoryFlowBox.vala:120
 msgid "Video"
 msgstr "Видео"
 
-#: src/Widgets/CategoryFlowBox.vala:126
+#: src/Widgets/CategoryFlowBox.vala:125
 msgid "Writing & Language"
 msgstr "Писање и језик"
 
@@ -895,12 +895,12 @@ msgid "Requires payments, which are not enabled"
 msgstr "Захтевају плаћања, која нису омогућена"
 
 #: src/Widgets/HumbleButton.vala:75
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:202
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:238
 msgid "Free"
 msgstr "Бесплатни"
 
 #: src/Widgets/HumbleButton.vala:77
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:204
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:240
 msgid "Install"
 msgstr "Инсталирај"
 
@@ -995,7 +995,7 @@ msgstr "Управљачки програми"
 msgid "Up to Date"
 msgstr "Освежено је"
 
-#: src/Widgets/AppContainers/AbstractAppContainer.vala:223
+#: src/Widgets/AppContainers/AbstractAppContainer.vala:259
 msgid "Update"
 msgstr "Освежи"
 

@@ -32,7 +32,7 @@ public abstract class AppCenter.AbstractView : Gtk.Stack {
             // Transition finished
             if (!transition_running) {
                 foreach (weak Gtk.Widget child in get_children ()) {
-                    if (child is Views.AppInfoView && (child as Views.AppInfoView).to_recycle) {
+                    if (child is Views.AppInfoView && ((Views.AppInfoView) child).to_recycle) {
                         child.destroy ();
                     }
                 }

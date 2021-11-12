@@ -44,7 +44,7 @@ namespace AppCenter.Views {
         private Gtk.Revealer origin_combo_revealer;
         private Hdy.Carousel app_screenshots;
         private Gtk.Stack screenshot_stack;
-        private Gtk.TextView app_description;
+        private Gtk.Label app_description;
         private Widgets.ReleaseListBox release_list_box;
         private Widgets.SizeLabel size_label;
         private Hdy.CarouselIndicatorDots screenshot_switcher;
@@ -198,7 +198,10 @@ namespace AppCenter.Views {
 
                 var social_chat_value = rating.get_value ("social-chat");
                 // MILD is defined as multi-player period, no chat
-                if (social_chat_value > AppStream.ContentRatingValue.NONE) {
+                if (
+                    social_chat_value > AppStream.ContentRatingValue.NONE &&
+                    package.component.has_category ("Game")
+                ) {
                     var multiplayer = new ContentType (
                         _("Multiplayer"),
                         _("Online play with other people"),
@@ -444,13 +447,11 @@ namespace AppCenter.Views {
             };
             package_summary.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
 
-            app_description = new Gtk.TextView () {
-                cursor_visible = false,
-                editable = false,
-                expand = true,
-                pixels_below_lines = 3,
-                pixels_inside_wrap = 3,
-                wrap_mode = Gtk.WrapMode.WORD_CHAR
+            app_description = new Gtk.Label (null) {
+                // Allow wrapping but prevent expanding the parent
+                width_request = 1,
+                wrap = true,
+                xalign = 0
             };
             app_description.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
@@ -954,7 +955,7 @@ namespace AppCenter.Views {
                 // This method may be called in a thread, pass back to GTK thread
                 Idle.add (() => {
                     try {
-                        app_description.buffer.text = AppStream.markup_convert_simple (stripped_description);
+                        app_description.label = AppStream.markup_convert_simple (stripped_description);
                     } catch (Error e) {
                         warning ("Failed to parse appstream description: %s", e.message);
                     }
@@ -1100,7 +1101,9 @@ namespace AppCenter.Views {
                     stripe.transient_for = (Gtk.Window) get_toplevel ();
 
                     stripe.download_requested.connect (() => {
-                        App.add_paid_app (package.component.get_id ());
+                        if (stripe.amount != 0) {
+                            App.add_paid_app (package.component.get_id ());
+                        }
                     });
 
                     stripe.show ();
@@ -1202,8 +1205,7 @@ namespace AppCenter.Views {
                 activate_on_single_click = true,
                 column_spacing = 12,
                 row_spacing = 12,
-                homogeneous = true,
-                min_children_per_line = 2
+                homogeneous = true
             };
 
             foreach (var author_package in author_packages) {

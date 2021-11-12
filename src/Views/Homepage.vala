@@ -70,8 +70,7 @@ public class AppCenter.Homepage : AbstractView {
             column_spacing = 12,
             row_spacing = 12,
             homogeneous = true,
-            max_children_per_line = 5,
-            min_children_per_line = 3
+            max_children_per_line = 5
         };
 
         var recently_updated_grid = new Gtk.Grid () {
@@ -238,7 +237,7 @@ public class AppCenter.Homepage : AbstractView {
                 }
             }
 
-            if (!installed && !(package in packages_in_banner) && !package.is_explicit) {
+            if (!installed && !(package in packages_in_banner)) {
                 var package_row = new AppCenter.Widgets.ListPackageRowGrid (package);
                 recently_updated_carousel.add (package_row);
             }
