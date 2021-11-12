@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-11 23:01+0000\n"
-"PO-Revision-Date: 2021-10-30 00:01+0000\n"
+"PO-Revision-Date: 2021-11-12 07:42+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/appcenter/extra/"
 "ja/>\n"
@@ -53,7 +53,7 @@ msgstr "改善点:"
 
 #: data/io.elementary.appcenter.appdata.xml.in:18
 msgid "Allow window to shrink to much narrower sizes"
-msgstr ""
+msgstr "ウィンドウ幅をより狭められるように修正"
 
 #: data/io.elementary.appcenter.appdata.xml.in:19
 #: data/io.elementary.appcenter.appdata.xml.in:43
