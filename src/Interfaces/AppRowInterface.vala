@@ -20,10 +20,5 @@
 /** Interface implemented by PackageRow and used to
   * determine sort order **/
 public interface AppCenter.AppRowInterface : Gtk.ListBoxRow {
-    public abstract bool get_update_available ();
-    public abstract bool get_is_os_updates ();
-    public abstract bool get_is_driver ();
-    public abstract bool get_is_updating ();
-    public abstract string get_name_label ();
     public abstract AppCenterCore.Package? get_package ();
 }

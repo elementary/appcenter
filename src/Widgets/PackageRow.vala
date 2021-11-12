@@ -35,26 +35,6 @@ namespace AppCenter.Widgets {
             add (grid);
         }
 
-        public bool get_update_available () {
-            return grid.package.update_available || grid.package.is_updating;
-        }
-
-        public bool get_is_driver () {
-            return grid.package.is_driver;
-        }
-
-        public bool get_is_updating () {
-            return grid.package.is_updating;
-        }
-
-        public bool get_is_os_updates () {
-            return grid.package.is_os_updates;
-        }
-
-        public string get_name_label () {
-            return grid.package.get_name ();
-        }
-
         public AppCenterCore.Package? get_package () {
             return grid.package;
         }

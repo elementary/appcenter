@@ -98,7 +98,7 @@ public abstract class AppCenter.AbstractAppList : Gtk.Box {
 
     [CCode (instance_pos = -1)]
     protected virtual int package_row_compare (AppRowInterface row1, AppRowInterface row2) {
-        return row1.get_name_label ().collate (row2.get_name_label ());
+        return row1.get_package ().get_name ().collate (row2.get_package ().get_name ());
     }
 
     protected virtual void on_package_changing (AppCenterCore.Package package, bool is_changing) {
