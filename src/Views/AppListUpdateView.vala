@@ -155,12 +155,15 @@ namespace AppCenter.Views {
 
         [CCode (instance_pos = -1)]
         private void row_update_header (AppRowInterface row, AppRowInterface? before) {
-            bool update_available = row.get_package ().update_available || row.get_package ().is_updating;
-            bool is_driver = row.get_package ().is_driver;
+            var row_package = row.get_package ();
+            var before_package = before.get_package ();
+
+            bool update_available = row_package.update_available || row_package.is_updating;
+            bool is_driver = row_package.is_driver;
 
             bool before_update_available = false;
             if (before != null) {
-                before_update_available = before.get_package ().update_available || before.get_package ().is_updating;
+                before_update_available = before_package.update_available || before_package.is_updating;
             }
 
             if (update_available) {
@@ -206,7 +209,7 @@ namespace AppCenter.Views {
                 header.show_all ();
                 row.set_header (header);
             } else if (is_driver) {
-                if (before != null && is_driver == before.get_package ().is_driver) {
+                if (before != null && is_driver == before_package.is_driver) {
                     row.set_header (null);
                     return;
                 }
@@ -215,7 +218,7 @@ namespace AppCenter.Views {
                 header.show_all ();
                 row.set_header (header);
             } else {
-                if (before != null && is_driver == before.get_package ().is_driver && update_available == before_update_available) {
+                if (before != null && is_driver == before_package.is_driver && update_available == before_update_available) {
                     row.set_header (null);
                     return;
                 }
